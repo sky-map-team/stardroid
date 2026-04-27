@@ -140,6 +140,7 @@
     <string name="hubble_image" translation_description="Label or caption for a Hubble Space Telescope image in the gallery">Hubble-bilde</string>
     <string name="search_overlay_title" translation_description="title for search overlay">Beveg telefonen din i pilretning</string>
     <string name="search_target_looking_message" translation_description="displayed when a search target is being searched for">Ser etter: %s</string>
+    <string name="search_target_found_message" translation_description="displayed when a search target has been found and is centered on screen">Funnet: %s</string>
     <string name="sun_wont_set_message" translation_description="Message shown when the sun will not set during the next 24 hours (polar day / midnight sun)">Solen går ikke ned i løpet av de neste 24 timene på ditt nåværende sted.</string>
 
     <!-- tm:omitted name="missing_label" reason="identical_to_source" -->
@@ -251,6 +252,8 @@
     <string name="show_object_info_auto_mode_title" translation_description="Preference title for enabling info cards in auto/sensor mode">Infokort i automatisk modus</string>
     <string name="show_object_info_auto_mode_summary" translation_description="Preference summary for auto mode info cards">Vis også infokort når du trykker på objekter i automatisk (sensor) modus</string>
     <string name="object_info_funfact_label" translation_description="Label before the fun fact in info card">Morsom fakta:</string>
+    <string name="object_info_also_known_as" translation_description="Subtitle showing alternate names for a celestial object, e.g. \'Also known as: NGC 253 · Silver Dollar Galaxy\'">Også kjent som: %1$s</string>
+    <string name="object_info_see_also_label" translation_description="Label for the see also section in info card">Se også:</string>
     <string name="object_info_distance_label" translation_description="Label for distance field">Avstand:</string>
     <string name="object_info_size_label" translation_description="Label for size field">Størrelse:</string>
     <string name="object_info_mass_label" translation_description="Label for mass field">Masse:</string>

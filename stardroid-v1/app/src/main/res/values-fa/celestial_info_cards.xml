@@ -930,6 +930,65 @@
     </string>
     <string name="object_info_eta_carinae_nebula_distance" translation_description="Distance to Eta Carinae Nebula shown in the info card. Translate units if appropriate for your locale.">۷٬۵۰۰ سال نوری</string>
     <string name="object_info_eta_carinae_nebula_size" translation_description="Physical size of Eta Carinae Nebula shown in the info card. Translate units if appropriate for your locale.">۳۰۰ سال نوری عرض</string>
+    <!-- North America Nebula (NGC 7000) -->
+    <string name="object_info_north_america_nebula_description" translation_description="Description of the North America Nebula shown in the info card. Translate this text.">
+    سحابانی شمال آمریکا (NGC 7000) یک سحابانی انتشاری بزرگ در صورت فلکی قو است که شکل آن به طرز قابل توجهی شبیه قاره شمال آمریکا است، به همراه منطقه خلیج مکزیک. این سحابانی حدود 120 دقیقه قوسی را در بر می‌گیرد — تقریباً چهار برابر قطر ماه کامل — و حدود 2600 سال نوری دور است و بیش از 100 سال نوری عرض دارد.
+    </string>
+    <string name="object_info_north_america_nebula_funfact" translation_description="Fun fact about the North America Nebula shown in the info card. Translate this text.">
+    علیرغم قدر ظاهری ۴، این سحابی بسیار بزرگ و پراکنده است و تحت اکثر آسمان‌ها با چشم غیرمسلح قابل مشاهده نیست — اما در عکاسی بسیار زیبا به نظر می‌رسد و دیوار قیقنوس را آشکار می‌کند، یک کمان متراکم از تشکیل ستاره‌های شدید در لبه جنوبی آن.
+    </string>
+    <string name="object_info_north_america_nebula_distance" translation_description="Distance to the North America Nebula shown in the info card. Translate units if appropriate for your locale.">~۲٬۵۹۰ سال نوری</string>
+    <string name="object_info_north_america_nebula_size" translation_description="Physical size of the North America Nebula shown in the info card. Translate units if appropriate for your locale.">~۱۴۰ سال نوری عرض</string>
+    <!-- Exposed Cranium Nebula - PMR 1 -->
+    <string name="object_info_exposed_cranium_nebula_description" translation_description="Description of the Exposed Cranium Nebula shown in the info card. Translate this text.">
+    سحابانی جمجمه برهنه (PMR 1) یک سحابانی سیاره‌ای در صورت فلکی بادبان است که حدود ۵۰۰۰ سال نوری فاصله دارد. نام عجیب آن از یک خط تاریک گاز ناشی می‌شود که به‌طور عمودی از میان آن می‌گذرد و فصوص درخشان آن را به شکلی شبیه مغز درون جمجمه شفاف تقسیم می‌کند. در قلب آن یک ستارهٔ Wolf-Rayet داغ می‌سوزد که لایه‌های بیرونی را که در طول عمر خود ساخته است، ریخته‌گری می‌کند.
+    </string>
+    <string name="object_info_exposed_cranium_nebula_funfact" translation_description="Fun fact about the Exposed Cranium Nebula shown in the info card. Translate this text.">
+    در سال ۲۰۲۶ تلسکوپ فضایی جیمز وب تصاویر جدید و چشمگیری از سحابی جمجمه برهنه ثبت کرد که ساختار دولایه آن را با جزئیات بی‌سابقه‌ای روشن کرد — یک پوسته بیرونی غنی از هیدروژن و یک ابر درونی پر از عناصر سنگین‌تری که توسط ستاره مرتضی ساخته شده‌اند.
+    </string>
+    <string name="object_info_exposed_cranium_nebula_distance" translation_description="Distance to the Exposed Cranium Nebula shown in the info card. Translate units if appropriate for your locale.">~۵٬۰۰۰ سال نوری</string>
+    <string name="object_info_exposed_cranium_nebula_size" translation_description="Physical size of the Exposed Cranium Nebula shown in the info card. Translate units if appropriate for your locale.">~۲ سال نوری عرض</string>
+
+    <!-- Jewel Box (NGC 4755) -->
+    <string name="object_info_jewel_box_description" translation_description="Description of the Jewel Box cluster shown in the info card. Translate this text.">
+    جعبه جواهر (NGC 4755) یک خوشه باز جوان و درخشان در صورت فلکی کروکس است که به راحتی برای چشم غیر مسلح به عنوان یک لکه مبهم با قدر چهارم در جنوب‌شرق میموزا قابل مشاهده است. هنگام مشاهده از طریق تلسکوپ، ستاره‌های آن با رنگ‌های متضاد زنده می‌درخشند — ابرغول‌های آبی عمیق در کنار یک ابرغول قرمز چشم‌گیر — که باعث شد جان هرشل نام آن را بدهد: یک جواهرات فاخر. با تنها 14 تا 16 میلیون سال سن، یکی از جوان‌ترین و رنگین‌ترین خوشه‌های آسمان است.
+    </string>
+    <string name="object_info_jewel_box_funfact" translation_description="Fun fact about the Jewel Box shown in the info card. Translate this text.">
+    ستاره قرمز برجسته این خوشه، κ Crucis، یک ابرغول قرمز است که به قدری درخشان است که خورشید را بیش از 100,000 بار روشن‌تر می‌کند — یادآوری زنده‌ای از اینکه خوشه‌های ستاره‌ای همه یک رنگ نیستند.
+    </string>
+    <string name="object_info_jewel_box_distance" translation_description="Distance to the Jewel Box shown in the info card. Translate units if appropriate for your locale.">~۶٬۵۰۰ سال نوری</string>
+    <string name="object_info_jewel_box_size" translation_description="Physical size of the Jewel Box shown in the info card. Translate units if appropriate for your locale.">~۱۹ سال نوری عرض</string>
+
+    <!-- Double Cluster (NGC 869 & NGC 884) -->
+    <string name="object_info_double_cluster_description" translation_description="Description of the Double Cluster shown in the info card. Translate this text.">
+    خوشه دوگانه (NGC 869 و NGC 884) یک جفت درخشان از خوشه‌های ستاره‌ای باز جوان در صورت فلکی پرسئوس است که در کنار یکدیگر در آسمان قرار دارند و تنها بیش از یک درجه از هم فاصله دارند. هر دو به چشم غیر مسلح به عنوان یک لکه مه‌آلود قابل رؤیت هستند، اما حتی یک تلسکوپ کوچک صدها ستاره‌ی ابرغول آبی-سفید درخشان را که در دو گروه براق فشرده شده‌اند، آشکار می‌کند. در فاصله‌ای تقریبی ۷٬۵۰۰ سال نوری، آن‌ها در بازوی پرسئوس کهکشان ما قرار دارند و از بهترین اجرام دوربین‌نمایی در آسمان شمالی به شمار می‌روند.
+    </string>
+    <string name="object_info_double_cluster_funfact" translation_description="Fun fact about the Double Cluster shown in the info card. Translate this text.">
+    خوشه دوگانه تنها ۱۴ میلیون سال قدمت دارد و فوق‌العاده جوان است — آن‌قدر اخیراً متولد شده که پرجرم‌ترین ستاره‌های آن هنوز به‌عنوان ابرغول‌های آبی درخشان می‌درخشند، و تعدادی از آن‌ها قبلاً به ابرغول‌های قرمز درخشان نادر تکامل یافته‌اند.
+    </string>
+    <string name="object_info_double_cluster_distance" translation_description="Distance to the Double Cluster shown in the info card. Translate units if appropriate for your locale.">~۷٬۵۰۰ سال نوری</string>
+    <string name="object_info_double_cluster_size" translation_description="Physical size of the Double Cluster shown in the info card. Translate units if appropriate for your locale.">هر خوشه ~۷۰ سال نوری عرض؛ این دو خوشه با فاصله ~۱٬۰۰۰ سال نوری از هم جدا هستند</string>
+
+    <!-- 47 Tucanae (NGC 104) -->
+    <string name="object_info_n47_tucanae_description" translation_description="Description of 47 Tucanae shown in the info card. Translate this text.">
+    47 Tucanae (NGC 104) دومین خوشه کروی درخشان‌تر آسمان است، یک توپ متراکم شامل تقریباً یک میلیون ستاره باستانی که به دور راه شیری در صورت فلکی Tucana می‌چرخند. در فاصله حدود 14,500 سال نوری، برای چشم غیرمسلح به عنوان یک ستاره فازی با قدر چهارم ظاهر می‌شود، اما تلسکوپ هسته فشرده‌شده آن را به یک ازدحام فوق‌العاده از خورشیدهای طلایی و آبی‌سفید تبدیل می‌کند. ستارگان این خوشه حدود 13 میلیارد سال پیش تشکیل شدند، که این خوشه را تقریباً به قدمت خود جهان می‌سازد.
+    </string>
+    <string name="object_info_n47_tucanae_funfact" translation_description="Fun fact about 47 Tucanae shown in the info card. Translate this text.">
+    47 Tucanae یک کارخانه پالسار کیهانی است: ستاره‌شناسان حداقل 35 پالسار میلی‌ثانیه‌ای را یافته‌اند که صدها بار در ثانیه در درون آن می‌چرخند — بیشتر از هر خوشه کروی شناخته‌شده دیگری — نتیجه برخوردهای نزدیک ستاره‌ای که ستاره‌های نوترونی قدیمی را با چرخش سریع دوباره استفاده می‌کنند.
+    </string>
+    <string name="object_info_n47_tucanae_distance" translation_description="Distance to 47 Tucanae shown in the info card. Translate units if appropriate for your locale.">~۱۴٬۵۰۰ سال نوری</string>
+    <string name="object_info_n47_tucanae_size" translation_description="Physical size of 47 Tucanae shown in the info card. Translate units if appropriate for your locale.">~۱۲۰ سال نوری عرض</string>
+
+    <!-- Centaurus A (NGC 5128) -->
+    <string name="object_info_centaurus_a_description" translation_description="Description of Centaurus A shown in the info card. Translate this text.">
+    سنتاروس A (NGC 5128) نزدیک‌ترین کهکشان رادیویی فعال به زمین است، یک کهکشان بیضی‌شکل غول‌پیکر در صورت فلکی سنتاروس که خط گرد و غبار تاریک چشمگیرش نشان‌دهنده گذشته‌ای خشن است — یک کهکشان مارپیچی که تقریباً 200 تا 700 میلیون سال پیش بلعیده شده است. در قلب آن یک سیاه‌چاله فوق‌جرم‌اندام با جرم 55 میلیون خورشید نهفته است که جت‌های نسبیتی را به حرکت درمی‌آورد که بیش از یک میلیون سال‌نوری در طول‌موج‌های رادیویی کشیده شده‌اند. در فاصله‌ای تقریباً 12 میلیون سال‌نوری، یکی از پرمطالعه‌ترین کهکشان‌های آسمان است.
+    </string>
+    <string name="object_info_centaurus_a_funfact" translation_description="Fun fact about Centaurus A shown in the info card. Translate this text.">
+    سنتاروس A یکی از قدرتمندترین منابع تابش رادیویی طبیعی در آسمان است — جت‌های آن پلاسما را با سرعتی نزدیک به سرعت نور به بیرون پرتاب می‌کنند، و دامنه کامل فصوص رادیویی آن مساحتی معادل حدود ۱۰۰ ماه کامل را در آسمان پوشش می‌دهد.
+    </string>
+    <string name="object_info_centaurus_a_distance" translation_description="Distance to Centaurus A shown in the info card. Translate units if appropriate for your locale.">~۱۲ میلیون سال نوری</string>
+    <string name="object_info_centaurus_a_size" translation_description="Physical size of Centaurus A shown in the info card. Translate units if appropriate for your locale.">~۱۲۳٬۰۰۰ سال نوری عرض</string>
+
     <!-- ==================== CONSTELLATIONS ==================== -->
     <!-- Note: Constellation names are defined in celestial_objects.xml -->
     <!-- Orion -->
@@ -1953,4 +2012,697 @@
     ولپکولا شامل سحابی دمبل (M27) است، اولین سحابی سیاره‌ای که تا به حال کشف شده است (توسط چارلز مسیه در سال 1764)، و یک هدف دوربین زیبا!
     </string>
     <string name="object_info_vulpecula_size" translation_description="Physical size of Vulpecula shown in the info card. Translate units if appropriate for your locale.">۲۶۸ درجه مربع</string>
+
+    <!-- Galilean Moons of Jupiter -->
+    <string name="object_info_io_description" translation_description="Description of Io shown in the info card. Translate this text.">
+    آیو درونی‌ترین ماه گالیله‌ای بزرگ مشتری است و فعال‌ترین جسم آتشفشانی در منظومه شمسی.
+    </string>
+    <string name="object_info_io_funfact" translation_description="Fun fact about Io shown in the info card. Translate this text.">
+    آیو صدها آتشفشان فعال دارد که برخی از آنها فواره‌های گدازه را تا ده‌ها کیلومتر بالا پرتاب می‌کنند. فعالیت مداوم آن توسط گرمایش جزر و مدی ناشی از جاذبه عظیم مشتری رانده می‌شود.
+    </string>
+    <string name="object_info_io_distance" translation_description="Distance to Io shown in the info card. Translate units if appropriate for your locale.">۴۲۱٬۷۰۰ کیلومتر از مشتری</string>
+    <string name="object_info_io_size" translation_description="Physical size of Io shown in the info card. Translate units if appropriate for your locale.">قطر ۳٬۶۴۳ کیلومتر</string>
+
+    <string name="object_info_europa_description" translation_description="Description of Europa shown in the info card. Translate this text.">
+    اروپا دومین ماه گالیله‌ای است و تصور می‌رود که یک اقیانوس آب مایع گسترده زیر پوسته یخی‌اش پنهان است، که آن را به یکی از امیدبخش‌ترین مکان‌ها برای جستجوی حیات تبدیل می‌کند.
+    </string>
+    <string name="object_info_europa_funfact" translation_description="Fun fact about Europa shown in the info card. Translate this text.">
+    اقیانوس زیرسطحی اروپا ممکن است دو برابر آب مایع تمام اقیانوس‌های زمین را در خود داشته باشد که توسط گرمای جزر و مدی ناشی از مشتری مایع نگاه داشته می‌شود.
+    </string>
+    <string name="object_info_europa_distance" translation_description="Distance to Europa shown in the info card. Translate units if appropriate for your locale.">۶۷۱٬۱۰۰ کیلومتر از مشتری</string>
+    <string name="object_info_europa_size" translation_description="Physical size of Europa shown in the info card. Translate units if appropriate for your locale.">قطر ۳٬۱۲۲ کیلومتر</string>
+
+    <string name="object_info_ganymede_description" translation_description="Description of Ganymede shown in the info card. Translate this text.">
+    گانیمد بزرگ‌ترین ماه منظومه شمسی است — حتی بزرگ‌تر از سیاره تیر. این تنها ماهی است که می‌تواند میدان مغناطیسی خود را تولید کند.
+    </string>
+    <string name="object_info_ganymede_funfact" translation_description="Fun fact about Ganymede shown in the info card. Translate this text.">
+    گانیمد از نظر اندازه بزرگتر از تیر است، اگرچه جرم آن تنها نیمی از جرم تیر است. میدان مغناطیسی درونی آن یک مغناطیس‌کره کوچک خود را در درون مغناطیس‌کره بسیار بزرگتر مشتری ایجاد می‌کند.
+    </string>
+    <string name="object_info_ganymede_distance" translation_description="Distance to Ganymede shown in the info card. Translate units if appropriate for your locale.">۱٬۰۷۰٬۴۰۰ کیلومتر از مشتری</string>
+    <string name="object_info_ganymede_size" translation_description="Physical size of Ganymede shown in the info card. Translate units if appropriate for your locale.">قطر ۵٬۲۶۸ کیلومتر</string>
+
+    <string name="object_info_callisto_description" translation_description="Description of Callisto shown in the info card. Translate this text.">
+    کالیستو دورترین ماه گالیله‌ای است و یکی از بیشترین اجسام دارای فرودگاه در منظومه شمسی است، سطح باستانی آن سابقه‌ای از برخوردهای اولیه منظومه شمسی را حفظ می‌کند.
+    </string>
+    <string name="object_info_callisto_funfact" translation_description="Fun fact about Callisto shown in the info card. Translate this text.">
+    کالیستو فراتر از کمربندهای تابش اصلی مشتری می‌چرخد، که آن را ایمن‌ترین ماه‌های گالیله‌ای برای اکتشاف انسانی در آینده می‌سازد — گاهی اوقات آن را ماه \'دروازه\' می‌نامند.
+    </string>
+    <string name="object_info_callisto_distance" translation_description="Distance to Callisto shown in the info card. Translate units if appropriate for your locale.">۱٬۸۸۲٬۷۰۰ کیلومتر از مشتری</string>
+    <string name="object_info_callisto_size" translation_description="Physical size of Callisto shown in the info card. Translate units if appropriate for your locale.">قطر ۴٬۸۲۱ کیلومتر</string>
+
+    <!-- Moons of Mars -->
+    <string name="object_info_phobos_description" translation_description="Description of Phobos shown in the info card. Translate this text.">
+    فوبوس بزرگ‌تر و درونی‌ترین ماهواره مریخ است که نزدیک‌تر از هر ماهواره دیگری در منظومه شمسی به سیاره خود می‌چرخد. این جسمی نامنظم‌الشکل است که دارای شیارها و دهانه‌های فراوان است و تصور می‌رود که یک سیارک گرفتار شده باشد.
+    </string>
+    <string name="object_info_phobos_funfact" translation_description="Fun fact about Phobos shown in the info card. Translate this text.">
+    فوبوس به سرعت به دور مریخ می‌چرخد، بنابراین از غرب طلوع می‌کند و در شرق غروب می‌کند — و آهسته به سمت درون حرکت می‌کند و در حدود ۵۰ میلیون سال آینده یا به مریخ برخورد خواهد کرد یا به حلقه‌ای تبدیل خواهد شد.
+    </string>
+    <string name="object_info_phobos_distance" translation_description="Distance to Phobos shown in the info card. Translate units if appropriate for your locale.">۹٬۳۷۶ کیلومتر از مریخ</string>
+    <string name="object_info_phobos_size" translation_description="Physical size of Phobos shown in the info card. Translate units if appropriate for your locale.">۲۷ × ۲۲ × ۱۸ کیلومتر</string>
+
+    <string name="object_info_deimos_description" translation_description="Description of Deimos shown in the info card. Translate this text.">
+    دیموس کوچک‌تر و بیرونی‌تر از دو ماه مریخ است که سطح صاف و پوشیده از گرد و غبار آن به آن ظاهری گرد‌تر از فوبوس می‌دهد. مانند همراه خود، تصور می‌رود که یک سیارک گرفتار شده از کمربند بیرونی است.
+    </string>
+    <string name="object_info_deimos_funfact" translation_description="Fun fact about Deimos shown in the info card. Translate this text.">
+    دیموس آنقدر کوچک و دور است که از سطح مریخ تنها مانند یک ستاره روشن به نظر می‌رسد و حدود ۳۰ ساعت طول می‌کشد تا به آرامی در شب آسمان حرکت کند.
+    </string>
+    <string name="object_info_deimos_distance" translation_description="Distance to Deimos shown in the info card. Translate units if appropriate for your locale.">۲۳٬۴۶۰ کیلومتر از مریخ</string>
+    <string name="object_info_deimos_size" translation_description="Physical size of Deimos shown in the info card. Translate units if appropriate for your locale.">۱۵ × ۱۲ × ۱۱ کیلومتر</string>
+
+    <!-- Major Moons of Saturn -->
+    <string name="object_info_titan_description" translation_description="Description of Titan shown in the info card. Translate this text.">
+    تیتان بزرگ‌ترین ماه زحل و دومین ماه بزرگ منظومه شمسی است. این تنها ماهی است که می‌دانیم دارای جو متراکم است — یک پتوی ضخیم نیتروژن آمیخته با متان — و تنها جهانی فراتر از زمین است که دارای دریاهای مایع پایدار بر روی سطح خود است.
+    </string>
+    <string name="object_info_titan_funfact" translation_description="Fun fact about Titan shown in the info card. Translate this text.">
+    دریاچه‌ها و دریاهای تیتان به جای آب، پر از متان و اتان مایع در دمای سردی −179 درجه سلسیوس هستند. ماموریت چرخ‌پروانه‌ای Dragonfly ناسا، که قرار است در سال 2034 وارد شود، بین مکان‌های مختلف سطح تیتان پرواز خواهد کرد تا به دنبال شیمیای حیات باشد.
+    </string>
+    <string name="object_info_titan_distance" translation_description="Distance to Titan shown in the info card. Translate units if appropriate for your locale.">۱٬۲۲۱٬۸۷۰ کیلومتر از زحل</string>
+    <string name="object_info_titan_size" translation_description="Physical size of Titan shown in the info card. Translate units if appropriate for your locale.">قطر ۵٬۱۵۱ کیلومتر</string>
+
+    <string name="object_info_rhea_description" translation_description="Description of Rhea shown in the info card. Translate this text.">
+    رئا دومین ماه بزرگ زحل است و جهانی سنگین‌خطی از یخ و سنگ. سطح کهن و رنگ‌پریده آن برخی از خالص‌ترین دهانه‌های برخوردی منظومه شمسی را حفظ می‌کند، همراه با صخره‌های یخی درخشان جایی که ریزش‌های خاکی مواد تازه را از زیر سطح آشکار کرده‌اند.
+    </string>
+    <string name="object_info_rhea_funfact" translation_description="Fun fact about Rhea shown in the info card. Translate this text.">
+    در سال ۲۰۰۸، داده‌های کاسینی نشان داد که رئا ممکن است یک حلقه نازک از ذرات را در اطراف خود داشته باشد — که آن را به اولین ماه شناخته‌شده‌ای تبدیل می‌کند که سیستم حلقه‌ای خود را دارد. اگر تأیید شود، این یک کشف قابل‌توجه خواهد بود؛ شواهد هنوز یک حوزه فعال تحقیق است.
+    </string>
+    <string name="object_info_rhea_distance" translation_description="Distance to Rhea shown in the info card. Translate units if appropriate for your locale.">۵۲۷٬۱۰۸ کیلومتر از زحل</string>
+    <string name="object_info_rhea_size" translation_description="Physical size of Rhea shown in the info card. Translate units if appropriate for your locale.">قطر ۱٬۵۲۷ کیلومتر</string>
+
+    <string name="object_info_tethys_description" translation_description="Description of Tethys shown in the info card. Translate this text.">
+    تتیس یک ماه یخی زحل است که دو ویژگی درخشان آن را تعریف می‌کند: دهانه‌ی عظیم اودیسئوس که ۴۰۰ کیلومتر عرض دارد و تقریباً یک سوم سطح ماه را پوشش می‌دهد، و کانیون ایتاکا چاسما که سه‌چهارم راه دور کره را امتداد می‌یابد.
+    </string>
+    <string name="object_info_tethys_funfact" translation_description="Fun fact about Tethys shown in the info card. Translate this text.">
+    تتیس تقریباً یخ آب خالص است — یکی از کمترین چگالی‌های هر ماه در منظومه شمسی را دارد، تنها کمی متراکم‌تر از آب یخ‌زده. شکاف ایتاکا ممکن است زمانی تشکیل شده باشد که درون‌ماده یخ‌زده و منبسط شده، پوسته روپوشی را از درون ترک‌دار کرده باشد.
+    </string>
+    <string name="object_info_tethys_distance" translation_description="Distance to Tethys shown in the info card. Translate units if appropriate for your locale.">۲۹۴٬۶۱۹ کیلومتر از زحل</string>
+    <string name="object_info_tethys_size" translation_description="Physical size of Tethys shown in the info card. Translate units if appropriate for your locale.">قطر ۱٬۰۶۲ کیلومتر</string>
+
+    <string name="object_info_dione_description" translation_description="Description of Dione shown in the info card. Translate this text.">
+    دیون یک ماه یخی زحل است که صورت پیشرو آن بسیار دارای حفره و نیمکره عقب آن پر از صخره‌های یخی درخشان است — خطوط شکستگی که نیروهای تکتونیکی باستانی یخ تازه را از زیر سطح آشکار کردند. داده‌های گرانشی کاسینی اشاره‌ای به اقیانوس مایع زیرسطحی زیر پوسته دارند.
+    </string>
+    <string name="object_info_dione_funfact" translation_description="Fun fact about Dione shown in the info card. Translate this text.">
+    دیون مدار خود را با دو ماه کوچک، هلن و پولیدوسس، به اشتراک می‌گذارد که در نقاط تعادل گرانشی به نام نقاط لاگرانژ، 60 درجه جلوتر و عقب‌تر قفل شده‌اند. هلن به‌ویژه می‌تواند در تصاویر کاسینی مانند یک مسافر کیهانی در حال سوار شدن دیده شود.
+    </string>
+    <string name="object_info_dione_distance" translation_description="Distance to Dione shown in the info card. Translate units if appropriate for your locale.">۳۷۷٬۳۹۶ کیلومتر از زحل</string>
+    <string name="object_info_dione_size" translation_description="Physical size of Dione shown in the info card. Translate units if appropriate for your locale.">قطر ۱٬۱۲۲ کیلومتر</string>
+
+    <string name="object_info_iapetus_description" translation_description="Description of Iapetus shown in the info card. Translate this text.">
+    یاپتوس یکی از متمایزترین ماه‌های زحل است: نیمکره پیشرو آن با ماده سیاه‌رنگ تیره‌ای مانند زغال پوشیده شده است، در حالی که نیمکره عقب‌رو آن یخ سفید درخشان است. این ظاهر دو‌رنگ شدید هنگام کشف ماه توسط جیوانی کاسینی در سال ۱۶۷۱ گیج‌کننده بود، و تضاد آن قدر شدید است که در تلسکوپ‌های کوچک نیز قابل مشاهده است.
+    </string>
+    <string name="object_info_iapetus_funfact" translation_description="Fun fact about Iapetus shown in the info card. Translate this text.">
+    یاپتوس دارای یک تاج استوایی بلند است که تا ۲۰ کیلومتر بالا می‌رود — بلندتر از هر کوهی روی زمین — که هزاران کیلومتر دور استوای آن امتداد دارد. منشأ آن نامعلوم است: ممکن است باقی‌مانده یک حلقه فروریخته باشد، یا چین‌خوردگی تکتونیکی باستانی، که زمانی شکل گرفت که این ماه بسیار سریع‌تر می‌چرخید.
+    </string>
+    <string name="object_info_iapetus_distance" translation_description="Distance to Iapetus shown in the info card. Translate units if appropriate for your locale.">۳٬۵۶۰٬۸۲۰ کیلومتر از زحل</string>
+    <string name="object_info_iapetus_size" translation_description="Physical size of Iapetus shown in the info card. Translate units if appropriate for your locale.">قطر ۱٬۴۶۹ کیلومتر</string>
+
+    <!-- Moon of Neptune -->
+    <string name="object_info_triton_description" translation_description="Description of Triton shown in the info card. Translate this text.">
+    تریتون بزرگ‌ترین ماه نپتون و یکی از فوق‌العاده‌ترین اجرام منظومه شمسی است. این ماه به‌صورت معکوس به دور نپتون می‌چرخد — در جهتی مخالف چرخش خود سیاره — که نشانه‌ای قوی از این است که در دوران اولیه تاریخ نپتون از منطقه بیرونی منظومه شمسی، احتمالاً از کمربند کویپر، به دام افتاده است.
+    </string>
+    <string name="object_info_triton_funfact" translation_description="Fun fact about Triton shown in the info card. Translate this text.">
+    علیرغم دمای سطح آن که −۲۳۵ درجه سلسیوس است — سردترین دمایی که بر روی هر جسمی که توسط فضاپیما بازدید شده اندازه‌گیری شده است — ویجیجر ۲ در سال ۱۹۸۹ چشمه‌های نیتروژن فعال را بر روی تریتون کشف کرد. خطوط تیره بر روی سطح نشان‌دهنده جایی است که ستون‌های گاز و مواد تیره به کیلومتری در جو نازک منفجر شدند.
+    </string>
+    <string name="object_info_triton_distance" translation_description="Distance to Triton shown in the info card. Translate units if appropriate for your locale.">۳۵۴٬۷۵۹ کیلومتر از نپتون</string>
+    <string name="object_info_triton_size" translation_description="Physical size of Triton shown in the info card. Translate units if appropriate for your locale.">قطر ۲٬۷۰۷ کیلومتر</string>
+
+    <!-- Major Moons of Uranus -->
+    <string name="object_info_titania_description" translation_description="Description of Titania shown in the info card. Translate this text.">
+    تیتانیا بزرگ‌ترین ماه اورانوس و هشتمین ماه بزرگ منظومه شمسی است. سطح آن ترکیبی از دشت‌های باستانی دارای حفره و شیارها و دره‌های جوان‌تر را نشان می‌دهد که نشان‌دهنده تاریخ زمین‌شناسی پیچیده‌ای است که ممکن است شامل فعالیت تکتونیکی گذشته‌ای باشد که پوسته یخی را تغییر شکل داده است.
+    </string>
+    <string name="object_info_titania_funfact" translation_description="Fun fact about Titania shown in the info card. Translate this text.">
+    تمام ماه‌های اورانوس به نام شخصیت‌های شکسپیر و الکساندر پوپ نام‌گذاری شده‌اند — تیتانیا ملکه پریان در «رویای تابستان شب» است. این یکی از بسیار کم ماه‌های اصلی سیاره‌ای است که به نام شخصیتی از اساطیر یونانی یا رومی نام‌گذاری نشده است.
+    </string>
+    <string name="object_info_titania_distance" translation_description="Distance to Titania shown in the info card. Translate units if appropriate for your locale.">۴۳۵٬۹۱۰ کیلومتر از اورانوس</string>
+    <string name="object_info_titania_size" translation_description="Physical size of Titania shown in the info card. Translate units if appropriate for your locale.">قطر ۱٬۵۷۸ کیلومتر</string>
+
+    <string name="object_info_oberon_description" translation_description="Description of Oberon shown in the info card. Translate this text.">
+    اوبرون دورترین ماه از پنج ماه بزرگ اورانوس است و یکی از بیشترین دارای حفره‌ای است، با سطحی باستانی که از اوایل منظومه شمسی تغییر کمی کرده است. چندین از حفره‌های برخوردی بزرگ آن دارای مواد تاریک در کف خود هستند، احتمالاً ذخایر آلی که توسط اجسام برخوردی آورده شده‌اند.
+    </string>
+    <string name="object_info_oberon_funfact" translation_description="Fun fact about Oberon shown in the info card. Translate this text.">
+    اوبرون میزبان کوهی است که حدود ۶ کیلومتر از دشت‌های اطراف بلند می‌شود — قابل مقایسه با بلندترین قله‌های زمین. برخلاف کوه‌های زمین، که از طریق تکتونیک صفحات تشکیل شده‌اند، این ویژگی ممکن است قله مرکزی یک دهانه برخوردی باستانی یا بقایای فعالیت آتشفشانی اولیه باشد.
+    </string>
+    <string name="object_info_oberon_distance" translation_description="Distance to Oberon shown in the info card. Translate units if appropriate for your locale.">۵۸۳٬۵۲۰ کیلومتر از اورانوس</string>
+    <string name="object_info_oberon_size" translation_description="Physical size of Oberon shown in the info card. Translate units if appropriate for your locale.">قطر ۱٬۵۲۳ کیلومتر</string>
+
+    <string name="object_info_ariel_description" translation_description="Description of Ariel shown in the info card. Translate this text.">
+    اریل جوان‌ترین و درخشان‌ترین سطح را در میان پنج ماه بزرگ اورانوس دارد. منظره‌ی آن توسط شبکه‌ای از دره‌های عمیق و دشت‌های صاف تسلط دارد که مدت‌ها پیش توسط سیال — احتمالاً آب یا مخلوط‌های آب و آمونیاک — که از درون بیرون می‌آمد و زمین‌های باستانی را سیل‌زده کرد، دوباره شکل گرفتند.
+    </string>
+    <string name="object_info_ariel_funfact" translation_description="Fun fact about Ariel shown in the info card. Translate this text.">
+    دره‌های آریل می‌توانند تا ۱۰ کیلومتر عمق داشته باشند — بسیار عمیق‌تر از دره بزرگ. مشاهدات تلسکوپ فضایی جیمز وب از آن پس یخ دی‌اکسید کربن را بر روی سطح آریل تشخیص داده‌اند، که نشان‌دهنده شیمی سطحی جاری است که توسط ذرات باردار از میدان مغناطیسی اورانوس هدایت می‌شود.
+    </string>
+    <string name="object_info_ariel_distance" translation_description="Distance to Ariel shown in the info card. Translate units if appropriate for your locale.">۱۹۱٬۰۲۰ کیلومتر از اورانوس</string>
+    <string name="object_info_ariel_size" translation_description="Physical size of Ariel shown in the info card. Translate units if appropriate for your locale.">قطر ۱٬۱۵۸ کیلومتر</string>
+
+    <string name="object_info_umbriel_description" translation_description="Description of Umbriel shown in the info card. Translate this text.">
+    آمبریل تاریکترین یکی از پنج ماه بزرگ اورانوس است که سطح یکنواختی دارد که قدیمی و پر از دهانه‌های برخوردی است و نشانه‌ای از بازسازی زمین‌شناختی دیده شده در ماه‌های همسایه ندارد. به نظر می‌رسد که درون‌ماده آن از ابتدای تاریخ منظومه شمسی سرد و یخ‌زده باقی مانده است.
+    </string>
+    <string name="object_info_umbriel_funfact" translation_description="Fun fact about Umbriel shown in the info card. Translate this text.">
+    برجسته‌ترین ویژگی آمبریل، وندا است؛ یک حلقه روشن به قطر حدود ۱۴۰ کیلومتر نزدیک استوای این ماه. این حلقه توسط فضاپیمای ووجیجر ۲ در سال ۱۹۸۶ کشف شد، اما ماهیت دقیق وندا همچنان رازآلود است — ممکن است کف یک دهانه باشد که با دی‌اکسید کربن یا یخ آمونیاک پوشیده شده است که مدت‌ها پس از برخورد تشکیل‌دهنده آن ته‌نشین شده است.
+    </string>
+    <string name="object_info_umbriel_distance" translation_description="Distance to Umbriel shown in the info card. Translate units if appropriate for your locale.">۲۶۶٬۳۰۰ کیلومتر از اورانوس</string>
+    <string name="object_info_umbriel_size" translation_description="Physical size of Umbriel shown in the info card. Translate units if appropriate for your locale.">قطر ۱٬۱۷۰ کیلومتر</string>
+
+    <!-- Globular clusters already on the map -->
+    <string name="object_info_omega_centauri_description" translation_description="Description of Omega Centauri shown in the info card. Translate this text.">
+    امگا سنتاوری بزرگ‌ترین و پرجرم‌ترین خوشه کروی است که به دور راه شیری می‌چرخد و تقریباً ۱۰ میلیون ستاره را در کره‌ای به قطر حدود ۱۵۰ سال نوری در خود جای داده است. این خوشه به‌راحتی برای چشم غیرمسلح به‌عنوان یک ستاره مبهم در صورت فلکی قنطورس قابل مشاهده است و از طریق دوربین‌های دوچشمی یا هر تلسکوپی به یک کره دلربای ستاره‌ها تبدیل می‌شود.
+    </string>
+    <string name="object_info_omega_centauri_funfact" translation_description="Fun fact about Omega Centauri shown in the info card. Translate this text.">
+    برخلاف خوشه‌های کروی معمولی، امگا سنتاوری ستاره‌هایی با سن‌ها و ترکیب‌های شیمیایی متفاوتی را در خود دارد — نشانه‌ای بر این که ممکن است هسته‌ی برهنه‌شده‌ی یک کهکشان کوتوله باشد که میلیاردها سال پیش توسط راه شیری پاره شده و بلعیده شده است. حتی ممکن است یک سیاهچاله میانی‌جرم در مرکز خود داشته باشد.
+    </string>
+    <string name="object_info_omega_centauri_distance" translation_description="Distance to Omega Centauri shown in the info card. Translate units if appropriate for your locale.">۱۷٬۰۹۰ سال نوری</string>
+    <string name="object_info_omega_centauri_size" translation_description="Physical size of Omega Centauri shown in the info card. Translate units if appropriate for your locale.">قطر تقریبی ۱۵۰ سال نوری</string>
+
+    <!-- Deep-sky objects: new catalog additions -->
+    <string name="object_info_hyades_description" translation_description="Description of the Hyades star cluster shown in the info card. Translate this text.">
+    هیادس نزدیک‌ترین خوشه ستاره‌ای باز به منظومه شمسی است و یکی از پرمطالعه‌ترین خوشه‌های ستاره‌ای در نجوم. این خوشه به‌عنوان الگوی V شکل ستاره‌هایی که صورت فلکی ثور را تشکیل می‌دهند، با چشم غیرمسلح قابل مشاهده است و شامل صدها ستاره است که در حدود ۵ درجه از آسمان پخش شده‌اند.
+    </string>
+    <string name="object_info_hyades_funfact" translation_description="Fun fact about the Hyades shown in the info card. Translate this text.">
+    ستاره نارنجی درخشان آلدبران به نظر می‌رسد در درون خوشه پروین (هیادس) قرار دارد، اما در واقع یک جسم پیش‌زمینه است که در نصف فاصله قرار دارد — این یک تراز‌بندی تصادفی است. خوشه واقعی حدود ۱۵۳ سال نوری فاصله دارد و شامل اولین ستاره‌هایی است که فاصله آن‌ها توسط پارالاکس از ماهواره هیپارکوس اندازه‌گیری شد.
+    </string>
+    <string name="object_info_hyades_distance" translation_description="Distance to the Hyades shown in the info card. Translate units if appropriate for your locale.">۱۵۳ سال نوری</string>
+    <string name="object_info_hyades_size" translation_description="Angular size of the Hyades shown in the info card.">تقریبی ۵ درجه در سراسر</string>
+
+    <string name="object_info_coma_star_cluster_description" translation_description="Description of the Coma Berenices Star Cluster shown in the info card. Translate this text.">
+    خوشه ستاره‌ای کوما برنیسز یک خوشه باز نزدیک است که حدود ۴۰ ستاره را در خود دارد که به طور شل در حدود ۵ درجه از آسمان پراکنده شده‌اند و به راحتی در شرایط تاریک برای چشم غیر مسلح به عنوان یک مه نرم قابل رؤیت است. این سومین خوشه باز نزدیک‌تر به منظومه شمسی است و منبع صورت فلکی کوما برنیسز می‌باشد.
+    </string>
+    <string name="object_info_coma_star_cluster_funfact" translation_description="Fun fact about the Coma Berenices Star Cluster shown in the info card. Translate this text.">
+    ناظران باستانی این خوشه را موی ملکه برنیس دوم مصر می‌دیدند، که به‌طور افسانه‌ای موهای طلایی خود را برای بازگشت سالم شوهرش از جنگ قربانی کرد. بطلمیوس سوم گویا این صورت‌فلک غیرمعمول را حدود سال ۲۴۵ پیش از میلاد به‌طور رسمی به افتخار او نام‌گذاری کرد.
+    </string>
+    <string name="object_info_coma_star_cluster_distance" translation_description="Distance to the Coma Star Cluster shown in the info card. Translate units if appropriate for your locale.">۲۸۸ سال نوری</string>
+    <string name="object_info_coma_star_cluster_size" translation_description="Angular size of the Coma Star Cluster shown in the info card.">تقریبی ۵ درجه در سراسر</string>
+
+    <string name="object_info_coathanger_description" translation_description="Description of the Coathanger asterism shown in the info card. Translate this text.">
+    کاپشن‌آویز یک ستاره‌شناسی چشم‌نواز است که از ده ستاره در صورت‌فلکی روباه تشکیل شده است و شکلی بی‌شباهت ندارد: شش ستاره در یک خط مستقیم با چهار ستاره آویزان در زیر به شکل قلاب، دقیقاً شبیه یک کاپشن‌آویز وارونه. این یکی از بهترین اجرام دوربین‌دوچشمی در آسمان تابستان است که به‌طور منسجم در میدان دید معمولی دوربین‌دوچشمی جای می‌گیرد.
+    </string>
+    <string name="object_info_coathanger_funfact" translation_description="Fun fact about the Coathanger shown in the info card. Translate this text.">
+    علیرغم اینکه شبیه یک خوشه ستاره‌ای است، ستاره‌های Coathanger از نظر فیزیکی با یکدیگر مرتبط نیستند — آنها در فاصله‌های بسیار متفاوتی قرار دارند و صرفاً یک اتفاق دید خطی هستند. خوشه Brocchi توسط دالمیرو بروکی در دهه ۱۹۲۰ فهرست‌بندی شد، و اولین تلسکوپ فضایی که آن را تصویر برداری کرد Hipparcos بود، که تایید کرد ستاره‌ها بی‌ارتباط هستند.
+    </string>
+    <string name="object_info_coathanger_distance" translation_description="Distance to the Coathanger shown in the info card. Translate units if appropriate for your locale.">تقریبی ۴۲۰ سال نوری (ستاره درخشان‌ترین)</string>
+    <string name="object_info_coathanger_size" translation_description="Angular size of the Coathanger shown in the info card.">تقریبی ۱ درجه در سراسر</string>
+
+    <string name="object_info_helix_nebula_description" translation_description="Description of the Helix Nebula shown in the info card. Translate this text.">
+    سحابی هلیکس بزرگ‌ترین سحابی سیاره‌ای از نظر اندازه ظاهری در آسمان است — پوسته‌ای از گاز که توسط ستاره‌ای شبیه خورشید در پایان عمرش تخلیه می‌شود. با پهنای حدود نیم درجه، در دوربین‌های دوچشمی به‌عنوان درخشش دایره‌ای ضعیف در برج دلو قابل مشاهده است و به دلیل ظاهرش در عکس‌های با نوردهی طولانی، چشم خدا نام‌گذاری شده است.
+    </string>
+    <string name="object_info_helix_nebula_funfact" translation_description="Fun fact about the Helix Nebula shown in the info card. Translate this text.">
+    در مرکز سحابی هلیکس یکی از نزدیک‌ترین ستاره‌های سفید معروف به زمین قرار دارد — یک بقایای ستاره‌ای بسیار داغ که اندازه‌ای تقریباً برابر با زمین دارد اما جرمی برابر با خورشید. این سرنوشتی است که خورشید ما را در حدود پنج میلیارد سال دیگر در انتظار است.
+    </string>
+    <string name="object_info_helix_nebula_distance" translation_description="Distance to the Helix Nebula shown in the info card. Translate units if appropriate for your locale.">۶۵۰ سال نوری</string>
+    <string name="object_info_helix_nebula_size" translation_description="Angular size of the Helix Nebula shown in the info card.">قطر تقریبی ۳ سال نوری</string>
+
+    <string name="object_info_sculptor_galaxy_description" translation_description="Description of the Sculptor Galaxy shown in the info card. Translate this text.">
+    کهکشان مجسمه‌ساز یکی از درخشان‌ترین و زیباترین کهکشان‌های مارپیچی دیده‌شده از لبه از زمین است که به‌عنوان یک درخشش کشیده‌شده در صورت‌فلکی جنوبی مجسمه‌ساز ظاهر می‌شود. این یکی از نزدیک‌ترین کهکشان‌های انفجار ستاره‌ای است — کهکشانی که در حال تحمل انفجار شدید تشکیل ستاره است — که برای ستاره‌شناسان آماتور با دوربین‌های دوچشمی از آسمان‌های تاریک قابل‌رؤیت است.
+    </string>
+    <string name="object_info_sculptor_galaxy_funfact" translation_description="Fun fact about the Sculptor Galaxy shown in the info card. Translate this text.">
+    کهکشان مجسمه‌گر یکی از درخشان‌ترین اعضای گروه مجسمه‌گر است — نزدیک‌ترین گروه کهکشانی به گروه محلی ما. منطقه تولد ستاره مرکزی آن ستاره‌های جدید را با نرخی چندین برابر بیشتر از راه شیری تولید می‌کند، که توسط برهم‌کنش‌های گذشته با کهکشان‌های همسایه رانده می‌شود.
+    </string>
+    <string name="object_info_sculptor_galaxy_distance" translation_description="Distance to the Sculptor Galaxy shown in the info card. Translate units if appropriate for your locale.">۱۱٫۴ میلیون سال نوری</string>
+    <string name="object_info_sculptor_galaxy_size" translation_description="Physical size of the Sculptor Galaxy shown in the info card. Translate units if appropriate for your locale.">تقریبی ۹۰٬۰۰۰ سال نوری در سراسر</string>
+
+    <string name="object_info_blue_snowball_nebula_description" translation_description="Description of the Blue Snowball Nebula shown in the info card. Translate this text.">
+    Blue Snowball یک سحابی سیاره‌ای در صورت فلکی آندرومدا است — پوسته‌ای درخشان از گاز که توسط یک ستاره مرتضی دفع شده است. با قدر ظاهری ۸٫۳، یکی از روشن‌ترین و رنگین‌ترین سحابی‌های سیاره‌ای در آسمان است و حتی در تلسکوپ‌های کوچک به صورت یک دیسک آبی-سبز زنده به نظر می‌رسد. شکل متقارن و رنگ شدید آن آن را در میان ناظران مورد علاقه قرار می‌دهد.
+    </string>
+    <string name="object_info_blue_snowball_nebula_funfact" translation_description="Fun fact about the Blue Snowball Nebula shown in the info card. Translate this text.">
+    رنگ درخشان کره برفی آبی از اکسیژن دوبار یونیزه شده ناشی می‌شود که در طول موج سبز خاصی درخشان است، در ترکیب با انتشار هیدروژن — پالت رنگی که چشم انسان آن را آبی‌سبز درک می‌کند. ستاره سفید مرکزی دمای سطحی حدود ۱۰۰٬۰۰۰ درجه سلسیوس دارد، به اندازه‌ای گرم که گاز اطراف را در این فاصله یونیزه کند.
+    </string>
+    <string name="object_info_blue_snowball_nebula_distance" translation_description="Distance to the Blue Snowball Nebula shown in the info card. Translate units if appropriate for your locale.">تقریبی ۲٬۵۰۰ سال نوری</string>
+    <string name="object_info_blue_snowball_nebula_size" translation_description="Physical size of the Blue Snowball Nebula shown in the info card. Translate units if appropriate for your locale.">قطر تقریبی ۰٫۸ سال نوری</string>
+
+    <string name="object_info_ghost_of_jupiter_description" translation_description="Description of the Ghost of Jupiter planetary nebula shown in the info card. Translate this text.">
+    Ghost of Jupiter یک سحابی سیاره‌ای روشن در صورت فلکی هیدرا است که اندازه ظاهری آن شبیه سیاره مشتری است — بنابراین نام آن از این گرفته شده است. با قدر ۸٫۶، یکی از قابل‌دسترس‌ترین سحابی‌های سیاره‌ای آسمان برای تلسکوپ‌های کوچک است و یک دیسک واضح و اشاره‌ای از رنگ در دیافراگم‌های متوسط را نشان می‌دهد.
+    </string>
+    <string name="object_info_ghost_of_jupiter_funfact" translation_description="Fun fact about the Ghost of Jupiter shown in the info card. Translate this text.">
+    شبح مشتری دارای یک پوسته درونی روشن است که توسط یک هاله بیرونی کمرنگ احاطه شده است — ساختار دو پوسته‌ای که نشان می‌دهد ستاره در حال مرگ حداقل در دو دوره جداگانه گاز دفع کرده است. ستاره مرکزی آن یکی از داغ‌ترین کوتوله‌های سفید شناخته‌شده است، با دمای سطح تخمین‌زده‌شده حدود ۷۵٬۰۰۰ درجه سلسیوس.
+    </string>
+    <string name="object_info_ghost_of_jupiter_distance" translation_description="Distance to the Ghost of Jupiter shown in the info card. Translate units if appropriate for your locale.">تقریبی ۱٬۴۰۰ سال نوری</string>
+    <string name="object_info_ghost_of_jupiter_size" translation_description="Physical size of the Ghost of Jupiter shown in the info card. Translate units if appropriate for your locale.">قطر تقریبی ۱ سال نوری</string>
+
+    <string name="object_info_saturn_nebula_description" translation_description="Description of the Saturn Nebula shown in the info card. Translate this text.">
+    سحابانی زحل یک سحابانی سیاره‌ای در برج دلو است که به دلیل شباهتش به سیاره زحل نام‌گذاری شده است — بسط‌هایی به نام انسه از هر دو طرف بیرون زده و در تلسکوپ‌های متوسط قابل مشاهده هستند. با قدر ظاهری ۸٫۰، یکی از درخشان‌ترین سحابانی‌های سیاره‌ای در آسمان است و ساختار پیچیده‌ای را در ابزارهای بزرگ‌تر نشان می‌دهد.
+    </string>
+    <string name="object_info_saturn_nebula_funfact" translation_description="Fun fact about the Saturn Nebula shown in the info card. Translate this text.">
+    ویلیام هرشل سحابی زحل را در سال ۱۷۸۲ کشف کرد و ظاهر شبیه زحل را مشاهده کرد. مشاهدات مدرن حداقل چهار پوسته متمایز از گاز را در اطراف ستاره سفید سوخته مرکزی نشان می‌دهد که نشان‌دهنده چندین دوره از از دست رفتن جرم در مراحل نهایی زندگی ستاره است.
+    </string>
+    <string name="object_info_saturn_nebula_distance" translation_description="Distance to the Saturn Nebula shown in the info card. Translate units if appropriate for your locale.">تقریبی ۵٬۰۰۰ سال نوری</string>
+    <string name="object_info_saturn_nebula_size" translation_description="Physical size of the Saturn Nebula shown in the info card. Translate units if appropriate for your locale.">تقریبی ۱ سال نوری در سراسر</string>
+
+    <string name="object_info_ngc_2903_description" translation_description="Description of the galaxy NGC 2903 shown in the info card. Translate this text.">
+    NGC 2903 یک کهکشان مارپیچی میلهای درخشان در صورت فلکی شیر است که اغلب «شیء مسیه‌ای که مسیه از دست داد» نام‌گذاری می‌شود — این یکی از برجسته‌ترین کهکشان‌های آسمان است که در فهرست معروف او گنجانده نشده است. با قدر ظاهری ۸٫۹، این کهکشان به راحتی در دوربین‌های دوچشمی قابل مشاهده است و ساختار مارپیچی زیبایی را در تلسکوپ‌های متوسط نشان می‌دهد.
+    </string>
+    <string name="object_info_ngc_2903_funfact" translation_description="Fun fact about NGC 2903 shown in the info card. Translate this text.">
+    NGC 2903 یکی از بالاترین غلظت‌های "نقاط داغ" تشکیل ستاره را در منطقه میله مرکزی کهکشان دارد — خوشه‌های متراکم ستاره‌های جوان و پرجرم که توسط تشکیل ستاره شدید روشن شده‌اند. این کهکشان به‌عنوان معیاری برای مطالعه فعالیت انفجار ستاره‌ای در کهکشان‌های مارپیچی با میله استفاده می‌شود.
+    </string>
+    <string name="object_info_ngc_2903_distance" translation_description="Distance to NGC 2903 shown in the info card. Translate units if appropriate for your locale.">۳۰ میلیون سال نوری</string>
+    <string name="object_info_ngc_2903_size" translation_description="Physical size of NGC 2903 shown in the info card. Translate units if appropriate for your locale.">تقریبی ۸۰٬۰۰۰ سال نوری در سراسر</string>
+
+    <!-- Meteor showers -->
+    <string name="object_info_quadrantids_description" translation_description="Description of the Quadrantids meteor shower shown in the info card. Translate this text.">
+    کوادرانتیدها یک بارش شهابی پرتعداد ژانویه‌ای است که دارای یک قله بسیار تیز و کوتاه مدت است که تنها چند ساعت طول می‌کشد. منبع تابش در صورت فلکی بوئوتس قرار دارد، نزدیک موقعیت صورت فلکی منسوخ شده کوادرانس موراليس که بارش به نام آن نام‌گذاری شده است. تحت شرایط ایده‌آل، تا ۱۲۰ شهاب در ساعت قابل مشاهده است.
+    </string>
+    <string name="object_info_quadrantids_funfact" translation_description="Fun fact about the Quadrantids meteor shower shown in the info card. Translate this text.">
+    برخلاف بیشتر بارش‌های بزرگ که از دنباله‌دارها منشأ می‌گیرند، جسم مادری کوادرانتیدها سیارک ۲۰۰۳ EH1 است — که تصور می‌رود هسته خفت‌شده‌ای از دنباله‌داری باشد که قرن‌ها پیش سوخته است. وجود آن تنها در سال ۲۰۰۳ تأیید شد.
+    </string>
+
+    <string name="object_info_lyrids_description" translation_description="Description of the Lyrids meteor shower shown in the info card. Translate this text.">
+    لیریدها یک بارش بهاری قابل اعتماد هستند که از نزدیکی ستاره روشن وگا در صورت فلکی لیرا تابش می‌کنند. آنها شهاب‌های سریع و نسبتاً روشن تولید می‌کنند که در حدود ۱۸ شهاب در ساعت به اوج می‌رسند و گاهی اوقات گلوله‌های آتشی ایجاد می‌کنند که دنباله‌های دودی درخشان به جا می‌گذارند.
+    </string>
+    <string name="object_info_lyrids_funfact" translation_description="Fun fact about the Lyrids meteor shower shown in the info card. Translate this text.">
+    لیریدها قدیمی‌ترین بارش شهابی است که به‌طور قابل‌اعتماد در تاریخ ثبت شده است. ستاره‌شناسان چینی در سال ۶۸۷ قبل از میلاد طوفانی از شهاب‌ها را که "مانند باران می‌بارید" مستند کردند. این تخریب‌ها از دنباله‌دار تاچر می‌آید که ۴۱۵ سال طول می‌کشد تا خورشید را دور بزند و آخرین بار در سال ۱۸۶۱ از منطقه داخلی منظومه شمسی عبور کرد.
+    </string>
+
+    <string name="object_info_aquariids_description" translation_description="Description of the Eta Aquariids meteor shower shown in the info card. Translate this text.">
+    اتا آکوارید‌ها یکی از دو بارش شهابی سالانه است که از دبری دنباله‌دار هالی تولید می‌شود. این بارش با حداکثر ۷۰ شهاب در ساعت به اوج می‌رسد و به شدت نیمکره جنوبی را ترجیح می‌دهد، جایی که شعاع آن قبل از طلوع آفتاب بالا می‌رود. ناظران شمالی نیز از نرخ قابل توجهی ۳۰ یا بیشتر در ساعت لذت می‌برند.
+    </string>
+    <string name="object_info_aquariids_funfact" translation_description="Fun fact about the Eta Aquariids meteor shower shown in the info card. Translate this text.">
+    شهاب‌های اتا آکواریدی با سرعت ۶۶ کیلومتر بر ثانیه حرکت می‌کنند — به اندازه‌ای سریع که هوای یونیزه‌شده‌ای که آن‌ها ایجاد می‌کنند می‌تواند برای چند ثانیه پس از رفتن شهاب درخشش کند. شما ممکن است گرد و غبار باستانی هالی را ببینید که در برابر چشمان شما می‌سوزد، گردی که در یکی از بسیاری بازدیدهای دنباله‌دار هزاران سال پیش ریخته شده است.
+    </string>
+
+    <string name="object_info_deltaaquariids_description" translation_description="Description of the Delta Aquariids meteor shower shown in the info card. Translate this text.">
+    دلتا آکوارید جنوبی در اواخر ژوئیه به اوج خود می‌رسد و بهترین دید آن از عرض‌های جغرافیایی گرمسیری و جنوبی است، جایی که تابش در برج دلو قبل از طلوع خورشید به ارتفاع زیادی می‌رسد. این شهاب‌ها جریانی پایدار از شهاب‌های متوسط‌سرعت را تولید می‌کنند که تا ۱۶ شهاب در ساعت می‌رسد، با تعداد کمی گلوله‌های آتشین درخشان.
+    </string>
+    <string name="object_info_deltaaquariids_funfact" translation_description="Fun fact about the Delta Aquariids meteor shower shown in the info card. Translate this text.">
+    جسم مادری دقیق بارش شهابی دلتا آکواریوس نامشخص باقی مانده است. نامزد اصلی دنباله‌دار ۹۶P/ماخولتس است، یک دنباله‌دار غیرمعمول با دوره کوتاه و مدار بسیار متمایل که به طرز قابل توجهی به خورشید نزدیک می‌شود — حتی نزدیک‌تر از سیاره عطارد.
+    </string>
+
+    <string name="object_info_perseids_description" translation_description="Description of the Perseids meteor shower shown in the info card. Translate this text.">
+    پرسئیدها محبوب‌ترین باران شهاب سنگی سال هستند که در شب‌های گرم ماه اگست با بیش از ۱۰۰ شهاب سنگ در ساعت به اوج می‌رسند. ذرات ریختی شده توسط دنباله‌دار سوئیفت-تاتل در ارتفاع بالای جو زمین می‌سوزند و شهاب سنگ‌های سریع و درخشانی تولید می‌کنند — بسیاری از آنها دنباله‌های درخشان پایدار را به جا می‌گذارند — که از صورت فلکی پرسئوس تابش می‌کنند.
+    </string>
+    <string name="object_info_perseids_funfact" translation_description="Fun fact about the Perseids meteor shower shown in the info card. Translate this text.">
+    سیارک مادر پرسئیدها، دنباله‌دار سوئیفت-تاتل، هسته‌ای به عرض ۲۶ کیلومتر دارد — بزرگ‌تر از جسمی که تصور می‌رود انقراض جمعی را که دوران دایناسورها را پایان داد، ایجاد کرده است. این دنباله‌دار آخرین بار در سال ۱۹۹۲ از درون منظومه شمسی عبور کرد و تا سال ۲۱۲۵ بازگشت نخواهد کرد.
+    </string>
+
+    <string name="object_info_orionids_description" translation_description="Description of the Orionids meteor shower shown in the info card. Translate this text.">
+    اوریونیدها دومین بارش شهابی است که هر سال توسط دنباله‌دار هالی تولید می‌شود و از نزدیکی باز بلند شده‌ی شکارچی (اوریون) تابش می‌کند. با حداکثر حدود ۲۵ شهاب در ساعت، این بارش برای شهاب‌های سریع و اغلب روشن شناخته شده است که اغلب مسیرهای یونیزاسیون درخشان را برای چند ثانیه باقی می‌گذارند.
+    </string>
+    <string name="object_info_orionids_funfact" translation_description="Fun fact about the Orionids meteor shower shown in the info card. Translate this text.">
+    دنباله‌دار هالی مسئول دو بارش شهابی سالانه است: اتا آکواریدها در ماه مه، زمانی که زمین از مسیر خروجی پس‌مانده دنباله‌دار عبور می‌کند، و اوریونیدها در ماه اکتبر، زمانی که زمین از مسیر ورودی عبور می‌کند. این دو بارش به ما اجازه می‌دهند تا دو بار در سال از غبار باستانی هالی نمونه بگیریم.
+    </string>
+
+    <string name="object_info_leonids_description" translation_description="Description of the Leonids meteor shower shown in the info card. Translate this text.">
+    لئونیدها از سیاهه (داس) شیر تابش می‌کنند و معمولاً حدود ۲۰ شهاب در ساعت تولید می‌کنند. آنها به خاطر طوفان‌های دیدنی معروف هستند که تقریباً هر ۳۳ سال زمانی که زمین از یک رشته غبار متراکم عبور می‌کند که توسط دنباله‌دار ۵۵P/تمپل-تاتل ریخته شده است، بروز می‌کنند. این طوفان‌ها می‌توانند هزاران شهاب در ساعت تولید کنند.
+    </string>
+    <string name="object_info_leonids_funfact" translation_description="Fun fact about the Leonids meteor shower shown in the info card. Translate this text.">
+    طوفان لئونیدی سال ۱۸۳۳ حدود ۱۰۰٬۰۰۰ شهاب در ساعت تولید کرد که ناظران در سراسر آمریکای شمالی را ترسانید و آنها می‌ترسیدند آسمان در آتش است. این رویداد مطالعه علمی بارش شهاب‌ها را آغاز کرد. طوفان‌های مشابهی در سال‌های ۱۹۶۶ و ۱۹۹۹ رخ داد.
+    </string>
+
+    <string name="object_info_puppidvelids_description" translation_description="Description of the Puppid-Velids meteor shower shown in the info card. Translate this text.">
+    پوپیدهای-ولیدها مجموعه‌ای پیچیده از باریکه‌های کوچک همپوشان هستند که از صورت‌های فلکی پوپیس و ولا در راه شیری جنوبی تابش می‌کنند. با اوج حدود ۱۰ شهاب سنگ در ساعت، بهترین مشاهده آن‌ها از نیمکره جنوبی است، جایی که نقطه تابش در آسمان دسامبر به ارتفاع زیادی می‌رسد.
+    </string>
+    <string name="object_info_puppidvelids_funfact" translation_description="Fun fact about the Puppid-Velids meteor shower shown in the info card. Translate this text.">
+    پوپیدهای-ولیدها احتمالاً ناشی از بقایای چندین دنباله‌دار مختلف به جای یک منبع واحد هستند، از جمله دنباله‌دار 26P/گریگ-اسکجلرپ. شعاع جنوبی آن‌ها برای ناظران در عرض‌های جغرافیایی بیشتر از حدود 40°N هرگز بالای افق بالا نمی‌رود، که این را به بارشی تبدیل می‌کند که بیشتر جهان به ندرت آن را می‌بیند.
+    </string>
+
+    <string name="object_info_geminids_description" translation_description="Description of the Geminids meteor shower shown in the info card. Translate this text.">
+    جمینیدها به طور گسترده‌ای بهترین بارش شهاب‌سنگ سال تلقی می‌شوند — فراوان (تا ۱۲۰ در ساعت)، قابل‌اعتماد، و فعال از اوایل شب به جای تنها بعد از نیمه‌شب. آنها از صورت‌فلکی جوزا تابش می‌کنند و طیف وسیعی از روشنایی شهاب‌سنگ را تولید می‌کنند، از جمله گلوله‌های آتشی درخشان.
+    </string>
+    <string name="object_info_geminids_funfact" translation_description="Fun fact about the Geminids meteor shower shown in the info card. Translate this text.">
+    بر خلاف دوش‌های شهابی بزرگ دیگر، شهاب‌های جوزایی از یک سیارک به جای دنباله‌دار منشأ می‌گیرند: سیارک ۳۲۰۰ فائتون، یک «دنباله‌دار سنگی» که مدارش از هر سیارک نام‌گذاری‌شده دیگری به خورشید نزدیک‌تر است. گرمای شدید ممکن است سطح سنگی آن را ترک‌دار کند و گردی را که دوش را تولید می‌کند، بیرون رانده کند.
+    </string>
+
+    <string name="object_info_ursids_description" translation_description="Description of the Ursids meteor shower shown in the info card. Translate this text.">
+    اورسیدها یک باران شهابی جزئی هستند که از صورت فلکی خرس کوچک، نزدیک ستاره شمالی (پولاریس) تابش می‌کنند و برای ناظران نیمکره شمالی دایره‌ای هستند — تمام شب بدون غروب قابل رؤیت هستند. آنها حول انقلاب زمستانی در حدود ۱۰ شهاب در ساعت به اوج می‌رسند و ستاره دنباله‌دار مادر آنها ۸P/تاتل است.
+    </string>
+    <string name="object_info_ursids_funfact" translation_description="Fun fact about the Ursids meteor shower shown in the info card. Translate this text.">
+    اورسیدها گاهی اوقات انفجارهای غیرمنتظره‌ای را بسیار بالاتر از نرخ معمول خود تولید می‌کنند. در سال‌های ۱۹۴۵ و دوباره در سال ۲۰۰۶، ناظران ۵۰ یا بیشتر شهاب سنگ در ساعت را ثبت کردند — پنج برابر بیشتر از اوج معمول. این افزایش‌ها زمانی رخ می‌دهند که زمین از یک نوار غیرمعمول متراکم از ریزه‌های پاشیده شده در طول نزدیک شدن دنباله‌دار تاتل عبور می‌کند.
+    </string>
+
+    <!-- Category 5: Top priority — objects on the map that lacked info cards -->
+    <string name="object_info_m47_description" translation_description="Description of the open star cluster M47 shown in the info card. Translate this text.">
+    M47 یک خوشه ستاره‌ای باز روشن و شل در صورت فلکی پوپیس است که به چشم غیر‌مسلح به راحتی قابل رؤیت و در دوربین دو چشمی بسیار جذاب است. تقریباً 50 ستاره در نیم درجه از آسمان پراکنده شده‌اند، و چندین ستاره غول نارنجی رنگ گرم را در برابر اعضای آبی-سفید ضعیف‌تر اضافه می‌کنند.
+    </string>
+    <string name="object_info_m47_funfact" translation_description="Fun fact about M47 shown in the info card. Translate this text.">
+    M47 یکی از اجرام "گمشده" مسیه بود — خطای اداری در مختصات اصلی مسیه آن را در آسمان خالی قرار داد و خوشه را برای تقریباً دو قرن شناسایی نشده گذاشت. هویت واقعی آن به عنوان NGC 2422 تنها در سال 1959 تأیید شد، زمانی که ناظران از توضیحات مسیه به عقب کار کردند تا خطا را پیدا کنند.
+    </string>
+    <string name="object_info_m47_distance" translation_description="Distance to M47 shown in the info card. Translate units if appropriate for your locale.">۱٬۶۰۰ سال نوری</string>
+    <string name="object_info_m47_size" translation_description="Physical size of M47 shown in the info card. Translate units if appropriate for your locale.">تقریبی ۱۴ سال نوری در سراسر</string>
+
+    <string name="object_info_m41_description" translation_description="Description of the open star cluster M41 shown in the info card. Translate this text.">
+    M41 یک خوشه ستاره‌ای باز زیبا در صورت فلکی سگ بزرگ است که تنها ۴ درجه جنوب سیریوس — درخشان‌ترین ستاره شب — قرار دارد. از مکان‌های تاریک برای چشم غیر‌مسلح قابل مشاهده است و در دوربین‌های دوچشمی بسیار دیدنی است. این خوشه حدود ۱۰۰ ستاره را در یک میدان وسیع شامل می‌شود که در میان آن‌ها چندین ستاره غول نارنجی رنگ درخشان در کنار اعضای آبی‌سفید کم‌نور قرار دارند.
+    </string>
+    <string name="object_info_m41_funfact" translation_description="Fun fact about M41 shown in the info card. Translate this text.">
+    ارسطو ممکن است حدود سال ۳۲۵ پیش از میلاد M41 را مشاهده کرده باشد — احتمالاً اولین مشاهدۀ ثبت‌شدۀ هر جسم عمیق‌آسمان. او یک «لکۀ ابری» را جنوب سیریوس توصیف کرد که با موقعیت M41 مطابقت دارد. اگر این شناسایی صحیح باشد، M41 تقریباً دو هزار سال پیش از اختراع تلسکوپ مورد بحث قرار می‌گرفت.
+    </string>
+    <string name="object_info_m41_distance" translation_description="Distance to M41 shown in the info card. Translate units if appropriate for your locale.">۲٬۳۰۰ سال نوری</string>
+    <string name="object_info_m41_size" translation_description="Physical size of M41 shown in the info card. Translate units if appropriate for your locale.">تقریبی ۲۵ سال نوری در سراسر</string>
+
+    <string name="object_info_m24_description" translation_description="Description of the Sagittarius Star Cloud (M24) shown in the info card. Translate this text.">
+    M24 ابر ستاره‌ای کمان است — نه خوشه‌ای و نه سحابی، بلکه پنجره‌ای از میان شکاف گرد و غبار راه شیری که میدان ستاره‌ای درخشان به پهنای ۲ درجه را آشکار می‌کند. این غنی‌ترین منطقه‌ای است که از طریق دوربین دوچشمی در هر جای آسمان قابل مشاهده است، پر از هزاران ستاره که در فاصله‌های مختلفی قرار دارند.
+    </string>
+    <string name="object_info_m24_funfact" translation_description="Fun fact about M24 shown in the info card. Translate this text.">
+    ستارگان در M24 در فاصلۀ یکسانی قرار ندارند — ابر ستاره‌ای نشان‌دهندۀ مقطعی از دیسک کهکشان است که از طریق یک تونل طبیعی در غبار بین‌ستاره‌ای دیده می‌شود و فاصلۀ 10,000 تا 16,000 سال‌نوری را پوشش می‌دهد. درون این ابر، سحابی‌های تاریک و خوشه‌های ستاره‌ای کوچک تعبیه شده‌اند که به‌صورت لکه‌های تاریک در برابر پس‌زمینۀ درخشان ستاره‌ای ظاهر می‌شوند.
+    </string>
+    <string name="object_info_m24_distance" translation_description="Distance range to M24 shown in the info card. Translate units if appropriate for your locale.">تقریبی ۱۰٬۰۰۰–۱۶٬۰۰۰ سال نوری (محدوده)</string>
+    <string name="object_info_m24_size" translation_description="Physical size of M24 shown in the info card. Translate units if appropriate for your locale.">پنجره عمیق تقریبی ۶۰۰ سال نوری</string>
+
+    <string name="object_info_m25_description" translation_description="Description of the open star cluster M25 shown in the info card. Translate this text.">
+    M25 یک خوشه باز درخشان قابل رؤیت با چشم غیر مسلح در صورت فلکی کمان است که در برابر میدان‌های ستاره‌ای متراکم راه شیری تابستانی قرار دارد. حدود 600 ستاره در میدانی نیم‌درجه‌ای پراکنده شده‌اند که آن را یک جسم غنی برای دوربین دوچشمی می‌سازد. درخشان‌ترین اعضای آن شامل چندین ستاره ابرغول آبی‌سفید و یکی از پرمطالعه‌ترین ستارگان متغیر سفئید در آسمان است.
+    </string>
+    <string name="object_info_m25_funfact" translation_description="Fun fact about M25 shown in the info card. Translate this text.">
+    M25 شامل U Sagittarii است، یک ستاره متغیر کلاسیک سفئید که در طول دوره ۶٫۷ روزی روشن و تاریک می‌شود. سفئیدها "شمع‌های استاندارد" حیاتی برای اندازه‌گیری فاصله‌های کیهانی هستند زیرا دوره نوسان آن‌ها درخشندگی واقعی آن‌ها را مستقیماً نشان می‌دهد — ستاره‌شناسان از آن‌ها برای تعیین اندازه کهکشان راه‌شیری و سپس مقیاس جهان قابل مشاهده استفاده کردند.
+    </string>
+    <string name="object_info_m25_distance" translation_description="Distance to M25 shown in the info card. Translate units if appropriate for your locale.">۲٬۰۰۰ سال نوری</string>
+    <string name="object_info_m25_size" translation_description="Physical size of M25 shown in the info card. Translate units if appropriate for your locale.">تقریبی ۱۹ سال نوری در سراسر</string>
+
+    <string name="object_info_m39_description" translation_description="Description of the open star cluster M39 shown in the info card. Translate this text.">
+    M39 یک خوشه ستاره‌ای باز بزرگ و پراکنده در صورت فلکی قو است که با چشم غیرمسلح نزدیک دنب در کهکشان راه شیری غنی تابستان قابل مشاهده است. حدود ۳۰ ستاره روشن آن به‌طور سست در یک درجه از آسمان گروه‌بندی شده‌اند و بهترین نتیجه در بزرگ‌نمایی کم با دوربین دو چشمی یا تلسکوپ با میدان دید وسیع حاصل می‌شود — بزرگ‌نمایی بیشتر صرفاً آن را به یک میدان ستاره‌ای پراکنده و بی‌اهمیت تبدیل می‌کند.
+    </string>
+    <string name="object_info_m39_funfact" translation_description="Fun fact about M39 shown in the info card. Translate this text.">
+    M39 در فاصلهٔ حدود ۸۲۵ سال نوری، یکی از نزدیک‌ترین خوشه‌های باز به زمین است، و با سن تقریباً ۲۴۰ میلیون سال، یکی از قدیمی‌ترین خوشه‌های قابل مشاهدهٔ چشم‌ناهان است — به اندازهٔ کافی قدیم که ستاره‌های بزرگ‌ترین آن قبلاً پایان زندگی خود را رسیده‌اند. مسیه آن را در سال ۱۷۶۴ ثبت کرد و این خوشه از میان اولین اضافات به کاتالوگ او بود.
+    </string>
+    <string name="object_info_m39_distance" translation_description="Distance to M39 shown in the info card. Translate units if appropriate for your locale.">۸۲۵ سال نوری</string>
+    <string name="object_info_m39_size" translation_description="Physical size of M39 shown in the info card. Translate units if appropriate for your locale.">تقریبی ۸ سال نوری در سراسر</string>
+
+    <!-- Category 5: Special cases -->
+    <string name="object_info_m63_description" translation_description="Description of the Sunflower Galaxy (M63) shown in the info card. Translate this text.">
+    کهکشان آفتابگردان یک مارپیچ درخشان در صورت فلکی سگ‌های شکاری است که بازوهای تنگ‌پیچی آن، پوشیده از ناحیه‌های تشکیل ستاره، در عکس‌های نوری طولانی بافتی شبیه گل را به آن می‌دهد. با قدر ظاهری ۸٫۶ از آسمان‌های تاریک در دوربین دو چشمی قابل رؤیت است و شکل کشیده و هسته درخشان آن را به راحتی در تلسکوپ‌های کوچک نشان می‌دهد.
+    </string>
+    <string name="object_info_m63_funfact" translation_description="Fun fact about the Sunflower Galaxy shown in the info card. Translate this text.">
+    M63 توسط پیر مشن در سال 1779 کشف شد — یکی از تعداد کمی از اجرام مسیه که توسط مشن به جای خود مسیه کشف شدند. این جرم عضوی از گروه M51 است، از نظر فیزیکی با کهکشان گردابی (M51) مرتبط است، و نشانه‌های برهم‌کنش گذشته را نشان می‌دهد: یک جریان ستاره‌ای کهن و کم‌نور به دور دیسک بیرونی آن پیچیده است.
+    </string>
+    <string name="object_info_m63_distance" translation_description="Distance to the Sunflower Galaxy shown in the info card. Translate units if appropriate for your locale.">۲۹ میلیون سال نوری</string>
+    <string name="object_info_m63_size" translation_description="Physical size of the Sunflower Galaxy shown in the info card. Translate units if appropriate for your locale.">تقریبی ۱۰۰٬۰۰۰ سال نوری در سراسر</string>
+
+    <string name="object_info_ngc_6543_description" translation_description="Description of the Cat's Eye Nebula (NGC 6543) shown in the info card. Translate this text.">
+    سحابانی چشم گربه یکی از پیچیده‌ترین سحابانی‌های سیاره‌ای شناخته‌شده است — گاز دفع‌شده از یک ستاره مرتضی که به پوسته‌های متحدالمرکز، جت‌ها و گره‌های درخشان شکل داده شده است که در تصاویر هابل قابل مشاهده است. در تلسکوپ‌های کوچک به‌صورت یک دیسک آبی-سبز زنده در صورت فلکی اژدها ظاهر می‌شود، یکی از رنگین‌ترین اجرام در آسمان پاییز.
+    </string>
+    <string name="object_info_ngc_6543_funfact" translation_description="Fun fact about the Cat's Eye Nebula shown in the info card. Translate this text.">
+    در سال ۱۸۶۴، ستاره‌شناس ویلیام هاگینز یک طیف‌سنج را به سمت چشم گربه نشانه رفت و دریافت که آن از گاز درخشان تشکیل شده است نه از ستاره‌های حل‌نشده — اولین بار که ماهیت هر سحابی سیاره‌ای تأیید شد. این کشف زمینه طیف‌سنجی سحابی را بنیان نهاد و دیدگاه غالب را که تمام سحابی‌ها خوشه‌های ستاره‌ای دور هستند، برانگیخت.
+    </string>
+    <string name="object_info_ngc_6543_distance" translation_description="Distance to the Cat's Eye Nebula shown in the info card. Translate units if appropriate for your locale.">تقریبی ۳٬۳۰۰ سال نوری</string>
+    <string name="object_info_ngc_6543_size" translation_description="Physical size of the Cat's Eye Nebula shown in the info card. Translate units if appropriate for your locale.">~۰٫۵ سال نوری قطر</string>
+
+    <string name="object_info_m76_description" translation_description="Description of the Little Dumbbell Nebula (M76) shown in the info card. Translate this text.">
+    دمبل کوچک یک سحابی سیاره‌ای در صورت فلکی پرسئوس است که دارای شکل هشت‌شکل متمایز است — یک نسخه کوچک‌تر از M27، سحابی دمبل در صورت فلکی روباه. اگرچه ضعیف‌ترین ورودی در کاتالوگ مسیه است، اما با مشاهده صبورانه در تلسکوپ‌های کوچک پاداش می‌دهد و در ابزارهای بزرگ‌تر ساختار زیبایی را نشان می‌دهد، با دو فصّ روشن‌تر که یک کمر ضعیف‌تر را احاطه می‌کنند.
+    </string>
+    <string name="object_info_m76_funfact" translation_description="Fun fact about the Little Dumbbell Nebula shown in the info card. Translate this text.">
+    M76 در ابتدا به عنوان دو جسم جداگانه — NGC 650 و NGC 651 — فهرست‌بندی شد، زیرا ناظران اولیه دو لپه روشن را به‌طور مستقل توصیف کردند. این یک سحابی سیاره‌ای دوقطبی است که زمانی تشکیل می‌شود که جریان خروجی یک ستاره در حال مرگ در استوا فشرده شود و دو لپه منبسط‌شونده را در امتداد محور قطبی ایجاد کند، در حالی که گاز نیز در کمر بیرون می‌زند.
+    </string>
+    <string name="object_info_m76_distance" translation_description="Distance to the Little Dumbbell Nebula shown in the info card. Translate units if appropriate for your locale.">~۲٬۵۰۰ سال نوری</string>
+    <string name="object_info_m76_size" translation_description="Physical size of the Little Dumbbell Nebula shown in the info card. Translate units if appropriate for your locale.">~۲ سال نوری عرض</string>
+
+    <string name="object_info_v838_mon_description" translation_description="Description of V838 Monocerotis shown in the info card. Translate this text.">
+    V838 Monocerotis ستاره‌ای متغیر غیرمعمول در صورت فلکی تک‌شاخ است که در سال ۲۰۰۲ دچار انفجار شدیدی شد و به‌طور موقت یکی از درخشان‌ترین ستاره‌های کهکشان راه‌شیری شد. اگرچه امروزه برای ناظران بصری بسیار کم‌نور است، پژواک نوری گسترش‌یافته‌اش — موجی از نور که پوسته‌های گرد و غبار باستانی را روشن می‌کند — برخی از درام‌اتیک‌ترین تصاویر تلسکوپ فضایی هابل را تولید کرد.
+    </string>
+    <string name="object_info_v838_mon_funfact" translation_description="Fun fact about V838 Monocerotis shown in the info card. Translate this text.">
+    ماهیت انفجار V838 Mon همچنان مورد بحث است. نظریه پیشرو این است که یک ادغام ستاره‌ای — دو ستاره که به یکدیگر نزدیک می‌شوند و با هم برخورد می‌کنند — بیشتر از یک نواختر کلاسیک یا انفجار ابرغول است. اگر تایید شود، این اولین مشاهده‌ی زمان‌واقعی یک "نواختر قرمز درخشان" بود، یک کلاس نادر از انفجارات ناشی از ادغام ستاره‌ای، رویدادهای مشابهی از آن پس در کهکشان‌های دیگر یافت شده‌اند.
+    </string>
+    <string name="object_info_v838_mon_distance" translation_description="Distance to V838 Monocerotis shown in the info card. Translate units if appropriate for your locale.">~۲۰٬۰۰۰ سال نوری</string>
+    <string name="object_info_v838_mon_size" translation_description="Extent of the V838 Monocerotis light echo shown in the info card. Translate units if appropriate for your locale.">~۳ سال نوری (دامنه پژواک نوری)</string>
+
+    <string name="object_info_hdf_description" translation_description="Description of the Hubble Deep Field shown in the info card. Translate this text.">
+    میدان عمیق هابل یک تکه کوچک ۲٫۶ دقیقه‌ای از آسمان ظاهراً خالی در خرس بزرگ است که توسط تلسکوپ فضایی هابل در ۱۰ روز متوالی در دسامبر ۱۹۹۵ عکاسی شد. آنچه که فضای خالی به نظر می‌رسید، تقریباً ۳٬۰۰۰ کهکشان را نشان داد — که میلیاردها سال از تاریخ کیهانی را در بر می‌گیرد — و بنیادی‌طور تصویر ما از جهان را تغییر داد.
+    </string>
+    <string name="object_info_hdf_funfact" translation_description="Fun fact about the Hubble Deep Field shown in the info card. Translate this text.">
+    این قطعه از آسمان به طور خاص انتخاب شد زیرا از ستاره‌های روشن و کهکشان‌های نزدیک خالی بود. با این حال، تصویر حاصل شامل تقریباً ۳٬۰۰۰ کهکشان بود، که منجر به برآورد شد که کل آسمان حدود ۲۰۰ میلیارد کهکشان را در بر می‌گیرد — تقریباً همه آن‌ها برای هر تلسکوپی قبل از هابل نامرئی بودند.
+    </string>
+    <string name="object_info_hdf_distance" translation_description="Distance to the most distant galaxies in the Hubble Deep Field shown in the info card. Translate units if appropriate for your locale.">~۱۳ میلیارد سال نوری (دورترین)</string>
+    <string name="object_info_hdf_size" translation_description="Angular size of the Hubble Deep Field shown in the info card.">۲٫۶ دقیقه قوسی (میدان دید)</string>
+
+    <string name="object_info_m43_description" translation_description="Description of De Mairan's Nebula (M43) shown in the info card. Translate this text.">
+    سحابانی دمیران بخشی جدا شده از مجموعه بزرگ سحابانی اوریون است که توسط یک خط تاریک گرد و غبار از M42 جدا شده است، اما به ابر مولکولی بزرگی که آن را احاطه کرده متعلق است. این سحابانی به نام ستاره شناس فرانسوی ژان ژاک دورتو دمیران نام گذاری شده است که آن را در سال ۱۷۳۱ مشاهده کرد. این یک سحابانی انتشاری است که توسط ستاره جوان داغ NU Orionis که در مرکز آن تعبیه شده است یونیزه می شود.
+    </string>
+    <string name="object_info_m43_funfact" translation_description="Fun fact about De Mairan's Nebula shown in the info card. Translate this text.">
+    اگرچه M43 به عنوان یک جسم جداگانه از M42 ظاهر می‌شود، خط تاریک که آن‌ها را از هم جدا می‌کند، یک ابر گرد و غبار پیش‌زمینه است — بخشی از ابر مولکولی اوریون — که صرفاً دید ما را از اتصال فیزیکی بین دو منطقه درخشان مسدود می‌کند. با هم، آن‌ها تنها لبه درونی روشن‌شده‌ای از یک ابر تاریک عظیم هستند که بیشتر اوریون را در بر می‌گیرد.
+    </string>
+    <string name="object_info_m43_distance" translation_description="Distance to De Mairan's Nebula shown in the info card. Translate units if appropriate for your locale.">۱٬۳۵۰ سال نوری</string>
+    <string name="object_info_m43_size" translation_description="Physical size of De Mairan's Nebula shown in the info card. Translate units if appropriate for your locale.">~۸ سال نوری عرض</string>
+
+    <string name="object_info_m40_description" translation_description="Description of M40 (Winnecke 4) shown in the info card. Translate this text.">
+    M40 در کاتالوگ مسیه منحصر به فرد است — نه یک سحابی، خوشه یا کهکشان است، بلکه یک ستاره دوگانه پهن است. مسیه آن را در سال 1764 هنگام جستجوی یک سحابی گزارش شده توسط یوهان هولیوس در خرس بزرگ، تنها این جفت ستاره را یافت و آن را ثبت کرد تا رصدگران آینده آن را با چیزی جالب‌تر اشتباه نگیرند.
+    </string>
+    <string name="object_info_m40_funfact" translation_description="Fun fact about M40 shown in the info card. Translate this text.">
+    دو ستاره‌ی M40 — که به نام Winnecke 4 شناخته می‌شوند — از نظر گرانشی به یکدیگر متصل نیستند؛ آن‌ها در فاصله‌های مختلفی قرار دارند و صرفاً یک تصادف هندسی هستند. خود مسیه متذکر شد که چیز "قابل توجهی" وجود ندارد، اما آن را "برای نشان دادن اینکه این سحابی با آن‌هایی که من بررسی کرده‌ام یکسان نیست" درج کرد. عادت منظم او در مستند‌سازی موارد منفی، به ناظران آینده یک مرجع قطعی داد.
+    </string>
+    <string name="object_info_m40_distance" translation_description="Distance to M40 shown in the info card. Translate units if appropriate for your locale.">~۵۰۰ سال نوری</string>
+    <string name="object_info_m40_size" translation_description="Angular separation of the M40 double star shown in the info card.">~۵۰ ثانیه قوسی (جدایی)</string>
+
+    <!-- Category 5: Second tier -->
+    <string name="object_info_m34_description" translation_description="Description of the open star cluster M34 shown in the info card. Translate this text.">
+    M34 یک خوشه ستاره‌ای باز درخشان و پراکنده در صورت فلکی پرسئوس است که به راحتی در دوربین‌های دوچشمی به عنوان یک پاشش غنی از ستارگان در برابر راه شیری زمستانی دیده می‌شود. حدود ۴۰۰ ستاره آن ناحیه‌ای را پوشش می‌دهند که تقریباً به اندازه قطر ماه است، و تعدادی ستاره دوتایی پهن برای ناظران دقیق دوربین‌های دوچشمی قابل مشاهده است.
+    </string>
+    <string name="object_info_m34_funfact" translation_description="Fun fact about M34 shown in the info card. Translate this text.">
+    M34 با سن حدود ۲۰۰ میلیون سال، دارای سنی میانه است — جوان به اندازه‌ای که ستاره‌های آبی داغ آن هنوز درخشان هستند، و به اندازه‌ای قدیم که بزرگ‌ترین‌ها قبلاً به‌عنوان ابرنواخترها منفجر شده‌اند. در فاصله ۱٫۵۰۰ سال نوری، یکی از نزدیک‌تر خوشه‌های مسیه است و حتی از آسمان شهرهای حومه‌ای نیز یک شیء زیبا باقی می‌ماند.
+    </string>
+    <string name="object_info_m34_distance" translation_description="Distance to M34 shown in the info card. Translate units if appropriate for your locale.">۱٬۵۰۰ سال نوری</string>
+    <string name="object_info_m34_size" translation_description="Physical size of M34 shown in the info card. Translate units if appropriate for your locale.">~۱۵ سال نوری عرض</string>
+
+    <string name="object_info_m23_description" translation_description="Description of the open star cluster M23 shown in the info card. Translate this text.">
+    M23 یک خوشه ستاره‌ای باز غنی در کمان است که در میدان‌های ستاره‌ای متراکم راه شیری تابستانی جاسازی شده است. حدود 150 ستاره در میدان نیم‌درجه‌ای در دوربین‌های دوچشمی پخش شده‌اند و آن را یک شی دوچشمی سخاوتمندانه در همان منطقه آسمان با بسیاری از جواهرات مسیه دیگر می‌سازد.
+    </string>
+    <string name="object_info_m23_funfact" translation_description="Fun fact about M23 shown in the info card. Translate this text.">
+    M23 تخمین زده می‌شود که حدود ۳۰۰ میلیون سال قدمت داشته باشد — میانسال، با اینکه بیشتر ستاره‌های بزرگ آن از دنباله اصلی خارج شده‌اند. مسیه آن را در سال ۱۷۶۴ در یکی از کمپین‌های رصدی پرثمری خود هنگام جستجو در میدان‌های ستاره‌ای کمان‌دار کشف کرد.
+    </string>
+    <string name="object_info_m23_distance" translation_description="Distance to M23 shown in the info card. Translate units if appropriate for your locale.">۲٬۱۵۰ سال نوری</string>
+    <string name="object_info_m23_size" translation_description="Physical size of M23 shown in the info card. Translate units if appropriate for your locale.">~۱۷ سال نوری عرض</string>
+
+    <string name="object_info_m37_description" translation_description="Description of the open star cluster M37 shown in the info card. Translate this text.">
+    M37 غنی‌ترین و درخشان‌ترین خوشه ستاره‌ای باز میان سه خوشه مسیه در صورت فلکی اوریگا است که تقریباً ۵۰۰ ستاره در یک میدان فشرده دارد. این یک جسم دوربین‌دوچشمی و تلسکوپ کوچک فوق‌العاده است که ستاره‌های غول نارنجی‌رنگ پراکنده‌ای در آن تضاد رنگی را به ازای گروه آبی‌سفید افزایش می‌دهند.
+    </string>
+    <string name="object_info_m37_funfact" translation_description="Fun fact about M37 shown in the info card. Translate this text.">
+    M37 حاوی حدود یک دوجین ستاره غول سرخ است — تعدادی غیرمعمول که نشان‌دهنده سن نسبتاً پیشرفته‌ی آن، حدود 300 میلیون سال است. علی‌رغم اینکه در فاصله‌ی حدود 4500 سال نوری قرار دارد — دورترین یکی از سه خوشه‌ی مسیه در صورت فلکی اورا — هنوز هم در میان بهترین خوشه‌های باز آسمان قرار دارد.
+    </string>
+    <string name="object_info_m37_distance" translation_description="Distance to M37 shown in the info card. Translate units if appropriate for your locale.">۴٬۵۰۰ سال نوری</string>
+    <string name="object_info_m37_size" translation_description="Physical size of M37 shown in the info card. Translate units if appropriate for your locale.">~۳۱ سال نوری عرض</string>
+
+    <string name="object_info_m48_description" translation_description="Description of the open star cluster M48 shown in the info card. Translate this text.">
+    M48 یک خوشه ستاره‌ای باز بزرگ و درخشان در صورت فلکی هیدرا است که تقریباً یک درجه از آسمان را پوشش می‌دهد و از مکان‌های تاریک با چشم غیر مسلح قابل مشاهده است. تقریباً 80 ستاره‌ی آن به‌طور شل در یک میدان وسیع پراکنده شده‌اند که برای دوربین دوچشمی مناسب است، با پراکندگی ستاره‌های غول نارنجی و زرد میان اعضای درخشان‌تر آبی-سفید.
+    </string>
+    <string name="object_info_m48_funfact" translation_description="Fun fact about M48 shown in the info card. Translate this text.">
+    M48 یکی از اجرام "گمشده" مسیه بود که برای تقریباً دو قرن به دلیل اینکه موقعیت ثبت‌شده توسط مسیه حدود 5 درجه از موقعیت واقعی فاصله داشت، شناخته نشد. تا سال 1959 شناسایی نشد، زمانی که با NGC 2548 مطابقت داده شد و مشخص شد که یک خطای رونویسی ساده آن را در آسمان خالی قرار داده بود.
+    </string>
+    <string name="object_info_m48_distance" translation_description="Distance to M48 shown in the info card. Translate units if appropriate for your locale.">۱٬۵۰۰ سال نوری</string>
+    <string name="object_info_m48_size" translation_description="Physical size of M48 shown in the info card. Translate units if appropriate for your locale.">~۲۳ سال نوری عرض</string>
+
+    <string name="object_info_m21_description" translation_description="Description of the open star cluster M21 shown in the info card. Translate this text.">
+    M21 یک خوشه ستاره‌ای باز فشرده در صورت فلکی کمان‌دار است که تنها نیم درجه شمال سحابی سه‌قلو (M20) قرار دارد و این دو را به یک جفت دوربین‌سنجی چشمگیر تبدیل می‌کند. این خوشه حدود 57 ستاره را در میدانی کوچک‌تر از بسیاری از خوشه‌های مسیه دارد و چندین ستاره آبی-سفید روشن به عنوان اعضای غالب آن هستند.
+    </string>
+    <string name="object_info_m21_funfact" translation_description="Fun fact about M21 shown in the info card. Translate this text.">
+    اگرچه از نظر فیزیکی بی‌ارتباط هستند، M21 و M20 (سحابی سه‌لب) یکی از جذاب‌ترین جفت‌های دوربین در آسمان تابستان را تشکیل می‌دهند — یک خوشه ستاره‌ای درخشان در کنار یک سحابی رنگی سه‌لب. M21 حدود ۴٬۲۵۰ سال نوری فاصله دارد، در حالی که M20 کمی نزدیک‌تر است، حدود ۴٬۱۰۰ سال نوری.
+    </string>
+    <string name="object_info_m21_distance" translation_description="Distance to M21 shown in the info card. Translate units if appropriate for your locale.">۴٬۲۵۰ سال نوری</string>
+    <string name="object_info_m21_size" translation_description="Physical size of M21 shown in the info card. Translate units if appropriate for your locale.">~۱۶ سال نوری عرض</string>
+
+    <string name="object_info_m50_description" translation_description="Description of the open star cluster M50 shown in the info card. Translate this text.">
+    M50 یک خوشه ستاره‌ای باز درخشان در صورت فلکی تک‌شاخ است که حدود ۲۰۰ ستاره را در یک میدان فشرده و چشم‌نواز برای دوربین‌های دوچشمی و تلسکوپ‌های کوچک در خود جای داده است. یافتن آن بر روی خطی بین سیریوس و پروسیون آسان است و دارای یک غول قرمز قابل توجه است — یک پاکت نارنجی گرم که به‌طور زنده میان ستاره‌های آبی-سفید خوشه برجسته است.
+    </string>
+    <string name="object_info_m50_funfact" translation_description="Fun fact about M50 shown in the info card. Translate this text.">
+    M50 تخمین زده می‌شود که حدود 78 میلیون سال قدمت داشته باشد — یکی از جوان‌تر خوشه‌های باز مسیه — به این معنی که ستاره‌های آبی و سفید داغ آن هنوز در حال تکامل هستند، و تعدادی از اعضای بزرگ‌تر اخیراً به غول‌ها تبدیل شده‌اند. این نمونه‌ای معمولی از یک خوشه در سن میانی اولیه است.
+    </string>
+    <string name="object_info_m50_distance" translation_description="Distance to M50 shown in the info card. Translate units if appropriate for your locale.">۳٬۲۰۰ سال نوری</string>
+    <string name="object_info_m50_size" translation_description="Physical size of M50 shown in the info card. Translate units if appropriate for your locale.">~۱۵ سال نوری عرض</string>
+
+    <string name="object_info_m36_description" translation_description="Description of the open star cluster M36 shown in the info card. Translate this text.">
+    M36 کوچک‌ترین و جوان‌ترین خوشه ستاره‌ای باز از میان سه خوشه‌ای است که مسیه در صورت فلکی اوریگا فهرست‌بندی کرد. حدود ۶۰ ستاره‌ی آن در یک میدان تنگ و درخشان جمع شده‌اند که با دوربین دو چشمی قابل مشاهده و با تلسکوپ کوچک به ستاره‌های انفرادی تفکیک‌پذیر است و توسط ستاره‌های آبی-سفید داغ تسلط دارد.
+    </string>
+    <string name="object_info_m36_funfact" translation_description="Fun fact about M36 shown in the info card. Translate this text.">
+    M36 تخمین زده می‌شود که تنها حدود ۲۵ میلیون سال قدمت داشته باشد — یکی از جوان‌تر خوشه‌های مسیه — به این معنی که ستاره‌های آبی-سفید بزرگ هنوز غالب هستند و هیچ غول قرمزی هنوز ظاهر نشده است. این خوشه میدان‌های ستاره‌ای اورایگا را با M37 و M38 به اشتراک می‌گذارد، و هر سه خوشه در یک دید دوربین میدان‌گسترده جا می‌گیرند.
+    </string>
+    <string name="object_info_m36_distance" translation_description="Distance to M36 shown in the info card. Translate units if appropriate for your locale.">۴٬۱۰۰ سال نوری</string>
+    <string name="object_info_m36_size" translation_description="Physical size of M36 shown in the info card. Translate units if appropriate for your locale.">~۱۴ سال نوری عرض</string>
+
+    <string name="object_info_m46_description" translation_description="Description of the open star cluster M46 shown in the info card. Translate this text.">
+    M46 یک خوشه ستاره‌ای باز غنی و متراکم در صورت فلکی پوپیس است که حدود ۵۰۰ ستاره را در یک میدان وسیع در خود جای داده است و در دوربین‌های دوچشمی چشم‌نواز و در تلسکوپ‌های کوچک زیبا به نظر می‌رسد. یک بونوس قابل توجه در لبه شمالی آن شناور است: NGC 2438، یک سحابی سیاره‌ای کوچک که به نظر می‌رسد در خوشه جاسازی شده است — یک تصادف درخط دید دراماتیک.
+    </string>
+    <string name="object_info_m46_funfact" translation_description="Fun fact about M46 shown in the info card. Translate this text.">
+    سحابی سیاره‌ای NGC 2438 به نظر می‌رسد که درون M46 قرار دارد، اما در واقع یک جسم پیش‌زمینی نامرتبط است که در فاصله‌ای بسیار متفاوت قرار دارد — حدود ۱٬۴۰۰ سال نوری در مقابل ۵٬۴۰۰ سال نوری برای M46. تصادفی بودن پوسته ستاره‌ای در حال مرگ که بر روی خوشه‌ای جوان از ستارگان قرار گرفته است، این را یکی از زیباترین میدان‌های کاتالوگ می‌سازد.
+    </string>
+    <string name="object_info_m46_distance" translation_description="Distance to M46 shown in the info card. Translate units if appropriate for your locale.">۵٬۴۰۰ سال نوری</string>
+    <string name="object_info_m46_size" translation_description="Physical size of M46 shown in the info card. Translate units if appropriate for your locale.">~۴۲ سال نوری عرض</string>
+
+    <string name="object_info_m93_description" translation_description="Description of the open star cluster M93 shown in the info card. Translate this text.">
+    M93 یک خوشه ستاره‌ای باز روشن و فشرده در صورت فلکی پوپیس است که در میان کهکشان راه شیری غنی جنوبی قرار دارد و به راحتی با دوربین دوچشمی قابل مشاهده است. حدود ۸۰ ستاره‌ی آن به شکل گوه یا پروانه‌ای چشمگیر مرتب شده‌اند و شامل چندین ستاره‌ی عظیم آبی داغ هستند که آن را یکی از جذاب‌تر خوشه‌های ستاره‌ای باز در آسمان زمستانی می‌سازد.
+    </string>
+    <string name="object_info_m93_funfact" translation_description="Fun fact about M93 shown in the info card. Translate this text.">
+    M93 نسبتاً جوان است — حدود 100 میلیون سال قدمت دارد — با ستارگان آبی و آبی‌سفید غالب که هنوز به غول‌ها تبدیل نشده‌اند. این یکی از خوشه‌های مسیه جنوبی‌تر است، و از عرض‌های جغرافیایی شمالی‌تر از حدود 50°N هرگز بسیار بالا بر فراز افق بالا نمی‌رود.
+    </string>
+    <string name="object_info_m93_distance" translation_description="Distance to M93 shown in the info card. Translate units if appropriate for your locale.">۳٬۶۰۰ سال نوری</string>
+    <string name="object_info_m93_size" translation_description="Physical size of M93 shown in the info card. Translate units if appropriate for your locale.">~۲۳ سال نوری عرض</string>
+
+    <string name="object_info_m38_description" translation_description="Description of the open star cluster M38 shown in the info card. Translate this text.">
+    M38 بزرگ‌ترین و پراکنده‌ترین خوشه‌ی ستاره‌ای باز از میان سه خوشه‌ای است که مسیه در صورت فلکی اوریگا فهرست‌بندی کرد. حدود ۱۰۰ ستاره‌ی آن به شکلی مرتب شده‌اند که برخی ناظران آن را شبیه یک صلیب یا حرف یونانی پی می‌دانند، که در دوربین‌های دوچشمی قابل مشاهده و در تلسکوپ کوچک به خوبی تفکیک‌پذیر است. خوشه‌ی کوچک‌تر NGC 1907 در نزدیکی جنوب آن قرار دارد.
+    </string>
+    <string name="object_info_m38_funfact" translation_description="Fun fact about M38 shown in the info card. Translate this text.">
+    M38 قدیم‌ترین یکی از سه خوشه مسیه در صورت فلکی اوریگا است که حدود 220 میلیون سال قدمت دارد، به اندازه‌ای قدیم که برخی از ستارگان بزرگ آن به غول‌های زرد و نارنجی تبدیل شده‌اند. خوشه نزدیک NGC 1907 می‌تواند در همان میدان کم‌بزرگنمایی جای گیرد و آن‌ها را به یک جفت دوربین خوب تبدیل می‌کند — مانند M46 و M47 در صورت فلکی پوپیس.
+    </string>
+    <string name="object_info_m38_distance" translation_description="Distance to M38 shown in the info card. Translate units if appropriate for your locale.">۴٬۲۰۰ سال نوری</string>
+    <string name="object_info_m38_size" translation_description="Physical size of M38 shown in the info card. Translate units if appropriate for your locale.">~۲۶ سال نوری عرض</string>
+
+    <string name="object_info_m29_description" translation_description="Description of the open star cluster M29 shown in the info card. Translate this text.">
+    M29 یک خوشه ستاره‌ای باز کوچک و جوان در صورت فلکی قو است که در برابر یکی از پرغبار‌ترین مناطق راه شیری قرار دارد. پنج ستاره‌ی ابرغول آبی درخشان این خوشه را تسلط دارند که در دوربین‌های دوچشمی به‌عنوان یک ستاره‌ای تنگ از ستاره‌های داغ و درخشان دیده می‌شوند. بدون گرد و غبار متراکم پیش‌زمینه، M29 یکی از زیباترین خوشه‌های ستاره‌ای باز آسمان خواهد بود.
+    </string>
+    <string name="object_info_m29_funfact" translation_description="Fun fact about M29 shown in the info card. Translate this text.">
+    M29 تخمین زده می‌شود که تنها حدود ۱۰ میلیون سال قدمت داشته باشد — یک نوزاد ستاره‌ای — و در درون انجمن Cygnus OB1 قرار دارد، گروهی گسترده از ستاره‌های جوان و بزرگ. غبار بین‌ستاره‌ای سنگین خوشه را حدود ۳ قدر تاریک می‌کند؛ بدون این پوشش، ستاره‌های M29 چندین برابر درخشان‌تر از آنچه که در واقع به نظر می‌رسند می‌درخشیدند.
+    </string>
+    <string name="object_info_m29_distance" translation_description="Distance to M29 shown in the info card. Translate units if appropriate for your locale.">۴٬۰۰۰ سال نوری</string>
+    <string name="object_info_m29_size" translation_description="Physical size of M29 shown in the info card. Translate units if appropriate for your locale.">~۸ سال نوری عرض</string>
+
+    <string name="object_info_m62_description" translation_description="Description of the globular cluster M62 shown in the info card. Translate this text.">
+    M62 یک خوشه کروی غنی در صورت فلکی مارافعی است — یکی از نزدیک‌ترین خوشه‌های کروی به مرکز کهکشان و به‌طور نمایانی نامتقارن، با ستاره‌هایی که در سمت جنوبی متراکم‌تر هستند. با قدر ۶٫۶ یک جسم دوربینی عالی است، اگرچه انحطاط پایین آن آن را برای ناظران شمالی یک هدف فصل کوتاه می‌کند.
+    </string>
+    <string name="object_info_m62_funfact" translation_description="Fun fact about M62 shown in the info card. Translate this text.">
+    هسته‌ی خارج‌ازمرکز M62 نتیجه‌ی مستقیم نزدیکی آن به مرکز کهکشان است — نیروهای جزر و مدی قدرتمند ناشی از برآمدگی مرکزی، خوشه را تحریف می‌کنند و ستاره‌ها را به سمت صفحه‌ی کهکشانی می‌کشند. این خوشه همچنین یکی از پویاتر‌ترین کره‌های کروی شناخته‌شده است که نشانه‌های فروپاشی هسته و تراکم غیرمعمول پالسارهای میلی‌ثانیه‌ای را نشان می‌دهد.
+    </string>
+    <string name="object_info_m62_distance" translation_description="Distance to M62 shown in the info card. Translate units if appropriate for your locale.">۲۲٬۵۰۰ سال نوری</string>
+    <string name="object_info_m62_size" translation_description="Physical size of M62 shown in the info card. Translate units if appropriate for your locale.">~۹۲ سال نوری عرض</string>
+
+    <string name="object_info_m28_description" translation_description="Description of the globular cluster M28 shown in the info card. Translate this text.">
+    M28 یک خوشه کروی فشرده در کمان است که نزدیک ستاره روشن لاندا کمان در میدان‌های ستاره‌ای غنی تابستان قرار دارد. با قدر ۶٫۹ این خوشه هدفی پاداش‌بخش برای دوربین‌های دوچشمی است و در تلسکوپ‌های کوچک به خوبی حل‌شده است و هسته‌ای روشن و فشرده را نشان می‌دهد که توسط هاله‌ای متوسط از ستاره‌ها احاطه شده است.
+    </string>
+    <string name="object_info_m28_funfact" translation_description="Fun fact about M28 shown in the info card. Translate this text.">
+    در سال ۱۹۸۷، M28 اولین خوشه کروی بود که در آن یک پالسار میلی‌ثانیه‌ای کشف شد. پالسارهای میلی‌ثانیه‌ای — ستارگان نوترونی که صدها بار در ثانیه می‌چرخند — زمانی تشکیل می‌شوند که یک ستاره نوترونی ماده را از یک ستاره همراه جذب کند و با نرخی بسیار بیشتر در خوشه‌های کروی نسبت به کهکشان عمومی یافت می‌شوند، زیرا محیط‌های ستاره‌ای متراکم آن‌ها بسیاری از برخوردهای دوتایی نزدیک را ایجاد می‌کنند.
+    </string>
+    <string name="object_info_m28_distance" translation_description="Distance to M28 shown in the info card. Translate units if appropriate for your locale.">۱۸٬۳۰۰ سال نوری</string>
+    <string name="object_info_m28_size" translation_description="Physical size of M28 shown in the info card. Translate units if appropriate for your locale.">~۶۰ سال نوری عرض</string>
+
+    <string name="object_info_m52_description" translation_description="Description of the open star cluster M52 shown in the info card. Translate this text.">
+    M52 یک خوشه ستاره‌ای باز غنی در کاسیوپه است که حدود ۲۰۰ ستاره را در یک منطقه فشرده از راه شیری شمالی در بر می‌گیرد. این یک خوشه دوربینی زیبا است و در تلسکوپ‌های کوچک یک میدان ستاره‌ای متراکم و زیبا را نشان می‌دهد، با یک ستاره نارنجی رنگ قابل‌توجه‌تر که در نزدیکی لبه جنوبی خوشه برجسته است.
+    </string>
+    <string name="object_info_m52_funfact" translation_description="Fun fact about M52 shown in the info card. Translate this text.">
+    فاصله M52 به طور غیرمعمول نامشخص است — برآوردها از 3000 تا 7000 سال نوری متغیر است — زیرا گرد و غبار بین‌ستاره‌ای سنگین در امتداد این خط دید، تعیین درخشندگی واقعی آن را دشوار می‌کند. مسیه آن را در سال 1774 کشف کرد، همان شبی که او یک دنباله‌دار را دنبال می‌کرد که او را به ثبت چندین ورودی کاتالوگ دیگر رهنمون شد.
+    </string>
+    <string name="object_info_m52_distance" translation_description="Distance to M52 shown in the info card. Translate units if appropriate for your locale.">~۵٬۰۰۰ سال نوری</string>
+    <string name="object_info_m52_size" translation_description="Physical size of M52 shown in the info card. Translate units if appropriate for your locale.">~۲۵ سال نوری عرض</string>
+
+    <string name="object_info_m67_description" translation_description="Description of the open star cluster M67 shown in the info card. Translate this text.">
+    M67 یک خوشه ستاره‌ای باز زیبا در صورت فلکی سرطان است و یکی از قدیمی‌ترین خوشه‌های ستاره‌ای باز مطالعه‌شده در آسمان. با سن تقریبی ۳٫۲ تا ۳٫۵ میلیارد سال، شامل بسیاری ستاره‌هایی است که از نظر جرم و سن شبیه خورشید ما هستند — که آن را به یک آزمایشگاه طبیعی برای مطالعه تکامل ستاره‌های شبیه خورشید در طول زمان کیهانی تبدیل می‌کند.
+    </string>
+    <string name="object_info_m67_funfact" translation_description="Fun fact about M67 shown in the info card. Translate this text.">
+    چندین ستاره در M67 از نظر دما، جرم و سن بسیار شبیه خورشید هستند — ترکیبی نادر که محققان را به این فکر وادار کرد که آیا خود خورشید در خوشه‌ای مانند M67 متولد شده است. از آنجایی که ستارگان در خوشه‌هایی متولد می‌شوند که به تدریج پراکنده می‌شوند، خورشید تقریباً مطمئناً از یک گروه خواهر و برادری که اکنون پراکنده شده است، میلیاردها سال پیش نشأت گرفته است — اگرچه هرگز مشخص نشده است که کدام خوشه.
+    </string>
+    <string name="object_info_m67_distance" translation_description="Distance to M67 shown in the info card. Translate units if appropriate for your locale.">۲٬۷۰۰ سال نوری</string>
+    <string name="object_info_m67_size" translation_description="Physical size of M67 shown in the info card. Translate units if appropriate for your locale.">~۲۴ سال نوری در سراسر</string>
+
+    <string name="object_info_m55_description" translation_description="Description of the globular cluster M55 shown in the info card. Translate this text.">
+    M55 یک خوشه کروی بزرگ و شل در کمان است — یکی از پراکندهترین و کمترین متمرکز خوشههای مسیه. حتی در بزرگنمایی پایین به ستارههای منفرد تفکیک میشود و بافت دانهای آن در دوربین دوچشمی قابل رؤیت است. انحطاط جنوبی پایین آن دید را از عرضهای شمالی محدود میکند اما از نیمکره جنوبی بسیار دیدنی است.
+    </string>
+    <string name="object_info_m55_funfact" translation_description="Fun fact about M55 shown in the info card. Translate this text.">
+    غلظت ستاره‌ای غیرمعمول پایین M55 باعث می‌شود که تقریباً شبیه یک خوشه باز غنی به نظر برسد تا یک کره‌ای کروی معمولی. ستاره‌های آن در منطقه‌ای به عرض تقریباً 100 سال نوری پخش شده‌اند، که نشان می‌دهد گرانش خود خوشه نسبت به کره‌های کروی متراکم‌تر مانند M13 یا M3 نسبتاً ضعیف است.
+    </string>
+    <string name="object_info_m55_distance" translation_description="Distance to M55 shown in the info card. Translate units if appropriate for your locale.">۱۷٬۶۰۰ سال نوری</string>
+    <string name="object_info_m55_size" translation_description="Physical size of M55 shown in the info card. Translate units if appropriate for your locale.">~۱۰۰ سال نوری در سراسر</string>
+
+    <string name="object_info_m19_description" translation_description="Description of the globular cluster M19 shown in the info card. Translate this text.">
+    M19 یک خوشه کروی فشرده و غنی در صورت فلکی مار‌دارنده است — یکی از نزدیک‌ترین خوشه‌های کروی به مرکز کهکشان. برجسته‌ترین ویژگی آن شکل کاهش‌یافته قابل‌توجهش است: M19 مسطح‌ترین خوشه کروی شناخته‌شده است، با طرح‌ریزی بیضی‌شکل قابل‌مشاهده حتی در تلسکوپ کوچک.
+    </string>
+    <string name="object_info_m19_funfact" translation_description="Fun fact about M19 shown in the info card. Translate this text.">
+    کروی‌شکلی نمایان M19 — که محور طولانی‌ترین آن حدود ۱۰ درصد بیشتر از محور کوتاه‌ترین است — در میان خوشه‌های کروی شناخته‌شده منحصربه‌فرد است و تصور می‌رود که نتیجه کشش جزر‌و‌مدی ناشی از میدان گرانشی راه‌شیری است. هرچه خوشه کروی به مرکز کهکشانی نزدیک‌تر باشد، تغییر شکل آن بیشتر است؛ M19 تنها حدود ۵٬۲۰۰ سال‌نوری از هسته کهکشانی فاصله دارد.
+    </string>
+    <string name="object_info_m19_distance" translation_description="Distance to M19 shown in the info card. Translate units if appropriate for your locale.">۲۸٬۷۰۰ سال نوری</string>
+    <string name="object_info_m19_size" translation_description="Physical size of M19 shown in the info card. Translate units if appropriate for your locale.">~۱۱۳ سال نوری در سراسر</string>
+
+    <string name="object_info_m80_description" translation_description="Description of the globular cluster M80 shown in the info card. Translate this text.">
+    M80 یکی از متراکم‌ترین خوشه‌های کروی در راه شیری است، یک توپ فشرده و غنی شامل چندصد هزار ستاره در عقرب. با قدر ظاهری ۷٫۲، این یک هدف عالی برای دوربین‌های دوچشمی است و هسته‌ای درخشان و بسیار متمرکز را در تلسکوپ‌های کوچک نشان می‌دهد.
+    </string>
+    <string name="object_info_m80_funfact" translation_description="Fun fact about M80 shown in the info card. Translate this text.">
+    در سال ۱۸۶۰، یک نواختر در درون M80 منفجر شد — که با نام T Scorpii شناخته می‌شود — و برای مدتی کوتاهی به اندازه خود خوشه‌ای درخشان شد و برای چشم غیرمسلح قابل رؤیت بود. این یکی از تنها دو نواختری است که تاکنون در درون یک خوشه کروی مشاهده شده است. نواخترها در خوشه‌های کروی از برهم‌کنش ستاره‌های دوتایی ناشی می‌شوند، که در محیط ستاره‌ای متراکم هسته یک خوشه کروی بسیار فراوان‌تر هستند.
+    </string>
+    <string name="object_info_m80_distance" translation_description="Distance to M80 shown in the info card. Translate units if appropriate for your locale.">۳۲٬۶۰۰ سال نوری</string>
+    <string name="object_info_m80_size" translation_description="Physical size of M80 shown in the info card. Translate units if appropriate for your locale.">~۸۴ سال نوری در سراسر</string>
+
+    <string name="object_info_m103_description" translation_description="Description of the open star cluster M103 shown in the info card. Translate this text.">
+    M103 یک خوشه ستاره‌ای باز کوچک و فشرده در کاسیوپه است که حدود ۴۰ ستاره در یک گروه تنگ دارد که به راحتی با دوربین دوچشمی قابل مشاهده است. یک ستاره دوتایی چشمگیر و یک غول قرمز نزدیک مرکز آن، ظاهری رنگین در تلسکوپ‌های کوچک ایجاد می‌کند که در میان میدان‌های ستاره‌ای غنی راه شیری کاسیوپه قرار دارد.
+    </string>
+    <string name="object_info_m103_funfact" translation_description="Fun fact about M103 shown in the info card. Translate this text.">
+    M103 بالاترین شماره‌گذاری شده‌ی جسم در کاتالوگ اصلی منشور شده‌ی مسیه در سال ۱۷۸۱ بود — تمام ورودی‌های بعدی (M104–M110) پس از مرگ توسط ستاره‌شناسان بعدی از یادداشت‌ها و مکاتبات مسیه اضافه شدند. پیر مشاین M103 را کمی قبل از انتشار کاتالوگ کشف کرد، و مسیه آن را از گزارش مشاین درج کرد.
+    </string>
+    <string name="object_info_m103_distance" translation_description="Distance to M103 shown in the info card. Translate units if appropriate for your locale.">۸٬۵۰۰ سال نوری</string>
+    <string name="object_info_m103_size" translation_description="Physical size of M103 shown in the info card. Translate units if appropriate for your locale.">~۱۵ سال نوری در سراسر</string>
+
+    <string name="object_info_m30_description" translation_description="Description of the globular cluster M30 shown in the info card. Translate this text.">
+    M30 یک خوشه کروی فشرده در صورت فلکی شاخ و میزان است — یک شی زیبا برای تلسکوپ های کوچک که هسته ای روشن و متراکم و زنجیره های ستاره ای کم نور در اطراف آن را نشان می دهد. با قدر ظاهری 7.5، نیاز به آسمان های تاریک برای دوربین دو چشمی دارد و تلسکوپ کوچک را با هاله بیرونی جزئی حل شده خود پاداش می دهد.
+    </string>
+    <string name="object_info_m30_funfact" translation_description="Fun fact about M30 shown in the info card. Translate this text.">
+    M30 دچار «فروپاشی هسته» شده است — فرآیندی که در آن جاذبه متقابل ستارگان متراکم باعث انقباض درامی مرکز خوشه می‌شود و غلظت شدیدی از ستارگان را در حجم بسیار کوچکی ایجاد می‌کند. حدود یک پنجم تمام خوشه‌های کروی دارای هسته‌های فروپاشیده هستند، و M30 از بهترین نمونه‌های مورد مطالعه این پدیده است.
+    </string>
+    <string name="object_info_m30_distance" translation_description="Distance to M30 shown in the info card. Translate units if appropriate for your locale.">۲۷٬۱۰۰ سال نوری</string>
+    <string name="object_info_m30_size" translation_description="Physical size of M30 shown in the info card. Translate units if appropriate for your locale.">~۸۷ سال نوری در سراسر</string>
+
+    <string name="object_info_m54_description" translation_description="Description of the globular cluster M54 shown in the info card. Translate this text.">
+    M54 یک خوشه کروی بزرگ و غنی در کمان‌دار است و یکی از دورترین اجرام در کل کاتالوگ مسیه. برای قرن‌ها تصور می‌رفت که یک خوشه کروی دور افتاده در هاله راه شیری است، اما اکنون معلوم شده که این هسته متراکم کهکشان بیضی کوتوله کمان‌دار است — یک کهکشان ماهواره‌ای که در حال حاضر توسط کهکشان ما جذب می‌شود.
+    </string>
+    <string name="object_info_m54_funfact" translation_description="Fun fact about M54 shown in the info card. Translate this text.">
+    کشف سال ۱۹۹۴ که M54 متعلق به کهکشان کوتوله کمان‌قوس است، آن را اولین خوشه کروی شناخته‌شده‌ای قرار داد که به کهکشان دیگری تعلق دارد. با اینکه کهکشان کوتوله کمان‌قوس به تدریج پاره‌شده و توسط راه‌شیری بلعیده می‌شود، M54 در نهایت به یک خوشه کروی هاله واقعی کهکشان خود ما تبدیل خواهد شد — یک مهاجر بین‌کهکشانی که طی میلیاردها سال وارد می‌شود.
+    </string>
+    <string name="object_info_m54_distance" translation_description="Distance to M54 shown in the info card. Translate units if appropriate for your locale.">۸۷٬۰۰۰ سال نوری</string>
+    <string name="object_info_m54_size" translation_description="Physical size of M54 shown in the info card. Translate units if appropriate for your locale.">~۲۳۰ سال نوری در سراسر</string>
+
+    <string name="object_info_m69_description" translation_description="Description of the globular cluster M69 shown in the info card. Translate this text.">
+    M69 یک خوشه کروی متوسط‌الغنا در صورت فلکی کمان است که نزدیک مرکز کهکشان قرار دارد. با قدر ظاهری 7.7، این جرم از آسمان‌های تاریک با دوربین دوچشمی قابل مشاهده است و یک دوربین کوچک آن را با توپی از ستاره‌های تا حدی تفکیک‌شده و یک مرکز روشن و دانه‌ای پاداش می‌دهد.
+    </string>
+    <string name="object_info_m69_funfact" translation_description="Fun fact about M69 shown in the info card. Translate this text.">
+    M69 به طور غیرمعمول نزدیک به مرکز کهکشانی می‌چرخد — تنها حدود 6200 سال نوری از هسته راه شیری فاصله دارد — و در نتیجه غلظت غیرمعمول بالایی از عناصر سنگین‌تر برای یک خوشه کروی دارد. خوشه‌های کروی نزدیک‌تر به مرکز کهکشانی تمایل دارند که توسط نسل‌های متعدد تشکیل ستاره در بالج اطراف غنی‌شده شیمیایی شوند.
+    </string>
+    <string name="object_info_m69_distance" translation_description="Distance to M69 shown in the info card. Translate units if appropriate for your locale.">۲۹٬۷۰۰ سال نوری</string>
+    <string name="object_info_m69_size" translation_description="Physical size of M69 shown in the info card. Translate units if appropriate for your locale.">~۶۱ سال نوری در سراسر</string>
+
+    <string name="object_info_m9_description" translation_description="Description of the globular cluster M9 shown in the info card. Translate this text.">
+    M9 یک خوشه کروی فشرده در صورت فلکی مارپیچ است — یکی از خوشه‌های مسیه که بیشتر تحت تأثیر جذب غبار بین‌ستاره‌ای قرار دارند. این خوشه به سمت برآمدگی کهکشانی واقع است، جایی که غبار ضخیم آن را به‌طور قابل‌توجهی تاریک می‌کند. بدون این پوشش، M9 تقریباً یک قدر درخشان‌تر به نظر می‌رسید و برای چشم غیر‌مسلح قابل‌رؤیت بود.
+    </string>
+    <string name="object_info_m9_funfact" translation_description="Fun fact about M9 shown in the info card. Translate this text.">
+    M9 بیش از تقریباً هر خوشه کروی دیگری از کاتالوگ مسیه، از جذب گرد و غبار بین‌ستاره‌ای رنج می‌برد — حدود 1.3 قدر تاریکی در مقایسه با خط دید صاف. دو خوشه کروی کوچک‌تر (NGC 6342 و NGC 6356) در فاصله حدود 1° از M9 قرار دارند، که آن را به مرکز یک گروه قابل توجه از سه خوشه کروی در یک بخش کوچک از آسمان تبدیل می‌کند.
+    </string>
+    <string name="object_info_m9_distance" translation_description="Distance to M9 shown in the info card. Translate units if appropriate for your locale.">۲۵٬۸۰۰ سال نوری</string>
+    <string name="object_info_m9_size" translation_description="Physical size of M9 shown in the info card. Translate units if appropriate for your locale.">~۷۰ سال نوری در سراسر</string>
+
+    <string name="object_info_m26_description" translation_description="Description of the open star cluster M26 shown in the info card. Translate this text.">
+    M26 یک خوشه ستاره‌ای باز متوسط‌الروشنایی در صورت فلکی سپر است که در دوربین‌های دوچشمی قابل رؤیت و در تلسکوپ‌های کوچک به خوبی تفکیک‌شده است. حدود ۹۰ ستاره در یک میدان فشرده در ابر ستاره‌ای غنی سپر پراکنده شده‌اند، اگرچه این خوشه در برابر پس‌زمینه‌ای چنان متراکم قرار دارد که تشخیص اعضای آن از میدان ستاره‌ای اطراف نیاز به دقت دارد.
+    </string>
+    <string name="object_info_m26_funfact" translation_description="Fun fact about M26 shown in the info card. Translate this text.">
+    M26 در همان نوار غنی آسمان قرار دارد که M11 — خوشه اردک وحشی، یکی از بهترین خوشه‌های باز در آسمان. این دو تنها حدود ۳٫۵ درجه از هم فاصله دارند و در یک میدان دوربین قابل مشاهده‌اند، که Scutum را به یک مقصد قابل توجه برای ناظران خوشه‌ای تبدیل می‌کند، علی‌رغم اینکه یک صورت فلکی کوچک و اغلب نادیده‌گرفته‌شده است.
+    </string>
+    <string name="object_info_m26_distance" translation_description="Distance to M26 shown in the info card. Translate units if appropriate for your locale.">۵٬۰۰۰ سال نوری</string>
+    <string name="object_info_m26_size" translation_description="Physical size of M26 shown in the info card. Translate units if appropriate for your locale.">~۲۲ سال نوری در سراسر</string>
+
+    <string name="object_info_m79_description" translation_description="Description of the globular cluster M79 shown in the info card. Translate this text.">
+    M79 یک خوشه کروی فشرده در صورت فلکی خرگوش است — یکی از معدود خوشه‌های مسیه که در آسمان زمستانی بهترین موقعیت را دارند، زمانی که اکثر خوشه‌های کروی زیر افق هستند یا به سختی طلوع کرده‌اند. با قدر ظاهری ۸٫۰، برای نمایش هسته فشرده و هاله کم‌نور آن به تلسکوپ نیاز دارد و در میدان ستاره‌های نسبتاً کم‌تر زمستان برجسته می‌شود.
+    </string>
+    <string name="object_info_m79_funfact" translation_description="Fun fact about M79 shown in the info card. Translate this text.">
+    برخی از ستاره‌شناسان تصور می‌کنند که M79 یک مهاجم از کهکشان کوتوله سگ بزرگ است — یک کهکشان ماهواره‌ای آشفته که در حال جذب شدن توسط راه شیری است. اگر چنین باشد، M79 در درون سیستم کروی راه شیری تشکیل نیافته، بلکه از یک کهکشان فرو‌افتاده دستگیر شده و اکنون به آرامی در هاله کهکشان ما ادغام می‌شود.
+    </string>
+    <string name="object_info_m79_distance" translation_description="Distance to M79 shown in the info card. Translate units if appropriate for your locale.">۴۱٬۰۰۰ سال نوری</string>
+    <string name="object_info_m79_size" translation_description="Physical size of M79 shown in the info card. Translate units if appropriate for your locale.">~۱۰۴ سال نوری در سراسر</string>
+
+    <string name="object_info_m70_description" translation_description="Description of the globular cluster M70 shown in the info card. Translate this text.">
+    M70 یک خوشه کروی فشرده در صورت فلکی کمان است که بسیار شبیه به دوقلوی نزدیک خود M69 در ظاهر و فاصله است. با قدر ظاهری 8.1، این یک جسم خوب برای تلسکوپ کوچک است که هسته فشرده‌ای را نشان می‌دهد و نشانه‌های تفکیک در هاله بیرونی را دارد. این جسم تنها 2 درجه از M69 فاصله دارد و هر دو را می‌توان در یک میدان دوربین دو چشمی جمع کرد.
+    </string>
+    <string name="object_info_m70_funfact" translation_description="Fun fact about M70 shown in the info card. Translate this text.">
+    M70 در سال ۱۹۹۵ به دلیل اینکه آلن هیل و توماس بوپ به طور مستقل دنباله‌دار هیل-بوپ را در آن نقطه از آسمان کشف کردند، شهرت کوتاهی پیدا کرد — درخشان‌ترین دنباله‌دار اواخر قرن بیستم. هر دو ناظر در ابتدا از کنار M70 گذشتند در حالی که به دنبال اهداف دیگری بودند و دنباله‌دار را به عنوان یک جسم فازی غیرمنتظره در نزدیکی آن متوجه شدند.
+    </string>
+    <string name="object_info_m70_distance" translation_description="Distance to M70 shown in the info card. Translate units if appropriate for your locale.">۲۹٬۴۰۰ سال نوری</string>
+    <string name="object_info_m70_size" translation_description="Physical size of M70 shown in the info card. Translate units if appropriate for your locale.">~۶۷ سال نوری در سراسر</string>
+
+    <string name="object_info_m107_description" translation_description="Description of the globular cluster M107 shown in the info card. Translate this text.">
+    M107 یکی از کمتر متمرکز خوشه‌های کروی مسیه است که ستاره‌های آن به شکل پراکنده‌ای در الگویی نسبتاً باز اطراف هسته‌ای متوسط پخش شده‌اند. با قدر ظاهری ۸٫۱، این جسم هدفی دوربینی از آسمان‌های تاریک است و در تلسکوپ‌های کوچک تا حدی تفکیک‌پذیر است و بافتی دانه‌ای به جای تراکم مرکزی تیز نشان می‌دهد.
+    </string>
+    <string name="object_info_m107_funfact" translation_description="Fun fact about M107 shown in the info card. Translate this text.">
+    M107 آخرین ورودی بود که به طور رسمی به کاتالوگ مسیه اضافه شد — این ستاره در مکاتبات پیر مشاین ظاهر می‌شود اما در نسخه اصلی سال ۱۷۸۱ گنجانده نشده بود. این ستاره به طور رسمی در سال ۱۹۴۷ توسط ستاره‌شناس کانادایی هلن ساویر هاگ به عنوان M107 اضافه شد، او چندین شیء «گمشده» را که مشاین مشاهده کرده بود اما مسیه هرگز به طور رسمی ثبت نکرده بود، کدگذاری کرد.
+    </string>
+    <string name="object_info_m107_distance" translation_description="Distance to M107 shown in the info card. Translate units if appropriate for your locale.">۲۰٬۹۰۰ سال نوری</string>
+    <string name="object_info_m107_size" translation_description="Physical size of M107 shown in the info card. Translate units if appropriate for your locale.">~۶۱ سال نوری در سراسر</string>
+
+    <string name="object_info_m68_description" translation_description="Description of the globular cluster M68 shown in the info card. Translate this text.">
+    M68 یک خوشه کروی غنی در صورت فلکی هیدرا است — یک جسم جنوبی و یکی از معدود خوشه‌های کروی که در اواخر زمستان و بهار بهترین موقعیت را دارند. با قدر ظاهری 8.2، این خوشه با یک تلسکوپ کوچک هسته‌ای متراکم و هاله بزرگی از ستاره‌های تفکیک‌شده را در برابر میدان‌های ستاره‌ای نسبتاً کم‌پر هیدرا نشان می‌دهد.
+    </string>
+    <string name="object_info_m68_funfact" translation_description="Fun fact about M68 shown in the info card. Translate this text.">
+    علیرغم نزدیکی نسبی آن — که ستارگان منفرد را در تلسکوپ‌های آماتوری به خوبی قابل تشخیص می‌کند — M68 اغلب به دلیل انحراف جنوبی بسیار دور آن نادیده گرفته می‌شود. از عرض‌های جغرافیایی بالاتر از 50°N به سختی از افق بالا می‌رود؛ اما از نیمکره جنوبی، بسیار بالا می‌رود و یک کره کروی جهانی فوق‌العاده است.
+    </string>
+    <string name="object_info_m68_distance" translation_description="Distance to M68 shown in the info card. Translate units if appropriate for your locale.">۳۳٬۶۰۰ سال نوری</string>
+    <string name="object_info_m68_size" translation_description="Physical size of M68 shown in the info card. Translate units if appropriate for your locale.">~۱۱۷ سال نوری در سراسر</string>
+
+    <string name="object_info_m56_description" translation_description="Description of the globular cluster M56 shown in the info card. Translate this text.">
+    M56 یک خوشه کروی فشرده در صورت فلکی لیرا است که بین سحابی حلقوی (M57) و ستاره دوگانه درخشان البیریو در قو قرار دارد. با قدر ظاهری 8.3، این جسم از آسمان‌های تاریک هدفی برای دوربین دوچشمی است، و تلسکوپ کوچک کره‌ای دانه‌ای و متوسط‌الانقباض را نشان می‌دهد که حتی در دهانه‌های متوسط تنها به‌طور جزئی حل‌شده است.
+    </string>
+    <string name="object_info_m56_funfact" translation_description="Fun fact about M56 shown in the info card. Translate this text.">
+    M56 توسط مسیه در ژانویه 1779 کشف شد، در همان فصل رصدی که او تاریق نبولای حلقوی (M57) را نیز یافت. علی‌رغم اینکه در همان میدان دوربین‌دوچشمی ویگا — پنجمین ستاره روشن آسمان — قرار دارد و نزدیک به نبولای حلقوی معروف، M56 اغلب توسط رصدگرانی که به همسایگان مشهورتر آن جذب می‌شوند، نادیده گرفته می‌شود.
+    </string>
+    <string name="object_info_m56_distance" translation_description="Distance to M56 shown in the info card. Translate units if appropriate for your locale.">۳۲٬۹۰۰ سال نوری</string>
+    <string name="object_info_m56_size" translation_description="Physical size of M56 shown in the info card. Translate units if appropriate for your locale.">~۶۸ سال نوری در سراسر</string>
+
+    <string name="object_info_m71_description" translation_description="Description of the globular cluster M71 shown in the info card. Translate this text.">
+    M71 یک خوشه کروی غیرمعمول در صورت فلکی پیکان است — برای دهه‌ها توسط ستاره‌شناسان مورد بحث قرار گرفت که نمی‌توانستند تصمیم بگیرند آیا یک خوشه باز قدیمی بسیار غنی است یا یک خوشه کروی جوان بسیار شل. تجزیه و تحلیل مدرن تأیید می‌کند که این یک خوشه کروی واقعی است، اما با غلظت استثنایی پایین و ستاره‌های نسبتاً کم و هسته‌ای کمتر غالب نسبت به خوشه‌های کروی معمولی.
+    </string>
+    <string name="object_info_m71_funfact" translation_description="Fun fact about M71 shown in the info card. Translate this text.">
+    ساختار شل M71 باعث شد که برای مدت‌های طولانی از بسیاری از کاتالوگ‌های اولیه حذف شود، زیرا شبیه یک میدان ستاره‌ای غنی بود تا یک خوشه واقعی. با فاصله تنها ۱۲٬۰۰۰ سال نوری، این یکی از نزدیک‌تر خوشه‌های کروی مسیه است، و ستاره‌های آن تحت تلسکوپ کوچک در آسمان تاریک تا حدی قابل تفکیک هستند — که به آن ظاهری از یک میدان ستاره‌ای غنی، فشرده و کمی متراکم می‌دهد.
+    </string>
+    <string name="object_info_m71_distance" translation_description="Distance to M71 shown in the info card. Translate units if appropriate for your locale.">۱۲٬۰۰۰ سال نوری</string>
+    <string name="object_info_m71_size" translation_description="Physical size of M71 shown in the info card. Translate units if appropriate for your locale.">~۲۵ سال نوری در سراسر</string>
 </resources>

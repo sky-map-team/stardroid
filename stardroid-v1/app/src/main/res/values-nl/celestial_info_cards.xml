@@ -948,6 +948,65 @@
     </string>
     <string name="object_info_eta_carinae_nebula_distance" translation_description="Distance to Eta Carinae Nebula shown in the info card. Translate units if appropriate for your locale.">7.500 lichtjaren</string>
     <string name="object_info_eta_carinae_nebula_size" translation_description="Physical size of Eta Carinae Nebula shown in the info card. Translate units if appropriate for your locale.">300 lichtjaren in doorsnee</string>
+    <!-- North America Nebula (NGC 7000) -->
+    <string name="object_info_north_america_nebula_description" translation_description="Description of the North America Nebula shown in the info card. Translate this text.">
+    De Noordamerika-nevel (NGC 7000) is een grote emissienevel in Cygnus waarvan de vorm opmerkelijk lijkt op het continent Noord-Amerika, compleet met een Golfvan Mexico-regio. Met een omvang van ongeveer 120 boogminuten — ruwweg vier keer de diameter van de volle maan — ligt deze op ongeveer 2.600 lichtjaar afstand en is meer dan 100 lichtjaar breed.
+    </string>
+    <string name="object_info_north_america_nebula_funfact" translation_description="Fun fact about the North America Nebula shown in the info card. Translate this text.">
+    Ondanks de schijnbare magnitude van 4 is de nevel te groot en te diffuus om met het blote oog onder de meeste hemelomstandigheden te zien — maar op foto\'s ziet het er prachtig uit en onthult het de Cygnus Wall, een dichte boog van intense stervorming langs de zuidelijke rand.
+    </string>
+    <string name="object_info_north_america_nebula_distance" translation_description="Distance to the North America Nebula shown in the info card. Translate units if appropriate for your locale.">~2.590 lichtjaar</string>
+    <string name="object_info_north_america_nebula_size" translation_description="Physical size of the North America Nebula shown in the info card. Translate units if appropriate for your locale.">~140 lichtjaar in doorsnee</string>
+    <!-- Exposed Cranium Nebula - PMR 1 -->
+    <string name="object_info_exposed_cranium_nebula_description" translation_description="Description of the Exposed Cranium Nebula shown in the info card. Translate this text.">
+    De Exposed Cranium Nebula (PMR 1) is een planetaire nevel in Vela, ongeveer 5.000 lichtjaar verderop. De griezelige naam komt van een donkere gasstrook die verticaal door het midden loopt en de gloeiende lobben verdeelt in een vorm die griezelig lijkt op een hersenen in een doorzichtige schedel. In het hart brandt een hete Wolf-Rayet-ster die de buitenlagen afstoot die hij gedurende zijn leven heeft opgebouwd.
+    </string>
+    <string name="object_info_exposed_cranium_nebula_funfact" translation_description="Fun fact about the Exposed Cranium Nebula shown in the info card. Translate this text.">
+    In 2026 legde de James Webb Space Telescope opvallende nieuwe afbeeldingen van de Exposed Cranium Nebula vast, waarbij de dubbele laagstructuur in ongekende detail werd opgelost — een buitenschil rijk aan waterstof en een binnencloud vol zwaardere elementen die door de stervende ster zijn gesmeed.
+    </string>
+    <string name="object_info_exposed_cranium_nebula_distance" translation_description="Distance to the Exposed Cranium Nebula shown in the info card. Translate units if appropriate for your locale.">~5.000 lichtjaar</string>
+    <string name="object_info_exposed_cranium_nebula_size" translation_description="Physical size of the Exposed Cranium Nebula shown in the info card. Translate units if appropriate for your locale.">~2 lichtjaar in doorsnee</string>
+
+    <!-- Jewel Box (NGC 4755) -->
+    <string name="object_info_jewel_box_description" translation_description="Description of the Jewel Box cluster shown in the info card. Translate this text.">
+    De Juwelendoos (NGC 4755) is een jong, schitterend open sterrenhoop in het sterrenbeeld Crux, gemakkelijk zichtbaar voor het blote oog als een wazig sterkte-4-patch net ten zuidoosten van Mimosa. Wanneer je erdoorheen kijkt met een telescoop, stralen de sterren in levendige contrasterende kleuren — diepe blauwe superreuzen naast een opvallende rode superreus — wat hem de naam gaf die John Herschel eraan gaf: een prachtig stuk juwelierwerk. Met slechts 14–16 miljoen jaar oud is het een van de jongste en kleurigste sterrenhopen aan de hemel.
+    </string>
+    <string name="object_info_jewel_box_funfact" translation_description="Fun fact about the Jewel Box shown in the info card. Translate this text.">
+    De opvallende rode ster van de cluster, κ Crucis, is een rode superreus die zo lumineus is dat hij de Zon meer dan 100.000 keer overstraalt — een levendige herinnering dat sterrenhopen niet allemaal dezelfde kleur hebben.
+    </string>
+    <string name="object_info_jewel_box_distance" translation_description="Distance to the Jewel Box shown in the info card. Translate units if appropriate for your locale.">~6.500 lichtjaar</string>
+    <string name="object_info_jewel_box_size" translation_description="Physical size of the Jewel Box shown in the info card. Translate units if appropriate for your locale.">~19 lichtjaar in doorsnee</string>
+
+    <!-- Double Cluster (NGC 869 & NGC 884) -->
+    <string name="object_info_double_cluster_description" translation_description="Description of the Double Cluster shown in the info card. Translate this text.">
+    De Dubbele Cluster (NGC 869 en NGC 884) is een schitterend paar jonge open sterrenhopen in Perseus, naast elkaar aan de hemel op iets meer dan een graad afstand. Beide zijn met het blote oog zichtbaar als een mistige vlek, maar zelfs een kleine telescoop onthult honderden briljante blauwwitte superreuzen die in twee glinsterende zwermen zijn samengeperst. Op ongeveer 7.500 lichtjaar afstand bevinden zij zich in de Perseus-arm van onze melkweg en behoren tot de mooiste binoculaire objecten aan de noordelijke hemel.
+    </string>
+    <string name="object_info_double_cluster_funfact" translation_description="Fun fact about the Double Cluster shown in the info card. Translate this text.">
+    Met slechts 14 miljoen jaar oud is het Dubbele Cluster buitengewoon jong — zo recent geboren dat de meest massieve sterren nog steeds blauwe superreuzen zijn, met enkele al geëvolueerd tot zeldzame, vurige rode superreuzen.
+    </string>
+    <string name="object_info_double_cluster_distance" translation_description="Distance to the Double Cluster shown in the info card. Translate units if appropriate for your locale.">~7.500 lichtjaar</string>
+    <string name="object_info_double_cluster_size" translation_description="Physical size of the Double Cluster shown in the info card. Translate units if appropriate for your locale.">Elk cluster ~70 lichtjaar in doorsnee; het paar gescheiden door ~1.000 lichtjaar</string>
+
+    <!-- 47 Tucanae (NGC 104) -->
+    <string name="object_info_n47_tucanae_description" translation_description="Description of 47 Tucanae shown in the info card. Translate this text.">
+    47 Tucanae (NGC 104) is de op één na helderste bolvormige sterrenhoop aan de hemel, een dichte bal van ongeveer één miljoen oude sterren die rond de Melkweg draaien in het sterrenbeeld Tucana. Op ongeveer 14.500 lichtjaar afstand verschijnt het voor het blote oog als een vage ster van de vierde magnitude, maar een telescoop ontrafelt de samengeperste kern in een buitengewone zwerm van gouden en blauwwitte zonnen. De sterren ervan ontstonden ongeveer 13 miljard jaar geleden, waardoor de sterrenhoop bijna even oud is als het universum zelf.
+    </string>
+    <string name="object_info_n47_tucanae_funfact" translation_description="Fun fact about 47 Tucanae shown in the info card. Translate this text.">
+    47 Tucanae is een kosmische pulsarfabriek: astronomen hebben er minstens 35 millisecondepulsars gevonden die honderden keren per seconde draaien — meer dan in enig ander bekend bolvormig sterrenstelsel — het resultaat van stellaire dichte ontmoetingen die oude neutronensterren recyclen door ze op te spinnen.
+    </string>
+    <string name="object_info_n47_tucanae_distance" translation_description="Distance to 47 Tucanae shown in the info card. Translate units if appropriate for your locale.">~14.500 lichtjaar</string>
+    <string name="object_info_n47_tucanae_size" translation_description="Physical size of 47 Tucanae shown in the info card. Translate units if appropriate for your locale.">~120 lichtjaar in doorsnee</string>
+
+    <!-- Centaurus A (NGC 5128) -->
+    <string name="object_info_centaurus_a_description" translation_description="Description of Centaurus A shown in the info card. Translate this text.">
+    Centaurus A (NGC 5128) is het dichtst bij de Aarde gelegen actieve radiogalaxie, een reuzenachtige elliptische sterrenstelsel in het sterrenbeeld Centaurus waarvan de opvallende donkere stofband een gewelddadig verleden verraadt — een spiraalsterrenstelsel dat ongeveer 200–700 miljoen jaar geleden werd opgeslokt. In het hart ervan schuilt een superzwaar zwart gat met een massa van 55 miljoen zonnemassa\'s dat relativistische jets aandrijft die zich meer dan een miljoen lichtjaar uitstrekken in radiogolflengten. Op een afstand van ongeveer 12 miljoen lichtjaar is het een van de meest bestudeerde sterrenstelsels aan de hemel.
+    </string>
+    <string name="object_info_centaurus_a_funfact" translation_description="Fun fact about Centaurus A shown in the info card. Translate this text.">
+    Centaurus A is een van de krachtigste natuurlijke radiozenders aan de hemel — de jets blazen plasma naar buiten met bijna de snelheid van het licht, en de volledige uitbreiding van de radiokwabben beslaat een gebied dat gelijk is aan ongeveer 100 volle manen die van begin tot eind over de hemel zijn gelegd.
+    </string>
+    <string name="object_info_centaurus_a_distance" translation_description="Distance to Centaurus A shown in the info card. Translate units if appropriate for your locale.">~12 miljoen lichtjaar</string>
+    <string name="object_info_centaurus_a_size" translation_description="Physical size of Centaurus A shown in the info card. Translate units if appropriate for your locale.">~123.000 lichtjaar in doorsnee</string>
+
     <!-- ==================== CONSTELLATIONS ==================== -->
     <!-- Note: Constellation names are defined in celestial_objects.xml -->
     <!-- Orion -->
@@ -1973,4 +2032,693 @@
     Vulpecula bevat de Halternevel (M27), de eerste planetaire nevel die ooit is ontdekt (door Charles Messier in 1764), en een prachtig binoculair doelwit!
     </string>
     <string name="object_info_vulpecula_size" translation_description="Physical size of Vulpecula shown in the info card. Translate units if appropriate for your locale.">268 vierkante graden</string>
+
+    <!-- Galilean Moons of Jupiter -->
+    <string name="object_info_io_description" translation_description="Description of Io shown in the info card. Translate this text.">
+    Io is de binnenste van Jupiters vier grote Galileïsche manen en het meest vulkanisch actieve hemellichaam in het zonnestelsel.
+    </string>
+    <string name="object_info_io_funfact" translation_description="Fun fact about Io shown in the info card. Translate this text.">
+    Io heeft honderden actieve vulkanen, waarvan sommige lavafonteinen uitspuiten die tientallen kilometers hoog zijn. De constante activiteit wordt aangedreven door getijdenverwarming van Jupiters enorme zwaartekracht.
+    </string>
+    <string name="object_info_io_distance" translation_description="Distance to Io shown in the info card. Translate units if appropriate for your locale.">421.700 km van Jupiter</string>
+    <string name="object_info_io_size" translation_description="Physical size of Io shown in the info card. Translate units if appropriate for your locale.">3.643 km diameter</string>
+
+    <string name="object_info_europa_description" translation_description="Description of Europa shown in the info card. Translate this text.">
+    Europa is de tweede Galileïsche maan en zou onder zijn ijzige korst een groot vloeibaar waterocean kunnen bevatten, wat het tot een van de meest veelbelovende plaatsen maakt om naar leven te zoeken.
+    </string>
+    <string name="object_info_europa_funfact" translation_description="Fun fact about Europa shown in the info card. Translate this text.">
+    De ondergrondse oceaan van Europa kan twee keer zoveel vloeibaar water bevatten als alle oceanen van de Aarde samen, vloeibaar gehouden door getijdenverwarming van Jupiter.
+    </string>
+    <string name="object_info_europa_distance" translation_description="Distance to Europa shown in the info card. Translate units if appropriate for your locale.">671.100 km van Jupiter</string>
+    <string name="object_info_europa_size" translation_description="Physical size of Europa shown in the info card. Translate units if appropriate for your locale.">3.122 km diameter</string>
+
+    <string name="object_info_ganymede_description" translation_description="Description of Ganymede shown in the info card. Translate this text.">
+    Ganymedes is de grootste maan in het zonnestelsel — zelfs groter dan de planeet Mercurius. Het is de enige maan waarvan bekend is dat deze zijn eigen magnetisch veld opwekt.
+    </string>
+    <string name="object_info_ganymede_funfact" translation_description="Fun fact about Ganymede shown in the info card. Translate this text.">
+    Ganymede is groter dan Mercurius qua grootte, hoewel slechts ongeveer de helft van zijn massa. Zijn interne magnetisch veld creëert zijn eigen miniatuuraardmagnetisme binnen Jupiters veel grotere magnetosfeer.
+    </string>
+    <string name="object_info_ganymede_distance" translation_description="Distance to Ganymede shown in the info card. Translate units if appropriate for your locale.">1.070.400 km van Jupiter</string>
+    <string name="object_info_ganymede_size" translation_description="Physical size of Ganymede shown in the info card. Translate units if appropriate for your locale.">5.268 km diameter</string>
+
+    <string name="object_info_callisto_description" translation_description="Description of Callisto shown in the info card. Translate this text.">
+    Callisto is de buitenste van de Galileïsche manen en een van de meest kraterrijke hemellichamen in het zonnestelsel. Het oude oppervlak bewaart een register van vroege inslagen in het zonnestelsel.
+    </string>
+    <string name="object_info_callisto_funfact" translation_description="Fun fact about Callisto shown in the info card. Translate this text.">
+    Callisto beweegt zich buiten Jupiters belangrijkste stralingsgordels, waardoor het de veiligste van de Galileïsche manen is voor toekomstige menselijke exploratie — het wordt soms de \'poortmaan\' genoemd.
+    </string>
+    <string name="object_info_callisto_distance" translation_description="Distance to Callisto shown in the info card. Translate units if appropriate for your locale.">1.882.700 km van Jupiter</string>
+    <string name="object_info_callisto_size" translation_description="Physical size of Callisto shown in the info card. Translate units if appropriate for your locale.">4.821 km diameter</string>
+
+    <!-- Moons of Mars -->
+    <string name="object_info_phobos_description" translation_description="Description of Phobos shown in the info card. Translate this text.">
+    Phobos is de grootste en binnenste van Mars\' twee manen, die dichter bij zijn planeet in een baan beweegt dan enige andere maan in het zonnestelsel. Het is een onregelmatig gevormd, zwaar gegroefd en gekraterd lichaam waarvan wordt aangenomen dat het een gevangen asteroïde is.
+    </string>
+    <string name="object_info_phobos_funfact" translation_description="Fun fact about Phobos shown in the info card. Translate this text.">
+    Phobos draait zo snel om Mars dat het in het westen opkomt en in het oosten ondergaat — en het spiraleert langzaam naar binnen, voorbestemd om over ongeveer 50 miljoen jaar tegen Mars te botsen of uiteen te vallen tot een ring.
+    </string>
+    <string name="object_info_phobos_distance" translation_description="Distance to Phobos shown in the info card. Translate units if appropriate for your locale.">9.376 km van Mars</string>
+    <!-- tm:omitted name="object_info_phobos_size" reason="identical_to_source" -->
+
+    <string name="object_info_deimos_description" translation_description="Description of Deimos shown in the info card. Translate this text.">
+    Deimos is de kleinere en buitenste van Mars\' twee manen, met een glad, stofbedekt oppervlak dat het een ronder uiterlijk geeft dan Phobos. Net als zijn metgezel wordt aangenomen dat het een gevangen asteroïde uit de buitenriem is.
+    </string>
+    <string name="object_info_deimos_funfact" translation_description="Fun fact about Deimos shown in the info card. Translate this text.">
+    Deimos is zo klein en ver weg dat het vanaf het Marsoppervlak niet meer lijkt dan een helder sterretje, dat ongeveer 30 uur nodig heeft om langzaam over de nachtelijke hemel te drijven.
+    </string>
+    <string name="object_info_deimos_distance" translation_description="Distance to Deimos shown in the info card. Translate units if appropriate for your locale.">23.460 km van Mars</string>
+    <!-- tm:omitted name="object_info_deimos_size" reason="identical_to_source" -->
+
+    <!-- Major Moons of Saturn -->
+    <string name="object_info_titan_description" translation_description="Description of Titan shown in the info card. Translate this text.">
+    Titan is de grootste maan van Saturnus en de op één na grootste maan in het zonnestelsel. Het is de enige maan waarvan bekend is dat deze een dichte atmosfeer heeft — een dikke stikstoflaag doorweven met methaan — en de enige wereld buiten de Aarde waarvan bekend is dat deze stabiele vloeibare zeeën op het oppervlak heeft.
+    </string>
+    <string name="object_info_titan_funfact" translation_description="Fun fact about Titan shown in the info card. Translate this text.">
+    De meren en zeeën van Titan zijn niet gevuld met water, maar met vloeibaar methaan en ethaan bij een ijzige −179°C. De Dragonfly-rotorcraft-missie van NASA, die in 2034 zal aankomen, zal tussen locaties op het oppervlak van Titan vliegen om naar de chemie van het leven te zoeken.
+    </string>
+    <string name="object_info_titan_distance" translation_description="Distance to Titan shown in the info card. Translate units if appropriate for your locale.">1.221.870 km van Saturnus</string>
+    <string name="object_info_titan_size" translation_description="Physical size of Titan shown in the info card. Translate units if appropriate for your locale.">5.151 km diameter</string>
+
+    <string name="object_info_rhea_description" translation_description="Description of Rhea shown in the info card. Translate this text.">
+    Rhea is Saturnus\' tweede grootste maan en een zwaar gekraterde wereld van ijs en rots. Het bleke, oude oppervlak bewaart enkele van de meest ongerepte inslagkraters van ons zonnestelsel, samen met heldere ijskliffen waar aardverschuivingen vers materiaal van onder het oppervlak hebben blootgelegd.
+    </string>
+    <string name="object_info_rhea_funfact" translation_description="Fun fact about Rhea shown in the info card. Translate this text.">
+    In 2008 suggereerden Cassini-gegevens dat Rhea mogelijk een dunne ring van puin om zich heen heeft die eraan orbiteert — wat het de eerste maan ooit zou maken die met zijn eigen ringstelsel is ontdekt. Indien bevestigd, zou het een opmerkelijke ontdekking zijn; het bewijs blijft een actief onderzoeksgebied.
+    </string>
+    <string name="object_info_rhea_distance" translation_description="Distance to Rhea shown in the info card. Translate units if appropriate for your locale.">527.108 km van Saturnus</string>
+    <string name="object_info_rhea_size" translation_description="Physical size of Rhea shown in the info card. Translate units if appropriate for your locale.">1.527 km diameter</string>
+
+    <string name="object_info_tethys_description" translation_description="Description of Tethys shown in the info card. Translate this text.">
+    Tethys is een ijzige maan van Saturnus die wordt gedomineerd door twee dramatische kenmerken: de enorme Odysseus-krater, 400 km breed en bedekt bijna een derde van het maanoppervlak, en Ithaca Chasma, een canyonsysteem dat zich drie kwart van de weg rond de aardbol uitstrekt.
+    </string>
+    <string name="object_info_tethys_funfact" translation_description="Fun fact about Tethys shown in the info card. Translate this text.">
+    Tethys bestaat bijna volledig uit waterijs — het heeft een van de laagste dichtheden van alle manen in het zonnestelsel, nauwelijks dichter dan bevroren water. Ithaca Chasma kan zijn ontstaan toen het binnenste bevroor en uitzette, waardoor de bovenliggende korst van binnenuit scheurde.
+    </string>
+    <string name="object_info_tethys_distance" translation_description="Distance to Tethys shown in the info card. Translate units if appropriate for your locale.">294.619 km van Saturnus</string>
+    <string name="object_info_tethys_size" translation_description="Physical size of Tethys shown in the info card. Translate units if appropriate for your locale.">1.062 km diameter</string>
+
+    <string name="object_info_dione_description" translation_description="Description of Dione shown in the info card. Translate this text.">
+    Dione is een ijzige maan van Saturnus met een zwaar gekraterde voorkant en een achterkant vol heldere ijskliffen — breuklijnnen waar oude tektonische krachten vers ijs van onder blootlegden. Cassini-zwaartekrachtgegevens wijzen op een ondergrondse vloeibare oceaan onder de korst.
+    </string>
+    <string name="object_info_dione_funfact" translation_description="Fun fact about Dione shown in the info card. Translate this text.">
+    Dione deelt zijn baan met twee kleine maantjes, Helene en Polydeuces, die op 60° voor en achter zich vastzitten op zwaartekrachtevenwichtspunten die Lagrangepunten worden genoemd. Helene in het bijzonder is te zien als een kosmische lifter in Cassini-afbeeldingen.
+    </string>
+    <string name="object_info_dione_distance" translation_description="Distance to Dione shown in the info card. Translate units if appropriate for your locale.">377.396 km van Saturnus</string>
+    <string name="object_info_dione_size" translation_description="Physical size of Dione shown in the info card. Translate units if appropriate for your locale.">1.122 km diameter</string>
+
+    <string name="object_info_iapetus_description" translation_description="Description of Iapetus shown in the info card. Translate this text.">
+    Iapetus is een van Saturnus\' meest opvallende manen: het voorste halfrond is bedekt met pikzwart materiaal dat zo donker is als steenkool, terwijl het achterste halfrond helder wit ijs is. Dit extreme twee-kleurig uiterlijk verwarde Giovanni Cassini toen hij de maan in 1671 ontdekte, en het contrast is zo sterk dat het zichtbaar is in kleine telescopen.
+    </string>
+    <string name="object_info_iapetus_funfact" translation_description="Fun fact about Iapetus shown in the info card. Translate this text.">
+    Iapetus heeft ook een imposante equatoriale bergrug die 20 km hoog uitsteekt — hoger dan enige berg op Aarde — en loopt duizenden kilometers rond zijn evenaar. De oorsprong ervan is onbekend: het kan het overblijfsel van een ingestorte ring zijn, of oude tektonische plooiing, gevormd toen de maan veel sneller draaide lang geleden.
+    </string>
+    <string name="object_info_iapetus_distance" translation_description="Distance to Iapetus shown in the info card. Translate units if appropriate for your locale.">3.560.820 km van Saturnus</string>
+    <string name="object_info_iapetus_size" translation_description="Physical size of Iapetus shown in the info card. Translate units if appropriate for your locale.">1.469 km diameter</string>
+
+    <!-- Moon of Neptune -->
+    <string name="object_info_triton_description" translation_description="Description of Triton shown in the info card. Translate this text.">
+    Triton is Neptunus\' grootste maan en een van de meest buitengewone hemellichamen in ons zonnestelsel. Het beweegt om Neptunus heen in tegengestelde richting — tegenovergesteld aan de rotatie van de planeet zelf — een sterk bewijs dat het in een vroeg stadium van Neptunus\' geschiedenis uit het buitenste zonnestelsel is gevangen, waarschijnlijk uit de Kuiper Belt.
+    </string>
+    <string name="object_info_triton_funfact" translation_description="Fun fact about Triton shown in the info card. Translate this text.">
+    Ondanks de oppervlaktetemperatuur van −235°C — de koudste gemeten op enig hemellichaam bezocht door een ruimtevaartuig — ontdekte Voyager 2 in 1989 actieve stikstofgeisers op Triton. Donkere strepen op het oppervlak markeren waar pluimen van gas en donker materiaal kilometers hoog in de dunne atmosfeer uitbraken.
+    </string>
+    <string name="object_info_triton_distance" translation_description="Distance to Triton shown in the info card. Translate units if appropriate for your locale.">354.759 km van Neptunus</string>
+    <string name="object_info_triton_size" translation_description="Physical size of Triton shown in the info card. Translate units if appropriate for your locale.">2.707 km diameter</string>
+
+    <!-- Major Moons of Uranus -->
+    <string name="object_info_titania_description" translation_description="Description of Titania shown in the info card. Translate this text.">
+    Titania is de grootste maan van Uranus en de achtste grootste maan in het zonnestelsel. Het oppervlak vertoont een mix van oude kratervlaktes en jongere hellingen en valleien, wat wijst op een complexe geologische geschiedenis die mogelijk in het verleden tektonische activiteit omvatte die de ijzige korst heeft omgevormd.
+    </string>
+    <string name="object_info_titania_funfact" translation_description="Fun fact about Titania shown in the info card. Translate this text.">
+    Al Uranus\' manen zijn genoemd naar personages uit Shakespeare en Alexander Pope — Titania is de koningin van de feeën in A Midsummer Night\'s Dream. Het is een van de zeer weinige grote planetaire manen die niet naar een figuur uit de Griekse of Romeinse mythologie is genoemd.
+    </string>
+    <string name="object_info_titania_distance" translation_description="Distance to Titania shown in the info card. Translate units if appropriate for your locale.">435.910 km van Uranus</string>
+    <string name="object_info_titania_size" translation_description="Physical size of Titania shown in the info card. Translate units if appropriate for your locale.">1.578 km diameter</string>
+
+    <string name="object_info_oberon_description" translation_description="Description of Oberon shown in the info card. Translate this text.">
+    Oberon is de buitenste van Uranus\' vijf grote manen en een van de meest kraterrijke, met een oud oppervlak dat sinds het begin van het zonnestelsel weinig is veranderd. Verschillende van zijn grote inslagkraters hebben donker materiaal op hun bodem, mogelijk organische afzettingen gebracht door de ingeslagen lichamen.
+    </string>
+    <string name="object_info_oberon_funfact" translation_description="Fun fact about Oberon shown in the info card. Translate this text.">
+    Oberon herbergt een berg die ongeveer 6 km boven de omliggende vlaktes uitstijgt — vergelijkbaar met de hoogste pieken op Aarde. In tegenstelling tot de bergen op Aarde, die door plaattektoniek zijn ontstaan, kan dit kenmerk de centrale piek van een oud inslagkrater zijn of een overblijfsel van vroege vulkanische activiteit.
+    </string>
+    <string name="object_info_oberon_distance" translation_description="Distance to Oberon shown in the info card. Translate units if appropriate for your locale.">583.520 km van Uranus</string>
+    <string name="object_info_oberon_size" translation_description="Physical size of Oberon shown in the info card. Translate units if appropriate for your locale.">1.523 km diameter</string>
+
+    <string name="object_info_ariel_description" translation_description="Description of Ariel shown in the info card. Translate this text.">
+    Ariel heeft het jongste en helderste oppervlak van de vijf grote manen van Uranus. Het landschap wordt gedomineerd door een netwerk van diepe valleien en gladde vlakten die lang geleden opnieuw zijn gevormd door vloeistof — waarschijnlijk water of ammonia-watermengels — die uit het binnenste omhoog welden en oud terrein overstroomden.
+    </string>
+    <string name="object_info_ariel_funfact" translation_description="Fun fact about Ariel shown in the info card. Translate this text.">
+    De valleien van Ariel kunnen tot 10 km diep zijn — veel dieper dan de Grand Canyon. Waarnemingen met de James Webb Space Telescope hebben sindsdien koolstofdioxide-ijs op het oppervlak van Ariel gedetecteerd, wat wijst op voortdurende oppervlaktechemie aangedreven door geladen deeltjes uit het magnetische veld van Uranus.
+    </string>
+    <string name="object_info_ariel_distance" translation_description="Distance to Ariel shown in the info card. Translate units if appropriate for your locale.">191.020 km van Uranus</string>
+    <string name="object_info_ariel_size" translation_description="Physical size of Ariel shown in the info card. Translate units if appropriate for your locale.">1.158 km diameter</string>
+
+    <string name="object_info_umbriel_description" translation_description="Description of Umbriel shown in the info card. Translate this text.">
+    Umbriel is de donkerste van de vijf grote manen van Uranus, met een uniform oud en zwaar gekraterd oppervlak dat weinig tekenen vertoont van de geologische hervorming die op zijn buren te zien is. Het binnenste lijkt sinds het begin van de geschiedenis van het zonnestelsel koud en bevroren te zijn gebleven.
+    </string>
+    <string name="object_info_umbriel_funfact" translation_description="Fun fact about Umbriel shown in the info card. Translate this text.">
+    Het meest opvallende kenmerk op Umbriel is Wunda, een helder ring van ongeveer 140 km in doorsnede nabij de evenaar. Ontdekt door Voyager 2 in 1986, blijft de exacte aard van Wunda een mysterie — het kan een kratervloer zijn bedekt met koolstofdioxide of ammoniakvorst die lang na de inslag die het vormde is afgezet.
+    </string>
+    <string name="object_info_umbriel_distance" translation_description="Distance to Umbriel shown in the info card. Translate units if appropriate for your locale.">266.300 km van Uranus</string>
+    <string name="object_info_umbriel_size" translation_description="Physical size of Umbriel shown in the info card. Translate units if appropriate for your locale.">1.170 km diameter</string>
+
+    <!-- Globular clusters already on the map -->
+    <string name="object_info_omega_centauri_description" translation_description="Description of Omega Centauri shown in the info card. Translate this text.">
+    Omega Centauri is de grootste en meest massieve bolvormige sterrenhoop die rond de Melkweg draait. Deze bevat ongeveer 10 miljoen sterren die in een bol van ongeveer 150 lichtjaar doorsnee zijn samengeperst. Het is met het blote oog zichtbaar als een vage ster in Centaurus en lost op in een adembenemende bal van sterren wanneer je er met een verrekijker of telescoop naar kijkt.
+    </string>
+    <string name="object_info_omega_centauri_funfact" translation_description="Fun fact about Omega Centauri shown in the info card. Translate this text.">
+    In tegenstelling tot typische bolvormige sterrenhopen bevat Omega Centauri sterren van veel verschillende leeftijden en chemische samenstelling — een teken dat het mogelijk de ontmantelde kern is van een dwergsterrenstelsel dat miljarden jaren geleden uit elkaar werd gescheurd en door de Melkweg werd opgeslokt. Het zou zelfs een centraal zwart gat van intermediaire massa kunnen herbergen.
+    </string>
+    <string name="object_info_omega_centauri_distance" translation_description="Distance to Omega Centauri shown in the info card. Translate units if appropriate for your locale.">17.090 lichtjaar</string>
+    <string name="object_info_omega_centauri_size" translation_description="Physical size of Omega Centauri shown in the info card. Translate units if appropriate for your locale.">~150 lichtjaar diameter</string>
+
+    <!-- Deep-sky objects: new catalog additions -->
+    <string name="object_info_hyades_description" translation_description="Description of the Hyades star cluster shown in the info card. Translate this text.">
+    De Hyaden is het dichtstbijzijnde open sterrenhoop bij ons zonnestelsel en een van de meest bestudeerde in de astronomie. Zichtbaar voor het blote oog als het V-vormige patroon van sterren dat het gezicht van Stier vormt, bevat het enkele honderden sterren verspreid over ongeveer 5° van de hemel.
+    </string>
+    <string name="object_info_hyades_funfact" translation_description="Fun fact about the Hyades shown in the info card. Translate this text.">
+    De briljante oranje ster Aldebaran lijkt in de Hyaden te liggen, maar is eigenlijk een voorgrondsobject op halve afstand — een toevallige uitlijning. Het echte cluster ligt ongeveer 153 lichtjaar ver weg en bevat de eerste sterren waarvan de afstanden door parallax van de Hipparcos-satelliet werden gemeten.
+    </string>
+    <string name="object_info_hyades_distance" translation_description="Distance to the Hyades shown in the info card. Translate units if appropriate for your locale.">153 lichtjaar</string>
+    <string name="object_info_hyades_size" translation_description="Angular size of the Hyades shown in the info card.">~5° groot</string>
+
+    <string name="object_info_coma_star_cluster_description" translation_description="Description of the Coma Berenices Star Cluster shown in the info card. Translate this text.">
+    Het Coma Berenices Sterrenhoop is een nabijgelegen open sterrenhoop met ongeveer 40 sterren die losjes verspreid zijn over bijna 5° van de hemel, gemakkelijk zichtbaar voor het blote oog als een zachte nevel onder donkere omstandigheden. Het is de derde dichtst bijzijnde open sterrenhoop voor het zonnestelsel en de bron van het sterrenbeeld Coma Berenices.
+    </string>
+    <string name="object_info_coma_star_cluster_funfact" translation_description="Fun fact about the Coma Berenices Star Cluster shown in the info card. Translate this text.">
+    Oude waarnemers zagen deze sterrenhoop als het haar van koningin Berenice II van Egypte, die volgens de legende haar gouden lokken afsneed als offer voor de veilige terugkeer van haar man uit de oorlog. Ptolemaeus III zou de ongebruikelijke sterrenbeeld rond 245 v.Chr. officieel naar haar hebben genoemd.
+    </string>
+    <string name="object_info_coma_star_cluster_distance" translation_description="Distance to the Coma Star Cluster shown in the info card. Translate units if appropriate for your locale.">288 lichtjaar</string>
+    <string name="object_info_coma_star_cluster_size" translation_description="Angular size of the Coma Star Cluster shown in the info card.">~5° groot</string>
+
+    <string name="object_info_coathanger_description" translation_description="Description of the Coathanger asterism shown in the info card. Translate this text.">
+    De Kledinghangers is een opvallend asterisme van tien sterren in Vulpecula die een onmiskenbare vorm vormen: zes sterren in een rechte lijn met vier eronder hangend in een haak, precies lijkend op een ondersteboven kledinghangers. Het is een van de beste binoculaire objecten in de zomerhemel, perfect passend in een typisch binoculair gezichtsveld.
+    </string>
+    <string name="object_info_coathanger_funfact" translation_description="Fun fact about the Coathanger shown in the info card. Translate this text.">
+    Ondanks het uiterlijk van een cluster zijn de sterren van de Coathanger niet fysiek gerelateerd — ze bevinden zich op zeer verschillende afstanden en zijn slechts een toevallige lijnzichtcombinatie. Brocchi\'s Cluster werd in de jaren 1920 door Dalmiro Brocchi gecatalogiseerd, en de eerste ruimtetelescoop die het afbeeldde was Hipparcos, die bevestigde dat de sterren niet gerelateerd zijn.
+    </string>
+    <string name="object_info_coathanger_distance" translation_description="Distance to the Coathanger shown in the info card. Translate units if appropriate for your locale.">~420 lichtjaar (helderste ster)</string>
+    <string name="object_info_coathanger_size" translation_description="Angular size of the Coathanger shown in the info card.">~1° groot</string>
+
+    <string name="object_info_helix_nebula_description" translation_description="Description of the Helix Nebula shown in the info card. Translate this text.">
+    De Helix-nevel is de grootste planetaire nevel naar schijnbare grootte aan de hemel — de uitdijende gasschil die door een zonachtige ster aan het einde van zijn leven wordt afgestoten. Met een omvang van ongeveer een halve graad is het zichtbaar in verrekijkers als een zwakke cirkelvormige gloed in Aquarius en staat het bekend als het Oog van God vanwege zijn verschijning op langbelichte foto\'s.
+    </string>
+    <string name="object_info_helix_nebula_funfact" translation_description="Fun fact about the Helix Nebula shown in the info card. Translate this text.">
+    In het centrum van de Helix-nevel bevindt zich een van de dichtstbijzijnde bekende witte dwergen van de Aarde — een extreem hete stellaire overblijfsel ongeveer ter grootte van de Aarde maar met de massa van de Zon. Dit is het lot dat onze eigen Zon over ongeveer vijf miljard jaar wacht.
+    </string>
+    <string name="object_info_helix_nebula_distance" translation_description="Distance to the Helix Nebula shown in the info card. Translate units if appropriate for your locale.">650 lichtjaar</string>
+    <string name="object_info_helix_nebula_size" translation_description="Angular size of the Helix Nebula shown in the info card.">~3 lichtjaar diameter</string>
+
+    <string name="object_info_sculptor_galaxy_description" translation_description="Description of the Sculptor Galaxy shown in the info card. Translate this text.">
+    Het Sculptor-sterrenstelsel is een van de helderste en mooiste edge-on spiraalstelsels zichtbaar vanaf de Aarde en verschijnt als een langgerekte gloed in het zuidelijke sterrenbeeld Sculptor. Het is een van de dichtstbijzijnde starburst-stelsels — een sterrenstelsel dat een intense uitbarsting van stervorming ondergaat — zichtbaar voor amateurastronomen met verrekijkers vanuit donkere hemel.
+    </string>
+    <string name="object_info_sculptor_galaxy_funfact" translation_description="Fun fact about the Sculptor Galaxy shown in the info card. Translate this text.">
+    Het Sculptorgalaxie is een van de helderste leden van de Sculptorgroep — de galaxiegroep het dichtst bij onze eigen Lokale Groep. De centrale starburst-regio produceert nieuwe sterren met een snelheid enkele keren hoger dan de Melkweg, aangedreven door eerdere interacties met naburige galaxieën.
+    </string>
+    <string name="object_info_sculptor_galaxy_distance" translation_description="Distance to the Sculptor Galaxy shown in the info card. Translate units if appropriate for your locale.">11,4 miljoen lichtjaar</string>
+    <string name="object_info_sculptor_galaxy_size" translation_description="Physical size of the Sculptor Galaxy shown in the info card. Translate units if appropriate for your locale.">~90.000 lichtjaar groot</string>
+
+    <string name="object_info_blue_snowball_nebula_description" translation_description="Description of the Blue Snowball Nebula shown in the info card. Translate this text.">
+    De Blauwe Sneeuwbal is een planetaire nevel in Andromeda — de glanzende gasschil die door een stervende ster is uitgestoten. Met een magnitude van 8,3 is het een van de helderste en kleurigste planetaire nevels aan de hemel, en verschijnt als een levendige blauwgroene schijf zelfs in kleine telescopen. De symmetrische vorm en intense kleur maken het een favoriet onder waarnemers.
+    </string>
+    <string name="object_info_blue_snowball_nebula_funfact" translation_description="Fun fact about the Blue Snowball Nebula shown in the info card. Translate this text.">
+    De opvallende kleur van de Blue Snowball komt van dubbel geïoniseerde zuurstof die gloedt op een specifieke groene golflengte, gecombineerd met waterstofemissie — een kleurenpalet dat het menselijk oog waarneemt als blauwgroen. De centrale witte dwerg heeft een oppervlaktetemperatuur van ongeveer 100.000°C, heet genoeg om het omringende gas op deze afstand te ioniseren.
+    </string>
+    <string name="object_info_blue_snowball_nebula_distance" translation_description="Distance to the Blue Snowball Nebula shown in the info card. Translate units if appropriate for your locale.">~2.500 lichtjaar</string>
+    <string name="object_info_blue_snowball_nebula_size" translation_description="Physical size of the Blue Snowball Nebula shown in the info card. Translate units if appropriate for your locale.">~0,8 lichtjaar diameter</string>
+
+    <string name="object_info_ghost_of_jupiter_description" translation_description="Description of the Ghost of Jupiter planetary nebula shown in the info card. Translate this text.">
+    De Ghost of Jupiter is een heldere planetaire nevel in Hydra waarvan de schijnbare grootte vergelijkbaar is met de planeet Jupiter — vandaar de naam. Met een magnitude van 8,6 is het een van de meest toegankelijke planetaire nevels aan de hemel voor kleine telescopen, met een duidelijke schijf en een hint van kleur in matige openingen.
+    </string>
+    <string name="object_info_ghost_of_jupiter_funfact" translation_description="Fun fact about the Ghost of Jupiter shown in the info card. Translate this text.">
+    De Ghost of Jupiter heeft een binnenste helder omhulsel omgeven door een zwakker buitenhalo — een twee-omhulselstructuur die suggereert dat de stervende ster gas in minstens twee afzonderlijke episodes heeft uitgestoten. De centrale ster is een van de heetste bekende witte dwergen, met een geschatte oppervlaktetemperatuur van ongeveer 75.000°C.
+    </string>
+    <string name="object_info_ghost_of_jupiter_distance" translation_description="Distance to the Ghost of Jupiter shown in the info card. Translate units if appropriate for your locale.">~1.400 lichtjaar</string>
+    <string name="object_info_ghost_of_jupiter_size" translation_description="Physical size of the Ghost of Jupiter shown in the info card. Translate units if appropriate for your locale.">~1 lichtjaar diameter</string>
+
+    <string name="object_info_saturn_nebula_description" translation_description="Description of the Saturn Nebula shown in the info card. Translate this text.">
+    De Saturnusnevel is een planetaire nevel in Waterman die naar de planeet Saturnus is genoemd vanwege de gelijkenis — uitsteeksels genaamd ansae steken aan beide zijden uit als ringgrepen, zichtbaar in matige telescopen. Met een magnitude van 8,0 is het een van de helderste planetaire nevels aan de hemel en toont complexe structuur in grotere instrumenten.
+    </string>
+    <string name="object_info_saturn_nebula_funfact" translation_description="Fun fact about the Saturn Nebula shown in the info card. Translate this text.">
+    William Herschel ontdekte de Saturnusnevel in 1782 en merkte de Saturnusachtige verschijning op. Moderne waarnemingen onthullen minstens vier verschillende gasschillen rond de centrale witte dwerg, wat meerdere episodes van massaverlies in de laatste stadia van het leven van de ster weerspiegelt.
+    </string>
+    <string name="object_info_saturn_nebula_distance" translation_description="Distance to the Saturn Nebula shown in the info card. Translate units if appropriate for your locale.">~5.000 lichtjaar</string>
+    <string name="object_info_saturn_nebula_size" translation_description="Physical size of the Saturn Nebula shown in the info card. Translate units if appropriate for your locale.">~1 lichtjaar groot</string>
+
+    <string name="object_info_ngc_2903_description" translation_description="Description of the galaxy NGC 2903 shown in the info card. Translate this text.">
+    NGC 2903 is een heldere spiraalsterrenstelsel met balkstructuur in de Leeuw, vaak aangeduid als "het Messier-object dat Messier miste" — het is een van de meest opvallende sterrenstelsels aan de hemel die niet in zijn beroemde catalogus zijn opgenomen. Met een magnitude van 8,9 is het gemakkelijk zichtbaar met verrekijkers en toont het een prachtige spiraalstructuur in matige telescopen.
+    </string>
+    <string name="object_info_ngc_2903_funfact" translation_description="Fun fact about NGC 2903 shown in the info card. Translate this text.">
+    NGC 2903 heeft een van de hoogste concentraties van stervorming "hotspots" bekend in een centrale balkstreek van een sterrenstelsel — dichte clusters van jonge massieve sterren verlicht door intense stervorming. Het wordt gebruikt als referentiepunt voor het bestuderen van starburst-activiteit in spiraalstelsels met een balk.
+    </string>
+    <string name="object_info_ngc_2903_distance" translation_description="Distance to NGC 2903 shown in the info card. Translate units if appropriate for your locale.">30 miljoen lichtjaar</string>
+    <string name="object_info_ngc_2903_size" translation_description="Physical size of NGC 2903 shown in the info card. Translate units if appropriate for your locale.">~80.000 lichtjaar groot</string>
+
+    <!-- Meteor showers -->
+    <string name="object_info_quadrantids_description" translation_description="Description of the Quadrantids meteor shower shown in the info card. Translate this text.">
+    De Quadrantiden zijn een productieve januarimeteorenregen met een zeer scherpe, korte piek die slechts enkele uren duurt. De radiaal ligt in het sterrenbeeld Boötes, dicht bij de positie van het vervallen sterrenbeeld Quadrans Muralis, naar welk sterrenbeeld de meteorenregen is genoemd. Onder ideale omstandigheden zijn tot 120 meteoren per uur zichtbaar.
+    </string>
+    <string name="object_info_quadrantids_funfact" translation_description="Fun fact about the Quadrantids meteor shower shown in the info card. Translate this text.">
+    In tegenstelling tot de meeste grote meteorenregens die afkomstig zijn van kometen, is het moederlichaam van de Quadrantiden de asteroïde 2003 EH1 — waarvan wordt aangenomen dat het de slapende kern is van een komeet die eeuwen geleden is uitgebreid. Het bestaan ervan werd pas in 2003 bevestigd.
+    </string>
+
+    <string name="object_info_lyrids_description" translation_description="Description of the Lyrids meteor shower shown in the info card. Translate this text.">
+    De Lyriden zijn een betrouwbare lentestergstroom die uitstraalt vanuit de buurt van de heldere ster Vega in Lyra. Ze produceren snelle, matig heldere meteoren, met een piek van ongeveer 18 per uur, en genereren af en toe vuurpijlen die gloeiende rooksporen achterlaten.
+    </string>
+    <string name="object_info_lyrids_funfact" translation_description="Fun fact about the Lyrids meteor shower shown in the info card. Translate this text.">
+    De Lyriden zijn de oudste betrouwbaar geregistreerde meteorenzwerm in de geschiedenis. Chinese astronomen documenteerden een storm van meteoren die "als regen vielen" in 687 v.Chr. Het puin komt van komeet Thatcher, die 415 jaar nodig heeft om de zon te omcirkelen en voor het laatst in 1861 het binnenste zonnestelsel bezocht.
+    </string>
+
+    <string name="object_info_aquariids_description" translation_description="Description of the Eta Aquariids meteor shower shown in the info card. Translate this text.">
+    De Eta Aquariïden zijn een van twee jaarlijkse meteorenregens veroorzaakt door puin van de komeet van Halley. Met een piek van tot 70 meteoren per uur, begünstigt de regen sterk het zuidelijk halfrond, waar de radiaal hoog voor zonsopgang opkomt. Waarnemers op het noordelijk halfrond genieten nog steeds van een respectabel aantal van 30 of meer per uur.
+    </string>
+    <string name="object_info_aquariids_funfact" translation_description="Fun fact about the Eta Aquariids meteor shower shown in the info card. Translate this text.">
+    Eta Aquariïde meteoren reizen met 66 km/s — snel genoeg dat de geïoniseerde lucht die ze creëren enkele seconden na de meteorenval kan gaan gloeien. Je kunt mogelijk het oude stof van Halley zien verbranden voor je ogen, afgestoten tijdens een van de vele bezoeken van de komeet duizenden jaren geleden.
+    </string>
+
+    <string name="object_info_deltaaquariids_description" translation_description="Description of the Delta Aquariids meteor shower shown in the info card. Translate this text.">
+    De Southern Delta Aquariids bereiken hun hoogtepunt in late juli en zijn het best zichtbaar vanaf tropische en zuidelijke breedtegraden, waar de radiaal in Aquarius hoog boven de horizon staat voor zonsopgang. Ze produceren een gestage stroom van meteoren met gemiddelde snelheid tot 16 per uur, met weinig heldere vuurpijlen.
+    </string>
+    <string name="object_info_deltaaquariids_funfact" translation_description="Fun fact about the Delta Aquariids meteor shower shown in the info card. Translate this text.">
+    De exacte moederlichaam van de Delta Aquariïden blijft onzeker. De voornaamste kandidaat is Komeet 96P/Machholz, een ongebruikelijke kortperiodieke komeet met een sterk hellende baan die opmerkelijk dicht bij de Zon komt — dichter dan de planeet Mercurius.
+    </string>
+
+    <string name="object_info_perseids_description" translation_description="Description of the Perseids meteor shower shown in the info card. Translate this text.">
+    De Perseïden zijn de populairste meteorenregen van het jaar, met een piek op warme augustusnachten met tot 100 meteoren per uur. Puin afgestoten door komeet Swift-Tuttle verbrandt hoog in de atmosfeer van de aarde en produceert snelle, heldere meteoren — veel met blijvende gloeiende staarten — uitstralend van het sterrenbeeld Perseus.
+    </string>
+    <string name="object_info_perseids_funfact" translation_description="Fun fact about the Perseids meteor shower shown in the info card. Translate this text.">
+    De moederkomeet van de Perseïden, Komeet Swift-Tuttle, heeft een kern van 26 km breed — groter dan het object waarvan wordt aangenomen dat het de massale uitsterving veroorzaakte die het einde van de dinosauriërs markeerde. De komeet passeerde voor het laatst in 1992 door het binnenste zonnestelsel en zal pas in 2125 terugkeren.
+    </string>
+
+    <string name="object_info_orionids_description" translation_description="Description of the Orionids meteor shower shown in the info card. Translate this text.">
+    De Orioniden zijn de tweede meteorenzwerm die elk jaar door de komeet van Halley wordt voortgebracht en straalt uit vanuit de buurt van de verheven knuppel van Orion. Met een piek van ongeveer 25 per uur, staan zij bekend om snelle, vaak heldere meteoren die regelmatig gloeiende ionisatiesporen achterlaten die enkele seconden aanhouden.
+    </string>
+    <string name="object_info_orionids_funfact" translation_description="Fun fact about the Orionids meteor shower shown in the info card. Translate this text.">
+    De komeet van Halley is verantwoordelijk voor twee jaarlijkse meteorenregens: de Eta Aquariïden in mei, wanneer de Aarde de uitgaande puin van de komeet kruist, en de Orioniden in oktober, wanneer de Aarde de inkomende puin kruist. Samen stellen zij ons in staat om twee keer per jaar oud Halley-stof te bemonsteren.
+    </string>
+
+    <string name="object_info_leonids_description" translation_description="Description of the Leonids meteor shower shown in the info card. Translate this text.">
+    De Leoniden stralen uit van de sikkel van Leeuw en produceren doorgaans ongeveer 20 meteoren per uur. Ze zijn beroemd om spectaculaire stormen die zich ruwweg elke 33 jaar voordoen wanneer de Aarde door een dicht stoffilament van komeet 55P/Tempel-Tuttle gaat. Deze stormen kunnen duizenden meteoren per uur produceren.
+    </string>
+    <string name="object_info_leonids_funfact" translation_description="Fun fact about the Leonids meteor shower shown in the info card. Translate this text.">
+    De Leonidenstorm van 1833 produceerde naar schatting 100.000 meteoren per uur, wat waarnemers in Noord-Amerika in schrik joeg die vreesden dat de hemel in brand stond. Dit evenement markeerde het begin van de wetenschappelijke studie van meteorenregens. Vergelijkbare stormen traden op in 1966 en 1999.
+    </string>
+
+    <string name="object_info_puppidvelids_description" translation_description="Description of the Puppid-Velids meteor shower shown in the info card. Translate this text.">
+    De Puppid-Veliden zijn een complex van overlappende kleine meteorenregens die uitstralen vanuit de sterrenbeelden Puppis en Vela in de zuidelijke Melkweg. Met een piek van ongeveer 10 meteoren per uur, worden zij het best waargenomen vanaf het zuidelijk halfrond, waar de radiaal hoog aan de decemberhemel staat.
+    </string>
+    <string name="object_info_puppidvelids_funfact" translation_description="Fun fact about the Puppid-Velids meteor shower shown in the info card. Translate this text.">
+    De Puppid-Veliden worden verondersteld afkomstig te zijn van puin van verschillende verschillende moederkometen in plaats van een enkele bron, waaronder Komeet 26P/Grigg-Skjellerup. Hun zuidelijke radiationspunt stijgt nooit boven de horizon voor waarnemers op breedtegraden ten noorden van ongeveer 40°N, waardoor het een meteorenzwerm is die de meeste wereld zelden ziet.
+    </string>
+
+    <string name="object_info_geminids_description" translation_description="Description of the Geminids meteor shower shown in the info card. Translate this text.">
+    De Geminiden worden algemeen beschouwd als de beste meteorenregen van het jaar — productief (tot 120 per uur), betrouwbaar en actief vanaf vroeg in de avond in plaats van alleen na middernacht. Ze stralen uit van het sterrenbeeld Gemini en produceren een breed scala aan meteorhelderheid, inclusief levendige vuurpijlen.
+    </string>
+    <string name="object_info_geminids_funfact" translation_description="Fun fact about the Geminids meteor shower shown in the info card. Translate this text.">
+    In tegenstelling tot andere grote meteorenregens komen de Geminiden uniek van een asteroïde in plaats van een komeet: 3200 Phaethon, een "rotskomeet" waarvan de baan dichter bij de Zon komt dan enig ander benoemd asteroïde. De extreme hitte kan het rotsachtige oppervlak breken en het stof vrijmaken dat de regen veroorzaakt.
+    </string>
+
+    <string name="object_info_ursids_description" translation_description="Description of the Ursids meteor shower shown in the info card. Translate this text.">
+    De Ursiden zijn een zwakke meteorenzwerm die uitstraalt van Ursa Minor, dicht bij Polaris, waardoor ze voor waarnemers op het noordelijk halfrond circumpolair zijn — de hele nacht zichtbaar zonder onder te gaan. Ze bereiken hun hoogtepunt rond de winterzonnewende met ongeveer 10 meteoren per uur, en de moederkomeet is 8P/Tuttle.
+    </string>
+    <string name="object_info_ursids_funfact" translation_description="Fun fact about the Ursids meteor shower shown in the info card. Translate this text.">
+    De Ursiden produceren af en toe onverwachte uitbarstingen die veel hoger zijn dan hun normale snelheid. In 1945 en opnieuw in 2006 registreerden waarnemers 50 of meer meteoren per uur — vijf keer de normale piek. Deze stijgingen treden op wanneer de Aarde door een ongewoon dicht lint van puin gaat dat vrijkwam tijdens een dichte benadering van komeet Tuttle.
+    </string>
+
+    <!-- Category 5: Top priority — objects on the map that lacked info cards -->
+    <string name="object_info_m47_description" translation_description="Description of the open star cluster M47 shown in the info card. Translate this text.">
+    M47 is een helder, los open sterrenhoop in Puppis, gemakkelijk zichtbaar voor het blote oog en opvallend in verrekijkers. Ongeveer 50 sterren zijn verspreid over een halve graad van de hemel, met verschillende oranje reuzensterren die warme kleur toevoegen tegen de zwakkere blauw-witte leden.
+    </string>
+    <!-- tm:omitted name="object_info_m47_funfact" reason="identical_to_source" -->
+    <string name="object_info_m47_distance" translation_description="Distance to M47 shown in the info card. Translate units if appropriate for your locale.">1.600 lichtjaar</string>
+    <string name="object_info_m47_size" translation_description="Physical size of M47 shown in the info card. Translate units if appropriate for your locale.">~14 lichtjaar groot</string>
+
+    <string name="object_info_m41_description" translation_description="Description of the open star cluster M41 shown in the info card. Translate this text.">
+    M41 is een fraai open sterrenhoop in Canis Major, gelegen op slechts 4° ten zuiden van Sirius — de helderste ster aan de nachtelijke hemel. Met het blote oog zichtbaar vanaf donkere locaties en spectaculair in verrekijkers, bevat het ongeveer 100 sterren verspreid over een ruim gezichtsveld, met verschillende opvallende oranje reuzensterren tussen zwakker blauwe-witte leden.
+    </string>
+    <string name="object_info_m41_funfact" translation_description="Fun fact about M41 shown in the info card. Translate this text.">
+    Aristoteles kan M41 rond 325 v.Chr. hebben opgemerkt — mogelijk de vroegste geregistreerde waarneming van een diep-ruimteobject. Hij beschreef een "wolkige vlek" ten zuiden van Sirius die overeenkomt met de positie van M41. Als deze identificatie correct is, werd M41 bijna tweeduizend jaar voor de uitvinding van de telescoop al besproken.
+    </string>
+    <string name="object_info_m41_distance" translation_description="Distance to M41 shown in the info card. Translate units if appropriate for your locale.">2.300 lichtjaar</string>
+    <string name="object_info_m41_size" translation_description="Physical size of M41 shown in the info card. Translate units if appropriate for your locale.">~25 lichtjaar groot</string>
+
+    <string name="object_info_m24_description" translation_description="Description of the Sagittarius Star Cloud (M24) shown in the info card. Translate this text.">
+    M24 is de Sagittarius Star Cloud — geen cluster of nevel, maar een venster door een gat in het stof van de Melkweg, dat een schitterend sterrenveld van 2° breed onthult. Het is de rijkste regio die overal aan de hemel door verrekijkers zichtbaar is, vol met duizenden sterren die tegelijkertijd op veel verschillende afstanden liggen.
+    </string>
+    <string name="object_info_m24_funfact" translation_description="Fun fact about M24 shown in the info card. Translate this text.">
+    De sterren in M24 bevinden zich niet op dezelfde afstand — de sterrenwolk vertegenwoordigt een dwarsdoorsnede van de schijf van de Melkweg gezien door een natuurlijke tunnel in het interstellaire stof, met afstanden van 10.000 tot 16.000 lichtjaar. Ingebed in de wolk bevinden zich donkere nevels en kleine sterrenhopen die als donkere vlekken tegen de briljante stellaire achtergrond verschijnen.
+    </string>
+    <string name="object_info_m24_distance" translation_description="Distance range to M24 shown in the info card. Translate units if appropriate for your locale.">~10.000–16.000 lichtjaar (bereik)</string>
+    <string name="object_info_m24_size" translation_description="Physical size of M24 shown in the info card. Translate units if appropriate for your locale.">~600 lichtjaar diepe venster</string>
+
+    <string name="object_info_m25_description" translation_description="Description of the open star cluster M25 shown in the info card. Translate this text.">
+    M25 is een helder open sterrenhoop die met het blote oog zichtbaar is in Boogschutter, gelegen tegen de dichte stervelden van de zomermelkweg. Ongeveer 600 sterren zijn verspreid over een halve graad groot veld, wat het een rijk binoculair object maakt. De helderste leden ervan omvatten verschillende blauwwitte superreuzen en een van de meest bestudeerde Cepheïde-variabelen aan de hemel.
+    </string>
+    <string name="object_info_m25_funfact" translation_description="Fun fact about M25 shown in the info card. Translate this text.">
+    M25 bevat U Sagittarii, een klassieke Cepheïde-variabele ster die gedurende een periode van 6,7 dagen helderder en donkerder wordt. Cepheïden zijn vitale "standaardkaarsen" voor het meten van kosmische afstanden omdat hun pulsatieperiode direct hun werkelijke helderheid onthult — astronomen gebruikten ze om eerst de grootte van de Melkweg en vervolgens de schaal van het waarneembare universum te bepalen.
+    </string>
+    <string name="object_info_m25_distance" translation_description="Distance to M25 shown in the info card. Translate units if appropriate for your locale.">2.000 lichtjaar</string>
+    <string name="object_info_m25_size" translation_description="Physical size of M25 shown in the info card. Translate units if appropriate for your locale.">~19 lichtjaar groot</string>
+
+    <string name="object_info_m39_description" translation_description="Description of the open star cluster M39 shown in the info card. Translate this text.">
+    M39 is een groot, verspreid open sterrenhoop in Cygnus, zichtbaar voor het blote oog dicht bij Deneb in de rijke zomermelkweg. De ongeveer 30 heldere sterren zijn losjes verspreid over een graad aan de hemel, het best waarneembaar bij lage vergroting in verrekijkers of een telescoop met groot gezichtsveld — hogere vergroting lost het slechts op in een dun, onopvallend sterrenveldje.
+    </string>
+    <string name="object_info_m39_funfact" translation_description="Fun fact about M39 shown in the info card. Translate this text.">
+    Op ongeveer 825 lichtjaar afstand is M39 één van de dichtstbijzijnde open sterrenhopen voor de Aarde, en met een leeftijd van ongeveer 240 miljoen jaar is het één van de oudere waarneembare sterrenhopen met het blote oog — oud genoeg dat de meest massieve sterren ervan al aan hun leven zijn gekomen. Messier registreerde het in 1764 en het behoorde tot de vroegste toevoegingen aan zijn catalogus.
+    </string>
+    <string name="object_info_m39_distance" translation_description="Distance to M39 shown in the info card. Translate units if appropriate for your locale.">825 lichtjaar</string>
+    <string name="object_info_m39_size" translation_description="Physical size of M39 shown in the info card. Translate units if appropriate for your locale.">~8 lichtjaar groot</string>
+
+    <!-- Category 5: Special cases -->
+    <string name="object_info_m63_description" translation_description="Description of the Sunflower Galaxy (M63) shown in the info card. Translate this text.">
+    Het Zonnebloem Sterrenstelsel is een lumineuze spiraal in Canes Venatici waarvan de strak gewonden armen, gevlekt met stervorming-regio\'s, het in lange-belichtingsfoto\'s een karakteristieke bloem-achtige textuur geven. Met magnitude 8,6 is het zichtbaar in verrekijkers vanaf donkere locaties en toont zijn langwerpige vorm en heldere kern gemakkelijk in kleine telescopen.
+    </string>
+    <string name="object_info_m63_funfact" translation_description="Fun fact about the Sunflower Galaxy shown in the info card. Translate this text.">
+    M63 werd in 1779 door Pierre Méchain ontdekt — een van de weinige Messier-objecten die door Méchain in plaats van Messier zelf zijn gevonden. Het is lid van de M51-groep, fysiek geassocieerd met het Whirlpool Galaxy (M51), en vertoont tekenen van een eerdere interactie: een zwakke, oude stellaire stroom wikkelt zich rond zijn buitenschijf.
+    </string>
+    <string name="object_info_m63_distance" translation_description="Distance to the Sunflower Galaxy shown in the info card. Translate units if appropriate for your locale.">29 miljoen lichtjaar</string>
+    <string name="object_info_m63_size" translation_description="Physical size of the Sunflower Galaxy shown in the info card. Translate units if appropriate for your locale.">~100.000 lichtjaar in doorsnee</string>
+
+    <string name="object_info_ngc_6543_description" translation_description="Description of the Cat's Eye Nebula (NGC 6543) shown in the info card. Translate this text.">
+    De Kattenoog-nevel is een van de meest structureel complexe planetaire nevels die bekend zijn — het uitgestoten gas van een stervende ster gevormd in concentrische schillen, jets en heldere knopen zichtbaar in Hubble-beelden. In kleine telescopen verschijnt het als een levendige blauwgroene schijf in Draco, een van de meest kleurrijke objecten aan de herfstlucht.
+    </string>
+    <string name="object_info_ngc_6543_funfact" translation_description="Fun fact about the Cat's Eye Nebula shown in the info card. Translate this text.">
+    In 1864 richtte astronoom William Huggins een spectroscoop op de Kattenoog en ontdekte dat deze uit gloeiend gas bestond in plaats van onopgeloste sterren — de eerste keer dat de aard van een planetaire nevel werd bevestigd. Deze ontdekking legde de grondslag voor het vakgebied van nebulair spectroscopie en weerlegde het heersende idee dat alle nevels verre sterrenhopen waren.
+    </string>
+    <string name="object_info_ngc_6543_distance" translation_description="Distance to the Cat's Eye Nebula shown in the info card. Translate units if appropriate for your locale.">~3.300 lichtjaar</string>
+    <string name="object_info_ngc_6543_size" translation_description="Physical size of the Cat's Eye Nebula shown in the info card. Translate units if appropriate for your locale.">~0,5 lichtjaar diameter</string>
+
+    <string name="object_info_m76_description" translation_description="Description of the Little Dumbbell Nebula (M76) shown in the info card. Translate this text.">
+    De Kleine Halter is een planetaire nevel in Perseus met een karakteristieke achtvorm — een kleinere neef van M27, de Halternevel in Vulpecula. Hoewel het zwakste object in de Messier-catalogus, beloont het geduldig waarnemen met kleine telescopen en toont het mooie structuur in grotere instrumenten, met twee helderder lobben aan weerszijden van een zwakker middenstuk.
+    </string>
+    <string name="object_info_m76_funfact" translation_description="Fun fact about the Little Dumbbell Nebula shown in the info card. Translate this text.">
+    M76 werd oorspronkelijk als twee afzonderlijke objecten gecatalogiseerd — NGC 650 en NGC 651 — omdat vroege waarnemers de twee heldere lobben onafhankelijk beschreven. Het is een bipolaire planetaire nevel die ontstond toen de uitstroom van een stervende ster aan de evenaar werd samengeknepen, waardoor twee uitdijende lobben langs de poolas ontstonden terwijl gas ook naar buiten welt bij de taille.
+    </string>
+    <string name="object_info_m76_distance" translation_description="Distance to the Little Dumbbell Nebula shown in the info card. Translate units if appropriate for your locale.">~2.500 lichtjaar</string>
+    <string name="object_info_m76_size" translation_description="Physical size of the Little Dumbbell Nebula shown in the info card. Translate units if appropriate for your locale.">~2 lichtjaar in doorsnee</string>
+
+    <string name="object_info_v838_mon_description" translation_description="Description of V838 Monocerotis shown in the info card. Translate this text.">
+    V838 Monocerotis is een ongewone variabele ster in Monoceros die in 2002 een spectaculaire uitbarsting onderging en kort een van de helderste sterren in de Melkweg werd. Hoewel tegenwoordig veel te zwak voor visuele waarnemers, produceerde de uitdijende lichtecho ervan — een golffront van licht dat oude stofschillen verlicht — enkele van de meest dramatische Hubble Space Telescope-afbeeldingen ooit gemaakt.
+    </string>
+    <string name="object_info_v838_mon_funfact" translation_description="Fun fact about V838 Monocerotis shown in the info card. Translate this text.">
+    De aard van de uitbarsting van V838 Mon blijft omstreden. De leidende theorie is een stellaire fusie — twee sterren die in elkaar spiralen en botsen — in plaats van een klassieke nova of superreus-eruptie. Indien bevestigd, was het de eerste real-time waarneming van een "luminous red nova", een zeldzame klasse van explosie veroorzaakt door stellaire fusies. Soortgelijke gebeurtenissen zijn sindsdien in andere sterrenstelsels gevonden.
+    </string>
+    <string name="object_info_v838_mon_distance" translation_description="Distance to V838 Monocerotis shown in the info card. Translate units if appropriate for your locale.">~20.000 lichtjaar</string>
+    <string name="object_info_v838_mon_size" translation_description="Extent of the V838 Monocerotis light echo shown in the info card. Translate units if appropriate for your locale.">~3 lichtjaar (lichtechouitbreiding)</string>
+
+    <string name="object_info_hdf_description" translation_description="Description of the Hubble Deep Field shown in the info card. Translate this text.">
+    Het Hubble Deep Field is een klein stukje schijnbaar lege hemel van 2,6 boogminuten in Ursa Major, gefotografeerd door de Hubble Space Telescope gedurende 10 opeenvolgende dagen in december 1995. Wat leek lege ruimte te zijn, bleek ongeveer 3.000 sterrenstelsels te bevatten — die miljarden jaren kosmische geschiedenis omspannen — en veranderde fundamenteel ons beeld van het universum.
+    </string>
+    <string name="object_info_hdf_funfact" translation_description="Fun fact about the Hubble Deep Field shown in the info card. Translate this text.">
+    Het stukje hemel werd specifiek gekozen omdat het leeg was van heldere sterren en nabijgelegen sterrenstelsels. Toch was de resulterende afbeelding vol met ongeveer 3.000 sterrenstelsels, wat leidde tot de schatting dat de hele hemel ongeveer 200 miljard sterrenstelsels bevat — bijna allemaal onzichtbaar voor telescopen vóór Hubble.
+    </string>
+    <string name="object_info_hdf_distance" translation_description="Distance to the most distant galaxies in the Hubble Deep Field shown in the info card. Translate units if appropriate for your locale.">~13 miljard lichtjaar (meest verwijderd)</string>
+    <string name="object_info_hdf_size" translation_description="Angular size of the Hubble Deep Field shown in the info card.">2,6 boogminuten (gezichtsveld)</string>
+
+    <string name="object_info_m43_description" translation_description="Description of De Mairan's Nebula (M43) shown in the info card. Translate this text.">
+    De Mairan\'s Nebula is een afgescheiden deel van het grote Orion Nebula-complex, gescheiden van M42 door een donkere stofband maar behorend tot dezelfde uitgebreide moleculaire wolk. Genoemd naar de Franse astronoom Jean-Jacques Dortous de Mairan, die het in 1731 opmerkte, is het een emissienebulose die wordt geïoniseerd door de hete jonge ster NU Orionis die in het centrum is ingebed.
+    </string>
+    <string name="object_info_m43_funfact" translation_description="Fun fact about De Mairan's Nebula shown in the info card. Translate this text.">
+    Hoewel M43 als een afzonderlijk object van M42 lijkt te verschijnen, is de donkere lijn die hen scheidt een stofwolk op de voorgrond — onderdeel van de Orion Moleculaire Wolk — die simpelweg ons zicht op de fysieke verbinding tussen de twee gloeiende gebieden blokkeert. Samen vormen zij slechts de verlichte binnenrand van een enorme donkere wolk die zich over een groot deel van Orion uitstrekt.
+    </string>
+    <string name="object_info_m43_distance" translation_description="Distance to De Mairan's Nebula shown in the info card. Translate units if appropriate for your locale.">1.350 lichtjaar</string>
+    <string name="object_info_m43_size" translation_description="Physical size of De Mairan's Nebula shown in the info card. Translate units if appropriate for your locale.">~8 lichtjaar in doorsnee</string>
+
+    <string name="object_info_m40_description" translation_description="Description of M40 (Winnecke 4) shown in the info card. Translate this text.">
+    M40 is uniek in de Messier-catalogus — het is geen nevel, cluster of sterrenstelsel, maar een wijde dubbelster. Messier catalogiseerde het in 1764 terwijl hij naar een nevel zocht die door Johann Hevelius in Ursa Major was gemeld, vond alleen dit sterpaar en noteerde het zodat toekomstige waarnemers het niet voor iets interessanters zouden aanzien.
+    </string>
+    <string name="object_info_m40_funfact" translation_description="Fun fact about M40 shown in the info card. Translate this text.">
+    De twee sterren van M40 — bekend als Winnecke 4 — zijn niet gravitationeel gebonden; ze bevinden zich op verschillende afstanden en zijn slechts een toevallige uitlijning. Messier zelf noteerde dat er "niets opmerkelijks" was, maar voegde het toe "om aan te tonen dat deze nevel niet hetzelfde is als die welke ik heb onderzocht." Zijn methodische gewoonte van het documenteren van negatieven gaf toekomstige waarnemers een definitieve referentie.
+    </string>
+    <string name="object_info_m40_distance" translation_description="Distance to M40 shown in the info card. Translate units if appropriate for your locale.">~500 lichtjaar</string>
+    <string name="object_info_m40_size" translation_description="Angular separation of the M40 double star shown in the info card.">~50 boogseconden (scheiding)</string>
+
+    <!-- Category 5: Second tier -->
+    <string name="object_info_m34_description" translation_description="Description of the open star cluster M34 shown in the info card. Translate this text.">
+    M34 is een helder, verspreide open sterrenhoop in Perseus, gemakkelijk zichtbaar in verrekijkers als een rijke verzameling sterren tegen de winterse Melkweg. De ongeveer 400 sterren beslaan een gebied bijna zo breed als de volle maan, met een handvol brede dubbelsterren zichtbaar voor aandachtige verrekijkersobservers.
+    </string>
+    <string name="object_info_m34_funfact" translation_description="Fun fact about M34 shown in the info card. Translate this text.">
+    Met een leeftijd van ongeveer 200 miljoen jaar is M34 intermediair — jong genoeg dat zijn hete blauwe sterren nog steeds schijnen, oud genoeg dat de meest massieve al als supernovae zijn ontploft. Op 1.500 lichtjaar is het een van de dichtstbijzijnde Messier-clusters en blijft het een prachtig object zelfs vanuit suburbane hemel.
+    </string>
+    <string name="object_info_m34_distance" translation_description="Distance to M34 shown in the info card. Translate units if appropriate for your locale.">1.500 lichtjaar</string>
+    <string name="object_info_m34_size" translation_description="Physical size of M34 shown in the info card. Translate units if appropriate for your locale.">~15 lichtjaar in doorsnee</string>
+
+    <string name="object_info_m23_description" translation_description="Description of the open star cluster M23 shown in the info card. Translate this text.">
+    M23 is een rijke open sterrenhoop in Sagittarius, ingebed in de dichte stervelden van de zomermelkweg. Ongeveer 150 sterren zijn verspreid over een halve graad in verrekijkers, waardoor het een genereus object voor verrekijkers is in dezelfde hemelstreek als veel andere Messier-objecten.
+    </string>
+    <string name="object_info_m23_funfact" translation_description="Fun fact about M23 shown in the info card. Translate this text.">
+    M23 wordt geschat ongeveer 300 miljoen jaar oud te zijn — intermediair in leeftijd, met de meeste van zijn massieve sterren die al van de hoofdreeks zijn afgeweken. Messier ontdekte het in 1764 tijdens een van zijn vruchtbare waarnemingscampagnes door de Sagittarius-stervelden.
+    </string>
+    <string name="object_info_m23_distance" translation_description="Distance to M23 shown in the info card. Translate units if appropriate for your locale.">2.150 lichtjaar</string>
+    <string name="object_info_m23_size" translation_description="Physical size of M23 shown in the info card. Translate units if appropriate for your locale.">~17 lichtjaar in doorsnee</string>
+
+    <string name="object_info_m37_description" translation_description="Description of the open star cluster M37 shown in the info card. Translate this text.">
+    M37 is de rijkste en helderste van de drie Messier open sterrenhopen in Auriga, met naar schatting 500 sterren in een compact veld. Het is een spectaculair object voor verrekijker en kleine telescoop, met een verstrooiing van oranje reuzensterren die kleurcontrast toevoegen aan de blauwwitte zwerm.
+    </string>
+    <string name="object_info_m37_funfact" translation_description="Fun fact about M37 shown in the info card. Translate this text.">
+    M37 bevat ongeveer een dozijn rode reuzen — een ongewoon hoog aantal dat zijn relatief gevorderde leeftijd van ongeveer 300 miljoen jaar weerspiegelt. Ondanks dat het ongeveer 4.500 lichtjaar verwijderd is — het verste van de drie Auriga Messier-clusters — behoort het nog steeds tot de mooiste open clusters aan de hemel.
+    </string>
+    <string name="object_info_m37_distance" translation_description="Distance to M37 shown in the info card. Translate units if appropriate for your locale.">4.500 lichtjaar</string>
+    <string name="object_info_m37_size" translation_description="Physical size of M37 shown in the info card. Translate units if appropriate for your locale.">~31 lichtjaar in doorsnee</string>
+
+    <string name="object_info_m48_description" translation_description="Description of the open star cluster M48 shown in the info card. Translate this text.">
+    M48 is een groot, helder open sterrenhoop in Hydra, die bijna een graad van de hemel beslaat en vanaf donkere locaties met het blote oog zichtbaar is. De ongeveer 80 sterren zijn losjes verspreid over een breed gezichtsveld dat het best geschikt is voor verrekijkers, met een verstrooiing van oranje en gele reuzensterren onder de helderste blauwwitte leden.
+    </string>
+    <string name="object_info_m48_funfact" translation_description="Fun fact about M48 shown in the info card. Translate this text.">
+    M48 was een van de "verloren" Messier-objecten gedurende bijna twee eeuwen omdat de geregistreerde positie van Messier ongeveer 5° afweek van de werkelijke locatie. Het bleef ongeïdentificeerd tot 1959, toen het werd gematcht met NGC 2548 en bleek dat een eenvoudige transcriptie-fout het de hele tijd in lege ruimte had geplaatst.
+    </string>
+    <string name="object_info_m48_distance" translation_description="Distance to M48 shown in the info card. Translate units if appropriate for your locale.">1.500 lichtjaar</string>
+    <string name="object_info_m48_size" translation_description="Physical size of M48 shown in the info card. Translate units if appropriate for your locale.">~23 lichtjaar in doorsnee</string>
+
+    <string name="object_info_m21_description" translation_description="Description of the open star cluster M21 shown in the info card. Translate this text.">
+    M21 is een compacte open sterrenhoop in Sagittarius, gelegen op slechts een halve graad ten noorden van de Trifid-nevel (M20), waardoor de twee een opvallend verrekijker-paar vormen. De hoop bevat ongeveer 57 sterren geconcentreerd in een kleiner veld dan veel Messier-hopen, met verschillende heldere blauwwitte sterren als dominante leden.
+    </string>
+    <string name="object_info_m21_funfact" translation_description="Fun fact about M21 shown in the info card. Translate this text.">
+    Hoewel fysiek niet gerelateerd, vormen M21 en M20 (de Trifid-nevel) een van de meest aantrekkelijke verrekijker-paarlingen in de zomerhemel — een heldere sterrenhoop naast een kleurrijke drielobbige nevel. M21 ligt ongeveer 4.250 lichtjaar verderop, terwijl M20 iets dichterbij ligt op ongeveer 4.100 lichtjaar.
+    </string>
+    <string name="object_info_m21_distance" translation_description="Distance to M21 shown in the info card. Translate units if appropriate for your locale.">4.250 lichtjaar</string>
+    <string name="object_info_m21_size" translation_description="Physical size of M21 shown in the info card. Translate units if appropriate for your locale.">~16 lichtjaar in doorsnee</string>
+
+    <string name="object_info_m50_description" translation_description="Description of the open star cluster M50 shown in the info card. Translate this text.">
+    M50 is een helder open sterrenhoop in Monoceros met ongeveer 200 sterren dicht opeengepakt in een opvallend compact veld voor verrekijkers en kleine telescopen. Het is gemakkelijk te vinden op een lijn tussen Sirius en Procyon en bevat een opmerkelijke rode reus — een warm oranje baken dat levendig opvalt tussen de blauwwitte sterren van de hoop.
+    </string>
+    <string name="object_info_m50_funfact" translation_description="Fun fact about M50 shown in the info card. Translate this text.">
+    M50 wordt geschat ongeveer 78 miljoen jaar oud te zijn — een van de jongere Messier open sterrenhopen — wat betekent dat de hete blauwe en witte sterren nog steeds evolueren, waarbij enkele van de meer massieve leden onlangs tot reuzen zijn uitgegroeid. Dit is typisch voor een sterrenhoop in haar vroege middelbare leeftijd.
+    </string>
+    <string name="object_info_m50_distance" translation_description="Distance to M50 shown in the info card. Translate units if appropriate for your locale.">3.200 lichtjaar</string>
+    <string name="object_info_m50_size" translation_description="Physical size of M50 shown in the info card. Translate units if appropriate for your locale.">~15 lichtjaar in doorsnee</string>
+
+    <string name="object_info_m36_description" translation_description="Description of the open star cluster M36 shown in the info card. Translate this text.">
+    M36 is de kleinste en jongste van de drie open sterrenhopen die Messier in de Auriga catalogiseerde. De ongeveer 60 sterren ervan zijn verzameld in een strak, glitterend veld dat met verrekijkers zichtbaar is en in een kleine telescoop goed opgelost in individuele sterren, gedomineerd door hete blauwwitte sterren.
+    </string>
+    <string name="object_info_m36_funfact" translation_description="Fun fact about M36 shown in the info card. Translate this text.">
+    M36 wordt geschat slechts ongeveer 25 miljoen jaar oud te zijn — een van de jongere Messier-clusters — wat betekent dat massieve blauwwitte sterren nog steeds domineren en er nog geen rode reuzen zijn verschenen. Het deelt de sterrenvelden van Auriga met M37 en M38, en alle drie clusters passen in dezelfde brede binoculaire waarneming.
+    </string>
+    <string name="object_info_m36_distance" translation_description="Distance to M36 shown in the info card. Translate units if appropriate for your locale.">4.100 lichtjaar</string>
+    <string name="object_info_m36_size" translation_description="Physical size of M36 shown in the info card. Translate units if appropriate for your locale.">~14 lichtjaar in doorsnee</string>
+
+    <string name="object_info_m46_description" translation_description="Description of the open star cluster M46 shown in the info card. Translate this text.">
+    M46 is een rijke, dichte open sterrenhoop in Puppis met ongeveer 500 sterren dicht opeengepakt in een breed gezichtsveld, indrukwekkend in verrekijkers en prachtig in kleine telescopen. Een opmerkelijke bonus zweeft aan de noordelijke rand: NGC 2438, een kleine planetaire nevel die lijkt ingebed in de sterrenhoop — een dramatische gezichtslijntoeval.
+    </string>
+    <string name="object_info_m46_funfact" translation_description="Fun fact about M46 shown in the info card. Translate this text.">
+    De planetaire nevel NGC 2438 lijkt zich in M46 te bevinden, maar is eigenlijk een niet-gerelateerd voorgrond object op een veel grotere afstand — ongeveer 1.400 lichtjaar versus M46\'s 5.400. Het toeval dat de schil van een stervende ster zich op een jong sterrenhoop aftekent, maakt dit een van de meest fotogenieke velden in de catalogus.
+    </string>
+    <string name="object_info_m46_distance" translation_description="Distance to M46 shown in the info card. Translate units if appropriate for your locale.">5.400 lichtjaar</string>
+    <string name="object_info_m46_size" translation_description="Physical size of M46 shown in the info card. Translate units if appropriate for your locale.">~42 lichtjaar in doorsnee</string>
+
+    <string name="object_info_m93_description" translation_description="Description of the open star cluster M93 shown in the info card. Translate this text.">
+    M93 is een helder, compact open sterrenhoop in Puppis, gelegen in de rijke zuidelijke Melkweg en gemakkelijk te vinden met verrekijkers. De ongeveer 80 sterren zijn gerangschikt in een opvallende wig- of vlindervorm en omvatten verschillende hete blauwe superreuzen, waardoor het een van de aantrekkelijkere open sterhopen in de winterhemel is.
+    </string>
+    <string name="object_info_m93_funfact" translation_description="Fun fact about M93 shown in the info card. Translate this text.">
+    M93 is relatief jong — ongeveer 100 miljoen jaar oud — met dominante blauwe en blauwwitte sterren die nog niet tot reuzen zijn uitgegroeid. Het is een van de meer zuidelijke Messier-clusters, en vanaf breedtegraden ten noorden van ongeveer 50°N komt het nooit erg hoog boven de horizon uit.
+    </string>
+    <string name="object_info_m93_distance" translation_description="Distance to M93 shown in the info card. Translate units if appropriate for your locale.">3.600 lichtjaar</string>
+    <string name="object_info_m93_size" translation_description="Physical size of M93 shown in the info card. Translate units if appropriate for your locale.">~23 lichtjaar in doorsnee</string>
+
+    <string name="object_info_m38_description" translation_description="Description of the open star cluster M38 shown in the info card. Translate this text.">
+    M38 is het grootste en meest verspreide van de drie open sterrenhopen die Messier in Auriga catalogiseerde. De ongeveer 100 sterren ervan zijn gerangschikt in een patroon dat sommige waarnemers vergelijken met een kruis of de Griekse letter pi, zichtbaar in verrekijkers en goed opgelost in een kleine telescoop. De kleinere sterrenhoop NGC 1907 ligt dicht in de buurt naar het zuiden.
+    </string>
+    <string name="object_info_m38_funfact" translation_description="Fun fact about M38 shown in the info card. Translate this text.">
+    M38 is de oudste van de drie Auriga Messier-clusters met ongeveer 220 miljoen jaar oud. Sommige van zijn massieve sterren zijn al geëvolueerd tot gele en oranje reuzen. De nabijgelegen cluster NGC 1907 past in hetzelfde lage-vergroting gezichtsveld, waardoor ze een mooi binoculair paar vormen — net als M46 en M47 in Puppis.
+    </string>
+    <string name="object_info_m38_distance" translation_description="Distance to M38 shown in the info card. Translate units if appropriate for your locale.">4.200 lichtjaar</string>
+    <string name="object_info_m38_size" translation_description="Physical size of M38 shown in the info card. Translate units if appropriate for your locale.">~26 lichtjaar in doorsnee</string>
+
+    <string name="object_info_m29_description" translation_description="Description of the open star cluster M29 shown in the info card. Translate this text.">
+    M29 is een kleine, jonge open sterrenhoop in Cygnus, gelegen tegen een van de meest stofverhulde gebieden van de Melkweg. Vijf briljante blauwe superreuzen domineren de sterrenhoop, zichtbaar in verrekijkers als een strak asterisme van hete, lumineuze sterren. Zonder het dichte voorgrondstof zou M29 een van de meest spectaculaire open sterhopen aan de hemel zijn.
+    </string>
+    <string name="object_info_m29_funfact" translation_description="Fun fact about M29 shown in the info card. Translate this text.">
+    M29 wordt geschat slechts ongeveer 10 miljoen jaar oud te zijn — een stellaire zuigeling — en bevindt zich in de Cygnus OB1-associatie, een uitgebreide groep massieve jonge sterren. Zwaar interstellair stof verzwakt het cluster met ongeveer 3 magnitudes; zonder die verduistering zouden de sterren van M29 verschillende keren helderder schijnen dan ze werkelijk lijken.
+    </string>
+    <string name="object_info_m29_distance" translation_description="Distance to M29 shown in the info card. Translate units if appropriate for your locale.">4.000 lichtjaar</string>
+    <string name="object_info_m29_size" translation_description="Physical size of M29 shown in the info card. Translate units if appropriate for your locale.">~8 lichtjaar in doorsnee</string>
+
+    <string name="object_info_m62_description" translation_description="Description of the globular cluster M62 shown in the info card. Translate this text.">
+    M62 is een rijke bolvormige sterrenhoop in Ophiuchus — een van de dichtstbijzijnde bolvormige sterhopen bij het galactische centrum en opvallend asymmetrisch, met sterren dichter opeengepakt aan de zuidkant. Met magnitude 6,6 is het een fraai object voor verrekijkers, hoewel de lage declinatie het voor waarnemers op het noordelijk halfrond een doelwit voor een kort seizoen maakt.
+    </string>
+    <string name="object_info_m62_funfact" translation_description="Fun fact about M62 shown in the info card. Translate this text.">
+    M62\'s excentrische kern is een direct gevolg van de nabijheid tot het galactische centrum — krachtige getijdenkrachten van de centrale bolling vervormen de cluster en trekken sterren naar het galactische vlak. Het is ook een van de meest dynamisch ontwikkelde bolvormige sterrenhopen die bekend zijn, met tekenen van kerninstorting en een ongewoon hoge dichtheid van millisecondenpolsars.
+    </string>
+    <string name="object_info_m62_distance" translation_description="Distance to M62 shown in the info card. Translate units if appropriate for your locale.">22.500 lichtjaar</string>
+    <string name="object_info_m62_size" translation_description="Physical size of M62 shown in the info card. Translate units if appropriate for your locale.">~92 lichtjaar in doorsnee</string>
+
+    <string name="object_info_m28_description" translation_description="Description of the globular cluster M28 shown in the info card. Translate this text.">
+    M28 is een compacte bolvormige sterrenhoop in Sagittarius, gelegen dicht bij de heldere ster Lambda Sagittarii in de rijke zomerse sterrenvelden. Met een magnitude van 6,9 is het een lonend doel voor verrekijkers en is het goed opgelost in kleine telescopen, met een heldere samengetrokken kern omgeven door een matige halo van sterren.
+    </string>
+    <string name="object_info_m28_funfact" translation_description="Fun fact about M28 shown in the info card. Translate this text.">
+    In 1987 werd M28 het eerste bolhoop waarin een milliseconde-pulsar werd gedetecteerd. Milliseconde-pulsars — neutronensterren die honderden keren per seconde roteren — ontstaan wanneer een neutronenster materie van een begeleider ster accreëert en worden veel vaker aangetroffen in bolhoopen dan in sterrenstelsels in het algemeen, omdat hun dichte stellaire omgevingen veel meer nauwe binaire ontmoetingen produceren.
+    </string>
+    <string name="object_info_m28_distance" translation_description="Distance to M28 shown in the info card. Translate units if appropriate for your locale.">18.300 lichtjaar</string>
+    <string name="object_info_m28_size" translation_description="Physical size of M28 shown in the info card. Translate units if appropriate for your locale.">~60 lichtjaar in doorsnee</string>
+
+    <string name="object_info_m52_description" translation_description="Description of the open star cluster M52 shown in the info card. Translate this text.">
+    M52 is een rijke open sterrenhoop in Cassiopeia, met ongeveer 200 sterren dicht opeengepakt in een compact gebied van de noordelijke Melkweg. Het is een prachtige verrekijkersterrenhoop en toont een mooi, dicht stellair veld in kleine telescopen, met een opvallend helderder oranje ster die dicht bij de zuidelijke rand van de sterrenhoop uitsteekt.
+    </string>
+    <string name="object_info_m52_funfact" translation_description="Fun fact about M52 shown in the info card. Translate this text.">
+    De afstand van M52 is ongewoon onzeker — schattingen variëren van 3.000 tot 7.000 lichtjaar — omdat zwaar interstellair stof langs deze gezichtslijn het bepalen van de werkelijke helderheid bemoeilijkt. Messier ontdekte het in 1774, dezelfde nacht waarop hij een komeet volgde die hem ertoe bracht verschillende andere catalogusingangen op te nemen.
+    </string>
+    <string name="object_info_m52_distance" translation_description="Distance to M52 shown in the info card. Translate units if appropriate for your locale.">~5.000 lichtjaar</string>
+    <string name="object_info_m52_size" translation_description="Physical size of M52 shown in the info card. Translate units if appropriate for your locale.">~25 lichtjaar in doorsnee</string>
+
+    <string name="object_info_m67_description" translation_description="Description of the open star cluster M67 shown in the info card. Translate this text.">
+    M67 is een fraai open sterrenhoop in Kanker en een van de oudste goed bestudeerde open sterre nhopen aan de hemel. Met een leeftijd van ongeveer 3,2–3,5 miljard jaar bevat het veel sterren die qua massa en leeftijd vergelijkbaar zijn met onze eigen Zon — wat het een natuurlijk laboratorium maakt voor het bestuderen van hoe sterren als de Zon zich in de loop van kosmische tijd ontwikkelen.
+    </string>
+    <string name="object_info_m67_funfact" translation_description="Fun fact about M67 shown in the info card. Translate this text.">
+    Verschillende sterren in M67 lijken sterk op de Zon in temperatuur, massa en leeftijd — een zeldzame combinatie die onderzoekers deed afvragen of de Zon zelf in een cluster zoals M67 is ontstaan. Omdat sterren in clusters worden geboren die geleidelijk uiteenvallen, is de Zon vrijwel zeker afkomstig van een nu verspreide broedergroep miljarden jaren geleden — hoewel welke cluster nooit is geïdentificeerd.
+    </string>
+    <string name="object_info_m67_distance" translation_description="Distance to M67 shown in the info card. Translate units if appropriate for your locale.">2.700 lichtjaar</string>
+    <string name="object_info_m67_size" translation_description="Physical size of M67 shown in the info card. Translate units if appropriate for your locale.">~24 lichtjaar in doorsnee</string>
+
+    <!-- tm:omitted name="object_info_m55_description" reason="identical_to_source" -->
+    <string name="object_info_m55_funfact" translation_description="Fun fact about M55 shown in the info card. Translate this text.">
+    M55\'s ongebruikelijk lage stellaire concentratie geeft het bijna het uiterlijk van een rijke open cluster in plaats van een typische bolvormige cluster. De sterren zijn verspreid over een gebied van bijna 100 lichtjaar breed, wat suggereert dat de zelfzwaartekracht van de cluster relatief zwak is in vergelijking met meer centraal verdichte bolvormige clusters zoals M13 of M3.
+    </string>
+    <string name="object_info_m55_distance" translation_description="Distance to M55 shown in the info card. Translate units if appropriate for your locale.">17.600 lichtjaar</string>
+    <string name="object_info_m55_size" translation_description="Physical size of M55 shown in the info card. Translate units if appropriate for your locale.">~100 lichtjaar in doorsnee</string>
+
+    <string name="object_info_m19_description" translation_description="Description of the globular cluster M19 shown in the info card. Translate this text.">
+    M19 is een compacte, rijke bolvormige sterrenhoop in Ophiuchus — een van de dichtstbijzijnde bolvormige sterre nhopen bij het galactische centrum. Het meest opvallende kenmerk is de duidelijk afgeplatte vorm: M19 is de meest afgeplatte bolvormige sterrenhoop die bekend is, met een zichtbare elliptische omtrek zelfs in een kleine telescoop.
+    </string>
+    <string name="object_info_m19_funfact" translation_description="Fun fact about M19 shown in the info card. Translate this text.">
+    M19\'s uitgesproken afgeplattingsgraad — de langste as is ongeveer 10% langer dan de kortste — is uniek onder bekende bolvormige sterrenhopen en wordt verondersteld het gevolg te zijn van getijdenstrekking door het zwaartekrachtveld van de Melkweg. Hoe dichter een bolvormige sterrenhoop naar het galactische centrum draait, hoe sterker deze wordt vervormd; M19 ligt slechts ongeveer 5.200 lichtjaar van de galactische kern.
+    </string>
+    <string name="object_info_m19_distance" translation_description="Distance to M19 shown in the info card. Translate units if appropriate for your locale.">28.700 lichtjaar</string>
+    <string name="object_info_m19_size" translation_description="Physical size of M19 shown in the info card. Translate units if appropriate for your locale.">~113 lichtjaar in doorsnee</string>
+
+    <string name="object_info_m80_description" translation_description="Description of the globular cluster M80 shown in the info card. Translate this text.">
+    M80 is een van de meest dicht opeengepakte bolvormige sterrenhopen in de Melkweg, een compacte, rijke bal van enkele honderdduizenden sterren in Scorpius. Met magnitude 7,2 is het een uitstekend binoculair doelwit en toont een briljante, sterk geconcentreerde kern in kleine telescopen.
+    </string>
+    <string name="object_info_m80_funfact" translation_description="Fun fact about M80 shown in the info card. Translate this text.">
+    In 1860 barstte een nova uit in M80 — aangeduid als T Scorpii — en werd even helder als het cluster zelf, zichtbaar voor het blote oog. Het blijft een van slechts twee nova\'s die ooit in een bolvormig cluster zijn waargenomen. Nova\'s in bolvormige clusters ontstaan door interacties tussen dubbelsterren, die veel vaker voorkomen in de dichte stellaire omgeving van de kern van een bolvormig cluster.
+    </string>
+    <string name="object_info_m80_distance" translation_description="Distance to M80 shown in the info card. Translate units if appropriate for your locale.">32.600 lichtjaar</string>
+    <string name="object_info_m80_size" translation_description="Physical size of M80 shown in the info card. Translate units if appropriate for your locale.">~84 lichtjaar in doorsnee</string>
+
+    <string name="object_info_m103_description" translation_description="Description of the open star cluster M103 shown in the info card. Translate this text.">
+    M103 is een kleine, compacte open sterrenhoop in Cassiopeia, met ongeveer 40 sterren in een dichte groep die gemakkelijk met verrekijkers zichtbaar is. Een opvallende dubbelster en een rode reus dicht bij het centrum geven het een kleurrijk uiterlijk in kleine telescopen, gelegen in de rijke Melkwegvelden van Cassiopeia.
+    </string>
+    <string name="object_info_m103_funfact" translation_description="Fun fact about M103 shown in the info card. Translate this text.">
+    M103 was het hoogst genummerde object in Messier\'s originele catalogus uit 1781 — alle volgende vermeldingen (M104–M110) werden later posthum toegevoegd door andere astronomen op basis van Messier\'s aantekeningen en correspondentie. Pierre Méchain ontdekte M103 kort voordat de catalogus ter perse ging, en Messier nam het op basis van Méchain\'s rapport op.
+    </string>
+    <string name="object_info_m103_distance" translation_description="Distance to M103 shown in the info card. Translate units if appropriate for your locale.">8.500 lichtjaar</string>
+    <string name="object_info_m103_size" translation_description="Physical size of M103 shown in the info card. Translate units if appropriate for your locale.">~15 lichtjaar in doorsnee</string>
+
+    <string name="object_info_m30_description" translation_description="Description of the globular cluster M30 shown in the info card. Translate this text.">
+    M30 is een compacte bolvormige sterrenhoop in Steenbok — een fraai object in kleine telescopen dat een helder, samengeperst centrum en zwakke uitstekende sterrenkettingen toont. Met magnitude 7,5 vereist het donkere hemel in verrekijkers en beloont een kleine telescoop met zijn gedeeltelijk opgeloste buitenste halo.
+    </string>
+    <string name="object_info_m30_funfact" translation_description="Fun fact about M30 shown in the info card. Translate this text.">
+    M30 heeft een "kerninstorting" ondergaan — een proces waarbij de wederzijdse zwaartekrachtaantrekking van dicht opeengepakte sterren ervoor zorgt dat het centrum van de cluster dramatisch samentrekt, wat resulteert in een extreme concentratie van sterren in een minuscuul volume. Ongeveer een vijfde van alle bolvormige sterrenhopen hebben ingestorte kernen, en M30 behoort tot de best bestudeerde voorbeelden van dit fenomeen.
+    </string>
+    <string name="object_info_m30_distance" translation_description="Distance to M30 shown in the info card. Translate units if appropriate for your locale.">27.100 lichtjaar</string>
+    <string name="object_info_m30_size" translation_description="Physical size of M30 shown in the info card. Translate units if appropriate for your locale.">~87 lichtjaar in doorsnee</string>
+
+    <string name="object_info_m54_description" translation_description="Description of the globular cluster M54 shown in the info card. Translate this text.">
+    M54 is een grote, rijke bolvormige sterrenhoop in Sagittarius en een van de meest verre objecten in de gehele Messier-catalogus. Eeuwenlang werd aangenomen dat het een afgelegen halo-bolvormige sterrenhoop van de Melkweg was, maar nu is bekend dat het de dichte kern is van de Sagittarius Dwarf Elliptical Galaxy — een satellietsterrenstelsel dat momenteel door onze eigen sterrenstelsel wordt opgenomen.
+    </string>
+    <string name="object_info_m54_funfact" translation_description="Fun fact about M54 shown in the info card. Translate this text.">
+    De ontdekking in 1994 dat M54 tot het Dwergsterrenstelsel van de Boogschutter behoort, maakte het het eerste bolhoop dat bekend was toe te behoren aan een ander sterrenstelsel. Terwijl het Dwergsterrenstelsel van de Boogschutter geleidelijk uit elkaar wordt gerukt en door de Melkweg wordt opgeslokt, zal M54 uiteindelijk een echte halo-bolhoop van ons eigen sterrenstelsel worden — een intergalactische immigrant die over miljarden jaren aankomt.
+    </string>
+    <string name="object_info_m54_distance" translation_description="Distance to M54 shown in the info card. Translate units if appropriate for your locale.">87.000 lichtjaar</string>
+    <string name="object_info_m54_size" translation_description="Physical size of M54 shown in the info card. Translate units if appropriate for your locale.">~230 lichtjaar in doorsnee</string>
+
+    <string name="object_info_m69_description" translation_description="Description of the globular cluster M69 shown in the info card. Translate this text.">
+    M69 is een matig rijke bolvormige sterrenhoop in Sagittarius, gepositioneerd dicht bij het galactische centrum. Met een magnitude van 7,7 is het een binoculair object vanuit donkere hemel dat een kleine telescoop beloont met een gedeeltelijk opgeloste bal van sterren en een helder, korrelig centrum.
+    </string>
+    <string name="object_info_m69_funfact" translation_description="Fun fact about M69 shown in the info card. Translate this text.">
+    M69 draait ongewoon dicht om het galactische centrum — slechts ongeveer 6.200 lichtjaar van de kern van de Melkweg — en heeft daarom een ongewoon hoge concentratie van zwaardere elementen voor een bolvormige sterrenhoop. Bolvormige sterkenhopen dichter bij het galactische centrum hebben de neiging chemisch verrijkt te worden door meerdere generaties stervorming in de omringende bult.
+    </string>
+    <string name="object_info_m69_distance" translation_description="Distance to M69 shown in the info card. Translate units if appropriate for your locale.">29.700 lichtjaar</string>
+    <string name="object_info_m69_size" translation_description="Physical size of M69 shown in the info card. Translate units if appropriate for your locale.">~61 lichtjaar in doorsnee</string>
+
+    <string name="object_info_m9_description" translation_description="Description of the globular cluster M9 shown in the info card. Translate this text.">
+    M9 is een compacte bolvormige sterrenhoop in Ophiuchus — een van de Messier-bolvormige sterkerhopen die het meest worden beïnvloed door absorptie van interstellair stof. Het bevindt zich in de richting van de galactische kern, waar dik stof het aanzienlijk verzwakt. Zonder deze verduistering zou M9 bijna een magnitude helderder zijn en met het blote oog zichtbaar zijn.
+    </string>
+    <string name="object_info_m9_funfact" translation_description="Fun fact about M9 shown in the info card. Translate this text.">
+    M9 ondervindt meer absorptie door interstellair stof dan bijna enig ander Messier-bolsterhoop — ongeveer 1,3 magnituden verduistering in vergelijking met een helder gezichtsveld. Twee kleinere bolsterhopen (NGC 6342 en NGC 6356) bevinden zich binnen ongeveer 1° van M9, waardoor het het middelpunt vormt van een opmerkelijke groepering van drie bolsterhopen in een klein stukje hemel.
+    </string>
+    <string name="object_info_m9_distance" translation_description="Distance to M9 shown in the info card. Translate units if appropriate for your locale.">25.800 lichtjaar</string>
+    <string name="object_info_m9_size" translation_description="Physical size of M9 shown in the info card. Translate units if appropriate for your locale.">~70 lichtjaar in doorsnee</string>
+
+    <string name="object_info_m26_description" translation_description="Description of the open star cluster M26 shown in the info card. Translate this text.">
+    M26 is een matig zwak open sterrenhoop in Scutum, zichtbaar in verrekijkers en goed opgelost in kleine telescopen. Ongeveer 90 sterren zijn verspreid over een compact veld in de rijke Scutum-sterwolk, hoewel de sterrenhoop tegen zo\'n dichte achtergrond staat dat het identificeren van de leden ervan uit het omringende sterveld enige voorzichtigheid vereist.
+    </string>
+    <string name="object_info_m26_funfact" translation_description="Fun fact about M26 shown in the info card. Translate this text.">
+    M26 ligt langs dezelfde rijke hemelstrook als M11 — het Wild Duck Cluster, een van de fraaiste open sterrenhopen aan de hemel. De twee liggen slechts ongeveer 3,5° uit elkaar en zijn zichtbaar in hetzelfde verrekijkerveld, waardoor Scutum een opmerkelijke bestemming voor sterrenhopenwaarnemers is, ondanks dat het een klein en vaak over het hoofd gezien sterrenbeeld is.
+    </string>
+    <string name="object_info_m26_distance" translation_description="Distance to M26 shown in the info card. Translate units if appropriate for your locale.">5.000 lichtjaar</string>
+    <string name="object_info_m26_size" translation_description="Physical size of M26 shown in the info card. Translate units if appropriate for your locale.">~22 lichtjaar in doorsnee</string>
+
+    <string name="object_info_m79_description" translation_description="Description of the globular cluster M79 shown in the info card. Translate this text.">
+    M79 is een compacte bolhoop in Lepus — een van de zeer weinige Messier-bolhoopen die het best zichtbaar zijn in de winterhemel, wanneer de meeste bolhoopen onder de horizon liggen of net opkomen. Met een magnitude van 8,0 is een telescoop nodig om de compacte kern en zwakke halo zichtbaar te maken, die opvallen tegen de relatief schaarse wintersterrenveldenachtergrond.
+    </string>
+    <string name="object_info_m79_funfact" translation_description="Fun fact about M79 shown in the info card. Translate this text.">
+    M79 wordt door sommige astronomen beschouwd als een indringer uit de Canis Major Dwarf Galaxy — een verstoorde satellietsterrenstelsel dat momenteel door de Melkweg wordt opgenomen. Zo ja, dan is M79 niet ontstaan in het eigen bolstelselsysteem van de Melkweg, maar werd het vastgelegd vanuit een invallend sterrenstelsel en wordt het nu langzaam in de halo van ons sterrenstelsel opgenomen.
+    </string>
+    <string name="object_info_m79_distance" translation_description="Distance to M79 shown in the info card. Translate units if appropriate for your locale.">41.000 lichtjaar</string>
+    <string name="object_info_m79_size" translation_description="Physical size of M79 shown in the info card. Translate units if appropriate for your locale.">~104 lichtjaar in doorsnee</string>
+
+    <string name="object_info_m70_description" translation_description="Description of the globular cluster M70 shown in the info card. Translate this text.">
+    M70 is een compacte bolvormige sterrenhoop in Sagittarius, sterk gelijkend op zijn bijna-tweelingbroer M69 in zowel uiterlijk als afstand. Met magnitude 8,1 is het een prachtig object voor kleine telescopen dat een compacte kern toont en aanwijzingen van resolutie in de buitenste halo. Het ligt slechts 2° van M69 af en beide kunnen in hetzelfde verrekijkerveld worden waargenomen.
+    </string>
+    <string name="object_info_m70_funfact" translation_description="Fun fact about M70 shown in the info card. Translate this text.">
+    M70 kreeg in 1995 kortstondig bekendheid als de ongeveer locatie aan de hemel waar Alan Hale en Thomas Bopp onafhankelijk van elkaar komeet Hale-Bopp ontdekten — de helderste komeet van de late 20e eeuw. Beide waarnemers zochten aanvankelijk voorbij M70 terwijl zij naar andere doelen zochten en merkten de komeet op als een onverwacht fuzzy object in de buurt.
+    </string>
+    <string name="object_info_m70_distance" translation_description="Distance to M70 shown in the info card. Translate units if appropriate for your locale.">29.400 lichtjaar</string>
+    <string name="object_info_m70_size" translation_description="Physical size of M70 shown in the info card. Translate units if appropriate for your locale.">~67 lichtjaar in doorsnee</string>
+
+    <string name="object_info_m107_description" translation_description="Description of the globular cluster M107 shown in the info card. Translate this text.">
+    M107 is een van de minst geconcentreerde Messier-bolsterhopen, met sterren verspreid in een relatief open patroon rond een bescheiden kern. Met magnitude 8,1 is het een binoculair doelwit vanuit donkere hemel en lost gedeeltelijk op in kleine telescopen, met een korrelige textuur in plaats van een scherpe centrale verdichting.
+    </string>
+    <string name="object_info_m107_funfact" translation_description="Fun fact about M107 shown in the info card. Translate this text.">
+    M107 was het laatste object dat formeel aan de Messier-catalogus werd toegevoegd — het verschijnt in Pierre Méchain\'s correspondentie maar was niet opgenomen in de originele editie van 1781. Het werd officieel in 1947 als M107 toegevoegd door de Canadese astronoom Helen Sawyer Hogg, die verschillende "ontbrekende" objecten codificeerde die Méchain had waargenomen maar Messier nooit formeel had geregistreerd.
+    </string>
+    <string name="object_info_m107_distance" translation_description="Distance to M107 shown in the info card. Translate units if appropriate for your locale.">20.900 lichtjaar</string>
+    <string name="object_info_m107_size" translation_description="Physical size of M107 shown in the info card. Translate units if appropriate for your locale.">~61 lichtjaar in doorsnee</string>
+
+    <string name="object_info_m68_description" translation_description="Description of the globular cluster M68 shown in the info card. Translate this text.">
+    M68 is een rijke bolvormige sterrenhoop in Hydra — een zuidelijk object en een van de weinige bolvormige sterkenhopen die het best zichtbaar zijn in de late winter en lente. Met een magnitude van 8,2 beloont het een kleine telescoop met een matig samengestelde kern en een grote halo van opgeloste sterren tegen de relatief schaarse stervelden van Hydra.
+    </string>
+    <string name="object_info_m68_funfact" translation_description="Fun fact about M68 shown in the info card. Translate this text.">
+    Ondanks de relatieve nabijheid — waardoor individuele sterren goed opgelost zijn in amateurtelescopen — wordt M68 vaak over het hoofd gezien vanwege de zeer zuidelijke declinatie. Vanaf breedtegraden boven 50°N komt het nauwelijks boven de horizon uit; vanuit het zuidelijk halfrond echter stijgt het hoog op en is het een prachtig bolstervorstel.
+    </string>
+    <string name="object_info_m68_distance" translation_description="Distance to M68 shown in the info card. Translate units if appropriate for your locale.">33.600 lichtjaar</string>
+    <string name="object_info_m68_size" translation_description="Physical size of M68 shown in the info card. Translate units if appropriate for your locale.">~117 lichtjaar in doorsnee</string>
+
+    <string name="object_info_m56_description" translation_description="Description of the globular cluster M56 shown in the info card. Translate this text.">
+    M56 is een compacte bolvormige sterrenhoop in Lyra, gelegen tussen de Ringnevel (M57) en de heldere dubbelster Albireo in Cygnus. Met een magnitude van 8,3 is het een binoculair object vanuit donkere hemel, en een kleine telescoop onthult een korrelige, matig samengetrokken bol die zelfs in middelgrote openingen slechts gedeeltelijk opgelost is.
+    </string>
+    <string name="object_info_m56_funfact" translation_description="Fun fact about M56 shown in the info card. Translate this text.">
+    M56 werd in januari 1779 door Messier ontdekt tijdens hetzelfde waarnemingsseizoen waarin hij ook de Ringnevel (M57) vond. Ondanks dat M56 in hetzelfde verrekijkerveld als Vega — de vijfde helderste ster aan de hemel — ligt en dicht bij de beroemde Ringnevel, wordt M56 vaak over het hoofd gezien door waarnemers die door de meer beroemde buren worden aangetrokken.
+    </string>
+    <string name="object_info_m56_distance" translation_description="Distance to M56 shown in the info card. Translate units if appropriate for your locale.">32.900 lichtjaar</string>
+    <string name="object_info_m56_size" translation_description="Physical size of M56 shown in the info card. Translate units if appropriate for your locale.">~68 lichtjaar in doorsnee</string>
+
+    <string name="object_info_m71_description" translation_description="Description of the globular cluster M71 shown in the info card. Translate this text.">
+    M71 is een ongebruikelijke bolvormige sterrenhoop in Sagitta — decennialang betwist door astronomen die niet konden besluiten of het een zeer rijke oude open sterrenhoop of een zeer losse jonge bolvormige sterrenhoop was. Moderne analyse bevestigt dat het een echte bolvormige sterrenhoop is, maar een uitzonderlijk lage concentratie met relatief weinig sterren en een minder dominante kern dan typische bolvormige sterhopen.
+    </string>
+    <string name="object_info_m71_funfact" translation_description="Fun fact about M71 shown in the info card. Translate this text.">
+    De losse structuur van M71 hield het lange tijd uit veel vroege catalogi omdat het meer op een rijkelijk sterrenveld leek dan op een echt cluster. Met slechts 12.000 lichtjaar is het een van de dichtstbijzijnde Messier-bolvormige stelsels, en de sterren ervan zijn gedeeltelijk opgelost in een kleine telescoop onder donkere hemel — wat het het uiterlijk geeft van een compact, licht verdicht rijkelijk sterrenveld.
+    </string>
+    <string name="object_info_m71_distance" translation_description="Distance to M71 shown in the info card. Translate units if appropriate for your locale.">12.000 lichtjaar</string>
+    <string name="object_info_m71_size" translation_description="Physical size of M71 shown in the info card. Translate units if appropriate for your locale.">~25 lichtjaar in doorsnee</string>
 </resources>

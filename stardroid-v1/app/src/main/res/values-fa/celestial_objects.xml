@@ -112,6 +112,43 @@
     <string name="neptune" translation_description="Name of the planet Neptune">نپتون</string>
     <string name="pluto" translation_description="Name of the dwarf planet Pluto">پلوتون</string>
 
+    <!-- Moons of Mars -->
+    <string name="phobos" translation_description="Name of Mars\'s moon Phobos">فوبوس</string>
+    <string name="deimos" translation_description="Name of Mars\'s moon Deimos">دیموس</string>
+
+    <!-- Galilean Moons of Jupiter -->
+    <string name="io" translation_description="Name of Jupiter\'s moon Io">ایو</string>
+    <string name="europa" translation_description="Name of Jupiter\'s moon Europa">اروپا</string>
+    <string name="ganymede" translation_description="Name of Jupiter\'s moon Ganymede">گانیمد</string>
+    <string name="callisto" translation_description="Name of Jupiter\'s moon Callisto">کالیستو</string>
+
+    <!-- Major Moons of Saturn -->
+    <string name="titan" translation_description="Name of Saturn\'s moon Titan">تیتان</string>
+    <string name="rhea" translation_description="Name of Saturn\'s moon Rhea">رئا</string>
+    <string name="tethys" translation_description="Name of Saturn\'s moon Tethys">تتیس</string>
+    <string name="dione" translation_description="Name of Saturn\'s moon Dione">دیون</string>
+    <string name="iapetus" translation_description="Name of Saturn\'s moon Iapetus">یاپتوس</string>
+
+    <!-- Moon of Neptune -->
+    <string name="triton" translation_description="Name of Neptune\'s moon Triton">تریتون</string>
+
+    <!-- Major Moons of Uranus -->
+    <string name="titania" translation_description="Name of Uranus\'s moon Titania">تیتانیا</string>
+    <string name="oberon" translation_description="Name of Uranus\'s moon Oberon">اوبرون</string>
+    <string name="ariel" translation_description="Name of Uranus\'s moon Ariel">آریل</string>
+    <string name="umbriel" translation_description="Name of Uranus\'s moon Umbriel">آمبریل</string>
+
+    <!-- Deep-sky objects -->
+    <string name="hyades" translation_description="Name of the Hyades star cluster">هیادس</string>
+    <string name="coma_star_cluster" translation_description="Name of the Coma Berenices star cluster">خوشه ستاره‌ای کوما</string>
+    <string name="coathanger" translation_description="Name of the Coathanger asterism (Brocchi\'s Cluster)">کت‌هنگر</string>
+    <string name="helix_nebula" translation_description="Name of the Helix Nebula (NGC 7293)">سحابی هلیکس</string>
+    <string name="sculptor_galaxy" translation_description="Name of the Sculptor Galaxy (NGC 253)">کهکشان مجسمه‌ساز</string>
+    <string name="blue_snowball_nebula" translation_description="Name of the Blue Snowball Nebula (NGC 7662)">سحابی گلوله برفی آبی</string>
+    <string name="ghost_of_jupiter" translation_description="Name of the Ghost of Jupiter planetary nebula (NGC 3242)">شبح مشتری</string>
+    <string name="saturn_nebula" translation_description="Name of the Saturn Nebula (NGC 7009)">سحابی زحل</string>
+    <!-- tm:omitted name="ngc_2903" reason="identical_to_source" -->
+
     <!-- Gallery objects -->
     <string name="crab_nebula" translation_description="hubble object">سحابی خرچنگ</string>
     <string name="eagle_nebula" translation_description="hubble object">سحابی عقاب</string>
@@ -364,10 +401,79 @@
     <string name="puppidvelids" translation_description="Meteor Shower">بارش شهابی پی‌کشتیدمی</string>
     <string name="ursids" translation_description="Meteor Shower">بارش شهابی دبی</string>
 
+    <!-- North America Nebula -->
+    <string name="north_america_nebula" translation_description="Name of the North America Nebula (NGC 7000) as shown on the sky map">سحابی آمریکای شمالی</string>
+    <!-- tm:omitted name="ngc_7000" reason="identical_to_source" -->
+    <string name="caldwell_20" translation_description="Caldwell catalog designation for the North America Nebula">کالدول 20</string>
+
     <!-- Comets -->
     <string name="comet_leonard" translation_description="Name of Comet Leonard (C/2021 A1) as shown on the sky map">دنباله‌دار لئونارد</string>
     <!-- TODO: no need for these alt names once our search is less lousy -->
     <string name="comet_leonard_alt" translation_description="Alternate searchable name for Comet Leonard, surname first">لئونارد (دنباله‌دار)</string>
     <string name="comet_neowise" translation_description="Name of Comet NEOWISE (C/2020 F3) as shown on the sky map">دنباله‌دار نئوویز</string>
     <string name="comet_neowise_alt" translation_description="Alternate searchable name for Comet NEOWISE, surname first">نئوویز (دنباله‌دار)</string>
+
+    <!-- Jewel Box (NGC 4755) -->
+    <string name="jewel_box" translation_description="Common name for the open star cluster NGC 4755 in Crux">جعبه جواهر</string>
+    <string name="herschels_jewel_box" translation_description="Alternative name for the Jewel Box cluster (NGC 4755)">جعبه جواهر هرشل</string>
+    <string name="kappa_crucis_cluster" translation_description="Alternative name for the Jewel Box cluster (NGC 4755)">خوشه کاپا کروسیس</string>
+
+    <!-- Exposed Cranium Nebula -->
+    <string name="exposed_cranium_nebula" translation_description="Common name for the planetary nebula PMR 1 in Vela, named for its brain-in-a-skull appearance">سحابی جمجمه برملا</string>
+    <!-- tm:omitted name="pmr_1" reason="identical_to_source" -->
+
+    <!-- Double Cluster (NGC 869 & NGC 884) -->
+    <string name="double_cluster" translation_description="Common name for the pair of open star clusters NGC 869 and NGC 884 in Perseus">خوشه دوگانه</string>
+    <!-- tm:omitted name="ngc_869" reason="identical_to_source" -->
+    <!-- tm:omitted name="ngc_884" reason="identical_to_source" -->
+    <string name="h_and_chi_persei" translation_description="Traditional designation for the Double Cluster in Perseus">h و χ پرسئوس</string>
+    <string name="caldwell_14" translation_description="Caldwell catalog designation for the Double Cluster in Perseus">کالدول ۱۴</string>
+
+    <!-- 47 Tucanae (NGC 104) -->
+    <string name="n47_tucanae" translation_description="Common name for the globular cluster NGC 104 in Tucana">۴۷ توکانه</string>
+    <string name="n47_tuc" translation_description="Abbreviation for the globular cluster 47 Tucanae (NGC 104)">۴۷ Tuc</string>
+    <string name="ngc_104" translation_description="NGC catalog designation for the globular cluster 47 Tucanae">NGC ۱۰۴</string>
+
+    <!-- Centaurus A (NGC 5128) -->
+    <string name="centaurus_a" translation_description="Common name for the radio galaxy NGC 5128 in Centaurus">سنتاروس A</string>
+    <string name="ngc_5128" translation_description="NGC catalog designation for the radio galaxy Centaurus A">NGC ۵۱۲۸</string>
+
+    <!-- Synonym strings for catalog objects (alternate names, NGC/Caldwell/Melotte designations) -->
+    <string name="mel_25" translation_description="Melotte catalog short designation for the Hyades cluster">Mel ۲۵</string>
+    <string name="melotte_25" translation_description="Melotte catalog designation for the Hyades cluster">Melotte ۲۵</string>
+    <string name="caldwell_41" translation_description="Caldwell catalog designation for the Hyades cluster">کالدول ۴۱</string>
+    <string name="mel_111" translation_description="Melotte catalog short designation for the Coma Star Cluster">Mel ۱۱۱</string>
+    <string name="melotte_111" translation_description="Melotte catalog designation for the Coma Star Cluster">Melotte ۱۱۱</string>
+    <string name="coma_berenices_cluster" translation_description="Alternate name for the Coma Star Cluster (Melotte 111)">خوشه کوما برنیسز</string>
+    <string name="brocchis_cluster" translation_description="Alternate name for the Coathanger asterism (Collinder 399)">خوشه بروکی</string>
+    <string name="cr_399" translation_description="Collinder catalog short designation for the Coathanger asterism">Cr ۳۹۹</string>
+    <string name="collinder_399" translation_description="Collinder catalog designation for the Coathanger asterism">Collinder ۳۹۹</string>
+    <string name="ngc_7293" translation_description="NGC catalog designation for the Helix Nebula">NGC ۷۲۹۳</string>
+    <string name="eye_of_god" translation_description="Nickname for the Helix Nebula (NGC 7293)">چشم خدا</string>
+    <string name="caldwell_63" translation_description="Caldwell catalog designation for the Helix Nebula">کالدول ۶۳</string>
+    <string name="ngc_253" translation_description="NGC catalog designation for the Sculptor Galaxy">NGC ۲۵۳</string>
+    <string name="silver_dollar_galaxy" translation_description="Nickname for the Sculptor Galaxy (NGC 253)">کهکشان سکه نقره‌ای</string>
+    <string name="silver_coin_galaxy" translation_description="Alternate nickname for the Sculptor Galaxy (NGC 253)">کهکشان سکه نقره‌ای</string>
+    <string name="ngc_7662" translation_description="NGC catalog designation for the Blue Snowball Nebula">NGC ۷۶۶۲</string>
+    <string name="caldwell_22" translation_description="Caldwell catalog designation for the Blue Snowball Nebula">کالدول ۲۲</string>
+    <string name="ngc_3242" translation_description="NGC catalog designation for the Ghost of Jupiter nebula">NGC ۳۲۴۲</string>
+    <string name="caldwell_59" translation_description="Caldwell catalog designation for the Ghost of Jupiter nebula">کالدول ۵۹</string>
+    <string name="ngc_7009" translation_description="NGC catalog designation for the Saturn Nebula">NGC ۷۰۰۹</string>
+    <string name="caldwell_55" translation_description="Caldwell catalog designation for the Saturn Nebula">کالدول ۵۵</string>
+    <string name="ptolemy_cluster" translation_description="Common name for the open star cluster M7 in Scorpius, named after ancient astronomer Ptolemy">خوشه بطلمیوس</string>
+    <string name="hercules_globular_cluster" translation_description="Common name for the globular cluster M13 in Hercules">خوشه کروی هرکول</string>
+    <string name="ngc_1952" translation_description="NGC catalog designation for M1, the Crab Nebula">NGC ۱۹۵۲</string>
+    <string name="ngc_224" translation_description="NGC catalog designation for M31, the Andromeda Galaxy">NGC ۲۲۴</string>
+    <string name="ngc_2632" translation_description="NGC catalog designation for M44, the Beehive Cluster">NGC ۲۶۳۲</string>
+    <string name="ngc_4594" translation_description="NGC catalog designation for M104, the Sombrero Galaxy">NGC ۴۵۹۴</string>
+    <string name="ngc_4755" translation_description="NGC catalog designation for the Jewel Box open cluster in Crux">NGC ۴۷۵۵</string>
+    <string name="ngc_5194" translation_description="NGC catalog designation for M51, the Whirlpool Galaxy">NGC ۵۱۹۴</string>
+    <string name="ngc_5457" translation_description="NGC catalog designation for M101, the Pinwheel Galaxy">NGC ۵۴۵۷</string>
+    <string name="ngc_6205" translation_description="NGC catalog designation for M13, the Hercules Globular Cluster">NGC ۶۲۰۵</string>
+    <string name="ngc_6405" translation_description="NGC catalog designation for M6, the Butterfly Cluster">NGC ۶۴۰۵</string>
+    <string name="ngc_6475" translation_description="NGC catalog designation for M7, the Ptolemy Cluster">NGC ۶۴۷۵</string>
+    <string name="ngc_6611" translation_description="NGC catalog designation for M16, the Eagle Nebula">NGC ۶۶۱۱</string>
+    <!-- tm:omitted name="ngc_6720" reason="identical_to_source" -->
+    <string name="ngc_869_and_ngc_884" translation_description="NGC catalog designations for the Double Cluster pair in Perseus">NGC 869 و NGC 884</string>
+    <!-- tm:omitted name="omega_cen" reason="identical_to_source" -->
 </resources>

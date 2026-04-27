@@ -528,6 +528,35 @@
     <!-- tm:omitted name="object_info_eta_carinae_nebula_funfact" reason="identical_to_source" -->
     <!-- tm:omitted name="object_info_eta_carinae_nebula_distance" reason="identical_to_source" -->
     <!-- tm:omitted name="object_info_eta_carinae_nebula_size" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_north_america_nebula_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_north_america_nebula_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_north_america_nebula_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_north_america_nebula_size" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_exposed_cranium_nebula_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_exposed_cranium_nebula_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_exposed_cranium_nebula_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_exposed_cranium_nebula_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_jewel_box_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_jewel_box_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_jewel_box_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_jewel_box_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_double_cluster_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_double_cluster_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_double_cluster_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_double_cluster_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_n47_tucanae_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_n47_tucanae_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_n47_tucanae_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_n47_tucanae_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_centaurus_a_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_centaurus_a_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_centaurus_a_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_centaurus_a_size" reason="identical_to_source" -->
+
     <!-- ==================== CONSTELLATIONS ==================== -->
     <!-- Note: Constellation names are defined in celestial_objects.xml -->
     <!-- Orion -->
@@ -1052,4 +1081,393 @@
     <!-- tm:omitted name="object_info_vulpecula_funfact" reason="identical_to_source" -->
     <!-- tm:omitted name="object_info_vulpecula_size" reason="identical_to_source" -->
 
-    </resources>
+    <!-- tm:omitted name="object_info_io_description" reason="identical_to_source" -->
+    <string name="object_info_io_funfact" translation_description="Fun fact about Io shown in the info card. Translate this text.">
+    Io has hundreds of active volcanoes, some erupting lava fountains dozens of kilometres high. Its constant activity is driven by tidal heating from Jupiter\'s enormous gravity.
+    </string>
+    <!-- tm:omitted name="object_info_io_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_io_size" reason="identical_to_source" -->
+
+    <string name="object_info_europa_description" translation_description="Description of Europa shown in the info card. Translate this text.">
+    Europa is the second Galilean moon and is thought to harbour a vast liquid water ocean beneath its icy crust, making it one of the most promising places to search for life.
+    </string>
+    <!-- tm:omitted name="object_info_europa_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_europa_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_europa_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_ganymede_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_ganymede_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_ganymede_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_ganymede_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_callisto_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_callisto_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_callisto_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_callisto_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_phobos_description" reason="identical_to_source" -->
+    <string name="object_info_phobos_funfact" translation_description="Fun fact about Phobos shown in the info card. Translate this text.">
+    Phobos orbits Mars so quickly it rises in the west and sets in the east — and it is slowly spiralling inward, destined to either crash into Mars or break apart into a ring in about 50 million years.
+    </string>
+    <!-- tm:omitted name="object_info_phobos_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_phobos_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_deimos_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_deimos_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_deimos_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_deimos_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_titan_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_titan_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_titan_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_titan_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_rhea_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_rhea_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_rhea_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_rhea_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_tethys_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_tethys_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_tethys_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_tethys_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_dione_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_dione_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_dione_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_dione_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_iapetus_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_iapetus_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_iapetus_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_iapetus_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_triton_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_triton_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_triton_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_triton_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_titania_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_titania_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_titania_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_titania_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_oberon_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_oberon_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_oberon_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_oberon_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_ariel_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_ariel_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_ariel_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_ariel_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_umbriel_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_umbriel_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_umbriel_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_umbriel_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_omega_centauri_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_omega_centauri_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_omega_centauri_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_omega_centauri_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_hyades_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_hyades_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_hyades_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_hyades_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_coma_star_cluster_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_coma_star_cluster_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_coma_star_cluster_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_coma_star_cluster_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_coathanger_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_coathanger_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_coathanger_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_coathanger_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_helix_nebula_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_helix_nebula_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_helix_nebula_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_helix_nebula_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_sculptor_galaxy_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_sculptor_galaxy_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_sculptor_galaxy_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_sculptor_galaxy_size" reason="identical_to_source" -->
+
+    <string name="object_info_blue_snowball_nebula_description" translation_description="Description of the Blue Snowball Nebula shown in the info card. Translate this text.">
+    The Blue Snowball is a planetary nebula in Andromeda — the glowing shell of gas expelled by a dying star. At magnitude 8.3 it is one of the brightest and most colourful planetaries in the sky, appearing as a vivid blue-green disk even in small telescopes. Its symmetrical shape and intense colour make it a favourite amongst observers.
+    </string>
+    <!-- tm:omitted name="object_info_blue_snowball_nebula_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_blue_snowball_nebula_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_blue_snowball_nebula_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_ghost_of_jupiter_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_ghost_of_jupiter_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_ghost_of_jupiter_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_ghost_of_jupiter_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_saturn_nebula_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_saturn_nebula_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_saturn_nebula_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_saturn_nebula_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_ngc_2903_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_ngc_2903_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_ngc_2903_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_ngc_2903_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_quadrantids_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_quadrantids_funfact" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_lyrids_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_lyrids_funfact" reason="identical_to_source" -->
+
+    <string name="object_info_aquariids_description" translation_description="Description of the Eta Aquariids meteor shower shown in the info card. Translate this text.">
+    The Eta Aquariids are one of two annual showers produced by debris from Halley\'s Comet. Peaking at up to 70 meteors per hour, the shower strongly favours the southern hemisphere, where the radiant rises high before dawn. Northern observers still enjoy a respectable rate of 30 or more per hour.
+    </string>
+    <string name="object_info_aquariids_funfact" translation_description="Fun fact about the Eta Aquariids meteor shower shown in the info card. Translate this text.">
+    Eta Aquariid meteors travel at 66 km/s — fast enough that the ionised air they create can glow for several seconds after the meteor has gone. You may see Halley\'s ancient dust burning up in front of your eyes, shed during one of the comet\'s many visits thousands of years ago.
+    </string>
+
+    <!-- tm:omitted name="object_info_deltaaquariids_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_deltaaquariids_funfact" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_perseids_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_perseids_funfact" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_orionids_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_orionids_funfact" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_leonids_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_leonids_funfact" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_puppidvelids_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_puppidvelids_funfact" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_geminids_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_geminids_funfact" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_ursids_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_ursids_funfact" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_m47_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m47_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m47_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m47_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_m41_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m41_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m41_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m41_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_m24_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m24_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m24_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m24_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_m25_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m25_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m25_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m25_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_m39_description" reason="identical_to_source" -->
+    <string name="object_info_m39_funfact" translation_description="Fun fact about M39 shown in the info card. Translate this text.">
+    At around 825 light-years, M39 is one of the nearest open clusters to Earth, and at roughly 240 million years old it is one of the older naked-eye clusters — old enough that its most massive stars have already ended their lives. Messier recorded it in 1764 and it was amongst the earliest additions to his catalogue.
+    </string>
+    <!-- tm:omitted name="object_info_m39_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m39_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_m63_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m63_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m63_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m63_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_ngc_6543_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_ngc_6543_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_ngc_6543_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_ngc_6543_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_m76_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m76_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m76_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m76_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_v838_mon_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_v838_mon_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_v838_mon_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_v838_mon_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_hdf_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_hdf_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_hdf_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_hdf_size" reason="identical_to_source" -->
+
+    <string name="object_info_m43_description" translation_description="Description of De Mairan's Nebula (M43) shown in the info card. Translate this text.">
+    De Mairan\'s Nebula is a detached portion of the great Orion Nebula complex, separated from M42 by a dark dust lane but belonging to the same vast molecular cloud. Named after French astronomer Jean-Jacques Dortous de Mairan, who noted it in 1731, it is an emission nebula ionised by the hot young star NU Orionis embedded at its centre.
+    </string>
+    <!-- tm:omitted name="object_info_m43_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m43_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m43_size" reason="identical_to_source" -->
+
+    <string name="object_info_m40_description" translation_description="Description of M40 (Winnecke 4) shown in the info card. Translate this text.">
+    M40 is unique in the Messier catalogue — it is not a nebula, cluster, or galaxy, but a wide double star. Messier catalogued it in 1764 whilst searching for a nebula reported by Johann Hevelius in Ursa Major, found only this pair of stars, and recorded it so that future observers would not mistake it for something more interesting.
+    </string>
+    <!-- tm:omitted name="object_info_m40_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m40_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m40_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_m34_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m34_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m34_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m34_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_m23_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m23_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m23_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m23_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_m37_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m37_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m37_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m37_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_m48_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m48_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m48_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m48_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_m21_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m21_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m21_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m21_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_m50_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m50_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m50_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m50_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_m36_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m36_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m36_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m36_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_m46_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m46_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m46_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m46_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_m93_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m93_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m93_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m93_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_m38_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m38_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m38_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m38_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_m29_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m29_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m29_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m29_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_m62_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m62_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m62_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m62_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_m28_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m28_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m28_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m28_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_m52_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m52_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m52_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m52_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_m67_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m67_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m67_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m67_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_m55_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m55_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m55_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m55_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_m19_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m19_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m19_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m19_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_m80_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m80_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m80_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m80_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_m103_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m103_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m103_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m103_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_m30_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m30_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m30_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m30_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_m54_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m54_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m54_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m54_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_m69_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m69_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m69_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m69_size" reason="identical_to_source" -->
+
+    <string name="object_info_m9_description" translation_description="Description of the globular cluster M9 shown in the info card. Translate this text.">
+    M9 is a compact globular cluster in Ophiuchus — one of the Messier globulars most affected by interstellar dust absorption. It lies towards the galactic bulge, where thick dust dims it significantly. Without this obscuration M9 would appear nearly a magnitude brighter and be visible to the naked eye.
+    </string>
+    <!-- tm:omitted name="object_info_m9_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m9_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m9_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_m26_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m26_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m26_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m26_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_m79_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m79_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m79_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m79_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_m70_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m70_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m70_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m70_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_m107_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m107_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m107_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m107_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_m68_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m68_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m68_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m68_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_m56_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m56_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m56_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m56_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_m71_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m71_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m71_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_m71_size" reason="identical_to_source" -->
+</resources>

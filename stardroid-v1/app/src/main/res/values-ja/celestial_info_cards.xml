@@ -560,6 +560,65 @@
     <string name="object_info_eta_carinae_nebula_funfact" translation_description="Fun fact about Eta Carinae Nebula shown in the info card. Translate this text.">1843年、イータ・カリーナが爆発し、一時的に空で2番目に明るい星になりましたが、奇跡的に生き残りました。超新星爆発の寸前かもしれません!</string>
     <string name="object_info_eta_carinae_nebula_distance" translation_description="Distance to Eta Carinae Nebula shown in the info card. Translate units if appropriate for your locale.">7,500光年</string>
     <string name="object_info_eta_carinae_nebula_size" translation_description="Physical size of Eta Carinae Nebula shown in the info card. Translate units if appropriate for your locale.">300光年の広さ</string>
+    <!-- North America Nebula (NGC 7000) -->
+    <string name="object_info_north_america_nebula_description" translation_description="Description of the North America Nebula shown in the info card. Translate this text.">
+    北米星雲（NGC 7000）は、白鳥座にある大きな輝線星雲で、その形状は北米大陸に驚くほど似ており、メキシコ湾地域も含まれています。約120分角の広がりを持ち、満月の直径のおよそ4倍で、約2,600光年離れており、幅は100光年以上あります。
+    </string>
+    <string name="object_info_north_america_nebula_funfact" translation_description="Fun fact about the North America Nebula shown in the info card. Translate this text.">
+    視等級4であるにもかかわらず、このネビュラは大きく拡散しているため、ほとんどの空では肉眼で見ることができません。しかし、写真撮影では美しく映り、その南端に沿った密集した激しい星形成の弧である白鳥の壁（Cygnus Wall）が明らかになります。
+    </string>
+    <string name="object_info_north_america_nebula_distance" translation_description="Distance to the North America Nebula shown in the info card. Translate units if appropriate for your locale.">~2,590光年</string>
+    <string name="object_info_north_america_nebula_size" translation_description="Physical size of the North America Nebula shown in the info card. Translate units if appropriate for your locale.">~140光年の広さ</string>
+    <!-- Exposed Cranium Nebula - PMR 1 -->
+    <string name="object_info_exposed_cranium_nebula_description" translation_description="Description of the Exposed Cranium Nebula shown in the info card. Translate this text.">
+    露出した頭蓋骨星雲（PMR 1）はベラ星座にある惑星状星雲で、約5,000光年離れています。その不気味な名前は、中央を垂直に走るガスの暗い帯に由来しており、輝く葉状部を透明な頭蓋骨の中の脳に不気味に似た形に分割しています。その中心では、生涯をかけて築いた外層を放出している高温のウォルフ・ライエ星が燃えています。
+    </string>
+    <string name="object_info_exposed_cranium_nebula_funfact" translation_description="Fun fact about the Exposed Cranium Nebula shown in the info card. Translate this text.">
+    2026年、ジェームス・ウェッブ宇宙望遠鏡は露出した頭蓋骨星雲の印象的な新しい画像を撮影し、その二層構造を前例のない詳細さで解明しました。水素が豊富な外殻と、死にゆく星によって鍛造された重い元素が詰まった内部の雲です。
+    </string>
+    <string name="object_info_exposed_cranium_nebula_distance" translation_description="Distance to the Exposed Cranium Nebula shown in the info card. Translate units if appropriate for your locale.">~5,000光年</string>
+    <string name="object_info_exposed_cranium_nebula_size" translation_description="Physical size of the Exposed Cranium Nebula shown in the info card. Translate units if appropriate for your locale.">~2光年の広さ</string>
+
+    <!-- Jewel Box (NGC 4755) -->
+    <string name="object_info_jewel_box_description" translation_description="Description of the Jewel Box cluster shown in the info card. Translate this text.">
+    ジュエルボックス（NGC 4755）は、南十字座にある若く輝く散開星団で、ミモザの南東にある4等星の淡い領域として肉眼で容易に見ることができます。望遠鏡で観察すると、その星々は鮮やかな対比色で輝きます。深い青色の超巨星と印象的な赤色の超巨星が並んでいます。これがジョン・ハーシェルが与えた名前の由来です。素晴らしい宝飾品です。わずか1400～1600万年の年齢で、空の中で最も若く、最も色彩豊かな星団の1つです。
+    </string>
+    <string name="object_info_jewel_box_funfact" translation_description="Fun fact about the Jewel Box shown in the info card. Translate this text.">
+    このクラスターの目立つ赤い星、κ十字星は、赤色超巨星で非常に明るく、太陽より100,000倍以上も輝いています。これは星団がすべて同じ色ではないことを鮮やかに思い出させてくれます。
+    </string>
+    <string name="object_info_jewel_box_distance" translation_description="Distance to the Jewel Box shown in the info card. Translate units if appropriate for your locale.">~6,500光年</string>
+    <string name="object_info_jewel_box_size" translation_description="Physical size of the Jewel Box shown in the info card. Translate units if appropriate for your locale.">~19光年の広さ</string>
+
+    <!-- Double Cluster (NGC 869 & NGC 884) -->
+    <string name="object_info_double_cluster_description" translation_description="Description of the Double Cluster shown in the info card. Translate this text.">
+    ダブルクラスター（NGC 869およびNGC 884）は、ペルセウス座にある若い散開星団の素晴らしいペアで、空の中で並んで約1度以上離れています。どちらも肉眼では薄い斑点として見えますが、小さな望遠鏡でも、2つのきらめく群れに詰め込まれた数百の輝く青白い超巨星が明らかになります。約7,500光年離れた場所にあり、銀河のペルセウスアームの中にあり、北半球の双眼鏡観測に最適な天体の中でも有数です。
+    </string>
+    <string name="object_info_double_cluster_funfact" translation_description="Fun fact about the Double Cluster shown in the info card. Translate this text.">
+    わずか1400万年という若さの二重星団は、非常に若い星団です。最近誕生したばかりで、最も質量の大きい星はまだ青い超巨星として輝いており、一部はすでに稀な赤い超巨星へと進化しています。
+    </string>
+    <string name="object_info_double_cluster_distance" translation_description="Distance to the Double Cluster shown in the info card. Translate units if appropriate for your locale.">~7,500光年</string>
+    <string name="object_info_double_cluster_size" translation_description="Physical size of the Double Cluster shown in the info card. Translate units if appropriate for your locale.">各クラスター~70光年の広さ。ペアは~1,000光年離れている</string>
+
+    <!-- 47 Tucanae (NGC 104) -->
+    <string name="object_info_n47_tucanae_description" translation_description="Description of 47 Tucanae shown in the info card. Translate this text.">
+    47 Tucanae（NGC 104）は、天空で2番目に明るい球状星団で、天の川を周回するトゥカーナ座にある約100万個の古い星の密集した球体です。約14,500光年離れた場所にあり、肉眼では4等星のぼやけた星に見えますが、望遠鏡で見ると圧縮されたコアが金色と青白い太陽の異常な群れに分解されます。その星は約130億年前に形成され、この星団は宇宙そのものとほぼ同じくらい古いものです。
+    </string>
+    <string name="object_info_n47_tucanae_funfact" translation_description="Fun fact about 47 Tucanae shown in the info card. Translate this text.">
+    47 Tucanaeは宇宙のパルサー工場です。天文学者は、その内部で少なくとも35個のミリ秒パルサーが毎秒数百回転しているのを発見しました。これは他のどの既知の球状星団よりも多く、恒星の接近遭遇により古い中性子星を高速回転させてリサイクルした結果です。
+    </string>
+    <string name="object_info_n47_tucanae_distance" translation_description="Distance to 47 Tucanae shown in the info card. Translate units if appropriate for your locale.">~14,500光年</string>
+    <string name="object_info_n47_tucanae_size" translation_description="Physical size of 47 Tucanae shown in the info card. Translate units if appropriate for your locale.">~120光年の広さ</string>
+
+    <!-- Centaurus A (NGC 5128) -->
+    <string name="object_info_centaurus_a_description" translation_description="Description of Centaurus A shown in the info card. Translate this text.">
+    ケンタウルス座A（NGC 5128）は地球に最も近い活動銀河核を持つ銀河で、ケンタウルス座にある巨大な楕円銀河です。その印象的な暗い塵の帯は激動の過去を物語っており、約2億～7億年前に渦巻銀河を飲み込みました。その中心には5500万太陽質量の超大質量ブラックホールが潜んでおり、電波波長で100万光年以上に及ぶ相対論的ジェットを放出しています。約1200万光年の距離にあり、空で最も研究されている銀河の1つです。
+    </string>
+    <string name="object_info_centaurus_a_funfact" translation_description="Fun fact about Centaurus A shown in the info card. Translate this text.">
+    ケンタウルス座A銀河は空で最も強力な天然電波送信機の1つです。その噴流はプラズマをほぼ光速で外側に放出し、電波ローブの全体的な広がりは、空を横切って並べた約100個の満月に相当する領域に及びます。
+    </string>
+    <string name="object_info_centaurus_a_distance" translation_description="Distance to Centaurus A shown in the info card. Translate units if appropriate for your locale.">~1,200万光年</string>
+    <string name="object_info_centaurus_a_size" translation_description="Physical size of Centaurus A shown in the info card. Translate units if appropriate for your locale.">~123,000光年の広さ</string>
+
     <!-- ==================== CONSTELLATIONS ==================== -->
     <!-- Note: Constellation names are defined in celestial_objects.xml -->
     <!-- Orion -->
@@ -1199,4 +1258,681 @@
     こぎつね座はダンベル星雲（M27）を含んでおり、これは史上初めて発見された惑星状星雲（1764年にシャルル・メシエにより発見）であり、双眼鏡での美しい観測対象です！
     </string>
     <string name="object_info_vulpecula_size" translation_description="Physical size of Vulpecula shown in the info card. Translate units if appropriate for your locale.">268平方度</string>
+
+    <!-- Galilean Moons of Jupiter -->
+    <string name="object_info_io_description" translation_description="Description of Io shown in the info card. Translate this text.">イオはジュピターの4つの大きなガリレオ衛星の中で最も内側にあり、太陽系で最も火山活動が活発な天体です。</string>
+    <string name="object_info_io_funfact" translation_description="Fun fact about Io shown in the info card. Translate this text.">
+    イオには数百の活火山があり、その中には数十キロメートルの高さまで溶岩噴泉を噴出しているものもあります。その絶え間ない活動は木星の巨大な重力による潮汐加熱によって駆動されています。
+    </string>
+    <string name="object_info_io_distance" translation_description="Distance to Io shown in the info card. Translate units if appropriate for your locale.">木星から421,700 km</string>
+    <string name="object_info_io_size" translation_description="Physical size of Io shown in the info card. Translate units if appropriate for your locale.">直径3,643 km</string>
+
+    <string name="object_info_europa_description" translation_description="Description of Europa shown in the info card. Translate this text.">ヨーロッパはガリレイ衛星の中で2番目の衛星であり、氷の地殻の下に広大な液体の水の海を持つと考えられており、生命を探すのに最も有望な場所の1つとなっています。</string>
+    <string name="object_info_europa_funfact" translation_description="Fun fact about Europa shown in the info card. Translate this text.">ヨーロッパの地下海は、木星からの潮汐加熱によって液体に保たれており、地球のすべての海の合計の2倍もの液体の水を含んでいる可能性があります。</string>
+    <string name="object_info_europa_distance" translation_description="Distance to Europa shown in the info card. Translate units if appropriate for your locale.">木星から671,100 km</string>
+    <string name="object_info_europa_size" translation_description="Physical size of Europa shown in the info card. Translate units if appropriate for your locale.">直径3,122 km</string>
+
+    <string name="object_info_ganymede_description" translation_description="Description of Ganymede shown in the info card. Translate this text.">ガニメデは太陽系最大の衛星で、惑星水星よりも大きいです。独自の磁場を生成することが知られている唯一の衛星です。</string>
+    <string name="object_info_ganymede_funfact" translation_description="Fun fact about Ganymede shown in the info card. Translate this text.">ガニメデは大きさではメルクリウスより大きいですが、質量は約半分です。その内部磁場は、木星のはるかに大きな磁気圏の中に独自の小型磁気圏を作り出しています。</string>
+    <string name="object_info_ganymede_distance" translation_description="Distance to Ganymede shown in the info card. Translate units if appropriate for your locale.">木星から1,070,400 km</string>
+    <string name="object_info_ganymede_size" translation_description="Physical size of Ganymede shown in the info card. Translate units if appropriate for your locale.">直径5,268 km</string>
+
+    <string name="object_info_callisto_description" translation_description="Description of Callisto shown in the info card. Translate this text.">カリストは、ガリレイ衛星の中で最も外側にあり、太陽系で最も激しくクレーターに覆われた天体の1つです。その古い表面は、太陽系初期の衝突の記録を保持しています。</string>
+    <string name="object_info_callisto_funfact" translation_description="Fun fact about Callisto shown in the info card. Translate this text.">カリストは木星の主な放射線帯の外側を公転しており、ガリレイ衛星の中で将来の人間による探査に最も安全です。時には「玄関衛星」と呼ばれています。</string>
+    <string name="object_info_callisto_distance" translation_description="Distance to Callisto shown in the info card. Translate units if appropriate for your locale.">木星から1,882,700 km</string>
+    <string name="object_info_callisto_size" translation_description="Physical size of Callisto shown in the info card. Translate units if appropriate for your locale.">直径4,821 km</string>
+
+    <!-- Moons of Mars -->
+    <string name="object_info_phobos_description" translation_description="Description of Phobos shown in the info card. Translate this text.">
+    フォボスは火星の2つの衛星のうち、より大きく内側にあるもので、太陽系のどの衛星よりも惑星に近い軌道を周回しています。不規則な形をしており、深い溝と隕石孔が多数あり、捕捉された小惑星と考えられています。
+    </string>
+    <string name="object_info_phobos_funfact" translation_description="Fun fact about Phobos shown in the info card. Translate this text.">
+    フォボスは火星の周りを非常に速く公転しており、西から昇って東に沈みます。また、ゆっくりと内側に螺旋状に落ちており、約5000万年後に火星に衝突するか、リングに分裂する運命にあります。
+    </string>
+    <string name="object_info_phobos_distance" translation_description="Distance to Phobos shown in the info card. Translate units if appropriate for your locale.">火星から9,376 km</string>
+    <!-- tm:omitted name="object_info_phobos_size" reason="identical_to_source" -->
+
+    <string name="object_info_deimos_description" translation_description="Description of Deimos shown in the info card. Translate this text.">
+    ディモスは火星の2つの衛星のうち、より小さく外側にある衛星で、滑らかで塵に覆われた表面を持ち、フォボスよりも丸い外観を与えています。その相棒と同様に、外側の小惑星帯から捕捉された小惑星だと考えられています。
+    </string>
+    <string name="object_info_deimos_funfact" translation_description="Fun fact about Deimos shown in the info card. Translate this text.">デイモスは非常に小さく遠く離れているため、火星の表面からは明るい星以上には見えず、夜空をゆっくりと約30時間かけて漂います。</string>
+    <string name="object_info_deimos_distance" translation_description="Distance to Deimos shown in the info card. Translate units if appropriate for your locale.">火星から23,460 km</string>
+    <!-- tm:omitted name="object_info_deimos_size" reason="identical_to_source" -->
+
+    <!-- Major Moons of Saturn -->
+    <string name="object_info_titan_description" translation_description="Description of Titan shown in the info card. Translate this text.">
+    タイタンは土星最大の衛星であり、太陽系で2番目に大きい衛星です。濃い大気を持つことが知られている唯一の衛星で、メタンが混在した厚い窒素の層を持ち、地球以外で表面に安定した液体の海を持つことが知られている唯一の天体です。
+    </string>
+    <string name="object_info_titan_funfact" translation_description="Fun fact about Titan shown in the info card. Translate this text.">
+    タイタンの湖と海は水ではなく、液体メタンとエタンで満たされており、気温は−179°Cという極寒です。NASAのドラゴンフライ回転翼機ミッションは2034年に到着予定で、タイタンの表面のサイト間を飛行して生命の化学を探索します。
+    </string>
+    <string name="object_info_titan_distance" translation_description="Distance to Titan shown in the info card. Translate units if appropriate for your locale.">土星から1,221,870 km</string>
+    <string name="object_info_titan_size" translation_description="Physical size of Titan shown in the info card. Translate units if appropriate for your locale.">直径5,151 km</string>
+
+    <string name="object_info_rhea_description" translation_description="Description of Rhea shown in the info card. Translate this text.">
+    レアはサターンの2番目に大きい衛星で、氷と岩石からなる多くのクレーターを持つ天体です。その淡色で古い表面には、太陽系で最も保存状態の良い衝突クレーターが残されており、地滑りが新しい物質を露出させた明るい氷の崖も見られます。
+    </string>
+    <string name="object_info_rhea_funfact" translation_description="Fun fact about Rhea shown in the info card. Translate this text.">
+    2008年、カッシーニのデータはレアが周回する薄いデブリのリングを持つ可能性を示唆しました。これが確認されれば、独自のリングシステムを持つ最初の衛星となり、注目すべき発見となるでしょう。現在のところ、この証拠は活発な研究分野です。
+    </string>
+    <string name="object_info_rhea_distance" translation_description="Distance to Rhea shown in the info card. Translate units if appropriate for your locale.">土星から527,108 km</string>
+    <string name="object_info_rhea_size" translation_description="Physical size of Rhea shown in the info card. Translate units if appropriate for your locale.">直径1,527 km</string>
+
+    <string name="object_info_tethys_description" translation_description="Description of Tethys shown in the info card. Translate this text.">
+    テティスはサターンの氷の衛星で、2つの劇的な特徴に支配されています。広大なオデュッセウスクレーター（幅400 km、月の表面の約3分の1を覆う）と、地球の周りの4分の3まで伸びる峡谷システムであるイタカ・カスマです。
+    </string>
+    <string name="object_info_tethys_funfact" translation_description="Fun fact about Tethys shown in the info card. Translate this text.">
+    テティスはほぼ純粋な水氷でできており、太陽系の衛星の中で最も低い密度の1つを持っています。凍った水よりわずかに密度が高いだけです。イタカ・カスマは、内部が凍結して膨張し、上部の地殻が内側から割れたときに形成された可能性があります。
+    </string>
+    <string name="object_info_tethys_distance" translation_description="Distance to Tethys shown in the info card. Translate units if appropriate for your locale.">土星から294,619 km</string>
+    <string name="object_info_tethys_size" translation_description="Physical size of Tethys shown in the info card. Translate units if appropriate for your locale.">直径1,062 km</string>
+
+    <string name="object_info_dione_description" translation_description="Description of Dione shown in the info card. Translate this text.">
+    ディオーネはサターンの氷衛星で、先行面は多くのクレーターで覆われており、後行半球は古い地殻変動によって下層の新鮮な氷が露出した明るい氷の崖（断裂線）で縁取られています。カッシーニの重力データは、地殻の下に液体の海が存在する可能性を示唆しています。
+    </string>
+    <string name="object_info_dione_funfact" translation_description="Fun fact about Dione shown in the info card. Translate this text.">
+    ディオーネは、ラグランジュ点と呼ばれる重力平衡点で、その軌道の60°前方と後方に固定された2つの小さな衛星ヘレネとポリデウケスと軌道を共有しています。特にヘレネはカッシーニの画像で宇宙のヒッチハイカーのように乗っているのが見えます。
+    </string>
+    <string name="object_info_dione_distance" translation_description="Distance to Dione shown in the info card. Translate units if appropriate for your locale.">土星から377,396 km</string>
+    <string name="object_info_dione_size" translation_description="Physical size of Dione shown in the info card. Translate units if appropriate for your locale.">直径1,122 km</string>
+
+    <string name="object_info_iapetus_description" translation_description="Description of Iapetus shown in the info card. Translate this text.">
+    イアペトゥスは土星で最も特徴的な衛星の1つです。その前半球は石炭のように黒い物質で覆われており、後半球は明るい白い氷です。この極端な二色の外観は、1671年に月を発見したジョヴァンニ・カッシーニを困惑させました。その対比は非常に顕著で、小さな望遠鏡でも見えます。
+    </string>
+    <string name="object_info_iapetus_funfact" translation_description="Fun fact about Iapetus shown in the info card. Translate this text.">
+    イアペトゥスはまた、赤道周辺を数千キロメートルにわたって走る、高さ20 kmそびえ立つ赤道隆起を持っています。これは地球上のどの山よりも高いものです。その起源は不明です。崩壊した環の遺跡、または古代の造山運動である可能性があります。これは月がはるか昔にはるかに速く自転していた時代に形成されました。
+    </string>
+    <string name="object_info_iapetus_distance" translation_description="Distance to Iapetus shown in the info card. Translate units if appropriate for your locale.">土星から3,560,820 km</string>
+    <string name="object_info_iapetus_size" translation_description="Physical size of Iapetus shown in the info card. Translate units if appropriate for your locale.">直径1,469 km</string>
+
+    <!-- Moon of Neptune -->
+    <string name="object_info_triton_description" translation_description="Description of Triton shown in the info card. Translate this text.">
+    トリトンはネプチューンの最大の衛星であり、太陽系で最も異常な天体の1つです。ネプチューンを逆行軌道で周回しており、惑星自体の自転とは反対方向です。これはネプチューン初期の歴史において、太陽系外部、おそらくカイパーベルトから捕捉されたことを強く示唆しています。
+    </string>
+    <string name="object_info_triton_funfact" translation_description="Fun fact about Triton shown in the info card. Translate this text.">
+    表面温度が−235°Cという、宇宙探査機が訪れた天体の中で最も寒い温度であるにもかかわらず、ボイジャー2号は1989年にトリトン上の活動的な窒素間欠泉を発見しました。表面の暗い筋は、ガスと暗い物質のプルームが薄い大気中に数キロメートル噴出した場所を示しています。
+    </string>
+    <string name="object_info_triton_distance" translation_description="Distance to Triton shown in the info card. Translate units if appropriate for your locale.">海王星から354,759 km</string>
+    <string name="object_info_triton_size" translation_description="Physical size of Triton shown in the info card. Translate units if appropriate for your locale.">直径2,707 km</string>
+
+    <!-- Major Moons of Uranus -->
+    <string name="object_info_titania_description" translation_description="Description of Titania shown in the info card. Translate this text.">
+    タイタニアは天王星最大の衛星であり、太陽系で8番目に大きい衛星です。その表面は古い衝突盆地平原と若い崖と谷が混在しており、氷の地殻を再形成した過去のテクトニック活動を含む可能性のある複雑な地質学的歴史を示唆しています。
+    </string>
+    <string name="object_info_titania_funfact" translation_description="Fun fact about Titania shown in the info card. Translate this text.">
+    天王星のすべての衛星はシェイクスピアとアレクサンダー・ポープのキャラクターにちなんで名付けられています。タイタニアは『真夏の夜の夢』の妖精の女王です。ギリシャ神話またはローマ神話の人物にちなんで名付けられていない主要な惑星衛星は非常に少なく、その1つです。
+    </string>
+    <string name="object_info_titania_distance" translation_description="Distance to Titania shown in the info card. Translate units if appropriate for your locale.">天王星から435,910 km</string>
+    <string name="object_info_titania_size" translation_description="Physical size of Titania shown in the info card. Translate units if appropriate for your locale.">直径1,578 km</string>
+
+    <string name="object_info_oberon_description" translation_description="Description of Oberon shown in the info card. Translate this text.">
+    オベロンは天王星の5つの主要衛星の中で最も外側にあり、最も激しくクレーター化された衛星の1つで、太陽系初期以来ほとんど変わっていない古い表面を持っています。その大きな衝突クレーターのいくつかの底には暗い物質があり、衝突体によってもたらされた有機物の堆積物の可能性があります。
+    </string>
+    <string name="object_info_oberon_funfact" translation_description="Fun fact about Oberon shown in the info card. Translate this text.">
+    オベロンには周囲の平原から約6 km隆起する山があります。これは地球上の最高峰に匹敵します。地球の山々がプレートテクトニクスによって形成されたのとは異なり、この地形は古い衝突クレーターの中央ピークまたは初期の火山活動の遺跡である可能性があります。
+    </string>
+    <string name="object_info_oberon_distance" translation_description="Distance to Oberon shown in the info card. Translate units if appropriate for your locale.">天王星から583,520 km</string>
+    <string name="object_info_oberon_size" translation_description="Physical size of Oberon shown in the info card. Translate units if appropriate for your locale.">直径1,523 km</string>
+
+    <string name="object_info_ariel_description" translation_description="Description of Ariel shown in the info card. Translate this text.">
+    アリエルはウラヌスの5つの主要衛星の中で最も若く、最も明るい表面を持っています。その地形は深い谷と滑らかな平原のネットワークが支配的で、これらは内部から湧き出た流体（おそらく水またはアンモニア水混合物）によって長い時間前に再形成され、古い地形が浸水しました。
+    </string>
+    <string name="object_info_ariel_funfact" translation_description="Fun fact about Ariel shown in the info card. Translate this text.">
+    アリエルの谷は深さ10 kmに達することがあり、グランドキャニオンよりもはるかに深いです。ジェームズ・ウェッブ宇宙望遠鏡の観測により、アリエルの表面で二酸化炭素の氷が検出されました。これは天王星の磁場からの荷電粒子によって駆動される継続的な表面化学を示唆しています。
+    </string>
+    <string name="object_info_ariel_distance" translation_description="Distance to Ariel shown in the info card. Translate units if appropriate for your locale.">天王星から191,020 km</string>
+    <string name="object_info_ariel_size" translation_description="Physical size of Ariel shown in the info card. Translate units if appropriate for your locale.">直径1,158 km</string>
+
+    <string name="object_info_umbriel_description" translation_description="Description of Umbriel shown in the info card. Translate this text.">
+    アンブリエルはウラヌスの5つの主要衛星の中で最も暗く、均一に古い表面が多くのクレーターで覆われており、隣接する衛星に見られるような地質学的な表面更新の兆候がほとんど見られません。その内部は太陽系の初期以来、冷たく凍った状態のままであるようです。
+    </string>
+    <string name="object_info_umbriel_funfact" translation_description="Fun fact about Umbriel shown in the info card. Translate this text.">
+    アンブリエルで最も目立つ特徴は、赤道近くにある直径約140 kmの明るいリング、ウンダです。1986年にボイジャー2号によって発見されたウンダの正確な性質は謎のままです。衝突によってクレーターが形成された後、長い時間をかけて二酸化炭素またはアンモニアの霜が堆積したクレーター床である可能性があります。
+    </string>
+    <string name="object_info_umbriel_distance" translation_description="Distance to Umbriel shown in the info card. Translate units if appropriate for your locale.">天王星から266,300 km</string>
+    <string name="object_info_umbriel_size" translation_description="Physical size of Umbriel shown in the info card. Translate units if appropriate for your locale.">直径1,170 km</string>
+
+    <!-- Globular clusters already on the map -->
+    <string name="object_info_omega_centauri_description" translation_description="Description of Omega Centauri shown in the info card. Translate this text.">
+    オメガ・ケンタウリは天の川を周回する最大かつ最も質量の大きい球状星団で、約150光年の球体に約1000万個の星が詰め込まれています。ケンタウルス座の中でぼんやりした星として肉眼で容易に見ることができ、双眼鏡または任意の望遠鏡を通すと、息をのむほど美しい星の球に分解されます。
+    </string>
+    <string name="object_info_omega_centauri_funfact" translation_description="Fun fact about Omega Centauri shown in the info card. Translate this text.">
+    典型的な球状星団とは異なり、オメガ・ケンタウリは多くの異なる年齢と化学組成を持つ星を含んでいます。これは、数十億年前に銀河系に引き裂かれて飲み込まれた矮小銀河の剥き出しになった核である可能性があることを示しています。さらに、中心に中間質量ブラックホールを持っている可能性さえあります。
+    </string>
+    <string name="object_info_omega_centauri_distance" translation_description="Distance to Omega Centauri shown in the info card. Translate units if appropriate for your locale.">17,090光年</string>
+    <string name="object_info_omega_centauri_size" translation_description="Physical size of Omega Centauri shown in the info card. Translate units if appropriate for your locale.">直径約150光年</string>
+
+    <!-- Deep-sky objects: new catalog additions -->
+    <string name="object_info_hyades_description" translation_description="Description of the Hyades star cluster shown in the info card. Translate this text.">
+    ヒアデス星団は太陽系に最も近い散開星団であり、天文学で最も研究されている星団の1つです。おうし座の顔を形成するV字形の星のパターンとして肉眼で見ることができ、空の約5°にわたって広がる数百個の星を含んでいます。
+    </string>
+    <string name="object_info_hyades_funfact" translation_description="Fun fact about the Hyades shown in the info card. Translate this text.">
+    輝く橙色の星アルデバランはヒアデス星団の中に見えますが、実は手前にある物体で距離は半分です。これは偶然の一致です。真の星団は約153光年離れており、ヒッパルコス衛星による視差測定で距離が測定された最初の星々を含んでいます。
+    </string>
+    <string name="object_info_hyades_distance" translation_description="Distance to the Hyades shown in the info card. Translate units if appropriate for your locale.">153光年</string>
+    <string name="object_info_hyades_size" translation_description="Angular size of the Hyades shown in the info card.">約5°の大きさ</string>
+
+    <string name="object_info_coma_star_cluster_description" translation_description="Description of the Coma Berenices Star Cluster shown in the info card. Translate this text.">
+    コマ・ベレニケス星団は、約40個の星からなる近くの散開星団で、ほぼ5°の空に散在しており、暗い条件下では肉眼で柔らかいもやとして容易に見えます。太陽系から3番目に近い散開星団であり、コマ・ベレニケス座の起源です。
+    </string>
+    <string name="object_info_coma_star_cluster_funfact" translation_description="Fun fact about the Coma Berenices Star Cluster shown in the info card. Translate this text.">
+    古代の観測者たちは、この星団をエジプトの女王ベレニケ2世の髪と見なしていました。彼女は伝説によると、夫の戦地からの無事な帰還を願って、黄金の髪を切り落とし、供え物としました。プトレマイオス3世は、紀元前245年頃に、この珍しい星座を彼女の名誉のために正式に命名したと伝えられています。
+    </string>
+    <string name="object_info_coma_star_cluster_distance" translation_description="Distance to the Coma Star Cluster shown in the info card. Translate units if appropriate for your locale.">288光年</string>
+    <string name="object_info_coma_star_cluster_size" translation_description="Angular size of the Coma Star Cluster shown in the info card.">約5°の大きさ</string>
+
+    <string name="object_info_coathanger_description" translation_description="Description of the Coathanger asterism shown in the info card. Translate this text.">
+    コートハンガーは、キツネ座にある10個の星からなる印象的な星群で、独特の形を作っています。6個の星が一直線に並び、その下に4個の星がフック状に垂れ下がっており、まさに逆さまのコートハンガーのような形です。夏の空で最高の双眼鏡観測対象の1つであり、典型的な双眼鏡の視野にぴったり収まります。
+    </string>
+    <string name="object_info_coathanger_funfact" translation_description="Fun fact about the Coathanger shown in the info card. Translate this text.">
+    ハンガーのような見た目をしていますが、Coathanger（コートハンガー）の星々は物理的には関連していません。それらは非常に異なる距離にあり、単に視線方向の偶然の一致です。Brocchi\'s Cluster（ブロッキ星団）は1920年代にDalmiro Brocchiによってカタログ化され、これを撮像した最初の宇宙望遠鏡はHipparcosで、星々が無関係であることを確認しました。
+    </string>
+    <string name="object_info_coathanger_distance" translation_description="Distance to the Coathanger shown in the info card. Translate units if appropriate for your locale.">約420光年（最も明るい星）</string>
+    <string name="object_info_coathanger_size" translation_description="Angular size of the Coathanger shown in the info card.">約1°の大きさ</string>
+
+    <string name="object_info_helix_nebula_description" translation_description="Description of the Helix Nebula shown in the info card. Translate this text.">
+    ヘリックス星雲は、見かけの大きさで空に最も大きい惑星状星雲です。太陽のような星が人生の終わりに放出したガスの膨張する殻です。約0.5度の広がりを持ち、水瓶座で双眼鏡で薄い円形の光として見ることができます。長時間露光写真での外観から「神の目」というニックネームで呼ばれています。
+    </string>
+    <string name="object_info_helix_nebula_funfact" translation_description="Fun fact about the Helix Nebula shown in the info card. Translate this text.">
+    らせん星雲の中心には、地球に最も近い既知の白色矮星の1つがあります。これは非常に高温の恒星残骸で、地球と同じ大きさですが太陽の質量を持っています。これは約50億年後に私たちの太陽を待つ運命です。
+    </string>
+    <string name="object_info_helix_nebula_distance" translation_description="Distance to the Helix Nebula shown in the info card. Translate units if appropriate for your locale.">650光年</string>
+    <string name="object_info_helix_nebula_size" translation_description="Angular size of the Helix Nebula shown in the info card.">直径約3光年</string>
+
+    <string name="object_info_sculptor_galaxy_description" translation_description="Description of the Sculptor Galaxy shown in the info card. Translate this text.">
+    彫刻家銀河は、地球から見える最も明るく美しいエッジオン渦巻銀河の1つで、南の星座彫刻家に細長い光として見えます。これは最も近いスターバースト銀河の1つです。スターバースト銀河とは、激しい星形成の爆発を経験している銀河のことで、暗い空から双眼鏡を使用するアマチュア天文学者に見えます。
+    </string>
+    <string name="object_info_sculptor_galaxy_funfact" translation_description="Fun fact about the Sculptor Galaxy shown in the info card. Translate this text.">
+    彫刻家銀河は彫刻家銀河群の最も明るい構成員の1つです。彫刻家銀河群は私たちの局部銀河群に最も近い銀河群です。その中心部の星爆発領域は、銀河系よりも数倍高い速度で新しい星を生成しており、これは隣接する銀河との過去の相互作用によって駆動されています。
+    </string>
+    <string name="object_info_sculptor_galaxy_distance" translation_description="Distance to the Sculptor Galaxy shown in the info card. Translate units if appropriate for your locale.">1,140万光年</string>
+    <string name="object_info_sculptor_galaxy_size" translation_description="Physical size of the Sculptor Galaxy shown in the info card. Translate units if appropriate for your locale.">約90,000光年の大きさ</string>
+
+    <string name="object_info_blue_snowball_nebula_description" translation_description="Description of the Blue Snowball Nebula shown in the info card. Translate this text.">
+    ブルースノーボールはアンドロメダ座にある惑星状星雲で、死にゆく星から放出されたガスの輝く殻です。等級8.3で、空の中で最も明るく、最も色彩豊かな惑星状星雲の1つであり、小さな望遠鏡でも鮮やかな青緑色の円盤として見えます。その対称的な形と強烈な色は、観測者の間で人気があります。
+    </string>
+    <string name="object_info_blue_snowball_nebula_funfact" translation_description="Fun fact about the Blue Snowball Nebula shown in the info card. Translate this text.">
+    ブルースノーボール星雲の印象的な色は、特定の緑色の波長で発光する二重電離酸素と水素放射の組み合わせから生じており、人間の目には青緑色に見えます。中央の白色矮星の表面温度は約100,000°Cで、この距離で周囲のガスをイオン化するのに十分な熱さです。
+    </string>
+    <string name="object_info_blue_snowball_nebula_distance" translation_description="Distance to the Blue Snowball Nebula shown in the info card. Translate units if appropriate for your locale.">約2,500光年</string>
+    <string name="object_info_blue_snowball_nebula_size" translation_description="Physical size of the Blue Snowball Nebula shown in the info card. Translate units if appropriate for your locale.">直径約0.8光年</string>
+
+    <string name="object_info_ghost_of_jupiter_description" translation_description="Description of the Ghost of Jupiter planetary nebula shown in the info card. Translate this text.">
+    ジュピターの幽霊は、みずがめ座にある明るい惑星状星雲で、見かけの大きさが木星に似ていることからその名前が付けられました。等級8.6で、小型の望遠鏡で観測できる最もアクセスしやすい惑星状星雲の1つであり、明確なディスクと中程度の口径で色のかすかなヒントを示しています。
+    </string>
+    <string name="object_info_ghost_of_jupiter_funfact" translation_description="Fun fact about the Ghost of Jupiter shown in the info card. Translate this text.">
+    木星の幽霊は、明るい内殻と、より淡い外側のハロー（光輪）に囲まれた二層構造を持っています。これは、死にゆく星が少なくとも2つの別々の時期にガスを放出したことを示唆しています。その中心星は既知の最も熱い白色矮星の1つであり、表面温度は約75,000°Cと推定されています。
+    </string>
+    <string name="object_info_ghost_of_jupiter_distance" translation_description="Distance to the Ghost of Jupiter shown in the info card. Translate units if appropriate for your locale.">約1,400光年</string>
+    <string name="object_info_ghost_of_jupiter_size" translation_description="Physical size of the Ghost of Jupiter shown in the info card. Translate units if appropriate for your locale.">直径約1光年</string>
+
+    <string name="object_info_saturn_nebula_description" translation_description="Description of the Saturn Nebula shown in the info card. Translate this text.">
+    土星星雲は水瓶座にある惑星状星雲で、土星に似ていることから名付けられました。両側に突き出た「アンサエ」と呼ばれる拡張部分は、リングのハンドルのように見え、中程度の望遠鏡で観察できます。等級8.0で、空の中で最も明るい惑星状星雲の1つであり、より大きな望遠鏡では複雑な構造を示します。
+    </string>
+    <string name="object_info_saturn_nebula_funfact" translation_description="Fun fact about the Saturn Nebula shown in the info card. Translate this text.">
+    ウィリアム・ハーシェルは1782年に土星星雲を発見し、土星のような外観を指摘しました。現代の観測により、中央の白色矮星を取り囲む少なくとも4つの異なるガスの殻が明らかになり、これは星の最終段階における複数の質量放出エピソードを反映しています。
+    </string>
+    <string name="object_info_saturn_nebula_distance" translation_description="Distance to the Saturn Nebula shown in the info card. Translate units if appropriate for your locale.">約5,000光年</string>
+    <string name="object_info_saturn_nebula_size" translation_description="Physical size of the Saturn Nebula shown in the info card. Translate units if appropriate for your locale.">約1光年の大きさ</string>
+
+    <string name="object_info_ngc_2903_description" translation_description="Description of the galaxy NGC 2903 shown in the info card. Translate this text.">
+    NGC 2903はしし座にある明るい棒渦巻銀河で、「メシエが見落とした天体」と呼ばれることもあります。メシエの有名なカタログに含まれていない最も目立つ銀河の1つです。等級8.9で双眼鏡で容易に観測でき、中程度の望遠鏡では美しい渦巻き構造を示します。
+    </string>
+    <string name="object_info_ngc_2903_funfact" translation_description="Fun fact about NGC 2903 shown in the info card. Translate this text.">
+    NGC 2903は、銀河の中心バー領域で既知の最も高い濃度の星形成「ホットスポット」を持っています。これは、激しい星形成によって照らされた若い大質量星の密集した集団です。棒渦巻銀河のスターバースト活動を研究するためのベンチマークとして使用されています。
+    </string>
+    <string name="object_info_ngc_2903_distance" translation_description="Distance to NGC 2903 shown in the info card. Translate units if appropriate for your locale.">3,000万光年</string>
+    <string name="object_info_ngc_2903_size" translation_description="Physical size of NGC 2903 shown in the info card. Translate units if appropriate for your locale.">約80,000光年の大きさ</string>
+
+    <!-- Meteor showers -->
+    <string name="object_info_quadrantids_description" translation_description="Description of the Quadrantids meteor shower shown in the info card. Translate this text.">
+    クアドランティド流星群は1月に活動する豊富な流星群で、非常に鋭く短い極大期を持ち、わずか数時間しか続きません。放射点は牛飼い座（ボーテス座）の星座にあり、この流星群の名前の由来となった廃止された星座クアドランス・ムラーリスの位置の近くにあります。理想的な条件下では、1時間あたり最大120個の流星が見えます。
+    </string>
+    <string name="object_info_quadrantids_funfact" translation_description="Fun fact about the Quadrantids meteor shower shown in the info card. Translate this text.">
+    ほとんどの主要な流星群は彗星に由来していますが、四分儀座流星群の母天体は小惑星2003 EH1です。これは数百年前に燃え尽きた彗星の休眠中の核だと考えられています。その存在が確認されたのは2003年のことです。
+    </string>
+
+    <string name="object_info_lyrids_description" translation_description="Description of the Lyrids meteor shower shown in the info card. Translate this text.">
+    リリッド流星群は、琴座の明るい恒星ベガの近くから放射する信頼性の高い春の流星群です。速く、中程度の明るさの流星を生成し、1時間あたり約18個でピークに達し、時々光る煙の軌跡を残す火球を生成します。
+    </string>
+    <string name="object_info_lyrids_funfact" translation_description="Fun fact about the Lyrids meteor shower shown in the info card. Translate this text.">
+    リリッド流星群は歴史上最も古い信頼できる記録がある流星群です。中国の天文学者は紀元前687年に流星が「雨のように降る」という現象を記録しました。この流星群の破片はタッチャー彗星に由来し、太陽を周回するのに415年かかり、最後に内太陽系を訪れたのは1861年です。
+    </string>
+
+    <string name="object_info_aquariids_description" translation_description="Description of the Eta Aquariids meteor shower shown in the info card. Translate this text.">
+    エータ・アクアリウス流星群は、ハレー彗星の破片によって生じる年2回の流星群の1つです。最大で1時間あたり70個の流星に達し、この流星群は南半球を強く優遇します。南半球では夜明け前に放射点が高く昇ります。北半球の観測者でも1時間あたり30個以上の尊敬すべき流星数を楽しむことができます。
+    </string>
+    <string name="object_info_aquariids_funfact" translation_description="Fun fact about the Eta Aquariids meteor shower shown in the info card. Translate this text.">
+    エタ・アクアリウス流星は時速66 km/sで移動します。これは、流星が作り出したイオン化した空気が流星が消えた後も数秒間発光するほどの速さです。数千年前の彗星の訪問時に放出されたハレー彗星の古い塵が、あなたの目の前で燃え尽きるのを見ることができるかもしれません。
+    </string>
+
+    <string name="object_info_deltaaquariids_description" translation_description="Description of the Delta Aquariids meteor shower shown in the info card. Translate this text.">
+    南デルタ水瓶座流星群は7月下旬にピークを迎え、夜明け前に水瓶座の放射点が高く昇る熱帯地域と南半球の高緯度地域から最もよく見えます。時速最大16個の中程度の速度の流星が安定した流れで出現し、明るい火球はほとんど見られません。
+    </string>
+    <string name="object_info_deltaaquariids_funfact" translation_description="Fun fact about the Delta Aquariids meteor shower shown in the info card. Translate this text.">
+    デルタ・アクアリウス群の正確な母天体は不確定のままです。最有力候補は彗星96P/マッホルツで、これは異常な短周期彗星であり、非常に傾いた軌道を持ち、太陽に驚くほど接近します。水星よりも太陽に近づきます。
+    </string>
+
+    <string name="object_info_perseids_description" translation_description="Description of the Perseids meteor shower shown in the info card. Translate this text.">
+    ペルセウス座流星群は年間で最も人気のある流星群で、8月の暖かい夜に最大毎時100個の流星が観測されます。彗星スウィフト・タットルが放出した破片が地球の大気圏高層で燃焼し、速く明るい流星を生成します。多くは持続的に光る尾を残し、ペルセウス座から放射状に現れます。
+    </string>
+    <string name="object_info_perseids_funfact" translation_description="Fun fact about the Perseids meteor shower shown in the info card. Translate this text.">
+    ペルセウス座流星群の母天体であるスウィフト・タットル彗星の核は幅26 kmで、恐竜の大量絶滅を引き起こしたと考えられている天体よりも大きいです。この彗星は1992年に最後に太陽系内部を通過し、2125年まで戻ってきません。
+    </string>
+
+    <string name="object_info_orionids_description" translation_description="Description of the Orionids meteor shower shown in the info card. Translate this text.">
+    オリオン座流星群は、ハレー彗星が毎年生み出す2番目の流星群で、オリオン座の上げられた棍棒の近くから放射しています。時速約25個でピークを迎え、高速で明るいことが多く、数秒間続く発光するイオン化トレイルを頻繁に残す流星として知られています。
+    </string>
+    <string name="object_info_orionids_funfact" translation_description="Fun fact about the Orionids meteor shower shown in the info card. Translate this text.">
+    ハレー彗星は2つの年間流星群の原因となっています。5月のエタ・アクアリウス群（地球が彗星の外向きの破片の軌跡を横切るとき）と10月のオリオン群（地球が内向きの軌跡を横切るとき）です。これらにより、私たちは年に2回、古代のハレー彗星のダストをサンプリングできます。
+    </string>
+
+    <string name="object_info_leonids_description" translation_description="Description of the Leonids meteor shower shown in the info card. Translate this text.">
+    レオニズ流星群はしし座の鎌から放射し、通常1時間あたり約20個の流星を生成します。彼らは約33年ごとに地球が彗星55P/テンペル・タットルによって放出された密集したダスト・フィラメントを通過するときに噴出する壮観なストームで有名です。これらのストームは1時間あたり数千個の流星を生成することができます。
+    </string>
+    <string name="object_info_leonids_funfact" translation_description="Fun fact about the Leonids meteor shower shown in the info card. Translate this text.">
+    1833年のレオニード流星嵐は時間あたり約10万個の流星を生み出し、空が火事だと恐れた北米中の観測者を驚かせました。この現象は流星群の科学的研究を開始させました。同等の嵐は1966年と1999年に発生しました。
+    </string>
+
+    <string name="object_info_puppidvelids_description" translation_description="Description of the Puppid-Velids meteor shower shown in the info card. Translate this text.">
+    プッピス・ベラ流星群は、南天の銀河に位置するプッピス座とベラ座から放射する複雑に重なった小規模流星群です。1時間あたり約10個の流星がピークとなり、南半球から最もよく観測でき、12月の空で放射点が高く昇ります。
+    </string>
+    <string name="object_info_puppidvelids_funfact" translation_description="Fun fact about the Puppid-Velids meteor shower shown in the info card. Translate this text.">
+    プピド・ベリド流星群は、単一の源ではなく、複数の異なる親彗星からの破片と考えられており、26P/グリッグ・スケレルップ彗星を含みます。南半球の放射点は北緯約40°N以上の観測者にとって地平線上に上昇することはなく、世界のほとんどの地域ではめったに見られない流星群です。
+    </string>
+
+    <string name="object_info_geminids_description" translation_description="Description of the Geminids meteor shower shown in the info card. Translate this text.">
+    ジェミニズ流星群は年間で最も優れた流星群として広く認識されています。豊富（毎時最大120個）で信頼性が高く、真夜中以降ではなく夜間早期から活動しています。ふたご座から放射し、鮮やかな火球を含む幅広い明るさの流星を生成します。
+    </string>
+    <string name="object_info_geminids_funfact" translation_description="Fun fact about the Geminids meteor shower shown in the info card. Translate this text.">
+    主要な流星群の中でも珍しく、ジェミニズ流星群は彗星ではなく小惑星から発生します。その小惑星は3200ファエトン（「岩質彗星」）で、その軌道は他のどの名前のついた小惑星よりも太陽に近づきます。極端な熱がその岩質の表面を割裂し、流星群を生成するダストを放出する可能性があります。
+    </string>
+
+    <string name="object_info_ursids_description" translation_description="Description of the Ursids meteor shower shown in the info card. Translate this text.">
+    ウルスィド流星群は小規模な流星群で、小熊座から放射し、北極星の近くにあるため、北半球の観測者にとって周極星となり、沈むことなく一晩中見ることができます。冬至の周辺でピークを迎え、時間あたり約10個の流星が見られ、母彗星は8P/タットル彗星です。
+    </string>
+    <string name="object_info_ursids_funfact" translation_description="Fun fact about the Ursids meteor shower shown in the info card. Translate this text.">
+    ウルスス座流星群は時々、通常の出現率をはるかに上回る予期しない活動を起こします。1945年と2006年には、観測者が1時間あたり50個以上の流星を記録しました。これは通常のピーク時の5倍です。これらの急増は、地球がチューットル彗星の接近時に放出された異常に密集した破片のリボンを通過するときに発生します。
+    </string>
+
+    <!-- Category 5: Top priority — objects on the map that lacked info cards -->
+    <string name="object_info_m47_description" translation_description="Description of the open star cluster M47 shown in the info card. Translate this text.">
+    M47は船尾座にある明るく散らばった散開星団で、肉眼で容易に見え、双眼鏡では目を引きます。約50個の星が空の半度にわたって散在しており、いくつかのオレンジ色の巨星が、より暗い青白い星々に対して暖かみのある色を加えています。
+    </string>
+    <string name="object_info_m47_funfact" translation_description="Fun fact about M47 shown in the info card. Translate this text.">
+    M47は「失われた」メシエ天体の1つでした。メシエの元の座標の記入ミスにより、それは空の何もない場所に配置され、このクラスターは約2世紀間、正体不明のままでした。1959年に観測者がメシエの説明から逆算してエラーを発見するまで、NGC 2422としての真の正体は確認されませんでした。
+    </string>
+    <string name="object_info_m47_distance" translation_description="Distance to M47 shown in the info card. Translate units if appropriate for your locale.">1,600光年</string>
+    <string name="object_info_m47_size" translation_description="Physical size of M47 shown in the info card. Translate units if appropriate for your locale.">約14光年の大きさ</string>
+
+    <string name="object_info_m41_description" translation_description="Description of the open star cluster M41 shown in the info card. Translate this text.">
+    M41は大犬座にある素晴らしい散開星団で、夜空で最も明るい星シリウスのすぐ南4°に位置しています。暗い場所からは肉眼で見え、双眼鏡では素晴らしい景色が広がります。約100個の星が広い視野に散らばっており、その中には淡い青白色の星々の中に、いくつかの印象的なオレンジ色の巨星が含まれています。
+    </string>
+    <string name="object_info_m41_funfact" translation_description="Fun fact about M41 shown in the info card. Translate this text.">
+    アリストテレスは紀元前325年頃にM41を観測した可能性があります。これは深宇宙天体の最も古い記録された観測である可能性があります。彼はシリウスの南にある「曇った斑点」を記述しており、これはM41の位置と一致しています。この同定が正しければ、M41は望遠鏡が発明される約2000年前から議論されていたことになります。
+    </string>
+    <string name="object_info_m41_distance" translation_description="Distance to M41 shown in the info card. Translate units if appropriate for your locale.">2,300光年</string>
+    <string name="object_info_m41_size" translation_description="Physical size of M41 shown in the info card. Translate units if appropriate for your locale.">約25光年の大きさ</string>
+
+    <string name="object_info_m24_description" translation_description="Description of the Sagittarius Star Cloud (M24) shown in the info card. Translate this text.">
+    M24はいて座星雲です。星団でも星雲でもなく、銀河系の塵の隙間を通して見える窓で、2°にわたる眩しい星野を明かしています。双眼鏡で見える空のどこよりも豊かな領域で、異なる距離にある数千の星が同時に詰まっています。
+    </string>
+    <string name="object_info_m24_funfact" translation_description="Fun fact about M24 shown in the info card. Translate this text.">
+    M24の星々は同じ距離にはありません。この星雲は銀河系の円盤を星間塵の自然なトンネルを通して見た断面を表しており、10,000～16,000光年の距離にまたがっています。この雲の中には暗黒星雲と小さな星団が埋め込まれており、輝く星々の背景に対して暗い斑点として見えます。
+    </string>
+    <string name="object_info_m24_distance" translation_description="Distance range to M24 shown in the info card. Translate units if appropriate for your locale.">約10,000～16,000光年（範囲）</string>
+    <string name="object_info_m24_size" translation_description="Physical size of M24 shown in the info card. Translate units if appropriate for your locale.">約600光年の深さの窓</string>
+
+    <string name="object_info_m25_description" translation_description="Description of the open star cluster M25 shown in the info card. Translate this text.">
+    M25は射手座にある明るい肉眼で見える散開星団で、夏の天の川の密集した星野を背景にしています。約600個の星が0.5度の視野に散在しており、双眼鏡で観察するのに最適な豊かな天体です。最も明るい構成員には、いくつかの青白い超巨星と、空で最も研究されているセファイド型変光星の1つが含まれています。
+    </string>
+    <string name="object_info_m25_funfact" translation_description="Fun fact about M25 shown in the info card. Translate this text.">
+    M25はU Sagittarii（いて座U星）を含んでいます。これは古典的なセファイド変光星で、6.7日の周期で明るくなったり暗くなったりします。セファイドは宇宙距離を測定するための重要な「標準光源」です。なぜなら、その脈動周期が直接その真の光度を明かすからです。天文学者たちはセファイドを使って、まず銀河系のサイズを決定し、その後、観測可能な宇宙のスケールを決定しました。
+    </string>
+    <string name="object_info_m25_distance" translation_description="Distance to M25 shown in the info card. Translate units if appropriate for your locale.">2,000光年</string>
+    <string name="object_info_m25_size" translation_description="Physical size of M25 shown in the info card. Translate units if appropriate for your locale.">約19光年の大きさ</string>
+
+    <string name="object_info_m39_description" translation_description="Description of the open star cluster M39 shown in the info card. Translate this text.">
+    M39は白鳥座にある大きく散在した散開星団で、夏の天の川が豊かなデネブ近くで肉眼で見ることができます。およそ30個の明るい星が空の1度にわたって緩く集まっており、双眼鏡または広視野望遠鏡での低倍率で最も良く見えます。高倍率にするとただ疎らで平凡な星の視野に分解されるだけです。
+    </string>
+    <string name="object_info_m39_funfact" translation_description="Fun fact about M39 shown in the info card. Translate this text.">
+    M39は約825光年の距離にあり、地球に最も近い散開星団の1つです。約2億4000万年の年齢で、肉眼で見える星団の中でも最も古い星団の1つであり、その最も質量の大きい星はすでに寿命を終えています。メシエは1764年にこれを記録し、彼のカタログの最初期の追加の1つとなりました。
+    </string>
+    <string name="object_info_m39_distance" translation_description="Distance to M39 shown in the info card. Translate units if appropriate for your locale.">825光年</string>
+    <string name="object_info_m39_size" translation_description="Physical size of M39 shown in the info card. Translate units if appropriate for your locale.">約8光年の大きさ</string>
+
+    <!-- Category 5: Special cases -->
+    <string name="object_info_m63_description" translation_description="Description of the Sunflower Galaxy (M63) shown in the info card. Translate this text.">
+    ひまわり銀河は猟犬座にある明るい渦巻銀河で、星形成領域が点在する密に巻いた腕が、長時間露光写真では独特の花のようなテクスチャを与えています。等級8.6で暗い空から双眼鏡で見ることができ、小型の望遠鏡では細長い形と明るい核が容易に観察できます。
+    </string>
+    <string name="object_info_m63_funfact" translation_description="Fun fact about the Sunflower Galaxy shown in the info card. Translate this text.">
+    M63はピエール・メシャンによって1779年に発見されました。メシャン自身ではなくメシャンによって発見されたメシエ天体の数少ない例の1つです。M51グループのメンバーであり、渦巻銀河（M51）と物理的に関連しており、過去の相互作用の兆候を示しています。淡い古い恒星流がその外側のディスクの周りを巻いています。
+    </string>
+    <string name="object_info_m63_distance" translation_description="Distance to the Sunflower Galaxy shown in the info card. Translate units if appropriate for your locale.">2,900万光年</string>
+    <string name="object_info_m63_size" translation_description="Physical size of the Sunflower Galaxy shown in the info card. Translate units if appropriate for your locale.">約100,000光年の大きさ</string>
+
+    <string name="object_info_ngc_6543_description" translation_description="Description of the Cat's Eye Nebula (NGC 6543) shown in the info card. Translate this text.">
+    キャッツアイ星雲は、既知の最も構造的に複雑な惑星状星雲の1つです。死にゆく星から放出されたガスが、ハッブル宇宙望遠鏡の画像で見える同心円状の殻、ジェット、そして明るい塊へと彫刻されています。小型の望遠鏡では、ドラコ座に鮮やかな青緑色の円盤として見え、秋の空で最も色彩豊かな天体の1つです。
+    </string>
+    <string name="object_info_ngc_6543_funfact" translation_description="Fun fact about the Cat's Eye Nebula shown in the info card. Translate this text.">
+    1864年、天文学者ウィリアム・ハギンスが分光器を猫の目星雲に向けたところ、それが未解決の星ではなく発光ガスでできていることが判明しました。これは惑星状星雲の性質が確認された初めての例です。この発見は星雲分光学の分野を創設し、すべての星雲が遠い星団であるという当時の通説を覆しました。
+    </string>
+    <string name="object_info_ngc_6543_distance" translation_description="Distance to the Cat's Eye Nebula shown in the info card. Translate units if appropriate for your locale.">約3,300光年</string>
+    <string name="object_info_ngc_6543_size" translation_description="Physical size of the Cat's Eye Nebula shown in the info card. Translate units if appropriate for your locale.">直径約0.5光年</string>
+
+    <string name="object_info_m76_description" translation_description="Description of the Little Dumbbell Nebula (M76) shown in the info card. Translate this text.">
+    小さい啞鈴星雲はペルセウス座にある惑星状星雲で、独特の8の字形をしています。こぎつね座のM27（啞鈴星雲）の小さいいとこです。メシエカタログの中で最も暗い天体ですが、小さな望遠鏡での忍耐強い観測に報いる価値があり、大きな望遠鏡では美しい構造を示します。より明るい2つのローブが、より暗いウエストを挟んでいます。
+    </string>
+    <string name="object_info_m76_funfact" translation_description="Fun fact about the Little Dumbbell Nebula shown in the info card. Translate this text.">
+    M76は元々、NGC 650とNGC 651という2つの独立した天体として分類されていました。初期の観測者たちが2つの明るいローブを別々に記述したためです。これは、死にかけた星の放出物が赤道で絞られて、極軸に沿って2つの膨張するローブを形成し、同時にガスが腰部からも外側に噴き出す双極性惑星状星雲です。
+    </string>
+    <string name="object_info_m76_distance" translation_description="Distance to the Little Dumbbell Nebula shown in the info card. Translate units if appropriate for your locale.">約2,500光年</string>
+    <string name="object_info_m76_size" translation_description="Physical size of the Little Dumbbell Nebula shown in the info card. Translate units if appropriate for your locale.">約2光年</string>
+
+    <string name="object_info_v838_mon_description" translation_description="Description of V838 Monocerotis shown in the info card. Translate this text.">
+    V838 モノセロス（V838 Monocerotis）は、一角獣座（モノセロス）にある珍しい変光星で、2002年に劇的な爆発を起こし、一時的に天の川で最も明るい星の1つになりました。現在は肉眼観測者には遠く暗すぎますが、その拡大する光のエコー（古い塵の殻を照らす光の波面）は、ハッブル宇宙望遠鏡で撮影された最も劇的な画像の一部を生み出しました。
+    </string>
+    <string name="object_info_v838_mon_funfact" translation_description="Fun fact about V838 Monocerotis shown in the info card. Translate this text.">
+    V838 Mon の爆発の性質は議論の余地があります。主流の理論は、古典的な新星または超巨星の爆発ではなく、2つの星が互いに螺旋状に落ち込んで衝突する恒星合体です。確認されれば、恒星合体によって引き起こされる爆発の稀なクラスである「光度の高い赤い新星」の初めてのリアルタイム観測となり、その後、他の銀河でも同様の現象が発見されています。
+    </string>
+    <string name="object_info_v838_mon_distance" translation_description="Distance to V838 Monocerotis shown in the info card. Translate units if appropriate for your locale.">約20,000光年</string>
+    <string name="object_info_v838_mon_size" translation_description="Extent of the V838 Monocerotis light echo shown in the info card. Translate units if appropriate for your locale.">約3光年（光エコーの範囲）</string>
+
+    <string name="object_info_hdf_description" translation_description="Description of the Hubble Deep Field shown in the info card. Translate this text.">
+    ハッブル・ディープ・フィールドは、大熊座にある見かけ上は空白の2.6分角の小さな領域で、1995年12月にハッブル宇宙望遠鏡によって10日間連続で撮影されました。空っぽに見えていた領域には、およそ3,000個の銀河が存在し、宇宙の数十億年の歴史を映し出しており、宇宙に対する私たちの理解を根本的に変えました。
+    </string>
+    <string name="object_info_hdf_funfact" translation_description="Fun fact about the Hubble Deep Field shown in the info card. Translate this text.">
+    この空の領域は、明るい星や近くの銀河がないことを理由に特別に選ばれました。しかし、その結果得られた画像には約3,000個の銀河が詰まっており、全天には約2,000億個の銀河が含まれていると推定されています。ハッブル宇宙望遠鏡以前のあらゆる望遠鏡では、ほぼすべてが見えませんでした。
+    </string>
+    <string name="object_info_hdf_distance" translation_description="Distance to the most distant galaxies in the Hubble Deep Field shown in the info card. Translate units if appropriate for your locale.">約130億光年（最も遠い）</string>
+    <string name="object_info_hdf_size" translation_description="Angular size of the Hubble Deep Field shown in the info card.">2.6分角（視野）</string>
+
+    <string name="object_info_m43_description" translation_description="Description of De Mairan's Nebula (M43) shown in the info card. Translate this text.">
+    デ・メイランの星雲は、オリオン大星雲複合体から分離された部分で、暗い塵の帯によってM42から隔てられていますが、同じ広大な分子雲に属しています。1731年にこれを観測したフランスの天文学者ジャン=ジャック・ドルトゥ・ド・メイランにちなんで名付けられており、その中心に埋め込まれた高温の若い星NU Orionisによってイオン化された放射星雲です。
+    </string>
+    <string name="object_info_m43_funfact" translation_description="Fun fact about De Mairan's Nebula shown in the info card. Translate this text.">
+    M43はM42とは別の天体に見えますが、それらを分ける暗い帯は、オリオン分子雲の一部である前景のダスト雲であり、2つの発光領域の物理的なつながりを単に遮っているだけです。それらは一緒に、オリオンの大部分に広がる巨大な暗黒雲の照らされた内側の端に過ぎません。
+    </string>
+    <string name="object_info_m43_distance" translation_description="Distance to De Mairan's Nebula shown in the info card. Translate units if appropriate for your locale.">1,350光年</string>
+    <string name="object_info_m43_size" translation_description="Physical size of De Mairan's Nebula shown in the info card. Translate units if appropriate for your locale.">約8光年</string>
+
+    <string name="object_info_m40_description" translation_description="Description of M40 (Winnecke 4) shown in the info card. Translate this text.">
+    M40はメシエカタログの中でユニークです。星雲でも星団でも銀河でもなく、広い連星です。メシエは1764年にウルサ・メイオル座でヨハン・ヘヴェリウスが報告した星雲を探索中に、この星のペアのみを発見し、将来の観測者がそれをより興味深いものと誤認しないよう記録しました。
+    </string>
+    <string name="object_info_m40_funfact" translation_description="Fun fact about M40 shown in the info card. Translate this text.">
+    M40の2つの星（ウィネッケ4として知られている）は重力的に結合していません。異なる距離にあり、単なる偶然の一致です。メシエ自身は「特に注目すべき点はない」と述べていますが、「この星雲は私が調べたものと同じではないことを示すために」含めました。否定的な結果を記録する彼の方法的な習慣は、将来の観測者に確実な参考資料を与えました。
+    </string>
+    <string name="object_info_m40_distance" translation_description="Distance to M40 shown in the info card. Translate units if appropriate for your locale.">約500光年</string>
+    <string name="object_info_m40_size" translation_description="Angular separation of the M40 double star shown in the info card.">約50秒角（離角）</string>
+
+    <!-- Category 5: Second tier -->
+    <string name="object_info_m34_description" translation_description="Description of the open star cluster M34 shown in the info card. Translate this text.">
+    M34はペルセウス座にある明るく散在した散開星団で、冬の天の川に対して星が豊かに散らばっているため、双眼鏡で容易に観察できます。約400個の星がほぼ満月と同じ幅の領域に広がっており、注意深い双眼鏡観察者には数個の広い二重星が見えます。
+    </string>
+    <string name="object_info_m34_funfact" translation_description="Fun fact about M34 shown in the info card. Translate this text.">
+    約2億年の年齢を持つM34は、中程度の年齢です。若いため、その熱い青い星はまだ輝いており、十分に古いため、最も質量の大きい星はすでに超新星として爆発しています。1,500光年の距離にあり、メシエ星団の中でも最も近い星団の1つであり、郊外の空からでも素晴らしい天体です。
+    </string>
+    <string name="object_info_m34_distance" translation_description="Distance to M34 shown in the info card. Translate units if appropriate for your locale.">1,500光年</string>
+    <string name="object_info_m34_size" translation_description="Physical size of M34 shown in the info card. Translate units if appropriate for your locale.">約15光年</string>
+
+    <string name="object_info_m23_description" translation_description="Description of the open star cluster M23 shown in the info card. Translate this text.">
+    M23は射手座にある豊かな散開星団で、夏の天の川の密集した星野に埋め込まれています。双眼鏡では約150個の星が半度の視野に広がっており、他の多くのメシエ天体と同じ空の領域で、双眼鏡に最適な天体となっています。
+    </string>
+    <string name="object_info_m23_funfact" translation_description="Fun fact about M23 shown in the info card. Translate this text.">
+    M23は約3億年前と推定されており、中程度の年齢です。その巨大な星のほとんどは既に主系列から進化しています。メシエは1764年に射手座の星野を観測する彼の精力的な観測キャンペーンの1つでこれを発見しました。
+    </string>
+    <string name="object_info_m23_distance" translation_description="Distance to M23 shown in the info card. Translate units if appropriate for your locale.">2,150光年</string>
+    <string name="object_info_m23_size" translation_description="Physical size of M23 shown in the info card. Translate units if appropriate for your locale.">約17光年</string>
+
+    <string name="object_info_m37_description" translation_description="Description of the open star cluster M37 shown in the info card. Translate this text.">
+    M37は、ぎょしゃ座の3つのメシエ散開星団の中で最も豊かで最も明るく、コンパクトな視野に推定500個の星を含んでいます。双眼鏡と小型望遠鏡の対象として壮観であり、オレンジ色の巨星が青白い星の群れに色のコントラストを加えています。
+    </string>
+    <string name="object_info_m37_funfact" translation_description="Fun fact about M37 shown in the info card. Translate this text.">
+    M37は約12個の赤色巨星を含んでおり、これは約3億年という比較的進んだ年齢を反映した異常に高い数です。オーリガ座のメシエ星団3つの中で最も遠い約4,500光年離れた場所にありますが、それでも空で最も美しい散開星団の1つとしてランクされています。
+    </string>
+    <string name="object_info_m37_distance" translation_description="Distance to M37 shown in the info card. Translate units if appropriate for your locale.">4,500光年</string>
+    <string name="object_info_m37_size" translation_description="Physical size of M37 shown in the info card. Translate units if appropriate for your locale.">約31光年</string>
+
+    <string name="object_info_m48_description" translation_description="Description of the open star cluster M48 shown in the info card. Translate this text.">
+    M48は、うみへび座にある大きく明るい散開星団で、ほぼ1度の空を占め、暗い場所からは肉眼で見ることができます。約80個の星が広い視野に散在しており、双眼鏡での観察に最適で、より明るい青白い星の中にオレンジ色と黄色の巨星が散在しています。
+    </string>
+    <string name="object_info_m48_funfact" translation_description="Fun fact about M48 shown in the info card. Translate this text.">
+    M48は、メシエが記録した位置が真の位置から約5°ずれていたため、ほぼ2世紀間「失われた」メシエ天体の1つでした。1959年にNGC 2548と一致するまで特定されず、単純な転記エラーによってずっと空の何もない場所に配置されていたことが判明しました。
+    </string>
+    <string name="object_info_m48_distance" translation_description="Distance to M48 shown in the info card. Translate units if appropriate for your locale.">1,500光年</string>
+    <string name="object_info_m48_size" translation_description="Physical size of M48 shown in the info card. Translate units if appropriate for your locale.">約23光年</string>
+
+    <string name="object_info_m21_description" translation_description="Description of the open star cluster M21 shown in the info card. Translate this text.">
+    M21は射手座にあるコンパクトな散開星団で、トリフィド星雲(M20)のすぐ北0.5度に位置しており、この2つは双眼鏡で見ると印象的なペアを成しています。この星団は約57個の星を含んでおり、多くのメシエ星団よりも小さな視野に集中しており、いくつかの明るい青白い星が主要なメンバーとなっています。
+    </string>
+    <string name="object_info_m21_funfact" translation_description="Fun fact about M21 shown in the info card. Translate this text.">
+    物理的には関連がないにもかかわらず、M21とM20（三裂星雲）は夏の空で最も魅力的な双眼鏡での観測対象の1つを形成しています。明るい星団と色鮮やかな3葉の星雲が並んでいます。M21は約4,250光年離れており、M20はやや近く約4,100光年です。
+    </string>
+    <string name="object_info_m21_distance" translation_description="Distance to M21 shown in the info card. Translate units if appropriate for your locale.">4,250光年</string>
+    <string name="object_info_m21_size" translation_description="Physical size of M21 shown in the info card. Translate units if appropriate for your locale.">約16光年</string>
+
+    <string name="object_info_m50_description" translation_description="Description of the open star cluster M50 shown in the info card. Translate this text.">
+    M50は一角獣座の明るい散開星団で、双眼鏡と小型望遠鏡に適した印象的なコンパクトな視野に約200個の星が詰まっています。シリウスとプロキオンを結ぶ線上で簡単に見つけることができ、注目すべき赤色巨星を含んでいます。この赤色巨星は暖かいオレンジ色のビーコンで、星団の青白い星々の中で鮮やかに目立っています。
+    </string>
+    <string name="object_info_m50_funfact" translation_description="Fun fact about M50 shown in the info card. Translate this text.">
+    M50は約7800万年前と推定されており、メシエ散開星団の中でも比較的若い星団です。つまり、その熱い青白い星々はまだ進化の途上にあり、より質量の大きなメンバーの一部は最近巨星に膨張しています。これは初期の中年期にある星団の典型的な特徴です。
+    </string>
+    <string name="object_info_m50_distance" translation_description="Distance to M50 shown in the info card. Translate units if appropriate for your locale.">3,200光年</string>
+    <string name="object_info_m50_size" translation_description="Physical size of M50 shown in the info card. Translate units if appropriate for your locale.">約15光年</string>
+
+    <string name="object_info_m36_description" translation_description="Description of the open star cluster M36 shown in the info card. Translate this text.">
+    M36はメシエがぎょしゃ座で記録した3つの散開星団の中で最も小さく、最も若い星団です。約60個の星が密集した輝く領域に集まっており、双眼鏡で見ることができ、小型の望遠鏡では個々の星に良く分解されます。この星団は熱い青白色の星に支配されています。
+    </string>
+    <string name="object_info_m36_funfact" translation_description="Fun fact about M36 shown in the info card. Translate this text.">
+    M36は約2500万年前と推定されており、メシエ星団の中でも最も若い星団の1つです。つまり、巨大な青白い星がまだ支配的で、赤色巨星はまだ現れていません。M37とM38と同じぎょしゃ座の星野を共有しており、3つの星団すべてが同じ広視野双眼鏡の視野に収まります。
+    </string>
+    <string name="object_info_m36_distance" translation_description="Distance to M36 shown in the info card. Translate units if appropriate for your locale.">4,100光年</string>
+    <string name="object_info_m36_size" translation_description="Physical size of M36 shown in the info card. Translate units if appropriate for your locale.">約14光年</string>
+
+    <string name="object_info_m46_description" translation_description="Description of the open star cluster M46 shown in the info card. Translate this text.">
+    M46は、とも座にある豊かで密集した散開星団で、広い視野に約500個の星が詰め込まれており、双眼鏡で印象的で、小型の望遠鏡で美しく見えます。その北端には注目すべきボーナスが浮かんでいます：NGC 2438、星団に埋め込まれているように見える小さな惑星状星雲で、劇的な視線方向の一致です。
+    </string>
+    <string name="object_info_m46_funfact" translation_description="Fun fact about M46 shown in the info card. Translate this text.">
+    惑星状星雲NGC 2438はM46の内部に見えますが、実は関連のない手前の天体で、距離が大きく異なります。M46の5,400光年に対して約1,400光年です。死にゆく星の殻が若い星団に重なるという偶然により、これはカタログの中で最も写真映えする領域の1つになっています。
+    </string>
+    <string name="object_info_m46_distance" translation_description="Distance to M46 shown in the info card. Translate units if appropriate for your locale.">5,400光年</string>
+    <string name="object_info_m46_size" translation_description="Physical size of M46 shown in the info card. Translate units if appropriate for your locale.">約42光年</string>
+
+    <string name="object_info_m93_description" translation_description="Description of the open star cluster M93 shown in the info card. Translate this text.">
+    M93は、プピス座にある明るくコンパクトな散開星団で、豊かな南の天の川に位置し、双眼鏡で容易に見つけることができます。約80個の星がくさび形または蝶の形に印象的に配列されており、いくつかの熱い青い超巨星を含んでいるため、冬の空でより魅力的な散開星団の1つです。
+    </string>
+    <string name="object_info_m93_funfact" translation_description="Fun fact about M93 shown in the info card. Translate this text.">
+    M93は比較的若く、約1億年前のもので、まだ巨星に進化していない支配的な青色および青白色の星を持っています。これはより南にあるメシエ星団の1つであり、北緯約50°N以北の緯度からは地平線上にあまり高く上昇することはありません。
+    </string>
+    <string name="object_info_m93_distance" translation_description="Distance to M93 shown in the info card. Translate units if appropriate for your locale.">3,600光年</string>
+    <string name="object_info_m93_size" translation_description="Physical size of M93 shown in the info card. Translate units if appropriate for your locale.">約23光年</string>
+
+    <string name="object_info_m38_description" translation_description="Description of the open star cluster M38 shown in the info card. Translate this text.">
+    M38はメシエがぎょしゃ座で記録した3つの散開星団の中で最も大きく、最も広がっています。約100個の星がほぼ十字またはギリシャ文字のπのような配置をしており、双眼鏡で見ることができ、小型の望遠鏡ではよく分解されます。より小さい星団NGC 1907は南側のすぐ近くに位置しています。
+    </string>
+    <string name="object_info_m38_funfact" translation_description="Fun fact about M38 shown in the info card. Translate this text.">
+    M38は、オーリガ座の3つのメシエ星団の中で最も古く、約2億2000万年前のもので、その巨大な星の一部がすでに黄色と橙色の巨星に進化しています。近くのNGC 1907星団は同じ低倍率の視野に収まるため、素晴らしい双眼鏡のペアになります。これはプペイス座のM46とM47のようなものです。
+    </string>
+    <string name="object_info_m38_distance" translation_description="Distance to M38 shown in the info card. Translate units if appropriate for your locale.">4,200光年</string>
+    <string name="object_info_m38_size" translation_description="Physical size of M38 shown in the info card. Translate units if appropriate for your locale.">約26光年</string>
+
+    <string name="object_info_m29_description" translation_description="Description of the open star cluster M29 shown in the info card. Translate this text.">
+    M29は白鳥座にある小さく若い散開星団で、天の川で最も塵が濃く遮られた領域の一つに位置しています。5つの輝く青色超巨星がこの星団を支配しており、双眼鏡では高温で光度の高い星の密集した星列として見えます。前景の濃い塵がなければ、M29は空で最も壮観な散開星団の一つになるでしょう。
+    </string>
+    <string name="object_info_m29_funfact" translation_description="Fun fact about M29 shown in the info card. Translate this text.">
+    M29は約1000万年前と推定される若い星団で、まさに恒星の幼少期です。Cygnus OB1連合という巨大な若い星々の集団の中に位置しています。星間塵が星団の光を約3等級暗くしており、この塵がなければ、M29の星々は実際に見える明るさより数倍も明るく輝いているはずです。
+    </string>
+    <string name="object_info_m29_distance" translation_description="Distance to M29 shown in the info card. Translate units if appropriate for your locale.">4,000光年</string>
+    <string name="object_info_m29_size" translation_description="Physical size of M29 shown in the info card. Translate units if appropriate for your locale.">約8光年</string>
+
+    <string name="object_info_m62_description" translation_description="Description of the globular cluster M62 shown in the info card. Translate this text.">
+    M62は蛇遣い座の豊かな球状星団で、銀河中心に最も近い球状星団の1つであり、南側に星がより密集した顕著な非対称性を持っています。等級6.6で双眼鏡に適した素晴らしい天体ですが、赤緯が低いため北半球の観測者にとっては短い季節の対象です。
+    </string>
+    <string name="object_info_m62_funfact" translation_description="Fun fact about M62 shown in the info card. Translate this text.">
+    M62の偏心した核は、銀河中心への近接性の直接的な結果です。中心バルジからの強力な潮汐力がクラスターを歪め、星を銀河面に引き寄せます。また、既知の最も力学的に進化した球状星団の1つであり、コア崩壊の兆候と異常に高い密度のミリ秒パルサーを示しています。
+    </string>
+    <string name="object_info_m62_distance" translation_description="Distance to M62 shown in the info card. Translate units if appropriate for your locale.">22,500光年</string>
+    <string name="object_info_m62_size" translation_description="Physical size of M62 shown in the info card. Translate units if appropriate for your locale.">約92光年</string>
+
+    <string name="object_info_m28_description" translation_description="Description of the globular cluster M28 shown in the info card. Translate this text.">
+    M28は射手座にあるコンパクトな球状星団で、豊かな夏の星野の中で明るい恒星ラムダ射手座の近くに位置しています。等級6.9で双眼鏡の対象として報酬的であり、小型望遠鏡でよく分解され、明るい凝縮されたコアが星の中程度のハローに囲まれています。
+    </string>
+    <string name="object_info_m28_funfact" translation_description="Fun fact about M28 shown in the info card. Translate this text.">
+    1987年、M28はミリ秒パルサーが検出された最初の球状星団となりました。ミリ秒パルサー（毎秒数百回転する中性子星）は、中性子星が伴星から物質を降着させるときに形成され、球状星団の密集した恒星環境がより多くの接近した連星遭遇を生み出すため、銀河全体よりも球状星団ではるかに高い割合で見つかります。
+    </string>
+    <string name="object_info_m28_distance" translation_description="Distance to M28 shown in the info card. Translate units if appropriate for your locale.">18,300光年</string>
+    <string name="object_info_m28_size" translation_description="Physical size of M28 shown in the info card. Translate units if appropriate for your locale.">約60光年</string>
+
+    <string name="object_info_m52_description" translation_description="Description of the open star cluster M52 shown in the info card. Translate this text.">
+    M52はカシオペヤ座にある豊かな散開星団で、北の天の川のコンパクトな領域に約200個の星が詰め込まれています。双眼鏡で観察するのに適した星団であり、小型の望遠鏡では美しく密集した星の視野が見られ、星団の南端近くに目立つ明るいオレンジ色の星が立ち出ています。
+    </string>
+    <string name="object_info_m52_funfact" translation_description="Fun fact about M52 shown in the info card. Translate this text.">
+    M52の距離は異常に不確実です。推定値は3,000～7,000光年の範囲にあります。この視線方向に沿った濃い星間塵が真の光度を決定しにくくしているためです。メシエは1774年にこれを発見しました。その同じ夜、彼は彗星を追跡していて、それが他のカタログ項目をいくつか記録するきっかけになりました。
+    </string>
+    <string name="object_info_m52_distance" translation_description="Distance to M52 shown in the info card. Translate units if appropriate for your locale.">約5,000光年</string>
+    <string name="object_info_m52_size" translation_description="Physical size of M52 shown in the info card. Translate units if appropriate for your locale.">約25光年</string>
+
+    <string name="object_info_m67_description" translation_description="Description of the open star cluster M67 shown in the info card. Translate this text.">
+    M67はかに座にある美しい散開星団で、空の中で最も古く、よく研究されている散開星団の1つです。約32～35億年前の年齢で、私たちの太陽と同じような質量と年齢を持つ多くの星を含んでいます。これは、太陽のような星が宇宙の時間スケールでどのように進化するかを研究するための自然な実験室となっています。
+    </string>
+    <string name="object_info_m67_funfact" translation_description="Fun fact about M67 shown in the info card. Translate this text.">
+    M67の複数の星は、温度、質量、年齢において太陽に非常に似ており、この稀な組み合わせが研究者たちに、太陽自体がM67のような星団で生まれたのではないかと考えさせました。星は徐々に散開する星団で生まれるため、太陽はほぼ確実に数十億年前の現在は散開している兄弟星団から来たものですが、どの星団であるかは特定されていません。
+    </string>
+    <string name="object_info_m67_distance" translation_description="Distance to M67 shown in the info card. Translate units if appropriate for your locale.">2,700光年</string>
+    <string name="object_info_m67_size" translation_description="Physical size of M67 shown in the info card. Translate units if appropriate for your locale.">~24光年</string>
+
+    <string name="object_info_m55_description" translation_description="Description of the globular cluster M55 shown in the info card. Translate this text.">
+    M55は射手座にある大きく散開した球状星団で、メシエ球状星団の中でも最も広がっており、最も密集していない星団の一つです。低倍率でも個々の星に容易に分解でき、双眼鏡で粒状のテクスチャが見えます。南の低い赤緯のため北緯からの視認性は限定されていますが、南半球からは壮観です。
+    </string>
+    <string name="object_info_m55_funfact" translation_description="Fun fact about M55 shown in the info card. Translate this text.">
+    M55の異常に低い恒星集中度により、典型的な球状星団というより、むしろ豊かな散開星団のように見えます。その恒星は幅約100光年の領域に広がっており、M13やM3のようなより中心に集中した球状星団と比べて、星団の自己重力が比較的弱いことを示唆しています。
+    </string>
+    <string name="object_info_m55_distance" translation_description="Distance to M55 shown in the info card. Translate units if appropriate for your locale.">17,600光年</string>
+    <string name="object_info_m55_size" translation_description="Physical size of M55 shown in the info card. Translate units if appropriate for your locale.">~100光年</string>
+
+    <string name="object_info_m19_description" translation_description="Description of the globular cluster M19 shown in the info card. Translate this text.">
+    M19は蛇遣い座にある密集した豊かな球状星団で、銀河中心に最も近い球状星団の1つです。最も特徴的な特徴は、その著しく扁平な形です。M19は既知の中で最も扁平な球状星団であり、小さな望遠鏡でも見える楕円形の輪郭を持っています。
+    </string>
+    <string name="object_info_m19_funfact" translation_description="Fun fact about M19 shown in the info card. Translate this text.">
+    M19の顕著な扁平性（最長軸が最短軸より約10%長い）は既知の球状星団の中でも独特であり、天の川の重力場による潮汐伸張の結果と考えられています。球状星団が銀河中心に近いほど、より強く変形します。M19は銀河核からわずか約5,200光年の距離にあります。
+    </string>
+    <string name="object_info_m19_distance" translation_description="Distance to M19 shown in the info card. Translate units if appropriate for your locale.">28,700光年</string>
+    <string name="object_info_m19_size" translation_description="Physical size of M19 shown in the info card. Translate units if appropriate for your locale.">~113光年</string>
+
+    <string name="object_info_m80_description" translation_description="Description of the globular cluster M80 shown in the info card. Translate this text.">
+    M80は天の川銀河で最も密集した球状星団の1つで、さそり座にある数十万個の星からなるコンパクトで豊かな球体です。等級7.2で双眼鏡の優れた観測対象であり、小型の望遠鏡では輝く、非常に集中した中心核を明らかにします。
+    </string>
+    <string name="object_info_m80_funfact" translation_description="Fun fact about M80 shown in the info card. Translate this text.">
+    1860年、M80内で新星が爆発し、T Scorpiiと指定されました。一時的にクラスター自体と同じくらい明るくなり、肉眼で見えるようになりました。球状星団内で観測された新星はわずか2つだけです。球状星団の新星は連星間の相互作用から生じ、球状星団の中心部の密集した恒星環境ではより一般的です。
+    </string>
+    <string name="object_info_m80_distance" translation_description="Distance to M80 shown in the info card. Translate units if appropriate for your locale.">32,600光年</string>
+    <string name="object_info_m80_size" translation_description="Physical size of M80 shown in the info card. Translate units if appropriate for your locale.">~84光年</string>
+
+    <string name="object_info_m103_description" translation_description="Description of the open star cluster M103 shown in the info card. Translate this text.">
+    M103はカシオペヤ座にある小さくコンパクトな散開星団で、約40個の星が密集した集団を形成しており、双眼鏡で容易に観察できます。中心付近の印象的な二重星と赤色巨星により、小型望遠鏡ではカシオペヤ座の豊かな天の川の星野の中で色彩豊かな外観を呈しています。
+    </string>
+    <string name="object_info_m103_funfact" translation_description="Fun fact about M103 shown in the info card. Translate this text.">
+    M103はメシエの1781年の原版カタログで最も番号が大きい天体でした。その後の天体（M104～M110）はすべて、後の天文学者がメシエの記録と書簡から追加したものです。ピエール・メシャンはカタログが出版される直前にM103を発見し、メシエはメシャンの報告に基づいてこれを含めました。
+    </string>
+    <string name="object_info_m103_distance" translation_description="Distance to M103 shown in the info card. Translate units if appropriate for your locale.">8,500光年</string>
+    <string name="object_info_m103_size" translation_description="Physical size of M103 shown in the info card. Translate units if appropriate for your locale.">~15光年</string>
+
+    <string name="object_info_m30_description" translation_description="Description of the globular cluster M30 shown in the info card. Translate this text.">
+    M30は山羊座にあるコンパクトな球状星団です。小型の望遠鏡では明るく凝集した中心核と淡い外側の星の鎖が見える素晴らしい天体です。等級7.5で双眼鏡では暗い空が必要ですが、小型の望遠鏡では部分的に解像した外側のハローで報われます。
+    </string>
+    <string name="object_info_m30_funfact" translation_description="Fun fact about M30 shown in the info card. Translate this text.">
+    M30は「コア崩壊」を経験しました。これは、密集した星々の相互重力引力により、星団の中心が劇的に収縮し、極めて小さな体積に星が極度に集中する現象です。全球状星団の約5分の1がコア崩壊を起こしており、M30はこの現象の最も詳しく研究されている例の1つです。
+    </string>
+    <string name="object_info_m30_distance" translation_description="Distance to M30 shown in the info card. Translate units if appropriate for your locale.">27,100光年</string>
+    <string name="object_info_m30_size" translation_description="Physical size of M30 shown in the info card. Translate units if appropriate for your locale.">~87光年</string>
+
+    <string name="object_info_m54_description" translation_description="Description of the globular cluster M54 shown in the info card. Translate this text.">
+    M54は射手座にある大きく豊かな球状星団で、メシエカタログ全体で最も遠い天体の1つです。何世紀もの間、天の川の遠い晴れ間の球状星団だと考えられていましたが、現在では射手座矮小楕円銀河（私たちの銀河に吸収されている衛星銀河）の密集した中心核であることが知られています。
+    </string>
+    <string name="object_info_m54_funfact" translation_description="Fun fact about M54 shown in the info card. Translate this text.">
+    1994年にM54が射手座矮小銀河に属することが発見されたことで、M54は別の銀河に属することが知られている最初の球状星団となりました。射手座矮小銀河が徐々に引き裂かれ、天の川に飲み込まれるにつれて、M54はやがて私たちの銀河の本物のハロー球状星団となります。数十億年かけて到着する銀河間の移民です。
+    </string>
+    <string name="object_info_m54_distance" translation_description="Distance to M54 shown in the info card. Translate units if appropriate for your locale.">87,000光年</string>
+    <string name="object_info_m54_size" translation_description="Physical size of M54 shown in the info card. Translate units if appropriate for your locale.">~230光年</string>
+
+    <string name="object_info_m69_description" translation_description="Description of the globular cluster M69 shown in the info card. Translate this text.">
+    M69は射手座にある中程度に豊かな球状星団で、銀河中心の近くに位置しています。等級7.7で、暗い空からは双眼鏡で見える天体であり、小型の望遠鏡では部分的に分解された星の球と明るい粒状の中心が報われます。
+    </string>
+    <string name="object_info_m69_funfact" translation_description="Fun fact about M69 shown in the info card. Translate this text.">
+    M69は銀河中心に異常に接近した軌道を周回しており、天の川の中心からわずか約6,200光年の距離にあります。そのため、球状星団としては異常に高い濃度の重い元素を含んでいます。銀河中心に近い球状星団は、周囲のバルジにおける複数世代の星形成によって化学的に濃縮される傾向があります。
+    </string>
+    <string name="object_info_m69_distance" translation_description="Distance to M69 shown in the info card. Translate units if appropriate for your locale.">29,700光年</string>
+    <string name="object_info_m69_size" translation_description="Physical size of M69 shown in the info card. Translate units if appropriate for your locale.">~61光年</string>
+
+    <string name="object_info_m9_description" translation_description="Description of the globular cluster M9 shown in the info card. Translate this text.">
+    M9は蛇遣い座にあるコンパクトな球状星団で、メシエ球状星団の中でも星間塵の吸収の影響を最も受けているものの1つです。銀河バルジに向かって位置しており、厚い塵によって大幅に暗くなっています。この減光がなければ、M9はほぼ1等級明るく見え、肉眼で見ることができるでしょう。
+    </string>
+    <string name="object_info_m9_funfact" translation_description="Fun fact about M9 shown in the info card. Translate this text.">
+    M9は、ほぼすべてのメシエ球状星団の中で最も星間塵による吸収の影響を受けており、視線が遮られていない場合と比べて約1.3等級の減光が生じています。2つのより小さな球状星団（NGC 6342とNGC 6356）がM9から約1°以内に位置しており、M9は小さな空の領域に3つの球状星団が集まった注目すべき配置の中心となっています。
+    </string>
+    <string name="object_info_m9_distance" translation_description="Distance to M9 shown in the info card. Translate units if appropriate for your locale.">25,800光年</string>
+    <string name="object_info_m9_size" translation_description="Physical size of M9 shown in the info card. Translate units if appropriate for your locale.">~70光年</string>
+
+    <string name="object_info_m26_description" translation_description="Description of the open star cluster M26 shown in the info card. Translate this text.">
+    M26は盾座にある中程度の明るさの散開星団で、双眼鏡で見ることができ、小型の望遠鏡では良好に分解されます。豊かな盾座星雲の中のコンパクトな領域に約90個の星が広がっていますが、星団が非常に密集した背景に対して位置しているため、周囲の星野から星団のメンバーを特定するには注意が必要です。
+    </string>
+    <string name="object_info_m26_funfact" translation_description="Fun fact about M26 shown in the info card. Translate this text.">
+    M26はM11（ワイルドダッククラスター）と同じ豊かな天域に位置しており、M11は空で最も美しい散開星団の1つです。この2つの星団は約3.5°しか離れておらず、同じ双眼鏡の視野に見えるため、小さく見落とされることが多い盾座ですが、星団観測者にとって注目すべき観測地となっています。
+    </string>
+    <string name="object_info_m26_distance" translation_description="Distance to M26 shown in the info card. Translate units if appropriate for your locale.">5,000光年</string>
+    <string name="object_info_m26_size" translation_description="Physical size of M26 shown in the info card. Translate units if appropriate for your locale.">~22光年</string>
+
+    <string name="object_info_m79_description" translation_description="Description of the globular cluster M79 shown in the info card. Translate this text.">
+    M79はウサギ座のコンパクトな球状星団です。冬の空に最も適した数少ないメシエ球状星団の1つで、ほとんどの球状星団が地平線下にあるか、かろうじて昇っている時期です。等級8.0では、望遠鏡が必要になり、コンパクトなコアと淡いハローが、比較的星が少ない冬の星野に浮かび上がります。
+    </string>
+    <string name="object_info_m79_funfact" translation_description="Fun fact about M79 shown in the info card. Translate this text.">
+    M79は、大犬矮小銀河（現在銀河系に吸収されている破壊された衛星銀河）からの侵入者だと考える天文学者もいます。もしそうであれば、M79は銀河系自体の球状星団系内で形成されたのではなく、落下してきた銀河から捕捉され、現在ゆっくりと銀河系のハローに組み込まれています。
+    </string>
+    <string name="object_info_m79_distance" translation_description="Distance to M79 shown in the info card. Translate units if appropriate for your locale.">41,000光年</string>
+    <string name="object_info_m79_size" translation_description="Physical size of M79 shown in the info card. Translate units if appropriate for your locale.">~104光年</string>
+
+    <string name="object_info_m70_description" translation_description="Description of the globular cluster M70 shown in the info card. Translate this text.">
+    M70は射手座にあるコンパクトな球状星団で、外観と距離の両方でその双子星M69に非常に似ています。等級8.1で、小型望遠鏡で見るのに適した天体であり、コンパクトなコアと外側のハローに分解の兆候が見られます。M69からわずか2°離れており、両方を同じ双眼鏡の視野で観察できます。
+    </string>
+    <string name="object_info_m70_funfact" translation_description="Fun fact about M70 shown in the info card. Translate this text.">
+    M70は1995年に、アラン・ヘイルとトーマス・ボップが独立してハレー・ボップ彗星を発見した空の位置として一時的に有名になりました。ハレー・ボップ彗星は20世紀後半で最も明るい彗星です。両方の観測者は最初、他の天体を探索しながらM70を通り過ぎ、近くに予期しない曇った物体として彗星に気づきました。
+    </string>
+    <string name="object_info_m70_distance" translation_description="Distance to M70 shown in the info card. Translate units if appropriate for your locale.">29,400光年</string>
+    <string name="object_info_m70_size" translation_description="Physical size of M70 shown in the info card. Translate units if appropriate for your locale.">~67光年</string>
+
+    <string name="object_info_m107_description" translation_description="Description of the globular cluster M107 shown in the info card. Translate this text.">
+    M107はメシエ球状星団の中でも最も密集度が低い星団の一つで、控えめなコアの周りに比較的開いたパターンで散在する星々を持っています。等級8.1で暗い空からは双眼鏡の対象となり、小型の望遠鏡では部分的に分解され、鋭い中心の凝集ではなく粒状のテクスチャを示します。
+    </string>
+    <string name="object_info_m107_funfact" translation_description="Fun fact about M107 shown in the info card. Translate this text.">
+    M107はメシエカタログに正式に追加された最後の天体です。ピエール・メシャンの書簡に登場しますが、1781年の初版には含まれていませんでした。1947年にカナダの天文学者ヘレン・ソーヤー・ホッグがM107として正式に追加しました。彼女はメシャンが観測したがメシエが正式に記録しなかった複数の「欠落」天体を体系化しました。
+    </string>
+    <string name="object_info_m107_distance" translation_description="Distance to M107 shown in the info card. Translate units if appropriate for your locale.">20,900光年</string>
+    <string name="object_info_m107_size" translation_description="Physical size of M107 shown in the info card. Translate units if appropriate for your locale.">~61光年</string>
+
+    <string name="object_info_m68_description" translation_description="Description of the globular cluster M68 shown in the info card. Translate this text.">
+    M68はヘビ座の豊かな球状星団です。南天の天体で、冬の終わりから春にかけての夜空に最も適した数少ない球状星団の1つです。等級8.2で、中程度に凝縮した核と、ヘビ座の比較的疎らな星野に対して解像された星の大きなハローを持つ小型望遠鏡に報酬をもたらします。
+    </string>
+    <string name="object_info_m68_funfact" translation_description="Fun fact about M68 shown in the info card. Translate this text.">
+    比較的に近い距離にあるため、アマチュア望遠鏡で個々の星がよく分解されるにもかかわらず、M68は南の赤緯が遠いため見落とされることが多いです。北緯50°以上の緯度からは地平線をかろうじて超えるだけですが、南半球からは高く昇り、素晴らしい球状星団です。
+    </string>
+    <string name="object_info_m68_distance" translation_description="Distance to M68 shown in the info card. Translate units if appropriate for your locale.">33,600光年</string>
+    <string name="object_info_m68_size" translation_description="Physical size of M68 shown in the info card. Translate units if appropriate for your locale.">~117光年</string>
+
+    <string name="object_info_m56_description" translation_description="Description of the globular cluster M56 shown in the info card. Translate this text.">
+    M56は琴座にあるコンパクトな球状星団で、環状星雲（M57）と白鳥座の明るい二重星アルビレオの間に位置しています。等級8.3で暗い空からは双眼鏡で観測でき、小型の望遠鏡では粒状で中程度に集中した球体が見え、中程度の口径でも完全には分解されません。
+    </string>
+    <string name="object_info_m56_funfact" translation_description="Fun fact about M56 shown in the info card. Translate this text.">
+    M56はメシエによって1779年1月に発見されました。同じ観測シーズンにはリング星雲（M57）も発見されています。ベガ（空で5番目に明るい星）と同じ双眼鏡視野に位置し、有名なリング星雲の近くにありながら、M56はより有名な隣接天体に注目が集まるため、観測者に見落とされることが多いです。
+    </string>
+    <string name="object_info_m56_distance" translation_description="Distance to M56 shown in the info card. Translate units if appropriate for your locale.">32,900光年</string>
+    <string name="object_info_m56_size" translation_description="Physical size of M56 shown in the info card. Translate units if appropriate for your locale.">~68光年</string>
+
+    <string name="object_info_m71_description" translation_description="Description of the globular cluster M71 shown in the info card. Translate this text.">
+    M71は矢座にある珍しい球状星団です。数十年間、天文学者たちは、非常に豊かな古い散開星団なのか、それとも非常に疎な若い球状星団なのかについて議論してきました。現代の分析により、それが本物の球状星団であることが確認されていますが、濃度が異常に低く、星の数が比較的少なく、典型的な球状星団よりもコアが目立たない例外的な球状星団です。
+    </string>
+    <string name="object_info_m71_funfact" translation_description="Fun fact about M71 shown in the info card. Translate this text.">
+    M71の緩い構造は、真のクラスターというより豊かな星野に見えたため、初期のカタログの多くから除外されていました。わずか12,000光年の距離にあり、メシエ球状星団の中でも最も近いものの1つです。暗い空の下では小型の望遠鏡でその星々が部分的に分解され、コンパクトで若干凝縮された豊かな星野のような外観を呈しています。
+    </string>
+    <string name="object_info_m71_distance" translation_description="Distance to M71 shown in the info card. Translate units if appropriate for your locale.">12,000光年</string>
+    <string name="object_info_m71_size" translation_description="Physical size of M71 shown in the info card. Translate units if appropriate for your locale.">~25光年</string>
 </resources>

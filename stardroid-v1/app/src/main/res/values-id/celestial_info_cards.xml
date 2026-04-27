@@ -946,6 +946,65 @@
     </string>
     <string name="object_info_eta_carinae_nebula_distance" translation_description="Distance to Eta Carinae Nebula shown in the info card. Translate units if appropriate for your locale.">7.500 tahun cahaya</string>
     <string name="object_info_eta_carinae_nebula_size" translation_description="Physical size of Eta Carinae Nebula shown in the info card. Translate units if appropriate for your locale.">300 tahun cahaya melintang</string>
+    <!-- North America Nebula (NGC 7000) -->
+    <string name="object_info_north_america_nebula_description" translation_description="Description of the North America Nebula shown in the info card. Translate this text.">
+    Nebula Amerika Utara (NGC 7000) adalah nebula emisi besar di Cygnus yang bentuknya luar biasa menyerupai benua Amerika Utara, lengkap dengan wilayah Teluk Meksiko. Membentang sekitar 120 arcmenit — kira-kira empat kali diameter Bulan purnama — terletak sekitar 2.600 tahun cahaya jauhnya dan lebarnya lebih dari 100 tahun cahaya.
+    </string>
+    <string name="object_info_north_america_nebula_funfact" translation_description="Fun fact about the North America Nebula shown in the info card. Translate this text.">
+    Meskipun magnitudo visualnya 4, nebula ini terlalu besar dan tersebar untuk dilihat dengan mata telanjang di sebagian besar langit — namun ia terfoto dengan indah, mengungkapkan Dinding Cygnus, busur padat pembentukan bintang intens di sepanjang tepi selatannya.
+    </string>
+    <string name="object_info_north_america_nebula_distance" translation_description="Distance to the North America Nebula shown in the info card. Translate units if appropriate for your locale.">~2.590 tahun cahaya</string>
+    <string name="object_info_north_america_nebula_size" translation_description="Physical size of the North America Nebula shown in the info card. Translate units if appropriate for your locale.">~140 tahun cahaya lintang</string>
+    <!-- Exposed Cranium Nebula - PMR 1 -->
+    <string name="object_info_exposed_cranium_nebula_description" translation_description="Description of the Exposed Cranium Nebula shown in the info card. Translate this text.">
+    Nebula Tengkorak Terbuka (PMR 1) adalah nebula planet di Vela, sekitar 5.000 tahun cahaya jauhnya. Nama anehnya berasal dari jalur gelap gas yang berjalan vertikal melalui tengahnya, membagi lobus bercahayanya menjadi bentuk yang menyerupai otak di dalam tengkorak transparan. Di jantungnya bersinar bintang Wolf-Rayet panas yang melepaskan lapisan luar yang dibangunnya selama seumur hidup.
+    </string>
+    <string name="object_info_exposed_cranium_nebula_funfact" translation_description="Fun fact about the Exposed Cranium Nebula shown in the info card. Translate this text.">
+    Pada tahun 2026, Teleskop Luar Angkasa James Webb menangkap gambar-gambar baru yang menakjubkan dari Nebula Tengkorak Terbuka, mengungkap struktur berlapis gandanya dengan detail yang belum pernah terjadi sebelumnya — sebuah cangkang luar yang kaya akan hidrogen dan awan dalam yang penuh dengan elemen-elemen berat yang diciptakan oleh bintang yang sekarat.
+    </string>
+    <string name="object_info_exposed_cranium_nebula_distance" translation_description="Distance to the Exposed Cranium Nebula shown in the info card. Translate units if appropriate for your locale.">~5.000 tahun cahaya</string>
+    <string name="object_info_exposed_cranium_nebula_size" translation_description="Physical size of the Exposed Cranium Nebula shown in the info card. Translate units if appropriate for your locale.">~2 tahun cahaya lintang</string>
+
+    <!-- Jewel Box (NGC 4755) -->
+    <string name="object_info_jewel_box_description" translation_description="Description of the Jewel Box cluster shown in the info card. Translate this text.">
+    Jewel Box (NGC 4755) adalah gugus terbuka muda yang cemerlang di konstelasi Crux, mudah terlihat dengan mata telanjang sebagai bercak magnitudo keempat yang samar-samar tepat di tenggara Mimosa. Ketika diamati melalui teleskop, bintang-bintangnya bersinar dalam warna-warna kontras yang hidup — raksasa biru dalam yang dalam berdampingan dengan raksasa merah yang mencolok — membuatnya layak mendapat nama yang diberikan John Herschel: perhiasan mewah yang luar biasa. Pada usia hanya 14–16 juta tahun, ini adalah salah satu gugus termuda dan paling berwarna di langit.
+    </string>
+    <string name="object_info_jewel_box_funfact" translation_description="Fun fact about the Jewel Box shown in the info card. Translate this text.">
+    Bintang merah istimewa di gugus ini, κ Crucis, adalah raksasa merah super yang sangat bercahaya sehingga melampaui kecerahan Matahari lebih dari 100.000 kali — pengingat yang jelas bahwa gugus bintang tidak semuanya berwarna sama.
+    </string>
+    <string name="object_info_jewel_box_distance" translation_description="Distance to the Jewel Box shown in the info card. Translate units if appropriate for your locale.">~6.500 tahun cahaya</string>
+    <string name="object_info_jewel_box_size" translation_description="Physical size of the Jewel Box shown in the info card. Translate units if appropriate for your locale.">~19 tahun cahaya lintang</string>
+
+    <!-- Double Cluster (NGC 869 & NGC 884) -->
+    <string name="object_info_double_cluster_description" translation_description="Description of the Double Cluster shown in the info card. Translate this text.">
+    Gugus Ganda (NGC 869 dan NGC 884) adalah sepasang gugus bintang terbuka muda yang memukau di Perseus, berdampingan di langit hanya lebih dari satu derajat terpisah. Keduanya terlihat dengan mata telanjang sebagai bercak berkabut, tetapi bahkan teleskop kecil mengungkapkan ratusan raksasa biru-putih cemerlang yang padat dalam dua gerombolan berkilau. Pada jarak kira-kira 7.500 tahun cahaya, mereka terletak dalam Lengan Perseus galaksi kami dan termasuk di antara objek binokular terbaik di langit utara.
+    </string>
+    <string name="object_info_double_cluster_funfact" translation_description="Fun fact about the Double Cluster shown in the info card. Translate this text.">
+    Dengan usia hanya 14 juta tahun, Gugus Ganda sangat muda — baru saja terbentuk sehingga bintang-bintang paling masifnya masih bersinar sebagai raksasa biru, dengan beberapa sudah berkembang menjadi raksasa merah yang langka dan berapi-api.
+    </string>
+    <string name="object_info_double_cluster_distance" translation_description="Distance to the Double Cluster shown in the info card. Translate units if appropriate for your locale.">~7.500 tahun cahaya</string>
+    <string name="object_info_double_cluster_size" translation_description="Physical size of the Double Cluster shown in the info card. Translate units if appropriate for your locale.">Setiap gugus ~70 tahun cahaya lintang; pasangan terpisah ~1.000 tahun cahaya</string>
+
+    <!-- 47 Tucanae (NGC 104) -->
+    <string name="object_info_n47_tucanae_description" translation_description="Description of 47 Tucanae shown in the info card. Translate this text.">
+    47 Tucanae (NGC 104) adalah gugus bola kedua paling terang di langit, bola padat yang terdiri dari kira-kira satu juta bintang kuno yang mengorbit Galaksi Bimasakti di konstelasi Tucana. Pada jarak sekitar 14.500 tahun cahaya, ia tampak bagi mata telanjang sebagai bintang magnitudo empat yang kabur, tetapi teleskop menyelesaikan intinya yang terkompresi menjadi kawanan luar biasa dari matahari emas dan putih-biru. Bintang-bintangnya terbentuk sekitar 13 miliar tahun yang lalu, menjadikan gugus ini hampir setua alam semesta itu sendiri.
+    </string>
+    <string name="object_info_n47_tucanae_funfact" translation_description="Fun fact about 47 Tucanae shown in the info card. Translate this text.">
+    47 Tucanae adalah pabrik pulsar kosmik: para astronom telah menemukan setidaknya 35 pulsar milidetik yang berputar ratusan kali per detik di dalamnya — lebih banyak daripada di gugus bola mana pun yang diketahui — hasil dari pertemuan dekat bintang yang mendaur ulang bintang neutron tua dengan membuatnya berputar lebih cepat.
+    </string>
+    <string name="object_info_n47_tucanae_distance" translation_description="Distance to 47 Tucanae shown in the info card. Translate units if appropriate for your locale.">~14.500 tahun cahaya</string>
+    <string name="object_info_n47_tucanae_size" translation_description="Physical size of 47 Tucanae shown in the info card. Translate units if appropriate for your locale.">~120 tahun cahaya lintang</string>
+
+    <!-- Centaurus A (NGC 5128) -->
+    <string name="object_info_centaurus_a_description" translation_description="Description of Centaurus A shown in the info card. Translate this text.">
+    Centaurus A (NGC 5128) adalah galaksi radio aktif terdekat ke Bumi, sebuah galaksi elips raksasa di konstelasi Centaurus yang jalur debu gelap yang mencolok mengungkapkan masa lalu yang penuh kekerasan — sebuah galaksi spiral yang tertelan kira-kira 200–700 juta tahun lalu. Di jantungnya tersembunyi lubang hitam supermasif dengan massa 55 juta matahari yang mendorong jet relativistik yang membentang lebih dari satu juta tahun cahaya dalam panjang gelombang radio. Pada jarak kira-kira 12 juta tahun cahaya, ini adalah salah satu galaksi yang paling banyak dipelajari di langit.
+    </string>
+    <string name="object_info_centaurus_a_funfact" translation_description="Fun fact about Centaurus A shown in the info card. Translate this text.">
+    Centaurus A adalah salah satu pemancar radio alami paling kuat di langit — jetnya menyemburkan plasma ke luar dengan kecepatan hampir cahaya, dan jangkauan penuh lobus radionya mencakup area setara dengan sekitar 100 bulan purnama yang disusun ujung ke ujung di langit.
+    </string>
+    <string name="object_info_centaurus_a_distance" translation_description="Distance to Centaurus A shown in the info card. Translate units if appropriate for your locale.">~12 juta tahun cahaya</string>
+    <string name="object_info_centaurus_a_size" translation_description="Physical size of Centaurus A shown in the info card. Translate units if appropriate for your locale.">~123.000 tahun cahaya lintang</string>
+
     <!-- ==================== CONSTELLATIONS ==================== -->
     <!-- Note: Constellation names are defined in celestial_objects.xml -->
     <!-- Orion -->
@@ -1971,4 +2030,697 @@
     Vulpecula mengandung Nebula Dumbbell (M27), nebula planet pertama yang pernah ditemukan (oleh Charles Messier pada tahun 1764), dan target binokular yang indah!
     </string>
     <string name="object_info_vulpecula_size" translation_description="Physical size of Vulpecula shown in the info card. Translate units if appropriate for your locale.">268 derajat persegi</string>
+
+    <!-- Galilean Moons of Jupiter -->
+    <string name="object_info_io_description" translation_description="Description of Io shown in the info card. Translate this text.">
+    Io adalah bulan Galilean terbesar Jupiter yang paling dalam dan benda paling aktif secara vulkanik di tata surya.
+    </string>
+    <string name="object_info_io_funfact" translation_description="Fun fact about Io shown in the info card. Translate this text.">
+    Io memiliki ratusan gunung berapi aktif, beberapa di antaranya menyemburkan air mancur lava setinggi puluhan kilometer. Aktivitasnya yang konstan didorong oleh pemanasan pasang surut dari gravitasi Jupiter yang sangat besar.
+    </string>
+    <string name="object_info_io_distance" translation_description="Distance to Io shown in the info card. Translate units if appropriate for your locale.">421.700 km dari Jupiter</string>
+    <string name="object_info_io_size" translation_description="Physical size of Io shown in the info card. Translate units if appropriate for your locale.">diameter 3.643 km</string>
+
+    <string name="object_info_europa_description" translation_description="Description of Europa shown in the info card. Translate this text.">
+    Europa adalah bulan Galilean kedua dan diduga menyimpan samudra air cair yang luas di bawah kerak esnya, menjadikannya salah satu tempat paling menjanjikan untuk mencari kehidupan.
+    </string>
+    <string name="object_info_europa_funfact" translation_description="Fun fact about Europa shown in the info card. Translate this text.">
+    Samudra bawah permukaan Europa mungkin mengandung dua kali lebih banyak air cair daripada semua samudra Bumi yang digabungkan, tetap cair oleh pemanasan pasang surut dari Jupiter.
+    </string>
+    <string name="object_info_europa_distance" translation_description="Distance to Europa shown in the info card. Translate units if appropriate for your locale.">671.100 km dari Jupiter</string>
+    <string name="object_info_europa_size" translation_description="Physical size of Europa shown in the info card. Translate units if appropriate for your locale.">diameter 3.122 km</string>
+
+    <string name="object_info_ganymede_description" translation_description="Description of Ganymede shown in the info card. Translate this text.">
+    Ganymede adalah bulan terbesar di tata surya — bahkan lebih besar daripada planet Merkurius. Ini adalah satu-satunya bulan yang diketahui menghasilkan medan magnetnya sendiri.
+    </string>
+    <string name="object_info_ganymede_funfact" translation_description="Fun fact about Ganymede shown in the info card. Translate this text.">
+    Ganymede lebih besar dari Merkurius dalam ukuran, meskipun hanya sekitar setengah massanya. Medan magnet internalnya menciptakan magnetosfer miniaturnya sendiri dalam magnetosfer Jupiter yang jauh lebih besar.
+    </string>
+    <string name="object_info_ganymede_distance" translation_description="Distance to Ganymede shown in the info card. Translate units if appropriate for your locale.">1.070.400 km dari Jupiter</string>
+    <string name="object_info_ganymede_size" translation_description="Physical size of Ganymede shown in the info card. Translate units if appropriate for your locale.">diameter 5.268 km</string>
+
+    <string name="object_info_callisto_description" translation_description="Description of Callisto shown in the info card. Translate this text.">
+    Callisto adalah bulan Galilean paling luar dan salah satu benda paling banyak terkena kawah di tata surya, permukaannya yang kuno menyimpan catatan dampak tata surya awal.
+    </string>
+    <string name="object_info_callisto_funfact" translation_description="Fun fact about Callisto shown in the info card. Translate this text.">
+    Callisto mengorbit di luar sabuk radiasi utama Jupiter, menjadikannya yang teraman dari bulan-bulan Galilean untuk eksplorasi manusia di masa depan — kadang-kadang disebut \'gateway moon\'.
+    </string>
+    <string name="object_info_callisto_distance" translation_description="Distance to Callisto shown in the info card. Translate units if appropriate for your locale.">1.882.700 km dari Jupiter</string>
+    <string name="object_info_callisto_size" translation_description="Physical size of Callisto shown in the info card. Translate units if appropriate for your locale.">diameter 4.821 km</string>
+
+    <!-- Moons of Mars -->
+    <string name="object_info_phobos_description" translation_description="Description of Phobos shown in the info card. Translate this text.">
+    Phobos adalah bulan Mars yang lebih besar dan paling dalam dari dua bulannya, mengorbit lebih dekat ke planetnya daripada bulan lain mana pun di tata surya. Ini adalah benda yang berbentuk tidak teratur, banyak alur dan kawah yang diduga merupakan asteroid yang tertangkap.
+    </string>
+    <string name="object_info_phobos_funfact" translation_description="Fun fact about Phobos shown in the info card. Translate this text.">
+    Phobos mengorbit Mars dengan sangat cepat sehingga terbit di barat dan terbenam di timur — dan perlahan-lahan spiral ke dalam, ditakdirkan untuk menabrak Mars atau pecah menjadi cincin dalam sekitar 50 juta tahun.
+    </string>
+    <string name="object_info_phobos_distance" translation_description="Distance to Phobos shown in the info card. Translate units if appropriate for your locale.">9.376 km dari Mars</string>
+    <!-- tm:omitted name="object_info_phobos_size" reason="identical_to_source" -->
+
+    <string name="object_info_deimos_description" translation_description="Description of Deimos shown in the info card. Translate this text.">
+    Deimos adalah bulan Mars yang lebih kecil dan terletak di luar, dengan permukaan yang halus dan tertutup debu yang memberikannya penampilan lebih bulat daripada Phobos. Seperti pendampingnya, diyakini bahwa itu adalah asteroid yang tertangkap dari sabuk luar.
+    </string>
+    <string name="object_info_deimos_funfact" translation_description="Fun fact about Deimos shown in the info card. Translate this text.">
+    Deimos sangat kecil dan jauh sehingga dari permukaan Mars terlihat seperti bintang terang biasa, membutuhkan waktu sekitar 30 jam untuk perlahan bergerak melintasi langit malam.
+    </string>
+    <string name="object_info_deimos_distance" translation_description="Distance to Deimos shown in the info card. Translate units if appropriate for your locale.">23.460 km dari Mars</string>
+    <!-- tm:omitted name="object_info_deimos_size" reason="identical_to_source" -->
+
+    <!-- Major Moons of Saturn -->
+    <string name="object_info_titan_description" translation_description="Description of Titan shown in the info card. Translate this text.">
+    Titan adalah bulan terbesar Saturnus dan bulan terbesar kedua di tata surya. Ini adalah satu-satunya bulan yang diketahui memiliki atmosfer padat — selimut nitrogen tebal yang bercampur metana — dan satu-satunya dunia di luar Bumi yang diketahui memiliki laut cair yang stabil di permukaannya.
+    </string>
+    <string name="object_info_titan_funfact" translation_description="Fun fact about Titan shown in the info card. Translate this text.">
+    Danau dan laut Titan diisi bukan dengan air tetapi dengan metana cair dan etana pada suhu yang sangat dingin −179°C. Misi rotorcraft Dragonfly milik NASA, yang dijadwalkan tiba pada 2034, akan terbang di antara situs-situs di permukaan Titan untuk mencari kimia kehidupan.
+    </string>
+    <string name="object_info_titan_distance" translation_description="Distance to Titan shown in the info card. Translate units if appropriate for your locale.">1.221.870 km dari Saturnus</string>
+    <string name="object_info_titan_size" translation_description="Physical size of Titan shown in the info card. Translate units if appropriate for your locale.">diameter 5.151 km</string>
+
+    <string name="object_info_rhea_description" translation_description="Description of Rhea shown in the info card. Translate this text.">
+    Rhea adalah bulan terbesar kedua Saturnus dan dunia yang berat dengan kawah es dan batu. Permukaannya yang pucat dan kuno menyimpan beberapa kawah dampak paling murni di tata surya, bersama dengan tebing es cerah tempat longsor telah mengekspos material segar dari bawah.
+    </string>
+    <string name="object_info_rhea_funfact" translation_description="Fun fact about Rhea shown in the info card. Translate this text.">
+    Pada tahun 2008, data Cassini menunjukkan bahwa Rhea mungkin memiliki cincin tipis puing-puing yang mengorbitnya — yang akan menjadikannya bulan pertama yang pernah ditemukan dengan sistem cincin miliknya sendiri. Jika terbukti, ini akan menjadi penemuan yang luar biasa; bukti tersebut tetap menjadi area penelitian yang aktif.
+    </string>
+    <string name="object_info_rhea_distance" translation_description="Distance to Rhea shown in the info card. Translate units if appropriate for your locale.">527.108 km dari Saturnus</string>
+    <string name="object_info_rhea_size" translation_description="Physical size of Rhea shown in the info card. Translate units if appropriate for your locale.">diameter 1.527 km</string>
+
+    <string name="object_info_tethys_description" translation_description="Description of Tethys shown in the info card. Translate this text.">
+    Tethys adalah bulan es Saturnus yang didominasi oleh dua fitur dramatis: kawah Odysseus yang luas, lebar 400 km dan menutupi hampir sepertiga permukaan bulan, dan Ithaca Chasma, sistem ngarai yang membentang tiga perempat mengelilingi bola dunia.
+    </string>
+    <string name="object_info_tethys_funfact" translation_description="Fun fact about Tethys shown in the info card. Translate this text.">
+    Tethys hampir seluruhnya terdiri dari es air murni — ia memiliki salah satu kepadatan terendah dari bulan mana pun di tata surya, hanya sedikit lebih padat daripada air beku. Ithaca Chasma mungkin terbentuk ketika interior membeku dan mengembang, memecahkan kerak yang menumpang di atasnya dari dalam.
+    </string>
+    <string name="object_info_tethys_distance" translation_description="Distance to Tethys shown in the info card. Translate units if appropriate for your locale.">294.619 km dari Saturnus</string>
+    <string name="object_info_tethys_size" translation_description="Physical size of Tethys shown in the info card. Translate units if appropriate for your locale.">diameter 1.062 km</string>
+
+    <string name="object_info_dione_description" translation_description="Description of Dione shown in the info card. Translate this text.">
+    Dione adalah bulan es Saturnus dengan permukaan depan yang berat terkena kawah dan belahan belakang yang penuh dengan tebing es cerah — garis patahan tempat gaya tektonik kuno mengekspos es segar dari bawah. Data gravitasi Cassini menunjukkan adanya kemungkinan samudra cair di bawah kerak.
+    </string>
+    <string name="object_info_dione_funfact" translation_description="Fun fact about Dione shown in the info card. Translate this text.">
+    Dione berbagi orbitnya dengan dua bulan kecil, Helene dan Polydeuces, yang terkunci 60° di depan dan di belakangnya pada titik keseimbangan gravitasi yang disebut titik Lagrange. Helene khususnya dapat dilihat berjalan seperti penumpang kosmik dalam gambar Cassini.
+    </string>
+    <string name="object_info_dione_distance" translation_description="Distance to Dione shown in the info card. Translate units if appropriate for your locale.">377.396 km dari Saturnus</string>
+    <string name="object_info_dione_size" translation_description="Physical size of Dione shown in the info card. Translate units if appropriate for your locale.">diameter 1.122 km</string>
+
+    <string name="object_info_iapetus_description" translation_description="Description of Iapetus shown in the info card. Translate this text.">
+    Iapetus adalah salah satu bulan Saturnus yang paling khas: belahan depannya ditutupi material hitam pekat seperti batu bara, sementara belahan belakangnya adalah es putih terang. Penampilan dua warna yang ekstrem ini membingungkan Giovanni Cassini ketika dia menemukan bulan ini pada 1671, dan kontrasnya sangat mencolok sehingga terlihat di teleskop kecil.
+    </string>
+    <string name="object_info_iapetus_funfact" translation_description="Fun fact about Iapetus shown in the info card. Translate this text.">
+    Iapetus juga memiliki punggung khatulistiwa yang menjulang tinggi 20 km — lebih tinggi dari gunung mana pun di Bumi — membentang ribuan kilometer mengelilingi khatulistiwanya. Asal-usulnya tidak diketahui: mungkin merupakan sisa dari cincin yang runtuh, atau lipatan tektonik kuno, terbentuk ketika bulan berputar jauh lebih cepat di masa lalu.
+    </string>
+    <string name="object_info_iapetus_distance" translation_description="Distance to Iapetus shown in the info card. Translate units if appropriate for your locale.">3.560.820 km dari Saturnus</string>
+    <string name="object_info_iapetus_size" translation_description="Physical size of Iapetus shown in the info card. Translate units if appropriate for your locale.">diameter 1.469 km</string>
+
+    <!-- Moon of Neptune -->
+    <string name="object_info_triton_description" translation_description="Description of Triton shown in the info card. Translate this text.">
+    Triton adalah bulan terbesar Neptunus dan salah satu benda paling luar biasa di tata surya. Ia mengorbit Neptunus secara mundur — berlawanan dengan rotasi planet itu sendiri — tanda kuat bahwa ia ditangkap dari tata surya luar, kemungkinan besar dari Sabuk Kuiper, di awal sejarah Neptunus.
+    </string>
+    <string name="object_info_triton_funfact" translation_description="Fun fact about Triton shown in the info card. Translate this text.">
+    Meskipun suhu permukaannya −235°C — yang terdingin yang pernah diukur di benda apa pun yang dikunjungi pesawat ruang angkasa — Voyager 2 menemukan geyser nitrogen aktif di Triton pada tahun 1989. Garis-garis gelap di permukaan menandai tempat di mana kepulan gas dan materi gelap meletus hingga berkilometer ke dalam atmosfer tipis.
+    </string>
+    <string name="object_info_triton_distance" translation_description="Distance to Triton shown in the info card. Translate units if appropriate for your locale.">354.759 km dari Neptunus</string>
+    <string name="object_info_triton_size" translation_description="Physical size of Triton shown in the info card. Translate units if appropriate for your locale.">diameter 2.707 km</string>
+
+    <!-- Major Moons of Uranus -->
+    <string name="object_info_titania_description" translation_description="Description of Titania shown in the info card. Translate this text.">
+    Titania adalah bulan terbesar Uranus dan bulan kedelapan terbesar di tata surya. Permukaannya menunjukkan campuran dataran kuno berkerak dan tebing serta lembah yang lebih muda, yang menunjukkan sejarah geologis kompleks yang mungkin pernah mengalami aktivitas tektonik yang membentuk ulang kerak es.
+    </string>
+    <string name="object_info_titania_funfact" translation_description="Fun fact about Titania shown in the info card. Translate this text.">
+    Semua bulan Uranus dinamai menurut karakter dari Shakespeare dan Alexander Pope — Titania adalah ratu peri dalam A Midsummer Night\'s Dream. Ini adalah salah satu dari sangat sedikit bulan planet utama yang tidak dinamai menurut tokoh dari mitologi Yunani atau Romawi.
+    </string>
+    <string name="object_info_titania_distance" translation_description="Distance to Titania shown in the info card. Translate units if appropriate for your locale.">435.910 km dari Uranus</string>
+    <string name="object_info_titania_size" translation_description="Physical size of Titania shown in the info card. Translate units if appropriate for your locale.">diameter 1.578 km</string>
+
+    <string name="object_info_oberon_description" translation_description="Description of Oberon shown in the info card. Translate this text.">
+    Oberon adalah bulan terbesar terluar dari lima bulan utama Uranus dan salah satu yang paling banyak terkena dampak kawah, dengan permukaan kuno yang hampir tidak berubah sejak awal tata surya. Beberapa kawah dampak besar di dalamnya memiliki material gelap di lantainya, kemungkinan deposit organik yang dibawa oleh benda-benda yang berdampak.
+    </string>
+    <string name="object_info_oberon_funfact" translation_description="Fun fact about Oberon shown in the info card. Translate this text.">
+    Oberon memiliki sebuah gunung yang meningkat sekitar 6 km dari dataran sekitarnya — sebanding dengan puncak tertinggi di Bumi. Tidak seperti gunung-gunung Bumi, yang terbentuk melalui tektonik lempeng, fitur ini mungkin merupakan puncak pusat dari kawah dampak kuno atau sisa dari aktivitas vulkanik awal.
+    </string>
+    <string name="object_info_oberon_distance" translation_description="Distance to Oberon shown in the info card. Translate units if appropriate for your locale.">583.520 km dari Uranus</string>
+    <string name="object_info_oberon_size" translation_description="Physical size of Oberon shown in the info card. Translate units if appropriate for your locale.">diameter 1.523 km</string>
+
+    <string name="object_info_ariel_description" translation_description="Description of Ariel shown in the info card. Translate this text.">
+    Ariel memiliki permukaan termuda dan paling terang dari lima bulan utama Uranus. Lanskap Ariel didominasi oleh jaringan lembah dalam dan dataran halus yang telah diperbarui permukaan lama hari oleh cairan — kemungkinan air atau campuran air-amonia — yang memancar dari interior dan membanjiri medan kuno.
+    </string>
+    <string name="object_info_ariel_funfact" translation_description="Fun fact about Ariel shown in the info card. Translate this text.">
+    Lembah-lembah Ariel dapat mencapai kedalaman 10 km — jauh lebih dalam daripada Grand Canyon. Pengamatan Teleskop Luar Angkasa James Webb telah mendeteksi es karbon dioksida di permukaan Ariel, mengisyaratkan kimia permukaan yang berkelanjutan yang didorong oleh partikel bermuatan dari medan magnet Uranus.
+    </string>
+    <string name="object_info_ariel_distance" translation_description="Distance to Ariel shown in the info card. Translate units if appropriate for your locale.">191.020 km dari Uranus</string>
+    <string name="object_info_ariel_size" translation_description="Physical size of Ariel shown in the info card. Translate units if appropriate for your locale.">diameter 1.158 km</string>
+
+    <string name="object_info_umbriel_description" translation_description="Description of Umbriel shown in the info card. Translate this text.">
+    Umbriel adalah yang paling gelap dari lima bulan utama Uranus, dengan permukaan yang seragam, tua, dan berat dengan kawah yang menunjukkan sedikit tanda dari perubahan permukaan geologis yang terlihat di tetangganya. Interiornya tampaknya tetap dingin dan membeku sejak awal sejarah tata surya.
+    </string>
+    <string name="object_info_umbriel_funfact" translation_description="Fun fact about Umbriel shown in the info card. Translate this text.">
+    Fitur paling mencolok di Umbriel adalah Wunda, sebuah cincin terang berdiameter sekitar 140 km di dekat ekuatornya. Ditemukan oleh Voyager 2 pada tahun 1986, sifat pasti Wunda tetap menjadi misteri — mungkin itu adalah lantai kawah yang dilapisi karbon dioksida atau es beku amonia yang diendapkan lama setelah dampak yang membentuknya.
+    </string>
+    <string name="object_info_umbriel_distance" translation_description="Distance to Umbriel shown in the info card. Translate units if appropriate for your locale.">266.300 km dari Uranus</string>
+    <string name="object_info_umbriel_size" translation_description="Physical size of Umbriel shown in the info card. Translate units if appropriate for your locale.">diameter 1.170 km</string>
+
+    <!-- Globular clusters already on the map -->
+    <string name="object_info_omega_centauri_description" translation_description="Description of Omega Centauri shown in the info card. Translate this text.">
+    Omega Centauri adalah gugus bola terbesar dan paling masif yang mengorbit Bima Sakti, berisi kira-kira 10 juta bintang yang terpacked dalam bola dengan diameter sekitar 150 tahun cahaya. Mudah terlihat dengan mata telanjang sebagai bintang kabur di Centaurus, dan terbentuk menjadi bola bintang yang menakjubkan melalui teropong atau teleskop apa pun.
+    </string>
+    <string name="object_info_omega_centauri_funfact" translation_description="Fun fact about Omega Centauri shown in the info card. Translate this text.">
+    Tidak seperti gugus bola khas lainnya, Omega Centauri mengandung bintang-bintang dengan berbagai usia dan komposisi kimia yang berbeda — tanda bahwa inti telanjang galaksi kerdil yang terkoyak dan ditelan oleh Bima Sakti miliaran tahun lalu. Bahkan mungkin mengandung lubang hitam bermassa menengah di pusatnya.
+    </string>
+    <string name="object_info_omega_centauri_distance" translation_description="Distance to Omega Centauri shown in the info card. Translate units if appropriate for your locale.">17.090 tahun cahaya</string>
+    <string name="object_info_omega_centauri_size" translation_description="Physical size of Omega Centauri shown in the info card. Translate units if appropriate for your locale.">~150 tahun cahaya diameter</string>
+
+    <!-- Deep-sky objects: new catalog additions -->
+    <string name="object_info_hyades_description" translation_description="Description of the Hyades star cluster shown in the info card. Translate this text.">
+    Hyades adalah gugus bintang terbuka terdekat dengan tata surya dan salah satu yang paling banyak dipelajari dalam astronomi. Terlihat dengan mata telanjang sebagai pola berbentuk V dari bintang-bintang yang membentuk wajah Taurus, gugus ini mengandung beberapa ratus bintang yang tersebar di sekitar 5° langit.
+    </string>
+    <string name="object_info_hyades_funfact" translation_description="Fun fact about the Hyades shown in the info card. Translate this text.">
+    Bintang oranye cemerlang Aldebaran tampak berada di dalam Hyades tetapi sebenarnya adalah objek latar depan pada jarak setengahnya — sebuah keselarasan kebetulan. Gugus sejati berada sekitar 153 tahun cahaya jauhnya dan berisi bintang-bintang pertama yang jaraknya diukur dengan paralaks dari satelit Hipparcos.
+    </string>
+    <string name="object_info_hyades_distance" translation_description="Distance to the Hyades shown in the info card. Translate units if appropriate for your locale.">153 tahun cahaya</string>
+    <string name="object_info_hyades_size" translation_description="Angular size of the Hyades shown in the info card.">~5° melintang</string>
+
+    <string name="object_info_coma_star_cluster_description" translation_description="Description of the Coma Berenices Star Cluster shown in the info card. Translate this text.">
+    Gugus Bintang Coma Berenices adalah gugus terbuka terdekat dengan sekitar 40 bintang yang tersebar longgar di hampir 5° langit, mudah terlihat dengan mata telanjang sebagai kabut lembut dalam kondisi gelap. Ini adalah gugus terbuka terdekat ketiga ke sistem tata surya dan sumber konstelasi Coma Berenices.
+    </string>
+    <string name="object_info_coma_star_cluster_funfact" translation_description="Fun fact about the Coma Berenices Star Cluster shown in the info card. Translate this text.">
+    Pengamat kuno melihat gugus ini sebagai rambut Ratu Berenice II dari Mesir, yang menurut legenda memotong rambutnya yang emas sebagai persembahan untuk keselamatan suaminya kembali dari perang. Ptolemy III dilaporkan telah secara resmi memberi nama konstelasi yang tidak biasa ini untuk menghormatinya sekitar 245 SM.
+    </string>
+    <string name="object_info_coma_star_cluster_distance" translation_description="Distance to the Coma Star Cluster shown in the info card. Translate units if appropriate for your locale.">288 tahun cahaya</string>
+    <string name="object_info_coma_star_cluster_size" translation_description="Angular size of the Coma Star Cluster shown in the info card.">~5° melintang</string>
+
+    <string name="object_info_coathanger_description" translation_description="Description of the Coathanger asterism shown in the info card. Translate this text.">
+    Coathanger adalah sebuah asterisme yang mencolok terdiri dari sepuluh bintang di Vulpecula yang membentuk bentuk yang tak terlupakan: enam bintang dalam garis lurus dengan empat menggantung di bawah dalam bentuk kait, persis menyerupai sebuah gantungan pakaian yang terbalik. Ini adalah salah satu objek binokular terbaik di langit musim panas, pas sempurna dalam bidang pandang binokular yang khas.
+    </string>
+    <string name="object_info_coathanger_funfact" translation_description="Fun fact about the Coathanger shown in the info card. Translate this text.">
+    Meskipun terlihat seperti gugus, bintang-bintang Coathanger tidak terkait secara fisik — mereka berada pada jarak yang sangat berbeda dan hanya merupakan kebetulan garis pandang. Brocchi\'s Cluster dikatalogkan oleh Dalmiro Brocchi pada tahun 1920-an, dan teleskop luar angkasa pertama yang menangkapnya adalah Hipparcos, yang mengkonfirmasi bahwa bintang-bintang tersebut tidak terkait.
+    </string>
+    <string name="object_info_coathanger_distance" translation_description="Distance to the Coathanger shown in the info card. Translate units if appropriate for your locale.">~420 tahun cahaya (bintang paling terang)</string>
+    <string name="object_info_coathanger_size" translation_description="Angular size of the Coathanger shown in the info card.">~1° melintang</string>
+
+    <string name="object_info_helix_nebula_description" translation_description="Description of the Helix Nebula shown in the info card. Translate this text.">
+    Nebula Helix adalah nebula planet terbesar dalam ukuran semu di langit — cangkang gas yang mengembang yang ditumpahkan oleh bintang seperti Matahari pada akhir hidupnya. Dengan rentang sekitar setengah derajat, nebula ini terlihat dalam teropong sebagai cahaya melingkar yang samar di Aquarius dan dijuluki Mata Tuhan karena penampilannya dalam fotografi paparan panjang.
+    </string>
+    <string name="object_info_helix_nebula_funfact" translation_description="Fun fact about the Helix Nebula shown in the info card. Translate this text.">
+    Di pusat Nebula Helix terdapat salah satu katai putih terdekat yang dikenal dari Bumi — sisa bintang yang sangat panas berukuran sekitar Bumi tetapi dengan massa Matahari. Ini adalah nasib yang menanti Matahari kita sendiri dalam sekitar lima miliar tahun.
+    </string>
+    <string name="object_info_helix_nebula_distance" translation_description="Distance to the Helix Nebula shown in the info card. Translate units if appropriate for your locale.">650 tahun cahaya</string>
+    <string name="object_info_helix_nebula_size" translation_description="Angular size of the Helix Nebula shown in the info card.">~3 tahun cahaya diameter</string>
+
+    <string name="object_info_sculptor_galaxy_description" translation_description="Description of the Sculptor Galaxy shown in the info card. Translate this text.">
+    Galaksi Sculptor adalah salah satu galaksi spiral tepi-on yang paling terang dan terindah yang terlihat dari Bumi, muncul sebagai cahaya memanjang di konstelasi selatan Sculptor. Ini adalah salah satu galaksi ledakan bintang terdekat — galaksi yang mengalami ledakan pembentukan bintang yang intens — yang terlihat untuk astronom amatir dengan teropong dari langit gelap.
+    </string>
+    <string name="object_info_sculptor_galaxy_funfact" translation_description="Fun fact about the Sculptor Galaxy shown in the info card. Translate this text.">
+    Galaksi Sculptor adalah salah satu anggota paling terang dari Kelompok Sculptor — kelompok galaksi terdekat dengan Kelompok Lokal kita sendiri. Wilayah ledakan bintang pusatnya menghasilkan bintang-bintang baru dengan laju beberapa kali lebih tinggi daripada Bima Sakti, didorong oleh interaksi masa lalu dengan galaksi-galaksi tetangga.
+    </string>
+    <string name="object_info_sculptor_galaxy_distance" translation_description="Distance to the Sculptor Galaxy shown in the info card. Translate units if appropriate for your locale.">11,4 juta tahun cahaya</string>
+    <string name="object_info_sculptor_galaxy_size" translation_description="Physical size of the Sculptor Galaxy shown in the info card. Translate units if appropriate for your locale.">~90.000 tahun cahaya melintang</string>
+
+    <string name="object_info_blue_snowball_nebula_description" translation_description="Description of the Blue Snowball Nebula shown in the info card. Translate this text.">
+    Blue Snowball adalah nebula planet di Andromeda — cangkang gas bercahaya yang dilepaskan oleh bintang yang sekarat. Dengan magnitudo 8,3, ini adalah salah satu nebula planet paling terang dan paling berwarna di langit, tampak sebagai cakram biru-hijau yang hidup bahkan di teleskop kecil. Bentuknya yang simetris dan warna intensnya menjadikannya favorit di kalangan pengamat.
+    </string>
+    <string name="object_info_blue_snowball_nebula_funfact" translation_description="Fun fact about the Blue Snowball Nebula shown in the info card. Translate this text.">
+    Warna mencolok Blue Snowball berasal dari oksigen terionisasi ganda yang bersinar pada panjang gelombang hijau tertentu, dikombinasikan dengan emisi hidrogen — palet warna yang mata manusia persepsikan sebagai biru-hijau. Katai putih pusat memiliki suhu permukaan sekitar 100.000°C, cukup panas untuk mengionisasi gas sekitarnya pada jarak ini.
+    </string>
+    <string name="object_info_blue_snowball_nebula_distance" translation_description="Distance to the Blue Snowball Nebula shown in the info card. Translate units if appropriate for your locale.">~2.500 tahun cahaya</string>
+    <string name="object_info_blue_snowball_nebula_size" translation_description="Physical size of the Blue Snowball Nebula shown in the info card. Translate units if appropriate for your locale.">~0,8 tahun cahaya diameter</string>
+
+    <string name="object_info_ghost_of_jupiter_description" translation_description="Description of the Ghost of Jupiter planetary nebula shown in the info card. Translate this text.">
+    Ghost of Jupiter adalah nebula planet yang terang di Hydra dengan ukuran semu mirip planet Jupiter — itulah asal namanya. Dengan magnitudo 8,6, ini adalah salah satu nebula planet paling mudah diakses di langit untuk teleskop kecil, menampilkan disk yang jelas dan sedikit warna pada apertur sedang.
+    </string>
+    <string name="object_info_ghost_of_jupiter_funfact" translation_description="Fun fact about the Ghost of Jupiter shown in the info card. Translate this text.">
+    Ghost of Jupiter memiliki cangkang terang bagian dalam yang dikelilingi oleh halo luar yang lebih redup — struktur dua cangkang yang menunjukkan bintang yang sekarat mengeluarkan gas dalam setidaknya dua episode terpisah. Bintang pusatnya adalah salah satu white dwarf paling panas yang diketahui, dengan suhu permukaan diperkirakan sekitar 75.000°C.
+    </string>
+    <string name="object_info_ghost_of_jupiter_distance" translation_description="Distance to the Ghost of Jupiter shown in the info card. Translate units if appropriate for your locale.">~1.400 tahun cahaya</string>
+    <string name="object_info_ghost_of_jupiter_size" translation_description="Physical size of the Ghost of Jupiter shown in the info card. Translate units if appropriate for your locale.">~1 tahun cahaya diameter</string>
+
+    <string name="object_info_saturn_nebula_description" translation_description="Description of the Saturn Nebula shown in the info card. Translate this text.">
+    Nebula Saturnus adalah nebula planet di Aquarius yang dinamai karena kemiripannya dengan planet Saturnus — perpanjangan yang disebut ansae menonjol dari kedua sisi seperti pegangan cincin, terlihat di teleskop sedang. Dengan magnitudo 8,0, ini adalah salah satu nebula planet paling terang di langit dan menunjukkan struktur kompleks di instrumen yang lebih besar.
+    </string>
+    <string name="object_info_saturn_nebula_funfact" translation_description="Fun fact about the Saturn Nebula shown in the info card. Translate this text.">
+    William Herschel menemukan Nebula Saturnus pada tahun 1782 dan mencatat penampilannya yang mirip Saturnus. Pengamatan modern mengungkapkan setidaknya empat lapisan gas yang berbeda mengelilingi katai putih pusat, mencerminkan beberapa episode kehilangan massa pada tahap akhir kehidupan bintang tersebut.
+    </string>
+    <string name="object_info_saturn_nebula_distance" translation_description="Distance to the Saturn Nebula shown in the info card. Translate units if appropriate for your locale.">~5.000 tahun cahaya</string>
+    <string name="object_info_saturn_nebula_size" translation_description="Physical size of the Saturn Nebula shown in the info card. Translate units if appropriate for your locale.">~1 tahun cahaya melintang</string>
+
+    <string name="object_info_ngc_2903_description" translation_description="Description of the galaxy NGC 2903 shown in the info card. Translate this text.">
+    NGC 2903 adalah galaksi spiral berpalang yang terang di Leo, sering disebut "objek Messier yang terlewatkan Messier" — ini adalah salah satu galaksi paling menonjol di langit yang tidak termasuk dalam katalognya yang terkenal. Pada magnitudo 8,9, mudah terlihat dengan binokular dan menunjukkan struktur spiral yang indah di teleskop berukuran sedang.
+    </string>
+    <string name="object_info_ngc_2903_funfact" translation_description="Fun fact about NGC 2903 shown in the info card. Translate this text.">
+    NGC 2903 memiliki salah satu konsentrasi tertinggi dari "hotspot" pembentuk bintang yang dikenal di wilayah batang pusat galaksi — gugus padat bintang muda masif yang diterangi oleh pembentukan bintang yang intens. Ini digunakan sebagai tolok ukur untuk mempelajari aktivitas starburst di galaksi spiral berpalang.
+    </string>
+    <string name="object_info_ngc_2903_distance" translation_description="Distance to NGC 2903 shown in the info card. Translate units if appropriate for your locale.">30 juta tahun cahaya</string>
+    <string name="object_info_ngc_2903_size" translation_description="Physical size of NGC 2903 shown in the info card. Translate units if appropriate for your locale.">~80.000 tahun cahaya melintang</string>
+
+    <!-- Meteor showers -->
+    <string name="object_info_quadrantids_description" translation_description="Description of the Quadrantids meteor shower shown in the info card. Translate this text.">
+    Quadrantids adalah hujan meteor Januari yang produktif dengan puncak yang sangat tajam dan singkat, hanya berlangsung beberapa jam. Radiannya terletak di konstelasi Boötes, dekat posisi konstelasi yang sudah tidak digunakan Quadrans Muralis yang menjadi nama hujan meteor ini. Hingga 120 meteor per jam terlihat dalam kondisi ideal.
+    </string>
+    <string name="object_info_quadrantids_funfact" translation_description="Fun fact about the Quadrantids meteor shower shown in the info card. Translate this text.">
+    Tidak seperti sebagian besar hujan meteor utama yang berasal dari komet, benda induk Quadrantids\' adalah asteroid 2003 EH1 — diduga merupakan inti komet yang tidak aktif dan terbakar berabad-abad yang lalu. Keberadaannya baru dikonfirmasi pada tahun 2003.
+    </string>
+
+    <string name="object_info_lyrids_description" translation_description="Description of the Lyrids meteor shower shown in the info card. Translate this text.">
+    Lyrids adalah hujan meteor musim semi yang andal yang bersinar dari dekat bintang terang Vega di Lyra. Mereka menghasilkan meteor yang cepat dan cukup terang, mencapai puncak sekitar 18 per jam, dan kadang-kadang menghasilkan bola api yang meninggalkan jejak asap bercahaya.
+    </string>
+    <string name="object_info_lyrids_funfact" translation_description="Fun fact about the Lyrids meteor shower shown in the info card. Translate this text.">
+    Lyrids adalah hujan meteor yang paling tua dan tercatat dengan andal dalam sejarah. Para astronom Tiongkok mendokumentasikan badai meteor "jatuh seperti hujan" pada 687 SM. Puing-puing berasal dari Komet Thatcher, yang membutuhkan 415 tahun untuk mengorbit Matahari dan terakhir kali mengunjungi sistem tata surya bagian dalam pada 1861.
+    </string>
+
+    <string name="object_info_aquariids_description" translation_description="Description of the Eta Aquariids meteor shower shown in the info card. Translate this text.">
+    Eta Aquariids adalah salah satu dari dua hujan meteor tahunan yang dihasilkan oleh puing-puing Komet Halley. Mencapai puncak hingga 70 meteor per jam, hujan ini sangat menguntungkan belahan bumi selatan, di mana radiannya naik tinggi sebelum fajar. Pengamat di belahan utara masih menikmati laju yang cukup mengesankan yaitu 30 atau lebih per jam.
+    </string>
+    <string name="object_info_aquariids_funfact" translation_description="Fun fact about the Eta Aquariids meteor shower shown in the info card. Translate this text.">
+    Meteor Eta Aquariid melaju dengan kecepatan 66 km/s — cukup cepat sehingga udara terionisasi yang mereka ciptakan dapat bersinar selama beberapa detik setelah meteor hilang. Anda mungkin melihat debu kuno Halley terbakar di depan mata Anda, yang ditumpahkan selama salah satu kunjungan komet berkali-kali ribuan tahun yang lalu.
+    </string>
+
+    <string name="object_info_deltaaquariids_description" translation_description="Description of the Delta Aquariids meteor shower shown in the info card. Translate this text.">
+    Southern Delta Aquariids mencapai puncaknya pada akhir Juli dan paling baik diamati dari lintang tropis dan selatan, di mana radiant di Aquarius naik tinggi sebelum fajar. Mereka menghasilkan aliran stabil meteor berkecepatan sedang hingga 16 per jam, dengan sedikit bola api yang terang.
+    </string>
+    <string name="object_info_deltaaquariids_funfact" translation_description="Fun fact about the Delta Aquariids meteor shower shown in the info card. Translate this text.">
+    Benda induk yang tepat dari Delta Aquariids masih belum pasti. Kandidat utama adalah Komet 96P/Machholz, sebuah komet periode pendek yang tidak biasa dengan orbit yang sangat miring yang berayun luar biasa dekat ke Matahari — lebih dekat daripada planet Merkurius.
+    </string>
+
+    <string name="object_info_perseids_description" translation_description="Description of the Perseids meteor shower shown in the info card. Translate this text.">
+    Perseids adalah hujan meteor paling populer dalam setahun, mencapai puncaknya pada malam Agustus yang hangat dengan hingga 100 meteor per jam. Puing-puing yang ditumpahkan oleh Komet Swift-Tuttle terbakar tinggi di atmosfer Bumi, menghasilkan meteor yang cepat dan terang — banyak yang meninggalkan jejak bercahaya yang bertahan lama — memancar dari konstelasi Perseus.
+    </string>
+    <string name="object_info_perseids_funfact" translation_description="Fun fact about the Perseids meteor shower shown in the info card. Translate this text.">
+    Induk Perseids, Komet Swift-Tuttle, memiliki inti selebar 26 km — lebih besar dari objek yang diduga menyebabkan kepunahan massal yang mengakhiri era dinosaurus. Komet terakhir melewati sistem tata surya bagian dalam pada tahun 1992 dan tidak akan kembali hingga 2125.
+    </string>
+
+    <string name="object_info_orionids_description" translation_description="Description of the Orionids meteor shower shown in the info card. Translate this text.">
+    Orionida adalah hujan meteor kedua yang dihasilkan setiap tahun oleh Komet Halley, memancar dari dekat gada yang terangkat dari Orion. Mencapai puncaknya sekitar 25 per jam, mereka dikenal karena meteor yang cepat, sering terang, dan sering meninggalkan jejak ionisasi bercahaya yang bertahan beberapa detik.
+    </string>
+    <string name="object_info_orionids_funfact" translation_description="Fun fact about the Orionids meteor shower shown in the info card. Translate this text.">
+    Komet Halley bertanggung jawab atas dua hujan meteor tahunan: Eta Aquariids pada Mei, ketika Bumi melintasi jejak puing-puing komet yang keluar, dan Orionids pada Oktober, ketika Bumi melintasi jejak yang masuk. Bersama-sama mereka memungkinkan kami untuk mengambil sampel debu Halley kuno dua kali setahun.
+    </string>
+
+    <string name="object_info_leonids_description" translation_description="Description of the Leonids meteor shower shown in the info card. Translate this text.">
+    Leonids bersinar dari sabit Leo dan biasanya menghasilkan sekitar 20 meteor per jam. Mereka terkenal karena badai spektakuler yang meletus kira-kira setiap 33 tahun ketika Bumi melewati filamen debu padat yang ditumpahkan oleh Komet 55P/Tempel-Tuttle. Badai ini dapat menghasilkan ribuan meteor per jam.
+    </string>
+    <string name="object_info_leonids_funfact" translation_description="Fun fact about the Leonids meteor shower shown in the info card. Translate this text.">
+    Badai Leonid 1833 menghasilkan perkiraan 100.000 meteor per jam, menakut-nakuti pengamat di seluruh Amerika Utara yang takut langit sedang terbakar. Peristiwa ini meluncurkan studi ilmiah tentang hujan meteor. Badai yang sebanding terjadi pada tahun 1966 dan 1999.
+    </string>
+
+    <string name="object_info_puppidvelids_description" translation_description="Description of the Puppid-Velids meteor shower shown in the info card. Translate this text.">
+    Puppid-Velids adalah kompleks hujan meteor minor yang saling tumpang tindih dan bersinar dari konstelasi Puppis dan Vela di Bima Sakti bagian selatan. Mencapai puncak sekitar 10 meteor per jam, mereka paling baik diamati dari belahan bumi selatan, di mana radiannya naik tinggi di langit Desember.
+    </string>
+    <string name="object_info_puppidvelids_funfact" translation_description="Fun fact about the Puppid-Velids meteor shower shown in the info card. Translate this text.">
+    Puppid-Velids diyakini berasal dari puing-puing beberapa komet induk yang berbeda daripada sumber tunggal, termasuk Komet 26P/Grigg-Skjellerup. Radiant selatan mereka tidak pernah naik di atas cakrawala bagi pengamat di lintang utara sekitar 40°U, menjadikan mereka hujan meteor yang jarang dilihat oleh sebagian besar dunia.
+    </string>
+
+    <string name="object_info_geminids_description" translation_description="Description of the Geminids meteor shower shown in the info card. Translate this text.">
+    Geminids dianggap secara luas sebagai hujan meteor terbaik tahun ini — melimpah (hingga 120 per jam), dapat diandalkan, dan aktif sejak sore hari bukan hanya setelah tengah malam. Mereka bersinar dari konstelasi Gemini dan menghasilkan berbagai kecerahan meteor, termasuk bola api yang mencolok.
+    </string>
+    <string name="object_info_geminids_funfact" translation_description="Fun fact about the Geminids meteor shower shown in the info card. Translate this text.">
+    Unik di antara hujan meteor utama, Geminids berasal dari asteroid daripada komet: 3200 Phaethon, sebuah "komet batu" yang orbitnya membawanya lebih dekat ke Matahari daripada asteroid bernama lainnya. Panas ekstrem mungkin dapat memecahkan permukaan batunya dan mengeluarkan debu yang menghasilkan hujan meteor.
+    </string>
+
+    <string name="object_info_ursids_description" translation_description="Description of the Ursids meteor shower shown in the info card. Translate this text.">
+    Ursids adalah hujan meteor minor yang bersinar dari Ursa Minor, dekat Polaris, menjadikannya sirkumpolar bagi pengamat belahan utara — terlihat sepanjang malam tanpa terbenam. Mereka mencapai puncak sekitar titik balik musim dingin pada sekitar 10 meteor per jam, dan komet induknya adalah 8P/Tuttle.
+    </string>
+    <string name="object_info_ursids_funfact" translation_description="Fun fact about the Ursids meteor shower shown in the info card. Translate this text.">
+    Ursids kadang-kadang menghasilkan ledakan yang tidak terduga jauh di atas laju tipikal mereka. Pada tahun 1945 dan lagi pada tahun 2006, pengamat mencatat 50 atau lebih meteor per jam — lima kali puncak normal. Lonjakan ini terjadi ketika Bumi melewati pita puing yang sangat padat yang dilepaskan selama pendekatan dekat Komet Tuttle.
+    </string>
+
+    <!-- Category 5: Top priority — objects on the map that lacked info cards -->
+    <string name="object_info_m47_description" translation_description="Description of the open star cluster M47 shown in the info card. Translate this text.">
+    M47 adalah gugus bintang terbuka yang cerah dan longgar di Puppis, mudah terlihat dengan mata telanjang dan mencolok saat diamati dengan binokular. Sekitar 50 bintang tersebar di seluruh setengah derajat langit, dengan beberapa bintang raksasa oranye menambah warna hangat di antara anggota biru-putih yang lebih redup.
+    </string>
+    <string name="object_info_m47_funfact" translation_description="Fun fact about M47 shown in the info card. Translate this text.">
+    M47 adalah salah satu objek Messier yang "hilang" — kesalahan administratif dalam koordinat asli Messier menempatkannya di langit kosong, membuat gugus bintang tidak teridentifikasi selama hampir dua abad. Identitas sebenarnya sebagai NGC 2422 baru dikonfirmasi pada tahun 1959, ketika pengamat bekerja mundur dari deskripsi Messier untuk menemukan kesalahannya.
+    </string>
+    <string name="object_info_m47_distance" translation_description="Distance to M47 shown in the info card. Translate units if appropriate for your locale.">1.600 tahun cahaya</string>
+    <string name="object_info_m47_size" translation_description="Physical size of M47 shown in the info card. Translate units if appropriate for your locale.">~14 tahun cahaya melintang</string>
+
+    <string name="object_info_m41_description" translation_description="Description of the open star cluster M41 shown in the info card. Translate this text.">
+    M41 adalah gugus bintang terbuka yang indah di Canis Major, terletak hanya 4° di selatan Sirius — bintang paling terang di langit malam. Terlihat dengan mata telanjang dari lokasi gelap dan spektakuler dengan teropong, ia mengandung sekitar 100 bintang yang tersebar di seluruh medan yang luas, dengan beberapa bintang raksasa oranye yang mencolok di antara anggota biru-putih yang lebih redup.
+    </string>
+    <string name="object_info_m41_funfact" translation_description="Fun fact about M41 shown in the info card. Translate this text.">
+    Aristoteles mungkin telah mencatat M41 sekitar 325 SM — kemungkinan pengamatan tercatat paling awal dari objek deep-sky apa pun. Dia menggambarkan sebuah "bintik berawan" di selatan Sirius yang sesuai dengan posisi M41. Jika identifikasinya benar, M41 telah dibicarakan hampir dua ribu tahun sebelum teleskop ditemukan.
+    </string>
+    <string name="object_info_m41_distance" translation_description="Distance to M41 shown in the info card. Translate units if appropriate for your locale.">2.300 tahun cahaya</string>
+    <string name="object_info_m41_size" translation_description="Physical size of M41 shown in the info card. Translate units if appropriate for your locale.">~25 tahun cahaya melintang</string>
+
+    <string name="object_info_m24_description" translation_description="Description of the Sagittarius Star Cloud (M24) shown in the info card. Translate this text.">
+    M24 adalah Sagittarius Star Cloud — bukan gugus atau nebula tetapi jendela melalui celah di debu Milky Way\'s, mengungkapkan medan bintang yang memukau 2° melintang. Ini adalah wilayah terkaya yang terlihat melalui teropong di mana pun di langit, penuh dengan ribuan bintang yang mencakup banyak jarak berbeda secara bersamaan.
+    </string>
+    <string name="object_info_m24_funfact" translation_description="Fun fact about M24 shown in the info card. Translate this text.">
+    Bintang-bintang di M24 tidak berada pada jarak yang sama — awan bintang ini mewakili penampang melintang cakram Galaksi yang terlihat melalui terowongan alami dalam debu antarbintang, mencakup jarak 10.000 hingga 16.000 tahun cahaya. Di dalam awan terdapat nebula gelap dan gugus bintang kecil yang tampak sebagai bercak gelap terhadap latar belakang bintang yang cemerlang.
+    </string>
+    <string name="object_info_m24_distance" translation_description="Distance range to M24 shown in the info card. Translate units if appropriate for your locale.">~10.000–16.000 tahun cahaya (rentang)</string>
+    <string name="object_info_m24_size" translation_description="Physical size of M24 shown in the info card. Translate units if appropriate for your locale.">~600 tahun cahaya jendela dalam</string>
+
+    <string name="object_info_m25_description" translation_description="Description of the open star cluster M25 shown in the info card. Translate this text.">
+    M25 adalah gugus bintang terbuka yang terang dan dapat dilihat dengan mata telanjang di Sagittarius, terletak di tengah medan bintang yang padat dari Bima Sakti musim panas. Sekitar 600 bintang tersebar di seluruh medan seluas setengah derajat, menjadikannya objek binokular yang kaya. Anggota paling terangnya mencakup beberapa raksasa biru-putih dan salah satu bintang variabel Cepheid yang paling banyak dipelajari di langit.
+    </string>
+    <string name="object_info_m25_funfact" translation_description="Fun fact about M25 shown in the info card. Translate this text.">
+    M25 mengandung U Sagittarii, bintang variabel Cepheid klasik yang terang dan redup dalam periode 6,7 hari. Cepheid adalah "lilin standar" penting untuk mengukur jarak kosmik karena periode pulsasi mereka secara langsung mengungkapkan luminositas sejati mereka — astronom menggunakannya untuk pertama kali menentukan ukuran Galaksi Bimasakti dan kemudian skala alam semesta yang dapat diamati.
+    </string>
+    <string name="object_info_m25_distance" translation_description="Distance to M25 shown in the info card. Translate units if appropriate for your locale.">2.000 tahun cahaya</string>
+    <string name="object_info_m25_size" translation_description="Physical size of M25 shown in the info card. Translate units if appropriate for your locale.">~19 tahun cahaya melintang</string>
+
+    <string name="object_info_m39_description" translation_description="Description of the open star cluster M39 shown in the info card. Translate this text.">
+    M39 adalah gugus bintang terbuka yang besar dan tersebar di Cygnus, terlihat dengan mata telanjang di dekat Deneb di Bima Sakti musim panas yang kaya. Sekitar 30 bintang terangnya tersebar longgar di atas satu derajat langit, paling baik dihargai dengan pembesaran rendah di teropong atau teleskop bidang lebar — pembesaran yang lebih tinggi hanya menyelesaikannya menjadi medan bintang yang jarang dan biasa saja.
+    </string>
+    <string name="object_info_m39_funfact" translation_description="Fun fact about M39 shown in the info card. Translate this text.">
+    Pada jarak sekitar 825 tahun cahaya, M39 adalah salah satu gugus terbuka terdekat dengan Bumi, dan pada usia kira-kira 240 juta tahun, M39 adalah salah satu gugus yang dapat dilihat dengan mata telanjang yang paling tua — cukup tua sehingga bintang-bintang paling masif di dalamnya telah berakhir hidupnya. Messier mencatatnya pada tahun 1764 dan M39 termasuk di antara penambahan paling awal ke katalognya.
+    </string>
+    <string name="object_info_m39_distance" translation_description="Distance to M39 shown in the info card. Translate units if appropriate for your locale.">825 tahun cahaya</string>
+    <string name="object_info_m39_size" translation_description="Physical size of M39 shown in the info card. Translate units if appropriate for your locale.">~8 tahun cahaya melintang</string>
+
+    <!-- Category 5: Special cases -->
+    <string name="object_info_m63_description" translation_description="Description of the Sunflower Galaxy (M63) shown in the info card. Translate this text.">
+    Galaksi Bunga Matahari adalah spiral bercahaya di Canes Venatici yang lengannya yang terlipat rapat, berbintik dengan wilayah pembentukan bintang, memberikannya tekstur seperti bunga yang khas dalam fotografi paparan panjang. Pada magnitudo 8,6 ia terlihat dalam teropong dari langit gelap dan menunjukkan bentuk memanjangnya dan inti terang dengan mudah di teleskop kecil.
+    </string>
+    <string name="object_info_m63_funfact" translation_description="Fun fact about the Sunflower Galaxy shown in the info card. Translate this text.">
+    M63 ditemukan oleh Pierre Méchain pada tahun 1779 — salah satu dari segelintir objek Messier yang ditemukan oleh Méchain daripada Messier sendiri. Ini adalah anggota dari Grup M51, secara fisik terkait dengan Galaksi Whirlpool (M51), dan menunjukkan tanda-tanda interaksi masa lalu: aliran bintang yang samar dan kuno membungkus disk luarnya.
+    </string>
+    <string name="object_info_m63_distance" translation_description="Distance to the Sunflower Galaxy shown in the info card. Translate units if appropriate for your locale.">29 juta tahun cahaya</string>
+    <string name="object_info_m63_size" translation_description="Physical size of the Sunflower Galaxy shown in the info card. Translate units if appropriate for your locale.">~100.000 tahun cahaya melintang</string>
+
+    <string name="object_info_ngc_6543_description" translation_description="Description of the Cat's Eye Nebula (NGC 6543) shown in the info card. Translate this text.">
+    Nebula Mata Kucing adalah salah satu nebula planet yang paling kompleks secara struktural yang diketahui — gas yang dikeluarkan bintang yang sekarat dibentuk menjadi cangkang konsentris, jet, dan simpul terang yang terlihat dalam citra Hubble. Dalam teleskop kecil, ia muncul sebagai disk biru-hijau yang hidup di Draco, salah satu objek paling berwarna di langit musim gugur.
+    </string>
+    <string name="object_info_ngc_6543_funfact" translation_description="Fun fact about the Cat's Eye Nebula shown in the info card. Translate this text.">
+    Pada tahun 1864, astronom William Huggins mengarahkan spektroskop ke Cat\'s Eye dan menemukan bahwa ia terbuat dari gas yang bersinar, bukan bintang-bintang yang tidak terselesaikan — pertama kalinya sifat nebula planet apa pun dikonfirmasi. Penemuan ini mendirikan bidang spektroskopi nebula dan menggoyahkan pandangan yang berlaku bahwa semua nebula adalah gugus bintang yang jauh.
+    </string>
+    <string name="object_info_ngc_6543_distance" translation_description="Distance to the Cat's Eye Nebula shown in the info card. Translate units if appropriate for your locale.">~3.300 tahun cahaya</string>
+    <string name="object_info_ngc_6543_size" translation_description="Physical size of the Cat's Eye Nebula shown in the info card. Translate units if appropriate for your locale.">~0,5 tahun cahaya diameter</string>
+
+    <string name="object_info_m76_description" translation_description="Description of the Little Dumbbell Nebula (M76) shown in the info card. Translate this text.">
+    Little Dumbbell adalah nebula planet di Perseus dengan bentuk angka delapan yang khas — sepupu yang lebih kecil dari M27, Nebula Dumbbell di Vulpecula. Meskipun merupakan entri paling redup dalam katalog Messier, ia memberikan hadiah untuk pengamatan sabar dengan teleskop kecil dan menunjukkan struktur indah di instrumen yang lebih besar, dengan dua lobus yang lebih terang mengelilingi pinggang yang lebih redup.
+    </string>
+    <string name="object_info_m76_funfact" translation_description="Fun fact about the Little Dumbbell Nebula shown in the info card. Translate this text.">
+    M76 awalnya dikatalogkan sebagai dua objek terpisah — NGC 650 dan NGC 651 — karena pengamat awal mendeskripsikan dua lobus terang secara independen. Ini adalah nebula planet bipolar yang terbentuk ketika aliran bintang yang sekarat terjepit di khatulistiwa, menciptakan dua lobus yang mengembang sepanjang sumbu kutub sementara gas juga memancar keluar di pinggang.
+    </string>
+    <string name="object_info_m76_distance" translation_description="Distance to the Little Dumbbell Nebula shown in the info card. Translate units if appropriate for your locale.">~2.500 tahun cahaya</string>
+    <string name="object_info_m76_size" translation_description="Physical size of the Little Dumbbell Nebula shown in the info card. Translate units if appropriate for your locale.">~2 tahun cahaya melintang</string>
+
+    <string name="object_info_v838_mon_description" translation_description="Description of V838 Monocerotis shown in the info card. Translate this text.">
+    V838 Monocerotis adalah bintang variabel yang tidak biasa di Monoceros yang mengalami ledakan spektakuler pada tahun 2002, sebentar menjadi salah satu bintang paling bercahaya di Bima Sakti. Meskipun terlalu redup untuk pengamat visual saat ini, gema cahayanya yang meluas — gelombang depan cahaya yang menerangi cangkang debu kuno — menghasilkan beberapa gambar Teleskop Luar Angkasa Hubble paling dramatis yang pernah diambil.
+    </string>
+    <string name="object_info_v838_mon_funfact" translation_description="Fun fact about V838 Monocerotis shown in the info card. Translate this text.">
+    Sifat ledakan V838 Mon masih diperdebatkan. Teori utama adalah penggabungan bintang — dua bintang yang berputar satu sama lain dan bertabrakan — daripada nova klasik atau letusan supergiant. Jika terbukti, ini adalah pandangan real-time pertama dari "nova merah bercahaya," kelas ledakan langka yang disebabkan oleh penggabungan bintang, peristiwa serupa telah ditemukan di galaksi lain sejak saat itu.
+    </string>
+    <string name="object_info_v838_mon_distance" translation_description="Distance to V838 Monocerotis shown in the info card. Translate units if appropriate for your locale.">~20.000 tahun cahaya</string>
+    <string name="object_info_v838_mon_size" translation_description="Extent of the V838 Monocerotis light echo shown in the info card. Translate units if appropriate for your locale.">~3 tahun cahaya (jangkauan gema cahaya)</string>
+
+    <string name="object_info_hdf_description" translation_description="Description of the Hubble Deep Field shown in the info card. Translate this text.">
+    Hubble Deep Field adalah sebuah patch langit yang tampak kosong berukuran 2,6 arcmenit di Ursa Major, difoto oleh Teleskop Luar Angkasa Hubble selama 10 hari berturut-turut pada Desember 1995. Apa yang tampak sebagai ruang kosong mengungkapkan sekitar 3.000 galaksi — mencakup miliaran tahun sejarah kosmik — dan secara fundamental mengubah gambaran kita tentang alam semesta.
+    </string>
+    <string name="object_info_hdf_funfact" translation_description="Fun fact about the Hubble Deep Field shown in the info card. Translate this text.">
+    Patch langit dipilih secara khusus karena kosong dari bintang terang dan galaksi terdekat. Namun gambar yang dihasilkan penuh dengan sekitar 3.000 galaksi, yang mengarah pada perkiraan bahwa seluruh langit mengandung sekitar 200 miliar galaksi — hampir semuanya tidak terlihat oleh teleskop apa pun sebelum Hubble.
+    </string>
+    <string name="object_info_hdf_distance" translation_description="Distance to the most distant galaxies in the Hubble Deep Field shown in the info card. Translate units if appropriate for your locale.">~13 miliar tahun cahaya (paling jauh)</string>
+    <string name="object_info_hdf_size" translation_description="Angular size of the Hubble Deep Field shown in the info card.">2,6 arcmenit (bidang pandang)</string>
+
+    <string name="object_info_m43_description" translation_description="Description of De Mairan's Nebula (M43) shown in the info card. Translate this text.">
+    Nebula De Mairan adalah bagian terpisah dari kompleks Nebula Orion yang besar, dipisahkan dari M42 oleh jalur debu gelap tetapi termasuk dalam awan molekul yang luas. Dinamai menurut astronom Prancis Jean-Jacques Dortous de Mairan, yang mencatatnya pada tahun 1731, ini adalah nebula emisi yang diionisasi oleh bintang muda panas NU Orionis yang tertanam di pusatnya.
+    </string>
+    <string name="object_info_m43_funfact" translation_description="Fun fact about De Mairan's Nebula shown in the info card. Translate this text.">
+    Meskipun M43 tampak sebagai objek terpisah dari M42, jalur gelap yang membagi keduanya adalah awan debu di depan — bagian dari Awan Molekuler Orion — yang hanya menghalangi pandangan kami terhadap koneksi fisik antara kedua wilayah yang bersinar. Bersama-sama, mereka hanyalah tepi dalam yang terang dari awan gelap raksasa yang membentang di sebagian besar Orion.
+    </string>
+    <string name="object_info_m43_distance" translation_description="Distance to De Mairan's Nebula shown in the info card. Translate units if appropriate for your locale.">1.350 tahun cahaya</string>
+    <string name="object_info_m43_size" translation_description="Physical size of De Mairan's Nebula shown in the info card. Translate units if appropriate for your locale.">~8 tahun cahaya melintang</string>
+
+    <string name="object_info_m40_description" translation_description="Description of M40 (Winnecke 4) shown in the info card. Translate this text.">
+    M40 unik dalam katalog Messier — bukan nebula, gugus, atau galaksi, melainkan bintang ganda lebar. Messier mencatalognya pada 1764 saat mencari nebula yang dilaporkan oleh Johann Hevelius di Ursa Major, hanya menemukan pasangan bintang ini, dan mencatatnya agar pengamat masa depan tidak akan mengira sebagai sesuatu yang lebih menarik.
+    </string>
+    <string name="object_info_m40_funfact" translation_description="Fun fact about M40 shown in the info card. Translate this text.">
+    Dua bintang M40 — dikenal sebagai Winnecke 4 — tidak terikat secara gravitasi; mereka berada pada jarak berbeda dan hanya merupakan keselarasan kebetulan. Messier sendiri mencatat tidak ada yang "luar biasa," tetapi memasukkannya "untuk menunjukkan bahwa nebula ini tidak sama dengan yang telah saya periksa." Kebiasaan metodisnya dalam mendokumentasikan hasil negatif memberikan pengamat masa depan referensi yang definitif.
+    </string>
+    <string name="object_info_m40_distance" translation_description="Distance to M40 shown in the info card. Translate units if appropriate for your locale.">~500 tahun cahaya</string>
+    <string name="object_info_m40_size" translation_description="Angular separation of the M40 double star shown in the info card.">~50 arcsecond (pemisahan)</string>
+
+    <!-- Category 5: Second tier -->
+    <string name="object_info_m34_description" translation_description="Description of the open star cluster M34 shown in the info card. Translate this text.">
+    M34 adalah gugus bintang terbuka yang cerah dan tersebar di Perseus, mudah terlihat dengan binokular sebagai percikan kaya bintang melawan Bima Sakti musim dingin. Sekitar 400 bintangnya mencakup area hampir selebar Bulan purnama, dengan segelintir bintang ganda lebar yang terlihat oleh pengamat binokular yang cermat.
+    </string>
+    <string name="object_info_m34_funfact" translation_description="Fun fact about M34 shown in the info card. Translate this text.">
+    Berusia sekitar 200 juta tahun, M34 memiliki usia menengah — cukup muda sehingga bintang-bintang birunya yang panas masih bersinar, cukup tua sehingga yang paling masif telah meledak sebagai supernova. Pada jarak 1.500 tahun cahaya, ini adalah salah satu gugus Messier yang lebih dekat dan tetap menjadi objek yang indah bahkan dari langit pinggiran kota.
+    </string>
+    <string name="object_info_m34_distance" translation_description="Distance to M34 shown in the info card. Translate units if appropriate for your locale.">1.500 tahun cahaya</string>
+    <string name="object_info_m34_size" translation_description="Physical size of M34 shown in the info card. Translate units if appropriate for your locale.">~15 tahun cahaya melintang</string>
+
+    <string name="object_info_m23_description" translation_description="Description of the open star cluster M23 shown in the info card. Translate this text.">
+    M23 adalah gugus terbuka yang kaya di Sagitarius, tertanam dalam medan bintang yang padat dari Bima Sakti musim panas. Sekitar 150 bintang tersebar di atas medan setengah derajat dalam teropong, menjadikannya objek teropong yang murah hati di wilayah langit yang sama dengan banyak permata Messier lainnya.
+    </string>
+    <string name="object_info_m23_funfact" translation_description="Fun fact about M23 shown in the info card. Translate this text.">
+    M23 diperkirakan berusia sekitar 300 juta tahun — usia menengah, dengan sebagian besar bintang masifnya telah berevolusi meninggalkan deret utama. Messier menemukannya pada tahun 1764 selama salah satu kampanye pengamatan produktifnya yang menyapu medan bintang Sagitarius.
+    </string>
+    <string name="object_info_m23_distance" translation_description="Distance to M23 shown in the info card. Translate units if appropriate for your locale.">2.150 tahun cahaya</string>
+    <string name="object_info_m23_size" translation_description="Physical size of M23 shown in the info card. Translate units if appropriate for your locale.">~17 tahun cahaya melintang</string>
+
+    <string name="object_info_m37_description" translation_description="Description of the open star cluster M37 shown in the info card. Translate this text.">
+    M37 adalah yang terkaya dan paling terang dari tiga gugus terbuka Messier di Auriga, mengandung sekitar 500 bintang dalam medan yang kompak. Ini adalah objek teropong dan teleskop kecil yang spektakuler, dengan sebaran bintang raksasa oranye yang menambah kontras warna pada gerombolan biru-putih.
+    </string>
+    <string name="object_info_m37_funfact" translation_description="Fun fact about M37 shown in the info card. Translate this text.">
+    M37 mengandung sekitar selusin bintang raksasa merah — jumlah yang tidak biasa tinggi yang mencerminkan usianya yang relatif lanjut sekitar 300 juta tahun. Meskipun terletak sekitar 4.500 tahun cahaya jauhnya — yang paling jauh dari tiga gugus Messier Auriga — ia masih termasuk di antara gugus terbuka terindah di langit.
+    </string>
+    <string name="object_info_m37_distance" translation_description="Distance to M37 shown in the info card. Translate units if appropriate for your locale.">4.500 tahun cahaya</string>
+    <string name="object_info_m37_size" translation_description="Physical size of M37 shown in the info card. Translate units if appropriate for your locale.">~31 tahun cahaya melintang</string>
+
+    <string name="object_info_m48_description" translation_description="Description of the open star cluster M48 shown in the info card. Translate this text.">
+    M48 adalah gugus bintang terbuka yang besar dan terang di Hydra, membentang hampir satu derajat di langit dan terlihat dengan mata telanjang dari lokasi gelap. Sekitar 80 bintangnya tersebar longgar di seluruh medan luas yang paling cocok untuk teropong, dengan sebaran bintang raksasa oranye dan kuning di antara anggota biru-putih yang lebih terang.
+    </string>
+    <string name="object_info_m48_funfact" translation_description="Fun fact about M48 shown in the info card. Translate this text.">
+    M48 adalah salah satu objek "hilang" Messier selama hampir dua abad karena posisi yang dicatat Messier sekitar 5° menyimpang dari lokasi sebenarnya. Objek ini tetap tidak teridentifikasi hingga 1959, ketika cocok dengan NGC 2548 dan kesalahan transkripsi sederhana terbukti telah menempatkannya di langit kosong sejak awal.
+    </string>
+    <string name="object_info_m48_distance" translation_description="Distance to M48 shown in the info card. Translate units if appropriate for your locale.">1.500 tahun cahaya</string>
+    <string name="object_info_m48_size" translation_description="Physical size of M48 shown in the info card. Translate units if appropriate for your locale.">~23 tahun cahaya melintang</string>
+
+    <string name="object_info_m21_description" translation_description="Description of the open star cluster M21 shown in the info card. Translate this text.">
+    M21 adalah gugus bintang terbuka yang kompak di Sagitarius yang terletak tepat setengah derajat di utara Nebula Trifid (M20), menjadikan keduanya pasangan binokular yang mencolok. Gugus ini mengandung sekitar 57 bintang yang terkonsentrasi dalam medan yang lebih kecil daripada banyak gugus Messier lainnya, dengan beberapa bintang biru-putih terang sebagai anggota dominan.
+    </string>
+    <string name="object_info_m21_funfact" translation_description="Fun fact about M21 shown in the info card. Translate this text.">
+    Meskipun tidak terkait secara fisik, M21 dan M20 (Nebula Trifid) membentuk salah satu pasangan binokular paling menarik di langit musim panas — gugus bintang terang di samping nebula tiga-lobus yang penuh warna. M21 berjarak sekitar 4.250 tahun cahaya, sementara M20 sedikit lebih dekat pada sekitar 4.100 tahun cahaya.
+    </string>
+    <string name="object_info_m21_distance" translation_description="Distance to M21 shown in the info card. Translate units if appropriate for your locale.">4.250 tahun cahaya</string>
+    <string name="object_info_m21_size" translation_description="Physical size of M21 shown in the info card. Translate units if appropriate for your locale.">~16 tahun cahaya melintang</string>
+
+    <string name="object_info_m50_description" translation_description="Description of the open star cluster M50 shown in the info card. Translate this text.">
+    M50 adalah gugus bintang terbuka yang terang di Monoceros, berisi sekitar 200 bintang yang padat dalam medan yang mencolok untuk teropong dan teleskop kecil. Mudah ditemukan pada garis antara Sirius dan Procyon dan berisi raksasa merah yang terkenal — sebuah mercusuar oranye hangat yang menonjol jelas di antara bintang-bintang biru-putih gugus ini.
+    </string>
+    <string name="object_info_m50_funfact" translation_description="Fun fact about M50 shown in the info card. Translate this text.">
+    M50 diperkirakan berusia sekitar 78 juta tahun — salah satu gugus terbuka Messier yang lebih muda — artinya bintang-bintang biru dan putih panas masih berkembang, dengan beberapa anggota yang lebih masif baru-baru ini membengkak menjadi raksasa. Ini adalah ciri khas gugus dalam usia pertengahan awalnya.
+    </string>
+    <string name="object_info_m50_distance" translation_description="Distance to M50 shown in the info card. Translate units if appropriate for your locale.">3.200 tahun cahaya</string>
+    <string name="object_info_m50_size" translation_description="Physical size of M50 shown in the info card. Translate units if appropriate for your locale.">~15 tahun cahaya melintang</string>
+
+    <string name="object_info_m36_description" translation_description="Description of the open star cluster M36 shown in the info card. Translate this text.">
+    M36 adalah gugus bintang terbuka terkecil dan termuda dari tiga gugus yang dikatalogkan Messier di Auriga. Sekitar 60 bintangnya terkumpul dalam medan yang rapat dan berkilau, terlihat dengan binokular dan terurai dengan baik menjadi bintang-bintang individual dalam teleskop kecil, didominasi oleh bintang-bintang biru-putih panas.
+    </string>
+    <string name="object_info_m36_funfact" translation_description="Fun fact about M36 shown in the info card. Translate this text.">
+    M36 diperkirakan berusia hanya sekitar 25 juta tahun — salah satu gugus Messier yang paling muda — yang berarti bintang biru-putih masif masih mendominasi dan belum ada raksasa merah yang muncul. M36 berbagi medan bintang Auriga dengan M37 dan M38, dan ketiga gugus ini semuanya dapat dilihat dalam pandangan binokular lapang lebar yang sama.
+    </string>
+    <string name="object_info_m36_distance" translation_description="Distance to M36 shown in the info card. Translate units if appropriate for your locale.">4.100 tahun cahaya</string>
+    <string name="object_info_m36_size" translation_description="Physical size of M36 shown in the info card. Translate units if appropriate for your locale.">~14 tahun cahaya melintang</string>
+
+    <string name="object_info_m46_description" translation_description="Description of the open star cluster M46 shown in the info card. Translate this text.">
+    M46 adalah gugus bintang terbuka yang kaya dan padat di Puppis yang berisi sekitar 500 bintang yang terpacked dalam bidang lebar, mencolok dalam teropong dan indah dalam teleskop kecil. Bonus yang luar biasa mengapung di tepi utaranya: NGC 2438, nebula planet kecil yang tampak tertanam dalam gugus — kebetulan garis pandang yang dramatis.
+    </string>
+    <string name="object_info_m46_funfact" translation_description="Fun fact about M46 shown in the info card. Translate this text.">
+    Nebula planet NGC 2438 tampak berada di dalam M46 tetapi sebenarnya adalah objek latar depan yang tidak terkait pada jarak yang sangat berbeda — sekitar 1.400 tahun cahaya dibandingkan dengan 5.400 M46. Kebetulan kelopak bintang yang sekarat tersuperposisi pada gugus bintang muda membuat ini salah satu bidang paling fotogenik dalam katalog.
+    </string>
+    <string name="object_info_m46_distance" translation_description="Distance to M46 shown in the info card. Translate units if appropriate for your locale.">5.400 tahun cahaya</string>
+    <string name="object_info_m46_size" translation_description="Physical size of M46 shown in the info card. Translate units if appropriate for your locale.">~42 tahun cahaya melintang</string>
+
+    <string name="object_info_m93_description" translation_description="Description of the open star cluster M93 shown in the info card. Translate this text.">
+    M93 adalah gugus bintang terbuka yang cerah dan kompak di Puppis, terletak di Bima Sakti selatan yang kaya dan mudah ditemukan dengan teropong. Sekitar 80 bintangnya tersusun dalam bentuk baji atau kupu-kupu yang mencolok dan mencakup beberapa raksasa biru panas, menjadikannya salah satu gugus bintang terbuka yang paling menarik di langit musim dingin.
+    </string>
+    <string name="object_info_m93_funfact" translation_description="Fun fact about M93 shown in the info card. Translate this text.">
+    M93 relatif muda — sekitar 100 juta tahun — dengan bintang biru dan biru-putih yang dominan yang belum berevolusi menjadi raksasa. Ini adalah salah satu gugus Messier yang lebih selatan, dan dari lintang utara sekitar 50°U tidak pernah naik sangat tinggi di atas cakrawala.
+    </string>
+    <string name="object_info_m93_distance" translation_description="Distance to M93 shown in the info card. Translate units if appropriate for your locale.">3.600 tahun cahaya</string>
+    <string name="object_info_m93_size" translation_description="Physical size of M93 shown in the info card. Translate units if appropriate for your locale.">~23 tahun cahaya melintang</string>
+
+    <string name="object_info_m38_description" translation_description="Description of the open star cluster M38 shown in the info card. Translate this text.">
+    M38 adalah gugus bintang terbuka terbesar dan paling tersebar dari tiga gugus yang dikatalogkan Messier di Auriga. Sekitar 100 bintangnya tersusun dalam pola yang oleh beberapa pengamat diibaratkan seperti salib atau huruf Yunani pi, terlihat dengan binokular dan teramati dengan baik melalui teleskop kecil. Gugus yang lebih kecil NGC 1907 terletak berdekatan di sebelah selatan.
+    </string>
+    <string name="object_info_m38_funfact" translation_description="Fun fact about M38 shown in the info card. Translate this text.">
+    M38 adalah yang tertua dari tiga gugus Messier Auriga pada sekitar 220 juta tahun, cukup tua sehingga beberapa bintang masifnya telah berkembang menjadi raksasa kuning dan oranye. Gugus terdekat NGC 1907 dapat masuk dalam bidang pembesaran rendah yang sama, menjadikan mereka pasangan binokular yang indah — seperti M46 dan M47 di Puppis.
+    </string>
+    <string name="object_info_m38_distance" translation_description="Distance to M38 shown in the info card. Translate units if appropriate for your locale.">4.200 tahun cahaya</string>
+    <string name="object_info_m38_size" translation_description="Physical size of M38 shown in the info card. Translate units if appropriate for your locale.">~26 tahun cahaya melintang</string>
+
+    <string name="object_info_m29_description" translation_description="Description of the open star cluster M29 shown in the info card. Translate this text.">
+    M29 adalah gugus bintang terbuka yang kecil dan muda di Cygnus, terletak di salah satu wilayah Bima Sakti yang paling tersembunyi oleh debu. Lima raksasa biru cemerlang mendominasi gugus ini, terlihat melalui teropong sebagai asterisme yang rapat dari bintang-bintang panas dan bercahaya. Tanpa debu latar depan yang padat, M29 akan menjadi salah satu gugus bintang terbuka paling spektakuler di langit.
+    </string>
+    <string name="object_info_m29_funfact" translation_description="Fun fact about M29 shown in the info card. Translate this text.">
+    M29 diperkirakan berusia hanya sekitar 10 juta tahun — bayi bintang — dan berada dalam asosiasi Cygnus OB1, sebuah kelompok besar bintang-bintang muda yang masif. Debu antarbintang yang berat mempergelap gugus ini sekitar 3 magnitudo; tanpa pengaburan itu, bintang-bintang M29 akan bersinar beberapa kali lebih terang daripada yang sebenarnya terlihat.
+    </string>
+    <string name="object_info_m29_distance" translation_description="Distance to M29 shown in the info card. Translate units if appropriate for your locale.">4.000 tahun cahaya</string>
+    <string name="object_info_m29_size" translation_description="Physical size of M29 shown in the info card. Translate units if appropriate for your locale.">~8 tahun cahaya melintang</string>
+
+    <string name="object_info_m62_description" translation_description="Description of the globular cluster M62 shown in the info card. Translate this text.">
+    M62 adalah gugus bola yang kaya di Ophiuchus — salah satu globular terdekat dengan pusat galaksi dan terlihat asimetris, dengan bintang-bintang yang lebih padat di sisi selatan. Dengan magnitudo 6,6, ini adalah objek binokular yang indah, meskipun deklinasi rendahnya menjadikannya target musim pendek bagi pengamat di belahan utara.
+    </string>
+    <string name="object_info_m62_funfact" translation_description="Fun fact about M62 shown in the info card. Translate this text.">
+    Inti M62 yang tidak terpusat adalah hasil langsung dari kedekatan cluster dengan pusat galaksi — gaya pasang surut yang kuat dari tonjolan pusat mendistorsi cluster dan menarik bintang-bintang menuju bidang galaksi. Ini juga merupakan salah satu globular cluster yang paling berkembang secara dinamis, menunjukkan tanda-tanda keruntuhan inti dan kepadatan yang tidak biasa tinggi dari pulsar milidetik.
+    </string>
+    <string name="object_info_m62_distance" translation_description="Distance to M62 shown in the info card. Translate units if appropriate for your locale.">22.500 tahun cahaya</string>
+    <string name="object_info_m62_size" translation_description="Physical size of M62 shown in the info card. Translate units if appropriate for your locale.">~92 tahun cahaya melintang</string>
+
+    <string name="object_info_m28_description" translation_description="Description of the globular cluster M28 shown in the info card. Translate this text.">
+    M28 adalah gugus bola kompak di Sagittarius, terletak dekat bintang terang Lambda Sagittarii di medan bintang musim panas yang kaya. Dengan magnitudo 6,9, ini adalah target binokular yang memuaskan dan terselesaikan dengan baik di teleskop kecil, menampilkan inti yang padat dan terang dikelilingi oleh halo bintang yang sedang.
+    </string>
+    <string name="object_info_m28_funfact" translation_description="Fun fact about M28 shown in the info card. Translate this text.">
+    Pada tahun 1987, M28 menjadi gugus bola pertama di mana pulsar milidetik terdeteksi. Pulsar milidetik — bintang neutron yang berputar ratusan kali per detik — terbentuk ketika bintang neutron mengakumulasi materi dari bintang pendamping dan ditemukan pada tingkat yang jauh lebih tinggi di gugus bola dibandingkan di galaksi umum, karena lingkungan bintang padat mereka menghasilkan banyak pertemuan biner dekat.
+    </string>
+    <string name="object_info_m28_distance" translation_description="Distance to M28 shown in the info card. Translate units if appropriate for your locale.">18.300 tahun cahaya</string>
+    <string name="object_info_m28_size" translation_description="Physical size of M28 shown in the info card. Translate units if appropriate for your locale.">~60 tahun cahaya melintang</string>
+
+    <string name="object_info_m52_description" translation_description="Description of the open star cluster M52 shown in the info card. Translate this text.">
+    M52 adalah gugus bintang terbuka yang kaya di Cassiopeia, berisi sekitar 200 bintang yang terpacked dalam wilayah kompak di Bima Sakti utara. Ini adalah gugus binokular yang indah dan menunjukkan medan bintang yang padat dan cantik dalam teleskop kecil, dengan bintang oranye yang terlihat lebih terang menonjol di dekat tepi selatan gugus.
+    </string>
+    <string name="object_info_m52_funfact" translation_description="Fun fact about M52 shown in the info card. Translate this text.">
+    Jarak M52 sangat tidak pasti — perkiraan berkisar dari 3.000 hingga 7.000 tahun cahaya — karena debu antarbintang yang tebal di sepanjang garis pandang ini membuat luminositas sebenarnya sulit ditentukan. Messier menemukannya pada tahun 1774, malam yang sama ketika dia melacak komet yang memimpinnya untuk mencatat beberapa entri katalog lainnya.
+    </string>
+    <string name="object_info_m52_distance" translation_description="Distance to M52 shown in the info card. Translate units if appropriate for your locale.">~5.000 tahun cahaya</string>
+    <string name="object_info_m52_size" translation_description="Physical size of M52 shown in the info card. Translate units if appropriate for your locale.">~25 tahun cahaya melintang</string>
+
+    <string name="object_info_m67_description" translation_description="Description of the open star cluster M67 shown in the info card. Translate this text.">
+    M67 adalah gugus bintang terbuka yang indah di Kanker dan salah satu gugus bintang terbuka tertua yang telah dipelajari dengan baik di langit. Berusia kira-kira 3,2–3,5 miliar tahun, gugus ini mengandung banyak bintang yang mirip dalam massa dan usia dengan Matahari kita — menjadikannya laboratorium alami untuk mempelajari bagaimana bintang serupa Matahari berkembang sepanjang waktu kosmik.
+    </string>
+    <string name="object_info_m67_funfact" translation_description="Fun fact about M67 shown in the info card. Translate this text.">
+    Beberapa bintang di M67 sangat mirip dengan Matahari dalam hal suhu, massa, dan usia — kombinasi langka yang membuat para peneliti bertanya-tanya apakah Matahari itu sendiri berasal dari gugus seperti M67. Karena bintang-bintang lahir dalam gugus yang secara bertahap tersebar, Matahari hampir pasti berasal dari kelompok saudara yang sekarang tersebar miliaran tahun yang lalu — meskipun gugus mana yang belum pernah diidentifikasi.
+    </string>
+    <string name="object_info_m67_distance" translation_description="Distance to M67 shown in the info card. Translate units if appropriate for your locale.">2.700 tahun cahaya</string>
+    <string name="object_info_m67_size" translation_description="Physical size of M67 shown in the info card. Translate units if appropriate for your locale.">~24 tahun cahaya melintasi</string>
+
+    <string name="object_info_m55_description" translation_description="Description of the globular cluster M55 shown in the info card. Translate this text.">
+    M55 adalah gugus bola besar yang longgar di Sagitarius — salah satu yang paling tersebar dan paling terkonsentrasi dari semua globular Messier. Mudah diuraikan menjadi bintang-bintang individual bahkan pada pembesaran rendah, dengan tekstur granular yang terlihat di teropong. Deklinasi selatan yang rendah membatasi visibilitas dari lintang utara tetapi spektakuler dari belahan bumi selatan.
+    </string>
+    <string name="object_info_m55_funfact" translation_description="Fun fact about M55 shown in the info card. Translate this text.">
+    Konsentrasi bintang M55 yang luar biasa rendah membuatnya terlihat hampir seperti gugus terbuka yang kaya daripada globular tipikal. Bintang-bintangnya tersebar di seluruh wilayah yang lebarnya hampir 100 tahun cahaya, menunjukkan bahwa gravitasi diri gugus ini relatif lemah dibandingkan dengan globular yang lebih terpusat seperti M13 atau M3.
+    </string>
+    <string name="object_info_m55_distance" translation_description="Distance to M55 shown in the info card. Translate units if appropriate for your locale.">17.600 tahun cahaya</string>
+    <string name="object_info_m55_size" translation_description="Physical size of M55 shown in the info card. Translate units if appropriate for your locale.">~100 tahun cahaya melintasi</string>
+
+    <string name="object_info_m19_description" translation_description="Description of the globular cluster M19 shown in the info card. Translate this text.">
+    M19 adalah gugus bola yang padat dan kaya di Ophiuchus — salah satu gugus bola terdekat dengan pusat galaksi. Fitur paling khasnya adalah bentuknya yang terlihat oblate: M19 adalah gugus bola yang paling pipih yang diketahui, dengan garis besar elips yang terlihat bahkan dalam teleskop kecil.
+    </string>
+    <string name="object_info_m19_funfact" translation_description="Fun fact about M19 shown in the info card. Translate this text.">
+    Keobakan M19 yang terlihat jelas — sumbu terpanjangnya sekitar 10% lebih panjang dari sumbu terpendeknya — unik di antara gugus bola yang diketahui dan diyakini hasil dari peregangan pasang surut oleh medan gravitasi Galaksi Bima Sakti. Semakin dekat gugus bola mengorbit ke pusat galaksi, semakin kuat ia berubah bentuk; M19 hanya terletak sekitar 5.200 tahun cahaya dari inti galaksi.
+    </string>
+    <string name="object_info_m19_distance" translation_description="Distance to M19 shown in the info card. Translate units if appropriate for your locale.">28.700 tahun cahaya</string>
+    <string name="object_info_m19_size" translation_description="Physical size of M19 shown in the info card. Translate units if appropriate for your locale.">~113 tahun cahaya melintasi</string>
+
+    <string name="object_info_m80_description" translation_description="Description of the globular cluster M80 shown in the info card. Translate this text.">
+    M80 adalah salah satu gugus bola paling padat di Galaksi Bimasakti, bola kompak yang kaya dengan beberapa ratus ribu bintang di Skorpius. Pada magnitudo 7,2, ini adalah target binokular yang indah dan menampilkan inti yang cemerlang dan sangat terkonsentrasi dalam teleskop kecil.
+    </string>
+    <string name="object_info_m80_funfact" translation_description="Fun fact about M80 shown in the info card. Translate this text.">
+    Pada tahun 1860, sebuah nova meletus di dalam M80 — diberi nama T Scorpii — sempat bersinar secerah gugus itu sendiri dan terlihat dengan mata telanjang. Ini tetap menjadi salah satu dari hanya dua nova yang pernah diamati dalam gugus bola. Nova dalam gugus bola timbul dari interaksi antara bintang biner, yang jauh lebih umum di lingkungan bintang yang padat di inti gugus bola.
+    </string>
+    <string name="object_info_m80_distance" translation_description="Distance to M80 shown in the info card. Translate units if appropriate for your locale.">32.600 tahun cahaya</string>
+    <string name="object_info_m80_size" translation_description="Physical size of M80 shown in the info card. Translate units if appropriate for your locale.">~84 tahun cahaya melintasi</string>
+
+    <string name="object_info_m103_description" translation_description="Description of the open star cluster M103 shown in the info card. Translate this text.">
+    M103 adalah gugus bintang terbuka yang kecil dan padat di Cassiopeia, berisi sekitar 40 bintang dalam kelompok yang rapat dan mudah terlihat dengan teropong. Sebuah bintang ganda yang mencolok dan raksasa merah di dekat pusat memberikan penampilan yang penuh warna di teleskop kecil, terletak dalam medan bintang Milky Way yang kaya di Cassiopeia.
+    </string>
+    <string name="object_info_m103_funfact" translation_description="Fun fact about M103 shown in the info card. Translate this text.">
+    M103 adalah objek bernomor tertinggi dalam katalog asli Messier yang diterbitkan tahun 1781 — semua entri berikutnya (M104–M110) ditambahkan secara anumerta oleh astronom kemudian dari catatan dan korespondensi Messier. Pierre Méchain menemukan M103 tidak lama sebelum katalog diterbitkan, dan Messier memasukkannya berdasarkan laporan Méchain.
+    </string>
+    <string name="object_info_m103_distance" translation_description="Distance to M103 shown in the info card. Translate units if appropriate for your locale.">8.500 tahun cahaya</string>
+    <string name="object_info_m103_size" translation_description="Physical size of M103 shown in the info card. Translate units if appropriate for your locale.">~15 tahun cahaya melintasi</string>
+
+    <string name="object_info_m30_description" translation_description="Description of the globular cluster M30 shown in the info card. Translate this text.">
+    M30 adalah gugus bola kompak di Capricornus — objek yang indah di teleskop kecil yang menampilkan inti terang yang padat dan rantai bintang samar di sekitarnya. Dengan magnitudo 7,5, diperlukan langit gelap untuk binokular dan memberikan hadiah kepada teleskop kecil dengan halo luar yang sebagian teratasi.
+    </string>
+    <string name="object_info_m30_funfact" translation_description="Fun fact about M30 shown in the info card. Translate this text.">
+    M30 telah mengalami "core collapse" — suatu proses di mana daya tarik gravitasi bersama dari bintang-bintang yang padat menyebabkan pusat gugus berkontraksi secara dramatis, menciptakan konsentrasi ekstrem bintang-bintang dalam volume yang sangat kecil. Sekitar seperlima dari semua gugus globular mengalami core collapse, dan M30 adalah salah satu contoh fenomena ini yang paling banyak dipelajari.
+    </string>
+    <string name="object_info_m30_distance" translation_description="Distance to M30 shown in the info card. Translate units if appropriate for your locale.">27.100 tahun cahaya</string>
+    <string name="object_info_m30_size" translation_description="Physical size of M30 shown in the info card. Translate units if appropriate for your locale.">~87 tahun cahaya melintasi</string>
+
+    <string name="object_info_m54_description" translation_description="Description of the globular cluster M54 shown in the info card. Translate this text.">
+    M54 adalah gugus bola besar dan kaya di Sagitarius dan salah satu objek paling jauh di seluruh katalog Messier. Selama berabad-abad dianggap sebagai gugus bola halo yang jauh dari Bima Sakti, tetapi sekarang diketahui bahwa itu adalah inti padat Galaksi Elips Kerdil Sagitarius — galaksi satelit yang sedang diserap oleh galaksi kita sendiri.
+    </string>
+    <string name="object_info_m54_funfact" translation_description="Fun fact about M54 shown in the info card. Translate this text.">
+    Penemuan tahun 1994 bahwa M54 termasuk Galaksi Katai Sagitarius menjadikannya gugus bola pertama yang diketahui termasuk galaksi lain. Ketika Galaksi Katai Sagitarius secara bertahap terpecah dan tertelan oleh Bima Sakti, M54 pada akhirnya akan menjadi gugus bola halo asli galaksi kita sendiri — seorang imigran antargalaksi yang tiba selama miliaran tahun.
+    </string>
+    <string name="object_info_m54_distance" translation_description="Distance to M54 shown in the info card. Translate units if appropriate for your locale.">87.000 tahun cahaya</string>
+    <string name="object_info_m54_size" translation_description="Physical size of M54 shown in the info card. Translate units if appropriate for your locale.">~230 tahun cahaya melintasi</string>
+
+    <string name="object_info_m69_description" translation_description="Description of the globular cluster M69 shown in the info card. Translate this text.">
+    M69 adalah gugus bola yang cukup kaya di Sagitarius, terletak dekat pusat galaksi. Dengan magnitudo 7,7, ini adalah objek binokular dari langit gelap yang memberikan hadiah kepada teleskop kecil dengan bola bintang yang sebagian terselesaikan dan pusat yang cerah dan berbutir.
+    </string>
+    <string name="object_info_m69_funfact" translation_description="Fun fact about M69 shown in the info card. Translate this text.">
+    M69 mengorbit sangat dekat dengan pusat galaksi — hanya sekitar 6.200 tahun cahaya dari inti Bima Sakti — dan akibatnya memiliki konsentrasi elemen yang lebih berat dari biasanya untuk gugus bola. Gugus bola yang lebih dekat ke pusat galaksi cenderung diperkaya secara kimia oleh beberapa generasi pembentukan bintang di bulge sekitarnya.
+    </string>
+    <string name="object_info_m69_distance" translation_description="Distance to M69 shown in the info card. Translate units if appropriate for your locale.">29.700 tahun cahaya</string>
+    <string name="object_info_m69_size" translation_description="Physical size of M69 shown in the info card. Translate units if appropriate for your locale.">~61 tahun cahaya melintasi</string>
+
+    <string name="object_info_m9_description" translation_description="Description of the globular cluster M9 shown in the info card. Translate this text.">
+    M9 adalah gugus bola kompak di Ophiuchus — salah satu globular Messier yang paling terpengaruh oleh penyerapan debu antarbintang. Terletak menuju tonjolan galaksi, di mana debu tebal membuatnya jauh lebih redup. Tanpa pengaburan ini, M9 akan tampak hampir satu magnitudo lebih terang dan terlihat oleh mata telanjang.
+    </string>
+    <string name="object_info_m9_funfact" translation_description="Fun fact about M9 shown in the info card. Translate this text.">
+    M9 mengalami penyerapan debu antarbintang lebih banyak daripada hampir semua globular Messier lainnya — sekitar 1,3 magnitudo penggelapan dibandingkan dengan garis pandang yang jelas. Dua gugus globular yang lebih kecil (NGC 6342 dan NGC 6356) terletak dalam jarak sekitar 1° dari M9, menjadikannya pusat pengelompokan luar biasa dari tiga globular dalam area kecil langit.
+    </string>
+    <string name="object_info_m9_distance" translation_description="Distance to M9 shown in the info card. Translate units if appropriate for your locale.">25.800 tahun cahaya</string>
+    <string name="object_info_m9_size" translation_description="Physical size of M9 shown in the info card. Translate units if appropriate for your locale.">~70 tahun cahaya melintasi</string>
+
+    <string name="object_info_m26_description" translation_description="Description of the open star cluster M26 shown in the info card. Translate this text.">
+    M26 adalah gugus bintang terbuka yang agak redup di Scutum, terlihat dengan binokular dan teramati dengan baik di teleskop kecil. Sekitar 90 bintang tersebar di atas medan yang kompak di awan bintang Scutum yang kaya, meskipun gugus ini berada di latar belakang yang sangat padat sehingga mengidentifikasi anggotanya dari medan bintang sekitarnya memerlukan perhatian khusus.
+    </string>
+    <string name="object_info_m26_funfact" translation_description="Fun fact about M26 shown in the info card. Translate this text.">
+    M26 terletak di sepanjang jalur langit yang sama kaya dengan M11 — Gugus Bebek Liar, salah satu gugus terbuka terindah di langit. Keduanya hanya berjarak sekitar 3,5° dan terlihat dalam bidang binokular yang sama, menjadikan Scutum tujuan luar biasa bagi pengamat gugus meskipun merupakan konstelasi yang kecil dan sering diabaikan.
+    </string>
+    <string name="object_info_m26_distance" translation_description="Distance to M26 shown in the info card. Translate units if appropriate for your locale.">5.000 tahun cahaya</string>
+    <string name="object_info_m26_size" translation_description="Physical size of M26 shown in the info card. Translate units if appropriate for your locale.">~22 tahun cahaya melintasi</string>
+
+    <string name="object_info_m79_description" translation_description="Description of the globular cluster M79 shown in the info card. Translate this text.">
+    M79 adalah gugus bola padat di Lepus — salah satu dari sangat sedikit globular Messier yang paling baik ditempatkan di langit musim dingin, ketika sebagian besar globular berada di bawah cakrawala atau baru saja terbit. Pada magnitudo 8,0, diperlukan teleskop untuk mengungkapkan inti padat dan halo samarnya, menonjol terhadap medan bintang musim dingin yang relatif jarang.
+    </string>
+    <string name="object_info_m79_funfact" translation_description="Fun fact about M79 shown in the info card. Translate this text.">
+    M79 dianggap oleh beberapa astronom sebagai pendatang dari Galaksi Canis Major Dwarf — sebuah galaksi satelit yang terganggu yang sedang diserap oleh Bima Sakti. Jika demikian, M79 tidak terbentuk dalam sistem globular Bima Sakti sendiri tetapi ditangkap dari galaksi yang jatuh dan sekarang perlahan-lahan dilipat ke dalam halo galaksi kita.
+    </string>
+    <string name="object_info_m79_distance" translation_description="Distance to M79 shown in the info card. Translate units if appropriate for your locale.">41.000 tahun cahaya</string>
+    <string name="object_info_m79_size" translation_description="Physical size of M79 shown in the info card. Translate units if appropriate for your locale.">~104 tahun cahaya melintasi</string>
+
+    <string name="object_info_m70_description" translation_description="Description of the globular cluster M70 shown in the info card. Translate this text.">
+    M70 adalah gugus bola kompak di Sagitarius, sangat mirip dengan kembarannya M69 dalam penampilan dan jarak. Dengan magnitudo 8,1, ini adalah objek teleskop kecil yang indah yang menunjukkan inti kompak dan tanda-tanda resolusi di halo luar. Terletak hanya 2° dari M69 dan keduanya dapat diamati dalam bidang binokular yang sama.
+    </string>
+    <string name="object_info_m70_funfact" translation_description="Fun fact about M70 shown in the info card. Translate this text.">
+    M70 mendapat perhatian singkat pada tahun 1995 sebagai lokasi perkiraan di langit di mana Alan Hale dan Thomas Bopp secara independen menemukan Komet Hale-Bopp — komet paling terang abad ke-20 akhir. Kedua pengamat awalnya menyapu melewati M70 sambil mencari target lain dan memperhatikan komet sebagai objek fuzzy yang tidak terduga di dekatnya.
+    </string>
+    <string name="object_info_m70_distance" translation_description="Distance to M70 shown in the info card. Translate units if appropriate for your locale.">29.400 tahun cahaya</string>
+    <string name="object_info_m70_size" translation_description="Physical size of M70 shown in the info card. Translate units if appropriate for your locale.">~67 tahun cahaya melintasi</string>
+
+    <string name="object_info_m107_description" translation_description="Description of the globular cluster M107 shown in the info card. Translate this text.">
+    M107 adalah salah satu gugus globular Messier yang paling tidak terkonsentrasi, dengan bintang-bintang tersebar dalam pola yang relatif terbuka di sekitar inti yang sederhana. Pada magnitudo 8,1, ini adalah target binokular dari langit gelap dan sebagian terurai dalam teleskop kecil, menampilkan tekstur granular daripada kondensasi pusat yang tajam.
+    </string>
+    <string name="object_info_m107_funfact" translation_description="Fun fact about M107 shown in the info card. Translate this text.">
+    M107 adalah entri terakhir yang secara resmi ditambahkan ke katalog Messier — muncul dalam korespondensi Pierre Méchain tetapi tidak disertakan dalam edisi asli 1781. Secara resmi ditambahkan sebagai M107 pada tahun 1947 oleh astronom Kanada Helen Sawyer Hogg, yang mengkodifikasi beberapa objek "hilang" yang telah diamati Méchain tetapi Messier tidak pernah secara resmi mencatat.
+    </string>
+    <string name="object_info_m107_distance" translation_description="Distance to M107 shown in the info card. Translate units if appropriate for your locale.">20.900 tahun cahaya</string>
+    <string name="object_info_m107_size" translation_description="Physical size of M107 shown in the info card. Translate units if appropriate for your locale.">~61 tahun cahaya melintasi</string>
+
+    <string name="object_info_m68_description" translation_description="Description of the globular cluster M68 shown in the info card. Translate this text.">
+    M68 adalah gugus globular yang kaya di Hydra — objek selatan dan salah satu dari sedikit globular yang paling baik ditempatkan di langit akhir musim dingin dan musim semi. Pada magnitudo 8,2, ia memberikan hadiah kepada teleskop kecil dengan inti yang cukup terkondensasi dan halo besar bintang-bintang yang terurai terhadap medan bintang yang relatif jarang di Hydra.
+    </string>
+    <string name="object_info_m68_funfact" translation_description="Fun fact about M68 shown in the info card. Translate this text.">
+    Meskipun kedekatan relatifnya — membuat bintang-bintang individual terselesaikan dengan baik di teleskop amatir — M68 sering diabaikan karena deklinasi selatan yang jauh. Dari lintang di atas 50°U, ia hampir tidak melampaui cakrawala; dari belahan bumi selatan, bagaimanapun, ia naik tinggi dan merupakan globular yang luar biasa indah.
+    </string>
+    <string name="object_info_m68_distance" translation_description="Distance to M68 shown in the info card. Translate units if appropriate for your locale.">33.600 tahun cahaya</string>
+    <string name="object_info_m68_size" translation_description="Physical size of M68 shown in the info card. Translate units if appropriate for your locale.">~117 tahun cahaya melintasi</string>
+
+    <string name="object_info_m56_description" translation_description="Description of the globular cluster M56 shown in the info card. Translate this text.">
+    M56 adalah gugus bola kompak di Lyra, terletak di antara Nebula Cincin (M57) dan bintang ganda terang Albireo di Cygnus. Dengan magnitudo 8,3, ini adalah target binokular dari langit gelap, dan teleskop kecil mengungkapkan bola berbutir, terkondensasi sedang yang hanya sebagian teratasi bahkan dalam apertur menengah.
+    </string>
+    <string name="object_info_m56_funfact" translation_description="Fun fact about M56 shown in the info card. Translate this text.">
+    M56 ditemukan oleh Messier pada Januari 1779 selama musim pengamatan yang sama ketika dia juga menemukan Nebula Cincin (M57). Meskipun berada di bidang binokular yang sama dengan Vega — bintang kelima paling terang di langit — dan dekat dengan Nebula Cincin yang terkenal, M56 sering diabaikan oleh pengamat yang tertarik pada tetangga-tetangganya yang lebih terkenal.
+    </string>
+    <string name="object_info_m56_distance" translation_description="Distance to M56 shown in the info card. Translate units if appropriate for your locale.">32.900 tahun cahaya</string>
+    <string name="object_info_m56_size" translation_description="Physical size of M56 shown in the info card. Translate units if appropriate for your locale.">~68 tahun cahaya melintasi</string>
+
+    <string name="object_info_m71_description" translation_description="Description of the globular cluster M71 shown in the info card. Translate this text.">
+    M71 adalah gugus bola yang tidak biasa di Sagitta — diperdebatkan oleh para astronom selama puluhan tahun yang tidak dapat memutuskan apakah itu gugus terbuka tua yang sangat kaya atau gugus bola muda yang sangat longgar. Analisis modern mengkonfirmasi bahwa itu adalah gugus bola asli, tetapi dengan konsentrasi yang luar biasa rendah dengan bintang yang relatif sedikit dan inti yang kurang dominan dibandingkan gugus bola pada umumnya.
+    </string>
+    <string name="object_info_m71_funfact" translation_description="Fun fact about M71 shown in the info card. Translate this text.">
+    Struktur longgar M71 membuatnya tidak masuk dalam banyak katalog awal karena menyerupai medan bintang yang kaya daripada gugus sejati. Dengan jarak hanya 12.000 tahun cahaya, ini adalah salah satu globular Messier yang lebih dekat, dan bintang-bintangnya sebagian terurai dalam teleskop kecil di langit gelap — memberikannya tampilan medan bintang yang padat dan sedikit terkondensasi.
+    </string>
+    <string name="object_info_m71_distance" translation_description="Distance to M71 shown in the info card. Translate units if appropriate for your locale.">12.000 tahun cahaya</string>
+    <string name="object_info_m71_size" translation_description="Physical size of M71 shown in the info card. Translate units if appropriate for your locale.">~25 tahun cahaya melintasi</string>
 </resources>

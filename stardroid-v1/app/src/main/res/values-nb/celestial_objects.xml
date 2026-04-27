@@ -111,6 +111,38 @@
     <string name="neptune" translation_description="Name of the planet Neptune">Neptun</string>
     <!-- tm:omitted name="pluto" reason="identical_to_source" -->
 
+    <!-- tm:omitted name="phobos" reason="identical_to_source" -->
+    <!-- tm:omitted name="deimos" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="io" reason="identical_to_source" -->
+    <!-- tm:omitted name="europa" reason="identical_to_source" -->
+    <!-- tm:omitted name="ganymede" reason="identical_to_source" -->
+    <!-- tm:omitted name="callisto" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="titan" reason="identical_to_source" -->
+    <!-- tm:omitted name="rhea" reason="identical_to_source" -->
+    <!-- tm:omitted name="tethys" reason="identical_to_source" -->
+    <!-- tm:omitted name="dione" reason="identical_to_source" -->
+    <!-- tm:omitted name="iapetus" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="triton" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="titania" reason="identical_to_source" -->
+    <!-- tm:omitted name="oberon" reason="identical_to_source" -->
+    <!-- tm:omitted name="ariel" reason="identical_to_source" -->
+    <!-- tm:omitted name="umbriel" reason="identical_to_source" -->
+
+    <!-- Deep-sky objects -->
+    <string name="hyades" translation_description="Name of the Hyades star cluster">Hyader</string>
+    <string name="coma_star_cluster" translation_description="Name of the Coma Berenices star cluster">Coma-stjernehoben</string>
+    <string name="coathanger" translation_description="Name of the Coathanger asterism (Brocchi\'s Cluster)">Kleshengeren</string>
+    <string name="helix_nebula" translation_description="Name of the Helix Nebula (NGC 7293)">Helix-tåken</string>
+    <string name="sculptor_galaxy" translation_description="Name of the Sculptor Galaxy (NGC 253)">Bildhugger-galaksen</string>
+    <string name="blue_snowball_nebula" translation_description="Name of the Blue Snowball Nebula (NGC 7662)">Blå snøballnebula</string>
+    <string name="ghost_of_jupiter" translation_description="Name of the Ghost of Jupiter planetary nebula (NGC 3242)">Jupiters gjenferd</string>
+    <string name="saturn_nebula" translation_description="Name of the Saturn Nebula (NGC 7009)">Saturn-tåken</string>
+    <!-- tm:omitted name="ngc_2903" reason="identical_to_source" -->
+
     <!-- Gallery objects -->
     <string name="crab_nebula" translation_description="hubble object">Krabbetåken</string>
     <string name="eagle_nebula" translation_description="hubble object">Ørnetåken</string>
@@ -362,10 +394,76 @@
     <string name="puppidvelids" translation_description="Meteor Shower">Puppid-velidene</string>
     <string name="ursids" translation_description="Meteor Shower">Ursidene</string>
 
+    <!-- North America Nebula -->
+    <string name="north_america_nebula" translation_description="Name of the North America Nebula (NGC 7000) as shown on the sky map">Nord-Amerika-tåken</string>
+    <!-- tm:omitted name="ngc_7000" reason="identical_to_source" -->
+    <!-- tm:omitted name="caldwell_20" reason="identical_to_source" -->
+
     <!-- Comets -->
     <string name="comet_leonard" translation_description="Name of Comet Leonard (C/2021 A1) as shown on the sky map">Komet Leonard</string>
     <!-- TODO: no need for these alt names once our search is less lousy -->
     <string name="comet_leonard_alt" translation_description="Alternate searchable name for Comet Leonard, surname first">Leonard (Komet)</string>
     <string name="comet_neowise" translation_description="Name of Comet NEOWISE (C/2020 F3) as shown on the sky map">Komet Neowise</string>
     <string name="comet_neowise_alt" translation_description="Alternate searchable name for Comet NEOWISE, surname first">Neowise (Komet)</string>
+
+    <!-- Jewel Box (NGC 4755) -->
+    <string name="jewel_box" translation_description="Common name for the open star cluster NGC 4755 in Crux">Juvelkassen</string>
+    <string name="herschels_jewel_box" translation_description="Alternative name for the Jewel Box cluster (NGC 4755)">Herschels juvelkasse</string>
+    <string name="kappa_crucis_cluster" translation_description="Alternative name for the Jewel Box cluster (NGC 4755)">Kappa Crucis-hoben</string>
+
+    <!-- Exposed Cranium Nebula -->
+    <string name="exposed_cranium_nebula" translation_description="Common name for the planetary nebula PMR 1 in Vela, named for its brain-in-a-skull appearance">Eksponert hodeskalle-nebula</string>
+    <!-- tm:omitted name="pmr_1" reason="identical_to_source" -->
+
+    <!-- Double Cluster (NGC 869 & NGC 884) -->
+    <string name="double_cluster" translation_description="Common name for the pair of open star clusters NGC 869 and NGC 884 in Perseus">Dobbelthoben</string>
+    <!-- tm:omitted name="ngc_869" reason="identical_to_source" -->
+    <!-- tm:omitted name="ngc_884" reason="identical_to_source" -->
+    <string name="h_and_chi_persei" translation_description="Traditional designation for the Double Cluster in Perseus">h og χ Persei</string>
+    <!-- tm:omitted name="caldwell_14" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="n47_tucanae" reason="identical_to_source" -->
+    <!-- tm:omitted name="n47_tuc" reason="identical_to_source" -->
+    <!-- tm:omitted name="ngc_104" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="centaurus_a" reason="identical_to_source" -->
+    <!-- tm:omitted name="ngc_5128" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="mel_25" reason="identical_to_source" -->
+    <!-- tm:omitted name="melotte_25" reason="identical_to_source" -->
+    <!-- tm:omitted name="caldwell_41" reason="identical_to_source" -->
+    <!-- tm:omitted name="mel_111" reason="identical_to_source" -->
+    <!-- tm:omitted name="melotte_111" reason="identical_to_source" -->
+    <string name="coma_berenices_cluster" translation_description="Alternate name for the Coma Star Cluster (Melotte 111)">Coma Berenices-klyngen</string>
+    <string name="brocchis_cluster" translation_description="Alternate name for the Coathanger asterism (Collinder 399)">Broccis klynge</string>
+    <!-- tm:omitted name="cr_399" reason="identical_to_source" -->
+    <!-- tm:omitted name="collinder_399" reason="identical_to_source" -->
+    <!-- tm:omitted name="ngc_7293" reason="identical_to_source" -->
+    <string name="eye_of_god" translation_description="Nickname for the Helix Nebula (NGC 7293)">Guds øye</string>
+    <!-- tm:omitted name="caldwell_63" reason="identical_to_source" -->
+    <!-- tm:omitted name="ngc_253" reason="identical_to_source" -->
+    <string name="silver_dollar_galaxy" translation_description="Nickname for the Sculptor Galaxy (NGC 253)">Sølvdollargalaksen</string>
+    <string name="silver_coin_galaxy" translation_description="Alternate nickname for the Sculptor Galaxy (NGC 253)">Sølvmynten-galaksen</string>
+    <!-- tm:omitted name="ngc_7662" reason="identical_to_source" -->
+    <!-- tm:omitted name="caldwell_22" reason="identical_to_source" -->
+    <!-- tm:omitted name="ngc_3242" reason="identical_to_source" -->
+    <!-- tm:omitted name="caldwell_59" reason="identical_to_source" -->
+    <!-- tm:omitted name="ngc_7009" reason="identical_to_source" -->
+    <!-- tm:omitted name="caldwell_55" reason="identical_to_source" -->
+    <string name="ptolemy_cluster" translation_description="Common name for the open star cluster M7 in Scorpius, named after ancient astronomer Ptolemy">Ptolemaios-klyngen</string>
+    <string name="hercules_globular_cluster" translation_description="Common name for the globular cluster M13 in Hercules">Hercules globulærklynge</string>
+    <!-- tm:omitted name="ngc_1952" reason="identical_to_source" -->
+    <!-- tm:omitted name="ngc_224" reason="identical_to_source" -->
+    <!-- tm:omitted name="ngc_2632" reason="identical_to_source" -->
+    <!-- tm:omitted name="ngc_4594" reason="identical_to_source" -->
+    <!-- tm:omitted name="ngc_4755" reason="identical_to_source" -->
+    <!-- tm:omitted name="ngc_5194" reason="identical_to_source" -->
+    <!-- tm:omitted name="ngc_5457" reason="identical_to_source" -->
+    <!-- tm:omitted name="ngc_6205" reason="identical_to_source" -->
+    <!-- tm:omitted name="ngc_6405" reason="identical_to_source" -->
+    <!-- tm:omitted name="ngc_6475" reason="identical_to_source" -->
+    <!-- tm:omitted name="ngc_6611" reason="identical_to_source" -->
+    <!-- tm:omitted name="ngc_6720" reason="identical_to_source" -->
+    <!-- tm:omitted name="ngc_869_and_ngc_884" reason="identical_to_source" -->
+    <!-- tm:omitted name="omega_cen" reason="identical_to_source" -->
 </resources>

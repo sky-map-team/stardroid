@@ -944,6 +944,67 @@
     </string>
     <string name="object_info_eta_carinae_nebula_distance" translation_description="Distance to Eta Carinae Nebula shown in the info card. Translate units if appropriate for your locale.">7,500 blwyddyn-olau</string>
     <string name="object_info_eta_carinae_nebula_size" translation_description="Physical size of Eta Carinae Nebula shown in the info card. Translate units if appropriate for your locale.">300 blwyddyn-olau ar draws</string>
+    <!-- North America Nebula (NGC 7000) -->
+    <string name="object_info_north_america_nebula_description" translation_description="Description of the North America Nebula shown in the info card. Translate this text.">
+    Mae Nifwla Gogledd America (NGC 7000) yn nifwla allyrru fawr yn Cygnus sydd â siâp sy\'n rhyfeddol o debyg i gyfandir Gogledd America, yn gyflawn â rhanbarth Gwlff Mecsico. Yn ymestyn tua 120 arcfunud ar draws — tua phedwar gwaith diamedr y Lleuad lawn — mae\'n gorwedd tua 2,600 blwyddyn-olau i ffwrdd ac mae\'n fwy na 100 blwyddyn-olau o led.
+    </string>
+    <string name="object_info_north_america_nebula_funfact" translation_description="Fun fact about the North America Nebula shown in the info card. Translate this text.">
+    Er gwaethaf ei faint golau o 4, mae\'r nifwla yn rhy fawr ac yn rhy wasgaredig i\'w weld â\'r llygad noeth o dan y rhan fwyaf o awyrennau — ond mae\'n tynnu lluniau\'n hardd, gan ddatgelu Wal Cygnus, arc trwchus o ffurfiant sêr dwys ar hyd ei ymyl ddeheuol.
+    </string>
+    <string name="object_info_north_america_nebula_distance" translation_description="Distance to the North America Nebula shown in the info card. Translate units if appropriate for your locale.">~2,590 blwyddyn-golau</string>
+    <string name="object_info_north_america_nebula_size" translation_description="Physical size of the North America Nebula shown in the info card. Translate units if appropriate for your locale.">~140 blwyddyn-golau ar draws</string>
+    <!-- Exposed Cranium Nebula - PMR 1 -->
+    <string name="object_info_exposed_cranium_nebula_description" translation_description="Description of the Exposed Cranium Nebula shown in the info card. Translate this text.">
+    Mae\'r Exposed Cranium Nebula (PMR 1) yn nifwla blanedol yn Vela, tua 5,000 o flynyddoedd golau i ffwrdd. Mae ei henw rhyfedd yn dod o lonydd tywyll o nwy yn rhedeg yn fertigol drwy\'r canol, gan rannu ei lobed disgleiriol yn siâp sy\'n debyg i ymennydd y tu mewn i benglog tryloyw. Yn ei galon mae seren boeth Wolf-Rayet yn taflu\'r haenau allanol a adeiladodd dros oes.
+    </string>
+    <string name="object_info_exposed_cranium_nebula_funfact" translation_description="Fun fact about the Exposed Cranium Nebula shown in the info card. Translate this text.">
+    Yn 2026 daliodd y Telesgop Gofod James Webb ddelweddau trawiadol newydd o\'r Nifwla Benglog Noeth, gan ddatrys ei strwythur dwy-haen mewn manylion heb ei ail — cragen allanol gyfoethog mewn hydrogen ac ynwmwl mewnol yn llawn elfennau trymach a luniwyd gan y seren farw.
+    </string>
+    <string name="object_info_exposed_cranium_nebula_distance" translation_description="Distance to the Exposed Cranium Nebula shown in the info card. Translate units if appropriate for your locale.">~5,000 blwyddyn-golau</string>
+    <string name="object_info_exposed_cranium_nebula_size" translation_description="Physical size of the Exposed Cranium Nebula shown in the info card. Translate units if appropriate for your locale.">~2 flwyddyn-golau ar draws</string>
+
+    <!-- Jewel Box (NGC 4755) -->
+    <string name="object_info_jewel_box_description" translation_description="Description of the Jewel Box cluster shown in the info card. Translate this text.">
+    Mae\'r Jewel Box (NGC 4755) yn glwstwr agored ifanc a disglair yn y seren-batrwm Crux, yn hawdd ei weld â\'r llygad noeth fel smotyn niwlog o\'r pedwerydd maint yn union i\'r de-ddwyrain o Mimosa. Pan edrychwch arno trwy delesgop, mae ei sêr yn llosgi mewn lliwiau cyferbyniol byw — uwchgigantau glas dwfn ochr yn ochr ag uwchgigant coch trawiadol — gan ennill iddo\'r enw a roddodd John Herschel iddo: darn rhagoro o dlws ffansi. Ar oed o dim ond 14–16 miliwn o flynyddoedd, mae\'n un o\'r clustyrau ifancaf a mwyaf lliwgar yn yr awyr.
+    </string>
+    <string name="object_info_jewel_box_funfact" translation_description="Fun fact about the Jewel Box shown in the info card. Translate this text.">
+    Seren goch amlwg y clwstwr, κ Crucis, yw uwchgawr coch mor ddisglair fel ei bod yn disgleirio mwy na\'r Haul 100,000 o weithiau — atgoffa byw fod clystyrau sêr ddim yr un lliw i gyd.
+    </string>
+    <string name="object_info_jewel_box_distance" translation_description="Distance to the Jewel Box shown in the info card. Translate units if appropriate for your locale.">~6,500 blwyddyn-golau</string>
+    <string name="object_info_jewel_box_size" translation_description="Physical size of the Jewel Box shown in the info card. Translate units if appropriate for your locale.">~19 blwyddyn-golau ar draws</string>
+
+    <!-- Double Cluster (NGC 869 & NGC 884) -->
+    <string name="object_info_double_cluster_description" translation_description="Description of the Double Cluster shown in the info card. Translate this text.">
+    Mae\'r Clwstwr Dwbl (NGC 869 a NGC 884) yn bâr trawiadol o glystyrau sêr agored ifanc yn Perseus, yn eistedd ochr yn ochr yn yr awyr dim ond ychydig dros radd ar wahân. Mae\'r ddau yn weladwy i\'r llygad noeth fel clwstwr niwlog, ond hyd yn oed telesgop bach yn datgelu cannoedd o uwchgigantau glas-wyn disglair wedi\'u pacio\'n dynn mewn dwy haid ddisglair. Tua 7,500 blwyddyn-golau i ffwrdd, maent yn gorwedd o fewn Braich Perseus ein galaeth ac yn rhestru ymhlith y gwrthrychau dwynoculars gorau yn yr awyr y gogledd.
+    </string>
+    <string name="object_info_double_cluster_funfact" translation_description="Fun fact about the Double Cluster shown in the info card. Translate this text.">
+    Ar ond 14 miliwn mlwyddyn oed, mae\'r Clwstwr Dwbl yn rhyfeddol o ifanc — mor ddiweddar ei eni fel bod ei sêr mwyaf enfawr yn dal i losgi fel uwchgigantau glas, gyda llond llaw eisoes wedi esblygu i fod yn uwchgigantau coch prin ac anbennig.
+    </string>
+    <string name="object_info_double_cluster_distance" translation_description="Distance to the Double Cluster shown in the info card. Translate units if appropriate for your locale.">~7,500 blwyddyn-golau</string>
+    <string name="object_info_double_cluster_size" translation_description="Physical size of the Double Cluster shown in the info card. Translate units if appropriate for your locale.">
+    Pob clwstwr ~70 blwyddyn-golau ar draws; y pâr wedi\'u gwahanu gan ~1,000 blwyddyn-golau
+    </string>
+
+    <!-- 47 Tucanae (NGC 104) -->
+    <string name="object_info_n47_tucanae_description" translation_description="Description of 47 Tucanae shown in the info card. Translate this text.">
+    Mae 47 Tucanae (NGC 104) yn yr ail glwstwr globwlaidd disgleiriaf yn yr awyr, pêl drwchus o tua miliwn o sêr hynafol yn cylchdroi o amgylch y Llwybr Llaethog yn y seren-ddarlun Tucana. Ar tua 14,500 blwyddyn-golau i ffwrdd, mae\'n ymddangos i\'r llygad noeth fel seren tywyll pedwerydd-maint, ond mae telesgop yn datrys ei chraidd cywasgeddig yn haid ryfeddol o haul aur a glas-wyn. Ffurfiwyd ei sêr tua 13 biliwn o flynyddoedd yn ôl, gan wneud y clwstwr bron mor hen â\'r bydysawd ei hun.
+    </string>
+    <string name="object_info_n47_tucanae_funfact" translation_description="Fun fact about 47 Tucanae shown in the info card. Translate this text.">
+    Mae 47 Tucanae yn ffatri pwlsar cosmig: mae seryddwyr wedi canfod o leiaf 35 pwlsar millisecond yn troi cannoedd o weithiau yr eiliad y tu mewn iddo — mwy nag mewn unrhyw glwstwr globwlaidd arall a adwaenir — canlyniad cyfarfyddiadau clos sêr sy\'n ailgylchu hen sêr niwtron trwy eu troi i fyny.
+    </string>
+    <string name="object_info_n47_tucanae_distance" translation_description="Distance to 47 Tucanae shown in the info card. Translate units if appropriate for your locale.">~14,500 blwyddyn-golau</string>
+    <string name="object_info_n47_tucanae_size" translation_description="Physical size of 47 Tucanae shown in the info card. Translate units if appropriate for your locale.">~120 blwyddyn-golau ar draws</string>
+
+    <!-- Centaurus A (NGC 5128) -->
+    <string name="object_info_centaurus_a_description" translation_description="Description of Centaurus A shown in the info card. Translate this text.">
+    Centaurus A (NGC 5128) yw\'r alaeth radio weithredol agosaf at y Ddaear, alaeth eliptig enfawr yn y cytser Centaurus y mae ei lôn lwch tywyll trawiadol yn datgelu gorffennol treisgar — alaeth droellog a lyncodd tua 200–700 miliwn o flynyddoedd yn ôl. Yn ei galon mae twll du uwchfawr o 55 miliwn o fassau solar sy\'n gyrru pelydrau perthnaseddol yn ymestyn dros filiwn o flynyddoedd golau mewn tonfeddi radio. Ar bellter o tua 12 miliwn o flynyddoedd golau, mae\'n un o\'r alaetha mwyaf astudiwyd yn yr awyr.
+    </string>
+    <string name="object_info_centaurus_a_funfact" translation_description="Fun fact about Centaurus A shown in the info card. Translate this text.">
+    Mae Centaurus A yn un o\'r trosglwyddwyr radio naturiol mwyaf pwerus yn yr awyr — mae ei jêts yn chwythu plasma tuag allan ar gyflymder bron yn gyfartal â chyflymder golau, ac mae estyniad llawn ei lobed radio yn ymestyn dros ardal sy\'n gyfwerth â thua 100 o leuadau llawn wedi\'u gosod pen-wrth-ben ar draws yr awyr.
+    </string>
+    <string name="object_info_centaurus_a_distance" translation_description="Distance to Centaurus A shown in the info card. Translate units if appropriate for your locale.">~12 miliwn blwyddyn-golau</string>
+    <string name="object_info_centaurus_a_size" translation_description="Physical size of Centaurus A shown in the info card. Translate units if appropriate for your locale.">~123,000 blwyddyn-golau ar draws</string>
+
     <!-- ==================== CONSTELLATIONS ==================== -->
     <!-- Note: Constellation names are defined in celestial_objects.xml -->
     <!-- Orion -->
@@ -1971,4 +2032,697 @@
     Mae Vulpecula yn cynnwys y Dumbbell Nebula (M27), y nifwla blanedol gyntaf a ddarganfuwyd erioed (gan Charles Messier yn 1764), ac mae\'n darged binoclwlar hardd!
     </string>
     <string name="object_info_vulpecula_size" translation_description="Physical size of Vulpecula shown in the info card. Translate units if appropriate for your locale.">268 gradd sgwâr</string>
+
+    <!-- Galilean Moons of Jupiter -->
+    <string name="object_info_io_description" translation_description="Description of Io shown in the info card. Translate this text.">
+    Io yw\'r mwyaf mewnol o bedwar lleuad Galileaidd mawr Iau ac yw\'r corff mwyaf gweithgar yn folcanig yn y system solar.
+    </string>
+    <string name="object_info_io_funfact" translation_description="Fun fact about Io shown in the info card. Translate this text.">
+    Mae gan Io gannoedd o losgfynyddoedd gweithredol, rhai\'n ffrwydro ffynhonnau lafa ddwsinau o gilometrau i fyny. Mae ei weithgarwch parhaus yn cael ei yrru gan wresogi tymor-chwil o ddisgyrchiant enfawr Iau.
+    </string>
+    <string name="object_info_io_distance" translation_description="Distance to Io shown in the info card. Translate units if appropriate for your locale.">421,700 km o Iupiter</string>
+    <string name="object_info_io_size" translation_description="Physical size of Io shown in the info card. Translate units if appropriate for your locale.">3,643 km diamedr</string>
+
+    <string name="object_info_europa_description" translation_description="Description of Europa shown in the info card. Translate this text.">
+    Mae Europa yn ail loer Galileo ac y credir bod cefnfor dŵr hylif enfawr oddi tani i\'w gramen iâ, gan ei gwneud yn un o\'r llefydd mwyaf addawol i chwilio am fywyd.
+    </string>
+    <string name="object_info_europa_funfact" translation_description="Fun fact about Europa shown in the info card. Translate this text.">
+    Efallai bod cefnfor tanddaearol Ewropa yn cynnwys ddwywaith cymaint o ddŵr hylif ag holl gefnforoedd y Ddaear gyda\'i gilydd, wedi\'i gadw\'n hylif gan wres llanw o Iupiter.
+    </string>
+    <string name="object_info_europa_distance" translation_description="Distance to Europa shown in the info card. Translate units if appropriate for your locale.">671,100 km o Iupiter</string>
+    <string name="object_info_europa_size" translation_description="Physical size of Europa shown in the info card. Translate units if appropriate for your locale.">3,122 km diamedr</string>
+
+    <string name="object_info_ganymede_description" translation_description="Description of Ganymede shown in the info card. Translate this text.">
+    Mae Ganymede yn y lleuad fwyaf yn y system solar — hyd yn oed yn fwy na\'r blaned Mercwri. Dyma\'r unig leuad y gwyddys ei bod yn cynhyrchu ei maes magnetig ei hun.
+    </string>
+    <string name="object_info_ganymede_funfact" translation_description="Fun fact about Ganymede shown in the info card. Translate this text.">
+    Mae Ganymede yn fwy na Mercwri o ran maint, er mai dim ond tua hanner ei fàs sydd ganddo. Mae ei faes magnetig mewnol yn creu ei magnetosffer bychan ei hun o fewn un llawer mwy Iau.
+    </string>
+    <string name="object_info_ganymede_distance" translation_description="Distance to Ganymede shown in the info card. Translate units if appropriate for your locale.">1,070,400 km o Iupiter</string>
+    <string name="object_info_ganymede_size" translation_description="Physical size of Ganymede shown in the info card. Translate units if appropriate for your locale.">5,268 km diamedr</string>
+
+    <string name="object_info_callisto_description" translation_description="Description of Callisto shown in the info card. Translate this text.">
+    Mae Callisto yn allanol-fwyaf y lleuadau Galileaidd ac yn un o\'r cyrff mwyaf wedi\'u crateru yn y system solar, gyda\'i wyneb hynafol yn cadw cofnod o effeithiau system solar gynnar.
+    </string>
+    <string name="object_info_callisto_funfact" translation_description="Fun fact about Callisto shown in the info card. Translate this text.">
+    Mae Callisto yn cylchdroi y tu hwnt i brif wregysau ymbelydredd Iau, gan ei wneud yn y ddiogela o\'r lleuadau Galileaidd ar gyfer archwilio dynol yn y dyfodol — weithiau gelwir ef yn \'leuad y porth\'.
+    </string>
+    <string name="object_info_callisto_distance" translation_description="Distance to Callisto shown in the info card. Translate units if appropriate for your locale.">1,882,700 km o Iupiter</string>
+    <string name="object_info_callisto_size" translation_description="Physical size of Callisto shown in the info card. Translate units if appropriate for your locale.">4,821 km diamedr</string>
+
+    <!-- Moons of Mars -->
+    <string name="object_info_phobos_description" translation_description="Description of Phobos shown in the info card. Translate this text.">
+    Phobos yw\'r mwy mawr ac agosaf at Mars o\'i ddwy loer, gan orbitu\'n agosach at ei blaned nag unrhyw loer arall yn y system solar. Mae\'n gorff siâp afreolaidd, wedi\'i rygnu a\'i grafu\'n drwm, a ystyrir yn asteroid a gipiasid.
+    </string>
+    <string name="object_info_phobos_funfact" translation_description="Fun fact about Phobos shown in the info card. Translate this text.">
+    Mae Phobos yn cylchdroi Mars mor gyflym fel ei fod yn codi yn y gorllewin ac yn machlud yn y dwyrain — ac mae\'n araf droi tuag i mewn, wedi\'i dynged i naill ai daro Mars neu dorri\'n ddarnau i ffurfio cylch mewn tua 50 miliwn o flynyddoedd.
+    </string>
+    <string name="object_info_phobos_distance" translation_description="Distance to Phobos shown in the info card. Translate units if appropriate for your locale.">9,376 km o Fawrth</string>
+    <!-- tm:omitted name="object_info_phobos_size" reason="identical_to_source" -->
+
+    <string name="object_info_deimos_description" translation_description="Description of Deimos shown in the info card. Translate this text.">
+    Deimos yw\'r llai a\'r allanol o ddwy leuad Mars, gyda wyneb llyfn, wedi\'i orchuddio â llwch sy\'n rhoi iddo ymddangosiad crwn na Phobos. Fel ei gyfaill, credir ei fod yn asteroid a gipiasid o\'r gwregys allanol.
+    </string>
+    <string name="object_info_deimos_funfact" translation_description="Fun fact about Deimos shown in the info card. Translate this text.">
+    Mae Deimos mor fach ac mor bell fel ei fod yn edrych fel dim mwy na seren ddisglair o wyneb Mawrth, gan gymryd tua 30 awr i symud yn araf ar draws yr awyr nos.
+    </string>
+    <string name="object_info_deimos_distance" translation_description="Distance to Deimos shown in the info card. Translate units if appropriate for your locale.">23,460 km o Fawrth</string>
+    <!-- tm:omitted name="object_info_deimos_size" reason="identical_to_source" -->
+
+    <!-- Major Moons of Saturn -->
+    <string name="object_info_titan_description" translation_description="Description of Titan shown in the info card. Translate this text.">
+    Titan yw loeren fwyaf Satŵrn a\'r ail loeren fwyaf yn y system solar. Dyma\'r unig loeren y gwyddys bod ganddi atmosffer trwchus — blancedi nitrogen trwchus wedi\'i drwytho â methan — a\'r unig fyd y tu hwnt i\'r Ddaear y gwyddys bod moroedd hylif sefydlog ar ei wyneb.
+    </string>
+    <string name="object_info_titan_funfact" translation_description="Fun fact about Titan shown in the info card. Translate this text.">
+    Mae llynoedd a moroedd Titan yn llawn nid o ddŵr ond o fethan a ethan hylif ar dymheredd rhewllyd −179°C. Bydd cenhadaeth rotorcraft Dragonfly NASA, sydd i gyrraedd yn 2034, yn hedfan rhwng safleoedd ar wyneb Titan i chwilio am gemeg bywyd.
+    </string>
+    <string name="object_info_titan_distance" translation_description="Distance to Titan shown in the info card. Translate units if appropriate for your locale.">1,221,870 km o Satŵrn</string>
+    <string name="object_info_titan_size" translation_description="Physical size of Titan shown in the info card. Translate units if appropriate for your locale.">5,151 km diamedr</string>
+
+    <string name="object_info_rhea_description" translation_description="Description of Rhea shown in the info card. Translate this text.">
+    Mae Rhea yn ail loeren fwyaf Saturnus ac yn fyd wedi\'i grafu\'n drwm o rew a chareg. Mae ei wyneb golau, hynafol yn cadw rhai o\'r craterau trawiad mwyaf glân y system solar, ochr yn ochr â chllogwyni iâ disglair lle mae llithro tir wedi datgelu deunydd ffres o dan y wyneb.
+    </string>
+    <string name="object_info_rhea_funfact" translation_description="Fun fact about Rhea shown in the info card. Translate this text.">
+    Yn 2008, awgrymodd data Cassini y gallai Rhea fod â chadwyn denau o wellt yn cylchdroi o\'i chwmpas — a fyddai\'n ei gwneud yn y lleuad gyntaf erioed i gael ei darganfod gyda\'i system fodrwyau ei hun. Pe bai\'n cael ei gadarnhau, byddai\'n ddarganfyddiad rhyfeddol; mae\'r dystiolaeth yn parhau i fod yn faes ymchwil gweithredol.
+    </string>
+    <string name="object_info_rhea_distance" translation_description="Distance to Rhea shown in the info card. Translate units if appropriate for your locale.">527,108 km o Satŵrn</string>
+    <string name="object_info_rhea_size" translation_description="Physical size of Rhea shown in the info card. Translate units if appropriate for your locale.">1,527 km diamedr</string>
+
+    <string name="object_info_tethys_description" translation_description="Description of Tethys shown in the info card. Translate this text.">
+    Mae Tethys yn leuad rewllyd o Saturn a ddominyddir gan ddwy nodwedd ddramatig: crater Odysseus enfawr, 400 km o led ac yn gorchuddi bron i draean wyneb y leuad, ac Ithaca Chasma, system ganyon sy\'n ymestyn tri chwarter o\'r ffordd o amgylch y glôb.
+    </string>
+    <string name="object_info_tethys_funfact" translation_description="Fun fact about Tethys shown in the info card. Translate this text.">
+    Mae Tethys yn bron yn pur iâ dŵr — mae ganddo un o\'r dwyseddau isaf o unrhyw leuad yn y system solar, prin yn ddwysach na dŵr rhewedig. Efallai bod Ithaca Chasma wedi ffurfio pan rewyd yr tu mewn a ehangu, gan graciu\'r gramen uwchlaw o\'r tu mewn.
+    </string>
+    <string name="object_info_tethys_distance" translation_description="Distance to Tethys shown in the info card. Translate units if appropriate for your locale.">294,619 km o Satŵrn</string>
+    <string name="object_info_tethys_size" translation_description="Physical size of Tethys shown in the info card. Translate units if appropriate for your locale.">1,062 km diamedr</string>
+
+    <string name="object_info_dione_description" translation_description="Description of Dione shown in the info card. Translate this text.">
+    Mae Dione yn leuad rewllyd o Saturn gyda wyneb arweiniol wedi\'i grafu\'n drwm ac hemisffer olaf wedi\'i frithio â clogwyni iâ disglair — llinellau toriad lle mae grymoedd tectonig hynafol wedi amlygu iâ ffres o\'r isod. Mae data disgyrchiant Cassini yn awgrymu bod cefnfor hylif tanddaearol o dan y gramen.
+    </string>
+    <string name="object_info_dione_funfact" translation_description="Fun fact about Dione shown in the info card. Translate this text.">
+    Mae Dione yn rhannu ei horbit gyda dwy leuad fach, Helene a Polydeuces, sydd wedi\'u cloi 60° o\'i blaen ac o\'i hôl ar bwyntiau ecwilibrium disgyrchiant o\'r enw pwyntiau Lagrange. Yn arbennig, gellir gweld Helene yn teithio fel teithiwr cosmig yn y delweddau Cassini.
+    </string>
+    <string name="object_info_dione_distance" translation_description="Distance to Dione shown in the info card. Translate units if appropriate for your locale.">377,396 km o Satŵrn</string>
+    <string name="object_info_dione_size" translation_description="Physical size of Dione shown in the info card. Translate units if appropriate for your locale.">1,122 km diamedr</string>
+
+    <string name="object_info_iapetus_description" translation_description="Description of Iapetus shown in the info card. Translate this text.">
+    Mae Iapetus yn un o\'r lleuadau mwyaf nodedig Saturn: mae ei hemisffer blaen wedi\'i orchuddio mewn deunydd du fel glo, tra bod ei hemisffer ôl yn rew gwyn disglair. Roedd yr ymddangosiad dwy-don eithafol hwn yn ddryswch i Giovanni Cassini pan ddarganfyddodd y lleuad yn 1671, ac mae\'r cyferbyniad mor drawiadol fel ei fod yn weladwy mewn telescopau bach.
+    </string>
+    <string name="object_info_iapetus_funfact" translation_description="Fun fact about Iapetus shown in the info card. Translate this text.">
+    Mae Iapetus hefyd yn arddangos crib cyhydeddol uchel sy\'n codi 20 km i\'r awyr — yn dalach na dim mynydd ar y Ddaear — yn rhedeg miloedd o gilometrau o amgylch ei gyhydedd. Mae ei darddiad yn anhysbys: gallai fod yn weddill cylch wedi cwympo, neu blygiad tectonig hynafol, a ffurfiwyd pan oedd y lleuad yn troelli llawer yn gyflymach amser maith yn ôl.
+    </string>
+    <string name="object_info_iapetus_distance" translation_description="Distance to Iapetus shown in the info card. Translate units if appropriate for your locale.">3,560,820 km o Satŵrn</string>
+    <string name="object_info_iapetus_size" translation_description="Physical size of Iapetus shown in the info card. Translate units if appropriate for your locale.">1,469 km diamedr</string>
+
+    <!-- Moon of Neptune -->
+    <string name="object_info_triton_description" translation_description="Description of Triton shown in the info card. Translate this text.">
+    Mae Triton yn loer fwyaf Neifion ac un o\'r cyrff mwyaf rhyfeddol yn y system solar. Mae\'n cylchdroi Neifion yn ôl — i\'r cyfeiriad dirgroes i\'r blaned ei hun — arwydd cryf ei fod wedi\'i ddal o\'r system solar allanol, yn fwyaf tebygol o\'r Kuiper Belt, yn gynnar yn hanes Neifion.
+    </string>
+    <string name="object_info_triton_funfact" translation_description="Fun fact about Triton shown in the info card. Translate this text.">
+    Er gwaethaf ei dymheredd arwyneb o −235°C — yr oeraf a fesurwyd ar unrhyw gorff a ymwelwyd gan ofod-long — darganfu Voyager 2 ffynnonnau nitrogen gweithredol ar Triton yn 1989. Mae streipiau tywyll ar yr arwyneb yn marcio lle y ffrwydrodd colofnau o nwy a deunydd tywyll gannoedd o gilometrau i\'r atmosffer tenau.
+    </string>
+    <string name="object_info_triton_distance" translation_description="Distance to Triton shown in the info card. Translate units if appropriate for your locale.">354,759 km o Neifion</string>
+    <string name="object_info_triton_size" translation_description="Physical size of Triton shown in the info card. Translate units if appropriate for your locale.">2,707 km diamedr</string>
+
+    <!-- Major Moons of Uranus -->
+    <string name="object_info_titania_description" translation_description="Description of Titania shown in the info card. Translate this text.">
+    Titania yw\'r lloer fwyaf Wranws ac wyth loer fwyaf y system solar. Mae ei wyneb yn dangos cymysgedd o wastatiroedd hen-gratered a sgarpiau a dyffrynnoedd iau, gan awgrymu hanes daearegol cymhleth a allai fod wedi cynnwys gweithgaredd tectonig yn y gorffennol yn ailsiapio\'r gramen rewllyd.
+    </string>
+    <string name="object_info_titania_funfact" translation_description="Fun fact about Titania shown in the info card. Translate this text.">
+    Mae holl loerau Wranws wedi\'u henwi ar ôl cymeriadau o Shakespeare ac Alexander Pope — Titania yw brenhines y tylwyth teg yn A Midsummer Night\'s Dream. Mae\'n un o ychydig iawn o loerau planetaidd mawr nad ydynt wedi\'u henwi ar ôl ffigur o fythroleg Groegaidd na Rhufeinig.
+    </string>
+    <string name="object_info_titania_distance" translation_description="Distance to Titania shown in the info card. Translate units if appropriate for your locale.">435,910 km o Wranws</string>
+    <string name="object_info_titania_size" translation_description="Physical size of Titania shown in the info card. Translate units if appropriate for your locale.">1,578 km diamedr</string>
+
+    <string name="object_info_oberon_description" translation_description="Description of Oberon shown in the info card. Translate this text.">
+    Oberon yw\'r allanol o bum lloer fawr Wranws ac un o\'r rhai sydd wedi\'u crateri\'n drymaf, gyda wyneb hynafol sydd wedi newid ychydig iawn ers dechrau\'r system solar. Mae gan sawl un o\'i chraterau trawiad mawr ddeunydd tywyll ar eu lloriau, yn bosibl yn ddyddodion organig a ddygwyd i mewn gan y cyrff trawiad.
+    </string>
+    <string name="object_info_oberon_funfact" translation_description="Fun fact about Oberon shown in the info card. Translate this text.">
+    Mae Oberon yn lleya mynydd sy\'n codi tua 6 km o\'r caeau o\'i gwmpas — sy\'n debyg i\'r copïau uchaf ar y Ddaear. Yn wahanol i fynyddoedd y Ddaear, a ffurfiwyd trwy dectonic plâtiau, gallai\'r nodwedd hon fod yn gopa canolog crater trawiad hynafol neu\'n weddill o weithgarwch folcanig cynnar.
+    </string>
+    <string name="object_info_oberon_distance" translation_description="Distance to Oberon shown in the info card. Translate units if appropriate for your locale.">583,520 km o Uranus</string>
+    <string name="object_info_oberon_size" translation_description="Physical size of Oberon shown in the info card. Translate units if appropriate for your locale.">1,523 km diamedr</string>
+
+    <string name="object_info_ariel_description" translation_description="Description of Ariel shown in the info card. Translate this text.">
+    Mae gan Ariel yr wyneb ieuengaf a disgleiriaf o bum lloeren fawr Uranus. Mae ei dirwedd yn cael ei dominyddu gan rwydwaith o ddyffrynnoedd dwfn a chaeau llyfn a ailwynebwyd amser maith yn ôl gan hylif — yn ôl pob tebyg dŵr neu gymysgeddau dŵr-amonia — yn codi o\'r tu mewn ac yn llifogydd tir hynafol.
+    </string>
+    <string name="object_info_ariel_funfact" translation_description="Fun fact about Ariel shown in the info card. Translate this text.">
+    Gall Ariel yn cyrraedd 10 km o ddyfnder — llawer yn ddyfnach na\'r Grand Canyon. Mae arsylwadau Telesgop Gofod James Webb wedi canfod rew deuocsid carbon ar wyneb Ariel ers hynny, gan awgrymu cemeg wyneb parhaus a ysgogir gan ronynnau gwefrus o faes magnetig Wranws.
+    </string>
+    <string name="object_info_ariel_distance" translation_description="Distance to Ariel shown in the info card. Translate units if appropriate for your locale.">191,020 km o Uranus</string>
+    <string name="object_info_ariel_size" translation_description="Physical size of Ariel shown in the info card. Translate units if appropriate for your locale.">1,158 km diamedr</string>
+
+    <string name="object_info_umbriel_description" translation_description="Description of Umbriel shown in the info card. Translate this text.">
+    Umbriel yw\'r tywyllaf o bum lleuad fawr Wranws, gyda wyneb hen a chreitiau trwm yn unffurf sy\'n dangos ychydig iawn o\'r ailwampio daearegol a welir ar ei gymydog. Mae\'n ymddangos bod ei tu mewn wedi aros yn oer ac wedi\'i rewi ers dechrau hanes y system solar.
+    </string>
+    <string name="object_info_umbriel_funfact" translation_description="Fun fact about Umbriel shown in the info card. Translate this text.">
+    Yr nodwedd fwyaf trawiadol ar Umbriel yw Wunda, cylch disglair tua 140 km ar draws ger ei gyhydedd. Fe\'i darganfuwyd gan Voyager 2 yn 1986, ac mae natur union Wunda yn parhau i fod yn ddirgelwch — gallai fod yn lawr crater wedi\'i orchuddio â deuocsid carbon neu farrug amonia a ddosbarthwyd hir ar ôl yr effaith a\'i ffurfiodd.
+    </string>
+    <string name="object_info_umbriel_distance" translation_description="Distance to Umbriel shown in the info card. Translate units if appropriate for your locale.">266,300 km o Uranus</string>
+    <string name="object_info_umbriel_size" translation_description="Physical size of Umbriel shown in the info card. Translate units if appropriate for your locale.">1,170 km diamedr</string>
+
+    <!-- Globular clusters already on the map -->
+    <string name="object_info_omega_centauri_description" translation_description="Description of Omega Centauri shown in the info card. Translate this text.">
+    Omega Centauri yw\'r clwstwr globwlaidd mwyaf a\'r mwyaf trwm yn cylchdroi\'r Llaeth Llwyd, yn cynnwys tua 10 miliwn o sêr wedi\'u pacio mewn sffêr tua 150 o flynyddoedd golau ar draws. Mae\'n hawdd ei weld â\'r llygad noeth fel seren niwlog yn Centaurus, ac mae\'n datgelu\'n bêl anadlol o sêr trwy ddwynoculars neu unrhyw delesgop.
+    </string>
+    <string name="object_info_omega_centauri_funfact" translation_description="Fun fact about Omega Centauri shown in the info card. Translate this text.">
+    Yn wahanol i glystyrau globwlaidd nodweddiadol, mae Omega Centauri yn cynnwys sêr o oedrannau a chyfansoddiadau cemegol gwahanol iawn — arwydd ei fod yn bosibl mai cnewyllyn noeth galaeth corrach ydyw a gafodd ei rwygo ar wahân a\'i lyncu gan y Llwybr Llaeth filiwn o flynyddoedd yn ôl. Efallai hyd yn oed ei fod yn harbwr twll du màs-canolig yn ei ganol.
+    </string>
+    <string name="object_info_omega_centauri_distance" translation_description="Distance to Omega Centauri shown in the info card. Translate units if appropriate for your locale.">17,090 blwyddyn-olau</string>
+    <string name="object_info_omega_centauri_size" translation_description="Physical size of Omega Centauri shown in the info card. Translate units if appropriate for your locale.">~150 blwyddyn-olau diamedr</string>
+
+    <!-- Deep-sky objects: new catalog additions -->
+    <string name="object_info_hyades_description" translation_description="Description of the Hyades star cluster shown in the info card. Translate this text.">
+    Mae\'r Hyades yn y clwstwr sêr agored agosaf at y system solar ac un o\'r rhai mwyaf astudiwyd mewn seryddiaeth. Yn weladwy i\'r llygad noeth fel patrwm siâp V o sêr sy\'n ffurfio wyneb Taurus, mae\'n cynnwys sawl cant o sêr wedi\'u lleoli ar draws tua 5° o\'r awyr.
+    </string>
+    <string name="object_info_hyades_funfact" translation_description="Fun fact about the Hyades shown in the info card. Translate this text.">
+    Mae\'r seren oren disglair Aldebaran yn ymddangos fel pe bai\'n eistedd o fewn yr Hyades ond mewn gwirionedd mae\'n wrthrych rhagflaen ar hanner y pellter — yn alinio\'n ddamweiniol. Mae\'r clwstwr gwirioneddol tua 153 blwyddyn-golau i ffwrdd ac mae\'n cynnwys y sêr cyntaf y mesurwyd eu pellterau trwy barallacs o\'r lloeren Hipparcos.
+    </string>
+    <string name="object_info_hyades_distance" translation_description="Distance to the Hyades shown in the info card. Translate units if appropriate for your locale.">153 blwyddyn-olau</string>
+    <string name="object_info_hyades_size" translation_description="Angular size of the Hyades shown in the info card.">~5° ar draws</string>
+
+    <string name="object_info_coma_star_cluster_description" translation_description="Description of the Coma Berenices Star Cluster shown in the info card. Translate this text.">
+    Mae Clwstwr Sêr Coma Berenices yn glwstwr agored gerllaw sy\'n cynnwys tua 40 o sêr wedi\'u gwasgaru\'n llac ar draws bron 5° o\'r awyr, yn hawdd i\'w weld â\'r llygad noeth fel niwl meddal mewn amodau tywyll. Dyma\'r trydydd clwstwr agored agosaf at y system solar a ffynhonnell y seren-ddarlun Coma Berenices.
+    </string>
+    <string name="object_info_coma_star_cluster_funfact" translation_description="Fun fact about the Coma Berenices Star Cluster shown in the info card. Translate this text.">
+    Gwelai arsylwyr hynafol y clwstwr hwn fel gwallt Brenhines Berenice II o Aifft, a dorrodd ei chuddiau aur yn chwedlonol yn offrwm dros ddiogelwch ei gŵr o ryfel. Yn ôl yr hanes, roedd Ptolemaeus III wedi enwi\'r cytser anghyffredin yn swyddogol er ei hanrhydedd tua 245 CC.
+    </string>
+    <string name="object_info_coma_star_cluster_distance" translation_description="Distance to the Coma Star Cluster shown in the info card. Translate units if appropriate for your locale.">288 blwyddyn-olau</string>
+    <string name="object_info_coma_star_cluster_size" translation_description="Angular size of the Coma Star Cluster shown in the info card.">~5° ar draws</string>
+
+    <string name="object_info_coathanger_description" translation_description="Description of the Coathanger asterism shown in the info card. Translate this text.">
+    Mae\'r Coathanger yn asterism trawiadol o ddeg seren yn Vulpecula sy\'n ffurfio siâp na ellir ei gamgymeryd: chwe seren mewn llinell syth gyda phedwar yn hongian islaw mewn bachyn, yn union fel hanger dillad wedi\'i droi wyneb i waered. Mae\'n un o\'r gwrthrychau deunodd gorau yn yr awyr haf, yn ffitio\'n daclus mewn maes gweld deunodd nodweddiadol.
+    </string>
+    <string name="object_info_coathanger_funfact" translation_description="Fun fact about the Coathanger shown in the info card. Translate this text.">
+    Er gwaethaf ei fod yn edrych fel clwstwr, nid yw sêr y Coathanger yn gysylltiedig yn ffisegol — maent yn gorwedd ar bellteroedd gwahanol iawn ac yn syml yn gyd-ddigwyddiad llinell-o-olwg. Cafodd Clwstwr Brocchi ei gatalogau gan Dalmiro Brocchi yn y 1920au, a\'r telesgop gofod cyntaf i\'w ddelweddu oedd Hipparcos, a gadarnhaodd fod y sêr yn ddi-gysylltiedig.
+    </string>
+    <string name="object_info_coathanger_distance" translation_description="Distance to the Coathanger shown in the info card. Translate units if appropriate for your locale.">~420 blwyddyn-olau (seren disgleiraf)</string>
+    <string name="object_info_coathanger_size" translation_description="Angular size of the Coathanger shown in the info card.">~1° ar draws</string>
+
+    <string name="object_info_helix_nebula_description" translation_description="Description of the Helix Nebula shown in the info card. Translate this text.">
+    Mae Nifwla Helix yn nifwla blanedol fwyaf o ran maint ymddangosiadol yn yr awyr — cragen nwy sy\'n ehangu a ollyngwyd gan seren debyg i\'r Haul ar ddiwedd ei hoes. Yn ymestyn tua hanner gradd, mae\'n weladwy mewn dwynoculars fel disgleiriad crwn gwan yn Aquarius ac fe\'i gelwir yn Llygad Duw oherwydd ei ymddangosiad mewn ffotograffau hir-agoriad.
+    </string>
+    <string name="object_info_helix_nebula_funfact" translation_description="Fun fact about the Helix Nebula shown in the info card. Translate this text.">
+    Yn y canol y Helix Nebula mae un o\'r dwarfiau gwyn agosaf at y Ddaear — gweddill seren poeth iawn tua maint y Ddaear ond â màs yr Haul. Dyma\'r tynged sy\'n aros ein Haul ni mewn tua phum biliwn o flynyddoedd.
+    </string>
+    <string name="object_info_helix_nebula_distance" translation_description="Distance to the Helix Nebula shown in the info card. Translate units if appropriate for your locale.">650 blwyddyn-olau</string>
+    <string name="object_info_helix_nebula_size" translation_description="Angular size of the Helix Nebula shown in the info card.">~3 blwyddyn-olau diamedr</string>
+
+    <string name="object_info_sculptor_galaxy_description" translation_description="Description of the Sculptor Galaxy shown in the info card. Translate this text.">
+    Mae Galaeth y Cerflunydd yn un o\'r talaethau troellog ymyl-ymlaen disgleiriaf a phrydfertha sy\'n weladwy o\'r Ddaear, yn ymddangos fel llewyrch hirsgwar yn y cytser deheuol Cerflunydd. Mae\'n un o\'r talaethau ffrwydrad sêr agosaf — galaeth sy\'n mynd trwy ffrwydrad dwys o ffurfiant sêr — sy\'n weladwy i seryddwyr amatur gyda dwynoculars o awyr tywyll.
+    </string>
+    <string name="object_info_sculptor_galaxy_funfact" translation_description="Fun fact about the Sculptor Galaxy shown in the info card. Translate this text.">
+    Mae Galaeth y Cerflunydd yn un o\'r aelodau disgleiraf o Grŵp Sculptor — y grŵp galaeth agosaf at ein Grŵp Lleol ein hunain. Mae ei rhanbarth starburst canolog yn cynhyrchu sêr newydd ar gyfradd sawl gwaith yn uwch na\'r Llwybr Llaeth, wedi\'i ysgogi gan ryngweithiadau blaenorol gyda galathau cyfagos.
+    </string>
+    <string name="object_info_sculptor_galaxy_distance" translation_description="Distance to the Sculptor Galaxy shown in the info card. Translate units if appropriate for your locale.">11.4 miliwn blwyddyn-olau</string>
+    <string name="object_info_sculptor_galaxy_size" translation_description="Physical size of the Sculptor Galaxy shown in the info card. Translate units if appropriate for your locale.">~90,000 blwyddyn-olau ar draws</string>
+
+    <string name="object_info_blue_snowball_nebula_description" translation_description="Description of the Blue Snowball Nebula shown in the info card. Translate this text.">
+    Mae\'r Blue Snowball yn nifwla blanedol yn Andromeda — cragen nwy disglair a ollyngwyd gan seren farw. Ar faint 8.3, mae\'n un o\'r nifwlâu planedol disgeiraf a mwyaf lliwgar yn yr awyr, yn ymddangos fel disg glas-wyrdd byw hyd yn oed mewn telescopau bach. Mae ei siâp cymesur a\'i liw dwys yn ei wneud yn ffefrynnau ymhlith arsylwyr.
+    </string>
+    <string name="object_info_blue_snowball_nebula_funfact" translation_description="Fun fact about the Blue Snowball Nebula shown in the info card. Translate this text.">
+    Mae lliw trawiadol y Pelen Eira Las yn dod o ocsigen dwbl-ionaidd yn disgleirio ar donfedd gwyrdd penodol, wedi\'i gyfuno â allyriad hydrogen — palet lliw y mae llygaid dynol yn ei ganfod fel glas-wyrdd. Mae gan y corrach gwyn canolog dymheredd arwyneb o tua 100,000°C, digon poeth i ioneidio\'r nwy o\'i amgylch ar y pellter hwn.
+    </string>
+    <string name="object_info_blue_snowball_nebula_distance" translation_description="Distance to the Blue Snowball Nebula shown in the info card. Translate units if appropriate for your locale.">~2,500 blwyddyn-olau</string>
+    <string name="object_info_blue_snowball_nebula_size" translation_description="Physical size of the Blue Snowball Nebula shown in the info card. Translate units if appropriate for your locale.">~0.8 blwyddyn-olau diamedr</string>
+
+    <string name="object_info_ghost_of_jupiter_description" translation_description="Description of the Ghost of Jupiter planetary nebula shown in the info card. Translate this text.">
+    Mae Ysbryd Iau yn nifwla blanedol disglair yn Hydra sydd â maint ymddangosiadol tebyg i\'r blaned Iau — felly y daw ei enw. Ar faint 8.6 mae\'n un o\'r nifwlâu planedol mwyaf hygyrch yn yr awyr ar gyfer telescopau bach, gan ddangos disg clir ac awgrym o liw mewn apertiwrau cymedrol.
+    </string>
+    <string name="object_info_ghost_of_jupiter_funfact" translation_description="Fun fact about the Ghost of Jupiter shown in the info card. Translate this text.">
+    Mae Ysbryd Iau yn cynnwys plisgyn disglair mewnol wedi\'i amgylchynu gan halo allanol llai disglair — strwythur dwy-blisgyn sy\'n awgrymu bod y seren farw wedi taflu nwy mewn o leiaf dwy gyfnod ar wahân. Mae ei seren ganolog yn un o\'r dwarfiau gwyn poethaf hysbys, gyda thymheredd arwyneb amcangyfrifedig o tua 75,000°C.
+    </string>
+    <string name="object_info_ghost_of_jupiter_distance" translation_description="Distance to the Ghost of Jupiter shown in the info card. Translate units if appropriate for your locale.">~1,400 blwyddyn-olau</string>
+    <string name="object_info_ghost_of_jupiter_size" translation_description="Physical size of the Ghost of Jupiter shown in the info card. Translate units if appropriate for your locale.">~1 blwyddyn-olau diamedr</string>
+
+    <string name="object_info_saturn_nebula_description" translation_description="Description of the Saturn Nebula shown in the info card. Translate this text.">
+    Mae Nifwla Sadwrn yn nifwla blanedol yn Aquarius a enwyd ar ôl ei debygrwydd i\'r blaned Sadwrn — mae estyniadau o\'r enw ansae yn ymwthio o\'r naill ochr a\'r llall fel dolenni modrwy, yn weladwy mewn telescopau cymedrol. Ar faint 8.0 mae\'n un o\'r nifwlâu planedol disgleiraf yn yr awyr ac mae\'n dangos strwythur cymhleth mewn offerynnau mwy.
+    </string>
+    <string name="object_info_saturn_nebula_funfact" translation_description="Fun fact about the Saturn Nebula shown in the info card. Translate this text.">
+    Darganfyddodd William Herschel y Nifwla Satŵrn yn 1782 a nodi\'r ymddangosiad tebyg i Satŵrn. Mae arsylwadau modern yn datgelu o leiaf pedwar haen wahanol o nwy yn amgylchynu\'r dwyren wen ganolog, gan adlewyrchu sawl digwyddiad o golli màs yng nghamau terfynol bywyd y seren.
+    </string>
+    <string name="object_info_saturn_nebula_distance" translation_description="Distance to the Saturn Nebula shown in the info card. Translate units if appropriate for your locale.">~5,000 blwyddyn-olau</string>
+    <string name="object_info_saturn_nebula_size" translation_description="Physical size of the Saturn Nebula shown in the info card. Translate units if appropriate for your locale.">~1 blwyddyn-olau ar draws</string>
+
+    <string name="object_info_ngc_2903_description" translation_description="Description of the galaxy NGC 2903 shown in the info card. Translate this text.">
+    Mae NGC 2903 yn alaeth troellog farred disglair yn Leo, a elwir yn aml yn "y gwrthrych Messier a gollodd Messier" — mae\'n un o\'r galaxïau mwyaf amlwg yn yr awyr nad yw wedi\'i gynnwys yn ei gatalog enwog. Ar faint 8.9 mae\'n hawdd ei weld mewn dwynoculars ac mae\'n dangos strwythur troellog hardd mewn telescopau cymedrol.
+    </string>
+    <string name="object_info_ngc_2903_funfact" translation_description="Fun fact about NGC 2903 shown in the info card. Translate this text.">
+    Mae NGC 2903 yn cynnwys un o\'r crynodiadau uchaf o "bwyntiau poeth" ffurfio sêr a adnabyddir mewn rhanbarth bar canolog galaeth — clystyrau trwchus o sêr ifanc enfawr wedi\'u goleuo gan ffurfiad sêr dwys. Fe\'i defnyddir fel meincnod ar gyfer astudio gweithgaredd starburst mewn galaxïau troellog barrog.
+    </string>
+    <string name="object_info_ngc_2903_distance" translation_description="Distance to NGC 2903 shown in the info card. Translate units if appropriate for your locale.">30 miliwn blwyddyn-olau</string>
+    <string name="object_info_ngc_2903_size" translation_description="Physical size of NGC 2903 shown in the info card. Translate units if appropriate for your locale.">~80,000 blwyddyn-olau ar draws</string>
+
+    <!-- Meteor showers -->
+    <string name="object_info_quadrantids_description" translation_description="Description of the Quadrantids meteor shower shown in the info card. Translate this text.">
+    Mae\'r Quadrantids yn gawod meteorau Ionawr gyda phig miniog iawn, byr sy\'n para ychydig oriau yn unig. Mae\'r radiant yn gorwedd yn y seren-ddarlun Boötes, yn agos i safle\'r seren-ddarlun diffunct Quadrans Muralis y mae\'r gawod wedi\'i henwi ar ei ôl. Mae hyd at 120 meteor yr awr yn weladwy o dan amodau delfrydol.
+    </string>
+    <string name="object_info_quadrantids_funfact" translation_description="Fun fact about the Quadrantids meteor shower shown in the info card. Translate this text.">
+    Yn wahanol i\'r rhan fwyaf o gawodydd mawr sy\'n tarddu o gomêdau, corff rhiant y Quadrantids yw\'r asteroid 2003 EH1 — a ystyrir yn niwclews cysglyd comet a losgwyd allan ganrifoedd yn ôl. Dim ond yn 2003 y cadarnhawyd ei fodolaeth.
+    </string>
+
+    <string name="object_info_lyrids_description" translation_description="Description of the Lyrids meteor shower shown in the info card. Translate this text.">
+    Mae\'r Lyrids yn gawod wanwyn ddibynadwy sy\'n ymbelydru ger y seren disglair Vega yn Lyra. Maent yn cynhyrchu meteorau cyflym, cymharol ddisglair, gan gyrraedd eu huchafbwynt o tua 18 yr awr, ac yn achlysurol yn cynhyrchu peli tân sy\'n gadael llwybr mwg disglair.
+    </string>
+    <string name="object_info_lyrids_funfact" translation_description="Fun fact about the Lyrids meteor shower shown in the info card. Translate this text.">
+    Mae\'r Lyrids yn y cawod meterorau hynaf a gofnodwyd yn ddibynadwy yn hanes. Dogfennodd seryddwyr Tsieinaidd storm o feteorau "yn disgyn fel glaw" yn 687 OCC. Daw\'r rwbel o Gomét Thatcher, sy\'n cymryd 415 mlynedd i orbitu\'r Haul ac a ymwelodd â\'r system solar fewnol ddiwethaf yn 1861.
+    </string>
+
+    <string name="object_info_aquariids_description" translation_description="Description of the Eta Aquariids meteor shower shown in the info card. Translate this text.">
+    Mae\'r Eta Aquariids yn un o ddwy gawod feteor blynyddol a gynhyrchir gan ddebris Comet Halley. Gan gyrraedd hyd at 70 meteor yr awr, mae\'r gawod yn ffafrio\'r hemisffer ddeheuol yn gryf, lle mae\'r radiant yn codi\'n uchel cyn y wawr. Mae arsylwyr gogleddol yn dal i fwynhau cyfradd barchus o 30 neu fwy yr awr.
+    </string>
+    <string name="object_info_aquariids_funfact" translation_description="Fun fact about the Eta Aquariids meteor shower shown in the info card. Translate this text.">
+    Mae meteorau Eta Aquariid yn teithio ar 66 km/s — digon cyflym fel bod yr aer ïoneiddio y maent yn ei greu yn gallu disgleirio am rai eiliadau ar ôl i\'r meteor fynd. Efallai y gwelwch lwch hynafol Halley yn llosgi o\'ch blaen, a ollyngwyd yn ystod un o ymweliadau niferus y comet filoedd o flynyddoedd yn ôl.
+    </string>
+
+    <string name="object_info_deltaaquariids_description" translation_description="Description of the Delta Aquariids meteor shower shown in the info card. Translate this text.">
+    Mae\'r Delta Aquariids Deheuol ar eu huchaf yn hwyr Gorffennaf ac maent yn cael eu gweld orau o\'r lledredau trofannol a deheuol, lle mae\'r radiant yn Aquarius yn dringo\'n uchel cyn y wawr. Maent yn cynhyrchu llif cyson o feteoraid cyflymder canolig ar hyd at 16 yr awr, gyda ychydig o beli tân disglair.
+    </string>
+    <string name="object_info_deltaaquariids_funfact" translation_description="Fun fact about the Delta Aquariids meteor shower shown in the info card. Translate this text.">
+    Mae corff rhiant union y Delta Aquariids yn parhau i fod yn ansicr. Y prif ymgeisydd yw Comet 96P/Machholz, comet anghyffredin gyda chyfnod byr ac orbit sydd wedi\'i gogwyddo\'n uchel sy\'n dod yn rhyfeddol o agos at yr Haul — yn agosach na\'r blaned Mercwri.
+    </string>
+
+    <string name="object_info_perseids_description" translation_description="Description of the Perseids meteor shower shown in the info card. Translate this text.">
+    Mae\'r Perseidau yn y sioe saeth fwyaf poblogaidd y flwyddyn, gan gyrraedd ei huchafbwynt ar nosweithiau cynnes Awst gyda hyd at 100 o saeth fesul awr. Mae rwbel a ollyngwyd gan Gomét Swift-Tuttle yn llosgi yn uchel yn atmosffer y Ddaear, gan gynhyrchu saeth cyflym, disglair — llawer yn gadael traciau disglair parhaus — yn ymbelydru o\'r cytser Perseus.
+    </string>
+    <string name="object_info_perseids_funfact" translation_description="Fun fact about the Perseids meteor shower shown in the info card. Translate this text.">
+    Rhiant y Perseidau, Comet Swift-Tuttle, sydd â niwclews 26 km o led — yn fwy na\'r gwrthrych a feddylir iddo achosi\'r difodiad torfol a ddiweddodd yr einiosawr. Pasiodd y comet trwy\'r system solar fewnol ddiwethaf yn 1992 ac ni fydd yn dychwelyd tan 2125.
+    </string>
+
+    <string name="object_info_orionids_description" translation_description="Description of the Orionids meteor shower shown in the info card. Translate this text.">
+    Mae\'r Orionidau yn ail gawod meteorau a gynhyrchir bob blwyddyn gan Gomét Halley, yn ymbelydriad o gyfagos i glwb codi Orion. Gan eu bod yn cyrraedd eu huchafbwynt o tua 25 yr awr, maent yn adnabyddus am feteorau cyflym, yn aml yn llachar, sy\'n aml yn gadael traciau ïoneiddio disgleirio sy\'n para am sawl eiliad.
+    </string>
+    <string name="object_info_orionids_funfact" translation_description="Fun fact about the Orionids meteor shower shown in the info card. Translate this text.">
+    Mae Comet Halley yn gyfrifol am ddwy siawer meteorau blynyddol: yr Eta Aquariids ym Mai, pan fydd y Ddaear yn croesi llwybr malurion allanol y comet, a\'r Orionids ym Hydref, pan fydd y Ddaear yn croesi\'r llwybr mewnol. Gyda\'i gilydd, maent yn caniatáu i ni samplu llwch Halley hynafol ddwywaith y flwyddyn.
+    </string>
+
+    <string name="object_info_leonids_description" translation_description="Description of the Leonids meteor shower shown in the info card. Translate this text.">
+    Mae\'r Leonidau yn ymbelydru o\'r cryman Leo ac fel arfer yn cynhyrchu tua 20 meteor yr awr. Maent yn enwog am stormydd trawiadol sy\'n digwydd tua bob 33 mlynedd pan fydd y Ddaear yn pasio trwy linyn llwch trwchus a ollyngwyd gan Comet 55P/Tempel-Tuttle. Gall y stormydd hyn gynhyrchu miloedd o feteorau yr awr.
+    </string>
+    <string name="object_info_leonids_funfact" translation_description="Fun fact about the Leonids meteor shower shown in the info card. Translate this text.">
+    Cynhyrchodd storm Leonid 1833 tua 100,000 o feteorau yr awr, gan ddychryn arsylwyr ar draws Gogledd America a oedd yn ofni bod yr awyr ar dân. Lansiodd yr digwyddiad yr astudiaeth wyddonol o sypiau meteor. Digwyddodd stormydd tebyg yn 1966 ac 1999.
+    </string>
+
+    <string name="object_info_puppidvelids_description" translation_description="Description of the Puppid-Velids meteor shower shown in the info card. Translate this text.">
+    Mae\'r Puppid-Velids yn gymhleth o ddawelwch llai sy\'n gorgyffwrdd yn ymbelydradu o\'r cytserau Puppis a Vela yn y Llwybr Llaethog y de. Gan gyrraedd ei uchafbwynt o tua 10 meteor yr awr, maent yn cael eu harsylwi orau o\'r hemisffer y de, lle mae\'r ymbelydriad yn codi\'n uchel yn yr awyr Rhagfyr.
+    </string>
+    <string name="object_info_puppidvelids_funfact" translation_description="Fun fact about the Puppid-Velids meteor shower shown in the info card. Translate this text.">
+    Credir bod y Puppid-Velids yn ddarnau o sawl comed rhiant gwahanol yn hytrach nag o ffynhonnell sengl, gan gynnwys Comet 26P/Grigg-Skjellerup. Nid yw eu radiant deheuol byth yn codi uwchben y gorwel i arsylwyr ar ddeddfeddau gogleddol o tua 40°N, gan eu gwneud yn gawod y mae\'r rhan fwyaf o\'r byd yn ei gweld yn anaml.
+    </string>
+
+    <string name="object_info_geminids_description" translation_description="Description of the Geminids meteor shower shown in the info card. Translate this text.">
+    Mae\'r Geminidau yn cael eu hystyried yn gyffredinol fel y siawer meteorau gorau\'r flwyddyn — cynhyrchiol (hyd at 120 yr awr), dibynadwy, ac yn weithredol o\'r prynhawn cynnar yn hytrach nag ar ôl hanner nos yn unig. Maent yn ymbelydru o\'r cytser Gemini ac yn cynhyrchu ystod eang o danbeidrwydd meteorau, gan gynnwys tân-beli llachar.
+    </string>
+    <string name="object_info_geminids_funfact" translation_description="Fun fact about the Geminids meteor shower shown in the info card. Translate this text.">
+    Yn unigryw ymhlith y cawodydd mawr, mae\'r Geminidau yn dod o asteroid yn hytrach na chomet: 3200 Phaethon, "comet graig" y mae ei orbit yn ei gymryd yn agosach at yr Haul nag unrhyw asteroid arall a enwir. Efallai y bydd y gwres eithafol yn torri ei wyneb creigog ac yn gyrru\'r llwch sy\'n cynhyrchu\'r cawod.
+    </string>
+
+    <string name="object_info_ursids_description" translation_description="Description of the Ursids meteor shower shown in the info card. Translate this text.">
+    Mae\'r Ursidau yn gawod fechan yn ymbelydru o Ursa Minor, yn agos at Polaris, gan eu gwneud yn gylchbegynol ar gyfer arsylwyr y hemisffer gogleddol — yn weladwy drwy\'r nos heb ostwng. Maent yn cyrraedd eu huchafbwynt tua\'r haul-ddro gaeaf ar tua 10 meteor yr awr, a\'r comet rhiant yw 8P/Tuttle.
+    </string>
+    <string name="object_info_ursids_funfact" translation_description="Fun fact about the Ursids meteor shower shown in the info card. Translate this text.">
+    Mae\'r Ursidau yn achlysurol yn cynhyrchu ffrwydradau annisgwyl sy\'n llawer uwch na\'u cyfraddau nodweddiadol. Yn 1945 ac eto yn 2006, cofnododd arsylwyr 50 neu fwy o feteorau yr awr — pump gwaith y brig arferol. Mae\'r codiadau hyn yn digwydd pan fydd y Ddaear yn mynd trwy rhuban anghyffredin o ddebris trwchus a ollyngwyd yn ystod agosiad agos Comet Tuttle.
+    </string>
+
+    <!-- Category 5: Top priority — objects on the map that lacked info cards -->
+    <string name="object_info_m47_description" translation_description="Description of the open star cluster M47 shown in the info card. Translate this text.">
+    Mae M47 yn glwstwr agored llachar, llac yn Puppis, yn hawdd ei weld â\'r llygad noeth ac yn tynnu sylw mewn dwynoculars. Mae tua 50 o sêr wedi\'u gwasgaru dros hanner gradd o\'r awyr, gyda nifer o sêr cawr oren yn ychwanegu lliw cynnes yn erbyn yr aelodau glas-wyn mwy gwan.
+    </string>
+    <string name="object_info_m47_funfact" translation_description="Fun fact about M47 shown in the info card. Translate this text.">
+    Roedd M47 yn un o\'r gwrthrychau Messier "coll" — roedd gwall clerigol yn y cyfesurynnau gwreiddiol Messier wedi\'i osod mewn awyr wag, gan adael y clwstwr heb ei adnabod am bron ddwy ganrif. Dim ond yn 1959 y cadarnhawyd ei wir hunaniaeth fel NGC 2422, pan weithiodd arsylwyr yn ôl o ddisgrifiad Messier i ddod o hyd i\'r gwall.
+    </string>
+    <string name="object_info_m47_distance" translation_description="Distance to M47 shown in the info card. Translate units if appropriate for your locale.">1,600 blwyddyn-olau</string>
+    <string name="object_info_m47_size" translation_description="Physical size of M47 shown in the info card. Translate units if appropriate for your locale.">~14 blwyddyn-olau ar draws</string>
+
+    <string name="object_info_m41_description" translation_description="Description of the open star cluster M41 shown in the info card. Translate this text.">
+    Mae M41 yn glwstwr agored hardd yn Canis Major, yn eistedd dim ond 4° i\'r de o Sirius — y seren fwyaf disglair yn yr awyr nos. Gellir ei weld â\'r llygad noeth o safleoedd tywyll ac mae\'n wych mewn dwynoculars, ac mae\'n cynnwys tua 100 o sêr wedi\'u taenu ar draws maes hael, gyda sawl seren oren drawiadol ymhlith aelodau glas-wyn llai disglair.
+    </string>
+    <string name="object_info_m41_funfact" translation_description="Fun fact about M41 shown in the info card. Translate this text.">
+    Efallai i Aristoteles sylwi M41 tua 325 OCC — posibl yr arsylwiad cofnodedig cynharaf o unrhyw wrthrych dwfn-awyr. Disgrifiodd "smotyn niwlog" i\'r de o Sirius sy\'n cyfateb i safle M41. Os yw\'r adnabyddiaeth yn gywir, roedd M41 yn cael ei drafod bron ddwy fil o flynyddoedd cyn i\'r telesgop gael ei ddyfeisio.
+    </string>
+    <string name="object_info_m41_distance" translation_description="Distance to M41 shown in the info card. Translate units if appropriate for your locale.">2,300 blwyddyn-olau</string>
+    <string name="object_info_m41_size" translation_description="Physical size of M41 shown in the info card. Translate units if appropriate for your locale.">~25 blwyddyn-olau ar draws</string>
+
+    <string name="object_info_m24_description" translation_description="Description of the Sagittarius Star Cloud (M24) shown in the info card. Translate this text.">
+    M24 yw Cwmwl Sêr Sagittarius — nid clwstwr na nifwla ond ffenestr drwy fwlch yn llwch y Llwybr Llaethog, sy\'n datgelu maes sêr trawiadol 2° ar draws. Dyma\'r rhanbarth cyfoethocaf sy\'n weladwy drwy ddwy-wydr unrhyw le yn yr awyr, yn llawn â miloedd o sêr sy\'n ymestyn dros lawer o bellteroedd gwahanol ar yr un pryd.
+    </string>
+    <string name="object_info_m24_funfact" translation_description="Fun fact about M24 shown in the info card. Translate this text.">
+    Nid yw\'r sêr yn M24 ar yr un pellter — mae\'r cwmwl sêr yn cynrychioli trawstoriad o ddisg y Galaeth a welir trwy dwnnel naturiol yn y llwch rhyngserol, yn ymestyn dros bellterau o 10,000 i 16,000 blwyddyn-olau. Wedi\'u hymgorffori o fewn y cwmwl mae niferoedd tywyll a chlystyrau sêr bychan sy\'n ymddangos fel patshau tywyll yn erbyn cefndir sêr disglair.
+    </string>
+    <string name="object_info_m24_distance" translation_description="Distance range to M24 shown in the info card. Translate units if appropriate for your locale.">~10,000–16,000 blwyddyn-olau (ystod)</string>
+    <string name="object_info_m24_size" translation_description="Physical size of M24 shown in the info card. Translate units if appropriate for your locale.">~600 blwyddyn-olau ffenestr ddofn</string>
+
+    <string name="object_info_m25_description" translation_description="Description of the open star cluster M25 shown in the info card. Translate this text.">
+    Mae M25 yn glwstwr agored disglair y gellir ei weld â\'r llygad noeth yn y Saethydd, wedi\'i osod yn erbyn caeau sêr trwchus yr Haf Llwybr Llaethog. Mae tua 600 o sêr wedi\'u gwasgaru ar draws maes hanner gradd, gan ei wneud yn wrthrych deunoculars cyfoethog. Mae ei aelodau disgleiraf yn cynnwys sawl cawr glas-wyn a un o\'r sêr newidiol Cepheid mwyaf astudiwyd yn yr awyr.
+    </string>
+    <string name="object_info_m25_funfact" translation_description="Fun fact about M25 shown in the info card. Translate this text.">
+    Mae M25 yn cynnwys U Sagittarii, seren newidiol Cepheid glasurol sy\'n disgleirio ac yn pylu dros gyfnod o 6.7 diwrnod. Mae Cepheids yn "ganwyllau safonol" hanfodol ar gyfer mesur pellteroedd cosmig oherwydd bod eu cyfnod pulsio yn datgelu eu gwir ddisglerder yn uniongyrchol — defnyddiodd seryddwyr hwy i bennu maint y Llwybr Llaethog yn gyntaf ac yna raddfa\'r bydysawd gweladwy.
+    </string>
+    <string name="object_info_m25_distance" translation_description="Distance to M25 shown in the info card. Translate units if appropriate for your locale.">2,000 blwyddyn-olau</string>
+    <string name="object_info_m25_size" translation_description="Physical size of M25 shown in the info card. Translate units if appropriate for your locale.">~19 blwyddyn-olau ar draws</string>
+
+    <string name="object_info_m39_description" translation_description="Description of the open star cluster M39 shown in the info card. Translate this text.">
+    Mae M39 yn glwstwr agored mawr, gwasgaredig yn Cygnus, yn weladwy i\'r llygad noeth ger Deneb yn y Llwybr Llaethog cyfoethog yr haf. Mae ei tua 30 seren disglair wedi\'u grwpio\'n llac dros radd o\'r awyr, a\'i werthfawrogi orau ar faint isel mewn dwynoculars neu delesgop maes eang — mae maint uwch yn syml yn ei ddatrys yn faes tenau, ddigwyddiad o sêr.
+    </string>
+    <string name="object_info_m39_funfact" translation_description="Fun fact about M39 shown in the info card. Translate this text.">
+    Ar tua 825 o flynyddoedd golau, mae M39 yn un o\'r clystyrau agored agosaf at y Ddaear, ac ar tua 240 miliwn o flynyddoedd oed mae\'n un o\'r clystyrau hynaf y gellir eu gweld â\'r llygad noeth — hen ddigon fel bod ei sêr mwyaf enfawr eisoes wedi dod i ben eu bywydau. Cofnododd Messier ef yn 1764 ac roedd yn un o\'r ychwanegiadau cynharaf at ei gatalog.
+    </string>
+    <string name="object_info_m39_distance" translation_description="Distance to M39 shown in the info card. Translate units if appropriate for your locale.">825 blwyddyn-olau</string>
+    <string name="object_info_m39_size" translation_description="Physical size of M39 shown in the info card. Translate units if appropriate for your locale.">~8 blwyddyn-olau ar draws</string>
+
+    <!-- Category 5: Special cases -->
+    <string name="object_info_m63_description" translation_description="Description of the Sunflower Galaxy (M63) shown in the info card. Translate this text.">
+    Mae Galaeth yr Heulflodyn yn droell disglair yn Canes Venatici y mae ei breichiau tynn, brithwaith â rhanbarthau ffurfio sêr, yn rhoi iddi ddefnydd tebyg i flodyn nodweddiadol mewn ffotograffau hir-agoriad. Ar faint 8.6 mae\'n weladwy mewn dwynoculars o awyr tywyll ac mae\'n dangos ei siâp hirsgwar a\'i niwclews disglair yn hawdd mewn telescopau bach.
+    </string>
+    <string name="object_info_m63_funfact" translation_description="Fun fact about the Sunflower Galaxy shown in the info card. Translate this text.">
+    Darganfyddwyd M63 gan Pierre Méchain yn 1779 — un o nifer fach o wrthrychau Messier a ganfuwyd gan Méchain yn hytrach na Messier ei hun. Mae\'n aelod o\'r M51 Group, wedi\'i gysylltu\'n ffisegol â\'r Whirlpool Galaxy (M51), ac mae\'n dangos arwyddion o ryngweithiad yn y gorffennol: mae llif sêr tywyll, hynafol yn lapio o amgylch ei ddisg allanol.
+    </string>
+    <string name="object_info_m63_distance" translation_description="Distance to the Sunflower Galaxy shown in the info card. Translate units if appropriate for your locale.">29 miliwn blwyddyn-olau</string>
+    <string name="object_info_m63_size" translation_description="Physical size of the Sunflower Galaxy shown in the info card. Translate units if appropriate for your locale.">~100,000 blwyddyn-olau ar draws</string>
+
+    <string name="object_info_ngc_6543_description" translation_description="Description of the Cat's Eye Nebula (NGC 6543) shown in the info card. Translate this text.">
+    Mae Nifwla Llygad y Gath yn un o\'r nifwlâu planetaidd mwyaf cymhleth yn strwythurol a adnabyddir — nwy a allyrwyd gan seren farw wedi\'i lunio\'n gregyn cyd-ganolog, pelydrau, a chlymau disglair sy\'n weladwy mewn delweddau Hubble. Mewn telescopau bach mae\'n ymddangos fel disg glas-wyrdd llachar yn Draco, un o\'r gwrthrychau mwyaf lliwgar yn yr awyr hydrefol.
+    </string>
+    <string name="object_info_ngc_6543_funfact" translation_description="Fun fact about the Cat's Eye Nebula shown in the info card. Translate this text.">
+    Yn 1864, trodd yr seryddwr William Huggins sbectrograff ar y Cat\'s Eye a chanfod ei fod yn wneud o nwy disglair yn hytrach na sêr heb eu datrys — y tro cyntaf i natur unrhyw nifwla blanedol gael ei gadarnhau. Sefydlodd y darganfyddiad hwn faes sbectrograffi nifwla a throdd y farn gyffredinol ar ei phen bod pob nifwla yn glystyrau sêr pell i ffwrdd.
+    </string>
+    <string name="object_info_ngc_6543_distance" translation_description="Distance to the Cat's Eye Nebula shown in the info card. Translate units if appropriate for your locale.">~3,300 blwyddyn-olau</string>
+    <string name="object_info_ngc_6543_size" translation_description="Physical size of the Cat's Eye Nebula shown in the info card. Translate units if appropriate for your locale.">~0.5 blwyddyn-olau o ddiameter</string>
+
+    <string name="object_info_m76_description" translation_description="Description of the Little Dumbbell Nebula (M76) shown in the info card. Translate this text.">
+    Mae\'r Little Dumbbell yn nifwla blanedol yn Perseus gyda siâp wyth-ffigur nodweddiadol — cefnder llai o M27, y Dumbbell Nebula yn Vulpecula. Er ei fod yn y cofnod lleiaf llachar yn y catalog Messier, mae\'n gwobrwyo arsylwi amyneddgar mewn telescopau bach ac yn dangos strwythur hardd mewn offerynnau mwy, gyda dwy lob fwy llachar yn flangio canol llai llachar.
+    </string>
+    <string name="object_info_m76_funfact" translation_description="Fun fact about the Little Dumbbell Nebula shown in the info card. Translate this text.">
+    Yn wreiddiol, catwyd M76 fel dau wrthrych ar wahân — NGC 650 a NGC 651 — oherwydd bod arsylwyr cynnar yn disgrifio\'r ddwy lob disglair yn annibynnol. Mae\'n nifwla blanedol ddeubolyg a ffurfiwyd pan gafodd llif allbwn seren farw ei binsio wrth yr hafalrydd, gan greu dwy lob yn ehangu ar hyd yr echel pegynol tra bod nwy hefyd yn chwyddo tuag allan wrth y canol.
+    </string>
+    <string name="object_info_m76_distance" translation_description="Distance to the Little Dumbbell Nebula shown in the info card. Translate units if appropriate for your locale.">~2,500 blwyddyn-olau</string>
+    <string name="object_info_m76_size" translation_description="Physical size of the Little Dumbbell Nebula shown in the info card. Translate units if appropriate for your locale.">~2 flwyddyn-olau ar draws</string>
+
+    <string name="object_info_v838_mon_description" translation_description="Description of V838 Monocerotis shown in the info card. Translate this text.">
+    Mae V838 Monocerotis yn seren newidiol anghyffredin yn Monoceros a aeth drwy ffrwydrad dramatig yn 2002, gan ddod yn fyr yn un o\'r sêr mwyaf disglair yn y Llwybr Llaethog. Er ei bod yn rhy wan i arsylwyr gweledol heddiw, cynhyrchodd ei hadlais golau yn ehangu — blaenfryn golau yn goleuo cregyn llwch hynafol — rai o\'r delweddau Telesgop Gofod Hubble mwyaf dramatig a dynnwyd erioed.
+    </string>
+    <string name="object_info_v838_mon_funfact" translation_description="Fun fact about V838 Monocerotis shown in the info card. Translate this text.">
+    Mae natur ffrwydrad V838 Mon yn parhau i fod yn destun dadl. Y ddamcaniaeth arweiniol yw uno sêr — dwy seren yn troelli i mewn i\'w gilydd ac yn gwrthdaro — yn hytrach na nova clasurol neu ffrwydrad supergiant. Os cadarnheir hyn, roedd yn y tro cyntaf i ni weld "nova goch llachar" mewn amser real, dosbarth prin o ffrwydrad a achosir gan uno sêr, ac mae digwyddiadau tebyg wedi\'u canfod mewn galaxïau eraill ers hynny.
+    </string>
+    <string name="object_info_v838_mon_distance" translation_description="Distance to V838 Monocerotis shown in the info card. Translate units if appropriate for your locale.">~20,000 blwyddyn-olau</string>
+    <string name="object_info_v838_mon_size" translation_description="Extent of the V838 Monocerotis light echo shown in the info card. Translate units if appropriate for your locale.">~3 blwyddyn-olau (estyniad yr adlais golau)</string>
+
+    <string name="object_info_hdf_description" translation_description="Description of the Hubble Deep Field shown in the info card. Translate this text.">
+    Mae Maes Ddwfn Hubble yn ddarn bach 2.6-arcfunud o awyr ymddangosiadol wag yn Ursa Major, a dynnwyd gan Delesgop Gofod Hubble dros 10 diwrnod yn olynol ym mis Rhagfyr 1995. Datguddiodd yr hyn a ymddangosai fel gofod gwag tua 3,000 o alacsi — yn ymestyn dros filiwn o flynyddoedd o hanes cosmig — ac fe newidiodd ein darlun o\'r bydysawd yn sylfaenol.
+    </string>
+    <string name="object_info_hdf_funfact" translation_description="Fun fact about the Hubble Deep Field shown in the info card. Translate this text.">
+    Dewiswyd y darn o\'r awyr yn benodol oherwydd ei fod yn wag o sêr disglair a galaksïau cyfagos. Ond roedd y ddelwedd a ddeiliodd yn llawn tua 3,000 o alaksïau, gan arwain at yr amcangyfrif bod yr awyr gyfan yn cynnwys tua 200 biliwn o alaksïau — bron pob un ohonynt yn anweledig i unrhyw delesgop cyn Hubble.
+    </string>
+    <string name="object_info_hdf_distance" translation_description="Distance to the most distant galaxies in the Hubble Deep Field shown in the info card. Translate units if appropriate for your locale.">~13 biliwn blwyddyn-olau (y pellaf)</string>
+    <string name="object_info_hdf_size" translation_description="Angular size of the Hubble Deep Field shown in the info card.">2.6 arcfunud (maes y golwg)</string>
+
+    <string name="object_info_m43_description" translation_description="Description of De Mairan's Nebula (M43) shown in the info card. Translate this text.">
+    Nifwla De Mairan yw rhan ddisgysyllt o\'r cymhleth Nifwla Orion fawr, wedi\'i gwahanu oddi wrth M42 gan lonfa lwch tywyll ond yn perthyn i\'r un cwmwl moleciwlaidd enfawr. Wedi\'i henwi ar ôl yr seryddwr Ffrengig Jean-Jacques Dortous de Mairan, a nododd ef yn 1731, mae\'n nifwla allyriad wedi\'i ïoneiddio gan y seren ifanc boeth NU Orionis sydd wedi\'i hymgorffori yn ei chanolbwynt.
+    </string>
+    <string name="object_info_m43_funfact" translation_description="Fun fact about De Mairan's Nebula shown in the info card. Translate this text.">
+    Er bod M43 yn ymddangos fel gwrthrych ar wahân i M42, mae\'r lôn dywyll sy\'n eu rhannu yn gwmwl llwch blaendir — rhan o Gwmwl Moleciwlaidd Orion — sy\'n syml yn rhwystro ein golwg o\'r cysylltiad corfforol rhwng y ddwy ranbarth disglair. Gyda\'i gilydd, maent yn ddim ond ymyl mewnol goleedig cwmwl tywyll enfawr sy\'n ymestyn ar draws llawer o Orion.
+    </string>
+    <string name="object_info_m43_distance" translation_description="Distance to De Mairan's Nebula shown in the info card. Translate units if appropriate for your locale.">1,350 blwyddyn-olau</string>
+    <string name="object_info_m43_size" translation_description="Physical size of De Mairan's Nebula shown in the info card. Translate units if appropriate for your locale.">~8 blwyddyn-olau ar draws</string>
+
+    <string name="object_info_m40_description" translation_description="Description of M40 (Winnecke 4) shown in the info card. Translate this text.">
+    Mae M40 yn unigryw yn y catalog Messier — nid yw\'n nifwla, clwstwr, na galaeth, ond seren ddwbl lydan. Catalogodd Messier ef yn 1764 wrth chwilio am nifwla a adroddwyd gan Johann Hevelius yn Ursa Major, dim ond y pâr hwn o sêr a gafodd, a\'i gofnodi fel na fyddai arsylwyr yn y dyfodol yn ei gamgymryd am rywbeth mwy diddorol.
+    </string>
+    <string name="object_info_m40_funfact" translation_description="Fun fact about M40 shown in the info card. Translate this text.">
+    Nid yw\'r ddwy seren o M40 — a elwir yn Winnecke 4 — wedi\'u rhwymo\'n ddisgyrchiant; maent ar bellteroedd gwahanol ac yn unig ddamwain o alinio. Nododd Messier ei hun nad oedd dim byd "rhyfeddol," ond ei gynhwysodd "i ddangos nad yw\'r nifwla hon yr un fath â\'r rhai yr wyf wedi\'u harchwilio." Rhoddodd ei arfer manwl o ddogfennu negyddion gyfeiriad pendant i arsylwyr yn y dyfodol.
+    </string>
+    <string name="object_info_m40_distance" translation_description="Distance to M40 shown in the info card. Translate units if appropriate for your locale.">~500 blwyddyn-olau</string>
+    <string name="object_info_m40_size" translation_description="Angular separation of the M40 double star shown in the info card.">~50 arcsecond (gwahanu)</string>
+
+    <!-- Category 5: Second tier -->
+    <string name="object_info_m34_description" translation_description="Description of the open star cluster M34 shown in the info card. Translate this text.">
+    Mae M34 yn glwstwr agored disglair, gwasgaredig yn Perseus, yn hawdd ei weld mewn dwy-wydr fel sblash cyfoethog o sêr yn erbyn y Llwybr Llaethog gaeaf. Mae ei tua 400 seren yn gorchuddi ardal bron cyn llydan â\'r Lleuad lawn, gyda llond llaw o sêr deuol llydan yn weladwy i arsylwyr dwy-wydr gofalus.
+    </string>
+    <string name="object_info_m34_funfact" translation_description="Fun fact about M34 shown in the info card. Translate this text.">
+    Gyda hyd at 200 miliwn o flynyddoedd oed, mae M34 yn ganolradd o ran oed — yn ddigon ifanc bod ei sêr poeth las yn dal i ddisgeirio, yn ddigon hen bod y rhai mwyaf enfawr eisoes wedi ffrwydro fel supernovae. Ar 1,500 o flynyddoedd golau mae\'n un o\'r clystyrau Messier agosaf ac mae\'n parhau i fod yn wrthrych teg hyd yn oed o awyr trefol.
+    </string>
+    <string name="object_info_m34_distance" translation_description="Distance to M34 shown in the info card. Translate units if appropriate for your locale.">1,500 blwyddyn-olau</string>
+    <string name="object_info_m34_size" translation_description="Physical size of M34 shown in the info card. Translate units if appropriate for your locale.">~15 blwyddyn-olau ar draws</string>
+
+    <string name="object_info_m23_description" translation_description="Description of the open star cluster M23 shown in the info card. Translate this text.">
+    Mae M23 yn glwstwr agored cyfoethog yn Sagitwrius, wedi\'i osod yn y meysydd sêr trwchus o Llwybr Llaethog yr haf. Tua 150 o sêr wedi\'u gwasgaru dros faes hanner gradd mewn dwynoculars, gan ei wneud yn wrthrych dwynoculars hael yn yr un rhanbarth o\'r awyr â llawer o gemau Messier eraill.
+    </string>
+    <string name="object_info_m23_funfact" translation_description="Fun fact about M23 shown in the info card. Translate this text.">
+    Amcangir bod M23 tua tua 300 miliwn mlwyddyn oed — canolradd o ran oed, gyda\'r rhan fwyaf o\'i sêr enfawr wedi datblygu oddi ar y prif ddilyniant yn barod. Darganfu Messier ef yn 1764 ar un o\'i ymgyrchoedd arsylwi cynhyrchiol yn chwilio trwy gaeau sêr Sagittarius.
+    </string>
+    <string name="object_info_m23_distance" translation_description="Distance to M23 shown in the info card. Translate units if appropriate for your locale.">2,150 blwyddyn-olau</string>
+    <string name="object_info_m23_size" translation_description="Physical size of M23 shown in the info card. Translate units if appropriate for your locale.">~17 blwyddyn-olau ar draws</string>
+
+    <string name="object_info_m37_description" translation_description="Description of the open star cluster M37 shown in the info card. Translate this text.">
+    M37 yw\'r cyfoethocaf a\'r disgleiriaf o\'r tri chlwstwr agored Messier yn Auriga, yn cynnwys tua 500 o sêr mewn maes cryno. Mae\'n wrthrych sbiendrych a thelesgop bach gwych, gyda sgawd o sêr cawr oren yn ychwanegu cyferbyniad lliw i\'r haid las-wyn.
+    </string>
+    <string name="object_info_m37_funfact" translation_description="Fun fact about M37 shown in the info card. Translate this text.">
+    Mae M37 yn cynnwys tua dwsin o sêr cawr coch — nifer yn anarferol o uchel sy\'n adlewyrchu ei oedran cymharol ddatblygedig o tua 300 miliwn o flynyddoedd. Er ei fod yn gorwedd tua 4,500 blwyddyn-golau i ffwrdd — yr un mwyaf pell o\'r tri chlwstwr Messier Auriga — mae\'n dal yn un o\'r clystrau agored gorau yn yr awyr.
+    </string>
+    <string name="object_info_m37_distance" translation_description="Distance to M37 shown in the info card. Translate units if appropriate for your locale.">4,500 blwyddyn-olau</string>
+    <string name="object_info_m37_size" translation_description="Physical size of M37 shown in the info card. Translate units if appropriate for your locale.">~31 blwyddyn-olau ar draws</string>
+
+    <string name="object_info_m48_description" translation_description="Description of the open star cluster M48 shown in the info card. Translate this text.">
+    Mae M48 yn glwstwr sêr agored mawr a disglair yn Hydra, yn ymestyn bron i radd o\'r awyr ac yn weladwy i\'r llygad noeth o safleoedd tywyll. Mae ei tua 80 seren wedi\'u gwasgaru\'n llac ar draws maes eang sy\'n addas orau ar gyfer dwy-wydrau, gyda sgatering o sêr cawr oren ac melyn ymhlith yr aelodau glas-wyn mwy disglair.
+    </string>
+    <string name="object_info_m48_funfact" translation_description="Fun fact about M48 shown in the info card. Translate this text.">
+    Roedd M48 yn un o wrthrychau "coll" Messier am bron ddwy ganrif oherwydd bod safle a gofnodwyd gan Messier tua 5° i ffwrdd o\'r lleoliad gwir. Arhosodd heb ei adnabod tan 1959, pan gafodd ei gyfateb â NGC 2548 a dangoswyd bod gwall trawsgrifio syml wedi ei osod mewn awyr wag drwy\'r amser.
+    </string>
+    <string name="object_info_m48_distance" translation_description="Distance to M48 shown in the info card. Translate units if appropriate for your locale.">1,500 blwyddyn-olau</string>
+    <string name="object_info_m48_size" translation_description="Physical size of M48 shown in the info card. Translate units if appropriate for your locale.">~23 blwyddyn-olau ar draws</string>
+
+    <string name="object_info_m21_description" translation_description="Description of the open star cluster M21 shown in the info card. Translate this text.">
+    Mae M21 yn glwstwr agored cryno yn y Saethydd, yn eistedd hanner gradd i\'r gogledd o Nifwla\'r Trifid (M20), gan wneud y ddau yn baru binoclwlar trawiadol. Mae\'r clwstwr yn cynnwys tua 57 o sêr wedi\'u crynhoi mewn maes llai nag llawer o glystyrau Messier, gyda sawl seren las-wyn disglair fel yr aelodau dominyddol.
+    </string>
+    <string name="object_info_m21_funfact" translation_description="Fun fact about M21 shown in the info card. Translate this text.">
+    Er gwaethaf eu bod yn gorfforol anghysylltiedig, mae M21 a M20 (y Nifwla Trifid) yn ffurfio un o\'r parau dwynoculars mwyaf deniadol yn yr awyr haf — clwstwr sêr disglair wrth ymyl nifwla tri-lobed lliwgar. Mae M21 tua 4,250 blwyddyn-golau i ffwrdd, tra bod M20 ychydig yn nes ar tua 4,100 blwyddyn-golau.
+    </string>
+    <string name="object_info_m21_distance" translation_description="Distance to M21 shown in the info card. Translate units if appropriate for your locale.">4,250 blwyddyn-olau</string>
+    <string name="object_info_m21_size" translation_description="Physical size of M21 shown in the info card. Translate units if appropriate for your locale.">~16 blwyddyn-olau ar draws</string>
+
+    <string name="object_info_m50_description" translation_description="Description of the open star cluster M50 shown in the info card. Translate this text.">
+    Mae M50 yn glwstwr agored disglair yn Monoceros, yn cynnwys tua 200 o sêr wedi\'u pacio i faes cryno trawiadol ar gyfer dwynoculars a thelesgopau bach. Mae\'n hawdd ei ddarganfod ar linell rhwng Sirius a Procyon ac mae\'n cynnwys cawr coch nodedig — tŷ oren cynnes yn sefyll yn fyw iawn ymhlith sêr glas-wyn y clwstwr.
+    </string>
+    <string name="object_info_m50_funfact" translation_description="Fun fact about M50 shown in the info card. Translate this text.">
+    Amcangir bod M50 tua tua 78 miliwn o flynyddoedd oed — un o\'r clystyrau agored Messier iau — sy\'n golygu bod ei sêr poeth las a gwyn yn dal i esblygu, gyda llond llaw o\'r aelodau mwy enfawr wedi chwyddo\'n ddiweddar i fod yn gawr. Mae hyn yn nodweddiadol o glystwr yn ei oed canol cynnar.
+    </string>
+    <string name="object_info_m50_distance" translation_description="Distance to M50 shown in the info card. Translate units if appropriate for your locale.">3,200 blwyddyn-olau</string>
+    <string name="object_info_m50_size" translation_description="Physical size of M50 shown in the info card. Translate units if appropriate for your locale.">~15 blwyddyn-olau ar draws</string>
+
+    <string name="object_info_m36_description" translation_description="Description of the open star cluster M36 shown in the info card. Translate this text.">
+    M36 yw\'r lleiaf a\'r ieuengaf o\'r tri chlwstwr sêr agored a gatwyd gan Messier yn Auriga. Mae ei tua 60 seren wedi\'u casglu mewn maes tynn, disgleiriol sy\'n weladwy mewn dwynoculars ac wedi\'i ddatrys yn dda i sêr unigol mewn telesgop bach, wedi\'i ddominyddu gan sêr poeth las-wyn.
+    </string>
+    <string name="object_info_m36_funfact" translation_description="Fun fact about M36 shown in the info card. Translate this text.">
+    Amcangir bod M36 yn tua 25 miliwn o flynyddoedd yn unig — un o\'r clystyrau Messier iau — sy\'n golygu bod sêr glas-wyn enfawr yn dal i ddominyddu ac nid oes cawr coch wedi ymddangos eto. Mae\'n rhannu caeau sêr Auriga gyda M37 a M38, ac mae\'r tri chlwstwr yn ffitio yn yr un olygfa ddeunodd-faes eang.
+    </string>
+    <string name="object_info_m36_distance" translation_description="Distance to M36 shown in the info card. Translate units if appropriate for your locale.">4,100 blwyddyn-olau</string>
+    <string name="object_info_m36_size" translation_description="Physical size of M36 shown in the info card. Translate units if appropriate for your locale.">~14 blwyddyn-olau ar draws</string>
+
+    <string name="object_info_m46_description" translation_description="Description of the open star cluster M46 shown in the info card. Translate this text.">
+    Mae M46 yn glwstwr sêr agored cyfoethog, trwchus yn Puppis sy\'n cynnwys tua 500 o sêr wedi\'u pacio i mewn i faes eang, yn drawiadol mewn dwynoculars ac yn hardd mewn telescopau bach. Mae bonus rhyfeddol yn arnofio ar ei ymyl gogleddol: NGC 2438, nifwla blanedol fach sy\'n ymddangos fel petai wedi\'i hymgorffori yn y clwstwr — cyd-ddigwyddiad llinell-o-olwg dramatig.
+    </string>
+    <string name="object_info_m46_funfact" translation_description="Fun fact about M46 shown in the info card. Translate this text.">
+    Mae\'r nifwla blanedol NGC 2438 yn ymddangos i eistedd y tu mewn i M46 ond mewn gwirionedd mae\'n wrthrych rhagflaen digysylltiol ar bellter llawer gwahanol — tua 1,400 o flynyddoedd golau o\'i gymharu â 5,400 M46. Mae cyd-ddigwyddiad cragen seren farw wedi\'i orgyffwrdd ar glwstwr sêr ifanc yn gwneud hwn yn un o\'r caeau mwyaf ffotogenig yn y catalog.
+    </string>
+    <string name="object_info_m46_distance" translation_description="Distance to M46 shown in the info card. Translate units if appropriate for your locale.">5,400 blwyddyn-olau</string>
+    <string name="object_info_m46_size" translation_description="Physical size of M46 shown in the info card. Translate units if appropriate for your locale.">~42 blwyddyn-olau ar draws</string>
+
+    <string name="object_info_m93_description" translation_description="Description of the open star cluster M93 shown in the info card. Translate this text.">
+    Mae M93 yn glwstwr sêr agored disglair a chryno yn Puppis, yn eistedd yn y Llwybr Llaethog cyfoethog yn y de ac yn hawdd ei ddarganfod mewn dwy-wydr. Mae ei tua 80 seren wedi\'u trefnu mewn siâp lletem neu haid-farfog trawiadol ac yn cynnwys sawl uwchgawr glas poeth, gan ei wneud yn un o\'r clystyrau sêr agored mwyaf deniadol yn yr awyr y gaeaf.
+    </string>
+    <string name="object_info_m93_funfact" translation_description="Fun fact about M93 shown in the info card. Translate this text.">
+    Mae M93 yn gymharol ifanc — tua 100 miliwn o flynyddoedd oed — gyda sêr glas a glas-wyn dominyddol nad ydynt wedi esblygu i gawr eto. Mae\'n un o\'r clystyrau Messier mwy deheuol, ac o ddeddfeddau gogleddol i tua 50°G ni fydd byth yn codi\'n uchel iawn uwchben yr gorwel.
+    </string>
+    <string name="object_info_m93_distance" translation_description="Distance to M93 shown in the info card. Translate units if appropriate for your locale.">3,600 blwyddyn-olau</string>
+    <string name="object_info_m93_size" translation_description="Physical size of M93 shown in the info card. Translate units if appropriate for your locale.">~23 blwyddyn-olau ar draws</string>
+
+    <string name="object_info_m38_description" translation_description="Description of the open star cluster M38 shown in the info card. Translate this text.">
+    Mae M38 yn y mwyaf ac yn y mwyaf gwasgaredig o\'r tri chlwstwr agored a gatwyd gan Messier yn Auriga. Mae ei tua 100 seren wedi\'u trefnu mewn patrwm y mae rhai arsylwyr yn ei gymharu â chroes neu\'r llythyren Roegaidd pi, sy\'n weladwy mewn dwynoculars ac wedi\'i ddatrys yn dda mewn telesgop bach. Mae\'r chlwstwr llai NGC 1907 yn eistedd yn agos gerllaw i\'r de.
+    </string>
+    <string name="object_info_m38_funfact" translation_description="Fun fact about M38 shown in the info card. Translate this text.">
+    Mae M38 yn hynaf y tri chlwstwr Messier yn Auriga ar tua 220 miliwn o flynyddoedd, hen ddigon fel bod rhai o\'i sêr enfawr wedi esblygu\'n gawr melyn ac oren. Gall y chlwstwr gerllaw NGC 1907 ffitio yn yr un maes chwyddhad isel, gan eu gwneud yn bâr dwynoculars da — fel M46 a M47 yn Puppis.
+    </string>
+    <string name="object_info_m38_distance" translation_description="Distance to M38 shown in the info card. Translate units if appropriate for your locale.">4,200 blwyddyn-olau</string>
+    <string name="object_info_m38_size" translation_description="Physical size of M38 shown in the info card. Translate units if appropriate for your locale.">~26 blwyddyn-olau ar draws</string>
+
+    <string name="object_info_m29_description" translation_description="Description of the open star cluster M29 shown in the info card. Translate this text.">
+    Mae M29 yn glwstwr agored bach, ifanc yng Nghygnus, wedi\'i osod yn erbyn un o\'r rhanbarthau mwyaf llwch-dywyll yn y Llwybr Llaethog. Mae pump o\'r uwchgigantau glas disglair yn dominyddu\'r clwstwr, yn weladwy mewn dwynoculars fel asterism tynn o sêr poeth, disglair. Heb y llwch rhagflaen trwchus, byddai M29 yn un o\'r clystyrau agored mwyaf trawiadol yn yr awyr.
+    </string>
+    <string name="object_info_m29_funfact" translation_description="Fun fact about M29 shown in the info card. Translate this text.">
+    Amcangir bod M29 yn tua 10 miliwn o flynyddoedd oed yn unig — baban seren — ac mae\'n eistedd o fewn cymdeithas Cygnus OB1, grŵp helaeth o sêr ifanc enfawr. Mae llwch rhyngserol trwm yn pylu\'r clwstwr tua 3 maint; heb y cuddiad hwnnw, byddai sêr M29 yn disgleirio sawl gwaith yn fwy llachar nag y maent yn ymddangos mewn gwirionedd.
+    </string>
+    <string name="object_info_m29_distance" translation_description="Distance to M29 shown in the info card. Translate units if appropriate for your locale.">4,000 blwyddyn-olau</string>
+    <string name="object_info_m29_size" translation_description="Physical size of M29 shown in the info card. Translate units if appropriate for your locale.">~8 blwyddyn-olau ar draws</string>
+
+    <string name="object_info_m62_description" translation_description="Description of the globular cluster M62 shown in the info card. Translate this text.">
+    Mae M62 yn glwstwr globwlaidd cyfoethog yn Ophiuchus — un o\'r clystyrau globwlaidd agosaf at ganolfan y Galaeth ac yn amlwg anghymesur, gyda sêr wedi\'u pacio\'n fwy trwchus ar yr ochr ddeheuol. Ar faint 6.6 mae\'n wrthrych dwynoculars da, er bod ei ddeclination isel yn ei wneud yn darged tymor byr i arsylwyr gogleddol.
+    </string>
+    <string name="object_info_m62_funfact" translation_description="Fun fact about M62 shown in the info card. Translate this text.">
+    Mae calon M62 wedi\'i leoli\'n anghanol yn ganlyniad uniongyrchol i\'w agosrwydd at ganolfan y galaeth — mae grym tyniad pwerus o\'r canolfan yn ystumio\'r clwstwr ac yn tynnu sêr tuag at lefel y galaeth. Mae hefyd yn un o\'r glowbylau mwyaf datblygedig yn deinamig a adnabyddir, gan ddangos arwyddion o ddirywiad y galon ac uchder anghyffredin o bulsarau millisecond.
+    </string>
+    <string name="object_info_m62_distance" translation_description="Distance to M62 shown in the info card. Translate units if appropriate for your locale.">22,500 blwyddyn-olau</string>
+    <string name="object_info_m62_size" translation_description="Physical size of M62 shown in the info card. Translate units if appropriate for your locale.">~92 blwyddyn-olau ar draws</string>
+
+    <string name="object_info_m28_description" translation_description="Description of the globular cluster M28 shown in the info card. Translate this text.">
+    Mae M28 yn glwstwr globwlaidd cryno yn Sagittarius, wedi\'i leoli ger y seren disglair Lambda Sagittarii yn y meysydd sêr cyfoethog yr haf. Ar faint 6.9, mae\'n darged dwynoculars gwobrwyol ac mae\'n dda ei ddatrys mewn telescopau bach, gan ddangos craidd cryno disglair wedi\'i amgylchynu gan halo cymedrol o sêr.
+    </string>
+    <string name="object_info_m28_funfact" translation_description="Fun fact about M28 shown in the info card. Translate this text.">
+    Yn 1987, daeth M28 yn glwstwr globwlaidd cyntaf lle canfuwyd pwlsar milisecond. Mae pulsarau milisecond — sêr niwtron yn troelli cannoedd o weithiau yr eiliad — yn ffurfio pan fydd seren niwtron yn casglu mater o seren gyfeilliwr ac maent yn cael eu canfod ar gyfradd llawer uwch mewn clystyrau globwlaidd nag yn y galaeth gyffredinol, oherwydd bod eu hamgylcheddau sêr trwchus yn cynhyrchu llawer mwy o gyfarfyddiadau deuaidd agos.
+    </string>
+    <string name="object_info_m28_distance" translation_description="Distance to M28 shown in the info card. Translate units if appropriate for your locale.">18,300 blwyddyn-olau</string>
+    <string name="object_info_m28_size" translation_description="Physical size of M28 shown in the info card. Translate units if appropriate for your locale.">~60 blwyddyn-olau ar draws</string>
+
+    <string name="object_info_m52_description" translation_description="Description of the open star cluster M52 shown in the info card. Translate this text.">
+    Mae M52 yn glwstwr agored cyfoethog yng Nghasiopeia, yn cynnwys tua 200 o sêr wedi\'u pacio i mewn i ranbarth cryno o Llwybr Llaethog y gogledd. Mae\'n glwstwr dwynoculars da ac mae\'n dangos maes sêr hardd, trwchus mewn telescopau bach, gyda seren oren nodweddiadol fwy disglair yn sefyll allan ger ymyl deheuol y clwstwr.
+    </string>
+    <string name="object_info_m52_funfact" translation_description="Fun fact about M52 shown in the info card. Translate this text.">
+    Mae pellter M52 yn eithriadol o ansicr — mae amcangyfrifon yn amrywio o 3,000 i 7,000 blwyddyn-golau — oherwydd bod llwch rhyngserol trwm ar hyd y llinell olwg hon yn ei gwneud hi\'n anodd pennu ei wir ddisglerder. Darganfu Messier ef yn 1774, yr un noson yr oedd yn dilyn comet a arweiniodd iddo gofnodi sawl cofnod catalog arall.
+    </string>
+    <string name="object_info_m52_distance" translation_description="Distance to M52 shown in the info card. Translate units if appropriate for your locale.">~5,000 blwyddyn-olau</string>
+    <string name="object_info_m52_size" translation_description="Physical size of M52 shown in the info card. Translate units if appropriate for your locale.">~25 blwyddyn-olau ar draws</string>
+
+    <string name="object_info_m67_description" translation_description="Description of the open star cluster M67 shown in the info card. Translate this text.">
+    Mae M67 yn glwstwr agored trawiadol yng Nghancr ac un o\'r clystyrau agored hynaf a astudiwyd yn dda yn yr awyr. Tua 3.2–3.5 biliwn mlwydd oed, mae\'n cynnwys llawer o sêr tebyg mewn màs ac oedran i\'n Haul ni — gan ei wneud yn labordy naturiol ar gyfer astudio sut mae sêr tebyg i\'r Haul yn esblygu dros amser cosmig.
+    </string>
+    <string name="object_info_m67_funfact" translation_description="Fun fact about M67 shown in the info card. Translate this text.">
+    Mae nifer o sêr yn M67 yn debyg iawn i\'r Haul o ran tymheredd, màs, ac oedran — cyfuniad prin a arweiniodd ymchwilwyr i bendroni a oedd yr Haul ei hun wedi tarddu mewn clwstwr fel M67. Oherwydd bod sêr yn cael eu geni mewn clystyrau sy\'n gwasgaru\'n raddol, mae\'n bron yn sicr bod yr Haul wedi dod o grŵp brodyr a chwiorydd sydd bellach wedi\'u gwasgaru filoedd o flynyddoedd yn ôl — er na neb wedi adnabod pa glwstwr.
+    </string>
+    <string name="object_info_m67_distance" translation_description="Distance to M67 shown in the info card. Translate units if appropriate for your locale.">2,700 blwyddyn-olau</string>
+    <string name="object_info_m67_size" translation_description="Physical size of M67 shown in the info card. Translate units if appropriate for your locale.">~24 blwyddyn-olau ar draws</string>
+
+    <string name="object_info_m55_description" translation_description="Description of the globular cluster M55 shown in the info card. Translate this text.">
+    Mae M55 yn glwstwr globwlaidd mawr, llac yn y Saethydd — un o\'r rhai mwyaf gwasgaredig a lleiaf crynodedig o holl globwlarau Messier. Mae\'n hawdd ei ddatrys yn sêr unigol hyd yn oed ar faint isel, gyda thestun gronynnol yn weladwy mewn dwynoculars. Mae ei ddeclination deheuol isel yn cyfyngu ar welededd o latitudau gogleddol ond mae\'n drawiadol iawn o\'r hemisffer deheuol.
+    </string>
+    <string name="object_info_m55_funfact" translation_description="Fun fact about M55 shown in the info card. Translate this text.">
+    Mae crynodiad sêr anghyffredin o isel M55 yn ei wneud yn edrych bron fel clwstwr agored cyfoethog yn hytrach na chlwstwr sfferig nodweddiadol. Mae ei sêr wedi\'u lledu ar draws rhanbarth sydd bron yn 100 o flynyddoedd golau o led, gan awgrymu bod disgyrchiant hunan-glwstwr y clwstwr yn gymharol wan o\'i gymharu â chlystyrau sfferig mwy canoledig fel M13 neu M3.
+    </string>
+    <string name="object_info_m55_distance" translation_description="Distance to M55 shown in the info card. Translate units if appropriate for your locale.">17,600 blwyddyn-olau</string>
+    <string name="object_info_m55_size" translation_description="Physical size of M55 shown in the info card. Translate units if appropriate for your locale.">~100 blwyddyn-olau ar draws</string>
+
+    <string name="object_info_m19_description" translation_description="Description of the globular cluster M19 shown in the info card. Translate this text.">
+    Mae M19 yn glwstwr globwlaidd cryno, cyfoethog yn Ophiuchus — un o\'r clystyrau globwlaidd agosaf at ganolfan y Galaeth. Ei nodwedd fwyaf nodedig yw ei siâp oblate amlwg: M19 yw\'r clwstwr globwlaidd mwyaf fflat a adnabyddir, gyda amlinell eliptig weladwy hyd yn oed mewn telesgop bach.
+    </string>
+    <string name="object_info_m19_funfact" translation_description="Fun fact about M19 shown in the info card. Translate this text.">
+    Mae anffurfioldeb amlwg M19 — mae ei echel hiraf tua 10% yn hirach na\'i echel fyrraf — yn unigryw ymhlith y clystyrau globwlaidd hysbys ac mae\'n cael ei ystyried yn deillio o ymestyniad llanwol gan faes disgyrchiant y Llwybr Llaeth. Po agosach y mae clwstwr globwlaidd yn cylchdroi at ganolbwynt y galaeth, y mwyaf cryfaf y mae\'n cael ei ddirfawr; mae M19 yn gorwedd dim ond tua 5,200 o flynyddoedd golau o galon y galaeth.
+    </string>
+    <string name="object_info_m19_distance" translation_description="Distance to M19 shown in the info card. Translate units if appropriate for your locale.">28,700 blwyddyn-olau</string>
+    <string name="object_info_m19_size" translation_description="Physical size of M19 shown in the info card. Translate units if appropriate for your locale.">~113 blwyddyn-olau ar draws</string>
+
+    <string name="object_info_m80_description" translation_description="Description of the globular cluster M80 shown in the info card. Translate this text.">
+    Mae M80 yn un o\'r clystyrau globwlaidd mwyaf trwchus yn y Llwybr Llaethog, pêl gryno a chyfoethog o sawl cant o filoedd o sêr yn Scorpius. Ar faint 7.2 mae\'n darged deunoculaidd gwych ac mae\'n datgelu craidd disglair, wedi\'i ganoli\'n uchel mewn telescopau bach.
+    </string>
+    <string name="object_info_m80_funfact" translation_description="Fun fact about M80 shown in the info card. Translate this text.">
+    Yn 1860, ffrwydrodd nova o fewn M80 — a ddynodwyd fel T Scorpii — gan ddod yn ddisglair â\'r clwstwr ei hun am gyfnod byr ac yn weladwy i\'r llygad noeth. Mae\'n parhau i fod yn un o ddwy nova yn unig a arsylwyd erioed o fewn clwstwr globwlaidd. Mae novaeau mewn globwlariaid yn codi o ryngweithiadau rhwng sêr deuaidd, sydd lawer yn fwy cyffredin yn amgylchedd sêr trwchus craidd globwlaidd.
+    </string>
+    <string name="object_info_m80_distance" translation_description="Distance to M80 shown in the info card. Translate units if appropriate for your locale.">32,600 blwyddyn-olau</string>
+    <string name="object_info_m80_size" translation_description="Physical size of M80 shown in the info card. Translate units if appropriate for your locale.">~84 blwyddyn-olau ar draws</string>
+
+    <string name="object_info_m103_description" translation_description="Description of the open star cluster M103 shown in the info card. Translate this text.">
+    Mae M103 yn glwstwr sêr agored bach, cryno yng Nghasiopeia, yn cynnwys tua 40 seren mewn grŵp tynn sy\'n hawdd ei weld mewn dwy-wydr. Mae seren ddwbl drawiadol a chawr coch ger y canol yn rhoi golwg lliwgar iddo mewn telescopau bach, wedi\'i osod o fewn caeau sêr cyfoethog Llwybr Llaethog Nghasiopeia.
+    </string>
+    <string name="object_info_m103_funfact" translation_description="Fun fact about M103 shown in the info card. Translate this text.">
+    M103 oedd y gwrthrych â\'r rhif uchaf yn y catalogau gwreiddiol 1781 a gyhoeddwyd gan Messier — ychwanegwyd pob cofnod dilynol (M104–M110) ar ôl marwolaeth gan seryddwyr diweddarach o nodiadau a gohebiaeth Messier. Canfu Pierre Méchain M103 yn fuan cyn i\'r catalog fynd i\'r wasg, ac fe\'i cynhwysodd Messier o adroddiad Méchain.
+    </string>
+    <string name="object_info_m103_distance" translation_description="Distance to M103 shown in the info card. Translate units if appropriate for your locale.">8,500 blwyddyn-olau</string>
+    <string name="object_info_m103_size" translation_description="Physical size of M103 shown in the info card. Translate units if appropriate for your locale.">~15 blwyddyn-olau ar draws</string>
+
+    <string name="object_info_m30_description" translation_description="Description of the globular cluster M30 shown in the info card. Translate this text.">
+    M30 yw glwstwr globwlaidd cryno yn Capricornus — gwrthrych teg mewn telesgopau bach sy\'n dangos craidd disglair, cryno a chadwyni sêr gwan ar yr ymylon. Ar faint 7.5 mae angen awyr dywyll arno mewn dwynoculars ac mae\'n gwobrwyo telesgop bach gyda\'i halo allanol wedi\'i ddatrys yn rhannol.
+    </string>
+    <string name="object_info_m30_funfact" translation_description="Fun fact about M30 shown in the info card. Translate this text.">
+    Mae M30 wedi mynd drwy "gwympo craidd" — proses lle mae denu disgyrchiant cymesur y sêr sydd wedi\'u pacio\'n drwchus yn achosi i ganolbwynt y clwstwr gontractu\'n ddramatig, gan greu crynodiad eithafol o sêr mewn cyfaint bach iawn. Tua phum rhan o ddeg o\'r holl glystyrau sfferig sydd â chrongladdau wedi cwympo, ac mae M30 ymhlith yr enghreifftiau sydd wedi\'u hastudio orau o\'r ffenomen hon.
+    </string>
+    <string name="object_info_m30_distance" translation_description="Distance to M30 shown in the info card. Translate units if appropriate for your locale.">27,100 blwyddyn-olau</string>
+    <string name="object_info_m30_size" translation_description="Physical size of M30 shown in the info card. Translate units if appropriate for your locale.">~87 blwyddyn-olau ar draws</string>
+
+    <string name="object_info_m54_description" translation_description="Description of the globular cluster M54 shown in the info card. Translate this text.">
+    Mae M54 yn glwstwr globwlaidd mawr, cyfoethog yn y Saethydd ac un o\'r gwrthrychau mwyaf pell yn holl gatalog Messier. Am ganrifoedd credwyd ei fod yn glwstwr globwlaidd pell yn halo\'r Llwybr Llaethog, ond gwyddys bellach mai craidd trwchus Galaeth Elliptig Corrach y Saethydd ydyw — galaeth loeren sy\'n cael ei hamsugno gan ein un ni ar hyn o bryd.
+    </string>
+    <string name="object_info_m54_funfact" translation_description="Fun fact about M54 shown in the info card. Translate this text.">
+    Roedd darganfyddiad 1994 bod M54 yn perthyn i\'r Galaeth Corrach Saethydd yn ei wneud yn y clwstwr globwlaidd cyntaf a wyddys ei fod yn perthyn i alaeth arall. Wrth i\'r Galaeth Corrach Saethydd gael ei rhwygo\'n raddol ac yn cael ei lyncu gan y Llwybr Llaethog, bydd M54 yn y pen draw yn dod yn glwstwr globwlaidd halo dilys o\'n galaeth ni ein hunain — mewnfudwr rhyngalactig yn cyrraedd dros filiwn o flynyddoedd.
+    </string>
+    <string name="object_info_m54_distance" translation_description="Distance to M54 shown in the info card. Translate units if appropriate for your locale.">87,000 blwyddyn-olau</string>
+    <string name="object_info_m54_size" translation_description="Physical size of M54 shown in the info card. Translate units if appropriate for your locale.">~230 blwyddyn-olau ar draws</string>
+
+    <string name="object_info_m69_description" translation_description="Description of the globular cluster M69 shown in the info card. Translate this text.">
+    Mae M69 yn glwstwr globwlaidd cymharol gyfoethog yn Sagitwrius, wedi\'i leoli ger canolbwynt y Llactea. Ar faint 7.7, mae\'n wrthrych deunodd o awyrennau tywyll sy\'n gwobrwyo telesgop bach gyda phêl o sêr wedi\'i ddatrys yn rhannol a chanolbwynt disglair, gronynnaidd.
+    </string>
+    <string name="object_info_m69_funfact" translation_description="Fun fact about M69 shown in the info card. Translate this text.">
+    Mae M69 yn cylchdroi\'n anarferol o agos at ganolfan y galaeth — dim ond tua 6,200 o flynyddoedd golau o galon y Llwybr Llaeth — ac o ganlyniad mae ganddo grynodiad anarferol o uchel o elfennau trymach ar gyfer clwstwr globwlaidd. Mae globwlarau sy\'n nes at ganolfan y galaeth yn tueddu i fod yn gyfoethog yn gemegol gan genedlaethau lluosog o ffurfiant sêr yn y bwlch o\'i amgylch.
+    </string>
+    <string name="object_info_m69_distance" translation_description="Distance to M69 shown in the info card. Translate units if appropriate for your locale.">29,700 blwyddyn-olau</string>
+    <string name="object_info_m69_size" translation_description="Physical size of M69 shown in the info card. Translate units if appropriate for your locale.">~61 blwyddyn-olau ar draws</string>
+
+    <string name="object_info_m9_description" translation_description="Description of the globular cluster M9 shown in the info card. Translate this text.">
+    Mae M9 yn glwstwr globwlaidd cryno yn Ophiuchus — un o\'r clystyrau globwlaidd Messier sydd fwyaf wedi\'u heffeithio gan amsugno llwch rhyngserol. Mae\'n gorwedd tuag at y chwyddiad galactig, lle mae llwch trwchus yn ei dywyllu\'n sylweddol. Heb yr anuniaeth hon byddai M9 yn ymddangos bron yn fagnitud yn fwy disglair ac yn weladwy i\'r llygad noeth.
+    </string>
+    <string name="object_info_m9_funfact" translation_description="Fun fact about M9 shown in the info card. Translate this text.">
+    Mae M9 yn dioddef mwy o amsugno llwch rhyngserol nag bron unrhyw glwstwr globwlaidd Messier arall — tua 1.3 maint o ddimio o\'i gymharu â llinell olwg glir. Mae dau glwstwr globwlaidd llai (NGC 6342 a NGC 6356) yn gorwedd o fewn tua 1° o M9, gan ei wneud yn ganolfan grwpiad rhyfeddol o dri globwlaidd mewn darn bach o\'r awyr.
+    </string>
+    <string name="object_info_m9_distance" translation_description="Distance to M9 shown in the info card. Translate units if appropriate for your locale.">25,800 blwyddyn-olau</string>
+    <string name="object_info_m9_size" translation_description="Physical size of M9 shown in the info card. Translate units if appropriate for your locale.">~70 blwyddyn-olau ar draws</string>
+
+    <string name="object_info_m26_description" translation_description="Description of the open star cluster M26 shown in the info card. Translate this text.">
+    Mae M26 yn glwstwr sêr agored cymharol dywyll yn Scutum, yn weladwy mewn deuddlygaid ac wedi\'i ddatrys yn dda mewn telesgopau bach. Tua 90 o sêr wedi\'u gwasgaru dros faes cryno yn y cwmwl sêr cyfoethog Scutum, er bod y clwstwr wedi\'i osod yn erbyn cefndir mor drwchus fel bod nodi ei aelodau o\'r maes sêr o\'i amgylch yn gofyn rhywfaint o ofal.
+    </string>
+    <string name="object_info_m26_funfact" translation_description="Fun fact about M26 shown in the info card. Translate this text.">
+    Mae M26 yn gorwedd ar hyd yr un stribed cyfoethog o awyr ag M11 — yr Haid Hwyad Wyllt, un o\'r clystyrau agored gorau yn yr awyr. Mae\'r ddau dim ond tua 3.5° ar wahân ac yn weladwy yn yr un maes dwynoculars, gan wneud Scutum yn ddestyniad rhyfeddol ar gyfer arsylwyr clystyrau er ei bod yn seren fach ac yn aml yn cael ei anwybyddu.
+    </string>
+    <string name="object_info_m26_distance" translation_description="Distance to M26 shown in the info card. Translate units if appropriate for your locale.">5,000 blwyddyn-olau</string>
+    <string name="object_info_m26_size" translation_description="Physical size of M26 shown in the info card. Translate units if appropriate for your locale.">~22 blwyddyn-olau ar draws</string>
+
+    <string name="object_info_m79_description" translation_description="Description of the globular cluster M79 shown in the info card. Translate this text.">
+    Mae M79 yn glwstwr globwlaidd cryno yn Lepus — un o ychydig iawn o globwlarau Messier sydd wedi\'u lleoli orau yn yr awyr y gaeaf, pan fydd y rhan fwyaf o globwlarau islaw\'r gorwel neu prin wedi codi. Ar faint 8.0 mae angen telesgop arno i ddatgelu ei graidd cryno a\'i halo gwan, gan sefyll allan yn erbyn caeau sêr y gaeaf cymharol denau.
+    </string>
+    <string name="object_info_m79_funfact" translation_description="Fun fact about M79 shown in the info card. Translate this text.">
+    Mae rhai seryddwyr yn credu bod M79 yn ymwelydd o\'r Galaeth Corrach Canis Major — galaeth loeren aflonydd sy\'n cael ei hamsugno gan y Llwybr Llaeth ar hyn o bryd. Os felly, ni ffurfiodd M79 o fewn system glwstwr sfferig y Llwybr Llaeth ei hun ond cafodd ei ddal o alaeth sy\'n disgyn i mewn ac mae\'n araf gael ei blygu i mewn i halo\'r galaeth.
+    </string>
+    <string name="object_info_m79_distance" translation_description="Distance to M79 shown in the info card. Translate units if appropriate for your locale.">41,000 blwyddyn-olau</string>
+    <string name="object_info_m79_size" translation_description="Physical size of M79 shown in the info card. Translate units if appropriate for your locale.">~104 blwyddyn-olau ar draws</string>
+
+    <string name="object_info_m70_description" translation_description="Description of the globular cluster M70 shown in the info card. Translate this text.">
+    Mae M70 yn glwstwr globwlaidd cryno yn y Saethydd, yn edrych yn debyg iawn i\'w efaill agos M69 mewn ymddangosiad a phellter. Ar faint 8.1 mae\'n wrthrych telesgop bach da sy\'n dangos craidd cryno a awgrymiadau o ddatrysiad yn yr halo allanol. Mae\'n eistedd dim ond 2° o M69 ac mae modd casglu\'r ddau yn yr un maes deunodd.
+    </string>
+    <string name="object_info_m70_funfact" translation_description="Fun fact about M70 shown in the info card. Translate this text.">
+    Enillodd M70 sylw byr yn 1995 fel lleoliad bras yn yr awyr lle y darganfuwyd Comet Hale-Bopp yn annibynnol gan Alan Hale a Thomas Bopp — y comet disgleiraf o ddiwedd yr 20fed ganrif. Ar y dechrau, aeth y ddau arsylwr heibio i M70 wrth chwilio am dargeddau eraill a sylwi ar y comet fel gwrthrych niwlog annisgwyl gerllaw.
+    </string>
+    <string name="object_info_m70_distance" translation_description="Distance to M70 shown in the info card. Translate units if appropriate for your locale.">29,400 blwyddyn-olau</string>
+    <string name="object_info_m70_size" translation_description="Physical size of M70 shown in the info card. Translate units if appropriate for your locale.">~67 blwyddyn-olau ar draws</string>
+
+    <string name="object_info_m107_description" translation_description="Description of the globular cluster M107 shown in the info card. Translate this text.">
+    Mae M107 yn un o\'r clystyrau globwlaidd Messier lleiaf crynodedig, gyda sêr wedi\'u gwasgaru mewn patrwm cymharol agored o amgylch craidd cymedrol. Ar faint 8.1 mae\'n darged dwynoculars o awyr dywyll ac mae\'n rhannol yn datrys mewn telescopau bach, gan ddangos gwead granulog yn hytrach na chyddwysiad canolog miniog.
+    </string>
+    <string name="object_info_m107_funfact" translation_description="Fun fact about M107 shown in the info card. Translate this text.">
+    M107 oedd y cofnod olaf a ychwanegwyd yn ffurfiol at y catalog Messier — mae\'n ymddangos mewn gohebiaeth Pierre Méchain ond ni chafwyd ei gynnwys yn yr argraffiad gwreiddiol 1781. Cafodd ei ychwanegu\'n swyddogol fel M107 yn 1947 gan yr seryddwr Canadaidd Helen Sawyer Hogg, a oedd yn codio nifer o wrthrychau "coll" a arsylwodd Méchain ond na chofnododd Messier erioed yn ffurfiol.
+    </string>
+    <string name="object_info_m107_distance" translation_description="Distance to M107 shown in the info card. Translate units if appropriate for your locale.">20,900 blwyddyn-olau</string>
+    <string name="object_info_m107_size" translation_description="Physical size of M107 shown in the info card. Translate units if appropriate for your locale.">~61 blwyddyn-olau ar draws</string>
+
+    <string name="object_info_m68_description" translation_description="Description of the globular cluster M68 shown in the info card. Translate this text.">
+    Mae M68 yn glwstwr globwlaidd cyfoethog yn Hydra — gwrthrych deheuol ac un o\'r ychydig glwstwrau globwlaidd sydd wedi\'u lleoli orau yn yr awyr ddiwedd gaeaf a gwanwyn. Ar faint 8.2 mae\'n gwobrwyo telesgop bach gyda chorn cryno cymharol a halo mawr o sêr wedi\'u datrys yn erbyn meysydd sêr cymharol denau Hydra.
+    </string>
+    <string name="object_info_m68_funfact" translation_description="Fun fact about M68 shown in the info card. Translate this text.">
+    Er gwaethaf ei agosrwydd cymharol — sy\'n gwneud sêr unigol yn dda-ddatrysedig mewn telescopau amatur — mae M68 yn aml yn cael ei anwybyddu oherwydd ei ddirywiad deheuol pell. O ddeddfeddau uwchben 50°N prin y mae\'n clirio\'r gorwel; o\'r hemisffer deheuol, fodd bynnag, mae\'n codi\'n uchel ac yn arddangosfa wych o glwstwr sfferig.
+    </string>
+    <string name="object_info_m68_distance" translation_description="Distance to M68 shown in the info card. Translate units if appropriate for your locale.">33,600 blwyddyn-olau</string>
+    <string name="object_info_m68_size" translation_description="Physical size of M68 shown in the info card. Translate units if appropriate for your locale.">~117 blwyddyn-olau ar draws</string>
+
+    <string name="object_info_m56_description" translation_description="Description of the globular cluster M56 shown in the info card. Translate this text.">
+    Mae M56 yn glwstwr globwlaidd cryno yn Lyra, wedi\'i nythu rhwng y Nifwla Modrwy (M57) a\'r seren ddwbl disglair Albireo yng Cygnus. Ar faint 8.3 mae\'n darged dwy-lygad o awyr dywyll, ac mae thelescop bach yn datgelu sffêr gronynog, wedi\'i chyddwyso\'n weddol sy\'n cael ei ddatrys yn rhannol yn unig hyd yn oed mewn agoriadau canolig.
+    </string>
+    <string name="object_info_m56_funfact" translation_description="Fun fact about M56 shown in the info card. Translate this text.">
+    Darganfuwyd M56 gan Messier ym mis Ionawr 1779 yn ystod yr un tymor arsylwi y darganfu hefyd y Nebula Cylch (M57). Er ei fod yn yr un maes deunodd â Vega — pumed seren loywaf yr awyr — ac yn agos at y Nebula Cylch enwog, mae M56 yn aml yn cael ei anwybyddu gan arsylwyr a dynnir at ei gymydogion mwy enwog.
+    </string>
+    <string name="object_info_m56_distance" translation_description="Distance to M56 shown in the info card. Translate units if appropriate for your locale.">32,900 blwyddyn-olau</string>
+    <string name="object_info_m56_size" translation_description="Physical size of M56 shown in the info card. Translate units if appropriate for your locale.">~68 blwyddyn-olau ar draws</string>
+
+    <string name="object_info_m71_description" translation_description="Description of the globular cluster M71 shown in the info card. Translate this text.">
+    Mae M71 yn glwstwr globwlaidd anghyffredin yn Sagitta — wedi\'i ddadlau gan seryddwyr am ddegawdau na allent benderfynu a oedd yn glwstwr agored hen iawn cyfoethog iawn neu\'n glwstwr globwlaidd ifanc iawn llac iawn. Mae dadansoddiad modern yn cadarnhau ei fod yn glwstwr globwlaidd gwirioneddol, ond un ag eithriadol ddwysedd isel gyda nifer cymharol ychydig o sêr a chorn llai dominyddol na\'r globwlarau nodweddiadol.
+    </string>
+    <string name="object_info_m71_funfact" translation_description="Fun fact about M71 shown in the info card. Translate this text.">
+    Cadwodd strwythur llac M71 ef oddi ar lawer o gatalogau cynnar oherwydd ei fod yn edrych yn debyg i faes sêr cyfoethog yn hytrach na chlwstwr gwir. Ar dim ond 12,000 blwyddyn-olau i ffwrdd, mae\'n un o\'r globwlars Messier agosaf, ac mae ei sêr yn rhannol wedi\'u datrys mewn telesgop bach o dan awyr tywyll — gan roi iddo olwg maes sêr cyfoethog cryno, ychydig yn drwchus.
+    </string>
+    <string name="object_info_m71_distance" translation_description="Distance to M71 shown in the info card. Translate units if appropriate for your locale.">12,000 blwyddyn-olau</string>
+    <string name="object_info_m71_size" translation_description="Physical size of M71 shown in the info card. Translate units if appropriate for your locale.">~25 blwyddyn-olau ar draws</string>
 </resources>

@@ -950,6 +950,65 @@
     </string>
     <string name="object_info_eta_carinae_nebula_distance" translation_description="Distance to Eta Carinae Nebula shown in the info card. Translate units if appropriate for your locale.">7 500 lysår</string>
     <string name="object_info_eta_carinae_nebula_size" translation_description="Physical size of Eta Carinae Nebula shown in the info card. Translate units if appropriate for your locale.">300 lysår på tvers</string>
+    <!-- North America Nebula (NGC 7000) -->
+    <string name="object_info_north_america_nebula_description" translation_description="Description of the North America Nebula shown in the info card. Translate this text.">
+    North America-tåken (NGC 7000) er en stor emisjonståke i Cygnus som bemerkelsesverdige ligner på kontinentet Nord-Amerika, komplett med en Mexicogulf-region. Den spenner over omtrent 120 bueминutter – omtrent fire ganger diameteren på fullmånen – og ligger omkring 2 600 lysår unna og er over 100 lysår bred.
+    </string>
+    <string name="object_info_north_america_nebula_funfact" translation_description="Fun fact about the North America Nebula shown in the info card. Translate this text.">
+    Til tross for en visuell magnitude på 4, er nebula for stor og diffus til å se med det blotte øye under de fleste himler — men den fotograferes vakkert, og avslører Cygnus Wall, en tett bue av intens stjernedannelse langs dens sørlige kant.
+    </string>
+    <string name="object_info_north_america_nebula_distance" translation_description="Distance to the North America Nebula shown in the info card. Translate units if appropriate for your locale.">~2 590 lysår</string>
+    <string name="object_info_north_america_nebula_size" translation_description="Physical size of the North America Nebula shown in the info card. Translate units if appropriate for your locale.">~140 lysår på tvers</string>
+    <!-- Exposed Cranium Nebula - PMR 1 -->
+    <string name="object_info_exposed_cranium_nebula_description" translation_description="Description of the Exposed Cranium Nebula shown in the info card. Translate this text.">
+    Exposed Cranium Nebula (PMR 1) er en planetarisk tåke i Vela, omtrent 5 000 lysår unna. Det uhyggelige navnet kommer fra en mørk gassstråle som løper vertikalt gjennom midten, og deler de lysende lobene i en form som på uhyggelig vis ligner en hjerne inne i en gjennomsiktig hodeskalle. I hjertet brenner en varm Wolf-Rayet-stjerne som kaster av seg de ytre lagene den har bygget opp i løpet av en levetid.
+    </string>
+    <string name="object_info_exposed_cranium_nebula_funfact" translation_description="Fun fact about the Exposed Cranium Nebula shown in the info card. Translate this text.">
+    I 2026 fanget James Webb Space Telescope slående nye bilder av Exposed Cranium Nebula, og løste opp dens dobbeltlaget struktur med enestående detalj — et ytre skall rikt på hydrogen og en indre sky pakket med tyngre elementer skapt av den døende stjernen.
+    </string>
+    <string name="object_info_exposed_cranium_nebula_distance" translation_description="Distance to the Exposed Cranium Nebula shown in the info card. Translate units if appropriate for your locale.">~5 000 lysår</string>
+    <string name="object_info_exposed_cranium_nebula_size" translation_description="Physical size of the Exposed Cranium Nebula shown in the info card. Translate units if appropriate for your locale.">~2 lysår på tvers</string>
+
+    <!-- Jewel Box (NGC 4755) -->
+    <string name="object_info_jewel_box_description" translation_description="Description of the Jewel Box cluster shown in the info card. Translate this text.">
+    Juvelkassen (NGC 4755) er en ung, strålende åpen stjernehop i stjernebildet Crux, lett synlig for det blotte øye som en uklart fjerdegrads-område like sørøst for Mimosa. Når det observeres gjennom et teleskop, lyser stjernene i levende kontrasterende farger — dype blå superkjemper ved siden av en slående rød superkjempe — noe som ga det navnet som John Herschel ga det: et utmerket stykke fancy smykker. Med bare 14–16 millioner år gammel, er det en av de yngste og mest fargerike stjernehopene på himmelen.
+    </string>
+    <string name="object_info_jewel_box_funfact" translation_description="Fun fact about the Jewel Box shown in the info card. Translate this text.">
+    Klyngenes fremtredende røde stjerne, κ Crucis, er en rød superkjempe som er så lysende at den overstråler Solen med mer enn 100 000 ganger — en levende påminnelse om at stjernehopper ikke alle har samme farge.
+    </string>
+    <string name="object_info_jewel_box_distance" translation_description="Distance to the Jewel Box shown in the info card. Translate units if appropriate for your locale.">~6 500 lysår</string>
+    <string name="object_info_jewel_box_size" translation_description="Physical size of the Jewel Box shown in the info card. Translate units if appropriate for your locale.">~19 lysår på tvers</string>
+
+    <!-- Double Cluster (NGC 869 & NGC 884) -->
+    <string name="object_info_double_cluster_description" translation_description="Description of the Double Cluster shown in the info card. Translate this text.">
+    Dobbelklyngen (NGC 869 og NGC 884) er et strålende par unge åpne stjernehoper i Perseus, som ligger side ved side på himmelen bare litt over en grad fra hverandre. Begge er synlige for det blotte øye som en tåkete flekk, men selv et lite teleskop avslører hundrevis av glimrende blåhvite superkjemper pakket inn i to glitterande svermmer. På omtrent 7500 lysår avstand ligger de innenfor Perseus-armen i vår galakse og regnes blant de fineste kikkertobjektene på den nordlige himmel.
+    </string>
+    <string name="object_info_double_cluster_funfact" translation_description="Fun fact about the Double Cluster shown in the info card. Translate this text.">
+    Med bare 14 millioner år er Dobbeltklyngen ekstraordinært ung — så nylig født at dens mest massive stjerner fortsatt brenner som blå superkjemper, og noen få har allerede utviklet seg til sjeldne, brennende røde superkjemper.
+    </string>
+    <string name="object_info_double_cluster_distance" translation_description="Distance to the Double Cluster shown in the info card. Translate units if appropriate for your locale.">~7 500 lysår</string>
+    <string name="object_info_double_cluster_size" translation_description="Physical size of the Double Cluster shown in the info card. Translate units if appropriate for your locale.">Hver klynge ~70 lysår på tvers; klyngene atskilt med ~1 000 lysår</string>
+
+    <!-- 47 Tucanae (NGC 104) -->
+    <string name="object_info_n47_tucanae_description" translation_description="Description of 47 Tucanae shown in the info card. Translate this text.">
+    47 Tucanae (NGC 104) er den nest-lyseste globulære stjernehopen på himmelen, en tett ball med omtrent en million gamle stjerner som kretser rundt Melkeveien i stjernebildet Tucana. I en avstand på omkring 14 500 lysår fremstår den for det blotte øye som en uklar stjerne av fjerde magnitude, men et teleskop løser opp den komprimerte kjernen til en ekstraordinær sverm av gylne og blåhvite soler. Stjernene dens ble dannet for omkring 13 milliarder år siden, noe som gjør hopen nesten like gammel som universet selv.
+    </string>
+    <string name="object_info_n47_tucanae_funfact" translation_description="Fun fact about 47 Tucanae shown in the info card. Translate this text.">
+    47 Tucanae er en kosmisk pulsar-fabrikk: astronomer har funnet minst 35 millisekund-pulsarer som spinner hundrevis av ganger per sekund inne i den — mer enn i noen annen kjent globulær klynge — resultatet av stellare nære møter som resirkulerer gamle nøytronstjerner ved å spinne dem opp.
+    </string>
+    <string name="object_info_n47_tucanae_distance" translation_description="Distance to 47 Tucanae shown in the info card. Translate units if appropriate for your locale.">~14 500 lysår</string>
+    <string name="object_info_n47_tucanae_size" translation_description="Physical size of 47 Tucanae shown in the info card. Translate units if appropriate for your locale.">~120 lysår på tvers</string>
+
+    <!-- Centaurus A (NGC 5128) -->
+    <string name="object_info_centaurus_a_description" translation_description="Description of Centaurus A shown in the info card. Translate this text.">
+    Centaurus A (NGC 5128) er den nærmeste aktive radiogalaksen til Jorden, en kjempestor elliptisk galakse i stjernebildet Centaurus hvis slående mørke støvbelte forråder en voldelig fortid — en spiralgalakse som ble slukt for omtrent 200–700 millioner år siden. I hjertet lurer et supermassivt svart hull på 55 millioner solmasser som driver relativistiske stråler som strekker seg mer enn en million lysår i radiobølgelengder. På en avstand på omtrent 12 millioner lysår er den en av de mest studerte galaksene på himmelen.
+    </string>
+    <string name="object_info_centaurus_a_funfact" translation_description="Fun fact about Centaurus A shown in the info card. Translate this text.">
+    Centaurus A er en av de kraftigste naturlige radioutsendera i himmelen — dens stråler blåser plasma utover med nesten lysets hastighet, og det fulle omfanget av dens radioluber spenner over et område tilsvarende omtrent 100 fullmåner lagt ende til ende over himmelen.
+    </string>
+    <string name="object_info_centaurus_a_distance" translation_description="Distance to Centaurus A shown in the info card. Translate units if appropriate for your locale.">~12 millioner lysår</string>
+    <string name="object_info_centaurus_a_size" translation_description="Physical size of Centaurus A shown in the info card. Translate units if appropriate for your locale.">~123 000 lysår på tvers</string>
+
     <!-- ==================== CONSTELLATIONS ==================== -->
     <!-- Note: Constellation names are defined in celestial_objects.xml -->
     <!-- Orion -->
@@ -1977,4 +2036,697 @@
     Vulpecula inneholder Hantelvåpen-tåken (M27), den første planetariske tåken som noen gang ble oppdaget (av Charles Messier i 1764), og et vakkert kikkertkikker-mål!
     </string>
     <string name="object_info_vulpecula_size" translation_description="Physical size of Vulpecula shown in the info card. Translate units if appropriate for your locale.">268 kvadratgrader</string>
+
+    <!-- Galilean Moons of Jupiter -->
+    <string name="object_info_io_description" translation_description="Description of Io shown in the info card. Translate this text.">
+    Io er den innerste av Jupiters fire store galileiske måner og det mest vulkanisk aktive legemet i solsystemet.
+    </string>
+    <string name="object_info_io_funfact" translation_description="Fun fact about Io shown in the info card. Translate this text.">
+    Io har hundrevis av aktive vulkaner, noen som spyr ut lavafontener titalls kilometer høyt. Dens konstante aktivitet drives av tidevannsvarmingen fra Jupiters enorme gravitasjon.
+    </string>
+    <string name="object_info_io_distance" translation_description="Distance to Io shown in the info card. Translate units if appropriate for your locale.">421 700 km fra Jupiter</string>
+    <string name="object_info_io_size" translation_description="Physical size of Io shown in the info card. Translate units if appropriate for your locale.">3 643 km diameter</string>
+
+    <string name="object_info_europa_description" translation_description="Description of Europa shown in the info card. Translate this text.">
+    Europa er Jupiters andre galileiske måne og antas å gjemme et enormt flytende vannhav under sin isete skorpe, noe som gjør den til et av de mest lovende stedene å søke etter liv.
+    </string>
+    <string name="object_info_europa_funfact" translation_description="Fun fact about Europa shown in the info card. Translate this text.">
+    Europas undersjøiske hav kan inneholde dobbelt så mye flytende vann som alle Jordens hav til sammen, holdt flytende av tidevannsvarmingen fra Jupiter.
+    </string>
+    <string name="object_info_europa_distance" translation_description="Distance to Europa shown in the info card. Translate units if appropriate for your locale.">671 100 km fra Jupiter</string>
+    <string name="object_info_europa_size" translation_description="Physical size of Europa shown in the info card. Translate units if appropriate for your locale.">3 122 km diameter</string>
+
+    <string name="object_info_ganymede_description" translation_description="Description of Ganymede shown in the info card. Translate this text.">
+    Ganymede er det største månet i solsystemet — selv større enn planeten Merkur. Det er det eneste månet som er kjent for å generere sitt eget magnetfelt.
+    </string>
+    <string name="object_info_ganymede_funfact" translation_description="Fun fact about Ganymede shown in the info card. Translate this text.">
+    Ganymede er større enn Merkur i størrelse, men bare omtrent halvparten av dets masse. Dets indre magnetfelt skaper sitt eget miniatyrmagnetosphere innenfor Jupiters mye større magnetosphere.
+    </string>
+    <string name="object_info_ganymede_distance" translation_description="Distance to Ganymede shown in the info card. Translate units if appropriate for your locale.">1 070 400 km fra Jupiter</string>
+    <string name="object_info_ganymede_size" translation_description="Physical size of Ganymede shown in the info card. Translate units if appropriate for your locale.">5 268 km diameter</string>
+
+    <string name="object_info_callisto_description" translation_description="Description of Callisto shown in the info card. Translate this text.">
+    Callisto er den ytterste av Galilei-månene og en av de mest kraterkryssede himmellegemene i solsystemet. Dens gamle overflate bevarer en oversikt over tidlige påvirkninger i solsystemet.
+    </string>
+    <string name="object_info_callisto_funfact" translation_description="Fun fact about Callisto shown in the info card. Translate this text.">
+    Callisto går i bane utenfor Jupiters hovedstrålingsbelte, noe som gjør den til den sikreste av Galilei-månene for fremtidig menneskelig utforsking — den kalles noen ganger \'gateway-månen\'.
+    </string>
+    <string name="object_info_callisto_distance" translation_description="Distance to Callisto shown in the info card. Translate units if appropriate for your locale.">1 882 700 km fra Jupiter</string>
+    <string name="object_info_callisto_size" translation_description="Physical size of Callisto shown in the info card. Translate units if appropriate for your locale.">4 821 km diameter</string>
+
+    <!-- Moons of Mars -->
+    <string name="object_info_phobos_description" translation_description="Description of Phobos shown in the info card. Translate this text.">
+    Phobos er den større og innerste av Mars\' to måner, og går i bane nærmere planeten sin enn noen annen måne i solsystemet. Det er en uregelmessig formet, sterkt furet og kraterkrysset himmellegeme som antas å være en fanget asteroide.
+    </string>
+    <string name="object_info_phobos_funfact" translation_description="Fun fact about Phobos shown in the info card. Translate this text.">
+    Phobos går i bane rundt Mars så raskt at det stiger i vest og går ned i øst — og det spiraler langsomt innover, bestemt til enten å krasje inn i Mars eller brytes opp til en ring om cirka 50 millioner år.
+    </string>
+    <string name="object_info_phobos_distance" translation_description="Distance to Phobos shown in the info card. Translate units if appropriate for your locale.">9 376 km fra Mars</string>
+    <!-- tm:omitted name="object_info_phobos_size" reason="identical_to_source" -->
+
+    <string name="object_info_deimos_description" translation_description="Description of Deimos shown in the info card. Translate this text.">
+    Deimos er den mindre og ytterste av Mars\' to måner, med en glatt, støvdekket overflate som gir den et rundere utseende enn Phobos. Som sin følgesvenn antas det å være en fanget asteroide fra den ytre beltegionen.
+    </string>
+    <string name="object_info_deimos_funfact" translation_description="Fun fact about Deimos shown in the info card. Translate this text.">
+    Deimos er så liten og fjern at den fra Marsoverflaten ser ut som ikke mer enn en lys stjerne, og tar omtrent 30 timer å langsomt drive over nattehimmelen.
+    </string>
+    <string name="object_info_deimos_distance" translation_description="Distance to Deimos shown in the info card. Translate units if appropriate for your locale.">23 460 km fra Mars</string>
+    <!-- tm:omitted name="object_info_deimos_size" reason="identical_to_source" -->
+
+    <!-- Major Moons of Saturn -->
+    <string name="object_info_titan_description" translation_description="Description of Titan shown in the info card. Translate this text.">
+    Titan er Saturnus\' største måne og den nest største månen i solsystemet. Det er den eneste månen som er kjent for å ha en tett atmosfære — et tykt nitrogenlag blandet med metan — og den eneste verden utenfor Jorden som er kjent for å ha stabile væskehav på overflaten.
+    </string>
+    <string name="object_info_titan_funfact" translation_description="Fun fact about Titan shown in the info card. Translate this text.">
+    Titans sjøer og hav er fylt ikke med vann, men med flytende methan og ethan ved en iskald −179°C. NASAs Dragonfly-rotorcraft-oppdrag, som skal ankomme i 2034, vil fly mellom steder på Titans overflate for å søke etter kjemien for liv.
+    </string>
+    <string name="object_info_titan_distance" translation_description="Distance to Titan shown in the info card. Translate units if appropriate for your locale.">1 221 870 km fra Saturn</string>
+    <string name="object_info_titan_size" translation_description="Physical size of Titan shown in the info card. Translate units if appropriate for your locale.">5 151 km diameter</string>
+
+    <string name="object_info_rhea_description" translation_description="Description of Rhea shown in the info card. Translate this text.">
+    Rhea er Saturns nest største måne og en sterkt kratrmarkert verden av is og stein. Dens bleke, gamle overflate bevarer noen av solsystemets mest uskadte nedslagskratere, sammen med lyse isklipper hvor jordskred har blottlagt friskt materiale fra under.
+    </string>
+    <string name="object_info_rhea_funfact" translation_description="Fun fact about Rhea shown in the info card. Translate this text.">
+    I 2008 antydet Cassini-data at Rhea kunne ha en tynn ring av materiale som kretser rundt den — noe som ville gjøre den til månen som først ble oppdaget med sitt eget ringsystem. Hvis det blir bekreftet, ville det være en bemerkelsesverdig oppdagelse; bevisene er fortsatt et aktivt forskningsområde.
+    </string>
+    <string name="object_info_rhea_distance" translation_description="Distance to Rhea shown in the info card. Translate units if appropriate for your locale.">527 108 km fra Saturn</string>
+    <string name="object_info_rhea_size" translation_description="Physical size of Rhea shown in the info card. Translate units if appropriate for your locale.">1 527 km diameter</string>
+
+    <string name="object_info_tethys_description" translation_description="Description of Tethys shown in the info card. Translate this text.">
+    Tethys er en isete måne rundt Saturn dominert av to dramatiske trekk: det enorme Odysseus-krateret, 400 km bredt og som dekker nesten en tredjedel av månens overflate, og Ithaca Chasma, et kanjonsystem som strekker seg tre fjerdedeler rundt kloden.
+    </string>
+    <string name="object_info_tethys_funfact" translation_description="Fun fact about Tethys shown in the info card. Translate this text.">
+    Tethys er nesten rent vann­is — den har en av de laveste tetthetene av alle måner i solsystemet, knapt tettere enn frossen vann. Ithaca Chasma kan ha dannet seg da det indre frøs og utvidet seg, og sprakk overkrustingen fra innsiden.
+    </string>
+    <string name="object_info_tethys_distance" translation_description="Distance to Tethys shown in the info card. Translate units if appropriate for your locale.">294 619 km fra Saturn</string>
+    <string name="object_info_tethys_size" translation_description="Physical size of Tethys shown in the info card. Translate units if appropriate for your locale.">1 062 km diameter</string>
+
+    <string name="object_info_dione_description" translation_description="Description of Dione shown in the info card. Translate this text.">
+    Dione er en isete måne rundt Saturn med et sterkt kratrmarkert forside og en bakside dekket av lyse isklipper — bruddlinjer hvor gamle tektoniske krefter eksponerte frisk is fra dypet. Cassini-gravitasjonsdata antyder et underjordisk flytende hav under skorpen.
+    </string>
+    <string name="object_info_dione_funfact" translation_description="Fun fact about Dione shown in the info card. Translate this text.">
+    Dione deler sin bane med to små måner, Helene og Polydeuces, som er låst 60° foran og bak den ved gravitasjonelle likevektspunkter kalt Lagrange-punkter. Helene kan spesielt sees som en kosmisk passasjer i Cassini-bilder.
+    </string>
+    <string name="object_info_dione_distance" translation_description="Distance to Dione shown in the info card. Translate units if appropriate for your locale.">377 396 km fra Saturn</string>
+    <string name="object_info_dione_size" translation_description="Physical size of Dione shown in the info card. Translate units if appropriate for your locale.">1 122 km diameter</string>
+
+    <string name="object_info_iapetus_description" translation_description="Description of Iapetus shown in the info card. Translate this text.">
+    Iapetus er en av Saturns mest karakteristiske måner: dens ledende halvkule er dekket av jettsort materiale like mørkt som kull, mens dens bakre halvkule er lysehvit is. Dette ekstreme to-tonede utseendet forvirret Giovanni Cassini da han oppdaget månen i 1671, og kontrasten er så markant at den er synlig i små teleskoper.
+    </string>
+    <string name="object_info_iapetus_funfact" translation_description="Fun fact about Iapetus shown in the info card. Translate this text.">
+    Iapetus har også en imponerende ekvatorial rygg som stiger 20 km høyt — høyere enn noe fjell på Jorden — som strekker seg tusenvis av kilometer rundt ekvator. Opprinnelsen er ukjent: det kan være resten av en kollapsert ring, eller gammel tektonisk folding, dannet da månen roterte mye raskere for lenge siden.
+    </string>
+    <string name="object_info_iapetus_distance" translation_description="Distance to Iapetus shown in the info card. Translate units if appropriate for your locale.">3 560 820 km fra Saturn</string>
+    <string name="object_info_iapetus_size" translation_description="Physical size of Iapetus shown in the info card. Translate units if appropriate for your locale.">1 469 km diameter</string>
+
+    <!-- Moon of Neptune -->
+    <string name="object_info_triton_description" translation_description="Description of Triton shown in the info card. Translate this text.">
+    Triton er Neptuns største måne og en av de mest ekstraordinære himmellegemene i solsystemet. Den går i bane rundt Neptun baklengs — motsatt av planetens egen rotasjon — et sterkt tegn på at den ble fanget fra det ytre solsystemet, mest sannsynlig fra Kuiper-beltet, tidlig i Neptuns historie.
+    </string>
+    <string name="object_info_triton_funfact" translation_description="Fun fact about Triton shown in the info card. Translate this text.">
+    Til tross for en overflatetemperatur på −235°C — den kaldeste som er målt på noe himmellegeme besøkt av et romfartøy — oppdaget Voyager 2 aktive nitrogengejsere på Triton i 1989. Mørke striper på overflaten markerer hvor søyler av gass og mørkt materiale skjøt kilometer opp i den tynne atmosfæren.
+    </string>
+    <string name="object_info_triton_distance" translation_description="Distance to Triton shown in the info card. Translate units if appropriate for your locale.">354 759 km fra Neptun</string>
+    <string name="object_info_triton_size" translation_description="Physical size of Triton shown in the info card. Translate units if appropriate for your locale.">2 707 km diameter</string>
+
+    <!-- Major Moons of Uranus -->
+    <string name="object_info_titania_description" translation_description="Description of Titania shown in the info card. Translate this text.">
+    Titania er Uranus\' største måne og den åttende største månen i solsystemet. Overflaten viser en blanding av gamle kraterfylte sletter og yngre skarpkanter og daler, noe som tyder på en kompleks geologisk historie som kan ha inkludert tidligere tektonisk aktivitet som omformet den isete skorpen.
+    </string>
+    <string name="object_info_titania_funfact" translation_description="Fun fact about Titania shown in the info card. Translate this text.">
+    Alle månene til Uranus er oppkalt etter karakterer fra Shakespeare og Alexander Pope — Titania er feerkongen i En midtsommernattsdrom. Det er en av svært få store planetmåner som ikke er oppkalt etter en figur fra gresk eller romersk mytologi.
+    </string>
+    <string name="object_info_titania_distance" translation_description="Distance to Titania shown in the info card. Translate units if appropriate for your locale.">435 910 km fra Uranus</string>
+    <string name="object_info_titania_size" translation_description="Physical size of Titania shown in the info card. Translate units if appropriate for your locale.">1 578 km diameter</string>
+
+    <string name="object_info_oberon_description" translation_description="Description of Oberon shown in the info card. Translate this text.">
+    Oberon er den ytterste av Uranus\' fem store måner og en av de mest kraterkrystalte, med en gammel overflate som har endret seg lite siden tidlig i solsystemet. Flere av dets store nedslagskratere har mørkt materiale på bunnen, muligens organiske avsetninger brakt inn av de oppslåtte legemene.
+    </string>
+    <string name="object_info_oberon_funfact" translation_description="Fun fact about Oberon shown in the info card. Translate this text.">
+    Oberon har et fjell som stiger omtrent 6 km fra de omkringliggende slettene — sammenlignbart med de høyeste toppene på Jorden. I motsetning til Jordens fjell, som ble dannet gjennom platekitektonikk, kan denne strukturen være sentraltoppen av et gammelt nedslagskrater eller en rest fra tidlig vulkansk aktivitet.
+    </string>
+    <string name="object_info_oberon_distance" translation_description="Distance to Oberon shown in the info card. Translate units if appropriate for your locale.">583 520 km fra Uranus</string>
+    <string name="object_info_oberon_size" translation_description="Physical size of Oberon shown in the info card. Translate units if appropriate for your locale.">1 523 km diameter</string>
+
+    <string name="object_info_ariel_description" translation_description="Description of Ariel shown in the info card. Translate this text.">
+    Ariel har den yngste og lyseste overflaten av Uranus\' fem store måner. Landskapet er dominert av et nettverk av dype daler og glatte sletter som ble omformet for lenge siden av væske – sannsynligvis vann eller ammoniakk-vann-blandinger – som steg opp fra det indre og oversvømmet gammelt terreng.
+    </string>
+    <string name="object_info_ariel_funfact" translation_description="Fun fact about Ariel shown in the info card. Translate this text.">
+    Ariels daler kan nå 10 km dybde — langt dypere enn Grand Canyon. James Webb Space Telescope-observasjoner har siden oppdaget karbondioksidis på Ariels overflate, noe som antyder pågående overflatekjemi drevet av ladede partikler fra Uranus\' magnetfelt.
+    </string>
+    <string name="object_info_ariel_distance" translation_description="Distance to Ariel shown in the info card. Translate units if appropriate for your locale.">191 020 km fra Uranus</string>
+    <string name="object_info_ariel_size" translation_description="Physical size of Ariel shown in the info card. Translate units if appropriate for your locale.">1 158 km diameter</string>
+
+    <string name="object_info_umbriel_description" translation_description="Description of Umbriel shown in the info card. Translate this text.">
+    Umbriel er den mørkeste av Uranus\' fem store måner, med en jevnt gammel og sterkt kratrmarkert overflate som viser lite tegn på den geologiske omforming som ses på naboene. Dens indre ser ut til å ha forblitt kaldt og fryst siden tidlig i solsystemets historie.
+    </string>
+    <string name="object_info_umbriel_funfact" translation_description="Fun fact about Umbriel shown in the info card. Translate this text.">
+    Det mest slående trekket på Umbriel er Wunda, en lys ring på omkring 140 km i diameter nær ekvator. Oppdaget av Voyager 2 i 1986, er Wundas eksakte natur fortsatt et mysterium — det kan være en kraterbunnen dekket av karbondioksid eller ammoniakkfrost som ble avsatt lenge etter at påvirkningen som dannet den oppstod.
+    </string>
+    <string name="object_info_umbriel_distance" translation_description="Distance to Umbriel shown in the info card. Translate units if appropriate for your locale.">266 300 km fra Uranus</string>
+    <string name="object_info_umbriel_size" translation_description="Physical size of Umbriel shown in the info card. Translate units if appropriate for your locale.">1 170 km diameter</string>
+
+    <!-- Globular clusters already on the map -->
+    <string name="object_info_omega_centauri_description" translation_description="Description of Omega Centauri shown in the info card. Translate this text.">
+    Omega Centauri er den største og mest massive kuleglobalen som går i bane rundt Melkeveien, og inneholder omtrent 10 millioner stjerner pakket inn i en sfære på cirka 150 lysår på tvers. Det er lett synlig for det blotte øye som en uklar stjerne i Centaurus, og løser seg opp til en fantastisk stjernekule gjennom kikkerter eller teleskoper.
+    </string>
+    <string name="object_info_omega_centauri_funfact" translation_description="Fun fact about Omega Centauri shown in the info card. Translate this text.">
+    I motsetning til typiske kulegalakser inneholder Omega Centauri stjerner av mange ulike aldre og kjemiske sammensetninger — et tegn på at det kan være den strippede kjernen av en dvergegalakse som ble revet fra hverandre og slukt av Melkeveien for milliarder av år siden. Det kan til og med inneholde et sentralt mellommassesvart hull.
+    </string>
+    <string name="object_info_omega_centauri_distance" translation_description="Distance to Omega Centauri shown in the info card. Translate units if appropriate for your locale.">17 090 lysår</string>
+    <string name="object_info_omega_centauri_size" translation_description="Physical size of Omega Centauri shown in the info card. Translate units if appropriate for your locale.">~150 lysår diameter</string>
+
+    <!-- Deep-sky objects: new catalog additions -->
+    <string name="object_info_hyades_description" translation_description="Description of the Hyades star cluster shown in the info card. Translate this text.">
+    Hyades er det nærmeste åpne stjernehoben til solsystemet og en av de mest studerte innen astronomi. Synlig for det blotte øye som det V-formede mønsteret av stjerner som danner ansiktet til Tyren, inneholder det flere hundre stjerner spredt over omtrent 5° av himmelen.
+    </string>
+    <string name="object_info_hyades_funfact" translation_description="Fun fact about the Hyades shown in the info card. Translate this text.">
+    Den strålende oransje stjernen Aldebaran ser ut til å ligge innenfor Hyader, men er faktisk et forgrunnsobjekt på halve avstanden — en tilfeldig justering. Den virkelige klyngen ligger omtrent 153 lysår unna og inneholder de første stjernene hvis avstander ble målt ved parallakse fra Hipparcos-satellitten.
+    </string>
+    <string name="object_info_hyades_distance" translation_description="Distance to the Hyades shown in the info card. Translate units if appropriate for your locale.">153 lysår</string>
+    <string name="object_info_hyades_size" translation_description="Angular size of the Hyades shown in the info card.">~5° på tvers</string>
+
+    <string name="object_info_coma_star_cluster_description" translation_description="Description of the Coma Berenices Star Cluster shown in the info card. Translate this text.">
+    Coma Berenices-stjernetopen er en nærliggende åpen stjernehop med omkring 40 stjerner spredt løst over nesten 5° av himmelen, lett synlig for det blotte øye som en myk tåke under mørke forhold. Det er den tredje nærmeste åpne stjernehopen til solsystemet og kilden til stjernebildet Coma Berenices.
+    </string>
+    <string name="object_info_coma_star_cluster_funfact" translation_description="Fun fact about the Coma Berenices Star Cluster shown in the info card. Translate this text.">
+    Gamle observatører så denne stjernehopen som håret til dronning Berenice II av Egypt, som ifølge legenden klippet av sitt gylne hår som offer for at hennes mann skulle komme trygt hjem fra krig. Ptolemaios III skal ha offisielt navngitt det uvanlige stjernebildet til hennes ære rundt 245 f.Kr.
+    </string>
+    <string name="object_info_coma_star_cluster_distance" translation_description="Distance to the Coma Star Cluster shown in the info card. Translate units if appropriate for your locale.">288 lysår</string>
+    <string name="object_info_coma_star_cluster_size" translation_description="Angular size of the Coma Star Cluster shown in the info card.">~5° på tvers</string>
+
+    <string name="object_info_coathanger_description" translation_description="Description of the Coathanger asterism shown in the info card. Translate this text.">
+    Coathanger er en slående asterisme av ti stjerner i Vulpecula som danner en umiskjennelig form: seks stjerner i en rett linje med fire hengende nedenfor i en krok, nøyaktig som en omvendt klesbøyle. Det er ett av de beste kikkertobjektene på sommerhimmelen, og passer perfekt inn i et typisk kikkertsyn.
+    </string>
+    <string name="object_info_coathanger_funfact" translation_description="Fun fact about the Coathanger shown in the info card. Translate this text.">
+    Til tross for at det ser ut som en stjernehop, er stjernene i Klesbrettet ikke fysisk relatert — de ligger på svært ulike avstander og er bare en tilfeldig linjeoversikt. Brocchis Stjernehop ble katalogisert av Dalmiro Brocchi på 1920-tallet, og det første romteleskopet som avbildet det var Hipparcos, som bekreftet at stjernene er uavhengige.
+    </string>
+    <string name="object_info_coathanger_distance" translation_description="Distance to the Coathanger shown in the info card. Translate units if appropriate for your locale.">~420 lysår (lyseste stjerne)</string>
+    <string name="object_info_coathanger_size" translation_description="Angular size of the Coathanger shown in the info card.">~1° på tvers</string>
+
+    <string name="object_info_helix_nebula_description" translation_description="Description of the Helix Nebula shown in the info card. Translate this text.">
+    Helix-tåken er den største planetariske tåken når det gjelder tilsynelatende størrelse på himmelen — det ekspanderende gassskallet som ble kastet av en sollik stjerne på slutten av sitt liv. Med en utstrekning på omtrent en halv grad, er den synlig i kikkerter som en svak sirkulær glød i Vannmannen og kalles Guds øye på grunn av sitt utseende på langeksponeringsbilder.
+    </string>
+    <string name="object_info_helix_nebula_funfact" translation_description="Fun fact about the Helix Nebula shown in the info card. Translate this text.">
+    I sentrum av Helix-tåken ligger en av de nærmeste kjente hvite dverger til Jorden — en intenst varm stellar rest omtrent størrelsen på Jorden, men med Solens masse. Dette er skjebnen som venter vår egen Sol om cirka fem milliarder år.
+    </string>
+    <string name="object_info_helix_nebula_distance" translation_description="Distance to the Helix Nebula shown in the info card. Translate units if appropriate for your locale.">650 lysår</string>
+    <string name="object_info_helix_nebula_size" translation_description="Angular size of the Helix Nebula shown in the info card.">~3 lysår diameter</string>
+
+    <string name="object_info_sculptor_galaxy_description" translation_description="Description of the Sculptor Galaxy shown in the info card. Translate this text.">
+    Sculptor-galaksen er en av de lyseste og vakreste kantede spiralgalaksene som er synlige fra Jorden, og fremstår som en langstrakt glød i det sørlige stjernebildet Sculptor. Det er en av de nærmeste starburst-galaksene — en galakse som gjennomgår en intens stjernedannelsesburst — som er synlig for amatørastronomer med kikkerter fra mørke himler.
+    </string>
+    <string name="object_info_sculptor_galaxy_funfact" translation_description="Fun fact about the Sculptor Galaxy shown in the info card. Translate this text.">
+    Sculptor-galaksen er et av de lyseste medlemmene av Sculptor-gruppen — galaksegruppene nærmest vår egen Lokale gruppe. Dens sentrale starburst-region produserer nye stjerner med en hastighet flere ganger høyere enn Melkeveien, drevet av tidligere interaksjoner med nabogalakser.
+    </string>
+    <string name="object_info_sculptor_galaxy_distance" translation_description="Distance to the Sculptor Galaxy shown in the info card. Translate units if appropriate for your locale.">11,4 millioner lysår</string>
+    <string name="object_info_sculptor_galaxy_size" translation_description="Physical size of the Sculptor Galaxy shown in the info card. Translate units if appropriate for your locale.">~90 000 lysår på tvers</string>
+
+    <string name="object_info_blue_snowball_nebula_description" translation_description="Description of the Blue Snowball Nebula shown in the info card. Translate this text.">
+    Blue Snowball er en planetarisk tåke i Andromeda — skallet av gass som stråler fra en døende stjerne. Med en styrke på 8,3 er den en av de lyseste og mest fargerike planetariske tåkene på himmelen, og vises som en levende blågrønn disk selv i små teleskoper. Dens symmetriske form og intense farge gjør den til en favoritt blant observatører.
+    </string>
+    <string name="object_info_blue_snowball_nebula_funfact" translation_description="Fun fact about the Blue Snowball Nebula shown in the info card. Translate this text.">
+    Den blå snøballen\'s slående farge kommer fra dobbelt ionisert oksygen som lyser ved en spesifikk grønn bølgelengde, kombinert med hydrogenemisjon — en fargepalett som menneskelige øyne oppfatter som blågrønn. Den sentrale hvite dvergen har en overflatetemperatur på omkring 100 000°C, varm nok til å ionisere den omkringliggende gassen i denne avstanden.
+    </string>
+    <string name="object_info_blue_snowball_nebula_distance" translation_description="Distance to the Blue Snowball Nebula shown in the info card. Translate units if appropriate for your locale.">~2 500 lysår</string>
+    <string name="object_info_blue_snowball_nebula_size" translation_description="Physical size of the Blue Snowball Nebula shown in the info card. Translate units if appropriate for your locale.">~0,8 lysår diameter</string>
+
+    <string name="object_info_ghost_of_jupiter_description" translation_description="Description of the Ghost of Jupiter planetary nebula shown in the info card. Translate this text.">
+    The Ghost of Jupiter er en lys planetarisk tåke i Hydra med tilsynelatende størrelse som ligner på planeten Jupiter — derav navnet. Med magnitude 8,6 er den en av de mest tilgjengelige planetariske tåkene på himmelen for små teleskoper, og viser en klar disk og et hint av farge i moderate åpninger.
+    </string>
+    <string name="object_info_ghost_of_jupiter_funfact" translation_description="Fun fact about the Ghost of Jupiter shown in the info card. Translate this text.">
+    Jupiters Spøkelse har et indre lyst skall omgitt av en svakere ytre halo — en to-skall-struktur som antyder at den døende stjernen utslapp gass i minst to separate episoder. Dens sentrale stjerne er en av de heteste kjente hvite dverger, med en overflatetemperatur estimert til omkring 75 000°C.
+    </string>
+    <string name="object_info_ghost_of_jupiter_distance" translation_description="Distance to the Ghost of Jupiter shown in the info card. Translate units if appropriate for your locale.">~1 400 lysår</string>
+    <string name="object_info_ghost_of_jupiter_size" translation_description="Physical size of the Ghost of Jupiter shown in the info card. Translate units if appropriate for your locale.">~1 lysår diameter</string>
+
+    <string name="object_info_saturn_nebula_description" translation_description="Description of the Saturn Nebula shown in the info card. Translate this text.">
+    Saturnståken er en planetarisk tåke i Vannmannen oppkalt etter sin likhet med planeten Saturn – utvidelser kalt ansae stikker ut fra hver side som ringhanker, synlige i moderate teleskoper. Med størrelse 8,0 er den en av de lyseste planetariske tåkene på himmelen og viser kompleks struktur i større instrumenter.
+    </string>
+    <string name="object_info_saturn_nebula_funfact" translation_description="Fun fact about the Saturn Nebula shown in the info card. Translate this text.">
+    William Herschel oppdaget Saturn-nebula i 1782 og noterte det Saturn-lignende utseendet. Moderne observasjoner avslører minst fire distinkte gasslag som omgir den sentrale hvite dverg, noe som gjenspeiler flere episoder med massetap i stjernens siste livsfaser.
+    </string>
+    <string name="object_info_saturn_nebula_distance" translation_description="Distance to the Saturn Nebula shown in the info card. Translate units if appropriate for your locale.">~5 000 lysår</string>
+    <string name="object_info_saturn_nebula_size" translation_description="Physical size of the Saturn Nebula shown in the info card. Translate units if appropriate for your locale.">~1 lysår på tvers</string>
+
+    <string name="object_info_ngc_2903_description" translation_description="Description of the galaxy NGC 2903 shown in the info card. Translate this text.">
+    NGC 2903 er en lysende stangspiral-galakse i Løven, ofte kalt «Messier-objektet som Messier gikk glipp av» — den er en av de mest fremtredende galaksene på himmelen som ikke er inkludert i hans berømte katalog. Med størrelse 8,9 er den lett synlig i kikkerter og viser vakker spiralstruktur i moderate teleskoper.
+    </string>
+    <string name="object_info_ngc_2903_funfact" translation_description="Fun fact about NGC 2903 shown in the info card. Translate this text.">
+    NGC 2903 har en av de høyeste konsentrasjonene av stjernedannende "hotspots" kjent i en galakses sentrale stangregion — tette klynger av unge massive stjerner opplyst av intens stjernedannelse. Den brukes som en referanse for å studere starburst-aktivitet i stangspiralgalakser.
+    </string>
+    <string name="object_info_ngc_2903_distance" translation_description="Distance to NGC 2903 shown in the info card. Translate units if appropriate for your locale.">30 millioner lysår</string>
+    <string name="object_info_ngc_2903_size" translation_description="Physical size of NGC 2903 shown in the info card. Translate units if appropriate for your locale.">~80 000 lysår på tvers</string>
+
+    <!-- Meteor showers -->
+    <string name="object_info_quadrantids_description" translation_description="Description of the Quadrantids meteor shower shown in the info card. Translate this text.">
+    Kvadrantidene er en rik januarmeteorsverm med en veldig skarp, kort topp som varer bare noen få timer. Radianten ligger i stjernebildet Boötes, nær posisjonen til det nedlagte stjernebildet Quadrans Muralis som svermen er oppkalt etter. Opptil 120 meteorer per time er synlige under ideelle forhold.
+    </string>
+    <string name="object_info_quadrantids_funfact" translation_description="Fun fact about the Quadrantids meteor shower shown in the info card. Translate this text.">
+    I motsetning til de fleste store meteorregn som stammer fra kometer, er Quadrantidenes morlegeme asteroiden 2003 EH1 — antatt å være den sovende kjernen av en komet som brant ut for århundrer siden. Dens eksistens ble først bekreftet i 2003.
+    </string>
+
+    <string name="object_info_lyrids_description" translation_description="Description of the Lyrids meteor shower shown in the info card. Translate this text.">
+    Lyrids er en pålitelig vårregn som stråler fra området nær den lyse stjernen Vega i Lyra. De produserer raske, moderat lyse meteorer, med topp på omkring 18 per time, og genererer av og til ildkuler som etterlater glødende røykslør.
+    </string>
+    <string name="object_info_lyrids_funfact" translation_description="Fun fact about the Lyrids meteor shower shown in the info card. Translate this text.">
+    Lyrids er den eldste pålitelig dokumenterte meteorsvermen i historien. Kinesiske astronomer dokumenterte en storm av meteorer som "falt som regn" i 687 f.Kr. Debrisene kommer fra Komet Thatcher, som tar 415 år på å gå i bane rundt Solen og besøkte sist det indre solsystemet i 1861.
+    </string>
+
+    <string name="object_info_aquariids_description" translation_description="Description of the Eta Aquariids meteor shower shown in the info card. Translate this text.">
+    Eta Aquariidene er en av to årlige meteorregn produsert av debris fra Halleys komet. Med topp på opptil 70 meteorer per time, favoriserer regnen sterkt den sørlige halvkule, hvor radianten stiger høyt før daggry. Nordlige observatører nyter fortsatt en respektabel rate på 30 eller flere per time.
+    </string>
+    <string name="object_info_aquariids_funfact" translation_description="Fun fact about the Eta Aquariids meteor shower shown in the info card. Translate this text.">
+    Eta Aquariid-meteorer beveger seg med 66 km/s — raskt nok til at den ioniserte luften de skaper kan lyse i flere sekunder etter at meteoren er forsvunnet. Du kan se Halleys gamle støv brenne opp foran øynene dine, kastet ut under en av kometens mange besøk for tusenvis av år siden.
+    </string>
+
+    <string name="object_info_deltaaquariids_description" translation_description="Description of the Delta Aquariids meteor shower shown in the info card. Translate this text.">
+    Southern Delta Aquariids når sitt toppunkt i slutten av juli og ses best fra tropiske og sørlige breddegrader, der radianten i Vannmannen stiger høyt før daggry. De produserer en jevn strøm av meteorer med medium hastighet på opptil 16 per time, med få lyse ildkuler.
+    </string>
+    <string name="object_info_deltaaquariids_funfact" translation_description="Fun fact about the Delta Aquariids meteor shower shown in the info card. Translate this text.">
+    Den eksakte opprinnelseskroppen til Delta Aquariidene er fortsatt usikker. Den mest sannsynlige kandidaten er Komet 96P/Machholz, en uvanlig kortperiodisk komet med en sterkt tiltet bane som kommer bemerkelsesverdig nær Solen — nærmere enn planeten Merkur.
+    </string>
+
+    <string name="object_info_perseids_description" translation_description="Description of the Perseids meteor shower shown in the info card. Translate this text.">
+    Perseidene er årets mest populære meteorsverm, med topp på varme augustnetter med opptil 100 meteorer per time. Materiale fra kometen Swift-Tuttle brenner opp høyt i Jordens atmosfære og produserer raske, lyse meteorer — mange etterlater vedvarende lysende spor — som stråler fra stjernebildet Perseus.
+    </string>
+    <string name="object_info_perseids_funfact" translation_description="Fun fact about the Perseids meteor shower shown in the info card. Translate this text.">
+    Forelderen til Perseidene, kometen Swift-Tuttle, har en kjerne som er 26 km bred — større enn objektet som antas å ha forårsaket masseutryddelsen som endte dinosaurenes tid. Kometen passerte sist gjennom det indre solsystemet i 1992 og vil ikke returnere før i 2125.
+    </string>
+
+    <string name="object_info_orionids_description" translation_description="Description of the Orionids meteor shower shown in the info card. Translate this text.">
+    Orionidene er den andre meteorsvermen som produseres hvert år av Halleys komet, og stråler fra området nær Orions løftede kølle. Med topp på omkring 25 per time, er de kjent for raske, ofte lyse meteorer som ofte etterlater glødende ioniseringsspor som varer flere sekunder.
+    </string>
+    <string name="object_info_orionids_funfact" translation_description="Fun fact about the Orionids meteor shower shown in the info card. Translate this text.">
+    Halleys komet er ansvarlig for to årlige meteorregn: Eta Aquariidene i mai, når Jorden krysser kometens utgående debrissky, og Orionidene i oktober, når Jorden krysser den innkommende skyen. Sammen lar de oss prøve gammelt Halley-støv to ganger i året.
+    </string>
+
+    <string name="object_info_leonids_description" translation_description="Description of the Leonids meteor shower shown in the info card. Translate this text.">
+    Leonidene stråler fra leonens sigd og produserer vanligvis rundt 20 meteorer per time. De er berømte for spektakulære stormer som oppstår omtrent hvert 33. år når Jorden passerer gjennom en tett støvfilament som er kastet av fra kometen 55P/Tempel-Tuttle. Disse stormene kan produsere tusenvis av meteorer per time.
+    </string>
+    <string name="object_info_leonids_funfact" translation_description="Fun fact about the Leonids meteor shower shown in the info card. Translate this text.">
+    Leonid-stormen i 1833 produserte anslagsvis 100 000 meteorer per time, noe som skremt observatører over hele Nord-Amerika som fryktet at himmelen sto i brann. Hendelsen startet det vitenskapelige studiet av meteorsvermene. Sammenlignbare stormer oppstod i 1966 og 1999.
+    </string>
+
+    <string name="object_info_puppidvelids_description" translation_description="Description of the Puppid-Velids meteor shower shown in the info card. Translate this text.">
+    Puppid-Velids er et kompleks av overlappende mindre meteorsverminger som stråler fra stjernebilledene Puppis og Vela i den sørlige Melkeveien. Med topp på omkring 10 meteorer per time, observeres de best fra den sørlige halvkule, hvor radianten stiger høyt på desemberhimmelen.
+    </string>
+    <string name="object_info_puppidvelids_funfact" translation_description="Fun fact about the Puppid-Velids meteor shower shown in the info card. Translate this text.">
+    Puppid-Velids antas å være rester fra flere ulike mortkometer i stedet for en enkelt kilde, inkludert komet 26P/Grigg-Skjellerup. Deres sydlige radiant stiger aldri over horisonten for observatører på breddegrader nord for omtrent 40°N, noe som gjør dem til en meteorsverm som det meste av verden sjelden ser.
+    </string>
+
+    <string name="object_info_geminids_description" translation_description="Description of the Geminids meteor shower shown in the info card. Translate this text.">
+    Geminidene regnes bredt som årets fineste meteorsverm — rikelig (opptil 120 per time), pålitelig og aktiv fra tidlig kveld i stedet for bare etter midnatt. De stråler fra stjernebildet Gemini og produserer et bredt spekter av meteorlysstyrker, inkludert levende ildkuler.
+    </string>
+    <string name="object_info_geminids_funfact" translation_description="Fun fact about the Geminids meteor shower shown in the info card. Translate this text.">
+    Unikt blant større meteorregn kommer Geminidene fra en asteroide i stedet for en komet: 3200 Phaethon, en «steinkomet» hvis bane tar den nærmere Solen enn noen annen navngitt asteroide. Ekstrem varme kan sprekke overflaten og drive av støvet som produserer regnet.
+    </string>
+
+    <string name="object_info_ursids_description" translation_description="Description of the Ursids meteor shower shown in the info card. Translate this text.">
+    Ursidene er en mindre meteorsverm som stråler fra Ursa Minor, nær Polaris, noe som gjør dem sirkumpolare for observatører på den nordlige halvkule — synlige hele natten uten å gå ned. De kulminerer rundt vintersolverv med omtrent 10 meteorer per time, og moderkometen er 8P/Tuttle.
+    </string>
+    <string name="object_info_ursids_funfact" translation_description="Fun fact about the Ursids meteor shower shown in the info card. Translate this text.">
+    Ursidene produserer av og til uventede utbrudd langt over sin typiske rate. I 1945 og igjen i 2006 registrerte observatører 50 eller flere meteorer per time — fem ganger den normale toppen. Disse bølgene oppstår når Jorden passerer gjennom et uvanlig tett bånd av materiale som ble kastet ut under en nær tilnærming av kometen Tuttle.
+    </string>
+
+    <!-- Category 5: Top priority — objects on the map that lacked info cards -->
+    <string name="object_info_m47_description" translation_description="Description of the open star cluster M47 shown in the info card. Translate this text.">
+    M47 er en lys, løs åpen stjernehop i Puppis, lett synlig for det blotte øye og iøynefallende i kikkerter. Omtrent 50 stjerner er spredt over en halv grad himmel, med flere oransje kjempestjerner som gir varm farge mot de svakere blåhvite medlemmene.
+    </string>
+    <string name="object_info_m47_funfact" translation_description="Fun fact about M47 shown in the info card. Translate this text.">
+    M47 var ett av de "försvunna" Messier-objekten — ett skrivfel i Messiers ursprungliga koordinater placerade det på tom himmel, vilket gjorde att klustret förblev oidentifierat i nästan två århundraden. Dess sanna identitet som NGC 2422 bekräftades först 1959, när observatörer arbetade bakåt från Messiers beskrivning för att hitta felet.
+    </string>
+    <string name="object_info_m47_distance" translation_description="Distance to M47 shown in the info card. Translate units if appropriate for your locale.">1 600 lysår</string>
+    <string name="object_info_m47_size" translation_description="Physical size of M47 shown in the info card. Translate units if appropriate for your locale.">~14 lysår på tvers</string>
+
+    <string name="object_info_m41_description" translation_description="Description of the open star cluster M41 shown in the info card. Translate this text.">
+    M41 er en fin åpen stjernehop i Canis Major, som ligger bare 4° sør for Sirius – den lyseste stjernen på nattehimmelen. Synlig for det blotte øye fra mørke steder og spektakulær i kikkerter, inneholder den omtrent 100 stjerner spredt over et stort område, med flere slående oransje kjempestjerner blant svakere blåhvite medlemmer.
+    </string>
+    <string name="object_info_m41_funfact" translation_description="Fun fact about M41 shown in the info card. Translate this text.">
+    Aristoteles kan ha observert M41 rundt 325 f.Kr. — muligens den tidligste registrerte observasjonen av noe dypromsobjekt. Han beskrev en "tåkeaktig flekk" sør for Sirius som samsvarer med M41\'s posisjon. Hvis identifikasjonen er korrekt, ble M41 diskutert nesten to tusen år før teleskopet ble oppfunnet.
+    </string>
+    <string name="object_info_m41_distance" translation_description="Distance to M41 shown in the info card. Translate units if appropriate for your locale.">2 300 lysår</string>
+    <string name="object_info_m41_size" translation_description="Physical size of M41 shown in the info card. Translate units if appropriate for your locale.">~25 lysår på tvers</string>
+
+    <string name="object_info_m24_description" translation_description="Description of the Sagittarius Star Cloud (M24) shown in the info card. Translate this text.">
+    M24 er Sagittarius Star Cloud — ikke en stjernehop eller tåke, men et vindu gjennom en åpning i Melkeveiens støv, som avslører et strålende stjernefelt på 2° på tvers. Det er den rikeste regionen som er synlig gjennom kikkerter hvor som helst på himmelen, pakket med tusenvis av stjerner som spenner over mange forskjellige avstander samtidig.
+    </string>
+    <string name="object_info_m24_funfact" translation_description="Fun fact about M24 shown in the info card. Translate this text.">
+    Stjernene i M24 er ikke i samme avstand — stjerneskyen representerer et tverrsnitt av Galaksens disk sett gjennom en naturlig tunnel i det interstellare støvet, som spenner over avstander på 10 000 til 16 000 lysår. Innebygd i skyen er mørke tåker og små stjernehoper som vises som mørke flekker mot den strålende stjernebakgrunnen.
+    </string>
+    <string name="object_info_m24_distance" translation_description="Distance range to M24 shown in the info card. Translate units if appropriate for your locale.">~10 000–16 000 lysår (område)</string>
+    <string name="object_info_m24_size" translation_description="Physical size of M24 shown in the info card. Translate units if appropriate for your locale.">~600 lysår dypt vindu</string>
+
+    <string name="object_info_m25_description" translation_description="Description of the open star cluster M25 shown in the info card. Translate this text.">
+    M25 er en lys åpenstjernehop som kan ses med det blotte øye i Skytten, plassert mot de tette stjernefeltene på sommerens Melkeveien. Omtrent 600 stjerner er spredt over et halvgradsfelt, noe som gjør det til et rikt objekt for kikkerter. Dets lyseste medlemmer inkluderer flere blåhvite superkjemper og en av de mest studerte Cepheid-variablestjernene på himmelen.
+    </string>
+    <string name="object_info_m25_funfact" translation_description="Fun fact about M25 shown in the info card. Translate this text.">
+    M25 inneholder U Sagittarii, en klassisk Cepheid-variabel stjerne som blir lysere og mørkere over en periode på 6,7 dager. Cepheidene er vitale "standardlys" for måling av kosmiske avstander fordi deres pulsasjonsperiode direkte avslører deres sanne lysstyrke — astronomer brukte dem til først å bestemme størrelsen på Melkeveien og deretter skalaen på det observerbare universet.
+    </string>
+    <string name="object_info_m25_distance" translation_description="Distance to M25 shown in the info card. Translate units if appropriate for your locale.">2 000 lysår</string>
+    <string name="object_info_m25_size" translation_description="Physical size of M25 shown in the info card. Translate units if appropriate for your locale.">~19 lysår på tvers</string>
+
+    <string name="object_info_m39_description" translation_description="Description of the open star cluster M39 shown in the info card. Translate this text.">
+    M39 er en stor, spredt åpen stjernehop i Cygnus, synlig for det blotte øye nær Deneb i den rike sommermilkevegen. Dens omtrent 30 lyse stjerner er løst gruppert over en grad av himmelen, best sett ved lav forstørrelse i kikkerter eller et vidtsynsfelt-teleskop – høyere forstørrelse løser det bare opp i et sparsomt, ubemerkelsesverdigt stjernefeltet.
+    </string>
+    <string name="object_info_m39_funfact" translation_description="Fun fact about M39 shown in the info card. Translate this text.">
+    Med omkring 825 lysår er M39 en av de nærmeste åpne stjernehopene til Jorden, og med en alder på omtrent 240 millioner år er det en av de eldre stjernehopene synlige for det blotte øye — gammelt nok til at de mest massive stjernene allerede har avsluttet sine liv. Messier registrerte det i 1764 og det var blant de tidligste tilleggene til katalogen hans.
+    </string>
+    <string name="object_info_m39_distance" translation_description="Distance to M39 shown in the info card. Translate units if appropriate for your locale.">825 lysår</string>
+    <string name="object_info_m39_size" translation_description="Physical size of M39 shown in the info card. Translate units if appropriate for your locale.">~8 lysår på tvers</string>
+
+    <!-- Category 5: Special cases -->
+    <string name="object_info_m63_description" translation_description="Description of the Sunflower Galaxy (M63) shown in the info card. Translate this text.">
+    Solsikke-galaksen er en lysende spiral i Canes Venatici med tett viklede armer som er flekket med stjernedannelsesregioner, noe som gir den en karakteristisk blomsterlignende tekstur på langeksponeringsbilder. Med en størrelse på 8,6 er den synlig i kikkerter fra mørke himler og viser sin langstrakte form og lyse kjerne lett i små teleskoper.
+    </string>
+    <string name="object_info_m63_funfact" translation_description="Fun fact about the Sunflower Galaxy shown in the info card. Translate this text.">
+    M63 ble oppdaget av Pierre Méchain i 1779 — en av få Messier-objekter som ble funnet av Méchain i stedet for Messier selv. Det er medlem av M51-gruppen, fysisk forbundet med Virvelvindgalaksen (M51), og viser tegn på tidligere interaksjon: en svak, gammel stjernestrøm omslutter dens ytre disk.
+    </string>
+    <string name="object_info_m63_distance" translation_description="Distance to the Sunflower Galaxy shown in the info card. Translate units if appropriate for your locale.">29 millioner lysår</string>
+    <string name="object_info_m63_size" translation_description="Physical size of the Sunflower Galaxy shown in the info card. Translate units if appropriate for your locale.">~100 000 lysår på tvers</string>
+
+    <string name="object_info_ngc_6543_description" translation_description="Description of the Cat's Eye Nebula (NGC 6543) shown in the info card. Translate this text.">
+    Kattøyenebula er en av de mest strukturelt komplekse planetariske nebulosaene som er kjent — en døende stjernes utdrevne gass formet til konsentriske skall, stråler og lyse knuter synlige i Hubble-bilder. I små teleskoper fremstår den som en levende blågrønn disk i Draco, ett av de mest fargerike objektene på høsthimmelen.
+    </string>
+    <string name="object_info_ngc_6543_funfact" translation_description="Fun fact about the Cat's Eye Nebula shown in the info card. Translate this text.">
+    I 1864 rettet astronomen William Huggins et spektroskop mot Kattøyet og oppdaget at det var laget av glødende gass i stedet for uløste stjerner — første gang naturen til en planetarisk tåke ble bekreftet. Denne oppdagelsen grunnla feltet tåkespektroskopi og omstyrtet det rådende synet at alle tåker var fjerne stjernehopper.
+    </string>
+    <string name="object_info_ngc_6543_distance" translation_description="Distance to the Cat's Eye Nebula shown in the info card. Translate units if appropriate for your locale.">~3 300 lysår</string>
+    <string name="object_info_ngc_6543_size" translation_description="Physical size of the Cat's Eye Nebula shown in the info card. Translate units if appropriate for your locale.">~0,5 lysår diameter</string>
+
+    <string name="object_info_m76_description" translation_description="Description of the Little Dumbbell Nebula (M76) shown in the info card. Translate this text.">
+    Little Dumbbell er en planetarisk tåke i Perseus med en karakteristisk åttetallsform — en mindre fetter av M27, Dumbbell-tåken i Vulpecula. Selv om det er det svakeste objektet i Messier-katalogen, belønner det tålmodig observasjon med små teleskoper og viser vakker struktur i større instrumenter, med to lysere lapper som flankerer en svakere midje.
+    </string>
+    <string name="object_info_m76_funfact" translation_description="Fun fact about the Little Dumbbell Nebula shown in the info card. Translate this text.">
+    M76 ble opprinnelig katalogisert som to separate objekter — NGC 650 og NGC 651 — fordi tidlige observatører beskrev de to lyse lobene uavhengig av hverandre. Det er en bipolar planetarisk tåke dannet når en døende stjernes utstrømning ble klemt ved ekvator, noe som skapte to ekspanderende lober langs polaraksen mens gass også velter utover ved midjen.
+    </string>
+    <string name="object_info_m76_distance" translation_description="Distance to the Little Dumbbell Nebula shown in the info card. Translate units if appropriate for your locale.">~2 500 lysår</string>
+    <string name="object_info_m76_size" translation_description="Physical size of the Little Dumbbell Nebula shown in the info card. Translate units if appropriate for your locale.">~2 lysår på tvers</string>
+
+    <string name="object_info_v838_mon_description" translation_description="Description of V838 Monocerotis shown in the info card. Translate this text.">
+    V838 Monocerotis er en uvanlig variabel stjerne i Monoceros som gjennomgikk et spektakulært utbrudd i 2002, og ble kort tid en av de mest lysende stjernene i Melkeveien. Selv om den er altfor svak for visuelle observatører i dag, produserte dens ekspanderende lysekko — en bølgefront av lys som belyser gamle støvskall — noen av de mest dramatiske Hubble Space Telescope-bildene som noen gang er tatt.
+    </string>
+    <string name="object_info_v838_mon_funfact" translation_description="Fun fact about V838 Monocerotis shown in the info card. Translate this text.">
+    Karakteren til V838 Mon\'s utbruddet er fortsatt omstridt. Den ledende teorien er en stjernesammenslåing — to stjerner som spiraler inn i hverandre og kolliderer — snarere enn en klassisk nova eller superkjempeeksplosjon. Hvis bekreftet, var det det første sanntidsglimpset av en "luminøs rød nova," en sjelden klasse av eksplosjon forårsaket av stjernesammenslåinger, lignende hendelser har siden blitt funnet i andre galakser.
+    </string>
+    <string name="object_info_v838_mon_distance" translation_description="Distance to V838 Monocerotis shown in the info card. Translate units if appropriate for your locale.">~20 000 lysår</string>
+    <string name="object_info_v838_mon_size" translation_description="Extent of the V838 Monocerotis light echo shown in the info card. Translate units if appropriate for your locale.">~3 lysår (lysekko-utstrekning)</string>
+
+    <string name="object_info_hdf_description" translation_description="Description of the Hubble Deep Field shown in the info card. Translate this text.">
+    Hubble Deep Field er et lite 2,6-bueminutt stort område av tilsynelatende tom himmel i Ursa Major, fotografert av Hubble Space Telescope over 10 påfølgende dager i desember 1995. Det som så ut til å være tomt rom avslørte omtrent 3000 galakser – som spenner over milliarder av år av kosmisk historie – og endret fundamentalt vårt bilde av universet.
+    </string>
+    <string name="object_info_hdf_funfact" translation_description="Fun fact about the Hubble Deep Field shown in the info card. Translate this text.">
+    Himmelfeltet ble valgt spesifikt fordi det var tomt for lyse stjerner og nærliggende galakser. Likevel var det resulterende bildet fullt av omtrent 3 000 galakser, noe som førte til estimatet at hele himmelen inneholder rundt 200 milliarder galakser – nesten alle av dem usynlige for teleskoper før Hubble.
+    </string>
+    <string name="object_info_hdf_distance" translation_description="Distance to the most distant galaxies in the Hubble Deep Field shown in the info card. Translate units if appropriate for your locale.">~13 milliarder lysår (lengst borte)</string>
+    <string name="object_info_hdf_size" translation_description="Angular size of the Hubble Deep Field shown in the info card.">2,6 bueминutter (synsfelt)</string>
+
+    <string name="object_info_m43_description" translation_description="Description of De Mairan's Nebula (M43) shown in the info card. Translate this text.">
+    De Mairans tåke er en løsrevet del av den store Orion-tåkekompleksen, atskilt fra M42 av en mørk støvlinje, men tilhørende samme enorme molekylsky. Oppkalt etter den franske astronomen Jean-Jacques Dortous de Mairan, som observerte den i 1731, er det en emisjonståke ionisert av den varme unge stjernen NU Orionis som er innebygd i sentrum.
+    </string>
+    <string name="object_info_m43_funfact" translation_description="Fun fact about De Mairan's Nebula shown in the info card. Translate this text.">
+    Selv om M43 ser ut som et eget objekt fra M42, er det mørke båndet som skiller dem, en støvsky i forgrunnen — en del av Orion-molekylskyen — som bare blokkerer utsikten vår til den fysiske forbindelsen mellom de to lysende områdene. Sammen er de bare den opplyste indre kanten av en enorm mørk sky som strekker seg over store deler av Orion.
+    </string>
+    <string name="object_info_m43_distance" translation_description="Distance to De Mairan's Nebula shown in the info card. Translate units if appropriate for your locale.">1 350 lysår</string>
+    <string name="object_info_m43_size" translation_description="Physical size of De Mairan's Nebula shown in the info card. Translate units if appropriate for your locale.">~8 lysår på tvers</string>
+
+    <string name="object_info_m40_description" translation_description="Description of M40 (Winnecke 4) shown in the info card. Translate this text.">
+    M40 er unik i Messier-katalogen — det er ikke en tåke, stjernehop eller galakse, men en vid dobbeltstjerne. Messier katalogiserte den i 1764 mens han søkte etter en tåke rapportert av Johann Hevelius i Ursa Major, fant bare dette stjerneparet, og registrerte det slik at fremtidige observatører ikke skulle forveksle det med noe mer interessant.
+    </string>
+    <string name="object_info_m40_funfact" translation_description="Fun fact about M40 shown in the info card. Translate this text.">
+    De to stjernene i M40 — kjent som Winnecke 4 — er ikke gravitasjonelt bundet; de ligger på ulike avstander og er bare en tilfeldig justering. Messier selv bemerket at det var "ingenting bemerkelsesverdig," men inkluderte det "for å vise at denne nebulosen ikke er den samme som de jeg har undersøkt." Hans metodiske vane med å dokumentere negative funn ga fremtidige observatører en definitiv referanse.
+    </string>
+    <string name="object_info_m40_distance" translation_description="Distance to M40 shown in the info card. Translate units if appropriate for your locale.">~500 lysår</string>
+    <string name="object_info_m40_size" translation_description="Angular separation of the M40 double star shown in the info card.">~50 buesekunder (separasjon)</string>
+
+    <!-- Category 5: Second tier -->
+    <string name="object_info_m34_description" translation_description="Description of the open star cluster M34 shown in the info card. Translate this text.">
+    M34 er en lys, spredt åpen stjernehop i Perseus, lett synlig i kikkerter som en rik samling av stjerner mot vinterens Melkevei. Dens omtrent 400 stjerner dekker et område nesten like bredt som fullmånen, med en håndfull brede dobbeltstjerner synlige for nøye kikkertkikere.
+    </string>
+    <string name="object_info_m34_funfact" translation_description="Fun fact about M34 shown in the info card. Translate this text.">
+    Med en alder på omkring 200 millioner år er M34 mellomaldrig — ung nok til at de varme blå stjernene fortsatt skinner, men gammel nok til at de mest massive allerede har eksplodert som supernovaer. Med en avstand på 1 500 lysår er det en av de nærmere Messier-haugene og forblir et fint objekt selv fra forstadshimmelen.
+    </string>
+    <string name="object_info_m34_distance" translation_description="Distance to M34 shown in the info card. Translate units if appropriate for your locale.">1 500 lysår</string>
+    <string name="object_info_m34_size" translation_description="Physical size of M34 shown in the info card. Translate units if appropriate for your locale.">~15 lysår på tvers</string>
+
+    <string name="object_info_m23_description" translation_description="Description of the open star cluster M23 shown in the info card. Translate this text.">
+    M23 er en rik åpen stjernehop i Skytten, innebygd i de tette stjernefeltene på sommerens Melkevei. Omtrent 150 stjerner er spredt over et halvgradsfelt i kikkerter, noe som gjør det til et generøst kikkertobjekt i samme himmelregion som mange andre Messier-perler.
+    </string>
+    <string name="object_info_m23_funfact" translation_description="Fun fact about M23 shown in the info card. Translate this text.">
+    M23 antas å være rundt 300 millioner år gammel — mellomliggende alder, med de fleste av dens massive stjerner som allerede har utviklet seg bort fra hovedserien. Messier oppdaget den i 1764 under en av sine produktive observasjonskampanjer som feide gjennom Skytten-stjernefeltet.
+    </string>
+    <string name="object_info_m23_distance" translation_description="Distance to M23 shown in the info card. Translate units if appropriate for your locale.">2 150 lysår</string>
+    <string name="object_info_m23_size" translation_description="Physical size of M23 shown in the info card. Translate units if appropriate for your locale.">~17 lysår på tvers</string>
+
+    <string name="object_info_m37_description" translation_description="Description of the open star cluster M37 shown in the info card. Translate this text.">
+    M37 er den rikeste og lyseste av de tre Messier-åpne stjernehopene i Auriga, og inneholder anslagsvis 500 stjerner i et kompakt felt. Det er et spektakulært objekt for kikkerter og små teleskoper, med en spredning av oransje kjempestjerner som gir fargekontrast til den blåhvite stjernesværmen.
+    </string>
+    <string name="object_info_m37_funfact" translation_description="Fun fact about M37 shown in the info card. Translate this text.">
+    M37 inneholder rundt et dusin røde kjempesstjerner — et uvanlig høyt antall som gjenspeiler dens relativt avanserte alder på omtrent 300 millioner år. Til tross for at den ligger omkring 4 500 lysår unna — den fjerneste av de tre Auriga Messier-haugene — rangerer den fortsatt blant himmelens fineste åpne stjernehoper.
+    </string>
+    <string name="object_info_m37_distance" translation_description="Distance to M37 shown in the info card. Translate units if appropriate for your locale.">4 500 lysår</string>
+    <string name="object_info_m37_size" translation_description="Physical size of M37 shown in the info card. Translate units if appropriate for your locale.">~31 lysår på tvers</string>
+
+    <string name="object_info_m48_description" translation_description="Description of the open star cluster M48 shown in the info card. Translate this text.">
+    M48 er en stor, lys åpen stjernehop i Hydra som spenner over nesten en grad på himmelen og er synlig for det blotte øye fra mørke steder. De omtrent 80 stjernene er spredt løst over et bredt område som passer best for kikkerter, med en spredning av oransje og gule kjempestjerner blant de lysere blåhvite medlemmene.
+    </string>
+    <string name="object_info_m48_funfact" translation_description="Fun fact about M48 shown in the info card. Translate this text.">
+    M48 var ett av de "försvunna" Messier-objekten i nästan två århundraden eftersom Messiers registrerade position var cirka 5° från den verkliga platsen. Det förblev oidentifierat tills 1959, när det matchades med NGC 2548 och ett enkelt transkriptionsfel visades ha placerat det i tom himmel hela tiden.
+    </string>
+    <string name="object_info_m48_distance" translation_description="Distance to M48 shown in the info card. Translate units if appropriate for your locale.">1 500 lysår</string>
+    <string name="object_info_m48_size" translation_description="Physical size of M48 shown in the info card. Translate units if appropriate for your locale.">~23 lysår på tvers</string>
+
+    <string name="object_info_m21_description" translation_description="Description of the open star cluster M21 shown in the info card. Translate this text.">
+    M21 er en kompakt åpen stjernehop i Skytten som ligger bare en halv grad nord for Trifid-tåken (M20), noe som gjør de to til et slående kikertpar. Hopen inneholder rundt 57 stjerner konsentrert i et mindre område enn mange Messier-hopper, med flere lyse blåhvite stjerner som de dominerende medlemmene.
+    </string>
+    <string name="object_info_m21_funfact" translation_description="Fun fact about M21 shown in the info card. Translate this text.">
+    Til tross for at de ikke er fysisk relatert, danner M21 og M20 (Trifid-tåken) en av de mest attraktive kikkertkikkerparingene på sommerhimmelen — en lys stjernehopp ved siden av en fargerik tre-lobet tåke. M21 ligger omkring 4 250 lysår unna, mens M20 er litt nærmere på omkring 4 100 lysår.
+    </string>
+    <string name="object_info_m21_distance" translation_description="Distance to M21 shown in the info card. Translate units if appropriate for your locale.">4 250 lysår</string>
+    <string name="object_info_m21_size" translation_description="Physical size of M21 shown in the info card. Translate units if appropriate for your locale.">~16 lysår på tvers</string>
+
+    <string name="object_info_m50_description" translation_description="Description of the open star cluster M50 shown in the info card. Translate this text.">
+    M50 er en lysende åpen stjernehop i Monoceros som inneholder omkring 200 stjerner pakket inn i et slående kompakt felt som er egnet for kikkerter og små teleskoper. Den finnes lett på en linje mellom Sirius og Procyon og inneholder en bemerkelsesverdig rød kjempe – en varm oransje fyrtårn som skiller seg klart ut blant hopens blåhvite stjerner.
+    </string>
+    <string name="object_info_m50_funfact" translation_description="Fun fact about M50 shown in the info card. Translate this text.">
+    M50 antas å være rundt 78 millioner år gammel — en av de yngre Messier-åpne stjernehopene — noe som betyr at dens varme blå og hvite stjerner fortsatt utvikler seg, med en håndfull av de mer massive medlemmene som nylig har utvidet seg til kjemper. Dette er typisk for en stjernehop i sin tidlige middelaldere.
+    </string>
+    <string name="object_info_m50_distance" translation_description="Distance to M50 shown in the info card. Translate units if appropriate for your locale.">3 200 lysår</string>
+    <string name="object_info_m50_size" translation_description="Physical size of M50 shown in the info card. Translate units if appropriate for your locale.">~15 lysår på tvers</string>
+
+    <string name="object_info_m36_description" translation_description="Description of the open star cluster M36 shown in the info card. Translate this text.">
+    M36 er den minste og yngste av de tre åpne stjernehopene som Messier katalogiserte i Auriga. Dens omtrent 60 stjerner er samlet i et tett, glimrende felt som er synlig i kikkerter og godt oppløst til individuelle stjerner i et lite teleskop, dominert av varme blåhvite stjerner.
+    </string>
+    <string name="object_info_m36_funfact" translation_description="Fun fact about M36 shown in the info card. Translate this text.">
+    M36 antas å være bare omkring 25 millioner år gammel — en av de yngre Messier-haugene — noe som betyr at massive blåhvite stjerner fortsatt dominerer og ingen røde kjemper har ennå dukket opp. Den deler Auriga-stjernefeltene med M37 og M38, og alle tre haugene passer inn i samme vidvinkel-kikertsynsfelt.
+    </string>
+    <string name="object_info_m36_distance" translation_description="Distance to M36 shown in the info card. Translate units if appropriate for your locale.">4 100 lysår</string>
+    <string name="object_info_m36_size" translation_description="Physical size of M36 shown in the info card. Translate units if appropriate for your locale.">~14 lysår på tvers</string>
+
+    <string name="object_info_m46_description" translation_description="Description of the open star cluster M46 shown in the info card. Translate this text.">
+    M46 er en rik, tett åpen stjernehop i Puppis som inneholder omkring 500 stjerner pakket inn i et bredt felt, slående i kikkerter og vakker i små teleskoper. En bemerkelsesverdig bonus flyter ved nordkanten: NGC 2438, en liten planetarisk tåke som ser ut til å være innebygd i hopen – en dramatisk synslinjekoinsidens.
+    </string>
+    <string name="object_info_m46_funfact" translation_description="Fun fact about M46 shown in the info card. Translate this text.">
+    Planetarnevelen NGC 2438 ser ut til å sitte inne i M46, men er faktisk et urelatert forgrunnsobjekt på en helt annen avstand — omtrent 1 400 lysår sammenlignet med M46\'s 5 400. Sammentreffet av en døende stjernes skal overlagret på en ung stjernehopp gjør dette til ett av de mest fotografiske feltene i katalogen.
+    </string>
+    <string name="object_info_m46_distance" translation_description="Distance to M46 shown in the info card. Translate units if appropriate for your locale.">5 400 lysår</string>
+    <string name="object_info_m46_size" translation_description="Physical size of M46 shown in the info card. Translate units if appropriate for your locale.">~42 lysår på tvers</string>
+
+    <string name="object_info_m93_description" translation_description="Description of the open star cluster M93 shown in the info card. Translate this text.">
+    M93 er en lys, kompakt åpen stjernehop i Puppis, som ligger i den rike sørlige Melkeveien og er lett å finne i kikkerter. Dens omtrent 80 stjerner er arrangert i en slående kile- eller sommerfuglform og inkluderer flere varme blå superkjemper, noe som gjør den til en av de mer attraktive åpne stjernehopene på vinterhimmelen.
+    </string>
+    <string name="object_info_m93_funfact" translation_description="Fun fact about M93 shown in the info card. Translate this text.">
+    M93 er relativt ung — rundt 100 millioner år gammel — med dominerende blå og blåhvite stjerner som ennå ikke har utviklet seg til kjemper. Det er en av de mer sørlige Messier-haugene, og fra breddegrader nord for omtrent 50°N stiger den aldri særlig høyt over horisonten.
+    </string>
+    <string name="object_info_m93_distance" translation_description="Distance to M93 shown in the info card. Translate units if appropriate for your locale.">3 600 lysår</string>
+    <string name="object_info_m93_size" translation_description="Physical size of M93 shown in the info card. Translate units if appropriate for your locale.">~23 lysår på tvers</string>
+
+    <string name="object_info_m38_description" translation_description="Description of the open star cluster M38 shown in the info card. Translate this text.">
+    M38 er den største og mest spredt åpne stjernehopen av de tre åpne hopene Messier katalogiserte i Auriga. Dens omtrent 100 stjerner er arrangert i et mønster som noen observatører sammenligner med et kors eller den greske bokstaven pi, synlig i kikkerter og godt oppløst i et lite teleskop. Den mindre hopen NGC 1907 ligger tett inntil mot sør.
+    </string>
+    <string name="object_info_m38_funfact" translation_description="Fun fact about M38 shown in the info card. Translate this text.">
+    M38 er den eldste av de tre Auriga Messier-klyngene med omkring 220 millioner år, gammelt nok til at noen av dens massive stjerner har utviklet seg til gule og oransje kjemper. Den nærliggende klyngen NGC 1907 kan passe inn i det samme feltet med lav forstørrelse, noe som gjør dem til et fint kikertpar — som M46 og M47 i Puppis.
+    </string>
+    <string name="object_info_m38_distance" translation_description="Distance to M38 shown in the info card. Translate units if appropriate for your locale.">4 200 lysår</string>
+    <string name="object_info_m38_size" translation_description="Physical size of M38 shown in the info card. Translate units if appropriate for your locale.">~26 lysår på tvers</string>
+
+    <string name="object_info_m29_description" translation_description="Description of the open star cluster M29 shown in the info card. Translate this text.">
+    M29 er en liten, ung åpen stjernehop i Cygnus, plassert mot en av de tetteste støvobskurerte områdene i Melkeveien. Fem strålende blå superkjemper dominerer hopen, synlige i kikkerter som en tett asterisme av varme, lysende stjerner. Uten det tette støvet i forgrunnen ville M29 vært en av himmelens mest spektakulære åpne stjernehoper.
+    </string>
+    <string name="object_info_m29_funfact" translation_description="Fun fact about M29 shown in the info card. Translate this text.">
+    M29 antas å være bare omkring 10 millioner år gammel — en stjernespire — og ligger innenfor Cygnus OB1-foreningen, en stor gruppe massive unge stjerner. Tett interstellart støv demper klyngen med omkring 3 magnityder; uten denne formørkelsen ville M29\'s stjerner skinne flere ganger lysere enn de faktisk ser ut til å gjøre.
+    </string>
+    <string name="object_info_m29_distance" translation_description="Distance to M29 shown in the info card. Translate units if appropriate for your locale.">4 000 lysår</string>
+    <string name="object_info_m29_size" translation_description="Physical size of M29 shown in the info card. Translate units if appropriate for your locale.">~8 lysår på tvers</string>
+
+    <string name="object_info_m62_description" translation_description="Description of the globular cluster M62 shown in the info card. Translate this text.">
+    M62 er en rik kuleklynge i Ophiuchus — en av de nærmeste kuklyngene til galaksens sentrum og merkbart asymmetrisk, med stjerner pakket tettere på den sørlige siden. Med størrelse 6,6 er det et fint objekt for kikert, selv om dens lave deklinasjon gjør det til et kortsesongmål for nordlige observatører.
+    </string>
+    <string name="object_info_m62_funfact" translation_description="Fun fact about M62 shown in the info card. Translate this text.">
+    M62\'s eksentriske kjerne er et direkte resultat av dens nærhet til galaksens sentrum — kraftige tidevannkrefter fra den sentrale bulgen forvrenger klyngen og drar stjerner mot galaksens plan. Det er også en av de mest dynamisk utviklede globulære klyngene som er kjent, og viser tegn på kjernekollaps og en uvanlig høy tetthet av millisekund-pulsarer.
+    </string>
+    <string name="object_info_m62_distance" translation_description="Distance to M62 shown in the info card. Translate units if appropriate for your locale.">22 500 lysår</string>
+    <string name="object_info_m62_size" translation_description="Physical size of M62 shown in the info card. Translate units if appropriate for your locale.">~92 lysår på tvers</string>
+
+    <string name="object_info_m28_description" translation_description="Description of the globular cluster M28 shown in the info card. Translate this text.">
+    M28 er en kompakt kuleglobul i Sagittarius, lokalisert nær stjernen Lambda Sagittarii i de rike sommerstjernefeltene. Med en styrke på 6,9 er det et givende binokkelkikkertobjekt og er godt oppløst i små teleskoper, og viser en lys kondensert kjerne omgitt av en moderat halo av stjerner.
+    </string>
+    <string name="object_info_m28_funfact" translation_description="Fun fact about M28 shown in the info card. Translate this text.">
+    I 1987 ble M28 den første kuleglobalen der en millisekund-pulsar ble oppdaget. Millisekund-pulsarer — nøytronstjerner som roterer hundrevis av ganger per sekund — dannes når en nøytronstjerne akkumulerer materie fra en ledsagerstjerne og finnes i langt høyere frekvens i kuleglobaler enn i galaksen generelt, fordi deres tette stjernemiljøer produserer mange flere nære binære møter.
+    </string>
+    <string name="object_info_m28_distance" translation_description="Distance to M28 shown in the info card. Translate units if appropriate for your locale.">18 300 lysår</string>
+    <string name="object_info_m28_size" translation_description="Physical size of M28 shown in the info card. Translate units if appropriate for your locale.">~60 lysår på tvers</string>
+
+    <string name="object_info_m52_description" translation_description="Description of the open star cluster M52 shown in the info card. Translate this text.">
+    M52 er en rik åpen stjernehop i Cassiopeia med omkring 200 stjerner pakket inn i en kompakt region av den nordlige Melkeveien. Det er en fin kikkertkikkert-hop og viser et vakkert, tett stjernefelt i små teleskoper, med en merkbart lysere oransje stjerne som skiller seg ut nær hopens sørkant.
+    </string>
+    <string name="object_info_m52_funfact" translation_description="Fun fact about M52 shown in the info card. Translate this text.">
+    M52\'s avstand er uvanlig usikkert — estimater varierer fra 3 000 til 7 000 lysår — fordi tett interstellart støv langs denne synslinjen gjør det vanskelig å bestemme dens sanne lysstyrke. Messier oppdaget det i 1774, samme natt som han sporet en komet som førte ham til å registrere flere andre katalogoppføringer.
+    </string>
+    <string name="object_info_m52_distance" translation_description="Distance to M52 shown in the info card. Translate units if appropriate for your locale.">~5 000 lysår</string>
+    <string name="object_info_m52_size" translation_description="Physical size of M52 shown in the info card. Translate units if appropriate for your locale.">~25 lysår på tvers</string>
+
+    <string name="object_info_m67_description" translation_description="Description of the open star cluster M67 shown in the info card. Translate this text.">
+    M67 er en fin åpen stjernehop i Kreft og en av de eldste godt studerte åpne stjernehopene på himmelen. Med en alder på omtrent 3,2–3,5 milliarder år inneholder den mange stjerner som ligner vår egen Sol i masse og alder – noe som gjør den til et naturlig laboratorium for å studere hvordan solliknende stjerner utvikler seg over kosmisk tid.
+    </string>
+    <string name="object_info_m67_funfact" translation_description="Fun fact about M67 shown in the info card. Translate this text.">
+    Flere stjerner i M67 ligner Solen sterkt når det gjelder temperatur, masse og alder — en sjelden kombinasjon som fikk forskere til å lure på om Solen selv oppsto i en stjernehop som M67. Fordi stjerner blir født i stjernehoper som gradvis sprer seg, kom Solen nesten helt sikkert fra en nå spredt søskengruppe for milliarder av år siden — selv om hvilken stjernehop har aldri blitt identifisert.
+    </string>
+    <string name="object_info_m67_distance" translation_description="Distance to M67 shown in the info card. Translate units if appropriate for your locale.">2 700 lysår</string>
+    <string name="object_info_m67_size" translation_description="Physical size of M67 shown in the info card. Translate units if appropriate for your locale.">~24 lysår på tvers</string>
+
+    <string name="object_info_m55_description" translation_description="Description of the globular cluster M55 shown in the info card. Translate this text.">
+    M55 er en stor, løs globulær stjernehop i Skytten — en av de mest spredte og minst konsentrerte av alle Messier-globulærer. Den løses lett opp i individuelle stjerner selv ved lav forstørrelse, med en kornete tekstur synlig i kikkerter. Dens lave sydlige deklinasjon begrenser synligheten fra nordlige breddegrader, men den er spektakulær fra den sørlige halvkule.
+    </string>
+    <string name="object_info_m55_funfact" translation_description="Fun fact about M55 shown in the info card. Translate this text.">
+    M55\'s uvanlig lave stjernekonsentrasjon gjør at det ser nesten ut som en rik åpen stjernehop i stedet for en typisk kulehop. Stjernene er spredt over et område på nesten 100 lysår, noe som tyder på at hopens selvgravitasjon er relativt svak sammenlignet med mer sentralt kondenserte kuler som M13 eller M3.
+    </string>
+    <string name="object_info_m55_distance" translation_description="Distance to M55 shown in the info card. Translate units if appropriate for your locale.">17 600 lysår</string>
+    <string name="object_info_m55_size" translation_description="Physical size of M55 shown in the info card. Translate units if appropriate for your locale.">~100 lysår på tvers</string>
+
+    <string name="object_info_m19_description" translation_description="Description of the globular cluster M19 shown in the info card. Translate this text.">
+    M19 er en kompakt, rik kulegropsamling i Ophiuchus — en av de nærmeste kulegropsamlingene til galaksens sentrum. Dens mest karakteristiske trekk er dens merkbart oblate form: M19 er den mest flattede kulegropsamlingen som er kjent, med en synlig elliptisk omriss selv i et lite teleskop.
+    </string>
+    <string name="object_info_m19_funfact" translation_description="Fun fact about M19 shown in the info card. Translate this text.">
+    M19\'s uttalt flathet — den lengste aksen er omtrent 10 % lengre enn den korteste — er unik blant kjente kulegalakser og antas å skyldes tidevannsstrekking fra Melkeveiens gravitasjonsfelt. Jo nærmere en kulegalakse går rundt galaksens sentrum, desto sterkere blir den deformert; M19 ligger bare omtrent 5 200 lysår fra galaksekjernen.
+    </string>
+    <string name="object_info_m19_distance" translation_description="Distance to M19 shown in the info card. Translate units if appropriate for your locale.">28 700 lysår</string>
+    <string name="object_info_m19_size" translation_description="Physical size of M19 shown in the info card. Translate units if appropriate for your locale.">~113 lysår på tvers</string>
+
+    <string name="object_info_m80_description" translation_description="Description of the globular cluster M80 shown in the info card. Translate this text.">
+    M80 er en av de tetteste kuleglobusene i Melkeveien, en kompakt, rik ball med flere hundre tusen stjerner i Skorpionen. Med størrelse 7,2 er det et fint mål for kikkerter og avslører en strålende, sterkt konsentrert kjerne i små teleskoper.
+    </string>
+    <string name="object_info_m80_funfact" translation_description="Fun fact about M80 shown in the info card. Translate this text.">
+    I 1860 oppstod en nova i M80 — betegnet T Scorpii — som kort tid var like lyssterk som selve klyngen og synlig for det blotte øye. Det er en av bare to novaer som noen gang er observert i en globulær klynge. Novaer i globulære klynger oppstår fra vekselvirkninger mellom dobbeltstjerner, som er langt mer vanlige i det tette stjernmiljøet i en globulærs kjerne.
+    </string>
+    <string name="object_info_m80_distance" translation_description="Distance to M80 shown in the info card. Translate units if appropriate for your locale.">32 600 lysår</string>
+    <string name="object_info_m80_size" translation_description="Physical size of M80 shown in the info card. Translate units if appropriate for your locale.">~84 lysår på tvers</string>
+
+    <string name="object_info_m103_description" translation_description="Description of the open star cluster M103 shown in the info card. Translate this text.">
+    M103 er en liten, kompakt åpen stjernehop i Kassiopeia, som inneholder rundt 40 stjerner i en tett gruppe som lett ses med kikkerter. En slående dobbeltstjerne og en rød kjempe nær sentrum gir den et fargerikt utseende i små teleskoper, plassert innenfor de rike Melkeveien-stjernefeltene i Kassiopeia.
+    </string>
+    <string name="object_info_m103_funfact" translation_description="Fun fact about M103 shown in the info card. Translate this text.">
+    M103 var objektet med det høyeste nummeret i Messiers opprinnelige katalog fra 1781 — alle påfølgende oppføringer (M104–M110) ble lagt til posthumt av senere astronomer basert på Messiers notater og korrespondanse. Pierre Méchain oppdaget M103 kort før katalogen gikk til trykking, og Messier inkluderte det basert på Méchains rapport.
+    </string>
+    <string name="object_info_m103_distance" translation_description="Distance to M103 shown in the info card. Translate units if appropriate for your locale.">8 500 lysår</string>
+    <string name="object_info_m103_size" translation_description="Physical size of M103 shown in the info card. Translate units if appropriate for your locale.">~15 lysår på tvers</string>
+
+    <string name="object_info_m30_description" translation_description="Description of the globular cluster M30 shown in the info card. Translate this text.">
+    M30 er en kompakt kuleglobul i Steinbukken — et fint objekt i små teleskoper som viser en lys, tett kjerne og svake ytre stjernerekker. Med størrelse 7,5 krever det mørke himler i kikkerter og belønner et lite teleskop med sin delvis oppløste ytre halo.
+    </string>
+    <string name="object_info_m30_funfact" translation_description="Fun fact about M30 shown in the info card. Translate this text.">
+    M30 har gjennomgått "kjernekollaps" — en prosess der den gjensidige gravitasjonelle tiltrekningen av tett pakket stjerner får klyngenes sentrum til å trekke seg sammen dramatisk, noe som skaper en ekstrem konsentrasjon av stjerner i et lite volum. Omtrent en femtedel av alle globulære klynger har kollapsede kjerner, og M30 er blant de best studerte eksemplene på dette fenomenet.
+    </string>
+    <string name="object_info_m30_distance" translation_description="Distance to M30 shown in the info card. Translate units if appropriate for your locale.">27 100 lysår</string>
+    <string name="object_info_m30_size" translation_description="Physical size of M30 shown in the info card. Translate units if appropriate for your locale.">~87 lysår på tvers</string>
+
+    <string name="object_info_m54_description" translation_description="Description of the globular cluster M54 shown in the info card. Translate this text.">
+    M54 er en stor, rik globulær stjernehop i Skytten og ett av de fjerneste objektene i hele Messier-katalogen. I århundrer ble det antatt å være en fjerntliggende halo-globulær i Melkeveien, men det er nå kjent at det er den tette kjernen i Sagittarius Dværgelliptisk Galakse — en satellittgalakse som for tiden blir absorbert av vår egen.
+    </string>
+    <string name="object_info_m54_funfact" translation_description="Fun fact about M54 shown in the info card. Translate this text.">
+    Oppdagelsen i 1994 av at M54 tilhører Sagittarius Dværggalaksen gjorde det til første globulære stjernehop kjent å tilhøre en annen galakse. Ettersom Sagittarius Dværg gradvis blir revet fra hverandre og slukt av Melkeveien, vil M54 til slutt bli en ekte halo-globulær i vår egen galakse — en intergalaktisk innvandrer som ankommer over milliarder av år.
+    </string>
+    <string name="object_info_m54_distance" translation_description="Distance to M54 shown in the info card. Translate units if appropriate for your locale.">87 000 lysår</string>
+    <string name="object_info_m54_size" translation_description="Physical size of M54 shown in the info card. Translate units if appropriate for your locale.">~230 lysår på tvers</string>
+
+    <string name="object_info_m69_description" translation_description="Description of the globular cluster M69 shown in the info card. Translate this text.">
+    M69 er en moderat rik globulær stjernehop i Sagittarius, plassert nær galaksens sentrum. Med en styrke på 7,7 er det et objekt for kikkerter fra mørke himler som belønner et lite teleskop med en delvis oppløst stjernekule og et lyst, kornete sentrum.
+    </string>
+    <string name="object_info_m69_funfact" translation_description="Fun fact about M69 shown in the info card. Translate this text.">
+    M69 går i bane uvanlig nær galaksens sentrum — bare omkring 6 200 lysår fra Melkeveiens kjerne — og har derfor en uvanlig høy konsentrasjon av tyngre elementer for en kuleklynge. Kuleklynger nærmere galaksens sentrum har en tendens til å være kjemisk berikket av flere generasjoner stjerneformasjon i den omkringliggende bulgen.
+    </string>
+    <string name="object_info_m69_distance" translation_description="Distance to M69 shown in the info card. Translate units if appropriate for your locale.">29 700 lysår</string>
+    <string name="object_info_m69_size" translation_description="Physical size of M69 shown in the info card. Translate units if appropriate for your locale.">~61 lysår på tvers</string>
+
+    <string name="object_info_m9_description" translation_description="Description of the globular cluster M9 shown in the info card. Translate this text.">
+    M9 er en kompakt kuleglobul i Slangen — en av Messiers kuleglobuler som er mest påvirket av absorpsjon fra interstellart støv. Den ligger mot galaksens sentrale oppsvulling, hvor tykt støv gjør den betydelig svakere. Uten denne mørkningen ville M9 virke nesten en størrelsesklasse lysere og være synlig for det blotte øye.
+    </string>
+    <string name="object_info_m9_funfact" translation_description="Fun fact about M9 shown in the info card. Translate this text.">
+    M9 lider mer fra interstellart støvabsorpsjon enn nesten alle andre Messier-kulegalakser — omtrent 1,3 magnityder dimming sammenlignet med en klar siktlinje. To mindre kulegalakser (NGC 6342 og NGC 6356) ligger innenfor omtrent 1° fra M9, noe som gjør den til sentrum av en bemerkelsesverdig gruppering av tre kulegalakser på et lite område av himmelen.
+    </string>
+    <string name="object_info_m9_distance" translation_description="Distance to M9 shown in the info card. Translate units if appropriate for your locale.">25 800 lysår</string>
+    <string name="object_info_m9_size" translation_description="Physical size of M9 shown in the info card. Translate units if appropriate for your locale.">~70 lysår på tvers</string>
+
+    <string name="object_info_m26_description" translation_description="Description of the open star cluster M26 shown in the info card. Translate this text.">
+    M26 er en moderat svak åpen stjernehop i Skjoldet, synlig i kikkerter og godt oppløst i små teleskoper. Omtrent 90 stjerner er spredt over et kompakt område i den rike Skjoldet-stjerneskyen, selv om hopen er plassert mot en så tett bakgrunn at det krever noe forsiktighet å identifisere medlemmene fra det omkringliggende stjernfeltet.
+    </string>
+    <string name="object_info_m26_funfact" translation_description="Fun fact about M26 shown in the info card. Translate this text.">
+    M26 ligger langs samme rike himmelstripe som M11 — Wild Duck-klyngen, en av de fineste åpne stjerneklyngene på himmelen. De to ligger bare omtrent 3,5° fra hverandre og er synlige i samme kikkertkikkert-felt, noe som gjør Scutum til et bemerkelsesverdig mål for klyngeiakttagere til tross for at det er en liten og ofte oversett stjernebilde.
+    </string>
+    <string name="object_info_m26_distance" translation_description="Distance to M26 shown in the info card. Translate units if appropriate for your locale.">5 000 lysår</string>
+    <string name="object_info_m26_size" translation_description="Physical size of M26 shown in the info card. Translate units if appropriate for your locale.">~22 lysår på tvers</string>
+
+    <string name="object_info_m79_description" translation_description="Description of the globular cluster M79 shown in the info card. Translate this text.">
+    M79 er en kompakt kuleglobul i Lepus — en av de få Messier-globulene som er best plassert på vinterhimmelen, når de fleste globuler er under horisonten eller knapt stiger opp. Med en styrke på 8,0 trenger den et teleskop for å avsløre sin kompakte kjerne og svake halo, som skiller seg ut mot de relativt sparsomme vinterstjernefeltene.
+    </string>
+    <string name="object_info_m79_funfact" translation_description="Fun fact about M79 shown in the info card. Translate this text.">
+    M79 antas av noen astronomer å være en inntrenger fra Canis Major Dværggalaksen — en forstyrret satellittgalakse som for tiden blir absorbert av Melkeveien. Hvis det er tilfelle, ble M79 ikke dannet innenfor Melkeveienes eget globulære system, men ble fanget fra en innfallende galakse og blir nå sakte foldet inn i vår galakses halo.
+    </string>
+    <string name="object_info_m79_distance" translation_description="Distance to M79 shown in the info card. Translate units if appropriate for your locale.">41 000 lysår</string>
+    <string name="object_info_m79_size" translation_description="Physical size of M79 shown in the info card. Translate units if appropriate for your locale.">~104 lysår på tvers</string>
+
+    <string name="object_info_m70_description" translation_description="Description of the globular cluster M70 shown in the info card. Translate this text.">
+    M70 er en kompakt kuleglobul i Skytten, som ligner sterkt på sin nær-tvilling M69 både i utseende og avstand. Med størrelse 8,1 er det et fint objekt for små teleskoper som viser en kompakt kjerne og antydninger av oppløsning i den ytre haloringen. Den ligger bare 2° fra M69 og begge kan observeres i samme kikkertkikkert-felt.
+    </string>
+    <string name="object_info_m70_funfact" translation_description="Fun fact about M70 shown in the info card. Translate this text.">
+    M70 fikk kort berømmelse i 1995 som den omtrentlige plasseringen på himmelen der Alan Hale og Thomas Bopp uavhengig av hverandre oppdaget Kometen Hale-Bopp — den lyseste kometen på slutten av 1900-tallet. Begge observatørene feiet først forbi M70 mens de søkte etter andre mål og la merke til kometen som et uventet uklart objekt i nærheten.
+    </string>
+    <string name="object_info_m70_distance" translation_description="Distance to M70 shown in the info card. Translate units if appropriate for your locale.">29 400 lysår</string>
+    <string name="object_info_m70_size" translation_description="Physical size of M70 shown in the info card. Translate units if appropriate for your locale.">~67 lysår på tvers</string>
+
+    <string name="object_info_m107_description" translation_description="Description of the globular cluster M107 shown in the info card. Translate this text.">
+    M107 er en av de minst konsentrerte Messier-kuglehopene, med stjerner spredt i et relativt åpent mønster rundt en beskjeden kjerne. Med størrelse 8,1 er det et binokkelkikkertobjekt fra mørke himler og løses delvis opp i små teleskoper, og viser en kornete tekstur i stedet for en skarp sentral kondensasjon.
+    </string>
+    <string name="object_info_m107_funfact" translation_description="Fun fact about M107 shown in the info card. Translate this text.">
+    M107 var den siste oppføringen som formelt ble lagt til Messier-katalogen — den vises i Pierre Méchains korrespondanse, men var ikke inkludert i originalutgaven fra 1781. Den ble offisielt lagt til som M107 i 1947 av den kanadiske astronomen Helen Sawyer Hogg, som kodifiserte flere "manglende" objekter som Méchain hadde observert, men som Messier aldri formelt registrerte.
+    </string>
+    <string name="object_info_m107_distance" translation_description="Distance to M107 shown in the info card. Translate units if appropriate for your locale.">20 900 lysår</string>
+    <string name="object_info_m107_size" translation_description="Physical size of M107 shown in the info card. Translate units if appropriate for your locale.">~61 lysår på tvers</string>
+
+    <string name="object_info_m68_description" translation_description="Description of the globular cluster M68 shown in the info card. Translate this text.">
+    M68 er en rik globulær stjernehop i Hydra — et sydlig objekt og en av få globulærer som er best plassert på sen vinter og vår. Med magnitude 8,2 belønner den et lite teleskop med en moderat konsentrert kjerne og en stor halo av oppløste stjerner mot de relativt sparsomme stjernefeltene i Hydra.
+    </string>
+    <string name="object_info_m68_funfact" translation_description="Fun fact about M68 shown in the info card. Translate this text.">
+    Til tross for sin relativt nære avstand — som gjør at individuelle stjerner er godt oppløst i amatørteleskoper — blir M68 ofte oversett på grunn av sin langt sydlige deklinasjon. Fra breddegrader over 50°N stiger den knapt over horisonten; fra den sørlige halvkule derimot stiger den høyt og er en utmerket globlulær hoper.
+    </string>
+    <string name="object_info_m68_distance" translation_description="Distance to M68 shown in the info card. Translate units if appropriate for your locale.">33 600 lysår</string>
+    <string name="object_info_m68_size" translation_description="Physical size of M68 shown in the info card. Translate units if appropriate for your locale.">~117 lysår på tvers</string>
+
+    <string name="object_info_m56_description" translation_description="Description of the globular cluster M56 shown in the info card. Translate this text.">
+    M56 er en kompakt kuleglobul i Lyra, plassert mellom Ringnebulosaen (M57) og den lyse dobbeltstjernen Albireo i Cygnus. Med en styrke på 8,3 er det et mål for kikkerter fra mørke himler, og et lite teleskop avslører en kornete, moderat kondensert sfære som bare er delvis oppløst selv i medium blenderåpninger.
+    </string>
+    <string name="object_info_m56_funfact" translation_description="Fun fact about M56 shown in the info card. Translate this text.">
+    M56 ble oppdaget av Messier i januar 1779 i samme observasjonssesongen da han også fant Ringnebulosaen (M57). Til tross for at den befinner seg i samme kikkertkikkertfelt som Vega — himmelens femte lyseste stjerne — og ligger nær den berømte Ringnebulosaen, blir M56 ofte oversett av observatører som blir tiltrukket av dens mer kjente naboer.
+    </string>
+    <string name="object_info_m56_distance" translation_description="Distance to M56 shown in the info card. Translate units if appropriate for your locale.">32 900 lysår</string>
+    <string name="object_info_m56_size" translation_description="Physical size of M56 shown in the info card. Translate units if appropriate for your locale.">~68 lysår på tvers</string>
+
+    <string name="object_info_m71_description" translation_description="Description of the globular cluster M71 shown in the info card. Translate this text.">
+    M71 er en uvanlig kuleklynge i Sagitta — debattert av astronomer i flere tiår som ikke kunne bestemme seg for om det var en veldig rik gammel åpen klynge eller en veldig løs ung kuleklynge. Moderne analyse bekrefter at det er en ekte kuleklynge, men en eksepsjonelt lavkonsentrert en med relativt få stjerner og en mindre dominerende kjerne enn typiske kuleklynger.
+    </string>
+    <string name="object_info_m71_funfact" translation_description="Fun fact about M71 shown in the info card. Translate this text.">
+    M71\'s løse struktur holdt den utenfor mange tidlige kataloger fordi den lignet et rikt stjernefelt i stedet for en ekte klynge. Med bare 12 000 lysår er den en av de nærmere Messier-globularene, og stjernene er delvis oppløst i et lite teleskop under mørke himler – noe som gir den utseendet av et kompakt, litt kondensert rikt stjernefelt.
+    </string>
+    <string name="object_info_m71_distance" translation_description="Distance to M71 shown in the info card. Translate units if appropriate for your locale.">12 000 lysår</string>
+    <string name="object_info_m71_size" translation_description="Physical size of M71 shown in the info card. Translate units if appropriate for your locale.">~25 lysår på tvers</string>
 </resources>
