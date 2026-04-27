@@ -82,7 +82,7 @@
 | Fly | | Mouche | | |
 | Ruler | | Règle | | |
 | Octant | | Octant | | |
-| Ophiuchus | | Ophiuchus | | |
+| Ophiuchus | | Serpentaire | | |
 | Orion | | Orion | | |
 | Peacock | | Paon | | |
 | Pegasus | | Pégase | | |
