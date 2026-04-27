@@ -21,7 +21,7 @@
     <string name="gemini" translation_description="Name of the Gemini constellation">Gémeaux</string>
     <string name="grus" translation_description="Name of the Grus constellation">Grue</string>
     <string name="hercules" translation_description="Name of the Hercules constellation">Hercule</string>
-    <string name="hydrus" translation_description="Name of the Hydrus constellation">Hydre mâle</string>
+    <string name="hydrus" translation_description="Name of the Hydrus constellation">Hydre Mâle</string>
     <string name="leo" translation_description="Name of the Leo constellation">Lion</string>
     <string name="libra" translation_description="Name of the Libra constellation">Balance</string>
     <string name="lupus" translation_description="Name of the Lupus constellation">Loup</string>
@@ -122,7 +122,7 @@
 
     <!-- tm:omitted name="titan" reason="identical_to_source" -->
     <string name="rhea" translation_description="Name of Saturn\'s moon Rhea">Rhéa</string>
-    <string name="tethys" translation_description="Name of Saturn\'s moon Tethys">Thétys</string>
+    <string name="tethys" translation_description="Name of Saturn\'s moon Tethys">Téthys</string>
     <string name="dione" translation_description="Name of Saturn\'s moon Dione">Dioné</string>
     <string name="iapetus" translation_description="Name of Saturn\'s moon Iapetus">Japet</string>
 
@@ -152,7 +152,7 @@
     <string name="ring_nebula" translation_description="hubble object">Nébuleuse de l\'Anneau</string>
     <string name="pinwheel_galaxy" translation_description="hubble object">Galaxie Pinwheel</string>
     <string name="sombrero_galaxy" translation_description="hubble object">Galaxie du Sombrero</string>
-    <string name="hercules_gc" translation_description="hubble object">Grand amas globulaire d\'Hercule</string>
+    <string name="hercules_gc" translation_description="hubble object">Grand Amas Globulaire d\'Hercule</string>
     <string name="pleiades" translation_description="hubble object">Pléiades</string>
     <string name="cats_eye_nebula" translation_description="hubble object">Nébuleuse de l\'Œil de Chat</string>
     <string name="omega_centauri" translation_description="hubble object">Amas globulaire Omega Centauri</string>
@@ -160,7 +160,7 @@
     <string name="sn1987a" translation_description="hubble object">Supernova 1987A</string>
     <string name="hubble_deep_field" translation_description="hubble object">Le champ profond de Hubble (Hubble Deep Field)</string>
     <!-- tm:omitted name="hdf" reason="identical_to_source" -->
-    <string name="rho_oph" translation_description="hubble object">Rhô Ophiuchi</string>
+    <string name="rho_oph" translation_description="hubble object">Rho Serpentaire</string>
 
 
     <!-- tm:omitted name="sirius" reason="identical_to_source" -->
@@ -197,7 +197,7 @@
     <string name="alhena" translation_description="Name of the Star Alhena">Alhéna</string>
     <!-- tm:omitted name="castor" reason="identical_to_source" -->
     <string name="polaris" translation_description="Name of the Star Polaris">Étoile polaire</string>
-    <string name="alphard" translation_description="Name of the Star Alphard">Alpharde</string>
+    <!-- tm:omitted name="alphard" reason="identical_to_source" -->
     <!-- tm:omitted name="hamal" reason="identical_to_source" -->
     <!-- tm:omitted name="algieba" reason="identical_to_source" -->
     <!-- tm:omitted name="diphda" reason="identical_to_source" -->
@@ -229,10 +229,10 @@
     <!-- tm:omitted name="vindemiatrix" reason="identical_to_source" -->
     <!-- tm:omitted name="alcyone" reason="identical_to_source" -->
     <string name="dog_star" translation_description="Name of the Dog Star (Sirius)">Étoile du Chien</string>
-    <string name="north_star" translation_description="Name of the North Star">Étoile du Nord</string>
+    <string name="north_star" translation_description="Name of the North Star">Étoile Polaire</string>
     <string name="pole_star" translation_description="Name of the (North) Pole Star">Étoile polaire</string>
-    <string name="alpha_centauri" translation_description="Name of the star Alpha Centauri">Alpha du Centaure</string>
-    <string name="rigil_kent" translation_description="Name of the star Rigil Kent">Rigil Kentaurus</string>
+    <!-- tm:omitted name="alpha_centauri" reason="identical_to_source" -->
+    <!-- tm:omitted name="rigil_kent" reason="identical_to_source" -->
     <!-- tm:omitted name="e_lyrae" reason="identical_to_source" -->
 
     <!-- tm:omitted name="m1" reason="identical_to_source" -->
@@ -416,7 +416,7 @@
     <!-- tm:omitted name="pmr_1" reason="identical_to_source" -->
 
     <!-- Double Cluster (NGC 869 & NGC 884) -->
-    <string name="double_cluster" translation_description="Common name for the pair of open star clusters NGC 869 and NGC 884 in Perseus">Double Amas</string>
+    <string name="double_cluster" translation_description="Common name for the pair of open star clusters NGC 869 and NGC 884 in Perseus">Double amas de Persée</string>
     <!-- tm:omitted name="ngc_869" reason="identical_to_source" -->
     <!-- tm:omitted name="ngc_884" reason="identical_to_source" -->
     <string name="h_and_chi_persei" translation_description="Traditional designation for the Double Cluster in Perseus">h et χ Persei</string>
@@ -442,7 +442,7 @@
     <string name="eye_of_god" translation_description="Nickname for the Helix Nebula (NGC 7293)">L\'Œil de Dieu</string>
     <!-- tm:omitted name="caldwell_63" reason="identical_to_source" -->
     <!-- tm:omitted name="ngc_253" reason="identical_to_source" -->
-    <string name="silver_dollar_galaxy" translation_description="Nickname for the Sculptor Galaxy (NGC 253)">Galaxie du Dollar d\'Argent</string>
+    <string name="silver_dollar_galaxy" translation_description="Nickname for the Sculptor Galaxy (NGC 253)">Galaxie du Sculpteur</string>
     <string name="silver_coin_galaxy" translation_description="Alternate nickname for the Sculptor Galaxy (NGC 253)">Galaxie de la Pièce d\'Argent</string>
     <!-- tm:omitted name="ngc_7662" reason="identical_to_source" -->
     <!-- tm:omitted name="caldwell_22" reason="identical_to_source" -->
