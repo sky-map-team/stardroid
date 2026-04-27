@@ -6,7 +6,7 @@
 | Iapetus | | Japet | Japet | |
 | Tethys | | Téthys | Tetyda | |
 | Titania | | Titania | Tytania | |
-| Coma Berenices Cluster | | Amas d'étoiles de la Chevelure de Bérénice | Gromada Warkocza Bereniki | |
+| Coma Berenices Cluster | | Amas de la Chevelure de Bérénice | Gromada Warkocza Bereniki | |
 | Helix Nebula | | Nébuleuse de l'Hélice | Mgławica Ślimak | |
 | Blue Snowball Nebula | | Nébuleuse de la Boule de neige bleue | Mgławica Niebieska Kula Śnieżna | |
 | Jewel Box | | Boîte à bijoux | NGC 4755 | |
