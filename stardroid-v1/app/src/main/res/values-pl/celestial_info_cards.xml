@@ -950,6 +950,67 @@
     </string>
     <string name="object_info_eta_carinae_nebula_distance" translation_description="Distance to Eta Carinae Nebula shown in the info card. Translate units if appropriate for your locale.">7500 lat świetlnych</string>
     <string name="object_info_eta_carinae_nebula_size" translation_description="Physical size of Eta Carinae Nebula shown in the info card. Translate units if appropriate for your locale.">300 lat świetlnych średnicy</string>
+    <!-- North America Nebula (NGC 7000) -->
+    <string name="object_info_north_america_nebula_description" translation_description="Description of the North America Nebula shown in the info card. Translate this text.">
+    Mgławica Ameryka Północna (NGC 7000) to duża mgławica emisyjna w gwiazdozbiorze Łabędzia, której kształt niezwykle przypomina kontynent Ameryki Północnej, wraz z regionem Zatoki Meksykańskiej. Rozciąga się na około 120 minut łuku — mniej więcej cztery razy średnicę pełni Księżyca — i znajduje się w odległości około 2600 lat świetlnych, a jej szerokość wynosi ponad 100 lat świetlnych.
+    </string>
+    <string name="object_info_north_america_nebula_funfact" translation_description="Fun fact about the North America Nebula shown in the info card. Translate this text.">
+    Pomimo wielkości gwiazdowej 4, mgławica jest zbyt duża i rozproszona, aby zobaczyć ją gołym okiem na większości nieb — jednak fotografuje się pięknie, ujawniając Ścianę Łabędzia, gęsty łuk intensywnego powstawania gwiazd wzdłuż jej południowej krawędzi.
+    </string>
+    <string name="object_info_north_america_nebula_distance" translation_description="Distance to the North America Nebula shown in the info card. Translate units if appropriate for your locale.">~2 590 lat świetlnych</string>
+    <string name="object_info_north_america_nebula_size" translation_description="Physical size of the North America Nebula shown in the info card. Translate units if appropriate for your locale.">~140 lat świetlnych średnicy</string>
+    <!-- Exposed Cranium Nebula - PMR 1 -->
+    <string name="object_info_exposed_cranium_nebula_description" translation_description="Description of the Exposed Cranium Nebula shown in the info card. Translate this text.">
+    Mgławica Odsłonięta Czaszka (PMR 1) to mgławica planetarna w Żaglu, odległa o około 5000 lat świetlnych. Jej niezwykła nazwa pochodzi od ciemnego pasa gazu przebiegającego pionowo przez środek, dzielącego jej świecące płaty na kształt przypominający mózg wewnątrz przezroczystej czaszki. W jej sercu płonie gorąca gwiazda Wolfa-Rayeta, która zrzuca zewnętrzne warstwy nagromadzone przez całe życie.
+    </string>
+    <string name="object_info_exposed_cranium_nebula_funfact" translation_description="Fun fact about the Exposed Cranium Nebula shown in the info card. Translate this text.">
+    W 2026 roku Teleskop Kosmiczny Jamesa Webba uchwycił uderzające nowe obrazy Mgławicy Czaszki, rozdzielając jej dwuwarstwową strukturę z bezprecedensową szczegółowością — zewnętrzną powłokę bogatą w wodór i wewnętrzną chmurę wypełnioną cięższymi pierwiastkami wykutymi przez umierającą gwiazdę.
+    </string>
+    <string name="object_info_exposed_cranium_nebula_distance" translation_description="Distance to the Exposed Cranium Nebula shown in the info card. Translate units if appropriate for your locale.">~5 000 lat świetlnych</string>
+    <string name="object_info_exposed_cranium_nebula_size" translation_description="Physical size of the Exposed Cranium Nebula shown in the info card. Translate units if appropriate for your locale.">~2 lata świetlne średnicy</string>
+
+    <!-- Jewel Box (NGC 4755) -->
+    <string name="object_info_jewel_box_description" translation_description="Description of the Jewel Box cluster shown in the info card. Translate this text.">
+    Pudełko Klejnotów (NGC 4755) to młoda, błyszcząca otwarta gromada w konstelacji Krzyża Południa, łatwo widoczna gołym okiem jako mgławy patch czwartej wielkości gwiazdowej tuż na południowy wschód od Mimozy. Patrząc przez teleskop, jej gwiazdy błyszczą w żywych, kontrastujących kolorach — głębokie niebieskie supergiganci obok uderzającego czerwonego supergianta — co dało jej nazwę, które nadał jej John Herschel: wspaniały kawałek biżuterii. Mając zaledwie 14–16 milionów lat, jest jedną z najmłodszych i najbardziej kolorowych gromad na niebie.
+    </string>
+    <string name="object_info_jewel_box_funfact" translation_description="Fun fact about the Jewel Box shown in the info card. Translate this text.">
+    Wyróżniająca się czerwona gwiazda skupienia, κ Crucis, to czerwony nadolbrzym tak jasny, że przewyższa Słońce ponad 100 000 razy — żywe przypomnienie, że skupienia gwiazd nie mają wszystkie tego samego koloru.
+    </string>
+    <string name="object_info_jewel_box_distance" translation_description="Distance to the Jewel Box shown in the info card. Translate units if appropriate for your locale.">~6 500 lat świetlnych</string>
+    <string name="object_info_jewel_box_size" translation_description="Physical size of the Jewel Box shown in the info card. Translate units if appropriate for your locale.">~19 lat świetlnych średnicy</string>
+
+    <!-- Double Cluster (NGC 869 & NGC 884) -->
+    <string name="object_info_double_cluster_description" translation_description="Description of the Double Cluster shown in the info card. Translate this text.">
+    Podwójna Gromada (NGC 869 i NGC 884) to olśniewająca para młodych otwartych gromad gwiezdnych w Perseuszu, położonych obok siebie na niebie w odległości nieco ponad stopnia. Obie są widoczne gołym okiem jako mgławy plam, ale nawet mały teleskop ujawnia setki błyszczących niebiesko-białych supergigantów upakowanych w dwie błyszczące roje. W odległości około 7500 lat świetlnych leżą w Ramieniu Perseusza naszej galaktyki i należą do najpiękniejszych obiektów obserwowanych przez lornetkę na północnym niebie.
+    </string>
+    <string name="object_info_double_cluster_funfact" translation_description="Fun fact about the Double Cluster shown in the info card. Translate this text.">
+    Mając zaledwie 14 milionów lat, Gromada Podwójna jest niezwykle młoda — tak niedawno powstała, że jej największe gwiazdy są jeszcze błyszczącymi niebieskimi supergigantami, a kilka już ewoluowało w rzadkie, ogniste czerwone supergigianty.
+    </string>
+    <string name="object_info_double_cluster_distance" translation_description="Distance to the Double Cluster shown in the info card. Translate units if appropriate for your locale.">~7 500 lat świetlnych</string>
+    <string name="object_info_double_cluster_size" translation_description="Physical size of the Double Cluster shown in the info card. Translate units if appropriate for your locale.">
+    Każde skupisko ~70 lat świetlnych średnicy; para oddalona o ~1 000 lat świetlnych
+    </string>
+
+    <!-- 47 Tucanae (NGC 104) -->
+    <string name="object_info_n47_tucanae_description" translation_description="Description of 47 Tucanae shown in the info card. Translate this text.">
+    47 Tucanae (NGC 104) to druga najjaśniejsza gromada kulista na niebie, gęsta kula złożona z około miliona starych gwiazd krążących wokół Drogi Mlecznej w konstelacji Tukana. W odległości około 14 500 lat świetlnych wydaje się gołemu oku jako rozmyta gwiazda czwartej wielkości, ale teleskop rozwiązuje jej ściśnięte jądro w niezwykły rój złotych i niebiesko-białych słońc. Gwiazdy w tej gromadzie powstały około 13 miliardów lat temu, co czyni ją prawie tak starą jak sam wszechświat.
+    </string>
+    <string name="object_info_n47_tucanae_funfact" translation_description="Fun fact about 47 Tucanae shown in the info card. Translate this text.">
+    47 Tucanae to kosmiczna fabryka pulsarów: astronomowie znaleźli w niej co najmniej 35 pulsarów milisekundowych wirujących setki razy na sekundę — więcej niż w jakimkolwiek innym znanym gromadzie kulistej — wynik bliskich spotkań gwiazd, które odnawiają stare gwiazdy neutronowe, przyspieszając ich rotację.
+    </string>
+    <string name="object_info_n47_tucanae_distance" translation_description="Distance to 47 Tucanae shown in the info card. Translate units if appropriate for your locale.">~14 500 lat świetlnych</string>
+    <string name="object_info_n47_tucanae_size" translation_description="Physical size of 47 Tucanae shown in the info card. Translate units if appropriate for your locale.">~120 lat świetlnych średnicy</string>
+
+    <!-- Centaurus A (NGC 5128) -->
+    <string name="object_info_centaurus_a_description" translation_description="Description of Centaurus A shown in the info card. Translate this text.">
+    Centaurus A (NGC 5128) to najbliższa aktywna galaktyka radiowa na Ziemi, gigantyczna galaktyka eliptyczna w konstelacji Centaura, której uderzająca ciemna prążek pyłu zdradza burzliwą przeszłość — galaktyka spiralna połknięta około 200–700 milionów lat temu. W jej sercu czai się supermasywna czarna dziura o masie 55 milionów mas Słońca, która napędza relatywistyczne strumienie rozciągające się na ponad milion lat świetlnych w długościach fal radiowych. W odległości około 12 milionów lat świetlnych jest jedną z najlepiej badanych galaktyk na niebie.
+    </string>
+    <string name="object_info_centaurus_a_funfact" translation_description="Fun fact about Centaurus A shown in the info card. Translate this text.">
+    Centaurus A jest jednym z najpotężniejszych naturalnych nadajników radiowych na niebie — jego dżety wyrzucają plazmę z prędkością zbliżoną do prędkości światła, a całkowity zasięg jego radiowych płatów obejmuje obszar równoważny około 100 pełnym księżycom ułożonym jeden za drugim na niebie.
+    </string>
+    <string name="object_info_centaurus_a_distance" translation_description="Distance to Centaurus A shown in the info card. Translate units if appropriate for your locale.">~12 milionów lat świetlnych</string>
+    <string name="object_info_centaurus_a_size" translation_description="Physical size of Centaurus A shown in the info card. Translate units if appropriate for your locale.">~123 000 lat świetlnych średnicy</string>
+
     <!-- ==================== CONSTELLATIONS ==================== -->
     <!-- Note: Constellation names are defined in celestial_objects.xml -->
     <!-- Orion -->
@@ -1977,4 +2038,694 @@
     Vulpecula zawiera Mgławicę Hantel (M27), pierwszą mgławicę planetarną kiedykolwiek odkrytą (przez Charlesa Messiera w 1764 roku), i piękny cel do obserwacji lornetką!
     </string>
     <string name="object_info_vulpecula_size" translation_description="Physical size of Vulpecula shown in the info card. Translate units if appropriate for your locale.">268 stopni kwadratowych</string>
+
+    <!-- Galilean Moons of Jupiter -->
+    <string name="object_info_io_description" translation_description="Description of Io shown in the info card. Translate this text.">
+    Io jest najbliższym Jowiszowi z czterech dużych księżyców Galileusza i najbardziej wulkanicznie aktywnym ciałem w Układzie Słonecznym.
+    </string>
+    <string name="object_info_io_funfact" translation_description="Fun fact about Io shown in the info card. Translate this text.">
+    Io ma setki aktywnych wulkanów, z których niektóre wyrzucają fontanny lawy na wysokość dziesiątek kilometrów. Jej stała aktywność jest napędzana ogrzewaniem pływowym spowodowanym ogromną grawitacją Jowisza.
+    </string>
+    <string name="object_info_io_distance" translation_description="Distance to Io shown in the info card. Translate units if appropriate for your locale.">421 700 km od Jowisza</string>
+    <string name="object_info_io_size" translation_description="Physical size of Io shown in the info card. Translate units if appropriate for your locale.">3 643 km średnicy</string>
+
+    <string name="object_info_europa_description" translation_description="Description of Europa shown in the info card. Translate this text.">
+    Europa jest drugim księżycem Galileusza i uważa się, że pod jej lodową skorupą kryje się ogromny ocean ciekłej wody, co czyni ją jednym z najbardziej obiecujących miejsc do poszukiwania życia.
+    </string>
+    <string name="object_info_europa_funfact" translation_description="Fun fact about Europa shown in the info card. Translate this text.">
+    Podziemny ocean Europy może zawierać dwa razy więcej wody niż wszystkie oceany Ziemi razem, utrzymywany w stanie ciekłym przez ogrzewanie pływowe od Jowisza.
+    </string>
+    <string name="object_info_europa_distance" translation_description="Distance to Europa shown in the info card. Translate units if appropriate for your locale.">671 100 km od Jowisza</string>
+    <string name="object_info_europa_size" translation_description="Physical size of Europa shown in the info card. Translate units if appropriate for your locale.">3 122 km średnicy</string>
+
+    <string name="object_info_ganymede_description" translation_description="Description of Ganymede shown in the info card. Translate this text.">
+    Ganimedes jest największym księżycem w Układzie Słonecznym — nawet większym niż planeta Merkury. Jest jedynym księżycem, o którym wiadomo, że generuje własne pole magnetyczne.
+    </string>
+    <string name="object_info_ganymede_funfact" translation_description="Fun fact about Ganymede shown in the info card. Translate this text.">
+    Ganimedes jest większy od Merkurego pod względem rozmiaru, choć ma tylko około połowy jego masy. Jego wewnętrzne pole magnetyczne tworzy własną miniaturową magnetosferę w obrębie znacznie większej magnetosfery Jowisza.\'
+    </string>
+    <string name="object_info_ganymede_distance" translation_description="Distance to Ganymede shown in the info card. Translate units if appropriate for your locale.">1 070 400 km od Jowisza</string>
+    <string name="object_info_ganymede_size" translation_description="Physical size of Ganymede shown in the info card. Translate units if appropriate for your locale.">5 268 km średnicy</string>
+
+    <string name="object_info_callisto_description" translation_description="Description of Callisto shown in the info card. Translate this text.">
+    Kallisto jest najbardziej zewnętrznym księżycem Galileusza i jednym z najbardziej pokrytych kraterami ciał w Układzie Słonecznym, jego starożytna powierzchnia zachowuje zapis wczesnych uderzeń w Układ Słoneczny.
+    </string>
+    <string name="object_info_callisto_distance" translation_description="Distance to Callisto shown in the info card. Translate units if appropriate for your locale.">1 882 700 km od Jowisza</string>
+    <string name="object_info_callisto_size" translation_description="Physical size of Callisto shown in the info card. Translate units if appropriate for your locale.">4 821 km średnicy</string>
+
+    <!-- Moons of Mars -->
+    <string name="object_info_phobos_description" translation_description="Description of Phobos shown in the info card. Translate this text.">
+    Fobos jest większym i wewnętrznym z dwóch księżyców Marsa, krążącym bliżej swojej planety niż jakikolwiek inny księżyc w Układzie Słonecznym. Jest to nieregularnie ukształtowane, głęboko porysowane i pokryte kraterami ciało, uważane za przechwycony asteroid.
+    </string>
+    <string name="object_info_phobos_funfact" translation_description="Fun fact about Phobos shown in the info card. Translate this text.">
+    Fobos krąży wokół Marsa tak szybko, że wschodzi na zachodzie i zachodzi na wschodzie — i powoli spiraluje w stronę planety, skazany na zderzenie się z Marsem lub rozpad na pierścień za około 50 milionów lat.
+    </string>
+    <string name="object_info_phobos_distance" translation_description="Distance to Phobos shown in the info card. Translate units if appropriate for your locale.">9 376 km od Marsa</string>
+    <!-- tm:omitted name="object_info_phobos_size" reason="identical_to_source" -->
+
+    <string name="object_info_deimos_description" translation_description="Description of Deimos shown in the info card. Translate this text.">
+    Deimos jest mniejszym i zewnętrznym z dwóch księżyców Marsa, z gładką, pokrytą kurzem powierzchnią, która nadaje mu bardziej okrągły wygląd niż Fobos. Podobnie jak jego towarzysz, uważa się, że jest przechwyconym asteroidem z zewnętrznego pasa.
+    </string>
+    <string name="object_info_deimos_funfact" translation_description="Fun fact about Deimos shown in the info card. Translate this text.">
+    Deimos jest tak mały i odległy, że z powierzchni Marsa wygląda jak niewiele więcej niż jasna gwiazda, powoli dryfując przez nocne niebo przez około 30 godzin.
+    </string>
+    <string name="object_info_deimos_distance" translation_description="Distance to Deimos shown in the info card. Translate units if appropriate for your locale.">23 460 km od Marsa</string>
+    <!-- tm:omitted name="object_info_deimos_size" reason="identical_to_source" -->
+
+    <!-- Major Moons of Saturn -->
+    <string name="object_info_titan_description" translation_description="Description of Titan shown in the info card. Translate this text.">
+    Tytan jest największym księżycem Saturna i drugim co do wielkości księżycem w Układzie Słonecznym. Jest jedynym księżycem znanym z gęstej atmosfery — grubej azotowej otoczki przemieszanej z metanem — i jedynym światem poza Ziemią, o którym wiadomo, że ma stabilne morza cieczy na swojej powierzchni.
+    </string>
+    <string name="object_info_titan_funfact" translation_description="Fun fact about Titan shown in the info card. Translate this text.">
+    Jeziora i morza Tytana są wypełnione nie wodą, ale płynnym metanem i etanem w temperaturze −179°C. Misja rotokoptera Dragonfly NASA, która ma przybyć w 2034 roku, będzie latać między miejscami na powierzchni Tytana w poszukiwaniu chemii życia.
+    </string>
+    <string name="object_info_titan_distance" translation_description="Distance to Titan shown in the info card. Translate units if appropriate for your locale.">1 221 870 km od Saturna</string>
+    <string name="object_info_titan_size" translation_description="Physical size of Titan shown in the info card. Translate units if appropriate for your locale.">5 151 km średnicy</string>
+
+    <string name="object_info_rhea_description" translation_description="Description of Rhea shown in the info card. Translate this text.">
+    Rhea jest drugim co do wielkości księżycem Saturna i silnie pokrajowan ym światem lodu i skały. Jej blada, starożytna powierzchnia zachowuje jedne z najbardziej nietkniętych kraterów uderzeniowych w Układzie Słonecznym, obok jasnych lodowych klifów, gdzie osuwiska odsłoniły świeży materiał spod powierzchni.
+    </string>
+    <string name="object_info_rhea_funfact" translation_description="Fun fact about Rhea shown in the info card. Translate this text.">
+    W 2008 roku dane z sondy Cassini sugerowały, że Rhea może mieć cienki pierścień gruzu krążący wokół niej — co uczyniłoby ją pierwszym księżycem, który kiedykolwiek odkryto z własnym systemem pierścieni. Gdyby to potwierdzono, byłoby to niezwykłe odkrycie; dowody pozostają aktywnym obszarem badań.
+    </string>
+    <string name="object_info_rhea_distance" translation_description="Distance to Rhea shown in the info card. Translate units if appropriate for your locale.">527 108 km od Saturna</string>
+    <string name="object_info_rhea_size" translation_description="Physical size of Rhea shown in the info card. Translate units if appropriate for your locale.">1 527 km średnicy</string>
+
+    <string name="object_info_tethys_description" translation_description="Description of Tethys shown in the info card. Translate this text.">
+    Tetys to lodowata księżyc Saturna zdominowany przez dwie dramatyczne cechy: ogromny krater Odyseusza, szeroki na 400 km i pokrywający prawie trzecią część powierzchni księżyca, oraz Chasmę Itaki, system kanionów rozciągający się na trzy czwarte drogi wokół globu.
+    </string>
+    <string name="object_info_tethys_funfact" translation_description="Fun fact about Tethys shown in the info card. Translate this text.">
+    Tethys to prawie czysty lód wodny — ma jedną z najniższych gęstości spośród wszystkich księżyców w Układzie Słonecznym, ledwie gęstszy niż zamrożona woda. Ithaca Chasma mogła powstać, gdy wnętrze zamarło i się rozszerzyło, pękając skorupę z wewnątrz.
+    </string>
+    <string name="object_info_tethys_distance" translation_description="Distance to Tethys shown in the info card. Translate units if appropriate for your locale.">294 619 km od Saturna</string>
+    <string name="object_info_tethys_size" translation_description="Physical size of Tethys shown in the info card. Translate units if appropriate for your locale.">1 062 km średnicy</string>
+
+    <string name="object_info_dione_description" translation_description="Description of Dione shown in the info card. Translate this text.">
+    Dione to lodowaty księżyc Saturna z silnie pokratertowaną twarzą wiodącą i półkulą śledową pokrytą jasnymi klifami lodowymi — liniami pęknięć, gdzie starożytne siły tektoniczne odsłoniły świeży lód spod powierzchni. Dane grawitacyjne sondy Cassini sugerują istnienie podziemnego oceanu cieczy pod skorupą.
+    </string>
+    <string name="object_info_dione_funfact" translation_description="Fun fact about Dione shown in the info card. Translate this text.">
+    Dione dzieli swoją orbitę z dwoma małymi księżycami, Heleną i Polideulesem, które są zablokowane 60° przed i za nią w punktach równowagi grawitacyjnej zwanych punktami Lagrange\'a. Helenę w szczególności można zobaczyć jadącą jak kosmiczną autostopowiczkę na zdjęciach Cassini\'ego.
+    </string>
+    <string name="object_info_dione_distance" translation_description="Distance to Dione shown in the info card. Translate units if appropriate for your locale.">377 396 km od Saturna</string>
+    <string name="object_info_dione_size" translation_description="Physical size of Dione shown in the info card. Translate units if appropriate for your locale.">1 122 km średnicy</string>
+
+    <string name="object_info_iapetus_description" translation_description="Description of Iapetus shown in the info card. Translate this text.">
+    Iapetus jest jednym z najbardziej charakterystycznych księżyców Saturna: jego półkula wiodąca pokryta jest czarnym jak węgiel materiałem, podczas gdy półkula tylna jest jasnym białym lodem. Ten skrajnie dwukolorowy wygląd zaskoczył Giovanni Cassiniego, gdy odkrył księżyc w 1671 roku, a kontrast jest tak wyraźny, że widoczny jest w małych teleskopach.
+    </string>
+    <string name="object_info_iapetus_funfact" translation_description="Fun fact about Iapetus shown in the info card. Translate this text.">
+    Japet ma również imponujący równikowy grzbiet wznoszący się na 20 km wysoko — wyższy niż jakikolwiek szczyt na Ziemi — biegnący tysiące kilometrów wokół jego równika. Jego pochodzenie jest nieznane: może być pozostałością upadłego pierścienia lub starożytnego fałdowania tektonicznego, powstałego, gdy księżyc obracał się znacznie szybciej dawno temu.
+    </string>
+    <string name="object_info_iapetus_distance" translation_description="Distance to Iapetus shown in the info card. Translate units if appropriate for your locale.">3 560 820 km od Saturna</string>
+    <string name="object_info_iapetus_size" translation_description="Physical size of Iapetus shown in the info card. Translate units if appropriate for your locale.">1 469 km średnicy</string>
+
+    <!-- Moon of Neptune -->
+    <string name="object_info_triton_description" translation_description="Description of Triton shown in the info card. Translate this text.">
+    Triton jest największym księżycem Neptuna i jednym z najbardziej niezwykłych ciał w Układzie Słonecznym. Krąży wokół Neptuna w kierunku wstecznym — przeciwnie do obrotu samej planety — co stanowi silny dowód na to, że został przechwycony z zewnętrznej części Układu Słonecznego, najprawdopodobniej z Pasa Kuipera, na wczesnym etapie historii Neptuna.
+    </string>
+    <string name="object_info_triton_funfact" translation_description="Fun fact about Triton shown in the info card. Translate this text.">
+    Pomimo temperatury powierzchni wynoszącej −235°C — najniższej zmierzonej na jakimkolwiek ciele odwiedzonym przez statek kosmiczny — Voyager 2 odkrył aktywne gejzery azotowe na Tritonie w 1989 roku. Ciemne smugi na powierzchni oznaczają miejsca, gdzie słupy gazu i ciemnego materiału wystrzelały na kilometry w cienką atmosferę.
+    </string>
+    <string name="object_info_triton_distance" translation_description="Distance to Triton shown in the info card. Translate units if appropriate for your locale.">354 759 km od Neptuna</string>
+    <string name="object_info_triton_size" translation_description="Physical size of Triton shown in the info card. Translate units if appropriate for your locale.">2707 km średnicy</string>
+
+    <!-- Major Moons of Uranus -->
+    <string name="object_info_titania_description" translation_description="Description of Titania shown in the info card. Translate this text.">
+    Titania jest największym księżycem Urana i ósmym co do wielkości księżycem w Układzie Słonecznym. Jej powierzchnia wykazuje mieszaninę starożytnych kraterowych równin i młodszych zboczy i dolin, co sugeruje złożoną historię geologiczną, która mogła obejmować przeszłą aktywność tektoniczną przekształcającą lodową skorupę.
+    </string>
+    <string name="object_info_titania_funfact" translation_description="Fun fact about Titania shown in the info card. Translate this text.">
+    Wszystkie księżyce Urana noszą nazwy postaci z dzieł Szekspira i Aleksandra Pope\'a — Titania jest królową wróżek w "Śnie nocy letniej". Jest jednym z bardzo niewielu głównych księżyców planet, które nie noszą nazwy postaci z mitologii greckiej lub rzymskiej.
+    </string>
+    <string name="object_info_titania_distance" translation_description="Distance to Titania shown in the info card. Translate units if appropriate for your locale.">435910 km od Urana</string>
+    <string name="object_info_titania_size" translation_description="Physical size of Titania shown in the info card. Translate units if appropriate for your locale.">1578 km średnicy</string>
+
+    <string name="object_info_oberon_description" translation_description="Description of Oberon shown in the info card. Translate this text.">
+    Oberon jest najbardziej zewnętrznym z pięciu głównych księżyców Urana i jednym z najbardziej pokrytych kraterami, z starożytną powierzchnią, która zmieniła się bardzo mało od wczesnych czasów Układu Słonecznego. Kilka jego dużych kraterów uderzeniowych ma ciemny materiał na dnie, prawdopodobnie organiczne osady przyniesione przez ciała uderzające.
+    </string>
+    <string name="object_info_oberon_funfact" translation_description="Fun fact about Oberon shown in the info card. Translate this text.">
+    Oberon ma górę, która wznosi się około 6 km ponad otaczające równiny — porównywalna do najwyższych szczytów na Ziemi. W przeciwieństwie do gór Ziemi, które powstały w wyniku tektoniki płyt, ta formacja może być centralnym szczytem starożytnego krateru uderzeniowego lub pozostałością wczesnej aktywności wulkanicznej.
+    </string>
+    <string name="object_info_oberon_distance" translation_description="Distance to Oberon shown in the info card. Translate units if appropriate for your locale.">583520 km od Urana</string>
+    <string name="object_info_oberon_size" translation_description="Physical size of Oberon shown in the info card. Translate units if appropriate for your locale.">1523 km średnicy</string>
+
+    <string name="object_info_ariel_description" translation_description="Description of Ariel shown in the info card. Translate this text.">
+    Ariel ma najmłodszą i najjaśniejszą powierzchnię spośród pięciu głównych księżyców Urana. Jego krajobraz zdominowany jest siecią głębokich dolin i gładkich równin, które zostały przeformowane dawno temu przez płyn — prawdopodobnie wodę lub mieszaniny woda-amoniak — wypływający z wnętrza i zalewający starożytny teren.
+    </string>
+    <string name="object_info_ariel_funfact" translation_description="Fun fact about Ariel shown in the info card. Translate this text.">
+    Doliny Ariela mogą osiągać głębokość 10 km — znacznie głębiej niż Wielki Kanion. Obserwacje Kosmicznego Teleskopu Jamesa Webba wykryły lód dwutlenku węgla na powierzchni Ariela, co sugeruje trwającą chemię powierzchniową napędzaną naładowanymi cząstkami z magnetosfery Urana.
+    </string>
+    <string name="object_info_ariel_distance" translation_description="Distance to Ariel shown in the info card. Translate units if appropriate for your locale.">191020 km od Urana</string>
+    <string name="object_info_ariel_size" translation_description="Physical size of Ariel shown in the info card. Translate units if appropriate for your locale.">1158 km średnicy</string>
+
+    <string name="object_info_umbriel_description" translation_description="Description of Umbriel shown in the info card. Translate this text.">
+    Umbriel jest najciemniejszym z pięciu głównych księżyców Urana, z jednolicie starą i intensywnie pokrytą kraterami powierzchnią, która wykazuje niewiele śladów geologicznego przeformowania widocznego na jego sąsiadach. Jego wnętrze wydaje się pozostawać zimne i zamarznięte od wczesnych czasów historii Układu Słonecznego.
+    </string>
+    <string name="object_info_umbriel_funfact" translation_description="Fun fact about Umbriel shown in the info card. Translate this text.">
+    Najbardziej uderzającą cechą Umbriel jest Wunda — jasny pierścień o średnicy około 140 km znajdujący się w pobliżu równika. Odkryta przez Voyager 2 w 1986 roku, dokładna natura Wundy pozostaje tajemnicą — może to być dno krateru pokryte dwutlenkiem węgla lub szronem amoniaku osadzonym długo po uderzeniu, które je utworzyło.
+    </string>
+    <string name="object_info_umbriel_distance" translation_description="Distance to Umbriel shown in the info card. Translate units if appropriate for your locale.">266300 km od Urana</string>
+    <string name="object_info_umbriel_size" translation_description="Physical size of Umbriel shown in the info card. Translate units if appropriate for your locale.">1170 km średnicy</string>
+
+    <!-- Globular clusters already on the map -->
+    <string name="object_info_omega_centauri_description" translation_description="Description of Omega Centauri shown in the info card. Translate this text.">
+    Omega Centauri jest największym i najbardziej masywnym gromadzeniem kulistym krążącym wokół Drogi Mlecznej, zawierającym około 10 milionów gwiazd upakowanych w sferę o średnicy około 150 lat świetlnych. Jest łatwo widoczna gołym okiem jako rozmyta gwiazda w Centaurze i rozkłada się na zapierającą dech w piersiach kulę gwiazd przez lornetkę lub każdy teleskop.
+    </string>
+    <string name="object_info_omega_centauri_funfact" translation_description="Fun fact about Omega Centauri shown in the info card. Translate this text.">
+    W przeciwieństwie do typowych gromad kulistych, Omega Centauri zawiera gwiazdy o wielu różnych wiekach i składach chemicznych — znak, że może to być obnażone jądro galaktyki karłowatej, która została rozerwana i pochłonięta przez Drogę Mleczną miliardy lat temu. Może nawet zawierać centralną czarną dziurę o pośredniej masie.
+    </string>
+    <string name="object_info_omega_centauri_distance" translation_description="Distance to Omega Centauri shown in the info card. Translate units if appropriate for your locale.">17090 lat świetlnych</string>
+    <string name="object_info_omega_centauri_size" translation_description="Physical size of Omega Centauri shown in the info card. Translate units if appropriate for your locale.">~150 lat świetlnych średnicy</string>
+
+    <!-- Deep-sky objects: new catalog additions -->
+    <string name="object_info_hyades_description" translation_description="Description of the Hyades star cluster shown in the info card. Translate this text.">
+    Hiady to najbliżej położona otwarta gromada gwiazd względem Układu Słonecznego i jedna z najlepiej zbadanych w astronomii. Widoczna gołym okiem jako kształt litery V utworzony przez gwiazdy tworzące twarz Byka, zawiera kilkaset gwiazd rozciągających się na około 5° nieba.
+    </string>
+    <string name="object_info_hyades_funfact" translation_description="Fun fact about the Hyades shown in the info card. Translate this text.">
+    Błyszczący pomarańczowy gwiazda Aldebaran wydaje się znajdować wewnątrz Hyad, ale w rzeczywistości jest obiektem na pierwszym planie w połowie odległości — przypadkowe wyrównanie. Prawdziwe skupisko znajduje się około 153 lat świetlnych od nas i zawiera pierwsze gwiazdy, których odległości zmierzono za pomocą paralaksy z satelity Hipparcos.
+    </string>
+    <string name="object_info_hyades_distance" translation_description="Distance to the Hyades shown in the info card. Translate units if appropriate for your locale.">153 lata świetlne</string>
+    <string name="object_info_hyades_size" translation_description="Angular size of the Hyades shown in the info card.">~5° średnicy</string>
+
+    <string name="object_info_coma_star_cluster_description" translation_description="Description of the Coma Berenices Star Cluster shown in the info card. Translate this text.">
+    Gromada Włosów Bereniki to pobliski otwarty skup około 40 gwiazd rozrzuconych luźno na niemal 5° nieba, łatwo widoczny gołym okiem jako miękka poświata w ciemnych warunkach. Jest trzecią najbliższą otwartą skupą dla Układu Słonecznego i źródłem konstelacji Włosów Bereniki.
+    </string>
+    <string name="object_info_coma_star_cluster_funfact" translation_description="Fun fact about the Coma Berenices Star Cluster shown in the info card. Translate this text.">
+    Starożytni obserwatorzy widzieli w tej gromadzie włosy królowej Bereniki II z Egiptu, która legendarnie obcięła swoje złote loki jako ofiarę za bezpieczny powrót swojego męża z wojny. Ptolemeusz III podobno oficjalnie nazwał tę niezwykłą konstelację na jej cześć około 245 roku p.n.e.
+    </string>
+    <string name="object_info_coma_star_cluster_distance" translation_description="Distance to the Coma Star Cluster shown in the info card. Translate units if appropriate for your locale.">288 lat świetlnych</string>
+    <string name="object_info_coma_star_cluster_size" translation_description="Angular size of the Coma Star Cluster shown in the info card.">~5° średnicy</string>
+
+    <string name="object_info_coathanger_description" translation_description="Description of the Coathanger asterism shown in the info card. Translate this text.">
+    Wieszak to uderzająca asteryzm dziesięciu gwiazd w Lisiczce, które tworzą niezapomniany kształt: sześć gwiazd w linii prostej z czterema zwisającymi poniżej w haczyku, dokładnie przypominającymi odwrócony wieszak na ubrania. Jest to jeden z najlepszych obiektów do obserwacji lornetką na letnim niebie, idealnie pasujący do typowego pola widzenia lornetki.
+    </string>
+    <string name="object_info_coathanger_funfact" translation_description="Fun fact about the Coathanger shown in the info card. Translate this text.">
+    Pomimo że wygląda jak gromada, gwiazdy Wieszaka nie są ze sobą fizycznie powiązane — znajdują się w bardzo różnych odległościach i są jedynie przypadkowym zbiegiem linii widzenia. Gromada Brocchiego została skatalogowana przez Dalmiro Brocchiego w latach 20. XX wieku, a pierwszy teleskop kosmiczny, który ją sfotografował, to Hipparcos, który potwierdził, że gwiazdy są niezwiązane.
+    </string>
+    <string name="object_info_coathanger_distance" translation_description="Distance to the Coathanger shown in the info card. Translate units if appropriate for your locale.">~420 lat świetlnych (najjaśniejsza gwiazda)</string>
+    <string name="object_info_coathanger_size" translation_description="Angular size of the Coathanger shown in the info card.">~1° średnicy</string>
+
+    <string name="object_info_helix_nebula_description" translation_description="Description of the Helix Nebula shown in the info card. Translate this text.">
+    Mgławica Helix jest największą mgławicą planetarną pod względem pozornej wielkości na niebie — rozszerzającą się powłoką gazu wyrzuconą przez gwiazdę podobną do Słońca na końcu jej życia. Rozciągając się na około pół stopnia, jest widoczna w lornetce jako słabe, okrągłe światło w Wodnika i jest nazywana Okiem Boga ze względu na jej wygląd na fotografiach z długim czasem ekspozycji.
+    </string>
+    <string name="object_info_helix_nebula_funfact" translation_description="Fun fact about the Helix Nebula shown in the info card. Translate this text.">
+    W centrum Mgławicy Helix znajduje się jeden z najbliższych Ziemi znanych białych karłów — intensywnie gorący pozostałość gwiazdy o wielkości Ziemi, ale o masie Słońca. To los, który czeka nasze własne Słońce za około pięć miliardów lat.
+    </string>
+    <string name="object_info_helix_nebula_distance" translation_description="Distance to the Helix Nebula shown in the info card. Translate units if appropriate for your locale.">650 lat świetlnych</string>
+    <string name="object_info_helix_nebula_size" translation_description="Angular size of the Helix Nebula shown in the info card.">~3 lata świetlne średnicy</string>
+
+    <string name="object_info_sculptor_galaxy_description" translation_description="Description of the Sculptor Galaxy shown in the info card. Translate this text.">
+    Galaktyka Rzeźbnika jest jedną z najjaśniejszych i najpiękniejszych galaktyk spiralnych widzianych krawędzią z Ziemi, pojawiając się jako wydłużona poświata w południowym gwiazdozbiorze Rzeźbnika. Jest jedną z najbliższych galaktyk wybuchowych — galaktyką przechodzącą intensywny wybuch formacji gwiazd — widoczną dla astronomów amatorów z lornetkami z ciemnych nieba.
+    </string>
+    <string name="object_info_sculptor_galaxy_funfact" translation_description="Fun fact about the Sculptor Galaxy shown in the info card. Translate this text.">
+    Galaktyka Rzeźbnika jest jednym z najjaśniejszych członków Grupy Rzeźbnika — grupy galaktyk najbliższej naszej Grupie Lokalnej. Jej centralna strefa wybuchu gwiezdnego produkuje nowe gwiazdy w tempie kilkakrotnie wyższym niż Droga Mleczna, napędzane poprzednimi interakcjami z sąsiednimi galaktykami.
+    </string>
+    <string name="object_info_sculptor_galaxy_distance" translation_description="Distance to the Sculptor Galaxy shown in the info card. Translate units if appropriate for your locale.">11,4 miliona lat świetlnych</string>
+    <string name="object_info_sculptor_galaxy_size" translation_description="Physical size of the Sculptor Galaxy shown in the info card. Translate units if appropriate for your locale.">~90000 lat świetlnych średnicy</string>
+
+    <string name="object_info_blue_snowball_nebula_description" translation_description="Description of the Blue Snowball Nebula shown in the info card. Translate this text.">
+    Blue Snowball to mgławica planetarna w Andromedzie — świecąca powłoka gazu wyrzuconego przez umierającą gwiazdę. Przy magnitudzie 8,3 jest jedną z najjaśniejszych i najbardziej kolorowych mgławic planetarnych na niebie, pojawiając się jako żywy dysk w kolorze niebiesko-zielonym nawet w małych teleskopach. Jej symetryczny kształt i intensywny kolor sprawiają, że jest ulubienicą obserwatorów.
+    </string>
+    <string name="object_info_blue_snowball_nebula_funfact" translation_description="Fun fact about the Blue Snowball Nebula shown in the info card. Translate this text.">
+    Uderzająca barwa Mgławicy Niebieskiej Kuli Śnieżnej pochodzi z podwójnie zjonizowanego tlenu świecącego na określonej zielonej długości fali, połączonego z emisją wodoru — paletę barw, którą ludzkie oczy postrzegają jako niebiesko-zieloną. Centralny biały karzeł ma temperaturę powierzchni około 100 000°C, wystarczająco gorącą, aby zjonizować otaczający gaz na tej odległości.
+    </string>
+    <string name="object_info_blue_snowball_nebula_distance" translation_description="Distance to the Blue Snowball Nebula shown in the info card. Translate units if appropriate for your locale.">~2500 lat świetlnych</string>
+    <string name="object_info_blue_snowball_nebula_size" translation_description="Physical size of the Blue Snowball Nebula shown in the info card. Translate units if appropriate for your locale.">~0,8 roku świetlnego średnicy</string>
+
+    <string name="object_info_ghost_of_jupiter_description" translation_description="Description of the Ghost of Jupiter planetary nebula shown in the info card. Translate this text.">
+    Ghost of Jupiter to jasna mgławica planetarna w Hydrae, której rozmiar pozorny jest podobny do planety Jowisz — stąd jej nazwa. Przy wielkości 8,6 jest jedną z najbardziej dostępnych mgławic planetarnych na niebie dla małych teleskopów, wykazując wyraźny dysk i odrobinę koloru w umiarkowanych aperturach.
+    </string>
+    <string name="object_info_ghost_of_jupiter_funfact" translation_description="Fun fact about the Ghost of Jupiter shown in the info card. Translate this text.">
+    Duch Jowisza ma jasną wewnętrzną powłokę otoczoną słabszą zewnętrzną otoczką — strukturę dwóch powłok sugerującą, że umierająca gwiazda wyrzuciła gaz w co najmniej dwóch oddzielnych epizodach. Jej centralna gwiazda jest jednym z najgorętszych znanych białych karłów, z temperaturą powierzchni szacowaną na około 75 000°C.
+    </string>
+    <string name="object_info_ghost_of_jupiter_distance" translation_description="Distance to the Ghost of Jupiter shown in the info card. Translate units if appropriate for your locale.">~1400 lat świetlnych</string>
+    <string name="object_info_ghost_of_jupiter_size" translation_description="Physical size of the Ghost of Jupiter shown in the info card. Translate units if appropriate for your locale.">~1 rok świetlny średnicy</string>
+
+    <string name="object_info_saturn_nebula_description" translation_description="Description of the Saturn Nebula shown in the info card. Translate this text.">
+    Mgławica Saturna to mgławica planetarna w Wodnika, nazwana ze względu na jej podobieństwo do planety Saturn — rozszerzenia zwane ansae wystawają z obu stron jak uchwyty pierścieni, widoczne w teleskopach o umiarkowanej mocy. Przy wielkości 8,0 jest jedną z najjaśniejszych mgławic planetarnych na niebie i wykazuje złożoną strukturę w większych instrumentach.
+    </string>
+    <string name="object_info_saturn_nebula_funfact" translation_description="Fun fact about the Saturn Nebula shown in the info card. Translate this text.">
+    William Herschel odkrył Mgławicę Saturna w 1782 roku i zauważył jej podobieństwo do Saturna. Nowoczesne obserwacje ujawniają co najmniej cztery odrębne powłoki gazu otaczające centralnego białego karła, odzwierciedlające wiele epizodów utraty masy w ostatnich etapach życia gwiazdy.
+    </string>
+    <string name="object_info_saturn_nebula_distance" translation_description="Distance to the Saturn Nebula shown in the info card. Translate units if appropriate for your locale.">~5000 lat świetlnych</string>
+    <string name="object_info_saturn_nebula_size" translation_description="Physical size of the Saturn Nebula shown in the info card. Translate units if appropriate for your locale.">~1 rok świetlny średnicy</string>
+
+    <string name="object_info_ngc_2903_description" translation_description="Description of the galaxy NGC 2903 shown in the info card. Translate this text.">
+    NGC 2903 to jasna galaktyka spiralna z poprzeczką w konstelacji Lwa, często nazywana "obiektem Messiera, który Messier pominął" — jest jedną z najbardziej widocznych galaktyk na niebie, która nie znalazła się w jego słynnym katalogu. Przy jasności 8,9 jest łatwo widoczna w lornetce i wykazuje piękną strukturę spiralną w teleskopach o średniej mocy.
+    </string>
+    <string name="object_info_ngc_2903_funfact" translation_description="Fun fact about NGC 2903 shown in the info card. Translate this text.">
+    NGC 2903 ma jedną z najwyższych koncentracji "gorących punktów" tworzenia gwiazd znanych w centralnym pasie galaktyki — gęste skupiska młodych masywnych gwiazd rozświetlone intensywnym tworzeniem gwiazd. Jest używana jako punkt odniesienia do badania aktywności wybuchu gwiezdnego w galaktykach spiralnych z poprzeczką.
+    </string>
+    <string name="object_info_ngc_2903_distance" translation_description="Distance to NGC 2903 shown in the info card. Translate units if appropriate for your locale.">30 milionów lat świetlnych</string>
+    <string name="object_info_ngc_2903_size" translation_description="Physical size of NGC 2903 shown in the info card. Translate units if appropriate for your locale.">~80000 lat świetlnych średnicy</string>
+
+    <!-- Meteor showers -->
+    <string name="object_info_quadrantids_description" translation_description="Description of the Quadrantids meteor shower shown in the info card. Translate this text.">
+    Kwadrantydy to obfita styczniowa rój meteorów o bardzo ostrym, krótkim maksimum trwającym zaledwie kilka godzin. Radiant znajduje się w gwiazdozbiorze Boötes, w pobliżu pozycji nieistniejącego gwiazdozbioru Quadrans Muralis, od którego pochodzi nazwa roju. W idealnych warunkach widoczne są do 120 meteorów na godzinę.
+    </string>
+    <string name="object_info_quadrantids_funfact" translation_description="Fun fact about the Quadrantids meteor shower shown in the info card. Translate this text.">
+    W przeciwieństwie do większości głównych rojów pochodzących z komet, ciałem macierzystym Quadrantydów jest asteroida 2003 EH1 — uważana za uśpiony rdzeń komety, która wypalała się wiele wieków temu. Jej istnienie potwierdzono dopiero w 2003 roku.
+    </string>
+
+    <string name="object_info_lyrids_description" translation_description="Description of the Lyrids meteor shower shown in the info card. Translate this text.">
+    Liridy to niezawodny wiosenny rój meteorów promieniujący spod jasnej gwiazdy Vega w konstelacji Liry. Produkują szybkie, umiarkowanie jasne meteory, osiągające szczyt około 18 na godzinę, i okazjonalnie generują kule ognia, które pozostawiają świecące ślady dymu.
+    </string>
+    <string name="object_info_lyrids_funfact" translation_description="Fun fact about the Lyrids meteor shower shown in the info card. Translate this text.">
+    Lyridy to najstarsza niezawodnie udokumentowana rój meteorów w historii. Chińscy astronomowie zanotowali burzę meteorów "padających jak deszcz" w 687 roku p.n.e. Pozostałości pochodzą z komety Thatchera, która potrzebuje 415 lat na orbitę wokół Słońca i ostatnio odwiedziła wewnętrzny układ słoneczny w 1861 roku.
+    </string>
+
+    <string name="object_info_aquariids_description" translation_description="Description of the Eta Aquariids meteor shower shown in the info card. Translate this text.">
+    Eta Aquariidy to jeden z dwóch corocznych rojem meteorów powstałych z pozostałości komety Halleya. Osiągając szczyt do 70 meteorów na godzinę, rój silnie faworyzuje półkulę południową, gdzie radiant wznosi się wysoko przed świtem. Obserwatorzy z północy nadal cieszą się szacunkową szybkością 30 lub więcej na godzinę.
+    </string>
+    <string name="object_info_aquariids_funfact" translation_description="Fun fact about the Eta Aquariids meteor shower shown in the info card. Translate this text.">
+    Meteory Eta Aquariidy poruszają się z prędkością 66 km/s — wystarczająco szybko, aby jonizowane powietrze, które tworzą, mogło świecić się przez kilka sekund po zniknięciu meteoru. Możesz obserwować starożysty pył Halleya spalający się na Twoich oczach, wyrzucony podczas jednej z wielu wizyt komety sprzed tysięcy lat temu.
+    </string>
+
+    <string name="object_info_deltaaquariids_description" translation_description="Description of the Delta Aquariids meteor shower shown in the info card. Translate this text.">
+    Południowe Delta Aquariidy osiągają maksimum w końcu lipca i są najlepiej widoczne z szerokości geograficznych tropikalnych i południowych, gdzie radiант w Wodnika wspina się wysoko przed świtem. Produkują stały strumień meteorów o średniej prędkości do 16 na godzinę, z kilkoma jasnymi kulami ognistymi.
+    </string>
+    <string name="object_info_deltaaquariids_funfact" translation_description="Fun fact about the Delta Aquariids meteor shower shown in the info card. Translate this text.">
+    Dokładne ciało macierzyste Delta Aquariidów pozostaje niepewne. Głównym kandydatem jest Kometa 96P/Machholz, niezwykła kometa o krótkim okresie orbitalnym z wysoce nachyloną orbitą, która zbliża się niezwykle blisko do Słońca — bliżej niż planeta Merkury.
+    </string>
+
+    <string name="object_info_perseids_description" translation_description="Description of the Perseids meteor shower shown in the info card. Translate this text.">
+    Perseidy to najpopularniejszy deszcz meteorów w roku, osiągający szczyt w ciepłe noce sierpnia z maksymalnie 100 meteorami na godzinę. Pozostałości komety Swift-Tuttle spalają się wysoko w atmosferze Ziemi, tworząc szybkie, jasne meteory — wiele z nich pozostawia trwałe świecące ślady — promieniujące z konstelacji Perseusza.
+    </string>
+    <string name="object_info_perseids_funfact" translation_description="Fun fact about the Perseids meteor shower shown in the info card. Translate this text.">
+    Rodzic Perseid, kometa Swift-Tuttle, ma jądro o szerokości 26 km — większe niż obiekt, który według teorii spowodował wymieranie dinozaurów. Kometa ostatnio przeszła przez wewnętrzną część Układu Słonecznego w 1992 roku i nie powróci aż do 2125 roku.
+    </string>
+
+    <string name="object_info_orionids_description" translation_description="Description of the Orionids meteor shower shown in the info card. Translate this text.">
+    Orionidy to druga roczna burza meteorów wytwarzana przez Kometę Halleya, promieniująca spod podniesionej maczugi Oriona. Osiągając szczyt około 25 meteorów na godzinę, są znane z szybkich, często jasnych meteorów, które często pozostawiają świecące ślady jonizacji trwające kilka sekund.
+    </string>
+    <string name="object_info_orionids_funfact" translation_description="Fun fact about the Orionids meteor shower shown in the info card. Translate this text.">
+    Kometa Halleya jest odpowiedzialna za dwie coroczne roje meteorów: Eta Akwarydów w maju, kiedy Ziemia przecina zewnętrzny szlak gruzu komety, oraz Orionidy w październiku, kiedy Ziemia przecina szlak wewnętrzny. Razem pozwalają nam próbować starożytnego pyłu Halleya dwa razy w roku.
+    </string>
+
+    <string name="object_info_leonids_description" translation_description="Description of the Leonids meteor shower shown in the info card. Translate this text.">
+    Leonidy pochodzą z serca Lwa i zwykle produkują około 20 meteorów na godzinę. Są słynne ze spektakularnych burz, które wybuchają mniej więcej co 33 lata, gdy Ziemia przechodzi przez gęsty filament pyłu wyrzucanego przez kometę 55P/Tempel-Tuttle. Te burze mogą produkować tysiące meteorów na godzinę.
+    </string>
+    <string name="object_info_leonids_funfact" translation_description="Fun fact about the Leonids meteor shower shown in the info card. Translate this text.">
+    Burza Leonidów w 1833 roku wyprodukowała szacunkowo 100 000 meteorów na godzinę, terryfikując obserwatorów w całej Ameryce Północnej, którzy obawiali się, że niebo płonie. To zdarzenie zapoczątkowało naukowe badania meteorów. Porównywalne burze miały miejsce w 1966 i 1999 roku.
+    </string>
+
+    <string name="object_info_puppidvelids_description" translation_description="Description of the Puppid-Velids meteor shower shown in the info card. Translate this text.">
+    Puppidy-Velidy to złożony system nakładających się na siebie drobnych rojów meteorów promieniujących z konstelacji Puppis i Vela w południowej Drodze Mlecznej. Osiągając szczyt około 10 meteorów na godzinę, najlepiej obserwuje się je z półkuli południowej, gdzie radiant wznosi się wysoko na grudniowym niebie.
+    </string>
+    <string name="object_info_puppidvelids_funfact" translation_description="Fun fact about the Puppid-Velids meteor shower shown in the info card. Translate this text.">
+    Uważa się, że Puppidy-Velidy pochodzą z gruzu kilku różnych komet macierzystych, a nie z jednego źródła, w tym z komety 26P/Grigg-Skjellerup. Ich południowy radiant nigdy nie wznosi się powyżej horyzontu dla obserwatorów na szerokościach geograficznych na północ od około 40°N, co czyni je prysznicem, który większość świata rzadko widzi.
+    </string>
+
+    <string name="object_info_geminids_description" translation_description="Description of the Geminids meteor shower shown in the info card. Translate this text.">
+    Geminidy są powszechnie uważane za najlepszy deszcz meteorów w roku — obfity (do 120 na godzinę), niezawodny i aktywny od wczesnego wieczoru, a nie tylko po północy. Promieniują z konstelacji Bliźniąt i wytwarzają szeroki zakres jasności meteorów, w tym żywe kule ognia.
+    </string>
+    <string name="object_info_geminids_funfact" translation_description="Fun fact about the Geminids meteor shower shown in the info card. Translate this text.">
+    W odróżnieniu od innych głównych rojów meteorów, Geminidy pochodzą z asteroidy, a nie z komety: 3200 Faeton, "komety skalnej", której orbita zbliża ją do Słońca bardziej niż jakakolwiek inna nazwana asteroida. Ekstremalne ciepło może pękać jej skalną powierzchnię i uwalniać pył, który tworzy rój.
+    </string>
+
+    <string name="object_info_ursids_description" translation_description="Description of the Ursids meteor shower shown in the info card. Translate this text.">
+    Urydy to mały rój meteorów promieniujący z Małej Niedźwiedzicy, blisko Gwiazdy Polarnej, co czyni je zirkumpolarnymi dla obserwatorów półkuli północnej — widoczne przez całą noc bez zachodzenia. Osiągają maksimum około przesilenia zimowego z prędkością około 10 meteorów na godzinę, a kometą macierzystą jest 8P/Tuttle.
+    </string>
+    <string name="object_info_ursids_funfact" translation_description="Fun fact about the Ursids meteor shower shown in the info card. Translate this text.">
+    Urydy czasami wykazują nieoczekiwane wybuchy znacznie powyżej ich typowego poziomu. W 1945 roku i ponownie w 2006 roku obserwatorzy zanotowali 50 lub więcej meteorów na godzinę — pięć razy więcej niż normalny szczyt. Te wzrosty występują, gdy Ziemia przechodzi przez niezwykle gęstą wstęgę gruzu wyrzuconego podczas bliskiego zbliżenia się komety Tuttle\'a.
+    </string>
+
+    <!-- Category 5: Top priority — objects on the map that lacked info cards -->
+    <string name="object_info_m47_description" translation_description="Description of the open star cluster M47 shown in the info card. Translate this text.">
+    M47 to jasna, luźna gromada otwarta w Rufie, łatwo widoczna gołym okiem i efektowna w lornetce. Około 50 gwiazd rozrzuconych na półstopnia nieba, z kilkoma pomarańczowymi olbrzymami dodającymi ciepłe kolory na tle słabszych niebiesko-białych członków.
+    </string>
+    <string name="object_info_m47_funfact" translation_description="Fun fact about M47 shown in the info card. Translate this text.">
+    M47 był jednym z "zaginionych" obiektów Messiera — błąd pisarski w oryginalnych współrzędnych Messiera umieścił go na pustym niebie, pozostawiając gromadę niezidentyfikowaną przez prawie dwa wieki. Jego prawdziwa tożsamość jako NGC 2422 została potwierdzona dopiero w 1959 roku, gdy obserwatorzy pracowali wstecz od opisu Messiera, aby znaleźć błąd.
+    </string>
+    <string name="object_info_m47_distance" translation_description="Distance to M47 shown in the info card. Translate units if appropriate for your locale.">1600 lat świetlnych</string>
+    <string name="object_info_m47_size" translation_description="Physical size of M47 shown in the info card. Translate units if appropriate for your locale.">~14 lat świetlnych średnicy</string>
+
+    <string name="object_info_m41_description" translation_description="Description of the open star cluster M41 shown in the info card. Translate this text.">
+    M41 to piękne gromada otwarta w Wielkim Psie, położona zaledwie 4° na południe od Syriusza — najjaśniejszej gwiazdy na nocnym niebie. Widoczna gołym okiem z ciemnych miejsc i spektakularna w lornetce, zawiera około 100 gwiazd rozsianych na szerokim polu, z kilkoma uderzającymi pomarańczowymi olbrzymami wśród słabszych niebiesko-białych członków.
+    </string>
+    <string name="object_info_m41_funfact" translation_description="Fun fact about M41 shown in the info card. Translate this text.">
+    Arystoteles mógł zaobserwować M41 około 325 p.n.e. — być może najwcześniejszą zarejestrowaną obserwację jakiegokolwiek obiektu głębokich nieba. Opisał "mglistą plamę" na południe od Syriusza, która odpowiada położeniu M41. Jeśli identyfikacja jest prawidłowa, M41 był dyskutowany prawie dwa tysiące lat przed wynalezieniem teleskopu.
+    </string>
+    <string name="object_info_m41_distance" translation_description="Distance to M41 shown in the info card. Translate units if appropriate for your locale.">2300 lat świetlnych</string>
+    <string name="object_info_m41_size" translation_description="Physical size of M41 shown in the info card. Translate units if appropriate for your locale.">~25 lat świetlnych średnicy</string>
+
+    <string name="object_info_m24_description" translation_description="Description of the Sagittarius Star Cloud (M24) shown in the info card. Translate this text.">
+    M24 to Chmura Gwiazd Strzelca — nie gromada ani mgławica, ale okno przez szczelinę w pyle Drogi Mlecznej, odsłaniające olśniewające pole gwiazd o szerokości 2°. Jest to najbogatsza widoczna przez lornetkę region na całym niebie, wypełniony tysiącami gwiazd rozciągających się na wiele różnych odległości jednocześnie.
+    </string>
+    <string name="object_info_m24_funfact" translation_description="Fun fact about M24 shown in the info card. Translate this text.">
+    Gwiazdy w M24 nie znajdują się w tej samej odległości — chmura gwiazd reprezentuje przekrój dysku Galaktyki widziany przez naturalny tunel w międzygwiezdnym pyle, obejmujący odległości od 10 000 do 16 000 lat świetlnych. Wbudowane w chmurę są ciemne mgławice i małe gromady gwiazd, które pojawiają się jako ciemne plamy na tle błyszczących gwiazd.
+    </string>
+    <string name="object_info_m24_distance" translation_description="Distance range to M24 shown in the info card. Translate units if appropriate for your locale.">~10000–16000 lat świetlnych (zakres)</string>
+    <string name="object_info_m24_size" translation_description="Physical size of M24 shown in the info card. Translate units if appropriate for your locale.">~600 lat świetlnych głębia okna</string>
+
+    <string name="object_info_m25_description" translation_description="Description of the open star cluster M25 shown in the info card. Translate this text.">
+    M25 to jasna gromada otwarta widoczna gołym okiem w Strzelcu, położona na tle gęstych pól gwiazdowych letniego Mlecznego Pasa. Około 600 gwiazd rozsianych jest na polu o szerokości pół stopnia, co czyni ją bogatym obiektem do obserwacji przez lornetkę. Jej najjaśniejsze składniki obejmują kilka błękitno-białych supergigantów i jedną z najlepiej badanych zmiennych Cefeid na niebie.
+    </string>
+    <string name="object_info_m25_funfact" translation_description="Fun fact about M25 shown in the info card. Translate this text.">
+    M25 zawiera U Sagittarii, klasyczną gwiazdę zmienną typu Cefeidy, która rozjaśnia się i przyciemnia w okresie 6,7 dnia. Cefeidy są istotnymi "świecami standardowymi" do pomiaru odległości kosmicznych, ponieważ ich okres pulsacji bezpośrednio ujawnia ich rzeczywistą jasność — astronomowie wykorzystali je, aby po raz pierwszy określić rozmiar Drogi Mlecznej, a następnie skalę obserwowalnego wszechświata.
+    </string>
+    <string name="object_info_m25_distance" translation_description="Distance to M25 shown in the info card. Translate units if appropriate for your locale.">2000 lat świetlnych</string>
+    <string name="object_info_m25_size" translation_description="Physical size of M25 shown in the info card. Translate units if appropriate for your locale.">~19 lat świetlnych średnicy</string>
+
+    <string name="object_info_m39_description" translation_description="Description of the open star cluster M39 shown in the info card. Translate this text.">
+    M39 to duża, rozproszona gromada otwarta w Łabędziu, widoczna gołym okiem w pobliżu Deneba w bogatej letniej Drodze Mlecznej. Jej około 30 jasnych gwiazd jest luźno rozłożonych na obszarze około stopnia, najlepiej obserwowanych przy niskim powiększeniu w lornetce lub teleskopie o szerokim polu widzenia — wyższe powiększenie po prostu rozwiązuje ją na rzadkie, nieznaczące pole gwiazd.
+    </string>
+    <string name="object_info_m39_funfact" translation_description="Fun fact about M39 shown in the info card. Translate this text.">
+    Na odległości około 825 lat świetlnych M39 jest jedną z najbliższych Ziemi otwartych gromad gwiazd, a mając około 240 milionów lat jest jedną ze starszych gromad widocznych gołym okiem — wystarczająco stara, aby jej najmasywniejsze gwiazdy już zakończyły swoje życie. Messier zaobserwował ją w 1764 roku i była ona jedną z najwcześniejszych pozycji dodanych do jego katalogu.
+    </string>
+    <string name="object_info_m39_distance" translation_description="Distance to M39 shown in the info card. Translate units if appropriate for your locale.">825 lat świetlnych</string>
+    <string name="object_info_m39_size" translation_description="Physical size of M39 shown in the info card. Translate units if appropriate for your locale.">~8 lat świetlnych średnicy</string>
+
+    <!-- Category 5: Special cases -->
+    <string name="object_info_m63_description" translation_description="Description of the Sunflower Galaxy (M63) shown in the info card. Translate this text.">
+    Galaktyka Słonecznika to luminosna spiralna galaktyka w gwiazdozbiorze Psy Łowieckie, której ciasno zwiniętych ramionach, pstrokate regionami formowania się gwiazd, nadają jej charakterystyczną teksturę podobną do kwiatu na długoeksponowanych fotografiach. Przy magnitudzie 8,6 jest widoczna w lornetkach z ciemnych nieb i łatwo pokazuje swoją wydłużony kształt i jasne jądro w małych teleskopach.
+    </string>
+    <string name="object_info_m63_funfact" translation_description="Fun fact about the Sunflower Galaxy shown in the info card. Translate this text.">
+    M63 została odkryta przez Pierre\'a Méchaina w 1779 roku — jeden z kilku obiektów Messiera znalezionych przez Méchaina, a nie przez samego Messiera. Jest członkiem Grupy M51, fizycznie związana z Galaktyką Wir (M51), i wykazuje oznaki przeszłej interakcji: słaby, starożytny strumień gwiezdny oplatający jej zewnętrzny dysk.
+    </string>
+    <string name="object_info_m63_distance" translation_description="Distance to the Sunflower Galaxy shown in the info card. Translate units if appropriate for your locale.">29 milionów lat świetlnych</string>
+    <string name="object_info_m63_size" translation_description="Physical size of the Sunflower Galaxy shown in the info card. Translate units if appropriate for your locale.">~100 000 lat świetlnych średnicy</string>
+
+    <string name="object_info_ngc_6543_description" translation_description="Description of the Cat's Eye Nebula (NGC 6543) shown in the info card. Translate this text.">
+    Mgławica Oko Kota jest jedną z najbardziej złożonych strukturalnie mgławic planetarnych — gaz wyrzucony przez umierającą gwiazdę ukształtowany w koncentryczne powłoki, strumienie i jasne węzły widoczne na zdjęciach Hubble\'a. W małych teleskopach pojawia się jako żywy niebiesko-zielony dysk w Smoku, jeden z najbardziej kolorowych obiektów na jesiennym niebie.
+    </string>
+    <string name="object_info_ngc_6543_funfact" translation_description="Fun fact about the Cat's Eye Nebula shown in the info card. Translate this text.">
+    W 1864 roku astronom William Huggins skierował spektroskop na Mgławicę Oko Kota i odkrył, że składa się z świecącego gazu, a nie z nierozdzielonych gwiazd — po raz pierwszy potwierdzono naturę jakiejkolwiek mgławicy planetarnej. To odkrycie założyło dziedzinę spektroskopii mgławic i obalił panujący pogląd, że wszystkie mgławice to odległe gromady gwiazd.
+    </string>
+    <string name="object_info_ngc_6543_distance" translation_description="Distance to the Cat's Eye Nebula shown in the info card. Translate units if appropriate for your locale.">~3 300 lat świetlnych</string>
+    <string name="object_info_ngc_6543_size" translation_description="Physical size of the Cat's Eye Nebula shown in the info card. Translate units if appropriate for your locale.">~0,5 lat świetlnych średnicy</string>
+
+    <string name="object_info_m76_description" translation_description="Description of the Little Dumbbell Nebula (M76) shown in the info card. Translate this text.">
+    Mała Hantel to mgławica planetarna w gwiazdozbiorze Perseusza o charakterystycznym kształcie ósemki — mniejsza kuzynka M27, Mgławicy Hantli w Lisiczce. Choć jest najsłabszym obiektem w katalogu Messiera, nagradza cierpliwą obserwację w małych teleskopach i wykazuje piękną strukturę w większych instrumentach, z dwoma jaśniejszymi płatami po bokach słabszej talii.
+    </string>
+    <string name="object_info_m76_funfact" translation_description="Fun fact about the Little Dumbbell Nebula shown in the info card. Translate this text.">
+    M76 został pierwotnie skatalogowany jako dwa oddzielne obiekty — NGC 650 i NGC 651 — ponieważ wczesni obserwatorzy opisywali dwa jasne płaty niezależnie. Jest to bipolarna mgławica planetarna powstała, gdy wypływ umierającej gwiazdy został ściśnięty na równiku, tworząc dwa rozszerzające się płaty wzdłuż osi biegunowej, podczas gdy gaz również wydostaje się na zewnątrz w talii.
+    </string>
+    <string name="object_info_m76_distance" translation_description="Distance to the Little Dumbbell Nebula shown in the info card. Translate units if appropriate for your locale.">~2 500 lat świetlnych</string>
+    <string name="object_info_m76_size" translation_description="Physical size of the Little Dumbbell Nebula shown in the info card. Translate units if appropriate for your locale.">~2 lata świetlne średnicy</string>
+
+    <string name="object_info_v838_mon_description" translation_description="Description of V838 Monocerotis shown in the info card. Translate this text.">
+    V838 Monocerotis to niezwykła gwiazda zmienna w gwiazdozbiorze Jednorożca, która w 2002 roku przeszła spektakularny wybuch, na krótko stając się jedną z najjaśniejszych gwiazd w Drodze Mlecznej. Choć dziś jest zbyt słaba dla obserwatorów wizualnych, jej rozszerzające się echo światła — fala światła oświetlająca starożytne powłoki pyłu — wyprodukowała jedne z najbardziej dramatycznych zdjęć kiedykolwiek zrobionych przez Teleskop Kosmiczny Hubble\'a.
+    </string>
+    <string name="object_info_v838_mon_funfact" translation_description="Fun fact about V838 Monocerotis shown in the info card. Translate this text.">
+    Natura wybuchu V838 Mon pozostaje przedmiotem dyskusji. Wiodąca teoria mówi o fuzji gwiezdnej — dwóch gwiazdach spiralujących w siebie nawzajem i zderzających się — zamiast klasycznej nocy lub erupcji superolbrzyma. Jeśli potwierdzono, był to pierwszy obserwowany w czasie rzeczywistym przebłysk "luminous red nova", rzadkiej klasy wybuchu spowodowanej fuzją gwiezdną; podobne zdarzenia odkryto od tego czasu w innych galaktykach.
+    </string>
+    <string name="object_info_v838_mon_distance" translation_description="Distance to V838 Monocerotis shown in the info card. Translate units if appropriate for your locale.">~20 000 lat świetlnych</string>
+    <string name="object_info_v838_mon_size" translation_description="Extent of the V838 Monocerotis light echo shown in the info card. Translate units if appropriate for your locale.">~3 lata świetlne (zasięg echa światła)</string>
+
+    <string name="object_info_hdf_description" translation_description="Description of the Hubble Deep Field shown in the info card. Translate this text.">
+    Pole Głębokie Hubble\'a to mały obszar nieba o rozmiarze 2,6 minuty łuku w gwiazdozbiorze Wielkiej Niedźwiedzicy, sfotografowany przez Teleskop Kosmiczny Hubble\'a przez 10 kolejnych dni w grudniu 1995 roku. To, co wydawało się pustą przestrzenią, ujawniło około 3000 galaktyk — obejmujących miliardy lat historii kosmicznej — i fundamentalnie zmieniło naszą wizję wszechświata.
+    </string>
+    <string name="object_info_hdf_funfact" translation_description="Fun fact about the Hubble Deep Field shown in the info card. Translate this text.">
+    Obszar nieba został wybrany specjalnie, ponieważ był wolny od jasnych gwiazd i pobliskich galaktyk. Jednak wynikowy obraz zawierał około 3000 galaktyk, co doprowadziło do oszacowania, że całe niebo zawiera około 200 miliardów galaktyk — prawie wszystkie z nich niewidoczne dla żadnego teleskopu przed Hubble\'em.
+    </string>
+    <string name="object_info_hdf_distance" translation_description="Distance to the most distant galaxies in the Hubble Deep Field shown in the info card. Translate units if appropriate for your locale.">~13 miliardów lat świetlnych (najdalsze)</string>
+    <string name="object_info_hdf_size" translation_description="Angular size of the Hubble Deep Field shown in the info card.">2,6 minuty łuku (pole widzenia)</string>
+
+    <string name="object_info_m43_description" translation_description="Description of De Mairan's Nebula (M43) shown in the info card. Translate this text.">
+    Mgławica De Mairана to oddzielona część wielkiego kompleksu Mgławicy Oriona, oddzielona od M42 ciemnym pasem pyłu, ale należąca do tej samej ogromnej chmury molekularnej. Nazwana na cześć francuskiego astronoma Jean-Jacques\'a Dortous de Mairана, który zaobserwował ją w 1731 roku, jest mgławicą emisyjną jonizowaną przez gorącą młodą gwiazdę NU Orionis osadzoną w jej centrum.
+    </string>
+    <string name="object_info_m43_funfact" translation_description="Fun fact about De Mairan's Nebula shown in the info card. Translate this text.">
+    Chociaż M43 wydaje się oddzielnym obiektem od M42, ciemna linia je dzieląca to chmura pyłu na pierwszym planie — część Obłoku Molekularnego Oriona — która po prostu blokuje nasz widok na fizyczne połączenie między dwoma świecącymi regionami. Razem stanowią one jedynie oświetloną wewnętrzną krawędź ogromnej ciemnej chmury rozciągającej się na znaczną część Oriona.
+    </string>
+    <string name="object_info_m43_distance" translation_description="Distance to De Mairan's Nebula shown in the info card. Translate units if appropriate for your locale.">1 350 lat świetlnych</string>
+    <string name="object_info_m43_size" translation_description="Physical size of De Mairan's Nebula shown in the info card. Translate units if appropriate for your locale.">~8 lat świetlnych średnicy</string>
+
+    <string name="object_info_m40_description" translation_description="Description of M40 (Winnecke 4) shown in the info card. Translate this text.">
+    M40 jest wyjątkowy w katalogu Messiera — nie jest mgławicą, gromadą ani galaktyką, ale szeroką gwiazdą podwójną. Messier skatalogował ją w 1764 roku podczas poszukiwania mgławicy zgłoszonej przez Johanna Heveliusa w Wielkiej Niedźwiedzicy, znalazł tylko tę parę gwiazd i zanotował ją, aby przyszli obserwatorzy nie pomylili jej z czymś bardziej interesującym.
+    </string>
+    <string name="object_info_m40_funfact" translation_description="Fun fact about M40 shown in the info card. Translate this text.">
+    Dwie gwiazdy M40 — znane jako Winnecke 4 — nie są związane grawitacyjnie; znajdują się w różnych odległościach i stanowią jedynie przypadkowe wyrównanie. Sam Messier zauważył, że nie ma "nic niezwykłego", ale włączył je "aby pokazać, że ta mgławica nie jest taka sama jak te, które badałem". Jego metodyczne podejście do dokumentowania negatywnych wyników dało przyszłym obserwatorom definitywne odniesienie.
+    </string>
+    <string name="object_info_m40_distance" translation_description="Distance to M40 shown in the info card. Translate units if appropriate for your locale.">~500 lat świetlnych</string>
+    <string name="object_info_m40_size" translation_description="Angular separation of the M40 double star shown in the info card.">~50 sekund łuku (separacja)</string>
+
+    <!-- Category 5: Second tier -->
+    <string name="object_info_m34_description" translation_description="Description of the open star cluster M34 shown in the info card. Translate this text.">
+    M34 to jasny, rozproszony otwarty gromad w Perseuszu, łatwo widoczny w lornetce jako bogata plama gwiazd na tle zimowej Drogi Mlecznej. Jego około 400 gwiazd zajmuje obszar prawie tak szeroki jak pełnia Księżyca, z kilkoma widocznymi dla uważnych obserwatorów lornetki szerokimi gwiazdami podwójnymi.
+    </string>
+    <string name="object_info_m34_funfact" translation_description="Fun fact about M34 shown in the info card. Translate this text.">
+    Mając około 200 milionów lat, M34 jest pośredni wiekiem — wystarczająco młody, aby jego gorące niebieskie gwiazdy wciąż świeciły, wystarczająco stary, aby najmasywniejsze już wybuchły jako supernowe. W odległości 1500 lat świetlnych jest jednym z bliższych skupisk Messiera i pozostaje pięknym obiektem nawet z nieba przedmieść.
+    </string>
+    <string name="object_info_m34_distance" translation_description="Distance to M34 shown in the info card. Translate units if appropriate for your locale.">1 500 lat świetlnych</string>
+    <string name="object_info_m34_size" translation_description="Physical size of M34 shown in the info card. Translate units if appropriate for your locale.">~15 lat świetlnych średnicy</string>
+
+    <string name="object_info_m23_description" translation_description="Description of the open star cluster M23 shown in the info card. Translate this text.">
+    M23 to bogata gromada otwarta w Strzelcu, osadzona w gęstych polach gwiazdowych letniego Mlecznego Pasa. Około 150 gwiazd rozprzestrzenia się na polu o szerokości pół stopnia w lornetkach, co czyni ją hojnym obiektem do obserwacji lornetkami w tym samym obszarze nieba co wiele innych klejnotów Messiera.
+    </string>
+    <string name="object_info_m23_funfact" translation_description="Fun fact about M23 shown in the info card. Translate this text.">
+    M23 szacuje się na około 300 milionów lat — pośredni wiek, przy czym większość jego masywnych gwiazd już opuściła ciąg główny. Messier odkrył go w 1764 roku podczas jednej ze swoich licznych kampanii obserwacyjnych przeszukujących pola gwiazd Strzelca.
+    </string>
+    <string name="object_info_m23_distance" translation_description="Distance to M23 shown in the info card. Translate units if appropriate for your locale.">2 150 lat świetlnych</string>
+    <string name="object_info_m23_size" translation_description="Physical size of M23 shown in the info card. Translate units if appropriate for your locale.">~17 lat świetlnych średnicy</string>
+
+    <string name="object_info_m37_description" translation_description="Description of the open star cluster M37 shown in the info card. Translate this text.">
+    M37 jest najbogatszym i najjaśniejszym z trzech gromad otwartych Messiera w Aurigie, zawierającym szacunkowo 500 gwiazd w zwartym polu. Jest to spektakularny obiekt dla lornetki i małego teleskopu, z rozrzuconymi pomarańczowymi gwiazdami olbrzymami dodającymi kontrast kolorystyczny do niebiesko-białego roju.
+    </string>
+    <string name="object_info_m37_funfact" translation_description="Fun fact about M37 shown in the info card. Translate this text.">
+    M37 zawiera około tuzina czerwonych olbrzymów — niezwykle dużą liczbę, która odzwierciedla jego stosunkowo zaawansowany wiek około 300 milionów lat. Pomimo że znajduje się około 4500 lat świetlnych — najdalszy z trzech gromad Messiera w Woźnicy — nadal należy do najpiękniejszych otwartych gromad na niebie.
+    </string>
+    <string name="object_info_m37_distance" translation_description="Distance to M37 shown in the info card. Translate units if appropriate for your locale.">4 500 lat świetlnych</string>
+    <string name="object_info_m37_size" translation_description="Physical size of M37 shown in the info card. Translate units if appropriate for your locale.">~31 lat świetlnych średnicy</string>
+
+    <string name="object_info_m48_description" translation_description="Description of the open star cluster M48 shown in the info card. Translate this text.">
+    M48 to duża, jasna gromada otwarta w Hydrze, rozciągająca się na prawie jeden stopień nieba i widoczna gołym okiem z ciemnych miejsc. Jej około 80 gwiazd jest rozproszona luźno na szerokim polu, najlepiej obserwowanym przez lornetkę, z rozrzuconymi pomarańczowymi i żółtymi gwiazdami olbrzymami wśród jaśniejszych niebiesko-białych członków.
+    </string>
+    <string name="object_info_m48_funfact" translation_description="Fun fact about M48 shown in the info card. Translate this text.">
+    M48 był jednym z "zaginionych" obiektów Messiera przez prawie dwa wieki, ponieważ zarejestrowana przez Messiera pozycja była około 5° odległa od rzeczywistej lokalizacji. Pozostał niezidentyfikowany aż do 1959 roku, kiedy to został dopasowany do NGC 2548 i okazało się, że prosty błąd przepisania umieścił go w pustej przestrzeni nieba od samego początku.
+    </string>
+    <string name="object_info_m48_distance" translation_description="Distance to M48 shown in the info card. Translate units if appropriate for your locale.">1 500 lat świetlnych</string>
+    <string name="object_info_m48_size" translation_description="Physical size of M48 shown in the info card. Translate units if appropriate for your locale.">~23 lata świetlne średnicy</string>
+
+    <string name="object_info_m21_description" translation_description="Description of the open star cluster M21 shown in the info card. Translate this text.">
+    M21 to zwarty otwarty gromad gwiazd w Strzelcu, położony zaledwie pół stopnia na północ od Mgławicy Trójdzielnej (M20), co czyni te dwa obiekty uderzającą parą do obserwacji lornetką. Gromada zawiera około 57 gwiazd skoncentrowanych na mniejszym obszarze niż wiele gromad Messiera, z kilkoma jasnymi niebiesko-białymi gwiazdami jako dominującymi członkami.
+    </string>
+    <string name="object_info_m21_funfact" translation_description="Fun fact about M21 shown in the info card. Translate this text.">
+    Pomimo braku fizycznego związku, M21 i M20 (Mgławica Trójdzielna) tworzą jedną z najpiękniejszych par do obserwacji lornetką na letnim niebie — jasny gromad gwiazd obok kolorowej trójdzielnej mgławicy. M21 znajduje się w odległości około 4250 lat świetlnych, podczas gdy M20 jest nieco bliżej, w odległości około 4100 lat świetlnych.
+    </string>
+    <string name="object_info_m21_distance" translation_description="Distance to M21 shown in the info card. Translate units if appropriate for your locale.">4 250 lat świetlnych</string>
+    <string name="object_info_m21_size" translation_description="Physical size of M21 shown in the info card. Translate units if appropriate for your locale.">~16 lat świetlnych średnicy</string>
+
+    <string name="object_info_m50_description" translation_description="Description of the open star cluster M50 shown in the info card. Translate this text.">
+    M50 to jasna gromada otwarta w Jednorożcu, zawierająca około 200 gwiazd upakowanych w uderzająco zwartym polu dostępnym dla lornetki i małych teleskopów. Łatwo ją znaleźć na linii między Syriuszem a Procjonem i zawiera godną uwagi czerwonego olbrzyma — ciepłą pomarańczową latarnię wyróżniającą się żywo wśród niebiesko-białych gwiazd gromady.
+    </string>
+    <string name="object_info_m50_funfact" translation_description="Fun fact about M50 shown in the info card. Translate this text.">
+    M50 ma szacunkowo około 78 milionów lat — jeden z młodszych otwartych skupisk Messiera — co oznacza, że jego gorące niebieskie i białe gwiazdy wciąż się ewoluują, a kilka bardziej masywnych członków niedawno rozrosło się w olbrzymy. Jest to typowe dla skupiska w jego wczesnym średnim wieku.
+    </string>
+    <string name="object_info_m50_distance" translation_description="Distance to M50 shown in the info card. Translate units if appropriate for your locale.">3 200 lat świetlnych</string>
+    <string name="object_info_m50_size" translation_description="Physical size of M50 shown in the info card. Translate units if appropriate for your locale.">~15 lat świetlnych średnicy</string>
+
+    <string name="object_info_m36_description" translation_description="Description of the open star cluster M36 shown in the info card. Translate this text.">
+    M36 jest najmniejszym i najmłodszym z trzech gromad otwartych, które Messier skatalogował w Aurigie. Jego około 60 gwiazd jest zgromadzonych w ciasnym, błyszczącym polu widocznym w lornetce i dobrze rozdzielonym na poszczególne gwiazdy w małym teleskopie, zdominowanym przez gorące, niebiesko-białe gwiazdy.
+    </string>
+    <string name="object_info_m36_funfact" translation_description="Fun fact about M36 shown in the info card. Translate this text.">
+    M36 szacuje się na zaledwie około 25 milionów lat — jeden z młodszych skupisk Messiera — co oznacza, że masywne gwiazdy błękitno-białe wciąż dominują i nie pojawiły się jeszcze czerwone giganty. Dzieli pola gwiezdne Aurygi z M37 i M38, a wszystkie trzy skupiska mieszczą się w tym samym polu widzenia lornetki szerokokątnej.
+    </string>
+    <string name="object_info_m36_distance" translation_description="Distance to M36 shown in the info card. Translate units if appropriate for your locale.">4 100 lat świetlnych</string>
+    <string name="object_info_m36_size" translation_description="Physical size of M36 shown in the info card. Translate units if appropriate for your locale.">~14 lat świetlnych średnicy</string>
+
+    <string name="object_info_m46_description" translation_description="Description of the open star cluster M46 shown in the info card. Translate this text.">
+    M46 to bogata, gęsta gromada otwarta w Rufie zawierająca około 500 gwiazd upakowanych na szerokim polu, uderzająca w lornetki i piękna w małych teleskopach. Niezwykły bonus unosi się na jej północnej krawędzi: NGC 2438, mała mgławica planetarna, która wydaje się być osadzona w gromadzie — dramatyczne zbiegiem linii widzenia.
+    </string>
+    <string name="object_info_m46_funfact" translation_description="Fun fact about M46 shown in the info card. Translate this text.">
+    Mgławica planetarna NGC 2438 wydaje się znajdować wewnątrz M46, ale w rzeczywistości jest niezwiązanym obiektem na pierwszym planie w zupełnie innej odległości — około 1400 lat świetlnych w porównaniu z 5400 lat świetlnych dla M46. Zbieg okoliczności, w którym powłoka umierającej gwiazdy nakłada się na młody gromadzenie gwiazd, czyni to jedno z najbardziej fotogenicznych pól w katalogu.
+    </string>
+    <string name="object_info_m46_distance" translation_description="Distance to M46 shown in the info card. Translate units if appropriate for your locale.">5 400 lat świetlnych</string>
+    <string name="object_info_m46_size" translation_description="Physical size of M46 shown in the info card. Translate units if appropriate for your locale.">~42 lata świetlne średnicy</string>
+
+    <string name="object_info_m93_description" translation_description="Description of the open star cluster M93 shown in the info card. Translate this text.">
+    M93 to jasna, zwarta gromada otwarta w Rufie, położona w bogatej południowej Drodze Mlecznej i łatwa do znalezienia w lornetce. Jej około 80 gwiazd ułożonych jest w uderzającym kształcie klina lub motyla i zawiera kilka gorących niebieskich supergigantów, co czyni ją jedną z bardziej atrakcyjnych gromad otwartych na zimowym niebie.
+    </string>
+    <string name="object_info_m93_funfact" translation_description="Fun fact about M93 shown in the info card. Translate this text.">
+    M93 jest stosunkowo młodą gwiazdozbiorem — ma około 100 milionów lat — z dominującymi gwiazdami niebieskimi i niebiesko-białymi, które jeszcze nie ewoluowały w olbrzymy. Jest to jedna z bardziej południowych gromad Messiera, a z szerokości geograficznych na północ od około 50°N nigdy nie wznosi się wysoko nad horyzont.
+    </string>
+    <string name="object_info_m93_distance" translation_description="Distance to M93 shown in the info card. Translate units if appropriate for your locale.">3 600 lat świetlnych</string>
+    <string name="object_info_m93_size" translation_description="Physical size of M93 shown in the info card. Translate units if appropriate for your locale.">~23 lata świetlne średnicy</string>
+
+    <string name="object_info_m38_description" translation_description="Description of the open star cluster M38 shown in the info card. Translate this text.">
+    M38 jest największym i najbardziej rozproszonym z trzech otwartych gromad, które Messier skatalogował w Aurigie. Jego około 100 gwiazd ułożonych jest w wzór, który niektórzy obserwatorzy porównują do krzyża lub greckiej litery pi, widoczny w lornetce i dobrze rozdzielony w małym teleskopie. Mniejsza gromada NGC 1907 znajduje się blisko na południu.
+    </string>
+    <string name="object_info_m38_funfact" translation_description="Fun fact about M38 shown in the info card. Translate this text.">
+    M38 jest najstarszą z trzech skupisk Messiera w Aurigie, mającą około 220 milionów lat. Jest wystarczająco stara, że niektóre z jej masywnych gwiazd ewoluowały w żółte i pomarańczowe olbrzymy. Pobliskie skupisko NGC 1907 może zmieścić się w tym samym polu widzenia przy niskim powiększeniu, czyniąc je doskonałą parą do obserwacji lornetką — podobnie jak M46 i M47 w Puppis.
+    </string>
+    <string name="object_info_m38_distance" translation_description="Distance to M38 shown in the info card. Translate units if appropriate for your locale.">4 200 lat świetlnych</string>
+    <string name="object_info_m38_size" translation_description="Physical size of M38 shown in the info card. Translate units if appropriate for your locale.">~26 lat świetlnych średnicy</string>
+
+    <string name="object_info_m29_description" translation_description="Description of the open star cluster M29 shown in the info card. Translate this text.">
+    M29 to mała, młoda gromada otwarta w Łabędziu, położona na tle jednego z najbardziej zaciemnionych pyłem regionów Drogi Mlecznej. Pięć błyszczących niebieskich supergigantów dominuje w gromadzie, widocznych w lornetce jako ciasne asteryzmy gorących, jasnych gwiazd. Bez gęstego pyłu na pierwszym planie M29 byłaby jedną z najbardziej spektakularnych gromad otwartych na niebie.
+    </string>
+    <string name="object_info_m29_funfact" translation_description="Fun fact about M29 shown in the info card. Translate this text.">
+    M29 szacuje się na zaledwie około 10 milionów lat — niemowlę gwiezdne — i znajduje się w asocjacji Cygnus OB1, rozległej grupie masywnych młodych gwiazd. Gęsty międzygwiezdny pył przyciemnia gromadę o około 3 magnitudo; bez tego zaciemnienia gwiazdy M29 świeciłyby kilka razy jaśniej, niż faktycznie się pojawiają.
+    </string>
+    <string name="object_info_m29_distance" translation_description="Distance to M29 shown in the info card. Translate units if appropriate for your locale.">4 000 lat świetlnych</string>
+    <string name="object_info_m29_size" translation_description="Physical size of M29 shown in the info card. Translate units if appropriate for your locale.">~8 lat świetlnych średnicy</string>
+
+    <string name="object_info_m62_description" translation_description="Description of the globular cluster M62 shown in the info card. Translate this text.">
+    M62 to bogata gromada kulista w Wężowniku — jedna z najbliższych gromad względem centrum galaktyki i wyraźnie asymetryczna, z gwiazdami bardziej zagęszczonymi po stronie południowej. Przy jasności 6,6 mag jest doskonałym obiektem do obserwacji lornetką, choć jej niska deklinacja czyni ją obiektem dostępnym tylko przez krótki sezon dla obserwatorów na północy.
+    </string>
+    <string name="object_info_m62_funfact" translation_description="Fun fact about M62 shown in the info card. Translate this text.">
+    Niecentralne jądro M62 jest bezpośrednim rezultatem jego bliskości względem centrum galaktyki — potężne siły pływowe z centralnego zgrubienia zniekształcają gromadę i ciągną gwiazdy w kierunku płaszczyzny galaktyki. Jest to również jedna z najbardziej dynamicznie ewoluowanych gromad kulistych, wykazująca oznaki kolapsu jądra i niezwykle wysoką gęstość pulsarów milisekundowych.
+    </string>
+    <string name="object_info_m62_distance" translation_description="Distance to M62 shown in the info card. Translate units if appropriate for your locale.">22 500 lat świetlnych</string>
+    <string name="object_info_m62_size" translation_description="Physical size of M62 shown in the info card. Translate units if appropriate for your locale.">~92 lata świetlne średnicy</string>
+
+    <string name="object_info_m28_description" translation_description="Description of the globular cluster M28 shown in the info card. Translate this text.">
+    M28 to zwarty gromada kulista w Strzelcu, położona blisko jasnej gwiazdy Lambda Sagittarii w bogatych polach gwiezdnych lata. Przy magnitudzie 6,9 jest atrakcyjnym celem dla obserwacji lornetką i jest dobrze rozdzielona w małych teleskopach, wykazując jasne, zagęszczone jądro otoczone umiarkowanym halo gwiazd.
+    </string>
+    <string name="object_info_m28_funfact" translation_description="Fun fact about M28 shown in the info card. Translate this text.">
+    W 1987 roku M28 stał się pierwszą gromadą kulistą, w której wykryto pulsara milisekundowego. Pulsary milisekundowe — gwiazdy neutronowe wirujące setki razy na sekundę — powstają, gdy gwiazda neutronowa akrecjonuje materię z gwiazdy towarzyszącej i są znacznie częściej spotykane w gromadach kulistych niż w ogólnej populacji galaktyki, ponieważ ich gęste środowiska gwiazdowe powodują znacznie więcej bliskich spotkań w układach podwójnych.
+    </string>
+    <string name="object_info_m28_distance" translation_description="Distance to M28 shown in the info card. Translate units if appropriate for your locale.">18 300 lat świetlnych</string>
+    <string name="object_info_m28_size" translation_description="Physical size of M28 shown in the info card. Translate units if appropriate for your locale.">~60 lat świetlnych średnicy</string>
+
+    <string name="object_info_m52_description" translation_description="Description of the open star cluster M52 shown in the info card. Translate this text.">
+    M52 to bogata otwarta gromada gwiazd w Kasjopeji, zawierająca około 200 gwiazd upakowanych w zwartym obszarze północnej Drogi Mlecznej. Jest to piękna gromada dostępna dla obserwacji lornetką i wykazuje piękne, gęste pole gwiezdne w małych teleskopach, z wyraźnie jaśniejszą pomarańczową gwiazdą wyróżniającą się na południowej krawędzi gromady.
+    </string>
+    <string name="object_info_m52_funfact" translation_description="Fun fact about M52 shown in the info card. Translate this text.">
+    Odległość M52 jest niezwykle niepewna — szacunki wahają się od 3000 do 7000 lat świetlnych — ponieważ gęsty międzygwiezdny pył wzdłuż tej linii widzenia utrudnia określenie jej rzeczywistej jasności. Messier odkrył ją w 1774 roku, tej samej nocy, gdy śledził kometę, która skłoniła go do zanotowania kilku innych wpisów w katalogu.
+    </string>
+    <string name="object_info_m52_distance" translation_description="Distance to M52 shown in the info card. Translate units if appropriate for your locale.">~5 000 lat świetlnych</string>
+    <string name="object_info_m52_size" translation_description="Physical size of M52 shown in the info card. Translate units if appropriate for your locale.">~25 lat świetlnych średnicy</string>
+
+    <string name="object_info_m67_description" translation_description="Description of the open star cluster M67 shown in the info card. Translate this text.">
+    M67 to piękna gromada otwarta w Raku i jedna z najstarszych dobrze zbadanych gromad otwartych na niebie. Mająca około 3,2–3,5 miliarda lat, zawiera wiele gwiazd o masie i wieku podobnym do naszego Słońca — co czyni ją naturalnym laboratorium do badania ewolucji gwiazd podobnych do Słońca na przestrzeni czasu kosmicznego.
+    </string>
+    <string name="object_info_m67_funfact" translation_description="Fun fact about M67 shown in the info card. Translate this text.">
+    Kilka gwiazd w M67 bardzo przypomina Słońce temperaturą, masą i wiekiem — rzadka kombinacja, która skłoniła badaczy do zastanowienia się, czy Słońce samo pochodzi z gromady podobnej do M67. Ponieważ gwiazdy rodzą się w gromadach, które stopniowo się rozpraszają, Słońce prawie na pewno pochodzi z rozproszonej grupy sióstr sprzed miliardów lat — choć która dokładnie gromada nigdy nie została zidentyfikowana.
+    </string>
+    <string name="object_info_m67_distance" translation_description="Distance to M67 shown in the info card. Translate units if appropriate for your locale.">2700 lat świetlnych</string>
+    <string name="object_info_m67_size" translation_description="Physical size of M67 shown in the info card. Translate units if appropriate for your locale.">~24 lata świetlne średnicy</string>
+
+    <string name="object_info_m55_description" translation_description="Description of the globular cluster M55 shown in the info card. Translate this text.">
+    M55 to duża, rozluźniona gromada kulista w Strzelcu — jedna z najbardziej rozproszczonych i najmniej skoncentrowanych spośród wszystkich gromad Messiera. Jest łatwo rozdzielona na poszczególne gwiazdy nawet przy małym powiększeniu, z widoczną ziarnistą teksturą w lornetce. Jej niska południowa deklinacja ogranicza widoczność z północnych szerokości geograficznych, ale jest spektakularna z półkuli południowej.
+    </string>
+    <string name="object_info_m55_funfact" translation_description="Fun fact about M55 shown in the info card. Translate this text.">
+    Niezwykle niska koncentracja gwiazd w M55 sprawia, że wygląda prawie jak bogata gromada otwarta, a nie typowa gromada kulista. Jej gwiazdy rozciągają się na obszarze o szerokości prawie 100 lat świetlnych, co sugeruje, że siła grawitacji gromady jest stosunkowo słaba w porównaniu z bardziej skoncentrowanymi kulistymi gromadami, takimi jak M13 czy M3.
+    </string>
+    <string name="object_info_m55_distance" translation_description="Distance to M55 shown in the info card. Translate units if appropriate for your locale.">17 600 lat świetlnych</string>
+    <string name="object_info_m55_size" translation_description="Physical size of M55 shown in the info card. Translate units if appropriate for your locale.">~100 lat świetlnych średnicy</string>
+
+    <string name="object_info_m19_description" translation_description="Description of the globular cluster M19 shown in the info card. Translate this text.">
+    M19 to zwarta, bogata gromada kulista w Wężowniku — jedna z najbliższych gromad kulistych centrum galaktyki. Jej najbardziej charakterystyczną cechą jest wyraźnie spłaszczony kształt: M19 jest najbardziej spłaszczoną znaną gromadą kulistą, z widocznym eliptycznym zarysem nawet w małym teleskopie.
+    </string>
+    <string name="object_info_m19_funfact" translation_description="Fun fact about M19 shown in the info card. Translate this text.">
+    Wyraźna spłaszczenie M19 — jego najdłuższa oś jest około 10% dłuższa niż najkrótsza — jest unikalne wśród znanych gromad kulistych i uważa się, że wynika z rozciągania pływowego przez pole grawitacyjne Drogi Mlecznej. Im bliżej centrum galaktyki krąży gromada kulista, tym silniej jest deformowana; M19 znajduje się zaledwie około 5200 lat świetlnych od jądra galaktyki.
+    </string>
+    <string name="object_info_m19_distance" translation_description="Distance to M19 shown in the info card. Translate units if appropriate for your locale.">28 700 lat świetlnych</string>
+    <string name="object_info_m19_size" translation_description="Physical size of M19 shown in the info card. Translate units if appropriate for your locale.">~113 lat świetlnych średnicy</string>
+
+    <string name="object_info_m80_description" translation_description="Description of the globular cluster M80 shown in the info card. Translate this text.">
+    M80 jest jednym z najgęściej upakowanych gromad kulistych w Drodze Mlecznej, zwartą, bogatą kulą kilkuset tysięcy gwiazd w Skorpionie. Przy wielkości 7,2 jest doskonałym celem dla obserwacji lornetką i ujawnia błyszczące, wysoce skoncentrowane jądro w małych teleskopach.
+    </string>
+    <string name="object_info_m80_funfact" translation_description="Fun fact about M80 shown in the info card. Translate this text.">
+    W 1860 roku w M80 wybuchła nowa — oznaczona jako T Scorpii — na krótko stając się tak jasna jak sama gromada i widoczna gołym okiem. Pozostaje jedną z zaledwie dwóch nowych kiedykolwiek zaobserwowanych w gromadzie kulistej. Nowe w gromadach kulistych powstają z interakcji między gwiazdami podwójnymi, które są znacznie bardziej powszechne w gęstym środowisku gwiezdnym jądra gromady kulistej.
+    </string>
+    <string name="object_info_m80_distance" translation_description="Distance to M80 shown in the info card. Translate units if appropriate for your locale.">32 600 lat świetlnych</string>
+    <string name="object_info_m80_size" translation_description="Physical size of M80 shown in the info card. Translate units if appropriate for your locale.">~84 lata świetlne średnicy</string>
+
+    <string name="object_info_m103_description" translation_description="Description of the open star cluster M103 shown in the info card. Translate this text.">
+    M103 to mała, zwarta gromada otwarta w Kasjopeji, zawierająca około 40 gwiazd w ciasnej grupie łatwo widoczna w lornetce. Uderzająca gwiazda podwójna i czerwony olbrzym w pobliżu centrum nadają jej kolorowy wygląd w małych teleskopach, umieszczone w bogatych polach gwiazd Drogi Mlecznej w Kasjopeji.
+    </string>
+    <string name="object_info_m103_funfact" translation_description="Fun fact about M103 shown in the info card. Translate this text.">
+    M103 był obiektem o najwyższym numerze w oryginalnym katalogu Messiera z 1781 roku — wszystkie kolejne wpisy (M104–M110) zostały dodane pośmiertnie przez późniejszych astronomów na podstawie notatek i korespondencji Messiera. Pierre Méchain odkrył M103 krótko przed opublikowaniem katalogu, a Messier umieścił go na podstawie raportu Méchaina.
+    </string>
+    <string name="object_info_m103_distance" translation_description="Distance to M103 shown in the info card. Translate units if appropriate for your locale.">8500 lat świetlnych</string>
+    <string name="object_info_m103_size" translation_description="Physical size of M103 shown in the info card. Translate units if appropriate for your locale.">~15 lat świetlnych średnicy</string>
+
+    <string name="object_info_m30_description" translation_description="Description of the globular cluster M30 shown in the info card. Translate this text.">
+    M30 to zwarta gromada kulista w Koziorożcu — piękny obiekt w małych teleskopach, wykazujący jasne, zagęszczone jądro i słabe łańcuchy gwiazd na obrzeżach. Przy magnitudzie 7,5 wymaga ciemnego nieba w lornetkach i nagradza mały teleskop swoją częściowo rozdzielzoną zewnętrzną halo.
+    </string>
+    <string name="object_info_m30_funfact" translation_description="Fun fact about M30 shown in the info card. Translate this text.">
+    M30 przeszło "zapaść jądra" — proces, w którym wzajemne przyciąganie grawitacyjne gęsto upakowanych gwiazd powoduje dramatyczne skurczenie się centrum klastra, tworząc niezwykłą koncentrację gwiazd w małej objętości. Około jednej piątej wszystkich kulistych skupisk ma zapadle jądra, a M30 należy do najlepiej zbadanych przykładów tego zjawiska.
+    </string>
+    <string name="object_info_m30_distance" translation_description="Distance to M30 shown in the info card. Translate units if appropriate for your locale.">27 100 lat świetlnych</string>
+    <string name="object_info_m30_size" translation_description="Physical size of M30 shown in the info card. Translate units if appropriate for your locale.">~87 lat świetlnych średnicy</string>
+
+    <string name="object_info_m54_description" translation_description="Description of the globular cluster M54 shown in the info card. Translate this text.">
+    M54 to duża, bogata gromada kulista w Strzelcu i jeden z najdalszych obiektów w całym katalogu Messiera. Przez wieki uważano ją za odległy halo gromadę kulistą Drogi Mlecznej, ale wiadomo już, że jest gęstym jądrem Karłowatej Galaktyki Strzelca — galaktyki satelitarnej aktualnie pochłanianej przez naszą własną.
+    </string>
+    <string name="object_info_m54_funfact" translation_description="Fun fact about M54 shown in the info card. Translate this text.">
+    Odkrycie w 1994 roku, że M54 należy do Galaktyki Karłowatej Strzelca, uczyniło go pierwszym gromadą kulistą znaną jako należąca do innej galaktyki. Ponieważ Galaktyka Karłowata Strzelca jest stopniowo rozrywana i pochłaniana przez Drogę Mleczną, M54 ostatecznie stanie się prawdziwą gromadą halo naszej własnej galaktyki — międzygalaktycznym imigrantem przybywającym przez miliardy lat.
+    </string>
+    <string name="object_info_m54_distance" translation_description="Distance to M54 shown in the info card. Translate units if appropriate for your locale.">87 000 lat świetlnych</string>
+    <string name="object_info_m54_size" translation_description="Physical size of M54 shown in the info card. Translate units if appropriate for your locale.">~230 lat świetlnych średnicy</string>
+
+    <string name="object_info_m69_description" translation_description="Description of the globular cluster M69 shown in the info card. Translate this text.">
+    M69 to umiarkowanie bogata gromada kulista w Strzelcu, położona blisko centrum galaktyki. Przy magnitudzie 7,7 jest obiektem dostępnym dla lornetki z ciemnego nieba, który nagradza małoteleskop częściowo rozdzielonym kłębem gwiazd i jasnym, ziarnistym centrum.
+    </string>
+    <string name="object_info_m69_funfact" translation_description="Fun fact about M69 shown in the info card. Translate this text.">
+    M69 krąży niezwykle blisko centrum galaktyki — zaledwie około 6200 lat świetlnych od jądra Drogi Mlecznej — i w konsekwencji ma niezwykle wysoką koncentrację cięższych pierwiastków jak na gromadę kulistą. Gromady kulisteblizsze centrum galaktyki mają tendencję do wzbogacania chemicznego przez wiele pokoleń formowania się gwiazd w otaczającym zgrubieniu.
+    </string>
+    <string name="object_info_m69_distance" translation_description="Distance to M69 shown in the info card. Translate units if appropriate for your locale.">29 700 lat świetlnych</string>
+    <string name="object_info_m69_size" translation_description="Physical size of M69 shown in the info card. Translate units if appropriate for your locale.">~61 lat świetlnych średnicy</string>
+
+    <string name="object_info_m9_description" translation_description="Description of the globular cluster M9 shown in the info card. Translate this text.">
+    M9 to zwarty gromada kulista w Wężowniku — jeden z gromad Messiera najbardziej dotkniętych absorpcją pyłu międzygwiazdowego. Leży w kierunku wybrzuszenia galaktycznego, gdzie gęsty pył znacznie ją przyciemnia. Bez tego zaciemnienia M9 byłaby widoczna prawie o wielkość gwiazdową jaśniejsza i byłaby widoczna gołym okiem.
+    </string>
+    <string name="object_info_m9_funfact" translation_description="Fun fact about M9 shown in the info card. Translate this text.">
+    M9 cierpi na większą absorpcję pyłu międzygwiezdnego niż prawie każdy inny gromadziec kulisty Messiera — około 1,3 magnitudo przyciemnienia w porównaniu z czystą linią widzenia. Dwa mniejsze gromadzce kuliste (NGC 6342 i NGC 6356) znajdują się w odległości około 1° od M9, czyniąc go centrum niezwykłego skupienia trzech gromadzców kulistych na małym obszarze nieba.
+    </string>
+    <string name="object_info_m9_distance" translation_description="Distance to M9 shown in the info card. Translate units if appropriate for your locale.">25 800 lat świetlnych</string>
+    <string name="object_info_m9_size" translation_description="Physical size of M9 shown in the info card. Translate units if appropriate for your locale.">~70 lat świetlnych średnicy</string>
+
+    <string name="object_info_m26_description" translation_description="Description of the open star cluster M26 shown in the info card. Translate this text.">
+    M26 to umiarkowanie słaba gromada otwarta w Tarczy, widoczna w lornetkach i dobrze rozdzielona w małych teleskopach. Około 90 gwiazd rozprzestrzenia się na zwartym polu w bogatej chmurze gwiazd Tarczy, chociaż gromada znajduje się na tle tak gęstego tła, że zidentyfikowanie jej członków z otaczającego pola gwiazd wymaga pewnej ostrożności.
+    </string>
+    <string name="object_info_m26_funfact" translation_description="Fun fact about M26 shown in the info card. Translate this text.">
+    M26 leży wzdłuż tego samego bogatego pasa nieba co M11 — Gromada Dzikiej Kaczki, jedna z najpiękniejszych gromad otwartych na niebie. Oba obiekty dzielą zaledwie około 3,5° i są widoczne w tym samym polu lornetki, co czyni Tarczę niezwykłym celem dla obserwatorów gromad, mimo że jest to mała i często pomijana konstelacja.
+    </string>
+    <string name="object_info_m26_distance" translation_description="Distance to M26 shown in the info card. Translate units if appropriate for your locale.">5000 lat świetlnych</string>
+    <string name="object_info_m26_size" translation_description="Physical size of M26 shown in the info card. Translate units if appropriate for your locale.">~22 lata świetlne średnicy</string>
+
+    <string name="object_info_m79_description" translation_description="Description of the globular cluster M79 shown in the info card. Translate this text.">
+    M79 to zwarta gromada kulista w Lepusie — jedna z niewielu gromad Messiera najlepiej umiejscowionych na zimowym niebie, gdy większość gromad znajduje się poniżej horyzontu lub dopiero wschodzi. Przy jasności 8,0 wymaga teleskopu, aby ujawnić jej zwartą jądro i słabą otoczkę, wyróżniającą się na tle stosunkowo rzadkich zimowych pól gwiezdnych.
+    </string>
+    <string name="object_info_m79_funfact" translation_description="Fun fact about M79 shown in the info card. Translate this text.">
+    Niektórzy astronomowie uważają, że M79 jest intruzem z Galaktyki Karła Wielkiego Psa — rozpadu satelitarnej galaktyki, która jest obecnie pochłaniana przez Drogę Mleczną. Jeśli tak jest, M79 nie powstała w ramach własnego systemu kulistych skupisk Drogi Mlecznej, ale została przechwycona z infallującej galaktyki i jest teraz powoli włączana do halo naszej galaktyki.
+    </string>
+    <string name="object_info_m79_distance" translation_description="Distance to M79 shown in the info card. Translate units if appropriate for your locale.">41 000 lat świetlnych</string>
+    <string name="object_info_m79_size" translation_description="Physical size of M79 shown in the info card. Translate units if appropriate for your locale.">~104 lata świetlne średnicy</string>
+
+    <string name="object_info_m70_description" translation_description="Description of the globular cluster M70 shown in the info card. Translate this text.">
+    M70 to zwarta gromada kulista w Strzelcu, bardzo podobna do swojej bliźniaczki M69 zarówno wyglądem, jak i odległością. Przy jasności 8,1 jest pięknym obiektem dla małych teleskopów, wykazującym zwartą jądro i ślady rozdzielczości w zewnętrznym halo. Znajduje się zaledwie 2° od M69 i oba obiekty można obserwować w tym samym polu lornetki.
+    </string>
+    <string name="object_info_m70_funfact" translation_description="Fun fact about M70 shown in the info card. Translate this text.">
+    M70 zyskała krótkotrwałą sławę w 1995 roku jako przybliżona lokalizacja na niebie, gdzie Alan Hale i Thomas Bopp niezależnie odkryli kometę Hale-Bopp — najjaśniejszą kometę końca XX wieku. Obaj obserwatorzy początkowo przeszukiwali obszar wokół M70 w poszukiwaniu innych celów i zauważyli kometę jako nieoczekiwany rozmyty obiekt w pobliżu.
+    </string>
+    <string name="object_info_m70_distance" translation_description="Distance to M70 shown in the info card. Translate units if appropriate for your locale.">29 400 lat świetlnych</string>
+    <string name="object_info_m70_size" translation_description="Physical size of M70 shown in the info card. Translate units if appropriate for your locale.">~67 lat świetlnych średnicy</string>
+
+    <string name="object_info_m107_description" translation_description="Description of the globular cluster M107 shown in the info card. Translate this text.">
+    M107 jest jednym z najmniej skoncentrowanych gromad kulistych Messiera, z gwiazdami rozproszonymi w stosunkowo otwartym wzorze wokół skromnego jądra. Przy wielkości gwiazdowej 8,1 jest obiektem dostępnym dla obserwacji lornetką z ciemnych nieba i częściowo rozwiązuje się w małych teleskopach, wykazując teksturę ziarnistą zamiast ostrego zagęszczenia centralnego.
+    </string>
+    <string name="object_info_m107_funfact" translation_description="Fun fact about M107 shown in the info card. Translate this text.">
+    M107 był ostatnim obiektem formalnie dodanym do katalogu Messiera — pojawia się w korespondencji Pierre\'a Méchaina, ale nie został uwzględniony w oryginalnym wydaniu z 1781 roku. Oficjalnie dodany jako M107 w 1947 roku przez kanadyjską astronomkę Helen Sawyer Hogg, która skodyfikowała kilka "brakujących" obiektów, które Méchain obserwował, ale Messier nigdy formalnie nie zanotował.
+    </string>
+    <string name="object_info_m107_distance" translation_description="Distance to M107 shown in the info card. Translate units if appropriate for your locale.">20 900 lat świetlnych</string>
+    <string name="object_info_m107_size" translation_description="Physical size of M107 shown in the info card. Translate units if appropriate for your locale.">~61 lat świetlnych średnicy</string>
+
+    <string name="object_info_m68_description" translation_description="Description of the globular cluster M68 shown in the info card. Translate this text.">
+    M68 to bogaty gromada kulista w Hydrze — obiekt południowy i jedna z niewielu gromad kulistych najlepiej widoczna w późną zimę i wiosnę. Przy wielkości 8,2 nagradza mały teleskop umiarkowanie skondensowanym jądrem i dużym halo rozdzielonych gwiazd na tle stosunkowo rzadkich pól gwiezdnych Hydry.
+    </string>
+    <string name="object_info_m68_funfact" translation_description="Fun fact about M68 shown in the info card. Translate this text.">
+    Pomimo względnej bliskości — dzięki czemu poszczególne gwiazdy są dobrze rozdzielone w teleskopach amatorskich — M68 jest często pomijane ze względu na jego dużą deklinację południową. Z szerokości geograficznych powyżej 50°N ledwie wynurza się nad horyzont; z półkuli południowej natomiast wznosi się wysoko i jest wspaniałym obiektem kulistym.
+    </string>
+    <string name="object_info_m68_distance" translation_description="Distance to M68 shown in the info card. Translate units if appropriate for your locale.">33 600 lat świetlnych</string>
+    <string name="object_info_m68_size" translation_description="Physical size of M68 shown in the info card. Translate units if appropriate for your locale.">~117 lat świetlnych średnicy</string>
+
+    <string name="object_info_m56_description" translation_description="Description of the globular cluster M56 shown in the info card. Translate this text.">
+    M56 to zwarta gromada kulista w Lirze, położona między Mgławicą Pierścienia (M57) a jasną gwiazdą podwójną Albireo w Łabędziu. Przy magnitudzie 8,3 jest obiektem dostępnym dla lornetki z ciemnego nieba, a mały teleskop ujawnia ziarnistą, umiarkowanie skondensowaną sferę, która jest tylko częściowo rozdzielona nawet w średnich aperturach.
+    </string>
+    <string name="object_info_m56_funfact" translation_description="Fun fact about M56 shown in the info card. Translate this text.">
+    M56 został odkryty przez Messiera w styczniu 1779 roku w tym samym sezonie obserwacyjnym, w którym znalazł również Mgławicę Pierścienia (M57). Pomimo że znajduje się w tym samym polu widzenia lornetki co Wega — piąta najjaśniejsza gwiazda na niebie — i blisko słynnej Mgławicy Pierścienia, M56 jest często pomijany przez obserwatorów przyciągniętych do bardziej znanych sąsiadów.
+    </string>
+    <string name="object_info_m56_distance" translation_description="Distance to M56 shown in the info card. Translate units if appropriate for your locale.">32 900 lat świetlnych</string>
+    <string name="object_info_m56_size" translation_description="Physical size of M56 shown in the info card. Translate units if appropriate for your locale.">~68 lat świetlnych średnicy</string>
+
+    <string name="object_info_m71_description" translation_description="Description of the globular cluster M71 shown in the info card. Translate this text.">
+    M71 to niezwykły gromada kulista w Strzale — przez dziesięciolecia astronomowie debatowali, czy jest to bardzo bogata stara gromada otwarta, czy bardzo rozproszona młoda gromada kulista. Nowoczesna analiza potwierdza, że jest to autentyczna gromada kulista, ale wyjątkowo niskokondensacyjna, z relatywnie małą liczbą gwiazd i mniej dominującym jądrem niż typowe gromady kuliste.
+    </string>
+    <string name="object_info_m71_funfact" translation_description="Fun fact about M71 shown in the info card. Translate this text.">
+    Luźna struktura M71 sprawiła, że przez długi czas nie figurowała w wielu wczesnych katalogach, ponieważ przypominała bogate pole gwiazd, a nie prawdziwe skupisko. Odległa zaledwie 12 000 lat świetlnych, należy do bliższych globularnych skupisk Messiera, a jej gwiazdy są częściowo rozdzielone w małym teleskopie w warunkach ciemnego nieba — nadając jej wygląd zwartego, nieznacznie zagęszczonego bogatego pola gwiazd.
+    </string>
+    <string name="object_info_m71_distance" translation_description="Distance to M71 shown in the info card. Translate units if appropriate for your locale.">12 000 lat świetlnych</string>
+    <string name="object_info_m71_size" translation_description="Physical size of M71 shown in the info card. Translate units if appropriate for your locale.">~25 lat świetlnych średnicy</string>
 </resources>

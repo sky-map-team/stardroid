@@ -946,6 +946,65 @@
     </string>
     <string name="object_info_eta_carinae_nebula_distance" translation_description="Distance to Eta Carinae Nebula shown in the info card. Translate units if appropriate for your locale.">7.500 ışık yılı</string>
     <string name="object_info_eta_carinae_nebula_size" translation_description="Physical size of Eta Carinae Nebula shown in the info card. Translate units if appropriate for your locale.">300 ışık yılı çapında</string>
+    <!-- North America Nebula (NGC 7000) -->
+    <string name="object_info_north_america_nebula_description" translation_description="Description of the North America Nebula shown in the info card. Translate this text.">
+    Kuzey Amerika Nebulası (NGC 7000), Kuzey Amerika kıtasının şekline dikkat çekici bir şekilde benzeyen ve Meksika Körfezi bölgesini de içeren Kuğu takımyıldızında yer alan geniş bir emisyon nebulasıdır. Yaklaşık 120 arkdakika genişliğinde — kabaca Dolunay\'ın çapının dört katı — yaklaşık 2.600 ışık yılı uzaklıkta yer almakta ve 100 ışık yılından daha geniştir.
+    </string>
+    <string name="object_info_north_america_nebula_funfact" translation_description="Fun fact about the North America Nebula shown in the info card. Translate this text.">
+    Görsel büyüklüğü 4 olmasına rağmen, nebula çoğu gökyüzü koşullarında çıplak gözle görmek için çok geniş ve dağınıktır — ancak fotoğraflanması güzeldir ve güney kenarı boyunca yoğun yıldız oluşumunun yoğun bir yayı olan Cygnus Duvarı\'nı ortaya çıkarır.
+    </string>
+    <string name="object_info_north_america_nebula_distance" translation_description="Distance to the North America Nebula shown in the info card. Translate units if appropriate for your locale.">~2.590 ışık yılı</string>
+    <string name="object_info_north_america_nebula_size" translation_description="Physical size of the North America Nebula shown in the info card. Translate units if appropriate for your locale.">~140 ışık yılı çapında</string>
+    <!-- Exposed Cranium Nebula - PMR 1 -->
+    <string name="object_info_exposed_cranium_nebula_description" translation_description="Description of the Exposed Cranium Nebula shown in the info card. Translate this text.">
+    Exposed Cranium Nebulası (PMR 1), Vela takımyıldızında yaklaşık 5.000 ışık yılı uzaklıkta bulunan bir gezegen nebulasıdır. Tuhaf adı, ortasından dikey olarak geçen ve parlayan loblarını şeffaf bir kafatası içindeki beyne tuhaf bir şekilde benzeyen bir şekle bölen koyu bir gaz şeridinden gelir. Kalbinde, yaşamı boyunca biriktirdiği dış katmanları döken sıcak bir Wolf-Rayet yıldızı yanmaktadır.
+    </string>
+    <string name="object_info_exposed_cranium_nebula_funfact" translation_description="Fun fact about the Exposed Cranium Nebula shown in the info card. Translate this text.">
+    2026\'da James Webb Uzay Teleskopunun Açık Kafatası Nebulası\'nın çarpıcı yeni görüntülerini çektiği, çift katmanlı yapısını benzeri görülmemiş ayrıntıyla ortaya çıkardığı — hidrojen açısından zengin bir dış kabuk ve ölmekte olan yıldız tarafından oluşturulan ağır elementlerle dolu bir iç bulut.
+    </string>
+    <string name="object_info_exposed_cranium_nebula_distance" translation_description="Distance to the Exposed Cranium Nebula shown in the info card. Translate units if appropriate for your locale.">~5.000 ışık yılı</string>
+    <string name="object_info_exposed_cranium_nebula_size" translation_description="Physical size of the Exposed Cranium Nebula shown in the info card. Translate units if appropriate for your locale.">~2 ışık yılı çapında</string>
+
+    <!-- Jewel Box (NGC 4755) -->
+    <string name="object_info_jewel_box_description" translation_description="Description of the Jewel Box cluster shown in the info card. Translate this text.">
+    Jewel Box (NGC 4755), Crux takımyıldızında yer alan genç ve parlak bir açık yıldız kümesidir. Mimosa\'nın güneydoğusunda, çıplak gözle dördüncü büyüklükteki bulanık bir leke olarak kolayca görülebilir. Teleskopla görüldüğünde, yıldızları canlı renklerde parlar — derin mavi süpergigantlar yanında çarpıcı bir kırmızı süpergigant — bu da John Herschel\'in ona verdiği adı açıklar: harika bir mücevher. Sadece 14–16 milyon yaşında olması, gökyüzündeki en genç ve en renkli kümelerden biri olmasını sağlar.
+    </string>
+    <string name="object_info_jewel_box_funfact" translation_description="Fun fact about the Jewel Box shown in the info card. Translate this text.">
+    Kümenin göze çarpan kırmızı yıldızı κ Crucis, Güneş\'i 100.000 kattan fazla parlaklıkla gölgede bırakan kırmızı bir süpergigant olup, yıldız kümelerinin hepsi aynı renkte olmadığının canlı bir hatırlatıcısıdır.
+    </string>
+    <string name="object_info_jewel_box_distance" translation_description="Distance to the Jewel Box shown in the info card. Translate units if appropriate for your locale.">~6.500 ışık yılı</string>
+    <string name="object_info_jewel_box_size" translation_description="Physical size of the Jewel Box shown in the info card. Translate units if appropriate for your locale.">~19 ışık yılı çapında</string>
+
+    <!-- Double Cluster (NGC 869 & NGC 884) -->
+    <string name="object_info_double_cluster_description" translation_description="Description of the Double Cluster shown in the info card. Translate this text.">
+    Çift Küme (NGC 869 ve NGC 884), Perseus takımyıldızında yer alan ve gökyüzünde yan yana, bir dereceden biraz daha fazla uzakta bulunan genç açık yıldız kümelerinin göz kamaştırıcı bir çiftidir. Her ikisi de çıplak gözle sisli bir yama olarak görülebilir, ancak küçük bir teleskop bile iki parlayan sürüye sıkışmış yüzlerce parlak mavi-beyaz süpergigant ortaya çıkarır. Kabaca 7.500 ışık yılı uzakta bulunan bu kümeler, galaksimizin Perseus Kolu içinde yer alır ve kuzey gökyüzünün en iyi çift gözlükle gözlemlenebilir nesneleri arasında yer alır.
+    </string>
+    <string name="object_info_double_cluster_funfact" translation_description="Fun fact about the Double Cluster shown in the info card. Translate this text.">
+    Sadece 14 milyon yaşında olan Çift Küme olağanüstü derecede genç — o kadar yakın zamanda doğmuş ki en kütleli yıldızları hâlâ parlak mavi süpergigantlar ve bir kısmı zaten nadir, ateşli kırmızı süpergigantlara evrilmiş.
+    </string>
+    <string name="object_info_double_cluster_distance" translation_description="Distance to the Double Cluster shown in the info card. Translate units if appropriate for your locale.">~7.500 ışık yılı</string>
+    <string name="object_info_double_cluster_size" translation_description="Physical size of the Double Cluster shown in the info card. Translate units if appropriate for your locale.">Her küme ~70 ışık yılı çapında; çiftler ~1.000 ışık yılı ayrı</string>
+
+    <!-- 47 Tucanae (NGC 104) -->
+    <string name="object_info_n47_tucanae_description" translation_description="Description of 47 Tucanae shown in the info card. Translate this text.">
+    47 Tucanae (NGC 104), gökyüzündeki en parlak ikinci küresel yığındır; Tukan takımyıldızında Samanyolu\'nu yörüngeleyen yaklaşık bir milyon eski yıldızdan oluşan yoğun bir toptur. Yaklaşık 14.500 ışık yılı uzaklıkta olup çıplak gözle dördüncü büyüklükteki bulanık bir yıldız olarak görünür, ancak bir teleskop sıkışmış çekirdeğini altın ve mavi-beyaz güneşlerin olağanüstü bir sürüsüne dönüştürür. Yıldızları yaklaşık 13 milyar yıl önce oluşmuş olup, yığın evreni kendisine neredeyse eşit yaştadır.
+    </string>
+    <string name="object_info_n47_tucanae_funfact" translation_description="Fun fact about 47 Tucanae shown in the info card. Translate this text.">
+    47 Tucanae kozmik bir pulsar fabrikasıdır: astronomlar içinde en az 35 milisaniye pulsarı saniyede yüzlerce kez dönerken bulmuşlardır — başka herhangi bir bilinen küresel yığında olduğundan daha fazla — eski nötron yıldızlarını hızlandırarak geri dönüştüren yıldız yakın karşılaşmalarının sonucu.
+    </string>
+    <string name="object_info_n47_tucanae_distance" translation_description="Distance to 47 Tucanae shown in the info card. Translate units if appropriate for your locale.">~14.500 ışık yılı</string>
+    <string name="object_info_n47_tucanae_size" translation_description="Physical size of 47 Tucanae shown in the info card. Translate units if appropriate for your locale.">~120 ışık yılı çapında</string>
+
+    <!-- Centaurus A (NGC 5128) -->
+    <string name="object_info_centaurus_a_description" translation_description="Description of Centaurus A shown in the info card. Translate this text.">
+    Centaurus A (NGC 5128), Dünya\'ya en yakın aktif radyo gökadası olup, Centaurus takımyıldızında yer alan dev eliptik bir gökadası olup, çarpıcı koyu toz şeridi yaklaşık 200–700 milyon yıl önce yutulmuş bir spiral gökadası tarafından işlenen şiddetli bir geçmişi ortaya koymaktadır. Merkezinde, bir milyondan fazla ışık yılı uzunluğunda göreceli jetleri yönlendiren 55 milyon güneş kütlesine sahip süperkütleli bir kara delik bulunmaktadır. Yaklaşık 12 milyon ışık yılı uzaklıkta olması nedeniyle, gökyüzündeki en çok incelenen gökadalarından biridir.
+    </string>
+    <string name="object_info_centaurus_a_funfact" translation_description="Fun fact about Centaurus A shown in the info card. Translate this text.">
+    Centaurus A, gökyüzündeki en güçlü doğal radyo yayıncılarından biridir — jetleri plazmaları ışık hızına yakın bir hızla dışarı fırlatır ve radyo loblarının tam uzantısı, gökyüzü boyunca uçtan uca dizilmiş yaklaşık 100 tam ay kadar bir alanı kaplar.
+    </string>
+    <string name="object_info_centaurus_a_distance" translation_description="Distance to Centaurus A shown in the info card. Translate units if appropriate for your locale.">~12 milyon ışık yılı</string>
+    <string name="object_info_centaurus_a_size" translation_description="Physical size of Centaurus A shown in the info card. Translate units if appropriate for your locale.">~123.000 ışık yılı çapında</string>
+
     <!-- ==================== CONSTELLATIONS ==================== -->
     <!-- Note: Constellation names are defined in celestial_objects.xml -->
     <!-- Orion -->
@@ -1974,4 +2033,696 @@
     </string>
     <string name="object_info_vulpecula_size" translation_description="Physical size of Vulpecula shown in the info card. Translate units if appropriate for your locale.">268 kare derece</string>
 
-    </resources>
+    <!-- Galilean Moons of Jupiter -->
+    <string name="object_info_io_description" translation_description="Description of Io shown in the info card. Translate this text.">
+    Io, Jüpiter\'in dört büyük Galileyen uydusunun en içtekisidir ve güneş sistemindeki en volkanik olarak aktif gök cismidir.
+    </string>
+    <string name="object_info_io_funfact" translation_description="Fun fact about Io shown in the info card. Translate this text.">
+    Io\'nun yüzlerce aktif volkanı vardır ve bazıları onlarca kilometre yüksekliğinde lav çeşmeleri püskürtmektedir. Sabit aktivitesi, Jüpiter\'in muazzam yerçekiminden kaynaklanan gelgit ısıtması tarafından yönlendirilir.
+    </string>
+    <string name="object_info_io_distance" translation_description="Distance to Io shown in the info card. Translate units if appropriate for your locale.">Jüpiter\'den 421.700 km</string>
+    <string name="object_info_io_size" translation_description="Physical size of Io shown in the info card. Translate units if appropriate for your locale.">3.643 km çapında</string>
+
+    <string name="object_info_europa_description" translation_description="Description of Europa shown in the info card. Translate this text.">
+    Europa, ikinci Galilean uydusu olup, buzlu kabuğunun altında geniş bir sıvı su okyanusu barındırdığı düşünülmektedir ve bu da onu yaşam arayışı için en umut verici yerlerden biri haline getirmektedir.
+    </string>
+    <string name="object_info_europa_funfact" translation_description="Fun fact about Europa shown in the info card. Translate this text.">
+    Europa\'nun yüzey altı okyanusu, Jüpiter\'in gelgit ısıtmasıyla sıvı halde tutulan, Dünya\'nın tüm okyanuslarının birleşiminden iki kat daha fazla sıvı su içerebilir.
+    </string>
+    <string name="object_info_europa_distance" translation_description="Distance to Europa shown in the info card. Translate units if appropriate for your locale.">Jüpiter\'den 671.100 km</string>
+    <string name="object_info_europa_size" translation_description="Physical size of Europa shown in the info card. Translate units if appropriate for your locale.">3.122 km çapında</string>
+
+    <string name="object_info_ganymede_description" translation_description="Description of Ganymede shown in the info card. Translate this text.">
+    Ganymede, güneş sisteminin en büyük uydusu — hatta Merkür gezegeninden bile daha büyüktür. Kendi manyetik alanını oluşturan tek uydu olarak bilinir.
+    </string>
+    <string name="object_info_ganymede_funfact" translation_description="Fun fact about Ganymede shown in the info card. Translate this text.">
+    Ganymede, boyut olarak Merkür\'ten daha büyüktür, ancak kütlesi yalnızca yarısı kadardır. İç manyetik alanı, Jüpiter\'in çok daha büyük olanının içinde kendi küçük manyetosferini oluşturur.
+    </string>
+    <string name="object_info_ganymede_distance" translation_description="Distance to Ganymede shown in the info card. Translate units if appropriate for your locale.">Jüpiter\'den 1.070.400 km</string>
+    <string name="object_info_ganymede_size" translation_description="Physical size of Ganymede shown in the info card. Translate units if appropriate for your locale.">5.268 km çapında</string>
+
+    <string name="object_info_callisto_description" translation_description="Description of Callisto shown in the info card. Translate this text.">
+    Callisto, Galileo uydularının en dışta olanı ve güneş sisteminin en yoğun kraterli cisimlerinden biridir; eski yüzeyi, güneş sisteminin erken dönem çarpışmalarının bir kaydını korur.
+    </string>
+    <string name="object_info_callisto_funfact" translation_description="Fun fact about Callisto shown in the info card. Translate this text.">
+    Callisto, Jüpiter\'in ana radyasyon kuşaklarının ötesinde yörüngede döner ve bu da onu gelecekteki insan keşfi için Galileyen uydularının en güvenli olanı yapar — bazen \'kapı ayı\' olarak adlandırılır.
+    </string>
+    <string name="object_info_callisto_distance" translation_description="Distance to Callisto shown in the info card. Translate units if appropriate for your locale.">Jüpiter\'den 1.882.700 km</string>
+    <string name="object_info_callisto_size" translation_description="Physical size of Callisto shown in the info card. Translate units if appropriate for your locale.">4.821 km çapında</string>
+
+    <!-- Moons of Mars -->
+    <string name="object_info_phobos_description" translation_description="Description of Phobos shown in the info card. Translate this text.">
+    Phobos, Mars\'ın iki uydusu arasında daha büyük ve en içtekidir; güneş sistemindeki herhangi bir uydudan gezegenine daha yakın bir yörüngede döner. Yakalanmış bir asteroit olduğu düşünülen, düzensiz şekilli, yoğun olarak oluklu ve kraterlere sahip bir cisimdir.
+    </string>
+    <string name="object_info_phobos_funfact" translation_description="Fun fact about Phobos shown in the info card. Translate this text.">
+    Phobos, Mars\'ı bu kadar hızlı yörüngede döner ki batıdan doğar ve doğudan batar — ve yavaş yavaş içe doğru spiral yaparak hareket ediyor, yaklaşık 50 milyon yıl içinde Mars\'a çarpması ya da bir halka haline parçalanması kaçınılmaz.
+    </string>
+    <string name="object_info_phobos_distance" translation_description="Distance to Phobos shown in the info card. Translate units if appropriate for your locale.">Mars\'tan 9.376 km</string>
+    <!-- tm:omitted name="object_info_phobos_size" reason="identical_to_source" -->
+
+    <string name="object_info_deimos_description" translation_description="Description of Deimos shown in the info card. Translate this text.">
+    Deimos, Mars\'ın iki ayından daha küçük ve dış olanıdır. Düzgün, toza kaplı yüzeyi, Phobos\'tan daha yuvarlak bir görünüm verir. Eşi gibi, dış kuşaktan yakalanmış bir asteroit olduğu düşünülmektedir.
+    </string>
+    <string name="object_info_deimos_funfact" translation_description="Fun fact about Deimos shown in the info card. Translate this text.">
+    Deimos o kadar küçük ve uzak ki, Mars yüzeyinden bakıldığında parlak bir yıldızdan biraz daha fazlası gibi görünüyor ve gece gökyüzünde yavaşça sürüklenip geçmesi yaklaşık 30 saat sürüyor.
+    </string>
+    <string name="object_info_deimos_distance" translation_description="Distance to Deimos shown in the info card. Translate units if appropriate for your locale.">Mars\'tan 23.460 km</string>
+    <!-- tm:omitted name="object_info_deimos_size" reason="identical_to_source" -->
+
+    <!-- Major Moons of Saturn -->
+    <string name="object_info_titan_description" translation_description="Description of Titan shown in the info card. Translate this text.">
+    Titan, Satürn\'ün en büyük uydusu ve güneş sistemindeki ikinci en büyük uydu olup, yoğun bir atmosfere sahip olduğu bilinen tek uydu — kalın bir azot örtüsü metanla karışık — ve Dünya\'nın ötesinde yüzeyinde kararlı sıvı denizlere sahip olduğu bilinen tek dünya.
+    </string>
+    <string name="object_info_titan_funfact" translation_description="Fun fact about Titan shown in the info card. Translate this text.">
+    Titan\'s gölleri ve denizleri su yerine sıvı metan ve etanla dolu olup, −179°C\'de donmuş durumdadır. NASA\'nın Dragonfly rotorcraft misyonu, 2034\'te varması beklenen, Titan\'ın yüzeyindeki alanlar arasında uçarak yaşamın kimyasını aramak için tasarlanmıştır.
+    </string>
+    <string name="object_info_titan_distance" translation_description="Distance to Titan shown in the info card. Translate units if appropriate for your locale.">Satürn\'den 1.221.870 km</string>
+    <string name="object_info_titan_size" translation_description="Physical size of Titan shown in the info card. Translate units if appropriate for your locale.">5.151 km çapında</string>
+
+    <string name="object_info_rhea_description" translation_description="Description of Rhea shown in the info card. Translate this text.">
+    Rhea, Satürn\'ün ikinci en büyük uydusu ve buz ile kayadan oluşan ağır çatlaklı bir dünyedir. Soluk, eski yüzeyi, güneş sisteminin en saf etki kraterleri ile birlikte, heyelanların altından taze malzemeyi ortaya çıkardığı parlak buz kayalıklarının yanında korunmaktadır.
+    </string>
+    <string name="object_info_rhea_funfact" translation_description="Fun fact about Rhea shown in the info card. Translate this text.">
+    2008\'de, Cassini verileri Rhea\'nın etrafında dönen ince bir enkaz halkasına sahip olabileceğini gösterdi — bu da onu kendi halka sistemine sahip ilk ay yapardı. Eğer doğrulanırsa, bu olağanüstü bir keşif olurdu; kanıtlar hala aktif bir araştırma alanıdır.
+    </string>
+    <string name="object_info_rhea_distance" translation_description="Distance to Rhea shown in the info card. Translate units if appropriate for your locale.">Satürn\'den 527.108 km</string>
+    <string name="object_info_rhea_size" translation_description="Physical size of Rhea shown in the info card. Translate units if appropriate for your locale.">1.527 km çapında</string>
+
+    <string name="object_info_tethys_description" translation_description="Description of Tethys shown in the info card. Translate this text.">
+    Tethys, Satürn\'ün buzlu bir uydusu olup iki dramatik özellik tarafından hakimdir: 400 km genişliğinde ve ayın yüzeyinin neredeyse üçte birini kaplayan muazzam Odysseus krateri ve dünya çevresinin dörtte üçü kadar uzanan bir kanyon sistemi olan Ithaca Chasma.
+    </string>
+    <string name="object_info_tethys_funfact" translation_description="Fun fact about Tethys shown in the info card. Translate this text.">
+    Tethys neredeyse saf su buzundan oluşur — güneş sistemindeki aylardan en düşük yoğunluklardan birine sahiptir, donmuş sudan sadece biraz daha yoğundur. Ithaca Chasma, iç kısım donduğunda ve genişlediğinde, üst kabuğu içeriden çatlatarak oluşmuş olabilir.
+    </string>
+    <string name="object_info_tethys_distance" translation_description="Distance to Tethys shown in the info card. Translate units if appropriate for your locale.">Satürn\'den 294.619 km</string>
+    <string name="object_info_tethys_size" translation_description="Physical size of Tethys shown in the info card. Translate units if appropriate for your locale.">1.062 km çapında</string>
+
+    <string name="object_info_dione_description" translation_description="Description of Dione shown in the info card. Translate this text.">
+    Dione, Satürn\'ün buzlu bir uydusu olup, ağır çarpılmış öncü yüzü ve parlak buz kayalıklarıyla dolu geri yarımküre sahiptir — antik tektonik kuvvetlerin kabuğun altından taze buzu açığa çıkardığı kırılma çizgileri. Cassini yerçekimi verileri, kabuğun altında bir yüzey altı sıvı okyanus olduğunu göstermektedir.
+    </string>
+    <string name="object_info_dione_funfact" translation_description="Fun fact about Dione shown in the info card. Translate this text.">
+    Dione, yörüngesini iki küçük uydu olan Helene ve Polydeuces ile paylaşır; bunlar, Lagrange noktaları adı verilen yerçekimi dengesi noktalarında onun 60° ilerisinde ve gerisinde kilitlenmiştir. Helene özellikle Cassini görüntülerinde kozmik bir otostopçu gibi yol boyunca görülebilir.
+    </string>
+    <string name="object_info_dione_distance" translation_description="Distance to Dione shown in the info card. Translate units if appropriate for your locale.">Satürn\'den 377.396 km</string>
+    <string name="object_info_dione_size" translation_description="Physical size of Dione shown in the info card. Translate units if appropriate for your locale.">1.122 km çapında</string>
+
+    <string name="object_info_iapetus_description" translation_description="Description of Iapetus shown in the info card. Translate this text.">
+    Iapetus, Satürn\'ün en belirgin uydularından biridir: öncü yarımküre kömür kadar siyah bir malzemeyle kaplıyken, arka yarımküre parlak beyaz buzla kaplıdır. Bu aşırı iki tonlu görünüş, Giovanni Cassini\'nin 1671\'de ayı keşfettiğinde onu şaşırtmıştır ve kontrast o kadar belirgindir ki küçük teleskoplarda görülebilir.
+    </string>
+    <string name="object_info_iapetus_funfact" translation_description="Fun fact about Iapetus shown in the info card. Translate this text.">
+    İapetus ayrıca Dünya\'daki herhangi bir dağdan daha yüksek olan 20 km yüksekliğinde görkemli bir ekvator sırtına sahiptir — ekvatorunun etrafında binlerce kilometre uzanır. Kökeni bilinmemektedir: çökmüş bir halkanın kalıntısı olabilir veya eski jeolojik kıvrımlar olabilir, ay çok daha hızlı döndüğü eski zamanlarda oluşmuş olabilir.
+    </string>
+    <string name="object_info_iapetus_distance" translation_description="Distance to Iapetus shown in the info card. Translate units if appropriate for your locale.">Satürn\'den 3.560.820 km</string>
+    <string name="object_info_iapetus_size" translation_description="Physical size of Iapetus shown in the info card. Translate units if appropriate for your locale.">1.469 km çapında</string>
+
+    <!-- Moon of Neptune -->
+    <string name="object_info_triton_description" translation_description="Description of Triton shown in the info card. Translate this text.">
+    Triton, Neptün\'ün en büyük uydusu ve güneş sistemindeki en olağanüstü cisimlerden biridir. Neptün\'ün etrafında geriye doğru yörüngede döner — gezegenin kendi dönüşünün tersine — bu, Neptün\'ün tarihinin erken döneminde, büyük olasılıkla Kuiper Kuşağından dış güneş sisteminden yakalandığının güçlü bir göstergesidir.
+    </string>
+    <string name="object_info_triton_funfact" translation_description="Fun fact about Triton shown in the info card. Translate this text.">
+    Yüzey sıcaklığı −235°C olmasına rağmen — bir uzay aracı tarafından ziyaret edilen herhangi bir cisimde ölçülen en soğuk sıcaklık — Voyager 2, 1989\'da Triton\'da aktif nitrojen geyzerlerini keşfetti. Yüzeydeki koyu çizgiler, gaz ve koyu madde sütunlarının ince atmosfere kilometre yüksekliğine kadar püskürdüğü yerleri işaretler.
+    </string>
+    <string name="object_info_triton_distance" translation_description="Distance to Triton shown in the info card. Translate units if appropriate for your locale.">Neptün\'den 354.759 km</string>
+    <string name="object_info_triton_size" translation_description="Physical size of Triton shown in the info card. Translate units if appropriate for your locale.">2.707 km çapında</string>
+
+    <!-- Major Moons of Uranus -->
+    <string name="object_info_titania_description" translation_description="Description of Titania shown in the info card. Translate this text.">
+    Titania, Uranüs\'ün en büyük uydusu ve güneş sistemindeki sekizinci en büyük uydu olup, yüzeyi eski kraterli düzlükler ile daha genç saçaklar ve vadilerden oluşan bir karışım göstermektedir. Bu durum, buzlu kabuğu yeniden şekillendiren geçmiş tektonik aktiviteyi içermiş olabilecek karmaşık bir jeolojik geçmiş önerir.
+    </string>
+    <string name="object_info_titania_funfact" translation_description="Fun fact about Titania shown in the info card. Translate this text.">
+    Uranüs\'ün tüm uyduları Shakespeare ve Alexander Pope\'un eserlerindeki karakterlerin adlarını taşır — Titania, "Yaz Gecesi Rüyası"nda periler kraliçesidir. Yunan veya Roma mitolojisindeki bir figürün adını taşımayan çok az sayıdaki ana gezegen uydusundan biridir.
+    </string>
+    <string name="object_info_titania_distance" translation_description="Distance to Titania shown in the info card. Translate units if appropriate for your locale.">Uranüs\'ten 435.910 km</string>
+    <string name="object_info_titania_size" translation_description="Physical size of Titania shown in the info card. Translate units if appropriate for your locale.">1.578 km çap</string>
+
+    <string name="object_info_oberon_description" translation_description="Description of Oberon shown in the info card. Translate this text.">
+    Oberon, Uranus\'un beş büyük uydusu arasında en dışta yer alan ve en yoğun kraterli olanlardan biridir; eski yüzeyi güneş sisteminin başlangıcından bu yana çok az değişmiştir. Büyük çarpma kraterlerinin birçoğunun tabanında, muhtemelen çarpan cisimler tarafından getirilen organik maddeler olmak üzere, koyu renkli malzeme bulunmaktadır.
+    </string>
+    <string name="object_info_oberon_funfact" translation_description="Fun fact about Oberon shown in the info card. Translate this text.">
+    Oberon\'da, çevreleyen ovalardan yaklaşık 6 km yükselen bir dağ bulunmaktadır — Dünya\'daki en yüksek tepelere benzer şekilde. Dünya\'daki dağlar tektonik plakalar tarafından oluşturulmuş olsa da, bu özellik eski bir çarpışma krateri\'nin merkezi tepesi veya erken dönem volkanik aktivitesinin bir kalıntısı olabilir.
+    </string>
+    <string name="object_info_oberon_distance" translation_description="Distance to Oberon shown in the info card. Translate units if appropriate for your locale.">Uranüs\'ten 583.520 km</string>
+    <string name="object_info_oberon_size" translation_description="Physical size of Oberon shown in the info card. Translate units if appropriate for your locale.">1.523 km çap</string>
+
+    <string name="object_info_ariel_description" translation_description="Description of Ariel shown in the info card. Translate this text.">
+    Ariel, Uranus\'un beş büyük uydusu arasında en genç ve en parlak yüzeye sahiptir. Manzarası, iç kısımlardan yükselen ve eski arazileri su altında bırakan akışkan (muhtemelen su veya amonyak-su karışımları) tarafından uzun zaman önce yeniden şekillendirilen derin vadiler ve düz ovalardan oluşan bir ağ tarafından hakim kılınmıştır.
+    </string>
+    <string name="object_info_ariel_funfact" translation_description="Fun fact about Ariel shown in the info card. Translate this text.">
+    Ariel\'in vadileri 10 km derinliğe ulaşabilir — Grand Canyon\'dan çok daha derin. James Webb Uzay Teleskopu gözlemleri, Ariel\'in yüzeyinde karbondioksit buzunun tespit edilmesini sağlamış ve bu da Uranüs\'ün manyetik alanından gelen yüklü parçacıklar tarafından yönlendirilen devam eden yüzey kimyasına işaret etmektedir.
+    </string>
+    <string name="object_info_ariel_distance" translation_description="Distance to Ariel shown in the info card. Translate units if appropriate for your locale.">Uranüs\'ten 191.020 km</string>
+    <string name="object_info_ariel_size" translation_description="Physical size of Ariel shown in the info card. Translate units if appropriate for your locale.">1.158 km çap</string>
+
+    <string name="object_info_umbriel_description" translation_description="Description of Umbriel shown in the info card. Translate this text.">
+    Umbriel, Uranus\'ın beş büyük uydusu arasında en karanlık olanıdır ve üniform olarak eski, yoğun kraterli bir yüzeye sahiptir; komşularında görülen jeolojik yüzey yenilenmesinin çok az işareti gösterir. İç yapısı, güneş sisteminin erken döneminden beri soğuk ve donmuş kalmış görünmektedir.
+    </string>
+    <string name="object_info_umbriel_funfact" translation_description="Fun fact about Umbriel shown in the info card. Translate this text.">
+    Umbriel\'in en dikkat çekici özelliği, ekvatorunun yakınında bulunan ve yaklaşık 140 km çapında parlak bir halka olan Wunda\'dır. 1986\'da Voyager 2 tarafından keşfedilen Wunda\'nın tam doğası hala bir gizemdir — onu oluşturan çarpışmadan çok sonra birikmiş karbon dioksit veya amonyak donmuşu ile kaplı bir krater tabanı olabilir.
+    </string>
+    <string name="object_info_umbriel_distance" translation_description="Distance to Umbriel shown in the info card. Translate units if appropriate for your locale.">Uranüs\'ten 266.300 km</string>
+    <string name="object_info_umbriel_size" translation_description="Physical size of Umbriel shown in the info card. Translate units if appropriate for your locale.">1.170 km çap</string>
+
+    <!-- Globular clusters already on the map -->
+    <string name="object_info_omega_centauri_description" translation_description="Description of Omega Centauri shown in the info card. Translate this text.">
+    Omega Centauri, Samanyolu\'nun etrafında dönen en büyük ve en kütleli küresel yıldız kümesidir ve yaklaşık 150 ışık yılı çapında bir küre içine sıkışmış kabaca 10 milyon yıldız içerir. Centaurus takımyıldızında çıplak gözle bulanık bir yıldız olarak kolayca görülebilir ve dürbün veya herhangi bir teleskopla nefes kesici bir yıldız topuna dönüşür.
+    </string>
+    <string name="object_info_omega_centauri_funfact" translation_description="Fun fact about Omega Centauri shown in the info card. Translate this text.">
+    Tipik küresel yığınlardan farklı olarak, Omega Centauri birçok farklı yaş ve kimyasal bileşime sahip yıldızlar içerir — bu, milyarlarca yıl önce Samanyolu tarafından parçalanıp yutulmuş bir cüce galaksinin soyulmuş çekirdeği olabileceğinin bir işaretidir. Hatta merkezi bir ara kütleli kara delik barındırabileceği bile mümkündür.
+    </string>
+    <string name="object_info_omega_centauri_distance" translation_description="Distance to Omega Centauri shown in the info card. Translate units if appropriate for your locale.">17.090 ışık yılı</string>
+    <string name="object_info_omega_centauri_size" translation_description="Physical size of Omega Centauri shown in the info card. Translate units if appropriate for your locale.">~150 ışık yılı çap</string>
+
+    <!-- Deep-sky objects: new catalog additions -->
+    <string name="object_info_hyades_description" translation_description="Description of the Hyades star cluster shown in the info card. Translate this text.">
+    Hyades, güneş sistemine en yakın açık yıldız kümesidir ve astronomide en çok çalışılan kümelerden biridir. Çıplak gözle Boğa takımyıldızının yüzünü oluşturan V şeklindeki yıldız deseni olarak görülebilir ve gökyüzünün yaklaşık 5° lik bir alanına yayılmış birkaç yüz yıldız içerir.
+    </string>
+    <string name="object_info_hyades_funfact" translation_description="Fun fact about the Hyades shown in the info card. Translate this text.">
+    Parlak turuncu yıldız Aldebaran, Hyades içinde yer almış gibi görünse de aslında yarı mesafede yer alan bir ön plan nesnesidir — tesadüfi bir hizalanmadır. Gerçek küme yaklaşık 153 ışık yılı uzaklıkta yer almakta ve Hipparcos uydusu tarafından paralaks yöntemiyle mesafeleri ölçülen ilk yıldızları içermektedir.
+    </string>
+    <string name="object_info_hyades_distance" translation_description="Distance to the Hyades shown in the info card. Translate units if appropriate for your locale.">153 ışık yılı</string>
+    <string name="object_info_hyades_size" translation_description="Angular size of the Hyades shown in the info card.">~5° genişliğinde</string>
+
+    <string name="object_info_coma_star_cluster_description" translation_description="Description of the Coma Berenices Star Cluster shown in the info card. Translate this text.">
+    Coma Berenices Yıldız Kümesi, güneş sistemine yakın bir açık küme olup yaklaşık 40 yıldızdan oluşmakta ve gökyüzünün neredeyse 5° lik bir alanına dağılmıştır. Koyu koşullarda çıplak gözle yumuşak bir sis olarak kolayca görülebilir. Güneş sistemine en yakın üçüncü açık küme olup Coma Berenices takımyıldızının kaynağıdır.
+    </string>
+    <string name="object_info_coma_star_cluster_funfact" translation_description="Fun fact about the Coma Berenices Star Cluster shown in the info card. Translate this text.">
+    Antik gözlemciler bu yıldız kümesini, efsaneye göre savaştan kocasının güvenli dönüşü için altın saçlarını kesen Mısır Kraliçesi Berenice II\'nin saçları olarak gördüler. Ptolemy III, yaklaşık 245 BCE\'de bu olağandışı takımyıldızı onun onuruna resmi olarak adlandırdığı bildirilmektedir.
+    </string>
+    <string name="object_info_coma_star_cluster_distance" translation_description="Distance to the Coma Star Cluster shown in the info card. Translate units if appropriate for your locale.">288 ışık yılı</string>
+    <string name="object_info_coma_star_cluster_size" translation_description="Angular size of the Coma Star Cluster shown in the info card.">~5° genişliğinde</string>
+
+    <string name="object_info_coathanger_description" translation_description="Description of the Coathanger asterism shown in the info card. Translate this text.">
+    Coathanger, Vulpecula takımyıldızında on yıldızdan oluşan ve ayırt edilmesi kolay bir şekil oluşturan görkemli bir asterizmdir: altı yıldız düz bir çizgi halinde ve dört yıldız aşağıda kanca şeklinde asılı, tam olarak ters çevrilmiş bir elbise askısına benzer. Yaz gökyüzünde en iyi dürbün nesnelerinden biridir ve tipik bir dürbün görüş alanına mükemmel şekilde sığar.
+    </string>
+    <string name="object_info_coathanger_funfact" translation_description="Fun fact about the Coathanger shown in the info card. Translate this text.">
+    Bir küme gibi görünmesine rağmen, Coathanger\'ın yıldızları fiziksel olarak ilişkili değildir — çok farklı mesafelerde yer alırlar ve basitçe bir görüş hattı tesadüfüdür. Brocchi\'s Cluster, 1920\'lerde Dalmiro Brocchi tarafından kataloglandı ve onu görüntüleyen ilk uzay teleskopu Hipparcos\'tu; bu teleskop yıldızların ilişkisiz olduğunu doğruladı.
+    </string>
+    <string name="object_info_coathanger_distance" translation_description="Distance to the Coathanger shown in the info card. Translate units if appropriate for your locale.">~420 ışık yılı (en parlak yıldız)</string>
+    <string name="object_info_coathanger_size" translation_description="Angular size of the Coathanger shown in the info card.">~1° genişliğinde</string>
+
+    <string name="object_info_helix_nebula_description" translation_description="Description of the Helix Nebula shown in the info card. Translate this text.">
+    Helix Nebulası, gökyüzünde görünen boyut açısından en büyük gezegen nebulasıdır — yaşamının sonunda Güneş benzeri bir yıldız tarafından atılan genişleyen gaz kabuğu. Yaklaşık yarım derece genişliğinde, Kova takımyıldızında dürbün ile soluk dairesel bir parıltı olarak görülebilir ve uzun pozlama fotoğraflarında görünüşü nedeniyle Tanrı\'nın Gözü olarak adlandırılır.
+    </string>
+    <string name="object_info_helix_nebula_funfact" translation_description="Fun fact about the Helix Nebula shown in the info card. Translate this text.">
+    Helix Nebulası\'nın merkezinde, Dünya\'ya en yakın bilinen beyaz cücelerden biri yer alır — Dünya kadar büyük ancak Güneş\'in kütlesine sahip, son derece sıcak bir yıldız kalıntısı. Bu, yaklaşık beş milyar yıl içinde kendi Güneşimizi bekleyen kaderdır.
+    </string>
+    <string name="object_info_helix_nebula_distance" translation_description="Distance to the Helix Nebula shown in the info card. Translate units if appropriate for your locale.">650 ışık yılı</string>
+    <string name="object_info_helix_nebula_size" translation_description="Angular size of the Helix Nebula shown in the info card.">~3 ışık yılı çap</string>
+
+    <string name="object_info_sculptor_galaxy_description" translation_description="Description of the Sculptor Galaxy shown in the info card. Translate this text.">
+    Sculptor Galaksisi, Dünya\'dan görülebilen en parlak ve en güzel kenar-açılı spiral galaksilerinden biridir ve güney takımyıldızı Sculptor\'da uzun bir ışıltı olarak görünür. Karanlık gökyüzünden dürbün ile amatör astronomlar tarafından görülebilen en yakın patlayan yıldız galaksilerinden biridir — yoğun bir yıldız oluşum patlaması yaşayan bir galaksi.
+    </string>
+    <string name="object_info_sculptor_galaxy_funfact" translation_description="Fun fact about the Sculptor Galaxy shown in the info card. Translate this text.">
+    Sculptor Galaksisi, Sculptor Grubu\'nun en parlak üyelerinden biridir — kendi Yerel Grubumuz\'a en yakın galaksi grubu. Merkezi patlama bölgesi, komşu galaksilerle geçmiş etkileşimler tarafından yönlendirilen, Samanyolu\'ndan birkaç kat daha yüksek bir hızda yeni yıldızlar üretir.
+    </string>
+    <string name="object_info_sculptor_galaxy_distance" translation_description="Distance to the Sculptor Galaxy shown in the info card. Translate units if appropriate for your locale.">11,4 milyon ışık yılı</string>
+    <string name="object_info_sculptor_galaxy_size" translation_description="Physical size of the Sculptor Galaxy shown in the info card. Translate units if appropriate for your locale.">~90.000 ışık yılı genişliğinde</string>
+
+    <string name="object_info_blue_snowball_nebula_description" translation_description="Description of the Blue Snowball Nebula shown in the info card. Translate this text.">
+    Blue Snowball, Andromeda\'da bulunan bir gezegen nebulasıdır — ölmekte olan bir yıldız tarafından atılan parlayan gaz kabuğu. 8,3 büyüklüğü ile gökyüzündeki en parlak ve en renkli gezegen nebulalarından biridir ve küçük teleskoplarda bile canlı mavi-yeşil bir disk olarak görünür. Simetrik şekli ve yoğun rengi, gözlemciler arasında favori haline getirmektedir.
+    </string>
+    <string name="object_info_blue_snowball_nebula_funfact" translation_description="Fun fact about the Blue Snowball Nebula shown in the info card. Translate this text.">
+    Mavi Kar Topu\'nun çarpıcı rengi, belirli bir yeşil dalga boyunda parlayan çift iyonlaşmış oksijen ile hidrojen emisyonunun birleşiminden kaynaklanır — insan gözlerinin mavi-yeşil olarak algıladığı bir renk paleti. Merkezdeki beyaz cüce yıldızın yüzey sıcaklığı yaklaşık 100.000°C\'dir ve bu mesafede çevreleyen gazı iyonlaştırmaya yeterince sıcaktır.
+    </string>
+    <string name="object_info_blue_snowball_nebula_distance" translation_description="Distance to the Blue Snowball Nebula shown in the info card. Translate units if appropriate for your locale.">~2.500 ışık yılı</string>
+    <string name="object_info_blue_snowball_nebula_size" translation_description="Physical size of the Blue Snowball Nebula shown in the info card. Translate units if appropriate for your locale.">~0,8 ışık yılı çap</string>
+
+    <string name="object_info_ghost_of_jupiter_description" translation_description="Description of the Ghost of Jupiter planetary nebula shown in the info card. Translate this text.">
+    Jüpiter\'in Hayaleti, Hydra takımyıldızında yer alan ve görünür boyutu Jüpiter gezegenine benzer olan parlak bir gezegen nebülasıdır — adı da buradan gelmektedir. 8,6 büyüklüğü ile küçük teleskoplar için gökyüzündeki en erişilebilir gezegen nebülalarından biridir ve orta çaplı apertürlerde net bir disk ve hafif bir renk gösterimi sunar.
+    </string>
+    <string name="object_info_ghost_of_jupiter_funfact" translation_description="Fun fact about the Ghost of Jupiter shown in the info card. Translate this text.">
+    Jüpiter\'in Hayaleti, içinde parlak bir kabuğun etrafında daha soluk bir dış halka ile çevrili iki kabuk yapısına sahiptir — bu yapı, ölmekte olan yıldızın gazı en az iki ayrı dönemde dışarı attığını göstermektedir. Merkezi yıldızı, yüzey sıcaklığı yaklaşık 75.000°C olarak tahmin edilen bilinen en sıcak beyaz cücelerden biridir.
+    </string>
+    <string name="object_info_ghost_of_jupiter_distance" translation_description="Distance to the Ghost of Jupiter shown in the info card. Translate units if appropriate for your locale.">~1.400 ışık yılı</string>
+    <string name="object_info_ghost_of_jupiter_size" translation_description="Physical size of the Ghost of Jupiter shown in the info card. Translate units if appropriate for your locale.">~1 ışık yılı çap</string>
+
+    <string name="object_info_saturn_nebula_description" translation_description="Description of the Saturn Nebula shown in the info card. Translate this text.">
+    Satürn Nebulası, Satürn gezegenine benzerliğinden dolayı adlandırılan Kova takımyıldızında yer alan bir gezegen nebulasıdır — ansae adı verilen uzantılar her iki taraftan halka tutamaçları gibi çıkıntı yapar ve orta büyüklükteki teleskoplarda görülebilir. 8.0 büyüklüğünde, gökyüzündeki en parlak gezegen nebulalarından biridir ve daha büyük araçlarda karmaşık bir yapı gösterir.
+    </string>
+    <string name="object_info_saturn_nebula_funfact" translation_description="Fun fact about the Saturn Nebula shown in the info card. Translate this text.">
+    William Herschel, Satürn Nebulası\'nı 1782\'de keşfetti ve Satürn benzeri görünümünü not etti. Modern gözlemler, merkezi beyaz cüceyi çevreleyen en az dört farklı gaz kabuğu ortaya koymakta ve yıldızın yaşamının son aşamalarında meydana gelen çoklu kütle kaybı olaylarını yansıtmaktadır.
+    </string>
+    <string name="object_info_saturn_nebula_distance" translation_description="Distance to the Saturn Nebula shown in the info card. Translate units if appropriate for your locale.">~5.000 ışık yılı</string>
+    <string name="object_info_saturn_nebula_size" translation_description="Physical size of the Saturn Nebula shown in the info card. Translate units if appropriate for your locale.">~1 ışık yılı genişliğinde</string>
+
+    <string name="object_info_ngc_2903_description" translation_description="Description of the galaxy NGC 2903 shown in the info card. Translate this text.">
+    NGC 2903, Aslan takımyıldızında yer alan parlak bir çubuklu spiral galaksidir ve sıklıkla "Messier\'in kaçırdığı Messier nesnesi" olarak adlandırılır — ünlü kataloğuna dahil olmayan gökyüzündeki en belirgin galaksilerden biridir. 8,9 büyüklüğünde olması nedeniyle dürbünle kolayca görülebilir ve orta seviye teleskoplarda güzel spiral yapısını gösterir.
+    </string>
+    <string name="object_info_ngc_2903_funfact" translation_description="Fun fact about NGC 2903 shown in the info card. Translate this text.">
+    NGC 2903, gökada\'nın merkezi bar bölgesinde bilinen en yüksek "sıcak nokta" yoğunluğuna sahiptir — yoğun, genç masif yıldızlardan oluşan kümeler, yoğun yıldız oluşumunun aydınlattığı. Çubuklu spiral gökadaların patlayıcı yıldız oluşum aktivitesini incelemek için bir kıyaslama olarak kullanılır.
+    </string>
+    <string name="object_info_ngc_2903_distance" translation_description="Distance to NGC 2903 shown in the info card. Translate units if appropriate for your locale.">30 milyon ışık yılı</string>
+    <string name="object_info_ngc_2903_size" translation_description="Physical size of NGC 2903 shown in the info card. Translate units if appropriate for your locale.">~80.000 ışık yılı genişliğinde</string>
+
+    <!-- Meteor showers -->
+    <string name="object_info_quadrantids_description" translation_description="Description of the Quadrantids meteor shower shown in the info card. Translate this text.">
+    Quadrantidler, Ocak ayında meydana gelen ve çok keskin, yalnızca birkaç saat süren kısa bir zirveye sahip verimli bir meteor yağmurıdır. Radyant, Boötes takımyıldızında, yağmurun adını aldığı eski Quadrans Muralis takımyıldızının konumunun yakınında yer alır. İdeal koşullar altında saatte 120\'ye kadar meteor görülebilir.
+    </string>
+    <string name="object_info_quadrantids_funfact" translation_description="Fun fact about the Quadrantids meteor shower shown in the info card. Translate this text.">
+    Çoğu büyük yağmurdan farklı olarak, kometin çekirdeğinden kaynaklanmayan Quadrantidler\'in ana gövdesi, yüzyıllar önce yanmış bir kometin uyku halindeki çekirdeği olduğu düşünülen 2003 EH1 asteroiddir. Varlığı ancak 2003 yılında doğrulanmıştır.
+    </string>
+
+    <string name="object_info_lyrids_description" translation_description="Description of the Lyrids meteor shower shown in the info card. Translate this text.">
+    Lirid yağmuru, Lira takımyıldızında parlak Vega yıldızının yakınından yayılan güvenilir bir ilkbahar yağmuruyudur. Hızlı, orta derecede parlak meteorlar üretir, saatte yaklaşık 18\'de zirveye ulaşır ve bazen parlayan duman izleri bırakan ateş topları oluşturur.
+    </string>
+    <string name="object_info_lyrids_funfact" translation_description="Fun fact about the Lyrids meteor shower shown in the info card. Translate this text.">
+    Liridler, tarihte en eski güvenilir şekilde kaydedilen meteor yağmurıdır. Çin astronomları, 687 BCE\'de meteors\'un "yağmur gibi düşmesini" belgelemişlerdir. Enkaz, Thatcher Kuyruklu Yıldızı\'ndan gelir ve Güneş\'in etrafında yörüngede dolanması 415 yıl sürer ve son olarak 1861\'de iç güneş sistemini ziyaret etmiştir.
+    </string>
+
+    <string name="object_info_aquariids_description" translation_description="Description of the Eta Aquariids meteor shower shown in the info card. Translate this text.">
+    Eta Aquariidler, Halley Kuyruklu Yıldızı\'ndan gelen enkaz tarafından üretilen yıllık iki meteor yağmurından biridir. Saatte 70 meteora kadar yoğunlaşan bu yağmur, özellikle güney yarımküreyi tercih eder; burada radyant şafaktan önce yüksekte doğar. Kuzey gözlemcileri de saatte 30 veya daha fazla sayıda meteoru gözlemleyebilirler.
+    </string>
+    <string name="object_info_aquariids_funfact" translation_description="Fun fact about the Eta Aquariids meteor shower shown in the info card. Translate this text.">
+    Eta Aquariid meteorları 66 km/s hızında hareket eder — bu kadar hızlı ki, oluşturdukları iyonize hava, meteor geçtikten birkaç saniye sonra bile parlayabilir. Binlerce yıl önce kuyrukluyıldızın birçok ziyareti sırasında dökülen Halley\'in eski tozunun gözlerinizin önünde yanıp söndüğünü görebilirsiniz.
+    </string>
+
+    <string name="object_info_deltaaquariids_description" translation_description="Description of the Delta Aquariids meteor shower shown in the info card. Translate this text.">
+    Güney Delta Aquariidleri Temmuz ayının sonunda zirveye ulaşır ve tropikal ve güney enlemlerde en iyi şekilde görülür; burada Aquarius\'taki radyant şafaktan önce yüksekte yer alır. Saatte 16\'ya kadar orta hızlı meteorların sabit bir akışını üretirler ve çok az parlak ateş topu içerirler.
+    </string>
+    <string name="object_info_deltaaquariids_funfact" translation_description="Fun fact about the Delta Aquariids meteor shower shown in the info card. Translate this text.">
+    Delta Aquariids meteor yağmurının tam ana gövdesi belirsiz kalır. En güçlü aday, Güneş\'e dikkat çekici şekilde yakın olan — Merkez gezegeninden daha yakın olan — oldukça eğimli bir yörüngeye sahip olağandışı bir kısa dönemli kuyruklu yıldız olan Kuyruklu Yıldız 96P/Machholz\'dir.
+    </string>
+
+    <string name="object_info_perseids_description" translation_description="Description of the Perseids meteor shower shown in the info card. Translate this text.">
+    Perseidler, yılın en popüler meteor yağmurıdır ve Ağustos\'un sıcak gecelerinde saatte 100 meteorun üzerine çıkarak zirveye ulaşır. Kuyruklu yıldız Swift-Tuttle tarafından dökülen enkaz, Dünya\'nın atmosferinin yüksek bölgelerinde yanarak hızlı, parlak meteorlar üretir — birçoğu kalıcı ışıltılı izler bırakır — ve Perseus takımyıldızından yayılır.
+    </string>
+    <string name="object_info_perseids_funfact" translation_description="Fun fact about the Perseids meteor shower shown in the info card. Translate this text.">
+    Perseidlerin ana kaynağı olan Swift-Tuttle Kuyruklu Yıldızı\'nın çekirdeği 26 km genişliğinde — dinozorların yok olmasına neden olduğu düşünülen nesnekten daha büyük. Kuyruklu yıldız en son 1992\'de iç güneş sisteminden geçti ve 2125\'e kadar geri dönmeyecek.
+    </string>
+
+    <string name="object_info_orionids_description" translation_description="Description of the Orionids meteor shower shown in the info card. Translate this text.">
+    Orionidler, Halley Kuyruklu Yıldızı tarafından her yıl üretilen ikinci meteor yağmurıdır ve Orion\'un kaldırılmış sopasının yakınından yayılır. Saatte yaklaşık 25\'e ulaşan bu meteor yağmuru, hızlı ve sıklıkla parlak meteorlarıyla bilinir ve bunlar birkaç saniye süren parlayan iyonizasyon izleri bırakır.
+    </string>
+    <string name="object_info_orionids_funfact" translation_description="Fun fact about the Orionids meteor shower shown in the info card. Translate this text.">
+    Halley\'s Kuyruklu Yıldızı iki yıllık meteor yağmuruna neden olur: Mayıs ayında Dünya\'nın kuyruklu yıldızın giden enkaz izini geçtiği Eta Aquariidler ve Ekim ayında Dünya\'nın gelen izini geçtiği Orionidler. Birlikte, yılda iki kez eski Halley tozunu örneklememize izin verirler.
+    </string>
+
+    <string name="object_info_leonids_description" translation_description="Description of the Leonids meteor shower shown in the info card. Translate this text.">
+    Leonidler, Aslan\'ın orakçığından yayılır ve tipik olarak saatte yaklaşık 20 meteor üretir. Dünya, Kuyrulu Yıldız 55P/Tempel-Tuttle tarafından dökülen yoğun bir toz filamentinden geçtiğinde, kabaca her 33 yılda bir ortaya çıkan muhteşem fırtınalarla ünlüdürler. Bu fırtınalar saatte binlerce meteor üretebilir.
+    </string>
+    <string name="object_info_leonids_funfact" translation_description="Fun fact about the Leonids meteor shower shown in the info card. Translate this text.">
+    1833 Leonid fırtınası saatte tahminen 100.000 meteor üretmiş ve Kuzey Amerika\'daki gözlemcileri gökyüzünün yanmakta olduğundan korku içinde bırakmıştır. Bu olay meteor yağmurlarının bilimsel çalışmasını başlatmıştır. Benzer fırtınalar 1966 ve 1999 yıllarında meydana gelmiştir.
+    </string>
+
+    <string name="object_info_puppidvelids_description" translation_description="Description of the Puppid-Velids meteor shower shown in the info card. Translate this text.">
+    Puppid-Velids, Güney Samanyolu\'nda Puppis ve Vela takımyıldızlarından yayılan çakışan küçük meteor yağmurlarının karmaşık bir sistemidir. Saatte yaklaşık 10 meteor ile zirveye ulaşan bu yağmurlar, radyantın Aralık gökyüzünde yüksek konumda yer aldığı güney yarımkürede en iyi şekilde gözlemlenebilir.
+    </string>
+    <string name="object_info_puppidvelids_funfact" translation_description="Fun fact about the Puppid-Velids meteor shower shown in the info card. Translate this text.">
+    Puppid-Velids\'ler, 26P/Grigg-Skjellerup Kuyruklu Yıldızı da dahil olmak üzere, tek bir kaynaktan ziyade birkaç farklı ana kuyruklu yıldızdan gelen enkaz olduğu düşünülmektedir. Güney radyantları, yaklaşık 40°K\'nin kuzeyindeki enlemlerdeki gözlemciler için ufkun üzerine asla yükselmez ve bu da dünyanın çoğu yerinde nadiren görülen bir meteor yağmurunu yapar.
+    </string>
+
+    <string name="object_info_geminids_description" translation_description="Description of the Geminids meteor shower shown in the info card. Translate this text.">
+    Geminidler, yılın en güzel meteor yağmuru olarak kabul edilir — verimli (saatte 120\'ye kadar), güvenilir ve gece yarısından sonra değil erken akşamdan itibaren aktiftir. Gemini takımyıldızından yayılırlar ve canlı ateş topları da dahil olmak üzere geniş bir meteor parlaklığı aralığı üretirler.
+    </string>
+    <string name="object_info_geminids_funfact" translation_description="Fun fact about the Geminids meteor shower shown in the info card. Translate this text.">
+    Geminidler, büyük meteor yağmurları arasında benzersiz bir şekilde, bir kuyruklu yıldızdan değil bir asteroidten gelir: 3200 Phaethon, yörüngesi onu adlandırılmış herhangi bir asteroidten Güneş\'e daha yakın götüren bir "kaya kuyruklu yıldız"dır. Aşırı ısı, kayalık yüzeyini kırabilir ve yağmuru üreten tozu uzaklaştırabilir.
+    </string>
+
+    <string name="object_info_ursids_description" translation_description="Description of the Ursids meteor shower shown in the info card. Translate this text.">
+    Ursidler, Ursa Minor\'dan ve Polaris\'in yakınından yayılan küçük bir meteor yağmurıdır ve kuzey yarımküre gözlemcileri için kutup çevresinde görülür — batmadan tüm gece görülebilir. Kış gündönümü civarında saatte yaklaşık 10 meteor ile zirveye ulaşırlar ve ana kuyruklu yıldız 8P/Tuttle\'dir.
+    </string>
+    <string name="object_info_ursids_funfact" translation_description="Fun fact about the Ursids meteor shower shown in the info card. Translate this text.">
+    Ursidler bazen tipik oranlarının çok üzerinde beklenmedik patlamalar üretir. 1945\'te ve yine 2006\'da gözlemciler saatte 50 veya daha fazla meteor kaydettiler — normal zirvesinin beş katı. Bu dalgalanmalar, Dünya\'nın Tuttle Kuyruklu Yıldızı\'nın yakın geçişi sırasında dökülen alışılmadık derecede yoğun bir enkaz şeridinden geçtiğinde meydana gelir.
+    </string>
+
+    <!-- Category 5: Top priority — objects on the map that lacked info cards -->
+    <string name="object_info_m47_description" translation_description="Description of the open star cluster M47 shown in the info card. Translate this text.">
+    M47, Puppis takımyıldızında yer alan parlak, gevşek bir açık yıldız kümesidir. Çıplak gözle kolayca görülebilir ve dürbünlerde dikkat çekicidir. Yaklaşık 50 yıldız gökyüzünün yarım derecesine dağılmış durumdadır ve birkaç turuncu dev yıldız, daha soluk mavi-beyaz üyelere karşı sıcak bir renk katmaktadır.
+    </string>
+    <string name="object_info_m47_funfact" translation_description="Fun fact about M47 shown in the info card. Translate this text.">
+    M47, Messier\'in orijinal koordinatlarındaki bir yazı hatasının boş gökyüzüne yerleştirilmesi nedeniyle "kayıp" Messier nesnelerinden biriydi ve küme yaklaşık iki yüzyıl boyunca tanımlanmamış kaldı. NGC 2422 olarak gerçek kimliği ancak 1959\'da, gözlemciler Messier\'in açıklamasından geriye doğru çalışarak hatayı bulduğunda doğrulandı.
+    </string>
+    <string name="object_info_m47_distance" translation_description="Distance to M47 shown in the info card. Translate units if appropriate for your locale.">1.600 ışık yılı</string>
+    <string name="object_info_m47_size" translation_description="Physical size of M47 shown in the info card. Translate units if appropriate for your locale.">~14 ışık yılı genişliğinde</string>
+
+    <string name="object_info_m41_description" translation_description="Description of the open star cluster M41 shown in the info card. Translate this text.">
+    M41, Büyük Köpek takımyıldızında Sirius\'un (gece gökyüzünün en parlak yıldızı) tam 4° güneyinde yer alan güzel bir açık yıldız kümesidir. Karanlık yerlerden çıplak gözle görülebilen ve dürbünle muhteşem görünen bu küme, yaklaşık 100 yıldızı geniş bir alan üzerine dağıtılmış şekilde içerir; bunların arasında daha soluk mavi-beyaz üyeler arasında birkaç çarpıcı turuncu dev yıldız vardır.
+    </string>
+    <string name="object_info_m41_funfact" translation_description="Fun fact about M41 shown in the info card. Translate this text.">
+    Aristoteles, M41\'i yaklaşık 325 BCE\'de fark etmiş olabilir — muhtemelen herhangi bir derin gökyüzü nesnesinin en eski kaydedilen gözlemi. Sirius\'un güneyinde M41\'in konumuyla eşleşen bir "bulutlu leke" tanımlamıştır. Bu tanımlama doğruysa, M41 teleskobun icat edilmesinden yaklaşık iki bin yıl önce tartışılıyordu.
+    </string>
+    <string name="object_info_m41_distance" translation_description="Distance to M41 shown in the info card. Translate units if appropriate for your locale.">2.300 ışık yılı</string>
+    <string name="object_info_m41_size" translation_description="Physical size of M41 shown in the info card. Translate units if appropriate for your locale.">~25 ışık yılı genişliğinde</string>
+
+    <string name="object_info_m24_description" translation_description="Description of the Sagittarius Star Cloud (M24) shown in the info card. Translate this text.">
+    M24, Sagittarius Yıldız Bulutu\'dur — bir küme veya nebula değil, fakat Samanyolu\'nun tozundaki bir boşluktan geçen bir penceredir ve 2° genişliğinde göz kamaştırıcı bir yıldız alanını ortaya çıkarır. Gökyüzünün herhangi bir yerinde dürbün ile görülebilen en zengin bölgedir, binlerce yıldızla dolu olup bunlar aynı anda birçok farklı mesafede yer almaktadır.
+    </string>
+    <string name="object_info_m24_funfact" translation_description="Fun fact about M24 shown in the info card. Translate this text.">
+    M24\'deki yıldızlar aynı uzaklıkta değildir — yıldız bulutu, Galaksinin diskinin yıldızlararası toz içindeki doğal bir tünel aracılığıyla görülen bir enine kesitini temsil eder ve 10.000 ile 16.000 ışık yılı arasında uzanan mesafeleri kapsar. Bulut içine gömülü olan koyu nebulalar ve küçük yıldız kümeleri, parlak yıldız arka planına karşı koyu lekeler olarak görünür.
+    </string>
+    <string name="object_info_m24_distance" translation_description="Distance range to M24 shown in the info card. Translate units if appropriate for your locale.">~10.000–16.000 ışık yılı (aralık)</string>
+    <string name="object_info_m24_size" translation_description="Physical size of M24 shown in the info card. Translate units if appropriate for your locale.">~600 ışık yılı derin pencere</string>
+
+    <string name="object_info_m25_description" translation_description="Description of the open star cluster M25 shown in the info card. Translate this text.">
+    M25, Sagittarius takımyıldızında yaz Samanyolu\'nun yoğun yıldız alanlarına karşı konumlanmış, çıplak gözle görülebilen parlak bir açık yıldız kümesidir. Yaklaşık 600 yıldız yarım derece genişliğinde bir alan üzerine dağılmış olup, bu da onu zengin bir dürbün nesnesi yapmaktadır. En parlak üyeleri arasında birkaç mavi-beyaz süpergigant ve gökyüzündeki en çok çalışılan Cepheid değişken yıldızlarından biri yer almaktadır.
+    </string>
+    <string name="object_info_m25_funfact" translation_description="Fun fact about M25 shown in the info card. Translate this text.">
+    M25, U Sagittarii\'yi içerir; bu klasik bir Cepheid değişken yıldızıdır ve 6,7 günlük bir periyotta parlaklığı artar ve azalır. Cepheid\'ler, kozmik mesafeleri ölçmek için hayati "standart mumlar"dır çünkü titreşim periyotları doğrudan gerçek parlaklıklarını ortaya koymaktadır — astronomlar bunları kullanarak önce Samanyolu\'nun boyutunu, sonra gözlemlenebilir evrenin ölçeğini belirlemişlerdir.
+    </string>
+    <string name="object_info_m25_distance" translation_description="Distance to M25 shown in the info card. Translate units if appropriate for your locale.">2.000 ışık yılı</string>
+    <string name="object_info_m25_size" translation_description="Physical size of M25 shown in the info card. Translate units if appropriate for your locale.">~19 ışık yılı genişliğinde</string>
+
+    <string name="object_info_m39_description" translation_description="Description of the open star cluster M39 shown in the info card. Translate this text.">
+    M39, Kuğu takımyıldızında yer alan geniş ve dağınık bir açık yıldız kümesidir. Zengin yaz Samanyolu\'nda Deneb\'in yakınında çıplak gözle görülebilir. Yaklaşık 30 parlak yıldızı gökyüzünün bir derecesi kadar geniş bir alana gevşek bir şekilde dağılmıştır. Düşük büyütmede dürbün veya geniş görüş açılı teleskopla en iyi şekilde gözlemlenebilir — daha yüksek büyütme onu seyrek ve sıradan bir yıldız alanına ayırır.
+    </string>
+    <string name="object_info_m39_funfact" translation_description="Fun fact about M39 shown in the info card. Translate this text.">
+    Yaklaşık 825 ışık yılı uzaklıkta bulunan M39, Dünya\'ya en yakın açık yıldız kümelerinden biridir ve kabaca 240 milyon yaşında olması nedeniyle çıplak gözle görülebilen en eski kümelerden biridir — en masif yıldızları zaten yaşamlarını sona erdirmiş kadar yaşlıdır. Messier bunu 1764\'te kaydetti ve kataloğunun en erken eklenen nesneleri arasında yer aldı.
+    </string>
+    <string name="object_info_m39_distance" translation_description="Distance to M39 shown in the info card. Translate units if appropriate for your locale.">825 ışık yılı</string>
+    <string name="object_info_m39_size" translation_description="Physical size of M39 shown in the info card. Translate units if appropriate for your locale.">~8 ışık yılı genişliğinde</string>
+
+    <!-- Category 5: Special cases -->
+    <string name="object_info_m63_description" translation_description="Description of the Sunflower Galaxy (M63) shown in the info card. Translate this text.">
+    Ayçiçeği Galaksisi, Avlanmış Köpekler takımyıldızında yer alan parlak bir spiral galaksidir. Sıkı sarılı kolları, yıldız oluşum bölgeleriyle benekli olup, uzun pozlama fotoğraflarında kendine özgü çiçek benzeri bir doku oluşturur. 8,6 büyüklüğünde olup, karanlık gökyüzünden dürbünle görülebilir ve küçük teleskoplarda uzun şekli ve parlak çekirdeği kolayca gözlemlenebilir.
+    </string>
+    <string name="object_info_m63_funfact" translation_description="Fun fact about the Sunflower Galaxy shown in the info card. Translate this text.">
+    M63, 1779\'da Pierre Méchain tarafından keşfedilmiştir — Messier\'in kendisinden ziyade Méchain tarafından bulunan bir avuç Messier nesnesi arasında yer almaktadır. M51 Grubu\'nun bir üyesidir, fiziksel olarak Girdap Galaksisi (M51) ile ilişkilidir ve geçmiş bir etkileşimin izlerini gösterir: soluk, eski bir yıldız akışı dış diskinin etrafını sarar.
+    </string>
+    <string name="object_info_m63_distance" translation_description="Distance to the Sunflower Galaxy shown in the info card. Translate units if appropriate for your locale.">29 milyon ışık yılı</string>
+    <string name="object_info_m63_size" translation_description="Physical size of the Sunflower Galaxy shown in the info card. Translate units if appropriate for your locale.">~100.000 ışık yılı genişliğinde</string>
+
+    <string name="object_info_ngc_6543_description" translation_description="Description of the Cat's Eye Nebula (NGC 6543) shown in the info card. Translate this text.">
+    Kedi Gözü Nebulası, bilinen en yapısal olarak karmaşık gezegen nebulalarından biridir — ölmekte olan bir yıldızın dışarı atılan gazı, Hubble görüntülerinde görülebilen eşmerkezli kabuklar, jetler ve parlak düğümler halinde şekillendirilmiştir. Küçük teleskoplarda Draco\'da canlı bir mavi-yeşil disk olarak görünür ve sonbahar gökyüzünün en renkli nesnelerinden biridir.
+    </string>
+    <string name="object_info_ngc_6543_funfact" translation_description="Fun fact about the Cat's Eye Nebula shown in the info card. Translate this text.">
+    1864\'te, gökbilimci William Huggins Kedi\'s Gözü\'ne bir spektroskop yöneltti ve bunun çözülmemiş yıldızlar yerine parlayan gazdan oluştuğunu buldu — herhangi bir gezegen nebülasının doğasının ilk kez doğrulandığı an. Bu keşif, nebüler spektroskopi alanını kurdu ve tüm nebülaların uzak yıldız kümeleri olduğu yaygın görüşü tersine çevirdi.
+    </string>
+    <string name="object_info_ngc_6543_distance" translation_description="Distance to the Cat's Eye Nebula shown in the info card. Translate units if appropriate for your locale.">~3.300 ışık yılı</string>
+    <string name="object_info_ngc_6543_size" translation_description="Physical size of the Cat's Eye Nebula shown in the info card. Translate units if appropriate for your locale.">~0,5 ışık yılı çapında</string>
+
+    <string name="object_info_m76_description" translation_description="Description of the Little Dumbbell Nebula (M76) shown in the info card. Translate this text.">
+    Küçük Dumbbell, Perseus\'taki karakteristik sekiz şekilli bir yapıya sahip bir gezegen nebulasıdır — Vulpecula\'daki Dumbbell Nebulası (M27)\'nin daha küçük bir akrabasıdır. Messier kataloğundaki en soluk giriş olmasına rağmen, küçük teleskoplarda sabırlı gözlemle ödüllendirilir ve daha büyük enstrümanlarda iki daha parlak lob ile daha soluk bir beli flanklayan güzel bir yapı gösterir.
+    </string>
+    <string name="object_info_m76_funfact" translation_description="Fun fact about the Little Dumbbell Nebula shown in the info card. Translate this text.">
+    M76 başlangıçta iki ayrı nesne olarak — NGC 650 ve NGC 651 olarak — kataloglandı, çünkü erken gözlemciler iki parlak lobu bağımsız olarak tanımladılar. Ölmekte olan bir yıldızın çıkışının ekvator bölgesinde sıkıştırılması sonucu oluşan iki genişleyen lobu kutup ekseni boyunca oluştururken, gaz aynı zamanda bel bölgesinde dışarı doğru yayılan iki kutuplu bir gezegen nebulasıdır.
+    </string>
+    <string name="object_info_m76_distance" translation_description="Distance to the Little Dumbbell Nebula shown in the info card. Translate units if appropriate for your locale.">~2.500 ışık yılı</string>
+    <string name="object_info_m76_size" translation_description="Physical size of the Little Dumbbell Nebula shown in the info card. Translate units if appropriate for your locale.">~2 ışık yılı genişliğinde</string>
+
+    <string name="object_info_v838_mon_description" translation_description="Description of V838 Monocerotis shown in the info card. Translate this text.">
+    V838 Monocerotis, Monoceros takımyıldızında yer alan ve 2002 yılında spektaküler bir patlamaya uğrayan olağandışı bir değişken yıldızdır; kısaca Samanyolu\'nun en parlak yıldızlarından biri haline gelmiştir. Günümüzde görsel gözlemciler için çok soluk olmasına rağmen, genişleyen ışık yankısı — eski toz kabuklarını aydınlatan bir ışık cephesi — Hubble Uzay Teleskopu\'nun çektiği en dramatik görüntülerinden bazılarını oluşturmuştur.
+    </string>
+    <string name="object_info_v838_mon_funfact" translation_description="Fun fact about V838 Monocerotis shown in the info card. Translate this text.">
+    V838 Mon\'un patlamasının doğası tartışmalı olmaya devam etmektedir. Öncü teori, klasik bir nova veya süpergigant patlaması yerine iki yıldızın birbirine spiral hareketle yaklaşıp çarpışması olan bir yıldız birleşmesidir. Eğer doğrulanırsa, bu yıldız birleşmelerinin neden olduğu nadir bir patlama sınıfı olan "parlak kırmızı nova"nın ilk gerçek zamanlı görüntüsü olacaktır ve benzer olaylar o zamandan beri diğer galaksilerde de bulunmuştur.
+    </string>
+    <string name="object_info_v838_mon_distance" translation_description="Distance to V838 Monocerotis shown in the info card. Translate units if appropriate for your locale.">~20.000 ışık yılı</string>
+    <string name="object_info_v838_mon_size" translation_description="Extent of the V838 Monocerotis light echo shown in the info card. Translate units if appropriate for your locale.">~3 ışık yılı (ışık yankısı uzantısı)</string>
+
+    <string name="object_info_hdf_description" translation_description="Description of the Hubble Deep Field shown in the info card. Translate this text.">
+    Hubble Derin Alanı, Ursa Major\'da görünüşte boş bir gökyüzünün 2,6 arkdakikalık küçük bir bölümüdür ve Hubble Uzay Teleskopu tarafından Aralık 1995\'te arka arkaya 10 gün boyunca fotoğraflanmıştır. Boş görünen uzay, milyarlarca yıllık kozmik tarihi kapsayan yaklaşık 3.000 galaksi ortaya çıkarmış ve evren hakkındaki görüşümüzü temelden değiştirmiştir.
+    </string>
+    <string name="object_info_hdf_funfact" translation_description="Fun fact about the Hubble Deep Field shown in the info card. Translate this text.">
+    Gökyüzünün bu bölgesi, parlak yıldızlar ve yakındaki galaksilerden arınmış olması nedeniyle özel olarak seçilmiştir. Ancak ortaya çıkan görüntü yaklaşık 3.000 galaksi ile doluydu ve bu da tüm gökyüzünün yaklaşık 200 milyar galaksi içerdiğini göstermektedir; bunların neredeyse tamamı Hubble\'dan önce herhangi bir teleskopla görülemezdi.
+    </string>
+    <string name="object_info_hdf_distance" translation_description="Distance to the most distant galaxies in the Hubble Deep Field shown in the info card. Translate units if appropriate for your locale.">~13 milyar ışık yılı (en uzak)</string>
+    <string name="object_info_hdf_size" translation_description="Angular size of the Hubble Deep Field shown in the info card.">2,6 arkdakika (görüş alanı)</string>
+
+    <string name="object_info_m43_description" translation_description="Description of De Mairan's Nebula (M43) shown in the info card. Translate this text.">
+    De Mairan\'s Nebulası, büyük Orion Nebulası kompleksinin ayrılmış bir parçasıdır; koyu bir toz bandı tarafından M42\'den ayrılmış olsa da aynı geniş moleküler buluta aittir. Bunu 1731\'de fark eden Fransız gökbilimci Jean-Jacques Dortous de Mairan\'ın adını taşıyan bu emisyon nebulası, merkezine gömülü olan sıcak genç yıldız NU Orionis tarafından iyonize edilmiştir.
+    </string>
+    <string name="object_info_m43_funfact" translation_description="Fun fact about De Mairan's Nebula shown in the info card. Translate this text.">
+    M43, M42\'den ayrı bir nesne gibi görünse de, onları ayıran koyu bant, Orion Moleküler Bulutu\'nun bir parçası olan ön plandaki bir toz bulutu olup, iki parlak bölge arasındaki fiziksel bağlantının görüşümüzü engeller. Birlikte, Orion\'un çoğunu kaplayan muazzam bir koyu bulutun aydınlatılmış iç kenarıdırlar.
+    </string>
+    <string name="object_info_m43_distance" translation_description="Distance to De Mairan's Nebula shown in the info card. Translate units if appropriate for your locale.">1.350 ışık yılı</string>
+    <string name="object_info_m43_size" translation_description="Physical size of De Mairan's Nebula shown in the info card. Translate units if appropriate for your locale.">~8 ışık yılı genişliğinde</string>
+
+    <string name="object_info_m40_description" translation_description="Description of M40 (Winnecke 4) shown in the info card. Translate this text.">
+    M40, Messier kataloğunda benzersizdir — ne bir nebula, ne bir küme, ne de bir galaksi, fakat geniş bir çift yıldızdır. Messier, 1764\'te Ursa Major\'da Johann Hevelius tarafından bildirilen bir nebulayı ararken, sadece bu yıldız çiftini bulmuş ve gelecekteki gözlemcilerin bunu daha ilginç bir şey olarak yanılmasını önlemek için kaydını tutmuştur.
+    </string>
+    <string name="object_info_m40_funfact" translation_description="Fun fact about M40 shown in the info card. Translate this text.">
+    M40\'ın iki yıldızı — Winnecke 4 olarak bilinir — yerçekimi ile bağlı değildir; farklı mesafelerde yer alırlar ve sadece tesadüfi bir hizalanmadırlar. Messier\'in kendisi "dikkat çekici bir şey olmadığını" belirtmiş, ancak bunu "bu nebülanın incelediğim olanlarla aynı olmadığını göstermek için" dahil etmiştir. Olumsuz sonuçları belgeleme alışkanlığı, gelecekteki gözlemcilere kesin bir referans sağlamıştır.
+    </string>
+    <string name="object_info_m40_distance" translation_description="Distance to M40 shown in the info card. Translate units if appropriate for your locale.">~500 ışık yılı</string>
+    <string name="object_info_m40_size" translation_description="Angular separation of the M40 double star shown in the info card.">~50 arksaniye (ayrılma)</string>
+
+    <!-- Category 5: Second tier -->
+    <string name="object_info_m34_description" translation_description="Description of the open star cluster M34 shown in the info card. Translate this text.">
+    M34, Perseus\'te yer alan parlak ve dağınık bir açık yıldız kümesidir. Kış Samyolu\'na karşı zengin bir yıldız sürüsü olarak dürbün ile kolayca görülebilir. Yaklaşık 400 yıldızı tam Ay kadar geniş bir alanı kaplar ve dikkatli dürbün gözlemcileri tarafından görülebilecek birkaç geniş çift yıldız içerir.
+    </string>
+    <string name="object_info_m34_funfact" translation_description="Fun fact about M34 shown in the info card. Translate this text.">
+    Yaklaşık 200 milyon yaşında olan M34, yaş açısından ara bir konumdadır — sıcak mavi yıldızları hâlâ parlayacak kadar genç, en kütleli olanları zaten süpernova olarak patlamış kadar yaşlı. 1.500 ışık yılı uzaklıkta olması nedeniyle, en yakın Messier kümelerinden biridir ve şehir dışı gökyüzünden bile güzel bir gözlem nesnesi olmaya devam eder.
+    </string>
+    <string name="object_info_m34_distance" translation_description="Distance to M34 shown in the info card. Translate units if appropriate for your locale.">1.500 ışık yılı</string>
+    <string name="object_info_m34_size" translation_description="Physical size of M34 shown in the info card. Translate units if appropriate for your locale.">~15 ışık yılı genişliğinde</string>
+
+    <string name="object_info_m23_description" translation_description="Description of the open star cluster M23 shown in the info card. Translate this text.">
+    M23, Yay yıldız kümesi olup Sagittarius takımyıldızında yer almaktadır ve yaz Samanyolu\'nun yoğun yıldız alanlarına gömülüdür. Yaklaşık 150 yıldız, dürbün alanında yarım derece genişliğinde dağılmış olup, gökyüzünün aynı bölgesinde birçok diğer Messier nesnesiyle birlikte cömert bir dürbün nesnesi haline gelmektedir.
+    </string>
+    <string name="object_info_m23_funfact" translation_description="Fun fact about M23 shown in the info card. Translate this text.">
+    M23\'nin yaşı yaklaşık 300 milyon yıl olduğu tahmin edilmektedir — yaş açısından orta düzeyde, çoğu masif yıldızı zaten ana dizi dışına evrimleşmiştir. Messier, 1764\'te Sagittarius yıldız alanlarını tarayarak yaptığı verimli gözlem kampanyalarından birinde onu keşfetmiştir.
+    </string>
+    <string name="object_info_m23_distance" translation_description="Distance to M23 shown in the info card. Translate units if appropriate for your locale.">2.150 ışık yılı</string>
+    <string name="object_info_m23_size" translation_description="Physical size of M23 shown in the info card. Translate units if appropriate for your locale.">~17 ışık yılı genişliğinde</string>
+
+    <string name="object_info_m37_description" translation_description="Description of the open star cluster M37 shown in the info card. Translate this text.">
+    M37, Auriga\'da bulunan üç Messier açık yıldız kümesinin en zengin ve en parlak olanıdır ve kompakt bir alanda tahminen 500 yıldız içerir. Mavi-beyaz yıldız sürüsüne renk kontrastı katan turuncu dev yıldızların dağılımı ile harika bir çift gözlü teleskop ve küçük teleskop nesnesidir.
+    </string>
+    <string name="object_info_m37_funfact" translation_description="Fun fact about M37 shown in the info card. Translate this text.">
+    M37, yaklaşık bir düzine kırmızı dev yıldız içerir — bu, yaklaşık 300 milyon yıllık nispeten ileri yaşını yansıtan alışılmadık derecede yüksek bir sayıdır. Üç Auriga Messier kümesinin en uzağında yer almasına rağmen — yaklaşık 4.500 ışık yılı uzakta — yine de gökyüzünün en güzel açık kümelerinden biri olarak sıralanır.
+    </string>
+    <string name="object_info_m37_distance" translation_description="Distance to M37 shown in the info card. Translate units if appropriate for your locale.">4.500 ışık yılı</string>
+    <string name="object_info_m37_size" translation_description="Physical size of M37 shown in the info card. Translate units if appropriate for your locale.">~31 ışık yılı genişliğinde</string>
+
+    <string name="object_info_m48_description" translation_description="Description of the open star cluster M48 shown in the info card. Translate this text.">
+    M48, Hydra takımyıldızında yer alan, gökyüzünde neredeyse bir derece kadar uzanan geniş ve parlak bir açık yıldız kümesidir. Karanlık yerlerden çıplak gözle görülebilen bu küme, yaklaşık 80 yıldızdan oluşur ve bu yıldızlar geniş bir alan üzerine gevşek bir şekilde dağılmıştır. Dürbün kullanımına en uygun olan bu küme, daha parlak mavi-beyaz yıldızlar arasında turuncu ve sarı dev yıldızlardan oluşan bir dağılım içerir.
+    </string>
+    <string name="object_info_m48_funfact" translation_description="Fun fact about M48 shown in the info card. Translate this text.">
+    M48, Messier\'in kaydedilen konumu gerçek konumdan yaklaşık 5° uzakta olduğu için neredeyse iki yüzyıl boyunca "kayıp" Messier nesnelerinden biriydi. 1959\'da NGC 2548 ile eşleştirilene kadar tanımlanmamış kaldı ve basit bir yazı hatası bunun tüm bu süre boyunca boş gökyüzüne yerleştirilmiş olduğunu ortaya çıkardı.
+    </string>
+    <string name="object_info_m48_distance" translation_description="Distance to M48 shown in the info card. Translate units if appropriate for your locale.">1.500 ışık yılı</string>
+    <string name="object_info_m48_size" translation_description="Physical size of M48 shown in the info card. Translate units if appropriate for your locale.">~23 ışık yılı genişliğinde</string>
+
+    <string name="object_info_m21_description" translation_description="Description of the open star cluster M21 shown in the info card. Translate this text.">
+    M21, Yay Yöneticisi\'nde Trifid Nebulası\'nın (M20) tam olarak yarım derece kuzeyinde yer alan kompakt bir açık yıldız kümesidir ve bu iki nesne çarpıcı bir dürbün çifti oluşturur. Küme, birçok Messier kümesinden daha küçük bir alana yoğunlaştırılmış yaklaşık 57 yıldız içerir ve baskın üyeler olarak birkaç parlak mavi-beyaz yıldız vardır.
+    </string>
+    <string name="object_info_m21_funfact" translation_description="Fun fact about M21 shown in the info card. Translate this text.">
+    Fiziksel olarak ilişkili olmasa da, M21 ve M20 (Trifid Nebulası), yaz gökyüzünde en çekici dürbün eşleşmelerinden birini oluşturur — parlak bir yıldız kümesi, renkli üç loblu bir nebulun yanında. M21 yaklaşık 4.250 ışık yılı uzaklıkta iken, M20 yaklaşık 4.100 ışık yılında biraz daha yakındır.
+    </string>
+    <string name="object_info_m21_distance" translation_description="Distance to M21 shown in the info card. Translate units if appropriate for your locale.">4.250 ışık yılı</string>
+    <string name="object_info_m21_size" translation_description="Physical size of M21 shown in the info card. Translate units if appropriate for your locale.">~16 ışık yılı genişliğinde</string>
+
+    <string name="object_info_m50_description" translation_description="Description of the open star cluster M50 shown in the info card. Translate this text.">
+    M50, Tek Boynuzlu Hayvan takımyıldızında parlak bir açık yıldız kümesidir ve yaklaşık 200 yıldızı çarpıcı bir kompakt alan içinde barındırır; dürbün ve küçük teleskoplarla kolayca gözlemlenebilir. Sirius ve Procyon arasında bir çizgi üzerinde kolayca bulunur ve dikkate değer bir kırmızı dev içerir — kümenin mavi-beyaz yıldızları arasında canlı bir şekilde öne çıkan sıcak turuncu bir işaret.
+    </string>
+    <string name="object_info_m50_funfact" translation_description="Fun fact about M50 shown in the info card. Translate this text.">
+    M50\'nin yaklaşık 78 milyon yaşında olduğu tahmin edilmektedir — daha genç Messier açık yıldız kümelerinden biri — bu da sıcak mavi ve beyaz yıldızlarının hala evrim geçirmekte olduğu ve daha kütleli üyelerin bir kısmının yakın zamanda devlere şiştiği anlamına gelir. Bu, erken orta yaşındaki bir küme için tipiktir.
+    </string>
+    <string name="object_info_m50_distance" translation_description="Distance to M50 shown in the info card. Translate units if appropriate for your locale.">3.200 ışık yılı</string>
+    <string name="object_info_m50_size" translation_description="Physical size of M50 shown in the info card. Translate units if appropriate for your locale.">~15 ışık yılı genişliğinde</string>
+
+    <string name="object_info_m36_description" translation_description="Description of the open star cluster M36 shown in the info card. Translate this text.">
+    M36, Auriga\'da Messier tarafından kataloglanmış üç açık yıldız kümesinin en küçüğü ve en gencesidir. Yaklaşık 60 yıldızı sıkı, parlak bir alan içinde toplanmıştır ve dürbün ile görülebilir, küçük bir teleskopla bireysel yıldızlara iyi bir şekilde ayrılabilir ve sıcak mavi-beyaz yıldızlar tarafından domine edilir.
+    </string>
+    <string name="object_info_m36_funfact" translation_description="Fun fact about M36 shown in the info card. Translate this text.">
+    M36\'nin tahminen sadece yaklaşık 25 milyon yaşında olduğu tahmin edilmektedir — daha genç Messier kümelerinden biri — bu da devasa mavi-beyaz yıldızların hala baskın olduğu ve henüz kırmızı devlerin ortaya çıkmadığı anlamına gelir. Auriga yıldız alanlarını M37 ve M38 ile paylaşır ve üç kümenin tamamı aynı geniş alan dürbün görüşüne sığar.
+    </string>
+    <string name="object_info_m36_distance" translation_description="Distance to M36 shown in the info card. Translate units if appropriate for your locale.">4.100 ışık yılı</string>
+    <string name="object_info_m36_size" translation_description="Physical size of M36 shown in the info card. Translate units if appropriate for your locale.">~14 ışık yılı genişliğinde</string>
+
+    <string name="object_info_m46_description" translation_description="Description of the open star cluster M46 shown in the info card. Translate this text.">
+    M46, Puppis takımyıldızında yer alan, yaklaşık 500 yıldızı geniş bir alana sıkıştırılmış zengin ve yoğun bir açık yıldız kümesidir; dürbünlerde görkemli, küçük teleskoplarda ise güzeldir. Dikkat çekici bir bonus, kümesinin kuzey kenarında yüzer: NGC 2438, kümeye gömülü görünen küçük bir gezegen nebulasıdır — dramatik bir görüş hattı tesadüfü.
+    </string>
+    <string name="object_info_m46_funfact" translation_description="Fun fact about M46 shown in the info card. Translate this text.">
+    Gezegen nebulası NGC 2438, M46\'nin içinde yer almış gibi görünse de aslında çok farklı bir mesafede ilişkisiz bir ön plan nesnesidir — yaklaşık 1.400 ışık yılı ile M46\'nın 5.400 ışık yılına karşı. Ölmekte olan bir yıldızın kabuğunun genç bir yıldız kümesine üst üste gelmesi, bunu katalogdaki en fotoğenik alanlardan birini yapmaktadır.
+    </string>
+    <string name="object_info_m46_distance" translation_description="Distance to M46 shown in the info card. Translate units if appropriate for your locale.">5.400 ışık yılı</string>
+    <string name="object_info_m46_size" translation_description="Physical size of M46 shown in the info card. Translate units if appropriate for your locale.">~42 ışık yılı genişliğinde</string>
+
+    <string name="object_info_m93_description" translation_description="Description of the open star cluster M93 shown in the info card. Translate this text.">
+    M93, Puppis takımyıldızında yer alan parlak ve kompakt bir açık yıldız kümesidir. Zengin güney Samanyolu\'nda yer alan bu küme dürbünle kolayca bulunabilir. Yaklaşık 80 yıldızı çarpıcı bir kama veya kelebek şekli oluşturur ve birkaç sıcak mavi süpergigant yıldız içerir; bu da onu kış gökyüzündeki en çekici açık yıldız kümelerinden biri yapar.
+    </string>
+    <string name="object_info_m93_funfact" translation_description="Fun fact about M93 shown in the info card. Translate this text.">
+    M93 nispeten genç — yaklaşık 100 milyon yaşında — baskın mavi ve mavi-beyaz yıldızlara sahip olup henüz dev yıldızlara evrimleşmemiştir. En güneyli Messier kümelerinden biridir ve 50°K enleminin kuzeyindeki enlemlerden asla ufkun çok üzerinde yükselmiş görülmez.
+    </string>
+    <string name="object_info_m93_distance" translation_description="Distance to M93 shown in the info card. Translate units if appropriate for your locale.">3.600 ışık yılı</string>
+    <string name="object_info_m93_size" translation_description="Physical size of M93 shown in the info card. Translate units if appropriate for your locale.">~23 ışık yılı genişliğinde</string>
+
+    <string name="object_info_m38_description" translation_description="Description of the open star cluster M38 shown in the info card. Translate this text.">
+    M38, Auriga\'da Messier tarafından kataloglanmış üç açık yıldız kümesinin en büyüğü ve en geniş yayılmış olanıdır. Kabaca 100 yıldızdan oluşan bu küme, bazı gözlemcilerin bir haç veya Yunan harfi pi\'ye benzettiği bir düzende dizilmiştir; dürbünle görülebilir ve küçük bir teleskopla iyi çözülebilir. Daha küçük NGC 1907 kümesi güneyde yakın konumda yer almaktadır.
+    </string>
+    <string name="object_info_m38_funfact" translation_description="Fun fact about M38 shown in the info card. Translate this text.">
+    M38, Auriga\'nın üç Messier kümesinin en eski olanıdır ve yaklaşık 220 milyon yaşındadır; yeterince yaşlı olduğu için bazı masif yıldızları sarı ve turuncu devlere evrilmiştir. Yakındaki NGC 1907 kümesi aynı düşük büyütme alanına sığabilir ve bu da onları harika bir dürbün çifti yapar — Puppis\'teki M46 ve M47 gibi.
+    </string>
+    <string name="object_info_m38_distance" translation_description="Distance to M38 shown in the info card. Translate units if appropriate for your locale.">4.200 ışık yılı</string>
+    <string name="object_info_m38_size" translation_description="Physical size of M38 shown in the info card. Translate units if appropriate for your locale.">~26 ışık yılı genişliğinde</string>
+
+    <string name="object_info_m29_description" translation_description="Description of the open star cluster M29 shown in the info card. Translate this text.">
+    M29, Kuğu takımyıldızında yer alan küçük, genç bir açık yıldız kümesidir ve Samanyolu\'nun en yoğun toz tarafından gizlenmiş bölgelerinden birine karşı konumlanmıştır. Beş parlak mavi süpergigant yıldız kümeyi domine eder ve sıkı bir asterizm olarak dürbün ile görülebilir. Yoğun ön plan tozu olmasa, M29 gökyüzünün en görkemli açık yıldız kümelerinden biri olurdu.
+    </string>
+    <string name="object_info_m29_funfact" translation_description="Fun fact about M29 shown in the info card. Translate this text.">
+    M29, tahminen sadece 10 milyon yaşında — yıldızsal bir bebek — ve Cygnus OB1 birliği içinde yer alır; bu, devasa genç yıldızlardan oluşan geniş bir gruptur. Ağır yıldızlararası toz, kümeyi yaklaşık 3 büyüklük kadar kararttır; bu gölgeleme olmasa, M29\'nin yıldızları gerçekte göründüğünden birkaç kat daha parlak ışınardı.
+    </string>
+    <string name="object_info_m29_distance" translation_description="Distance to M29 shown in the info card. Translate units if appropriate for your locale.">4.000 ışık yılı</string>
+    <string name="object_info_m29_size" translation_description="Physical size of M29 shown in the info card. Translate units if appropriate for your locale.">~8 ışık yılı genişliğinde</string>
+
+    <string name="object_info_m62_description" translation_description="Description of the globular cluster M62 shown in the info card. Translate this text.">
+    M62, Ophiuchus takımyıldızında yer alan zengin bir küresel yığındır — galaktik merkeze en yakın küresel yığınlardan biri ve belirgin şekilde asimetrik, yıldızlar güney tarafında daha yoğun bir şekilde paketlenmiştir. Büyüklüğü 6,6 olan M62, mükemmel bir dürbün nesnesi olmasına rağmen, düşük deklinasyonu nedeniyle kuzey gözlemcileri için kısa bir mevsim hedefidir.
+    </string>
+    <string name="object_info_m62_funfact" translation_description="Fun fact about M62 shown in the info card. Translate this text.">
+    M62\'nin merkez dışı çekirdeği, galaktik merkeze olan yakınlığının doğrudan bir sonucudur — merkezi kabarıklıktan gelen güçlü gelgit kuvvetleri kümeyi bozar ve yıldızları galaktik düzleme doğru çeker. Aynı zamanda bilinen en dinamik olarak gelişmiş küresel yığınlardan biridir ve çekirdek çökmesinin işaretlerini ve alışılmadık derecede yüksek milisaniye pulsarı yoğunluğunu gösterir.
+    </string>
+    <string name="object_info_m62_distance" translation_description="Distance to M62 shown in the info card. Translate units if appropriate for your locale.">22.500 ışık yılı</string>
+    <string name="object_info_m62_size" translation_description="Physical size of M62 shown in the info card. Translate units if appropriate for your locale.">~92 ışık yılı genişliğinde</string>
+
+    <string name="object_info_m28_description" translation_description="Description of the globular cluster M28 shown in the info card. Translate this text.">
+    M28, Yay takımyıldızında Lambda Sagittarii parlak yıldızının yakınında yer alan, zengin yaz yıldız alanlarında bulunan kompakt bir küresel yığındır. Büyüklüğü 6,9 olan M28, dürbün için ödüllendirici bir hedef olup, küçük teleskoplarda iyi çözülür ve etrafında orta düzeyde bir yıldız halesi bulunan parlak bir yoğun çekirdek gösterir.
+    </string>
+    <string name="object_info_m28_funfact" translation_description="Fun fact about M28 shown in the info card. Translate this text.">
+    1987\'de, M28 bir milisaniye pulsarının tespit edildiği ilk küresel yığın oldu. Milisaniye pulsarları — saniyede yüzlerce kez dönen nötron yıldızları — bir nötron yıldızı bir eşlik yıldızından madde topladığında oluşur ve genel galaksiye kıyasla küresel yığınlarda çok daha yüksek oranda bulunur, çünkü bunların yoğun yıldız ortamları çok daha fazla yakın ikili karşılaşma üretir.
+    </string>
+    <string name="object_info_m28_distance" translation_description="Distance to M28 shown in the info card. Translate units if appropriate for your locale.">18.300 ışık yılı</string>
+    <string name="object_info_m28_size" translation_description="Physical size of M28 shown in the info card. Translate units if appropriate for your locale.">~60 ışık yılı genişliğinde</string>
+
+    <string name="object_info_m52_description" translation_description="Description of the open star cluster M52 shown in the info card. Translate this text.">
+    M52, Cassiopeia\'da yer alan ve kuzey Samanyolu\'nun kompakt bir bölgesine sıkışmış yaklaşık 200 yıldız içeren zengin bir açık yıldız kümesidir. İyi bir çift gözlü kümedir ve küçük teleskoplarda güzel, yoğun bir yıldız alanı gösterir; kümenin güney kenarına yakın, belirgin şekilde daha parlak turuncu bir yıldız öne çıkar.
+    </string>
+    <string name="object_info_m52_funfact" translation_description="Fun fact about M52 shown in the info card. Translate this text.">
+    M52\'nin uzaklığı alışılmadık şekilde belirsizdir — tahminler 3.000 ile 7.000 ışık yılı arasında değişmektedir — çünkü bu görüş hattı boyunca ağır yıldızlararası toz, gerçek parlaklığının belirlenmesini zorlaştırmaktadır. Messier bunu 1774\'te keşfetti, onu bir kometin peşinde takip ettiği ve başka birkaç katalog girişini kaydetmesine yol açan aynı gece.
+    </string>
+    <string name="object_info_m52_distance" translation_description="Distance to M52 shown in the info card. Translate units if appropriate for your locale.">~5.000 ışık yılı</string>
+    <string name="object_info_m52_size" translation_description="Physical size of M52 shown in the info card. Translate units if appropriate for your locale.">~25 ışık yılı genişliğinde</string>
+
+    <string name="object_info_m67_description" translation_description="Description of the open star cluster M67 shown in the info card. Translate this text.">
+    M67, Kanser takımyıldızında yer alan güzel bir açık yıldız kümesidir ve gökyüzündeki en iyi çalışılmış en eski açık yıldız kümelerinden biridir. Yaklaşık 3,2–3,5 milyar yaşında olan M67, kendi Güneşimize benzer kütlesi ve yaşı olan birçok yıldız içerir — bu da onu Güneş benzeri yıldızların kozmik zaman içinde nasıl evrimleştiklerini incelemek için doğal bir laboratuvar haline getirir.
+    </string>
+    <string name="object_info_m67_funfact" translation_description="Fun fact about M67 shown in the info card. Translate this text.">
+    M67\'deki birçok yıldız, sıcaklık, kütle ve yaş açısından Güneş\'e çok benzer — bu nadir kombinasyon, araştırmacıları Güneş\'in kendisinin M67 gibi bir yıldız kümesinde mi oluştuğunu merak etmeye yöneltmiştir. Yıldızlar kademeli olarak dağılan kümeler içinde doğduğundan, Güneş neredeyse kesinlikle milyarlarca yıl önce şu anda dağılmış bir kardeş grubundan gelmiştir — ancak hangi küme olduğu hiçbir zaman belirlenememiştir.
+    </string>
+    <string name="object_info_m67_distance" translation_description="Distance to M67 shown in the info card. Translate units if appropriate for your locale.">2.700 ışık yılı</string>
+    <string name="object_info_m67_size" translation_description="Physical size of M67 shown in the info card. Translate units if appropriate for your locale.">~24 ışık yılı çapında</string>
+
+    <string name="object_info_m55_description" translation_description="Description of the globular cluster M55 shown in the info card. Translate this text.">
+    M55, Yay Okunu\'nda yer alan geniş ve gevşek bir küresel yığındır — tüm Messier küresel yığınları arasında en yayılmış ve en az yoğun olanlardan biridir. Düşük büyütmede bile bireysel yıldızlara kolayca çözülebilir ve dürbünlerde granüler bir doku görülür. Düşük güney deklinasyonu, kuzey enlemlerinden görünürlüğünü sınırlarken, güney yarımkürede muhteşem bir görüntü sunar.
+    </string>
+    <string name="object_info_m55_funfact" translation_description="Fun fact about M55 shown in the info card. Translate this text.">
+    M55\'nin alışılmadık derecede düşük yıldız yoğunluğu, onu tipik bir küresel yığın yerine zengin bir açık yığına benzetmektedir. Yıldızları neredeyse 100 ışık yılı genişliğinde bir bölgeye yayılmıştır ve bu da kümenin öz-çekiminin M13 veya M3 gibi daha merkezi yoğunlaşmış küresel yığınlara kıyasla nispeten zayıf olduğunu göstermektedir.
+    </string>
+    <string name="object_info_m55_distance" translation_description="Distance to M55 shown in the info card. Translate units if appropriate for your locale.">17.600 ışık yılı</string>
+    <string name="object_info_m55_size" translation_description="Physical size of M55 shown in the info card. Translate units if appropriate for your locale.">~100 ışık yılı çapında</string>
+
+    <string name="object_info_m19_description" translation_description="Description of the globular cluster M19 shown in the info card. Translate this text.">
+    M19, Ophiuchus takımyıldızında yer alan, kompakt ve zengin bir küresel yığındır — galaktik merkeze en yakın küresel yığınlardan biridir. En belirgin özelliği, belirgin şekilde basık şeklidir: M19, bilinen en düzleştirilmiş küresel yığındır ve küçük bir teleskopla bile görülebilen eliptik bir kontura sahiptir.
+    </string>
+    <string name="object_info_m19_funfact" translation_description="Fun fact about M19 shown in the info card. Translate this text.">
+    M19\'nin belirgin basıklığı — en uzun ekseni en kısa ekseninden yaklaşık %10 daha uzun — bilinen küresel yığınlar arasında benzersizdir ve Samanyolu\'nun yerçekimi alanı tarafından gelgit çekmesinin sonucu olduğu düşünülmektedir. Bir küresel yığın galaktik merkeze ne kadar yakın yörüngede döner, o kadar güçlü bir şekilde deforme olur; M19 galaktik çekirdeğin sadece yaklaşık 5.200 ışık yılı uzağında yer almaktadır.
+    </string>
+    <string name="object_info_m19_distance" translation_description="Distance to M19 shown in the info card. Translate units if appropriate for your locale.">28.700 ışık yılı</string>
+    <string name="object_info_m19_size" translation_description="Physical size of M19 shown in the info card. Translate units if appropriate for your locale.">~113 ışık yılı çapında</string>
+
+    <string name="object_info_m80_description" translation_description="Description of the globular cluster M80 shown in the info card. Translate this text.">
+    M80, Samanyolu\'nda en yoğun şekilde paketlenmiş küresel yığınlarından biridir; Akrep takımyıldızında birkaç yüz bin yıldızdan oluşan kompakt, zengin bir yıldız topluluğudur. Büyüklüğü 7,2 olan M80, çift gözlükle gözlemlemek için mükemmel bir hedef olup, küçük teleskoplarda parlak ve oldukça yoğunlaşmış bir çekirdeği ortaya koymaktadır.
+    </string>
+    <string name="object_info_m80_funfact" translation_description="Fun fact about M80 shown in the info card. Translate this text.">
+    1860 yılında, M80 içinde T Scorpii olarak adlandırılan bir nova patladı — kısaca kümenin kendisi kadar parlak hale geldi ve çıplak gözle görülebilir oldu. Bir küresel küme içinde gözlemlenen yalnızca iki novadan biri olmaya devam etmektedir. Küresel kümelerdeki novalar, küresel kümenin yoğun yıldız ortamında çok daha yaygın olan ikili yıldızlar arasındaki etkileşimlerden kaynaklanır.
+    </string>
+    <string name="object_info_m80_distance" translation_description="Distance to M80 shown in the info card. Translate units if appropriate for your locale.">32.600 ışık yılı</string>
+    <string name="object_info_m80_size" translation_description="Physical size of M80 shown in the info card. Translate units if appropriate for your locale.">~84 ışık yılı çapında</string>
+
+    <string name="object_info_m103_description" translation_description="Description of the open star cluster M103 shown in the info card. Translate this text.">
+    M103, Cassiopeia\'da yer alan küçük ve kompakt bir açık yıldız kümesidir ve sıkı bir grup içinde yaklaşık 40 yıldız içerir ve dürbünle kolayca görülebilir. Merkez yakınında yer alan göz alıcı bir çift yıldız ve kırmızı dev, Cassiopeia\'nın zengin Samanyolu yıldız alanları içinde küçük teleskoplarda renkli bir görünüm verir.
+    </string>
+    <string name="object_info_m103_funfact" translation_description="Fun fact about M103 shown in the info card. Translate this text.">
+    M103, Messier\'in orijinal 1781 yayınlanan kataloğunda en yüksek numaralı nesne idi — sonraki tüm girdiler (M104–M110) daha sonra Messier\'in notları ve yazışmalarından diğer astronomlar tarafından ölümünden sonra eklendi. Pierre Méchain, katalog basılmaya gitmeden kısa süre önce M103\'ü buldu ve Messier bunu Méchain\'in raporundan dahil etti.
+    </string>
+    <string name="object_info_m103_distance" translation_description="Distance to M103 shown in the info card. Translate units if appropriate for your locale.">8.500 ışık yılı</string>
+    <string name="object_info_m103_size" translation_description="Physical size of M103 shown in the info card. Translate units if appropriate for your locale.">~15 ışık yılı çapında</string>
+
+    <string name="object_info_m30_description" translation_description="Description of the globular cluster M30 shown in the info card. Translate this text.">
+    M30, Oğlak takımyıldızında yer alan kompakt bir küresel yığındır — küçük teleskoplarda parlak, yoğun bir çekirdek ve soluk dış yıldız zincirlerini gösteren güzel bir nesnedir. Büyüklüğü 7,5 olan M30, dürbinlerde karanlık gökyüzü gerektirir ve küçük bir teleskopla kısmen çözülmüş dış halesini ortaya çıkarır.
+    </string>
+    <string name="object_info_m30_funfact" translation_description="Fun fact about M30 shown in the info card. Translate this text.">
+    M30, yoğun bir şekilde paketlenmiş yıldızların karşılıklı yerçekimi çekiminin kümenin merkezinin dramatik bir şekilde daralmasına neden olduğu "çekirdek çöküşü" adı verilen bir sürece maruz kalmıştır. Bu süreçte, çok küçük bir hacimde yıldızların aşırı bir yoğunlaşması oluşur. Tüm küresel kümelerin yaklaşık beşte biri çökmüş çekirdeklere sahiptir ve M30, bu olayın en iyi çalışılan örneklerinden biridir.
+    </string>
+    <string name="object_info_m30_distance" translation_description="Distance to M30 shown in the info card. Translate units if appropriate for your locale.">27.100 ışık yılı</string>
+    <string name="object_info_m30_size" translation_description="Physical size of M30 shown in the info card. Translate units if appropriate for your locale.">~87 ışık yılı çapında</string>
+
+    <string name="object_info_m54_description" translation_description="Description of the globular cluster M54 shown in the info card. Translate this text.">
+    M54, Yay Kemerinde yer alan büyük ve zengin bir küresel yığındır ve tüm Messier kataloğundaki en uzak nesnelerden biridir. Yüzyıllar boyunca Samanyolu\'nun uzak bir halo küresel yığını olduğu düşünülüyordu, ancak şimdi Yay Cüce Eliptik Galaksisi\'nin yoğun çekirdeği olduğu bilinmektedir; bu galaksi, kendi galaksimiz tarafından emilmekte olan bir uydu galaksisidir.
+    </string>
+    <string name="object_info_m54_funfact" translation_description="Fun fact about M54 shown in the info card. Translate this text.">
+    1994\'te M54\'ün Sagittarius Cüce Galaksisine ait olduğunun keşfedilmesi, onu başka bir galaksiye ait olduğu bilinen ilk küresel yığın haline getirdi. Sagittarius Cüce Galaksisi kademeli olarak parçalanıp Samanyolu tarafından yutuldukça, M54 sonunda kendi galaksimizin gerçek bir halo küresel yığını haline gelecek — milyarlarca yıl içinde gelen bir galaksiler arası göçmen.
+    </string>
+    <string name="object_info_m54_distance" translation_description="Distance to M54 shown in the info card. Translate units if appropriate for your locale.">87.000 ışık yılı</string>
+    <string name="object_info_m54_size" translation_description="Physical size of M54 shown in the info card. Translate units if appropriate for your locale.">~230 ışık yılı çapında</string>
+
+    <string name="object_info_m69_description" translation_description="Description of the globular cluster M69 shown in the info card. Translate this text.">
+    M69, Yay yıldız kümesi olup Sagittarius takımyıldızında galaktik merkeze yakın konumlanmıştır. 7,7 büyüklüğü ile karanlık gökyüzünden dürbün nesnesidir ve küçük bir teleskop ile kısmen çözülmüş yıldız topunun ve parlak, granüler merkezinin ödüllendirilmiş görüntüsünü sunar.
+    </string>
+    <string name="object_info_m69_funfact" translation_description="Fun fact about M69 shown in the info card. Translate this text.">
+    M69, galaktik merkezin olağandışı derecede yakınında yörünge çizer — Samanyolu\'nun çekirdeğinden sadece yaklaşık 6.200 ışık yılı uzakta — ve sonuç olarak bir küresel yığın için olağandışı derecede yüksek bir ağır element konsantrasyonuna sahiptir. Galaktik merkezin daha yakınında bulunan küresel yığınlar, çevreleyen kalınlık içinde birden fazla nesil yıldız oluşumundan kimyasal olarak zenginleştirilme eğilimindedir.
+    </string>
+    <string name="object_info_m69_distance" translation_description="Distance to M69 shown in the info card. Translate units if appropriate for your locale.">29.700 ışık yılı</string>
+    <string name="object_info_m69_size" translation_description="Physical size of M69 shown in the info card. Translate units if appropriate for your locale.">~61 ışık yılı çapında</string>
+
+    <string name="object_info_m9_description" translation_description="Description of the globular cluster M9 shown in the info card. Translate this text.">
+    M9, Ophiuchus takımyıldızında yer alan kompakt bir küresel yığındır — Messier küresel yığınlarından en çok yıldızlararası toz soğurmasından etkilenen biridir. Galaktik çemberin yönünde yer alır; burada kalın toz onu önemli ölçüde karartır. Bu gölgeleme olmaksızın M9, neredeyse bir büyüklük kadar daha parlak görünür ve çıplak gözle görülebilir olurdu.
+    </string>
+    <string name="object_info_m9_funfact" translation_description="Fun fact about M9 shown in the info card. Translate this text.">
+    M9, neredeyse diğer tüm Messier küresel yığınlarından daha fazla yıldızlararası toz soğurmasına maruz kalır — açık bir görüş çizgisine kıyasla yaklaşık 1,3 büyüklük kadar kararma. İki daha küçük küresel yığın (NGC 6342 ve NGC 6356) M9\'in yaklaşık 1° içinde yer alır ve bunu gökyüzünün küçük bir bölgesinde üç küresel yığının dikkat çekici bir gruplandırmasının merkezi haline getirir.
+    </string>
+    <string name="object_info_m9_distance" translation_description="Distance to M9 shown in the info card. Translate units if appropriate for your locale.">25.800 ışık yılı</string>
+    <string name="object_info_m9_size" translation_description="Physical size of M9 shown in the info card. Translate units if appropriate for your locale.">~70 ışık yılı çapında</string>
+
+    <string name="object_info_m26_description" translation_description="Description of the open star cluster M26 shown in the info card. Translate this text.">
+    M26, Kalkan takımyıldızında orta derecede soluk bir açık yıldız kümesidir ve dürbünle görülebilir, küçük teleskoplarda ise iyi çözülür. Zengin Kalkan yıldız bulutu içinde kompakt bir alan üzerinde yaklaşık 90 yıldız dağılmıştır, ancak küme bu kadar yoğun bir arka plan karşısında konumlandığından, üyelerini çevre yıldız alanından ayırt etmek dikkat gerektirir.
+    </string>
+    <string name="object_info_m26_funfact" translation_description="Fun fact about M26 shown in the info card. Translate this text.">
+    M26, M11 (Yaban Ördekleri Kümesi) ile aynı zengin gökyüzü şeridinde yer alır — gökyüzündeki en güzel açık kümelerden biridir. İkisi sadece yaklaşık 3,5° aralıkta ve aynı dürbün alanında görülebilir, bu da Scutum\'u küçük ve sık sık göz ardı edilen bir takımyıldız olmasına rağmen küme gözlemcileri için olağanüstü bir hedef haline getirir.
+    </string>
+    <string name="object_info_m26_distance" translation_description="Distance to M26 shown in the info card. Translate units if appropriate for your locale.">5.000 ışık yılı</string>
+    <string name="object_info_m26_size" translation_description="Physical size of M26 shown in the info card. Translate units if appropriate for your locale.">~22 ışık yılı çapında</string>
+
+    <string name="object_info_m79_description" translation_description="Description of the globular cluster M79 shown in the info card. Translate this text.">
+    M79, Lepus takımyıldızında yer alan kompakt bir küresel yığındır — kış gökyüzünde en iyi konumlandırılmış çok az sayıdaki Messier küresel yığınlarından biridir; çoğu küresel yığın ufkun altında veya henüz yükselmiş durumdadır. Büyüklüğü 8,0 olan M79, kompakt çekirdeğini ve soluk halasını ortaya çıkarmak için bir teleskopa ihtiyaç duyar ve kış yıldız alanlarının nispeten seyrek olması nedeniyle öne çıkar.
+    </string>
+    <string name="object_info_m79_funfact" translation_description="Fun fact about M79 shown in the info card. Translate this text.">
+    M79, bazı astronomlar tarafından Canis Major Cüce Galaksisi\'nden gelen bir misafir olduğu düşünülmektedir — şu anda Samanyolu tarafından emilmekte olan bozulmuş bir uydu galaksisi. Eğer öyleyse, M79 Samanyolu\'nun kendi küresel sisteminde oluşmamış, ancak düşen bir galaksiden yakalanmış ve şimdi yavaş yavaş galaksimizin halesine katılmaktadır.
+    </string>
+    <string name="object_info_m79_distance" translation_description="Distance to M79 shown in the info card. Translate units if appropriate for your locale.">41.000 ışık yılı</string>
+    <string name="object_info_m79_size" translation_description="Physical size of M79 shown in the info card. Translate units if appropriate for your locale.">~104 ışık yılı çapında</string>
+
+    <string name="object_info_m70_description" translation_description="Description of the globular cluster M70 shown in the info card. Translate this text.">
+    M70, Yay Yıldızı\'nda yer alan kompakt bir küresel yığındır ve hem görünüş hem de uzaklık açısından yakın ikizi M69\'a çok benzer. Büyüklüğü 8,1 olan bu nesne, kompakt bir çekirdeği ve dış haloda çözünürlüğün ipuçlarını gösteren güzel bir küçük teleskop nesnesidir. M69\'dan sadece 2° uzakta yer alır ve her ikisi de aynı dürbün alanında görülebilir.
+    </string>
+    <string name="object_info_m70_funfact" translation_description="Fun fact about M70 shown in the info card. Translate this text.">
+    M70, 1995 yılında Alan Hale ve Thomas Bopp\'un bağımsız olarak Hale-Bopp Kuyruklu Yıldızı\'nı keşfettikleri gökyüzündeki yaklaşık konum nedeniyle kısa süreli ün kazandı — 20. yüzyılın sonunun en parlak kuyruklu yıldızı. Her iki gözlemci de başlangıçta diğer hedefleri ararken M70\'in yanından geçti ve kuyruklu yıldızı yakında beklenmedik bir bulanık nesne olarak fark etti.
+    </string>
+    <string name="object_info_m70_distance" translation_description="Distance to M70 shown in the info card. Translate units if appropriate for your locale.">29.400 ışık yılı</string>
+    <string name="object_info_m70_size" translation_description="Physical size of M70 shown in the info card. Translate units if appropriate for your locale.">~67 ışık yılı çapında</string>
+
+    <string name="object_info_m107_description" translation_description="Description of the globular cluster M107 shown in the info card. Translate this text.">
+    M107, Messier küresel yığınlarının en az yoğun olanlarından biridir ve yıldızlar mütevazı bir çekirdek etrafında nispeten açık bir düzende dağılmıştır. Büyüklüğü 8,1 olan M107, karanlık gökyüzünden iki gözlü bir hedef olup, küçük teleskoplarda kısmen çözülür ve keskin bir merkezi yoğunlaşma yerine granüler bir doku gösterir.
+    </string>
+    <string name="object_info_m107_funfact" translation_description="Fun fact about M107 shown in the info card. Translate this text.">
+    M107, Messier kataloğuna resmi olarak eklenen son giriştir — Pierre Méchain\'in yazışmalarında görülür ancak orijinal 1781 baskısına dahil edilmemiştir. 1947\'de Kanadalı gökbilimci Helen Sawyer Hogg tarafından M107 olarak resmi olarak eklendi; Hogg, Méchain\'in gözlemlediği ancak Messier\'in hiçbir zaman resmi olarak kaydetmediği birkaç "eksik" nesneyi kodlamıştır.
+    </string>
+    <string name="object_info_m107_distance" translation_description="Distance to M107 shown in the info card. Translate units if appropriate for your locale.">20.900 ışık yılı</string>
+    <string name="object_info_m107_size" translation_description="Physical size of M107 shown in the info card. Translate units if appropriate for your locale.">~61 ışık yılı çapında</string>
+
+    <string name="object_info_m68_description" translation_description="Description of the globular cluster M68 shown in the info card. Translate this text.">
+    M68, Hydra takımyıldızında yer alan zengin bir küresel yığındır — güney yarımkürede yer alan ve geç kış ile ilkbahar gökyüzünde en iyi konumlandırılan az sayıdaki küresel yığından biridir. 8,2 büyüklüğünde, küçük bir teleskopla ılımlı derecede yoğunlaşmış bir çekirdek ve Hydra\'nın nispeten seyrek yıldız alanlarına karşı çözülmüş yıldızlardan oluşan geniş bir halo ile ödüllendirilir.
+    </string>
+    <string name="object_info_m68_funfact" translation_description="Fun fact about M68 shown in the info card. Translate this text.">
+    Nispeten yakın olmasına rağmen — amatör teleskoplarda bireysel yıldızlar iyi çözünürlükte görülmesine rağmen — M68 genellikle çok güney deklinasyonu nedeniyle gözden kaçırılır. 50°K üstü enlemlerde ufku zar zor temizler; ancak güney yarımkürede yüksek yükselir ve harika bir küresel yığın göstergesidir.
+    </string>
+    <string name="object_info_m68_distance" translation_description="Distance to M68 shown in the info card. Translate units if appropriate for your locale.">33.600 ışık yılı</string>
+    <string name="object_info_m68_size" translation_description="Physical size of M68 shown in the info card. Translate units if appropriate for your locale.">~117 ışık yılı çapında</string>
+
+    <string name="object_info_m56_description" translation_description="Description of the globular cluster M56 shown in the info card. Translate this text.">
+    M56, Lyra\'da yer alan kompakt bir küresel yığındır ve Halka Nebulası (M57) ile Cygnus\'taki parlak çift yıldız Albireo arasında yer almaktadır. Büyüklüğü 8,3 olan M56, karanlık gökyüzünden dürbün hedefidir ve küçük bir teleskop, orta çaplı teleskoplarda bile kısmen çözülmüş olan granüler, orta derecede yoğunlaşmış bir küreyi ortaya koymaktadır.
+    </string>
+    <string name="object_info_m56_funfact" translation_description="Fun fact about M56 shown in the info card. Translate this text.">
+    M56, Messier tarafından Ocak 1779\'da, Halka Nebulası\'nı (M57) da bulduğu aynı gözlem sezonunda keşfedilmiştir. Gökyüzünün beşinci en parlak yıldızı olan Vega ile aynı dürbün alanında yer almasına ve ünlü Halka Nebulası\'na yakın olmasına rağmen, M56 sıklıkla gözlemciler tarafından göz ardı edilir ve daha ünlü komşularına yönelirler.
+    </string>
+    <string name="object_info_m56_distance" translation_description="Distance to M56 shown in the info card. Translate units if appropriate for your locale.">32.900 ışık yılı</string>
+    <string name="object_info_m56_size" translation_description="Physical size of M56 shown in the info card. Translate units if appropriate for your locale.">~68 ışık yılı çapında</string>
+
+    <string name="object_info_m71_description" translation_description="Description of the globular cluster M71 shown in the info card. Translate this text.">
+    M71, Sagitta takımyıldızında olağandışı bir küresel yığındır — astronomlar onun çok zengin yaşlı açık bir yığın mı yoksa çok gevşek genç bir küresel yığın mı olduğuna karar veremeyerek onlarca yıl boyunca tartışmışlardır. Modern analiz, bunun gerçek bir küresel yığın olduğunu, ancak nispeten az yıldıza ve tipik küresel yığınlardan daha az baskın bir çekirdeğe sahip istisnai düşük konsantrasyonlu bir yığın olduğunu doğrulamaktadır.
+    </string>
+    <string name="object_info_m71_funfact" translation_description="Fun fact about M71 shown in the info card. Translate this text.">
+    M71\'in gevşek yapısı, gerçek bir küme yerine zengin bir yıldız alanına benzediği için onu birçok erken katalogdan uzak tuttu. Sadece 12.000 ışık yılı uzaklıkta olması, onu en yakın Messier küresel yığınlarından biri yapar ve yıldızları karanlık gökyüzü altında küçük bir teleskopla kısmen çözülebilir — bu da ona kompakt, hafifçe yoğunlaştırılmış zengin bir yıldız alanının görünümünü verir.
+    </string>
+    <string name="object_info_m71_distance" translation_description="Distance to M71 shown in the info card. Translate units if appropriate for your locale.">12.000 ışık yılı</string>
+    <string name="object_info_m71_size" translation_description="Physical size of M71 shown in the info card. Translate units if appropriate for your locale.">~25 ışık yılı çapında</string>
+</resources>

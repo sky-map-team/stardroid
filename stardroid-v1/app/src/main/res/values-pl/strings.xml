@@ -139,6 +139,7 @@
     <string name="hubble_image" translation_description="Label or caption for a Hubble Space Telescope image in the gallery">Zdjęcie z teleskopu Hubble’a</string>
     <string name="search_overlay_title" translation_description="title for search overlay">Kieruj telefon zgodnie ze wskazaniem strzałki</string>
     <string name="search_target_looking_message" translation_description="displayed when a search target is being searched for">Wyszukiwanie: %s</string>
+    <string name="search_target_found_message" translation_description="displayed when a search target has been found and is centered on screen">Znaleziono: %s</string>
     <string name="sun_wont_set_message" translation_description="Message shown when the sun will not set during the next 24 hours (polar day / midnight sun)">W Twojej bieżącej lokalizacji Słońce nie zejdzie w ciągu następnych 24 godzin.</string>
 
     <!-- tm:omitted name="missing_label" reason="identical_to_source" -->
@@ -244,6 +245,8 @@ Twój telefon zgłasza dokładność kompasu jak pokazano powyżej. Aby ją popr
     Pokazuj karty informacyjne również po naciskaniu obiektów w trybie automatycznym (czujnik)
     </string>
     <string name="object_info_funfact_label" translation_description="Label before the fun fact in info card">Ciekawostka:</string>
+    <string name="object_info_also_known_as" translation_description="Subtitle showing alternate names for a celestial object, e.g. \'Also known as: NGC 253 · Silver Dollar Galaxy\'">Znane również jako: %1$s</string>
+    <string name="object_info_see_also_label" translation_description="Label for the see also section in info card">Zobacz również:</string>
     <string name="object_info_distance_label" translation_description="Label for distance field">Odległość:</string>
     <string name="object_info_size_label" translation_description="Label for size field">Rozmiar:</string>
     <string name="object_info_mass_label" translation_description="Label for mass field">Masa:</string>
