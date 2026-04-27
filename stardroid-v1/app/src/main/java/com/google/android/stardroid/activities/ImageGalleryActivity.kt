@@ -4,6 +4,7 @@ import android.app.SearchManager
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
+import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -26,7 +27,8 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class ImageGalleryActivity : FragmentActivity(),
     ActivityLightLevelChanger.NightModeable,
-    ObjectInfoDialogFragment.OnFindClickedListener {
+    ObjectInfoDialogFragment.OnFindClickedListener,
+    ObjectInfoDialogFragment.OnSeeAlsoClickedListener {
 
     @Inject lateinit var registry: ObjectInfoRegistry
     @Inject lateinit var activityLightLevelManager: ActivityLightLevelManager
@@ -44,10 +46,7 @@ class ImageGalleryActivity : FragmentActivity(),
         val recyclerView = findViewById<RecyclerView>(R.id.gallery_grid)
         recyclerView.layoutManager = GridLayoutManager(this, 3)
         galleryAdapter = GalleryAdapter(items) { info ->
-            if (!supportFragmentManager.isStateSaved) {
-                ObjectInfoDialogFragment.newInstance(info)
-                    .show(supportFragmentManager, "ObjectInfo")
-            }
+            showDialog(ObjectInfoDialogFragment.newInstance(info), "Object Info:${info.id}")
         }
         recyclerView.adapter = galleryAdapter
     }
@@ -70,6 +69,17 @@ class ImageGalleryActivity : FragmentActivity(),
     override fun setNightMode(nightMode: Boolean) {
         NightModeHelper.applyActionBarNightMode(actionBar, this, nightMode)
         galleryAdapter.notifyDataSetChanged()
+    }
+
+    override fun onSeeAlsoClicked(objectId: String) {
+        val info = registry.getInfo(objectId) ?: return
+        showDialog(ObjectInfoDialogFragment.newInstance(info), "Object Info:$objectId")
+    }
+
+    private fun showDialog(fragment: DialogFragment, tag: String) {
+        if (!supportFragmentManager.isStateSaved && supportFragmentManager.findFragmentByTag(tag) == null) {
+            fragment.show(supportFragmentManager, tag)
+        }
     }
 
     override fun onFindClicked(info: ObjectInfo) {
