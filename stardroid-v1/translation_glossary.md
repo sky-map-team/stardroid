@@ -98,7 +98,7 @@
 | Sagittarius | | Sagittaire | | |
 | Scorpius | | Scorpion | | |
 | Sculptor | | Sculpteur | | |
-| Shield | | Écu de Sobieski | | |
+| Shield | | Écu | | |
 | Serpens | | Serpent | | |
 | Sextans | | Sextant | | |
 | Taurus | | Taureau | | |
