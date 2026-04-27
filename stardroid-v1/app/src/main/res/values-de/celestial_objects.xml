@@ -37,7 +37,7 @@
     <string name="sagittarius" translation_description="Name of the Sagittarius constellation">Schütze</string>
     <string name="scorpius" translation_description="Name of the Scorpius constellation">Skorpion</string>
     <string name="taurus" translation_description="Name of the Taurus constellation">Stier</string>
-    <string name="tucana" translation_description="Name of the Tucana constellation">Tukana</string>
+    <string name="tucana" translation_description="Name of the Tucana constellation">Tukan</string>
     <string name="ursa_major" translation_description="Name of the Ursa Major constellation">Großer Wagen</string>
     <string name="ursa_minor" translation_description="Name of the Ursa Minor constellation">Kleiner Bär</string>
     <string name="vela" translation_description="Name of the Vela constellation">Segel</string>
@@ -345,6 +345,7 @@
     <string name="beehive_cluster" translation_description="Name of the Messier object Beehive Cluster">Bienenstockhaufen</string>
     <!-- tm:omitted name="praesepe" reason="identical_to_source" -->
     <string name="seven_sisters" translation_description="Name of the Messier object Seven Sisters">Sieben Schwestern</string>
+    <string name="brocchis_cluster" translation_description="Alternate name for the Coathanger asterism (Collinder 399)">Brocchis Sternhaufen</string>
 
     <!-- Manmade objects -->
     <string name="space_station" translation_description="Name of the Internation Space Station">Internationale Raumstation</string>
