@@ -112,3 +112,7 @@
 | Virgo | | Vierge | | |
 | Flying Fish | | Poisson volant | | |
 | Little Fox | | Petit Renard | | |
+| Polaris | | Étoile polaire | | |
+| Alphard | | Alphard | | |
+| Alpha Centauri | | Alpha Centauri | | |
+| Rigil Kent | | Rigil Kent | | |
