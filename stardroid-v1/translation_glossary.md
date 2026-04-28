@@ -112,6 +112,11 @@
 | Virgo                     | | Vierge                               | | |
 | Flying Fish               | | Poisson Volant                       | | |
 | Little Fox                | | Petit Renard                         | | |
+| Big Dipper                | | Grande Casserole                     | | |
+| Little Dipper             | | Petite Casserole                     | | |
+| Plough                    | | Grande Casserole                     | | |
+| North Star                | | Étoile Polaire                       | | |
+| Dog Star                  | | Étoile du Chien                      | | |
 | Polaris                   | | Étoile Polaire                       | | |
 | Alphekka                  | | Alphecca                             | | |
 | Alphard                   | | Alphard                              | | |
@@ -142,3 +147,5 @@
 | Beehive Cluster           | | Amas de la Ruche                     | | |
 | Seven Sisters             | | Sept Sœurs                           | | |
 | Black Hole                | | Trou Noir                            | | |
+| Galactic Center           | | Centre galactique                    | | |
+| Blaze Star                | | Étoile Flamboyante                   | | |

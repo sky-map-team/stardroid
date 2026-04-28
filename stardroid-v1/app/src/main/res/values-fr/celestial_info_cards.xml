@@ -157,7 +157,7 @@
     <string name="object_info_deneb_size" translation_description="Physical size of Deneb shown in the info card. Translate units if appropriate for your locale.">~200 rayons solaires</string>
     <string name="object_info_deneb_mass" translation_description="Mass of Deneb in scientific notation .  Translate units if appropriate for your locale.">~19 masses solaires</string>
     <string name="object_info_arcturus_description" translation_description="Short description of Arcturus">
-    Arcturus est l\'étoile la plus brillante de l\'hémisphère nord, une géante orange dans la constellation du Bouvier (Bootes).
+    Arcturus est l\'étoile la plus brillante de l\'hémisphère nord, une géante orange dans la constellation du Bouvier (Boötes).
     </string>
     <string name="object_info_arcturus_funfact" translation_description="Fun fact about Arcturus">
     Arcturus se déplace dans l\'espace à une vitesse formidable et passera au plus près de notre système solaire dans environ 4 000 ans !
@@ -175,7 +175,7 @@
     <string name="object_info_canopus_size" translation_description="Physical size of Canopus shown in the info card. Translate units if appropriate for your locale.">72 rayons solaires</string>
     <string name="object_info_canopus_mass" translation_description="Mass of Canopus in scientific notation .  Translate units if appropriate for your locale.">8,0 masses solaires</string>
     <string name="object_info_aldebaran_description" translation_description="Short description of Aldebaran">
-    Aldebaran est une étoile géante orange qui représente l\'œil du Taureau. Son nom signifie « le suiveur » en arabe.
+    Aldébaran est une étoile géante orange qui représente l\'œil du Taureau. Son nom signifie « le suiveur » en arabe.
     </string>
     <string name="object_info_aldebaran_funfact" translation_description="Fun fact about Aldebaran">
     Aldebaran semble faire partie de l\'amas des Hyades, mais elle est en réalité deux fois plus proche de nous - une illusion d\'optique cosmique !
@@ -184,7 +184,7 @@
     <string name="object_info_aldebaran_size" translation_description="Physical size of Aldebaran shown in the info card. Translate units if appropriate for your locale.">44 rayons solaires</string>
     <string name="object_info_aldebaran_mass" translation_description="Mass of Aldebaran in scientific notation .  Translate units if appropriate for your locale.">1,2 masses solaires</string>
     <string name="object_info_antares_description" translation_description="Short description of Antares">
-    Antares est une étoile supergéante rouge, le cœur du Scorpion. Son nom signifie « rivale de Mars » en raison de sa couleur rouge.
+    Antarès est une étoile supergéante rouge, le cœur du Scorpion. Son nom signifie « rivale de Mars » en raison de sa couleur rouge.
     </string>
     <string name="object_info_antares_funfact" translation_description="Fun fact about Antares">
     Antares est si grande que si elle était placée dans notre système solaire, sa surface s\'étendrait au-delà de l\'orbite de Mars !
@@ -265,7 +265,7 @@
     <string name="object_info_castor_size" translation_description="Physical size of Castor shown in the info card. Translate units if appropriate for your locale.">2,4 rayons solaires</string>
     <string name="object_info_castor_mass" translation_description="Mass of Castor in scientific notation .  Translate units if appropriate for your locale.">2,8 masses solaires</string>
     <string name="object_info_pollux_description" translation_description="Description of Pollux shown in the info card. Translate this text.">
-    Pollux est la plus brillante des étoiles jumelles des Gémeaux. Contrairement a Castor, c\'est une étoile géante orange unique.
+    Pollux est la plus brillante des étoiles jumelles des Gémeaux. Contrairement à Castor, c\'est une étoile géante orange unique.
     </string>
     <string name="object_info_pollux_funfact" translation_description="Fun fact about Pollux shown in the info card. Translate this text.">
     Pollux possède une exoplanète confirmée ! Pollux b est une géante gazeuse au moins deux fois plus massive que Jupiter.
@@ -277,7 +277,7 @@
     Fomalhaut est l\'étoile la plus brillante du Poisson austral et l\'une des étoiles les plus brillantes du ciel d\'automne.
     </string>
     <string name="object_info_fomalhaut_funfact" translation_description="Fun fact about Fomalhaut shown in the info card. Translate this text.">
-    Fomalhaut possède un spectaculaire disque de débris qui fut l\'un des premiers a être directement photographié autour d\'une autre étoile !
+    Fomalhaut possède un spectaculaire disque de débris qui fut l\'un des premiers à être directement photographié autour d\'une autre étoile !
     </string>
     <string name="object_info_fomalhaut_distance" translation_description="Distance to Fomalhaut shown in the info card. Translate units if appropriate for your locale.">25 années-lumière</string>
     <string name="object_info_fomalhaut_size" translation_description="Physical size of Fomalhaut shown in the info card. Translate units if appropriate for your locale.">1,8 rayons solaires</string>
@@ -340,7 +340,7 @@
     Alpha Centauri est le système stellaire le plus proche du Soleil, composé de trois étoiles dont Proxima Centauri.
     </string>
     <string name="object_info_alpha_centauri_funfact" translation_description="Fun fact about Alpha Centauri shown in the info card. Translate this text.">
-    Proxima Centauri, membre de ce système, possède une planète potentiellement habitable ! Proxima b n\'est qu\'a 4,2 années-lumière.
+    Proxima Centauri, membre de ce système, possède une planète potentiellement habitable ! Proxima b n\'est qu\'à 4,2 années-lumière.
     </string>
     <string name="object_info_alpha_centauri_distance" translation_description="Distance to Alpha Centauri shown in the info card. Translate units if appropriate for your locale.">4,37 années-lumière</string>
     <string name="object_info_alpha_centauri_size" translation_description="Physical size of Alpha Centauri shown in the info card. Translate units if appropriate for your locale.">1,2 rayons solaires</string>
@@ -382,10 +382,10 @@
     <string name="object_info_rasalhague_size" translation_description="Physical size of Rasalhague shown in the info card. Translate units if appropriate for your locale.">2,5 rayons solaires</string>
     <string name="object_info_rasalhague_mass" translation_description="Mass of Rasalhague in scientific notation .  Translate units if appropriate for your locale.">2,4 masses solaires</string>
     <string name="object_info_denebola_description" translation_description="Description of Denebola shown in the info card. Translate this text.">
-    Denebola marque la queue du Lion. Son nom signifie littéralement « queue du lion » en arabe.
+    Dénébola marque la queue du Lion. Son nom signifie littéralement « queue du lion » en arabe.
     </string>
     <string name="object_info_denebola_funfact" translation_description="Fun fact about Denebola shown in the info card. Translate this text.">
-    Denebola possède un disque de débris poussiéreux qui pourrait indiquer que des planètes se forment ou que des astéroïdes entrent en collision autour d\'elle !
+    Dénébola possède un disque de débris poussiéreux qui pourrait indiquer que des planètes se forment ou que des astéroïdes entrent en collision autour d\'elle !
     </string>
     <string name="object_info_denebola_distance" translation_description="Distance to Denebola shown in the info card. Translate units if appropriate for your locale.">36 années-lumière</string>
     <string name="object_info_denebola_size" translation_description="Physical size of Denebola shown in the info card. Translate units if appropriate for your locale.">1,7 rayons solaires</string>
@@ -436,7 +436,7 @@
     <string name="object_info_nunki_size" translation_description="Physical size of Nunki shown in the info card. Translate units if appropriate for your locale.">4,5 rayons solaires</string>
     <string name="object_info_nunki_mass" translation_description="Mass of Nunki in scientific notation .  Translate units if appropriate for your locale.">7,8 masses solaires</string>
     <string name="object_info_diphda_description" translation_description="Description of Diphda shown in the info card. Translate this text.">
-    Diphda (Beta Ceti) est l\'étoile la plus brillante de la Baleine (Cetus) et une étoile prominente de l\'automne.
+    Diphda (Beta Ceti) est l\'étoile la plus brillante de la Baleine (Cetus) et une étoile proéminente de l\'automne.
     </string>
     <string name="object_info_diphda_funfact" translation_description="Fun fact about Diphda shown in the info card. Translate this text.">
     Diphda apparaît isolée dans une région du ciel plutôt déserte, ce qui la rend utile pour les navigateurs malgré sa luminosité modérée !
@@ -485,7 +485,7 @@
     <string name="object_info_m42_size" translation_description="Physical size of M42 shown in the info card. Translate units if appropriate for your locale.">24 années-lumière de diamètre</string>
     <!-- M45 - Pleiades -->
     <string name="object_info_m45_description" translation_description="Description of M45 shown in the info card. Translate this text.">
-    Les Pléiades sont un amas ouvert dans le Taureau, également connu sous le nom des Sept Soeurs, visible à l\'œil nu depuis l\'Antiquité.
+    Les Pléiades sont un amas ouvert dans le Taureau, également connu sous le nom des Sept Sœurs, visible à l\'œil nu depuis l\'Antiquité.
     </string>
     <string name="object_info_m45_funfact" translation_description="Fun fact about M45 shown in the info card. Translate this text.">
     Les Pléiades comptent parmi les amas stellaires les plus proches de la Terre et ont été reconnues par pratiquement toutes les civilisations anciennes !
@@ -530,10 +530,10 @@
     <string name="object_info_m82_size" translation_description="Physical size of M82 shown in the info card. Translate units if appropriate for your locale.">37 000 années-lumière de diamètre</string>
     <!-- M101 - Pinwheel Galaxy -->
     <string name="object_info_m101_description" translation_description="Description of M101 shown in the info card. Translate this text.">
-    La galaxie du Moulinet est une galaxie spirale vue de face dans la Grande Ourse, l\'une des plus grandes galaxies spirales connues.
+    La Galaxie Pinwheel est une galaxie spirale vue de face dans la Grande Ourse, l\'une des plus grandes galaxies spirales connues.
     </string>
     <string name="object_info_m101_funfact" translation_description="Fun fact about M101 shown in the info card. Translate this text.">
-    La galaxie du Moulinet contient plus de mille milliards d\'étoiles et possède des bras spiraux asymétriques dus à des interactions galactiques passées !
+    La Galaxie Pinwheel contient plus d\'un billion d\'étoiles et possède des bras spiraux asymétriques en raison d\'interactions galactiques passées!
     </string>
     <string name="object_info_m101_distance" translation_description="Distance to M101 shown in the info card. Translate units if appropriate for your locale.">21 millions d\'années-lumière</string>
     <string name="object_info_m101_size" translation_description="Physical size of M101 shown in the info card. Translate units if appropriate for your locale.">170 000 années-lumière de diamètre</string>
@@ -717,7 +717,7 @@
     <string name="object_info_m2_size" translation_description="Physical size of M2 shown in the info card. Translate units if appropriate for your locale.">175 années-lumière de diamètre</string>
     <!-- M10 - Globular Cluster -->
     <string name="object_info_m10_description" translation_description="Description of M10 shown in the info card. Translate this text.">
-    M10 est un amas globulaire brillant dans Ophiuchus, l\'un des amas globulaires les plus proches de notre système solaire.
+    M10 est un amas globulaire brillant dans la Serpentaire, l\'un des amas globulaires les plus proches de notre système solaire.
     </string>
     <string name="object_info_m10_funfact" translation_description="Fun fact about M10 shown in the info card. Translate this text.">
     M10 s\'approche de nous à plus de 70 km/s et possède une concentration d\'étoiles anormalement faible en son cœur !
@@ -726,7 +726,7 @@
     <string name="object_info_m10_size" translation_description="Physical size of M10 shown in the info card. Translate units if appropriate for your locale.">83 années-lumière de diamètre</string>
     <!-- M12 - Globular Cluster -->
     <string name="object_info_m12_description" translation_description="Description of M12 shown in the info card. Translate this text.">
-    M12 est un amas globulaire dans Ophiuchus, notable pour sa concentration centrale relativement lâche.
+    M12 est un amas globulaire dans le Serpentaire, notable pour sa concentration centrale relativement faible.
     </string>
     <string name="object_info_m12_funfact" translation_description="Fun fact about M12 shown in the info card. Translate this text.">
     M12 a perdu beaucoup de ses étoiles de faible masse en raison de l\'attraction gravitationnelle de la Voie lactée au fil des milliards d\'années !
@@ -735,7 +735,7 @@
     <string name="object_info_m12_size" translation_description="Physical size of M12 shown in the info card. Translate units if appropriate for your locale.">75 années-lumière de diamètre</string>
     <!-- M14 - Globular Cluster -->
     <string name="object_info_m14_description" translation_description="Description of M14 shown in the info card. Translate this text.">
-    M14 est un amas globulaire dans Ophiuchus contenant plusieurs centaines de milliers d\'étoiles.
+    M14 est un amas globulaire dans le Serpentaire contenant plusieurs centaines de milliers d\'étoiles.
     </string>
     <string name="object_info_m14_funfact" translation_description="Fun fact about M14 shown in the info card. Translate this text.">
     En 1938, une nova est apparue dans M14 mais n\'a été découverte qu\'en 1964 lors de l\'examen d\'anciennes plaques photographiques !
@@ -864,7 +864,7 @@
     M49 est une galaxie elliptique géante dans la Vierge, le membre le plus brillant de l\'amas de la Vierge.
     </string>
     <string name="object_info_m49_funfact" translation_description="Fun fact about M49 shown in the info card. Translate this text.">
-    M49 fut le premier membre de l\'amas de la Vierge a être découvert et contient environ 6 000 amas globulaires !
+    M49 fut le premier membre de l\'amas de la Vierge à être découvert et contient environ 6 000 amas globulaires !
     </string>
     <string name="object_info_m49_distance" translation_description="Distance to M49 shown in the info card. Translate units if appropriate for your locale.">55 millions d\'années-lumière</string>
     <string name="object_info_m49_size" translation_description="Physical size of M49 shown in the info card. Translate units if appropriate for your locale.">160 000 années-lumière de diamètre</string>
@@ -934,7 +934,7 @@
     <string name="object_info_sgr_a_star_size" translation_description="Physical size of Sgr A* shown in the info card. Translate units if appropriate for your locale.">Diamètre de l\'horizon des événements : ~24 millions de km</string>
     <!-- Cygnus X-1 -->
     <string name="object_info_cygnus_x_1_description" translation_description="Description of Cygnus X-1 shown in the info card. Translate this text.">
-    Cygnus X-1 est un trou noir de masse stellaire situé à environ 7 200 années-lumière dans le Cygne, et l\'une des sources de rayons X les plus intenses du ciel. Il forme un système binaire avec l\'étoile supergéante bleue HDE 226868, s\'orbitan mutuellement tous les 5,6 jours. Le trou noir arrache du gaz à son compagnon, formant un disque d\'accrétion extrêmement chaud qui brille en rayons X.
+    Cygnus X-1 est un trou noir de masse stellaire situé à environ 7 200 années-lumière dans le Cygne, et l\'une des sources de rayons X les plus intenses du ciel. Il forme un système binaire avec l\'étoile supergéante bleue HDE 226868, orbitant l\'une autour de l\'autre tous les 5,6 jours. Le trou noir arrache du gaz à son compagnon, formant un disque d\'accrétion extrêmement chaud qui brille en rayons X.
     </string>
     <string name="object_info_cygnus_x_1_funfact" translation_description="Fun fact about Cygnus X-1 shown in the info card. Translate this text.">
     Cygnus X-1 a été le premier objet largement accepté comme un trou noir. En 1975, Stephen Hawking a fait un célèbre pari scientifique avec Kip Thorne selon lequel ce n\'était PAS un trou noir, un pari qu\'il a concédé plus tard.
@@ -1119,7 +1119,7 @@
     <string name="object_info_cancer_size" translation_description="Physical size of Cancer shown in the info card. Translate units if appropriate for your locale.">506 degrés carrés</string>
     <!-- Capricornus -->
     <string name="object_info_capricornus_description" translation_description="Description of Capricornus shown in the info card. Translate this text.">
-    Le Capricorne est une ancienne constellation zodiacale représentant une creature mythique mi-chèvre, mi-poisson.
+    Le Capricorne est une ancienne constellation zodiacale représentant une créature mythique mi-chèvre, mi-poisson.
     </string>
     <string name="object_info_capricornus_funfact" translation_description="Fun fact about Capricornus shown in the info card. Translate this text.">
     Le Capricorne est l\'une des plus anciennes constellations reconnues, figurant dans les catalogues d\'étoiles babyloniens il y a plus de 3 000 ans !
@@ -1194,7 +1194,7 @@
     Le Centaure est une grande constellation australe contenant Alpha Centauri, le système stellaire le plus proche de notre Soleil.
     </string>
     <string name="object_info_centaurus_funfact" translation_description="Fun fact about Centaurus shown in the info card. Translate this text.">
-    Proxima Centauri dans le Centaure n\'est qu\'a 4,24 années-lumière, ce qui en fait l\'étoile la plus proche de notre système solaire !
+    Proxima Centauri dans le Centaure n\'est qu\'à 4,24 années-lumière, ce qui en fait l\'étoile la plus proche de notre système solaire !
     </string>
     <string name="object_info_centaurus_size" translation_description="Physical size of Centaurus shown in the info card. Translate units if appropriate for your locale.">1 060 degrés carrés</string>
     <!-- Crux -->
@@ -1250,7 +1250,7 @@
     Ophiuchus le Serpentaire se situe le long de l\'écliptique mais n\'est pas un signe du zodiaque, divisé par le serpent qu\'il tient.
     </string>
     <string name="object_info_ophiuchus_funfact" translation_description="Fun fact about Ophiuchus shown in the info card. Translate this text.">
-    Le Soleil passe plus de temps dans Ophiuchus que dans le Scorpion, pourtant Ophiuchus n\'est pas considéré comme un signe du zodiaque !
+    Le Soleil passe plus de temps dans le Serpentaire que dans le Scorpion, pourtant le Serpentaire n\'est pas considéré comme un signe du zodiaque !
     </string>
     <string name="object_info_ophiuchus_size" translation_description="Physical size of Ophiuchus shown in the info card. Translate units if appropriate for your locale.">948 degrés carrés</string>
     <!-- Bootes -->
@@ -1258,7 +1258,7 @@
     Le Bouvier est une constellation contenant Arcturus, la quatrième étoile la plus brillante du ciel nocturne.
     </string>
     <string name="object_info_bootes_funfact" translation_description="Fun fact about Bootes shown in the info card. Translate this text.">
-    Suivez l\'arc de la queue de la Grande Casserole pour « arquer vers Arcturus » - l\'un des conseils de navigation les plus célèbres !
+    Suivez l\'arc du manche de la Grande Casserole pour « arquer vers Arcturus » - l\'un des conseils de navigation les plus célèbres !
     </string>
     <string name="object_info_bootes_size" translation_description="Physical size of Bootes shown in the info card. Translate units if appropriate for your locale.">907 degrés carrés</string>
     <!-- Corona Borealis -->
@@ -1274,7 +1274,7 @@
     Corvus le Corbeau est une petite constellation quadrilatérale au sud de la Vierge, représentant l\'oiseau sacré d\'Apollon.
     </string>
     <string name="object_info_corvus_funfact" translation_description="Fun fact about Corvus shown in the info card. Translate this text.">
-    Les quatre étoiles principales du Corbeau forment une forme de voile distinctive qui\'s facile à repérer dans le ciel printanier !
+    Les quatre étoiles principales du Corbeau forment une forme de voile distinctive qu\'il est facile à repérer dans le ciel printanier !
     </string>
     <string name="object_info_corvus_size" translation_description="Physical size of Corvus shown in the info card. Translate units if appropriate for your locale.">184 degrés carrés</string>
     <!-- Auriga -->
@@ -1295,7 +1295,7 @@
     <string name="object_info_eridanus_size" translation_description="Physical size of Eridanus shown in the info card. Translate units if appropriate for your locale.">1 138 degrés carrés</string>
     <!-- Lepus -->
     <string name="object_info_lepus_description" translation_description="Description of Lepus shown in the info card. Translate this text.">
-    Le Lievre se blottit sous les pieds d\'Orion, une petite mais distinctive constellation avec une riche mythologie.
+    Le Lièvre se blottit sous les pieds d\'Orion, une petite mais distinctive constellation avec une riche mythologie.
     </string>
     <string name="object_info_lepus_funfact" translation_description="Fun fact about Lepus shown in the info card. Translate this text.">
     Dans la mythologie, Orion aimait chasser les lièvres, c\'est pourquoi on en a placé un sous ses pieds dans le ciel !
@@ -1481,7 +1481,7 @@
 
     <!-- Alnath -->
     <string name="object_info_alnath_description" translation_description="Short description of Alnath">
-    Alnath est l\'étoile la plus brillante de Taurus après Aldébaran, marquant la pointe de la corne nord du taureau. Elle se situe exactement à la frontière entre le Taureau et l\'Aurige.
+    Alnath est l\'étoile la plus brillante du Taureau après Aldébaran, marquant la pointe de la corne nord du Taureau. Elle se situe exactement à la frontière entre le Taureau et l\'Aurige.
     </string>
     <string name="object_info_alnath_funfact" translation_description="Fun fact about Alnath">
     Alnath a autrefois été partagée entre deux constellations ! Elle a été désignée à la fois Bêta du Taureau et Gamma de l\'Aurige avant que l\'UAI l\'assigne officiellement au Taureau en 1930.
@@ -1506,7 +1506,7 @@
     Ankaa est l\'étoile la plus brillante de la constellation du Phénix, mieux visible depuis l\'hémisphère sud. Son nom provient du mot arabe signifiant « le phénix ».
     </string>
     <string name="object_info_ankaa_funfact" translation_description="Fun fact about Ankaa">
-    Ankaa est une étoile binaire spectroscopique, ce qui signifie que sa compagne est si proche que les deux ne peuvent être détectées que par des décalages dans leur spectre lumineux — elles s\'orbite l\'une autour de l\'autre tous les 10,2 ans!
+    Ankaa est une étoile binaire spectroscopique, ce qui signifie que sa compagne est si proche que les deux ne peuvent être détectées que par des décalages dans leur spectre lumineux — elles orbitent l\'une autour de l\'autre tous les 10,2 ans!
     </string>
     <string name="object_info_ankaa_distance" translation_description="Distance to Ankaa shown in the info card. Translate units if appropriate for your locale.">85 années-lumière</string>
     <string name="object_info_ankaa_size" translation_description="Physical size of Ankaa shown in the info card. Translate units if appropriate for your locale.">15 rayons solaires</string>
@@ -1569,7 +1569,7 @@
 
     <!-- Kochab -->
     <string name="object_info_kochab_description" translation_description="Short description of Kochab">
-    Kochab est l\'étoile la plus brillante de la Petite Ourse (la Petite Ourse). Avec Pherkad, elle forme les « Gardiens du Pôle ».
+    Kochab est l\'étoile la plus brillante de la Petite Ourse (Ursa Minor). Avec Pherkad, elle forme les « Gardiens du Pôle ».
     </string>
     <string name="object_info_kochab_funfact" translation_description="Fun fact about Kochab">
     Vers 1500 av. J.-C., Kochab était l\'étoile brillante la plus proche du pôle céleste nord, ce qui en faisait l\'"Étoile polaire" pour les anciens Égyptiens et les marins phéniciens!
@@ -1699,7 +1699,7 @@
 
     <!-- Caelum -->
     <string name="object_info_caelum_description" translation_description="Description of Caelum shown in the info card. Translate this text.">
-    Caelum (le Ciseau) est l\'une des constellations les plus faibles du ciel, créée par Lacaille au 18e siècle pour représenter un outil de gravure.
+    Caelum (le Burin) est l\'une des constellations les plus faibles du ciel, créée par Lacaille au 18e siècle pour représenter un outil de gravure.
     </string>
     <string name="object_info_caelum_funfact" translation_description="Fun fact about Caelum shown in the info card. Translate this text.">
     Caelum est la huitième plus petite constellation et ne contient aucune étoile plus brillante que la magnitude 4,5 — vous avez besoin de cieux très sombres et d\'une vue perçante pour la repérer !
@@ -2133,10 +2133,10 @@
     <string name="object_info_dione_size" translation_description="Physical size of Dione shown in the info card. Translate units if appropriate for your locale.">1 122 km de diamètre</string>
 
     <string name="object_info_iapetus_description" translation_description="Description of Iapetus shown in the info card. Translate this text.">
-    Iapetus est l\'une des lunes les plus distinctives de Saturne : son hémisphère avant est recouvert d\'une matière noire de jais aussi sombre que le charbon, tandis que son hémisphère arrière est de la glace blanche brillante. Cette apparence extrêmement bicolore a intrigué Giovanni Cassini lorsqu\'il a découvert la lune en 1671, et le contraste est si frappant qu\'il est visible dans les petits télescopes.
+    Japet est l\'une des lunes les plus distinctives de Saturne : son hémisphère avant est recouvert d\'une matière noire de jais aussi sombre que le charbon, tandis que son hémisphère arrière est de la glace blanche brillante. Cette apparence extrêmement bicolore a intrigué Giovanni Cassini lorsqu\'il a découvert la lune en 1671, et le contraste est si frappant qu\'il est visible dans les petits télescopes.
     </string>
     <string name="object_info_iapetus_funfact" translation_description="Fun fact about Iapetus shown in the info card. Translate this text.">
-    Iapetus possède également une imposante crête équatoriale s\'élevant à 20 km de haut — plus haute que n\'importe quelle montagne sur Terre — s\'étendant sur des milliers de kilomètres autour de son équateur. Son origine est inconnue : il pourrait s\'agir du vestige d\'un anneau effondré, ou d\'un plissement tectonique ancien, formé lorsque la lune tournait beaucoup plus rapidement il y a longtemps.
+    Japet possède également une imposante crête équatoriale s\'élevant à 20 km de haut — plus haute que n\'importe quelle montagne sur Terre — s\'étendant sur des milliers de kilomètres autour de son équateur. Son origine est inconnue : il pourrait s\'agir du vestige d\'un anneau effondré, ou d\'un plissement tectonique ancien, formé lorsque la lune tournait beaucoup plus rapidement il y a longtemps.
     </string>
     <string name="object_info_iapetus_distance" translation_description="Distance to Iapetus shown in the info card. Translate units if appropriate for your locale.">3 560 820 km de Saturne</string>
     <string name="object_info_iapetus_size" translation_description="Physical size of Iapetus shown in the info card. Translate units if appropriate for your locale.">1 469 km de diamètre</string>
@@ -2562,7 +2562,7 @@
     <string name="object_info_m29_size" translation_description="Physical size of M29 shown in the info card. Translate units if appropriate for your locale.">~8 années-lumière de diamètre</string>
 
     <string name="object_info_m62_description" translation_description="Description of the globular cluster M62 shown in the info card. Translate this text.">
-    M62 est un riche amas globulaire dans l\'Ophiuchus — l\'un des amas globulaires les plus proches du centre galactique et notablement asymétrique, avec des étoiles plus densément concentrées sur le côté sud. Avec une magnitude de 6,6, c\'est un bel objet pour les jumelles, bien que sa faible déclinaison en fasse une cible de courte saison pour les observateurs de l\'hémisphère nord.
+    M62 est un riche amas globulaire dans le Serpentaire — l\'un des amas globulaires les plus proches du centre galactique et notablement asymétrique, avec des étoiles plus densément concentrées sur le côté sud. Avec une magnitude de 6,6, c\'est un bel objet pour les jumelles, bien que sa faible déclinaison en fasse une cible de courte saison pour les observateurs de l\'hémisphère nord.
     </string>
     <string name="object_info_m62_funfact" translation_description="Fun fact about M62 shown in the info card. Translate this text.">
     Le noyau excentré de M62 est une conséquence directe de sa proximité avec le centre galactique — les puissantes forces de marée du renflement central déforment l\'amas et entraînent les étoiles vers le plan galactique. C\'est aussi l\'un des amas globulaires les plus dynamiquement évolués connus, montrant des signes d\'effondrement du noyau et une densité inhabituellement élevée de pulsars millisecondes.
@@ -2607,7 +2607,7 @@
     <string name="object_info_m55_size" translation_description="Physical size of M55 shown in the info card. Translate units if appropriate for your locale.">~100 années-lumière de diamètre</string>
 
     <string name="object_info_m19_description" translation_description="Description of the globular cluster M19 shown in the info card. Translate this text.">
-    M19 est un amas globulaire compact et riche en Ophiuchus — l\'un des amas globulaires les plus proches du centre galactique. Sa caractéristique la plus distinctive est sa forme notablement aplatie : M19 est l\'amas globulaire le plus aplati connu, avec un contour elliptique visible même dans un petit télescope.
+    M19 est un amas globulaire compact et riche dans le Serpentaire — l\'un des amas globulaires les plus proches du centre galactique. Sa caractéristique la plus distinctive est sa forme notablement aplatie : M19 est l\'amas globulaire le plus aplati connu, avec un contour elliptique visible même dans un petit télescope.
     </string>
     <string name="object_info_m19_funfact" translation_description="Fun fact about M19 shown in the info card. Translate this text.">
     L\'aplatissement prononcé de M19 — son axe le plus long est environ 10 % plus long que le plus court — est unique parmi les amas globulaires connus et serait le résultat de l\'étirement des marées causé par le champ gravitationnel de la Voie lactée. Plus un amas globulaire orbite près du centre galactique, plus il est déformé ; M19 se trouve à seulement environ 5 200 années-lumière du cœur galactique.
@@ -2661,7 +2661,7 @@
     <string name="object_info_m69_size" translation_description="Physical size of M69 shown in the info card. Translate units if appropriate for your locale.">~61 années-lumière de diamètre</string>
 
     <string name="object_info_m9_description" translation_description="Description of the globular cluster M9 shown in the info card. Translate this text.">
-    M9 est un amas globulaire compact dans l\'Ophiuchus — l\'un des amas globulaires de Messier les plus affectés par l\'absorption de la poussière interstellaire. Il se situe vers le renflement galactique, où une poussière épaisse le rend significativement plus faible. Sans cette obscuration, M9 apparaîtrait presque une magnitude plus brillant et serait visible à l\'œil nu.
+    M9 est un amas globulaire compact dans le Serpentaire — l\'un des amas globulaires de Messier les plus affectés par l\'absorption de la poussière interstellaire. Il se situe vers le renflement galactique, où une poussière épaisse le rend significativement plus faible. Sans cette obscuration, M9 apparaîtrait presque une magnitude plus brillant et serait visible à l\'œil nu.
     </string>
     <string name="object_info_m9_funfact" translation_description="Fun fact about M9 shown in the info card. Translate this text.">
     M9 subit une absorption de poussière interstellaire plus importante que presque tout autre amas globulaire de Messier — environ 1,3 magnitudes d\'assombrissement par rapport à une ligne de visée dégagée. Deux petits amas globulaires (NGC 6342 et NGC 6356) se situent à environ 1° de M9, ce qui en fait le centre d\'un remarquable groupement de trois amas globulaires dans une petite région du ciel.
