@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Gökyüzü Gradyan Ayarı</h2>
-<p>Artık Ayarlar\'dan gökyüzü gradyan arka planını etkinleştirebilir veya devre dışı bırakabilirsiniz.</p>
-<h2>İyileştirilmiş Resim Galerisi</h2>
-<p>Galeri, ızgara düzeni ve bilgi kartlarına daha iyi bağlantılarla yeniden tasarlanmıştır.</p>
-<h2>Manuel Modda Otomatik Ufuk Seviyelendirmesi</h2>
-<p>Otomatik ufuk seviyelendirmesi, manuel modda çift dokunuşla değiştirilir.</p>
-<h2>Derin Uzay Nesneleri</h2>
-<p>Kara delikler Cygnus X-1 ve Sagittarius A* artık Sky Map kataloğunda yer almaktadır.</p>]]></string>
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Sanal Nesneler</h2>
+<p>Jüpiter\'in Galilean uyduları (İo, Avrupa, Ganymede ve Callisto) ve Mars\'ın uyduları Phobos ve Deimos artık zengin bilgi kartları ve NASA görüntüleriyle aranabilir — yıldız haritasını karıştırmadan.</p>
+<h2>Genişletilmiş Katalog</h2>
+<p>Düzinelerce yeni derin gökyüzü nesnesi eklendi — Çift Küme, 47 Tucanae, Açık Kafatası Nebulası ve daha fazlası dahil olmak üzere — her biri açıklamalar, ilginç gerçekler ve görüntülerle.</p>
+<h2>Daha Akıllı Arama</h2>
+<p>Arama katmanı artık hedefin üzerine ortalandığını onaylar.</p>
+<h2>Hata Düzeltmeleri</h2>
+<ul><li>Galerideki ilgili bağlantılar artık doğru şekilde gezinir.</li><li>Galeri ve bilgi kartları Android 15+ kenar-kenar ekranlarda düzgün görüntülenir.</li></ul>]]></string>
     </resources>

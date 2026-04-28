@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Gosodiad Graddiant yr Awyr</h2>
-<p>Gallwch nawr alluogi neu analluogi cefndir graddiant yr awyr o\'r Gosodiadau.</p>
-<h2>Oriel Delweddau Wella</h2>
-<p>Mae\'r oriel wedi\'i hailddylunio gyda chynllun grid a dolenni gwell i gardiau gwybodaeth.</p>
-<h2>Lefelu Gorwel Awtomatig mewn Modd Llaw</h2>
-<p>Mae lefelu gorwel awtomatig nawr yn toglo gyda thap dwbl pan mewn modd llaw.</p>
-<h2>Gwrthrychau Awyr Ddofn</h2>
-<p>Mae\'r tyllau du Cygnus X-1 a Sagittarius A* nawr yn y catalog Sky Map.</p>]]></string>
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Gwrthrychau Rhithwir</h2>
+<p>Lleuadau Galilean Iau (Io, Europa, Ganymede a Callisto) a lleuadau Mawrth Phobos a Deimos bellach yn chwiliadwy gyda chardiaugwybodaeth cyfoethog ac iselweddau NASA — heb lenwi\'r map sêr.</p>
+<h2>Catalog Ehangu</h2>
+<p>Degau o wrthrychau awyr ddofn newydd wedi\'u hychwanegu — gan gynnwys y Double Cluster, 47 Tucanae, y Nebula Penglog Noeth a mwy — pob un gyda disgrifiadau, ffeithiau difyr ac iselweddau.</p>
+<h2>Chwilio Mwy Clyfar</h2>
+<p>Nawr mae\'r haen chwilio yn cadarnhau pan fyddwch wedi canoli ar eich targed.</p>
+<h2>Trwsio Gwallau</h2>
+<ul><li>Mae dolenni gweld-hefyd yn y oriel bellach yn llywio\'n gywir.</li><li>Mae\'r oriel a chardiaugwybodaeth yn dangos yn iawn ar sgriniau ymyl-i-ymyl Android 15+ .</li></ul>]]></string>
     </resources>

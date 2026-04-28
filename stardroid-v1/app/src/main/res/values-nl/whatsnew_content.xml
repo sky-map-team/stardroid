@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Sky Gradient-instelling</h2>
-<p>U kunt de achtergrond met luchtgradiënt nu in- of uitschakelen via Instellingen.</p>
-<h2>Verbeterde afbeeldingengalerie</h2>
-<p>De galerie is opnieuw ontworpen met een rasterindeling en betere koppelingen naar informatiekaarten.</p>
-<h2>Automatische horizonnivellering in handmatige modus</h2>
-<p>Automatische horizonnivellering wordt nu ingeschakeld met een dubbeltik in handmatige modus.</p>
-<h2>Deep Sky Objects</h2>
-<p>Zwarte gaten Cygnus X-1 en Sagittarius A* staan nu in de Sky Map-catalogus.</p>]]></string>
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Virtuele objecten</h2>
+<p>De Galileïsche manen van Jupiter (Io, Europa, Ganymedes en Callisto) en de manen van Mars Phobos en Deimos zijn nu doorzoekbaar met uitgebreide informatiekaarten en NASA-afbeeldingen — zonder de sterrenkaart rommelig te maken.</p>
+<h2>Uitgebreide catalogus</h2>
+<p>Tientallen nieuwe diepe-hemelsobjecten toegevoegd — waaronder de Dubbele Cluster, 47 Tucanae, de Exposed Cranium Nebula en meer — elk met beschrijvingen, leuke feiten en afbeeldingen.</p>
+<h2>Slimmere zoekopdracht</h2>
+<p>De zoekoverlay bevestigt nu wanneer je op je doel bent gericht.</p>
+<h2>Bugfixes</h2>
+<ul><li>Zie ook-koppelingen in de galerij navigeren nu correct.</li><li>Galerij en informatiekaarten worden correct weergegeven op Android 15+ edge-to-edge schermen.</li></ul>]]></string>
     </resources>

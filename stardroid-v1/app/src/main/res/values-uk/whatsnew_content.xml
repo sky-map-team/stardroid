@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Налаштування градієнта неба</h2>
-<p>Тепер ви можете увімкнути або вимкнути фоновий градієнт неба в Налаштуваннях.</p>
-<h2>Покращена галерея зображень</h2>
-<p>Галерея була переробена з сітковим макетом та кращими посиланнями на інформаційні карти.</p>
-<h2>Автоматичне вирівнювання горизонту в ручному режимі</h2>
-<p>Автоматичне вирівнювання горизонту тепер перемикається подвійним дотиком у ручному режимі.</p>
-<h2>Об\'єкти глибокого космосу</h2>
-<p>Чорні діри Лебідь X-1 та Стрілець A* тепер знаходяться в каталозі Sky Map.</p>]]></string>
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Віртуальні об\'єкти</h2>
+<p>Галілеєві супутники Юпітера (Іо, Європа, Ганімед і Каллісто) та супутники Марса Фобос і Деймос тепер можна шукати з багатими інформаційними картками та зображеннями NASA — без захаращення зоряної карти.</p>
+<h2>Розширений каталог</h2>
+<p>Додано десятки нових об\'єктів глибокого космосу — включаючи Подвійне скупчення, 47 Тукана, туманність Відкритий череп та інші — кожен з описами, цікавими фактами та зображеннями.</p>
+<h2>Розумніший пошук</h2>
+<p>Оверлей пошуку тепер підтверджує, коли ви центрували на своїй цілі.</p>
+<h2>Виправлення помилок</h2>
+<ul><li>Посилання "Див. також" в галереї тепер переходять правильно.</li><li>Галерея та інформаційні картки правильно відображаються на екранах Android 15+ edge-to-edge.</li></ul>]]></string>
     </resources>

@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Himmelgradient-innstilling</h2>
-<p>Du kan nå aktivere eller deaktivere himmelgradient-bakgrunnen fra Innstillinger.</p>
-<h2>Forbedret bildegalleri</h2>
-<p>Galleriet har blitt redesignet med et rutenettoppsett og bedre lenker til informasjonskort.</p>
-<h2>Automatisk horisontutjevning i manuell modus</h2>
-<p>Automatisk horisontutjevning aktiveres nå med et dobbelttrykk i manuell modus.</p>
-<h2>Dype himmelobjekter</h2>
-<p>Sorte hull Cygnus X-1 og Sagittarius A* er nå i Sky Map-katalogen.</p>]]></string>
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Virtuelle objekter</h2>
+<p>Jupiters galileiske måner (Io, Europa, Ganymedes og Callisto) og Mars\' måner Phobos og Deimos er nå søkbare med rike informasjonskort og NASA-bilder — uten å rote til stjernekartene.</p>
+<h2>Utvidet katalog</h2>
+<p>Dusinvis av nye dypromsobjekter lagt til — inkludert Double Cluster, 47 Tucanae, Exposed Cranium Nebula og mer — hver med beskrivelser, morsomme fakta og bilder.</p>
+<h2>Smartere søk</h2>
+<p>Søkoverlegget bekrefter nå når du har sentrert på målet ditt.</p>
+<h2>Feilrettinger</h2>
+<ul><li>Se-også-lenker i galleriet navigerer nå riktig.</li><li>Galleriet og informasjonskort vises riktig på Android 15+ edge-to-edge-skjermer.</li></ul>]]></string>
     </resources>

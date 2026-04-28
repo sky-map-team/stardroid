@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Configuração de Gradiente do Céu</h2>
-<p>Agora você pode ativar ou desativar o fundo com gradiente do céu nas Configurações.</p>
-<h2>Galeria de Imagens Melhorada</h2>
-<p>A galeria foi redesenhada com layout em grade e links melhores para cartões de informações.</p>
-<h2>Nivelamento automático do horizonte no modo manual</h2>
-<p>O nivelamento automático do horizonte agora é alternado com um toque duplo no modo manual.</p>
-<h2>Objetos do Céu Profundo</h2>
-<p>Os buracos negros Cygnus X-1 e Sagittarius A* agora estão no catálogo do Sky Map.</p>]]></string>
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Objetos Virtuais</h2>
+<p>As luas galileanas de Júpiter (Io, Europa, Ganimedes e Calisto) e as luas de Marte Fobos e Deimos agora são pesquisáveis com cartões de informações detalhadas e imagens da NASA — sem poluir o mapa estelar.</p>
+<h2>Catálogo Expandido</h2>
+<p>Dezenas de novos objetos de céu profundo adicionados — incluindo o Aglomerado Duplo, 47 Tucanae, a Nebulosa Crânio Exposto e mais — cada um com descrições, curiosidades e imagens.</p>
+<h2>Busca Mais Inteligente</h2>
+<p>A sobreposição de busca agora confirma quando você centralizou seu alvo.</p>
+<h2>Correções de Erros</h2>
+<ul><li>Os links "Ver também" na galeria agora navegam corretamente.</li><li>A galeria e os cartões de informações são exibidos corretamente em telas edge-to-edge do Android 15+.</li></ul>]]></string>
     </resources>

@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Tetapan Kecerunan Langit</h2>
-<p>Anda kini boleh mengaktifkan atau melumpuhkan latar belakang kecerunan langit daripada Tetapan.</p>
-<h2>Galeri Imej yang Diperbaiki</h2>
-<p>Galeri telah direka semula dengan susun atur grid dan pautan yang lebih baik ke kad maklumat.</p>
-<h2>Penyamaan ufuk automatik dalam mod manual</h2>
-<p>Penyamaan ufuk automatik kini dialih dengan ketukan berganda apabila dalam mod manual.</p>
-<h2>Objek Langit Dalam</h2>
-<p>Lubang hitam Cygnus X-1 dan Sagittarius A* kini berada dalam katalog Sky Map.</p>]]></string>
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Objek Maya</h2>
+<p>Bulan Galilean Jupiter (Io, Europa, Ganymede dan Callisto) dan bulan Mars Phobos dan Deimos kini boleh dicari dengan kad maklumat yang kaya dan imejan NASA — tanpa mengacaukan peta bintang.</p>
+<h2>Katalog Diperluas</h2>
+<p>Puluhan objek langit dalam baharu ditambah — termasuk Double Cluster, 47 Tucanae, Nebula Exposed Cranium dan banyak lagi — masing-masing dengan penerangan, fakta menarik dan imej.</p>
+<h2>Carian Lebih Pintar</h2>
+<p>Lapisan carian kini mengesahkan apabila anda telah memusatkan pada sasaran anda.</p>
+<h2>Pembaikan Pepijat</h2>
+<ul><li>Pautan lihat juga dalam galeri kini menavigasi dengan betul.</li><li>Galeri dan kad maklumat dipaparkan dengan betul pada skrin tepi-ke-tepi Android 15+.</li></ul>]]></string>
     </resources>

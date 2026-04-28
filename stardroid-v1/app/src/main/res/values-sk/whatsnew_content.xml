@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Nastavenie gradientu oblohy</h2>
-<p>Teraz môžete zapnúť alebo vypnúť gradient pozadia oblohy z Nastavení.</p>
-<h2>Vylepšená galéria obrázkov</h2>
-<p>Galéria bola prepracovaná s rozložením mriežky a lepšími odkazmi na informačné karty.</p>
-<h2>Automatické vyrovnanie horizontu v manuálnom režime</h2>
-<p>Automatické vyrovnanie horizontu sa teraz prepína dvojitým klepnutím v manuálnom režime.</p>
-<h2>Hlboké vesmírne objekty</h2>
-<p>Čierne diery Cygnus X-1 a Sagittarius A* sú teraz v katalógu Sky Map.</p>]]></string>
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Virtuálne objekty</h2>
+<p>Galileove mesiace Jupitera (Io, Európa, Ganymedes a Kallisto) a mesiace Marsu Fobos a Deimos sú teraz vyhľadávateľné s bohatými informačnými kartami a NASA snímkami — bez zahlcenia mapy hviezd.</p>
+<h2>Rozšírený katalóg</h2>
+<p>Pridané desiatky nových hlbokého vesmíru objektov — vrátane Dvojitého zhluky, 47 Tucanae, Nebuly Exponovanej lebky a ďalších — každý s popismi, zaujímavými faktami a obrázkami.</p>
+<h2>Inteligentnejšie vyhľadávanie</h2>
+<p>Vyhľadávacia vrstva teraz potvrdzuje, keď ste sa zamerali na svoj cieľ.</p>
+<h2>Opravy chýb</h2>
+<ul><li>Odkazy "Pozri aj" v galérii sa teraz navigujú správne.</li><li>Galéria a informačné karty sa správne zobrazujú na obrazovkách Android 15+ s hranou na hranu.</li></ul>]]></string>
     </resources>

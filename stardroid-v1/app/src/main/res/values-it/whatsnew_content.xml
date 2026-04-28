@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Impostazione Gradiente Cielo</h2>
-<p>Ora puoi abilitare o disabilitare lo sfondo con gradiente del cielo dalle Impostazioni.</p>
-<h2>Galleria Immagini Migliorata</h2>
-<p>La galleria è stata riprogettata con un layout a griglia e migliori collegamenti alle schede informative.</p>
-<h2>Livellamento automatico dell\'orizzonte in modalità manuale</h2>
-<p>Il livellamento automatico dell\'orizzonte è ora attivato con un doppio tocco in modalità manuale.</p>
-<h2>Oggetti del Cielo Profondo</h2>
-<p>I buchi neri Cygnus X-1 e Sagittarius A* sono ora nel catalogo di Sky Map.</p>]]></string>
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Oggetti Virtuali</h2>
+<p>I satelliti galileiani di Giove (Io, Europa, Ganimede e Callisto) e i satelliti di Marte Fobos e Deimos sono ora ricercabili con schede informative dettagliate e immagini della NASA — senza ingombrare la mappa stellare.</p>
+<h2>Catalogo Espanso</h2>
+<p>Decine di nuovi oggetti del cielo profondo aggiunti — inclusi il Doppio Ammasso, 47 Tucanae, la Nebulosa del Cranio Esposto e altri — ognuno con descrizioni, curiosità e immagini.</p>
+<h2>Ricerca Più Intelligente</h2>
+<p>L\'overlay di ricerca ora conferma quando hai centrato il tuo obiettivo.</p>
+<h2>Correzioni di Bug</h2>
+<ul><li>I link "Vedi anche" nella galleria ora si navigano correttamente.</li><li>La galleria e le schede informative si visualizzano correttamente su schermi edge-to-edge di Android 15+.</li></ul>]]></string>
     </resources>

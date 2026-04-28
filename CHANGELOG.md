@@ -5,6 +5,43 @@ All notable changes to Sky Map are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [1.14.0] - 2026-04-28
+
+### Added
+- **Virtual objects** — Jupiter's Galilean moons (Io, Europa, Ganymede, Callisto) and Mars's
+  moons (Phobos and Deimos) are now searchable with rich info cards and NASA imagery, without
+  appearing as separate points on the star map
+  ([#809](https://github.com/sky-map-team/stardroid/pull/809),
+  [#813](https://github.com/sky-map-team/stardroid/pull/813),
+  [#817](https://github.com/sky-map-team/stardroid/pull/817))
+- **Expanded deep sky catalog** — dozens of new objects added including the Double Cluster,
+  47 Tucanae, the Exposed Cranium Nebula (PMR 1), Brocchi's Cluster and many more, each with
+  descriptions, fun facts, distances and images
+  ([#801](https://github.com/sky-map-team/stardroid/pull/801),
+  [#805](https://github.com/sky-map-team/stardroid/pull/805),
+  [#806](https://github.com/sky-map-team/stardroid/pull/806),
+  [#823](https://github.com/sky-map-team/stardroid/pull/823))
+- **Smarter search overlay** — the overlay now shows "Found: X" when you've centered your
+  phone on the target, replacing the generic pointer prompt
+  ([#820](https://github.com/sky-map-team/stardroid/pull/820))
+
+### Fixed
+- See-also links in the image gallery now open the correct info card instead of dismissing
+  ([#825](https://github.com/sky-map-team/stardroid/pull/825),
+  [#830](https://github.com/sky-map-team/stardroid/pull/830))
+- Gallery and info cards no longer clip on Android 15+ edge-to-edge displays
+  ([#819](https://github.com/sky-map-team/stardroid/pull/819),
+  [#822](https://github.com/sky-map-team/stardroid/pull/822))
+- Info card "Find" button is now hidden when a card is opened from the star map (already found)
+  ([#807](https://github.com/sky-map-team/stardroid/pull/807),
+  [#810](https://github.com/sky-map-team/stardroid/pull/810))
+- Translation corrections: Thai Draco term, Hindi Crux character, French celestial glossary
+  ([#827](https://github.com/sky-map-team/stardroid/pull/827),
+  [#829](https://github.com/sky-map-team/stardroid/pull/829),
+  [#831](https://github.com/sky-map-team/stardroid/pull/831))
+
+---
+
 ## [1.13.4] - 2026-04-16
 
 ### Added
