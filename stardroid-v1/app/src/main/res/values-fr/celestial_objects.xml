@@ -21,7 +21,7 @@
     <string name="gemini" translation_description="Name of the Gemini constellation">Gémeaux</string>
     <string name="grus" translation_description="Name of the Grus constellation">Grue</string>
     <string name="hercules" translation_description="Name of the Hercules constellation">Hercule</string>
-    <string name="hydrus" translation_description="Name of the Hydrus constellation">Hydre Mâle</string>
+    <string name="hydrus" translation_description="Name of the Hydrus constellation">Hydre mâle</string>
     <string name="leo" translation_description="Name of the Leo constellation">Lion</string>
     <string name="libra" translation_description="Name of the Libra constellation">Balance</string>
     <string name="lupus" translation_description="Name of the Lupus constellation">Loup</string>
@@ -152,7 +152,7 @@
     <string name="ring_nebula" translation_description="hubble object">Nébuleuse de l\'Anneau</string>
     <string name="pinwheel_galaxy" translation_description="hubble object">Galaxie Pinwheel</string>
     <string name="sombrero_galaxy" translation_description="hubble object">Galaxie du Sombrero</string>
-    <string name="hercules_gc" translation_description="hubble object">Grand Amas Globulaire d\'Hercule</string>
+    <string name="hercules_gc" translation_description="hubble object">Grand amas globulaire d\'Hercule</string>
     <string name="pleiades" translation_description="hubble object">Pléiades</string>
     <string name="cats_eye_nebula" translation_description="hubble object">Nébuleuse de l\'Œil de Chat</string>
     <string name="omega_centauri" translation_description="hubble object">Amas globulaire Omega Centauri</string>
@@ -160,7 +160,7 @@
     <string name="sn1987a" translation_description="hubble object">Supernova 1987A</string>
     <string name="hubble_deep_field" translation_description="hubble object">Le champ profond de Hubble (Hubble Deep Field)</string>
     <!-- tm:omitted name="hdf" reason="identical_to_source" -->
-    <string name="rho_oph" translation_description="hubble object">Rho Serpentaire</string>
+    <string name="rho_oph" translation_description="hubble object">Rho du Serpentaire</string>
 
 
     <!-- tm:omitted name="sirius" reason="identical_to_source" -->
@@ -229,7 +229,7 @@
     <!-- tm:omitted name="vindemiatrix" reason="identical_to_source" -->
     <!-- tm:omitted name="alcyone" reason="identical_to_source" -->
     <string name="dog_star" translation_description="Name of the Dog Star (Sirius)">Étoile du Chien</string>
-    <string name="north_star" translation_description="Name of the North Star">Étoile Polaire</string>
+    <string name="north_star" translation_description="Name of the North Star">Étoile polaire</string>
     <string name="pole_star" translation_description="Name of the (North) Pole Star">Étoile polaire</string>
     <!-- tm:omitted name="alpha_centauri" reason="identical_to_source" -->
     <!-- tm:omitted name="rigil_kent" reason="identical_to_source" -->

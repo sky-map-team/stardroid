@@ -13,7 +13,7 @@
 | Herschel's Jewel Box      | | Boîte à Bijoux de Herschel           | Szkatułka Klejnotów | |
 | Double Cluster            | | Double amas de Persée                | Podwójna gromada Perseusza | |
 | Silver Dollar Galaxy      | | Galaxie du Sculpteur                 | Galaktyka Rzeźbiarza | |
-| Hercules Globular Cluster | | Grand Amas Globulaire d'Hercule      | Gromada Herkulesa | |
+| Hercules Globular Cluster | | Grand amas globulaire d'Hercule      | Gromada Herkulesa | |
 | Sun                       | | Soleil                               | | |
 | Mercury                   | | Mercure                              | | |
 | Venus                     | | Vénus                                | | |
@@ -117,7 +117,7 @@
 | Plough                    | | Grande Casserole                     | | |
 | North Star                | | Étoile Polaire                       | | |
 | Dog Star                  | | Étoile du Chien                      | | |
-| Polaris                   | | Étoile Polaire                       | | |
+| Polaris                   | | Étoile polaire                       | | |
 | Alphekka                  | | Alphecca                             | | |
 | Alphard                   | | Alphard                              | | |
 | Alpha Centauri            | | Alpha Centauri                       | | |
@@ -146,6 +146,6 @@
 | Pleiades                  | | Pléiades                             | | |
 | Beehive Cluster           | | Amas de la Ruche                     | | |
 | Seven Sisters             | | Sept Sœurs                           | | |
-| Black Hole                | | Trou Noir                            | | |
+| Black Hole                | | trou noir                            | | |
 | Galactic Center           | | Centre galactique                    | | |
 | Blaze Star                | | Étoile Flamboyante                   | | |
