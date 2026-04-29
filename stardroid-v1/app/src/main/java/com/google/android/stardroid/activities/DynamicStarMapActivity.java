@@ -45,10 +45,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import android.text.SpannableString;
-import android.text.Spanned;
-import android.text.style.BackgroundColorSpan;
-import android.text.style.ForegroundColorSpan;
+import android.app.ActionBar;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
