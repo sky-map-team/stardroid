@@ -51,3 +51,6 @@ output from previous runs — preserve all existing items and only add changes n
 - Always perform the Python tool call first before drafting.
 - Always read existing output files before writing (see Pre-flight above).
 - Never report internal refactors or chore-level commits to the user.
+- **After writing all three targets, pause and show the user the English `whatsnew_content.xml`
+  and `default.txt` content for review. Ask explicitly: "Does this look good to translate?" Do
+  not proceed to translation (Step 4 of the release process) until the user approves.**

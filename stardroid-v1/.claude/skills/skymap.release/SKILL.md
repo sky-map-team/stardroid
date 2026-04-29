@@ -28,6 +28,11 @@ Ask the user if they need to:
 
 ### Step 4. Translate missing text
 
+**Before running any translation commands, show the user the current content of
+`app/src/main/res/values/whatsnew_content.xml` and `fastlane/metadata/android/en-US/changelogs/default.txt`
+and ask: "Does this look good to translate?" Do not proceed until you receive explicit approval.**
+
+
 **Prerequisites:** `tm` must be installed globally (`which tm`). If missing, install it from the translationmanager project:
 ```bash
 pip install -e /path/to/translationmanager
