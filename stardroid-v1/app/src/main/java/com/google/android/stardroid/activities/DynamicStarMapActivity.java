@@ -282,10 +282,10 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
       doSearchWithIntent(intent);
     }
     
-    android.app.ActionBar actionBar = getActionBar();
+    ActionBar actionBar = getActionBar();
     if (actionBar != null) {
-        actionBar.setDisplayShowHomeEnabled(true);
-        actionBar.setDisplayUseLogoEnabled(true);
+      actionBar.setDisplayShowHomeEnabled(true);
+      actionBar.setDisplayUseLogoEnabled(true);
     }
     
     Log.d(TAG, "-onCreate at " + System.currentTimeMillis());
