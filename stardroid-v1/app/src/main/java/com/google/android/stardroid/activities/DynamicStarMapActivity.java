@@ -45,6 +45,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.style.BackgroundColorSpan;
+import android.text.style.ForegroundColorSpan;
+
 import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
 import androidx.core.graphics.Insets;
@@ -279,6 +284,13 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
       Log.d(TAG, "Started as a result of a search");
       doSearchWithIntent(intent);
     }
+    
+    android.app.ActionBar actionBar = getActionBar();
+    if (actionBar != null) {
+        actionBar.setDisplayShowHomeEnabled(true);
+        actionBar.setDisplayUseLogoEnabled(true);
+    }
+    
     Log.d(TAG, "-onCreate at " + System.currentTimeMillis());
   }
 
@@ -456,7 +468,33 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
     super.onCreateOptionsMenu(menu);
     MenuInflater inflater = getMenuInflater();
     inflater.inflate(R.menu.main, menu);
+    
+    setupActionItem(menu, R.id.menu_item_search, android.R.drawable.ic_menu_search, R.string.menu_search);
+    setupActionItem(menu, R.id.menu_item_dim, android.R.drawable.ic_menu_view, R.string.menu_toggle_dim);
+    setupActionItem(menu, R.id.menu_item_time, R.drawable.time_travel_icon, R.string.menu_time);
+    
     return true;
+  }
+
+  private void setupActionItem(Menu menu, int itemId, int iconRes, @StringRes int stringRes) {
+    MenuItem item = menu.findItem(itemId);
+    if (item != null) {
+        View view = item.getActionView();
+        if (view instanceof ImageButton) {
+            ImageButton btn = (ImageButton) view;
+            btn.setImageResource(iconRes);
+            btn.setContentDescription(getString(stringRes));
+            btn.setOnClickListener(v -> onOptionsItemSelected(item));
+            btn.setOnLongClickListener(v -> {
+                Toast toast = Toast.makeText(this, stringRes, Toast.LENGTH_SHORT);
+                int[] pos = new int[2];
+                v.getLocationOnScreen(pos);
+                toast.setGravity(android.view.Gravity.TOP | android.view.Gravity.LEFT, pos[0], pos[1] + v.getHeight());
+                toast.show();
+                return true;
+            });
+        }
+    }
   }
 
   @Override

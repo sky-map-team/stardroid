@@ -20,18 +20,21 @@
           android:orderInCategory="1"
           android:title="@string/menu_search"
           android:icon="@android:drawable/ic_menu_search"
+          android:actionLayout="@layout/action_item"
           android:showAsAction="always"/>
 
     <item android:id="@+id/menu_item_dim"
           android:orderInCategory="2"
           android:title="@string/menu_toggle_dim"
           android:icon="@android:drawable/ic_menu_view"
+          android:actionLayout="@layout/action_item"
           android:showAsAction="always"/>
 
     <item android:id="@+id/menu_item_time"
         android:orderInCategory="3"
         android:title="@string/menu_time"
         android:icon="@drawable/time_travel_icon"
+        android:actionLayout="@layout/action_item"
         android:showAsAction="always"/>
 
     <item android:id="@+id/menu_item_settings"
