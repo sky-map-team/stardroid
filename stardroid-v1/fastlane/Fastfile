@@ -151,13 +151,13 @@ platform :android do
     screengrab
   end
 
-  desc "Upload store metadata. Options: whatsnew:true (include changelogs), imgs:true (include screenshots/images), all:true (everything), store:false (skip store metadata)."
+  desc "Upload store metadata. Options (defaults after the colon): whatsnew:true (include changelogs), imgs:true (include screenshots/images), all:false (everything), store:false (skip store metadata)."
   lane :upload_metadata do |options|
       v_code = options[:version_code]
-      include_all = options[:all]
-      include_whatsnew = include_all || options[:whatsnew]
-      include_imgs = include_all || options[:imgs]
-      include_store = options[:store] != false
+      include_all = options.fetch(:all, false)
+      include_whatsnew = include_all || options.fetch(:whatsnew, true)
+      include_imgs = include_all || options.fetch(:imgs, true)
+      include_store = include_all || options.fetch(:store, false)
       upload_to_play_store(
         skip_upload_apk: true,
         skip_upload_aab: true,
