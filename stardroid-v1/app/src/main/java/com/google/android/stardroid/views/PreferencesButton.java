@@ -26,8 +26,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 
-import com.google.android.stardroid.activities.util.TooltipUtil;
-
 import androidx.preference.PreferenceManager;
 
 import com.google.android.stardroid.R;
@@ -95,7 +93,7 @@ public class PreferencesButton extends ImageButton
 
   private void init() {
     super.setOnClickListener(this);
-    TooltipUtil.setupToastTooltip(this, TooltipUtil.Position.RIGHT);
+    setTooltipText(getContentDescription());
     preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
     preferences.registerOnSharedPreferenceChangeListener(this);
     this.isOn = preferences.getBoolean(prefKey, defaultValue);

@@ -45,8 +45,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.stardroid.activities.util.TooltipUtil;
-
 import android.app.ActionBar;
 
 import androidx.annotation.Nullable;
@@ -74,6 +72,7 @@ import com.google.android.stardroid.activities.util.FullscreenControlsManager;
 import com.google.android.stardroid.activities.util.GooglePlayServicesChecker;
 import com.google.android.stardroid.activities.util.MenuUtils;
 import com.google.android.stardroid.activities.util.NightModeHelper;
+import com.google.android.stardroid.activities.util.TooltipUtil;
 import com.google.android.stardroid.base.Lists;
 import com.google.android.stardroid.control.AstronomerModel;
 import com.google.android.stardroid.control.AstronomerModel.Pointing;
