@@ -486,6 +486,8 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
                 Toast toast = Toast.makeText(this, stringRes, Toast.LENGTH_SHORT);
                 int[] pos = new int[2];
                 v.getLocationOnScreen(pos);
+                // Note that the gravity setting will be ignored on recent API levels, but using the tooltip
+                // text API is too unreliable with this old codebase.
                 toast.setGravity(android.view.Gravity.TOP | android.view.Gravity.LEFT, pos[0], pos[1] + v.getHeight());
                 toast.show();
                 return true;
