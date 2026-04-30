@@ -25,6 +25,7 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import androidx.preference.PreferenceManager;
 
@@ -93,6 +94,18 @@ public class PreferencesButton extends ImageButton
 
   private void init() {
     super.setOnClickListener(this);
+    super.setOnLongClickListener(v -> {
+      CharSequence desc = getContentDescription();
+      if (desc != null && desc.length() > 0) {
+        Toast toast = Toast.makeText(getContext(), desc, Toast.LENGTH_SHORT);
+        int[] pos = new int[2];
+        v.getLocationOnScreen(pos);
+        toast.setGravity(android.view.Gravity.TOP | android.view.Gravity.LEFT, pos[0] + v.getWidth(), pos[1]);
+        toast.show();
+        return true;
+      }
+      return false;
+    });
     preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
     preferences.registerOnSharedPreferenceChangeListener(this);
     this.isOn = preferences.getBoolean(prefKey, defaultValue);

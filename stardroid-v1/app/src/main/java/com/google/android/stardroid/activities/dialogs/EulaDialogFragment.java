@@ -93,7 +93,7 @@ public class EulaDialogFragment extends DialogFragment {
                 }
               });
     } else {
-      tosDialogBuilder.setNeutralButton(android.R.string.ok,
+      tosDialogBuilder.setPositiveButton(android.R.string.ok,
           new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int whichButton) {
               dialog.dismiss();

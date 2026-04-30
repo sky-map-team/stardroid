@@ -105,6 +105,7 @@
                 android:paddingLeft="5px"
                 android:paddingTop="11px"
                 android:paddingBottom="7px"
+                android:contentDescription="@string/show_stars_pref"
                 stardroid:image_off="@drawable/star_off"
                 stardroid:image_on="@drawable/star_on"
                 stardroid:pref_key="source_provider.0" />
@@ -116,6 +117,7 @@
                 android:paddingLeft="5px"
                 android:paddingTop="7px"
                 android:paddingBottom="7px"
+                android:contentDescription="@string/show_constellations_pref"
                 stardroid:image_off="@drawable/stars_off"
                 stardroid:image_on="@drawable/stars_on"
                 stardroid:pref_key="source_provider.1" />
@@ -127,6 +129,7 @@
                 android:paddingLeft="5px"
                 android:paddingTop="7px"
                 android:paddingBottom="7px"
+                android:contentDescription="@string/show_deep_sky_objects_pref"
                 stardroid:image_off="@drawable/deep_sky_objects_off"
                 stardroid:image_on="@drawable/deep_sky_objects_on"
                 stardroid:pref_key="source_provider.2" />
@@ -138,6 +141,7 @@
                 android:paddingLeft="5px"
                 android:paddingTop="7px"
                 android:paddingBottom="7px"
+                android:contentDescription="@string/show_planets_pref"
                 stardroid:image_off="@drawable/planet_off"
                 stardroid:image_on="@drawable/planet_on"
                 stardroid:pref_key="source_provider.3" />
@@ -149,6 +153,7 @@
                 android:paddingLeft="5px"
                 android:paddingTop="7px"
                 android:paddingBottom="7px"
+                android:contentDescription="@string/show_meteors_pref"
                 stardroid:image_off="@drawable/b_meteor_off"
                 stardroid:image_on="@drawable/b_meteor_on"
                 stardroid:pref_key="source_provider.6" />
@@ -169,6 +174,7 @@
                 android:paddingLeft="5px"
                 android:paddingTop="7px"
                 android:paddingBottom="7px"
+                android:contentDescription="@string/show_grid_pref"
                 stardroid:image_off="@drawable/grid_off"
                 stardroid:image_on="@drawable/grid_on"
                 stardroid:pref_key="source_provider.4" />
@@ -180,6 +186,7 @@
                 android:paddingLeft="5px"
                 android:paddingTop="7px"
                 android:paddingBottom="11px"
+                android:contentDescription="@string/show_horizon_pref"
                 stardroid:image_off="@drawable/horizon_off"
                 stardroid:image_on="@drawable/horizon_on"
                 stardroid:pref_key="source_provider.5" />
@@ -210,6 +217,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="#00000000"
+                        android:contentDescription="@string/preferences_auto_mode_title"
                         stardroid:default_value="true"
                         stardroid:image_off="@drawable/automaticmode"
                         stardroid:image_on="@drawable/manualmode"

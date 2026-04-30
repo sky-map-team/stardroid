@@ -76,10 +76,11 @@
 
             <Button
                 android:id="@+id/compass_calib_activity_ok_button"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@android:string/ok"
-                android:layout_gravity="center_horizontal"
+                android:layout_gravity="end"
                 android:nestedScrollingEnabled="false"
                 android:onClick="onOkClicked"/>
 
