@@ -100,6 +100,8 @@ public class PreferencesButton extends ImageButton
         Toast toast = Toast.makeText(getContext(), desc, Toast.LENGTH_SHORT);
         int[] pos = new int[2];
         v.getLocationOnScreen(pos);
+        // Note that the gravity setting will be ignored on recent API levels, but using the tooltip
+        // text API is too unreliable with this old codebase.
         toast.setGravity(android.view.Gravity.TOP | android.view.Gravity.LEFT, pos[0] + v.getWidth(), pos[1]);
         toast.show();
         return true;
