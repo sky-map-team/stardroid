@@ -72,6 +72,7 @@ import com.google.android.stardroid.activities.util.FullscreenControlsManager;
 import com.google.android.stardroid.activities.util.GooglePlayServicesChecker;
 import com.google.android.stardroid.activities.util.MenuUtils;
 import com.google.android.stardroid.activities.util.NightModeHelper;
+import com.google.android.stardroid.activities.util.TooltipUtil;
 import com.google.android.stardroid.base.Lists;
 import com.google.android.stardroid.control.AstronomerModel;
 import com.google.android.stardroid.control.AstronomerModel.Pointing;
@@ -482,14 +483,7 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
             btn.setImageResource(iconRes);
             btn.setContentDescription(getString(stringRes));
             btn.setOnClickListener(v -> onOptionsItemSelected(item));
-            btn.setOnLongClickListener(v -> {
-                Toast toast = Toast.makeText(this, stringRes, Toast.LENGTH_SHORT);
-                int[] pos = new int[2];
-                v.getLocationOnScreen(pos);
-                toast.setGravity(android.view.Gravity.TOP | android.view.Gravity.LEFT, pos[0], pos[1] + v.getHeight());
-                toast.show();
-                return true;
-            });
+            TooltipUtil.setupToastTooltip(btn, getString(stringRes), TooltipUtil.Position.BELOW);
         }
     }
   }

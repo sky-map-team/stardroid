@@ -93,6 +93,7 @@ public class PreferencesButton extends ImageButton
 
   private void init() {
     super.setOnClickListener(this);
+    setTooltipText(getContentDescription());
     preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
     preferences.registerOnSharedPreferenceChangeListener(this);
     this.isOn = preferences.getBoolean(prefKey, defaultValue);
