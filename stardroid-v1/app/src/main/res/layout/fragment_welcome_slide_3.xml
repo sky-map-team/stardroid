@@ -14,6 +14,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/warm_welcome_slide3_title"
+            android:textColor="@android:color/white"
             android:textSize="24sp"
             android:textStyle="bold"
             android:gravity="center" />
@@ -23,6 +24,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="@string/warm_welcome_slide3_desc"
+            android:textColor="@android:color/white"
             android:textSize="16sp"
             android:gravity="center" />
 
@@ -50,12 +52,18 @@
                     android:layout_weight="1"
                     android:layout_marginStart="16dp"
                     android:text="@string/diagnostics_activity_compass"
+                    android:textColor="@android:color/white"
                     android:textSize="16sp"
                     android:textStyle="bold" />
+                <ProgressBar
+                    android:id="@+id/compass_status_spinner"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp" />
                 <ImageView
                     android:id="@+id/compass_status_icon"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
+                    android:visibility="gone"
                     android:src="@drawable/ic_check_circle" />
             </LinearLayout>
 
@@ -76,12 +84,50 @@
                     android:layout_weight="1"
                     android:layout_marginStart="16dp"
                     android:text="@string/diagnostics_activity_accelerometer"
+                    android:textColor="@android:color/white"
                     android:textSize="16sp"
                     android:textStyle="bold" />
+                <ProgressBar
+                    android:id="@+id/accelerometer_status_spinner"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp" />
                 <ImageView
                     android:id="@+id/accelerometer_status_icon"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
+                    android:visibility="gone"
+                    android:src="@drawable/ic_check_circle" />
+            </LinearLayout>
+
+            <!-- Gyroscope Sensor -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/ic_screen_rotation" />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="16dp"
+                    android:text="@string/diagnostics_activity_gyroscope"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+                <ProgressBar
+                    android:id="@+id/gyroscope_status_spinner"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp" />
+                <ImageView
+                    android:id="@+id/gyroscope_status_icon"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:visibility="gone"
                     android:src="@drawable/ic_check_circle" />
             </LinearLayout>
         </LinearLayout>
@@ -92,7 +138,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:text="@string/warm_welcome_slide3_compass_calib"
+            android:textColor="@android:color/white"
             android:textSize="14sp"
+            android:visibility="invisible"
             android:gravity="center" />
     </LinearLayout>
 </ScrollView>

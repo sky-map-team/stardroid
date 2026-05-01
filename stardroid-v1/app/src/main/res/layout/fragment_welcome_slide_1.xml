@@ -7,9 +7,10 @@
     android:padding="32dp">
 
     <ImageView
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:src="@drawable/stardroid_big_image"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:src="@drawable/tutorial_highlighted_buttons"
         android:contentDescription="@string/warm_welcome_title" />
 
     <TextView
@@ -17,6 +18,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="@string/warm_welcome_slide1_title"
+        android:textColor="@android:color/white"
         android:textSize="24sp"
         android:textStyle="bold"
         android:gravity="center" />
@@ -26,6 +28,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="@string/warm_welcome_slide1_desc"
+        android:textColor="@android:color/white"
         android:textSize="16sp"
         android:gravity="center" />
 </LinearLayout>

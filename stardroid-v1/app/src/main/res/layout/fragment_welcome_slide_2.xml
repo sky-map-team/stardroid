@@ -26,6 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="@string/warm_welcome_slide2_title"
+        android:textColor="@android:color/white"
         android:textSize="24sp"
         android:textStyle="bold"
         android:gravity="center" />
@@ -35,6 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="@string/warm_welcome_slide2_desc"
+        android:textColor="@android:color/white"
         android:textSize="16sp"
         android:gravity="center" />
 
@@ -43,6 +45,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="@string/warm_welcome_slide2_info_desc"
+        android:textColor="@android:color/white"
         android:textSize="16sp"
         android:textStyle="italic"
         android:gravity="center" />

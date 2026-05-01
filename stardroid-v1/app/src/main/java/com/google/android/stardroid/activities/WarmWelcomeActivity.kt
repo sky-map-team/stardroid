@@ -33,7 +33,6 @@ class WarmWelcomeActivity : AppCompatActivity() {
     @Inject @JvmField var sensorManager: SensorManager? = null
 
     private lateinit var viewPager: ViewPager2
-    private lateinit var doNotShowAgainCheckbox: CheckBox
     private lateinit var btnSkip: Button
     private lateinit var btnNextFinish: Button
     private lateinit var indicatorsContainer: LinearLayout
@@ -46,7 +45,6 @@ class WarmWelcomeActivity : AppCompatActivity() {
         isManualInvocation = intent.getBooleanExtra("is_manual_invocation", false)
 
         viewPager = findViewById(R.id.warm_welcome_viewpager)
-        doNotShowAgainCheckbox = findViewById(R.id.do_not_show_again_checkbox)
         btnSkip = findViewById(R.id.btn_skip)
         btnNextFinish = findViewById(R.id.btn_next_finish)
         indicatorsContainer = findViewById(R.id.indicators_container)
@@ -62,11 +60,8 @@ class WarmWelcomeActivity : AppCompatActivity() {
                 updateIndicators(position)
                 if (position == adapter.itemCount - 1) {
                     btnNextFinish.setText(R.string.warm_welcome_finish)
-                    // Only show checkbox if this is an automatic launch
-                    doNotShowAgainCheckbox.visibility = if (isManualInvocation) View.GONE else View.VISIBLE
                 } else {
                     btnNextFinish.setText(R.string.warm_welcome_next)
-                    doNotShowAgainCheckbox.visibility = View.GONE
                 }
             }
         })
@@ -112,9 +107,7 @@ class WarmWelcomeActivity : AppCompatActivity() {
         if (!isManualInvocation) {
             sharedPreferences.edit().apply {
                 putLong(ApplicationConstants.READ_WARM_WELCOME_PREF_VERSION, app.version.toLong())
-                if (doNotShowAgainCheckbox.isChecked) {
-                    putBoolean(ApplicationConstants.NO_WARN_ABOUT_MISSING_SENSORS, true)
-                }
+                putBoolean(ApplicationConstants.NO_WARN_ABOUT_MISSING_SENSORS, true)
                 apply()
             }
 
@@ -157,6 +150,12 @@ class WarmWelcomeActivity : AppCompatActivity() {
 
             val compassIcon = view.findViewById<ImageView>(R.id.compass_status_icon)
             val accelIcon = view.findViewById<ImageView>(R.id.accelerometer_status_icon)
+            val gyroIcon = view.findViewById<ImageView>(R.id.gyroscope_status_icon)
+            
+            val compassSpinner = view.findViewById<View>(R.id.compass_status_spinner)
+            val accelSpinner = view.findViewById<View>(R.id.accelerometer_status_spinner)
+            val gyroSpinner = view.findViewById<View>(R.id.gyroscope_status_spinner)
+            
             val messageText = view.findViewById<TextView>(R.id.sensor_message_text)
 
             val activity = requireActivity() as WarmWelcomeActivity
@@ -164,15 +163,39 @@ class WarmWelcomeActivity : AppCompatActivity() {
 
             val hasCompass = sensorManager?.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD) != null
             val hasAccel = sensorManager?.getDefaultSensor(Sensor.TYPE_ACCELEROMETER) != null
+            val hasGyro = sensorManager?.getDefaultSensor(Sensor.TYPE_GYROSCOPE) != null
 
             compassIcon.setImageResource(if (hasCompass) R.drawable.ic_check_circle else R.drawable.ic_warning)
             accelIcon.setImageResource(if (hasAccel) R.drawable.ic_check_circle else R.drawable.ic_warning)
+            gyroIcon.setImageResource(if (hasGyro) R.drawable.ic_check_circle else R.drawable.ic_warning)
 
             if (!hasCompass || !hasAccel) {
                 messageText.setText(R.string.warm_welcome_slide3_no_sensors)
             } else {
                 messageText.setText(R.string.warm_welcome_slide3_compass_calib)
             }
+
+            android.os.Handler(android.os.Looper.getMainLooper()).postDelayed({
+                if (isAdded) {
+                    compassSpinner.visibility = View.GONE
+                    compassIcon.visibility = View.VISIBLE
+                }
+            }, 800)
+
+            android.os.Handler(android.os.Looper.getMainLooper()).postDelayed({
+                if (isAdded) {
+                    accelSpinner.visibility = View.GONE
+                    accelIcon.visibility = View.VISIBLE
+                }
+            }, 1600)
+
+            android.os.Handler(android.os.Looper.getMainLooper()).postDelayed({
+                if (isAdded) {
+                    gyroSpinner.visibility = View.GONE
+                    gyroIcon.visibility = View.VISIBLE
+                    messageText.visibility = View.VISIBLE
+                }
+            }, 2400)
 
             return view
         }
