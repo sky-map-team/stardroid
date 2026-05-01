@@ -32,15 +32,15 @@ object TooltipUtil {
             var xOffset = pos[0]
             var yOffset = pos[1]
 
-            if (position == Position.END) {
-                xOffset += v.width
-            } else if (position == Position.BELOW) {
-                yOffset += v.height
+            when (position) {
+                Position.RIGHT -> xOffset += v.width
+                Position.BELOW -> yOffset += v.height
+                else -> android.util.Log.w("TooltipUtil", "Unknown position: $position")
             }
 
             // Note that the gravity setting will be ignored on recent API levels (30+),
             // but it still works correctly on older devices.
-            toast.setGravity(Gravity.TOP or Gravity.START, xOffset, yOffset)
+            toast.setGravity(Gravity.TOP or Gravity.LEFT, xOffset, yOffset)
             toast.show()
             return true
         }
