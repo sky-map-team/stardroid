@@ -219,7 +219,7 @@ public class TimeTravelDialog extends Dialog {
 
 
       // returns true if an event has passed based on its timestamp, used to grey out past events in the dropdown (but leave them enabled)
-      public boolean hasPassed(int position) {
+      private boolean isPastEvent(int position) {
         TimeTravelEvent event = events.get(position);
         return event.getType() == TimeTravelEvent.Type.FIXED // only fixed events have a timestamp to compare against
             && event.getTimestampMs() < System.currentTimeMillis();
@@ -232,7 +232,7 @@ public class TimeTravelDialog extends Dialog {
         // Colors the collapsed spinner face (the currently selected item shown when closed).
         if (view instanceof TextView) {
           int activeColor = isNight ? context.getColor(R.color.night_text_color) : Color.WHITE;
-          ((TextView) view).setTextColor(position == 0 || hasPassed(position) ? Color.GRAY
+          ((TextView) view).setTextColor(position == 0 || isPastEvent(position) ? Color.GRAY
               : activeColor);
         }
         return view;
@@ -246,7 +246,7 @@ public class TimeTravelDialog extends Dialog {
         // spinner_dropdown_item.xml has a dark background; use GRAY for the hint row.
         if (view instanceof TextView) {
           int activeColor = isNight ? context.getColor(R.color.night_text_color) : Color.WHITE;
-          ((TextView) view).setTextColor(position == 0 || hasPassed(position) ? Color.GRAY
+          ((TextView) view).setTextColor(position == 0 || isPastEvent(position) ? Color.GRAY
               : activeColor);
         }
         return view;
