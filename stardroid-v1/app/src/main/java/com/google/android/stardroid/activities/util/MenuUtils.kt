@@ -21,7 +21,7 @@ object MenuUtils {
      */
     @JvmStatic
     fun showOptionalIcons(menu: Menu?) {
-        if (menu != null && menu.javaClass.getSimpleName() == "MenuBuilder") {
+        if (menu?.javaClass?.simpleName == "MenuBuilder") {
             try {
                 val m = menu.javaClass.getDeclaredMethod("setOptionalIconsVisible", Boolean::class.javaPrimitiveType)
                 m.isAccessible = true
