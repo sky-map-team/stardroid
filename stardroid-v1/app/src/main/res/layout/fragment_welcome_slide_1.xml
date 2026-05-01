@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="#000000">
 
-    <!-- Raw Screenshot Background -->
+    <!-- Background Image -->
     <ImageView
         android:id="@+id/screenshot_bg"
         android:layout_width="match_parent"
@@ -18,449 +18,483 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- A semi-transparent overlay to make text more readable -->
     <View
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="#66000000"
+        android:background="#33000000"
         app:layout_constraintBottom_toBottomOf="@id/screenshot_bg"
         app:layout_constraintEnd_toEndOf="@id/screenshot_bg"
         app:layout_constraintStart_toStartOf="@id/screenshot_bg"
         app:layout_constraintTop_toTopOf="@id/screenshot_bg" />
 
-    <!-- Stars -->
+    <!-- STARS -->
     <ImageView
         android:id="@+id/ring_stars"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
         android:src="@drawable/ic_neon_ring"
         app:layout_constraintBottom_toBottomOf="@id/screenshot_bg"
         app:layout_constraintEnd_toEndOf="@id/screenshot_bg"
         app:layout_constraintStart_toStartOf="@id/screenshot_bg"
         app:layout_constraintTop_toTopOf="@id/screenshot_bg"
         app:layout_constraintHorizontal_bias="0.06"
-        app:layout_constraintVertical_bias="0.345" />
-
+        app:layout_constraintVertical_bias="0.314" />
     <ImageView
-        android:id="@+id/arrow_stars"
-        android:layout_width="32dp"
-        android:layout_height="16dp"
-        android:src="@drawable/ic_neon_arrow"
+        android:layout_width="96dp"
+        android:layout_height="24dp"
+        android:src="@drawable/ic_neon_arrow_long"
+        android:transformPivotX="0dp"
+        android:transformPivotY="12dp"
+        android:rotation="-20"
         app:layout_constraintBottom_toBottomOf="@id/ring_stars"
         app:layout_constraintStart_toEndOf="@id/ring_stars"
-        app:layout_constraintTop_toTopOf="@id/ring_stars"
-        android:layout_marginStart="8dp"/>
-
+        app:layout_constraintTop_toTopOf="@id/ring_stars" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/show_stars_pref"
-        android:textColor="@android:color/white"
+        android:textColor="#00FFFF"
         android:textStyle="bold"
-        android:textSize="14sp"
-        android:shadowColor="#000000"
-        android:shadowDx="1"
-        android:shadowDy="1"
-        android:shadowRadius="3"
-        app:layout_constraintBottom_toBottomOf="@id/arrow_stars"
-        app:layout_constraintStart_toEndOf="@id/arrow_stars"
-        app:layout_constraintTop_toTopOf="@id/arrow_stars"
-        android:layout_marginStart="8dp" />
+        android:textSize="15sp"
+        android:shadowColor="#00FFFF"
+        android:shadowDx="0" android:shadowDy="0" android:shadowRadius="15"
+        android:background="@drawable/neon_text_bg"
+        android:paddingHorizontal="10dp" android:paddingVertical="4dp"
+        app:layout_constraintBottom_toBottomOf="@id/ring_stars"
+        app:layout_constraintStart_toEndOf="@id/ring_stars"
+        app:layout_constraintTop_toTopOf="@id/ring_stars"
+        android:layout_marginStart="80dp"
+        android:translationY="-32dp" />
 
-    <!-- Constellations -->
+    <!-- CONSTELLATIONS -->
     <ImageView
         android:id="@+id/ring_constellations"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
         android:src="@drawable/ic_neon_ring"
         app:layout_constraintBottom_toBottomOf="@id/screenshot_bg"
         app:layout_constraintEnd_toEndOf="@id/screenshot_bg"
         app:layout_constraintStart_toStartOf="@id/screenshot_bg"
         app:layout_constraintTop_toTopOf="@id/screenshot_bg"
         app:layout_constraintHorizontal_bias="0.06"
-        app:layout_constraintVertical_bias="0.395" />
-
+        app:layout_constraintVertical_bias="0.368" />
     <ImageView
-        android:id="@+id/arrow_constellations"
-        android:layout_width="32dp"
-        android:layout_height="16dp"
-        android:src="@drawable/ic_neon_arrow"
+        android:layout_width="96dp"
+        android:layout_height="24dp"
+        android:src="@drawable/ic_neon_arrow_long"
+        android:transformPivotX="0dp"
+        android:transformPivotY="12dp"
+        android:rotation="-10"
         app:layout_constraintBottom_toBottomOf="@id/ring_constellations"
         app:layout_constraintStart_toEndOf="@id/ring_constellations"
-        app:layout_constraintTop_toTopOf="@id/ring_constellations"
-        android:layout_marginStart="8dp"/>
-
+        app:layout_constraintTop_toTopOf="@id/ring_constellations" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/show_constellations_pref"
-        android:textColor="@android:color/white"
+        android:textColor="#00FFFF"
         android:textStyle="bold"
-        android:textSize="14sp"
-        android:shadowColor="#000000"
-        android:shadowDx="1"
-        android:shadowDy="1"
-        android:shadowRadius="3"
-        app:layout_constraintBottom_toBottomOf="@id/arrow_constellations"
-        app:layout_constraintStart_toEndOf="@id/arrow_constellations"
-        app:layout_constraintTop_toTopOf="@id/arrow_constellations"
-        android:layout_marginStart="8dp" />
+        android:textSize="15sp"
+        android:shadowColor="#00FFFF"
+        android:shadowDx="0" android:shadowDy="0" android:shadowRadius="15"
+        android:background="@drawable/neon_text_bg"
+        android:paddingHorizontal="10dp" android:paddingVertical="4dp"
+        app:layout_constraintBottom_toBottomOf="@id/ring_constellations"
+        app:layout_constraintStart_toEndOf="@id/ring_constellations"
+        app:layout_constraintTop_toTopOf="@id/ring_constellations"
+        android:layout_marginStart="80dp"
+        android:translationY="-15dp" />
 
-    <!-- Deep Sky Objects -->
+    <!-- DEEP SKY -->
     <ImageView
         android:id="@+id/ring_deep_sky"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
         android:src="@drawable/ic_neon_ring"
         app:layout_constraintBottom_toBottomOf="@id/screenshot_bg"
         app:layout_constraintEnd_toEndOf="@id/screenshot_bg"
         app:layout_constraintStart_toStartOf="@id/screenshot_bg"
         app:layout_constraintTop_toTopOf="@id/screenshot_bg"
         app:layout_constraintHorizontal_bias="0.06"
-        app:layout_constraintVertical_bias="0.445" />
-
+        app:layout_constraintVertical_bias="0.421" />
     <ImageView
-        android:id="@+id/arrow_deep_sky"
-        android:layout_width="32dp"
-        android:layout_height="16dp"
-        android:src="@drawable/ic_neon_arrow"
+        android:layout_width="96dp"
+        android:layout_height="24dp"
+        android:src="@drawable/ic_neon_arrow_long"
+        android:transformPivotX="0dp"
+        android:transformPivotY="12dp"
+        android:rotation="0"
         app:layout_constraintBottom_toBottomOf="@id/ring_deep_sky"
         app:layout_constraintStart_toEndOf="@id/ring_deep_sky"
-        app:layout_constraintTop_toTopOf="@id/ring_deep_sky"
-        android:layout_marginStart="8dp"/>
-
+        app:layout_constraintTop_toTopOf="@id/ring_deep_sky" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/show_deep_sky_objects_pref"
-        android:textColor="@android:color/white"
+        android:textColor="#00FFFF"
         android:textStyle="bold"
-        android:textSize="14sp"
-        android:shadowColor="#000000"
-        android:shadowDx="1"
-        android:shadowDy="1"
-        android:shadowRadius="3"
-        app:layout_constraintBottom_toBottomOf="@id/arrow_deep_sky"
-        app:layout_constraintStart_toEndOf="@id/arrow_deep_sky"
-        app:layout_constraintTop_toTopOf="@id/arrow_deep_sky"
-        android:layout_marginStart="8dp" />
+        android:textSize="15sp"
+        android:shadowColor="#00FFFF"
+        android:shadowDx="0" android:shadowDy="0" android:shadowRadius="15"
+        android:background="@drawable/neon_text_bg"
+        android:paddingHorizontal="10dp" android:paddingVertical="4dp"
+        app:layout_constraintBottom_toBottomOf="@id/ring_deep_sky"
+        app:layout_constraintStart_toEndOf="@id/ring_deep_sky"
+        app:layout_constraintTop_toTopOf="@id/ring_deep_sky"
+        android:layout_marginStart="80dp"
+        android:translationY="0dp" />
 
-    <!-- Planets -->
+    <!-- PLANETS -->
     <ImageView
         android:id="@+id/ring_planets"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
         android:src="@drawable/ic_neon_ring"
         app:layout_constraintBottom_toBottomOf="@id/screenshot_bg"
         app:layout_constraintEnd_toEndOf="@id/screenshot_bg"
         app:layout_constraintStart_toStartOf="@id/screenshot_bg"
         app:layout_constraintTop_toTopOf="@id/screenshot_bg"
         app:layout_constraintHorizontal_bias="0.06"
-        app:layout_constraintVertical_bias="0.495" />
-
+        app:layout_constraintVertical_bias="0.475" />
     <ImageView
-        android:id="@+id/arrow_planets"
-        android:layout_width="32dp"
-        android:layout_height="16dp"
-        android:src="@drawable/ic_neon_arrow"
+        android:layout_width="96dp"
+        android:layout_height="24dp"
+        android:src="@drawable/ic_neon_arrow_long"
+        android:transformPivotX="0dp"
+        android:transformPivotY="12dp"
+        android:rotation="10"
         app:layout_constraintBottom_toBottomOf="@id/ring_planets"
         app:layout_constraintStart_toEndOf="@id/ring_planets"
-        app:layout_constraintTop_toTopOf="@id/ring_planets"
-        android:layout_marginStart="8dp"/>
-
+        app:layout_constraintTop_toTopOf="@id/ring_planets" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/tutorial_planets"
-        android:textColor="@android:color/white"
+        android:textColor="#00FFFF"
         android:textStyle="bold"
-        android:textSize="14sp"
-        android:shadowColor="#000000"
-        android:shadowDx="1"
-        android:shadowDy="1"
-        android:shadowRadius="3"
-        app:layout_constraintBottom_toBottomOf="@id/arrow_planets"
-        app:layout_constraintStart_toEndOf="@id/arrow_planets"
-        app:layout_constraintTop_toTopOf="@id/arrow_planets"
-        android:layout_marginStart="8dp" />
+        android:textSize="15sp"
+        android:shadowColor="#00FFFF"
+        android:shadowDx="0" android:shadowDy="0" android:shadowRadius="15"
+        android:background="@drawable/neon_text_bg"
+        android:paddingHorizontal="10dp" android:paddingVertical="4dp"
+        app:layout_constraintBottom_toBottomOf="@id/ring_planets"
+        app:layout_constraintStart_toEndOf="@id/ring_planets"
+        app:layout_constraintTop_toTopOf="@id/ring_planets"
+        android:layout_marginStart="80dp"
+        android:translationY="15dp" />
 
-    <!-- Meteors -->
+    <!-- METEORS -->
     <ImageView
         android:id="@+id/ring_meteors"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
         android:src="@drawable/ic_neon_ring"
         app:layout_constraintBottom_toBottomOf="@id/screenshot_bg"
         app:layout_constraintEnd_toEndOf="@id/screenshot_bg"
         app:layout_constraintStart_toStartOf="@id/screenshot_bg"
         app:layout_constraintTop_toTopOf="@id/screenshot_bg"
         app:layout_constraintHorizontal_bias="0.06"
-        app:layout_constraintVertical_bias="0.545" />
-
+        app:layout_constraintVertical_bias="0.529" />
     <ImageView
-        android:id="@+id/arrow_meteors"
-        android:layout_width="32dp"
-        android:layout_height="16dp"
-        android:src="@drawable/ic_neon_arrow"
+        android:layout_width="96dp"
+        android:layout_height="24dp"
+        android:src="@drawable/ic_neon_arrow_long"
+        android:transformPivotX="0dp"
+        android:transformPivotY="12dp"
+        android:rotation="20"
         app:layout_constraintBottom_toBottomOf="@id/ring_meteors"
         app:layout_constraintStart_toEndOf="@id/ring_meteors"
-        app:layout_constraintTop_toTopOf="@id/ring_meteors"
-        android:layout_marginStart="8dp"/>
-
+        app:layout_constraintTop_toTopOf="@id/ring_meteors" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/tutorial_meteors"
-        android:textColor="@android:color/white"
+        android:textColor="#00FFFF"
         android:textStyle="bold"
-        android:textSize="14sp"
-        android:shadowColor="#000000"
-        android:shadowDx="1"
-        android:shadowDy="1"
-        android:shadowRadius="3"
-        app:layout_constraintBottom_toBottomOf="@id/arrow_meteors"
-        app:layout_constraintStart_toEndOf="@id/arrow_meteors"
-        app:layout_constraintTop_toTopOf="@id/arrow_meteors"
-        android:layout_marginStart="8dp" />
+        android:textSize="15sp"
+        android:shadowColor="#00FFFF"
+        android:shadowDx="0" android:shadowDy="0" android:shadowRadius="15"
+        android:background="@drawable/neon_text_bg"
+        android:paddingHorizontal="10dp" android:paddingVertical="4dp"
+        app:layout_constraintBottom_toBottomOf="@id/ring_meteors"
+        app:layout_constraintStart_toEndOf="@id/ring_meteors"
+        app:layout_constraintTop_toTopOf="@id/ring_meteors"
+        android:layout_marginStart="80dp"
+        android:translationY="32dp" />
 
-    <!-- Grid -->
+    <!-- GRID -->
     <ImageView
         android:id="@+id/ring_grid"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
         android:src="@drawable/ic_neon_ring"
         app:layout_constraintBottom_toBottomOf="@id/screenshot_bg"
         app:layout_constraintEnd_toEndOf="@id/screenshot_bg"
         app:layout_constraintStart_toStartOf="@id/screenshot_bg"
         app:layout_constraintTop_toTopOf="@id/screenshot_bg"
         app:layout_constraintHorizontal_bias="0.06"
-        app:layout_constraintVertical_bias="0.595" />
-
+        app:layout_constraintVertical_bias="0.583" />
     <ImageView
-        android:id="@+id/arrow_grid"
-        android:layout_width="32dp"
-        android:layout_height="16dp"
-        android:src="@drawable/ic_neon_arrow"
+        android:layout_width="96dp"
+        android:layout_height="24dp"
+        android:src="@drawable/ic_neon_arrow_long"
+        android:transformPivotX="0dp"
+        android:transformPivotY="12dp"
+        android:rotation="30"
         app:layout_constraintBottom_toBottomOf="@id/ring_grid"
         app:layout_constraintStart_toEndOf="@id/ring_grid"
-        app:layout_constraintTop_toTopOf="@id/ring_grid"
-        android:layout_marginStart="8dp"/>
-
+        app:layout_constraintTop_toTopOf="@id/ring_grid" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/tutorial_grid"
-        android:textColor="@android:color/white"
+        android:textColor="#00FFFF"
         android:textStyle="bold"
-        android:textSize="14sp"
-        android:shadowColor="#000000"
-        android:shadowDx="1"
-        android:shadowDy="1"
-        android:shadowRadius="3"
-        app:layout_constraintBottom_toBottomOf="@id/arrow_grid"
-        app:layout_constraintStart_toEndOf="@id/arrow_grid"
-        app:layout_constraintTop_toTopOf="@id/arrow_grid"
-        android:layout_marginStart="8dp" />
+        android:textSize="15sp"
+        android:shadowColor="#00FFFF"
+        android:shadowDx="0" android:shadowDy="0" android:shadowRadius="15"
+        android:background="@drawable/neon_text_bg"
+        android:paddingHorizontal="10dp" android:paddingVertical="4dp"
+        app:layout_constraintBottom_toBottomOf="@id/ring_grid"
+        app:layout_constraintStart_toEndOf="@id/ring_grid"
+        app:layout_constraintTop_toTopOf="@id/ring_grid"
+        android:layout_marginStart="80dp"
+        android:translationY="48dp" />
 
-    <!-- Horizon -->
+    <!-- HORIZON -->
     <ImageView
         android:id="@+id/ring_horizon"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
         android:src="@drawable/ic_neon_ring"
         app:layout_constraintBottom_toBottomOf="@id/screenshot_bg"
         app:layout_constraintEnd_toEndOf="@id/screenshot_bg"
         app:layout_constraintStart_toStartOf="@id/screenshot_bg"
         app:layout_constraintTop_toTopOf="@id/screenshot_bg"
         app:layout_constraintHorizontal_bias="0.06"
-        app:layout_constraintVertical_bias="0.645" />
-
+        app:layout_constraintVertical_bias="0.636" />
     <ImageView
-        android:id="@+id/arrow_horizon"
-        android:layout_width="32dp"
-        android:layout_height="16dp"
-        android:src="@drawable/ic_neon_arrow"
+        android:layout_width="96dp"
+        android:layout_height="24dp"
+        android:src="@drawable/ic_neon_arrow_long"
+        android:transformPivotX="0dp"
+        android:transformPivotY="12dp"
+        android:rotation="40"
         app:layout_constraintBottom_toBottomOf="@id/ring_horizon"
         app:layout_constraintStart_toEndOf="@id/ring_horizon"
-        app:layout_constraintTop_toTopOf="@id/ring_horizon"
-        android:layout_marginStart="8dp"/>
-
+        app:layout_constraintTop_toTopOf="@id/ring_horizon" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/show_horizon_pref"
-        android:textColor="@android:color/white"
+        android:textColor="#00FFFF"
         android:textStyle="bold"
-        android:textSize="14sp"
-        android:shadowColor="#000000"
-        android:shadowDx="1"
-        android:shadowDy="1"
-        android:shadowRadius="3"
-        app:layout_constraintBottom_toBottomOf="@id/arrow_horizon"
-        app:layout_constraintStart_toEndOf="@id/arrow_horizon"
-        app:layout_constraintTop_toTopOf="@id/arrow_horizon"
-        android:layout_marginStart="8dp" />
+        android:textSize="15sp"
+        android:shadowColor="#00FFFF"
+        android:shadowDx="0" android:shadowDy="0" android:shadowRadius="15"
+        android:background="@drawable/neon_text_bg"
+        android:paddingHorizontal="10dp" android:paddingVertical="4dp"
+        app:layout_constraintBottom_toBottomOf="@id/ring_horizon"
+        app:layout_constraintStart_toEndOf="@id/ring_horizon"
+        app:layout_constraintTop_toTopOf="@id/ring_horizon"
+        android:layout_marginStart="80dp"
+        android:translationY="65dp" />
 
-    <!-- Top icons: Search, Night Mode, Time Travel -->
-    
-    <!-- Search -->
+
+    <!-- TOP ICONS -->
+    <!-- SEARCH -->
     <ImageView
         android:id="@+id/ring_search"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
         android:src="@drawable/ic_neon_ring"
         app:layout_constraintBottom_toBottomOf="@id/screenshot_bg"
         app:layout_constraintEnd_toEndOf="@id/screenshot_bg"
         app:layout_constraintStart_toStartOf="@id/screenshot_bg"
         app:layout_constraintTop_toTopOf="@id/screenshot_bg"
-        app:layout_constraintHorizontal_bias="0.54"
-        app:layout_constraintVertical_bias="0.095" />
-
+        app:layout_constraintHorizontal_bias="0.524"
+        app:layout_constraintVertical_bias="0.054" />
     <ImageView
-        android:id="@+id/arrow_search"
-        android:layout_width="16dp"
-        android:layout_height="32dp"
-        android:src="@drawable/ic_neon_arrow_up"
-        app:layout_constraintTop_toBottomOf="@id/ring_search"
+        android:layout_width="96dp"
+        android:layout_height="24dp"
+        android:src="@drawable/ic_neon_arrow_long"
+        android:transformPivotX="0dp"
+        android:transformPivotY="12dp"
+        android:rotation="110"
+        app:layout_constraintBottom_toBottomOf="@id/ring_search"
         app:layout_constraintStart_toStartOf="@id/ring_search"
         app:layout_constraintEnd_toEndOf="@id/ring_search"
-        android:layout_marginTop="8dp"/>
-
+        app:layout_constraintTop_toTopOf="@id/ring_search" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/menu_search"
-        android:textColor="@android:color/white"
+        android:textColor="#00FFFF"
         android:textStyle="bold"
-        android:textSize="14sp"
-        android:shadowColor="#000000"
-        android:shadowDx="1"
-        android:shadowDy="1"
-        android:shadowRadius="3"
-        android:gravity="center"
-        app:layout_constraintTop_toBottomOf="@id/arrow_search"
-        app:layout_constraintStart_toStartOf="@id/arrow_search"
-        app:layout_constraintEnd_toEndOf="@id/arrow_search"
-        android:layout_marginTop="8dp" />
+        android:textSize="15sp"
+        android:shadowColor="#00FFFF"
+        android:shadowDx="0" android:shadowDy="0" android:shadowRadius="15"
+        android:background="@drawable/neon_text_bg"
+        android:paddingHorizontal="10dp" android:paddingVertical="4dp"
+        app:layout_constraintBottom_toBottomOf="@id/ring_search"
+        app:layout_constraintStart_toStartOf="@id/ring_search"
+        app:layout_constraintEnd_toEndOf="@id/ring_search"
+        app:layout_constraintTop_toTopOf="@id/ring_search"
+        android:translationX="-40dp"
+        android:translationY="90dp" />
 
-    <!-- Night Mode -->
+    <!-- NIGHT MODE -->
     <ImageView
         android:id="@+id/ring_night_mode"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
         android:src="@drawable/ic_neon_ring"
         app:layout_constraintBottom_toBottomOf="@id/screenshot_bg"
         app:layout_constraintEnd_toEndOf="@id/screenshot_bg"
         app:layout_constraintStart_toStartOf="@id/screenshot_bg"
         app:layout_constraintTop_toTopOf="@id/screenshot_bg"
-        app:layout_constraintHorizontal_bias="0.67"
-        app:layout_constraintVertical_bias="0.095" />
-
+        app:layout_constraintHorizontal_bias="0.644"
+        app:layout_constraintVertical_bias="0.054" />
     <ImageView
-        android:id="@+id/arrow_night_mode"
-        android:layout_width="16dp"
-        android:layout_height="32dp"
-        android:src="@drawable/ic_neon_arrow_up"
-        app:layout_constraintTop_toBottomOf="@id/ring_night_mode"
+        android:layout_width="96dp"
+        android:layout_height="24dp"
+        android:src="@drawable/ic_neon_arrow_long"
+        android:transformPivotX="0dp"
+        android:transformPivotY="12dp"
+        android:rotation="90"
+        app:layout_constraintBottom_toBottomOf="@id/ring_night_mode"
         app:layout_constraintStart_toStartOf="@id/ring_night_mode"
         app:layout_constraintEnd_toEndOf="@id/ring_night_mode"
-        android:layout_marginTop="8dp"/>
-
+        app:layout_constraintTop_toTopOf="@id/ring_night_mode" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/tutorial_night_mode"
-        android:textColor="@android:color/white"
+        android:textColor="#00FFFF"
         android:textStyle="bold"
-        android:textSize="14sp"
-        android:shadowColor="#000000"
-        android:shadowDx="1"
-        android:shadowDy="1"
-        android:shadowRadius="3"
-        android:gravity="center"
-        app:layout_constraintTop_toBottomOf="@id/arrow_night_mode"
-        app:layout_constraintStart_toStartOf="@id/arrow_night_mode"
-        app:layout_constraintEnd_toEndOf="@id/arrow_night_mode"
-        android:layout_marginTop="8dp" />
+        android:textSize="15sp"
+        android:shadowColor="#00FFFF"
+        android:shadowDx="0" android:shadowDy="0" android:shadowRadius="15"
+        android:background="@drawable/neon_text_bg"
+        android:paddingHorizontal="10dp" android:paddingVertical="4dp"
+        app:layout_constraintBottom_toBottomOf="@id/ring_night_mode"
+        app:layout_constraintStart_toStartOf="@id/ring_night_mode"
+        app:layout_constraintEnd_toEndOf="@id/ring_night_mode"
+        app:layout_constraintTop_toTopOf="@id/ring_night_mode"
+        android:translationX="-10dp"
+        android:translationY="110dp" />
 
-    <!-- Time Travel -->
+    <!-- TIME TRAVEL -->
     <ImageView
         android:id="@+id/ring_time_travel"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
         android:src="@drawable/ic_neon_ring"
         app:layout_constraintBottom_toBottomOf="@id/screenshot_bg"
         app:layout_constraintEnd_toEndOf="@id/screenshot_bg"
         app:layout_constraintStart_toStartOf="@id/screenshot_bg"
         app:layout_constraintTop_toTopOf="@id/screenshot_bg"
-        app:layout_constraintHorizontal_bias="0.80"
-        app:layout_constraintVertical_bias="0.095" />
-
+        app:layout_constraintHorizontal_bias="0.764"
+        app:layout_constraintVertical_bias="0.054" />
     <ImageView
-        android:id="@+id/arrow_time_travel"
-        android:layout_width="16dp"
-        android:layout_height="32dp"
-        android:src="@drawable/ic_neon_arrow_up"
-        app:layout_constraintTop_toBottomOf="@id/ring_time_travel"
+        android:layout_width="96dp"
+        android:layout_height="24dp"
+        android:src="@drawable/ic_neon_arrow_long"
+        android:transformPivotX="0dp"
+        android:transformPivotY="12dp"
+        android:rotation="70"
+        app:layout_constraintBottom_toBottomOf="@id/ring_time_travel"
         app:layout_constraintStart_toStartOf="@id/ring_time_travel"
         app:layout_constraintEnd_toEndOf="@id/ring_time_travel"
-        android:layout_marginTop="8dp"/>
-
+        app:layout_constraintTop_toTopOf="@id/ring_time_travel" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/tutorial_time_travel"
-        android:textColor="@android:color/white"
+        android:textColor="#00FFFF"
         android:textStyle="bold"
-        android:textSize="14sp"
-        android:shadowColor="#000000"
-        android:shadowDx="1"
-        android:shadowDy="1"
-        android:shadowRadius="3"
-        android:gravity="center"
-        app:layout_constraintTop_toBottomOf="@id/arrow_time_travel"
-        app:layout_constraintStart_toStartOf="@id/arrow_time_travel"
-        app:layout_constraintEnd_toEndOf="@id/arrow_time_travel"
-        android:layout_marginTop="8dp" />
+        android:textSize="15sp"
+        android:shadowColor="#00FFFF"
+        android:shadowDx="0" android:shadowDy="0" android:shadowRadius="15"
+        android:background="@drawable/neon_text_bg"
+        android:paddingHorizontal="10dp" android:paddingVertical="4dp"
+        app:layout_constraintBottom_toBottomOf="@id/ring_time_travel"
+        app:layout_constraintStart_toStartOf="@id/ring_time_travel"
+        app:layout_constraintEnd_toEndOf="@id/ring_time_travel"
+        app:layout_constraintTop_toTopOf="@id/ring_time_travel"
+        android:translationX="30dp"
+        android:translationY="90dp" />
 
-    <!-- Manual/Auto (Right side) -->
+
+    <!-- MANUAL/AUTO -->
     <ImageView
         android:id="@+id/ring_manual_auto"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
         android:src="@drawable/ic_neon_ring"
         app:layout_constraintBottom_toBottomOf="@id/screenshot_bg"
         app:layout_constraintEnd_toEndOf="@id/screenshot_bg"
         app:layout_constraintStart_toStartOf="@id/screenshot_bg"
         app:layout_constraintTop_toTopOf="@id/screenshot_bg"
-        app:layout_constraintHorizontal_bias="0.94"
-        app:layout_constraintVertical_bias="0.50" />
-
+        app:layout_constraintHorizontal_bias="0.938"
+        app:layout_constraintVertical_bias="0.488" />
     <ImageView
-        android:id="@+id/arrow_manual_auto"
-        android:layout_width="32dp"
-        android:layout_height="16dp"
-        android:src="@drawable/ic_neon_arrow_right"
+        android:layout_width="96dp"
+        android:layout_height="24dp"
+        android:src="@drawable/ic_neon_arrow_long"
+        android:transformPivotX="0dp"
+        android:transformPivotY="12dp"
+        android:rotation="180"
         app:layout_constraintBottom_toBottomOf="@id/ring_manual_auto"
-        app:layout_constraintEnd_toStartOf="@id/ring_manual_auto"
-        app:layout_constraintTop_toTopOf="@id/ring_manual_auto"
-        android:layout_marginEnd="8dp"/>
-
+        app:layout_constraintStart_toStartOf="@id/ring_manual_auto"
+        app:layout_constraintEnd_toEndOf="@id/ring_manual_auto"
+        app:layout_constraintTop_toTopOf="@id/ring_manual_auto" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/tutorial_manual_auto"
-        android:textColor="@android:color/white"
+        android:textColor="#00FFFF"
         android:textStyle="bold"
-        android:textSize="14sp"
-        android:shadowColor="#000000"
-        android:shadowDx="1"
-        android:shadowDy="1"
-        android:shadowRadius="3"
-        android:gravity="end"
-        app:layout_constraintBottom_toBottomOf="@id/arrow_manual_auto"
-        app:layout_constraintEnd_toStartOf="@id/arrow_manual_auto"
-        app:layout_constraintTop_toTopOf="@id/arrow_manual_auto"
-        android:layout_marginEnd="8dp" />
+        android:textSize="15sp"
+        android:shadowColor="#00FFFF"
+        android:shadowDx="0" android:shadowDy="0" android:shadowRadius="15"
+        android:background="@drawable/neon_text_bg"
+        android:paddingHorizontal="10dp" android:paddingVertical="4dp"
+        app:layout_constraintBottom_toBottomOf="@id/ring_manual_auto"
+        app:layout_constraintStart_toStartOf="@id/ring_manual_auto"
+        app:layout_constraintEnd_toEndOf="@id/ring_manual_auto"
+        app:layout_constraintTop_toTopOf="@id/ring_manual_auto"
+        android:translationX="-140dp" />
+
+    <!-- Explanatory Text at Bottom -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#DD0B0F19"
+        android:padding="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/warm_welcome_slide1_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/warm_welcome_slide1_title"
+            android:textSize="24sp"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:id="@+id/warm_welcome_slide1_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/warm_welcome_slide1_desc"
+            android:textSize="16sp"
+            android:textColor="#CCCCCC"
+            android:lineSpacingExtra="4dp" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
