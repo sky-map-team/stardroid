@@ -8,7 +8,7 @@ tests_package_name('com.google.android.stardroid.test')
 test_instrumentation_runner('com.google.android.stardroid.test.HiltTestRunner')
 
 # The locales you want to capture (matches your metadata folders)
-locales(['ar','fa'
+locales([
 ])
 # Existing locales already captured:
 # 'ar', 'cs-CZ', 'da-DK', 'de-DE', 'el-GR', 'en-GB', 'es-ES', 'fa', 'fr-FR', 'hi-IN', 'it-IT', 'ja-JP',
