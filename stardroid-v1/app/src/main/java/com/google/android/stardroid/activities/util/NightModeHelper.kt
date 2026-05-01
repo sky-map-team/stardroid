@@ -64,7 +64,7 @@ object NightModeHelper {
     /**
      * Recursively sets the text and link colour on every [TextView] (including
      * [Button]s) in a view hierarchy. Equivalent to calling
-     * [.tintTextViews] with the same colour for both.
+     * [tintTextViews] with the same colour for both.
      */
     @JvmStatic
     @JvmStatic
