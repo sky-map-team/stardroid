@@ -45,8 +45,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import android.app.ActionBar;
+
 import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
+import androidx.annotation.VisibleForTesting;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -69,6 +72,7 @@ import com.google.android.stardroid.activities.util.FullscreenControlsManager;
 import com.google.android.stardroid.activities.util.GooglePlayServicesChecker;
 import com.google.android.stardroid.activities.util.MenuUtils;
 import com.google.android.stardroid.activities.util.NightModeHelper;
+import com.google.android.stardroid.activities.util.TooltipUtil;
 import com.google.android.stardroid.base.Lists;
 import com.google.android.stardroid.control.AstronomerModel;
 import com.google.android.stardroid.control.AstronomerModel.Pointing;
@@ -118,7 +122,8 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
     ObjectInfoDialogFragment.OnFindClickedListener,
     ObjectInfoDialogFragment.OnSeeAlsoClickedListener {
   private static final int TIME_DISPLAY_DELAY_MILLIS = 1000;
-  // Extra delay after the clock transition settles before querying solar-system positions.
+  // Extra delay after the clock transition settles before querying solar-system
+  // positions.
   private static final long SEARCH_POST_TRANSITION_DELAY_MS = 500;
 
   /**
@@ -131,8 +136,8 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
     private AstronomerModel model;
 
     public RendererModelUpdateClosure(AstronomerModel model,
-                                      RendererController rendererController,
-                                      SharedPreferences sharedPreferences) {
+        RendererController rendererController,
+        SharedPreferences sharedPreferences) {
       this.model = model;
       this.rendererController = rendererController;
       // TODO(jontayler): figure out why we need to do this here.
@@ -163,9 +168,8 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
   }
 
   private static void updateViewDirectionMode(AstronomerModel model,
-                                              SharedPreferences sharedPreferences) {
-    String viewDirectionMode =
-        sharedPreferences.getString(ApplicationConstants.VIEW_MODE_PREFKEY, "STANDARD");
+      SharedPreferences sharedPreferences) {
+    String viewDirectionMode = sharedPreferences.getString(ApplicationConstants.VIEW_MODE_PREFKEY, "STANDARD");
     switch (viewDirectionMode) {
       case "ROTATE90":
         model.setViewDirectionMode(AstronomerModel.ViewDirectionMode.ROTATE90);
@@ -189,43 +193,68 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
   private ImageButton cancelSearchButton;
   private TextView searchStatusLabel;
   private TextView searchPromptText;
-  @Inject ControllerGroup controller;
+  @Inject
+  ControllerGroup controller;
   private GestureDetector gestureDetector;
   @Inject
   GestureDetectorFactory gestureDetectorFactory;
   @Inject
   GestureInterpreterFactory gestureInterpreterFactory;
   private GestureInterpreter gestureInterpreter;
-  @Inject AstronomerModel model;
+  @Inject
+  AstronomerModel model;
   private RendererController rendererController;
   private boolean nightMode = false;
   private volatile boolean searchMode = false;
   private volatile boolean lastSearchFocusState = false;
   private Vector3 searchTarget = CoordinateManipulationsKt.getGeocentricCoords(0, 0);
 
-  @Inject SharedPreferences sharedPreferences;
-  @Inject @Nullable SensorManager sensorManager;
+  @Inject
+  SharedPreferences sharedPreferences;
+  @Inject
+  @Nullable
+  SensorManager sensorManager;
   private GLSurfaceView skyView;
-  @Inject @Nullable PowerManager powerManager;
+  @Inject
+  @Nullable
+  PowerManager powerManager;
   private PowerManager.WakeLock wakeLock;
   private String searchTargetName;
-  @Inject LayerManager layerManager;
+  @Inject
+  LayerManager layerManager;
   // TODO(widdows): Figure out if we should break out the
   // time dialog and time player into separate activities.
   private View timePlayerUI;
-  @Inject @Named("timetravel") Provider<MediaPlayer> timeTravelNoiseProvider;
-  @Inject @Named("timetravelback") Provider<MediaPlayer> timeTravelBackNoiseProvider;
+  @Inject
+  @Named("timetravel")
+  Provider<MediaPlayer> timeTravelNoiseProvider;
+  @Inject
+  @Named("timetravelback")
+  Provider<MediaPlayer> timeTravelBackNoiseProvider;
   private MediaPlayer timeTravelNoise;
   private MediaPlayer timeTravelBackNoise;
-  @Inject Handler handler;
-  @Inject Analytics analytics;
-  @Inject GooglePlayServicesChecker playServicesChecker;
-  @Inject FragmentManager fragmentManager;
-  @Inject ObjectInfoTapHandler objectInfoTapHandler;
-  @Inject ObjectInfoRegistry objectInfoRegistry;
-  @Inject SensorAccuracyMonitor sensorAccuracyMonitor;
-  @Inject DragRotateZoomGestureDetector dragZoomRotateDetector;
+  @Inject
+  Handler handler;
+  @Inject
+  Analytics analytics;
+  @Inject
+  GooglePlayServicesChecker playServicesChecker;
+  @Inject
+  FragmentManager fragmentManager;
+  @Inject
+  ObjectInfoTapHandler objectInfoTapHandler;
+  @Inject
+  ObjectInfoRegistry objectInfoRegistry;
+  @Inject
+  SensorAccuracyMonitor sensorAccuracyMonitor;
+  @Inject
+  DragRotateZoomGestureDetector dragZoomRotateDetector;
   private FullscreenControlsManager fullscreenControlsManager;
+
+  @VisibleForTesting
+  public FullscreenControlsManager getFullscreenControlsManager() {
+    return fullscreenControlsManager;
+  }
 
   // A list of runnables to post on the handler when we resume.
   private final List<Runnable> onResumeRunnables = new ArrayList<>();
@@ -233,10 +262,14 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
   // We need to maintain references to these objects to keep them from
   // getting gc'd.
   @SuppressWarnings("unused")
-  @Inject MagneticDeclinationCalculatorSwitcher magneticSwitcher;
+  @Inject
+  MagneticDeclinationCalculatorSwitcher magneticSwitcher;
 
-  @Inject @Named("timetravelflash") Animation flashAnimation;
-  @Inject ActivityLightLevelManager activityLightLevelManager;
+  @Inject
+  @Named("timetravelflash")
+  Animation flashAnimation;
+  @Inject
+  ActivityLightLevelManager activityLightLevelManager;
   private long sessionStartTime;
 
   @Override
@@ -253,11 +286,13 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
     // TODO(jontayler): upgrade to
     // getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN);
     // when we reach API level 16.
-    // http://developer.android.com/training/system-ui/immersive.html for the right way
+    // http://developer.android.com/training/system-ui/immersive.html for the right
+    // way
     // to do it at API level 19.
-    //getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
+    // getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
 
-    // Eventually we should check at the point of use, but this will do for now.  If the
+    // Eventually we should check at the point of use, but this will do for now. If
+    // the
     // user revokes the permission later then odd things may happen.
     playServicesChecker.maybeCheckForGooglePlayServices();
 
@@ -278,6 +313,13 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
       Log.d(TAG, "Started as a result of a search");
       doSearchWithIntent(intent);
     }
+
+    ActionBar actionBar = getActionBar();
+    if (actionBar != null) {
+      actionBar.setDisplayShowHomeEnabled(true);
+      actionBar.setDisplayUseLogoEnabled(true);
+    }
+
     Log.d(TAG, "-onCreate at " + System.currentTimeMillis());
   }
 
@@ -304,7 +346,8 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
           nightMode ? getColor(R.color.night_sidebar_bg) : Color.WHITE, PorterDuff.Mode.MULTIPLY);
     }
 
-    // Layer icon buttons: PreferencesButton handles its own on/off tinting in night mode.
+    // Layer icon buttons: PreferencesButton handles its own on/off tinting in night
+    // mode.
     if (providerButtons != null) {
       for (int i = 0; i < providerButtons.getChildCount(); i++) {
         View child = providerButtons.getChildAt(i);
@@ -336,12 +379,12 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
     // Search control bar
     View searchControlBar = findViewById(R.id.search_control_bar);
     if (searchControlBar != null) {
-      searchControlBar.setBackgroundColor(nightMode ? getColor(R.color.night_bar_bg) :
-          getColor(R.color.day_bar_bg));
-      int[] searchTextIds = {R.id.search_status_label, R.id.search_prompt};
+      searchControlBar.setBackgroundColor(nightMode ? getColor(R.color.night_bar_bg) : getColor(R.color.day_bar_bg));
+      int[] searchTextIds = { R.id.search_status_label, R.id.search_prompt };
       for (int id : searchTextIds) {
         TextView tv = findViewById(id);
-        if (tv != null) tv.setTextColor(textColor);
+        if (tv != null)
+          tv.setTextColor(textColor);
       }
       ImageButton cancelBtn = findViewById(R.id.cancel_search_button);
       if (cancelBtn != null) {
@@ -355,15 +398,13 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
 
     // Time player bar
     if (timePlayerUI != null) {
-      timePlayerUI.setBackgroundColor(nightMode ? getColor(R.color.night_bar_bg) :
-          getColor(R.color.day_bar_bg));
+      timePlayerUI.setBackgroundColor(nightMode ? getColor(R.color.night_bar_bg) : getColor(R.color.day_bar_bg));
       if (timePlayerUI instanceof ViewGroup) {
         ViewGroup group = (ViewGroup) timePlayerUI;
         for (int i = 0; i < group.getChildCount(); i++) {
           View child = group.getChildAt(i);
           if (child instanceof android.widget.RelativeLayout) {
-            child.setBackgroundColor(nightMode ? getColor(R.color.night_bar_bg) :
-                getColor(R.color.day_bar_bg));
+            child.setBackgroundColor(nightMode ? getColor(R.color.night_bar_bg) : getColor(R.color.day_bar_bg));
           }
         }
       }
@@ -374,7 +415,8 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
       };
       for (int id : textViewIds) {
         TextView tv = findViewById(id);
-        if (tv != null) tv.setTextColor(textColor);
+        if (tv != null)
+          tv.setTextColor(textColor);
       }
       // Time player icon and control buttons
       int[] iconIds = {
@@ -413,13 +455,13 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
       // We want to reset to auto mode on every restart, as users seem to get
       // stuck in manual mode and can't find their way out.
       // TODO(johntaylor): this is a bit of an abuse of the prefs system, but
-      // the button we use is wired into the preferences system.  Should probably
+      // the button we use is wired into the preferences system. Should probably
       // change this to a use a different mechanism.
       sharedPreferences.edit().putBoolean(ApplicationConstants.AUTO_MODE_PREF_KEY, true).apply();
       setAutoMode(true);
       return;
     }
-    // Missing at least one sensor.  Warn the user.
+    // Missing at least one sensor. Warn the user.
     handler.post(() -> {
       Toast.makeText(DynamicStarMapActivity.this, R.string.no_sensor_warning, Toast.LENGTH_LONG).show();
       if (!sharedPreferences.getBoolean(ApplicationConstants.NO_WARN_ABOUT_MISSING_SENSORS, false)) {
@@ -448,13 +490,33 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
     super.onCreateOptionsMenu(menu);
     MenuInflater inflater = getMenuInflater();
     inflater.inflate(R.menu.main, menu);
+
+    setupActionItem(menu, R.id.menu_item_search, android.R.drawable.ic_menu_search, R.string.menu_search);
+    setupActionItem(menu, R.id.menu_item_dim, android.R.drawable.ic_menu_view, R.string.menu_toggle_dim);
+    setupActionItem(menu, R.id.menu_item_time, R.drawable.time_travel_icon, R.string.menu_time);
+
     return true;
+  }
+
+  private void setupActionItem(Menu menu, int itemId, int iconRes, @StringRes int stringRes) {
+    MenuItem item = menu.findItem(itemId);
+    if (item != null) {
+      View view = item.getActionView();
+      if (view instanceof ImageButton) {
+        ImageButton btn = (ImageButton) view;
+        btn.setImageResource(iconRes);
+        btn.setContentDescription(getString(stringRes));
+        btn.setOnClickListener(v -> onOptionsItemSelected(item));
+        TooltipUtil.setupToastTooltip(btn, getString(stringRes), TooltipUtil.Position.BELOW);
+      }
+    }
   }
 
   @Override
   public void onDestroy() {
     Log.d(TAG, "DynamicStarMap onDestroy");
-    if (gestureInterpreter != null) gestureInterpreter.destroy();
+    if (gestureInterpreter != null)
+      gestureInterpreter.destroy();
     super.onDestroy();
   }
 
@@ -564,6 +626,7 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
     LESS_THAN_TEN_SECS(10), TEN_SECS_TO_THIRTY_SECS(30),
     THIRTY_SECS_TO_ONE_MIN(60), ONE_MIN_TO_FIVE_MINS(300),
     MORE_THAN_FIVE_MINS(Integer.MAX_VALUE);
+
     private final int seconds;
 
     SessionBucketLength(int seconds) {
@@ -585,10 +648,9 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
   public void onStop() {
     super.onStop();
     // Define a session as being the time between the main activity being in
-    // the foreground and pushed back.  Note that this will mean that sessions
+    // the foreground and pushed back. Note that this will mean that sessions
     // do get interrupted by (e.g.) loading preference or help screens.
-    int sessionLengthSeconds = (int) ((
-        System.currentTimeMillis() - sessionStartTime) / 1000);
+    int sessionLengthSeconds = (int) ((System.currentTimeMillis() - sessionStartTime) / 1000);
     SessionBucketLength bucket = getSessionLengthBucket(sessionLengthSeconds);
     Bundle b = new Bundle();
     // Let's see how well Analytics buckets things and log the raw number
@@ -602,7 +664,8 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
     Log.d(TAG, "onResume at " + System.currentTimeMillis());
     super.onResume();
     Log.i(TAG, "Resuming");
-    // Provider is unscoped so each call returns a fresh instance (not a cached released one).
+    // Provider is unscoped so each call returns a fresh instance (not a cached
+    // released one).
     // prepareAsync() inside the provider means this never blocks the main thread.
     timeTravelNoise = timeTravelNoiseProvider.get();
     timeTravelBackNoise = timeTravelBackNoiseProvider.get();
@@ -625,14 +688,16 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
 
   private void maybeShowLocationWarning() {
     LocationController locationController = controller.getLocationController();
-    if (!locationController.isLocationUnset()) return;
+    if (!locationController.isLocationUnset())
+      return;
 
     LocationController.LocationStatus status = locationController.getLastStatus();
     String message;
 
     if (status == LocationController.LocationStatus.PERMISSION_DENIED) {
       message = getString(R.string.location_warning_permission);
-      showDialog(LocationPermissionDeniedDialogFragment.newInstance(), LocationPermissionDeniedDialogFragment.class.getSimpleName());
+      showDialog(LocationPermissionDeniedDialogFragment.newInstance(),
+          LocationPermissionDeniedDialogFragment.class.getSimpleName());
     } else if (status == LocationController.LocationStatus.MANUAL_NO_COORDS) {
       message = getString(R.string.location_warning_manual);
     } else {
@@ -647,7 +712,7 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
   }
 
   public void setTimeTravelMode(Date newTime, @StringRes int searchObjectNameRes,
-                                String analyticsKey) {
+      String analyticsKey) {
     Bundle timeTravelBundle = new Bundle();
     timeTravelBundle.putString(AnalyticsInterface.TIME_TRAVEL_EVENT_KEY, analyticsKey);
     analytics.trackEvent(AnalyticsInterface.TIME_TRAVEL_USED_EVENT, timeTravelBundle);
@@ -674,11 +739,11 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
     controller.goTimeTravel(newTime);
 
     if (searchObjectNameRes != 0) {
-      // Delay until after the clock transition completes (TransitioningCompositeClock uses
+      // Delay until after the clock transition completes (TransitioningCompositeClock
+      // uses
       // 2500 ms) so that solar-system positions have been updated to the new time.
       handler.postDelayed(() -> {
-        List<SearchResult> results =
-            layerManager.searchByObjectName(getString(searchObjectNameRes));
+        List<SearchResult> results = layerManager.searchByObjectName(getString(searchObjectNameRes));
         if (!results.isEmpty()) {
           SearchResult r = results.get(0);
           activateSearchTarget(r.coords(), r.getCapitalizedName());
@@ -895,13 +960,15 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
     WeakReference<DynamicStarMapActivity> weakThis = new WeakReference<>(this);
     rendererController.addUpdateClosure(() -> {
       DynamicStarMapActivity activity = weakThis.get();
-      if (activity == null) return;
+      if (activity == null)
+        return;
       if (!activity.searchMode) {
         activity.lastSearchFocusState = false;
         return;
       }
       boolean inFocus = rendererController.isSearchTargetInFocus();
-      if (inFocus == activity.lastSearchFocusState) return;
+      if (inFocus == activity.lastSearchFocusState)
+        return;
       activity.lastSearchFocusState = inFocus;
       activity.runOnUiThread(() -> activity.updateSearchPrompt(inFocus));
     });
@@ -911,7 +978,7 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
     Log.i(TAG, "Set up controllers @ " + System.currentTimeMillis());
     controller.setModel(model);
     wireUpScreenControls(); // TODO(johntaylor) move these?
-    wireUpTimePlayer();  // TODO(widdows) move these?
+    wireUpTimePlayer(); // TODO(widdows) move these?
   }
 
   private void setAutoMode(boolean auto) {
@@ -948,7 +1015,8 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
     PreferencesButton manualAutoToggle = findViewById(R.id.manual_auto_toggle);
     buttonViews.add(manualAutoToggle);
 
-    // Set the dependencies on the gestureInterpreter that require the UI to be inflated
+    // Set the dependencies on the gestureInterpreter that require the UI to be
+    // inflated
     // so can't be done via constructor injection.
     ButtonLayerView manualButtonLayer = findViewById(R.id.layer_manual_auto_toggle);
     fullscreenControlsManager = new FullscreenControlsManager(
@@ -957,31 +1025,33 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
         Lists.asList(manualButtonLayer, providerButtons),
         buttonViews);
     gestureInterpreter = gestureInterpreterFactory.createGestureInterpreter(
-            fullscreenControlsManager,
-            new GestureInterpreter.ScreenDimensionsProvider() {
-              @Override
-              public int getScreenWidth() {
-                return skyView.getWidth();
-              }
+        fullscreenControlsManager,
+        new GestureInterpreter.ScreenDimensionsProvider() {
+          @Override
+          public int getScreenWidth() {
+            return skyView.getWidth();
+          }
 
-              @Override
-              public int getScreenHeight() {
-                return skyView.getHeight();
-              }
-            });
+          @Override
+          public int getScreenHeight() {
+            return skyView.getHeight();
+          }
+        });
     gestureDetector = gestureDetectorFactory.createGestureDetector(gestureInterpreter);
 
     // Set up the object info tap handler listener
     // TODO(jontayler): can we just inject this?
     objectInfoTapHandler.setObjectTapListener(this::showObjectInfoDialog);
 
-    // Re-apply uniform night tint after each click, since PreferencesButton.setVisuallyOnOrOff()
-    // would otherwise dim the button via the on/off tint logic (fix for issue #661).
+    // Re-apply uniform night tint after each click, since
+    // PreferencesButton.setVisuallyOnOrOff()
+    // would otherwise dim the button via the on/off tint logic (fix for issue
+    // #661).
     if (manualAutoToggle != null) {
       manualAutoToggle.setOnClickListener(v -> {
         if (nightMode) {
           manualAutoToggle.setColorFilter(getColor(R.color.night_text_color),
-                  PorterDuff.Mode.MULTIPLY);
+              PorterDuff.Mode.MULTIPLY);
         } else {
           manualAutoToggle.clearColorFilter();
         }
@@ -1026,8 +1096,10 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
   }
 
   /**
-   * Shows a dialog fragment only if no fragment with the same tag is currently in the back stack.
-   * Guards against duplicate dialogs after activity recreation (e.g. rotation), where the
+   * Shows a dialog fragment only if no fragment with the same tag is currently in
+   * the back stack.
+   * Guards against duplicate dialogs after activity recreation (e.g. rotation),
+   * where the
    * FragmentManager restores an existing instance while Dagger injects a new one.
    */
   private void showDialog(androidx.fragment.app.DialogFragment fragment, String tag) {
@@ -1067,7 +1139,8 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
   protected void onRestoreInstanceState(Bundle icicle) {
     Log.d(TAG, "DynamicStarMap onRestoreInstanceState");
     super.onRestoreInstanceState(icicle);
-    if (icicle == null) return;
+    if (icicle == null)
+      return;
     searchMode = icicle.getBoolean(ApplicationConstants.BUNDLE_SEARCH_MODE);
     float x = icicle.getFloat(ApplicationConstants.BUNDLE_X_TARGET);
     float y = icicle.getFloat(ApplicationConstants.BUNDLE_Y_TARGET);
@@ -1106,8 +1179,7 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
     Bundle lockedBundle = new Bundle();
     lockedBundle.putString(AnalyticsInterface.OBJECT_LOCKED_NAME, searchTerm);
     lockedBundle.putString(AnalyticsInterface.OBJECT_LOCKED_MODE,
-        autoMode ? AnalyticsInterface.OBJECT_LOCKED_MODE_AUTO :
-            AnalyticsInterface.OBJECT_LOCKED_MODE_MANUAL);
+        autoMode ? AnalyticsInterface.OBJECT_LOCKED_MODE_AUTO : AnalyticsInterface.OBJECT_LOCKED_MODE_MANUAL);
     analytics.trackEvent(AnalyticsInterface.OBJECT_LOCKED_EVENT, lockedBundle);
     if (!autoMode) {
       controller.teleport(target);
@@ -1199,8 +1271,8 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
 
   @Override
   public void onRequestPermissionsResult(int requestCode,
-                                         String[] permissions,
-                                         int[] grantResults) {
+      String[] permissions,
+      int[] grantResults) {
     if (requestCode == GOOGLE_PLAY_SERVICES_REQUEST_LOCATION_PERMISSION_CODE) {
       playServicesChecker.runAfterPermissionsCheck(requestCode, permissions, grantResults);
       return;

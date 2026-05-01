@@ -112,6 +112,43 @@
     <string name="neptune" translation_description="Name of the planet Neptune">海王星</string>
     <string name="pluto" translation_description="Name of the dwarf planet Pluto">冥王星</string>
 
+    <!-- Moons of Mars -->
+    <string name="phobos" translation_description="Name of Mars\'s moon Phobos">火卫一</string>
+    <string name="deimos" translation_description="Name of Mars\'s moon Deimos">火卫二</string>
+
+    <!-- Galilean Moons of Jupiter -->
+    <string name="io" translation_description="Name of Jupiter\'s moon Io">木卫一</string>
+    <string name="europa" translation_description="Name of Jupiter\'s moon Europa">木卫二</string>
+    <string name="ganymede" translation_description="Name of Jupiter\'s moon Ganymede">木卫三</string>
+    <string name="callisto" translation_description="Name of Jupiter\'s moon Callisto">木卫四</string>
+
+    <!-- Major Moons of Saturn -->
+    <string name="titan" translation_description="Name of Saturn\'s moon Titan">土卫六</string>
+    <string name="rhea" translation_description="Name of Saturn\'s moon Rhea">土卫五</string>
+    <string name="tethys" translation_description="Name of Saturn\'s moon Tethys">土卫三</string>
+    <string name="dione" translation_description="Name of Saturn\'s moon Dione">土卫四</string>
+    <string name="iapetus" translation_description="Name of Saturn\'s moon Iapetus">土卫八</string>
+
+    <!-- Moon of Neptune -->
+    <string name="triton" translation_description="Name of Neptune\'s moon Triton">海卫一</string>
+
+    <!-- Major Moons of Uranus -->
+    <string name="titania" translation_description="Name of Uranus\'s moon Titania">天卫三</string>
+    <string name="oberon" translation_description="Name of Uranus\'s moon Oberon">天卫四</string>
+    <string name="ariel" translation_description="Name of Uranus\'s moon Ariel">天卫一</string>
+    <string name="umbriel" translation_description="Name of Uranus\'s moon Umbriel">天卫二</string>
+
+    <!-- Deep-sky objects -->
+    <string name="hyades" translation_description="Name of the Hyades star cluster">毕宿星团</string>
+    <string name="coma_star_cluster" translation_description="Name of the Coma Berenices star cluster">后发座星团</string>
+    <string name="coathanger" translation_description="Name of the Coathanger asterism (Brocchi\'s Cluster)">衣架星群</string>
+    <string name="helix_nebula" translation_description="Name of the Helix Nebula (NGC 7293)">螺旋星云</string>
+    <string name="sculptor_galaxy" translation_description="Name of the Sculptor Galaxy (NGC 253)">雕塑家星系</string>
+    <string name="blue_snowball_nebula" translation_description="Name of the Blue Snowball Nebula (NGC 7662)">蓝雪球星云</string>
+    <string name="ghost_of_jupiter" translation_description="Name of the Ghost of Jupiter planetary nebula (NGC 3242)">木星幽灵星云</string>
+    <string name="saturn_nebula" translation_description="Name of the Saturn Nebula (NGC 7009)">土星星云</string>
+    <!-- tm:omitted name="ngc_2903" reason="identical_to_source" -->
+
     <!-- Gallery objects -->
     <string name="crab_nebula" translation_description="hubble object">蟹状星云</string>
     <string name="eagle_nebula" translation_description="hubble object">鹰状星云</string>
@@ -333,6 +370,17 @@
     <!-- tm:omitted name="smc" reason="identical_to_source" -->
     <string name="small_magellanic_cloud" translation_description="Full name of the Small Magellanic Cloud galaxy">小麦哲伦星云</string>
     <!-- tm:omitted name="nubecula_minor" reason="identical_to_source" -->
+    <!-- tm:omitted name="willman_1" reason="identical_to_source" -->
+    <string name="beth_willman_galaxy" translation_description="Informal nickname for the ultra-faint dwarf galaxy Willman 1, honouring its discoverer">贝丝·威尔曼星系</string>
+    <!-- Sagittarius A* -->
+    <string name="sgr_a_star" translation_description="Abbreviated designation for the supermassive black hole at the Milky Way centre">人马座 A*</string>
+    <string name="sagittarius_a_star" translation_description="Full name of the supermassive black hole at the Milky Way centre">人马座 A*</string>
+    <string name="black_hole" translation_description="Generic search term for black holes; used as an alias for Sagittarius A*">黑洞</string>
+    <string name="galactic_center" translation_description="The centre of the Milky Way galaxy, location of Sgr A*">银河系中心</string>
+    <!-- Cygnus X-1 -->
+    <string name="cygnus_x_1" translation_description="Designation for the stellar-mass black hole binary system in Cygnus">天鹅座X-1</string>
+    <string name="black_hole_binary" translation_description="Search alias for Cygnus X-1, a famous black hole X-ray binary system">黑洞双星</string>
+    <string name="stellar_black_hole" translation_description="Search alias for Cygnus X-1, the archetypal stellar-mass black hole">恒星质量黑洞</string>
     <string name="butterfly_cluster" translation_description="Name of the Messier object Butterfly Cluster">蝴蝶星团</string>
     <string name="scorpions_tail" translation_description="Name of the Messier object Scorpion\'s Tail">托勒密星团</string>
     <string name="winnecke_4" translation_description="Name of the Messier object Winnecke 4">梅西尔·40</string>
@@ -356,10 +404,78 @@
     <string name="puppidvelids" translation_description="Meteor Shower">船尾/船帆座流星雨</string>
     <string name="ursids" translation_description="Meteor Shower">小熊座流星雨</string>
 
+    <!-- North America Nebula -->
+    <string name="north_america_nebula" translation_description="Name of the North America Nebula (NGC 7000) as shown on the sky map">北美星云</string>
+    <!-- tm:omitted name="ngc_7000" reason="identical_to_source" -->
+    <!-- tm:omitted name="caldwell_20" reason="identical_to_source" -->
+
     <!-- Comets -->
     <string name="comet_leonard" translation_description="Name of Comet Leonard (C/2021 A1) as shown on the sky map">莱昂纳德彗星</string>
     <!-- TODO: no need for these alt names once our search is less lousy -->
     <string name="comet_leonard_alt" translation_description="Alternate searchable name for Comet Leonard, surname first">莱昂纳德（彗星）</string>
     <string name="comet_neowise" translation_description="Name of Comet NEOWISE (C/2020 F3) as shown on the sky map">新智彗星</string>
     <string name="comet_neowise_alt" translation_description="Alternate searchable name for Comet NEOWISE, surname first">新智（彗星）</string>
+
+    <!-- Jewel Box (NGC 4755) -->
+    <string name="jewel_box" translation_description="Common name for the open star cluster NGC 4755 in Crux">珠宝盒星团</string>
+    <string name="herschels_jewel_box" translation_description="Alternative name for the Jewel Box cluster (NGC 4755)">赫歇尔珠宝盒</string>
+    <string name="kappa_crucis_cluster" translation_description="Alternative name for the Jewel Box cluster (NGC 4755)">南十字座 κ 星团</string>
+
+    <!-- Exposed Cranium Nebula -->
+    <string name="exposed_cranium_nebula" translation_description="Common name for the planetary nebula PMR 1 in Vela, named for its brain-in-a-skull appearance">裸露颅骨星云</string>
+    <!-- tm:omitted name="pmr_1" reason="identical_to_source" -->
+
+    <!-- Double Cluster (NGC 869 & NGC 884) -->
+    <string name="double_cluster" translation_description="Common name for the pair of open star clusters NGC 869 and NGC 884 in Perseus">双星团</string>
+    <!-- tm:omitted name="ngc_869" reason="identical_to_source" -->
+    <!-- tm:omitted name="ngc_884" reason="identical_to_source" -->
+    <string name="h_and_chi_persei" translation_description="Traditional designation for the Double Cluster in Perseus">英仙座h和χ</string>
+    <!-- tm:omitted name="caldwell_14" reason="identical_to_source" -->
+
+    <!-- 47 Tucanae (NGC 104) -->
+    <string name="n47_tucanae" translation_description="Common name for the globular cluster NGC 104 in Tucana">杜鹃座47</string>
+    <string name="n47_tuc" translation_description="Abbreviation for the globular cluster 47 Tucanae (NGC 104)">杜鹃47</string>
+    <!-- tm:omitted name="ngc_104" reason="identical_to_source" -->
+
+    <!-- Centaurus A (NGC 5128) -->
+    <string name="centaurus_a" translation_description="Common name for the radio galaxy NGC 5128 in Centaurus">半人马座A</string>
+    <!-- tm:omitted name="ngc_5128" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="mel_25" reason="identical_to_source" -->
+    <!-- tm:omitted name="melotte_25" reason="identical_to_source" -->
+    <!-- tm:omitted name="caldwell_41" reason="identical_to_source" -->
+    <!-- tm:omitted name="mel_111" reason="identical_to_source" -->
+    <!-- tm:omitted name="melotte_111" reason="identical_to_source" -->
+    <string name="coma_berenices_cluster" translation_description="Alternate name for the Coma Star Cluster (Melotte 111)">后发座星团</string>
+    <string name="brocchis_cluster" translation_description="Alternate name for the Coathanger asterism (Collinder 399)">布罗基星团</string>
+    <!-- tm:omitted name="cr_399" reason="identical_to_source" -->
+    <!-- tm:omitted name="collinder_399" reason="identical_to_source" -->
+    <!-- tm:omitted name="ngc_7293" reason="identical_to_source" -->
+    <string name="eye_of_god" translation_description="Nickname for the Helix Nebula (NGC 7293)">上帝之眼</string>
+    <!-- tm:omitted name="caldwell_63" reason="identical_to_source" -->
+    <!-- tm:omitted name="ngc_253" reason="identical_to_source" -->
+    <string name="silver_dollar_galaxy" translation_description="Nickname for the Sculptor Galaxy (NGC 253)">银元星系</string>
+    <string name="silver_coin_galaxy" translation_description="Alternate nickname for the Sculptor Galaxy (NGC 253)">银币星系</string>
+    <!-- tm:omitted name="ngc_7662" reason="identical_to_source" -->
+    <!-- tm:omitted name="caldwell_22" reason="identical_to_source" -->
+    <!-- tm:omitted name="ngc_3242" reason="identical_to_source" -->
+    <!-- tm:omitted name="caldwell_59" reason="identical_to_source" -->
+    <!-- tm:omitted name="ngc_7009" reason="identical_to_source" -->
+    <!-- tm:omitted name="caldwell_55" reason="identical_to_source" -->
+    <string name="ptolemy_cluster" translation_description="Common name for the open star cluster M7 in Scorpius, named after ancient astronomer Ptolemy">托勒密星团</string>
+    <string name="hercules_globular_cluster" translation_description="Common name for the globular cluster M13 in Hercules">武仙座球状星团</string>
+    <!-- tm:omitted name="ngc_1952" reason="identical_to_source" -->
+    <!-- tm:omitted name="ngc_224" reason="identical_to_source" -->
+    <!-- tm:omitted name="ngc_2632" reason="identical_to_source" -->
+    <!-- tm:omitted name="ngc_4594" reason="identical_to_source" -->
+    <!-- tm:omitted name="ngc_4755" reason="identical_to_source" -->
+    <!-- tm:omitted name="ngc_5194" reason="identical_to_source" -->
+    <!-- tm:omitted name="ngc_5457" reason="identical_to_source" -->
+    <!-- tm:omitted name="ngc_6205" reason="identical_to_source" -->
+    <!-- tm:omitted name="ngc_6405" reason="identical_to_source" -->
+    <!-- tm:omitted name="ngc_6475" reason="identical_to_source" -->
+    <!-- tm:omitted name="ngc_6611" reason="identical_to_source" -->
+    <!-- tm:omitted name="ngc_6720" reason="identical_to_source" -->
+    <!-- tm:omitted name="ngc_869_and_ngc_884" reason="identical_to_source" -->
+    <string name="omega_cen" translation_description="Bayer designation for Omega Centauri (ω Centauri)">半人马座 ω</string>
 </resources>

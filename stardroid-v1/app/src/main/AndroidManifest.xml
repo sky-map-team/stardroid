@@ -51,7 +51,7 @@
         <activity
             android:name=".activities.SplashScreenActivity"
             android:screenOrientation="nosensor"
-            android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen"
+            android:theme="@android:style/Theme.DeviceDefault.NoActionBar.Fullscreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

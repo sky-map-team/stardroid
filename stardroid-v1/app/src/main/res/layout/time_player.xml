@@ -29,6 +29,7 @@
     android:layout_width="34dip"
     android:layout_height="wrap_content"
     android:src="@drawable/time_travel_small_icon"
+    android:layout_alignParentStart="true"
     android:paddingTop="10dip"/>
 
   <TextView
@@ -36,10 +37,11 @@
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:text="Time travel: Fill in label ..."
-    android:layout_toRightOf="@id/time_travel_icon"
-    android:paddingLeft="10dip"
+    android:layout_toEndOf="@id/time_travel_icon"
+    android:layout_toStartOf="@+id/time_player_close"
+    android:paddingStart="10dip"
     android:textAppearance="?android:attr/textAppearanceMedium"
-    android:layout_marginLeft="2dip"
+    android:layout_marginStart="2dip"
     />
 
   <TextView
@@ -48,8 +50,9 @@
     android:layout_height="wrap_content"
     android:text="Fill in today's date ..."
     android:layout_below="@id/time_travel_status_label"
-    android:layout_toRightOf="@id/time_travel_icon"
-    android:paddingLeft="10dip"
+    android:layout_toEndOf="@id/time_travel_icon"
+    android:layout_toStartOf="@+id/time_player_close"
+    android:paddingStart="10dip"
     android:textAppearance="?android:attr/textAppearanceSmall"
     />
 
@@ -62,8 +65,8 @@
     android:padding="8dip"
     android:scaleType="centerInside"
     android:src="@drawable/time_travel_close"
-    android:layout_alignParentRight="true"
-    android:layout_marginRight="8dip"
+    android:layout_alignParentEnd="true"
+    android:layout_marginEnd="8dip"
     />
   </RelativeLayout>
 
@@ -85,8 +88,8 @@
     android:layout_width="32dip"
     android:layout_height="32dip"
     android:src="@drawable/timetravel_back_btn"
-    android:layout_marginLeft="5dip"
-    android:layout_marginRight="18dip"
+    android:layout_marginStart="5dip"
+    android:layout_marginEnd="18dip"
     android:layout_marginBottom="3dip"
     />
 
@@ -97,7 +100,7 @@
     android:layout_width="32dip"
     android:layout_height="32dip"
     android:src="@drawable/timetravel_stop_btn"
-    android:layout_marginRight="18dip"
+    android:layout_marginEnd="18dip"
     android:layout_marginBottom="1dip"
     />
 
@@ -108,7 +111,7 @@
     android:layout_width="32dip"
     android:layout_height="32dip"
     android:src="@drawable/timetravel_fwd_btn"
-    android:layout_marginRight="1dip"
+    android:layout_marginEnd="1dip"
     android:layout_marginBottom="3dip"
     />
 
@@ -118,7 +121,7 @@
     android:layout_height="wrap_content"
     android:text="Traveling @ 1 day/sec"
     android:textAppearance="?android:attr/textAppearanceSmall"
-    android:paddingLeft="8dip"
+    android:paddingStart="8dip"
     android:paddingBottom="10dip"
     />
 

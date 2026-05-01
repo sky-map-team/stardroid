@@ -249,6 +249,7 @@ Your phone reports its compass accuracy as shown above. To improve this, please 
     <string name="action_find_in_sky_map" translation_description="Button label that opens the star map and searches for the displayed object">Find</string>
     <string name="auto_level_horizon_on" translation_description="Toast message when auto-level horizon is enabled">Auto-level horizon on</string>
     <string name="auto_level_horizon_off" translation_description="Toast message when auto-level horizon is disabled">Auto-level horizon off</string>
+<<<<<<< feature/warm-welcome
     <string name="warm_welcome_title" translation_description="Title of the Warm Welcome screen">Welcome to Sky Map</string>
     <string name="warm_welcome_slide1_title" translation_description="Title for the first slide of the Warm Welcome">Explore the Cosmos</string>
     <string name="warm_welcome_slide1_desc" translation_description="Description for the first slide of the Warm Welcome">Toggle the layers on the left to see stars, constellations, planets, and more. Tap the clock icon to travel through time, or the moon icon for night mode.</string>
@@ -274,4 +275,7 @@ Your phone reports its compass accuracy as shown above. To improve this, please 
     <string name="menu_tutorial" translation_description="Menu item for re-showing the warm welcome tutorial">Tutorial</string>
     <string name="warm_welcome_sensor_ok" translation_description="Status when a sensor is working fine">Working</string>
     <string name="warm_welcome_sensor_missing" translation_description="Status when a sensor is missing">Missing</string>
+=======
+    <string name="preferences_auto_mode_title" translation_description="Label for the toggle between manual and automatic modes">Manual / Auto Mode</string>
+>>>>>>> master
 </resources>

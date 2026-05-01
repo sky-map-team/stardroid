@@ -192,8 +192,6 @@ class ObjectInfoDialogFragment : DialogFragment() {
                 (activity as? OnFindClickedListener)?.onFindClicked(info)
                 dialog.dismiss()
             }
-        } else {
-            builder.setPositiveButton(android.R.string.ok) { dialog, _ -> dialog.dismiss() }
         }
         val alertDialog = builder.create()
         alertDialog.setOnShowListener { NightModeHelper.applyAlertDialogNightMode(alertDialog, isNight) }
