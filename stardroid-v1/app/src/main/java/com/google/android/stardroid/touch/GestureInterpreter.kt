@@ -82,7 +82,7 @@ class GestureInterpreter(
     // Try to handle tap for object info first (if handler is available)
     val dimensionsProvider = screenDimensionsProvider
     val tapHandler = objectInfoTapHandler
-    if (tapHandler != null && dimensionsProvider != null) {
+    if (tapHandler != null) {
       val consumed = tapHandler.handleTap(
         e.x,
         e.y,
@@ -95,7 +95,7 @@ class GestureInterpreter(
       }
     }
     // If not consumed by object info handler, toggle fullscreen controls
-    fullscreenControlsManager?.toggleControls()
+    fullscreenControlsManager.toggleControls()
     return true
   }
 

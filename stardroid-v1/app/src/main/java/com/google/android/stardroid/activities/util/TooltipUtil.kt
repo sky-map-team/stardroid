@@ -15,7 +15,6 @@ object TooltipUtil {
      * Sets up a long-click listener to show a tooltip using a custom description string.
      */
     @JvmStatic
-    @JvmStatic
     @JvmOverloads
     fun setupToastTooltip(view: View, desc: CharSequence? = null, position: Position = Position.BELOW) {
         view.setOnLongClickListener { v ->

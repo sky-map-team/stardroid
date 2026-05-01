@@ -67,7 +67,6 @@ object NightModeHelper {
      * [tintTextViews] with the same colour for both.
      */
     @JvmStatic
-    @JvmStatic
     @JvmOverloads
     fun tintTextViews(root: ViewGroup, textColor: Int, linkColor: Int = textColor) {
         for (i in 0 until root.childCount) {
