@@ -139,7 +139,7 @@
     <string name="umbriel" translation_description="Name of Uranus\'s moon Umbriel">天卫二</string>
 
     <!-- Deep-sky objects -->
-    <string name="hyades" translation_description="Name of the Hyades star cluster">毛群</string>
+    <string name="hyades" translation_description="Name of the Hyades star cluster">毛宿</string>
     <string name="coma_star_cluster" translation_description="Name of the Coma Berenices star cluster">后发座星团</string>
     <string name="coathanger" translation_description="Name of the Coathanger asterism (Brocchi\'s Cluster)">衣架星群</string>
     <string name="helix_nebula" translation_description="Name of the Helix Nebula (NGC 7293)">螺旋星云</string>
@@ -477,5 +477,5 @@
     <!-- tm:omitted name="ngc_6611" reason="identical_to_source" -->
     <!-- tm:omitted name="ngc_6720" reason="identical_to_source" -->
     <!-- tm:omitted name="ngc_869_and_ngc_884" reason="identical_to_source" -->
-    <string name="omega_cen" translation_description="Bayer designation for Omega Centauri (ω Centauri)">ω 南门二</string>
+    <string name="omega_cen" translation_description="Bayer designation for Omega Centauri (ω Centauri)">ω 半人马座</string>
 </resources>
