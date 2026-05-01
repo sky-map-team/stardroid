@@ -29,6 +29,7 @@
     <string name="location_permission_later" translation_description="Button in the location permission dialog to defer the decision">稍后</string>
     <string name="location_warning_permission" translation_description="Warning message shown when location is unavailable because permission was not granted">位置不可用 — 未授予权限。</string>
     <string name="location_warning_manual" translation_description="Warning message shown when manual location mode is selected but no coordinates have been entered">位置未设置 — 请在设置中配置。</string>
+    <string name="location_set_auto" translation_description="Toast message when automatic location is acquired. %1$s is the place name or coordinates">位置已设置为 %1$s</string>
     <string name="location_unable_to_geocode" translation_description="Error message when converting a place name to coordinates (geocoding) fails, possibly due to no network">系统不能对您的位置进行解码，可能是您的网络无法使用？</string>
     <string name="location_not_found_title" translation_description="dialog box title when location not found">抱歉</string>
     <string name="location_not_found" translation_description="dialog message when placename not found">找不到“%s”。</string>
@@ -54,6 +55,8 @@
     <string name="auto_dimness_preference" translation_description="Mode for automatically dimming the screen when night mode is selected">自动屏幕变暗</string>
     <string name="font_size_preference" translation_description="Change the font size">字体大小</string>
     <string name="font_size_preference_description" translation_description="help to go along with the change font size preference">调整标签文本大小</string>
+    <string name="show_sky_gradient_preference_title" translation_description="Setting toggle title: whether to show the blue sky gradient during the day">显示天空渐变</string>
+    <string name="show_sky_gradient_preference_summary" translation_description="Setting toggle summary for sky gradient: explains what the feature does">在太阳附近将天空着色为蓝色，在相反方向着色为深色</string>
     <string name="ecliptic" translation_description="Label for the ecliptic layer — the apparent annual path of the Sun across the sky">黄道</string>
     <string name="malformed_loc_error" translation_description="Error message when a non-numeric value is entered for latitude or longitude">纬度或经度设置不是数字。</string>
     <string name="dialog_accept" translation_description="accepting the licence agreement">接受</string>
@@ -134,6 +137,7 @@
     <string name="hubble_image" translation_description="Label or caption for a Hubble Space Telescope image in the gallery">哈勃图片</string>
     <string name="search_overlay_title" translation_description="title for search overlay">将手机朝向箭头所指的方向</string>
     <string name="search_target_looking_message" translation_description="displayed when a search target is being searched for">查找内容： %s</string>
+    <string name="search_target_found_message" translation_description="displayed when a search target has been found and is centered on screen">已找到：%s</string>
     <string name="sun_wont_set_message" translation_description="Message shown when the sun will not set during the next 24 hours (polar day / midnight sun)">在未来 24 小时内太阳不会在您当前所在的位置落下。</string>
 
     <!-- tm:omitted name="missing_label" reason="identical_to_source" -->
@@ -220,6 +224,8 @@
     <string name="show_object_info_auto_mode_title" translation_description="Preference title for enabling info cards in auto/sensor mode">自动模式下的信息卡</string>
     <string name="show_object_info_auto_mode_summary" translation_description="Preference summary for auto mode info cards">在自动（传感器）模式下点击天体时也显示信息卡</string>
     <string name="object_info_funfact_label" translation_description="Label before the fun fact in info card">趣味事实：</string>
+    <string name="object_info_also_known_as" translation_description="Subtitle showing alternate names for a celestial object, e.g. \'Also known as: NGC 253 · Silver Dollar Galaxy\'">也称为：%1$s</string>
+    <string name="object_info_see_also_label" translation_description="Label for the see also section in info card">另请参阅：</string>
     <string name="object_info_distance_label" translation_description="Label for distance field">距离：</string>
     <string name="object_info_size_label" translation_description="Label for size field">大小：</string>
     <string name="object_info_mass_label" translation_description="Label for mass field">质量：</string>
@@ -228,4 +234,8 @@
     <string name="object_info_image_content_description" translation_description="Accessibility description for celestial object photo">天体照片</string>
     <string name="object_info_tap_to_expand" translation_description="Hint shown on image to tap to expand">点击展开</string>
     <string name="object_info_tap_to_close" translation_description="Hint shown on expanded image to tap to close">点击关闭</string>
-    </resources>
+    <string name="action_find_in_sky_map" translation_description="Button label that opens the star map and searches for the displayed object">查找</string>
+    <string name="auto_level_horizon_on" translation_description="Toast message when auto-level horizon is enabled">自动调平地平线已启用</string>
+    <string name="auto_level_horizon_off" translation_description="Toast message when auto-level horizon is disabled">自动调平地平线已禁用</string>
+    <string name="preferences_auto_mode_title" translation_description="Label for the toggle between manual and automatic modes">手动/自动模式</string>
+</resources>
