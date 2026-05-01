@@ -8,7 +8,8 @@ tests_package_name('com.google.android.stardroid.test')
 test_instrumentation_runner('com.google.android.stardroid.test.HiltTestRunner')
 
 # The locales you want to capture (matches your metadata folders)
-locales(['de-DE', 'es-ES', 'fr-FR', 'id'])
+locales(['fr-FR', 'da-DK', 'el-GR', 'fa', 'hi-IN', 'hu-HU', 'id', 'it-IT', 'ja-JP', 'ms', 'no-NO', 'nl-NL', 'pl-PL',
+ 'pt-BR', 'sk', 'sl', 'sv-SE', 'th', 'tr-TR', 'uk', 'zh-CN', 'zh-TW'])
 #, 'fr-FR', 'es-ES'])
 
 app_apk_path('app/build/outputs/apk/gms/debug/app-gms-debug.apk')
