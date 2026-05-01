@@ -138,6 +138,7 @@ dependencies {
     implementation "androidx.appcompat:appcompat-resources:$appcompat_version"
     implementation 'androidx.preference:preference-ktx:1.2.1'
     implementation "androidx.core:core-ktx:1.15.0"
+    implementation "androidx.viewpager2:viewpager2:1.1.0"
 
 // Third-party
     implementation 'com.google.guava:guava:33.3.1-jre'
