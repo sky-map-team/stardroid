@@ -45,8 +45,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.stardroid.activities.util.TooltipUtil;
-
 import android.app.ActionBar;
 
 import androidx.annotation.Nullable;

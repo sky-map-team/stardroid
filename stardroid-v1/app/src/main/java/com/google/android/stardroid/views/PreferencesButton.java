@@ -26,8 +26,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 
-import com.google.android.stardroid.activities.util.TooltipUtil;
-
 import androidx.preference.PreferenceManager;
 
 import com.google.android.stardroid.R;
