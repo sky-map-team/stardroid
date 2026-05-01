@@ -23,8 +23,8 @@ import com.google.android.stardroid.R
  * 
  * 
  * All colour values come from `res/values/colors.xml`. Activities should call
- * [.applyActionBarNightMode] from their `setNightMode()` implementation; dialogs
- * should call [.applyAlertDialogNightMode] from inside a
+ * [applyActionBarNightMode] from their `setNightMode()` implementation; dialogs
+ * should call [applyAlertDialogNightMode] from inside a
  * `setOnShowListener` callback.
  */
 object NightModeHelper {

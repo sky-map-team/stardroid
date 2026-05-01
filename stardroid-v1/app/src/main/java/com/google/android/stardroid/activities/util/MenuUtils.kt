@@ -2,7 +2,6 @@ package com.google.android.stardroid.activities.util
 
 import android.util.Log
 import android.view.Menu
-import java.lang.Boolean
 import java.lang.reflect.InvocationTargetException
 
 /**
@@ -25,13 +24,9 @@ object MenuUtils {
         if (menu != null && menu.javaClass.getSimpleName() == "MenuBuilder") {
             try {
                 val m = menu.javaClass.getDeclaredMethod("setOptionalIconsVisible", Boolean.TYPE)
-                m.setAccessible(true)
+                m.isAccessible = true
                 m.invoke(menu, true)
-            } catch (e: NoSuchMethodException) {
-                Log.w(TAG, "Could not invoke setOptionalIconsVisible on menu", e)
-            } catch (e: IllegalAccessException) {
-                Log.w(TAG, "Could not invoke setOptionalIconsVisible on menu", e)
-            } catch (e: InvocationTargetException) {
+            } catch (e: ReflectiveOperationException) {
                 Log.w(TAG, "Could not invoke setOptionalIconsVisible on menu", e)
             }
         }
