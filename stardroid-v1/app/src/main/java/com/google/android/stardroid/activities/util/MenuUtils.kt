@@ -23,7 +23,7 @@ object MenuUtils {
     fun showOptionalIcons(menu: Menu?) {
         if (menu != null && menu.javaClass.getSimpleName() == "MenuBuilder") {
             try {
-                val m = menu.javaClass.getDeclaredMethod("setOptionalIconsVisible", Boolean.TYPE)
+                val m = menu.javaClass.getDeclaredMethod("setOptionalIconsVisible", Boolean::class.javaPrimitiveType)
                 m.isAccessible = true
                 m.invoke(menu, true)
             } catch (e: ReflectiveOperationException) {
