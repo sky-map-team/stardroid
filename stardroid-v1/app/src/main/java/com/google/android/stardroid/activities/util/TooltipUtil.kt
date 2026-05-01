@@ -15,11 +15,12 @@ object TooltipUtil {
      * Sets up a long-click listener to show a tooltip using a custom description string.
      */
     @JvmStatic
-    fun setupToastTooltip(view: View, desc: CharSequence?, position: Position?) {
+    @JvmStatic
+    @JvmOverloads
+    fun setupToastTooltip(view: View, desc: CharSequence? = null, position: Position = Position.BELOW) {
         view.setOnLongClickListener { v ->
-            showToastTooltip(
-                v, desc, position
-            )
+            val finalDesc = desc ?: v.contentDescription
+            showToastTooltip(v, finalDesc, position)
         }
     }
 
