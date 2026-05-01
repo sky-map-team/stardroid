@@ -49,6 +49,6 @@ object TooltipUtil {
 
     enum class Position {
         BELOW,
-        END
+        RIGHT
     }
 }
