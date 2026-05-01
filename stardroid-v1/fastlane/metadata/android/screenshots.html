@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>fastlane/screengrab</title>
+    <meta charset="UTF-8">
+    <style type="text/css">
+      * {
+        font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+        font-weight: 300;
+      }
+      .language {
+
+      }
+      .deviceName {
+        display: block;
+        font-size: 30px;
+        padding-bottom: 24px;
+        padding-top: 45px;
+      }
+      .screenshot {
+        cursor: pointer;
+        border: 1px #EEE solid;
+        z-index: 0;
+      }
+      th {
+        text-align: left;
+      }
+      td {
+        text-align: center;
+        min-width: 200px;
+      }
+      #overlay {
+        position:fixed;
+        top:0;
+        left:0;
+        background:rgba(0,0,0,0.8);
+        z-index:5;
+        width:100%;
+        height:100%;
+        display:none;
+        cursor: zoom-out;
+        text-align: center;
+      }
+      #imageDisplay {
+        height: auto;
+        width: auto;
+        z-index: 10;
+        cursor: pointer;
+      }
+      #imageInfo {
+        background: none repeat scroll 0 0 rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+        color: white;
+        margin: 20px;
+        padding: 10px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 250px;
+        z-index: -1;
+      }
+      #imageInfo:hover {
+        z-index: 20;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="de-DE" class="language">de-DE</h1>
+    <hr>
+    <table>
+      <tr>
+        <th colspan="5">
+          <a id="de-DE-phoneScreenshots" class="deviceName" href="#de-DE-phoneScreenshots">phoneScreenshots</a>
+        </th>
+      </tr>
+      <tr>
+        <td>
+          <a href="./de-DE/images/phoneScreenshots/1_map_jupiter_1777590007725.png" target="_blank" class="screenshotLink">
+            <img class="screenshot" src="./de-DE/images/phoneScreenshots/1_map_jupiter_1777590007725.png" style="width: 100%;" alt="de-DE phoneScreenshots" data-counter="1">
+          </a>
+        </td>
+        <td>
+          <a href="./de-DE/images/phoneScreenshots/2_gallery_scrolled_1777589956246.png" target="_blank" class="screenshotLink">
+            <img class="screenshot" src="./de-DE/images/phoneScreenshots/2_gallery_scrolled_1777589956246.png" style="width: 100%;" alt="de-DE phoneScreenshots" data-counter="2">
+          </a>
+        </td>
+        <td>
+          <a href="./de-DE/images/phoneScreenshots/3_exposed_cranium_info_1777590068977.png" target="_blank" class="screenshotLink">
+            <img class="screenshot" src="./de-DE/images/phoneScreenshots/3_exposed_cranium_info_1777590068977.png" style="width: 100%;" alt="de-DE phoneScreenshots" data-counter="3">
+          </a>
+        </td>
+        <td>
+          <a href="./de-DE/images/phoneScreenshots/4_search_circle_mars_1777589980638.png" target="_blank" class="screenshotLink">
+            <img class="screenshot" src="./de-DE/images/phoneScreenshots/4_search_circle_mars_1777589980638.png" style="width: 100%;" alt="de-DE phoneScreenshots" data-counter="4">
+          </a>
+        </td>
+        <td>
+          <a href="./de-DE/images/phoneScreenshots/5_orion_time_travel_1777590039495.png" target="_blank" class="screenshotLink">
+            <img class="screenshot" src="./de-DE/images/phoneScreenshots/5_orion_time_travel_1777590039495.png" style="width: 100%;" alt="de-DE phoneScreenshots" data-counter="5">
+          </a>
+        </td>
+      </tr>
+    </table>
+    <h1 id="en-US" class="language">en-US</h1>
+    <hr>
+    <table>
+      <tr>
+        <th colspan="5">
+          <a id="en-US-chromebookScreenshots" class="deviceName" href="#en-US-chromebookScreenshots">chromebookScreenshots</a>
+        </th>
+      </tr>
+      <tr>
+        <td>
+          <a href="./en-US/images/chromebookScreenshots/2_en-US.png" target="_blank" class="screenshotLink">
+            <img class="screenshot" src="./en-US/images/chromebookScreenshots/2_en-US.png" style="width: 100%;" alt="en-US chromebookScreenshots" data-counter="6">
+          </a>
+        </td>
+        <td>
+          <a href="./en-US/images/chromebookScreenshots/3_en-US.png" target="_blank" class="screenshotLink">
+            <img class="screenshot" src="./en-US/images/chromebookScreenshots/3_en-US.png" style="width: 100%;" alt="en-US chromebookScreenshots" data-counter="7">
+          </a>
+        </td>
+        <td>
+          <a href="./en-US/images/chromebookScreenshots/4_en-US.png" target="_blank" class="screenshotLink">
+            <img class="screenshot" src="./en-US/images/chromebookScreenshots/4_en-US.png" style="width: 100%;" alt="en-US chromebookScreenshots" data-counter="8">
+          </a>
+        </td>
+        <td>
+          <a href="./en-US/images/chromebookScreenshots/5_en-US.png" target="_blank" class="screenshotLink">
+            <img class="screenshot" src="./en-US/images/chromebookScreenshots/5_en-US.png" style="width: 100%;" alt="en-US chromebookScreenshots" data-counter="9">
+          </a>
+        </td>
+        <td>
+          <a href="./en-US/images/chromebookScreenshots/6_en-US.png" target="_blank" class="screenshotLink">
+            <img class="screenshot" src="./en-US/images/chromebookScreenshots/6_en-US.png" style="width: 100%;" alt="en-US chromebookScreenshots" data-counter="10">
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <th colspan="6">
+          <a id="en-US-phoneScreenshots" class="deviceName" href="#en-US-phoneScreenshots">phoneScreenshots</a>
+        </th>
+      </tr>
+      <tr>
+        <td>
+          <a href="./en-US/images/phoneScreenshots/2_en-US.png" target="_blank" class="screenshotLink">
+            <img class="screenshot" src="./en-US/images/phoneScreenshots/2_en-US.png" style="width: 100%;" alt="en-US phoneScreenshots" data-counter="11">
+          </a>
+        </td>
+        <td>
+          <a href="./en-US/images/phoneScreenshots/3_en-US.png" target="_blank" class="screenshotLink">
+            <img class="screenshot" src="./en-US/images/phoneScreenshots/3_en-US.png" style="width: 100%;" alt="en-US phoneScreenshots" data-counter="12">
+          </a>
+        </td>
+        <td>
+          <a href="./en-US/images/phoneScreenshots/4_en-US.png" target="_blank" class="screenshotLink">
+            <img class="screenshot" src="./en-US/images/phoneScreenshots/4_en-US.png" style="width: 100%;" alt="en-US phoneScreenshots" data-counter="13">
+          </a>
+        </td>
+        <td>
+          <a href="./en-US/images/phoneScreenshots/5_en-US.png" target="_blank" class="screenshotLink">
+            <img class="screenshot" src="./en-US/images/phoneScreenshots/5_en-US.png" style="width: 100%;" alt="en-US phoneScreenshots" data-counter="14">
+          </a>
+        </td>
+        <td>
+          <a href="./en-US/images/phoneScreenshots/6_en-US.png" target="_blank" class="screenshotLink">
+            <img class="screenshot" src="./en-US/images/phoneScreenshots/6_en-US.png" style="width: 100%;" alt="en-US phoneScreenshots" data-counter="15">
+          </a>
+        </td>
+        <td>
+          <a href="./en-US/images/phoneScreenshots/8_en-US.png" target="_blank" class="screenshotLink">
+            <img class="screenshot" src="./en-US/images/phoneScreenshots/8_en-US.png" style="width: 100%;" alt="en-US phoneScreenshots" data-counter="16">
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <th colspan="5">
+          <a id="en-US-sevenInchScreenshots" class="deviceName" href="#en-US-sevenInchScreenshots">sevenInchScreenshots</a>
+        </th>
+      </tr>
+      <tr>
+        <td>
+          <a href="./en-US/images/sevenInchScreenshots/2_en-US.png" target="_blank" class="screenshotLink">
+            <img class="screenshot" src="./en-US/images/sevenInchScreenshots/2_en-US.png" style="width: 100%;" alt="en-US sevenInchScreenshots" data-counter="17">
+          </a>
+        </td>
+        <td>
+          <a href="./en-US/images/sevenInchScreenshots/3_en-US.png" target="_blank" class="screenshotLink">
+            <img class="screenshot" src="./en-US/images/sevenInchScreenshots/3_en-US.png" style="width: 100%;" alt="en-US sevenInchScreenshots" data-counter="18">
+          </a>
+        </td>
+        <td>
+          <a href="./en-US/images/sevenInchScreenshots/4_en-US.png" target="_blank" class="screenshotLink">
+            <img class="screenshot" src="./en-US/images/sevenInchScreenshots/4_en-US.png" style="width: 100%;" alt="en-US sevenInchScreenshots" data-counter="19">
+          </a>
+        </td>
+        <td>
+          <a href="./en-US/images/sevenInchScreenshots/5_en-US.png" target="_blank" class="screenshotLink">
+            <img class="screenshot" src="./en-US/images/sevenInchScreenshots/5_en-US.png" style="width: 100%;" alt="en-US sevenInchScreenshots" data-counter="20">
+          </a>
+        </td>
+        <td>
+          <a href="./en-US/images/sevenInchScreenshots/6_en-US.png" target="_blank" class="screenshotLink">
+            <img class="screenshot" src="./en-US/images/sevenInchScreenshots/6_en-US.png" style="width: 100%;" alt="en-US sevenInchScreenshots" data-counter="21">
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <th colspan="6">
+          <a id="en-US-tenInchScreenshots" class="deviceName" href="#en-US-tenInchScreenshots">tenInchScreenshots</a>
+        </th>
+      </tr>
+      <tr>
+        <td>
+          <a href="./en-US/images/tenInchScreenshots/1_en-US.png" target="_blank" class="screenshotLink">
+            <img class="screenshot" src="./en-US/images/tenInchScreenshots/1_en-US.png" style="width: 100%;" alt="en-US tenInchScreenshots" data-counter="22">
+          </a>
+        </td>
+        <td>
+          <a href="./en-US/images/tenInchScreenshots/2_en-US.png" target="_blank" class="screenshotLink">
+            <img class="screenshot" src="./en-US/images/tenInchScreenshots/2_en-US.png" style="width: 100%;" alt="en-US tenInchScreenshots" data-counter="23">
+          </a>
+        </td>
+        <td>
+          <a href="./en-US/images/tenInchScreenshots/3_en-US.png" target="_blank" class="screenshotLink">
+            <img class="screenshot" src="./en-US/images/tenInchScreenshots/3_en-US.png" style="width: 100%;" alt="en-US tenInchScreenshots" data-counter="24">
+          </a>
+        </td>
+        <td>
+          <a href="./en-US/images/tenInchScreenshots/4_en-US.png" target="_blank" class="screenshotLink">
+            <img class="screenshot" src="./en-US/images/tenInchScreenshots/4_en-US.png" style="width: 100%;" alt="en-US tenInchScreenshots" data-counter="25">
+          </a>
+        </td>
+        <td>
+          <a href="./en-US/images/tenInchScreenshots/5_en-US.png" target="_blank" class="screenshotLink">
+            <img class="screenshot" src="./en-US/images/tenInchScreenshots/5_en-US.png" style="width: 100%;" alt="en-US tenInchScreenshots" data-counter="26">
+          </a>
+        </td>
+        <td>
+          <a href="./en-US/images/tenInchScreenshots/6_en-US.png" target="_blank" class="screenshotLink">
+            <img class="screenshot" src="./en-US/images/tenInchScreenshots/6_en-US.png" style="width: 100%;" alt="en-US tenInchScreenshots" data-counter="27">
+          </a>
+        </td>
+      </tr>
+    </table>
+    <h1 id="es-ES" class="language">es-ES</h1>
+    <hr>
+    <table>
+      <tr>
+        <th colspan="5">
+          <a id="es-ES-phoneScreenshots" class="deviceName" href="#es-ES-phoneScreenshots">phoneScreenshots</a>
+        </th>
+      </tr>
+      <tr>
+        <td>
+          <a href="./es-ES/images/phoneScreenshots/1_map_jupiter_1777590160187.png" target="_blank" class="screenshotLink">
+            <img class="screenshot" src="./es-ES/images/phoneScreenshots/1_map_jupiter_1777590160187.png" style="width: 100%;" alt="es-ES phoneScreenshots" data-counter="28">
+          </a>
+        </td>
+        <td>
+          <a href="./es-ES/images/phoneScreenshots/2_gallery_scrolled_1777590108859.png" target="_blank" class="screenshotLink">
+            <img class="screenshot" src="./es-ES/images/phoneScreenshots/2_gallery_scrolled_1777590108859.png" style="width: 100%;" alt="es-ES phoneScreenshots" data-counter="29">
+          </a>
+        </td>
+        <td>
+          <a href="./es-ES/images/phoneScreenshots/3_exposed_cranium_info_1777590221486.png" target="_blank" class="screenshotLink">
+            <img class="screenshot" src="./es-ES/images/phoneScreenshots/3_exposed_cranium_info_1777590221486.png" style="width: 100%;" alt="es-ES phoneScreenshots" data-counter="30">
+          </a>
+        </td>
+        <td>
+          <a href="./es-ES/images/phoneScreenshots/4_search_circle_mars_1777590133160.png" target="_blank" class="screenshotLink">
+            <img class="screenshot" src="./es-ES/images/phoneScreenshots/4_search_circle_mars_1777590133160.png" style="width: 100%;" alt="es-ES phoneScreenshots" data-counter="31">
+          </a>
+        </td>
+        <td>
+          <a href="./es-ES/images/phoneScreenshots/5_orion_time_travel_1777590191992.png" target="_blank" class="screenshotLink">
+            <img class="screenshot" src="./es-ES/images/phoneScreenshots/5_orion_time_travel_1777590191992.png" style="width: 100%;" alt="es-ES phoneScreenshots" data-counter="32">
+          </a>
+        </td>
+      </tr>
+    </table>
+    <h1 id="fr-FR" class="language">fr-FR</h1>
+    <hr>
+    <table>
+      <tr>
+        <th colspan="5">
+          <a id="fr-FR-phoneScreenshots" class="deviceName" href="#fr-FR-phoneScreenshots">phoneScreenshots</a>
+        </th>
+      </tr>
+      <tr>
+        <td>
+          <a href="./fr-FR/images/phoneScreenshots/1_map_jupiter_1777590313088.png" target="_blank" class="screenshotLink">
+            <img class="screenshot" src="./fr-FR/images/phoneScreenshots/1_map_jupiter_1777590313088.png" style="width: 100%;" alt="fr-FR phoneScreenshots" data-counter="33">
+          </a>
+        </td>
+        <td>
+          <a href="./fr-FR/images/phoneScreenshots/2_gallery_scrolled_1777590261704.png" target="_blank" class="screenshotLink">
+            <img class="screenshot" src="./fr-FR/images/phoneScreenshots/2_gallery_scrolled_1777590261704.png" style="width: 100%;" alt="fr-FR phoneScreenshots" data-counter="34">
+          </a>
+        </td>
+        <td>
+          <a href="./fr-FR/images/phoneScreenshots/3_exposed_cranium_info_1777590374253.png" target="_blank" class="screenshotLink">
+            <img class="screenshot" src="./fr-FR/images/phoneScreenshots/3_exposed_cranium_info_1777590374253.png" style="width: 100%;" alt="fr-FR phoneScreenshots" data-counter="35">
+          </a>
+        </td>
+        <td>
+          <a href="./fr-FR/images/phoneScreenshots/4_search_circle_mars_1777590286017.png" target="_blank" class="screenshotLink">
+            <img class="screenshot" src="./fr-FR/images/phoneScreenshots/4_search_circle_mars_1777590286017.png" style="width: 100%;" alt="fr-FR phoneScreenshots" data-counter="36">
+          </a>
+        </td>
+        <td>
+          <a href="./fr-FR/images/phoneScreenshots/5_orion_time_travel_1777590344820.png" target="_blank" class="screenshotLink">
+            <img class="screenshot" src="./fr-FR/images/phoneScreenshots/5_orion_time_travel_1777590344820.png" style="width: 100%;" alt="fr-FR phoneScreenshots" data-counter="37">
+          </a>
+        </td>
+      </tr>
+    </table>
+    <h1 id="id" class="language">id</h1>
+    <hr>
+    <table>
+      <tr>
+        <th colspan="5">
+          <a id="id-phoneScreenshots" class="deviceName" href="#id-phoneScreenshots">phoneScreenshots</a>
+        </th>
+      </tr>
+      <tr>
+        <td>
+          <a href="./id/images/phoneScreenshots/1_map_jupiter_1777590466915.png" target="_blank" class="screenshotLink">
+            <img class="screenshot" src="./id/images/phoneScreenshots/1_map_jupiter_1777590466915.png" style="width: 100%;" alt="id phoneScreenshots" data-counter="38">
+          </a>
+        </td>
+        <td>
+          <a href="./id/images/phoneScreenshots/2_gallery_scrolled_1777590415074.png" target="_blank" class="screenshotLink">
+            <img class="screenshot" src="./id/images/phoneScreenshots/2_gallery_scrolled_1777590415074.png" style="width: 100%;" alt="id phoneScreenshots" data-counter="39">
+          </a>
+        </td>
+        <td>
+          <a href="./id/images/phoneScreenshots/3_exposed_cranium_info_1777590528766.png" target="_blank" class="screenshotLink">
+            <img class="screenshot" src="./id/images/phoneScreenshots/3_exposed_cranium_info_1777590528766.png" style="width: 100%;" alt="id phoneScreenshots" data-counter="40">
+          </a>
+        </td>
+        <td>
+          <a href="./id/images/phoneScreenshots/4_search_circle_mars_1777590439458.png" target="_blank" class="screenshotLink">
+            <img class="screenshot" src="./id/images/phoneScreenshots/4_search_circle_mars_1777590439458.png" style="width: 100%;" alt="id phoneScreenshots" data-counter="41">
+          </a>
+        </td>
+        <td>
+          <a href="./id/images/phoneScreenshots/5_orion_time_travel_1777590498869.png" target="_blank" class="screenshotLink">
+            <img class="screenshot" src="./id/images/phoneScreenshots/5_orion_time_travel_1777590498869.png" style="width: 100%;" alt="id phoneScreenshots" data-counter="42">
+          </a>
+        </td>
+      </tr>
+    </table>
+    <div id="overlay">
+      <img id="imageDisplay" src="" alt="" />
+      <div id="imageInfo"></div>
+    </div>
+    <script type="text/javascript">
+      var overlay        = document.getElementById('overlay');
+      var imageDisplay   = document.getElementById('imageDisplay');
+      var imageInfo      = document.getElementById('imageInfo');
+      var screenshotLink = document.getElementsByClassName('screenshotLink');
+
+      function doClick(el) {
+        if (document.createEvent) {
+          var evObj = document.createEvent('MouseEvents', true);
+          evObj.initMouseEvent("click", false, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+          el.dispatchEvent(evObj);
+        } else if (document.createEventObject) { //IE
+          var evObj = document.createEventObject();
+          el.fireEvent('onclick', evObj);
+        }
+      }
+
+      for (index = 0; index < screenshotLink.length; ++index) {
+        screenshotLink[index].addEventListener('click', function(e) {
+          e.preventDefault();
+
+          var img = e.target;
+          if (e.target.tagName == 'A') {
+            img = e.target.children[0];
+          }
+
+          // beautify
+          var tmpImg = new Image();
+          tmpImg.src = img.src;
+          imageDisplay.style.height     = 'auto';
+          imageDisplay.style.width     = 'auto';
+          if (window.innerHeight < tmpImg.height) {
+            imageDisplay.style.height = document.documentElement.clientHeight+'px';
+          } else if (window.innerWidth < tmpImg.width) {
+            imageDisplay.style.width = document.documentElement.clientWidth;+'px';
+          } else {
+            imageDisplay.style.paddingTop = parseInt((window.innerHeight - tmpImg.height) / 2)+'px';
+          }
+
+          imageDisplay.src             = img.src;
+          imageDisplay.alt             = img.alt;
+          imageDisplay.dataset.counter = img.dataset.counter;
+
+          imageInfo.innerHTML          = '<h3>'+img.alt+'</h3>';
+          imageInfo.innerHTML         += decodeURI(img.src.split("/").pop());
+          imageInfo.innerHTML         += '<br />'+tmpImg.height+'&times;'+tmpImg.width+'px';
+
+          overlay.style.display        = "block";
+        });
+      }
+
+      imageDisplay.addEventListener('click', function(e) {
+        e.stopPropagation(); // !
+
+        overlay.style.display = "none";
+
+        img_counter = parseInt(e.target.dataset.counter) + 1;
+        try {
+          link = document.body.querySelector('img[data-counter="'+img_counter+'"]').parentNode;
+        } catch (e) {
+          try {
+            link = document.body.querySelector('img[data-counter="0"]').parentNode;
+          } catch (e) {
+            return false;
+          }
+        }
+        doClick(link);
+      });
+
+      overlay.addEventListener('click', function(e) {
+        overlay.style.display = "none";
+      })
+
+      function keyPressed(e) {
+        e = e || window.event;
+        var charCode = e.keyCode || e.which;
+        switch(charCode) {
+          case 27: // Esc
+            overlay.style.display = "none";
+            break;
+          case 34: // Page Down
+          case 39: // Right arrow
+          case 54: // Keypad right
+          case 76: // l
+          case 102: // Keypad right
+            e.preventDefault();
+            doClick(imageDisplay);
+            break;
+          case 33: // Page up
+          case 37: // Left arrow
+          case 52: // Keypad left
+          case 72: // h
+          case 100: // Keypad left
+            e.preventDefault();
+            document.getElementById('imageDisplay').dataset.counter -= 2; // hacky
+            doClick(imageDisplay);
+            break;
+         }
+      };
+      document.body.addEventListener('keydown', keyPressed);
+    </script>
+  </body>
+</html>

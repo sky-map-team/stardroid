@@ -44,6 +44,8 @@ all build, test, deploy, and data-generation commands.
 
 See `stardroid-v1/docs/ARCHITECTURE.md` for a full overview.
 
+*NEW FILES SHOULD BE WRITTEN IN KOTLIN*
+
 ### Dependency Injection
 
 Uses Hilt for dependency injection. Common activity-scoped dependencies are in `ActivityBindingsModule`, while activity-specific ones are in modules like `DynamicStarMapActivityModule`.
