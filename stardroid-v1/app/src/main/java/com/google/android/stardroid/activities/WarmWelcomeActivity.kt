@@ -131,9 +131,59 @@ class WarmWelcomeActivity : AppCompatActivity() {
     }
 
     class Slide1Fragment : Fragment() {
+        private val handler = android.os.Handler(android.os.Looper.getMainLooper())
+        private var currentIndex = 0
+        private val highlightGroups = intArrayOf(
+            R.id.highlight_stars,
+            R.id.highlight_constellations,
+            R.id.highlight_deep_sky,
+            R.id.highlight_planets,
+            R.id.highlight_meteors,
+            R.id.highlight_grid,
+            R.id.highlight_horizon,
+            R.id.highlight_search,
+            R.id.highlight_night_mode,
+            R.id.highlight_time_travel,
+            R.id.highlight_manual_auto
+        )
+        private var isAnimating = false
+
+        private val animationRunnable = object : Runnable {
+            override fun run() {
+                if (!isAdded || !isAnimating) return
+                
+                // Hide all
+                highlightGroups.forEach { id ->
+                    view?.findViewById<View>(id)?.visibility = View.GONE
+                }
+                
+                // Show current
+                view?.findViewById<View>(highlightGroups[currentIndex])?.visibility = View.VISIBLE
+                
+                // Increment
+                currentIndex = (currentIndex + 1) % highlightGroups.size
+                
+                // Post next
+                handler.postDelayed(this, 2000)
+            }
+        }
+
         override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
         ): View = inflater.inflate(R.layout.fragment_welcome_slide_1, container, false)
+
+        override fun onResume() {
+            super.onResume()
+            isAnimating = true
+            currentIndex = 0
+            handler.post(animationRunnable)
+        }
+
+        override fun onPause() {
+            super.onPause()
+            isAnimating = false
+            handler.removeCallbacks(animationRunnable)
+        }
     }
 
     class Slide2Fragment : Fragment() {
