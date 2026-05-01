@@ -190,6 +190,18 @@ class WarmWelcomeActivity : AppCompatActivity() {
         override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
         ): View = inflater.inflate(R.layout.fragment_welcome_slide_2, container, false)
+
+        override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+            super.onViewCreated(view, savedInstanceState)
+            val bgView = view.findViewById<ImageView>(R.id.slide2_background)
+            try {
+                val istr = requireContext().assets.open("celestial_images/deep_sky_objects/hubble_m1.jpg")
+                val drawable = android.graphics.drawable.Drawable.createFromStream(istr, null)
+                bgView.setImageDrawable(drawable)
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
+        }
     }
 
     class Slide3Fragment : Fragment() {
@@ -197,6 +209,14 @@ class WarmWelcomeActivity : AppCompatActivity() {
             inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
         ): View {
             val view = inflater.inflate(R.layout.fragment_welcome_slide_3, container, false)
+            val bgView = view.findViewById<ImageView>(R.id.slide3_background)
+            try {
+                val istr = requireContext().assets.open("celestial_images/planets/cassini_iapetus.webp")
+                val drawable = android.graphics.drawable.Drawable.createFromStream(istr, null)
+                bgView.setImageDrawable(drawable)
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
 
             val compassIcon = view.findViewById<ImageView>(R.id.compass_status_icon)
             val accelIcon = view.findViewById<ImageView>(R.id.accelerometer_status_icon)
