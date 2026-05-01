@@ -45,12 +45,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.stardroid.activities.util.TooltipUtil;
-
 import android.app.ActionBar;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
+import androidx.annotation.VisibleForTesting;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -74,6 +73,7 @@ import com.google.android.stardroid.activities.util.FullscreenControlsManager;
 import com.google.android.stardroid.activities.util.GooglePlayServicesChecker;
 import com.google.android.stardroid.activities.util.MenuUtils;
 import com.google.android.stardroid.activities.util.NightModeHelper;
+import com.google.android.stardroid.activities.util.TooltipUtil;
 import com.google.android.stardroid.base.Lists;
 import com.google.android.stardroid.control.AstronomerModel;
 import com.google.android.stardroid.control.AstronomerModel.Pointing;
@@ -231,6 +231,11 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
   @Inject SensorAccuracyMonitor sensorAccuracyMonitor;
   @Inject DragRotateZoomGestureDetector dragZoomRotateDetector;
   private FullscreenControlsManager fullscreenControlsManager;
+
+  @VisibleForTesting
+  FullscreenControlsManager getFullscreenControlsManager() {
+    return fullscreenControlsManager;
+  }
 
   // A list of runnables to post on the handler when we resume.
   private final List<Runnable> onResumeRunnables = new ArrayList<>();

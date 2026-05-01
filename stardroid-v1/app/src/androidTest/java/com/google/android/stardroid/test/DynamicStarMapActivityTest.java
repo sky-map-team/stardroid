@@ -41,6 +41,8 @@ import androidx.test.espresso.action.GeneralLocation;
 
 import android.app.SearchManager;
 import android.view.View;
+
+import java.util.concurrent.atomic.AtomicBoolean;
 import androidx.test.uiautomator.UiDevice;
 import androidx.test.uiautomator.UiSelector;
 
@@ -131,26 +133,19 @@ public class DynamicStarMapActivityTest {
   }
 
   private void ensureControlsVisible() {
-    boolean[] isVisible = new boolean[1];
+    AtomicBoolean isVisible = new AtomicBoolean(false);
     testRule.getScenario().onActivity(activity -> {
       View layerButtons = activity.findViewById(R.id.layer_buttons_control);
-      isVisible[0] = layerButtons != null && layerButtons.getVisibility() == View.VISIBLE;
+      isVisible.set(layerButtons != null && layerButtons.getVisibility() == View.VISIBLE);
 
-      if (!isVisible[0]) {
-        try {
-          java.lang.reflect.Field f = DynamicStarMapActivity.class.getDeclaredField("fullscreenControlsManager");
-          f.setAccessible(true);
-          Object fcm = f.get(activity);
-          if (fcm != null) {
-            java.lang.reflect.Method m = fcm.getClass().getDeclaredMethod("toggleControls");
-            m.setAccessible(true);
-            m.invoke(fcm);
-          }
-        } catch (Exception e) {
+      if (!isVisible.get()) {
+        FullscreenControlsManager fcm = activity.getFullscreenControlsManager();
+        if (fcm != null) {
+          fcm.toggleControls();
         }
       }
     });
-    if (!isVisible[0]) {
+    if (!isVisible.get()) {
       try {
         Thread.sleep(1500);
       } catch (Exception ignored) {
