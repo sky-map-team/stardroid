@@ -67,21 +67,10 @@ object NightModeHelper {
      * [.tintTextViews] with the same colour for both.
      */
     @JvmStatic
-    fun tintTextViews(root: ViewGroup, color: Int) {
-        tintTextViews(root, color, color)
-    }
-
-    /**
-     * Recursively sets the text colour and link colour independently on every
-     * [TextView] (including [Button]s) in a view hierarchy.
-     * 
-     * 
-     * Use this overload when the link colour should differ from the text colour, e.g. in
-     * night mode where links use `R.color.night_link_color`.
-     */
     @JvmStatic
-    fun tintTextViews(root: ViewGroup, textColor: Int, linkColor: Int) {
-        for (i in 0..<root.getChildCount()) {
+    @JvmOverloads
+    fun tintTextViews(root: ViewGroup, textColor: Int, linkColor: Int = textColor) {
+        for (i in 0 until root.childCount) {
             val child = root.getChildAt(i)
             if (child is TextView) {
                 child.setTextColor(textColor)
