@@ -95,7 +95,7 @@ public class PreferencesButton extends ImageButton
 
   private void init() {
     super.setOnClickListener(this);
-    TooltipUtil.setupToastTooltip(this, TooltipUtil.Position.RIGHT);
+    setTooltipText(getContentDescription());
     preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
     preferences.registerOnSharedPreferenceChangeListener(this);
     this.isOn = preferences.getBoolean(prefKey, defaultValue);
