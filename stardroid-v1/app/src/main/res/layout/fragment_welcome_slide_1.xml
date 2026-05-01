@@ -51,9 +51,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/bottom_text_container" />
 
-    <ImageView android:id="@+id/icon_search" android:layout_width="48dp" android:layout_height="48dp" android:scaleType="centerInside" android:src="@android:drawable/ic_menu_search" android:layout_marginTop="8dp" app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toStartOf="@+id/icon_night_mode" app:layout_constraintHorizontal_chainStyle="packed" />
-    <ImageView android:id="@+id/icon_night_mode" android:layout_width="48dp" android:layout_height="48dp" android:scaleType="centerInside" android:src="@android:drawable/ic_menu_preferences" android:layout_marginTop="8dp" app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toEndOf="@+id/icon_search" app:layout_constraintEnd_toStartOf="@+id/icon_time_travel" />
-    <ImageView android:id="@+id/icon_time_travel" android:layout_width="48dp" android:layout_height="48dp" android:scaleType="centerInside" android:src="@android:drawable/ic_menu_agenda" android:layout_marginTop="8dp" android:layout_marginEnd="8dp" app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toEndOf="@+id/icon_night_mode" app:layout_constraintEnd_toEndOf="parent" />
+    <ImageView android:id="@+id/icon_search" android:layout_width="48dp" android:layout_height="48dp" android:scaleType="centerInside" android:src="@android:drawable/ic_menu_search" android:layout_marginTop="48dp" app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="1.0" app:layout_constraintEnd_toStartOf="@+id/icon_night_mode" app:layout_constraintHorizontal_chainStyle="packed" />
+    <ImageView android:id="@+id/icon_night_mode" android:layout_width="48dp" android:layout_height="48dp" android:scaleType="centerInside" android:src="@android:drawable/ic_menu_preferences" android:layout_marginTop="48dp" app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toEndOf="@+id/icon_search" app:layout_constraintEnd_toStartOf="@+id/icon_time_travel" />
+    <ImageView android:id="@+id/icon_time_travel" android:layout_width="48dp" android:layout_height="48dp" android:scaleType="centerInside" android:src="@android:drawable/ic_menu_agenda" android:layout_marginTop="48dp" android:layout_marginEnd="16dp" app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toEndOf="@+id/icon_night_mode" app:layout_constraintEnd_toEndOf="parent" />
 
     <!-- Explanatory Text at Bottom -->
     <LinearLayout
