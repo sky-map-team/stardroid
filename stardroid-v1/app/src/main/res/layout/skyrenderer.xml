@@ -40,15 +40,17 @@
                 android:layout_width="34dip"
                 android:layout_height="wrap_content"
                 android:paddingTop="10dip"
+                android:layout_alignParentStart="true"
                 android:src="@drawable/search_lens_very_small" />
 
             <TextView
                 android:id="@+id/search_status_label"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="2dip"
-                android:layout_toRightOf="@id/search_icon"
-                android:paddingLeft="10dip"
+                android:layout_marginStart="2dip"
+                android:layout_toEndOf="@id/search_icon"
+                android:layout_toStartOf="@+id/cancel_search_button"
+                android:paddingStart="10dip"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
             <TextView
@@ -56,8 +58,9 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/search_status_label"
-                android:layout_toRightOf="@id/search_icon"
-                android:paddingLeft="10dip"
+                android:layout_toEndOf="@id/search_icon"
+                android:layout_toStartOf="@+id/cancel_search_button"
+                android:paddingStart="10dip"
                 android:text="@string/search_overlay_title"
                 android:textAppearance="?android:attr/textAppearanceSmall" />
 
@@ -65,8 +68,8 @@
                 android:id="@+id/cancel_search_button"
                 android:layout_width="48dip"
                 android:layout_height="48dip"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="8dip"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="8dip"
                 android:background="@android:color/transparent"
                 android:clickable="true"
                 android:padding="8dip"
