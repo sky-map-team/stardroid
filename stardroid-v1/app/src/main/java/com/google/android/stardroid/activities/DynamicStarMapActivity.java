@@ -51,6 +51,7 @@ import android.app.ActionBar;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
+import androidx.annotation.VisibleForTesting;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -232,6 +233,11 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
   @Inject SensorAccuracyMonitor sensorAccuracyMonitor;
   @Inject DragRotateZoomGestureDetector dragZoomRotateDetector;
   private FullscreenControlsManager fullscreenControlsManager;
+
+  @VisibleForTesting
+  FullscreenControlsManager getFullscreenControlsManager() {
+    return fullscreenControlsManager;
+  }
 
   // A list of runnables to post on the handler when we resume.
   private final List<Runnable> onResumeRunnables = new ArrayList<>();
