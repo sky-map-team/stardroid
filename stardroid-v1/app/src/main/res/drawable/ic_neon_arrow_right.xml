@@ -1,0 +1,20 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="24dp"
+    android:viewportWidth="48"
+    android:viewportHeight="24">
+    <!-- Glow -->
+    <path
+        android:strokeColor="#4400FFFF"
+        android:strokeWidth="6"
+        android:strokeLineJoin="round"
+        android:strokeLineCap="round"
+        android:pathData="M 36 12 L 8 12 M 36 12 L 28 4 M 36 12 L 28 20" />
+    <!-- Core line -->
+    <path
+        android:strokeColor="#00FFFF"
+        android:strokeWidth="2"
+        android:strokeLineJoin="round"
+        android:strokeLineCap="round"
+        android:pathData="M 36 12 L 8 12 M 36 12 L 28 4 M 36 12 L 28 20" />
+</vector>

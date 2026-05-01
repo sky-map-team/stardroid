@@ -249,5 +249,31 @@ Your phone reports its compass accuracy as shown above. To improve this, please 
     <string name="action_find_in_sky_map" translation_description="Button label that opens the star map and searches for the displayed object">Find</string>
     <string name="auto_level_horizon_on" translation_description="Toast message when auto-level horizon is enabled">Auto-level horizon on</string>
     <string name="auto_level_horizon_off" translation_description="Toast message when auto-level horizon is disabled">Auto-level horizon off</string>
+
+    <string name="warm_welcome_title" translation_description="Title of the Warm Welcome screen">Welcome to Sky Map</string>
+    <string name="warm_welcome_slide1_title" translation_description="Title for the first slide of the Warm Welcome">Explore the Cosmos</string>
+    <string name="warm_welcome_slide1_desc" translation_description="Description for the first slide of the Warm Welcome">Toggle the layers on the left to see stars, constellations, planets, and more. Tap the clock icon to travel through time, or the moon icon for night mode.</string>
+    <string name="warm_welcome_slide2_title" translation_description="Title for the second slide of the Warm Welcome">Navigate the Sky</string>
+    <string name="warm_welcome_slide2_desc" translation_description="Description for the second slide of the Warm Welcome">Point your phone to look around in Auto mode, or tap the button to switch to Manual mode and swipe with your fingers. Double-tap to re-level the horizon in manual mode.</string>
+    <string name="warm_welcome_slide2_info_desc" translation_description="Description about info cards on the second slide">Tap celestial objects in Manual mode to show Info Cards with fun facts and details.</string>
+    <string name="warm_welcome_slide3_title" translation_description="Title for the third slide of the Warm Welcome">Sensors &amp; Calibration</string>
+    <string name="warm_welcome_slide3_desc" translation_description="Description for the third slide of the Warm Welcome">Sky Map uses your phone\'s sensors to track the sky.</string>
+    <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message when sensors are missing">Your device seems to be missing some required sensors. Auto mode is unavailable and it\'s not Sky Map\'s fault, but you can still use it to explore the cosmos in manual mode!</string>
+    <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration text on slide 3">Make sure your compass is calibrated by waving your phone in a figure-8 motion occasionally.</string>
+
+    <string name="tutorial_planets" translation_description="Tutorial annotation for planets layer">Planets</string>
+    <string name="tutorial_meteors" translation_description="Tutorial annotation for meteors layer">Meteors</string>
+    <string name="tutorial_grid" translation_description="Tutorial annotation for grid layer">Grid</string>
+    <string name="tutorial_night_mode" translation_description="Tutorial annotation for night mode">Night Mode</string>
+    <string name="tutorial_time_travel" translation_description="Tutorial annotation for time travel">Time Travel</string>
+    <string name="tutorial_manual_auto" translation_description="Tutorial annotation for manual/auto toggle">Manual/Auto</string>
+
+    <string name="warm_welcome_skip" translation_description="Button to skip the Warm Welcome">Skip</string>
+    <string name="warm_welcome_next" translation_description="Button to go to the next slide">Next</string>
+    <string name="warm_welcome_finish" translation_description="Button to finish the Warm Welcome and start exploring">Start Exploring</string>
+    <string name="warm_welcome_do_not_show" translation_description="Checkbox to not show the Warm Welcome again">Do not show this automatically again</string>
+    <string name="menu_tutorial" translation_description="Menu item for re-showing the warm welcome tutorial">Tutorial</string>
+    <string name="warm_welcome_sensor_ok" translation_description="Status when a sensor is working fine">Working</string>
+    <string name="warm_welcome_sensor_missing" translation_description="Status when a sensor is missing">Missing</string>
     <string name="preferences_auto_mode_title" translation_description="Label for the toggle between manual and automatic modes">Manual / Auto Mode</string>
 </resources>

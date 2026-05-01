@@ -64,7 +64,6 @@ import com.google.android.stardroid.activities.dialogs.LocationPermissionDeniedD
 import com.google.android.stardroid.activities.dialogs.MultipleSearchResultsDialogFragment;
 import com.google.android.stardroid.activities.dialogs.SearchResultItem;
 import com.google.android.stardroid.activities.dialogs.NoSearchResultsDialogFragment;
-import com.google.android.stardroid.activities.dialogs.NoSensorsDialogFragment;
 import com.google.android.stardroid.activities.dialogs.ObjectInfoDialogFragment;
 import com.google.android.stardroid.activities.dialogs.TimeTravelDialogFragment;
 import com.google.android.stardroid.activities.util.ActivityLightLevelChanger.NightModeable;
@@ -464,20 +463,13 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
     }
     // Missing at least one sensor. Warn the user.
     handler.post(() -> {
-      if (!sharedPreferences
-          .getBoolean(ApplicationConstants.NO_WARN_ABOUT_MISSING_SENSORS, false)) {
-        Log.d(TAG, "showing no sensor dialog");
+      if (!sharedPreferences.getBoolean(ApplicationConstants.NO_WARN_ABOUT_MISSING_SENSORS, false)) {
+        Toast.makeText(DynamicStarMapActivity.this, R.string.no_sensor_warning, Toast.LENGTH_LONG).show();
+        Log.d(TAG, "showing no sensor warning toast");
         analytics.trackEvent(AnalyticsInterface.NO_SENSORS_WARNING_EVENT, null);
-        showDialog(NoSensorsDialogFragment.newInstance(), NoSensorsDialogFragment.class.getSimpleName());
-        // First time, force manual mode.
-        sharedPreferences.edit().putBoolean(ApplicationConstants.AUTO_MODE_PREF_KEY, false)
-            .apply();
+        // Force manual mode.
+        sharedPreferences.edit().putBoolean(ApplicationConstants.AUTO_MODE_PREF_KEY, false).apply();
         setAutoMode(false);
-      } else {
-        Log.d(TAG, "showing no sensor toast");
-        Toast.makeText(
-            DynamicStarMapActivity.this, R.string.no_sensor_warning, Toast.LENGTH_LONG).show();
-        // Don't force manual mode second time through - leave it up to the user.
       }
     });
   }
@@ -576,6 +568,12 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
       Log.d(TAG, "Help");
       menuEventBundle.putString(Analytics.MENU_ITEM_EVENT_VALUE, Analytics.HELP_OPENED_LABEL);
       showDialog(HelpDialogFragment.newInstance(), HelpDialogFragment.class.getSimpleName());
+    } else if (itemId == R.id.menu_item_tutorial) {
+      Log.d(TAG, "Tutorial");
+      menuEventBundle.putString(Analytics.MENU_ITEM_EVENT_VALUE, "tutorial_opened");
+      Intent intent = new Intent(this, WarmWelcomeActivity.class);
+      intent.putExtra("is_manual_invocation", true);
+      startActivity(intent);
     } else if (itemId == R.id.menu_item_dim) {
       Log.d(TAG, "Toggling nightmode");
       nightMode = !nightMode;

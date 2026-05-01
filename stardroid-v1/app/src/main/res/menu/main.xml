@@ -81,8 +81,14 @@
         android:icon="@android:drawable/ic_menu_myplaces"
           android:showAsAction="never"/>
 
-    <item android:id="@+id/menu_item_help"
+    <item android:id="@+id/menu_item_tutorial"
           android:orderInCategory="11"
+          android:title="@string/menu_tutorial"
+          android:showAsAction="never"
+          android:icon="@android:drawable/ic_menu_info_details"/>
+
+    <item android:id="@+id/menu_item_help"
+          android:orderInCategory="12"
           android:title="@string/menu_help"
           android:showAsAction="never"
           android:icon="@android:drawable/ic_menu_help"/>

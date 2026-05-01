@@ -65,7 +65,7 @@ public class SplashScreenActivity extends androidx.fragment.app.FragmentActivity
       public void onAnimationEnd(Animation unused) {
         Log.d(TAG, "onAnimationEnd");
         graphic.setVisibility(View.INVISIBLE);
-        maybeShowWhatsNewAndEnd();
+        maybeShowWarmWelcomeAndEnd();
       }
 
       public void onAnimationRepeat(Animation arg0) {
@@ -134,6 +134,18 @@ public class SplashScreenActivity extends androidx.fragment.app.FragmentActivity
   public void eulaRejected() {
     Log.d(TAG, "Sorry chum, no accept, no app.");
     finish();
+  }
+
+  private void maybeShowWarmWelcomeAndEnd() {
+    boolean warmWelcomeSeen = (sharedPreferences.getLong(
+        ApplicationConstants.READ_WARM_WELCOME_PREF_VERSION, -1) > 0);
+    if (warmWelcomeSeen) {
+      maybeShowWhatsNewAndEnd();
+    } else {
+      Intent intent = new Intent(SplashScreenActivity.this, WarmWelcomeActivity.class);
+      startActivity(intent);
+      finish();
+    }
   }
 
   private void maybeShowWhatsNewAndEnd() {
