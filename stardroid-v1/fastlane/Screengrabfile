@@ -9,10 +9,12 @@ test_instrumentation_runner('com.google.android.stardroid.test.HiltTestRunner')
 
 # The locales you want to capture (matches your metadata folders)
 locales([
-  'ar', 'da-DK', 'de-DE', 'el-GR', 'es-ES', 'fa', 'fr-FR', 'hi-IN', 'it-IT', 'ja-JP',
-  'ms', 'nl-NL', 'pl-PL', 'pt-BR', 'sk', 'sl', 'sv-SE', 'th', 'tr-TR',
-  'uk', 'zh-CN', 'zh-TW'])
-# Not working (screenshots generated but content is in English): hu, hu-HU, hu_HU, id, id_ID, no-NO
+])
+# Existing locales already captured:
+# 'ar', 'cs-CZ', 'da-DK', 'de-DE', 'el-GR', 'en-GB', 'es-ES', 'fa', 'fr-FR', 'hi-IN', 'it-IT', 'ja-JP',
+# 'ms', 'nb', 'nb-NO', 'nl-NL', 'pl-PL', 'pt-BR', 'sk', 'sl', 'sv-SE', 'th', 'tr-TR', 'uk', 'zh-CN', 'zh-TW'
+# Not working (screenshots generated but content is in English): id, id_ID, in, in-ID, id-ID, no-NO
+# Hungarian (hu) is not a primary language, so we don't try it.
 
 app_apk_path('app/build/outputs/apk/gms/debug/app-gms-debug.apk')
 tests_apk_path('app/build/outputs/apk/androidTest/gms/debug/app-gms-debug-androidTest.apk')
