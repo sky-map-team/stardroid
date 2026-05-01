@@ -33,7 +33,7 @@
     <string name="location_unable_to_geocode" translation_description="Error message when converting a place name to coordinates (geocoding) fails, possibly due to no network">系统不能对您的位置进行解码，可能是您的网络无法使用？</string>
     <string name="location_not_found_title" translation_description="dialog box title when location not found">抱歉</string>
     <string name="location_not_found" translation_description="dialog message when placename not found">找不到“%s”。</string>
-<string name="location_long_lat" translation_description="Formatted display of longitude and latitude. %1$.2f is longitude, %2$.2f is latitude">经度：%1$.2f，纬度：%2$.2f</string>
+    <string name="location_long_lat" translation_description="Formatted display of longitude and latitude. %1$.2f is longitude, %2$.2f is latitude">经度：%1$.2f，纬度：%2$.2f</string>
     <string name="location_place_found" translation_description="Status message when a place name was successfully looked up. %1$f is latitude, %2$f is longitude">地点已找到。正在设置纬度 %1$f 和经度 %2$f</string>
     <string name="use_magnetic_correction" translation_description="Preference label: apply magnetic declination correction so the compass points to true north instead of magnetic north">使用磁力修正</string>
     <string name="manual_compass_adjustment_title" translation_description="Preference title: lets the user add a manual degree offset to the compass reading">额外的指南针调整</string>
