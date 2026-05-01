@@ -44,7 +44,7 @@ all build, test, deploy, and data-generation commands.
 
 See `stardroid-v1/docs/ARCHITECTURE.md` for a full overview.
 
-*NEW FILES SHOULD BE WRITTEN IN KOTLIN*
+* New files should be written in Kotlin.
 
 ### Dependency Injection
 
