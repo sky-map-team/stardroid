@@ -142,11 +142,6 @@ public class SplashScreenActivity extends androidx.fragment.app.FragmentActivity
     if (warmWelcomeSeen) {
       maybeShowWhatsNewAndEnd();
     } else {
-      // Mark Whats New as seen so it doesn't show up on their next launch
-      SharedPreferences.Editor editor = sharedPreferences.edit();
-      editor.putLong(ApplicationConstants.READ_WHATS_NEW_PREF_VERSION, app.getVersion());
-      editor.apply();
-
       Intent intent = new Intent(SplashScreenActivity.this, WarmWelcomeActivity.class);
       startActivity(intent);
       finish();

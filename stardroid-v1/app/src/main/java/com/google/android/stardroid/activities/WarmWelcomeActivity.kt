@@ -107,6 +107,7 @@ class WarmWelcomeActivity : AppCompatActivity() {
         if (!isManualInvocation) {
             sharedPreferences.edit().apply {
                 putLong(ApplicationConstants.READ_WARM_WELCOME_PREF_VERSION, app.version.toLong())
+                putLong(ApplicationConstants.READ_WHATS_NEW_PREF_VERSION, app.version.toLong())
                 putBoolean(ApplicationConstants.NO_WARN_ABOUT_MISSING_SENSORS, true)
                 apply()
             }
@@ -148,20 +149,22 @@ class WarmWelcomeActivity : AppCompatActivity() {
         )
         private var isAnimating = false
 
+        private lateinit var highlightViews: List<View>
+
         private val animationRunnable = object : Runnable {
             override fun run() {
                 if (!isAdded || !isAnimating) return
                 
                 // Hide all
-                highlightGroups.forEach { id ->
-                    view?.findViewById<View>(id)?.visibility = View.GONE
-                }
+                highlightViews.forEach { it.visibility = View.GONE }
                 
                 // Show current
-                view?.findViewById<View>(highlightGroups[currentIndex])?.visibility = View.VISIBLE
+                if (highlightViews.isNotEmpty()) {
+                    highlightViews[currentIndex].visibility = View.VISIBLE
+                }
                 
                 // Increment
-                currentIndex = (currentIndex + 1) % highlightGroups.size
+                currentIndex = (currentIndex + 1) % highlightViews.size
                 
                 // Post next
                 handler.postDelayed(this, 2000)
@@ -171,6 +174,15 @@ class WarmWelcomeActivity : AppCompatActivity() {
         override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
         ): View = inflater.inflate(R.layout.fragment_welcome_slide_1, container, false)
+
+        override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+            super.onViewCreated(view, savedInstanceState)
+            val views = mutableListOf<View>()
+            for (id in highlightGroups) {
+                view.findViewById<View>(id)?.let { views.add(it) }
+            }
+            highlightViews = views
+        }
 
         override fun onResume() {
             super.onResume()
@@ -205,6 +217,8 @@ class WarmWelcomeActivity : AppCompatActivity() {
     }
 
     class Slide3Fragment : Fragment() {
+        private val handler = android.os.Handler(android.os.Looper.getMainLooper())
+
         override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
         ): View {
@@ -231,9 +245,9 @@ class WarmWelcomeActivity : AppCompatActivity() {
             val activity = requireActivity() as WarmWelcomeActivity
             val sensorManager = activity.sensorManager
 
-            val hasCompass = sensorManager?.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD) != null
-            val hasAccel = sensorManager?.getDefaultSensor(Sensor.TYPE_ACCELEROMETER) != null
-            val hasGyro = sensorManager?.getDefaultSensor(Sensor.TYPE_GYROSCOPE) != null
+            val hasCompass = sensorManager?.getDefaultSensor(android.hardware.Sensor.TYPE_MAGNETIC_FIELD) != null
+            val hasAccel = sensorManager?.getDefaultSensor(android.hardware.Sensor.TYPE_ACCELEROMETER) != null
+            val hasGyro = sensorManager?.getDefaultSensor(android.hardware.Sensor.TYPE_GYROSCOPE) != null
 
             compassIcon.setImageResource(if (hasCompass) R.drawable.ic_check_circle else R.drawable.ic_warning)
             accelIcon.setImageResource(if (hasAccel) R.drawable.ic_check_circle else R.drawable.ic_warning)
@@ -245,21 +259,21 @@ class WarmWelcomeActivity : AppCompatActivity() {
                 messageText.setText(R.string.warm_welcome_slide3_compass_calib)
             }
 
-            android.os.Handler(android.os.Looper.getMainLooper()).postDelayed({
+            handler.postDelayed({
                 if (isAdded) {
                     compassSpinner.visibility = View.GONE
                     compassIcon.visibility = View.VISIBLE
                 }
             }, 800)
 
-            android.os.Handler(android.os.Looper.getMainLooper()).postDelayed({
+            handler.postDelayed({
                 if (isAdded) {
                     accelSpinner.visibility = View.GONE
                     accelIcon.visibility = View.VISIBLE
                 }
             }, 1600)
 
-            android.os.Handler(android.os.Looper.getMainLooper()).postDelayed({
+            handler.postDelayed({
                 if (isAdded) {
                     gyroSpinner.visibility = View.GONE
                     gyroIcon.visibility = View.VISIBLE
@@ -268,6 +282,11 @@ class WarmWelcomeActivity : AppCompatActivity() {
             }, 2400)
 
             return view
+        }
+
+        override fun onDestroyView() {
+            super.onDestroyView()
+            handler.removeCallbacksAndMessages(null)
         }
     }
 }

@@ -463,8 +463,8 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
     }
     // Missing at least one sensor. Warn the user.
     handler.post(() -> {
-      Toast.makeText(DynamicStarMapActivity.this, R.string.no_sensor_warning, Toast.LENGTH_LONG).show();
       if (!sharedPreferences.getBoolean(ApplicationConstants.NO_WARN_ABOUT_MISSING_SENSORS, false)) {
+        Toast.makeText(DynamicStarMapActivity.this, R.string.no_sensor_warning, Toast.LENGTH_LONG).show();
         Log.d(TAG, "showing no sensor warning toast");
         analytics.trackEvent(AnalyticsInterface.NO_SENSORS_WARNING_EVENT, null);
         // Force manual mode.
