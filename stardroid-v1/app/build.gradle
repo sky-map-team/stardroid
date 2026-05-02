@@ -60,8 +60,8 @@ android {
         applicationId 'com.google.android.stardroid'
         minSdk 26
         targetSdk 36
-        versionCode 1636
-        versionName "1.14.0:Jupiter"
+        versionCode 1646
+        versionName "1.14.1:Jupiter"
         testInstrumentationRunner "com.google.android.stardroid.test.HiltTestRunner"
         resourceConfigurations += ['en', 'b+en+GB', 'ar', 'ca', 'cs', 'cy', 'da', 'de', 'el', 'es', 'fa', 'fr', 'hi', 'hu', 'id', 'it', 'ja', 'ko', 'ms', 'nb', 'nl', 'pl', 'pt', 'ru', 'sk', 'sl', 'sv', 'th', 'tr', 'uk', 'b+zh+Hans', 'b+zh+Hant']
     }
