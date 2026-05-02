@@ -107,7 +107,6 @@ class WarmWelcomeActivity : AppCompatActivity() {
         if (!isManualInvocation) {
             sharedPreferences.edit().apply {
                 putLong(ApplicationConstants.READ_WARM_WELCOME_PREF_VERSION, app.version.toLong())
-                putLong(ApplicationConstants.READ_WHATS_NEW_PREF_VERSION, app.version.toLong())
                 putBoolean(ApplicationConstants.NO_WARN_ABOUT_MISSING_SENSORS, true)
                 apply()
             }
@@ -158,13 +157,11 @@ class WarmWelcomeActivity : AppCompatActivity() {
                 // Hide all
                 highlightViews.forEach { it.visibility = View.GONE }
                 
-                // Show current
+                // Show current and increment
                 if (highlightViews.isNotEmpty()) {
                     highlightViews[currentIndex].visibility = View.VISIBLE
+                    currentIndex = (currentIndex + 1) % highlightViews.size
                 }
-                
-                // Increment
-                currentIndex = (currentIndex + 1) % highlightViews.size
                 
                 // Post next
                 handler.postDelayed(this, 2000)
@@ -207,9 +204,10 @@ class WarmWelcomeActivity : AppCompatActivity() {
             super.onViewCreated(view, savedInstanceState)
             val bgView = view.findViewById<ImageView>(R.id.slide2_background)
             try {
-                val istr = requireContext().assets.open("celestial_images/deep_sky_objects/hubble_m1.jpg")
-                val drawable = android.graphics.drawable.Drawable.createFromStream(istr, null)
-                bgView.setImageDrawable(drawable)
+                requireContext().assets.open("celestial_images/deep_sky_objects/hubble_m1.jpg").use { istr ->
+                    val drawable = android.graphics.drawable.Drawable.createFromStream(istr, null)
+                    bgView.setImageDrawable(drawable)
+                }
             } catch (e: Exception) {
                 e.printStackTrace()
             }
@@ -225,9 +223,10 @@ class WarmWelcomeActivity : AppCompatActivity() {
             val view = inflater.inflate(R.layout.fragment_welcome_slide_3, container, false)
             val bgView = view.findViewById<ImageView>(R.id.slide3_background)
             try {
-                val istr = requireContext().assets.open("celestial_images/planets/cassini_iapetus.webp")
-                val drawable = android.graphics.drawable.Drawable.createFromStream(istr, null)
-                bgView.setImageDrawable(drawable)
+                requireContext().assets.open("celestial_images/planets/cassini_iapetus.webp").use { istr ->
+                    val drawable = android.graphics.drawable.Drawable.createFromStream(istr, null)
+                    bgView.setImageDrawable(drawable)
+                }
             } catch (e: Exception) {
                 e.printStackTrace()
             }

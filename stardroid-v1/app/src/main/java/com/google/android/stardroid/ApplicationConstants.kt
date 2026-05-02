@@ -74,4 +74,8 @@ object ApplicationConstants {
 
   const val AUTO_LEVEL_HORIZON_PREF_KEY = "auto_level_horizon"
   const val NO_AUTO_LOCATE_PREF_KEY = "no_auto_locate"
+
+  // Feature flags
+  /** Set to true to enable the warm welcome onboarding flow. */
+  const val WARM_WELCOME_ENABLED = false
 }
