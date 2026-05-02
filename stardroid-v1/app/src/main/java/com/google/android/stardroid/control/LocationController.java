@@ -43,7 +43,6 @@ import com.google.android.stardroid.util.MiscUtil;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import javax.annotation.Nullable;
@@ -189,43 +188,58 @@ public class LocationController extends AbstractController implements LocationLi
 
   /**
    * Returns the best available location provider, first by consulting the (deprecated)
-   * Criteria-based API and then by falling back to explicit provider names in preference order.
-   * This is necessary because {@link LocationManager#getBestProvider} can return {@code null} on
-   * devices with no GPS hardware (e.g. Chromebooks) even when network location is fully available.
+   * Criteria-based API and then by iterating every provider the device reports via
+   * {@link LocationManager#getAllProviders()}.
    *
-   * @param criteria  the location criteria to pass to {@link LocationManager#getBestProvider}
+   * <p>The Criteria-based {@link LocationManager#getBestProvider} call can return {@code null} on
+   * devices without GPS (e.g. Chromebooks), even when network or fused-location providers are
+   * available. Falling back to {@code getAllProviders()} ensures we find whatever the OS exposes,
+   * including the {@code "fused"} provider used by Google Play Services on Chrome OS.
+   *
+   * @param criteria    the location criteria to pass to {@link LocationManager#getBestProvider}
    * @param enabledOnly if {@code true}, only consider providers that are currently enabled
    * @return a provider name, or {@code null} if no suitable provider is found
    */
   @Nullable
   private String findAvailableProvider(Criteria criteria, boolean enabledOnly) {
+    // Fast path: the (deprecated) criteria API still works on most devices.
     String provider = locationManager.getBestProvider(criteria, enabledOnly);
     if (provider != null) {
       return provider;
     }
-    // The Criteria API failed (common on GPS-less devices). Try known providers explicitly.
-    List<String> candidates = Arrays.asList(
-        LocationManager.NETWORK_PROVIDER,
-        LocationManager.GPS_PROVIDER,
-        LocationManager.PASSIVE_PROVIDER);
-    for (String candidate : candidates) {
+
+    // Slow path: iterate every provider the device knows about.
+    // This handles GPS-less devices (Chromebooks, some tablets) where getBestProvider()
+    // silently returns null even when a "fused" or "network" provider is available.
+    Log.d(TAG, "getBestProvider returned null (enabledOnly=" + enabledOnly
+        + "); scanning getAllProviders()");
+    List<String> allProviders = locationManager.getAllProviders();
+    Log.d(TAG, "Available providers: " + allProviders);
+    // Prefer non-passive providers; fall through to passive only as a last resort.
+    String passiveFallback = null;
+    for (String candidate : allProviders) {
+      boolean isEnabled;
       try {
-        if (enabledOnly) {
-          if (locationManager.isProviderEnabled(candidate)) {
-            Log.d(TAG, "Criteria API returned null; using explicit provider: " + candidate);
-            return candidate;
-          }
-        } else {
-          // Check that the provider exists on this device (getAllProviders() is safe to call).
-          if (locationManager.getAllProviders().contains(candidate)) {
-            return candidate;
-          }
-        }
+        isEnabled = locationManager.isProviderEnabled(candidate);
       } catch (SecurityException e) {
         Log.d(TAG, "No permission to check provider " + candidate);
+        continue;
       }
+      if (enabledOnly && !isEnabled) {
+        continue;
+      }
+      if (LocationManager.PASSIVE_PROVIDER.equals(candidate)) {
+        // Keep passive as a fallback only — prefer active providers first.
+        passiveFallback = candidate;
+        continue;
+      }
+      Log.d(TAG, "Criteria API returned null; using provider from getAllProviders(): " + candidate);
+      return candidate;
     }
-    return null;
+    if (passiveFallback != null) {
+      Log.d(TAG, "Using passive provider as last resort");
+    }
+    return passiveFallback;
   }
 
   private Builder getSwitchOnGPSDialog() {
