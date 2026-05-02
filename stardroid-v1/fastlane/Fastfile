@@ -48,9 +48,7 @@ platform :android do
       skip_upload_images: true,
       skip_upload_screenshots: true,
       changes_not_sent_for_review: true,
-      version_name: "#{v_name} (#{v_code})",
-      version_codes_to_retain: older_versions,
-      version_code: v_code
+      version_codes_to_retain: older_versions
     )
   end
 
