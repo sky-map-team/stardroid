@@ -64,6 +64,7 @@ import com.google.android.stardroid.activities.dialogs.LocationPermissionDeniedD
 import com.google.android.stardroid.activities.dialogs.MultipleSearchResultsDialogFragment;
 import com.google.android.stardroid.activities.dialogs.SearchResultItem;
 import com.google.android.stardroid.activities.dialogs.NoSearchResultsDialogFragment;
+import com.google.android.stardroid.activities.dialogs.NoSensorsDialogFragment;
 import com.google.android.stardroid.activities.dialogs.ObjectInfoDialogFragment;
 import com.google.android.stardroid.activities.dialogs.TimeTravelDialogFragment;
 import com.google.android.stardroid.activities.util.ActivityLightLevelChanger.NightModeable;
@@ -444,33 +445,57 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
     boolean result = super.onPrepareOptionsMenu(menu);
     MenuUtils.showOptionalIcons(menu);
     NightModeHelper.tintMenuIcons(menu, nightMode, this);
+    MenuItem tutorialItem = menu.findItem(R.id.menu_item_tutorial);
+    if (tutorialItem != null) {
+      tutorialItem.setVisible(ApplicationConstants.WARM_WELCOME_ENABLED);
+    }
     return result;
   }
 
+  private boolean hasNeededSensors() {
+    if (sensorManager == null) {
+      return false;
+    }
+    if (sensorManager.getDefaultSensor(Sensor.TYPE_ROTATION_VECTOR) != null) {
+      return true;
+    }
+    return sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER) != null
+        && sensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD) != null;
+  }
+
   private void checkForSensorsAndMaybeWarn() {
-    SensorManager sensorManager = this.sensorManager;
-    if (sensorManager != null && sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER) != null
-        && sensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD) != null) {
+    if (hasNeededSensors()) {
       Log.i(TAG, "Minimum sensors present");
       // We want to reset to auto mode on every restart, as users seem to get
       // stuck in manual mode and can't find their way out.
       // TODO(johntaylor): this is a bit of an abuse of the prefs system, but
       // the button we use is wired into the preferences system. Should probably
       // change this to a use a different mechanism.
-      sharedPreferences.edit().putBoolean(ApplicationConstants.AUTO_MODE_PREF_KEY, true).apply();
+      sharedPreferences.edit()
+          .putBoolean(ApplicationConstants.AUTO_MODE_PREF_KEY, true)
+          .apply();
       setAutoMode(true);
       return;
     }
     // Missing at least one sensor. Warn the user.
     handler.post(() -> {
-      if (!sharedPreferences.getBoolean(ApplicationConstants.NO_WARN_ABOUT_MISSING_SENSORS, false)) {
-        Toast.makeText(DynamicStarMapActivity.this, R.string.no_sensor_warning, Toast.LENGTH_LONG).show();
-        Log.d(TAG, "showing no sensor warning toast");
+      if (!sharedPreferences
+          .getBoolean(ApplicationConstants.NO_WARN_ABOUT_MISSING_SENSORS, false)) {
+        Log.d(TAG, "showing no sensor warning");
         analytics.trackEvent(AnalyticsInterface.NO_SENSORS_WARNING_EVENT, null);
-        // Force manual mode.
-        sharedPreferences.edit().putBoolean(ApplicationConstants.AUTO_MODE_PREF_KEY, false).apply();
-        setAutoMode(false);
+        if (ApplicationConstants.WARM_WELCOME_ENABLED) {
+          Toast.makeText(DynamicStarMapActivity.this, R.string.no_sensor_warning,
+              Toast.LENGTH_LONG).show();
+        } else {
+          showDialog(NoSensorsDialogFragment.newInstance(),
+              NoSensorsDialogFragment.class.getSimpleName());
+        }
       }
+      // Always force manual mode on devices that lack necessary sensors.
+      sharedPreferences.edit()
+          .putBoolean(ApplicationConstants.AUTO_MODE_PREF_KEY, false)
+          .apply();
+      setAutoMode(false);
     });
   }
 
@@ -570,10 +595,12 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
       showDialog(HelpDialogFragment.newInstance(), HelpDialogFragment.class.getSimpleName());
     } else if (itemId == R.id.menu_item_tutorial) {
       Log.d(TAG, "Tutorial");
-      menuEventBundle.putString(Analytics.MENU_ITEM_EVENT_VALUE, "tutorial_opened");
-      Intent intent = new Intent(this, WarmWelcomeActivity.class);
-      intent.putExtra("is_manual_invocation", true);
-      startActivity(intent);
+      if (ApplicationConstants.WARM_WELCOME_ENABLED) {
+        menuEventBundle.putString(Analytics.MENU_ITEM_EVENT_VALUE, "tutorial_opened");
+        Intent intent = new Intent(this, WarmWelcomeActivity.class);
+        intent.putExtra("is_manual_invocation", true);
+        startActivity(intent);
+      }
     } else if (itemId == R.id.menu_item_dim) {
       Log.d(TAG, "Toggling nightmode");
       nightMode = !nightMode;
@@ -1013,16 +1040,25 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
       buttonViews.add(button);
     }
     PreferencesButton manualAutoToggle = findViewById(R.id.manual_auto_toggle);
-    buttonViews.add(manualAutoToggle);
+    ButtonLayerView manualButtonGroup = findViewById(R.id.layer_manual_auto_toggle);
+
+    List<View> buttonGroups = new ArrayList<>();
+    if (hasNeededSensors()) {
+      buttonViews.add(manualAutoToggle);
+      buttonGroups.add(manualButtonGroup);
+    } else {
+      manualAutoToggle.setVisibility(View.GONE);
+      manualButtonGroup.setVisibility(View.GONE);
+    }
+    buttonGroups.add(providerButtons);
 
     // Set the dependencies on the gestureInterpreter that require the UI to be
     // inflated
     // so can't be done via constructor injection.
-    ButtonLayerView manualButtonLayer = findViewById(R.id.layer_manual_auto_toggle);
     fullscreenControlsManager = new FullscreenControlsManager(
         this,
         findViewById(R.id.main_sky_view),
-        Lists.asList(manualButtonLayer, providerButtons),
+        buttonGroups,
         buttonViews);
     gestureInterpreter = gestureInterpreterFactory.createGestureInterpreter(
         fullscreenControlsManager,
