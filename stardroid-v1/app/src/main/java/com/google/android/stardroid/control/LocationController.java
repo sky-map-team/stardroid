@@ -29,6 +29,7 @@ import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.util.Log;
@@ -141,15 +142,47 @@ public class LocationController extends AbstractController implements LocationLi
           MINIMUM_DISTANCE_BEFORE_UPDATE_METRES,
           this);
 
-      // Also request an immediate single update so stationary devices (e.g. Chromebooks)
-      // get a location fix right away. The long-interval registration above would otherwise
-      // never fire on a device that never moves 2 km.
-      locationManager.requestLocationUpdates(locationProvider, 0, 0, this);
+      // Try to get an immediate one-shot fix.
+      // On API 30+ use getCurrentLocation() which actively forces a fix rather than passively
+      // waiting. This is more reliable on Chrome OS where requestLocationUpdates with the fused
+      // provider registers successfully but may never deliver a callback.
+      if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+        locationManager.getCurrentLocation(locationProvider, null,
+            activity.getMainExecutor(), location -> {
+              if (location != null) {
+                Log.d(TAG, "getCurrentLocation() -> lat=" + location.getLatitude()
+                    + " lon=" + location.getLongitude());
+                onLocationChanged(location);
+              } else {
+                Log.w(TAG, "getCurrentLocation() returned null - no location available");
+              }
+            });
+      } else {
+        // API < 30: use a zero-threshold listener as a one-shot fallback.
+        locationManager.requestLocationUpdates(locationProvider, 0, 0, this);
+      }
 
-      Location location = locationManager.getLastKnownLocation(locationProvider);
-      if (location != null) {
-        LatLong myLocation = new LatLong(location.getLatitude(), location.getLongitude());
-        setLocationInModel(myLocation, location.getProvider());
+      // Try getLastKnownLocation() on every provider as a quick seed while the active
+      // request is pending. Chrome OS may have a cached location on a provider other
+      // than the one selected as best.
+      Location bestKnown = null;
+      for (String p : locationManager.getAllProviders()) {
+        try {
+          Location candidate = locationManager.getLastKnownLocation(p);
+          if (candidate != null
+              && (bestKnown == null || candidate.getTime() > bestKnown.getTime())) {
+            bestKnown = candidate;
+          }
+        } catch (SecurityException e) {
+          Log.d(TAG, "getLastKnownLocation(" + p + ") denied");
+        }
+      }
+      if (bestKnown != null) {
+        Log.d(TAG, "Seeding location from getLastKnownLocation: provider=" + bestKnown.getProvider()
+            + " lat=" + bestKnown.getLatitude() + " lon=" + bestKnown.getLongitude());
+        setLocationInModel(
+            new LatLong(bestKnown.getLatitude(), bestKnown.getLongitude()),
+            bestKnown.getProvider());
       }
 
     } catch (SecurityException securityException) {

@@ -41,13 +41,15 @@ public abstract class AbstractGooglePlayServicesChecker {
   public abstract void maybeCheckForGooglePlayServices();
 
   protected void checkLocationServicesEnabled() {
-    if (ActivityCompat.checkSelfPermission(parent, Manifest.permission.ACCESS_COARSE_LOCATION)
-        != PackageManager.PERMISSION_GRANTED) {
+    boolean hasFine = ActivityCompat.checkSelfPermission(parent,
+        Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED;
+    boolean hasCoarse = ActivityCompat.checkSelfPermission(parent,
+        Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED;
+    if (!hasFine && !hasCoarse) {
       Log.d(TAG, "Location permission not enabled - requesting permission");
-      // Request permission normally - if denied, runAfterPermissionsCheck will show options
       requestLocationPermission();
     } else {
-      Log.d(TAG, "Location permission is granted");
+      Log.d(TAG, "Location permission is granted (fine=" + hasFine + " coarse=" + hasCoarse + ")");
     }
   }
 
@@ -56,8 +58,13 @@ public abstract class AbstractGooglePlayServicesChecker {
   }
 
   private void requestLocationPermission() {
+    // Request both fine and coarse so Android 12+ shows the precise/approximate chooser.
+    // The fused location provider requires ACCESS_FINE_LOCATION to reliably deliver
+    // getCurrentLocation() callbacks on devices without GPS (e.g. Chrome OS).
     ActivityCompat.requestPermissions(parent,
-        new String[]{Manifest.permission.ACCESS_COARSE_LOCATION},
+        new String[]{
+            Manifest.permission.ACCESS_FINE_LOCATION,
+            Manifest.permission.ACCESS_COARSE_LOCATION},
         DynamicStarMapActivity.GOOGLE_PLAY_SERVICES_REQUEST_LOCATION_PERMISSION_CODE);
   }
 
@@ -67,9 +74,16 @@ public abstract class AbstractGooglePlayServicesChecker {
   public void runAfterPermissionsCheck(int requestCode,
                                        String[] permissions,
                                        int[] grantResults) {
-    if (grantResults.length == 1
-        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-      Log.i(TAG, "User granted permission");
+    // Any granted result (fine or coarse) counts as success.
+    boolean anyGranted = false;
+    for (int result : grantResults) {
+      if (result == PackageManager.PERMISSION_GRANTED) {
+        anyGranted = true;
+        break;
+      }
+    }
+    if (anyGranted) {
+      Log.i(TAG, "User granted location permission");
     } else {
       Log.i(TAG, "User denied permission - showing options dialog");
       showLocationPermissionDialog();
