@@ -1311,6 +1311,24 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
       int[] grantResults) {
     if (requestCode == GOOGLE_PLAY_SERVICES_REQUEST_LOCATION_PERMISSION_CODE) {
       playServicesChecker.runAfterPermissionsCheck(requestCode, permissions, grantResults);
+      if (grantResults.length == 1
+          && grantResults[0] == android.content.pm.PackageManager.PERMISSION_GRANTED) {
+        // Permission just granted — restart the LocationController so it can now register for
+        // location updates. This is necessary because the activity may not go through a full
+        // onPause/onResume cycle when the system permission dialog is dismissed (e.g. Chrome OS).
+        Log.i(TAG, "Location permission granted — restarting LocationController");
+        LocationController lc = controller.getLocationController();
+        lc.stop();
+        lc.start();
+        // Dismiss the "Location required" dialog that was shown before permission was granted,
+        // so the user doesn't see a stale prompt telling them to grant something they just granted.
+        androidx.fragment.app.DialogFragment permDialog =
+            (androidx.fragment.app.DialogFragment) fragmentManager.findFragmentByTag(
+                LocationPermissionDeniedDialogFragment.class.getSimpleName());
+        if (permDialog != null) {
+          permDialog.dismiss();
+        }
+      }
       return;
     }
     Log.w(TAG, "Unhandled request permissions result");

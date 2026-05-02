@@ -141,6 +141,11 @@ public class LocationController extends AbstractController implements LocationLi
           MINIMUM_DISTANCE_BEFORE_UPDATE_METRES,
           this);
 
+      // Also request an immediate single update so stationary devices (e.g. Chromebooks)
+      // get a location fix right away. The long-interval registration above would otherwise
+      // never fire on a device that never moves 2 km.
+      locationManager.requestLocationUpdates(locationProvider, 0, 0, this);
+
       Location location = locationManager.getLastKnownLocation(locationProvider);
       if (location != null) {
         LatLong myLocation = new LatLong(location.getLatitude(), location.getLongitude());
