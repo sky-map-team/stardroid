@@ -448,37 +448,44 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
     return result;
   }
 
+  private boolean hasNeededSensors() {
+    if (sensorManager == null) {
+      return false;
+    }
+    if (sensorManager.getDefaultSensor(Sensor.TYPE_ROTATION_VECTOR) != null) {
+      return true;
+    }
+    return sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER) != null
+        && sensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD) != null;
+  }
+
   private void checkForSensorsAndMaybeWarn() {
-    SensorManager sensorManager = this.sensorManager;
-    if (sensorManager != null && sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER) != null
-        && sensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD) != null) {
+    if (hasNeededSensors()) {
       Log.i(TAG, "Minimum sensors present");
       // We want to reset to auto mode on every restart, as users seem to get
       // stuck in manual mode and can't find their way out.
       // TODO(johntaylor): this is a bit of an abuse of the prefs system, but
       // the button we use is wired into the preferences system. Should probably
       // change this to a use a different mechanism.
-      sharedPreferences.edit().putBoolean(ApplicationConstants.AUTO_MODE_PREF_KEY, true).apply();
+      sharedPreferences.edit()
+          .putBoolean(ApplicationConstants.AUTO_MODE_PREF_KEY, true)
+          .apply();
       setAutoMode(true);
       return;
     }
     // Missing at least one sensor. Warn the user.
     handler.post(() -> {
-      if (!sharedPreferences
-          .getBoolean(ApplicationConstants.NO_WARN_ABOUT_MISSING_SENSORS, false)) {
+      if (!sharedPreferences.getBoolean(
+          ApplicationConstants.NO_WARN_ABOUT_MISSING_SENSORS, false)) {
         Log.d(TAG, "showing no sensor dialog");
         analytics.trackEvent(AnalyticsInterface.NO_SENSORS_WARNING_EVENT, null);
         showDialog(NoSensorsDialogFragment.newInstance(), NoSensorsDialogFragment.class.getSimpleName());
-        // First time, force manual mode.
-        sharedPreferences.edit().putBoolean(ApplicationConstants.AUTO_MODE_PREF_KEY, false)
-            .apply();
-        setAutoMode(false);
-      } else {
-        Log.d(TAG, "showing no sensor toast");
-        Toast.makeText(
-            DynamicStarMapActivity.this, R.string.no_sensor_warning, Toast.LENGTH_LONG).show();
-        // Don't force manual mode second time through - leave it up to the user.
       }
+      // Always force manual mode on devices that lack necessary sensors.
+      sharedPreferences.edit()
+          .putBoolean(ApplicationConstants.AUTO_MODE_PREF_KEY, false)
+          .apply();
+      setAutoMode(false);
     });
   }
 
@@ -1015,16 +1022,25 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
       buttonViews.add(button);
     }
     PreferencesButton manualAutoToggle = findViewById(R.id.manual_auto_toggle);
-    buttonViews.add(manualAutoToggle);
+    ButtonLayerView manualButtonGroup = findViewById(R.id.layer_manual_auto_toggle);
+
+    List<View> buttonGroups = new ArrayList<>();
+    if (hasNeededSensors()) {
+      buttonViews.add(manualAutoToggle);
+      buttonGroups.add(manualButtonGroup);
+    } else {
+      manualAutoToggle.setVisibility(View.GONE);
+      manualButtonGroup.setVisibility(View.GONE);
+    }
+    buttonGroups.add(providerButtons);
 
     // Set the dependencies on the gestureInterpreter that require the UI to be
     // inflated
     // so can't be done via constructor injection.
-    ButtonLayerView manualButtonLayer = findViewById(R.id.layer_manual_auto_toggle);
     fullscreenControlsManager = new FullscreenControlsManager(
         this,
         findViewById(R.id.main_sky_view),
-        Lists.asList(manualButtonLayer, providerButtons),
+        buttonGroups,
         buttonViews);
     gestureInterpreter = gestureInterpreterFactory.createGestureInterpreter(
         fullscreenControlsManager,
