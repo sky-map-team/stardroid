@@ -48,6 +48,7 @@ object ApplicationConstants {
   // Preference that keeps track of whether or not the user accepted the ToS for this version
   const val READ_TOS_PREF_VERSION = "read_tos_version"
   const val READ_WHATS_NEW_PREF_VERSION = "read_whats_new_version1"
+  const val READ_WARM_WELCOME_PREF_VERSION = "read_warm_welcome_version"
   const val SHARED_PREFERENCE_DISABLE_GYRO = "disable_gyro"
 
   // Attention - the following strings must match those in strings.xml and notranslate-arrays.xml.

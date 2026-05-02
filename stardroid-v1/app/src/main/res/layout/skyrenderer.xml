@@ -49,7 +49,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="2dip"
                 android:layout_toEndOf="@id/search_icon"
-                android:layout_toStartOf="@id/cancel_search_button"
+                android:layout_toStartOf="@+id/cancel_search_button"
                 android:paddingStart="10dip"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
@@ -59,7 +59,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/search_status_label"
                 android:layout_toEndOf="@id/search_icon"
-                android:layout_toStartOf="@id/cancel_search_button"
+                android:layout_toStartOf="@+id/cancel_search_button"
                 android:paddingStart="10dip"
                 android:text="@string/search_overlay_title"
                 android:textAppearance="?android:attr/textAppearanceSmall" />
