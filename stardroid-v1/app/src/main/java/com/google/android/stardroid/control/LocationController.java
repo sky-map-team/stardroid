@@ -43,6 +43,7 @@ import com.google.android.stardroid.util.MiscUtil;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import javax.annotation.Nullable;
@@ -106,8 +107,9 @@ public class LocationController extends AbstractController implements LocationLi
         return;
       }
 
-      // TODO(jontayler): Another Android Tax - Criteria based APIs are now deprecated
-      // as a bad design decision and this probably needs to be updated.
+      // Note: Criteria-based APIs are deprecated, and getBestProvider() can return null on
+      // devices with no GPS (e.g. Chromebooks) even when network location is available.
+      // We therefore use it only as a first hint and fall back to explicit provider names.
       Criteria locationCriteria = new Criteria();
       locationCriteria.setAccuracy(forceGps ? Criteria.ACCURACY_FINE : Criteria.ACCURACY_COARSE);
       locationCriteria.setAltitudeRequired(false);
@@ -116,17 +118,19 @@ public class LocationController extends AbstractController implements LocationLi
       locationCriteria.setSpeedRequired(false);
       locationCriteria.setPowerRequirement(Criteria.POWER_LOW);
 
-      String locationProvider = locationManager.getBestProvider(locationCriteria, true);
+      String locationProvider = findAvailableProvider(locationCriteria, true);
       if (locationProvider == null) {
         Log.w(TAG, "No location provider is enabled");
-        String possiblelocationProvider = locationManager.getBestProvider(locationCriteria, false);
-        if (possiblelocationProvider == null) {
+        // Check whether any provider exists at all (even if currently disabled) so we can
+        // offer the user a chance to turn on Location in system settings.
+        String possibleLocationProvider = findAvailableProvider(locationCriteria, false);
+        if (possibleLocationProvider == null) {
           Log.i(TAG, "No location provider is even available");
-          // The permission dialog flow handles this case - just fall back to preferences
+          // Nothing we can do without any provider - fall back to stored prefs.
           setLocationFromPrefs();
           return;
         }
-
+        // At least one provider exists but is turned off: offer to enable it.
         AlertDialog.Builder alertDialog = getSwitchOnGPSDialog();
         alertDialog.show();
         return;
@@ -181,6 +185,47 @@ public class LocationController extends AbstractController implements LocationLi
 
   public LocationStatus getLastStatus() {
     return lastStatus;
+  }
+
+  /**
+   * Returns the best available location provider, first by consulting the (deprecated)
+   * Criteria-based API and then by falling back to explicit provider names in preference order.
+   * This is necessary because {@link LocationManager#getBestProvider} can return {@code null} on
+   * devices with no GPS hardware (e.g. Chromebooks) even when network location is fully available.
+   *
+   * @param criteria  the location criteria to pass to {@link LocationManager#getBestProvider}
+   * @param enabledOnly if {@code true}, only consider providers that are currently enabled
+   * @return a provider name, or {@code null} if no suitable provider is found
+   */
+  @Nullable
+  private String findAvailableProvider(Criteria criteria, boolean enabledOnly) {
+    String provider = locationManager.getBestProvider(criteria, enabledOnly);
+    if (provider != null) {
+      return provider;
+    }
+    // The Criteria API failed (common on GPS-less devices). Try known providers explicitly.
+    List<String> candidates = Arrays.asList(
+        LocationManager.NETWORK_PROVIDER,
+        LocationManager.GPS_PROVIDER,
+        LocationManager.PASSIVE_PROVIDER);
+    for (String candidate : candidates) {
+      try {
+        if (enabledOnly) {
+          if (locationManager.isProviderEnabled(candidate)) {
+            Log.d(TAG, "Criteria API returned null; using explicit provider: " + candidate);
+            return candidate;
+          }
+        } else {
+          // Check that the provider exists on this device (getAllProviders() is safe to call).
+          if (locationManager.getAllProviders().contains(candidate)) {
+            return candidate;
+          }
+        }
+      } catch (SecurityException e) {
+        Log.d(TAG, "No permission to check provider " + candidate);
+      }
+    }
+    return null;
   }
 
   private Builder getSwitchOnGPSDialog() {
