@@ -50,9 +50,9 @@ Thumbs.db
 ${user.home}/
 
 # --- Project Specific ---
+fastlane/metadata/android/screenshots.html
 fastlane/report.xml
 fastlane/Preview.html
-fastlane/screenshots.html
 fastlane/test_output
 
 # Bug reports
