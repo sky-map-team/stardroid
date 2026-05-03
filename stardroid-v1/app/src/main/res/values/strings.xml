@@ -160,9 +160,11 @@
     <string name="enable_analytics" translation_description="Preference label to opt in to sending anonymous usage statistics">Send usage statistics</string>
     <string name="enable_analytics_desc" translation_description="Description/summary for the usage statistics preference">Make Sky Map better by sending anonymous data to Google Analytics</string>
 
-    <string name="no_sensor_warning" translation_description="Warning shown when required orientation sensors are not detected on the device">Your device may lack orientation sensors - automode may not work</string>
-    <string name="warning_dialog_title" translation_description="Title of a warning dialog shown when something is wrong, e.g. a missing sensor">Bad news!</string>
-    <string name="missing_sensor_dialog_text" translation_description="Dialog message shown when the device appears to be missing the compass or accelerometer sensors needed for auto mode">\nUnfortunately your device might not have one of the sensors that Sky Map needs.\n\nTo show you the sky in the direction your phone is pointing Sky Map needs both a built-in compass and an accelerometer. Your device reports that it is missing one of them. The good news is that some devices (for example some Moto E phones) falsely claim not to have a compass but actually do.\n\nIf your device really is missing a sensor then auto-mode will not work. However, you can still use Sky Map on this device in manual mode where you drag, rotate and stretch the map with your fingers.
+    <string name="no_sensor_warning" translation_description="Warning shown when required orientation sensors are not detected on the device">Your device may lack orientation sensors - auto tracking mode will not work</string>
+    <string name="warning_dialog_title" translation_description="Title of a warning dialog shown when something is wrong, e.g. a missing sensor">Heads up! Your device is missing a sensor.</string>
+    <string name="missing_sensor_dialog_text" translation_description="Dialog message shown when the device appears to be missing the compass or accelerometer sensors needed for auto mode">To automatically follow the stars as you move, Sky Map needs a built-in compass and accelerometer. It looks like your device is missing one of these.
+
+Don’t worry! You can still explore the universe in Manual Mode. Just use your fingers to drag, rotate, and zoom around the night sky at your own pace.
     </string>
     <string name="do_not_show_again" translation_description="Checkbox or button label to suppress future display of a warning dialog">Do not show this message again</string>
     <string name="title_activity_diagnostic" translation_description="Title bar text for the Diagnostics activity/screen">Diagnostics</string>
