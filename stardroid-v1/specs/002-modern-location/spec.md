@@ -131,6 +131,7 @@ A user wants to verify the app is using the correct location. They open the loca
 - **FR-015**: When location status is degraded (no fix yet, permission revoked, no hardware, location unset), the app MUST display a clear human-readable status rather than silently operating with incorrect coordinates.
 - **FR-016**: The location system MUST function correctly without internet connectivity using GPS/device sensors (if available and permitted) or previously saved manual coordinates.
 - **FR-017**: When the app is backgrounded and the device location changes, the app MUST reflect the updated location when returned to the foreground.
+- **FR-018**: The diagnostics screen MUST be updated to reflect the new location model, displaying the current location source, location status, coordinates, and permission state in a way that is consistent with the new system.
 
 ### Key Entities
 
