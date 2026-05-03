@@ -114,7 +114,7 @@ A user wants to verify the app is using the correct location. They open the loca
 
 ### Functional Requirements
 
-- **FR-001**: The app MUST request both `ACCESS_COARSE_LOCATION` and `ACCESS_FINE_LOCATION` together. On Android 12 (API 31) and higher, this presents a single system dialog where the user may choose to grant either precise (GPS-capable) or approximate (network-only) location. The app MUST function correctly with either grant: when precise location is granted, GPS MUST be used (enabling offline location in areas with no network); when only approximate location is granted, the app MUST fall back to network-based providers only.
+- **FR-001**: The app MUST request only `ACCESS_COARSE_LOCATION`. Fine/precise location MUST NOT be requested at this time. See known limitation in Assumptions regarding offline GPS on the fdroid build.
 - **FR-002**: The app MUST display a rationale to the user explaining why location is needed before the system permission dialog is shown (on first request and after denial).
 - **FR-003**: When the user denies location permission, the app MUST immediately invite them to enter a location manually; showing an incorrect sky silently is not acceptable.
 - **FR-004**: When a device has no means of determining location automatically (no hardware, all providers disabled), the app MUST detect this and offer manual location entry.
@@ -130,7 +130,7 @@ A user wants to verify the app is using the correct location. They open the loca
 - **FR-013**: Users who have automatic location enabled MUST be able to switch to a fixed manual location. If a manual location was previously entered, the entry screen MUST pre-fill those saved coordinates.
 - **FR-014**: A location management screen MUST exist where users can view their current location on a map and see whether it is auto-detected or manually entered.
 - **FR-015**: When location status is degraded (no fix yet, permission revoked, no hardware, location unset), the app MUST display a clear human-readable status rather than silently operating with incorrect coordinates.
-- **FR-016**: The location system MUST function correctly without internet connectivity. When precise location permission has been granted, GPS MUST be used as the location source offline. When only approximate permission has been granted, offline operation is limited to network-based providers (cell/Wi-Fi); if those are also unavailable, the app MUST surface this clearly rather than failing silently. Previously saved manual coordinates MUST always work offline regardless of permission level.
+- **FR-016**: The location system MUST function correctly without internet connectivity using device sensors (where available and permitted) or previously saved manual coordinates. On the GMS build, `FusedLocationProviderClient` is expected to use GPS internally even with coarse-only permission; this has not been verified empirically and is a known risk. On the fdroid build, offline GPS with coarse-only permission on Android 12+ is a known limitation deferred to a future revision (see Assumptions).
 - **FR-017**: When the app is backgrounded and the device location changes, the app MUST reflect the updated location when returned to the foreground.
 - **FR-018**: The diagnostics screen MUST be updated to reflect the new location model, displaying the current location source, location status, coordinates, and permission state in a way that is consistent with the new system.
 
@@ -171,5 +171,6 @@ A user wants to verify the app is using the correct location. They open the loca
 - The star map's rendering layer already accepts a location and re-renders; this feature replaces the location acquisition and management layer only, not the rendering layer.
 - All user-facing strings are in US English; translations are handled by a separate pipeline after implementation.
 - There is no requirement to store a history of past locations.
-- City-level (approximate) accuracy is sufficient for the star map's sky rendering. When the user grants precise location, GPS is used for better offline reliability in remote dark-sky sites; when only approximate is granted, network-based location provides city-level accuracy. Both modes produce a correct sky rendering.
+- Coarse location accuracy (city-level) is sufficient for the star map's sky rendering.
+- **Known limitation (deferred)**: On the fdroid build, `LocationManager.GPS_PROVIDER` on Android 12+ (API 31+) requires `ACCESS_FINE_LOCATION`; with coarse-only permission, GPS is unavailable and offline use in remote areas (no cell/Wi-Fi) will fail. The GMS build uses `FusedLocationProviderClient`, which is believed to use GPS internally with coarse permission and return a coarsened result, but this has not been verified. A future revision should add fine location support to the fdroid build (and verify Fused behaviour) once the coarse-only path is validated in production.
 - The "remove select GPS" requirement applies only to the user-visible setting, not to the internal provider selection logic (which should transparently prefer GPS when available).

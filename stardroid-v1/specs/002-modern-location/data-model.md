@@ -19,13 +19,8 @@ sealed class LocationState {
     /** No location has ever been set and none is being acquired. */
     object Unset : LocationState()
 
-    /**
-     * Auto-location is active; waiting for first fix (or after location loss).
-     *
-     * @param preciseGranted True if ACCESS_FINE_LOCATION was granted (GPS available offline);
-     *                       false if only ACCESS_COARSE_LOCATION granted (network providers only).
-     */
-    data class Acquiring(val preciseGranted: Boolean) : LocationState()
+    /** Auto-location is active; waiting for first fix (or after location loss). */
+    object Acquiring : LocationState()
 
     /**
      * A valid location is available and active.

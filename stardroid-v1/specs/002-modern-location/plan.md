@@ -32,10 +32,9 @@ removed; the best provider is selected automatically per flavor.
 **Project Type**: Android mobile app — subsystem rewrite  
 **Performance Goals**: Location updates delivered to `AstronomerModel` within 5 s of device
   detecting a threshold-crossing change; no blocking work on main thread  
-**Constraints**: Offline-capable (GPS available when precise permission granted; network-only when
-  approximate only); 2,000 m minimum distance before map update + toast; 30 s acquiring timeout;
-  both `ACCESS_COARSE_LOCATION` and `ACCESS_FINE_LOCATION` requested together (user chooses
-  precise or approximate on Android 12+; both required for GPS on pre-12)  
+**Constraints**: Offline-capable (coarse only; GPS availability on fdroid API 31+ is a known
+  deferred limitation — see research.md); 2,000 m minimum distance before map update + toast;
+  30 s acquiring timeout; `ACCESS_COARSE_LOCATION` only  
 **Scale/Scope**: Single-user device app; one active location at a time
 
 ## Constitution Check
@@ -149,9 +148,9 @@ app/src/gms/java/com/google/android/stardroid/activities/util/
 app/src/main/res/xml/preference_screen.xml # Remove force_gps CheckBoxPreference;
                                            # keep no_auto_locate, latitude, longitude, location
 
-app/src/main/AndroidManifest.xml           # Register LocationManagementActivity;
-                                           # add ACCESS_FINE_LOCATION permission declaration
-                                           # (ACCESS_COARSE_LOCATION already declared)
+app/src/main/AndroidManifest.xml           # Register LocationManagementActivity
+                                           # (ACCESS_COARSE_LOCATION already declared; no new
+                                           # permission needed)
 
 app/build.gradle                           # Add play-services-maps to gms flavor dependencies
 ```

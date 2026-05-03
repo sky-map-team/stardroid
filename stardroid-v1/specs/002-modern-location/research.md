@@ -97,44 +97,47 @@ undocumented schema; introduces a third-party service dependency that could disa
 
 ## Permission Flow
 
-**Decision**: Both `ACCESS_COARSE_LOCATION` and `ACCESS_FINE_LOCATION` are requested together.
-On Android 12+ this shows a single system dialog offering "Precise" or "Approximate"; on
-pre-12 it shows the standard location dialog granting full GPS access. The app accepts
-whichever level the user grants and adapts accordingly.
+**Decision**: Request `ACCESS_COARSE_LOCATION` only. Fine/precise location is not requested in
+this revision.
 
-Four distinct permission states are handled:
+Three distinct permission states are handled:
 
 1. **Not-yet-requested**: Show `LocationPermissionRationaleDialogFragment` before the system
-   dialog. Rationale text explains that precise location enables GPS for use in remote
-   areas (no network); approximate location is sufficient for general use. Buttons:
-   "Grant" / "Enter manually" / "Later".
-   "Grant" triggers `ActivityResultContracts.RequestMultiplePermissions` for both permissions.
+   dialog. Contains a human-readable explanation and "Grant" / "Enter manually" / "Later" buttons.
+   "Grant" triggers `ActivityResultContracts.RequestPermission` for `ACCESS_COARSE_LOCATION`.
 
-2. **Approximate granted** (coarse only, fine denied): System granted `ACCESS_COARSE_LOCATION`.
-   Use network-based providers only. GPS is unavailable. App works normally in areas with
-   cell/Wi-Fi; surfaces a clear status if offline with no network providers.
+2. **Denied (re-askable)**: System dialog can still appear.
+   `shouldShowRequestPermissionRationale()` returns `true`. Show the rationale dialog again on
+   next attempt.
 
-3. **Denied (re-askable)**: Neither permission granted; `shouldShowRequestPermissionRationale()`
-   returns `true`. Show the rationale dialog again on next attempt.
+3. **Permanently denied**: `shouldShowRequestPermissionRationale()` returns `false` after a
+   failed request attempt (Android 11+ "Don't ask again" or second denial).
+   Show `LocationPermissionPermanentlyDeniedDialogFragment` with an "Open App Settings" button
+   that fires `Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS)`.
 
-4. **Permanently denied**: `shouldShowRequestPermissionRationale()` returns `false` after a
-   failed request attempt. Show `LocationPermissionPermanentlyDeniedDialogFragment` with an
-   "Open App Settings" button that fires `Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS)`.
+**Rationale**: This is the standard Android permission best-practice pattern. The `rationale →
+request → result` cycle correctly handles all OS variants from API 26 to 36.
 
-**Rationale**: On Android 12+ (API 31+), `GPS_PROVIDER` is gated behind
-`ACCESS_FINE_LOCATION`. Requesting coarse-only silently breaks offline use in remote areas — the
-primary dark-sky observing context. Requesting both together lets users who care about offline GPS
-grant precise, while users who prefer privacy can grant approximate; the app works in either case.
-This resolves the contradiction between FR-001 and FR-016 identified in review.
+**Existing code relationship**: `AbstractGooglePlayServicesChecker.java` currently handles the
+permission request; its location-permission logic is removed and replaced by the flow above.
+The GMS availability check (non-location) in `GooglePlayServicesChecker.java` is retained.
 
-**`LocationState` mapping for permission outcomes:**
-- Precise granted → proceed to `Acquiring` (GPS + network available)
-- Approximate only granted → proceed to `Acquiring` (network only; `LocationState` carries a
-  `permissionLevel` flag so `LocationController` can surface a degraded-offline warning)
-- Denied re-askable → `PermissionDenied`
-- Permanently denied → `PermissionPermanentlyDenied`
+### Known Limitation: Offline GPS on fdroid (Deferred)
 
-The `rationale → request → result` cycle correctly handles all OS variants from API 26 to 36.
+A code review raised the following concern: on Android 12+ (API 31+),
+`LocationManager.GPS_PROVIDER` requires `ACCESS_FINE_LOCATION`. With coarse-only permission,
+the fdroid build (which uses `LocationManager` directly) cannot access GPS. In remote areas
+with no cell or Wi-Fi coverage, offline location will therefore fail on the fdroid build on
+Android 12+.
+
+**GMS build**: `FusedLocationProviderClient` is believed to use GPS internally and return a
+coarsened result even with coarse-only permission, but this has not been verified empirically.
+The GMS path is assumed to work offline; this assumption should be confirmed in testing.
+
+**Decision**: Proceed with coarse-only for now. A future revision should:
+1. Empirically verify `FusedLocationProviderClient` offline behaviour under coarse-only permission.
+2. Add `ACCESS_FINE_LOCATION` support to the fdroid build once the coarse path is validated,
+   so that fdroid users in remote areas can also get offline GPS.
 
 **Existing code relationship**: `AbstractGooglePlayServicesChecker.java` currently handles the
 permission request; its location-permission logic is removed and replaced by the flow above.
