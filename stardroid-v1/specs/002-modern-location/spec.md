@@ -103,7 +103,7 @@ A user wants to verify the app is using the correct location. They open the loca
 
 ### Edge Cases
 
-- What happens when the user has granted permission but the device cannot yet obtain a fix (e.g., indoors with no network)? The app must not fall back to (0°N, 0°E); it must retain the last known good location or show a clear "acquiring location…" state.
+- What happens when the user has granted permission but the device cannot yet obtain a fix (e.g., indoors with no network)? The app must show an "acquiring location…" status indicator. If a location from a previous session exists, use it provisionally. If no prior location exists, use an obviously placeholder position (e.g., the North Pole) so the user can clearly see the sky is not their actual sky. After 30 seconds with no fix, the app must prompt the user to either continue waiting or switch to manual entry.
 - What happens when the user revokes location permission while the app is backgrounded and then returns to the foreground? The app must detect the revocation, stop using automatic location, and invite the user to re-grant permission or switch to manual.
 - What happens when the user enters latitude or longitude values outside valid ranges (e.g., latitude > 90)? Entry must be rejected with a clear explanation.
 - What happens when geocoding returns ambiguous results for a place name (e.g., "Springfield")? The resolved location should be shown on the map for confirmation before being applied.
@@ -118,15 +118,16 @@ A user wants to verify the app is using the correct location. They open the loca
 - **FR-002**: The app MUST display a rationale to the user explaining why location is needed before the system permission dialog is shown (on first request and after denial).
 - **FR-003**: When the user denies location permission, the app MUST immediately invite them to enter a location manually; showing an incorrect sky silently is not acceptable.
 - **FR-004**: When a device has no means of determining location automatically (no hardware, all providers disabled), the app MUST detect this and offer manual location entry.
-- **FR-005**: The app MUST NEVER use (0°N, 0°E) as a silent default location; any state where location is unavailable or unconfirmed MUST be surfaced to the user with a clear status message.
+- **FR-005**: The app MUST NEVER use (0°N, 0°E) as a silent default location. While acquiring a first fix with no prior location available, the app MUST use an obviously wrong placeholder position (e.g., the North Pole) accompanied by a visible "acquiring location…" indicator, so the user can see the sky displayed is not their actual sky.
+- **FR-005a**: While automatic location is active but no fix has been obtained, the app MUST display an "acquiring location…" status indicator. If a location from a previous session is available, it MUST be used as a provisional sky view. After 30 seconds with no fix, the app MUST prompt the user to continue waiting or switch to manual entry.
 - **FR-006**: Users MUST be able to enter a location by typing latitude and longitude values directly; this path MUST work without internet connectivity.
 - **FR-007**: Users SHOULD be able to enter a place name and have it resolved to coordinates; this path requires internet connectivity and MUST degrade gracefully (falling back to direct coordinate entry) when offline.
-- **FR-008**: When automatic location is active, the star map MUST update immediately whenever the device detects a location change.
-- **FR-009**: Whenever location is updated (by any means — auto or manual), the app MUST show a brief notification to the user indicating the new location.
+- **FR-008**: When automatic location is active, the star map MUST update when the device detects a location change that exceeds a minimum distance threshold (~1–5 km); sub-threshold movements MUST NOT trigger a map recalculation or toast.
+- **FR-009**: Whenever location is updated by a change exceeding the minimum threshold (auto) or by any manual entry, the app MUST show a brief notification to the user indicating the new location.
 - **FR-010**: The app MUST automatically select the best available location provider; users MUST NOT be required to choose between GPS, network, or other providers.
 - **FR-011**: The existing "force GPS" / "select GPS provider" user setting MUST be removed.
-- **FR-012**: Users who have set a manual location MUST be able to switch to automatic location (where the device supports it), including re-requesting permission if it was previously denied.
-- **FR-013**: Users who have automatic location enabled MUST be able to switch to a fixed manual location.
+- **FR-012**: Users who have set a manual location MUST be able to switch to automatic location (where the device supports it), including re-requesting permission if it was previously denied. The previously entered manual location MUST be retained in storage but not used while in automatic mode. If permission has been permanently denied (system dialog will not appear again), the app MUST detect this state, explain it clearly to the user, and provide a direct link to the app's system settings page to re-enable it — rather than silently falling back to manual mode without explanation.
+- **FR-013**: Users who have automatic location enabled MUST be able to switch to a fixed manual location. If a manual location was previously entered, the entry screen MUST pre-fill those saved coordinates.
 - **FR-014**: A location management screen MUST exist where users can view their current location on a map and see whether it is auto-detected or manually entered.
 - **FR-015**: When location status is degraded (no fix yet, permission revoked, no hardware, location unset), the app MUST display a clear human-readable status rather than silently operating with incorrect coordinates.
 - **FR-016**: The location system MUST function correctly without internet connectivity using GPS/device sensors (if available and permitted) or previously saved manual coordinates.
@@ -150,6 +151,16 @@ A user wants to verify the app is using the correct location. They open the loca
 - **SC-005**: Manual location entry by direct coordinate input is completable end-to-end with no internet connection.
 - **SC-006**: The location management screen correctly displays the current location and its source label in 100% of cases where a location has been established.
 - **SC-007**: On any failure state (permission denied, hardware absent, no fix), the app surfaces a human-readable explanation to the user rather than showing a blank or incorrectly positioned sky.
+
+## Clarifications
+
+### Session 2026-05-03
+
+- Q: What minimum distance change should trigger a location update and toast notification? → A: A minimum distance threshold (~1–5 km); sub-threshold movement must not trigger map recalculation or toast.
+- Q: What should the user see while automatic location is enabled but no fix has been obtained yet? → A: Show an "acquiring…" indicator; use last known location provisionally if available, otherwise render an obviously wrong placeholder (e.g., North Pole) so the user knows the sky is not their actual sky. After a timeout with no fix, prompt the user to continue waiting or switch to manual entry.
+- Q: When a user switches from manual to automatic mode, what happens to their saved manual location? → A: Retain but don't use — kept in storage so switching back to manual pre-fills it; auto mode ignores it entirely.
+- Q: How should the app handle permanently-denied location permission (Android 11+, system dialog will not show again)? → A: Detect the permanently-denied state, show a specific explanation, and provide a direct deep-link to the app's system settings page.
+- Q: How long should the app wait for an auto-location fix before prompting the user to continue waiting or switch to manual? → A: 30 seconds.
 
 ## Assumptions
 
