@@ -1,21 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
   android:orientation="vertical"
-  android:layout_width="fill_parent"
-  android:layout_height="fill_parent">
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:paddingStart="24dp"
+  android:paddingEnd="24dp"
+  android:paddingTop="8dp"
+  android:paddingBottom="16dp">
+
+  <ImageView
+      android:layout_width="48dp"
+      android:layout_height="48dp"
+      android:layout_gravity="center_horizontal"
+      android:layout_marginBottom="12dp"
+      android:src="@android:drawable/ic_dialog_alert"
+      android:contentDescription="@null"/>
+
   <TextView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:autoLink="web"
-    style="@style/text"
-    android:text="@string/missing_sensor_dialog_text"/>
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:autoLink="web"
+      style="@style/text"
+      android:lineSpacingMultiplier="1.3"
+      android:text="@string/missing_sensor_dialog_text"/>
+
+  <View
+      android:layout_width="match_parent"
+      android:layout_height="1dp"
+      android:layout_marginTop="16dp"
+      android:layout_marginBottom="8dp"
+      android:background="?android:attr/listDivider"/>
 
   <CheckBox
+      android:id="@+id/no_show_dialog_again"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_gravity="center_horizontal"
-      android:text="@string/do_not_show_again"
-      android:id="@+id/no_show_dialog_again"/>
+      android:text="@string/do_not_show_again"/>
 
 </LinearLayout>
 
