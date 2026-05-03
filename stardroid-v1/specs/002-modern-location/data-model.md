@@ -17,7 +17,7 @@ Represents the complete state of the location subsystem at any point in time. Re
 sealed class LocationState {
 
     /** No location has ever been set and none is being acquired. */
-    object Unset : LocationState()
+    data object Unset : LocationState()
 
     /** Auto-location is active; waiting for first fix (or after location loss). */
     object Acquiring : LocationState()
