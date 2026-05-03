@@ -137,6 +137,10 @@ public class SplashScreenActivity extends androidx.fragment.app.FragmentActivity
   }
 
   private void maybeShowWarmWelcomeAndEnd() {
+    if (!ApplicationConstants.WARM_WELCOME_ENABLED) {
+      maybeShowWhatsNewAndEnd();
+      return;
+    }
     boolean warmWelcomeSeen = (sharedPreferences.getLong(
         ApplicationConstants.READ_WARM_WELCOME_PREF_VERSION, -1) > 0);
     if (warmWelcomeSeen) {
