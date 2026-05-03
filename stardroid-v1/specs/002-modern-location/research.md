@@ -97,23 +97,44 @@ undocumented schema; introduces a third-party service dependency that could disa
 
 ## Permission Flow
 
-**Decision**: Three distinct permission states handled:
+**Decision**: Both `ACCESS_COARSE_LOCATION` and `ACCESS_FINE_LOCATION` are requested together.
+On Android 12+ this shows a single system dialog offering "Precise" or "Approximate"; on
+pre-12 it shows the standard location dialog granting full GPS access. The app accepts
+whichever level the user grants and adapts accordingly.
+
+Four distinct permission states are handled:
 
 1. **Not-yet-requested**: Show `LocationPermissionRationaleDialogFragment` before the system
-   dialog. Contains a human-readable explanation and "Grant" / "Enter manually" / "Later" buttons.
-   "Grant" triggers `ActivityResultContracts.RequestPermission`.
+   dialog. Rationale text explains that precise location enables GPS for use in remote
+   areas (no network); approximate location is sufficient for general use. Buttons:
+   "Grant" / "Enter manually" / "Later".
+   "Grant" triggers `ActivityResultContracts.RequestMultiplePermissions` for both permissions.
 
-2. **Denied (re-askable)**: System dialog can still appear.
-   `shouldShowRequestPermissionRationale()` returns `true`. Show the rationale dialog again on
-   next attempt.
+2. **Approximate granted** (coarse only, fine denied): System granted `ACCESS_COARSE_LOCATION`.
+   Use network-based providers only. GPS is unavailable. App works normally in areas with
+   cell/Wi-Fi; surfaces a clear status if offline with no network providers.
 
-3. **Permanently denied**: `shouldShowRequestPermissionRationale()` returns `false` after a
-   failed request attempt (Android 11+ "Don't ask again" or second denial).
-   Show `LocationPermissionPermanentlyDeniedDialogFragment` with a "Open App Settings" button
-   that fires `Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS)`.
+3. **Denied (re-askable)**: Neither permission granted; `shouldShowRequestPermissionRationale()`
+   returns `true`. Show the rationale dialog again on next attempt.
 
-**Rationale**: This is the standard Android permission best-practice pattern. The `rationale →
-request → result` cycle correctly handles all OS variants from API 26 to 36.
+4. **Permanently denied**: `shouldShowRequestPermissionRationale()` returns `false` after a
+   failed request attempt. Show `LocationPermissionPermanentlyDeniedDialogFragment` with an
+   "Open App Settings" button that fires `Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS)`.
+
+**Rationale**: On Android 12+ (API 31+), `GPS_PROVIDER` is gated behind
+`ACCESS_FINE_LOCATION`. Requesting coarse-only silently breaks offline use in remote areas — the
+primary dark-sky observing context. Requesting both together lets users who care about offline GPS
+grant precise, while users who prefer privacy can grant approximate; the app works in either case.
+This resolves the contradiction between FR-001 and FR-016 identified in review.
+
+**`LocationState` mapping for permission outcomes:**
+- Precise granted → proceed to `Acquiring` (GPS + network available)
+- Approximate only granted → proceed to `Acquiring` (network only; `LocationState` carries a
+  `permissionLevel` flag so `LocationController` can surface a degraded-offline warning)
+- Denied re-askable → `PermissionDenied`
+- Permanently denied → `PermissionPermanentlyDenied`
+
+The `rationale → request → result` cycle correctly handles all OS variants from API 26 to 36.
 
 **Existing code relationship**: `AbstractGooglePlayServicesChecker.java` currently handles the
 permission request; its location-permission logic is removed and replaced by the flow above.
