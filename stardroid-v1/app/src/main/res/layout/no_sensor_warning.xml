@@ -14,7 +14,7 @@
       android:layout_gravity="center_horizontal"
       android:layout_marginBottom="12dp"
       android:src="@android:drawable/ic_dialog_alert"
-      android:contentDescription="@string/warning_dialog_title"/>
+      android:contentDescription="@null"/>
 
   <TextView
       android:layout_width="match_parent"
