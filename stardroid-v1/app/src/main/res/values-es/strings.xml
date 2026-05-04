@@ -161,7 +161,7 @@
     <string name="warning_dialog_title" translation_description="Title of a warning dialog shown when something is wrong, e.g. a missing sensor">¡Malas noticias!</string>
     <string name="missing_sensor_dialog_text" translation_description="Dialog message shown when the device appears to be missing the compass or accelerometer sensors needed for auto mode">
     Para seguir automáticamente las estrellas mientras te mueves, Sky Map necesita una brújula integrada y un acelerómetro. Parece que tu dispositivo no tiene uno de estos.
-¿No te preocupes! Aún puedes explorar el universo en Modo Manual. Solo usa tus dedos para arrastrar, rotar y ampliar el cielo nocturno a tu propio ritmo.
+¡No te preocupes! Aún puedes explorar el universo en Modo Manual. Solo usa tus dedos para arrastrar, rotar y ampliar el cielo nocturno a tu propio ritmo.
     </string>
     <string name="do_not_show_again" translation_description="Checkbox or button label to suppress future display of a warning dialog">No volver a mostrar este mensaje</string>
     <string name="title_activity_diagnostic" translation_description="Title bar text for the Diagnostics activity/screen">Diagnósticos</string>
