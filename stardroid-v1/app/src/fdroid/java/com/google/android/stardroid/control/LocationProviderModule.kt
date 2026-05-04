@@ -3,14 +3,14 @@ package com.google.android.stardroid.control
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
-import dagger.hilt.android.components.ActivityComponent
-import dagger.hilt.android.scopes.ActivityScoped
+import dagger.hilt.components.SingletonComponent
+import javax.inject.Singleton
 
 @Module
-@InstallIn(ActivityComponent::class)
+@InstallIn(SingletonComponent::class)
 abstract class LocationProviderModule {
 
     @Binds
-    @ActivityScoped
+    @Singleton
     abstract fun bindLocationProvider(impl: PlatformLocationProvider): LocationProvider
 }

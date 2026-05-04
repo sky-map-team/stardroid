@@ -269,6 +269,7 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
 
   // A list of runnables to post on the handler when we resume.
   private final List<Runnable> onResumeRunnables = new ArrayList<>();
+  private LocationController.LocationStateCallback locationStateListener;
 
   private ActivityResultLauncher<String> locationPermissionLauncher;
 
@@ -728,6 +729,7 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
     skyView.onResume();
     Log.i(TAG, "Starting controller");
     controller.start();
+    controller.getLocationController().addStateListener(locationStateListener);
     checkLocationPermissionOnResume();
     maybeShowLocationWarning();
     activityLightLevelManager.onResume();
@@ -742,7 +744,7 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
 
   private void wireLocationController() {
     LocationController lc = controller.getLocationController();
-    lc.setOnStateChanged(state -> {
+    locationStateListener = state -> {
       if (state instanceof LocationState.AcquiringTimeout) {
         AcquiringLocationTimeoutDialogFragment dlg =
             AcquiringLocationTimeoutDialogFragment.newInstance();
@@ -764,7 +766,7 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
       } else if (state instanceof LocationState.HardwareUnavailable) {
         showManualEntryDialog(lc);
       }
-    });
+    };
   }
 
   private void showManualEntryDialog(LocationController lc) {
@@ -921,6 +923,7 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
       handler.removeCallbacks(runnable);
     }
     activityLightLevelManager.onPause();
+    controller.getLocationController().removeStateListener(locationStateListener);
     controller.stop();
     skyView.onPause();
     wakeLock.release();

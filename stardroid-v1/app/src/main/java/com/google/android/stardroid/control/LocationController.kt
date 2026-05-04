@@ -1,7 +1,7 @@
 package com.google.android.stardroid.control
 
 import android.Manifest
-import android.app.Activity
+import android.content.Context
 import android.content.SharedPreferences
 import android.location.Geocoder
 import android.os.Handler
@@ -12,21 +12,22 @@ import androidx.core.content.PermissionChecker
 import com.google.android.stardroid.ApplicationConstants
 import com.google.android.stardroid.math.LatLong
 import com.google.android.stardroid.base.VisibleForTesting
-import dagger.hilt.android.scopes.ActivityScoped
+import dagger.hilt.android.qualifiers.ApplicationContext
 import java.util.Locale
 import javax.inject.Inject
+import javax.inject.Singleton
 
-@ActivityScoped
+@Singleton
 class LocationController @Inject constructor(
     private val locationProvider: LocationProvider,
     private val astronomerModel: AstronomerModel,
     private val preferences: SharedPreferences,
-    private val activity: Activity
+    @ApplicationContext private val context: Context
 ) : AbstractController() {
 
     private val handler = Handler(Looper.getMainLooper())
     private var state: LocationState = LocationState.Unset
-    private var stateChangedCallback: LocationStateCallback? = null
+    private val stateListeners = mutableListOf<LocationStateCallback>()
 
     fun currentState(): LocationState = state
 
@@ -34,13 +35,18 @@ class LocationController @Inject constructor(
         fun onStateChanged(state: LocationState)
     }
 
-    fun setOnStateChanged(callback: LocationStateCallback?) {
-        stateChangedCallback = callback
+    fun addStateListener(callback: LocationStateCallback) {
+        stateListeners.add(callback)
+        callback.onStateChanged(state)
+    }
+
+    fun removeStateListener(callback: LocationStateCallback) {
+        stateListeners.remove(callback)
     }
 
     private fun transitionTo(newState: LocationState) {
         state = newState
-        stateChangedCallback?.onStateChanged(newState)
+        stateListeners.toList().forEach { it.onStateChanged(newState) }
     }
 
     override fun start() {
@@ -48,7 +54,7 @@ class LocationController @Inject constructor(
         val noAutoLocate = preferences.getBoolean(ApplicationConstants.NO_AUTO_LOCATE_PREF_KEY, false)
         when {
             noAutoLocate -> loadManualLocation()
-            ActivityCompat.checkSelfPermission(activity, Manifest.permission.ACCESS_COARSE_LOCATION)
+            ActivityCompat.checkSelfPermission(context, Manifest.permission.ACCESS_COARSE_LOCATION)
                 == PermissionChecker.PERMISSION_GRANTED -> startAuto()
             else -> transitionTo(LocationState.Unset)
         }
@@ -64,8 +70,13 @@ class LocationController @Inject constructor(
             transitionTo(LocationState.HardwareUnavailable)
             return
         }
-        transitionTo(LocationState.Acquiring)
-        scheduleAcquiringTimeout()
+        // Don't reset to Acquiring if already tracking — just restart updates
+        val alreadyAuto = state is LocationState.Confirmed &&
+            (state as LocationState.Confirmed).source == LocationSource.AUTO
+        if (!alreadyAuto) {
+            transitionTo(LocationState.Acquiring)
+            scheduleAcquiringTimeout()
+        }
         locationProvider.startUpdates(ApplicationConstants.LOCATION_UPDATE_MIN_DISTANCE_METRES) { location, accuracy ->
             onLocationUpdate(location, accuracy)
         }
@@ -134,11 +145,14 @@ class LocationController @Inject constructor(
         } else {
             Float.MAX_VALUE
         }
-        // 2000 m ≈ 0.018 degrees; use a small epsilon for "first fix" case (MAX_VALUE)
         val minDistanceDegrees = ApplicationConstants.LOCATION_UPDATE_MIN_DISTANCE_METRES / 111_320f
         if (distanceDegrees >= minDistanceDegrees) {
             cancelAcquiringTimeout()
             astronomerModel.setLocation(location)
+            preferences.edit()
+                .putString("latitude", location.latitude.toString())
+                .putString("longitude", location.longitude.toString())
+                .apply()
             val confirmed = LocationState.Confirmed(
                 location = location,
                 source = LocationSource.AUTO,
@@ -195,13 +209,13 @@ class LocationController @Inject constructor(
         Thread {
             val name = tryReverseGeocode(location)
             val msg = name ?: "%.4f°, %.4f°".format(location.latitude, location.longitude)
-            handler.post { Toast.makeText(activity, msg, Toast.LENGTH_SHORT).show() }
+            handler.post { Toast.makeText(context, msg, Toast.LENGTH_SHORT).show() }
         }.start()
     }
 
     @Suppress("DEPRECATION")
     private fun tryReverseGeocode(location: LatLong): String? = try {
-        Geocoder(activity, Locale.getDefault())
+        Geocoder(context, Locale.getDefault())
             .getFromLocation(location.latitude.toDouble(), location.longitude.toDouble(), 1)
             ?.firstOrNull()
             ?.let { it.locality ?: it.subAdminArea ?: it.adminArea ?: it.countryName }

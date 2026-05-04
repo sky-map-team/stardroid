@@ -57,18 +57,21 @@ class LocationManagementActivity : FragmentActivity() {
 
         modeToggleButton.setOnClickListener { onModeToggle() }
         changeButton.setOnClickListener { showManualEntryDialog() }
+    }
 
-        locationController.setOnStateChanged { state -> runOnUiThread { updateUi(state) } }
+    private val stateListener = LocationController.LocationStateCallback { state ->
+        runOnUiThread { updateUi(state) }
     }
 
     override fun onResume() {
         super.onResume()
-        updateUi(locationController.currentState())
+        locationController.addStateListener(stateListener)
         initMap(savedInstanceState = null)
     }
 
     override fun onPause() {
         super.onPause()
+        locationController.removeStateListener(stateListener)
         teardownMap()
     }
 
