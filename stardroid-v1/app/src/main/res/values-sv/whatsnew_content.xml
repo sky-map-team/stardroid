@@ -1,12 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Virtuella objekt</h2>
-<p>Jupiters galileiska månar (Io, Europa, Ganymedes och Callisto) och Mars månar Phobos och Deimos är nu sökbara med rika informationskort och NASA-bilder — utan att röra stjärnkartan.</p>
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Fler informationskort</h2>
+<p>Jupiters galileiska månar (Io, Europa, Ganymedes och Callisto), Mars månar Phobos och Deimos och andra är nu sökbara med rika informationskort och NASA-bilder.</p>
 <h2>Utökat katalog</h2>
 <p>Dussintals nya djuprymdsobjekt tillagda — inklusive Double Cluster, 47 Tucanae, Exposed Cranium Nebula och fler — var och en med beskrivningar, roliga fakta och bilder.</p>
-<h2>Smartare sökning</h2>
-<p>Sököverlagringen bekräftar nu när du har centrerat på ditt mål.</p>
-<h2>Felkorrigeringar</h2>
-<ul><li>Se även-länkar i galleriet navigerar nu korrekt.</li><li>Galleriet och informationskort visas korrekt på Android 15+ edge-to-edge-skärmar.</li></ul>]]></string>
-    </resources>
+]]></string>
+</resources>

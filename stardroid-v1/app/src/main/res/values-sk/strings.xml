@@ -158,13 +158,8 @@
     </string>
     <string name="warning_dialog_title" translation_description="Title of a warning dialog shown when something is wrong, e.g. a missing sensor">Zlé správy!</string>
     <string name="missing_sensor_dialog_text" translation_description="Dialog message shown when the device appears to be missing the compass or accelerometer sensors needed for auto mode">
-    \n
-        Vaše zariadenie, žiaľ, nemusí mať jeden zo senzorov, ktoré Sky Map potrebuje.\n\n
-        Ak chcete zobraziť oblohu v smere, ktorým ukazuje váš telefón, Sky Map potrebuje vstavaný kompas aj akcelerometer. 
-        Vaše zariadenie hlási, že mu chýba jeden z nich. Dobrou správou je, že niektoré zariadenia (napríklad niektoré telefóny Moto E) 
-        nepravdivo tvrdia, že kompas nemajú, ale v skutočnosti ho majú.\n\n
-        Ak vášmu zariadeniu skutočne chýba snímač, automatický režim nebude fungovať. Stále však môžete na tomto zariadení používať Sky Map 
-        v manuálnom režime, kde mapu presúvate, otáčate a zväčšujete prstami.
+Aby Sky Map automaticky sledoval hviezdy pri vašom pohybe, potrebuje vstavaný kompas a akcelerometer. Zdá sa, že vášmu zariadeniu chýba jeden z nich.
+        \nNe strácajte nádej! Vesmír si môžete stále prehliadať v režime Manuálny. Stačí použiť prsty na ťahanie, otáčanie a priblíženie nočnej oblohy vlastným tempom.
     </string>
     <string name="do_not_show_again" translation_description="Checkbox or button label to suppress future display of a warning dialog">Túto správu viac nezobrazovať</string>
     <string name="title_activity_diagnostic" translation_description="Title bar text for the Diagnostics activity/screen">Diagnostika</string>
@@ -256,4 +251,5 @@
     <string name="action_find_in_sky_map" translation_description="Button label that opens the star map and searches for the displayed object">Nájsť</string>
     <string name="auto_level_horizon_on" translation_description="Toast message when auto-level horizon is enabled">Automatické zarovnanie horizontu zapnuté</string>
     <string name="auto_level_horizon_off" translation_description="Toast message when auto-level horizon is disabled">Automatické zarovnanie horizontu vypnuté</string>
-</resources>
+
+    </resources>

@@ -516,9 +516,16 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
     MenuInflater inflater = getMenuInflater();
     inflater.inflate(R.menu.main, menu);
 
-    setupActionItem(menu, R.id.menu_item_search, android.R.drawable.ic_menu_search, R.string.menu_search);
-    setupActionItem(menu, R.id.menu_item_dim, android.R.drawable.ic_menu_view, R.string.menu_toggle_dim);
+    // Beware that items which use actionLayout in the menu xml file need to have their icons set
+    // here.
+    setupActionItem(
+            menu, R.id.menu_item_search, android.R.drawable.ic_menu_search, R.string.menu_search);
+    setupActionItem(
+            menu, R.id.menu_item_dim, android.R.drawable.ic_menu_view, R.string.menu_toggle_dim);
     setupActionItem(menu, R.id.menu_item_time, R.drawable.time_travel_icon, R.string.menu_time);
+    setupActionItem(
+            menu, R.id.menu_item_settings, android.R.drawable.ic_menu_preferences,
+            R.string.menu_settings);
 
     return true;
   }

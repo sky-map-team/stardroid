@@ -160,11 +160,8 @@
     </string>
     <string name="warning_dialog_title" translation_description="Title of a warning dialog shown when something is wrong, e.g. a missing sensor">Slecht nieuws!</string>
     <string name="missing_sensor_dialog_text" translation_description="Dialog message shown when the device appears to be missing the compass or accelerometer sensors needed for auto mode">
-    Helaas heeft uw apparaat mogelijk niet een van de sensoren die Sky Map nodig heeft.
-
-Om u de hemel in de richting te tonen waarin uw telefoon wijst, heeft Sky Map zowel een ingebouwde kompas als een versnellingsmeter nodig. Uw apparaat meldt dat het een van beide mist. Het goede nieuws is dat sommige apparaten (bijvoorbeeld sommige Moto E-telefoons) onwaar beweren geen kompas te hebben, maar dat eigenlijk wel doen.
-
-Als uw apparaat echt een sensor mist, werkt de automatische modus niet. U kunt Sky Map echter nog steeds op dit apparaat gebruiken in handmatige modus, waar u de kaart met uw vingers kunt slepen, roteren en uitrekken.
+    Om automatisch de sterren te volgen terwijl je beweegt, heeft Sky Map een ingebouwde kompas en versnellingsmeter nodig. Het lijkt erop dat je apparaat een van deze mist.
+        \nMaak je geen zorgen! Je kunt het universum nog steeds verkennen in de handmatige modus. Gebruik gewoon je vingers om rond de nachtelijke hemel te slepen, draaien en in te zoomen in je eigen tempo.
     </string>
     <string name="do_not_show_again" translation_description="Checkbox or button label to suppress future display of a warning dialog">Dit bericht niet meer weergeven</string>
     <string name="title_activity_diagnostic" translation_description="Title bar text for the Diagnostics activity/screen">Diagnostiek</string>
@@ -255,4 +252,5 @@ Als uw apparaat echt een sensor mist, werkt de automatische modus niet. U kunt S
     <string name="action_find_in_sky_map" translation_description="Button label that opens the star map and searches for the displayed object">Zoeken</string>
     <string name="auto_level_horizon_on" translation_description="Toast message when auto-level horizon is enabled">Auto-level horizon aan</string>
     <string name="auto_level_horizon_off" translation_description="Toast message when auto-level horizon is disabled">Auto-level horizon uit</string>
-</resources>
+
+    </resources>

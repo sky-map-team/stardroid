@@ -1,12 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>الأجسام الافتراضية</h2>
-<p>أقمار جاليليو حول المشتري (آيو وأوروبا وجانيميد وكاليستو) وأقمار المريخ فوبوس وديموس أصبحت قابلة للبحث الآن مع بطاقات معلومات غنية وصور من ناسا — دون الإزعاج بالخريطة النجمية.</p>
-<h2>فهرس موسع</h2>
-<p>تمت إضافة عشرات الأجسام السماوية العميقة الجديدة — بما في ذلك العنقود المزدوج وعنقود 47 توكانا وسديم الجمجمة المكشوفة والمزيد — كل منها مع وصفات وحقائق ممتعة وصور.</p>
-<h2>بحث أذكى</h2>
-<p>يؤكد تراكب البحث الآن عندما تتمركز على هدفك.</p>
-<h2>إصلاح الأخطاء</h2>
-<ul><li>روابط "انظر أيضاً" في المعرض تنتقل الآن بشكل صحيح.</li><li>تعرض المعرض وبطاقات المعلومات بشكل صحيح على شاشات Android 15+ من الحافة إلى الحافة.</li></ul>]]></string>
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>بطاقات معلومات أكثر</h2>
+<p>أقمار جاليليو حول المشتري (آيو وأوروبا وجانيميد وكاليستو) وأقمار المريخ فوبوس وديموس وغيرها أصبحت الآن قابلة للبحث مع بطاقات معلومات غنية وصور من ناسا.</p>
+<h2>كتالوج موسع</h2>
+<p>تمت إضافة عشرات الأجرام السماوية العميقة الجديدة — بما في ذلك العنقود المزدوج وعنقود 47 توكانا وسديم الجمجمة المكشوفة وغيرها — كل منها مع أوصاف وحقائق ممتعة وصور.</p>]]></string>
     </resources>

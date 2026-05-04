@@ -1,12 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Virtuelle Objekte</h2>
-<p>Jupiters Galileische Monde (Io, Europa, Ganymed und Kallisto) und die Marsmonde Phobos und Deimos sind nun mit umfangreichen Infokarten und NASA-Bildern durchsuchbar – ohne die Sternkarte zu überlasten.</p>
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Mehr Infokarten</h2>
+<p>Jupiters Galileische Monde (Io, Europa, Ganymed und Kallisto), Mars\' Monde Phobos und Deimos und weitere sind nun mit umfangreichen Infokarten und NASA-Bildern durchsuchbar.</p>
 <h2>Erweiterter Katalog</h2>
-<p>Dutzende neue Deep-Sky-Objekte hinzugefügt – darunter der Doppelsternhaufen, 47 Tucanae, der Exposed-Cranium-Nebel und mehr – jeweils mit Beschreibungen, interessanten Fakten und Bildern.</p>
-<h2>Intelligentere Suche</h2>
-<p>Die Suchüberlagerung bestätigt nun, wenn du dein Ziel zentriert hast.</p>
-<h2>Fehlerbehebungen</h2>
-<ul><li>Siehe-auch-Links in der Galerie navigieren nun korrekt.</li><li>Galerie und Infokarten werden auf Android 15+ Edge-to-Edge-Bildschirmen ordnungsgemäß angezeigt.</li></ul>]]></string>
+<p>Dutzende neue Deep-Sky-Objekte hinzugefügt – darunter der Doppelsternhaufen, 47 Tucanae, der Schädelnebel und mehr – jeweils mit Beschreibungen, interessanten Fakten und Bildern.</p>]]></string>
     </resources>

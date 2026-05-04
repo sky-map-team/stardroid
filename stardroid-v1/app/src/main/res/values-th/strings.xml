@@ -156,7 +156,9 @@
     <string name="no_sensor_warning" translation_description="Warning shown when required orientation sensors are not detected on the device">อุปกรณ์ของคุณอาจขาดเซ็นเซอร์การวางแนว - โหมดอัตโนมัติอาจไม่ทำงาน</string>
     <string name="warning_dialog_title" translation_description="Title of a warning dialog shown when something is wrong, e.g. a missing sensor">ข่าวร้าย!</string>
     <string name="missing_sensor_dialog_text" translation_description="Dialog message shown when the device appears to be missing the compass or accelerometer sensors needed for auto mode">
-    \nน่าเสียดายที่อุปกรณ์ของคุณอาจไม่มีเซ็นเซอร์ตัวใดตัวหนึ่งที่ Sky Map ต้องการ\n\nเพื่อแสดงท้องฟ้าในทิศทางที่โทรศัพท์ของคุณชี้ Sky Map ต้องใช้ทั้งเข็มทิศในตัวและเครื่องวัดความเร่ง อุปกรณ์ของคุณรายงานว่าขาดเซ็นเซอร์ตัวใดตัวหนึ่ง ข่าวดีคือบางอุปกรณ์ (เช่น โทรศัพท์ Moto E บางรุ่น) อ้างว่าไม่มีเข็มทิศแต่จริง ๆ แล้วมี\n\nหากอุปกรณ์ของคุณขาดเซ็นเซอร์จริง ๆ โหมดอัตโนมัติจะไม่ทำงาน อย่างไรก็ตาม คุณยังสามารถใช้ Sky Map บนอุปกรณ์นี้ในโหมดแมนนวลซึ่งคุณสามารถลาก หมุน และยืดแผนที่ด้วยนิ้วของคุณได้
+    เพื่อติดตามดวงดาวโดยอัตโนมัติขณะที่คุณเคลื่อนไหว Sky Map ต้องการเข็มทิศและเครื่องวัดความเร่งที่สร้างไว้ในตัว ดูเหมือนว่าอุปกรณ์ของคุณขาดอุปกรณ์ใดอุปกรณ์หนึ่งเหล่านี้
+
+ไม่ต้องกังวล! คุณยังสามารถสำรวจจักรวาลในโหมดแมนนวลได้ เพียงแค่ใช้นิ้วของคุณเพื่อลาก หมุน และซูมรอบท้องฟ้ายามค่ำคืนตามความเร็วของคุณเอง
     </string>
     <string name="do_not_show_again" translation_description="Checkbox or button label to suppress future display of a warning dialog">อย่าแสดงข้อความนี้อีก</string>
     <string name="title_activity_diagnostic" translation_description="Title bar text for the Diagnostics activity/screen">การวินิจฉัย</string>
@@ -240,4 +242,5 @@
     <string name="action_find_in_sky_map" translation_description="Button label that opens the star map and searches for the displayed object">ค้นหา</string>
     <string name="auto_level_horizon_on" translation_description="Toast message when auto-level horizon is enabled">ปรับระดับขอบฟ้าอัตโนมัติเปิด</string>
     <string name="auto_level_horizon_off" translation_description="Toast message when auto-level horizon is disabled">ปรับระดับขอบฟ้าอัตโนมัติปิด</string>
-</resources>
+
+    </resources>

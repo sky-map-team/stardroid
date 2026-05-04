@@ -156,7 +156,9 @@
     <string name="no_sensor_warning" translation_description="Warning shown when required orientation sensors are not detected on the device">قد لا يحتوي جهازك على مستشعرات اتجاه - قد لا يعمل الوضع التلقائي</string>
     <string name="warning_dialog_title" translation_description="Title of a warning dialog shown when something is wrong, e.g. a missing sensor">أخبار سيئة!</string>
     <string name="missing_sensor_dialog_text" translation_description="Dialog message shown when the device appears to be missing the compass or accelerometer sensors needed for auto mode">
-    \nللأسف، قد لا يحتوي جهازك على أحد المستشعرات التي يحتاجها Sky Map.\n\nلعرض السماء في اتجاه إشارة هاتفك، يحتاج Sky Map إلى بوصلة مدمجة ومقياس تسارع. يُبلغ جهازك أنه يفتقد أحدهما. والخبر السار هو أن بعض الأجهزة (على سبيل المثال بعض هواتف Moto E) تدّعي بشكل خاطئ أنها لا تحتوي على بوصلة لكنها في الواقع تحتويها.\n\nإذا كان جهازك يفتقد مستشعراً حقاً، فلن يعمل الوضع التلقائي. ومع ذلك، يمكنك استخدام Sky Map على هذا الجهاز في الوضع اليدوي حيث يمكنك سحب الخريطة وتدويرها وتمديدها بأصابعك.
+    لكي يتابع Sky Map النجوم تلقائياً أثناء تحركك، يحتاج إلى بوصلة مدمجة ومقياس تسارع. يبدو أن جهازك يفتقد أحد هذين المستشعرين.
+
+لا تقلق! لا يزال بإمكانك استكشاف الكون في الوضع اليدوي. فقط استخدم أصابعك للسحب والتدوير والتكبير/التصغير حول السماء الليلية بسرعتك الخاصة.
     </string>
     <string name="do_not_show_again" translation_description="Checkbox or button label to suppress future display of a warning dialog">عدم إظهار هذه الرسالة مرة أخرى</string>
     <string name="title_activity_diagnostic" translation_description="Title bar text for the Diagnostics activity/screen">التشخيص</string>
@@ -243,4 +245,5 @@
     <string name="action_find_in_sky_map" translation_description="Button label that opens the star map and searches for the displayed object">بحث</string>
     <string name="auto_level_horizon_on" translation_description="Toast message when auto-level horizon is enabled">محاذاة الأفق تلقائياً مفعّلة</string>
     <string name="auto_level_horizon_off" translation_description="Toast message when auto-level horizon is disabled">محاذاة الأفق تلقائياً معطّلة</string>
-</resources>
+
+    </resources>

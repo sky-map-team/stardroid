@@ -1,12 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Gwrthrychau Rhithwir</h2>
-<p>Lleuadau Galilean Iau (Io, Europa, Ganymede a Callisto) a lleuadau Mawrth Phobos a Deimos bellach yn chwiliadwy gyda chardiaugwybodaeth cyfoethog ac iselweddau NASA — heb lenwi\'r map sêr.</p>
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Cardiau gwybodaeth mwy</h2>
+&lt;p&gt;Lleuadau Galilean Iau (Io, Europa, Ganymede a Callisto), lleuadau Mawrth Phobos a Deimos ac eraill bellach yn chwiliadwy gyda cardiau gwybodaeth cyfoethog ac imagery NASA.&lt;/p&gt;
 <h2>Catalog Ehangu</h2>
-<p>Degau o wrthrychau awyr ddofn newydd wedi\'u hychwanegu — gan gynnwys y Double Cluster, 47 Tucanae, y Nebula Penglog Noeth a mwy — pob un gyda disgrifiadau, ffeithiau difyr ac iselweddau.</p>
-<h2>Chwilio Mwy Clyfar</h2>
-<p>Nawr mae\'r haen chwilio yn cadarnhau pan fyddwch wedi canoli ar eich targed.</p>
-<h2>Trwsio Gwallau</h2>
-<ul><li>Mae dolenni gweld-hefyd yn y oriel bellach yn llywio\'n gywir.</li><li>Mae\'r oriel a chardiaugwybodaeth yn dangos yn iawn ar sgriniau ymyl-i-ymyl Android 15+ .</li></ul>]]></string>
+<p>Degau o wrthrychau awyr ddofn newydd wedi\'u hychwanegu — gan gynnwys y Double Cluster, 47 Tucanae, y Nebula Penglog Noeth a mwy — pob un gyda disgrifiadau, ffeithiau difyr ac arluniau.</p>]]></string>
     </resources>

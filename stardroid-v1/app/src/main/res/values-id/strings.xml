@@ -158,11 +158,8 @@
     </string>
     <string name="warning_dialog_title" translation_description="Title of a warning dialog shown when something is wrong, e.g. a missing sensor">Berita buruk!</string>
     <string name="missing_sensor_dialog_text" translation_description="Dialog message shown when the device appears to be missing the compass or accelerometer sensors needed for auto mode">
-    Sayang sekali perangkat Anda mungkin tidak memiliki salah satu sensor yang dibutuhkan Sky Map.
-
-Untuk menampilkan langit ke arah yang ditunjuk ponsel Anda, Sky Map memerlukan kompas bawaan dan akselerometer. Perangkat Anda melaporkan bahwa salah satunya hilang. Kabar baiknya adalah beberapa perangkat (misalnya beberapa ponsel Moto E) secara keliru mengklaim tidak memiliki kompas padahal sebenarnya memilikinya.
-
-Jika perangkat Anda benar-benar kehilangan sensor, mode otomatis tidak akan berfungsi. Namun, Anda masih dapat menggunakan Sky Map di perangkat ini dalam mode manual di mana Anda dapat menyeret, memutar, dan meregangkan peta dengan jari Anda.
+    Untuk mengikuti bintang secara otomatis saat Anda bergerak, Sky Map memerlukan kompas dan akselerometer bawaan. Sepertinya perangkat Anda tidak memiliki salah satunya.
+        \nJangan khawatir! Anda masih dapat menjelajahi alam semesta dalam Mode Manual. Cukup gunakan jari Anda untuk menyeret, memutar, dan memperbesar langit malam sesuai kecepatan Anda sendiri.
     </string>
     <string name="do_not_show_again" translation_description="Checkbox or button label to suppress future display of a warning dialog">Jangan tampilkan pesan ini lagi</string>
     <string name="title_activity_diagnostic" translation_description="Title bar text for the Diagnostics activity/screen">Diagnostik</string>
@@ -253,4 +250,5 @@ Jika perangkat Anda benar-benar kehilangan sensor, mode otomatis tidak akan berf
     <string name="action_find_in_sky_map" translation_description="Button label that opens the star map and searches for the displayed object">Cari</string>
     <string name="auto_level_horizon_on" translation_description="Toast message when auto-level horizon is enabled">Horizon otomatis aktif</string>
     <string name="auto_level_horizon_off" translation_description="Toast message when auto-level horizon is disabled">Horizon otomatis nonaktif</string>
-</resources>
+
+    </resources>

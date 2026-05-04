@@ -160,7 +160,8 @@
     </string>
     <string name="warning_dialog_title" translation_description="Title of a warning dialog shown when something is wrong, e.g. a missing sensor">¡Malas noticias!</string>
     <string name="missing_sensor_dialog_text" translation_description="Dialog message shown when the device appears to be missing the compass or accelerometer sensors needed for auto mode">
-    \nLamentablemente, es posible que tu dispositivo no tenga uno de los sensores que Sky Map necesita.\n\nPara mostrarte el cielo en la dirección en la que apunta tu teléfono, Sky Map necesita tanto la brújula incorporada como un acelerómetro. Tu dispositivo informa que falta uno de ellos. La buena noticia es que algunos dispositivos (como algunos teléfonos Moto E) afirman falsamente no tener una brújula, pero sí la tienen.\n\nSi a tu dispositivo realmente le falta un sensor, el modo automático no funcionará. Sin embargo, aun puedes usar Sky Map en este dispositivo en modo manual donde puedes arrastrar, girar y estirar el mapa con tus dedos.
+    Para seguir automáticamente las estrellas mientras te mueves, Sky Map necesita una brújula integrada y un acelerómetro. Parece que tu dispositivo no tiene uno de estos.
+¡No te preocupes! Aún puedes explorar el universo en Modo Manual. Solo usa tus dedos para arrastrar, rotar y ampliar el cielo nocturno a tu propio ritmo.
     </string>
     <string name="do_not_show_again" translation_description="Checkbox or button label to suppress future display of a warning dialog">No volver a mostrar este mensaje</string>
     <string name="title_activity_diagnostic" translation_description="Title bar text for the Diagnostics activity/screen">Diagnósticos</string>
@@ -257,4 +258,5 @@ Tu teléfono informa la precisión de la brújula como se muestra arriba. Para m
     <string name="action_find_in_sky_map" translation_description="Button label that opens the star map and searches for the displayed object">Buscar</string>
     <string name="auto_level_horizon_on" translation_description="Toast message when auto-level horizon is enabled">Horizonte auto-nivelado activado</string>
     <string name="auto_level_horizon_off" translation_description="Toast message when auto-level horizon is disabled">Horizonte auto-nivelado desactivado</string>
-</resources>
+
+    </resources>

@@ -158,11 +158,8 @@
     </string>
     <string name="warning_dialog_title" translation_description="Title of a warning dialog shown when something is wrong, e.g. a missing sensor">Berita buruk!</string>
     <string name="missing_sensor_dialog_text" translation_description="Dialog message shown when the device appears to be missing the compass or accelerometer sensors needed for auto mode">
-    Sayangnya peranti anda mungkin tidak mempunyai salah satu sensor yang diperlukan oleh Sky Map.
-
-Untuk menunjukkan langit dalam arah yang ditunjuk oleh telefon anda, Sky Map memerlukan kedua-dua kompas terbina dan akselerometer. Peranti anda melaporkan bahawa ia tidak mempunyai salah satu daripadanya. Berita baiknya ialah beberapa peranti (contohnya beberapa telefon Moto E) secara palsu mendakwa tidak mempunyai kompas tetapi sebenarnya ada.
-
-Jika peranti anda benar-benar tidak mempunyai sensor, maka mod auto tidak akan berfungsi. Walau bagaimanapun, anda masih boleh menggunakan Sky Map pada peranti ini dalam mod manual di mana anda menyeret, memutar dan meregangkan peta dengan jari anda.
+    Untuk mengikuti bintang secara otomatis saat Anda bergerak, Sky Map memerlukan kompas bawaan dan akselerometer. Tampaknya perangkat Anda tidak memiliki salah satu dari keduanya.
+        \nJangan khawatir! Anda masih dapat menjelajahi alam semesta dalam Mode Manual. Cukup gunakan jari Anda untuk menyeret, memutar, dan memperbesar langit malam sesuai kecepatan Anda sendiri.
     </string>
     <string name="do_not_show_again" translation_description="Checkbox or button label to suppress future display of a warning dialog">Jangan tunjukkan mesej ini lagi</string>
     <string name="title_activity_diagnostic" translation_description="Title bar text for the Diagnostics activity/screen">Diagnostik</string>
@@ -251,4 +248,5 @@ Jika peranti anda benar-benar tidak mempunyai sensor, maka mod auto tidak akan b
     <string name="action_find_in_sky_map" translation_description="Button label that opens the star map and searches for the displayed object">Cari</string>
     <string name="auto_level_horizon_on" translation_description="Toast message when auto-level horizon is enabled">Ufuk auto-level hidup</string>
     <string name="auto_level_horizon_off" translation_description="Toast message when auto-level horizon is disabled">Ufuk auto-level mati</string>
-</resources>
+
+    </resources>

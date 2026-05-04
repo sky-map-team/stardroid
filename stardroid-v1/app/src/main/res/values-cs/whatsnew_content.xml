@@ -1,12 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Virtuální objekty</h2>
-<p>Galileovy měsíce Jupitera (Io, Europa, Ganymedes a Callisto) a měsíce Marsu Fobos a Deimos jsou nyní vyhledávatelné s bohatými informačními kartami a snímky NASA — bez zahlcení hvězdné mapy.</p>
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Více informačních karet</h2>
+<p>Galileovy měsíce Jupitera (Io, Europa, Ganymedes a Callisto), měsíce Marsu Fobos a Deimos a další jsou nyní prohledávatelné s bohatými informačními kartami a snímky NASA.</p>
 <h2>Rozšířený katalog</h2>
-<p>Přidáno desítky nových objektů hlubokého vesmíru — včetně Dvojité kupy, 47 Tucanae, Mlhoviny Exponované lebky a dalších — každý s popisy, zajímavostmi a obrázky.</p>
-<h2>Chytřejší vyhledávání</h2>
-<p>Vyhledávací overlay nyní potvrzuje, když jste se zaměřili na svůj cíl.</p>
-<h2>Opravy chyb</h2>
-<ul><li>Odkazy "Viz také" v galerii se nyní navigují správně.</li><li>Galerie a informační karty se správně zobrazují na obrazovkách Android 15+ s hranou na hranu.</li></ul>]]></string>
+<p>Přidáno desítky nových objektů hlubokého vesmíru — včetně Dvojité kupy, 47 Tucanae, Mlhoviny Exponované lebky a dalších — každý s popisy, zajímavostmi a obrázky.</p>]]></string>
     </resources>

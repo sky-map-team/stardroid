@@ -1,12 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>आभासी वस्तुएं</h2>
-<p>बृहस्पति के गैलिलियन चंद्रमा (आयो, यूरोपा, गैनिमेड और कैलिस्टो) और मंगल के चंद्रमा फोबोस और डीमोस अब समृद्ध जानकारी कार्ड और नासा की छवियों के साथ खोजे जा सकते हैं — तारा मानचित्र को अव्यवस्थित किए बिना।</p>
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>अधिक जानकारी कार्ड</h2>
+<p>बृहस्पति के गैलिलियन चंद्रमा (आयो, यूरोपा, गैनिमेड और कैलिस्टो), मंगल के चंद्रमा फोबोस और डीमोस और अन्य अब समृद्ध जानकारी कार्ड और नासा की छवियों के साथ खोजे जा सकते हैं।</p>
 <h2>विस्तारित कैटलॉग</h2>
-<p>दर्जनों नई गहरे आकाश की वस्तुएं जोड़ी गई हैं — डबल क्लस्टर, 47 ट्यूकेनी, एक्सपोज्ड क्रेनियम नेबुला और अन्य सहित — प्रत्येक विवरण, मजेदार तथ्य और छवियों के साथ।</p>
-<h2>स्मार्टर खोज</h2>
-<p>खोज ओवरले अब पुष्टि करता है कि आप अपने लक्ष्य पर केंद्रित हैं।</p>
-<h2>बग फिक्स</h2>
-<ul><li>गैलरी में देखें-भी लिंक अब सही तरीके से नेविगेट करते हैं।</li><li>गैलरी और जानकारी कार्ड Android 15+ एज-टू-एज स्क्रीन पर सही तरीके से प्रदर्शित होते हैं।</li></ul>]]></string>
+<p>दर्जनों नई गहरी आकाश वस्तुएं जोड़ी गई हैं — डबल क्लस्टर, 47 ट्यूकेनी, एक्सपोज्ड क्रेनियम नेबुला और अन्य सहित — प्रत्येक विवरण, मजेदार तथ्य और छवियों के साथ।</p>]]></string>
     </resources>

@@ -1,12 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Virtuelle objekter</h2>
-<p>Jupiters galileiske måner (Io, Europa, Ganymede og Callisto) og Mars\' måner Phobos og Deimos kan nu søges med detaljerede informationskort og NASA-billeder — uden at fylde stjernekortene.</p>
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Flere informationskort</h2>
+<p>Jupiters galileiske måner (Io, Europa, Ganymedes og Callisto), Mars\'s måner Phobos og Deimos og andre kan nu søges med detaljerede informationskort og NASA-billeder.</p>
 <h2>Udvidet katalog</h2>
-<p>Dusin nye dybtrumsobjekter tilføjet — herunder Double Cluster, 47 Tucanae, Exposed Cranium Nebula og flere — hver med beskrivelser, sjove fakta og billeder.</p>
-<h2>Smartere søgning</h2>
-<p>Søgeoverlayet bekræfter nu, når du har centreret på dit mål.</p>
-<h2>Fejlrettelser</h2>
-<ul><li>Se-også-links i galleriet navigerer nu korrekt.</li><li>Galleriet og informationskort vises korrekt på Android 15+ kant-til-kant-skærme.</li></ul>]]></string>
+<p>Dusinvis af nye dybtrumsobjekter tilføjet — herunder Dobbeltklyngen, 47 Tucanae, Exposed Cranium-tågen og flere — hver med beskrivelser, sjove fakta og billeder.</p>]]></string>
     </resources>

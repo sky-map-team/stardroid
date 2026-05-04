@@ -1,8 +1,0 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<resources>
-    <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>更多信息卡</h2>
-<p>木星的伽利略卫星（木卫一、木卫二、木卫三和木卫四）以及火星的卫星火卫一和火卫二现在可搜索，并配有丰富的信息卡和NASA图像。</p>
-<h2>扩展星表</h2>
-<p>添加了数十个新的深空天体——包括双星团、杜鹃座47、裸颅星云等——每个都附有描述、有趣的事实和图像。</p>]]></string>
-    </resources>

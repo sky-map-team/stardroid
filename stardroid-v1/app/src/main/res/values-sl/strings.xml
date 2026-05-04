@@ -158,11 +158,8 @@
     </string>
     <string name="warning_dialog_title" translation_description="Title of a warning dialog shown when something is wrong, e.g. a missing sensor">Slabe novice!</string>
     <string name="missing_sensor_dialog_text" translation_description="Dialog message shown when the device appears to be missing the compass or accelerometer sensors needed for auto mode">
-    Na žalost se zdi, da vaša naprava morda nima enega od senzorjev, ki jih Sky Map potrebuje.
-
-Da bi vam prikazal nebo v smeri, v katero kaže vaš telefon, Sky Map potrebuje tako vgrajeni kompas kot tudi pospeškometer. Vaša naprava poroča, da ji manjka eden od njih. Dobra novica je, da nekatere naprave (na primer nekateri telefoni Moto E) napačno trdijo, da nimajo kompasa, čeprav ga imajo.
-
-Če vaša naprava res nima senzorja, avtomatski način ne bo deloval. Vendar pa lahko Sky Map še vedno uporabljate na tej napravi v ročnem načinu, kjer lahko zemljevid premikate, vrtite in raztegujete s prsti.
+Za samodejno sledenje zvezd med premikanjem potrebuje Sky Map vgrajeni kompas in pospeškometer. Izgleda, da vaša naprava nima enega od teh.
+        \nNe skrbite! Vesolje lahko še vedno raziskujete v ročnem načinu. Samo uporabite prste za vlečenje, vrtenje in povečavo nočnega neba po lastnem tempu.
     </string>
     <string name="do_not_show_again" translation_description="Checkbox or button label to suppress future display of a warning dialog">Ne prikaži tega sporočila več</string>
     <string name="title_activity_diagnostic" translation_description="Title bar text for the Diagnostics activity/screen">Diagnostika</string>
@@ -253,4 +250,5 @@ Da bi vam prikazal nebo v smeri, v katero kaže vaš telefon, Sky Map potrebuje 
     <string name="action_find_in_sky_map" translation_description="Button label that opens the star map and searches for the displayed object">Najdi</string>
     <string name="auto_level_horizon_on" translation_description="Toast message when auto-level horizon is enabled">Samodejno poravnavanje obzorja vključeno</string>
     <string name="auto_level_horizon_off" translation_description="Toast message when auto-level horizon is disabled">Samodejno poravnavanje obzorja izključeno</string>
-</resources>
+
+    </resources>

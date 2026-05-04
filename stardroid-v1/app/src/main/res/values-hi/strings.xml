@@ -156,11 +156,8 @@
     <string name="no_sensor_warning" translation_description="Warning shown when required orientation sensors are not detected on the device">आपके डिवाइस में ओरिएंटेशन सेंसर नहीं हो सकते हैं - ऑटोमोड काम नहीं कर सकता है</string>
     <string name="warning_dialog_title" translation_description="Title of a warning dialog shown when something is wrong, e.g. a missing sensor">बुरी खबर!</string>
     <string name="missing_sensor_dialog_text" translation_description="Dialog message shown when the device appears to be missing the compass or accelerometer sensors needed for auto mode">
-    दुर्भाग्यवश आपके डिवाइस में Sky Map के लिए आवश्यक सेंसर में से एक नहीं हो सकता है।
-
-आपके फोन की ओर इशारा करने की दिशा में आकाश दिखाने के लिए Sky Map को एक अंतर्निर्मित कंपास और एक त्वरणमापी दोनों की आवश्यकता है। आपका डिवाइस बताता है कि उसमें इनमें से एक नहीं है। अच्छी खबर यह है कि कुछ डिवाइस (उदाहरण के लिए कुछ Moto E फोन) गलत तरीके से दावा करते हैं कि उनके पास कंपास नहीं है लेकिन वास्तव में है।
-
-यदि आपके डिवाइस में वास्तव में कोई सेंसर नहीं है तो ऑटो-मोड काम नहीं करेगा। हालांकि, आप इस डिवाइस पर Sky Map को मैनुअल मोड में भी उपयोग कर सकते हैं जहां आप अपनी उंगलियों से मानचित्र को खींचते, घुमाते और खींचते हैं।
+    तारों को स्वचालित रूप से अनुसरण करने के लिए जैसे आप चलते हैं, Sky Map को एक अंतर्निर्मित कम्पास और त्वरणमापी की आवश्यकता है। ऐसा लगता है कि आपके डिवाइस में इनमें से एक नहीं है।
+चिंता न करें! आप अभी भी मैनुअल मोड में ब्रह्मांड की खोज कर सकते हैं। बस अपनी उंगलियों का उपयोग करके रात के आकाश के चारों ओर खींचें, घुमाएं और ज़ूम करें अपनी गति से।
     </string>
     <string name="do_not_show_again" translation_description="Checkbox or button label to suppress future display of a warning dialog">इस संदेश को फिर से न दिखाएं</string>
     <string name="title_activity_diagnostic" translation_description="Title bar text for the Diagnostics activity/screen">निदान</string>
@@ -247,4 +244,5 @@
     <string name="action_find_in_sky_map" translation_description="Button label that opens the star map and searches for the displayed object">खोजें</string>
     <string name="auto_level_horizon_on" translation_description="Toast message when auto-level horizon is enabled">ऑटो-लेवल क्षितिज चालू</string>
     <string name="auto_level_horizon_off" translation_description="Toast message when auto-level horizon is disabled">ऑटो-लेवल क्षितिज बंद</string>
-</resources>
+
+    </resources>

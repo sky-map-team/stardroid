@@ -1,12 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Virtuelle objekter</h2>
-<p>Jupiters galileiske måner (Io, Europa, Ganymedes og Callisto) og Mars\' måner Phobos og Deimos er nå søkbare med rike informasjonskort og NASA-bilder — uten å rote til stjernekartene.</p>
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Flere informasjonskort</h2>
+<p>Jupiters galileiske måner (Io, Europa, Ganymedes og Callisto), Mars\' måner Phobos og Deimos og andre er nå søkbare med rike informasjonskort og NASA-bilder.</p>
 <h2>Utvidet katalog</h2>
-<p>Dusinvis av nye dypromsobjekter lagt til — inkludert Double Cluster, 47 Tucanae, Exposed Cranium Nebula og mer — hver med beskrivelser, morsomme fakta og bilder.</p>
-<h2>Smartere søk</h2>
-<p>Søkoverlegget bekrefter nå når du har sentrert på målet ditt.</p>
-<h2>Feilrettinger</h2>
-<ul><li>Se-også-lenker i galleriet navigerer nå riktig.</li><li>Galleriet og informasjonskort vises riktig på Android 15+ edge-to-edge-skjermer.</li></ul>]]></string>
-    </resources>
+<p>Dusinvis av nye dypromsobjekter lagt til — inkludert Double Cluster, 47 Tucanae, Exposed Cranium Nebula og flere — hver med beskrivelser, morsomme fakta og bilder.</p>
+]]></string>
+</resources>

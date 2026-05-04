@@ -1,12 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Virtualni objekti</h2>
-<p>Galilejeve lune Jupitrja (Io, Evropa, Ganimed in Kalisto) in Marsove lune Fobos in Deimos so zdaj iskljive z bogatimi informacijami in NASA-jevimi slikami — brez obremenjevanja zvezdne karte.</p>
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Več informacijskih kartic</h2>
+&lt;p&gt;Galilejeve lune Jupitra (Io, Evropa, Ganimed in Kalisto), Marsovi luni Fobos in Deimos in drugi so sedaj iskalni z bogatimi informacijskimi karticami in NASA-jevimi slikami.&lt;/p&gt;
 <h2>Razširjeni katalog</h2>
-<p>Dodane so ducat novih globokih nebesnih objektov — vključno z Dvojno kopico, 47 Tucanae, Meglico Izpostavljenega lobanje in drugimi — vsak z opisi, zabavnimi dejstvi in slikami.</p>
-<h2>Pametnejše iskanje</h2>
-<p>Iskalni sloj zdaj potrdi, ko ste se osredotočili na svoj cilj.</p>
-<h2>Popravki napak</h2>
-<ul><li>Povezave »Poglej tudi« v galeriji se zdaj pravilno krmarijo.</li><li>Galerija in informacijske kartice se pravilno prikažejo na zaslonskih robovih Android 15+ brez robov.</li></ul>]]></string>
+<p>Dodane so ducat novih globokih nebesnih objektov — vključno z Dvojno kopico, 47 Tucanae, Meglo izpostavljenega lobanje in drugimi — vsak z opisi, zabavnimi dejstvi in slikami.</p>]]></string>
     </resources>
