@@ -16,6 +16,8 @@
 
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <!-- Beware that items which use actionLayout (typically the ones we might see in the action
+    bar) need to have their icons etc set programmatically in the activity. -->
     <item android:id="@+id/menu_item_search"
           android:orderInCategory="1"
           android:title="@string/menu_search"
@@ -41,7 +43,8 @@
           android:orderInCategory="4"
           android:title="@string/menu_settings"
           android:showAsAction="ifRoom"
-          android:icon="@android:drawable/ic_menu_preferences"/>
+          android:icon="@android:drawable/ic_menu_preferences"
+          android:actionLayout="@layout/action_item"/>
 
     <!-- People don't always understand the swirly icon
         in the action bar -->

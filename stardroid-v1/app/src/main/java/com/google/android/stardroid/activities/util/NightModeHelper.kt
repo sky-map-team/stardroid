@@ -15,6 +15,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.webkit.WebView
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.TextView
 import com.google.android.stardroid.R
 
@@ -107,12 +108,35 @@ object NightModeHelper {
             if (icon != null) {
                 icon.mutate().setColorFilter(color, PorterDuff.Mode.MULTIPLY)
             }
-            val title = SpannableString(item.getTitle())
-            title.setSpan(
-                ForegroundColorSpan(color), 0, title.length,
-                Spannable.SPAN_INCLUSIVE_INCLUSIVE
-            )
-            item.setTitle(title)
+
+            // Also tint custom action views (like our search/dim/time buttons)
+            val actionView = item.actionView
+            if (actionView is ImageButton) {
+                if (nightMode) {
+                    actionView.setColorFilter(color, PorterDuff.Mode.MULTIPLY)
+                } else {
+                    actionView.clearColorFilter()
+                }
+            } else if (actionView is ViewGroup) {
+                val btn = actionView.findViewById<ImageButton>(R.id.action_icon)
+                if (btn != null) {
+                    if (nightMode) {
+                        btn.setColorFilter(color, PorterDuff.Mode.MULTIPLY)
+                    } else {
+                        btn.clearColorFilter()
+                    }
+                }
+            }
+
+            val titleText = item.title
+            if (titleText != null) {
+                val title = SpannableString(titleText)
+                title.setSpan(
+                    ForegroundColorSpan(color), 0, title.length,
+                    Spannable.SPAN_INCLUSIVE_INCLUSIVE
+                )
+                item.setTitle(title)
+            }
         }
     }
 
