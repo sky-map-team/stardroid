@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Mer informasjonskort</h2>
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup.">&lt;h2&gt;Flere informasjonskort&lt;/h2&gt;
 <p>Jupiters galileiske måner (Io, Europa, Ganymedes og Callisto), Mars\' måner Phobos og Deimos og andre er nå søkbare med rike informasjonskort og NASA-bilder.</p>
 <h2>Utvidet katalog</h2>
 <p>Dusinvis av nye dypromsobjekter lagt til — inkludert Double Cluster, 47 Tucanae, Exposed Cranium Nebula og flere — hver med beskrivelser, morsomme fakta og bilder.</p>]]></string>
