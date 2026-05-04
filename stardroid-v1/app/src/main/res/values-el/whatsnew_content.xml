@@ -1,12 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Εικονικά Αντικείμενα</h2>
-<p>Οι Γαλιλαϊκές σελήνες του Δία (Ιώ, Ευρώπη, Γανυμήδης και Καλλιστώ) και οι σελήνες του Άρη Φόβος και Δείμος είναι πλέον αναζητήσιμες με πλούσιες κάρτες πληροφοριών και εικόνες της NASA — χωρίς να συμφορούν τον χάρτη των άστρων.</p>
-<h2>Διευρυμένος Κατάλογος</h2>
-<p>Δεκάδες νέα αντικείμενα βαθέος ουρανού προστέθηκαν — συμπεριλαμβανομένου του Διπλού Σμήνους, του 47 Tucanae, του Νεφελώματος Εκτεθειμένου Κρανίου και άλλων — καθένα με περιγραφές, διασκεδαστικά γεγονότα και εικόνες.</p>
-<h2>Πιο Έξυπνη Αναζήτηση</h2>
-<p>Η επικάλυψη αναζήτησης επιβεβαιώνει πλέον όταν έχετε κεντράρει στον στόχο σας.</p>
-<h2>Διορθώσεις Σφαλμάτων</h2>
-<ul><li>Οι σύνδεσμοι «Δείτε επίσης» στη συλλογή πλέον πλοηγούν σωστά.</li><li>Η συλλογή και οι κάρτες πληροφοριών εμφανίζονται σωστά σε οθόνες Android 15+ edge-to-edge.</li></ul>]]></string>
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Περισσότερες κάρτες πληροφοριών</h2>
+<p>Τα Γαλιλαϊκά φεγγάρια του Δία (Ιώ, Ευρώπη, Γανυμήδης και Καλλιστώ), τα φεγγάρια του Άρη Φόβος και Δείμος και άλλα είναι πλέον αναζητήσιμα με πλούσιες κάρτες πληροφοριών και εικόνες της NASA.</p>
+<h2>Επεκταμένος Κατάλογος</h2>
+<p>Δεκάδες νέα αντικείμενα βαθέος ουρανού προστέθηκαν — συμπεριλαμβανομένου του Διπλού Σμήνους, του 47 Tucanae, του Νεφελώματος Εκτεθειμένου Κρανίου και άλλων — καθένα με περιγραφές, διασκεδαστικά γεγονότα και εικόνες.</p>]]></string>
     </resources>

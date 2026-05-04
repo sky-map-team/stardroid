@@ -1,12 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>虛擬天體</h2>
-<p>木星的伽利略衛星（木衛一、木衛二、木衛三和木衛四）以及火星的衛星火衛一和火衛二現在可搜尋，並提供豐富的資訊卡和NASA影像——不會使星圖變得雜亂。</p>
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>更多資訊卡</h2>
+<p>木星的伽利略衛星（木衛一、木衛二、木衛三和木衛四）、火星的衛星火衛一和火衛二等現在可搜尋，並提供豐富的資訊卡和NASA影像。</p>
 <h2>擴展星表</h2>
-<p>新增數十個深空天體——包括雙星團、杜鵑座47星團、露頭顱星雲等——每個都附有描述、有趣的事實和影像。</p>
-<h2>更聰明的搜尋</h2>
-<p>搜尋覆蓋層現在會確認您是否已將目標置於中心。</p>
-<h2>錯誤修正</h2>
-<ul><li>圖庫中的另請參閱連結現在可正確導航。</li><li>圖庫和資訊卡在Android 15+邊到邊螢幕上顯示正確。</li></ul>]]></string>
+<p>新增數十個深空天體——包括雙星團、杜鵑座47星團、露頭顱星雲等——每個都附有說明、有趣事實和影像。</p>]]></string>
     </resources>

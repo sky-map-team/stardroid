@@ -156,17 +156,8 @@
     <string name="no_sensor_warning" translation_description="Warning shown when required orientation sensors are not detected on the device">このデバイスは位置センサーが不足しています - 自動モードは動作しないかもしれません</string>
     <string name="warning_dialog_title" translation_description="Title of a warning dialog shown when something is wrong, e.g. a missing sensor">悪いニュース！</string>
     <string name="missing_sensor_dialog_text" translation_description="Dialog message shown when the device appears to be missing the compass or accelerometer sensors needed for auto mode">
-    \n
-        残念ながらこのデバイスはSkyマップが必要としているセンサーの一つを
-    持っていないようです。\n\n
-        スマートフォンを向けた方向の空を表示するためには、
-    Skyマップは組み込みのコンパスとか速度計の両方が必要です。このデバイスはその一つがないと
-        報告しています。良いニュースとしては、一部のデバイス(例えば Moto E スマートフォンの一部)は、実際にはコンパスを
-        持っているにも関わらず持っていないと報告します。\n\n
-
-        このデバイスが本当にそのセンサーを持っていないなら、自動モードは動作しません。
-        しかし、それでも指で地図をドラッグ、回転、ピンチする手動モードでSkyマップを使うことは
-        できます。
+    Sky Mapが星を自動で追跡するには、デバイスに内蔵されたコンパスと加速度計が必要です。お使いのデバイスにはこれらのいずれかが搭載されていないようです。
+心配しないでください。手動モードでも宇宙を探索できます。指を使って夜空をドラッグ、回転、ズームして、自分のペースで楽しむことができます。
     </string>
     <string name="do_not_show_again" translation_description="Checkbox or button label to suppress future display of a warning dialog">このメッセージを再び表示しない</string>
     <string name="title_activity_diagnostic" translation_description="Title bar text for the Diagnostics activity/screen">診断</string>
@@ -260,4 +251,5 @@
     <string name="action_find_in_sky_map" translation_description="Button label that opens the star map and searches for the displayed object">探す</string>
     <string name="auto_level_horizon_on" translation_description="Toast message when auto-level horizon is enabled">地平線の自動レベリングがオン</string>
     <string name="auto_level_horizon_off" translation_description="Toast message when auto-level horizon is disabled">地平線の自動レベリングがオフ</string>
-</resources>
+
+    </resources>

@@ -1,12 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Objetos Virtuais</h2>
-<p>As luas galileanas de Júpiter (Io, Europa, Ganimedes e Calisto) e as luas de Marte Fobos e Deimos agora são pesquisáveis com cartões de informações detalhadas e imagens da NASA — sem poluir o mapa estelar.</p>
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Mais cartões de informações</h2>
+<p>As luas galileanas de Júpiter (Io, Europa, Ganimedes e Calisto), as luas de Marte Fobos e Deimos e outras agora são pesquisáveis com cartões de informações detalhados e imagens da NASA.</p>
 <h2>Catálogo Expandido</h2>
-<p>Dezenas de novos objetos de céu profundo adicionados — incluindo o Aglomerado Duplo, 47 Tucanae, a Nebulosa Crânio Exposto e mais — cada um com descrições, curiosidades e imagens.</p>
-<h2>Busca Mais Inteligente</h2>
-<p>A sobreposição de busca agora confirma quando você centralizou seu alvo.</p>
-<h2>Correções de Erros</h2>
-<ul><li>Os links "Ver também" na galeria agora navegam corretamente.</li><li>A galeria e os cartões de informações são exibidos corretamente em telas edge-to-edge do Android 15+.</li></ul>]]></string>
+<p>Dezenas de novos objetos do céu profundo adicionados — incluindo o Aglomerado Duplo, 47 Tucanae, a Nebulosa Crânio Exposto e mais — cada um com descrições, curiosidades e imagens.</p>]]></string>
     </resources>

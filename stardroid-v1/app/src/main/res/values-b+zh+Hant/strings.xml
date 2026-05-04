@@ -154,12 +154,8 @@
     <string name="no_sensor_warning" translation_description="Warning shown when required orientation sensors are not detected on the device">你的裝置沒有方位感應器 - 自動模式可能無法運作</string>
     <string name="warning_dialog_title" translation_description="Title of a warning dialog shown when something is wrong, e.g. a missing sensor">壞消息！</string>
     <string name="missing_sensor_dialog_text" translation_description="Dialog message shown when the device appears to be missing the compass or accelerometer sensors needed for auto mode">
-    \n
-        您的裝置可能不具備 Sky Map 所需的感應器之一。\n\n
-        Sky Map 需要內建羅盤與加速計才能自動顯示裝置所指向的星空。您的裝置回報其中一個感應器不存在。
-        好消息是有些裝置的回報不完全正確，例如某些 Moto E 型號手機，其實具備羅盤功能卻回報沒有。\n\n
-
-        缺少需要的感應器，自動模式將無法運作。但您仍然可以使用手指在手動模式下拖曳、旋轉、縮放星空圖。
+    為了在您移動時自動追蹤星星，Sky Map 需要內建的指南針和加速度計。看起來您的裝置缺少其中一個。
+別擔心！您仍然可以在手動模式中探索宇宙。只需用手指拖曳、旋轉和縮放夜空，按照您自己的步調進行。
     </string>
     <string name="do_not_show_again" translation_description="Checkbox or button label to suppress future display of a warning dialog">不要再顯示這個訊息</string>
     <string name="title_activity_diagnostic" translation_description="Title bar text for the Diagnostics activity/screen">診斷</string>
@@ -242,4 +238,5 @@
     <string name="action_find_in_sky_map" translation_description="Button label that opens the star map and searches for the displayed object">尋找</string>
     <string name="auto_level_horizon_on" translation_description="Toast message when auto-level horizon is enabled">自動水平線已開啟</string>
     <string name="auto_level_horizon_off" translation_description="Toast message when auto-level horizon is disabled">自動水平線已關閉</string>
-</resources>
+
+    </resources>

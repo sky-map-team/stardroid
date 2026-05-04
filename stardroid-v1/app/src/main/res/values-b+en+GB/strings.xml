@@ -151,17 +151,8 @@
     <!-- tm:omitted name="no_sensor_warning" reason="identical_to_source" -->
     <!-- tm:omitted name="warning_dialog_title" reason="identical_to_source" -->
     <string name="missing_sensor_dialog_text" translation_description="Dialog message shown when the device appears to be missing the compass or accelerometer sensors needed for auto mode">
-    \n
-        Unfortunately your device might not have one of the
-    sensors that Sky Map needs.\n\n
-        To show you the sky in the direction your phone is pointing Sky Map
-    needs both a built-in compass and an accelerometer.  Your device reports that it is missing
-        one of them.  The good news is that some devices (for example some Moto E phones) falsely claim
-        not to have a compass but actually do.\n\n
-
-        If your device really is missing a sensor then auto-mode will not work.  However, you
-        can still use Sky Map on this device in manual mode where you drag, rotate and stretch the
-        map with your fingers.
+    To automatically follow the stars as you move, Sky Map needs a built-in compass and accelerometer. It looks like your device is missing one of these.
+        \nDon\'t worry! You can still explore the universe in Manual Mode. Just use your fingers to drag, rotate, and zoom around the night sky at your own pace.
     </string>
     <!-- tm:omitted name="do_not_show_again" reason="identical_to_source" -->
     <!-- tm:omitted name="title_activity_diagnostic" reason="identical_to_source" -->
@@ -244,4 +235,5 @@
     <!-- tm:omitted name="action_find_in_sky_map" reason="identical_to_source" -->
     <!-- tm:omitted name="auto_level_horizon_on" reason="identical_to_source" -->
     <!-- tm:omitted name="auto_level_horizon_off" reason="identical_to_source" -->
-</resources>
+
+    </resources>

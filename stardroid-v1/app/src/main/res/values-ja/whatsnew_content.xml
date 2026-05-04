@@ -1,12 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>仮想オブジェクト</h2>
-<p>木星のガリレイ衛星（イオ、エウロパ、ガニメデ、カリスト）と火星の衛星フォボス、ダイモスが検索可能になりました。豊富な情報カードとNASAの画像が利用でき、星図を散らかしません。</p>
-<h2>拡張カタログ</h2>
-<p>二重星団、47トゥカナエ、露出した頭蓋骨星雲など、数十の新しい深空天体を追加しました。それぞれに説明、面白い事実、画像が含まれています。</p>
-<h2>スマート検索</h2>
-<p>検索オーバーレイが対象に中心を合わせたことを確認するようになりました。</p>
-<h2>バグ修正</h2>
-<ul><li>ギャラリーの関連リンクが正しくナビゲートするようになりました。</li><li>ギャラリーと情報カードがAndroid 15以上のエッジツーエッジスクリーンで正しく表示されます。</li></ul>]]></string>
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>より詳しい情報カード</h2>
+<p>木星のガリレイ衛星（イオ、エウロパ、ガニメデ、カリスト）、火星の衛星フォボスとデイモス、その他の天体が検索可能になり、詳細な情報カードとNASAの画像が表示されるようになりました。</p>
+<h2>拡張されたカタログ</h2>
+<p>二重星団、47トゥカナエ、露出した頭蓋骨星雲など、数十の新しい深空天体が追加されました。各天体には説明、興味深い事実、画像が含まれています。</p>]]></string>
     </resources>

@@ -158,15 +158,8 @@
     </string>
     <string name="warning_dialog_title" translation_description="Title of a warning dialog shown when something is wrong, e.g. a missing sensor">Špatné správy</string>
     <string name="missing_sensor_dialog_text" translation_description="Dialog message shown when the device appears to be missing the compass or accelerometer sensors needed for auto mode">
-    \n
-            Bohužel vaše zařízení nemusí mít některý z senzorů které Sky Map potřebuje \n\n
-
-            K zobrazení nebezkých oběktů v orientaci vašeho telefonu Sky Map potřebuje vestavěný kompas a akcelerometr.
-            Vaše zařízení však reportuje že nekterý chybý. Dobrou správou však je že některé zařízení to reportují špatně (některe Moto E modely)
-            a v skutečnosti tyto senzory mají.
-
-            Pokud vaše zařízení opravdu nemá tyto senzory automatický mód nebude fungovat.
-            Avšak Sky Map lze stále používat v manuálním módu tím že budete mapu posouvat otačet a zoomovat prsty.
+    Aby Sky Map automaticky sledoval hvězdy při vašem pohybu, potřebuje vestavěný kompas a akcelerometr. Zdá se, že vašemu zařízení jeden z nich chybí.
+        \nNebojte se! Vesmír si můžete stále prozkoumat v Manuálním režimu. Stačí používat prsty k přetahování, otáčení a přibližování noční oblohy vlastním tempem.
     </string>
     <string name="do_not_show_again" translation_description="Checkbox or button label to suppress future display of a warning dialog">Tuto zprávu již nezobrazovat</string>
     <string name="title_activity_diagnostic" translation_description="Title bar text for the Diagnostics activity/screen">Diagnostika</string>
@@ -253,4 +246,5 @@
     <string name="action_find_in_sky_map" translation_description="Button label that opens the star map and searches for the displayed object">Najít</string>
     <string name="auto_level_horizon_on" translation_description="Toast message when auto-level horizon is enabled">Automatické vyrovnání horizontu zapnuto</string>
     <string name="auto_level_horizon_off" translation_description="Toast message when auto-level horizon is disabled">Automatické vyrovnání horizontu vypnuto</string>
-</resources>
+
+    </resources>

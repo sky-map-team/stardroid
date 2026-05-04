@@ -156,16 +156,8 @@
     <string name="no_sensor_warning" translation_description="Warning shown when required orientation sensors are not detected on the device">Cihazınızın yönlendirme sensörleri eksik olabilir - otomatik mod çalışmayabilir</string>
     <string name="warning_dialog_title" translation_description="Title of a warning dialog shown when something is wrong, e.g. a missing sensor">Üzgünüz!</string>
     <string name="missing_sensor_dialog_text" translation_description="Dialog message shown when the device appears to be missing the compass or accelerometer sensors needed for auto mode">
-    \n
-        Ne yazık ki, cihazınız Sky Map\'in ihtiyaç duyduğu sensörlerden birine sahip olmayabilir.\n\n
-        Sky Map, telefonunuzun yöneldiği yönde gökyüzünü size göstermek için, hem yerleşik bir pusula
-        hem de bir ivmeölçere ihtiyaç duyar. Cihazınız, bu sensörlerden birinin eksik olduğunu sizlere bildirir.
-        İyi haber, bazı cihazlar (ör. bazı Moto E telefonları) pusulasız olduğunu iddia etse de
-        aslında bir pusula içerdiğidir.\n\n
-
-        Eğer cihazınız gerçekten bir sensör eksikliği yaşıyorsa, otomatik mod çalışmayacaktır.
-        Ancak yine de bu cihazda Sky Map\'i parmaklarınızla sürükleyerek, döndürerek ve uzatarak
-        kullanabilirsiniz.
+    Yıldızları hareket ederken otomatik olarak takip etmek için Sky Map\'ın yerleşik bir pusula ve ivmeölçere ihtiyacı vardır. Cihazınızda bunlardan biri eksik görünüyor.
+        \nEndişelenmeyin! Yine de Manüel Mod\'da evreni keşfedebilirsiniz. Gece gökyüzünde parmağınızla sürüklemek, döndürmek ve yakınlaştırmak için kendi hızınızda hareket edin.
     </string>
     <string name="do_not_show_again" translation_description="Checkbox or button label to suppress future display of a warning dialog">Bu mesajı tekrar gösterme</string>
     <string name="title_activity_diagnostic" translation_description="Title bar text for the Diagnostics activity/screen">Kontrol</string>
@@ -252,4 +244,5 @@
     <string name="action_find_in_sky_map" translation_description="Button label that opens the star map and searches for the displayed object">Bul</string>
     <string name="auto_level_horizon_on" translation_description="Toast message when auto-level horizon is enabled">Ufuk otomatik hizalama açık</string>
     <string name="auto_level_horizon_off" translation_description="Toast message when auto-level horizon is disabled">Ufuk otomatik hizalama kapalı</string>
-</resources>
+
+    </resources>

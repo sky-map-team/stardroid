@@ -158,7 +158,8 @@
     </string>
     <string name="warning_dialog_title" translation_description="Title of a warning dialog shown when something is wrong, e.g. a missing sensor">Cattive notizie!</string>
     <string name="missing_sensor_dialog_text" translation_description="Dialog message shown when the device appears to be missing the compass or accelerometer sensors needed for auto mode">
-    \nPurtroppo il tuo dispositivo potrebbe non avere uno dei sensori di cui Sky Map ha bisogno.\n\nPer mostrarti il cielo nella direzione verso cui punta il tuo telefono, Sky Map ha bisogno sia di una bussola integrata che di un accelerometro. Il tuo dispositivo segnala che ne manca uno. La buona notizia è che alcuni dispositivi (ad esempio alcuni telefoni Moto E) affermano falsamente di non avere una bussola ma in realtà ce l\'hanno.\n\nSe il tuo dispositivo non ha davvero un sensore, la modalità automatica non funzionerà. Tuttavia, puoi comunque utilizzare Sky Map su questo dispositivo in modalità manuale dove puoi trascinare, ruotare e allargare la mappa con le dita.
+    Per seguire automaticamente le stelle mentre ti muovi, Sky Map ha bisogno di una bussola integrata e di un accelerometro. Sembra che il tuo dispositivo ne manchi uno.
+        \nNon preoccuparti! Puoi comunque esplorare l\'universo in Modalità Manuale. Usa semplicemente le dita per trascinare, ruotare e ingrandire il cielo notturno al tuo ritmo.
     </string>
     <string name="do_not_show_again" translation_description="Checkbox or button label to suppress future display of a warning dialog">Non mostrare più questo messaggio</string>
     <string name="title_activity_diagnostic" translation_description="Title bar text for the Diagnostics activity/screen">Diagnostica</string>
@@ -251,4 +252,5 @@
     <string name="action_find_in_sky_map" translation_description="Button label that opens the star map and searches for the displayed object">Trova</string>
     <string name="auto_level_horizon_on" translation_description="Toast message when auto-level horizon is enabled">Orizzonte auto-livello attivo</string>
     <string name="auto_level_horizon_off" translation_description="Toast message when auto-level horizon is disabled">Orizzonte auto-livello disattivo</string>
-</resources>
+
+    </resources>

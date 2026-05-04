@@ -160,17 +160,8 @@
     </string>
     <string name="warning_dialog_title" translation_description="Title of a warning dialog shown when something is wrong, e.g. a missing sensor">Погані новини!</string>
     <string name="missing_sensor_dialog_text" translation_description="Dialog message shown when the device appears to be missing the compass or accelerometer sensors needed for auto mode">
-    \n
-        На жаль, у вашого пристрою може не бути одного з тих
-     датчиків, які потребує Sky Map.\n\n
-        Щоб показати вам частину неба, на яку вказує телефон, Sky Map
-     потрібен як вбудований компас, так і акселерометр. Ваш пристрій повідомляє, що один з них відсутній.
-         Хороша новина полягає в тому, що деякі пристрої (наприклад, деякі телефони Moto E) помилково стверджують
-         що не мають компаса, але насправді працюють.\n\n
-
-        Якщо на вашому пристрої відсутній сенсор, то автоматичний режим не працюватиме. Тим не менш
-         все ж можна використовувати Sky Map на цьому пристрої в ручному режимі, де ви перетягуєте, повертаєте та розтягуєте
-         карту пальцями.
+    Щоб автоматично стежити за зірками під час руху, Sky Map потребує вбудованого компаса та акселерометра. Схоже, ваш пристрій не має одного з них.
+        \nНе хвилюйтеся! Ви все ще можете досліджувати Всесвіт у ручному режимі. Просто використовуйте пальці, щоб перетягувати, обертати та масштабувати нічне небо у своєму темпі.
     </string>
     <string name="do_not_show_again" translation_description="Checkbox or button label to suppress future display of a warning dialog">Більше не показувати це повідомлення</string>
     <string name="title_activity_diagnostic" translation_description="Title bar text for the Diagnostics activity/screen">Діагностика</string>
@@ -263,4 +254,5 @@
     <string name="action_find_in_sky_map" translation_description="Button label that opens the star map and searches for the displayed object">Знайти</string>
     <string name="auto_level_horizon_on" translation_description="Toast message when auto-level horizon is enabled">Автоматичне вирівнювання горизонту ввімкнено</string>
     <string name="auto_level_horizon_off" translation_description="Toast message when auto-level horizon is disabled">Автоматичне вирівнювання горизонту вимкнено</string>
-</resources>
+
+    </resources>

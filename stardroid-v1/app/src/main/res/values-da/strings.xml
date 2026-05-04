@@ -160,7 +160,8 @@
     </string>
     <string name="warning_dialog_title" translation_description="Title of a warning dialog shown when something is wrong, e.g. a missing sensor">Dårlige nyheder!</string>
     <string name="missing_sensor_dialog_text" translation_description="Dialog message shown when the device appears to be missing the compass or accelerometer sensors needed for auto mode">
-    \nDesværre har din enhed muligvis ikke en af de sensorer, som Sky Map har brug for.\n\nFor at vise dig himlen i den retning, som din telefon peger, har Sky Map brug for både et indbygget kompas og en accelerometer. Din enhed rapporterer, at den mangler en af dem. Det gode nyt er, at nogle enheder (for eksempel nogle Moto E-telefoner) fejlagtigt hævder ikke at have et kompas, men det gør de faktisk.\n\nHvis din enhed virkelig mangler en sensor, vil auto-tilstand ikke fungere. Du kan dog stadig bruge Sky Map på denne enhed i manuel tilstand, hvor du kan trække, rotere og strække kortet med dine fingre.
+    For at følge stjernerne automatisk, når du bevæger dig, har Sky Map brug for et indbygget kompas og accelerometer. Det ser ud til, at din enhed mangler et af disse.
+        \nVær ikke bekymret! Du kan stadig udforske universet i Manuel tilstand. Brug blot dine fingre til at trække, rotere og zoome rundt på nattehimlen i dit eget tempo.
     </string>
     <string name="do_not_show_again" translation_description="Checkbox or button label to suppress future display of a warning dialog">Vis ikke denne besked igen</string>
     <string name="title_activity_diagnostic" translation_description="Title bar text for the Diagnostics activity/screen">Diagnostik</string>
@@ -249,4 +250,5 @@
     <!-- tm:omitted name="action_find_in_sky_map" reason="identical_to_source" -->
     <string name="auto_level_horizon_on" translation_description="Toast message when auto-level horizon is enabled">Auto-niveau horisont til</string>
     <string name="auto_level_horizon_off" translation_description="Toast message when auto-level horizon is disabled">Auto-niveau horisont fra</string>
-</resources>
+
+    </resources>

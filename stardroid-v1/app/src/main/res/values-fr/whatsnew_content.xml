@@ -1,12 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Objets virtuels</h2>
-<p>Les lunes galiléennes de Jupiter (Io, Europe, Ganymède et Callisto) et les lunes de Mars Phobos et Déimos sont maintenant recherchables avec des fiches d\'information enrichies et des images de la NASA — sans encombrer la carte céleste.</p>
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Fiches d\'information enrichies</h2>
+<p>Les lunes galiléennes de Jupiter (Io, Europe, Ganymède et Callisto), les lunes de Mars Phobos et Déimos et d\'autres sont désormais consultables avec des fiches d\'information enrichies et des images de la NASA.</p>
 <h2>Catalogue étendu</h2>
-<p>Des dizaines de nouveaux objets du ciel profond ajoutés — y compris le Double amas de Persée, 47 Tucanae, la Nébuleuse du Crâne exposé et bien d\'autres — chacun avec des descriptions, des faits amusants et des images.</p>
-<h2>Recherche plus intelligente</h2>
-<p>L\'overlay de recherche confirme maintenant quand vous avez centré sur votre cible.</p>
-<h2>Corrections de bogues</h2>
-<ul><li>Les liens « Voir aussi » dans la galerie naviguent maintenant correctement.</li><li>La galerie et les fiches d\'information s\'affichent correctement sur les écrans bord à bord d\'Android 15+.</li></ul>]]></string>
+<p>Des dizaines de nouveaux objets du ciel profond ont été ajoutés — notamment le Double amas de Persée, 47 Tucanae, la Nébuleuse du Crâne exposé et bien d\'autres — chacun avec des descriptions, des faits amusants et des images.</p>]]></string>
     </resources>

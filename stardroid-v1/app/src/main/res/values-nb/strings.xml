@@ -157,17 +157,8 @@
     <string name="no_sensor_warning" translation_description="Warning shown when required orientation sensors are not detected on the device">Enheten din kan mangle orienteringssensorer - auto-modus fungerer kanskje ikke</string>
     <string name="warning_dialog_title" translation_description="Title of a warning dialog shown when something is wrong, e.g. a missing sensor">Dårlig nytt!</string>
     <string name="missing_sensor_dialog_text" translation_description="Dialog message shown when the device appears to be missing the compass or accelerometer sensors needed for auto mode">
-    \n
-        Dessverre kan det hende at enheten din ikke har en av
-    sensorene som Sky Map trenger.\n\n
-        For å vise deg himmelen i den retningen telefonen peker trenger Sky Map
-    både et innebygd kompass og et akselerometer.  Enheten din rapporterer at den mangler
-        en av dem.  Den gode nyheten er at noen enheter (for eksempel noen Moto E telefoner) feilaktig hevder
-        ikke å ha et kompass, men faktisk har det.\n\n
-
-        Hvis enheten din virkelig mangler en sensor vil ikke auto-modus fungere.  Du kan likevel
-        bruke Sky Map på denne enheten i manuell modus der du drar, roterer og strekker
-        kartet med fingrene.
+    For å automatisk følge stjernene mens du beveger deg, trenger Sky Map et innebygd kompass og akselerometer. Det ser ut til at enheten din mangler en av disse.
+        \nIkke bekymre deg! Du kan fortsatt utforske universet i manuell modus. Bare bruk fingrene dine til å dra, rotere og zoome rundt nattehimmelen i ditt eget tempo.
     </string>
     <string name="do_not_show_again" translation_description="Checkbox or button label to suppress future display of a warning dialog">Ikke vis denne meldingen igjen</string>
     <string name="title_activity_diagnostic" translation_description="Title bar text for the Diagnostics activity/screen">Diagnostikk</string>
@@ -265,4 +256,5 @@
     <string name="action_find_in_sky_map" translation_description="Button label that opens the star map and searches for the displayed object">Finn</string>
     <string name="auto_level_horizon_on" translation_description="Toast message when auto-level horizon is enabled">Auto-level horisont på</string>
     <string name="auto_level_horizon_off" translation_description="Toast message when auto-level horizon is disabled">Auto-level horisont av</string>
-</resources>
+
+    </resources>

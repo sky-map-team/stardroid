@@ -160,11 +160,8 @@
     </string>
     <string name="warning_dialog_title" translation_description="Title of a warning dialog shown when something is wrong, e.g. a missing sensor">Newyddion drwg!</string>
     <string name="missing_sensor_dialog_text" translation_description="Dialog message shown when the device appears to be missing the compass or accelerometer sensors needed for auto mode">
-    \n
-        Yn anffodus, mae\'n bosib nad oes gan dy ddyfais un o\'r synwyryddion sydd ei angen ar Sky Map.\n\n
-        Er mwyn dangos yr awyr yn y cyfeiriad mae dy ddyfais yn pwyntio mae ar Sky Map angen cwmpawd a mesurydd cyflymiad. Mae dy ddyfais yn adrodd bod un ohonynt ar goll. Mae rhai dyfeisiau (e.e. Moto E) yn honni yn anghywir nad oes ynddynt gwmpawd.\n\n
-
-        Os oes wir synhwyrydd ar goll o dy ddyfais, ni fydd modd awto-synhwyro yn gweithio. Fodd bynnag, gellir dal i ddefnyddio Sky Map ar y ddyfais hon ym modd llaw, a llusgo, troi a chwyddo\'r map gyda dy fysedd.
+    I ddilyn y sêr yn awtomatig wrth i chi symud, mae angen cymhwysydd adeiledig a chyflymmesurydd ar Sky Map. Mae\'n ymddangos bod eich dyfais yn colli un o\'r rhain.
+        \nPeidiwch â phoeni! Gallwch dal i archwilio\'r bydysawd yn y Modd Llaw. Dim ond defnyddiwch eich bysedd i lusgo, cylchdroi, a chwyddhau o amgylch yr awyr nos ar eich pace eich hun.
     </string>
     <string name="do_not_show_again" translation_description="Checkbox or button label to suppress future display of a warning dialog">Peidio â dangos y neges hon eto</string>
     <string name="title_activity_diagnostic" translation_description="Title bar text for the Diagnostics activity/screen">Diagnosteg</string>

@@ -158,17 +158,8 @@
     </string>
     <string name="warning_dialog_title" translation_description="Title of a warning dialog shown when something is wrong, e.g. a missing sensor">Άσχημα νέα!</string>
     <string name="missing_sensor_dialog_text" translation_description="Dialog message shown when the device appears to be missing the compass or accelerometer sensors needed for auto mode">
-    \n
-        Δυστυχώς η συσκευή σας πιθανόν δεν έχει κάποιον από
-    τους αισθητήρες που χρειάζεται το Sky Map.\n\n
-        Για να εμφανίσουμε τον ουρανό στην κατεύθυνση που δείχνει η συσκευή
-    σας, το Sky Map χρειάζεται και ενσωματωμένη πυξίδα και επιταχυνσιόμετρο. Φαίνεται πως ένα από
-        τα δύο λείπει από τη συσκευή σας. Τα καλά νέα είναι πως μερικές συσκευές
-        (για παράδειγμα μερικά κινητά Moto E) ενώ διαθέτουν πυξίδα αναφέρουν εσφαλμένα το αντίθετο.\n\n
-        
-        Εάν η συσκευή σας δεν διαθέτει κάποιον αισθητήρα τότε η αυτόματη λειτουργία δεν θα λειτουργεί.
-        Ωστόσο, μπορείτε ακόμη να χρησιμοποιήσετε το Sky Map σε αυτή τη συσκευή σε χειροκίνητη λειτουργία
-        όπου μετακινείτε, περιστρέφετε και εστιάζετε στον χάρτη με τα δάχτυλά σας.
+    Για να ακολουθήσει αυτόματα τα αστέρια καθώς κινείστε, το Sky Map χρειάζεται ένα ενσωματωμένο πυξίδα και επιταχυνσιόμετρο. Φαίνεται ότι η συσκευή σας δεν διαθέτει ένα από αυτά.
+        \nΜην ανησυχείτε! Μπορείτε ακόμα να εξερευνήσετε το σύμπαν σε Χειροκίνητη Λειτουργία. Απλώς χρησιμοποιήστε τα δάχτυλά σας για να σύρετε, να περιστρέψετε και να κάνετε ζουμ γύρω από τον νυχτερινό ουρανό με το δικό σας ρυθμό.
     </string>
     <string name="do_not_show_again" translation_description="Checkbox or button label to suppress future display of a warning dialog">Να μην εμφανιστεί ξανά αυτό το μήνυμα</string>
     <string name="title_activity_diagnostic" translation_description="Title bar text for the Diagnostics activity/screen">Διαγνωστικά</string>
@@ -261,4 +252,5 @@
     <string name="action_find_in_sky_map" translation_description="Button label that opens the star map and searches for the displayed object">Εύρεση</string>
     <string name="auto_level_horizon_on" translation_description="Toast message when auto-level horizon is enabled">Αυτόματη ευθυγράμμιση ορίζοντα ενεργή</string>
     <string name="auto_level_horizon_off" translation_description="Toast message when auto-level horizon is disabled">Αυτόματη ευθυγράμμιση ορίζοντα απενεργοποιημένη</string>
-</resources>
+
+    </resources>

@@ -156,11 +156,8 @@
     <string name="no_sensor_warning" translation_description="Warning shown when required orientation sensors are not detected on the device">دستگاه شما ممکن است فاقد سنسورهای جهت‌گیری باشد - ممکن است خودکار عمل نکند</string>
     <string name="warning_dialog_title" translation_description="Title of a warning dialog shown when something is wrong, e.g. a missing sensor">یه خبر بد!</string>
     <string name="missing_sensor_dialog_text" translation_description="Dialog message shown when the device appears to be missing the compass or accelerometer sensors needed for auto mode">
-    \n
-        متأسفانه دستگاه شما فاقد یکی از حسگرهای لازم برای برنامه است.\n\n
-		برای نمایش آسمان در افقی که گوشی شما به آن سمت گرفته شده؛ برنامه نیاز به قطب‌نما و شتاب‌سنج دارد که ظاهر گوشی شما فاقد یکی از آنهاست.
-		(هرچند برخی گوشی‌ها مثل سری E موتورولا ممکن است اشتباها فاقد حسگرها فوق تشخیص داده شود).\n\n
-		در گوشی‌های فاقد، حالت «خودکار» کار نمی‌کند و شما لازم است از حالت دستی استفاده کنید و با انگشتان‌تان، صفحه را به سمتی که می‌خواهید، حرکت دهید یا بچرخانید یا بزرگنمایی کنید.
+    برای دنبال کردن خودکار ستارگان هنگام حرکت، Sky Map به قطب‌نما و شتاب‌سنج داخلی نیاز دارد. به نظر می‌رسد دستگاه شما یکی از این‌ها را ندارد.
+ نگران نباشید! شما می‌توانید هنوز هم جهان را در حالت دستی کاوش کنید. فقط از انگشتان خود برای کشیدن، چرخش و بزرگ‌نمایی آسمان شب استفاده کنید.
     </string>
     <string name="do_not_show_again" translation_description="Checkbox or button label to suppress future display of a warning dialog">دیگر این پیام را نمایش نده</string>
     <string name="title_activity_diagnostic" translation_description="Title bar text for the Diagnostics activity/screen">عیب یابی</string>
@@ -243,4 +240,5 @@
     <string name="action_find_in_sky_map" translation_description="Button label that opens the star map and searches for the displayed object">یافتن</string>
     <string name="auto_level_horizon_on" translation_description="Toast message when auto-level horizon is enabled">افق خودکار روشن است</string>
     <string name="auto_level_horizon_off" translation_description="Toast message when auto-level horizon is disabled">افق خودکار خاموش است</string>
-</resources>
+
+    </resources>

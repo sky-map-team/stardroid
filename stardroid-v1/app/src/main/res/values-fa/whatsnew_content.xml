@@ -1,12 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>اشیاء مجازی</h2>
-<p>ماه‌های گالیله‌ای مشتری (ایو، اروپا، گانیمد و کالیستو) و ماه‌های مریخ فوبوس و دیموس اکنون قابل جستجو هستند با کارت‌های اطلاعات غنی و تصاویر ناسا — بدون اختلال در نقشه ستاره‌ای.</p>
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>کارت‌های اطلاعات بیشتر</h2>
+<p>ماه‌های گالیله‌ای مشتری (ایو، اروپا، گانیمد و کالیستو)، ماه‌های مریخ فوبوس و دیموس و دیگران اکنون با کارت‌های اطلاعات غنی و تصاویر ناسا قابل جستجو هستند.</p>
 <h2>کاتالوگ گسترش‌یافته</h2>
-<p>دهادهی اشیاء آسمان عمیق جدید اضافه شده‌اند — از جمله خوشه دوگانه، 47 توکانه، سحابی جمجمه برهنه و بیشتر — هر کدام با توضیحات، حقایق جالب و تصاویر.</p>
-<h2>جستجوی هوشمندتر</h2>
-<p>پوشش جستجو اکنون تأیید می‌کند که شما هدف خود را در مرکز قرار داده‌اید.</p>
-<h2>رفع اشکالات</h2>
-<ul><li>پیوندهای «همچنین ببینید» در گالری اکنون به درستی ناوبری می‌کنند.</li><li>گالری و کارت‌های اطلاعات به درستی در صفحات لبه‌به‌لبه اندروید 15+ نمایش داده می‌شوند.</li></ul>]]></string>
+<p>دهادهی اجرام آسمانی عمیق جدید اضافه شده‌اند — از جمله Double Cluster، 47 Tucanae، Exposed Cranium Nebula و بیشتر — هر کدام با توضیحات، حقایق جالب و تصاویر.</p>]]></string>
     </resources>
