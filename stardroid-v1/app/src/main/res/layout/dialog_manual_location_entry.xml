@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <EditText
+        android:id="@+id/manual_place_name_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/location_place_name_hint"
+        android:inputType="textCapWords"
+        android:imeOptions="actionSearch"
+        android:maxLines="1" />
+
+    <Button
+        android:id="@+id/manual_resolve_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:text="@string/location_resolve_button" />
+
+    <TextView
+        android:id="@+id/manual_place_error_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/status_bad"
+        android:visibility="gone" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginVertical="12dp"
+        android:background="?android:attr/listDivider" />
+
+    <EditText
+        android:id="@+id/manual_latitude_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/location_latitude_hint"
+        android:inputType="numberSigned|numberDecimal"
+        android:maxLines="1" />
+
+    <TextView
+        android:id="@+id/manual_latitude_error_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/status_bad"
+        android:visibility="gone" />
+
+    <EditText
+        android:id="@+id/manual_longitude_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/location_longitude_hint"
+        android:inputType="numberSigned|numberDecimal"
+        android:maxLines="1" />
+
+    <TextView
+        android:id="@+id/manual_longitude_error_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/status_bad"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/manual_set_location_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/location_set_button" />
+
+</LinearLayout>

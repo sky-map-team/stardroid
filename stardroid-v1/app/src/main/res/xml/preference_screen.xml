@@ -2,56 +2,6 @@
   xmlns:android="http://schemas.android.com/apk/res/android"
   android:key="stardroid.preferences">
 
-  <!-- Location Settings -->
-  <PreferenceCategory android:title="@string/location_prefs">
-    <CheckBoxPreference
-        android:defaultValue="false"
-        android:title="@string/force_gps_pref"
-        android:summary="@string/force_gps_pref_hint"
-        android:key="force_gps"/>
-    <CheckBoxPreference
-        android:defaultValue="false"
-        android:title="@string/no_use_gps_pref"
-        android:summary="@string/no_use_gps_pref_hint"
-        android:key="no_auto_locate"/>
-    <!-- Set the default location to Galileo's birthplace -->
-    <EditTextPreference
-        android:key="location"
-        android:layout="?android:attr/preferenceLayoutChild"
-        android:title="@string/location_placename"
-        android:summary="@string/location_placename_hint"
-        android:dependency="no_auto_locate"
-        android:defaultValue="" />
-    <EditTextPreference
-        android:key="latitude"
-        android:layout="?android:attr/preferenceLayoutChild"
-        android:title="@string/location_lat_pref"
-        android:dependency="no_auto_locate"
-        android:summary="@string/degrees"
-        android:inputType="number|numberSigned|numberDecimal"
-        android:defaultValue="0"/>
-    <EditTextPreference
-        android:key="longitude"
-        android:layout="?android:attr/preferenceLayoutChild"
-        android:title="@string/location_long_pref"
-        android:dependency="no_auto_locate"
-        android:summary="@string/degrees"
-        android:inputType="number|numberSigned|numberDecimal"
-        android:defaultValue="0"/>
-    <CheckBoxPreference
-        android:defaultValue="true"
-        android:title="@string/use_magnetic_correction"
-        android:key="use_magnetic_correction"/>
-    <EditTextPreference
-        android:key="manual_compass_adjustment"
-        android:layout="?android:attr/preferenceLayoutChild"
-        android:title="@string/manual_compass_adjustment_title"
-        android:summary="@string/manual_compass_adjustment_summary"
-        android:hint="@string/manual_compass_adjustment_summary"
-        android:inputType="numberSigned|numberDecimal"
-        android:defaultValue="0"/>
-  </PreferenceCategory>
-
   <!-- Controls Settings -->
   <PreferenceCategory android:title="@string/controls_prefs">
     <CheckBoxPreference
@@ -119,6 +69,18 @@
         android:title="@string/sensor_reverse_preference_title"
         android:summary="@string/sensor_reverse_preference_summary"
         android:key="reverse_magnetic_z"/>
+    <CheckBoxPreference
+        android:defaultValue="true"
+        android:title="@string/use_magnetic_correction"
+        android:key="use_magnetic_correction"/>
+    <EditTextPreference
+        android:key="manual_compass_adjustment"
+        android:layout="?android:attr/preferenceLayoutChild"
+        android:title="@string/manual_compass_adjustment_title"
+        android:summary="@string/manual_compass_adjustment_summary"
+        android:hint="@string/manual_compass_adjustment_summary"
+        android:inputType="numberSigned|numberDecimal"
+        android:defaultValue="0"/>
     <ListPreference
         android:key="viewing_direction"
         android:title="@string/rotate_horizon_preference_title"

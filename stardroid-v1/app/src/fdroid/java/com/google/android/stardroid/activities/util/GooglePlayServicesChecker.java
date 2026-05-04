@@ -1,12 +1,10 @@
 package com.google.android.stardroid.activities.util;
 
 import android.app.Activity;
-import androidx.fragment.app.FragmentManager;
 import android.content.SharedPreferences;
 import android.util.Log;
 
-import com.google.android.stardroid.activities.dialogs.LocationPermissionDeniedDialogFragment;
-import com.google.android.stardroid.control.LocationController;
+import com.google.android.stardroid.ApplicationConstants;
 
 import javax.inject.Inject;
 
@@ -16,9 +14,8 @@ import javax.inject.Inject;
 public class GooglePlayServicesChecker extends AbstractGooglePlayServicesChecker {
 
   @Inject
-  GooglePlayServicesChecker(Activity parent, SharedPreferences preferences,
-                            FragmentManager fragmentManager) {
-    super(parent, preferences, new LocationPermissionDeniedDialogFragment(), fragmentManager);
+  GooglePlayServicesChecker(Activity parent, SharedPreferences preferences) {
+    super(parent, preferences);
   }
 
   /**
@@ -30,10 +27,9 @@ public class GooglePlayServicesChecker extends AbstractGooglePlayServicesChecker
    */
   public void maybeCheckForGooglePlayServices() {
     Log.d(TAG, "Google Play Services check");
-    if (preferences.getBoolean(LocationController.NO_AUTO_LOCATE, false)) {
+    if (preferences.getBoolean(ApplicationConstants.NO_AUTO_LOCATE_PREF_KEY, false)) {
       Log.d(TAG, "Auto location disabled - not checking for GMS");
       return;
     }
-    super.checkLocationServicesEnabled();
   }
 }

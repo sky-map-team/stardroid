@@ -14,7 +14,9 @@
 
 package com.google.android.stardroid.activities;
 
+import android.Manifest;
 import android.app.SearchManager;
+import android.content.pm.PackageManager;
 import java.lang.ref.WeakReference;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -47,9 +49,12 @@ import android.widget.Toast;
 
 import android.app.ActionBar;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
 import androidx.annotation.VisibleForTesting;
+import androidx.core.app.ActivityCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -60,7 +65,11 @@ import com.google.android.stardroid.R;
 import com.google.android.stardroid.activities.dialogs.CreditsDialogFragment;
 import com.google.android.stardroid.activities.dialogs.EulaDialogFragment;
 import com.google.android.stardroid.activities.dialogs.HelpDialogFragment;
-import com.google.android.stardroid.activities.dialogs.LocationPermissionDeniedDialogFragment;
+import com.google.android.stardroid.activities.LocationManagementActivity;
+import com.google.android.stardroid.activities.dialogs.AcquiringLocationTimeoutDialogFragment;
+import com.google.android.stardroid.activities.dialogs.LocationPermissionPermanentlyDeniedDialogFragment;
+import com.google.android.stardroid.activities.dialogs.LocationPermissionRationaleDialogFragment;
+import com.google.android.stardroid.activities.dialogs.ManualLocationEntryDialogFragment;
 import com.google.android.stardroid.activities.dialogs.MultipleSearchResultsDialogFragment;
 import com.google.android.stardroid.activities.dialogs.SearchResultItem;
 import com.google.android.stardroid.activities.dialogs.NoSearchResultsDialogFragment;
@@ -79,6 +88,7 @@ import com.google.android.stardroid.control.AstronomerModel;
 import com.google.android.stardroid.control.AstronomerModel.Pointing;
 import com.google.android.stardroid.control.ControllerGroup;
 import com.google.android.stardroid.control.LocationController;
+import com.google.android.stardroid.control.LocationState;
 import com.google.android.stardroid.control.MagneticDeclinationCalculatorSwitcher;
 import com.google.android.stardroid.control.TransitioningCompositeClock;
 import com.google.android.stardroid.education.ObjectInfo;
@@ -259,6 +269,9 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
 
   // A list of runnables to post on the handler when we resume.
   private final List<Runnable> onResumeRunnables = new ArrayList<>();
+  private LocationController.LocationStateCallback locationStateListener;
+
+  private ActivityResultLauncher<String> locationPermissionLauncher;
 
   // We need to maintain references to these objects to keep them from
   // getting gc'd.
@@ -276,6 +289,20 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
   @Override
   public void onCreate(Bundle icicle) {
     Log.d(TAG, "onCreate at " + System.currentTimeMillis());
+
+    locationPermissionLauncher = registerForActivityResult(
+        new ActivityResultContracts.RequestPermission(),
+        granted -> {
+          LocationController lc = controller.getLocationController();
+          if (granted) {
+            lc.startAuto();
+          } else {
+            lc.onPermissionDenied(
+                ActivityCompat.shouldShowRequestPermissionRationale(
+                    this, Manifest.permission.ACCESS_COARSE_LOCATION));
+          }
+        });
+
     super.onCreate(icicle);
 
     sharedPreferences.registerOnSharedPreferenceChangeListener(this);
@@ -292,12 +319,10 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
     // to do it at API level 19.
     // getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
 
-    // Eventually we should check at the point of use, but this will do for now. If
-    // the
-    // user revokes the permission later then odd things may happen.
     playServicesChecker.maybeCheckForGooglePlayServices();
 
     initializeModelViewController();
+    wireLocationController();
     checkForSensorsAndMaybeWarn();
 
     // Search related
@@ -592,6 +617,8 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
       Log.d(TAG, "Settings");
       menuEventBundle.putString(Analytics.MENU_ITEM_EVENT_VALUE, Analytics.SETTINGS_OPENED_LABEL);
       startActivity(new Intent(this, EditSettingsActivity.class));
+    } else if (itemId == R.id.menu_item_location) {
+      startActivity(new Intent(this, LocationManagementActivity.class));
     } else if (itemId == R.id.menu_item_credits) {
       Log.d(TAG, "Credits");
       menuEventBundle.putString(Analytics.MENU_ITEM_EVENT_VALUE, Analytics.CREDITS_OPENED_LABEL);
@@ -709,6 +736,8 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
     skyView.onResume();
     Log.i(TAG, "Starting controller");
     controller.start();
+    controller.getLocationController().addStateListener(locationStateListener);
+    checkLocationPermissionOnResume();
     maybeShowLocationWarning();
     activityLightLevelManager.onResume();
     if (controller.isAutoMode()) {
@@ -720,25 +749,81 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
     Log.d(TAG, "-onResume at " + System.currentTimeMillis());
   }
 
+  private void wireLocationController() {
+    LocationController lc = controller.getLocationController();
+    locationStateListener = state -> {
+      if (state instanceof LocationState.AcquiringTimeout) {
+        AcquiringLocationTimeoutDialogFragment dlg =
+            AcquiringLocationTimeoutDialogFragment.newInstance();
+        dlg.setOnKeepWaiting(() -> lc.keepWaiting());
+        dlg.setOnEnterManually(() -> showManualEntryDialog(lc));
+        showDialog(dlg, AcquiringLocationTimeoutDialogFragment.class.getSimpleName());
+      } else if (state instanceof LocationState.PermissionDenied) {
+        LocationPermissionRationaleDialogFragment dlg =
+            LocationPermissionRationaleDialogFragment.newInstance();
+        dlg.setOnGrant(() -> locationPermissionLauncher.launch(Manifest.permission.ACCESS_COARSE_LOCATION));
+        dlg.setOnEnterManually(() -> showManualEntryDialog(lc));
+        dlg.setOnLater(null);
+        showDialog(dlg, LocationPermissionRationaleDialogFragment.class.getSimpleName());
+      } else if (state instanceof LocationState.PermissionPermanentlyDenied) {
+        LocationPermissionPermanentlyDeniedDialogFragment dlg =
+            LocationPermissionPermanentlyDeniedDialogFragment.newInstance();
+        dlg.setOnEnterManually(() -> showManualEntryDialog(lc));
+        showDialog(dlg, LocationPermissionPermanentlyDeniedDialogFragment.class.getSimpleName());
+      } else if (state instanceof LocationState.HardwareUnavailable) {
+        showManualEntryDialog(lc);
+      }
+    };
+  }
+
+  private void showManualEntryDialog(LocationController lc) {
+    LocationState state = lc.currentState();
+    float lat = Float.NaN, lon = Float.NaN;
+    String name = "";
+    if (state instanceof LocationState.Confirmed) {
+      LocationState.Confirmed confirmed = (LocationState.Confirmed) state;
+      lat = confirmed.getLocation().getLatitude();
+      lon = confirmed.getLocation().getLongitude();
+    }
+    showDialog(ManualLocationEntryDialogFragment.newInstance(lat, lon, name),
+        ManualLocationEntryDialogFragment.class.getSimpleName());
+  }
+
+  private void checkLocationPermissionOnResume() {
+    LocationController lc = controller.getLocationController();
+    LocationState state = lc.currentState();
+    if (state instanceof LocationState.Confirmed
+        && ((LocationState.Confirmed) state).getSource() ==
+            com.google.android.stardroid.control.LocationSource.AUTO) {
+      if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION)
+          != PackageManager.PERMISSION_GRANTED) {
+        lc.onPermissionRevoked();
+      }
+    }
+  }
+
+  private void startLocationFlow() {
+    if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION)
+        == PackageManager.PERMISSION_GRANTED) {
+      controller.getLocationController().startAuto();
+    } else if (!sharedPreferences.getBoolean(ApplicationConstants.NO_AUTO_LOCATE_PREF_KEY, false)) {
+      LocationPermissionRationaleDialogFragment dlg =
+          LocationPermissionRationaleDialogFragment.newInstance();
+      LocationController lc = controller.getLocationController();
+      dlg.setOnGrant(() -> locationPermissionLauncher.launch(Manifest.permission.ACCESS_COARSE_LOCATION));
+      dlg.setOnEnterManually(() -> showManualEntryDialog(lc));
+      dlg.setOnLater(null);
+      showDialog(dlg, LocationPermissionRationaleDialogFragment.class.getSimpleName());
+    }
+  }
+
   private void maybeShowLocationWarning() {
     LocationController locationController = controller.getLocationController();
-    if (!locationController.isLocationUnset())
-      return;
+    LocationState state = locationController.currentState();
 
-    LocationController.LocationStatus status = locationController.getLastStatus();
-    String message;
-
-    if (status == LocationController.LocationStatus.PERMISSION_DENIED) {
-      message = getString(R.string.location_warning_permission);
-      showDialog(LocationPermissionDeniedDialogFragment.newInstance(),
-          LocationPermissionDeniedDialogFragment.class.getSimpleName());
-    } else if (status == LocationController.LocationStatus.MANUAL_NO_COORDS) {
-      message = getString(R.string.location_warning_manual);
-    } else {
-      return;
+    if (state instanceof LocationState.Unset || state instanceof LocationState.PermissionDenied) {
+      startLocationFlow();
     }
-
-    Toast.makeText(this, message, Toast.LENGTH_LONG).show();
   }
 
   public void setTimeTravelMode(Date newTime) {
@@ -845,6 +930,7 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
       handler.removeCallbacks(runnable);
     }
     activityLightLevelManager.onPause();
+    controller.getLocationController().removeStateListener(locationStateListener);
     controller.stop();
     skyView.onPause();
     wakeLock.release();
@@ -1316,10 +1402,6 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
   public void onRequestPermissionsResult(int requestCode,
       String[] permissions,
       int[] grantResults) {
-    if (requestCode == GOOGLE_PLAY_SERVICES_REQUEST_LOCATION_PERMISSION_CODE) {
-      playServicesChecker.runAfterPermissionsCheck(requestCode, permissions, grantResults);
-      return;
-    }
-    Log.w(TAG, "Unhandled request permissions result");
+    Log.w(TAG, "Unhandled request permissions result: " + requestCode);
   }
 }

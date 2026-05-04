@@ -98,6 +98,11 @@
         <activity android:name=".activities.CompassCalibrationActivity"
                   android:launchMode="singleTop">
         </activity>
+
+        <activity
+            android:name=".activities.LocationManagementActivity"
+            android:exported="false"
+            android:label="@string/location_management_title" />
     </application>
 
 </manifest>

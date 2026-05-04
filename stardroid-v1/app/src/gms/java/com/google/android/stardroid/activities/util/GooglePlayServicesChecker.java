@@ -1,7 +1,6 @@
 package com.google.android.stardroid.activities.util;
 
 import android.app.Activity;
-import androidx.fragment.app.FragmentManager;
 import android.content.SharedPreferences;
 import android.util.Log;
 import android.widget.Toast;
@@ -10,8 +9,7 @@ import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.activities.DynamicStarMapActivity;
-import com.google.android.stardroid.activities.dialogs.LocationPermissionDeniedDialogFragment;
-import com.google.android.stardroid.control.LocationController;
+import com.google.android.stardroid.ApplicationConstants;
 
 import javax.inject.Inject;
 
@@ -23,9 +21,8 @@ public class GooglePlayServicesChecker extends AbstractGooglePlayServicesChecker
 
   @Inject
   GooglePlayServicesChecker(Activity parent, SharedPreferences preferences,
-                            GoogleApiAvailability apiAvailability,
-                            FragmentManager fragmentManager) {
-    super(parent, preferences, new LocationPermissionDeniedDialogFragment(), fragmentManager);
+                            GoogleApiAvailability apiAvailability) {
+    super(parent, preferences);
     this.apiAvailability = apiAvailability;
   }
 
@@ -38,7 +35,7 @@ public class GooglePlayServicesChecker extends AbstractGooglePlayServicesChecker
    */
   public void maybeCheckForGooglePlayServices() {
     Log.d(TAG, "Google Play Services check");
-    if (preferences.getBoolean(LocationController.NO_AUTO_LOCATE, false)) {
+    if (preferences.getBoolean(ApplicationConstants.NO_AUTO_LOCATE_PREF_KEY, false)) {
       Log.d(TAG, "Auto location disabled - not checking for GMS");
       return;
     }
@@ -58,6 +55,5 @@ public class GooglePlayServicesChecker extends AbstractGooglePlayServicesChecker
         Toast.makeText(parent, R.string.play_services_error, Toast.LENGTH_LONG).show();
       }
     }
-    super.checkLocationServicesEnabled();
   }
 }

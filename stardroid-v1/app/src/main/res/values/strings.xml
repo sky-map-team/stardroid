@@ -36,6 +36,33 @@
     <string name="location_not_found" translation_description="dialog message when placename not found">%s not found.</string>
     <string name="location_long_lat" translation_description="Formatted display of longitude and latitude. %1$.2f is longitude, %2$.2f is latitude">Longitude:%1$.2f, Latitude:%2$.2f</string>
     <string name="location_place_found" translation_description="Status message when a place name was successfully looked up. %1$f is latitude, %2$f is longitude">Place found. Setting latitude %1$f and longitude %2$f</string>
+    <string name="location_acquiring_title" translation_description="Title of dialog shown while acquiring the user\'s location automatically">Finding your location…</string>
+    <string name="location_acquiring_message" translation_description="Body text of dialog shown while Sky Map is waiting to acquire the device GPS or network location">Still trying to find your location…</string>
+    <string name="location_keep_waiting" translation_description="Button to keep waiting for an automatic location fix">Keep Waiting</string>
+    <string name="location_permanently_denied_title" translation_description="Title of dialog shown when location permission was permanently denied by the user">Permission Required</string>
+    <string name="location_permanently_denied_message" translation_description="Body text explaining that location permission was permanently denied and how to fix it">Location permission was permanently denied. Open App Settings to re-enable it.</string>
+    <string name="location_open_settings" translation_description="Button that opens the system app settings page so the user can re-grant location permission">Open App Settings</string>
+    <string name="location_manual_entry_title" translation_description="Title of the dialog where the user types their location manually">Enter Your Location</string>
+    <string name="location_place_name_hint" translation_description="Placeholder text in the place name input field">City or place name</string>
+    <string name="location_latitude_hint" translation_description="Placeholder text in the latitude input field">Latitude (e.g. 51.5)</string>
+    <string name="location_longitude_hint" translation_description="Placeholder text in the longitude input field">Longitude (e.g. -0.1)</string>
+    <string name="location_resolve_button" translation_description="Button that looks up coordinates for a typed place name">Resolve</string>
+    <string name="location_set_button" translation_description="Button that confirms and applies the manually entered location">Set Location</string>
+    <string name="location_place_not_found" translation_description="Inline error shown when a place name search returns no results">Place not found — try a more specific name</string>
+    <string name="location_geocoder_offline" translation_description="Inline message shown when geocoding fails because there is no internet connection">No internet — enter coordinates directly</string>
+    <string name="location_invalid_latitude" translation_description="Validation error for latitude values outside the valid range">Latitude must be between −90 and 90</string>
+    <string name="location_invalid_longitude" translation_description="Validation error for longitude values outside the valid range">Longitude must be between −180 and 180</string>
+    <string name="location_management_title" translation_description="Title of the location management screen">Your Location</string>
+    <string name="location_source_auto" translation_description="Label shown when the device is determining location automatically">Automatic</string>
+    <string name="location_source_manual" translation_description="Label shown when the user has manually entered their location">Manual</string>
+    <string name="location_source_acquiring" translation_description="Label shown while waiting for the first automatic location fix">Acquiring…</string>
+    <string name="location_source_unset" translation_description="Label shown when no location has been set">No location set</string>
+    <string name="location_source_hardware_unavailable" translation_description="Label shown when the device has no location hardware">Location unavailable on this device</string>
+    <string name="location_switch_to_auto" translation_description="Button to switch from manual location to automatic detection">Use Automatic Location</string>
+    <string name="location_switch_to_manual" translation_description="Button to switch from automatic to manual location entry">Enter Location Manually</string>
+    <string name="location_change" translation_description="Button to change or update the manually entered location">Change Location</string>
+    <string name="location_map_no_location" translation_description="Message shown in the map area when no location is set">No location set — tap below to add one</string>
+    <string name="location_map_acquiring" translation_description="Message shown in the map area while waiting for a GPS fix">Acquiring location…</string>
     <string name="use_magnetic_correction" translation_description="Preference label: apply magnetic declination correction so the compass points to true north instead of magnetic north">Use magnetic correction</string>
     <string name="manual_compass_adjustment_title" translation_description="Preference title: lets the user add a manual degree offset to the compass reading">Additional compass adjustment</string>
     <string name="manual_compass_adjustment_summary" translation_description="Summary for the manual compass adjustment preference">Extra offset in degrees (+ or −) added to compass reading</string>
