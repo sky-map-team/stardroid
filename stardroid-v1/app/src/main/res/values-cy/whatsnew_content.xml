@@ -2,7 +2,7 @@
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
     <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Cardiau gwybodaeth mwy</h2>
-<p>Lleuadau Galilean Iau (Io, Europa, Ganymede a Callisto), lleuadau Mawrth Phobos a Deimos ac eraill bellach yn chwiliadwy gyda cardiau gwybodaeth cyfoethog ac iamgery NASA.</p>
+&lt;p&gt;Lleuadau Galilean Iau (Io, Europa, Ganymede a Callisto), lleuadau Mawrth Phobos a Deimos ac eraill bellach yn chwiliadwy gyda cardiau gwybodaeth cyfoethog ac imagery NASA.&lt;/p&gt;
 <h2>Catalog Ehangu</h2>
 <p>Degau o wrthrychau awyr ddofn newydd wedi\'u hychwanegu — gan gynnwys y Double Cluster, 47 Tucanae, y Nebula Penglog Noeth a mwy — pob un gyda disgrifiadau, ffeithiau difyr ac arluniau.</p>]]></string>
     </resources>
