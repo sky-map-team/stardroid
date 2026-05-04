@@ -158,7 +158,7 @@
     </string>
     <string name="warning_dialog_title" translation_description="Title of a warning dialog shown when something is wrong, e.g. a missing sensor">Zlé správy!</string>
     <string name="missing_sensor_dialog_text" translation_description="Dialog message shown when the device appears to be missing the compass or accelerometer sensors needed for auto mode">
-    Aby Sky Map automaticky sledoval hviezdy pri vašom pohybe, potrebuje vstavanú kompas a akcelerometer. Zdá sa, že vášmu zariadeniu chýba jeden z nich.
+Aby Sky Map automaticky sledoval hviezdy pri vašom pohybe, potrebuje vstavaný kompas a akcelerometer. Zdá sa, že vášmu zariadeniu chýba jeden z nich.
         \nNe strácajte nádej! Vesmír si môžete stále prehliadať v režime Manuálny. Stačí použiť prsty na ťahanie, otáčanie a priblíženie nočnej oblohy vlastným tempom.
     </string>
     <string name="do_not_show_again" translation_description="Checkbox or button label to suppress future display of a warning dialog">Túto správu viac nezobrazovať</string>
