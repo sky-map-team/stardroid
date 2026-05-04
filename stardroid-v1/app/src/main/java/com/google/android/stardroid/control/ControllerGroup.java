@@ -46,12 +46,12 @@ public class ControllerGroup implements Controller {
   private TeleportingController teleportingController;
   private boolean usingAutoMode = true;
   private AstronomerModel model;
-  private LocationController locationController;
+  private com.google.android.stardroid.control.LocationController locationController;
 
   // TODO(jontayler): inject everything else.
   @Inject
   ControllerGroup(SensorOrientationController sensorOrientationController,
-                  LocationController locationController) {
+                  com.google.android.stardroid.control.LocationController locationController) {
     this.locationController = locationController;
     addController(locationController);
     this.sensorOrientationController = sensorOrientationController;
@@ -137,7 +137,7 @@ public class ControllerGroup implements Controller {
     return usingAutoMode;
   }
 
-  public LocationController getLocationController() {
+  public com.google.android.stardroid.control.LocationController getLocationController() {
     return locationController;
   }
 

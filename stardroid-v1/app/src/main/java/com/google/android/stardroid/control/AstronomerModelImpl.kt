@@ -73,7 +73,7 @@ class AstronomerModelImpl(magneticDeclinationCalculator: MagneticDeclinationCalc
     private var magneticDeclinationCalculator: MagneticDeclinationCalculator? = null
     private var autoUpdatePointing = true
     private var fieldOfView = 45f // Degrees
-    private var location = LatLong(0f, 0f)
+    private var location = LatLong(90f, 0f)
     private var clock: Clock = RealClock()
     private var celestialCoordsLastUpdated: Long = -1
 

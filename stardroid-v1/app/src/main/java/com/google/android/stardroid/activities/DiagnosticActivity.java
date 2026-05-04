@@ -34,6 +34,7 @@ import com.google.android.stardroid.activities.util.EdgeToEdgeFixer;
 import com.google.android.stardroid.activities.util.SensorAccuracyDecoder;
 import com.google.android.stardroid.control.AstronomerModel;
 import com.google.android.stardroid.control.LocationController;
+import com.google.android.stardroid.control.LocationState;
 import com.google.android.stardroid.math.LatLong;
 import com.google.android.stardroid.math.Vector3;
 import com.google.android.stardroid.util.Analytics;
@@ -190,9 +191,15 @@ public class DiagnosticActivity extends androidx.fragment.app.FragmentActivity
       gpsStatusMessage = getString(R.string.permission_disabled);
     }
     setText(R.id.diagnose_gps_status_txt, gpsStatusMessage);
-    LatLong currentLocation = locationController.getCurrentLocation();
-    String locationMessage = currentLocation.getLatitude() + ", " + currentLocation.getLongitude();
-    // Current provider not working    + " (" + locationController.getCurrentProvider() + ")";
+    LocationState locationState = locationController.currentState();
+    String locationMessage;
+    if (locationState instanceof LocationState.Confirmed) {
+      LatLong loc = ((LocationState.Confirmed) locationState).getLocation();
+      locationMessage = loc.getLatitude() + ", " + loc.getLongitude()
+          + " (" + ((LocationState.Confirmed) locationState).getSource().name().toLowerCase() + ")";
+    } else {
+      locationMessage = locationState.getClass().getSimpleName();
+    }
     setText(R.id.diagnose_location_txt, locationMessage);
   }
 

@@ -6,11 +6,6 @@
   <PreferenceCategory android:title="@string/location_prefs">
     <CheckBoxPreference
         android:defaultValue="false"
-        android:title="@string/force_gps_pref"
-        android:summary="@string/force_gps_pref_hint"
-        android:key="force_gps"/>
-    <CheckBoxPreference
-        android:defaultValue="false"
         android:title="@string/no_use_gps_pref"
         android:summary="@string/no_use_gps_pref_hint"
         android:key="no_auto_locate"/>

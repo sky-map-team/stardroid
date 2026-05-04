@@ -43,6 +43,11 @@
           android:showAsAction="ifRoom"
           android:icon="@android:drawable/ic_menu_preferences"/>
 
+    <item android:id="@+id/menu_item_location"
+          android:orderInCategory="5"
+          android:title="@string/location_management_title"
+          android:showAsAction="never"/>
+
     <!-- People don't always understand the swirly icon
         in the action bar -->
     <item android:id="@+id/menu_item_time2"

@@ -78,4 +78,8 @@ object ApplicationConstants {
   // Feature flags
   /** Set to true to enable the warm welcome onboarding flow. */
   const val WARM_WELCOME_ENABLED = false
+
+  // Location
+  const val LOCATION_UPDATE_MIN_DISTANCE_METRES = 2000f
+  const val LOCATION_ACQUIRING_TIMEOUT_MS = 30_000L
 }
