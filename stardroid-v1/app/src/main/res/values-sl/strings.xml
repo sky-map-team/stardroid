@@ -158,7 +158,7 @@
     </string>
     <string name="warning_dialog_title" translation_description="Title of a warning dialog shown when something is wrong, e.g. a missing sensor">Slabe novice!</string>
     <string name="missing_sensor_dialog_text" translation_description="Dialog message shown when the device appears to be missing the compass or accelerometer sensors needed for auto mode">
-    Za samodejno sledenje zvezd med premikanjem potrebuje Sky Map vgrajeni kompas in pospeškomter. Izgleda, da vaša naprava nima enega od teh.
+Za samodejno sledenje zvezd med premikanjem potrebuje Sky Map vgrajeni kompas in pospeškometer. Izgleda, da vaša naprava nima enega od teh.
         \nNe skrbite! Vesolje lahko še vedno raziskujete v ročnem načinu. Samo uporabite prste za vlečenje, vrtenje in povečavo nočnega neba po lastnem tempu.
     </string>
     <string name="do_not_show_again" translation_description="Checkbox or button label to suppress future display of a warning dialog">Ne prikaži tega sporočila več</string>
