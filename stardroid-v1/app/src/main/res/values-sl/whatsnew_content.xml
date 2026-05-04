@@ -2,7 +2,7 @@
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
     <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Več informacijskih kartic</h2>
-<p>Galilejevi luni Jupitra (Io, Evropa, Ganimed in Kalisto), Marsovi luni Fobos in Deimos in drugi so sedaj iskalni z bogatimi informacijskimi karticami in NASA-jevimi slikami.</p>
+&lt;p&gt;Galilejeve lune Jupitra (Io, Evropa, Ganimed in Kalisto), Marsovi luni Fobos in Deimos in drugi so sedaj iskalni z bogatimi informacijskimi karticami in NASA-jevimi slikami.&lt;/p&gt;
 <h2>Razširjeni katalog</h2>
 <p>Dodane so ducat novih globokih nebesnih objektov — vključno z Dvojno kopico, 47 Tucanae, Meglo izpostavljenega lobanje in drugimi — vsak z opisi, zabavnimi dejstvi in slikami.</p>]]></string>
     </resources>
