@@ -53,4 +53,5 @@ Use the `/skymap.add_object` skill — it handles all steps automatically.
 
 ## Architecture Constraints
 - **No Material Snackbar** — use `Toast` instead. The app's `FullscreenTheme` is AppCompat-only and missing `?attr/colorOnSurface`; inflating a Material `Snackbar` crashes at runtime.
+- [Don't confuse "pull and merge" with merging a PR](feedback_pull_and_merge.md) — "pull and merge" means git pull; only merge PRs to master on explicit instruction
 
