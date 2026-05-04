@@ -1,14 +1,19 @@
 package com.google.android.stardroid.control
 
+import android.Manifest
 import android.app.Activity
 import android.content.SharedPreferences
+import android.location.Geocoder
 import android.os.Handler
 import android.os.Looper
 import android.widget.Toast
+import androidx.core.app.ActivityCompat
+import androidx.core.content.PermissionChecker
 import com.google.android.stardroid.ApplicationConstants
 import com.google.android.stardroid.math.LatLong
 import com.google.android.stardroid.base.VisibleForTesting
 import dagger.hilt.android.scopes.ActivityScoped
+import java.util.Locale
 import javax.inject.Inject
 
 @ActivityScoped
@@ -41,10 +46,11 @@ class LocationController @Inject constructor(
     override fun start() {
         if (!enabled) return
         val noAutoLocate = preferences.getBoolean(ApplicationConstants.NO_AUTO_LOCATE_PREF_KEY, false)
-        if (noAutoLocate) {
-            loadManualLocation()
-        } else {
-            startAuto()
+        when {
+            noAutoLocate -> loadManualLocation()
+            ActivityCompat.checkSelfPermission(activity, Manifest.permission.ACCESS_COARSE_LOCATION)
+                == PermissionChecker.PERMISSION_GRANTED -> startAuto()
+            else -> transitionTo(LocationState.Unset)
         }
     }
 
@@ -186,8 +192,21 @@ class LocationController @Inject constructor(
     }
 
     private fun showLocationToast(location: LatLong) {
-        val msg = "%.2f°, %.2f°".format(location.latitude, location.longitude)
-        Toast.makeText(activity, msg, Toast.LENGTH_SHORT).show()
+        Thread {
+            val name = tryReverseGeocode(location)
+            val msg = name ?: "%.4f°, %.4f°".format(location.latitude, location.longitude)
+            handler.post { Toast.makeText(activity, msg, Toast.LENGTH_SHORT).show() }
+        }.start()
+    }
+
+    @Suppress("DEPRECATION")
+    private fun tryReverseGeocode(location: LatLong): String? = try {
+        Geocoder(activity, Locale.getDefault())
+            .getFromLocation(location.latitude.toDouble(), location.longitude.toDouble(), 1)
+            ?.firstOrNull()
+            ?.let { it.locality ?: it.subAdminArea ?: it.adminArea ?: it.countryName }
+    } catch (_: Exception) {
+        null
     }
 
     override fun setEnabled(enabled: Boolean) {

@@ -5,6 +5,7 @@ import static com.google.android.stardroid.math.CoordinateManipulationsKt.getRaO
 
 import android.Manifest;
 import android.app.Activity;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import com.google.android.stardroid.activities.util.NightModeHelper;
@@ -26,6 +27,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.google.android.stardroid.ApplicationConstants;
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.StardroidApplication;
 import com.google.android.stardroid.activities.util.ActivityLightLevelChanger;
@@ -33,8 +35,6 @@ import com.google.android.stardroid.activities.util.ActivityLightLevelManager;
 import com.google.android.stardroid.activities.util.EdgeToEdgeFixer;
 import com.google.android.stardroid.activities.util.SensorAccuracyDecoder;
 import com.google.android.stardroid.control.AstronomerModel;
-import com.google.android.stardroid.control.LocationController;
-import com.google.android.stardroid.control.LocationState;
 import com.google.android.stardroid.math.LatLong;
 import com.google.android.stardroid.math.Vector3;
 import com.google.android.stardroid.util.Analytics;
@@ -66,7 +66,7 @@ public class DiagnosticActivity extends androidx.fragment.app.FragmentActivity
   @Inject @Nullable SensorManager sensorManager;
   @Inject @Nullable ConnectivityManager connectivityManager;
   @Inject @Nullable LocationManager locationManager;
-  @Inject LocationController locationController;
+  @Inject SharedPreferences sharedPreferences;
   @Inject AstronomerModel model;
   @Inject Handler handler;
   @Inject SensorAccuracyDecoder sensorAccuracyDecoder;
@@ -191,14 +191,16 @@ public class DiagnosticActivity extends androidx.fragment.app.FragmentActivity
       gpsStatusMessage = getString(R.string.permission_disabled);
     }
     setText(R.id.diagnose_gps_status_txt, gpsStatusMessage);
-    LocationState locationState = locationController.currentState();
+    boolean noAutoLocate = sharedPreferences.getBoolean(ApplicationConstants.NO_AUTO_LOCATE_PREF_KEY, false);
+    String latStr = sharedPreferences.getString("latitude", "");
+    String lonStr = sharedPreferences.getString("longitude", "");
     String locationMessage;
-    if (locationState instanceof LocationState.Confirmed) {
-      LatLong loc = ((LocationState.Confirmed) locationState).getLocation();
-      locationMessage = loc.getLatitude() + ", " + loc.getLongitude()
-          + " (" + ((LocationState.Confirmed) locationState).getSource().name().toLowerCase() + ")";
+    if (latStr != null && !latStr.isEmpty() && lonStr != null && !lonStr.isEmpty()) {
+      locationMessage = latStr + "°, " + lonStr + "° (" + (noAutoLocate ? "manual" : "auto") + ")";
+    } else if (!noAutoLocate) {
+      locationMessage = getString(R.string.location_source_acquiring);
     } else {
-      locationMessage = locationState.getClass().getSimpleName();
+      locationMessage = getString(R.string.location_source_unset);
     }
     setText(R.id.diagnose_location_txt, locationMessage);
   }

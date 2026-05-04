@@ -46,6 +46,7 @@
     <item android:id="@+id/menu_item_location"
           android:orderInCategory="5"
           android:title="@string/location_management_title"
+          android:icon="@drawable/ic_location"
           android:showAsAction="never"/>
 
     <!-- People don't always understand the swirly icon

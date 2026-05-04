@@ -89,15 +89,10 @@ class LocationManagementActivity : FragmentActivity() {
                 == PackageManager.PERMISSION_GRANTED
             ) {
                 locationController.switchToAuto()
-            } else if (ActivityCompat.shouldShowRequestPermissionRationale(
-                    this, Manifest.permission.ACCESS_COARSE_LOCATION
-                )
-            ) {
-                showRationaleDialog()
             } else if (state is LocationState.PermissionPermanentlyDenied) {
                 showPermDeniedDialog()
             } else {
-                permissionLauncher.launch(Manifest.permission.ACCESS_COARSE_LOCATION)
+                showRationaleDialog()
             }
         } else {
             // Switch to manual
