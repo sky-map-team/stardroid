@@ -64,7 +64,6 @@ import com.google.android.stardroid.activities.dialogs.LocationPermissionDeniedD
 import com.google.android.stardroid.activities.dialogs.MultipleSearchResultsDialogFragment;
 import com.google.android.stardroid.activities.dialogs.SearchResultItem;
 import com.google.android.stardroid.activities.dialogs.NoSearchResultsDialogFragment;
-import com.google.android.stardroid.activities.dialogs.NoSensorsDialogFragment;
 import com.google.android.stardroid.activities.dialogs.ObjectInfoDialogFragment;
 import com.google.android.stardroid.activities.dialogs.TimeTravelDialogFragment;
 import com.google.android.stardroid.activities.util.ActivityLightLevelChanger.NightModeable;
@@ -447,7 +446,7 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
     NightModeHelper.tintMenuIcons(menu, nightMode, this);
     MenuItem tutorialItem = menu.findItem(R.id.menu_item_tutorial);
     if (tutorialItem != null) {
-      tutorialItem.setVisible(ApplicationConstants.WARM_WELCOME_ENABLED);
+      tutorialItem.setVisible(true);
     }
     return result;
   }
@@ -483,13 +482,8 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
           .getBoolean(ApplicationConstants.NO_WARN_ABOUT_MISSING_SENSORS, false)) {
         Log.d(TAG, "showing no sensor warning");
         analytics.trackEvent(AnalyticsInterface.NO_SENSORS_WARNING_EVENT, null);
-        if (ApplicationConstants.WARM_WELCOME_ENABLED) {
-          Toast.makeText(DynamicStarMapActivity.this, R.string.no_sensor_warning,
-              Toast.LENGTH_LONG).show();
-        } else {
-          showDialog(NoSensorsDialogFragment.newInstance(),
-              NoSensorsDialogFragment.class.getSimpleName());
-        }
+        Toast.makeText(DynamicStarMapActivity.this, R.string.no_sensor_warning,
+            Toast.LENGTH_LONG).show();
       }
       // Always force manual mode on devices that lack necessary sensors.
       sharedPreferences.edit()
@@ -602,12 +596,10 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
       showDialog(HelpDialogFragment.newInstance(), HelpDialogFragment.class.getSimpleName());
     } else if (itemId == R.id.menu_item_tutorial) {
       Log.d(TAG, "Tutorial");
-      if (ApplicationConstants.WARM_WELCOME_ENABLED) {
-        menuEventBundle.putString(Analytics.MENU_ITEM_EVENT_VALUE, "tutorial_opened");
-        Intent intent = new Intent(this, WarmWelcomeActivity.class);
-        intent.putExtra("is_manual_invocation", true);
-        startActivity(intent);
-      }
+      menuEventBundle.putString(Analytics.MENU_ITEM_EVENT_VALUE, "tutorial_opened");
+      Intent intent = new Intent(this, WarmWelcomeActivity.class);
+      intent.putExtra("is_manual_invocation", true);
+      startActivity(intent);
     } else if (itemId == R.id.menu_item_dim) {
       Log.d(TAG, "Toggling nightmode");
       nightMode = !nightMode;
