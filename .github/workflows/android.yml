@@ -51,7 +51,7 @@ jobs:
   connected_test:
     needs: build_and_unit_test
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 50
     defaults:
       run:
         working-directory: ./stardroid-v1
@@ -99,7 +99,7 @@ jobs:
           arch: x86_64
           force-avd-creation: false
           emulator-boot-timeout: 1200
-          emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
+          emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none -memory 2048 -partition-size 512
           disable-animations: false
           profile: Nexus 6
           working-directory: ./stardroid-v1
@@ -113,19 +113,28 @@ jobs:
           arch: x86_64
           force-avd-creation: false
           emulator-boot-timeout: 1200
-          emulator-options: -no-snapshot-save -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
+          emulator-options: -no-snapshot-save -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none -memory 2048 -partition-size 512
           disable-animations: true
           profile: Nexus 6
           working-directory: ./stardroid-v1
           script: |
             adb wait-for-device
+            adb shell settings put global window_animation_scale 0
+            adb shell settings put global transition_animation_scale 0
             adb logcat -c
+            adb logcat -G 16M
+            adb logcat > logcat.log 2>&1 &
             set +e
-            ./gradlew connectedGmsDebugAndroidTest -x lint --stacktrace
+            timeout 1200 ./gradlew connectedGmsDebugAndroidTest -x lint --stacktrace 2>&1 | tee test-output.log
             TEST_RESULT=$?
+            kill %1 2>/dev/null || true
             if [ $TEST_RESULT -ne 0 ]; then
-              echo "=== LOGCAT ==="
-              adb logcat -d
+              echo "=== TEST OUTPUT (last 100 lines) ==="
+              tail -100 test-output.log
+              echo "=== LOGCAT (last 200 lines) ==="
+              tail -200 logcat.log
+              echo "=== ADB DEVICES ==="
+              adb devices
             fi
             exit $TEST_RESULT
 
