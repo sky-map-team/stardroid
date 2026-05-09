@@ -111,6 +111,9 @@ public class SplashScreenActivityTest {
     Assume.assumeTrue("Skipping on Android 15+ due to edge-to-edge dialog focus issues",
         Build.VERSION.SDK_INT < Build.VERSION_CODES.VANILLA_ICE_CREAM);
 
+    // Wait for the SplashScreenActivity to finish before looking for the dialog
+    Thread.sleep(3000);
+
     // Wait for the WebView to be laid out (it starts with height=0)
     onView(withId(R.id.eula_webview)).inRoot(isDialog()).perform(waitForLayout());
     onView(withId(R.id.eula_webview)).inRoot(isDialog()).check(matches(isDisplayed()));
@@ -133,6 +136,9 @@ public class SplashScreenActivityTest {
         Build.VERSION.SDK_INT < Build.VERSION_CODES.VANILLA_ICE_CREAM);
 
     Log.d("TESTTEST", "Doing test");
+    // Wait for the SplashScreenActivity to finish before looking for the dialog
+    Thread.sleep(3000);
+
     // Wait for the WebView to be laid out (it starts with height=0)
     onView(withId(R.id.eula_webview)).inRoot(isDialog()).perform(waitForLayout());
     onView(withId(R.id.eula_webview)).inRoot(isDialog()).check(matches(isDisplayed()));
