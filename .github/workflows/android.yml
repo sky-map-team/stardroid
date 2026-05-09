@@ -125,19 +125,8 @@ jobs:
             adb logcat -G 16M
             adb logcat > logcat.log 2>&1 &
             LOGCAT_PID=$!
-            set +e
-            timeout 1200 ./gradlew connectedGmsDebugAndroidTest -x lint --stacktrace -Pandroid.testInstrumentationRunnerArguments.notAnnotation=com.google.android.stardroid.test.ScreengrabTest 2>&1 | tee test-output.log
-            TEST_RESULT=$?
+            timeout 1200 ./gradlew connectedGmsDebugAndroidTest -x lint --stacktrace -Pandroid.testInstrumentationRunnerArguments.notAnnotation=com.google.android.stardroid.test.ScreengrabTest
             kill $LOGCAT_PID 2>/dev/null || true
-            if [ $TEST_RESULT -ne 0 ]; then
-              echo "=== TEST OUTPUT (last 100 lines) ==="
-              tail -100 test-output.log
-              echo "=== LOGCAT (last 200 lines) ==="
-              tail -200 logcat.log
-              echo "=== ADB DEVICES ==="
-              adb devices
-            fi
-            exit $TEST_RESULT
 
       - name: Upload connected test results
         if: always()
