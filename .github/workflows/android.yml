@@ -118,6 +118,7 @@ jobs:
           profile: Nexus 6
           working-directory: ./stardroid-v1
           script: |
+            bash -c '
             adb wait-for-device
             adb shell settings put global window_animation_scale 0
             adb shell settings put global transition_animation_scale 0
@@ -137,6 +138,7 @@ jobs:
               adb devices
             fi
             exit $TEST_RESULT
+            '
 
       - name: Upload connected test results
         if: always()
