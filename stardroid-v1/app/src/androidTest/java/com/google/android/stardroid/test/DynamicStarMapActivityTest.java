@@ -19,7 +19,6 @@ import com.google.android.stardroid.activities.util.FullscreenControlsManager;
 import com.google.android.stardroid.control.LocationController;
 
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExternalResource;
@@ -112,7 +111,6 @@ public class DynamicStarMapActivityTest {
 
   private static final String TAG = "STARTEST";
 
-  @Ignore("Flaky on emulator: causes emulator to crash mid-test")
   @Test
   public void testSkyMapTouchControlsShowAndThenGo() throws Exception {
     // Wait for initial controls to go away. This is bad.
