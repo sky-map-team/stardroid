@@ -30,11 +30,14 @@ jobs:
           distribution: 'zulu'
           java-version: '17'
       - name: Gradle cache
-        uses: gradle/actions/setup-gradle@v3
+        uses: gradle/actions/setup-gradle@v4
+        continue-on-error: true
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
       - name: Build and test
-        run: ./gradlew assembleGmsDebug testGmsDebugUnitTest
+        run: ./gradlew assembleGmsDebug testGmsDebugUnitTest --no-daemon
+        env:
+          ORG_GRADLE_PROJECT_org_gradle_java_home: ${{ env.JAVA_HOME }}
       - name: Upload test results
         if: always()
         uses: actions/upload-artifact@v4
@@ -48,7 +51,7 @@ jobs:
   connected_test:
     needs: build_and_unit_test
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 45
     defaults:
       run:
         working-directory: ./stardroid-v1
@@ -75,7 +78,8 @@ jobs:
           java-version: '17'
 
       - name: Gradle cache
-        uses: gradle/actions/setup-gradle@v3
+        uses: gradle/actions/setup-gradle@v4
+        continue-on-error: true
 
       - name: AVD cache
         uses: actions/cache@v4
@@ -94,6 +98,7 @@ jobs:
           target: ${{ matrix.target }}
           arch: x86_64
           force-avd-creation: false
+          emulator-boot-timeout: 1200
           emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
           disable-animations: false
           profile: Nexus 6
@@ -107,14 +112,22 @@ jobs:
           target: ${{ matrix.target }}
           arch: x86_64
           force-avd-creation: false
-          emulator-boot-timeout: 900
+          emulator-boot-timeout: 1200
           emulator-options: -no-snapshot-save -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
           disable-animations: true
           profile: Nexus 6
           working-directory: ./stardroid-v1
           script: |
             adb wait-for-device
+            adb logcat -c
+            set +e
             ./gradlew connectedGmsDebugAndroidTest -x lint --stacktrace
+            TEST_RESULT=$?
+            if [ $TEST_RESULT -ne 0 ]; then
+              echo "=== LOGCAT ==="
+              adb logcat -d
+            fi
+            exit $TEST_RESULT
 
       - name: Upload connected test results
         if: always()
