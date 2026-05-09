@@ -25,6 +25,8 @@ import com.google.android.stardroid.ApplicationConstants
 import com.google.android.stardroid.R
 import com.google.android.stardroid.StardroidApplication
 import com.google.android.stardroid.control.LocationController
+import com.google.android.stardroid.util.Analytics
+import com.google.android.stardroid.util.AnalyticsInterface
 import com.google.android.stardroid.util.MiscUtil
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
@@ -35,6 +37,7 @@ class WarmWelcomeActivity : AppCompatActivity() {
     @Inject lateinit var sharedPreferences: SharedPreferences
     @Inject lateinit var app: StardroidApplication
     @Inject @JvmField var sensorManager: SensorManager? = null
+    @Inject lateinit var analytics: Analytics
 
     private lateinit var viewPager: ViewPager2
     private lateinit var btnSkip: Button
@@ -47,6 +50,11 @@ class WarmWelcomeActivity : AppCompatActivity() {
         setContentView(R.layout.activity_warm_welcome)
 
         isManualInvocation = intent.getBooleanExtra("is_manual_invocation", false)
+
+        val params = Bundle().apply {
+            putBoolean(AnalyticsInterface.WARM_WELCOME_STARTED_MANUAL, isManualInvocation)
+        }
+        analytics.trackEvent(AnalyticsInterface.WARM_WELCOME_STARTED_EVENT, params)
 
         viewPager = findViewById(R.id.warm_welcome_viewpager)
         btnSkip = findViewById(R.id.btn_skip)
@@ -62,6 +70,12 @@ class WarmWelcomeActivity : AppCompatActivity() {
             override fun onPageSelected(position: Int) {
                 super.onPageSelected(position)
                 updateIndicators(position)
+
+                val slideParams = Bundle().apply {
+                    putInt(AnalyticsInterface.WARM_WELCOME_SLIDE_NUMBER, position + 1)
+                }
+                analytics.trackEvent(AnalyticsInterface.WARM_WELCOME_SLIDE_VIEWED_EVENT, slideParams)
+
                 if (position == adapter.itemCount - 1) {
                     btnNextFinish.setText(R.string.warm_welcome_finish)
                 } else {
@@ -75,11 +89,18 @@ class WarmWelcomeActivity : AppCompatActivity() {
             }
         })
 
-        btnSkip.setOnClickListener { finishWelcome() }
+        btnSkip.setOnClickListener {
+            val skipParams = Bundle().apply {
+                putInt(AnalyticsInterface.WARM_WELCOME_SKIPPED_AT_SLIDE, viewPager.currentItem + 1)
+            }
+            analytics.trackEvent(AnalyticsInterface.WARM_WELCOME_SKIPPED_EVENT, skipParams)
+            finishWelcome()
+        }
         btnNextFinish.setOnClickListener {
             if (viewPager.currentItem < adapter.itemCount - 1) {
                 viewPager.currentItem += 1
             } else {
+                analytics.trackEvent(AnalyticsInterface.WARM_WELCOME_COMPLETED_EVENT, null)
                 finishWelcome()
             }
         }

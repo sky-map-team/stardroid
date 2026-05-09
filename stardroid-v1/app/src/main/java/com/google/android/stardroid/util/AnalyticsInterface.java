@@ -124,6 +124,15 @@ public interface AnalyticsInterface {
   String MAP_LOAD_PROVIDER_STADIA = "stadia";
   String MAP_LOAD_PROVIDER_MAPTILER = "maptiler";
 
+  // Warm welcome onboarding
+  String WARM_WELCOME_STARTED_EVENT = "warm_welcome_started_ev";
+  String WARM_WELCOME_STARTED_MANUAL = "is_manual_invocation";
+  String WARM_WELCOME_SLIDE_VIEWED_EVENT = "warm_welcome_slide_viewed_ev";
+  String WARM_WELCOME_SLIDE_NUMBER = "slide_number";
+  String WARM_WELCOME_SKIPPED_EVENT = "warm_welcome_skipped_ev";
+  String WARM_WELCOME_SKIPPED_AT_SLIDE = "skipped_at_slide";
+  String WARM_WELCOME_COMPLETED_EVENT = "warm_welcome_completed_ev";
+
   Map<String, String> LAYER_NAME_MAP = Map.of(
       "source_provider.0", "stars",
       "source_provider.1", "constellations",
