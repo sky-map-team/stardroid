@@ -125,7 +125,7 @@ jobs:
             adb logcat -G 16M
             adb logcat > logcat.log 2>&1 &
             set +e
-            timeout 1200 ./gradlew connectedGmsDebugAndroidTest -x lint --stacktrace 2>&1 | tee test-output.log
+            timeout 1200 ./gradlew connectedGmsDebugAndroidTest -x lint --stacktrace -Pandroid.testInstrumentationRunnerArguments.notAnnotation=com.google.android.stardroid.test.ScreengrabTest 2>&1 | tee test-output.log
             TEST_RESULT=$?
             kill %1 2>/dev/null || true
             if [ $TEST_RESULT -ne 0 ]; then

@@ -186,6 +186,7 @@ public class DynamicStarMapActivityTest {
     }
   }
 
+  @ScreengrabTest
   @Test
   public void testSearchCircleScreenshot() throws Exception {
     Thread.sleep(FullscreenControlsManager.INITIALLY_SHOW_CONTROLS_FOR_MILLIS * 2);
@@ -201,6 +202,7 @@ public class DynamicStarMapActivityTest {
     Screengrab.screenshot("4_search_circle_mars");
   }
 
+  @ScreengrabTest
   @Test
   public void testMapWithJupiter() throws Exception {
     Thread.sleep(FullscreenControlsManager.INITIALLY_SHOW_CONTROLS_FOR_MILLIS * 2);
@@ -251,6 +253,7 @@ public class DynamicStarMapActivityTest {
     }
   }
 
+  @ScreengrabTest
   @Test
   public void testGalleryScrolledToJupiter() throws Exception {
     Thread.sleep(FullscreenControlsManager.INITIALLY_SHOW_CONTROLS_FOR_MILLIS * 2);
@@ -275,6 +278,7 @@ public class DynamicStarMapActivityTest {
     Screengrab.screenshot("2_gallery_scrolled");
   }
 
+  @ScreengrabTest
   @Test
   public void testExposedCraniumNebulaInfoCard() throws Exception {
     Thread.sleep(FullscreenControlsManager.INITIALLY_SHOW_CONTROLS_FOR_MILLIS * 2);
@@ -298,6 +302,7 @@ public class DynamicStarMapActivityTest {
     Screengrab.screenshot("3_exposed_cranium_info");
   }
 
+  @ScreengrabTest
   @Test
   public void testOrionAndTimeTravel() throws Exception {
     Thread.sleep(FullscreenControlsManager.INITIALLY_SHOW_CONTROLS_FOR_MILLIS * 2);
