@@ -132,6 +132,7 @@ class WarmWelcomeActivity : AppCompatActivity() {
 
     fun buzz(happy: Boolean) {
         val v = vibrator ?: return
+        if (!v.hasVibrator()) return
         val effect = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
             val effectId = if (happy) VibrationEffect.EFFECT_CLICK else VibrationEffect.EFFECT_DOUBLE_CLICK
             VibrationEffect.createPredefined(effectId)
@@ -310,7 +311,7 @@ class WarmWelcomeActivity : AppCompatActivity() {
                 if (isAdded) {
                     compassSpinner.visibility = View.GONE
                     compassIcon.visibility = View.VISIBLE
-                    (requireActivity() as WarmWelcomeActivity).buzz(hasCompass)
+                    (activity as? WarmWelcomeActivity)?.buzz(hasCompass)
                 }
             }, 800)
 
@@ -318,7 +319,7 @@ class WarmWelcomeActivity : AppCompatActivity() {
                 if (isAdded) {
                     accelSpinner.visibility = View.GONE
                     accelIcon.visibility = View.VISIBLE
-                    (requireActivity() as WarmWelcomeActivity).buzz(hasAccel)
+                    (activity as? WarmWelcomeActivity)?.buzz(hasAccel)
                 }
             }, 1600)
 
@@ -327,7 +328,7 @@ class WarmWelcomeActivity : AppCompatActivity() {
                     gyroSpinner.visibility = View.GONE
                     gyroIcon.visibility = View.VISIBLE
                     messageText.visibility = View.VISIBLE
-                    (requireActivity() as WarmWelcomeActivity).buzz(hasGyro)
+                    (activity as? WarmWelcomeActivity)?.buzz(hasGyro)
                 }
             }, 2400)
         }
