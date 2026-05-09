@@ -51,10 +51,12 @@ class WarmWelcomeActivity : AppCompatActivity() {
 
         isManualInvocation = intent.getBooleanExtra("is_manual_invocation", false)
 
-        val params = Bundle().apply {
-            putBoolean(AnalyticsInterface.WARM_WELCOME_STARTED_MANUAL, isManualInvocation)
+        if (savedInstanceState == null) {
+            val params = Bundle().apply {
+                putBoolean(AnalyticsInterface.WARM_WELCOME_STARTED_MANUAL, isManualInvocation)
+            }
+            analytics.trackEvent(AnalyticsInterface.WARM_WELCOME_STARTED_EVENT, params)
         }
-        analytics.trackEvent(AnalyticsInterface.WARM_WELCOME_STARTED_EVENT, params)
 
         viewPager = findViewById(R.id.warm_welcome_viewpager)
         btnSkip = findViewById(R.id.btn_skip)
@@ -134,6 +136,7 @@ class WarmWelcomeActivity : AppCompatActivity() {
     }
 
     private fun finishWelcome() {
+        analytics.setUserProperty(AnalyticsInterface.COMPLETED_WARM_WELCOME, "true")
         if (!isManualInvocation) {
             sharedPreferences.edit().apply {
                 putLong(ApplicationConstants.READ_WARM_WELCOME_PREF_VERSION, app.version)
