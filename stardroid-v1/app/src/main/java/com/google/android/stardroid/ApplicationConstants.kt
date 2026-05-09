@@ -77,11 +77,6 @@ object ApplicationConstants {
   const val LATITUDE_PREF_KEY = "latitude"
   const val LONGITUDE_PREF_KEY = "longitude"
 
-  // Feature flags
-  /** Set to true to enable the warm welcome onboarding flow. */
-  // Clean this up when done.
-  const val WARM_WELCOME_ENABLED = true
-
   // Location
   const val LOCATION_UPDATE_MIN_DISTANCE_METRES = 2000f
   const val LOCATION_ACQUIRING_TIMEOUT_MS = 30_000L

@@ -30,6 +30,8 @@ import com.google.android.stardroid.activities.dialogs.EulaDialogFragment;
 import com.google.android.stardroid.activities.dialogs.WhatsNewDialogFragment;
 import com.google.android.stardroid.activities.util.ConstraintsChecker;
 import com.google.android.stardroid.util.Analytics;
+import com.google.android.stardroid.util.Experiment;
+import com.google.android.stardroid.util.ExperimentConfig;
 import com.google.android.stardroid.util.MiscUtil;
 
 import javax.inject.Inject;
@@ -51,6 +53,7 @@ public class SplashScreenActivity extends androidx.fragment.app.FragmentActivity
   @Inject @Named("fadeout") Animation fadeAnimation;
   @Inject FragmentManager fragmentManager;
   @Inject ConstraintsChecker cc;
+  @Inject ExperimentConfig experimentConfig;
   private View graphic;
 
   @Override
@@ -137,7 +140,7 @@ public class SplashScreenActivity extends androidx.fragment.app.FragmentActivity
   }
 
   private void maybeShowWarmWelcomeAndEnd() {
-    if (!ApplicationConstants.WARM_WELCOME_ENABLED) {
+    if (!experimentConfig.isEnabled(Experiment.WARM_WELCOME)) {
       maybeShowWhatsNewAndEnd();
       return;
     }
