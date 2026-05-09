@@ -105,6 +105,11 @@ class ApplicationModule {
 
   @Provides
   @Singleton
+  fun provideVibrator(@ApplicationContext context: Context) =
+      context.getSystemService<android.os.Vibrator>()
+
+  @Provides
+  @Singleton
   fun provideAccountManager(@ApplicationContext context: Context): AccountManager =
       AccountManager.get(context)
 

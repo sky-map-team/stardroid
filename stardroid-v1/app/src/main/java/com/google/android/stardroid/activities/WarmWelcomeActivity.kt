@@ -4,7 +4,10 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.hardware.Sensor
 import android.hardware.SensorManager
+import android.os.Build
 import android.os.Bundle
+import android.os.Vibrator
+import android.os.VibrationEffect
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -35,6 +38,7 @@ class WarmWelcomeActivity : AppCompatActivity() {
     @Inject lateinit var sharedPreferences: SharedPreferences
     @Inject lateinit var app: StardroidApplication
     @Inject @JvmField var sensorManager: SensorManager? = null
+    @Inject @JvmField var vibrator: Vibrator? = null
 
     private lateinit var viewPager: ViewPager2
     private lateinit var btnSkip: Button
@@ -124,6 +128,18 @@ class WarmWelcomeActivity : AppCompatActivity() {
             startActivity(intent)
         }
         finish()
+    }
+
+    fun buzz(happy: Boolean) {
+        val v = vibrator ?: return
+        val effect = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            val effectId = if (happy) VibrationEffect.EFFECT_CLICK else VibrationEffect.EFFECT_DOUBLE_CLICK
+            VibrationEffect.createPredefined(effectId)
+        } else {
+            if (happy) VibrationEffect.createOneShot(50, 80)
+            else VibrationEffect.createWaveform(longArrayOf(0, 80, 80, 80), -1)
+        }
+        v.vibrate(effect)
     }
 
     private class WelcomePagerAdapter(fa: AppCompatActivity) : FragmentStateAdapter(fa) {
@@ -230,6 +246,9 @@ class WarmWelcomeActivity : AppCompatActivity() {
         private lateinit var accelSpinner: View
         private lateinit var compassSpinner: View
         private val handler = android.os.Handler(android.os.Looper.getMainLooper())
+        private var hasCompass = false
+        private var hasAccel = false
+        private var hasGyro = false
 
         override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
@@ -253,9 +272,9 @@ class WarmWelcomeActivity : AppCompatActivity() {
             val activity = requireActivity() as WarmWelcomeActivity
             val sensorManager = activity.sensorManager
 
-            val hasCompass = sensorManager?.getDefaultSensor(android.hardware.Sensor.TYPE_MAGNETIC_FIELD) != null
-            val hasAccel = sensorManager?.getDefaultSensor(android.hardware.Sensor.TYPE_ACCELEROMETER) != null
-            val hasGyro = sensorManager?.getDefaultSensor(android.hardware.Sensor.TYPE_GYROSCOPE) != null
+            hasCompass = sensorManager?.getDefaultSensor(android.hardware.Sensor.TYPE_MAGNETIC_FIELD) != null
+            hasAccel = sensorManager?.getDefaultSensor(android.hardware.Sensor.TYPE_ACCELEROMETER) != null
+            hasGyro = sensorManager?.getDefaultSensor(android.hardware.Sensor.TYPE_GYROSCOPE) != null
 
             val goodColor = ContextCompat.getColor(requireContext(), R.color.status_good)
             val badColor = ContextCompat.getColor(requireContext(), R.color.status_bad)
@@ -291,6 +310,7 @@ class WarmWelcomeActivity : AppCompatActivity() {
                 if (isAdded) {
                     compassSpinner.visibility = View.GONE
                     compassIcon.visibility = View.VISIBLE
+                    (requireActivity() as WarmWelcomeActivity).buzz(hasCompass)
                 }
             }, 800)
 
@@ -298,6 +318,7 @@ class WarmWelcomeActivity : AppCompatActivity() {
                 if (isAdded) {
                     accelSpinner.visibility = View.GONE
                     accelIcon.visibility = View.VISIBLE
+                    (requireActivity() as WarmWelcomeActivity).buzz(hasAccel)
                 }
             }, 1600)
 
@@ -306,6 +327,7 @@ class WarmWelcomeActivity : AppCompatActivity() {
                     gyroSpinner.visibility = View.GONE
                     gyroIcon.visibility = View.VISIBLE
                     messageText.visibility = View.VISIBLE
+                    (requireActivity() as WarmWelcomeActivity).buzz(hasGyro)
                 }
             }, 2400)
         }
