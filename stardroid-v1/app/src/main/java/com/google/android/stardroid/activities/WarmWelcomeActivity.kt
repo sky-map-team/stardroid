@@ -1,8 +1,6 @@
 package com.google.android.stardroid.activities
 
 import android.content.Intent
-import android.content.SharedPreferences
-import android.hardware.Sensor
 import android.hardware.SensorManager
 import android.os.Bundle
 import android.util.Log
@@ -10,30 +8,25 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.CheckBox
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
 import coil.load
-import com.google.android.stardroid.ApplicationConstants
 import com.google.android.stardroid.R
-import com.google.android.stardroid.StardroidApplication
-import com.google.android.stardroid.control.LocationController
+import com.google.android.stardroid.activities.dialogs.WhatsNewDialogFragment
 import com.google.android.stardroid.util.MiscUtil
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
 @AndroidEntryPoint
-class WarmWelcomeActivity : AppCompatActivity() {
+class WarmWelcomeActivity : AppCompatActivity(), WhatsNewDialogFragment.CloseListener {
 
-    @Inject lateinit var sharedPreferences: SharedPreferences
-    @Inject lateinit var app: StardroidApplication
+    @Inject lateinit var startupRouter: StartupRouter
     @Inject @JvmField var sensorManager: SensorManager? = null
 
     private lateinit var viewPager: ViewPager2
@@ -44,9 +37,10 @@ class WarmWelcomeActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_warm_welcome)
 
         isManualInvocation = intent.getBooleanExtra("is_manual_invocation", false)
+
+        setContentView(R.layout.activity_warm_welcome)
 
         viewPager = findViewById(R.id.warm_welcome_viewpager)
         btnSkip = findViewById(R.id.btn_skip)
@@ -114,15 +108,31 @@ class WarmWelcomeActivity : AppCompatActivity() {
 
     private fun finishWelcome() {
         if (!isManualInvocation) {
-            sharedPreferences.edit().apply {
-                putLong(ApplicationConstants.READ_WARM_WELCOME_PREF_VERSION, app.version)
-                putBoolean(ApplicationConstants.NO_WARN_ABOUT_MISSING_SENSORS, true)
-                apply()
+            startupRouter.markWarmWelcomeSeen()
+            if (startupRouter.needsWhatsNew()) {
+                showDialog(WhatsNewDialogFragment.newInstance(), WhatsNewDialogFragment::class.java.simpleName)
+            } else {
+                launchSkyMap()
             }
-
-            val intent = Intent(this, DynamicStarMapActivity::class.java)
-            startActivity(intent)
+        } else {
+            finish()
         }
+    }
+
+    override fun dialogClosed() {
+        startupRouter.markWhatsNewSeen()
+        launchSkyMap()
+    }
+
+    private fun showDialog(fragment: androidx.fragment.app.DialogFragment, tag: String) {
+        if (supportFragmentManager.findFragmentByTag(tag) == null) {
+            fragment.show(supportFragmentManager, tag)
+        }
+    }
+
+    private fun launchSkyMap() {
+        val intent = Intent(this, DynamicStarMapActivity::class.java)
+        startActivity(intent)
         finish()
     }
 

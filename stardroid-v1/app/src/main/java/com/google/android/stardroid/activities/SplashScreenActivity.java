@@ -14,22 +14,18 @@
 
 package com.google.android.stardroid.activities;
 
-import androidx.fragment.app.FragmentManager;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.Animation.AnimationListener;
 
-import com.google.android.stardroid.ApplicationConstants;
+import androidx.fragment.app.FragmentManager;
+
 import com.google.android.stardroid.R;
-import com.google.android.stardroid.StardroidApplication;
 import com.google.android.stardroid.activities.dialogs.EulaDialogFragment;
 import com.google.android.stardroid.activities.dialogs.WhatsNewDialogFragment;
-import com.google.android.stardroid.activities.util.ConstraintsChecker;
-import com.google.android.stardroid.util.Analytics;
 import com.google.android.stardroid.util.MiscUtil;
 
 import javax.inject.Inject;
@@ -38,19 +34,16 @@ import javax.inject.Named;
 import dagger.hilt.android.AndroidEntryPoint;
 
 /**
- * Shows a splash screen, then launch the next activity.
+ * Shows a splash screen, then launches the next activity.
  */
 @AndroidEntryPoint
 public class SplashScreenActivity extends androidx.fragment.app.FragmentActivity
     implements EulaDialogFragment.EulaAcceptanceListener, WhatsNewDialogFragment.CloseListener {
   private final static String TAG = MiscUtil.getTag(SplashScreenActivity.class);
 
-  @Inject StardroidApplication app;
-  @Inject Analytics analytics;
-  @Inject SharedPreferences sharedPreferences;
+  @Inject StartupRouter startupRouter;
   @Inject @Named("fadeout") Animation fadeAnimation;
   @Inject FragmentManager fragmentManager;
-  @Inject ConstraintsChecker cc;
   private View graphic;
 
   @Override
@@ -65,7 +58,7 @@ public class SplashScreenActivity extends androidx.fragment.app.FragmentActivity
       public void onAnimationEnd(Animation unused) {
         Log.d(TAG, "onAnimationEnd");
         graphic.setVisibility(View.INVISIBLE);
-        maybeShowWarmWelcomeAndEnd();
+        proceedToNextActivity();
       }
 
       public void onAnimationRepeat(Animation arg0) {
@@ -75,6 +68,10 @@ public class SplashScreenActivity extends androidx.fragment.app.FragmentActivity
         Log.d(TAG, "SplashScreen.Animation onAnimationStart");
       }
     });
+    if (!startupRouter.needsWhatsNew()) {
+      // Shorten the animation for returning users who have already seen this version.
+      fadeAnimation.setDuration(1000);
+    }
   }
 
   @Override
@@ -84,50 +81,27 @@ public class SplashScreenActivity extends androidx.fragment.app.FragmentActivity
     boolean eulaShowing = maybeShowEula();
     Log.d(TAG, "Eula showing " + eulaShowing);
     if (!eulaShowing) {
-      // User has previously accepted - let's get on with it!
       Log.d(TAG, "EULA already accepted");
-      graphic.startAnimation(fadeAnimation);
+      startSplashScreen();
     }
   }
 
-  @Override
-  public void onStart() {
-    super.onStart();
-  }
-
-  @Override
-  public void onPause() {
-    Log.d(TAG, "onPause");
-    super.onPause();
-  }
-
-  @Override
-  public void onDestroy() {
-    Log.d(TAG, "onDestroy");
-    super.onDestroy();
+  private void startSplashScreen() {
+    graphic.startAnimation(fadeAnimation);
   }
 
   private boolean maybeShowEula() {
-    boolean eulaAlreadyConfirmed = (sharedPreferences.getInt(
-        ApplicationConstants.READ_TOS_PREF_VERSION, -1) == EULA_VERSION_CODE);
-    if (!eulaAlreadyConfirmed) {
+    if (startupRouter.needsEula()) {
       showDialog(EulaDialogFragment.newInstance(), EulaDialogFragment.class.getSimpleName());
       return true;
-    } else {
-      return false;
     }
+    return false;
   }
-
-  // Update this with new versions of the EULA
-  private static final int EULA_VERSION_CODE = 1;
 
   @Override
   public void eulaAccepted() {
-    SharedPreferences.Editor editor = sharedPreferences.edit();
-    editor.putInt(ApplicationConstants.READ_TOS_PREF_VERSION, EULA_VERSION_CODE);
-    editor.commit();
-    // Let's go.
-    graphic.startAnimation(fadeAnimation);
+    startupRouter.markEulaAccepted();
+    startSplashScreen();
   }
 
   @Override
@@ -136,51 +110,28 @@ public class SplashScreenActivity extends androidx.fragment.app.FragmentActivity
     finish();
   }
 
-  private void maybeShowWarmWelcomeAndEnd() {
-    if (!ApplicationConstants.WARM_WELCOME_ENABLED) {
-      maybeShowWhatsNewAndEnd();
-      return;
-    }
-    boolean warmWelcomeSeen = (sharedPreferences.getLong(
-        ApplicationConstants.READ_WARM_WELCOME_PREF_VERSION, -1) > 0);
-    if (warmWelcomeSeen) {
-      maybeShowWhatsNewAndEnd();
+  private void proceedToNextActivity() {
+    if (startupRouter.needsWarmWelcome()) {
+      startActivity(new Intent(this, WarmWelcomeActivity.class));
+      finish();
+    } else if (startupRouter.needsWhatsNew()) {
+      showDialog(WhatsNewDialogFragment.newInstance(), WhatsNewDialogFragment.class.getSimpleName());
     } else {
-      Intent intent = new Intent(SplashScreenActivity.this, WarmWelcomeActivity.class);
-      startActivity(intent);
+      startActivity(new Intent(this, DynamicStarMapActivity.class));
       finish();
     }
   }
 
-  private void maybeShowWhatsNewAndEnd() {
-    boolean whatsNewSeen = (sharedPreferences.getLong(
-        ApplicationConstants.READ_WHATS_NEW_PREF_VERSION, -1) == app.getVersion());
-    if (whatsNewSeen) {
-      launchSkyMap();
-    } else {
-      showDialog(WhatsNewDialogFragment.newInstance(), WhatsNewDialogFragment.class.getSimpleName());
-    }
-  }
-
-  // What's new dialog closed.
   @Override
   public void dialogClosed() {
-    SharedPreferences.Editor editor = sharedPreferences.edit();
-    editor.putLong(ApplicationConstants.READ_WHATS_NEW_PREF_VERSION, app.getVersion());
-    editor.commit();
-    launchSkyMap();
+    startupRouter.markWhatsNewSeen();
+    startActivity(new Intent(this, DynamicStarMapActivity.class));
+    finish();
   }
 
   private void showDialog(androidx.fragment.app.DialogFragment fragment, String tag) {
     if (fragmentManager.findFragmentByTag(tag) == null) {
       fragment.show(fragmentManager, tag);
     }
-  }
-
-  private void launchSkyMap() {
-    Intent intent = new Intent(SplashScreenActivity.this, DynamicStarMapActivity.class);
-    cc.check();
-    startActivity(intent);
-    finish();
   }
 }
