@@ -62,20 +62,22 @@ public class DynamicStarMapActivityTest {
 
   // For other great ideas about the permissions dialogs see
   // https://alexzh.com/ui-testing-of-android-runtime-permissions/
+  // For other great ideas about the permissions dialogs see
+  // https://alexzh.com/ui-testing-of-android-runtime-permissions/
   private final GrantPermissionRule permissionRule = GrantPermissionRule.grant(
           Manifest.permission.ACCESS_COARSE_LOCATION,
           Manifest.permission.CHANGE_CONFIGURATION);
 
   private final SetupRule firstRule = new SetupRule();
 
-  private final HiltAndroidRule hiltRule = new HiltAndroidRule(this);
+  @Rule(order = 0)
+  public final HiltAndroidRule hiltRule = new HiltAndroidRule(this);
 
   private final ActivityScenarioRule<DynamicStarMapActivity> testRule = new ActivityScenarioRule<>(
           DynamicStarMapActivity.class);
 
-  @Rule
+  @Rule(order = 1)
   public RuleChain chain = RuleChain.outerRule(permissionRule)
-          .around(hiltRule)
           .around(firstRule)
           .around(testRule);
 
