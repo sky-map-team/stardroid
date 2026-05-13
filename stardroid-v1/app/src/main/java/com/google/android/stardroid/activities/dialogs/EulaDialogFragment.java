@@ -73,7 +73,7 @@ public class EulaDialogFragment extends DialogFragment {
       view = null;
     }
 
-    AlertDialog.Builder tosDialogBuilder = new AlertDialog.Builder(parentActivity)
+    AlertDialog.Builder tosDialogBuilder = new AlertDialog.Builder(parentActivity, AlertDialog.THEME_DEVICE_DEFAULT_DARK)
         .setTitle(R.string.menu_tos);
     if (view != null) {
       tosDialogBuilder.setView(view);

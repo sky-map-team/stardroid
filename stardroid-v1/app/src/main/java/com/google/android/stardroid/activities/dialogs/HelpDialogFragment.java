@@ -44,7 +44,7 @@ public class HelpDialogFragment extends DialogFragment {
     final Activity activity = requireActivity();
     LayoutInflater inflater = activity.getLayoutInflater();
     View view = inflater.inflate(R.layout.webview_dialog, null);
-    AlertDialog alertDialog = new AlertDialog.Builder(activity)
+    AlertDialog alertDialog = new AlertDialog.Builder(activity, AlertDialog.THEME_DEVICE_DEFAULT_DARK)
         .setTitle(R.string.help_dialog_title)
         .setView(view).setNegativeButton(android.R.string.ok,
             new DialogInterface.OnClickListener() {
