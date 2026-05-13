@@ -14,19 +14,18 @@
 
 package com.google.android.stardroid.activities;
 
-import androidx.fragment.app.FragmentManager;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.Animation.AnimationListener;
 
-import com.google.android.stardroid.ApplicationConstants;
+import androidx.fragment.app.FragmentManager;
+
 import com.google.android.stardroid.R;
-import com.google.android.stardroid.StardroidApplication;
 import com.google.android.stardroid.activities.dialogs.EulaDialogFragment;
+import com.google.android.stardroid.activities.dialogs.WhatsNewDialogFragment;
 import com.google.android.stardroid.util.MiscUtil;
 
 import javax.inject.Inject;
@@ -35,15 +34,14 @@ import javax.inject.Named;
 import dagger.hilt.android.AndroidEntryPoint;
 
 /**
- * Shows a splash screen, then launch the next activity.
+ * Shows a splash screen, then launches the next activity.
  */
 @AndroidEntryPoint
 public class SplashScreenActivity extends androidx.fragment.app.FragmentActivity
-    implements EulaDialogFragment.EulaAcceptanceListener {
+    implements EulaDialogFragment.EulaAcceptanceListener, WhatsNewDialogFragment.CloseListener {
   private final static String TAG = MiscUtil.getTag(SplashScreenActivity.class);
 
-  @Inject StardroidApplication app;
-  @Inject SharedPreferences sharedPreferences;
+  @Inject StartupRouter startupRouter;
   @Inject @Named("fadeout") Animation fadeAnimation;
   @Inject FragmentManager fragmentManager;
   private View graphic;
@@ -70,8 +68,8 @@ public class SplashScreenActivity extends androidx.fragment.app.FragmentActivity
         Log.d(TAG, "SplashScreen.Animation onAnimationStart");
       }
     });
-    if (!MiscUtil.isVersionNewForThisUser(app, sharedPreferences)) {
-      // Let's get this done a bit faster if they've already seen it.
+    if (!startupRouter.needsWhatsNew()) {
+      // Shorten the animation for returning users who have already seen this version.
       fadeAnimation.setDuration(1000);
     }
   }
@@ -83,7 +81,6 @@ public class SplashScreenActivity extends androidx.fragment.app.FragmentActivity
     boolean eulaShowing = maybeShowEula();
     Log.d(TAG, "Eula showing " + eulaShowing);
     if (!eulaShowing) {
-      // User has previously accepted - let's get on with it!
       Log.d(TAG, "EULA already accepted");
       startSplashScreen();
     }
@@ -94,25 +91,16 @@ public class SplashScreenActivity extends androidx.fragment.app.FragmentActivity
   }
 
   private boolean maybeShowEula() {
-    boolean eulaAlreadyConfirmed = (sharedPreferences.getInt(
-        ApplicationConstants.READ_TOS_PREF_VERSION, -1) == EULA_VERSION_CODE);
-    if (!eulaAlreadyConfirmed) {
+    if (startupRouter.needsEula()) {
       showDialog(EulaDialogFragment.newInstance(), EulaDialogFragment.class.getSimpleName());
       return true;
-    } else {
-      return false;
     }
+    return false;
   }
-
-  // Update this with new versions of the EULA
-  private static final int EULA_VERSION_CODE = 1;
 
   @Override
   public void eulaAccepted() {
-    SharedPreferences.Editor editor = sharedPreferences.edit();
-    editor.putInt(ApplicationConstants.READ_TOS_PREF_VERSION, EULA_VERSION_CODE);
-    editor.apply();
-    // Let's go.
+    startupRouter.markEulaAccepted();
     startSplashScreen();
   }
 
@@ -123,8 +111,21 @@ public class SplashScreenActivity extends androidx.fragment.app.FragmentActivity
   }
 
   private void proceedToNextActivity() {
-    Intent intent = new Intent(SplashScreenActivity.this, WarmWelcomeActivity.class);
-    startActivity(intent);
+    if (startupRouter.needsWarmWelcome()) {
+      startActivity(new Intent(this, WarmWelcomeActivity.class));
+      finish();
+    } else if (startupRouter.needsWhatsNew()) {
+      showDialog(WhatsNewDialogFragment.newInstance(), WhatsNewDialogFragment.class.getSimpleName());
+    } else {
+      startActivity(new Intent(this, DynamicStarMapActivity.class));
+      finish();
+    }
+  }
+
+  @Override
+  public void dialogClosed() {
+    startupRouter.markWhatsNewSeen();
+    startActivity(new Intent(this, DynamicStarMapActivity.class));
     finish();
   }
 
