@@ -114,7 +114,7 @@ public class DynamicStarMapActivityTest {
 
   private static final String TAG = "STARTEST";
 
-  @Ignore("Flaky on emulator: causes emulator to crash mid-test")
+  //@Ignore("Flaky on emulator: causes emulator to crash mid-test")
   @Test
   public void testSkyMapTouchControlsShowAndThenGo() throws Exception {
     // Wait for initial controls to go away. This is bad.
