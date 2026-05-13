@@ -133,4 +133,6 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: connected-test-results-${{ matrix.api-level }}
-          path: 'stardroid-v1/**/build/reports/androidTests/'
+          path: |
+            'stardroid-v1/**/build/reports/androidTests/'
+            logcat.log
