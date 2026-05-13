@@ -24,13 +24,15 @@ import coil.load
 import com.google.android.stardroid.ApplicationConstants
 import com.google.android.stardroid.R
 import com.google.android.stardroid.StardroidApplication
+import com.google.android.stardroid.activities.dialogs.WhatsNewDialogFragment
 import com.google.android.stardroid.control.LocationController
 import com.google.android.stardroid.util.MiscUtil
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
+import androidx.core.content.edit
 
 @AndroidEntryPoint
-class WarmWelcomeActivity : AppCompatActivity() {
+class WarmWelcomeActivity : AppCompatActivity(), WhatsNewDialogFragment.CloseListener {
 
     @Inject lateinit var sharedPreferences: SharedPreferences
     @Inject lateinit var app: StardroidApplication
@@ -44,9 +46,18 @@ class WarmWelcomeActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_warm_welcome)
 
         isManualInvocation = intent.getBooleanExtra("is_manual_invocation", false)
+
+        if (!isManualInvocation) {
+            val warmWelcomeSeen = sharedPreferences.getLong(ApplicationConstants.READ_WARM_WELCOME_PREF_VERSION, -1) > 0
+            if (warmWelcomeSeen || !ApplicationConstants.WARM_WELCOME_ENABLED) {
+                maybeShowWhatsNewAndEnd()
+                return
+            }
+        }
+
+        setContentView(R.layout.activity_warm_welcome)
 
         viewPager = findViewById(R.id.warm_welcome_viewpager)
         btnSkip = findViewById(R.id.btn_skip)
@@ -119,10 +130,34 @@ class WarmWelcomeActivity : AppCompatActivity() {
                 putBoolean(ApplicationConstants.NO_WARN_ABOUT_MISSING_SENSORS, true)
                 apply()
             }
-
-            val intent = Intent(this, DynamicStarMapActivity::class.java)
-            startActivity(intent)
+            maybeShowWhatsNewAndEnd()
+        } else {
+            finish()
         }
+    }
+
+    private fun maybeShowWhatsNewAndEnd() {
+        if (!MiscUtil.isVersionNewForThisUser(app, sharedPreferences)) {
+            launchSkyMap()
+        } else {
+            val fragment = WhatsNewDialogFragment.newInstance()
+            fragment.show(supportFragmentManager, WhatsNewDialogFragment::class.java.simpleName)
+        }
+    }
+
+    override fun dialogClosed() {
+        sharedPreferences.edit {
+            putLong(
+                ApplicationConstants.READ_WHATS_NEW_PREF_VERSION,
+                app.version
+            )
+        }
+        launchSkyMap()
+    }
+
+    private fun launchSkyMap() {
+        val intent = Intent(this, DynamicStarMapActivity::class.java)
+        startActivity(intent)
         finish()
     }
 

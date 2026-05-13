@@ -27,9 +27,6 @@ import com.google.android.stardroid.ApplicationConstants;
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.StardroidApplication;
 import com.google.android.stardroid.activities.dialogs.EulaDialogFragment;
-import com.google.android.stardroid.activities.dialogs.WhatsNewDialogFragment;
-import com.google.android.stardroid.activities.util.ConstraintsChecker;
-import com.google.android.stardroid.util.Analytics;
 import com.google.android.stardroid.util.MiscUtil;
 
 import javax.inject.Inject;
@@ -42,15 +39,13 @@ import dagger.hilt.android.AndroidEntryPoint;
  */
 @AndroidEntryPoint
 public class SplashScreenActivity extends androidx.fragment.app.FragmentActivity
-    implements EulaDialogFragment.EulaAcceptanceListener, WhatsNewDialogFragment.CloseListener {
+    implements EulaDialogFragment.EulaAcceptanceListener {
   private final static String TAG = MiscUtil.getTag(SplashScreenActivity.class);
 
   @Inject StardroidApplication app;
-  @Inject Analytics analytics;
   @Inject SharedPreferences sharedPreferences;
   @Inject @Named("fadeout") Animation fadeAnimation;
   @Inject FragmentManager fragmentManager;
-  @Inject ConstraintsChecker cc;
   private View graphic;
 
   @Override
@@ -65,7 +60,7 @@ public class SplashScreenActivity extends androidx.fragment.app.FragmentActivity
       public void onAnimationEnd(Animation unused) {
         Log.d(TAG, "onAnimationEnd");
         graphic.setVisibility(View.INVISIBLE);
-        maybeShowWarmWelcomeAndEnd();
+        proceedToNextActivity();
       }
 
       public void onAnimationRepeat(Animation arg0) {
@@ -75,6 +70,10 @@ public class SplashScreenActivity extends androidx.fragment.app.FragmentActivity
         Log.d(TAG, "SplashScreen.Animation onAnimationStart");
       }
     });
+    if (!MiscUtil.isVersionNewForThisUser(app, sharedPreferences)) {
+      // Let's get this done a bit faster if they've already seen it.
+      fadeAnimation.setDuration(1000);
+    }
   }
 
   @Override
@@ -86,25 +85,12 @@ public class SplashScreenActivity extends androidx.fragment.app.FragmentActivity
     if (!eulaShowing) {
       // User has previously accepted - let's get on with it!
       Log.d(TAG, "EULA already accepted");
-      graphic.startAnimation(fadeAnimation);
+      startSplashScreen();
     }
   }
 
-  @Override
-  public void onStart() {
-    super.onStart();
-  }
-
-  @Override
-  public void onPause() {
-    Log.d(TAG, "onPause");
-    super.onPause();
-  }
-
-  @Override
-  public void onDestroy() {
-    Log.d(TAG, "onDestroy");
-    super.onDestroy();
+  private void startSplashScreen() {
+    graphic.startAnimation(fadeAnimation);
   }
 
   private boolean maybeShowEula() {
@@ -125,9 +111,9 @@ public class SplashScreenActivity extends androidx.fragment.app.FragmentActivity
   public void eulaAccepted() {
     SharedPreferences.Editor editor = sharedPreferences.edit();
     editor.putInt(ApplicationConstants.READ_TOS_PREF_VERSION, EULA_VERSION_CODE);
-    editor.commit();
+    editor.apply();
     // Let's go.
-    graphic.startAnimation(fadeAnimation);
+    startSplashScreen();
   }
 
   @Override
@@ -136,51 +122,15 @@ public class SplashScreenActivity extends androidx.fragment.app.FragmentActivity
     finish();
   }
 
-  private void maybeShowWarmWelcomeAndEnd() {
-    if (!ApplicationConstants.WARM_WELCOME_ENABLED) {
-      maybeShowWhatsNewAndEnd();
-      return;
-    }
-    boolean warmWelcomeSeen = (sharedPreferences.getLong(
-        ApplicationConstants.READ_WARM_WELCOME_PREF_VERSION, -1) > 0);
-    if (warmWelcomeSeen) {
-      maybeShowWhatsNewAndEnd();
-    } else {
-      Intent intent = new Intent(SplashScreenActivity.this, WarmWelcomeActivity.class);
-      startActivity(intent);
-      finish();
-    }
-  }
-
-  private void maybeShowWhatsNewAndEnd() {
-    boolean whatsNewSeen = (sharedPreferences.getLong(
-        ApplicationConstants.READ_WHATS_NEW_PREF_VERSION, -1) == app.getVersion());
-    if (whatsNewSeen) {
-      launchSkyMap();
-    } else {
-      showDialog(WhatsNewDialogFragment.newInstance(), WhatsNewDialogFragment.class.getSimpleName());
-    }
-  }
-
-  // What's new dialog closed.
-  @Override
-  public void dialogClosed() {
-    SharedPreferences.Editor editor = sharedPreferences.edit();
-    editor.putLong(ApplicationConstants.READ_WHATS_NEW_PREF_VERSION, app.getVersion());
-    editor.commit();
-    launchSkyMap();
+  private void proceedToNextActivity() {
+    Intent intent = new Intent(SplashScreenActivity.this, WarmWelcomeActivity.class);
+    startActivity(intent);
+    finish();
   }
 
   private void showDialog(androidx.fragment.app.DialogFragment fragment, String tag) {
     if (fragmentManager.findFragmentByTag(tag) == null) {
       fragment.show(fragmentManager, tag);
     }
-  }
-
-  private void launchSkyMap() {
-    Intent intent = new Intent(SplashScreenActivity.this, DynamicStarMapActivity.class);
-    cc.check();
-    startActivity(intent);
-    finish();
   }
 }

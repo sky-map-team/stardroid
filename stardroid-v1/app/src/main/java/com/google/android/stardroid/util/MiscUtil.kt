@@ -42,6 +42,14 @@ object MiscUtil {
         if (s == null || s.isEmpty()) return ""
         return s.lowercase().replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.ROOT) else it.toString() }
     }
+
+    /**
+     * Returns true if this is the first time the user has seen this version of the app.
+     */
+    @JvmStatic
+    fun isVersionNewForThisUser(app: com.google.android.stardroid.StardroidApplication, sharedPreferences: android.content.SharedPreferences): Boolean {
+        return sharedPreferences.getLong(ApplicationConstants.READ_WHATS_NEW_PREF_VERSION, -1) != app.version
+    }
 }
 
 /** Returns a date given the year, month and day in UTC.
