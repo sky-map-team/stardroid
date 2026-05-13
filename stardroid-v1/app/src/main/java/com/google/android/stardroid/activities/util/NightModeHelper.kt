@@ -150,29 +150,30 @@ object NightModeHelper {
      */
     @JvmStatic
     fun applyAlertDialogNightMode(dialog: AlertDialog, isNight: Boolean) {
-        val color =
-            if (isNight) dialog.getContext().getColor(R.color.night_text_color) else Color.WHITE
+        if (!isNight) return
+        
+        val color = dialog.getContext().getColor(R.color.night_text_color)
         val titleId =
             dialog.getContext().getResources().getIdentifier("alertTitle", "id", "android")
         if (titleId != 0) {
             val titleView = dialog.findViewById<TextView?>(titleId)
             if (titleView != null) titleView.setTextColor(color)
         }
-        if (isNight) {
-            val dividerId = dialog.getContext().getResources()
-                .getIdentifier("titleDivider", "id", "android")
-            if (dividerId != 0) {
-                val divider = dialog.findViewById<View?>(dividerId)
-                if (divider != null) {
-                    divider.setBackgroundColor(
-                        dialog.getContext().getColor(R.color.night_text_color)
-                    )
-                }
+        val dividerId = dialog.getContext().getResources()
+            .getIdentifier("titleDivider", "id", "android")
+        if (dividerId != 0) {
+            val divider = dialog.findViewById<View?>(dividerId)
+            if (divider != null) {
+                divider.setBackgroundColor(
+                    dialog.getContext().getColor(R.color.night_text_color)
+                )
             }
         }
         val posBtn = dialog.getButton(AlertDialog.BUTTON_POSITIVE)
         if (posBtn != null) posBtn.setTextColor(color)
         val negBtn = dialog.getButton(AlertDialog.BUTTON_NEGATIVE)
         if (negBtn != null) negBtn.setTextColor(color)
+        val neuBtn = dialog.getButton(AlertDialog.BUTTON_NEUTRAL)
+        if (neuBtn != null) neuBtn.setTextColor(color)
     }
 }

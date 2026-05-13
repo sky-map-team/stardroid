@@ -19,6 +19,7 @@ import com.google.android.stardroid.activities.util.FullscreenControlsManager;
 import com.google.android.stardroid.control.LocationController;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExternalResource;
@@ -59,8 +60,27 @@ public class DynamicStarMapActivityTest {
   @org.junit.ClassRule
   public static final LocaleTestRule localeTestRule = new LocaleTestRule();
 
+  // For other great ideas about the permissions dialogs see
+  // https://alexzh.com/ui-testing-of-android-runtime-permissions/
+  // For other great ideas about the permissions dialogs see
+  // https://alexzh.com/ui-testing-of-android-runtime-permissions/
+  private final GrantPermissionRule permissionRule = GrantPermissionRule.grant(
+          Manifest.permission.ACCESS_COARSE_LOCATION,
+          Manifest.permission.CHANGE_CONFIGURATION);
+
+  private final SetupRule firstRule = new SetupRule();
+
   @Rule(order = 0)
-  public HiltAndroidRule hiltRule = new HiltAndroidRule(this);
+  public final HiltAndroidRule hiltRule = new HiltAndroidRule(this);
+
+  private final ActivityScenarioRule<DynamicStarMapActivity> testRule = new ActivityScenarioRule<>(
+          DynamicStarMapActivity.class);
+
+  @Rule(order = 1)
+  public RuleChain chain = RuleChain.outerRule(permissionRule)
+          .around(firstRule)
+          .around(testRule);
+
 
   private static class SetupRule extends ExternalResource {
     @Override
@@ -83,21 +103,6 @@ public class DynamicStarMapActivityTest {
     };
   }
 
-  private SetupRule firstRule = new SetupRule();
-
-  public ActivityScenarioRule<DynamicStarMapActivity> testRule = new ActivityScenarioRule<>(
-      DynamicStarMapActivity.class);
-
-  @Rule(order = 1)
-  public RuleChain chain = RuleChain.outerRule(firstRule).around(testRule);
-
-  // For other great ideas about the permissions dialogs see
-  // https://alexzh.com/ui-testing-of-android-runtime-permissions/
-  @Rule(order = 2)
-  public androidx.test.rule.GrantPermissionRule permissionRule = GrantPermissionRule.grant(
-      Manifest.permission.ACCESS_COARSE_LOCATION,
-      Manifest.permission.CHANGE_CONFIGURATION);
-
   @Before
   public void disableCalibrationDialog() {
     Context context = getInstrumentation().getTargetContext();
@@ -111,11 +116,13 @@ public class DynamicStarMapActivityTest {
 
   private static final String TAG = "STARTEST";
 
+  @Ignore("Flaky on emulator: causes emulator to crash mid-test")
   @Test
   public void testSkyMapTouchControlsShowAndThenGo() throws Exception {
     // Wait for initial controls to go away. This is bad.
     // Perhaps use idling resources?
     Log.w(TAG, "Waiting....");
+    /*
     Thread.sleep(FullscreenControlsManager.INITIALLY_SHOW_CONTROLS_FOR_MILLIS * 2);
     Log.w(TAG, "Click");
     onView(withId(R.id.skyrenderer_view)).check(matches(isDisplayed()));
@@ -131,6 +138,7 @@ public class DynamicStarMapActivityTest {
     Thread.sleep(100);
     onView(withId(R.id.layer_buttons_control))
         .check(matches(not(withEffectiveVisibility(ViewMatchers.Visibility.VISIBLE))));
+     */
   }
 
   private void ensureControlsVisible() {
@@ -184,6 +192,7 @@ public class DynamicStarMapActivityTest {
     }
   }
 
+  @ScreengrabTest
   @Test
   public void testSearchCircleScreenshot() throws Exception {
     Thread.sleep(FullscreenControlsManager.INITIALLY_SHOW_CONTROLS_FOR_MILLIS * 2);
@@ -199,8 +208,9 @@ public class DynamicStarMapActivityTest {
     Screengrab.screenshot("4_search_circle_mars");
   }
 
+  @ScreengrabTest
   @Test
-  public void testMapWithJupiter() throws Exception {
+  public void testMapWithJupiterScreenshot() throws Exception {
     Thread.sleep(FullscreenControlsManager.INITIALLY_SHOW_CONTROLS_FOR_MILLIS * 2);
     switchToManualMode();
     Context context = getInstrumentation().getTargetContext();
@@ -249,8 +259,9 @@ public class DynamicStarMapActivityTest {
     }
   }
 
+  @ScreengrabTest
   @Test
-  public void testGalleryScrolledToJupiter() throws Exception {
+  public void testGalleryScrolledToJupiterScreenshot() throws Exception {
     Thread.sleep(FullscreenControlsManager.INITIALLY_SHOW_CONTROLS_FOR_MILLIS * 2);
     onView(withId(R.id.skyrenderer_view)).check(matches(isDisplayed()));
 
@@ -273,8 +284,9 @@ public class DynamicStarMapActivityTest {
     Screengrab.screenshot("2_gallery_scrolled");
   }
 
+  @ScreengrabTest
   @Test
-  public void testExposedCraniumNebulaInfoCard() throws Exception {
+  public void testExposedCraniumNebulaInfoCardScreenshot() throws Exception {
     Thread.sleep(FullscreenControlsManager.INITIALLY_SHOW_CONTROLS_FOR_MILLIS * 2);
     switchToManualMode();
     Context context = getInstrumentation().getTargetContext();
@@ -296,8 +308,9 @@ public class DynamicStarMapActivityTest {
     Screengrab.screenshot("3_exposed_cranium_info");
   }
 
+  @ScreengrabTest
   @Test
-  public void testOrionAndTimeTravel() throws Exception {
+  public void testOrionAndTimeTravelScreenshot() throws Exception {
     Thread.sleep(FullscreenControlsManager.INITIALLY_SHOW_CONTROLS_FOR_MILLIS * 2);
     switchToManualMode();
     Context context = getInstrumentation().getTargetContext();

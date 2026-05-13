@@ -12,6 +12,9 @@ import androidx.test.espresso.UiController;
 import androidx.test.espresso.ViewAction;
 import androidx.test.ext.junit.rules.ActivityScenarioRule;
 import androidx.test.platform.app.InstrumentationRegistry;
+import androidx.test.uiautomator.By;
+import androidx.test.uiautomator.UiDevice;
+import androidx.test.uiautomator.Until;
 
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.activities.SplashScreenActivity;
@@ -33,6 +36,7 @@ import static androidx.test.platform.app.InstrumentationRegistry.getInstrumentat
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
+import static org.hamcrest.Matchers.oneOf;
 
 import dagger.hilt.android.testing.HiltAndroidRule;
 import dagger.hilt.android.testing.HiltAndroidTest;
@@ -43,6 +47,7 @@ If you're running this on your phone and you get an error about
  */
 @HiltAndroidTest
 public class SplashScreenActivityTest {
+  public static final String COM_GOOGLE_ANDROID_STARDROID = "com.google.android.stardroid";
   @Rule
   public HiltAndroidRule hiltRule = new HiltAndroidRule(this);
 
@@ -61,10 +66,10 @@ public class SplashScreenActivityTest {
     };
   }
 
-  private PreferenceCleanerRule preferenceCleanerRule = new PreferenceCleanerRule();
+  private final PreferenceCleanerRule preferenceCleanerRule = new PreferenceCleanerRule();
 
-  private ActivityScenarioRule<SplashScreenActivity> testRule =
-      new ActivityScenarioRule(SplashScreenActivity.class);
+  private final ActivityScenarioRule<SplashScreenActivity> testRule =
+      new ActivityScenarioRule<>(SplashScreenActivity.class);
 
   @Rule
   public RuleChain chain = RuleChain.outerRule(preferenceCleanerRule).around(testRule);
@@ -106,17 +111,28 @@ public class SplashScreenActivityTest {
    * See: https://github.com/sky-map-team/stardroid/issues/605. (Android edge-to-edge dialog focus issue)
    */
   @Test
-  public void showsWhatsNewAfterTandCs_newUser() throws InterruptedException {
-    // Skip on Android 15+ due to edge-to-edge window focus issues with Espresso
-    Assume.assumeTrue("Skipping on Android 15+ due to edge-to-edge dialog focus issues",
-        Build.VERSION.SDK_INT < Build.VERSION_CODES.VANILLA_ICE_CREAM);
+  public void showsTutorialThenWhatsNewAfterTandCs_newUser() throws InterruptedException {
+    UiDevice device = UiDevice.getInstance(getInstrumentation());
+    long timeout = 5000; // 5 seconds max wait
+    device.wait(Until.hasObject(By.res(COM_GOOGLE_ANDROID_STARDROID, "eula_webview")), timeout);
 
-    // Wait for the WebView to be laid out (it starts with height=0)
     onView(withId(R.id.eula_webview)).inRoot(isDialog()).perform(waitForLayout());
-    onView(withId(R.id.eula_webview)).inRoot(isDialog()).check(matches(isDisplayed()));
     onView(withId(android.R.id.button1)).inRoot(isDialog()).perform(click());
-    // Wait for fadeout animation (3000ms) to complete before checking for What's New dialog
-    Thread.sleep(4000);
+    device.wait(Until.hasObject(By.res(
+            COM_GOOGLE_ANDROID_STARDROID, "warm_welcome_viewpager")), timeout);
+    //Thread.sleep(4000);
+
+    onView(withId(R.id.warm_welcome_viewpager)).check(matches(isDisplayed()));
+    onView(withId(R.id.welcome_slide_1_root)).check(matches(isDisplayed()));
+    onView(withId(R.id.btn_next_finish)).perform(click());
+    onView(withId(R.id.welcome_slide_2_root)).check(matches(isDisplayed()));
+    onView(withId(R.id.btn_next_finish)).perform(click());
+    onView(withId(R.id.welcome_slide_3_root)).check(matches(isDisplayed()));
+    onView(withId(R.id.btn_next_finish)).perform(click());
+    device.wait(Until.hasObject(By.res(
+            COM_GOOGLE_ANDROID_STARDROID, "whatsnew_webview")), timeout);
+
+    // What's new?
     onView(withId(R.id.whatsnew_webview)).inRoot(isDialog()).check(matches(isDisplayed()));
   }
 
@@ -128,18 +144,18 @@ public class SplashScreenActivityTest {
    */
   @Test
   public void showNoAcceptTandCs() throws InterruptedException {
-    // Skip on Android 15+ due to edge-to-edge window focus issues with Espresso
-    Assume.assumeTrue("Skipping on Android 15+ due to edge-to-edge dialog focus issues",
-        Build.VERSION.SDK_INT < Build.VERSION_CODES.VANILLA_ICE_CREAM);
+    UiDevice device = UiDevice.getInstance(getInstrumentation());
+    long timeout = 5000; // 5 seconds max wait
+    device.wait(Until.hasObject(By.res(COM_GOOGLE_ANDROID_STARDROID, "eula_webview")), timeout);
 
-    Log.d("TESTTEST", "Doing test");
     // Wait for the WebView to be laid out (it starts with height=0)
     onView(withId(R.id.eula_webview)).inRoot(isDialog()).perform(waitForLayout());
     onView(withId(R.id.eula_webview)).inRoot(isDialog()).check(matches(isDisplayed()));
     // Decline button
     onView(withId(android.R.id.button2)).inRoot(isDialog()).perform(click());
     // Wait for activity to finish
-    Thread.sleep(5000);
+    //Thread.sleep(5000);
+    device.wait(Until.gone(By.res(COM_GOOGLE_ANDROID_STARDROID, "eula_webview")), timeout);
     assertThat(testRule.getScenario().getState(), equalTo(Lifecycle.State.DESTROYED));
   }
 

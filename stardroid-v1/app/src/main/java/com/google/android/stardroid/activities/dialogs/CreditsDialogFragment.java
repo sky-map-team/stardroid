@@ -40,7 +40,7 @@ public class CreditsDialogFragment extends DialogFragment {
 
     LayoutInflater inflater = parentActivity.getLayoutInflater();
     View view = inflater.inflate(R.layout.webview_dialog, null);
-    AlertDialog alertDialog = new AlertDialog.Builder(parentActivity)
+    AlertDialog alertDialog = new AlertDialog.Builder(parentActivity, AlertDialog.THEME_DEVICE_DEFAULT_DARK)
         .setTitle(R.string.credits_dialog_title)
         .setView(view).setNegativeButton(android.R.string.ok,
             (dialog, whichButton) -> {

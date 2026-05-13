@@ -42,6 +42,8 @@ object MiscUtil {
         if (s == null || s.isEmpty()) return ""
         return s.lowercase().replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.ROOT) else it.toString() }
     }
+
+
 }
 
 /** Returns a date given the year, month and day in UTC.

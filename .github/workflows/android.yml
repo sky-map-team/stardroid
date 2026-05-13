@@ -30,11 +30,14 @@ jobs:
           distribution: 'zulu'
           java-version: '17'
       - name: Gradle cache
-        uses: gradle/actions/setup-gradle@v3
+        uses: gradle/actions/setup-gradle@v4
+        continue-on-error: true
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
       - name: Build and test
-        run: ./gradlew assembleGmsDebug testGmsDebugUnitTest
+        run: ./gradlew assembleGmsDebug testGmsDebugUnitTest --no-daemon
+        env:
+          ORG_GRADLE_PROJECT_org_gradle_java_home: ${{ env.JAVA_HOME }}
       - name: Upload test results
         if: always()
         uses: actions/upload-artifact@v4
@@ -48,7 +51,7 @@ jobs:
   connected_test:
     needs: build_and_unit_test
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 50
     defaults:
       run:
         working-directory: ./stardroid-v1
@@ -75,7 +78,8 @@ jobs:
           java-version: '17'
 
       - name: Gradle cache
-        uses: gradle/actions/setup-gradle@v3
+        uses: gradle/actions/setup-gradle@v4
+        continue-on-error: true
 
       - name: AVD cache
         uses: actions/cache@v4
@@ -94,7 +98,8 @@ jobs:
           target: ${{ matrix.target }}
           arch: x86_64
           force-avd-creation: false
-          emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
+          emulator-boot-timeout: 1200
+          emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none -memory 2048 -partition-size 512
           disable-animations: false
           profile: Nexus 6
           working-directory: ./stardroid-v1
@@ -107,18 +112,28 @@ jobs:
           target: ${{ matrix.target }}
           arch: x86_64
           force-avd-creation: false
-          emulator-boot-timeout: 900
-          emulator-options: -no-snapshot-save -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
+          emulator-boot-timeout: 1200
+          emulator-options: -no-snapshot-save -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none -memory 2048 -partition-size 512
           disable-animations: true
           profile: Nexus 6
           working-directory: ./stardroid-v1
           script: |
             adb wait-for-device
-            ./gradlew connectedGmsDebugAndroidTest -x lint --stacktrace
+            adb shell settings put global window_animation_scale 0
+            adb shell settings put global transition_animation_scale 0
+            adb logcat -c
+            adb logcat -G 16M
+            adb logcat > logcat.log 2>&1 &
+            LOGCAT_PID=$!
+            timeout 1200 ./gradlew connectedGmsDebugAndroidTest -x lint --stacktrace -Pandroid.testInstrumentationRunnerArguments.notAnnotation=com.google.android.stardroid.test.ScreengrabTest
+            kill $LOGCAT_PID 2>/dev/null || true
+	    wait $LOGCAT_PID 2>/dev/null || true
 
       - name: Upload connected test results
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: connected-test-results-${{ matrix.api-level }}
-          path: 'stardroid-v1/**/build/reports/androidTests/'
+          path: |
+            stardroid-v1/**/build/reports/androidTests/
+            stardroid-v1/logcat.log

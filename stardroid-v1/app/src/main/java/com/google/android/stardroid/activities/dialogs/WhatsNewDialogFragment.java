@@ -63,7 +63,7 @@ public class WhatsNewDialogFragment extends DialogFragment {
     LayoutInflater inflater = parentActivity.getLayoutInflater();
     View view = inflater.inflate(R.layout.whatsnew_view, null);
 
-    AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(parentActivity)
+    AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(parentActivity, AlertDialog.THEME_DEVICE_DEFAULT_DARK)
         .setTitle(getString(R.string.whats_new_dialog_title))
         .setView(view)
         .setNegativeButton(R.string.dialog_ok_button,
