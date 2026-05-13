@@ -134,5 +134,5 @@ jobs:
         with:
           name: connected-test-results-${{ matrix.api-level }}
           path: |
-            'stardroid-v1/**/build/reports/androidTests/'
-            logcat.log
+            stardroid-v1/**/build/reports/androidTests/
+            stardroid-v1/logcat.log
