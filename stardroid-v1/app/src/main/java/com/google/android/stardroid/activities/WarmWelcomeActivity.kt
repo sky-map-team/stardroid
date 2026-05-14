@@ -144,7 +144,8 @@ class WarmWelcomeActivity : AppCompatActivity(), WhatsNewDialogFragment.CloseLis
         val v = vibrator ?: return
         if (!v.hasVibrator()) return
         val effect = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-            val effectId = if (happy) VibrationEffect.EFFECT_CLICK else VibrationEffect.EFFECT_DOUBLE_CLICK
+            val effectId = if (happy) VibrationEffect.EFFECT_CLICK
+                           else VibrationEffect.EFFECT_DOUBLE_CLICK
             VibrationEffect.createPredefined(effectId)
         } else {
             if (happy) VibrationEffect.createOneShot(50, 80)
@@ -283,9 +284,9 @@ class WarmWelcomeActivity : AppCompatActivity(), WhatsNewDialogFragment.CloseLis
             val activity = requireActivity() as WarmWelcomeActivity
             val sensorManager = activity.sensorManager
 
-            hasCompass = sensorManager?.getDefaultSensor(android.hardware.Sensor.TYPE_MAGNETIC_FIELD) != null
-            hasAccel = sensorManager?.getDefaultSensor(android.hardware.Sensor.TYPE_ACCELEROMETER) != null
-            hasGyro = sensorManager?.getDefaultSensor(android.hardware.Sensor.TYPE_GYROSCOPE) != null
+            hasCompass = sensorManager?.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD) != null
+            hasAccel = sensorManager?.getDefaultSensor(Sensor.TYPE_ACCELEROMETER) != null
+            hasGyro = sensorManager?.getDefaultSensor(Sensor.TYPE_GYROSCOPE) != null
 
             val goodColor = ContextCompat.getColor(requireContext(), R.color.status_good)
             val badColor = ContextCompat.getColor(requireContext(), R.color.status_bad)
