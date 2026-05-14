@@ -15,5 +15,7 @@ object ExperimentConfigTestModule {
         override fun isEnabled(experiment: Experiment): Boolean = when (experiment) {
             Experiment.WARM_WELCOME -> true
         }
+
+        override fun waitForInitialFetch(timeoutMs: Long): Boolean = true
     }
 }

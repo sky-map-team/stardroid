@@ -107,6 +107,8 @@ import com.google.android.stardroid.touch.GestureInterpreter;
 import com.google.android.stardroid.touch.GestureInterpreterFactory;
 import com.google.android.stardroid.util.Analytics;
 import com.google.android.stardroid.util.AnalyticsInterface;
+import com.google.android.stardroid.util.Experiment;
+import com.google.android.stardroid.util.ExperimentConfig;
 import com.google.android.stardroid.util.MiscUtil;
 import com.google.android.stardroid.util.SensorAccuracyMonitor;
 import com.google.android.stardroid.views.ButtonLayerView;
@@ -247,6 +249,8 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
   Handler handler;
   @Inject
   Analytics analytics;
+  @Inject
+  ExperimentConfig experimentConfig;
   @Inject
   GooglePlayServicesChecker playServicesChecker;
   @Inject
@@ -470,7 +474,7 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
     NightModeHelper.tintMenuIcons(menu, nightMode, this);
     MenuItem tutorialItem = menu.findItem(R.id.menu_item_tutorial);
     if (tutorialItem != null) {
-      tutorialItem.setVisible(ApplicationConstants.WARM_WELCOME_ENABLED);
+      tutorialItem.setVisible(experimentConfig.isEnabled(Experiment.WARM_WELCOME));
     }
     return result;
   }
@@ -506,7 +510,7 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
           .getBoolean(ApplicationConstants.NO_WARN_ABOUT_MISSING_SENSORS, false)) {
         Log.d(TAG, "showing no sensor warning");
         analytics.trackEvent(AnalyticsInterface.NO_SENSORS_WARNING_EVENT, null);
-        if (ApplicationConstants.WARM_WELCOME_ENABLED) {
+        if (experimentConfig.isEnabled(Experiment.WARM_WELCOME)) {
           Toast.makeText(DynamicStarMapActivity.this, R.string.no_sensor_warning,
               Toast.LENGTH_LONG).show();
         } else {
@@ -626,7 +630,7 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
       showDialog(HelpDialogFragment.newInstance(), HelpDialogFragment.class.getSimpleName());
     } else if (itemId == R.id.menu_item_tutorial) {
       Log.d(TAG, "Tutorial");
-      if (ApplicationConstants.WARM_WELCOME_ENABLED) {
+      if (experimentConfig.isEnabled(Experiment.WARM_WELCOME)) {
         menuEventBundle.putString(Analytics.MENU_ITEM_EVENT_VALUE, "tutorial_opened");
         Intent intent = new Intent(this, WarmWelcomeActivity.class);
         intent.putExtra("is_manual_invocation", true);
