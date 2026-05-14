@@ -100,8 +100,10 @@ public class SplashScreenActivityTest {
     onView(withId(R.id.warm_welcome_viewpager)).check(matches(isDisplayed()));
     onView(withId(R.id.welcome_slide_1_root)).check(matches(isDisplayed()));
     onView(withId(R.id.btn_next_finish)).perform(click());
+    device.wait(Until.hasObject(By.res(COM_GOOGLE_ANDROID_STARDROID, "welcome_slide_2_root")), timeout);
     onView(withId(R.id.welcome_slide_2_root)).check(matches(isDisplayed()));
     onView(withId(R.id.btn_next_finish)).perform(click());
+    device.wait(Until.hasObject(By.res(COM_GOOGLE_ANDROID_STARDROID, "welcome_slide_3_root")), timeout);
     onView(withId(R.id.welcome_slide_3_root)).check(matches(isDisplayed()));
     onView(withId(R.id.btn_next_finish)).perform(click());
     // Check for the What's New dialog by its title — more reliable than looking for
