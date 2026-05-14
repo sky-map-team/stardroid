@@ -76,13 +76,22 @@ All commands below should be run from within the `stardroid-v1` directory:
 
 The APK can be found in `app/build/outputs/apk/`.
 
+### Quick Build (Default)
+
+```bash
+./build.sh             # GMS release
+./build.sh --fdroid    # F-Droid release
+./build.sh -d          # GMS debug
+```
+
 ### Full Build (Including Data Generation)
 
 ```bash
-./build_skymap.sh
+./build.sh --full             # GMS including data generation
+./build.sh --full --fdroid    # F-Droid including data generation
 ```
 
-Pass `--quick` to skip data regeneration, or `--fdroid` to build the F-Droid variant.
+Use `--full` when modifying star catalog or astronomical data.
 
 ### Build Flavors
 

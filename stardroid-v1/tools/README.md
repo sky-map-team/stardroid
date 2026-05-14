@@ -6,7 +6,7 @@ These tools transform raw catalog data (star positions, Messier objects, etc.) i
 
 ## Quick Start
 
-It's easiest to use the `build_skymap.sh` script in the parent directory, but if you want to understand the steps:
+It's easiest to use the `build.sh` script in the parent directory (with `--full` to include data generation), but if you want to understand the steps:
 
 ## Manual Procedure
 
