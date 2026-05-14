@@ -62,6 +62,11 @@ class WarmWelcomeActivity : AppCompatActivity(), WhatsNewDialogFragment.CloseLis
 
         setupIndicators(adapter.itemCount)
 
+        val slideParams = Bundle().apply {
+            putInt(AnalyticsInterface.WARM_WELCOME_SLIDE_NUMBER, 1)
+        }
+        analytics.trackEvent(AnalyticsInterface.WARM_WELCOME_SLIDE_VIEWED_EVENT, slideParams)
+
         viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {
                 super.onPageSelected(position)
@@ -90,14 +95,14 @@ class WarmWelcomeActivity : AppCompatActivity(), WhatsNewDialogFragment.CloseLis
                 putInt(AnalyticsInterface.WARM_WELCOME_SKIPPED_AT_SLIDE, viewPager.currentItem + 1)
             }
             analytics.trackEvent(AnalyticsInterface.WARM_WELCOME_SKIPPED_EVENT, skipParams)
-            finishWelcome()
+            finishWelcome(completed = false)
         }
         btnNextFinish.setOnClickListener {
             if (viewPager.currentItem < adapter.itemCount - 1) {
                 viewPager.currentItem += 1
             } else {
                 analytics.trackEvent(AnalyticsInterface.WARM_WELCOME_COMPLETED_EVENT, null)
-                finishWelcome()
+                finishWelcome(completed = true)
             }
         }
     }
@@ -129,8 +134,8 @@ class WarmWelcomeActivity : AppCompatActivity(), WhatsNewDialogFragment.CloseLis
         }
     }
 
-    private fun finishWelcome() {
-        analytics.setUserProperty(AnalyticsInterface.COMPLETED_WARM_WELCOME, "true")
+    private fun finishWelcome(completed: Boolean = false) {
+        analytics.setUserProperty(AnalyticsInterface.COMPLETED_WARM_WELCOME, if (completed) "true" else "false")
         if (!isManualInvocation) {
             startupRouter.markWarmWelcomeSeen()
             if (startupRouter.needsWhatsNew()) {
