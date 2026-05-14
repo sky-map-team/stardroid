@@ -113,7 +113,6 @@ public class SplashScreenActivity extends androidx.fragment.app.FragmentActivity
   }
 
   private void proceedToNextActivity() {
-    experimentConfig.waitForInitialFetch(2000);
     Log.d(TAG, "WARM_WELCOME enabled: " + experimentConfig.isEnabled(com.google.android.stardroid.util.Experiment.WARM_WELCOME));
     if (startupRouter.needsWarmWelcome()) {
       startActivity(new Intent(this, WarmWelcomeActivity.class));
