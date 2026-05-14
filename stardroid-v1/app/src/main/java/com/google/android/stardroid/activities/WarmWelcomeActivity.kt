@@ -32,6 +32,7 @@ class WarmWelcomeActivity : AppCompatActivity(), WhatsNewDialogFragment.CloseLis
     @Inject lateinit var startupRouter: StartupRouter
     @Inject @JvmField var sensorManager: SensorManager? = null
     @Inject lateinit var analytics: Analytics
+    private var lastLoggedPosition = -1
 
     private lateinit var viewPager: ViewPager2
     private lateinit var btnSkip: Button
