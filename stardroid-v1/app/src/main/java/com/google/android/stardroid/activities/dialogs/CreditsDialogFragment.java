@@ -63,7 +63,11 @@ public class CreditsDialogFragment extends DialogFragment {
       @Override
       public boolean shouldOverrideUrlLoading(WebView view, String url) {
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
-        parentActivity.startActivity(intent);
+        try {
+          parentActivity.startActivity(intent);
+        } catch (android.content.ActivityNotFoundException e) {
+          Log.w(TAG, "No handler for " + url, e);
+        }
         return true;
       }
     });

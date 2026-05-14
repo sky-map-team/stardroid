@@ -16,6 +16,8 @@ import com.google.android.stardroid.control.*
 import com.google.android.stardroid.layers.*
 import com.google.android.stardroid.util.Analytics
 import com.google.android.stardroid.util.AnalyticsInterface
+import com.google.android.stardroid.util.ExperimentConfig
+import com.google.android.stardroid.util.ExperimentConfigImpl
 import com.google.android.stardroid.util.MiscUtil.getTag
 import dagger.Module
 import dagger.Provides
@@ -71,6 +73,10 @@ class ApplicationModule {
   @Provides
   @Singleton
   fun provideAnalytics(analytics: Analytics): AnalyticsInterface = analytics
+
+  @Provides
+  @Singleton
+  fun provideExperimentConfig(impl: ExperimentConfigImpl): ExperimentConfig = impl
 
   @Provides
   @Singleton

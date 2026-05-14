@@ -29,9 +29,10 @@ Always specify the flavor. Never use bare `assembleDebug`.
 Prefer to use the shell scripts:
 ```bash
 # Full rebuild including data generation
-./build_skymap.sh             # GMS including data generation
-./build_skymap.sh --fdroid    # F-Droid
-./build_skymap.sh --quick     # Skip data regeneration
+./build.sh             # Skip data regeneration
+./build.sh -d          # Build the debug version
+./build.sh --full      # GMS including data generation
+./build.sh --fdroid    # F-Droid
 ```
 but you can also use gradlew directly:
 ```bash
@@ -42,7 +43,7 @@ but you can also use gradlew directly:
 # Release bundle
 ./gradlew :app:bundleGmsRelease
 ```
-Prefer the --quick option unless you are adding/removing strings.
+Prefer not using the -fullk option unless you are adding/removing strings.
 
 ## Testing
 
@@ -79,6 +80,7 @@ cd tools
 ./deploy.sh       # Deploy to connected device or emulator
 ./deploy.sh -p    # Deploy to a physical device
 ./deploy.sh -d    # Deploy a debug build
+./deploy.sh --frdroid # Deploy the fdroid build
 ./undeploy.sh     # Uninstall the app
 ```
 
