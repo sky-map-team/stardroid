@@ -91,10 +91,10 @@ public class SplashScreenActivityTest {
     onView(withId(R.id.btn_next_finish)).perform(click());
     onView(withId(R.id.welcome_slide_3_root)).check(matches(isDisplayed()));
     onView(withId(R.id.btn_next_finish)).perform(click());
-    device.wait(Until.hasObject(By.res(
-            COM_GOOGLE_ANDROID_STARDROID, "whatsnew_webview")), timeout);
-
-    assertThat(device.hasObject(By.res(COM_GOOGLE_ANDROID_STARDROID, "whatsnew_webview")), is(true));
+    // Check for the What's New dialog by its title — more reliable than looking for
+    // the WebView, which may not appear in the accessibility tree on API 35+.
+    assertThat("What's New dialog should appear after warm welcome",
+        device.wait(Until.hasObject(By.text("What's new")), timeout), is(true));
   }
 
   /**
