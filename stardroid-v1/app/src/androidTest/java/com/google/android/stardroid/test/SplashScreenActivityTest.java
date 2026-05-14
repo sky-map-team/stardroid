@@ -78,8 +78,8 @@ public class SplashScreenActivityTest {
     // window to have focus, which is not guaranteed on API 35+ due to edge-to-edge enforcement.
     // Wait for the button itself, then sync with the main thread after clicking so the
     // app processes the acceptance before we check for the next screen.
-    device.wait(Until.hasObject(By.res("android", "button1")), timeout);
-    device.findObject(By.res("android", "button1")).click();
+    device.wait(Until.hasObject(By.text("Accept")), timeout);
+    device.findObject(By.text("Accept")).click();
     getInstrumentation().waitForIdleSync();
     device.wait(Until.hasObject(By.res(
             COM_GOOGLE_ANDROID_STARDROID, "warm_welcome_viewpager")), timeout);
@@ -110,8 +110,8 @@ public class SplashScreenActivityTest {
     // window to have focus, which is not guaranteed on API 35+ due to edge-to-edge enforcement.
     // Wait for the button itself, then sync with the main thread after clicking so the
     // decline callback fires and activity.finish() is called before we check state.
-    device.wait(Until.hasObject(By.res("android", "button2")), timeout);
-    device.findObject(By.res("android", "button2")).click();
+    device.wait(Until.hasObject(By.text("No Thanks")), timeout);
+    device.findObject(By.text("No Thanks")).click();
     getInstrumentation().waitForIdleSync();
     device.wait(Until.gone(By.res(COM_GOOGLE_ANDROID_STARDROID, "eula_webview")), timeout);
     getInstrumentation().waitForIdleSync();
