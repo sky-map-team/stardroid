@@ -17,6 +17,7 @@ import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
 import coil.load
+import com.google.android.stardroid.ApplicationConstants.BUNDLE_IS_MANUAL_INVOCATION
 import com.google.android.stardroid.R
 import com.google.android.stardroid.activities.dialogs.WhatsNewDialogFragment
 import com.google.android.stardroid.util.Analytics
@@ -41,7 +42,7 @@ class WarmWelcomeActivity : AppCompatActivity(), WhatsNewDialogFragment.CloseLis
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        isManualInvocation = intent.getBooleanExtra("is_manual_invocation", false)
+        isManualInvocation = intent.getBooleanExtra(BUNDLE_IS_MANUAL_INVOCATION, false)
 
         if (savedInstanceState == null) {
             val params = Bundle().apply {
@@ -67,11 +68,6 @@ class WarmWelcomeActivity : AppCompatActivity(), WhatsNewDialogFragment.CloseLis
         viewPager.adapter = adapter
 
         setupIndicators(adapter.itemCount)
-
-        val slideParams = Bundle().apply {
-            putInt(AnalyticsInterface.WARM_WELCOME_SLIDE_NUMBER, 1)
-        }
-        analytics.trackEvent(AnalyticsInterface.WARM_WELCOME_SLIDE_VIEWED_EVENT, slideParams)
 
         viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {

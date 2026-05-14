@@ -133,8 +133,6 @@ public interface AnalyticsInterface {
   String WARM_WELCOME_SKIPPED_AT_SLIDE = "skipped_at_slide";
   String WARM_WELCOME_COMPLETED_EVENT = "warm_welcome_completed_ev";
   String COMPLETED_WARM_WELCOME = "completed_warm_welcome_prop";
-  String COMPLETED_WARM_WELCOME = "completed_warm_welcome_prop";
-
   Map<String, String> LAYER_NAME_MAP = Map.of(
       "source_provider.0", "stars",
       "source_provider.1", "constellations",

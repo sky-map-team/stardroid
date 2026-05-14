@@ -109,6 +109,7 @@ import com.google.android.stardroid.util.Analytics;
 import com.google.android.stardroid.util.AnalyticsInterface;
 import com.google.android.stardroid.util.MiscUtil;
 import com.google.android.stardroid.util.SensorAccuracyMonitor;
+import com.google.android.stardroid.util.SensorAccuracyMonitor.SensorAccuracyListener;
 import com.google.android.stardroid.views.ButtonLayerView;
 import com.google.android.stardroid.views.PreferencesButton;
 
@@ -629,7 +630,7 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
       if (ApplicationConstants.WARM_WELCOME_ENABLED) {
         menuEventBundle.putString(Analytics.MENU_ITEM_EVENT_VALUE, "tutorial_opened");
         Intent intent = new Intent(this, WarmWelcomeActivity.class);
-        intent.putExtra("is_manual_invocation", true);
+        intent.putExtra(ApplicationConstants.BUNDLE_IS_MANUAL_INVOCATION, true);
         startActivity(intent);
       }
     } else if (itemId == R.id.menu_item_dim) {
