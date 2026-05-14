@@ -77,11 +77,12 @@ class WarmWelcomeActivity : AppCompatActivity(), WhatsNewDialogFragment.CloseLis
                 super.onPageSelected(position)
                 updateIndicators(position)
 
-                val slideParams = Bundle().apply {
-                    putInt(AnalyticsInterface.WARM_WELCOME_SLIDE_NUMBER, position + 1)
-                }
+
                 // Just in case we got here due to a screen rotation.
-                if (lastLoggedPosition != position) {
+                if (lastLoggedPosition != -1 || savedInstanceState == null) {
+                    val slideParams = Bundle().apply {
+                        putInt(AnalyticsInterface.WARM_WELCOME_SLIDE_NUMBER, position + 1)
+                    }
                     analytics.trackEvent(
                         AnalyticsInterface.WARM_WELCOME_SLIDE_VIEWED_EVENT,
                         slideParams
