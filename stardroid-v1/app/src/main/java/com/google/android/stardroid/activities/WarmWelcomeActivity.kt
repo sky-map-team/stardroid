@@ -38,6 +38,7 @@ class WarmWelcomeActivity : AppCompatActivity(), WhatsNewDialogFragment.CloseLis
     private lateinit var btnNextFinish: Button
     private lateinit var indicatorsContainer: LinearLayout
     private var isManualInvocation = false
+    private var isFirstInvocation = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,6 +46,7 @@ class WarmWelcomeActivity : AppCompatActivity(), WhatsNewDialogFragment.CloseLis
         isManualInvocation = intent.getBooleanExtra(BUNDLE_IS_MANUAL_INVOCATION, false)
 
         if (savedInstanceState == null) {
+            isFirstInvocation = true
             val params = Bundle().apply {
                 putBoolean(AnalyticsInterface.WARM_WELCOME_STARTED_MANUAL, isManualInvocation)
             }
@@ -137,7 +139,10 @@ class WarmWelcomeActivity : AppCompatActivity(), WhatsNewDialogFragment.CloseLis
     }
 
     private fun finishWelcome(completed: Boolean = false) {
-        analytics.setUserProperty(AnalyticsInterface.COMPLETED_WARM_WELCOME, completed.toString())
+        // Only update the user property on first invocation to avoid overwriting completion status
+        if (isFirstInvocation) {
+            analytics.setUserProperty(AnalyticsInterface.COMPLETED_WARM_WELCOME, completed.toString())
+        }
         if (!isManualInvocation) {
             startupRouter.markWarmWelcomeSeen()
             if (startupRouter.needsWhatsNew()) {
