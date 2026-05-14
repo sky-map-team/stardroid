@@ -26,6 +26,7 @@ import androidx.fragment.app.FragmentManager;
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.activities.dialogs.EulaDialogFragment;
 import com.google.android.stardroid.activities.dialogs.WhatsNewDialogFragment;
+import com.google.android.stardroid.util.ExperimentConfig;
 import com.google.android.stardroid.util.MiscUtil;
 
 import javax.inject.Inject;
@@ -44,6 +45,7 @@ public class SplashScreenActivity extends androidx.fragment.app.FragmentActivity
   @Inject StartupRouter startupRouter;
   @Inject @Named("fadeout") Animation fadeAnimation;
   @Inject FragmentManager fragmentManager;
+  @Inject ExperimentConfig experimentConfig;
   private View graphic;
 
   @Override
@@ -111,6 +113,7 @@ public class SplashScreenActivity extends androidx.fragment.app.FragmentActivity
   }
 
   private void proceedToNextActivity() {
+    Log.d(TAG, "WARM_WELCOME enabled: " + experimentConfig.isEnabled(com.google.android.stardroid.util.Experiment.WARM_WELCOME));
     if (startupRouter.needsWarmWelcome()) {
       startActivity(new Intent(this, WarmWelcomeActivity.class));
       finish();

@@ -126,7 +126,11 @@ public class EulaDialogFragment extends DialogFragment {
         public boolean shouldOverrideUrlLoading(WebView view, String url) {
           // Open links in external browser
           Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
-          parentActivity.startActivity(intent);
+          try {
+            parentActivity.startActivity(intent);
+          } catch (android.content.ActivityNotFoundException e) {
+            Log.w(TAG, "No handler for " + url, e);
+          }
           return true;
         }
       });

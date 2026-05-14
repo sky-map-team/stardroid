@@ -74,7 +74,11 @@ public class HelpDialogFragment extends DialogFragment {
       public boolean shouldOverrideUrlLoading(WebView view, String url) {
         // Open links in external browser
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
-        activity.startActivity(intent);
+        try {
+          activity.startActivity(intent);
+        } catch (android.content.ActivityNotFoundException e) {
+          Log.w(TAG, "No handler for " + url, e);
+        }
         return true;
       }
     });

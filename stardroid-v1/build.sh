@@ -1,24 +1,29 @@
 #!/bin/bash
 set -euo pipefail
-QUICK=false
+FULL=false
 FDROID=false
+DEBUG=false
 
 for arg in "$@"
 do
     case $arg in
-        --quick)
-        QUICK=true
+        --full)
+        FULL=true
         shift
         ;;
         --fdroid)
         FDROID=true
         shift
         ;;
+        -d)
+        DEBUG=true
+        shift
+        ;;
     esac
 done
 
 # Temporary script to regenerate the data and build the app.
-if [ "$QUICK" = false ]; then
+if [ "$FULL" = true ]; then
   # TODO(jontayler): retire it once gradle can do this or
   # or we get rid of the data generation step.
   ./gradlew clean :tools:installDist
@@ -28,11 +33,21 @@ if [ "$QUICK" = false ]; then
   rm -f build/install/datagen/bin/datagen-e
   ./generate.sh
   ./binary.sh)
-  ./gradlew :app:bundleGmsRelease
+  if [ "$DEBUG" = false ] && [ "$FDROID" = false ]; then
+    ./gradlew :app:bundleGmsRelease
+  fi
 fi
 
 if [ "$FDROID" = true ]; then
-  ./gradlew :app:assembleFdroid
+  if [ "$DEBUG" = true ]; then
+    ./gradlew :app:assembleFdroidDebug
+  else
+    ./gradlew :app:assembleFdroidRelease
+  fi
 else
-  ./gradlew :app:assembleGms
+  if [ "$DEBUG" = true ]; then
+    ./gradlew :app:assembleGmsDebug
+  else
+    ./gradlew :app:assembleGmsRelease
+  fi
 fi

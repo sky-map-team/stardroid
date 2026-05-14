@@ -4,13 +4,16 @@ import android.content.SharedPreferences
 import androidx.core.content.edit
 import com.google.android.stardroid.ApplicationConstants
 import com.google.android.stardroid.StardroidApplication
+import com.google.android.stardroid.util.Experiment
+import com.google.android.stardroid.util.ExperimentConfig
 import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
 class StartupRouter @Inject constructor(
     private val sharedPreferences: SharedPreferences,
-    private val app: StardroidApplication
+    private val app: StardroidApplication,
+    private val experimentConfig: ExperimentConfig
 ) {
     fun needsEula() =
         sharedPreferences.getInt(ApplicationConstants.READ_TOS_PREF_VERSION, -1) != EULA_VERSION_CODE
@@ -20,7 +23,7 @@ class StartupRouter @Inject constructor(
     }
 
     fun needsWarmWelcome() =
-        ApplicationConstants.WARM_WELCOME_ENABLED &&
+        experimentConfig.isEnabled(Experiment.WARM_WELCOME) &&
             sharedPreferences.getLong(ApplicationConstants.READ_WARM_WELCOME_PREF_VERSION, -1) <= 0
 
     fun markWarmWelcomeSeen() {
