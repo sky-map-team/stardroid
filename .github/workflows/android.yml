@@ -127,8 +127,7 @@ jobs:
             LOGCAT_PID=$!
             timeout 1200 ./gradlew connectedGmsDebugAndroidTest -x lint --stacktrace -Pandroid.testInstrumentationRunnerArguments.notAnnotation=com.google.android.stardroid.test.ScreengrabTest
             kill $LOGCAT_PID 2>/dev/null || true
-	    wait $LOGCAT_PID 2>/dev/null || true
-
+            wait $LOGCAT_PID 2>/dev/null || true
       - name: Upload connected test results
         if: always()
         uses: actions/upload-artifact@v4

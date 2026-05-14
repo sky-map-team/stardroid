@@ -196,7 +196,7 @@ Column order: `Object,Type,RA (h),DEC (deg),Magnitude,Size (arcminutes),NGC#,Con
 3. Add info-card strings to `app/src/main/res/values/celestial_info_cards.xml` (keys: `object_info_<key>_description`, `_funfact`, `_distance`, `_size`).
 4. Add a JSON entry to `app/src/main/assets/object_info.json` (type, nameKey, distanceKey, sizeKey, descriptionKey, funFactKey, magnitude; add `imageKey`/`imageCredit` if an image is available).
 5. *(Optional)* Add an info card image using the `/celestial-image` skill. Images go in `app/src/main/assets/celestial_images/messier/<name>.webp` (480×800, WebP). If no freely-licensed image exists you may omit this step.
-6. Rebuild: from the project root run`./build_skymap.sh`.
+6. Rebuild: from the project root run `./build.sh --full`.
 
 ### Notable Messier Objects
 
