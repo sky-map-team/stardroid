@@ -3,6 +3,7 @@ package com.google.android.stardroid.test;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.os.ParcelFileDescriptor;
 
 import androidx.lifecycle.Lifecycle;
 import androidx.preference.PreferenceManager;
@@ -21,6 +22,8 @@ import org.junit.Test;
 import org.junit.rules.ExternalResource;
 import org.junit.rules.RuleChain;
 
+import java.io.IOException;
+
 import static androidx.test.platform.app.InstrumentationRegistry.getInstrumentation;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
@@ -36,7 +39,6 @@ If you're running this on your phone and you get an error about
 @HiltAndroidTest
 public class SplashScreenActivityTest {
   public static final String COM_GOOGLE_ANDROID_STARDROID = "com.google.android.stardroid";
-  // Generous timeout for slow CI emulators.
   private static final long TIMEOUT_MS = 20_000;
 
   @Rule
@@ -50,10 +52,26 @@ public class SplashScreenActivityTest {
           PreferenceManager.getDefaultSharedPreferences(context).edit();
       editor.clear();
       editor.commit();
+
+      // Disable the splash AlphaAnimation so onAnimationEnd fires immediately rather than
+      // relying on Choreographer vsync signals, which can stall on API 36 AOSP emulators
+      // when the window lacks focus.
+      setAnimatorDurationScale("0");
     }
 
     @Override
-    protected void after() {}
+    protected void after() {
+      setAnimatorDurationScale("1");
+    }
+
+    private static void setAnimatorDurationScale(String value) {
+      try (ParcelFileDescriptor pfd = getInstrumentation().getUiAutomation()
+          .executeShellCommand("settings put global animator_duration_scale " + value)) {
+        // drain the stream so the command completes
+        new java.io.FileInputStream(pfd.getFileDescriptor()).read(new byte[64]);
+      } catch (IOException ignored) {
+      }
+    }
   }
 
   private final PreferenceCleanerRule preferenceCleanerRule = new PreferenceCleanerRule();
@@ -67,18 +85,11 @@ public class SplashScreenActivityTest {
   /**
    * Clicks an EULA dialog button on the main thread.
    *
-   * <p>We wait first for the eula_webview UiAutomator selector (even though it times out on
-   * API 35+ where WebViews are not in the a11y tree) because the wait ensures the EULA dialog is
-   * fully laid out and its buttons are wired before we proceed. Without this wait, clicking too
-   * early may find the dialog but with a null resultListener, causing the fallback OK button to
-   * fire instead of the accept/reject listeners.
-   *
-   * <p>The actual button click goes through the fragment manager on the main thread, bypassing
-   * UiAutomator (which cannot find AlertDialog buttons reliably on AOSP emulators).
+   * <p>Waits for the eula_webview UiAutomator selector first — this will time out on API 35+
+   * (WebViews not in the a11y tree) but still acts as a sync point, guaranteeing the dialog
+   * fragment and its resultListener are fully attached before we click.
    */
   private void clickEulaButton(UiDevice device, int whichButton) {
-    // Acts as a sync point; returns false on API 35+ (WebView not in a11y tree) but guarantees
-    // we've given the dialog enough time to fully initialize before clicking.
     device.wait(Until.hasObject(By.res(COM_GOOGLE_ANDROID_STARDROID, "eula_webview")), TIMEOUT_MS);
 
     testRule.getScenario().onActivity(activity -> {
@@ -101,9 +112,9 @@ public class SplashScreenActivityTest {
   }
 
   /**
-   * Tests that accepting T&Cs shows the What's New dialog.
+   * Tests that accepting T&Cs shows the warm welcome, then the What's New dialog.
    *
-   * <p>Uses UiAutomator for all interactions after the EULA because API 36 AOSP emulator windows
+   * <p>Uses UiAutomator for all post-EULA interactions because API 36 AOSP emulator windows
    * may lack window focus, causing RootViewWithoutFocusException in Espresso.
    */
   @Test
