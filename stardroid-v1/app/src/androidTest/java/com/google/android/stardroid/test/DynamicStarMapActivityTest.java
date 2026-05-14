@@ -62,8 +62,6 @@ public class DynamicStarMapActivityTest {
 
   // For other great ideas about the permissions dialogs see
   // https://alexzh.com/ui-testing-of-android-runtime-permissions/
-  // For other great ideas about the permissions dialogs see
-  // https://alexzh.com/ui-testing-of-android-runtime-permissions/
   private final GrantPermissionRule permissionRule = GrantPermissionRule.grant(
           Manifest.permission.ACCESS_COARSE_LOCATION,
           Manifest.permission.CHANGE_CONFIGURATION);
