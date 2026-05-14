@@ -8,4 +8,8 @@ class ExperimentConfigImpl @Inject constructor() : ExperimentConfig {
             Experiment.WARM_WELCOME -> false
         }
     }
+
+    override fun waitForInitialFetch(timeoutMs: Long): Boolean {
+        return true
+    }
 }
