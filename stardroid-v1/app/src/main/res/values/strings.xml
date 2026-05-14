@@ -267,14 +267,14 @@ Your phone reports its compass accuracy as shown above. To improve this, please 
 
     <string name="warm_welcome_title" translation_description="Title of the Warm Welcome screen">Welcome to Sky Map</string>
     <string name="warm_welcome_slide1_title" translation_description="Title for the first slide of the Warm Welcome">Explore the Cosmos</string>
-    <string name="warm_welcome_slide1_desc" translation_description="Description for the first slide of the Warm Welcome">Toggle the layers on the left to see stars, constellations, planets, and more. Tap the vortex icon to travel through time, or the eye icon for night mode.</string>
+    <string name="warm_welcome_slide1_desc" translation_description="Description for the first slide of the Warm Welcome">Use the layers on the left to filter stars, constellations, planets, and more. Tap the <b>Vortex</b> to travel through time, or the <b>Eye</b> for night mode.</string>
     <string name="warm_welcome_slide2_title" translation_description="Title for the second slide of the Warm Welcome">Navigate the Sky</string>
-    <string name="warm_welcome_slide2_desc" translation_description="Description for the second slide of the Warm Welcome">Point your phone to look around in Auto mode, or tap the button to switch to Manual mode and swipe with your fingers. Double-tap to re-level the horizon in manual mode.</string>
-    <string name="warm_welcome_slide2_info_desc" translation_description="Description about info cards on the second slide">Tap celestial objects in Manual mode to show Info Cards with fun facts and details.</string>
+    <string name="warm_welcome_slide2_desc" translation_description="Description for the second slide of the Warm Welcome">Point your phone to look around in <b>Auto Mode</b>, or tap to switch to <b>Manual</b> and explore by swiping. Double-tap in Manual to reset your horizon.</string>
+    <string name="warm_welcome_slide2_info_desc" translation_description="Description about info cards on the second slide">Tap any object in Manual Mode to show Info Cards with fun facts and celestial details.</string>
     <string name="warm_welcome_slide3_title" translation_description="Title for the third slide of the Warm Welcome">Sensors &amp; Calibration</string>
-    <string name="warm_welcome_slide3_desc" translation_description="Description for the third slide of the Warm Welcome">Sky Map uses your phone\'s sensors to track the sky.</string>
-    <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message when sensors are missing">Your device seems to be missing some required sensors. Auto mode is unavailable and it\'s not Sky Map\'s fault, but you can still use it to explore the cosmos in manual mode!</string>
-    <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration text on slide 3">Make sure your compass is calibrated by waving your phone in a figure-8 motion occasionally.</string>
+    <string name="warm_welcome_slide3_desc" translation_description="Description for the third slide of the Warm Welcome">Sky Map uses your phone\'s sensors to align with the stars.</string>
+    <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message when sensors are missing">Your device seems to be missing the required sensors needed for automatic tracking. Don\'t worry—you can still explore the entire cosmos in <b>Manual Mode</b>!</string>
+    <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration text on slide 3">To keep things accurate, give your phone a quick <b>figure-8</b> wave every once in a while.</string>
 
     <string name="tutorial_planets" translation_description="Tutorial annotation for planets layer">Planets</string>
     <string name="tutorial_meteors" translation_description="Tutorial annotation for meteors layer">Meteors</string>
