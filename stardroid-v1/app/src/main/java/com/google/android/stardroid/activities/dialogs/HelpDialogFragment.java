@@ -76,8 +76,8 @@ public class HelpDialogFragment extends DialogFragment {
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
         try {
           activity.startActivity(intent);
-        } catch (android.content.ActivityNotFoundException e) {
-          android.util.Log.w("HelpDialogFragment", "No handler for " + url, e);
+        } catch (ActivityNotFoundException e) {
+          Log.w(TAG, "No handler for " + url, e);
         }
         return true;
       }

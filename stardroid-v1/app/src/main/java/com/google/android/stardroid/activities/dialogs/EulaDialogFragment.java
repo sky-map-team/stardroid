@@ -128,8 +128,8 @@ public class EulaDialogFragment extends DialogFragment {
           Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
           try {
             parentActivity.startActivity(intent);
-          } catch (android.content.ActivityNotFoundException e) {
-            android.util.Log.w("EulaDialogFragment", "No handler for " + url, e);
+          } catch (ActivityNotFoundException e) {
+            Log.w(TAG, "No handler for " + url, e);
           }
           return true;
         }
