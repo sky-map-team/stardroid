@@ -54,20 +54,20 @@
         app:layout_constraintTop_toBottomOf="@+id/icon_grid"
         app:layout_constraintBottom_toBottomOf="parent" />
 
-    <!-- Right side icons (top bar) -->
+    <!-- Manual/auto mode button (right side, aligned with planets icon as in portrait) -->
     <ImageView
         android:id="@+id/icon_manual_auto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/automaticmode"
         android:layout_marginEnd="12dp"
-        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/icon_planets" />
 
-    <ImageView android:id="@+id/icon_search" android:layout_width="40dp" android:layout_height="40dp" android:padding="8dp" android:scaleType="centerInside" android:src="@android:drawable/ic_menu_search" android:layout_marginTop="8dp" app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="1.0" app:layout_constraintEnd_toStartOf="@+id/icon_night_mode" app:layout_constraintHorizontal_chainStyle="packed" />
-    <ImageView android:id="@+id/icon_night_mode" android:layout_width="40dp" android:layout_height="40dp" android:padding="8dp" android:scaleType="centerInside" android:src="@android:drawable/ic_menu_view" android:layout_marginTop="8dp" app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toEndOf="@+id/icon_search" app:layout_constraintEnd_toStartOf="@+id/icon_time_travel" />
-    <ImageView android:id="@+id/icon_time_travel" android:layout_width="40dp" android:layout_height="40dp" android:padding="8dp" android:scaleType="centerInside" android:src="@drawable/time_travel_icon" android:layout_marginTop="8dp" android:layout_marginEnd="12dp" app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toEndOf="@+id/icon_night_mode" app:layout_constraintEnd_toEndOf="parent" />
+    <!-- Top-right action icons (nudged down a little for breathing room) -->
+    <ImageView android:id="@+id/icon_search" android:layout_width="40dp" android:layout_height="40dp" android:padding="8dp" android:scaleType="centerInside" android:src="@android:drawable/ic_menu_search" android:layout_marginTop="24dp" app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="1.0" app:layout_constraintEnd_toStartOf="@+id/icon_night_mode" app:layout_constraintHorizontal_chainStyle="packed" />
+    <ImageView android:id="@+id/icon_night_mode" android:layout_width="40dp" android:layout_height="40dp" android:padding="8dp" android:scaleType="centerInside" android:src="@android:drawable/ic_menu_view" android:layout_marginTop="24dp" app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toEndOf="@+id/icon_search" app:layout_constraintEnd_toStartOf="@+id/icon_time_travel" />
+    <ImageView android:id="@+id/icon_time_travel" android:layout_width="40dp" android:layout_height="40dp" android:padding="8dp" android:scaleType="centerInside" android:src="@drawable/time_travel_icon" android:layout_marginTop="24dp" android:layout_marginEnd="12dp" app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toEndOf="@+id/icon_night_mode" app:layout_constraintEnd_toEndOf="parent" />
 
     <!-- Explanatory Text at Bottom (compact for landscape) -->
     <LinearLayout
@@ -142,7 +142,7 @@
     <ImageView android:id="@+id/arrow_grid" android:layout_width="80dp" android:layout_height="20dp" android:src="@drawable/ic_neon_arrow_long" android:transformPivotX="0dp" android:transformPivotY="10dp" android:rotation="20" app:layout_constraintBottom_toBottomOf="@id/ring_grid" app:layout_constraintStart_toEndOf="@id/ring_grid" app:layout_constraintTop_toTopOf="@id/ring_grid" />
     <TextView android:id="@+id/text_grid" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/tutorial_grid" android:textColor="#00FFFF" android:textStyle="bold" android:textSize="12sp" android:shadowColor="#00FFFF" android:shadowDx="0" android:shadowDy="0" android:shadowRadius="12" android:background="@drawable/neon_text_bg"
         android:paddingHorizontal="8dp" android:paddingVertical="3dp" app:layout_constraintStart_toEndOf="@id/arrow_grid" app:layout_constraintTop_toTopOf="@id/arrow_grid"
-        android:layout_marginStart="0dp" android:translationX="-9dp" android:translationY="16dp" />
+        android:layout_marginStart="0dp" android:translationX="-9dp" android:translationY="20dp" />
     <androidx.constraintlayout.widget.Group android:id="@+id/highlight_grid" android:layout_width="wrap_content" android:layout_height="wrap_content" android:visibility="gone" app:constraint_referenced_ids="ring_grid,arrow_grid,text_grid" />
 
     <!-- HORIZON -->
@@ -150,37 +150,50 @@
     <ImageView android:id="@+id/arrow_horizon" android:layout_width="80dp" android:layout_height="20dp" android:src="@drawable/ic_neon_arrow_long" android:transformPivotX="0dp" android:transformPivotY="10dp" android:rotation="30" app:layout_constraintBottom_toBottomOf="@id/ring_horizon" app:layout_constraintStart_toEndOf="@id/ring_horizon" app:layout_constraintTop_toTopOf="@id/ring_horizon" />
     <TextView android:id="@+id/text_horizon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/show_horizon_pref" android:textColor="#00FFFF" android:textStyle="bold" android:textSize="12sp" android:shadowColor="#00FFFF" android:shadowDx="0" android:shadowDy="0" android:shadowRadius="12" android:background="@drawable/neon_text_bg"
         android:paddingHorizontal="8dp" android:paddingVertical="3dp" app:layout_constraintStart_toEndOf="@id/arrow_horizon" app:layout_constraintTop_toTopOf="@id/arrow_horizon"
-        android:layout_marginStart="0dp" android:translationX="-14dp" android:translationY="28dp" />
+        android:layout_marginStart="0dp" android:translationX="-14dp" android:translationY="32dp" />
     <androidx.constraintlayout.widget.Group android:id="@+id/highlight_horizon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:visibility="gone" app:constraint_referenced_ids="ring_horizon,arrow_horizon,text_horizon" />
 
-    <!-- DEEP SKY (hidden in landscape - not enough space) -->
-    <ImageView android:id="@+id/ring_deep_sky" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
-    <ImageView android:id="@+id/arrow_deep_sky" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
-    <TextView android:id="@+id/text_deep_sky" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
+    <!-- DEEP SKY -->
+    <ImageView android:id="@+id/ring_deep_sky" android:layout_width="48dp" android:layout_height="48dp" android:src="@drawable/ic_neon_ring" app:layout_constraintBottom_toBottomOf="@id/icon_deep_sky" app:layout_constraintEnd_toEndOf="@id/icon_deep_sky" app:layout_constraintStart_toStartOf="@id/icon_deep_sky" app:layout_constraintTop_toTopOf="@id/icon_deep_sky" />
+    <ImageView android:id="@+id/arrow_deep_sky" android:layout_width="80dp" android:layout_height="20dp" android:src="@drawable/ic_neon_arrow_long" android:transformPivotX="0dp" android:transformPivotY="10dp" android:rotation="-10" app:layout_constraintBottom_toBottomOf="@id/ring_deep_sky" app:layout_constraintStart_toEndOf="@id/ring_deep_sky" app:layout_constraintTop_toTopOf="@id/ring_deep_sky" />
+    <TextView android:id="@+id/text_deep_sky" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/show_deep_sky_objects_pref" android:textColor="#00FFFF" android:textStyle="bold" android:textSize="12sp" android:shadowColor="#00FFFF" android:shadowDx="0" android:shadowDy="0" android:shadowRadius="12" android:background="@drawable/neon_text_bg"
+        android:paddingHorizontal="8dp" android:paddingVertical="3dp" app:layout_constraintStart_toEndOf="@id/arrow_deep_sky" app:layout_constraintTop_toTopOf="@id/arrow_deep_sky"
+        android:layout_marginStart="0dp" android:translationX="-6dp" android:translationY="-16dp" />
     <androidx.constraintlayout.widget.Group android:id="@+id/highlight_deep_sky" android:layout_width="wrap_content" android:layout_height="wrap_content" android:visibility="gone" app:constraint_referenced_ids="ring_deep_sky,arrow_deep_sky,text_deep_sky" />
 
-    <!-- SEARCH (hidden in landscape - not enough space) -->
-    <ImageView android:id="@+id/ring_search" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
-    <ImageView android:id="@+id/arrow_search" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
-    <TextView android:id="@+id/text_search" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
+    <!-- SEARCH (arrow points down into screen from the top bar icon) -->
+    <ImageView android:id="@+id/ring_search" android:layout_width="48dp" android:layout_height="48dp" android:src="@drawable/ic_neon_ring" app:layout_constraintBottom_toBottomOf="@id/icon_search" app:layout_constraintEnd_toEndOf="@id/icon_search" app:layout_constraintStart_toStartOf="@id/icon_search" app:layout_constraintTop_toTopOf="@id/icon_search" />
+    <ImageView android:id="@+id/arrow_search" android:layout_width="96dp" android:layout_height="20dp" android:src="@drawable/ic_neon_arrow_long" android:transformPivotX="0dp" android:transformPivotY="10dp" android:rotation="150" app:layout_constraintTop_toBottomOf="@id/ring_search" app:layout_constraintStart_toStartOf="@id/ring_search" android:layout_marginStart="24dp" android:layout_marginTop="-10dp" />
+    <TextView android:id="@+id/text_search" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/menu_search" android:textColor="#00FFFF" android:textStyle="bold" android:textSize="12sp" android:shadowColor="#00FFFF" android:shadowDx="0" android:shadowDy="0" android:shadowRadius="12" android:background="@drawable/neon_text_bg"
+        android:paddingHorizontal="8dp" android:paddingVertical="3dp" app:layout_constraintTop_toBottomOf="@id/ring_search"
+        app:layout_constraintStart_toStartOf="@id/ring_search" app:layout_constraintEnd_toEndOf="@id/ring_search" android:layout_marginTop="64dp"
+        android:translationX="-90dp" android:translationY="-10dp" />
     <androidx.constraintlayout.widget.Group android:id="@+id/highlight_search" android:layout_width="wrap_content" android:layout_height="wrap_content" android:visibility="gone" app:constraint_referenced_ids="ring_search,arrow_search,text_search" />
 
-    <!-- NIGHT MODE (hidden in landscape - not enough space) -->
-    <ImageView android:id="@+id/ring_night_mode" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
-    <ImageView android:id="@+id/arrow_night_mode" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
-    <TextView android:id="@+id/text_night_mode" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
+    <!-- NIGHT MODE (arrow points down into screen from the top bar icon) -->
+    <ImageView android:id="@+id/ring_night_mode" android:layout_width="48dp" android:layout_height="48dp" android:src="@drawable/ic_neon_ring" app:layout_constraintBottom_toBottomOf="@id/icon_night_mode" app:layout_constraintEnd_toEndOf="@id/icon_night_mode" app:layout_constraintStart_toStartOf="@id/icon_night_mode" app:layout_constraintTop_toTopOf="@id/icon_night_mode" />
+    <ImageView android:id="@+id/arrow_night_mode" android:layout_width="96dp" android:layout_height="20dp" android:src="@drawable/ic_neon_arrow_long" android:transformPivotX="0dp" android:transformPivotY="10dp" android:rotation="130" app:layout_constraintTop_toBottomOf="@id/ring_night_mode" app:layout_constraintStart_toStartOf="@id/ring_night_mode" android:layout_marginStart="24dp" android:layout_marginTop="-10dp" />
+    <TextView android:id="@+id/text_night_mode" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/tutorial_night_mode" android:textColor="#00FFFF" android:textStyle="bold" android:textSize="12sp" android:shadowColor="#00FFFF" android:shadowDx="0" android:shadowDy="0" android:shadowRadius="12" android:background="@drawable/neon_text_bg"
+        android:paddingHorizontal="8dp" android:paddingVertical="3dp" app:layout_constraintTop_toBottomOf="@id/ring_night_mode"
+        app:layout_constraintStart_toStartOf="@id/ring_night_mode" app:layout_constraintEnd_toEndOf="@id/ring_night_mode" android:layout_marginTop="64dp"
+        android:translationX="-55dp" android:translationY="12dp" />
     <androidx.constraintlayout.widget.Group android:id="@+id/highlight_night_mode" android:layout_width="wrap_content" android:layout_height="wrap_content" android:visibility="gone" app:constraint_referenced_ids="ring_night_mode,arrow_night_mode,text_night_mode"/>
 
-    <!-- TIME TRAVEL (hidden in landscape - not enough space) -->
-    <ImageView android:id="@+id/ring_time_travel" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
-    <ImageView android:id="@+id/arrow_time_travel" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
-    <TextView android:id="@+id/text_time_travel" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
+    <!-- TIME TRAVEL (arrow points down into screen from the top bar icon) -->
+    <ImageView android:id="@+id/ring_time_travel" android:layout_width="48dp" android:layout_height="48dp" android:src="@drawable/ic_neon_ring" app:layout_constraintBottom_toBottomOf="@id/icon_time_travel" app:layout_constraintEnd_toEndOf="@id/icon_time_travel" app:layout_constraintStart_toStartOf="@id/icon_time_travel" app:layout_constraintTop_toTopOf="@id/icon_time_travel" />
+    <ImageView android:id="@+id/arrow_time_travel" android:layout_width="96dp" android:layout_height="20dp" android:src="@drawable/ic_neon_arrow_long" android:transformPivotX="0dp" android:transformPivotY="10dp" android:rotation="116" app:layout_constraintTop_toBottomOf="@id/ring_time_travel" app:layout_constraintStart_toStartOf="@id/ring_time_travel" android:layout_marginStart="24dp" android:layout_marginTop="-10dp" />
+    <TextView android:id="@+id/text_time_travel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/tutorial_time_travel" android:textColor="#00FFFF" android:textStyle="bold" android:textSize="12sp" android:shadowColor="#00FFFF" android:shadowDx="0" android:shadowDy="0" android:shadowRadius="12" android:background="@drawable/neon_text_bg"
+        android:paddingHorizontal="8dp" android:paddingVertical="3dp" app:layout_constraintTop_toBottomOf="@id/ring_time_travel"
+        app:layout_constraintStart_toStartOf="@id/ring_time_travel" app:layout_constraintEnd_toEndOf="@id/ring_time_travel" android:layout_marginTop="64dp"
+        android:translationX="-22dp" android:translationY="22dp" />
     <androidx.constraintlayout.widget.Group android:id="@+id/highlight_time_travel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:visibility="gone" app:constraint_referenced_ids="ring_time_travel,arrow_time_travel,text_time_travel" />
 
-    <!-- MANUAL/AUTO (hidden in landscape - not enough space) -->
-    <ImageView android:id="@+id/ring_manual_auto" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
-    <ImageView android:id="@+id/arrow_manual_auto" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
-    <TextView android:id="@+id/text_manual_auto" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
+    <!-- MANUAL/AUTO (arrow points left from the right-side icon) -->
+    <ImageView android:id="@+id/ring_manual_auto" android:layout_width="48dp" android:layout_height="48dp" android:src="@drawable/ic_neon_ring" app:layout_constraintBottom_toBottomOf="@id/icon_manual_auto" app:layout_constraintEnd_toEndOf="@id/icon_manual_auto" app:layout_constraintStart_toStartOf="@id/icon_manual_auto" app:layout_constraintTop_toTopOf="@id/icon_manual_auto" />
+    <ImageView android:id="@+id/arrow_manual_auto" android:layout_width="80dp" android:layout_height="20dp" android:src="@drawable/ic_neon_arrow_long" android:transformPivotX="0dp" android:transformPivotY="10dp" android:rotation="180" app:layout_constraintBottom_toBottomOf="@id/ring_manual_auto" app:layout_constraintTop_toTopOf="@id/ring_manual_auto" app:layout_constraintStart_toStartOf="@id/ring_manual_auto" android:layout_marginTop="-8dp" />
+    <TextView android:id="@+id/text_manual_auto" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/tutorial_manual_auto" android:textColor="#00FFFF" android:textStyle="bold" android:textSize="12sp" android:shadowColor="#00FFFF" android:shadowDx="0" android:shadowDy="0" android:shadowRadius="12" android:background="@drawable/neon_text_bg"
+        android:paddingHorizontal="8dp" android:paddingVertical="3dp" app:layout_constraintTop_toTopOf="@id/ring_manual_auto" app:layout_constraintBottom_toBottomOf="@id/ring_manual_auto"
+        app:layout_constraintEnd_toEndOf="@id/ring_manual_auto" android:translationX="-130dp" android:translationY="0dp" />
     <androidx.constraintlayout.widget.Group android:id="@+id/highlight_manual_auto" android:layout_width="wrap_content" android:layout_height="wrap_content" android:visibility="gone" app:constraint_referenced_ids="ring_manual_auto,arrow_manual_auto,text_manual_auto" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
