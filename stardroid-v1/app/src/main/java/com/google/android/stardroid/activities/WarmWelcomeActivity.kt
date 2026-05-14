@@ -97,7 +97,6 @@ class WarmWelcomeActivity : AppCompatActivity(), WhatsNewDialogFragment.CloseLis
                 putInt(AnalyticsInterface.WARM_WELCOME_SKIPPED_AT_SLIDE, viewPager.currentItem + 1)
             }
             analytics.trackEvent(AnalyticsInterface.WARM_WELCOME_SKIPPED_EVENT, skipParams)
-            analytics.setUserProperty(AnalyticsInterface.COMPLETED_WARM_WELCOME, "false")
             finishWelcome(completed = false)
         }
         btnNextFinish.setOnClickListener {
@@ -105,7 +104,6 @@ class WarmWelcomeActivity : AppCompatActivity(), WhatsNewDialogFragment.CloseLis
                 viewPager.currentItem += 1
             } else {
                 analytics.trackEvent(AnalyticsInterface.WARM_WELCOME_COMPLETED_EVENT, null)
-                analytics.setUserProperty(AnalyticsInterface.COMPLETED_WARM_WELCOME, "true")
                 finishWelcome(completed = true)
             }
         }
@@ -139,11 +137,14 @@ class WarmWelcomeActivity : AppCompatActivity(), WhatsNewDialogFragment.CloseLis
     }
 
     private fun finishWelcome(completed: Boolean = false) {
-        analytics.setUserProperty(AnalyticsInterface.COMPLETED_WARM_WELCOME, if (completed) "true" else "false")
+        analytics.setUserProperty(AnalyticsInterface.COMPLETED_WARM_WELCOME, completed.toString())
         if (!isManualInvocation) {
             startupRouter.markWarmWelcomeSeen()
             if (startupRouter.needsWhatsNew()) {
-                showDialog(WhatsNewDialogFragment.newInstance(), WhatsNewDialogFragment::class.java.simpleName)
+                showDialog(
+                    WhatsNewDialogFragment.newInstance(),
+                    WhatsNewDialogFragment::class.java.simpleName
+                )
             } else {
                 launchSkyMap()
             }
