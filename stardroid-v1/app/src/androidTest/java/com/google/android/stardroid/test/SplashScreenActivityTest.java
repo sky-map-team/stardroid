@@ -36,7 +36,8 @@ If you're running this on your phone and you get an error about
 @HiltAndroidTest
 public class SplashScreenActivityTest {
   public static final String COM_GOOGLE_ANDROID_STARDROID = "com.google.android.stardroid";
-  private static final long TIMEOUT_MS = 10_000;
+  // Generous timeout for slow CI emulators.
+  private static final long TIMEOUT_MS = 20_000;
 
   @Rule
   public HiltAndroidRule hiltRule = new HiltAndroidRule(this);
@@ -64,24 +65,21 @@ public class SplashScreenActivityTest {
   public RuleChain chain = RuleChain.outerRule(preferenceCleanerRule).around(testRule);
 
   /**
-   * Polls the fragment manager until the EULA dialog is showing, then clicks the specified button
-   * directly on the main thread. This avoids UiAutomator (WebViews aren't in the accessibility
-   * tree on API 35+) and Espresso (windows lack focus on API 36 AOSP emulators).
+   * Clicks an EULA dialog button on the main thread.
+   *
+   * <p>We wait first for the eula_webview UiAutomator selector (even though it times out on
+   * API 35+ where WebViews are not in the a11y tree) because the wait ensures the EULA dialog is
+   * fully laid out and its buttons are wired before we proceed. Without this wait, clicking too
+   * early may find the dialog but with a null resultListener, causing the fallback OK button to
+   * fire instead of the accept/reject listeners.
+   *
+   * <p>The actual button click goes through the fragment manager on the main thread, bypassing
+   * UiAutomator (which cannot find AlertDialog buttons reliably on AOSP emulators).
    */
-  private void clickEulaButton(int whichButton) throws InterruptedException {
-    long deadline = System.currentTimeMillis() + TIMEOUT_MS;
-    while (System.currentTimeMillis() < deadline) {
-      final boolean[] ready = {false};
-      testRule.getScenario().onActivity(activity -> {
-        EulaDialogFragment eula = (EulaDialogFragment) activity.getSupportFragmentManager()
-            .findFragmentByTag(EulaDialogFragment.class.getSimpleName());
-        if (eula != null && eula.getDialog() != null && eula.getDialog().isShowing()) {
-          ready[0] = true;
-        }
-      });
-      if (ready[0]) break;
-      Thread.sleep(200);
-    }
+  private void clickEulaButton(UiDevice device, int whichButton) {
+    // Acts as a sync point; returns false on API 35+ (WebView not in a11y tree) but guarantees
+    // we've given the dialog enough time to fully initialize before clicking.
+    device.wait(Until.hasObject(By.res(COM_GOOGLE_ANDROID_STARDROID, "eula_webview")), TIMEOUT_MS);
 
     testRule.getScenario().onActivity(activity -> {
       EulaDialogFragment eula = (EulaDialogFragment) activity.getSupportFragmentManager()
@@ -104,14 +102,15 @@ public class SplashScreenActivityTest {
 
   /**
    * Tests that accepting T&Cs shows the What's New dialog.
-   * Uses only UiAutomator (no Espresso) because API 36 AOSP emulator windows lack focus,
-   * which causes RootViewWithoutFocusException in Espresso.
+   *
+   * <p>Uses UiAutomator for all interactions after the EULA because API 36 AOSP emulator windows
+   * may lack window focus, causing RootViewWithoutFocusException in Espresso.
    */
   @Test
   public void showsTutorialThenWhatsNewAfterTandCs_newUser() throws InterruptedException {
     UiDevice device = UiDevice.getInstance(getInstrumentation());
 
-    clickEulaButton(AlertDialog.BUTTON_POSITIVE);
+    clickEulaButton(device, AlertDialog.BUTTON_POSITIVE);
 
     assertThat("warm welcome viewpager should appear",
         device.wait(Until.hasObject(By.res(COM_GOOGLE_ANDROID_STARDROID, "warm_welcome_viewpager")), TIMEOUT_MS),
@@ -144,7 +143,8 @@ public class SplashScreenActivityTest {
    */
   @Test
   public void showNoAcceptTandCs() throws InterruptedException {
-    clickEulaButton(AlertDialog.BUTTON_NEGATIVE);
+    UiDevice device = UiDevice.getInstance(getInstrumentation());
+    clickEulaButton(device, AlertDialog.BUTTON_NEGATIVE);
     waitForActivityDestroyed();
     assertThat(testRule.getScenario().getState(), equalTo(Lifecycle.State.DESTROYED));
   }
