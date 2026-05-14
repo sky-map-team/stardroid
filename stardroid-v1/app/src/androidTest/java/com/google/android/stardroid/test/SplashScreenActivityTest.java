@@ -1,5 +1,6 @@
 package com.google.android.stardroid.test;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
 
@@ -13,6 +14,7 @@ import androidx.test.uiautomator.Until;
 
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.activities.SplashScreenActivity;
+import com.google.android.stardroid.activities.dialogs.EulaDialogFragment;
 
 import org.junit.Rule;
 import org.junit.Test;
@@ -66,21 +68,32 @@ public class SplashScreenActivityTest {
   public RuleChain chain = RuleChain.outerRule(preferenceCleanerRule).around(testRule);
 
   /**
+   * Clicks an EULA dialog button on the main thread. UiAutomator cannot reliably find
+   * AlertDialog buttons in the accessibility tree on AOSP system images (API 35+ edge-to-edge
+   * enforcement means dialog windows don't get focus; older AOSP images expose buttons
+   * inconsistently). Going through the fragment manager is robust across all variants.
+   */
+  private void clickEulaButton(int whichButton) {
+    testRule.getScenario().onActivity(activity -> {
+      EulaDialogFragment eula = (EulaDialogFragment) activity.getSupportFragmentManager()
+          .findFragmentByTag(EulaDialogFragment.class.getSimpleName());
+      if (eula != null && eula.getDialog() != null) {
+        ((AlertDialog) eula.getDialog()).getButton(whichButton).performClick();
+      }
+    });
+    getInstrumentation().waitForIdleSync();
+  }
+
+  /**
    * Tests that accepting T&Cs shows the What's New dialog.
    */
   @Test
-  public void showsTutorialThenWhatsNewAfterTandCs_newUser() throws InterruptedException {
+  public void showsTutorialThenWhatsNewAfterTandCs_newUser() {
     UiDevice device = UiDevice.getInstance(getInstrumentation());
     long timeout = 5000;
     device.wait(Until.hasObject(By.res(COM_GOOGLE_ANDROID_STARDROID, "eula_webview")), timeout);
 
-    // Use UiAutomator to click dialog buttons — Espresso's inRoot(isDialog()) requires the dialog
-    // window to have focus, which is not guaranteed on API 35+ due to edge-to-edge enforcement.
-    // Wait for the button itself, then sync with the main thread after clicking so the
-    // app processes the acceptance before we check for the next screen.
-    device.wait(Until.hasObject(By.text("Accept")), timeout);
-    device.findObject(By.text("Accept")).click();
-    getInstrumentation().waitForIdleSync();
+    clickEulaButton(AlertDialog.BUTTON_POSITIVE);
     device.wait(Until.hasObject(By.res(
             COM_GOOGLE_ANDROID_STARDROID, "warm_welcome_viewpager")), timeout);
 
@@ -101,18 +114,12 @@ public class SplashScreenActivityTest {
    * Tests that declining T&Cs closes the app.
    */
   @Test
-  public void showNoAcceptTandCs() throws InterruptedException {
+  public void showNoAcceptTandCs() {
     UiDevice device = UiDevice.getInstance(getInstrumentation());
     long timeout = 5000;
     device.wait(Until.hasObject(By.res(COM_GOOGLE_ANDROID_STARDROID, "eula_webview")), timeout);
 
-    // Use UiAutomator to click dialog buttons — Espresso's inRoot(isDialog()) requires the dialog
-    // window to have focus, which is not guaranteed on API 35+ due to edge-to-edge enforcement.
-    // Wait for the button itself, then sync with the main thread after clicking so the
-    // decline callback fires and activity.finish() is called before we check state.
-    device.wait(Until.hasObject(By.text("No Thanks")), timeout);
-    device.findObject(By.text("No Thanks")).click();
-    getInstrumentation().waitForIdleSync();
+    clickEulaButton(AlertDialog.BUTTON_NEGATIVE);
     device.wait(Until.gone(By.res(COM_GOOGLE_ANDROID_STARDROID, "eula_webview")), timeout);
     getInstrumentation().waitForIdleSync();
     assertThat(testRule.getScenario().getState(), equalTo(Lifecycle.State.DESTROYED));
