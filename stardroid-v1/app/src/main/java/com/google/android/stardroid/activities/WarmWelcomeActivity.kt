@@ -20,8 +20,11 @@ import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
 import coil.load
+import com.google.android.stardroid.ApplicationConstants.BUNDLE_IS_MANUAL_INVOCATION
 import com.google.android.stardroid.R
 import com.google.android.stardroid.activities.dialogs.WhatsNewDialogFragment
+import com.google.android.stardroid.util.Analytics
+import com.google.android.stardroid.util.AnalyticsInterface
 import com.google.android.stardroid.util.MiscUtil
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
@@ -32,6 +35,8 @@ class WarmWelcomeActivity : AppCompatActivity(), WhatsNewDialogFragment.CloseLis
     @Inject lateinit var startupRouter: StartupRouter
     @Inject @JvmField var sensorManager: SensorManager? = null
     @Inject @JvmField var vibrator: Vibrator? = null
+    @Inject lateinit var analytics: Analytics
+    private var lastLoggedPosition = -1
 
     private lateinit var viewPager: ViewPager2
     private lateinit var btnSkip: Button
@@ -42,7 +47,20 @@ class WarmWelcomeActivity : AppCompatActivity(), WhatsNewDialogFragment.CloseLis
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        isManualInvocation = intent.getBooleanExtra("is_manual_invocation", false)
+        isManualInvocation = intent.getBooleanExtra(BUNDLE_IS_MANUAL_INVOCATION, false)
+
+        if (savedInstanceState == null) {
+            val params = Bundle().apply {
+                putBoolean(AnalyticsInterface.WARM_WELCOME_STARTED_MANUAL, isManualInvocation)
+            }
+            analytics.trackEvent(AnalyticsInterface.WARM_WELCOME_STARTED_EVENT, params)
+
+            // Also log the viewing of the first slide, since onPageSelected isn't called for it.
+            val slideParams = Bundle().apply {
+                putInt(AnalyticsInterface.WARM_WELCOME_SLIDE_NUMBER, 1)
+            }
+            analytics.trackEvent(AnalyticsInterface.WARM_WELCOME_SLIDE_VIEWED_EVENT, slideParams)
+        }
 
         setContentView(R.layout.activity_warm_welcome)
 
@@ -60,6 +78,19 @@ class WarmWelcomeActivity : AppCompatActivity(), WhatsNewDialogFragment.CloseLis
             override fun onPageSelected(position: Int) {
                 super.onPageSelected(position)
                 updateIndicators(position)
+
+                // Just in case we got here due to a screen rotation.
+                if (lastLoggedPosition != -1) {
+                    val slideParams = Bundle().apply {
+                        putInt(AnalyticsInterface.WARM_WELCOME_SLIDE_NUMBER, position + 1)
+                    }
+                    analytics.trackEvent(
+                        AnalyticsInterface.WARM_WELCOME_SLIDE_VIEWED_EVENT,
+                        slideParams
+                    )
+                    lastLoggedPosition = position
+                }
+
                 if (position == adapter.itemCount - 1) {
                     btnNextFinish.setText(R.string.warm_welcome_finish)
                 } else {
@@ -73,12 +104,19 @@ class WarmWelcomeActivity : AppCompatActivity(), WhatsNewDialogFragment.CloseLis
             }
         })
 
-        btnSkip.setOnClickListener { finishWelcome() }
+        btnSkip.setOnClickListener {
+            val skipParams = Bundle().apply {
+                putInt(AnalyticsInterface.WARM_WELCOME_SLIDE_NUMBER, viewPager.currentItem + 1)
+            }
+            analytics.trackEvent(AnalyticsInterface.WARM_WELCOME_SKIPPED_EVENT, skipParams)
+            finishWelcome(completed = false)
+        }
         btnNextFinish.setOnClickListener {
             if (viewPager.currentItem < adapter.itemCount - 1) {
                 viewPager.currentItem += 1
             } else {
-                finishWelcome()
+                analytics.trackEvent(AnalyticsInterface.WARM_WELCOME_COMPLETED_EVENT, null)
+                finishWelcome(completed = true)
             }
         }
     }
@@ -110,11 +148,16 @@ class WarmWelcomeActivity : AppCompatActivity(), WhatsNewDialogFragment.CloseLis
         }
     }
 
-    private fun finishWelcome() {
+    private fun finishWelcome(completed: Boolean = false) {
         if (!isManualInvocation) {
+            // Only update the user property on first invocation to avoid overwriting completion status
+            analytics.setUserProperty(AnalyticsInterface.COMPLETED_WARM_WELCOME, completed.toString())
             startupRouter.markWarmWelcomeSeen()
             if (startupRouter.needsWhatsNew()) {
-                showDialog(WhatsNewDialogFragment.newInstance(), WhatsNewDialogFragment::class.java.simpleName)
+                showDialog(
+                    WhatsNewDialogFragment.newInstance(),
+                    WhatsNewDialogFragment::class.java.simpleName
+                )
             } else {
                 launchSkyMap()
             }

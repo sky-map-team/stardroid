@@ -41,6 +41,7 @@ object ApplicationConstants {
   const val BUNDLE_Y_TARGET = "bundle_y_target"
   const val BUNDLE_Z_TARGET = "bundle_z_target"
   const val BUNDLE_SEARCH_MODE = "bundle_search"
+  const val BUNDLE_IS_MANUAL_INVOCATION = "is_manual_invocation"
   const val SOUND_EFFECTS = "sound_effects"
   const val AUTO_DIMNESS = "auto_dimness"
   const val FONT_SIZE = "font_size"

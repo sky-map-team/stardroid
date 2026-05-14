@@ -633,7 +633,7 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
       if (experimentConfig.isEnabled(Experiment.WARM_WELCOME)) {
         menuEventBundle.putString(Analytics.MENU_ITEM_EVENT_VALUE, "tutorial_opened");
         Intent intent = new Intent(this, WarmWelcomeActivity.class);
-        intent.putExtra("is_manual_invocation", true);
+        intent.putExtra(ApplicationConstants.BUNDLE_IS_MANUAL_INVOCATION, true);
         startActivity(intent);
       }
     } else if (itemId == R.id.menu_item_dim) {
