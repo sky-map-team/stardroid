@@ -48,6 +48,12 @@ class WarmWelcomeActivity : AppCompatActivity(), WhatsNewDialogFragment.CloseLis
                 putBoolean(AnalyticsInterface.WARM_WELCOME_STARTED_MANUAL, isManualInvocation)
             }
             analytics.trackEvent(AnalyticsInterface.WARM_WELCOME_STARTED_EVENT, params)
+
+            // Also log the viewing of the first slide, since onPageSelected isn't called for it.
+            val slideParams = Bundle().apply {
+                putInt(AnalyticsInterface.WARM_WELCOME_SLIDE_NUMBER, 1)
+            }
+            analytics.trackEvent(AnalyticsInterface.WARM_WELCOME_SLIDE_VIEWED_EVENT, slideParams)
         }
 
         setContentView(R.layout.activity_warm_welcome)
@@ -95,6 +101,7 @@ class WarmWelcomeActivity : AppCompatActivity(), WhatsNewDialogFragment.CloseLis
                 putInt(AnalyticsInterface.WARM_WELCOME_SKIPPED_AT_SLIDE, viewPager.currentItem + 1)
             }
             analytics.trackEvent(AnalyticsInterface.WARM_WELCOME_SKIPPED_EVENT, skipParams)
+            analytics.setUserProperty(AnalyticsInterface.COMPLETED_WARM_WELCOME, "false")
             finishWelcome(completed = false)
         }
         btnNextFinish.setOnClickListener {
@@ -102,6 +109,7 @@ class WarmWelcomeActivity : AppCompatActivity(), WhatsNewDialogFragment.CloseLis
                 viewPager.currentItem += 1
             } else {
                 analytics.trackEvent(AnalyticsInterface.WARM_WELCOME_COMPLETED_EVENT, null)
+                analytics.setUserProperty(AnalyticsInterface.COMPLETED_WARM_WELCOME, "true")
                 finishWelcome(completed = true)
             }
         }
