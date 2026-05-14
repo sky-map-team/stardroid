@@ -109,7 +109,6 @@ import com.google.android.stardroid.util.Analytics;
 import com.google.android.stardroid.util.AnalyticsInterface;
 import com.google.android.stardroid.util.MiscUtil;
 import com.google.android.stardroid.util.SensorAccuracyMonitor;
-import com.google.android.stardroid.util.SensorAccuracyMonitor.SensorAccuracyListener;
 import com.google.android.stardroid.views.ButtonLayerView;
 import com.google.android.stardroid.views.PreferencesButton;
 
