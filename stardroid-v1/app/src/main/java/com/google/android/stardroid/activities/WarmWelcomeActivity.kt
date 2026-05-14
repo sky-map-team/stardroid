@@ -80,7 +80,14 @@ class WarmWelcomeActivity : AppCompatActivity(), WhatsNewDialogFragment.CloseLis
                 val slideParams = Bundle().apply {
                     putInt(AnalyticsInterface.WARM_WELCOME_SLIDE_NUMBER, position + 1)
                 }
-                analytics.trackEvent(AnalyticsInterface.WARM_WELCOME_SLIDE_VIEWED_EVENT, slideParams)
+                // Just in case we got here due to a screen rotation.
+                if (lastLoggedPosition != position) {
+                    analytics.trackEvent(
+                        AnalyticsInterface.WARM_WELCOME_SLIDE_VIEWED_EVENT,
+                        slideParams
+                    )
+                    lastLoggedPosition = position
+                }
 
                 if (position == adapter.itemCount - 1) {
                     btnNextFinish.setText(R.string.warm_welcome_finish)
