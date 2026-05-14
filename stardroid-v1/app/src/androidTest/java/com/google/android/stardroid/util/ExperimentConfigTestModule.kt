@@ -7,7 +7,7 @@ import dagger.hilt.testing.TestInstallIn
 import javax.inject.Singleton
 
 @Module
-@TestInstallIn(components = [SingletonComponent::class], replaces = [ExperimentConfigImpl::class])
+@TestInstallIn(components = [SingletonComponent::class], replaces = [ExperimentConfigModule::class])
 object ExperimentConfigTestModule {
     @Provides
     @Singleton
