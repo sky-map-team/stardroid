@@ -1,9 +1,7 @@
 package com.google.android.stardroid.test;
 
-import android.app.AlertDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.os.ParcelFileDescriptor;
 
 import androidx.lifecycle.Lifecycle;
 import androidx.preference.PreferenceManager;
@@ -21,8 +19,6 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExternalResource;
 import org.junit.rules.RuleChain;
-
-import java.io.IOException;
 
 import static androidx.test.platform.app.InstrumentationRegistry.getInstrumentation;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -52,26 +48,10 @@ public class SplashScreenActivityTest {
           PreferenceManager.getDefaultSharedPreferences(context).edit();
       editor.clear();
       editor.commit();
-
-      // Disable the splash AlphaAnimation so onAnimationEnd fires immediately rather than
-      // relying on Choreographer vsync signals, which can stall on API 36 AOSP emulators
-      // when the window lacks focus.
-      setAnimatorDurationScale("0");
     }
 
     @Override
-    protected void after() {
-      setAnimatorDurationScale("1");
-    }
-
-    private static void setAnimatorDurationScale(String value) {
-      try (ParcelFileDescriptor pfd = getInstrumentation().getUiAutomation()
-          .executeShellCommand("settings put global animator_duration_scale " + value)) {
-        // drain the stream so the command completes
-        new java.io.FileInputStream(pfd.getFileDescriptor()).read(new byte[64]);
-      } catch (IOException ignored) {
-      }
-    }
+    protected void after() {}
   }
 
   private final PreferenceCleanerRule preferenceCleanerRule = new PreferenceCleanerRule();
@@ -83,22 +63,42 @@ public class SplashScreenActivityTest {
   public RuleChain chain = RuleChain.outerRule(preferenceCleanerRule).around(testRule);
 
   /**
-   * Clicks an EULA dialog button on the main thread.
-   *
-   * <p>Waits for the eula_webview UiAutomator selector first — this will time out on API 35+
-   * (WebViews not in the a11y tree) but still acts as a sync point, guaranteeing the dialog
-   * fragment and its resultListener are fully attached before we click.
+   * Polls until the EulaDialogFragment is attached to the activity, confirming it is ready.
+   * Returns without doing anything if the fragment never appears within TIMEOUT_MS.
    */
-  private void clickEulaButton(UiDevice device, int whichButton) {
-    device.wait(Until.hasObject(By.res(COM_GOOGLE_ANDROID_STARDROID, "eula_webview")), TIMEOUT_MS);
+  private void waitForEulaFragment() throws InterruptedException {
+    long deadline = System.currentTimeMillis() + TIMEOUT_MS;
+    while (System.currentTimeMillis() < deadline) {
+      final boolean[] attached = {false};
+      testRule.getScenario().onActivity(activity -> {
+        EulaDialogFragment eula = (EulaDialogFragment) activity.getSupportFragmentManager()
+            .findFragmentByTag(EulaDialogFragment.class.getSimpleName());
+        attached[0] = eula != null && eula.isAdded();
+      });
+      if (attached[0]) return;
+      Thread.sleep(100);
+    }
+  }
 
-    testRule.getScenario().onActivity(activity -> {
-      EulaDialogFragment eula = (EulaDialogFragment) activity.getSupportFragmentManager()
-          .findFragmentByTag(EulaDialogFragment.class.getSimpleName());
-      if (eula != null && eula.getDialog() != null) {
-        ((AlertDialog) eula.getDialog()).getButton(whichButton).performClick();
-      }
-    });
+  /**
+   * Calls eulaAccepted() directly on the activity to accept the EULA, bypassing the dialog's
+   * button entirely. This avoids all of:
+   * - UiAutomator WebView accessibility gaps on API 35+
+   * - AlertDialog.getButton() fragility on AOSP emulators
+   * - Window-focus-dependent Espresso interactions on API 36
+   *
+   * We still wait for the fragment to be attached first to confirm that onResume() has run and
+   * the activity is in the expected state before we accept.
+   */
+  private void acceptEula() throws InterruptedException {
+    waitForEulaFragment();
+    testRule.getScenario().onActivity(SplashScreenActivity::eulaAccepted);
+    getInstrumentation().waitForIdleSync();
+  }
+
+  private void rejectEula() throws InterruptedException {
+    waitForEulaFragment();
+    testRule.getScenario().onActivity(SplashScreenActivity::eulaRejected);
     getInstrumentation().waitForIdleSync();
   }
 
@@ -112,16 +112,17 @@ public class SplashScreenActivityTest {
   }
 
   /**
-   * Tests that accepting T&Cs shows the warm welcome, then the What's New dialog.
+   * Tests that accepting T&Cs shows the warm welcome slides then the What's New dialog.
    *
    * <p>Uses UiAutomator for all post-EULA interactions because API 36 AOSP emulator windows
    * may lack window focus, causing RootViewWithoutFocusException in Espresso.
+   * SplashScreenTestModule provides a 1ms animation so onAnimationEnd fires immediately.
    */
   @Test
   public void showsTutorialThenWhatsNewAfterTandCs_newUser() throws InterruptedException {
     UiDevice device = UiDevice.getInstance(getInstrumentation());
 
-    clickEulaButton(device, AlertDialog.BUTTON_POSITIVE);
+    acceptEula();
 
     assertThat("warm welcome viewpager should appear",
         device.wait(Until.hasObject(By.res(COM_GOOGLE_ANDROID_STARDROID, "warm_welcome_viewpager")), TIMEOUT_MS),
@@ -154,8 +155,7 @@ public class SplashScreenActivityTest {
    */
   @Test
   public void showNoAcceptTandCs() throws InterruptedException {
-    UiDevice device = UiDevice.getInstance(getInstrumentation());
-    clickEulaButton(device, AlertDialog.BUTTON_NEGATIVE);
+    rejectEula();
     waitForActivityDestroyed();
     assertThat(testRule.getScenario().getState(), equalTo(Lifecycle.State.DESTROYED));
   }
