@@ -185,8 +185,6 @@ class WarmWelcomeActivity : AppCompatActivity(), WhatsNewDialogFragment.CloseLis
 
     fun buzz(happy: Boolean) {
         val v = vibrator ?: return
-    fun buzz(happy: Boolean) {
-        val v = vibrator ?: return
         if (!v.hasVibrator()) return
         val effect = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
             val effectId = if (happy) VibrationEffect.EFFECT_CLICK else VibrationEffect.EFFECT_DOUBLE_CLICK
