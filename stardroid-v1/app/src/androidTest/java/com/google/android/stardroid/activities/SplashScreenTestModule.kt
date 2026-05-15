@@ -17,5 +17,17 @@ object SplashScreenTestModule {
     @ActivityScoped
     @Named("fadeout")
     fun provideFadeoutAnimation(activity: Activity): Animation =
-        AlphaAnimation(1.0f, 0.1f).apply { duration = 1 }
+        // On CI emulators (especially API 36 with no window focus), the Choreographer may not
+        // deliver vsync callbacks, so View.startAnimation() never fires onAnimationEnd.
+        // Override setAnimationListener to fire the listener immediately so the splash
+        // transition doesn't depend on Choreographer at all.
+        object : AlphaAnimation(1.0f, 0.0f) {
+            override fun setAnimationListener(listener: Animation.AnimationListener?) {
+                super.setAnimationListener(listener)
+                if (listener != null) {
+                    listener.onAnimationStart(this)
+                    listener.onAnimationEnd(this)
+                }
+            }
+        }.apply { duration = 0 }
 }
