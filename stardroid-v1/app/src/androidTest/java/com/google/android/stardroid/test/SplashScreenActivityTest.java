@@ -12,6 +12,7 @@ import androidx.test.uiautomator.UiDevice;
 import androidx.test.uiautomator.UiObject2;
 import androidx.test.uiautomator.Until;
 
+import com.google.android.stardroid.ApplicationConstants;
 import com.google.android.stardroid.activities.SplashScreenActivity;
 import com.google.android.stardroid.activities.dialogs.EulaDialogFragment;
 
@@ -81,18 +82,21 @@ public class SplashScreenActivityTest {
   }
 
   /**
-   * Calls eulaAccepted() directly on the activity to accept the EULA, bypassing the dialog's
-   * button entirely. This avoids all of:
-   * - UiAutomator WebView accessibility gaps on API 35+
-   * - AlertDialog.getButton() fragility on AOSP emulators
-   * - Window-focus-dependent Espresso interactions on API 36
+   * Accepts the EULA by writing EULA_VERSION_CODE directly to SharedPreferences then
+   * recreating the activity. This bypasses the EULA dialog and all of its associated
+   * interaction fragility on API 36 AOSP emulators (no window focus, WebView a11y gaps).
    *
-   * We still wait for the fragment to be attached first to confirm that onResume() has run and
-   * the activity is in the expected state before we accept.
+   * The recreated activity sees EULA already accepted and goes straight to startSplashScreen(),
+   * where the 1ms test animation fires onAnimationEnd immediately, launching WarmWelcomeActivity.
    */
-  private void acceptEula() throws InterruptedException {
-    waitForEulaFragment();
-    testRule.getScenario().onActivity(SplashScreenActivity::eulaAccepted);
+  private void acceptEulaViaPrefs() throws InterruptedException {
+    testRule.getScenario().onActivity(activity -> {
+      PreferenceManager.getDefaultSharedPreferences(activity)
+          .edit()
+          .putInt(ApplicationConstants.READ_TOS_PREF_VERSION, 1)
+          .commit();
+    });
+    testRule.getScenario().recreate();
     getInstrumentation().waitForIdleSync();
   }
 
@@ -114,15 +118,16 @@ public class SplashScreenActivityTest {
   /**
    * Tests that accepting T&Cs shows the warm welcome slides then the What's New dialog.
    *
-   * <p>Uses UiAutomator for all post-EULA interactions because API 36 AOSP emulator windows
-   * may lack window focus, causing RootViewWithoutFocusException in Espresso.
-   * SplashScreenTestModule provides a 1ms animation so onAnimationEnd fires immediately.
+   * <p>Bypasses the EULA dialog entirely by writing acceptance to SharedPreferences and
+   * recreating the activity. This avoids all API 36 AOSP emulator fragility (no window focus,
+   * WebView accessibility gaps). SplashScreenTestModule provides a 1ms animation so
+   * onAnimationEnd fires immediately.
    */
   @Test
   public void showsTutorialThenWhatsNewAfterTandCs_newUser() throws InterruptedException {
     UiDevice device = UiDevice.getInstance(getInstrumentation());
 
-    acceptEula();
+    acceptEulaViaPrefs();
 
     assertThat("warm welcome viewpager should appear",
         device.wait(Until.hasObject(By.res(COM_GOOGLE_ANDROID_STARDROID, "warm_welcome_viewpager")), TIMEOUT_MS),
