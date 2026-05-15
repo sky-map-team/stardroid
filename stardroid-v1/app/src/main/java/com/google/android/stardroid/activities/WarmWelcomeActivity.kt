@@ -1,6 +1,7 @@
 package com.google.android.stardroid.activities
 
 import android.content.Intent
+import android.hardware.Sensor
 import android.hardware.SensorManager
 import android.os.Build
 import android.os.Bundle
