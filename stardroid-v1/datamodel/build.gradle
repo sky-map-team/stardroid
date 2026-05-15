@@ -11,13 +11,13 @@ plugins {
 //compileSdkVersion 26
 
 dependencies {
-    implementation 'com.google.protobuf:protobuf-javalite:3.13.0'
+    implementation 'com.google.protobuf:protobuf-javalite:4.28.3'
 }
 
 protobuf {
     protoc {
         // Download from repositories
-        artifact = 'com.google.protobuf:protoc:3.13.0'
+        artifact = 'com.google.protobuf:protoc:4.28.3'
     }
 
     generateProtoTasks {
