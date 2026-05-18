@@ -126,10 +126,11 @@ public class StartUpTest {
                 }
               }
             });
-    if (scenario != null) {
-      scenario.close();
-      scenario = null;
-    }
+    // ActivityScenario#close internally runOnMainSyncs to walk the activity to DESTROYED, which
+    // would block here while DynamicStarMapActivity saturates the main looper. The scenario's
+    // SplashScreenActivity has already finished itself before chaining forward, so just drop
+    // the reference and let the async finish above clean up the rest.
+    scenario = null;
   }
 
   @Test
