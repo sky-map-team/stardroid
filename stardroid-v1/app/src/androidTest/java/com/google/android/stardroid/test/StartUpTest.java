@@ -16,6 +16,7 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.Lifecycle;
 import androidx.preference.PreferenceManager;
 import androidx.test.core.app.ActivityScenario;
+import androidx.test.runner.lifecycle.ActivityLifecycleCallback;
 import androidx.test.runner.lifecycle.ActivityLifecycleMonitorRegistry;
 import androidx.test.runner.lifecycle.Stage;
 import androidx.test.uiautomator.UiDevice;
@@ -31,6 +32,8 @@ import com.google.android.stardroid.activities.dialogs.WhatsNewDialogFragment;
 import androidx.viewpager2.widget.ViewPager2;
 
 import java.util.Collection;
+import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 
 import org.junit.After;
 import org.junit.Before;
@@ -73,6 +76,21 @@ public class StartUpTest {
 
   private ActivityScenario<SplashScreenActivity> scenario;
 
+  /**
+   * Activity classes that have reached {@link Stage#RESUMED} at any point during the test.
+   * Captured via a lifecycle callback so the test thread can observe even if the activity
+   * pauses again quickly (e.g. when a system dialog steals focus right after onResume).
+   */
+  private final Set<Class<?>> classesEverResumed =
+      ConcurrentHashMap.newKeySet();
+
+  private final ActivityLifecycleCallback resumedRecorder =
+      (activity, stage) -> {
+        if (stage == Stage.RESUMED) {
+          classesEverResumed.add(activity.getClass());
+        }
+      };
+
   @Before
   public void setUp() {
     // Permissions cannot be revoked here: pm revoke kills the target app process, which is also
@@ -83,11 +101,14 @@ public class StartUpTest {
         PreferenceManager.getDefaultSharedPreferences(context).edit();
     editor.clear();
     editor.commit();
+    classesEverResumed.clear();
+    ActivityLifecycleMonitorRegistry.getInstance().addLifecycleCallback(resumedRecorder);
     scenario = ActivityScenario.launch(SplashScreenActivity.class);
   }
 
   @After
   public void tearDown() {
+    ActivityLifecycleMonitorRegistry.getInstance().removeLifecycleCallback(resumedRecorder);
     // The scenario only tracks SplashScreenActivity; the new-user flow chains forward to
     // WarmWelcomeActivity and DynamicStarMapActivity, which Scenario#close() does not finish.
     // Leaving DynamicStarMapActivity resumed at end-of-test causes pause-timeout ANRs on slow
@@ -350,14 +371,15 @@ public class StartUpTest {
     return null;
   }
 
-  /** Polls until an activity of {@code activityClass} reaches the RESUMED stage. */
+  /**
+   * Polls until an activity of {@code activityClass} has reached the RESUMED stage at any point
+   * (recorded by {@link #resumedRecorder}). Reading the recorder is non-blocking, so this still
+   * works when the main thread is saturated loading data and {@code runOnMainSync} would stall.
+   */
   private void waitForActivityResumed(Class<? extends Activity> activityClass, long timeoutMs) {
     long deadline = System.currentTimeMillis() + timeoutMs;
     while (System.currentTimeMillis() < deadline) {
-      boolean[] found = new boolean[1];
-      getInstrumentation()
-          .runOnMainSync(() -> found[0] = currentResumedActivity(activityClass) != null);
-      if (found[0]) return;
+      if (classesEverResumed.contains(activityClass)) return;
       sleep(100);
     }
     fail(activityClass.getSimpleName() + " did not reach RESUMED within " + timeoutMs + "ms");
