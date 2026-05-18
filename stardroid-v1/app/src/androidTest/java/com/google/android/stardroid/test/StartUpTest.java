@@ -18,9 +18,12 @@ import androidx.test.core.app.ActivityScenario;
 import androidx.test.runner.lifecycle.ActivityLifecycleMonitorRegistry;
 import androidx.test.runner.lifecycle.Stage;
 
+import com.google.android.stardroid.R;
 import com.google.android.stardroid.activities.SplashScreenActivity;
 import com.google.android.stardroid.activities.WarmWelcomeActivity;
 import com.google.android.stardroid.activities.dialogs.EulaDialogFragment;
+
+import androidx.viewpager2.widget.ViewPager2;
 
 import java.util.Collection;
 
@@ -89,6 +92,19 @@ public class StartUpTest {
   }
 
   @Test
+  public void warmWelcome_swipingThroughAllSlides_reachesFinalSlide() {
+    waitForFragment(EULA_TAG, TIMEOUT_MS);
+    clickDialogButton(EULA_TAG, DialogInterface.BUTTON_POSITIVE);
+    waitForActivityResumed(WarmWelcomeActivity.class, SPLASH_TIMEOUT_MS);
+
+    // Three slides; click "Next" twice to advance to the last one.
+    clickNextOnWarmWelcome();
+    waitForWarmWelcomeSlide(1, TIMEOUT_MS);
+    clickNextOnWarmWelcome();
+    waitForWarmWelcomeSlide(2, TIMEOUT_MS);
+  }
+
+  @Test
   public void eulaDeclined_finishesActivity() {
     waitForFragment(EULA_TAG, TIMEOUT_MS);
     clickDialogButton(EULA_TAG, DialogInterface.BUTTON_NEGATIVE);
@@ -127,24 +143,58 @@ public class StartUpTest {
         });
   }
 
+  /** Performs a click on the warm welcome's "Next/Finish" button on the main thread. */
+  private void clickNextOnWarmWelcome() {
+    getInstrumentation()
+        .runOnMainSync(
+            () -> {
+              WarmWelcomeActivity activity = currentResumedActivity(WarmWelcomeActivity.class);
+              if (activity == null) {
+                fail("WarmWelcomeActivity is not currently resumed");
+                return;
+              }
+              activity.findViewById(R.id.btn_next_finish).performClick();
+            });
+  }
+
+  /** Polls until the warm-welcome view pager reaches {@code position}. */
+  private void waitForWarmWelcomeSlide(int position, long timeoutMs) {
+    long deadline = System.currentTimeMillis() + timeoutMs;
+    while (System.currentTimeMillis() < deadline) {
+      int[] current = new int[] {-1};
+      getInstrumentation()
+          .runOnMainSync(
+              () -> {
+                WarmWelcomeActivity activity = currentResumedActivity(WarmWelcomeActivity.class);
+                if (activity != null) {
+                  ViewPager2 pager = activity.findViewById(R.id.warm_welcome_viewpager);
+                  if (pager != null) current[0] = pager.getCurrentItem();
+                }
+              });
+      if (current[0] == position) return;
+      sleep(100);
+    }
+    fail("Warm welcome did not reach slide index " + position + " within " + timeoutMs + "ms");
+  }
+
+  /** Returns the currently-resumed activity of the given type, or null if none. */
+  @SuppressWarnings("unchecked")
+  private <T extends Activity> T currentResumedActivity(Class<T> activityClass) {
+    Collection<Activity> resumed =
+        ActivityLifecycleMonitorRegistry.getInstance().getActivitiesInStage(Stage.RESUMED);
+    for (Activity a : resumed) {
+      if (activityClass.isInstance(a)) return (T) a;
+    }
+    return null;
+  }
+
   /** Polls until an activity of {@code activityClass} reaches the RESUMED stage. */
   private void waitForActivityResumed(Class<? extends Activity> activityClass, long timeoutMs) {
     long deadline = System.currentTimeMillis() + timeoutMs;
     while (System.currentTimeMillis() < deadline) {
       boolean[] found = new boolean[1];
       getInstrumentation()
-          .runOnMainSync(
-              () -> {
-                Collection<Activity> resumed =
-                    ActivityLifecycleMonitorRegistry.getInstance()
-                        .getActivitiesInStage(Stage.RESUMED);
-                for (Activity a : resumed) {
-                  if (activityClass.isInstance(a)) {
-                    found[0] = true;
-                    return;
-                  }
-                }
-              });
+          .runOnMainSync(() -> found[0] = currentResumedActivity(activityClass) != null);
       if (found[0]) return;
       sleep(100);
     }
