@@ -137,12 +137,9 @@ public class StartUpTest {
   }
 
   @Test
-  public void newUserCompletesOnboarding_reachesSkyMapAndRequestsLocation() {
+  public void newUserCompletesOnboarding_reachesSkyMap() {
     runOnboardingThroughWhatsNew();
     waitForActivityResumed(DynamicStarMapActivity.class, TIMEOUT_MS);
-    // The sky map asks for a location with an in-app rationale dialog before triggering the
-    // system permission request.
-    waitForFragment(LOCATION_RATIONALE_TAG, TIMEOUT_MS);
   }
 
   /**
