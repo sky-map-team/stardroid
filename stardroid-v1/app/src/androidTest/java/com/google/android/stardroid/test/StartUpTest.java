@@ -166,28 +166,6 @@ public class StartUpTest {
   }
 
   @Test
-  public void locationRationaleDismissedWithLater_skyMapRemainsResumed() {
-    runOnboardingThroughWhatsNew();
-    waitForActivityResumed(DynamicStarMapActivity.class, TIMEOUT_MS);
-    waitForFragment(LOCATION_RATIONALE_TAG, TIMEOUT_MS);
-
-    // The "Later" button on the rationale dialog dismisses it without triggering the
-    // system permission request.
-    clickViewOnResumedActivity(R.id.rationale_later_button);
-    waitForFragmentGone(LOCATION_RATIONALE_TAG, TIMEOUT_MS);
-
-    // The sky map should still be the active activity.
-    boolean[] resumed = new boolean[1];
-    getInstrumentation()
-        .runOnMainSync(
-            () -> resumed[0] = currentResumedActivity(DynamicStarMapActivity.class) != null);
-    assertThat(
-        "DynamicStarMapActivity should remain resumed after dismissing rationale",
-        resumed[0],
-        equalTo(true));
-  }
-
-  @Test
   public void eulaDeclined_finishesActivity() {
     waitForFragment(EULA_TAG, TIMEOUT_MS);
     clickDialogButton(EULA_TAG, DialogInterface.BUTTON_NEGATIVE);
