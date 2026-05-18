@@ -84,10 +84,18 @@ public class StartUpTest {
   private final Set<Class<?>> classesEverResumed =
       ConcurrentHashMap.newKeySet();
 
+  /** Activities that are currently alive (in any stage prior to DESTROYED). */
+  private final Set<Activity> liveActivities = ConcurrentHashMap.newKeySet();
+
   private final ActivityLifecycleCallback resumedRecorder =
       (activity, stage) -> {
         if (stage == Stage.RESUMED) {
           classesEverResumed.add(activity.getClass());
+        }
+        if (stage == Stage.PRE_ON_CREATE || stage == Stage.CREATED) {
+          liveActivities.add(activity);
+        } else if (stage == Stage.DESTROYED) {
+          liveActivities.remove(activity);
         }
       };
 
@@ -102,6 +110,7 @@ public class StartUpTest {
     editor.clear();
     editor.commit();
     classesEverResumed.clear();
+    liveActivities.clear();
     ActivityLifecycleMonitorRegistry.getInstance().addLifecycleCallback(resumedRecorder);
     scenario = ActivityScenario.launch(SplashScreenActivity.class);
   }
@@ -114,22 +123,16 @@ public class StartUpTest {
     // OpenGL + star-data loading on the main thread, so runOnMainSync from here would block
     // until that work drains and JUnit's per-test timeout fires. Post the finishes async and
     // let the main looper run them when it is free.
-    new android.os.Handler(android.os.Looper.getMainLooper())
-        .post(
-            () -> {
-              for (Stage stage : new Stage[] {Stage.RESUMED, Stage.PAUSED, Stage.STOPPED}) {
-                for (Activity a :
-                    ActivityLifecycleMonitorRegistry.getInstance().getActivitiesInStage(stage)) {
-                  if (!a.isFinishing()) {
-                    a.finish();
-                  }
-                }
-              }
-            });
-    // ActivityScenario#close internally runOnMainSyncs to walk the activity to DESTROYED, which
-    // would block here while DynamicStarMapActivity saturates the main looper. The scenario's
-    // SplashScreenActivity has already finished itself before chaining forward, so just drop
-    // the reference and let the async finish above clean up the rest.
+    // Finish stragglers (most importantly DynamicStarMapActivity) so they do not hog the main
+    // looper across tests. The activity set is captured by the lifecycle callback so reading it
+    // is non-blocking; Activity#finish is safe to call from any thread.
+    for (Activity a : liveActivities) {
+      if (!a.isFinishing()) {
+        a.finish();
+      }
+    }
+    // Skip ActivityScenario#close: it would runOnMainSync to walk SplashScreenActivity to
+    // DESTROYED, which has already happened naturally before the flow chained forward.
     scenario = null;
   }
 
