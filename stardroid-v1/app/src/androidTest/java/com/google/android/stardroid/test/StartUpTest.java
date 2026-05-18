@@ -110,11 +110,12 @@ public class StartUpTest {
   public void tearDown() {
     ActivityLifecycleMonitorRegistry.getInstance().removeLifecycleCallback(resumedRecorder);
     // The scenario only tracks SplashScreenActivity; the new-user flow chains forward to
-    // WarmWelcomeActivity and DynamicStarMapActivity, which Scenario#close() does not finish.
-    // Leaving DynamicStarMapActivity resumed at end-of-test causes pause-timeout ANRs on slow
-    // emulators because it is still loading star data. Finish anything left running.
-    getInstrumentation()
-        .runOnMainSync(
+    // WarmWelcomeActivity and DynamicStarMapActivity. DynamicStarMapActivity is doing heavy
+    // OpenGL + star-data loading on the main thread, so runOnMainSync from here would block
+    // until that work drains and JUnit's per-test timeout fires. Post the finishes async and
+    // let the main looper run them when it is free.
+    new android.os.Handler(android.os.Looper.getMainLooper())
+        .post(
             () -> {
               for (Stage stage : new Stage[] {Stage.RESUMED, Stage.PAUSED, Stage.STOPPED}) {
                 for (Activity a :
