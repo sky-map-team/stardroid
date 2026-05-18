@@ -5,18 +5,24 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 import static org.junit.Assert.fail;
 
+import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
 
-import android.app.AlertDialog;
 import androidx.fragment.app.DialogFragment;
 import androidx.lifecycle.Lifecycle;
 import androidx.preference.PreferenceManager;
 import androidx.test.core.app.ActivityScenario;
+import androidx.test.runner.lifecycle.ActivityLifecycleMonitorRegistry;
+import androidx.test.runner.lifecycle.Stage;
 
 import com.google.android.stardroid.activities.SplashScreenActivity;
+import com.google.android.stardroid.activities.WarmWelcomeActivity;
 import com.google.android.stardroid.activities.dialogs.EulaDialogFragment;
+
+import java.util.Collection;
 
 import org.junit.After;
 import org.junit.Before;
@@ -42,6 +48,8 @@ public class StartUpTest {
 
   private static final String PKG = "com.google.android.stardroid";
   private static final long TIMEOUT_MS = 10_000;
+  /** Splash fade animation is ~3s; allow a generous margin on slow CI emulators. */
+  private static final long SPLASH_TIMEOUT_MS = 20_000;
   private static final String EULA_TAG = EulaDialogFragment.class.getSimpleName();
 
   @Rule
@@ -70,6 +78,14 @@ public class StartUpTest {
   @Test
   public void appLaunches_eulaDialogIsShown() {
     waitForFragment(EULA_TAG, TIMEOUT_MS);
+  }
+
+  @Test
+  public void eulaAccepted_warmWelcomeIsShown() {
+    waitForFragment(EULA_TAG, TIMEOUT_MS);
+    clickDialogButton(EULA_TAG, DialogInterface.BUTTON_POSITIVE);
+    // The splash fade animation runs (~3s) before WarmWelcomeActivity is launched.
+    waitForActivityResumed(WarmWelcomeActivity.class, SPLASH_TIMEOUT_MS);
   }
 
   @Test
@@ -109,6 +125,30 @@ public class StartUpTest {
           AlertDialog dialog = (AlertDialog) fragment.getDialog();
           dialog.getButton(whichButton).performClick();
         });
+  }
+
+  /** Polls until an activity of {@code activityClass} reaches the RESUMED stage. */
+  private void waitForActivityResumed(Class<? extends Activity> activityClass, long timeoutMs) {
+    long deadline = System.currentTimeMillis() + timeoutMs;
+    while (System.currentTimeMillis() < deadline) {
+      boolean[] found = new boolean[1];
+      getInstrumentation()
+          .runOnMainSync(
+              () -> {
+                Collection<Activity> resumed =
+                    ActivityLifecycleMonitorRegistry.getInstance()
+                        .getActivitiesInStage(Stage.RESUMED);
+                for (Activity a : resumed) {
+                  if (activityClass.isInstance(a)) {
+                    found[0] = true;
+                    return;
+                  }
+                }
+              });
+      if (found[0]) return;
+      sleep(100);
+    }
+    fail(activityClass.getSimpleName() + " did not reach RESUMED within " + timeoutMs + "ms");
   }
 
   private void waitForState(Lifecycle.State target, long timeoutMs) {
