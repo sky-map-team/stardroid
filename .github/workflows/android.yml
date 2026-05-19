@@ -58,7 +58,7 @@ jobs:
     strategy:
       matrix:
         api-level: [ 34, 36 ] # Keep 34 as it pre-dates edge to edge.
-        target: [ default ]
+        target: [ google_atd ]
 
     steps:
       - name: Checkout
