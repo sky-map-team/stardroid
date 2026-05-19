@@ -57,7 +57,7 @@ jobs:
         working-directory: ./stardroid-v1
     strategy:
       matrix:
-        api-level: [ 34, 36 ] # Keep 34 as it pre-dates edge to edge.
+        api-level: [ 34, 35 ] # 35 is the highest API with a google_atd image; 34 pre-dates edge to edge.
         target: [ google_atd ]
 
     steps:
