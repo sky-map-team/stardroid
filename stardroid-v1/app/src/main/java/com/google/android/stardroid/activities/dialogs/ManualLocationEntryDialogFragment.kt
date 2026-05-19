@@ -1,5 +1,6 @@
 package com.google.android.stardroid.activities.dialogs
 
+import android.app.AlertDialog
 import android.app.Dialog
 import android.location.Geocoder
 import android.os.Bundle
@@ -14,6 +15,8 @@ import com.google.android.stardroid.control.LocationController
 import com.google.android.stardroid.math.LatLong
 import dagger.hilt.android.AndroidEntryPoint
 import java.io.IOException
+import java.text.NumberFormat
+import java.text.ParsePosition
 import java.util.concurrent.ScheduledExecutorService
 import javax.inject.Inject
 
@@ -62,7 +65,7 @@ class ManualLocationEntryDialogFragment : DialogFragment() {
             trySetLocation()
         }
 
-        return android.app.AlertDialog.Builder(requireContext())
+        return AlertDialog.Builder(requireContext())
             .setTitle(R.string.location_manual_entry_title)
             .setView(view)
             .create()
@@ -118,8 +121,8 @@ class ManualLocationEntryDialogFragment : DialogFragment() {
     }
 
     private fun parseCoordinate(str: String): Float? {
-        val format = java.text.NumberFormat.getInstance()
-        val pos = java.text.ParsePosition(0)
+        val format = NumberFormat.getInstance()
+        val pos = ParsePosition(0)
         val number = format.parse(str, pos)
         if (pos.index == str.length && pos.errorIndex == -1 && number != null) {
             return number.toFloat()

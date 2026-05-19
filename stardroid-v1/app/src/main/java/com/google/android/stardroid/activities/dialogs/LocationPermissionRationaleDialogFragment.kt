@@ -1,8 +1,10 @@
 package com.google.android.stardroid.activities.dialogs
 
+import android.app.AlertDialog
 import android.app.Dialog
 import android.os.Bundle
 import android.view.LayoutInflater
+import Button
 import com.google.android.stardroid.R
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -23,19 +25,19 @@ class LocationPermissionRationaleDialogFragment : DialogFragment() {
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         val view = LayoutInflater.from(requireContext())
             .inflate(R.layout.dialog_location_rationale, null)
-        view.findViewById<android.widget.Button>(R.id.rationale_grant_button).setOnClickListener {
+        view.findViewById<Button>(R.id.rationale_grant_button).setOnClickListener {
             dismiss()
             onGrant?.invoke()
         }
-        view.findViewById<android.widget.Button>(R.id.rationale_manually_button).setOnClickListener {
+        view.findViewById<Button>(R.id.rationale_manually_button).setOnClickListener {
             dismiss()
             onEnterManually?.invoke()
         }
-        view.findViewById<android.widget.Button>(R.id.rationale_later_button).setOnClickListener {
+        view.findViewById<Button>(R.id.rationale_later_button).setOnClickListener {
             dismiss()
             onLater?.invoke()
         }
-        return android.app.AlertDialog.Builder(requireContext())
+        return AlertDialog.Builder(requireContext())
             .setTitle(R.string.location_permission_dialog_title)
             .setView(view)
             .create()

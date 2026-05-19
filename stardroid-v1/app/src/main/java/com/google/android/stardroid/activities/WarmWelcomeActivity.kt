@@ -5,6 +5,8 @@ import android.hardware.Sensor
 import android.hardware.SensorManager
 import android.os.Build
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.os.Vibrator
 import android.os.VibrationEffect
 import android.util.Log
@@ -214,7 +216,7 @@ class WarmWelcomeActivity : AppCompatActivity(), WhatsNewDialogFragment.CloseLis
         fun onSelected();
     }
     class Slide1Fragment : Fragment() {
-        private val handler = android.os.Handler(android.os.Looper.getMainLooper())
+        private val handler = Handler(Looper.getMainLooper())
         private var currentIndex = 0
         private val highlightGroups = intArrayOf(
             R.id.highlight_stars,
@@ -300,7 +302,7 @@ class WarmWelcomeActivity : AppCompatActivity(), WhatsNewDialogFragment.CloseLis
         private lateinit var gyroSpinner: View
         private lateinit var accelSpinner: View
         private lateinit var compassSpinner: View
-        private val handler = android.os.Handler(android.os.Looper.getMainLooper())
+        private val handler = Handler(Looper.getMainLooper())
         private var hasCompass = false
         private var hasAccel = false
         private var hasGyro = false

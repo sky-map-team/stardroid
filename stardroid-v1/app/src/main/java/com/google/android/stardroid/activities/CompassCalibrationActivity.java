@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.text.Html;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.CheckBox;
@@ -59,7 +60,7 @@ public class CompassCalibrationActivity extends androidx.fragment.app.FragmentAc
     setContentView(R.layout.activity_compass_calibration);
     EdgeToEdgeFixer.applyEdgeToEdgeFixForActionBarActivity(this);
     webView = findViewById(R.id.compass_calib_activity_webview);
-    android.webkit.WebSettings webSettings = webView.getSettings();
+    WebSettings webSettings = webView.getSettings();
     webSettings.setJavaScriptEnabled(true);
     webView.setWebViewClient(new WebViewClient() {
       @Override

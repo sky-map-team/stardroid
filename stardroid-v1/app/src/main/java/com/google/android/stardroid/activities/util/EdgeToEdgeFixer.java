@@ -16,6 +16,7 @@ import android.graphics.Rect;
 import android.os.Build;
 import android.util.TypedValue;
 import android.view.View;
+import android.view.ViewGroup;
 
 import com.google.android.stardroid.R;
 
@@ -105,8 +106,8 @@ public class EdgeToEdgeFixer {
 
     // For scrollable content (like ListView in PreferenceFragment), disable clip to padding
     // so content scrolls under the padding area
-    if (contentView instanceof android.view.ViewGroup) {
-      ((android.view.ViewGroup) contentView).setClipToPadding(false);
+    if (contentView instanceof ViewGroup) {
+      ((ViewGroup) contentView).setClipToPadding(false);
     }
   }
 }

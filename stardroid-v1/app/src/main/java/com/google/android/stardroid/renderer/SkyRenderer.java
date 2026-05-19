@@ -17,6 +17,7 @@ package com.google.android.stardroid.renderer;
 import android.content.res.Resources;
 import android.opengl.GLSurfaceView;
 import android.opengl.GLU;
+import android.os.Build;
 import android.util.Log;
 
 import com.google.android.stardroid.math.MathUtils;
@@ -177,12 +178,12 @@ public class SkyRenderer implements GLSurfaceView.Renderer {
         "Behold",
     };
     for (String model : badModels) {
-      if (android.os.Build.MODEL.contains(model)) {
+      if (Build.MODEL.contains(model)) {
         canUseVBO = false;
         break;
       }
     }
-    Log.i("SkyRenderer", "Model: " + android.os.Build.MODEL);
+    Log.i("SkyRenderer", "Model: " + Build.MODEL);
     Log.i("SkyRenderer", canUseVBO ? "VBOs enabled" : "VBOs disabled");
     GLBuffer.setCanUseVBO(canUseVBO);
 
