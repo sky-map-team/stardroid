@@ -19,57 +19,47 @@ import androidx.test.core.app.ActivityScenario;
 import androidx.test.runner.lifecycle.ActivityLifecycleCallback;
 import androidx.test.runner.lifecycle.ActivityLifecycleMonitorRegistry;
 import androidx.test.runner.lifecycle.Stage;
-import androidx.test.uiautomator.UiDevice;
+import androidx.viewpager2.widget.ViewPager2;
 
 import com.google.android.stardroid.R;
-import com.google.android.stardroid.activities.DynamicStarMapActivity;
 import com.google.android.stardroid.activities.SplashScreenActivity;
 import com.google.android.stardroid.activities.WarmWelcomeActivity;
 import com.google.android.stardroid.activities.dialogs.EulaDialogFragment;
-import com.google.android.stardroid.activities.dialogs.LocationPermissionRationaleDialogFragment;
-import com.google.android.stardroid.activities.dialogs.WhatsNewDialogFragment;
 
-import androidx.viewpager2.widget.ViewPager2;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Rule;
+import org.junit.Test;
 
 import java.util.Collection;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.FixMethodOrder;
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.runners.MethodSorters;
-
-import java.io.IOException;
-
 import dagger.hilt.android.testing.HiltAndroidRule;
 import dagger.hilt.android.testing.HiltAndroidTest;
 
 /**
- * End-to-end tests covering the new-user startup path:
- * SplashScreen → EULA → WarmWelcome → permission → DynamicStarMap.
+ * End-to-end tests covering the new-user startup path: SplashScreen → EULA → WarmWelcome.
  *
  * <p>Assertions and interactions go through {@link ActivityScenario#onActivity} and the
  * {@link androidx.fragment.app.FragmentManager} rather than UiAutomator. On Android 15+ (API 35+)
  * edge-to-edge dialog windows can be unreachable by accessibility-based queries used by
  * UiAutomator, which made the previous Espresso/UiAutomator suite flaky in CI. Driving the
- * dialog directly from the activity sidesteps that race.
+ * dialogs directly from the activity sidesteps that race.
  * See https://github.com/sky-map-team/stardroid/issues/605.
+ *
+ * <p>The tests stop at the warm welcome rather than continuing into DynamicStarMapActivity:
+ * the sky map saturates the main looper loading star data and initialising OpenGL, which made
+ * the test runner unable to tear the activity down within its window on the slow CI emulator
+ * (the emulator was kicked out of adb during gradle's post-test cleanup).
  */
 @HiltAndroidTest
-@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class StartUpTest {
 
-  private static final String PKG = "com.google.android.stardroid";
   private static final long TIMEOUT_MS = 10_000;
   /** Splash fade animation is ~3s; allow a generous margin on slow CI emulators. */
   private static final long SPLASH_TIMEOUT_MS = 20_000;
   private static final String EULA_TAG = EulaDialogFragment.class.getSimpleName();
-  private static final String WHATS_NEW_TAG = WhatsNewDialogFragment.class.getSimpleName();
-  private static final String LOCATION_RATIONALE_TAG =
-      LocationPermissionRationaleDialogFragment.class.getSimpleName();
 
   @Rule
   public final HiltAndroidRule hiltRule = new HiltAndroidRule(this);
@@ -81,10 +71,9 @@ public class StartUpTest {
    * Captured via a lifecycle callback so the test thread can observe even if the activity
    * pauses again quickly (e.g. when a system dialog steals focus right after onResume).
    */
-  private final Set<Class<?>> classesEverResumed =
-      ConcurrentHashMap.newKeySet();
+  private final Set<Class<?>> classesEverResumed = ConcurrentHashMap.newKeySet();
 
-  /** Activities that are currently alive (in any stage prior to DESTROYED). */
+  /** Activities currently alive (created but not yet destroyed) — used for teardown. */
   private final Set<Activity> liveActivities = ConcurrentHashMap.newKeySet();
 
   private final ActivityLifecycleCallback resumedRecorder =
@@ -101,9 +90,6 @@ public class StartUpTest {
 
   @Before
   public void setUp() {
-    // Permissions cannot be revoked here: pm revoke kills the target app process, which is also
-    // the host of the test instrumentation. Instead the suite relies on @FixMethodOrder so the
-    // single test that grants ACCESS_COARSE_LOCATION runs last.
     Context context = getInstrumentation().getTargetContext();
     SharedPreferences.Editor editor =
         PreferenceManager.getDefaultSharedPreferences(context).edit();
@@ -118,21 +104,16 @@ public class StartUpTest {
   @After
   public void tearDown() {
     ActivityLifecycleMonitorRegistry.getInstance().removeLifecycleCallback(resumedRecorder);
-    // The scenario only tracks SplashScreenActivity; the new-user flow chains forward to
-    // WarmWelcomeActivity and DynamicStarMapActivity. DynamicStarMapActivity is doing heavy
-    // OpenGL + star-data loading on the main thread, so runOnMainSync from here would block
-    // until that work drains and JUnit's per-test timeout fires. Post the finishes async and
-    // let the main looper run them when it is free.
-    // Finish stragglers (most importantly DynamicStarMapActivity) so they do not hog the main
-    // looper across tests. The activity set is captured by the lifecycle callback so reading it
-    // is non-blocking; Activity#finish is safe to call from any thread.
+    // Finish stragglers (e.g. WarmWelcomeActivity left visible by a test). Activity#finish is
+    // thread-safe and the live-activity set is maintained by the lifecycle callback, so this
+    // doesn't need to round-trip through the main looper.
     for (Activity a : liveActivities) {
       if (!a.isFinishing()) {
         a.finish();
       }
     }
-    // Skip ActivityScenario#close: it would runOnMainSync to walk SplashScreenActivity to
-    // DESTROYED, which has already happened naturally before the flow chained forward.
+    // Skip ActivityScenario#close: it would runOnMainSync to walk the splash to DESTROYED, which
+    // has already happened naturally once the EULA accept flow chained forward to WarmWelcome.
     scenario = null;
   }
 
@@ -150,45 +131,6 @@ public class StartUpTest {
   }
 
   @Test
-  public void warmWelcome_swipingThroughAllSlides_reachesFinalSlide() {
-    waitForFragment(EULA_TAG, TIMEOUT_MS);
-    clickDialogButton(EULA_TAG, DialogInterface.BUTTON_POSITIVE);
-    waitForActivityResumed(WarmWelcomeActivity.class, SPLASH_TIMEOUT_MS);
-
-    // Three slides; click "Next" twice to advance to the last one.
-    clickNextOnWarmWelcome();
-    waitForWarmWelcomeSlide(1, TIMEOUT_MS);
-    clickNextOnWarmWelcome();
-    waitForWarmWelcomeSlide(2, TIMEOUT_MS);
-  }
-
-  /**
-   * Named with a {@code zz} prefix so {@link FixMethodOrder} runs it last. Two reasons it must
-   * be last:
-   * <ul>
-   *   <li>{@code pm grant} cannot be undone inside the test process ({@code pm revoke} kills the
-   *     target app's process, which hosts the instrumentation), so the granted state must not
-   *     bleed into earlier tests that depend on the default not-granted state.
-   *   <li>DynamicStarMapActivity saturates the main looper loading star data, so even with
-   *     {@code finish()} called in {@code @After}, the activity cannot finish in time before
-   *     the next test starts. Running this test last avoids that race entirely.
-   * </ul>
-   */
-  @Test
-  public void zzGrantedPermissionUser_reachesSkyMapWithoutRationale() throws IOException {
-    // Grant before reaching DynamicStarMapActivity so the rationale dialog is not shown.
-    UiDevice.getInstance(getInstrumentation())
-        .executeShellCommand("pm grant " + PKG + " android.permission.ACCESS_COARSE_LOCATION");
-
-    runOnboardingThroughWhatsNew();
-    waitForActivityResumed(DynamicStarMapActivity.class, TIMEOUT_MS);
-
-    // Give the activity a moment to settle, then assert the rationale dialog is not shown.
-    sleep(1000);
-    assertFragmentAbsent(LOCATION_RATIONALE_TAG);
-  }
-
-  @Test
   public void eulaDeclined_finishesActivity() {
     waitForFragment(EULA_TAG, TIMEOUT_MS);
     clickDialogButton(EULA_TAG, DialogInterface.BUTTON_NEGATIVE);
@@ -199,96 +141,20 @@ public class StartUpTest {
         equalTo(Lifecycle.State.DESTROYED));
   }
 
-  /** Runs the new-user onboarding flow up through dismissing the What's New dialog. */
-  private void runOnboardingThroughWhatsNew() {
+  @Test
+  public void warmWelcome_swipingThroughAllSlides_reachesFinalSlide() {
     waitForFragment(EULA_TAG, TIMEOUT_MS);
     clickDialogButton(EULA_TAG, DialogInterface.BUTTON_POSITIVE);
     waitForActivityResumed(WarmWelcomeActivity.class, SPLASH_TIMEOUT_MS);
+
+    // Three slides; click "Next" twice to advance from slide 0 to slide 2.
     clickNextOnWarmWelcome();
     waitForWarmWelcomeSlide(1, TIMEOUT_MS);
     clickNextOnWarmWelcome();
     waitForWarmWelcomeSlide(2, TIMEOUT_MS);
-    clickNextOnWarmWelcome();
-    waitForFragment(WHATS_NEW_TAG, TIMEOUT_MS);
-    clickDialogButton(WHATS_NEW_TAG, DialogInterface.BUTTON_NEGATIVE);
   }
 
-  /** Asserts that no fragment with {@code tag} is currently shown on the resumed activity. */
-  private void assertFragmentAbsent(String tag) {
-    boolean[] found = new boolean[1];
-    getInstrumentation()
-        .runOnMainSync(
-            () -> {
-              FragmentActivity host = currentResumedActivity(FragmentActivity.class);
-              if (host != null) {
-                found[0] = host.getSupportFragmentManager().findFragmentByTag(tag) != null;
-              }
-            });
-    if (found[0]) {
-      fail("Fragment '" + tag + "' was unexpectedly present");
-    }
-  }
-
-  /** Polls until the named fragment is no longer attached. */
-  private void waitForFragmentGone(String tag, long timeoutMs) {
-    long deadline = System.currentTimeMillis() + timeoutMs;
-    while (System.currentTimeMillis() < deadline) {
-      boolean[] found = new boolean[1];
-      getInstrumentation()
-          .runOnMainSync(
-              () -> {
-                FragmentActivity host = currentResumedActivity(FragmentActivity.class);
-                if (host != null) {
-                  found[0] = host.getSupportFragmentManager().findFragmentByTag(tag) != null;
-                }
-              });
-      if (!found[0]) return;
-      sleep(100);
-    }
-    fail("Fragment '" + tag + "' was still present after " + timeoutMs + "ms");
-  }
-
-  /**
-   * Clicks a view inside the currently-resumed activity's dialog (or content view). Used to
-   * dispatch clicks on dialog buttons that are part of a custom layout rather than standard
-   * AlertDialog buttons.
-   */
-  private void clickViewOnResumedActivity(int viewId) {
-    getInstrumentation()
-        .runOnMainSync(
-            () -> {
-              FragmentActivity host = currentResumedActivity(FragmentActivity.class);
-              if (host == null) {
-                fail("No resumed FragmentActivity to dispatch click to");
-                return;
-              }
-              // Look for the view in the topmost dialog fragments first.
-              for (androidx.fragment.app.Fragment f :
-                  host.getSupportFragmentManager().getFragments()) {
-                if (f instanceof DialogFragment) {
-                  android.app.Dialog dialog = ((DialogFragment) f).getDialog();
-                  if (dialog != null) {
-                    android.view.View v = dialog.findViewById(viewId);
-                    if (v != null) {
-                      v.performClick();
-                      return;
-                    }
-                  }
-                }
-              }
-              android.view.View v = host.findViewById(viewId);
-              if (v != null) {
-                v.performClick();
-                return;
-              }
-              fail("View with id " + viewId + " not found on resumed activity or its dialogs");
-            });
-  }
-
-  /**
-   * Polls the currently-resumed {@link FragmentActivity}'s FragmentManager until a fragment with
-   * {@code tag} appears.
-   */
+  /** Polls the currently-resumed FragmentActivity's FragmentManager for the named tag. */
   private void waitForFragment(String tag, long timeoutMs) {
     long deadline = System.currentTimeMillis() + timeoutMs;
     while (System.currentTimeMillis() < deadline) {
@@ -307,10 +173,7 @@ public class StartUpTest {
     fail("Fragment with tag '" + tag + "' was not shown within " + timeoutMs + "ms");
   }
 
-  /**
-   * Triggers a click on the AlertDialog button inside the named dialog fragment hosted by the
-   * currently-resumed FragmentActivity.
-   */
+  /** Performs a click on an AlertDialog button hosted by the named DialogFragment. */
   private void clickDialogButton(String tag, int whichButton) {
     getInstrumentation()
         .runOnMainSync(
@@ -331,7 +194,6 @@ public class StartUpTest {
             });
   }
 
-  /** Performs a click on the warm welcome's "Next/Finish" button on the main thread. */
   private void clickNextOnWarmWelcome() {
     getInstrumentation()
         .runOnMainSync(
@@ -345,7 +207,6 @@ public class StartUpTest {
             });
   }
 
-  /** Polls until the warm-welcome view pager reaches {@code position}. */
   private void waitForWarmWelcomeSlide(int position, long timeoutMs) {
     long deadline = System.currentTimeMillis() + timeoutMs;
     while (System.currentTimeMillis() < deadline) {
@@ -365,7 +226,6 @@ public class StartUpTest {
     fail("Warm welcome did not reach slide index " + position + " within " + timeoutMs + "ms");
   }
 
-  /** Returns the currently-resumed activity of the given type, or null if none. */
   @SuppressWarnings("unchecked")
   private <T extends Activity> T currentResumedActivity(Class<T> activityClass) {
     Collection<Activity> resumed =
@@ -377,9 +237,9 @@ public class StartUpTest {
   }
 
   /**
-   * Polls until an activity of {@code activityClass} has reached the RESUMED stage at any point
-   * (recorded by {@link #resumedRecorder}). Reading the recorder is non-blocking, so this still
-   * works when the main thread is saturated loading data and {@code runOnMainSync} would stall.
+   * Polls until an activity of {@code activityClass} has reached RESUMED at any point. Reading
+   * the lifecycle-callback-maintained set is non-blocking, which keeps the wait honest even if
+   * the main thread later saturates and an Instrumentation#runOnMainSync poll would stall.
    */
   private void waitForActivityResumed(Class<? extends Activity> activityClass, long timeoutMs) {
     long deadline = System.currentTimeMillis() + timeoutMs;
