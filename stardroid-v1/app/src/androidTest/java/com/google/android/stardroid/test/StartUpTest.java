@@ -61,7 +61,7 @@ import dagger.hilt.android.testing.HiltAndroidTest;
 @HiltAndroidTest
 public class StartUpTest {
 
-  private static final String PKG = "com.google.android.stardroid";
+  private static final String PKG = getInstrumentation().getTargetContext().getPackageName();
   private static final long TIMEOUT_MS = 10_000;
   /** Splash fade animation is ~3s; allow a generous margin on slow CI emulators. */
   private static final long SPLASH_TIMEOUT_MS = 20_000;
