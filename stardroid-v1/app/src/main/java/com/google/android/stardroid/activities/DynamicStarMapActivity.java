@@ -44,6 +44,7 @@ import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -431,7 +432,7 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
       if (timePlayerUI instanceof ViewGroup group) {
         for (int i = 0; i < group.getChildCount(); i++) {
           View child = group.getChildAt(i);
-          if (child instanceof android.widget.RelativeLayout) {
+          if (child instanceof RelativeLayout) {
             child.setBackgroundColor(nightMode ? getColor(R.color.night_bar_bg) : getColor(R.color.day_bar_bg));
           }
         }

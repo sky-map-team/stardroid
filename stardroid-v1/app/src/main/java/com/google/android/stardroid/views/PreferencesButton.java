@@ -34,7 +34,7 @@ import com.google.android.stardroid.util.AnalyticsInterface;
 import com.google.android.stardroid.util.MiscUtil;
 
 public class PreferencesButton extends ImageButton
-    implements android.view.View.OnClickListener, OnSharedPreferenceChangeListener {
+    implements View.OnClickListener, OnSharedPreferenceChangeListener {
   private static final String TAG = MiscUtil.getTag(PreferencesButton.class);
   private static AnalyticsInterface analytics;
   private OnClickListener secondaryOnClickListener;

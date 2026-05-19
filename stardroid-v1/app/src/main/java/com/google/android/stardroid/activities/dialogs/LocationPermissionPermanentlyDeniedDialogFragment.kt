@@ -1,11 +1,13 @@
 package com.google.android.stardroid.activities.dialogs
 
+import android.app.AlertDialog
 import android.app.Dialog
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.provider.Settings
 import android.view.LayoutInflater
+import android.widget.Button
 import com.google.android.stardroid.R
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -20,7 +22,7 @@ class LocationPermissionPermanentlyDeniedDialogFragment : DialogFragment() {
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         val view = LayoutInflater.from(requireContext())
             .inflate(R.layout.dialog_location_permanently_denied, null)
-        view.findViewById<android.widget.Button>(R.id.permanently_denied_settings_button)
+        view.findViewById<Button>(R.id.permanently_denied_settings_button)
             .setOnClickListener {
                 dismiss()
                 startActivity(
@@ -29,12 +31,12 @@ class LocationPermissionPermanentlyDeniedDialogFragment : DialogFragment() {
                     }
                 )
             }
-        view.findViewById<android.widget.Button>(R.id.permanently_denied_manually_button)
+        view.findViewById<Button>(R.id.permanently_denied_manually_button)
             .setOnClickListener {
                 dismiss()
                 onEnterManually?.invoke()
             }
-        return android.app.AlertDialog.Builder(requireContext())
+        return AlertDialog.Builder(requireContext())
             .setTitle(R.string.location_permanently_denied_title)
             .setView(view)
             .create()

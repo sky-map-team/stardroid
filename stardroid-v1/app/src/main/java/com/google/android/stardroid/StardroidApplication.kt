@@ -109,12 +109,12 @@ open class StardroidApplication : Application() {
         newUser = true
       }
     }
-    analytics.setUserProperty(AnalyticsInterface.NEW_USER, java.lang.Boolean.toString(newUser))
+    analytics.setUserProperty(AnalyticsInterface.NEW_USER, newUser.toString())
     if (newUser) {
       analytics.setUserProperty(AnalyticsInterface.FIRST_INSTALL_VERSION, versionName)
     }
     analytics.setUserProperty(AnalyticsInterface.USER_LOCALE,
-        java.util.Locale.getDefault().toLanguageTag())
+        Locale.getDefault().toLanguageTag())
     preferences.edit().putString(PREVIOUS_APP_VERSION_PREF, versionName).apply()
     if (previousVersion != versionName) {
       // It's either an upgrade or a new installation

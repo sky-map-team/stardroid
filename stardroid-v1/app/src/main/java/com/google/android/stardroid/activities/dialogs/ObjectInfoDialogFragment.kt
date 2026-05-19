@@ -19,6 +19,7 @@ import android.graphics.PorterDuff
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
+import android.util.TypedValue
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
@@ -179,7 +180,7 @@ class ObjectInfoDialogFragment : DialogFragment() {
                         if (isNight) R.color.night_link_color
                         else R.color.day_link_color
                     ))
-                    val outValue = android.util.TypedValue()
+                    val outValue = TypedValue()
                     parentActivity.theme.resolveAttribute(
                         android.R.attr.selectableItemBackground, outValue, true)
                     setBackgroundResource(outValue.resourceId)

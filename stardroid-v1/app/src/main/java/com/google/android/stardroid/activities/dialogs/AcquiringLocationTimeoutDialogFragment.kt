@@ -1,8 +1,10 @@
 package com.google.android.stardroid.activities.dialogs
 
+import android.app.AlertDialog
 import android.app.Dialog
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.widget.Button
 import com.google.android.stardroid.R
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -20,17 +22,17 @@ class AcquiringLocationTimeoutDialogFragment : DialogFragment() {
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         val view = LayoutInflater.from(requireContext())
             .inflate(R.layout.dialog_acquiring_timeout, null)
-        view.findViewById<android.widget.Button>(R.id.acquiring_keep_waiting_button)
+        view.findViewById<Button>(R.id.acquiring_keep_waiting_button)
             .setOnClickListener {
                 dismiss()
                 onKeepWaiting?.invoke()
             }
-        view.findViewById<android.widget.Button>(R.id.acquiring_enter_manually_button)
+        view.findViewById<Button>(R.id.acquiring_enter_manually_button)
             .setOnClickListener {
                 dismiss()
                 onEnterManually?.invoke()
             }
-        return android.app.AlertDialog.Builder(requireContext())
+        return AlertDialog.Builder(requireContext())
             .setTitle(R.string.location_acquiring_title)
             .setView(view)
             .create()

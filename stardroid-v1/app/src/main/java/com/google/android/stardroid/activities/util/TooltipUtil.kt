@@ -1,5 +1,6 @@
 package com.google.android.stardroid.activities.util
 
+import android.util.Log
 import android.view.Gravity
 import android.view.View
 import android.widget.Toast
@@ -34,7 +35,7 @@ object TooltipUtil {
             when (position) {
                 Position.RIGHT -> xOffset += v.width
                 Position.BELOW -> yOffset += v.height
-                else -> android.util.Log.w("TooltipUtil", "Unknown position: $position")
+                else -> Log.w("TooltipUtil", "Unknown position: $position")
             }
 
             // Note that the gravity setting will be ignored on recent API levels (30+),
