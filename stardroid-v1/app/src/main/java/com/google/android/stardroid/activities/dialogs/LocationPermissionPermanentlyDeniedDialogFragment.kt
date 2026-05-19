@@ -7,7 +7,7 @@ import android.net.Uri
 import android.os.Bundle
 import android.provider.Settings
 import android.view.LayoutInflater
-import Button
+import android.widget.Button
 import com.google.android.stardroid.R
 import dagger.hilt.android.AndroidEntryPoint
 

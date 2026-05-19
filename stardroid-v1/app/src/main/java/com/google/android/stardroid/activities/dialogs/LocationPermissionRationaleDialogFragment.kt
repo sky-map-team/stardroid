@@ -4,7 +4,7 @@ import android.app.AlertDialog
 import android.app.Dialog
 import android.os.Bundle
 import android.view.LayoutInflater
-import Button
+import android.widget.Button
 import com.google.android.stardroid.R
 import dagger.hilt.android.AndroidEntryPoint
 
