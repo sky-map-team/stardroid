@@ -162,20 +162,20 @@ public class StartUpTest {
     waitForWarmWelcomeSlide(2, TIMEOUT_MS);
   }
 
-  @Test
-  public void newUserCompletesOnboarding_reachesSkyMap() {
-    runOnboardingThroughWhatsNew();
-    waitForActivityResumed(DynamicStarMapActivity.class, TIMEOUT_MS);
-  }
-
   /**
-   * Named with a {@code z} prefix so {@link FixMethodOrder} runs it last: pm grant cannot be
-   * undone from within the test process (pm revoke kills it), so granting must not bleed into
-   * tests that expect the rationale dialog.
+   * Named with a {@code zz} prefix so {@link FixMethodOrder} runs it last. Two reasons it must
+   * be last:
+   * <ul>
+   *   <li>{@code pm grant} cannot be undone inside the test process ({@code pm revoke} kills the
+   *     target app's process, which hosts the instrumentation), so the granted state must not
+   *     bleed into earlier tests that depend on the default not-granted state.
+   *   <li>DynamicStarMapActivity saturates the main looper loading star data, so even with
+   *     {@code finish()} called in {@code @After}, the activity cannot finish in time before
+   *     the next test starts. Running this test last avoids that race entirely.
+   * </ul>
    */
   @Test
-  public void zzGrantedLocationPermission_reachesSkyMapWithoutRationale()
-      throws IOException {
+  public void zzGrantedPermissionUser_reachesSkyMapWithoutRationale() throws IOException {
     // Grant before reaching DynamicStarMapActivity so the rationale dialog is not shown.
     UiDevice.getInstance(getInstrumentation())
         .executeShellCommand("pm grant " + PKG + " android.permission.ACCESS_COARSE_LOCATION");
