@@ -9,7 +9,7 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 object ExperimentConfigModule {
-    @Provides
-    @Singleton
-    fun provideExperimentConfig(impl: ExperimentConfigImpl): ExperimentConfig = impl
+  @Provides
+  @Singleton
+  fun provideExperimentConfig(impl: ExperimentConfigImpl): ExperimentConfig = impl
 }
