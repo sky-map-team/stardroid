@@ -99,7 +99,7 @@ jobs:
           arch: x86_64
           force-avd-creation: false
           emulator-boot-timeout: 1200
-          emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none -memory 2048 -partition-size 512
+          emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none -memory 4096 -partition-size 1024
           disable-animations: false
           profile: Nexus 6
           working-directory: ./stardroid-v1
@@ -113,7 +113,7 @@ jobs:
           arch: x86_64
           force-avd-creation: false
           emulator-boot-timeout: 1200
-          emulator-options: -no-snapshot-save -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none -memory 2048 -partition-size 512
+          emulator-options: -no-snapshot-save -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none -memory 4096 -partition-size 1024
           disable-animations: true
           profile: Nexus 6
           working-directory: ./stardroid-v1
