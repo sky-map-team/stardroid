@@ -65,7 +65,7 @@ android {
         testInstrumentationRunner "com.google.android.stardroid.test.HiltTestRunner"
         resourceConfigurations += ['en', 'b+en+GB', 'ar', 'ca', 'cs', 'cy', 'da', 'de', 'el', 'es', 'fa', 'fr', 'hi', 'hu', 'id', 'it', 'ja', 'ko', 'ms', 'nb', 'nl', 'pl', 'pt', 'ru', 'sk', 'sl', 'sv', 'th', 'tr', 'uk', 'b+zh+Hans', 'b+zh+Hant']
         manifestPlaceholders = [dummy: "unset"]
-        resValue "string", "geoapify_maps_api_key", "ef903fb61a08471189178a4fddd5ef73"
+        resValue "string", "geoapify_maps_api_key", "unset"
     }
 
     signingConfigs {
@@ -79,16 +79,22 @@ android {
                 defaultConfig.resValue "string", "geoapify_maps_api_key", signingProperties.getProperty('geoapify.api.key')
             }
             releasebundle {
-                storeFile file(signingProperties.getProperty('upload.keystore.path'))
-                storePassword signingProperties.getProperty('upload.store-pwd')
-                keyPassword signingProperties.getProperty('upload.key-pwd')
-                keyAlias signingProperties.getProperty('upload.keystore.alias')
+                def path = signingProperties.getProperty('upload.keystore.path')
+                if (path != null) {
+                    storeFile file(path)
+                    storePassword signingProperties.getProperty('upload.store-pwd')
+                    keyPassword signingProperties.getProperty('upload.key-pwd')
+                    keyAlias signingProperties.getProperty('upload.keystore.alias')
+                }
             }
             releaseapk {
-                storeFile file(signingProperties.getProperty('apk.keystore.path'))
-                storePassword signingProperties.getProperty('apk.store-pwd')
-                keyPassword signingProperties.getProperty('apk.key-pwd')
-                keyAlias signingProperties.getProperty('apk.keystore.alias')
+                def path = signingProperties.getProperty('apk.keystore.path')
+                if (path != null) {
+                    storeFile file(path)
+                    storePassword signingProperties.getProperty('apk.store-pwd')
+                    keyPassword signingProperties.getProperty('apk.key-pwd')
+                    keyAlias signingProperties.getProperty('apk.keystore.alias')
+                }
             }
         }
     }
