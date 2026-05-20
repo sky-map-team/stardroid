@@ -12,5 +12,5 @@ abstract class MapAdapterModule {
 
     @Binds
     @ActivityScoped
-    abstract fun bindMapAdapter(impl: StadiaMapsAdapter): MapAdapter
+    abstract fun bindMapAdapter(impl: GeoapifyMapsAdapter): MapAdapter
 }

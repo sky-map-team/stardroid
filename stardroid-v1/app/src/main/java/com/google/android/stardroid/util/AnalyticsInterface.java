@@ -121,7 +121,7 @@ public interface AnalyticsInterface {
   String MAP_LOAD_SUCCESS = "success";
   String MAP_LOAD_ERROR_CODE = "error_code";
   String MAP_LOAD_PROVIDER = "provider";
-  String MAP_LOAD_PROVIDER_STADIA = "stadia";
+  String MAP_LOAD_PROVIDER_GEOAPIFY = "geoapify";
 
   // Warm welcome onboarding
   String WARM_WELCOME_STARTED_EVENT = "warm_welcome_started_ev";
