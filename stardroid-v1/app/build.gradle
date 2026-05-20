@@ -65,7 +65,7 @@ android {
         testInstrumentationRunner "com.google.android.stardroid.test.HiltTestRunner"
         resourceConfigurations += ['en', 'b+en+GB', 'ar', 'ca', 'cs', 'cy', 'da', 'de', 'el', 'es', 'fa', 'fr', 'hi', 'hu', 'id', 'it', 'ja', 'ko', 'ms', 'nb', 'nl', 'pl', 'pt', 'ru', 'sk', 'sl', 'sv', 'th', 'tr', 'uk', 'b+zh+Hans', 'b+zh+Hant']
         manifestPlaceholders = [dummy: "unset"]
-        resValue "string", "stadia_maps_api_key", "unset"
+        resValue "string", "geoapify_maps_api_key", "ef903fb61a08471189178a4fddd5ef73"
     }
 
     signingConfigs {
@@ -75,8 +75,8 @@ android {
         def signingProperties = new Properties()
         if (project.file('no-checkin.properties').exists()) {
             signingProperties.load(project.file('no-checkin.properties').newDataInputStream())
-            if (signingProperties.containsKey('stadiamaps.api.key')) {
-                defaultConfig.resValue "string", "stadia_maps_api_key", signingProperties.getProperty('stadiamaps.api.key')
+            if (signingProperties.containsKey('geoapify.api.key')) {
+                defaultConfig.resValue "string", "geoapify_maps_api_key", signingProperties.getProperty('geoapify.api.key')
             }
             releasebundle {
                 storeFile file(signingProperties.getProperty('upload.keystore.path'))
