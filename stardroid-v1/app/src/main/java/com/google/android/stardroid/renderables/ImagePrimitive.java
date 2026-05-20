@@ -19,6 +19,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.BitmapFactory.Options;
 import android.graphics.Color;
+import android.util.Log;
 
 import com.google.android.stardroid.math.CoordinateManipulationsKt;
 import com.google.android.stardroid.math.Vector3;
@@ -91,7 +92,7 @@ public class ImagePrimitive extends AbstractPrimitive {
 
     Bitmap newImage = BitmapFactory.decodeResource(resources, imageId, opts);
     if (newImage == null) {
-      android.util.Log.e("ImagePrimitive", "Could not decode image " + imageId);
+      Log.e("ImagePrimitive", "Could not decode image " + imageId);
       return;
     }
     this.image = newImage;

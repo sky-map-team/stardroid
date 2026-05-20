@@ -107,7 +107,7 @@ class CometsLayer(private val model: AstronomerModel, resources: Resources,
       val zValues = mutableListOf<Float>()
       val mags = mutableListOf<Float>()
       for (entry in positions) {
-        if (entry.date.before(previous)) throw java.lang.IllegalStateException(
+        if (entry.date.before(previous)) throw IllegalStateException(
           "Comet dates not " +
               "in ascending order"
         )
