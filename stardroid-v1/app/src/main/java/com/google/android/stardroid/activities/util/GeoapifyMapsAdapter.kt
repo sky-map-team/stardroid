@@ -3,7 +3,11 @@ package com.google.android.stardroid.activities.util
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.view.animation.Animation
+import android.view.animation.LinearInterpolator
+import android.view.animation.RotateAnimation
 import android.widget.ImageView
+import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.core.view.doOnLayout
 import coil.load
@@ -24,6 +28,7 @@ class GeoapifyMapsAdapter @Inject constructor(
 ) : MapAdapter {
     private var imageView: ImageView? = null
     private var fallbackLabel: TextView? = null
+    private var progressBar: ProgressBar? = null
     private var apiKey: String? = null
     private var lastLocation: LatLong? = null
 
@@ -40,6 +45,7 @@ class GeoapifyMapsAdapter @Inject constructor(
             this.imageView = mapView
             val root = mapView.parent as View
             this.fallbackLabel = root.findViewById(R.id.map_unavailable_label)
+            this.progressBar = root.findViewById(R.id.map_loading_progress)
             this.apiKey = mapView.context.getString(R.string.geoapify_maps_api_key)
         }
     }
@@ -52,6 +58,7 @@ class GeoapifyMapsAdapter @Inject constructor(
     override fun onDestroy() {
         imageView = null
         fallbackLabel = null
+        progressBar = null
     }
 
     override fun onSaveInstanceState(outState: Bundle) {}
@@ -113,14 +120,34 @@ class GeoapifyMapsAdapter @Inject constructor(
         applyLoadState()
     }
 
+    private val spinAnimation: Animation = RotateAnimation(
+        0f, 360f,
+        Animation.RELATIVE_TO_SELF, 0.5f,
+        Animation.RELATIVE_TO_SELF, 0.5f
+    ).apply {
+        duration = 1000L
+        repeatCount = Animation.INFINITE
+        interpolator = LinearInterpolator()
+    }
+
     private fun applyLoadState() {
         when (loadResult) {
-            LoadResult.Success, LoadResult.Loading -> {
+            LoadResult.Loading -> {
+                imageView?.visibility = View.INVISIBLE
+                fallbackLabel?.visibility = View.GONE
+                progressBar?.visibility = View.VISIBLE
+                progressBar?.startAnimation(spinAnimation)
+            }
+            LoadResult.Success -> {
                 imageView?.visibility = View.VISIBLE
                 fallbackLabel?.visibility = View.GONE
+                progressBar?.clearAnimation()
+                progressBar?.visibility = View.GONE
             }
             is LoadResult.Failure -> {
                 imageView?.visibility = View.GONE
+                progressBar?.clearAnimation()
+                progressBar?.visibility = View.GONE
                 fallbackLabel?.setText(R.string.location_map_unavailable)
                 fallbackLabel?.visibility = View.VISIBLE
             }
