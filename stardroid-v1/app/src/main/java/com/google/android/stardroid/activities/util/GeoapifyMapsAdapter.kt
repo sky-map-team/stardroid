@@ -88,7 +88,7 @@ class GeoapifyMapsAdapter @Inject constructor(
         val height = iv.height
 
         // Geoapify Static Map URL. See:
-        // https://maps.geoapify.com/v1/staticmap?style=dark-matter&width={width}&height={height}
+        // https://maps.geoapify.com/v1/staticmap?style={style}&width={width}&height={height}
         // &center=lonlat:{lon},{lat}&zoom=11&marker=lonlat:{lon},{lat};color:red&apiKey={key}
         val urlStr = "https://maps.geoapify.com/v1/staticmap?" +
                 "style=osm-bright" +

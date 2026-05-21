@@ -43,6 +43,7 @@
         android:orderInCategory="4"
         android:title="@string/menu_gallery"
         android:showAsAction="ifRoom"
+        android:actionLayout="@layout/action_item"
         android:icon="@android:drawable/ic_menu_gallery"/>
 
     <item android:id="@+id/menu_item_location"
