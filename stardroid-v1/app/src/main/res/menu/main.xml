@@ -39,12 +39,11 @@
         android:actionLayout="@layout/action_item"
         android:showAsAction="always"/>
 
-    <item android:id="@+id/menu_item_settings"
-          android:orderInCategory="4"
-          android:title="@string/menu_settings"
-          android:showAsAction="ifRoom"
-          android:icon="@android:drawable/ic_menu_preferences"
-          android:actionLayout="@layout/action_item"/>
+    <item android:id="@+id/menu_item_gallery"
+        android:orderInCategory="4"
+        android:title="@string/menu_gallery"
+        android:showAsAction="ifRoom"
+        android:icon="@android:drawable/ic_menu_gallery"/>
 
     <item android:id="@+id/menu_item_location"
           android:orderInCategory="5"
@@ -55,22 +54,16 @@
     <!-- People don't always understand the swirly icon
         in the action bar -->
     <item android:id="@+id/menu_item_time2"
-        android:orderInCategory="5"
+        android:orderInCategory="6"
         android:title="@string/menu_time"
         android:icon="@drawable/time_travel_icon"
         android:showAsAction="never"/>
 
     <item android:id="@+id/menu_item_calibrate"
-        android:orderInCategory="6"
+        android:orderInCategory="7"
         android:title="@string/menu_calibrate"
         android:icon="@android:drawable/ic_menu_compass"
         android:showAsAction="never"/>
-
-    <item android:id="@+id/menu_item_gallery"
-          android:orderInCategory="7"
-          android:title="@string/menu_gallery"
-          android:showAsAction="ifRoom"
-          android:icon="@android:drawable/ic_menu_gallery"/>
 
     <item android:id="@+id/menu_item_diagnostics"
           android:orderInCategory="8"
@@ -78,26 +71,33 @@
         android:icon="@android:drawable/ic_menu_info_details"
           android:showAsAction="never"/>
 
-    <item android:id="@+id/menu_item_tos"
+    <item android:id="@+id/menu_item_settings"
         android:orderInCategory="9"
+        android:title="@string/menu_settings"
+        android:showAsAction="ifRoom"
+        android:icon="@android:drawable/ic_menu_preferences"
+        android:actionLayout="@layout/action_item"/>
+
+    <item android:id="@+id/menu_item_tos"
+        android:orderInCategory="10"
         android:showAsAction="never"
         android:icon="@android:drawable/ic_menu_agenda"
         android:title="@string/menu_tos"/>
 
     <item android:id="@+id/menu_item_credits"
-          android:orderInCategory="10"
+          android:orderInCategory="11"
           android:title="@string/menu_credits"
-        android:icon="@android:drawable/ic_menu_myplaces"
+          android:icon="@android:drawable/ic_menu_myplaces"
           android:showAsAction="never"/>
 
     <item android:id="@+id/menu_item_tutorial"
-          android:orderInCategory="11"
+          android:orderInCategory="12"
           android:title="@string/menu_tutorial"
           android:showAsAction="never"
-          android:icon="@android:drawable/ic_menu_info_details"/>
+          android:icon="@android:drawable/ic_menu_slideshow"/>
 
     <item android:id="@+id/menu_item_help"
-          android:orderInCategory="12"
+          android:orderInCategory="13"
           android:title="@string/menu_help"
           android:showAsAction="never"
           android:icon="@android:drawable/ic_menu_help"/>
