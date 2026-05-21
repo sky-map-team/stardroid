@@ -133,10 +133,12 @@ class GeoapifyMapsAdapter @Inject constructor(
     private fun applyLoadState() {
         when (loadResult) {
             LoadResult.Loading -> {
-                imageView?.visibility = View.INVISIBLE
+                imageView?.visibility = View.VISIBLE
                 fallbackLabel?.visibility = View.GONE
-                progressBar?.visibility = View.VISIBLE
-                progressBar?.startAnimation(spinAnimation)
+                if (progressBar?.visibility != View.VISIBLE) {
+                    progressBar?.visibility = View.VISIBLE
+                    progressBar?.startAnimation(spinAnimation)
+                }
             }
             LoadResult.Success -> {
                 imageView?.visibility = View.VISIBLE

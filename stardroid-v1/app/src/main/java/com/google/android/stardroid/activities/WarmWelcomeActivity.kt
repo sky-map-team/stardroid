@@ -7,8 +7,10 @@ import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.os.Vibrator
+import android.os.VibrationAttributes
 import android.os.VibrationEffect
+import android.os.Vibrator
+import android.media.AudioAttributes
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -189,15 +191,34 @@ class WarmWelcomeActivity : AppCompatActivity(), WhatsNewDialogFragment.CloseLis
     fun buzz(happy: Boolean) {
         val v = vibrator ?: return
         if (!v.hasVibrator()) return
-        val effect = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+        val effect = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
             val effectId = if (happy) VibrationEffect.EFFECT_CLICK else VibrationEffect.EFFECT_DOUBLE_CLICK
-            VibrationEffect.createPredefined(effectId)
+            if (v.areEffectsSupported(effectId)[0] == Vibrator.VIBRATION_EFFECT_SUPPORT_YES) {
+                VibrationEffect.createPredefined(effectId)
+            } else {
+                buzzFallback(happy)
+            }
         } else {
-            if (happy) VibrationEffect.createOneShot(50, VibrationEffect.DEFAULT_AMPLITUDE)
-            else VibrationEffect.createWaveform(longArrayOf(0, 80, 80, 80), -1)
+            buzzFallback(happy)
         }
-        v.vibrate(effect)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            val attrs = VibrationAttributes.Builder()
+                .setUsage(VibrationAttributes.USAGE_NOTIFICATION)
+                .build()
+            v.vibrate(effect, attrs)
+        } else {
+            val attrs = AudioAttributes.Builder()
+                .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
+                .setUsage(AudioAttributes.USAGE_NOTIFICATION_EVENT)
+                .build()
+            @Suppress("DEPRECATION")
+            v.vibrate(effect, attrs)
+        }
     }
+
+    private fun buzzFallback(happy: Boolean) =
+        if (happy) VibrationEffect.createOneShot(50, VibrationEffect.DEFAULT_AMPLITUDE)
+        else VibrationEffect.createWaveform(longArrayOf(0, 80, 80, 80), -1)
 
     private class WelcomePagerAdapter(fa: AppCompatActivity) : FragmentStateAdapter(fa) {
         override fun createFragment(position: Int): Fragment {

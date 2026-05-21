@@ -8,7 +8,9 @@ import android.content.res.Resources
 import android.hardware.SensorManager
 import android.location.LocationManager
 import android.net.ConnectivityManager
+import android.os.Build
 import android.os.PowerManager
+import android.os.VibratorManager
 import android.util.Log
 import androidx.core.content.getSystemService
 import androidx.preference.PreferenceManager
@@ -106,7 +108,13 @@ class ApplicationModule {
   @Provides
   @Singleton
   fun provideVibrator(@ApplicationContext context: Context) =
-      context.getSystemService<android.os.Vibrator>()
+      if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+        context.getSystemService<VibratorManager>()?.defaultVibrator
+            ?: @Suppress("DEPRECATION") context.getSystemService<android.os.Vibrator>()
+      } else {
+        @Suppress("DEPRECATION")
+        context.getSystemService<android.os.Vibrator>()
+      }
 
   @Provides
   @Singleton
