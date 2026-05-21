@@ -110,6 +110,7 @@ class ApplicationModule {
   fun provideVibrator(@ApplicationContext context: Context) =
       if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
         context.getSystemService<VibratorManager>()?.defaultVibrator
+            ?: @Suppress("DEPRECATION") context.getSystemService<android.os.Vibrator>()
       } else {
         @Suppress("DEPRECATION")
         context.getSystemService<android.os.Vibrator>()
