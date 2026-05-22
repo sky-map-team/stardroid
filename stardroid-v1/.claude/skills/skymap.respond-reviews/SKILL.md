@@ -30,7 +30,7 @@ Apply any filters the user provides:
 
 ### Historical reviews (CSV dumps)
 
-If the user asks for reviews **older than what the Play API returns** (typically ~3 months), or
+If the user asks for reviews **older than what the Play API returns** (typically ~7 days), or
 explicitly references "historical" / "old" reviews, switch to
 `mcp__google-play-reviews__list_historical_reviews`.
 
@@ -47,7 +47,7 @@ For each review, classify the issue before drafting:
 
 | Class | Signals |
 |---|---|
-| **compass** | "wrong direction", "points wrong way", "inaccurate", "off by X degrees", "compass" |
+| **compass** | "wrong direction", "points wrong way", "inaccurate", "off by X degrees", "compass", "calibration", "calibrate" |
 | **jitter** | "jittery", "shaky", "jumpy", "wobbles", "stutters", "jerky" |
 | **location** | "wrong location", "wrong city", "Polaris near horizon", "latitude", "permission" |
 | **time/timezone** | "wrong time", "time zone", "off by hours", "clock" |
