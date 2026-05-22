@@ -1,8 +1,10 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Tarjetas de información más completas</h2>
-<p>Las lunas galileanas de Júpiter (Ío, Europa, Ganimedes y Calisto), las lunas de Marte Fobos y Deimos y otras ahora se pueden buscar con tarjetas de información enriquecidas e imágenes de la NASA.</p>
-<h2>Catálogo expandido</h2>
-<p>Se añadieron docenas de nuevos objetos de cielo profundo, incluyendo el Cúmulo Doble, 47 Tucanae, la Nebulosa Cráneo Expuesto y más, cada uno con descripciones, datos curiosos e imágenes.</p>]]></string>
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Bienvenido a Sky Map</h2>
+<p>Los nuevos usuarios reciben una experiencia de incorporación guiada que verifica los sensores de tu dispositivo y te permite comenzar a observar las estrellas rápidamente.</p>
+<h2>Mejor ubicación</h2>
+<p>El manejo de la ubicación ha sido completamente rediseñado — mensajes de estado más claros, un indicador de progreso mientras se resuelve tu posición, y correcciones para muchos errores de larga data. También hay un nuevo mapa para ayudarte a confirmar tu ubicación visualmente.</p>
+<h2>Búsqueda</h2>
+<p>Ahora puedes buscar por coordenadas de ascensión recta y declinación, así como por nombre de objeto. La superposición de búsqueda también se actualiza para mostrar "Encontrado: X" cuando tu objetivo se desplaza hacia el centro de la pantalla.</p>]]></string>
     </resources>

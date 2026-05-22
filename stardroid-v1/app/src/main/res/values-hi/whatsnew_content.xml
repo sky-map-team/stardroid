@@ -1,8 +1,10 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>अधिक जानकारी कार्ड</h2>
-<p>बृहस्पति के गैलिलियन चंद्रमा (आयो, यूरोपा, गैनिमेड और कैलिस्टो), मंगल के चंद्रमा फोबोस और डीमोस और अन्य अब समृद्ध जानकारी कार्ड और नासा की छवियों के साथ खोजे जा सकते हैं।</p>
-<h2>विस्तारित कैटलॉग</h2>
-<p>दर्जनों नई गहरी आकाश वस्तुएं जोड़ी गई हैं — डबल क्लस्टर, 47 ट्यूकेनी, एक्सपोज्ड क्रेनियम नेबुला और अन्य सहित — प्रत्येक विवरण, मजेदार तथ्य और छवियों के साथ।</p>]]></string>
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Sky Map में आपका स्वागत है</h2>
+<p>नए उपयोगकर्ताओं को एक निर्देशित ऑनबोर्डिंग अनुभव के साथ स्वागत किया जाता है जो आपके डिवाइस सेंसर की जांच करता है और आपको तेजी से तारों को देखने के लिए तैयार करता है।</p>
+<h2>बेहतर स्थान</h2>
+<p>स्थान हैंडलिंग को पूरी तरह से फिर से डिज़ाइन किया गया है — स्पष्ट स्थिति संदेश, आपकी स्थिति हल होने के दौरान एक प्रगति संकेतक, और कई लंबे समय से चली आ रही समस्याओं के लिए सुधार। आपकी स्थान को दृश्य रूप से पुष्टि करने में मदद के लिए एक नया मानचित्र भी है।</p>
+<h2>खोज</h2>
+<p>अब आप RA और Dec निर्देशांक के साथ-साथ वस्तु के नाम से भी खोज सकते हैं। जब आपका लक्ष्य स्क्रीन के केंद्र में आता है तो खोज ओवरले "मिला: X" दिखाने के लिए अपडेट होता है।</p>]]></string>
     </resources>

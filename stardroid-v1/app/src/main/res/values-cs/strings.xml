@@ -9,12 +9,51 @@
     <string name="other_prefs" translation_description="Preferences category heading for miscellaneous settings">Ostatní</string>
     <string name="controls_prefs" translation_description="Preferences category heading for touch control settings">Ovládání</string>
     <string name="location_permission_dialog_title" translation_description="Title of the dialog that requests location permission from the user">Vyžaduje se poloha</string>
-    <string name="location_permission_dialog_message">Sky Map potřebuje vaši přibližnou polohu, aby zobrazil správnou noční oblohu. Můžete udělit oprávnění, zadat svou polohu ručně nebo se rozhodnout později. Pokud se rozhodnete později, mapa nebude přesná, dokud nebude nastavena vaše poloha.</string>
+    <string name="location_permission_dialog_message" translation_description="Body text of the dialog requesting location permission, explaining why the app needs it and what happens without it">
+    Sky Map potřebuje vaši přibližnou polohu, aby zobrazil správnou noční oblohu. Můžete udělit oprávnění, zadat svou polohu ručně nebo se rozhodnout později. Pokud se rozhodnete později, mapa nebude přesná, dokud nebude nastavena vaše poloha.
+    </string>
     <string name="location_permission_grant" translation_description="Button in the location permission dialog to grant location access">Udělit oprávnění</string>
     <string name="location_permission_enter_manually" translation_description="Button in the location permission dialog to enter location by hand instead of granting permission">Zadat ručně</string>
     <string name="location_permission_later" translation_description="Button in the location permission dialog to defer the decision">Později</string>
     <string name="location_set_auto" translation_description="Toast message when automatic location is acquired. %1$s is the place name or coordinates">Poloha nastavena na %1$s</string>
-    <string name="location_long_lat" translation_description="Formatted display of longitude and latitude. %1$.2f is longitude, %2$.2f is latitude">Zeměpisná délka:%1$s, Zeměpisná šířka:%2$s</string>
+    <string name="location_long_lat" translation_description="Formatted display of longitude and latitude. %1$.2f is longitude, %2$.2f is latitude">Zeměpisná délka:%1$.2f, Zeměpisná šířka:%2$.2f</string>
+    <string name="degrees" translation_description="angular degrees - used for latitude and longitude">Stupně</string>
+    <string name="location_acquiring_title" translation_description="Title of dialog shown while acquiring the user\'s location automatically">Hledání vaší polohy…</string>
+    <string name="location_acquiring_message" translation_description="Body text of dialog shown while Sky Map is waiting to acquire the device GPS or network location">Stále se pokouším najít vaši polohu…</string>
+    <string name="location_keep_waiting" translation_description="Button to keep waiting for an automatic location fix">Pokračovat v čekání</string>
+    <string name="location_permanently_denied_title" translation_description="Title of dialog shown when location permission was permanently denied by the user">Vyžadováno oprávnění</string>
+    <string name="location_permanently_denied_message" translation_description="Body text explaining that location permission was permanently denied and how to fix it">
+    Oprávnění k poloze bylo trvale zamítnuto. Otevřete Nastavení aplikace a znovu jej povolte.
+    </string>
+    <string name="location_open_settings" translation_description="Button that opens the system app settings page so the user can re-grant location permission">Otevřít Nastavení aplikace</string>
+    <string name="location_manual_entry_title" translation_description="Title of the dialog where the user types their location manually">Zadejte svou polohu</string>
+    <string name="location_place_name_hint" translation_description="Placeholder text in the place name input field">Město nebo název místa</string>
+    <string name="location_latitude_hint" translation_description="Placeholder text in the latitude input field">Zeměpisná šířka (např. 51,5)</string>
+    <string name="location_longitude_hint" translation_description="Placeholder text in the longitude input field">Zeměpisná délka (např. -0,1)</string>
+    <string name="location_resolve_button" translation_description="Button that looks up coordinates for a typed place name">Vyřešit</string>
+    <string name="location_set_button" translation_description="Button that confirms and applies the manually entered location">Nastavit polohu</string>
+    <string name="location_place_not_found" translation_description="Inline error shown when a place name search returns no results">Místo nenalezeno – zkuste konkrétnější název</string>
+    <string name="location_geocoder_offline" translation_description="Inline message shown when geocoding fails because there is no internet connection">Bez internetu – zadejte souřadnice přímo</string>
+    <string name="location_invalid_latitude" translation_description="Validation error for latitude values outside the valid range">Zeměpisná šířka musí být mezi −90 a 90</string>
+    <string name="location_invalid_longitude" translation_description="Validation error for longitude values outside the valid range">Zeměpisná délka musí být mezi −180 a 180</string>
+    <string name="location_management_title" translation_description="Title of the location management screen">Vaše poloha</string>
+    <string name="location_source_auto" translation_description="Label shown when the device is determining location automatically">Automatická</string>
+    <string name="location_source_manual" translation_description="Label shown when the user has manually entered their location">Ruční</string>
+    <string name="location_source_acquiring" translation_description="Label shown while waiting for the first automatic location fix">Získávání…</string>
+    <string name="location_source_unset" translation_description="Label shown when no location has been set">Poloha není nastavena</string>
+    <string name="location_source_hardware_unavailable" translation_description="Label shown when the device has no location hardware">Poloha není na tomto zařízení dostupná</string>
+    <string name="location_switch_to_auto" translation_description="Button to switch from manual location to automatic detection">Použít automatickou polohu</string>
+    <string name="location_switch_to_manual" translation_description="Button to switch from automatic to manual location entry">Zadat polohu ručně</string>
+    <string name="location_change" translation_description="Button to change or update the manually entered location">Změnit polohu</string>
+    <string name="location_map_no_location" translation_description="Message shown in the map area when no location is set">Poloha není nastavena – klepnutím níže ji přidejte</string>
+    <string name="location_map_acquiring" translation_description="Message shown in the map area while waiting for a GPS fix">Získávání polohy…</string>
+    <string name="location_map_unavailable" translation_description="Message shown in the map area when the map image cannot be loaded">Mapa není dostupná</string>
+    <string name="location_map_content_description" translation_description="Accessibility description for the map image showing the user\'s location">Mapa zobrazující vaši polohu</string>
+    <!-- tm:omitted name="location_coordinate_format" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_diagnostic_format" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_phone_format" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_ra_format" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_dec_format" reason="identical_to_source" -->
     <string name="use_magnetic_correction" translation_description="Preference label: apply magnetic declination correction so the compass points to true north instead of magnetic north">Použít magnetickou korekci</string>
     <string name="manual_compass_adjustment_title" translation_description="Preference title: lets the user add a manual degree offset to the compass reading">Dodatečné nastavení kompasu</string>
     <string name="manual_compass_adjustment_summary" translation_description="Summary for the manual compass adjustment preference">Dodatečný posun ve stupních (+ nebo −) přidaný ke čtení kompasu</string>
@@ -224,4 +263,38 @@
     <string name="auto_level_horizon_on" translation_description="Toast message when auto-level horizon is enabled">Automatické vyrovnání horizontu zapnuto</string>
     <string name="auto_level_horizon_off" translation_description="Toast message when auto-level horizon is disabled">Automatické vyrovnání horizontu vypnuto</string>
 
-    </resources>
+    <string name="warm_welcome_title" translation_description="Title of the Warm Welcome screen">Vítejte v Sky Map</string>
+    <string name="warm_welcome_slide1_title" translation_description="Title for the first slide of the Warm Welcome">Prozkoumejte vesmír</string>
+    <string name="warm_welcome_slide1_desc" translation_description="Description for the first slide of the Warm Welcome">
+    Pomocí vrstev vlevo filtrujte hvězdy, souhvězdí, planety a další. Klepnutím na Vortex se přesuňte v čase, nebo na Oko pro noční režim.
+    <b>Vortex</b> to travel through time, or the <b>Eye</b> for night mode.</string>
+    <string name="warm_welcome_slide2_title" translation_description="Title for the second slide of the Warm Welcome">Navigace po obloze</string>
+    <string name="warm_welcome_slide2_desc" translation_description="Description for the second slide of the Warm Welcome">
+    Nasměrujte telefon, abyste se rozhlédli v režimu Auto, nebo klepnutím přepněte do režimu Ruční a prozkoumávejte posunutím. Dvojitým klepnutím v režimu Ruční obnovíte horizont.
+    <b>Auto Mode</b>, or tap to switch to <b>Manual</b> and explore by swiping. Double-tap in Manual to reset your horizon.</string>
+    <string name="warm_welcome_slide2_info_desc" translation_description="Description about info cards on the second slide">
+    Klepnutím na libovolný objekt v Ručním režimu zobrazíte Informační karty se zajímavostmi a podrobnostmi o nebeských objektech.
+    </string>
+    <string name="warm_welcome_slide3_title" translation_description="Title for the third slide of the Warm Welcome">Senzory a kalibrace</string>
+    <string name="warm_welcome_slide3_desc" translation_description="Description for the third slide of the Warm Welcome">Sky Map používá senzory vašeho telefonu k zarovnání s hvězdami.</string>
+    <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message when sensors are missing">
+    Zdá se, že vašemu zařízení chybí požadované senzory potřebné pro automatické sledování. Nebojte se—stále můžete prozkoumat celý vesmír v Manuálním režimu!
+    <b>Manual Mode</b>!</string>
+    <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration text on slide 3">Aby zůstalo vše přesné, občas telefon rychle vlnivě pohněte.<b>figure-8</b> wave every once in a while.</string>
+
+    <string name="tutorial_planets" translation_description="Tutorial annotation for planets layer">Planety</string>
+    <string name="tutorial_meteors" translation_description="Tutorial annotation for meteors layer">Meteory</string>
+    <string name="tutorial_grid" translation_description="Tutorial annotation for grid layer">Mřížka</string>
+    <string name="tutorial_night_mode" translation_description="Tutorial annotation for night mode">Noční režim</string>
+    <string name="tutorial_time_travel" translation_description="Tutorial annotation for time travel">Cestování v čase</string>
+    <string name="tutorial_manual_auto" translation_description="Tutorial annotation for manual/auto toggle">Ruční/Automaticky</string>
+
+    <string name="warm_welcome_skip" translation_description="Button to skip the Warm Welcome">Přeskočit</string>
+    <string name="warm_welcome_next" translation_description="Button to go to the next slide">Další</string>
+    <string name="warm_welcome_finish" translation_description="Button to finish the Warm Welcome and start exploring. Needs to be short - the width of 9 letter Ms maximum.">Spustit!</string>
+    <string name="warm_welcome_do_not_show" translation_description="Checkbox to not show the Warm Welcome again">Nezobrazovat automaticky znovu</string>
+    <string name="menu_tutorial" translation_description="Menu item for re-showing the warm welcome tutorial">Průvodce</string>
+    <string name="warm_welcome_sensor_ok" translation_description="Status when a sensor is working fine">Funguje</string>
+    <string name="warm_welcome_sensor_missing" translation_description="Status when a sensor is missing">Chybí</string>
+    <string name="preferences_auto_mode_title" translation_description="Label for the toggle between manual and automatic modes">Ruční / Automatický režim</string>
+</resources>

@@ -9,12 +9,51 @@
     <string name="other_prefs" translation_description="Preferences category heading for miscellaneous settings">अन्य</string>
     <string name="controls_prefs" translation_description="Preferences category heading for touch control settings">नियंत्रण</string>
     <string name="location_permission_dialog_title" translation_description="Title of the dialog that requests location permission from the user">स्थान आवश्यक है</string>
-    <string name="location_permission_dialog_message">Sky Map को सही रात के आकाश को दिखाने के लिए आपके अनुमानित स्थान की आवश्यकता है। आप अनुमति दे सकते हैं, अपना स्थान मैन्युअल रूप से दर्ज कर सकते हैं, या बाद में निर्णय ले सकते हैं। यदि आप बाद में निर्णय लेते हैं, तो आपका स्थान सेट होने तक नक्शा सटीक नहीं होगा।</string>
+    <string name="location_permission_dialog_message" translation_description="Body text of the dialog requesting location permission, explaining why the app needs it and what happens without it">
+    Sky Map को सही रात के आकाश को दिखाने के लिए आपके अनुमानित स्थान की आवश्यकता है। आप अनुमति दे सकते हैं, अपना स्थान मैन्युअल रूप से दर्ज कर सकते हैं, या बाद में निर्णय ले सकते हैं। यदि आप बाद में निर्णय लेते हैं, तो आपका स्थान सेट होने तक नक्शा सटीक नहीं होगा।
+    </string>
     <string name="location_permission_grant" translation_description="Button in the location permission dialog to grant location access">अनुमति दें</string>
     <string name="location_permission_enter_manually" translation_description="Button in the location permission dialog to enter location by hand instead of granting permission">मैन्युअल रूप से दर्ज करें</string>
     <string name="location_permission_later" translation_description="Button in the location permission dialog to defer the decision">बाद में</string>
     <string name="location_set_auto" translation_description="Toast message when automatic location is acquired. %1$s is the place name or coordinates">स्थान %1$s पर सेट किया गया</string>
     <string name="location_long_lat" translation_description="Formatted display of longitude and latitude. %1$.2f is longitude, %2$.2f is latitude">देशांतर:%1$.2f, अक्षांश:%2$.2f</string>
+    <string name="degrees" translation_description="angular degrees - used for latitude and longitude">डिग्री</string>
+    <string name="location_acquiring_title" translation_description="Title of dialog shown while acquiring the user\'s location automatically">आपका स्थान खोज रहे हैं…</string>
+    <string name="location_acquiring_message" translation_description="Body text of dialog shown while Sky Map is waiting to acquire the device GPS or network location">अभी भी आपका स्थान खोजने का प्रयास जारी है…</string>
+    <string name="location_keep_waiting" translation_description="Button to keep waiting for an automatic location fix">प्रतीक्षा जारी रखें</string>
+    <string name="location_permanently_denied_title" translation_description="Title of dialog shown when location permission was permanently denied by the user">अनुमति आवश्यक है</string>
+    <string name="location_permanently_denied_message" translation_description="Body text explaining that location permission was permanently denied and how to fix it">
+    स्थान अनुमति स्थायी रूप से अस्वीकार कर दी गई है। इसे फिर से सक्षम करने के लिए ऐप सेटिंग्स खोलें।
+    </string>
+    <string name="location_open_settings" translation_description="Button that opens the system app settings page so the user can re-grant location permission">ऐप सेटिंग्स खोलें</string>
+    <string name="location_manual_entry_title" translation_description="Title of the dialog where the user types their location manually">अपना स्थान दर्ज करें</string>
+    <string name="location_place_name_hint" translation_description="Placeholder text in the place name input field">शहर या स्थान का नाम</string>
+    <string name="location_latitude_hint" translation_description="Placeholder text in the latitude input field">अक्षांश (उदा. 51.5)</string>
+    <string name="location_longitude_hint" translation_description="Placeholder text in the longitude input field">देशांतर (उदा. -0.1)</string>
+    <string name="location_resolve_button" translation_description="Button that looks up coordinates for a typed place name">हल करें</string>
+    <string name="location_set_button" translation_description="Button that confirms and applies the manually entered location">स्थान सेट करें</string>
+    <string name="location_place_not_found" translation_description="Inline error shown when a place name search returns no results">स्थान नहीं मिला — अधिक विशिष्ट नाम आजमाएं</string>
+    <string name="location_geocoder_offline" translation_description="Inline message shown when geocoding fails because there is no internet connection">कोई इंटरनेट नहीं — सीधे निर्देशांक दर्ज करें</string>
+    <string name="location_invalid_latitude" translation_description="Validation error for latitude values outside the valid range">अक्षांश −90 और 90 के बीच होना चाहिए</string>
+    <string name="location_invalid_longitude" translation_description="Validation error for longitude values outside the valid range">देशांतर −180 और 180 के बीच होना चाहिए</string>
+    <string name="location_management_title" translation_description="Title of the location management screen">आपका स्थान</string>
+    <string name="location_source_auto" translation_description="Label shown when the device is determining location automatically">स्वचालित</string>
+    <string name="location_source_manual" translation_description="Label shown when the user has manually entered their location">मैनुअल</string>
+    <string name="location_source_acquiring" translation_description="Label shown while waiting for the first automatic location fix">प्राप्त कर रहे हैं…</string>
+    <string name="location_source_unset" translation_description="Label shown when no location has been set">कोई स्थान सेट नहीं है</string>
+    <string name="location_source_hardware_unavailable" translation_description="Label shown when the device has no location hardware">इस डिवाइस पर स्थान उपलब्ध नहीं है</string>
+    <string name="location_switch_to_auto" translation_description="Button to switch from manual location to automatic detection">स्वचालित स्थान का उपयोग करें</string>
+    <string name="location_switch_to_manual" translation_description="Button to switch from automatic to manual location entry">स्थान मैनुअल रूप से दर्ज करें</string>
+    <string name="location_change" translation_description="Button to change or update the manually entered location">स्थान बदलें</string>
+    <string name="location_map_no_location" translation_description="Message shown in the map area when no location is set">कोई स्थान सेट नहीं है — एक जोड़ने के लिए नीचे टैप करें</string>
+    <string name="location_map_acquiring" translation_description="Message shown in the map area while waiting for a GPS fix">स्थान प्राप्त कर रहे हैं…</string>
+    <string name="location_map_unavailable" translation_description="Message shown in the map area when the map image cannot be loaded">मानचित्र उपलब्ध नहीं है</string>
+    <string name="location_map_content_description" translation_description="Accessibility description for the map image showing the user\'s location">आपके स्थान को दिखाने वाला मानचित्र</string>
+    <!-- tm:omitted name="location_coordinate_format" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_diagnostic_format" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_phone_format" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_ra_format" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_dec_format" reason="identical_to_source" -->
     <string name="use_magnetic_correction" translation_description="Preference label: apply magnetic declination correction so the compass points to true north instead of magnetic north">चुंबकीय सुधार का उपयोग करें</string>
     <string name="manual_compass_adjustment_title" translation_description="Preference title: lets the user add a manual degree offset to the compass reading">अतिरिक्त कम्पास समायोजन</string>
     <string name="manual_compass_adjustment_summary" translation_description="Summary for the manual compass adjustment preference">कम्पास रीडिंग में जोड़ा गया अतिरिक्त ऑफ़सेट डिग्री में (+ या −)</string>
@@ -222,4 +261,38 @@
     <string name="auto_level_horizon_on" translation_description="Toast message when auto-level horizon is enabled">ऑटो-लेवल क्षितिज चालू</string>
     <string name="auto_level_horizon_off" translation_description="Toast message when auto-level horizon is disabled">ऑटो-लेवल क्षितिज बंद</string>
 
-    </resources>
+    <string name="warm_welcome_title" translation_description="Title of the Warm Welcome screen">Sky Map में आपका स्वागत है</string>
+    <string name="warm_welcome_slide1_title" translation_description="Title for the first slide of the Warm Welcome">ब्रह्मांड की खोज करें</string>
+    <string name="warm_welcome_slide1_desc" translation_description="Description for the first slide of the Warm Welcome">
+    बाईं ओर की परतों का उपयोग करके तारों, नक्षत्रों, ग्रहों और अन्य को फ़िल्टर करें। समय के माध्यम से यात्रा करने के लिए वर्टेक्स को टैप करें, या रात मोड के लिए आई को टैप करें।
+    <b>Vortex</b> to travel through time, or the <b>Eye</b> for night mode.</string>
+    <string name="warm_welcome_slide2_title" translation_description="Title for the second slide of the Warm Welcome">आकाश में नेविगेट करें</string>
+    <string name="warm_welcome_slide2_desc" translation_description="Description for the second slide of the Warm Welcome">
+    ऑटो मोड में देखने के लिए अपने फ़ोन को इशारा करें, या मैनुअल पर स्विच करने के लिए टैप करें और स्वाइप करके खोजें। अपने क्षितिज को रीसेट करने के लिए मैनुअल में डबल-टैप करें।
+    <b>Auto Mode</b>, or tap to switch to <b>Manual</b> and explore by swiping. Double-tap in Manual to reset your horizon.</string>
+    <string name="warm_welcome_slide2_info_desc" translation_description="Description about info cards on the second slide">
+    मैनुअल मोड में किसी भी वस्तु को टैप करें ताकि मजेदार तथ्यों और खगोलीय विवरणों के साथ जानकारी कार्ड दिखाई दें।
+    </string>
+    <string name="warm_welcome_slide3_title" translation_description="Title for the third slide of the Warm Welcome">सेंसर और कैलिब्रेशन</string>
+    <string name="warm_welcome_slide3_desc" translation_description="Description for the third slide of the Warm Welcome">Sky Map आपके फ़ोन के सेंसर का उपयोग करके तारों के साथ संरेखित होता है।</string>
+    <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message when sensors are missing">
+    आपके डिवाइस में स्वचालित ट्रैकिंग के लिए आवश्यक सेंसर नहीं हैं। चिंता न करें—आप मैनुअल मोड में पूरे ब्रह्मांड की खोज कर सकते हैं!
+    <b>Manual Mode</b>!</string>
+    <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration text on slide 3">चीजों को सटीक रखने के लिए, अपने फ़ोन को हर कुछ समय में एक तेज़ आकृति-8 लहर दें।<b>figure-8</b> wave every once in a while.</string>
+
+    <string name="tutorial_planets" translation_description="Tutorial annotation for planets layer">ग्रह</string>
+    <string name="tutorial_meteors" translation_description="Tutorial annotation for meteors layer">उल्का</string>
+    <string name="tutorial_grid" translation_description="Tutorial annotation for grid layer">ग्रिड</string>
+    <string name="tutorial_night_mode" translation_description="Tutorial annotation for night mode">रात्रि मोड</string>
+    <string name="tutorial_time_travel" translation_description="Tutorial annotation for time travel">समय यात्रा</string>
+    <string name="tutorial_manual_auto" translation_description="Tutorial annotation for manual/auto toggle">मैनुअल/ऑटो</string>
+
+    <string name="warm_welcome_skip" translation_description="Button to skip the Warm Welcome">छोड़ें</string>
+    <string name="warm_welcome_next" translation_description="Button to go to the next slide">अगला</string>
+    <string name="warm_welcome_finish" translation_description="Button to finish the Warm Welcome and start exploring. Needs to be short - the width of 9 letter Ms maximum.">शुरू करें!</string>
+    <string name="warm_welcome_do_not_show" translation_description="Checkbox to not show the Warm Welcome again">इसे फिर से स्वचालित रूप से न दिखाएं</string>
+    <string name="menu_tutorial" translation_description="Menu item for re-showing the warm welcome tutorial">ट्यूटोरियल</string>
+    <string name="warm_welcome_sensor_ok" translation_description="Status when a sensor is working fine">काम कर रहा है</string>
+    <string name="warm_welcome_sensor_missing" translation_description="Status when a sensor is missing">अनुपलब्ध</string>
+    <string name="preferences_auto_mode_title" translation_description="Label for the toggle between manual and automatic modes">मैनुअल / ऑटो मोड</string>
+</resources>

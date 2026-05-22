@@ -1,8 +1,10 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Schede informative più dettagliate</h2>
-<p>I satelliti galileiani di Giove (Io, Europa, Ganimede e Callisto), i satelliti di Marte Fobos e Deimos e altri sono ora ricercabili con schede informative dettagliate e immagini della NASA.</p>
-<h2>Catalogo espanso</h2>
-<p>Decine di nuovi oggetti del cielo profondo aggiunti — inclusi il Doppio Ammasso, 47 Tucanae, la Nebulosa del Cranio Esposto e altri — ognuno con descrizioni, curiosità e immagini.</p>]]></string>
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Benvenuto in Sky Map</h2>
+<p>I nuovi utenti sono accolti con un\'esperienza di onboarding guidata che controlla i sensori del tuo dispositivo e ti permette di iniziare a osservare le stelle rapidamente.</p>
+<h2>Localizzazione migliore</h2>
+<p>La gestione della localizzazione è stata completamente riprogettata — messaggi di stato più chiari, un indicatore di progresso mentre la tua posizione viene risolta, e correzioni per molti bug di lunga data. C\'è anche una nuova mappa per aiutarti a confermare visivamente la tua posizione.</p>
+<h2>Ricerca</h2>
+<p>Ora puoi cercare per coordinate RA e Dec oltre che per nome dell\'oggetto. L\'overlay di ricerca si aggiorna anche per mostrare "Trovato: X" quando il tuo bersaglio si sposta verso il centro dello schermo.</p>]]></string>
     </resources>

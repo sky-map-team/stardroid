@@ -9,12 +9,51 @@
     <string name="other_prefs" translation_description="Preferences category heading for miscellaneous settings">سایر</string>
     <string name="controls_prefs" translation_description="Preferences category heading for touch control settings">کنترل‌ها</string>
     <string name="location_permission_dialog_title" translation_description="Title of the dialog that requests location permission from the user">مکان مورد نیاز است</string>
-    <string name="location_permission_dialog_message">Sky Map برای نمایش آسمان شب صحیح به موقعیت تقریبی شما نیاز دارد. می‌توانید اجازه را بدهید، موقعیت خود را به صورت دستی وارد کنید، یا بعداً تصمیم بگیرید. اگر بعداً تصمیم بگیرید، نقشه تا زمانی که موقعیت شما تنظیم نشود دقیق نخواهد بود.</string>
+    <string name="location_permission_dialog_message" translation_description="Body text of the dialog requesting location permission, explaining why the app needs it and what happens without it">
+    Sky Map برای نمایش آسمان شب صحیح به موقعیت تقریبی شما نیاز دارد. می‌توانید اجازه را بدهید، موقعیت خود را به صورت دستی وارد کنید، یا بعداً تصمیم بگیرید. اگر بعداً تصمیم بگیرید، نقشه تا زمانی که موقعیت شما تنظیم نشود دقیق نخواهد بود.
+    </string>
     <string name="location_permission_grant" translation_description="Button in the location permission dialog to grant location access">اعطای اجازه</string>
     <string name="location_permission_enter_manually" translation_description="Button in the location permission dialog to enter location by hand instead of granting permission">وارد کردن دستی</string>
     <string name="location_permission_later" translation_description="Button in the location permission dialog to defer the decision">بعداً</string>
     <string name="location_set_auto" translation_description="Toast message when automatic location is acquired. %1$s is the place name or coordinates">مکان به %1$s تنظیم شد</string>
-    <string name="location_long_lat" translation_description="Formatted display of longitude and latitude. %1$.2f is longitude, %2$.2f is latitude">طول جغرافیایی:%1$s, عرض جغرافیایی:%2$s</string>
+    <string name="location_long_lat" translation_description="Formatted display of longitude and latitude. %1$.2f is longitude, %2$.2f is latitude">طول جغرافیایی:%1$.2f, عرض جغرافیایی:%2$.2f</string>
+    <string name="degrees" translation_description="angular degrees - used for latitude and longitude">درجات</string>
+    <string name="location_acquiring_title" translation_description="Title of dialog shown while acquiring the user\'s location automatically">در حال یافتن موقعیت شما…</string>
+    <string name="location_acquiring_message" translation_description="Body text of dialog shown while Sky Map is waiting to acquire the device GPS or network location">هنوز در حال تلاش برای یافتن موقعیت شما…</string>
+    <string name="location_keep_waiting" translation_description="Button to keep waiting for an automatic location fix">ادامه انتظار</string>
+    <string name="location_permanently_denied_title" translation_description="Title of dialog shown when location permission was permanently denied by the user">اجازه مورد نیاز</string>
+    <string name="location_permanently_denied_message" translation_description="Body text explaining that location permission was permanently denied and how to fix it">
+    اجازه موقعیت به طور دائم رد شد. برای فعال کردن دوباره، تنظیمات برنامه را باز کنید.
+    </string>
+    <string name="location_open_settings" translation_description="Button that opens the system app settings page so the user can re-grant location permission">باز کردن تنظیمات برنامه</string>
+    <string name="location_manual_entry_title" translation_description="Title of the dialog where the user types their location manually">موقعیت خود را وارد کنید</string>
+    <string name="location_place_name_hint" translation_description="Placeholder text in the place name input field">نام شهر یا مکان</string>
+    <string name="location_latitude_hint" translation_description="Placeholder text in the latitude input field">عرض جغرافیایی (مثلاً 51.5)</string>
+    <string name="location_longitude_hint" translation_description="Placeholder text in the longitude input field">طول جغرافیایی (مثلاً -0.1)</string>
+    <string name="location_resolve_button" translation_description="Button that looks up coordinates for a typed place name">تعیین</string>
+    <string name="location_set_button" translation_description="Button that confirms and applies the manually entered location">تعیین موقعیت</string>
+    <string name="location_place_not_found" translation_description="Inline error shown when a place name search returns no results">مکان یافت نشد — نام دقیق‌تری را امتحان کنید</string>
+    <string name="location_geocoder_offline" translation_description="Inline message shown when geocoding fails because there is no internet connection">بدون اینترنت — مختصات را مستقیماً وارد کنید</string>
+    <string name="location_invalid_latitude" translation_description="Validation error for latitude values outside the valid range">عرض جغرافیایی باید بین −90 و 90 باشد</string>
+    <string name="location_invalid_longitude" translation_description="Validation error for longitude values outside the valid range">طول جغرافیایی باید بین −180 و 180 باشد</string>
+    <string name="location_management_title" translation_description="Title of the location management screen">موقعیت شما</string>
+    <string name="location_source_auto" translation_description="Label shown when the device is determining location automatically">خودکار</string>
+    <string name="location_source_manual" translation_description="Label shown when the user has manually entered their location">دستی</string>
+    <string name="location_source_acquiring" translation_description="Label shown while waiting for the first automatic location fix">در حال دریافت…</string>
+    <string name="location_source_unset" translation_description="Label shown when no location has been set">موقعیت تعیین نشده</string>
+    <string name="location_source_hardware_unavailable" translation_description="Label shown when the device has no location hardware">موقعیت در این دستگاه در دسترس نیست</string>
+    <string name="location_switch_to_auto" translation_description="Button to switch from manual location to automatic detection">استفاده از موقعیت خودکار</string>
+    <string name="location_switch_to_manual" translation_description="Button to switch from automatic to manual location entry">وارد کردن موقعیت به صورت دستی</string>
+    <string name="location_change" translation_description="Button to change or update the manually entered location">تغییر موقعیت</string>
+    <string name="location_map_no_location" translation_description="Message shown in the map area when no location is set">موقعیت تعیین نشده — برای افزودن یکی، در زیر ضربه بزنید</string>
+    <string name="location_map_acquiring" translation_description="Message shown in the map area while waiting for a GPS fix">در حال دریافت موقعیت…</string>
+    <string name="location_map_unavailable" translation_description="Message shown in the map area when the map image cannot be loaded">نقشه در دسترس نیست</string>
+    <string name="location_map_content_description" translation_description="Accessibility description for the map image showing the user\'s location">نقشه نشان‌دهنده موقعیت شما</string>
+    <!-- tm:omitted name="location_coordinate_format" reason="identical_to_source" -->
+    <string name="location_diagnostic_format" translation_description="Format for location in diagnostics: lat, lon (source). %1$.4f is lat, %2$.4f is lon, %3$s is source">%1$.4f°، %2$.4f° (%3$s)</string>
+    <!-- tm:omitted name="diagnostics_phone_format" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_ra_format" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_dec_format" reason="identical_to_source" -->
     <string name="use_magnetic_correction" translation_description="Preference label: apply magnetic declination correction so the compass points to true north instead of magnetic north">اصلاح با جهت‌نمای مغناطیسی</string>
     <string name="manual_compass_adjustment_title" translation_description="Preference title: lets the user add a manual degree offset to the compass reading">تنظیم قطب‌نما اضافی</string>
     <string name="manual_compass_adjustment_summary" translation_description="Summary for the manual compass adjustment preference">افست اضافی بر حسب درجه (+ یا −) که به خواندن قطب‌نما اضافه می‌شود</string>
@@ -218,4 +257,38 @@
     <string name="auto_level_horizon_on" translation_description="Toast message when auto-level horizon is enabled">افق خودکار روشن است</string>
     <string name="auto_level_horizon_off" translation_description="Toast message when auto-level horizon is disabled">افق خودکار خاموش است</string>
 
-    </resources>
+    <string name="warm_welcome_title" translation_description="Title of the Warm Welcome screen">خوش‌آمدید به Sky Map</string>
+    <string name="warm_welcome_slide1_title" translation_description="Title for the first slide of the Warm Welcome">کاوش در کیهان</string>
+    <string name="warm_welcome_slide1_desc" translation_description="Description for the first slide of the Warm Welcome">
+    از لایه‌های سمت چپ برای فیلتر کردن ستارگان، صورت‌های فلکی، سیارات و موارد دیگر استفاده کنید. برای سفر در زمان روی گردباد ضربه بزنید یا برای حالت شب روی چشم ضربه بزنید.
+    <b>Vortex</b> to travel through time, or the <b>Eye</b> for night mode.</string>
+    <string name="warm_welcome_slide2_title" translation_description="Title for the second slide of the Warm Welcome">ناوبری در آسمان</string>
+    <string name="warm_welcome_slide2_desc" translation_description="Description for the second slide of the Warm Welcome">
+    تلفن خود را برای نگاه کردن در حالت خودکار هدایت کنید یا برای تبدیل به حالت دستی و کاوش با کشیدن انگشت ضربه بزنید. برای بازنشانی افق خود در حالت دستی دو بار ضربه بزنید.
+    <b>Auto Mode</b>, or tap to switch to <b>Manual</b> and explore by swiping. Double-tap in Manual to reset your horizon.</string>
+    <string name="warm_welcome_slide2_info_desc" translation_description="Description about info cards on the second slide">
+    برای نمایش کارت‌های اطلاعات با حقایق جالب و جزئیات آسمانی، هر جسمی را در حالت دستی ضربه بزنید.
+    </string>
+    <string name="warm_welcome_slide3_title" translation_description="Title for the third slide of the Warm Welcome">حسگرها و کالیبراسیون</string>
+    <string name="warm_welcome_slide3_desc" translation_description="Description for the third slide of the Warm Welcome">Sky Map از حسگرهای گوشی شما برای تراز کردن با ستارگان استفاده می‌کند.</string>
+    <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message when sensors are missing">
+    دستگاه شما به نظر می‌رسد فاقد سنسورهای مورد نیاز برای ردیابی خودکار است. نگران نباشید—شما می‌توانید کل کائنات را در حالت دستی کاوش کنید!=
+    <b>Manual Mode</b>!</string>
+    <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration text on slide 3">برای حفظ دقت، گوشی خود را هر از گاهی به صورت شکل هشت تکان دهید.<b>figure-8</b> wave every once in a while.</string>
+
+    <string name="tutorial_planets" translation_description="Tutorial annotation for planets layer">سیارات</string>
+    <string name="tutorial_meteors" translation_description="Tutorial annotation for meteors layer">شهاب‌سنگ‌ها</string>
+    <string name="tutorial_grid" translation_description="Tutorial annotation for grid layer">شبکه</string>
+    <string name="tutorial_night_mode" translation_description="Tutorial annotation for night mode">حالت شب</string>
+    <string name="tutorial_time_travel" translation_description="Tutorial annotation for time travel">سفر در زمان</string>
+    <string name="tutorial_manual_auto" translation_description="Tutorial annotation for manual/auto toggle">دستی/خودکار</string>
+
+    <string name="warm_welcome_skip" translation_description="Button to skip the Warm Welcome">رد کردن</string>
+    <string name="warm_welcome_next" translation_description="Button to go to the next slide">بعدی</string>
+    <string name="warm_welcome_finish" translation_description="Button to finish the Warm Welcome and start exploring. Needs to be short - the width of 9 letter Ms maximum.">شروع!</string>
+    <string name="warm_welcome_do_not_show" translation_description="Checkbox to not show the Warm Welcome again">این را دوباره به طور خودکار نشان نده</string>
+    <string name="menu_tutorial" translation_description="Menu item for re-showing the warm welcome tutorial">آموزش</string>
+    <string name="warm_welcome_sensor_ok" translation_description="Status when a sensor is working fine">در حال کار</string>
+    <string name="warm_welcome_sensor_missing" translation_description="Status when a sensor is missing">گمشده</string>
+    <string name="preferences_auto_mode_title" translation_description="Label for the toggle between manual and automatic modes">حالت دستی / خودکار</string>
+</resources>

@@ -9,11 +9,47 @@
     <string name="other_prefs" translation_description="Preferences category heading for miscellaneous settings">其他</string>
     <string name="controls_prefs" translation_description="Preferences category heading for touch control settings">控制</string>
     <string name="location_permission_dialog_title" translation_description="Title of the dialog that requests location permission from the user">需要位置</string>
+    <string name="location_permission_dialog_message" translation_description="Body text of the dialog requesting location permission, explaining why the app needs it and what happens without it">Sky Map 需要您的大約位置以顯示正確的夜空。您可以授予權限、手動輸入位置，或稍後決定。如果您稍後決定，在設定位置之前，地圖將不會準確。</string>
     <string name="location_permission_grant" translation_description="Button in the location permission dialog to grant location access">授予權限</string>
     <string name="location_permission_enter_manually" translation_description="Button in the location permission dialog to enter location by hand instead of granting permission">手動輸入</string>
     <string name="location_permission_later" translation_description="Button in the location permission dialog to defer the decision">稍後</string>
     <string name="location_set_auto" translation_description="Toast message when automatic location is acquired. %1$s is the place name or coordinates">位置已設定為 %1$s</string>
     <string name="location_long_lat" translation_description="Formatted display of longitude and latitude. %1$.2f is longitude, %2$.2f is latitude">經度：%1$s，緯度：%2$s</string>
+    <string name="degrees" translation_description="angular degrees - used for latitude and longitude">度</string>
+    <string name="location_acquiring_title" translation_description="Title of dialog shown while acquiring the user\'s location automatically">正在尋找您的位置…</string>
+    <string name="location_acquiring_message" translation_description="Body text of dialog shown while Sky Map is waiting to acquire the device GPS or network location">仍在嘗試尋找您的位置…</string>
+    <string name="location_keep_waiting" translation_description="Button to keep waiting for an automatic location fix">繼續等待</string>
+    <string name="location_permanently_denied_title" translation_description="Title of dialog shown when location permission was permanently denied by the user">需要權限</string>
+    <string name="location_permanently_denied_message" translation_description="Body text explaining that location permission was permanently denied and how to fix it">位置權限已被永久拒絕。開啟應用程式設定以重新啟用。</string>
+    <string name="location_open_settings" translation_description="Button that opens the system app settings page so the user can re-grant location permission">開啟應用程式設定</string>
+    <string name="location_manual_entry_title" translation_description="Title of the dialog where the user types their location manually">輸入您的位置</string>
+    <string name="location_place_name_hint" translation_description="Placeholder text in the place name input field">城市或地點名稱</string>
+    <string name="location_latitude_hint" translation_description="Placeholder text in the latitude input field">緯度（例如 51.5）</string>
+    <string name="location_longitude_hint" translation_description="Placeholder text in the longitude input field">經度（例如 -0.1）</string>
+    <string name="location_resolve_button" translation_description="Button that looks up coordinates for a typed place name">解析</string>
+    <string name="location_set_button" translation_description="Button that confirms and applies the manually entered location">設定位置</string>
+    <string name="location_place_not_found" translation_description="Inline error shown when a place name search returns no results">找不到地點 — 請嘗試更具體的名稱</string>
+    <string name="location_geocoder_offline" translation_description="Inline message shown when geocoding fails because there is no internet connection">無網際網路 — 請直接輸入座標</string>
+    <string name="location_invalid_latitude" translation_description="Validation error for latitude values outside the valid range">緯度必須介於 −90 和 90 之間</string>
+    <string name="location_invalid_longitude" translation_description="Validation error for longitude values outside the valid range">經度必須介於 −180 和 180 之間</string>
+    <string name="location_management_title" translation_description="Title of the location management screen">您的位置</string>
+    <string name="location_source_auto" translation_description="Label shown when the device is determining location automatically">自動</string>
+    <string name="location_source_manual" translation_description="Label shown when the user has manually entered their location">手動</string>
+    <string name="location_source_acquiring" translation_description="Label shown while waiting for the first automatic location fix">正在取得…</string>
+    <string name="location_source_unset" translation_description="Label shown when no location has been set">未設定位置</string>
+    <string name="location_source_hardware_unavailable" translation_description="Label shown when the device has no location hardware">此裝置上無法使用位置</string>
+    <string name="location_switch_to_auto" translation_description="Button to switch from manual location to automatic detection">使用自動位置</string>
+    <string name="location_switch_to_manual" translation_description="Button to switch from automatic to manual location entry">手動輸入位置</string>
+    <string name="location_change" translation_description="Button to change or update the manually entered location">變更位置</string>
+    <string name="location_map_no_location" translation_description="Message shown in the map area when no location is set">未設定位置 — 點擊下方以新增</string>
+    <string name="location_map_acquiring" translation_description="Message shown in the map area while waiting for a GPS fix">正在取得位置…</string>
+    <string name="location_map_unavailable" translation_description="Message shown in the map area when the map image cannot be loaded">地圖無法使用</string>
+    <string name="location_map_content_description" translation_description="Accessibility description for the map image showing the user\'s location">顯示您位置的地圖</string>
+    <!-- tm:omitted name="location_coordinate_format" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_diagnostic_format" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_phone_format" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_ra_format" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_dec_format" reason="identical_to_source" -->
     <string name="use_magnetic_correction" translation_description="Preference label: apply magnetic declination correction so the compass points to true north instead of magnetic north">使用地磁校正</string>
     <string name="manual_compass_adjustment_title" translation_description="Preference title: lets the user add a manual degree offset to the compass reading">額外的羅盤調整</string>
     <string name="manual_compass_adjustment_summary" translation_description="Summary for the manual compass adjustment preference">額外的偏移量（度數，+ 或 −）加到羅盤讀數</string>
@@ -217,4 +253,30 @@
     <string name="auto_level_horizon_on" translation_description="Toast message when auto-level horizon is enabled">自動水平線已開啟</string>
     <string name="auto_level_horizon_off" translation_description="Toast message when auto-level horizon is disabled">自動水平線已關閉</string>
 
-    </resources>
+    <string name="warm_welcome_title" translation_description="Title of the Warm Welcome screen">歡迎使用 Sky Map</string>
+    <string name="warm_welcome_slide1_title" translation_description="Title for the first slide of the Warm Welcome">探索宇宙</string>
+    <string name="warm_welcome_slide1_desc" translation_description="Description for the first slide of the Warm Welcome">使用左側的圖層來篩選恆星、星座、行星等。點擊渦旋以穿越時間，或點擊眼睛進入夜間模式。<b>Vortex</b> to travel through time, or the <b>Eye</b> for night mode.</string>
+    <string name="warm_welcome_slide2_title" translation_description="Title for the second slide of the Warm Welcome">導航天空</string>
+    <string name="warm_welcome_slide2_desc" translation_description="Description for the second slide of the Warm Welcome">在自動模式下指向手機查看周圍景象，或點擊切換至手動模式並透過滑動探索。在手動模式下雙點擊可重設地平線。<b>Auto Mode</b>, or tap to switch to <b>Manual</b> and explore by swiping. Double-tap in Manual to reset your horizon.</string>
+    <string name="warm_welcome_slide2_info_desc" translation_description="Description about info cards on the second slide">在手動模式中點擊任何天體，即可顯示包含有趣事實和天文細節的資訊卡。</string>
+    <string name="warm_welcome_slide3_title" translation_description="Title for the third slide of the Warm Welcome">感應器與校準</string>
+    <string name="warm_welcome_slide3_desc" translation_description="Description for the third slide of the Warm Welcome">Sky Map 使用您手機的感測器來與星星對齊。</string>
+    <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message when sensors are missing">您的裝置似乎缺少自動追蹤所需的感應器。別擔心——您仍然可以在手動模式下探索整個宇宙！<b>Manual Mode</b>!</string>
+    <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration text on slide 3">為了保持準確性，請不時以圖形 8 的方式快速揮動您的手機。<b>figure-8</b> wave every once in a while.</string>
+
+    <string name="tutorial_planets" translation_description="Tutorial annotation for planets layer">行星</string>
+    <string name="tutorial_meteors" translation_description="Tutorial annotation for meteors layer">流星</string>
+    <string name="tutorial_grid" translation_description="Tutorial annotation for grid layer">網格</string>
+    <string name="tutorial_night_mode" translation_description="Tutorial annotation for night mode">夜間模式</string>
+    <string name="tutorial_time_travel" translation_description="Tutorial annotation for time travel">時間旅行</string>
+    <string name="tutorial_manual_auto" translation_description="Tutorial annotation for manual/auto toggle">手動/自動</string>
+
+    <string name="warm_welcome_skip" translation_description="Button to skip the Warm Welcome">略過</string>
+    <string name="warm_welcome_next" translation_description="Button to go to the next slide">下一步</string>
+    <string name="warm_welcome_finish" translation_description="Button to finish the Warm Welcome and start exploring. Needs to be short - the width of 9 letter Ms maximum.">開始！</string>
+    <string name="warm_welcome_do_not_show" translation_description="Checkbox to not show the Warm Welcome again">不要再自動顯示此訊息</string>
+    <string name="menu_tutorial" translation_description="Menu item for re-showing the warm welcome tutorial">教學</string>
+    <string name="warm_welcome_sensor_ok" translation_description="Status when a sensor is working fine">正常運作</string>
+    <string name="warm_welcome_sensor_missing" translation_description="Status when a sensor is missing">缺失</string>
+    <string name="preferences_auto_mode_title" translation_description="Label for the toggle between manual and automatic modes">手動/自動模式</string>
+</resources>

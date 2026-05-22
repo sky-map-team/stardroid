@@ -9,11 +9,47 @@
     <!-- tm:omitted name="other_prefs" reason="identical_to_source" -->
     <!-- tm:omitted name="controls_prefs" reason="identical_to_source" -->
     <!-- tm:omitted name="location_permission_dialog_title" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_permission_dialog_message" reason="identical_to_source" -->
     <!-- tm:omitted name="location_permission_grant" reason="identical_to_source" -->
     <!-- tm:omitted name="location_permission_enter_manually" reason="identical_to_source" -->
     <!-- tm:omitted name="location_permission_later" reason="identical_to_source" -->
     <!-- tm:omitted name="location_set_auto" reason="identical_to_source" -->
     <!-- tm:omitted name="location_long_lat" reason="identical_to_source" -->
+    <!-- tm:omitted name="degrees" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_acquiring_title" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_acquiring_message" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_keep_waiting" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_permanently_denied_title" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_permanently_denied_message" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_open_settings" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_manual_entry_title" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_place_name_hint" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_latitude_hint" reason="identical_to_source" -->
+    <string name="location_longitude_hint" translation_description="Placeholder text in the longitude input field">Longitude (e.g. −0.1)</string>
+    <!-- tm:omitted name="location_resolve_button" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_set_button" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_place_not_found" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_geocoder_offline" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_invalid_latitude" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_invalid_longitude" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_management_title" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_source_auto" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_source_manual" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_source_acquiring" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_source_unset" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_source_hardware_unavailable" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_switch_to_auto" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_switch_to_manual" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_change" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_map_no_location" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_map_acquiring" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_map_unavailable" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_map_content_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_coordinate_format" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_diagnostic_format" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_phone_format" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_ra_format" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_dec_format" reason="identical_to_source" -->
     <!-- tm:omitted name="use_magnetic_correction" reason="identical_to_source" -->
     <!-- tm:omitted name="manual_compass_adjustment_title" reason="identical_to_source" -->
     <!-- tm:omitted name="manual_compass_adjustment_summary" reason="identical_to_source" -->
@@ -214,4 +250,30 @@
     <!-- tm:omitted name="auto_level_horizon_on" reason="identical_to_source" -->
     <!-- tm:omitted name="auto_level_horizon_off" reason="identical_to_source" -->
 
-    </resources>
+    <!-- tm:omitted name="warm_welcome_title" reason="identical_to_source" -->
+    <!-- tm:omitted name="warm_welcome_slide1_title" reason="identical_to_source" -->
+    <!-- tm:omitted name="warm_welcome_slide1_desc" reason="identical_to_source" -->
+    <!-- tm:omitted name="warm_welcome_slide2_title" reason="identical_to_source" -->
+    <!-- tm:omitted name="warm_welcome_slide2_desc" reason="identical_to_source" -->
+    <!-- tm:omitted name="warm_welcome_slide2_info_desc" reason="identical_to_source" -->
+    <!-- tm:omitted name="warm_welcome_slide3_title" reason="identical_to_source" -->
+    <!-- tm:omitted name="warm_welcome_slide3_desc" reason="identical_to_source" -->
+    <!-- tm:omitted name="warm_welcome_slide3_no_sensors" reason="identical_to_source" -->
+    <!-- tm:omitted name="warm_welcome_slide3_compass_calib" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="tutorial_planets" reason="identical_to_source" -->
+    <!-- tm:omitted name="tutorial_meteors" reason="identical_to_source" -->
+    <!-- tm:omitted name="tutorial_grid" reason="identical_to_source" -->
+    <!-- tm:omitted name="tutorial_night_mode" reason="identical_to_source" -->
+    <!-- tm:omitted name="tutorial_time_travel" reason="identical_to_source" -->
+    <!-- tm:omitted name="tutorial_manual_auto" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="warm_welcome_skip" reason="identical_to_source" -->
+    <!-- tm:omitted name="warm_welcome_next" reason="identical_to_source" -->
+    <!-- tm:omitted name="warm_welcome_finish" reason="identical_to_source" -->
+    <!-- tm:omitted name="warm_welcome_do_not_show" reason="identical_to_source" -->
+    <!-- tm:omitted name="menu_tutorial" reason="identical_to_source" -->
+    <!-- tm:omitted name="warm_welcome_sensor_ok" reason="identical_to_source" -->
+    <!-- tm:omitted name="warm_welcome_sensor_missing" reason="identical_to_source" -->
+    <!-- tm:omitted name="preferences_auto_mode_title" reason="identical_to_source" -->
+</resources>

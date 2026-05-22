@@ -9,12 +9,51 @@
     <string name="other_prefs" translation_description="Preferences category heading for miscellaneous settings">Annet</string>
     <string name="controls_prefs" translation_description="Preferences category heading for touch control settings">Kontroller</string>
     <string name="location_permission_dialog_title" translation_description="Title of the dialog that requests location permission from the user">Lokasjon påkrevd</string>
-    <string name="location_permission_dialog_message">Sky Map trenger omtrentlig plassering din for å vise riktig nattehimmel. Du kan gi tillatelse, angi plasseringen manuelt, eller bestemme deg senere. Hvis du bestemmer deg senere, vil kartet ikke være nøyaktig før plasseringen din er angitt.</string>
+    <string name="location_permission_dialog_message" translation_description="Body text of the dialog requesting location permission, explaining why the app needs it and what happens without it">
+    Sky Map trenger omtrentlig plassering din for å vise riktig nattehimmel. Du kan gi tillatelse, angi plasseringen manuelt, eller bestemme deg senere. Hvis du bestemmer deg senere, vil kartet ikke være nøyaktig før plasseringen din er angitt.
+    </string>
     <string name="location_permission_grant" translation_description="Button in the location permission dialog to grant location access">Gi tillatelse</string>
     <string name="location_permission_enter_manually" translation_description="Button in the location permission dialog to enter location by hand instead of granting permission">Angi manuelt</string>
     <string name="location_permission_later" translation_description="Button in the location permission dialog to defer the decision">Senere</string>
     <string name="location_set_auto" translation_description="Toast message when automatic location is acquired. %1$s is the place name or coordinates">Sted satt til %1$s</string>
     <string name="location_long_lat" translation_description="Formatted display of longitude and latitude. %1$.2f is longitude, %2$.2f is latitude">Lengdegrad:%1$s, breddegrad:%2$s</string>
+    <string name="degrees" translation_description="angular degrees - used for latitude and longitude">Grader</string>
+    <string name="location_acquiring_title" translation_description="Title of dialog shown while acquiring the user\'s location automatically">Finner posisjonen din…</string>
+    <string name="location_acquiring_message" translation_description="Body text of dialog shown while Sky Map is waiting to acquire the device GPS or network location">Prøver fortsatt å finne posisjonen din…</string>
+    <string name="location_keep_waiting" translation_description="Button to keep waiting for an automatic location fix">Fortsett å vente</string>
+    <string name="location_permanently_denied_title" translation_description="Title of dialog shown when location permission was permanently denied by the user">Tillatelse påkrevd</string>
+    <string name="location_permanently_denied_message" translation_description="Body text explaining that location permission was permanently denied and how to fix it">
+    Posisjonstillatelse ble permanent nektet. Åpne appinnstillinger for å aktivere den på nytt.
+    </string>
+    <string name="location_open_settings" translation_description="Button that opens the system app settings page so the user can re-grant location permission">Åpne appinnstillinger</string>
+    <string name="location_manual_entry_title" translation_description="Title of the dialog where the user types their location manually">Angi posisjonen din</string>
+    <string name="location_place_name_hint" translation_description="Placeholder text in the place name input field">By eller stedsnavn</string>
+    <string name="location_latitude_hint" translation_description="Placeholder text in the latitude input field">Breddegrad (f.eks. 51,5)</string>
+    <string name="location_longitude_hint" translation_description="Placeholder text in the longitude input field">Lengdegrad (f.eks. -0,1)</string>
+    <string name="location_resolve_button" translation_description="Button that looks up coordinates for a typed place name">Løs opp</string>
+    <string name="location_set_button" translation_description="Button that confirms and applies the manually entered location">Angi posisjon</string>
+    <string name="location_place_not_found" translation_description="Inline error shown when a place name search returns no results">Sted ikke funnet – prøv et mer spesifikt navn</string>
+    <string name="location_geocoder_offline" translation_description="Inline message shown when geocoding fails because there is no internet connection">Ingen internett – angi koordinater direkte</string>
+    <string name="location_invalid_latitude" translation_description="Validation error for latitude values outside the valid range">Breddegrad må være mellom −90 og 90</string>
+    <string name="location_invalid_longitude" translation_description="Validation error for longitude values outside the valid range">Lengdegrad må være mellom −180 og 180</string>
+    <string name="location_management_title" translation_description="Title of the location management screen">Din posisjon</string>
+    <string name="location_source_auto" translation_description="Label shown when the device is determining location automatically">Automatisk</string>
+    <string name="location_source_manual" translation_description="Label shown when the user has manually entered their location">Manuell</string>
+    <string name="location_source_acquiring" translation_description="Label shown while waiting for the first automatic location fix">Henter…</string>
+    <string name="location_source_unset" translation_description="Label shown when no location has been set">Ingen posisjon angitt</string>
+    <string name="location_source_hardware_unavailable" translation_description="Label shown when the device has no location hardware">Posisjon ikke tilgjengelig på denne enheten</string>
+    <string name="location_switch_to_auto" translation_description="Button to switch from manual location to automatic detection">Bruk automatisk posisjonering</string>
+    <string name="location_switch_to_manual" translation_description="Button to switch from automatic to manual location entry">Angi posisjon manuelt</string>
+    <string name="location_change" translation_description="Button to change or update the manually entered location">Endre posisjon</string>
+    <string name="location_map_no_location" translation_description="Message shown in the map area when no location is set">Ingen posisjon angitt – trykk nedenfor for å legge til en</string>
+    <string name="location_map_acquiring" translation_description="Message shown in the map area while waiting for a GPS fix">Henter posisjon…</string>
+    <string name="location_map_unavailable" translation_description="Message shown in the map area when the map image cannot be loaded">Kart utilgjengelig</string>
+    <string name="location_map_content_description" translation_description="Accessibility description for the map image showing the user\'s location">Kart som viser posisjonen din</string>
+    <!-- tm:omitted name="location_coordinate_format" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_diagnostic_format" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_phone_format" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_ra_format" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_dec_format" reason="identical_to_source" -->
     <string name="use_magnetic_correction" translation_description="Preference label: apply magnetic declination correction so the compass points to true north instead of magnetic north">Bruk magnetisk korrigering</string>
     <string name="manual_compass_adjustment_title" translation_description="Preference title: lets the user add a manual degree offset to the compass reading">Tilleggsjustering av kompass</string>
     <string name="manual_compass_adjustment_summary" translation_description="Summary for the manual compass adjustment preference">Ekstra offset i grader (+ eller −) lagt til kompassavlesning</string>
@@ -234,4 +273,40 @@
     <string name="auto_level_horizon_on" translation_description="Toast message when auto-level horizon is enabled">Auto-level horisont på</string>
     <string name="auto_level_horizon_off" translation_description="Toast message when auto-level horizon is disabled">Auto-level horisont av</string>
 
-    </resources>
+    <string name="warm_welcome_title" translation_description="Title of the Warm Welcome screen">Velkommen til Sky Map</string>
+    <string name="warm_welcome_slide1_title" translation_description="Title for the first slide of the Warm Welcome">Utforsk universet</string>
+    <string name="warm_welcome_slide1_desc" translation_description="Description for the first slide of the Warm Welcome">
+    Bruk lagene på venstre side til å filtrere stjerner, stjernebilder, planeter og mer. Trykk på Vortex for å reise gjennom tid, eller på Øyet for nattmodus.
+    <b>Vortex</b> to travel through time, or the <b>Eye</b> for night mode.</string>
+    <string name="warm_welcome_slide2_title" translation_description="Title for the second slide of the Warm Welcome">Naviger på himmelen</string>
+    <string name="warm_welcome_slide2_desc" translation_description="Description for the second slide of the Warm Welcome">
+    Pek telefonen for å se rundt i Auto-modus, eller trykk for å bytte til Manuell og utforsk ved å sveipe. Dobbelttrykk i Manuell for å tilbakestille horisonten din.
+    <b>Auto Mode</b>, or tap to switch to <b>Manual</b> and explore by swiping. Double-tap in Manual to reset your horizon.</string>
+    <string name="warm_welcome_slide2_info_desc" translation_description="Description about info cards on the second slide">
+    Trykk på et objekt i manuell modus for å vise informasjonskort med interessante fakta og himmeldetaljer.
+    </string>
+    <string name="warm_welcome_slide3_title" translation_description="Title for the third slide of the Warm Welcome">Sensorer og kalibrering</string>
+    <string name="warm_welcome_slide3_desc" translation_description="Description for the third slide of the Warm Welcome">Sky Map bruker telefonens sensorer til å justere seg etter stjernene.</string>
+    <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message when sensors are missing">
+    Enheten din ser ut til å mangle de nødvendige sensorene som kreves for automatisk sporing. Ikke bekymre deg – du kan fortsatt utforske hele universet i manuell modus!
+    <b>Manual Mode</b>!</string>
+    <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration text on slide 3">
+    For å holde ting nøyaktig, gi telefonen din en rask åtter-bevegelse fra tid til annen.
+    <b>figure-8</b> wave every once in a while.</string>
+
+    <string name="tutorial_planets" translation_description="Tutorial annotation for planets layer">Planeter</string>
+    <string name="tutorial_meteors" translation_description="Tutorial annotation for meteors layer">Meteorer</string>
+    <string name="tutorial_grid" translation_description="Tutorial annotation for grid layer">Rutenett</string>
+    <string name="tutorial_night_mode" translation_description="Tutorial annotation for night mode">Nattmodus</string>
+    <string name="tutorial_time_travel" translation_description="Tutorial annotation for time travel">Tidsreise</string>
+    <string name="tutorial_manual_auto" translation_description="Tutorial annotation for manual/auto toggle">Manuell/Auto</string>
+
+    <string name="warm_welcome_skip" translation_description="Button to skip the Warm Welcome">Hopp over</string>
+    <string name="warm_welcome_next" translation_description="Button to go to the next slide">Neste</string>
+    <string name="warm_welcome_finish" translation_description="Button to finish the Warm Welcome and start exploring. Needs to be short - the width of 9 letter Ms maximum.">Start!</string>
+    <string name="warm_welcome_do_not_show" translation_description="Checkbox to not show the Warm Welcome again">Ikke vis dette automatisk igjen</string>
+    <string name="menu_tutorial" translation_description="Menu item for re-showing the warm welcome tutorial">Veiledning</string>
+    <string name="warm_welcome_sensor_ok" translation_description="Status when a sensor is working fine">Fungerer</string>
+    <string name="warm_welcome_sensor_missing" translation_description="Status when a sensor is missing">Mangler</string>
+    <string name="preferences_auto_mode_title" translation_description="Label for the toggle between manual and automatic modes">Manuell / Auto-modus</string>
+</resources>

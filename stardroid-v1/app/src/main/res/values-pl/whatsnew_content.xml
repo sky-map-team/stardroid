@@ -1,8 +1,10 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Więcej kart informacyjnych</h2>
-<p>Księżyce Galileusza Jowisza (Io, Europa, Ganimedes i Kallisto), księżyce Marsa Fobos i Deimos i inne są teraz przeszukiwalne z bogatymi kartami informacyjnymi i obrazami NASA.</p>
-<h2>Rozszerzony katalog</h2>
-<p>Dodano dziesiątki nowych obiektów głębokich nieba — w tym Podwójną gromadę Perseusza, 47 Tucanae, Mgławicę Czaszki i wiele innych — każdy z opisami, ciekawostkami i obrazami.</p>]]></string>
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Witaj w Sky Map</h2>
+<p>Nowi użytkownicy są powitani interaktywnym przewodnikiem, który sprawdza czujniki urządzenia i szybko wprowadza Cię w świat obserwacji gwiazd.</p>
+<h2>Lepsza lokalizacja</h2>
+<p>Obsługa lokalizacji została całkowicie przeprojektowana — jaśniejsze komunikaty o stanie, wskaźnik postępu podczas rozpoznawania pozycji oraz poprawki wielu długotrwałych błędów. Dostępna jest również nowa mapa, która pomoże Ci wizualnie potwierdzić Twoją lokalizację.</p>
+<h2>Wyszukiwanie</h2>
+<p>Możesz teraz wyszukiwać według współrzędnych RA i Dec, a także po nazwie obiektu. Nakładka wyszukiwania aktualizuje się, aby wyświetlić "Znaleziono: X", gdy Twój cel pojawi się w centrum ekranu.</p>]]></string>
     </resources>

@@ -9,12 +9,51 @@
     <string name="other_prefs" translation_description="Preferences category heading for miscellaneous settings">Lainnya</string>
     <string name="controls_prefs" translation_description="Preferences category heading for touch control settings">Kontrol</string>
     <string name="location_permission_dialog_title" translation_description="Title of the dialog that requests location permission from the user">Lokasi Diperlukan</string>
-    <string name="location_permission_dialog_message">Sky Map memerlukan lokasi perkiraan Anda untuk menampilkan langit malam yang benar. Anda dapat memberikan izin, memasukkan lokasi Anda secara manual, atau memutuskan nanti. Jika Anda memutuskan nanti, peta tidak akan akurat sampai lokasi Anda telah diatur.</string>
+    <string name="location_permission_dialog_message" translation_description="Body text of the dialog requesting location permission, explaining why the app needs it and what happens without it">
+    Sky Map memerlukan lokasi perkiraan Anda untuk menampilkan langit malam yang benar. Anda dapat memberikan izin, memasukkan lokasi Anda secara manual, atau memutuskan nanti. Jika Anda memutuskan nanti, peta tidak akan akurat sampai lokasi Anda telah diatur.
+    </string>
     <string name="location_permission_grant" translation_description="Button in the location permission dialog to grant location access">Berikan Izin</string>
     <string name="location_permission_enter_manually" translation_description="Button in the location permission dialog to enter location by hand instead of granting permission">Masukkan Secara Manual</string>
     <string name="location_permission_later" translation_description="Button in the location permission dialog to defer the decision">Nanti</string>
     <string name="location_set_auto" translation_description="Toast message when automatic location is acquired. %1$s is the place name or coordinates">Lokasi diatur ke %1$s</string>
     <string name="location_long_lat" translation_description="Formatted display of longitude and latitude. %1$.2f is longitude, %2$.2f is latitude">Bujur:%1$.2f, Lintang:%2$.2f</string>
+    <string name="degrees" translation_description="angular degrees - used for latitude and longitude">Derajat</string>
+    <string name="location_acquiring_title" translation_description="Title of dialog shown while acquiring the user\'s location automatically">Mencari lokasi Anda…</string>
+    <string name="location_acquiring_message" translation_description="Body text of dialog shown while Sky Map is waiting to acquire the device GPS or network location">Masih mencoba menemukan lokasi Anda…</string>
+    <string name="location_keep_waiting" translation_description="Button to keep waiting for an automatic location fix">Terus Tunggu</string>
+    <string name="location_permanently_denied_title" translation_description="Title of dialog shown when location permission was permanently denied by the user">Izin Diperlukan</string>
+    <string name="location_permanently_denied_message" translation_description="Body text explaining that location permission was permanently denied and how to fix it">
+    Izin lokasi ditolak secara permanen. Buka Pengaturan Aplikasi untuk mengaktifkannya kembali.
+    </string>
+    <string name="location_open_settings" translation_description="Button that opens the system app settings page so the user can re-grant location permission">Buka Pengaturan Aplikasi</string>
+    <string name="location_manual_entry_title" translation_description="Title of the dialog where the user types their location manually">Masukkan Lokasi Anda</string>
+    <string name="location_place_name_hint" translation_description="Placeholder text in the place name input field">Nama kota atau tempat</string>
+    <string name="location_latitude_hint" translation_description="Placeholder text in the latitude input field">Lintang (mis. 51,5)</string>
+    <string name="location_longitude_hint" translation_description="Placeholder text in the longitude input field">Bujur (mis. -0,1)</string>
+    <string name="location_resolve_button" translation_description="Button that looks up coordinates for a typed place name">Selesaikan</string>
+    <string name="location_set_button" translation_description="Button that confirms and applies the manually entered location">Atur Lokasi</string>
+    <string name="location_place_not_found" translation_description="Inline error shown when a place name search returns no results">Tempat tidak ditemukan — coba nama yang lebih spesifik</string>
+    <string name="location_geocoder_offline" translation_description="Inline message shown when geocoding fails because there is no internet connection">Tidak ada internet — masukkan koordinat secara langsung</string>
+    <string name="location_invalid_latitude" translation_description="Validation error for latitude values outside the valid range">Lintang harus antara −90 dan 90</string>
+    <string name="location_invalid_longitude" translation_description="Validation error for longitude values outside the valid range">Bujur harus antara −180 dan 180</string>
+    <string name="location_management_title" translation_description="Title of the location management screen">Lokasi Anda</string>
+    <string name="location_source_auto" translation_description="Label shown when the device is determining location automatically">Otomatis</string>
+    <!-- tm:omitted name="location_source_manual" reason="identical_to_source" -->
+    <string name="location_source_acquiring" translation_description="Label shown while waiting for the first automatic location fix">Mengakuisisi…</string>
+    <string name="location_source_unset" translation_description="Label shown when no location has been set">Lokasi belum diatur</string>
+    <string name="location_source_hardware_unavailable" translation_description="Label shown when the device has no location hardware">Lokasi tidak tersedia di perangkat ini</string>
+    <string name="location_switch_to_auto" translation_description="Button to switch from manual location to automatic detection">Gunakan Lokasi Otomatis</string>
+    <string name="location_switch_to_manual" translation_description="Button to switch from automatic to manual location entry">Masukkan Lokasi Secara Manual</string>
+    <string name="location_change" translation_description="Button to change or update the manually entered location">Ubah Lokasi</string>
+    <string name="location_map_no_location" translation_description="Message shown in the map area when no location is set">Lokasi belum diatur — ketuk di bawah untuk menambahkan</string>
+    <string name="location_map_acquiring" translation_description="Message shown in the map area while waiting for a GPS fix">Mengakuisisi lokasi…</string>
+    <string name="location_map_unavailable" translation_description="Message shown in the map area when the map image cannot be loaded">Peta Tidak Tersedia</string>
+    <string name="location_map_content_description" translation_description="Accessibility description for the map image showing the user\'s location">Peta menampilkan lokasi Anda</string>
+    <!-- tm:omitted name="location_coordinate_format" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_diagnostic_format" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_phone_format" reason="identical_to_source" -->
+    <string name="diagnostics_ra_format" translation_description="Format for Right Ascension: hours, minutes, seconds. %1$d is hours, %2$d is minutes, %3$d is seconds">%1$dj %2$dm %3$dd</string>
+    <!-- tm:omitted name="diagnostics_dec_format" reason="identical_to_source" -->
     <string name="use_magnetic_correction" translation_description="Preference label: apply magnetic declination correction so the compass points to true north instead of magnetic north">Gunakan koreksi magnetik</string>
     <string name="manual_compass_adjustment_title" translation_description="Preference title: lets the user add a manual degree offset to the compass reading">Penyesuaian kompas tambahan</string>
     <string name="manual_compass_adjustment_summary" translation_description="Summary for the manual compass adjustment preference">Offset tambahan dalam derajat (+ atau −) ditambahkan ke pembacaan kompas</string>
@@ -228,4 +267,40 @@
     <string name="auto_level_horizon_on" translation_description="Toast message when auto-level horizon is enabled">Horizon otomatis aktif</string>
     <string name="auto_level_horizon_off" translation_description="Toast message when auto-level horizon is disabled">Horizon otomatis nonaktif</string>
 
-    </resources>
+    <string name="warm_welcome_title" translation_description="Title of the Warm Welcome screen">Selamat Datang di Sky Map</string>
+    <string name="warm_welcome_slide1_title" translation_description="Title for the first slide of the Warm Welcome">Jelajahi Kosmos</string>
+    <string name="warm_welcome_slide1_desc" translation_description="Description for the first slide of the Warm Welcome">
+    Gunakan lapisan di sebelah kiri untuk menyaring bintang, konstelasi, planet, dan lainnya. Ketuk Vortex untuk bepergian melalui waktu, atau Mata untuk mode malam.
+    <b>Vortex</b> to travel through time, or the <b>Eye</b> for night mode.</string>
+    <string name="warm_welcome_slide2_title" translation_description="Title for the second slide of the Warm Welcome">Navigasi Langit</string>
+    <string name="warm_welcome_slide2_desc" translation_description="Description for the second slide of the Warm Welcome">
+    Arahkan ponsel Anda untuk melihat sekeliling dalam Mode Otomatis, atau ketuk untuk beralih ke Mode Manual dan jelajahi dengan menggeser. Ketuk dua kali dalam Mode Manual untuk mengatur ulang cakrawala Anda.
+    <b>Auto Mode</b>, or tap to switch to <b>Manual</b> and explore by swiping. Double-tap in Manual to reset your horizon.</string>
+    <string name="warm_welcome_slide2_info_desc" translation_description="Description about info cards on the second slide">
+    Ketuk objek apa pun di Mode Manual untuk menampilkan Kartu Info dengan fakta menarik dan detail langit.
+    </string>
+    <string name="warm_welcome_slide3_title" translation_description="Title for the third slide of the Warm Welcome">Sensor &amp; Kalibrasi</string>
+    <string name="warm_welcome_slide3_desc" translation_description="Description for the third slide of the Warm Welcome">
+    Sky Map menggunakan sensor ponsel Anda untuk menyelaraskan dengan bintang-bintang.
+    </string>
+    <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message when sensors are missing">
+    Perangkat Anda tampaknya tidak memiliki sensor yang diperlukan untuk pelacakan otomatis. Jangan khawatir—Anda masih dapat menjelajahi seluruh kosmos dalam Mode Manual!
+    <b>Manual Mode</b>!</string>
+    <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration text on slide 3">Untuk menjaga akurasi, gelombangkan ponsel Anda dengan gerakan angka 8 sesekali.<b>figure-8</b> wave every once in a while.</string>
+
+    <string name="tutorial_planets" translation_description="Tutorial annotation for planets layer">Planet</string>
+    <string name="tutorial_meteors" translation_description="Tutorial annotation for meteors layer">Meteor</string>
+    <string name="tutorial_grid" translation_description="Tutorial annotation for grid layer">Kisi</string>
+    <string name="tutorial_night_mode" translation_description="Tutorial annotation for night mode">Mode Malam</string>
+    <string name="tutorial_time_travel" translation_description="Tutorial annotation for time travel">Perjalanan Waktu</string>
+    <string name="tutorial_manual_auto" translation_description="Tutorial annotation for manual/auto toggle">Manual/Otomatis</string>
+
+    <string name="warm_welcome_skip" translation_description="Button to skip the Warm Welcome">Lewati</string>
+    <string name="warm_welcome_next" translation_description="Button to go to the next slide">Berikutnya</string>
+    <string name="warm_welcome_finish" translation_description="Button to finish the Warm Welcome and start exploring. Needs to be short - the width of 9 letter Ms maximum.">Mulai!</string>
+    <string name="warm_welcome_do_not_show" translation_description="Checkbox to not show the Warm Welcome again">Jangan tampilkan ini secara otomatis lagi</string>
+    <!-- tm:omitted name="menu_tutorial" reason="identical_to_source" -->
+    <string name="warm_welcome_sensor_ok" translation_description="Status when a sensor is working fine">Berfungsi</string>
+    <string name="warm_welcome_sensor_missing" translation_description="Status when a sensor is missing">Hilang</string>
+    <string name="preferences_auto_mode_title" translation_description="Label for the toggle between manual and automatic modes">Mode Manual / Otomatis</string>
+</resources>

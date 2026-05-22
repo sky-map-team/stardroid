@@ -9,12 +9,51 @@
     <string name="other_prefs" translation_description="Preferences category heading for miscellaneous settings">Інше</string>
     <string name="controls_prefs" translation_description="Preferences category heading for touch control settings">Керування</string>
     <string name="location_permission_dialog_title" translation_description="Title of the dialog that requests location permission from the user">Потрібна геолокація</string>
-    <string name="location_permission_dialog_message">Sky Map потребує вашого приблизного місцезнаходження, щоб показати правильне нічне небо. Ви можете надати дозвіл, ввести своє місцезнаходження вручну або вирішити пізніше. Якщо ви вирішите пізніше, карта не буде точною, доки ваше місцезнаходження не буде встановлено.</string>
+    <string name="location_permission_dialog_message" translation_description="Body text of the dialog requesting location permission, explaining why the app needs it and what happens without it">
+    Sky Map потребує вашого приблизного місцезнаходження, щоб показати правильне нічне небо. Ви можете надати дозвіл, ввести своє місцезнаходження вручну або вирішити пізніше. Якщо ви вирішите пізніше, карта не буде точною, доки ваше місцезнаходження не буде встановлено.
+    </string>
     <string name="location_permission_grant" translation_description="Button in the location permission dialog to grant location access">Надати дозвіл</string>
     <string name="location_permission_enter_manually" translation_description="Button in the location permission dialog to enter location by hand instead of granting permission">Ввести вручну</string>
     <string name="location_permission_later" translation_description="Button in the location permission dialog to defer the decision">Пізніше</string>
     <string name="location_set_auto" translation_description="Toast message when automatic location is acquired. %1$s is the place name or coordinates">Місцезнаходження встановлено на %1$s</string>
     <string name="location_long_lat" translation_description="Formatted display of longitude and latitude. %1$.2f is longitude, %2$.2f is latitude">Довгота:%1$s, широта:%2$s</string>
+    <string name="degrees" translation_description="angular degrees - used for latitude and longitude">Градуси</string>
+    <string name="location_acquiring_title" translation_description="Title of dialog shown while acquiring the user\'s location automatically">Пошук вашого місцезнаходження…</string>
+    <string name="location_acquiring_message" translation_description="Body text of dialog shown while Sky Map is waiting to acquire the device GPS or network location">Все ще намагаємося знайти ваше місцезнаходження…</string>
+    <string name="location_keep_waiting" translation_description="Button to keep waiting for an automatic location fix">Продовжити очікування</string>
+    <string name="location_permanently_denied_title" translation_description="Title of dialog shown when location permission was permanently denied by the user">Потрібен дозвіл</string>
+    <string name="location_permanently_denied_message" translation_description="Body text explaining that location permission was permanently denied and how to fix it">
+    Дозвіл на доступ до місцезнаходження було постійно заборонено. Відкрийте параметри програми, щоб увімкнути його знову.
+    </string>
+    <string name="location_open_settings" translation_description="Button that opens the system app settings page so the user can re-grant location permission">Відкрити параметри програми</string>
+    <string name="location_manual_entry_title" translation_description="Title of the dialog where the user types their location manually">Введіть своє місцезнаходження</string>
+    <string name="location_place_name_hint" translation_description="Placeholder text in the place name input field">Місто або назва місця</string>
+    <string name="location_latitude_hint" translation_description="Placeholder text in the latitude input field">Широта (наприклад 51,5)</string>
+    <string name="location_longitude_hint" translation_description="Placeholder text in the longitude input field">Довгота (наприклад -0,1)</string>
+    <string name="location_resolve_button" translation_description="Button that looks up coordinates for a typed place name">Визначити</string>
+    <string name="location_set_button" translation_description="Button that confirms and applies the manually entered location">Встановити місцезнаходження</string>
+    <string name="location_place_not_found" translation_description="Inline error shown when a place name search returns no results">Місце не знайдено — спробуйте більш конкретну назву</string>
+    <string name="location_geocoder_offline" translation_description="Inline message shown when geocoding fails because there is no internet connection">Немає інтернету — введіть координати вручну</string>
+    <string name="location_invalid_latitude" translation_description="Validation error for latitude values outside the valid range">Широта має бути від −90 до 90</string>
+    <string name="location_invalid_longitude" translation_description="Validation error for longitude values outside the valid range">Довгота має бути від −180 до 180</string>
+    <string name="location_management_title" translation_description="Title of the location management screen">Ваше місцезнаходження</string>
+    <string name="location_source_auto" translation_description="Label shown when the device is determining location automatically">Автоматично</string>
+    <string name="location_source_manual" translation_description="Label shown when the user has manually entered their location">Вручну</string>
+    <string name="location_source_acquiring" translation_description="Label shown while waiting for the first automatic location fix">Отримання…</string>
+    <string name="location_source_unset" translation_description="Label shown when no location has been set">Місцезнаходження не встановлено</string>
+    <string name="location_source_hardware_unavailable" translation_description="Label shown when the device has no location hardware">Місцезнаходження недоступне на цьому пристрої</string>
+    <string name="location_switch_to_auto" translation_description="Button to switch from manual location to automatic detection">Використовувати автоматичне визначення місцезнаходження</string>
+    <string name="location_switch_to_manual" translation_description="Button to switch from automatic to manual location entry">Введіть місцезнаходження вручну</string>
+    <string name="location_change" translation_description="Button to change or update the manually entered location">Змінити місцезнаходження</string>
+    <string name="location_map_no_location" translation_description="Message shown in the map area when no location is set">Місцезнаходження не встановлено — натисніть нижче, щоб додати його</string>
+    <string name="location_map_acquiring" translation_description="Message shown in the map area while waiting for a GPS fix">Отримання місцезнаходження…</string>
+    <string name="location_map_unavailable" translation_description="Message shown in the map area when the map image cannot be loaded">Карта недоступна</string>
+    <string name="location_map_content_description" translation_description="Accessibility description for the map image showing the user\'s location">Карта, що показує ваше місцезнаходження</string>
+    <!-- tm:omitted name="location_coordinate_format" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_diagnostic_format" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_phone_format" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_ra_format" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_dec_format" reason="identical_to_source" -->
     <string name="use_magnetic_correction" translation_description="Preference label: apply magnetic declination correction so the compass points to true north instead of magnetic north">Викор. магнітну корекцію</string>
     <string name="manual_compass_adjustment_title" translation_description="Preference title: lets the user add a manual degree offset to the compass reading">Додаткове коригування компаса</string>
     <string name="manual_compass_adjustment_summary" translation_description="Summary for the manual compass adjustment preference">Додатковий зсув у градусах (+ або −) до показань компаса</string>
@@ -230,4 +269,38 @@
     <string name="auto_level_horizon_on" translation_description="Toast message when auto-level horizon is enabled">Автоматичне вирівнювання горизонту ввімкнено</string>
     <string name="auto_level_horizon_off" translation_description="Toast message when auto-level horizon is disabled">Автоматичне вирівнювання горизонту вимкнено</string>
 
-    </resources>
+    <string name="warm_welcome_title" translation_description="Title of the Warm Welcome screen">Ласкаво просимо до Sky Map</string>
+    <string name="warm_welcome_slide1_title" translation_description="Title for the first slide of the Warm Welcome">Дослідіть Космос</string>
+    <string name="warm_welcome_slide1_desc" translation_description="Description for the first slide of the Warm Welcome">
+    Використовуйте шари ліворуч, щоб фільтрувати зірки, сузір\'я, планети та інше. Натисніть на Вихор, щоб подорожувати в часі, або на Око для нічного режиму.
+    <b>Vortex</b> to travel through time, or the <b>Eye</b> for night mode.</string>
+    <string name="warm_welcome_slide2_title" translation_description="Title for the second slide of the Warm Welcome">Навігація по небу</string>
+    <string name="warm_welcome_slide2_desc" translation_description="Description for the second slide of the Warm Welcome">
+    Наведіть телефон, щоб оглядатися в режимі Auto, або торкніться, щоб перейти в режим Manual і досліджувати, проводячи пальцем. Двічі торкніться в режимі Manual, щоб скинути горизонт.
+    <b>Auto Mode</b>, or tap to switch to <b>Manual</b> and explore by swiping. Double-tap in Manual to reset your horizon.</string>
+    <string name="warm_welcome_slide2_info_desc" translation_description="Description about info cards on the second slide">
+    Натисніть на будь-який об\'єкт у режимі вручну, щоб показати інформаційні карти з цікавими фактами та деталями про небесні об\'єкти.
+    </string>
+    <string name="warm_welcome_slide3_title" translation_description="Title for the third slide of the Warm Welcome">Датчики та калібрування</string>
+    <string name="warm_welcome_slide3_desc" translation_description="Description for the third slide of the Warm Welcome">Sky Map використовує датчики вашого телефону для вирівнювання зі зірками.</string>
+    <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message when sensors are missing">
+    Схоже, на вашому пристрої відсутні необхідні датчики для автоматичного відстеження. Не хвилюйтеся — ви все ще можете досліджувати весь космос у ручному режимі!
+    <b>Manual Mode</b>!</string>
+    <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration text on slide 3">Щоб забезпечити точність, час від часу робіть телефоном рух у формі цифри 8.<b>figure-8</b> wave every once in a while.</string>
+
+    <string name="tutorial_planets" translation_description="Tutorial annotation for planets layer">Планети</string>
+    <string name="tutorial_meteors" translation_description="Tutorial annotation for meteors layer">Метеори</string>
+    <string name="tutorial_grid" translation_description="Tutorial annotation for grid layer">Сітка</string>
+    <string name="tutorial_night_mode" translation_description="Tutorial annotation for night mode">Нічний режим</string>
+    <string name="tutorial_time_travel" translation_description="Tutorial annotation for time travel">Подорож у часі</string>
+    <string name="tutorial_manual_auto" translation_description="Tutorial annotation for manual/auto toggle">Ручний/Авто</string>
+
+    <string name="warm_welcome_skip" translation_description="Button to skip the Warm Welcome">Пропустити</string>
+    <string name="warm_welcome_next" translation_description="Button to go to the next slide">Далі</string>
+    <string name="warm_welcome_finish" translation_description="Button to finish the Warm Welcome and start exploring. Needs to be short - the width of 9 letter Ms maximum.">Запуск!</string>
+    <string name="warm_welcome_do_not_show" translation_description="Checkbox to not show the Warm Welcome again">Не показувати це автоматично знову</string>
+    <string name="menu_tutorial" translation_description="Menu item for re-showing the warm welcome tutorial">Навчання</string>
+    <string name="warm_welcome_sensor_ok" translation_description="Status when a sensor is working fine">Працює</string>
+    <string name="warm_welcome_sensor_missing" translation_description="Status when a sensor is missing">Відсутній</string>
+    <string name="preferences_auto_mode_title" translation_description="Label for the toggle between manual and automatic modes">Ручний / Автоматичний режим</string>
+</resources>

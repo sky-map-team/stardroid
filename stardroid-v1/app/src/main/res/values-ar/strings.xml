@@ -9,12 +9,49 @@
     <string name="other_prefs" translation_description="Preferences category heading for miscellaneous settings">أخرى</string>
     <string name="controls_prefs" translation_description="Preferences category heading for touch control settings">التحكم</string>
     <string name="location_permission_dialog_title" translation_description="Title of the dialog that requests location permission from the user">الموقع مطلوب</string>
-    <string name="location_permission_dialog_message">يحتاج تطبيق Sky Map إلى موقعك التقريبي لعرض السماء الليلية الصحيحة. يمكنك منح الإذن أو إدخال موقعك يدويًا أو تأجيل القرار. إذا أجلت القرار، فلن تكون الخريطة دقيقة حتى يتم تعيين موقعك.</string>
+    <string name="location_permission_dialog_message" translation_description="Body text of the dialog requesting location permission, explaining why the app needs it and what happens without it">
+    يحتاج تطبيق Sky Map إلى موقعك التقريبي لعرض السماء الليلية الصحيحة. يمكنك منح الإذن أو إدخال موقعك يدويًا أو تأجيل القرار. إذا أجلت القرار، فلن تكون الخريطة دقيقة حتى يتم تعيين موقعك.
+    </string>
     <string name="location_permission_grant" translation_description="Button in the location permission dialog to grant location access">منح الإذن</string>
     <string name="location_permission_enter_manually" translation_description="Button in the location permission dialog to enter location by hand instead of granting permission">أدخل يدويّاً</string>
     <string name="location_permission_later" translation_description="Button in the location permission dialog to defer the decision">لاحقاً</string>
     <string name="location_set_auto" translation_description="Toast message when automatic location is acquired. %1$s is the place name or coordinates">تم تعيين الموقع إلى %1$s</string>
     <string name="location_long_lat" translation_description="Formatted display of longitude and latitude. %1$.2f is longitude, %2$.2f is latitude">خط الطول:%1$.2f، خط العرض:%2$.2f</string>
+    <string name="degrees" translation_description="angular degrees - used for latitude and longitude">درجات</string>
+    <string name="location_acquiring_title" translation_description="Title of dialog shown while acquiring the user\'s location automatically">جاري البحث عن موقعك…</string>
+    <string name="location_acquiring_message" translation_description="Body text of dialog shown while Sky Map is waiting to acquire the device GPS or network location">لا يزال البحث جاريًا عن موقعك…</string>
+    <string name="location_keep_waiting" translation_description="Button to keep waiting for an automatic location fix">استمر في الانتظار</string>
+    <string name="location_permanently_denied_title" translation_description="Title of dialog shown when location permission was permanently denied by the user">إذن مطلوب</string>
+    <string name="location_permanently_denied_message" translation_description="Body text explaining that location permission was permanently denied and how to fix it">تم رفض إذن الموقع بشكل دائم. افتح إعدادات التطبيق لتفعيله مجددًا.</string>
+    <string name="location_open_settings" translation_description="Button that opens the system app settings page so the user can re-grant location permission">فتح إعدادات التطبيق</string>
+    <string name="location_manual_entry_title" translation_description="Title of the dialog where the user types their location manually">أدخل موقعك</string>
+    <string name="location_place_name_hint" translation_description="Placeholder text in the place name input field">اسم المدينة أو المكان</string>
+    <string name="location_latitude_hint" translation_description="Placeholder text in the latitude input field">خط العرض (مثال: 51.5)</string>
+    <string name="location_longitude_hint" translation_description="Placeholder text in the longitude input field">خط الطول (مثال: -0.1)</string>
+    <string name="location_resolve_button" translation_description="Button that looks up coordinates for a typed place name">حل</string>
+    <string name="location_set_button" translation_description="Button that confirms and applies the manually entered location">تعيين الموقع</string>
+    <string name="location_place_not_found" translation_description="Inline error shown when a place name search returns no results">لم يتم العثور على المكان — جرب اسمًا أكثر تحديدًا</string>
+    <string name="location_geocoder_offline" translation_description="Inline message shown when geocoding fails because there is no internet connection">لا توجد إنترنت — أدخل الإحداثيات مباشرة</string>
+    <string name="location_invalid_latitude" translation_description="Validation error for latitude values outside the valid range">يجب أن يكون خط العرض بين −90 و 90</string>
+    <string name="location_invalid_longitude" translation_description="Validation error for longitude values outside the valid range">يجب أن يكون خط الطول بين −180 و 180</string>
+    <string name="location_management_title" translation_description="Title of the location management screen">موقعك</string>
+    <string name="location_source_auto" translation_description="Label shown when the device is determining location automatically">تلقائي</string>
+    <string name="location_source_manual" translation_description="Label shown when the user has manually entered their location">يدوي</string>
+    <string name="location_source_acquiring" translation_description="Label shown while waiting for the first automatic location fix">جاري الحصول على الموقع…</string>
+    <string name="location_source_unset" translation_description="Label shown when no location has been set">لم يتم تعيين موقع</string>
+    <string name="location_source_hardware_unavailable" translation_description="Label shown when the device has no location hardware">الموقع غير متاح على هذا الجهاز</string>
+    <string name="location_switch_to_auto" translation_description="Button to switch from manual location to automatic detection">استخدم تحديد الموقع التلقائي</string>
+    <string name="location_switch_to_manual" translation_description="Button to switch from automatic to manual location entry">أدخل الموقع يدويًا</string>
+    <string name="location_change" translation_description="Button to change or update the manually entered location">تغيير الموقع</string>
+    <string name="location_map_no_location" translation_description="Message shown in the map area when no location is set">لم يتم تعيين موقع — اضغط أدناه لإضافة واحد</string>
+    <string name="location_map_acquiring" translation_description="Message shown in the map area while waiting for a GPS fix">جاري الحصول على الموقع…</string>
+    <string name="location_map_unavailable" translation_description="Message shown in the map area when the map image cannot be loaded">الخريطة غير متاحة</string>
+    <string name="location_map_content_description" translation_description="Accessibility description for the map image showing the user\'s location">خريطة تعرض موقعك</string>
+    <!-- tm:omitted name="location_coordinate_format" reason="identical_to_source" -->
+    <string name="location_diagnostic_format" translation_description="Format for location in diagnostics: lat, lon (source). %1$.4f is lat, %2$.4f is lon, %3$s is source">%1$.4f°، %2$.4f° (%3$s)</string>
+    <!-- tm:omitted name="diagnostics_phone_format" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_ra_format" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_dec_format" reason="identical_to_source" -->
     <string name="use_magnetic_correction" translation_description="Preference label: apply magnetic declination correction so the compass points to true north instead of magnetic north">استخدام التصحيح المغناطيسي</string>
     <string name="manual_compass_adjustment_title" translation_description="Preference title: lets the user add a manual degree offset to the compass reading">ضبط البوصلة الإضافي</string>
     <string name="manual_compass_adjustment_summary" translation_description="Summary for the manual compass adjustment preference">إزاحة إضافية بالدرجات (+ أو −) مضافة إلى قراءة البوصلة</string>
@@ -223,4 +260,38 @@
     <string name="auto_level_horizon_on" translation_description="Toast message when auto-level horizon is enabled">محاذاة الأفق تلقائياً مفعّلة</string>
     <string name="auto_level_horizon_off" translation_description="Toast message when auto-level horizon is disabled">محاذاة الأفق تلقائياً معطّلة</string>
 
-    </resources>
+    <string name="warm_welcome_title" translation_description="Title of the Warm Welcome screen">مرحبًا بك في Sky Map</string>
+    <string name="warm_welcome_slide1_title" translation_description="Title for the first slide of the Warm Welcome">استكشف الكون</string>
+    <string name="warm_welcome_slide1_desc" translation_description="Description for the first slide of the Warm Welcome">
+    استخدم الطبقات على اليسار لتصفية النجوم والأبراج والكواكب وغيرها. اضغط على الدوامة للسفر عبر الزمن، أو على العين لتفعيل وضع الليل.
+    <b>Vortex</b> to travel through time, or the <b>Eye</b> for night mode.</string>
+    <string name="warm_welcome_slide2_title" translation_description="Title for the second slide of the Warm Welcome">تنقل عبر السماء</string>
+    <string name="warm_welcome_slide2_desc" translation_description="Description for the second slide of the Warm Welcome">
+    وجّه هاتفك للنظر حولك في الوضع التلقائي، أو اضغط للتبديل إلى الوضع اليدوي واستكشف بالتمرير. اضغط مرتين في الوضع اليدوي لإعادة تعيين الأفق.
+    <b>Auto Mode</b>, or tap to switch to <b>Manual</b> and explore by swiping. Double-tap in Manual to reset your horizon.</string>
+    <string name="warm_welcome_slide2_info_desc" translation_description="Description about info cards on the second slide">
+    اضغط على أي جسم في الوضع اليدوي لعرض بطاقات معلومات تحتوي على حقائق ممتعة وتفاصيل فلكية.
+    </string>
+    <string name="warm_welcome_slide3_title" translation_description="Title for the third slide of the Warm Welcome">المستشعرات والمعايرة</string>
+    <string name="warm_welcome_slide3_desc" translation_description="Description for the third slide of the Warm Welcome">يستخدم Sky Map مستشعرات هاتفك للمحاذاة مع النجوم.</string>
+    <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message when sensors are missing">
+    يبدو أن جهازك يفتقد المستشعرات المطلوبة للتتبع التلقائي. لا تقلق—يمكنك لا تزال استكشاف الكون بأكمله في الوضع اليدوي!
+    <b>Manual Mode</b>!</string>
+    <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration text on slide 3">للحفاظ على الدقة، حرّك هاتفك بحركة رقم 8 سريعة من حين لآخر.<b>figure-8</b> wave every once in a while.</string>
+
+    <string name="tutorial_planets" translation_description="Tutorial annotation for planets layer">الكواكب</string>
+    <string name="tutorial_meteors" translation_description="Tutorial annotation for meteors layer">الشهب</string>
+    <string name="tutorial_grid" translation_description="Tutorial annotation for grid layer">الشبكة</string>
+    <string name="tutorial_night_mode" translation_description="Tutorial annotation for night mode">وضع الليل</string>
+    <string name="tutorial_time_travel" translation_description="Tutorial annotation for time travel">السفر عبر الزمن</string>
+    <string name="tutorial_manual_auto" translation_description="Tutorial annotation for manual/auto toggle">يدوي/تلقائي</string>
+
+    <string name="warm_welcome_skip" translation_description="Button to skip the Warm Welcome">تخطي</string>
+    <string name="warm_welcome_next" translation_description="Button to go to the next slide">التالي</string>
+    <string name="warm_welcome_finish" translation_description="Button to finish the Warm Welcome and start exploring. Needs to be short - the width of 9 letter Ms maximum.">ابدأ!</string>
+    <string name="warm_welcome_do_not_show" translation_description="Checkbox to not show the Warm Welcome again">عدم إظهار هذا تلقائياً مرة أخرى</string>
+    <string name="menu_tutorial" translation_description="Menu item for re-showing the warm welcome tutorial">البرنامج التعليمي</string>
+    <string name="warm_welcome_sensor_ok" translation_description="Status when a sensor is working fine">يعمل</string>
+    <string name="warm_welcome_sensor_missing" translation_description="Status when a sensor is missing">مفقود</string>
+    <string name="preferences_auto_mode_title" translation_description="Label for the toggle between manual and automatic modes">وضع يدوي / تلقائي</string>
+</resources>

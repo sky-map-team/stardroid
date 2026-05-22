@@ -9,12 +9,51 @@
     <string name="other_prefs" translation_description="Preferences category heading for miscellaneous settings">Sonstiges</string>
     <string name="controls_prefs" translation_description="Preferences category heading for touch control settings">Steuerung</string>
     <string name="location_permission_dialog_title" translation_description="Title of the dialog that requests location permission from the user">Standort erforderlich</string>
-    <string name="location_permission_dialog_message">Sky Map benötigt Ihren ungefähren Standort, um den korrekten Nachthimmel anzuzeigen. Sie können die Berechtigung erteilen, Ihren Standort manuell einzugeben oder sich später entscheiden. Wenn Sie sich später entscheiden, ist die Karte nicht genau, bis Ihr Standort festgelegt wurde.</string>
+    <string name="location_permission_dialog_message" translation_description="Body text of the dialog requesting location permission, explaining why the app needs it and what happens without it">
+    Sky Map benötigt Ihren ungefähren Standort, um den korrekten Nachthimmel anzuzeigen. Sie können die Berechtigung erteilen, Ihren Standort manuell einzugeben oder sich später entscheiden. Wenn Sie sich später entscheiden, ist die Karte nicht genau, bis Ihr Standort festgelegt wurde.
+    </string>
     <string name="location_permission_grant" translation_description="Button in the location permission dialog to grant location access">Berechtigung erteilen</string>
     <string name="location_permission_enter_manually" translation_description="Button in the location permission dialog to enter location by hand instead of granting permission">Manuell eingeben</string>
     <string name="location_permission_later" translation_description="Button in the location permission dialog to defer the decision">Später</string>
     <string name="location_set_auto" translation_description="Toast message when automatic location is acquired. %1$s is the place name or coordinates">Standort auf %1$s festgelegt</string>
-    <string name="location_long_lat" translation_description="Formatted display of longitude and latitude. %1$.2f is longitude, %2$.2f is latitude">Längengrad:%1$s, Breitengrad:%2$s</string>
+    <string name="location_long_lat" translation_description="Formatted display of longitude and latitude. %1$.2f is longitude, %2$.2f is latitude">Längengrad:%1$.2f, Breitengrad:%2$.2f</string>
+    <string name="degrees" translation_description="angular degrees - used for latitude and longitude">Grad</string>
+    <string name="location_acquiring_title" translation_description="Title of dialog shown while acquiring the user\'s location automatically">Standort wird ermittelt…</string>
+    <string name="location_acquiring_message" translation_description="Body text of dialog shown while Sky Map is waiting to acquire the device GPS or network location">Standort wird weiterhin gesucht…</string>
+    <string name="location_keep_waiting" translation_description="Button to keep waiting for an automatic location fix">Weiter warten</string>
+    <string name="location_permanently_denied_title" translation_description="Title of dialog shown when location permission was permanently denied by the user">Berechtigung erforderlich</string>
+    <string name="location_permanently_denied_message" translation_description="Body text explaining that location permission was permanently denied and how to fix it">
+    Standortberechtigung wurde dauerhaft verweigert. Öffnen Sie die App-Einstellungen, um sie erneut zu aktivieren.
+    </string>
+    <string name="location_open_settings" translation_description="Button that opens the system app settings page so the user can re-grant location permission">App-Einstellungen öffnen</string>
+    <string name="location_manual_entry_title" translation_description="Title of the dialog where the user types their location manually">Standort eingeben</string>
+    <string name="location_place_name_hint" translation_description="Placeholder text in the place name input field">Stadt oder Ortsname</string>
+    <string name="location_latitude_hint" translation_description="Placeholder text in the latitude input field">Breitengrad (z. B. 51,5)</string>
+    <string name="location_longitude_hint" translation_description="Placeholder text in the longitude input field">Längengrad (z. B. −0,1)</string>
+    <string name="location_resolve_button" translation_description="Button that looks up coordinates for a typed place name">Auflösen</string>
+    <string name="location_set_button" translation_description="Button that confirms and applies the manually entered location">Standort festlegen</string>
+    <string name="location_place_not_found" translation_description="Inline error shown when a place name search returns no results">Ort nicht gefunden – versuchen Sie einen spezifischeren Namen</string>
+    <string name="location_geocoder_offline" translation_description="Inline message shown when geocoding fails because there is no internet connection">Kein Internet – geben Sie Koordinaten direkt ein</string>
+    <string name="location_invalid_latitude" translation_description="Validation error for latitude values outside the valid range">Breitengrad muss zwischen −90 und 90 liegen</string>
+    <string name="location_invalid_longitude" translation_description="Validation error for longitude values outside the valid range">Längengrad muss zwischen −180 und 180 liegen</string>
+    <string name="location_management_title" translation_description="Title of the location management screen">Ihr Standort</string>
+    <string name="location_source_auto" translation_description="Label shown when the device is determining location automatically">Automatisch</string>
+    <string name="location_source_manual" translation_description="Label shown when the user has manually entered their location">Manuell</string>
+    <string name="location_source_acquiring" translation_description="Label shown while waiting for the first automatic location fix">Wird ermittelt…</string>
+    <string name="location_source_unset" translation_description="Label shown when no location has been set">Kein Standort festgelegt</string>
+    <string name="location_source_hardware_unavailable" translation_description="Label shown when the device has no location hardware">Standort auf diesem Gerät nicht verfügbar</string>
+    <string name="location_switch_to_auto" translation_description="Button to switch from manual location to automatic detection">Automatische Standorterkennung verwenden</string>
+    <string name="location_switch_to_manual" translation_description="Button to switch from automatic to manual location entry">Standort manuell eingeben</string>
+    <string name="location_change" translation_description="Button to change or update the manually entered location">Standort ändern</string>
+    <string name="location_map_no_location" translation_description="Message shown in the map area when no location is set">Kein Standort festgelegt – tippen Sie unten, um einen hinzuzufügen</string>
+    <string name="location_map_acquiring" translation_description="Message shown in the map area while waiting for a GPS fix">Standort wird ermittelt…</string>
+    <string name="location_map_unavailable" translation_description="Message shown in the map area when the map image cannot be loaded">Karte nicht verfügbar</string>
+    <string name="location_map_content_description" translation_description="Accessibility description for the map image showing the user\'s location">Karte zeigt Ihren Standort</string>
+    <!-- tm:omitted name="location_coordinate_format" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_diagnostic_format" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_phone_format" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_ra_format" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_dec_format" reason="identical_to_source" -->
     <string name="use_magnetic_correction" translation_description="Preference label: apply magnetic declination correction so the compass points to true north instead of magnetic north">Magnetische Korrektur verwenden</string>
     <string name="manual_compass_adjustment_title" translation_description="Preference title: lets the user add a manual degree offset to the compass reading">Zusätzliche Kompassanpassung</string>
     <string name="manual_compass_adjustment_summary" translation_description="Summary for the manual compass adjustment preference">Zusätzlicher Versatz in Grad (+ oder −) zum Kompasswert addiert</string>
@@ -236,4 +275,40 @@
     <string name="auto_level_horizon_on" translation_description="Toast message when auto-level horizon is enabled">Horizont-Ausrichtung an</string>
     <string name="auto_level_horizon_off" translation_description="Toast message when auto-level horizon is disabled">Horizont-Ausrichtung aus</string>
 
-    </resources>
+    <string name="warm_welcome_title" translation_description="Title of the Warm Welcome screen">Willkommen bei Sky Map</string>
+    <string name="warm_welcome_slide1_title" translation_description="Title for the first slide of the Warm Welcome">Erkunden Sie das Universum</string>
+    <string name="warm_welcome_slide1_desc" translation_description="Description for the first slide of the Warm Welcome">
+    Verwenden Sie die Ebenen auf der linken Seite, um Sterne, Sternbilder, Planeten und mehr zu filtern. Tippen Sie auf den Wirbel, um durch die Zeit zu reisen, oder auf das Auge für den Nachtmodus.
+    <b>Vortex</b> to travel through time, or the <b>Eye</b> for night mode.</string>
+    <string name="warm_welcome_slide2_title" translation_description="Title for the second slide of the Warm Welcome">Navigieren Sie durch den Himmel</string>
+    <string name="warm_welcome_slide2_desc" translation_description="Description for the second slide of the Warm Welcome">
+    Richten Sie Ihr Telefon aus, um sich im Auto-Modus umzusehen, oder tippen Sie, um zum manuellen Modus zu wechseln und durch Wischen zu erkunden. Doppeltippen Sie im manuellen Modus, um Ihren Horizont zurückzusetzen.
+    <b>Auto Mode</b>, or tap to switch to <b>Manual</b> and explore by swiping. Double-tap in Manual to reset your horizon.</string>
+    <string name="warm_welcome_slide2_info_desc" translation_description="Description about info cards on the second slide">
+    Tippen Sie im manuellen Modus auf ein beliebiges Objekt, um Infokarten mit interessanten Fakten und Himmelsobjekt-Details anzuzeigen.
+    </string>
+    <string name="warm_welcome_slide3_title" translation_description="Title for the third slide of the Warm Welcome">Sensoren &amp; Kalibrierung</string>
+    <string name="warm_welcome_slide3_desc" translation_description="Description for the third slide of the Warm Welcome">Sky Map nutzt die Sensoren deines Telefons, um sich an den Sternen auszurichten.</string>
+    <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message when sensors are missing">
+    Ihr Gerät scheint die erforderlichen Sensoren für die automatische Verfolgung nicht zu haben. Keine Sorge – Sie können das gesamte Universum im manuellen Modus erkunden!=
+    <b>Manual Mode</b>!</string>
+    <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration text on slide 3">
+    Um die Genauigkeit zu gewährleisten, führe dein Telefon ab und zu in einer Acht-Bewegung.
+    <b>figure-8</b> wave every once in a while.</string>
+
+    <string name="tutorial_planets" translation_description="Tutorial annotation for planets layer">Planeten</string>
+    <string name="tutorial_meteors" translation_description="Tutorial annotation for meteors layer">Meteore</string>
+    <string name="tutorial_grid" translation_description="Tutorial annotation for grid layer">Gitter</string>
+    <string name="tutorial_night_mode" translation_description="Tutorial annotation for night mode">Nachtmodus</string>
+    <string name="tutorial_time_travel" translation_description="Tutorial annotation for time travel">Zeitreise</string>
+    <string name="tutorial_manual_auto" translation_description="Tutorial annotation for manual/auto toggle">Manuell/Automatisch</string>
+
+    <string name="warm_welcome_skip" translation_description="Button to skip the Warm Welcome">Überspringen</string>
+    <string name="warm_welcome_next" translation_description="Button to go to the next slide">Weiter</string>
+    <string name="warm_welcome_finish" translation_description="Button to finish the Warm Welcome and start exploring. Needs to be short - the width of 9 letter Ms maximum.">Start!</string>
+    <string name="warm_welcome_do_not_show" translation_description="Checkbox to not show the Warm Welcome again">Nicht erneut automatisch anzeigen</string>
+    <string name="menu_tutorial" translation_description="Menu item for re-showing the warm welcome tutorial">Anleitung</string>
+    <string name="warm_welcome_sensor_ok" translation_description="Status when a sensor is working fine">Funktioniert</string>
+    <string name="warm_welcome_sensor_missing" translation_description="Status when a sensor is missing">Fehlt</string>
+    <string name="preferences_auto_mode_title" translation_description="Label for the toggle between manual and automatic modes">Manueller / Automatischer Modus</string>
+</resources>

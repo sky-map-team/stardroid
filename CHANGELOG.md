@@ -5,6 +5,49 @@ All notable changes to Sky Map are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [1.15.0] - 2026-05-22
+
+### Added
+- **New user onboarding** — a 3-slide warm welcome flow guides first-time users through sensor
+  verification (with haptic feedback) and location setup before entering the star map
+  ([#853](https://github.com/sky-map-team/stardroid/pull/853),
+  [#857](https://github.com/sky-map-team/stardroid/pull/857),
+  [#866](https://github.com/sky-map-team/stardroid/pull/866),
+  [#870](https://github.com/sky-map-team/stardroid/pull/870),
+  [#871](https://github.com/sky-map-team/stardroid/pull/871),
+  [#882](https://github.com/sky-map-team/stardroid/pull/882))
+- **Location map** — the location settings screen now shows a map (via MapTiler) so you can
+  visually confirm your position
+  ([#865](https://github.com/sky-map-team/stardroid/pull/865),
+  [#887](https://github.com/sky-map-team/stardroid/pull/887))
+- **Search by RA/Dec** — you can now search for a sky position by entering right ascension and
+  declination coordinates directly
+- **A/B experiment framework** — runtime experiment configuration via Firebase Remote Config
+  (gms) and hardcoded defaults (fdroid) enables feature rollouts without app updates
+  ([#869](https://github.com/sky-map-team/stardroid/pull/869))
+
+### Changed
+- **Location handling rewrite** — state-driven architecture replaces the old ad-hoc approach;
+  all location states now have human-readable diagnostic strings, a progress spinner appears
+  while the position is resolving, and locale-aware coordinate entry is enforced
+  ([#850](https://github.com/sky-map-team/stardroid/pull/850))
+- **Search overlay feedback** — the overlay updates to "Found: X" when the target enters the
+  centre of the screen
+  ([#820](https://github.com/sky-map-team/stardroid/pull/820))
+
+### Fixed
+- WebView link taps in Credits, EULA, Help, and What's New dialogs are now guarded with
+  try/catch to prevent crashes on external `startActivity` calls
+  ([#877](https://github.com/sky-map-team/stardroid/pull/877),
+  [#892](https://github.com/sky-map-team/stardroid/pull/892))
+- Map colour and loading spinner issues resolved
+  ([#889](https://github.com/sky-map-team/stardroid/pull/889),
+  [#890](https://github.com/sky-map-team/stardroid/pull/890))
+- Haptic feedback during warm welcome no longer fires when system touch feedback is disabled
+  ([#888](https://github.com/sky-map-team/stardroid/pull/888))
+
+---
+
 ## [1.14.2] - 2026-05-05
 
 ### Added

@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>More info cards</h2>
-<p>Jupiter\'s Galilean moons (Io, Europa, Ganymede and Callisto), Mars\'s moons Phobos and Deimos and others are now searchable with rich info cards and NASA imagery.</p>
-<h2>Expanded Catalog</h2>
-<p>Dozens of new deep sky objects added — including the Double Cluster, 47 Tucanae, the Exposed Cranium Nebula and more — each with descriptions, fun facts and images.</p>
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Welcome to Sky Map</h2>
+<p>New users are greeted with a guided onboarding experience that checks your device sensors and gets you stargazing quickly.</p>
+<h2>Better Location</h2>
+<p>Location handling has been completely redesigned — clearer status messages, a progress indicator while your position is resolving, and fixes for many long-standing bugs. There\'s also a new map to help you confirm your location visually.</p>
+<h2>Search</h2>
+<p>You can now search by RA and Dec coordinates as well as by object name. The search overlay also updates to show "Found: X" when your target drifts into the centre of the screen.</p>
 ]]></string>
     <string name="beta_user_help_text" translation_description="HTML content shown to beta testers asking for feedback. Please do not change the &lt; and &gt; markup.">
     </string>

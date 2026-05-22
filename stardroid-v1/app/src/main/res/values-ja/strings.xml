@@ -9,12 +9,49 @@
     <string name="other_prefs" translation_description="Preferences category heading for miscellaneous settings">その他</string>
     <string name="controls_prefs" translation_description="Preferences category heading for touch control settings">操作</string>
     <string name="location_permission_dialog_title" translation_description="Title of the dialog that requests location permission from the user">位置情報が必要です</string>
-    <string name="location_permission_dialog_message">Sky Mapは正確な夜空を表示するために、おおよその位置情報が必要です。権限を許可するか、位置情報を手動で入力するか、後で決定することができます。後で決定する場合、位置情報が設定されるまでマップは正確ではありません。</string>
+    <string name="location_permission_dialog_message" translation_description="Body text of the dialog requesting location permission, explaining why the app needs it and what happens without it">
+    Sky Mapは正確な夜空を表示するために、おおよその位置情報が必要です。権限を許可するか、位置情報を手動で入力するか、後で決定することができます。後で決定する場合、位置情報が設定されるまでマップは正確ではありません。
+    </string>
     <string name="location_permission_grant" translation_description="Button in the location permission dialog to grant location access">許可を与える</string>
     <string name="location_permission_enter_manually" translation_description="Button in the location permission dialog to enter location by hand instead of granting permission">手動で入力</string>
     <string name="location_permission_later" translation_description="Button in the location permission dialog to defer the decision">後で</string>
     <string name="location_set_auto" translation_description="Toast message when automatic location is acquired. %1$s is the place name or coordinates">位置が %1$s に設定されました</string>
     <string name="location_long_lat" translation_description="Formatted display of longitude and latitude. %1$.2f is longitude, %2$.2f is latitude">経度: %1$s、緯度: %2$s</string>
+    <string name="degrees" translation_description="angular degrees - used for latitude and longitude">度</string>
+    <string name="location_acquiring_title" translation_description="Title of dialog shown while acquiring the user\'s location automatically">現在地を検索中…</string>
+    <string name="location_acquiring_message" translation_description="Body text of dialog shown while Sky Map is waiting to acquire the device GPS or network location">現在地を検索中です…</string>
+    <string name="location_keep_waiting" translation_description="Button to keep waiting for an automatic location fix">待機を続ける</string>
+    <string name="location_permanently_denied_title" translation_description="Title of dialog shown when location permission was permanently denied by the user">許可が必要です</string>
+    <string name="location_permanently_denied_message" translation_description="Body text explaining that location permission was permanently denied and how to fix it">位置情報の許可が永続的に拒否されました。アプリ設定を開いて再度有効にしてください。</string>
+    <string name="location_open_settings" translation_description="Button that opens the system app settings page so the user can re-grant location permission">アプリ設定を開く</string>
+    <string name="location_manual_entry_title" translation_description="Title of the dialog where the user types their location manually">現在地を入力</string>
+    <string name="location_place_name_hint" translation_description="Placeholder text in the place name input field">都市または場所の名前</string>
+    <string name="location_latitude_hint" translation_description="Placeholder text in the latitude input field">緯度（例：51.5）</string>
+    <string name="location_longitude_hint" translation_description="Placeholder text in the longitude input field">経度（例：-0.1）</string>
+    <string name="location_resolve_button" translation_description="Button that looks up coordinates for a typed place name">検索</string>
+    <string name="location_set_button" translation_description="Button that confirms and applies the manually entered location">現在地を設定</string>
+    <string name="location_place_not_found" translation_description="Inline error shown when a place name search returns no results">場所が見つかりません。より詳しい名前を入力してください</string>
+    <string name="location_geocoder_offline" translation_description="Inline message shown when geocoding fails because there is no internet connection">インターネットがありません。座標を直接入力してください</string>
+    <string name="location_invalid_latitude" translation_description="Validation error for latitude values outside the valid range">緯度は−90～90の間である必要があります</string>
+    <string name="location_invalid_longitude" translation_description="Validation error for longitude values outside the valid range">経度は−180～180の間である必要があります</string>
+    <string name="location_management_title" translation_description="Title of the location management screen">現在地</string>
+    <string name="location_source_auto" translation_description="Label shown when the device is determining location automatically">自動</string>
+    <string name="location_source_manual" translation_description="Label shown when the user has manually entered their location">手動</string>
+    <string name="location_source_acquiring" translation_description="Label shown while waiting for the first automatic location fix">取得中…</string>
+    <string name="location_source_unset" translation_description="Label shown when no location has been set">現在地が設定されていません</string>
+    <string name="location_source_hardware_unavailable" translation_description="Label shown when the device has no location hardware">このデバイスでは位置情報が利用できません</string>
+    <string name="location_switch_to_auto" translation_description="Button to switch from manual location to automatic detection">自動位置情報を使用</string>
+    <string name="location_switch_to_manual" translation_description="Button to switch from automatic to manual location entry">現在地を手動で入力</string>
+    <string name="location_change" translation_description="Button to change or update the manually entered location">現在地を変更</string>
+    <string name="location_map_no_location" translation_description="Message shown in the map area when no location is set">現在地が設定されていません。下をタップして追加してください</string>
+    <string name="location_map_acquiring" translation_description="Message shown in the map area while waiting for a GPS fix">現在地を取得中…</string>
+    <string name="location_map_unavailable" translation_description="Message shown in the map area when the map image cannot be loaded">マップが利用できません</string>
+    <string name="location_map_content_description" translation_description="Accessibility description for the map image showing the user\'s location">現在地を表示するマップ</string>
+    <!-- tm:omitted name="location_coordinate_format" reason="identical_to_source" -->
+    <string name="location_diagnostic_format" translation_description="Format for location in diagnostics: lat, lon (source). %1$.4f is lat, %2$.4f is lon, %3$s is source">%1$.4f°、%2$.4f° (%3$s)</string>
+    <!-- tm:omitted name="diagnostics_phone_format" reason="identical_to_source" -->
+    <string name="diagnostics_ra_format" translation_description="Format for Right Ascension: hours, minutes, seconds. %1$d is hours, %2$d is minutes, %3$d is seconds">%1$d時間 %2$d分 %3$d秒</string>
+    <!-- tm:omitted name="diagnostics_dec_format" reason="identical_to_source" -->
     <string name="use_magnetic_correction" translation_description="Preference label: apply magnetic declination correction so the compass points to true north instead of magnetic north">磁気補正機能を使用</string>
     <string name="manual_compass_adjustment_title" translation_description="Preference title: lets the user add a manual degree offset to the compass reading">追加のコンパス調整</string>
     <string name="manual_compass_adjustment_summary" translation_description="Summary for the manual compass adjustment preference">コンパス読み取り値に追加される度数単位の追加オフセット（+ または −）</string>
@@ -229,4 +266,30 @@
     <string name="auto_level_horizon_on" translation_description="Toast message when auto-level horizon is enabled">地平線の自動レベリングがオン</string>
     <string name="auto_level_horizon_off" translation_description="Toast message when auto-level horizon is disabled">地平線の自動レベリングがオフ</string>
 
-    </resources>
+    <string name="warm_welcome_title" translation_description="Title of the Warm Welcome screen">Sky Mapへようこそ</string>
+    <string name="warm_welcome_slide1_title" translation_description="Title for the first slide of the Warm Welcome">宇宙を探索する</string>
+    <string name="warm_welcome_slide1_desc" translation_description="Description for the first slide of the Warm Welcome">左側のレイヤーを使用して、星、星座、惑星などをフィルタリングできます。ボルテックスをタップして時間を移動するか、アイをタップしてナイトモードにしてください。<b>Vortex</b> to travel through time, or the <b>Eye</b> for night mode.</string>
+    <string name="warm_welcome_slide2_title" translation_description="Title for the second slide of the Warm Welcome">空をナビゲートする</string>
+    <string name="warm_welcome_slide2_desc" translation_description="Description for the second slide of the Warm Welcome">オートモードで電話を向けて周りを見るか、タップしてマニュアルに切り替えてスワイプで探索します。マニュアルでダブルタップすると地平線がリセットされます。<b>Auto Mode</b>, or tap to switch to <b>Manual</b> and explore by swiping. Double-tap in Manual to reset your horizon.</string>
+    <string name="warm_welcome_slide2_info_desc" translation_description="Description about info cards on the second slide">マニュアルモードで任意のオブジェクトをタップすると、楽しい事実と天体の詳細を含む情報カードが表示されます。</string>
+    <string name="warm_welcome_slide3_title" translation_description="Title for the third slide of the Warm Welcome">センサーとキャリブレーション</string>
+    <string name="warm_welcome_slide3_desc" translation_description="Description for the third slide of the Warm Welcome">Sky Mapはお使いのスマートフォンのセンサーを使って星と位置を合わせます。</string>
+    <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message when sensors are missing">お使いのデバイスに自動追跡に必要なセンサーがないようです。ご心配なく—マニュアルモードで宇宙全体を探索できます！<b>Manual Mode</b>!</string>
+    <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration text on slide 3">精度を保つため、スマートフォンを時々8の字に振ってください。<b>figure-8</b> wave every once in a while.</string>
+
+    <string name="tutorial_planets" translation_description="Tutorial annotation for planets layer">惑星</string>
+    <string name="tutorial_meteors" translation_description="Tutorial annotation for meteors layer">流星</string>
+    <string name="tutorial_grid" translation_description="Tutorial annotation for grid layer">グリッド</string>
+    <string name="tutorial_night_mode" translation_description="Tutorial annotation for night mode">ナイトモード</string>
+    <string name="tutorial_time_travel" translation_description="Tutorial annotation for time travel">タイムトラベル</string>
+    <string name="tutorial_manual_auto" translation_description="Tutorial annotation for manual/auto toggle">手動/自動</string>
+
+    <string name="warm_welcome_skip" translation_description="Button to skip the Warm Welcome">スキップ</string>
+    <string name="warm_welcome_next" translation_description="Button to go to the next slide">次へ</string>
+    <string name="warm_welcome_finish" translation_description="Button to finish the Warm Welcome and start exploring. Needs to be short - the width of 9 letter Ms maximum.">開始！</string>
+    <string name="warm_welcome_do_not_show" translation_description="Checkbox to not show the Warm Welcome again">今後表示しない</string>
+    <string name="menu_tutorial" translation_description="Menu item for re-showing the warm welcome tutorial">チュートリアル</string>
+    <string name="warm_welcome_sensor_ok" translation_description="Status when a sensor is working fine">動作中</string>
+    <string name="warm_welcome_sensor_missing" translation_description="Status when a sensor is missing">なし</string>
+    <string name="preferences_auto_mode_title" translation_description="Label for the toggle between manual and automatic modes">手動/自動モード</string>
+</resources>

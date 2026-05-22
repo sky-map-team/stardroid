@@ -9,12 +9,49 @@
     <string name="other_prefs" translation_description="Preferences category heading for miscellaneous settings">อื่นๆ</string>
     <string name="controls_prefs" translation_description="Preferences category heading for touch control settings">การควบคุม</string>
     <string name="location_permission_dialog_title" translation_description="Title of the dialog that requests location permission from the user">จำเป็นต้องใช้ตำแหน่ง</string>
-    <string name="location_permission_dialog_message">Sky Map ต้องการตำแหน่งโดยประมาณของคุณเพื่อแสดงท้องฟ้ายามค่ำคืนที่ถูกต้อง คุณสามารถให้สิทธิ์การเข้าถึง ป้อนตำแหน่งของคุณด้วยตนเอง หรือตัดสินใจภายหลัง หากคุณตัดสินใจภายหลัง แผนที่จะไม่แม่นยำจนกว่าจะตั้งค่าตำแหน่งของคุณ</string>
+    <string name="location_permission_dialog_message" translation_description="Body text of the dialog requesting location permission, explaining why the app needs it and what happens without it">
+    Sky Map ต้องการตำแหน่งโดยประมาณของคุณเพื่อแสดงท้องฟ้ายามค่ำคืนที่ถูกต้อง คุณสามารถให้สิทธิ์การเข้าถึง ป้อนตำแหน่งของคุณด้วยตนเอง หรือตัดสินใจภายหลัง หากคุณตัดสินใจภายหลัง แผนที่จะไม่แม่นยำจนกว่าจะตั้งค่าตำแหน่งของคุณ
+    </string>
     <string name="location_permission_grant" translation_description="Button in the location permission dialog to grant location access">อนุญาตสิทธิ์</string>
     <string name="location_permission_enter_manually" translation_description="Button in the location permission dialog to enter location by hand instead of granting permission">ป้อนด้วยตนเอง</string>
     <string name="location_permission_later" translation_description="Button in the location permission dialog to defer the decision">ภายหลัง</string>
     <string name="location_set_auto" translation_description="Toast message when automatic location is acquired. %1$s is the place name or coordinates">ตั้งค่าตำแหน่งเป็น %1$s</string>
     <string name="location_long_lat" translation_description="Formatted display of longitude and latitude. %1$.2f is longitude, %2$.2f is latitude">ลองจิจูด:%1$.2f, ละติจูด:%2$.2f</string>
+    <string name="degrees" translation_description="angular degrees - used for latitude and longitude">องศา</string>
+    <string name="location_acquiring_title" translation_description="Title of dialog shown while acquiring the user\'s location automatically">กำลังค้นหาตำแหน่งของคุณ…</string>
+    <string name="location_acquiring_message" translation_description="Body text of dialog shown while Sky Map is waiting to acquire the device GPS or network location">ยังคงพยายามค้นหาตำแหน่งของคุณ…</string>
+    <string name="location_keep_waiting" translation_description="Button to keep waiting for an automatic location fix">รอต่อไป</string>
+    <string name="location_permanently_denied_title" translation_description="Title of dialog shown when location permission was permanently denied by the user">ต้องได้รับอนุญาต</string>
+    <string name="location_permanently_denied_message" translation_description="Body text explaining that location permission was permanently denied and how to fix it">ปฏิเสธการอนุญาตตำแหน่งอย่างถาวร เปิดการตั้งค่าแอปเพื่อเปิดใช้งานอีกครั้ง</string>
+    <string name="location_open_settings" translation_description="Button that opens the system app settings page so the user can re-grant location permission">เปิดการตั้งค่าแอป</string>
+    <string name="location_manual_entry_title" translation_description="Title of the dialog where the user types their location manually">ป้อนตำแหน่งของคุณ</string>
+    <string name="location_place_name_hint" translation_description="Placeholder text in the place name input field">ชื่อเมืองหรือสถานที่</string>
+    <string name="location_latitude_hint" translation_description="Placeholder text in the latitude input field">ละติจูด (เช่น 51.5)</string>
+    <string name="location_longitude_hint" translation_description="Placeholder text in the longitude input field">ลองจิจูด (เช่น -0.1)</string>
+    <string name="location_resolve_button" translation_description="Button that looks up coordinates for a typed place name">แก้ไข</string>
+    <string name="location_set_button" translation_description="Button that confirms and applies the manually entered location">ตั้งตำแหน่ง</string>
+    <string name="location_place_not_found" translation_description="Inline error shown when a place name search returns no results">ไม่พบสถานที่ — ลองใช้ชื่อที่เจาะจงมากขึ้น</string>
+    <string name="location_geocoder_offline" translation_description="Inline message shown when geocoding fails because there is no internet connection">ไม่มีอินเทอร์เน็ต — ป้อนพิกัดโดยตรง</string>
+    <string name="location_invalid_latitude" translation_description="Validation error for latitude values outside the valid range">ละติจูดต้องอยู่ระหว่าง −90 ถึง 90</string>
+    <string name="location_invalid_longitude" translation_description="Validation error for longitude values outside the valid range">ลองจิจูดต้องอยู่ระหว่าง −180 ถึง 180</string>
+    <string name="location_management_title" translation_description="Title of the location management screen">ตำแหน่งของคุณ</string>
+    <string name="location_source_auto" translation_description="Label shown when the device is determining location automatically">อัตโนมัติ</string>
+    <string name="location_source_manual" translation_description="Label shown when the user has manually entered their location">ด้วยตนเอง</string>
+    <string name="location_source_acquiring" translation_description="Label shown while waiting for the first automatic location fix">กำลังรับ…</string>
+    <string name="location_source_unset" translation_description="Label shown when no location has been set">ไม่ได้ตั้งตำแหน่ง</string>
+    <string name="location_source_hardware_unavailable" translation_description="Label shown when the device has no location hardware">ตำแหน่งไม่พร้อมใช้งานบนอุปกรณ์นี้</string>
+    <string name="location_switch_to_auto" translation_description="Button to switch from manual location to automatic detection">ใช้ตำแหน่งอัตโนมัติ</string>
+    <string name="location_switch_to_manual" translation_description="Button to switch from automatic to manual location entry">ป้อนตำแหน่งด้วยตนเอง</string>
+    <string name="location_change" translation_description="Button to change or update the manually entered location">เปลี่ยนตำแหน่ง</string>
+    <string name="location_map_no_location" translation_description="Message shown in the map area when no location is set">ไม่ได้ตั้งตำแหน่ง — แตะด้านล่างเพื่อเพิ่มตำแหน่ง</string>
+    <string name="location_map_acquiring" translation_description="Message shown in the map area while waiting for a GPS fix">กำลังรับตำแหน่ง…</string>
+    <string name="location_map_unavailable" translation_description="Message shown in the map area when the map image cannot be loaded">แผนที่ไม่พร้อมใช้งาน</string>
+    <string name="location_map_content_description" translation_description="Accessibility description for the map image showing the user\'s location">แผนที่แสดงตำแหน่งของคุณ</string>
+    <!-- tm:omitted name="location_coordinate_format" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_diagnostic_format" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_phone_format" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_ra_format" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_dec_format" reason="identical_to_source" -->
     <string name="use_magnetic_correction" translation_description="Preference label: apply magnetic declination correction so the compass points to true north instead of magnetic north">ใช้การแก้ไขแม่เหล็ก</string>
     <string name="manual_compass_adjustment_title" translation_description="Preference title: lets the user add a manual degree offset to the compass reading">การปรับเข็มทิศเพิ่มเติม</string>
     <string name="manual_compass_adjustment_summary" translation_description="Summary for the manual compass adjustment preference">ออฟเซ็ตเพิ่มเติมในหน่วยองศา (+ หรือ −) ที่เพิ่มเข้าไปในการอ่านเข็มทิศ</string>
@@ -220,4 +257,40 @@
     <string name="auto_level_horizon_on" translation_description="Toast message when auto-level horizon is enabled">ปรับระดับขอบฟ้าอัตโนมัติเปิด</string>
     <string name="auto_level_horizon_off" translation_description="Toast message when auto-level horizon is disabled">ปรับระดับขอบฟ้าอัตโนมัติปิด</string>
 
-    </resources>
+    <string name="warm_welcome_title" translation_description="Title of the Warm Welcome screen">ยินดีต้อนรับสู่ Sky Map</string>
+    <string name="warm_welcome_slide1_title" translation_description="Title for the first slide of the Warm Welcome">สำรวจจักรวาล</string>
+    <string name="warm_welcome_slide1_desc" translation_description="Description for the first slide of the Warm Welcome">
+    ใช้เลเยอร์ทางด้านซ้ายเพื่อกรองดาว กลุ่มดาว ดาวเคราะห์ และอื่นๆ แตะ Vortex เพื่อเดินทางผ่านเวลา หรือแตะ Eye เพื่อเปิดโหมดกลางคืน
+    <b>Vortex</b> to travel through time, or the <b>Eye</b> for night mode.</string>
+    <string name="warm_welcome_slide2_title" translation_description="Title for the second slide of the Warm Welcome">นำทางท้องฟ้า</string>
+    <string name="warm_welcome_slide2_desc" translation_description="Description for the second slide of the Warm Welcome">
+    ชี้โทรศัพท์ของคุณเพื่อมองไปรอบ ๆ ในโหมดอัตโนมัติ หรือแตะเพื่อสลับไปยังโหมดแมนนวลและสำรวจโดยการปัด แตะสองครั้งในโหมดแมนนวลเพื่อรีเซ็ตขอบฟ้าของคุณ
+    <b>Auto Mode</b>, or tap to switch to <b>Manual</b> and explore by swiping. Double-tap in Manual to reset your horizon.</string>
+    <string name="warm_welcome_slide2_info_desc" translation_description="Description about info cards on the second slide">
+    แตะวัตถุใดๆ ในโหมดด้วยตนเองเพื่อแสดงการ์ดข้อมูลที่มีข้อเท็จจริงที่สนุกสนานและรายละเอียดท้องฟ้า
+    </string>
+    <string name="warm_welcome_slide3_title" translation_description="Title for the third slide of the Warm Welcome">เซ็นเซอร์และการปรับเทียบ</string>
+    <string name="warm_welcome_slide3_desc" translation_description="Description for the third slide of the Warm Welcome">Sky Map ใช้เซ็นเซอร์ของโทรศัพท์คุณเพื่อจัดตำแหน่งให้ตรงกับดวงดาว</string>
+    <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message when sensors are missing">
+    ดูเหมือนว่าอุปกรณ์ของคุณขาดเซนเซอร์ที่จำเป็นสำหรับการติดตามอัตโนมัติ อย่ากังวล—คุณยังสามารถสำรวจจักรวาลทั้งหมดในโหมดแมนนวลได้!
+    <b>Manual Mode</b>!</string>
+    <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration text on slide 3">
+    เพื่อให้ความแม่นยำ ให้โทรศัพท์ของคุณเคลื่อนไหวเป็นรูปเลข 8 อย่างรวดเร็วเป็นครั้งคราว
+    <b>figure-8</b> wave every once in a while.</string>
+
+    <string name="tutorial_planets" translation_description="Tutorial annotation for planets layer">ดาวเคราะห์</string>
+    <string name="tutorial_meteors" translation_description="Tutorial annotation for meteors layer">ดาวตกอุกาบาต</string>
+    <string name="tutorial_grid" translation_description="Tutorial annotation for grid layer">ตาราง</string>
+    <string name="tutorial_night_mode" translation_description="Tutorial annotation for night mode">โหมดกลางคืน</string>
+    <string name="tutorial_time_travel" translation_description="Tutorial annotation for time travel">การเดินทางข้ามเวลา</string>
+    <string name="tutorial_manual_auto" translation_description="Tutorial annotation for manual/auto toggle">ручной/Авто</string>
+
+    <string name="warm_welcome_skip" translation_description="Button to skip the Warm Welcome">ข้าม</string>
+    <string name="warm_welcome_next" translation_description="Button to go to the next slide">ถัดไป</string>
+    <string name="warm_welcome_finish" translation_description="Button to finish the Warm Welcome and start exploring. Needs to be short - the width of 9 letter Ms maximum.">เริ่ม!</string>
+    <string name="warm_welcome_do_not_show" translation_description="Checkbox to not show the Warm Welcome again">อย่าแสดงสิ่งนี้โดยอัตโนมัติอีกครั้ง</string>
+    <string name="menu_tutorial" translation_description="Menu item for re-showing the warm welcome tutorial">บทช่วยสอน</string>
+    <string name="warm_welcome_sensor_ok" translation_description="Status when a sensor is working fine">ทำงานอยู่</string>
+    <string name="warm_welcome_sensor_missing" translation_description="Status when a sensor is missing">ขาดหายไป</string>
+    <string name="preferences_auto_mode_title" translation_description="Label for the toggle between manual and automatic modes">โหมดручной/อัตโนมัติ</string>
+</resources>

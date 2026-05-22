@@ -1,8 +1,10 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Kad maklumat yang lebih lengkap</h2>
-<p>Bulan-bulan Galilean Jupiter (Io, Europa, Ganymede dan Callisto), bulan-bulan Mars Phobos dan Deimos dan lain-lain kini boleh dicari dengan kad maklumat yang kaya dan imej NASA.</p>
-<h2>Katalog yang Diperluas</h2>
-<p>Puluhan objek langit dalam cakupan baru ditambahkan — termasuk Double Cluster, 47 Tucanae, Nebula Exposed Cranium dan banyak lagi — masing-masing dengan penerangan, fakta menarik dan imej.</p>]]></string>
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Selamat Datang ke Sky Map</h2>
+<p>Pengguna baru disambut dengan pengalaman onboarding terpandu yang memeriksa sensor perangkat Anda dan memulai pengamatan bintang dengan cepat.</p>
+<h2>Lokasi yang Lebih Baik</h2>
+<p>Penanganan lokasi telah dirancang ulang sepenuhnya — pesan status yang lebih jelas, indikator kemajuan saat posisi Anda sedang diselesaikan, dan perbaikan untuk banyak bug yang sudah lama ada. Ada juga peta baru untuk membantu Anda mengonfirmasi lokasi Anda secara visual.</p>
+<h2>Pencarian</h2>
+<p>Anda sekarang dapat mencari berdasarkan koordinat RA dan Dec serta berdasarkan nama objek. Overlay pencarian juga diperbarui untuk menampilkan "Ditemukan: X" ketika target Anda bergeser ke pusat layar.</p>]]></string>
     </resources>
