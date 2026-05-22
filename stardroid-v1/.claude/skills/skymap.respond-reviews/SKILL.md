@@ -99,11 +99,12 @@ Show each proposed reply in this format:
 Review #N  ★★★☆☆  [language]  [date]
 Reviewer: <name>
 Original: "<review text>"
+[English translation of review: "<translation>" — only if original is not English]
 
 Proposed reply (<language name>):
 "<reply in native language>"
 
-English translation:
+English translation of reply:
 "<English translation>"
 
 [Pun explanation: <explanation> — only if applicable]
