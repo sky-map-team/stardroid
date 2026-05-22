@@ -34,8 +34,8 @@ If the user asks for reviews **older than what the Play API returns** (typically
 explicitly references "historical" / "old" reviews, switch to
 `mcp__google-play-reviews__list_historical_reviews`.
 
-The CSV files live in `/tmp`. The MCP server reads them from `PLAY_REVIEWS_DIR`; if that env var
-isn't set, tell the user to set it to `/tmp` (or wherever the CSVs are) before proceeding.
+The MCP server reads the CSV files from `PLAY_REVIEWS_DIR`; if that env var
+isn't set, tell the user to set it before proceeding.
 
 The same filters apply: `startDate`, `endDate`, `searchText`, `language`, `unansweredOnly`.
 
@@ -60,7 +60,8 @@ For each review, classify the issue before drafting:
 
 Read `@../troubleshooting.md` before drafting any complaint reply. You only need to read this if there are complaints or issues - it's not needed to respond to purely positive reviews.
 Base all advice strictly on
-what that document says — **do not invent steps, settings, or explanations not found there**.
+what that document says — **do not invent steps, settings, or explanations not found there**. DO NOT SPECULATE that changes in Android APIs or updates to Sky Map might have been the cause. If in doubt, ask me. Replies
+need to be limited to 350 characters.
 
 ### Complaint replies
 
