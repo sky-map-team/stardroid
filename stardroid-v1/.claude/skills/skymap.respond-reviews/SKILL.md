@@ -58,7 +58,8 @@ For each review, classify the issue before drafting:
 
 ## Step 3 — Draft the reply
 
-Read `@../troubleshooting.md` before drafting any complaint reply. Base all advice strictly on
+Read `@../troubleshooting.md` before drafting any complaint reply. You only need to read this if there are complaints or issues - it's not needed to respond to purely positive reviews.
+Base all advice strictly on
 what that document says — **do not invent steps, settings, or explanations not found there**.
 
 ### Complaint replies
@@ -69,11 +70,12 @@ what that document says — **do not invent steps, settings, or explanations not
   can only work with what the sensor provides. Don't soften this to the point of implying
   Sky Map might fix it.
 - Close with an offer to help further (point to Diagnostics + email).
+- Make sure you vary the wording of the replies, even when addressing similar complaints.
 
 ### Positive replies
 
 - Warm and gracious, 2–3 sentences.
-- Vary the tone — don't use the same template for every positive reply.
+- *YOU MUST Vary the tone* — don't use the same template for every positive reply.
 - A light sky/star pun is welcome but never forced.
 
 ### Language
