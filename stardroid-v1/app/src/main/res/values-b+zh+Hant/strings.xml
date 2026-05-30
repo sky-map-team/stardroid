@@ -215,12 +215,13 @@
     <string name="menu_calibrate" translation_description="Menu item label to open the compass calibration screen">校正</string>
     <string name="compass_calibration_activity_heading_compass" translation_description="Static label in the compass calibration screen placed inline to the left of the live compass accuracy value (e.g. displayed as \'Compass - Accuracy: High\')">羅盤 -</string>
     <string name="compass_calibration_activity_do_not_show_this_again" translation_description="Checkbox label in the compass calibration dialog to suppress future automatic appearances">不要再顯示這個訊息</string>
-    <string name="compass_calibration_activity_warning" translation_description="Heading/reason text shown in the compass calibration dialog when it opens automatically due to low accuracy">您的羅盤需要校正</string>
-    <string name="compass_calibration_activity_user_heading" translation_description="Heading shown in the compass calibration dialog when the user opens it manually from the menu">改善您的對齊</string>
+    <string name="compass_calibration_activity_warning" translation_description="Heading/reason text shown in the compass calibration dialog when it opens automatically due to low accuracy">您的手機羅盤需要校正</string>
+    <string name="compass_calibration_activity_user_heading" translation_description="Heading shown in the compass calibration dialog when the user opens it manually from the menu">您的手機羅盤</string>
     <string name="compass_calib_what_to_do" translation_description="Information for the user on how to calibrate the compass when the dialog auto-opens. Placeholder is the video URL"><![CDATA[Sky Map 依賴您手機內建的指南針感應器。如果上方顯示的精度較低，感應器需要透過以「8」字形運動移動手機來「重置」：%s。<br/><br/>
 <b>重要：</b>校準是由您的裝置處理的硬體程序。雖然它可以改善感應器的可靠性，但外部磁場干擾仍可能導致「偏差」或輕微漂移。這是行動指南針的物理限制，不是應用程式內的錯誤。請參閱<i>說明</i>中的<i>疑難排解</i>以了解其他可嘗試的方法。]]></string>
     <string name="compass_calib_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they invoke the calibration dialog. Placeholder is the video URL"><![CDATA[您的手機報告的羅盤精度如上所示。若要改善此問題，請用您的裝置執行8字形動作 (%s)。<br/><br/>
 <b>精度說明：</b>校準是您手機的硬體層級要求，不是 Sky Map 設定。即使已校準，當地磁場（例如汽車儀表板或磁鐵）仍可能導致方向出現輕微偏差。請參閱<i>說明</i>中的<i>疑難排解</i>以了解其他可嘗試的方法。]]></string>
+    <string name="compass_low_accuracy_toast" translation_description="Brief toast shown when compass accuracy is low and the user has disabled the calibration dialog">您的手機羅盤精確度偏低</string>
     <string name="sensor_reverse_preference_title" translation_description="Preference title for reversing the magnetic Z-axis sensor reading, a fix for certain phones with incorrectly implemented sensors">磁場反向</string>
     <string name="sensor_reverse_preference_summary" translation_description="Summary for the Reverse Magnetic Z preference">修正手機感應器錯誤 - 需重新開機</string>
     <string name="whats_new_dialog_title" translation_description="Title of the dialog shown on first launch after an update, listing new features">最新消息</string>

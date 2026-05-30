@@ -225,8 +225,8 @@
     <string name="menu_calibrate" translation_description="Menu item label to open the compass calibration screen">Calibrar</string>
     <string name="compass_calibration_activity_heading_compass" translation_description="Static label in the compass calibration screen placed inline to the left of the live compass accuracy value (e.g. displayed as \'Compass - Accuracy: High\')">Brújula -</string>
     <string name="compass_calibration_activity_do_not_show_this_again" translation_description="Checkbox label in the compass calibration dialog to suppress future automatic appearances">No volver a mostrar</string>
-    <string name="compass_calibration_activity_warning" translation_description="Heading/reason text shown in the compass calibration dialog when it opens automatically due to low accuracy">Se requiere calibrar el hardware</string>
-    <string name="compass_calibration_activity_user_heading" translation_description="Heading shown in the compass calibration dialog when the user opens it manually from the menu">Mejora tu alineación</string>
+    <string name="compass_calibration_activity_warning" translation_description="Heading/reason text shown in the compass calibration dialog when it opens automatically due to low accuracy">La brújula de tu teléfono necesita atención</string>
+    <string name="compass_calibration_activity_user_heading" translation_description="Heading shown in the compass calibration dialog when the user opens it manually from the menu">La brújula de tu teléfono</string>
     <string name="compass_calib_what_to_do" translation_description="Information for the user on how to calibrate the compass when the dialog auto-opens. Placeholder is the video URL"><![CDATA[
 Sky Map se basa en el sensor de brújula integrado de tu teléfono. Si la precisión mostrada arriba es baja, es necesario \"reiniciar\" el sensor moviendo el teléfono en un movimiento en forma de 8: %s.<br/><br/>
 <b>Importante:</b> La calibración es un proceso de hardware manejado por tu dispositivo. Si bien mejora la confiabilidad del sensor, la interferencia magnética externa aún puede causar un \"sesgo\" o una ligera desviación. Esta es una limitación física de las brújulas móviles y no un error dentro de la aplicación. Mira en <i>Solución de problemas</i> en <i>Ayuda</i> para intentar otras cosas.
@@ -235,6 +235,7 @@ Sky Map se basa en el sensor de brújula integrado de tu teléfono. Si la precis
 Tu teléfono informa la precisión de la brújula como se muestra arriba. Para mejorarla, realiza un movimiento en forma de 8 con tu dispositivo. (%s).<br/><br/>
 <b>Nota en la exactitud:</b> La calibración es un requisito a nivel de hardware de su teléfono, no un ajuste de Sky Map. Incluso cuando están calibrados, los campos magnéticos locales (como los tableros de instrumentos de los automóviles o los imanes) pueden causar un ligero sesgo en la dirección. Mira en <i>Solución de problemas</i> en <i>Ayuda</i> para intentar otras cosas.
     ]]></string>
+    <string name="compass_low_accuracy_toast" translation_description="Brief toast shown when compass accuracy is low and the user has disabled the calibration dialog">La brújula de tu teléfono tiene poca precisión</string>
     <string name="sensor_reverse_preference_title" translation_description="Preference title for reversing the magnetic Z-axis sensor reading, a fix for certain phones with incorrectly implemented sensors">Z magnética inversa</string>
     <string name="sensor_reverse_preference_summary" translation_description="Summary for the Reverse Magnetic Z preference">
     Solución para teléfonos con sensores implementados incorrectamente: requiere reiniciar
