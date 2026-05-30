@@ -72,7 +72,7 @@ not fix a hardware compass issue.
 **What users say:** "I did the figure-8 but it's still pointing the wrong direction",
 "calibration doesn't work", "I've calibrated it 50 times"
 
-**Real cause:** User has confused calibration with accuracy. The figure-8 gesture is a hardware
+normalization process — it does not guarantee the compass points correctly. External magnetic
 normalisation process — it does not guarantee the compass points correctly. External magnetic
 interference is still causing a bias after calibration.
 
