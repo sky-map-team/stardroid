@@ -23,7 +23,7 @@ These facts should be expressed naturally (not recited verbatim) wherever releva
 
 1. **Sky Map reads the phone's compass sensor; it does not control it.** If the sensor gives a
    wrong reading, the map points the wrong way. This is a phone hardware issue.
-2. **Calibration ≠ Accuracy.** The figure-8 gesture normalises the sensor internally (removes
+2. **Calibration ≠ Accuracy.** The figure-8 gesture normalizes the sensor internally (removes
    self-caused distortions). It does not remove external magnetic interference. A sensor that reads
    "High accuracy" can still point in the wrong direction if it's near a metal object or magnetic
    phone case.
