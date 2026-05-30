@@ -228,7 +228,7 @@
     <string name="compass_calib_what_to_do"
         translation_description="Information for the user on how to calibrate the compass when the dialog auto-opens. Placeholder is the video URL"><![CDATA[
 Your phone\'s compass sensor is reporting low accuracy. The figure-8 motion (%s) prompts your phone to recalibrate its hardware sensor — Sky Map has no control over this process.<br/><br/>
-<b>Calibrated does not mean accurate.</b> The figure-8 gesture helps the sensor normalise itself internally, but it cannot remove interference from nearby metal objects, car dashboards, or magnetic phone cases. If the map is still off after calibrating, those external sources are the most likely cause — not Sky Map.<br/><br/>
+<b>Calibrated does not mean accurate.</b> The figure-8 gesture helps the sensor normalize itself internally, but it cannot remove interference from nearby metal objects, car dashboards, or magnetic phone cases. If the map is still off after calibrating, those external sources are the most likely cause — not Sky Map.<br/><br/>
 Move to an open area away from metal and try again. See <i>Troubleshooting</i> in <i>Help</i> for more steps.
     ]]></string>
     <string name="compass_calib_what_to_do_user"
