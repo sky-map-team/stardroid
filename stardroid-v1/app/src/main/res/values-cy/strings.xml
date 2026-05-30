@@ -277,10 +277,12 @@ Gweler <i>Datrys Problemau</i> yn <i>Cymorth</i> am gamau eraill, gan gynnwys y 
     <string name="warm_welcome_slide1_desc" translation_description="Description for the first slide of the Warm Welcome">
     Defnyddiwch yr haenau ar y chwith i hidlo sêr, cytserau, planedau, a mwy. Tapia\'r Vortex i deithio drwy amser, neu\'r Llygad ar gyfer modd nos.
     Vortex to travel through time, or the Eye for night mode.
+    Vortex to travel through time, or the Eye for night mode.
     <b>Vortex</b> to travel through time, or the <b>Eye</b> for night mode.</string>
     <string name="warm_welcome_slide2_title" translation_description="Title for the second slide of the Warm Welcome">Llywio\'r Awyr</string>
     <string name="warm_welcome_slide2_desc" translation_description="Description for the second slide of the Warm Welcome">
     Pwyntiwch eich ffôn i edrych o gwmpas yn y Modd Awtomatig, neu tapiwch i newid i Fodd Llaw a archwilio trwy chwipiad. Tapiwch ddwywaith yn y Modd Llaw i ailosod eich gorwel.
+    Auto Mode, or tap to switch to Manual and explore by swiping. Double-tap in Manual to reset your horizon.
     Auto Mode, or tap to switch to Manual and explore by swiping. Double-tap in Manual to reset your horizon.
     <b>Auto Mode</b>, or tap to switch to <b>Manual</b> and explore by swiping. Double-tap in Manual to reset your horizon.</string>
     <string name="warm_welcome_slide2_info_desc" translation_description="Description about info cards on the second slide">
@@ -291,10 +293,9 @@ Gweler <i>Datrys Problemau</i> yn <i>Cymorth</i> am gamau eraill, gan gynnwys y 
     <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message when sensors are missing">
     Mae\'n ymddangos bod y ddyfeisiau angenrheidiol ar goll ar eich dyfais ar gyfer tracio awtomatig. Peidiwch â phoeni—gallwch dal i archwilio\'r holl gosmos yn y Modd Llaw!
     Manual Mode!
+    Manual Mode!
     <b>Manual Mode</b>!</string>
-    <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration text on slide 3">
-    I gadw pethau\'n gywir, rhowch i\'ch ffôn don cyflym ffigur-8 bob hyn a hyn.figure-8 wave every once in a while.
-    <b>figure-8</b> wave every once in a while.</string>
+    <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration text on slide 3">I gadw pethau\'n gywir, rhowch i\'ch ffôn don cyflym ffigur-8 bob hyn a hyn.</string>
 
     <string name="tutorial_planets" translation_description="Tutorial annotation for planets layer">Planedau</string>
     <string name="tutorial_meteors" translation_description="Tutorial annotation for meteors layer">Meteorau</string>

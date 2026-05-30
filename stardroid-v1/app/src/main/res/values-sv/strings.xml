@@ -271,10 +271,12 @@ Se <i>Felsökning</i> i <i>Hjälp</i> för andra steg, inklusive den manuella ko
     <string name="warm_welcome_slide1_desc" translation_description="Description for the first slide of the Warm Welcome">
     Använd lagren på vänster sida för att filtrera stjärnor, stjärnbilder, planeter och mer. Tryck på Vortex för att resa genom tiden, eller på Ögat för nattläge.
     Vortex to travel through time, or the Eye for night mode.
+    Vortex to travel through time, or the Eye for night mode.
     <b>Vortex</b> to travel through time, or the <b>Eye</b> for night mode.</string>
     <string name="warm_welcome_slide2_title" translation_description="Title for the second slide of the Warm Welcome">Navigera himlen</string>
     <string name="warm_welcome_slide2_desc" translation_description="Description for the second slide of the Warm Welcome">
     Peka din telefon för att titta omkring i automatiskt läge, eller tryck för att växla till manuellt läge och utforska genom att svepa. Dubbelknacka i manuellt läge för att återställa din horisont.
+    Auto Mode, or tap to switch to Manual and explore by swiping. Double-tap in Manual to reset your horizon.
     Auto Mode, or tap to switch to Manual and explore by swiping. Double-tap in Manual to reset your horizon.
     <b>Auto Mode</b>, or tap to switch to <b>Manual</b> and explore by swiping. Double-tap in Manual to reset your horizon.</string>
     <string name="warm_welcome_slide2_info_desc" translation_description="Description about info cards on the second slide">
@@ -285,11 +287,9 @@ Se <i>Felsökning</i> i <i>Hjälp</i> för andra steg, inklusive den manuella ko
     <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message when sensors are missing">
     Din enhet verkar sakna de sensorer som krävs för automatisk spårning. Oroa dig inte—du kan fortfarande utforska hela kosmos i manuellt läge!
     Manual Mode!
+    Manual Mode!
     <b>Manual Mode</b>!</string>
-    <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration text on slide 3">
-    För att hålla saker exakta, vifta snabbt med telefonen i en åttas-rörelse då och då.
-    figure-8 wave every once in a while.
-    <b>figure-8</b> wave every once in a while.</string>
+    <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration text on slide 3">För att hålla saker exakta, vifta din telefon i en åttan-rörelse då och då.</string>
 
     <string name="tutorial_planets" translation_description="Tutorial annotation for planets layer">Planeter</string>
     <string name="tutorial_meteors" translation_description="Tutorial annotation for meteors layer">Meteorer</string>

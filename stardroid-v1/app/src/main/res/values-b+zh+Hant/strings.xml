@@ -260,16 +260,18 @@
     <string name="warm_welcome_slide1_title" translation_description="Title for the first slide of the Warm Welcome">探索宇宙</string>
     <string name="warm_welcome_slide1_desc" translation_description="Description for the first slide of the Warm Welcome">
     使用左側的圖層來篩選恆星、星座、行星等。點擊渦旋以穿越時間，或點擊眼睛進入夜間模式。Vortex to travel through time, or the Eye for night mode.
+    Vortex to travel through time, or the Eye for night mode.
     <b>Vortex</b> to travel through time, or the <b>Eye</b> for night mode.</string>
     <string name="warm_welcome_slide2_title" translation_description="Title for the second slide of the Warm Welcome">導航天空</string>
     <string name="warm_welcome_slide2_desc" translation_description="Description for the second slide of the Warm Welcome">
     在自動模式下指向手機查看周圍景象，或點擊切換至手動模式並透過滑動探索。在手動模式下雙點擊可重設地平線。Auto Mode, or tap to switch to Manual and explore by swiping. Double-tap in Manual to reset your horizon.
+    Auto Mode, or tap to switch to Manual and explore by swiping. Double-tap in Manual to reset your horizon.
     <b>Auto Mode</b>, or tap to switch to <b>Manual</b> and explore by swiping. Double-tap in Manual to reset your horizon.</string>
     <string name="warm_welcome_slide2_info_desc" translation_description="Description about info cards on the second slide">在手動模式中點擊任何天體，即可顯示包含有趣事實和天文細節的資訊卡。</string>
     <string name="warm_welcome_slide3_title" translation_description="Title for the third slide of the Warm Welcome">感應器與校準</string>
     <string name="warm_welcome_slide3_desc" translation_description="Description for the third slide of the Warm Welcome">Sky Map 使用您手機的感測器來與星星對齊。</string>
-    <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message when sensors are missing">您的裝置似乎缺少自動追蹤所需的感應器。別擔心——您仍然可以在手動模式下探索整個宇宙！Manual Mode!<b>Manual Mode</b>!</string>
-    <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration text on slide 3">為了保持準確性，請不時以圖形 8 的方式快速揮動您的手機。figure-8 wave every once in a while.<b>figure-8</b> wave every once in a while.</string>
+    <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message when sensors are missing">您的裝置似乎缺少自動追蹤所需的感應器。別擔心——您仍然可以在手動模式下探索整個宇宙！Manual Mode!Manual Mode!<b>Manual Mode</b>!</string>
+    <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration text on slide 3">為了保持準確性，請不時以8字形揮動您的手機。</string>
 
     <string name="tutorial_planets" translation_description="Tutorial annotation for planets layer">行星</string>
     <string name="tutorial_meteors" translation_description="Tutorial annotation for meteors layer">流星</string>

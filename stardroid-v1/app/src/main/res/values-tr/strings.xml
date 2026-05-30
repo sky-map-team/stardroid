@@ -269,10 +269,12 @@ Sabit yönsel hatası olan telefonlar için manuel pusula ofseti de dahil olmak 
     <string name="warm_welcome_slide1_desc" translation_description="Description for the first slide of the Warm Welcome">
     Yıldızları, takımyıldızları, gezegenleri ve daha fazlasını filtrelemek için sol taraftaki katmanları kullanın. Zaman içinde seyahat etmek için Girdap\'a veya gece moduna geçmek için Göz\'e dokunun.
     Vortex to travel through time, or the Eye for night mode.
+    Vortex to travel through time, or the Eye for night mode.
     <b>Vortex</b> to travel through time, or the <b>Eye</b> for night mode.</string>
     <string name="warm_welcome_slide2_title" translation_description="Title for the second slide of the Warm Welcome">Gökyüzünde Gezinin</string>
     <string name="warm_welcome_slide2_desc" translation_description="Description for the second slide of the Warm Welcome">
     Otomatik Modda etrafı görmek için telefonunuzu yönlendirin veya Manuel moda geçmek için dokunun ve kaydırarak keşfedin. Manuel modda ufkunuzu sıfırlamak için çift dokunun.
+    Auto Mode, or tap to switch to Manual and explore by swiping. Double-tap in Manual to reset your horizon.
     Auto Mode, or tap to switch to Manual and explore by swiping. Double-tap in Manual to reset your horizon.
     <b>Auto Mode</b>, or tap to switch to <b>Manual</b> and explore by swiping. Double-tap in Manual to reset your horizon.</string>
     <string name="warm_welcome_slide2_info_desc" translation_description="Description about info cards on the second slide">
@@ -283,11 +285,10 @@ Sabit yönsel hatası olan telefonlar için manuel pusula ofseti de dahil olmak 
     <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message when sensors are missing">
     Cihazınız otomatik izleme için gerekli sensörlere sahip olmadığı görülüyor. Endişelenmeyin—Manual Mod\'da tüm evreni keşfetmeye devam edebilirsiniz!
     Manual Mode!
+    Manual Mode!
     <b>Manual Mode</b>!</string>
     <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration text on slide 3">
-    Doğruluğu korumak için telefonunuzu ara sıra hızlı bir şekilde sekiz şeklinde hareket ettirin.
-    figure-8 wave every once in a while.
-    <b>figure-8</b> wave every once in a while.</string>
+    Doğruluğu sağlamak için telefonunuzu ara sıra hızlı bir şekilde sekiz şeklinde hareket ettirin.</string>
 
     <string name="tutorial_planets" translation_description="Tutorial annotation for planets layer">Gezegenler</string>
     <string name="tutorial_meteors" translation_description="Tutorial annotation for meteors layer">Meteorlar</string>

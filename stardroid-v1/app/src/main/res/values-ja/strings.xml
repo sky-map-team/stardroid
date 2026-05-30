@@ -266,16 +266,18 @@
     <string name="warm_welcome_slide1_title" translation_description="Title for the first slide of the Warm Welcome">宇宙を探索する</string>
     <string name="warm_welcome_slide1_desc" translation_description="Description for the first slide of the Warm Welcome">
     左側のレイヤーを使用して、星、星座、惑星などをフィルタリングできます。ボルテックスをタップして時間を移動するか、アイをタップしてナイトモードにしてください。Vortex to travel through time, or the Eye for night mode.
+    Vortex to travel through time, or the Eye for night mode.
     <b>Vortex</b> to travel through time, or the <b>Eye</b> for night mode.</string>
     <string name="warm_welcome_slide2_title" translation_description="Title for the second slide of the Warm Welcome">空をナビゲートする</string>
     <string name="warm_welcome_slide2_desc" translation_description="Description for the second slide of the Warm Welcome">
     オートモードで電話を向けて周りを見るか、タップしてマニュアルに切り替えてスワイプで探索します。マニュアルでダブルタップすると地平線がリセットされます。Auto Mode, or tap to switch to Manual and explore by swiping. Double-tap in Manual to reset your horizon.
+    Auto Mode, or tap to switch to Manual and explore by swiping. Double-tap in Manual to reset your horizon.
     <b>Auto Mode</b>, or tap to switch to <b>Manual</b> and explore by swiping. Double-tap in Manual to reset your horizon.</string>
     <string name="warm_welcome_slide2_info_desc" translation_description="Description about info cards on the second slide">マニュアルモードで任意のオブジェクトをタップすると、楽しい事実と天体の詳細を含む情報カードが表示されます。</string>
     <string name="warm_welcome_slide3_title" translation_description="Title for the third slide of the Warm Welcome">センサーとキャリブレーション</string>
     <string name="warm_welcome_slide3_desc" translation_description="Description for the third slide of the Warm Welcome">Sky Mapはお使いのスマートフォンのセンサーを使って星と位置を合わせます。</string>
-    <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message when sensors are missing">お使いのデバイスに自動追跡に必要なセンサーがないようです。ご心配なく—マニュアルモードで宇宙全体を探索できます！Manual Mode!<b>Manual Mode</b>!</string>
-    <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration text on slide 3">精度を保つため、スマートフォンを時々8の字に振ってください。figure-8 wave every once in a while.<b>figure-8</b> wave every once in a while.</string>
+    <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message when sensors are missing">お使いのデバイスに自動追跡に必要なセンサーがないようです。ご心配なく—マニュアルモードで宇宙全体を探索できます！Manual Mode!Manual Mode!<b>Manual Mode</b>!</string>
+    <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration text on slide 3">精度を保つため、時々スマートフォンを8の字に振ってください。</string>
 
     <string name="tutorial_planets" translation_description="Tutorial annotation for planets layer">惑星</string>
     <string name="tutorial_meteors" translation_description="Tutorial annotation for meteors layer">流星</string>

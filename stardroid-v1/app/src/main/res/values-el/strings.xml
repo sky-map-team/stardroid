@@ -277,10 +277,12 @@
     <string name="warm_welcome_slide1_desc" translation_description="Description for the first slide of the Warm Welcome">
     Χρησιμοποιήστε τα επίπεδα στα αριστερά για να φιλτράρετε αστέρια, αστερισμούς, πλανήτες και πολλά άλλα. Πατήστε το Vortex για να ταξιδέψετε στο χρόνο, ή το Eye για τη λειτουργία νύχτας.
     Vortex to travel through time, or the Eye for night mode.
+    Vortex to travel through time, or the Eye for night mode.
     <b>Vortex</b> to travel through time, or the <b>Eye</b> for night mode.</string>
     <string name="warm_welcome_slide2_title" translation_description="Title for the second slide of the Warm Welcome">Πλοηγηθείτε στον Ουράνιο Θόλο</string>
     <string name="warm_welcome_slide2_desc" translation_description="Description for the second slide of the Warm Welcome">
     Κατευθύνετε το τηλέφωνό σας για να κοιτάξετε γύρω στη λειτουργία Auto, ή πατήστε για να μεταβείτε στη λειτουργία Manual και εξερευνήστε σύροντας. Διπλό πάτημα στη λειτουργία Manual για να επαναφέρετε τον ορίζοντά σας.
+    Auto Mode, or tap to switch to Manual and explore by swiping. Double-tap in Manual to reset your horizon.
     Auto Mode, or tap to switch to Manual and explore by swiping. Double-tap in Manual to reset your horizon.
     <b>Auto Mode</b>, or tap to switch to <b>Manual</b> and explore by swiping. Double-tap in Manual to reset your horizon.</string>
     <string name="warm_welcome_slide2_info_desc" translation_description="Description about info cards on the second slide">
@@ -293,11 +295,10 @@
     <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message when sensors are missing">
     Η συσκευή σας φαίνεται να στερείται των απαιτούμενων αισθητήρων για αυτόματη παρακολούθηση. Μην ανησυχείτε—μπορείτε ακόμα να εξερευνήσετε ολόκληρο το σύμπαν σε Χειροκίνητη Λειτουργία!
     Manual Mode!
+    Manual Mode!
     <b>Manual Mode</b>!</string>
     <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration text on slide 3">
-    Για να διατηρήσετε την ακρίβεια, κάντε στο τηλέφωνό σας μια γρήγορη κίνηση σχήματος 8 κάθε τόσο.
-    figure-8 wave every once in a while.
-    <b>figure-8</b> wave every once in a while.</string>
+    Για να διατηρήσετε την ακρίβεια, κάντε στο τηλέφωνό σας ένα γρήγορο κύμα σχήματος 8 κάθε τόσο καιρό.</string>
 
     <string name="tutorial_planets" translation_description="Tutorial annotation for planets layer">Πλανήτες</string>
     <string name="tutorial_meteors" translation_description="Tutorial annotation for meteors layer">Μετέωρα</string>

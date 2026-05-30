@@ -275,10 +275,12 @@ Pozrite si <i>Riešenie problémov</i> v <i>Pomocník</i> pre ďalšie kroky, vr
     <string name="warm_welcome_slide1_desc" translation_description="Description for the first slide of the Warm Welcome">
     Pomocou vrstiev na ľavej strane môžete filtrovať hviezdy, súhvezdia, planéty a ďalšie objekty. Klepnite na Vortex na cestovanie v čase alebo na Oko pre nočný režim.
     Vortex to travel through time, or the Eye for night mode.
+    Vortex to travel through time, or the Eye for night mode.
     <b>Vortex</b> to travel through time, or the <b>Eye</b> for night mode.</string>
     <string name="warm_welcome_slide2_title" translation_description="Title for the second slide of the Warm Welcome">Navigujte po oblohe</string>
     <string name="warm_welcome_slide2_desc" translation_description="Description for the second slide of the Warm Welcome">
     Nasmerujte telefón na oblohu v režime Auto, alebo klepnite na prepnutie do režimu Manuálny a preskúmavajte pohybom prsta. Dvojitým klepnutím v režime Manuálny obnovíte horizont.
+    Auto Mode, or tap to switch to Manual and explore by swiping. Double-tap in Manual to reset your horizon.
     Auto Mode, or tap to switch to Manual and explore by swiping. Double-tap in Manual to reset your horizon.
     <b>Auto Mode</b>, or tap to switch to <b>Manual</b> and explore by swiping. Double-tap in Manual to reset your horizon.</string>
     <string name="warm_welcome_slide2_info_desc" translation_description="Description about info cards on the second slide">
@@ -289,10 +291,9 @@ Pozrite si <i>Riešenie problémov</i> v <i>Pomocník</i> pre ďalšie kroky, vr
     <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message when sensors are missing">
     Zdá sa, že vášmu zariadeniu chýbajú potrebné senzory potrebné na automatické sledovanie. Nebojte sa – stále môžete preskúmať celý vesmír v režime Manuálny!
     Manual Mode!
+    Manual Mode!
     <b>Manual Mode</b>!</string>
-    <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration text on slide 3">
-    Aby ste zachovali presnosť, občas rýchlo vlnite telefónom v tvare osmičky.figure-8 wave every once in a while.
-    <b>figure-8</b> wave every once in a while.</string>
+    <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration text on slide 3">Aby ste zachovali presnosť, občas pohybujte telefónom v tvare osmičky.</string>
 
     <string name="tutorial_planets" translation_description="Tutorial annotation for planets layer">Planéty</string>
     <string name="tutorial_meteors" translation_description="Tutorial annotation for meteors layer">Meteory</string>
