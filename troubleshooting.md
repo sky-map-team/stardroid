@@ -18,7 +18,7 @@ map will point the wrong way — and that is a phone hardware issue, not a Sky M
 **"I calibrated it but it's still wrong."** This is the most common misunderstanding. Calibration
 and accuracy are two different things:
 
-- **Calibration** (the figure-8 gesture) asks your phone's hardware to normalise its sensor
+- **Calibration** (the figure-8 gesture) asks your phone's hardware to normalize its sensor
   internally. It removes distortions caused by the phone's own components. Sky Map has no control
   over this process — it is handled entirely by the phone.
 - **Accuracy** is whether that normalised sensor is actually pointing in the right direction. A
