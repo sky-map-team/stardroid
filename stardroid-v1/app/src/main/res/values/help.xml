@@ -134,7 +134,7 @@
 &lt;ul&gt;
 &lt;li&gt;A gyroscope — this will smooth out the motion and make it less jerky&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p class="callout"&gt;Phone compasses are notoriously unreliable. If the sky map looks wrong, it is almost always a hardware issue with your phone\'s compass — not a bug in Sky Map. Sky Map reads exactly what your phone\'s sensor reports; it cannot override a bad or biased reading. See Troubleshooting below.&lt;/p&gt;
+&lt;p class="callout"&gt;Phone compasses are notoriously unreliable. If the sky map looks wrong, it is almost always a hardware issue with your phone\'s compass — not a bug in Sky Map. Sky Map reads exactly what your phone\'s sensor reports; it has no way to automatically correct a bad or biased reading, though a manual offset is available in Settings for phones with a consistent error. See Troubleshooting below.&lt;/p&gt;
 &lt;h3&gt;How do I know which sensors my phone has?&lt;/h3&gt;
 &lt;p&gt;Open Sky Map\'s Diagnostics page — any sensors your phone doesn\'t have will show up as \"--,--,--\".&lt;/p&gt;
 &lt;h3&gt;What if my device is missing required sensors?&lt;/h3&gt;
