@@ -43,14 +43,19 @@ The same filters apply: `startDate`, `endDate`, `searchText`, `language`, `unans
 
 ## Step 2 — Classify each review
 
-For each review, classify the issue before drafting:
+For each review, classify the issue before drafting. Use the most specific matching class —
+the sub-classes below have different response framing.
 
 | Class | Signals |
 |---|---|
-| **compass** | "wrong direction", "points wrong way", "inaccurate", "off by X degrees", "compass", "calibration", "calibrate" |
+| **compass-inaccurate** | "wrong direction", "points wrong way", "inaccurate", "off by X degrees", "compass" |
+| **compass-calibrated-still-wrong** | "I calibrated it but it's still wrong/inaccurate", "figure-8 doesn't help", "calibrated 50 times" |
+| **compass-broke-after-update** | "worked before the update", "broke after update", "used to work fine", "last update ruined it" |
+| **map-frozen** | "doesn't move", "stuck", "frozen", "won't track" |
 | **jitter** | "jittery", "shaky", "jumpy", "wobbles", "stutters", "jerky" |
 | **location** | "wrong location", "wrong city", "Polaris near horizon", "latitude", "permission" |
 | **time/timezone** | "wrong time", "time zone", "off by hours", "clock" |
+| **very-negative** | 1–2 stars with no specific technical complaint, "useless", "garbage" |
 | **positive** | 4–5 stars with no complaint |
 | **other** | anything else |
 
@@ -58,10 +63,13 @@ For each review, classify the issue before drafting:
 
 ## Step 3 — Draft the reply
 
-Read `@../troubleshooting.md` before drafting any complaint reply. You only need to read this if there are complaints or issues - it's not needed to respond to purely positive reviews.
-Base all advice strictly on
-what that document says — **do not invent steps, settings, or explanations not found there**. DO NOT SPECULATE that changes in Android APIs or updates to Sky Map might have been the cause. If in doubt, ask me. Replies
-need to be limited to 350 characters.
+Read `@../troubleshooting-llm.md` before drafting any complaint reply — it contains response
+framing, ordered steps, and phrases to avoid for each complaint class. Also read
+`@../troubleshooting.md` for the full technical detail. You only need to read these if there are
+complaints or issues — not needed for purely positive reviews.
+Base all advice strictly on what those documents say — **do not invent steps, settings, or
+explanations not found there**. DO NOT SPECULATE that changes in Android APIs or updates to Sky Map
+might have been the cause. If in doubt, ask me. Replies need to be limited to 350 characters.
 
 ### Complaint replies
 
