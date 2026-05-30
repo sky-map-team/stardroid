@@ -85,7 +85,7 @@ translation.  This was done by Claude.
   ### Short-string verdict
 
   | Model | Strengths | Weaknesses | PR |
-  |---|---|---|
+  |---|---|---|---|
   | **Haiku** | Faithful in nb/sv; informal German consistent with app | Welsh wrong word; Dutch gender wrong; Slovenian grammar wrong; Arabic wrong | https://github.com/sky-map-team/stardroid/pull/900 |
   | **Sonnet** | Fixes all Haiku grammar errors; best Persian | "Calibration" regression in nb/sv — contradicts PR intent | https://github.com/sky-map-team/stardroid/pull/898 |
   | **Gemini** | Fixes all Haiku grammar errors; best Japanese, Greek, Arabic, Chinese; faithful in nb/sv | Formal "Sie" in German; slightly awkward Welsh word order | https://github.com/sky-map-team/stardroid/pull/899 |
