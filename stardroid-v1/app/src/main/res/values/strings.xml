@@ -223,18 +223,21 @@
     <string name="menu_calibrate" translation_description="Menu item label to open the compass calibration screen">Calibrate</string>
     <string name="compass_calibration_activity_heading_compass" translation_description="Static label in the compass calibration screen placed inline to the left of the live compass accuracy value (e.g. displayed as \'Compass - Accuracy: High\')">Compass -</string>
     <string name="compass_calibration_activity_do_not_show_this_again" translation_description="Checkbox label in the compass calibration dialog to suppress future automatic appearances">Do not show this again</string>
-    <string name="compass_calibration_activity_warning" translation_description="Heading/reason text shown in the compass calibration dialog when it opens automatically due to low accuracy">Hardware Calibration Required</string>
-    <string name="compass_calibration_activity_user_heading" translation_description="Heading shown in the compass calibration dialog when the user opens it manually from the menu">Improve Your Alignment</string>
+    <string name="compass_calibration_activity_warning" translation_description="Heading/reason text shown in the compass calibration dialog when it opens automatically due to low accuracy">Your Phone\'s Compass Needs Attention</string>
+    <string name="compass_calibration_activity_user_heading" translation_description="Heading shown in the compass calibration dialog when the user opens it manually from the menu">Your Phone\'s Compass</string>
     <string name="compass_calib_what_to_do"
         translation_description="Information for the user on how to calibrate the compass when the dialog auto-opens. Placeholder is the video URL"><![CDATA[
-Sky Map relies on your phone\'s built-in compass sensor. If the accuracy shown above is low, the sensor needs to be \"reset\" by moving the phone in a figure-8 motion: %s.<br/><br/>
-<b>Important:</b> Calibration is a hardware process handled by your device. While it improves the sensor\'s reliability, external magnetic interference can still cause a \"bias\" or slight drift. This is a physical limitation of mobile compasses and not an error within the app. See <i>Troubleshooting</i> in <i>Help</i> for other things to try.
+Your phone\'s compass sensor is reporting low accuracy. The figure-8 motion (%s) prompts your phone to recalibrate its hardware sensor — Sky Map has no control over this process.<br/><br/>
+<b>Calibrated does not mean accurate.</b> The figure-8 gesture helps the sensor normalise itself internally, but it cannot remove interference from nearby metal objects, car dashboards, or magnetic phone cases. If the map is still off after calibrating, those external sources are the most likely cause — not Sky Map.<br/><br/>
+Move to an open area away from metal and try again. See <i>Troubleshooting</i> in <i>Help</i> for more steps.
     ]]></string>
     <string name="compass_calib_what_to_do_user"
         translation_description="Information for the user on how to calibrate the compass when they invoke the calibration dialog. Placeholder is the video URL"><![CDATA[
-Your phone reports its compass accuracy as shown above. To improve this, please perform a figure-8 motion with your device (%s).<br/><br/>
-<b>Note on Accuracy:</b> Calibration is a hardware-level requirement of your phone, not a Sky Map setting. Even when calibrated, local magnetic fields (like car dashboards or magnets) may cause a slight bias in direction. See <i>Troubleshooting</i> in <i>Help</i> for other things to try.
+Your phone is reporting its compass accuracy as shown above. The figure-8 motion (%s) prompts your phone\'s hardware to recalibrate its compass sensor.<br/><br/>
+<b>Important distinction:</b> calibration helps the sensor normalise itself internally. A calibrated compass is not necessarily an accurate one — local magnetic interference (metal objects, car dashboards, magnetic phone cases) can still cause the map to point the wrong way. Sky Map reads exactly what your phone\'s sensor reports; it has no way to correct for your environment.<br/><br/>
+See <i>Troubleshooting</i> in <i>Help</i> for other steps, including the manual compass offset for phones with a consistent directional error.
     ]]></string>
+    <string name="compass_low_accuracy_toast" translation_description="Brief toast shown when compass accuracy is low and the user has disabled the calibration dialog">Your phone\'s compass is reporting low accuracy</string>
     <string name="sensor_reverse_preference_title" translation_description="Preference title for reversing the magnetic Z-axis sensor reading, a fix for certain phones with incorrectly implemented sensors">Reverse Magnetic Z</string>
     <string name="sensor_reverse_preference_summary" translation_description="Summary for the Reverse Magnetic Z preference">Fix for phones with incorrectly implemented sensors - requires restart</string>
     <string name="whats_new_dialog_title" translation_description="Title of the dialog shown on first launch after an update, listing new features">What\'s new</string>

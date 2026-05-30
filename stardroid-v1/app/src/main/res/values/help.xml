@@ -134,7 +134,7 @@
 &lt;ul&gt;
 &lt;li&gt;A gyroscope — this will smooth out the motion and make it less jerky&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p class="callout"&gt;Phone compasses are notoriously troublesome. If Sky Map is not showing the sky accurately it\'s almost always a hardware issue with the compass, not an issue with Sky Map. See the troubleshooting section for some things that might help.&lt;/p&gt;
+&lt;p class="callout"&gt;Phone compasses are notoriously unreliable. If the sky map looks wrong, it is almost always a hardware issue with your phone\'s compass — not a bug in Sky Map. Sky Map reads exactly what your phone\'s sensor reports; it cannot override a bad or biased reading. See Troubleshooting below.&lt;/p&gt;
 &lt;h3&gt;How do I know which sensors my phone has?&lt;/h3&gt;
 &lt;p&gt;Open Sky Map\'s Diagnostics page — any sensors your phone doesn\'t have will show up as \"--,--,--\".&lt;/p&gt;
 &lt;h3&gt;What if my device is missing required sensors?&lt;/h3&gt;
@@ -150,7 +150,7 @@
 &lt;h3&gt;The map is pointing the wrong way or is inaccurate&lt;/h3&gt;
 &lt;p&gt;Sky Map needs three things to show the correct sky: the direction your phone is facing, your location, and the current time. If the map looks wrong, one of these is likely off.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;b&gt;Compass:&lt;/b&gt; The most common cause — a hardware issue, not a Sky Map bug. Try calibrating (figure-8 gesture), move away from metal objects, and toggle &lt;b&gt;Magnetic Correction&lt;/b&gt; in &lt;b&gt;Settings → Location&lt;/b&gt;. A manual compass offset is available under &lt;b&gt;Settings → Sensor Settings (Experts)&lt;/b&gt; for compasses with a consistent error.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Compass (most common cause):&lt;/b&gt; This is a hardware issue with your phone — not a Sky Map bug. The figure-8 calibration gesture asks your phone to reset its compass sensor internally, but &lt;i&gt;a calibrated compass is not necessarily an accurate one&lt;/i&gt;. If you\'re near a metal object, car dashboard, or magnetic phone case the map can still be off even after calibrating. Move to an open area, repeat the figure-8 gesture, then toggle &lt;b&gt;Magnetic Correction&lt;/b&gt; in &lt;b&gt;Settings → Location&lt;/b&gt;. If your phone has a consistent directional error, use the manual offset under &lt;b&gt;Settings → Sensor Settings (Experts)&lt;/b&gt;.&lt;/li&gt;
 &lt;li&gt;&lt;b&gt;Location:&lt;/b&gt; Grant location permission via &lt;b&gt;App Settings → Permissions&lt;/b&gt;. Check the Diagnostics page to confirm your coordinates. A telltale symptom of missing location is Polaris appearing near the horizon.&lt;/li&gt;
 &lt;li&gt;&lt;b&gt;Time:&lt;/b&gt; Less common, but an incorrect time zone shifts the whole sky. Check the Diagnostics page to confirm your device\'s time and time zone are correct.&lt;/li&gt;
 &lt;/ul&gt;

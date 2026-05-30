@@ -8,6 +8,7 @@ import android.hardware.SensorEvent
 import android.hardware.SensorEventListener
 import android.hardware.SensorManager
 import android.util.Log
+import com.google.android.stardroid.R
 import com.google.android.stardroid.activities.CompassCalibrationActivity
 import com.google.android.stardroid.base.TimeConstants
 import com.google.android.stardroid.util.MiscUtil.getTag
@@ -83,7 +84,7 @@ class SensorAccuracyMonitor @Inject internal constructor(
     )
     if (dontShowDialog) {
       analytics.trackEvent(AnalyticsInterface.CALIBRATION_TOAST_SHOWN_EVENT, null)
-      toaster.toastLong("Inaccurate compass - please calibrate")
+      toaster.toastLong(context.getString(R.string.compass_low_accuracy_toast))
     } else {
       analytics.trackEvent(AnalyticsInterface.CALIBRATION_AUTO_TRIGGERED_EVENT, null)
       val intent = Intent(context, CompassCalibrationActivity::class.java)
