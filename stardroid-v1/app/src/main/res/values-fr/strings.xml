@@ -275,12 +275,12 @@
     <string name="warm_welcome_title" translation_description="Title of the Warm Welcome screen">Bienvenue dans Sky Map</string>
     <string name="warm_welcome_slide1_title" translation_description="Title for the first slide of the Warm Welcome">Explorez le cosmos</string>
     <string name="warm_welcome_slide1_desc" translation_description="Description for the first slide of the Warm Welcome">
-    Utilisez les couches sur la gauche pour filtrer les étoiles, les constellations, les planètes et bien d\'autres. Appuyez sur le Vortex pour voyager dans le temps, ou sur l\'Œil pour le mode nuit.
-    <b>Vortex</b> to travel through time, or the <b>Eye</b> for night mode.</string>
+    Utilisez les couches à gauche pour filtrer les étoiles, les constellations, les planètes et bien d\'autres. Appuyez sur le Vortex pour voyager dans le temps, ou sur l\'Œil pour le mode nuit.
+    </string>
     <string name="warm_welcome_slide2_title" translation_description="Title for the second slide of the Warm Welcome">Naviguez dans le ciel</string>
     <string name="warm_welcome_slide2_desc" translation_description="Description for the second slide of the Warm Welcome">
-    Pointez votre téléphone pour regarder autour en mode Auto, ou appuyez pour passer en mode Manuel et explorez en balayant. Double-appuyez en mode Manuel pour réinitialiser votre horizon.
-    <b>Auto Mode</b>, or tap to switch to <b>Manual</b> and explore by swiping. Double-tap in Manual to reset your horizon.</string>
+    Pointez votre téléphone pour regarder autour en Mode Auto, ou appuyez pour passer en Mode Manuel et explorez en balayant. Double-appuyez en Mode Manuel pour réinitialiser votre horizon.
+    </string>
     <string name="warm_welcome_slide2_info_desc" translation_description="Description about info cards on the second slide">
     Appuyez sur n\'importe quel objet en mode manuel pour afficher les fiches d\'information avec des faits amusants et des détails célestes.
     </string>
@@ -289,11 +289,12 @@
     Sky Map utilise les capteurs de votre téléphone pour s\'aligner avec les étoiles.
     </string>
     <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message when sensors are missing">
-    Votre appareil semble dépourvu des capteurs nécessaires pour le suivi automatique. Ne vous inquiétez pas—vous pouvez toujours explorer l\'univers entier en Mode Manuel!
-    <b>Manual Mode</b>!</string>
+    Votre appareil semble ne pas disposer des capteurs nécessaires pour le suivi automatique. Ne vous inquiétez pas—vous pouvez toujours explorer l\'univers entier en Mode Manuel!
+    Manual Mode!
+    </string>
     <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration text on slide 3">
-    Pour maintenir la précision, faites un mouvement en huit avec votre téléphone de temps en temps.
-    <b>figure-8</b> wave every once in a while.</string>
+    Pour garder les choses précises, faites un mouvement en huit avec votre téléphone de temps en temps.
+    </string>
 
     <string name="tutorial_planets" translation_description="Tutorial annotation for planets layer">Planètes</string>
     <string name="tutorial_meteors" translation_description="Tutorial annotation for meteors layer">Météores</string>
