@@ -270,9 +270,7 @@
     <string name="warm_welcome_slide2_info_desc" translation_description="Description about info cards on the second slide">マニュアルモードで任意のオブジェクトをタップすると、楽しい事実と天体の詳細を含む情報カードが表示されます。</string>
     <string name="warm_welcome_slide3_title" translation_description="Title for the third slide of the Warm Welcome">センサーとキャリブレーション</string>
     <string name="warm_welcome_slide3_desc" translation_description="Description for the third slide of the Warm Welcome">Sky Mapはお使いのスマートフォンのセンサーを使って星と位置を合わせます。</string>
-    <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message when sensors are missing">
-    お使いのデバイスに自動追跡に必要なセンサーがないようです。ご心配なく—マニュアルモードで宇宙全体を探索できます！Manual Mode!Manual Mode!Manual Mode!
-    <b>Manual Mode</b>!</string>
+    <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message when sensors are missing">お使いのデバイスに自動追跡に必要なセンサーがないようです。ご心配なく—マニュアルモードで宇宙全体を探索できます！<b>Manual Mode</b>!</string>
     <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration text on slide 3">精度を保つため、スマートフォンを時々8の字に振ってください。<b>figure-8</b> wave every once in a while.</string>
 
     <string name="tutorial_planets" translation_description="Tutorial annotation for planets layer">惑星</string>

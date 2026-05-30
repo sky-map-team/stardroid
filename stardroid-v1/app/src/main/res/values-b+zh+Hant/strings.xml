@@ -264,7 +264,7 @@
     <string name="warm_welcome_slide2_info_desc" translation_description="Description about info cards on the second slide">在手動模式中點擊任何天體，即可顯示包含有趣事實和天文細節的資訊卡。</string>
     <string name="warm_welcome_slide3_title" translation_description="Title for the third slide of the Warm Welcome">感應器與校準</string>
     <string name="warm_welcome_slide3_desc" translation_description="Description for the third slide of the Warm Welcome">Sky Map 使用您手機的感測器來與星星對齊。</string>
-    <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message when sensors are missing">您的裝置似乎缺少自動追蹤所需的感應器。別擔心——您仍然可以在手動模式下探索整個宇宙！Manual Mode!Manual Mode!Manual Mode!<b>Manual Mode</b>!</string>
+    <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message when sensors are missing">您的裝置似乎缺少自動追蹤所需的感應器。別擔心——您仍然可以在手動模式下探索整個宇宙！<b>Manual Mode</b>!</string>
     <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration text on slide 3">為了保持準確性，請不時以圖形 8 的方式快速揮動您的手機。<b>figure-8</b> wave every once in a while.</string>
 
     <string name="tutorial_planets" translation_description="Tutorial annotation for planets layer">行星</string>
