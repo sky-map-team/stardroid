@@ -234,7 +234,7 @@ Move to an open area away from metal and try again. See <i>Troubleshooting</i> i
     <string name="compass_calib_what_to_do_user"
         translation_description="Information for the user on how to calibrate the compass when they invoke the calibration dialog. Placeholder is the video URL"><![CDATA[
 Your phone is reporting its compass accuracy as shown above. The figure-8 motion (%s) prompts your phone\'s hardware to recalibrate its compass sensor.<br/><br/>
-<b>Important distinction:</b> calibration helps the sensor normalise itself internally. A calibrated compass is not necessarily an accurate one — local magnetic interference (metal objects, car dashboards, magnetic phone cases) can still cause the map to point the wrong way. Sky Map reads exactly what your phone\'s sensor reports; it has no way to correct for your environment.<br/><br/>
+<b>Important distinction:</b> calibration helps the sensor normalize itself internally. A calibrated compass is not necessarily an accurate one — local magnetic interference (metal objects, car dashboards, magnetic phone cases) can still cause the map to point the wrong way. Sky Map reads exactly what your phone\'s sensor reports; it has no way to correct for your environment.<br/><br/>
 See <i>Troubleshooting</i> in <i>Help</i> for other steps, including the manual compass offset for phones with a consistent directional error.
     ]]></string>
     <string name="compass_low_accuracy_toast" translation_description="Brief toast shown when compass accuracy is low and the user has disabled the calibration dialog">Your phone\'s compass is reporting low accuracy</string>
