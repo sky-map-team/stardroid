@@ -1,91 +1,172 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
 <string name="help_text" translation_description="This is the help text for the app Google Sky Map. It includes placeholders where other text is inserted. Please do not change the &lt; and &gt; markup">
-    &lt;h1&gt;星空圖 Android 版&lt;/h1&gt;
-&lt;p class="version"&gt;版本 %s&lt;/p&gt;
+    &lt;h1&gt;Android版Sky Map&lt;/h1&gt;
+&lt;p class="version"&gt;版本 %1$s&lt;/p&gt;
 &lt;p class="url"&gt;&lt;a href="https://stardroid.app"&gt;https://stardroid.app&lt;/a&gt;&lt;/p&gt;
 
+%4$s
+
 &lt;h2&gt;簡介與快速入門&lt;/h2&gt;
-&lt;p&gt;「星空圖」能將您的 Android 手機轉換為觀賞夜空的窗口！只要將您的手機指向天際，即可查看該處的星空圖，讓您輕鬆觀察最明亮的星球、星座和行星，並得知它們的名字。&lt;/p&gt;
-&lt;p&gt;下次看到不知名的耀眼星星時，就使用「星空圖」吧！&lt;/p&gt;
-
-&lt;h2&gt;可見圖層&lt;/h2&gt;
-&lt;p&gt;「星空圖」會以圖層歸類各種物體，而您可以透過螢幕控制介面切換至各個圖層。系統提供的圖層包括：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;恆星&lt;/li&gt;
-&lt;li&gt;星座&lt;/li&gt;
-&lt;li&gt;梅西耶天體&lt;/li&gt;
-&lt;li&gt;行星&lt;/li&gt;
-&lt;li&gt;流星雨&lt;/li&gt;
-&lt;li&gt;赤經與赤緯網格&lt;/li&gt;
-&lt;li&gt;地平線與基本方位&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;星空圖清楚標示了最明亮的星體、最耀眼的星座以及行星。行星的圖示略大於實際觀看時的大小，地平線則以直線表示。除非您居住在一望無際、沒有任何建築物的平原上，否則「星空圖」通常會顯示地平線上原本肉眼看不到的星體。&lt;/p&gt;
-
-&lt;h2&gt;螢幕控制介面&lt;/h2&gt;
-&lt;p&gt;輕觸螢幕，螢幕控制介面即會顯示。上述各個圖層的切換選項列於螢幕一側；已啟用的圖層選項會以橘色顯示，未啟用的圖層選項則呈現白色。&lt;/p&gt;
-&lt;p&gt;螢幕底端有縮放控制介面，以及手動與自動模式的切換控制介面。&lt;/p&gt;
-
-&lt;h2&gt;導覽模式&lt;/h2&gt;
-&lt;p&gt;初次安裝「星空圖」後，程式會以「自動模式」啟動，並運用手機感應器偵測手機指向位置，進而顯示該處的星空圖。如果您切換至「手動模式」，即可利用手指拖曳星空圖，探索整個星空。您也可以轉動軌跡球或是輕壓方向鍵的左右兩側，旋轉星空圖。使用支援多點觸控功能的手機時，您還可以運用兩指旋轉星空圖或縮小和放大檢視範圍。&lt;/p&gt;
-
-&lt;h2&gt;搜尋&lt;/h2&gt;
-&lt;p&gt;「星空圖」能告訴您某顆星星的名字，還能提供您特定星體的位置。如要使用搜尋功能，只要按下手機的 &lt;Menu&gt; 鍵或直接開啟桌面的「快速搜尋框」，然後輸入您要查詢的行星、星球或星座的名字，「星空圖」即會顯示所有相符的搜尋結果。選定您要觀看的項目之後，「星空圖」就會顯示一個定位圈以及箭頭，指示您將手機指向特定方向 (您也應該轉向這個方向)，以便找出您所尋找的天體。移動手機時，如果離搜尋目標越來越近，定位圈將由藍色轉為紅色；隨著您最終進入目標天體的觀賞範圍，定位圈將轉為橘色。&lt;/p&gt;
-&lt;p&gt;請注意，如果您使用的是「手動模式」，「星空圖」會直接將星空圖移至適當位置以顯示目標天體。&lt;/p&gt;
-&lt;p&gt;如要退出「搜尋模式」，只要輕觸畫面右上角的小叉叉即可。&lt;/p&gt;
-
-&lt;h2&gt;時光旅行&lt;/h2&gt;
-&lt;p&gt;「星空圖」的「時光旅行」模式能讓您穿梭在各個時空，探索無垠的星空。您只需從主選單選取 [時光旅行]，再從 [熱門日期] 選取日期，或是透過「變更日期」及「變更時間」對話方塊自行選取其他日期時間，即可使用進行時光旅行。由於木星引力會影響星空圖的準確度，我們只能提供 1900 至 2100 年之間的星空資料。選定日期後只要按一下 [前往！]，系統即會帶您飛越時空，前往您指定的時間點。「星空圖」的「時光旅行模式」會顯示您造訪的日期，並提供「倒轉」及「快轉」控制介面，任您觀看星空的變化。按一下按鈕，就能慢慢觀看星空隨著時間的變化，如果多按幾次按鈕，變化的速度也會隨之加快。&lt;/p&gt;
-&lt;p&gt;「時光旅行」是您的解答好幫手，方便您瞭解今晚日落後的星空圖、下次觀賞水星的日期以及古希臘人建議的最佳葡萄收成日等資訊。&lt;/p&gt;
-
-&lt;h2&gt;哈伯望遠鏡圖庫&lt;/h2&gt;
-&lt;p&gt;「星空圖」包含「星空」的「哈伯望遠鏡圖庫」部分影像；您只需要從選單中選取「圖庫」項目，即可開啟「圖庫」。在「圖庫」中，您可以運用手指捲動畫面來瀏覽影像。如果您輕觸任何一個縮圖，「星空圖」將顯示完整大小的影像。如果您輕觸 [搜尋] 按鈕，「星空圖」將切換至「搜尋」模式，尋找與影像相符的天體。&lt;/p&gt;
-
-&lt;h2&gt;夜視模式&lt;/h2&gt;
-&lt;p&gt;「夜視模式」是用來保護您的夜間視力。長時間直視夜空時，選用此模式可讓眼睛較為舒適。當您選取「夜視模式」選項時，「星空圖」將以紅色顯示所有內容；再次選取同一選項即可改回以正常色彩顯示。&lt;/p&gt;
-
-&lt;h2&gt;設定您的位置&lt;/h2&gt;
-&lt;p&gt;「星空圖」必須取得您的約略位置資訊，才能顯示正確的星空圖。根據預設，系統會由您的手機網路取得這項資訊。如果您位於無訊號的地點，或已停用網路定位功能，系統將使用手機的 GPS 取得定位資訊。您也可以透過設定選單手動設定位置，方法是輸入地名或經緯度資訊 (以度為單位)。請注意，「星空圖」只有在具備資料傳輸連線的情況下，才能將地名轉換為您所在的經緯度。&lt;/p&gt;
-
-&lt;h2&gt;疑難排解與功能限制&lt;/h2&gt;
-
-&lt;h3&gt;星空圖與現時星空不符&lt;/h3&gt;
-&lt;p&gt;如果您發現星空圖顯示的資訊與實際星空不符，可能的原因如下：&lt;/p&gt;
+&lt;p&gt;舉起手機，像透過窗戶望向宇宙一樣。Sky Map利用手機的指南針、加速度計和陀螺儀來追蹤您的指向，並即時更新星圖。&lt;/p&gt;
+&lt;p class="callout"&gt;並非所有手機都能執行Sky Map！請參閱下方的硬體需求章節。&lt;/p&gt;
+&lt;p&gt;如果這是您第一次使用：&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;您的指南針是否經過校準？建議您拿起手機，然後轉動手腕將手機循著 8 字形移動，即可進行校準；您可能必須不定時重複此動作進行校準 (這是手機內建的功能，並非「星空圖」提供的功能)。&lt;/li&gt;
-&lt;li&gt;應用程式設定的位置是否正確？您的 GPS 或手機定位功能是否已啟用？&lt;/li&gt;
-&lt;li&gt;您所設定的時間與時區是否正確？「星空圖」需要計算國際標準時間，因此必須使用您的當地時間與時區資訊。如果您的裝置已插入 SIM 卡，通常不會有這類問題。&lt;/li&gt;
-&lt;li&gt;您是否啟用了地磁校正功能？某些地點的地磁北極與地理北極最高有 20 度的差距。&lt;/li&gt;
+&lt;li&gt;出現提示時允許位置存取——Sky Map需要您的大概位置，才能為您所在地繪製正確的星空&lt;/li&gt;
+&lt;li&gt;將手機朝向任意方向的天空&lt;/li&gt;
+&lt;li&gt;星圖會移動以配合您的指向&lt;/li&gt;
+&lt;li&gt;點選螢幕任意位置以顯示控制項&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h3&gt;星空圖不會移動&lt;/h3&gt;
-&lt;p&gt;您是否處於手動模式？如果您未啟用手動模式，這可能是因為您的指南針尚未經過校準。請按照上述步驟進行校準，星空圖即可隨您移動。&lt;/p&gt;
-
-&lt;h2&gt;支持開發&lt;/h2&gt;
-&lt;p&gt;Sky Map 是免費、開源且無廣告的。如果您喜歡使用它，請考慮在&lt;a href="https://github.com/sky-map-team/stardroid#support"&gt;我們的 GitHub 頁面&lt;/a&gt;上支持持續開發。&lt;/p&gt;
-
-&lt;h2&gt;工作人員&lt;/h2&gt;
-&lt;h3&gt;工程、設計、產品企劃&lt;/h3&gt;
-&lt;p&gt;Brent Bryan, Dominic Widdows, Hector Ouilhet, James Powell, John Taylor, Kevin Serafini, Lior Ron&lt;/p&gt;
-
-&lt;h3&gt;開源程式碼貢獻者&lt;/h3&gt;
-&lt;p&gt;Christopher Wilcox, PhD&lt;/p&gt;
-
-&lt;h2&gt;銘謝&lt;/h2&gt;
-&lt;p&gt;星空圖原先是由谷歌公司開發，並且在 2012 年釋出原始碼成為開源軟體。&lt;/p&gt;
-&lt;p&gt;「星空圖」之技術資料來源如下：&lt;/p&gt;
-&lt;ul class="credits"&gt;
-&lt;li&gt;Centre de Donnees astronomiques de Strasbourg (&lt;a href="https://cdsweb.u-strasbg.fr/"&gt;https://cdsweb.u-strasbg.fr/&lt;/a&gt;)&lt;/li&gt;
-&lt;li&gt;The Bright Star Catalogue, 5th Revised Ed. (Hoffleit D., Warren Jr W.H.)&lt;/li&gt;
-&lt;li&gt;HYG 資料庫，HYG v1.0 (&lt;a href="https://www.astronexus.com/"&gt;https://www.astronexus.com/&lt;/a&gt;)&lt;/li&gt;
-&lt;li&gt;History and Accurate Positions for the NGC/IC Objects (Harold G. Corwin Jr)&lt;/li&gt;
-&lt;li&gt;Revised New General Catalogue of Nonstellar Astronomical Objects (Sulentic J.W. 及 Tifft W.G.)&lt;/li&gt;
-&lt;li&gt;SFA 星圖 (&lt;a href="https://observe.phy.sfasu.edu/SFAStarCharts/SFAStarChartFAQ.html"&gt;https://observe.phy.sfasu.edu/SFAStarCharts/SFAStarChartFAQ.html&lt;/a&gt;)&lt;/li&gt;
-&lt;li&gt;太陽系天體定位係根據 USNO 提供之資料估算 (&lt;a href="https://www.usno.navy.mil/USNO/astronomical-applications"&gt;https://www.usno.navy.mil/USNO/astronomical-applications&lt;/a&gt;)&lt;/li&gt;
-&lt;li&gt;天球覆蓋範圍資料取自以下網頁：(&lt;a href="https://www2.research.att.com/~njas/coverings"&gt;https://www2.research.att.com/~njas/coverings&lt;/a&gt;)&lt;/li&gt;
-&lt;li&gt;「哈伯望遠鏡影像」係由 NASA 的「太空望遠鏡科學研究所」提供 (&lt;a href="https://hubblesite.org/"&gt;https://hubblesite.org/&lt;/a&gt;)&lt;/li&gt;
-&lt;li&gt;流星雨資料由「國際流星雨組織」提供 (&lt;a href="https://www.imo.net/data"&gt;https://www.imo.net/data&lt;/a&gt;)&lt;/li&gt;
-&lt;li&gt;M31 image by Peter Kennett (&lt;a href="https://commons.wikimedia.org/wiki/File:M31(Kennett).jpg"&gt;https://commons.wikimedia.org/wiki/File:M31(Kennett).jpg&lt;/a&gt;)&lt;/li&gt;
+&lt;h2&gt;瀏覽星空&lt;/h2&gt;
+&lt;h3&gt;自動模式&lt;/h3&gt;
+&lt;p&gt;在自動模式（預設）下，Sky Map使用手機感應器顯示手機所指方向的星空。只需移動手機，星圖便會跟著移動。&lt;/p&gt;
+&lt;h3&gt;手動模式&lt;/h3&gt;
+&lt;p&gt;點選控制項中的感應器/指南針圖示以切換至手動模式。在此模式下，您可以：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;用一根手指拖曳星圖以平移&lt;/li&gt;
+&lt;li&gt;捏合以縮放&lt;/li&gt;
+&lt;li&gt;用兩根手指旋轉以改變方向&lt;/li&gt;
+&lt;li&gt;雙擊以切換「自動水平」地平線&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;手動模式適合在不需舉起手機的情況下探索星空。&lt;/p&gt;
+
+&lt;h2&gt;可見圖層&lt;/h2&gt;
+&lt;p&gt;Sky Map將顯示內容分為多個圖層，每個圖層均可獨立開啟或關閉。點選螢幕以顯示側邊的圖層控制項——圖層開啟時呈橙色發光，關閉時則顯示暗淡。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;b&gt;恆星：&lt;/b&gt;最亮的恆星，並標示著名星名&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;星座：&lt;/b&gt;星座輪廓與名稱&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;著名深空天體：&lt;/b&gt;星系、星雲、星團及其他值得注意的天體&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;行星：&lt;/b&gt;太陽系的行星，以圖像顯示&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;流星雨：&lt;/b&gt;活躍及即將到來的流星雨輻射點&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;黃道與赤經/赤緯格線：&lt;/b&gt;黃道是太陽在天空中的周年路徑&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;地平線：&lt;/b&gt;地平線及基本方位標示（北、南、東、西）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p class="callout"&gt;&lt;b&gt;注意：&lt;/b&gt;Sky Map顯示的是幾何地平線——完全平坦且無遮擋的視野。實際上，剛好在地平線上方的天體可能仍被建築物、山丘或樹木遮擋。&lt;/p&gt;
+
+&lt;h2&gt;螢幕控制項&lt;/h2&gt;
+&lt;p&gt;點選螢幕任意位置以顯示或隱藏控制項。一側是上述的圖層切換按鈕，另一側是切換自動模式與手動模式的按鈕。&lt;/p&gt;
+&lt;p&gt;控制項會在幾秒後自動淡出，以保持視野清晰。&lt;/p&gt;
+
+&lt;h2&gt;搜尋&lt;/h2&gt;
+&lt;p&gt;點選放大鏡圖示以搜尋天空中的任何天體。您可以搜尋：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;b&gt;恆星&lt;/b&gt;——按名稱，例如「天狼星」、「參宿四」、「北極星」&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;行星&lt;/b&gt;——例如「火星」、「土星」&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;星座&lt;/b&gt;——例如「獵戶座」、「仙后座」&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;深空天體&lt;/b&gt;——例如「M31」、「仙女座星系」、「昴宿星團」&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;彗星與流星雨&lt;/b&gt;——按名稱&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;b&gt;在自動模式下：&lt;/b&gt;選取搜尋結果後，Sky Map會顯示瞄準圓圈和方向箭頭。旋轉手機跟隨箭頭——當天體進入視野時，圓圈會從藍色變為紅色，再變為橙色。點選✕退出搜尋。&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;在手動模式下：&lt;/b&gt;星圖會直接跳至以該天體為中心。&lt;/p&gt;
+
+&lt;h2&gt;時光旅行&lt;/h2&gt;
+&lt;p&gt;時光旅行讓您查看1900年至2100年間任何時刻的星空。從操作列選取旋渦圓圈的&lt;b&gt;時光旅行&lt;/b&gt;圖示。&lt;/p&gt;
+&lt;p&gt;您可以選擇預設日期（至點、日食月食、著名天文事件、歷史時刻），或輸入自訂日期和時間。點選&lt;b&gt;前往！&lt;/b&gt;即可飛越時空。&lt;/p&gt;
+&lt;p&gt;進入時光旅行模式後，螢幕上會顯示日期，播放控制項讓您穿越時間：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;點選向前或向後播放按鈕開始移動&lt;/li&gt;
+&lt;li&gt;再次點選以加速&lt;/li&gt;
+&lt;li&gt;點選停止按鈕以暫停&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;一些使用情境：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;i&gt;今晚日落後我能看到什麼？&lt;/i&gt;&lt;/li&gt;
+&lt;li&gt;&lt;i&gt;下次觀測水星的好時機是什麼時候？&lt;/i&gt;&lt;/li&gt;
+&lt;li&gt;&lt;i&gt;我出生那晚的星空是什麼樣子？&lt;/i&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;距離現在越遠的日期，精確度越低，主要是因為木星的重力影響。&lt;/p&gt;
+
+&lt;h2&gt;資訊卡&lt;/h2&gt;
+&lt;p&gt;點選星圖上任何有標示的天體，即可顯示資訊卡——一個包含照片和該天體詳細資訊的面板。資訊卡涵蓋150個以上的天體，包括恆星、行星、月球、著名深空天體和星座。&lt;/p&gt;
+&lt;p&gt;每張卡片顯示：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;天體的照片或星圖&lt;/li&gt;
+&lt;li&gt;簡短描述和趣味知識&lt;/li&gt;
+&lt;li&gt;科學資料，如距離、大小和天體類型&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;點選卡片內的圖片以全螢幕檢視。點選卡片外部或按&lt;b&gt;返回&lt;/b&gt;以關閉卡片。&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;啟用資訊卡：&lt;/b&gt;預設情況下，資訊卡僅在手動模式下顯示；請前往設定以在自動（感應器驅動）模式下啟用。&lt;/p&gt;
+
+&lt;h2&gt;圖庫&lt;/h2&gt;
+&lt;p&gt;圖庫收錄了來自哈伯太空望遠鏡及其他來源的圖片。從主選單開啟。&lt;/p&gt;
+&lt;p&gt;滾動瀏覽縮圖，點選其中一張以查看完整圖片。使用&lt;b&gt;在星空中尋找&lt;/b&gt;按鈕跳至搜尋模式，在目前星圖中定位該天體。&lt;/p&gt;
+
+&lt;h2&gt;夜視模式&lt;/h2&gt;
+&lt;p&gt;如果您在戶外進行實際觀測，夜視模式有助於保護您已適應黑暗的視力。點選操作列中眼睛形狀的&lt;b&gt;夜視&lt;/b&gt;圖示以切換。&lt;/p&gt;
+&lt;p&gt;在夜視模式下，Sky Map會：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;將顯示切換為深紅色調&lt;/li&gt;
+&lt;li&gt;大幅降低螢幕亮度&lt;/li&gt;
+&lt;li&gt;降低按鈕背光&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;再次切換以恢復正常。&lt;b&gt;設定→外觀&lt;/b&gt;下的&lt;b&gt;螢幕調暗&lt;/b&gt;選項可讓您進一步控制螢幕亮度。&lt;/p&gt;
+
+&lt;h2&gt;設定您的位置&lt;/h2&gt;
+&lt;p&gt;Sky Map需要您的大概位置才能繪製正確的星空。預設情況下，它使用裝置的定位服務（行動網路或GPS）。如果您不授予存取權限，Sky Map會將您置於(0, 0)——海洋中央的一個點！&lt;/p&gt;
+&lt;p&gt;如果無法使用位置存取，或您希望手動設定，請前往&lt;b&gt;設定→位置&lt;/b&gt;，然後：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;輸入&lt;b&gt;地名&lt;/b&gt;（需要網路連線以查詢座標），或&lt;/li&gt;
+&lt;li&gt;直接以度數輸入&lt;b&gt;緯度和經度&lt;/b&gt;（無需網路）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;如果您之前拒絕了Sky Map的位置權限，可能需要在裝置的&lt;b&gt;應用程式設定→權限&lt;/b&gt;中重新啟用。&lt;/p&gt;
+
+&lt;h2&gt;望遠鏡使用者——指針模式&lt;/h2&gt;
+&lt;p&gt;在&lt;b&gt;設定→感應器設定&lt;/b&gt;下，將&lt;b&gt;視角方向&lt;/b&gt;更改為&lt;b&gt;指針模式&lt;/b&gt;。在此模式下，Sky Map顯示手機&lt;i&gt;長邊&lt;/i&gt;所指的方向，而非螢幕朝向的方向。&lt;/p&gt;
+&lt;p&gt;這讓您可以將手機沿望遠鏡鏡筒側面安裝，使螢幕垂直於鏡筒，同時星圖仍追蹤望遠鏡的指向。&lt;/p&gt;
+
+&lt;h2&gt;實用技巧與設定&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;b&gt;診斷：&lt;/b&gt;如果發現異常，開啟溢出選單並點選&lt;b&gt;診斷&lt;/b&gt;。此頁面顯示您目前的位置、時間、感應器狀態和精確度讀數——在需要回報問題時非常有用。&lt;/li&gt;
+
+&lt;li&gt;&lt;b&gt;字型大小：&lt;/b&gt;在&lt;b&gt;設定→外觀&lt;/b&gt;下調整標示大小。&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;星圖抖動：&lt;/b&gt;在&lt;b&gt;設定→感應器設定（進階）&lt;/b&gt;下嘗試調整&lt;b&gt;感應器速度&lt;/b&gt;和&lt;b&gt;感應器阻尼&lt;/b&gt;。&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;沒有陀螺儀？&lt;/b&gt;如果您的手機沒有陀螺儀，請在感應器設定中啟用&lt;b&gt;停用陀螺儀&lt;/b&gt;以使用替代感應器模式。&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;磁偏角校正：&lt;/b&gt;Sky Map可套用磁偏角校正，使星圖與真北而非磁北對齊。在&lt;b&gt;設定→位置&lt;/b&gt;下切換此功能。在世界某些地區，差異可達20度以上。如果您的手機指南針有偏差，還可以手動進一步調整。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;硬體需求&lt;/h2&gt;
+&lt;p&gt;並非所有裝置都能完整支援Sky Map！您至少需要一部具備以下功能的手機：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;磁場感應器（即指南針）——用於判斷您面對的方向&lt;/li&gt;
+&lt;li&gt;加速度計——用於判斷您仰望天空的角度&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;理想情況下還需要：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;陀螺儀——可使動作更平滑，減少抖動&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p class="callout"&gt;手機指南針的可靠性向來不穩定。如果星圖顯示有誤，幾乎都是手機指南針的硬體問題，而非Sky Map的程式錯誤。Sky Map完全依照手機感應器的回報數值顯示；它無法自動校正錯誤或有偏差的讀數，但設定中提供了手動偏移量，適用於有固定誤差的手機。請參閱下方的疑難排解。&lt;/p&gt;
+&lt;h3&gt;如何知道我的手機有哪些感應器？&lt;/h3&gt;
+&lt;p&gt;開啟Sky Map的診斷頁面——手機缺少的感應器將顯示為「--,--,--」。&lt;/p&gt;
+&lt;h3&gt;如果我的裝置缺少必要感應器怎麼辦？&lt;/h3&gt;
+&lt;p&gt;Sky Map將退回手動模式。您仍可探索星空，但沒有感應器，任何應用程式都無法顯示您的方向。&lt;/p&gt;
+
+&lt;h2&gt;疑難排解&lt;/h2&gt;
+&lt;h3&gt;星圖不移動&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;確認您處於自動模式（而非手動模式）&lt;/li&gt;
+&lt;li&gt;查看診斷頁面，確認裝置具有指南針和加速度計&lt;/li&gt;
+&lt;li&gt;嘗試8字形校正手勢：緩慢地將手機以大而流暢的8字形揮動&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;星圖指向錯誤或不準確&lt;/h3&gt;
+&lt;p&gt;Sky Map需要三項資訊才能顯示正確的星空：手機面對的方向、您的位置和目前時間。如果星圖顯示有誤，其中一項可能出了問題。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;b&gt;指南針（最常見原因）：&lt;/b&gt;這是手機的硬體問題，而非Sky Map的程式錯誤。8字形校正手勢要求手機在內部重置指南針感應器，但&lt;i&gt;已校正的指南針不一定是準確的指南針&lt;/i&gt;。如果您靠近金屬物體、汽車儀表板或磁性手機殼，即使校正後星圖仍可能偏差。請移至開闊地帶，重複8字形手勢，然後在&lt;b&gt;設定→位置&lt;/b&gt;中切換&lt;b&gt;磁偏角校正&lt;/b&gt;。如果您的手機有固定的方向誤差，請使用&lt;b&gt;設定→感應器設定（進階）&lt;/b&gt;下的手動偏移量。&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;位置：&lt;/b&gt;透過&lt;b&gt;應用程式設定→權限&lt;/b&gt;授予位置權限。查看診斷頁面確認您的座標。位置缺失的典型症狀是北極星出現在地平線附近。&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;時間：&lt;/b&gt;較少見，但時區錯誤會使整個星空偏移。查看診斷頁面確認裝置的時間和時區是否正確。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;星圖抖動&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;在&lt;b&gt;設定→感應器設定（進階）&lt;/b&gt;下調整&lt;b&gt;感應器速度&lt;/b&gt;和&lt;b&gt;感應器阻尼&lt;/b&gt;&lt;/li&gt;
+&lt;li&gt;如果您的手機沒有陀螺儀，請在感應器設定中啟用&lt;b&gt;停用陀螺儀&lt;/b&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;如需完整的疑難排解詳情，請參閱線上&lt;a href="https://github.com/sky-map-team/stardroid/blob/master/troubleshooting.md"&gt;疑難排解&lt;/a&gt;指南。&lt;/p&gt;
+&lt;p class="callout"&gt;如果您仍遇到問題，請發送電子郵件至 skymapdevs@gmail.com——附上診斷頁面的截圖將非常有幫助。&lt;/p&gt;
+
+&lt;h1&gt;Sky Map有什麼新功能？&lt;/h1&gt;
+
+%3$s
+
+%2$s
     </string>
 </resources>
