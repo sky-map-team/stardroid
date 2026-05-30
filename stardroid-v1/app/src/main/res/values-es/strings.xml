@@ -278,14 +278,10 @@ Ver <i>Solución de problemas</i> en <i>Ayuda</i> para otros pasos, incluyendo e
     <string name="warm_welcome_slide1_title" translation_description="Title for the first slide of the Warm Welcome">Explora el cosmos</string>
     <string name="warm_welcome_slide1_desc" translation_description="Description for the first slide of the Warm Welcome">
     Usa las capas de la izquierda para filtrar estrellas, constelaciones, planetas y más. Toca el Vórtice para viajar en el tiempo, o el Ojo para el modo nocturno.
-    Vortex to travel through time, or the Eye for night mode.
-    Vortex to travel through time, or the Eye for night mode.
     <b>Vortex</b> to travel through time, or the <b>Eye</b> for night mode.</string>
     <string name="warm_welcome_slide2_title" translation_description="Title for the second slide of the Warm Welcome">Navega el cielo</string>
     <string name="warm_welcome_slide2_desc" translation_description="Description for the second slide of the Warm Welcome">
     Apunta tu teléfono para mirar alrededor en Modo Automático, o toca para cambiar a Manual y explora deslizando. Toca dos veces en Manual para restablecer tu horizonte.
-    Auto Mode, or tap to switch to Manual and explore by swiping. Double-tap in Manual to reset your horizon.
-    Auto Mode, or tap to switch to Manual and explore by swiping. Double-tap in Manual to reset your horizon.
     <b>Auto Mode</b>, or tap to switch to <b>Manual</b> and explore by swiping. Double-tap in Manual to reset your horizon.</string>
     <string name="warm_welcome_slide2_info_desc" translation_description="Description about info cards on the second slide">
     Toca cualquier objeto en Modo Manual para mostrar Tarjetas de información con datos curiosos y detalles celestiales.
@@ -296,8 +292,11 @@ Ver <i>Solución de problemas</i> en <i>Ayuda</i> para otros pasos, incluyendo e
     Parece que tu dispositivo no tiene los sensores necesarios para el seguimiento automático. ¡No te preocupes! Aún puedes explorar todo el cosmos en Modo Manual.
     Manual Mode!
     Manual Mode!
+    Manual Mode!
     <b>Manual Mode</b>!</string>
-    <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration text on slide 3">Para mantener la precisión, agita tu teléfono en forma de 8 de vez en cuando.</string>
+    <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration text on slide 3">
+    Para mantener la precisión, haz un movimiento en forma de 8 con tu teléfono de vez en cuando.
+    <b>figure-8</b> wave every once in a while.</string>
 
     <string name="tutorial_planets" translation_description="Tutorial annotation for planets layer">Planetas</string>
     <string name="tutorial_meteors" translation_description="Tutorial annotation for meteors layer">Meteoros</string>

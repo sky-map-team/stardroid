@@ -272,14 +272,10 @@ Lihat <i>Penyelesaian Masalah</i> dalam <i>Bantuan</i> untuk langkah-langkah lai
     <string name="warm_welcome_slide1_title" translation_description="Title for the first slide of the Warm Welcome">Jelajahi Kosmos</string>
     <string name="warm_welcome_slide1_desc" translation_description="Description for the first slide of the Warm Welcome">
     Gunakan lapisan di sebelah kiri untuk menapis bintang, konstelasi, planet, dan banyak lagi. Ketuk Vortex untuk melakukan perjalanan melalui waktu, atau Mata untuk mod malam.
-    Vortex to travel through time, or the Eye for night mode.
-    Vortex to travel through time, or the Eye for night mode.
     <b>Vortex</b> to travel through time, or the <b>Eye</b> for night mode.</string>
     <string name="warm_welcome_slide2_title" translation_description="Title for the second slide of the Warm Welcome">Navigasi Langit</string>
     <string name="warm_welcome_slide2_desc" translation_description="Description for the second slide of the Warm Welcome">
     Arahkan telefon anda untuk melihat sekeliling dalam Mod Auto, atau ketik untuk beralih ke Manual dan jelajahi dengan meleret. Ketik dua kali dalam Manual untuk menetapkan semula ufuk anda.
-    Auto Mode, or tap to switch to Manual and explore by swiping. Double-tap in Manual to reset your horizon.
-    Auto Mode, or tap to switch to Manual and explore by swiping. Double-tap in Manual to reset your horizon.
     <b>Auto Mode</b>, or tap to switch to <b>Manual</b> and explore by swiping. Double-tap in Manual to reset your horizon.</string>
     <string name="warm_welcome_slide2_info_desc" translation_description="Description about info cards on the second slide">
     Ketik mana-mana objek dalam Mod Manual untuk menunjukkan Kad Maklumat dengan fakta menarik dan butiran cakerawala.
@@ -292,9 +288,11 @@ Lihat <i>Penyelesaian Masalah</i> dalam <i>Bantuan</i> untuk langkah-langkah lai
     Nampaknya peranti anda tidak mempunyai sensor yang diperlukan untuk penjejakan automatik. Jangan risau—anda masih boleh meneroka seluruh kosmos dalam Mod Manual!
     Manual Mode!
     Manual Mode!
+    Manual Mode!
     <b>Manual Mode</b>!</string>
     <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration text on slide 3">
-    Untuk memastikan ketepatan, gelenggarkan telefon anda dalam gerakan angka 8 dari semasa ke semasa.</string>
+    Untuk memastikan ketepatan, gelenggarkan telefon anda dalam gerakan angka 8 dari semasa ke semasa.
+    <b>figure-8</b> wave every once in a while.</string>
 
     <string name="tutorial_planets" translation_description="Tutorial annotation for planets layer">Planet</string>
     <string name="tutorial_meteors" translation_description="Tutorial annotation for meteors layer">Meteor</string>
