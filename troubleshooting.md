@@ -11,9 +11,10 @@ are on the planet, and the current time. If the map looks wrong, one of these is
 
 ### Phone direction (the most common cause by far)
 
-Sky Map reads direction data from your phone's built-in compass sensor (magnetometer). **It has no
-ability to override or correct what the sensor reports.** If the sensor gives a wrong reading, the
-map will point the wrong way — and that is a phone hardware issue, not a Sky Map bug.
+Sky Map reads direction data from your phone's built-in compass sensor (magnetometer). If the
+sensor gives a wrong reading, the map will point the wrong way — and that is a phone hardware
+issue, not a Sky Map bug. Sky Map cannot automatically correct what the sensor reports, though a
+manual offset is available in Settings for phones with a consistent directional error.
 
 **"I calibrated it but it's still wrong."** This is the most common misunderstanding. Calibration
 and accuracy are two different things:

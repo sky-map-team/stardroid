@@ -50,8 +50,8 @@ These facts should be expressed naturally (not recited verbatim) wherever releva
 - Phone OS/firmware update resetting the sensor's calibration
 
 **Response framing:** Acknowledge frustration, then explain that Sky Map reads the phone's compass
-sensor and has no ability to override what it reports. This is a phone hardware issue. Offer the
-steps below. Do not imply Sky Map has a bug.
+sensor and cannot automatically correct what it reports. This is a phone hardware issue. Offer the
+steps below (including the manual offset for persistent cases). Do not imply Sky Map has a bug.
 
 **Steps to suggest (in this order):**
 1. Remove any magnetic phone case and test without it
@@ -175,8 +175,9 @@ Offer the email address for direct support with a Diagnostics screenshot.
 
 - Lead with empathy: "Sorry to hear Sky Map isn't working as expected for you."
 - Be clear but not dismissive when the issue is hardware: "Sky Map reads directly from your
-  phone's compass sensor and has no way to override what it reports — this means compass
-  accuracy is ultimately determined by your phone's hardware and environment."
+  phone's compass sensor and cannot automatically correct what it reports — compass accuracy
+  is ultimately determined by your phone's hardware and environment, though a manual offset
+  is available in Settings for phones with a consistent error."
 - Never be defensive or blame the user. Frame hardware limitations as facts, not excuses.
 - Keep responses concise. Offer the most relevant 2–3 steps, not all of them.
 - If steps were already tried and failed, acknowledge that and escalate to email support.
