@@ -218,11 +218,15 @@
     <string name="menu_calibrate" translation_description="Menu item label to open the compass calibration screen">ปรับเทียบ</string>
     <string name="compass_calibration_activity_heading_compass" translation_description="Static label in the compass calibration screen placed inline to the left of the live compass accuracy value (e.g. displayed as \'Compass - Accuracy: High\')">เข็มทิศ -</string>
     <string name="compass_calibration_activity_do_not_show_this_again" translation_description="Checkbox label in the compass calibration dialog to suppress future automatic appearances">อย่าแสดงอีกครั้ง</string>
-    <string name="compass_calibration_activity_warning" translation_description="Heading/reason text shown in the compass calibration dialog when it opens automatically due to low accuracy">ต้องปรับเทียบฮาร์ดแวร์</string>
-    <string name="compass_calibration_activity_user_heading" translation_description="Heading shown in the compass calibration dialog when the user opens it manually from the menu">ปรับปรุงการจัดตำแหน่งของคุณ</string>
-    <string name="compass_calib_what_to_do" translation_description="Information for the user on how to calibrate the compass when the dialog auto-opens. Placeholder is the video URL"><![CDATA[Sky Map อาศัยเซ็นเซอร์เข็มทิศในตัวของโทรศัพท์ของคุณ หากความแม่นยำที่แสดงด้านบนต่ำ เซ็นเซอร์จะต้องได้รับการ "รีเซ็ต" โดยเคลื่อนโทรศัพท์เป็นรูปเลขแปด: %s.<br/><br/><b>สำคัญ:</b> การปรับเทียบเป็นกระบวนการฮาร์ดแวร์ที่จัดการโดยอุปกรณ์ของคุณ แม้ว่าจะช่วยปรับปรุงความเชื่อถือได้ของเซ็นเซอร์ แต่การรบกวนแม่เหล็กภายนอกยังคงสามารถทำให้เกิด "อคติ" หรือการเลื่อนเล็กน้อยได้ นี่คือข้อจำกัดทางกายภาพของเข็มทิศมือถือ ไม่ใช่ข้อผิดพลาดในแอป ดู <i>การแก้ไขปัญหา</i> ใน <i>ช่วยเหลือ</i> สำหรับสิ่งอื่น ๆ ที่ต้องลอง]]></string>
-    <string name="compass_calib_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they invoke the calibration dialog. Placeholder is the video URL"><![CDATA[โทรศัพท์ของคุณรายงานความแม่นยำของเข็มทิศดังที่แสดงด้านบน เพื่อปรับปรุง โปรดทำการเคลื่อนไหวรูปเลข 8 ด้วยอุปกรณ์ของคุณ (%s)<br/><br/>
-<b>หมายเหตุเกี่ยวกับความแม่นยำ:</b> การปรับเทียบเป็นข้อกำหนดระดับฮาร์ดแวร์ของโทรศัพท์ของคุณ ไม่ใช่การตั้งค่า Sky Map แม้ว่าจะปรับเทียบแล้ว สนามแม่เหล็กในท้องถิ่น (เช่น แดชบอร์ดรถยนต์หรือแม่เหล็ก) อาจทำให้เกิดความลำเอียงเล็กน้อยในทิศทาง ดู <i>การแก้ไขปัญหา</i> ใน <i>ความช่วยเหลือ</i> สำหรับสิ่งอื่น ๆ ที่ต้องลอง]]></string>
+    <string name="compass_calibration_activity_warning" translation_description="Heading/reason text shown in the compass calibration dialog when it opens automatically due to low accuracy">เข็มทิศของโทรศัพท์ของคุณต้องการความสนใจ</string>
+    <string name="compass_calibration_activity_user_heading" translation_description="Heading shown in the compass calibration dialog when the user opens it manually from the menu">เข็มทิศของโทรศัพท์ของคุณ</string>
+    <string name="compass_calib_what_to_do" translation_description="Information for the user on how to calibrate the compass when the dialog auto-opens. Placeholder is the video URL"><![CDATA[เซ็นเซอร์เข็มทิศของโทรศัพท์ของคุณรายงานความแม่นยำต่ำ การเคลื่อนไหวรูปเลข 8 (%s) จะแจ้งให้โทรศัพท์ของคุณปรับเทียบเซ็นเซอร์ฮาร์ดแวร์ใหม่ — Sky Map ไม่มีการควบคุมกระบวนการนี้<br/><br/>
+<b>การปรับเทียบไม่ได้หมายความว่าแม่นยำ</b> ท่าทางรูปเลข 8 ช่วยให้เซ็นเซอร์ทำให้ตัวเองเป็นปกติภายในได้ แต่ไม่สามารถลบการรบกวนจากวัตถุโลหะที่อยู่ใกล้เคียง แดชบอร์ดรถยนต์ หรือเคสโทรศัพท์แบบแม่เหล็ก หากแผนที่ยังคงผิดหลังจากปรับเทียบแล้ว แหล่งภายนอกเหล่านั้นเป็นสาเหตุที่น่าจะเป็นไปได้มากที่สุด — ไม่ใช่ Sky Map<br/><br/>
+ย้ายไปยังพื้นที่เปิดโล่งห่างจากโลหะและลองอีกครั้ง ดู <i>การแก้ไขปัญหา</i> ใน <i>ความช่วยเหลือ</i> สำหรับขั้นตอนเพิ่มเติม]]></string>
+    <string name="compass_calib_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they invoke the calibration dialog. Placeholder is the video URL"><![CDATA[โทรศัพท์ของคุณกำลังรายงานความแม่นยำของเข็มทิศดังที่แสดงด้านบน การเคลื่อนไหวรูปเลขแปด (%s) จะแจ้งให้ฮาร์ดแวร์ของโทรศัพท์ของคุณปรับเทียบเซ็นเซอร์เข็มทิศใหม่<br/><br/>
+<b>ความแตกต่างที่สำคัญ:</b> การปรับเทียบช่วยให้เซ็นเซอร์ทำให้ตัวเองเป็นปกติภายในได้ เข็มทิศที่ปรับเทียบแล้วไม่จำเป็นต้องแม่นยำ — การรบกวนแม่เหล็กในท้องถิ่น (วัตถุโลหะ แดชบอร์ดรถยนต์ เคสโทรศัพท์แม่เหล็ก) อาจทำให้แผนที่ชี้ไปในทิศทางที่ผิดได้ Sky Map อ่านสิ่งที่เซ็นเซอร์ของโทรศัพท์ของคุณรายงานอย่างแน่นอน ไม่มีวิธีใดที่จะแก้ไขสภาพแวดล้อมของคุณ<br/><br/>
+ดู <i>การแก้ไขปัญหา</i> ใน <i>ความช่วยเหลือ</i> สำหรับขั้นตอนอื่น ๆ รวมถึงการชดเชยเข็มทิศด้วยตนเองสำหรับโทรศัพท์ที่มีข้อผิดพลาดทิศทางที่สม่ำเสมอ]]></string>
+    <string name="compass_low_accuracy_toast" translation_description="Brief toast shown when compass accuracy is low and the user has disabled the calibration dialog">เข็มทิศของโทรศัพท์ของคุณรายงานความแม่นยำต่ำ</string>
     <string name="sensor_reverse_preference_title" translation_description="Preference title for reversing the magnetic Z-axis sensor reading, a fix for certain phones with incorrectly implemented sensors">ย้อนกลับแกน Z แม่เหล็ก</string>
     <string name="sensor_reverse_preference_summary" translation_description="Summary for the Reverse Magnetic Z preference">การแก้ไขสำหรับโทรศัพท์ที่มีเซนเซอร์ที่ใช้งานไม่ถูกต้อง - ต้องเริ่มต้นใหม่</string>
     <string name="whats_new_dialog_title" translation_description="Title of the dialog shown on first launch after an update, listing new features">มีอะไรใหม่</string>
@@ -261,10 +265,12 @@
     <string name="warm_welcome_slide1_title" translation_description="Title for the first slide of the Warm Welcome">สำรวจจักรวาล</string>
     <string name="warm_welcome_slide1_desc" translation_description="Description for the first slide of the Warm Welcome">
     ใช้เลเยอร์ทางด้านซ้ายเพื่อกรองดาว กลุ่มดาว ดาวเคราะห์ และอื่นๆ แตะ Vortex เพื่อเดินทางผ่านเวลา หรือแตะ Eye เพื่อเปิดโหมดกลางคืน
+    Vortex to travel through time, or the Eye for night mode.
     <b>Vortex</b> to travel through time, or the <b>Eye</b> for night mode.</string>
     <string name="warm_welcome_slide2_title" translation_description="Title for the second slide of the Warm Welcome">นำทางท้องฟ้า</string>
     <string name="warm_welcome_slide2_desc" translation_description="Description for the second slide of the Warm Welcome">
     ชี้โทรศัพท์ของคุณเพื่อมองไปรอบ ๆ ในโหมดอัตโนมัติ หรือแตะเพื่อสลับไปยังโหมดแมนนวลและสำรวจโดยการปัด แตะสองครั้งในโหมดแมนนวลเพื่อรีเซ็ตขอบฟ้าของคุณ
+    Auto Mode, or tap to switch to Manual and explore by swiping. Double-tap in Manual to reset your horizon.
     <b>Auto Mode</b>, or tap to switch to <b>Manual</b> and explore by swiping. Double-tap in Manual to reset your horizon.</string>
     <string name="warm_welcome_slide2_info_desc" translation_description="Description about info cards on the second slide">
     แตะวัตถุใดๆ ในโหมดด้วยตนเองเพื่อแสดงการ์ดข้อมูลที่มีข้อเท็จจริงที่สนุกสนานและรายละเอียดท้องฟ้า
@@ -273,9 +279,11 @@
     <string name="warm_welcome_slide3_desc" translation_description="Description for the third slide of the Warm Welcome">Sky Map ใช้เซ็นเซอร์ของโทรศัพท์คุณเพื่อจัดตำแหน่งให้ตรงกับดวงดาว</string>
     <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message when sensors are missing">
     ดูเหมือนว่าอุปกรณ์ของคุณขาดเซนเซอร์ที่จำเป็นสำหรับการติดตามอัตโนมัติ อย่ากังวล—คุณยังสามารถสำรวจจักรวาลทั้งหมดในโหมดแมนนวลได้!
+    Manual Mode!
     <b>Manual Mode</b>!</string>
     <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration text on slide 3">
     เพื่อให้ความแม่นยำ ให้โทรศัพท์ของคุณเคลื่อนไหวเป็นรูปเลข 8 อย่างรวดเร็วเป็นครั้งคราว
+    figure-8 wave every once in a while.
     <b>figure-8</b> wave every once in a while.</string>
 
     <string name="tutorial_planets" translation_description="Tutorial annotation for planets layer">ดาวเคราะห์</string>

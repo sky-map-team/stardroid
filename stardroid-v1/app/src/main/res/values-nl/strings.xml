@@ -225,12 +225,15 @@
     <string name="menu_calibrate" translation_description="Menu item label to open the compass calibration screen">Kalibreren</string>
     <string name="compass_calibration_activity_heading_compass" translation_description="Static label in the compass calibration screen placed inline to the left of the live compass accuracy value (e.g. displayed as \'Compass - Accuracy: High\')">Kompas -</string>
     <string name="compass_calibration_activity_do_not_show_this_again" translation_description="Checkbox label in the compass calibration dialog to suppress future automatic appearances">Niet meer weergeven</string>
-    <string name="compass_calibration_activity_warning" translation_description="Heading/reason text shown in the compass calibration dialog when it opens automatically due to low accuracy">Hardwarekalibratie vereist</string>
-    <string name="compass_calibration_activity_user_heading" translation_description="Heading shown in the compass calibration dialog when the user opens it manually from the menu">Verbeter uw uitlijning</string>
-    <string name="compass_calib_what_to_do" translation_description="Information for the user on how to calibrate the compass when the dialog auto-opens. Placeholder is the video URL"><![CDATA[Sky Map is afhankelijk van de ingebouwde kompasensor van je telefoon. Als de hierboven weergegeven nauwkeurigheid laag is, moet de sensor "opnieuw ingesteld" worden door de telefoon in een figuur-8-beweging te bewegen: %s.<br/><br/>
-<b>Belangrijk:</b> Kalibratie is een hardwareproces dat door je apparaat wordt afgehandeld. Hoewel het de betrouwbaarheid van de sensor verbetert, kan externe magnetische interferentie nog steeds een "afwijking" of lichte drift veroorzaken. Dit is een fysieke beperking van mobiele kompassen en geen fout in de app. Zie <i>Probleemoplossing</i> in <i>Help</i> voor andere dingen om te proberen.]]></string>
-    <string name="compass_calib_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they invoke the calibration dialog. Placeholder is the video URL"><![CDATA[Uw telefoon rapporteert de nauwkeurigheid van het kompas zoals hierboven weergegeven. Verbeter dit door uw apparaat in een figuur-8-beweging te bewegen (%s).<br/><br/>
-<b>Opmerking over nauwkeurigheid:</b> Kalibratie is een hardwarevereiste van uw telefoon, niet een Sky Map-instelling. Zelfs na kalibratie kunnen lokale magnetische velden (zoals autodashboards of magneten) een lichte afwijking in richting veroorzaken. Zie <i>Probleemoplossing</i> in <i>Help</i> voor andere dingen om te proberen.]]></string>
+    <string name="compass_calibration_activity_warning" translation_description="Heading/reason text shown in the compass calibration dialog when it opens automatically due to low accuracy">De kompas van uw telefoon heeft aandacht nodig</string>
+    <string name="compass_calibration_activity_user_heading" translation_description="Heading shown in the compass calibration dialog when the user opens it manually from the menu">De kompas van uw telefoon</string>
+    <string name="compass_calib_what_to_do" translation_description="Information for the user on how to calibrate the compass when the dialog auto-opens. Placeholder is the video URL"><![CDATA[De kompasensor van je telefoon rapporteert lage nauwkeurigheid. De figuur-8-beweging (%s) vraagt je telefoon om de hardwaresensor opnieuw in te stellen — Sky Map heeft geen controle over dit proces.<br/><br/>
+<b>Gekalibreerd betekent niet nauwkeurig.</b> Het figuur-8-gebaar helpt de sensor zichzelf intern te normaliseren, maar het kan interferentie van nabijgelegen metalen objecten, autodashboards of magnetische telefoonhoesjes niet verwijderen. Als de kaart na kalibratie nog steeds afwijkend is, zijn deze externe bronnen de meest waarschijnlijke oorzaak — niet Sky Map.<br/><br/>
+Ga naar een open gebied weg van metaal en probeer het opnieuw. Zie <i>Probleemoplossing</i> in <i>Help</i> voor meer stappen.]]></string>
+    <string name="compass_calib_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they invoke the calibration dialog. Placeholder is the video URL"><![CDATA[Uw telefoon rapporteert de nauwkeurigheid van het kompas zoals hierboven weergegeven. De figuur-8-beweging (%s) vraagt de hardware van uw telefoon om de kompassensor opnieuw in te stellen.<br/><br/>
+<b>Belangrijk onderscheid:</b> kalibratie helpt de sensor zichzelf intern te normaliseren. Een gekalibreerd kompas is niet noodzakelijk nauwkeurig — lokale magnetische interferentie (metalen voorwerpen, autodashboards, magnetische telefoonhoesjes) kan er nog steeds voor zorgen dat de kaart de verkeerde richting aanwijst. Sky Map leest precies wat de sensor van uw telefoon rapporteert; het heeft geen manier om voor uw omgeving te corrigeren.<br/><br/>
+Zie <i>Probleemoplossing</i> in <i>Help</i> voor andere stappen, inclusief de handmatige kompasafwijking voor telefoons met een consistente richtingsfout.]]></string>
+    <string name="compass_low_accuracy_toast" translation_description="Brief toast shown when compass accuracy is low and the user has disabled the calibration dialog">De kompas van uw telefoon meldt lage nauwkeurigheid</string>
     <string name="sensor_reverse_preference_title" translation_description="Preference title for reversing the magnetic Z-axis sensor reading, a fix for certain phones with incorrectly implemented sensors">Magnetische Z omkeren</string>
     <string name="sensor_reverse_preference_summary" translation_description="Summary for the Reverse Magnetic Z preference">
     Oplossing voor telefoons met onjuist geïmplementeerde sensoren - vereist herstart
@@ -273,10 +276,12 @@
     <string name="warm_welcome_slide1_title" translation_description="Title for the first slide of the Warm Welcome">Verken het heelal</string>
     <string name="warm_welcome_slide1_desc" translation_description="Description for the first slide of the Warm Welcome">
     Gebruik de lagen aan de linkerkant om sterren, sterrenbeelden, planeten en meer te filteren. Tik op de Vortex om door de tijd te reizen, of op het Oog voor nachtmodus.
+    Vortex to travel through time, or the Eye for night mode.
     <b>Vortex</b> to travel through time, or the <b>Eye</b> for night mode.</string>
     <string name="warm_welcome_slide2_title" translation_description="Title for the second slide of the Warm Welcome">Navigeer door de hemel</string>
     <string name="warm_welcome_slide2_desc" translation_description="Description for the second slide of the Warm Welcome">
     Richt je telefoon om rond te kijken in de automatische modus, of tik om over te schakelen naar handmatig en verken door te vegen. Dubbeltik in handmatig om je horizon opnieuw in te stellen.
+    Auto Mode, or tap to switch to Manual and explore by swiping. Double-tap in Manual to reset your horizon.
     <b>Auto Mode</b>, or tap to switch to <b>Manual</b> and explore by swiping. Double-tap in Manual to reset your horizon.</string>
     <string name="warm_welcome_slide2_info_desc" translation_description="Description about info cards on the second slide">
     Tik in de handmatige modus op een object om informatiekaarten met interessante feiten en hemeldetails weer te geven.
@@ -285,9 +290,11 @@
     <string name="warm_welcome_slide3_desc" translation_description="Description for the third slide of the Warm Welcome">Sky Map gebruikt de sensoren van je telefoon om uit te lijnen met de sterren.</string>
     <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message when sensors are missing">
     Je apparaat lijkt de vereiste sensoren voor automatisch volgen niet te hebben. Geen zorgen—je kunt het hele universum nog steeds verkennen in Handmatige modus!
+    Manual Mode!
     <b>Manual Mode</b>!</string>
     <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration text on slide 3">
     Om alles nauwkeurig te houden, geef je telefoon af en toe een snelle figuur-8 beweging.
+    figure-8 wave every once in a while.
     <b>figure-8</b> wave every once in a while.</string>
 
     <string name="tutorial_planets" translation_description="Tutorial annotation for planets layer">Planeten</string>

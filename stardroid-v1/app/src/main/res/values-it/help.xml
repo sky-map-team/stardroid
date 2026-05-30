@@ -2,97 +2,171 @@
 <resources>
 <string name="help_text" translation_description="This is the help text for the app Google Sky Map. It includes placeholders where other text is inserted. Please do not change the &lt; and &gt; markup">
     &lt;h1&gt;Sky Map per Android&lt;/h1&gt;
-&lt;p class="version"&gt;Versione %s&lt;/p&gt;
+&lt;p class="version"&gt;Versione %1$s&lt;/p&gt;
 &lt;p class="url"&gt;&lt;a href="https://stardroid.app"&gt;https://stardroid.app&lt;/a&gt;&lt;/p&gt;
 
-&lt;h2&gt;Introduzione e guida rapida&lt;/h2&gt;
-&lt;p&gt;Sky Map trasforma il tuo cellulare Android in una finestra sul cielo notturno. Se punti il telefono in alto, verrà visualizzata una mappa delle stelle più luminose, delle costellazioni e dei pianeti in quel punto del cielo.&lt;/p&gt;
-&lt;p&gt;La prossima volta che vuoi sapere come si chiama una stella luminosa, usa Sky Map!&lt;/p&gt;
+%4$s
 
-&lt;h2&gt;Livelli visibili&lt;/h2&gt;
-&lt;p&gt;Sky Map organizza gli oggetti mostrati in livelli. Ogni livello può essere attivato con i comandi sullo schermo. I livelli sono:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Stelle&lt;/li&gt;
-&lt;li&gt;Costellazioni&lt;/li&gt;
-&lt;li&gt;Oggetti Messier&lt;/li&gt;
-&lt;li&gt;Pianeti&lt;/li&gt;
-&lt;li&gt;Griglia Ascensione retta e declinazione&lt;/li&gt;
-&lt;li&gt;Orizzonte e punti cardinali&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Le stelle più luminose e le costellazioni più visibili hanno delle etichette come i pianeti, che sono visualizzati come immagini più grandi delle dimensioni reali. L\'orizzonte è rappresentato come una linea retta. A meno che tu viva in un posto completamente pianeggiante e senza edifici, è probabile che Sky Map mostri oggetti sopra la linea dell\'orizzonte che non riesci a vedere.&lt;/p&gt;
-
-&lt;h2&gt;Comandi sullo schermo&lt;/h2&gt;
-&lt;p&gt;Tocca lo schermo per visualizzare i comandi. Su un lato puoi attivare/disattivare i livelli sopra descritti. I livelli sono arancioni se abilitati e bianchi se disabilitati.&lt;/p&gt;
-&lt;p&gt;In basso trovi i comandi dello zoom e un comando per la modalità automatica/manuale.&lt;/p&gt;
-
-&lt;h2&gt;Modalità di navigazione&lt;/h2&gt;
-&lt;p&gt;Appena installato, Sky Map è in modalità automatica e usa i sensori del telefono per mostrare una mappa del cielo nella direzione in cui punti il telefono. Passando in manuale puoi trascinare la mappa con il dito per esplorare il cielo. Muovi la trackball o il D-pad a destra e sinistra per ruotare la mappa. Sui telefoni multi-touch puoi anche ruotare la mappa con due dita e fare il gesto di un pizzicotto per ingrandire e ridurre lo zoom.&lt;/p&gt;
-
-&lt;h2&gt;Ricerca&lt;/h2&gt;
-&lt;p&gt;Sky Map ti aiuta a rispondere alla domanda \"Come si chiama quella stella lassù?\". Può anche rispondere alla domanda \"Dov\'è...?\". Accedi alla funzione di ricerca con il tasto menu del telefono o con la casella di ricerca rapida sul desktop. Digita il nome del pianeta, della stella o della costellazione da trovare e Sky Map fornirà un elenco di voci corrispondenti. Selezionane una e Sky Map mostrerà un cerchio target e una freccia che mostra come spostarti e muovere il telefono per trovare l\'oggetto. Man mano che ti avvicini al target, il cerchio passa da blu a rosso, infine diventa arancione quando l\'oggetto è nel tuo campo visivo.&lt;/p&gt;
-&lt;p&gt;NOTA: Se sei in manuale, Sky Map sposta semplicemente la mappa per mostrare l\'oggetto.&lt;/p&gt;
-&lt;p&gt;Per uscire dalla modalità di ricerca, tocca la x nell\'angolo dello schermo.&lt;/p&gt;
-
-&lt;h2&gt;Viaggio nel tempo&lt;/h2&gt;
-&lt;p&gt;La modalità Viaggio nel tempo ti permette di utilizzare Sky Map per vedere il cielo in periodi diversi dal presente. Seleziona \"Viaggio nel tempo\" dal menu principale e poi seleziona una delle Date popolari o scegli una data e un\'ora specifiche utilizzando le finestre di dialogo per cambiare data e ora. Le selezioni sono circoscritte agli anni 1900-2100 a causa di limitazioni nella precisione, causate principalmente dall\'influenza gravitazionale di Giove. Al termine, premi \"Vai!\" per viaggiare nel tempo fino alla tua destinazione. Sky Map ora è in modalità Viaggio nel tempo e visualizza la data che stai visitando, con comandi per andare avanti o indietro nel tempo da quel punto. Fai clic su questi pulsanti una volta per iniziare a viaggiare nel tempo lentamente o più volte per viaggiare sempre più velocemente.&lt;/p&gt;
-&lt;p&gt;La modalità Viaggio nel tempo può essere utilizzata per rispondere a svariate domande quali: \"Che cosa sarò in grado di vedere subito dopo il tramonto di stasera?\", \"Quando avrò buone possibilità di vedere Mercurio?\" o \"Secondo Esiodo, quando dovrei raccogliere l\'uva?\".&lt;/p&gt;
-
-&lt;h2&gt;Galleria Hubble&lt;/h2&gt;
-&lt;p&gt;Sky Map contiene un sottoinsieme della Galleria Hubble. Accedi alla Galleria selezionando la voce Galleria nel menu. Una volta aperta la Galleria, puoi sfogliare le immagini disponibili scorrendo con il dito. Se tocchi una delle miniature, Sky Map mostra l\'immagine a dimensione intera. Se tocchi il pulsante Cerca, Sky Map passerà alla modalità di ricerca per trovare l\'oggetto corrispondente all\'immagine.&lt;/p&gt;
-
-&lt;h2&gt;Modalità visione notturna&lt;/h2&gt;
-&lt;p&gt;La modalità visione notturna protegge gli occhi che si sono adattati al buio. Quando scegli l\'opzione di menu della visione notturna, Sky Map mostra la mappa in colore rosso, diminuisce la luminosità dello schermo e disattiva la retroilluminazione dei tasti. Selezionala di nuovo per tornare ai colori normali.&lt;/p&gt;
-
-&lt;h2&gt;Impostazione della località&lt;/h2&gt;
-&lt;p&gt;Sky Map necessita della tua località approssimativa per mostrare una mappa corretta. Per impostazione predefinita, la determina dalla rete mobile. Se sei fuori portata o la posizione della rete è disabilitata, utilizzerà il GPS del telefono. Puoi anche impostare la località manualmente con il menu impostazioni fornendo un nome di luogo o latitudine e longitudine (in gradi). Nota che Sky Map richiede una connessione dati per determinare latitudine e longitudine da un nome di luogo.&lt;/p&gt;
-
-&lt;h2&gt;Risoluzione dei problemi e limitazioni&lt;/h2&gt;
-
-&lt;h3&gt;La mappa è imprecisa&lt;/h3&gt;
-&lt;p&gt;Se la mappa non è precisamente allineata al cielo reale possono esserci vari motivi:&lt;/p&gt;
+&lt;h2&gt;Introduzione e Guida Rapida&lt;/h2&gt;
+&lt;p&gt;Tieni il telefono in alto e guardalo come una finestra nello spazio. Sky Map utilizza la bussola, l\'accelerometro e il giroscopio del tuo telefono per tracciare dove stai puntando e aggiornare la mappa in tempo reale.&lt;/p&gt;
+&lt;p class="callout"&gt;Non tutti i telefoni sono in grado di eseguire Sky Map! Consulta la sezione dei requisiti hardware di seguito.&lt;/p&gt;
+&lt;p&gt;Se è la tua prima volta:&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;La bussola è calibrata? Ruota il polso con il telefono in mano formando degli otto per calibrarlo. Potrebbe essere necessario ripeterlo di tanto in tanto; è una funzione del telefono, non di Sky Map.&lt;/li&gt;
-&lt;li&gt;L\'applicazione ha una correzione precisa della tua località? Il GPS o la posizione della rete sono attivi?&lt;/li&gt;
-&lt;li&gt;Ora e fuso orario sono impostati correttamente? Sky Map deve calcolare l\'Universal Time in base alla tua ora E al tuo fuso orario locali. Se il dispositivo ha una scheda SIM, in genere sono corretti.&lt;/li&gt;
-&lt;li&gt;La correzione magnetica è attiva? In alcune parti del mondo la differenza tra il Nord magnetico e il Nord vero è di 20 gradi.&lt;/li&gt;
+&lt;li&gt;Consenti l\'accesso alla posizione quando richiesto — Sky Map ha bisogno della tua posizione approssimativa per disegnare il cielo corretto per il luogo in cui ti trovi&lt;/li&gt;
+&lt;li&gt;Punta il telefono verso il cielo in qualsiasi direzione&lt;/li&gt;
+&lt;li&gt;La mappa si sposterà per corrispondere a dove stai puntando&lt;/li&gt;
+&lt;li&gt;Tocca in qualsiasi punto dello schermo per mostrare i controlli&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h3&gt;La mappa non si muove&lt;/h3&gt;
-&lt;p&gt;Sei in modalità manuale? Se non è così, forse la bussola non è calibrata. Segui i passaggi precedenti per sbloccarla.&lt;/p&gt;
-
-&lt;h2&gt;Supporta lo sviluppo&lt;/h2&gt;
-&lt;p&gt;Sky Map è gratuito, open source e senza pubblicità. Se ti piace usarlo, considera di supportare lo sviluppo continuo sulla &lt;a href="https://github.com/sky-map-team/stardroid#support"&gt;nostra pagina GitHub&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2&gt;Collaboratori&lt;/h2&gt;
-&lt;h3&gt;Engineering e design&lt;/h3&gt;
-&lt;p&gt;Brent Bryan, Dominic Widdows, Hector Ouilhet, James Powell, John Taylor e Kevin Serafini&lt;/p&gt;
-
-&lt;h3&gt;Product management&lt;/h3&gt;
-&lt;p&gt;Lior Ron&lt;/p&gt;
-
-&lt;h3&gt;Relazioni pubbliche&lt;/h3&gt;
-&lt;p&gt;Aaron Stein, Erin Gleason&lt;/p&gt;
-
-&lt;h3&gt;Marketing prodotto&lt;/h3&gt;
-&lt;p&gt;Effie Seiberg, Linda Tong&lt;/p&gt;
-
-&lt;h3&gt;Traduzioni&lt;/h3&gt;
-&lt;p&gt;Jelena Oertel&lt;/p&gt;
-
-&lt;h2&gt;Ringraziamenti&lt;/h2&gt;
-&lt;p&gt;Sky Map è stato originariamente sviluppato come \"Google Sky Map\" da Google Inc. e reso open source nel 2012.&lt;/p&gt;
-&lt;p&gt;Sky Map si basa su dati di:&lt;/p&gt;
-&lt;ul class="credits"&gt;
-&lt;li&gt;Centre de Données astronomiques de Strasbourg (&lt;a href="https://cdsweb.u-strasbg.fr/"&gt;https://cdsweb.u-strasbg.fr/&lt;/a&gt;)&lt;/li&gt;
-&lt;li&gt;The Bright Star Catalogue, 5th Revised Ed. (Hoffleit D., Warren Jr W.H.)&lt;/li&gt;
-&lt;li&gt;The HYG Database, HYG v1.0. (&lt;a href="https://www.astronexus.com/"&gt;https://www.astronexus.com/&lt;/a&gt;)&lt;/li&gt;
-&lt;li&gt;History and Accurate Positions for the NGC/IC Objects (Harold G. Corwin Jr)&lt;/li&gt;
-&lt;li&gt;Revised New General Catalogue of Nonstellar Astronomical Objects (Sulentic J.W., Tifft W.G.)&lt;/li&gt;
-&lt;li&gt;Carte stellari SFA (&lt;a href="https://observe.phy.sfasu.edu/SFAStarCharts/SFAStarChartFAQ.html"&gt;https://observe.phy.sfasu.edu/SFAStarCharts/SFAStarChartFAQ.html&lt;/a&gt;)&lt;/li&gt;
-&lt;li&gt;Le posizioni degli oggetti del sistema solare sono calcolate a partire dai dati forniti da USNO (&lt;a href="https://www.usno.navy.mil/USNO/astronomical-applications"&gt;https://www.usno.navy.mil/USNO/astronomical-applications&lt;/a&gt;)&lt;/li&gt;
-&lt;li&gt;Dati di copertura sferica ottenuti da (&lt;a href="https://www2.research.att.com/~njas/coverings"&gt;https://www2.research.att.com/~njas/coverings&lt;/a&gt;)&lt;/li&gt;
-&lt;li&gt;Immagini Hubble fornite dallo Space Telescope Science Institute della NASA (&lt;a href="https://hubblesite.org/"&gt;https://hubblesite.org/&lt;/a&gt;)&lt;/li&gt;
-&lt;li&gt;M31 image Peter Kennett (&lt;a href="https://commons.wikimedia.org/wiki/File:M31(Kennett).jpg"&gt;https://commons.wikimedia.org/wiki/File:M31(Kennett).jpg&lt;/a&gt;)&lt;/li&gt;
+&lt;h2&gt;Navigazione del Cielo&lt;/h2&gt;
+&lt;h3&gt;Modalità Automatica&lt;/h3&gt;
+&lt;p&gt;In Modalità Automatica (l\'impostazione predefinita), Sky Map utilizza i sensori del tuo telefono per mostrare ciò che si trova nella direzione verso cui stai puntando il telefono. Sposta semplicemente il telefono e la mappa lo segue.&lt;/p&gt;
+&lt;h3&gt;Modalità Manuale&lt;/h3&gt;
+&lt;p&gt;Tocca l\'icona del sensore/bussola nei controlli per passare alla Modalità Manuale. In questa modalità puoi:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Trascinare la mappa con un dito per scorrere&lt;/li&gt;
+&lt;li&gt;Pizzicare per ingrandire o rimpicciolire&lt;/li&gt;
+&lt;li&gt;Ruotare con due dita per cambiare l\'orientamento&lt;/li&gt;
+&lt;li&gt;Doppio tocco per attivare/disattivare l\'orizzonte con "livellamento automatico"&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;La modalità manuale è utile quando vuoi esplorare il cielo senza tenere il telefono in alto.&lt;/p&gt;
+
+&lt;h2&gt;Livelli Visibili&lt;/h2&gt;
+&lt;p&gt;Sky Map organizza ciò che mostra in livelli, ognuno dei quali può essere attivato o disattivato indipendentemente. Tocca lo schermo per rivelare i controlli dei livelli sul lato — si illuminano di arancione quando un livello è attivo e appaiono opachi quando sono disattivati.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;b&gt;Stelle:&lt;/b&gt; Le stelle più luminose, con etichette per quelle notevoli&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Costellazioni:&lt;/b&gt; Contorni e nomi delle costellazioni&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Oggetti del Cielo Profondo Notevoli:&lt;/b&gt; Galassie, nebulose, ammassi stellari e altri oggetti straordinari&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Pianeti:&lt;/b&gt; I pianeti del nostro sistema solare, visualizzati come immagini&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Sciami Meteorici:&lt;/b&gt; Punti radiali di sciami meteorici attivi e imminenti&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Eclittica e Griglia RA/Dec:&lt;/b&gt; L\'Eclittica è il percorso annuale del Sole attraverso il cielo&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Orizzonte:&lt;/b&gt; La linea dell\'orizzonte e le etichette dei punti cardinali (N, S, E, O)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p class="callout"&gt;&lt;b&gt;Vale la pena sapere:&lt;/b&gt; Sky Map mostra l\'orizzonte geometrico — una vista perfettamente piatta e senza ostacoli. Gli oggetti appena sopra di esso potrebbero comunque essere nascosti da edifici, colline o alberi nella pratica.&lt;/p&gt;
+
+&lt;h2&gt;Controlli Sullo Schermo&lt;/h2&gt;
+&lt;p&gt;Tocca in qualsiasi punto dello schermo per mostrare o nascondere i controlli. Da un lato troverai gli interruttori dei livelli descritti sopra. Dall\'altro lato c\'è il pulsante per passare tra le modalità Automatica e Manuale.&lt;/p&gt;
+&lt;p&gt;I controlli scompaiono automaticamente dopo alcuni secondi per mantenere la vista pulita.&lt;/p&gt;
+
+&lt;h2&gt;Ricerca&lt;/h2&gt;
+&lt;p&gt;Tocca l\'icona della lente d\'ingrandimento per cercare qualsiasi cosa nel cielo. Puoi cercare:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;b&gt;Stelle&lt;/b&gt; — per nome, ad es. "Sirio", "Betelgeuse", "Polaris"&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Pianeti&lt;/b&gt; — ad es. "Marte", "Saturno"&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Costellazioni&lt;/b&gt; — ad es. "Orione", "Cassiopea"&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Oggetti del cielo profondo&lt;/b&gt; — ad es. "M31", "Galassia di Andromeda", "Pleiadi"&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Comete e sciami meteorici&lt;/b&gt; — per nome&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;b&gt;In Modalità Automatica:&lt;/b&gt; dopo aver selezionato un risultato, Sky Map mostra un cerchio di mira e una freccia direzionale. Segui la freccia ruotando il telefono — il cerchio cambia da blu a rosso, poi arancione quando l\'oggetto è nel tuo campo visivo. Tocca la ✕ per uscire dalla ricerca.&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;In Modalità Manuale:&lt;/b&gt; la mappa semplicemente salta per centrare l\'oggetto.&lt;/p&gt;
+
+&lt;h2&gt;Viaggio nel Tempo&lt;/h2&gt;
+&lt;p&gt;Viaggio nel Tempo ti permette di vedere il cielo in qualsiasi momento dall\'anno 1900 al 2100. Seleziona l\'icona &lt;b&gt;Viaggio nel Tempo&lt;/b&gt; con i cerchi vorticosi dalla barra delle azioni.&lt;/p&gt;
+&lt;p&gt;Puoi scegliere una data preimpostata (solstizi, eclissi, eventi celesti famosi, momenti storici) o inserire la tua data e ora. Tocca &lt;b&gt;Vai!&lt;/b&gt; per volarci.&lt;/p&gt;
+&lt;p&gt;Una volta in modalità Viaggio nel Tempo, la data viene visualizzata sullo schermo e i controlli di riproduzione ti permettono di muoverti nel tempo:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Tocca i pulsanti di riproduzione avanti o indietro per iniziare a muoverti&lt;/li&gt;
+&lt;li&gt;Toccali di nuovo per andare più veloce&lt;/li&gt;
+&lt;li&gt;Tocca il pulsante di pausa per fermarti&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Alcune cose per cui puoi usarlo:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;i&gt;Cosa posso vedere poco dopo il tramonto stasera?&lt;/i&gt;&lt;/li&gt;
+&lt;li&gt;&lt;i&gt;Quando è la prossima buona occasione per avvistare Mercurio?&lt;/i&gt;&lt;/li&gt;
+&lt;li&gt;&lt;i&gt;Come appariva il cielo la notte in cui sono nato?&lt;/i&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;L\'accuratezza diminuisce per date lontane dal presente, principalmente a causa dell\'influenza gravitazionale di Giove.&lt;/p&gt;
+
+&lt;h2&gt;Schede Informative&lt;/h2&gt;
+&lt;p&gt;Tocca qualsiasi oggetto celeste etichettato sulla mappa del cielo per aprire una scheda informativa — un pannello con una foto e dettagli su quell\'oggetto. Le schede informative sono disponibili per 150+ oggetti inclusi stelle, pianeti, la Luna, oggetti del cielo profondo notevoli e costellazioni.&lt;/p&gt;
+&lt;p&gt;Ogni scheda mostra:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Una fotografia o un diagramma dell\'oggetto&lt;/li&gt;
+&lt;li&gt;Una breve descrizione e un fatto divertente&lt;/li&gt;
+&lt;li&gt;Dati scientifici come distanza, dimensione e tipo di oggetto&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Tocca l\'immagine all\'interno della scheda per visualizzarla a schermo intero. Chiudi la scheda toccando al di fuori di essa o premendo &lt;b&gt;Indietro&lt;/b&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;Abilitazione delle schede informative:&lt;/b&gt; Per impostazione predefinita appaiono solo quando sei in Modalità Manuale; vai alle impostazioni per abilitarle mentre sei in Modalità Automatica (guidata dai sensori).&lt;/p&gt;
+
+&lt;h2&gt;Galleria&lt;/h2&gt;
+&lt;p&gt;La Galleria contiene una raccolta di immagini dal Telescopio Spaziale Hubble e da altre fonti. Aprila dal menu principale.&lt;/p&gt;
+&lt;p&gt;Sfoglia le miniature scorrendo e tocca una per vedere l\'immagine completa. Usa il pulsante &lt;b&gt;Trova nel cielo&lt;/b&gt; per saltare alla modalità Ricerca e individuare quell\'oggetto nella tua mappa del cielo attuale.&lt;/p&gt;
+
+&lt;h2&gt;Modalità Visione Notturna&lt;/h2&gt;
+&lt;p&gt;Se sei fuori a fare osservazioni reali, la modalità Visione Notturna aiuta a preservare la tua vista adattata al buio. Attivala dalla barra delle azioni toccando l\'icona &lt;b&gt;Visione Notturna&lt;/b&gt; a forma di occhio.&lt;/p&gt;
+&lt;p&gt;In modalità Visione Notturna, Sky Map:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Cambia il display in tonalità di rosso profondo&lt;/li&gt;
+&lt;li&gt;Riduce significativamente la luminosità dello schermo&lt;/li&gt;
+&lt;li&gt;Riduce la retroilluminazione dei pulsanti&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Attivala di nuovo per tornare alla normalità. L\'opzione &lt;b&gt;Riduzione della Luminosità dello Schermo&lt;/b&gt; in &lt;b&gt;Impostazioni → Aspetto&lt;/b&gt; ti dà un controllo aggiuntivo su quanto scuro diventa lo schermo.&lt;/p&gt;
+
+&lt;h2&gt;Impostazione della Tua Posizione&lt;/h2&gt;
+&lt;p&gt;Sky Map ha bisogno della tua posizione approssimativa per disegnare il cielo corretto. Per impostazione predefinita utilizza i servizi di localizzazione del tuo dispositivo (rete mobile o GPS). Se non gli concedi l\'accesso, Sky Map ti posizionerà a (0, 0) — un punto nel mezzo dell\'oceano!&lt;/p&gt;
+&lt;p&gt;Se l\'accesso alla posizione non è disponibile o preferisci impostarla manualmente, vai a &lt;b&gt;Impostazioni → Posizione&lt;/b&gt; e:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Inserisci un &lt;b&gt;nome di luogo&lt;/b&gt; (richiede una connessione Internet per cercare le coordinate), oppure&lt;/li&gt;
+&lt;li&gt;Inserisci &lt;b&gt;latitudine e longitudine&lt;/b&gt; direttamente in gradi (non è necessaria Internet)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Se in precedenza hai negato il permesso di posizione a Sky Map, potrebbe essere necessario riabilitarlo in &lt;b&gt;Impostazioni App → Autorizzazioni&lt;/b&gt; del tuo dispositivo.&lt;/p&gt;
+
+&lt;h2&gt;Utenti di Telescopi — Modalità Puntatore&lt;/h2&gt;
+&lt;p&gt;In &lt;b&gt;Impostazioni → Impostazioni Sensore&lt;/b&gt;, cambia la &lt;b&gt;Direzione di Visualizzazione&lt;/b&gt; a &lt;b&gt;Modalità Puntatore&lt;/b&gt;. In questa modalità, Sky Map mostra ciò verso cui sta puntando il &lt;i&gt;bordo lungo&lt;/i&gt; del telefono, piuttosto che ciò che lo schermo sta affrontando.&lt;/p&gt;
+&lt;p&gt;Questo ti permette di montare il telefono lungo il lato di un tubo telescopico in modo che lo schermo sia perpendicolare al tubo mentre la mappa continua a tracciare ciò verso cui il telescopio è puntato.&lt;/p&gt;
+
+&lt;h2&gt;Suggerimenti e Impostazioni che Vale la Pena Conoscere&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;b&gt;Diagnostica:&lt;/b&gt; Se qualcosa sembra sbagliato, apri il menu di overflow e tocca &lt;b&gt;Diagnostica&lt;/b&gt;. Questa pagina mostra la tua posizione attuale, l\'ora, lo stato dei sensori e le letture di accuratezza — molto utile se hai bisogno di segnalare un problema.&lt;/li&gt;
+
+&lt;li&gt;&lt;b&gt;Dimensione del carattere:&lt;/b&gt; Regola la dimensione dell\'etichetta in &lt;b&gt;Impostazioni → Aspetto&lt;/b&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Mappa tremolante:&lt;/b&gt; Sperimenta con &lt;b&gt;Velocità Sensore&lt;/b&gt; e &lt;b&gt;Smorzamento Sensore&lt;/b&gt; in &lt;b&gt;Impostazioni → Impostazioni Sensore (Esperti)&lt;/b&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Nessun giroscopio?&lt;/b&gt; Se il tuo telefono non ha un giroscopio, abilita &lt;b&gt;Disabilita Giroscopio&lt;/b&gt; nelle Impostazioni Sensore per utilizzare una modalità sensore alternativa.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Correzione magnetica:&lt;/b&gt; Sky Map può applicare una correzione della declinazione magnetica in modo che la mappa si allinei con il Nord Vero piuttosto che il Nord Magnetico. Attiva/disattiva questa opzione in &lt;b&gt;Impostazioni → Posizione&lt;/b&gt;. In alcune parti del mondo la differenza può essere di 20 gradi o più. Puoi regolare ulteriormente questo manualmente se la bussola del tuo telefono è imprecisa.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Requisiti Hardware&lt;/h2&gt;
+&lt;p&gt;Non tutti i dispositivi possono supportare completamente Sky Map! Come minimo hai bisogno di un telefono con:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Un sensore di campo magnetico (alias Bussola) — per dire in quale direzione stai guardando&lt;/li&gt;
+&lt;li&gt;Un accelerometro — per dire quanto in alto nel cielo stai guardando&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Idealmente anche:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Un giroscopio — questo renderà il movimento più fluido e meno scattante&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p class="callout"&gt;Le bussole dei telefoni sono notoriamente inaffidabili. Se la mappa del cielo sembra sbagliata, è quasi sempre un problema hardware con la bussola del tuo telefono — non un bug in Sky Map. Sky Map legge esattamente ciò che il sensore del tuo telefono segnala; non ha modo di correggere automaticamente una lettura errata o distorta, anche se è disponibile un offset manuale nelle Impostazioni per i telefoni con un errore coerente. Vedi Risoluzione dei problemi di seguito.&lt;/p&gt;
+&lt;h3&gt;Come faccio a sapere quali sensori ha il mio telefono?&lt;/h3&gt;
+&lt;p&gt;Apri la pagina Diagnostica di Sky Map — tutti i sensori che il tuo telefono non ha mostreranno "--,--,--".&lt;/p&gt;
+&lt;h3&gt;Cosa succede se il mio dispositivo non ha i sensori richiesti?&lt;/h3&gt;
+&lt;p&gt;Sky Map tornerà in modalità manuale. Puoi comunque esplorare il cielo, ma senza i sensori non c\'è modo che nessuna app possa mostrarti la tua direzione.&lt;/p&gt;
+
+&lt;h2&gt;Risoluzione dei Problemi&lt;/h2&gt;
+&lt;h3&gt;La mappa non si muove&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Verifica di essere in Modalità Automatica (non Manuale)&lt;/li&gt;
+&lt;li&gt;Controlla la pagina Diagnostica per confermare che il tuo dispositivo ha una bussola e un accelerometro&lt;/li&gt;
+&lt;li&gt;Prova il gesto di calibrazione a figura 8: muovi il telefono lentamente in una forma grande e liscia a figura 8&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;La mappa sta puntando nella direzione sbagliata o è imprecisa&lt;/h3&gt;
+&lt;p&gt;Sky Map ha bisogno di tre cose per mostrare il cielo corretto: la direzione verso cui stai puntando il telefono, la tua posizione e l\'ora attuale. Se la mappa sembra sbagliata, probabilmente una di queste è errata.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;b&gt;Bussola (causa più comune):&lt;/b&gt; Questo è un problema hardware con il tuo telefono — non un bug di Sky Map. Il gesto di calibrazione a figura 8 chiede al tuo telefono di ripristinare internamente il sensore della bussola, ma &lt;i&gt;una bussola calibrata non è necessariamente una bussola accurata&lt;/i&gt;. Se sei vicino a un oggetto metallico, al cruscotto di un\'auto o a una custodia telefonica magnetica, la mappa può comunque essere errata anche dopo la calibrazione. Spostati in un\'area aperta, ripeti il gesto a figura 8, quindi attiva &lt;b&gt;Correzione Magnetica&lt;/b&gt; in &lt;b&gt;Impostazioni → Posizione&lt;/b&gt;. Se il tuo telefono ha un errore direzionale coerente, usa l\'offset manuale in &lt;b&gt;Impostazioni → Impostazioni Sensore (Esperti)&lt;/b&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Posizione:&lt;/b&gt; Concedi il permesso di posizione tramite &lt;b&gt;Impostazioni App → Autorizzazioni&lt;/b&gt;. Controlla la pagina Diagnostica per confermare le tue coordinate. Un sintomo caratteristico della mancanza di posizione è che Polaris appare vicino all\'orizzonte.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Ora:&lt;/b&gt; Meno comune, ma un\'ora non corretta sposta l\'intero cielo. Controlla la pagina Diagnostica per confermare che l\'ora e il fuso orario del tuo dispositivo sono corretti.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;La mappa è tremolante&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Regola &lt;b&gt;Velocità Sensore&lt;/b&gt; e &lt;b&gt;Smorzamento Sensore&lt;/b&gt; in &lt;b&gt;Impostazioni → Impostazioni Sensore (Esperti)&lt;/b&gt;&lt;/li&gt;
+&lt;li&gt;Se il tuo telefono non ha un giroscopio, abilita &lt;b&gt;Disabilita Giroscopio&lt;/b&gt; nelle impostazioni dei sensori&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Per i dettagli completi sulla risoluzione dei problemi, consulta la &lt;a href="https://github.com/sky-map-team/stardroid/blob/master/troubleshooting.md"&gt;guida alla risoluzione dei problemi&lt;/a&gt; online.&lt;/p&gt;
+&lt;p class="callout"&gt;Se sei ancora bloccato, inviaci un\'email a skymapdevs@gmail.com — una schermata della tua pagina Diagnostica è molto utile.&lt;/p&gt;
+
+&lt;h1&gt;Cosa\'s new in Sky Map?&lt;/h1&gt;
+
+%3$s
+
+%2$s
     </string>
 </resources>

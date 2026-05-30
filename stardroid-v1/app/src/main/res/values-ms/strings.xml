@@ -221,12 +221,15 @@
     <string name="menu_calibrate" translation_description="Menu item label to open the compass calibration screen">Kalibrasi</string>
     <string name="compass_calibration_activity_heading_compass" translation_description="Static label in the compass calibration screen placed inline to the left of the live compass accuracy value (e.g. displayed as \'Compass - Accuracy: High\')">Kompas -</string>
     <string name="compass_calibration_activity_do_not_show_this_again" translation_description="Checkbox label in the compass calibration dialog to suppress future automatic appearances">Jangan tunjukkan lagi</string>
-    <string name="compass_calibration_activity_warning" translation_description="Heading/reason text shown in the compass calibration dialog when it opens automatically due to low accuracy">Kalibrasi Perkakasan Diperlukan</string>
-    <string name="compass_calibration_activity_user_heading" translation_description="Heading shown in the compass calibration dialog when the user opens it manually from the menu">Tingkatkan Penjajaran Anda</string>
-    <string name="compass_calib_what_to_do" translation_description="Information for the user on how to calibrate the compass when the dialog auto-opens. Placeholder is the video URL"><![CDATA[Sky Map bergantung pada sensor kompas bawaan telefon anda. Jika ketepatan yang ditunjukkan di atas rendah, sensor perlu "direset" dengan menggerakkan telefon dalam gerakan angka-8: %s.<br/><br/>
-<b>Penting:</b> Penentukuran adalah proses perkakasan yang ditangani oleh peranti anda. Walaupun ia meningkatkan keandalan sensor, gangguan magnet luaran masih boleh menyebabkan "bias" atau hanyutan kecil. Ini adalah batasan fizikal kompas mudah alih dan bukan ralat dalam aplikasi. Lihat <i>Penyelesaian Masalah</i> dalam <i>Bantuan</i> untuk perkara lain yang boleh dicuba.]]></string>
-    <string name="compass_calib_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they invoke the calibration dialog. Placeholder is the video URL"><![CDATA[Telefon anda melaporkan ketepatan kompas seperti yang ditunjukkan di atas. Untuk meningkatkannya, sila lakukan gerakan angka-8 dengan peranti anda (%s).<br/><br/>
-<b>Nota tentang Ketepatan:</b> Penentukuran adalah keperluan peringkat perkakasan telefon anda, bukan tetapan Sky Map. Walaupun sudah ditentukur, medan magnet tempatan (seperti papan pemuka kereta atau magnet) mungkin menyebabkan bias kecil dalam arah. Lihat <i>Penyelesaian Masalah</i> dalam <i>Bantuan</i> untuk perkara lain yang boleh dicuba.]]></string>
+    <string name="compass_calibration_activity_warning" translation_description="Heading/reason text shown in the compass calibration dialog when it opens automatically due to low accuracy">Kompas Telefon Anda Memerlukan Perhatian</string>
+    <string name="compass_calibration_activity_user_heading" translation_description="Heading shown in the compass calibration dialog when the user opens it manually from the menu">Kompas Telefon Anda</string>
+    <string name="compass_calib_what_to_do" translation_description="Information for the user on how to calibrate the compass when the dialog auto-opens. Placeholder is the video URL"><![CDATA[Sensor kompas telefon anda melaporkan ketepatan rendah. Gerakan angka-8 (%s) meminta telefon anda untuk mengkalibrasi semula sensor perkakasan—Sky Map tidak mempunyai kawalan ke atas proses ini.<br/><br/>
+<b>Dikalibrasi tidak bermakna tepat.</b> Gerak angka-8 membantu sensor menormalkan dirinya secara dalaman, tetapi ia tidak dapat menghilangkan gangguan daripada objek logam berdekatan, papan pemuka kereta, atau kes telefon magnetik. Jika peta masih tidak tepat selepas mengkalibrasi, sumber luaran tersebut adalah punca yang paling mungkin—bukan Sky Map.<br/><br/>
+Pindah ke kawasan terbuka jauh daripada logam dan cuba lagi. Lihat <i>Penyelesaian Masalah</i> dalam <i>Bantuan</i> untuk langkah-langkah lanjut.]]></string>
+    <string name="compass_calib_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they invoke the calibration dialog. Placeholder is the video URL"><![CDATA[Telefon anda melaporkan ketepatan kompas seperti yang ditunjukkan di atas. Gerakan angka-8 (%s) mendorong perangkat keras telefon anda untuk mengkalibrasi semula sensor kompasnya.<br/><br/>
+<b>Perbezaan penting:</b> kalibrasi membantu sensor menormalkan dirinya secara dalaman. Kompas yang dikalibrasi tidak semestinya tepat — gangguan magnet tempatan (objek logam, papan pemuka kereta, sarung telefon magnet) masih boleh menyebabkan peta menunjuk ke arah yang salah. Sky Map membaca dengan tepat apa yang dilaporkan oleh sensor telefon anda; ia tidak mempunyai cara untuk membetulkan persekitaran anda.<br/><br/>
+Lihat <i>Penyelesaian Masalah</i> dalam <i>Bantuan</i> untuk langkah-langkah lain, termasuk offset kompas manual untuk telefon dengan ralat arah yang konsisten.]]></string>
+    <string name="compass_low_accuracy_toast" translation_description="Brief toast shown when compass accuracy is low and the user has disabled the calibration dialog">Kompas telefon anda melaporkan ketepatan rendah</string>
     <string name="sensor_reverse_preference_title" translation_description="Preference title for reversing the magnetic Z-axis sensor reading, a fix for certain phones with incorrectly implemented sensors">Balikkan Magnet Z</string>
     <string name="sensor_reverse_preference_summary" translation_description="Summary for the Reverse Magnetic Z preference">
     Pembaikan untuk telefon dengan sensor yang dilaksanakan secara tidak betul - memerlukan permulaan semula
@@ -269,10 +272,12 @@
     <string name="warm_welcome_slide1_title" translation_description="Title for the first slide of the Warm Welcome">Jelajahi Kosmos</string>
     <string name="warm_welcome_slide1_desc" translation_description="Description for the first slide of the Warm Welcome">
     Gunakan lapisan di sebelah kiri untuk menapis bintang, konstelasi, planet, dan banyak lagi. Ketuk Vortex untuk melakukan perjalanan melalui waktu, atau Mata untuk mod malam.
+    Vortex to travel through time, or the Eye for night mode.
     <b>Vortex</b> to travel through time, or the <b>Eye</b> for night mode.</string>
     <string name="warm_welcome_slide2_title" translation_description="Title for the second slide of the Warm Welcome">Navigasi Langit</string>
     <string name="warm_welcome_slide2_desc" translation_description="Description for the second slide of the Warm Welcome">
     Arahkan telefon anda untuk melihat sekeliling dalam Mod Auto, atau ketik untuk beralih ke Manual dan jelajahi dengan meleret. Ketik dua kali dalam Manual untuk menetapkan semula ufuk anda.
+    Auto Mode, or tap to switch to Manual and explore by swiping. Double-tap in Manual to reset your horizon.
     <b>Auto Mode</b>, or tap to switch to <b>Manual</b> and explore by swiping. Double-tap in Manual to reset your horizon.</string>
     <string name="warm_welcome_slide2_info_desc" translation_description="Description about info cards on the second slide">
     Ketik mana-mana objek dalam Mod Manual untuk menunjukkan Kad Maklumat dengan fakta menarik dan butiran cakerawala.
@@ -283,9 +288,11 @@
     </string>
     <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message when sensors are missing">
     Nampaknya peranti anda tidak mempunyai sensor yang diperlukan untuk penjejakan automatik. Jangan risau—anda masih boleh meneroka seluruh kosmos dalam Mod Manual!
+    Manual Mode!
     <b>Manual Mode</b>!</string>
     <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration text on slide 3">
     Untuk memastikan ketepatan, gelenggarkan telefon anda dalam gerakan angka 8 dari semasa ke semasa.
+    figure-8 wave every once in a while.
     <b>figure-8</b> wave every once in a while.</string>
 
     <string name="tutorial_planets" translation_description="Tutorial annotation for planets layer">Planet</string>

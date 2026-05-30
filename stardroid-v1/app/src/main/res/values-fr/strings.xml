@@ -227,11 +227,15 @@
     <string name="menu_calibrate" translation_description="Menu item label to open the compass calibration screen">Calibrer</string>
     <string name="compass_calibration_activity_heading_compass" translation_description="Static label in the compass calibration screen placed inline to the left of the live compass accuracy value (e.g. displayed as \'Compass - Accuracy: High\')">Boussole -</string>
     <string name="compass_calibration_activity_do_not_show_this_again" translation_description="Checkbox label in the compass calibration dialog to suppress future automatic appearances">Ne plus afficher ce message</string>
-    <string name="compass_calibration_activity_warning" translation_description="Heading/reason text shown in the compass calibration dialog when it opens automatically due to low accuracy">Étalonnage matériel requis</string>
-    <string name="compass_calibration_activity_user_heading" translation_description="Heading shown in the compass calibration dialog when the user opens it manually from the menu">Améliorez votre alignement</string>
-    <string name="compass_calib_what_to_do" translation_description="Information for the user on how to calibrate the compass when the dialog auto-opens. Placeholder is the video URL"><![CDATA[Sky Map s\'appuie sur le capteur de boussole intégré de votre téléphone. Si la précision affichée ci-dessus est faible, le capteur doit être "réinitialisé" en déplaçant le téléphone en forme de 8 : %s.<br/><br/>
-<b>Important :</b> L\'étalonnage est un processus matériel géré par votre appareil. Bien qu\'il améliore la fiabilité du capteur, les interférences magnétiques externes peuvent toujours provoquer un "biais" ou une légère dérive. Il s\'agit d\'une limitation physique des boussoles mobiles et non d\'une erreur de l\'application. Consultez <i>Dépannage</i> dans <i>Aide</i> pour d\'autres solutions.]]></string>
-    <string name="compass_calib_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they invoke the calibration dialog. Placeholder is the video URL"><![CDATA[Votre téléphone signale la précision de sa boussole comme indiqué ci-dessus. Pour l\'améliorer, veuillez effectuer un mouvement en forme de 8 avec votre appareil (%s).<br/><br/><b>Remarque sur la précision :</b> L\'étalonnage est une exigence matérielle de votre téléphone, et non un réglage de Sky Map. Même une fois étalonné, les champs magnétiques locaux (comme les tableaux de bord de voiture ou les aimants) peuvent provoquer un léger décalage dans la direction. Consultez <i>Dépannage</i> dans <i>Aide</i> pour d\'autres solutions.]]></string>
+    <string name="compass_calibration_activity_warning" translation_description="Heading/reason text shown in the compass calibration dialog when it opens automatically due to low accuracy">Le Compas de votre téléphone nécessite une attention</string>
+    <string name="compass_calibration_activity_user_heading" translation_description="Heading shown in the compass calibration dialog when the user opens it manually from the menu">Le Compas de votre téléphone</string>
+    <string name="compass_calib_what_to_do" translation_description="Information for the user on how to calibrate the compass when the dialog auto-opens. Placeholder is the video URL"><![CDATA[Le capteur de Compas de votre téléphone signale une précision faible. Le mouvement en figure-8 (%s) invite votre téléphone à recalibrer son capteur matériel — Sky Map n\'a aucun contrôle sur ce processus.<br/><br/>
+<b>Calibré ne signifie pas précis.</b> Le geste en figure-8 aide le capteur à se normaliser en interne, mais il ne peut pas éliminer les interférences provenant d\'objets métalliques à proximité, de tableaux de bord automobiles ou d\'étuis de téléphone magnétiques. Si la carte est toujours décalée après l\'étalonnage, ces sources externes en sont la cause la plus probable — pas Sky Map.<br/><br/>
+Déplacez-vous vers une zone dégagée loin du métal et réessayez. Consultez <i>Dépannage</i> dans <i>Aide</i> pour plus d\'étapes.]]></string>
+    <string name="compass_calib_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they invoke the calibration dialog. Placeholder is the video URL"><![CDATA[Votre téléphone signale la précision de son compas comme indiqué ci-dessus. Le mouvement en huit (%s) invite le matériel de votre téléphone à recalibrer son capteur de compas.<br/><br/>
+<b>Distinction importante :</b> l\'étalonnage aide le capteur à se normaliser en interne. Un compas étalonné n\'est pas nécessairement un compas précis — les interférences magnétiques locales (objets métalliques, tableaux de bord de voiture, étuis de téléphone magnétiques) peuvent toujours faire pointer la carte dans la mauvaise direction. Sky Map lit exactement ce que signale le capteur de votre téléphone ; il n\'a aucun moyen de corriger votre environnement.<br/><br/>
+Consultez <i>Dépannage</i> dans <i>Aide</i> pour d\'autres étapes, y compris le décalage de compas manuel pour les téléphones présentant une erreur directionnelle constante.]]></string>
+    <string name="compass_low_accuracy_toast" translation_description="Brief toast shown when compass accuracy is low and the user has disabled the calibration dialog">Le compas de votre téléphone signale une faible précision</string>
     <string name="sensor_reverse_preference_title" translation_description="Preference title for reversing the magnetic Z-axis sensor reading, a fix for certain phones with incorrectly implemented sensors">Inverser l\'axe Z magnétique</string>
     <string name="sensor_reverse_preference_summary" translation_description="Summary for the Reverse Magnetic Z preference">
     Correction pour les téléphones avec des capteurs mal implémentés - nécessite un redémarrage
@@ -276,10 +280,12 @@
     <string name="warm_welcome_slide1_title" translation_description="Title for the first slide of the Warm Welcome">Explorez le cosmos</string>
     <string name="warm_welcome_slide1_desc" translation_description="Description for the first slide of the Warm Welcome">
     Utilisez les couches sur la gauche pour filtrer les étoiles, les constellations, les planètes et bien d\'autres. Appuyez sur le Vortex pour voyager dans le temps, ou sur l\'Œil pour le mode nuit.
+    Vortex to travel through time, or the Eye for night mode.
     <b>Vortex</b> to travel through time, or the <b>Eye</b> for night mode.</string>
     <string name="warm_welcome_slide2_title" translation_description="Title for the second slide of the Warm Welcome">Naviguez dans le ciel</string>
     <string name="warm_welcome_slide2_desc" translation_description="Description for the second slide of the Warm Welcome">
     Pointez votre téléphone pour regarder autour en mode Auto, ou appuyez pour passer en mode Manuel et explorez en balayant. Double-appuyez en mode Manuel pour réinitialiser votre horizon.
+    Auto Mode, or tap to switch to Manual and explore by swiping. Double-tap in Manual to reset your horizon.
     <b>Auto Mode</b>, or tap to switch to <b>Manual</b> and explore by swiping. Double-tap in Manual to reset your horizon.</string>
     <string name="warm_welcome_slide2_info_desc" translation_description="Description about info cards on the second slide">
     Appuyez sur n\'importe quel objet en mode manuel pour afficher les fiches d\'information avec des faits amusants et des détails célestes.
@@ -290,9 +296,11 @@
     </string>
     <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message when sensors are missing">
     Votre appareil semble dépourvu des capteurs nécessaires pour le suivi automatique. Ne vous inquiétez pas—vous pouvez toujours explorer l\'univers entier en Mode Manuel!
+    Manual Mode!
     <b>Manual Mode</b>!</string>
     <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration text on slide 3">
     Pour maintenir la précision, faites un mouvement en huit avec votre téléphone de temps en temps.
+    figure-8 wave every once in a while.
     <b>figure-8</b> wave every once in a while.</string>
 
     <string name="tutorial_planets" translation_description="Tutorial annotation for planets layer">Planètes</string>

@@ -219,12 +219,15 @@
     <string name="menu_calibrate" translation_description="Menu item label to open the compass calibration screen">کالیبره</string>
     <string name="compass_calibration_activity_heading_compass" translation_description="Static label in the compass calibration screen placed inline to the left of the live compass accuracy value (e.g. displayed as \'Compass - Accuracy: High\')">قطب‌نما -</string>
     <string name="compass_calibration_activity_do_not_show_this_again" translation_description="Checkbox label in the compass calibration dialog to suppress future automatic appearances">دوباره این را نمایش نده</string>
-    <string name="compass_calibration_activity_warning" translation_description="Heading/reason text shown in the compass calibration dialog when it opens automatically due to low accuracy">گوشی شما نیاز به کالیبره‌شدن دارد</string>
-    <string name="compass_calibration_activity_user_heading" translation_description="Heading shown in the compass calibration dialog when the user opens it manually from the menu">بهبود تراز‌بندی شما</string>
-    <string name="compass_calib_what_to_do" translation_description="Information for the user on how to calibrate the compass when the dialog auto-opens. Placeholder is the video URL"><![CDATA[Sky Map به سنسور قطب‌نما داخلی تلفن شما متکی است. اگر دقت نشان‌داده‌شده در بالا کم باشد، سنسور باید با حرکت دادن تلفن به شکل عدد ۸ "بازنشانی" شود: %s.<br/><br/>
-<b>مهم:</b> کالیبراسیون یک فرآیند سخت‌افزاری است که توسط دستگاه شما انجام می‌شود. اگرچه این کار قابلیت اعتماد سنسور را بهبود می‌بخشد، تداخل مغناطیسی خارجی می‌تواند همچنان باعث "انحراف" یا انجراف جزئی شود. این یک محدودیت فیزیکی قطب‌نماهای موبایل است و نه خطایی در برنامه. برای دیدن کارهای دیگری که می‌توانید امتحان کنید، به <i>رفع‌مشکلات</i> در <i>راهنما</i> مراجعه کنید.]]></string>
-    <string name="compass_calib_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they invoke the calibration dialog. Placeholder is the video URL"><![CDATA[تلفن شما دقت قطب نما خود را همانطور که در بالا نشان داده شده است گزارش می دهد. برای بهبود این، لطفاً حرکت شکل 8 را با دستگاه خود انجام دهید (%s).<br/><br/>
-<b>نکته ای درباره دقت:</b> کالیبراسیون یک نیاز سطح سخت افزار تلفن شما است، نه یک تنظیم Sky Map. حتی زمانی که کالیبره شود، میدان های مغناطیسی محلی (مانند داشبورد خودرو یا آهن ربا) ممکن است باعث انحراف جزئی در جهت شوند. برای سایر چیزهایی که می توانید امتحان کنید، به <i>رفع مشکلات</i> در <i>راهنما</i> مراجعه کنید.]]></string>
+    <string name="compass_calibration_activity_warning" translation_description="Heading/reason text shown in the compass calibration dialog when it opens automatically due to low accuracy">قطب‌نمای گوشی شما نیاز به توجه دارد</string>
+    <string name="compass_calibration_activity_user_heading" translation_description="Heading shown in the compass calibration dialog when the user opens it manually from the menu">قطب‌نمای گوشی شما</string>
+    <string name="compass_calib_what_to_do" translation_description="Information for the user on how to calibrate the compass when the dialog auto-opens. Placeholder is the video URL"><![CDATA[سنسور قطب‌نما گوشی شما دقت پایینی را گزارش می‌دهد. حرکت شکل هشت (%s) گوشی شما را برای کالیبره کردن مجدد سنسور سخت‌افزاری خود تشویق می‌کند — Sky Map هیچ کنترلی بر این فرآیند ندارد.<br/><br/>
+<b>کالیبره شده به معنای دقیق نیست.</b> حرکت شکل هشت به سنسور کمک می‌کند تا خود را درون‌زا نرمال کند، اما نمی‌تواند تداخل ناشی از اجسام فلزی نزدیک، داشبورد خودرو یا کیس‌های قطب‌نمای تلفن را حذف کند. اگر نقشه پس از کالیبره کردن هنوز نادرست است، این منابع خارجی احتمالاً دلیل آن هستند — نه Sky Map.<br/><br/>
+به یک منطقه باز دور از فلز بروید و دوباره امتحان کنید. برای مراحل بیشتر، <i>رفع مشکلات</i> را در <i>راهنما</i> ببینید.]]></string>
+    <string name="compass_calib_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they invoke the calibration dialog. Placeholder is the video URL"><![CDATA[تلفن شما دقت قطب‌نما خود را همان‌طور که در بالا نشان داده شده است گزارش می‌کند. حرکت شکل هشت (%s) تلفن شما را تشویق می‌کند تا سنسور قطب‌نما خود را دوباره کالیبره کند.<br/><br/>
+<b>تمایز مهم:</b> کالیبراسیون به سنسور کمک می‌کند تا خود را درون‌زا نرمال کند. قطب‌نمای کالیبره‌شده لزوماً دقیق نیست — تداخل مغناطیسی محلی (اشیاء فلزی، داشبورد خودرو، کیف‌های تلفن مغناطیسی) می‌تواند باعث شود که نقشه به سمت اشتباه اشاره کند. Sky Map دقیقاً آنچه را که سنسور تلفن شما گزارش می‌دهد می‌خواند؛ هیچ راهی برای تصحیح محیط شما ندارد.<br/><br/>
+برای مراحل دیگر، از جمله جبران قطب‌نمای دستی برای تلفن‌هایی با خطای جهتی ثابت، به <i>رفع‌مسائل</i> در <i>راهنما</i> مراجعه کنید.]]></string>
+    <string name="compass_low_accuracy_toast" translation_description="Brief toast shown when compass accuracy is low and the user has disabled the calibration dialog">قطب‌نمای گوشی شما دقت پایینی را گزارش می‌کند</string>
     <string name="sensor_reverse_preference_title" translation_description="Preference title for reversing the magnetic Z-axis sensor reading, a fix for certain phones with incorrectly implemented sensors">معکوس کردن حسگر مغناطیسی</string>
     <string name="sensor_reverse_preference_summary" translation_description="Summary for the Reverse Magnetic Z preference">رفع اشکال تلفن‌هایی که حسگرهایشان درست عمل نمی‌کند (نیازمند راه‌اندازی مجدد)</string>
     <string name="whats_new_dialog_title" translation_description="Title of the dialog shown on first launch after an update, listing new features">تغییرات جدید برنامه</string>
@@ -261,10 +264,12 @@
     <string name="warm_welcome_slide1_title" translation_description="Title for the first slide of the Warm Welcome">کاوش در کیهان</string>
     <string name="warm_welcome_slide1_desc" translation_description="Description for the first slide of the Warm Welcome">
     از لایه‌های سمت چپ برای فیلتر کردن ستارگان، صورت‌های فلکی، سیارات و موارد دیگر استفاده کنید. برای سفر در زمان روی گردباد ضربه بزنید یا برای حالت شب روی چشم ضربه بزنید.
+    Vortex to travel through time, or the Eye for night mode.
     <b>Vortex</b> to travel through time, or the <b>Eye</b> for night mode.</string>
     <string name="warm_welcome_slide2_title" translation_description="Title for the second slide of the Warm Welcome">ناوبری در آسمان</string>
     <string name="warm_welcome_slide2_desc" translation_description="Description for the second slide of the Warm Welcome">
     تلفن خود را برای نگاه کردن در حالت خودکار هدایت کنید یا برای تبدیل به حالت دستی و کاوش با کشیدن انگشت ضربه بزنید. برای بازنشانی افق خود در حالت دستی دو بار ضربه بزنید.
+    Auto Mode, or tap to switch to Manual and explore by swiping. Double-tap in Manual to reset your horizon.
     <b>Auto Mode</b>, or tap to switch to <b>Manual</b> and explore by swiping. Double-tap in Manual to reset your horizon.</string>
     <string name="warm_welcome_slide2_info_desc" translation_description="Description about info cards on the second slide">
     برای نمایش کارت‌های اطلاعات با حقایق جالب و جزئیات آسمانی، هر جسمی را در حالت دستی ضربه بزنید.
@@ -273,8 +278,11 @@
     <string name="warm_welcome_slide3_desc" translation_description="Description for the third slide of the Warm Welcome">Sky Map از حسگرهای گوشی شما برای تراز کردن با ستارگان استفاده می‌کند.</string>
     <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message when sensors are missing">
     دستگاه شما به نظر می‌رسد فاقد سنسورهای مورد نیاز برای ردیابی خودکار است. نگران نباشید—شما می‌توانید کل کائنات را در حالت دستی کاوش کنید!=
+    Manual Mode!
     <b>Manual Mode</b>!</string>
-    <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration text on slide 3">برای حفظ دقت، گوشی خود را هر از گاهی به صورت شکل هشت تکان دهید.<b>figure-8</b> wave every once in a while.</string>
+    <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration text on slide 3">
+    برای حفظ دقت، گوشی خود را هر از گاهی به صورت شکل هشت تکان دهید.figure-8 wave every once in a while.
+    <b>figure-8</b> wave every once in a while.</string>
 
     <string name="tutorial_planets" translation_description="Tutorial annotation for planets layer">سیارات</string>
     <string name="tutorial_meteors" translation_description="Tutorial annotation for meteors layer">شهاب‌سنگ‌ها</string>

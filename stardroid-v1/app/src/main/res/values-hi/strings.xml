@@ -219,12 +219,15 @@
     <string name="menu_calibrate" translation_description="Menu item label to open the compass calibration screen">कैलिब्रेट करें</string>
     <string name="compass_calibration_activity_heading_compass" translation_description="Static label in the compass calibration screen placed inline to the left of the live compass accuracy value (e.g. displayed as \'Compass - Accuracy: High\')">कम्पास -</string>
     <string name="compass_calibration_activity_do_not_show_this_again" translation_description="Checkbox label in the compass calibration dialog to suppress future automatic appearances">इसे फिर से न दिखाएं</string>
-    <string name="compass_calibration_activity_warning" translation_description="Heading/reason text shown in the compass calibration dialog when it opens automatically due to low accuracy">हार्डवेयर कैलिब्रेशन आवश्यक है</string>
-    <string name="compass_calibration_activity_user_heading" translation_description="Heading shown in the compass calibration dialog when the user opens it manually from the menu">अपनी संरेखण में सुधार करें</string>
-    <string name="compass_calib_what_to_do" translation_description="Information for the user on how to calibrate the compass when the dialog auto-opens. Placeholder is the video URL"><![CDATA[Sky Map आपके फ़ोन के अंतर्निहित कंपास सेंसर पर निर्भर करता है। यदि ऊपर दिखाई गई सटीकता कम है, तो सेंसर को फ़ोन को आकृति-8 गति में घुमाकर "रीसेट" करने की आवश्यकता है: %s।<br/><br/>
-<b>महत्वपूर्ण:</b> कैलिब्रेशन एक हार्डवेयर प्रक्रिया है जिसे आपका डिवाइस संभालता है। हालांकि यह सेंसर की विश्वसनीयता में सुधार करता है, बाहरी चुंबकीय हस्तक्षेप अभी भी "पूर्वाग्रह" या हल्के बहाव का कारण बन सकता है। यह मोबाइल कंपास की एक भौतिक सीमा है और ऐप के भीतर कोई त्रुटि नहीं है। <i>मदद</i> में <i>समस्या निवारण</i> देखें कि अन्य क्या कोशिश करनी है।]]></string>
-    <string name="compass_calib_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they invoke the calibration dialog. Placeholder is the video URL"><![CDATA[आपका फ़ोन अपनी कम्पास सटीकता को ऊपर दिखाए अनुसार रिपोर्ट करता है। इसे सुधारने के लिए, कृपया अपने डिवाइस के साथ फिगर-8 गति करें (%s)।<br/><br/>
-<b>सटीकता पर नोट:</b> कैलिब्रेशन आपके फ़ोन की एक हार्डवेयर-स्तरीय आवश्यकता है, Sky Map सेटिंग नहीं। कैलिब्रेट होने पर भी, स्थानीय चुंबकीय क्षेत्र (जैसे कार डैशबोर्ड या चुंबक) दिशा में थोड़ा पूर्वाग्रह पैदा कर सकते हैं। <i>मदद</i> में <i>समस्या निवारण</i> देखें अन्य चीजों के लिए।]]></string>
+    <string name="compass_calibration_activity_warning" translation_description="Heading/reason text shown in the compass calibration dialog when it opens automatically due to low accuracy">आपके फ़ोन का कम्पास ध्यान देने की आवश्यकता है</string>
+    <string name="compass_calibration_activity_user_heading" translation_description="Heading shown in the compass calibration dialog when the user opens it manually from the menu">आपके फ़ोन का कम्पास</string>
+    <string name="compass_calib_what_to_do" translation_description="Information for the user on how to calibrate the compass when the dialog auto-opens. Placeholder is the video URL"><![CDATA[आपके फ़ोन का कंपास सेंसर कम सटीकता की रिपोर्ट कर रहा है। फिगर-8 गति (%s) आपके फ़ोन को अपने हार्डवेयर सेंसर को पुनः कैलिब्रेट करने के लिए प्रेरित करती है — Sky Map के पास इस प्रक्रिया पर कोई नियंत्रण नहीं है।<br/><br/>
+<b>कैलिब्रेट होना सटीक होने का मतलब नहीं है।</b> फिगर-8 इशारा सेंसर को आंतरिक रूप से सामान्य करने में मदद करता है, लेकिन यह पास की धातु की वस्तुओं, कार के डैशबोर्ड या चुंबकीय फ़ोन केस से हस्तक्षेप को दूर नहीं कर सकता। यदि कैलिब्रेट करने के बाद भी नक्शा गलत है, तो वे बाहरी स्रोत सबसे संभावित कारण हैं — Sky Map नहीं।<br/><br/>
+धातु से दूर एक खुली जगह पर जाएं और फिर से कोशिश करें। <i>मदद</i> में <i>समस्या निवारण</i> देखें अधिक चरणों के लिए।]]></string>
+    <string name="compass_calib_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they invoke the calibration dialog. Placeholder is the video URL"><![CDATA[आपका फ़ोन अपनी कम्पास सटीकता की रिपोर्ट कर रहा है जैसा ऊपर दिखाया गया है। फिगर-8 गति (%s) आपके फ़ोन के हार्डवेयर को अपने कम्पास सेंसर को पुनः कैलिब्रेट करने के लिए प्रेरित करती है।<br/><br/>
+<b>महत्वपूर्ण अंतर:</b> कैलिब्रेशन सेंसर को आंतरिक रूप से सामान्य करने में मदद करता है। एक कैलिब्रेटेड कम्पास आवश्यक रूप से सटीक नहीं है — स्थानीय चुंबकीय हस्तक्षेप (धातु की वस्तुएं, कार के डैशबोर्ड, चुंबकीय फ़ोन केस) अभी भी नक्शे को गलत दिशा में इंगित कर सकते हैं। Sky Map बिल्कुल वही पढ़ता है जो आपके फ़ोन का सेंसर रिपोर्ट करता है; इसके पास आपके वातावरण के लिए सुधार करने का कोई तरीका नहीं है।<br/><br/>
+<i>मदद</i> में <i>समस्या निवारण</i> देखें अन्य चरणों के लिए, जिसमें सुसंगत दिशात्मक त्रुटि वाले फ़ोन के लिए मैनुअल कम्पास ऑफ़सेट शामिल है।]]></string>
+    <string name="compass_low_accuracy_toast" translation_description="Brief toast shown when compass accuracy is low and the user has disabled the calibration dialog">आपके फ़ोन का कम्पास कम सटीकता की रिपोर्ट कर रहा है</string>
     <string name="sensor_reverse_preference_title" translation_description="Preference title for reversing the magnetic Z-axis sensor reading, a fix for certain phones with incorrectly implemented sensors">चुंबकीय Z को उलटें</string>
     <string name="sensor_reverse_preference_summary" translation_description="Summary for the Reverse Magnetic Z preference">गलत तरीके से लागू किए गए सेंसर के लिए फिक्स - पुनः शुरू करने की आवश्यकता है</string>
     <string name="whats_new_dialog_title" translation_description="Title of the dialog shown on first launch after an update, listing new features">क्या नया है</string>
@@ -265,10 +268,12 @@
     <string name="warm_welcome_slide1_title" translation_description="Title for the first slide of the Warm Welcome">ब्रह्मांड की खोज करें</string>
     <string name="warm_welcome_slide1_desc" translation_description="Description for the first slide of the Warm Welcome">
     बाईं ओर की परतों का उपयोग करके तारों, नक्षत्रों, ग्रहों और अन्य को फ़िल्टर करें। समय के माध्यम से यात्रा करने के लिए वर्टेक्स को टैप करें, या रात मोड के लिए आई को टैप करें।
+    Vortex to travel through time, or the Eye for night mode.
     <b>Vortex</b> to travel through time, or the <b>Eye</b> for night mode.</string>
     <string name="warm_welcome_slide2_title" translation_description="Title for the second slide of the Warm Welcome">आकाश में नेविगेट करें</string>
     <string name="warm_welcome_slide2_desc" translation_description="Description for the second slide of the Warm Welcome">
     ऑटो मोड में देखने के लिए अपने फ़ोन को इशारा करें, या मैनुअल पर स्विच करने के लिए टैप करें और स्वाइप करके खोजें। अपने क्षितिज को रीसेट करने के लिए मैनुअल में डबल-टैप करें।
+    Auto Mode, or tap to switch to Manual and explore by swiping. Double-tap in Manual to reset your horizon.
     <b>Auto Mode</b>, or tap to switch to <b>Manual</b> and explore by swiping. Double-tap in Manual to reset your horizon.</string>
     <string name="warm_welcome_slide2_info_desc" translation_description="Description about info cards on the second slide">
     मैनुअल मोड में किसी भी वस्तु को टैप करें ताकि मजेदार तथ्यों और खगोलीय विवरणों के साथ जानकारी कार्ड दिखाई दें।
@@ -277,8 +282,11 @@
     <string name="warm_welcome_slide3_desc" translation_description="Description for the third slide of the Warm Welcome">Sky Map आपके फ़ोन के सेंसर का उपयोग करके तारों के साथ संरेखित होता है।</string>
     <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message when sensors are missing">
     आपके डिवाइस में स्वचालित ट्रैकिंग के लिए आवश्यक सेंसर नहीं हैं। चिंता न करें—आप मैनुअल मोड में पूरे ब्रह्मांड की खोज कर सकते हैं!
+    Manual Mode!
     <b>Manual Mode</b>!</string>
-    <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration text on slide 3">चीजों को सटीक रखने के लिए, अपने फ़ोन को हर कुछ समय में एक तेज़ आकृति-8 लहर दें।<b>figure-8</b> wave every once in a while.</string>
+    <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration text on slide 3">
+    चीजों को सटीक रखने के लिए, अपने फ़ोन को हर कुछ समय में एक तेज़ आकृति-8 लहर दें।figure-8 wave every once in a while.
+    <b>figure-8</b> wave every once in a while.</string>
 
     <string name="tutorial_planets" translation_description="Tutorial annotation for planets layer">ग्रह</string>
     <string name="tutorial_meteors" translation_description="Tutorial annotation for meteors layer">उल्का</string>

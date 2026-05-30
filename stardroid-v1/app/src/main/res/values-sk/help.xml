@@ -1,97 +1,172 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
 <string name="help_text" translation_description="This is the help text for the app Google Sky Map. It includes placeholders where other text is inserted. Please do not change the &lt; and &gt; markup">
-    &lt;h1&gt;Sky Map pro Android&lt;/h1&gt;
-&lt;p class="version"&gt;Verze %s&lt;/p&gt;
+    &lt;h1&gt;Sky Map pre Androidu&lt;/h1&gt;
+&lt;p class="version"&gt;Verzia %1$s&lt;/p&gt;
 &lt;p class="url"&gt;&lt;a href="https://stardroid.app"&gt;https://stardroid.app&lt;/a&gt;&lt;/p&gt;
 
-&lt;h2&gt;Úvod a stručný návod&lt;/h2&gt;
-&lt;p&gt;Sky Map je váš katalóg nočnej oblohy! Nasmerujte svoje zariadenie so systémom Android nahor a uvidíte mapu tých najjasnejších hviezdy, súhvezdí a planét v danej časti oblohy.&lt;/p&gt;
+%4$s
+
+&lt;h2&gt;Úvod a rýchly štart&lt;/h2&gt;
+&lt;p&gt;Držte telefón pred sebou a pozerajte sa cez neho ako cez okno do vesmíru. Sky Map používa kompas, akcelerometer a žiroskop vášho telefónu na sledovanie smeru, ktorým ukazujete, a aktualizuje mapu v reálnom čase.&lt;/p&gt;
+&lt;p class="callout"&gt;Nie všetky telefóny sú schopné spúšťať Sky Map! Pozrite si časť požiadavky na hardvér nižšie.&lt;/p&gt;
+&lt;p&gt;Ak je to vaša prvá návšteva:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Povolte prístup k polohe, keď budete vyzvaní — Sky Map potrebuje vašu približnú polohu na nakreslenie správnej oblohy pre miesto, kde ste&lt;/li&gt;
+&lt;li&gt;Nasmerujte telefón na oblohu v ľubovoľnom smere&lt;/li&gt;
+&lt;li&gt;Mapa sa bude pohybovať tak, aby zodpovedala smeru, ktorým ukazujete&lt;/li&gt;
+&lt;li&gt;Klepnite kdekoľvek na obrazovku, aby sa zobrazili ovládacie prvky&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2&gt;Navigácia po oblohe&lt;/h2&gt;
+&lt;h3&gt;Automatický režim&lt;/h3&gt;
+&lt;p&gt;V automatickom režime (predvolený), Sky Map používa senzory vášho telefónu na zobrazenie toho, čo je v smere, ktorým telefón ukazuje. Stačí pohybovať telefónom a mapa ho sleduje.&lt;/p&gt;
+&lt;h3&gt;Manuálny režim&lt;/h3&gt;
+&lt;p&gt;Klepnite na ikonu senzora/kompasu v ovládacích prvkoch, aby ste prepli na manuálny režim. V tomto režime môžete:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Ťahať mapu jedným prstom na posúvanie&lt;/li&gt;
+&lt;li&gt;Zmenšovať a zväčšovať pomocou gesta&lt;/li&gt;
+&lt;li&gt;Otáčať dvoma prstami na zmenu orientácie&lt;/li&gt;
+&lt;li&gt;Dvojitým klepnutím prepnúť "automatické vyrovnávanie" horizontu&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Manuálny režim je užitočný, keď chcete skúmať oblohu bez toho, aby ste držali telefón.&lt;/p&gt;
 
 &lt;h2&gt;Viditeľné vrstvy&lt;/h2&gt;
-&lt;p&gt;Sky Map usporiadava zobrazené objekty do vrstiev. Každú vrstvu je možné zapnúť alebo vypnúť pomocou zobrazených ovládacích prvkov. Sú to tieto vrstvy:&lt;/p&gt;
+&lt;p&gt;Sky Map organizuje to, čo zobrazuje, do vrstiev, z ktorých každú je možné nezávisle zapnúť alebo vypnúť. Klepnite na obrazovku, aby sa odhalili ovládacie prvky vrstvy na boku — svietia oranžovo, keď je vrstva zapnutá, a vyzerajú slabo, keď sú vypnuté.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Hviezdy&lt;/li&gt;
-&lt;li&gt;Súhvezdia&lt;/li&gt;
-&lt;li&gt;Messierove objekty&lt;/li&gt;
-&lt;li&gt;Planéty&lt;/li&gt;
-&lt;li&gt;Meteorické roje&lt;/li&gt;
-&lt;li&gt;Mriežka rektascenzie a deklinácie&lt;/li&gt;
-&lt;li&gt;Horizont a svetové strany&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Hviezdy:&lt;/b&gt; Najjasnejšie hviezdy s označeniami pozoruhodných&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Súhvezdia:&lt;/b&gt; Obrysy a názvy súhvezdí&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Pozoruhodné objekty hlbokého vesmíru:&lt;/b&gt; Galaxie, hmloviny, hviezdne zhluky a ďalšie pozoruhodné objekty&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Planéty:&lt;/b&gt; Planéty našej slnečnej sústavy zobrazené ako obrázky&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Meteorické roje:&lt;/b&gt; Aktívne a nadchádzajúce radiačné body meteorických rojov&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Ekliptika a mriežka RA/Dec:&lt;/b&gt; Ekliptika je ročná dráha Slnka po oblohe&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Horizont:&lt;/b&gt; Čiara horizontu a označenia hlavných smerov (S, J, V, Z)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Označené sú najjasnejšie hviezdy, súhvezdia a planéty. Planéty sa zobrazujú ako obrázky, ktoré sú väčšie, ako sa zdajú na oblohe. Sky Map môže zobrazovať objekty, ktoré sú nad horizontom (zobrazeným ako priamka), ktoré možno neuvidíte, pokiaľ nežijete v oblasti, ktorá je rovinatá a bez budov.&lt;/p&gt;
+&lt;p class="callout"&gt;&lt;b&gt;Stojí za to vedieť:&lt;/b&gt; Sky Map zobrazuje geometrický horizont — dokonale plochý, neobmedzený pohľad. Objekty tesne nad ním môžu byť v praxi stále skryté budovami, kopcami alebo stromami.&lt;/p&gt;
 
 &lt;h2&gt;Ovládacie prvky na obrazovke&lt;/h2&gt;
-&lt;p&gt;Klepnutím na obrazovku zobrazíte ovládacie prvky. Na jednej strane obrazovky sú prepínače pre vrstvy opísané vyššie. Povolené vrstvy sú oranžové, vypnuté sú biele.&lt;/p&gt;
-&lt;p&gt;Na druhej strane obrazovky je prepínač na prepínanie medzi automatickým a manuálnym režimom.&lt;/p&gt;
+&lt;p&gt;Klepnite kdekoľvek na obrazovku, aby ste zobrazili alebo skryli ovládacie prvky. Na jednej strane nájdete prepínače vrstiev popísané vyššie. Na druhej strane je tlačidlo na prepínanie medzi automatickým a manuálnym režimom.&lt;/p&gt;
+&lt;p&gt;Ovládacie prvky sa automaticky zafadia po niekoľkých sekundách, aby bol pohľad čistý.&lt;/p&gt;
 
-&lt;h2&gt;Navigační režimy&lt;/h2&gt;
-&lt;p&gt;Pri prvej inštalácii bude Sky Map v automatickom režime a bude využívať senzory telefónu na zobrazenie mapy oblohy v smere, ktorým ukazuje telefón. Prepnutím do manuálneho režimu môžete mapu posúvať prstom, aby ste mohli preskúmať oblohu. Mapu môžete otáčať dvoma prstami a pomocou gesta priblíženia alebo oddialenia môžete mapu priblížiť a oddialiť.&lt;/p&gt;
-
-&lt;h2&gt;Vyhľadávanie&lt;/h2&gt;
-&lt;p&gt;Sky Map pomáha zodpovedať otázku \'Aká je to hviezda?\' alebo \'Kde je...?\' Prístup k funkcii vyhľadávania získate pomocou tlačidla ponuky telefónu alebo pomocou poľa rýchleho vyhľadávania priamo na ploche. Zadajte názov hľadanej hviezdy, súhvezdia alebo planéty nájsť a Sky Map zobrazí zoznam zodpovedajúcich nájdených objektov. Vyberte jeden a Sky Map zobrazí zameriavací kruh a šípku, ktorým smerom musíte nasmerovať telefón, aby ste objekt našli. Kruh sa zmení z modrej na červený a nakoniec na oranžový, keď bude objekt vo vašom zornom poli.&lt;/p&gt;
-&lt;p&gt;POZNÁMKA: Ak ste v manuálnom režime, Sky Map len posunie mapu, aby vám ukázal objekt.&lt;/p&gt;
-&lt;p&gt;Ak chcete ukončiť režim vyhľadávania, klepnite na krížik v rohu obrazovky.&lt;/p&gt;
+&lt;h2&gt;Hľadanie&lt;/h2&gt;
+&lt;p&gt;Klepnite na ikonu lupy na vyhľadávanie čohokoľvek na oblohe. Môžete vyhľadávať:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;b&gt;Hviezdy&lt;/b&gt; — podľa názvu, napr. "Sírius", "Betelgeuse", "Polárka"&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Planéty&lt;/b&gt; — napr. "Mars", "Saturn"&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Súhvezdia&lt;/b&gt; — napr. "Orión", "Kasiopeja"&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Objekty hlbokého vesmíru&lt;/b&gt; — napr. "M31", "Galaxia Andromedy", "Plejády"&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Kométy a meteorické roje&lt;/b&gt; — podľa názvu&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;b&gt;V automatickom režime:&lt;/b&gt; po výbere výsledku Sky Map zobrazuje cieľový kruh a smerovú šípku. Nasledujte šípku otáčaním telefónu — kruh sa zmení z modrej na červenú, potom na oranžovú, keď je objekt v poli vášho pohľadu. Klepnite na ✕ na ukončenie vyhľadávania.&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;V manuálnom režime:&lt;/b&gt; mapa sa jednoducho presunie na stred objektu.&lt;/p&gt;
 
 &lt;h2&gt;Cestovanie v čase&lt;/h2&gt;
-&lt;p&gt;Režim Cestovania v čase vám umožňuje použiť Sky Map na zobrazenie oblohy inej ako v súčasnosti. Z hlavnej ponuky vyberte \'Cestovanie v čase\' a potom vyberte jeden z obľúbených dátumov alebo vyberte svoj vlastný dátum a čas pomocou dialógov \'Zmeniť dátum\' a \'Zmeniť čas\'. Výbery sú obmedzené na roky 1900-2100 kvôli obmedzeniam presnosti spôsobené najmä gravitačným vplyvom Jupitera. Keď ste hotový, stlačením tlačidla \'Choď!\' preletíte časom do cieľa. Sky Map je teraz v režime cestovania v čase a zobrazuje dátum, ktorý ste navštívili, s ovládacími prvkami na \'prehrávanie\' času vpred a vzad od tohto bodu. Jedným kliknutím na tlačidlá sa začnete pomaly pohybovať v čase a opakovaným kliknutím začnete cestovať rýchlejšie a rýchlejšie.&lt;/p&gt;
-&lt;p&gt;Cestovanie v čase je možné použiť na zodpovedanie rôznych otázok, napríklad \'Čo budem môcť vidieť dnes večer tesne po západe Slnka?\', \'Kedy budem mať nabudúce dobrú šancu vidieť Merkúr?\' a \'Kedy by som mal podľa Hesioda zbierať hrozno?\'&lt;/p&gt;
+&lt;p&gt;Cestovanie v čase vám umožňuje vidieť oblohu v ľubovoľnom momente od roku 1900 do 2100. Vyberte ikonu &lt;b&gt;Cestovanie v čase&lt;/b&gt; so špirálami z panela akcií.&lt;/p&gt;
+&lt;p&gt;Môžete si vybrať vopred nastavenú dátum (slnovrat, zatmenia, slávne nebeské udalosti, historické momenty) alebo zadať vlastný dátum a čas. Klepnite na &lt;b&gt;Poď!&lt;/b&gt; na letenie tam.&lt;/p&gt;
+&lt;p&gt;Keď ste v režime cestovania v čase, dátum sa zobrazuje na obrazovke a ovládacie prvky prehrávania vám umožňujú pohybovať sa v čase:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Klepnite na tlačidlá prehrávania dopredu alebo dozadu, aby ste začali pohybovať&lt;/li&gt;
+&lt;li&gt;Klepnite na ne znova, aby ste išli rýchlejšie&lt;/li&gt;
+&lt;li&gt;Klepnite na tlačidlo zastavenia na pozastavenie&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Niektoré veci, na ktoré ho môžete použiť:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;i&gt;Čo môžem vidieť krátko po západe slnka dnes?&lt;/i&gt;&lt;/li&gt;
+&lt;li&gt;&lt;i&gt;Kedy je ďalšia dobrá príležitosť vidieť Merkúr?&lt;/i&gt;&lt;/li&gt;
+&lt;li&gt;&lt;i&gt;Ako vyzerala obloha v noci, keď som sa narodil?&lt;/i&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Presnosť sa znižuje pre dátumy ďaleko od súčasnosti, hlavne kvôli gravitačnému vplyvu Jupitera.&lt;/p&gt;
 
-&lt;h2&gt;Galéria snímok z Hubblovho teleskopu&lt;/h2&gt;
-&lt;p&gt;Sky Map obsahuje galériu snímok z Hubblovho teleskopu. Do galérie vstúpite výberom položky Galéria v ponuke. V galérii môžete prechádzať dostupné snímky posúvaním prstom. Ak ťuknete na náhľad obrázka Sky Map zobrazí obrázok v plnej veľkosti. Ak klepnete na tlačidlo Hľadať, Sky Map sa prepne do režimu vyhľadávania, aby našla objekt zodpovedajúce obrázku.&lt;/p&gt;
+&lt;h2&gt;Informačné karty&lt;/h2&gt;
+&lt;p&gt;Klepnite na ľubovoľný označený nebeský objekt na mape oblohy, aby ste otvorili informačnú kartu — panel s fotografiou a podrobnosťami o danom objekte. Informačné karty sú dostupné pre 150+ objektov vrátane hviezd, planét, Mesiaca, pozoruhodných objektov hlbokého vesmíru a súhvezdí.&lt;/p&gt;
+&lt;p&gt;Každá karta zobrazuje:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Fotografiu alebo diagram objektu&lt;/li&gt;
+&lt;li&gt;Krátky popis a zaujímavú skutočnosť&lt;/li&gt;
+&lt;li&gt;Vedecké údaje, ako je vzdialenosť, veľkosť a typ objektu&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Klepnite na obrázok v karte, aby ste ho zobrazili na celú obrazovku. Zatvorte kartu klepnutím mimo nej alebo stlačením &lt;b&gt;Späť&lt;/b&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;Povolenie informačných kariet:&lt;/b&gt; Predvolene sa zobrazujú iba v manuálnom režime; prejdite do nastavení, aby ste ich povolili aj v automatickom (senzormi riadenom) režime.&lt;/p&gt;
+
+&lt;h2&gt;Galéria&lt;/h2&gt;
+&lt;p&gt;Galéria obsahuje zbierku obrázkov z vesmírneho ďalekohľadu Hubble a ďalších zdrojov. Otvorte ju z hlavného menu.&lt;/p&gt;
+&lt;p&gt;Prehliadajte miniatúry posúvaním a klepnite na jednu, aby ste videli celý obrázok. Použite tlačidlo &lt;b&gt;Nájsť na oblohe&lt;/b&gt; na preskok do režimu vyhľadávania a umiestnenie daného objektu na vašej aktuálnej mape oblohy.&lt;/p&gt;
 
 &lt;h2&gt;Režim nočného videnia&lt;/h2&gt;
-&lt;p&gt;Režim nočného videnia je navrhnutý tak, aby chránil vaše oči prispôsobené tme. Keď si vyberiete možnosť Nočné videnie, Sky Map zobrazí mapu v červenej farbe, stlmí obrazovku a vypne podsvietenie tlačidiel. Opätovným výberom tejto možnosti sa vrátite k normálnym farbám.&lt;/p&gt;
+&lt;p&gt;Ak ste vonku a robíte skutočné pozorovania, režim nočného videnia vám pomôže zachovať si tmavú adaptáciu zraku. Prepnite ho z panela akcií klepnutím na ikonu &lt;b&gt;Nočné videnie&lt;/b&gt; v tvare oka.&lt;/p&gt;
+&lt;p&gt;V režime nočného videnia Sky Map:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Prepne displej na hlboké červené tóny&lt;/li&gt;
+&lt;li&gt;Výrazne stlmí obrazovku&lt;/li&gt;
+&lt;li&gt;Zníži podsvietenie tlačidiel&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Prepnite ho znova, aby ste sa vrátili do normálu. Možnosť &lt;b&gt;Stlmenie obrazovky&lt;/b&gt; v časti &lt;b&gt;Nastavenia → Vzhľad&lt;/b&gt; vám dáva ďalšiu kontrolu nad tým, ako tmavá bude obrazovka.&lt;/p&gt;
 
 &lt;h2&gt;Nastavenie vašej polohy&lt;/h2&gt;
-&lt;p&gt;Aplikácia Sky Map potrebuje vašu približnú polohu, aby vám mohla zobraziť správnu hviezdnu mapu. V predvolenom nastavení to určí z vašej mobilnej siete. Ak ste mimo dosahu alebo máte zakázané určenie polohy podľa siete, použije sa GPS vášho telefónu. Svoju polohu môžete nastaviť aj manuálne v Nastaveniach a to buď zadaním názvu miesta alebo ako zemepisnú šírku a dĺžku (v stupňoch). Upozorňujeme, že aplikácia Sky Map vyžaduje dátové pripojenie na určenie zemepisnej šírky a dĺžky z názvu miesta.&lt;/p&gt;
-
-&lt;h2&gt;Riešenie problémov a obmedzenia&lt;/h2&gt;
-
-&lt;h3&gt;Mapa je nepresná&lt;/h3&gt;
-&lt;p&gt;Ak zistíte, že sa mapa presne nezhoduje so skutočnou oblohou, môže to mať niekoľko dôvodov:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Máte kalibrovaný kompas? Skúste držať telefón a otáčaním v tvare číslice osem ho kalibrovať. Možno to budete musieť občas zopakovať - toto je funkcia telefónu, nie aplikácie Sky Map.&lt;/li&gt;
-&lt;li&gt;Má aplikácia presné určenie vašej polohy? Máte zapnutú funkciu GPS alebo určenie polohy podľa siete?&lt;/li&gt;
-&lt;li&gt;Máte nastavený správny čas a časové pásmo? Sky Map potrebuje vypočítať svetový čas a na to potrebuje váš miestny čas a aj časové pásmo. Ak má vaše zariadenie SIM kartu, tieto budú zvyčajne nastavené správne. Otvorte diagnostickú stránku aplikácie a skontrolujte, či sú čas a miesto správne.&lt;/li&gt;
-&lt;li&gt;Máte zapnutú magnetickú korekciu? V niektorých častiach sveta môže byť rozdiel medzi magnetickým severom a skutočným severom až 20 stupňov.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3&gt;Mapa sa nehýbe&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;Ste v manuálnom režime? Ak nie, môže to byť spôsobené nekalibrovaným kompasom. Postupujte podľa vyššie uvedených krokov na kalibráciu kompasu.&lt;/li&gt;
-&lt;li&gt;Má váš telefón všetky potrebné senzory? Nie všetky telefóny ich majú. Musí mať aspoň kompas a akcelerometer a ideálne gyroskop. Diagnostická stránka aplikácie vám zobrazí, ktoré senzory máte. Ak váš telefón nemá gyroskop, skúste v časti Nastavenia/Nastavenia snímača (experti) vybrať možnosť \'Zakázať gyroskop\'.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p class="callout"&gt;Ak všetko ostatné zlyhá, pošlite nám e-mail (najlepšie so snímkou obrazovky vašej diagnostickej stránky) a my vám pomôžeme odhaliť príčinu.&lt;/p&gt;
-
-&lt;h2&gt;Používatelia ďalekohľadov&lt;/h2&gt;
-&lt;p&gt;Sky Map teraz obsahuje prototyp \'Režim ukazovateľa\', kde obrazovka neukáže to, čo je pred telefónom, ale to, čo by ste videli, keby ste stáli vedľa ďalekohľadu. Účelom je, aby ste mohli pripojiť telefón k ďalekohľadu a mať obrazovku kolmo na jeho smer. Môžete to povoliť v \'Nastaveniach\' pod \'Nastavenia senzora\'.&lt;/p&gt;
-
-&lt;h2&gt;Podporte vývoj&lt;/h2&gt;
-&lt;p&gt;Sky Map je bezplatná, open source a bez reklám. Ak ju radi používate, zvážte podporu ďalšieho vývoja na &lt;a href="https://github.com/sky-map-team/stardroid#support"&gt;našej stránke GitHub&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2&gt;Tvorcovia&lt;/h2&gt;
-&lt;h3&gt;Technický vývoj, dizajn a produktový manažment&lt;/h3&gt;
-&lt;p&gt;Brent Bryan, Dominic Widdows, Hector Ouilhet, James Powell, John Taylor, Kevin Serafini, Lior Ron&lt;/p&gt;
-
-&lt;h3&gt;Open Source prispievatelia&lt;/h3&gt;
-&lt;p&gt;Christopher Wilcox, PhD&lt;/p&gt;
-
-&lt;h2&gt;Poďakovanie&lt;/h2&gt;
-&lt;p&gt;Sky Map bola pôvodne vyvinutá ako „Google Sky Map" spoločnosťou Google Inc. a sprístupnená v roku 2012.&lt;/p&gt;
-&lt;p&gt;Sky Map používa mapy odvodené z údajov:&lt;/p&gt;
-&lt;ul class="credits"&gt;
-&lt;li&gt;Centre de Donnees astronomiques de Strasbourg (&lt;a href="https://cdsweb.u-strasbg.fr/"&gt;https://cdsweb.u-strasbg.fr/&lt;/a&gt;)&lt;/li&gt;
-&lt;li&gt;Katalóg jasných hviezd, 5. revidované vydanie (Hoffleit D., Warren Jr W.H.)&lt;/li&gt;
-&lt;li&gt;Databáza HYG, HYG v1.0. (&lt;a href="https://www.astronexus.com/"&gt;https://www.astronexus.com/&lt;/a&gt;)&lt;/li&gt;
-&lt;li&gt;História a presné polohy objektov NGC/IC (Harold G. Corwin Jr)&lt;/li&gt;
-&lt;li&gt;Revidovaný nový všeobecný katalóg nehviezdnych astronomických objektov (Sulentic J.W., Tifft W.G.)&lt;/li&gt;
-&lt;li&gt;SFA Star Charts (&lt;a href="https://observe.phy.sfasu.edu/SFAStarCharts/SFAStarChartFAQ.html"&gt;https://observe.phy.sfasu.edu/SFAStarCharts/SFAStarChartFAQ.html&lt;/a&gt;)&lt;/li&gt;
-&lt;li&gt;Polohy objektov slunečnej sústavy sú vypočítané z údajov poskytnutých observatóriom USNOP (&lt;a href="https://www.usno.navy.mil/USNO/astronomical-applications"&gt;https://www.usno.navy.mil/USNO/astronomical-applications&lt;/a&gt;)&lt;/li&gt;
-&lt;li&gt;Údaje sférického pokrytia sú získané od (&lt;a href="https://www2.research.att.com/~njas/coverings"&gt;https://www2.research.att.com/~njas/coverings&lt;/a&gt;)&lt;/li&gt;
-&lt;li&gt;Snímky z Hubblovho teleskopu sú poskytnuté inštitútom Space Telescope Science Institute z NASA (&lt;a href="https://hubblesite.org/"&gt;https://hubblesite.org/&lt;/a&gt;)&lt;/li&gt;
-&lt;li&gt;Snímka M31 Peter Kennett (&lt;a href="https://commons.wikimedia.org/wiki/File:M31(Kennett).jpg"&gt;https://commons.wikimedia.org/wiki/File:M31(Kennett).jpg&lt;/a&gt;)&lt;/li&gt;
+&lt;p&gt;Sky Map potrebuje vašu približnú polohu na nakreslenie správnej oblohy. Predvolene používa služby určovania polohy vášho zariadenia (mobilná sieť alebo GPS). Ak mu nepovolíte prístup, Sky Map vás umiestnite na (0, 0) — bod v strede oceánu!&lt;/p&gt;
+&lt;p&gt;Ak prístup k polohe nie je dostupný alebo by ste ho radšej nastavili ručne, prejdite na &lt;b&gt;Nastavenia → Poloha&lt;/b&gt; a buď:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Zadajte &lt;b&gt;názov miesta&lt;/b&gt; (vyžaduje internetové pripojenie na vyhľadanie súradníc), alebo&lt;/li&gt;
+&lt;li&gt;Zadajte &lt;b&gt;zemepisnú šírku a dĺžku&lt;/b&gt; priamo v stupňoch (nie je potrebné internetové pripojenie)&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;Ak ste predtým zamietli povolenie polohy Sky Map, možno budete musieť ho znova povoliť v &lt;b&gt;Nastaveniach aplikácie → Povolenia&lt;/b&gt; vášho zariadenia.&lt;/p&gt;
+
+&lt;h2&gt;Používatelia ďalekohľadu — režim ukazovateľa&lt;/h2&gt;
+&lt;p&gt;V časti &lt;b&gt;Nastavenia → Nastavenia senzora&lt;/b&gt; zmeňte &lt;b&gt;Smer pohľadu&lt;/b&gt; na &lt;b&gt;Režim ukazovateľa&lt;/b&gt;. V tomto režime Sky Map zobrazuje, na čo ukazuje &lt;i&gt;dlhá hrana&lt;/i&gt; telefónu, nie na čo sa pozerajú na obrazovke.&lt;/p&gt;
+&lt;p&gt;To vám umožňuje namontovať telefón pozdĺž boku tubusu ďalekohľadu tak, aby bola obrazovka kolmá na tubus, zatiaľ čo mapa stále sleduje, na čo je ďalekohľad zameraný.&lt;/p&gt;
+
+&lt;h2&gt;Tipy a nastavenia, ktoré stojí za to vedieť&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;b&gt;Diagnostika:&lt;/b&gt; Ak niečo vyzerá zle, otvorte menu pretečenia a klepnite na &lt;b&gt;Diagnostika&lt;/b&gt;. Táto stránka zobrazuje vašu aktuálnu polohu, čas, stav senzora a čítania presnosti — veľmi užitočné, ak potrebujete nahlásiť problém.&lt;/li&gt;
+
+&lt;li&gt;&lt;b&gt;Veľkosť písma:&lt;/b&gt; Upravte veľkosť označení v časti &lt;b&gt;Nastavenia → Vzhľad&lt;/b&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Chvejúca sa mapa:&lt;/b&gt; Experimentujte s &lt;b&gt;Rýchlosťou senzora&lt;/b&gt; a &lt;b&gt;Tlmením senzora&lt;/b&gt; v časti &lt;b&gt;Nastavenia → Nastavenia senzora (Experti)&lt;/b&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Žiadny žiroskop?&lt;/b&gt; Ak váš telefón nemá žiroskop, povolte &lt;b&gt;Zakázať žiroskop&lt;/b&gt; v nastaveniach senzora, aby ste použili alternatívny režim senzora.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Magnetická korekcia:&lt;/b&gt; Sky Map môže aplikovať korekciu magnetickej deklinácie, aby sa mapa zarovnala so skutočným severom namiesto magnetického severu. Prepnite to v časti &lt;b&gt;Nastavenia → Poloha&lt;/b&gt;. V niektorých častiach sveta môže byť rozdiel 20 stupňov alebo viac. Ak je kompas vášho telefónu chybný, môžete to ďalej ručne upraviť.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Požiadavky na hardvér&lt;/h2&gt;
+&lt;p&gt;Nie všetky zariadenia môžu plne podporovať Sky Map! Minimálne potrebujete telefón s:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Senzorom magnetického poľa (tzv. kompas) — na určenie smeru, ktorým sa pozeráte&lt;/li&gt;
+&lt;li&gt;Akcelerometrom — na určenie, ako vysoko sa pozeráte na oblohu&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Ideálne aj:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Žiroskop — to vyhladí pohyb a bude menej trhaný&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p class="callout"&gt;Telefónne kompasy sú notoricky nespoľahlivé. Ak mapa oblohy vyzerá zle, je to takmer vždy problém s hardvérom kompasu vášho telefónu — nie chyba v Sky Map. Sky Map číta presne to, čo hlási senzor vášho telefónu; nemá spôsob, ako automaticky opraviť zlé alebo skreslené čítanie, hoci je v Nastaveniach dostupný manuálny posun pre telefóny s konzistentnou chybou. Pozrite si Riešenie problémov nižšie.&lt;/p&gt;
+&lt;h3&gt;Ako viem, ktoré senzory má môj telefón?&lt;/h3&gt;
+&lt;p&gt;Otvorte stránku Diagnostika Sky Map — všetky senzory, ktoré váš telefón nemá, sa zobrazia ako "--,--,--".&lt;/p&gt;
+&lt;h3&gt;Čo ak v mojom zariadení chýbajú požadované senzory?&lt;/h3&gt;
+&lt;p&gt;Sky Map sa vráti do manuálneho režimu. Stále môžete skúmať oblohu, ale bez senzorov neexistuje spôsob, ako by ktorákoľvek aplikácia mohla ukázať váš smer.&lt;/p&gt;
+
+&lt;h2&gt;Riešenie problémov&lt;/h2&gt;
+&lt;h3&gt;Mapa sa nepohybuje&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Skontrolujte, či ste v automatickom režime (nie v manuálnom)&lt;/li&gt;
+&lt;li&gt;Skontrolujte stránku Diagnostika, aby ste potvrdili, že vaše zariadenie má kompas a akcelerometer&lt;/li&gt;
+&lt;li&gt;Skúste gesto kalibrácie v tvare osmičky: pomaly vlnite telefónom v tvare veľkej, hladkej osmičky&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Mapa ukazuje nesprávnym smerom alebo je nepresná&lt;/h3&gt;
+&lt;p&gt;Sky Map potrebuje tri veci na zobrazenie správnej oblohy: smer, ktorým sa pozerajú váš telefón, vašu polohu a aktuálny čas. Ak mapa vyzerá zle, pravdepodobne je jeden z nich vypnutý.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;b&gt;Kompas (najčastejšia príčina):&lt;/b&gt; Toto je problém s hardvérom vášho telefónu — nie chyba Sky Map. Gesto kalibrácie v tvare osmičky požiada váš telefón, aby interne resetoval senzor kompasu, ale &lt;i&gt;kalibrovaný kompas nemusí byť presný&lt;/i&gt;. Ak ste blízko kovového predmetu, palubnej dosky auta alebo magnetického puzdra na telefón, mapa môže byť stále vypnutá aj po kalibrácii. Prejdite na otvorenú oblasť, zopakujte gesto osmičky, potom prepnite &lt;b&gt;Magnetickú korekciu&lt;/b&gt; v časti &lt;b&gt;Nastavenia → Poloha&lt;/b&gt;. Ak má váš telefón konzistentnú chybu smeru, použite manuálny posun v časti &lt;b&gt;Nastavenia → Nastavenia senzora (Experti)&lt;/b&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Poloha:&lt;/b&gt; Udeľte povolenie polohy cez &lt;b&gt;Nastavenia aplikácie → Povolenia&lt;/b&gt;. Skontrolujte stránku Diagnostika, aby ste potvrdili svoje súradnice. Charakteristickým príznakom chýbajúcej polohy je, že sa Polárka objavuje blízko horizontu.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Čas:&lt;/b&gt; Menej bežné, ale nesprávny časový posun posúva celú oblohu. Skontrolujte stránku Diagnostika, aby ste potvrdili čas a časové pásmo vášho zariadenia.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Mapa je chvejúca sa&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Upravte &lt;b&gt;Rýchlosť senzora&lt;/b&gt; a &lt;b&gt;Tlmenie senzora&lt;/b&gt; v časti &lt;b&gt;Nastavenia → Nastavenia senzora (Experti)&lt;/b&gt;&lt;/li&gt;
+&lt;li&gt;Ak váš telefón nemá žiroskop, povolte &lt;b&gt;Zakázať žiroskop&lt;/b&gt; v nastaveniach senzora&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Úplné podrobnosti o riešení problémov nájdete v online &lt;a href="https://github.com/sky-map-team/stardroid/blob/master/troubleshooting.md"&gt;návode na riešenie problémov&lt;/a&gt;.&lt;/p&gt;
+&lt;p class="callout"&gt;Ak ste stále uviaznutí, pošlite nám e-mail na skymapdevs@gmail.com — snímka obrazovky vašej stránky Diagnostika je veľmi užitočná.&lt;/p&gt;
+
+&lt;h1&gt;Čo je nové v Sky Map?&lt;/h1&gt;
+
+%3$s
+
+%2$s
     </string>
 </resources>

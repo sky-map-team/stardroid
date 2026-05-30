@@ -223,12 +223,15 @@
     <string name="menu_calibrate" translation_description="Menu item label to open the compass calibration screen">Calibro</string>
     <string name="compass_calibration_activity_heading_compass" translation_description="Static label in the compass calibration screen placed inline to the left of the live compass accuracy value (e.g. displayed as \'Compass - Accuracy: High\')">Cwmpawd -</string>
     <string name="compass_calibration_activity_do_not_show_this_again" translation_description="Checkbox label in the compass calibration dialog to suppress future automatic appearances">Peidio â dangos hyn eto</string>
-    <string name="compass_calibration_activity_warning" translation_description="Heading/reason text shown in the compass calibration dialog when it opens automatically due to low accuracy">Mae angen calibro dy gwmpawd</string>
-    <string name="compass_calibration_activity_user_heading" translation_description="Heading shown in the compass calibration dialog when the user opens it manually from the menu">Gwella Eich Alinio</string>
-    <string name="compass_calib_what_to_do" translation_description="Information for the user on how to calibrate the compass when the dialog auto-opens. Placeholder is the video URL"><![CDATA[Mae Sky Map yn dibynnu ar synwyrydd cwmpawd adeiledig eich ffôn. Os yw\'r cywirdeb a ddangosir uchod yn isel, mae angen "ailosod" y synwyrydd trwy symud y ffôn mewn patrwm ffigur-8: %s.<br/><br/>
-<b>Pwysig:</b> Mae calibradu yn broses caledwedd a ddelir gan eich dyfais. Er ei fod yn gwella dibynadwyedd y synwyrydd, gall ymyrraeth magnetig allanol achosi "gogwydd" neu ddrifft bach. Dyma gyfyngiad corfforol cwmpasau symudol ac nid gwall yn yr ap. Gweler <i>Datrys Problemau</i> yn <i>Cymorth</i> am bethau eraill i\'w rhoi cynnig arnynt.]]></string>
-    <string name="compass_calib_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they invoke the calibration dialog. Placeholder is the video URL"><![CDATA[Mae eich ffôn yn adrodd ei gywirdeb cwmpawd fel y dangosir uchod. I wella hyn, cyflawnhewch symudiad ffigur-8 gyda\'ch ddyfais (%s).<br/><br/>
-<b>Nodyn ar Gywirdeb:</b> Mae calibradu yn ofyniad lefel caledwedd eich ffôn, nid gosodiad Sky Map. Hyd yn oed pan gaiff ei galibradio, gall meysydd magnetig lleol (fel dashboards ceir neu fagnedau) achosi tuedd fach mewn cyfeiriad. Gweler <i>Datrys Problemau</i> yn <i>Cymorth</i> am bethau eraill i\'w rhoi cynnig arnynt.]]></string>
+    <string name="compass_calibration_activity_warning" translation_description="Heading/reason text shown in the compass calibration dialog when it opens automatically due to low accuracy">Mae Angen Sylw ar Gwellt Eich Ffôn</string>
+    <string name="compass_calibration_activity_user_heading" translation_description="Heading shown in the compass calibration dialog when the user opens it manually from the menu">Gwellt Eich Ffôn</string>
+    <string name="compass_calib_what_to_do" translation_description="Information for the user on how to calibrate the compass when the dialog auto-opens. Placeholder is the video URL"><![CDATA[Mae synwyrydd cwmpawd eich ffôn yn adrodd cywirdeb isel. Mae\'r symudiad ffigur-8 (%s) yn annog eich ffôn i ailgalibru ei synwyrydd caledwedd — nid oes gan Sky Map unrhyw reolaeth dros y broses hon.<br/><br/>
+<b>Nid yw calibreiddio yn golygu cywirdeb.</b> Mae\'r ystum ffigur-8 yn helpu\'r synwyrydd i\'w normaleidio\'i hun yn fewnol, ond ni all dynnu ymyrraeth o wrthrychau metel gerllaw, dashfyrddau ceir, neu achosion ffôn magnetig. Os yw\'r map yn dal yn anghywir ar ôl calibreiddio, mae\'r ffynonellau allanol hynny\'n fwyaf tebygol i fod yn achos — nid Sky Map.<br/><br/>
+Symudwch i ardal agored i ffwrdd o fetel a rhowch gynnig arni eto. Gweler <i>Datrys Problemau</i> yn <i>Cymorth</i> am fwy o gamau.]]></string>
+    <string name="compass_calib_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they invoke the calibration dialog. Placeholder is the video URL"><![CDATA[Mae eich ffôn yn adrodd ar gywirdeb ei gwympas fel y dangosir uchod. Mae\'r symudiad ffigur-8 (%s) yn annog caledwedd eich ffôn i ailgalibru ei synwyrydd cwympas.<br/><br/>
+<b>Gwahaniaeth pwysig:</b> mae calibriad yn helpu\'r synwyrydd i\'w normaleidio\'i hun yn fewnol. Nid yw cwympas wedi\'i galibru o reidrwydd yn un cywir — gall ymyrraeth magnetig leol (gwrthrychau metel, dashfyrddau ceir, achosion ffôn magnetig) dal i achosi i\'r map bwyntio\'r ffordd anghywir. Mae Sky Map yn darllen yn union yr hyn y mae synwyrydd eich ffôn yn ei adrodd; nid oes ganddo unrhyw ffordd i gywiro ar gyfer eich amgylchedd.<br/><br/>
+Gweler <i>Datrys Problemau</i> yn <i>Cymorth</i> am gamau eraill, gan gynnwys y gwrthbwyso cwympas llaw ar gyfer ffonau gyda gwall cyfeiriadol cyson.]]></string>
+    <string name="compass_low_accuracy_toast" translation_description="Brief toast shown when compass accuracy is low and the user has disabled the calibration dialog">Mae gwellt eich ffôn yn adrodd cywirdeb isel</string>
     <string name="sensor_reverse_preference_title" translation_description="Preference title for reversing the magnetic Z-axis sensor reading, a fix for certain phones with incorrectly implemented sensors">Gwrthdroi Z Magnetig</string>
     <string name="sensor_reverse_preference_summary" translation_description="Summary for the Reverse Magnetic Z preference">
     Dull cywiro ar gyfer dyfeisiau â synwyryddion wedi\'u rhoi ar waith yn anghywir; angen ailgychwyn
@@ -273,10 +276,12 @@
     <string name="warm_welcome_slide1_title" translation_description="Title for the first slide of the Warm Welcome">Archwilio\'r Gofod</string>
     <string name="warm_welcome_slide1_desc" translation_description="Description for the first slide of the Warm Welcome">
     Defnyddiwch yr haenau ar y chwith i hidlo sêr, cytserau, planedau, a mwy. Tapia\'r Vortex i deithio drwy amser, neu\'r Llygad ar gyfer modd nos.
+    Vortex to travel through time, or the Eye for night mode.
     <b>Vortex</b> to travel through time, or the <b>Eye</b> for night mode.</string>
     <string name="warm_welcome_slide2_title" translation_description="Title for the second slide of the Warm Welcome">Llywio\'r Awyr</string>
     <string name="warm_welcome_slide2_desc" translation_description="Description for the second slide of the Warm Welcome">
     Pwyntiwch eich ffôn i edrych o gwmpas yn y Modd Awtomatig, neu tapiwch i newid i Fodd Llaw a archwilio trwy chwipiad. Tapiwch ddwywaith yn y Modd Llaw i ailosod eich gorwel.
+    Auto Mode, or tap to switch to Manual and explore by swiping. Double-tap in Manual to reset your horizon.
     <b>Auto Mode</b>, or tap to switch to <b>Manual</b> and explore by swiping. Double-tap in Manual to reset your horizon.</string>
     <string name="warm_welcome_slide2_info_desc" translation_description="Description about info cards on the second slide">
     Tapiwch unrhyw wrthrych yn y Modd Llaw i ddangos Cardiau Gwybodaeth gyda ffeithiau diddorol a manylion nefol.
@@ -285,8 +290,11 @@
     <string name="warm_welcome_slide3_desc" translation_description="Description for the third slide of the Warm Welcome">Mae Sky Map yn defnyddio synwyryddion eich ffôn i alinio gyda\'r sêr.</string>
     <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message when sensors are missing">
     Mae\'n ymddangos bod y ddyfeisiau angenrheidiol ar goll ar eich dyfais ar gyfer tracio awtomatig. Peidiwch â phoeni—gallwch dal i archwilio\'r holl gosmos yn y Modd Llaw!
+    Manual Mode!
     <b>Manual Mode</b>!</string>
-    <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration text on slide 3">I gadw pethau\'n gywir, rhowch i\'ch ffôn don cyflym ffigur-8 bob hyn a hyn.<b>figure-8</b> wave every once in a while.</string>
+    <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration text on slide 3">
+    I gadw pethau\'n gywir, rhowch i\'ch ffôn don cyflym ffigur-8 bob hyn a hyn.figure-8 wave every once in a while.
+    <b>figure-8</b> wave every once in a while.</string>
 
     <string name="tutorial_planets" translation_description="Tutorial annotation for planets layer">Planedau</string>
     <string name="tutorial_meteors" translation_description="Tutorial annotation for meteors layer">Meteorau</string>

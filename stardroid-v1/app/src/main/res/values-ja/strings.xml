@@ -217,19 +217,15 @@
     <string name="menu_calibrate" translation_description="Menu item label to open the compass calibration screen">キャリブレーション</string>
     <string name="compass_calibration_activity_heading_compass" translation_description="Static label in the compass calibration screen placed inline to the left of the live compass accuracy value (e.g. displayed as \'Compass - Accuracy: High\')">コンパス -</string>
     <string name="compass_calibration_activity_do_not_show_this_again" translation_description="Checkbox label in the compass calibration dialog to suppress future automatic appearances">これを再び表示しない</string>
-    <string name="compass_calibration_activity_warning" translation_description="Heading/reason text shown in the compass calibration dialog when it opens automatically due to low accuracy">コンパスはキャリブレーションが
-        必要かもしれません</string>
-    <string name="compass_calibration_activity_user_heading" translation_description="Heading shown in the compass calibration dialog when the user opens it manually from the menu">位置合わせを改善する</string>
-    <string name="compass_calib_what_to_do" translation_description="Information for the user on how to calibrate the compass when the dialog auto-opens. Placeholder is the video URL"><![CDATA[このデバイスは、
-        内部コンパスがキャリブレーションされていないとSkyマップに報告しています。
-    これはSkyマップの問題ではないですが、修正を助けることは出来ます。コンパスをキャリブレーションするには、この動画%sで示しているように、精度が「高」になるまで
-        デバイスを8の字に動かしてください。]]></string>
-    <string name="compass_calib_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they invoke the calibration dialog. Placeholder is the video URL"><![CDATA[このデバイスの
-        コンパスの精度は上に
-        表示しています。
-    表示が「高」でない場合、コンパスはキャリブレーションが必要かもしれません。これはSkyマップの問題ではなく、デバイスの
-    機能です。コンパスをキャリブレーションするには、この動画%sで示しているように、
-        デバイスを8の字に動かしてください。]]></string>
+    <string name="compass_calibration_activity_warning" translation_description="Heading/reason text shown in the compass calibration dialog when it opens automatically due to low accuracy">お使いのスマートフォンのコンパスに注意が必要です</string>
+    <string name="compass_calibration_activity_user_heading" translation_description="Heading shown in the compass calibration dialog when the user opens it manually from the menu">お使いのスマートフォンのコンパス</string>
+    <string name="compass_calib_what_to_do" translation_description="Information for the user on how to calibrate the compass when the dialog auto-opens. Placeholder is the video URL"><![CDATA[お使いの携帯電話のコンパスセンサーが低精度を報告しています。フィギュア8モーション（%s）は、携帯電話にハードウェアセンサーの再キャリブレーションを促します。Sky Mapはこのプロセスを制御できません。<br/><br/>
+<b>キャリブレーション済みは正確を意味しません。</b>フィギュア8ジェスチャーはセンサーが内部で自身を正規化するのに役立ちますが、近くの金属物、車のダッシュボード、または磁気携帯電話ケースからの干渉を除去することはできません。キャリブレーション後もマップがずれている場合、それらの外部ソースが最も可能性の高い原因です。Sky Mapではありません。<br/><br/>
+金属から離れた開放的な場所に移動してもう一度試してください。詳細な手順については、<i>ヘルプ</i>の<i>トラブルシューティング</i>を参照してください。]]></string>
+    <string name="compass_calib_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they invoke the calibration dialog. Placeholder is the video URL"><![CDATA[お使いのスマートフォンは、上記のようにコンパス精度を報告しています。フィギュア8モーション（%s）により、スマートフォンのハードウェアがコンパスセンサーを再キャリブレーションするよう促されます。<br/><br/>
+<b>重要な区別：</b>キャリブレーションはセンサーが内部で自身を正規化するのに役立ちます。キャリブレーションされたコンパスが必ずしも正確であるとは限りません。局所的な磁気干渉（金属物体、車のダッシュボード、磁気スマートフォンケース）により、地図が間違った方向を指す可能性があります。Sky Mapはお使いのスマートフォンのセンサーが報告する内容を正確に読み取ります。環境に対応する方法はありません。<br/><br/>
+<i>ヘルプ</i>の<i>トラブルシューティング</i>を参照して、一貫した方向誤差のあるスマートフォン向けの手動コンパスオフセットを含む他のステップを確認してください。]]></string>
+    <string name="compass_low_accuracy_toast" translation_description="Brief toast shown when compass accuracy is low and the user has disabled the calibration dialog">お使いのスマートフォンのコンパスの精度が低くなっています</string>
     <string name="sensor_reverse_preference_title" translation_description="Preference title for reversing the magnetic Z-axis sensor reading, a fix for certain phones with incorrectly implemented sensors">磁気センサーのZ軸を反転</string>
     <string name="sensor_reverse_preference_summary" translation_description="Summary for the Reverse Magnetic Z preference">センサーの実装が不適切なデバイス用に修正する - 再起動が必要</string>
     <string name="whats_new_dialog_title" translation_description="Title of the dialog shown on first launch after an update, listing new features">更新情報</string>
@@ -268,14 +264,18 @@
 
     <string name="warm_welcome_title" translation_description="Title of the Warm Welcome screen">Sky Mapへようこそ</string>
     <string name="warm_welcome_slide1_title" translation_description="Title for the first slide of the Warm Welcome">宇宙を探索する</string>
-    <string name="warm_welcome_slide1_desc" translation_description="Description for the first slide of the Warm Welcome">左側のレイヤーを使用して、星、星座、惑星などをフィルタリングできます。ボルテックスをタップして時間を移動するか、アイをタップしてナイトモードにしてください。<b>Vortex</b> to travel through time, or the <b>Eye</b> for night mode.</string>
+    <string name="warm_welcome_slide1_desc" translation_description="Description for the first slide of the Warm Welcome">
+    左側のレイヤーを使用して、星、星座、惑星などをフィルタリングできます。ボルテックスをタップして時間を移動するか、アイをタップしてナイトモードにしてください。Vortex to travel through time, or the Eye for night mode.
+    <b>Vortex</b> to travel through time, or the <b>Eye</b> for night mode.</string>
     <string name="warm_welcome_slide2_title" translation_description="Title for the second slide of the Warm Welcome">空をナビゲートする</string>
-    <string name="warm_welcome_slide2_desc" translation_description="Description for the second slide of the Warm Welcome">オートモードで電話を向けて周りを見るか、タップしてマニュアルに切り替えてスワイプで探索します。マニュアルでダブルタップすると地平線がリセットされます。<b>Auto Mode</b>, or tap to switch to <b>Manual</b> and explore by swiping. Double-tap in Manual to reset your horizon.</string>
+    <string name="warm_welcome_slide2_desc" translation_description="Description for the second slide of the Warm Welcome">
+    オートモードで電話を向けて周りを見るか、タップしてマニュアルに切り替えてスワイプで探索します。マニュアルでダブルタップすると地平線がリセットされます。Auto Mode, or tap to switch to Manual and explore by swiping. Double-tap in Manual to reset your horizon.
+    <b>Auto Mode</b>, or tap to switch to <b>Manual</b> and explore by swiping. Double-tap in Manual to reset your horizon.</string>
     <string name="warm_welcome_slide2_info_desc" translation_description="Description about info cards on the second slide">マニュアルモードで任意のオブジェクトをタップすると、楽しい事実と天体の詳細を含む情報カードが表示されます。</string>
     <string name="warm_welcome_slide3_title" translation_description="Title for the third slide of the Warm Welcome">センサーとキャリブレーション</string>
     <string name="warm_welcome_slide3_desc" translation_description="Description for the third slide of the Warm Welcome">Sky Mapはお使いのスマートフォンのセンサーを使って星と位置を合わせます。</string>
-    <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message when sensors are missing">お使いのデバイスに自動追跡に必要なセンサーがないようです。ご心配なく—マニュアルモードで宇宙全体を探索できます！<b>Manual Mode</b>!</string>
-    <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration text on slide 3">精度を保つため、スマートフォンを時々8の字に振ってください。<b>figure-8</b> wave every once in a while.</string>
+    <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message when sensors are missing">お使いのデバイスに自動追跡に必要なセンサーがないようです。ご心配なく—マニュアルモードで宇宙全体を探索できます！Manual Mode!<b>Manual Mode</b>!</string>
+    <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration text on slide 3">精度を保つため、スマートフォンを時々8の字に振ってください。figure-8 wave every once in a while.<b>figure-8</b> wave every once in a while.</string>
 
     <string name="tutorial_planets" translation_description="Tutorial annotation for planets layer">惑星</string>
     <string name="tutorial_meteors" translation_description="Tutorial annotation for meteors layer">流星</string>

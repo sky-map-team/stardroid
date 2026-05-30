@@ -222,19 +222,15 @@
     <string name="menu_calibrate" translation_description="Menu item label to open the compass calibration screen">Kalibrer</string>
     <string name="compass_calibration_activity_heading_compass" translation_description="Static label in the compass calibration screen placed inline to the left of the live compass accuracy value (e.g. displayed as \'Compass - Accuracy: High\')">Kompass -</string>
     <string name="compass_calibration_activity_do_not_show_this_again" translation_description="Checkbox label in the compass calibration dialog to suppress future automatic appearances">Ikke vis dette igjen</string>
-    <string name="compass_calibration_activity_warning" translation_description="Heading/reason text shown in the compass calibration dialog when it opens automatically due to low accuracy">Kompasset ditt kan ha behov for å bli
-        kalibrert</string>
-    <string name="compass_calibration_activity_user_heading" translation_description="Heading shown in the compass calibration dialog when the user opens it manually from the menu">Forbedre justeringen din</string>
-    <string name="compass_calib_what_to_do" translation_description="Information for the user on how to calibrate the compass when the dialog auto-opens. Placeholder is the video URL"><![CDATA[Telefonen din rapporterer til Sky
-        Map at det interne kompasset ikke er kalibrert.
-    Dette er ikke et Sky Map-problem, men vi kan hjelpe deg med å prøve å løse det. For å kalibrere kompasset prøv å bevege telefonen i en åttetallsbevegelse
-        som demonstrert i denne videoen %s til nøyaktigheten viser \'høy\'.]]></string>
-    <string name="compass_calib_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they invoke the calibration dialog. Placeholder is the video URL"><![CDATA[Din telefons
-        kompassnøyaktighet
-        vises over.
-    Hvis den ikke er \'høy\' kan det hende kompasset må kalibreres. Dette er ikke et Sky Map-problem, men
-    en egenskap ved telefonen din. For å kalibrere kompasset prøv å bevege telefonen i en åttetallsbevegelse
-        som demonstrert i denne videoen %s.]]></string>
+    <string name="compass_calibration_activity_warning" translation_description="Heading/reason text shown in the compass calibration dialog when it opens automatically due to low accuracy">Telefonens kompass trenger oppmerksomhet</string>
+    <string name="compass_calibration_activity_user_heading" translation_description="Heading shown in the compass calibration dialog when the user opens it manually from the menu">Telefonens kompass</string>
+    <string name="compass_calib_what_to_do" translation_description="Information for the user on how to calibrate the compass when the dialog auto-opens. Placeholder is the video URL"><![CDATA[Kompasssensoren på telefonen din rapporterer lav nøyaktighet. Åttetall-bevegelsen (%s) ber telefonen din om å rekalibrere maskinvaresensoren – Sky Map har ingen kontroll over denne prosessen.<br/><br/>
+<b>Kalibrert betyr ikke nøyaktig.</b> Åttetall-gesten hjelper sensoren med å normalisere seg selv internt, men den kan ikke fjerne interferens fra metallgjenstander i nærheten, bilkontrollpaneler eller magnetiske telefonveier. Hvis kartet fortsatt er feil etter kalibrering, er disse eksterne kildene den mest sannsynlige årsaken – ikke Sky Map.<br/><br/>
+Flytting til et åpent område vekk fra metall og prøv igjen. Se <i>Feilsøking</i> i <i>Hjelp</i> for flere trinn.]]></string>
+    <string name="compass_calib_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they invoke the calibration dialog. Placeholder is the video URL"><![CDATA[Telefonen rapporterer kompassnøyaktigheten som vist ovenfor. Figure-8-bevegelsen (%s) oppfordrer telefonens maskinvare til å rekalibrere kompasssensoren.<br/><br/>
+<b>Viktig skille:</b> kalibrering hjelper sensoren med å normalisere seg selv internt. Et kalibrert kompass er ikke nødvendigvis et nøyaktig – lokal magnetisk interferens (metallgjenstander, bildashbord, magnetiske telefonetui) kan fortsatt få kartet til å peke feil vei. Sky Map leser nøyaktig det telefonsensoren rapporterer; den har ingen måte å korrigere for miljøet ditt.<br/><br/>
+Se <i>Feilsøking</i> i <i>Hjelp</i> for andre trinn, inkludert manuell kompassforskyvning for telefoner med en konsistent retningsfeil.]]></string>
+    <string name="compass_low_accuracy_toast" translation_description="Brief toast shown when compass accuracy is low and the user has disabled the calibration dialog">Telefonens kompass rapporterer lav nøyaktighet</string>
     <string name="sensor_reverse_preference_title" translation_description="Preference title for reversing the magnetic Z-axis sensor reading, a fix for certain phones with incorrectly implemented sensors">Reverser Magnetisk Z</string>
     <string name="sensor_reverse_preference_summary" translation_description="Summary for the Reverse Magnetic Z preference">Løsning for telefoner med uriktig implementerte sensorer - krever omstart</string>
     <string name="whats_new_dialog_title" translation_description="Title of the dialog shown on first launch after an update, listing new features">Hva er nytt</string>
@@ -277,10 +273,12 @@
     <string name="warm_welcome_slide1_title" translation_description="Title for the first slide of the Warm Welcome">Utforsk universet</string>
     <string name="warm_welcome_slide1_desc" translation_description="Description for the first slide of the Warm Welcome">
     Bruk lagene på venstre side til å filtrere stjerner, stjernebilder, planeter og mer. Trykk på Vortex for å reise gjennom tid, eller på Øyet for nattmodus.
+    Vortex to travel through time, or the Eye for night mode.
     <b>Vortex</b> to travel through time, or the <b>Eye</b> for night mode.</string>
     <string name="warm_welcome_slide2_title" translation_description="Title for the second slide of the Warm Welcome">Naviger på himmelen</string>
     <string name="warm_welcome_slide2_desc" translation_description="Description for the second slide of the Warm Welcome">
     Pek telefonen for å se rundt i Auto-modus, eller trykk for å bytte til Manuell og utforsk ved å sveipe. Dobbelttrykk i Manuell for å tilbakestille horisonten din.
+    Auto Mode, or tap to switch to Manual and explore by swiping. Double-tap in Manual to reset your horizon.
     <b>Auto Mode</b>, or tap to switch to <b>Manual</b> and explore by swiping. Double-tap in Manual to reset your horizon.</string>
     <string name="warm_welcome_slide2_info_desc" translation_description="Description about info cards on the second slide">
     Trykk på et objekt i manuell modus for å vise informasjonskort med interessante fakta og himmeldetaljer.
@@ -289,9 +287,11 @@
     <string name="warm_welcome_slide3_desc" translation_description="Description for the third slide of the Warm Welcome">Sky Map bruker telefonens sensorer til å justere seg etter stjernene.</string>
     <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message when sensors are missing">
     Enheten din ser ut til å mangle de nødvendige sensorene som kreves for automatisk sporing. Ikke bekymre deg – du kan fortsatt utforske hele universet i manuell modus!
+    Manual Mode!
     <b>Manual Mode</b>!</string>
     <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration text on slide 3">
     For å holde ting nøyaktig, gi telefonen din en rask åtter-bevegelse fra tid til annen.
+    figure-8 wave every once in a while.
     <b>figure-8</b> wave every once in a while.</string>
 
     <string name="tutorial_planets" translation_description="Tutorial annotation for planets layer">Planeter</string>

@@ -219,12 +219,15 @@
     <string name="menu_calibrate" translation_description="Menu item label to open the compass calibration screen">Kalibrasyon</string>
     <string name="compass_calibration_activity_heading_compass" translation_description="Static label in the compass calibration screen placed inline to the left of the live compass accuracy value (e.g. displayed as \'Compass - Accuracy: High\')">Pusula -</string>
     <string name="compass_calibration_activity_do_not_show_this_again" translation_description="Checkbox label in the compass calibration dialog to suppress future automatic appearances">Bu mesajı tekrar gösterme</string>
-    <string name="compass_calibration_activity_warning" translation_description="Heading/reason text shown in the compass calibration dialog when it opens automatically due to low accuracy">Pusula kalibrasyonu gerekebilir</string>
-    <string name="compass_calibration_activity_user_heading" translation_description="Heading shown in the compass calibration dialog when the user opens it manually from the menu">Hizalamayı İyileştirin</string>
-    <string name="compass_calib_what_to_do" translation_description="Information for the user on how to calibrate the compass when the dialog auto-opens. Placeholder is the video URL"><![CDATA[Cihazınız, iç pusulasının kalibre edilmesi gerektiğinini Sky Map uygulamasına bildiriyor.
-    Bu, Sky Map uygulamasından kaynaklanmayan bir sorundur, ancak sizlere yardımcı olabiliriz. Pusulayı kalibre etmek için telefonunuzu bu videoda gösterildiği gibi sekiz rakamı şeklinde hareket ettirmeyi deneyin %s doğruluk "yüksek" okuyana kadar.]]></string>
-    <string name="compass_calib_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they invoke the calibration dialog. Placeholder is the video URL"><![CDATA[Telefonunuzun pusula doğruluğu yukarıda gösteriliyor.
-    Eğer "yüksek" değilse, pusulanın kalibre edilmesi gerekebilir. Bu bir Sky Map sorunu değil, telefonunuzun bir özelliğidir. Pusulanın doğru bir şekilde kalibre edilmesi için telefonunuzu aşağıdaki videoda gösterilen şekilde sekiz rakamı çizer gibi hareket ettirmeyi deneyin. Bu işlemi doğruluk seviyesine ulaşana kadar tekrarlayın. %s.]]></string>
+    <string name="compass_calibration_activity_warning" translation_description="Heading/reason text shown in the compass calibration dialog when it opens automatically due to low accuracy">Telefonunuzun Pusulası Dikkat Gerektiriyor</string>
+    <string name="compass_calibration_activity_user_heading" translation_description="Heading shown in the compass calibration dialog when the user opens it manually from the menu">Telefonunuzun Pusulası</string>
+    <string name="compass_calib_what_to_do" translation_description="Information for the user on how to calibrate the compass when the dialog auto-opens. Placeholder is the video URL"><![CDATA[Telefonunuzun pusula sensörü düşük doğruluk bildiriyor. Şekil-8 hareketi (%s) telefonunuzu donanım sensörünü yeniden kalibre etmeye yönlendirir — Sky Map\'ın bu işlem üzerinde hiçbir kontrolü yoktur.<br/><br/>
+<b>Kalibre edilmiş, doğru anlamına gelmez.</b> Şekil-8 hareketi sensörün kendisini dahili olarak normalleştirmesine yardımcı olur, ancak yakındaki metal nesnelerden, araba gösterge panellerinden veya manyetik telefon kılıflarından kaynaklanan paraziti ortadan kaldıramaz. Kalibrasyondan sonra harita hala yanlışsa, bu dış kaynaklar en olası neden — Sky Map değil.<br/><br/>
+Metal olmayan açık bir alana gidin ve tekrar deneyin. Daha fazla adım için <i>Yardım</i> bölümündeki <i>Sorun Giderme</i> bölümüne bakın.]]></string>
+    <string name="compass_calib_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they invoke the calibration dialog. Placeholder is the video URL"><![CDATA[Telefonunuz yukarıda gösterildiği gibi pusula doğruluğunu bildiriyor. Sekiz şekli hareketi (%s) telefonunuzun donanımını pusula sensörünü yeniden kalibre etmeye yönlendirir.<br/><br/>
+<b>Önemli ayrım:</b> kalibrasyon sensörün kendisini dahili olarak normalleştirmesine yardımcı olur. Kalibre edilmiş bir pusula mutlaka doğru bir pusula değildir — yerel manyetik paraziti (metal nesneler, araba gösterge panelleri, manyetik telefon kılıfları) harita yanlış yöne işaret etmesine neden olabilir. Sky Map tam olarak telefonunuzun sensörünün bildirdiğini okur; ortamınız için düzeltme yapmanın hiçbir yolu yoktur.<br/><br/>
+Sabit yönsel hatası olan telefonlar için manuel pusula ofseti de dahil olmak üzere diğer adımlar için <i>Yardım</i> bölümündeki <i>Sorun Giderme</i> bölümüne bakın.]]></string>
+    <string name="compass_low_accuracy_toast" translation_description="Brief toast shown when compass accuracy is low and the user has disabled the calibration dialog">Telefonunuzun pusulası düşük doğruluk bildiriyor</string>
     <string name="sensor_reverse_preference_title" translation_description="Preference title for reversing the magnetic Z-axis sensor reading, a fix for certain phones with incorrectly implemented sensors">Manyetik Z Tersi</string>
     <string name="sensor_reverse_preference_summary" translation_description="Summary for the Reverse Magnetic Z preference">
     Yanlış şekilde uygulanan sensörlere sahip telefonlar için düzeltme - yeniden başlatma gerektirir
@@ -265,10 +268,12 @@
     <string name="warm_welcome_slide1_title" translation_description="Title for the first slide of the Warm Welcome">Evreni Keşfedin</string>
     <string name="warm_welcome_slide1_desc" translation_description="Description for the first slide of the Warm Welcome">
     Yıldızları, takımyıldızları, gezegenleri ve daha fazlasını filtrelemek için sol taraftaki katmanları kullanın. Zaman içinde seyahat etmek için Girdap\'a veya gece moduna geçmek için Göz\'e dokunun.
+    Vortex to travel through time, or the Eye for night mode.
     <b>Vortex</b> to travel through time, or the <b>Eye</b> for night mode.</string>
     <string name="warm_welcome_slide2_title" translation_description="Title for the second slide of the Warm Welcome">Gökyüzünde Gezinin</string>
     <string name="warm_welcome_slide2_desc" translation_description="Description for the second slide of the Warm Welcome">
     Otomatik Modda etrafı görmek için telefonunuzu yönlendirin veya Manuel moda geçmek için dokunun ve kaydırarak keşfedin. Manuel modda ufkunuzu sıfırlamak için çift dokunun.
+    Auto Mode, or tap to switch to Manual and explore by swiping. Double-tap in Manual to reset your horizon.
     <b>Auto Mode</b>, or tap to switch to <b>Manual</b> and explore by swiping. Double-tap in Manual to reset your horizon.</string>
     <string name="warm_welcome_slide2_info_desc" translation_description="Description about info cards on the second slide">
     Manuel Mod\'da herhangi bir nesneye dokunarak eğlenceli bilgiler ve gök cismi ayrıntılarını gösteren Bilgi Kartları açın.
@@ -277,9 +282,11 @@
     <string name="warm_welcome_slide3_desc" translation_description="Description for the third slide of the Warm Welcome">Sky Map, yıldızlarla hizalamak için telefonunuzun sensörlerini kullanır.</string>
     <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message when sensors are missing">
     Cihazınız otomatik izleme için gerekli sensörlere sahip olmadığı görülüyor. Endişelenmeyin—Manual Mod\'da tüm evreni keşfetmeye devam edebilirsiniz!
+    Manual Mode!
     <b>Manual Mode</b>!</string>
     <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration text on slide 3">
     Doğruluğu korumak için telefonunuzu ara sıra hızlı bir şekilde sekiz şeklinde hareket ettirin.
+    figure-8 wave every once in a while.
     <b>figure-8</b> wave every once in a while.</string>
 
     <string name="tutorial_planets" translation_description="Tutorial annotation for planets layer">Gezegenler</string>

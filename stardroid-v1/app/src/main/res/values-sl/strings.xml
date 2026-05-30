@@ -223,12 +223,15 @@
     <string name="menu_calibrate" translation_description="Menu item label to open the compass calibration screen">Kalibriraj</string>
     <string name="compass_calibration_activity_heading_compass" translation_description="Static label in the compass calibration screen placed inline to the left of the live compass accuracy value (e.g. displayed as \'Compass - Accuracy: High\')">Kompas -</string>
     <string name="compass_calibration_activity_do_not_show_this_again" translation_description="Checkbox label in the compass calibration dialog to suppress future automatic appearances">Ne prikaži več</string>
-    <string name="compass_calibration_activity_warning" translation_description="Heading/reason text shown in the compass calibration dialog when it opens automatically due to low accuracy">Potrebna je kalibracija strojne opreme</string>
-    <string name="compass_calibration_activity_user_heading" translation_description="Heading shown in the compass calibration dialog when the user opens it manually from the menu">Izboljšajte svojo poravnavo</string>
-    <string name="compass_calib_what_to_do" translation_description="Information for the user on how to calibrate the compass when the dialog auto-opens. Placeholder is the video URL"><![CDATA[Sky Map se opira na vgrajeni kompas v vašem telefonu. Če je natančnost, prikazana zgoraj, nizka, je treba senzor "ponastaviti" z gibanjem telefona v obliki osmice: %s.<br/><br/>
-<b>Pomembno:</b> Kalibracija je strojni proces, ki ga upravlja vaša naprava. Čeprav izboljša zanesljivost senzorja, lahko zunanja magnetna motnja še vedno povzroči "pristranskost" ali rahlo zanašanje. To je fizična omejitev mobilnih kompasov in ne napaka v aplikaciji. Oglejte si <i>Odpravljanje težav</i> v <i>Pomoči</i> za druge stvari, ki jih lahko poskusite.]]></string>
-    <string name="compass_calib_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they invoke the calibration dialog. Placeholder is the video URL"><![CDATA[Vaš telefon poroča o natančnosti kompasa, kot je prikazano zgoraj. Če želite to izboljšati, prosimo izvedite gibanje v obliki osmice z vašo napravo (%s).<br/><br/>
-<b>Opomba o natančnosti:</b> Kalibracija je zahteva strojne ravni vašega telefona, ne nastavitev Sky Map. Tudi ko je kalibriran, lahko lokalna magnetna polja (kot so avtomobilski armaturni panoji ali magneti) povzročijo rahlo odstopanje v smeri. Oglejte si <i>Odpravljanje težav</i> v <i>Pomoči</i> za druge stvari, ki jih lahko poskusite.]]></string>
+    <string name="compass_calibration_activity_warning" translation_description="Heading/reason text shown in the compass calibration dialog when it opens automatically due to low accuracy">Kompas vašega telefona potrebuje pozornost</string>
+    <string name="compass_calibration_activity_user_heading" translation_description="Heading shown in the compass calibration dialog when the user opens it manually from the menu">Kompas vašega telefona</string>
+    <string name="compass_calib_what_to_do" translation_description="Information for the user on how to calibrate the compass when the dialog auto-opens. Placeholder is the video URL"><![CDATA[Kompas vašega telefona poroča o nizki natančnosti. Gibanje v obliki osmice (%s) spodbudi telefon, da ponovno kalibrira svoj senzor – Sky Map nima nadzora nad tem procesom.<br/><br/>
+<b>Kalibracija ne pomeni natančnost.</b> Gesta v obliki osmice pomaga senzorju, da se interno normalizira, vendar ne more odpraviti motenj od bližnjih kovinskih predmetov, avtomobilskih armaturnih plošč ali magnetnih zaščit telefona. Če je zemljevid še vedno nepravilno prikazan po kalibraciji, so te zunanje motnje najverjetnejši vzrok – ne Sky Map.<br/><br/>
+Premestite se na odprto območje, oddaljeno od kovine, in poskusite znova. Oglejte si <i>Odpravljanje težav</i> v <i>Pomoči</i> za dodatne korake.]]></string>
+    <string name="compass_calib_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they invoke the calibration dialog. Placeholder is the video URL"><![CDATA[Vaš telefon poroča o natančnosti kompasa, kot je prikazano zgoraj. Gibanje v obliki osmice (%s) spodbudi strojno opremo vašega telefona, da ponovno kalibrira senzor kompasa.<br/><br/>
+<b>Pomembna razlika:</b> kalibracija pomaga senzorju, da se interno normalizira. Kalibriran kompas ni nujno natančen — lokalna magnetna motnja (kovinski predmeti, avtomobilski armaturni plošči, magnetni etui za telefone) lahko še vedno povzročijo, da se zemljevid kaže v napačno smer. Sky Map bere natanko tisto, kar poroča senzor vašega telefona; nima možnosti, da bi se prilagodil vašemu okolju.<br/><br/>
+Glejte <i>Odpravljanje težav</i> v <i>Pomoči</i> za druge korake, vključno z ročnim premikom kompasa za telefone s stalno smersko napako.]]></string>
+    <string name="compass_low_accuracy_toast" translation_description="Brief toast shown when compass accuracy is low and the user has disabled the calibration dialog">Kompas vašega telefona poroča nizko natančnost</string>
     <string name="sensor_reverse_preference_title" translation_description="Preference title for reversing the magnetic Z-axis sensor reading, a fix for certain phones with incorrectly implemented sensors">Obrni magnetni Z</string>
     <string name="sensor_reverse_preference_summary" translation_description="Summary for the Reverse Magnetic Z preference">
     Popravek za telefone z nepravilno implementiranimi senzorji - zahteva ponovni zagon
@@ -271,10 +274,12 @@
     <string name="warm_welcome_slide1_title" translation_description="Title for the first slide of the Warm Welcome">Raziščite vesolje</string>
     <string name="warm_welcome_slide1_desc" translation_description="Description for the first slide of the Warm Welcome">
     Uporabite plasti na levi strani za filtriranje zvezd, ozvezdij, planetov in še več. Tapnite Vortex za potovanje skozi čas ali Oko za nočni način.
+    Vortex to travel through time, or the Eye for night mode.
     <b>Vortex</b> to travel through time, or the <b>Eye</b> for night mode.</string>
     <string name="warm_welcome_slide2_title" translation_description="Title for the second slide of the Warm Welcome">Navigirajte po nebu</string>
     <string name="warm_welcome_slide2_desc" translation_description="Description for the second slide of the Warm Welcome">
     Usmerite telefon, da se premikate v samodejnem načinu, ali se dotaknite, da preklopite v ročni način in raziskujete z drsenjem. Dvakrat se dotaknite v ročnem načinu, da ponastavite obzorje.
+    Auto Mode, or tap to switch to Manual and explore by swiping. Double-tap in Manual to reset your horizon.
     <b>Auto Mode</b>, or tap to switch to <b>Manual</b> and explore by swiping. Double-tap in Manual to reset your horizon.</string>
     <string name="warm_welcome_slide2_info_desc" translation_description="Description about info cards on the second slide">
     Tapnite na kateri koli predmet v ročnem načinu, da prikažete informacijske kartice s zabavnimi dejstvi in podrobnostmi o nebesnih objektih.
@@ -283,8 +288,11 @@
     <string name="warm_welcome_slide3_desc" translation_description="Description for the third slide of the Warm Welcome">Sky Map uporablja senzorje vašega telefona za poravnavo s zvezd.</string>
     <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message when sensors are missing">
     Videti je, da vaši napravi manjkajo zahtevani senzorji za samodejno sledenje. Brez skrbi—vseeno lahko raziskujete celoten kozmos v ročnem načinu!
+    Manual Mode!
     <b>Manual Mode</b>!</string>
-    <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration text on slide 3">Za natančnost občasno nagnite telefon v obliki osmice.<b>figure-8</b> wave every once in a while.</string>
+    <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration text on slide 3">
+    Za natančnost občasno nagnite telefon v obliki osmice.figure-8 wave every once in a while.
+    <b>figure-8</b> wave every once in a while.</string>
 
     <string name="tutorial_planets" translation_description="Tutorial annotation for planets layer">Planeti</string>
     <string name="tutorial_meteors" translation_description="Tutorial annotation for meteors layer">Meteorji</string>

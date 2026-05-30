@@ -218,12 +218,15 @@
     <string name="menu_calibrate" translation_description="Menu item label to open the compass calibration screen">معايرة</string>
     <string name="compass_calibration_activity_heading_compass" translation_description="Static label in the compass calibration screen placed inline to the left of the live compass accuracy value (e.g. displayed as \'Compass - Accuracy: High\')">البوصلة -</string>
     <string name="compass_calibration_activity_do_not_show_this_again" translation_description="Checkbox label in the compass calibration dialog to suppress future automatic appearances">عدم إظهار هذا مرة أخرى</string>
-    <string name="compass_calibration_activity_warning" translation_description="Heading/reason text shown in the compass calibration dialog when it opens automatically due to low accuracy">معايرة الأجهزة مطلوبة</string>
-    <string name="compass_calibration_activity_user_heading" translation_description="Heading shown in the compass calibration dialog when the user opens it manually from the menu">حسّن محاذاتك</string>
-    <string name="compass_calib_what_to_do" translation_description="Information for the user on how to calibrate the compass when the dialog auto-opens. Placeholder is the video URL"><![CDATA[يعتمد Sky Map على مستشعر البوصلة المدمج في هاتفك. إذا كانت الدقة المعروضة أعلاه منخفضة، فيجب "إعادة تعيين" المستشعر بتحريك الهاتف في حركة على شكل الرقم 8: %s.<br/><br/>
-<b>مهم:</b> المعايرة هي عملية أجهزة يتعامل معها جهازك. بينما تحسّن موثوقية المستشعر، يمكن للتداخل المغناطيسي الخارجي أن يسبب "انحيازًا" أو انجرافًا طفيفًا. هذا قيد فيزيائي لبوصلات الهواتف الذكية وليس خطأ في التطبيق. راجع <i>استكشاف الأخطاء</i> في <i>المساعدة</i> لمحاولة أشياء أخرى.]]></string>
-    <string name="compass_calib_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they invoke the calibration dialog. Placeholder is the video URL"><![CDATA[يُبلّغ هاتفك عن دقة البوصلة كما هو موضح أعلاه. لتحسينها، يرجى تنفيذ حركة على شكل الرقم 8 باستخدام جهازك (%s).<br/><br/>
-<b>ملاحظة حول الدقة:</b> المعايرة هي متطلب على مستوى الأجهزة في هاتفك، وليست إعدادًا في Sky Map. حتى عند معايرتها، قد تسبب المجالات المغناطيسية المحلية (مثل لوحات تحكم السيارات أو المغناطيسات) انحيازًا طفيفًا في الاتجاه. راجع <i>استكشاف الأخطاء</i> في <i>المساعدة</i> لمحاولة أشياء أخرى.]]></string>
+    <string name="compass_calibration_activity_warning" translation_description="Heading/reason text shown in the compass calibration dialog when it opens automatically due to low accuracy">بوصلة هاتفك تحتاج إلى معايرة</string>
+    <string name="compass_calibration_activity_user_heading" translation_description="Heading shown in the compass calibration dialog when the user opens it manually from the menu">بوصلة هاتفك</string>
+    <string name="compass_calib_what_to_do" translation_description="Information for the user on how to calibrate the compass when the dialog auto-opens. Placeholder is the video URL"><![CDATA[مستشعر البوصلة في هاتفك يُبلّغ عن دقة منخفضة. حركة الشكل 8 (%s) تطلب من هاتفك إعادة معايرة مستشعره الصلب — Sky Map ليس لديه تحكم في هذه العملية.<br/><br/>
+<b>المعايرة لا تعني الدقة.</b> تساعد حركة الشكل 8 المستشعر على تطبيع نفسه داخليًا، لكنها لا يمكنها إزالة التداخل من الأجسام المعدنية القريبة أو لوحات تعريف السيارات أو أغلفة الهواتف المغناطيسية. إذا كانت الخريطة لا تزال غير صحيحة بعد المعايرة، فمن المرجح أن تكون هذه المصادر الخارجية هي السبب — وليس Sky Map.<br/><br/>
+انتقل إلى منطقة مفتوحة بعيدًا عن المعادن وحاول مرة أخرى. انظر <i>استكشاف الأخطاء</i> في <i>المساعدة</i> للمزيد من الخطوات.]]></string>
+    <string name="compass_calib_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they invoke the calibration dialog. Placeholder is the video URL"><![CDATA[هاتفك يُبلّغ عن دقة البوصلة كما هو موضح أعلاه. حركة الشكل الثماني (%s) تحفز أجهزة هاتفك على إعادة معايرة مستشعر البوصلة.<br/><br/>
+<b>تمييز مهم:</b> المعايرة تساعد المستشعر على تطبيع نفسه داخليًا. البوصلة المعايرة ليست بالضرورة دقيقة — التداخل المغناطيسي المحلي (الأجسام المعدنية، لوحات القيادة، أغلفة الهاتف المغناطيسية) يمكن أن يسبب خطأ في اتجاه الخريطة. يقرأ Sky Map بالضبط ما يُبلّغ عنه مستشعر هاتفك؛ ليس لديه طريقة للتصحيح حسب بيئتك.<br/><br/>
+انظر <i>استكشاف الأخطاء</i> في <i>المساعدة</i> للحصول على خطوات أخرى، بما في ذلك إزاحة البوصلة اليدوية للهواتف التي تحتوي على خطأ اتجاهي ثابت.]]></string>
+    <string name="compass_low_accuracy_toast" translation_description="Brief toast shown when compass accuracy is low and the user has disabled the calibration dialog">بوصلة هاتفك تُبلّغ عن دقة منخفضة</string>
     <string name="sensor_reverse_preference_title" translation_description="Preference title for reversing the magnetic Z-axis sensor reading, a fix for certain phones with incorrectly implemented sensors">عكس المحور المغناطيسي Z</string>
     <string name="sensor_reverse_preference_summary" translation_description="Summary for the Reverse Magnetic Z preference">إصلاح للهواتف ذات المستشعرات المنفذة بشكل غير صحيح - يتطلب إعادة تشغيل</string>
     <string name="whats_new_dialog_title" translation_description="Title of the dialog shown on first launch after an update, listing new features">ما الجديد</string>
@@ -264,10 +267,12 @@
     <string name="warm_welcome_slide1_title" translation_description="Title for the first slide of the Warm Welcome">استكشف الكون</string>
     <string name="warm_welcome_slide1_desc" translation_description="Description for the first slide of the Warm Welcome">
     استخدم الطبقات على اليسار لتصفية النجوم والأبراج والكواكب وغيرها. اضغط على الدوامة للسفر عبر الزمن، أو على العين لتفعيل وضع الليل.
+    Vortex to travel through time, or the Eye for night mode.
     <b>Vortex</b> to travel through time, or the <b>Eye</b> for night mode.</string>
     <string name="warm_welcome_slide2_title" translation_description="Title for the second slide of the Warm Welcome">تنقل عبر السماء</string>
     <string name="warm_welcome_slide2_desc" translation_description="Description for the second slide of the Warm Welcome">
     وجّه هاتفك للنظر حولك في الوضع التلقائي، أو اضغط للتبديل إلى الوضع اليدوي واستكشف بالتمرير. اضغط مرتين في الوضع اليدوي لإعادة تعيين الأفق.
+    Auto Mode, or tap to switch to Manual and explore by swiping. Double-tap in Manual to reset your horizon.
     <b>Auto Mode</b>, or tap to switch to <b>Manual</b> and explore by swiping. Double-tap in Manual to reset your horizon.</string>
     <string name="warm_welcome_slide2_info_desc" translation_description="Description about info cards on the second slide">
     اضغط على أي جسم في الوضع اليدوي لعرض بطاقات معلومات تحتوي على حقائق ممتعة وتفاصيل فلكية.
@@ -276,8 +281,11 @@
     <string name="warm_welcome_slide3_desc" translation_description="Description for the third slide of the Warm Welcome">يستخدم Sky Map مستشعرات هاتفك للمحاذاة مع النجوم.</string>
     <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message when sensors are missing">
     يبدو أن جهازك يفتقد المستشعرات المطلوبة للتتبع التلقائي. لا تقلق—يمكنك لا تزال استكشاف الكون بأكمله في الوضع اليدوي!
+    Manual Mode!
     <b>Manual Mode</b>!</string>
-    <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration text on slide 3">للحفاظ على الدقة، حرّك هاتفك بحركة رقم 8 سريعة من حين لآخر.<b>figure-8</b> wave every once in a while.</string>
+    <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration text on slide 3">
+    للحفاظ على الدقة، حرّك هاتفك بحركة رقم 8 سريعة من حين لآخر.figure-8 wave every once in a while.
+    <b>figure-8</b> wave every once in a while.</string>
 
     <string name="tutorial_planets" translation_description="Tutorial annotation for planets layer">الكواكب</string>
     <string name="tutorial_meteors" translation_description="Tutorial annotation for meteors layer">الشهب</string>

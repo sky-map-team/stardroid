@@ -221,16 +221,15 @@
     <string name="menu_calibrate" translation_description="Menu item label to open the compass calibration screen">Kalibruj</string>
     <string name="compass_calibration_activity_heading_compass" translation_description="Static label in the compass calibration screen placed inline to the left of the live compass accuracy value (e.g. displayed as \'Compass - Accuracy: High\')">Kompas –</string>
     <string name="compass_calibration_activity_do_not_show_this_again" translation_description="Checkbox label in the compass calibration dialog to suppress future automatic appearances">Nie pokazuj tego ponownie</string>
-    <string name="compass_calibration_activity_warning" translation_description="Heading/reason text shown in the compass calibration dialog when it opens automatically due to low accuracy">Wymagana kalibracja sprzętu</string>
-    <string name="compass_calibration_activity_user_heading" translation_description="Heading shown in the compass calibration dialog when the user opens it manually from the menu">Popraw swoje ustawienie</string>
-    <string name="compass_calib_what_to_do" translation_description="Information for the user on how to calibrate the compass when the dialog auto-opens. Placeholder is the video URL"><![CDATA[
-Sky Map polega na czujniku kompasu wbudowanym w Twój telefon. Jeśli dokładność pokazana powyżej jest niska, czujnik wymaga „resetu” przez poruszanie telefonem na kształt ósemki: %s.<br/><br/>
-<b>Ważne:</b> Kalibracja jest procesem sprzętowym obsługiwanym przez Twoje urządzenie. Chociaż poprawia niezawodność czujnika, zewnętrzne zakłócenia magnetyczne mogą nadal powodować „odchylenie” lub niewielkie dryfowanie. Jest to fizyczne ograniczenie kompasów mobilnych, a nie błąd w aplikacji. Zobacz <i>Rozwiązywanie problemów</i> w <i>Pomoc</i> dla innych rozwiązań wartych wypróbowania.
-    ]]></string>
-    <string name="compass_calib_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they invoke the calibration dialog. Placeholder is the video URL"><![CDATA[
-Twój telefon zgłasza dokładność kompasu jak pokazano powyżej. Aby ją poprawić, wykonaj ruchy swoim urządzeniem na kształt ósemki (%s).<br/><br/>
-<b>Uwaga dotycząca dokładności:</b> Kalibracja jest wymaganiem na poziomie sprzętowym Twojego telefonu, a nie ustawieniem Sky Map. Nawet po kalibracji lokalne pola magnetyczne (jak deska rozdzielcza samochodu lub magnesy) mogą powodować niewielkie odchylenia w kierunku. Zobacz <i>Rozwiązywanie problemów</i> w <i>Pomoc</i> dla innych rozwiązań wartych wypróbowania.
-    ]]></string>
+    <string name="compass_calibration_activity_warning" translation_description="Heading/reason text shown in the compass calibration dialog when it opens automatically due to low accuracy">Kompas w Twoim telefonie wymaga uwagi</string>
+    <string name="compass_calibration_activity_user_heading" translation_description="Heading shown in the compass calibration dialog when the user opens it manually from the menu">Kompas w Twoim telefonie</string>
+    <string name="compass_calib_what_to_do" translation_description="Information for the user on how to calibrate the compass when the dialog auto-opens. Placeholder is the video URL"><![CDATA[Czujnik kompasu w Twojej telefonie zgłasza niską dokładność. Ruch w kształcie ósemki (%s) skłania telefon do ponownej kalibracji czujnika sprzętu — Sky Map nie ma kontroli nad tym procesem.<br/><br/>
+<b>Skalibrowany nie oznacza dokładny.</b> Gest w kształcie ósemki pomaga czujnikowi znormalizować się wewnętrznie, ale nie może usunąć zakłóceń od pobliskich przedmiotów metalowych, desek rozdzielczych samochodów lub magnetycznych etui do telefonu. Jeśli mapa jest nadal niedokładna po kalibracji, te zewnętrzne źródła są najbardziej prawdopodobną przyczyną — nie Sky Map.<br/><br/>
+Przenieś się na otwartą przestrzeń z dala od metalu i spróbuj ponownie. Więcej kroków znajdziesz w sekcji <i>Rozwiązywanie problemów</i> w <i>Pomocy</i>.]]></string>
+    <string name="compass_calib_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they invoke the calibration dialog. Placeholder is the video URL"><![CDATA[Twój telefon zgłasza dokładność kompasu, jak pokazano powyżej. Ruch w kształcie ósemki (%s) skłania sprzęt telefonu do ponownej kalibracji czujnika kompasu.<br/><br/>
+<b>Ważne rozróżnienie:</b> kalibracja pomaga czujnikowi znormalizować się wewnętrznie. Skalibrowany kompas niekoniecznie jest dokładny — lokalne zakłócenia magnetyczne (metalowe przedmioty, deski rozdzielcze samochodów, magnetyczne etui do telefonu) mogą nadal powodować, że mapa wskazuje złą stronę. Sky Map odczytuje dokładnie to, co zgłasza czujnik telefonu; nie ma możliwości korekcji w zależności od Twojego otoczenia.<br/><br/>
+Zobacz <i>Rozwiązywanie problemów</i> w <i>Pomocy</i>, aby poznać inne kroki, w tym ręczne przesunięcie kompasu dla telefonów z konsekwentnym błędem kierunkowym.]]></string>
+    <string name="compass_low_accuracy_toast" translation_description="Brief toast shown when compass accuracy is low and the user has disabled the calibration dialog">Kompas w Twoim telefonie zgłasza niską dokładność</string>
     <string name="sensor_reverse_preference_title" translation_description="Preference title for reversing the magnetic Z-axis sensor reading, a fix for certain phones with incorrectly implemented sensors">Odwróć oś Z magnetometru</string>
     <string name="sensor_reverse_preference_summary" translation_description="Summary for the Reverse Magnetic Z preference">
     Poprawka dla telefonów z nieprawidłowo zaimplementowanymi czujnikami – wymaga ponownego uruchomienia
@@ -275,10 +274,12 @@ Twój telefon zgłasza dokładność kompasu jak pokazano powyżej. Aby ją popr
     <string name="warm_welcome_slide1_title" translation_description="Title for the first slide of the Warm Welcome">Odkrywaj Kosmos</string>
     <string name="warm_welcome_slide1_desc" translation_description="Description for the first slide of the Warm Welcome">
     Użyj warstw po lewej stronie, aby filtrować gwiazdy, konstelacje, planety i wiele więcej. Dotknij Worteksu, aby podróżować w czasie, lub Oka, aby włączyć tryb nocny.
+    Vortex to travel through time, or the Eye for night mode.
     <b>Vortex</b> to travel through time, or the <b>Eye</b> for night mode.</string>
     <string name="warm_welcome_slide2_title" translation_description="Title for the second slide of the Warm Welcome">Nawiguj po niebie</string>
     <string name="warm_welcome_slide2_desc" translation_description="Description for the second slide of the Warm Welcome">
     Skieruj telefon, aby rozglądać się w trybie Auto, lub dotknij, aby przełączyć się na tryb Ręczny i eksplorować poprzez przesuwanie. Dotknij dwukrotnie w trybie Ręcznym, aby zresetować horyzont.
+    Auto Mode, or tap to switch to Manual and explore by swiping. Double-tap in Manual to reset your horizon.
     <b>Auto Mode</b>, or tap to switch to <b>Manual</b> and explore by swiping. Double-tap in Manual to reset your horizon.</string>
     <string name="warm_welcome_slide2_info_desc" translation_description="Description about info cards on the second slide">
     Dotknij dowolnego obiektu w trybie ręcznym, aby wyświetlić karty informacyjne z ciekawostkami i szczegółami astronomicznymi.
@@ -287,9 +288,11 @@ Twój telefon zgłasza dokładność kompasu jak pokazano powyżej. Aby ją popr
     <string name="warm_welcome_slide3_desc" translation_description="Description for the third slide of the Warm Welcome">Sky Map wykorzystuje czujniki Twojego telefonu do wyrównania z gwiazdami.</string>
     <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message when sensors are missing">
     Twoje urządzenie wydaje się nie mieć wymaganych czujników potrzebnych do automatycznego śledzenia. Nie martw się—możesz nadal eksplorować cały kosmos w Trybie Ręcznym!
+    Manual Mode!
     <b>Manual Mode</b>!</string>
     <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration text on slide 3">
     Aby zachować dokładność, wykonaj szybki ruch telefonu w kształcie ósemki co jakiś czas.
+    figure-8 wave every once in a while.
     <b>figure-8</b> wave every once in a while.</string>
 
     <string name="tutorial_planets" translation_description="Tutorial annotation for planets layer">Planety</string>

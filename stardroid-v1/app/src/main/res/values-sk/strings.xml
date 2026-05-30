@@ -223,13 +223,15 @@
     <string name="menu_calibrate" translation_description="Menu item label to open the compass calibration screen">Kalibrovať</string>
     <string name="compass_calibration_activity_heading_compass" translation_description="Static label in the compass calibration screen placed inline to the left of the live compass accuracy value (e.g. displayed as \'Compass - Accuracy: High\')">Kompas -</string>
     <string name="compass_calibration_activity_do_not_show_this_again" translation_description="Checkbox label in the compass calibration dialog to suppress future automatic appearances">Toto znovu nezobrazovať</string>
-    <string name="compass_calibration_activity_warning" translation_description="Heading/reason text shown in the compass calibration dialog when it opens automatically due to low accuracy">Váš kompas bude možno potrebné skalibrovať</string>
-    <string name="compass_calibration_activity_user_heading" translation_description="Heading shown in the compass calibration dialog when the user opens it manually from the menu">Zlepšite si zarovnanie</string>
-    <string name="compass_calib_what_to_do" translation_description="Information for the user on how to calibrate the compass when the dialog auto-opens. Placeholder is the video URL"><![CDATA[Váš telefón hlási aplikácii Sky Map, že jeho interný kompas nie je skalibrovaný.
-    Toto nie je problém s aplikáciou Sky Map, ale môžeme vám pomôcť to vyriešiť. Ak chcete skalibrovať kompas, skúste pohybovať telefónom v tvare osmičky tak, ako je to ukázané v tomto videu %s, kým sa nezobrazí presnosť \'vysoká\'.]]></string>
-    <string name="compass_calib_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they invoke the calibration dialog. Placeholder is the video URL"><![CDATA[Presnosť kompasu vášho telefónu je zobrazená vyššie.
-    Ak nie je \'vysoká\' potom je potrebné kompas skalibrovať. Toto nie je problém s apliáciou Sky Map, ale vlastnosť vášho telefónu. 
-    a property of your phone. Ak chcete skalibrovať kompas, skúste pohybovať telefónom v tvare osmičky tak, ako je to ukázané v tomto videu %s.]]></string>
+    <string name="compass_calibration_activity_warning" translation_description="Heading/reason text shown in the compass calibration dialog when it opens automatically due to low accuracy">Kompas vášho telefónu potrebuje pozornosť</string>
+    <string name="compass_calibration_activity_user_heading" translation_description="Heading shown in the compass calibration dialog when the user opens it manually from the menu">Kompas vášho telefónu</string>
+    <string name="compass_calib_what_to_do" translation_description="Information for the user on how to calibrate the compass when the dialog auto-opens. Placeholder is the video URL"><![CDATA[Senzor kompasu vášho telefónu hlási nízku presnosť. Pohyb v tvare osmičky (%s) vyzýva váš telefón na rekalibráciu jeho hardvérového senzora — Sky Map nemá na tento proces žiadnu kontrolu.<br/><br/>
+<b>Kalibrované neznamená presné.</b> Gesto v tvare osmičky pomáha senzoru normalizovať sa interného, ale nemôže odstrániť rušenie z blízkych kovových predmetov, palubných dosiek áut alebo magnetických puzdier na telefóny. Ak je mapa stále nepresná po kalibrácii, tieto vonkajšie zdroje sú najčastejšou príčinou — nie Sky Map.<br/><br/>
+Prejdite na otvorenú plochu ďaleko od kovu a skúste znova. Pozrite si <i>Riešenie problémov</i> v časti <i>Pomocník</i> pre ďalšie kroky.]]></string>
+    <string name="compass_calib_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they invoke the calibration dialog. Placeholder is the video URL"><![CDATA[Váš telefón hlási presnosť kompasu, ako je znázornené vyššie. Pohyb v tvare osmičky (%s) vyzýva hardvér vášho telefónu na rekalibráciu senzora kompasu.<br/><br/>
+<b>Dôležité rozlíšenie:</b> kalibrácia pomáha senzoru normalizovať sa interne. Kalibrovaný kompas nie je nevyhnutne presný — lokálne magnetické rušenie (kovové predmety, palubné dosky áut, magnetické puzdra na telefóny) môžu stále spôsobiť, že sa mapa bude ukazovať nesprávnym smerom. Sky Map číta presne to, čo hlási senzor vášho telefónu; nemá žiadny spôsob, ako korigovať vašu situáciu.<br/><br/>
+Pozrite si <i>Riešenie problémov</i> v <i>Pomocník</i> pre ďalšie kroky, vrátane manuálneho posunu kompasu pre telefóny s konzistentnou chybou smeru.]]></string>
+    <string name="compass_low_accuracy_toast" translation_description="Brief toast shown when compass accuracy is low and the user has disabled the calibration dialog">Kompas vášho telefónu hlási nízku presnosť</string>
     <string name="sensor_reverse_preference_title" translation_description="Preference title for reversing the magnetic Z-axis sensor reading, a fix for certain phones with incorrectly implemented sensors">Obrátiť magnetické pole v ose Z</string>
     <string name="sensor_reverse_preference_summary" translation_description="Summary for the Reverse Magnetic Z preference">Oprava pre telefóny s nesprávne implementovanými senzormi – vyžaduje reštart</string>
     <string name="whats_new_dialog_title" translation_description="Title of the dialog shown on first launch after an update, listing new features">Čo je nové</string>
@@ -272,10 +274,12 @@
     <string name="warm_welcome_slide1_title" translation_description="Title for the first slide of the Warm Welcome">Objavujte vesmír</string>
     <string name="warm_welcome_slide1_desc" translation_description="Description for the first slide of the Warm Welcome">
     Pomocou vrstiev na ľavej strane môžete filtrovať hviezdy, súhvezdia, planéty a ďalšie objekty. Klepnite na Vortex na cestovanie v čase alebo na Oko pre nočný režim.
+    Vortex to travel through time, or the Eye for night mode.
     <b>Vortex</b> to travel through time, or the <b>Eye</b> for night mode.</string>
     <string name="warm_welcome_slide2_title" translation_description="Title for the second slide of the Warm Welcome">Navigujte po oblohe</string>
     <string name="warm_welcome_slide2_desc" translation_description="Description for the second slide of the Warm Welcome">
     Nasmerujte telefón na oblohu v režime Auto, alebo klepnite na prepnutie do režimu Manuálny a preskúmavajte pohybom prsta. Dvojitým klepnutím v režime Manuálny obnovíte horizont.
+    Auto Mode, or tap to switch to Manual and explore by swiping. Double-tap in Manual to reset your horizon.
     <b>Auto Mode</b>, or tap to switch to <b>Manual</b> and explore by swiping. Double-tap in Manual to reset your horizon.</string>
     <string name="warm_welcome_slide2_info_desc" translation_description="Description about info cards on the second slide">
     Klepnutím na ľubovoľný objekt v režime Manuálne zobrazíte Informačné karty s zaujímavými faktami a podrobnosťami o nebeských objektoch.
@@ -284,8 +288,11 @@
     <string name="warm_welcome_slide3_desc" translation_description="Description for the third slide of the Warm Welcome">Sky Map používa senzory vášho telefónu na zarovnanie s hviezdami.</string>
     <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message when sensors are missing">
     Zdá sa, že vášmu zariadeniu chýbajú potrebné senzory potrebné na automatické sledovanie. Nebojte sa – stále môžete preskúmať celý vesmír v režime Manuálny!
+    Manual Mode!
     <b>Manual Mode</b>!</string>
-    <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration text on slide 3">Aby ste zachovali presnosť, občas rýchlo vlnite telefónom v tvare osmičky.<b>figure-8</b> wave every once in a while.</string>
+    <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration text on slide 3">
+    Aby ste zachovali presnosť, občas rýchlo vlnite telefónom v tvare osmičky.figure-8 wave every once in a while.
+    <b>figure-8</b> wave every once in a while.</string>
 
     <string name="tutorial_planets" translation_description="Tutorial annotation for planets layer">Planéty</string>
     <string name="tutorial_meteors" translation_description="Tutorial annotation for meteors layer">Meteory</string>

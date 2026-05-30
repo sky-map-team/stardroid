@@ -223,12 +223,15 @@
     <string name="menu_calibrate" translation_description="Menu item label to open the compass calibration screen">Calibra</string>
     <string name="compass_calibration_activity_heading_compass" translation_description="Static label in the compass calibration screen placed inline to the left of the live compass accuracy value (e.g. displayed as \'Compass - Accuracy: High\')">Bussola -</string>
     <string name="compass_calibration_activity_do_not_show_this_again" translation_description="Checkbox label in the compass calibration dialog to suppress future automatic appearances">Non mostrare più</string>
-    <string name="compass_calibration_activity_warning" translation_description="Heading/reason text shown in the compass calibration dialog when it opens automatically due to low accuracy">Calibrazione hardware richiesta</string>
-    <string name="compass_calibration_activity_user_heading" translation_description="Heading shown in the compass calibration dialog when the user opens it manually from the menu">Migliora il tuo allineamento</string>
-    <string name="compass_calib_what_to_do" translation_description="Information for the user on how to calibrate the compass when the dialog auto-opens. Placeholder is the video URL"><![CDATA[Sky Map si affida al sensore bussola integrato del tuo telefono. Se l\'accuratezza mostrata sopra è bassa, il sensore deve essere "ripristinato" muovendo il telefono in un movimento a figura-8: %s.<br/><br/>
-<b>Importante:</b> La calibrazione è un processo hardware gestito dal tuo dispositivo. Sebbene migliori l\'affidabilità del sensore, le interferenze magnetiche esterne possono comunque causare una "deviazione" o una leggera deriva. Questa è una limitazione fisica delle bussole mobili e non un errore all\'interno dell\'app. Consulta <i>Risoluzione dei problemi</i> in <i>Aiuto</i> per altre cose da provare.]]></string>
-    <string name="compass_calib_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they invoke the calibration dialog. Placeholder is the video URL"><![CDATA[Il tuo telefono segnala la precisione della bussola come mostrato sopra. Per migliorarla, esegui un movimento a figura 8 con il tuo dispositivo (%s).<br/><br/>
-<b>Nota sulla precisione:</b> La calibrazione è un requisito a livello hardware del tuo telefono, non un\'impostazione di Sky Map. Anche se calibrato, i campi magnetici locali (come i cruscotti delle auto o i magneti) potrebbero causare una leggera deviazione nella direzione. Consulta <i>Risoluzione dei problemi</i> in <i>Aiuto</i> per altri suggerimenti.]]></string>
+    <string name="compass_calibration_activity_warning" translation_description="Heading/reason text shown in the compass calibration dialog when it opens automatically due to low accuracy">La bussola del tuo telefono necessita attenzione</string>
+    <string name="compass_calibration_activity_user_heading" translation_description="Heading shown in the compass calibration dialog when the user opens it manually from the menu">La bussola del tuo telefono</string>
+    <string name="compass_calib_what_to_do" translation_description="Information for the user on how to calibrate the compass when the dialog auto-opens. Placeholder is the video URL"><![CDATA[Il sensore della bussola del tuo telefono sta segnalando una bassa precisione. Il movimento a figura 8 (%s) richiede al tuo telefono di ricalibrare il suo sensore hardware — Sky Map non ha alcun controllo su questo processo.<br/><br/>
+<b>Calibrato non significa accurato.</b> Il gesto a figura 8 aiuta il sensore a normalizzarsi internamente, ma non può rimuovere le interferenze da oggetti metallici vicini, cruscotti di auto o custodie magnetiche per telefoni. Se la mappa è ancora scorretta dopo la calibrazione, quelle fonti esterne sono la causa più probabile — non Sky Map.<br/><br/>
+Spostati in un\'area aperta lontano da metalli e riprova. Consulta <i>Risoluzione dei problemi</i> in <i>Guida</i> per ulteriori passaggi.]]></string>
+    <string name="compass_calib_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they invoke the calibration dialog. Placeholder is the video URL"><![CDATA[Il tuo telefono sta segnalando l\'accuratezza della bussola come mostrato sopra. Il movimento a figura-8 (%s) richiede all\'hardware del tuo telefono di ricalibrare il sensore della bussola.<br/><br/>
+<b>Distinzione importante:</b> la calibrazione aiuta il sensore a normalizzarsi internamente. Una bussola calibrata non è necessariamente accurata — le interferenze magnetiche locali (oggetti metallici, cruscotti di auto, custodie magnetiche per telefoni) possono comunque causare l\'errata indicazione della mappa. Sky Map legge esattamente quello che il sensore del tuo telefono segnala; non ha modo di correggere l\'ambiente circostante.<br/><br/>
+Vedi <i>Risoluzione dei problemi</i> in <i>Aiuto</i> per altri passaggi, incluso l\'offset manuale della bussola per telefoni con un errore direzionale coerente.]]></string>
+    <string name="compass_low_accuracy_toast" translation_description="Brief toast shown when compass accuracy is low and the user has disabled the calibration dialog">La bussola del tuo telefono sta segnalando una bassa precisione</string>
     <string name="sensor_reverse_preference_title" translation_description="Preference title for reversing the magnetic Z-axis sensor reading, a fix for certain phones with incorrectly implemented sensors">Inverti asse Z magnetico</string>
     <string name="sensor_reverse_preference_summary" translation_description="Summary for the Reverse Magnetic Z preference">
     Correzione per telefoni con sensori implementati in modo errato - richiede riavvio
@@ -273,10 +276,12 @@
     <string name="warm_welcome_slide1_title" translation_description="Title for the first slide of the Warm Welcome">Esplora il Cosmo</string>
     <string name="warm_welcome_slide1_desc" translation_description="Description for the first slide of the Warm Welcome">
     Usa i livelli a sinistra per filtrare stelle, costellazioni, pianeti e altro. Tocca il Vortice per viaggiare nel tempo, oppure l\'Occhio per la modalità notturna.
+    Vortex to travel through time, or the Eye for night mode.
     <b>Vortex</b> to travel through time, or the <b>Eye</b> for night mode.</string>
     <string name="warm_welcome_slide2_title" translation_description="Title for the second slide of the Warm Welcome">Naviga il Cielo</string>
     <string name="warm_welcome_slide2_desc" translation_description="Description for the second slide of the Warm Welcome">
     Punta il telefono per guardare intorno in Modalità Auto, oppure tocca per passare a Manuale ed esplora scorrendo. Tocca due volte in Manuale per ripristinare l\'orizzonte.
+    Auto Mode, or tap to switch to Manual and explore by swiping. Double-tap in Manual to reset your horizon.
     <b>Auto Mode</b>, or tap to switch to <b>Manual</b> and explore by swiping. Double-tap in Manual to reset your horizon.</string>
     <string name="warm_welcome_slide2_info_desc" translation_description="Description about info cards on the second slide">
     Tocca qualsiasi oggetto in Modalità Manuale per visualizzare Schede Info con curiosità e dettagli celesti.
@@ -285,9 +290,11 @@
     <string name="warm_welcome_slide3_desc" translation_description="Description for the third slide of the Warm Welcome">Sky Map utilizza i sensori del tuo telefono per allinearsi con le stelle.</string>
     <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message when sensors are missing">
     Il tuo dispositivo sembra mancare dei sensori necessari per il tracciamento automatico. Non preoccuparti—puoi comunque esplorare l\'intero cosmo in Modalità Manuale!
+    Manual Mode!
     <b>Manual Mode</b>!</string>
     <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration text on slide 3">
     Per mantenere la precisione, fai un rapido movimento a figura-8 con il telefono di tanto in tanto.
+    figure-8 wave every once in a while.
     <b>figure-8</b> wave every once in a while.</string>
 
     <string name="tutorial_planets" translation_description="Tutorial annotation for planets layer">Pianeti</string>
