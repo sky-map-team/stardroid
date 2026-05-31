@@ -98,9 +98,11 @@ import com.google.android.stardroid.education.ObjectInfoTapHandler;
 import com.google.android.stardroid.layers.LayerManager;
 import com.google.android.stardroid.math.CoordinateManipulationsKt;
 import com.google.android.stardroid.math.MathUtils;
+import com.google.android.stardroid.math.RaDec;
 import com.google.android.stardroid.math.Vector3;
 import com.google.android.stardroid.renderer.RendererController;
 import com.google.android.stardroid.renderer.SkyRenderer;
+import com.google.android.stardroid.search.CoordinateParser;
 import com.google.android.stardroid.search.SearchResult;
 import com.google.android.stardroid.touch.DragRotateZoomGestureDetector;
 import com.google.android.stardroid.touch.GestureDetectorFactory;
@@ -1014,6 +1016,37 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
     final String queryString = searchIntent.getStringExtra(SearchManager.QUERY);
     searchMode = true;
     Log.d(TAG, "Query string " + MiscUtil.capitalize(queryString));
+
+    RaDec raDec = CoordinateParser.INSTANCE.parseCoordinates(queryString);
+    if (raDec != null) {
+      Vector3 target = CoordinateManipulationsKt.getGeocentricCoords(raDec);
+      float ra = raDec.getRa();
+      float raHours = ra / 15.0f;
+      int h = (int) raHours;
+      float minutesPart = (raHours - h) * 60.0f;
+      int m = (int) minutesPart;
+      int s = Math.round((minutesPart - m) * 60.0f);
+      if (s == 60) {
+        s = 0;
+        m += 1;
+      }
+      if (m == 60) {
+        m = 0;
+        h = (h + 1) % 24;
+      }
+      String raString = getString(R.string.diagnostics_ra_format, h, m, s);
+      String decString = getString(R.string.diagnostics_dec_format, raDec.getDec());
+      String targetLabel = "RA: " + raString + ", Dec: " + decString;
+
+      Bundle b = new Bundle();
+      b.putString(AnalyticsInterface.SEARCH_TERM, MiscUtil.capitalize(queryString));
+      b.putBoolean(AnalyticsInterface.SEARCH_SUCCESS, true);
+      analytics.trackEvent(AnalyticsInterface.SEARCH_EVENT, b);
+
+      activateSearchTarget(target, targetLabel);
+      return;
+    }
+
     List<SearchResult> results = layerManager.searchByObjectName(queryString);
     Bundle b = new Bundle();
     b.putString(AnalyticsInterface.SEARCH_TERM, MiscUtil.capitalize(queryString));
