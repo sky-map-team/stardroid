@@ -73,7 +73,5 @@ sv = "Use the informal 'du/din' register throughout."
 nb = "Use the informal 'du/din' register throughout."
 
 [language_models]
-# Welsh: Gemini translates the app name to 'Map Awyr' — use Sonnet which preserves 'Sky Map'.
-#cy = { provider = "anthropic", model = "claude-sonnet-4-6" }
 # Japanese: Gemini produces broken possessive constructs (e.g. スマートフォン's) — use Sonnet.
 ja = { provider = "anthropic", model = "claude-sonnet-4-6" }

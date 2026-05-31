@@ -169,12 +169,73 @@ translation.  This was done by Claude.
      but has persistent issues with Dutch grammatical gender and can be unfaithful to nuanced
      source intent (Arabic/nb/sv calibration language).
 
-  5. **Welsh and Dutch need post-edit review regardless of model** — Welsh is a lower-resource
-     language where all models flag uncertainty, and Dutch grammatical gender is a recurring
-     failure mode for Haiku specifically.
+  5. **Dutch needs post-edit review regardless of model** — Dutch grammatical gender is a
+     recurring failure mode for Haiku specifically. Welsh has since been resolved — see follow-up
+     analysis below.
 
   6. **For the PR #895 strings specifically**, the recommended merge candidate is the Gemini
      branch with two manual fixes: German register (Sie → du) and nb/sv phrasing
      ("calibration" → "attention").
 
+---
 
+## Follow-up: Welsh help text quality (PRs #898–#902)
+
+The original analysis flagged Gemini as broken for Welsh because it translated the app name
+"Sky Map" as "Map Awyr". That was fixed by adding an explicit brand-name preservation rule to
+`translation_notes` in `.tmconfig.toml`. A subsequent comparison of four Welsh help-text
+translation attempts (PRs #898, #899, #900, #902) confirmed Gemini is now the strongest model
+for Welsh and the Sonnet override should be removed.
+
+### What was compared
+
+| PR | Model | Notes |
+|---|---|---|
+| #898 | Claude Sonnet 4.6 | First Sonnet attempt |
+| #899 | Claude Sonnet 4.6 | Second Sonnet attempt (near-identical to #898) |
+| #900 | Gemini 2.5 Flash | First Gemini attempt after brand-name fix |
+| #902 | Gemini 2.5 Flash | Second Gemini attempt (current) |
+
+### Errors found in Sonnet translations (#898 and #899)
+
+Both Sonnet PRs contained the same set of Welsh grammar errors:
+
+- **Wrong word — "crynhoi" vs "crynu"**: The section heading "Mae'r map yn crynhoi" means
+  *"the map is summarising"*, not *"the map is shaking"*. The correct Welsh verb is `crynu`.
+- **Gender agreement — "tair peth" vs "tri pheth"**: `peth` (thing) is masculine in Welsh,
+  requiring the masculine numeral `tri` with aspirate mutation: `tri pheth`. Sonnet used
+  the feminine form `tair`.
+- **Soft mutation missing — "saeth cyfeiriadol"**: `saeth` (arrow) is feminine; the following
+  adjective requires soft mutation: `saeth gyfeiriadol`.
+- **Wrong register — "Diswyddwch"**: Used to mean "dismiss a dialog". `Diswyddo` means
+  *"to dismiss/fire someone from employment"* — entirely wrong context.
+- **Mutation after "a"**: `"a Dechrau Cyflym"` — after the conjunction `a` (and), `D` must
+  soft-mutate to `Dd`: `"a Ddechrau Cyflym"`.
+- **Cyrillic character**: `"gyrоsgop"` contained a Cyrillic `о` character instead of Latin `o`.
+- **Awkward terminology**: `"Modd Llawlyfr"` for Manual mode — `llawlyfr` means "handbook"
+  (a noun), not the adjective "manual". The cleaner form is `"Modd Llaw"`.
+
+### Errors found in Gemini #900
+
+- Mutation error: `"a Cychwyn Cyflym"` should be `"a Chychwyn Cyflym"` (C→Ch after `a`)
+- Used English cardinal direction letters `N, S, E, W` instead of Welsh equivalents
+- Inconsistent imperatives: mixed bare infinitives (`Tapu`, `Gwirio`) with `-wch` forms
+- `"galaxïau"` (English loan plural) instead of `"Galaethau"` (correct Welsh plural)
+- `"system solar"` instead of `"cysawd yr haul"` (proper Welsh term for solar system)
+- `"daparol"` for "upcoming" — not a recognised standard Welsh word
+
+### Gemini #902 quality
+
+PR #902 is grammatically sound and consistently idiomatic:
+- Correct soft mutations throughout (including `"Chychwyn"` after `a`)
+- Consistent formal register (`eich/chi`, `-wch` imperative forms) throughout the document
+- Proper Welsh vocabulary: `cysawd yr haul`, `Galaethau`, `Sadwrn` (Saturn), `h.y.` (i.e.)
+- Welsh cardinal abbreviations rather than English letters
+- Minor: `heuldroeau` plural is slightly irregular (standard form is `heuldroeon`); no impact
+  on comprehension
+
+### Conclusion
+
+Gemini is now the recommended model for Welsh. The Sonnet override in `.tmconfig.toml` has
+been removed. The "Map Awyr" brand-name bug that originally prompted the Sonnet override is
+prevented by the `translation_notes` rule added in PR #901.
