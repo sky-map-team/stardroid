@@ -9,11 +9,47 @@
     <string name="other_prefs" translation_description="Preferences category heading for miscellaneous settings">其他</string>
     <string name="controls_prefs" translation_description="Preferences category heading for touch control settings">控制</string>
     <string name="location_permission_dialog_title" translation_description="Title of the dialog that requests location permission from the user">需要位置信息</string>
+    <string name="location_permission_dialog_message" translation_description="Body text of the dialog requesting location permission, explaining why the app needs it and what happens without it">Sky Map 需要您的近似位置以显示正确的夜空。您可以授予权限、手动输入您的位置，或稍后决定。如果您稍后决定，地图将不准确，直到您的位置已设置。</string>
     <string name="location_permission_grant" translation_description="Button in the location permission dialog to grant location access">授予权限</string>
     <string name="location_permission_enter_manually" translation_description="Button in the location permission dialog to enter location by hand instead of granting permission">手动输入</string>
     <string name="location_permission_later" translation_description="Button in the location permission dialog to defer the decision">稍后</string>
     <string name="location_set_auto" translation_description="Toast message when automatic location is acquired. %1$s is the place name or coordinates">位置已设置为 %1$s</string>
     <string name="location_long_lat" translation_description="Formatted display of longitude and latitude. %1$.2f is longitude, %2$.2f is latitude">经度：%1$.2f，纬度：%2$.2f</string>
+    <string name="degrees" translation_description="angular degrees - used for latitude and longitude">度</string>
+    <string name="location_acquiring_title" translation_description="Title of dialog shown while acquiring the user\'s location automatically">正在查找您的位置…</string>
+    <string name="location_acquiring_message" translation_description="Body text of dialog shown while Sky Map is waiting to acquire the device GPS or network location">仍在尝试查找您的位置…</string>
+    <string name="location_keep_waiting" translation_description="Button to keep waiting for an automatic location fix">继续等待</string>
+    <string name="location_permanently_denied_title" translation_description="Title of dialog shown when location permission was permanently denied by the user">需要权限</string>
+    <string name="location_permanently_denied_message" translation_description="Body text explaining that location permission was permanently denied and how to fix it">位置权限已被永久拒绝。请打开应用设置以重新启用。</string>
+    <string name="location_open_settings" translation_description="Button that opens the system app settings page so the user can re-grant location permission">打开应用设置</string>
+    <string name="location_manual_entry_title" translation_description="Title of the dialog where the user types their location manually">输入您的位置</string>
+    <string name="location_place_name_hint" translation_description="Placeholder text in the place name input field">城市或地点名称</string>
+    <string name="location_latitude_hint" translation_description="Placeholder text in the latitude input field">纬度（例如 51.5）</string>
+    <string name="location_longitude_hint" translation_description="Placeholder text in the longitude input field">经度（例如 -0.1）</string>
+    <string name="location_resolve_button" translation_description="Button that looks up coordinates for a typed place name">解析</string>
+    <string name="location_set_button" translation_description="Button that confirms and applies the manually entered location">设置位置</string>
+    <string name="location_place_not_found" translation_description="Inline error shown when a place name search returns no results">未找到地点 — 请尝试更具体的名称</string>
+    <string name="location_geocoder_offline" translation_description="Inline message shown when geocoding fails because there is no internet connection">无网络 — 请直接输入坐标</string>
+    <string name="location_invalid_latitude" translation_description="Validation error for latitude values outside the valid range">纬度必须介于 −90 和 90 之间</string>
+    <string name="location_invalid_longitude" translation_description="Validation error for longitude values outside the valid range">经度必须介于 −180 和 180 之间</string>
+    <string name="location_management_title" translation_description="Title of the location management screen">您的位置</string>
+    <string name="location_source_auto" translation_description="Label shown when the device is determining location automatically">自动</string>
+    <string name="location_source_manual" translation_description="Label shown when the user has manually entered their location">手动</string>
+    <string name="location_source_acquiring" translation_description="Label shown while waiting for the first automatic location fix">正在获取…</string>
+    <string name="location_source_unset" translation_description="Label shown when no location has been set">未设置位置</string>
+    <string name="location_source_hardware_unavailable" translation_description="Label shown when the device has no location hardware">此设备上位置不可用</string>
+    <string name="location_switch_to_auto" translation_description="Button to switch from manual location to automatic detection">使用自动位置</string>
+    <string name="location_switch_to_manual" translation_description="Button to switch from automatic to manual location entry">手动输入位置</string>
+    <string name="location_change" translation_description="Button to change or update the manually entered location">更改位置</string>
+    <string name="location_map_no_location" translation_description="Message shown in the map area when no location is set">未设置位置 — 点击下方添加</string>
+    <string name="location_map_acquiring" translation_description="Message shown in the map area while waiting for a GPS fix">正在获取位置…</string>
+    <string name="location_map_unavailable" translation_description="Message shown in the map area when the map image cannot be loaded">地图不可用</string>
+    <string name="location_map_content_description" translation_description="Accessibility description for the map image showing the user\'s location">显示您位置的地图</string>
+    <!-- tm:omitted name="location_coordinate_format" reason="identical_to_source" -->
+    <string name="location_diagnostic_format" translation_description="Format for location in diagnostics: lat, lon (source). %1$.4f is lat, %2$.4f is lon, %3$s is source">%1$.4f°，%2$.4f° (%3$s)</string>
+    <!-- tm:omitted name="diagnostics_phone_format" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_ra_format" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_dec_format" reason="identical_to_source" -->
     <string name="use_magnetic_correction" translation_description="Preference label: apply magnetic declination correction so the compass points to true north instead of magnetic north">使用磁力修正</string>
     <string name="manual_compass_adjustment_title" translation_description="Preference title: lets the user add a manual degree offset to the compass reading">额外的指南针调整</string>
     <string name="manual_compass_adjustment_summary" translation_description="Summary for the manual compass adjustment preference">额外的偏移量（+ 或 −）添加到指南针读数</string>
@@ -184,6 +220,7 @@
 <b>重要提示：</b>校准是由您的设备处理的硬件过程。虽然它可以提高传感器的可靠性，但外部磁干扰仍可能导致"偏差"或轻微漂移。这是移动指南针的物理限制，不是应用程序内的错误。请参阅<i>帮助</i>中的<i>故障排除</i>了解其他可尝试的方法。]]></string>
     <string name="compass_calib_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they invoke the calibration dialog. Placeholder is the video URL"><![CDATA[您的手机报告的指南针精度如上所示。要改进这一点，请用您的设备执行8字形运动 (%s)。<br/><br/>
 <b>精度说明：</b>校准是您手机的硬件级要求，不是Sky Map设置。即使校准后，本地磁场（如汽车仪表板或磁铁）也可能导致方向出现轻微偏差。请参阅<i>帮助</i>中的<i>故障排除</i>了解其他可尝试的方法。]]></string>
+    <string name="compass_low_accuracy_toast" translation_description="Brief toast shown when compass accuracy is low and the user has disabled the calibration dialog">您手机的指南针精度较低</string>
     <string name="sensor_reverse_preference_title" translation_description="Preference title for reversing the magnetic Z-axis sensor reading, a fix for certain phones with incorrectly implemented sensors">反向磁Z轴</string>
     <string name="sensor_reverse_preference_summary" translation_description="Summary for the Reverse Magnetic Z preference">修复传感器实现不正确的手机 - 需要重新启动</string>
     <string name="whats_new_dialog_title" translation_description="Title of the dialog shown on first launch after an update, listing new features">有什么新功能</string>
@@ -215,5 +252,31 @@
     <string name="action_find_in_sky_map" translation_description="Button label that opens the star map and searches for the displayed object">查找</string>
     <string name="auto_level_horizon_on" translation_description="Toast message when auto-level horizon is enabled">自动调平地平线已启用</string>
     <string name="auto_level_horizon_off" translation_description="Toast message when auto-level horizon is disabled">自动调平地平线已禁用</string>
+
+    <string name="warm_welcome_title" translation_description="Title of the Warm Welcome screen">欢迎使用 Sky Map</string>
+    <string name="warm_welcome_slide1_title" translation_description="Title for the first slide of the Warm Welcome">探索宇宙</string>
+    <string name="warm_welcome_slide1_desc" translation_description="Description for the first slide of the Warm Welcome">使用左侧图层筛选恒星、星座、行星等。轻触“漩涡”图标可穿越时间，或轻触“眼睛”图标进入夜间模式。</string>
+    <string name="warm_welcome_slide2_title" translation_description="Title for the second slide of the Warm Welcome">导航星空</string>
+    <string name="warm_welcome_slide2_desc" translation_description="Description for the second slide of the Warm Welcome">在自动模式下，将手机指向天空即可环顾四周，或轻触切换到手动模式，通过滑动来探索。在手动模式下双击可重置地平线。</string>
+    <string name="warm_welcome_slide2_info_desc" translation_description="Description about info cards on the second slide">在手动模式下点击任何物体，即可显示包含有趣事实和天体详情的信息卡。</string>
+    <string name="warm_welcome_slide3_title" translation_description="Title for the third slide of the Warm Welcome">传感器与校准</string>
+    <string name="warm_welcome_slide3_desc" translation_description="Description for the third slide of the Warm Welcome">Sky Map 使用您手机的传感器来对准星空。</string>
+    <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message when sensors are missing">您的设备似乎缺少自动跟踪所需的传感器。别担心，您仍然可以在手动模式下探索整个宇宙！</string>
+    <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration text on slide 3">为了保持准确，请时不时地将手机快速地画8字形挥动。</string>
+
+    <string name="tutorial_planets" translation_description="Tutorial annotation for planets layer">行星</string>
+    <string name="tutorial_meteors" translation_description="Tutorial annotation for meteors layer">流星</string>
+    <string name="tutorial_grid" translation_description="Tutorial annotation for grid layer">网格</string>
+    <string name="tutorial_night_mode" translation_description="Tutorial annotation for night mode">夜间模式</string>
+    <string name="tutorial_time_travel" translation_description="Tutorial annotation for time travel">时间旅行</string>
+    <string name="tutorial_manual_auto" translation_description="Tutorial annotation for manual/auto toggle">手动/自动</string>
+
+    <string name="warm_welcome_skip" translation_description="Button to skip the Warm Welcome">跳过</string>
+    <string name="warm_welcome_next" translation_description="Button to go to the next slide">下一步</string>
+    <string name="warm_welcome_finish" translation_description="Button to finish the Warm Welcome and start exploring. Needs to be short - the width of 9 letter Ms maximum.">启动！</string>
+    <string name="warm_welcome_do_not_show" translation_description="Checkbox to not show the Warm Welcome again">不再自动显示</string>
+    <string name="menu_tutorial" translation_description="Menu item for re-showing the warm welcome tutorial">教程</string>
+    <string name="warm_welcome_sensor_ok" translation_description="Status when a sensor is working fine">正常</string>
+    <string name="warm_welcome_sensor_missing" translation_description="Status when a sensor is missing">缺失</string>
     <string name="preferences_auto_mode_title" translation_description="Label for the toggle between manual and automatic modes">手动/自动模式</string>
 </resources>
