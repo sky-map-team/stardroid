@@ -16,6 +16,11 @@ name in the target language as used in scientific literature and Wikipedia — d
 invent phonetic transliterations or literal translations of English names. If no \
 established translated name exists, retain the Latin or catalog designation \
 (e.g. "NGC 4755") rather than guessing.
+
+The app name "Sky Map" and the platform name "Android" must never be translated or \
+transliterated, regardless of language. Preserve them exactly as English text in \
+every locale, including languages that use non-Latin scripts (Arabic, Hindi, Thai, \
+Japanese, Chinese, etc.).
 """
 
 [glossary]
@@ -59,6 +64,16 @@ resource_qualifier_excludes = ["w820dp"]
 # Use this for language-specific naming authority references or conventions.
 [locale_context]
 pl = "Follow Polish Wikipedia and PTAst (Polskie Towarzystwo Astronomiczne) naming conventions for astronomical objects. For software targeting the Android platform, use 'na Androida' not 'dla Androida'."
-de = "Follow IAU-approved German astronomical names and DIN conventions where applicable."
+de = "Follow IAU-approved German astronomical names and DIN conventions where applicable. Use the informal 'du/dein/dir' register throughout — never the formal 'Sie/Ihr/Ihnen'. Use 'Handy' rather than 'Telefon' when referring to a mobile phone."
+nl = "Use the informal 'je/jij/jouw' register throughout — never the formal 'u/uw'. Use 'het kompas' (neuter gender) not 'de kompas' when referring to the compass sensor."
 fr = "Follow Union astronomique internationale (UAI) French-language naming conventions."
 zh-Hant = "Use Traditional Chinese astronomical names as used in Taiwan (中華民國天文學會) conventions."
+da = "Use the informal 'du/din' register throughout — never the formal 'De/Dem'."
+sv = "Use the informal 'du/din' register throughout."
+nb = "Use the informal 'du/din' register throughout."
+
+[language_models]
+# Welsh: Gemini translates the app name to 'Map Awyr' — use Sonnet which preserves 'Sky Map'.
+cy = { provider = "anthropic", model = "claude-sonnet-4-6" }
+# Japanese: Gemini produces broken possessive constructs (e.g. スマートフォン's) — use Sonnet.
+ja = { provider = "anthropic", model = "claude-sonnet-4-6" }
