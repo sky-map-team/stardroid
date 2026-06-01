@@ -231,6 +231,7 @@ Sky Map polega na czujniku kompasu wbudowanym w Twój telefon. Jeśli dokładno�
 Twój telefon zgłasza dokładność kompasu jak pokazano powyżej. Aby ją poprawić, wykonaj ruchy swoim urządzeniem na kształt ósemki (%s).<br/><br/>
 <b>Uwaga dotycząca dokładności:</b> Kalibracja jest wymaganiem na poziomie sprzętowym Twojego telefonu, a nie ustawieniem Sky Map. Nawet po kalibracji lokalne pola magnetyczne (jak deska rozdzielcza samochodu lub magnesy) mogą powodować niewielkie odchylenia w kierunku. Zobacz <i>Rozwiązywanie problemów</i> w <i>Pomoc</i> dla innych rozwiązań wartych wypróbowania.
     ]]></string>
+    <string name="compass_low_accuracy_toast" translation_description="Brief toast shown when compass accuracy is low and the user has disabled the calibration dialog">Kompas w Twoim telefonie zgłasza niską dokładność</string>
     <string name="sensor_reverse_preference_title" translation_description="Preference title for reversing the magnetic Z-axis sensor reading, a fix for certain phones with incorrectly implemented sensors">Odwróć oś Z magnetometru</string>
     <string name="sensor_reverse_preference_summary" translation_description="Summary for the Reverse Magnetic Z preference">
     Poprawka dla telefonów z nieprawidłowo zaimplementowanymi czujnikami – wymaga ponownego uruchomienia
