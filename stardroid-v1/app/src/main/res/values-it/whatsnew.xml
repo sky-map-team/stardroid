@@ -1,10 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <string name="whats_new_text" translation_description="HTML structure for a page describing new features in this version of Sky Map. Please do not change the &lt; and &gt; markup">
-    &lt;h1&gt;Novità nella versione %1$s&lt;/h1&gt;
-%2$s
-
-&lt;h1&gt;Supporta Sky Map&lt;/h1&gt;
-&lt;p&gt;Sky Map è gratuito e open source. Se lo trovi utile, considera di supportare lo sviluppo sulla &lt;a href="https://github.com/sky-map-team/stardroid/?tab=readme-ov-file#support-the-project"&gt;nostra pagina GitHub&lt;/a&gt;.&lt;/p&gt;
+    %3$s&lt;h1&gt;Novità nella versione %1$s&lt;/h1&gt;%2$s&lt;h1&gt;Sostieni Sky Map&lt;/h1&gt;&lt;p&gt;Sky Map è gratuito e open source. Se lo trovi utile, considera di supportare lo sviluppo sulla nostra &lt;a href="https://github.com/sky-map-team/stardroid/?tab=readme-ov-file#support-the-project"&gt;pagina GitHub&lt;/a&gt; o &lt;a href="https://buymeacoffee.com/skymapdevs?utm_source=skymap&amp;utm_medium=app&amp;utm_campaign=whatsnew"&gt;offrendoci un caffè&lt;/a&gt;.&lt;/p&gt;
     </string>
 </resources>
