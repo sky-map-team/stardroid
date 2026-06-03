@@ -2,10 +2,10 @@
 <resources>
     <string name="whats_new_text" translation_description="HTML structure for a page describing new features in this version of Sky Map. Please do not change the &lt; and &gt; markup">
     %3$s
-&lt;h1&gt;Sürüm %1$s\'de Yenilikler&lt;/h1&gt;
+&lt;h1&gt;Sürüm %1$s\u0027deki Yenilikler&lt;/h1&gt;
 %2$s
 
-&lt;h1&gt;Sky Map\'ı Destekleyin&lt;/h1&gt;
-&lt;p&gt;Sky Map ücretsiz ve açık kaynaktır. Faydalı bulduysanız, lütfen &lt;a href="https://github.com/sky-map-team/stardroid/?tab=readme-ov-file#support-the-project"&gt;GitHub&lt;/a&gt; sayfamızda geliştirmeyi desteklemeyi düşünün.&lt;/p&gt;
+&lt;h1&gt;Sky Map\u0027i Destekleyin&lt;/h1&gt;
+&lt;p&gt;Sky Map ücretsiz ve açık kaynaklıdır. Eğer faydalı buluyorsanız, lütfen geliştirme çalışmalarını &lt;a href="https://github.com/sky-map-team/stardroid/?tab=readme-ov-file#support-the-project"&gt;GitHub&lt;/a&gt; sayfamızda veya &lt;a href="https://buymeacoffee.com/skymapdevs?utm_source=skymap&amp;amp;utm_medium=app&amp;amp;utm_campaign=whatsnew"&gt;bize bir kahve ısmarlayarak&lt;/a&gt; desteklemeyi düşünün.&lt;/p&gt;
     </string>
 </resources>
