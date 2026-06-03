@@ -1,7 +1,7 @@
 # <img src="https://raw.githubusercontent.com/sky-map-team/stardroid/refs/heads/master/stardroid-v1/assets/skymap-logo-large.png" width="45" height="45" align="center"> Sky Map
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Build Status](https://travis-ci.org/sky-map-team/stardroid.svg?branch=master)](https://travis-ci.org/sky-map-team/stardroid)
-[![Buy Me A Coffee](https://img.shields.io/badge/Support-Buy%20Me%20A%20Coffee-orange?style=flat-square&logo=buy-me-a-coffee)](https://www.buymeacoffee.com/skymapdevs)
+[![Buy Me A Coffee](https://img.shields.io/badge/Support-Buy%20Me%20A%20Coffee-orange?style=flat-square&logo=buy-me-a-coffee)](https://www.buymeacoffee.com/skymapdevs?utm_source=github&utm_medium=readme&utm_campaign=readme_badge)
 
 http://stardroid.app
 
@@ -28,13 +28,13 @@ I'm glad you asked! We have a section on that below.
 ---
 ## Support the Project
 
-<a href="https://www.buymeacoffee.com/skymapdevs" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-blue.png" alt="Buy Me A Coffee" height="41" width="174"></a>
+<a href="https://www.buymeacoffee.com/skymapdevs?utm_source=github&utm_medium=readme&utm_campaign=readme_support" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-blue.png" alt="Buy Me A Coffee" height="41" width="174"></a>
 
 Sky Map is a labor of love maintained in our spare time by a couple of ex-Googlers here in Pittsburgh. It is free, open-source, ad-free and we don't track you or sell your data. 
 
 If you enjoy using Sky Map, there are several ways to help keep the project alive:
 
-* **Donations:** [Buy Me a Coffee](https://www.buymeacoffee.com/skymapdevs) — Every coffee helps keep the servers running and the code flowing!
+* **Donations:** [Buy Me a Coffee](https://www.buymeacoffee.com/skymapdevs?utm_source=github&utm_medium=readme&utm_campaign=readme_support) — Every coffee helps keep the servers running and the code flowing!
 * **Join the beta and give us feedback!** Visit the [Play Store](https://play.google.com/store/apps/details?id=com.google.android.stardroid) on your phone.
 * **Star the Repo:** It costs nothing and helps others find the project.
 * **Contribute:** See the [Contributing guide](CONTRIBUTING.md) or [report an issue](https://github.com/sky-map-team/stardroid/issues/).
