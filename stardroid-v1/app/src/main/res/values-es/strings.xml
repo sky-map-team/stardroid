@@ -96,7 +96,8 @@
     <string name="west" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">OESTE</string>
     <string name="south" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">SUR</string>
     <string name="search_label" translation_description="Hint/label for the search bar in the search activity">Buscar</string>
-    <string name="search_hint" translation_description="an example search target">p. ej. Marte</string>
+    <string name="search_hint" translation_description="an example search target">p. ej. Marte o RA Dec</string>
+    <!-- tm:omitted name="search_target_ra_dec_format" reason="identical_to_source" -->
     <string name="no_search_title" translation_description="Dialog title shown when a sky search returns no results">Sin resultados</string>
     <!-- Hopefully this is a temporary measure until we can fix the search engine -->
     <string name="no_search_results_text2" translation_description="Alternative message shown when a search returns no results, suggesting the object may not currently be visible">No hubo resultados. Quizás el objeto no es visible en este momento.</string>

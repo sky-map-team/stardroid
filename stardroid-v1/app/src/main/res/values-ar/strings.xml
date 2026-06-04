@@ -92,7 +92,8 @@
     <string name="west" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">غرب</string>
     <string name="south" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">جنوب</string>
     <string name="search_label" translation_description="Hint/label for the search bar in the search activity">ابحث في الفضاء</string>
-    <string name="search_hint" translation_description="an example search target">مثال: زحل</string>
+    <string name="search_hint" translation_description="an example search target">مثلاً المريخ أو RA Dec</string>
+    <string name="search_target_ra_dec_format" translation_description="Label shown on the sky map when navigating to a coordinate search result. %1$s is the RA (e.g. 12h 30m 0s) and %2$s is the Dec (e.g. 45.00°).">%1$s، %2$s</string>
     <string name="no_search_title" translation_description="Dialog title shown when a sky search returns no results">لا توجد بيانات</string>
     <!-- Hopefully this is a temporary measure until we can fix the search engine -->
     <string name="no_search_results_text2" translation_description="Alternative message shown when a search returns no results, suggesting the object may not currently be visible">لم يتم العثور على نتائج. ربما الجسم غير مرئي في هذا الوقت.</string>

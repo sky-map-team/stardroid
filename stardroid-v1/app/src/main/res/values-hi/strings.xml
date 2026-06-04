@@ -94,7 +94,8 @@
     <string name="west" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">पश्चिम</string>
     <string name="south" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">दक्षिण</string>
     <string name="search_label" translation_description="Hint/label for the search bar in the search activity">आकाश खोजें</string>
-    <string name="search_hint" translation_description="an example search target">उदा. मंगल</string>
+    <string name="search_hint" translation_description="an example search target">जैसे मंगल या RA Dec</string>
+    <!-- tm:omitted name="search_target_ra_dec_format" reason="identical_to_source" -->
     <string name="no_search_title" translation_description="Dialog title shown when a sky search returns no results">कोई परिणाम नहीं</string>
     <!-- Hopefully this is a temporary measure until we can fix the search engine -->
     <string name="no_search_results_text2" translation_description="Alternative message shown when a search returns no results, suggesting the object may not currently be visible">कोई परिणाम नहीं मिले। संभवतः यह वस्तु इस समय दृश्यमान नहीं है।</string>

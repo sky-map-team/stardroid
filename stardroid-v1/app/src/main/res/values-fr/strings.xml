@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!-- Please add  translation_description="" attributes to Strings to assist the translators. --><resources>
-    <string name="app_name" translation_description="Application Title">Sky Map</string>
+    <!-- tm:omitted name="app_name" reason="identical_to_source" -->
     <string name="menu_settings" translation_description="Settings menu item in the options menu">Paramètres</string>
     <string name="menu_search" translation_description="Search menu item in the options menu">Rechercher</string>
     <string name="cancel" translation_description="Generic cancel button label used in dialogs">Annuler</string>
@@ -94,7 +94,8 @@
     <string name="west" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">OUEST</string>
     <string name="south" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">SUD</string>
     <string name="search_label" translation_description="Hint/label for the search bar in the search activity">Rechercher</string>
-    <string name="search_hint" translation_description="an example search target">Ex. : Mars</string>
+    <string name="search_hint" translation_description="an example search target">par ex. Mars ou AD Déc</string>
+    <!-- tm:omitted name="search_target_ra_dec_format" reason="identical_to_source" -->
     <string name="no_search_title" translation_description="Dialog title shown when a sky search returns no results">Aucun résultat</string>
     <!-- Hopefully this is a temporary measure until we can fix the search engine -->
     <string name="no_search_results_text2" translation_description="Alternative message shown when a search returns no results, suggesting the object may not currently be visible">

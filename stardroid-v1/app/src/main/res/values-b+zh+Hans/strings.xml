@@ -90,7 +90,7 @@
     <string name="west" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">西</string>
     <string name="south" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">南</string>
     <string name="search_label" translation_description="Hint/label for the search bar in the search activity">搜索星空</string>
-    <string name="search_hint" translation_description="an example search target">例如，火星</string>
+    <string name="search_hint" translation_description="an example search target">例如 火星 或 赤经赤纬</string>
     <string name="no_search_title" translation_description="Dialog title shown when a sky search returns no results">无结果</string>
     <!-- Hopefully this is a temporary measure until we can fix the search engine -->
     <string name="no_search_results_text2" translation_description="Alternative message shown when a search returns no results, suggesting the object may not currently be visible">未找到结果。该天体可能在此时不可见。</string>
