@@ -95,6 +95,7 @@
     <string name="south" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">JIH</string>
     <string name="search_label" translation_description="Hint/label for the search bar in the search activity">Hledat na nebi</string>
     <string name="search_hint" translation_description="an example search target">např. Mars</string>
+    <!-- tm:omitted name="search_target_ra_dec_format" reason="identical_to_source" -->
     <string name="no_search_title" translation_description="Dialog title shown when a sky search returns no results">Nic nenalezeno</string>
     <!-- Hopefully this is a temporary measure until we can fix the search engine -->
     <string name="no_search_results_text2" translation_description="Alternative message shown when a search returns no results, suggesting the object may not currently be visible">Nebyly nalezeny žádné výsledky. Objekt možná v tuto dobu není viditelný.</string>
