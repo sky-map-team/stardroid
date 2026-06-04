@@ -110,7 +110,7 @@ object CoordinateParser {
             1 -> {
                 val t = tokens[0]
                 val valInDegrees = when (t.unit) {
-                    "d", "deg", "degree", "°", "o" -> t.value
+                    "d", "deg", "degree", "degrees", "°", "o" -> t.value
                     "h", "hr", "hour", "hours" -> t.value * 15.0f
                     "" -> {
                         if (t.value <= 24.0f) {
@@ -173,7 +173,7 @@ object CoordinateParser {
             1 -> {
                 val t = tokens[0]
                 if (t.unit.isNotEmpty() && t.unit != "d" && t.unit != "deg" &&
-                    t.unit != "degree" && t.unit != "°" && t.unit != "o"
+                    t.unit != "degree" && t.unit != "degrees" && t.unit != "°" && t.unit != "o"
                 ) {
                     return null
                 }
