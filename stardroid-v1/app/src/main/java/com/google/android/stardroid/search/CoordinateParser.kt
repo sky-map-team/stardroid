@@ -51,38 +51,33 @@ object CoordinateParser {
         if (tokens.isEmpty()) return null
 
         var splitIdx = -1
+        // Pass 1: strong indicators — explicit sign or degree unit on token i
         for (i in 1 until tokens.size) {
             val t = tokens[i]
-            val prev = tokens[i - 1]
-
-            // 1. Signed token at i > 0 is Dec
-            if (t.hasExplicitSign) {
-                splitIdx = i
-                break
-            }
-
-            // 2. Degree unit starts Dec
-            if (t.unit == "d" || t.unit == "deg" || t.unit == "degree" || t.unit == "°" ||
-                t.unit == "o"
+            if (t.hasExplicitSign || t.unit == "d" || t.unit == "deg" || t.unit == "degree" ||
+                t.unit == "degrees" || t.unit == "°" || t.unit == "o"
             ) {
                 splitIdx = i
                 break
             }
-
-            // 3. Previous token had a Sec unit starts Dec
-            if (prev.unit == "s" || prev.unit == "sec" || prev.unit == "second" ||
-                prev.unit == "\""
-            ) {
-                splitIdx = i
-                break
-            }
-
-            // 4. Previous token had a Min unit, and current is unitless starts Dec
-            if ((prev.unit == "m" || prev.unit == "min" || prev.unit == "minute" ||
-                prev.unit == "'") && t.unit.isEmpty()
-            ) {
-                splitIdx = i
-                break
+        }
+        // Pass 2: weaker heuristics — previous token had a sec/min unit
+        if (splitIdx == -1) {
+            for (i in 1 until tokens.size) {
+                val t = tokens[i]
+                val prev = tokens[i - 1]
+                if (prev.unit == "s" || prev.unit == "sec" || prev.unit == "second" ||
+                    prev.unit == "\""
+                ) {
+                    splitIdx = i
+                    break
+                }
+                if ((prev.unit == "m" || prev.unit == "min" || prev.unit == "minute" ||
+                    prev.unit == "'") && t.unit.isEmpty()
+                ) {
+                    splitIdx = i
+                    break
+                }
             }
         }
 
