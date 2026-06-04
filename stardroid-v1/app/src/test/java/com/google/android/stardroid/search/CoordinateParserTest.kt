@@ -124,5 +124,11 @@ class CoordinateParserTest {
         assertThat(CoordinateParser.parseCoordinates("12h")).isNull()
         assertThat(CoordinateParser.parseCoordinates("12h 30m")).isNull()
         assertThat(CoordinateParser.parseCoordinates("abc")).isNull()
+
+        // Extra non-coordinate text must not produce false positives
+        assertThat(CoordinateParser.parseCoordinates("Mars 12 45")).isNull()
+        assertThat(CoordinateParser.parseCoordinates("12 45 Mars")).isNull()
+        assertThat(CoordinateParser.parseCoordinates("NGC 12 45")).isNull()
+        assertThat(CoordinateParser.parseCoordinates("12h 30m extra -45d 12m")).isNull()
     }
 }

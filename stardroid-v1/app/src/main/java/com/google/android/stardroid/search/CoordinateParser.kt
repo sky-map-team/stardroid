@@ -33,13 +33,20 @@ object CoordinateParser {
 
         val tokens = ArrayList<Token>()
         val matcher = COORDINATE_PATTERN.matcher(normalized)
+        var lastEnd = 0
 
         while (matcher.find()) {
+            val skipped = normalized.substring(lastEnd, matcher.start())
+            if (skipped.any { !it.isWhitespace() && it != ',' && it != ':' }) return null
             val numStr = matcher.group(1) ?: ""
             val unit = matcher.group(2) ?: ""
             val value = numStr.toFloatOrNull() ?: return null
             tokens.add(Token(value, unit.lowercase(Locale.US), numStr))
+            lastEnd = matcher.end()
         }
+
+        val skippedEnd = normalized.substring(lastEnd)
+        if (skippedEnd.any { !it.isWhitespace() && it != ',' && it != ':' }) return null
 
         if (tokens.isEmpty()) return null
 
