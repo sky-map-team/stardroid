@@ -28,25 +28,25 @@
     <string name="location_open_settings" translation_description="Button that opens the system app settings page so the user can re-grant location permission">Otwórz Ustawienia aplikacji</string>
     <string name="location_manual_entry_title" translation_description="Title of the dialog where the user types their location manually">Wprowadź swoją lokalizację</string>
     <string name="location_place_name_hint" translation_description="Placeholder text in the place name input field">Miasto lub nazwa miejsca</string>
-    <string name="location_latitude_hint" translation_description="Placeholder text in the latitude input field">Szerokość geograficzna (np. 51.5)</string>
-    <string name="location_longitude_hint" translation_description="Placeholder text in the longitude input field">Długość geograficzna (np. -0.1)</string>
-    <string name="location_resolve_button" translation_description="Button that looks up coordinates for a typed place name">Ustal</string>
+    <string name="location_latitude_hint" tm_human="true" translation_description="Placeholder text in the latitude input field">Szerokość geograficzna (np. 51.5)</string>
+    <string name="location_longitude_hint" tm_human="true" translation_description="Placeholder text in the longitude input field">Długość geograficzna (np. -0.1)</string>
+    <string name="location_resolve_button" tm_human="true" translation_description="Button that looks up coordinates for a typed place name">Ustal</string>
     <string name="location_set_button" translation_description="Button that confirms and applies the manually entered location">Ustaw lokalizację</string>
-    <string name="location_place_not_found" translation_description="Inline error shown when a place name search returns no results">Nie znaleziono miejsca — spróbuj bardziej szczegółowej nazwy</string>
-    <string name="location_geocoder_offline" translation_description="Inline message shown when geocoding fails because there is no internet connection">Brak Internetu — wprowadź współrzędne bezpośrednio</string>
+    <string name="location_place_not_found" tm_human="true" translation_description="Inline error shown when a place name search returns no results">Nie znaleziono miejsca — spróbuj bardziej szczegółowej nazwy</string>
+    <string name="location_geocoder_offline" tm_human="true" translation_description="Inline message shown when geocoding fails because there is no internet connection">Brak Internetu — wprowadź współrzędne bezpośrednio</string>
     <string name="location_invalid_latitude" translation_description="Validation error for latitude values outside the valid range">Szerokość geograficzna musi być między −90 a 90</string>
     <string name="location_invalid_longitude" translation_description="Validation error for longitude values outside the valid range">Długość geograficzna musi być między −180 a 180</string>
     <string name="location_management_title" translation_description="Title of the location management screen">Twoja lokalizacja</string>
     <string name="location_source_auto" translation_description="Label shown when the device is determining location automatically">Automatyczna</string>
     <string name="location_source_manual" translation_description="Label shown when the user has manually entered their location">Ręczna</string>
-    <string name="location_source_acquiring" translation_description="Label shown while waiting for the first automatic location fix">Wykrywanie…</string>
-    <string name="location_source_unset" translation_description="Label shown when no location has been set">Nie ustawiono lokalizacji</string>
+    <string name="location_source_acquiring" tm_human="true" translation_description="Label shown while waiting for the first automatic location fix">Wykrywanie…</string>
+    <string name="location_source_unset" tm_human="true" translation_description="Label shown when no location has been set">Nie ustawiono lokalizacji</string>
     <string name="location_source_hardware_unavailable" translation_description="Label shown when the device has no location hardware">Lokalizacja niedostępna na tym urządzeniu</string>
     <string name="location_switch_to_auto" translation_description="Button to switch from manual location to automatic detection">Użyj automatycznej lokalizacji</string>
     <string name="location_switch_to_manual" translation_description="Button to switch from automatic to manual location entry">Wprowadź lokalizację ręcznie</string>
     <string name="location_change" translation_description="Button to change or update the manually entered location">Zmień lokalizację</string>
-    <string name="location_map_no_location" translation_description="Message shown in the map area when no location is set">Nie ustawiono lokalizacji — naciśnij poniżej, aby ją dodać</string>
-    <string name="location_map_acquiring" translation_description="Message shown in the map area while waiting for a GPS fix">Wykrywanie lokalizacji…</string>
+    <string name="location_map_no_location" tm_human="true" translation_description="Message shown in the map area when no location is set">Nie ustawiono lokalizacji — naciśnij poniżej, aby ją dodać</string>
+    <string name="location_map_acquiring" tm_human="true" translation_description="Message shown in the map area while waiting for a GPS fix">Wykrywanie lokalizacji…</string>
     <string name="location_map_unavailable" translation_description="Message shown in the map area when the map image cannot be loaded">Mapa niedostępna</string>
     <string name="location_map_content_description" translation_description="Accessibility description for the map image showing the user\'s location">Mapa pokazująca Twoją lokalizację</string>
     <!-- tm:omitted name="location_coordinate_format" reason="identical_to_source" -->
@@ -59,7 +59,7 @@
     <string name="manual_compass_adjustment_summary" translation_description="Summary for the manual compass adjustment preference">Dodatkowe odchylenie w stopniach (+ lub −) dodane do odczytu kompasu</string>
     <string name="show_stars_pref" translation_description="Label for the stars layer on the sky map (shows in the search results)">Gwiazdy</string>
     <string name="show_constellations_pref" translation_description="Label for the constellation lines and labels layer (shows in the search results)">Gwiazdozbiory</string>
-    <string name="show_deep_sky_objects_pref" translation_description="Deep-sky objects layer — galaxies, nebulae, star clusters, and other notable objects (shows in the search results)">Obiekty głębokiego nieba</string>
+    <string name="show_deep_sky_objects_pref" tm_human="true" translation_description="Deep-sky objects layer — galaxies, nebulae, star clusters, and other notable objects (shows in the search results)">Obiekty głębokiego nieba</string>
     <string name="show_planets_pref" translation_description="Label for the solar system layer (planets, sun, moon)  (shows in the search results)">Układ Słoneczny</string>
     <string name="show_grid_pref" translation_description="Label for the Right Ascension / Declination grid overlay  (shows in the search results)">Siatka RA/Dec</string>
     <string name="show_horizon_pref" translation_description="Preference toggle label for the horizon line layer">Horyzont</string>
@@ -74,8 +74,8 @@
     <string name="auto_dimness_preference" translation_description="Mode for automatically dimming the screen when night mode is selected">Autoprzyciemnianie ekranu</string>
     <string name="font_size_preference" translation_description="Change the font size">Rozmiar czcionki</string>
     <string name="font_size_preference_description" translation_description="help to go along with the change font size preference">Dostosuj rozmiar tekstu etykiety</string>
-    <string name="show_sky_gradient_preference_title" translation_description="Setting toggle title: whether to show the blue sky gradient during the day">Pokazuj gradient nieba</string>
-    <string name="show_sky_gradient_preference_summary" translation_description="Setting toggle summary for sky gradient: explains what the feature does">Koloruj niebo na niebiesko blisko Słońca i przyciemniaj po przeciwnej stronie</string>
+    <string name="show_sky_gradient_preference_title" tm_human="true" translation_description="Setting toggle title: whether to show the blue sky gradient during the day">Pokazuj gradient nieba</string>
+    <string name="show_sky_gradient_preference_summary" tm_human="true" translation_description="Setting toggle summary for sky gradient: explains what the feature does">Koloruj niebo na niebiesko blisko Słońca i przyciemniaj po przeciwnej stronie</string>
     <string name="ecliptic" translation_description="Label for the ecliptic layer — the apparent annual path of the Sun across the sky">Ekliptyka</string>
     <string name="dialog_accept" translation_description="accepting the licence agreement">Akceptuj</string>
     <string name="dialog_decline" translation_description="declining the licence agreement">Nie, dziękuję</string>
@@ -173,7 +173,7 @@
     <string name="no_sensor_warning" translation_description="Warning shown when required orientation sensors are not detected on the device">
     Twojemu urządzeniu może brakować czujników orientacji – tryb automatycznego śledzenia nie będzie działać
     </string>
-    <string name="warning_dialog_title" translation_description="Title of a warning dialog shown when something is wrong, e.g. a missing sensor">Uwaga! W Twoim urządzeniu brakuje czujnika.</string>
+    <string name="warning_dialog_title" tm_human="true" translation_description="Title of a warning dialog shown when something is wrong, e.g. a missing sensor">Uwaga! W Twoim urządzeniu brakuje czujnika.</string>
     <string name="missing_sensor_dialog_text" translation_description="Dialog message shown when the device appears to be missing the compass or accelerometer sensors needed for auto mode">
     Aby automatycznie śledzić gwiazdy podczas ruchu, Sky Map potrzebuje wbudowanego kompasu i akcelerometru. Wygląda na to, że Twoje urządzenie nie ma jednego z nich.
         \nNie martw się! Możesz nadal eksplorować wszechświat w trybie ręcznym. Po prostu użyj swoich palców, aby przeciągać, obracać i powiększać nocne niebo w swoim tempie.
@@ -232,6 +232,7 @@ Sky Map polega na czujniku kompasu wbudowanym w Twój telefon. Jeśli dokładno�
 Twój telefon zgłasza dokładność kompasu jak pokazano powyżej. Aby ją poprawić, wykonaj ruchy swoim urządzeniem na kształt ósemki (%s).<br/><br/>
 <b>Uwaga dotycząca dokładności:</b> Kalibracja jest wymaganiem na poziomie sprzętowym Twojego telefonu, a nie ustawieniem Sky Map. Nawet po kalibracji lokalne pola magnetyczne (jak deska rozdzielcza samochodu lub magnesy) mogą powodować niewielkie odchylenia w kierunku. Zobacz <i>Rozwiązywanie problemów</i> w <i>Pomoc</i> dla innych rozwiązań wartych wypróbowania.
     ]]></string>
+    <string name="compass_low_accuracy_toast" translation_description="Brief toast shown when compass accuracy is low and the user has disabled the calibration dialog">Kompas w Twoim telefonie zgłasza niską dokładność</string>
     <string name="sensor_reverse_preference_title" translation_description="Preference title for reversing the magnetic Z-axis sensor reading, a fix for certain phones with incorrectly implemented sensors">Odwróć oś Z magnetometru</string>
     <string name="sensor_reverse_preference_summary" translation_description="Summary for the Reverse Magnetic Z preference">
     Poprawka dla telefonów z nieprawidłowo zaimplementowanymi czujnikami – wymaga ponownego uruchomienia
@@ -269,34 +270,34 @@ Twój telefon zgłasza dokładność kompasu jak pokazano powyżej. Aby ją popr
     <string name="object_info_tap_to_expand" translation_description="Hint shown on image to tap to expand">Naciśnij, aby powiększyć</string>
     <string name="object_info_tap_to_close" translation_description="Hint shown on expanded image to tap to close">Naciśnij, aby zamknąć</string>
     <string name="action_find_in_sky_map" translation_description="Button label that opens the star map and searches for the displayed object">Znajdź</string>
-    <string name="auto_level_horizon_on" translation_description="Toast message when auto-level horizon is enabled">Autowyrównywanie horyzontu włączone</string>
-    <string name="auto_level_horizon_off" translation_description="Toast message when auto-level horizon is disabled">Autowyrównywanie horyzontu wyłączone</string>
+    <string name="auto_level_horizon_on" tm_human="true" translation_description="Toast message when auto-level horizon is enabled">Autowyrównywanie horyzontu włączone</string>
+    <string name="auto_level_horizon_off" tm_human="true" translation_description="Toast message when auto-level horizon is disabled">Autowyrównywanie horyzontu wyłączone</string>
 
     <string name="warm_welcome_title" translation_description="Title of the Warm Welcome screen">Witaj w Sky Map</string>
-    <string name="warm_welcome_slide1_title" translation_description="Title for the first slide of the Warm Welcome">Eksploruj kosmos</string>
-    <string name="warm_welcome_slide1_desc" translation_description="Description for the first slide of the Warm Welcome">Użyj warstw po lewej, aby filtrować gwiazdy, konstelacje, planety i inne. Naciśnij <b>wir</b>, aby podróżować w czasie, lub <b>oko</b>, aby włączyć tryb nocny.</string>
+    <string name="warm_welcome_slide1_title" tm_human="true" translation_description="Title for the first slide of the Warm Welcome">Eksploruj kosmos</string>
+    <string name="warm_welcome_slide1_desc" tm_human="true" translation_description="Description for the first slide of the Warm Welcome">Użyj warstw po lewej, aby filtrować gwiazdy, konstelacje, planety i inne. Naciśnij <b>wir</b>, aby podróżować w czasie, lub <b>oko</b>, aby włączyć tryb nocny.</string>
     <string name="warm_welcome_slide2_title" translation_description="Title for the second slide of the Warm Welcome">Nawiguj po niebie</string>
-    <string name="warm_welcome_slide2_desc" translation_description="Description for the second slide of the Warm Welcome">Kieruj swoim telefonem, aby rozglądać się w <b>trybie automatycznym</b>, lub naciśnij, aby przełączyć się na <b>tryb ręczny</b> i eksplorować przez przesuwanie. Naciśnij dwukrotnie w trybie ręcznym, aby zresetować swój horyzont.</string>
-    <string name="warm_welcome_slide2_info_desc" translation_description="Description about info cards on the second slide">Naciśnij dowolny obiekt w trybie ręcznym, aby wyświetlić karty informacyjne z ciekawostkami i szczegółami astronomicznymi.
+    <string name="warm_welcome_slide2_desc" tm_human="true" translation_description="Description for the second slide of the Warm Welcome">Kieruj swoim telefonem, aby rozglądać się w <b>trybie automatycznym</b>, lub naciśnij, aby przełączyć się na <b>tryb ręczny</b> i eksplorować przez przesuwanie. Naciśnij dwukrotnie w trybie ręcznym, aby zresetować swój horyzont.</string>
+    <string name="warm_welcome_slide2_info_desc" tm_human="true" translation_description="Description about info cards on the second slide">Naciśnij dowolny obiekt w trybie ręcznym, aby wyświetlić karty informacyjne z ciekawostkami i szczegółami astronomicznymi.
     </string>
     <string name="warm_welcome_slide3_title" translation_description="Title for the third slide of the Warm Welcome">Czujniki i kalibracja</string>
-    <string name="warm_welcome_slide3_desc" translation_description="Description for the third slide of the Warm Welcome">Sky Map używa czujników Twojego telefonu, aby ustalać położenie gwiazd.</string>
-    <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message when sensors are missing">Twoje urządzenie wydaje się nie posiadać wymaganych czujników potrzebnych do automatycznego śledzenia. Nie martw się — możesz nadal eksplorować cały kosmos w <b>trybie ręcznym</b>!</string>
-    <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration text on slide 3">Aby zapewnić dokładność, wykonaj szybki ruch telefonem na <b>kształt ósemki</b> raz na jakiś czas.</string>
+    <string name="warm_welcome_slide3_desc" tm_human="true" translation_description="Description for the third slide of the Warm Welcome">Sky Map używa czujników Twojego telefonu, aby ustalać położenie gwiazd.</string>
+    <string name="warm_welcome_slide3_no_sensors" tm_human="true" translation_description="Fallback message when sensors are missing">Twoje urządzenie wydaje się nie posiadać wymaganych czujników potrzebnych do automatycznego śledzenia. Nie martw się — możesz nadal eksplorować cały kosmos w <b>trybie ręcznym</b>!</string>
+    <string name="warm_welcome_slide3_compass_calib" tm_human="true" translation_description="Compass calibration text on slide 3">Aby zapewnić dokładność, wykonaj szybki ruch telefonem na <b>kształt ósemki</b> raz na jakiś czas.</string>
 
     <string name="tutorial_planets" translation_description="Tutorial annotation for planets layer">Planety</string>
     <string name="tutorial_meteors" translation_description="Tutorial annotation for meteors layer">Meteory</string>
     <string name="tutorial_grid" translation_description="Tutorial annotation for grid layer">Siatka</string>
     <string name="tutorial_night_mode" translation_description="Tutorial annotation for night mode">Tryb nocny</string>
     <string name="tutorial_time_travel" translation_description="Tutorial annotation for time travel">Podróż w czasie</string>
-    <string name="tutorial_manual_auto" translation_description="Tutorial annotation for manual/auto toggle">Ręczny/Automatyczny</string>
+    <string name="tutorial_manual_auto" tm_human="true" translation_description="Tutorial annotation for manual/auto toggle">Ręczny/Automatyczny</string>
 
     <string name="warm_welcome_skip" translation_description="Button to skip the Warm Welcome">Pomiń</string>
     <string name="warm_welcome_next" translation_description="Button to go to the next slide">Dalej</string>
-    <string name="warm_welcome_finish" translation_description="Button to finish the Warm Welcome and start exploring. Needs to be short - the width of 9 letter Ms maximum.">Zacznij!</string>
+    <string name="warm_welcome_finish" tm_human="true" translation_description="Button to finish the Warm Welcome and start exploring. Needs to be short - the width of 9 letter Ms maximum.">Zacznij!</string>
     <string name="warm_welcome_do_not_show" translation_description="Checkbox to not show the Warm Welcome again">Nie pokazuj tego automatycznie ponownie</string>
-    <string name="menu_tutorial" translation_description="Menu item for re-showing the warm welcome tutorial">Samouczek</string>
-    <string name="warm_welcome_sensor_ok" translation_description="Status when a sensor is working fine">Działający</string>
-    <string name="warm_welcome_sensor_missing" translation_description="Status when a sensor is missing">Brakujący</string>
-    <string name="preferences_auto_mode_title" translation_description="Label for the toggle between manual and automatic modes">Tryb ręczny/automatyczny</string>
+    <string name="menu_tutorial" tm_human="true" translation_description="Menu item for re-showing the warm welcome tutorial">Samouczek</string>
+    <string name="warm_welcome_sensor_ok" tm_human="true" translation_description="Status when a sensor is working fine">Działający</string>
+    <string name="warm_welcome_sensor_missing" tm_human="true" translation_description="Status when a sensor is missing">Brakujący</string>
+    <string name="preferences_auto_mode_title" tm_human="true" translation_description="Label for the toggle between manual and automatic modes">Tryb ręczny/automatyczny</string>
 </resources>

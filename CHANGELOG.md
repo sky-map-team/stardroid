@@ -5,6 +5,18 @@ All notable changes to Sky Map are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [1.15.1] - 2026-06-03
+
+### Changed
+- **Compass/calibration messaging** — clearer language distinguishes hardware sensor issues from
+  app problems, reducing confusion for users with compass-less devices
+- **Saturn splash screen** — updated release artwork for 1.15.1
+
+### Fixed
+- Translation gaps filled for Polish, Chinese (Simplified & Traditional), Welsh, and Japanese
+
+---
+
 ## [1.15.0] - 2026-05-22
 
 ### Added

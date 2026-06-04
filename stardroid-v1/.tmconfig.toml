@@ -4,7 +4,7 @@
 name = "Sky Map"
 description = "a mobile astronomy/planetarium application for Android. Use your astronomy expertise to ensure that astronomical terms like constellation names are correct in the new locale"
 primary_languages = [
-    "sk", "cy", "pt", "ar", "en-GB", "zh-Hant",
+    "sk", "cy", "ar", "en-GB", "zh-Hant", "zh-Hans",
     "cs", "da", "de", "el", "es", "fa", "fr", "hi",
     "id", "it", "ja", "ms", "nb", "nl", "pl", "pt", "sl",
     "sv", "th", "tr", "uk",

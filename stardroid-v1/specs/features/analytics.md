@@ -560,6 +560,82 @@ budget: 7 of 25 used.
 - **App version**: we want to understand the upgrade path - for a user on a particular app version which app version did they upgrade from? We want to see app upgrades in real time as a version rolls out.
 
 
+---
+
+## BMAC Traffic Tracking & Warm Welcome A/B Experiment
+
+### Buy Me a Coffee Traffic Attribution
+
+All in-app and GitHub links to Buy Me a Coffee include UTM parameters so that sessions on the
+BMaC page are attributed by source in GA4.
+
+| Campaign name | Surface |
+|---|---|
+| `credits_supporting` | Credits screen — recurring supporters section |
+| `credits_donated` | Credits screen — one-time donors section |
+| `readme_badge` | GitHub README badge |
+| `readme_support` | GitHub README support paragraph |
+
+All use `utm_source=sky_map_android` and `utm_medium=app` (or `utm_medium=github` for README
+links).
+
+**Dashboard** *(Sky Map team link — requires Google account access)*:
+[BMAC traffic by campaign →](https://analytics.google.com/analytics/web/?authuser=0&hl=en-US#/a28146459p242522567/reports/explorer?params=_u..nav%3Dmaui%26_r.explorerCard..seldim%3D%5B%22sessionCampaignName%22%5D%26_r..dataFilters%3D%5B%7B%22type%22:1,%22fieldName%22:%22hostname%22,%22evaluationType%22:1,%22expressionList%22:%5B%22buymeacoffee.com%22%5D,%22complement%22:false,%22isCaseSensitive%22:true,%22expression%22:%22%22%7D%5D&collectionId=3110573038&r=lifecycle-traffic-acquisition-v2&ruid=lifecycle-traffic-acquisition-v2,3110573038,acquisition)
+
+Dimension: **Session campaign name** | Filter: **hostname = buymeacoffee.com**
+
+Add a secondary dimension of **Session source / medium** to confirm `sky_map_android / app`
+is attributing correctly. Data only appears for sessions after the UTM-tagged release (1.15.1).
+
+---
+
+### Warm Welcome A/B Experiment
+
+The warm welcome feature is already gated by Firebase Remote Config key `warm_welcome_enabled`
+(see `ExperimentConfig` / `StartupRouter`). This makes it straightforward to run a controlled
+experiment.
+
+#### Setup — Firebase A/B Testing
+
+1. Go to **Firebase Console → A/B Testing → Create experiment → Remote Config**
+2. Parameter: `warm_welcome_enabled`
+3. Control variant: `false` | Treatment variant: `true`
+4. **Target new users only** — existing users have already been routed by `markWarmWelcomeSeen()`
+   so including them would contaminate the cohort
+5. Set goal metric to **Retention D1** (see below); add secondary metrics
+6. Run for at least **2–4 weeks** to reach statistical significance
+
+#### What to measure
+
+**Primary metric — Retention**
+
+The core question is whether the welcome improves user understanding enough to bring them back.
+Firebase captures this automatically. Check D1, D7, and D30 retention. A meaningful lift in
+D1 alone is a strong signal.
+
+*(Sky Map team link)* [Retention overview →](https://analytics.google.com/analytics/web/?authuser=0&hl=en-US#/a28146459p242522567/reports/lifecycle-retention-overview)
+
+**Secondary metrics — Flow quality**
+
+These come from existing warm welcome events already instrumented in `WarmWelcomeActivity`:
+
+| What to measure | Event / parameter | Target |
+|---|---|---|
+| **Completion rate** | `warm_welcome_completed_ev` / `warm_welcome_started_ev` | > 60–70% |
+| **Skip rate by slide** | `warm_welcome_skipped_ev` with `slide_number` | Tells you *where* users bail |
+| **Manual re-launches** | `warm_welcome_started_ev` with `is_manual_invocation = true` | High rate = users find it useful enough to revisit |
+
+*(Sky Map team link)* [Warm welcome events →](https://analytics.google.com/analytics/web/?authuser=0&hl=en-US#/a28146459p242522567/reports/lifecycle-events-events)
+
+The user property `completed_warm_welcome_prop` is set at the user level, so it can be used
+as a segment filter in any future cohort analysis even after this experiment ends.
+
+**Do not use as primary metrics:**
+- **Session length** — new users explore differently regardless of onboarding; too noisy to
+  interpret cleanly
+- **Time in app** — same confound; users who don't understand the app sometimes tap around
+  *more*, not less
+
 ## N.
 If necessary, update the privacy policy to clearly convey what data is collected and why.
 
