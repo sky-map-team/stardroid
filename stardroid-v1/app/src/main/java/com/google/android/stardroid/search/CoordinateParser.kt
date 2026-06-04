@@ -151,13 +151,14 @@ object CoordinateParser {
         return if (isHour) {
             unit == "h" || unit == "hr" || unit == "hour" || unit == "hours"
         } else {
-            unit == "m" || unit == "min" || unit == "minute" || unit == "minutes" || unit == "'"
+            unit == "m" || unit == "min" || unit == "minute" || unit == "minutes" ||
+                unit == "'" || unit == "′"
         }
     }
 
     private fun isValidRaSecUnit(unit: String): Boolean {
         return unit.isEmpty() || unit == "s" || unit == "sec" || unit == "second" ||
-            unit == "seconds" || unit == "\""
+            unit == "seconds" || unit == "\"" || unit == "″"
     }
 
     private fun parseDec(tokens: List<Token>): Float? {
