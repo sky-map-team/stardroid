@@ -1,10 +1,14 @@
 package com.google.android.stardroid.search
 
 import com.google.android.stardroid.math.RaDec
+import java.util.Locale
 import java.util.regex.Pattern
 import kotlin.math.abs
 
 object CoordinateParser {
+
+    private val COORDINATE_PATTERN: Pattern =
+        Pattern.compile("([-+]?(?:\\d+\\.\\d+|\\d+|\\.\\d+))\\s*([^\\d\\s\\+-]*)")
 
     private data class Token(
         val value: Float,
@@ -28,14 +32,13 @@ object CoordinateParser {
             .trim()
 
         val tokens = ArrayList<Token>()
-        val pattern = Pattern.compile("([-+]?(?:\\d+\\.\\d+|\\d+|\\.\\d+))\\s*([^\\d\\s\\+-]*)")
-        val matcher = pattern.matcher(normalized)
+        val matcher = COORDINATE_PATTERN.matcher(normalized)
 
         while (matcher.find()) {
             val numStr = matcher.group(1) ?: ""
             val unit = matcher.group(2) ?: ""
             val value = numStr.toFloatOrNull() ?: return null
-            tokens.add(Token(value, unit.lowercase(), numStr))
+            tokens.add(Token(value, unit.lowercase(Locale.US), numStr))
         }
 
         if (tokens.isEmpty()) return null

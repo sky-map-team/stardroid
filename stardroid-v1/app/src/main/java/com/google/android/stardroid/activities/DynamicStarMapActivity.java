@@ -1032,8 +1032,9 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
       }
       if (m == 60) {
         m = 0;
-        h = (h + 1) % 24;
+        h = h + 1;
       }
+      h %= 24;
       String raString = getString(R.string.diagnostics_ra_format, h, m, s);
       String decString = getString(R.string.diagnostics_dec_format, raDec.getDec());
       String targetLabel = "RA: " + raString + ", Dec: " + decString;
