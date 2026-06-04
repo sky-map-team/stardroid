@@ -94,7 +94,7 @@
     <string name="west" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">ЗАХІД</string>
     <string name="south" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">ПІВДЕНЬ</string>
     <string name="search_label" translation_description="Hint/label for the search bar in the search activity">Пошук на небі</string>
-    <string name="search_hint" translation_description="an example search target">наприклад Марс</string>
+    <string name="search_hint" translation_description="an example search target">Напр. Марс або RA Dec</string>
     <!-- tm:omitted name="search_target_ra_dec_format" reason="identical_to_source" -->
     <string name="no_search_title" translation_description="Dialog title shown when a sky search returns no results">Немає результатів</string>
     <!-- Hopefully this is a temporary measure until we can fix the search engine -->

@@ -96,7 +96,7 @@
     <string name="west" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">GORLLEWIN</string>
     <string name="south" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">DE</string>
     <string name="search_label" translation_description="Hint/label for the search bar in the search activity">Chwilio\'r Awyr</string>
-    <string name="search_hint" translation_description="an example search target">e.e. Mawrth</string>
+    <string name="search_hint" translation_description="an example search target">e.e. Mawrth neu RA Dec</string>
     <!-- tm:omitted name="search_target_ra_dec_format" reason="identical_to_source" -->
     <string name="no_search_title" translation_description="Dialog title shown when a sky search returns no results">Dim canlyniadau</string>
     <!-- Hopefully this is a temporary measure until we can fix the search engine -->
