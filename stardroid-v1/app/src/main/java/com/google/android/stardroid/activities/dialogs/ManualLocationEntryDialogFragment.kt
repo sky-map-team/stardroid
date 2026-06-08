@@ -65,8 +65,8 @@ class ManualLocationEntryDialogFragment : DialogFragment() {
 
         if (!prefillLat.isNaN() && !prefillLon.isNaN() && (prefillLat != 0f || prefillLon != 0f)) {
             val coordinateFormat = getString(R.string.location_coordinate_format)
-            latEdit.setText(coordinateFormat.format(prefillLat))
-            lonEdit.setText(coordinateFormat.format(prefillLon))
+            latEdit.setText(coordinateFormat.format(java.util.Locale.US, prefillLat))
+            lonEdit.setText(coordinateFormat.format(java.util.Locale.US, prefillLon))
         }
         if (prefillName.isNotEmpty()) placeNameEdit.setText(prefillName)
 
