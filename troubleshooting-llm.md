@@ -59,7 +59,7 @@ steps below (including the manual offset for persistent cases). Do not imply Sky
 3. Perform the figure-8 calibration gesture (wave the phone in a large, slow figure-8 shape)
 4. Go to Settings → Location and toggle Magnetic Correction on or off
 5. If the phone has a consistent offset in all environments, use the manual compass offset in
-   Settings → Sensor Settings (Experts)
+   Settings → Sensor Settings (Experts) — finding the right value may take some trial and error
 6. Check the Diagnostics page (overflow menu) for sensor accuracy readings
 
 **Do NOT suggest:** reinstalling the app, clearing app data, waiting for an update. These will
@@ -157,7 +157,9 @@ completely wrong positions", "it doesn't know where I am"
 
 **Steps to suggest:**
 1. Grant location permission: Settings → Apps → Sky Map → Permissions → Location
-2. Open Diagnostics and confirm the lat/lon shown there matches the user's actual location
+2. Open Sky Map's Location Settings and use the map view to visually confirm that Sky Map has
+   the correct location — this is the most direct way to see what location the app is using
+3. Open Diagnostics and confirm the lat/lon shown there matches the user's actual location
 
 ---
 

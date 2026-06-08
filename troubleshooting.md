@@ -50,7 +50,8 @@ sitting next to a source of interference — it just reports what it measures.
    dramatically improve alignment.
 5. **Use a manual compass offset.** If your phone has a consistent directional error regardless of
    environment, go to **Settings → Sensor Settings (Experts)** and enter an offset in degrees.
-   This is a workaround for phones with persistently biased hardware.
+   Finding the right value may take some trial and error. This is a workaround for phones with
+   persistently biased hardware.
 
 > **If a recent phone update broke your compass:** this is unfortunately common. Android updates
 > and manufacturer firmware patches can reset or alter how the sensor is calibrated. Sky Map's
@@ -70,6 +71,8 @@ To fix:
 
 - Grant location permission. Open **Settings → Apps → Sky Map → Permissions** and enable
   **Location**. If you declined the permission on first launch, this is the most likely cause.
+- Open Sky Map's **Location Settings** to see a map of your current location. This is the easiest
+  way to confirm that Sky Map has your location set correctly.
 - Open the **Diagnostics** page (overflow menu) and confirm the latitude and longitude shown there
   are correct for where you are.
 
