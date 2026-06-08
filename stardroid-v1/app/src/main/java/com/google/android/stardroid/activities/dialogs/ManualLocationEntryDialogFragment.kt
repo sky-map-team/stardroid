@@ -4,6 +4,7 @@ import android.app.AlertDialog
 import android.app.Dialog
 import android.location.Geocoder
 import android.os.Bundle
+import android.text.method.DigitsKeyListener
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.Button
@@ -15,8 +16,6 @@ import com.google.android.stardroid.control.LocationController
 import com.google.android.stardroid.math.LatLong
 import dagger.hilt.android.AndroidEntryPoint
 import java.io.IOException
-import java.text.NumberFormat
-import java.text.ParsePosition
 import java.util.concurrent.ScheduledExecutorService
 import javax.inject.Inject
 
@@ -50,9 +49,14 @@ class ManualLocationEntryDialogFragment : DialogFragment() {
         val prefillLon = arguments?.getFloat(ARG_LON, Float.NaN) ?: Float.NaN
         val prefillName = arguments?.getString(ARG_NAME, "") ?: ""
 
+        val coordKeyListener = DigitsKeyListener.getInstance("-0123456789.,")
+        latEdit.keyListener = coordKeyListener
+        lonEdit.keyListener = coordKeyListener
+
         if (!prefillLat.isNaN() && !prefillLon.isNaN() && (prefillLat != 0f || prefillLon != 0f)) {
-            latEdit.setText(prefillLat.toString())
-            lonEdit.setText(prefillLon.toString())
+            val format = getString(R.string.location_coordinate_format)
+            latEdit.setText(format.format(prefillLat))
+            lonEdit.setText(format.format(prefillLon))
         }
         if (prefillName.isNotEmpty()) placeNameEdit.setText(prefillName)
 
@@ -120,16 +124,8 @@ class ManualLocationEntryDialogFragment : DialogFragment() {
         placeErrorText.visibility = View.VISIBLE
     }
 
-    private fun parseCoordinate(str: String): Float? {
-        val format = NumberFormat.getInstance()
-        val pos = ParsePosition(0)
-        val number = format.parse(str, pos)
-        if (pos.index == str.length && pos.errorIndex == -1 && number != null) {
-            return number.toFloat()
-        }
-        // Fallback to strict period/comma-lenient parsing to support cross-locale copy-paste
-        return str.replace(',', '.').toFloatOrNull()
-    }
+    private fun parseCoordinate(str: String): Float? =
+        str.trim().replace(',', '.').toFloatOrNull()
 
     private fun trySetLocation() {
         var valid = true

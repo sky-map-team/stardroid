@@ -38,4 +38,32 @@ class ManualLocationValidationTest {
         assertThat("".toFloatOrNull()).isNull()
         assertThat("12.3".toFloatOrNull()).isEqualTo(12.3f)
     }
+
+    // Tests for parseCoordinate logic (str.trim().replace(',', '.').toFloatOrNull())
+    private fun parseCoordinate(str: String): Float? = str.trim().replace(',', '.').toFloatOrNull()
+
+    @Test fun parseCoordinate_dotDecimal_parsesCorrectly() {
+        assertThat(parseCoordinate("52.63")).isWithin(0.0001f).of(52.63f)
+    }
+
+    @Test fun parseCoordinate_commaDecimal_parsesCorrectly() {
+        assertThat(parseCoordinate("52,63")).isWithin(0.0001f).of(52.63f)
+    }
+
+    @Test fun parseCoordinate_negativeDotDecimal_parsesCorrectly() {
+        assertThat(parseCoordinate("-20.69")).isWithin(0.0001f).of(-20.69f)
+    }
+
+    @Test fun parseCoordinate_negativeCommaDecimal_parsesCorrectly() {
+        assertThat(parseCoordinate("-20,69")).isWithin(0.0001f).of(-20.69f)
+    }
+
+    @Test fun parseCoordinate_leadingTrailingWhitespace_parsesCorrectly() {
+        assertThat(parseCoordinate("  52.63  ")).isWithin(0.0001f).of(52.63f)
+    }
+
+    @Test fun parseCoordinate_invalidString_returnsNull() {
+        assertThat(parseCoordinate("abc")).isNull()
+        assertThat(parseCoordinate("")).isNull()
+    }
 }
