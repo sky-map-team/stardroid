@@ -4,6 +4,8 @@ import android.app.AlertDialog
 import android.app.Dialog
 import android.location.Geocoder
 import android.os.Bundle
+import android.text.InputType
+import android.text.method.DigitsKeyListener
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.Button
@@ -15,8 +17,6 @@ import com.google.android.stardroid.control.LocationController
 import com.google.android.stardroid.math.LatLong
 import dagger.hilt.android.AndroidEntryPoint
 import java.io.IOException
-import java.text.NumberFormat
-import java.text.ParsePosition
 import java.util.concurrent.ScheduledExecutorService
 import javax.inject.Inject
 
@@ -50,9 +50,26 @@ class ManualLocationEntryDialogFragment : DialogFragment() {
         val prefillLon = arguments?.getFloat(ARG_LON, Float.NaN) ?: Float.NaN
         val prefillName = arguments?.getString(ARG_NAME, "") ?: ""
 
+        @Suppress("DEPRECATION")
+        // Arabic-Indic (٠-٩), Eastern Arabic-Indic (۰-۹), and Arabic decimal separator (٫)
+        val coordKeyListener = DigitsKeyListener.getInstance(
+            "-0123456789.,٫٠١٢٣٤٥٦٧٨٩۰۱۲۳۴۵۶۷۸۹"
+        )
+        latEdit.keyListener = coordKeyListener
+        latEdit.setRawInputType(
+            InputType.TYPE_CLASS_NUMBER or InputType.TYPE_NUMBER_FLAG_SIGNED or
+                InputType.TYPE_NUMBER_FLAG_DECIMAL
+        )
+        lonEdit.keyListener = coordKeyListener
+        lonEdit.setRawInputType(
+            InputType.TYPE_CLASS_NUMBER or InputType.TYPE_NUMBER_FLAG_SIGNED or
+                InputType.TYPE_NUMBER_FLAG_DECIMAL
+        )
+
         if (!prefillLat.isNaN() && !prefillLon.isNaN() && (prefillLat != 0f || prefillLon != 0f)) {
-            latEdit.setText(prefillLat.toString())
-            lonEdit.setText(prefillLon.toString())
+            val coordinateFormat = getString(R.string.location_coordinate_format)
+            latEdit.setText(coordinateFormat.format(prefillLat))
+            lonEdit.setText(coordinateFormat.format(prefillLon))
         }
         if (prefillName.isNotEmpty()) placeNameEdit.setText(prefillName)
 
@@ -121,14 +138,17 @@ class ManualLocationEntryDialogFragment : DialogFragment() {
     }
 
     private fun parseCoordinate(str: String): Float? {
-        val format = NumberFormat.getInstance()
-        val pos = ParsePosition(0)
-        val number = format.parse(str, pos)
-        if (pos.index == str.length && pos.errorIndex == -1 && number != null) {
-            return number.toFloat()
+        val normalized = buildString {
+            for (char in str.trim()) {
+                when (char) {
+                    ',', '٫' -> append('.')
+                    in '٠'..'٩' -> append('0' + (char - '٠'))
+                    in '۰'..'۹' -> append('0' + (char - '۰'))
+                    else -> append(char)
+                }
+            }
         }
-        // Fallback to strict period/comma-lenient parsing to support cross-locale copy-paste
-        return str.replace(',', '.').toFloatOrNull()
+        return normalized.toFloatOrNull()
     }
 
     private fun trySetLocation() {
