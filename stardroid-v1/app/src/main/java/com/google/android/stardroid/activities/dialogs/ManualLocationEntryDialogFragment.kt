@@ -51,7 +51,9 @@ class ManualLocationEntryDialogFragment : DialogFragment() {
 
         val coordKeyListener = DigitsKeyListener.getInstance("-0123456789.,")
         latEdit.keyListener = coordKeyListener
+        latEdit.setRawInputType(android.text.InputType.TYPE_CLASS_NUMBER or android.text.InputType.TYPE_NUMBER_FLAG_SIGNED or android.text.InputType.TYPE_NUMBER_FLAG_DECIMAL)
         lonEdit.keyListener = coordKeyListener
+        lonEdit.setRawInputType(android.text.InputType.TYPE_CLASS_NUMBER or android.text.InputType.TYPE_NUMBER_FLAG_SIGNED or android.text.InputType.TYPE_NUMBER_FLAG_DECIMAL)
 
         if (!prefillLat.isNaN() && !prefillLon.isNaN() && (prefillLat != 0f || prefillLon != 0f)) {
             val format = getString(R.string.location_coordinate_format)
