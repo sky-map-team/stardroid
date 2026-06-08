@@ -39,8 +39,21 @@ class ManualLocationValidationTest {
         assertThat("12.3".toFloatOrNull()).isEqualTo(12.3f)
     }
 
-    // Tests for parseCoordinate logic (str.trim().replace(',', '.').toFloatOrNull())
-    private fun parseCoordinate(str: String): Float? = str.trim().replace(',', '.').toFloatOrNull()
+    // Tests for parseCoordinate logic — normalises Arabic-Indic/Eastern Arabic-Indic digits
+    // and comma/Arabic decimal separators to ASCII before parsing.
+    private fun parseCoordinate(str: String): Float? {
+        val normalized = buildString {
+            for (char in str.trim()) {
+                when (char) {
+                    ',', '٫' -> append('.')
+                    in '٠'..'٩' -> append('0' + (char - '٠'))
+                    in '۰'..'۹' -> append('0' + (char - '۰'))
+                    else -> append(char)
+                }
+            }
+        }
+        return normalized.toFloatOrNull()
+    }
 
     @Test fun parseCoordinate_dotDecimal_parsesCorrectly() {
         assertThat(parseCoordinate("52.63")).isWithin(0.0001f).of(52.63f)
@@ -65,5 +78,21 @@ class ManualLocationValidationTest {
     @Test fun parseCoordinate_invalidString_returnsNull() {
         assertThat(parseCoordinate("abc")).isNull()
         assertThat(parseCoordinate("")).isNull()
+    }
+
+    @Test fun parseCoordinate_arabicIndicDigits_parsesCorrectly() {
+        assertThat(parseCoordinate("٥٢٫٦٣")).isWithin(0.0001f).of(52.63f)
+    }
+
+    @Test fun parseCoordinate_arabicIndicNegative_parsesCorrectly() {
+        assertThat(parseCoordinate("-٢٠٫٦٩")).isWithin(0.0001f).of(-20.69f)
+    }
+
+    @Test fun parseCoordinate_easternArabicIndicDigits_parsesCorrectly() {
+        assertThat(parseCoordinate("۵۲٫۶۳")).isWithin(0.0001f).of(52.63f)
+    }
+
+    @Test fun parseCoordinate_easternArabicIndicNegative_parsesCorrectly() {
+        assertThat(parseCoordinate("-۲۰٫۶۹")).isWithin(0.0001f).of(-20.69f)
     }
 }

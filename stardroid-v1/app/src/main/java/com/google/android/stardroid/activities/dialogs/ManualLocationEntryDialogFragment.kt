@@ -51,7 +51,10 @@ class ManualLocationEntryDialogFragment : DialogFragment() {
         val prefillName = arguments?.getString(ARG_NAME, "") ?: ""
 
         @Suppress("DEPRECATION")
-        val coordKeyListener = DigitsKeyListener.getInstance("-0123456789.,")
+        // Arabic-Indic (٠-٩), Eastern Arabic-Indic (۰-۹), and Arabic decimal separator (٫)
+        val coordKeyListener = DigitsKeyListener.getInstance(
+            "-0123456789.,٫٠١٢٣٤٥٦٧٨٩۰۱۲۳۴۵۶۷۸۹"
+        )
         latEdit.keyListener = coordKeyListener
         latEdit.setRawInputType(
             InputType.TYPE_CLASS_NUMBER or InputType.TYPE_NUMBER_FLAG_SIGNED or
@@ -65,8 +68,8 @@ class ManualLocationEntryDialogFragment : DialogFragment() {
 
         if (!prefillLat.isNaN() && !prefillLon.isNaN() && (prefillLat != 0f || prefillLon != 0f)) {
             val coordinateFormat = getString(R.string.location_coordinate_format)
-            latEdit.setText(coordinateFormat.format(java.util.Locale.US, prefillLat))
-            lonEdit.setText(coordinateFormat.format(java.util.Locale.US, prefillLon))
+            latEdit.setText(coordinateFormat.format(prefillLat))
+            lonEdit.setText(coordinateFormat.format(prefillLon))
         }
         if (prefillName.isNotEmpty()) placeNameEdit.setText(prefillName)
 
@@ -134,8 +137,19 @@ class ManualLocationEntryDialogFragment : DialogFragment() {
         placeErrorText.visibility = View.VISIBLE
     }
 
-    private fun parseCoordinate(str: String): Float? =
-        str.trim().replace(',', '.').toFloatOrNull()
+    private fun parseCoordinate(str: String): Float? {
+        val normalized = buildString {
+            for (char in str.trim()) {
+                when (char) {
+                    ',', '٫' -> append('.')
+                    in '٠'..'٩' -> append('0' + (char - '٠'))
+                    in '۰'..'۹' -> append('0' + (char - '۰'))
+                    else -> append(char)
+                }
+            }
+        }
+        return normalized.toFloatOrNull()
+    }
 
     private fun trySetLocation() {
         var valid = true
