@@ -222,7 +222,7 @@ regenerated. Run from `stardroid-v1/tools/`:
 Or use the full build script (from `stardroid-v1/`) which includes data generation:
 
 ```bash
-./build_skymap.sh
+./build.sh
 ```
 
 The `skymap.build` skill covers all build and data-generation commands in detail.
@@ -235,7 +235,7 @@ Quickly confirm:
 - [ ] All four info card strings present in celestial_info_cards.xml
 - [ ] object_info.json entry present with correct keys
 - [ ] If image added: file exists at `app/src/main/assets/celestial_images/deep_sky_objects/<name>.webp`
-- [ ] Protobuf data regenerated (`generate.sh` + `binary.sh` or `build_skymap.sh`)
+- [ ] Protobuf data regenerated (`generate.sh` + `binary.sh` or `build.sh`)
 
 ## Reference — Coordinate Conversion
 

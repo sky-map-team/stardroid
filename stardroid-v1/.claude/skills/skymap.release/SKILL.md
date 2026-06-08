@@ -23,8 +23,10 @@ Ask the user if they need to:
 
 ### Step 3. Remove unneeded text
 1. The `beta_user_help_text` string in `app/src/main/res/values/whatsnew_content.xml` is filled with instructions for beta testers during the beta period, and must be cleared to an empty string before a full release. Check if it has content; if so, set it to empty. It does not exist in other locales so no action is needed there.
-2. Delete the `fastlane/metadata/android/<locale>/changelogs/default.txt` file for every non en-US locale (delete the file entirely — Step 4 will regenerate them via translation).
-3. Delete the translated `whatsnew_content.xml` files in non en-US locales (i.e. `app/src/main/res/values-<locale>/whatsnew_content.xml`). Delete the files entirely — Step 4 will regenerate them.
+2. **Only if the user agreed to regenerate what's new text in Step 2.3:** Delete the `fastlane/metadata/android/<locale>/changelogs/default.txt` file for every non en-US locale (delete the file entirely — Step 4 will regenerate them via translation).
+3. **Only if the user agreed to regenerate what's new text in Step 2.3:** Delete the translated `whatsnew_content.xml` files in non en-US locales (i.e. `app/src/main/res/values-<locale>/whatsnew_content.xml`). Delete the files entirely — Step 4 will regenerate them.
+
+If the user declined to regenerate what's new text, skip steps 3.2 and 3.3 entirely and skip Step 4.
 
 ### Step 4. Translate missing text
 
@@ -77,9 +79,12 @@ After getting explicit confirmation from the user:
 
 In all commands below, substitute `<version>` and `<ReleaseName>` with the values confirmed in Step 1 (e.g. `1.14.0` and `Jupiter`).
 
-1. Cap the `../CHANGELOG.md` entry for this release. The `skymap.whatsnew` skill (Step 2.3) prepends content but leaves it without a version heading. Add the heading now:
+1. Update `../CHANGELOG.md` for this release. If the `skymap.whatsnew` skill was run (Step 2.3), it will have prepended content without a version heading — add the heading now. If it was not run, add a new entry manually based on commits since the last release (`git log <last-tag>..HEAD --oneline`):
    ```
    ## [<version>] - YYYY-MM-DD
+
+   ### Added / Fixed / Changed
+   - ...
    ```
    Use today's date. The CHANGELOG format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
@@ -98,7 +103,7 @@ In all commands below, substitute `<version>` and `<ReleaseName>` with the value
 
 4. Build the signed release APK:
    ```bash
-   ./build_skymap.sh
+   ./build.sh
    ```
    The signed APK will be at `app/build/outputs/apk/gms/release/app-gms-release.apk`.
 
