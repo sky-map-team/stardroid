@@ -49,6 +49,7 @@ class ManualLocationEntryDialogFragment : DialogFragment() {
         val prefillLon = arguments?.getFloat(ARG_LON, Float.NaN) ?: Float.NaN
         val prefillName = arguments?.getString(ARG_NAME, "") ?: ""
 
+        @Suppress("DEPRECATION")
         val coordKeyListener = DigitsKeyListener.getInstance("-0123456789.,")
         latEdit.keyListener = coordKeyListener
         latEdit.setRawInputType(android.text.InputType.TYPE_CLASS_NUMBER or android.text.InputType.TYPE_NUMBER_FLAG_SIGNED or android.text.InputType.TYPE_NUMBER_FLAG_DECIMAL)
@@ -56,9 +57,9 @@ class ManualLocationEntryDialogFragment : DialogFragment() {
         lonEdit.setRawInputType(android.text.InputType.TYPE_CLASS_NUMBER or android.text.InputType.TYPE_NUMBER_FLAG_SIGNED or android.text.InputType.TYPE_NUMBER_FLAG_DECIMAL)
 
         if (!prefillLat.isNaN() && !prefillLon.isNaN() && (prefillLat != 0f || prefillLon != 0f)) {
-            val format = getString(R.string.location_coordinate_format)
-            latEdit.setText(format.format(prefillLat))
-            lonEdit.setText(format.format(prefillLon))
+            val coordinateFormat = getString(R.string.location_coordinate_format)
+            latEdit.setText(coordinateFormat.format(prefillLat))
+            lonEdit.setText(coordinateFormat.format(prefillLon))
         }
         if (prefillName.isNotEmpty()) placeNameEdit.setText(prefillName)
 
