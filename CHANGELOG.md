@@ -5,6 +5,16 @@ All notable changes to Sky Map are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [1.15.2] - 2026-06-08
+
+### Added
+- Search by RA/Dec coordinates as well as by object name (#905)
+
+### Fixed
+- Manual location entry now works correctly for locales that use a comma as the decimal separator (#909)
+
+---
+
 ## [1.15.1] - 2026-06-03
 
 ### Changed
