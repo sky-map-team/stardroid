@@ -5,7 +5,10 @@
 
 http://stardroid.app
 
-Sky Map is the open-source astronomy Android app built for the community.  You can download the official builds from the [Google Play Store](https://play.google.com/store/apps/details?id=com.google.android.stardroid) or from [F-Droid](https://f-droid.org/en/packages/com.google.android.stardroid/).
+Sky Map is the open-source astronomy Android app built for the community.
+
+[<img src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" alt="Get it on Google Play" height="60">](https://play.google.com/store/apps/details?id=com.google.android.stardroid)
+[<img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png" alt="Get it on F-Droid" height="60">](https://f-droid.org/en/packages/com.google.android.stardroid/)
 
 ## Need Help?
 > Check out [help.md](help.md) and [troubleshooting.md](troubleshooting.md) for accuracy issues and why 'compass calibration' doesn't do what you think it does.
