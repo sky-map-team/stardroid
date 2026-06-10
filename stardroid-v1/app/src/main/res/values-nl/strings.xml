@@ -186,12 +186,12 @@
     Waarschuwing: Google Play Services-fout - Automatische locatie werkt mogelijk niet
     </string>
     <string name="sensor_absent" translation_description="Sensor status shown in diagnostics when the sensor is not present on the device">Afwezig</string>
-    <string name="sensor_accuracy_unknown" translation_description="Sensor accuracy level shown in the diagnostics screen and calibration dialog">Nauwkeurigheid: Onbekend</string>
-    <string name="sensor_accuracy_unreliable" translation_description="Sensor accuracy level shown in the diagnostics screen and calibration dialog">Nauwkeurigheid: Onbetrouwbaar</string>
-    <string name="sensor_accuracy_low" translation_description="Sensor accuracy level shown in the diagnostics screen and calibration dialog">Nauwkeurigheid: Laag</string>
-    <string name="sensor_accuracy_medium" translation_description="Sensor accuracy level shown in the diagnostics screen and calibration dialog">Nauwkeurigheid: Gemiddeld</string>
-    <string name="sensor_accuracy_high" translation_description="Sensor accuracy level shown in the diagnostics screen and calibration dialog">Nauwkeurigheid: Hoog</string>
-    <string name="sensor_accuracy_nocontact" translation_description="Sensor accuracy level shown when the sensor has no contact (e.g. heart-rate sensor lifted from skin) — unlikely to appear in Sky Map but included for completeness">Nauwkeurigheid: Geen contact</string>
+    <string name="sensor_accuracy_unknown" translation_description="Sensor calibration level shown in the diagnostics screen and calibration dialog">Kalibratie: Onbekend</string>
+    <string name="sensor_accuracy_unreliable" translation_description="Sensor calibration level shown in the diagnostics screen and calibration dialog">Kalibratie: Niet gekalibreerd</string>
+    <string name="sensor_accuracy_low" translation_description="Sensor calibration level shown in the diagnostics screen and calibration dialog">Kalibratie: Slecht</string>
+    <string name="sensor_accuracy_medium" translation_description="Sensor calibration level shown in the diagnostics screen and calibration dialog">Kalibratie: OK</string>
+    <string name="sensor_accuracy_high" translation_description="Sensor calibration level shown in the diagnostics screen and calibration dialog">Kalibratie: Goed</string>
+    <string name="sensor_accuracy_nocontact" translation_description="Sensor calibration level shown when the sensor has no contact (e.g. heart-rate sensor lifted from skin) — unlikely to appear in Sky Map but included for completeness">Kalibratie: Geen contact</string>
     <string name="diagnostics_activity_general_heading" translation_description="Section heading in the Diagnostics screen for general device information">Algemeen</string>
     <string name="diagnostics_activity_phone" translation_description="Row label in the Diagnostics screen for the device model name">Apparaat</string>
     <string name="diagnostics_activity_android_version" translation_description="Row label in the Diagnostics screen for the Android OS version">Android-versie</string>

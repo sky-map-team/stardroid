@@ -184,12 +184,12 @@
     Opozorilo: Napaka Google Play Services - Samodejno določanje lokacije morda ne bo delovalo
     </string>
     <string name="sensor_absent" translation_description="Sensor status shown in diagnostics when the sensor is not present on the device">Odsotno</string>
-    <string name="sensor_accuracy_unknown" translation_description="Sensor accuracy level shown in the diagnostics screen and calibration dialog">Natančnost: Neznana</string>
-    <string name="sensor_accuracy_unreliable" translation_description="Sensor accuracy level shown in the diagnostics screen and calibration dialog">Natančnost: Nezanesljiva</string>
-    <string name="sensor_accuracy_low" translation_description="Sensor accuracy level shown in the diagnostics screen and calibration dialog">Natančnost: Nizka</string>
-    <string name="sensor_accuracy_medium" translation_description="Sensor accuracy level shown in the diagnostics screen and calibration dialog">Natančnost: Srednja</string>
-    <string name="sensor_accuracy_high" translation_description="Sensor accuracy level shown in the diagnostics screen and calibration dialog">Natančnost: Visoka</string>
-    <string name="sensor_accuracy_nocontact" translation_description="Sensor accuracy level shown when the sensor has no contact (e.g. heart-rate sensor lifted from skin) — unlikely to appear in Sky Map but included for completeness">Natančnost: Brez stika</string>
+    <string name="sensor_accuracy_unknown" translation_description="Sensor calibration level shown in the diagnostics screen and calibration dialog">Kalibracija: Neznana</string>
+    <string name="sensor_accuracy_unreliable" translation_description="Sensor calibration level shown in the diagnostics screen and calibration dialog">Kalibracija: Nekalibrirana</string>
+    <string name="sensor_accuracy_low" translation_description="Sensor calibration level shown in the diagnostics screen and calibration dialog">Kalibracija: Slaba</string>
+    <string name="sensor_accuracy_medium" translation_description="Sensor calibration level shown in the diagnostics screen and calibration dialog">Kalibracija: OK</string>
+    <string name="sensor_accuracy_high" translation_description="Sensor calibration level shown in the diagnostics screen and calibration dialog">Kalibracija: Dobra</string>
+    <string name="sensor_accuracy_nocontact" translation_description="Sensor calibration level shown when the sensor has no contact (e.g. heart-rate sensor lifted from skin) — unlikely to appear in Sky Map but included for completeness">Kalibracija: Brez stika</string>
     <string name="diagnostics_activity_general_heading" translation_description="Section heading in the Diagnostics screen for general device information">Splošno</string>
     <string name="diagnostics_activity_phone" translation_description="Row label in the Diagnostics screen for the device model name">Naprava</string>
     <string name="diagnostics_activity_android_version" translation_description="Row label in the Diagnostics screen for the Android OS version">Različica Androida</string>

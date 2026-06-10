@@ -179,12 +179,12 @@
     <string name="title_activity_diagnostic" translation_description="Title bar text for the Diagnostics activity/screen">التشخيص</string>
     <string name="play_services_error" translation_description="Warning shown in the diagnostics screen when Google Play Services has an error that may affect automatic location">تحذير: خطأ في خدمات Google Play - قد لا يعمل تحديد الموقع التلقائي</string>
     <string name="sensor_absent" translation_description="Sensor status shown in diagnostics when the sensor is not present on the device">غير موجود</string>
-    <string name="sensor_accuracy_unknown" translation_description="Sensor accuracy level shown in the diagnostics screen and calibration dialog">الدقة: غير معروفة</string>
-    <string name="sensor_accuracy_unreliable" translation_description="Sensor accuracy level shown in the diagnostics screen and calibration dialog">الدقة: غير موثوقة</string>
-    <string name="sensor_accuracy_low" translation_description="Sensor accuracy level shown in the diagnostics screen and calibration dialog">الدقة: منخفضة</string>
-    <string name="sensor_accuracy_medium" translation_description="Sensor accuracy level shown in the diagnostics screen and calibration dialog">الدقة: متوسطة</string>
-    <string name="sensor_accuracy_high" translation_description="Sensor accuracy level shown in the diagnostics screen and calibration dialog">الدقة: عالية</string>
-    <string name="sensor_accuracy_nocontact" translation_description="Sensor accuracy level shown when the sensor has no contact (e.g. heart-rate sensor lifted from skin) — unlikely to appear in Sky Map but included for completeness">الدقة: لا يوجد اتصال</string>
+    <string name="sensor_accuracy_unknown" translation_description="Sensor calibration level shown in the diagnostics screen and calibration dialog">المعايرة: غير معروفة</string>
+    <string name="sensor_accuracy_unreliable" translation_description="Sensor calibration level shown in the diagnostics screen and calibration dialog">المعايرة: غير معايَرة</string>
+    <string name="sensor_accuracy_low" translation_description="Sensor calibration level shown in the diagnostics screen and calibration dialog">المعايرة: سيئة</string>
+    <string name="sensor_accuracy_medium" translation_description="Sensor calibration level shown in the diagnostics screen and calibration dialog">المعايرة: مقبولة</string>
+    <string name="sensor_accuracy_high" translation_description="Sensor calibration level shown in the diagnostics screen and calibration dialog">المعايرة: جيدة</string>
+    <string name="sensor_accuracy_nocontact" translation_description="Sensor calibration level shown when the sensor has no contact (e.g. heart-rate sensor lifted from skin) — unlikely to appear in Sky Map but included for completeness">المعايرة: لا يوجد اتصال</string>
     <string name="diagnostics_activity_general_heading" translation_description="Section heading in the Diagnostics screen for general device information">عام</string>
     <string name="diagnostics_activity_phone" translation_description="Row label in the Diagnostics screen for the device model name">الجهاز</string>
     <string name="diagnostics_activity_android_version" translation_description="Row label in the Diagnostics screen for the Android OS version">إصدار Android</string>

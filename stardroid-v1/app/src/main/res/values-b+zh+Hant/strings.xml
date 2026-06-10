@@ -176,12 +176,12 @@
     <string name="title_activity_diagnostic" translation_description="Title bar text for the Diagnostics activity/screen">診斷</string>
     <string name="play_services_error" translation_description="Warning shown in the diagnostics screen when Google Play Services has an error that may affect automatic location">提醒：Google Play 服務有問題 - 自動定位可能無法運作</string>
     <string name="sensor_absent" translation_description="Sensor status shown in diagnostics when the sensor is not present on the device">不存在</string>
-    <string name="sensor_accuracy_unknown" translation_description="Sensor accuracy level shown in the diagnostics screen and calibration dialog">精確度：未知</string>
-    <string name="sensor_accuracy_unreliable" translation_description="Sensor accuracy level shown in the diagnostics screen and calibration dialog">精確度：不可靠</string>
-    <string name="sensor_accuracy_low" translation_description="Sensor accuracy level shown in the diagnostics screen and calibration dialog">精確度：低</string>
-    <string name="sensor_accuracy_medium" translation_description="Sensor accuracy level shown in the diagnostics screen and calibration dialog">精確度：中</string>
-    <string name="sensor_accuracy_high" translation_description="Sensor accuracy level shown in the diagnostics screen and calibration dialog">精確度：高</string>
-    <string name="sensor_accuracy_nocontact" translation_description="Sensor accuracy level shown when the sensor has no contact (e.g. heart-rate sensor lifted from skin) — unlikely to appear in Sky Map but included for completeness">精確度：未接觸</string>
+    <string name="sensor_accuracy_unknown" translation_description="Sensor calibration level shown in the diagnostics screen and calibration dialog">校準：未知</string>
+    <string name="sensor_accuracy_unreliable" translation_description="Sensor calibration level shown in the diagnostics screen and calibration dialog">校準：未校準</string>
+    <string name="sensor_accuracy_low" translation_description="Sensor calibration level shown in the diagnostics screen and calibration dialog">校準：差</string>
+    <string name="sensor_accuracy_medium" translation_description="Sensor calibration level shown in the diagnostics screen and calibration dialog">校準：一般</string>
+    <string name="sensor_accuracy_high" translation_description="Sensor calibration level shown in the diagnostics screen and calibration dialog">校準：良好</string>
+    <string name="sensor_accuracy_nocontact" translation_description="Sensor calibration level shown when the sensor has no contact (e.g. heart-rate sensor lifted from skin) — unlikely to appear in Sky Map but included for completeness">校準：未接觸</string>
     <string name="diagnostics_activity_general_heading" translation_description="Section heading in the Diagnostics screen for general device information">一般</string>
     <string name="diagnostics_activity_phone" translation_description="Row label in the Diagnostics screen for the device model name">裝置</string>
     <string name="diagnostics_activity_android_version" translation_description="Row label in the Diagnostics screen for the Android OS version">Android 版本</string>
