@@ -22,22 +22,28 @@ Package name: `com.google.android.stardroid`
 
 Use `mcp__google-play-reviews__list_reviews` with `unansweredOnly: true`.
 
+**Always use server-side filters to avoid fetching huge result sets.** Fetching without filters
+can return thousands of reviews and hit token limits.
+
 Apply any filters the user provides:
-- **Star rating** — fetch all, then filter client-side by `review.starRating`
-- **Keywords** — pass as `searchText`
+- **Star rating** — no server-side filter available; fetch with other filters first, then filter client-side by `review.starRating`
+- **Keywords / topics** — **always pass as `searchText`** — use the server to narrow results before they reach the client. For multiple topics (e.g. "compass or location"), make two parallel calls with different `searchText` values.
 - **Language** — pass as `language` (BCP-47 code)
-- **Date range** — fetch all unanswered, then filter client-side by `review.lastModified`
+- **Date range** — pass as `startDate`/`endDate` for historical reviews; filter client-side by `review.lastModified` for live reviews
 
 ### Historical reviews (CSV dumps)
 
 If the user asks for reviews **older than what the Play API returns** (typically ~7 days), or
-explicitly references "historical" / "old" reviews, switch to
-`mcp__google-play-reviews__list_historical_reviews`.
+explicitly references "historical" / "old" reviews, **read the CSV files directly** — this is
+faster and more flexible than the MCP server's `list_historical_reviews` (which is redundant).
 
-The MCP server reads the CSV files from `PLAY_REVIEWS_DIR`; if that env var
-isn't set, tell the user to set it before proceeding.
+CSV files live at `~/Code/production/stardroidreviews/reviews/` and are named
+`reviews_com.google.android.stardroid_YYYYMM.csv`. Use `grep`, `find`, or direct file reads to
+filter by date range, keyword, star rating, language, etc.
 
-The same filters apply: `startDate`, `endDate`, `searchText`, `language`, `unansweredOnly`.
+**Caveat:** The CSV is a static snapshot. Reply status reflects the export time — replies posted
+after the CSV was generated will not appear, so some "unanswered" results may already have
+replies. Treat results as candidates and note this limitation to the user.
 
 ---
 
@@ -73,11 +79,24 @@ might have been the cause. If in doubt, ask me. Replies need to be limited to 35
 
 ### Complaint replies
 
-- Open with genuine empathy (1 sentence).
+- Open with genuine empathy (1 sentence). Use "sorry to hear" phrasing — not "sorry" in a way
+  that implies fault. We didn't cause the compass hardware issue.
 - Give the relevant fix from troubleshooting.md, concisely.
 - When the issue is hardware (compass bias, missing gyroscope) be **clear and firm**: Sky Map
   can only work with what the sensor provides. Don't soften this to the point of implying
   Sky Map might fix it.
+- **Do not suggest toggling Magnetic Correction** — it only adjusts for magnetic vs. true north
+  offset and is unlikely to help with typical compass accuracy complaints.
+- **Do not suggest reinstalling, clearing data, or waiting for a Sky Map update** — none of these
+  fix a hardware compass issue.
+- **Do not blame Android or firmware updates** — don't speculate about what changed on the user's
+  device.
+- For users with a persistent/consistent compass offset: suggest the manual compass offset in
+  Settings → Sensor Settings (Experts).
+- Mention that some phones simply have bad compass hardware — this is worth noting when calibration
+  repeatedly fails or the error is consistent across environments.
+- When referencing Diagnostics: it shows the sensor's **calibration status**, not accuracy. A
+  sensor showing "High" calibration can still point in the wrong direction.
 - Close with an offer to help further (point to Diagnostics + email).
 - Make sure you vary the wording of the replies, even when addressing similar complaints.
 

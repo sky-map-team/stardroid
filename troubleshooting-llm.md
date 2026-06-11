@@ -57,13 +57,20 @@ steps below (including the manual offset for persistent cases). Do not imply Sky
 1. Remove any magnetic phone case and test without it
 2. Move to open ground, away from vehicles, buildings, and metal structures
 3. Perform the figure-8 calibration gesture (wave the phone in a large, slow figure-8 shape)
-4. Go to Settings → Location and toggle Magnetic Correction on or off
-5. If the phone has a consistent offset in all environments, use the manual compass offset in
+4. If the phone has a consistent offset in all environments, use the manual compass offset in
    Settings → Sensor Settings (Experts) — finding the right value may take some trial and error
-6. Check the Diagnostics page (overflow menu) for sensor accuracy readings
+5. Check the Diagnostics page (overflow menu) — note that this shows **calibration status**, not
+   accuracy; a sensor showing "High" can still point in the wrong direction
 
-**Do NOT suggest:** reinstalling the app, clearing app data, waiting for an update. These will
-not fix a hardware compass issue.
+**Do NOT suggest:**
+- Reinstalling the app, clearing app data, or waiting for a Sky Map update — these will not fix a
+  hardware compass issue
+- Toggling Magnetic Correction (Settings → Location) — this only adjusts for the difference
+  between magnetic and true north (a small fixed offset), not for general compass inaccuracy
+- Blaming an Android or firmware update — do not speculate about what changed on the user's device
+
+**Worth mentioning:** Some phones simply have poor compass hardware regardless of environment or
+calibration. For these, the manual offset is the best available workaround.
 
 ---
 
@@ -87,7 +94,7 @@ the wrong direction if it's in a magnetically disturbed environment.
 1. Move well away from metal objects, vehicles, and buildings
 2. Remove any magnetic phone case
 3. Repeat the figure-8 gesture in the clear environment
-4. Toggle Magnetic Correction in Settings → Location
+4. If there's a consistent offset, use the manual compass offset in Settings
 
 ---
 
@@ -107,10 +114,8 @@ a known side-effect. This is not a Sky Map change.
 
 **Steps to suggest:**
 1. Perform a fresh figure-8 calibration in an open, interference-free area
-2. Check if the problem appeared after a specific Android or manufacturer update (if so, that
-   update likely reset the sensor)
-3. Check Diagnostics to see current sensor accuracy levels
-4. Try toggling Magnetic Correction in Settings → Location
+2. Check Diagnostics to see current sensor calibration status (note: calibration status ≠ accuracy)
+3. If there's a consistent offset, use the manual compass offset in Settings
 
 ---
 
@@ -175,7 +180,8 @@ Offer the email address for direct support with a Diagnostics screenshot.
 
 ## Tone guidelines
 
-- Lead with empathy: "Sorry to hear Sky Map isn't working as expected for you."
+- Lead with empathy using "sorry to hear" phrasing — not bare "sorry", which implies fault we
+  don't have. E.g. "Sorry to hear Sky Map isn't working as expected for you."
 - Be clear but not dismissive when the issue is hardware: "Sky Map reads directly from your
   phone's compass sensor and cannot automatically correct what it reports — compass accuracy
   is ultimately determined by your phone's hardware and environment, though a manual offset
@@ -183,6 +189,8 @@ Offer the email address for direct support with a Diagnostics screenshot.
 - Never be defensive or blame the user. Frame hardware limitations as facts, not excuses.
 - Keep responses concise. Offer the most relevant 2–3 steps, not all of them.
 - If steps were already tried and failed, acknowledge that and escalate to email support.
+- When referring users to Settings, "Settings" alone is sufficient — no need to spell out the
+  full path (e.g. "Settings → Sensor Settings (Experts)") in the reply itself.
 
 ---
 
