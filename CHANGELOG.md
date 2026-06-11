@@ -5,6 +5,20 @@ All notable changes to Sky Map are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [1.15.4] - 2026-06-11
+
+### Fixed
+- Freeze text angle near zenith to prevent label flickering (#914)
+
+---
+
+## [1.15.3] - 2026-06-11
+
+### Changed
+- Renamed compass 'Accuracy' to 'Calibration: Good/OK/Poor' in the UI for clarity (#911)
+
+---
+
 ## [1.15.2] - 2026-06-08
 
 ### Added
