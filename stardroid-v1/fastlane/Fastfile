@@ -167,7 +167,8 @@ platform :android do
         skip_upload_screenshots: !include_imgs,
         changes_not_sent_for_review: false,
         version_code: v_code,
-        track: 'internal'
+        track: 'internal',
+        metadata_path: "../fastlane/metadata/android"
       )
   end
 end

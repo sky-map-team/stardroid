@@ -18,3 +18,4 @@ locales(['ar','fa'
 
 app_apk_path('app/build/outputs/apk/gms/debug/app-gms-debug.apk')
 tests_apk_path('app/build/outputs/apk/androidTest/gms/debug/app-gms-debug-androidTest.apk')
+output_directory('../fastlane/metadata/android')
