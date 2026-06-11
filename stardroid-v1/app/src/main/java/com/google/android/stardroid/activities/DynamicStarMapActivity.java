@@ -195,7 +195,8 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
           frozenTextAngle = angleVertClockwiseFromYaxisInRadians;
         }
       }
-      rendererController.queueTextAngle(textAngleFrozen ? frozenTextAngle : angleVertClockwiseFromYaxisInRadians);
+      rendererController.queueTextAngle(
+          textAngleFrozen ? frozenTextAngle : angleVertClockwiseFromYaxisInRadians);
       rendererController.queueViewerUpDirection(zenith.copyForJ());
 
       float fieldOfView = model.getFieldOfView();
