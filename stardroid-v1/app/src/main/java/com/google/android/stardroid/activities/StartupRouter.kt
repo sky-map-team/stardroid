@@ -30,6 +30,9 @@ class StartupRouter @Inject constructor(
         sharedPreferences.edit {
             putLong(ApplicationConstants.READ_WARM_WELCOME_PREF_VERSION, app.version)
             putBoolean(ApplicationConstants.NO_WARN_ABOUT_MISSING_SENSORS, true)
+            // Mark what's new seen so fresh installs skip the dialog; upgrades still see it
+            // because this method is only called after the warm welcome (fresh install path).
+            putLong(ApplicationConstants.READ_WHATS_NEW_PREF_VERSION, app.version)
         }
     }
 
