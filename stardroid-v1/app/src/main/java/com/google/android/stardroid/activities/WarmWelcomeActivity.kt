@@ -21,6 +21,8 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
@@ -73,6 +75,15 @@ class WarmWelcomeActivity : AppCompatActivity(), WhatsNewDialogFragment.CloseLis
         btnSkip = findViewById(R.id.btn_skip)
         btnNextFinish = findViewById(R.id.btn_next_finish)
         indicatorsContainer = findViewById(R.id.indicators_container)
+
+        val bottomContainer = findViewById<LinearLayout>(R.id.bottom_container)
+        val initialBottomPadding = bottomContainer.paddingBottom
+        ViewCompat.setOnApplyWindowInsetsListener(bottomContainer) { view, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            view.setPadding(view.paddingLeft, view.paddingTop, view.paddingRight,
+                initialBottomPadding + systemBars.bottom)
+            insets
+        }
 
         val adapter = WelcomePagerAdapter(this)
         viewPager.adapter = adapter
