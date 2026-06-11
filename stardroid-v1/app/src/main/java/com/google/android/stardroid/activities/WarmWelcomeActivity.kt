@@ -77,11 +77,20 @@ class WarmWelcomeActivity : AppCompatActivity(), WhatsNewDialogFragment.CloseLis
         indicatorsContainer = findViewById(R.id.indicators_container)
 
         val bottomContainer = findViewById<LinearLayout>(R.id.bottom_container)
+        val initialLeftPadding = bottomContainer.paddingLeft
+        val initialTopPadding = bottomContainer.paddingTop
+        val initialRightPadding = bottomContainer.paddingRight
         val initialBottomPadding = bottomContainer.paddingBottom
         ViewCompat.setOnApplyWindowInsetsListener(bottomContainer) { view, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            view.setPadding(view.paddingLeft, view.paddingTop, view.paddingRight,
-                initialBottomPadding + systemBars.bottom)
+            val systemBars = insets.getInsets(
+                WindowInsetsCompat.Type.systemBars() or WindowInsetsCompat.Type.displayCutout()
+            )
+            view.setPadding(
+                initialLeftPadding + systemBars.left,
+                initialTopPadding,
+                initialRightPadding + systemBars.right,
+                initialBottomPadding + systemBars.bottom
+            )
             insets
         }
 
