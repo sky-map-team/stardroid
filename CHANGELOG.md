@@ -5,6 +5,14 @@ All notable changes to Sky Map are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [1.15.5] - 2026-06-12
+
+### Fixed
+- Fix welcome screen buttons hidden by system navigation bar on Android 15+ (#916, #918)
+- Don't show What's New dialog on fresh installs, only on upgrades (#917)
+
+---
+
 ## [1.15.4] - 2026-06-11
 
 ### Fixed
