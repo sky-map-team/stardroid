@@ -70,6 +70,6 @@ class ExperimentConfigImpl @Inject constructor(
     }
 
     companion object {
-        private const val TAG = "ExperimentConfig"
+        private val TAG = MiscUtil.getTag(ExperimentConfigImpl::class.java)
     }
 }
