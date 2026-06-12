@@ -148,7 +148,7 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
    * @author John Taylor
    */
   private static final class RendererModelUpdateClosure implements Runnable {
-    // Freeze text orientation when pointing within 20° of zenith; thaw above 30°.
+    // Freeze text orientation when pointing within 20° of zenith or nadir; thaw above 30°.
     private static final float ZENITH_FREEZE_COS = (float) Math.cos(Math.toRadians(20));
     private static final float ZENITH_UNFREEZE_COS = (float) Math.cos(Math.toRadians(30));
 
@@ -185,12 +185,14 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
       Vector3 up = model.getPhoneUpDirection();
       //noinspection SuspiciousNameCombination swapping x and y here is actually correct
       float angleVertClockwiseFromYaxisInRadians = MathUtils.atan2(up.x, up.y);
+      boolean nearPole = dotWithZenith >= ZENITH_FREEZE_COS || dotWithZenith <= -ZENITH_FREEZE_COS;
+      boolean farFromPole = dotWithZenith < ZENITH_UNFREEZE_COS && dotWithZenith > -ZENITH_UNFREEZE_COS;
       if (textAngleFrozen) {
-        if (dotWithZenith < ZENITH_UNFREEZE_COS) {
+        if (farFromPole) {
           textAngleFrozen = false;
         }
       } else {
-        if (dotWithZenith >= ZENITH_FREEZE_COS) {
+        if (nearPole) {
           textAngleFrozen = true;
           frozenTextAngle = angleVertClockwiseFromYaxisInRadians;
         }
