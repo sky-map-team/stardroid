@@ -3,6 +3,9 @@ package com.google.android.stardroid.util
 import android.util.Log
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig
 import com.google.android.gms.tasks.Tasks
+import com.google.android.stardroid.util.Analytics
+import com.google.android.stardroid.util.MiscUtil
+import com.google.android.stardroid.util.MiscUtil.getTag
 import java.util.concurrent.CountDownLatch
 import java.util.concurrent.ScheduledExecutorService
 import java.util.concurrent.TimeUnit
@@ -70,6 +73,6 @@ class ExperimentConfigImpl @Inject constructor(
     }
 
     companion object {
-        private const val TAG = "ExperimentConfig"
+        private const val TAG = MiscUtil.getTag(ExperimentConfigImpl::class.java)
     }
 }
