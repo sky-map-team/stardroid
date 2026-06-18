@@ -62,6 +62,8 @@ class EclipticLayer(resources: Resources, preferences: SharedPreferences) : Abst
 
             private val DEGREES_TO_RADIANS = (Math.PI / 180.0).toFloat()
             private val OBLIQUITY_RADIANS = EARTHS_ANGULAR_TILT * DEGREES_TO_RADIANS
+            private val COS_OBLIQUITY = cos(OBLIQUITY_RADIANS)
+            private val SIN_OBLIQUITY = sin(OBLIQUITY_RADIANS)
 
             /**
              * Geocentric unit vector for the point at the given ecliptic longitude and latitude
@@ -70,14 +72,15 @@ class EclipticLayer(resources: Resources, preferences: SharedPreferences) : Abst
             private fun geocentricForEcliptic(longitude: Float, latitude: Float): Vector3 {
                 val lambda = longitude * DEGREES_TO_RADIANS
                 val beta = latitude * DEGREES_TO_RADIANS
-                val xe = cos(beta) * cos(lambda)
-                val ye = cos(beta) * sin(lambda)
+                val cosBeta = cos(beta)
+                val xe = cosBeta * cos(lambda)
+                val ye = cosBeta * sin(lambda)
                 val ze = sin(beta)
                 // Rotate about the x-axis by the obliquity to convert ecliptic -> equatorial.
                 return Vector3(
                     xe,
-                    ye * cos(OBLIQUITY_RADIANS) - ze * sin(OBLIQUITY_RADIANS),
-                    ye * sin(OBLIQUITY_RADIANS) + ze * cos(OBLIQUITY_RADIANS)
+                    ye * COS_OBLIQUITY - ze * SIN_OBLIQUITY,
+                    ye * SIN_OBLIQUITY + ze * COS_OBLIQUITY
                 )
             }
         }
