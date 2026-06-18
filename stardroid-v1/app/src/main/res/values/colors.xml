@@ -28,4 +28,12 @@
     <color name="night_button_on_tint">#FFCC4444</color>
     <!-- Near-black MULTIPLY tint for disabled layer buttons in night mode -->
     <color name="night_button_off_tint">#FF2A0000</color>
+
+    <!-- Ecliptic (Star Gold #FF9F1C). ecliptic_label is the true brand gold used for the text.
+         ecliptic_line has its red and blue channels swapped (with alpha 0x40) because the line
+         renderer reads colours as ABGR while the label renderer reads ARGB; change it back to
+         #40FF9F1C once that renderer mismatch is fixed centrally. The renderer red-shifts both
+         automatically in night-vision mode. -->
+    <color name="ecliptic_label">#FFFF9F1C</color>
+    <color name="ecliptic_line">#401C9FFF</color>
 </resources>

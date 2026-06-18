@@ -15,7 +15,6 @@ package com.google.android.stardroid.layers
 
 import android.content.SharedPreferences
 import android.content.res.Resources
-import android.graphics.Color
 import com.google.android.stardroid.R
 import com.google.android.stardroid.math.Vector3
 import com.google.android.stardroid.math.getGeocentricCoords
@@ -51,18 +50,6 @@ class EclipticLayer(resources: Resources, preferences: SharedPreferences) : Abst
         companion object {
             private const val EARTHS_ANGULAR_TILT = 23.439281f
 
-            // Star Gold (#FF9F1C), the primary brand color. The ecliptic is the Sun's apparent
-            // path, so gold is both on-brand and thematically apt. The renderer red-shifts this
-            // automatically in night-vision mode. The line is kept fairly faint so it reads as a
-            // reference line rather than competing with the stars; labels are always drawn opaque
-            // by the label renderer regardless of this alpha.
-            //
-            // NOTE: the line renderer (NightVisionColorBuffer) reads the color int as ABGR, while
-            // the label renderer (LabelObjectManager) reads it as ARGB. So the same gold needs the
-            // red and blue channels swapped between the two, or the line renders blue.
-            private val LABEL_COLOR = Color.argb(255, 255, 159, 28)
-            private val LINE_COLOR = Color.argb(64, 28, 159, 255)
-
             // Labels are nudged a few degrees off the ecliptic in ecliptic *latitude* (i.e.
             // perpendicular to the line everywhere), so they sit a uniform small distance from the
             // line rather than striking through it. The ticks below bridge the small gap.
@@ -96,14 +83,23 @@ class EclipticLayer(resources: Resources, preferences: SharedPreferences) : Abst
         }
 
         init {
+            // Star Gold (#FF9F1C), loaded from resources per the style guide. The renderer
+            // red-shifts both automatically in night-vision mode. See colors.xml for why the line
+            // colour's red/blue channels are swapped relative to the label colour.
+            val labelColor = resources.getColor(R.color.ecliptic_label, null)
+            val lineColor = resources.getColor(R.color.ecliptic_line, null)
             val title = resources.getString(R.string.ecliptic)
             // Place the descriptive name off the 30-degree marks (45 & 225) so it doesn't collide
             // with the degree labels.
             labels.add(
-                TextPrimitive(geocentricForEcliptic(45f, LABEL_LATITUDE_OFFSET), title, LABEL_COLOR)
+                TextPrimitive(
+                    geocentricForEcliptic(45f, LABEL_LATITUDE_OFFSET), title, labelColor
+                )
             )
             labels.add(
-                TextPrimitive(geocentricForEcliptic(225f, LABEL_LATITUDE_OFFSET), title, LABEL_COLOR)
+                TextPrimitive(
+                    geocentricForEcliptic(225f, LABEL_LATITUDE_OFFSET), title, labelColor
+                )
             )
 
             // Graduation ticks every 10 degrees of ecliptic longitude, each pointing off the line
@@ -113,11 +109,11 @@ class EclipticLayer(resources: Resources, preferences: SharedPreferences) : Abst
                 val isMajor = longitude % 30 == 0
                 val tickLength = if (isMajor) MAJOR_TICK_LENGTH else MINOR_TICK_LENGTH
                 val tickWidth = if (isMajor) 2.0f else 1.5f
-                val tick = arrayListOf(
+                val tick = listOf(
                     geocentricForEcliptic(longitude.toFloat(), 0f),
                     geocentricForEcliptic(longitude.toFloat(), tickLength)
                 )
-                lines.add(LinePrimitive(LINE_COLOR, tick, tickWidth))
+                lines.add(LinePrimitive(lineColor, tick, tickWidth))
             }
 
             // Degree labels at the 30 degree marks. The vernal equinox (0 deg) coincides exactly
@@ -127,8 +123,8 @@ class EclipticLayer(resources: Resources, preferences: SharedPreferences) : Abst
                 labels.add(
                     TextPrimitive(
                         geocentricForEcliptic(longitude.toFloat(), LABEL_LATITUDE_OFFSET),
-                        String.format("%d°", longitude),
-                        LABEL_COLOR
+                        "$longitude°",
+                        labelColor
                     )
                 )
             }
@@ -140,7 +136,7 @@ class EclipticLayer(resources: Resources, preferences: SharedPreferences) : Abst
             for (i in ra.indices) {
                 vertices.add(getGeocentricCoords(ra[i], dec[i]))
             }
-            lines.add(LinePrimitive(LINE_COLOR, vertices, 1.8f))
+            lines.add(LinePrimitive(lineColor, vertices, 1.8f))
         }
     }
 }
