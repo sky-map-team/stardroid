@@ -33,7 +33,10 @@ import com.google.android.stardroid.education.ObjectInfo
 import com.google.android.stardroid.education.ObjectInfoRegistry
 import coil.load
 import coil.request.Disposable
+import com.google.android.stardroid.util.Experiment
+import com.google.android.stardroid.util.ExperimentConfig
 import com.google.android.stardroid.util.MiscUtil
+import com.google.android.stardroid.views.MaxHeightScrollView
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -48,6 +51,7 @@ import javax.inject.Inject
 class ObjectInfoDialogFragment : DialogFragment() {
     @Inject lateinit var preferences: SharedPreferences
     @Inject lateinit var objectInfoRegistry: ObjectInfoRegistry
+    @Inject lateinit var experimentConfig: ExperimentConfig
     private var imageDisposable: Disposable? = null
 
     /** Implemented by activities that host this dialog and want to handle the Find action. */
@@ -86,6 +90,17 @@ class ObjectInfoDialogFragment : DialogFragment() {
 
         val inflater = parentActivity.layoutInflater
         val view = inflater.inflate(R.layout.object_info_card, null)
+
+        // Cap the card height to a fraction of the screen so tall cards (e.g. Mirphak) leave room
+        // above and below the dialog to tap-to-dismiss. The fraction is experiment-tunable.
+        val maxHeightFraction = experimentConfig
+            .getDouble(Experiment.INFO_CARD_MAX_HEIGHT_FRACTION, DEFAULT_CARD_MAX_HEIGHT_FRACTION)
+            .toFloat()
+        if (maxHeightFraction > 0f && maxHeightFraction <= 1f) {
+            // The inflated root is itself the MaxHeightScrollView, so cast directly.
+            (view as? MaxHeightScrollView)?.maxHeightPx =
+                (parentActivity.resources.displayMetrics.heightPixels * maxHeightFraction).toInt()
+        }
 
         // Apply night mode text tinting to all text in the card
         if (isNight) {
@@ -234,6 +249,12 @@ class ObjectInfoDialogFragment : DialogFragment() {
         private val TAG = MiscUtil.getTag(ObjectInfoDialogFragment::class.java)
         private const val ARG_OBJECT_INFO = "object_info"
         private const val ARG_SHOW_FIND = "show_find"
+
+        /**
+         * Default maximum card height as a fraction of screen height, used when no remote config
+         * value is available. See [Experiment.INFO_CARD_MAX_HEIGHT_FRACTION].
+         */
+        private const val DEFAULT_CARD_MAX_HEIGHT_FRACTION = 0.7
 
         /**
          * Creates a new instance of the dialog with the given object info.

@@ -16,9 +16,12 @@ import android.os.Bundle
 import android.util.Log
 import com.google.android.stardroid.ApplicationConstants
 import com.google.android.stardroid.util.AnalyticsInterface
+import com.google.android.stardroid.util.Experiment
+import com.google.android.stardroid.util.ExperimentConfig
 import com.google.android.stardroid.util.MiscUtil
 import dagger.hilt.android.scopes.ActivityScoped
 import javax.inject.Inject
+import kotlin.math.abs
 
 /**
  * Handles tap events and coordinates the flow for showing educational info cards.
@@ -31,7 +34,8 @@ import javax.inject.Inject
 class ObjectInfoTapHandler @Inject constructor(
     private val sharedPreferences: SharedPreferences,
     private val celestialHitTester: CelestialHitTester,
-    private val analytics: AnalyticsInterface
+    private val analytics: AnalyticsInterface,
+    private val experimentConfig: ExperimentConfig
 ) {
     /**
      * Listener interface for when an object is tapped.
@@ -81,6 +85,24 @@ class ObjectInfoTapHandler @Inject constructor(
             }
         }
 
+        // Only register taps that fall within a centered region of the screen. This avoids
+        // accidentally opening info cards when reaching for edge UI (menu, toolbar, etc.).
+        // The fraction is experiment-tunable; a value >= 1 disables the restriction entirely.
+        val regionFraction = experimentConfig
+            .getDouble(Experiment.INFO_CARD_TAP_REGION_FRACTION, DEFAULT_TAP_REGION_FRACTION)
+            .toFloat()
+        // A fraction <= 0 (misconfigured) or >= 1 disables the restriction entirely so we never
+        // accidentally swallow every tap and break the feature.
+        if (regionFraction > 0f && regionFraction < 1f) {
+            val halfWidth = screenWidth * regionFraction / 2f
+            val halfHeight = screenHeight * regionFraction / 2f
+            if (abs(screenX - screenWidth / 2f) > halfWidth ||
+                abs(screenY - screenHeight / 2f) > halfHeight) {
+                Log.d(TAG, "Tap outside central info-card region; ignoring")
+                return false
+            }
+        }
+
         // Try to find an object at the tap location
         val objectInfo = celestialHitTester.findObjectAtScreenPosition(
             screenX, screenY, screenWidth, screenHeight
@@ -112,5 +134,12 @@ class ObjectInfoTapHandler @Inject constructor(
 
     companion object {
         private val TAG = MiscUtil.getTag(ObjectInfoTapHandler::class.java)
+
+        /**
+         * Default fraction of the screen (centered, both axes) in which taps may open an info
+         * card. Used when no remote config value is available.
+         * See [Experiment.INFO_CARD_TAP_REGION_FRACTION].
+         */
+        const val DEFAULT_TAP_REGION_FRACTION = 0.6
     }
 }

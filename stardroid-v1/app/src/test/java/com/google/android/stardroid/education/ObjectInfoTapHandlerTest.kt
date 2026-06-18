@@ -14,6 +14,8 @@ package com.google.android.stardroid.education
 import android.content.SharedPreferences
 import com.google.android.stardroid.ApplicationConstants
 import com.google.android.stardroid.util.AnalyticsInterface
+import com.google.android.stardroid.util.Experiment
+import com.google.android.stardroid.util.ExperimentConfig
 import com.google.common.truth.Truth.assertThat
 import org.junit.Before
 import org.junit.Test
@@ -47,6 +49,9 @@ class ObjectInfoTapHandlerTest {
     @Mock
     private lateinit var mockAnalytics: AnalyticsInterface
 
+    @Mock
+    private lateinit var mockExperimentConfig: ExperimentConfig
+
     private lateinit var tapHandler: ObjectInfoTapHandler
 
     private val testObjectInfo = ObjectInfo(
@@ -63,7 +68,16 @@ class ObjectInfoTapHandlerTest {
     @Before
     fun setUp() {
         MockitoAnnotations.openMocks(this)
-        tapHandler = ObjectInfoTapHandler(mockPreferences, mockHitTester, mockAnalytics)
+        // Default: disable the central-region restriction (whole screen active) so the existing
+        // tests below exercise the hit-testing flow regardless of tap coordinates. Region-specific
+        // behavior is covered by the dedicated tests further down. Stub with concrete args (not
+        // matchers) to avoid Kotlin's non-null parameter check tripping on a null matcher value.
+        `when`(mockExperimentConfig.getDouble(
+            Experiment.INFO_CARD_TAP_REGION_FRACTION,
+            ObjectInfoTapHandler.DEFAULT_TAP_REGION_FRACTION))
+            .thenReturn(1.0)
+        tapHandler = ObjectInfoTapHandler(
+            mockPreferences, mockHitTester, mockAnalytics, mockExperimentConfig)
         tapHandler.setObjectTapListener(mockListener)
     }
 
@@ -210,5 +224,81 @@ class ObjectInfoTapHandlerTest {
         // Should not throw
         val result = tapHandler.handleTap(100f, 200f, 1080, 1920)
         assertThat(result).isTrue()
+    }
+
+    /** Enables the feature in manual mode so taps reach the central-region check. */
+    private fun enableFeatureInManualMode() {
+        `when`(mockPreferences.getBoolean(
+            eq(ApplicationConstants.SHOW_OBJECT_INFO_PREF_KEY), anyBoolean()))
+            .thenReturn(true)
+        `when`(mockPreferences.getBoolean(
+            ApplicationConstants.AUTO_MODE_PREF_KEY, true))
+            .thenReturn(false)
+    }
+
+    @Test
+    fun testHandleTap_centralRegion_tapInsideCenter_isHitTested() {
+        enableFeatureInManualMode()
+        // 0.6 region on a 1080x1920 screen: center (540, 960), so a dead-center tap is inside.
+        `when`(mockExperimentConfig.getDouble(
+            Experiment.INFO_CARD_TAP_REGION_FRACTION,
+            ObjectInfoTapHandler.DEFAULT_TAP_REGION_FRACTION))
+            .thenReturn(0.6)
+        `when`(mockHitTester.findObjectAtScreenPosition(540f, 960f, 1080, 1920))
+            .thenReturn(testObjectInfo)
+
+        val result = tapHandler.handleTap(540f, 960f, 1080, 1920)
+
+        assertThat(result).isTrue()
+        verify(mockListener).onObjectTapped(testObjectInfo)
+    }
+
+    @Test
+    fun testHandleTap_centralRegion_tapNearCorner_isIgnoredWithoutHitTesting() {
+        enableFeatureInManualMode()
+        `when`(mockExperimentConfig.getDouble(
+            Experiment.INFO_CARD_TAP_REGION_FRACTION,
+            ObjectInfoTapHandler.DEFAULT_TAP_REGION_FRACTION))
+            .thenReturn(0.6)
+
+        // Top-left corner is well outside the centered 60% box.
+        val result = tapHandler.handleTap(20f, 20f, 1080, 1920)
+
+        assertThat(result).isFalse()
+        verify(mockHitTester, never()).findObjectAtScreenPosition(20f, 20f, 1080, 1920)
+    }
+
+    @Test
+    fun testHandleTap_centralRegion_fractionAtLeastOne_disablesRestriction() {
+        enableFeatureInManualMode()
+        `when`(mockExperimentConfig.getDouble(
+            Experiment.INFO_CARD_TAP_REGION_FRACTION,
+            ObjectInfoTapHandler.DEFAULT_TAP_REGION_FRACTION))
+            .thenReturn(1.0)
+        // Even a corner tap is hit-tested when the region covers the whole screen.
+        `when`(mockHitTester.findObjectAtScreenPosition(20f, 20f, 1080, 1920))
+            .thenReturn(testObjectInfo)
+
+        val result = tapHandler.handleTap(20f, 20f, 1080, 1920)
+
+        assertThat(result).isTrue()
+        verify(mockListener).onObjectTapped(testObjectInfo)
+    }
+
+    @Test
+    fun testHandleTap_centralRegion_nonPositiveFraction_disablesRestriction() {
+        enableFeatureInManualMode()
+        // A misconfigured fraction <= 0 must not swallow every tap; treat it as disabled.
+        `when`(mockExperimentConfig.getDouble(
+            Experiment.INFO_CARD_TAP_REGION_FRACTION,
+            ObjectInfoTapHandler.DEFAULT_TAP_REGION_FRACTION))
+            .thenReturn(0.0)
+        `when`(mockHitTester.findObjectAtScreenPosition(20f, 20f, 1080, 1920))
+            .thenReturn(testObjectInfo)
+
+        val result = tapHandler.handleTap(20f, 20f, 1080, 1920)
+
+        assertThat(result).isTrue()
+        verify(mockListener).onObjectTapped(testObjectInfo)
     }
 }

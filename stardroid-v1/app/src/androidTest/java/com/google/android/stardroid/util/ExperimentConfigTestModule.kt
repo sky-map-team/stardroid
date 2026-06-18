@@ -14,7 +14,10 @@ object ExperimentConfigTestModule {
     fun provideExperimentConfig(): ExperimentConfig = object : ExperimentConfig {
         override fun isEnabled(experiment: Experiment): Boolean = when (experiment) {
             Experiment.WARM_WELCOME -> true
+            else -> false
         }
+
+        override fun getDouble(experiment: Experiment, default: Double): Double = default
 
         override fun waitForInitialFetch(timeoutMs: Long): Boolean = true
     }
