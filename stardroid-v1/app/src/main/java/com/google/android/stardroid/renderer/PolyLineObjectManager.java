@@ -178,6 +178,12 @@ public class PolyLineObjectManager extends RendererObjectManager {
       mTexRef.bind(gl);
       gl.glTexEnvf(GL10.GL_TEXTURE_ENV, GL10.GL_TEXTURE_ENV_MODE, GL10.GL_MODULATE);
       mTexCoordBuffer.set(gl);
+    } else {
+      // Explicitly clear texturing state on the non-opaque path: a previously drawn manager
+      // may have left GL_TEXTURE_2D / GL_TEXTURE_COORD_ARRAY enabled, which would otherwise
+      // apply a stale texture (with no coordinate pointer of ours) to the glow lines.
+      gl.glDisable(GL10.GL_TEXTURE_2D);
+      gl.glDisableClientState(GL10.GL_TEXTURE_COORD_ARRAY);
     }
 
     gl.glEnable(GL10.GL_CULL_FACE);

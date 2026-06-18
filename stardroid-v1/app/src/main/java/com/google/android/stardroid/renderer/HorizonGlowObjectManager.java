@@ -88,21 +88,21 @@ public class HorizonGlowObjectManager extends RendererObjectManager {
 
       // Indices: two triangles per quad between consecutive rings.
       for (int ring = 0; ring < rings.size() - 1; ring++) {
-        short topRowStart = (short) (vertexIndex + ring * ringLength);
-        short bottomRowStart = (short) (topRowStart + ringLength);
+        int topRowStart = vertexIndex + ring * ringLength;
+        int bottomRowStart = topRowStart + ringLength;
         for (int i = 0; i < ringLength - 1; i++) {
-          short topLeft = (short) (topRowStart + i);
-          short topRight = (short) (topLeft + 1);
-          short bottomLeft = (short) (bottomRowStart + i);
-          short bottomRight = (short) (bottomLeft + 1);
+          int topLeft = topRowStart + i;
+          int topRight = topLeft + 1;
+          int bottomLeft = bottomRowStart + i;
+          int bottomRight = bottomLeft + 1;
 
-          indexBuffer.addIndex(topLeft);
-          indexBuffer.addIndex(bottomLeft);
-          indexBuffer.addIndex(bottomRight);
+          indexBuffer.addIndex((short) topLeft);
+          indexBuffer.addIndex((short) bottomLeft);
+          indexBuffer.addIndex((short) bottomRight);
 
-          indexBuffer.addIndex(topLeft);
-          indexBuffer.addIndex(bottomRight);
-          indexBuffer.addIndex(topRight);
+          indexBuffer.addIndex((short) topLeft);
+          indexBuffer.addIndex((short) bottomRight);
+          indexBuffer.addIndex((short) topRight);
         }
       }
       vertexIndex += rings.size() * ringLength;

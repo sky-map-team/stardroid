@@ -16,8 +16,8 @@ import java.util.List;
  * interpolates the per-vertex color across each band, producing a single smooth gradient rather
  * than a stack of discrete translucent strips.
  *
- * <p>Drawn additively so the glow brightens whatever is behind it — black sky or the blue twilight
- * gradient alike — instead of blending toward the background and washing out.
+ * <p>Drawn additively so the glow brightens whatever is behind it — black sky or the blue
+ * twilight gradient alike — instead of blending toward the background and washing out.
  */
 public class HorizonGlowPrimitive extends AbstractPrimitive {
 

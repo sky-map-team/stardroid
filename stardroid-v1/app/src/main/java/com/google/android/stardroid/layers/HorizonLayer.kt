@@ -15,6 +15,7 @@ package com.google.android.stardroid.layers
 
 import android.content.SharedPreferences
 import android.content.res.Resources
+import android.graphics.Color
 import com.google.android.stardroid.R
 import com.google.android.stardroid.base.TimeConstants
 import com.google.android.stardroid.control.AstronomerModel
@@ -167,9 +168,9 @@ class HorizonLayer(private val model: AstronomerModel, resources: Resources, pre
             // exponentially decaying alpha; the renderer interpolates these across the bands
             // for a smooth, additively-blended glow. The deepest ring is fully transparent so
             // the gradient fades out instead of ending in a hard edge.
-            val r = android.graphics.Color.red(lineColor)
-            val g = android.graphics.Color.green(lineColor)
-            val b = android.graphics.Color.blue(lineColor)
+            val r = Color.red(lineColor)
+            val g = Color.green(lineColor)
+            val b = Color.blue(lineColor)
             val meshRings = ArrayList<List<Vector3>>(NUM_GLOW_RINGS + 1)
             meshRings.add(horizonVerts.toList())
             for (i in 0 until NUM_GLOW_RINGS) {
@@ -182,7 +183,7 @@ class HorizonLayer(private val model: AstronomerModel, resources: Resources, pre
                     (GLOW_PEAK_ALPHA * exp(-ring * GLOW_ALPHA_DECAY) * 255f)
                         .toInt().coerceIn(0, 255)
                 }
-                android.graphics.Color.argb(alpha, r, g, b)
+                Color.argb(alpha, r, g, b)
             }
             glows.add(HorizonGlowPrimitive(meshRings, ringColors))
             labels.add(TextPrimitive(zenith, resources.getString(R.string.zenith), labelColor))
