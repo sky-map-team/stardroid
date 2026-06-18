@@ -42,6 +42,13 @@ class ExperimentConfigImpl @Inject constructor(
         return remoteConfig.getBoolean(experiment.remoteConfigKey)
     }
 
+    override fun getDouble(experiment: Experiment, default: Double): Double {
+        val value = remoteConfig.getValue(experiment.remoteConfigKey)
+        // STATIC means neither a remote value nor an in-app default (XML) was found.
+        return if (value.source == FirebaseRemoteConfig.VALUE_SOURCE_STATIC) default
+        else value.asDouble()
+    }
+
     override fun waitForInitialFetch(timeoutMs: Long): Boolean {
         if (fetchTask.isComplete) {
             Log.d(TAG, "Initial fetch already completed")

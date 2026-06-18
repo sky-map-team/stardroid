@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Layout for the educational info card displayed when tapping celestial objects -->
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.stardroid.views.MaxHeightScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/object_info_scroll"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <LinearLayout
         android:orientation="vertical"
@@ -269,4 +271,4 @@
 
     </LinearLayout>
 
-</ScrollView>
+</com.google.android.stardroid.views.MaxHeightScrollView>
