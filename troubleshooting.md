@@ -31,7 +31,7 @@ Even after a successful calibration, external magnetic interference will still s
 |---|---|
 | Metal structures, reinforced concrete | Can deflect the magnetic field by 5–30° |
 | Car dashboards | Very common — many contain magnets and motor components |
-| Magnetic phone cases | Extremely common cause of persistent compass errors |
+| Magnetic or RFID blocking phone cases | Extremely common cause of persistent compass errors |
 | Nearby electronics | Smaller effect but can add up |
 
 The Earth's magnetic field is a weak signal. Your phone's sensor has no way of knowing it's
@@ -44,7 +44,7 @@ sitting next to a source of interference — it just reports what it measures.
 2. **Perform the figure-8 gesture** — wave your phone slowly in a large, smooth figure-8 shape.
    You may need to repeat several times. The compass accuracy indicator in the calibration dialog
    shows whether the phone has accepted the calibration.
-3. **Remove your phone case.** Magnetic cases are a very common culprit. Try without it.
+3. **Remove your phone case.** Magnetic or RFID-blocking cases are a very common culprit. Try without it.
 4. **Toggle Magnetic Correction.** Go to **Settings → Location**. In some parts of the world,
    magnetic north and true north differ by 20° or more. Switching this on or off can sometimes
    dramatically improve alignment.
