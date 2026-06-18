@@ -60,7 +60,8 @@ class HorizonLayer(private val model: AstronomerModel, resources: Resources, pre
         private val west = Vector3(0f, 0f, 0f)
         // NUM_SEGMENTS+1 because the last vertex closes the loop back to the first.
         private val horizonVerts: Array<Vector3> = Array(NUM_SEGMENTS + 1) { Vector3(0f, 0f, 0f) }
-        // 25 narrow glow rings, each recomputed from horizonVerts in updateCoords().
+        // Glow rings below the horizon, each recomputed from horizonVerts in updateCoords().
+        // Together with horizonVerts they form the concentric loops of the glow gradient mesh.
         private val glowRings: Array<Array<Vector3>> =
             Array(NUM_GLOW_RINGS) { Array(NUM_SEGMENTS + 1) { Vector3(0f, 0f, 0f) } }
         private var lastUpdateTimeMs = 0L
@@ -119,22 +120,27 @@ class HorizonLayer(private val model: AstronomerModel, resources: Resources, pre
 
         override val labels: MutableList<TextPrimitive> = ArrayList()
         override val lines: MutableList<LinePrimitive> = ArrayList()
+        override val glows: MutableList<HorizonGlowPrimitive> = ArrayList()
 
         companion object {
             private const val UPDATE_FREQ_MS = 1L * TimeConstants.MILLISECONDS_PER_SECOND
-            // 180 segments per ring: visually smooth, and keeps total quad count
-            // (26 rings × 180) × 4 vertices = 18 720 — safely under the signed-short
-            // index limit of 32 767 in PolyLineObjectManager.
+            // 180 segments around each ring: visually smooth. Mesh vertex count is
+            // (NUM_GLOW_RINGS + 1) × (NUM_SEGMENTS + 1) — well under the signed-short index
+            // limit of 32 767 used by HorizonGlowObjectManager.
             private const val NUM_SEGMENTS = 180
-            // 25 narrow rings spaced 0.5° apart → smooth exponential glow from horizon
-            // down to ~12.5°. lineWidth 14 ≈ 0.97° half-width, so adjacent rings overlap
-            // by ~1.4° and each interior point is covered by ~3 rings simultaneously,
-            // making the per-ring alpha steps imperceptible.
-            private const val NUM_GLOW_RINGS = 25
-            private const val GLOW_RING_SPACING_DEG = 0.5f
-            private const val GLOW_LINE_WIDTH = 14f
-            private const val GLOW_ALPHA_BASE = 0.50f
-            private const val GLOW_ALPHA_DECAY = 0.20f  // per ring index (natural units)
+            // The glow is a single gradient mesh, not a stack of translucent strips. Ring 0 is
+            // the horizon itself; NUM_GLOW_RINGS further rings are tilted toward the nadir at
+            // GLOW_RING_SPACING_DEG steps, so the glow reaches NUM_GLOW_RINGS × spacing below
+            // the horizon and never above it. The renderer interpolates each ring's color
+            // (and alpha) across the bands between rings, so a handful of rings already give a
+            // smooth gradient — no overlap/coverage tricks needed.
+            private const val NUM_GLOW_RINGS = 8
+            private const val GLOW_RING_SPACING_DEG = 1.0f
+            // Additive glow intensity at the horizon, as a fraction of full (255) alpha, with
+            // an exponential falloff toward the deepest ring (which is forced fully
+            // transparent so the gradient fades out cleanly).
+            private const val GLOW_PEAK_ALPHA = 0.7f
+            private const val GLOW_ALPHA_DECAY = 0.55f  // per ring index (natural units)
         }
 
         init {
@@ -142,16 +148,29 @@ class HorizonLayer(private val model: AstronomerModel, resources: Resources, pre
             val labelColor = resources.getColor(R.color.horizon_label, null)
             lines.add(LinePrimitive(lineColor, horizonVerts.toList(), 2.5f))
 
-            val baseAlpha = android.graphics.Color.alpha(lineColor)
+            // Build the glow gradient mesh: ring 0 is the horizon, the rest are the glow rings
+            // descending toward the nadir. Each ring is painted in the horizon color with an
+            // exponentially decaying alpha; the renderer interpolates these across the bands
+            // for a smooth, additively-blended glow. The deepest ring is fully transparent so
+            // the gradient fades out instead of ending in a hard edge.
             val r = android.graphics.Color.red(lineColor)
             val g = android.graphics.Color.green(lineColor)
             val b = android.graphics.Color.blue(lineColor)
+            val meshRings = ArrayList<List<Vector3>>(NUM_GLOW_RINGS + 1)
+            meshRings.add(horizonVerts.toList())
             for (i in 0 until NUM_GLOW_RINGS) {
-                val alpha = (GLOW_ALPHA_BASE * exp(-i * GLOW_ALPHA_DECAY) * baseAlpha)
-                    .toInt().coerceIn(0, 255)
-                val glowColor = android.graphics.Color.argb(alpha, r, g, b)
-                lines.add(LinePrimitive(glowColor, glowRings[i].toList(), GLOW_LINE_WIDTH))
+                meshRings.add(glowRings[i].toList())
             }
+            val ringColors = IntArray(NUM_GLOW_RINGS + 1) { ring ->
+                val alpha = if (ring == NUM_GLOW_RINGS) {
+                    0
+                } else {
+                    (GLOW_PEAK_ALPHA * exp(-ring * GLOW_ALPHA_DECAY) * 255f)
+                        .toInt().coerceIn(0, 255)
+                }
+                android.graphics.Color.argb(alpha, r, g, b)
+            }
+            glows.add(HorizonGlowPrimitive(meshRings, ringColors))
             labels.add(TextPrimitive(zenith, resources.getString(R.string.zenith), labelColor))
             labels.add(TextPrimitive(nadir, resources.getString(R.string.nadir), labelColor))
             labels.add(TextPrimitive(north, resources.getString(R.string.north), labelColor))

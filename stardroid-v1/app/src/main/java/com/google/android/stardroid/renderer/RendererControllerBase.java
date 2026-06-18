@@ -15,6 +15,7 @@
 package com.google.android.stardroid.renderer;
 
 import com.google.android.stardroid.math.Vector3;
+import com.google.android.stardroid.renderables.HorizonGlowPrimitive;
 import com.google.android.stardroid.renderables.ImagePrimitive;
 import com.google.android.stardroid.renderables.LinePrimitive;
 import com.google.android.stardroid.renderables.PointPrimitive;
@@ -135,6 +136,25 @@ public abstract class RendererControllerBase {
     }
   }
 
+  /**
+   * Class for managing the horizon glow gradient mesh.
+   */
+  public static class HorizonGlowManager extends RenderManager<HorizonGlowPrimitive> {
+    private HorizonGlowManager(HorizonGlowObjectManager manager) {
+      super(manager);
+    }
+
+    @Override
+    public void queueObjects(final List<HorizonGlowPrimitive> glows,
+                             final EnumSet<RendererObjectManager.UpdateType> updateType,
+                             RendererControllerBase controller) {
+      String msg = "Setting horizon glow objects";
+      controller.queueRunnable(msg, CommandType.Data, new Runnable() { public void run() {
+        ((HorizonGlowObjectManager) mManager).updateObjects(glows, updateType);
+      }});
+    }
+  }
+
   protected interface EventQueuer {
     void queueEvent(Runnable r);
   }
@@ -181,6 +201,12 @@ public abstract class RendererControllerBase {
 
   public ImageManager createImageManager(int layer) {
     ImageManager manager = new ImageManager(mRenderer.createImageManager(layer));
+    queueAddManager(manager);
+    return manager;
+  }
+
+  public HorizonGlowManager createHorizonGlowManager(int layer) {
+    HorizonGlowManager manager = new HorizonGlowManager(mRenderer.createHorizonGlowManager(layer));
     queueAddManager(manager);
     return manager;
   }

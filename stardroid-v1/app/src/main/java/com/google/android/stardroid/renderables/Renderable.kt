@@ -31,4 +31,7 @@ interface Renderable {
 
     /** Returns the list of images that should be drawn in the renderer.  */
     val images: List<ImagePrimitive>
+
+    /** Returns the list of horizon glow gradient meshes that should be drawn in the renderer.  */
+    val glows: List<HorizonGlowPrimitive>
 }
