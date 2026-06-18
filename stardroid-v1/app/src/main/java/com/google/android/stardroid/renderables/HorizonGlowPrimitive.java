@@ -33,6 +33,17 @@ public class HorizonGlowPrimitive extends AbstractPrimitive {
       throw new IllegalArgumentException(
           "rings and ringColors must be non-null and the same length");
     }
+    // The renderer treats every ring as having the same vertex count (it indexes all rings by
+    // ring 0's length), so enforce that invariant up front rather than letting ragged input
+    // corrupt the mesh or throw deep in the render loop.
+    if (!rings.isEmpty()) {
+      int ringLength = rings.get(0) != null ? rings.get(0).size() : 0;
+      for (List<Vector3> ring : rings) {
+        if (ring == null || ring.size() != ringLength) {
+          throw new IllegalArgumentException("All rings must be non-null and the same length");
+        }
+      }
+    }
     this.rings = rings;
     this.ringColors = ringColors;
   }

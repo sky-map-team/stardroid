@@ -72,6 +72,14 @@ class HorizonLayer(private val model: AstronomerModel, resources: Resources, pre
         private val sinTilts = FloatArray(NUM_GLOW_RINGS) { ringIdx ->
             sin(Math.toRadians(((ringIdx + 1) * GLOW_RING_SPACING_DEG).toDouble())).toFloat()
         }
+        // Likewise, the horizon circle's segment angles are fixed, so precompute their sin/cos
+        // once instead of recomputing 2·(NUM_SEGMENTS+1) trig values on every update.
+        private val cosAngles = FloatArray(NUM_SEGMENTS + 1) { i ->
+            cos(2.0 * Math.PI * i / NUM_SEGMENTS).toFloat()
+        }
+        private val sinAngles = FloatArray(NUM_SEGMENTS + 1) { i ->
+            sin(2.0 * Math.PI * i / NUM_SEGMENTS).toFloat()
+        }
         private var lastUpdateTimeMs = 0L
 
         private fun updateCoords() {
@@ -85,9 +93,8 @@ class HorizonLayer(private val model: AstronomerModel, resources: Resources, pre
 
             // Horizon circle: p(θ) = north·cos(θ) + east·sin(θ)
             for (i in 0..NUM_SEGMENTS) {
-                val angle = 2.0 * Math.PI * i / NUM_SEGMENTS
-                val cosA = cos(angle).toFloat()
-                val sinA = sin(angle).toFloat()
+                val cosA = cosAngles[i]
+                val sinA = sinAngles[i]
                 val hx = north.x * cosA + east.x * sinA
                 val hy = north.y * cosA + east.y * sinA
                 val hz = north.z * cosA + east.z * sinA
