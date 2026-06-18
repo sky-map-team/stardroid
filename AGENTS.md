@@ -29,6 +29,9 @@ starting any work:
 git checkout -b feature/<short-description>
 ```
 
+Documentation-only changes (`.md` files, troubleshooting guides, skills, etc.) may be committed
+directly to `master` without a feature branch.
+
 Only commit to `master` when explicitly instructed to do so.
 
 ## Git Worktrees

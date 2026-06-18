@@ -179,6 +179,18 @@ Offer the email address for direct support with a Diagnostics screenshot.
 
 ---
 
+## Troubleshooting URL
+
+When pointing users to the troubleshooting guide, use **troubleshooting.stardroid.app** (or
+**ts.stardroid.app** if character space is tight in a review reply).
+
+Always include the troubleshooting URL in complaint replies where the full solution cannot be
+expressed within the 350-character limit — e.g. multi-step compass issues, location problems,
+or jitter. If space is very tight, drop a step rather than the URL, since the URL gives the
+user the complete picture.
+
+---
+
 ## Tone guidelines
 
 - Lead with empathy using "sorry to hear" phrasing — not bare "sorry", which implies fault we
