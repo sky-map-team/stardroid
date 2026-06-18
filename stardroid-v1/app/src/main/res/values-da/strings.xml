@@ -1,0 +1,308 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Please add  translation_description="" attributes to Strings to assist the translators. --><resources>
+    <!-- tm:omitted name="app_name" reason="identical_to_source" -->
+    <string name="menu_settings" translation_description="Settings menu item in the options menu">Indstillinger</string>
+    <string name="menu_search" translation_description="Search menu item in the options menu">Søg</string>
+    <string name="cancel" translation_description="Generic cancel button label used in dialogs">Annuller</string>
+    <string name="go" translation_description="Button to start navigating the sky map toward a searched object">Gå!</string>
+    <string name="start_from_now" translation_description="Button in the time travel dialog to start time travelling from the current time">Start fra nu</string>
+    <string name="other_prefs" translation_description="Preferences category heading for miscellaneous settings">Øvrigt</string>
+    <string name="controls_prefs" translation_description="Preferences category heading for touch control settings">Kontrolelementer</string>
+    <string name="location_permission_dialog_title" translation_description="Title of the dialog that requests location permission from the user">Lokalisering påkrævet</string>
+    <string name="location_permission_dialog_message" translation_description="Body text of the dialog requesting location permission, explaining why the app needs it and what happens without it">
+    Sky Map har brug for din omtrentlige placering for at vise den korrekte nattehimmel. Du kan give tilladelse, angive din placering manuelt eller beslutte det senere. Hvis du beslutter det senere, vil kortet ikke være nøjagtigt, før din placering er blevet indstillet.
+    </string>
+    <string name="location_permission_grant" translation_description="Button in the location permission dialog to grant location access">Giv tilladelse</string>
+    <string name="location_permission_enter_manually" translation_description="Button in the location permission dialog to enter location by hand instead of granting permission">Angiv manuelt</string>
+    <string name="location_permission_later" translation_description="Button in the location permission dialog to defer the decision">Senere</string>
+    <string name="location_set_auto" translation_description="Toast message when automatic location is acquired. %1$s is the place name or coordinates">Placering sat til %1$s</string>
+    <string name="location_long_lat" translation_description="Formatted display of longitude and latitude. %1$.2f is longitude, %2$.2f is latitude">Længdegrad:%1$.2f, Breddegrad:%2$.2f</string>
+    <string name="degrees" translation_description="angular degrees - used for latitude and longitude">Grader</string>
+    <string name="location_acquiring_title" translation_description="Title of dialog shown while acquiring the user\'s location automatically">Finder din placering…</string>
+    <string name="location_acquiring_message" translation_description="Body text of dialog shown while Sky Map is waiting to acquire the device GPS or network location">Forsøger stadig at finde din placering…</string>
+    <string name="location_keep_waiting" translation_description="Button to keep waiting for an automatic location fix">Fortsæt med at vente</string>
+    <string name="location_permanently_denied_title" translation_description="Title of dialog shown when location permission was permanently denied by the user">Tilladelse påkrævet</string>
+    <string name="location_permanently_denied_message" translation_description="Body text explaining that location permission was permanently denied and how to fix it">
+    Placeringstilladelse blev permanent nægtet. Åbn appindstillinger for at aktivere det igen.
+    </string>
+    <string name="location_open_settings" translation_description="Button that opens the system app settings page so the user can re-grant location permission">Åbn appindstillinger</string>
+    <string name="location_manual_entry_title" translation_description="Title of the dialog where the user types their location manually">Angiv din placering</string>
+    <string name="location_place_name_hint" translation_description="Placeholder text in the place name input field">By eller stedsnavn</string>
+    <string name="location_latitude_hint" translation_description="Placeholder text in the latitude input field">Breddegrad (f.eks. 51,5)</string>
+    <string name="location_longitude_hint" translation_description="Placeholder text in the longitude input field">Længdegrad (f.eks. -0,1)</string>
+    <string name="location_resolve_button" translation_description="Button that looks up coordinates for a typed place name">Løs</string>
+    <string name="location_set_button" translation_description="Button that confirms and applies the manually entered location">Indstil placering</string>
+    <string name="location_place_not_found" translation_description="Inline error shown when a place name search returns no results">Sted ikke fundet — prøv et mere specifikt navn</string>
+    <string name="location_geocoder_offline" translation_description="Inline message shown when geocoding fails because there is no internet connection">Ingen internet — angiv koordinater direkte</string>
+    <string name="location_invalid_latitude" translation_description="Validation error for latitude values outside the valid range">Breddegrad skal være mellem −90 og 90</string>
+    <string name="location_invalid_longitude" translation_description="Validation error for longitude values outside the valid range">Længdegrad skal være mellem −180 og 180</string>
+    <string name="location_management_title" translation_description="Title of the location management screen">Din placering</string>
+    <string name="location_source_auto" translation_description="Label shown when the device is determining location automatically">Automatisk</string>
+    <string name="location_source_manual" translation_description="Label shown when the user has manually entered their location">Manuel</string>
+    <string name="location_source_acquiring" translation_description="Label shown while waiting for the first automatic location fix">Henter…</string>
+    <string name="location_source_unset" translation_description="Label shown when no location has been set">Ingen placering indstillet</string>
+    <string name="location_source_hardware_unavailable" translation_description="Label shown when the device has no location hardware">Placering ikke tilgængelig på denne enhed</string>
+    <string name="location_switch_to_auto" translation_description="Button to switch from manual location to automatic detection">Brug automatisk placering</string>
+    <string name="location_switch_to_manual" translation_description="Button to switch from automatic to manual location entry">Angiv placering manuelt</string>
+    <string name="location_change" translation_description="Button to change or update the manually entered location">Skift placering</string>
+    <string name="location_map_no_location" translation_description="Message shown in the map area when no location is set">Ingen placering indstillet — tryk nedenfor for at tilføje en</string>
+    <string name="location_map_acquiring" translation_description="Message shown in the map area while waiting for a GPS fix">Henter placering…</string>
+    <string name="location_map_unavailable" translation_description="Message shown in the map area when the map image cannot be loaded">Kort ikke tilgængeligt</string>
+    <string name="location_map_content_description" translation_description="Accessibility description for the map image showing the user\'s location">Kort, der viser din placering</string>
+    <!-- tm:omitted name="location_coordinate_format" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_diagnostic_format" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_phone_format" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_ra_format" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_dec_format" reason="identical_to_source" -->
+    <string name="use_magnetic_correction" translation_description="Preference label: apply magnetic declination correction so the compass points to true north instead of magnetic north">Brug magnetisk korrektion</string>
+    <string name="manual_compass_adjustment_title" translation_description="Preference title: lets the user add a manual degree offset to the compass reading">Yderligere kompaskalibrering</string>
+    <string name="manual_compass_adjustment_summary" translation_description="Summary for the manual compass adjustment preference">Ekstra offset i grader (+ eller −) tilføjet til kompaslæsning</string>
+    <string name="show_stars_pref" translation_description="Label for the stars layer on the sky map (shows in the search results)">Stjerner</string>
+    <string name="show_constellations_pref" translation_description="Label for the constellation lines and labels layer (shows in the search results)">Stjernebilleder</string>
+    <string name="show_deep_sky_objects_pref" translation_description="Deep-sky objects layer — galaxies, nebulae, star clusters, and other notable objects (shows in the search results)">Messier-objekter</string>
+    <string name="show_planets_pref" translation_description="Label for the solar system layer (planets, sun, moon)  (shows in the search results)">Solsystemet</string>
+    <string name="show_grid_pref" translation_description="Label for the Right Ascension / Declination grid overlay  (shows in the search results)">RA/Dec-gitter</string>
+    <string name="show_horizon_pref" translation_description="Preference toggle label for the horizon line layer">Horisont</string>
+    <string name="show_sky_gradient" translation_description="This is a shading of the color of the sky used for effect">Himmelgradient</string>
+    <string name="show_meteors_pref" translation_description="Label for the meteor shower layer (shows in the search results)">Meteorregn</string>
+    <string name="show_comet_layer_pref" translation_description="Preference toggle label for the comets layer">Kometer</string>
+    <string name="show_satellite_layer_pref" translation_description="The layer for satellites">Satellitter</string>
+    <string name="sensor_prefs" translation_description="Preferences category heading for sensor settings, intended for advanced/expert users">Sensorindstillinger (eksperter)</string>
+    <string name="sensor_speed" translation_description="Old, non gyro sensors only: How quickly the sensor should send us data">Sensorhastighed</string>
+    <string name="sensor_damping" translation_description="Old, non gyro sensors only: The amount of smoothing applied to the sensor outputs.">Dæmpning</string>
+    <string name="appearance_prefs" translation_description="Preferences title for section about app appearance">Udseende</string>
+    <string name="auto_dimness_preference" translation_description="Mode for automatically dimming the screen when night mode is selected">Automatisk skærmdæmpning</string>
+    <string name="font_size_preference" translation_description="Change the font size">Skriftstørrelse</string>
+    <string name="font_size_preference_description" translation_description="help to go along with the change font size preference">Juster størrelse på etiketekst</string>
+    <string name="show_sky_gradient_preference_title" translation_description="Setting toggle title: whether to show the blue sky gradient during the day">Vis himmelgradient</string>
+    <string name="show_sky_gradient_preference_summary" translation_description="Setting toggle summary for sky gradient: explains what the feature does">Skygger himlen blå nær Solen og mørk på den modsatte side</string>
+    <string name="ecliptic" translation_description="Label for the ecliptic layer — the apparent annual path of the Sun across the sky">Ekliptika</string>
+    <string name="dialog_accept" translation_description="accepting the licence agreement">Accepter</string>
+    <string name="dialog_decline" translation_description="declining the licence agreement">Nej tak</string>
+    <!-- tm:omitted name="dialog_ok_button" reason="identical_to_source" -->
+    <string name="menu_credits" translation_description="menu item to show \'Credits\' box">Medvirkende</string>
+    <string name="credits_dialog_title" translation_description="Title of the credits dialog showing acknowledgements and contributors">Medvirkende</string>
+    <string name="menu_help" translation_description="menu item to show \'Help\' box">Hjælp</string>
+    <string name="help_dialog_title" translation_description="Title of the help dialog">Hjælp til Sky Map</string>
+    <string name="set_manual" translation_description="Toast message shown when the user switches to manual (touch-drag) mode">Skifter til manuel tilstand</string>
+    <string name="set_auto" translation_description="Toast message shown when the user switches to automatic (sensor/gyroscope) mode">Skifter til automatisk tilstand</string>
+    <string name="menu_toggle_dim" translation_description="Menu item to toggle night mode (red tint that preserves night vision)">Slå nattilstand til/fra</string>
+    <string name="zenith" translation_description="Label for the zenith point (directly overhead) shown on the sky map. Displayed in capitals.">ZENIT</string>
+    <!-- tm:omitted name="nadir" reason="identical_to_source" -->
+    <string name="north" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">NORD</string>
+    <string name="east" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">ØST</string>
+    <string name="west" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">VEST</string>
+    <string name="south" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">SYD</string>
+    <string name="search_label" translation_description="Hint/label for the search bar in the search activity">Søg på himlen</string>
+    <string name="search_hint" translation_description="an example search target">f.eks. Mars eller RA Dec</string>
+    <!-- tm:omitted name="search_target_ra_dec_format" reason="identical_to_source" -->
+    <string name="no_search_title" translation_description="Dialog title shown when a sky search returns no results">Ingen resultater</string>
+    <!-- Hopefully this is a temporary measure until we can fix the search engine -->
+    <string name="no_search_results_text2" translation_description="Alternative message shown when a search returns no results, suggesting the object may not currently be visible">
+    Der blev ikke fundet resultater. Måske er objektet ikke synligt på dette tidspunkt.
+    </string>
+    <string name="many_search_results_title" translation_description="Dialog title shown when a search returns multiple possible matches">Mente du?</string>
+    <string name="other" translation_description="A preference category (ie preferences that don't belong in any other category)">Øvrigt</string>
+    <string name="menu_time" translation_description="Menu item label to open the time travel feature">Tidsrejse</string>
+    <string name="time_travel_start_message_alt" translation_description="Toast message when time travel starts toward a named destination. %s is the event or destination name">Rejser gennem tiden til %s ...</string>
+    <string name="time_travel_close_message" translation_description="Toast message shown when the user exits time travel and returns to the present">Tilbage til nutiden ...</string>
+    <!--  -->
+    <string name="popular_dates_prompt" translation_description="Label for a list of dates the user can choose from">Populære datoer</string>
+    <string name="custom_date_prompt" translation_description="Label telling the user to manually specify a date">Eller vælg din egen dato og tid:</string>
+    <string name="change_date_prompt" translation_description="Button label to open the date picker in the time travel dialog">Skift datoen</string>
+    <string name="change_time_prompt" translation_description="Button label to open the time picker in the time travel dialog">Skift tiden</string>
+    <!-- tm:omitted name="now_visiting" reason="identical_to_source" -->
+    <string name="time_travel_label_past" translation_description="Label showing that we are in the past">Tidsrejse: Fortid</string>
+    <string name="time_travel_label_future" translation_description="Label showing that we are in the future">Tidsrejse: Fremtid</string>
+    <string name="time_travel_stopped" translation_description="Label showing rate of travel through time">Tidsrejse frossen</string>
+    <string name="time_travel_second_speed" translation_description="Label showing rate of travel through time.  The symbol means greater than.">Rejser &gt; @ 1 sek/sek</string>
+    <string name="time_travel_minute_speed" translation_description="Label showing rate of travel through time">Rejser &gt; @ 1 min/sek</string>
+    <string name="time_travel_10minute_speed" translation_description="Label showing rate of travel through time">Rejser &gt; @ 10 min/sek</string>
+    <string name="time_travel_hour_speed" translation_description="Label showing rate of travel through time">Rejser &gt; @ 1 time/sek</string>
+    <string name="time_travel_day_speed" translation_description="Label showing rate of travel through time">Rejser &gt; @ 1 dag/sek</string>
+    <string name="time_travel_week_speed" translation_description="Label showing rate of travel through time">Rejser &gt; @ 1 uge/sek</string>
+    <string name="time_travel_second_speed_back" translation_description="Label showing rate of travel through time">Rejser &lt; @ 1 sek/sek</string>
+    <string name="time_travel_minute_speed_back" translation_description="Label showing rate of travel through time">Rejser &lt; @ 1 min/sek</string>
+    <string name="time_travel_10minute_speed_back" translation_description="Label showing rate of travel through time">Rejser &lt; @ 10 min/sek</string>
+    <string name="time_travel_hour_speed_back" translation_description="Label showing rate of travel through time">Rejser &lt; @ 1 time/sek</string>
+    <string name="time_travel_day_speed_back" translation_description="Label showing rate of travel through time">Rejser &lt; @ 1 dag/sek</string>
+    <string name="time_travel_week_speed_back" translation_description="Label showing rate of travel through time">Rejser &lt; @ 1 uge/sek</string>
+
+    <!-- Time Travel dialog event display names -->
+    <string name="time_travel_select_hint" translation_description="Placeholder hint text for the dropdown list of popular astronomical events in the time travel dialog">-- Vælg en populær begivenhed --</string>
+    <string name="time_travel_next_sunset" translation_description="Name of a popular astronomical event in the time travel picker">Næste aften solnedgang</string>
+    <string name="time_travel_next_sunrise" translation_description="Name of a popular astronomical event in the time travel picker">Næste morgen solopgang</string>
+    <string name="time_travel_next_fullmoon" translation_description="Name of a popular astronomical event in the time travel picker">Næste fuldmåne</string>
+    <string name="time_travel_next_newmoon" translation_description="Name of a popular astronomical event in the time travel picker">Næste nymåne</string>
+    <string name="time_travel_mercury_transit_2016" translation_description="Name of an astronomical event in the time travel picker. A Mercury transit is when Mercury passes across the face of the Sun as seen from Earth. Keep the date format suitable for your locale.">Merkur-transit 9. maj 2016</string>
+    <string name="time_travel_solar_eclipse_2024" translation_description="Name of an astronomical event in the time travel picker. Keep the date format suitable for your locale.">Nordamerikansk solformørkelse 8. april 2024</string>
+    <string name="time_travel_apollo_11" translation_description="Name of an astronomical event in the time travel picker: the first crewed Moon landing in 1969">Apollo 11 månelanding</string>
+    <string name="time_travel_jupiter_saturn_2020" translation_description="Name of an astronomical event in the time travel picker. A conjunction is when two planets appear very close together in the sky.">Jupiter-Saturn-konjunktion 2020</string>
+    <string name="time_travel_six_planet_parade_2026" translation_description="Name of an astronomical event in the time travel picker. A planet parade is when several planets are visible at once. Keep the date format suitable for your locale.">Seks-planetparaden, 28. feb. 2026</string>
+    <string name="time_travel_lunar_eclipse_2026" translation_description="Name of an astronomical event in the time travel picker. Keep the date format suitable for your locale.">Total måneformørkelse, 3. mar. 2026</string>
+    <string name="time_travel_lyrids_2026" translation_description="Name of an astronomical event in the time travel picker. The Lyrids are an annual meteor shower. Keep the date format suitable for your locale.">Lyrider-meteorregn, 22. apr. 2026</string>
+    <string name="time_travel_venus_jupiter_2026" translation_description="Name of an astronomical event in the time travel picker. A conjunction is when two planets appear very close together in the sky. Keep the date format suitable for your locale.">Venus-Jupiter-konjunktion, 9. jun. 2026</string>
+    <string name="time_travel_mars_uranus_2026" translation_description="Name of an astronomical event in the time travel picker. A close approach is when two objects appear near each other in the sky. Keep the date format suitable for your locale.">Mars-Uranus tæt passage, 4. jul. 2026</string>
+    <string name="time_travel_solar_eclipse_2026" translation_description="Name of an astronomical event in the time travel picker. Keep the date format suitable for your locale.">Total solformørkelse, 12. aug. 2026</string>
+    <string name="time_travel_perseids_2026" translation_description="Name of an astronomical event in the time travel picker. The Perseids are an annual meteor shower. Keep the date format suitable for your locale.">Perseiderne-meteorregn, 12.-13. aug. 2026</string>
+    <string name="time_travel_jupiter_occultation_2026" translation_description="Name of an astronomical event in the time travel picker. A lunar occultation is when the Moon passes in front of a planet, briefly hiding it. Keep the date format suitable for your locale.">Månebedeckelse af Jupiter, 6. okt. 2026</string>
+    <string name="time_travel_geminids_2026" translation_description="Name of an astronomical event in the time travel picker. The Geminids are an annual meteor shower. Keep the date format suitable for your locale.">Geminiderne-meteorregn, 13.-14. dec. 2026</string>
+    <string name="time_travel_supermoon_2026" translation_description="Name of an astronomical event in the time travel picker. A supermoon is a full moon that occurs near the Moon\'s closest approach to Earth. Keep the date format suitable for your locale.">Julaftens supermåne, 24. dec. 2026</string>
+
+    <string name="use_sound_effects" translation_description="A preferences menu label for enabling sound effects">Aktivér lyd</string>
+
+    <string name="menu_gallery" translation_description="Menu item label to open the image gallery">Galleri</string>
+    <string name="gallery_image_search_btn" translation_description="Button in the gallery to locate the displayed object on the sky map">Find på himlen</string>
+    <string name="gallery_image_back_btn" translation_description="Button to return to the gallery from a single image view">Tilbage til galleri</string>
+    <string name="hubble_image_gallery_title" translation_description="Title of the image gallery screen">Sky Map Galleri</string>
+    <string name="hubble_image" translation_description="Label or caption for a Hubble Space Telescope image in the gallery">Hubble-billede</string>
+    <string name="search_overlay_title" translation_description="title for search overlay">Peg din telefon mod pilen</string>
+    <string name="search_target_looking_message" translation_description="displayed when a search target is being searched for">Søger efter: %s</string>
+    <string name="search_target_found_message" translation_description="displayed when a search target has been found and is centered on screen">Fundet: %s</string>
+    <string name="sun_wont_set_message" translation_description="Message shown when the sun will not set during the next 24 hours (polar day / midnight sun)">Solen vil ikke gå ned i løbet af de næste 24 timer på dit nuværende sted.</string>
+
+    <!-- tm:omitted name="missing_label" reason="identical_to_source" -->
+
+    <string name="menu_tos" translation_description="Menu item label to view the Terms of Service">Vilkår for brug</string>
+    <string name="menu_diagnostics" translation_description="Menu item label to open the technical diagnostics screen">Diagnostik</string>
+
+    <!-- tm:omitted name="north_pole" reason="identical_to_source" -->
+    <!-- tm:omitted name="south_pole" reason="identical_to_source" -->
+
+    <string name="enable_analytics" translation_description="Preference label to opt in to sending anonymous usage statistics">Send brugsstatistik</string>
+    <string name="enable_analytics_desc" translation_description="Description/summary for the usage statistics preference">Forbedre Sky Map ved at sende anonyme data til Google Analytics</string>
+
+    <string name="no_sensor_warning" translation_description="Warning shown when required orientation sensors are not detected on the device">
+    Din enhed mangler muligvis orienteringssensorer - automatisk tilstand fungerer muligvis ikke
+    </string>
+    <string name="warning_dialog_title" translation_description="Title of a warning dialog shown when something is wrong, e.g. a missing sensor">Dårlige nyheder!</string>
+    <string name="missing_sensor_dialog_text" translation_description="Dialog message shown when the device appears to be missing the compass or accelerometer sensors needed for auto mode">
+    For at følge stjernerne automatisk, når du bevæger dig, har Sky Map brug for et indbygget kompas og accelerometer. Det ser ud til, at din enhed mangler et af disse.
+        \nVær ikke bekymret! Du kan stadig udforske universet i Manuel tilstand. Brug blot dine fingre til at trække, rotere og zoome rundt på nattehimlen i dit eget tempo.
+    </string>
+    <string name="do_not_show_again" translation_description="Checkbox or button label to suppress future display of a warning dialog">Vis ikke denne besked igen</string>
+    <string name="title_activity_diagnostic" translation_description="Title bar text for the Diagnostics activity/screen">Diagnostik</string>
+    <string name="play_services_error" translation_description="Warning shown in the diagnostics screen when Google Play Services has an error that may affect automatic location">
+    Advarsel: Google Play Services-fejl - Automatisk placering fungerer muligvis ikke
+    </string>
+    <string name="sensor_absent" translation_description="Sensor status shown in diagnostics when the sensor is not present on the device">Fraværende</string>
+    <string name="sensor_accuracy_unknown" translation_description="Sensor calibration level shown in the diagnostics screen and calibration dialog">Kalibrering: Ukendt</string>
+    <string name="sensor_accuracy_unreliable" translation_description="Sensor calibration level shown in the diagnostics screen and calibration dialog">Kalibrering: Ikke kalibreret</string>
+    <string name="sensor_accuracy_low" translation_description="Sensor calibration level shown in the diagnostics screen and calibration dialog">Kalibrering: Dårlig</string>
+    <string name="sensor_accuracy_medium" translation_description="Sensor calibration level shown in the diagnostics screen and calibration dialog">Kalibrering: OK</string>
+    <string name="sensor_accuracy_high" translation_description="Sensor calibration level shown in the diagnostics screen and calibration dialog">Kalibrering: God</string>
+    <string name="sensor_accuracy_nocontact" translation_description="Sensor calibration level shown when the sensor has no contact (e.g. heart-rate sensor lifted from skin) — unlikely to appear in Sky Map but included for completeness">Kalibrering: Ingen kontakt</string>
+    <string name="diagnostics_activity_general_heading" translation_description="Section heading in the Diagnostics screen for general device information">Generelt</string>
+    <string name="diagnostics_activity_phone" translation_description="Row label in the Diagnostics screen for the device model name">Enhed</string>
+    <string name="diagnostics_activity_android_version" translation_description="Row label in the Diagnostics screen for the Android OS version">Android-version</string>
+    <string name="diagnostics_activity_sky_map_version" translation_description="Row label in the Diagnostics screen for the Sky Map app version">Sky Map-version</string>
+    <string name="diagnostics_activity_sensors_heading" translation_description="Section heading in the Diagnostics screen for sensor readings">Sensorer</string>
+    <string name="diagnostics_activity_compass" translation_description="Row label in the Diagnostics screen for the compass (magnetic field) sensor">Kompas</string>
+    <!-- tm:omitted name="diagnostics_activity_accelerometer" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_activity_rotation_vector" reason="identical_to_source" -->
+    <string name="diagnostics_activity_gyroscope" translation_description="Row label in the Diagnostics screen for the gyroscope sensor">Gyroskop</string>
+    <string name="diagnostics_activity_light_level" translation_description="Row label in the Diagnostics screen for the ambient light sensor reading">Lysniveau</string>
+    <string name="diagnostics_activity_location_and_time_heading" translation_description="Section heading in the Diagnostics screen for location and time information">Placering og tid</string>
+    <string name="diagnostics_activity_location_permission" translation_description="Row label in the Diagnostics screen showing whether location permission has been granted">Placeringstilladelse</string>
+    <string name="diagnostics_activity_location_permission_granted" translation_description="Status value shown when location permission has been granted">Givet</string>
+    <string name="diagnostics_activity_location_permission_denied" translation_description="Status value shown when location permission has been denied">Nægtet</string>
+    <!-- tm:omitted name="diagnostics_activity_gps" reason="identical_to_source" -->
+    <string name="diagnostics_activity_location" translation_description="Row label in the Diagnostics screen showing the current latitude and longitude">Placering (bredde, længde)</string>
+    <string name="diagnostics_activity_pointing_ra_dec" translation_description="Row label in the Diagnostics screen showing a snapshot of where the phone is currently pointing in the sky (Right Ascension and Declination)">Pegepunktøjebliksbillede</string>
+    <string name="diagnostics_activity_magnetic_correction" translation_description="Row label in the Diagnostics screen showing whether magnetic declination correction is applied">Magnetisk korrektion</string>
+    <string name="diagnostics_activity_local_datetime" translation_description="Row label in the Diagnostics screen for the local date and time">Lokal dato og tid</string>
+    <string name="diagnostics_activity_universal_time" translation_description="Row label in the Diagnostics screen for the UTC/universal date and time">Universel dato og tid</string>
+    <string name="diagnostics_activity_network_heading" translation_description="Section heading in the Diagnostics screen for network connectivity information">Netværk</string>
+    <string name="diagnostics_activity_connection" translation_description="Row label in the Diagnostics screen for the current network connection status">Forbindelse</string>
+    <string name="diagnostics_activity_rotation_matrix" translation_description="Row label in the Diagnostics screen showing the raw device rotation matrix used for orientation">Rotationsmatrix</string>
+    <string name="enabled" translation_description="Generic status value meaning a feature or sensor is enabled/active">Aktiveret</string>
+    <string name="disabled" translation_description="Generic status value meaning a feature or sensor is disabled/inactive">Deaktiveret</string>
+    <string name="permission_disabled" translation_description="Status value shown when a feature is unavailable because its permission was not granted">Tilladelse deaktiveret</string>
+    <string name="no_gps" translation_description="Status value shown in diagnostics when no GPS provider is available">Ingen GPS</string>
+    <string name="connected" translation_description="Network status value shown when the device has an active network connection">Forbundet</string>
+    <string name="disconnected" translation_description="Network status value shown when the device has no network connection">Afbrudt</string>
+    <string name="wifi" translation_description="Network type suffix appended to the connection status (e.g. \'Connected (wifi)\'). Note the leading space.">(wifi)</string>
+    <string name="cell_network" translation_description="Network type suffix appended to the connection status (e.g. \'Connected (cell)\'). Note the leading space.">(mobil)</string>
+    <string name="menu_calibrate" translation_description="Menu item label to open the compass calibration screen">Kalibrering</string>
+    <string name="compass_calibration_activity_heading_compass" translation_description="Static label in the compass calibration screen placed inline to the left of the live compass accuracy value (e.g. displayed as \'Compass - Accuracy: High\')">Kompas -</string>
+    <string name="compass_calibration_activity_do_not_show_this_again" translation_description="Checkbox label in the compass calibration dialog to suppress future automatic appearances">Vis ikke igen</string>
+    <string name="compass_calibration_activity_warning" translation_description="Heading/reason text shown in the compass calibration dialog when it opens automatically due to low accuracy">Din telefons kompas kræver opmærksomhed</string>
+    <string name="compass_calibration_activity_user_heading" translation_description="Heading shown in the compass calibration dialog when the user opens it manually from the menu">Din telefons kompas</string>
+    <string name="compass_calib_what_to_do" translation_description="Information for the user on how to calibrate the compass when the dialog auto-opens. Placeholder is the video URL"><![CDATA[Sky Map er afhængig af dit telefons indbyggede kompassensor. Hvis nøjagtigheden vist ovenfor er lav, skal sensoren "nulstilles" ved at bevæge telefonen i en ottetal-bevægelse: %s.<br/><br/>
+<b>Vigtigt:</b> Kalibrering er en hardwareproces, der håndteres af din enhed. Selvom det forbedrer sensorens pålidelighed, kan ekstern magnetisk interferens stadig forårsage en "bias" eller let drift. Dette er en fysisk begrænsning ved mobile kompasser og ikke en fejl i appen. Se <i>Fejlfinding</i> i <i>Hjælp</i> for andre ting at prøve.]]></string>
+    <string name="compass_calib_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they invoke the calibration dialog. Placeholder is the video URL"><![CDATA[Din telefon rapporterer sin kompasnøjagtighed som vist ovenfor. For at forbedre dette skal du udføre en figur-8-bevægelse med din enhed (%s).<br/><br/>
+<b>Bemærkning om nøjagtighed:</b> Kalibrering er et hardwareniveau-krav på din telefon, ikke en Sky Map-indstilling. Selv når den er kalibreret, kan lokale magnetfelter (som bilkontrolpaneler eller magneter) forårsage en lille skævhed i retningen. Se <i>Fejlfinding</i> i <i>Hjælp</i> for andre ting at prøve.]]></string>
+    <string name="compass_low_accuracy_toast" translation_description="Brief toast shown when compass accuracy is low and the user has disabled the calibration dialog">Din telefons kompas rapporterer lav nøjagtighed</string>
+    <string name="sensor_reverse_preference_title" translation_description="Preference title for reversing the magnetic Z-axis sensor reading, a fix for certain phones with incorrectly implemented sensors">Omvendt magnetisk Z</string>
+    <string name="sensor_reverse_preference_summary" translation_description="Summary for the Reverse Magnetic Z preference">Rettelse for telefoner med forkert implementerede sensorer - kræver genstart</string>
+    <string name="whats_new_dialog_title" translation_description="Title of the dialog shown on first launch after an update, listing new features">Hvad er nyt</string>
+    <string name="disable_gyro_preference_title" translation_description="Preference title for disabling the gyroscope sensor">Deaktiver gyroskop</string>
+    <string name="disable_gyro_preference_summary" translation_description="Explanation of the disable gyroscope preference and when to use it">
+    Ikke alle enheder har et gyroskop - hvis din har det, får du bedre resultater med det aktiveret og dette felt umarkeret. På den anden side, hvis din enhed ikke har et gyroskop, vil Sky Map sandsynligvis ikke fungere, hvis du fjerner markeringen fra dette felt.
+    </string>
+    <string name="rotate_horizon_preference_title" translation_description="Preference title for choosing the view/pointing direction mode">Visningsretning</string>
+    <string name="auto_level_horizon_preference_title" translation_description="Preference title for the auto-level horizon feature in manual mode">Auto-niveau horisont</string>
+    <string name="auto_level_horizon_preference_summary" translation_description="Summary for the auto-level horizon preference">
+    I manuel tilstand vender horisonten gradvist tilbage til vandret, når du løfter dine fingre
+    </string>
+
+    <string name="rotate_horizon_preference_summary" translation_description="Explanation of the view direction preference, covering both landscape rotation and pointer modes">
+    Roter horisont 90 grader (for enheder med tvunget landskabstilstand) eller brug pegepegertilstand for at vise hvad toppen af telefonen peger på (se hjælpetekst).
+    </string>
+
+    <string name="show_object_info_pref_title" translation_description="Preference title for showing info cards when tapping objects">Vis info ved tryk</string>
+    <string name="show_object_info_pref_summary" translation_description="Preference summary for the tap info feature">Tryk på himmellegemer for at lære om dem</string>
+    <string name="show_object_info_auto_mode_title" translation_description="Preference title for enabling info cards in auto/sensor mode">Infokort i automatisk tilstand</string>
+    <string name="show_object_info_auto_mode_summary" translation_description="Preference summary for auto mode info cards">Vis også infokort ved tryk på objekter i automatisk (sensor) tilstand</string>
+    <string name="object_info_funfact_label" translation_description="Label before the fun fact in info card">Vidste du:</string>
+    <string name="object_info_also_known_as" translation_description="Subtitle showing alternate names for a celestial object, e.g. \'Also known as: NGC 253 · Silver Dollar Galaxy\'">Også kendt som: %1$s</string>
+    <string name="object_info_see_also_label" translation_description="Label for the see also section in info card">Se også:</string>
+    <string name="object_info_distance_label" translation_description="Label for distance field">Afstand:</string>
+    <string name="object_info_size_label" translation_description="Label for size field">Størrelse:</string>
+    <string name="object_info_mass_label" translation_description="Label for mass field">Masse:</string>
+    <string name="object_info_spectral_label" translation_description="Label for spectral class">Spektral:</string>
+    <string name="object_info_magnitude_label" translation_description="Label for apparent magnitude">Størrelse:</string>
+    <string name="object_info_image_content_description" translation_description="Accessibility description for celestial object photo">Foto af himmellegeme</string>
+    <string name="object_info_tap_to_expand" translation_description="Hint shown on image to tap to expand">Tryk for at udvide</string>
+    <string name="object_info_tap_to_close" translation_description="Hint shown on expanded image to tap to close">Tryk for at lukke</string>
+    <!-- tm:omitted name="action_find_in_sky_map" reason="identical_to_source" -->
+    <string name="auto_level_horizon_on" translation_description="Toast message when auto-level horizon is enabled">Auto-niveau horisont til</string>
+    <string name="auto_level_horizon_off" translation_description="Toast message when auto-level horizon is disabled">Auto-niveau horisont fra</string>
+
+    <string name="warm_welcome_title" translation_description="Title of the Warm Welcome screen">Velkommen til Sky Map</string>
+    <string name="warm_welcome_slide1_title" translation_description="Title for the first slide of the Warm Welcome">Udforsk universet</string>
+    <string name="warm_welcome_slide1_desc" translation_description="Description for the first slide of the Warm Welcome">
+    Brug lagene til venstre til at filtrere stjerner, stjernebilleder, planeter og meget mere. Tryk på Vortex for at rejse gennem tiden, eller på Øjet for nattilstand.
+    <b>Vortex</b> to travel through time, or the <b>Eye</b> for night mode.</string>
+    <string name="warm_welcome_slide2_title" translation_description="Title for the second slide of the Warm Welcome">Naviger på himlen</string>
+    <string name="warm_welcome_slide2_desc" translation_description="Description for the second slide of the Warm Welcome">
+    Peg din telefon for at se omkring i Auto-tilstand, eller tryk for at skifte til Manuel og udforsk ved at stryge. Dobbelt-tryk i Manuel for at nulstille din horisont.
+    <b>Auto Mode</b>, or tap to switch to <b>Manual</b> and explore by swiping. Double-tap in Manual to reset your horizon.</string>
+    <string name="warm_welcome_slide2_info_desc" translation_description="Description about info cards on the second slide">
+    Tryk på ethvert objekt i manuel tilstand for at vise informationskort med sjove fakta og himmeldetaljer.
+    </string>
+    <string name="warm_welcome_slide3_title" translation_description="Title for the third slide of the Warm Welcome">Sensorer og kalibrering</string>
+    <string name="warm_welcome_slide3_desc" translation_description="Description for the third slide of the Warm Welcome">Sky Map bruger din telefons sensorer til at justere efter stjernerne.</string>
+    <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message when sensors are missing">
+    Dit enhed mangler tilsyneladende de påkrævede sensorer, der er nødvendige for automatisk sporing. Bare rolig – du kan stadig udforske hele universet i Manuel-tilstand!
+    <b>Manual Mode</b>!</string>
+    <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration text on slide 3">
+    For at holde tingene nøjagtige skal du give din telefon en hurtig figur-8-bevægelse fra tid til anden.
+    <b>figure-8</b> wave every once in a while.</string>
+
+    <string name="tutorial_planets" translation_description="Tutorial annotation for planets layer">Planeter</string>
+    <string name="tutorial_meteors" translation_description="Tutorial annotation for meteors layer">Meteorer</string>
+    <string name="tutorial_grid" translation_description="Tutorial annotation for grid layer">Gitter</string>
+    <string name="tutorial_night_mode" translation_description="Tutorial annotation for night mode">Nattilstand</string>
+    <string name="tutorial_time_travel" translation_description="Tutorial annotation for time travel">Tidsrejse</string>
+    <string name="tutorial_manual_auto" translation_description="Tutorial annotation for manual/auto toggle">Manuel/Auto</string>
+
+    <string name="warm_welcome_skip" translation_description="Button to skip the Warm Welcome">Spring over</string>
+    <string name="warm_welcome_next" translation_description="Button to go to the next slide">Næste</string>
+    <string name="warm_welcome_finish" translation_description="Button to finish the Warm Welcome and start exploring. Needs to be short - the width of 9 letter Ms maximum.">Start!</string>
+    <string name="warm_welcome_do_not_show" translation_description="Checkbox to not show the Warm Welcome again">Vis ikke dette automatisk igen</string>
+    <string name="menu_tutorial" translation_description="Menu item for re-showing the warm welcome tutorial">Vejledning</string>
+    <string name="warm_welcome_sensor_ok" translation_description="Status when a sensor is working fine">Fungerer</string>
+    <string name="warm_welcome_sensor_missing" translation_description="Status when a sensor is missing">Mangler</string>
+    <string name="preferences_auto_mode_title" translation_description="Label for the toggle between manual and automatic modes">Manuel / Auto-tilstand</string>
+</resources>

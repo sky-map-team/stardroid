@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+    <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Vitajte v Sky Map</h2>
+<p>Noví používatelia sú privítaní interaktívnym sprievodcom, ktorý skontroluje senzory vášho zariadenia a rýchlo vás uvedie do pozorovania hviezd.</p>
+<h2>Lepšia poloha</h2>
+<p>Spracovanie polohy bolo úplne prepracované — jasnejšie stavové správy, indikátor priebehu počas určovania vašej polohy a opravy mnohých dlhodobých chýb. K dispozícii je tiež nová mapa, ktorá vám pomôže vizuálne potvrdiť vašu polohu.</p>
+<h2>Vyhľadávanie</h2>
+<p>Teraz môžete vyhľadávať podľa súradníc RA a Dec, ako aj podľa názvu objektu. Vrstva vyhľadávania sa tiež aktualizuje tak, aby zobrazila "Nájdené: X", keď sa váš cieľ dostane do stredu obrazovky.</p>]]></string>
+    </resources>

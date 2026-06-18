@@ -1,132 +1,163 @@
 # Sky Map — Troubleshooting & FAQ
 
-For general help and a feature overview, see [help.md](help.md).
-
+For a general feature overview, see [help.md](help.md).
 
 ---
 
 ## The map is pointing in the wrong direction or is inaccurate
 
-To produce an accurate sky map, Sky Map needs three things: the direction your phone is facing,
-where you are on the planet, and the current time. If the map looks wrong, one of these is likely
-off.
+Sky Map needs three things to show the correct sky: the direction your phone is facing, where you
+are on the planet, and the current time. If the map looks wrong, one of these is likely off.
 
-### Phone direction
+### Phone direction (the most common cause by far)
 
-The most common cause is the device's compass providing Sky Map with an incorrect direction.
-**This is a hardware issue — it has nothing to do with Sky Map itself.** Sky Map can only work
-with the data the sensor provides.
+Sky Map reads direction data from your phone's built-in compass sensor (magnetometer). If the
+sensor gives a wrong reading, the map will point the wrong way — and that is a phone hardware
+issue, not a Sky Map bug. Sky Map cannot automatically correct what the sensor reports, though a
+manual offset is available in Settings for phones with a consistent directional error.
 
-Things to try:
+**"I calibrated it but it's still wrong."** This is the most common misunderstanding. Calibration
+and accuracy are two different things:
 
-- **Calibrate the compass:** Wave your phone in a slow, smooth figure-8 motion. You may need to
-  repeat this occasionally — it is a hardware-level process, not something Sky Map controls.
-- **Remove magnetic interference:** Metal structures, car dashboards, and magnets in phone cases
-  are common culprits. Move away from them and try again.
-- **Toggle Magnetic Correction:** Go to **Settings → Location** and try switching this on or off.
-  In some parts of the world, magnetic north and true north differ by 20 degrees or more — this
-  setting corrects for that.
-- **Manual compass offset:** If your compass has a consistent offset, go to
-  **Settings → Sensor Settings (Experts)** and enter an estimate of the offset in degrees. This
-  requires some trial and error.
+- **Calibration** (the figure-8 gesture) asks your phone's hardware to normalize its sensor
+  internally. It removes distortions caused by the phone's own components. Sky Map has no control
+  over this process — it is handled entirely by the phone.
+- **Accuracy** is whether that normalised sensor is actually pointing in the right direction. A
+  calibrated compass is not necessarily an accurate one.
 
-See [About phone compasses](#about-phone-compasses) for a deeper explanation of how phone compasses
-work and why they can go wrong.
+Even after a successful calibration, external magnetic interference will still shift the reading:
+
+| Source | Effect |
+|---|---|
+| Metal structures, reinforced concrete | Can deflect the magnetic field by 5–30° |
+| Car dashboards | Very common — many contain magnets and motor components |
+| Magnetic or RFID blocking phone cases | Extremely common cause of persistent compass errors |
+| Nearby electronics | Smaller effect but can add up |
+
+The Earth's magnetic field is a weak signal. Your phone's sensor has no way of knowing it's
+sitting next to a source of interference — it just reports what it measures.
+
+**Things to try, in order:**
+
+1. **Move to open ground.** Go somewhere flat and away from buildings, vehicles, and metal
+   structures. If the map improves, magnetic interference was the cause — not Sky Map.
+2. **Perform the figure-8 gesture** — wave your phone slowly in a large, smooth figure-8 shape.
+   You may need to repeat several times. The compass accuracy indicator in the calibration dialog
+   shows whether the phone has accepted the calibration.
+3. **Remove your phone case.** Magnetic or RFID-blocking cases are a very common culprit. Try without it.
+4. **Toggle Magnetic Correction.** Go to **Settings → Location**. In some parts of the world,
+   magnetic north and true north differ by 20° or more. Switching this on or off can sometimes
+   dramatically improve alignment.
+5. **Use a manual compass offset.** If your phone has a consistent directional error regardless of
+   environment, go to **Settings → Sensor Settings (Experts)** and enter an offset in degrees.
+   Finding the right value may take some trial and error. This is a workaround for phones with
+   persistently biased hardware.
+
+> **If a recent phone update broke your compass:** this is unfortunately common. Android updates
+> and manufacturer firmware patches can reset or alter how the sensor is calibrated. Sky Map's
+> sensor code has barely changed in years — if it worked before a system update, the update is
+> almost certainly what changed, not Sky Map.
 
 ### Location
 
-Sky Map must know where on Earth you are to draw the correct sky. Without this, Sky Map defaults
-to 0° latitude / 0° longitude — a point in the middle of the ocean — and the map will look
-completely wrong wherever you are.
+Sky Map must know where on Earth you are to draw the correct sky. Without location access it
+defaults to 0° latitude / 0° longitude — a point in the ocean — and the map will look completely
+wrong anywhere else.
 
-**A telltale symptom:** if Polaris (the Pole Star) appears near the horizon instead of high in the
-northern sky, Sky Map almost certainly doesn't know your location.
+**Telltale symptom:** Polaris (the Pole Star) appearing near the horizon rather than high in the
+northern sky almost always means Sky Map doesn't know your location.
 
 To fix:
 
-- Grant Sky Map location permission. Open your device's **Settings → Apps → Sky Map → Permissions**
-  and enable **Location**. Sky Map should have requested this when it first launched — if you
-  declined, this is the most likely cause.
-- Open the **Diagnostics** page (overflow menu) and confirm that the latitude and longitude shown
-  there look correct for where you are.
+- Grant location permission. Open **Settings → Apps → Sky Map → Permissions** and enable
+  **Location**. If you declined the permission on first launch, this is the most likely cause.
+- Open Sky Map's **Location Settings** to see a map of your current location. This is the easiest
+  way to confirm that Sky Map has your location set correctly.
+- Open the **Diagnostics** page (overflow menu) and confirm the latitude and longitude shown there
+  are correct for where you are.
 
 See also: [Google's guide to app permissions](https://support.google.com/googleplay/answer/6270602?p=app_permissions_m)
 
 ### Time
 
-Sky Map uses your device's clock and time zone to calculate where objects appear in the sky. Time
-errors are uncommon, but an incorrect time zone in particular can shift the entire sky by several
-hours.
+Sky Map uses your device's clock and time zone. An incorrect time zone in particular can shift the
+entire sky by several hours — making it look completely wrong even with a good compass and correct
+location.
 
-Open the **Diagnostics** page and confirm that the time and time zone shown there are correct. If
-they are wrong, that is a device clock issue rather than a Sky Map problem — correct it in your
-device's system settings.
+Open the **Diagnostics** page and check that the time and time zone shown are correct. If they
+are wrong, fix them in your device's system settings.
 
 ---
 
 ## About phone compasses
 
-Sky Map doesn't calculate your orientation from scratch — it reads the data provided by your
-phone's built-in magnetometer. If the phone reports that its sensor is uncalibrated, Sky Map
-displays an accuracy warning.
+This section explains the physics behind why phone compasses fail, for users who want a deeper
+understanding.
 
-### What calibration actually does
+### What the figure-8 gesture actually does
 
-Calibration is a hardware-level process that helps the sensor account for "Hard Iron" and "Soft
-Iron" distortions caused by the components inside the phone itself.
+The figure-8 calibration gesture forces your phone's magnetometer to sample the magnetic field
+from many different orientations. The sensor's firmware uses these samples to estimate and cancel
+out "Hard Iron" distortions — constant magnetic fields produced by permanent magnets in the
+phone's own components — and "Soft Iron" distortions from ferrous metals in the chassis that
+distort external fields.
 
-**The goal:** to ensure the sensor sees a consistent "circle" of magnetic data as you rotate the
-phone through all orientations.
+The goal is to make the sensor's response consistent as you rotate the phone through all
+orientations. Think of it as the phone learning to ignore its own internal magnetic noise.
 
-**The reality:** calibration makes the sensor internally consistent, but it does not guarantee that
-it is pointing to True North.
+**What it does not do:** it cannot remove the effect of magnetic sources outside the phone. Once
+calibrated, the sensor faithfully reports the field it is in — including any bias from a nearby
+car dashboard or magnetic case.
 
-### Why the map might still be off — magnetic bias
+### The calibrated-but-inaccurate compass
 
-Even a perfectly calibrated sensor can suffer from magnetic bias. The Earth's magnetic field is a
-relatively weak signal, easily disturbed by:
+This is the crucial distinction most guides skip:
 
-- **Local interference:** metal structures, car dashboards, or magnets in phone cases
-- **Environmental offset:** a calibrated sensor knows how to read itself, but has no way of knowing
-  you're standing next to a refrigerator. This creates a constant bias that shifts the star map
-  regardless of calibration status.
-- **Hardware quality:** some phones simply have poor magnetometers. If yours has a consistent
-  offset of several degrees, the manual compass offset in
-  **Settings → Sensor Settings (Experts)** is your best option.
+- Android reports compass *calibration status* as Unknown → Unreliable → Low → Medium → High.
+  Sky Map displays this status and shows a warning when it is below Medium.
+- Calibration status reflects internal consistency, not pointing accuracy. A sensor with
+  "Accuracy: High" simply means the phone is confident in its own internal calibration — it says
+  nothing about whether the phone is free from external interference.
 
-The figure-8 calibration gesture ([see video](https://www.youtube.com/watch?v=-Uq7AmSAjt8)) forces
-the sensor to sample the magnetic field from many angles, allowing the hardware to filter out
-internal noise. Move to a clear area away from metal objects and magnetic sources before performing
-it.
+A sensor that reads "High" accuracy near a refrigerator will confidently and consistently point in
+the wrong direction.
 
-> This is a physical property of mobile hardware. If the map remains slightly shifted, your
-> environment is likely causing a magnetic bias that the software cannot fully correct.
+### Why hardware quality matters
+
+Not all magnetometers are equal. Some phones — particularly cheaper models or certain
+manufacturer lines — have sensors with a persistent bias of 5–15° regardless of environment or
+calibration. For these devices, the manual compass offset (**Settings → Sensor Settings
+(Experts)**) is the best available workaround. No app can compensate for a fundamentally poor
+sensor.
+
+> Sky Map can only display what your phone reports. If the phone's compass is biased, the map
+> will be biased by the same amount. This is a physical property of mobile hardware, not a
+> software problem.
 
 ---
 
 ## The map doesn't move
 
-- Make sure you haven't switched into Manual Mode — tap the sensor icon to return to Automatic Mode.
-- Your phone must have at minimum a compass (magnetometer) and an accelerometer. A gyroscope is
-  strongly recommended. Check the **Diagnostics** page (overflow menu) to see which sensors your
-  device has — missing sensors show as `--,--,--`.
-- If you have all the required sensors but the map is still stuck, try the figure-8 compass
-  calibration — see [About phone compasses](#about-phone-compasses).
+- Make sure you haven't switched to Manual Mode — tap the sensor icon to return to Automatic Mode.
+- Your phone needs at minimum a compass (magnetometer) and an accelerometer. Check the
+  **Diagnostics** page — missing sensors appear as `--,--,--`.
+- If sensors are present but the map is stuck, try the figure-8 calibration gesture.
 
 ---
 
 ## The map is jittery
 
-- If your phone lacks a gyroscope, some jitter is normal. Enable **Disable Gyro** under
-  **Settings → Sensor Settings (Experts)** to use the alternative sensor mode.
-- Try adjusting **Sensor Speed** and **Sensor Damping** in the same settings section.
+- Some jitter is normal if your phone has no gyroscope. Enable **Disable Gyro** under
+  **Settings → Sensor Settings (Experts)** to switch to the alternative sensor mode.
+- Adjust **Sensor Speed** and **Sensor Damping** in the same section to tune the response.
 
 ---
 
 ## Do I need an internet connection?
 
 No. Sky Map works fully offline. An internet connection is only needed to:
-- Look up a location by place name (you can enter lat/long manually instead)
+
+- Look up a location by place name (you can enter lat/long directly instead)
 - Load Hubble Gallery images (previously cached images may still be available offline)
 
 ---
@@ -134,16 +165,15 @@ No. Sky Map works fully offline. An internet connection is only needed to:
 ## Can I help test the latest features?
 
 Yes! Join the [beta testing program](https://play.google.com/apps/testing/com.google.android.stardroid)
-on Google Play to get the latest version before it goes public.
-
+on Google Play.
 
 ---
 
 ## Still stuck?
 
 Open the **Diagnostics** page from the overflow menu and email us at **skymapdevs@gmail.com** with
-a screenshot. It contains your sensor status, location, and time info which helps us diagnose
-problems quickly.
+a screenshot. It contains your sensor readings, location, and time info which helps us understand
+what's happening on your device.
 
 ---
 

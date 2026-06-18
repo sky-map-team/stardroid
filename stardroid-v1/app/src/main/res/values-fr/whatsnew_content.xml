@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+    <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Bienvenue dans Sky Map</h2>
+<p>Les nouveaux utilisateurs bénéficient d\'une expérience d\'intégration guidée qui vérifie les capteurs de votre appareil et vous permet de commencer l\'observation du ciel rapidement.</p>
+<h2>Meilleure localisation</h2>
+<p>La gestion de la localisation a été complètement repensée — messages d\'état plus clairs, un indicateur de progression pendant la résolution de votre position, et corrections de nombreux bugs persistants. Il y a aussi une nouvelle carte pour vous aider à confirmer visuellement votre localisation.</p>
+<h2>Recherche</h2>
+<p>Vous pouvez maintenant rechercher par coordonnées RA et Dec ainsi que par nom d\'objet. L\'overlay de recherche se met également à jour pour afficher « Trouvé : X » lorsque votre cible se déplace vers le centre de l\'écran.</p>]]></string>
+    </resources>

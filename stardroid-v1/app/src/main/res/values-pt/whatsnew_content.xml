@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+    <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Bem-vindo ao Sky Map</h2>
+<p>Novos usuários recebem uma experiência de integração guiada que verifica os sensores do seu dispositivo e permite que você comece a observar as estrelas rapidamente.</p>
+<h2>Localização Melhorada</h2>
+<p>O tratamento de localização foi completamente reformulado — mensagens de status mais claras, um indicador de progresso enquanto sua posição está sendo resolvida, e correções para muitos bugs antigos. Há também um novo mapa para ajudá-lo a confirmar sua localização visualmente.</p>
+<h2>Pesquisa</h2>
+<p>Agora você pode pesquisar por coordenadas de AR e Dec, bem como pelo nome do objeto. A sobreposição de pesquisa também é atualizada para mostrar "Encontrado: X" quando seu alvo se move para o centro da tela.</p>]]></string>
+    </resources>

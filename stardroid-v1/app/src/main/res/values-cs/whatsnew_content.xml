@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+    <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Vítejte v aplikaci Sky Map</h2>
+<p>Noví uživatelé jsou vítáni průvodcem onboardingu, který zkontroluje senzory vašeho zařízení a rychle vás uvedou do pozorování hvězd.</p>
+<h2>Lepší určení polohy</h2>
+<p>Zpracování polohy bylo zcela přepracováno — jasnější stavové zprávy, indikátor průběhu při určování vaší polohy a opravy mnoha dlouhodobých chyb. K dispozici je také nová mapa, která vám pomůže vizuálně potvrdit vaši polohu.</p>
+<h2>Hledání</h2>
+<p>Nyní můžete vyhledávat podle souřadnic RA a Dec stejně jako podle názvu objektu. Překryvná vrstva hledání se také aktualizuje a zobrazuje "Nalezeno: X", když se váš cíl dostane do středu obrazovky.</p>]]></string>
+    </resources>

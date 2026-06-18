@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+    <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Sky Mapへようこそ</h2>
+<p>新規ユーザーは、デバイスセンサーをチェックして素早く星空観察を始められるガイド付きオンボーディング体験でお迎えします。</p>
+<h2>より良い位置情報</h2>
+<p>位置情報の処理が完全に再設計されました。より明確なステータスメッセージ、位置情報の解決中に表示される進捗インジケーター、そして長年の多くのバグ修正が含まれています。また、位置情報を視覚的に確認するのに役立つ新しい地図も追加されました。</p>
+<h2>検索</h2>
+<p>赤経と赤緯の座標、またはオブジェクト名で検索できるようになりました。検索オーバーレイは、ターゲットが画面の中央にドリフトすると「見つかりました: X」と表示されるようになります。</p>]]></string>
+    </resources>

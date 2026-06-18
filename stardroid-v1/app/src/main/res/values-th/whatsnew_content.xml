@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+    <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>ยินดีต้อนรับสู่ Sky Map</h2>
+<p>ผู้ใช้ใหม่จะได้รับประสบการณ์การเริ่มต้นแบบมีคำแนะนำที่ตรวจสอบเซ็นเซอร์ของอุปกรณ์ของคุณและช่วยให้คุณเริ่มชมดาวได้อย่างรวดเร็ว</p>
+<h2>ตำแหน่งที่ดีขึ้น</h2>
+<p>การจัดการตำแหน่งได้รับการออกแบบใหม่อย่างสมบูรณ์ — ข้อความสถานะที่ชัดเจนขึ้น ตัวบ่งชี้ความคืบหน้าขณะที่กำลังแก้ไขตำแหน่งของคุณ และการแก้ไขข้อบกพร่องมากมายที่ยังคงอยู่มาเป็นเวลานาน นอกจากนี้ยังมีแผนที่ใหม่เพื่อช่วยให้คุณยืนยันตำแหน่งของคุณด้วยสายตา</p>
+<h2>ค้นหา</h2>
+<p>ตอนนี้คุณสามารถค้นหาตามพิกัด RA และ Dec รวมถึงชื่อวัตถุได้ โอเวอร์เลย์การค้นหายังอัปเดตเพื่อแสดง "พบ: X" เมื่อเป้าหมายของคุณเลื่อนเข้าไปในจุดศูนย์กลางของหน้าจอ</p>]]></string>
+    </resources>

@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+    <string-array name="sensor_speed">
+        <item translation_description="Slow sensor speed">Långsam</item>
+        <item translation_description="Normal sensor speed">Medel</item>
+        <item translation_description="Fast sensor speed">Snabb</item>
+    </string-array>
+    <string-array name="sensor_damping">
+        <item translation_description="Low sensor damping factor - this will make the app jittery">Skakig</item>
+        <item translation_description="Medium sensor damping factor - this will make the app slightly jittery">Medel</item>
+        <item translation_description="Extra High sensor damping factor">Lagom</item>
+        <item translation_description="Really High sensor damping factor - this will make the app sluggish">Trög</item>
+    </string-array>
+    <string-array name="viewing_direction">
+        <item translation_description="Normal viewing">Normal</item>
+        <item translation_description="Rotates the screen by 90 degrees">Roterad horisont</item>
+        <item translation_description="Shows the sky as pointed at by the long edge of the phone">Pekarläge</item>
+    </string-array>
+    <string-array name="auto_dim_texts">
+        <item translation_description="Dimmest screen setting">Mycket svag</item>
+        <item translation_description="Leave it on the system setting">Systemstandard</item>
+        <item translation_description="The setting used for the last 15 years">Klassisk</item>
+    </string-array>
+    <string-array name="font_size_texts">
+        <item translation_description="Smallest font size">Liten</item>
+        <item translation_description="Normal font size">Medel</item>
+        <item translation_description="Large font size">Stor</item>
+        <item translation_description="Largest font size">Extra stor</item>
+    </string-array>
+</resources>

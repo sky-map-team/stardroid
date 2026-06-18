@@ -1,0 +1,1457 @@
+// Copyright 2010 Google Inc.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+package com.google.android.stardroid.activities;
+
+import android.Manifest;
+import android.app.SearchManager;
+import android.content.pm.PackageManager;
+import java.lang.ref.WeakReference;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
+import android.graphics.Rect;
+import android.hardware.Sensor;
+import android.hardware.SensorManager;
+import android.media.MediaPlayer;
+import android.opengl.GLSurfaceView;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.PowerManager;
+import android.util.Log;
+import android.view.GestureDetector;
+import android.view.KeyEvent;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import android.app.ActionBar;
+
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.annotation.StringRes;
+import androidx.annotation.VisibleForTesting;
+import androidx.core.app.ActivityCompat;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
+import androidx.fragment.app.FragmentManager;
+
+import com.google.android.stardroid.ApplicationConstants;
+import com.google.android.stardroid.R;
+import com.google.android.stardroid.activities.dialogs.CreditsDialogFragment;
+import com.google.android.stardroid.activities.dialogs.EulaDialogFragment;
+import com.google.android.stardroid.activities.dialogs.HelpDialogFragment;
+import com.google.android.stardroid.activities.dialogs.AcquiringLocationTimeoutDialogFragment;
+import com.google.android.stardroid.activities.dialogs.LocationPermissionPermanentlyDeniedDialogFragment;
+import com.google.android.stardroid.activities.dialogs.LocationPermissionRationaleDialogFragment;
+import com.google.android.stardroid.activities.dialogs.ManualLocationEntryDialogFragment;
+import com.google.android.stardroid.activities.dialogs.MultipleSearchResultsDialogFragment;
+import com.google.android.stardroid.activities.dialogs.SearchResultItem;
+import com.google.android.stardroid.activities.dialogs.NoSearchResultsDialogFragment;
+import com.google.android.stardroid.activities.dialogs.NoSensorsDialogFragment;
+import com.google.android.stardroid.activities.dialogs.ObjectInfoDialogFragment;
+import com.google.android.stardroid.activities.dialogs.TimeTravelDialogFragment;
+import com.google.android.stardroid.activities.util.ActivityLightLevelChanger.NightModeable;
+import com.google.android.stardroid.activities.util.ActivityLightLevelManager;
+import com.google.android.stardroid.activities.util.FullscreenControlsManager;
+import com.google.android.stardroid.activities.util.GooglePlayServicesChecker;
+import com.google.android.stardroid.activities.util.MenuUtils;
+import com.google.android.stardroid.activities.util.NightModeHelper;
+import com.google.android.stardroid.activities.util.TooltipUtil;
+import com.google.android.stardroid.control.AstronomerModel;
+import com.google.android.stardroid.control.AstronomerModel.Pointing;
+import com.google.android.stardroid.control.ControllerGroup;
+import com.google.android.stardroid.control.LocationController;
+import com.google.android.stardroid.control.LocationSource;
+import com.google.android.stardroid.control.LocationState;
+import com.google.android.stardroid.control.MagneticDeclinationCalculatorSwitcher;
+import com.google.android.stardroid.control.TransitioningCompositeClock;
+import com.google.android.stardroid.education.ObjectInfo;
+import com.google.android.stardroid.education.ObjectInfoRegistry;
+import com.google.android.stardroid.education.ObjectInfoTapHandler;
+import com.google.android.stardroid.layers.LayerManager;
+import com.google.android.stardroid.math.CoordinateManipulationsKt;
+import com.google.android.stardroid.math.MathUtils;
+import com.google.android.stardroid.math.RaDec;
+import com.google.android.stardroid.math.Vector3;
+import com.google.android.stardroid.renderer.RendererController;
+import com.google.android.stardroid.renderer.SkyRenderer;
+import com.google.android.stardroid.search.CoordinateParser;
+import com.google.android.stardroid.search.SearchResult;
+import com.google.android.stardroid.touch.DragRotateZoomGestureDetector;
+import com.google.android.stardroid.touch.GestureDetectorFactory;
+import com.google.android.stardroid.touch.GestureInterpreter;
+import com.google.android.stardroid.touch.GestureInterpreterFactory;
+import com.google.android.stardroid.util.Analytics;
+import com.google.android.stardroid.util.AnalyticsInterface;
+import com.google.android.stardroid.util.Experiment;
+import com.google.android.stardroid.util.ExperimentConfig;
+import com.google.android.stardroid.util.MiscUtil;
+import com.google.android.stardroid.util.SensorAccuracyMonitor;
+import com.google.android.stardroid.views.ButtonLayerView;
+import com.google.android.stardroid.views.PreferencesButton;
+
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.Locale;
+
+import javax.inject.Inject;
+import javax.inject.Named;
+import javax.inject.Provider;
+
+import dagger.hilt.android.AndroidEntryPoint;
+
+/**
+ * The main map-rendering Activity.
+ */
+@AndroidEntryPoint
+public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivity
+    implements OnSharedPreferenceChangeListener, NightModeable,
+    ObjectInfoDialogFragment.OnFindClickedListener,
+    ObjectInfoDialogFragment.OnSeeAlsoClickedListener {
+  private static final int TIME_DISPLAY_DELAY_MILLIS = 1000;
+  // Extra delay after the clock transition settles before querying solar-system
+  // positions.
+  private static final long SEARCH_POST_TRANSITION_DELAY_MS = 500;
+
+  /**
+   * Passed to the renderer to get per-frame updates from the model.
+   *
+   * @author John Taylor
+   */
+  private static final class RendererModelUpdateClosure implements Runnable {
+    // Freeze text orientation when pointing within 20° of zenith or nadir; thaw above 30°.
+    private static final float ZENITH_FREEZE_COS = (float) Math.cos(Math.toRadians(20));
+    private static final float ZENITH_UNFREEZE_COS = (float) Math.cos(Math.toRadians(30));
+
+    private final RendererController rendererController;
+    private final AstronomerModel model;
+    private float frozenTextAngle = 0f;
+    private boolean textAngleFrozen = false;
+
+    public RendererModelUpdateClosure(AstronomerModel model,
+        RendererController rendererController,
+        SharedPreferences sharedPreferences) {
+      this.model = model;
+      this.rendererController = rendererController;
+      // TODO(jontayler): figure out why we need to do this here.
+      updateViewDirectionMode(model, sharedPreferences);
+    }
+
+    @Override
+    public void run() {
+      Pointing pointing = model.getPointing();
+      float directionX = pointing.getLineOfSightX();
+      float directionY = pointing.getLineOfSightY();
+      float directionZ = pointing.getLineOfSightZ();
+
+      float upX = pointing.getPerpendicularX();
+      float upY = pointing.getPerpendicularY();
+      float upZ = pointing.getPerpendicularZ();
+
+      rendererController.queueSetViewOrientation(directionX, directionY, directionZ, upX, upY, upZ);
+
+      Vector3 zenith = model.getZenith();
+      float dotWithZenith = directionX * zenith.x + directionY * zenith.y + directionZ * zenith.z;
+
+      Vector3 up = model.getPhoneUpDirection();
+      //noinspection SuspiciousNameCombination swapping x and y here is actually correct
+      float angleVertClockwiseFromYaxisInRadians = MathUtils.atan2(up.x, up.y);
+      boolean nearPole = dotWithZenith >= ZENITH_FREEZE_COS || dotWithZenith <= -ZENITH_FREEZE_COS;
+      boolean farFromPole = dotWithZenith < ZENITH_UNFREEZE_COS && dotWithZenith > -ZENITH_UNFREEZE_COS;
+      if (textAngleFrozen) {
+        if (farFromPole) {
+          textAngleFrozen = false;
+        }
+      } else {
+        if (nearPole) {
+          textAngleFrozen = true;
+          frozenTextAngle = angleVertClockwiseFromYaxisInRadians;
+        }
+      }
+      rendererController.queueTextAngle(
+          textAngleFrozen ? frozenTextAngle : angleVertClockwiseFromYaxisInRadians);
+      rendererController.queueViewerUpDirection(zenith.copyForJ());
+
+      float fieldOfView = model.getFieldOfView();
+      rendererController.queueFieldOfView(fieldOfView);
+    }
+  }
+
+  private static void updateViewDirectionMode(AstronomerModel model,
+      SharedPreferences sharedPreferences) {
+    String viewDirectionMode = sharedPreferences.getString(ApplicationConstants.VIEW_MODE_PREF_KEY, "STANDARD");
+    switch (viewDirectionMode) {
+      case "ROTATE90":
+        model.setViewDirectionMode(AstronomerModel.ViewDirectionMode.ROTATE90);
+        break;
+      case "TELESCOPE":
+        model.setViewDirectionMode(AstronomerModel.ViewDirectionMode.TELESCOPE);
+        break;
+      default:
+        model.setViewDirectionMode(AstronomerModel.ViewDirectionMode.STANDARD);
+    }
+  }
+
+  // Activity for result Ids
+  public static final int GOOGLE_PLAY_SERVICES_REQUEST_CODE = 1;// End Activity for result Ids
+
+  private static final float ROTATION_SPEED = 10;
+  private static final String TAG = MiscUtil.getTag(DynamicStarMapActivity.class);
+
+  private ImageButton cancelSearchButton;
+  private TextView searchStatusLabel;
+  private TextView searchPromptText;
+  @Inject
+  ControllerGroup controller;
+  private GestureDetector gestureDetector;
+  @Inject
+  GestureDetectorFactory gestureDetectorFactory;
+  @Inject
+  GestureInterpreterFactory gestureInterpreterFactory;
+  private GestureInterpreter gestureInterpreter;
+  @Inject
+  AstronomerModel model;
+  private RendererController rendererController;
+  private boolean nightMode = false;
+  private volatile boolean searchMode = false;
+  private volatile boolean lastSearchFocusState = false;
+  private Vector3 searchTarget = CoordinateManipulationsKt.getGeocentricCoords(0, 0);
+
+  @Inject
+  SharedPreferences sharedPreferences;
+  @Inject
+  @Nullable
+  SensorManager sensorManager;
+  private GLSurfaceView skyView;
+  @Inject
+  @Nullable
+  PowerManager powerManager;
+  private PowerManager.WakeLock wakeLock;
+  private String searchTargetName;
+  @Inject
+  LayerManager layerManager;
+  // TODO(widdows): Figure out if we should break out the
+  // time dialog and time player into separate activities.
+  private View timePlayerUI;
+  @Inject
+  @Named("timetravel")
+  Provider<MediaPlayer> timeTravelNoiseProvider;
+  @Inject
+  @Named("timetravelback")
+  Provider<MediaPlayer> timeTravelBackNoiseProvider;
+  private MediaPlayer timeTravelNoise;
+  private MediaPlayer timeTravelBackNoise;
+  @Inject
+  Handler handler;
+  @Inject
+  Analytics analytics;
+  @Inject
+  ExperimentConfig experimentConfig;
+  @Inject
+  GooglePlayServicesChecker playServicesChecker;
+  @Inject
+  FragmentManager fragmentManager;
+  @Inject
+  ObjectInfoTapHandler objectInfoTapHandler;
+  @Inject
+  ObjectInfoRegistry objectInfoRegistry;
+  @Inject
+  SensorAccuracyMonitor sensorAccuracyMonitor;
+  @Inject
+  DragRotateZoomGestureDetector dragZoomRotateDetector;
+  private FullscreenControlsManager fullscreenControlsManager;
+
+  @VisibleForTesting
+  public FullscreenControlsManager getFullscreenControlsManager() {
+    return fullscreenControlsManager;
+  }
+
+  // A list of runnables to post on the handler when we resume.
+  private final List<Runnable> onResumeRunnables = new ArrayList<>();
+  private LocationController.LocationStateCallback locationStateListener;
+
+  private ActivityResultLauncher<String> locationPermissionLauncher;
+
+  // We need to maintain references to these objects to keep them from
+  // getting gc'd.
+  @SuppressWarnings("unused")
+  @Inject
+  MagneticDeclinationCalculatorSwitcher magneticSwitcher;
+
+  @Inject
+  @Named("timetravelflash")
+  Animation flashAnimation;
+  @Inject
+  ActivityLightLevelManager activityLightLevelManager;
+  private long sessionStartTime;
+
+  @Override
+  public void onCreate(Bundle icicle) {
+    Log.d(TAG, "onCreate at " + System.currentTimeMillis());
+
+    locationPermissionLauncher = registerForActivityResult(
+        new ActivityResultContracts.RequestPermission(),
+        granted -> {
+          LocationController lc = controller.getLocationController();
+          if (granted) {
+            lc.startAuto();
+          } else {
+            lc.onPermissionDenied(
+                ActivityCompat.shouldShowRequestPermissionRationale(
+                    this, Manifest.permission.ACCESS_COARSE_LOCATION));
+          }
+        });
+
+    super.onCreate(icicle);
+
+    sharedPreferences.registerOnSharedPreferenceChangeListener(this);
+
+    // Set up full screen mode, hide the system UI etc.
+    getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON |
+        WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+    // TODO(jontayler): upgrade to
+    // getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN);
+    // when we reach API level 16.
+    // http://developer.android.com/training/system-ui/immersive.html for the right
+    // way
+    // to do it at API level 19.
+    // getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
+
+    playServicesChecker.maybeCheckForGooglePlayServices();
+
+    initializeModelViewController();
+    wireLocationController();
+    checkForSensorsAndMaybeWarn();
+
+    // Search related
+    setDefaultKeyMode(DEFAULT_KEYS_SEARCH_LOCAL);
+
+    if (powerManager != null) {
+      wakeLock = powerManager.newWakeLock(PowerManager.SCREEN_BRIGHT_WAKE_LOCK, TAG);
+    }
+
+    // Were we started as the result of a search?
+    Intent intent = getIntent();
+    Log.d(TAG, "Intent received: " + intent);
+    if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
+      Log.d(TAG, "Started as a result of a search");
+      doSearchWithIntent(intent);
+    }
+
+    ActionBar actionBar = getActionBar();
+    if (actionBar != null) {
+      actionBar.setDisplayShowHomeEnabled(true);
+      actionBar.setDisplayUseLogoEnabled(true);
+    }
+
+    Log.d(TAG, "-onCreate at " + System.currentTimeMillis());
+  }
+
+  @Override
+  public void setNightMode(boolean mode) {
+    nightMode = mode;
+    rendererController.queueNightVisionMode(mode);
+    applyNightModeToUi();
+  }
+
+  private void applyNightModeToUi() {
+    int textColor = nightMode ? getColor(R.color.night_text_color) : Color.WHITE;
+
+    // Action bar background, title text, and logo tint
+    NightModeHelper.applyActionBarNightMode(getActionBar(), this, nightMode);
+
+    // Menu icons (triggers onPrepareOptionsMenu which applies color filters)
+    invalidateOptionsMenu();
+
+    // Layer icon sidebar background tint
+    ButtonLayerView providerButtons = findViewById(R.id.layer_buttons_control);
+    if (providerButtons != null && providerButtons.getBackground() != null) {
+      providerButtons.getBackground().mutate().setColorFilter(
+          nightMode ? getColor(R.color.night_sidebar_bg) : Color.WHITE, PorterDuff.Mode.MULTIPLY);
+    }
+
+    // Layer icon buttons: PreferencesButton handles its own on/off tinting in night
+    // mode.
+    if (providerButtons != null) {
+      for (int i = 0; i < providerButtons.getChildCount(); i++) {
+        View child = providerButtons.getChildAt(i);
+        if (child instanceof PreferencesButton) {
+          ((PreferencesButton) child).setNightMode(nightMode);
+        } else if (child instanceof ImageButton) {
+          if (nightMode) {
+            ((ImageButton) child).setColorFilter(getColor(R.color.night_text_color),
+                PorterDuff.Mode.MULTIPLY);
+          } else {
+            ((ImageButton) child).clearColorFilter();
+          }
+        }
+      }
+    }
+
+    // Manual/auto toggle — webp image, must use MULTIPLY not SRC_ATOP.
+    // Uses uniform tint (not on/off dimming) since both states are equally active.
+    View manualAutoToggle = findViewById(R.id.manual_auto_toggle);
+    if (manualAutoToggle instanceof ImageButton) {
+      if (nightMode) {
+        ((ImageButton) manualAutoToggle).setColorFilter(getColor(R.color.night_text_color),
+            PorterDuff.Mode.MULTIPLY);
+      } else {
+        ((ImageButton) manualAutoToggle).clearColorFilter();
+      }
+    }
+
+    // Search control bar
+    View searchControlBar = findViewById(R.id.search_control_bar);
+    if (searchControlBar != null) {
+      searchControlBar.setBackgroundColor(nightMode ? getColor(R.color.night_bar_bg) : getColor(R.color.day_bar_bg));
+      int[] searchTextIds = { R.id.search_status_label, R.id.search_prompt };
+      for (int id : searchTextIds) {
+        TextView tv = findViewById(id);
+        if (tv != null)
+          tv.setTextColor(textColor);
+      }
+      ImageButton cancelBtn = findViewById(R.id.cancel_search_button);
+      if (cancelBtn != null) {
+        if (nightMode) {
+          cancelBtn.setColorFilter(getColor(R.color.night_text_color), PorterDuff.Mode.MULTIPLY);
+        } else {
+          cancelBtn.clearColorFilter();
+        }
+      }
+    }
+
+    // Time player bar
+    if (timePlayerUI != null) {
+      timePlayerUI.setBackgroundColor(nightMode ? getColor(R.color.night_bar_bg) : getColor(R.color.day_bar_bg));
+      if (timePlayerUI instanceof ViewGroup group) {
+        for (int i = 0; i < group.getChildCount(); i++) {
+          View child = group.getChildAt(i);
+          if (child instanceof RelativeLayout) {
+            child.setBackgroundColor(nightMode ? getColor(R.color.night_bar_bg) : getColor(R.color.day_bar_bg));
+          }
+        }
+      }
+      int[] textViewIds = {
+          R.id.time_travel_status_label,
+          R.id.time_travel_time_readout,
+          R.id.time_travel_speed_label
+      };
+      for (int id : textViewIds) {
+        TextView tv = findViewById(id);
+        if (tv != null)
+          tv.setTextColor(textColor);
+      }
+      // Time player icon and control buttons
+      int[] iconIds = {
+          R.id.time_travel_icon,
+          R.id.time_player_close,
+          R.id.time_player_play_backwards,
+          R.id.time_player_play_stop,
+          R.id.time_player_play_forwards
+      };
+      for (int id : iconIds) {
+        ImageView iv = findViewById(id);
+        if (iv != null) {
+          if (nightMode) {
+            iv.setColorFilter(getColor(R.color.night_text_color), PorterDuff.Mode.MULTIPLY);
+          } else {
+            iv.clearColorFilter();
+          }
+        }
+      }
+    }
+  }
+
+  @Override
+  public boolean onPrepareOptionsMenu(Menu menu) {
+    boolean result = super.onPrepareOptionsMenu(menu);
+    MenuUtils.showOptionalIcons(menu);
+    NightModeHelper.tintMenuIcons(menu, nightMode, this);
+    MenuItem tutorialItem = menu.findItem(R.id.menu_item_tutorial);
+    if (tutorialItem != null) {
+      tutorialItem.setVisible(experimentConfig.isEnabled(Experiment.WARM_WELCOME));
+    }
+    return result;
+  }
+
+  private boolean hasNeededSensors() {
+    if (sensorManager == null) {
+      return false;
+    }
+    if (sensorManager.getDefaultSensor(Sensor.TYPE_ROTATION_VECTOR) != null) {
+      return true;
+    }
+    return sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER) != null
+        && sensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD) != null;
+  }
+
+  private void checkForSensorsAndMaybeWarn() {
+    if (hasNeededSensors()) {
+      Log.i(TAG, "Minimum sensors present");
+      // We want to reset to auto mode on every restart, as users seem to get
+      // stuck in manual mode and can't find their way out.
+      // TODO(johntaylor): this is a bit of an abuse of the prefs system, but
+      // the button we use is wired into the preferences system. Should probably
+      // change this to a use a different mechanism.
+      sharedPreferences.edit()
+          .putBoolean(ApplicationConstants.AUTO_MODE_PREF_KEY, true)
+          .apply();
+      setAutoMode(true);
+      return;
+    }
+    // Missing at least one sensor. Warn the user.
+    handler.post(() -> {
+      if (!sharedPreferences
+          .getBoolean(ApplicationConstants.NO_WARN_ABOUT_MISSING_SENSORS, false)) {
+        Log.d(TAG, "showing no sensor warning");
+        analytics.trackEvent(AnalyticsInterface.NO_SENSORS_WARNING_EVENT, null);
+        if (experimentConfig.isEnabled(Experiment.WARM_WELCOME)) {
+          Toast.makeText(DynamicStarMapActivity.this, R.string.no_sensor_warning,
+              Toast.LENGTH_LONG).show();
+        } else {
+          showDialog(NoSensorsDialogFragment.newInstance(),
+              NoSensorsDialogFragment.class.getSimpleName());
+        }
+      }
+      // Always force manual mode on devices that lack necessary sensors.
+      sharedPreferences.edit()
+          .putBoolean(ApplicationConstants.AUTO_MODE_PREF_KEY, false)
+          .apply();
+      setAutoMode(false);
+    });
+  }
+
+  @Override
+  protected void onPostCreate(Bundle savedInstanceState) {
+    super.onPostCreate(savedInstanceState);
+    // Trigger the initial hide() shortly after the activity has been
+    // created, to briefly hint to the user that UI controls
+    // are available.
+    if (fullscreenControlsManager != null) {
+      fullscreenControlsManager.flashTheControls();
+    }
+  }
+
+  @Override
+  public boolean onCreateOptionsMenu(Menu menu) {
+    super.onCreateOptionsMenu(menu);
+    MenuInflater inflater = getMenuInflater();
+    inflater.inflate(R.menu.main, menu);
+
+    // Beware that items which use actionLayout in the menu xml file need to have their icons set
+    // here.
+    setupActionItem(
+            menu, R.id.menu_item_search, android.R.drawable.ic_menu_search, R.string.menu_search);
+    setupActionItem(
+            menu, R.id.menu_item_dim, android.R.drawable.ic_menu_view, R.string.menu_toggle_dim);
+    setupActionItem(menu, R.id.menu_item_time, R.drawable.time_travel_icon, R.string.menu_time);
+    setupActionItem(
+            menu, R.id.menu_item_settings, android.R.drawable.ic_menu_preferences,
+            R.string.menu_settings);
+
+    return true;
+  }
+
+  private void setupActionItem(Menu menu, int itemId, int iconRes, @StringRes int stringRes) {
+    MenuItem item = menu.findItem(itemId);
+    if (item != null) {
+      View view = item.getActionView();
+      if (view instanceof ImageButton btn) {
+        btn.setImageResource(iconRes);
+        btn.setContentDescription(getString(stringRes));
+        btn.setOnClickListener(v -> onOptionsItemSelected(item));
+        TooltipUtil.setupToastTooltip(btn, getString(stringRes), TooltipUtil.Position.BELOW);
+      }
+    }
+  }
+
+  @Override
+  public void onDestroy() {
+    Log.d(TAG, "DynamicStarMap onDestroy");
+    if (gestureInterpreter != null)
+      gestureInterpreter.destroy();
+    super.onDestroy();
+  }
+
+  @Override
+  public boolean onKeyDown(int keyCode, KeyEvent event) {
+    switch (keyCode) {
+      case (KeyEvent.KEYCODE_DPAD_LEFT):
+        Log.d(TAG, "Key left");
+        controller.rotate(-10.0f);
+        break;
+      case (KeyEvent.KEYCODE_DPAD_RIGHT):
+        Log.d(TAG, "Key right");
+        controller.rotate(10.0f);
+        break;
+      case (KeyEvent.KEYCODE_BACK):
+        // If we're in search mode when the user presses 'back' the natural
+        // thing is to back out of search.
+        Log.d(TAG, "In search mode " + searchMode);
+        if (searchMode) {
+          cancelSearch();
+          break;
+        }
+      default:
+        Log.d(TAG, "Key: " + event);
+        return super.onKeyDown(keyCode, event);
+    }
+    return true;
+  }
+
+  @Override
+  public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+    super.onOptionsItemSelected(item);
+    fullscreenControlsManager.delayHideTheControls();
+    Bundle menuEventBundle = new Bundle();
+    int itemId = item.getItemId();
+    if (itemId == R.id.menu_item_search) {
+      Log.d(TAG, "Search");
+      menuEventBundle.putString(Analytics.MENU_ITEM_EVENT_VALUE, Analytics.SEARCH_REQUESTED_LABEL);
+      onSearchRequested();
+    } else if (itemId == R.id.menu_item_settings) {
+      Log.d(TAG, "Settings");
+      menuEventBundle.putString(Analytics.MENU_ITEM_EVENT_VALUE, Analytics.SETTINGS_OPENED_LABEL);
+      startActivity(new Intent(this, EditSettingsActivity.class));
+    } else if (itemId == R.id.menu_item_location) {
+      startActivity(new Intent(this, LocationManagementActivity.class));
+    } else if (itemId == R.id.menu_item_credits) {
+      Log.d(TAG, "Credits");
+      menuEventBundle.putString(Analytics.MENU_ITEM_EVENT_VALUE, Analytics.CREDITS_OPENED_LABEL);
+      showDialog(CreditsDialogFragment.newInstance(), CreditsDialogFragment.class.getSimpleName());
+    } else if (itemId == R.id.menu_item_help) {
+      Log.d(TAG, "Help");
+      menuEventBundle.putString(Analytics.MENU_ITEM_EVENT_VALUE, Analytics.HELP_OPENED_LABEL);
+      showDialog(HelpDialogFragment.newInstance(), HelpDialogFragment.class.getSimpleName());
+    } else if (itemId == R.id.menu_item_tutorial) {
+      Log.d(TAG, "Tutorial");
+      if (experimentConfig.isEnabled(Experiment.WARM_WELCOME)) {
+        menuEventBundle.putString(Analytics.MENU_ITEM_EVENT_VALUE, "tutorial_opened");
+        Intent intent = new Intent(this, WarmWelcomeActivity.class);
+        intent.putExtra(ApplicationConstants.BUNDLE_IS_MANUAL_INVOCATION, true);
+        startActivity(intent);
+      }
+    } else if (itemId == R.id.menu_item_dim) {
+      Log.d(TAG, "Toggling nightmode");
+      nightMode = !nightMode;
+      sharedPreferences.edit().putString(ActivityLightLevelManager.LIGHT_MODE_KEY,
+          nightMode ? "NIGHT" : "DAY").apply();
+      menuEventBundle.putString(Analytics.MENU_ITEM_EVENT_VALUE, Analytics.TOGGLED_NIGHT_MODE_LABEL);
+    } else if (itemId == R.id.menu_item_time || itemId == R.id.menu_item_time2) {
+      Log.d(TAG, "Starting Time Dialog from menu");
+      menuEventBundle.putString(Analytics.MENU_ITEM_EVENT_VALUE, Analytics.TIME_TRAVEL_OPENED_LABEL);
+      if (!timePlayerUI.isShown()) {
+        Log.d(TAG, "Resetting time in time travel dialog.");
+        controller.goTimeTravel(new Date());
+      } else {
+        Log.d(TAG, "Resuming current time travel dialog.");
+      }
+      showDialog(TimeTravelDialogFragment.newInstance(), TimeTravelDialogFragment.class.getSimpleName());
+    } else if (itemId == R.id.menu_item_gallery) {
+      Log.d(TAG, "Loading gallery");
+      menuEventBundle.putString(Analytics.MENU_ITEM_EVENT_VALUE, Analytics.GALLERY_OPENED_LABEL);
+      startActivity(new Intent(this, ImageGalleryActivity.class));
+    } else if (itemId == R.id.menu_item_tos) {
+      Log.d(TAG, "Loading ToS");
+      menuEventBundle.putString(Analytics.MENU_ITEM_EVENT_VALUE, Analytics.TOS_OPENED_LABEL);
+      showDialog(EulaDialogFragment.newInstance(), EulaDialogFragment.class.getSimpleName());
+    } else if (itemId == R.id.menu_item_calibrate) {
+      Log.d(TAG, "Loading Calibration");
+      menuEventBundle.putString(Analytics.MENU_ITEM_EVENT_VALUE, Analytics.CALIBRATION_OPENED_LABEL);
+      Intent intent = new Intent(this, CompassCalibrationActivity.class);
+      intent.putExtra(CompassCalibrationActivity.HIDE_CHECKBOX, true);
+      startActivity(intent);
+    } else if (itemId == R.id.menu_item_diagnostics) {
+      Log.d(TAG, "Loading Diagnostics");
+      menuEventBundle.putString(Analytics.MENU_ITEM_EVENT_VALUE, Analytics.DIAGNOSTICS_OPENED_LABEL);
+      startActivity(new Intent(this, DiagnosticActivity.class));
+    } else {
+      Log.e(TAG, "Unwired-up menu item");
+      return false;
+    }
+    analytics.trackEvent(Analytics.MENU_ITEM_EVENT, menuEventBundle);
+    return true;
+  }
+
+  @Override
+  public void onStart() {
+    super.onStart();
+    sessionStartTime = System.currentTimeMillis();
+  }
+
+  private enum SessionBucketLength {
+    LESS_THAN_TEN_SECS(10), TEN_SECS_TO_THIRTY_SECS(30),
+    THIRTY_SECS_TO_ONE_MIN(60), ONE_MIN_TO_FIVE_MINS(300),
+    MORE_THAN_FIVE_MINS(Integer.MAX_VALUE);
+
+    private final int seconds;
+
+    SessionBucketLength(int seconds) {
+      this.seconds = seconds;
+    }
+  }
+
+  private SessionBucketLength getSessionLengthBucket(int sessionLengthSeconds) {
+    for (SessionBucketLength bucket : SessionBucketLength.values()) {
+      if (sessionLengthSeconds < bucket.seconds) {
+        return bucket;
+      }
+    }
+    Log.e(TAG, "Programming error - should not get here");
+    return SessionBucketLength.MORE_THAN_FIVE_MINS;
+  }
+
+  @Override
+  public void onStop() {
+    super.onStop();
+    // Define a session as being the time between the main activity being in
+    // the foreground and pushed back. Note that this will mean that sessions
+    // do get interrupted by (e.g.) loading preference or help screens.
+    int sessionLengthSeconds = (int) ((System.currentTimeMillis() - sessionStartTime) / 1000);
+    SessionBucketLength bucket = getSessionLengthBucket(sessionLengthSeconds);
+    Bundle b = new Bundle();
+    // Let's see how well Analytics buckets things and log the raw number
+    b.putInt(Analytics.SESSION_LENGTH_TIME_VALUE, sessionLengthSeconds);
+    b.putString(Analytics.SESSION_BUCKET, bucket.name());
+    analytics.trackEvent(Analytics.SESSION_LENGTH_EVENT, b);
+  }
+
+  @Override
+  public void onResume() {
+    Log.d(TAG, "onResume at " + System.currentTimeMillis());
+    super.onResume();
+    Log.i(TAG, "Resuming");
+    // Provider is unscoped so each call returns a fresh instance (not a cached
+    // released one).
+    // prepareAsync() inside the provider means this never blocks the main thread.
+    timeTravelNoise = timeTravelNoiseProvider.get();
+    timeTravelBackNoise = timeTravelBackNoiseProvider.get();
+
+    wakeLock.acquire();
+    Log.i(TAG, "Starting view");
+    skyView.onResume();
+    Log.i(TAG, "Starting controller");
+    controller.start();
+    controller.getLocationController().addStateListener(locationStateListener);
+    checkLocationPermissionOnResume();
+    maybeShowLocationWarning();
+    activityLightLevelManager.onResume();
+    if (controller.isAutoMode()) {
+      sensorAccuracyMonitor.start();
+    }
+    for (Runnable runnable : onResumeRunnables) {
+      handler.post(runnable);
+    }
+    Log.d(TAG, "-onResume at " + System.currentTimeMillis());
+  }
+
+  private void wireLocationController() {
+    LocationController lc = controller.getLocationController();
+    locationStateListener = state -> {
+      if (state instanceof LocationState.AcquiringTimeout) {
+        AcquiringLocationTimeoutDialogFragment dlg =
+            AcquiringLocationTimeoutDialogFragment.newInstance();
+        dlg.setOnKeepWaiting(lc::keepWaiting);
+        dlg.setOnEnterManually(() -> showManualEntryDialog(lc));
+        showDialog(dlg, AcquiringLocationTimeoutDialogFragment.class.getSimpleName());
+      } else if (state instanceof LocationState.PermissionDenied) {
+        LocationPermissionRationaleDialogFragment dlg =
+            LocationPermissionRationaleDialogFragment.newInstance();
+        dlg.setOnGrant(() -> locationPermissionLauncher.launch(Manifest.permission.ACCESS_COARSE_LOCATION));
+        dlg.setOnEnterManually(() -> showManualEntryDialog(lc));
+        dlg.setOnLater(null);
+        showDialog(dlg, LocationPermissionRationaleDialogFragment.class.getSimpleName());
+      } else if (state instanceof LocationState.PermissionPermanentlyDenied) {
+        LocationPermissionPermanentlyDeniedDialogFragment dlg =
+            LocationPermissionPermanentlyDeniedDialogFragment.newInstance();
+        dlg.setOnEnterManually(() -> showManualEntryDialog(lc));
+        showDialog(dlg, LocationPermissionPermanentlyDeniedDialogFragment.class.getSimpleName());
+      } else if (state instanceof LocationState.HardwareUnavailable) {
+        showManualEntryDialog(lc);
+      }
+    };
+  }
+
+  private void showManualEntryDialog(LocationController lc) {
+    LocationState state = lc.currentState();
+    float lat = Float.NaN, lon = Float.NaN;
+    String name = "";
+    if (state instanceof LocationState.Confirmed confirmed) {
+      lat = confirmed.getLocation().getLatitude();
+      lon = confirmed.getLocation().getLongitude();
+    }
+    showDialog(ManualLocationEntryDialogFragment.newInstance(lat, lon, name),
+        ManualLocationEntryDialogFragment.class.getSimpleName());
+  }
+
+  private void checkLocationPermissionOnResume() {
+    LocationController lc = controller.getLocationController();
+    LocationState state = lc.currentState();
+    if (state instanceof LocationState.Confirmed
+        && ((LocationState.Confirmed) state).getSource() ==
+            LocationSource.AUTO) {
+      if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION)
+          != PackageManager.PERMISSION_GRANTED) {
+        lc.onPermissionRevoked();
+      }
+    }
+  }
+
+  private void startLocationFlow() {
+    if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION)
+        == PackageManager.PERMISSION_GRANTED) {
+      controller.getLocationController().startAuto();
+    } else if (!sharedPreferences.getBoolean(ApplicationConstants.NO_AUTO_LOCATE_PREF_KEY, false)) {
+      LocationPermissionRationaleDialogFragment dlg =
+          LocationPermissionRationaleDialogFragment.newInstance();
+      LocationController lc = controller.getLocationController();
+      dlg.setOnGrant(() -> locationPermissionLauncher.launch(Manifest.permission.ACCESS_COARSE_LOCATION));
+      dlg.setOnEnterManually(() -> showManualEntryDialog(lc));
+      dlg.setOnLater(null);
+      showDialog(dlg, LocationPermissionRationaleDialogFragment.class.getSimpleName());
+    }
+  }
+
+  private void maybeShowLocationWarning() {
+    LocationController locationController = controller.getLocationController();
+    LocationState state = locationController.currentState();
+
+    if (state instanceof LocationState.Unset || state instanceof LocationState.PermissionDenied) {
+      startLocationFlow();
+    }
+  }
+
+  public void setTimeTravelMode(Date newTime, @StringRes int searchObjectNameRes,
+      String analyticsKey) {
+    Bundle timeTravelBundle = new Bundle();
+    timeTravelBundle.putString(AnalyticsInterface.TIME_TRAVEL_EVENT_KEY, analyticsKey);
+    analytics.trackEvent(AnalyticsInterface.TIME_TRAVEL_USED_EVENT, timeTravelBundle);
+
+    SimpleDateFormat dateFormatter = new SimpleDateFormat("yyyy.MM.dd G  HH:mm:ss z",
+        Locale.getDefault());
+    Toast.makeText(this,
+        String.format(getString(R.string.time_travel_start_message_alt),
+            dateFormatter.format(newTime)),
+        Toast.LENGTH_LONG).show();
+    if (sharedPreferences.getBoolean(ApplicationConstants.SOUND_EFFECTS, true)) {
+      try {
+        timeTravelNoise.start();
+      } catch (IllegalStateException | NullPointerException e) {
+        Log.e(TAG, "Exception trying to play time travel sound", e);
+        // It's not the end of the world - carry on.
+      }
+    }
+
+    Log.d(TAG, "Showing TimePlayer UI.");
+    timePlayerUI.setVisibility(View.VISIBLE);
+    timePlayerUI.requestFocus();
+    flashTheScreen();
+    controller.goTimeTravel(newTime);
+
+    if (searchObjectNameRes != 0) {
+      // Delay until after the clock transition completes (TransitioningCompositeClock
+      // uses
+      // 2500 ms) so that solar-system positions have been updated to the new time.
+      handler.postDelayed(() -> {
+        List<SearchResult> results = layerManager.searchByObjectName(getString(searchObjectNameRes));
+        if (!results.isEmpty()) {
+          SearchResult r = results.get(0);
+          activateSearchTarget(r.coords(), r.getCapitalizedName());
+        } else {
+          Log.w(TAG, "Time travel search target not found: " + getString(searchObjectNameRes));
+        }
+      }, TransitioningCompositeClock.TRANSITION_TIME_MILLIS + SEARCH_POST_TRANSITION_DELAY_MS);
+    }
+  }
+
+  public void setTimeTravelModeFromNow() {
+    Bundle timeTravelBundle = new Bundle();
+    timeTravelBundle.putString(AnalyticsInterface.TIME_TRAVEL_EVENT_KEY, "from_now");
+    analytics.trackEvent(AnalyticsInterface.TIME_TRAVEL_USED_EVENT, timeTravelBundle);
+
+    Log.d(TAG, "Showing TimePlayer UI (from now, no effects).");
+    timePlayerUI.setVisibility(View.VISIBLE);
+    timePlayerUI.requestFocus();
+    controller.goTimeTravel(new Date());
+    controller.accelerateTimeTravel();
+  }
+
+  public void setNormalTimeModel() {
+    if (sharedPreferences.getBoolean(ApplicationConstants.SOUND_EFFECTS, true)) {
+      try {
+        timeTravelBackNoise.start();
+      } catch (IllegalStateException | NullPointerException e) {
+        Log.e(TAG, "Exception trying to play return time travel sound", e);
+        // It's not the end of the world - carry on.
+      }
+    }
+    flashTheScreen();
+    controller.useRealTime();
+    Toast.makeText(this,
+        R.string.time_travel_close_message,
+        Toast.LENGTH_SHORT).show();
+    Log.d(TAG, "Leaving Time Travel mode.");
+    timePlayerUI.setVisibility(View.GONE);
+  }
+
+  private void flashTheScreen() {
+    final View view = findViewById(R.id.view_mask);
+    // We don't need to set it invisible again - the end of the
+    // animation will see to that.
+    // TODO(johntaylor): check if setting it to GONE will bring
+    // performance benefits.
+    view.setVisibility(View.VISIBLE);
+    view.startAnimation(flashAnimation);
+  }
+
+  @Override
+  public void onPause() {
+    Log.d(TAG, "DynamicStarMap onPause");
+    super.onPause();
+    sensorAccuracyMonitor.stop();
+    if (timeTravelNoise != null) {
+      timeTravelNoise.release();
+      timeTravelNoise = null;
+    }
+    if (timeTravelBackNoise != null) {
+      timeTravelBackNoise.release();
+      timeTravelBackNoise = null;
+    }
+    for (Runnable runnable : onResumeRunnables) {
+      handler.removeCallbacks(runnable);
+    }
+    activityLightLevelManager.onPause();
+    controller.getLocationController().removeStateListener(locationStateListener);
+    controller.stop();
+    skyView.onPause();
+    wakeLock.release();
+    // Debug.stopMethodTracing();
+    Log.d(TAG, "DynamicStarMap -onPause");
+  }
+
+  @Override
+  public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+    Log.d(TAG, "Preferences changed: key=" + key);
+    if (key == null) {
+      return;
+    }
+    switch (key) {
+      case ApplicationConstants.AUTO_MODE_PREF_KEY:
+        boolean autoMode = sharedPreferences.getBoolean(key, true);
+        Log.d(TAG, "Automode is set to " + autoMode);
+        if (!autoMode) {
+          Log.d(TAG, "Switching to manual control");
+          Toast.makeText(DynamicStarMapActivity.this, R.string.set_manual, Toast.LENGTH_SHORT)
+              .show();
+        } else {
+          Log.d(TAG, "Switching to sensor control");
+          Toast.makeText(DynamicStarMapActivity.this, R.string.set_auto, Toast.LENGTH_SHORT)
+              .show();
+        }
+        setAutoMode(autoMode);
+        break;
+      case ApplicationConstants.VIEW_MODE_PREF_KEY:
+        updateViewDirectionMode(model, sharedPreferences);
+        break;
+      default:
+        if (key.startsWith("source_provider.")) {
+          boolean enabled = sharedPreferences.getBoolean(key, true);
+          Bundle layerBundle = new Bundle();
+          layerBundle.putString(AnalyticsInterface.LAYER_TOGGLED_NAME,
+              AnalyticsInterface.layerDisplayName(key));
+          layerBundle.putBoolean(AnalyticsInterface.LAYER_TOGGLED_ENABLED, enabled);
+          analytics.trackEvent(AnalyticsInterface.LAYER_TOGGLED_EVENT, layerBundle);
+        }
+    }
+  }
+
+  @Override
+  public boolean onTouchEvent(MotionEvent event) {
+    // Log.d(TAG, "Touch event " + event);
+    // Either of the following detectors can absorb the event, but one
+    // must not hide it from the other
+    boolean eventAbsorbed = event != null && gestureDetector.onTouchEvent(event);
+    if (event != null && dragZoomRotateDetector.onTouchEvent(event)) {
+      eventAbsorbed = true;
+    }
+    return eventAbsorbed;
+  }
+
+  @Override
+  public boolean onTrackballEvent(MotionEvent event) {
+    // Log.d(TAG, "Trackball motion " + event);
+    controller.rotate(event.getX() * ROTATION_SPEED);
+    return true;
+  }
+
+  @Override
+  public void onFindClicked(ObjectInfo info) {
+    Intent searchIntent = new Intent(Intent.ACTION_SEARCH);
+    searchIntent.putExtra(SearchManager.QUERY, info.getName());
+    doSearchWithIntent(searchIntent);
+  }
+
+  @Override
+  public void onSeeAlsoClicked(@NonNull String objectId) {
+    ObjectInfo info = objectInfoRegistry.getInfo(objectId);
+    if (info != null) {
+      showObjectInfoDialog(info);
+    }
+  }
+
+  private void doSearchWithIntent(Intent searchIntent) {
+    // If we're already in search mode, cancel it.
+    if (searchMode) {
+      cancelSearch();
+    }
+    Log.d(TAG, "Performing Search");
+    final String queryString = searchIntent.getStringExtra(SearchManager.QUERY);
+    searchMode = true;
+    Log.d(TAG, "Query string " + MiscUtil.capitalize(queryString));
+
+    RaDec raDec = CoordinateParser.INSTANCE.parseCoordinates(queryString);
+    if (raDec != null) {
+      Vector3 target = CoordinateManipulationsKt.getGeocentricCoords(raDec);
+      float ra = raDec.getRa();
+      float raHours = ra / 15.0f;
+      int h = (int) raHours;
+      float minutesPart = (raHours - h) * 60.0f;
+      int m = (int) minutesPart;
+      int s = Math.round((minutesPart - m) * 60.0f);
+      if (s == 60) {
+        s = 0;
+        m += 1;
+      }
+      if (m == 60) {
+        m = 0;
+        h = h + 1;
+      }
+      h %= 24;
+      String raString = getString(R.string.diagnostics_ra_format, h, m, s);
+      String decString = getString(R.string.diagnostics_dec_format, raDec.getDec());
+      String targetLabel = getString(R.string.search_target_ra_dec_format, raString, decString);
+
+      Bundle b = new Bundle();
+      b.putString(AnalyticsInterface.SEARCH_TERM, MiscUtil.capitalize(queryString));
+      b.putBoolean(AnalyticsInterface.SEARCH_SUCCESS, true);
+      analytics.trackEvent(AnalyticsInterface.SEARCH_EVENT, b);
+
+      activateSearchTarget(target, targetLabel);
+      return;
+    }
+
+    List<SearchResult> results = layerManager.searchByObjectName(queryString);
+    Bundle b = new Bundle();
+    b.putString(AnalyticsInterface.SEARCH_TERM, MiscUtil.capitalize(queryString));
+    b.putBoolean(AnalyticsInterface.SEARCH_SUCCESS, !results.isEmpty());
+    analytics.trackEvent(AnalyticsInterface.SEARCH_EVENT, b);
+    if (results.isEmpty()) {
+      Log.d(TAG, "No layer results, checking virtual objects");
+      ObjectInfo virtualInfo = objectInfoRegistry.getVirtualObjectByName(queryString);
+      if (virtualInfo != null) {
+        String parentName = objectInfoRegistry.getSearchName(virtualInfo.getParentObjectId());
+        if (parentName != null) {
+          List<SearchResult> parentResults = layerManager.searchByObjectName(parentName);
+          if (!parentResults.isEmpty()) {
+            activateSearchTarget(parentResults.get(0).coords(), virtualInfo.getName());
+          }
+        }
+        showObjectInfoDialog(virtualInfo);
+        return;
+      }
+      Log.d(TAG, "No results returned");
+      Bundle failBundle = new Bundle();
+      failBundle.putString(AnalyticsInterface.SEARCH_TERM, MiscUtil.capitalize(queryString));
+      analytics.trackEvent(AnalyticsInterface.SEARCH_FAILED_EVENT, failBundle);
+      showDialog(NoSearchResultsDialogFragment.newInstance(), NoSearchResultsDialogFragment.class.getSimpleName());
+    } else if (results.size() > 1) {
+      Log.d(TAG, "Multiple results returned");
+      showUserChooseResultDialog(results);
+    } else {
+      Log.d(TAG, "One result returned.");
+      final SearchResult result = results.get(0);
+      activateSearchTarget(result.coords(), result.getCapitalizedName());
+    }
+  }
+
+  private void showUserChooseResultDialog(List<SearchResult> results) {
+    ArrayList<SearchResultItem> items = new ArrayList<>();
+    for (SearchResult result : results) {
+      items.add(new SearchResultItem(
+          result.getCapitalizedName(),
+          result.coords().x, result.coords().y, result.coords().z));
+    }
+    showDialog(MultipleSearchResultsDialogFragment.newInstance(items), "Multiple Search Results");
+  }
+
+  private void initializeModelViewController() {
+    Log.i(TAG, "Initializing Model, View and Controller @ " + System.currentTimeMillis());
+    setContentView(R.layout.skyrenderer);
+    skyView = findViewById(R.id.skyrenderer_view);
+    // We don't want a depth buffer.
+    skyView.setEGLConfigChooser(false);
+    SkyRenderer renderer = new SkyRenderer(getResources());
+    skyView.setRenderer(renderer);
+
+    rendererController = new RendererController(renderer, skyView);
+    // The renderer will now call back every frame to get model updates.
+    rendererController.addUpdateClosure(
+        new RendererModelUpdateClosure(model, rendererController, sharedPreferences));
+    WeakReference<DynamicStarMapActivity> weakThis = new WeakReference<>(this);
+    rendererController.addUpdateClosure(() -> {
+      DynamicStarMapActivity activity = weakThis.get();
+      if (activity == null)
+        return;
+      if (!activity.searchMode) {
+        activity.lastSearchFocusState = false;
+        return;
+      }
+      boolean inFocus = rendererController.isSearchTargetInFocus();
+      if (inFocus == activity.lastSearchFocusState)
+        return;
+      activity.lastSearchFocusState = inFocus;
+      activity.runOnUiThread(() -> activity.updateSearchPrompt(inFocus));
+    });
+
+    Log.i(TAG, "Setting layers @ " + System.currentTimeMillis());
+    layerManager.registerWithRenderer(rendererController);
+    Log.i(TAG, "Set up controllers @ " + System.currentTimeMillis());
+    controller.setModel(model);
+    wireUpScreenControls(); // TODO(johntaylor) move these?
+    wireUpTimePlayer(); // TODO(widdows) move these?
+  }
+
+  private void setAutoMode(boolean auto) {
+    Bundle b = new Bundle();
+    b.putBoolean(Analytics.MANUAL_MODE_ENABLED, !auto);
+    analytics.trackEvent(Analytics.MANUAL_MODE_TOGGLED_EVENT, b);
+    controller.setAutoMode(auto);
+    if (auto) {
+      sensorAccuracyMonitor.start();
+    } else {
+      sensorAccuracyMonitor.stop();
+    }
+  }
+
+  private void wireUpScreenControls() {
+    cancelSearchButton = findViewById(R.id.cancel_search_button);
+    cancelSearchButton.setOnClickListener(v -> cancelSearch());
+    searchStatusLabel = findViewById(R.id.search_status_label);
+    searchPromptText = findViewById(R.id.search_prompt);
+
+    // Push the search control bar below the status bar and any display cutout
+    // so it doesn't overlap with camera notches on modern phones.
+    View searchControlBar = findViewById(R.id.search_control_bar);
+    applyWindowInsets(searchControlBar, true, false);
+
+    ButtonLayerView providerButtons = findViewById(R.id.layer_buttons_control);
+
+    int numChildren = providerButtons.getChildCount();
+    List<View> buttonViews = new ArrayList<>();
+    for (int i = 0; i < numChildren; ++i) {
+      ImageButton button = (ImageButton) providerButtons.getChildAt(i);
+      buttonViews.add(button);
+    }
+    PreferencesButton manualAutoToggle = findViewById(R.id.manual_auto_toggle);
+    ButtonLayerView manualButtonGroup = findViewById(R.id.layer_manual_auto_toggle);
+
+    List<View> buttonGroups = new ArrayList<>();
+    if (hasNeededSensors()) {
+      buttonViews.add(manualAutoToggle);
+      buttonGroups.add(manualButtonGroup);
+    } else {
+      manualAutoToggle.setVisibility(View.GONE);
+      manualButtonGroup.setVisibility(View.GONE);
+    }
+    buttonGroups.add(providerButtons);
+
+    // Set the dependencies on the gestureInterpreter that require the UI to be
+    // inflated
+    // so can't be done via constructor injection.
+    fullscreenControlsManager = new FullscreenControlsManager(
+        this,
+        findViewById(R.id.main_sky_view),
+        buttonGroups,
+        buttonViews);
+    gestureInterpreter = gestureInterpreterFactory.createGestureInterpreter(
+        fullscreenControlsManager,
+        new GestureInterpreter.ScreenDimensionsProvider() {
+          @Override
+          public int getScreenWidth() {
+            return skyView.getWidth();
+          }
+
+          @Override
+          public int getScreenHeight() {
+            return skyView.getHeight();
+          }
+        });
+    gestureDetector = gestureDetectorFactory.createGestureDetector(gestureInterpreter);
+
+    // Set up the object info tap handler listener
+    // TODO(jontayler): can we just inject this?
+    objectInfoTapHandler.setObjectTapListener(this::showObjectInfoDialog);
+
+    // Re-apply uniform night tint after each click, since
+    // PreferencesButton.setVisuallyOnOrOff()
+    // would otherwise dim the button via the on/off tint logic (fix for issue
+    // #661).
+    if (manualAutoToggle != null) {
+      manualAutoToggle.setOnClickListener(v -> {
+        if (nightMode) {
+          manualAutoToggle.setColorFilter(getColor(R.color.night_text_color),
+              PorterDuff.Mode.MULTIPLY);
+        } else {
+          manualAutoToggle.clearColorFilter();
+        }
+      });
+    }
+  }
+
+  private void applyWindowInsets(View view, boolean applyTop, boolean applyBottom) {
+    // Check if we've already saved the original padding to avoid cumulative growth
+    Rect initialPadding = (Rect) view.getTag(R.id.original_padding_tag);
+
+    if (initialPadding == null) {
+      initialPadding = new Rect(view.getPaddingLeft(), view.getPaddingTop(),
+          view.getPaddingRight(), view.getPaddingBottom());
+      view.setTag(R.id.original_padding_tag, initialPadding);
+    }
+
+    // Capture the record for use inside the lambda
+    final Rect base = initialPadding;
+
+    ViewCompat.setOnApplyWindowInsetsListener(view, (v, windowInsets) -> {
+      Insets insets = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars() |
+          WindowInsetsCompat.Type.displayCutout());
+
+      int paddingTop = applyTop ? base.top + insets.top : base.top;
+      int paddingBottom = applyBottom ? base.bottom + insets.bottom : base.bottom;
+
+      v.setPadding(base.left + insets.left, paddingTop, base.right + insets.right,
+          paddingBottom);
+
+      return WindowInsetsCompat.CONSUMED;
+    });
+  }
+
+  /**
+   * Shows the object info dialog for the given celestial object.
+   */
+  private void showObjectInfoDialog(ObjectInfo objectInfo) {
+    Log.d(TAG, "Showing object info dialog for: " + objectInfo.getId());
+    showDialog(ObjectInfoDialogFragment.newInstance(objectInfo, false),
+        "Object Info:" + objectInfo.getId());
+  }
+
+  /**
+   * Shows a dialog fragment only if no fragment with the same tag is currently in
+   * the back stack.
+   * Guards against duplicate dialogs after activity recreation (e.g. rotation),
+   * where the
+   * FragmentManager restores an existing instance while Dagger injects a new one.
+   */
+  private void showDialog(androidx.fragment.app.DialogFragment fragment, String tag) {
+    if (fragmentManager.findFragmentByTag(tag) == null) {
+      fragment.show(fragmentManager, tag);
+    }
+  }
+
+  private void cancelSearch() {
+    View searchControlBar = findViewById(R.id.search_control_bar);
+    searchControlBar.setVisibility(View.INVISIBLE);
+    rendererController.queueDisableSearchOverlay();
+    searchMode = false;
+  }
+
+  private void updateSearchPrompt(boolean found) {
+    if (found) {
+      searchStatusLabel.setText(getString(R.string.search_target_found_message, searchTargetName));
+      searchPromptText.setVisibility(View.GONE);
+    } else {
+      searchStatusLabel.setText(
+          getString(R.string.search_target_looking_message, searchTargetName));
+      searchPromptText.setVisibility(View.VISIBLE);
+    }
+  }
+
+  @Override
+  protected void onNewIntent(Intent intent) {
+    super.onNewIntent(intent);
+    Log.d(TAG, "New Intent received " + intent);
+    if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
+      doSearchWithIntent(intent);
+    }
+  }
+
+  @Override
+  protected void onRestoreInstanceState(@NonNull Bundle icicle) {
+    Log.d(TAG, "DynamicStarMap onRestoreInstanceState");
+    super.onRestoreInstanceState(icicle);
+    searchMode = icicle.getBoolean(ApplicationConstants.BUNDLE_SEARCH_MODE);
+    float x = icicle.getFloat(ApplicationConstants.BUNDLE_X_TARGET);
+    float y = icicle.getFloat(ApplicationConstants.BUNDLE_Y_TARGET);
+    float z = icicle.getFloat(ApplicationConstants.BUNDLE_Z_TARGET);
+    searchTarget = new Vector3(x, y, z);
+    searchTargetName = icicle.getString(ApplicationConstants.BUNDLE_TARGET_NAME);
+    if (searchMode) {
+      Log.d(TAG, "Searching for target " + searchTargetName + " at target=" + searchTarget);
+      rendererController.queueEnableSearchOverlay(searchTarget, searchTargetName);
+      cancelSearchButton.setVisibility(View.VISIBLE);
+    }
+    nightMode = icicle.getBoolean(ApplicationConstants.BUNDLE_NIGHT_MODE, false);
+  }
+
+  @Override
+  protected void onSaveInstanceState(Bundle icicle) {
+    Log.d(TAG, "DynamicStarMap onSaveInstanceState");
+    icicle.putBoolean(ApplicationConstants.BUNDLE_SEARCH_MODE, searchMode);
+    icicle.putFloat(ApplicationConstants.BUNDLE_X_TARGET, searchTarget.x);
+    icicle.putFloat(ApplicationConstants.BUNDLE_Y_TARGET, searchTarget.y);
+    icicle.putFloat(ApplicationConstants.BUNDLE_Z_TARGET, searchTarget.z);
+    icicle.putString(ApplicationConstants.BUNDLE_TARGET_NAME, searchTargetName);
+    icicle.putBoolean(ApplicationConstants.BUNDLE_NIGHT_MODE, nightMode);
+    super.onSaveInstanceState(icicle);
+  }
+
+  public void activateSearchTarget(Vector3 target, final String searchTerm) {
+    Log.d(TAG, "Item " + searchTerm + " selected");
+    // Store these for later.
+    searchTarget = target;
+    searchTargetName = searchTerm;
+    Log.d(TAG, "Searching for target=" + target);
+    rendererController.queueViewerUpDirection(model.getZenith().copyForJ());
+    rendererController.queueEnableSearchOverlay(target.copyForJ(), searchTerm);
+    boolean autoMode = sharedPreferences.getBoolean(ApplicationConstants.AUTO_MODE_PREF_KEY, true);
+    Bundle lockedBundle = new Bundle();
+    lockedBundle.putString(AnalyticsInterface.OBJECT_LOCKED_NAME, searchTerm);
+    lockedBundle.putString(AnalyticsInterface.OBJECT_LOCKED_MODE,
+        autoMode ? AnalyticsInterface.OBJECT_LOCKED_MODE_AUTO : AnalyticsInterface.OBJECT_LOCKED_MODE_MANUAL);
+    analytics.trackEvent(AnalyticsInterface.OBJECT_LOCKED_EVENT, lockedBundle);
+    if (!autoMode) {
+      controller.teleport(target);
+    }
+
+    lastSearchFocusState = false;
+    updateSearchPrompt(false);
+    View searchControlBar = findViewById(R.id.search_control_bar);
+    searchControlBar.setVisibility(View.VISIBLE);
+  }
+
+  /**
+   * Creates and wire up all time player controls.
+   */
+  private void wireUpTimePlayer() {
+    Log.d(TAG, "Initializing TimePlayer UI.");
+    timePlayerUI = findViewById(R.id.time_player_view);
+    ImageButton timePlayerCancelButton = findViewById(R.id.time_player_close);
+    ImageButton timePlayerBackwardsButton = findViewById(
+        R.id.time_player_play_backwards);
+    ImageButton timePlayerStopButton = findViewById(R.id.time_player_play_stop);
+    ImageButton timePlayerForwardsButton = findViewById(
+        R.id.time_player_play_forwards);
+    final TextView timeTravelSpeedLabel = findViewById(R.id.time_travel_speed_label);
+
+    // Push the time player above any bottom display cutout or navigation bar.
+    applyWindowInsets(timePlayerUI, false, true);
+
+    timePlayerCancelButton.setOnClickListener(v -> {
+      Log.d(TAG, "Heard time player close click.");
+      setNormalTimeModel();
+    });
+    timePlayerBackwardsButton.setOnClickListener(v -> {
+      Log.d(TAG, "Heard time player play backwards click.");
+      controller.decelerateTimeTravel();
+      timeTravelSpeedLabel.setText(controller.getCurrentSpeedTag());
+    });
+    timePlayerStopButton.setOnClickListener(v -> {
+      Log.d(TAG, "Heard time player play stop click.");
+      controller.pauseTime();
+      timeTravelSpeedLabel.setText(controller.getCurrentSpeedTag());
+    });
+    timePlayerForwardsButton.setOnClickListener(v -> {
+      Log.d(TAG, "Heard time player play forwards click.");
+      controller.accelerateTimeTravel();
+      timeTravelSpeedLabel.setText(controller.getCurrentSpeedTag());
+    });
+
+    Runnable displayUpdater = new Runnable() {
+      private final TextView timeTravelTimeReadout = findViewById(
+          R.id.time_travel_time_readout);
+      private final TextView timeTravelStatusLabel = findViewById(
+          R.id.time_travel_status_label);
+      private final TextView timeTravelSpeedLabel = findViewById(
+          R.id.time_travel_speed_label);
+      private final SimpleDateFormat dateFormatter = new SimpleDateFormat(
+          "yyyy.MM.dd G  HH:mm:ss z", Locale.getDefault());
+      private final Date date = new Date();
+
+      @Override
+      public void run() {
+        long time = model.getTimeMillis();
+        date.setTime(time);
+        timeTravelTimeReadout.setText(dateFormatter.format(date));
+        if (time > System.currentTimeMillis()) {
+          timeTravelStatusLabel.setText(R.string.time_travel_label_future);
+        } else {
+          timeTravelStatusLabel.setText(R.string.time_travel_label_past);
+        }
+        timeTravelSpeedLabel.setText(controller.getCurrentSpeedTag());
+        handler.postDelayed(this, TIME_DISPLAY_DELAY_MILLIS);
+      }
+    };
+    onResumeRunnables.add(displayUpdater);
+  }
+
+  public AstronomerModel getModel() {
+    return model;
+  }
+
+  @Override
+  protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+    super.onActivityResult(requestCode, resultCode, data);
+    if (requestCode == GOOGLE_PLAY_SERVICES_REQUEST_CODE) {
+      playServicesChecker.runAfterDialog();
+      return;
+    }
+    Log.w(TAG, "Unhandled activity result");
+  }
+
+  @Override
+  public void onRequestPermissionsResult(int requestCode,
+                                         @NonNull String[] permissions,
+                                         @NonNull int[] grantResults) {
+    super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+    Log.w(TAG, "Unhandled request permissions result: " + requestCode);
+  }
+}

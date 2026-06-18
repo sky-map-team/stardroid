@@ -1,0 +1,183 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+    <!-- Constellations -->
+    <string name="andromeda" translation_description="Name of the Andromeda constellation">Андромеда</string>
+    <string name="aquarius" translation_description="Name of the Aquarius constellation">Водолей</string>
+    <string name="aquila" translation_description="Name of the Aquila constellation">Орел</string>
+    <string name="aries" translation_description="Name of the Aries constellation">Овен</string>
+    <string name="auriga" translation_description="Name of the Auriga constellation">Возничий</string>
+    <string name="bootes" translation_description="Name of the Bootes constellation">Волопас</string>
+    <string name="cancer" translation_description="Name of the Cancer constellation">Рак</string>
+    <string name="canis_major" translation_description="Name of the Canis Major constellation">Большой Пес</string>
+    <string name="capricornus" translation_description="Name of the Capricornus constellation">Козерог</string>
+    <string name="carina" translation_description="Name of the Carina constellation">Карина</string>
+    <string name="cassiopeia" translation_description="Name of the Cassiopeia constellation">Кассиопея</string>
+    <string name="centaurus" translation_description="Name of the Centaurus constellation">Центавр</string>
+    <string name="cetus" translation_description="Name of the Cetus constellation">Кит</string>
+    <string name="crux" translation_description="Name of the Crux constellation">Южный Крест</string>
+    <string name="cygnus" translation_description="Name of the Cygnus constellation">Лебедь</string>
+    <string name="draco" translation_description="Name of the Draco constellation">Дракон</string>
+    <string name="eridanus" translation_description="Name of the Eridanus constellation">Эридан</string>
+    <string name="gemini" translation_description="Name of the Gemini constellation">Близнецы</string>
+    <string name="grus" translation_description="Name of the Grus constellation">Журавль</string>
+    <string name="hercules" translation_description="Name of the Hercules constellation">Геркулес</string>
+    <string name="hydrus" translation_description="Name of the Hydrus constellation">Гидра</string>
+    <string name="leo" translation_description="Name of the Leo constellation">Лев</string>
+    <string name="libra" translation_description="Name of the Libra constellation">Весы</string>
+    <string name="lupus" translation_description="Name of the Lupus constellation">Волк</string>
+    <string name="lyra" translation_description="Name of the Lyra constellation">Лира</string>
+    <string name="ophiuchus" translation_description="Name of the Ophiuchus constellation">Змееносец</string>
+    <string name="orion" translation_description="Name of the Orion constellation">Орион</string>
+    <string name="pavo" translation_description="Name of the Pavo constellation">Павлин</string>
+    <string name="pegasus" translation_description="Name of the Pegasus constellation">Пегас</string>
+    <string name="perseus" translation_description="Name of the Perseus constellation">Персей</string>
+    <string name="phoenix" translation_description="Name of the Phoenix constellation">Феникс</string>
+    <string name="pisces" translation_description="Name of the Pisces constellation">Рыбы</string>
+    <string name="piscis_austrinus" translation_description="Name of the Piscis Austrinus constellation">Южная Рыба</string>
+    <string name="puppis" translation_description="Name of the Puppis constellation">Корма</string>
+    <string name="sagittarius" translation_description="Name of the Sagittarius constellation">Стрелец</string>
+    <string name="scorpius" translation_description="Name of the Scorpius constellation">Скорпион</string>
+    <string name="taurus" translation_description="Name of the Taurus constellation">Телец</string>
+    <string name="tucana" translation_description="Name of the Tucana constellation">Тукан</string>
+    <string name="ursa_major" translation_description="Name of the Ursa Major constellation">Большая Медведица</string>
+    <string name="ursa_minor" translation_description="Name of the Ursa Minor constellation">Малая Медведица</string>
+    <string name="vela" translation_description="Name of the Vela constellation">Паруса</string>
+    <string name="virgo" translation_description="Name of the Virgo constellation">Дева</string>
+    <string name="capricorn" translation_description="Name of the Capricorn constellation">Козерог</string>
+    <string name="southern_cross" translation_description="Name of the Southern Cross constellation">Южный Крест</string>
+    <string name="scorpio" translation_description="Name of the Scorpio constellation">Скорпион</string>
+    <string name="little_dipper" translation_description="Name of the Little Dipper constellation">Малая Медведица</string>
+    <string name="little_bear" translation_description="Name of the Little Bear constellation">Малая Медведица</string>
+    <string name="big_dipper" translation_description="Name of the Big Dipper constellation">Большая Медведица</string>
+    <string name="great_bear" translation_description="Name of the Great Bear constellation">Большая Медведица</string>
+    <string name="plough" translation_description="Name of the Plough constellation">Большая Медведица</string>
+    <!-- Major solar system objects -->
+    <string name="sun" translation_description="Name of the Sun">Солнце</string>
+    <string name="moon" translation_description="Name of the Earth's Moon">Луна</string>
+    <string name="mercury" translation_description="Name of the planet Mercury">Меркурий</string>
+    <string name="venus" translation_description="Name of the planet Venus">Венера</string>
+    <string name="earth" translation_description="Name of the planet Earth">Земля</string>
+    <string name="mars" translation_description="Name of the planet Mars">Марс</string>
+    <string name="jupiter" translation_description="Name of the planet Jupiter">Юпитер</string>
+    <string name="saturn" translation_description="Name of the planet Saturn">Сатурн</string>
+    <string name="uranus" translation_description="Name of the planet Uranus">Уран</string>
+    <string name="neptune" translation_description="Name of the planet Neptune">Нептун</string>
+    <string name="pluto" translation_description="Name of the dwarf planet Pluto">Плутон</string>
+
+    <!-- Gallery objects -->
+    <string name="crab_nebula" translation_description="hubble object">Крабовидная туманность</string>
+    <string name="eagle_nebula" translation_description="hubble object">Туманность Орла</string>
+    <string name="andromeda_galaxy" translation_description="hubble object">Туманность Андромеды</string>
+    <string name="orion_nebula" translation_description="hubble object">Туманность Ориона</string>
+    <string name="whirlpool_galaxy" translation_description="hubble object">Галактика Водоворот</string>
+    <string name="ring_nebula" translation_description="hubble object">Кольцевая туманность</string>
+    <string name="pinwheel_galaxy" translation_description="hubble object">Галактика Вертушка</string>
+    <string name="sombrero_galaxy" translation_description="hubble object">Галактика Сомбреро</string>
+    <string name="hercules_gc" translation_description="hubble object">Шаровое скопление в созвездии Геркулеса</string>
+    <string name="pleiades" translation_description="hubble object">Плеяды</string>
+    <string name="cats_eye_nebula" translation_description="hubble object">Туманность Кошачий Глаз</string>
+    <string name="omega_centauri" translation_description="hubble object">Шаровое скопление Омега Центавра</string>
+    <string name="v838_mon" translation_description="hubble object">V838 Единорога</string>
+    <string name="sn1987a" translation_description="hubble object">Сверхновая 1987a</string>
+    <string name="hubble_deep_field" translation_description="hubble object">Область глубокого обзора Хаббла</string>
+    <string name="hdf" translation_description="hubble object">Область глубокого обзора Хаббла</string>
+    <string name="rho_oph" translation_description="hubble object">Ро Змееносца</string>
+
+
+    <!-- Stars -->
+    <string name="sirius" translation_description="Name of the Star Sirius">Сириус</string>
+    <string name="canopus" translation_description="Name of the Star Canopus">Канопус</string>
+    <string name="arcturus" translation_description="Name of the Star Arcturus">Арктур</string>
+    <string name="rigel_kentaurus_a" translation_description="Name of the Star Rigel Kentaurus A">Ригель Центавра А</string>
+    <string name="rigil_kentaurus_a" translation_description="Name of the Star Rigil Kentaurus A">Ригель Центавра А</string>
+    <string name="vega" translation_description="Name of the Star Vega">Вега</string>
+    <string name="rigel" translation_description="Name of the Star Rigel">Ригель</string>
+    <string name="procyon" translation_description="Name of the Star Procyon">Процион</string>
+    <string name="betelgeuse" translation_description="Name of the Star Betelgeuse">Бетельгейзе</string>
+    <string name="achernar" translation_description="Name of the Star Achernar">Ахернар</string>
+    <string name="hadar" translation_description="Name of the Star Hadar">Хадар</string>
+    <string name="capella" translation_description="Name of the Star Capella">Капелла</string>
+    <string name="altair" translation_description="Name of the Star Altair">Альтаир</string>
+    <string name="acrux" translation_description="Name of the Star Acrux">Акрукс</string>
+    <string name="aldebaran" translation_description="Name of the Star Aldebaran">Альдебаран</string>
+    <string name="spica" translation_description="Name of the Star Spica">Спика</string>
+    <string name="antares" translation_description="Name of the Star Antares">Антарес</string>
+    <string name="pollux" translation_description="Name of the Star Pollux">Поллукс</string>
+    <string name="fomalhaut" translation_description="Name of the Star Fomalhaut">Фомальгаут</string>
+    <string name="deneb" translation_description="Name of the Star Deneb">Денеб</string>
+    <string name="regulus" translation_description="Name of the Star Regulus">Регул</string>
+    <string name="adhara" translation_description="Name of the Star Adhara">Адхара</string>
+    <string name="shaula" translation_description="Name of the Star Shaula">Шаула</string>
+    <string name="alnath" translation_description="Name of the Star Alnath">Альнах</string>
+    <string name="alnilam" translation_description="Name of the Star Alnilam">Альнилам</string>
+    <string name="alnair" translation_description="Name of the Star Alnair">Альнаир</string>
+    <string name="alioth" translation_description="Name of the Star Alioth">Алиот</string>
+    <string name="mirphak" translation_description="Name of the Star Mirphak">Мирфак</string>
+    <string name="kaus_australis" translation_description="Name of the Star Kaus Australis">Каус Аустралис</string>
+    <string name="dubhe" translation_description="Name of the Star Dubhe">Дубхе</string>
+    <string name="alkaid" translation_description="Name of the Star Alkaid">Алькаид</string>
+    <string name="alhena" translation_description="Name of the Star Alhena">Альхена</string>
+    <string name="castor" translation_description="Name of the Star Castor">Кастор</string>
+    <string name="polaris" translation_description="Name of the Star Polaris">Полярная</string>
+    <string name="alphard" translation_description="Name of the Star Alphard">Альфард</string>
+    <string name="hamal" translation_description="Name of the Star Hamal">Гамаль</string>
+    <string name="algieba" translation_description="Name of the Star Algieba">Альджеба</string>
+    <string name="diphda" translation_description="Name of the Star Diphda">Дифда</string>
+    <string name="nunki" translation_description="Name of the Star Nunki">Нунки</string>
+    <string name="mirach" translation_description="Name of the Star Mirach">Мирах</string>
+    <string name="alpheratz" translation_description="Name of the Star Alpheratz">Альферац</string>
+    <string name="saiph" translation_description="Name of the Star Saiph">Саиф</string>
+    <string name="kochab" translation_description="Name of the Star Kochab">Кохаб</string>
+    <string name="rasalhague" translation_description="Name of the Star Rasalhague">Рас-Альхаг</string>
+    <string name="algol" translation_description="Name of the Star Algol">Алголь</string>
+    <string name="denebola" translation_description="Name of the Star Denebola">Денебола</string>
+    <string name="alphekka" translation_description="Name of the Star Alphekka">Альфекка</string>
+    <string name="etamin" translation_description="Name of the Star Etamin">Этамин</string>
+    <string name="kaus" translation_description="Name of the Star Kaus">Каус</string>
+    <string name="shedir" translation_description="Name of the Star Shedir">Шедар</string>
+    <string name="caph" translation_description="Name of the Star Caph">Каф</string>
+    <string name="izar" translation_description="Name of the Star Izar">Ицар</string>
+    <string name="merak" translation_description="Name of the Star Merak">Мерак</string>
+    <string name="enif" translation_description="Name of the Star Enif">Эниф</string>
+    <string name="ankaa" translation_description="Name of the Star Ankaa">Анкаа</string>
+    <string name="phad" translation_description="Name of the Star Phad">Фекда</string>
+    <string name="alderamin" translation_description="Name of the Star Alderamin">Альдерамин</string>
+    <string name="scheat" translation_description="Name of the Star Scheat">Шеат</string>
+    <string name="markab" translation_description="Name of the Star Markab">Маркаб</string>
+    <string name="menkar" translation_description="Name of the Star Menkar">Менкар</string>
+    <string name="arneb" translation_description="Name of the Star Arneb">Арнеб</string>
+    <string name="unukalhai" translation_description="Name of the Star Unukalhai">Унукалхай</string>
+    <string name="algenib" translation_description="Name of the Star Algenib">Альгениб</string>
+    <string name="vindemiatrix" translation_description="Name of the Star Vindemiatrix">Виндемиатрикс</string>
+    <string name="alcyone" translation_description="Name of the Star Alcyone">Альциона</string>
+    <string name="dog_star" translation_description="Name of the Dog Star (Sirius)">Собачья звезда</string>
+    <string name="north_star" translation_description="Name of the North Star">Полярная звезда</string>
+    <string name="pole_star" translation_description="Name of the (North) Pole Star">Полярная звезда</string>
+    <string name="alpha_centauri" translation_description="Name of the star Alpha Centauri">Альфа Центавра</string>
+    <string name="rigil_kent" translation_description="Name of the star Rigil Kent">Ригель Кентаурус</string>
+    <string name="e_lyrae" translation_description="Name of the star ε Lyrae">ε Лиры</string>
+
+    <string name="ngc_6543" translation_description="Name of the Messier object NGC6543">NGC 6543</string>
+    <string name="ngc_5139" translation_description="Name of the Messier object NGC5139">NGC 5139</string>
+    <string name="butterfly_cluster" translation_description="Name of the Messier object Butterfly Cluster">Скопление Бабочка</string>
+    <string name="scorpions_tail" translation_description="Name of the Messier object Scorpion\'s Tail">Хвост Скорпиона</string>
+    <string name="winnecke_4" translation_description="Name of the Messier object Winnecke 4">Виннеке 4</string>
+    <string name="beehive_cluster" translation_description="Name of the Messier object Beehive Cluster">Скопление Улей</string>
+    <string name="praesepe" translation_description="Name of the Messier object Praesepe">Ясли</string>
+    <string name="seven_sisters" translation_description="Name of the Messier object Seven Sisters">Семь сестер</string>
+
+    <!-- Manmade objects -->
+    <string name="space_station" translation_description="Name of the Internation Space Station">Международная орбитальная станция</string>
+    <!-- Meteors -->
+    <string name="leonids" translation_description="Meteor Shower">Леониды</string>
+    <string name="geminids" translation_description="Meteor Shower">Геминиды</string>
+    <string name="quadrantids" translation_description="Meteor Shower">Квадрантиды</string>
+    <string name="lyrids" translation_description="Meteor Shower">Лириды</string>
+    <string name="aquariids" translation_description="Meteor Shower">эта-Аквариды</string>
+    <string name="deltaaquariids" translation_description="Meteor Shower">дельта-Аквариды</string>
+    <string name="perseids" translation_description="Meteor Shower">Персеиды</string>
+    <string name="orionids" translation_description="Meteor Shower">Ориониды</string>
+    <string name="puppidvelids" translation_description="Meteor Shower">Пуппиды-Велиды</string>
+    <string name="ursids" translation_description="Meteor Shower">Урсиды</string>
+
+    </resources>

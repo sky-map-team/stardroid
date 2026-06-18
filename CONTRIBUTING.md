@@ -56,7 +56,7 @@ Android Studio can create this file for you.
 
 ### Project Structure
 
-You should see the following directories:
+You should see the following directories (from within the `stardroid-v1` directory):
 
 - **app/** — Application source
 - **datamodel/** — Protocol buffer definitions for astronomical objects
@@ -66,6 +66,8 @@ See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for a detailed architecture ove
 
 ## Building
 
+All commands below should be run from within the `stardroid-v1` directory:
+
 ### Quick Build (Debug APK)
 
 ```bash
@@ -74,13 +76,22 @@ See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for a detailed architecture ove
 
 The APK can be found in `app/build/outputs/apk/`.
 
+### Quick Build (Default)
+
+```bash
+./build.sh             # GMS release
+./build.sh --fdroid    # F-Droid release
+./build.sh -d          # GMS debug
+```
+
 ### Full Build (Including Data Generation)
 
 ```bash
-./build_skymap.sh
+./build.sh --full             # GMS including data generation
+./build.sh --full --fdroid    # F-Droid including data generation
 ```
 
-Pass `--quick` to skip data regeneration, or `--fdroid` to build the F-Droid variant.
+Use `--full` when modifying star catalog or astronomical data.
 
 ### Build Flavors
 

@@ -1,0 +1,77 @@
+# .tmconfig.toml — Sky Map (stardroid)
+
+[app]
+name = "Sky Map"
+description = "a mobile astronomy/planetarium application for Android. Use your astronomy expertise to ensure that astronomical terms like constellation names are correct in the new locale"
+primary_languages = [
+    "sk", "cy", "ar", "en-GB", "zh-Hant", "zh-Hans",
+    "cs", "da", "de", "el", "es", "fa", "fr", "hi",
+    "id", "it", "ja", "ms", "nb", "nl", "pl", "pt", "sl",
+    "sv", "th", "tr", "uk",
+]
+translation_notes = """
+For proper names of celestial objects (planets, moons, nebulae, star clusters, \
+constellations, galaxies, comets, asteroids), always use the established canonical \
+name in the target language as used in scientific literature and Wikipedia — do not \
+invent phonetic transliterations or literal translations of English names. If no \
+established translated name exists, retain the Latin or catalog designation \
+(e.g. "NGC 4755") rather than guessing.
+
+The app name "Sky Map" and the platform name "Android" must never be translated or \
+transliterated, regardless of language. Preserve them exactly as English text in \
+every locale, including languages that use non-Latin scripts (Arabic, Hindi, Thai, \
+Japanese, Chinese, etc.).
+"""
+
+[glossary]
+path = "translation_glossary.md"
+
+[android]
+res_path = "app/src/main/res"
+
+[fastlane]
+metadata_path = "fastlane/metadata/android"
+
+[files]
+android = [
+    "strings.xml",
+    "celestial_objects.xml",
+    "celestial_info_cards.xml",
+    "credits.xml",
+    "arrays.xml",
+    "help.xml",
+    "whatsnew.xml",
+    "whatsnew_content.xml",
+    "eula.xml",
+]
+android_skip = [
+    "notranslate-arrays.xml",
+    "notranslate-contributors.xml",
+    "notranslate-sponsors.xml",
+]
+fastlane = [
+    "title.txt",
+    "short_description.txt",
+    "full_description.txt",
+    "changelogs/default.txt",
+]
+
+[discovery]
+resource_qualifier_excludes = ["w820dp"]
+
+# Per-locale guidance injected into each translation request.
+# Keys are BCP-47 codes matching the locale codes used by this project.
+# Use this for language-specific naming authority references or conventions.
+[locale_context]
+pl = "Follow Polish Wikipedia and PTAst (Polskie Towarzystwo Astronomiczne) naming conventions for astronomical objects. For software targeting the Android platform, use 'na Androida' not 'dla Androida'."
+de = "Follow IAU-approved German astronomical names and DIN conventions where applicable. Use the informal 'du/dein/dir' register throughout — never the formal 'Sie/Ihr/Ihnen'. Use 'Handy' rather than 'Telefon' when referring to a mobile phone."
+nl = "Use the informal 'je/jij/jouw' register throughout — never the formal 'u/uw'. Use 'het kompas' (neuter gender) not 'de kompas' when referring to the compass sensor."
+fr = "Follow Union astronomique internationale (UAI) French-language naming conventions."
+zh-Hant = "Use Traditional Chinese astronomical names as used in Taiwan (中華民國天文學會) conventions."
+da = "Use the informal 'du/din' register throughout — never the formal 'De/Dem'."
+sv = "Use the informal 'du/din' register throughout."
+nb = "Use the informal 'du/din' register throughout."
+
+[language_models]
+# Japanese: Gemini produces broken possessive constructs (e.g. スマートフォン's) — use Sonnet.
+ja = { provider = "anthropic", model = "claude-sonnet-4-6" }

@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+    <string-array name="sensor_speed">
+        <item translation_description="Slow sensor speed">Αργή</item>
+        <item translation_description="Normal sensor speed">Μέτρια</item>
+        <item translation_description="Fast sensor speed">Γρήγορη</item>
+    </string-array>
+    <string-array name="sensor_damping">
+        <item translation_description="Low sensor damping factor - this will make the app jittery">Χαμηλή</item>
+        <item translation_description="Medium sensor damping factor - this will make the app slightly jittery">Μέτρια</item>
+        <item translation_description="Extra High sensor damping factor">Υψηλή</item>
+        <item translation_description="Really High sensor damping factor - this will make the app sluggish">Πολύ υψηλή</item>
+    </string-array>
+    <string-array name="viewing_direction">
+        <item translation_description="Normal viewing">Κανονική</item>
+        <item translation_description="Rotates the screen by 90 degrees">Περιστρεφόμενος ορίζοντας</item>
+        <item translation_description="Shows the sky as pointed at by the long edge of the phone">Λειτουργία δείκτη
+        </item>
+    </string-array>
+    <string-array name="auto_dim_texts">
+        <item translation_description="Dimmest screen setting">Πολύ χαμηλός</item>
+        <item translation_description="Leave it on the system setting">Συστήματος</item>
+        <item translation_description="The setting used for the last 15 years">Κλασσικός</item>
+    </string-array>
+    <string-array name="font_size_texts">
+        <item translation_description="Smallest font size">Μικρή</item>
+        <item translation_description="Normal font size">Μεσαία</item>
+        <item translation_description="Large font size">Μεγάλη</item>
+        <item translation_description="Largest font size">Τεράστια</item>
+    </string-array>
+</resources>

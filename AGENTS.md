@@ -13,12 +13,62 @@ github: https://github.com/sky-map-team/stardroid
 
 ## Module Structure
 
-- **app/** - Main Android application (~171 source files)
-- **datamodel/** - Protocol buffer definitions for astronomical objects
-- **tools/** - Standalone utilities for converting star catalogs to binary protobuf format
+- **stardroid-v1/app/** - Main Android application (~171 source files)
+- **stardroid-v1/datamodel/** - Protocol buffer definitions for astronomical objects
+- **stardroid-v1/tools/** - Standalone utilities for converting star catalogs to binary protobuf format
 
-Read specs in `specs/` before undertaking complex investigations, starting with the overview.md file
+Read specs in `stardroid-v1/specs/` before undertaking complex investigations, starting with the overview.md file
 to know which specs to read.
+
+## Branching
+
+Always make code changes on a feature branch, never directly on `master`. Create a branch before
+starting any work:
+
+```
+git checkout -b feature/<short-description>
+```
+
+Documentation-only changes (`.md` files, troubleshooting guides, skills, etc.) may be committed
+directly to `master` without a feature branch.
+
+Only commit to `master` when explicitly instructed to do so.
+
+## Git Worktrees
+
+Five reusable worktrees live under `.worktrees/` in the repo root:
+
+| Worktree | Path | Placeholder branch |
+|---|---|---|
+| stardroid-alpha | `.worktrees/stardroid-alpha` | `worktree/stardroid-alpha` |
+| stardroid-beta | `.worktrees/stardroid-beta` | `worktree/stardroid-beta` |
+| stardroid-gamma | `.worktrees/stardroid-gamma` | `worktree/stardroid-gamma` |
+| stardroid-delta | `.worktrees/stardroid-delta` | `worktree/stardroid-delta` |
+| stardroid-epsilon | `.worktrees/stardroid-epsilon` | `worktree/stardroid-epsilon` |
+
+### Worktree lifecycle
+
+**1. Claim a worktree for a new task** — fetch latest master, then branch from it:
+```bash
+git fetch origin
+git -C .worktrees/stardroid-alpha checkout -b feature/my-task origin/master
+```
+
+**2. Reset a worktree when done** — return it to its placeholder branch so the feature branch
+can be deleted:
+```bash
+git -C .worktrees/stardroid-alpha checkout worktree/stardroid-alpha
+```
+After resetting all affected worktrees, run `/clean-branches` to delete the merged feature
+branches. That skill uses `git branch -d` (safe delete) and will skip any branch still checked
+out in a worktree.
+
+Each worktree already contains the build-critical files excluded from version control
+(`stardroid-v1/local.properties`, `stardroid-v1/app/local.properties`,
+`stardroid-v1/app/no-checkin.properties`, keystores, `stardroid-v1/fastlane/play-store-credentials.json`). If you add a new worktree, copy
+these files from the main worktree (`stardroid-v1/app/`) before building.
+
+`.worktrees/` is listed in `.gitignore` so worktree directories are never accidentally committed.
 
 ## Build Flavors
 
@@ -31,39 +81,28 @@ all build, test, deploy, and data-generation commands.
 
 ## Architecture
 
-See `docs/ARCHITECTURE.md` for a full overview.
+See `stardroid-v1/docs/ARCHITECTURE.md` for a full overview.
 
-### Dependency Injection (Dagger 2)
+* New files should be written in Kotlin.
 
-Two-level hierarchy (not Hilt):
+### Dependency Injection
 
-1. **ApplicationComponent** - Singleton, created in `StardroidApplication`
-2. **Activity Components** - Per-activity scoped (e.g. `DynamicStarMapComponent`)
-
-#### ⚠️ Scoping pitfall
-
-Do **not** use `@PerActivity` scope for resources released/re-created across `onPause()`/
-`onResume()` (e.g. `MediaPlayer`, file handles). Dagger caches the first instance permanently —
-after `onPause()` releases it, the next `onResume()` gets the dead object.
-
-**Rule:** Resources with an `onResume`/`onPause` lifecycle must use **unscoped** `@Provides` so
-`Provider.get()` creates a fresh instance each call. Prefer `MediaPlayer.prepareAsync()` over
-blocking `MediaPlayer.create()` to avoid ANRs.
+Uses Hilt for dependency injection. Common activity-scoped dependencies are in `ActivityBindingsModule`, while activity-specific ones are in modules like `DynamicStarMapActivityModule`.
 
 ### Rendering Pipeline
 
 Layers → AstronomicalSource → Primitives (Point/Line/Text/Image) → OpenGL via `RendererController` /
-`SkyRenderer`. See `docs/ARCHITECTURE.md` for full detail.
+`SkyRenderer`. See `stardroid-v1/docs/ARCHITECTURE.md` for full detail.
 
 ### Coordinate Transformation
 
 `AstronomerModel` maps phone sensor coordinates to celestial RA/Dec via a transformation matrix
-derived from zenith and North vectors. See `docs/design/sensors.md` for the math.
+derived from zenith and North vectors. See `stardroid-v1/docs/design/sensors.md` for the math.
 
 ### Data Flow
 
 ```
-Raw catalogs → tools/Main.java → ASCII protobuf → binary protobuf → app/src/main/assets/
+Raw catalogs → stardroid-v1/tools/Main.java → ASCII protobuf → binary protobuf → stardroid-v1/app/src/main/assets/
                 (StellarAsciiProtoWriter)  (AsciiToBinaryProtoWriter)
 ```
 
@@ -72,11 +111,21 @@ Runtime: Binary files loaded by `AbstractFileBasedLayer`, deserialized into
 
 ### Adding Dialog Fragments
 
-Follow the pattern in `AbstractDynamicStarMapModule`:
+Dialog fragments are instantiated on demand in the host activity — never stored as fields or
+pre-created in `onCreate`. All fragments must be shown via the activity's `showDialog` helper,
+which guards against duplicate dialogs after activity recreation (e.g. rotation).
 
-1. Add a `@Provides @PerActivity` method returning `new XyzDialogFragment()`
-2. Add `XyzDialogFragment.ActivityComponent` to `DynamicStarMapComponent` interface
-3. Inject the fragment in `DynamicStarMapActivity` and handle in `onOptionsItemSelected`
+**Pattern for a new dialog:**
+
+1. Create your `DialogFragment` class with `@AndroidEntryPoint` for Hilt-injected dependencies.
+2. Add a `public static newInstance()` factory method (use `setArguments(Bundle)` for any data;
+   data objects must be `Parcelable` — use `@Parcelize` on Kotlin data classes).
+3. Show it from the host activity via showDialog(XyzDialogFragment.newInstance(), XyzDialogFragment.class.getSimpleName())
+
+**Do not:**
+- Store dialog fragment instances as activity fields.
+- Pass data to a showing fragment via setter methods — use `newInstance()` + Bundle args so the
+  data survives configuration changes.
 
 ## Code Style
 
@@ -87,14 +136,22 @@ Follow the [Google Java Style Guide](https://google.github.io/styleguide/javagui
 - 100 character line wrap
 - Do **not** prefix member variables with `m` (unlike common Android convention)
 - Use Java 17 toolchain features
+## Threading and Concurrency
+
+- **No Raw Threads:** Never use `Thread { ... }.start()` or `new Thread()`. Raw threads are inefficient and difficult to manage/cancel.
+- **Background Executor:** For background tasks (e.g. geocoding, I/O), inject the shared `ScheduledExecutorService` provided by `ApplicationModule`.
+- **UI Thread:** Use `Handler(Looper.getMainLooper())` or `activity.runOnUiThread` (in fragments) to post results back to the UI thread.
+- **Coroutines:** While preferred for new Kotlin code, ensure they are integrated with the existing Hilt-managed scopes if used.
+
 
 ### Strings
 Remember to properly escape any text added as Android resource strings (e.g. ' must be escaped
-with a single backslash as \')
+with a single backslash as \'). New strings should be in *US English* - translations to
+other locales will be done after features are implemented by a separate pipeline.
 
 ### Colors
 
-Never hardcode color integers in Java/Kotlin. Declare in `app/src/main/res/values/colors.xml` and
+Never hardcode color integers in Java/Kotlin. Declare in `stardroid-v1/app/src/main/res/values/colors.xml` and
 reference via `R.color.*`.
 
 Status colors follow a two-tier naming scheme:
@@ -110,19 +167,19 @@ Night-mode variants are red-shifted; brighter = better (mirrors day-mode meaning
 
 ## Key Files
 
-- [`StardroidApplication.kt`](app/src/main/java/com/google/android/stardroid/StardroidApplication.kt) - Application entry point, Dagger initialization, sensor detection
+- [`StardroidApplication.kt`](stardroid-v1/app/src/main/java/com/google/android/stardroid/StardroidApplication.kt) - Application entry point, Hilt initialization, sensor detection
 - [
-  `DynamicStarMapActivity.java`](app/src/main/java/com/google/android/stardroid/activities/DynamicStarMapActivity.java) -
+  `DynamicStarMapActivity.java`](stardroid-v1/app/src/main/java/com/google/android/stardroid/activities/DynamicStarMapActivity.java) -
   Main interactive star map activity
 - [
-  `AstronomerModel.java`](app/src/main/java/com/google/android/stardroid/control/AstronomerModel.java) -
+  `AstronomerModel.java`](stardroid-v1/app/src/main/java/com/google/android/stardroid/control/AstronomerModel.java) -
   Coordinate transformation logic
-- [`SkyRenderer.java`](app/src/main/java/com/google/android/stardroid/renderer/SkyRenderer.java) -
+- [`SkyRenderer.java`](stardroid-v1/app/src/main/java/com/google/android/stardroid/renderer/SkyRenderer.java) -
   OpenGL rendering
-- [`source.proto`](datamodel/src/main/proto/source.proto) - Protocol buffer schema for astronomical
+- [`source.proto`](stardroid-v1/datamodel/src/main/proto/source.proto) - Protocol buffer schema for astronomical
   objects
 
 ## Testing
 
 Unit tests: JUnit 4, Robolectric, Mockito, Truth. Instrumented: Espresso.
-Structure mirrors main source: `app/src/test/` and `app/src/androidTest/`.
+Structure mirrors main source: `stardroid-v1/app/src/test/` and `stardroid-v1/app/src/androidTest/`.

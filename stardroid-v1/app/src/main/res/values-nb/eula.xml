@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+    <string name="eula_text" translation_description="A condensed, user-friendly version of the EULA and Privacy Policy with a link to the full terms">
+    &lt;h1&gt;Velkommen til Sky Map&lt;/h1&gt;
+        &lt;p&gt;For å komme i gang med stjernekikking, vennligst les dette raskt sammendraget av våre vilkår. &lt;/p&gt;
+
+        &lt;h2&gt;Personvern&lt;/h2&gt;
+        &lt;p&gt;&lt;b&gt;Vi vet ikke hvem du er.&lt;/b&gt; Vi samler inn anonym bruksdata for å hjelpe oss med å fikse feil og forbedre funksjoner. Du kan velge bort dette når som helst i Innstillinger-menyen.&lt;/p&gt;
+
+        &lt;h2&gt;Sikkerhet og ansvar&lt;/h2&gt;
+        &lt;p&gt;Sky Map leveres "som den er." Bruk den trygt—vi er ikke ansvarlige for noen skader eller skader (som nakkesmerter!) som oppstår fra bruken av appen.&lt;/p&gt;
+
+        &lt;h2&gt;Åpen kildekode&lt;/h2&gt;
+        &lt;p&gt;Sky Map er laget med kjærlighet. Du er fri til å bruke vår kildekode, men vennligst respekter vårt merkenavn og logoer.&lt;/p&gt;
+
+        &lt;p&gt;Les det fullstendige juridiske dokumentet her: &lt;a href="https://github.com/sky-map-team/stardroid/blob/master/TERMS.md"&gt;Fullstendige vilkår og personvernpolicy&lt;/a&gt;&lt;/p&gt;
+
+        &lt;p&gt;&lt;i&gt;Ved å klikke "Godta," godtar du disse vilkårene.&lt;/i&gt;&lt;/p&gt;
+    </string>
+</resources>

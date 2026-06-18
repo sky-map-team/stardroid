@@ -1,0 +1,302 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Please add  translation_description="" attributes to Strings to assist the translators. --><resources>
+    <!-- tm:omitted name="app_name" reason="identical_to_source" -->
+    <string name="menu_settings" translation_description="Settings menu item in the options menu">Ayarlar</string>
+    <string name="menu_search" translation_description="Search menu item in the options menu">Ara</string>
+    <string name="cancel" translation_description="Generic cancel button label used in dialogs">İptal</string>
+    <string name="go" translation_description="Button to start navigating the sky map toward a searched object">Git!</string>
+    <string name="start_from_now" translation_description="Button in the time travel dialog to start time travelling from the current time">Şimdi Başla</string>
+    <string name="other_prefs" translation_description="Preferences category heading for miscellaneous settings">Diğer</string>
+    <string name="controls_prefs" translation_description="Preferences category heading for touch control settings">Kontroller</string>
+    <string name="location_permission_dialog_title" translation_description="Title of the dialog that requests location permission from the user">Konum Gerekli</string>
+    <string name="location_permission_dialog_message" translation_description="Body text of the dialog requesting location permission, explaining why the app needs it and what happens without it">
+    Sky Map, doğru gece gökyüzünü göstermek için yaklaşık konumunuza ihtiyaç duyar. İzin verebilir, konumunuzu manuel olarak girebilir veya daha sonra karar verebilirsiniz. Daha sonra karar verirseniz, konumunuz ayarlanana kadar harita doğru olmayacaktır.
+    </string>
+    <string name="location_permission_grant" translation_description="Button in the location permission dialog to grant location access">İzin Ver</string>
+    <string name="location_permission_enter_manually" translation_description="Button in the location permission dialog to enter location by hand instead of granting permission">Manuel Olarak Gir</string>
+    <string name="location_permission_later" translation_description="Button in the location permission dialog to defer the decision">Daha Sonra</string>
+    <string name="location_set_auto" translation_description="Toast message when automatic location is acquired. %1$s is the place name or coordinates">Konum %1$s olarak ayarlandı</string>
+    <string name="location_long_lat" translation_description="Formatted display of longitude and latitude. %1$.2f is longitude, %2$.2f is latitude">Boylam: %1$.2f, Enlem: %2$.2f</string>
+    <string name="degrees" translation_description="angular degrees - used for latitude and longitude">Derece</string>
+    <string name="location_acquiring_title" translation_description="Title of dialog shown while acquiring the user\'s location automatically">Konumunuz bulunuyor…</string>
+    <string name="location_acquiring_message" translation_description="Body text of dialog shown while Sky Map is waiting to acquire the device GPS or network location">Konumunuz hâlâ aranıyor…</string>
+    <string name="location_keep_waiting" translation_description="Button to keep waiting for an automatic location fix">Beklemede Kal</string>
+    <string name="location_permanently_denied_title" translation_description="Title of dialog shown when location permission was permanently denied by the user">İzin Gerekli</string>
+    <string name="location_permanently_denied_message" translation_description="Body text explaining that location permission was permanently denied and how to fix it">
+    Konum izni kalıcı olarak reddedildi. Yeniden etkinleştirmek için Uygulama Ayarları\'nı açın.
+    </string>
+    <string name="location_open_settings" translation_description="Button that opens the system app settings page so the user can re-grant location permission">Uygulama Ayarları\'nı Aç</string>
+    <string name="location_manual_entry_title" translation_description="Title of the dialog where the user types their location manually">Konumunuzu Girin</string>
+    <string name="location_place_name_hint" translation_description="Placeholder text in the place name input field">Şehir veya yer adı</string>
+    <string name="location_latitude_hint" translation_description="Placeholder text in the latitude input field">Enlem (örn. 51,5)</string>
+    <string name="location_longitude_hint" translation_description="Placeholder text in the longitude input field">Boylam (örn. -0,1)</string>
+    <string name="location_resolve_button" translation_description="Button that looks up coordinates for a typed place name">Çöz</string>
+    <string name="location_set_button" translation_description="Button that confirms and applies the manually entered location">Konumu Ayarla</string>
+    <string name="location_place_not_found" translation_description="Inline error shown when a place name search returns no results">Yer bulunamadı — daha spesifik bir ad deneyin</string>
+    <string name="location_geocoder_offline" translation_description="Inline message shown when geocoding fails because there is no internet connection">İnternet yok — koordinatları doğrudan girin</string>
+    <string name="location_invalid_latitude" translation_description="Validation error for latitude values outside the valid range">Enlem −90 ile 90 arasında olmalıdır</string>
+    <string name="location_invalid_longitude" translation_description="Validation error for longitude values outside the valid range">Boylam −180 ile 180 arasında olmalıdır</string>
+    <string name="location_management_title" translation_description="Title of the location management screen">Konumunuz</string>
+    <string name="location_source_auto" translation_description="Label shown when the device is determining location automatically">Otomatik</string>
+    <string name="location_source_manual" translation_description="Label shown when the user has manually entered their location">Manuel</string>
+    <string name="location_source_acquiring" translation_description="Label shown while waiting for the first automatic location fix">Alınıyor…</string>
+    <string name="location_source_unset" translation_description="Label shown when no location has been set">Konum ayarlanmadı</string>
+    <string name="location_source_hardware_unavailable" translation_description="Label shown when the device has no location hardware">Bu cihazda konum kullanılamıyor</string>
+    <string name="location_switch_to_auto" translation_description="Button to switch from manual location to automatic detection">Otomatik Konum Kullan</string>
+    <string name="location_switch_to_manual" translation_description="Button to switch from automatic to manual location entry">Konumu Manuel Olarak Girin</string>
+    <string name="location_change" translation_description="Button to change or update the manually entered location">Konumu Değiştir</string>
+    <string name="location_map_no_location" translation_description="Message shown in the map area when no location is set">Konum ayarlanmadı — bir tane eklemek için aşağıya dokunun</string>
+    <string name="location_map_acquiring" translation_description="Message shown in the map area while waiting for a GPS fix">Konum alınıyor…</string>
+    <string name="location_map_unavailable" translation_description="Message shown in the map area when the map image cannot be loaded">Harita Kullanılamıyor</string>
+    <string name="location_map_content_description" translation_description="Accessibility description for the map image showing the user\'s location">Konumunuzu gösteren harita</string>
+    <!-- tm:omitted name="location_coordinate_format" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_diagnostic_format" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_phone_format" reason="identical_to_source" -->
+    <string name="diagnostics_ra_format" translation_description="Format for Right Ascension: hours, minutes, seconds. %1$d is hours, %2$d is minutes, %3$d is seconds">%1$ds %2$dd %3$ds</string>
+    <!-- tm:omitted name="diagnostics_dec_format" reason="identical_to_source" -->
+    <string name="use_magnetic_correction" translation_description="Preference label: apply magnetic declination correction so the compass points to true north instead of magnetic north">Manyetik düzeltmeyi uygulayın</string>
+    <string name="manual_compass_adjustment_title" translation_description="Preference title: lets the user add a manual degree offset to the compass reading">Ek pusula ayarlaması</string>
+    <string name="manual_compass_adjustment_summary" translation_description="Summary for the manual compass adjustment preference">Pusula okumasına eklenen ekstra ofset derece cinsinden (+ veya −)</string>
+    <string name="show_stars_pref" translation_description="Label for the stars layer on the sky map (shows in the search results)">Yıldızlar</string>
+    <string name="show_constellations_pref" translation_description="Label for the constellation lines and labels layer (shows in the search results)">Takımyıldızları</string>
+    <string name="show_deep_sky_objects_pref" translation_description="Deep-sky objects layer — galaxies, nebulae, star clusters, and other notable objects (shows in the search results)">Messier Nesneleri</string>
+    <string name="show_planets_pref" translation_description="Label for the solar system layer (planets, sun, moon)  (shows in the search results)">Güneş Sistemi</string>
+    <string name="show_grid_pref" translation_description="Label for the Right Ascension / Declination grid overlay  (shows in the search results)">RA/Dec Izgarası</string>
+    <string name="show_horizon_pref" translation_description="Preference toggle label for the horizon line layer">Ufuk</string>
+    <string name="show_sky_gradient" translation_description="This is a shading of the color of the sky used for effect">Gökyüzü Gradyanı</string>
+    <string name="show_meteors_pref" translation_description="Label for the meteor shower layer (shows in the search results)">Meteor Yağmurları</string>
+    <string name="show_comet_layer_pref" translation_description="Preference toggle label for the comets layer">Kuyruklu Yıldızlar</string>
+    <string name="show_satellite_layer_pref" translation_description="The layer for satellites">Uydular</string>
+    <string name="sensor_prefs" translation_description="Preferences category heading for sensor settings, intended for advanced/expert users">Sensör Ayarları (Uzman)</string>
+    <string name="sensor_speed" translation_description="Old, non gyro sensors only: How quickly the sensor should send us data">Sensör Hızı</string>
+    <string name="sensor_damping" translation_description="Old, non gyro sensors only: The amount of smoothing applied to the sensor outputs.">Sönümleme</string>
+    <string name="appearance_prefs" translation_description="Preferences title for section about app appearance">Görünüm</string>
+    <string name="auto_dimness_preference" translation_description="Mode for automatically dimming the screen when night mode is selected">Otomatik ekran kararması</string>
+    <string name="font_size_preference" translation_description="Change the font size">Yazı tipi boyutu</string>
+    <string name="font_size_preference_description" translation_description="help to go along with the change font size preference">Etiket metin boyutunu ayarla</string>
+    <string name="show_sky_gradient_preference_title" translation_description="Setting toggle title: whether to show the blue sky gradient during the day">Gökyüzü gradyanını göster</string>
+    <string name="show_sky_gradient_preference_summary" translation_description="Setting toggle summary for sky gradient: explains what the feature does">Gökyüzünü Güneş\'in yakınında mavi, karşı tarafında koyu renklendirir</string>
+    <string name="ecliptic" translation_description="Label for the ecliptic layer — the apparent annual path of the Sun across the sky">Ekliptik</string>
+    <string name="dialog_accept" translation_description="accepting the licence agreement">Kabul et</string>
+    <string name="dialog_decline" translation_description="declining the licence agreement">Hayır, teşekkürler</string>
+    <string name="dialog_ok_button" translation_description="Generic OK/confirm button label for dialogs">Tamam</string>
+    <string name="menu_credits" translation_description="menu item to show \'Credits\' box">Krediler</string>
+    <string name="credits_dialog_title" translation_description="Title of the credits dialog showing acknowledgements and contributors">Krediler</string>
+    <string name="menu_help" translation_description="menu item to show \'Help\' box">Yardım</string>
+    <string name="help_dialog_title" translation_description="Title of the help dialog">Sky Map Yardımı</string>
+    <string name="set_manual" translation_description="Toast message shown when the user switches to manual (touch-drag) mode">Manuel moda geçiliyor</string>
+    <string name="set_auto" translation_description="Toast message shown when the user switches to automatic (sensor/gyroscope) mode">Otomatik moda geçiliyor</string>
+    <string name="menu_toggle_dim" translation_description="Menu item to toggle night mode (red tint that preserves night vision)">Gece modunu aç/kapat</string>
+    <string name="zenith" translation_description="Label for the zenith point (directly overhead) shown on the sky map. Displayed in capitals.">Başucu</string>
+    <string name="nadir" translation_description="Label for the nadir point (directly below) shown on the sky map. Displayed in capitals.">Ayakucu</string>
+    <string name="north" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">KUZEY</string>
+    <string name="east" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">DOĞU</string>
+    <string name="west" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">BATI</string>
+    <string name="south" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">GÜNEY</string>
+    <string name="search_label" translation_description="Hint/label for the search bar in the search activity">Gökyüzünde Ara</string>
+    <string name="search_hint" translation_description="an example search target">örn. Mars veya RA Dec</string>
+    <!-- tm:omitted name="search_target_ra_dec_format" reason="identical_to_source" -->
+    <string name="no_search_title" translation_description="Dialog title shown when a sky search returns no results">Sonuç Bulunamadı</string>
+    <!-- Hopefully this is a temporary measure until we can fix the search engine -->
+    <string name="no_search_results_text2" translation_description="Alternative message shown when a search returns no results, suggesting the object may not currently be visible">Sonuç bulunamadı. Muhtemelen nesne şu anda görünmüyor.</string>
+    <string name="many_search_results_title" translation_description="Dialog title shown when a search returns multiple possible matches">Şunu mu demek istediniz?</string>
+    <string name="other" translation_description="A preference category (ie preferences that don't belong in any other category)">Diğer</string>
+    <string name="menu_time" translation_description="Menu item label to open the time travel feature">Zaman Yolculuğu</string>
+    <string name="time_travel_start_message_alt" translation_description="Toast message when time travel starts toward a named destination. %s is the event or destination name">%s tarihine yolculuk yapılıyor…</string>
+    <string name="time_travel_close_message" translation_description="Toast message shown when the user exits time travel and returns to the present">Şimdiye geri dönülüyor…</string>
+    <!--  -->
+    <string name="popular_dates_prompt" translation_description="Label for a list of dates the user can choose from">Popüler tarihler</string>
+    <string name="custom_date_prompt" translation_description="Label telling the user to manually specify a date">Veya kendi tarihinizi seçin:</string>
+    <string name="change_date_prompt" translation_description="Button label to open the date picker in the time travel dialog">Tarihi değiştir</string>
+    <string name="change_time_prompt" translation_description="Button label to open the time picker in the time travel dialog">Saati değiştir</string>
+    <string name="now_visiting" translation_description="used in time travel dialog to show the destination date/time the user has selected, time formatted as yyyy.mm.dd at hh.mm.ss + timezone">Şu an ziyaret edilen zaman: %s</string>
+    <string name="time_travel_label_past" translation_description="Label showing that we are in the past">Zaman Yolculuğu: Geçmiş</string>
+    <string name="time_travel_label_future" translation_description="Label showing that we are in the future">Zaman Yolculuğu: Gelecek</string>
+    <string name="time_travel_stopped" translation_description="Label showing rate of travel through time">Zaman yolculuğu durdu</string>
+    <string name="time_travel_second_speed" translation_description="Label showing rate of travel through time.  The symbol means greater than.">Yolculuk &gt; @ 1 sn/sn</string>
+    <string name="time_travel_minute_speed" translation_description="Label showing rate of travel through time">Yolculuk &gt; @ 1 dak/sn</string>
+    <string name="time_travel_10minute_speed" translation_description="Label showing rate of travel through time">Yolculuk &gt; @ 10 dak/sn</string>
+    <string name="time_travel_hour_speed" translation_description="Label showing rate of travel through time">Yolculuk &gt; @ 1 saat/sn</string>
+    <string name="time_travel_day_speed" translation_description="Label showing rate of travel through time">Yolculuk &gt; @ 1 gün/sn</string>
+    <string name="time_travel_week_speed" translation_description="Label showing rate of travel through time">Yolculuk &gt; @ 1 hafta/sn</string>
+    <string name="time_travel_second_speed_back" translation_description="Label showing rate of travel through time">Yolculuk &lt; @ 1 sn/sn</string>
+    <string name="time_travel_minute_speed_back" translation_description="Label showing rate of travel through time">Yolculuk &lt; @ 1 dak/sn</string>
+    <string name="time_travel_10minute_speed_back" translation_description="Label showing rate of travel through time">Yolculuk &lt; @ 10 dak/sn</string>
+    <string name="time_travel_hour_speed_back" translation_description="Label showing rate of travel through time">Yolculuk &lt; @ 1 saat/sn</string>
+    <string name="time_travel_day_speed_back" translation_description="Label showing rate of travel through time">Yolculuk &lt; @ 1 gün/sn</string>
+    <string name="time_travel_week_speed_back" translation_description="Label showing rate of travel through time">Yolculuk &lt; @ 1 hafta/sn</string>
+
+    <!-- Time Travel dialog event display names -->
+    <string name="time_travel_select_hint" translation_description="Placeholder hint text for the dropdown list of popular astronomical events in the time travel dialog">-- Popüler bir etkinlik seçin --</string>
+    <string name="time_travel_next_sunset" translation_description="Name of a popular astronomical event in the time travel picker">Sonraki akşam günbatımı</string>
+    <string name="time_travel_next_sunrise" translation_description="Name of a popular astronomical event in the time travel picker">Sonraki sabah gün doğumu</string>
+    <string name="time_travel_next_fullmoon" translation_description="Name of a popular astronomical event in the time travel picker">Sonraki dolunay</string>
+    <string name="time_travel_next_newmoon" translation_description="Name of a popular astronomical event in the time travel picker">Sonraki yeni ay</string>
+    <string name="time_travel_mercury_transit_2016" translation_description="Name of an astronomical event in the time travel picker. A Mercury transit is when Mercury passes across the face of the Sun as seen from Earth. Keep the date format suitable for your locale.">09 Mayıs 2016 Merkür Geçişi</string>
+    <string name="time_travel_solar_eclipse_2024" translation_description="Name of an astronomical event in the time travel picker. Keep the date format suitable for your locale.">8 Nisan 2024 Güneş Tutulması</string>
+    <string name="time_travel_apollo_11" translation_description="Name of an astronomical event in the time travel picker: the first crewed Moon landing in 1969">Apollo 11 Ay İnişi</string>
+    <string name="time_travel_jupiter_saturn_2020" translation_description="Name of an astronomical event in the time travel picker. A conjunction is when two planets appear very close together in the sky.">2020 Jüpiter-Satürn Kavuşumu</string>
+    <string name="time_travel_six_planet_parade_2026" translation_description="Name of an astronomical event in the time travel picker. A planet parade is when several planets are visible at once. Keep the date format suitable for your locale.">Altı Gezegen Geçidi, 28 Şub 2026</string>
+    <string name="time_travel_lunar_eclipse_2026" translation_description="Name of an astronomical event in the time travel picker. Keep the date format suitable for your locale.">Toplam Ay Tutulması, 3 Mar 2026</string>
+    <string name="time_travel_lyrids_2026" translation_description="Name of an astronomical event in the time travel picker. The Lyrids are an annual meteor shower. Keep the date format suitable for your locale.">Lyrids Meteor Yağmuru, 22 Nis 2026</string>
+    <string name="time_travel_venus_jupiter_2026" translation_description="Name of an astronomical event in the time travel picker. A conjunction is when two planets appear very close together in the sky. Keep the date format suitable for your locale.">Venüs-Jüpiter Birleşimi, 9 Haz 2026</string>
+    <string name="time_travel_mars_uranus_2026" translation_description="Name of an astronomical event in the time travel picker. A close approach is when two objects appear near each other in the sky. Keep the date format suitable for your locale.">Mars-Uranüs Yakın Yaklaşması, 4 Tem 2026</string>
+    <string name="time_travel_solar_eclipse_2026" translation_description="Name of an astronomical event in the time travel picker. Keep the date format suitable for your locale.">Toplam Güneş Tutulması, 12 Ağu 2026</string>
+    <string name="time_travel_perseids_2026" translation_description="Name of an astronomical event in the time travel picker. The Perseids are an annual meteor shower. Keep the date format suitable for your locale.">Perseid Meteor Yağmuru, 12-13 Ağustos 2026</string>
+    <string name="time_travel_jupiter_occultation_2026" translation_description="Name of an astronomical event in the time travel picker. A lunar occultation is when the Moon passes in front of a planet, briefly hiding it. Keep the date format suitable for your locale.">Jüpiter\'in Ay Tarafından Örtülmesi, 6 Ekim 2026</string>
+    <string name="time_travel_geminids_2026" translation_description="Name of an astronomical event in the time travel picker. The Geminids are an annual meteor shower. Keep the date format suitable for your locale.">Geminid Meteor Shower, 13-14 Aralık 2026</string>
+    <string name="time_travel_supermoon_2026" translation_description="Name of an astronomical event in the time travel picker. A supermoon is a full moon that occurs near the Moon\'s closest approach to Earth. Keep the date format suitable for your locale.">Noel Arifesi Süper Ay, 24 Aralık 2026</string>
+
+    <string name="use_sound_effects" translation_description="A preferences menu label for enabling sound effects">Ses efektlerini etkinleştir</string>
+
+    <string name="menu_gallery" translation_description="Menu item label to open the image gallery">Galeri</string>
+    <string name="gallery_image_search_btn" translation_description="Button in the gallery to locate the displayed object on the sky map">Gökyüzünde bul</string>
+    <string name="gallery_image_back_btn" translation_description="Button to return to the gallery from a single image view">Galeriye dön</string>
+    <string name="hubble_image_gallery_title" translation_description="Title of the image gallery screen">Sky Map Galerisi</string>
+    <string name="hubble_image" translation_description="Label or caption for a Hubble Space Telescope image in the gallery">Hubble Görüntüsü</string>
+    <string name="search_overlay_title" translation_description="title for search overlay">Telefonunuzu ok yönüne çevirin</string>
+    <string name="search_target_looking_message" translation_description="displayed when a search target is being searched for">Aranıyor: %s</string>
+    <string name="search_target_found_message" translation_description="displayed when a search target has been found and is centered on screen">Bulundu: %s</string>
+    <string name="sun_wont_set_message" translation_description="Message shown when the sun will not set during the next 24 hours (polar day / midnight sun)">24 saat boyunca güneş, mevcut konumunuzda batmayacak.</string>
+
+    <!-- tm:omitted name="missing_label" reason="identical_to_source" -->
+
+    <string name="menu_tos" translation_description="Menu item label to view the Terms of Service">Kullanım Şartları</string>
+    <string name="menu_diagnostics" translation_description="Menu item label to open the technical diagnostics screen">Kontrol</string>
+
+    <string name="north_pole" translation_description="Short abbreviation for the North Celestial Pole, displayed as a label on the sky map grid. Translators: use the standard abbreviation in your language (e.g. NP in English, PN in French).">KK</string>
+    <string name="south_pole" translation_description="Short abbreviation for the South Celestial Pole, displayed as a label on the sky map grid. Translators: use the standard abbreviation in your language (e.g. SP in English, PS in French).">GK</string>
+
+    <string name="enable_analytics" translation_description="Preference label to opt in to sending anonymous usage statistics">Kullanım istatistikleri gönder</string>
+    <string name="enable_analytics_desc" translation_description="Description/summary for the usage statistics preference">Google Analytics\'e anonim veri göndererek Sky Map\'i daha iyi hale getirin</string>
+
+    <string name="no_sensor_warning" translation_description="Warning shown when required orientation sensors are not detected on the device">Cihazınızın yönlendirme sensörleri eksik olabilir - otomatik mod çalışmayabilir</string>
+    <string name="warning_dialog_title" translation_description="Title of a warning dialog shown when something is wrong, e.g. a missing sensor">Üzgünüz!</string>
+    <string name="missing_sensor_dialog_text" translation_description="Dialog message shown when the device appears to be missing the compass or accelerometer sensors needed for auto mode">
+    Yıldızları hareket ederken otomatik olarak takip etmek için Sky Map\'ın yerleşik bir pusula ve ivmeölçere ihtiyacı vardır. Cihazınızda bunlardan biri eksik görünüyor.
+        \nEndişelenmeyin! Yine de Manüel Mod\'da evreni keşfedebilirsiniz. Gece gökyüzünde parmağınızla sürüklemek, döndürmek ve yakınlaştırmak için kendi hızınızda hareket edin.
+    </string>
+    <string name="do_not_show_again" translation_description="Checkbox or button label to suppress future display of a warning dialog">Bu mesajı tekrar gösterme</string>
+    <string name="title_activity_diagnostic" translation_description="Title bar text for the Diagnostics activity/screen">Kontrol</string>
+    <string name="play_services_error" translation_description="Warning shown in the diagnostics screen when Google Play Services has an error that may affect automatic location">Uyarı: Google Play Hizmetleri hatası - Otomatik konum çalışmayabilir</string>
+    <string name="sensor_absent" translation_description="Sensor status shown in diagnostics when the sensor is not present on the device">Yok</string>
+    <string name="sensor_accuracy_unknown" translation_description="Sensor calibration level shown in the diagnostics screen and calibration dialog">Kalibrasyon: Bilinmiyor</string>
+    <string name="sensor_accuracy_unreliable" translation_description="Sensor calibration level shown in the diagnostics screen and calibration dialog">Kalibrasyon: Kalibre edilmemiş</string>
+    <string name="sensor_accuracy_low" translation_description="Sensor calibration level shown in the diagnostics screen and calibration dialog">Kalibrasyon: Kötü</string>
+    <string name="sensor_accuracy_medium" translation_description="Sensor calibration level shown in the diagnostics screen and calibration dialog">Kalibrasyon: Tamam</string>
+    <string name="sensor_accuracy_high" translation_description="Sensor calibration level shown in the diagnostics screen and calibration dialog">Kalibrasyon: İyi</string>
+    <string name="sensor_accuracy_nocontact" translation_description="Sensor calibration level shown when the sensor has no contact (e.g. heart-rate sensor lifted from skin) — unlikely to appear in Sky Map but included for completeness">Kalibrasyon: Temas yok</string>
+    <string name="diagnostics_activity_general_heading" translation_description="Section heading in the Diagnostics screen for general device information">Genel</string>
+    <string name="diagnostics_activity_phone" translation_description="Row label in the Diagnostics screen for the device model name">Cihaz</string>
+    <string name="diagnostics_activity_android_version" translation_description="Row label in the Diagnostics screen for the Android OS version">Android sürümü</string>
+    <string name="diagnostics_activity_sky_map_version" translation_description="Row label in the Diagnostics screen for the Sky Map app version">Sky Map sürümü</string>
+    <string name="diagnostics_activity_sensors_heading" translation_description="Section heading in the Diagnostics screen for sensor readings">Sensörler</string>
+    <string name="diagnostics_activity_compass" translation_description="Row label in the Diagnostics screen for the compass (magnetic field) sensor">Pusula</string>
+    <string name="diagnostics_activity_accelerometer" translation_description="Row label in the Diagnostics screen for the accelerometer sensor">İvmeölçer</string>
+    <string name="diagnostics_activity_rotation_vector" translation_description="Row label in the Diagnostics screen for the rotation vector (combined orientation) sensor">Dönme</string>
+    <string name="diagnostics_activity_gyroscope" translation_description="Row label in the Diagnostics screen for the gyroscope sensor">Jiroskop</string>
+    <string name="diagnostics_activity_light_level" translation_description="Row label in the Diagnostics screen for the ambient light sensor reading">Işık düzeyi</string>
+    <string name="diagnostics_activity_location_and_time_heading" translation_description="Section heading in the Diagnostics screen for location and time information">Konum ve Zaman</string>
+    <string name="diagnostics_activity_location_permission" translation_description="Row label in the Diagnostics screen showing whether location permission has been granted">Konum İzni</string>
+    <string name="diagnostics_activity_location_permission_granted" translation_description="Status value shown when location permission has been granted">Verildi</string>
+    <string name="diagnostics_activity_location_permission_denied" translation_description="Status value shown when location permission has been denied">Reddedildi</string>
+    <!-- tm:omitted name="diagnostics_activity_gps" reason="identical_to_source" -->
+    <string name="diagnostics_activity_location" translation_description="Row label in the Diagnostics screen showing the current latitude and longitude">Konum (enlem, boylam)</string>
+    <string name="diagnostics_activity_pointing_ra_dec" translation_description="Row label in the Diagnostics screen showing a snapshot of where the phone is currently pointing in the sky (Right Ascension and Declination)">Yönlendirme anı</string>
+    <string name="diagnostics_activity_magnetic_correction" translation_description="Row label in the Diagnostics screen showing whether magnetic declination correction is applied">Manyetik düzeltme</string>
+    <string name="diagnostics_activity_local_datetime" translation_description="Row label in the Diagnostics screen for the local date and time">Yerel saat</string>
+    <string name="diagnostics_activity_universal_time" translation_description="Row label in the Diagnostics screen for the UTC/universal date and time">Evrensel saat</string>
+    <string name="diagnostics_activity_network_heading" translation_description="Section heading in the Diagnostics screen for network connectivity information">Ağ</string>
+    <string name="diagnostics_activity_connection" translation_description="Row label in the Diagnostics screen for the current network connection status">Bağlantı</string>
+    <string name="diagnostics_activity_rotation_matrix" translation_description="Row label in the Diagnostics screen showing the raw device rotation matrix used for orientation">Dönüş Matrisi</string>
+    <string name="enabled" translation_description="Generic status value meaning a feature or sensor is enabled/active">Etkin</string>
+    <string name="disabled" translation_description="Generic status value meaning a feature or sensor is disabled/inactive">Devre Dışı</string>
+    <string name="permission_disabled" translation_description="Status value shown when a feature is unavailable because its permission was not granted">İzin devre dışı</string>
+    <string name="no_gps" translation_description="Status value shown in diagnostics when no GPS provider is available">GPS Yok</string>
+    <string name="connected" translation_description="Network status value shown when the device has an active network connection">Bağlı</string>
+    <string name="disconnected" translation_description="Network status value shown when the device has no network connection">Bağlantı Kesildi</string>
+    <string name="wifi" translation_description="Network type suffix appended to the connection status (e.g. \'Connected (wifi)\'). Note the leading space.">(wifi)</string>
+    <string name="cell_network" translation_description="Network type suffix appended to the connection status (e.g. \'Connected (cell)\'). Note the leading space.">(mobil)</string>
+    <string name="menu_calibrate" translation_description="Menu item label to open the compass calibration screen">Kalibrasyon</string>
+    <string name="compass_calibration_activity_heading_compass" translation_description="Static label in the compass calibration screen placed inline to the left of the live compass accuracy value (e.g. displayed as \'Compass - Accuracy: High\')">Pusula -</string>
+    <string name="compass_calibration_activity_do_not_show_this_again" translation_description="Checkbox label in the compass calibration dialog to suppress future automatic appearances">Bu mesajı tekrar gösterme</string>
+    <string name="compass_calibration_activity_warning" translation_description="Heading/reason text shown in the compass calibration dialog when it opens automatically due to low accuracy">Telefonunuzun Pusulası Dikkat Gerektiriyor</string>
+    <string name="compass_calibration_activity_user_heading" translation_description="Heading shown in the compass calibration dialog when the user opens it manually from the menu">Telefonunuzun Pusulası</string>
+    <string name="compass_calib_what_to_do" translation_description="Information for the user on how to calibrate the compass when the dialog auto-opens. Placeholder is the video URL"><![CDATA[Cihazınız, iç pusulasının kalibre edilmesi gerektiğinini Sky Map uygulamasına bildiriyor.
+    Bu, Sky Map uygulamasından kaynaklanmayan bir sorundur, ancak sizlere yardımcı olabiliriz. Pusulayı kalibre etmek için telefonunuzu bu videoda gösterildiği gibi sekiz rakamı şeklinde hareket ettirmeyi deneyin %s doğruluk "yüksek" okuyana kadar.]]></string>
+    <string name="compass_calib_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they invoke the calibration dialog. Placeholder is the video URL"><![CDATA[Telefonunuzun pusula doğruluğu yukarıda gösteriliyor.
+    Eğer "yüksek" değilse, pusulanın kalibre edilmesi gerekebilir. Bu bir Sky Map sorunu değil, telefonunuzun bir özelliğidir. Pusulanın doğru bir şekilde kalibre edilmesi için telefonunuzu aşağıdaki videoda gösterilen şekilde sekiz rakamı çizer gibi hareket ettirmeyi deneyin. Bu işlemi doğruluk seviyesine ulaşana kadar tekrarlayın. %s.]]></string>
+    <string name="compass_low_accuracy_toast" translation_description="Brief toast shown when compass accuracy is low and the user has disabled the calibration dialog">Telefonunuzun pusulası düşük doğruluk bildiriyor</string>
+    <string name="sensor_reverse_preference_title" translation_description="Preference title for reversing the magnetic Z-axis sensor reading, a fix for certain phones with incorrectly implemented sensors">Manyetik Z Tersi</string>
+    <string name="sensor_reverse_preference_summary" translation_description="Summary for the Reverse Magnetic Z preference">
+    Yanlış şekilde uygulanan sensörlere sahip telefonlar için düzeltme - yeniden başlatma gerektirir
+    </string>
+    <string name="whats_new_dialog_title" translation_description="Title of the dialog shown on first launch after an update, listing new features">Yenilikler</string>
+    <string name="disable_gyro_preference_title" translation_description="Preference title for disabling the gyroscope sensor">Jiroskopu Devre Dışı Bırak</string>
+    <string name="disable_gyro_preference_summary" translation_description="Explanation of the disable gyroscope preference and when to use it">
+    Tüm cihazlar bir jiroskopa sahip değil - sizin cihazınızda varsa ve bu kutuyu işaretlemezseniz daha iyi sonuçlar alırsınız. Öte yandan, cihazınızda bir jiroskop yoksa bu kutunun işaretini kaldırırsanız, Sky Map muhtemelen çalışmayabilir.
+    </string>
+    <string name="rotate_horizon_preference_title" translation_description="Preference title for choosing the view/pointing direction mode">Görünüm Yönü</string>
+    <string name="auto_level_horizon_preference_title" translation_description="Preference title for the auto-level horizon feature in manual mode">Ufku otomatik olarak düzelt</string>
+    <string name="auto_level_horizon_preference_summary" translation_description="Summary for the auto-level horizon preference">Manuel modda, parmağınızı kaldırdıktan sonra ufuk yavaş yavaş yatay konuma döner</string>
+
+    <string name="rotate_horizon_preference_summary" translation_description="Explanation of the view direction preference, covering both landscape rotation and pointer modes">
+    Yatay konum zorunlu olan cihazlar için yatayda 90 derece döndürün veya ekranın üstünün nereyi işaret ettiğini göstermek için işaretçi modunu kullanın (yardım metnini görün).
+    </string>
+
+    <string name="show_object_info_pref_title" translation_description="Preference title for showing info cards when tapping objects">Dokunduğunda bilgi göster</string>
+    <string name="show_object_info_pref_summary" translation_description="Preference summary for the tap info feature">Gök cisimlerine dokunarak onlar hakkında bilgi edinin</string>
+    <string name="show_object_info_auto_mode_title" translation_description="Preference title for enabling info cards in auto/sensor mode">Otomatik modda bilgi kartları</string>
+    <string name="show_object_info_auto_mode_summary" translation_description="Preference summary for auto mode info cards">Otomatik (sensör) modda nesnelere dokunurken de bilgi kartlarını göster</string>
+    <string name="object_info_funfact_label" translation_description="Label before the fun fact in info card">Eğlenceli bilgi:</string>
+    <string name="object_info_also_known_as" translation_description="Subtitle showing alternate names for a celestial object, e.g. \'Also known as: NGC 253 · Silver Dollar Galaxy\'">Ayrıca şöyle bilinir: %1$s</string>
+    <string name="object_info_see_also_label" translation_description="Label for the see also section in info card">Ayrıca bkz:</string>
+    <string name="object_info_distance_label" translation_description="Label for distance field">Mesafe:</string>
+    <string name="object_info_size_label" translation_description="Label for size field">Boyut:</string>
+    <string name="object_info_mass_label" translation_description="Label for mass field">Kütle:</string>
+    <string name="object_info_spectral_label" translation_description="Label for spectral class">Spektral:</string>
+    <string name="object_info_magnitude_label" translation_description="Label for apparent magnitude">Büyüklük:</string>
+    <string name="object_info_image_content_description" translation_description="Accessibility description for celestial object photo">Gök cismi fotoğrafı</string>
+    <string name="object_info_tap_to_expand" translation_description="Hint shown on image to tap to expand">Genişletmek için dokunun</string>
+    <string name="object_info_tap_to_close" translation_description="Hint shown on expanded image to tap to close">Kapatmak için dokunun</string>
+    <string name="action_find_in_sky_map" translation_description="Button label that opens the star map and searches for the displayed object">Bul</string>
+    <string name="auto_level_horizon_on" translation_description="Toast message when auto-level horizon is enabled">Ufuk otomatik hizalama açık</string>
+    <string name="auto_level_horizon_off" translation_description="Toast message when auto-level horizon is disabled">Ufuk otomatik hizalama kapalı</string>
+
+    <string name="warm_welcome_title" translation_description="Title of the Warm Welcome screen">Sky Map\'a Hoş Geldiniz</string>
+    <string name="warm_welcome_slide1_title" translation_description="Title for the first slide of the Warm Welcome">Evreni Keşfedin</string>
+    <string name="warm_welcome_slide1_desc" translation_description="Description for the first slide of the Warm Welcome">
+    Yıldızları, takımyıldızları, gezegenleri ve daha fazlasını filtrelemek için sol taraftaki katmanları kullanın. Zaman içinde seyahat etmek için Girdap\'a veya gece moduna geçmek için Göz\'e dokunun.
+    <b>Vortex</b> to travel through time, or the <b>Eye</b> for night mode.</string>
+    <string name="warm_welcome_slide2_title" translation_description="Title for the second slide of the Warm Welcome">Gökyüzünde Gezinin</string>
+    <string name="warm_welcome_slide2_desc" translation_description="Description for the second slide of the Warm Welcome">
+    Otomatik Modda etrafı görmek için telefonunuzu yönlendirin veya Manuel moda geçmek için dokunun ve kaydırarak keşfedin. Manuel modda ufkunuzu sıfırlamak için çift dokunun.
+    <b>Auto Mode</b>, or tap to switch to <b>Manual</b> and explore by swiping. Double-tap in Manual to reset your horizon.</string>
+    <string name="warm_welcome_slide2_info_desc" translation_description="Description about info cards on the second slide">
+    Manuel Mod\'da herhangi bir nesneye dokunarak eğlenceli bilgiler ve gök cismi ayrıntılarını gösteren Bilgi Kartları açın.
+    </string>
+    <string name="warm_welcome_slide3_title" translation_description="Title for the third slide of the Warm Welcome">Sensörler ve Kalibrasyon</string>
+    <string name="warm_welcome_slide3_desc" translation_description="Description for the third slide of the Warm Welcome">Sky Map, yıldızlarla hizalamak için telefonunuzun sensörlerini kullanır.</string>
+    <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message when sensors are missing">
+    Cihazınız otomatik izleme için gerekli sensörlere sahip olmadığı görülüyor. Endişelenmeyin—Manual Mod\'da tüm evreni keşfetmeye devam edebilirsiniz!
+    <b>Manual Mode</b>!</string>
+    <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration text on slide 3">
+    Doğruluğu korumak için telefonunuzu ara sıra hızlı bir şekilde sekiz şeklinde hareket ettirin.
+    <b>figure-8</b> wave every once in a while.</string>
+
+    <string name="tutorial_planets" translation_description="Tutorial annotation for planets layer">Gezegenler</string>
+    <string name="tutorial_meteors" translation_description="Tutorial annotation for meteors layer">Meteorlar</string>
+    <string name="tutorial_grid" translation_description="Tutorial annotation for grid layer">Izgara</string>
+    <string name="tutorial_night_mode" translation_description="Tutorial annotation for night mode">Gece Modu</string>
+    <string name="tutorial_time_travel" translation_description="Tutorial annotation for time travel">Zaman Yolculuğu</string>
+    <string name="tutorial_manual_auto" translation_description="Tutorial annotation for manual/auto toggle">Manuel/Otomatik</string>
+
+    <string name="warm_welcome_skip" translation_description="Button to skip the Warm Welcome">Atla</string>
+    <string name="warm_welcome_next" translation_description="Button to go to the next slide">İleri</string>
+    <string name="warm_welcome_finish" translation_description="Button to finish the Warm Welcome and start exploring. Needs to be short - the width of 9 letter Ms maximum.">Başlat!</string>
+    <string name="warm_welcome_do_not_show" translation_description="Checkbox to not show the Warm Welcome again">Bunu otomatik olarak tekrar gösterme</string>
+    <string name="menu_tutorial" translation_description="Menu item for re-showing the warm welcome tutorial">Eğitim</string>
+    <string name="warm_welcome_sensor_ok" translation_description="Status when a sensor is working fine">Çalışıyor</string>
+    <string name="warm_welcome_sensor_missing" translation_description="Status when a sensor is missing">Eksik</string>
+    <string name="preferences_auto_mode_title" translation_description="Label for the toggle between manual and automatic modes">Manuel / Otomatik Mod</string>
+</resources>

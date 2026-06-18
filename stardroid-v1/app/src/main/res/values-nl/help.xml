@@ -1,0 +1,172 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+<string name="help_text" translation_description="This is the help text for the app Google Sky Map. It includes placeholders where other text is inserted. Please do not change the &lt; and &gt; markup">
+    &lt;h1&gt;Sky Map voor Android&lt;/h1&gt;
+&lt;p class="version"&gt;Versie %1$s&lt;/p&gt;
+&lt;p class="url"&gt;&lt;a href="https://stardroid.app"&gt;https://stardroid.app&lt;/a&gt;&lt;/p&gt;
+
+%4$s
+
+&lt;h2&gt;Introductie en Snelstart&lt;/h2&gt;
+&lt;p&gt;Houd uw telefoon omhoog en kijk erdoorheen als een venster naar de ruimte. Sky Map gebruikt het kompas, de versnellingsmeter en de gyroscoop van uw telefoon om te volgen waar u naartoe wijst en de kaart in realtime bij te werken.&lt;/p&gt;
+&lt;p class="callout"&gt;Niet alle telefoons kunnen Sky Map uitvoeren! Zie het gedeelte over hardwarevereisten hieronder.&lt;/p&gt;
+&lt;p&gt;Als dit uw eerste keer is:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Sta locatietoegang toe wanneer daarom wordt gevraagd — Sky Map heeft uw geschatte locatie nodig om de juiste hemel te tekenen voor waar u zich bevindt&lt;/li&gt;
+&lt;li&gt;Richt uw telefoon in elke richting naar de hemel&lt;/li&gt;
+&lt;li&gt;De kaart beweegt mee met de richting waarin u wijst&lt;/li&gt;
+&lt;li&gt;Tik ergens op het scherm om de bedieningselementen weer te geven&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2&gt;Navigeren door de hemel&lt;/h2&gt;
+&lt;h3&gt;Automatische modus&lt;/h3&gt;
+&lt;p&gt;In de automatische modus (standaard) gebruikt Sky Map de sensoren van uw telefoon om te tonen wat zich in de richting bevindt waarin uw telefoon wijst. Beweeg uw telefoon gewoon rond en de kaart volgt.&lt;/p&gt;
+&lt;h3&gt;Handmatige modus&lt;/h3&gt;
+&lt;p&gt;Tik op het sensor-/kompasicoon in de bedieningselementen om over te schakelen naar de handmatige modus. In deze modus kunt u:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Sleep de kaart met één vinger om te pannen&lt;/li&gt;
+&lt;li&gt;Knijp om in of uit te zoomen&lt;/li&gt;
+&lt;li&gt;Roteer met twee vingers om de oriëntatie te wijzigen&lt;/li&gt;
+&lt;li&gt;Dubbeltik om de "automatische nivellering" van de horizon in/uit te schakelen&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;De handmatige modus is handig wanneer u de hemel wilt verkennen zonder uw telefoon omhoog te houden.&lt;/p&gt;
+
+&lt;h2&gt;Zichtbare lagen&lt;/h2&gt;
+&lt;p&gt;Sky Map organiseert wat het toont in lagen, die elk onafhankelijk van elkaar kunnen worden in- of uitgeschakeld. Tik op het scherm om de laagbedieningselementen aan de zijkant weer te geven — ze gloeien oranje wanneer een laag is ingeschakeld en lijken gedimd wanneer deze is uitgeschakeld.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;b&gt;Sterren:&lt;/b&gt; De helderste sterren, met labels voor opmerkelijke exemplaren&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Sterrenbeelden:&lt;/b&gt; Omtrekken en namen van sterrenbeelden&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Opmerkelijke Deep-Sky Objecten:&lt;/b&gt; Sterrenstelsels, nevels, sterrenhopen en andere opmerkelijke objecten&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Planeten:&lt;/b&gt; De planeten van ons zonnestelsel, weergegeven als afbeeldingen&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Meteorenzwermen:&lt;/b&gt; Actieve en aankomende radianten van meteorenzwermen&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Ecliptica &amp; RA/Dec-raster:&lt;/b&gt; De Ecliptica is het jaarlijkse pad van de zon door de hemel&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Horizon:&lt;/b&gt; De horizonlijn en windrichtingaanduidingen (N, Z, O, W)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p class="callout"&gt;&lt;b&gt;Goed om te weten:&lt;/b&gt; Sky Map toont de geometrische horizon — een perfect vlak, onbelemmerd uitzicht. Objecten net daarboven kunnen in de praktijk nog steeds verborgen zijn door gebouwen, heuvels of bomen.&lt;/p&gt;
+
+&lt;h2&gt;Bedieningselementen op het scherm&lt;/h2&gt;
+&lt;p&gt;Tik ergens op het scherm om de bedieningselementen weer te geven of te verbergen. Aan de ene kant vindt u de hierboven beschreven laagwisselaars. Aan de andere kant bevindt zich de knop om te schakelen tussen de automatische en handmatige modus.&lt;/p&gt;
+&lt;p&gt;De bedieningselementen vervagen automatisch na een paar seconden om het zicht vrij te houden.&lt;/p&gt;
+
+&lt;h2&gt;Zoeken&lt;/h2&gt;
+&lt;p&gt;Tik op het vergrootglasicoon om naar iets aan de hemel te zoeken. U kunt zoeken naar:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;b&gt;Sterren&lt;/b&gt; — op naam, bijv. "Sirius", "Betelgeuze", "Poolster"&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Planeten&lt;/b&gt; — bijv. "Mars", "Saturnus"&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Sterrenbeelden&lt;/b&gt; — bijv. "Orion", "Cassiopeia"&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Deep-sky objecten&lt;/b&gt; — bijv. "M31", "Andromedanevel", "Plejaden"&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Kometen en meteorenzwermen&lt;/b&gt; — op naam&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;b&gt;In de automatische modus:&lt;/b&gt; na het selecteren van een resultaat toont Sky Map een richtcirkel en een richtingspijl. Volg de pijl door uw telefoon te draaien — de cirkel verandert van blauw naar rood, en vervolgens naar oranje wanneer het object binnen uw gezichtsveld is. Tik op de ✕ om het zoeken te verlaten.&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;In de handmatige modus:&lt;/b&gt; de kaart springt eenvoudigweg naar het midden van het object.&lt;/p&gt;
+
+&lt;h2&gt;Tijdreizen&lt;/h2&gt;
+&lt;p&gt;Met Tijdreizen kunt u de hemel zien op elk moment van het jaar 1900 tot 2100. Selecteer het kronkelende cirkels &lt;b&gt;Tijdreizen&lt;/b&gt;-icoon in de actiebalk.&lt;/p&gt;
+&lt;p&gt;U kunt een vooraf ingestelde datum kiezen (zonnewendes, verduisteringen, beroemde hemelse gebeurtenissen, historische momenten) of uw eigen datum en tijd invoeren. Tik op &lt;b&gt;Ga!&lt;/b&gt; om ernaartoe te vliegen.&lt;/p&gt;
+&lt;p&gt;Eenmaal in de Tijdreismodus wordt de datum op het scherm weergegeven en kunt u met de afspeelbedieningselementen door de tijd bewegen:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Tik op de vooruit- of achteruit-afspeelknoppen om te beginnen met bewegen&lt;/li&gt;
+&lt;li&gt;Tik er nogmaals op om sneller te gaan&lt;/li&gt;
+&lt;li&gt;Tik op de stopknop om te pauzeren&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Enkele dingen waarvoor u het kunt gebruiken:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;i&gt;Wat kan ik vanavond net na zonsondergang zien?&lt;/i&gt;&lt;/li&gt;
+&lt;li&gt;&lt;i&gt;Wanneer is de volgende goede kans om Mercurius te spotten?&lt;/i&gt;&lt;/li&gt;
+&lt;li&gt;&lt;i&gt;Hoe zag de hemel eruit in de nacht dat ik geboren werd?&lt;/i&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;De nauwkeurigheid neemt af voor datums ver van het heden, voornamelijk door de zwaartekrachtsinvloed van Jupiter.&lt;/p&gt;
+
+&lt;h2&gt;Infokaarten&lt;/h2&gt;
+&lt;p&gt;Tik op een gelabeld hemelobject op de hemelkaart om een infokaart te openen — een paneel met een foto en details over dat object. Infokaarten zijn beschikbaar voor meer dan 150 objecten, waaronder sterren, planeten, de Maan, opmerkelijke deep-sky objecten en sterrenbeelden.&lt;/p&gt;
+&lt;p&gt;Elke kaart toont:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Een foto of kaart van het object&lt;/li&gt;
+&lt;li&gt;Een korte beschrijving en een leuk feitje&lt;/li&gt;
+&lt;li&gt;Wetenschappelijke gegevens zoals afstand, grootte en objecttype&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Tik op de afbeelding in de kaart om deze schermvullend te bekijken. Sluit de kaart door erbuiten te tikken of op &lt;b&gt;Terug&lt;/b&gt; te drukken.&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;Infokaarten inschakelen:&lt;/b&gt; Standaard verschijnen ze alleen wanneer u in de handmatige modus bent; ga naar instellingen om ze in te schakelen terwijl u in de automatische (sensorgestuurde) modus bent.&lt;/p&gt;
+
+&lt;h2&gt;Galerij&lt;/h2&gt;
+&lt;p&gt;De Galerij bevat een verzameling afbeeldingen van de Hubble-ruimtetelescoop en andere bronnen. Open deze vanuit het hoofdmenu.&lt;/p&gt;
+&lt;p&gt;Blader door miniaturen door te scrollen en tik op een miniatuur om de volledige afbeelding te zien. Gebruik de knop &lt;b&gt;Zoeken in hemel&lt;/b&gt; om naar de zoekmodus te gaan en dat object op uw huidige hemelkaart te lokaliseren.&lt;/p&gt;
+
+&lt;h2&gt;Nachtzichtmodus&lt;/h2&gt;
+&lt;p&gt;Als u buiten bent om echt te observeren, helpt de nachtzichtmodus uw aan het donker aangepaste gezichtsvermogen te behouden. Schakel deze in/uit via de actiebalk door op het oogvormige &lt;b&gt;Nachtzicht&lt;/b&gt;-icoon te tikken.&lt;/p&gt;
+&lt;p&gt;In de nachtzichtmodus doet Sky Map het volgende:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Schakelt het scherm over naar dieprode tinten&lt;/li&gt;
+&lt;li&gt;Dimt het scherm aanzienlijk&lt;/li&gt;
+&lt;li&gt;Vermindert de achtergrondverlichting van knoppen&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Schakel het opnieuw in/uit om terug te keren naar normaal. De optie &lt;b&gt;Scherm dimmen&lt;/b&gt; onder &lt;b&gt;Instellingen → Uiterlijk&lt;/b&gt; geeft u extra controle over hoe donker het scherm wordt.&lt;/p&gt;
+
+&lt;h2&gt;Uw locatie instellen&lt;/h2&gt;
+&lt;p&gt;Sky Map heeft uw geschatte locatie nodig om de juiste hemel te tekenen. Standaard gebruikt het de locatieservices van uw apparaat (mobiel netwerk of GPS). Als u geen toegang verleent, plaatst Sky Map u op (0, 0) — een punt midden in de oceaan!&lt;/p&gt;
+&lt;p&gt;Als locatietoegang niet beschikbaar is of u het liever handmatig instelt, ga dan naar &lt;b&gt;Instellingen → Locatie&lt;/b&gt; en kies een van de volgende opties:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Voer een &lt;b&gt;plaatsnaam&lt;/b&gt; in (vereist een internetverbinding om de coördinaten op te zoeken), of&lt;/li&gt;
+&lt;li&gt;Voer een &lt;b&gt;breedtegraad en lengtegraad&lt;/b&gt; direct in graden in (geen internet nodig)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Als u eerder de locatietoestemming voor Sky Map hebt geweigerd, moet u deze mogelijk opnieuw inschakelen in de &lt;b&gt;App-instellingen → Machtigingen&lt;/b&gt; van uw apparaat.&lt;/p&gt;
+
+&lt;h2&gt;Telescoopgebruikers — Aanwijsmodus&lt;/h2&gt;
+&lt;p&gt;Wijzig onder &lt;b&gt;Instellingen → Sensorinstellingen&lt;/b&gt; de &lt;b&gt;Kijkrichting&lt;/b&gt; naar &lt;b&gt;Aanwijsmodus&lt;/b&gt;. In deze modus toont Sky Map waar de &lt;i&gt;lange zijde&lt;/i&gt; van de telefoon naar wijst, in plaats van waar het scherm naar gericht is.&lt;/p&gt;
+&lt;p&gt;Hierdoor kunt u uw telefoon langs de zijkant van een telescoopbuis monteren, zodat het scherm loodrecht op de buis staat, terwijl de kaart nog steeds volgt waar de telescoop op gericht is.&lt;/p&gt;
+
+&lt;h2&gt;Handige tips en instellingen&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;b&gt;Diagnostiek:&lt;/b&gt; Als er iets mis lijkt te zijn, opent u het overloopmenu en tikt u op &lt;b&gt;Diagnostiek&lt;/b&gt;. Deze pagina toont uw huidige locatie, tijd, sensorstatus en nauwkeurigheidsmetingen — erg handig als u een probleem moet melden.&lt;/li&gt;
+
+&lt;li&gt;&lt;b&gt;Lettergrootte:&lt;/b&gt; Pas de labelgrootte aan onder &lt;b&gt;Instellingen → Uiterlijk&lt;/b&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Schokkerige kaart:&lt;/b&gt; Experimenteer met &lt;b&gt;Sensorsnelheid&lt;/b&gt; en &lt;b&gt;Sensordemping&lt;/b&gt; onder &lt;b&gt;Instellingen → Sensorinstellingen (Experts)&lt;/b&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Geen gyroscoop?&lt;/b&gt; Als uw telefoon geen gyroscoop heeft, schakel dan &lt;b&gt;Gyro uitschakelen&lt;/b&gt; in de Sensorinstellingen in om een alternatieve sensormodus te gebruiken.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Magnetische correctie:&lt;/b&gt; Sky Map kan een magnetische declinatiecorrectie toepassen, zodat de kaart uitlijnt met het ware noorden in plaats van het magnetische noorden. Schakel dit in/uit onder &lt;b&gt;Instellingen → Locatie&lt;/b&gt;. In sommige delen van de wereld kan het verschil 20 graden of meer zijn. U kunt dit handmatig verder aanpassen als het kompas van uw telefoon onbetrouwbaar is.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Hardwarevereisten&lt;/h2&gt;
+&lt;p&gt;Niet alle apparaten kunnen Sky Map volledig ondersteunen! U hebt op zijn minst een telefoon nodig met:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Een magnetisch veldsensor (ook wel een kompas genoemd) — om te bepalen in welke richting u kijkt&lt;/li&gt;
+&lt;li&gt;Een versnellingsmeter — om te bepalen hoe hoog u naar de hemel kijkt&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Idealiter ook:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Een gyroscoop — dit zal de beweging vloeiender maken en minder schokkerig&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p class="callout"&gt;Telefoonkompassen zijn notoir onbetrouwbaar. Als de hemelkaart er verkeerd uitziet, is dit bijna altijd een hardwareprobleem met het kompas van uw telefoon — geen bug in Sky Map. Sky Map leest precies wat de sensor van uw telefoon rapporteert; het heeft geen manier om een slechte of bevooroordeelde meting automatisch te corrigeren, hoewel een handmatige offset beschikbaar is in Instellingen voor telefoons met een consistente fout. Zie Probleemoplossing hieronder.&lt;/p&gt;
+&lt;h3&gt;Hoe weet ik welke sensoren mijn telefoon heeft?&lt;/h3&gt;
+&lt;p&gt;Open de Diagnostiekpagina van Sky Map — sensoren die uw telefoon niet heeft, worden weergegeven als "--,--,--".&lt;/p&gt;
+&lt;h3&gt;Wat als mijn apparaat de vereiste sensoren mist?&lt;/h3&gt;
+&lt;p&gt;Sky Map zal terugvallen naar de handmatige modus. U kunt nog steeds de hemel verkennen, maar zonder de sensoren is er geen enkele app die u uw richting kan tonen.&lt;/p&gt;
+
+&lt;h2&gt;Probleemoplossing&lt;/h2&gt;
+&lt;h3&gt;De kaart beweegt niet&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Controleer of u in de automatische modus bent (niet handmatig)&lt;/li&gt;
+&lt;li&gt;Controleer de Diagnostiekpagina om te bevestigen dat uw apparaat een kompas en versnellingsmeter heeft&lt;/li&gt;
+&lt;li&gt;Probeer het figuur-8 kalibratiegebaar: zwaai uw telefoon langzaam in een grote, vloeiende figuur-8 vorm&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;De kaart wijst de verkeerde kant op of is onnauwkeurig&lt;/h3&gt;
+&lt;p&gt;Sky Map heeft drie dingen nodig om de juiste hemel te tonen: de richting waarin uw telefoon wijst, uw locatie en de huidige tijd. Als de kaart er verkeerd uitziet, is een van deze waarschijnlijk niet correct.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;b&gt;Kompas (meest voorkomende oorzaak):&lt;/b&gt; Dit is een hardwareprobleem met uw telefoon — geen Sky Map-bug. Het figuur-8 kalibratiegebaar vraagt uw telefoon om de kompassensor intern te resetten, maar &lt;i&gt;een gekalibreerd kompas is niet noodzakelijkerwijs een nauwkeurig kompas&lt;/i&gt;. Als u in de buurt bent van een metalen object, autodashboard of magnetisch telefoonhoesje, kan de kaart nog steeds afwijken, zelfs na kalibratie. Ga naar een open gebied, herhaal het figuur-8 gebaar en schakel vervolgens &lt;b&gt;Magnetische correctie&lt;/b&gt; in/uit in &lt;b&gt;Instellingen → Locatie&lt;/b&gt;. Als uw telefoon een consistente richtingsfout heeft, gebruik dan de handmatige offset onder &lt;b&gt;Instellingen → Sensorinstellingen (Experts)&lt;/b&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Locatie:&lt;/b&gt; Verleen locatietoestemming via &lt;b&gt;App-instellingen → Machtigingen&lt;/b&gt;. Controleer de Diagnostiekpagina om uw coördinaten te bevestigen. Een veelzeggend symptoom van ontbrekende locatie is dat de Poolster dicht bij de horizon verschijnt.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Tijd:&lt;/b&gt; Minder gebruikelijk, maar een onjuiste tijdzone verschuift de hele hemel. Controleer de Diagnostiekpagina om te bevestigen dat de tijd en tijdzone van uw apparaat correct zijn.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;De kaart is schokkerig&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Pas &lt;b&gt;Sensorsnelheid&lt;/b&gt; en &lt;b&gt;Sensordemping&lt;/b&gt; aan onder &lt;b&gt;Instellingen → Sensorinstellingen (Experts)&lt;/b&gt;&lt;/li&gt;
+&lt;li&gt;Als uw telefoon geen gyroscoop heeft, schakel dan &lt;b&gt;Gyro uitschakelen&lt;/b&gt; in de sensorinstellingen in&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Voor volledige details over probleemoplossing, zie de online &lt;a href="https://github.com/sky-map-team/stardroid/blob/master/troubleshooting.md"&gt;handleiding voor probleemoplossing&lt;/a&gt;.&lt;/p&gt;
+&lt;p class="callout"&gt;Als u er nog steeds niet uitkomt, stuur ons dan een e-mail op skymapdevs@gmail.com — een screenshot van uw Diagnostiekpagina is erg nuttig.&lt;/p&gt;
+
+&lt;h1&gt;Wat is er nieuw in Sky Map?&lt;/h1&gt;
+
+%3$s
+
+%2$s
+    </string>
+</resources>

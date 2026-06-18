@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:stardroid="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_sky_view_root"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:theme="@android:style/Theme.Black">
+
+    <FrameLayout
+        android:id="@+id/main_sky_view"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1">
+
+        <android.opengl.GLSurfaceView
+            android:id="@+id/skyrenderer_view"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" />
+        <!-- Provides a translucent mask over the whole screen -->
+        <View
+            android:id="@+id/view_mask"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="#ff990099"
+            android:visibility="invisible" />
+
+        <!-- Include a place for all the modal controls. -->
+        <RelativeLayout
+            android:id="@+id/search_control_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#20990099"
+            android:orientation="vertical"
+            android:padding="1dip"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/search_icon"
+                android:layout_width="34dip"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dip"
+                android:layout_alignParentStart="true"
+                android:src="@drawable/search_lens_very_small" />
+
+            <TextView
+                android:id="@+id/search_status_label"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dip"
+                android:layout_toEndOf="@id/search_icon"
+                android:layout_toStartOf="@+id/cancel_search_button"
+                android:paddingStart="10dip"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <TextView
+                android:id="@+id/search_prompt"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/search_status_label"
+                android:layout_toEndOf="@id/search_icon"
+                android:layout_toStartOf="@+id/cancel_search_button"
+                android:paddingStart="10dip"
+                android:text="@string/search_overlay_title"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            <ImageButton
+                android:id="@+id/cancel_search_button"
+                android:layout_width="48dip"
+                android:layout_height="48dip"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="8dip"
+                android:background="@android:color/transparent"
+                android:clickable="true"
+                android:padding="8dip"
+                android:scaleType="centerInside"
+                android:src="@drawable/time_travel_close" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Include a place for the time travel player controls. -->
+            <include
+                layout="@layout/time_player"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="top"
+                android:visibility="gone" />
+
+        </LinearLayout>
+        <!--  The layers/providers button -->
+        <com.google.android.stardroid.views.ButtonLayerView
+            android:id="@+id/layer_buttons_control"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|center_vertical"
+            android:background="@drawable/sidebarnoelements"
+            android:orientation="vertical"
+            stardroid:fade_time="500">
+
+            <com.google.android.stardroid.views.PreferencesButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:paddingLeft="5px"
+                android:paddingTop="11px"
+                android:paddingBottom="7px"
+                android:contentDescription="@string/show_stars_pref"
+                stardroid:image_off="@drawable/star_off"
+                stardroid:image_on="@drawable/star_on"
+                stardroid:pref_key="source_provider.0" />
+
+            <com.google.android.stardroid.views.PreferencesButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:paddingLeft="5px"
+                android:paddingTop="7px"
+                android:paddingBottom="7px"
+                android:contentDescription="@string/show_constellations_pref"
+                stardroid:image_off="@drawable/stars_off"
+                stardroid:image_on="@drawable/stars_on"
+                stardroid:pref_key="source_provider.1" />
+
+            <com.google.android.stardroid.views.PreferencesButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:paddingLeft="5px"
+                android:paddingTop="7px"
+                android:paddingBottom="7px"
+                android:contentDescription="@string/show_deep_sky_objects_pref"
+                stardroid:image_off="@drawable/deep_sky_objects_off"
+                stardroid:image_on="@drawable/deep_sky_objects_on"
+                stardroid:pref_key="source_provider.2" />
+
+            <com.google.android.stardroid.views.PreferencesButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:paddingLeft="5px"
+                android:paddingTop="7px"
+                android:paddingBottom="7px"
+                android:contentDescription="@string/show_planets_pref"
+                stardroid:image_off="@drawable/planet_off"
+                stardroid:image_on="@drawable/planet_on"
+                stardroid:pref_key="source_provider.3" />
+
+            <com.google.android.stardroid.views.PreferencesButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:paddingLeft="5px"
+                android:paddingTop="7px"
+                android:paddingBottom="7px"
+                android:contentDescription="@string/show_meteors_pref"
+                stardroid:image_off="@drawable/b_meteor_off"
+                stardroid:image_on="@drawable/b_meteor_on"
+                stardroid:pref_key="source_provider.6" />
+            <!--com.google.android.stardroid.views.PreferencesButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="7px"
+                android:paddingBottom="11px"
+                android:paddingLeft="5px"
+                android:background="#00000000"
+                stardroid:pref_key="@string/show_satellite_layer_pref"
+                stardroid:image_on="@drawable/b_iss_on"
+                stardroid:image_off="@drawable/b_iss_off" /-->
+            <com.google.android.stardroid.views.PreferencesButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:paddingLeft="5px"
+                android:paddingTop="7px"
+                android:paddingBottom="7px"
+                android:contentDescription="@string/show_grid_pref"
+                stardroid:image_off="@drawable/grid_off"
+                stardroid:image_on="@drawable/grid_on"
+                stardroid:pref_key="source_provider.4" />
+
+            <com.google.android.stardroid.views.PreferencesButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:paddingLeft="5px"
+                android:paddingTop="7px"
+                android:paddingBottom="11px"
+                android:contentDescription="@string/show_horizon_pref"
+                stardroid:image_off="@drawable/horizon_off"
+                stardroid:image_on="@drawable/horizon_on"
+                stardroid:pref_key="source_provider.5" />
+        </com.google.android.stardroid.views.ButtonLayerView>
+
+        <!-- Manual/auto button -->
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical">
+
+            <FrameLayout
+                android:id="@+id/manual_bar"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom">
+
+                <com.google.android.stardroid.views.ButtonLayerView
+                    android:id="@+id/layer_manual_auto_toggle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|right"
+                    android:orientation="vertical"
+                    stardroid:fade_time="500">
+
+                    <com.google.android.stardroid.views.PreferencesButton
+                        android:id="@+id/manual_auto_toggle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="#00000000"
+                        android:contentDescription="@string/preferences_auto_mode_title"
+                        stardroid:default_value="true"
+                        stardroid:image_off="@drawable/automaticmode"
+                        stardroid:image_on="@drawable/manualmode"
+                        stardroid:pref_key="auto_mode" />
+                </com.google.android.stardroid.views.ButtonLayerView>
+            </FrameLayout>
+        </RelativeLayout>
+    </FrameLayout>
+</RelativeLayout>
+

@@ -1,0 +1,25 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="64dp"
+    android:height="64dp"
+    android:viewportWidth="64"
+    android:viewportHeight="64">
+    <!-- Outer faint glow -->
+    <path
+        android:strokeColor="#4400FFFF"
+        android:strokeWidth="6"
+        android:pathData="M 32 32 m -28 0 a 28 28 0 1 0 56 0 a 28 28 0 1 0 -56 0" />
+    <!-- Inner bright ring -->
+    <path
+        android:strokeColor="#00FFFF"
+        android:strokeWidth="2"
+        android:pathData="M 32 32 m -28 0 a 28 28 0 1 0 56 0 a 28 28 0 1 0 -56 0" />
+    <!-- Segmented tech elements -->
+    <path
+        android:strokeColor="#8800FFFF"
+        android:strokeWidth="2"
+        android:pathData="M 32 2 a 30 30 0 0 1 15 4" />
+    <path
+        android:strokeColor="#8800FFFF"
+        android:strokeWidth="2"
+        android:pathData="M 32 62 a 30 30 0 0 1 -15 -4" />
+</vector>

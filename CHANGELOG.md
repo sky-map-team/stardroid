@@ -5,6 +5,228 @@ All notable changes to Sky Map are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [1.15.5] - 2026-06-12
+
+### Fixed
+- Fix welcome screen buttons hidden by system navigation bar on Android 15+ (#916, #918)
+- Don't show What's New dialog on fresh installs, only on upgrades (#917)
+
+---
+
+## [1.15.4] - 2026-06-11
+
+### Fixed
+- Freeze text angle near zenith to prevent label flickering (#914)
+
+---
+
+## [1.15.3] - 2026-06-11
+
+### Changed
+- Renamed compass 'Accuracy' to 'Calibration: Good/OK/Poor' in the UI for clarity (#911)
+
+---
+
+## [1.15.2] - 2026-06-08
+
+### Added
+- Search by RA/Dec coordinates as well as by object name (#905)
+
+### Fixed
+- Manual location entry now works correctly for locales that use a comma as the decimal separator (#909)
+
+---
+
+## [1.15.1] - 2026-06-03
+
+### Changed
+- **Compass/calibration messaging** — clearer language distinguishes hardware sensor issues from
+  app problems, reducing confusion for users with compass-less devices
+- **Saturn splash screen** — updated release artwork for 1.15.1
+
+### Fixed
+- Translation gaps filled for Polish, Chinese (Simplified & Traditional), Welsh, and Japanese
+
+---
+
+## [1.15.0] - 2026-05-22
+
+### Added
+- **New user onboarding** — a 3-slide warm welcome flow guides first-time users through sensor
+  verification (with haptic feedback) and location setup before entering the star map
+  ([#853](https://github.com/sky-map-team/stardroid/pull/853),
+  [#857](https://github.com/sky-map-team/stardroid/pull/857),
+  [#866](https://github.com/sky-map-team/stardroid/pull/866),
+  [#870](https://github.com/sky-map-team/stardroid/pull/870),
+  [#871](https://github.com/sky-map-team/stardroid/pull/871),
+  [#882](https://github.com/sky-map-team/stardroid/pull/882))
+- **Location map** — the location settings screen now shows a map (via MapTiler) so you can
+  visually confirm your position
+  ([#865](https://github.com/sky-map-team/stardroid/pull/865),
+  [#887](https://github.com/sky-map-team/stardroid/pull/887))
+- **Search by RA/Dec** — you can now search for a sky position by entering right ascension and
+  declination coordinates directly
+- **A/B experiment framework** — runtime experiment configuration via Firebase Remote Config
+  (gms) and hardcoded defaults (fdroid) enables feature rollouts without app updates
+  ([#869](https://github.com/sky-map-team/stardroid/pull/869))
+
+### Changed
+- **Location handling rewrite** — state-driven architecture replaces the old ad-hoc approach;
+  all location states now have human-readable diagnostic strings, a progress spinner appears
+  while the position is resolving, and locale-aware coordinate entry is enforced
+  ([#850](https://github.com/sky-map-team/stardroid/pull/850))
+- **Search overlay feedback** — the overlay updates to "Found: X" when the target enters the
+  centre of the screen
+  ([#820](https://github.com/sky-map-team/stardroid/pull/820))
+
+### Fixed
+- WebView link taps in Credits, EULA, Help, and What's New dialogs are now guarded with
+  try/catch to prevent crashes on external `startActivity` calls
+  ([#877](https://github.com/sky-map-team/stardroid/pull/877),
+  [#892](https://github.com/sky-map-team/stardroid/pull/892))
+- Map colour and loading spinner issues resolved
+  ([#889](https://github.com/sky-map-team/stardroid/pull/889),
+  [#890](https://github.com/sky-map-team/stardroid/pull/890))
+- Haptic feedback during warm welcome no longer fires when system touch feedback is disabled
+  ([#888](https://github.com/sky-map-team/stardroid/pull/888))
+
+---
+
+## [1.14.2] - 2026-05-05
+
+### Added
+- **Virtual objects** — Jupiter's Galilean moons (Io, Europa, Ganymede, Callisto) and Mars's
+  moons (Phobos and Deimos) are now searchable with rich info cards and NASA imagery, without
+  appearing as separate points on the star map
+  ([#809](https://github.com/sky-map-team/stardroid/pull/809),
+  [#813](https://github.com/sky-map-team/stardroid/pull/813),
+  [#817](https://github.com/sky-map-team/stardroid/pull/817))
+- **Expanded deep sky catalog** — dozens of new objects added including the Double Cluster,
+  47 Tucanae, the Exposed Cranium Nebula (PMR 1), Brocchi's Cluster and many more, each with
+  descriptions, fun facts, distances and images
+  ([#801](https://github.com/sky-map-team/stardroid/pull/801),
+  [#805](https://github.com/sky-map-team/stardroid/pull/805),
+  [#806](https://github.com/sky-map-team/stardroid/pull/806),
+  [#823](https://github.com/sky-map-team/stardroid/pull/823))
+- **Smarter search overlay** — the overlay now shows "Found: X" when you've centered your
+  phone on the target, replacing the generic pointer prompt
+  ([#820](https://github.com/sky-map-team/stardroid/pull/820))
+
+### Fixed
+- See-also links in the image gallery now open the correct info card instead of dismissing
+  ([#825](https://github.com/sky-map-team/stardroid/pull/825),
+  [#830](https://github.com/sky-map-team/stardroid/pull/830))
+- Gallery and info cards no longer clip on Android 15+ edge-to-edge displays
+  ([#819](https://github.com/sky-map-team/stardroid/pull/819),
+  [#822](https://github.com/sky-map-team/stardroid/pull/822))
+- Info card "Find" button is now hidden when a card is opened from the star map (already found)
+  ([#807](https://github.com/sky-map-team/stardroid/pull/807),
+  [#810](https://github.com/sky-map-team/stardroid/pull/810))
+- Translation corrections: Thai Draco term, Hindi Crux character, French celestial glossary
+  ([#827](https://github.com/sky-map-team/stardroid/pull/827),
+  [#829](https://github.com/sky-map-team/stardroid/pull/829),
+  [#831](https://github.com/sky-map-team/stardroid/pull/831))
+
+---
+
+## [1.13.4] - 2026-04-16
+
+### Added
+- **Sky gradient toggle** — a new Settings option lets you enable or disable the sky gradient
+  background ([#795](https://github.com/sky-map-team/stardroid/pull/795))
+
+---
+
+## [1.13.3] - 2026-04-12
+
+### Added
+- **Two black holes** — Cygnus X-1 and Sagittarius A* are now in the Sky Map catalog
+  ([#771](https://github.com/sky-map-team/stardroid/pull/771))
+- **Time travel in overflow menu** — the time travel option now appears directly in the
+  overflow menu, making it discoverable without knowing the toolbar icon; icons added to all
+  overflow menu items
+  ([#770](https://github.com/sky-map-team/stardroid/pull/770))
+- **Double-tap to freeze/unfreeze auto-level horizon** — in manual mode, a double-tap now
+  toggles horizon leveling on/off without opening Settings; the preference is still available
+  for users who want a persistent setting
+  ([#788](https://github.com/sky-map-team/stardroid/pull/788))
+
+### Changed
+- **Gallery redesigned** — replaced the sideways-scrolling list with a grid layout that
+  integrates with info cards for a much improved browsing experience
+  ([#778](https://github.com/sky-map-team/stardroid/pull/778),
+  [#779](https://github.com/sky-map-team/stardroid/pull/779))
+- **"Messier objects" renamed to "Deep sky objects"** — the catalog of nebulae, clusters, and
+  galaxies is now labelled more accurately throughout the app
+  ([#772](https://github.com/sky-map-team/stardroid/pull/772))
+- **EULA shortened** — the in-app EULA is now a friendly summary with a link to the full text;
+  translated into core languages
+- **Translations** — Brazilian Portuguese help, EULA, and info cards updated
+  ([#783](https://github.com/sky-map-team/stardroid/pull/783)); Polish HTML formatting fixed
+  ([#781](https://github.com/sky-map-team/stardroid/pull/781)); language-apology strings
+  removed for primary languages that are now nearly fully translated
+
+### Fixed
+- **Info cards not responding to taps** — fixed a scoping bug that broke tap-to-navigate on
+  info cards
+- **Night mode not applied to overflow menu** — menu items now correctly use night-mode colours
+  ([#780](https://github.com/sky-map-team/stardroid/pull/780))
+
+---
+
+## [1.12.3] - 2026-03-24
+
+### Added
+- **Willman 1 (Beth Willman Galaxy)** added to the star catalog — an ultra-faint dwarf satellite
+  galaxy of the Milky Way, notable for its extreme dark-matter dominance and tidal disruption
+  ([#736](https://github.com/sky-map-team/stardroid/pull/736))
+- **Info cards for 24 named stars and 41 constellations** — these objects now display educational
+  text cards with discovery notes, mythology, and key facts
+  ([#708](https://github.com/sky-map-team/stardroid/pull/708))
+- **App-specific language** — users can now set Sky Map's display language independently of their
+  device's system language via Settings → Language
+  ([#760](https://github.com/sky-map-team/stardroid/pull/760))
+- **Auto-level horizon** (manual mode, disabled by default) — after releasing a gesture the view
+  can spring back to level; toggle in Settings → Sensor settings
+  ([#674](https://github.com/sky-map-team/stardroid/pull/674))
+- **Location warning** — a notice is shown on startup when no location has been set, so first-time
+  users understand why the sky may not match their view
+  ([#675](https://github.com/sky-map-team/stardroid/pull/675))
+- **Sensor damping preference labels** now include explanatory hints
+
+### Changed
+- **Search autocomplete results are now capitalized** — object names in the suggestion list match
+  the casing used in info cards
+  ([#763](https://github.com/sky-map-team/stardroid/pull/763),
+  fixes [#748](https://github.com/sky-map-team/stardroid/issues/748))
+- **Search results returned in alphabetical order** — previously results appeared in an
+  indeterminate hash-map order
+  ([#750](https://github.com/sky-map-team/stardroid/pull/750))
+- **"Location set by fusion" toast removed** — the message was confusing and no longer meaningful
+  ([#741](https://github.com/sky-map-team/stardroid/pull/741))
+- **Analytics event schema overhauled** — cleaner event taxonomy for better sliceability
+  ([#768](https://github.com/sky-map-team/stardroid/pull/768))
+- **Updated Play Store / app launcher icon**
+
+### Fixed
+- **Willman 1 was absent from search results** after being added to the catalog — binary protobuf
+  regenerated to include it
+  ([#749](https://github.com/sky-map-team/stardroid/pull/749))
+- **Info card tap threshold now scales correctly** with the current zoom level, so objects are
+  tappable at any zoom
+  ([#707](https://github.com/sky-map-team/stardroid/pull/707),
+  fixes [#646](https://github.com/sky-map-team/stardroid/issues/646))
+- **Double-encoded `&amp;amp;` entities** in translated string resources corrected
+  ([#739](https://github.com/sky-map-team/stardroid/pull/739))
+
+### Translations
+- **New languages:** Arabic (ar), Turkish (tr), Simplified Chinese (zh-Hans), Traditional Chinese
+  (zh-Hant), Ukrainian (uk), Greek (el), Welsh (cy), Dutch (nl), Italian (it), German (de), Czech
+  (cs), Norwegian Bokmål (nb), Malay (ms), Persian (fa), Danish (da), Swedish (sv), Thai (th),
+  Hindi (hi), Slovak (sk), Slovenian (sl), Portuguese (pt), Spanish (es)
+- **Brought all previously "fully translated" languages back to 100% coverage**
+- **Localized credits files added** for translated locales
+
 ## [1.12.0] - 2026-03-01
 
 _Earth release._
@@ -60,8 +282,8 @@ _Earth release._
 - CONTRIBUTING.md with build instructions, coding style, and submission workflow
 - SECURITY.md with vulnerability reporting policy
 - CHANGELOG.md following Keep a Changelog format
-- docs/ARCHITECTURE.md with module structure, rendering pipeline, and Mermaid diagram
-- docs/design/README.md index for design documents
+- stardroid-v1/docs/ARCHITECTURE.md with module structure, rendering pipeline, and Mermaid diagram
+- stardroid-v1/docs/design/README.md index for design documents
 - GitHub issue templates (bug report and feature request) as YAML forms
 - Changelog update instructions in CONTRIBUTING.md and PR template
 
@@ -78,10 +300,10 @@ _Earth release._
   [#535](https://github.com/sky-map-team/stardroid/issues/535))
 - CI configuration overhauled: Gradle dependency caching added, emulator tests run on a supported
   API level, and flaky retry logic improved
-- Migrated design documents from `designdocs/` to `docs/design/`
-- Enhanced tools/README.md with module overview
+- Migrated design documents from `designdocs/` to `stardroid-v1/docs/design/`
+- Enhanced stardroid-v1/tools/README.md with module overview
 - Modernized PR template with type-of-change checklist
-- Updated CLAUDE.md reference to `docs/design/sensors.md`
+- Updated CLAUDE.md reference to `stardroid-v1/docs/design/sensors.md`
 
 ### Removed
 - Old single-file `.github/ISSUE_TEMPLATE.md` (replaced by YAML forms)

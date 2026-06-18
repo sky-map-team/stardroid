@@ -1,0 +1,59 @@
+# --- Android / Gradle ---
+.gradle/
+build/
+captures/
+local.properties
+.externalNativeBuild
+.cxx
+cmake-build-debug/
+output.json
+*.aab
+*.apk
+*.ap_
+*.dex
+*.class
+bin/
+gen/
+.worktrees/
+
+# --- Android Studio / IntelliJ ---
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+.navigation/
+
+# --- Secrets and Sensitive Files (DO NOT COMMIT) ---
+*.keystore
+*.jks
+*.p12
+*.pem
+*credentials*
+*google-services.json*
+*no-checkin*
+no-checkin.properties
+
+# --- OS Specific / Miscellaneous ---
+.DS_Store
+Thumbs.db
+*.log
+*.swp
+*~
+.claude/*
+!.claude/skills/
+.history/
+*.gradle-e
+
+# --- Maven/Robolectric cache ---
+.m2/
+${user.home}/
+
+# --- Project Specific ---
+fastlane/metadata/android/screenshots.html
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/test_output
+
+# Bug reports
+bugreport-*.zip

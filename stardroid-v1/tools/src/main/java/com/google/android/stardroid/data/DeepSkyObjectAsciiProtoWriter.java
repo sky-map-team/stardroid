@@ -1,0 +1,113 @@
+// Copyright 2010 Google Inc.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+package com.google.android.stardroid.data;
+
+import java.io.IOException;
+import java.util.List;
+
+import com.google.android.stardroid.source.proto.SourceProto.AstronomicalSourceProto;
+import com.google.android.stardroid.source.proto.SourceProto.GeocentricCoordinatesProto;
+import com.google.android.stardroid.source.proto.SourceProto.LabelElementProto;
+import com.google.android.stardroid.source.proto.SourceProto.PointElementProto;
+import com.google.android.stardroid.source.proto.SourceProto.Shape;
+
+
+/**
+ * Class for reading the deep-sky objects csv file and writing the contents to protocol
+ * buffers.
+ *
+ * @author brent@google.com (Brent Bryan)
+ */
+public class DeepSkyObjectAsciiProtoWriter extends AbstractAsciiProtoWriter {
+  // TODO(mrhector): verify colors
+  private static final int LABEL_COLOR = 0x48a841; // argb
+  private static final int POINT_COLOR = 0x48a841; // abgr (!)
+  private static final int POINT_SIZE = 3;
+
+  // Map CSV "Type" column (Wikipedia color legend categories) to Shape enum
+  private static Shape getShapeFromType(String type) {
+    switch (type.trim()) {
+      case "Open Cluster":
+        return Shape.OPEN_CLUSTER;
+      case "Globular Cluster":
+        return Shape.GLOBULAR_CLUSTER;
+      case "Diffuse Nebula":
+        return Shape.DIFFUSE_NEBULA;
+      case "Planetary Nebula":
+        return Shape.PLANETARY_NEBULA;
+      case "Supernova Remnant":
+        return Shape.SUPERNOVA_REMNANT;
+      case "Galaxy":
+        return Shape.GALAXY;
+      case "Other":
+        return Shape.OTHER;
+      default:
+        System.out.println("WARNING! Unknown deep-sky object type: " + type);
+        return Shape.OTHER;  // Fallback for unknowns
+    }
+  }
+
+  @Override
+  protected AstronomicalSourceProto getSourceFromLine(String line, int index) {
+    // name, type, RA(h), dec(degrees), magnitude, size, ngc, constellation,
+    // names, common name
+    // Of these, only name(0), ra(2), & dec(3) are used.
+    if (line.startsWith("Object,Type")) {
+      return null;
+    }
+
+    // TODO(brent): Add image shapes here?
+
+    String[] tokens = line.split(",");
+
+    // Convert from hours to degrees.
+    float ra = 15 * Float.parseFloat(tokens[2]);
+    float dec = Float.parseFloat(tokens[3]);
+    float magnitude = 4.9f;
+
+    AstronomicalSourceProto.Builder sourceBuilder = AstronomicalSourceProto.newBuilder();
+    GeocentricCoordinatesProto coords = getCoords(ra, dec);
+
+    LabelElementProto.Builder labelBuilder = LabelElementProto.newBuilder();
+    labelBuilder.setColor(LABEL_COLOR);
+    labelBuilder.setLocation(coords);
+    List<String> rKeysForName = rKeysFromName(tokens[0]);
+    if (!rKeysForName.isEmpty()) {
+      labelBuilder.setStringsStrId(rKeysForName.get(0));
+    }
+    sourceBuilder.addLabel(labelBuilder);
+
+    // Parse type from column 1 (broad category)
+    String type = tokens.length > 1 ? tokens[1] : "";
+    Shape shape = getShapeFromType(type);
+
+    PointElementProto.Builder pointBuilder = PointElementProto.newBuilder();
+    pointBuilder.setColor(POINT_COLOR);
+    pointBuilder.setLocation(coords);
+    pointBuilder.setSize(POINT_SIZE);
+    pointBuilder.setShape(shape);  // NEW: Set shape based on type
+    sourceBuilder.addPoint(pointBuilder);
+    for (String rKey : rKeysForName) {
+      sourceBuilder.addNameStrIds(rKey);
+    }
+
+    sourceBuilder.setSearchLocation(coords);
+    return sourceBuilder.build();
+  }
+
+  public static void main(String[] args) throws IOException {
+    new DeepSkyObjectAsciiProtoWriter().run(args);
+  }
+}

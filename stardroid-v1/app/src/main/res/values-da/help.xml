@@ -1,0 +1,172 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+<string name="help_text" translation_description="This is the help text for the app Google Sky Map. It includes placeholders where other text is inserted. Please do not change the &lt; and &gt; markup">
+    &lt;h1&gt;Sky Map til Android&lt;/h1&gt;
+&lt;p class="version"&gt;Version %1$s&lt;/p&gt;
+&lt;p class="url"&gt;&lt;a href="https://stardroid.app"&gt;https://stardroid.app&lt;/a&gt;&lt;/p&gt;
+
+%4$s
+
+&lt;h2&gt;Introduktion og hurtig start&lt;/h2&gt;
+&lt;p&gt;Hold din telefon op, og kig igennem den som et vindue ud i rummet. Sky Map bruger din telefons kompas, accelerometer og gyroskop til at spore, hvor du peger, og opdatere kortet i realtid.&lt;/p&gt;
+&lt;p class="callout"&gt;Ikke alle telefoner kan køre Sky Map! Se afsnittet om hardwarekrav nedenfor.&lt;/p&gt;
+&lt;p&gt;Hvis det er første gang:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Tillad adgang til placering, når du bliver bedt om det — Sky Map skal bruge din omtrentlige placering for at tegne den korrekte himmel for, hvor du er&lt;/li&gt;
+&lt;li&gt;Peg din telefon mod himlen i enhver retning&lt;/li&gt;
+&lt;li&gt;Kortet vil bevæge sig for at matche, hvor du peger&lt;/li&gt;
+&lt;li&gt;Tryk et vilkårligt sted på skærmen for at vise kontrollerne&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2&gt;Navigering på himlen&lt;/h2&gt;
+&lt;h3&gt;Automatisk tilstand&lt;/h3&gt;
+&lt;p&gt;I Automatisk tilstand (standard) bruger Sky Map din telefons sensorer til at vise, hvad der er i den retning, din telefon peger. Du skal blot flytte din telefon rundt, og kortet følger med.&lt;/p&gt;
+&lt;h3&gt;Manuel tilstand&lt;/h3&gt;
+&lt;p&gt;Tryk på sensor-/kompasikonet i kontrollerne for at skifte til Manuel tilstand. I denne tilstand kan du:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Træk kortet med én finger for at panorere rundt&lt;/li&gt;
+&lt;li&gt;Knib for at zoome ind eller ud&lt;/li&gt;
+&lt;li&gt;Roter med to fingre for at ændre retning&lt;/li&gt;
+&lt;li&gt;Dobbeltklik for at slå "automatisk nivellering" af horisonten til/fra&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Manuel tilstand er praktisk, når du vil udforske himlen uden at holde din telefon op.&lt;/p&gt;
+
+&lt;h2&gt;Synlige lag&lt;/h2&gt;
+&lt;p&gt;Sky Map organiserer, hvad den viser, i lag, som hver især kan slås til eller fra uafhængigt. Tryk på skærmen for at vise lagkontrollerne i siden — de lyser orange, når et lag er slået til, og fremstår dæmpede, når det er slået fra.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;b&gt;Stjerner:&lt;/b&gt; De klareste stjerner, med navne for de mest bemærkelsesværdige&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Stjernebilleder:&lt;/b&gt; Stjernebilledernes omrids og navne&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Bemærkelsesværdige dybhimleobjekter:&lt;/b&gt; Galakser, tåger, stjernehobe og andre bemærkelsesværdige objekter&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Planeter:&lt;/b&gt; Planeterne i vores solsystem, vist som billeder&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Meteorsværme:&lt;/b&gt; Aktive og kommende meteorsværmes strålingspunkter&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Ekliptika &amp; RA/Dec-gitter:&lt;/b&gt; Ekliptika er Solens årlige bane gennem himlen&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Horisont:&lt;/b&gt; Horisontlinjen og kardinalretningsetiketter (N, S, Ø, V)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p class="callout"&gt;&lt;b&gt;Værd at vide:&lt;/b&gt; Sky Map viser den geometriske horisont — en perfekt flad, uhindret udsigt. Objekter lige over den kan i praksis stadig være skjult af bygninger, bakker eller træer.&lt;/p&gt;
+
+&lt;h2&gt;Kontroller på skærmen&lt;/h2&gt;
+&lt;p&gt;Tryk et vilkårligt sted på skærmen for at vise eller skjule kontrollerne. På den ene side finder du lagkontrollerne beskrevet ovenfor. På den anden side er knappen til at skifte mellem Automatisk og Manuel tilstand.&lt;/p&gt;
+&lt;p&gt;Kontrollerne fader automatisk ud efter et par sekunder for at holde visningen klar.&lt;/p&gt;
+
+&lt;h2&gt;Søg&lt;/h2&gt;
+&lt;p&gt;Tryk på forstørrelsesglasikonet for at søge efter noget på himlen. Du kan søge efter:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;b&gt;Stjerner&lt;/b&gt; — efter navn, f.eks. "Sirius", "Betelgeuse", "Polaris"&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Planeter&lt;/b&gt; — f.eks. "Mars", "Saturn"&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Stjernebilleder&lt;/b&gt; — f.eks. "Orion", "Cassiopeia"&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Dybhimleobjekter&lt;/b&gt; — f.eks. "M31", "Andromedagalaksen", "Plejaderne"&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Kometer og meteorsværme&lt;/b&gt; — efter navn&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;b&gt;I Automatisk tilstand:&lt;/b&gt; efter at have valgt et resultat viser Sky Map en målcirkel og en retningspil. Følg pilen ved at dreje din telefon — cirklen skifter fra blå til rød, derefter orange, når objektet er inden for dit synsfelt. Tryk på ✕ for at afslutte søgningen.&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;I Manuel tilstand:&lt;/b&gt; hopper kortet blot til at centrere på objektet.&lt;/p&gt;
+
+&lt;h2&gt;Tidsrejse&lt;/h2&gt;
+&lt;p&gt;Tidsrejse lader dig se himlen på ethvert tidspunkt fra år 1900 til 2100. Vælg det hvirvlende cirkelikon &lt;b&gt;Tidsrejse&lt;/b&gt; fra handlingslinjen.&lt;/p&gt;
+&lt;p&gt;Du kan vælge en forudindstillet dato (solhverv, formørkelser, berømte himmelbegivenheder, historiske øjeblikke) eller indtaste din egen dato og tid. Tryk på &lt;b&gt;Go!&lt;/b&gt; for at flyve dertil.&lt;/p&gt;
+&lt;p&gt;Når du er i Tidsrejse-tilstand, vises datoen på skærmen, og afspilningskontroller lader dig bevæge dig gennem tiden:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Tryk på frem- eller tilbage-afspilningsknapperne for at starte bevægelsen&lt;/li&gt;
+&lt;li&gt;Tryk på dem igen for at gå hurtigere&lt;/li&gt;
+&lt;li&gt;Tryk på stopknappen for at sætte på pause&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Nogle ting du kan bruge det til:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;i&gt;Hvad kan jeg se lige efter solnedgang i aften?&lt;/i&gt;&lt;/li&gt;
+&lt;li&gt;&lt;i&gt;Hvornår er den næste gode mulighed for at spotte Merkur?&lt;/i&gt;&lt;/li&gt;
+&lt;li&gt;&lt;i&gt;Hvordan så himlen ud den nat, jeg blev født?&lt;/i&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Nøjagtigheden falder for datoer langt fra nutiden, primært på grund af Jupiters gravitationelle indflydelse.&lt;/p&gt;
+
+&lt;h2&gt;Infokort&lt;/h2&gt;
+&lt;p&gt;Tryk på et hvilket som helst navngivet himmelobjekt på himmelkortet for at få vist et infokort — et panel med et foto og detaljer om objektet. Infokort er tilgængelige for mere end 150 objekter, herunder stjerner, planeter, Månen, bemærkelsesværdige dybhimleobjekter og stjernebilleder.&lt;/p&gt;
+&lt;p&gt;Hvert kort viser:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Et fotografi eller kort over objektet&lt;/li&gt;
+&lt;li&gt;En kort beskrivelse og et sjovt faktum&lt;/li&gt;
+&lt;li&gt;Videnskabelige data såsom afstand, størrelse og objekttype&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Tryk på billedet inde i kortet for at se det i fuldskærm. Luk kortet ved at trykke uden for det eller trykke på &lt;b&gt;Tilbage&lt;/b&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;Aktivering af infokort:&lt;/b&gt; Som standard vises de kun, når du er i Manuel tilstand; gå til indstillinger for at aktivere dem, mens du er i Automatisk (sensordrevet) tilstand.&lt;/p&gt;
+
+&lt;h2&gt;Galleri&lt;/h2&gt;
+&lt;p&gt;Galleriet indeholder en samling billeder fra Hubble-rumteleskopet og andre kilder. Åbn det fra hovedmenuen.&lt;/p&gt;
+&lt;p&gt;Gennemse miniaturebilleder ved at rulle, og tryk på et for at se hele billedet. Brug knappen &lt;b&gt;Find på himlen&lt;/b&gt; for at hoppe til søgetilstand og finde objektet på dit nuværende himmelkort.&lt;/p&gt;
+
+&lt;h2&gt;Nattesynstilstand&lt;/h2&gt;
+&lt;p&gt;Hvis du er udenfor og observerer, hjælper Nattesynstilstand med at bevare dit mørketilpassede syn. Slå den til/fra fra handlingslinjen ved at trykke på det øjeformede &lt;b&gt;Nattesyn&lt;/b&gt;-ikon.&lt;/p&gt;
+&lt;p&gt;I Nattesynstilstand vil Sky Map:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Skifte skærmen til dybe røde toner&lt;/li&gt;
+&lt;li&gt;Dæmpe skærmen betydeligt&lt;/li&gt;
+&lt;li&gt;Reducere knapbaggrundsbelysning&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Slå den til igen for at vende tilbage til normal. Indstillingen &lt;b&gt;Skærmdæmpning&lt;/b&gt; under &lt;b&gt;Indstillinger → Udseende&lt;/b&gt; giver dig yderligere kontrol over, hvor mørk skærmen bliver.&lt;/p&gt;
+
+&lt;h2&gt;Indstilling af din placering&lt;/h2&gt;
+&lt;p&gt;Sky Map skal bruge din omtrentlige placering for at tegne den korrekte himmel. Som standard bruger den din enheds placeringstjenester (mobilnetværk eller GPS). Hvis du ikke giver adgang, placerer Sky Map dig ved (0, 0) — et punkt midt i havet!&lt;/p&gt;
+&lt;p&gt;Hvis placeringstjenester ikke er tilgængelige, eller du hellere vil indstille det manuelt, skal du gå til &lt;b&gt;Indstillinger → Placering&lt;/b&gt; og enten:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Indtast et &lt;b&gt;stednavn&lt;/b&gt; (kræver en internetforbindelse for at slå koordinaterne op), eller&lt;/li&gt;
+&lt;li&gt;Indtast en &lt;b&gt;bredde- og længdegrad&lt;/b&gt; direkte i grader (intet internet nødvendigt)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Hvis du tidligere har nægtet Sky Map placeringstilladelse, skal du muligvis genaktivere den i din enheds &lt;b&gt;Appindstillinger → Tilladelser&lt;/b&gt;.&lt;/p&gt;
+
+&lt;h2&gt;Teleskopbrugere — Pegetilstand&lt;/h2&gt;
+&lt;p&gt;Under &lt;b&gt;Indstillinger → Sensorindstillinger&lt;/b&gt; skal du ændre &lt;b&gt;Visningsretning&lt;/b&gt; til &lt;b&gt;Pegetilstand&lt;/b&gt;. I denne tilstand viser Sky Map, hvad telefonens &lt;i&gt;lange kant&lt;/i&gt; peger på, snarere end hvad skærmen vender mod.&lt;/p&gt;
+&lt;p&gt;Dette lader dig montere din telefon langs siden af et teleskoprør, så skærmen er vinkelret på røret, mens kortet stadig sporer, hvad teleskopet er rettet mod.&lt;/p&gt;
+
+&lt;h2&gt;Tips og indstillinger værd at kende&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;b&gt;Diagnostik:&lt;/b&gt; Hvis noget ser forkert ud, skal du åbne overløbsmenuen og trykke på &lt;b&gt;Diagnostik&lt;/b&gt;. Denne side viser din nuværende placering, tid, sensorstatus og nøjagtighedsaflæsninger — meget nyttigt, hvis du skal rapportere et problem.&lt;/li&gt;
+
+&lt;li&gt;&lt;b&gt;Skriftstørrelse:&lt;/b&gt; Juster etiketstørrelsen under &lt;b&gt;Indstillinger → Udseende&lt;/b&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Rystende kort:&lt;/b&gt; Eksperimenter med &lt;b&gt;Sensorhastighed&lt;/b&gt; og &lt;b&gt;Sensordæmpning&lt;/b&gt; under &lt;b&gt;Indstillinger → Sensorindstillinger (Eksperter)&lt;/b&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Intet gyroskop?&lt;/b&gt; Hvis din telefon mangler et gyroskop, skal du aktivere &lt;b&gt;Deaktiver Gyro&lt;/b&gt; i Sensorindstillinger for at bruge en alternativ sensortilstand.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Magnetisk korrektion:&lt;/b&gt; Sky Map kan anvende en magnetisk deklinationkorrektion, så kortet stemmer overens med sand nord i stedet for magnetisk nord. Slå dette til/fra under &lt;b&gt;Indstillinger → Placering&lt;/b&gt;. I nogle dele af verden kan forskellen være 20 grader eller mere. Du kan manuelt justere dette yderligere, hvis din telefons kompas er ustabilt.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Hardwarekrav&lt;/h2&gt;
+&lt;p&gt;Ikke alle enheder kan fuldt ud understøtte Sky Map! Som minimum skal du have en telefon med:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;En magnetfeltsensor (også kaldet et kompas) — for at fortælle, hvilken retning du vender&lt;/li&gt;
+&lt;li&gt;Et accelerometer — for at fortælle, hvor højt oppe på himlen du kigger&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Ideelt set også:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Et gyroskop — dette vil udjævne bevægelsen og gøre den mindre hakkende&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p class="callout"&gt;Telefonkompasser er notorisk upålidelige. Hvis himmelkortet ser forkert ud, er det næsten altid et hardwareproblem med din telefons kompas — ikke en fejl i Sky Map. Sky Map læser præcis, hvad din telefons sensor rapporterer; den har ingen måde at automatisk korrigere en dårlig eller skæv aflæsning på, selvom en manuel forskydning er tilgængelig i Indstillinger for telefoner med en konsekvent fejl. Se Fejlfinding nedenfor.&lt;/p&gt;
+&lt;h3&gt;Hvordan ved jeg, hvilke sensorer min telefon har?&lt;/h3&gt;
+&lt;p&gt;Åbn Sky Maps Diagnostik-side — eventuelle sensorer, din telefon ikke har, vil blive vist som "--,--,--".&lt;/p&gt;
+&lt;h3&gt;Hvad hvis min enhed mangler påkrævede sensorer?&lt;/h3&gt;
+&lt;p&gt;Sky Map vil falde tilbage til manuel tilstand. Du kan stadig udforske himlen, men uden sensorerne er der ingen måde, en app kan vise dig din retning på.&lt;/p&gt;
+
+&lt;h2&gt;Fejlfinding&lt;/h2&gt;
+&lt;h3&gt;Kortet bevæger sig ikke&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Tjek, at du er i Automatisk tilstand (ikke Manuel)&lt;/li&gt;
+&lt;li&gt;Tjek Diagnostik-siden for at bekræfte, at din enhed har et kompas og accelerometer&lt;/li&gt;
+&lt;li&gt;Prøv kalibreringsbevægelsen i form af et 8-tal: vift din telefon langsomt i en stor, jævn 8-talsform&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Kortet peger den forkerte vej eller er unøjagtigt&lt;/h3&gt;
+&lt;p&gt;Sky Map skal bruge tre ting for at vise den korrekte himmel: den retning din telefon vender, din placering og den aktuelle tid. Hvis kortet ser forkert ud, er en af disse sandsynligvis forkert.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;b&gt;Kompas (mest almindelige årsag):&lt;/b&gt; Dette er et hardwareproblem med din telefon — ikke en Sky Map-fejl. Kalibreringsbevægelsen i form af et 8-tal beder din telefon om at nulstille sin kompassensor internt, men &lt;i&gt;et kalibreret kompas er ikke nødvendigvis et nøjagtigt et&lt;/i&gt;. Hvis du er i nærheden af et metalobjekt, et bilinstrumentbræt eller et magnetisk telefoncover, kan kortet stadig være forkert, selv efter kalibrering. Flyt til et åbent område, gentag 8-talsbevægelsen, og slå derefter &lt;b&gt;Magnetisk korrektion&lt;/b&gt; til/fra i &lt;b&gt;Indstillinger → Placering&lt;/b&gt;. Hvis din telefon har en konsekvent retningsfejl, skal du bruge den manuelle forskydning under &lt;b&gt;Indstillinger → Sensorindstillinger (Eksperter)&lt;/b&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Placering:&lt;/b&gt; Giv placeringstilladelse via &lt;b&gt;Appindstillinger → Tilladelser&lt;/b&gt;. Tjek Diagnostik-siden for at bekræfte dine koordinater. Et tydeligt symptom på manglende placering er Polaris, der vises nær horisonten.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Tid:&lt;/b&gt; Mindre almindeligt, men en forkert tidszone flytter hele himlen. Tjek Diagnostik-siden for at bekræfte, at din enheds tid og tidszone er korrekte.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Kortet er rystende&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Juster &lt;b&gt;Sensorhastighed&lt;/b&gt; og &lt;b&gt;Sensordæmpning&lt;/b&gt; under &lt;b&gt;Indstillinger → Sensorindstillinger (Eksperter)&lt;/b&gt;&lt;/li&gt;
+&lt;li&gt;Hvis din telefon ikke har et gyroskop, skal du aktivere &lt;b&gt;Deaktiver Gyro&lt;/b&gt; i sensorindstillinger&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;For fulde fejlfindingsdetaljer se den online &lt;a href="https://github.com/sky-map-team/stardroid/blob/master/troubleshooting.md"&gt;fejlfindingsguide&lt;/a&gt;.&lt;/p&gt;
+&lt;p class="callout"&gt;Hvis du stadig sidder fast, så send os en e-mail på skymapdevs@gmail.com — et skærmbillede af din Diagnostik-side er meget nyttigt.&lt;/p&gt;
+
+&lt;h1&gt;Hvad er nyt i Sky Map?&lt;/h1&gt;
+
+%3$s
+
+%2$s
+    </string>
+</resources>

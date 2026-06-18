@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+    <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Croeso i Sky Map</h2>
+<p>Mae defnyddwyr newydd yn cael eu cyfarch gyda phrofiad ymweliad tywys sy\'n gwirio synwyryddion eich dyfais ac yn eich cael i arsylwi\'r sêr yn gyflym.</p>
+<h2>Lleoliad Gwell</h2>
+<p>Mae trin lleoliad wedi\'i ailddylunio\'n llwyr — negeseuon statws cliriach, dangosydd cynnydd tra bod eich safle\'n cael ei ddatrys, a chywiriadau ar gyfer llawer o wallau hirdymor. Mae yna fap newydd hefyd i\'ch helpu i gadarnhau eich lleoliad yn weledol.</p>
+<h2>Chwilio</h2>
+<p>Gallwch nawr chwilio yn ôl cyfesurynnau RA a Dec yn ogystal ag yn ôl enw\'r gwrthrych. Mae\'r haen chwilio hefyd yn diweddaru i ddangos "Canfuwyd: X" pan fydd eich targed yn symud i ganol y sgrin.</p>]]></string>
+    </resources>

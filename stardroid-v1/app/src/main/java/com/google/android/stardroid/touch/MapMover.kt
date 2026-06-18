@@ -1,0 +1,89 @@
+// Copyright 2010 Google Inc.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+package com.google.android.stardroid.touch
+
+import android.content.Context
+import android.content.SharedPreferences
+import android.util.Log
+import com.google.android.stardroid.ApplicationConstants
+import com.google.android.stardroid.control.AstronomerModel
+import com.google.android.stardroid.control.ControllerGroup
+import com.google.android.stardroid.math.RADIANS_TO_DEGREES
+import com.google.android.stardroid.touch.DragRotateZoomGestureDetector.DragRotateZoomGestureDetectorListener
+import com.google.android.stardroid.util.MiscUtil.getTag
+import dagger.hilt.android.qualifiers.ActivityContext
+import dagger.hilt.android.scopes.ActivityScoped
+import javax.inject.Inject
+
+/**
+ * Applies drags, zooms and rotations to the model.
+ * Listens for events from the DragRotateZoomGestureDetector.
+ *
+ * @author John Taylor
+ */
+@ActivityScoped
+class MapMover @Inject constructor(
+  private val model: AstronomerModel,
+  private val controllerGroup: ControllerGroup,
+  @ActivityContext context: Context,
+  private val sharedPreferences: SharedPreferences
+) : DragRotateZoomGestureDetectorListener {
+  private val sizeTimesRadiansToDegrees: Float
+  private val horizonLeveler = HorizonLeveler(model) { deg -> controllerGroup.rotate(deg) }
+
+  override fun onDrag(xPixels: Float, yPixels: Float): Boolean {
+    // Log.d(TAG, "Dragging by " + xPixels + ", " + yPixels);
+    val pixelsToRadians = model.fieldOfView / sizeTimesRadiansToDegrees
+    controllerGroup.changeUpDown(-yPixels * pixelsToRadians)
+    controllerGroup.changeRightLeft(-xPixels * pixelsToRadians)
+    return true
+  }
+
+  override fun onRotate(degrees: Float): Boolean {
+    horizonLeveler.stop()
+    controllerGroup.rotate(-degrees)
+    return true
+  }
+
+  override fun onStretch(ratio: Float): Boolean {
+    horizonLeveler.stop()
+    controllerGroup.zoomBy(1.0f / ratio)
+    return true
+  }
+
+  override fun onGestureEnd() {
+    if (sharedPreferences.getBoolean(ApplicationConstants.AUTO_LEVEL_HORIZON_PREF_KEY, true)) {
+      horizonLeveler.start()
+    }
+  }
+
+  fun stopLeveling() {
+    horizonLeveler.stop()
+  }
+
+  fun destroy() {
+    horizonLeveler.shutdown()
+  }
+
+  companion object {
+    private val TAG = getTag(MapMover::class.java)
+  }
+
+  init {
+    val metrics = context.resources.displayMetrics
+    val screenLongSize = metrics.heightPixels
+    Log.i(TAG, "Screen height is $screenLongSize pixels.")
+    sizeTimesRadiansToDegrees = screenLongSize * RADIANS_TO_DEGREES
+  }
+}

@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+    <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Dobrodošli v Sky Map</h2>
+<p>Novi uporabniki so pozdravljeni z vodenimi izkušnjami vključevanja, ki preverijo senzorje naprave in vas hitro pripravijo na opazovanje zvezd.</p>
+<h2>Boljša lokacija</h2>
+<p>Obravnava lokacije je bila popolnoma preoblikovana — jasnejša sporočila o stanju, indikator napredka med razreševanjem vaše pozicije in popravki za številne dolgoletne napake. Obstaja tudi nova karta, ki vam pomaga vizualno potrditi vašo lokacijo.</p>
+<h2>Iskanje</h2>
+<p>Sedaj lahko iščete po koordinatah RA in Dec ter po imenu objekta. Plast iskanja se tudi posodablja, da prikaže »Najdeno: X«, ko se vaš cilj premakne v sredino zaslona.</p>]]></string>
+    </resources>

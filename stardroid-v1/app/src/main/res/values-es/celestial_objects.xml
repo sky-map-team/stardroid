@@ -1,0 +1,475 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+    <!-- Constellations -->
+    <string name="andromeda" translation_description="Name of the Andromeda constellation">Andrómeda</string>
+    <string name="aquarius" translation_description="Name of the Aquarius constellation">Acuario</string>
+    <string name="aquila" translation_description="Name of the Aquila constellation">Águila</string>
+    <!-- tm:omitted name="aries" reason="identical_to_source" -->
+    <string name="auriga" translation_description="Name of the Auriga constellation">Áuriga</string>
+    <string name="bootes" translation_description="Name of the Bootes constellation">Boyero</string>
+    <string name="cancer" translation_description="Name of the Cancer constellation">Cáncer</string>
+    <string name="canis_major" translation_description="Name of the Canis Major constellation">Can Mayor</string>
+    <string name="capricornus" translation_description="Name of the Capricornus constellation">Capricornio</string>
+    <!-- tm:omitted name="carina" reason="identical_to_source" -->
+    <string name="cassiopeia" translation_description="Name of the Cassiopeia constellation">Casiopea</string>
+    <string name="centaurus" translation_description="Name of the Centaurus constellation">Centauro</string>
+    <string name="cetus" translation_description="Name of the Cetus constellation">Ballena</string>
+    <string name="crux" translation_description="Name of the Crux constellation">Cruz</string>
+    <string name="cygnus" translation_description="Name of the Cygnus constellation">Cisne</string>
+    <string name="draco" translation_description="Name of the Draco constellation">Dragón</string>
+    <string name="eridanus" translation_description="Name of the Eridanus constellation">Eridano</string>
+    <string name="gemini" translation_description="Name of the Gemini constellation">Géminis</string>
+    <string name="grus" translation_description="Name of the Grus constellation">Grulla</string>
+    <string name="hercules" translation_description="Name of the Hercules constellation">Hércules</string>
+    <string name="hydrus" translation_description="Name of the Hydrus constellation">Hidra</string>
+    <!-- tm:omitted name="leo" reason="identical_to_source" -->
+    <!-- tm:omitted name="libra" reason="identical_to_source" -->
+    <string name="lupus" translation_description="Name of the Lupus constellation">Lobo</string>
+    <string name="lyra" translation_description="Name of the Lyra constellation">Lira</string>
+    <string name="ophiuchus" translation_description="Name of the Ophiuchus constellation">Ofiuco</string>
+    <string name="orion" translation_description="Name of the Orion constellation">Orión</string>
+    <!-- tm:omitted name="pavo" reason="identical_to_source" -->
+    <string name="pegasus" translation_description="Name of the Pegasus constellation">Pegaso</string>
+    <string name="perseus" translation_description="Name of the Perseus constellation">Perseo</string>
+    <string name="phoenix" translation_description="Name of the Phoenix constellation">Fénix</string>
+    <string name="pisces" translation_description="Name of the Pisces constellation">Piscis</string>
+    <string name="piscis_austrinus" translation_description="Name of the Piscis Austrinus constellation">Pez del Sur</string>
+    <string name="puppis" translation_description="Name of the Puppis constellation">Popa</string>
+    <string name="sagittarius" translation_description="Name of the Sagittarius constellation">Sagitario</string>
+    <string name="scorpius" translation_description="Name of the Scorpius constellation">Escorpio</string>
+    <string name="taurus" translation_description="Name of the Taurus constellation">Tauro</string>
+    <string name="tucana" translation_description="Name of the Tucana constellation">Tucán</string>
+    <string name="ursa_major" translation_description="Name of the Ursa Major constellation">Osa Mayor</string>
+    <string name="ursa_minor" translation_description="Name of the Ursa Minor constellation">Osa Menor</string>
+    <!-- tm:omitted name="vela" reason="identical_to_source" -->
+    <!-- tm:omitted name="virgo" reason="identical_to_source" -->
+    <string name="capricorn" translation_description="Name of the Capricorn constellation">Capricornio</string>
+    <string name="southern_cross" translation_description="Name of the Southern Cross constellation">Cruz del Sur</string>
+    <string name="scorpio" translation_description="Name of the Scorpio constellation">Escorpio</string>
+    <string name="little_dipper" translation_description="Name of the Little Dipper constellation">Osa Menor</string>
+    <string name="little_bear" translation_description="Name of the Little Bear constellation">Osa Menor</string>
+    <string name="big_dipper" translation_description="Name of the Big Dipper constellation">Osa Mayor</string>
+    <string name="great_bear" translation_description="Name of the Great Bear constellation">Osa Mayor</string>
+    <string name="plough" translation_description="Name of the Plough constellation">El Carro</string>
+    <string name="antlia" translation_description="Name of the Antlia constellation">Máquina Neumática</string>
+    <string name="apus" translation_description="Name of the Apus constellation">Ave Paraíso</string>
+    <string name="ara" translation_description="Name of the Ara constellation">Altar</string>
+    <string name="caelum" translation_description="Name of the Caelum constellation">Cincel</string>
+    <string name="camelopardalis" translation_description="Name of the Camelopardalis constellation">Jirafa</string>
+    <string name="canes_venatici" translation_description="Name of the Canes Venatici constellation">Lebreles</string>
+    <string name="canis_minor" translation_description="Name of the Canis Minor constellation">Can Menor</string>
+    <string name="cepheus" translation_description="Name of the Cepheus constellation">Cefeo</string>
+    <string name="chamaeleon" translation_description="Name of the Chamaeleon constellation">Camaleón</string>
+    <string name="circinus" translation_description="Name of the Circinus constellation">Compás</string>
+    <string name="columba" translation_description="Name of the Columba constellation">Paloma</string>
+    <string name="coma_berenices" translation_description="Name of the Coma Berenices constellation">Cabellera Berenice</string>
+    <string name="corona_australis" translation_description="Name of the Corona Australis constellation">Corona Austral</string>
+    <string name="corona_borealis" translation_description="Name of the Corona Borealis constellation">Corona Boreal</string>
+    <string name="corvus" translation_description="Name of the Corvus constellation">Cuervo</string>
+    <string name="crater" translation_description="Name of the Crater constellation">Copa</string>
+    <string name="delphinus" translation_description="Name of the Delphinus constellation">Delfín</string>
+    <string name="dorado" translation_description="Name of the Dorado constellation">Dorada</string>
+    <string name="equuleus" translation_description="Name of the Equuleus constellation">Caballito</string>
+    <string name="fornax" translation_description="Name of the Fornax constellation">Horno</string>
+    <string name="horologium" translation_description="Name of the Horologium constellation">Reloj</string>
+    <string name="hydra" translation_description="Name of the Hydra constellation">Hidra</string>
+    <string name="indus" translation_description="Name of the Indus constellation">Indio</string>
+    <string name="lacerta" translation_description="Name of the Lacerta constellation">Lagarto</string>
+    <string name="leo_minor" translation_description="Name of the Leo Minor constellation">León Menor</string>
+    <string name="lepus" translation_description="Name of the Lepus constellation">Liebre</string>
+    <string name="lynx" translation_description="Name of the Lynx constellation">Lince</string>
+    <string name="mensa" translation_description="Name of the Mensa constellation">Mesa</string>
+    <string name="microscopium" translation_description="Name of the Microscopium constellation">Microscopio</string>
+    <string name="monoceros" translation_description="Name of the Monoceros constellation">Unicornio</string>
+    <string name="musca" translation_description="Name of the Musca constellation">Mosca</string>
+    <string name="norma" translation_description="Name of the Norma constellation">Escuadra</string>
+    <string name="octans" translation_description="Name of the Octans constellation">Octante</string>
+    <string name="pictor" translation_description="Name of the Pictor constellation">Pintor</string>
+    <string name="pyxis" translation_description="Name of the Pyxis constellation">Brújula</string>
+    <string name="reticulum" translation_description="Name of the Reticulum constellation">Retículo</string>
+    <string name="sagitta" translation_description="Name of the Sagitta constellation">Flecha</string>
+    <string name="sculptor" translation_description="Name of the Sculptor constellation">Escultor</string>
+    <string name="scutum" translation_description="Name of the Scutum constellation">Escudo</string>
+    <string name="serpens_caput" translation_description="Name of the Serpens Caput constellation">Serpens Cabeza</string>
+    <string name="serpens_cauda" translation_description="Name of the Serpens Cauda constellation">Serpens Cola</string>
+    <string name="sextans" translation_description="Name of the Sextans constellation">Sextante</string>
+    <string name="telescopium" translation_description="Name of the Telescopium constellation">Telescopio</string>
+    <string name="triangulum" translation_description="Name of the Triangulum constellation">Triángulo</string>
+    <string name="triangulum_australe" translation_description="Name of the Triangulum Australe constellation">Triángulo Austral</string>
+    <string name="volans" translation_description="Name of the Volans constellation">Pez Volador</string>
+    <string name="vulpecula" translation_description="Name of the Vulpecula constellation">Zorrilla</string>
+
+    <!-- Major solar system objects -->
+    <string name="sun" translation_description="Name of the Sun">Sol</string>
+    <string name="moon" translation_description="Name of the Earth's Moon">Luna</string>
+    <string name="mercury" translation_description="Name of the planet Mercury">Mercurio</string>
+    <!-- tm:omitted name="venus" reason="identical_to_source" -->
+    <string name="earth" translation_description="Name of the planet Earth">Tierra</string>
+    <string name="mars" translation_description="Name of the planet Mars">Marte</string>
+    <string name="jupiter" translation_description="Name of the planet Jupiter">Júpiter</string>
+    <string name="saturn" translation_description="Name of the planet Saturn">Saturno</string>
+    <string name="uranus" translation_description="Name of the planet Uranus">Urano</string>
+    <string name="neptune" translation_description="Name of the planet Neptune">Neptuno</string>
+    <string name="pluto" translation_description="Name of the dwarf planet Pluto">Plutón</string>
+
+    <!-- Moons of Mars -->
+    <string name="phobos" translation_description="Name of Mars\'s moon Phobos">Fobos</string>
+    <!-- tm:omitted name="deimos" reason="identical_to_source" -->
+
+    <!-- Galilean Moons of Jupiter -->
+    <string name="io" translation_description="Name of Jupiter\'s moon Io">Ío</string>
+    <!-- tm:omitted name="europa" reason="identical_to_source" -->
+    <string name="ganymede" translation_description="Name of Jupiter\'s moon Ganymede">Ganimedes</string>
+    <string name="callisto" translation_description="Name of Jupiter\'s moon Callisto">Calisto</string>
+
+    <!-- Major Moons of Saturn -->
+    <string name="titan" translation_description="Name of Saturn\'s moon Titan">Titán</string>
+    <string name="rhea" translation_description="Name of Saturn\'s moon Rhea">Rea</string>
+    <string name="tethys" translation_description="Name of Saturn\'s moon Tethys">Tetis</string>
+    <!-- tm:omitted name="dione" reason="identical_to_source" -->
+    <string name="iapetus" translation_description="Name of Saturn\'s moon Iapetus">Jápeto</string>
+
+    <!-- Moon of Neptune -->
+    <string name="triton" translation_description="Name of Neptune\'s moon Triton">Tritón</string>
+
+    <!-- tm:omitted name="titania" reason="identical_to_source" -->
+    <string name="oberon" translation_description="Name of Uranus\'s moon Oberon">Oberón</string>
+    <!-- tm:omitted name="ariel" reason="identical_to_source" -->
+    <!-- tm:omitted name="umbriel" reason="identical_to_source" -->
+
+    <!-- Deep-sky objects -->
+    <string name="hyades" translation_description="Name of the Hyades star cluster">Híades</string>
+    <string name="coma_star_cluster" translation_description="Name of the Coma Berenices star cluster">Cúmulo de Coma</string>
+    <string name="coathanger" translation_description="Name of the Coathanger asterism (Brocchi\'s Cluster)">Percha</string>
+    <string name="helix_nebula" translation_description="Name of the Helix Nebula (NGC 7293)">Nebulosa de la Hélice</string>
+    <string name="sculptor_galaxy" translation_description="Name of the Sculptor Galaxy (NGC 253)">Galaxia del Escultor</string>
+    <string name="blue_snowball_nebula" translation_description="Name of the Blue Snowball Nebula (NGC 7662)">Nebulosa de la Bola de Nieve Azul</string>
+    <string name="ghost_of_jupiter" translation_description="Name of the Ghost of Jupiter planetary nebula (NGC 3242)">Fantasma de Júpiter</string>
+    <string name="saturn_nebula" translation_description="Name of the Saturn Nebula (NGC 7009)">Nebulosa de Saturno</string>
+    <!-- tm:omitted name="ngc_2903" reason="identical_to_source" -->
+
+    <!-- Gallery objects -->
+    <string name="crab_nebula" translation_description="hubble object">Nebulosa del Cangrejo</string>
+    <string name="eagle_nebula" translation_description="hubble object">Nebulosa del Águila</string>
+    <string name="andromeda_galaxy" translation_description="hubble object">Galaxia de Andrómeda</string>
+    <string name="orion_nebula" translation_description="hubble object">Nebulosa de Orión</string>
+    <string name="whirlpool_galaxy" translation_description="hubble object">Galaxia del Remolino</string>
+    <string name="ring_nebula" translation_description="hubble object">Nebulosa del Anillo</string>
+    <string name="pinwheel_galaxy" translation_description="hubble object">Galaxia del Molinete</string>
+    <string name="sombrero_galaxy" translation_description="hubble object">Galaxia del Sombrero</string>
+    <string name="hercules_gc" translation_description="hubble object">Cúmulo Globular de Hércules</string>
+    <string name="pleiades" translation_description="hubble object">Pléyades</string>
+    <string name="cats_eye_nebula" translation_description="hubble object">Nebulosa Ojo del Gato</string>
+    <string name="omega_centauri" translation_description="hubble object">Cúmulo Globular Omega Centauri</string>
+    <!-- tm:omitted name="v838_mon" reason="identical_to_source" -->
+    <!-- tm:omitted name="sn1987a" reason="identical_to_source" -->
+    <string name="hubble_deep_field" translation_description="hubble object">Campo Profundo del Hubble</string>
+    <string name="hdf" translation_description="hubble object">Campo Profundo del Hubble</string>
+    <!-- tm:omitted name="rho_oph" reason="identical_to_source" -->
+
+
+    <!-- Stars -->
+    <string name="sirius" translation_description="Name of the Star Sirius">Sirio</string>
+    <string name="canopus" translation_description="Name of the Star Canopus">Canopo</string>
+    <string name="arcturus" translation_description="Name of the Star Arcturus">Arturo</string>
+    <string name="rigel_kentaurus_a" translation_description="Name of the Star Rigel Kentaurus A">Alfa Centauri</string>
+    <string name="rigil_kentaurus_a" translation_description="Name of the Star Rigil Kentaurus A">Alfa Centauri</string>
+    <!-- tm:omitted name="vega" reason="identical_to_source" -->
+    <string name="rigel" translation_description="Name of the Star Rigel">Rígel</string>
+    <string name="procyon" translation_description="Name of the Star Procyon">Proción</string>
+    <!-- tm:omitted name="betelgeuse" reason="identical_to_source" -->
+    <!-- tm:omitted name="achernar" reason="identical_to_source" -->
+    <!-- tm:omitted name="hadar" reason="identical_to_source" -->
+    <!-- tm:omitted name="capella" reason="identical_to_source" -->
+    <!-- tm:omitted name="altair" reason="identical_to_source" -->
+    <!-- tm:omitted name="acrux" reason="identical_to_source" -->
+    <string name="aldebaran" translation_description="Name of the Star Aldebaran">Aldebarán</string>
+    <string name="spica" translation_description="Name of the Star Spica">Espiga</string>
+    <!-- tm:omitted name="antares" reason="identical_to_source" -->
+    <string name="pollux" translation_description="Name of the Star Pollux">Pólux</string>
+    <!-- tm:omitted name="fomalhaut" reason="identical_to_source" -->
+    <!-- tm:omitted name="deneb" reason="identical_to_source" -->
+    <string name="regulus" translation_description="Name of the Star Regulus">Régulo</string>
+    <!-- tm:omitted name="adhara" reason="identical_to_source" -->
+    <!-- tm:omitted name="shaula" reason="identical_to_source" -->
+    <!-- tm:omitted name="alnath" reason="identical_to_source" -->
+    <!-- tm:omitted name="alnilam" reason="identical_to_source" -->
+    <!-- tm:omitted name="alnair" reason="identical_to_source" -->
+    <!-- tm:omitted name="alioth" reason="identical_to_source" -->
+    <string name="mirphak" translation_description="Name of the Star Mirphak">Mirfak</string>
+    <!-- tm:omitted name="kaus_australis" reason="identical_to_source" -->
+    <!-- tm:omitted name="dubhe" reason="identical_to_source" -->
+    <!-- tm:omitted name="alkaid" reason="identical_to_source" -->
+    <!-- tm:omitted name="alhena" reason="identical_to_source" -->
+    <string name="castor" translation_description="Name of the Star Castor">Cástor</string>
+    <string name="polaris" translation_description="Name of the Star Polaris">Estrella Polar</string>
+    <!-- tm:omitted name="alphard" reason="identical_to_source" -->
+    <!-- tm:omitted name="hamal" reason="identical_to_source" -->
+    <!-- tm:omitted name="algieba" reason="identical_to_source" -->
+    <!-- tm:omitted name="diphda" reason="identical_to_source" -->
+    <!-- tm:omitted name="nunki" reason="identical_to_source" -->
+    <!-- tm:omitted name="mirach" reason="identical_to_source" -->
+    <!-- tm:omitted name="alpheratz" reason="identical_to_source" -->
+    <!-- tm:omitted name="saiph" reason="identical_to_source" -->
+    <!-- tm:omitted name="kochab" reason="identical_to_source" -->
+    <!-- tm:omitted name="rasalhague" reason="identical_to_source" -->
+    <!-- tm:omitted name="algol" reason="identical_to_source" -->
+    <string name="denebola" translation_description="Name of the Star Denebola">Denébola</string>
+    <string name="alphekka" translation_description="Name of the Star Alphekka">Alphecca</string>
+    <!-- tm:omitted name="etamin" reason="identical_to_source" -->
+    <!-- tm:omitted name="kaus" reason="identical_to_source" -->
+    <string name="shedir" translation_description="Name of the Star Shedir">Schedar</string>
+    <!-- tm:omitted name="caph" reason="identical_to_source" -->
+    <!-- tm:omitted name="izar" reason="identical_to_source" -->
+    <!-- tm:omitted name="merak" reason="identical_to_source" -->
+    <!-- tm:omitted name="enif" reason="identical_to_source" -->
+    <!-- tm:omitted name="ankaa" reason="identical_to_source" -->
+    <!-- tm:omitted name="phad" reason="identical_to_source" -->
+    <!-- tm:omitted name="alderamin" reason="identical_to_source" -->
+    <!-- tm:omitted name="scheat" reason="identical_to_source" -->
+    <!-- tm:omitted name="markab" reason="identical_to_source" -->
+    <!-- tm:omitted name="menkar" reason="identical_to_source" -->
+    <!-- tm:omitted name="arneb" reason="identical_to_source" -->
+    <!-- tm:omitted name="unukalhai" reason="identical_to_source" -->
+    <!-- tm:omitted name="algenib" reason="identical_to_source" -->
+    <!-- tm:omitted name="vindemiatrix" reason="identical_to_source" -->
+    <string name="alcyone" translation_description="Name of the Star Alcyone">Alcíone</string>
+    <string name="dog_star" translation_description="Name of the Dog Star (Sirius)">Canícula</string>
+    <string name="north_star" translation_description="Name of the North Star">Estrella del Norte</string>
+    <string name="pole_star" translation_description="Name of the (North) Pole Star">Estrella Polar</string>
+    <string name="alpha_centauri" translation_description="Name of the star Alpha Centauri">Alfa Centauri</string>
+    <string name="rigil_kent" translation_description="Name of the star Rigil Kent">Alfa Centauri</string>
+    <!-- tm:omitted name="e_lyrae" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="m1" reason="identical_to_source" -->
+    <!-- tm:omitted name="m2" reason="identical_to_source" -->
+    <!-- tm:omitted name="m3" reason="identical_to_source" -->
+    <!-- tm:omitted name="m4" reason="identical_to_source" -->
+    <!-- tm:omitted name="m5" reason="identical_to_source" -->
+    <!-- tm:omitted name="m6" reason="identical_to_source" -->
+    <!-- tm:omitted name="m7" reason="identical_to_source" -->
+    <!-- tm:omitted name="m8" reason="identical_to_source" -->
+    <!-- tm:omitted name="m9" reason="identical_to_source" -->
+    <!-- tm:omitted name="m10" reason="identical_to_source" -->
+    <!-- tm:omitted name="m11" reason="identical_to_source" -->
+    <!-- tm:omitted name="m12" reason="identical_to_source" -->
+    <!-- tm:omitted name="m13" reason="identical_to_source" -->
+    <!-- tm:omitted name="m14" reason="identical_to_source" -->
+    <!-- tm:omitted name="m15" reason="identical_to_source" -->
+    <!-- tm:omitted name="m16" reason="identical_to_source" -->
+    <!-- tm:omitted name="m17" reason="identical_to_source" -->
+    <!-- tm:omitted name="m18" reason="identical_to_source" -->
+    <!-- tm:omitted name="m19" reason="identical_to_source" -->
+    <!-- tm:omitted name="m20" reason="identical_to_source" -->
+    <!-- tm:omitted name="m21" reason="identical_to_source" -->
+    <!-- tm:omitted name="m22" reason="identical_to_source" -->
+    <!-- tm:omitted name="m23" reason="identical_to_source" -->
+    <!-- tm:omitted name="m24" reason="identical_to_source" -->
+    <!-- tm:omitted name="m25" reason="identical_to_source" -->
+    <!-- tm:omitted name="m26" reason="identical_to_source" -->
+    <!-- tm:omitted name="m27" reason="identical_to_source" -->
+    <!-- tm:omitted name="m28" reason="identical_to_source" -->
+    <!-- tm:omitted name="m29" reason="identical_to_source" -->
+    <!-- tm:omitted name="m30" reason="identical_to_source" -->
+    <!-- tm:omitted name="m31" reason="identical_to_source" -->
+    <!-- tm:omitted name="m32" reason="identical_to_source" -->
+    <!-- tm:omitted name="m33" reason="identical_to_source" -->
+    <!-- tm:omitted name="m34" reason="identical_to_source" -->
+    <!-- tm:omitted name="m35" reason="identical_to_source" -->
+    <!-- tm:omitted name="m36" reason="identical_to_source" -->
+    <!-- tm:omitted name="m37" reason="identical_to_source" -->
+    <!-- tm:omitted name="m38" reason="identical_to_source" -->
+    <!-- tm:omitted name="m39" reason="identical_to_source" -->
+    <!-- tm:omitted name="m40" reason="identical_to_source" -->
+    <!-- tm:omitted name="m41" reason="identical_to_source" -->
+    <!-- tm:omitted name="m42" reason="identical_to_source" -->
+    <!-- tm:omitted name="m43" reason="identical_to_source" -->
+    <!-- tm:omitted name="m44" reason="identical_to_source" -->
+    <!-- tm:omitted name="m45" reason="identical_to_source" -->
+    <!-- tm:omitted name="m46" reason="identical_to_source" -->
+    <!-- tm:omitted name="m47" reason="identical_to_source" -->
+    <!-- tm:omitted name="m48" reason="identical_to_source" -->
+    <!-- tm:omitted name="m49" reason="identical_to_source" -->
+    <!-- tm:omitted name="m50" reason="identical_to_source" -->
+    <!-- tm:omitted name="m51" reason="identical_to_source" -->
+    <!-- tm:omitted name="m52" reason="identical_to_source" -->
+    <!-- tm:omitted name="m53" reason="identical_to_source" -->
+    <!-- tm:omitted name="m54" reason="identical_to_source" -->
+    <!-- tm:omitted name="m55" reason="identical_to_source" -->
+    <!-- tm:omitted name="m56" reason="identical_to_source" -->
+    <!-- tm:omitted name="m57" reason="identical_to_source" -->
+    <!-- tm:omitted name="m58" reason="identical_to_source" -->
+    <!-- tm:omitted name="m59" reason="identical_to_source" -->
+    <!-- tm:omitted name="m60" reason="identical_to_source" -->
+    <!-- tm:omitted name="m61" reason="identical_to_source" -->
+    <!-- tm:omitted name="m62" reason="identical_to_source" -->
+    <!-- tm:omitted name="m63" reason="identical_to_source" -->
+    <!-- tm:omitted name="m64" reason="identical_to_source" -->
+    <!-- tm:omitted name="m65" reason="identical_to_source" -->
+    <!-- tm:omitted name="m66" reason="identical_to_source" -->
+    <!-- tm:omitted name="m67" reason="identical_to_source" -->
+    <!-- tm:omitted name="m68" reason="identical_to_source" -->
+    <!-- tm:omitted name="m69" reason="identical_to_source" -->
+    <!-- tm:omitted name="m70" reason="identical_to_source" -->
+    <!-- tm:omitted name="m71" reason="identical_to_source" -->
+    <!-- tm:omitted name="m72" reason="identical_to_source" -->
+    <!-- tm:omitted name="m73" reason="identical_to_source" -->
+    <!-- tm:omitted name="m74" reason="identical_to_source" -->
+    <!-- tm:omitted name="m75" reason="identical_to_source" -->
+    <!-- tm:omitted name="m76" reason="identical_to_source" -->
+    <!-- tm:omitted name="m77" reason="identical_to_source" -->
+    <!-- tm:omitted name="m78" reason="identical_to_source" -->
+    <!-- tm:omitted name="m79" reason="identical_to_source" -->
+    <!-- tm:omitted name="m80" reason="identical_to_source" -->
+    <!-- tm:omitted name="m81" reason="identical_to_source" -->
+    <!-- tm:omitted name="m82" reason="identical_to_source" -->
+    <!-- tm:omitted name="m83" reason="identical_to_source" -->
+    <!-- tm:omitted name="m84" reason="identical_to_source" -->
+    <!-- tm:omitted name="m85" reason="identical_to_source" -->
+    <!-- tm:omitted name="m86" reason="identical_to_source" -->
+    <!-- tm:omitted name="m87" reason="identical_to_source" -->
+    <!-- tm:omitted name="m88" reason="identical_to_source" -->
+    <!-- tm:omitted name="m89" reason="identical_to_source" -->
+    <!-- tm:omitted name="m90" reason="identical_to_source" -->
+    <!-- tm:omitted name="m91" reason="identical_to_source" -->
+    <!-- tm:omitted name="m92" reason="identical_to_source" -->
+    <!-- tm:omitted name="m93" reason="identical_to_source" -->
+    <!-- tm:omitted name="m94" reason="identical_to_source" -->
+    <!-- tm:omitted name="m95" reason="identical_to_source" -->
+    <!-- tm:omitted name="m96" reason="identical_to_source" -->
+    <!-- tm:omitted name="m97" reason="identical_to_source" -->
+    <!-- tm:omitted name="m98" reason="identical_to_source" -->
+    <!-- tm:omitted name="m99" reason="identical_to_source" -->
+    <!-- tm:omitted name="m100" reason="identical_to_source" -->
+    <!-- tm:omitted name="m101" reason="identical_to_source" -->
+    <!-- tm:omitted name="m102" reason="identical_to_source" -->
+    <!-- tm:omitted name="m103" reason="identical_to_source" -->
+    <!-- tm:omitted name="m104" reason="identical_to_source" -->
+    <!-- tm:omitted name="m105" reason="identical_to_source" -->
+    <!-- tm:omitted name="m106" reason="identical_to_source" -->
+    <!-- tm:omitted name="m107" reason="identical_to_source" -->
+    <!-- tm:omitted name="m108" reason="identical_to_source" -->
+    <!-- tm:omitted name="m109" reason="identical_to_source" -->
+    <!-- tm:omitted name="m110" reason="identical_to_source" -->
+    <!-- tm:omitted name="ngc_6543" reason="identical_to_source" -->
+    <!-- tm:omitted name="ngc_5139" reason="identical_to_source" -->
+    <!-- tm:omitted name="t_crb" reason="identical_to_source" -->
+    <string name="blaze_star" translation_description="Nickname for the recurrent nova T Coronae Borealis">Estrella Blaze</string>
+    <!-- tm:omitted name="t_coronae_borealis" reason="identical_to_source" -->
+    <string name="eta_carinae_nebula" translation_description="Name of the Eta Carinae Nebula (NGC 3372)">Nebulosa Eta Carinae</string>
+    <string name="carina_nebula" translation_description="Common name for the Eta Carinae Nebula">Nebulosa Carina</string>
+    <!-- tm:omitted name="ngc_3372" reason="identical_to_source" -->
+    <string name="tarantula_nebula" translation_description="Name of the Tarantula Nebula (NGC 2070) in the Large Magellanic Cloud">Nebulosa de la Tarántula</string>
+    <!-- tm:omitted name="n30_doradus" reason="identical_to_source" -->
+    <!-- tm:omitted name="ngc_2070" reason="identical_to_source" -->
+    <string name="lmc" translation_description="Abbreviation for the Large Magellanic Cloud">GNM</string>
+    <string name="large_magellanic_cloud" translation_description="Full name of the Large Magellanic Cloud galaxy">Gran Nube de Magallanes</string>
+    <string name="nubecula_major" translation_description="Latin name for the Large Magellanic Cloud">Nubécula Mayor</string>
+    <string name="smc" translation_description="Abbreviation for the Small Magellanic Cloud">PNM</string>
+    <string name="small_magellanic_cloud" translation_description="Full name of the Small Magellanic Cloud galaxy">Pequeña Nube de Magallanes</string>
+    <string name="nubecula_minor" translation_description="Latin name for the Small Magellanic Cloud">Nubécula Menor</string>
+    <!-- tm:omitted name="willman_1" reason="identical_to_source" -->
+    <string name="beth_willman_galaxy" translation_description="Informal nickname for the ultra-faint dwarf galaxy Willman 1, honouring its discoverer">Galaxia de Beth Willman</string>
+    <!-- tm:omitted name="sgr_a_star" reason="identical_to_source" -->
+    <!-- tm:omitted name="sagittarius_a_star" reason="identical_to_source" -->
+    <string name="black_hole" translation_description="Generic search term for black holes; used as an alias for Sagittarius A*">Agujero Negro</string>
+    <string name="galactic_center" translation_description="The centre of the Milky Way galaxy, location of Sgr A*">Centro Galáctico</string>
+    <!-- tm:omitted name="cygnus_x_1" reason="identical_to_source" -->
+    <string name="black_hole_binary" translation_description="Search alias for Cygnus X-1, a famous black hole X-ray binary system">Sistema Binario de Agujero Negro</string>
+    <string name="stellar_black_hole" translation_description="Search alias for Cygnus X-1, the archetypal stellar-mass black hole">Agujero Negro Estelar</string>
+    <string name="butterfly_cluster" translation_description="Name of the Messier object Butterfly Cluster">Cúmulo de la Mariposa</string>
+    <string name="scorpions_tail" translation_description="Name of the Messier object Scorpion\'s Tail">Cola del Escorpión</string>
+    <!-- tm:omitted name="winnecke_4" reason="identical_to_source" -->
+    <string name="beehive_cluster" translation_description="Name of the Messier object Beehive Cluster">Cúmulo de la Colmena</string>
+    <string name="praesepe" translation_description="Name of the Messier object Praesepe">Pesebre</string>
+    <string name="seven_sisters" translation_description="Name of the Messier object Seven Sisters">Siete Hermanas</string>
+
+    <!-- Manmade objects -->
+    <string name="space_station" translation_description="Name of the Internation Space Station">Estación Espacial Internacional</string>
+    <string name="space_shuttle" translation_description="Name of the Space Shuttle">Transbordador Espacial</string>
+
+    <!-- Meteors -->
+    <string name="leonids" translation_description="Meteor Shower">Leónidas</string>
+    <string name="geminids" translation_description="Meteor Shower">Gemínidas</string>
+    <string name="quadrantids" translation_description="Meteor Shower">Cuadrántidas</string>
+    <string name="lyrids" translation_description="Meteor Shower">Líridas</string>
+    <string name="aquariids" translation_description="Meteor Shower">Eta Acuáridas</string>
+    <string name="deltaaquariids" translation_description="Meteor Shower">Delta Acuáridas</string>
+    <string name="perseids" translation_description="Meteor Shower">Perseidas</string>
+    <string name="orionids" translation_description="Meteor Shower">Oriónidas</string>
+    <string name="puppidvelids" translation_description="Meteor Shower">Púpidas-Vélidas</string>
+    <string name="ursids" translation_description="Meteor Shower">Úrsidas</string>
+
+    <!-- North America Nebula -->
+    <string name="north_america_nebula" translation_description="Name of the North America Nebula (NGC 7000) as shown on the sky map">Nebulosa de América del Norte</string>
+    <!-- tm:omitted name="ngc_7000" reason="identical_to_source" -->
+    <!-- tm:omitted name="caldwell_20" reason="identical_to_source" -->
+
+    <!-- Comets -->
+    <string name="comet_leonard" translation_description="Name of Comet Leonard (C/2021 A1) as shown on the sky map">Cometa Leonard</string>
+    <!-- TODO: no need for these alt names once our search is less lousy -->
+    <string name="comet_leonard_alt" translation_description="Alternate searchable name for Comet Leonard, surname first">Leonard (Cometa)</string>
+    <string name="comet_neowise" translation_description="Name of Comet NEOWISE (C/2020 F3) as shown on the sky map">Cometa Neowise</string>
+    <string name="comet_neowise_alt" translation_description="Alternate searchable name for Comet NEOWISE, surname first">Neowise (Cometa)</string>
+
+    <!-- Jewel Box (NGC 4755) -->
+    <string name="jewel_box" translation_description="Common name for the open star cluster NGC 4755 in Crux">Caja de Joyas</string>
+    <string name="herschels_jewel_box" translation_description="Alternative name for the Jewel Box cluster (NGC 4755)">Caja de Joyas de Herschel</string>
+    <string name="kappa_crucis_cluster" translation_description="Alternative name for the Jewel Box cluster (NGC 4755)">Cúmulo Kappa Crucis</string>
+
+    <!-- Exposed Cranium Nebula -->
+    <string name="exposed_cranium_nebula" translation_description="Common name for the planetary nebula PMR 1 in Vela, named for its brain-in-a-skull appearance">Nebulosa del Cráneo Expuesto</string>
+    <!-- tm:omitted name="pmr_1" reason="identical_to_source" -->
+
+    <!-- Double Cluster (NGC 869 & NGC 884) -->
+    <string name="double_cluster" translation_description="Common name for the pair of open star clusters NGC 869 and NGC 884 in Perseus">Cúmulo Doble</string>
+    <!-- tm:omitted name="ngc_869" reason="identical_to_source" -->
+    <!-- tm:omitted name="ngc_884" reason="identical_to_source" -->
+    <string name="h_and_chi_persei" translation_description="Traditional designation for the Double Cluster in Perseus">h y χ Persei</string>
+    <!-- tm:omitted name="caldwell_14" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="n47_tucanae" reason="identical_to_source" -->
+    <!-- tm:omitted name="n47_tuc" reason="identical_to_source" -->
+    <!-- tm:omitted name="ngc_104" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="centaurus_a" reason="identical_to_source" -->
+    <!-- tm:omitted name="ngc_5128" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="mel_25" reason="identical_to_source" -->
+    <!-- tm:omitted name="melotte_25" reason="identical_to_source" -->
+    <!-- tm:omitted name="caldwell_41" reason="identical_to_source" -->
+    <!-- tm:omitted name="mel_111" reason="identical_to_source" -->
+    <!-- tm:omitted name="melotte_111" reason="identical_to_source" -->
+    <string name="coma_berenices_cluster" translation_description="Alternate name for the Coma Star Cluster (Melotte 111)">Cúmulo de Coma Berenices</string>
+    <string name="brocchis_cluster" translation_description="Alternate name for the Coathanger asterism (Collinder 399)">Cúmulo de Brocchi</string>
+    <!-- tm:omitted name="cr_399" reason="identical_to_source" -->
+    <!-- tm:omitted name="collinder_399" reason="identical_to_source" -->
+    <!-- tm:omitted name="ngc_7293" reason="identical_to_source" -->
+    <string name="eye_of_god" translation_description="Nickname for the Helix Nebula (NGC 7293)">Ojo de Dios</string>
+    <!-- tm:omitted name="caldwell_63" reason="identical_to_source" -->
+    <!-- tm:omitted name="ngc_253" reason="identical_to_source" -->
+    <string name="silver_dollar_galaxy" translation_description="Nickname for the Sculptor Galaxy (NGC 253)">Galaxia de la Moneda de Plata</string>
+    <string name="silver_coin_galaxy" translation_description="Alternate nickname for the Sculptor Galaxy (NGC 253)">Galaxia de la Moneda de Plata</string>
+    <!-- tm:omitted name="ngc_7662" reason="identical_to_source" -->
+    <!-- tm:omitted name="caldwell_22" reason="identical_to_source" -->
+    <!-- tm:omitted name="ngc_3242" reason="identical_to_source" -->
+    <!-- tm:omitted name="caldwell_59" reason="identical_to_source" -->
+    <!-- tm:omitted name="ngc_7009" reason="identical_to_source" -->
+    <!-- tm:omitted name="caldwell_55" reason="identical_to_source" -->
+    <string name="ptolemy_cluster" translation_description="Common name for the open star cluster M7 in Scorpius, named after ancient astronomer Ptolemy">Cúmulo de Ptolomeo</string>
+    <string name="hercules_globular_cluster" translation_description="Common name for the globular cluster M13 in Hercules">Cúmulo Globular de Hércules</string>
+    <!-- tm:omitted name="ngc_1952" reason="identical_to_source" -->
+    <!-- tm:omitted name="ngc_224" reason="identical_to_source" -->
+    <!-- tm:omitted name="ngc_2632" reason="identical_to_source" -->
+    <!-- tm:omitted name="ngc_4594" reason="identical_to_source" -->
+    <!-- tm:omitted name="ngc_4755" reason="identical_to_source" -->
+    <!-- tm:omitted name="ngc_5194" reason="identical_to_source" -->
+    <!-- tm:omitted name="ngc_5457" reason="identical_to_source" -->
+    <!-- tm:omitted name="ngc_6205" reason="identical_to_source" -->
+    <!-- tm:omitted name="ngc_6405" reason="identical_to_source" -->
+    <!-- tm:omitted name="ngc_6475" reason="identical_to_source" -->
+    <!-- tm:omitted name="ngc_6611" reason="identical_to_source" -->
+    <!-- tm:omitted name="ngc_6720" reason="identical_to_source" -->
+    <string name="ngc_869_and_ngc_884" translation_description="NGC catalog designations for the Double Cluster pair in Perseus">NGC 869 y NGC 884</string>
+    <!-- tm:omitted name="omega_cen" reason="identical_to_source" -->
+</resources>

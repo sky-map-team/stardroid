@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+    <string name="eula_text" translation_description="A condensed, user-friendly version of the EULA and Privacy Policy with a link to the full terms">
+    &lt;h1&gt;歡迎使用 Sky Map&lt;/h1&gt;
+        &lt;p&gt;為了讓您開始觀星，請查看我們條款的快速摘要。&lt;/p&gt;
+
+        &lt;h2&gt;隱私&lt;/h2&gt;
+        &lt;p&gt;&lt;b&gt;我們不知道您是誰。&lt;/b&gt; 我們收集匿名使用數據以幫助我們修復錯誤和改進功能。您可以隨時在設定菜單中選擇退出。&lt;/p&gt;
+
+        &lt;h2&gt;安全與責任&lt;/h2&gt;
+        &lt;p&gt;Sky Map 按"現狀"提供。請安全使用——我們不對因您使用本應用而造成的任何損害或傷害（如頸部酸痛！）負責。&lt;/p&gt;
+
+        &lt;h2&gt;開源&lt;/h2&gt;
+        &lt;p&gt;Sky Map 是一項充滿熱情的工作。您可以自由使用我們的源代碼，但請尊重我們的品牌和徽標。&lt;/p&gt;
+
+        &lt;p&gt;在此閱讀完整的法律文件：&lt;a href="https://github.com/sky-map-team/stardroid/blob/master/TERMS.md"&gt;完整條款和隱私政策&lt;/a&gt;&lt;/p&gt;
+
+        &lt;p&gt;&lt;i&gt;點擊"接受"，即表示您同意這些條款。&lt;/i&gt;&lt;/p&gt;
+    </string>
+</resources>

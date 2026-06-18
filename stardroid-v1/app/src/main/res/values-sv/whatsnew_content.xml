@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+    <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Välkommen till Sky Map</h2>
+<p>Nya användare möts av en guidad introduktionsupplevelse som kontrollerar enhetens sensorer och får dig att börja stjärntitta snabbt.</p>
+<h2>Bättre platshantering</h2>
+<p>Platshanteringen har helt omarbetats — tydligare statusmeddelanden, en förloppsindikator medan din position löses, och reparationer för många långvariga buggar. Det finns också en ny karta som hjälper dig att visuellt bekräfta din plats.</p>
+<h2>Sökning</h2>
+<p>Du kan nu söka efter RA- och Dec-koordinater samt efter objektnamn. Sököverlagringen uppdateras också för att visa "Hittad: X" när ditt mål glider in i mitten av skärmen.</p>]]></string>
+    </resources>
