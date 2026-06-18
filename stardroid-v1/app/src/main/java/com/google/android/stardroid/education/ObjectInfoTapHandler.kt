@@ -137,7 +137,8 @@ class ObjectInfoTapHandler @Inject constructor(
 
         /**
          * Default fraction of the screen (centered, both axes) in which taps may open an info
-         * card. Used when no remote config value is available. See [Experiment.INFO_CARD_TAP_REGION_FRACTION].
+         * card. Used when no remote config value is available.
+         * See [Experiment.INFO_CARD_TAP_REGION_FRACTION].
          */
         const val DEFAULT_TAP_REGION_FRACTION = 0.6
     }
