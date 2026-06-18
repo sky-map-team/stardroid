@@ -24,6 +24,8 @@ import com.google.android.stardroid.renderables.AstronomicalRenderable
 import com.google.android.stardroid.renderables.LinePrimitive
 import com.google.android.stardroid.renderables.TextPrimitive
 import java.util.*
+import kotlin.math.cos
+import kotlin.math.sin
 
 /**
  * Creates a Layer for the Ecliptic.
@@ -48,13 +50,88 @@ class EclipticLayer(resources: Resources, preferences: SharedPreferences) : Abst
 
         companion object {
             private const val EARTHS_ANGULAR_TILT = 23.439281f
-            private val LINE_COLOR = Color.argb(20, 248, 239, 188)
+
+            // Star Gold (#FF9F1C), the primary brand color. The ecliptic is the Sun's apparent
+            // path, so gold is both on-brand and thematically apt. The renderer red-shifts this
+            // automatically in night-vision mode. The line is kept fairly faint so it reads as a
+            // reference line rather than competing with the stars; labels are always drawn opaque
+            // by the label renderer regardless of this alpha.
+            //
+            // NOTE: the line renderer (NightVisionColorBuffer) reads the color int as ABGR, while
+            // the label renderer (LabelObjectManager) reads it as ARGB. So the same gold needs the
+            // red and blue channels swapped between the two, or the line renders blue.
+            private val LABEL_COLOR = Color.argb(255, 255, 159, 28)
+            private val LINE_COLOR = Color.argb(64, 28, 159, 255)
+
+            // Labels are nudged a few degrees off the ecliptic in ecliptic *latitude* (i.e.
+            // perpendicular to the line everywhere), so they sit a uniform small distance from the
+            // line rather than striking through it. The ticks below bridge the small gap.
+            private const val LABEL_LATITUDE_OFFSET = 3f
+
+            // Tick lengths, in degrees of ecliptic latitude. Minor ticks every 10 degrees, longer
+            // major ticks at the 30 degree zodiac/constellation boundaries.
+            private const val MINOR_TICK_LENGTH = 1f
+            private const val MAJOR_TICK_LENGTH = 2f
+
+            private val DEGREES_TO_RADIANS = (Math.PI / 180.0).toFloat()
+            private val OBLIQUITY_RADIANS = EARTHS_ANGULAR_TILT * DEGREES_TO_RADIANS
+
+            /**
+             * Geocentric unit vector for the point at the given ecliptic longitude and latitude
+             * (degrees). A non-zero latitude offsets the point perpendicular to the ecliptic.
+             */
+            private fun geocentricForEcliptic(longitude: Float, latitude: Float): Vector3 {
+                val lambda = longitude * DEGREES_TO_RADIANS
+                val beta = latitude * DEGREES_TO_RADIANS
+                val xe = cos(beta) * cos(lambda)
+                val ye = cos(beta) * sin(lambda)
+                val ze = sin(beta)
+                // Rotate about the x-axis by the obliquity to convert ecliptic -> equatorial.
+                return Vector3(
+                    xe,
+                    ye * cos(OBLIQUITY_RADIANS) - ze * sin(OBLIQUITY_RADIANS),
+                    ye * sin(OBLIQUITY_RADIANS) + ze * cos(OBLIQUITY_RADIANS)
+                )
+            }
         }
 
         init {
             val title = resources.getString(R.string.ecliptic)
-            labels.add(TextPrimitive(90.0f, EARTHS_ANGULAR_TILT, title, LINE_COLOR))
-            labels.add(TextPrimitive(270f, -EARTHS_ANGULAR_TILT, title, LINE_COLOR))
+            // Place the descriptive name off the 30-degree marks (45 & 225) so it doesn't collide
+            // with the degree labels.
+            labels.add(
+                TextPrimitive(geocentricForEcliptic(45f, LABEL_LATITUDE_OFFSET), title, LABEL_COLOR)
+            )
+            labels.add(
+                TextPrimitive(geocentricForEcliptic(225f, LABEL_LATITUDE_OFFSET), title, LABEL_COLOR)
+            )
+
+            // Graduation ticks every 10 degrees of ecliptic longitude, each pointing off the line
+            // toward its label. The 30 degree marks (zodiac/constellation boundaries) get longer,
+            // slightly heavier ticks.
+            for (longitude in 0 until 360 step 10) {
+                val isMajor = longitude % 30 == 0
+                val tickLength = if (isMajor) MAJOR_TICK_LENGTH else MINOR_TICK_LENGTH
+                val tickWidth = if (isMajor) 2.0f else 1.5f
+                val tick = arrayListOf(
+                    geocentricForEcliptic(longitude.toFloat(), 0f),
+                    geocentricForEcliptic(longitude.toFloat(), tickLength)
+                )
+                lines.add(LinePrimitive(LINE_COLOR, tick, tickWidth))
+            }
+
+            // Degree labels at the 30 degree marks. The vernal equinox (0 deg) coincides exactly
+            // with 0h RA / 0 deg dec, so it is labelled once by the grid layer (as "0") instead of
+            // here, to avoid two labels stacking at the same point.
+            for (longitude in 30 until 360 step 30) {
+                labels.add(
+                    TextPrimitive(
+                        geocentricForEcliptic(longitude.toFloat(), LABEL_LATITUDE_OFFSET),
+                        String.format("%d°", longitude),
+                        LABEL_COLOR
+                    )
+                )
+            }
 
             // Create line source.
             val ra = floatArrayOf(0f, 90f, 180f, 270f, 0f)
@@ -63,7 +140,7 @@ class EclipticLayer(resources: Resources, preferences: SharedPreferences) : Abst
             for (i in ra.indices) {
                 vertices.add(getGeocentricCoords(ra[i], dec[i]))
             }
-            lines.add(LinePrimitive(LINE_COLOR, vertices, 1.5f))
+            lines.add(LinePrimitive(LINE_COLOR, vertices, 1.8f))
         }
     }
 }
