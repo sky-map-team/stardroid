@@ -93,7 +93,7 @@ the wrong direction if it's in a magnetically disturbed environment.
 
 **Steps to suggest:**
 1. Move well away from metal objects, vehicles, and buildings
-2. Remove any magnetic phone case
+2. Remove any phone case
 3. Repeat the figure-8 gesture in the clear environment
 4. If there's a consistent offset, use the manual compass offset in Settings
 
@@ -157,7 +157,7 @@ a known side-effect. This is not a Sky Map change.
 **What users say:** "Polaris is near the horizon", "the whole sky is shifted", "stars are in
 completely wrong positions", "it doesn't know where I am"
 
-**Real cause:** Sky Map does not have the user's location. It defaults to 0°/0° (ocean).
+**Real cause:** Sky Map does not have the user's location. It defaults to 0°/90° (North Pole).
 
 **Telltale symptom:** Polaris near the horizon instead of high in the northern sky.
 
