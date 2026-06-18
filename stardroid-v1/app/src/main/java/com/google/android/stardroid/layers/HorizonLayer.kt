@@ -131,9 +131,17 @@ class HorizonLayer(private val model: AstronomerModel, resources: Resources, pre
             // The glow is a single gradient mesh, not a stack of translucent strips. Ring 0 is
             // the horizon itself; NUM_GLOW_RINGS further rings are tilted toward the nadir at
             // GLOW_RING_SPACING_DEG steps, so the glow reaches NUM_GLOW_RINGS × spacing below
-            // the horizon and never above it. The renderer interpolates each ring's color
-            // (and alpha) across the bands between rings, so a handful of rings already give a
-            // smooth gradient — no overlap/coverage tricks needed.
+            // the horizon and never above it.
+            //
+            // Why several rings even though the GPU interpolates color across the bands? The
+            // interpolation is what makes the gradient smooth, so it is NOT the reason for the
+            // ring count: even two rings (peak at the horizon, zero at the bottom) would give a
+            // seam-free gradient. But fixed-function (Gouraud) shading interpolates alpha
+            // *linearly*, so two stops can only produce a straight ramp. We want the
+            // *exponential* falloff below (bright at the horizon with a long soft tail), so we
+            // give the curve multiple stops and let the per-band linear interpolation trace it
+            // piecewise. More rings = finer approximation of the curve; 8 is enough that the
+            // corners are imperceptible. Drop to 2 if a plain linear fade is ever wanted.
             private const val NUM_GLOW_RINGS = 8
             private const val GLOW_RING_SPACING_DEG = 1.0f
             // Additive glow intensity at the horizon, as a fraction of full (255) alpha, with
