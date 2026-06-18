@@ -44,6 +44,7 @@ These facts should be expressed naturally (not recited verbatim) wherever releva
 
 **Real cause:** Phone compass sensor is giving a bad reading. Most commonly caused by:
 - Magnetic phone case
+- RFID-blocking phone case
 - Being inside a car or near a vehicle
 - Standing near a metal structure, appliance, or reinforced concrete
 - Sensor needing hardware calibration (figure-8 gesture)
