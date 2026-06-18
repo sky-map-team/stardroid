@@ -158,8 +158,9 @@ gives you additional control over how dark the screen gets.
 ## Setting Your Location
 
 Sky Map needs your approximate location to draw the correct sky. By default it uses your device's
-location services (mobile network or GPS). If you don't it will place you at (0, 0) which is in the
-middle of the ocean!
+location services (mobile network or GPS). If you don't it will place you at the North Pole (or in
+older versions at (0, 0) which is in the
+middle of the ocean !)
 
 If location access is unavailable or you'd rather set it manually, go to **Settings → Location**
 and either:
@@ -187,8 +188,6 @@ to the tube while the map still tracks what the telescope is aimed at.
 - **Diagnostics:** If something looks wrong, open the overflow menu and tap **Diagnostics**. This
   page shows your current location, time, sensor status, and accuracy readings — very useful if
   you need to report a problem.
-- **Messier images:** Under **Settings → Appearance**, you can choose whether Messier objects
-  appear as realistic thumbnail images or simple dots.
 - **Font size:** Adjust label size under **Settings → Appearance**.
 - **Jittery map:** Experiment with **Sensor Speed** and **Sensor Damping** under
   **Settings → Sensor Settings (Experts)**.
@@ -218,7 +217,8 @@ jerky.
 
 ### How do I know which sensors my phone has?
 If you open Sky Map's diagnostics page any sensors that you 
-don't have will show up as "--,--,--".
+don't have will show up as "--,--,--". You should also have been informed
+during the 'welcome' flow (which you can redo via the 'tutorial' item in the menu).
 
 ### What if my devices is missing required sensors?
 Sky Map will fall back into 'manual mode'. You can still explore
@@ -242,12 +242,12 @@ Sky Map needs three things to show the correct sky: the direction your phone is 
 location, and the current time. If the map looks wrong, one of these is likely off.
 
 - **Compass:** The most common cause — a hardware issue, not a Sky Map bug. Try calibrating
-  (figure-8 gesture), move away from metal objects, and toggle **Magnetic Correction** in
-  **Settings → Location**. A manual compass offset is available under
+  (figure-8 gesture), move away from metal objects, and remove any cases that might interfere
+  with the compass. A manual compass offset is available under
   **Settings → Sensor Settings (Experts)** for compasses with a consistent error.
-- **Location:** Grant location permission via **App Settings → Permissions**. Check the Diagnostics
+- **Location:** Grant location permission via **App Settings → Permissions**. Check the Location or Diagnostics
   page to confirm your coordinates. A telltale symptom of missing location is Polaris appearing
-  near the horizon.
+  near the horizon or directly overhead (it means we think you're either at 0,0 in the Atlantic Ocean or at the North Pole – neither is likely).
 - **Time:** Less common, but an incorrect time zone shifts the whole sky. Check the Diagnostics
   page to confirm your device's time and time zone are correct.
 
