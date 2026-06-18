@@ -97,10 +97,18 @@ class SolarSystemRenderable(
                     )
                 )
             } else {
-                pointPrimitives.add(PointPrimitive(currentCoords, resources.getColor(R.color.planet_body, null), PLANET_SIZE))
+                pointPrimitives.add(
+                    PointPrimitive(
+                        currentCoords,
+                        resources.getColor(R.color.planet_body, null),
+                        PLANET_SIZE
+                    )
+                )
             }
         }
-        labelPrimitives.add(TextPrimitive(currentCoords, name, resources.getColor(R.color.sky_label, null)))
+        labelPrimitives.add(
+            TextPrimitive(currentCoords, name, resources.getColor(R.color.sky_label, null))
+        )
         return this
     }
 
