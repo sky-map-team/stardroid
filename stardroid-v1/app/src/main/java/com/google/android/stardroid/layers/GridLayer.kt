@@ -128,7 +128,10 @@ class GridLayer
             )
             for (index in 0..11) {
                 val ra = index * 30.0f
-                val title = String.format("%dh", 2 * index)
+                // RA 0h / dec 0 is also the ecliptic's vernal equinox (ecliptic longitude 0). The
+                // ecliptic layer deliberately omits its "0 deg" label there, so this single "0"
+                // (in the grid/RA color) serves both.
+                val title = if (index == 0) "0" else String.format("%dh", 2 * index)
                 labels.add(TextPrimitive(ra, 0.0f, title, lineColor))
             }
             lines.add(createDecLine(0f)) // Equator

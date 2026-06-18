@@ -4,4 +4,12 @@
         <key>warm_welcome_enabled</key>
         <value>false</value>
     </entry>
+    <entry>
+        <key>info_card_tap_region_fraction</key>
+        <value>0.6</value>
+    </entry>
+    <entry>
+        <key>info_card_max_height_fraction</key>
+        <value>0.7</value>
+    </entry>
 </defaultsMap>
