@@ -28,10 +28,14 @@ class MaxHeightScrollView @JvmOverloads constructor(
         }
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
-        val spec = if (maxHeightPx > 0) {
-            MeasureSpec.makeMeasureSpec(maxHeightPx, MeasureSpec.AT_MOST)
-        } else {
-            heightMeasureSpec
+        var spec = heightMeasureSpec
+        if (maxHeightPx > 0) {
+            // Only tighten the constraint: never grow beyond what the parent already allows.
+            val mode = MeasureSpec.getMode(heightMeasureSpec)
+            val size = MeasureSpec.getSize(heightMeasureSpec)
+            if (mode == MeasureSpec.UNSPECIFIED || size > maxHeightPx) {
+                spec = MeasureSpec.makeMeasureSpec(maxHeightPx, MeasureSpec.AT_MOST)
+            }
         }
         super.onMeasure(widthMeasureSpec, spec)
     }

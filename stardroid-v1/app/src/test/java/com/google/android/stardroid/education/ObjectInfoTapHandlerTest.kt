@@ -284,4 +284,21 @@ class ObjectInfoTapHandlerTest {
         assertThat(result).isTrue()
         verify(mockListener).onObjectTapped(testObjectInfo)
     }
+
+    @Test
+    fun testHandleTap_centralRegion_nonPositiveFraction_disablesRestriction() {
+        enableFeatureInManualMode()
+        // A misconfigured fraction <= 0 must not swallow every tap; treat it as disabled.
+        `when`(mockExperimentConfig.getDouble(
+            Experiment.INFO_CARD_TAP_REGION_FRACTION,
+            ObjectInfoTapHandler.DEFAULT_TAP_REGION_FRACTION))
+            .thenReturn(0.0)
+        `when`(mockHitTester.findObjectAtScreenPosition(20f, 20f, 1080, 1920))
+            .thenReturn(testObjectInfo)
+
+        val result = tapHandler.handleTap(20f, 20f, 1080, 1920)
+
+        assertThat(result).isTrue()
+        verify(mockListener).onObjectTapped(testObjectInfo)
+    }
 }

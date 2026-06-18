@@ -91,7 +91,9 @@ class ObjectInfoTapHandler @Inject constructor(
         val regionFraction = experimentConfig
             .getDouble(Experiment.INFO_CARD_TAP_REGION_FRACTION, DEFAULT_TAP_REGION_FRACTION)
             .toFloat()
-        if (regionFraction < 1f) {
+        // A fraction <= 0 (misconfigured) or >= 1 disables the restriction entirely so we never
+        // accidentally swallow every tap and break the feature.
+        if (regionFraction > 0f && regionFraction < 1f) {
             val halfWidth = screenWidth * regionFraction / 2f
             val halfHeight = screenHeight * regionFraction / 2f
             if (abs(screenX - screenWidth / 2f) > halfWidth ||

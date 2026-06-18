@@ -45,8 +45,15 @@ class ExperimentConfigImpl @Inject constructor(
     override fun getDouble(experiment: Experiment, default: Double): Double {
         val value = remoteConfig.getValue(experiment.remoteConfigKey)
         // STATIC means neither a remote value nor an in-app default (XML) was found.
-        return if (value.source == FirebaseRemoteConfig.VALUE_SOURCE_STATIC) default
-        else value.asDouble()
+        if (value.source == FirebaseRemoteConfig.VALUE_SOURCE_STATIC) return default
+        // Remote values are operator-controlled; a typo (e.g. a non-numeric value) must not crash
+        // clients, so fall back to the default if it can't be parsed as a double.
+        return try {
+            value.asDouble()
+        } catch (e: IllegalArgumentException) {
+            Log.w(TAG, "Remote config ${experiment.remoteConfigKey} is not a valid double", e)
+            default
+        }
     }
 
     override fun waitForInitialFetch(timeoutMs: Long): Boolean {

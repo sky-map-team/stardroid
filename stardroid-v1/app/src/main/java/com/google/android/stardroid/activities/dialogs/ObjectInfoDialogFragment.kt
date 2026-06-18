@@ -96,8 +96,9 @@ class ObjectInfoDialogFragment : DialogFragment() {
         val maxHeightFraction = experimentConfig
             .getDouble(Experiment.INFO_CARD_MAX_HEIGHT_FRACTION, DEFAULT_CARD_MAX_HEIGHT_FRACTION)
             .toFloat()
-        if (maxHeightFraction in 0f..1f) {
-            view.findViewById<MaxHeightScrollView>(R.id.object_info_scroll)?.maxHeightPx =
+        if (maxHeightFraction > 0f && maxHeightFraction <= 1f) {
+            // The inflated root is itself the MaxHeightScrollView, so cast directly.
+            (view as? MaxHeightScrollView)?.maxHeightPx =
                 (parentActivity.resources.displayMetrics.heightPixels * maxHeightFraction).toInt()
         }
 
