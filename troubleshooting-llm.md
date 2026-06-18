@@ -55,7 +55,7 @@ sensor and cannot automatically correct what it reports. This is a phone hardwar
 steps below (including the manual offset for persistent cases). Do not imply Sky Map has a bug.
 
 **Steps to suggest (in this order):**
-1. Remove any magnetic phone case and test without it
+1. Remove any phone case and test without it
 2. Move to open ground, away from vehicles, buildings, and metal structures
 3. Perform the figure-8 calibration gesture (wave the phone in a large, slow figure-8 shape)
 4. If the phone has a consistent offset in all environments, use the manual compass offset in
