@@ -100,6 +100,7 @@ abstract class AbstractLayer(protected val resources: Resources,
         pointPrimitives: List<PointPrimitive>,
         linePrimitives: List<LinePrimitive>,
         imagePrimitives: List<ImagePrimitive>,
+        glowPrimitives: List<HorizonGlowPrimitive>,
         updateTypes: EnumSet<UpdateType> = EnumSet.of(UpdateType.Reset)
     ) {
         val localRenderer = renderer ?: return
@@ -111,6 +112,7 @@ abstract class AbstractLayer(protected val resources: Resources,
             setSources(pointPrimitives, updateTypes, PointPrimitive::class.java, atomic)
             setSources(linePrimitives, updateTypes, LinePrimitive::class.java, atomic)
             setSources(imagePrimitives, updateTypes, ImagePrimitive::class.java, atomic)
+            setSources(glowPrimitives, updateTypes, HorizonGlowPrimitive::class.java, atomic)
             localRenderer.queueAtomic(atomic)
         } finally {
             renderMapLock.unlock()
@@ -144,6 +146,8 @@ abstract class AbstractLayer(protected val resources: Resources,
                 RenderManager<E>
             LinePrimitive::class -> controller.createLineManager(layerDepthOrder) as RenderManager<E>
             PointPrimitive::class -> controller.createPointManager(layerDepthOrder) as RenderManager<E>
+            HorizonGlowPrimitive::class -> controller.createHorizonGlowManager(layerDepthOrder) as
+                RenderManager<E>
             else -> throw IllegalStateException("Unknown source type: $(E::class)")
         }
 

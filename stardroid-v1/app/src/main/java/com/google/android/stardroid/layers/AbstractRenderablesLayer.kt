@@ -36,6 +36,7 @@ abstract class AbstractRenderablesLayer(resources: Resources, private val should
   private val imagePrimitives = ArrayList<ImagePrimitive>()
   private val pointPrimitives = ArrayList<PointPrimitive>()
   private val linePrimitives = ArrayList<LinePrimitive>()
+  private val glowPrimitives = ArrayList<HorizonGlowPrimitive>()
   private val astroRenderables = ArrayList<AstronomicalRenderable>()
   private val searchIndex = HashMap<String, SearchResult>()
   private val prefixStore = PrefixStore()
@@ -48,6 +49,7 @@ abstract class AbstractRenderablesLayer(resources: Resources, private val should
     imagePrimitives.clear()
     pointPrimitives.clear()
     linePrimitives.clear()
+    glowPrimitives.clear()
     initializeAstroSources(astroRenderables)
     for (astroRenderable in astroRenderables) {
       val renderables = astroRenderable.initialize()
@@ -55,6 +57,7 @@ abstract class AbstractRenderablesLayer(resources: Resources, private val should
       imagePrimitives.addAll(renderables.images)
       pointPrimitives.addAll(renderables.points)
       linePrimitives.addAll(renderables.lines)
+      glowPrimitives.addAll(renderables.glows)
       val names = astroRenderable.names
       if (names.isNotEmpty()) {
         for (name in names) {
@@ -106,7 +109,8 @@ abstract class AbstractRenderablesLayer(resources: Resources, private val should
   }
 
   private fun redraw(updateTypes: EnumSet<UpdateType>) {
-    super.redraw(textPrimitives, pointPrimitives, linePrimitives, imagePrimitives, updateTypes)
+    super.redraw(
+      textPrimitives, pointPrimitives, linePrimitives, imagePrimitives, glowPrimitives, updateTypes)
   }
 
   override fun onFontSizeChanged() {

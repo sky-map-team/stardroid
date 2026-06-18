@@ -332,7 +332,6 @@ class CometsLayer(private val model: AstronomerModel, resources: Resources,
     }
 
     companion object {
-      private const val LABEL_COLOR = 0xf67e81
       private val UP = Vector3(0.0f, 1.0f, 0.0f)
       private const val UPDATE_FREQ_MS = 1L * TimeConstants.MILLISECONDS_PER_HOUR
       private const val SCALE_FACTOR = 0.03f
@@ -352,7 +351,7 @@ class CometsLayer(private val model: AstronomerModel, resources: Resources,
       coords = comet.pos(model.time)
       theImage = ImagePrimitive(coords, resources, R.drawable.blank, UP, SCALE_FACTOR)
       images.add(theImage)
-      label = TextPrimitive(coords, name, LABEL_COLOR)
+      label = TextPrimitive(coords, name, resources.getColor(R.color.sky_label, null))
       labels.add(label)
     }
   }

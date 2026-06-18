@@ -1,5 +1,11 @@
 <resources>
     <color name="black_overlay">#66000000</color>
+    <!-- Sky rendering layer colors -->
+    <color name="horizon_line">#784A7C59</color>
+    <color name="horizon_label">#78F5B056</color>
+    <color name="grid_line">#14F8EFBC</color>
+    <color name="sky_label">#FFF67E81</color>
+    <color name="planet_body">#14817EF6</color>
     <!-- Generic status colours (good/ok/warning/bad/absent) used for diagnostics, sensors, etc. -->
     <color name="status_good">#8BC34A</color>
     <color name="status_ok">#FFEB3B</color>

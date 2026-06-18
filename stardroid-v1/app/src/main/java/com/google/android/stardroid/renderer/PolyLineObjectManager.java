@@ -166,33 +166,47 @@ public class PolyLineObjectManager extends RendererObjectManager {
     
     gl.glEnableClientState(GL10.GL_VERTEX_ARRAY);
     gl.glEnableClientState(GL10.GL_COLOR_ARRAY);
-    gl.glEnableClientState(GL10.GL_TEXTURE_COORD_ARRAY);
-    
-    gl.glEnable(GL10.GL_TEXTURE_2D);
-    mTexRef.bind(gl);
-    
+
+    // Use the line texture only for fully-opaque lines. Semi-transparent lines (e.g. glow
+    // rings) skip the texture so segment-endpoint fading doesn't create visible seams or
+    // a dark halo at the edges of wide bands. Enable the texture-coordinate array only on
+    // that opaque path: enabling it without ever binding a coordinate pointer (the
+    // non-opaque case) is undefined behavior in OpenGL ES and can crash some drivers.
+    if (mOpaque) {
+      gl.glEnableClientState(GL10.GL_TEXTURE_COORD_ARRAY);
+      gl.glEnable(GL10.GL_TEXTURE_2D);
+      mTexRef.bind(gl);
+      gl.glTexEnvf(GL10.GL_TEXTURE_ENV, GL10.GL_TEXTURE_ENV_MODE, GL10.GL_MODULATE);
+      mTexCoordBuffer.set(gl);
+    } else {
+      // Explicitly clear texturing state on the non-opaque path: a previously drawn manager
+      // may have left GL_TEXTURE_2D / GL_TEXTURE_COORD_ARRAY enabled, which would otherwise
+      // apply a stale texture (with no coordinate pointer of ours) to the glow lines.
+      gl.glDisable(GL10.GL_TEXTURE_2D);
+      gl.glDisableClientState(GL10.GL_TEXTURE_COORD_ARRAY);
+    }
+
     gl.glEnable(GL10.GL_CULL_FACE);
     gl.glFrontFace(GL10.GL_CW);
     gl.glCullFace(GL10.GL_BACK);
-    
+
     if (!mOpaque) {
       gl.glEnable(GL10.GL_BLEND);
       gl.glBlendFunc(GL10.GL_SRC_ALPHA, GL10.GL_ONE_MINUS_SRC_ALPHA);
     }
 
-    gl.glTexEnvf(GL10.GL_TEXTURE_ENV, GL10.GL_TEXTURE_ENV_MODE, GL10.GL_MODULATE);
-        
     mVertexBuffer.set(gl);
     mColorBuffer.set(gl, getRenderState().getNightVisionMode());
-    mTexCoordBuffer.set(gl);
 
     mIndexBuffer.draw(gl, GL10.GL_TRIANGLES);
-    
+
     if (!mOpaque) {
       gl.glDisable(GL10.GL_BLEND);
     }
-    
-    gl.glDisable(GL10.GL_TEXTURE_2D);
-    gl.glDisableClientState(GL10.GL_TEXTURE_COORD_ARRAY);
+
+    if (mOpaque) {
+      gl.glDisable(GL10.GL_TEXTURE_2D);
+      gl.glDisableClientState(GL10.GL_TEXTURE_COORD_ARRAY);
+    }
   }
 }

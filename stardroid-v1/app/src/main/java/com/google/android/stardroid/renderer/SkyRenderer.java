@@ -419,6 +419,10 @@ public class SkyRenderer implements GLSurfaceView.Renderer {
   public ImageObjectManager createImageManager(int layer) {
     return new ImageObjectManager(layer, mTextureManager);
   }
+
+  public HorizonGlowObjectManager createHorizonGlowManager(int layer) {
+    return new HorizonGlowObjectManager(layer, mTextureManager);
+  }
 }
 
 interface RenderStateInterface {
