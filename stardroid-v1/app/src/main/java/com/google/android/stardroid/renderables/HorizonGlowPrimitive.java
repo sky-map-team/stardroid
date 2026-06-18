@@ -28,7 +28,11 @@ public class HorizonGlowPrimitive extends AbstractPrimitive {
   public final int[] ringColors;
 
   public HorizonGlowPrimitive(List<List<Vector3>> rings, int[] ringColors) {
-    super(ringColors.length > 0 ? ringColors[0] : Color.WHITE);
+    super(ringColors != null && ringColors.length > 0 ? ringColors[0] : Color.WHITE);
+    if (rings == null || ringColors == null || rings.size() != ringColors.length) {
+      throw new IllegalArgumentException(
+          "rings and ringColors must be non-null and the same length");
+    }
     this.rings = rings;
     this.ringColors = ringColors;
   }

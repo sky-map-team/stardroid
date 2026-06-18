@@ -166,12 +166,14 @@ public class PolyLineObjectManager extends RendererObjectManager {
     
     gl.glEnableClientState(GL10.GL_VERTEX_ARRAY);
     gl.glEnableClientState(GL10.GL_COLOR_ARRAY);
-    gl.glEnableClientState(GL10.GL_TEXTURE_COORD_ARRAY);
-    
+
     // Use the line texture only for fully-opaque lines. Semi-transparent lines (e.g. glow
     // rings) skip the texture so segment-endpoint fading doesn't create visible seams or
-    // a dark halo at the edges of wide bands.
+    // a dark halo at the edges of wide bands. Enable the texture-coordinate array only on
+    // that opaque path: enabling it without ever binding a coordinate pointer (the
+    // non-opaque case) is undefined behavior in OpenGL ES and can crash some drivers.
     if (mOpaque) {
+      gl.glEnableClientState(GL10.GL_TEXTURE_COORD_ARRAY);
       gl.glEnable(GL10.GL_TEXTURE_2D);
       mTexRef.bind(gl);
       gl.glTexEnvf(GL10.GL_TEXTURE_ENV, GL10.GL_TEXTURE_ENV_MODE, GL10.GL_MODULATE);

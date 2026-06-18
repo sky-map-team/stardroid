@@ -64,6 +64,14 @@ class HorizonLayer(private val model: AstronomerModel, resources: Resources, pre
         // Together with horizonVerts they form the concentric loops of the glow gradient mesh.
         private val glowRings: Array<Array<Vector3>> =
             Array(NUM_GLOW_RINGS) { Array(NUM_SEGMENTS + 1) { Vector3(0f, 0f, 0f) } }
+        // Each glow ring's tilt toward the nadir depends only on constants, so compute the
+        // sin/cos once here rather than on every (per-second) coordinate update.
+        private val cosTilts = FloatArray(NUM_GLOW_RINGS) { ringIdx ->
+            cos(Math.toRadians(((ringIdx + 1) * GLOW_RING_SPACING_DEG).toDouble())).toFloat()
+        }
+        private val sinTilts = FloatArray(NUM_GLOW_RINGS) { ringIdx ->
+            sin(Math.toRadians(((ringIdx + 1) * GLOW_RING_SPACING_DEG).toDouble())).toFloat()
+        }
         private var lastUpdateTimeMs = 0L
 
         private fun updateCoords() {
@@ -74,15 +82,6 @@ class HorizonLayer(private val model: AstronomerModel, resources: Resources, pre
             south.assign(model.south)
             east.assign(model.east)
             west.assign(model.west)
-
-            // Pre-compute tilt sin/cos for each glow ring once per update.
-            val cosTilts = FloatArray(NUM_GLOW_RINGS)
-            val sinTilts = FloatArray(NUM_GLOW_RINGS)
-            for (ringIdx in 0 until NUM_GLOW_RINGS) {
-                val tiltRad = Math.toRadians(((ringIdx + 1) * GLOW_RING_SPACING_DEG).toDouble())
-                cosTilts[ringIdx] = cos(tiltRad).toFloat()
-                sinTilts[ringIdx] = sin(tiltRad).toFloat()
-            }
 
             // Horizon circle: p(θ) = north·cos(θ) + east·sin(θ)
             for (i in 0..NUM_SEGMENTS) {

@@ -41,17 +41,27 @@ public class HorizonGlowObjectManager extends RendererObjectManager {
       return;
     }
 
-    // Count vertices and band quads across all primitives.
+    // Count vertices and band quads across all primitives. A primitive needs at least two
+    // rings of at least two vertices each to form a band; anything less is skipped (the same
+    // skip is mirrored in the build loop below so vertex counts and indices stay aligned).
     int numVertices = 0;
     int numQuads = 0;
     for (HorizonGlowPrimitive glow : glows) {
-      List<List<Vector3>> rings = glow.rings;
-      if (rings.size() < 2) {
+      if (!isDrawable(glow)) {
         continue;
       }
-      int ringLength = rings.get(0).size();
-      numVertices += rings.size() * ringLength;
-      numQuads += (rings.size() - 1) * (ringLength - 1);
+      int rings = glow.rings.size();
+      int ringLength = glow.rings.get(0).size();
+      numVertices += rings * ringLength;
+      numQuads += (rings - 1) * (ringLength - 1);
+    }
+
+    // Vertices are indexed with signed shorts; bail out rather than overflow into corruption.
+    if (numVertices > Short.MAX_VALUE) {
+      vertexBuffer.reset(0);
+      colorBuffer.reset(0);
+      indexBuffer.reset(0);
+      return;
     }
 
     vertexBuffer.reset(numVertices);
@@ -60,10 +70,10 @@ public class HorizonGlowObjectManager extends RendererObjectManager {
 
     short vertexIndex = 0;
     for (HorizonGlowPrimitive glow : glows) {
-      List<List<Vector3>> rings = glow.rings;
-      if (rings.size() < 2) {
+      if (!isDrawable(glow)) {
         continue;
       }
+      List<List<Vector3>> rings = glow.rings;
       int ringLength = rings.get(0).size();
 
       // Vertices, ring by ring, each ring painted in its own color.
@@ -97,6 +107,12 @@ public class HorizonGlowObjectManager extends RendererObjectManager {
       }
       vertexIndex += rings.size() * ringLength;
     }
+  }
+
+  /** A glow needs at least two rings of at least two vertices each to form a band of quads. */
+  private static boolean isDrawable(HorizonGlowPrimitive glow) {
+    List<List<Vector3>> rings = glow.rings;
+    return rings != null && rings.size() >= 2 && rings.get(0) != null && rings.get(0).size() >= 2;
   }
 
   @Override
