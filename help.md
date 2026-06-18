@@ -261,3 +261,12 @@ For full troubleshooting details see the [online troubleshooting guide](https://
 
 If you're still stuck, email us at **skymapdevs@gmail.com** — a screenshot of your Diagnostics
 page is very helpful.
+
+---
+
+## Cross Checking
+Something doesn't look right? There are plenty of online tools for viewing the night sky online. My personal favorite is Stellarium:
+
+https://stellarium-web.org/
+
+
