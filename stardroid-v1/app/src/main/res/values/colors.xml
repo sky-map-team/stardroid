@@ -2,7 +2,9 @@
     <color name="black_overlay">#66000000</color>
     <!-- Sky rendering layer colors -->
     <color name="horizon_line">#78597C4A</color>
-    <color name="horizon_label">#78F5B056</color>
+    <!-- Cardinal/zenith/nadir labels share the horizon line's green so the horizon reads as one
+         element. Labels always render opaque (the renderer forces alpha), so only the RGB matters. -->
+    <color name="horizon_label">#78597C4A</color>
     <color name="grid_line">#14BCEFF8</color>
     <color name="sky_label">#FFF67E81</color>
     <color name="planet_body">#14F67E81</color>
