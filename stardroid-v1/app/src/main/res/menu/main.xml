@@ -57,7 +57,7 @@
     <item android:id="@+id/menu_item_time2"
         android:orderInCategory="6"
         android:title="@string/menu_time"
-        android:icon="@drawable/time_travel_icon"
+        android:icon="@drawable/ic_time_travel_menu"
         android:showAsAction="never"/>
 
     <item android:id="@+id/menu_item_calibrate"
