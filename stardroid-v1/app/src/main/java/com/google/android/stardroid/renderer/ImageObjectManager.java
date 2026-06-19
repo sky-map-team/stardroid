@@ -221,8 +221,11 @@ public class ImageObjectManager extends RendererObjectManager {
     int lastTint = 0;
     TextureReference[] textures = mTextures;
     TextureReference[] redTextures = mRedTextures;
+    // Snapshot the image array once: updateObjects() reassigns mImages from another thread, so
+    // reading the field repeatedly through the loop could race with an update.
+    Image[] images = mImages;
     for (int i = 0; i < textures.length; i++) {
-      if (mImages[i].useBlending) {
+      if (images[i].useBlending) {
         gl.glEnable(GL10.GL_BLEND);
         gl.glBlendFunc(GL10.GL_SRC_ALPHA, GL10.GL_ONE_MINUS_SRC_ALPHA);
       } else {
@@ -233,7 +236,7 @@ public class ImageObjectManager extends RendererObjectManager {
       if (nightVision) {
         redTextures[i].bind(gl);
       } else {
-        int tint = mImages[i].tint;
+        int tint = images[i].tint;
         if (tint != lastTint) {
           gl.glColor4f(((tint >> 16) & 0xff) / 255f, ((tint >> 8) & 0xff) / 255f,
               (tint & 0xff) / 255f, ((tint >> 24) & 0xff) / 255f);
@@ -243,7 +246,7 @@ public class ImageObjectManager extends RendererObjectManager {
       }
       ((GL11) gl).glDrawArrays(GL10.GL_TRIANGLE_STRIP, 4 * i, 4);
 
-      if (mImages[i].useBlending) {
+      if (images[i].useBlending) {
         gl.glDisable(GL10.GL_BLEND);
       } else {
         gl.glDisable(GL10.GL_ALPHA_TEST);
