@@ -1,11 +1,11 @@
 <resources>
     <color name="black_overlay">#66000000</color>
     <!-- Sky rendering layer colors -->
-    <color name="horizon_line">#784A7C59</color>
+    <color name="horizon_line">#78597C4A</color>
     <color name="horizon_label">#78F5B056</color>
-    <color name="grid_line">#14F8EFBC</color>
+    <color name="grid_line">#14BCEFF8</color>
     <color name="sky_label">#FFF67E81</color>
-    <color name="planet_body">#14817EF6</color>
+    <color name="planet_body">#14F67E81</color>
     <!-- Generic status colours (good/ok/warning/bad/absent) used for diagnostics, sensors, etc. -->
     <color name="status_good">#8BC34A</color>
     <color name="status_ok">#FFEB3B</color>
@@ -35,11 +35,9 @@
     <!-- Near-black MULTIPLY tint for disabled layer buttons in night mode -->
     <color name="night_button_off_tint">#FF2A0000</color>
 
-    <!-- Ecliptic (Star Gold #FF9F1C). ecliptic_label is the true brand gold used for the text.
-         ecliptic_line has its red and blue channels swapped (with alpha 0x40) because the line
-         renderer reads colours as ABGR while the label renderer reads ARGB; change it back to
-         #40FF9F1C once that renderer mismatch is fixed centrally. The renderer red-shifts both
+    <!-- Ecliptic (Star Gold #FF9F1C). Both the label and the (semi-transparent) line use the
+         true brand gold; the renderer reads all colours as standard ARGB and red-shifts both
          automatically in night-vision mode. -->
     <color name="ecliptic_label">#FFFF9F1C</color>
-    <color name="ecliptic_line">#401C9FFF</color>
+    <color name="ecliptic_line">#40FF9F1C</color>
 </resources>

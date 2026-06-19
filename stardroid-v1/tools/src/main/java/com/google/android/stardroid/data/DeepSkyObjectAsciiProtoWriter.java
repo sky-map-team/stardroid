@@ -33,7 +33,7 @@ import com.google.android.stardroid.source.proto.SourceProto.Shape;
 public class DeepSkyObjectAsciiProtoWriter extends AbstractAsciiProtoWriter {
   // TODO(mrhector): verify colors
   private static final int LABEL_COLOR = 0x48a841; // argb
-  private static final int POINT_COLOR = 0x48a841; // abgr (!)
+  private static final int POINT_COLOR = 0x41a848; // argb
   private static final int POINT_SIZE = 3;
 
   // Map CSV "Type" column (Wikipedia color legend categories) to Shape enum

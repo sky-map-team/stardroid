@@ -61,7 +61,8 @@ public class SkyBox extends RendererObjectManager {
         // TODO(jpowell): This isn't really intensity, name it more appropriately.
         // I=70 at bandPos = 1, I=50 at bandPos = 0
         byte intensity = (byte)(bandPos * 20 + 50);
-        color = (intensity << 16) | 0xff000000;
+        // Blue band fading toward the horizon. Intensity goes in the blue channel (ARGB).
+        color = (intensity & 0xff) | 0xff000000;
       } else {
         // I=40 at bandPos = -1, I=0 at bandPos = 0
         byte intensity = (byte)(bandPos * 40 + 40);

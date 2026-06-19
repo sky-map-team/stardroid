@@ -87,8 +87,7 @@ class EclipticLayer(resources: Resources, preferences: SharedPreferences) : Abst
 
         init {
             // Star Gold (#FF9F1C), loaded from resources per the style guide. The renderer
-            // red-shifts both automatically in night-vision mode. See colors.xml for why the line
-            // colour's red/blue channels are swapped relative to the label colour.
+            // red-shifts both automatically in night-vision mode.
             val labelColor = resources.getColor(R.color.ecliptic_label, null)
             val lineColor = resources.getColor(R.color.ecliptic_line, null)
             val title = resources.getString(R.string.ecliptic)

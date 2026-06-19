@@ -55,11 +55,11 @@ public class NightVisionColorBuffer {
     mRedBuffer.addColor(a, avg, 0, 0);
   }
   
-  public void addColor(int abgr) {
-    int a = (abgr >> 24) & 0xff;
-    int b = (abgr >> 16) & 0xff;
-    int g = (abgr >> 8) & 0xff;
-    int r = abgr & 0xff;
+  public void addColor(int argb) {
+    int a = (argb >> 24) & 0xff;
+    int r = (argb >> 16) & 0xff;
+    int g = (argb >> 8) & 0xff;
+    int b = argb & 0xff;
     addColor(a, r, g, b);
   }
   

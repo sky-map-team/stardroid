@@ -51,11 +51,13 @@ public class ColorBuffer {
   }
 
   public void addColor(int a, int r, int g, int b) {
-    addColor(((a & 0xff) << 24) | ((b & 0xff) << 16) | ((g & 0xff) << 8) | (r & 0xff));
+    // GL reads this IntBuffer as 4 GL_UNSIGNED_BYTE in RGBA order; in native (little-endian)
+    // byte order the int's low byte becomes R, then G, B, and the high byte A.
+    mColorBuffer.put(((a & 0xff) << 24) | ((b & 0xff) << 16) | ((g & 0xff) << 8) | (r & 0xff));
   }
 
-  public void addColor(int abgr) {
-    mColorBuffer.put(abgr);
+  public void addColor(int argb) {
+    addColor((argb >> 24) & 0xff, (argb >> 16) & 0xff, (argb >> 8) & 0xff, argb & 0xff);
   }
 
   public void set(GL10 gl) {

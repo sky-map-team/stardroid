@@ -24,8 +24,8 @@ Colors used in the OpenGL sky rendering layers, defined in `app/src/main/res/val
 
 | Resource Name | Description | Hex (ARGB) | Preview | Used In |
 |---|---|---|---|---|
-| `horizon_line` | Horizon circle line | `#784A7C59` | ![#4A7C59](https://placehold.co/60x20/4A7C59/4A7C59.png) | `HorizonLayer` |
+| `horizon_line` | Horizon circle line | `#78597C4A` | ![#597C4A](https://placehold.co/60x20/597C4A/597C4A.png) | `HorizonLayer` |
 | `horizon_label` | Cardinal point labels (N/S/E/W/Zenith/Nadir) | `#78F5B056` | ![#F5B056](https://placehold.co/60x20/F5B056/F5B056.png) | `HorizonLayer` |
-| `grid_line` | Celestial grid lines and ecliptic | `#14F8EFBC` | ![#F8EFBC](https://placehold.co/60x20/F8EFBC/F8EFBC.png) | `GridLayer`, `EclipticLayer` |
+| `grid_line` | Celestial grid lines and ecliptic | `#14BCEFF8` | ![#BCEFF8](https://placehold.co/60x20/BCEFF8/BCEFF8.png) | `GridLayer`, `EclipticLayer` |
 | `sky_label` | Planet, comet, and meteor shower labels | `#FFF67E81` | ![#F67E81](https://placehold.co/60x20/F67E81/F67E81.png) | `SolarSystemRenderable`, `CometsLayer`, `MeteorShowerLayer` |
-| `planet_body` | Planet dot (fallback when no image) | `#14817EF6` | ![#817EF6](https://placehold.co/60x20/817EF6/817EF6.png) | `SolarSystemRenderable` |
+| `planet_body` | Planet dot (fallback when no image) | `#14F67E81` | ![#F67E81](https://placehold.co/60x20/F67E81/F67E81.png) | `SolarSystemRenderable` |
