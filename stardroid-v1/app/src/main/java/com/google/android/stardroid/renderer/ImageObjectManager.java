@@ -228,7 +228,7 @@ public class ImageObjectManager extends RendererObjectManager {
       } else {
         int tint = mImages[i].tint;
         gl.glColor4f(((tint >> 16) & 0xff) / 255f, ((tint >> 8) & 0xff) / 255f,
-            (tint & 0xff) / 255f, 1f);
+            (tint & 0xff) / 255f, ((tint >> 24) & 0xff) / 255f);
         textures[i].bind(gl);
       }
       ((GL11) gl).glDrawArrays(GL10.GL_TRIANGLE_STRIP, 4 * i, 4);

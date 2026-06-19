@@ -34,8 +34,8 @@ public class DeepSkyObjectAsciiProtoWriter extends AbstractAsciiProtoWriter {
   // Lens Blue (#7EC8E3) from the brand palette; distinct from the green horizon. Standard ARGB.
   // The icon/point is full brand Lens Blue; the label is a dimmer (~75%) muted Lens Blue so the
   // text reads as secondary to the marker and the map feels less cluttered.
-  private static final int LABEL_COLOR = 0x5E96AA; // argb
-  private static final int POINT_COLOR = 0x7EC8E3; // argb
+  private static final int LABEL_COLOR = 0xFF5E96AA; // argb
+  private static final int POINT_COLOR = 0xFF7EC8E3; // argb
   private static final int POINT_SIZE = 3;
 
   // Map CSV "Type" column (Wikipedia color legend categories) to Shape enum
