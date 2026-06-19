@@ -32,6 +32,7 @@ class SensorAccuracyMonitor @Inject internal constructor(
   private val toaster: Toaster
   private var started = false
   private var hasReading = false
+  private var startedAtMillis = 0L
 
   /**
    * Starts monitoring.
@@ -41,6 +42,7 @@ class SensorAccuracyMonitor @Inject internal constructor(
       return
     }
     Log.d(TAG, "Starting monitoring compass accuracy")
+    startedAtMillis = System.currentTimeMillis()
     if (compassSensor != null) {
       (sensorManager ?: return).registerListener(this, compassSensor, SensorManager.SENSOR_DELAY_UI)
     }
@@ -73,6 +75,10 @@ class SensorAccuracyMonitor @Inject internal constructor(
     }
     Log.d(TAG, "Compass accuracy insufficient")
     val nowMillis = System.currentTimeMillis()
+    if (nowMillis - startedAtMillis < STARTUP_GRACE_PERIOD_MILLIS) {
+      Log.d(TAG, "...but still within startup grace period, letting the user settle in first")
+      return
+    }
     val lastWarnedMillis = sharedPreferences.getLong(LAST_CALIBRATION_WARNING_PREF_KEY, 0)
     if (nowMillis - lastWarnedMillis < MIN_INTERVAL_BETWEEN_WARNINGS) {
       Log.d(TAG, "...but too soon to warn again")
@@ -99,6 +105,7 @@ class SensorAccuracyMonitor @Inject internal constructor(
     private val TAG = getTag(SensorAccuracyMonitor::class.java)
     private const val LAST_CALIBRATION_WARNING_PREF_KEY = "Last calibration warning time"
     private const val MIN_INTERVAL_BETWEEN_WARNINGS = 180 * TimeConstants.MILLISECONDS_PER_SECOND
+    private const val STARTUP_GRACE_PERIOD_MILLIS = 15 * TimeConstants.MILLISECONDS_PER_SECOND
   }
 
   init {
