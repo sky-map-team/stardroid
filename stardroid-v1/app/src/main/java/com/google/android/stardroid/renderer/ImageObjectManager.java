@@ -79,6 +79,7 @@ public class ImageObjectManager extends RendererObjectManager {
         images[i].name = "no url";
         images[i].useBlending = false;
         images[i].bitmap = is.getImage();
+        images[i].tint = is.getColor();
       }
     } else {
       images = mImages;
@@ -201,13 +202,32 @@ public class ImageObjectManager extends RendererObjectManager {
     gl.glEnableClientState(GL10.GL_TEXTURE_COORD_ARRAY);
     gl.glDisableClientState(GL10.GL_COLOR_ARRAY);
 
+    // Modulate the texture by a flat colour so white glyph icons can be tinted. Full-colour
+    // images carry a white tint, which leaves them unchanged.
+    gl.glTexEnvf(GL10.GL_TEXTURE_ENV, GL10.GL_TEXTURE_ENV_MODE, GL10.GL_MODULATE);
+
     mVertexBuffer.set(gl);
     mTexCoordBuffer.set(gl);
 
+    boolean nightVision = getRenderState().getNightVisionMode();
+    if (nightVision) {
+      // The red textures already encode the night-vision colour, so the tint is a constant
+      // white for the whole pass; set it once rather than per image.
+      gl.glColor4f(1f, 1f, 1f, 1f);
+    }
+    // Most images share a tint (e.g. every DSO icon is the same colour), so only push a new
+    // glColor4f when it actually changes (always on the first image, see below).
+    int lastTint = 0;
     TextureReference[] textures = mTextures;
     TextureReference[] redTextures = mRedTextures;
-    for (int i = 0; i < textures.length; i++) {
-      if (mImages[i].useBlending) {
+    // Snapshot the image array once: updateObjects() reassigns mImages from another thread, so
+    // reading the field repeatedly through the loop could race with an update. The snapshots can
+    // be a generation apart from the textures (set on the GL thread), so bound the loop by the
+    // shorter length to avoid an index overrun; any mismatched frame self-corrects on reload.
+    Image[] images = mImages;
+    int count = Math.min(textures.length, images.length);
+    for (int i = 0; i < count; i++) {
+      if (images[i].useBlending) {
         gl.glEnable(GL10.GL_BLEND);
         gl.glBlendFunc(GL10.GL_SRC_ALPHA, GL10.GL_ONE_MINUS_SRC_ALPHA);
       } else {
@@ -215,20 +235,28 @@ public class ImageObjectManager extends RendererObjectManager {
         gl.glAlphaFunc(GL10.GL_GREATER, 0.5f);
       }
 
-      if (getRenderState().getNightVisionMode()) {
+      if (nightVision) {
         redTextures[i].bind(gl);
       } else {
+        int tint = images[i].tint;
+        if (i == 0 || tint != lastTint) {
+          gl.glColor4f(((tint >> 16) & 0xff) / 255f, ((tint >> 8) & 0xff) / 255f,
+              (tint & 0xff) / 255f, ((tint >> 24) & 0xff) / 255f);
+          lastTint = tint;
+        }
         textures[i].bind(gl);
       }
       ((GL11) gl).glDrawArrays(GL10.GL_TRIANGLE_STRIP, 4 * i, 4);
 
-      if (mImages[i].useBlending) {
+      if (images[i].useBlending) {
         gl.glDisable(GL10.GL_BLEND);
       } else {
         gl.glDisable(GL10.GL_ALPHA_TEST);
       }
     }
 
+    // Restore the default flat colour so we don't tint other managers' geometry.
+    gl.glColor4f(1f, 1f, 1f, 1f);
     gl.glDisable(GL10.GL_TEXTURE_2D);
   }
 
@@ -259,5 +287,8 @@ public class ImageObjectManager extends RendererObjectManager {
     Bitmap bitmap;
     int textureID;
     boolean useBlending;
+    // ARGB colour the texture is modulated by. Color.WHITE leaves full-colour images (planets,
+    // photos) unchanged; white glyph icons carry a real tint so their colour is data-driven.
+    int tint = android.graphics.Color.WHITE;
   }
 }

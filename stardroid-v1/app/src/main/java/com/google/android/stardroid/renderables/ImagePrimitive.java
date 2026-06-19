@@ -72,7 +72,18 @@ public class ImagePrimitive extends AbstractPrimitive {
 
   public ImagePrimitive(Vector3 coords, Resources res, int id, Vector3 upVec,
                         float imageScale) {
-    super(coords, Color.WHITE);
+    this(coords, res, id, upVec, imageScale, Color.WHITE);
+  }
+
+  /**
+   * @param tintColor an ARGB colour the image texture is modulated by when drawn. Use
+   *     {@link Color#WHITE} to render the texture unchanged; a non-white tint is intended for
+   *     white/greyscale glyphs (e.g. deep-sky-object shape icons) so their colour is controlled
+   *     centrally rather than baked into the asset.
+   */
+  public ImagePrimitive(Vector3 coords, Resources res, int id, Vector3 upVec,
+                        float imageScale, int tintColor) {
+    super(coords, tintColor);
     this.imageScale = imageScale;
 
     // TODO(jpowell): We're never freeing this resource, so we leak it every
