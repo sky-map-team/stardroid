@@ -216,15 +216,17 @@ public class ImageObjectManager extends RendererObjectManager {
       gl.glColor4f(1f, 1f, 1f, 1f);
     }
     // Most images share a tint (e.g. every DSO icon is the same colour), so only push a new
-    // glColor4f when it actually changes. 0 is not a real tint (tints are opaque), so the first
-    // textured image always sets the colour.
+    // glColor4f when it actually changes (always on the first image, see below).
     int lastTint = 0;
     TextureReference[] textures = mTextures;
     TextureReference[] redTextures = mRedTextures;
     // Snapshot the image array once: updateObjects() reassigns mImages from another thread, so
-    // reading the field repeatedly through the loop could race with an update.
+    // reading the field repeatedly through the loop could race with an update. The snapshots can
+    // be a generation apart from the textures (set on the GL thread), so bound the loop by the
+    // shorter length to avoid an index overrun; any mismatched frame self-corrects on reload.
     Image[] images = mImages;
-    for (int i = 0; i < textures.length; i++) {
+    int count = Math.min(textures.length, images.length);
+    for (int i = 0; i < count; i++) {
       if (images[i].useBlending) {
         gl.glEnable(GL10.GL_BLEND);
         gl.glBlendFunc(GL10.GL_SRC_ALPHA, GL10.GL_ONE_MINUS_SRC_ALPHA);
@@ -237,7 +239,7 @@ public class ImageObjectManager extends RendererObjectManager {
         redTextures[i].bind(gl);
       } else {
         int tint = images[i].tint;
-        if (tint != lastTint) {
+        if (i == 0 || tint != lastTint) {
           gl.glColor4f(((tint >> 16) & 0xff) / 255f, ((tint >> 8) & 0xff) / 255f,
               (tint & 0xff) / 255f, ((tint >> 24) & 0xff) / 255f);
           lastTint = tint;
