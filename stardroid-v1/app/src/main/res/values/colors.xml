@@ -6,7 +6,7 @@
          element. Labels always render opaque (the renderer forces alpha), so only the RGB matters. -->
     <color name="horizon_label">#78597C4A</color>
     <color name="grid_line">#14BCEFF8</color>
-    <color name="sky_label">#FFF67E81</color>
+    <color name="sky_label">#FFE05C34</color>
     <color name="planet_body">#14F67E81</color>
     <!-- Generic status colours (good/ok/warning/bad/absent) used for diagnostics, sensors, etc. -->
     <color name="status_good">#8BC34A</color>
