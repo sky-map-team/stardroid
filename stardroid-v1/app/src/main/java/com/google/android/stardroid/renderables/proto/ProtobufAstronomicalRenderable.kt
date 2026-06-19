@@ -211,7 +211,10 @@ class ProtobufAstronomicalRenderable(
                         resources,
                         drawableId,
                         UP,
-                        IMAGE_SCALE
+                        IMAGE_SCALE,
+                        // The shape glyphs are white; tint them with the object's data colour so
+                        // the DSO colour is controlled centrally (not baked into the asset).
+                        element.color
                     )
                 )
             }

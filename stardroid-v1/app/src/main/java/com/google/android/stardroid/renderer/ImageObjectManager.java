@@ -79,6 +79,7 @@ public class ImageObjectManager extends RendererObjectManager {
         images[i].name = "no url";
         images[i].useBlending = false;
         images[i].bitmap = is.getImage();
+        images[i].tint = is.getColor();
       }
     } else {
       images = mImages;
@@ -201,9 +202,14 @@ public class ImageObjectManager extends RendererObjectManager {
     gl.glEnableClientState(GL10.GL_TEXTURE_COORD_ARRAY);
     gl.glDisableClientState(GL10.GL_COLOR_ARRAY);
 
+    // Modulate the texture by a flat colour so white glyph icons can be tinted. Full-colour
+    // images carry a white tint, which leaves them unchanged.
+    gl.glTexEnvf(GL10.GL_TEXTURE_ENV, GL10.GL_TEXTURE_ENV_MODE, GL10.GL_MODULATE);
+
     mVertexBuffer.set(gl);
     mTexCoordBuffer.set(gl);
 
+    boolean nightVision = getRenderState().getNightVisionMode();
     TextureReference[] textures = mTextures;
     TextureReference[] redTextures = mRedTextures;
     for (int i = 0; i < textures.length; i++) {
@@ -215,9 +221,14 @@ public class ImageObjectManager extends RendererObjectManager {
         gl.glAlphaFunc(GL10.GL_GREATER, 0.5f);
       }
 
-      if (getRenderState().getNightVisionMode()) {
+      if (nightVision) {
+        // The red texture already encodes the night-vision colour; don't tint it.
+        gl.glColor4f(1f, 1f, 1f, 1f);
         redTextures[i].bind(gl);
       } else {
+        int tint = mImages[i].tint;
+        gl.glColor4f(((tint >> 16) & 0xff) / 255f, ((tint >> 8) & 0xff) / 255f,
+            (tint & 0xff) / 255f, 1f);
         textures[i].bind(gl);
       }
       ((GL11) gl).glDrawArrays(GL10.GL_TRIANGLE_STRIP, 4 * i, 4);
@@ -229,6 +240,8 @@ public class ImageObjectManager extends RendererObjectManager {
       }
     }
 
+    // Restore the default flat colour so we don't tint other managers' geometry.
+    gl.glColor4f(1f, 1f, 1f, 1f);
     gl.glDisable(GL10.GL_TEXTURE_2D);
   }
 
@@ -259,5 +272,8 @@ public class ImageObjectManager extends RendererObjectManager {
     Bitmap bitmap;
     int textureID;
     boolean useBlending;
+    // ARGB colour the texture is modulated by. Color.WHITE leaves full-colour images (planets,
+    // photos) unchanged; white glyph icons carry a real tint so their colour is data-driven.
+    int tint = android.graphics.Color.WHITE;
   }
 }
