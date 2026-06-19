@@ -5,6 +5,19 @@ All notable changes to Sky Map are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [1.16.0] - 2026-06-19
+
+### Changed
+- Adjusted the sky color scheme for better contrast and readability (#925)
+- Improved horizon rendering (#924)
+- Highlighted the ecliptic and added a graduated degree scale (#923)
+- Restricted info-card taps to the central region and capped card height (#922)
+
+### Fixed
+- Extended text angle freeze to nadir (phone pointing straight down) to prevent label flickering (#919, #920)
+
+---
+
 ## [1.15.5] - 2026-06-12
 
 ### Fixed
