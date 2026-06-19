@@ -210,6 +210,15 @@ public class ImageObjectManager extends RendererObjectManager {
     mTexCoordBuffer.set(gl);
 
     boolean nightVision = getRenderState().getNightVisionMode();
+    if (nightVision) {
+      // The red textures already encode the night-vision colour, so the tint is a constant
+      // white for the whole pass; set it once rather than per image.
+      gl.glColor4f(1f, 1f, 1f, 1f);
+    }
+    // Most images share a tint (e.g. every DSO icon is the same colour), so only push a new
+    // glColor4f when it actually changes. 0 is not a real tint (tints are opaque), so the first
+    // textured image always sets the colour.
+    int lastTint = 0;
     TextureReference[] textures = mTextures;
     TextureReference[] redTextures = mRedTextures;
     for (int i = 0; i < textures.length; i++) {
@@ -222,13 +231,14 @@ public class ImageObjectManager extends RendererObjectManager {
       }
 
       if (nightVision) {
-        // The red texture already encodes the night-vision colour; don't tint it.
-        gl.glColor4f(1f, 1f, 1f, 1f);
         redTextures[i].bind(gl);
       } else {
         int tint = mImages[i].tint;
-        gl.glColor4f(((tint >> 16) & 0xff) / 255f, ((tint >> 8) & 0xff) / 255f,
-            (tint & 0xff) / 255f, ((tint >> 24) & 0xff) / 255f);
+        if (tint != lastTint) {
+          gl.glColor4f(((tint >> 16) & 0xff) / 255f, ((tint >> 8) & 0xff) / 255f,
+              (tint & 0xff) / 255f, ((tint >> 24) & 0xff) / 255f);
+          lastTint = tint;
+        }
         textures[i].bind(gl);
       }
       ((GL11) gl).glDrawArrays(GL10.GL_TRIANGLE_STRIP, 4 * i, 4);
