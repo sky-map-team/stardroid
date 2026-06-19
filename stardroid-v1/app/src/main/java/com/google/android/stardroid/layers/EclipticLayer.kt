@@ -38,7 +38,9 @@ class EclipticLayer(resources: Resources, preferences: SharedPreferences) : Abst
         sources.add(EclipticRenderable(resources))
     }
 
-    override val layerDepthOrder = 50
+    // Drawn just above the grid (0) and behind constellations (10), DSOs (20) and stars (30) so
+    // the opaque ecliptic line doesn't occlude them.
+    override val layerDepthOrder = 5
     override val layerNameId = R.string.show_grid_pref
     override val preferenceId = "source_provider.4"
 

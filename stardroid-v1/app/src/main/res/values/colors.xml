@@ -37,9 +37,11 @@
     <!-- Near-black MULTIPLY tint for disabled layer buttons in night mode -->
     <color name="night_button_off_tint">#FF2A0000</color>
 
-    <!-- Ecliptic (Star Gold #FF9F1C). Both the label and the (semi-transparent) line use the
-         true brand gold; the renderer reads all colours as standard ARGB and red-shifts both
+    <!-- Ecliptic (Star Gold #FF9F1C). The label is the full brand gold. The line is opaque (a
+         dimmed gold) and drawn behind the stars/constellations so the perpendicular graduation
+         ticks merge into it cleanly instead of compounding into bright patches where translucent
+         quads overlapped. The renderer reads all colours as standard ARGB and red-shifts both
          automatically in night-vision mode. -->
     <color name="ecliptic_label">#FFFF9F1C</color>
-    <color name="ecliptic_line">#40FF9F1C</color>
+    <color name="ecliptic_line">#FF735314</color>
 </resources>
