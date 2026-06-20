@@ -136,6 +136,17 @@ sensor.
 
 ---
 
+## The info card won't close
+
+Tap anywhere outside the card, or use the back gesture/button, to dismiss it.
+
+If you're using the older "classic" 3-button Android navigation (rather than gesture navigation),
+Sky Map runs full screen, so the on-screen Back/Home/Recents buttons aren't rendered at all. Swipe
+up from the very bottom of the screen to bring the navigation bar into view, then tap Back to
+close the card.
+
+---
+
 ## The map doesn't move
 
 - Make sure you haven't switched to Manual Mode — tap the sensor icon to return to Automatic Mode.

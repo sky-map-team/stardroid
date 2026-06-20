@@ -140,6 +140,24 @@ a known side-effect. This is not a Sky Map change.
 
 ---
 
+### CAT-INFO-CARD · Info card won't close
+
+**What users say:** "the pop-up card doesn't close", "can't dismiss the info card", "card stays
+on screen", "stuck on the info panel"
+
+**Real cause:** User doesn't realize tapping outside the card or using back dismisses it. Most
+commonly affects users on the older "classic" 3-button Android navigation: Sky Map runs full
+screen, so the on-screen nav bar (and therefore the Back button) isn't rendered until the user
+swipes up from the bottom edge.
+
+**Steps to suggest:**
+1. Tap anywhere outside the card to dismiss it
+2. Use the back gesture/button
+3. If using classic 3-button navigation, swipe up from the very bottom of the screen to bring the
+   navigation bar into view, then tap Back
+
+---
+
 ### CAT-5 · Map is jittery / shaky
 
 **What users say:** "the map jumps around", "it's shaky", "very unstable"
