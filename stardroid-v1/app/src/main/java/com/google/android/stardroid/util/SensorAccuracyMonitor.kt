@@ -7,6 +7,7 @@ import android.hardware.Sensor
 import android.hardware.SensorEvent
 import android.hardware.SensorEventListener
 import android.hardware.SensorManager
+import android.os.SystemClock
 import android.util.Log
 import com.google.android.stardroid.R
 import com.google.android.stardroid.activities.CompassCalibrationActivity
@@ -32,6 +33,7 @@ class SensorAccuracyMonitor @Inject internal constructor(
   private val toaster: Toaster
   private var started = false
   private var hasReading = false
+  private var startedAtElapsedMillis = 0L
 
   /**
    * Starts monitoring.
@@ -41,6 +43,7 @@ class SensorAccuracyMonitor @Inject internal constructor(
       return
     }
     Log.d(TAG, "Starting monitoring compass accuracy")
+    startedAtElapsedMillis = SystemClock.elapsedRealtime()
     if (compassSensor != null) {
       (sensorManager ?: return).registerListener(this, compassSensor, SensorManager.SENSOR_DELAY_UI)
     }
@@ -65,13 +68,21 @@ class SensorAccuracyMonitor @Inject internal constructor(
   }
 
   override fun onAccuracyChanged(sensor: Sensor, accuracy: Int) {
-    hasReading = true
+    if (SystemClock.elapsedRealtime() - startedAtElapsedMillis < STARTUP_GRACE_PERIOD_MILLIS) {
+      // Keep hasReading false so onSensorChanged keeps re-checking once the grace period
+      // passes, even if accuracy was briefly HIGH/MEDIUM in the meantime or the system never
+      // sends a fresh accuracy-changed callback.
+      hasReading = false
+      return
+    }
     if (accuracy == SensorManager.SENSOR_STATUS_ACCURACY_HIGH
       || accuracy == SensorManager.SENSOR_STATUS_ACCURACY_MEDIUM
     ) {
+      hasReading = true
       return  // OK
     }
     Log.d(TAG, "Compass accuracy insufficient")
+    hasReading = true
     val nowMillis = System.currentTimeMillis()
     val lastWarnedMillis = sharedPreferences.getLong(LAST_CALIBRATION_WARNING_PREF_KEY, 0)
     if (nowMillis - lastWarnedMillis < MIN_INTERVAL_BETWEEN_WARNINGS) {
@@ -99,6 +110,7 @@ class SensorAccuracyMonitor @Inject internal constructor(
     private val TAG = getTag(SensorAccuracyMonitor::class.java)
     private const val LAST_CALIBRATION_WARNING_PREF_KEY = "Last calibration warning time"
     private const val MIN_INTERVAL_BETWEEN_WARNINGS = 180 * TimeConstants.MILLISECONDS_PER_SECOND
+    private const val STARTUP_GRACE_PERIOD_MILLIS = 15 * TimeConstants.MILLISECONDS_PER_SECOND
   }
 
   init {
