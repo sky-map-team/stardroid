@@ -23,8 +23,16 @@ object NavigationModeUtil {
      * Reads the same "navigation_mode" setting Android itself uses internally
      * (0 = 3-button, 1 = 2-button [deprecated], 2 = gesture). The key isn't a publicly
      * documented constant, but it has been stable since Android 10 (Q).
+     *
+     * Falls back to false (classic navigation) if the read fails, e.g. due to a
+     * SecurityException on a restricted profile or customized ROM. That's a safe default:
+     * it just means an extra close button is shown, never a crash.
      */
     fun isGestureNavigationEnabled(context: Context): Boolean {
-        return Settings.Secure.getInt(context.contentResolver, "navigation_mode", 0) == 2
+        return try {
+            Settings.Secure.getInt(context.contentResolver, "navigation_mode", 0) == 2
+        } catch (e: Exception) {
+            false
+        }
     }
 }
