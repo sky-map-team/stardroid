@@ -1,9 +1,8 @@
 package com.google.android.stardroid.activities.util
 
 import android.content.Context
-import android.graphics.Canvas
-import android.graphics.ColorFilter
 import android.graphics.drawable.Drawable
+import android.graphics.drawable.DrawableWrapper
 import android.util.Log
 import android.view.Menu
 
@@ -66,28 +65,12 @@ object MenuUtils {
 
     /** A [Drawable] wrapper that always reports [sizePx] as its intrinsic width/height. */
     private class FixedSizeDrawable(
-        private val wrapped: Drawable,
+        wrapped: Drawable,
         private val sizePx: Int
-    ) : Drawable() {
+    ) : DrawableWrapper(wrapped) {
         init {
             wrapped.setBounds(0, 0, sizePx, sizePx)
         }
-
-        override fun draw(canvas: Canvas) {
-            wrapped.bounds = bounds
-            wrapped.draw(canvas)
-        }
-
-        override fun setAlpha(alpha: Int) {
-            wrapped.alpha = alpha
-        }
-
-        override fun setColorFilter(colorFilter: ColorFilter?) {
-            wrapped.colorFilter = colorFilter
-        }
-
-        @Deprecated("Deprecated in Java")
-        override fun getOpacity(): Int = wrapped.opacity
 
         override fun getIntrinsicWidth(): Int = sizePx
 
