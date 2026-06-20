@@ -28,6 +28,7 @@ import android.widget.TextView
 import com.google.android.stardroid.R
 import com.google.android.stardroid.activities.dialogs.ObjectInfoDialogFragment.Companion.newInstance
 import com.google.android.stardroid.activities.util.ActivityLightLevelManager
+import com.google.android.stardroid.activities.util.NavigationModeUtil
 import com.google.android.stardroid.activities.util.NightModeHelper
 import com.google.android.stardroid.education.ObjectInfo
 import com.google.android.stardroid.education.ObjectInfoRegistry
@@ -215,6 +216,11 @@ class ObjectInfoDialogFragment : DialogFragment() {
                 (activity as? OnFindClickedListener)?.onFindClicked(info)
                 dialog.dismiss()
             }
+        }
+        // Users on classic 2/3-button navigation have no visible Back button to dismiss the
+        // card with, since the app runs full screen. Give them an explicit close button.
+        if (!NavigationModeUtil.isGestureNavigationEnabled(parentActivity)) {
+            builder.setNegativeButton(android.R.string.ok) { dialog, _ -> dialog.dismiss() }
         }
         val alertDialog = builder.create()
         alertDialog.setOnShowListener { NightModeHelper.applyAlertDialogNightMode(alertDialog, isNight) }
