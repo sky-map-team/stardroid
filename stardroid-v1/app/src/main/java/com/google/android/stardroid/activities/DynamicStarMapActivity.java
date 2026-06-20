@@ -496,6 +496,7 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
   public boolean onPrepareOptionsMenu(Menu menu) {
     boolean result = super.onPrepareOptionsMenu(menu);
     MenuUtils.showOptionalIcons(menu);
+    MenuUtils.normalizeIconSizes(menu, this);
     NightModeHelper.tintMenuIcons(menu, nightMode, this);
     MenuItem tutorialItem = menu.findItem(R.id.menu_item_tutorial);
     if (tutorialItem != null) {
