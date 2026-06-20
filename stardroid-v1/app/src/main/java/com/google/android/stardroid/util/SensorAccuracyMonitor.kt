@@ -68,6 +68,13 @@ class SensorAccuracyMonitor @Inject internal constructor(
   }
 
   override fun onAccuracyChanged(sensor: Sensor, accuracy: Int) {
+    if (SystemClock.elapsedRealtime() - startedAtElapsedMillis < STARTUP_GRACE_PERIOD_MILLIS) {
+      // Keep hasReading false so onSensorChanged keeps re-checking once the grace period
+      // passes, even if accuracy was briefly HIGH/MEDIUM in the meantime or the system never
+      // sends a fresh accuracy-changed callback.
+      hasReading = false
+      return
+    }
     if (accuracy == SensorManager.SENSOR_STATUS_ACCURACY_HIGH
       || accuracy == SensorManager.SENSOR_STATUS_ACCURACY_MEDIUM
     ) {
@@ -75,12 +82,6 @@ class SensorAccuracyMonitor @Inject internal constructor(
       return  // OK
     }
     Log.d(TAG, "Compass accuracy insufficient")
-    if (SystemClock.elapsedRealtime() - startedAtElapsedMillis < STARTUP_GRACE_PERIOD_MILLIS) {
-      Log.d(TAG, "...but still within startup grace period, letting the user settle in first")
-      // Deliberately leave hasReading unset so onSensorChanged keeps re-checking until the
-      // grace period passes, even if the system never sends a fresh accuracy-changed callback.
-      return
-    }
     hasReading = true
     val nowMillis = System.currentTimeMillis()
     val lastWarnedMillis = sharedPreferences.getLong(LAST_CALIBRATION_WARNING_PREF_KEY, 0)
