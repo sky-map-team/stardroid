@@ -230,13 +230,13 @@
         translation_description="Information for the user on how to calibrate the compass when the dialog auto-opens. Placeholder is the video URL"><![CDATA[
 Your phone\'s compass sensor is reporting poor calibration. The figure-8 motion (%s) prompts your phone to recalibrate its hardware sensor — Sky Map has no control over this process.<br/><br/>
 <b>Calibrated does not mean accurate.</b> The figure-8 gesture helps the sensor normalize itself internally, but it cannot remove interference from nearby metal objects, car dashboards, or magnetic phone cases. If the map is still off after calibrating, those external sources are the most likely cause — not Sky Map.<br/><br/>
-Move to an open area away from metal and try again. See <i>Troubleshooting</i> in <i>Help</i> for more steps, or visit http://troubleshooting.stardroid.app
+Move to an open area away from metal and try again. See <i>Troubleshooting</i> in <i>Help</i> for more steps, or visit https://troubleshooting.stardroid.app
     ]]></string>
     <string name="compass_calib_what_to_do_user"
         translation_description="Information for the user on how to calibrate the compass when they invoke the calibration dialog. Placeholder is the video URL"><![CDATA[
 Your phone is reporting its compass calibration status as shown above. The figure-8 motion (%s) prompts your phone\'s hardware to recalibrate its compass sensor.<br/><br/>
 <b>Important:</b> calibration helps the sensor normalize itself internally. A calibrated compass is not necessarily an accurate one — local magnetic interference (metal objects, car dashboards, magnetic phone cases) can still cause the map to point the wrong way. Sky Map reads exactly what your phone\'s sensor reports; it has no way to correct for your environment or bad hardware.<br/><br/>
-See <i>Troubleshooting</i> in <i>Help</i> for other steps, including the manual compass offset for phones with a consistent directional error, or visit http://troubleshooting.stardroid.app
+See <i>Troubleshooting</i> in <i>Help</i> for other steps, including the manual compass offset for phones with a consistent directional error, or visit https://troubleshooting.stardroid.app
     ]]></string>
     <string name="compass_low_accuracy_toast" translation_description="Brief toast shown when compass accuracy is low and the user has disabled the calibration dialog">Your phone\'s compass is reporting poor calibration</string>
     <string name="sensor_reverse_preference_title" translation_description="Preference title for reversing the magnetic Z-axis sensor reading, a fix for certain phones with incorrectly implemented sensors">Reverse Magnetic Z</string>
