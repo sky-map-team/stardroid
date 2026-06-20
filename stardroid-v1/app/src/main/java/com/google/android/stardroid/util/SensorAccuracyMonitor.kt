@@ -84,10 +84,6 @@ class SensorAccuracyMonitor @Inject internal constructor(
     Log.d(TAG, "Compass accuracy insufficient")
     hasReading = true
     val nowMillis = System.currentTimeMillis()
-    if (nowMillis - startedAtMillis < STARTUP_GRACE_PERIOD_MILLIS) {
-      Log.d(TAG, "...but still within startup grace period, letting the user settle in first")
-      return
-    }
     val lastWarnedMillis = sharedPreferences.getLong(LAST_CALIBRATION_WARNING_PREF_KEY, 0)
     if (nowMillis - lastWarnedMillis < MIN_INTERVAL_BETWEEN_WARNINGS) {
       Log.d(TAG, "...but too soon to warn again")
