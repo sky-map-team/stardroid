@@ -7,11 +7,11 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.webkit.WebResourceRequest;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
@@ -123,13 +123,13 @@ public class EulaDialogFragment extends DialogFragment {
       WebView webView = view.findViewById(R.id.eula_webview);
       webView.setWebViewClient(new WebViewClient() {
         @Override
-        public boolean shouldOverrideUrlLoading(WebView view, String url) {
+        public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
           // Open links in external browser
-          Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+          Intent intent = new Intent(Intent.ACTION_VIEW, request.getUrl());
           try {
             parentActivity.startActivity(intent);
           } catch (android.content.ActivityNotFoundException e) {
-            Log.w(TAG, "No handler for " + url, e);
+            Log.w(TAG, "No handler for " + request.getUrl(), e);
           }
           return true;
         }
