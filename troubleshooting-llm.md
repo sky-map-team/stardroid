@@ -162,11 +162,19 @@ swipes up from the bottom edge.
 
 **What users say:** "the map jumps around", "it's shaky", "very unstable"
 
-**Real cause:** Phone lacks a gyroscope, or sensor settings need tuning.
+**Real cause:** Phone lacks a gyroscope (older/budget devices), or gyro is accidentally disabled in settings.
+
+**Key distinction — gyro vs. no gyro:**
+- **Most modern and mid-range phones have a gyroscope.** Sky Map uses it for smooth tracking. If the user's phone has a gyro, the Sensor Speed and Sensor Damping sliders in Settings → Sensor Settings (Experts) do **not** apply — they only affect the fallback accelerometer/compass mode used when the gyro is disabled.
+- **If the phone has a gyro**, first check that *Disable Gyro* is **not** selected in Settings → Sensor Settings (Experts). Having it mistakenly enabled forces the phone into the lower-quality fallback mode, which can cause jitter.
+- **If the phone lacks a gyro** (common on older or very cheap devices), enable *Disable Gyro* to switch to the accelerometer/compass fallback, then tune Sensor Speed and Sensor Damping.
 
 **Steps to suggest:**
-1. Go to Settings → Sensor Settings (Experts) and enable Disable Gyro
-2. Adjust Sensor Speed and Sensor Damping in the same settings section
+1. Check Settings → Sensor Settings (Experts): make sure *Disable Gyro* is **off** if the phone has a gyroscope
+2. If the phone has no gyro: enable *Disable Gyro*, then adjust Sensor Speed and Sensor Damping
+3. Check Diagnostics (overflow menu) to confirm the gyroscope sensor is present
+
+**Do NOT suggest** adjusting Sensor Speed / Sensor Damping to a user whose phone has a gyro — those sliders won't help and may confuse them.
 
 ---
 
