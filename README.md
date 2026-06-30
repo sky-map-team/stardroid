@@ -68,6 +68,8 @@ However, all branding, app names, logos, and UI asset files located in:
 
 are **All Rights Reserved** and the property of **Penterakt LLC**. You are not granted any rights or license to use these assets, app names, or logos in any derivative works or redistributions without express written consent.
 
+*Note: This reservation of rights does not apply to third-party public-domain or open-licensed assets (such as NASA/ESA astronomical images or public-domain catalogs) included in the repository, which remain under their original terms.*
+
 ---
 
 # Fun

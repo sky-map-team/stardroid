@@ -4,6 +4,8 @@ All files in this directory and its subdirectories (including but not limited to
 
 These assets are **NOT** licensed under the open-source GNU General Public License v3.0 (GPLv3) or any other open-source license.
 
+*Note: This reservation of rights applies strictly to proprietary branding, logos, app names, and custom UI/onboarding assets. It does not apply to any third-party public-domain or open-licensed assets (such as NASA/ESA astronomical images or public-domain catalogs) included in the project, which remain under their original respective terms.*
+
 ## Restrictions
 
 You are strictly prohibited from:
