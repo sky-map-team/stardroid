@@ -7,16 +7,6 @@ http://stardroid.app
 
 Sky Map is the open-source astronomy Android app built for the community.
 
-## Licensing & Trademarks
-
-The source code of Sky Map is licensed under the [GNU General Public License v3.0](LICENSE.md). 
-
-However, all branding, app names, logos, and UI asset files located in:
-- [stardroid-v1/app/src/main/assets/branding](stardroid-v1/app/src/main/assets/branding)
-- [stardroid-v1/assets](stardroid-v1/assets)
-
-are **All Rights Reserved** and the property of **Penterakt LLC**. You are not granted any rights or license to use these assets, app names, or logos in any derivative works or redistributions without express written consent.
-
 
 [<img src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" alt="Get it on Google Play" height="60">](https://play.google.com/store/apps/details?id=com.google.android.stardroid)
 [<img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png" alt="Get it on F-Droid" height="60">](https://f-droid.org/en/packages/com.google.android.stardroid/)
@@ -64,6 +54,20 @@ If you enjoy using Sky Map, there are several ways to help keep the project aliv
 Bug fixes, dependency upgrades, and translations are always welcome. For major changes or new features, **please [email us](mailto:skymapdevs@gmail.com) first** — we may have a different vision and it would be a shame for your work to go to waste.
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for full details on build instructions, coding style, and how to submit a PR.
+
+---
+
+# Licensing & Trademarks
+
+The source code of Sky Map is licensed under the [GNU General Public License v3.0](LICENSE.md). 
+
+However, all branding, app names, logos, and UI asset files located in:
+- [stardroid-v1/app/src/main/assets/branding](stardroid-v1/app/src/main/assets/branding)
+- [stardroid-v1/assets](stardroid-v1/assets)
+
+are **All Rights Reserved** and the property of **Penterakt LLC**. You are not granted any rights or license to use these assets, app names, or logos in any derivative works or redistributions without express written consent.
+
+---
 
 # Fun
 ## Sky Map Prototype (2009)
