@@ -12,8 +12,8 @@ Sky Map is the open-source astronomy Android app built for the community.
 The source code of Sky Map is licensed under the [GNU General Public License v3.0](LICENSE.md). 
 
 However, all branding, app names, logos, and UI asset files located in:
-- [/stardroid-v1/app/src/main/assets/branding](file:///Users/jdt/Code/production/stardroid/.worktrees/stardroid-alpha/stardroid-v1/app/src/main/assets/branding)
-- [/stardroid-v1/assets](file:///Users/jdt/Code/production/stardroid/.worktrees/stardroid-alpha/stardroid-v1/assets)
+- [stardroid-v1/app/src/main/assets/branding](stardroid-v1/app/src/main/assets/branding)
+- [stardroid-v1/assets](stardroid-v1/assets)
 
 are **All Rights Reserved** and the property of **Penterakt LLC**. You are not granted any rights or license to use these assets, app names, or logos in any derivative works or redistributions without express written consent.
 
