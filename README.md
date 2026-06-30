@@ -64,6 +64,7 @@ The source code of Sky Map is licensed under the [GNU General Public License v3.
 However, all branding, app names, logos, and UI asset files located in:
 - [stardroid-v1/app/src/main/assets/branding](stardroid-v1/app/src/main/assets/branding)
 - [stardroid-v1/assets](stardroid-v1/assets)
+- **Any launcher icons, logos, brand names, or splash screen assets located under [stardroid-v1/app/src/main/res/](stardroid-v1/app/src/main/res/) (including mipmap and drawable subdirectories)**
 
 are **All Rights Reserved** and the property of **Penterakt LLC**. You are not granted any rights or license to use these assets, app names, or logos in any derivative works or redistributions without express written consent.
 
