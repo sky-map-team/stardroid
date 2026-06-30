@@ -1,11 +1,22 @@
 # <img src="https://raw.githubusercontent.com/sky-map-team/stardroid/refs/heads/master/stardroid-v1/assets/skymap-logo-large.png" width="45" height="45" align="center"> Sky Map
-[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![Build Status](https://travis-ci.org/sky-map-team/stardroid.svg?branch=master)](https://travis-ci.org/sky-map-team/stardroid)
 [![Buy Me A Coffee](https://img.shields.io/badge/Support-Buy%20Me%20A%20Coffee-orange?style=flat-square&logo=buy-me-a-coffee)](https://www.buymeacoffee.com/skymapdevs?utm_source=github&utm_medium=readme&utm_campaign=readme_badge)
 
 http://stardroid.app
 
 Sky Map is the open-source astronomy Android app built for the community.
+
+## Licensing & Trademarks
+
+The source code of Sky Map is licensed under the [GNU General Public License v3.0](LICENSE.md). 
+
+However, all branding, app names, logos, and UI asset files located in:
+- [/stardroid-v1/app/src/main/assets/branding](file:///Users/jdt/Code/production/stardroid/.worktrees/stardroid-alpha/stardroid-v1/app/src/main/assets/branding)
+- [/stardroid-v1/assets](file:///Users/jdt/Code/production/stardroid/.worktrees/stardroid-alpha/stardroid-v1/assets)
+
+are **All Rights Reserved** and the property of **Penterakt LLC**. You are not granted any rights or license to use these assets, app names, or logos in any derivative works or redistributions without express written consent.
+
 
 [<img src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" alt="Get it on Google Play" height="60">](https://play.google.com/store/apps/details?id=com.google.android.stardroid)
 [<img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png" alt="Get it on F-Droid" height="60">](https://f-droid.org/en/packages/com.google.android.stardroid/)
