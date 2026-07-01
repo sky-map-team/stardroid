@@ -59,6 +59,8 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for full details on build instructions, c
 
 # Licensing, Ownership & Trademarks
 
+Sigh. I'm sorry we have to do this. But this legalese is to prevent lazy people taking the source code and releasing a clone of Sky Map that is just stuffed full of ads. Yes people do this. It adds no value to the world and just lines their pockets.
+
 ## 1. Source Code License
 The source code of this project is a derivative work of the original open-source Sky Map application (formerly Google Sky Map). 
 
