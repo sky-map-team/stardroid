@@ -1,0 +1,171 @@
+<resources>
+<string name="help_text" translation_description="This is the help text for the app Google Sky Map. It includes placeholders where other text is inserted. Please do not change the &lt; and &gt; markup">
+    &lt;h1&gt;Sky Map para Android&lt;/h1&gt;
+&lt;p class="version"&gt;Versión %1$s&lt;/p&gt;
+&lt;p class="url"&gt;&lt;a href="https://stardroid.app"&gt;https://stardroid.app&lt;/a&gt;&lt;/p&gt;
+
+%4$s
+
+&lt;h2&gt;Introdución e inicio rápido&lt;/h2&gt;
+&lt;p&gt;Sostén o teu teléfono en alto e mira a través del como se fose unha xanela ao espazo. Sky Map usa o compás, o acelerómetro e o xiroscopio do teu teléfono para seguir cara onde apuntas e actualizar o mapa en tempo real.&lt;/p&gt;
+&lt;p class="callout"&gt;Non tódolos teléfonos son capaces de executar Sky Map! Consulta a sección de requisitos de hardware máis abaixo.&lt;/p&gt;
+&lt;p&gt;Se é a túa primeira vez:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Permite o acceso á localización cando se che solicite — Sky Map precisa a túa localización aproximada para debuxar o ceo correcto segundo onde esteas&lt;/li&gt;
+&lt;li&gt;Apunta o teu teléfono ao ceo en calquera dirección&lt;/li&gt;
+&lt;li&gt;O mapa moverase para coincidir coa dirección na que apuntas&lt;/li&gt;
+&lt;li&gt;Toca en calquera lugar da pantalla para amosar os controis&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2&gt;Navegación polo ceo&lt;/h2&gt;
+&lt;h3&gt;Modo automático&lt;/h3&gt;
+&lt;p&gt;No modo automático (o predeterminado), Sky Map usa os sensores do teu teléfono para mostrar o que hai na dirección cara á que apunta. Simplemente move o teléfono e o mapa seguirá.&lt;/p&gt;
+&lt;h3&gt;Modo manual&lt;/h3&gt;
+&lt;p&gt;Toca a icona do sensor/compás nos controis para cambiar ao modo manual. Neste modo podes:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Arrastrar o mapa cun dedo para desprazarte&lt;/li&gt;
+&lt;li&gt;Beliscar para achegar ou afastar o zoom&lt;/li&gt;
+&lt;li&gt;Xirar con dous dedos para trocar a orientación&lt;/li&gt;
+&lt;li&gt;Tocar dúas veces para activar/desactivar o horizonte con \"nivelación automática\"&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;O modo manual é útil cando queres explorar o ceo sen ter que manter o teléfono en alto.&lt;/p&gt;
+
+&lt;h2&gt;Capas visibles&lt;/h2&gt;
+&lt;p&gt;Sky Map organiza o que mostra en capas, cada unha das cales pode activarse ou desactivarse de forma independente. Toca a pantalla para amosar os controis das capas no lateral — brillan en laranxa cando están activas e vense máis esvaecidas cando están desactivadas.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;b&gt;Estrelas:&lt;/b&gt; As estrelas máis brillantes, con etiquetas para as máis destacadas&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Constelacións:&lt;/b&gt; Debuxos e nomes das constelacións&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Obxectos destacados de espazo profundo:&lt;/b&gt; Galaxias, nebulosas, cúmulos estelares e outros obxectos notables&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Planetas:&lt;/b&gt;Os planetas do noso sistema solar, amosados como imaxes&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Choivas de meteoros:&lt;/b&gt; Puntos radiantes de choivas activas e próximas&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Eclíptica &amp; e grade:&lt;/b&gt; A eclíptica é o percorrido anual do Sol polo ceo&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Horizonte:&lt;/b&gt; A liña do horizonte e as direccións cardinais (N, S, E, O)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p class="callout"&gt;&lt;b&gt;Convén saber:&lt;/b&gt; Sky Map amosa o horizonte xeométrico — unha vista perfectamente plana e sen obstáculos. Os obxectos xusto por riba poden estar ocultos por edificios, outeiros ou árbores na realidade.&lt;/p&gt;
+
+&lt;h2&gt;Controis en pantalla&lt;/h2&gt;
+&lt;p&gt;Toca en calquera punto da pantalla para mostrar ou ocultar os controis. Nun lado atoparás as capas descritas arriba. No outro está o botón para cambiar entre os modos automático e manual.&lt;/p&gt;
+&lt;p&gt;Os controis desaparecen automaticamente despois duns segundos para manter a vista limpa.&lt;/p&gt;
+
+&lt;h2&gt;Busca&lt;/h2&gt;
+&lt;p&gt;Toca a icona da lupa para buscar calquera cousa no ceo. Podes buscar:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;b&gt;Estrelas&lt;/b&gt; — polo nome, p.ex. \"Sirius\", \"Betelgeuse\", \"Polaris\"&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Planetas&lt;/b&gt; — p.ex. \"Marte\", \"Saturno\"&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Constelacións&lt;/b&gt; — p.ex. \"Orion\", \"Cassiopeia\"&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Obxectos de espazo profundo&lt;/b&gt; — p.ex. \"M31\", \"Galaxia de Andrómeda\", \"Pléiades\"&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Cometas e choivas de meteoros&lt;/b&gt; — polo nome&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;b&gt;No modo automático:&lt;/b&gt; despois de seleccionar un resultado, Sky Map mostra un círculo de apuntado e unha frecha direccional. Segue a frecha xirando o teléfono — o círculo pasa de azul a vermello e logo a laranxa cando o obxecto está no teu campo de visión. Toca ✕ para saír da busca.&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;No modo manual:&lt;/b&gt; o mapa simplemente céntrase no obxecto.&lt;/p&gt;
+
+&lt;h2&gt;Viaxe no tempo&lt;/h2&gt;
+&lt;p&gt;Viaxe no tempo permíteche ver o ceo en calquera momento entre os anos 1900 e 2100. Selecciona a icona de círculos xiratorios &lt;b&gt;Viaxe no tempo&lt;/b&gt; na barra de accións.&lt;/p&gt;
+&lt;p&gt;Podes escoller unha data predefinida (solsticios, eclipses, eventos celestes famosos, momentos históricos) ou introducir a túa propia data e hora. Toca &lt;b&gt;Go!&lt;/b&gt; para viaxar.&lt;/p&gt;
+&lt;p&gt;Unha vez neste modo, a data móstrase na pantalla e os controis de reprodución permítenche avanzar no tempo:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Toca os botóns de reprodución cara adiante ou atrás para comezar&lt;/li&gt;
+&lt;li&gt;Toca de novo para ir máis rápido&lt;/li&gt;
+&lt;li&gt;Toca parar para pausar&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Algúns usos:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;i&gt;Que podo ver xusto despois do solpor hoxe?&lt;/i&gt;&lt;/li&gt;
+&lt;li&gt;&lt;i&gt;Cando será a próxima boa oportunidade para ver Mercurio?&lt;/i&gt;&lt;/li&gt;
+&lt;li&gt;&lt;i&gt;Como era o ceo a noite na que nacín?&lt;/i&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;A precisión diminúe en datas afastadas do presente, principalmente pola influencia gravitatoria de Xúpiter.&lt;/p&gt;
+
+&lt;h2&gt;Tarxetas de información&lt;/h2&gt;
+&lt;p&gt;Toca calquera obxecto celeste etiquetado no mapa para abrir unha tarxeta de información — un panel cunha imaxe e detalles sobre ese obxecto. Hai tarxetas de información dispoñibles para máis de 150 obxectos, incluíndo estrelas, planetas, a Lúa, obxectos destacados de espazo profundo e constelacións.&lt;/p&gt;
+&lt;p&gt;Cada tarxeta amosa:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Unha fotografía ou gráfico do obxecto&lt;/li&gt;
+&lt;li&gt;Unha breve descrición e un dato curioso&lt;/li&gt;
+&lt;li&gt;Datos científicos como distancia, tamaño e tipo de obxecto&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Toca a imaxe dentro da tarxeta para vela a pantalla completa. Pecha a tarxeta tocando fóra dela ou premendo &lt;b&gt;Atrás&lt;/b&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;Activar tarxetas de información:&lt;/b&gt; Por defecto só aparecen no modo manual; vai a configuración para activalas tamén no modo automático (baseado en sensores).&lt;/p&gt;
+
+&lt;h2&gt;Galería&lt;/h2&gt;
+&lt;p&gt;A Galería contén unha colección de imaxes do telescopio espacial Hubble e outras fontes. Ábrea dende o menú principal.&lt;/p&gt;
+&lt;p&gt;Explora as miniaturas desprazándote e toca unha para ver a imaxe completa. Usa o botón &lt;b&gt;para ir ao modo de busca&lt;/b&gt; e localizar ese obxecto no teu mapa actual.&lt;/p&gt;
+
+&lt;h2&gt;Modo de visión nocturna&lt;/h2&gt;
+&lt;p&gt;Se estás no exterior facendo observación real, o modo de visión nocturna axuda a preservar a túa adaptación á escuridade. Actívao desde a barra de accións tocando a icona en forma de ollo &lt;b&gt;Visión nocturna&lt;/b&gt; icon.&lt;/p&gt;
+&lt;p&gt;No modo de visión nocturna, Sky Map:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Troca a pantalla a tons vermellos escuros&lt;/li&gt;
+&lt;li&gt;Reduce significativamente o brillo&lt;/li&gt;
+&lt;li&gt;Diminúe a iluminación dos botóns&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Volta activalo para volver á normalidade. A opción &lt;b&gt;Atenuación da pantalla&lt;/b&gt; en &lt;b&gt;Configuración → Apariencia&lt;/b&gt; dáche máis control sobre o nivel de escuridade.&lt;/p&gt;
+
+&lt;h2&gt;Configurar a túa localización&lt;/h2&gt;
+&lt;p&gt;Sky Map necesita a túa localización aproximada para debuxar o ceo correcto. Por defecto usa os servizos de localización do dispositivo (rede móbil ou GPS). Se non lle dás acceso, situarate en (0, 0) — un punto no medio do océano!&lt;/p&gt;
+&lt;p&gt;Se a localización non está dispoñible ou prefires configurala manualmente, vai a &lt;b&gt;Configuración → Localización&lt;/b&gt; e:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Introduce un &lt;b&gt;nome de lugar&lt;/b&gt; (require conexión a internet), ou&lt;/li&gt;
+&lt;li&gt;Introduce a &lt;b&gt;latitude e lonxitude&lt;/b&gt; directamente en graos (non e preciso internet)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Se previamente denegaches o permiso, pode que teñas que reactivalo en &lt;b&gt;Axustes da app → Permisos&lt;/b&gt;.&lt;/p&gt;
+
+&lt;h2&gt;Usuarios de telescopio — modo punteiro&lt;/h2&gt;
+&lt;p&gt;En &lt;b&gt;Configuración → Axustes de sensores&lt;/b&gt;, troca a &lt;b&gt;Dirección de vista&lt;/b&gt; a &lt;b&gt;Modo punteiro&lt;/b&gt;. Neste modo, Sky Map mostra cara onde apunta o &lt;i&gt;lado longo&lt;/i&gt; do teléfono, non a pantalla.&lt;/p&gt;
+&lt;p&gt;Isto permite montar o teléfono nun telescopio mantendo a pantalla perpendicular mentres o mapa segue o obxectivo.&lt;/p&gt;
+
+&lt;h2&gt;Consellos e axustes útiles&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;b&gt;Diagnóstico:&lt;/b&gt; Se algo falla, abre o menú e toca &lt;b&gt;Diagnóstico&lt;/b&gt;. Esta páxina amosa a túa localización actual, a hora, o estado do sensor e as lecturas de precisión; é moi útil se precisas informar dun problema.&lt;/li&gt;
+
+&lt;li&gt;&lt;b&gt;Tamaño da fonte:&lt;/b&gt; Axústao en &lt;b&gt;Configuración → Aparencia&lt;/b&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Mapa inestable:&lt;/b&gt; Experimenta con &lt;b&gt;Velocidade do sensor&lt;/b&gt; e &lt;b&gt;Amortecemento do sensor&lt;/b&gt; en &lt;b&gt;Configuración → Configuración do sensor (expertos)&lt;/b&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Sen xiroscopio?&lt;/b&gt; Se o teu teléfono non ten xiroscopio, activa &lt;b&gt;Desactiva o xiroscopio&lt;/b&gt; en Configuración do sensor para usar un modo de sensor alternativo.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Corrección magnética:&lt;/b&gt; Sky Map pode aplicar unha corrección de declinación magnética para que o mapa se aliñe co norte verdadeiro en lugar do norte magnético. Activa esta opción en &lt;b&gt;Configuración → Localización&lt;/b&gt;. Nalgunhas partes do mundo, a diferenza pode ser de 20 graos ou máis. Podes axustar isto manualmente se a brúxula do teu teléfono non funciona correctamente.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Requisitos de soporte físico&lt;/h2&gt;
+&lt;p&gt;Non todos os dispositivos son compatibles! Precisas polo menos:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Sensor magnético (compás) — para saber en que dirección estás mirando&lt;/li&gt;
+&lt;li&gt;Acelerómetro — para saber a que altura estás mirando no ceo&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Idealmente tamén:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Xiroscopio — isto suavizará o movemento e o fará menos brusco&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p class="callout"&gt;Os compases dos teléfonos son coñecidos pola súa fiabilidade. Se o mapa do ceo parece incorrecto, case sempre é un problema do soporte físico co compás do teu teléfono, non un erro en Sky Map. Sky Map le exactamente o que informa o sensor do teu teléfono; non ten forma de corrixir automaticamente unha lectura incorrecta ou sesgada, aínda que hai dispoñible un desprazamento manual en Configuración para teléfonos cun erro consistente. Consulta a Resolución de problemas a continuación.&lt;/p&gt;
+&lt;h3&gt;Como sei que sensores ten o meu teléfono?&lt;/h3&gt;
+&lt;p&gt;Abre a páxina de Diagnóstico de Sky Map: calquera sensor que non teña o teu teléfono aparecerá como \"--,--,--\".&lt;/p&gt;
+&lt;h3&gt;Que pasa se o meu dispositivo carece dos sensores precisos?&lt;/h3&gt;
+&lt;p&gt;Sky Map voltará ao modo manual. Aínda podes explorar o ceo, pero sen os sensores non hai xeito de que ningunha aplicación che mostre a túa dirección.&lt;/p&gt;
+
+&lt;h2&gt;Resolución de problemas&lt;/h2&gt;
+&lt;h3&gt;O mapa non se move&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Comproba que estás en modo automático (non manual)&lt;/li&gt;
+&lt;li&gt;Consulta a páxina de Diagnóstico para confirmar que o teu dispositivo teña compás e acelerómetro&lt;/li&gt;
+&lt;li&gt;Proba o xesto de calibración da figura 8: move o teléfono lentamente nunha forma de 8 grande e suave&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;O mapa apunta na dirección incorrecta ou é impreciso&lt;/h3&gt;
+&lt;p&gt;Sky Map precisa tres cousas para amosar o ceo correcto: a dirección á que está orientado o teléfono, a túa localización e a hora actual. Se o mapa parece incorrecto, é probable que unha destas cousas estea incorrecta.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;b&gt;Compás (causa máis común):&lt;/b&gt; Este é un problema de soporte físico co teu teléfono, non un erro de Sky Map. O xesto de calibración da figura en 8 pídelle ao teu teléfono que restableza o sensor da súa brúxula internamente, pero &lt;i&gt;unha brúxula calibrada non é necessariamente precisa&lt;/i&gt;. Se estás preto dun obxecto metálico, do taboleiro dun coche ou dunha funda magnética do teléfono, o mapa pode seguir estando desviado mesmo despois da calibración. Móvete a unha zona aberta, repite o xesto da figura en 8 e, a seguir, activa &lt;b&gt;Corrección magnética&lt;/b&gt; en &lt;b&gt;Configuración → Localización&lt;/b&gt;. Se o teu teléfono sen un erro direccional consistente, usa o desprazamento manual en &lt;b&gt;Configuración → Configuración do sensor (expertos)&lt;/b&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Localización:&lt;/b&gt; Concede permiso de localización a través de &lt;b&gt;Configuración da aplicación → Permisos&lt;/b&gt;. Consulta a páxina Diagnóstico para confirmar as túas coordenadas. Un síntoma revelador de que falta unha localización é que Polaris aparece preto do horizonte.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Time:&lt;/b&gt; Menos común, pero un fuso horario incorrecto despraza todo o ceo. Consulta a páxina Diagnóstico para confirmar que a hora e o fuso horario do teu dispositivo son correctos.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;O mapa está tremido&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Axusta &lt;b&gt;Velocidade do sensor&lt;/b&gt; e &lt;b&gt;Amortecemento do sensor&lt;/b&gt; en &lt;b&gt;Configuración → Configuración do sensor (expertos)&lt;/b&gt;&lt;/li&gt;
+&lt;li&gt;Se o teu teléfono non ten xiroscopio, activa &lt;b&gt;Desactivar xiroscopio&lt;/b&gt; na configuración do sensor&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Para obter información completa sobre a resolución de problemas, consulta a guía de &lt;a href="https://github.com/sky-map-team/stardroid/blob/master/troubleshooting.md"&gt;resolución de problemas&lt;/a&gt; en liña.&lt;/p&gt;
+&lt;p class="callout"&gt;Se aínda estás atascado, envíanos un correo electrónico a skymapdevs@gmail.com — Unha captura de pantalla da túa páxina de diagnósticos é moi útil.&lt;/p&gt;
+
+&lt;h1&gt;Que hai de novo en Sky Map?&lt;/h1&gt;
+
+%3$s
+
+%2$s
+</string>
+</resources>
