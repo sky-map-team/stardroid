@@ -60,7 +60,7 @@
 &lt;p&gt;&lt;b&gt;No modo manual:&lt;/b&gt; o mapa simplemente céntrase no obxecto.&lt;/p&gt;
 
 &lt;h2&gt;Viaxe no tempo&lt;/h2&gt;
-&lt;p&gt;Viaxe no tempo permíteche ver o ceo en calquera momento entre os anos 1900 e 2100. Selecciona a icona de círculos xiratorios &lt;b&gt;Viaxe no tempo&lt;/b&gt; na barra de accións..&lt;/p&gt;
+&lt;p&gt;Viaxe no tempo permíteche ver o ceo en calquera momento entre os anos 1900 e 2100. Selecciona a icona de círculos xiratorios &lt;b&gt;Viaxe no tempo&lt;/b&gt; na barra de accións.&lt;/p&gt;
 &lt;p&gt;Podes escoller unha data predefinida (solsticios, eclipses, eventos celestes famosos, momentos históricos) ou introducir a túa propia data e hora. Toca &lt;b&gt;Go!&lt;/b&gt; para viaxar.&lt;/p&gt;
 &lt;p&gt;Unha vez neste modo, a data móstrase na pantalla e os controis de reprodución permítenche avanzar no tempo:&lt;/p&gt;
 &lt;ul&gt;
@@ -141,7 +141,7 @@
 &lt;p&gt;Sky Map voltará ao modo manual. Aínda podes explorar o ceo, pero sen os sensores non hai xeito de que ningunha aplicación che mostre a túa dirección.&lt;/p&gt;
 
 &lt;h2&gt;Resolución de problemas&lt;/h2&gt;
-&lt;h3&gt;;O mapa non se move&lt;/h3&gt;
+&lt;h3&gt;O mapa non se move&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;Comproba que estás en modo automático (non manual)&lt;/li&gt;
 &lt;li&gt;Consulta a páxina de Diagnóstico para confirmar que o teu dispositivo teña compás e acelerómetro&lt;/li&gt;
@@ -150,7 +150,7 @@
 &lt;h3&gt;O mapa apunta na dirección incorrecta ou é impreciso&lt;/h3&gt;
 &lt;p&gt;Sky Map precisa tres cousas para amosar o ceo correcto: a dirección á que está orientado o teléfono, a túa localización e a hora actual. Se o mapa parece incorrecto, é probable que unha destas cousas estea incorrecta.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;b&gt;Compás (causa máis común):&lt;/b&gt; Este é un problema de soporte físico co teu teléfono, non un erro de Sky Map. O xesto de calibración da figura en 8 pídelle ao teu teléfono que restableza o sensor da súa brúxula internamente, pero &lt;i&gt;unha brúxula calibrada non é necesariamente precisa&lt;/i&gt;. Se estás preto dun obxecto metálico, do taboleiro dun coche ou dunha funda magnética do teléfono, o mapa pode seguir estando desviado mesmo despois da calibración. Móvete a unha zona aberta, repite o xesto da figura en 8 e, a seguir, activa &lt;b&gt;Corrección magnética&lt;/b&gt; in &lt;b&gt;Configuración → Localización&lt;/b&gt;. Se o teu teléfono ten un erro direccional consistente, usa o desprazamento manual en &lt;b&gt;Configuración → Configuración do sensor (expertos)&lt;/b&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Compás (causa máis común):&lt;/b&gt; Este é un problema de soporte físico co teu teléfono, non un erro de Sky Map. O xesto de calibración da figura en 8 pídelle ao teu teléfono que restableza o sensor da súa brúxula internamente, pero &lt;i&gt;unha brúxula calibrada non é necessariamente precisa&lt;/i&gt;. Se estás preto dun obxecto metálico, do taboleiro dun coche ou dunha funda magnética do teléfono, o mapa pode seguir estando desviado mesmo despois da calibración. Móvete a unha zona aberta, repite o xesto da figura en 8 e, a seguir, activa &lt;b&gt;Corrección magnética&lt;/b&gt; en &lt;b&gt;Configuración → Localización&lt;/b&gt;. Se o teu teléfono sen un erro direccional consistente, usa o desprazamento manual en &lt;b&gt;Configuración → Configuración do sensor (expertos)&lt;/b&gt;.&lt;/li&gt;
 &lt;li&gt;&lt;b&gt;Localización:&lt;/b&gt; Concede permiso de localización a través de &lt;b&gt;Configuración da aplicación → Permisos&lt;/b&gt;. Consulta a páxina Diagnóstico para confirmar as túas coordenadas. Un síntoma revelador de que falta unha localización é que Polaris aparece preto do horizonte.&lt;/li&gt;
 &lt;li&gt;&lt;b&gt;Time:&lt;/b&gt; Menos común, pero un fuso horario incorrecto despraza todo o ceo. Consulta a páxina Diagnóstico para confirmar que a hora e o fuso horario do teu dispositivo son correctos.&lt;/li&gt;
 &lt;/ul&gt;
@@ -159,7 +159,7 @@
 &lt;li&gt;Axusta &lt;b&gt;Velocidade do sensor&lt;/b&gt; e &lt;b&gt;Amortecemento do sensor&lt;/b&gt; en &lt;b&gt;Configuración → Configuración do sensor (expertos)&lt;/b&gt;&lt;/li&gt;
 &lt;li&gt;Se o teu teléfono non ten xiroscopio, activa &lt;b&gt;Desactivar xiroscopio&lt;/b&gt; na configuración do sensor&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Para obter información completa sobre a resolución de problemas, consulta a guía en liña &lt;a href="https://github.com/sky-map-team/stardroid/blob/master/troubleshooting.md"&gt;troubleshooting&lt;/a&gt; guide.&lt;/p&gt;
+&lt;p&gt;Para obter información completa sobre a resolución de problemas, consulta a guía de &lt;a href="https://github.com/sky-map-team/stardroid/blob/master/troubleshooting.md"&gt;resolución de problemas&lt;/a&gt; en liña.&lt;/p&gt;
 &lt;p class="callout"&gt;Se aínda estás atascado, envíanos un correo electrónico a skymapdevs@gmail.com — Unha captura de pantalla da túa páxina de diagnósticos é moi útil.&lt;/p&gt;
 
 &lt;h1&gt;Que hai de novo en Sky Map?&lt;/h1&gt;
