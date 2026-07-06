@@ -5,6 +5,21 @@ All notable changes to Sky Map are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+### Added
+- Graduated degree scale on the ecliptic, and increased ecliptic visibility ([#923](https://github.com/sky-map-team/stardroid/pull/923))
+- Close button on the info card for classic 3-button navigation users, who previously had no visible way to dismiss it ([#932](https://github.com/sky-map-team/stardroid/pull/932))
+- Split-license structure to protect the Sky Map brand from ad-stuffed clones on the Play Store ([#934](https://github.com/sky-map-team/stardroid/pull/934))
+
+### Changed
+- Horizon line is now green with a fade-out underneath, instead of yellow ([#924](https://github.com/sky-map-team/stardroid/pull/924))
+- Refreshed the overall color scheme ([#925](https://github.com/sky-map-team/stardroid/pull/925))
+- Info-card taps are now restricted to the card's central region, with a capped card height ([#922](https://github.com/sky-map-team/stardroid/pull/922))
+
+### Fixed
+- Label flickering when the phone points near the zenith or nadir, by freezing the text angle near either pole ([#919](https://github.com/sky-map-team/stardroid/pull/919), [#920](https://github.com/sky-map-team/stardroid/pull/920))
+- Oversized/misaligned icons in the overflow menu ([#927](https://github.com/sky-map-team/stardroid/pull/927), [#928](https://github.com/sky-map-team/stardroid/pull/928), [#930](https://github.com/sky-map-team/stardroid/pull/930))
+- Deprecated `shouldOverrideUrlLoading` migrated to `WebResourceRequest` in dialog fragments ([#929](https://github.com/sky-map-team/stardroid/pull/929))
+
 ## [1.16.0] - 2026-06-19
 
 ### Changed

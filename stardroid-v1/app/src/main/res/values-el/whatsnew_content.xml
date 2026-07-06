@@ -1,10 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Καλώς ήρθατε στο Sky Map</h2>
-<p>Οι νέοι χρήστες υποδέχονται με μια καθοδηγούμενη εμπειρία ενσωμάτωσης που ελέγχει τους αισθητήρες της συσκευής σας και σας ξεκινά τη παρατήρηση του ουράνιου θόλου γρήγορα.</p>
-<h2>Καλύτερη τοποθεσία</h2>
-<p>Η διαχείριση τοποθεσίας έχει αναδιαρθρωθεί εξ ολοκλήρου — σαφέστερα μηνύματα κατάστασης, δείκτης προόδου ενώ η θέση σας επιλύεται, και διορθώσεις για πολλά παλιά σφάλματα. Υπάρχει επίσης ένας νέος χάρτης για να σας βοηθήσει να επιβεβαιώσετε τη θέση σας οπτικά.</p>
-<h2>Αναζήτηση</h2>
-<p>Μπορείτε τώρα να αναζητήσετε κατά συντεταγμένες RA και Dec καθώς και κατά όνομα αντικειμένου. Η επικάλυψη αναζήτησης ενημερώνεται επίσης για να εμφανίσει "Βρέθηκε: X" όταν ο στόχος σας μετακινείται στο κέντρο της οθόνης.</p>]]></string>
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Πιο ευκρινή γραφικά</h2>
+Η γραμμή του ορίζοντα είναι τώρα πράσινη με μια απαλή εξασθένιση από κάτω για μια πιο φυσική εμφάνιση, η εκλειπτική είναι πιο ορατή και τώρα έχει μια διαβαθμισμένη κλίμακα μοιρών, και ανανεώσαμε το συνολικό χρωματικό σχέδιο.
+
+<h2>Διορθώσεις σφαλμάτων</h2>
+<ul>
+<li>Διορθώθηκε το τρεμόπαιγμα των ετικετών όταν δείχνετε κοντά στο ζενίθ ή το ναδίρ</li>
+<li>Προστέθηκε ένα κουμπί κλεισίματος στην κάρτα πληροφοριών για χρήστες κλασικής πλοήγησης 3 κουμπιών</li>
+</ul>]]></string>
     </resources>

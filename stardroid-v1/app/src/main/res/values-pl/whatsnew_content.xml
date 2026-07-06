@@ -1,10 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Witaj w Sky Map</h2>
-<p>Nowi użytkownicy są powitani interaktywnym przewodnikiem, który sprawdza czujniki urządzenia i szybko wprowadza Cię w świat obserwacji gwiazd.</p>
-<h2>Lepsza lokalizacja</h2>
-<p>Obsługa lokalizacji została całkowicie przeprojektowana — jaśniejsze komunikaty o stanie, wskaźnik postępu podczas rozpoznawania pozycji oraz poprawki wielu długotrwałych błędów. Dostępna jest również nowa mapa, która pomoże Ci wizualnie potwierdzić Twoją lokalizację.</p>
-<h2>Wyszukiwanie</h2>
-<p>Możesz teraz wyszukiwać według współrzędnych RA i Dec, a także po nazwie obiektu. Nakładka wyszukiwania aktualizuje się, aby wyświetlić "Znaleziono: X", gdy Twój cel pojawi się w centrum ekranu.</p>]]></string>
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Wyraźniejsza grafika</h2>
+Linia horyzontu jest teraz zielona z delikatnym zanikaniem poniżej, co zapewnia bardziej naturalny wygląd, ekliptyka jest bardziej widoczna i ma teraz stopniowaną skalę stopni, a także odświeżyliśmy ogólną kolorystykę.
+
+<h2>Poprawki błędów</h2>
+<ul>
+<li>Naprawiono migotanie etykiet przy wskazywaniu w pobliżu zenitu lub nadiru</li>
+<li>Dodano przycisk zamknięcia do karty informacyjnej dla użytkowników klasycznej nawigacji z trzema przyciskami</li>
+</ul>]]></string>
     </resources>

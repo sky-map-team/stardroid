@@ -1,10 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Willkommen bei Sky Map</h2>
-<p>Neue Benutzer werden mit einer geführten Onboarding-Erfahrung begrüßt, die die Sensoren deines Geräts überprüft und dich schnell zum Sternbeobachten bringt.</p>
-<h2>Bessere Standortbestimmung</h2>
-<p>Die Standortbehandlung wurde komplett neu gestaltet — klarere Statusmeldungen, einen Fortschrittsanzeiger während die Position ermittelt wird, und Behebung vieler lange bestehender Fehler. Es gibt auch eine neue Karte, um deinen Standort visuell zu bestätigen.</p>
-<h2>Suche</h2>
-<p>Du kannst jetzt nach RA- und Dez-Koordinaten sowie nach Objektnamen suchen. Die Suchüberlagerung wird auch aktualisiert, um "Gefunden: X" anzuzeigen, wenn dein Zielobjekt in die Bildschirmmitte driftet.</p>]]></string>
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Schärfere Darstellung</h2>
+Die Horizontlinie ist jetzt grün mit einem sanften Ausblenden darunter für ein natürlicheres Aussehen, die Ekliptik ist besser sichtbar und hat jetzt eine abgestufte Gradskala, und wir haben das gesamte Farbschema aktualisiert.
+
+<h2>Fehlerbehebungen</h2>
+<ul>
+<li>Flackern der Beschriftung behoben, wenn du in die Nähe des Zenits oder Nadirs zeigst</li>
+<li>Eine Schließen-Schaltfläche zur Infokarte für Nutzer der klassischen 3-Tasten-Navigation hinzugefügt</li>
+</ul>]]></string>
     </resources>

@@ -1,10 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Selamat Datang ke Sky Map</h2>
-<p>Pengguna baru disambut dengan pengalaman onboarding terpandu yang memeriksa sensor perangkat Anda dan memulai pengamatan bintang dengan cepat.</p>
-<h2>Lokasi yang Lebih Baik</h2>
-<p>Penanganan lokasi telah dirancang ulang sepenuhnya — pesan status yang lebih jelas, indikator kemajuan saat posisi Anda sedang diselesaikan, dan perbaikan untuk banyak bug yang sudah lama ada. Ada juga peta baru untuk membantu Anda mengonfirmasi lokasi Anda secara visual.</p>
-<h2>Pencarian</h2>
-<p>Anda sekarang dapat mencari berdasarkan koordinat RA dan Dec serta berdasarkan nama objek. Overlay pencarian juga diperbarui untuk menampilkan "Ditemukan: X" ketika target Anda bergeser ke pusat layar.</p>]]></string>
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Visual yang lebih tajam</h2>
+Garis ufuk kini berwarna hijau dengan kesan pudar lembut di bawahnya untuk rupa yang lebih semula jadi, ekliptik lebih kelihatan dan kini mempunyai skala darjah bergraduat, dan kami telah menyegarkan semula skema warna keseluruhan.
+
+<h2>Pembetulan pepijat</h2>
+<ul>
+<li>Pepijat kelipan label telah dibetulkan apabila menunjuk berhampiran zenit atau nadir</li>
+<li>Butang tutup telah ditambahkan pada kad maklumat untuk pengguna navigasi 3 butang klasik</li>
+</ul>]]></string>
     </resources>

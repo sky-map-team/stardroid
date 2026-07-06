@@ -1,10 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Ласкаво просимо до Sky Map</h2>
-<p>Нові користувачі отримують керований досвід адаптації, який перевіряє датчики вашого пристрою та допомагає вам швидко почати спостерігати зірки.</p>
-<h2>Краща геолокація</h2>
-<p>Обробка геолокації була повністю переробена — чіткіші повідомлення про стан, індикатор прогресу під час визначення вашої позиції та виправлення багатьох давніх помилок. Також є нова карта, яка допоможе вам візуально підтвердити вашу геолокацію.</p>
-<h2>Пошук</h2>
-<p>Тепер ви можете шукати за координатами RA та Dec, а також за назвою об\'єкта. Панель пошуку також оновлюється, щоб показувати "Знайдено: X", коли ваша ціль потрапляє в центр екрана.</p>]]></string>
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Чіткіше зображення</h2>
+Лінія горизонту тепер зелена з м\'яким згасанням знизу для більш природного вигляду, екліптика стала помітнішою і тепер має градуйовану шкалу, а також оновлено загальну колірну схему.
+
+<h2>Виправлення помилок</h2>
+<ul>
+<li>Виправлено мерехтіння міток при наведенні поблизу зеніту або надиру</li>
+<li>Додано кнопку закриття до інформаційної картки для користувачів класичної 3-кнопкової навігації</li>
+</ul>]]></string>
     </resources>

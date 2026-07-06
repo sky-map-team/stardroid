@@ -1,5 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>欢迎使用 Sky Map</h2><p>新用户将体验引导式入门流程，该流程会检查您的设备传感器，并帮助您快速开始观星。</p><h2>更好的定位</h2><p>定位处理已完全重新设计 — 更清晰的状态消息、位置解析时的进度指示器，以及许多长期存在的错误的修复。还有一个新地图可以帮助您直观地确认您的位置。</p><h2>搜索</h2><p>您现在可以按赤经和赤纬坐标以及天体名称进行搜索。当您的目标漂移到屏幕中心时，搜索叠加层也会更新显示“已找到：X”。</p>]]></string>
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>更清晰的视觉效果</h2>
+地平线现在是绿色的，下方带有柔和的渐变效果，外观更自然；黄道更加清晰可见，并新增了刻度尺；我们还更新了整体配色方案。
+
+<h2>问题修复</h2>
+<ul>
+<li>修复了指向天顶或天底附近时标签闪烁的问题</li>
+<li>为使用经典三键导航的用户在信息卡中添加了关闭按钮</li>
+</ul>]]></string>
     </resources>

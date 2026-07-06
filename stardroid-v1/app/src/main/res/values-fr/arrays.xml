@@ -11,11 +11,6 @@
         <item translation_description="Extra High sensor damping factor">Juste ce qu\'il faut</item>
         <item translation_description="Really High sensor damping factor - this will make the app sluggish">Lent</item>
     </string-array>
-    <string-array name="viewing_direction">
-        <item translation_description="Normal viewing">Normal</item>
-        <item translation_description="Rotates the screen by 90 degrees">Horizon tourné</item>
-        <item translation_description="Shows the sky as pointed at by the long edge of the phone">Mode pointeur</item>
-    </string-array>
     <string-array name="auto_dim_texts">
         <item translation_description="Dimmest screen setting">Très faible</item>
         <item translation_description="Leave it on the system setting">Par défaut du système</item>
