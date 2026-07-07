@@ -1,0 +1,58 @@
+<resources>
+    <!-- The folks who made Sky Map Happen -->
+<string name="credits_text" translation_description="This page credits the people and organizations who support and maintain the app Sky Map. Please do not change the &lt; and &gt; markup">
+&lt;h1&gt;Apoio ao desenvolvemento&lt;/h1&gt;
+&lt;p&gt;Sky Map é gratuíta, de código aberto e sen anuncios. Se a desfrutas usando, considera &lt;a href="https://buymeacoffee.com/skymapdevs?utm_source=skymap&amp;amp;utm_medium=app&amp;amp;utm_campaign=credits_supporting"&gt;apoiar&lt;/a&gt; o desenvolvemento continuo na &lt;a href="https://github.com/sky-map-team/stardroid?tab=readme-ov-file#support-the-project"&gt;nosa páxina de GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;Grazas a estas persoas que recentemente &lt;a href="https://buymeacoffee.com/skymapdevs?utm_source=skymap&amp;amp;utm_medium=app&amp;amp;utm_campaign=credits_donated"&gt;doaron!&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;%1$s&lt;/p&gt;
+
+&lt;h1&gt;Créditos&lt;/h1&gt;
+&lt;h2&gt;Enxeñaría&lt;/h2&gt;
+&lt;p&gt;John Taylor, Kevin Serafini&lt;/p&gt;
+
+&lt;h2&gt;Colaboradores de código aberto&lt;/h2&gt;
+&lt;p&gt;
+    %2$s
+&lt;/p&gt;
+&lt;p&gt;Grazas! Olla os derradeiros colaboradores en &lt;a href="https://github.com/sky-map-team/stardroid/graphs/contributors"&gt;GitHub&lt;/a&gt;.
+&lt;/p&gt;
+
+&lt;h2&gt;Enxeñaría, deseño e xestión de produtos orixinais en Google&lt;/h2&gt;
+&lt;p&gt;Brent Bryan, Dominic Widdows, Hector Ouilhet, James Powell, John Taylor, Kevin Serafini,
+Lior Ron.&lt;/p&gt;
+
+&lt;h1&gt;Agradecementos&lt;/h1&gt;
+&lt;p&gt;Sky Map foi desenvolvido orixinalmente como "Google Sky Map" por Google Inc. e converteuse en código aberto en 2012.&lt;/p&gt;
+&lt;p&gt;Agradecemento especial a Pat Stephenson por impulsar a idea co seu concurso de teléfonos G1 e a Chris DiBona e Michael Weiss-Malik pola súa axuda na transición de Google ao código aberto.&lt;/p&gt;
+
+&lt;h2&gt;Datos&lt;/h2&gt;
+&lt;p&gt;Sky Map usa mapas con datos procedentes de:&lt;/p&gt;
+&lt;ul class="credits"&gt;
+&lt;li&gt;Centre de Donnees astronomiques de Strasbourg (&lt;a href="https://cdsweb.u-strasbg.fr/"&gt;https://cdsweb.u-strasbg.fr/&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;The Bright Star Catalogue, 5th Revised Ed. (Hoffleit D., Warren Jr W.H.)&lt;/li&gt;
+&lt;li&gt;The HYG Database, HYG v1.0. (&lt;a href="https://www.astronexus.com/"&gt;https://www.astronexus.com/&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;History and Accurate Positions for the NGC/IC Objects (Harold G. Corwin Jr)&lt;/li&gt;
+&lt;li&gt;Revised New General Catalogue of Nonstellar Astronomical Objects (Sulentic J.W., Tifft W.G.)&lt;/li&gt;
+&lt;li&gt;Cartas estelares da SFA (&lt;a href="https://observe.phy.sfasu.edu/SFAStarCharts/SFAStarChartFAQ.html"&gt;https://observe.phy.sfasu.edu/SFAStarCharts/SFAStarChartFAQ.html&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;As posicións dos obxectos do Sistema Solar calcúlanse a partir de datos proporcionados polo USNO (&lt;a href="https://www.usno.navy.mil/USNO/astronomical-applications"&gt;https://www.usno.navy.mil/USNO/astronomical-applications&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Datos de cobertura esférica obtidos de (&lt;a href="https://www2.research.att.com/~njas/coverings"&gt;https://www2.research.att.com/~njas/coverings&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Mapa da eclipse de 2024 cortesía do Estudo de visualización científica da NASA.&lt;/li&gt;
+&lt;li&gt;Datos de choivas de meteoros da Organización Internacional de Meteoros (&lt;a href="https://www.imo.net/data"&gt;https://www.imo.net/data&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Créditos das imaxes&lt;/h2&gt;
+&lt;p&gt;As imaxes celestes nesta aplicación proporciónanse cortesía das seguintes fontes:&lt;/p&gt;
+&lt;ul class="credits"&gt;
+&lt;li&gt;Imaxes do telescopio espacial Hubble: NASA, ESA e o Instituto Científico do Telescopio Espacial (&lt;a href="https://hubblesite.org/"&gt;hubblesite.org&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Imaxes de planetas: NASA/JPL-Caltech, NASA/Johns Hopkins APL/Carnegie (MESSENGER), NASA/Johns Hopkins APL/SwRI (New Horizons)&lt;/li&gt;
+&lt;li&gt;Imaxe da Lúa: NASA/GSFC/Universidade estatal de Arizona (Lunar Reconnaissance Orbiter)&lt;/li&gt;
+&lt;li&gt;Imaxes de campos de estrelas: ESO Digitized Sky Survey 2 (&lt;a href="https://archive.eso.org/dss/dss"&gt;archive.eso.org/dss&lt;/a&gt;), CC BY 4.0&lt;/li&gt;
+&lt;li&gt;Cartas de constelacións: IAU and Sky &amp; Telescope (Roger Sinnott &amp; Rick Fienberg), CC BY 4.0&lt;/li&gt;
+&lt;li&gt;Imaxes adicionais de obxectos de espazo profundo: Gemini Observatory/NOIRLab/NSF/AURA (&lt;a href="https://noirlab.edu/"&gt;noirlab.edu&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Imaxe de M31: Peter Kennett (&lt;a href="https://commons.wikimedia.org/wiki/File:M31(Kennett).jpg"&gt;Wikimedia Commons&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Imaxe de Sagittarius A*: EHT Collaboration (&lt;a href="https://www.eso.org/public/images/eso2208-eht-mwa/"&gt;eso.org&lt;/a&gt;), CC BY 4.0&lt;/li&gt;
+&lt;li&gt;Imaxe de Cygnus X-1: NASA/CXC/M.Weiss (&lt;a href="https://chandra.harvard.edu/photo/2011/cygx1/"&gt;chandra.harvard.edu&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+</string>
+</resources>
