@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [1.16.1] Caelus - 2026-07-06
 
-<a href="stardroid-v1/assets/splashscreens/caelus.png"><img src="stardroid-v1/assets/splashscreens/caelus.png" width="200" alt="Caelus" /></a>
+<img src="stardroid-v1/assets/splashscreens/caelus_icon.png" width="80" alt="Caelus" />
 
 ### Added
 - Graduated degree scale on the ecliptic, and increased ecliptic visibility ([#923](https://github.com/sky-map-team/stardroid/pull/923))
@@ -26,7 +26,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [1.16.0] Caelus - 2026-06-19
 
-<a href="stardroid-v1/assets/splashscreens/caelus.png"><img src="stardroid-v1/assets/splashscreens/caelus.png" width="200" alt="Caelus" /></a>
+<img src="stardroid-v1/assets/splashscreens/caelus_icon.png" width="80" alt="Caelus" />
 
 ### Changed
 - Adjusted the sky color scheme for better contrast and readability (#925)
@@ -41,7 +41,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [1.15.5] Saturn - 2026-06-12
 
-<a href="stardroid-v1/assets/splashscreens/saturn.png"><img src="stardroid-v1/assets/splashscreens/saturn.png" width="200" alt="Saturn" /></a>
+<img src="stardroid-v1/assets/splashscreens/saturn_icon.png" width="80" alt="Saturn" />
 
 ### Fixed
 - Fix welcome screen buttons hidden by system navigation bar on Android 15+ (#916, #918)
@@ -51,7 +51,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [1.15.4] Saturn - 2026-06-11
 
-<a href="stardroid-v1/assets/splashscreens/saturn.png"><img src="stardroid-v1/assets/splashscreens/saturn.png" width="200" alt="Saturn" /></a>
+<img src="stardroid-v1/assets/splashscreens/saturn_icon.png" width="80" alt="Saturn" />
 
 ### Fixed
 - Freeze text angle near zenith to prevent label flickering (#914)
@@ -60,7 +60,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [1.15.3] Saturn - 2026-06-11
 
-<a href="stardroid-v1/assets/splashscreens/saturn.png"><img src="stardroid-v1/assets/splashscreens/saturn.png" width="200" alt="Saturn" /></a>
+<img src="stardroid-v1/assets/splashscreens/saturn_icon.png" width="80" alt="Saturn" />
 
 ### Changed
 - Renamed compass 'Accuracy' to 'Calibration: Good/OK/Poor' in the UI for clarity (#911)
@@ -69,7 +69,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [1.15.2] Saturn - 2026-06-08
 
-<a href="stardroid-v1/assets/splashscreens/saturn.png"><img src="stardroid-v1/assets/splashscreens/saturn.png" width="200" alt="Saturn" /></a>
+<img src="stardroid-v1/assets/splashscreens/saturn_icon.png" width="80" alt="Saturn" />
 
 ### Added
 - Search by RA/Dec coordinates as well as by object name (#905)
@@ -81,7 +81,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [1.15.1] Saturn - 2026-06-03
 
-<a href="stardroid-v1/assets/splashscreens/saturn.png"><img src="stardroid-v1/assets/splashscreens/saturn.png" width="200" alt="Saturn" /></a>
+<img src="stardroid-v1/assets/splashscreens/saturn_icon.png" width="80" alt="Saturn" />
 
 ### Changed
 - **Compass/calibration messaging** — clearer language distinguishes hardware sensor issues from
@@ -95,7 +95,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [1.15.0] Saturn - 2026-05-22
 
-<a href="stardroid-v1/assets/splashscreens/saturn.png"><img src="stardroid-v1/assets/splashscreens/saturn.png" width="200" alt="Saturn" /></a>
+<img src="stardroid-v1/assets/splashscreens/saturn_icon.png" width="80" alt="Saturn" />
 
 ### Added
 - **New user onboarding** — a 3-slide warm welcome flow guides first-time users through sensor
@@ -140,7 +140,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [1.14.2] Jupiter - 2026-05-05
 
-<a href="stardroid-v1/assets/splashscreens/jupiter.png"><img src="stardroid-v1/assets/splashscreens/jupiter.png" width="200" alt="Jupiter" /></a>
+<img src="stardroid-v1/assets/splashscreens/jupiter_icon.png" width="80" alt="Jupiter" />
 
 ### Added
 - **Virtual objects** — Jupiter's Galilean moons (Io, Europa, Ganymede, Callisto) and Mars's
@@ -179,7 +179,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [1.13.4] Mars - 2026-04-16
 
-<a href="stardroid-v1/assets/splashscreens/mars.png"><img src="stardroid-v1/assets/splashscreens/mars.png" width="200" alt="Mars" /></a>
+<img src="stardroid-v1/assets/splashscreens/mars_icon.png" width="80" alt="Mars" />
 
 ### Added
 - **Sky gradient toggle** — a new Settings option lets you enable or disable the sky gradient
@@ -189,7 +189,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [1.13.3] Mars - 2026-04-12
 
-<a href="stardroid-v1/assets/splashscreens/mars.png"><img src="stardroid-v1/assets/splashscreens/mars.png" width="200" alt="Mars" /></a>
+<img src="stardroid-v1/assets/splashscreens/mars_icon.png" width="80" alt="Mars" />
 
 ### Added
 - **Two black holes** — Cygnus X-1 and Sagittarius A* are now in the Sky Map catalog
@@ -228,7 +228,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [1.12.3] Earth - 2026-03-24
 
-<a href="stardroid-v1/assets/splashscreens/earth.png"><img src="stardroid-v1/assets/splashscreens/earth.png" width="200" alt="Earth" /></a>
+<img src="stardroid-v1/assets/splashscreens/earth_icon.png" width="80" alt="Earth" />
 
 ### Added
 - **Willman 1 (Beth Willman Galaxy)** added to the star catalog — an ultra-faint dwarf satellite
@@ -283,7 +283,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [1.12.0] Earth - 2026-03-01
 
-<a href="stardroid-v1/assets/splashscreens/earth.png"><img src="stardroid-v1/assets/splashscreens/earth.png" width="200" alt="Earth" /></a>
+<img src="stardroid-v1/assets/splashscreens/earth_icon.png" width="80" alt="Earth" />
 
 ### Added
 - **Celestial images in info cards** — all 145 objects (planets, stars, constellations, and Messier
@@ -314,7 +314,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [1.11.1] Venus - 2026-02-23
 
-<a href="stardroid-v1/assets/splashscreens/venus.png"><img src="stardroid-v1/assets/splashscreens/venus.png" width="200" alt="Venus" /></a>
+<img src="stardroid-v1/assets/splashscreens/venus_icon.png" width="80" alt="Venus" />
 
 ### Added
 - **Credits dialog** — new entry in the main menu lists sponsors and contributors, rendered in the
@@ -379,7 +379,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [1.11.0] Venus - 2026-02-04
 
-<a href="stardroid-v1/assets/splashscreens/venus.png"><img src="stardroid-v1/assets/splashscreens/venus.png" width="200" alt="Venus" /></a>
+<img src="stardroid-v1/assets/splashscreens/venus_icon.png" width="80" alt="Venus" />
 
 ### Changed
 - Info cards now enabled by default for all users
@@ -396,7 +396,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [1.10.11] Venus - 2026-02-03
 
-<a href="stardroid-v1/assets/splashscreens/venus.png"><img src="stardroid-v1/assets/splashscreens/venus.png" width="200" alt="Venus" /></a>
+<img src="stardroid-v1/assets/splashscreens/venus_icon.png" width="80" alt="Venus" />
 
 ### Added
 - Educational info cards — tap objects in manual mode for fun facts and scientific data

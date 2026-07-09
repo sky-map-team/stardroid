@@ -25,6 +25,8 @@ Options:
     --input PATH          Portrait/source image (required)
     --label TEXT          Release label, e.g. "Venus" (default: Venus)
     --output PATH         Output image path (.jpg or .webp); format is inferred from extension
+    --icon-output PATH    Optional: save a small circular icon with transparent background (.png)
+    --icon-size INT       Icon size in pixels (default: 256)
     --crop x1,y1,x2,y2    Pixel crop of input before compositing.
                           Use a square region centred on the face to avoid distortion.
     --splash PATH         Override base splash (default: res/drawable/stardroid_big_image.webp)
@@ -110,6 +112,8 @@ def make_splash(
     opacity: float = 1.0,
     bottom_margin_frac: float = 0.07,
     scale: int = 3,
+    icon_output_path: Path | None = None,
+    icon_size: int = 256,
 ) -> None:
     splash = Image.open(splash_path or DEFAULT_SPLASH).convert("RGBA")
     # Upscale the splash so the overlaid circle has enough pixels to look smooth
@@ -169,6 +173,16 @@ def make_splash(
     splash.convert("RGB").save(output_path, fmt, quality=_SAVE_QUALITY)
     print(f"Saved: {output_path}")
 
+    # Save circular icon if requested
+    if icon_output_path:
+        icon = circular_crop(portrait, icon_size)
+        if opacity < 1.0:
+            r, g, b, a = icon.split()
+            a = a.point(lambda x: int(x * opacity))
+            icon.putalpha(a)
+        icon.save(icon_output_path, "PNG")
+        print(f"Saved: {icon_output_path}")
+
 
 def parse_crop(s: str) -> tuple[int, int, int, int]:
     try:
@@ -186,6 +200,10 @@ def main() -> None:
     parser.add_argument("--label", default="Venus", help="Release label text (default: Venus)")
     parser.add_argument("--output", type=Path, required=True,
                         help="Output image path (.jpg or .webp); format inferred from extension")
+    parser.add_argument("--icon-output", type=Path, dest="icon_output",
+                        help="Optional: save a small circular icon with transparent background (.png)")
+    parser.add_argument("--icon-size", type=int, default=256, dest="icon_size",
+                        help="Icon size in pixels (default 256)")
     parser.add_argument("--crop", type=parse_crop, metavar="x1,y1,x2,y2",
                         help="Pixel crop of input image before compositing")
     parser.add_argument("--splash", type=Path, help="Override splash screen path")
@@ -211,6 +229,8 @@ def main() -> None:
         opacity=args.opacity,
         bottom_margin_frac=args.bottom_margin_frac,
         scale=args.scale,
+        icon_output_path=args.icon_output,
+        icon_size=args.icon_size,
     )
 
 

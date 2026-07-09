@@ -40,21 +40,17 @@ cp <source_path> assets/splashscreens/<release_name_lowercase>.png
 Use the release label lowercased with spaces replaced by underscores as the filename
 (e.g. "T CrB" → `t_crb.png`, "Earth" → `earth.png`).
 
-### Step 3 — Generate the main splash (portrait phones)
+### Step 3 — Generate the main splash, large splash, and circular icon
 
 ```bash
 python3 tools/make_release_splash.py \
     --input assets/splashscreens/<name>.png \
     --label "<ReleaseName>" \
     --output /tmp/splash_main.webp \
+    --icon-output /tmp/<name>_icon.png \
+    --icon-size 256 \
     [--crop x1,y1,x2,y2]
-```
 
-Read `/tmp/splash_main.webp` to visually verify it looks correct before proceeding.
-
-### Step 4 — Generate the large splash (tablets/landscape)
-
-```bash
 python3 tools/make_release_splash.py \
     --input assets/splashscreens/<name>.png \
     --label "<ReleaseName>" \
@@ -63,22 +59,24 @@ python3 tools/make_release_splash.py \
     [--crop x1,y1,x2,y2]
 ```
 
-Read `/tmp/splash_large.jpg` to visually verify it looks correct before proceeding.
+Read `/tmp/splash_main.webp` and `/tmp/splash_large.jpg` to visually verify they look correct before proceeding. Read `/tmp/<name>_icon.png` to confirm the circular icon looks good (should be a small round portrait with transparent background).
 
-### Step 5 — Deploy to res/
+### Step 4 — Deploy to res/ and assets/
 
 ```bash
 cp /tmp/splash_main.webp  app/src/main/res/drawable/stardroid_big_image.webp
 cp /tmp/splash_large.jpg  app/src/main/res/drawable-large/stardroid_big_image.jpg
+cp /tmp/<name>_icon.png   assets/splashscreens/<name>_icon.png
 ```
 
-### Step 6 — Report
+### Step 5 — Report
 
 Confirm to the user:
 - Source saved as: `assets/splashscreens/<name>.png`
+- Circular icon saved as: `assets/splashscreens/<name>_icon.png`
 - Main splash updated: `app/src/main/res/drawable/stardroid_big_image.webp`
 - Large splash updated: `app/src/main/res/drawable-large/stardroid_big_image.jpg`
-- Suggest committing: `git add assets/splashscreens/<name>.png app/src/main/res/drawable/stardroid_big_image.webp app/src/main/res/drawable-large/stardroid_big_image.jpg && git commit -m "Add <ReleaseName> release splash screen branding"`
+- Suggest committing: `git add assets/splashscreens/<name>.png assets/splashscreens/<name>_icon.png app/src/main/res/drawable/stardroid_big_image.webp app/src/main/res/drawable-large/stardroid_big_image.jpg && git commit -m "Add <ReleaseName> release splash screen branding"`
 
 ## Reference: Base Splash Assets
 
