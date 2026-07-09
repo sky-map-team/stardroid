@@ -5,6 +5,10 @@ All notable changes to Sky Map are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [1.16.1] Caelus - 2026-07-06
+
+<a href="stardroid-v1/assets/splashscreens/caelus.png"><img src="stardroid-v1/assets/splashscreens/caelus.png" width="200" alt="Caelus" /></a>
+
 ### Added
 - Graduated degree scale on the ecliptic, and increased ecliptic visibility ([#923](https://github.com/sky-map-team/stardroid/pull/923))
 - Close button on the info card for classic 3-button navigation users, who previously had no visible way to dismiss it ([#932](https://github.com/sky-map-team/stardroid/pull/932))
@@ -20,7 +24,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - Oversized/misaligned icons in the overflow menu ([#927](https://github.com/sky-map-team/stardroid/pull/927), [#928](https://github.com/sky-map-team/stardroid/pull/928), [#930](https://github.com/sky-map-team/stardroid/pull/930))
 - Deprecated `shouldOverrideUrlLoading` migrated to `WebResourceRequest` in dialog fragments ([#929](https://github.com/sky-map-team/stardroid/pull/929))
 
-## [1.16.0] - 2026-06-19
+## [1.16.0] Caelus - 2026-06-19
+
+<a href="stardroid-v1/assets/splashscreens/caelus.png"><img src="stardroid-v1/assets/splashscreens/caelus.png" width="200" alt="Caelus" /></a>
 
 ### Changed
 - Adjusted the sky color scheme for better contrast and readability (#925)
@@ -33,7 +39,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ---
 
-## [1.15.5] - 2026-06-12
+## [1.15.5] Saturn - 2026-06-12
+
+<a href="stardroid-v1/assets/splashscreens/saturn.png"><img src="stardroid-v1/assets/splashscreens/saturn.png" width="200" alt="Saturn" /></a>
 
 ### Fixed
 - Fix welcome screen buttons hidden by system navigation bar on Android 15+ (#916, #918)
@@ -41,21 +49,27 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ---
 
-## [1.15.4] - 2026-06-11
+## [1.15.4] Saturn - 2026-06-11
+
+<a href="stardroid-v1/assets/splashscreens/saturn.png"><img src="stardroid-v1/assets/splashscreens/saturn.png" width="200" alt="Saturn" /></a>
 
 ### Fixed
 - Freeze text angle near zenith to prevent label flickering (#914)
 
 ---
 
-## [1.15.3] - 2026-06-11
+## [1.15.3] Saturn - 2026-06-11
+
+<a href="stardroid-v1/assets/splashscreens/saturn.png"><img src="stardroid-v1/assets/splashscreens/saturn.png" width="200" alt="Saturn" /></a>
 
 ### Changed
 - Renamed compass 'Accuracy' to 'Calibration: Good/OK/Poor' in the UI for clarity (#911)
 
 ---
 
-## [1.15.2] - 2026-06-08
+## [1.15.2] Saturn - 2026-06-08
+
+<a href="stardroid-v1/assets/splashscreens/saturn.png"><img src="stardroid-v1/assets/splashscreens/saturn.png" width="200" alt="Saturn" /></a>
 
 ### Added
 - Search by RA/Dec coordinates as well as by object name (#905)
@@ -65,7 +79,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ---
 
-## [1.15.1] - 2026-06-03
+## [1.15.1] Saturn - 2026-06-03
+
+<a href="stardroid-v1/assets/splashscreens/saturn.png"><img src="stardroid-v1/assets/splashscreens/saturn.png" width="200" alt="Saturn" /></a>
 
 ### Changed
 - **Compass/calibration messaging** — clearer language distinguishes hardware sensor issues from
@@ -77,7 +93,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ---
 
-## [1.15.0] - 2026-05-22
+## [1.15.0] Saturn - 2026-05-22
+
+<a href="stardroid-v1/assets/splashscreens/saturn.png"><img src="stardroid-v1/assets/splashscreens/saturn.png" width="200" alt="Saturn" /></a>
 
 ### Added
 - **New user onboarding** — a 3-slide warm welcome flow guides first-time users through sensor
@@ -120,7 +138,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ---
 
-## [1.14.2] - 2026-05-05
+## [1.14.2] Jupiter - 2026-05-05
+
+<a href="stardroid-v1/assets/splashscreens/jupiter.png"><img src="stardroid-v1/assets/splashscreens/jupiter.png" width="200" alt="Jupiter" /></a>
 
 ### Added
 - **Virtual objects** — Jupiter's Galilean moons (Io, Europa, Ganymede, Callisto) and Mars's
@@ -157,7 +177,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ---
 
-## [1.13.4] - 2026-04-16
+## [1.13.4] Mars - 2026-04-16
+
+<a href="stardroid-v1/assets/splashscreens/mars.png"><img src="stardroid-v1/assets/splashscreens/mars.png" width="200" alt="Mars" /></a>
 
 ### Added
 - **Sky gradient toggle** — a new Settings option lets you enable or disable the sky gradient
@@ -165,7 +187,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ---
 
-## [1.13.3] - 2026-04-12
+## [1.13.3] Mars - 2026-04-12
+
+<a href="stardroid-v1/assets/splashscreens/mars.png"><img src="stardroid-v1/assets/splashscreens/mars.png" width="200" alt="Mars" /></a>
 
 ### Added
 - **Two black holes** — Cygnus X-1 and Sagittarius A* are now in the Sky Map catalog
@@ -202,7 +226,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ---
 
-## [1.12.3] - 2026-03-24
+## [1.12.3] Earth - 2026-03-24
+
+<a href="stardroid-v1/assets/splashscreens/earth.png"><img src="stardroid-v1/assets/splashscreens/earth.png" width="200" alt="Earth" /></a>
 
 ### Added
 - **Willman 1 (Beth Willman Galaxy)** added to the star catalog — an ultra-faint dwarf satellite
@@ -255,9 +281,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - **Brought all previously "fully translated" languages back to 100% coverage**
 - **Localized credits files added** for translated locales
 
-## [1.12.0] - 2026-03-01
+## [1.12.0] Earth - 2026-03-01
 
-_Earth release._
+<a href="stardroid-v1/assets/splashscreens/earth.png"><img src="stardroid-v1/assets/splashscreens/earth.png" width="200" alt="Earth" /></a>
 
 ### Added
 - **Celestial images in info cards** — all 145 objects (planets, stars, constellations, and Messier
@@ -286,7 +312,9 @@ _Earth release._
   UI updates attempted after the activity was destroyed
   ([#667](https://github.com/sky-map-team/stardroid/issues/667))
 
-## [1.11.1] - 2026-02-23
+## [1.11.1] Venus - 2026-02-23
+
+<a href="stardroid-v1/assets/splashscreens/venus.png"><img src="stardroid-v1/assets/splashscreens/venus.png" width="200" alt="Venus" /></a>
 
 ### Added
 - **Credits dialog** — new entry in the main menu lists sponsors and contributors, rendered in the
@@ -349,9 +377,9 @@ _Earth release._
   navigation, caused by the new mandatory edge-to-edge rendering
   (fixes [#595](https://github.com/sky-map-team/stardroid/issues/595))
 
-## [1.11.0] - 2026-02-04
+## [1.11.0] Venus - 2026-02-04
 
-_Venus release._
+<a href="stardroid-v1/assets/splashscreens/venus.png"><img src="stardroid-v1/assets/splashscreens/venus.png" width="200" alt="Venus" /></a>
 
 ### Changed
 - Info cards now enabled by default for all users
@@ -366,9 +394,9 @@ _Venus release._
 - Import cleanup across multiple files
 - Test stability improvements
 
-## [1.10.11] - 2026-02-03
+## [1.10.11] Venus - 2026-02-03
 
-_Venus release._
+<a href="stardroid-v1/assets/splashscreens/venus.png"><img src="stardroid-v1/assets/splashscreens/venus.png" width="200" alt="Venus" /></a>
 
 ### Added
 - Educational info cards — tap objects in manual mode for fun facts and scientific data
@@ -401,9 +429,7 @@ _Venus release._
 - Layout issues making it hard to close the search box
 - Flaky `SplashScreenActivityTest`
 
-## [1.10.10] - 2026-01-20
-
-_Mercury release._
+## [1.10.10] Mercury - 2026-01-20
 
 ### Added
 - New Slovak translation — strings, arrays, help, celestial objects (@MilanSL)
@@ -474,9 +500,7 @@ _Mercury release._
 - Search control bar moved out of time travel layout
 - Sync issues and NPE crash on start
 
-## [1.10.0] - 2021-12-21
-
-_Comet Leonard release._
+## [1.10.0] Comet Leonard - 2021-12-21
 
 ### Added
 - Comet Leonard tracking with visibility dates and search support
@@ -555,9 +579,7 @@ _Comet Leonard release._
 - Temporary data hack for Neowise
 - Obsolete translations causing build warnings
 
-## [1.9.4] - 2020-07-17
-
-_Neowise release._
+## [1.9.4] Neowise - 2020-07-17
 
 ### Added
 - Comet Neowise location tracking

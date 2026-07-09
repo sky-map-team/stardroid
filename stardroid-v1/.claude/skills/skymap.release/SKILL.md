@@ -81,12 +81,18 @@ In all commands below, substitute `<version>` and `<ReleaseName>` with the value
 
 1. Update `../CHANGELOG.md` for this release. If the `skymap.whatsnew` skill was run (Step 2.3), it will have prepended content without a version heading — add the heading now. If it was not run, add a new entry manually based on commits since the last release (`git log <last-tag>..HEAD --oneline`):
    ```
-   ## [<version>] - YYYY-MM-DD
+   ## [<version>] <ReleaseName> - YYYY-MM-DD
+
+   <a href="stardroid-v1/assets/splashscreens/<name_lowercase>.png"><img src="stardroid-v1/assets/splashscreens/<name_lowercase>.png" width="200" alt="<ReleaseName>" /></a>
 
    ### Added / Fixed / Changed
    - ...
    ```
-   Use today's date. The CHANGELOG format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
+   Use today's date. The heading must include the release name (confirmed in Step 1), and must be
+   followed by a thumbnail linking to the full-size splash source image saved in Step 1.3
+   (`stardroid-v1/assets/splashscreens/<name_lowercase>.png`, e.g. "T CrB" → `t_crb.png`). Omit the
+   image only if no source graphic was saved for this release. The CHANGELOG format follows
+   [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 2. Commit all changes from Steps 1–5 (version name, version code bump, splash, sponsors, contributors, whatsnew content, translations, CHANGELOG) in a single commit to master:
    ```bash
