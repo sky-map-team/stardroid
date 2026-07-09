@@ -127,6 +127,17 @@ In all commands below, substitute `<version>` and `<ReleaseName>` with the value
      --notes-file /tmp/release_notes.md
    ```
 
+   **Important:** the CHANGELOG's `<img>` tag (if present) uses a path relative to the repo root
+   (`stardroid-v1/assets/splashscreens/...`), which does not resolve inside a standalone GitHub
+   release description. Before creating the release, rewrite that path to an absolute
+   `raw.githubusercontent.com` URL pinned to the commit just pushed in step 2, so the icon
+   keeps rendering even if the file is later renamed or moved:
+   ```bash
+   commit=$(git rev-parse HEAD)
+   sed -i '' "s#stardroid-v1/assets/splashscreens/#https://raw.githubusercontent.com/sky-map-team/stardroid/${commit}/stardroid-v1/assets/splashscreens/#" /tmp/release_notes.md
+   ```
+   Run this substitution *before* the `gh release create` command above.
+
 ### Step 7. Progress the new release to beta
 **Before promoting, pause and explicitly ask the user to confirm that the internal build has been reviewed and tested.** Do not proceed until you receive explicit approval.
 
