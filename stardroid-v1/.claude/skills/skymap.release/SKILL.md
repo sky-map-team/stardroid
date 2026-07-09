@@ -83,14 +83,15 @@ In all commands below, substitute `<version>` and `<ReleaseName>` with the value
    ```
    ## [<version>] <ReleaseName> - YYYY-MM-DD
 
-   <img src="stardroid-v1/assets/splashscreens/<name_lowercase>_icon.png" width="80" alt="<ReleaseName>" />
+   <img src="stardroid-v1/assets/splashscreens/<version>_<name_lowercase>_icon.png" width="80" alt="<ReleaseName>" />
 
    ### Added / Fixed / Changed
    - ...
    ```
    Use today's date. The heading must include the release name (confirmed in Step 1), and must be
-   followed by a small circular icon image saved in Step 1.3
-   (`stardroid-v1/assets/splashscreens/<name_lowercase>_icon.png`, e.g. "T CrB" → `t_crb_icon.png`).
+   followed by a small circular icon image saved in Step 1.3.
+   Icon filenames must include the version (`<version>_<name_lowercase>_icon.png`, e.g. "1.16.1:Caelus" → `1_16_1_caelus_icon.png`).
+   This ensures different sub-releases of the same name have distinct, versioned icons.
    Omit the image only if no source graphic was saved for this release. The CHANGELOG format follows
    [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
