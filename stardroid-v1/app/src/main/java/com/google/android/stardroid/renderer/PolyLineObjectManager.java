@@ -51,9 +51,8 @@ public class PolyLineObjectManager extends RendererObjectManager {
         !updateType.contains(UpdateType.UpdatePositions)) {
       return;
     }
-    // Create a defensive copy to avoid ConcurrentModificationException if the
-    // source list is modified by another thread during iteration.
-    // NOTE: This isn't a true fix - this copy is itself not threadsafe.
+    // Defensive copy: the caller (AbstractRenderablesLayer.redraw) hands us a private snapshot,
+    // but copy again here as cheap insurance against any other caller passing a shared list.
     List<LinePrimitive> safeLines = new ArrayList<>(lines);
     int numLineSegments = 0;
     for (LinePrimitive l : safeLines) {
