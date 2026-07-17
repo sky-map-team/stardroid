@@ -21,6 +21,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ProgressBar
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import com.google.android.stardroid.R
 import com.google.android.stardroid.control.LocationController
 import com.google.android.stardroid.math.LatLong
@@ -94,6 +95,7 @@ class ManualLocationEntryDialogFragment : DialogFragment() {
         if (!Geocoder.isPresent()) {
             placeNameEdit.isEnabled = false
             resolveButton.isEnabled = false
+            placeErrorText.setTextColor(ContextCompat.getColor(requireContext(), R.color.status_absent))
             showPlaceError(getString(R.string.location_geocoder_unavailable))
         }
 
