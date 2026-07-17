@@ -51,9 +51,8 @@ public class PolyLineObjectManager extends RendererObjectManager {
         !updateType.contains(UpdateType.UpdatePositions)) {
       return;
     }
-    List<LinePrimitive> safeLines = lines;
     int numLineSegments = 0;
-    for (LinePrimitive l : safeLines) {
+    for (LinePrimitive l : lines) {
       numLineSegments += l.getVertices().size() - 1;
     }
     // Just in case there's only a single line segment and somehow it mysteriously only has one
@@ -79,9 +78,9 @@ public class PolyLineObjectManager extends RendererObjectManager {
     float sizeFactor = MathUtils.tan(fovyInRadians * 0.5f) / 480;
     
     boolean opaque = true;
-    
+
     short vertexIndex = 0;
-    for (LinePrimitive l : safeLines) {
+    for (LinePrimitive l : lines) {
       List<Vector3> coords = l.getVertices();
       if (coords.size() < 2)
         continue;
