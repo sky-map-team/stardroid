@@ -113,7 +113,8 @@ abstract class AbstractRenderablesLayer(resources: Resources, private val should
 
   private fun redraw(updateTypes: EnumSet<UpdateType>) {
     super.redraw(
-      textPrimitives, pointPrimitives, linePrimitives, imagePrimitives, glowPrimitives, updateTypes)
+      textPrimitives, pointPrimitives, linePrimitives,
+      imagePrimitives, glowPrimitives, updateTypes)
   }
 
   override fun onFontSizeChanged() {
