@@ -1,6 +1,7 @@
 package com.google.android.stardroid.activities.util;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.SharedPreferences;
 import android.util.Log;
 import android.widget.Toast;
@@ -46,8 +47,16 @@ public class GooglePlayServicesChecker extends AbstractGooglePlayServicesChecker
       Log.d(TAG, "Google Play Status availability: " + googlePlayServicesAvailability);
       if (apiAvailability.isUserResolvableError(googlePlayServicesAvailability)) {
         Log.d(TAG, "...but we can fix it");
-        apiAvailability.getErrorDialog(parent, googlePlayServicesAvailability,
-            DynamicStarMapActivity.GOOGLE_PLAY_SERVICES_REQUEST_CODE).show();
+        // getErrorDialog can still return null (e.g. on devices with no Play Store to resolve
+        // to, such as de-googled devices) even though isUserResolvableError returned true.
+        Dialog errorDialog = apiAvailability.getErrorDialog(parent, googlePlayServicesAvailability,
+            DynamicStarMapActivity.GOOGLE_PLAY_SERVICES_REQUEST_CODE);
+        if (errorDialog != null) {
+          errorDialog.show();
+        } else {
+          Log.d(TAG, "...but no resolution dialog is available");
+          Toast.makeText(parent, R.string.play_services_error, Toast.LENGTH_LONG).show();
+        }
       } else {
         Log.d(TAG, "...and we can't fix it");
         // For now just warn the user, though we may need to do something like disable
