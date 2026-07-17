@@ -31,6 +31,7 @@
     <string name="location_set_button" translation_description="Button that confirms and applies the manually entered location">Set Location</string>
     <string name="location_place_not_found" translation_description="Inline error shown when a place name search returns no results">Place not found — try a more specific name</string>
     <string name="location_geocoder_offline" translation_description="Inline message shown when geocoding fails because there is no internet connection">No internet — enter coordinates directly</string>
+    <string name="location_geocoder_unavailable" translation_description="Inline message shown when place name lookup is disabled because the device has no geocoding backend (e.g. no internet or no Google Play Services)">Place lookup unavailable (no internet or Google Play Services) — enter coordinates directly</string>
     <string name="location_invalid_latitude" translation_description="Validation error for latitude values outside the valid range">Latitude must be between −90 and 90</string>
     <string name="location_invalid_longitude" translation_description="Validation error for longitude values outside the valid range">Longitude must be between −180 and 180</string>
     <string name="location_management_title" translation_description="Title of the location management screen">Your Location</string>
