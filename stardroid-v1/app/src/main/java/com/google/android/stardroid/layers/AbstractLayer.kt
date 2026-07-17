@@ -111,11 +111,15 @@ abstract class AbstractLayer(protected val resources: Resources,
         renderMapLock.lock()
         try {
             val atomic = localRenderer.createAtomic() // won't be null since renderer was checked
-            setSources(textPrimitives, updateTypes, TextPrimitive::class.java, atomic ?: return)
-            setSources(pointPrimitives, updateTypes, PointPrimitive::class.java, atomic)
-            setSources(linePrimitives, updateTypes, LinePrimitive::class.java, atomic)
-            setSources(imagePrimitives, updateTypes, ImagePrimitive::class.java, atomic)
-            setSources(glowPrimitives, updateTypes, HorizonGlowPrimitive::class.java, atomic)
+            // Snapshot the primitive lists to close the race with concurrent layer updates.
+            // The GL thread reads these lists asynchronously via queued Runnables well after this
+            // method returns, so without snapshotting they can race with subsequent updates that
+            // clear and repopulate the live lists, corrupting the read (see issue #939).
+            setSources(ArrayList(textPrimitives), updateTypes, TextPrimitive::class.java, atomic ?: return)
+            setSources(ArrayList(pointPrimitives), updateTypes, PointPrimitive::class.java, atomic)
+            setSources(ArrayList(linePrimitives), updateTypes, LinePrimitive::class.java, atomic)
+            setSources(ArrayList(imagePrimitives), updateTypes, ImagePrimitive::class.java, atomic)
+            setSources(ArrayList(glowPrimitives), updateTypes, HorizonGlowPrimitive::class.java, atomic)
             localRenderer.queueAtomic(atomic)
         } finally {
             renderMapLock.unlock()

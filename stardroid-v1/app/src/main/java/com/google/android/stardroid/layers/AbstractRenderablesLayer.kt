@@ -112,16 +112,9 @@ abstract class AbstractRenderablesLayer(resources: Resources, private val should
   }
 
   private fun redraw(updateTypes: EnumSet<UpdateType>) {
-    // Snapshot the primitive lists here, while still holding this layer's monitor (redraw is only
-    // ever called from the @Synchronized initialize()/refreshSources()). The GL thread reads these
-    // lists asynchronously via a queued Runnable, well after this method returns and the monitor is
-    // released, so without a snapshot it can race with a subsequent initialize() clearing and
-    // repopulating the very same live lists, corrupting the read (see issue #939, NPEs in
-    // PolyLineObjectManager.updateObjects). Handing over private copies closes that race for good,
-    // rather than relying on each RendererObjectManager's own best-effort (and non-atomic) copy.
     super.redraw(
-      ArrayList(textPrimitives), ArrayList(pointPrimitives), ArrayList(linePrimitives),
-      ArrayList(imagePrimitives), ArrayList(glowPrimitives), updateTypes)
+      textPrimitives, pointPrimitives, linePrimitives,
+      imagePrimitives, glowPrimitives, updateTypes)
   }
 
   override fun onFontSizeChanged() {

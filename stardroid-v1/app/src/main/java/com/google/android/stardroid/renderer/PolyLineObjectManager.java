@@ -51,9 +51,7 @@ public class PolyLineObjectManager extends RendererObjectManager {
         !updateType.contains(UpdateType.UpdatePositions)) {
       return;
     }
-    // Defensive copy: the caller (AbstractRenderablesLayer.redraw) hands us a private snapshot,
-    // but copy again here as cheap insurance against any other caller passing a shared list.
-    List<LinePrimitive> safeLines = new ArrayList<>(lines);
+    List<LinePrimitive> safeLines = lines;
     int numLineSegments = 0;
     for (LinePrimitive l : safeLines) {
       numLineSegments += l.getVertices().size() - 1;
