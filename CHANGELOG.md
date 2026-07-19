@@ -5,6 +5,18 @@ All notable changes to Sky Map are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [1.16.2] Caelus - 2026-07-18
+
+<img src="stardroid-v1/assets/splashscreens/1_16_2_caelus_icon.png" width="80" alt="Caelus" />
+
+### Added
+- Galician (gl) language translation ([#935](https://github.com/sky-map-team/stardroid/pull/935))
+
+### Fixed
+- Place lookup is now disabled when the geocoder backend is unavailable, instead of failing silently ([#942](https://github.com/sky-map-team/stardroid/pull/942), [#943](https://github.com/sky-map-team/stardroid/pull/943))
+- Crash (NPE) when GPS is enabled but Google Play Services location is unresolvable ([#941](https://github.com/sky-map-team/stardroid/pull/941))
+- Intermittent NPE in `PolyLineObjectManager` by snapshotting layer primitive lists ([#940](https://github.com/sky-map-team/stardroid/pull/940))
+
 ## [1.16.1] Caelus - 2026-07-06
 
 <img src="stardroid-v1/assets/splashscreens/1_16_1_caelus_icon.png" width="80" alt="Caelus" />
