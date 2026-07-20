@@ -15,6 +15,7 @@ output.json
 bin/
 gen/
 .worktrees/
+.kotlin/
 
 # --- Android Studio / IntelliJ ---
 .idea/
