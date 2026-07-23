@@ -1,21 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Sharper visuals</h2>
-The horizon line is now green with a soft fade-out underneath for a more natural look, the ecliptic is more visible and now has a graduated degree scale, and we\'ve refreshed the overall color scheme.
-
-<h2>Bug fixes</h2>
-<ul>
-<li>Fixed label flickering when pointing near the zenith or nadir</li>
-<li>Added a close button to the info card for classic 3-button navigation users</li>
-</ul>
-]]></string>
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."></string>
     <string name="beta_user_help_text" translation_description="HTML content shown to beta testers asking for feedback. Please do not change the &lt; and &gt; markup."><![CDATA[
         <b>Beta users wanted!</b> Sky Map v2 is nearly here. It\'s a complete rewrite and we\'d
         love your early feedback.
 
         To join the beta please visit
-        https://play.google.com/apps/testing/com.google.android.stardroid and you\'ll get v2 as
-        soon as it\'s ready.
+        <a href="https://play.google.com/apps/testing/com.google.android.stardroid">https://play.google.com/apps/testing/com.google.android.stardroid</a>
+        and you\'ll get v2 as soon as it\'s ready.
     ]]></string>
 </resources>
