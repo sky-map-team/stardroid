@@ -10,5 +10,12 @@ The horizon line is now green with a soft fade-out underneath for a more natural
 <li>Added a close button to the info card for classic 3-button navigation users</li>
 </ul>
 ]]></string>
-    <string name="beta_user_help_text" translation_description="HTML content shown to beta testers asking for feedback. Please do not change the &lt; and &gt; markup."></string>
+    <string name="beta_user_help_text" translation_description="HTML content shown to beta testers asking for feedback. Please do not change the &lt; and &gt; markup."><![CDATA[
+        <b>Beta users wanted!</b> Sky Map v2 is nearly here. It\'s a complete rewrite and we\'d
+        love your early feedback.
+
+        To join the beta please visit
+        https://play.google.com/apps/testing/com.google.android.stardroid and you'll get v2 as
+        soon as it's ready.
+    ]]></string>
 </resources>
