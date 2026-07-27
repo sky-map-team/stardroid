@@ -195,6 +195,9 @@
     <string name="diagnostics_activity_phone" translation_description="Row label in the Diagnostics screen for the device model name">Device</string>
     <string name="diagnostics_activity_android_version" translation_description="Row label in the Diagnostics screen for the Android OS version">Android version</string>
     <string name="diagnostics_activity_sky_map_version" translation_description="Row label in the Diagnostics screen for the Sky Map app version">Sky Map version</string>
+    <string name="diagnostics_skymap_version_format" translation_description="Format for the Sky Map version row in Diagnostics: version name (version code) [build flavor]. %1$s is version name, %2$d is version code, %3$s is the build flavor label (e.g. Gms or F-Droid)" translatable="false">%1$s (%2$d) [%3$s]</string>
+    <string name="diagnostics_flavor_gms" translation_description="Build flavor label shown in Diagnostics for the Google-services build" translatable="false">Gms</string>
+    <string name="diagnostics_flavor_fdroid" translation_description="Build flavor label shown in Diagnostics for the F-Droid (no Google services) build" translatable="false">F-Droid</string>
     <string name="diagnostics_activity_sensors_heading" translation_description="Section heading in the Diagnostics screen for sensor readings">Sensors</string>
     <string name="diagnostics_activity_compass" translation_description="Row label in the Diagnostics screen for the compass (magnetic field) sensor">Compass</string>
     <string name="diagnostics_activity_accelerometer" translation_description="Row label in the Diagnostics screen for the accelerometer sensor">Accelerometer</string>
