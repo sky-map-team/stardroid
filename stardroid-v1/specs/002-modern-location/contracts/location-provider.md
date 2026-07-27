@@ -58,11 +58,16 @@ interface LocationProvider {
 
 ## fdroid Implementation (`fdroid/control/PlatformLocationProvider.kt`)
 
-- Registers `LocationListener` on `GPS_PROVIDER` and `NETWORK_PROVIDER` independently.
-- `isAvailable()`: Returns `LocationManager.isProviderEnabled(GPS_PROVIDER) ||
-  LocationManager.isProviderEnabled(NETWORK_PROVIDER)`.
-- On update: accepts the first arrival; ignores subsequent arrivals from the same event window
-  unless they come from a provider with better stated accuracy.
+- The app only ever holds `ACCESS_COARSE_LOCATION`. `GPS_PROVIDER` unconditionally requires
+  `ACCESS_FINE_LOCATION` at the OS level, so it MUST NOT be used — registering a listener on it
+  without FINE throws an uncaught `SecurityException` at request time.
+- Registers a `LocationListener` on a single OS-version-guarded provider: `FUSED_PROVIDER` on API
+  31+ (blends all available sources, including GPS, and the platform auto-coarsens the output to
+  match the app's granted permission), or `NETWORK_PROVIDER` below API 31 (no coarse-safe
+  GPS-derived fix exists pre-31).
+- `isAvailable()`: Returns `true` if that same provider is enabled.
+- Requests to `requestLocationUpdates` also catch `SecurityException` defensively, in addition to
+  `IllegalArgumentException`, so a future provider/permission mismatch can't crash the app.
 
 ---
 

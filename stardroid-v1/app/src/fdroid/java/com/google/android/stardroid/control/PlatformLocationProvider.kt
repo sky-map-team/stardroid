@@ -14,6 +14,7 @@ import android.content.Context
 import android.location.Location
 import android.location.LocationListener
 import android.location.LocationManager
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import com.google.android.stardroid.math.LatLong
@@ -34,7 +35,7 @@ class PlatformLocationProvider @Inject constructor(
         stopUpdates()
         updateCallback = onUpdate
 
-        for (provider in listOf(LocationManager.GPS_PROVIDER, LocationManager.NETWORK_PROVIDER)) {
+        for (provider in coarseProviders()) {
             if (!locationManager.isProviderEnabled(provider)) continue
             val listener = createListener(onUpdate)
             try {
@@ -43,6 +44,10 @@ class PlatformLocationProvider @Inject constructor(
             } catch (_: IllegalArgumentException) {
                 // Provider not supported on this device
                 Log.w(TAG, "Provider $provider not supported on this device")
+            } catch (_: SecurityException) {
+                // App only holds ACCESS_COARSE_LOCATION; should not happen for the providers
+                // in coarseProviders(), but guard against it regardless.
+                Log.w(TAG, "Not permitted to request updates from provider $provider")
             }
         }
     }
@@ -66,8 +71,20 @@ class PlatformLocationProvider @Inject constructor(
     }
 
     override fun isAvailable(): Boolean {
-        return locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER) ||
-            locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)
+        return coarseProviders().any { locationManager.isProviderEnabled(it) }
+    }
+
+    /**
+     * GPS_PROVIDER always requires ACCESS_FINE_LOCATION, which this app never requests, so it
+     * must not be used. FUSED_PROVIDER (API 31+) blends every available source, including GPS,
+     * and the platform automatically coarsens its output to match the app's granted permission.
+     */
+    private fun coarseProviders(): List<String> {
+        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            listOf(LocationManager.FUSED_PROVIDER)
+        } else {
+            listOf(LocationManager.NETWORK_PROVIDER)
+        }
     }
 
     companion object {
