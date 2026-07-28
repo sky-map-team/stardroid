@@ -6,7 +6,7 @@
         <ul>
         <li>Fixed a startup crash some users hit right after granting location permission.</li>
         <li>The Diagnostics screen now shows which build (Gms or F-Droid) you\'re running.</li>
-        <li>Sky Map v2 is coming &#8212; a complete rewrite. Join the beta to try it early (see below).</li>
+        <li>Sky Map v2 is coming &#8212; a complete rewrite. Join the beta to try it early (see above).</li>
         </ul>
     ]]></string>
     <string name="beta_user_help_text" translation_description="HTML content shown to beta testers asking for feedback. Please do not change the &lt; and &gt; markup."><![CDATA[

@@ -1,12 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<b>Drobné opravy chyb a oznámení</b>
-        <ul>
-        <li>Opraven pád při spuštění, ke kterému docházelo u některých uživatelů ihned po udělení oprávnění k poloze.</li>
-        <li>Obrazovka Diagnostika nyní ukazuje, kterou verzi (Gms nebo F-Droid) používáte.</li>
-        <li>Sky Map v2 přichází &#8212; kompletní přepsání. Připojte se k beta testování a vyzkoušejte si ji dříve (viz níže).</li>
-        </ul>]]></string>
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<b>Drobné opravy chyb a oznámení</b><ul><li>Opravena chyba při spuštění, kterou někteří uživatelé zaznamenali hned po udělení povolení k poloze.</li><li>Obrazovka Diagnostika nyní ukazuje, jakou verzi (Gms nebo F-Droid) používáte.</li><li>Sky Map v2 přichází &#8212; kompletní přepsání. Připojte se k beta testování a vyzkoušejte si ji dříve (viz výše).</li></ul>]]></string>
     <string name="beta_user_help_text" translation_description="HTML content shown to beta testers asking for feedback. Please do not change the &lt; and &gt; markup."><![CDATA[<b>Hledáme beta testery!</b>
         <p>Sky Map v2 je téměř tady. Jde o kompletní přepsání od základů a uvítáme vaši včasnou zpětnou vazbu.
 

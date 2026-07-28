@@ -1,6 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<b>Atgyweiriadau bygiau bach a chyhoeddiad</b><ul><li>Trwsio damwain cychwyn y cafodd rhai defnyddwyr yn syth ar ôl rhoi caniatâd lleoliad.</li><li>Mae\'r sgrin Diagnosteg bellach yn dangos pa adeiladwaith (Gms neu F-Droid) rydych chi\'n ei redeg.</li><li>Mae Sky Map v2 yn dod &#8212; ailysgrifennu cyflawn. Ymunwch â\'r beta i\'w brofi\'n gynnar (gweler isod).</li></ul>]]></string>
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<b>Atgyweiriadau bygiau bach a chyhoeddiad</b>
+        <ul>
+        <li>Wedi trwsio damwain cychwyn a brofwyd gan rai defnyddwyr yn syth ar ôl rhoi caniatâd lleoliad.</li>
+        <li>Mae\'r sgrin Diagnosteg bellach yn dangos pa adeiladwaith (Gms neu F-Droid) rydych chi\'n ei redeg.</li>
+        <li>Mae Sky Map v2 yn dod &#8212; ailysgrifennu cyflawn. Ymunwch â\'r beta i roi cynnig arno\'n gynnar (gweler uchod).</li>
+        </ul>]]></string>
     <string name="beta_user_help_text" translation_description="HTML content shown to beta testers asking for feedback. Please do not change the &lt; and &gt; markup."><![CDATA[<b>Angen defnyddwyr beta!</b><p>Mae Sky Map v2 bron yma. Mae\'n ailysgrifennu cyflawn o\'r gwaelod i fyny a byddem wrth ein bodd yn cael eich adborth cynnar.I ymuno â\'r beta, ewch i<a href="https://play.google.com/apps/testing/com.google.android.stardroid">https://play.google.com/apps/testing/com.google.android.stardroid</a>a byddwch yn cael v2 cyn gynted ag y bydd yn barod.</p>]]></string>
 </resources>

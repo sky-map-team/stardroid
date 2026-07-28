@@ -4,8 +4,8 @@
     <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<b>Perbaikan bug minor dan pengumuman</b>
         <ul>
         <li>Memperbaiki kerusakan saat startup yang dialami beberapa pengguna setelah memberikan izin lokasi.</li>
-        <li>Layar Diagnostik sekarang menunjukkan build mana (Gms atau F-Droid) yang Anda gunakan.</li>
-        <li>Sky Map v2 akan segera hadir &#8212; penulisan ulang total. Bergabunglah dengan beta untuk mencobanya lebih awal (lihat di bawah).</li>
+        <li>Layar Diagnostik sekarang menunjukkan build mana (Gms atau F-Droid) yang Anda jalankan.</li>
+        <li>Sky Map v2 akan segera hadir &#8212; penulisan ulang total. Bergabunglah dengan beta untuk mencobanya lebih awal (lihat di atas).</li>
         </ul>]]></string>
     <string name="beta_user_help_text" translation_description="HTML content shown to beta testers asking for feedback. Please do not change the &lt; and &gt; markup."><![CDATA[<b>Pengguna beta dicari!</b><p>Sky Map v2 hampir tiba. Ini adalah penulisan ulang lengkap dari awal dan kami ingin masukan awal Anda. Untuk bergabung dengan beta, silakan kunjungi <a href="https://play.google.com/apps/testing/com.google.android.stardroid">https://play.google.com/apps/testing/com.google.android.stardroid</a> dan Anda akan mendapatkan v2 segera setelah siap.</p>]]></string>
 </resources>

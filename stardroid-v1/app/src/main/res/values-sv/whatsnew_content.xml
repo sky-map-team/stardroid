@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<b>Mindre buggfixar och en nyhet</b>
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<b>Mindre buggfixar och ett meddelande</b>
         <ul>
-        <li>Fixat en krasch vid uppstart som vissa användare råkade ut för direkt efter att ha gett platstillstånd.</li>
+        <li>Fixade en krasch vid uppstart som vissa användare råkade ut för direkt efter att ha gett platstillstånd.</li>
         <li>Diagnosskärmen visar nu vilken version (Gms eller F-Droid) du kör.</li>
-        <li>Sky Map v2 är på gång &#8212; en komplett omskrivning. Gå med i betan för att prova den tidigt (se nedan).</li>
+        <li>Sky Map v2 är på gång &#8212; en komplett omskrivning. Gå med i betan för att prova den tidigt (se ovan).</li>
         </ul>]]></string>
     <string name="beta_user_help_text" translation_description="HTML content shown to beta testers asking for feedback. Please do not change the &lt; and &gt; markup."><![CDATA[<b>Betatestare sökes!</b><p>Sky Map v2 är snart här. Det är en komplett omskrivning från grunden och vi skulle gärna vilja ha din tidiga feedback. För att gå med i betan, besök <a href="https://play.google.com/apps/testing/com.google.android.stardroid">https://play.google.com/apps/testing/com.google.android.stardroid</a> och du får v2 så snart den är redo.</p>]]></string>
 </resources>
