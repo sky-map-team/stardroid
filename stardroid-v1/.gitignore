@@ -58,3 +58,6 @@ fastlane/test_output
 
 # Bug reports
 bugreport-*.zip
+
+# Local secrets
+.env

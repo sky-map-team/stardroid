@@ -1,12 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Skarpere visuelle effekter</h2>
-Horisontlinjen er nå grønn med en myk uttoning under for et mer naturlig utseende, ekliptikken er mer synlig og har nå en gradert skala, og vi har oppdatert det generelle fargevalget.
-
-<h2>Feilrettinger</h2>
-<ul>
-<li>Fikset flimring av etiketter når du peker nær senit eller nadir</li>
-<li>Lagt til en lukkeknapp på infokortet for brukere med klassisk 3-knapps navigasjon</li>
-</ul>]]></string>
-    </resources>
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<b>Mindre feilrettinger og en kunngjøring</b><ul><li>Fikset en oppstartsfeil som noen brukere opplevde rett etter å ha gitt stedstillatelse.</li><li>Diagnostikkskjermen viser nå hvilken versjon (Gms eller F-Droid) du kjører.</li><li>Sky Map v2 kommer &#8212; en komplett omskriving. Bli med i betaen for å prøve den tidlig (se nedenfor).</li></ul>]]></string>
+    <string name="beta_user_help_text" translation_description="HTML content shown to beta testers asking for feedback. Please do not change the &lt; and &gt; markup."><![CDATA[<b>Betabrukere ønskes!</b><p>Sky Map v2 er snart her. Det er en komplett omskriving fra bunnen av, og vi vil gjerne ha din tidlige tilbakemelding. For å bli med i betaen, vennligst besøk <a href="https://play.google.com/apps/testing/com.google.android.stardroid">https://play.google.com/apps/testing/com.google.android.stardroid</a> og du vil få v2 så snart den er klar.</p>]]></string>
+</resources>

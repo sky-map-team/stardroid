@@ -1,5 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Daha Keskin Görseller</h2>Ufuk çizgisi artık daha doğal bir görünüm için altında yumuşak bir solma ile yeşil, ekliptik daha görünür ve artık dereceli bir ölçeğe sahip ve genel renk şemasını yeniledik.<h2>Hata düzeltmeleri</h2><ul><li>Zenit veya nadir noktasına yakın işaret edildiğinde etiket titremesi düzeltildi</li><li>Klasik 3 düğmeli navigasyon kullanıcıları için bilgi kartına bir kapatma düğmesi eklendi</li></ul>]]></string>
-    </resources>
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<b>Küçük hata düzeltmeleri ve bir duyuru</b>
+        <ul>
+        <li>Konum izni verdikten hemen sonra bazı kullanıcıların karşılaştığı bir başlangıç çökmesi düzeltildi.</li>
+        <li>Tanılama ekranı artık hangi yapıyı (Gms veya F-Droid) kullandığınızı gösteriyor.</li>
+        <li>Sky Map v2 geliyor &#8212; tamamen yeniden yazıldı. Erken denemek için beta sürümüne katılın (aşağıya bakın).</li>
+        </ul>]]></string>
+    <string name="beta_user_help_text" translation_description="HTML content shown to beta testers asking for feedback. Please do not change the &lt; and &gt; markup."><![CDATA[<b>Beta kullanıcıları aranıyor!</b><p>Sky Map v2 neredeyse burada. Baştan sona tamamen yeniden yazıldı ve erken geri bildirimlerinizi çok isteriz. Beta sürümüne katılmak için lütfen <a href="https://play.google.com/apps/testing/com.google.android.stardroid">https://play.google.com/apps/testing/com.google.android.stardroid</a> adresini ziyaret edin ve hazır olur olmaz v2\'yi alacaksınız.</p>]]></string>
+</resources>

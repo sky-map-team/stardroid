@@ -1,5 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Ostrejší vzhľad</h2>Línia horizontu je teraz zelená s jemným prechodom smerom nadol pre prirodzenejší vzhľad, ekliptika je viditeľnejšia a má teraz stupnicu so stupňami a celková farebná schéma bola osviežená.<h2>Opravy chýb</h2><ul><li>Opravené blikanie popisov pri ukazovaní v blízkosti zenitu alebo nadiru</li><li>Pridané tlačidlo zatvoriť na informačnú kartu pre používateľov klasickej 3-tlačidlovej navigácie</li></ul>]]></string>
-    </resources>
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<b>Drobné opravy chýb a oznámenie</b><ul><li>Opravená chyba pri spustení, ktorá sa vyskytla u niektorých používateľov hneď po udelení povolenia na určenie polohy.</li><li>Obrazovka Diagnostika teraz zobrazuje, ktorú verziu (Gms alebo F-Droid) používate.</li><li>Sky Map v2 prichádza &#8212; kompletná prepracovaná verzia. Pripojte sa k beta verzii a vyskúšajte ju skôr (pozri nižšie).</li></ul>]]></string>
+    <string name="beta_user_help_text" translation_description="HTML content shown to beta testers asking for feedback. Please do not change the &lt; and &gt; markup."><![CDATA[<b>Hľadáme beta testerov!</b>
+        <p>Sky Map v2 je už takmer tu. Je to od základov prepracovaná verzia a uvítame vašu skorú spätnú väzbu.
+
+        Ak sa chcete pripojiť k beta verzii, navštívte
+        <a href="https://play.google.com/apps/testing/com.google.android.stardroid">https://play.google.com/apps/testing/com.google.android.stardroid</a>
+        a verziu v2 získate hneď, ako bude pripravená.
+        </p>]]></string>
+</resources>

@@ -1,12 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>مرئيات أوضح</h2>
-أصبح خط الأفق الآن أخضر مع تلاشي ناعم تحته لمظهر طبيعي أكثر، وأصبحت دائرة البروج أكثر وضوحًا ولها الآن مقياس درجات متدرج، وقمنا بتحديث نظام الألوان العام.
-
-<h2>إصلاحات الأخطاء</h2>
-<ul>
-<li>تم إصلاح وميض التسميات عند الإشارة بالقرب من السمت أو النظير</li>
-<li>تمت إضافة زر إغلاق إلى بطاقة المعلومات لمستخدمي التنقل الكلاسيكي بثلاثة أزرار</li>
-</ul>]]></string>
-    </resources>
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<b>إصلاحات أخطاء طفيفة وإعلان</b>        <ul>        <li>تم إصلاح عطل عند بدء التشغيل واجهه بعض المستخدمين مباشرة بعد منح إذن الموقع.</li>        <li>تعرض شاشة التشخيص الآن أي إصدار (Gms أو F-Droid) تستخدمه.</li>        <li>Sky Map v2 قادم &#8212; إعادة كتابة كاملة. انضم إلى النسخة التجريبية لتجربته مبكرًا (انظر أدناه).</li>        </ul>]]></string>
+    <string name="beta_user_help_text" translation_description="HTML content shown to beta testers asking for feedback. Please do not change the &lt; and &gt; markup."><![CDATA[<b>مطلوب مستخدمو بيتا!</b><p>Sky Map الإصدار 2 على وشك الصدور. إنه إعادة كتابة كاملة من الصفر، ونحن نود الحصول على ملاحظاتك المبكرة. للانضمام إلى النسخة التجريبية، يرجى زيارة <a href="https://play.google.com/apps/testing/com.google.android.stardroid">https://play.google.com/apps/testing/com.google.android.stardroid</a> وستحصل على الإصدار 2 بمجرد أن يصبح جاهزًا.</p>]]></string>
+</resources>

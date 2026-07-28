@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Skarpere grafik</h2>
-Horisontlinjen er nu grøn med en blød udtoning nedenunder for et mere naturligt udseende, ekliptika er mere synlig og har nu en gradueret gradsskala, og vi har opdateret det overordnede farveskema.
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<b>Mindre fejlrettelser og en meddelelse</b><ul><li>Rettet et opstartsnedbrud, som nogle brugere oplevede lige efter at have givet placeringstilladelse.</li><li>Diagnostikskærmen viser nu, hvilken build (Gms eller F-Droid) du kører.</li><li>Sky Map v2 er på vej &#8212; en komplet omskrivning. Deltag i betaen for at prøve den tidligt (se nedenfor).</li></ul>]]></string>
+    <string name="beta_user_help_text" translation_description="HTML content shown to beta testers asking for feedback. Please do not change the &lt; and &gt; markup."><![CDATA[<b>Beta-brugere søges!</b>
+        <p>Sky Map v2 er næsten klar. Det er en komplet omskrivning fra bunden, og vi vil meget gerne have din tidlige feedback.
 
-<h2>Fejlrettelser</h2>
-<ul>
-<li>Rettet flimrende etiketter, når der peges nær zenit eller nadir</li>
-<li>Tilføjet en lukkeknap til infokortet for brugere med klassisk 3-knapsnavigation</li>
-</ul>]]></string>
-    </resources>
+        For at deltage i betaen bedes du besøge
+        <a href="https://play.google.com/apps/testing/com.google.android.stardroid">https://play.google.com/apps/testing/com.google.android.stardroid</a>
+        og du får v2, så snart den er klar.
+        </p>]]></string>
+</resources>

@@ -1,12 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>より鮮明なビジュアル</h2>
-地平線は緑色になり、より自然な見た目のためにその下にソフトなフェードアウトが加わりました。黄道面はより見やすくなり、目盛り付きの度数スケールが追加されました。また、全体的なカラースキームも刷新されました。
-
-<h2>バグ修正</h2>
-<ul>
-<li>天頂または天底付近を指したときのラベルのちらつきを修正しました</li>
-<li>クラシックな3ボタンナビゲーションのユーザー向けに、情報カードに閉じるボタンを追加しました</li>
-</ul>]]></string>
-    </resources>
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<b>軽微なバグ修正と発表</b><ul><li>一部のユーザーが位置情報権限を付与した直後に発生していた起動時のクラッシュを修正しました。</li><li>診断画面で、現在実行しているビルド（GmsまたはF-Droid）が表示されるようになりました。</li><li>Sky Map v2がまもなく登場します &#8212; 完全な書き直しです。ベータ版に参加して、いち早くお試しください（下記参照）。</li></ul>]]></string>
+    <string name="beta_user_help_text" translation_description="HTML content shown to beta testers asking for feedback. Please do not change the &lt; and &gt; markup."><![CDATA[<b>ベータテスター募集中！</b><p>Sky Map v2がまもなく登場します。これはゼロから完全に書き直されたもので、ぜひ皆様からの早期フィードバックをいただきたいと考えています。ベータ版に参加するには、次のリンクにアクセスしてください。<a href="https://play.google.com/apps/testing/com.google.android.stardroid">https://play.google.com/apps/testing/com.google.android.stardroid</a>準備が整い次第、v2を入手できます。</p>]]></string>
+</resources>

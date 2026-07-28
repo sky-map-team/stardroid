@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>تصاویر واضح‌تر</h2>
-خط افق اکنون سبز است با محو شدن ملایم در زیر آن برای ظاهری طبیعی‌تر، دایرةالبروج اکنون واضح‌تر است و دارای مقیاس درجه‌بندی شده است، و ما طرح رنگ کلی را بازسازی کرده‌ایم.
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<b>رفع اشکالات جزئی و یک اطلاعیه</b><ul><li>مشکل کرش در هنگام راه‌اندازی که برخی کاربران بلافاصله پس از اعطای مجوز موقعیت مکانی با آن مواجه می‌شدند، رفع شد.</li><li>صفحه عیب‌یابی اکنون نشان می‌دهد که کدام نسخه ساخت (Gms یا F-Droid) را اجرا می‌کنید.</li><li>Sky Map v2 در راه است &#8212; یک بازنویسی کامل. برای امتحان زودهنگام آن به بتا بپیوندید (به پایین مراجعه کنید).</li></ul>]]></string>
+    <string name="beta_user_help_text" translation_description="HTML content shown to beta testers asking for feedback. Please do not change the &lt; and &gt; markup."><![CDATA[<b>کاربران بتا مورد نیاز است!</b>
+        <p>Sky Map نسخه ۲ تقریباً آماده است. این یک بازنویسی کامل از ابتدا است و ما از بازخورد اولیه شما استقبال می‌کنیم.
 
-<h2>رفع اشکالات</h2>
-<ul>
-<li>رفع سوسو زدن برچسب‌ها هنگام اشاره به نزدیکی سمت‌الرأس یا سمت‌القدم</li>
-<li>افزودن دکمه بستن به کارت اطلاعات برای کاربران ناوبری کلاسیک ۳ دکمه‌ای</li>
-</ul>]]></string>
-    </resources>
+        برای پیوستن به بتا لطفاً از
+        <a href="https://play.google.com/apps/testing/com.google.android.stardroid">https://play.google.com/apps/testing/com.google.android.stardroid</a>
+        بازدید کنید و به محض آماده شدن، نسخه ۲ را دریافت خواهید کرد.
+        </p>]]></string>
+</resources>

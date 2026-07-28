@@ -1,12 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Des visuels plus nets</h2>
-La ligne d\'horizon est désormais verte avec un léger dégradé en dessous pour un aspect plus naturel, l\'écliptique est plus visible et dispose maintenant d\'une échelle graduée, et nous avons rafraîchi la palette de couleurs générale.
-
-<h2>Corrections de bugs</h2>
-<ul>
-<li>Correction du scintillement des étiquettes lorsque l\'on pointe près du zénith ou du nadir</li>
-<li>Ajout d\'un bouton de fermeture à la fiche d\'informations pour les utilisateurs de la navigation classique à 3 boutons</li>
-</ul>]]></string>
-    </resources>
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<b>Corrections de bugs mineurs et une annonce</b><ul><li>Correction d\'un crash au démarrage que certains utilisateurs rencontraient juste après avoir accordé la permission de localisation.</li><li>L\'écran Diagnostics indique désormais la version (Gms ou F-Droid) que vous exécutez.</li><li>Sky Map v2 arrive &#8212; une réécriture complète. Rejoignez la bêta pour l\'essayer en avant-première (voir ci-dessous).</li></ul>]]></string>
+    <string name="beta_user_help_text" translation_description="HTML content shown to beta testers asking for feedback. Please do not change the &lt; and &gt; markup."><![CDATA[<b>Utilisateurs bêta recherchés !</b><p>Sky Map v2 est presque là. C\'est une réécriture complète à partir de zéro et nous aimerions avoir vos premiers retours.Pour rejoindre la version bêta, veuillez visiter<a href="https://play.google.com/apps/testing/com.google.android.stardroid">https://play.google.com/apps/testing/com.google.android.stardroid</a>et vous obtiendrez la v2 dès qu\'elle sera prête.</p>]]></string>
+</resources>

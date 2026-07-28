@@ -1,12 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Wyraźniejsza grafika</h2>
-Linia horyzontu jest teraz zielona z delikatnym zanikaniem poniżej, co zapewnia bardziej naturalny wygląd, ekliptyka jest bardziej widoczna i ma teraz stopniowaną skalę stopni, a także odświeżyliśmy ogólną kolorystykę.
-
-<h2>Poprawki błędów</h2>
-<ul>
-<li>Naprawiono migotanie etykiet przy wskazywaniu w pobliżu zenitu lub nadiru</li>
-<li>Dodano przycisk zamknięcia do karty informacyjnej dla użytkowników klasycznej nawigacji z trzema przyciskami</li>
-</ul>]]></string>
-    </resources>
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<b>Drobne poprawki błędów i ogłoszenie</b>        <ul>        <li>Naprawiono awarię przy uruchomieniu, która występowała u niektórych użytkowników zaraz po udzieleniu pozwolenia na lokalizację.</li>        <li>Ekran diagnostyki pokazuje teraz, którą wersję (Gms lub F-Droid) uruchamiasz.</li>        <li>Nadchodzi Sky Map v2 &#8212; całkowite przepisanie kodu. Dołącz do bety, aby wypróbować ją wcześniej (zobacz poniżej).</li>        </ul>]]></string>
+    <string name="beta_user_help_text" translation_description="HTML content shown to beta testers asking for feedback. Please do not change the &lt; and &gt; markup."><![CDATA[<b>Poszukiwani beta testerzy!</b><p>Sky Map w wersji 2 jest już prawie gotowy. To całkowicie przepisana aplikacja od podstaw i chcielibyśmy poznać Twoją wczesną opinię. Aby dołączyć do testów beta, odwiedź stronę <a href="https://play.google.com/apps/testing/com.google.android.stardroid">https://play.google.com/apps/testing/com.google.android.stardroid</a>, a otrzymasz wersję 2, gdy tylko będzie gotowa.</p>]]></string>
+</resources>

@@ -1,12 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>更清晰的視覺效果</h2>
-地平線現在是綠色的，下方帶有柔和的淡出效果，看起來更自然，黃道更加清晰可見，並新增了刻度尺，我們也更新了整體配色方案。
-
-<h2>錯誤修正</h2>
-<ul>
-<li>修正了指向天頂或天底附近時標籤閃爍的問題</li>
-<li>為使用傳統三按鈕導覽的用戶，在資訊卡中新增了關閉按鈕</li>
-</ul>]]></string>
-    </resources>
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<b>小錯誤修正及一項公告</b><ul><li>修正了部分使用者在授予位置權限後立即遇到的啟動時當機問題。</li><li>診斷畫面現在會顯示您正在執行的版本 (Gms 或 F-Droid)。</li><li>Sky Map v2 即將推出 &#8212; 徹底重寫。加入 Beta 版搶先體驗 (詳見下方)。</li></ul>]]></string>
+    <string name="beta_user_help_text" translation_description="HTML content shown to beta testers asking for feedback. Please do not change the &lt; and &gt; markup."><![CDATA[<b>需要 Beta 測試者！</b><p>Sky Map v2 即將推出。這是從頭開始的完整重寫，我們很樂意聽取您的早期回饋。若要加入 Beta 測試，請造訪<a href="https://play.google.com/apps/testing/com.google.android.stardroid">https://play.google.com/apps/testing/com.google.android.stardroid</a>您將在 v2 準備就緒後立即取得。</p>]]></string>
+</resources>

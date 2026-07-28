@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Πιο ευκρινή γραφικά</h2>
-Η γραμμή του ορίζοντα είναι τώρα πράσινη με μια απαλή εξασθένιση από κάτω για μια πιο φυσική εμφάνιση, η εκλειπτική είναι πιο ορατή και τώρα έχει μια διαβαθμισμένη κλίμακα μοιρών, και ανανεώσαμε το συνολικό χρωματικό σχέδιο.
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<b>Μικρές διορθώσεις σφαλμάτων και μια ανακοίνωση</b><ul><li>Διορθώθηκε ένα σφάλμα κατά την εκκίνηση που αντιμετώπιζαν ορισμένοι χρήστες αμέσως μετά την παραχώρηση άδειας τοποθεσίας.</li><li>Η οθόνη Διαγνωστικών εμφανίζει τώρα ποια έκδοση (Gms ή F-Droid) χρησιμοποιείτε.</li><li>Το Sky Map v2 έρχεται &#8212; μια πλήρης επανεγγραφή. Συμμετέχετε στην beta για να το δοκιμάσετε νωρίτερα (δείτε παρακάτω).</li></ul>]]></string>
+    <string name="beta_user_help_text" translation_description="HTML content shown to beta testers asking for feedback. Please do not change the &lt; and &gt; markup."><![CDATA[<b>Ζητούνται χρήστες beta!</b>
+        <p>Το Sky Map v2 είναι σχεδόν εδώ. Είναι μια πλήρης επανεγγραφή από την αρχή και θα θέλαμε πολύ την πρώιμη ανατροφοδότησή σας.
 
-<h2>Διορθώσεις σφαλμάτων</h2>
-<ul>
-<li>Διορθώθηκε το τρεμόπαιγμα των ετικετών όταν δείχνετε κοντά στο ζενίθ ή το ναδίρ</li>
-<li>Προστέθηκε ένα κουμπί κλεισίματος στην κάρτα πληροφοριών για χρήστες κλασικής πλοήγησης 3 κουμπιών</li>
-</ul>]]></string>
-    </resources>
+        Για να συμμετάσχετε στην beta, επισκεφτείτε
+        <a href="https://play.google.com/apps/testing/com.google.android.stardroid">https://play.google.com/apps/testing/com.google.android.stardroid</a>
+        και θα λάβετε το v2 μόλις είναι έτοιμο.
+        </p>]]></string>
+</resources>

@@ -5,6 +5,19 @@ All notable changes to Sky Map are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [1.17.0] Neptune - 2026-07-28
+
+<img src="stardroid-v1/assets/splashscreens/1_17_0_neptune_icon.png" width="80" alt="Neptune" />
+
+### Fixed
+- Startup crash when `GPS_PROVIDER` was requested without `ACCESS_FINE_LOCATION` permission ([#948](https://github.com/sky-map-team/stardroid/pull/948))
+
+### Added
+- Build flavor label (Gms/F-Droid) on the Diagnostics screen version row ([#949](https://github.com/sky-map-team/stardroid/pull/949))
+
+### Announcement
+- Sky Map v2, a complete rewrite, is nearly ready — beta sign-ups are opening soon
+
 ## [1.16.2] Caelus - 2026-07-18
 
 <img src="stardroid-v1/assets/splashscreens/1_16_2_caelus_icon.png" width="80" alt="Caelus" />
