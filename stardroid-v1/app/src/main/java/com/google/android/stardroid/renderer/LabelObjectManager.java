@@ -56,6 +56,7 @@ public class LabelObjectManager extends RendererObjectManager {
   // If false, we just put them in the catchall region.
   private static final boolean COMPUTE_REGIONS = true;
   private final double fontSizeScale;
+  private final LabelCollisionResolver labelCollisionResolver;
 
   private Paint mLabelPaint = null;
   private LabelMaker mLabelMaker = null;
@@ -71,10 +72,15 @@ public class LabelObjectManager extends RendererObjectManager {
   
   private TextureReference mTexture = null;
   
-  public LabelObjectManager(int layer, TextureManager textureManager, double fontSizeScale) {
+  public LabelObjectManager(
+      int layer,
+      TextureManager textureManager,
+      double fontSizeScale,
+      LabelCollisionResolver labelCollisionResolver) {
     super(layer, textureManager);
 
     this.fontSizeScale = fontSizeScale;
+    this.labelCollisionResolver = labelCollisionResolver;
     
     mLabelPaint = new Paint();
     mLabelPaint.setAntiAlias(true);
@@ -198,28 +204,20 @@ public class LabelObjectManager extends RendererObjectManager {
     ArrayList<ArrayList<Label>> allActiveLabels =
         mSkyRegions.getDataForActiveRegions(activeRegions);
 
-    List<Label> visibleLabels = new ArrayList<>();
-    List<LabelPosition> screenPositions = new ArrayList<>();
     for (ArrayList<Label> labelsInRegion : allActiveLabels) {
       for (Label l : labelsInRegion) {
         Vector3 screenPosition = computeScreenPosition(l);
         if (screenPosition != null) {
-          visibleLabels.add(l);
-          screenPositions.add(
-              new LabelPosition(
+          LabelPosition position =
+              labelCollisionResolver.place(
                   screenPosition.x,
                   screenPosition.y,
                   l.getWidthInPixels(),
-                  l.getHeightInPixels()));
+                  l.getHeightInPixels(),
+                  getRenderState().getUpAngle());
+          drawLabel(gl, l, position.getX(), position.getY());
         }
       }
-    }
-
-    List<LabelPosition> resolvedPositions =
-        LabelCollisionResolver.resolveCollisions(screenPositions);
-    for (int i = 0; i < visibleLabels.size(); i++) {
-      LabelPosition position = resolvedPositions.get(i);
-      drawLabel(gl, visibleLabels.get(i), new Vector3(position.getX(), position.getY(), 0));
     }
 
     endDrawing(gl);
@@ -356,10 +354,10 @@ public class LabelObjectManager extends RendererObjectManager {
     return screenPos;
   }
 
-  private void drawLabel(GL10 gl, Label label, Vector3 screenPos) {
+  private void drawLabel(GL10 gl, Label label, float x, float y) {
     gl.glPushMatrix();
     
-    gl.glTranslatef(screenPos.x, screenPos.y, 0);
+    gl.glTranslatef(x, y, 0);
     gl.glRotatef(RADIANS_TO_DEGREES * getRenderState().getUpAngle(), 0, 0, -1);
     gl.glScalef(label.getWidthInPixels(), label.getHeightInPixels(), 1);
    
