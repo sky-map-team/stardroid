@@ -285,12 +285,8 @@
     </string>
     <string name="warm_welcome_slide3_title" translation_description="Title for the third slide of the Warm Welcome">Sensoren en kalibratie</string>
     <string name="warm_welcome_slide3_desc" translation_description="Description for the third slide of the Warm Welcome">Sky Map gebruikt de sensoren van je telefoon om uit te lijnen met de sterren.</string>
-    <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message when sensors are missing">
-    Je apparaat lijkt de vereiste sensoren voor automatisch volgen niet te hebben. Geen zorgen—je kunt het hele universum nog steeds verkennen in Handmatige modus!
-    <b>Manual Mode</b>!</string>
-    <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration text on slide 3">
-    Om alles nauwkeurig te houden, geef je telefoon af en toe een snelle figuur-8 beweging.
-    <b>figure-8</b> wave every once in a while.</string>
+    <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message when sensors are missing">Je apparaat lijkt de vereiste sensoren voor automatisch volgen niet te hebben. Geen zorgen—je kunt het hele universum nog steeds verkennen in <b>Handmatige modus</b>!</string>
+    <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration text on slide 3">Om alles nauwkeurig te houden, geef je telefoon af en toe een snelle <b>figuur-8</b> beweging.</string>
 
     <string name="tutorial_planets" translation_description="Tutorial annotation for planets layer">Planeten</string>
     <string name="tutorial_meteors" translation_description="Tutorial annotation for meteors layer">Meteoren</string>

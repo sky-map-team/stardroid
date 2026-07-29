@@ -279,10 +279,8 @@
     </string>
     <string name="warm_welcome_slide3_title" translation_description="Title for the third slide of the Warm Welcome">Senzory a kalibrace</string>
     <string name="warm_welcome_slide3_desc" translation_description="Description for the third slide of the Warm Welcome">Sky Map používá senzory vašeho telefonu k zarovnání s hvězdami.</string>
-    <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message when sensors are missing">
-    Zdá se, že vašemu zařízení chybí požadované senzory potřebné pro automatické sledování. Nebojte se—stále můžete prozkoumat celý vesmír v Manuálním režimu!
-    <b>Manual Mode</b>!</string>
-    <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration text on slide 3">Aby zůstalo vše přesné, občas telefon rychle vlnivě pohněte.<b>figure-8</b> wave every once in a while.</string>
+    <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message when sensors are missing">Zdá se, že vašemu zařízení chybí požadované senzory potřebné pro automatické sledování. Nebojte se—stále můžete prozkoumat celý vesmír v <b>Manuálním režimu</b>!</string>
+    <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration text on slide 3">Aby zůstalo vše přesné, občas telefonem rychle mávněte ve tvaru <b>osmičky</b>.</string>
 
     <string name="tutorial_planets" translation_description="Tutorial annotation for planets layer">Planety</string>
     <string name="tutorial_meteors" translation_description="Tutorial annotation for meteors layer">Meteory</string>
