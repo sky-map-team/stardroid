@@ -283,14 +283,8 @@
     </string>
     <string name="warm_welcome_slide3_title" translation_description="Title for the third slide of the Warm Welcome">Senzorji in umerjanje</string>
     <string name="warm_welcome_slide3_desc" translation_description="Description for the third slide of the Warm Welcome">Sky Map uporablja senzorje vašega telefona za poravnavo s zvezd.</string>
-    <!-- SALVAGE-FLAGGED: the translation is complete but is followed by a repeated fragment of the English original (e.g. a trailing "<b>Manual Mode</b>!") - delete the English tail.
-         Not carried into v2 by tools/salvage-translations/salvage.py; needs a fresh translation. -->
-    <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message when sensors are missing">
-    Videti je, da vaši napravi manjkajo zahtevani senzorji za samodejno sledenje. Brez skrbi—vseeno lahko raziskujete celoten kozmos v ročnem načinu!
-    <b>Manual Mode</b>!</string>
-    <!-- SALVAGE-FLAGGED: a run of untranslated English survives inside the translation - the translated prose was appended to the original instead of replacing it.
-         Not carried into v2 by tools/salvage-translations/salvage.py; needs a fresh translation. -->
-    <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration text on slide 3">Za natančnost občasno nagnite telefon v obliki osmice.<b>figure-8</b> wave every once in a while.</string>
+    <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message when sensors are missing">Videti je, da vaši napravi manjkajo zahtevani senzorji za samodejno sledenje. Brez skrbi—vseeno lahko raziskujete celoten kozmos v <b>ročnem načinu</b>!</string>
+    <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration text on slide 3">Za natančnost občasno nagnite telefon v obliki <b>osmice</b>.</string>
 
     <string name="tutorial_planets" translation_description="Tutorial annotation for planets layer">Planeti</string>
     <string name="tutorial_meteors" translation_description="Tutorial annotation for meteors layer">Meteorji</string>
