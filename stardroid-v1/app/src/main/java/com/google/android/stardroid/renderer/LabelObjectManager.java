@@ -25,6 +25,8 @@ import com.google.android.stardroid.math.MathUtils;
 import com.google.android.stardroid.math.Matrix4x4;
 import com.google.android.stardroid.math.Vector3;
 import com.google.android.stardroid.renderer.util.GLBuffer;
+import com.google.android.stardroid.renderer.util.LabelCollisionResolver;
+import com.google.android.stardroid.renderer.util.LabelCollisionResolver.LabelPosition;
 import com.google.android.stardroid.renderer.util.LabelMaker;
 import com.google.android.stardroid.renderer.util.SkyRegionMap;
 import com.google.android.stardroid.renderer.util.TextureManager;
@@ -54,6 +56,7 @@ public class LabelObjectManager extends RendererObjectManager {
   // If false, we just put them in the catchall region.
   private static final boolean COMPUTE_REGIONS = true;
   private final double fontSizeScale;
+  private final LabelCollisionResolver labelCollisionResolver;
 
   private Paint mLabelPaint = null;
   private LabelMaker mLabelMaker = null;
@@ -69,10 +72,15 @@ public class LabelObjectManager extends RendererObjectManager {
   
   private TextureReference mTexture = null;
   
-  public LabelObjectManager(int layer, TextureManager textureManager, double fontSizeScale) {
+  public LabelObjectManager(
+      int layer,
+      TextureManager textureManager,
+      double fontSizeScale,
+      LabelCollisionResolver labelCollisionResolver) {
     super(layer, textureManager);
 
     this.fontSizeScale = fontSizeScale;
+    this.labelCollisionResolver = labelCollisionResolver;
     
     mLabelPaint = new Paint();
     mLabelPaint.setAntiAlias(true);
@@ -195,13 +203,23 @@ public class LabelObjectManager extends RendererObjectManager {
     SkyRegionMap.ActiveRegionData activeRegions = getRenderState().getActiveSkyRegions();
     ArrayList<ArrayList<Label>> allActiveLabels =
         mSkyRegions.getDataForActiveRegions(activeRegions);
-    
+
     for (ArrayList<Label> labelsInRegion : allActiveLabels) {
       for (Label l : labelsInRegion) {
-        drawLabel(gl, l);
+        Vector3 screenPosition = computeScreenPosition(l);
+        if (screenPosition != null) {
+          LabelPosition position =
+              labelCollisionResolver.place(
+                  screenPosition.x,
+                  screenPosition.y,
+                  l.getWidthInPixels(),
+                  l.getHeightInPixels(),
+                  getRenderState().getUpAngle());
+          drawLabel(gl, l, position.getX(), position.getY());
+        }
       }
     }
-    
+
     endDrawing(gl);
   }
   
@@ -307,12 +325,12 @@ public class LabelObjectManager extends RendererObjectManager {
   }
   
 
-  private void drawLabel(GL10 gl, Label label) {
+  private Vector3 computeScreenPosition(Label label) {
     Vector3 lookDir = getRenderState().getLookDir();
     if (lookDir.x * label.x + lookDir.y * label.y + lookDir.z * label.z < mDotProductThreshold) {
-      return;
+      return null;
     }
-    
+
     // Offset the label to be underneath the given position (so a label will 
     // always appear underneath a star no matter how the phone is rotated) 
     Vector3 v = new Vector3(
@@ -333,9 +351,13 @@ public class LabelObjectManager extends RendererObjectManager {
     screenPos.x = (int)screenPos.x + MAGIC_OFFSET;
     screenPos.y = (int)screenPos.y + MAGIC_OFFSET;
 
+    return screenPos;
+  }
+
+  private void drawLabel(GL10 gl, Label label, float x, float y) {
     gl.glPushMatrix();
     
-    gl.glTranslatef(screenPos.x, screenPos.y, 0);
+    gl.glTranslatef(x, y, 0);
     gl.glRotatef(RADIANS_TO_DEGREES * getRenderState().getUpAngle(), 0, 0, -1);
     gl.glScalef(label.getWidthInPixels(), label.getHeightInPixels(), 1);
    

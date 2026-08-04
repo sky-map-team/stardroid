@@ -24,6 +24,7 @@ import com.google.android.stardroid.math.MathUtils;
 import com.google.android.stardroid.math.Matrix4x4;
 import com.google.android.stardroid.math.Vector3;
 import com.google.android.stardroid.renderer.util.GLBuffer;
+import com.google.android.stardroid.renderer.util.LabelCollisionResolver;
 import com.google.android.stardroid.renderer.util.SkyRegionMap;
 import com.google.android.stardroid.renderer.util.TextureManager;
 
@@ -43,6 +44,7 @@ public class SkyRenderer implements GLSurfaceView.Renderer {
   private OverlayManager mOverlayManager = null;
 
   private RenderState mRenderState = new RenderState();
+  private final LabelCollisionResolver labelCollisionResolver = new LabelCollisionResolver();
 
   private Matrix4x4 mProjectionMatrix;
   private Matrix4x4 mViewMatrix;
@@ -121,6 +123,7 @@ public class SkyRenderer implements GLSurfaceView.Renderer {
 
     gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
 
+    labelCollisionResolver.beginFrame();
     for (Set<RendererObjectManager> managers : mLayersToManagersMap.values()) {
       for (RendererObjectManager rom : managers) {
         rom.draw(gl);
@@ -413,7 +416,8 @@ public class SkyRenderer implements GLSurfaceView.Renderer {
   }
 
   public LabelObjectManager createLabelManager(int layer, double fontSizeScale) {
-    return new LabelObjectManager(layer, mTextureManager, fontSizeScale);
+    return new LabelObjectManager(
+        layer, mTextureManager, fontSizeScale, labelCollisionResolver);
   }
 
   public ImageObjectManager createImageManager(int layer) {
