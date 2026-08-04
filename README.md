@@ -51,9 +51,11 @@ If you enjoy using Sky Map, there are several ways to help keep the project aliv
 
 # Contributing
 
-Bug fixes, dependency upgrades, and translations are always welcome. For major changes or new features, **please [email us](mailto:skymapdevs@gmail.com) first** — we may have a different vision and it would be a shame for your work to go to waste.
+IMPORTANT: Contributions are currently closed! The V1 codebase is about to be retired and any contributions would be wasted. Watch out for ways to contribute in V2.
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for full details on build instructions, coding style, and how to submit a PR.
+~~Bug fixes, dependency upgrades, and translations are always welcome. For major changes or new features, **please [email us](mailto:skymapdevs@gmail.com) first** — we may have a different vision and it would be a shame for your work to go to waste.~~
+
+~~See [CONTRIBUTING.md](CONTRIBUTING.md) for full details on build instructions, coding style, and how to submit a PR.~~
 
 ---
 
