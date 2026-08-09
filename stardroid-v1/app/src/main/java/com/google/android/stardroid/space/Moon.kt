@@ -23,16 +23,47 @@ import java.util.*
  */
 class Moon : EarthOrbitingObject(SolarSystemBody.Moon) {
     override fun getRaDec(date: Date): RaDec {
-        /**
-         * Calculate the geocentric right ascension and declination of the moon using
-         * an approximation as described on page D22 of the 2008 Astronomical Almanac
-         * All of the variables in this method use the same names as those described
-         * in the text: lambda = Ecliptic longitude (degrees) beta = Ecliptic latitude
-         * (degrees) pi = horizontal parallax (degrees) r = distance (Earth radii)
-         *
-         * NOTE: The text does not give a specific time period where the approximation
-         * is valid, but it should be valid through at least 2009.
-         */
+        val (l, m, n) = geocentricDirectionCosines(date)
+        val ra: Float = mod2pi(atan2(m, l)) * RADIANS_TO_DEGREES
+        val dec: Float = asin(n) * RADIANS_TO_DEGREES
+        return RaDec(ra, dec)
+    }
+
+    /**
+     * Right ascension and declination of the moon as seen by an observer at [location],
+     * correcting the geocentric position for diurnal parallax (up to ~1 degree - two lunar
+     * diameters - depending on where on Earth the observer stands and how close the Moon is).
+     * Same Astronomical Almanac (2008, p. D22) page as [getRaDec]; the horizontal-parallax
+     * series (`pi`) puts the Moon at `1 / sin(pi)` Earth radii, and the observer sits one
+     * Earth radius out at `(cos(lat) cos(lst), cos(lat) sin(lst), sin(lat))` in the same
+     * equatorial frame, with local sidereal time from [meanSiderealTime].
+     */
+    fun getTopocentricRaDec(date: Date, location: LatLong): RaDec {
+        val (l, m, n) = geocentricDirectionCosines(date)
+        val t = ((julianDay(date) - 2451545.0f) / 36525.0f).toFloat()
+        val distanceEarthRadii = 1.0f / sin(lunarHorizontalParallax(t) * DEGREES_TO_RADIANS)
+        val lstRad = meanSiderealTime(date, location.longitude) * DEGREES_TO_RADIANS
+        val latRad = location.latitude * DEGREES_TO_RADIANS
+        val observerFromGeocenter = Vector3(
+            cos(latRad) * cos(lstRad), cos(latRad) * sin(lstRad), sin(latRad)
+        )
+        val topocentric = Vector3(l, m, n) * distanceEarthRadii - observerFromGeocenter
+        return RaDec.fromGeocentricCoords(topocentric)
+    }
+
+    /**
+     * Calculate the geocentric right ascension and declination of the moon using
+     * an approximation as described on page D22 of the 2008 Astronomical Almanac
+     * All of the variables in this method use the same names as those described
+     * in the text: lambda = Ecliptic longitude (degrees) beta = Ecliptic latitude
+     * (degrees) pi = horizontal parallax (degrees) r = distance (Earth radii)
+     *
+     * NOTE: The text does not give a specific time period where the approximation
+     * is valid, but it should be valid through at least 2009.
+     *
+     * Returns the equatorial direction cosines (l, m, n) as a [Vector3].
+     */
+    private fun geocentricDirectionCosines(date: Date): Vector3 {
         // First, calculate the number of Julian centuries from J2000.0.
         val t = ((julianDay(date) - 2451545.0f) / 36525.0f).toFloat()
         // Second, calculate the approximate geocentric orbital elements.
@@ -47,23 +78,36 @@ class Moon : EarthOrbitingObject(SolarSystemBody.Moon) {
                 * sin((228.2f + 960400.89f * t) * DEGREES_TO_RADIANS)) - (0.28f
                 * sin((318.3f + 6003.15f * t) * DEGREES_TO_RADIANS)) - (0.17f
                 * sin((217.6f - 407332.21f * t) * DEGREES_TO_RADIANS))
-        //float pi =
-        //    0.9508f + 0.0518f * MathUtil.cos((135.0f + 477198.87f * t) * DEGREES_TO_RADIANS)
-        //        + 0.0095f * MathUtil.cos((259.3f - 413335.36f * t) * DEGREES_TO_RADIANS)
-        //        + 0.0078f * MathUtil.cos((235.7f + 890534.22f * t) * DEGREES_TO_RADIANS)
-        //        + 0.0028f * MathUtil.cos((269.9f + 954397.74f * t) * DEGREES_TO_RADIANS);
-        // float r = 1.0f / MathUtil.sin(pi * DEGREES_TO_RADIANS);
 
-        // Third, convert to RA and Dec.
+        // Third, convert to equatorial direction cosines.
         val l = (cos(beta * DEGREES_TO_RADIANS)
                 * cos(lambda * DEGREES_TO_RADIANS))
         val m = (0.9175f * cos(beta * DEGREES_TO_RADIANS)
                 * sin(lambda * DEGREES_TO_RADIANS)) - 0.3978f * sin(beta * DEGREES_TO_RADIANS)
         val n = (0.3978f * cos(beta * DEGREES_TO_RADIANS)
                 * sin(lambda * DEGREES_TO_RADIANS)) + 0.9175f * sin(beta * DEGREES_TO_RADIANS)
-        val ra: Float = mod2pi(atan2(m, l)) * RADIANS_TO_DEGREES
-        val dec: Float = asin(n) * RADIANS_TO_DEGREES
-        return RaDec(ra, dec)
+        return Vector3(l, m, n)
+    }
+
+    /** Lunar equatorial horizontal parallax in degrees, from the same Almanac page. */
+    private fun lunarHorizontalParallax(t: Float): Float {
+        return 0.9508f + 0.0518f * cos((135.0f + 477198.87f * t) * DEGREES_TO_RADIANS) +
+                0.0095f * cos((259.3f - 413335.36f * t) * DEGREES_TO_RADIANS) +
+                0.0078f * cos((235.7f + 890534.22f * t) * DEGREES_TO_RADIANS) +
+                0.0028f * cos((269.9f + 954397.74f * t) * DEGREES_TO_RADIANS)
+    }
+
+    /**
+     * The Moon's true angular radius, in radians. The Moon doesn't orbit the Sun, so it can't
+     * use [SolarSystemObject.getTrueAngularRadius]'s heliocentric distance calculation; instead,
+     * reuse the horizontal-parallax series already computed for [getTopocentricRaDec], since
+     * `1 / sin(parallax)` is the Earth-Moon distance in Earth radii.
+     */
+    override fun getTrueAngularRadius(time: Date): Float {
+        val t = ((julianDay(time) - 2451545.0f) / 36525.0f).toFloat()
+        val distanceEarthRadii = 1.0f / sin(lunarHorizontalParallax(t) * DEGREES_TO_RADIANS)
+        val distanceKm = distanceEarthRadii * SolarSystemBody.Earth.meanRadiusKm
+        return asin((SolarSystemBody.Moon.meanRadiusKm / distanceKm).coerceIn(-1f, 1f))
     }
 
     /** Returns the resource id for the planet's image.  */

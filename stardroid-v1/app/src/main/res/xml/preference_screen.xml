@@ -42,6 +42,11 @@
         android:key="show_sky_gradient"
         android:summary="@string/show_sky_gradient_preference_summary"
         android:title="@string/show_sky_gradient_preference_title" />
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:key="show_true_size"
+        android:summary="@string/show_true_size_preference_summary"
+        android:title="@string/show_true_size_preference_title" />
 
   </PreferenceCategory>
 
