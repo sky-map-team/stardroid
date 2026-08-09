@@ -53,7 +53,8 @@ public class ImagePrimitive extends AbstractPrimitive {
 
   public boolean requiresBlending = false;
 
-  private final float imageScale;
+  private float imageScale;
+  private Vector3 upVec;
   private final Resources resources;
 
 
@@ -130,6 +131,7 @@ public class ImagePrimitive extends AbstractPrimitive {
   }
 
   public void setUpVector(Vector3 upVec) {
+    this.upVec = upVec;
     Vector3 p = this.getLocation();
     Vector3 u = p.times(upVec).normalizedCopy().unaryMinus();
     Vector3 v = u.times(p);
@@ -145,5 +147,16 @@ public class ImagePrimitive extends AbstractPrimitive {
     vx = v.x;
     vy = v.y;
     vz = v.z;
+  }
+
+  /**
+   * Updates the image's angular half-width (see the constructor's {@code imageScale} parameter)
+   * and re-derives the corner vectors from the last up-vector passed to {@link #setUpVector}.
+   * Used to resize a body's image every frame (e.g. for the "true-to-life sizes" setting)
+   * without reconstructing the primitive or reloading its bitmap.
+   */
+  public void setScale(float imageScale) {
+    this.imageScale = imageScale;
+    setUpVector(upVec);
   }
 }

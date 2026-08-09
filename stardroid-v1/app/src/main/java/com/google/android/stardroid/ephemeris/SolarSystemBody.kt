@@ -36,7 +36,9 @@ enum class SolarSystemBody
     // String ID for the body's name
     val nameResourceId: Int,
     // How frequently to update the body's position
-    val updateFrequencyMs: Long
+    val updateFrequencyMs: Long,
+    // Mean physical radius, in kilometers.
+    val meanRadiusKm: Float
 ) {
     // The order here is the order in which they are drawn.  To ensure that during
     // conjunctions they display "naturally" order them in reverse distance from Earth.
@@ -45,46 +47,59 @@ enum class SolarSystemBody
     Pluto(
         R.drawable.pluto,
         R.string.pluto,
-        TimeConstants.MILLISECONDS_PER_HOUR
+        TimeConstants.MILLISECONDS_PER_HOUR,
+        1188.0f
     ),
-    Neptune(R.drawable.neptune, R.string.neptune, TimeConstants.MILLISECONDS_PER_HOUR),
+    Neptune(
+        R.drawable.neptune,
+        R.string.neptune,
+        TimeConstants.MILLISECONDS_PER_HOUR,
+        24622.0f
+    ),
     Uranus(
         R.drawable.uranus,
         R.string.uranus,
-        TimeConstants.MILLISECONDS_PER_HOUR
+        TimeConstants.MILLISECONDS_PER_HOUR,
+        25362.0f
     ),
     Saturn(
         R.drawable.saturn,
         R.string.saturn,
-        TimeConstants.MILLISECONDS_PER_HOUR
+        TimeConstants.MILLISECONDS_PER_HOUR,
+        58232.0f
     ),
     Jupiter(
         R.drawable.jupiter,
         R.string.jupiter,
-        TimeConstants.MILLISECONDS_PER_HOUR
+        TimeConstants.MILLISECONDS_PER_HOUR,
+        69911.0f
     ),
     Mars(
         R.drawable.mars,
         R.string.mars,
-        TimeConstants.MILLISECONDS_PER_HOUR
+        TimeConstants.MILLISECONDS_PER_HOUR,
+        3390.0f
     ),
     Sun(
         R.drawable.sun,
         R.string.sun,
-        TimeConstants.MILLISECONDS_PER_HOUR
+        TimeConstants.MILLISECONDS_PER_HOUR,
+        696000.0f
     ),
     Mercury(
         R.drawable.mercury,
         R.string.mercury,
-        TimeConstants.MILLISECONDS_PER_HOUR
+        TimeConstants.MILLISECONDS_PER_HOUR,
+        2440.0f
     ),
     Venus(
         R.drawable.venus,
         R.string.venus,
-        TimeConstants.MILLISECONDS_PER_HOUR
+        TimeConstants.MILLISECONDS_PER_HOUR,
+        6052.0f
     ),
-    Moon(R.drawable.moon4, R.string.moon, TimeConstants.MILLISECONDS_PER_MINUTE),
-    Earth(R.drawable.earth, R.string.earth, TimeConstants.MILLISECONDS_PER_HOUR);
+    Moon(R.drawable.moon4, R.string.moon, TimeConstants.MILLISECONDS_PER_MINUTE, 1737.0f),
+    Earth(R.drawable.earth, R.string.earth, TimeConstants.MILLISECONDS_PER_HOUR, 6371.0f);
 
     // Taken from JPL's Planetary Positions page: http://ssd.jpl.nasa.gov/?planet_pos
     // This gives us a good approximation for the years 1800 to 2050 AD.

@@ -81,6 +81,10 @@
         translation_description="Setting toggle title: whether to show the blue sky gradient during the day">Show sky gradient</string>
     <string name="show_sky_gradient_preference_summary"
         translation_description="Setting toggle summary for sky gradient: explains what the feature does">Shades the sky blue near the Sun and dark on the opposite side</string>
+    <string name="show_true_size_preference_title"
+        translation_description="Setting toggle title: whether to render the Sun, Moon, and planets at their true size">Show true-to-life sizes</string>
+    <string name="show_true_size_preference_summary"
+        translation_description="Setting toggle summary: explains what the true size feature does, and why you might want it (e.g. eclipses)">Draws the Sun, Moon, and planets at their actual size in the sky, instead of enlarged for visibility. Useful for seeing eclipses to scale.</string>
     <string name="ecliptic" translation_description="Label for the ecliptic layer — the apparent annual path of the Sun across the sky">Ecliptic</string>
     <string name="dialog_accept" translation_description="accepting the licence agreement">Accept</string>
     <string name="dialog_decline" translation_description="declining the licence agreement">No Thanks</string>

@@ -11,7 +11,12 @@ package com.google.android.stardroid.space
 
 import com.google.android.stardroid.ephemeris.SolarSystemBody
 import com.google.android.stardroid.math.Vector3
+import com.google.android.stardroid.math.MathUtils
+import com.google.android.stardroid.math.heliocentricCoordinatesFromOrbitalElements
 import java.util.*
+
+// Kilometers per astronomical unit.
+private const val KM_PER_AU = 149597870.7f
 
 /**
  * The Sun is special as it's at the center of the solar system.
@@ -28,4 +33,13 @@ class Sun : SunOrbitingObject(SolarSystemBody.Sun) {
     // Moon. We shouldn't call this method for those bodies, but we want to do
     // something sane if we do.
     override fun getMagnitude(time: Date) = -27.0f
+
+    // The Sun has no orbital elements of its own (it's the heliocentric origin), so it can't use
+    // the base SolarSystemObject calculation; use Earth's distance from the Sun instead.
+    override fun getTrueAngularRadius(time: Date): Float {
+        val earthCoords =
+            heliocentricCoordinatesFromOrbitalElements(SolarSystemBody.Earth.getOrbitalElements(time))
+        val earthDistanceKm = earthCoords.length * KM_PER_AU
+        return MathUtils.asin((SolarSystemBody.Sun.meanRadiusKm / earthDistanceKm).coerceIn(-1f, 1f))
+    }
 }
