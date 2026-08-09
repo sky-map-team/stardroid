@@ -34,6 +34,7 @@
     <string name="location_set_button" translation_description="Button that confirms and applies the manually entered location">स्थान सेट करें</string>
     <string name="location_place_not_found" translation_description="Inline error shown when a place name search returns no results">स्थान नहीं मिला — अधिक विशिष्ट नाम आजमाएं</string>
     <string name="location_geocoder_offline" translation_description="Inline message shown when geocoding fails because there is no internet connection">कोई इंटरनेट नहीं — सीधे निर्देशांक दर्ज करें</string>
+    <string name="location_geocoder_unavailable" translation_description="Inline message shown when place name lookup is disabled because the device has no geocoding backend, typically due to missing Google Play Services">इस डिवाइस पर कोई जियोकोडिंग सेवा नहीं है — सीधे निर्देशांक दर्ज करें</string>
     <string name="location_invalid_latitude" translation_description="Validation error for latitude values outside the valid range">अक्षांश −90 और 90 के बीच होना चाहिए</string>
     <string name="location_invalid_longitude" translation_description="Validation error for longitude values outside the valid range">देशांतर −180 और 180 के बीच होना चाहिए</string>
     <string name="location_management_title" translation_description="Title of the location management screen">आपका स्थान</string>
@@ -76,6 +77,10 @@
     <string name="font_size_preference_description" translation_description="help to go along with the change font size preference">लेबल टेक्स्ट आकार समायोजित करें</string>
     <string name="show_sky_gradient_preference_title" translation_description="Setting toggle title: whether to show the blue sky gradient during the day">आकाश ग्रेडिएंट दिखाएं</string>
     <string name="show_sky_gradient_preference_summary" translation_description="Setting toggle summary for sky gradient: explains what the feature does">सूर्य के पास आकाश को नीला और विपरीत ओर गहरा करता है</string>
+    <string name="show_true_size_preference_title" translation_description="Setting toggle title: whether to render the Sun, Moon, and planets at their true size">वास्तविक आकार दिखाएँ</string>
+    <string name="show_true_size_preference_summary" translation_description="Setting toggle summary: explains what the true size feature does, and why you might want it (e.g. eclipses)">
+    सूर्य, चन्द्रमा और ग्रहों को आकाश में उनके वास्तविक आकार में दिखाता है, न कि दृश्यता के लिए बड़ा करके। ग्रहणों को सही पैमाने पर देखने के लिए उपयोगी है।
+    </string>
     <string name="ecliptic" translation_description="Label for the ecliptic layer — the apparent annual path of the Sun across the sky">क्रांतिवृत्त</string>
     <string name="dialog_accept" translation_description="accepting the licence agreement">स्वीकार करें</string>
     <string name="dialog_decline" translation_description="declining the licence agreement">नहीं, धन्यवाद</string>
@@ -190,6 +195,9 @@
     <string name="diagnostics_activity_phone" translation_description="Row label in the Diagnostics screen for the device model name">डिवाइस</string>
     <string name="diagnostics_activity_android_version" translation_description="Row label in the Diagnostics screen for the Android OS version">Android संस्करण</string>
     <string name="diagnostics_activity_sky_map_version" translation_description="Row label in the Diagnostics screen for the Sky Map app version">Sky Map संस्करण</string>
+    <!-- tm:omitted name="diagnostics_skymap_version_format" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_flavor_gms" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_flavor_fdroid" reason="identical_to_source" -->
     <string name="diagnostics_activity_sensors_heading" translation_description="Section heading in the Diagnostics screen for sensor readings">सेंसर</string>
     <string name="diagnostics_activity_compass" translation_description="Row label in the Diagnostics screen for the compass (magnetic field) sensor">कंपास</string>
     <string name="diagnostics_activity_accelerometer" translation_description="Row label in the Diagnostics screen for the accelerometer sensor">त्वरणमापी</string>

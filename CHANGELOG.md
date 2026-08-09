@@ -5,6 +5,26 @@ All notable changes to Sky Map are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [1.18.0] Eclipse - 2026-08-09
+
+<img src="stardroid-v1/assets/splashscreens/1_18_0_eclipse_icon.png" width="80" alt="Eclipse" />
+
+Together, the two `#954` changes below let you preview how much of the Sun will be obscured from
+your location during a solar eclipse, including the total eclipse of 12 August 2026.
+
+### Added
+- A **Show true-to-life sizes** setting (off by default) that renders the Sun, Moon, and planets at their real computed angular size instead of the fixed, exaggerated-for-visibility constants, so eclipses render to scale. Size is recomputed every frame — decoupled from the per-body position-update throttle — so the setting takes effect immediately and the Moon's size tracks its continuously changing distance ([#954](https://github.com/sky-map-team/stardroid/pull/954))
+
+### Fixed
+- The Moon's position used only geocentric coordinates, ignoring the observer's location on Earth (diurnal parallax) and causing errors of up to ~1° — roughly two lunar diameters. Added `Universe`/`Moon.getTopocentricRaDec` and switched the renderer to use it ([#954](https://github.com/sky-map-team/stardroid/pull/954))
+- Overlapping sky map labels are now detected and offset, keeping crowded regions readable ([#944](https://github.com/sky-map-team/stardroid/pull/944), [#764](https://github.com/sky-map-team/stardroid/issues/764))
+- Deep-sky object icons sporadically failed to render: `ImageObjectManager` only sized its texture arrays in the `fullReload` branch of `reload()`, but layers loading data asynchronously take the partial path ([#952](https://github.com/sky-map-team/stardroid/pull/952))
+- Vega's Simplified Chinese label identified it as Alpha Aquilae (`天鹰座 α`) rather than Alpha Lyrae (`天琴座 α`) ([#951](https://github.com/sky-map-team/stardroid/pull/951))
+
+### Changed
+- Redrew the stars and constellations sidebar icons, which previously reused the platform favorite and share glyphs and were easy to confuse ([#955](https://github.com/sky-map-team/stardroid/pull/955))
+- Removed the dead `show_planetary_images` point-primitive fallback path, which had no UI ever wired to it ([#954](https://github.com/sky-map-team/stardroid/pull/954))
+
 ## [1.17.1] Neptune - 2026-07-30
 
 <img src="stardroid-v1/assets/splashscreens/1_17_1_neptune_icon.png" width="80" alt="Neptune" />

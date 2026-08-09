@@ -1,12 +1,21 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<b>Μικρές διορθώσεις σφαλμάτων και μια ανακοίνωση</b><ul><li>Διορθώθηκε ένα σφάλμα κατά την εκκίνηση που αντιμετώπιζαν ορισμένοι χρήστες αμέσως μετά την παραχώρηση άδειας τοποθεσίας.</li><li>Η οθόνη Διαγνωστικών εμφανίζει τώρα ποια έκδοση (Gms ή F-Droid) χρησιμοποιείτε.</li><li>Το Sky Map v2 έρχεται &#8212; μια πλήρης επανεγγραφή. Εγγραφείτε στην έκδοση beta για να το δοκιμάσετε νωρίς (δείτε παραπάνω).</li></ul>]]></string>
-    <string name="beta_user_help_text" translation_description="HTML content shown to beta testers asking for feedback. Please do not change the &lt; and &gt; markup."><![CDATA[<b>Ζητούνται χρήστες beta!</b>
-        <p>Το Sky Map v2 είναι σχεδόν εδώ. Είναι μια πλήρης επανεγγραφή από την αρχή και θα θέλαμε πολύ την πρώιμη ανατροφοδότησή σας.
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Προεπισκόπηση μιας ηλιακής έκλειψης</h2>
+        <p>Το Sky Map μπορεί τώρα να σας δείξει πόσο από τον Ήλιο θα καλυφθεί κατά τη διάρκεια μιας έκλειψης, όπως φαίνεται
+        από το σημείο που βρίσκεστε &#8212; συμπεριλαμβανομένης της ολικής έκλειψης της 12ης Αυγούστου 2026.</p>
+        <p>Δύο αλλαγές καθιστούν αυτό εφικτό. Η θέση της Σελήνης λαμβάνει πλέον υπόψη την τοποθεσία σας
+        στη Γη, όχι μόνο το κέντρο της Γης, διορθώνοντας σφάλματα έως και μιας μοίρας &#8212; περίπου
+        δύο πλάτη Σελήνης. Και μια νέα ρύθμιση <b>Εμφάνιση πραγματικών μεγεθών</b> σχεδιάζει τον Ήλιο, τη Σελήνη και
+        τους πλανήτες στα πραγματικά τους γωνιακά μεγέθη αντί για τους μεγεθυμένους δείκτες που χρησιμοποιούνται για ορατότητα.
+        Ενεργοποιήστε την, και μετά προχωρήστε τον χρόνο για να παρακολουθήσετε μια έκλειψη να εξελίσσεται σε κλίμακα.</p>
 
-        Για να συμμετάσχετε στην beta, επισκεφτείτε
-        <a href="https://play.google.com/apps/testing/com.google.android.stardroid">https://play.google.com/apps/testing/com.google.android.stardroid</a>
-        και θα λάβετε το v2 μόλις είναι έτοιμο.
-        </p>]]></string>
+        <h2>Ένας πιο τακτοποιημένος ουρανός</h2>
+        <ul>
+        <li>Οι επικαλυπτόμενες ετικέτες εντοπίζονται πλέον και μετακινούνται, ώστε οι πολυσύχναστες περιοχές να παραμένουν ευανάγνωστες.</li>
+        <li>Επανασχεδιασμένα εικονίδια αστεριών και αστερισμών στην πλαϊνή γραμμή που ήταν εύκολο να μπερδευτούν.</li>
+        </ul>
+
+        <p>Το Sky Map v2 έρχεται &#8212; μια πλήρης επανεγγραφή. Εγγραφείτε στην έκδοση beta για να το δοκιμάσετε νωρίς (δείτε παραπάνω).</p>]]></string>
+    <string name="beta_user_help_text" translation_description="HTML content shown to beta testers asking for feedback. Please do not change the &lt; and &gt; markup."><![CDATA[<b>Ζητούνται χρήστες beta!</b><p>Το Sky Map v2 είναι σχεδόν εδώ. Είναι μια πλήρης επανεγγραφή από την αρχή και θα θέλαμε την πρώιμη ανατροφοδότησή σας.Για να συμμετάσχετε στην beta, επισκεφθείτε<a href="https://play.google.com/apps/testing/com.google.android.stardroid">https://play.google.com/apps/testing/com.google.android.stardroid</a>και θα λάβετε την v2 μόλις είναι έτοιμη.</p>]]></string>
 </resources>

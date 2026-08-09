@@ -34,6 +34,7 @@
     <string name="location_set_button" translation_description="Button that confirms and applies the manually entered location">Angi posisjon</string>
     <string name="location_place_not_found" translation_description="Inline error shown when a place name search returns no results">Sted ikke funnet – prøv et mer spesifikt navn</string>
     <string name="location_geocoder_offline" translation_description="Inline message shown when geocoding fails because there is no internet connection">Ingen internett – angi koordinater direkte</string>
+    <string name="location_geocoder_unavailable" translation_description="Inline message shown when place name lookup is disabled because the device has no geocoding backend, typically due to missing Google Play Services">Ingen geokodingstjeneste på denne enheten — skriv inn koordinater direkte</string>
     <string name="location_invalid_latitude" translation_description="Validation error for latitude values outside the valid range">Breddegrad må være mellom −90 og 90</string>
     <string name="location_invalid_longitude" translation_description="Validation error for longitude values outside the valid range">Lengdegrad må være mellom −180 og 180</string>
     <string name="location_management_title" translation_description="Title of the location management screen">Din posisjon</string>
@@ -76,6 +77,10 @@
     <string name="font_size_preference_description" translation_description="help to go along with the change font size preference">Juster tekststørrelse på etiketter</string>
     <string name="show_sky_gradient_preference_title" translation_description="Setting toggle title: whether to show the blue sky gradient during the day">Vis himmelgradient</string>
     <string name="show_sky_gradient_preference_summary" translation_description="Setting toggle summary for sky gradient: explains what the feature does">Skygger himmelen blå nær solen og mørk på motsatt side</string>
+    <string name="show_true_size_preference_title" translation_description="Setting toggle title: whether to render the Sun, Moon, and planets at their true size">Vis virkelige størrelser</string>
+    <string name="show_true_size_preference_summary" translation_description="Setting toggle summary: explains what the true size feature does, and why you might want it (e.g. eclipses)">
+    Tegner Solen, Månen og planetene i deres faktiske størrelse på himmelen, i stedet for forstørret for synlighet. Nyttig for å se formørkelser i riktig skala.
+    </string>
     <string name="ecliptic" translation_description="Label for the ecliptic layer — the apparent annual path of the Sun across the sky">Ekliptikken</string>
     <string name="dialog_accept" translation_description="accepting the licence agreement">Aksepter</string>
     <string name="dialog_decline" translation_description="declining the licence agreement">Nei takk</string>
@@ -193,6 +198,9 @@
     <string name="diagnostics_activity_phone" translation_description="Row label in the Diagnostics screen for the device model name">Enhet</string>
     <string name="diagnostics_activity_android_version" translation_description="Row label in the Diagnostics screen for the Android OS version">Android-versjon</string>
     <string name="diagnostics_activity_sky_map_version" translation_description="Row label in the Diagnostics screen for the Sky Map app version">Sky Map-versjon</string>
+    <!-- tm:omitted name="diagnostics_skymap_version_format" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_flavor_gms" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_flavor_fdroid" reason="identical_to_source" -->
     <string name="diagnostics_activity_sensors_heading" translation_description="Section heading in the Diagnostics screen for sensor readings">Sensorer</string>
     <string name="diagnostics_activity_compass" translation_description="Row label in the Diagnostics screen for the compass (magnetic field) sensor">Kompass</string>
     <string name="diagnostics_activity_accelerometer" translation_description="Row label in the Diagnostics screen for the accelerometer sensor">Akselerometer</string>

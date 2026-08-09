@@ -34,6 +34,9 @@
     <string name="location_set_button" translation_description="Button that confirms and applies the manually entered location">Locatie instellen</string>
     <string name="location_place_not_found" translation_description="Inline error shown when a place name search returns no results">Plaats niet gevonden — probeer een specifiekere naam</string>
     <string name="location_geocoder_offline" translation_description="Inline message shown when geocoding fails because there is no internet connection">Geen internet — voer coördinaten rechtstreeks in</string>
+    <string name="location_geocoder_unavailable" translation_description="Inline message shown when place name lookup is disabled because the device has no geocoding backend, typically due to missing Google Play Services">
+    Geocodering service niet beschikbaar op dit apparaat — voer coördinaten direct in
+    </string>
     <string name="location_invalid_latitude" translation_description="Validation error for latitude values outside the valid range">Breedtegraad moet tussen −90 en 90 liggen</string>
     <string name="location_invalid_longitude" translation_description="Validation error for longitude values outside the valid range">Lengtegraad moet tussen −180 en 180 liggen</string>
     <string name="location_management_title" translation_description="Title of the location management screen">Je locatie</string>
@@ -77,6 +80,10 @@
     <string name="show_sky_gradient_preference_title" translation_description="Setting toggle title: whether to show the blue sky gradient during the day">Luchtverloop weergeven</string>
     <string name="show_sky_gradient_preference_summary" translation_description="Setting toggle summary for sky gradient: explains what the feature does">
     Geeft de lucht een blauwe tint nabij de zon en donker aan de tegenovergestelde zijde
+    </string>
+    <string name="show_true_size_preference_title" translation_description="Setting toggle title: whether to render the Sun, Moon, and planets at their true size">Toon realistische groottes</string>
+    <string name="show_true_size_preference_summary" translation_description="Setting toggle summary: explains what the true size feature does, and why you might want it (e.g. eclipses)">
+    Tekent de Zon, Maan en planeten op hun werkelijke grootte aan de hemel, in plaats van vergroot voor zichtbaarheid. Handig om verduisteringen op schaal te zien.
     </string>
     <string name="ecliptic" translation_description="Label for the ecliptic layer — the apparent annual path of the Sun across the sky">Ecliptica</string>
     <string name="dialog_accept" translation_description="accepting the licence agreement">Accepteren</string>
@@ -196,6 +203,9 @@
     <string name="diagnostics_activity_phone" translation_description="Row label in the Diagnostics screen for the device model name">Apparaat</string>
     <string name="diagnostics_activity_android_version" translation_description="Row label in the Diagnostics screen for the Android OS version">Android-versie</string>
     <string name="diagnostics_activity_sky_map_version" translation_description="Row label in the Diagnostics screen for the Sky Map app version">Sky Map-versie</string>
+    <!-- tm:omitted name="diagnostics_skymap_version_format" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_flavor_gms" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_flavor_fdroid" reason="identical_to_source" -->
     <string name="diagnostics_activity_sensors_heading" translation_description="Section heading in the Diagnostics screen for sensor readings">Sensoren</string>
     <string name="diagnostics_activity_compass" translation_description="Row label in the Diagnostics screen for the compass (magnetic field) sensor">Kompas</string>
     <string name="diagnostics_activity_accelerometer" translation_description="Row label in the Diagnostics screen for the accelerometer sensor">Versnellingsmeter</string>

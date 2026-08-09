@@ -30,6 +30,7 @@
     <!-- tm:omitted name="location_set_button" reason="identical_to_source" -->
     <!-- tm:omitted name="location_place_not_found" reason="identical_to_source" -->
     <!-- tm:omitted name="location_geocoder_offline" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_geocoder_unavailable" reason="identical_to_source" -->
     <!-- tm:omitted name="location_invalid_latitude" reason="identical_to_source" -->
     <!-- tm:omitted name="location_invalid_longitude" reason="identical_to_source" -->
     <!-- tm:omitted name="location_management_title" reason="identical_to_source" -->
@@ -72,6 +73,8 @@
     <!-- tm:omitted name="font_size_preference_description" reason="identical_to_source" -->
     <!-- tm:omitted name="show_sky_gradient_preference_title" reason="identical_to_source" -->
     <!-- tm:omitted name="show_sky_gradient_preference_summary" reason="identical_to_source" -->
+    <!-- tm:omitted name="show_true_size_preference_title" reason="identical_to_source" -->
+    <!-- tm:omitted name="show_true_size_preference_summary" reason="identical_to_source" -->
     <!-- tm:omitted name="ecliptic" reason="identical_to_source" -->
     <!-- tm:omitted name="dialog_accept" reason="identical_to_source" -->
     <!-- tm:omitted name="dialog_decline" reason="identical_to_source" -->
@@ -183,6 +186,9 @@
     <!-- tm:omitted name="diagnostics_activity_phone" reason="identical_to_source" -->
     <!-- tm:omitted name="diagnostics_activity_android_version" reason="identical_to_source" -->
     <!-- tm:omitted name="diagnostics_activity_sky_map_version" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_skymap_version_format" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_flavor_gms" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_flavor_fdroid" reason="identical_to_source" -->
     <!-- tm:omitted name="diagnostics_activity_sensors_heading" reason="identical_to_source" -->
     <!-- tm:omitted name="diagnostics_activity_compass" reason="identical_to_source" -->
     <!-- tm:omitted name="diagnostics_activity_accelerometer" reason="identical_to_source" -->

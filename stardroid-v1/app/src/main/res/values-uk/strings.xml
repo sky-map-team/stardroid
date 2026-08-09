@@ -34,6 +34,7 @@
     <string name="location_set_button" translation_description="Button that confirms and applies the manually entered location">Встановити місцезнаходження</string>
     <string name="location_place_not_found" translation_description="Inline error shown when a place name search returns no results">Місце не знайдено — спробуйте більш конкретну назву</string>
     <string name="location_geocoder_offline" translation_description="Inline message shown when geocoding fails because there is no internet connection">Немає інтернету — введіть координати вручну</string>
+    <string name="location_geocoder_unavailable" translation_description="Inline message shown when place name lookup is disabled because the device has no geocoding backend, typically due to missing Google Play Services">На цьому пристрої немає служби геокодування — введіть координати безпосередньо</string>
     <string name="location_invalid_latitude" translation_description="Validation error for latitude values outside the valid range">Широта має бути від −90 до 90</string>
     <string name="location_invalid_longitude" translation_description="Validation error for longitude values outside the valid range">Довгота має бути від −180 до 180</string>
     <string name="location_management_title" translation_description="Title of the location management screen">Ваше місцезнаходження</string>
@@ -76,6 +77,10 @@
     <string name="font_size_preference_description" translation_description="help to go along with the change font size preference">Налаштування розміру тексту мітки</string>
     <string name="show_sky_gradient_preference_title" translation_description="Setting toggle title: whether to show the blue sky gradient during the day">Показувати градієнт неба</string>
     <string name="show_sky_gradient_preference_summary" translation_description="Setting toggle summary for sky gradient: explains what the feature does">Затінює небо синім біля Сонця та темним на протилежній стороні</string>
+    <string name="show_true_size_preference_title" translation_description="Setting toggle title: whether to render the Sun, Moon, and planets at their true size">Показувати реальні розміри</string>
+    <string name="show_true_size_preference_summary" translation_description="Setting toggle summary: explains what the true size feature does, and why you might want it (e.g. eclipses)">
+    Малює Сонце, Місяць і планети у їхньому фактичному розмірі на небі, замість збільшених для видимості. Корисно для спостереження затемнень у масштабі.
+    </string>
     <string name="ecliptic" translation_description="Label for the ecliptic layer — the apparent annual path of the Sun across the sky">Екліптика</string>
     <string name="dialog_accept" translation_description="accepting the licence agreement">Прийняти</string>
     <string name="dialog_decline" translation_description="declining the licence agreement">Ні, дякую</string>
@@ -194,6 +199,9 @@
     <string name="diagnostics_activity_phone" translation_description="Row label in the Diagnostics screen for the device model name">Пристрій</string>
     <string name="diagnostics_activity_android_version" translation_description="Row label in the Diagnostics screen for the Android OS version">Версія Android</string>
     <string name="diagnostics_activity_sky_map_version" translation_description="Row label in the Diagnostics screen for the Sky Map app version">Версія Sky Map</string>
+    <!-- tm:omitted name="diagnostics_skymap_version_format" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_flavor_gms" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_flavor_fdroid" reason="identical_to_source" -->
     <string name="diagnostics_activity_sensors_heading" translation_description="Section heading in the Diagnostics screen for sensor readings">Сенсори</string>
     <string name="diagnostics_activity_compass" translation_description="Row label in the Diagnostics screen for the compass (magnetic field) sensor">Компас</string>
     <string name="diagnostics_activity_accelerometer" translation_description="Row label in the Diagnostics screen for the accelerometer sensor">Акселерометр</string>

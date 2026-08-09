@@ -1,12 +1,16 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<b>Drobné opravy chyb a oznámení</b><ul><li>Opravena chyba při spuštění, kterou někteří uživatelé zaznamenali hned po udělení povolení k poloze.</li><li>Obrazovka Diagnostika nyní ukazuje, jakou verzi (Gms nebo F-Droid) používáte.</li><li>Sky Map v2 přichází &#8212; kompletní přepsání. Připojte se k beta testování a vyzkoušejte si ji dříve (viz výše).</li></ul>]]></string>
-    <string name="beta_user_help_text" translation_description="HTML content shown to beta testers asking for feedback. Please do not change the &lt; and &gt; markup."><![CDATA[<b>Hledáme beta testery!</b>
-        <p>Sky Map v2 je téměř tady. Jde o kompletní přepsání od základů a uvítáme vaši včasnou zpětnou vazbu.
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Náhled zatmění Slunce</h2>
+        <p>Sky Map vám nyní ukáže, jak velká část Slunce bude zakryta během zatmění, viděno z místa, kde stojíte &#8212; včetně úplného zatmění 12. srpna 2026.</p>
+        <p>Dvě změny to umožňují. Poloha Měsíce nyní zohledňuje vaši polohu na Zemi, nikoli pouze střed Země, čímž opravuje chyby až o jeden stupeň &#8212; což jsou přibližně dvě šířky Měsíce. A nové nastavení <b>Zobrazit skutečné velikosti</b> kreslí Slunce, Měsíc a planety v jejich skutečných úhlových velikostech namísto zvětšených značek používaných pro viditelnost. Zapněte jej a poté posuňte čas dopředu, abyste sledovali zatmění v měřítku.</p>
 
-        Chcete-li se připojit k beta testování, navštivte prosím
-        <a href="https://play.google.com/apps/testing/com.google.android.stardroid">https://play.google.com/apps/testing/com.google.android.stardroid</a>
-        a v2 získáte, jakmile bude připravena.
-        </p>]]></string>
+        <h2>Přehlednější obloha</h2>
+        <ul>
+        <li>Překrývající se popisky jsou nyní detekovány a posunuty od sebe, takže přeplněné oblasti zůstávají čitelné.</li>
+        <li>Překreslené ikony hvězd a souhvězdí na postranním panelu, které se snadno zaměňovaly.</li>
+        </ul>
+
+        <p>Sky Map v2 přichází &#8212; kompletní přepsání. Připojte se k beta verzi a vyzkoušejte ji dříve (viz výše).</p>]]></string>
+    <string name="beta_user_help_text" translation_description="HTML content shown to beta testers asking for feedback. Please do not change the &lt; and &gt; markup."><![CDATA[<b>Hledáme beta testery!</b><p>Sky Map v2 je téměř tady. Jedná se o kompletní přepsání od základů a rádi bychom získali vaši včasnou zpětnou vazbu.Chcete-li se připojit k beta testování, navštivte prosím<a href="https://play.google.com/apps/testing/com.google.android.stardroid">https://play.google.com/apps/testing/com.google.android.stardroid</a>a v2 získáte, jakmile bude připravena.</p>]]></string>
 </resources>

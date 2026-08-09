@@ -2,12 +2,22 @@
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
     <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[
-        <b>Minor bug fixes and an announcement</b>
+        <h2>Preview a solar eclipse</h2>
+        <p>Sky Map can now show you how much of the Sun will be covered during an eclipse, as seen
+        from where you are standing &#8212; including the total eclipse of 12 August 2026.</p>
+        <p>Two changes make this work together. The Moon\'s position now accounts for your location
+        on Earth, not just the Earth\'s centre, correcting errors of up to a degree &#8212; about
+        two Moon widths. And a new <b>Show true-to-life sizes</b> setting draws the Sun, Moon and
+        planets at their real angular sizes instead of the enlarged markers used for visibility.
+        Turn it on, then wind the time forward to watch an eclipse play out to scale.</p>
+
+        <h2>A tidier sky</h2>
         <ul>
-        <li>Fixed a startup crash some users hit right after granting location permission.</li>
-        <li>The Diagnostics screen now shows which build (Gms or F-Droid) you\'re running.</li>
-        <li>Sky Map v2 is coming &#8212; a complete rewrite. Join the beta to try it early (see above).</li>
+        <li>Overlapping labels are now detected and nudged apart, so crowded regions stay readable.</li>
+        <li>Redrawn stars and constellations sidebar icons that were easy to confuse.</li>
         </ul>
+
+        <p>Sky Map v2 is coming &#8212; a complete rewrite. Join the beta to try it early (see above).</p>
     ]]></string>
     <string name="beta_user_help_text" translation_description="HTML content shown to beta testers asking for feedback. Please do not change the &lt; and &gt; markup."><![CDATA[
         <b>Beta users wanted!</b>

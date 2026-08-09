@@ -30,6 +30,7 @@
     <string name="location_set_button" translation_description="Button that confirms and applies the manually entered location">設定位置</string>
     <string name="location_place_not_found" translation_description="Inline error shown when a place name search returns no results">找不到地點 — 請嘗試更具體的名稱</string>
     <string name="location_geocoder_offline" translation_description="Inline message shown when geocoding fails because there is no internet connection">無網際網路 — 請直接輸入座標</string>
+    <string name="location_geocoder_unavailable" translation_description="Inline message shown when place name lookup is disabled because the device has no geocoding backend, typically due to missing Google Play Services">此裝置沒有地理編碼服務 — 請直接輸入座標</string>
     <string name="location_invalid_latitude" translation_description="Validation error for latitude values outside the valid range">緯度必須介於 −90 和 90 之間</string>
     <string name="location_invalid_longitude" translation_description="Validation error for longitude values outside the valid range">經度必須介於 −180 和 180 之間</string>
     <string name="location_management_title" translation_description="Title of the location management screen">您的位置</string>
@@ -72,6 +73,8 @@
     <string name="font_size_preference_description" translation_description="help to go along with the change font size preference">調整標籤文字大小</string>
     <string name="show_sky_gradient_preference_title" translation_description="Setting toggle title: whether to show the blue sky gradient during the day">顯示天空漸層</string>
     <string name="show_sky_gradient_preference_summary" translation_description="Setting toggle summary for sky gradient: explains what the feature does">在太陽附近將天空著色為藍色，在相反側著色為深色</string>
+    <string name="show_true_size_preference_title" translation_description="Setting toggle title: whether to render the Sun, Moon, and planets at their true size">顯示真實大小</string>
+    <string name="show_true_size_preference_summary" translation_description="Setting toggle summary: explains what the true size feature does, and why you might want it (e.g. eclipses)">繪製太陽、月亮和行星在天空中的實際大小，而非為了可見性而放大。對於按比例觀看食很有用。</string>
     <string name="ecliptic" translation_description="Label for the ecliptic layer — the apparent annual path of the Sun across the sky">黃道</string>
     <string name="dialog_accept" translation_description="accepting the licence agreement">接受</string>
     <string name="dialog_decline" translation_description="declining the licence agreement">不，謝謝</string>
@@ -186,6 +189,9 @@
     <string name="diagnostics_activity_phone" translation_description="Row label in the Diagnostics screen for the device model name">裝置</string>
     <string name="diagnostics_activity_android_version" translation_description="Row label in the Diagnostics screen for the Android OS version">Android 版本</string>
     <string name="diagnostics_activity_sky_map_version" translation_description="Row label in the Diagnostics screen for the Sky Map app version">Sky Map 版本</string>
+    <!-- tm:omitted name="diagnostics_skymap_version_format" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_flavor_gms" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_flavor_fdroid" reason="identical_to_source" -->
     <string name="diagnostics_activity_sensors_heading" translation_description="Section heading in the Diagnostics screen for sensor readings">感應器</string>
     <string name="diagnostics_activity_compass" translation_description="Row label in the Diagnostics screen for the compass (magnetic field) sensor">羅盤</string>
     <string name="diagnostics_activity_accelerometer" translation_description="Row label in the Diagnostics screen for the accelerometer sensor">加速計</string>

@@ -1,9 +1,24 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<b>Mindre fejlrettelser og en meddelelse</b><ul><li>Rettet en opstartsfejl, som nogle brugere oplevede lige efter at have givet placeringstilladelse.</li><li>Diagnostikskærmen viser nu, hvilken version (Gms eller F-Droid) du kører.</li><li>Sky Map v2 er på vej &#8212; en komplet omskrivning. Deltag i betaen for at prøve den tidligt (se ovenfor).</li></ul>]]></string>
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Forhåndsvis en solformørkelse</h2>
+        <p>Sky Map kan nu vise dig, hvor meget af Solen der vil blive dækket under en formørkelse, set
+        fra hvor du står &#8212; inklusive den totale formørkelse den 12. august 2026.</p>
+        <p>To ændringer får dette til at fungere sammen. Månens position tager nu højde for din placering
+        på Jorden, ikke kun Jordens centrum, hvilket korrigerer fejl på op til en grad &#8212; omkring
+        to Månebredder. Og en ny <b>Vis virkelighedstro størrelser</b>-indstilling tegner Solen, Månen og
+        planeterne i deres reelle vinkelstørrelser i stedet for de forstørrede markører, der bruges til synlighed.
+        Slå den til, og spol derefter tiden frem for at se en formørkelse udspille sig i skala.</p>
+
+        <h2>En ryddeligere himmel</h2>
+        <ul>
+        <li>Overlappende etiketter registreres nu og skubbes fra hinanden, så overfyldte områder forbliver læselige.</li>
+        <li>Nye ikoner til stjerner og stjernebilleder i sidebjælken, der var nemme at forveksle.</li>
+        </ul>
+
+        <p>Sky Map v2 er på vej &#8212; en komplet omskrivning. Deltag i betaen for at prøve den tidligt (se ovenfor).</p>]]></string>
     <string name="beta_user_help_text" translation_description="HTML content shown to beta testers asking for feedback. Please do not change the &lt; and &gt; markup."><![CDATA[<b>Beta-brugere søges!</b>
-        <p>Sky Map v2 er næsten klar. Det er en komplet omskrivning fra bunden, og vi vil meget gerne have din tidlige feedback.
+        <p>Sky Map v2 er næsten her. Det er en komplet omskrivning fra bunden, og vi vil meget gerne have din tidlige feedback.
 
         For at deltage i betaen bedes du besøge
         <a href="https://play.google.com/apps/testing/com.google.android.stardroid">https://play.google.com/apps/testing/com.google.android.stardroid</a>

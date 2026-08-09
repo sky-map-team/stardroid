@@ -34,6 +34,9 @@
     <string name="location_set_button" translation_description="Button that confirms and applies the manually entered location">Ορισμός Τοποθεσίας</string>
     <string name="location_place_not_found" translation_description="Inline error shown when a place name search returns no results">Η τοποθεσία δεν βρέθηκε — δοκιμάστε ένα πιο συγκεκριμένο όνομα</string>
     <string name="location_geocoder_offline" translation_description="Inline message shown when geocoding fails because there is no internet connection">Χωρίς διαδίκτυο — εισάγετε τις συντεταγμένες απευθείας</string>
+    <string name="location_geocoder_unavailable" translation_description="Inline message shown when place name lookup is disabled because the device has no geocoding backend, typically due to missing Google Play Services">
+    Δεν υπάρχει υπηρεσία γεωκωδικοποίησης σε αυτήν τη συσκευή — εισαγάγετε τις συντεταγμένες απευθείας
+    </string>
     <string name="location_invalid_latitude" translation_description="Validation error for latitude values outside the valid range">Το γεωγραφικό πλάτος πρέπει να είναι μεταξύ −90 και 90</string>
     <string name="location_invalid_longitude" translation_description="Validation error for longitude values outside the valid range">Το γεωγραφικό μήκος πρέπει να είναι μεταξύ −180 και 180</string>
     <string name="location_management_title" translation_description="Title of the location management screen">Η Τοποθεσία σας</string>
@@ -76,6 +79,10 @@
     <string name="font_size_preference_description" translation_description="help to go along with the change font size preference">Απαιτεί επανεκκίνηση</string>
     <string name="show_sky_gradient_preference_title" translation_description="Setting toggle title: whether to show the blue sky gradient during the day">Εμφάνιση κλίσης ουρανού</string>
     <string name="show_sky_gradient_preference_summary" translation_description="Setting toggle summary for sky gradient: explains what the feature does">Σκιάζει τον ουρανό μπλε κοντά στον Ήλιο και σκοτεινό στην αντίθετη πλευρά</string>
+    <string name="show_true_size_preference_title" translation_description="Setting toggle title: whether to render the Sun, Moon, and planets at their true size">Εμφάνιση πραγματικών μεγεθών</string>
+    <string name="show_true_size_preference_summary" translation_description="Setting toggle summary: explains what the true size feature does, and why you might want it (e.g. eclipses)">
+    Σχεδιάζει τον Ήλιο, τη Σελήνη και τους πλανήτες στο πραγματικό τους μέγεθος στον ουρανό, αντί να είναι μεγεθυμένα για ορατότητα. Χρήσιμο για να βλέπετε τις εκλείψεις σε κλίμακα.
+    </string>
     <string name="ecliptic" translation_description="Label for the ecliptic layer — the apparent annual path of the Sun across the sky">Εκλειπτική</string>
     <string name="dialog_accept" translation_description="accepting the licence agreement">Αποδοχή</string>
     <string name="dialog_decline" translation_description="declining the licence agreement">Όχι, ευχαριστώ</string>
@@ -194,6 +201,9 @@
     <string name="diagnostics_activity_phone" translation_description="Row label in the Diagnostics screen for the device model name">Συσκευή</string>
     <string name="diagnostics_activity_android_version" translation_description="Row label in the Diagnostics screen for the Android OS version">Έκδοση Android</string>
     <string name="diagnostics_activity_sky_map_version" translation_description="Row label in the Diagnostics screen for the Sky Map app version">Έκδοση Sky Map</string>
+    <!-- tm:omitted name="diagnostics_skymap_version_format" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_flavor_gms" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_flavor_fdroid" reason="identical_to_source" -->
     <string name="diagnostics_activity_sensors_heading" translation_description="Section heading in the Diagnostics screen for sensor readings">Αισθητήρες</string>
     <string name="diagnostics_activity_compass" translation_description="Row label in the Diagnostics screen for the compass (magnetic field) sensor">Πυξίδα</string>
     <string name="diagnostics_activity_accelerometer" translation_description="Row label in the Diagnostics screen for the accelerometer sensor">Επιταχυνσόμετρο</string>

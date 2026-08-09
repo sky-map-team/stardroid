@@ -34,6 +34,7 @@
     <string name="location_set_button" translation_description="Button that confirms and applies the manually entered location">تعیین موقعیت</string>
     <string name="location_place_not_found" translation_description="Inline error shown when a place name search returns no results">مکان یافت نشد — نام دقیق‌تری را امتحان کنید</string>
     <string name="location_geocoder_offline" translation_description="Inline message shown when geocoding fails because there is no internet connection">بدون اینترنت — مختصات را مستقیماً وارد کنید</string>
+    <string name="location_geocoder_unavailable" translation_description="Inline message shown when place name lookup is disabled because the device has no geocoding backend, typically due to missing Google Play Services">سرویس ژئوکدینگ در این دستگاه موجود نیست — مختصات را مستقیماً وارد کنید</string>
     <string name="location_invalid_latitude" translation_description="Validation error for latitude values outside the valid range">عرض جغرافیایی باید بین −90 و 90 باشد</string>
     <string name="location_invalid_longitude" translation_description="Validation error for longitude values outside the valid range">طول جغرافیایی باید بین −180 و 180 باشد</string>
     <string name="location_management_title" translation_description="Title of the location management screen">موقعیت شما</string>
@@ -76,6 +77,10 @@
     <string name="font_size_preference_description" translation_description="help to go along with the change font size preference">تنظیم اندازه متن برچسب</string>
     <string name="show_sky_gradient_preference_title" translation_description="Setting toggle title: whether to show the blue sky gradient during the day">نمایش گرادیان آسمان</string>
     <string name="show_sky_gradient_preference_summary" translation_description="Setting toggle summary for sky gradient: explains what the feature does">آسمان را نزدیک خورشید آبی و در طرف مقابل تیره رنگ می‌کند</string>
+    <string name="show_true_size_preference_title" translation_description="Setting toggle title: whether to render the Sun, Moon, and planets at their true size">نمایش اندازه‌های واقعی</string>
+    <string name="show_true_size_preference_summary" translation_description="Setting toggle summary: explains what the true size feature does, and why you might want it (e.g. eclipses)">
+    خورشید، ماه و سیارات را با اندازه واقعی‌شان در آسمان ترسیم می‌کند، به جای بزرگ‌نمایی شده برای دید بهتر. برای دیدن کسوف و خسوف در مقیاس واقعی مفید است.
+    </string>
     <string name="ecliptic" translation_description="Label for the ecliptic layer — the apparent annual path of the Sun across the sky">دایرة البروج</string>
     <string name="dialog_accept" translation_description="accepting the licence agreement">قبول</string>
     <string name="dialog_decline" translation_description="declining the licence agreement">خیر. متشکرم</string>
@@ -190,6 +195,9 @@
     <string name="diagnostics_activity_phone" translation_description="Row label in the Diagnostics screen for the device model name">وسیله</string>
     <string name="diagnostics_activity_android_version" translation_description="Row label in the Diagnostics screen for the Android OS version">نسخه اندروید</string>
     <string name="diagnostics_activity_sky_map_version" translation_description="Row label in the Diagnostics screen for the Sky Map app version">نسخه‌ی برنامه</string>
+    <!-- tm:omitted name="diagnostics_skymap_version_format" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_flavor_gms" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_flavor_fdroid" reason="identical_to_source" -->
     <string name="diagnostics_activity_sensors_heading" translation_description="Section heading in the Diagnostics screen for sensor readings">حسگرها</string>
     <string name="diagnostics_activity_compass" translation_description="Row label in the Diagnostics screen for the compass (magnetic field) sensor">قطب‌نما</string>
     <string name="diagnostics_activity_accelerometer" translation_description="Row label in the Diagnostics screen for the accelerometer sensor">شتاب‌سنج</string>

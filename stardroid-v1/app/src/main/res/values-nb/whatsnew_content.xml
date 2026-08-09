@@ -1,6 +1,16 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<b>Mindre feilrettinger og en kunngjøring</b><ul><li>Fikset en oppstartsfeil som noen brukere opplevde rett etter å ha gitt stedstillatelse.</li><li>Diagnostikkskjermen viser nå hvilken versjon (Gms eller F-Droid) du kjører.</li><li>Sky Map v2 kommer &#8212; en komplett omskriving. Bli med i betaen for å prøve den tidlig (se ovenfor).</li></ul>]]></string>
-    <string name="beta_user_help_text" translation_description="HTML content shown to beta testers asking for feedback. Please do not change the &lt; and &gt; markup."><![CDATA[<b>Betabrukere ønskes!</b><p>Sky Map v2 er snart her. Det er en komplett omskriving fra bunnen av, og vi vil gjerne ha din tidlige tilbakemelding. For å bli med i betaen, vennligst besøk <a href="https://play.google.com/apps/testing/com.google.android.stardroid">https://play.google.com/apps/testing/com.google.android.stardroid</a> og du vil få v2 så snart den er klar.</p>]]></string>
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Forhåndsvis en solformørkelse</h2>
+        <p>Sky Map kan nå vise deg hvor mye av solen som vil bli dekket under en formørkelse, sett fra der du står &#8212; inkludert den totale solformørkelsen 12. august 2026.</p>
+        <p>To endringer gjør dette mulig. Månens posisjon tar nå hensyn til din plassering på jorden, ikke bare jordens sentrum, noe som korrigerer feil på opptil én grad &#8212; omtrent to månebredder. Og en ny innstilling, <b>Vis virkelige størrelser</b>, tegner solen, månen og planetene i deres virkelige vinkelstørrelser i stedet for de forstørrede markørene som brukes for synlighet. Slå den på, og spol deretter tiden fremover for å se en formørkelse utspille seg i riktig skala.</p>
+
+        <h2>En ryddigere himmel</h2>
+        <ul>
+        <li>Overlappende etiketter oppdages nå og flyttes fra hverandre, slik at overfylte områder forblir lesbare.</li>
+        <li>Nye ikoner for stjerner og stjernebilder i sidepanelet som var lette å forveksle.</li>
+        </ul>
+
+        <p>Sky Map v2 kommer &#8212; en komplett omskriving. Bli med i betaen for å prøve den tidlig (se ovenfor).</p>]]></string>
+    <string name="beta_user_help_text" translation_description="HTML content shown to beta testers asking for feedback. Please do not change the &lt; and &gt; markup."><![CDATA[<b>Betabrukere ønskes!</b><p>Sky Map v2 er snart her. Det er en komplett omskriving fra bunnen av, og vi vil gjerne ha din tidlige tilbakemelding.For å bli med i betaen, vennligst besøk<a href="https://play.google.com/apps/testing/com.google.android.stardroid">https://play.google.com/apps/testing/com.google.android.stardroid</a>og du vil få v2 så snart den er klar.</p>]]></string>
 </resources>

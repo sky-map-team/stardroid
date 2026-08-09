@@ -34,6 +34,7 @@
     <string name="location_set_button" translation_description="Button that confirms and applies the manually entered location">Konumu Ayarla</string>
     <string name="location_place_not_found" translation_description="Inline error shown when a place name search returns no results">Yer bulunamadı — daha spesifik bir ad deneyin</string>
     <string name="location_geocoder_offline" translation_description="Inline message shown when geocoding fails because there is no internet connection">İnternet yok — koordinatları doğrudan girin</string>
+    <string name="location_geocoder_unavailable" translation_description="Inline message shown when place name lookup is disabled because the device has no geocoding backend, typically due to missing Google Play Services">Bu cihazda coğrafi kodlama hizmeti yok — koordinatları doğrudan girin</string>
     <string name="location_invalid_latitude" translation_description="Validation error for latitude values outside the valid range">Enlem −90 ile 90 arasında olmalıdır</string>
     <string name="location_invalid_longitude" translation_description="Validation error for longitude values outside the valid range">Boylam −180 ile 180 arasında olmalıdır</string>
     <string name="location_management_title" translation_description="Title of the location management screen">Konumunuz</string>
@@ -76,6 +77,10 @@
     <string name="font_size_preference_description" translation_description="help to go along with the change font size preference">Etiket metin boyutunu ayarla</string>
     <string name="show_sky_gradient_preference_title" translation_description="Setting toggle title: whether to show the blue sky gradient during the day">Gökyüzü gradyanını göster</string>
     <string name="show_sky_gradient_preference_summary" translation_description="Setting toggle summary for sky gradient: explains what the feature does">Gökyüzünü Güneş\'in yakınında mavi, karşı tarafında koyu renklendirir</string>
+    <string name="show_true_size_preference_title" translation_description="Setting toggle title: whether to render the Sun, Moon, and planets at their true size">Gerçek boyutları göster</string>
+    <string name="show_true_size_preference_summary" translation_description="Setting toggle summary: explains what the true size feature does, and why you might want it (e.g. eclipses)">
+    Güneş\'i, Ay\'ı ve gezegenleri gökyüzünde görünürlük için büyütmek yerine gerçek boyutlarında çizer. Tutulmaları ölçekli görmek için kullanışlıdır.
+    </string>
     <string name="ecliptic" translation_description="Label for the ecliptic layer — the apparent annual path of the Sun across the sky">Ekliptik</string>
     <string name="dialog_accept" translation_description="accepting the licence agreement">Kabul et</string>
     <string name="dialog_decline" translation_description="declining the licence agreement">Hayır, teşekkürler</string>
@@ -190,6 +195,9 @@
     <string name="diagnostics_activity_phone" translation_description="Row label in the Diagnostics screen for the device model name">Cihaz</string>
     <string name="diagnostics_activity_android_version" translation_description="Row label in the Diagnostics screen for the Android OS version">Android sürümü</string>
     <string name="diagnostics_activity_sky_map_version" translation_description="Row label in the Diagnostics screen for the Sky Map app version">Sky Map sürümü</string>
+    <!-- tm:omitted name="diagnostics_skymap_version_format" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_flavor_gms" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_flavor_fdroid" reason="identical_to_source" -->
     <string name="diagnostics_activity_sensors_heading" translation_description="Section heading in the Diagnostics screen for sensor readings">Sensörler</string>
     <string name="diagnostics_activity_compass" translation_description="Row label in the Diagnostics screen for the compass (magnetic field) sensor">Pusula</string>
     <string name="diagnostics_activity_accelerometer" translation_description="Row label in the Diagnostics screen for the accelerometer sensor">İvmeölçer</string>

@@ -1,6 +1,16 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<b>Correzioni di bug minori e un annuncio</b><ul><li>Risolto un crash all\'avvio che alcuni utenti riscontravano subito dopo aver concesso il permesso di localizzazione.</li><li>La schermata Diagnostica ora mostra quale build (Gms o F-Droid) stai utilizzando.</li><li>Sky Map v2 è in arrivo &#8212; una riscrittura completa. Unisciti alla beta per provarla in anticipo (vedi sopra).</li></ul>]]></string>
-    <string name="beta_user_help_text" translation_description="HTML content shown to beta testers asking for feedback. Please do not change the &lt; and &gt; markup."><![CDATA[<b>Cercasi beta tester!</b><p>Sky Map v2 è quasi qui. È una riscrittura completa da zero e ci piacerebbe ricevere il vostro feedback iniziale. Per unirti alla beta, visita <a href="https://play.google.com/apps/testing/com.google.android.stardroid">https://play.google.com/apps/testing/com.google.android.stardroid</a> e riceverai la v2 non appena sarà pronta.</p>]]></string>
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Anteprima di un\'eclissi solare</h2>
+        <p>Sky Map ora può mostrarti quanta parte del Sole sarà coperta durante un\'eclissi, vista da dove ti trovi &#8212; inclusa l\'eclissi totale del 12 agosto 2026.</p>
+        <p>Due modifiche rendono possibile tutto questo. La posizione della Luna ora tiene conto della tua posizione sulla Terra, non solo del centro della Terra, correggendo errori fino a un grado &#8212; circa due larghezze lunari. E una nuova impostazione <b>Mostra dimensioni reali</b> disegna il Sole, la Luna e i pianeti con le loro dimensioni angolari reali invece dei marcatori ingranditi usati per la visibilità. Attivala, quindi fai avanzare il tempo per osservare un\'eclissi riprodotta in scala.</p>
+
+        <h2>Un cielo più ordinato</h2>
+        <ul>
+        <li>Le etichette sovrapposte vengono ora rilevate e spostate, in modo che le regioni affollate rimangano leggibili.</li>
+        <li>Ridisegnate le icone della barra laterale di stelle e costellazioni che erano facili da confondere.</li>
+        </ul>
+
+        <p>Sky Map v2 è in arrivo &#8212; una riscrittura completa. Unisciti alla beta per provarla in anticipo (vedi sopra).</p>]]></string>
+    <string name="beta_user_help_text" translation_description="HTML content shown to beta testers asking for feedback. Please do not change the &lt; and &gt; markup."><![CDATA[<b>Cercasi beta tester!</b><p>Sky Map v2 è quasi qui. È una riscrittura completa da zero e ci piacerebbe ricevere il tuo feedback iniziale.Per unirti alla beta, visita<a href="https://play.google.com/apps/testing/com.google.android.stardroid">https://play.google.com/apps/testing/com.google.android.stardroid</a>e riceverai la v2 non appena sarà pronta.</p>]]></string>
 </resources>
