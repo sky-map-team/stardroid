@@ -77,10 +77,8 @@
     <string name="font_size_preference_description" translation_description="help to go along with the change font size preference">Dostosuj rozmiar tekstu etykiety</string>
     <string name="show_sky_gradient_preference_title" tm_human="true" translation_description="Setting toggle title: whether to show the blue sky gradient during the day">Pokazuj gradient nieba</string>
     <string name="show_sky_gradient_preference_summary" tm_human="true" translation_description="Setting toggle summary for sky gradient: explains what the feature does">Koloruj niebo na niebiesko blisko Słońca i przyciemniaj po przeciwnej stronie</string>
-    <string name="show_true_size_preference_title" translation_description="Setting toggle title: whether to render the Sun, Moon, and planets at their true size">Pokaż rzeczywiste rozmiary</string>
-    <string name="show_true_size_preference_summary" translation_description="Setting toggle summary: explains what the true size feature does, and why you might want it (e.g. eclipses)">
-    Rysuje Słońce, Księżyc i planety w ich rzeczywistym rozmiarze na niebie, zamiast powiększonych dla lepszej widoczności. Przydatne do oglądania zaćmień w skali.
-    </string>
+    <string name="show_true_size_preference_title" translation_description="Setting toggle title: whether to render the Sun, Moon, and planets at their true size">Pokazuj rozmiary zgodne z rzeczywistością</string>
+    <string name="show_true_size_preference_summary" translation_description="Setting toggle summary: explains what the true size feature does, and why you might want it (e.g. eclipses)">Rysuj Słońce, Księżyc i planety w ich rzeczywistym rozmiarze na niebie zamiast powiększone dla lepszej widoczności. Przydatne do oglądania zaćmień w skali</string>
     <string name="ecliptic" translation_description="Label for the ecliptic layer — the apparent annual path of the Sun across the sky">Ekliptyka</string>
     <string name="dialog_accept" translation_description="accepting the licence agreement">Akceptuj</string>
     <string name="dialog_decline" translation_description="declining the licence agreement">Nie, dziękuję</string>
@@ -117,7 +115,7 @@
     <string name="now_visiting" translation_description="used in time travel dialog to show the destination date/time the user has selected, time formatted as yyyy.mm.dd at hh.mm.ss + timezone">Cel: %s</string>
     <string name="time_travel_label_past" translation_description="Label showing that we are in the past">Podróż w czasie: przeszłość</string>
     <string name="time_travel_label_future" translation_description="Label showing that we are in the future">Podróż w czasie: przyszłość</string>
-    <string name="time_travel_stopped" translation_description="Label showing rate of travel through time">Podróż w czasie zamrożona</string>
+    <string name="time_travel_stopped" translation_description="Label showing rate of travel through time">Podróż w czasie wstrzymana</string>
     <string name="time_travel_second_speed" translation_description="Label showing rate of travel through time.  The symbol means greater than.">Podróżowanie &gt; 1 sek./sek.</string>
     <string name="time_travel_minute_speed" translation_description="Label showing rate of travel through time">Podróżowanie &gt; 1 min./sek.</string>
     <string name="time_travel_10minute_speed" translation_description="Label showing rate of travel through time">Podróżowanie &gt; 10 min./sek.</string>
@@ -187,12 +185,12 @@
     <string name="title_activity_diagnostic" translation_description="Title bar text for the Diagnostics activity/screen">Diagnostyka</string>
     <string name="play_services_error" translation_description="Warning shown in the diagnostics screen when Google Play Services has an error that may affect automatic location">Ostrzeżenie: Błąd Usług Google Play – automatyczna lokalizacja może nie działać</string>
     <string name="sensor_absent" translation_description="Sensor status shown in diagnostics when the sensor is not present on the device">Nieobecny</string>
-    <string name="sensor_accuracy_unknown" translation_description="Sensor calibration level shown in the diagnostics screen and calibration dialog">Kalibracja: nieznana</string>
-    <string name="sensor_accuracy_unreliable" translation_description="Sensor calibration level shown in the diagnostics screen and calibration dialog">Kalibracja: nieskalibrowana</string>
-    <string name="sensor_accuracy_low" translation_description="Sensor calibration level shown in the diagnostics screen and calibration dialog">Kalibracja: słaba</string>
-    <string name="sensor_accuracy_medium" translation_description="Sensor calibration level shown in the diagnostics screen and calibration dialog">Kalibracja: OK</string>
-    <string name="sensor_accuracy_high" translation_description="Sensor calibration level shown in the diagnostics screen and calibration dialog">Kalibracja: dobra</string>
-    <string name="sensor_accuracy_nocontact" translation_description="Sensor calibration level shown when the sensor has no contact (e.g. heart-rate sensor lifted from skin) — unlikely to appear in Sky Map but included for completeness">Kalibracja: brak połączenia</string>
+    <string name="sensor_accuracy_unknown" translation_description="Sensor calibration level shown in the diagnostics screen and calibration dialog">Poziom kalibracji: nieznany</string>
+    <string name="sensor_accuracy_unreliable" translation_description="Sensor calibration level shown in the diagnostics screen and calibration dialog">Poziom kalibracji: nieskalibrowany</string>
+    <string name="sensor_accuracy_low" translation_description="Sensor calibration level shown in the diagnostics screen and calibration dialog">Poziom kalibracji: słaby</string>
+    <string name="sensor_accuracy_medium" translation_description="Sensor calibration level shown in the diagnostics screen and calibration dialog">Poziom kalibracji: taki sobie</string>
+    <string name="sensor_accuracy_high" translation_description="Sensor calibration level shown in the diagnostics screen and calibration dialog">Poziom kalibracji: dobry</string>
+    <string name="sensor_accuracy_nocontact" translation_description="Sensor calibration level shown when the sensor has no contact (e.g. heart-rate sensor lifted from skin) — unlikely to appear in Sky Map but included for completeness">Poziom kalibracji: brak połączenia</string>
     <string name="diagnostics_activity_general_heading" translation_description="Section heading in the Diagnostics screen for general device information">Ogólne</string>
     <string name="diagnostics_activity_phone" translation_description="Row label in the Diagnostics screen for the device model name">Urządzenie</string>
     <string name="diagnostics_activity_android_version" translation_description="Row label in the Diagnostics screen for the Android OS version">Wersja Androida</string>
@@ -230,17 +228,17 @@
     <string name="menu_calibrate" translation_description="Menu item label to open the compass calibration screen">Kalibruj</string>
     <string name="compass_calibration_activity_heading_compass" translation_description="Static label in the compass calibration screen placed inline to the left of the live compass accuracy value (e.g. displayed as \'Compass - Accuracy: High\')">Kompas –</string>
     <string name="compass_calibration_activity_do_not_show_this_again" translation_description="Checkbox label in the compass calibration dialog to suppress future automatic appearances">Nie pokazuj tego ponownie</string>
-    <string name="compass_calibration_activity_warning" translation_description="Heading/reason text shown in the compass calibration dialog when it opens automatically due to low accuracy">Wymagana kalibracja sprzętu</string>
-    <string name="compass_calibration_activity_user_heading" translation_description="Heading shown in the compass calibration dialog when the user opens it manually from the menu">Popraw swoje ustawienie</string>
+    <string name="compass_calibration_activity_warning" translation_description="Heading/reason text shown in the compass calibration dialog when it opens automatically due to low accuracy">Kompas w Twoim telefonie wymaga uwagi</string>
+    <string name="compass_calibration_activity_user_heading" translation_description="Heading shown in the compass calibration dialog when the user opens it manually from the menu">Kompas w Twoim telefonie</string>
     <string name="compass_calib_what_to_do" translation_description="Information for the user on how to calibrate the compass when the dialog auto-opens. Placeholder is the video URL"><![CDATA[
-Sky Map polega na czujniku kompasu wbudowanym w Twój telefon. Jeśli dokładność pokazana powyżej jest niska, czujnik wymaga „resetu” przez poruszanie telefonem na kształt ósemki: %s.<br/><br/>
-<b>Ważne:</b> Kalibracja jest procesem sprzętowym obsługiwanym przez Twoje urządzenie. Chociaż poprawia niezawodność czujnika, zewnętrzne zakłócenia magnetyczne mogą nadal powodować „odchylenie” lub niewielkie dryfowanie. Jest to fizyczne ograniczenie kompasów mobilnych, a nie błąd w aplikacji. Zobacz <i>Rozwiązywanie problemów</i> w <i>Pomoc</i> dla innych rozwiązań wartych wypróbowania.
+Czujnik kompasu w Twoim telefonie zgłasza słaby poziom kalibracji. Ruch na kształt ósemki (%s) powoduje, że Twój telefon ponownie kalibruje swój czujnik sprzętowy — Sky Map nie ma kontroli nad tym procesem.<br/><br/>
+<b>Skalibrowany nie oznacza dokładny.</b> Gest na kształt ósemki pomaga czujnikowi w wewnętrznej normalizacji, ale nie jest w stanie usunąć zakłóceń od pobliskich metalowych obiektów, desek rozdzielczych samochodów ani magnetycznych etui na telefony. Jeśli mapa jest nadal niedokładna po kalibracji, te zewnętrzne źródła są najprawdopodobniej przyczyną — nie Sky Map.<br/><br/> Przejdź na otwartą przestrzeń z dala od metalu i spróbuj ponownie. Zobacz <i>Rozwiązywanie problemów</i> w <i>Pomoc</i> dla innych rozwiązań wartych wypróbowania lub odwiedź https://troubleshooting.stardroid.app.
     ]]></string>
     <string name="compass_calib_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they invoke the calibration dialog. Placeholder is the video URL"><![CDATA[
-Twój telefon zgłasza dokładność kompasu jak pokazano powyżej. Aby ją poprawić, wykonaj ruchy swoim urządzeniem na kształt ósemki (%s).<br/><br/>
-<b>Uwaga dotycząca dokładności:</b> Kalibracja jest wymaganiem na poziomie sprzętowym Twojego telefonu, a nie ustawieniem Sky Map. Nawet po kalibracji lokalne pola magnetyczne (jak deska rozdzielcza samochodu lub magnesy) mogą powodować niewielkie odchylenia w kierunku. Zobacz <i>Rozwiązywanie problemów</i> w <i>Pomoc</i> dla innych rozwiązań wartych wypróbowania.
+Twój telefon zgłasza swój stan kalibracji kompasu jak pokazano powyżej. Ruch na kształt ósemki (%s) powoduje, że układ sprzętowy Twojego telefonu ponownie kalibruje swój czujnik kompasu.<br/><br/>
+<b>Ważne:</b> Kalibracja pomaga czujnikowi w wewnętrznej normalizacji. Skalibrowany kompas jest niekoniecznie dokładny — lokalne zakłócenia magnetyczne (metalowe obiekty, deski rozdzielcze samochodów, magnetyczne etui na telefon) mogą nadal powodować wskazywanie przez mapę niewłaściwego kierunku. Sky Map odczytuje dokładnie to, co zgłasza czujnik Twojego telefonu; nie ma możliwości skorygowania Twojego otoczenia czy złego sprzętu.<br/><br/> Zobacz <i>Rozwiązywanie problemów</i> w <i>Pomoc</i> dla innych rozwiązań wartych wypróbowania, w tym ręczne przesunięcie kompasu dla telefonów ze stałym błędem kierunkowym, lub odwiedź https://troubleshooting.stardroid.app.
     ]]></string>
-    <string name="compass_low_accuracy_toast" translation_description="Brief toast shown when compass accuracy is low and the user has disabled the calibration dialog">Kompas w Twoim telefonie zgłasza niską dokładność</string>
+    <string name="compass_low_accuracy_toast" translation_description="Brief toast shown when compass accuracy is low and the user has disabled the calibration dialog">Kompas w Twoim telefonie zgłasza słaby poziom kalibracji</string>
     <string name="sensor_reverse_preference_title" translation_description="Preference title for reversing the magnetic Z-axis sensor reading, a fix for certain phones with incorrectly implemented sensors">Odwróć oś Z magnetometru</string>
     <string name="sensor_reverse_preference_summary" translation_description="Summary for the Reverse Magnetic Z preference">
     Poprawka dla telefonów z nieprawidłowo zaimplementowanymi czujnikami – wymaga ponownego uruchomienia
