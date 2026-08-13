@@ -1,6 +1,25 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Förhandsgranska en solförmörkelse</h2><p>Sky Map kan nu visa dig hur mycket av solen som kommer att täckas under en förmörkelse, sett från där du står &#8212; inklusive den totala solförmörkelsen den 12 augusti 2026.</p><p>Två ändringar gör detta möjligt. Månens position tar nu hänsyn till din plats på jorden, inte bara jordens centrum, vilket korrigerar fel på upp till en grad &#8212; ungefär två månbredder. Och en ny inställning <b>Visa verklighetstrogna storlekar</b> ritar solen, månen och planeterna i deras verkliga vinkelstorlekar istället för de förstorade markörer som används för synlighet. Slå på den, och spola sedan fram tiden för att se en förmörkelse spelas upp i skala.</p><h2>En prydligare himmel</h2><ul><li>Överlappande etiketter upptäcks nu och flyttas isär, så att trånga områden förblir läsbara.</li><li>Omritade sidofältsikoner för stjärnor och stjärnbilder som var lätta att förväxla.</li></ul><p>Sky Map v2 är på väg &#8212; en komplett omskrivning. Gå med i betan för att prova den tidigt (se ovan).</p>]]></string>
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Förhandsgranska en solförmörkelse</h2>
+        <p>Sky Map kan nu visa dig hur mycket av solen som kommer att täckas under en förmörkelse, sett
+        från där du står &#8212; inklusive den totala solförmörkelsen den 12 augusti 2026.</p>
+        <p>Två ändringar gör detta möjligt. Månens position tar nu hänsyn till din plats
+        på jorden, inte bara jordens centrum, vilket korrigerar fel på upp till en grad &#8212; ungefär
+        två månbredder. Och en ny inställning <b>Visa verklighetstrogna storlekar</b> ritar solen, månen och
+        planeterna i deras verkliga vinkelstorlekar istället för de förstorade markörer som används för synlighet.
+        Slå på den och spola sedan fram tiden för att se en förmörkelse spelas upp i skala.</p>
+
+        <h2>Mer exakt algoritm för sol och måne</h2>
+        <p>Installerade en modernare algoritm för solens/månens position för att göra förmörkelsestiderna ännu
+        mer exakta.</p>
+
+        <h2>En prydligare himmel</h2>
+        <ul>
+        <li>Överlappande etiketter upptäcks nu och flyttas isär, så att trånga områden förblir läsbara.</li>
+        <li>Omritade ikoner för stjärnor och stjärnbilder i sidofältet som var lätta att förväxla.</li>
+        </ul>
+
+        <p>Sky Map v2 är på väg &#8212; en komplett omskrivning. Gå med i betan för att prova den tidigt (se ovan).</p>]]></string>
     <string name="beta_user_help_text" translation_description="HTML content shown to beta testers asking for feedback. Please do not change the &lt; and &gt; markup."><![CDATA[<b>Betatestare sökes!</b><p>Sky Map v2 är nästan här. Det är en komplett omskrivning från grunden och vi skulle älska din tidiga feedback.För att gå med i betan, besök<a href="https://play.google.com/apps/testing/com.google.android.stardroid">https://play.google.com/apps/testing/com.google.android.stardroid</a>och du får v2 så snart den är redo.</p>]]></string>
 </resources>

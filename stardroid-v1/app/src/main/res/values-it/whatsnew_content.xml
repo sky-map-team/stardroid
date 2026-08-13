@@ -2,8 +2,17 @@
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
     <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Anteprima di un\'eclissi solare</h2>
-        <p>Sky Map ora può mostrarti quanta parte del Sole sarà coperta durante un\'eclissi, vista da dove ti trovi &#8212; inclusa l\'eclissi totale del 12 agosto 2026.</p>
-        <p>Due modifiche rendono possibile tutto questo. La posizione della Luna ora tiene conto della tua posizione sulla Terra, non solo del centro della Terra, correggendo errori fino a un grado &#8212; circa due larghezze lunari. E una nuova impostazione <b>Mostra dimensioni reali</b> disegna il Sole, la Luna e i pianeti con le loro dimensioni angolari reali invece dei marcatori ingranditi usati per la visibilità. Attivala, quindi fai avanzare il tempo per osservare un\'eclissi riprodotta in scala.</p>
+        <p>Sky Map può ora mostrarti quanta parte del Sole sarà coperta durante un\'eclissi, vista
+        da dove ti trovi &#8212; inclusa l\'eclissi totale del 12 agosto 2026.</p>
+        <p>Due modifiche rendono possibile tutto questo. La posizione della Luna ora tiene conto della tua posizione
+        sulla Terra, non solo del centro della Terra, correggendo errori fino a un grado &#8212; circa
+        due larghezze lunari. E una nuova impostazione <b>Mostra dimensioni reali</b> disegna il Sole, la Luna e
+        i pianeti con le loro dimensioni angolari reali invece dei marcatori ingranditi usati per la visibilità.
+        Attivala, quindi avanza il tempo per osservare un\'eclissi svolgersi in scala.</p>
+
+        <h2>Algoritmo più preciso per Sole e Luna</h2>
+        <p>Installato un algoritmo più moderno per la posizione di Sole/Luna per rendere i tempi delle eclissi ancora
+        più precisi.</p>
 
         <h2>Un cielo più ordinato</h2>
         <ul>

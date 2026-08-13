@@ -1,6 +1,19 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>معاينة كسوف الشمس</h2><p>يمكن لـ Sky Map الآن أن يوضح لك مقدار تغطية الشمس أثناء الكسوف، كما يظهر من مكان وقوفك &#8212; بما في ذلك الكسوف الكلي في 12 أغسطس 2026.</p><p>يجعل تغييرين هذا يعمل معًا. يأخذ موقع القمر الآن في الاعتبار موقعك على الأرض، وليس فقط مركز الأرض، مما يصحح أخطاء تصل إلى درجة واحدة &#8212; حوالي عرضي قمر. ويقوم إعداد جديد <b>إظهار الأحجام الحقيقية</b> برسم الشمس والقمر والكواكب بأحجامها الزاوية الحقيقية بدلاً من العلامات المكبرة المستخدمة للرؤية. قم بتشغيله، ثم قدم الوقت لمشاهدة الكسوف يتكشف بمقياس حقيقي.</p><h2>سماء أكثر ترتيبًا</h2><ul><li>يتم الآن اكتشاف التسميات المتداخلة وإزاحتها بعيدًا عن بعضها، بحيث تظل المناطق المزدحمة قابلة للقراءة.</li><li>أعيد رسم أيقونات الشريط الجانبي للنجوم والكوكبات التي كان من السهل الخلط بينها.</li></ul><p>Sky Map v2 قادم &#8212; إعادة كتابة كاملة. انضم إلى النسخة التجريبية لتجربتها مبكرًا (انظر أعلاه).</p>]]></string>
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>معاينة كسوف الشمس</h2>
+        <p>يمكن لـ Sky Map الآن أن يُظهر لك مقدار تغطية الشمس أثناء الكسوف، كما يُرى من مكان وقوفك &#8212; بما في ذلك الكسوف الكلي في 12 أغسطس 2026.</p>
+        <p>يجعل تغييرين هذا يعمل معًا. يأخذ موقع القمر الآن في الاعتبار موقعك على الأرض، وليس فقط مركز الأرض، مما يصحح الأخطاء التي تصل إلى درجة واحدة &#8212; حوالي عرضي قمر. ويقوم إعداد جديد <b>إظهار الأحجام الحقيقية</b> برسم الشمس والقمر والكواكب بأحجامها الزاوية الحقيقية بدلاً من العلامات المكبرة المستخدمة للرؤية. قم بتشغيله، ثم قدم الوقت لمشاهدة الكسوف يتكشف بمقياس.</p>
+
+        <h2>خوارزمية أكثر دقة للشمس والقمر</h2>
+        <p>تم تثبيت خوارزمية أكثر حداثة لموقع الشمس/القمر لجعل توقيتات الكسوف أكثر دقة.</p>
+
+        <h2>سماء أكثر ترتيبًا</h2>
+        <ul>
+        <li>يتم الآن اكتشاف التسميات المتداخلة وتحريكها بعيدًا عن بعضها، بحيث تظل المناطق المزدحمة قابلة للقراءة.</li>
+        <li>أعيد رسم أيقونات الشريط الجانبي للنجوم والكوكبات التي كان من السهل الخلط بينها.</li>
+        </ul>
+
+        <p>Sky Map v2 قادم &#8212; إعادة كتابة كاملة. انضم إلى النسخة التجريبية لتجربتها مبكرًا (انظر أعلاه).</p>]]></string>
     <string name="beta_user_help_text" translation_description="HTML content shown to beta testers asking for feedback. Please do not change the &lt; and &gt; markup."><![CDATA[<b>مطلوب مستخدمون للنسخة التجريبية!</b><p>Sky Map الإصدار 2 على وشك الصدور. إنه إعادة كتابة كاملة من الصفر ونود الحصول على ملاحظاتكم المبكرة. للانضمام إلى النسخة التجريبية، يرجى زيارة <a href="https://play.google.com/apps/testing/com.google.android.stardroid">https://play.google.com/apps/testing/com.google.android.stardroid</a> وستحصلون على الإصدار 2 بمجرد أن يصبح جاهزًا.</p>]]></string>
 </resources>

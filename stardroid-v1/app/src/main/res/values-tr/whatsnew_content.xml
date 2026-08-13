@@ -1,13 +1,16 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Güneş tutulmasını önizle</h2>
-        <p>Sky Map artık bulunduğunuz yerden görüldüğü gibi bir tutulma sırasında Güneş\'in ne kadarının kapanacağını gösterebilir &#8212; 12 Ağustos 2026\'daki tam tutulma dahil.</p>
-        <p>İki değişiklik bu özelliği mümkün kıldı. Ay\'ın konumu artık sadece Dünya\'nın merkezini değil, Dünya üzerindeki konumunuzu da hesaba katarak bir dereceye kadar (yaklaşık iki Ay genişliği) hataları düzeltir. Ve yeni bir <b>Gerçek boyutları göster</b> ayarı, Güneş\'i, Ay\'ı ve gezegenleri, görünürlük için kullanılan büyütülmüş işaretleyiciler yerine gerçek açısal boyutlarında çizer. Bunu açın, ardından bir tutulmanın ölçekli olarak nasıl gerçekleştiğini izlemek için zamanı ileri sarın.</p>
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Güneş tutulmasını önizleyin</h2>
+        <p>Sky Map artık, bulunduğunuz yerden görüldüğü gibi, bir tutulma sırasında Güneş\'in ne kadarının örtüleceğini gösterebilir &#8212; buna 12 Ağustos 2026\'daki tam tutulma da dahildir.</p>
+        <p>İki değişiklik bu özelliği mümkün kılıyor. Ay\'ın konumu artık sadece Dünya\'nın merkezini değil, Dünya üzerindeki konumunuzu da hesaba katıyor ve bir dereceye kadar &#8212; yaklaşık iki Ay genişliği kadar &#8212; hataları düzeltiyor. Ve yeni bir <b>Gerçek boyutları göster</b> ayarı, Güneş\'i, Ay\'ı ve gezegenleri görünürlük için kullanılan büyütülmüş işaretleyiciler yerine gerçek açısal boyutlarında çizer. Bunu açın, ardından bir tutulmanın ölçekli olarak gerçekleşmesini izlemek için zamanı ileri sarın.</p>
+
+        <h2>Daha doğru güneş ve ay algoritması</h2>
+        <p>Güneş/Ay konumu için daha modern bir algoritma yüklendi, böylece tutulma zamanlamaları daha da doğru hale geldi.</p>
 
         <h2>Daha düzenli bir gökyüzü</h2>
         <ul>
-        <li>Üst üste binen etiketler artık algılanır ve birbirinden uzaklaştırılarak kalabalık bölgelerin okunabilir kalması sağlanır.</li>
+        <li>Üst üste binen etiketler artık algılanıyor ve birbirinden ayrılıyor, böylece kalabalık bölgeler okunabilir kalıyor.</li>
         <li>Karıştırılması kolay olan yıldız ve takımyıldız kenar çubuğu simgeleri yeniden çizildi.</li>
         </ul>
 

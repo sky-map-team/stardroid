@@ -10,6 +10,10 @@
         planets at their real angular sizes instead of the enlarged markers used for visibility.
         Turn it on, then wind the time forward to watch an eclipse play out to scale.</p>
 
+        <h2>More accurate Sun and Moon algorithm</h2>
+        <p>Installed a more modern algorithm for Sun/Moon position to make eclipse timings even
+        more accurate.</p>
+
         <h2>A tidier sky</h2>
         <ul>
         <li>Overlapping labels are now detected and nudged apart, so crowded regions stay readable.</li>
@@ -17,12 +21,5 @@
         </ul>
 
         <p>Sky Map v2 is coming &#8212; a complete rewrite. Join the beta to try it early (see above).</p>]]></string>
-    <string name="beta_user_help_text" translation_description="HTML content shown to beta testers asking for feedback. Please do not change the &lt; and &gt; markup."><![CDATA[<b>Beta users wanted!</b>
-        <p>Sky Map v2 is nearly here. It\'s a complete rewrite from the ground up and we\'d
-        love your early feedback.
-
-        To join the beta please visit
-        <a href="https://play.google.com/apps/testing/com.google.android.stardroid">https://play.google.com/apps/testing/com.google.android.stardroid</a>
-        and you\'ll get v2 as soon as it\'s ready.
-        </p>]]></string>
+    <!-- tm:omitted name="beta_user_help_text" reason="identical_to_source" -->
 </resources>

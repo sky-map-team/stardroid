@@ -11,11 +11,6 @@
         <item translation_description="Extra High sensor damping factor">Standard</item>
         <item translation_description="Really High sensor damping factor - this will make the app sluggish">Hoch</item>
     </string-array>
-    <string-array name="viewing_direction">
-        <item translation_description="Normal viewing">Normal</item>
-        <item translation_description="Rotates the screen by 90 degrees">Gedrehter Horizont</item>
-        <item translation_description="Shows the sky as pointed at by the long edge of the phone">Zeigermodus</item>
-    </string-array>
     <string-array name="auto_dim_texts">
         <item translation_description="Dimmest screen setting">Sehr dunkel</item>
         <item translation_description="Leave it on the system setting">Systemstandard</item>

@@ -1,6 +1,25 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Podgląd zaćmienia Słońca</h2><p>Sky Map może teraz pokazać, jaka część Słońca zostanie zakryta podczas zaćmienia, widzianego z miejsca, w którym stoisz &#8212; w tym całkowite zaćmienie Słońca 12 sierpnia 2026 roku.</p><p>Dwie zmiany sprawiają, że to działa razem. Pozycja Księżyca uwzględnia teraz Twoją lokalizację na Ziemi, a nie tylko środek Ziemi, korygując błędy do jednego stopnia &#8212; około dwóch szerokości Księżyca. A nowe ustawienie <b>Pokaż rzeczywiste rozmiary</b> rysuje Słońce, Księżyc i planety w ich rzeczywistych rozmiarach kątowych zamiast powiększonych znaczników używanych dla lepszej widoczności. Włącz je, a następnie przewiń czas do przodu, aby zobaczyć zaćmienie w skali.</p><h2>Bardziej uporządkowane niebo</h2><ul><li>Nakładające się etykiety są teraz wykrywane i rozsuwane, dzięki czemu zatłoczone obszary pozostają czytelne.</li><li>Przerysowane ikony gwiazd i konstelacji na pasku bocznym, które łatwo było pomylić.</li></ul><p>Sky Map v2 nadchodzi &#8212; to całkowite przepisanie kodu. Dołącz do bety, aby wypróbować ją wcześniej (patrz wyżej).</p>]]></string>
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Podgląd zaćmienia Słońca</h2>
+        <p>Sky Map może teraz pokazać, jaka część Słońca zostanie zakryta podczas zaćmienia, widzianego
+        z miejsca, w którym stoisz &#8212; w tym całkowite zaćmienie Słońca 12 sierpnia 2026 roku.</p>
+        <p>Dwie zmiany umożliwiają to działanie. Pozycja Księżyca uwzględnia teraz Twoją lokalizację
+        na Ziemi, a nie tylko środek Ziemi, korygując błędy do jednego stopnia &#8212; około
+        dwóch szerokości Księżyca. A nowe ustawienie <b>Pokaż rzeczywiste rozmiary</b> rysuje Słońce, Księżyc i
+        planety w ich rzeczywistych rozmiarach kątowych zamiast powiększonych znaczników używanych dla widoczności.
+        Włącz je, a następnie przewiń czas do przodu, aby zobaczyć zaćmienie w skali.</p>
+
+        <h2>Dokładniejszy algorytm dla Słońca i Księżyca</h2>
+        <p>Zainstalowano nowocześniejszy algorytm dla pozycji Słońca/Księżyca, aby czasy zaćmień były jeszcze
+        dokładniejsze.</p>
+
+        <h2>Bardziej uporządkowane niebo</h2>
+        <ul>
+        <li>Nakładające się etykiety są teraz wykrywane i rozsuwane, dzięki czemu zatłoczone obszary pozostają czytelne.</li>
+        <li>Przerysowano ikony gwiazd i konstelacji na pasku bocznym, które łatwo było pomylić.</li>
+        </ul>
+
+        <p>Sky Map v2 nadchodzi &#8212; całkowite przepisanie. Dołącz do bety, aby wypróbować ją wcześniej (patrz wyżej).</p>]]></string>
     <string name="beta_user_help_text" translation_description="HTML content shown to beta testers asking for feedback. Please do not change the &lt; and &gt; markup."><![CDATA[<b>Poszukiwani testerzy beta!</b><p>Sky Map w wersji 2 jest już prawie gotowy. To całkowicie przepisana od podstaw aplikacja i chcielibyśmy poznać Twoją wczesną opinię.Aby dołączyć do testów beta, odwiedź stronę<a href="https://play.google.com/apps/testing/com.google.android.stardroid">https://play.google.com/apps/testing/com.google.android.stardroid</a>a otrzymasz wersję 2, gdy tylko będzie gotowa.</p>]]></string>
 </resources>

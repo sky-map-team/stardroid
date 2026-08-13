@@ -1,11 +1,14 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Sonnenfinsternis-Vorschau</h2>
-        <p>Sky Map kann dir jetzt zeigen, wie viel von der Sonne während einer Finsternis bedeckt sein wird, von deinem Standort aus gesehen &#8212; einschließlich der totalen Sonnenfinsternis vom 12. August 2026.</p>
-        <p>Zwei Änderungen ermöglichen dies. Die Position des Mondes berücksichtigt jetzt deinen Standort auf der Erde, nicht nur den Erdmittelpunkt, wodurch Fehler von bis zu einem Grad &#8212; etwa zwei Mondbreiten &#8212; korrigiert werden. Und eine neue <b>Zeige lebensnahe Größen</b> Einstellung zeichnet Sonne, Mond und Planeten in ihren tatsächlichen Winkeldurchmessern anstelle der vergrößerten Markierungen, die zur besseren Sichtbarkeit verwendet werden. Schalte sie ein und spule dann die Zeit vor, um eine Finsternis maßstabsgetreu zu beobachten.</p>
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Vorschau einer Sonnenfinsternis</h2>
+        <p>Sky Map kann dir jetzt zeigen, wie viel von der Sonne während einer Finsternis bedeckt sein wird, von deinem Standpunkt aus gesehen &#8212; einschließlich der totalen Sonnenfinsternis vom 12. August 2026.</p>
+        <p>Zwei Änderungen ermöglichen dies. Die Position des Mondes berücksichtigt jetzt deinen Standort auf der Erde, nicht nur den Erdmittelpunkt, wodurch Fehler von bis zu einem Grad &#8212; etwa zwei Mondbreiten &#8212; korrigiert werden. Und eine neue <b>Realistische Größen anzeigen</b>-Einstellung zeichnet die Sonne, den Mond und die Planeten in ihren tatsächlichen Winkeldurchmessern anstelle der vergrößerten Markierungen, die zur besseren Sichtbarkeit verwendet werden. Schalte sie ein, spule dann die Zeit vor, um eine Finsternis maßstabsgetreu ablaufen zu sehen.</p>
 
-        <h2>Ein übersichtlicherer Himmel</h2>
+        <h2>Genauerer Algorithmus für Sonne und Mond</h2>
+        <p>Ein modernerer Algorithmus für die Sonnen-/Mondposition wurde implementiert, um die Finsterniszeiten noch genauer zu machen.</p>
+
+        <h2>Ein aufgeräumterer Himmel</h2>
         <ul>
         <li>Überlappende Beschriftungen werden jetzt erkannt und auseinandergeschoben, damit überfüllte Bereiche lesbar bleiben.</li>
         <li>Neu gezeichnete Symbole für Sterne und Sternbilder in der Seitenleiste, die leicht zu verwechseln waren.</li>

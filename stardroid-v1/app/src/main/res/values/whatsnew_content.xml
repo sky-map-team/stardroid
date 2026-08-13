@@ -11,6 +11,10 @@
         planets at their real angular sizes instead of the enlarged markers used for visibility.
         Turn it on, then wind the time forward to watch an eclipse play out to scale.</p>
 
+        <h2>More accurate sun and moon algorithm</h2>
+        <p>Installed a more modern algorithm for Sun/Moon position to make eclipse timings even
+        more accurate.</p>
+
         <h2>A tidier sky</h2>
         <ul>
         <li>Overlapping labels are now detected and nudged apart, so crowded regions stay readable.</li>

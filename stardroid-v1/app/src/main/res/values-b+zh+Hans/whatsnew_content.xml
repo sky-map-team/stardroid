@@ -2,15 +2,23 @@
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
     <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>预览日食</h2>
-        <p>Sky Map 现在可以显示从您所在位置看到的日食期间太阳被遮盖的程度 &#8212; 包括 2026 年 8 月 12 日的日全食。</p>
-        <p>两项改动共同实现了这一功能。月球的位置现在会考虑您在地球上的位置，而不仅仅是地球中心，这纠正了高达一度的误差 &#8212; 大约是两个月球的宽度。新的<b>显示真实尺寸</b>设置会以真实的角大小绘制太阳、月球和行星，而不是用于可见性的放大标记。开启此功能，然后快进时间，即可按比例观看日食的发生。</p>
+        <p>Sky Map 现在可以显示日食期间太阳被遮盖的程度，
+        从您所在位置看到的 &#8212; 包括2026年8月12日的日全食。</p>
+        <p>两项改进共同实现了这一功能。月球的位置现在会考虑您在地球上的位置，
+        而不仅仅是地球中心，修正了高达一度的误差 &#8212; 大约是
+        两个月亮宽度。新的<b>显示真实大小</b>设置会以真实的角大小绘制太阳、月亮和
+        行星，而不是用于提高可见度的放大标记。
+        开启此功能，然后向前调整时间，即可按比例观看日食的发生。</p>
+
+        <h2>更精确的日月算法</h2>
+        <p>采用了更现代的日月位置算法，使日食时间预测更加精确。</p>
 
         <h2>更整洁的星空</h2>
         <ul>
-        <li>现在可以检测并推开重叠的标签，使拥挤区域保持可读性。</li>
+        <li>现在可以检测并错开重叠的标签，使拥挤区域保持可读性。</li>
         <li>重新绘制了容易混淆的恒星和星座侧边栏图标。</li>
         </ul>
 
-        <p>Sky Map v2 即将推出 &#8212; 一次彻底的重写。加入测试版即可抢先体验（见上文）。</p>]]></string>
+        <p>Sky Map v2 即将推出 &#8212; 一次彻底的重写。加入测试版即可抢先体验（见上方）。</p>]]></string>
     <string name="beta_user_help_text" translation_description="HTML content shown to beta testers asking for feedback. Please do not change the &lt; and &gt; markup."><![CDATA[<b>招募 Beta 用户！</b><p>Sky Map v2 即将推出。它是一个从头开始的彻底重写，我们非常期待您的早期反馈。<br/><br/>如需加入 Beta 版，请访问<br/><a href="https://play.google.com/apps/testing/com.google.android.stardroid">https://play.google.com/apps/testing/com.google.android.stardroid</a><br/>您将会在 v2 准备就绪后立即获得它。</p>]]></string>
 </resources>

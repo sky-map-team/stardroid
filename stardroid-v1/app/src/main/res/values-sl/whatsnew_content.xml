@@ -1,6 +1,19 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Predogled sončnega mrka</h2><p>Sky Map vam zdaj lahko pokaže, koliko Sonca bo zakritega med mrkom, vidno z vaše lokacije &#8212; vključno s popolnim mrkom 12. avgusta 2026.</p><p>To omogočata dve spremembi. Položaj Lune zdaj upošteva vašo lokacijo na Zemlji, ne le središča Zemlje, s čimer se popravijo napake do enega stopinje &#8212; približno dve širini Lune. In nova nastavitev <b>Prikaži resnične velikosti</b> riše Sonce, Luno in planete v njihovih resničnih kotnih velikostih namesto povečanih označevalcev, ki se uporabljajo za vidljivost. Vklopite jo, nato pa premaknite čas naprej, da si ogledate mrk v merilu.</p><h2>Bolj urejeno nebo</h2><ul><li>Prekrivajoče se oznake so zdaj zaznane in premaknjene narazen, tako da ostanejo prenatrpana območja berljiva.</li><li>Preoblikovane ikone zvezd in ozvezdij v stranski vrstici, ki so bile zlahka zamenljive.</li></ul><p>Sky Map v2 prihaja &#8212; popolna predelava. Pridružite se beta programu, da ga preizkusite prej (glejte zgoraj).</p>]]></string>
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Predogled sončnega mrka</h2>
+        <p>Sky Map vam zdaj lahko pokaže, koliko Sonca bo zakritega med mrkom, gledano z vaše lokacije &#8212; vključno s popolnim mrkom 12. avgusta 2026.</p>
+        <p>Dve spremembi to omogočata skupaj. Položaj Lune zdaj upošteva vašo lokacijo na Zemlji, ne le središča Zemlje, kar popravlja napake do enega stopinje &#8212; približno dve širini Lune. In nova <b>Prikaži resnične velikosti</b> nastavitev riše Sonce, Luno in planete v njihovih resničnih kotnih velikostih namesto povečanih označevalcev, ki se uporabljajo za vidljivost. Vklopite jo, nato pa premaknite čas naprej, da si ogledate mrk v merilu.</p>
+
+        <h2>Natančnejši algoritem za Sonce in Luno</h2>
+        <p>Nameščen je bil sodobnejši algoritem za položaj Sonca/Lune, da so časi mrkov še natančnejši.</p>
+
+        <h2>Bolj urejeno nebo</h2>
+        <ul>
+        <li>Prekrivajoče se oznake so zdaj zaznane in premaknjene narazen, tako da ostanejo prenatrpana območja berljiva.</li>
+        <li>Prekresljene ikone zvezd in ozvezdij v stranski vrstici, ki so bile enostavne za zamenjavo.</li>
+        </ul>
+
+        <p>Sky Map v2 prihaja &#8212; popolna predelava. Pridružite se beta programu, da ga preizkusite prej (glejte zgoraj).</p>]]></string>
     <string name="beta_user_help_text" translation_description="HTML content shown to beta testers asking for feedback. Please do not change the &lt; and &gt; markup."><![CDATA[<b>Iščemo beta uporabnike!</b><p>Sky Map v2 je skoraj tu. Gre za popolno prenovo od začetka in veseli bomo vaših zgodnjih povratnih informacij. Če se želite pridružiti beta testiranju, obiščite <a href="https://play.google.com/apps/testing/com.google.android.stardroid">https://play.google.com/apps/testing/com.google.android.stardroid</a> in v2 boste prejeli takoj, ko bo pripravljena.</p>]]></string>
 </resources>

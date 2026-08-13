@@ -5,6 +5,13 @@ All notable changes to Sky Map are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [1.18.1] Eclipse - 2026-08-13
+
+<img src="stardroid-v1/assets/splashscreens/1_18_0_eclipse_icon.png" width="80" alt="Eclipse" />
+
+### Fixed
+- Sun and Moon position accuracy: the Moon's low-precision D22 series (~0.3°) is replaced with the full Meeus ch. 47 series (ELP2000-82 truncated), and the Sun's truncated Keplerian elements (~0.37° off, no aberration/nutation) are replaced with its Meeus ch. 25 apparent position (~0.01°). Both now run on Terrestrial Time via a shared `TimeUtils.julianCenturiesTerrestrial` and in double precision throughout. Eclipse maximum timing, previously off by up to ~30 minutes, now matches published times to within a minute ([#958](https://github.com/sky-map-team/stardroid/pull/958), [#957](https://github.com/sky-map-team/stardroid/issues/957))
+
 ## [1.18.0] Eclipse - 2026-08-09
 
 <img src="stardroid-v1/assets/splashscreens/1_18_0_eclipse_icon.png" width="80" alt="Eclipse" />

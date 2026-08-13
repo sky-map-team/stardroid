@@ -1,7 +1,20 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Prehľad slnečného zatmenia</h2>        <p>Sky Map vám teraz dokáže ukázať, aká časť Slnka bude zakrytá počas zatmenia, videného z miesta, kde stojíte &#8212; vrátane úplného zatmenia 12. augusta 2026.</p>        <p>Dve zmeny to umožňujú. Poloha Mesiaca teraz zohľadňuje vašu polohu na Zemi, nielen stred Zeme, čím sa korigujú chyby až do jedného stupňa &#8212; približne dve šírky Mesiaca. A nové nastavenie <b>Zobraziť skutočné veľkosti</b> vykresľuje Slnko, Mesiac a planéty v ich skutočných uhlových veľkostiach namiesto zväčšených značiek používaných pre viditeľnosť. Zapnite ho a potom posuňte čas dopredu, aby ste sledovali zatmenie v mierke.</p>        <h2>Úhľadnejšia obloha</h2>        <ul>        <li>Prekrývajúce sa popisky sú teraz detekované a posunuté od seba, takže preplnené oblasti zostávajú čitateľné.</li>        <li>Prekreslené ikony hviezd a súhvezdí na bočnom paneli, ktoré sa dali ľahko zameniť.</li>        </ul>        <p>Sky Map v2 prichádza &#8212; kompletné prepísanie. Pripojte sa k beta verzii a vyskúšajte si ju skôr (pozri vyššie).</p>]]></string>
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Náhľad zatmenia Slnka</h2>
+        <p>Sky Map vám teraz môže ukázať, aká časť Slnka bude zakrytá počas zatmenia, videného z miesta, kde stojíte &#8212; vrátane úplného zatmenia 12. augusta 2026.</p>
+        <p>Dve zmeny to spoločne umožňujú. Poloha Mesiaca teraz zohľadňuje vašu polohu na Zemi, nielen stred Zeme, čím sa korigujú chyby až do jedného stupňa &#8212; približne dve šírky Mesiaca. A nové nastavenie <b>Zobraziť skutočné veľkosti</b> kreslí Slnko, Mesiac a planéty v ich skutočných uhlových veľkostiach namiesto zväčšených značiek používaných pre viditeľnosť. Zapnite ho a potom posuňte čas dopredu, aby ste sledovali zatmenie v mierke.</p>
+
+        <h2>Presnejší algoritmus pre Slnko a Mesiac</h2>
+        <p>Nainštalovaný modernejší algoritmus pre polohu Slnka/Mesiaca, aby boli časy zatmení ešte presnejšie.</p>
+
+        <h2>Prehľadnejšia obloha</h2>
+        <ul>
+        <li>Prekrývajúce sa popisky sú teraz detekované a posunuté od seba, aby preplnené oblasti zostali čitateľné.</li>
+        <li>Prekreslené ikony hviezd a súhvezdí na bočnom paneli, ktoré sa dali ľahko zameniť.</li>
+        </ul>
+
+        <p>Sky Map v2 prichádza &#8212; kompletné prepísanie. Pripojte sa k beta verzii a vyskúšajte si ju skôr (pozri vyššie).</p>]]></string>
     <string name="beta_user_help_text" translation_description="HTML content shown to beta testers asking for feedback. Please do not change the &lt; and &gt; markup."><![CDATA[<b>Hľadáme beta testerov!</b>
         <p>Sky Map v2 je už takmer tu. Je to od základov prepracovaná verzia a radi by sme
         získali vašu skorú spätnú väzbu.

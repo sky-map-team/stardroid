@@ -1,6 +1,19 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Prévisualiser une éclipse solaire</h2><p>Sky Map peut maintenant vous montrer quelle partie du Soleil sera couverte lors d\'une éclipse, telle qu\'elle est vue de l\'endroit où vous vous trouvez &#8212; y compris l\'éclipse totale du 12 août 2026.</p><p>Deux changements permettent cela. La position de la Lune tient désormais compte de votre emplacement sur Terre, et non plus seulement du centre de la Terre, corrigeant des erreurs allant jusqu\'à un degré &#8212; soit environ deux largeurs de Lune. Et un nouveau paramètre <b>Afficher les tailles réelles</b> dessine le Soleil, la Lune et les planètes à leurs tailles angulaires réelles au lieu des marqueurs agrandis utilisés pour la visibilité. Activez-le, puis avancez le temps pour observer une éclipse se dérouler à l\'échelle.</p><h2>Un ciel plus ordonné</h2><ul><li>Les étiquettes qui se chevauchent sont maintenant détectées et écartées, afin que les régions encombrées restent lisibles.</li><li>Icônes de la barre latérale des étoiles et des constellations redessinées qui étaient faciles à confondre.</li></ul><p>Sky Map v2 arrive &#8212; une réécriture complète. Rejoignez la version bêta pour l\'essayer en avant-première (voir ci-dessus).</p>]]></string>
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Aperçu d\'une éclipse solaire</h2>
+        <p>Sky Map peut maintenant vous montrer quelle proportion du Soleil sera couverte lors d\'une éclipse, telle qu\'elle est vue de l\'endroit où vous vous trouvez &#8212; y compris l\'éclipse totale du 12 août 2026.</p>
+        <p>Deux changements permettent cela. La position de la Lune tient désormais compte de votre emplacement sur Terre, et non plus seulement du centre de la Terre, corrigeant des erreurs allant jusqu\'à un degré &#8212; soit environ deux largeurs de Lune. Et un nouveau paramètre <b>Afficher les tailles réelles</b> dessine le Soleil, la Lune et les planètes à leurs tailles angulaires réelles au lieu des marqueurs agrandis utilisés pour la visibilité. Activez-le, puis avancez le temps pour observer une éclipse se dérouler à l\'échelle.</p>
+
+        <h2>Algorithme Soleil et Lune plus précis</h2>
+        <p>Un algorithme plus moderne pour la position Soleil/Lune a été installé afin de rendre les horaires d\'éclipses encore plus précis.</p>
+
+        <h2>Un ciel plus ordonné</h2>
+        <ul>
+        <li>Les étiquettes qui se chevauchent sont maintenant détectées et écartées, afin que les régions encombrées restent lisibles.</li>
+        <li>Les icônes de la barre latérale des étoiles et des constellations, qui étaient faciles à confondre, ont été redessinées.</li>
+        </ul>
+
+        <p>Sky Map v2 arrive &#8212; une réécriture complète. Rejoignez la version bêta pour l\'essayer en avant-première (voir ci-dessus).</p>]]></string>
     <string name="beta_user_help_text" translation_description="HTML content shown to beta testers asking for feedback. Please do not change the &lt; and &gt; markup."><![CDATA[<b>Utilisateurs bêta recherchés !</b><p>Sky Map v2 est presque là. C\'est une réécriture complète à partir de zéro et nous aimerions avoir vos premiers retours. Pour rejoindre la version bêta, veuillez visiter <a href="https://play.google.com/apps/testing/com.google.android.stardroid">https://play.google.com/apps/testing/com.google.android.stardroid</a> et vous obtiendrez la v2 dès qu\'elle sera prête.</p>]]></string>
 </resources>
