@@ -65,6 +65,27 @@ fun julianDay(date: Date): Double {
 }
 
 /**
+ * Delta-T (TT - UT) in seconds: the gap between the device's UT clock and the uniform Terrestrial
+ * Time in which the ephemeris series are expressed. Uses the Espenak-Meeus polynomial for
+ * 2005-2050 (about 69 s in the app's era). It is only ~1 minute of clock time, but at the Moon's
+ * ~0.5'/minute motion it is visible in eclipse timing.
+ */
+fun deltaTSeconds(date: Date): Double {
+    val year = 2000.0 + (julianDay(date) - 2451545.0) / 365.25
+    val u = year - 2000.0
+    return 62.92 + 0.32217 * u + 0.005589 * u * u
+}
+
+/**
+ * Julian centuries of Terrestrial Time (TT) from J2000.0 - the time argument the Meeus/ELP series
+ * for the Sun and Moon expect. See [deltaTSeconds].
+ */
+fun julianCenturiesTerrestrial(date: Date): Double {
+    val jdTt = julianDay(date) + deltaTSeconds(date) / 86400.0
+    return (jdTt - 2451545.0) / 36525.0
+}
+
+/**
  * Converts the given Julian Day to Gregorian Date (in UT time zone).
  * Based on the formula given in the Explanatory Supplement to the
  * Astronomical Almanac, pg 604.

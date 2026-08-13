@@ -299,7 +299,7 @@ class UniverseSmokeTest {
         testCal[2010, GregorianCalendar.DECEMBER, 25, 12, 0] = 0
         assertThat(
             universe.solarSystemObjectFor(SolarSystemBody.Moon).calculatePercentIlluminated(testCal.time)
-        ).isWithin(REG_TOL).of(21.741992950439453f)
+        ).isWithin(REG_TOL).of(21.813465118408203f)
         assertThat(
             universe.solarSystemObjectFor(SolarSystemBody.Mercury).calculatePercentIlluminated(testCal.time)
         ).isWithin(REG_TOL).of(12.131664276123047f)
@@ -313,7 +313,7 @@ class UniverseSmokeTest {
         // Don't trust these numbers
         assertThat(
             universe.solarSystemObjectFor(SolarSystemBody.Moon).calculatePhaseAngle(testCal.time)
-        ).isWithin(REG_TOL).of(124.41341400146484f)
+        ).isWithin(REG_TOL).of(124.31419372558594f)
         assertThat(
             universe.solarSystemObjectFor(SolarSystemBody.Mercury).calculatePhaseAngle(testCal.time)
         ).isWithin(REG_TOL).of(139.23260498046875f)
