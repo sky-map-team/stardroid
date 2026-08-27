@@ -21,6 +21,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ProgressBar
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import com.google.android.stardroid.R
 import com.google.android.stardroid.control.LocationController
 import com.google.android.stardroid.math.LatLong
@@ -91,6 +92,13 @@ class ManualLocationEntryDialogFragment : DialogFragment() {
             trySetLocation()
         }
 
+        if (!Geocoder.isPresent()) {
+            placeNameEdit.isEnabled = false
+            resolveButton.isEnabled = false
+            placeErrorText.setTextColor(ContextCompat.getColor(requireContext(), R.color.status_absent))
+            showPlaceError(getString(R.string.location_geocoder_unavailable))
+        }
+
         return AlertDialog.Builder(requireContext())
             .setTitle(R.string.location_manual_entry_title)
             .setView(view)
@@ -101,11 +109,6 @@ class ManualLocationEntryDialogFragment : DialogFragment() {
         val name = placeNameEdit.text.toString().trim()
         if (name.isEmpty()) return
         placeErrorText.visibility = View.GONE
-
-        if (!Geocoder.isPresent()) {
-            showPlaceError(getString(R.string.location_geocoder_offline))
-            return
-        }
 
         setResolving(true)
         val appContext = requireContext().applicationContext

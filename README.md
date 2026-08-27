@@ -51,9 +51,11 @@ If you enjoy using Sky Map, there are several ways to help keep the project aliv
 
 # Contributing
 
-Bug fixes, dependency upgrades, and translations are always welcome. For major changes or new features, **please [email us](mailto:skymapdevs@gmail.com) first** — we may have a different vision and it would be a shame for your work to go to waste.
+IMPORTANT: Contributions are currently closed! The V1 codebase is about to be retired and any contributions would be wasted. Watch out for ways to contribute in V2.
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for full details on build instructions, coding style, and how to submit a PR.
+~~Bug fixes, dependency upgrades, and translations are always welcome. For major changes or new features, **please [email us](mailto:skymapdevs@gmail.com) first** — we may have a different vision and it would be a shame for your work to go to waste.~~
+
+~~See [CONTRIBUTING.md](CONTRIBUTING.md) for full details on build instructions, coding style, and how to submit a PR.~~
 
 ---
 
@@ -71,12 +73,12 @@ The source code of this project is a derivative work of the original open-source
 ## 2. Branding & Visual Assets (All Rights Reserved)
 The open-source code licenses (GPLv3 and Apache 2.0) apply strictly to the functional source code. All proprietary visual artwork, custom UI layouts, onboarding graphics, launcher icons, and designs contained within this repository are **Copyright © 2026 Penterakt LLC, All Rights Reserved**. 
 
-These visual assets are **NOT** open-source and may not be used, duplicated, or modified in any third-party fork or distribution without express written consent. 
+These visual assets are **NOT** open-source and may not be used, duplicated, or modified in any third-party fork or distribution without express written consent from [Penterakt LLC](http://penterakt.io). 
 
 *(Note: This reservation excludes any public-domain or open-licensed scientific datasets, such as NASA/ESA astronomical imagery or public star catalogs, which remain governed by their original respective terms.)*
 
 ## 3. Trademark Notice
-The app name, project titles, logos, and associated branding elements constitute protected trade names and trademarks of **Penterakt LLC**. 
+The app name, project titles, logos, and associated branding elements constitute protected trade names and trademarks of [**Penterakt LLC**](http://penterakt.io). 
 
 Subject to the platform terms of the public code hosting service (e.g., GitHub's permission to view and fork repositories on-platform for personal use), you are strictly prohibited from using these trademarks or protected app names in any independent fork, clone, or marketplace distribution. Any independent compilation or distribution of this application published to any app store (such as Google Play, F-Droid, or Amazon Appstore) must be entirely re-branded under a unique identity.
 
@@ -86,9 +88,3 @@ Subject to the platform terms of the public code hosting service (e.g., GitHub's
 ## Sky Map Prototype (2009)
 
 ![Sky Map Prototype (2009)](./stardroid-v1/assets/SkyMap_prototype.png)
-
-## Star Chart
-Appropriately, for a star chart app, here's a star chart:
-[![Star History Chart](https://app.repohistory.com/api/svg?repo=sky-map-team/stardroid&type=Timeline&background=0D1117&color=f88d62)](https://app.repohistory.com/star-history)
-
-

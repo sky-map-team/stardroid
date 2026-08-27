@@ -20,6 +20,8 @@ import kotlin.math.cos
 import com.google.android.stardroid.math.Vector3
 import kotlin.math.log10
 
+// Kilometers per astronomical unit.
+private const val KM_PER_AU = 149597870.7f
 
 /**
  * A celestial object that lives in our solar system.
@@ -103,6 +105,21 @@ abstract class SolarSystemObject(protected val solarSystemBody : SolarSystemBody
             SolarSystemBody.Saturn -> 0.035f
             else -> throw RuntimeException("Unknown image size for Solar System Object: $this")
         }
+    }
+
+    /**
+     * Calculates the true angular radius of the body as seen from Earth, in radians, from its
+     * real physical radius ([SolarSystemBody.meanRadiusKm]) and distance from Earth. Unlike
+     * [getPlanetaryImageSize]'s fixed, exaggerated-for-visibility constants, this reflects the
+     * body's actual apparent size in the sky (e.g. for rendering eclipses to scale).
+     */
+    open fun getTrueAngularRadius(time: Date): Float {
+        val planetCoords =
+            heliocentricCoordinatesFromOrbitalElements(solarSystemBody.getOrbitalElements(time))
+        val earthCoords =
+            heliocentricCoordinatesFromOrbitalElements(SolarSystemBody.Earth.getOrbitalElements(time))
+        val earthDistanceKm = planetCoords.distanceFrom(earthCoords) * KM_PER_AU
+        return MathUtils.asin((solarSystemBody.meanRadiusKm / earthDistanceKm).coerceIn(-1f, 1f))
     }
 
     /**

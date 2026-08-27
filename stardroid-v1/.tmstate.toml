@@ -1,0 +1,36 @@
+version = 1
+
+# NOTE: es-ES is deliberately NOT listed here. Although it derives from es-419,
+# Spain uses the formal register ("su ubicación") while es-419 uses the informal
+# ("tu ubicación"), so its changelog must be translated separately rather than
+# treated as identical to its parent.
+
+[same_as_parent.fastlane.en-GB]
+keys = [
+    "changelogs/default.txt",
+]
+
+[same_as_parent.fastlane.en-AU]
+keys = [
+    "changelogs/default.txt",
+]
+
+[same_as_parent.fastlane.en-CA]
+keys = [
+    "changelogs/default.txt",
+]
+
+[same_as_parent.fastlane.en-IN]
+keys = [
+    "changelogs/default.txt",
+]
+
+[same_as_parent.fastlane.en-SG]
+keys = [
+    "changelogs/default.txt",
+]
+
+[same_as_parent.fastlane.en-ZA]
+keys = [
+    "changelogs/default.txt",
+]

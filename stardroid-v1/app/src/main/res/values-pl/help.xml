@@ -134,7 +134,7 @@
 &lt;ul&gt;
 &lt;li&gt;żyroskopem — wygładzi ruch i sprawi, że będzie mniej szarpany.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p class="callout"&gt;Kompasy w telefonach są znane z tego, że sprawiają kłopoty. Jeśli Sky Map nie wyświetla nieba dokładnie, prawie zawsze jest to problem sprzętowy związany z kompasem, a nie problem ze Sky Map. Zobacz sekcję rozwiązywania problemów, aby znaleźć informacje, które mogą pomóc.&lt;/p&gt;
+&lt;p class="callout"&gt;Kompasy w telefonach są notorycznie zawodne. Jeśli mapa nieba wygląda źle, jest to prawie zawsze problem sprzętowy związany z kompasem w Twoim telefonie — nie błąd w Sky Map. Sky Map odczytuje dokładnie to, co zgłasza czujnik Twojego telefonu; nie ma możliwości automatycznej korekty błędnego lub zniekształconego odczytu, choć ręczne przesunięcie jest dostępne w Ustawieniach dla telefonów ze stałym błędem. Zobacz Rozwiązywanie problemów poniżej.&lt;/p&gt;
 &lt;h3&gt;Skąd mam wiedzieć, które czujniki posiada mój telefon?&lt;/h3&gt;
 &lt;p&gt;Otwórz diagnostykę Sky Map — wszystkie czujniki, których nie ma w Twoim telefonie, zostaną wyświetlone jako „--,--,--”.&lt;/p&gt;
 &lt;h3&gt;Co się stanie, jeśli w moim urządzeniu brakuje wymaganych czujników?&lt;/h3&gt;
@@ -150,7 +150,7 @@
 &lt;h3&gt;Mapa wskazuje niewłaściwy kierunek lub jest niedokładna&lt;/h3&gt;
 &lt;p&gt;Sky Map potrzebuje trzech rzeczy w celu prawidłowego wyświetlania nieba: kierunku, w którym Twój telefon jest skierowany, Twojej lokalizacji i aktualnego czasu. Jeśli mapa wygląda źle, jedna z tych informacji jest prawdopodobnie nieprawidłowa.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;b&gt;Kompas:&lt;/b&gt; Najczęstsza przyczyna — problem sprzętowy, a nie błąd Sky Map. Spróbuj skalibrować (gestem na kształt ósemki), oddal się od metalowych obiektów i włącz &lt;b&gt;Używaj poprawki magnetycznej&lt;/b&gt; w &lt;b&gt;Ustawienia → Ustawienia lokalizacji&lt;/b&gt;. Ręczne przesunięcie kompasu jest dostępne w &lt;b&gt;Ustawienia → Ustawienia czujnika&lt;/b&gt; dla kompasów ze stałym błędem.&lt;/li&gt;
+    &lt;li&gt;&lt;b&gt;Kompas (najczęstsza przyczyna):&lt;/b&gt; Jest to problem sprzętowy związany z Twoim telefonem — nie błąd Sky Map. Gest kalibracji na kształt ósemki nakazuje Twojemu telefonowi zresetować swój czujnik kompasu wewnętrznie, ale <i> skalibrowany kompas jest niekoniecznie dokładny</i>. Jeśli znajdujesz się w pobliżu metalowego obiektu, deski rozdzielczej samochodu lub magnetycznego etui na telefon, mapa może nadal być niedokładna nawet po kalibracji. Przejdź na otwartą przestrzeń, powtórz gest na kształt ósemki, następnie włącz &lt;b&gt;Używaj poprawki magnetycznej&lt;/b&gt; w &lt;b&gt;Ustawienia → Ustawienia lokalizacji&lt;/b&gt;. Jeśli Twój telefon ma stały błąd kierunkowy, użyj ręcznego przesunięcia w &lt;b&gt;Ustawienia → Ustawienia czujnika&lt;/b&gt;.&lt;/li&gt;
 &lt;li&gt;&lt;b&gt;Lokalizacja:&lt;/b&gt; Przyznaj uprawnienie do lokalizacji w &lt;b&gt;Ustawienia aplikacji → Uprawnienia&lt;/b&gt;. Sprawdź diagnostykę, aby potwierdzić swoje współrzędne. Charakterystycznym objawem braku lokalizacji jest pojawienie się Gwiazdy Polarnej blisko horyzontu.&lt;/li&gt;
 &lt;li&gt;&lt;b&gt;Czas:&lt;/b&gt; Rzadziej spotykane, ale nieprawidłowa strefa czasowa powoduje przesunięcie całego nieba. Sprawdź diagnostykę, aby potwierdzić, że czas i strefa czasowa w Twoim urządzeniu są prawidłowe.&lt;/li&gt;
 &lt;/ul&gt;

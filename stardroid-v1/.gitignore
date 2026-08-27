@@ -15,6 +15,7 @@ output.json
 bin/
 gen/
 .worktrees/
+.kotlin/
 
 # --- Android Studio / IntelliJ ---
 .idea/
@@ -57,3 +58,6 @@ fastlane/test_output
 
 # Bug reports
 bugreport-*.zip
+
+# Local secrets
+.env

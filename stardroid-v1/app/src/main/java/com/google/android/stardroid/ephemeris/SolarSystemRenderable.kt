@@ -41,7 +41,6 @@ class SolarSystemRenderable(
     private val solarSystemBody: SolarSystemBody, resources: Resources,
     model: AstronomerModel, prefs: SharedPreferences
 ) : AbstractAstronomicalRenderable() {
-    private val pointPrimitives = ArrayList<PointPrimitive>()
     private val imagePrimitives = ArrayList<ImagePrimitive>()
     private val labelPrimitives = ArrayList<TextPrimitive>()
     private val resources: Resources
@@ -53,6 +52,7 @@ class SolarSystemRenderable(
     private var earthCoords: Vector3
     private var imageId = -1
     private var lastUpdateTimeMs = 0L
+    private var lastImageScale = Float.NaN
     private val universe = Universe()
     override val names: List<String>
         get() = Lists.asList(name)
@@ -62,10 +62,28 @@ class SolarSystemRenderable(
     private fun updateCoords(time: Date) {
         lastUpdateTimeMs = time.time
         earthCoords = heliocentricCoordinatesFromOrbitalElements(SolarSystemBody.Earth.getOrbitalElements(time))
-        currentCoords.updateFromRaDec(universe.getRaDec(solarSystemBody, time))
+        currentCoords.updateFromRaDec(
+            universe.getTopocentricRaDec(solarSystemBody, time, model.location)
+        )
         for (imagePrimitive in imagePrimitives) {
             imagePrimitive.setUpVector(getUpVectorForImage())
         }
+    }
+
+    // Called every frame from update(), independent of the position-update throttle below: this
+    // is cheap enough to run every time, and unlike position, size needs to react on the very
+    // next frame both to the true-size setting being toggled and to the Moon's true size
+    // changing continuously between perigee and apogee - waiting for the (up to hourly, for
+    // planets) position-update interval would leave it visibly stale. Returns true if the scale
+    // actually changed, so the caller knows whether the renderer needs telling.
+    private fun updateScale(time: Date): Boolean {
+        val scale = getImageScale(time)
+        if (scale == lastImageScale) return false
+        lastImageScale = scale
+        for (imagePrimitive in imagePrimitives) {
+            imagePrimitive.setScale(scale)
+        }
+        return true
     }
 
     // For the Moon, convert earthCoords from ecliptic to equatorial coordinates
@@ -79,36 +97,27 @@ class SolarSystemRenderable(
         }
     }
 
+    // Read every call so the Moon's true size (which changes continuously between perigee and
+    // apogee) stays current, and so toggling the setting takes effect on the next frame without
+    // needing a preference-change listener.
+    private fun getImageScale(time: Date): Float {
+        return if (preferences.getBoolean(SHOW_TRUE_SIZE, false)) {
+            solarSystemObject.getTrueAngularRadius(time)
+        } else {
+            solarSystemObject.getPlanetaryImageSize()
+        }
+    }
+
     override fun initialize(): Renderable {
         val time = model.time
         updateCoords(time)
         imageId = solarSystemObject.getImageResourceId(time)
-        if (solarSystemBody === SolarSystemBody.Moon) {
-            imagePrimitives.add(
-                ImagePrimitive(
-                    currentCoords, resources, imageId, getUpVectorForImage(),
-                    solarSystemObject.getPlanetaryImageSize()
-                )
+        lastImageScale = getImageScale(time)
+        imagePrimitives.add(
+            ImagePrimitive(
+                currentCoords, resources, imageId, getUpVectorForImage(), lastImageScale
             )
-        } else {
-            val usePlanetaryImages = preferences.getBoolean(SHOW_PLANETARY_IMAGES, true)
-            if (usePlanetaryImages || solarSystemBody === SolarSystemBody.Sun) {
-                imagePrimitives.add(
-                    ImagePrimitive(
-                        currentCoords, resources, imageId, UP,
-                        solarSystemObject.getPlanetaryImageSize()
-                    )
-                )
-            } else {
-                pointPrimitives.add(
-                    PointPrimitive(
-                        currentCoords,
-                        resources.getColor(R.color.planet_body, null),
-                        PLANET_SIZE
-                    )
-                )
-            }
-        }
+        )
         labelPrimitives.add(
             TextPrimitive(currentCoords, name, resources.getColor(R.color.sky_label, null))
         )
@@ -118,6 +127,9 @@ class SolarSystemRenderable(
     override fun update(): EnumSet<UpdateType> {
         val updates = EnumSet.noneOf(UpdateType::class.java)
         val modelTime = model.time
+        if (updateScale(modelTime)) {
+            updates.add(UpdateType.UpdatePositions)
+        }
         if (Math.abs(modelTime.time - lastUpdateTimeMs) > solarSystemObject.getUpdateFrequencyMs()) {
             updates.add(UpdateType.UpdatePositions)
             // update location
@@ -141,13 +153,9 @@ class SolarSystemRenderable(
         get() = imagePrimitives
     override val labels: List<TextPrimitive>
         get() = labelPrimitives
-    override val points: List<PointPrimitive>
-        get() = pointPrimitives
 
     companion object {
-        private const val PLANET_SIZE = 3
-        private const val SHOW_PLANETARY_IMAGES = "show_planetary_images"
-        private val UP = Vector3(0.0f, 1.0f, 0.0f)
+        private const val SHOW_TRUE_SIZE = "show_true_size"
     }
 
     init {

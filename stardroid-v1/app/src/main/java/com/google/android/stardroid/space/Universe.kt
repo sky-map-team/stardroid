@@ -10,6 +10,7 @@
 package com.google.android.stardroid.space
 
 import com.google.android.stardroid.ephemeris.SolarSystemBody
+import com.google.android.stardroid.math.LatLong
 import com.google.android.stardroid.math.RaDec
 import java.util.*
 
@@ -50,5 +51,21 @@ class Universe {
      */
     fun getRaDec(solarSystemBody: SolarSystemBody, datetime: Date): RaDec {
         return solarSystemObjectMap.get(solarSystemBody)!!.getRaDec(datetime)
+    }
+
+    /**
+     * Gets the location of a planet at a particular date, as seen by an observer at [location].
+     * Only the Moon's position depends meaningfully on the observer's location on Earth (diurnal
+     * parallax); every other body falls back to the geocentric [getRaDec], as their own parallax
+     * is far below this model's accuracy (e.g. the Sun's is at most ~0.002 degrees).
+     */
+    fun getTopocentricRaDec(
+        solarSystemBody: SolarSystemBody, datetime: Date, location: LatLong
+    ): RaDec {
+        return if (solarSystemBody == SolarSystemBody.Moon) {
+            moon.getTopocentricRaDec(datetime, location)
+        } else {
+            getRaDec(solarSystemBody, datetime)
+        }
     }
 }

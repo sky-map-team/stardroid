@@ -26,6 +26,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.google.android.stardroid.BuildConfig;
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.StardroidApplication;
 import com.google.android.stardroid.control.LocationController;
@@ -100,9 +101,20 @@ public class DiagnosticActivity extends androidx.fragment.app.FragmentActivity
     String androidVersion = String.format(Build.VERSION.RELEASE + " (%d)", Build.VERSION.SDK_INT);
     setText(R.id.diagnose_android_version_txt, androidVersion);
 
-    String skyMapVersion = String.format(
-        app.getVersionName() + " (%d)", app.getVersion());
+    String skyMapVersion = getString(R.string.diagnostics_skymap_version_format,
+        app.getVersionName(), app.getVersion(), getFlavorLabel());
     setText(R.id.diagnose_skymap_version_txt, skyMapVersion);
+  }
+
+  private String getFlavorLabel() {
+    switch (BuildConfig.FLAVOR) {
+      case "gms":
+        return getString(R.string.diagnostics_flavor_gms);
+      case "fdroid":
+        return getString(R.string.diagnostics_flavor_fdroid);
+      default:
+        return BuildConfig.FLAVOR;
+    }
   }
 
   private boolean continueUpdates;

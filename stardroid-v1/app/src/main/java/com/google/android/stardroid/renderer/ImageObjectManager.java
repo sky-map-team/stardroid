@@ -145,9 +145,10 @@ public class ImageObjectManager extends RendererObjectManager {
       reloadBuffers = true;
       reloadImages = true;
       // If this is a full reload, all the textures were automatically deleted,
-      // so just create new arrays so we won't try to delete the old ones again.
-      mTextures = new TextureReference[images.length];
-      mRedTextures = new TextureReference[images.length];
+      // so drop the old references so we won't try to delete them again. They're re-sized and
+      // repopulated from the image list by the reloadImages block below.
+      mTextures = new TextureReference[0];
+      mRedTextures = new TextureReference[0];
     } else {
       // Process any queued updates.
       boolean reset = mUpdates.contains(UpdateType.Reset);
@@ -161,14 +162,31 @@ public class ImageObjectManager extends RendererObjectManager {
       mTexCoordBuffer.reload();
     }
     if (reloadImages) {
+      // Release any textures we're about to drop on the floor. This must happen before the
+      // arrays are resized, otherwise the old references leak GL texture names.
       for (int i = 0; i < mTextures.length; i++) {
-        // If the image is already allocated, delete it.
         if (mTextures[i] != null) {
           mTextures[i].delete(gl);
+        }
+        if (mRedTextures[i] != null) {
           mRedTextures[i].delete(gl);
         }
+      }
 
-        Bitmap bmp = mImages[i].bitmap;
+      // The texture arrays are sized from the images, not left at whatever length a previous
+      // reload happened to set. A partial (non-full) reload can be processed before the first
+      // full reload - or after the image count has changed - in which case these arrays would
+      // otherwise still be the wrong length and the loop below would silently create no
+      // textures at all, leaving the icons invisible until something forced a full reload.
+      mTextures = new TextureReference[images.length];
+      mRedTextures = new TextureReference[images.length];
+
+      for (int i = 0; i < images.length; i++) {
+        Bitmap bmp = images[i].bitmap;
+        if (bmp == null) {
+          // Nothing to upload; leave the slot null and skip it at draw time.
+          continue;
+        }
         mTextures[i] = textureManager().createTexture(gl);
         mTextures[i].bind(gl);
         gl.glTexParameterf(GL10.GL_TEXTURE_2D, GL10.GL_TEXTURE_MIN_FILTER, GL10.GL_LINEAR);
@@ -227,6 +245,12 @@ public class ImageObjectManager extends RendererObjectManager {
     Image[] images = mImages;
     int count = Math.min(textures.length, images.length);
     for (int i = 0; i < count; i++) {
+      // A slot is null if its bitmap failed to decode, or if this frame landed between an
+      // update and its reload. Skip it rather than throwing on the GL thread.
+      TextureReference texture = nightVision ? redTextures[i] : textures[i];
+      if (texture == null) {
+        continue;
+      }
       if (images[i].useBlending) {
         gl.glEnable(GL10.GL_BLEND);
         gl.glBlendFunc(GL10.GL_SRC_ALPHA, GL10.GL_ONE_MINUS_SRC_ALPHA);
@@ -235,17 +259,15 @@ public class ImageObjectManager extends RendererObjectManager {
         gl.glAlphaFunc(GL10.GL_GREATER, 0.5f);
       }
 
-      if (nightVision) {
-        redTextures[i].bind(gl);
-      } else {
+      if (!nightVision) {
         int tint = images[i].tint;
         if (i == 0 || tint != lastTint) {
           gl.glColor4f(((tint >> 16) & 0xff) / 255f, ((tint >> 8) & 0xff) / 255f,
               (tint & 0xff) / 255f, ((tint >> 24) & 0xff) / 255f);
           lastTint = tint;
         }
-        textures[i].bind(gl);
       }
+      texture.bind(gl);
       ((GL11) gl).glDrawArrays(GL10.GL_TRIANGLE_STRIP, 4 * i, 4);
 
       if (images[i].useBlending) {

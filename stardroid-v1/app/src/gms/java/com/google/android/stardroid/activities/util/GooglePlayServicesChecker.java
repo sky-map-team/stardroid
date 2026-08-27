@@ -1,6 +1,7 @@
 package com.google.android.stardroid.activities.util;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.SharedPreferences;
 import android.util.Log;
 import android.widget.Toast;
@@ -44,10 +45,13 @@ public class GooglePlayServicesChecker extends AbstractGooglePlayServicesChecker
       Log.d(TAG, "Google Play Services is available and up to date");
     } else {
       Log.d(TAG, "Google Play Status availability: " + googlePlayServicesAvailability);
-      if (apiAvailability.isUserResolvableError(googlePlayServicesAvailability)) {
+      Dialog errorDialog = apiAvailability.isUserResolvableError(googlePlayServicesAvailability)
+          ? apiAvailability.getErrorDialog(parent, googlePlayServicesAvailability,
+              DynamicStarMapActivity.GOOGLE_PLAY_SERVICES_REQUEST_CODE)
+          : null;
+      if (errorDialog != null) {
         Log.d(TAG, "...but we can fix it");
-        apiAvailability.getErrorDialog(parent, googlePlayServicesAvailability,
-            DynamicStarMapActivity.GOOGLE_PLAY_SERVICES_REQUEST_CODE).show();
+        errorDialog.show();
       } else {
         Log.d(TAG, "...and we can't fix it");
         // For now just warn the user, though we may need to do something like disable

@@ -81,12 +81,19 @@ In all commands below, substitute `<version>` and `<ReleaseName>` with the value
 
 1. Update `../CHANGELOG.md` for this release. If the `skymap.whatsnew` skill was run (Step 2.3), it will have prepended content without a version heading — add the heading now. If it was not run, add a new entry manually based on commits since the last release (`git log <last-tag>..HEAD --oneline`):
    ```
-   ## [<version>] - YYYY-MM-DD
+   ## [<version>] <ReleaseName> - YYYY-MM-DD
+
+   <img src="stardroid-v1/assets/splashscreens/<version>_<name_lowercase>_icon.png" width="80" alt="<ReleaseName>" />
 
    ### Added / Fixed / Changed
    - ...
    ```
-   Use today's date. The CHANGELOG format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
+   Use today's date. The heading must include the release name (confirmed in Step 1), and must be
+   followed by a small circular icon image saved in Step 1.3.
+   Icon filenames must include the version (`<version>_<name_lowercase>_icon.png`, e.g. "1.16.1:Caelus" → `1_16_1_caelus_icon.png`).
+   This ensures different sub-releases of the same name have distinct, versioned icons.
+   Omit the image only if no source graphic was saved for this release. The CHANGELOG format follows
+   [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 2. Commit all changes from Steps 1–5 (version name, version code bump, splash, sponsors, contributors, whatsnew content, translations, CHANGELOG) in a single commit to master:
    ```bash
@@ -119,6 +126,17 @@ In all commands below, substitute `<version>` and `<ReleaseName>` with the value
      --title "Sky Map <version>: <ReleaseName>" \
      --notes-file /tmp/release_notes.md
    ```
+
+   **Important:** the CHANGELOG's `<img>` tag (if present) uses a path relative to the repo root
+   (`stardroid-v1/assets/splashscreens/...`), which does not resolve inside a standalone GitHub
+   release description. Before creating the release, rewrite that path to an absolute
+   `raw.githubusercontent.com` URL pinned to the commit just pushed in step 2, so the icon
+   keeps rendering even if the file is later renamed or moved:
+   ```bash
+   commit=$(git rev-parse HEAD)
+   sed -i '' "s#stardroid-v1/assets/splashscreens/#https://raw.githubusercontent.com/sky-map-team/stardroid/${commit}/stardroid-v1/assets/splashscreens/#" /tmp/release_notes.md
+   ```
+   Run this substitution *before* the `gh release create` command above.
 
 ### Step 7. Progress the new release to beta
 **Before promoting, pause and explicitly ask the user to confirm that the internal build has been reviewed and tested.** Do not proceed until you receive explicit approval.

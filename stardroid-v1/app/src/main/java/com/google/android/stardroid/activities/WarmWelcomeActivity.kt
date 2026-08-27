@@ -163,7 +163,7 @@ class WarmWelcomeActivity : AppCompatActivity(), WhatsNewDialogFragment.CloseLis
 
         for (i in indicators.indices) {
             indicators[i] = ImageView(this).apply {
-                setImageDrawable(ContextCompat.getDrawable(this@WarmWelcomeActivity, R.drawable.star_off))
+                setImageDrawable(ContextCompat.getDrawable(this@WarmWelcomeActivity, R.drawable.welcome_indicator_off))
                 this.layoutParams = layoutParams
             }
             indicatorsContainer.addView(indicators[i])
@@ -175,9 +175,9 @@ class WarmWelcomeActivity : AppCompatActivity(), WhatsNewDialogFragment.CloseLis
         for (i in 0 until count) {
             val imageView = indicatorsContainer.getChildAt(i) as ImageView
             if (i == position) {
-                imageView.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.star_on))
+                imageView.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.welcome_indicator_on))
             } else {
-                imageView.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.star_off))
+                imageView.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.welcome_indicator_off))
             }
         }
     }

@@ -31,6 +31,7 @@
     <string name="location_set_button" translation_description="Button that confirms and applies the manually entered location">Set Location</string>
     <string name="location_place_not_found" translation_description="Inline error shown when a place name search returns no results">Place not found — try a more specific name</string>
     <string name="location_geocoder_offline" translation_description="Inline message shown when geocoding fails because there is no internet connection">No internet — enter coordinates directly</string>
+    <string name="location_geocoder_unavailable" translation_description="Inline message shown when place name lookup is disabled because the device has no geocoding backend, typically due to missing Google Play Services">No geocoding service on this device — enter coordinates directly</string>
     <string name="location_invalid_latitude" translation_description="Validation error for latitude values outside the valid range">Latitude must be between −90 and 90</string>
     <string name="location_invalid_longitude" translation_description="Validation error for longitude values outside the valid range">Longitude must be between −180 and 180</string>
     <string name="location_management_title" translation_description="Title of the location management screen">Your Location</string>
@@ -80,6 +81,10 @@
         translation_description="Setting toggle title: whether to show the blue sky gradient during the day">Show sky gradient</string>
     <string name="show_sky_gradient_preference_summary"
         translation_description="Setting toggle summary for sky gradient: explains what the feature does">Shades the sky blue near the Sun and dark on the opposite side</string>
+    <string name="show_true_size_preference_title"
+        translation_description="Setting toggle title: whether to render the Sun, Moon, and planets at their true size">Show true-to-life sizes</string>
+    <string name="show_true_size_preference_summary"
+        translation_description="Setting toggle summary: explains what the true size feature does, and why you might want it (e.g. eclipses)">Draws the Sun, Moon, and planets at their actual size in the sky, instead of enlarged for visibility. Useful for seeing eclipses to scale.</string>
     <string name="ecliptic" translation_description="Label for the ecliptic layer — the apparent annual path of the Sun across the sky">Ecliptic</string>
     <string name="dialog_accept" translation_description="accepting the licence agreement">Accept</string>
     <string name="dialog_decline" translation_description="declining the licence agreement">No Thanks</string>
@@ -194,6 +199,9 @@
     <string name="diagnostics_activity_phone" translation_description="Row label in the Diagnostics screen for the device model name">Device</string>
     <string name="diagnostics_activity_android_version" translation_description="Row label in the Diagnostics screen for the Android OS version">Android version</string>
     <string name="diagnostics_activity_sky_map_version" translation_description="Row label in the Diagnostics screen for the Sky Map app version">Sky Map version</string>
+    <string name="diagnostics_skymap_version_format" translation_description="Format for the Sky Map version row in Diagnostics: version name (version code) [build flavor]. %1$s is version name, %2$d is version code, %3$s is the build flavor label (e.g. Gms or F-Droid)" translatable="false">%1$s (%2$d) [%3$s]</string>
+    <string name="diagnostics_flavor_gms" translation_description="Build flavor label shown in Diagnostics for the Google-services build" translatable="false">Gms</string>
+    <string name="diagnostics_flavor_fdroid" translation_description="Build flavor label shown in Diagnostics for the F-Droid (no Google services) build" translatable="false">F-Droid</string>
     <string name="diagnostics_activity_sensors_heading" translation_description="Section heading in the Diagnostics screen for sensor readings">Sensors</string>
     <string name="diagnostics_activity_compass" translation_description="Row label in the Diagnostics screen for the compass (magnetic field) sensor">Compass</string>
     <string name="diagnostics_activity_accelerometer" translation_description="Row label in the Diagnostics screen for the accelerometer sensor">Accelerometer</string>
