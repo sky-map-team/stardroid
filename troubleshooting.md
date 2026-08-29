@@ -158,8 +158,8 @@ close the card.
 
 ## The map is jittery
 
-- Some jitter is normal if your phone has no gyroscope. Enable **Disable Gyro** under
-  **Settings → Sensor Settings (Experts)** to switch to the alternative sensor mode.
+- The gyroscope is what smooths the map's motion. Check **Settings → Sensor Settings (Experts)**
+  — if **Disable Gyro** is switched on, try switching it off to re-enable the gyro's smoothing.
 - Adjust **Sensor Speed** and **Sensor Damping** in the same section to tune the response.
 
 ---

@@ -162,10 +162,13 @@ swipes up from the bottom edge.
 
 **What users say:** "the map jumps around", "it's shaky", "very unstable"
 
-**Real cause:** Phone lacks a gyroscope, or sensor settings need tuning.
+**Real cause:** The gyroscope smooths the map's motion, so jitter often means it's not being used —
+either the phone lacks a gyroscope, or the user has Disable Gyro switched on. Sensor settings may
+also need tuning.
 
 **Steps to suggest:**
-1. Go to Settings → Sensor Settings (Experts) and enable Disable Gyro
+1. Go to Settings → Sensor Settings (Experts) — if Disable Gyro is switched on, try switching it
+   off to re-enable the gyro's smoothing
 2. Adjust Sensor Speed and Sensor Damping in the same settings section
 
 ---
