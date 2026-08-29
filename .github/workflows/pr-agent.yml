@@ -1,0 +1,53 @@
+name: PR-Agent Gemini Reviewer
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+  issue_comment:
+    types: [created]
+
+jobs:
+  pr_agent_job:
+    if: ${{ github.event.sender.type != 'Bot' }}
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
+      contents: read
+    steps:
+      - name: Run PR-Agent
+        uses: the-pr-agent/pr-agent@main
+        env:
+          # Use LiteLLM double-underscore syntax for Gemini AI Studio keys
+          GOOGLE_AI_STUDIO__GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+          # Only run auto-describe/auto-improve automatically; auto-review must be
+          # requested explicitly (e.g. via a `/review` PR comment) rather than firing
+          # on every push/synchronize to an existing PR.
+          GITHUB_ACTION_CONFIG.AUTO_REVIEW: "false"
+          GITHUB_ACTION_CONFIG.AUTO_DESCRIBE: "true"
+          GITHUB_ACTION_CONFIG.AUTO_IMPROVE: "true"
+          
+          # Model configuration - "gemini/" is PR-Agent's LiteLLM routing prefix;
+          # "google_ai_studio" is only the credentials namespace used for auth above.
+          # gemini-1.5-flash was retired from the Google AI Studio API (404
+          # NOT_FOUND on generateContent) - gemini-flash-latest is a stable alias
+          # that always points at the current flash-tier model, so this doesn't
+          # need to be manually bumped every time Google retires a version.
+          CONFIG.MODEL: "gemini/gemini-flash-latest"
+          CONFIG.FALLBACK_MODELS: "['gemini/gemini-flash-latest']"
+
+          # Default max_model_tokens (32000) is a hardcoded global cap applied via
+          # min() regardless of the model's real context window, so large diffs
+          # were getting pruned down to nothing. custom_model_max_tokens is set
+          # too, since gemini-flash-latest may not be a literal key in PR-Agent's
+          # MAX_TOKENS table (unlike the pinned "gemini-1.5-flash" name was).
+          CONFIG.MAX_MODEL_TOKENS: "200000"
+          CONFIG.CUSTOM_MODEL_MAX_TOKENS: "200000"
+          PR_REVIEWER.NUM_CODE_SUGGESTIONS: 4
+
+          # Post a new review comment each round instead of editing one in place, so
+          # iterating on feedback (e.g. via a review-and-fix loop) gets a readable
+          # sequential history instead of losing prior rounds to in-place edits.
+          PR_REVIEWER.PERSISTENT_COMMENT: "false"
