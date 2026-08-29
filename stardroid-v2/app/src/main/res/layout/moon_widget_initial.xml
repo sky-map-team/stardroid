@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Classic RemoteViews layout doing double duty as the widget's initialLayout (shown until
+     the first Glance composition) and previewLayout (the live picker preview on API 31+).
+     Mirrors MoonWidgetContent with representative values; not translated because the real
+     content replaces it immediately after placement.
+
+     IFTTT: if you change MoonWidgetContent's visuals (MoonWidget.kt), change this layout too.
+     The launcher inflates this in its own process before ours runs, so Glance cannot supply
+     it — the resemblance is maintained by hand and silently drifts otherwise. Padding, colors,
+     text sizes and the disc size below are duplicated from that composable. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/widget_background"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="12dp">
+
+    <ImageView
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:importantForAccessibility="no"
+        android:src="@drawable/moon_widget_preview_disc" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:maxLines="1"
+        android:text="@string/moon_phase_waxing_gibbous"
+        android:textColor="#E0E1DD"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        tools:ignore="SpUsage" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:text="@string/moon_widget_preview_illumination"
+        android:textColor="#FFC107"
+        android:textSize="13sp" />
+</LinearLayout>

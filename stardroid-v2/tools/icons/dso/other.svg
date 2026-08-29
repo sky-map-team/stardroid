@@ -1,0 +1,10 @@
+<!-- Sky Map sky-marker icon. Copyright (c) 2026 Penterakt LLC.
+     All Rights Reserved - see LICENSE.md in this directory. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <g opacity="0.35">
+    <path d="M12.00 6.40 L17.00 12.00 L12.00 17.60 L7.00 12.00Z" fill="none" stroke="#000" stroke-width="3.60" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g>
+    <path d="M12.00 6.40 L17.00 12.00 L12.00 17.60 L7.00 12.00Z" fill="none" stroke="#fff" stroke-width="1.40" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

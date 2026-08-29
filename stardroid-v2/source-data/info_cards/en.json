@@ -1,0 +1,2356 @@
+{
+ "cards": {
+  "constellation/andromeda": {
+   "description": "Andromeda the Princess contains the Andromeda Galaxy (M31), the nearest large spiral galaxy to our Milky Way.",
+   "fun_fact": "The Andromeda Galaxy is approaching us at 110 km/s and will merge with the Milky Way in about 4.5 billion years!",
+   "size": "722 square degrees",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/antlia": {
+   "description": "Antlia (the Air Pump) is a faint southern constellation created by Nicolas-Louis de Lacaille in the 18th century to honor the air pump invented by Robert Boyle.",
+   "fun_fact": "Antlia contains the Antlia Dwarf Galaxy, one of the nearest galaxies to the Milky Way at just 4.3 million light-years away!",
+   "size": "239 square degrees",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/apus": {
+   "description": "Apus (the Bird of Paradise) is a faint southern constellation introduced by Dutch navigators Keyser and de Houtman in the late 16th century.",
+   "fun_fact": "Apus was named after the birds of paradise of the East Indies, which early European explorers believed had no feet — hence the Latin name meaning \"footless.\"",
+   "size": "206 square degrees",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/aquarius": {
+   "description": "Aquarius the Water Bearer is a zodiac constellation in a region of sky often called the Sea, surrounded by water-related constellations.",
+   "fun_fact": "Aquarius contains the Helix Nebula, one of the closest planetary nebulae to Earth at only 700 light-years away!",
+   "size": "980 square degrees",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/aquila": {
+   "description": "Aquila the Eagle is a constellation on the celestial equator, containing the bright star Altair at its center.",
+   "fun_fact": "Altair in Aquila is one of the fastest rotating stars known, spinning so fast it bulges at its equator!",
+   "size": "652 square degrees",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/ara": {
+   "description": "Ara (the Altar) is a southern constellation known since antiquity. In Greek mythology, it represents the altar on which the gods swore an oath before battling the Titans.",
+   "fun_fact": "Ara contains the Stingray Nebula, the youngest known planetary nebula, which was only seen to form in the 1980s — a cosmic event captured in real time!",
+   "size": "237 square degrees",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/aries": {
+   "description": "Aries the Ram is a zodiac constellation that was once home to the vernal equinox, giving us the phrase \"First Point of Aries.\"",
+   "fun_fact": "Though the vernal equinox moved to Pisces about 2,000 years ago, we still call it the First Point of Aries!",
+   "size": "441 square degrees",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/auriga": {
+   "description": "Auriga the Charioteer is a northern constellation featuring Capella, the sixth brightest star, and several open clusters.",
+   "fun_fact": "Epsilon Aurigae is one of the strangest stars known, dimming for two years every 27 years due to a mysterious dark disk!",
+   "size": "657 square degrees",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/bootes": {
+   "description": "Bootes the Herdsman is a constellation containing Arcturus, the fourth brightest star in the night sky.",
+   "fun_fact": "Follow the arc of the Big Dipper's handle to \"arc to Arcturus\" - one of the most famous navigation tips!",
+   "size": "907 square degrees",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/caelum": {
+   "description": "Caelum (the Chisel) is one of the faintest constellations in the sky, created by Lacaille in the 18th century to represent an engraving tool.",
+   "fun_fact": "Caelum is the eighth-smallest constellation and contains no stars brighter than magnitude 4.5 — you need very dark skies and sharp eyes to spot it!",
+   "size": "125 square degrees",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/camelopardalis": {
+   "description": "Camelopardalis (the Giraffe) is a large but faint northern constellation. Its name comes from the Greek for \"camel-leopard,\" an early description of the giraffe.",
+   "fun_fact": "Despite being the 18th-largest constellation, Camelopardalis has no star brighter than magnitude 4.0 — it occupies a vast, seemingly empty patch of sky near Polaris!",
+   "size": "757 square degrees",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/cancer": {
+   "description": "Cancer the Crab is the faintest zodiac constellation but contains the famous Beehive Cluster (M44) visible to the naked eye.",
+   "fun_fact": "The Tropic of Cancer was named when the Sun was in Cancer at the summer solstice, though it's now in Taurus!",
+   "size": "506 square degrees",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/canes_venatici": {
+   "description": "Canes Venatici (the Hunting Dogs) represents the two dogs held by Boötes the Herdsman. It was introduced by Johannes Hevelius in 1687.",
+   "fun_fact": "Canes Venatici contains M51, the Whirlpool Galaxy — the first galaxy whose spiral structure was discovered, sketched by Lord Rosse in 1845!",
+   "size": "465 square degrees",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/canis_major": {
+   "description": "Canis Major (the Great Dog) follows Orion across the sky and contains Sirius, the brightest star visible from Earth.",
+   "fun_fact": "Ancient Egyptians based their calendar on the heliacal rising of Sirius, which coincided with the Nile's annual flood!",
+   "size": "380 square degrees",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/canis_minor": {
+   "description": "Canis Minor (the Lesser Dog) is a small constellation notable for Procyon, the eighth brightest star in the sky.",
+   "fun_fact": "Procyon means \"before the dog\" in Greek because it rises just before Sirius (the Dog Star) each night!",
+   "size": "183 square degrees",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/capricornus": {
+   "description": "Capricornus the Sea-Goat is an ancient zodiac constellation depicting a mythical creature that's half goat, half fish.",
+   "fun_fact": "Capricornus is one of the oldest recognized constellations, appearing in Babylonian star catalogs over 3,000 years ago!",
+   "size": "414 square degrees",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/carina": {
+   "description": "Carina the Keel was part of the huge Argo Navis constellation, containing the brilliant star Canopus.",
+   "fun_fact": "Eta Carinae in Carina is one of the most luminous stars known and may explode as a supernova in our lifetime!",
+   "size": "494 square degrees",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/cassiopeia": {
+   "description": "Cassiopeia is a distinctive W-shaped constellation in the northern sky, named after a vain queen in Greek mythology.",
+   "fun_fact": "Tycho Brahe's supernova of 1572 appeared in Cassiopeia, helping to prove that the heavens could change!",
+   "size": "598 square degrees",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/centaurus": {
+   "description": "Centaurus the Centaur is a large southern constellation containing Alpha Centauri, the nearest star system to our Sun.",
+   "fun_fact": "Proxima Centauri in Centaurus is only 4.24 light-years away, making it the closest star to our solar system!",
+   "size": "1,060 square degrees",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/cepheus": {
+   "description": "Cepheus the King is a northern constellation whose stars include Delta Cephei, the prototype for Cepheid variable stars.",
+   "fun_fact": "Cepheid variables discovered by Henrietta Leavitt revolutionized astronomy by allowing us to measure cosmic distances!",
+   "size": "588 square degrees",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/cetus": {
+   "description": "Cetus the Sea Monster is a large constellation containing Mira, the first variable star ever discovered.",
+   "fun_fact": "Mira in Cetus varies from visible to invisible over 11 months and has a 13-light-year-long tail of gas!",
+   "size": "1,231 square degrees",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/chamaeleon": {
+   "description": "Chamaeleon is a small southern constellation introduced by Dutch navigators in the late 16th century, representing the color-changing lizard.",
+   "fun_fact": "Chamaeleon contains a large molecular cloud complex where new stars are actively forming — it's one of the nearest star-forming regions to Earth at only 500 light-years away!",
+   "size": "132 square degrees",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/circinus": {
+   "description": "Circinus (the Compass) is one of the smallest constellations, created by Lacaille to represent a drafting compass used for drawing circles.",
+   "fun_fact": "The Circinus Galaxy is one of the closest Seyfert galaxies to us — an active galaxy with a supermassive black hole that powers bright jets of material!",
+   "size": "93 square degrees",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/columba": {
+   "description": "Columba (the Dove) represents the dove sent by Noah from the Ark to find dry land. It lies south of Lepus and Canis Major.",
+   "fun_fact": "The runaway star Mu Columbae was ejected from the Orion Nebula about 2.5 million years ago and is now speeding through Columba at over 100 km/s!",
+   "size": "270 square degrees",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/coma_berenices": {
+   "description": "Coma Berenices (Berenice's Hair) represents the hair of the Egyptian queen Berenice II, who offered it to the gods. It's one of few constellations named after a historical person.",
+   "fun_fact": "Coma Berenices contains the north galactic pole — the direction perpendicular to the Milky Way's disk — which is why it's rich in visible galaxies with no galactic dust in the way!",
+   "size": "386 square degrees",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/corona_australis": {
+   "description": "Corona Australis (the Southern Crown) is one of the 48 constellations listed by Ptolemy. It represents a wreath or crown placed at the feet of Sagittarius.",
+   "fun_fact": "Corona Australis contains one of the nearest and most active star-forming regions — the Coronet Cluster, where dozens of young stars are being born right now!",
+   "size": "128 square degrees",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/corona_borealis": {
+   "description": "Corona Borealis (the Northern Crown) is a small semicircular constellation representing Ariadne's crown from Greek mythology.",
+   "fun_fact": "T Coronae Borealis is a recurrent nova that erupts roughly every 80 years - another eruption may happen soon!",
+   "size": "179 square degrees",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/corvus": {
+   "description": "Corvus the Crow is a small quadrilateral constellation south of Virgo, representing Apollo's sacred bird.",
+   "fun_fact": "The four main stars of Corvus form a distinctive sail shape that's easy to spot in the spring sky!",
+   "size": "184 square degrees",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/crater": {
+   "description": "Crater (the Cup) represents the goblet of Apollo in Greek mythology. It sits on the back of Hydra, the water snake, next to Corvus the Crow.",
+   "fun_fact": "In Greek myth, Apollo sent the Crow to fetch water in this Cup, but the Crow delayed by eating figs — so Apollo placed all three in the sky as punishment!",
+   "size": "282 square degrees",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/crux": {
+   "description": "Crux (the Southern Cross) is the smallest constellation but one of the most distinctive, used for navigation in the Southern Hemisphere.",
+   "fun_fact": "Despite being the smallest constellation, Crux has more bright stars per unit area than any other constellation!",
+   "size": "68 square degrees",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/cygnus": {
+   "description": "Cygnus the Swan flies along the Milky Way, containing the Northern Cross asterism and the bright star Deneb.",
+   "fun_fact": "Cygnus X-1 in this constellation was the first widely accepted black hole, identified in the early 1970s!",
+   "size": "804 square degrees",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/delphinus": {
+   "description": "Delphinus the Dolphin is a small but distinctive constellation whose stars form the shape of a leaping dolphin.",
+   "fun_fact": "Two of Delphinus's stars are named Sualocin and Rotanev - \"Nicolaus Venator\" spelled backwards, the astronomer who named them!",
+   "size": "189 square degrees",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/dorado": {
+   "description": "Dorado (the Swordfish or Dolphinfish) is a southern constellation created by Dutch navigators. It contains most of the Large Magellanic Cloud.",
+   "fun_fact": "Dorado hosts the Tarantula Nebula (30 Doradus), the most luminous star-forming region in the Local Group — if it were as close as the Orion Nebula, it would cast shadows on Earth!",
+   "size": "179 square degrees",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/draco": {
+   "description": "Draco the Dragon is a long, winding constellation that circles around Ursa Minor in the far northern sky.",
+   "fun_fact": "Thuban in Draco was the North Star when the Egyptian pyramids were built, 5,000 years ago!",
+   "size": "1,083 square degrees",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/equuleus": {
+   "description": "Equuleus (the Little Horse) is the second-smallest constellation. In Greek mythology, it represents Celeris, the brother or foal of Pegasus.",
+   "fun_fact": "Equuleus is the second-smallest of all 88 constellations (only Crux is smaller), yet it was one of the original 48 listed by Ptolemy nearly 2,000 years ago!",
+   "size": "72 square degrees",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/eridanus": {
+   "description": "Eridanus the River is the sixth largest constellation, winding from near Orion to the far southern sky.",
+   "fun_fact": "Achernar at the end of Eridanus is the flattest star known, bulging 56% wider at its equator due to rapid rotation!",
+   "size": "1,138 square degrees",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/fornax": {
+   "description": "Fornax (the Furnace) was created by Lacaille to represent a chemical furnace. It's a faint southern constellation between Cetus and Eridanus.",
+   "fun_fact": "The Hubble Ultra Deep Field — one of the deepest images of the universe ever taken, revealing galaxies 13 billion light-years away — was photographed in Fornax!",
+   "size": "398 square degrees",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/gemini": {
+   "description": "Gemini the Twins features the bright stars Castor and Pollux, representing the twin brothers from Greek mythology.",
+   "fun_fact": "Despite being called twins, Castor is actually six stars and Pollux is an orange giant - they look nothing alike!",
+   "size": "514 square degrees",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/grus": {
+   "description": "Grus the Crane is a southern constellation introduced in the late 16th century by European navigators.",
+   "fun_fact": "Grus was once known as Phoenicopterus (the Flamingo) before being changed to represent a crane!",
+   "size": "366 square degrees",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/hercules": {
+   "description": "Hercules is a large constellation representing the Greek hero, containing the great globular cluster M13.",
+   "fun_fact": "Our solar system is moving toward a point in Hercules called the solar apex at about 20 km/s!",
+   "size": "1,225 square degrees",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/horologium": {
+   "description": "Horologium (the Pendulum Clock) was created by Lacaille to honor Christiaan Huygens' invention of the pendulum clock in 1656.",
+   "fun_fact": "Horologium contains a massive supercluster of galaxies called the Horologium-Reticulum Supercluster, one of the largest structures in the nearby universe!",
+   "size": "249 square degrees",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/hydra": {
+   "description": "Hydra is the largest constellation in the sky, representing the water serpent from Greek mythology.",
+   "fun_fact": "Hydra stretches over 100 degrees of sky - more than a quarter of the way around the entire celestial sphere!",
+   "size": "1,303 square degrees",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/hydrus": {
+   "description": "Hydrus (the Lesser Water Snake) is a small southern constellation near the south celestial pole. Not to be confused with Hydra, the much larger water snake.",
+   "fun_fact": "Hydrus lies between the Large and Small Magellanic Clouds, making it a useful signpost for finding these two satellite galaxies of the Milky Way!",
+   "size": "243 square degrees",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/indus": {
+   "description": "Indus (the Indian) is a southern constellation created by Dutch navigators, originally representing a native of the East Indies or Madagascar.",
+   "fun_fact": "Epsilon Indi, one of the nearest sun-like stars at just 12 light-years away, lies in Indus — and it has a brown dwarf companion system!",
+   "size": "294 square degrees",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/lacerta": {
+   "description": "Lacerta (the Lizard) is a small northern constellation introduced by Hevelius in 1687. It lies between Cygnus and Andromeda.",
+   "fun_fact": "Lacerta contains BL Lacertae, the prototype of a class of active galaxies called \"blazars\" — galaxies with supermassive black holes shooting jets of matter directly toward Earth!",
+   "size": "201 square degrees",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/leo": {
+   "description": "Leo the Lion is a zodiac constellation featuring Regulus at the heart of the lion and the distinctive Sickle asterism.",
+   "fun_fact": "The Leonid meteor shower in November appears to radiate from Leo and can produce spectacular storms!",
+   "size": "947 square degrees",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/leo_minor": {
+   "description": "Leo Minor (the Lesser Lion) is a faint constellation between Leo and Ursa Major, introduced by Hevelius in 1687.",
+   "fun_fact": "Leo Minor is one of the few constellations whose brightest star has no Alpha designation — Hevelius forgot to label it, so its brightest star is 46 Leonis Minoris (Beta)!",
+   "size": "232 square degrees",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/lepus": {
+   "description": "Lepus the Hare crouches beneath Orion's feet, a small but distinctive constellation with a rich mythology.",
+   "fun_fact": "In mythology, Orion was said to love hunting hares, so one was placed beneath his feet in the sky!",
+   "size": "290 square degrees",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/libra": {
+   "description": "Libra the Scales is the only zodiac constellation representing an inanimate object, once considered part of Scorpius.",
+   "fun_fact": "Libra's main stars were once known as the Claws of the Scorpion before becoming the Scales of Justice!",
+   "size": "538 square degrees",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/lupus": {
+   "description": "Lupus (the Wolf) is an ancient southern constellation. The Greeks and Romans saw it as a wild animal impaled on a pole held by Centaurus.",
+   "fun_fact": "In 1006 AD, the brightest supernova ever recorded by humans appeared in Lupus — SN 1006 was visible in daylight and may have reached magnitude −7.5!",
+   "size": "334 square degrees",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/lynx": {
+   "description": "Lynx is a large but faint northern constellation created by Hevelius in 1687. He said you'd need the eyes of a lynx to see it!",
+   "fun_fact": "Lynx contains the Intergalactic Wanderer (NGC 2419), a globular cluster so distant at 300,000 light-years that it was once thought to orbit outside the Milky Way!",
+   "size": "545 square degrees",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/lyra": {
+   "description": "Lyra the Lyre is a small but prominent constellation containing Vega, the fifth brightest star in the night sky.",
+   "fun_fact": "Vega was the North Star around 12,000 BC and will be again in about 12,000 years due to Earth's precession!",
+   "size": "286 square degrees",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/mensa": {
+   "description": "Mensa (Table Mountain) was created by Lacaille to honor Table Mountain in Cape Town, South Africa, where he made his observations of the southern sky.",
+   "fun_fact": "Mensa is the only constellation named after a specific geographic feature on Earth. Part of the Large Magellanic Cloud extends into it, like a cloud over the mountain!",
+   "size": "153 square degrees",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/microscopium": {
+   "description": "Microscopium (the Microscope) was created by Lacaille to honor the compound microscope. It's one of the faintest constellations in the sky.",
+   "fun_fact": "Microscopium's brightest star, Gamma Microscopii, was once part of neighboring Sagittarius — it was reassigned when constellation boundaries were standardized in 1930!",
+   "size": "210 square degrees",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/monoceros": {
+   "description": "Monoceros the Unicorn is a faint constellation in the winter Milky Way, rich in nebulae and star clusters.",
+   "fun_fact": "The Rosette Nebula in Monoceros is a massive star-forming region resembling a celestial rose!",
+   "size": "482 square degrees",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/musca": {
+   "description": "Musca (the Fly) is a small southern constellation near the Southern Cross. It's the only insect constellation in the sky.",
+   "fun_fact": "Musca was originally called \"Apis\" (the Bee) by its creators. It's the only constellation representing an insect — and it's right next to Chamaeleon, which eats them!",
+   "size": "138 square degrees",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/norma": {
+   "description": "Norma (the Carpenter's Square) was created by Lacaille to represent a level and set square. It lies in the rich Milky Way between Scorpius and Lupus.",
+   "fun_fact": "Looking toward Norma, you're gazing along one of the Milky Way's spiral arms — the Norma Arm, named after this constellation, is full of star clusters and nebulae!",
+   "size": "165 square degrees",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/octans": {
+   "description": "Octans (the Octant) was created by Lacaille to honor the navigational instrument. It contains the south celestial pole.",
+   "fun_fact": "Octans contains the south celestial pole, but unlike the North Pole with Polaris, there's no bright star marking the southern pole — Sigma Octantis (mag 5.4) is the faint \"South Star.\"",
+   "size": "291 square degrees",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/ophiuchus": {
+   "description": "Ophiuchus the Serpent Bearer lies along the ecliptic but isn't a zodiac sign, divided by the serpent he holds.",
+   "fun_fact": "The Sun spends more time in Ophiuchus than Scorpius, yet Ophiuchus isn't considered a zodiac sign!",
+   "size": "948 square degrees",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/orion": {
+   "description": "Orion the Hunter is one of the most recognizable constellations, visible from both hemispheres with its distinctive Belt of three stars.",
+   "fun_fact": "Orion's Belt points to Sirius (the brightest star) in one direction and Aldebaran (in Taurus) in the other!",
+   "size": "594 square degrees",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/pavo": {
+   "description": "Pavo the Peacock is a southern constellation containing the bright star Peacock and several interesting galaxies.",
+   "fun_fact": "The star Peacock (Alpha Pavonis) is the second most luminous star within 200 light-years of our Sun!",
+   "size": "378 square degrees",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/pegasus": {
+   "description": "Pegasus the Winged Horse is a large constellation featuring the Great Square of Pegasus, a prominent autumn asterism.",
+   "fun_fact": "51 Pegasi b, discovered in 1995 in this constellation, was the first exoplanet found orbiting a Sun-like star!",
+   "size": "1,121 square degrees",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/perseus": {
+   "description": "Perseus the Hero is home to the famous variable star Algol and the Double Cluster, a stunning pair of open clusters.",
+   "fun_fact": "Algol (the Demon Star) was considered evil in ancient times because it mysteriously dims every 2.87 days!",
+   "size": "615 square degrees",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/phoenix": {
+   "description": "Phoenix is a southern constellation representing the mythical bird that rises from its own ashes.",
+   "fun_fact": "Phoenix was one of 12 constellations created by Dutch explorers in the late 16th century from uncharted southern stars!",
+   "size": "469 square degrees",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/pictor": {
+   "description": "Pictor (the Painter's Easel) is a faint southern constellation created by Lacaille, originally named for the artist's easel.",
+   "fun_fact": "Beta Pictoris in this constellation was one of the first stars found to have a visible debris disk — and it has two confirmed exoplanets orbiting within it!",
+   "size": "247 square degrees",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/pisces": {
+   "description": "Pisces the Fishes is a large zodiac constellation representing two fish tied together, marking the vernal equinox point.",
+   "fun_fact": "The vernal equinox (first day of spring) currently lies in Pisces and has been slowly moving through it for 2,000 years!",
+   "size": "889 square degrees",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/piscis_austrinus": {
+   "description": "Piscis Austrinus (the Southern Fish) is an ancient constellation. It's said to be the parent of the two fish of Pisces, drinking water poured by Aquarius.",
+   "fun_fact": "Fomalhaut, the brightest star in Piscis Austrinus, was one of the first stars to have an exoplanet directly photographed by Hubble — though the \"planet\" may actually be a dust cloud!",
+   "size": "245 square degrees",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/puppis": {
+   "description": "Puppis the Stern represents the rear deck of the ship Argo Navis, rich in open clusters along the Milky Way.",
+   "fun_fact": "Puppis contains M47, an open cluster visible to the naked eye that was \"lost\" for over 200 years due to a cataloging error!",
+   "size": "673 square degrees",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/pyxis": {
+   "description": "Pyxis (the Compass) represents a mariner's compass. Lacaille created it from stars that were once part of the ancient constellation Argo Navis (the Ship).",
+   "fun_fact": "Pyxis contains T Pyxidis, a recurrent nova that has erupted at least six times since 1890 — it's one of the best-studied novae in the sky!",
+   "size": "221 square degrees",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/reticulum": {
+   "description": "Reticulum (the Reticle) was created by Lacaille to represent the crosshair eyepiece in his telescope, used during his survey of the southern sky.",
+   "fun_fact": "Reticulum is famous in UFO lore — the \"Zeta Reticuli incident\" of 1961 claimed alien visitors came from a star system in this constellation!",
+   "size": "114 square degrees",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/sagitta": {
+   "description": "Sagitta the Arrow is the third smallest constellation, representing various mythological arrows from Greek legends.",
+   "fun_fact": "Despite being tiny, Sagitta contains M71, a globular cluster that was mistaken for an open cluster for centuries!",
+   "size": "80 square degrees",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/sagittarius": {
+   "description": "Sagittarius the Archer points toward the center of our Milky Way galaxy, making it rich in nebulae and star clusters.",
+   "fun_fact": "When you look at Sagittarius, you're looking toward Sagittarius A*, the supermassive black hole at our galaxy's center!",
+   "size": "867 square degrees",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/scorpius": {
+   "description": "Scorpius is a prominent zodiac constellation with a distinctive curved tail, dominated by the red supergiant Antares.",
+   "fun_fact": "In mythology, Scorpius was placed in the sky opposite Orion so the hunter would never be stung again!",
+   "size": "497 square degrees",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/sculptor": {
+   "description": "Sculptor (the Sculptor) was created by Lacaille, originally representing a sculptor's studio. It contains the south galactic pole.",
+   "fun_fact": "Sculptor contains the south galactic pole and the Sculptor Dwarf Galaxy, one of the Milky Way's closest satellite galaxies at just 260,000 light-years away!",
+   "size": "475 square degrees",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/scutum": {
+   "description": "Scutum (the Shield) was created by Hevelius in 1684 to honor King John III Sobieski of Poland. It is one of the few constellations named for a non-mythological historical figure.",
+   "fun_fact": "Scutum contains the Scutum Star Cloud, one of the brightest and densest patches of the Milky Way visible to the naked eye — it's a window into our galaxy's inner spiral arm!",
+   "size": "109 square degrees",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/serpens_caput": {
+   "description": "Serpens Caput (the Serpent's Head) is the western half of Serpens, the only constellation divided into two non-contiguous parts by Ophiuchus.",
+   "fun_fact": "Serpens Caput contains M5, one of the oldest and largest globular clusters known — it's 13 billion years old and contains over 100,000 stars!",
+   "size": "428 square degrees (both parts)",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/serpens_cauda": {
+   "description": "Serpens Cauda (the Serpent's Tail) is the eastern half of Serpens, separated from the head by the constellation Ophiuchus.",
+   "fun_fact": "Serpens Cauda contains the Eagle Nebula (M16) and its famous \"Pillars of Creation\" — towering columns of gas and dust where new stars are being born!",
+   "size": "428 square degrees (both parts)",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/sextans": {
+   "description": "Sextans (the Sextant) was created by Hevelius to commemorate his astronomical sextant, which was destroyed in a fire in 1679.",
+   "fun_fact": "Sextans contains the Sextans A dwarf galaxy, one of the most isolated galaxies in the Local Group at 4.3 million light-years away!",
+   "size": "314 square degrees",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/taurus": {
+   "description": "Taurus the Bull is a zodiac constellation containing the Pleiades and Hyades star clusters, and the bright star Aldebaran.",
+   "fun_fact": "The Crab Nebula in Taurus is the remnant of a supernova witnessed and recorded by Chinese astronomers in 1054 AD!",
+   "size": "797 square degrees",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/telescopium": {
+   "description": "Telescopium (the Telescope) was created by Lacaille to honor the invention of the refracting telescope. It lies south of Sagittarius and Corona Australis.",
+   "fun_fact": "Telescopium was originally much larger — when Lacaille first drew it, it extended into what are now parts of Sagittarius and Ophiuchus!",
+   "size": "252 square degrees",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/triangulum": {
+   "description": "Triangulum is a small northern constellation containing the Triangulum Galaxy (M33), the third largest in the Local Group.",
+   "fun_fact": "The Triangulum Galaxy is the most distant object that can be seen with the naked eye under ideal conditions!",
+   "size": "132 square degrees",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/triangulum_australe": {
+   "description": "Triangulum Australe (the Southern Triangle) is a small but distinctive southern constellation. Its three brightest stars form a nearly equilateral triangle.",
+   "fun_fact": "Triangulum Australe contains NGC 6025, a beautiful open cluster easily visible with binoculars, and it appears on the flags of Brazil and Papua New Guinea!",
+   "size": "110 square degrees",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/tucana": {
+   "description": "Tucana (the Toucan) is a southern constellation created by Dutch navigators, representing the tropical bird with its enormous beak.",
+   "fun_fact": "Tucana contains 47 Tucanae (NGC 104), the second-brightest globular cluster in the sky, home to millions of stars and several millisecond pulsars!",
+   "size": "295 square degrees",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/ursa_major": {
+   "description": "Ursa Major (the Great Bear) contains the Big Dipper asterism, one of the most recognized star patterns in the northern sky.",
+   "fun_fact": "Five of the Big Dipper stars are physically related, moving through space together as the Ursa Major Moving Group!",
+   "size": "1,280 square degrees",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/ursa_minor": {
+   "description": "Ursa Minor (the Little Bear) contains the Little Dipper and Polaris, the current North Star marking Earth's celestial north pole.",
+   "fun_fact": "Due to precession, Polaris won't always be the North Star - in 14,000 years, Vega will take its place!",
+   "size": "256 square degrees",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/vela": {
+   "description": "Vela the Sails was once part of the great ship Argo Navis, located in a rich region of the Milky Way.",
+   "fun_fact": "The Vela Pulsar is the brightest pulsar in the sky and the remnant of a supernova that exploded 11,000 years ago!",
+   "size": "500 square degrees",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/virgo": {
+   "description": "Virgo is the second largest constellation and a zodiac sign, containing the Virgo Cluster of over 2,000 galaxies.",
+   "fun_fact": "The Virgo Cluster is the heart of the Virgo Supercluster, which contains our own Milky Way galaxy!",
+   "size": "1,294 square degrees",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/volans": {
+   "description": "Volans (the Flying Fish) is a faint southern constellation introduced by Dutch navigators, representing the tropical fish that can leap out of the water and glide.",
+   "fun_fact": "Volans lies near the Large Magellanic Cloud and contains the Lindsay-Shapley Ring, one of the most perfect ring galaxies ever observed!",
+   "size": "141 square degrees",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/vulpecula": {
+   "description": "Vulpecula (the Little Fox) is a faint northern constellation created by Hevelius in 1687. It lies in the heart of the Milky Way between Cygnus and Sagitta.",
+   "fun_fact": "Vulpecula contains the Dumbbell Nebula (M27), the first planetary nebula ever discovered (by Charles Messier in 1764), and a beautiful binocular target!",
+   "size": "268 square degrees",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "dso/blue_snowball_nebula": {
+   "description": "The Blue Snowball is a planetary nebula in Andromeda — the glowing shell of gas expelled by a dying star. At magnitude 8.3 it is one of the brightest and most colourful planetaries in the sky, appearing as a vivid blue-green disk even in small telescopes. Its symmetrical shape and intense colour make it a favourite among observers.",
+   "fun_fact": "The Blue Snowball's striking colour comes from doubly ionized oxygen glowing at a specific green wavelength, combined with hydrogen emission — a colour palette that human eyes perceive as blue-green. The central white dwarf has a surface temperature of around 100,000°C, hot enough to ionize the surrounding gas at this distance.",
+   "distance": "~2,500 light-years",
+   "size": "~0.8 light-years diameter",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/centaurus_a": {
+   "description": "Centaurus A (NGC 5128) is the closest active radio galaxy to Earth, a giant elliptical galaxy in the constellation Centaurus whose striking dark dust lane betrays a violent past — a spiral galaxy swallowed roughly 200–700 million years ago. At its heart lurks a supermassive black hole of 55 million solar masses that drives relativistic jets stretching more than a million light-years in radio wavelengths. At a distance of roughly 12 million light-years it is one of the most studied galaxies in the sky.",
+   "fun_fact": "Centaurus A is one of the most powerful natural radio transmitters in the sky — its jets blast plasma outward at nearly the speed of light, and the full extent of its radio lobes spans an area equivalent to about 100 full moons laid end to end across the sky.",
+   "distance": "~12 million light-years",
+   "size": "~123,000 light-years across",
+   "image_credit": "ESO"
+  },
+  "dso/coathanger": {
+   "description": "The Coathanger is a striking asterism of ten stars in Vulpecula that form an unmistakable shape: six stars in a straight line with four hanging below in a hook, exactly resembling an upside-down coathanger. It is one of the best binocular objects in the summer sky, fitting neatly in a typical binocular field of view.",
+   "fun_fact": "Despite looking like a cluster, the Coathanger's stars are not physically related — they lie at very different distances and are simply a line-of-sight coincidence. Brocchi's Cluster was catalogued by Dalmiro Brocchi in the 1920s, and the first space telescope to image it was Hipparcos, which confirmed the stars are unrelated.",
+   "distance": "~420 light-years (brightest star)",
+   "size": "~1° across",
+   "image_credit": "DSS/Giuseppe Donatiello"
+  },
+  "dso/coma_star_cluster": {
+   "description": "The Coma Berenices Star Cluster is a nearby open cluster of around 40 stars scattered loosely across nearly 5° of sky, easily visible to the naked eye as a soft haze in dark conditions. It is the third-nearest open cluster to the solar system and the source of the constellation Coma Berenices.",
+   "fun_fact": "Ancient observers saw this cluster as the hair of Queen Berenice II of Egypt, who legendarily cut off her golden locks as an offering for her husband's safe return from war. Ptolemy III reportedly had the unusual constellation officially named in her honour around 245 BCE.",
+   "distance": "288 light-years",
+   "size": "~5° across",
+   "image_credit": "Alberto Pisabarro/CC BY-SA 4.0"
+  },
+  "dso/cygnus_x_1": {
+   "description": "Cygnus X-1 is a stellar-mass black hole about 7,200 light-years away in Cygnus, and one of the strongest X-ray sources in the sky. It forms a binary system with the blue supergiant star HDE 226868, orbiting each other every 5.6 days. The black hole strips gas from its companion, forming a superhot accretion disc that blazes in X-rays.",
+   "fun_fact": "Cygnus X-1 was the first object widely accepted as a black hole. In 1975, Stephen Hawking made a famous scientific wager with Kip Thorne that it was NOT a black hole, a bet he later conceded.",
+   "distance": "7,200 light-years",
+   "size": "Black hole mass: ~21 solar masses",
+   "image_credit": "NASA/CXC/M.Weiss"
+  },
+  "dso/double_cluster": {
+   "description": "The Double Cluster (NGC 869 and NGC 884) is a dazzling pair of young open star clusters in Perseus, sitting side by side in the sky just over a degree apart. Both are visible to the naked eye as a misty patch, but even a small telescope reveals hundreds of brilliant blue-white supergiants packed into two glittering swarms. At roughly 7,500 light-years away, they lie within the Perseus Arm of our galaxy and rank among the finest binocular objects in the northern sky.",
+   "fun_fact": "At only 14 million years old, the Double Cluster is extraordinarily young — so recently born that its most massive stars are still blazing blue supergiants, with a handful already evolved into rare, fiery red supergiants.",
+   "distance": "~7,500 light-years",
+   "size": "Each cluster ~70 light-years across; the pair separated by ~1,000 light-years",
+   "image_credit": "Genuson/CC BY-SA 3.0"
+  },
+  "dso/eta_carinae_nebula": {
+   "description": "The Eta Carinae Nebula (NGC 3372) is one of the largest and brightest nebulae in the sky, spanning over 300 light-years. At its heart sits Eta Carinae, one of the most massive and luminous stars known, weighing over 100 solar masses.",
+   "fun_fact": "In 1843 Eta Carinae erupted and briefly became the second-brightest star in the sky, yet somehow it survived — it may be on the verge of going supernova!",
+   "distance": "7,500 light-years",
+   "size": "300 light-years across"
+  },
+  "dso/exposed_cranium_nebula": {
+   "description": "The Exposed Cranium Nebula (PMR 1) is a planetary nebula in Vela, about 5,000 light-years away. Its uncanny name comes from a dark lane of gas running vertically through the middle, dividing its glowing lobes into a shape eerily resembling a brain inside a transparent skull. At its heart burns a hot Wolf-Rayet star shedding the outer layers it built up over a lifetime.",
+   "fun_fact": "In 2026 the James Webb Space Telescope captured striking new images of the Exposed Cranium Nebula, resolving its dual-layered structure in unprecedented detail — an outer shell rich in hydrogen and an inner cloud packed with heavier elements forged by the dying star.",
+   "distance": "~5,000 light-years",
+   "size": "~2 light-years across",
+   "image_credit": "NASA, ESA, CSA, STScI/Joseph DePasquale"
+  },
+  "dso/ghost_of_jupiter": {
+   "description": "The Ghost of Jupiter is a bright planetary nebula in Hydra whose apparent size is similar to the planet Jupiter — hence its name. At magnitude 8.6 it is one of the most accessible planetary nebulae in the sky for small telescopes, showing a clear disk and a hint of colour in moderate apertures.",
+   "fun_fact": "The Ghost of Jupiter has an inner bright shell surrounded by a fainter outer halo — a two-shell structure suggesting the dying star expelled gas in at least two separate episodes. Its central star is one of the hottest known white dwarfs, with a surface temperature estimated at around 75,000°C.",
+   "distance": "~1,400 light-years",
+   "size": "~1 light-year diameter",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/hdf": {
+   "description": "The Hubble Deep Field is a tiny 2.6-arcminute patch of apparently blank sky in Ursa Major, photographed by the Hubble Space Telescope over 10 consecutive days in December 1995. What appeared to be empty space revealed roughly 3,000 galaxies — spanning billions of years of cosmic history — and fundamentally changed our picture of the universe.",
+   "fun_fact": "The patch of sky was chosen specifically because it was empty of bright stars and nearby galaxies. Yet the resulting image was packed with approximately 3,000 galaxies, leading to the estimate that the entire sky contains around 200 billion galaxies — almost all of them invisible to any telescope before Hubble.",
+   "distance": "~13 billion light-years (most distant)",
+   "size": "2.6 arcminutes (field of view)",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/helix_nebula": {
+   "description": "The Helix Nebula is the largest planetary nebula in apparent size in the sky — the expanding shell of gas shed by a Sun-like star at the end of its life. Spanning about half a degree, it is visible in binoculars as a faint circular glow in Aquarius and is nicknamed the Eye of God for its appearance in long-exposure photographs.",
+   "fun_fact": "At the centre of the Helix Nebula lies one of the nearest known white dwarfs to Earth — an intensely hot stellar remnant about the size of Earth but with the mass of the Sun. This is the fate that awaits our own Sun in about five billion years.",
+   "distance": "650 light-years",
+   "size": "~3 light-years diameter",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/hyades": {
+   "description": "The Hyades is the nearest open star cluster to the solar system and one of the most studied in astronomy. Visible to the naked eye as the V-shaped pattern of stars forming the face of Taurus, it contains several hundred stars spread across about 5° of sky.",
+   "fun_fact": "The brilliant orange star Aldebaran appears to sit within the Hyades but is actually a foreground object at half the distance — a coincidental alignment. The true cluster is about 153 light-years away and contains the first stars whose distances were measured by parallax from the Hipparcos satellite.",
+   "distance": "153 light-years",
+   "size": "~5° across",
+   "image_credit": "NOIRLab/NSF/AURA"
+  },
+  "dso/jewel_box": {
+   "description": "The Jewel Box (NGC 4755) is a young, brilliant open cluster in the constellation Crux, easily visible to the naked eye as a hazy fourth-magnitude patch just southeast of Mimosa. When viewed through a telescope, its stars blaze in vivid contrasting colours — deep blue supergiants alongside a striking red supergiant — earning it the name John Herschel gave it: a superb piece of fancy jewellery. At only 14–16 million years old, it is one of the youngest and most colourful clusters in the sky.",
+   "fun_fact": "The cluster's standout red star, κ Crucis, is a red supergiant so luminous it outshines the Sun by more than 100,000 times — a vivid reminder that star clusters are not all the same colour.",
+   "distance": "~6,500 light-years",
+   "size": "~19 light-years across",
+   "image_credit": "ESO/Y. Beletsky"
+  },
+  "dso/lmc": {
+   "description": "The Large Magellanic Cloud is an irregular satellite galaxy of the Milky Way, visible to the naked eye as a detached, glowing patch of sky. It is one of our closest galactic neighbors and one of the most active star-forming galaxies in the Local Group.",
+   "fun_fact": "In 1987, a star in the LMC exploded as Supernova 1987A — the first naked-eye supernova seen since 1604. Neutrinos from the blast reached Earth three hours before the light, confirming our models of stellar core collapse.",
+   "distance": "160,000 light-years",
+   "size": "14,000 light-years across",
+   "image_credit": "ESO/C. Bardon"
+  },
+  "dso/m1": {
+   "description": "The Crab Nebula is a supernova remnant in Taurus, the result of a stellar explosion recorded by Chinese astronomers in 1054 AD.",
+   "fun_fact": "The Crab Nebula contains a pulsar spinning 30 times per second, the collapsed core of the exploded star!",
+   "distance": "6,500 light-years",
+   "size": "11 light-years across",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m10": {
+   "description": "M10 is a bright globular cluster in Ophiuchus, one of the closer globular clusters to our solar system.",
+   "fun_fact": "M10 is approaching us at over 70 km/s and has an unusually low concentration of stars at its core!",
+   "distance": "14,300 light-years",
+   "size": "83 light-years across",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m100": {
+   "description": "Messier 100 is a grand design spiral galaxy in Coma Berenices and one of the brightest in the Virgo Cluster.",
+   "fun_fact": "Seven supernovae have been seen in M100, the most recent in 2020 - few galaxies have put on such a show!",
+   "distance": "55 million light-years",
+   "size": "166,000 light-years across"
+  },
+  "dso/m101": {
+   "description": "The Pinwheel Galaxy is a face-on spiral galaxy in Ursa Major, one of the largest known spiral galaxies.",
+   "fun_fact": "The Pinwheel Galaxy contains over a trillion stars and has asymmetric spiral arms due to past galaxy interactions!",
+   "distance": "21 million light-years",
+   "size": "170,000 light-years across",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m102": {
+   "description": "Messier 102 is the great unsolved entry in Messier's catalogue - an object recorded in 1781 that has never been identified with certainty.",
+   "fun_fact": "Messier published no coordinates for M102, and his colleague Mechain later retracted the discovery entirely, claiming it was just M101 recorded twice by mistake! NASA identifies it with the Spindle Galaxy, NGC 5866."
+  },
+  "dso/m103": {
+   "description": "M103 is a small, compact open cluster in Cassiopeia, containing around 40 stars in a tight group easily seen in binoculars. A striking double star and a red giant near the centre give it a colourful appearance in small telescopes, set within the rich Milky Way star fields of Cassiopeia.",
+   "fun_fact": "M103 was the highest-numbered object in Messier's original 1781 published catalogue — all subsequent entries (M104–M110) were added posthumously by later astronomers from Messier's notes and correspondence. Pierre Méchain found M103 shortly before the catalogue went to press, and Messier included it from Méchain's report.",
+   "distance": "8,500 light-years",
+   "size": "~15 light-years across"
+  },
+  "dso/m104": {
+   "description": "The Sombrero Galaxy is a spiral galaxy in Virgo, famous for its bright nucleus and large central bulge with a dark dust lane.",
+   "fun_fact": "The Sombrero Galaxy has a supermassive black hole at its center estimated to be 1 billion solar masses!",
+   "distance": "31 million light-years",
+   "size": "50,000 light-years across",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m105": {
+   "description": "Messier 105 is an elliptical galaxy in Leo, the largest elliptical in the Messier catalogue outside the Virgo Cluster.",
+   "fun_fact": "M105 shares a colossal ring of hydrogen gas with its neighbour NGC 3384, spanning some 650,000 light-years!",
+   "distance": "37 million light-years",
+   "size": "67,000 light-years across"
+  },
+  "dso/m106": {
+   "description": "M106 is a spiral galaxy in Canes Venatici with anomalous spiral arms caused by jets from its central black hole.",
+   "fun_fact": "M106 has water masers in its nucleus, allowing astronomers to precisely measure its distance!",
+   "distance": "23.5 million light-years",
+   "size": "135,000 light-years across",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m107": {
+   "description": "M107 is one of the least concentrated of the Messier globular clusters, with stars scattered in a relatively open pattern around a modest core. At magnitude 8.1 it is a binocular target from dark skies and partially resolves in small telescopes, showing a granular texture rather than a sharp central condensation.",
+   "fun_fact": "M107 was the last entry formally added to the Messier catalogue — it appears in Pierre Méchain's correspondence but was not included in the original 1781 edition. It was officially added as M107 in 1947 by Canadian astronomer Helen Sawyer Hogg, who codified several \"missing\" objects that Méchain had observed but Messier never formally recorded.",
+   "distance": "20,900 light-years",
+   "size": "~61 light-years across"
+  },
+  "dso/m108": {
+   "description": "Messier 108 is a barred spiral galaxy in Ursa Major, nicknamed the Surfboard Galaxy.",
+   "fun_fact": "M108 is tilted almost edge-on to us, which is how it earned the name Surfboard - and it holds around 290 globular clusters!",
+   "distance": "46 million light-years"
+  },
+  "dso/m109": {
+   "description": "M109 is a barred spiral galaxy in Ursa Major, the brightest member of a galaxy group bearing its name.",
+   "fun_fact": "M109 is located very close to the star Phecda in the Big Dipper, making it easy to locate!",
+   "distance": "83 million light-years",
+   "size": "180,000 light-years across",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m11": {
+   "description": "The Wild Duck Cluster is a rich open cluster in Scutum, one of the most compact open clusters known.",
+   "fun_fact": "M11 contains nearly 3,000 stars packed into a small area, creating a spectacular view through telescopes!",
+   "distance": "6,200 light-years",
+   "size": "20 light-years across",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m110": {
+   "description": "M110 is a dwarf elliptical galaxy and satellite of the Andromeda Galaxy, the last object added to the Messier catalog.",
+   "fun_fact": "M110 was actually observed by Messier in 1773 but not added to his catalog until 1966!",
+   "distance": "2.7 million light-years",
+   "size": "17,000 light-years across",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m12": {
+   "description": "M12 is a globular cluster in Ophiuchus, notable for its relatively loose central concentration.",
+   "fun_fact": "M12 has lost many of its low-mass stars due to the gravitational pull of the Milky Way over billions of years!",
+   "distance": "15,700 light-years",
+   "size": "75 light-years across",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m13": {
+   "description": "M13 is a spectacular globular cluster in Hercules containing about 300,000 stars, one of the brightest in the northern sky.",
+   "fun_fact": "In 1974, the Arecibo message was beamed toward M13 as an attempt to contact extraterrestrial intelligence!",
+   "distance": "22,200 light-years",
+   "size": "145 light-years across",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m14": {
+   "description": "M14 is a globular cluster in Ophiuchus containing several hundred thousand stars.",
+   "fun_fact": "In 1938, a nova appeared in M14 but was not discovered until 1964 when old photographic plates were examined!",
+   "distance": "30,300 light-years",
+   "size": "100 light-years across",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m15": {
+   "description": "M15 is a dense globular cluster in Pegasus, notable for having a planetary nebula at its core - very rare for globular clusters.",
+   "fun_fact": "M15 may contain a central black hole of about 4,000 solar masses, though this is still debated!",
+   "distance": "33,600 light-years",
+   "size": "175 light-years across",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m16": {
+   "description": "The Eagle Nebula is a star-forming nebula in Serpens, famous for the Pillars of Creation imaged by Hubble.",
+   "fun_fact": "The Pillars of Creation in M16 are about 5 light-years tall and are being slowly eroded by radiation from nearby stars!",
+   "distance": "7,000 light-years",
+   "size": "70 light-years across",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m17": {
+   "description": "The Omega Nebula (also Swan Nebula) is a star-forming region in Sagittarius, one of the brightest emission nebulae.",
+   "fun_fact": "The Omega Nebula contains an open cluster of about 800 young stars hidden within its gas and dust!",
+   "distance": "5,500 light-years",
+   "size": "15 light-years across",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m18": {
+   "description": "Messier 18 is a small open cluster of young stars in Sagittarius, also known as the Black Swan Cluster.",
+   "fun_fact": "M18 is one of the very few Messier objects the Hubble Space Telescope has never photographed!",
+   "distance": "4,200 light-years",
+   "size": "26 light-years across"
+  },
+  "dso/m19": {
+   "description": "M19 is a compact, rich globular cluster in Ophiuchus — one of the nearest globulars to the galactic centre. Its most distinctive feature is its noticeably oblate shape: M19 is the most flattened globular cluster known, with a visible elliptical outline even in a small telescope.",
+   "fun_fact": "M19's pronounced oblateness — its longest axis is about 10% longer than its shortest — is unique among known globular clusters and is thought to result from tidal stretching by the Milky Way's gravitational field. The closer a globular orbits to the galactic centre, the more strongly it is deformed; M19 lies only about 5,200 light-years from the galactic core.",
+   "distance": "28,700 light-years",
+   "size": "~113 light-years across"
+  },
+  "dso/m2": {
+   "description": "M2 is one of the largest and richest globular clusters known, located in Aquarius.",
+   "fun_fact": "M2 contains about 150,000 stars and has a diameter of 175 light-years, making it one of the largest globulars!",
+   "distance": "37,500 light-years",
+   "size": "175 light-years across",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m20": {
+   "description": "The Trifid Nebula is a combination of emission, reflection, and dark nebulae in Sagittarius, divided by dark dust lanes.",
+   "fun_fact": "The Trifid shows three distinct types of nebulae in one object: red emission, blue reflection, and dark absorption!",
+   "distance": "5,200 light-years",
+   "size": "20 light-years across",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m21": {
+   "description": "M21 is a compact open cluster in Sagittarius sitting just half a degree north of the Trifid Nebula (M20), making the two a striking binocular pairing. The cluster contains around 57 stars concentrated into a smaller field than many Messier clusters, with several bright blue-white stars as the dominant members.",
+   "fun_fact": "Despite being physically unrelated, M21 and M20 (the Trifid Nebula) make one of the most attractive binocular pairings in the summer sky — a bright star cluster beside a colourful three-lobed nebula. M21 is around 4,250 light-years away, while M20 is slightly closer at about 4,100 light-years.",
+   "distance": "4,250 light-years",
+   "size": "~16 light-years across"
+  },
+  "dso/m22": {
+   "description": "M22 is one of the nearest and brightest globular clusters to Earth, located in Sagittarius near the galactic center.",
+   "fun_fact": "M22 was one of the first globular clusters discovered, found by Abraham Ihle in 1665!",
+   "distance": "10,600 light-years",
+   "size": "70 light-years across",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m23": {
+   "description": "M23 is a rich open cluster in Sagittarius, embedded in the dense star fields of the summer Milky Way. About 150 stars are spread over a half-degree field in binoculars, making it a generous binocular object in the same region of sky as many other Messier gems.",
+   "fun_fact": "M23 is estimated to be around 300 million years old — intermediate in age, with most of its massive stars having already evolved off the main sequence. Messier discovered it in 1764 on one of his prolific observing campaigns sweeping through the Sagittarius star fields.",
+   "distance": "2,150 light-years",
+   "size": "~17 light-years across"
+  },
+  "dso/m24": {
+   "description": "M24 is the Sagittarius Star Cloud — not a cluster or nebula but a window through a gap in the Milky Way's dust, revealing a dazzling star field 2° across. It is the richest region visible through binoculars anywhere in the sky, packed with thousands of stars spanning many different distances simultaneously.",
+   "fun_fact": "The stars in M24 are not at the same distance — the star cloud represents a cross-section of the Galaxy's disk seen through a natural tunnel in the interstellar dust, spanning distances of 10,000 to 16,000 light-years. Embedded within the cloud are dark nebulae and tiny star clusters that appear as dark patches against the brilliant stellar backdrop.",
+   "distance": "~10,000–16,000 light-years (range)",
+   "size": "~600 light-years deep window"
+  },
+  "dso/m25": {
+   "description": "M25 is a bright naked-eye open cluster in Sagittarius, set against the dense star fields of the summer Milky Way. About 600 stars are scattered across a half-degree field, making it a rich binocular object. Its brightest members include several blue-white supergiants and one of the most studied Cepheid variable stars in the sky.",
+   "fun_fact": "M25 contains U Sagittarii, a classical Cepheid variable star that brightens and dims over a period of 6.7 days. Cepheids are vital \"standard candles\" for measuring cosmic distances because their pulsation period directly reveals their true luminosity — astronomers used them to first determine the size of the Milky Way and then the scale of the observable universe.",
+   "distance": "2,000 light-years",
+   "size": "~19 light-years across"
+  },
+  "dso/m26": {
+   "description": "M26 is a moderately faint open cluster in Scutum, visible in binoculars and well-resolved in small telescopes. About 90 stars are spread over a compact field in the rich Scutum star cloud, although the cluster is set against such a dense background that identifying its members from the surrounding star field requires some care.",
+   "fun_fact": "M26 lies along the same rich strip of sky as M11 — the Wild Duck Cluster, one of the finest open clusters in the sky. The two are only about 3.5° apart and visible in the same binocular field, making Scutum a remarkable destination for cluster observers despite being a small and often overlooked constellation.",
+   "distance": "5,000 light-years",
+   "size": "~22 light-years across"
+  },
+  "dso/m27": {
+   "description": "The Dumbbell Nebula is a planetary nebula in Vulpecula, the first planetary nebula ever discovered.",
+   "fun_fact": "The Dumbbell Nebula was discovered by Charles Messier in 1764, making it the first planetary nebula ever discovered!",
+   "distance": "1,360 light-years",
+   "size": "2.5 light-years across",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m28": {
+   "description": "M28 is a compact globular cluster in Sagittarius, located near the bright star Lambda Sagittarii in the rich summer star fields. At magnitude 6.9 it is a rewarding binocular target and is well-resolved in small telescopes, showing a bright condensed core surrounded by a moderate halo of stars.",
+   "fun_fact": "In 1987, M28 became the first globular cluster in which a millisecond pulsar was detected. Millisecond pulsars — neutron stars spinning hundreds of times per second — form when a neutron star accretes matter from a companion star and are found at a far higher rate in globular clusters than in the general galaxy, because their dense stellar environments produce many more close binary encounters.",
+   "distance": "18,300 light-years",
+   "size": "~60 light-years across"
+  },
+  "dso/m29": {
+   "description": "M29 is a small, young open cluster in Cygnus, set against one of the most heavily dust-obscured regions of the Milky Way. Five brilliant blue supergiants dominate the cluster, visible in binoculars as a tight asterism of hot, luminous stars. Without the dense foreground dust, M29 would be one of the sky's most spectacular open clusters.",
+   "fun_fact": "M29 is estimated to be only about 10 million years old — a stellar infant — and sits within the Cygnus OB1 association, a sprawling group of massive young stars. Heavy interstellar dust dims the cluster by about 3 magnitudes; without that obscuration, M29's stars would shine several times brighter than they actually appear.",
+   "distance": "4,000 light-years",
+   "size": "~8 light-years across"
+  },
+  "dso/m3": {
+   "description": "M3 is one of the largest and brightest globular clusters in the sky, located in Canes Venatici.",
+   "fun_fact": "M3 contains about 500,000 stars and is estimated to be 11.4 billion years old!",
+   "distance": "33,900 light-years",
+   "size": "180 light-years across",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m30": {
+   "description": "M30 is a compact globular cluster in Capricornus — a fine object in small telescopes that shows a bright, condensed core and faint outlying star chains. At magnitude 7.5 it requires dark skies in binoculars and rewards a small telescope with its partially resolved outer halo.",
+   "fun_fact": "M30 has undergone \"core collapse\" — a process where the mutual gravitational attraction of densely packed stars causes the cluster's centre to contract dramatically, creating an extreme concentration of stars in a tiny volume. About a fifth of all globular clusters have collapsed cores, and M30 is among the best-studied examples of this phenomenon.",
+   "distance": "27,100 light-years",
+   "size": "~87 light-years across"
+  },
+  "dso/m31": {
+   "description": "The Andromeda Galaxy is the nearest large spiral galaxy to the Milky Way and one of the most distant objects visible to the naked eye.",
+   "fun_fact": "The Andromeda Galaxy is approaching us at 110 km/s and will collide with the Milky Way in about 4.5 billion years!",
+   "distance": "2.5 million light-years",
+   "size": "220,000 light-years across",
+   "mass": "1.5 trillion solar masses",
+   "image_credit": "Adam Kennett/Wikimedia Commons"
+  },
+  "dso/m32": {
+   "description": "M32 is a compact dwarf elliptical galaxy and close satellite of the Andromeda Galaxy.",
+   "fun_fact": "M32 was the first elliptical galaxy ever discovered and may have once been a larger spiral galaxy stripped by Andromeda!",
+   "distance": "2.5 million light-years",
+   "size": "6,500 light-years across",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m33": {
+   "description": "The Triangulum Galaxy is the third-largest member of the Local Group, a spiral galaxy visible in Triangulum constellation.",
+   "fun_fact": "The Triangulum Galaxy may be gravitationally bound to the Andromeda Galaxy as a distant satellite!",
+   "distance": "2.7 million light-years",
+   "size": "60,000 light-years across",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m34": {
+   "description": "M34 is a bright, scattered open cluster in Perseus, easily seen in binoculars as a rich splash of stars against the winter Milky Way. Its roughly 400 stars cover an area nearly as wide as the full Moon, with a handful of wide double stars visible to careful binocular observers.",
+   "fun_fact": "At around 200 million years old, M34 is intermediate in age — young enough that its hot blue stars still shine, old enough that the most massive have already exploded as supernovae. At 1,500 light-years it is one of the nearer Messier clusters and remains a fine object even from suburban skies.",
+   "distance": "1,500 light-years",
+   "size": "~15 light-years across"
+  },
+  "dso/m35": {
+   "description": "M35 is a large open star cluster in Gemini, visible to the naked eye under good conditions.",
+   "fun_fact": "M35 contains about 200 stars and appears near a much older cluster NGC 2158 in the same field of view!",
+   "distance": "2,800 light-years",
+   "size": "24 light-years across",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m36": {
+   "description": "M36 is the smallest and youngest of the three open clusters Messier catalogued in Auriga. Its roughly 60 stars are gathered into a tight, glittering field visible in binoculars and well-resolved into individual stars in a small telescope, dominated by hot blue-white stars.",
+   "fun_fact": "M36 is estimated to be only about 25 million years old — one of the younger Messier clusters — meaning massive blue-white stars still dominate and no red giants have yet appeared. It shares the Auriga star fields with M37 and M38, and all three clusters fit in the same wide-field binocular view.",
+   "distance": "4,100 light-years",
+   "size": "~14 light-years across"
+  },
+  "dso/m37": {
+   "description": "M37 is the richest and brightest of the three Messier open clusters in Auriga, containing an estimated 500 stars in a compact field. It is a spectacular binocular and small telescope object, with a scattering of orange giant stars adding colour contrast to the blue-white swarm.",
+   "fun_fact": "M37 contains around a dozen red giant stars — an unusually high number that reflects its relatively advanced age of approximately 300 million years. Despite lying some 4,500 light-years away — the most distant of the three Auriga Messier clusters — it still ranks among the sky's finest open clusters.",
+   "distance": "4,500 light-years",
+   "size": "~31 light-years across"
+  },
+  "dso/m38": {
+   "description": "M38 is the largest and most spread-out of the three open clusters Messier catalogued in Auriga. Its roughly 100 stars are arranged in a pattern some observers liken to a cross or the Greek letter pi, visible in binoculars and well-resolved in a small telescope. The smaller cluster NGC 1907 sits close by to the south.",
+   "fun_fact": "M38 is the oldest of the three Auriga Messier clusters at around 220 million years, old enough that some of its massive stars have evolved into yellow and orange giants. The nearby cluster NGC 1907 can fit in the same low-magnification field, making them a fine binocular pair — like M46 and M47 in Puppis.",
+   "distance": "4,200 light-years",
+   "size": "~26 light-years across"
+  },
+  "dso/m39": {
+   "description": "M39 is a large, scattered open cluster in Cygnus, visible to the naked eye near Deneb in the rich summer Milky Way. Its roughly 30 bright stars are loosely grouped over a degree of sky, best appreciated at low magnification in binoculars or a wide-field telescope — higher magnification simply resolves it into a sparse, unremarkable field of stars.",
+   "fun_fact": "At around 825 light-years, M39 is one of the nearest open clusters to Earth, and at roughly 240 million years old it is one of the older naked-eye clusters — old enough that its most massive stars have already ended their lives. Messier recorded it in 1764 and it was among the earliest additions to his catalogue.",
+   "distance": "825 light-years",
+   "size": "~8 light-years across"
+  },
+  "dso/m4": {
+   "description": "M4 is one of the closest globular clusters to Earth and one of the easiest to find, located near Antares in Scorpius.",
+   "fun_fact": "M4 contains a white dwarf estimated to be 13 billion years old - one of the oldest known stars in the Milky Way!",
+   "distance": "7,200 light-years",
+   "size": "75 light-years across",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m40": {
+   "description": "M40 is unique in the Messier catalogue — it is not a nebula, cluster, or galaxy, but a wide double star. Messier catalogued it in 1764 while searching for a nebula reported by Johann Hevelius in Ursa Major, found only this pair of stars, and recorded it so that future observers would not mistake it for something more interesting.",
+   "fun_fact": "The two stars of M40 — known as Winnecke 4 — are not gravitationally bound; they lie at different distances and are simply a chance alignment. Messier himself noted there was \"nothing remarkable,\" but included it \"to show that this nebula is not the same as those which I have examined.\" His methodical habit of documenting negatives gave future observers a definitive reference.",
+   "distance": "~500 light-years",
+   "size": "~50 arcseconds (separation)"
+  },
+  "dso/m41": {
+   "description": "M41 is a fine open cluster in Canis Major, sitting just 4° south of Sirius — the brightest star in the night sky. Naked-eye from dark sites and spectacular in binoculars, it contains about 100 stars spread across a generous field, with several striking orange giant stars among fainter blue-white members.",
+   "fun_fact": "Aristotle may have noted M41 around 325 BCE — possibly the earliest recorded observation of any deep-sky object. He described a \"cloudy spot\" south of Sirius that matches M41's position. If the identification is correct, M41 was being discussed nearly two thousand years before the telescope was invented.",
+   "distance": "2,300 light-years",
+   "size": "~25 light-years across"
+  },
+  "dso/m42": {
+   "description": "The Orion Nebula is a diffuse emission nebula visible to the naked eye, one of the most photographed objects in the night sky.",
+   "fun_fact": "The Orion Nebula is a stellar nursery where new stars are being born right now. Over 700 stars are forming inside!",
+   "distance": "1,344 light-years",
+   "size": "24 light-years across",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m43": {
+   "description": "De Mairan's Nebula is a detached portion of the great Orion Nebula complex, separated from M42 by a dark dust lane but belonging to the same vast molecular cloud. Named after French astronomer Jean-Jacques Dortous de Mairan, who noted it in 1731, it is an emission nebula ionized by the hot young star NU Orionis embedded at its centre.",
+   "fun_fact": "Although M43 appears as a separate object from M42, the dark lane dividing them is a foreground dust cloud — part of the Orion Molecular Cloud — that simply blocks our view of the physical connection between the two glowing regions. Together they are just the illuminated inner edge of an enormous dark cloud extending across much of Orion.",
+   "distance": "1,350 light-years",
+   "size": "~8 light-years across"
+  },
+  "dso/m44": {
+   "description": "The Beehive Cluster (Praesepe) is an open cluster in Cancer, known since ancient times and visible to the naked eye.",
+   "fun_fact": "Ancient astronomers used the visibility of the Beehive Cluster to predict weather - if invisible, rain was coming!",
+   "distance": "577 light-years",
+   "size": "15 light-years across",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m45": {
+   "description": "The Pleiades is an open star cluster in Taurus, also known as the Seven Sisters, visible to the naked eye since antiquity.",
+   "fun_fact": "The Pleiades are among the nearest star clusters to Earth and have been recognized by virtually every ancient civilization!",
+   "distance": "444 light-years",
+   "size": "17 light-years across",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m46": {
+   "description": "M46 is a rich, dense open cluster in Puppis containing around 500 stars packed into a wide field, striking in binoculars and beautiful in small telescopes. A remarkable bonus floats at its northern edge: NGC 2438, a small planetary nebula that appears to be embedded in the cluster — a dramatic line-of-sight coincidence.",
+   "fun_fact": "The planetary nebula NGC 2438 appears to sit inside M46 but is actually an unrelated foreground object at a very different distance — about 1,400 light-years versus M46's 5,400. The coincidence of a dying star's shell superimposed on a young star cluster makes this one of the most photogenic fields in the catalogue.",
+   "distance": "5,400 light-years",
+   "size": "~42 light-years across"
+  },
+  "dso/m47": {
+   "description": "M47 is a bright, loose open cluster in Puppis, easily visible to the naked eye and eye-catching in binoculars. Roughly 50 stars are scattered over half a degree of sky, with several orange giant stars adding warm colour against the fainter blue-white members.",
+   "fun_fact": "M47 was one of the \"lost\" Messier objects — a clerical error in Messier's original coordinates placed it in empty sky, leaving the cluster unidentified for nearly two centuries. Its true identity as NGC 2422 was only confirmed in 1959, when observers worked backward from Messier's description to find the error.",
+   "distance": "1,600 light-years",
+   "size": "~14 light-years across"
+  },
+  "dso/m48": {
+   "description": "M48 is a large, bright open cluster in Hydra, spanning nearly a degree of sky and visible to the naked eye from dark sites. Its roughly 80 stars are scattered loosely across a wide field best suited to binoculars, with a scattering of orange and yellow giant stars among the brighter blue-white members.",
+   "fun_fact": "M48 was one of the \"lost\" Messier objects for almost two centuries because Messier's recorded position was about 5° off from the true location. It remained unidentified until 1959, when it was matched with NGC 2548 and a simple transcription error was shown to have placed it in empty sky all along.",
+   "distance": "1,500 light-years",
+   "size": "~23 light-years across"
+  },
+  "dso/m49": {
+   "description": "M49 is a giant elliptical galaxy in Virgo, the brightest member of the Virgo Cluster.",
+   "fun_fact": "M49 was the first member of the Virgo Cluster to be discovered and contains about 6,000 globular clusters!",
+   "distance": "55 million light-years",
+   "size": "160,000 light-years across",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m5": {
+   "description": "M5 is a globular cluster in Serpens, one of the oldest globular clusters at about 13 billion years old.",
+   "fun_fact": "M5 contains over 100,000 stars and has one of the highest numbers of known variable stars of any globular cluster!",
+   "distance": "24,500 light-years",
+   "size": "165 light-years across",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m50": {
+   "description": "M50 is a bright open cluster in Monoceros, containing around 200 stars packed into a striking compact field for binoculars and small telescopes. It is easily found on a line between Sirius and Procyon and contains a notable red giant — a warm orange beacon standing out vividly among the cluster's blue-white stars.",
+   "fun_fact": "M50 is estimated to be around 78 million years old — one of the younger Messier open clusters — meaning its hot blue and white stars are still evolving, with a handful of the more massive members having recently swelled into giants. This is typical of a cluster in its early middle age.",
+   "distance": "3,200 light-years",
+   "size": "~15 light-years across"
+  },
+  "dso/m51": {
+   "description": "The Whirlpool Galaxy is a grand-design spiral galaxy in Canes Venatici, famous for its striking spiral arms and companion galaxy.",
+   "fun_fact": "The Whirlpool was the first galaxy to be recognized as having spiral structure, discovered by Lord Rosse in 1845!",
+   "distance": "23 million light-years",
+   "size": "76,000 light-years across",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m52": {
+   "description": "M52 is a rich open cluster in Cassiopeia, containing around 200 stars packed into a compact region of the northern Milky Way. It is a fine binocular cluster and shows a beautiful, dense stellar field in small telescopes, with a noticeably brighter orange star standing out near the cluster's southern edge.",
+   "fun_fact": "M52's distance is unusually uncertain — estimates range from 3,000 to 7,000 light-years — because heavy interstellar dust along this line of sight makes its true luminosity hard to determine. Messier discovered it in 1774, the same night he was tracking a comet that led him to record several other catalogue entries.",
+   "distance": "~5,000 light-years",
+   "size": "~25 light-years across"
+  },
+  "dso/m53": {
+   "description": "M53 is a globular cluster in Coma Berenices, one of the more outlying globular clusters in our galaxy.",
+   "fun_fact": "M53 is one of the most distant globular clusters from the galactic center at 60,000 light-years away from it!",
+   "distance": "58,000 light-years",
+   "size": "220 light-years across",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m54": {
+   "description": "M54 is a large, rich globular cluster in Sagittarius and one of the most distant objects in the entire Messier catalogue. For centuries it was thought to be a remote halo globular of the Milky Way, but it is now known to be the dense core of the Sagittarius Dwarf Elliptical Galaxy — a satellite galaxy currently being absorbed by our own.",
+   "fun_fact": "The 1994 discovery that M54 belongs to the Sagittarius Dwarf Galaxy made it the first globular cluster known to belong to another galaxy. As the Sagittarius Dwarf is gradually torn apart and swallowed by the Milky Way, M54 will eventually become a genuine halo globular of our own galaxy — an intergalactic immigrant arriving over billions of years.",
+   "distance": "87,000 light-years",
+   "size": "~230 light-years across"
+  },
+  "dso/m55": {
+   "description": "M55 is a large, loose globular cluster in Sagittarius — one of the most spread-out and least concentrated of all Messier globulars. It is easily resolved into individual stars even at low magnification, with a granular texture visible in binoculars. Its low southern declination limits visibility from northern latitudes but it is spectacular from the southern hemisphere.",
+   "fun_fact": "M55's unusually low stellar concentration makes it look almost like a rich open cluster rather than a typical globular. Its stars are spread across a region nearly 100 light-years wide, suggesting the cluster's self-gravity is relatively weak compared to more centrally condensed globulars like M13 or M3.",
+   "distance": "17,600 light-years",
+   "size": "~100 light-years across"
+  },
+  "dso/m56": {
+   "description": "M56 is a compact globular cluster in Lyra, nestled between the Ring Nebula (M57) and the bright double star Albireo in Cygnus. At magnitude 8.3 it is a binocular target from dark skies, and a small telescope reveals a granular, moderately condensed sphere that is only partially resolved even in medium apertures.",
+   "fun_fact": "M56 was discovered by Messier in January 1779 during the same observing season in which he also found the Ring Nebula (M57). Despite sitting in the same binocular field as Vega — the sky's fifth brightest star — and close to the famous Ring Nebula, M56 is frequently overlooked by observers drawn to its more celebrated neighbours.",
+   "distance": "32,900 light-years",
+   "size": "~68 light-years across"
+  },
+  "dso/m57": {
+   "description": "The Ring Nebula is a planetary nebula in Lyra, a glowing shell of gas expelled by a dying Sun-like star.",
+   "fun_fact": "The Ring Nebula is expanding at about 20 km/s and will eventually disperse into space over the next 10,000 years!",
+   "distance": "2,300 light-years",
+   "size": "1.3 light-years across",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m58": {
+   "description": "Messier 58 is a barred spiral galaxy in Virgo and one of the brightest members of the Virgo Cluster.",
+   "fun_fact": "A supermassive black hole of about 70 million solar masses sits at M58's heart, ringed by a tight band of newborn stars!",
+   "distance": "68 million light-years",
+   "size": "133,000 light-years across"
+  },
+  "dso/m59": {
+   "description": "Messier 59 is an elliptical galaxy in Virgo, discovered in 1779 during the search for a passing comet.",
+   "fun_fact": "The core of M59 spins backwards compared with the rest of the galaxy, and around 2,200 globular clusters swarm around it!",
+   "distance": "50 million light-years",
+   "mass": "270 million solar masses (central black hole)"
+  },
+  "dso/m6": {
+   "description": "The Butterfly Cluster is an open cluster in Scorpius, named for the butterfly-like arrangement of its brightest stars.",
+   "fun_fact": "M6 is about 100 million years old and contains over 300 stars, including the orange giant BM Scorpii!",
+   "distance": "1,600 light-years",
+   "size": "25 light-years across",
+   "image_credit": "NOAO/AURA/NSF"
+  },
+  "dso/m60": {
+   "description": "Messier 60 is a giant elliptical galaxy in Virgo, the third-brightest giant elliptical in the Virgo Cluster.",
+   "fun_fact": "M60's central black hole weighs about 4.5 billion Suns - one of the largest ever found!",
+   "distance": "57 million light-years"
+  },
+  "dso/m61": {
+   "description": "Messier 61 is a barred spiral galaxy in Virgo and one of the largest galaxies in the Virgo Cluster.",
+   "fun_fact": "Eight supernovae have been spotted in M61 - one of the highest tallies of any galaxy! Messier himself first mistook it for a comet.",
+   "distance": "52 million light-years",
+   "size": "92,000 light-years across"
+  },
+  "dso/m62": {
+   "description": "M62 is a rich globular cluster in Ophiuchus — one of the closest globulars to the galactic centre and noticeably asymmetric, with stars packed more densely on the southern side. At magnitude 6.6 it is a fine binocular object, though its low declination makes it a short-season target for northern observers.",
+   "fun_fact": "M62's off-centre core is a direct result of its proximity to the galactic centre — powerful tidal forces from the central bulge distort the cluster and drag stars toward the galactic plane. It is also one of the most dynamically evolved globulars known, showing signs of core collapse and an unusually high density of millisecond pulsars.",
+   "distance": "22,500 light-years",
+   "size": "~92 light-years across"
+  },
+  "dso/m63": {
+   "description": "The Sunflower Galaxy is a luminous spiral in Canes Venatici whose tightly wound arms, mottled with star-forming regions, give it a distinctive flower-like texture in long-exposure photographs. At magnitude 8.6 it is visible in binoculars from dark skies and shows its elongated shape and bright nucleus easily in small telescopes.",
+   "fun_fact": "M63 was discovered by Pierre Méchain in 1779 — one of a handful of Messier objects found by Méchain rather than Messier himself. It is a member of the M51 Group, physically associated with the Whirlpool Galaxy (M51), and shows signs of a past interaction: a faint, ancient stellar stream wraps around its outer disk.",
+   "distance": "29 million light-years",
+   "size": "~100,000 light-years across"
+  },
+  "dso/m64": {
+   "description": "The Black Eye Galaxy is a spiral galaxy in Coma Berenices, famous for the dark band of absorbing dust around its nucleus.",
+   "fun_fact": "The outer regions of M64 rotate in the opposite direction from its inner regions, likely from a past galaxy merger!",
+   "distance": "17 million light-years",
+   "size": "70,000 light-years across",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m65": {
+   "description": "M65 is a spiral galaxy in Leo, part of the famous Leo Triplet along with M66 and NGC 3628.",
+   "fun_fact": "The Leo Triplet galaxies are gravitationally interacting, causing tidal tails and warped structures!",
+   "distance": "35 million light-years",
+   "size": "90,000 light-years across",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m66": {
+   "description": "M66 is the largest member of the Leo Triplet, a spiral galaxy with asymmetric spiral arms.",
+   "fun_fact": "M66's asymmetric appearance is caused by gravitational interactions with its neighbors M65 and NGC 3628!",
+   "distance": "36 million light-years",
+   "size": "95,000 light-years across",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m67": {
+   "description": "M67 is a fine open cluster in Cancer and one of the oldest well-studied open clusters in the sky. At roughly 3.2–3.5 billion years old, it contains many stars similar in mass and age to our own Sun — making it a natural laboratory for studying how Sun-like stars evolve over cosmic time.",
+   "fun_fact": "Several stars in M67 closely resemble the Sun in temperature, mass, and age — a rare combination that led researchers to wonder whether the Sun itself originated in a cluster like M67. Because stars are born in clusters that gradually scatter, the Sun almost certainly came from a now-dispersed sibling group billions of years ago — though which cluster has never been identified.",
+   "distance": "2,700 light-years",
+   "size": "~24 light-years across"
+  },
+  "dso/m68": {
+   "description": "M68 is a rich globular cluster in Hydra — a southern object and one of the few globulars best placed in the late winter and spring sky. At magnitude 8.2 it rewards a small telescope with a moderately condensed core and a large halo of resolved stars against the relatively sparse star fields of Hydra.",
+   "fun_fact": "Despite its relative proximity — making individual stars well-resolved in amateur telescopes — M68 is often overlooked because of its far southern declination. From latitudes above 50°N it barely clears the horizon; from the southern hemisphere, however, it rises high and is a superb showpiece globular.",
+   "distance": "33,600 light-years",
+   "size": "~117 light-years across"
+  },
+  "dso/m69": {
+   "description": "M69 is a moderately rich globular cluster in Sagittarius, positioned near the galactic centre. At magnitude 7.7 it is a binocular object from dark skies that rewards a small telescope with a partially resolved ball of stars and a bright, granular centre.",
+   "fun_fact": "M69 orbits unusually close to the galactic centre — only about 6,200 light-years from the Milky Way's core — and consequently has an unusually high concentration of heavier elements for a globular cluster. Globulars closer to the galactic centre tend to be chemically enriched by multiple generations of star formation in the surrounding bulge.",
+   "distance": "29,700 light-years",
+   "size": "~61 light-years across"
+  },
+  "dso/m7": {
+   "description": "The Ptolemy Cluster is a bright open cluster in Scorpius, one of the most prominent clusters visible to the naked eye.",
+   "fun_fact": "M7 was first recorded by Ptolemy in 130 AD and has been observed for nearly 2,000 years!",
+   "distance": "980 light-years",
+   "size": "25 light-years across",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m70": {
+   "description": "M70 is a compact globular cluster in Sagittarius, closely resembling its near-twin M69 in both appearance and distance. At magnitude 8.1 it is a fine small-telescope object that shows a compact core and hints of resolution in the outer halo. It sits just 2° from M69 and both can be swept up in the same binocular field.",
+   "fun_fact": "M70 gained brief notoriety in 1995 as the approximate location in the sky where Alan Hale and Thomas Bopp independently discovered Comet Hale-Bopp — the brightest comet of the late 20th century. Both observers initially swept past M70 while searching for other targets and noticed the comet as an unexpected fuzzy object nearby.",
+   "distance": "29,400 light-years",
+   "size": "~67 light-years across"
+  },
+  "dso/m71": {
+   "description": "M71 is an unusual globular cluster in Sagitta — debated by astronomers for decades who could not decide whether it was a very rich old open cluster or a very loose young globular. Modern analysis confirms it is a genuine globular, but an exceptionally low-concentration one with relatively few stars and a less dominant core than typical globulars.",
+   "fun_fact": "M71's loose structure kept it off many early catalogues because it resembled a rich star field rather than a true cluster. At only 12,000 light-years it is one of the nearer Messier globulars, and its stars are partially resolved in a small telescope under dark skies — giving it the look of a compact, slightly condensed rich star field.",
+   "distance": "12,000 light-years",
+   "size": "~25 light-years across"
+  },
+  "dso/m72": {
+   "description": "Messier 72 is a faint, remote globular cluster in Aquarius, discovered by Pierre Mechain in 1780.",
+   "fun_fact": "M72 packs about 168,000 Suns' worth of stars into a ball roughly 9.5 billion years old, including 43 variable stars!",
+   "distance": "55,000 light-years"
+  },
+  "dso/m73": {
+   "description": "Messier 73 is a small group of four stars in Aquarius that only appears to be a cluster.",
+   "fun_fact": "Astronomers argued for decades over whether M73 was a real cluster - in 2002 it was settled: the four stars lie at wildly different distances and merely line up by chance!",
+   "distance": "1,000 to 2,300 light-years (the individual stars)"
+  },
+  "dso/m74": {
+   "description": "The Phantom Galaxy is a face-on spiral galaxy in Pisces, known for its perfect grand-design spiral structure.",
+   "fun_fact": "M74 is nicknamed the Phantom Galaxy because of its very low surface brightness, making it challenging to observe!",
+   "distance": "32 million light-years",
+   "size": "95,000 light-years across",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m75": {
+   "description": "Messier 75 is a distant, richly concentrated globular cluster in Sagittarius.",
+   "fun_fact": "M75 is one of the most densely packed globulars known, and is thought to be debris from a dwarf galaxy the Milky Way swallowed long ago!",
+   "distance": "68,000 light-years",
+   "size": "134 light-years across"
+  },
+  "dso/m76": {
+   "description": "The Little Dumbbell is a planetary nebula in Perseus with a distinctive figure-eight shape — a smaller cousin of M27, the Dumbbell Nebula in Vulpecula. Though the faintest entry in the Messier catalogue, it rewards patient observation in small telescopes and shows beautiful structure in larger instruments, with two brighter lobes flanking a fainter waist.",
+   "fun_fact": "M76 was originally catalogued as two separate objects — NGC 650 and NGC 651 — because early observers described the two bright lobes independently. It is a bipolar planetary nebula formed when a dying star's outflow was pinched at the equator, creating two expanding lobes along the polar axis while gas also billows outward at the waist.",
+   "distance": "~2,500 light-years",
+   "size": "~2 light-years across"
+  },
+  "dso/m77": {
+   "description": "M77 is a barred spiral galaxy in Cetus containing an active galactic nucleus powered by a supermassive black hole.",
+   "fun_fact": "M77 harbors an active galactic nucleus with a black hole 15 million times the mass of our Sun!",
+   "distance": "47 million light-years",
+   "size": "120,000 light-years across",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m78": {
+   "description": "M78 is the brightest diffuse reflection nebula in the sky, located in Orion near the famous Belt stars.",
+   "fun_fact": "M78 contains about 45 young T Tauri variable stars, very young stars still contracting toward the main sequence!",
+   "distance": "1,600 light-years",
+   "size": "4 light-years across",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m79": {
+   "description": "M79 is a compact globular cluster in Lepus — one of the very few Messier globulars best placed in the winter sky, when most globulars are below the horizon or barely risen. At magnitude 8.0 it needs a telescope to reveal its compact core and faint halo, standing out against the comparatively sparse winter star fields.",
+   "fun_fact": "M79 is thought by some astronomers to be an interloper from the Canis Major Dwarf Galaxy — a disrupted satellite galaxy currently being absorbed by the Milky Way. If so, M79 did not form within the Milky Way's own globular system but was captured from an infalling galaxy and is now slowly being folded into our galaxy's halo.",
+   "distance": "41,000 light-years",
+   "size": "~104 light-years across"
+  },
+  "dso/m8": {
+   "description": "The Lagoon Nebula is a giant interstellar cloud in Sagittarius, one of the finest and brightest nebulae in the summer sky.",
+   "fun_fact": "The Lagoon Nebula contains Herschel 36, one of the most massive and luminous stars known!",
+   "distance": "4,100 light-years",
+   "size": "55 light-years across",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m80": {
+   "description": "M80 is one of the most densely packed globular clusters in the Milky Way, a compact, rich ball of several hundred thousand stars in Scorpius. At magnitude 7.2 it is a fine binocular target and reveals a brilliant, highly concentrated core in small telescopes.",
+   "fun_fact": "In 1860, a nova erupted within M80 — designated T Scorpii — briefly becoming as bright as the cluster itself and visible to the naked eye. It remains one of only two novae ever observed within a globular cluster. Novae in globulars arise from interactions between binary stars, which are far more common in the dense stellar environment of a globular's core.",
+   "distance": "32,600 light-years",
+   "size": "~84 light-years across"
+  },
+  "dso/m81": {
+   "description": "M81 is a grand-design spiral galaxy in Ursa Major, one of the brightest galaxies visible from Earth.",
+   "fun_fact": "M81 is gravitationally interacting with neighboring galaxy M82, triggering intense star formation in M82!",
+   "distance": "12 million light-years",
+   "size": "90,000 light-years across",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m82": {
+   "description": "The Cigar Galaxy is a starburst galaxy in Ursa Major, known for its edge-on orientation and intense star formation.",
+   "fun_fact": "M82 is forming stars 10 times faster than our Milky Way due to gravitational interaction with neighboring M81!",
+   "distance": "12 million light-years",
+   "size": "37,000 light-years across",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m83": {
+   "description": "The Southern Pinwheel is a barred spiral galaxy in Hydra, one of the closest and brightest barred spirals in our sky.",
+   "fun_fact": "M83 has produced six observed supernovae, more than any other galaxy - a record for supernova production!",
+   "distance": "15 million light-years",
+   "size": "55,000 light-years across",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m84": {
+   "description": "Messier 84 is a giant elliptical galaxy in the crowded heart of the Virgo Cluster.",
+   "fun_fact": "M84 fires two jets of matter out of its core, driven by a black hole of about 1.5 billion solar masses!",
+   "distance": "55 million light-years"
+  },
+  "dso/m85": {
+   "description": "Messier 85 is a lenticular galaxy on the outskirts of the Virgo Cluster, in Coma Berenices.",
+   "fun_fact": "Ripples and shells in M85's outer regions are the wreckage of a galaxy merger 4 to 7 billion years ago!",
+   "distance": "60 million light-years",
+   "size": "120,600 light-years across"
+  },
+  "dso/m86": {
+   "description": "Messier 86 is a large elliptical galaxy in the Virgo Cluster, forming a striking pair with nearby M84.",
+   "fun_fact": "M86 is rushing toward us at 244 km/s - the fastest approach of any Messier object! Its passage through the cluster leaves a long trail of stripped hot gas.",
+   "distance": "52 million light-years"
+  },
+  "dso/m87": {
+   "description": "M87 is a supergiant elliptical galaxy in Virgo, one of the most massive galaxies in the local universe.",
+   "fun_fact": "M87's central black hole was the first ever imaged by the Event Horizon Telescope in 2019 - it has 6.5 billion solar masses!",
+   "distance": "53 million light-years",
+   "size": "240,000 light-years across",
+   "mass": "2.4 trillion solar masses",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m88": {
+   "description": "Messier 88 is an elegant spiral galaxy in Coma Berenices, one of fifteen Messier objects in the Virgo Cluster.",
+   "fun_fact": "M88 is plunging toward the centre of the Virgo Cluster and will arrive in 200 to 300 million years, its outer gas being stripped away as it falls!",
+   "distance": "59 million light-years",
+   "size": "131,000 light-years across"
+  },
+  "dso/m89": {
+   "description": "Messier 89 is an elliptical galaxy in Virgo, discovered by Charles Messier in 1781.",
+   "fun_fact": "M89 may be very nearly a perfect sphere - unusual for an elliptical galaxy, which are normally noticeably squashed!",
+   "distance": "50 million light-years"
+  },
+  "dso/m9": {
+   "description": "M9 is a compact globular cluster in Ophiuchus — one of the Messier globulars most affected by interstellar dust absorption. It lies toward the galactic bulge, where thick dust dims it significantly. Without this obscuration M9 would appear nearly a magnitude brighter and be visible to the naked eye.",
+   "fun_fact": "M9 suffers more interstellar dust absorption than almost any other Messier globular — about 1.3 magnitudes of dimming compared to a clear line of sight. Two smaller globular clusters (NGC 6342 and NGC 6356) lie within about 1° of M9, making it the centre of a remarkable grouping of three globulars in a small patch of sky.",
+   "distance": "25,800 light-years",
+   "size": "~70 light-years across"
+  },
+  "dso/m90": {
+   "description": "Messier 90 is a large spiral galaxy in Virgo, and the textbook example of an \"anemic\" galaxy.",
+   "fun_fact": "M90 has had its star-forming gas stripped away by its plunge through the Virgo Cluster, leaving tails of glowing gas up to 260,000 light-years long!",
+   "distance": "59 million light-years",
+   "size": "132,000 light-years across"
+  },
+  "dso/m91": {
+   "description": "Messier 91 is a barred spiral galaxy in Coma Berenices and the faintest object in the Messier catalogue.",
+   "fun_fact": "M91 was lost for nearly 200 years! Messier recorded its position using the wrong reference galaxy, and it was only re-identified in 1969 by an amateur astronomer.",
+   "distance": "63 million light-years",
+   "size": "105,500 light-years across"
+  },
+  "dso/m92": {
+   "description": "M92 is a bright globular cluster in Hercules, often overlooked because of its proximity to the more famous M13.",
+   "fun_fact": "M92 is one of the oldest globular clusters at about 14.2 billion years old - nearly as old as the universe!",
+   "distance": "26,700 light-years",
+   "size": "109 light-years across",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m93": {
+   "description": "M93 is a bright, compact open cluster in Puppis, sitting in the rich southern Milky Way and easily found in binoculars. Its roughly 80 stars are arranged in a striking wedge or butterfly shape and include several hot blue supergiants, making it one of the more attractive open clusters in the winter sky.",
+   "fun_fact": "M93 is relatively young — around 100 million years old — with dominant blue and blue-white stars that have not yet evolved into giants. It is one of the more southerly Messier clusters, and from latitudes north of about 50°N it never rises very high above the horizon.",
+   "distance": "3,600 light-years",
+   "size": "~23 light-years across"
+  },
+  "dso/m94": {
+   "description": "M94 is a spiral galaxy in Canes Venatici with a bright inner ring where active star formation is occurring.",
+   "fun_fact": "M94's inner ring is a starburst ring where new stars are forming at a very high rate!",
+   "distance": "16 million light-years",
+   "size": "50,000 light-years across",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m95": {
+   "description": "Messier 95 is a barred spiral galaxy in Leo, part of the M96 Group along with M96 and M105.",
+   "fun_fact": "A ring of furious star formation about 70,000 light-years wide circles M95's core, and a supernova flared there in 2012!",
+   "distance": "33 million light-years",
+   "size": "80,000 light-years across"
+  },
+  "dso/m96": {
+   "description": "Messier 96 is a spiral galaxy in Leo, the brightest member of the M96 Group of galaxies.",
+   "fun_fact": "M96 is roughly the same size and mass as our own Milky Way, but strikingly lopsided - its dust and gas are spread unevenly through its arms!",
+   "distance": "31 million light-years",
+   "size": "78,000 light-years across"
+  },
+  "dso/m97": {
+   "description": "The Owl Nebula is a planetary nebula in Ursa Major, named for its owl-like appearance with two dark spots.",
+   "fun_fact": "The dark owl eyes in M97 are three-dimensional cavities in the nebula, aligned with our line of sight!",
+   "distance": "2,030 light-years",
+   "size": "2 light-years across",
+   "image_credit": "Gemini Observatory/NOIRLab/NSF/AURA"
+  },
+  "dso/m98": {
+   "description": "Messier 98 is a spiral galaxy in Coma Berenices, seen nearly edge-on as part of the Virgo Cluster.",
+   "fun_fact": "M98 is one of the rare galaxies moving toward us rather than away, closing at about 140 km/s!",
+   "distance": "44 million light-years"
+  },
+  "dso/m99": {
+   "description": "Messier 99 is a grand design spiral galaxy in Coma Berenices, showing clear, sweeping spiral arms.",
+   "fun_fact": "M99 was among the very first objects recognised as spiral, sketched by Lord Rosse in 1846 - and it forms stars three times faster than similar galaxies!",
+   "distance": "45 million light-years",
+   "size": "98,000 light-years across"
+  },
+  "dso/n47_tucanae": {
+   "description": "47 Tucanae (NGC 104) is the second-brightest globular cluster in the sky, a dense ball of roughly one million ancient stars orbiting the Milky Way in the constellation Tucana. At about 14,500 light-years away it appears to the naked eye as a fuzzy fourth-magnitude star, but a telescope resolves its compressed core into an extraordinary swarm of golden and blue-white suns. Its stars formed around 13 billion years ago, making the cluster almost as old as the universe itself.",
+   "fun_fact": "47 Tucanae is a cosmic pulsar factory: astronomers have found at least 35 millisecond pulsars spinning hundreds of times per second inside it — more than in any other known globular cluster — the result of stellar close encounters that recycle old neutron stars by spinning them up.",
+   "distance": "~14,500 light-years",
+   "size": "~120 light-years across",
+   "image_credit": "ESO"
+  },
+  "dso/ngc_2903": {
+   "description": "NGC 2903 is a bright barred spiral galaxy in Leo, often called \"the Messier object that Messier missed\" — it is one of the most prominent galaxies in the sky not included in his famous catalogue. At magnitude 8.9 it is easily visible in binoculars and shows beautiful spiral structure in moderate telescopes.",
+   "fun_fact": "NGC 2903 has one of the highest concentrations of star-forming \"hotspots\" known in a galaxy's central bar region — dense clusters of young massive stars lit up by intense star formation. It is used as a benchmark for studying starburst activity in barred spiral galaxies.",
+   "distance": "30 million light-years",
+   "size": "~80,000 light-years across",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/ngc_6543": {
+   "description": "The Cat's Eye Nebula is one of the most structurally complex planetary nebulae known — a dying star's expelled gas sculpted into concentric shells, jets, and bright knots visible in Hubble imagery. In small telescopes it appears as a vivid blue-green disk in Draco, one of the most colourful objects in the autumn sky.",
+   "fun_fact": "In 1864, astronomer William Huggins turned a spectroscope on the Cat's Eye and found it was made of glowing gas rather than unresolved stars — the first time the nature of any planetary nebula was confirmed. This discovery founded the field of nebular spectroscopy and overturned the prevailing view that all nebulae were distant star clusters.",
+   "distance": "~3,300 light-years",
+   "size": "~0.5 light-years diameter",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/north_america_nebula": {
+   "description": "The North America Nebula (NGC 7000) is a large emission nebula in Cygnus whose shape remarkably resembles the continent of North America, complete with a Gulf of Mexico region. Spanning about 120 arcminutes across — roughly four times the diameter of the full Moon — it lies around 2,600 light-years away and is over 100 light-years wide.",
+   "fun_fact": "Despite its visual magnitude of 4, the nebula is too large and diffuse to see with the naked eye under most skies — yet it photographs beautifully, revealing the Cygnus Wall, a dense arc of intense star formation along its southern edge.",
+   "distance": "~2,590 light-years",
+   "size": "~140 light-years across",
+   "image_credit": "Giuseppe Donatiello/CC0"
+  },
+  "dso/omega_centauri": {
+   "description": "Omega Centauri is the largest and most massive globular cluster orbiting the Milky Way, containing roughly 10 million stars packed into a sphere about 150 light-years across. It is easily visible to the naked eye as a fuzzy star in Centaurus, and resolves into a breathtaking ball of stars through binoculars or any telescope.",
+   "fun_fact": "Unlike typical globular clusters, Omega Centauri contains stars of many different ages and chemical compositions — a sign that it may be the stripped nucleus of a dwarf galaxy that was torn apart and swallowed by the Milky Way billions of years ago. It may even harbour a central intermediate-mass black hole.",
+   "distance": "17,090 light-years",
+   "size": "~150 light-years diameter",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/saturn_nebula": {
+   "description": "The Saturn Nebula is a planetary nebula in Aquarius named for its resemblance to the planet Saturn — extensions called ansae protrude from either side like ring handles, visible in moderate telescopes. At magnitude 8.0 it is one of the brightest planetary nebulae in the sky and shows complex structure in larger instruments.",
+   "fun_fact": "William Herschel discovered the Saturn Nebula in 1782 and noted the Saturn-like appearance. Modern observations reveal at least four distinct shells of gas surrounding the central white dwarf, reflecting multiple episodes of mass loss in the final stages of the star's life.",
+   "distance": "~5,000 light-years",
+   "size": "~1 light-year across",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/sculptor_galaxy": {
+   "description": "The Sculptor Galaxy is one of the brightest and most beautiful edge-on spiral galaxies visible from Earth, appearing as an elongated glow in the southern constellation Sculptor. It is one of the closest starburst galaxies — a galaxy undergoing an intense burst of star formation — visible to amateur astronomers with binoculars from dark skies.",
+   "fun_fact": "The Sculptor Galaxy is one of the brightest members of the Sculptor Group — the galaxy group nearest to our own Local Group. Its central starburst region produces new stars at a rate several times higher than the Milky Way, driven by past interactions with neighbouring galaxies.",
+   "distance": "11.4 million light-years",
+   "size": "~90,000 light-years across",
+   "image_credit": "ESO/VST"
+  },
+  "dso/sgr_a_star": {
+   "description": "Sagittarius A* (Sgr A*) is the supermassive black hole at the centre of the Milky Way, lying 26,000 light-years away in the direction of Sagittarius. With a mass of about 4 million solar masses compressed into a region smaller than our solar system, it is so dense that not even light can escape its event horizon.",
+   "fun_fact": "In 2022 the Event Horizon Telescope collaboration released the first direct image of Sgr A*, revealing a glowing ring of superheated gas surrounding its shadow — produced by combining data from radio observatories spread across the entire planet.",
+   "distance": "26,000 light-years",
+   "size": "Event horizon diameter: ~24 million km",
+   "image_credit": "EHT Collaboration"
+  },
+  "dso/smc": {
+   "description": "The Small Magellanic Cloud is a dwarf irregular satellite galaxy of the Milky Way, paired with its larger sibling the LMC. Together they are slowly being torn apart by the Milky Way's gravity, trailing a vast stream of gas across the sky.",
+   "fun_fact": "By studying Cepheid variable stars in the SMC in 1908–12, Henrietta Swan Leavitt discovered the period-luminosity law — the breakthrough that first let astronomers measure distances across the universe!",
+   "distance": "200,000 light-years",
+   "size": "7,000 light-years across",
+   "image_credit": "ESO/VISTA VMC"
+  },
+  "dso/t_crb": {
+   "description": "T Coronae Borealis (T CrB) is a recurrent nova in Corona Borealis — a binary system of a red giant and a white dwarf. The white dwarf periodically accumulates enough hydrogen from its companion to trigger a thermonuclear explosion.",
+   "fun_fact": "T CrB last erupted in 1946, briefly reaching magnitude 2.0 and becoming visible to the naked eye. Astronomers predict that another eruption is imminent — keep watching!",
+   "distance": "3,000 light-years",
+   "size": "0.2 AU orbital separation"
+  },
+  "dso/tarantula_nebula": {
+   "description": "The Tarantula Nebula is the largest and most luminous star-forming region in the Local Group, a vast emission nebula embedded in the Large Magellanic Cloud spanning some 600 light-years. Despite lying 163,000 light-years away, it is bright enough to be visible to the naked eye.",
+   "fun_fact": "If the Tarantula Nebula were as close as the Orion Nebula, it would be bright enough to cast shadows at night and would span half the visible sky!",
+   "distance": "163,000 light-years",
+   "size": "600 light-years across",
+   "image_credit": "ESO/R. Fosbury/ST-ECF"
+  },
+  "dso/v838_mon": {
+   "description": "V838 Monocerotis is an unusual variable star in Monoceros that underwent a spectacular outburst in 2002, briefly becoming one of the most luminous stars in the Milky Way. Though far too faint for visual observers today, its expanding light echo — a wavefront of light illuminating ancient dust shells — produced some of the most dramatic Hubble Space Telescope images ever taken.",
+   "fun_fact": "The nature of V838 Mon's outburst remains debated. The leading theory is a stellar merger — two stars spiralling into each other and colliding — rather than a classic nova or supergiant eruption. If confirmed, it was the first real-time glimpse of a \"luminous red nova,\" a rare class of explosion caused by stellar mergers, similar events have since been found in other galaxies.",
+   "distance": "~20,000 light-years",
+   "size": "~3 light-years (light echo extent)",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/willman_1": {
+   "description": "Willman 1 is an ultra-faint dwarf satellite galaxy of the Milky Way, discovered in 2004 by Beth Willman in data from the Sloan Digital Sky Survey. It is one of the least luminous galaxies known and one of the most extreme laboratories for dark matter in the universe.",
+   "fun_fact": "For every unit of ordinary matter in Willman 1, there are roughly 660 units of dark matter — making it among the most dark-matter-dominated objects ever discovered. Its stars also show signs of tidal disruption as the Milky Way slowly pulls it apart.",
+   "distance": "~130,000 light-years",
+   "size": "~130 light-years across",
+   "image_credit": "Sky Map team (it's very faint)"
+  },
+  "moon/ariel": {
+   "description": "Ariel has the youngest and brightest surface of Uranus's five major moons. Its landscape is dominated by a network of deep valleys and smooth plains that were resurfaced long ago by fluid — likely water or ammonia-water mixtures — welling up from the interior and flooding ancient terrain.",
+   "fun_fact": "Ariel's valleys can reach 10 km deep — far deeper than the Grand Canyon. James Webb Space Telescope observations have since detected carbon dioxide ice on Ariel's surface, hinting at ongoing surface chemistry driven by charged particles from Uranus's magnetic field.",
+   "distance": "191,020 km from Uranus",
+   "size": "1,158 km diameter",
+   "image_credit": "NASA/JPL",
+   "search_subtext": "Moon of Uranus"
+  },
+  "moon/callisto": {
+   "description": "Callisto is the outermost of the Galilean moons and one of the most heavily cratered bodies in the solar system, its ancient surface preserving a record of early solar system impacts.",
+   "fun_fact": "Callisto orbits beyond Jupiter's main radiation belts, making it the safest of the Galilean moons for future human exploration — it is sometimes called the 'gateway moon'.",
+   "distance": "1,882,700 km from Jupiter",
+   "size": "4,821 km diameter",
+   "image_credit": "NASA/JPL/DLR",
+   "search_subtext": "Moon of Jupiter"
+  },
+  "moon/deimos": {
+   "description": "Deimos is the smaller and outer of Mars's two moons, with a smooth, dust-covered surface that gives it a rounder appearance than Phobos. Like its companion, it is thought to be a captured asteroid from the outer belt.",
+   "fun_fact": "Deimos is so small and distant that from the Martian surface it looks like little more than a bright star, taking about 30 hours to slowly drift across the night sky.",
+   "distance": "23,460 km from Mars",
+   "size": "15 × 12 × 11 km",
+   "image_credit": "NASA/JPL-Caltech/University of Arizona",
+   "search_subtext": "Moon of Mars"
+  },
+  "moon/dione": {
+   "description": "Dione is an icy moon of Saturn with a heavily cratered leading face and a trailing hemisphere laced with bright ice cliffs — fracture lines where ancient tectonic forces exposed fresh ice from below. Cassini gravity data hint at a subsurface liquid ocean beneath the crust.",
+   "fun_fact": "Dione shares its orbit with two tiny moons, Helene and Polydeuces, which are locked 60° ahead of and behind it at gravitational equilibrium points called Lagrange points. Helene in particular can be seen riding along like a cosmic hitchhiker in Cassini images.",
+   "distance": "377,396 km from Saturn",
+   "size": "1,122 km diameter",
+   "image_credit": "NASA/JPL-Caltech/SSI",
+   "search_subtext": "Moon of Saturn"
+  },
+  "moon/europa": {
+   "description": "Europa is the second Galilean moon and is thought to harbor a vast liquid water ocean beneath its icy crust, making it one of the most promising places to search for life.",
+   "fun_fact": "Europa's subsurface ocean may contain twice as much liquid water as all of Earth's oceans combined, kept liquid by tidal heating from Jupiter.",
+   "distance": "671,100 km from Jupiter",
+   "size": "3,122 km diameter",
+   "image_credit": "NASA/JPL-Caltech/SETI Institute",
+   "search_subtext": "Moon of Jupiter"
+  },
+  "moon/ganymede": {
+   "description": "Ganymede is the largest moon in the solar system — even bigger than the planet Mercury. It is the only moon known to generate its own magnetic field.",
+   "fun_fact": "Ganymede is larger than Mercury in size, though only about half its mass. Its internal magnetic field creates its own miniature magnetosphere within Jupiter's much larger one.",
+   "distance": "1,070,400 km from Jupiter",
+   "size": "5,268 km diameter",
+   "image_credit": "NASA/JPL/DLR",
+   "search_subtext": "Moon of Jupiter"
+  },
+  "moon/iapetus": {
+   "description": "Iapetus is one of Saturn's most distinctive moons: its leading hemisphere is covered in jet-black material as dark as coal, while its trailing hemisphere is bright white ice. This extreme two-tone appearance puzzled Giovanni Cassini when he discovered the moon in 1671, and the contrast is so stark it is visible in small telescopes.",
+   "fun_fact": "Iapetus also sports a towering equatorial ridge rising 20 km high — taller than any mountain on Earth — running thousands of kilometres around its equator. Its origin is unknown: it may be the remnant of a collapsed ring, or ancient tectonic folding, formed when the moon spun much faster long ago.",
+   "distance": "3,560,820 km from Saturn",
+   "size": "1,469 km diameter",
+   "image_credit": "NASA/JPL-Caltech/SSI",
+   "search_subtext": "Moon of Saturn"
+  },
+  "moon/io": {
+   "description": "Io is the innermost of Jupiter's four large Galilean moons and the most volcanically active body in the solar system.",
+   "fun_fact": "Io has hundreds of active volcanoes, some erupting lava fountains dozens of kilometers high. Its constant activity is driven by tidal heating from Jupiter's enormous gravity.",
+   "distance": "421,700 km from Jupiter",
+   "size": "3,643 km diameter",
+   "image_credit": "NASA/JPL/University of Arizona",
+   "search_subtext": "Moon of Jupiter"
+  },
+  "moon/oberon": {
+   "description": "Oberon is the outermost of Uranus's five major moons and one of the most heavily cratered, with an ancient surface that has changed little since early in the solar system. Several of its large impact craters have dark material on their floors, possibly organic deposits brought in by the impacting bodies.",
+   "fun_fact": "Oberon hosts a mountain that rises about 6 km from the surrounding plains — comparable to the highest peaks on Earth. Unlike Earth's mountains, which formed through plate tectonics, this feature may be the central peak of an ancient impact crater or a remnant of early volcanic activity.",
+   "distance": "583,520 km from Uranus",
+   "size": "1,523 km diameter",
+   "image_credit": "NASA/JPL",
+   "search_subtext": "Moon of Uranus"
+  },
+  "moon/phobos": {
+   "description": "Phobos is the larger and innermost of Mars's two moons, orbiting closer to its planet than any other moon in the solar system. It is an irregularly shaped, heavily grooved and cratered body thought to be a captured asteroid.",
+   "fun_fact": "Phobos orbits Mars so quickly it rises in the west and sets in the east — and it is slowly spiraling inward, destined to either crash into Mars or break apart into a ring in about 50 million years.",
+   "distance": "9,376 km from Mars",
+   "size": "27 × 22 × 18 km",
+   "image_credit": "NASA/JPL-Caltech/University of Arizona",
+   "search_subtext": "Moon of Mars"
+  },
+  "moon/rhea": {
+   "description": "Rhea is Saturn's second-largest moon and a heavily cratered world of ice and rock. Its pale, ancient surface preserves some of the solar system's most pristine impact craters, alongside bright ice cliffs where landslides have exposed fresh material from beneath.",
+   "fun_fact": "In 2008, Cassini data suggested Rhea might have a thin ring of debris orbiting it — which would make it the first moon ever discovered with its own ring system. If confirmed, it would be a remarkable discovery; the evidence remains an active area of research.",
+   "distance": "527,108 km from Saturn",
+   "size": "1,527 km diameter",
+   "image_credit": "NASA/JPL-Caltech/SSI",
+   "search_subtext": "Moon of Saturn"
+  },
+  "moon/tethys": {
+   "description": "Tethys is an icy moon of Saturn dominated by two dramatic features: the vast Odysseus crater, 400 km wide and covering nearly a third of the moon's face, and Ithaca Chasma, a canyon system stretching three-quarters of the way around the globe.",
+   "fun_fact": "Tethys is almost pure water ice — it has one of the lowest densities of any moon in the solar system, barely denser than frozen water. Ithaca Chasma may have formed when the interior froze and expanded, cracking the overlying crust from within.",
+   "distance": "294,619 km from Saturn",
+   "size": "1,062 km diameter",
+   "image_credit": "NASA/JPL-Caltech/SSI",
+   "search_subtext": "Moon of Saturn"
+  },
+  "moon/titan": {
+   "description": "Titan is Saturn's largest moon and the second-largest moon in the solar system. It is the only moon known to have a dense atmosphere — a thick nitrogen blanket laced with methane — and the only world beyond Earth known to have stable liquid seas on its surface.",
+   "fun_fact": "Titan's lakes and seas are filled not with water but with liquid methane and ethane at a frigid −179°C. NASA's Dragonfly rotorcraft mission, set to arrive in 2034, will fly between sites on Titan's surface to search for the chemistry of life.",
+   "distance": "1,221,870 km from Saturn",
+   "size": "5,151 km diameter",
+   "image_credit": "NASA/JPL-Caltech/SSI",
+   "search_subtext": "Moon of Saturn"
+  },
+  "moon/titania": {
+   "description": "Titania is the largest moon of Uranus and the eighth-largest moon in the solar system. Its surface shows a mix of ancient cratered plains and younger scarps and valleys, suggesting a complex geological history that may have included past tectonic activity reshaping the icy crust.",
+   "fun_fact": "All of Uranus's moons are named after characters from Shakespeare and Alexander Pope — Titania is the queen of the fairies in A Midsummer Night's Dream. It is one of very few major planetary moons not named after a figure from Greek or Roman mythology.",
+   "distance": "435,910 km from Uranus",
+   "size": "1,578 km diameter",
+   "image_credit": "NASA/JPL",
+   "search_subtext": "Moon of Uranus"
+  },
+  "moon/triton": {
+   "description": "Triton is Neptune's largest moon and one of the most extraordinary bodies in the solar system. It orbits Neptune backwards — opposite to the planet's own rotation — a strong sign that it was captured from the outer solar system, most likely from the Kuiper Belt, early in Neptune's history.",
+   "fun_fact": "Despite its surface temperature of −235°C — the coldest measured on any body visited by a spacecraft — Voyager 2 discovered active nitrogen geysers on Triton in 1989. Dark streaks on the surface mark where plumes of gas and dark material erupted kilometres into the thin atmosphere.",
+   "distance": "354,759 km from Neptune",
+   "size": "2,707 km diameter",
+   "image_credit": "NASA/JPL",
+   "search_subtext": "Moon of Neptune"
+  },
+  "moon/umbriel": {
+   "description": "Umbriel is the darkest of Uranus's five major moons, with a uniformly old and heavily cratered surface that shows little sign of the geological resurfacing seen on its neighbours. Its interior appears to have stayed cold and frozen since early in the solar system's history.",
+   "fun_fact": "The most striking feature on Umbriel is Wunda, a bright ring about 140 km across near its equator. Spotted by Voyager 2 in 1986, Wunda's exact nature remains a mystery — it may be a crater floor coated in carbon dioxide or ammonia frost deposited long after the impact that formed it.",
+   "distance": "266,300 km from Uranus",
+   "size": "1,170 km diameter",
+   "image_credit": "NASA/JPL",
+   "search_subtext": "Moon of Uranus"
+  },
+  "planet/jupiter": {
+   "description": "Jupiter is the largest planet in our solar system. It's a gas giant with a famous Great Red Spot storm.",
+   "fun_fact": "Jupiter has at least 95 known moons! Its largest moon, Ganymede, is bigger than the planet Mercury.",
+   "distance": "778 million km (average)",
+   "size": "139,820 km diameter",
+   "mass": "1.898 × 10²⁷ kg",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "planet/mars": {
+   "description": "Mars is the fourth planet from the Sun, known as the Red Planet due to iron oxide on its surface.",
+   "fun_fact": "Mars has the largest volcano in the solar system: Olympus Mons, which is about 2.5 times taller than Mount Everest!",
+   "distance": "228 million km (average)",
+   "size": "6,779 km diameter",
+   "mass": "6.39 × 10²³ kg",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "planet/mercury": {
+   "description": "Mercury is the smallest planet and closest to the Sun. A year on Mercury lasts only 88 Earth days.",
+   "fun_fact": "Despite being closest to the Sun, Mercury is not the hottest planet. Venus is hotter due to its thick atmosphere!",
+   "distance": "58 million km (from Sun)",
+   "size": "4,880 km diameter",
+   "mass": "3.3 × 10²³ kg",
+   "image_credit": "NASA/GSFC"
+  },
+  "planet/moon": {
+   "description": "The Moon is Earth's only natural satellite. It influences our tides and has been visited by 12 astronauts.",
+   "fun_fact": "The Moon is slowly drifting away from Earth at about 3.8 cm per year. It was much closer billions of years ago!",
+   "distance": "384,400 km",
+   "size": "3,474 km diameter",
+   "mass": "7.35 × 10²² kg",
+   "image_credit": "NASA/GSFC/ASU"
+  },
+  "planet/neptune": {
+   "description": "Neptune is the most distant planet in our solar system. It has the strongest winds, reaching 2,100 km/h.",
+   "fun_fact": "Neptune was discovered through mathematics! Scientists predicted its location before anyone saw it through a telescope.",
+   "distance": "4.5 billion km (average)",
+   "size": "49,244 km diameter",
+   "mass": "1.024 × 10²⁶ kg",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "planet/pluto": {
+   "description": "Pluto is a dwarf planet in the Kuiper Belt. It was considered the ninth planet until 2006.",
+   "fun_fact": "Pluto has a heart-shaped glacier made of nitrogen ice, visible in images from NASA's New Horizons mission!",
+   "distance": "5.9 billion km (average)",
+   "size": "2,377 km diameter",
+   "mass": "1.3 × 10²² kg",
+   "image_credit": "NASA/JHUAPL/SwRI"
+  },
+  "planet/saturn": {
+   "description": "Saturn is the sixth planet from the Sun, famous for its spectacular ring system made of ice and rock.",
+   "fun_fact": "Saturn is so light it would float in water! Its density is less than water, though there's no bathtub big enough to test this.",
+   "distance": "1.4 billion km (average)",
+   "size": "116,460 km diameter",
+   "mass": "5.68 × 10²⁶ kg",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "planet/sun": {
+   "description": "The Sun is the star at the center of our solar system. It provides the light and heat that makes life on Earth possible.",
+   "fun_fact": "The Sun contains 99.86% of all mass in our solar system. About 1.3 million Earths could fit inside it!",
+   "distance": "150 million km",
+   "size": "1.4 million km diameter",
+   "mass": "1.989 × 10³⁰ kg",
+   "spectral_class": "G2V",
+   "image_credit": "NASA/SDO"
+  },
+  "planet/uranus": {
+   "description": "Uranus is an ice giant that rotates on its side. It was the first planet discovered using a telescope.",
+   "fun_fact": "Uranus rotates on its side at a 98-degree tilt, possibly due to a collision with an Earth-sized object long ago!",
+   "distance": "2.9 billion km (average)",
+   "size": "50,724 km diameter",
+   "mass": "8.68 × 10²⁵ kg",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "planet/venus": {
+   "description": "Venus is the second planet from the Sun and the hottest in our solar system. It's often called Earth's twin due to similar size.",
+   "fun_fact": "A day on Venus is longer than its year! It takes 243 Earth days to rotate once, but only 225 days to orbit the Sun.",
+   "distance": "108 million km (average)",
+   "size": "12,104 km diameter",
+   "mass": "4.87 × 10²⁴ kg",
+   "image_credit": "NASA/JPL"
+  },
+  "shower/aquariids": {
+   "description": "The Eta Aquariids are one of two annual showers produced by debris from Halley's Comet. Peaking at up to 70 meteors per hour, the shower strongly favors the southern hemisphere, where the radiant rises high before dawn. Northern observers still enjoy a respectable rate of 30 or more per hour.",
+   "fun_fact": "Eta Aquariid meteors travel at 66 km/s — fast enough that the ionized air they create can glow for several seconds after the meteor has gone. You may see Halley's ancient dust burning up in front of your eyes, shed during one of the comet's many visits thousands of years ago."
+  },
+  "shower/deltaaquariids": {
+   "description": "The Southern Delta Aquariids peak in late July and are best seen from tropical and southern latitudes, where the radiant in Aquarius climbs high before dawn. They produce a steady stream of medium-speed meteors at up to 16 per hour, with few bright fireballs.",
+   "fun_fact": "The exact parent body of the Delta Aquariids remains uncertain. The leading candidate is Comet 96P/Machholz, an unusual short-period comet with a highly tilted orbit that swings remarkably close to the Sun — closer than the planet Mercury."
+  },
+  "shower/geminids": {
+   "description": "The Geminids are widely regarded as the finest meteor shower of the year — prolific (up to 120 per hour), reliable, and active from early evening rather than only after midnight. They radiate from the constellation Gemini and produce a wide range of meteor brightnesses, including vivid fireballs.",
+   "fun_fact": "Uniquely among major showers, the Geminids come from an asteroid rather than a comet: 3200 Phaethon, a \"rock comet\" whose orbit takes it closer to the Sun than any other named asteroid. The extreme heat may fracture its rocky surface and drive off the dust that produces the shower."
+  },
+  "shower/leonids": {
+   "description": "The Leonids radiate from the sickle of Leo and typically produce around 20 meteors per hour. They are famous for spectacular storms that erupt roughly every 33 years when Earth passes through a dense dust filament shed by Comet 55P/Tempel-Tuttle. These storms can produce thousands of meteors per hour.",
+   "fun_fact": "The 1833 Leonid storm produced an estimated 100,000 meteors per hour, terrifying observers across North America who feared the sky was on fire. The event launched the scientific study of meteor showers. Comparable storms occurred in 1966 and 1999."
+  },
+  "shower/lyrids": {
+   "description": "The Lyrids are a reliable spring shower radiating from near the bright star Vega in Lyra. They produce swift, moderately bright meteors, peaking at around 18 per hour, and occasionally generate fireballs that leave glowing smoke trails.",
+   "fun_fact": "The Lyrids are the oldest reliably recorded meteor shower in history. Chinese astronomers documented a storm of meteors \"falling like rain\" in 687 BCE. The debris comes from Comet Thatcher, which takes 415 years to orbit the Sun and last visited the inner solar system in 1861."
+  },
+  "shower/orionids": {
+   "description": "The Orionids are the second meteor shower produced each year by Halley's Comet, radiating from near the raised club of Orion. Peaking at around 25 per hour, they are known for fast, often bright meteors that frequently leave glowing ionization trains lasting several seconds.",
+   "fun_fact": "Halley's Comet is responsible for two annual meteor showers: the Eta Aquariids in May, when Earth crosses the comet's outbound debris trail, and the Orionids in October, when Earth crosses the inbound trail. Together they let us sample ancient Halley dust twice a year."
+  },
+  "shower/perseids": {
+   "description": "The Perseids are the most popular meteor shower of the year, peaking on warm August nights at up to 100 meteors per hour. Debris shed by Comet Swift-Tuttle burns up high in Earth's atmosphere, producing fast, bright meteors — many leaving persistent glowing trains — radiating from the constellation Perseus.",
+   "fun_fact": "The parent of the Perseids, Comet Swift-Tuttle, has a nucleus 26 km wide — larger than the object thought to have caused the mass extinction that ended the dinosaurs. The comet last passed through the inner solar system in 1992 and will not return until 2125."
+  },
+  "shower/puppidvelids": {
+   "description": "The Puppid-Velids are a complex of overlapping minor showers radiating from the constellations Puppis and Vela in the southern Milky Way. Peaking at around 10 meteors per hour, they are best observed from the southern hemisphere, where the radiant rises high in December skies.",
+   "fun_fact": "The Puppid-Velids are thought to be debris from several different parent comets rather than a single source, including Comet 26P/Grigg-Skjellerup. Their southern radiant never rises above the horizon for observers at latitudes north of about 40°N, making them a shower that most of the world rarely sees."
+  },
+  "shower/quadrantids": {
+   "description": "The Quadrantids are a prolific January meteor shower with a very sharp, brief peak lasting only a few hours. The radiant lies in the constellation Boötes, near the position of the defunct constellation Quadrans Muralis after which the shower is named. Up to 120 meteors per hour are visible under ideal conditions.",
+   "fun_fact": "Unlike most major showers that originate from comets, the Quadrantids' parent body is the asteroid 2003 EH1 — thought to be the dormant nucleus of a comet that burned out centuries ago. Its existence was only confirmed in 2003."
+  },
+  "shower/ursids": {
+   "description": "The Ursids are a minor shower radiating from Ursa Minor, near Polaris, making them circumpolar for northern hemisphere observers — visible all night without setting. They peak around the winter solstice at about 10 meteors per hour, and the parent comet is 8P/Tuttle.",
+   "fun_fact": "The Ursids occasionally produce unexpected outbursts far above their typical rate. In 1945 and again in 2006, observers recorded 50 or more meteors per hour — five times the normal peak. These surges occur when Earth threads through an unusually dense ribbon of debris shed during a close approach of Comet Tuttle."
+  },
+  "star/achernar": {
+   "description": "Achernar is the brightest star in Eridanus (the River) and the ninth-brightest star in the night sky.",
+   "fun_fact": "Achernar is the flattest star known! It spins so fast that its equatorial diameter is 56% larger than its polar diameter.",
+   "distance": "139 light-years",
+   "size": "7.3 solar radii",
+   "mass": "6.7 solar masses",
+   "spectral_class": "B6 Vep",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/acrux": {
+   "description": "Acrux (Alpha Crucis) is the brightest star in the Southern Cross and the 13th brightest star in the sky.",
+   "fun_fact": "Acrux appears on the flags of Australia, New Zealand, Brazil, Papua New Guinea, and Samoa!",
+   "distance": "320 light-years",
+   "size": "7.8 solar radii",
+   "mass": "18 solar masses",
+   "spectral_class": "B0.5 IV",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/adhara": {
+   "description": "Adhara (Epsilon Canis Majoris) is the second-brightest star in Canis Major, after Sirius.",
+   "fun_fact": "About 4.7 million years ago, Adhara was the brightest star in the night sky, even brighter than Sirius is today!",
+   "distance": "430 light-years",
+   "size": "14 solar radii",
+   "mass": "12.6 solar masses",
+   "spectral_class": "B2 II",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/alcyone": {
+   "description": "Alcyone is the brightest star in the Pleiades cluster (M45) in the constellation Taurus. It's a blue-white giant star.",
+   "fun_fact": "Alcyone is actually a multiple star system with at least three companions! It also spins so fast that it has a disk of gas around its equator.",
+   "distance": "~440 light-years",
+   "size": "~10 solar radii",
+   "mass": "~6.0 solar masses",
+   "spectral_class": "B7IIIe",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/aldebaran": {
+   "description": "Aldebaran is an orange giant star that represents the eye of Taurus (the Bull). Its name means \"the follower\" in Arabic.",
+   "fun_fact": "Aldebaran appears to be part of the Hyades star cluster but is actually only half the distance to us - a cosmic optical illusion!",
+   "distance": "65 light-years",
+   "size": "44 solar radii",
+   "mass": "1.2 solar masses",
+   "spectral_class": "K5+ III",
+   "image_credit": "ESO"
+  },
+  "star/alderamin": {
+   "description": "Alderamin is the brightest star in Cepheus (the King). Its name comes from Arabic meaning \"the right arm.\"",
+   "fun_fact": "Due to Earth's axial precession, Alderamin will become the North Pole Star around the year 7500 AD!",
+   "distance": "49 light-years",
+   "size": "2.5 solar radii",
+   "mass": "1.9 solar masses",
+   "spectral_class": "A7V",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/algenib": {
+   "description": "Algenib marks a corner of the Great Square of Pegasus. It's a hot blue subgiant star and a Beta Cephei variable.",
+   "fun_fact": "Algenib pulsates, changing its brightness slightly every 3.6 hours! It's also one of the most distant stars that form a prominent asterism visible to the naked eye.",
+   "distance": "~390 light-years",
+   "size": "4.8 solar radii",
+   "mass": "~8.9 solar masses",
+   "spectral_class": "B2IV",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/algieba": {
+   "description": "Algieba is a beautiful double star in Leo (the Lion), forming the mane of the celestial lion. Its name means \"the forehead\" in Arabic.",
+   "fun_fact": "Through a telescope, Algieba splits into a stunning pair of golden and yellow-orange giant stars — one of the finest double stars in the sky! A planet was discovered orbiting the primary star in 2009.",
+   "distance": "~130 light-years",
+   "size": "~23 solar radii",
+   "mass": "~1.2 solar masses",
+   "spectral_class": "K1IIIbCN",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/algol": {
+   "description": "Algol is a famous eclipsing binary star in Perseus, known as the \"Demon Star\" since ancient times.",
+   "fun_fact": "Every 2.87 days, Algol dims noticeably as its dimmer companion passes in front - ancient astronomers found this spooky!",
+   "distance": "90 light-years",
+   "size": "2.7 solar radii",
+   "mass": "3.2 solar masses",
+   "spectral_class": "B8 V",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/alhena": {
+   "description": "Alhena marks the foot of Pollux, one of the twins in Gemini. It's a bright white subgiant star and one of Gemini's most prominent stars.",
+   "fun_fact": "Alhena's name comes from Arabic meaning \"the brand mark\" — ancient Arabs saw this star as a brand on the neck of a camel!",
+   "distance": "109 light-years",
+   "size": "3.3 solar radii",
+   "mass": "2.8 solar masses",
+   "spectral_class": "A1IV",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/alioth": {
+   "description": "Alioth is the brightest star in Ursa Major and the brightest star in the Big Dipper asterism.",
+   "fun_fact": "Alioth has a peculiar magnetic field that causes chemical elements to concentrate in spots on its surface!",
+   "distance": "83 light-years",
+   "size": "4.1 solar radii",
+   "mass": "2.9 solar masses",
+   "spectral_class": "A1 III-IVp",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/alkaid": {
+   "description": "Alkaid is the star at the tip of the Big Dipper's handle in Ursa Major. It's the third-brightest star in Ursa Major.",
+   "fun_fact": "Unlike most Big Dipper stars, Alkaid is not part of the Ursa Major Moving Group — it's traveling through space in a different direction, so the Big Dipper's shape will slowly change over thousands of years!",
+   "distance": "104 light-years",
+   "size": "3.4 solar radii",
+   "mass": "6.1 solar masses",
+   "spectral_class": "B3V",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/alnair": {
+   "description": "Alnair is the brightest star in Grus (the Crane). Its name means \"the bright one\" in Arabic.",
+   "fun_fact": "Alnair spins extremely rapidly — at least 215 km/s at its equator — which is so fast that the star is noticeably oblate, bulging at its middle!",
+   "distance": "101 light-years",
+   "size": "3.4 solar radii",
+   "mass": "4.0 solar masses",
+   "spectral_class": "B7IV",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/alnath": {
+   "description": "Alnath is the second-brightest star in Taurus, marking the tip of the bull's northern horn. It lies right on the Taurus-Auriga border.",
+   "fun_fact": "Alnath was once shared between two constellations! It was designated both Beta Tauri and Gamma Aurigae before the IAU officially assigned it to Taurus in 1930.",
+   "distance": "134 light-years",
+   "size": "4.2 solar radii",
+   "mass": "5.0 solar masses",
+   "spectral_class": "B7III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/alnilam": {
+   "description": "Alnilam is the middle star of Orion's Belt and one of the most luminous stars known in our galaxy.",
+   "fun_fact": "Alnilam is losing mass at a rate of 20 million times faster than our Sun through its powerful stellar wind!",
+   "distance": "~2,000 light-years",
+   "size": "42 solar radii",
+   "mass": "40 solar masses",
+   "spectral_class": "B0 Ia",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/alphard": {
+   "description": "Alphard is the brightest star in Hydra (the Water Snake), the largest constellation in the sky.",
+   "fun_fact": "Alphard means \"the solitary one\" in Arabic because it sits alone in an otherwise dim region of sky!",
+   "distance": "177 light-years",
+   "size": "50 solar radii",
+   "mass": "3 solar masses",
+   "spectral_class": "K3 II-III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/alphekka": {
+   "description": "Alphekka (also called Gemma) is the brightest star in Corona Borealis (the Northern Crown). It's the jewel of this small circlet of stars.",
+   "fun_fact": "Alphekka is an eclipsing binary — its faint companion passes in front of it every 17.4 days, causing a tiny dip in brightness that's nearly impossible to see without instruments!",
+   "distance": "75 light-years",
+   "size": "2.9 solar radii",
+   "mass": "2.6 solar masses",
+   "spectral_class": "A0V",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/alpheratz": {
+   "description": "Alpheratz is the brightest star in Andromeda, though it was once considered part of Pegasus.",
+   "fun_fact": "Alpheratz has an extremely unusual chemical composition with high concentrations of mercury and manganese in its atmosphere!",
+   "distance": "97 light-years",
+   "size": "2.7 solar radii",
+   "mass": "3.6 solar masses",
+   "spectral_class": "B8 IVp",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/altair": {
+   "description": "Altair is the brightest star in Aquila (the Eagle) and one of the closest stars visible to the naked eye.",
+   "fun_fact": "Altair rotates so fast (once every 9 hours) that it's noticeably flattened at its poles - it's 14% wider than it is tall!",
+   "distance": "17 light-years",
+   "size": "1.8 solar radii",
+   "mass": "1.8 solar masses",
+   "spectral_class": "A7 V",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/ankaa": {
+   "description": "Ankaa is the brightest star in Phoenix, a constellation best seen from the Southern Hemisphere. Its name comes from the Arabic word for \"the phoenix.\"",
+   "fun_fact": "Ankaa is a spectroscopic binary star, meaning its companion is so close that the two can only be detected by shifts in their light spectrum — they orbit each other every 10.2 years!",
+   "distance": "85 light-years",
+   "size": "15 solar radii",
+   "mass": "1.3 solar masses",
+   "spectral_class": "K0III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/antares": {
+   "description": "Antares is a red supergiant star, the heart of Scorpius (the Scorpion). Its name means \"rival of Mars\" due to its red color.",
+   "fun_fact": "Antares is so large that if placed in our solar system, its surface would extend past the orbit of Mars!",
+   "distance": "~550 light-years",
+   "size": "~680 solar radii",
+   "mass": "~12 solar masses",
+   "spectral_class": "M1.5 Iab",
+   "image_credit": "ESO/K. Ohnaka"
+  },
+  "star/arcturus": {
+   "description": "Arcturus is the brightest star in the northern hemisphere, an orange giant in the constellation Boötes (the Herdsman).",
+   "fun_fact": "Arcturus is traveling through space at a tremendous speed and will pass closest to our solar system in about 4,000 years!",
+   "distance": "37 light-years",
+   "size": "26 solar radii",
+   "mass": "1.1 solar masses",
+   "spectral_class": "K1.5 III",
+   "image_credit": "ESO"
+  },
+  "star/arneb": {
+   "description": "Arneb is the brightest star in Lepus (the Hare), the constellation crouching beneath Orion's feet. It's a rare white supergiant.",
+   "fun_fact": "Arneb is a dying star that has likely already fused all its core hydrogen. It may end its life as a supernova within the next few million years!",
+   "distance": "~2,200 light-years",
+   "size": "~75 solar radii",
+   "mass": "~14 solar masses",
+   "spectral_class": "F0Ib",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/betelgeuse": {
+   "description": "Betelgeuse is a red supergiant star marking the shoulder of Orion. It's one of the largest stars visible to the naked eye.",
+   "fun_fact": "Betelgeuse is so large that if placed at our Sun's position, it would engulf Mercury, Venus, Earth, Mars, and possibly Jupiter!",
+   "distance": "~700 light-years",
+   "size": "~900 solar radii",
+   "mass": "~12 solar masses",
+   "spectral_class": "M1-M2 Iab",
+   "image_credit": "ALMA (ESO/NAOJ/NRAO)/E. O'Gorman/P. Kervella"
+  },
+  "star/canopus": {
+   "description": "Canopus is the second-brightest star in the night sky. It's visible mainly from the Southern Hemisphere.",
+   "fun_fact": "Canopus is used by spacecraft for navigation because it's very bright and far from the ecliptic plane!",
+   "distance": "310 light-years",
+   "size": "72 solar radii",
+   "mass": "8.0 solar masses",
+   "spectral_class": "A9 II",
+   "image_credit": "ESO"
+  },
+  "star/capella": {
+   "description": "Capella is the brightest star in Auriga and the sixth-brightest in the night sky. It's actually a system of four stars.",
+   "fun_fact": "Capella means \"little goat\" in Latin. Ancient cultures saw it as a goat carried on the shoulder of Auriga, the Charioteer!",
+   "distance": "43 light-years",
+   "size": "12 solar radii",
+   "mass": "2.6 solar masses",
+   "spectral_class": "G3 III + G0 III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/caph": {
+   "description": "Caph is the second-brightest star in Cassiopeia, forming the rightmost point of the iconic W-shape. Its name means \"the palm\" in Arabic.",
+   "fun_fact": "Caph is a Delta Scuti variable — it pulsates with multiple frequencies simultaneously, changing brightness slightly every 2.5 hours!",
+   "distance": "54 light-years",
+   "size": "3.5 solar radii",
+   "mass": "1.9 solar masses",
+   "spectral_class": "F2III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/castor": {
+   "description": "Castor is one of the twin stars in Gemini. Though it appears as one star, it's actually a system of six stars!",
+   "fun_fact": "Castor is a sextuple star system - three pairs of binary stars all orbiting each other. It's one of the most complex star systems near Earth!",
+   "distance": "51 light-years",
+   "size": "2.4 solar radii",
+   "mass": "2.8 solar masses",
+   "spectral_class": "A1 V",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/deneb": {
+   "description": "Deneb marks the tail of Cygnus (the Swan). It's part of the Summer Triangle asterism along with Vega and Altair.",
+   "fun_fact": "Deneb is one of the most distant stars visible to the naked eye, located about 2,600 light-years away!",
+   "distance": "~2,600 light-years",
+   "size": "~200 solar radii",
+   "mass": "~19 solar masses",
+   "spectral_class": "A2 Ia",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/denebola": {
+   "description": "Denebola marks the tail of Leo (the Lion). Its name literally means \"tail of the lion\" in Arabic.",
+   "fun_fact": "Denebola has a dusty debris disk that may indicate planets are forming or asteroids are colliding around it!",
+   "distance": "36 light-years",
+   "size": "1.7 solar radii",
+   "mass": "1.8 solar masses",
+   "spectral_class": "A3 V",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/diphda": {
+   "description": "Diphda (Beta Ceti) is the brightest star in Cetus (the Sea Monster) and a prominent autumn star.",
+   "fun_fact": "Diphda appears isolated in a rather barren region of sky, making it useful for navigators despite not being extremely bright!",
+   "distance": "96 light-years",
+   "size": "18 solar radii",
+   "mass": "2.8 solar masses",
+   "spectral_class": "K0 III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/dubhe": {
+   "description": "Dubhe is one of the two \"pointer stars\" in the Big Dipper that point to Polaris, the North Star.",
+   "fun_fact": "Unlike most Big Dipper stars, Dubhe and Alkaid are moving in the opposite direction - the asterism will look different in 50,000 years!",
+   "distance": "123 light-years",
+   "size": "30 solar radii",
+   "mass": "4.3 solar masses",
+   "spectral_class": "K0 III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/e_lyrae": {
+   "description": "Epsilon Lyrae is a multiple star system in Lyra, famous among observers as the \"Double Double\".",
+   "fun_fact": "Sharp eyes can split Epsilon Lyrae into two stars - and a telescope splits each of those into two again! It holds at least five stars in total.",
+   "distance": "160 light-years"
+  },
+  "star/enif": {
+   "description": "Enif is the brightest star in Pegasus and marks the nose of the flying horse in the constellation.",
+   "fun_fact": "In 1972, Enif experienced a dramatic flare event, briefly increasing its brightness by a factor of five!",
+   "distance": "670 light-years",
+   "size": "185 solar radii",
+   "mass": "10.7 solar masses",
+   "spectral_class": "K2 Ib",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/etamin": {
+   "description": "Etamin (also Eltanin) is the brightest star in Draco (the Dragon). It represents the dragon's head, and its name means \"the great serpent\" in Arabic.",
+   "fun_fact": "Observations of Etamin in 1728 by James Bradley led to the discovery of the aberration of light — one of the first direct proofs that Earth moves through space!",
+   "distance": "148 light-years",
+   "size": "48 solar radii",
+   "mass": "1.7 solar masses",
+   "spectral_class": "K5III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/fomalhaut": {
+   "description": "Fomalhaut is the brightest star in Piscis Austrinus and one of the brightest stars in the autumn sky.",
+   "fun_fact": "Fomalhaut has a spectacular debris disk that was one of the first to be directly imaged around another star!",
+   "distance": "25 light-years",
+   "size": "1.8 solar radii",
+   "mass": "1.9 solar masses",
+   "spectral_class": "A3 V",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/hadar": {
+   "description": "Hadar (Beta Centauri) is the second-brightest star in Centaurus and the 11th brightest in the night sky.",
+   "fun_fact": "Hadar and Alpha Centauri are known as the \"Southern Pointers\" - they point to the Southern Cross constellation!",
+   "distance": "390 light-years",
+   "size": "9 solar radii",
+   "mass": "12.8 solar masses",
+   "spectral_class": "B1 III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/hamal": {
+   "description": "Hamal is the brightest star in Aries and was once used to mark the vernal equinox about 2,000 years ago.",
+   "fun_fact": "A giant exoplanet was discovered orbiting Hamal in 2011, at least 1.8 times Jupiter's mass!",
+   "distance": "66 light-years",
+   "size": "15 solar radii",
+   "mass": "1.5 solar masses",
+   "spectral_class": "K2 III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/izar": {
+   "description": "Izar is a beautiful double star in Boötes (the Herdsman). Its name means \"the girdle\" or \"veil\" in Arabic.",
+   "fun_fact": "The 19th-century astronomer Friedrich Georg Wilhelm von Struve called Izar \"Pulcherrima\" (Latin for \"most beautiful\") because of the stunning color contrast between its orange and blue-white components!",
+   "distance": "202 light-years",
+   "size": "33 solar radii",
+   "mass": "~4.6 solar masses",
+   "spectral_class": "K0II-III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/j052512+062100": {
+   "description": "Bellatrix marks the left shoulder of Orion (the Hunter). Its name is Latin for \"female warrior\".",
+   "fun_fact": "Bellatrix is only about 28 million years old, and will burn through its hydrogen in another 7 million years - a brief life for a star!",
+   "distance": "250 light-years",
+   "size": "6.2 solar radii",
+   "mass": "8.4 solar masses",
+   "spectral_class": "B2 III"
+  },
+  "star/j054048-015624": {
+   "description": "Alnitak is the easternmost star of Orion's Belt, sitting beside the Flame and Horsehead Nebulae.",
+   "fun_fact": "Alnitak is the brightest O-class star in the entire night sky! In about a million years it will swell wider than Jupiter's orbit and explode as a supernova.",
+   "distance": "1,260 light-years",
+   "size": "20 solar radii",
+   "mass": "33 solar masses",
+   "spectral_class": "O9.5 Iab"
+  },
+  "star/j055924+445700": {
+   "description": "Menkalinan is the second-brightest star in Auriga (the Charioteer). Its name means \"shoulder of the rein-holder\" in Arabic.",
+   "fun_fact": "Menkalinan is really two nearly identical stars eclipsing each other every 47.5 hours - and in about a million years it will become the brightest star in our night sky!",
+   "distance": "79 light-years",
+   "size": "2.8 solar radii",
+   "mass": "2.4 solar masses",
+   "spectral_class": "A1m IV + A1m IV"
+  },
+  "star/j062248-175736": {
+   "description": "Mirzam (Beta Canis Majoris) rises just before Sirius, which earned it a name meaning \"The Announcer\" in Arabic.",
+   "fun_fact": "About four million years ago Mirzam was the brightest star in the sky, blazing at magnitude -3.65 - far brighter than Sirius appears today!",
+   "distance": "490 light-years",
+   "size": "8.4 solar radii",
+   "mass": "13 solar masses",
+   "spectral_class": "B1 II-III"
+  },
+  "star/j070824-262324": {
+   "description": "Wezen is a yellow-white supergiant in Canis Major (the Greater Dog). Its name comes from the Arabic for \"weight\".",
+   "fun_fact": "If Wezen sat as close to us as Sirius does, it would shine as brightly as a half-full Moon!",
+   "distance": "1,600 light-years",
+   "size": "188 solar radii",
+   "mass": "14 solar masses",
+   "spectral_class": "F8 Ia"
+  },
+  "star/j082248-593036": {
+   "description": "Avior (Epsilon Carinae) is a bright double star in Carina and one of the four stars of the False Cross.",
+   "fun_fact": "The False Cross is so often mistaken for the Southern Cross that it has caused real navigation errors! Avior's name was invented by British almanac makers in the 1930s.",
+   "distance": "610 light-years",
+   "size": "151 solar radii",
+   "mass": "10.5 solar masses",
+   "spectral_class": "K3 III + B2 Vp"
+  },
+  "star/j091312-694312": {
+   "description": "Miaplacidus is the second-brightest star in Carina (the Keel) and marks a corner of the Diamond Cross asterism.",
+   "fun_fact": "Miaplacidus has swollen into a giant after using up the hydrogen in its core, yet it still spins at a brisk 146 km/s!",
+   "distance": "113 light-years",
+   "size": "5.8 solar radii",
+   "mass": "3.9 solar masses",
+   "spectral_class": "A1 III"
+  },
+  "star/j123112-570636": {
+   "description": "Gacrux (Gamma Crucis) is the topmost star of the Southern Cross and the nearest red giant star to Earth.",
+   "fun_fact": "Gacrux is the closest M-type red giant to us, and its name is simply a navigator's contraction of \"Gamma Crucis\" coined in the 1940s!",
+   "distance": "89 light-years",
+   "size": "73 solar radii",
+   "mass": "1.5 solar masses",
+   "spectral_class": "M3.5 III"
+  },
+  "star/j124800-594124": {
+   "description": "Mimosa (Beta Crucis) is the second-brightest star in the Southern Cross and one of the hottest stars visible to the naked eye.",
+   "fun_fact": "Mimosa is a pulsating Beta Cephei variable - it swells and shrinks in three overlapping rhythms, each lasting only about four hours!",
+   "distance": "280 light-years",
+   "size": "8 solar radii",
+   "mass": "14.5 solar masses",
+   "spectral_class": "B0.5 III"
+  },
+  "star/j143936-605024": {
+   "description": "Toliman (Alpha Centauri B) is the orange companion in the closest star system to the Sun, orbiting the brighter Rigil Kentaurus.",
+   "fun_fact": "Toliman got its official name only in 2018. It is slightly smaller and cooler than the Sun, and together with its two siblings makes up our nearest stellar neighbours!",
+   "distance": "4.34 light-years",
+   "size": "0.86 solar radii",
+   "mass": "0.91 solar masses",
+   "spectral_class": "K1 V"
+  },
+  "star/j164836-690148": {
+   "description": "Atria is the brightest star of Triangulum Australe (the Southern Triangle), an orange giant far larger than the Sun.",
+   "fun_fact": "Atria is 139 times the Sun's diameter - placed at the centre of the Solar System it would nearly reach the orbit of Venus!",
+   "distance": "391 light-years",
+   "size": "139 solar radii",
+   "mass": "6.4 solar masses",
+   "spectral_class": "K2 Ib-IIa"
+  },
+  "star/j173712-430000": {
+   "description": "Sargas is a bright giant in the tail of Scorpius (the Scorpion), bearing a traditional name of Sumerian origin.",
+   "fun_fact": "Sargas spins so fast that it bulges outward - it is a third wider across the equator than pole to pole, and may have formed when two stars merged!",
+   "distance": "329 light-years",
+   "size": "35 solar radii",
+   "mass": "3.1 solar masses",
+   "spectral_class": "F1 III"
+  },
+  "star/j202548-564348": {
+   "description": "Peacock is the brightest star in Pavo (the Peacock), a hot blue-white star of the far southern sky.",
+   "fun_fact": "Peacock was named in the 1930s because the RAF insisted every star in its new Air Almanac have a name - and this one had none!",
+   "distance": "179 light-years",
+   "size": "4.8 solar radii",
+   "mass": "5.9 solar masses",
+   "spectral_class": "B3 V"
+  },
+  "star/kaus_australis": {
+   "description": "Kaus Australis is the brightest star in Sagittarius (the Archer). Its name means \"the southern bow\" in a mix of Arabic and Latin.",
+   "fun_fact": "Kaus Australis lies near the direction of the center of our Milky Way galaxy! When you look at this star, you're gazing toward the densest part of the galactic plane.",
+   "distance": "143 light-years",
+   "size": "6.8 solar radii",
+   "mass": "3.5 solar masses",
+   "spectral_class": "B9.5III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/kochab": {
+   "description": "Kochab is the second-brightest star in Ursa Minor (the Little Bear). Together with Pherkad, it forms the \"Guardians of the Pole.\"",
+   "fun_fact": "Around 1500 BC, Kochab was the closest bright star to the north celestial pole, making it the \"Pole Star\" for ancient Egyptians and Phoenician sailors!",
+   "distance": "131 light-years",
+   "size": "42 solar radii",
+   "mass": "1.3 solar masses",
+   "spectral_class": "K4III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/markab": {
+   "description": "Markab is one of the four stars forming the Great Square of Pegasus, an easily recognizable asterism.",
+   "fun_fact": "Markab is a \"late B-type\" star that's just finishing its main sequence life and will soon become a red giant!",
+   "distance": "133 light-years",
+   "size": "4.6 solar radii",
+   "mass": "3.5 solar masses",
+   "spectral_class": "B9 III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/menkar": {
+   "description": "Menkar is a red giant star that marks the nose of Cetus (the Sea Monster). Its name means \"the nostril\" in Arabic.",
+   "fun_fact": "Menkar is nearing the end of its stellar life. This aging red giant is fusing helium in its core and will eventually shed its outer layers to become a planetary nebula!",
+   "distance": "249 light-years",
+   "size": "~89 solar radii",
+   "mass": "~2.3 solar masses",
+   "spectral_class": "M1.5IIIa",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/merak": {
+   "description": "Merak is one of the two \"Pointer Stars\" in the Big Dipper that point the way to Polaris, the North Star. It lies in Ursa Major.",
+   "fun_fact": "Merak has an infrared excess that suggests it has a circumstellar debris disk — possibly a ring of dust and rocky material similar to our asteroid belt!",
+   "distance": "80 light-years",
+   "size": "3.0 solar radii",
+   "mass": "2.7 solar masses",
+   "spectral_class": "A1V",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/mirach": {
+   "description": "Mirach is a red giant star in Andromeda, often used as a guide to find the Andromeda Galaxy.",
+   "fun_fact": "Mirach's Ghost is a small galaxy (NGC 404) that appears very close to Mirach - it was hidden by the star's glare for centuries!",
+   "distance": "197 light-years",
+   "size": "100 solar radii",
+   "mass": "3.5 solar masses",
+   "spectral_class": "M0 III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/mirphak": {
+   "description": "Mirphak (also Mirfak) is the brightest star in Perseus, a yellow-white supergiant at the heart of the Alpha Persei Cluster.",
+   "fun_fact": "Mirphak is surrounded by a beautiful open star cluster (Melotte 20) that's best seen with binoculars — a scattering of young, blue-white stars that move together through space!",
+   "distance": "~590 light-years",
+   "size": "~68 solar radii",
+   "mass": "~8.5 solar masses",
+   "spectral_class": "F5Ib",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/n25": {
+   "description": "R Coronae Borealis is a rare yellow supergiant in Corona Borealis, and the prototype of the variable-star class named after it.",
+   "fun_fact": "R Coronae Borealis is sometimes called a \"reverse nova\" - instead of flaring up, it unpredictably fades by up to 9 magnitudes when it puffs out clouds of carbon soot that hide it from view!",
+   "distance": "4,560 light-years",
+   "spectral_class": "G0Iep"
+  },
+  "star/nunki": {
+   "description": "Nunki is the second-brightest star in Sagittarius and the oldest star name still in common use.",
+   "fun_fact": "The name Nunki comes from ancient Babylon where it represented the city of Eridu on the celestial sphere!",
+   "distance": "228 light-years",
+   "size": "4.5 solar radii",
+   "mass": "7.8 solar masses",
+   "spectral_class": "B2.5 V",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/phad": {
+   "description": "Phad (also Phecda) is one of the stars forming the bowl of the Big Dipper in Ursa Major. Its name means \"the thigh\" in Arabic.",
+   "fun_fact": "Phad is a member of the Ursa Major Moving Group — a set of stars that were born together and travel through space as a loose cluster, including most Big Dipper stars!",
+   "distance": "84 light-years",
+   "size": "3.0 solar radii",
+   "mass": "2.9 solar masses",
+   "spectral_class": "A0Ve",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/polaris": {
+   "description": "Polaris, the North Star, appears nearly motionless in the sky while other stars rotate around it throughout the night.",
+   "fun_fact": "Polaris is actually a triple star system! The main star is a supergiant about 2,500 times brighter than our Sun.",
+   "distance": "~430 light-years",
+   "size": "~44 solar radii",
+   "mass": "~5.4 solar masses",
+   "spectral_class": "F7 Ib",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "star/pollux": {
+   "description": "Pollux is the brighter of the twin stars in Gemini. Unlike Castor, it's a single orange giant star.",
+   "fun_fact": "Pollux has a confirmed exoplanet! Pollux b is a gas giant at least twice as massive as Jupiter.",
+   "distance": "34 light-years",
+   "size": "9.1 solar radii",
+   "mass": "1.9 solar masses",
+   "spectral_class": "K0 III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/procyon": {
+   "description": "Procyon is a bright star in the constellation Canis Minor (the Lesser Dog). It's one of our closer stellar neighbors.",
+   "fun_fact": "Procyon means \"before the dog\" in Greek because it rises just before Sirius, the Dog Star, in the night sky!",
+   "distance": "11.4 light-years",
+   "size": "2.0 solar radii",
+   "mass": "1.5 solar masses",
+   "spectral_class": "F5 IV-V",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/rasalhague": {
+   "description": "Rasalhague is the brightest star in Ophiuchus (the Serpent-Bearer), a constellation associated with healing.",
+   "fun_fact": "Rasalhague is a rapid rotator - it spins so fast that it's noticeably flattened, completing a rotation in just 18 hours!",
+   "distance": "48.6 light-years",
+   "size": "2.5 solar radii",
+   "mass": "2.4 solar masses",
+   "spectral_class": "A5 III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/regulus": {
+   "description": "Regulus is the brightest star in Leo (the Lion) and represents the lion's heart. It's a multiple star system.",
+   "fun_fact": "Regulus spins so fast it's nearly tearing itself apart! It completes a rotation in just 16 hours.",
+   "distance": "79 light-years",
+   "size": "4.4 solar radii",
+   "mass": "3.8 solar masses",
+   "spectral_class": "B8 IVn",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/rigel": {
+   "description": "Rigel is a blue supergiant star marking the foot of Orion. Despite being farther than Betelgeuse, it appears similarly bright.",
+   "fun_fact": "Rigel shines with the light of about 120,000 Suns! It's one of the most luminous stars in our region of the Milky Way.",
+   "distance": "~860 light-years",
+   "size": "~79 solar radii",
+   "mass": "~23 solar masses",
+   "spectral_class": "B8 Ia",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/rigil_kentaurus_a": {
+   "description": "Alpha Centauri is the closest star system to the Sun, consisting of three stars including Proxima Centauri.",
+   "fun_fact": "Proxima Centauri, part of this system, has a potentially habitable planet! Proxima b is only 4.2 light-years away.",
+   "distance": "4.37 light-years",
+   "size": "1.2 solar radii",
+   "mass": "1.1 solar masses",
+   "spectral_class": "G2 V + K1 V",
+   "image_credit": "ESO/Digitized Sky Survey 2/Davide De Martin"
+  },
+  "star/saiph": {
+   "description": "Saiph marks the lower-right knee of Orion. Despite appearing dimmer than Rigel, it's actually a very hot and luminous blue supergiant.",
+   "fun_fact": "Saiph appears fainter than its temperature would suggest because most of its energy is radiated as ultraviolet light, invisible to our eyes! It's actually one of the hottest bright stars in the sky.",
+   "distance": "~650 light-years",
+   "size": "~22 solar radii",
+   "mass": "~15.5 solar masses",
+   "spectral_class": "B0.5Ia",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/scheat": {
+   "description": "Scheat is a red giant star in the Great Square of Pegasus, notable for its deep orange-red color.",
+   "fun_fact": "Scheat is a semi-regular variable star, changing brightness over periods ranging from weeks to months!",
+   "distance": "196 light-years",
+   "size": "110 solar radii",
+   "mass": "2.1 solar masses",
+   "spectral_class": "M2 II-III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/shaula": {
+   "description": "Shaula is the second-brightest star in Scorpius and marks the scorpion's stinger in the tail.",
+   "fun_fact": "Shaula means \"the raised tail\" in Arabic. It's actually a triple star system with the stars very close together!",
+   "distance": "570 light-years",
+   "size": "8.8 solar radii",
+   "mass": "10.4 solar masses",
+   "spectral_class": "B2 IV",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/shedir": {
+   "description": "Shedir (also Schedar) is the brightest star in Cassiopeia, an orange giant at the base of the famous W pattern. Its name means \"the breast\" in Arabic.",
+   "fun_fact": "Shedir was once thought to be a variable star, but modern measurements show its brightness is remarkably steady — earlier reports of variability were likely due to primitive equipment!",
+   "distance": "228 light-years",
+   "size": "45 solar radii",
+   "mass": "~4.0 solar masses",
+   "spectral_class": "K0IIIa",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/sirius": {
+   "description": "Sirius is the brightest star in the night sky, located in the constellation Canis Major (the Greater Dog).",
+   "fun_fact": "Sirius is actually a binary star system! Sirius B, its companion, is a white dwarf about the size of Earth but nearly as massive as the Sun.",
+   "distance": "8.6 light-years",
+   "size": "1.7 solar radii",
+   "mass": "2.1 solar masses",
+   "spectral_class": "A1V",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "star/spica": {
+   "description": "Spica is the brightest star in Virgo and one of the 20 brightest stars in the night sky. It's a binary star system.",
+   "fun_fact": "Spica is so close to the ecliptic that it can be occulted by the Moon. The name means \"ear of wheat\" in Latin!",
+   "distance": "250 light-years",
+   "size": "7.5 solar radii",
+   "mass": "11 solar masses",
+   "spectral_class": "B1 III-IV",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/unukalhai": {
+   "description": "Unukalhai is the brightest star in Serpens Caput (the Serpent's Head). Its name means \"the neck of the serpent\" in Arabic.",
+   "fun_fact": "Serpens is the only constellation split into two separate parts — Serpens Caput (head) and Serpens Cauda (tail) — divided by Ophiuchus, and Unukalhai is the brightest star in the head half!",
+   "distance": "74 light-years",
+   "size": "12 solar radii",
+   "mass": "~2.1 solar masses",
+   "spectral_class": "K2III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/vega": {
+   "description": "Vega is one of the brightest stars visible from Earth, located in the constellation Lyra (the Harp).",
+   "fun_fact": "Vega was the North Star about 14,000 years ago and will be again in about 12,000 years due to Earth's wobble!",
+   "distance": "25 light-years",
+   "size": "2.4 solar radii",
+   "mass": "2.1 solar masses",
+   "spectral_class": "A0V",
+   "image_credit": "Stephen Rahn (CC0)"
+  },
+  "star/vindemiatrix": {
+   "description": "Vindemiatrix is the third-brightest star in Virgo (the Maiden). Its name means \"the grape gatherer\" in Latin.",
+   "fun_fact": "Vindemiatrix got its name because its heliacal rising (first appearance at dawn) once coincided with the grape harvest season in the Mediterranean — it was the vintner's star!",
+   "distance": "109 light-years",
+   "size": "11 solar radii",
+   "mass": "2.6 solar masses",
+   "spectral_class": "G8III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  }
+ }
+}

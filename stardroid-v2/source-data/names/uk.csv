@@ -1,0 +1,278 @@
+object_id,name,is_primary
+constellation/andromeda,Андромеда,1
+constellation/antlia,Насос,1
+constellation/apus,Райський Птах,1
+constellation/aquarius,Водолій,1
+constellation/aquila,Орел,1
+constellation/ara,Жертовник,1
+constellation/aries,Овен,1
+constellation/auriga,Візничий,1
+constellation/bootes,Волопас,1
+constellation/caelum,Різець,1
+constellation/camelopardalis,Жираф,1
+constellation/cancer,Рак,1
+constellation/canes_venatici,Гончі пси,1
+constellation/canis_major,Великий Пес,1
+constellation/canis_minor,Малий Пес,1
+constellation/capricornus,Козеріг,1
+constellation/carina,Кіль,1
+constellation/cassiopeia,Кассіопея,1
+constellation/centaurus,Кентавр,1
+constellation/cepheus,Цефей,1
+constellation/cetus,Кит,1
+constellation/chamaeleon,Хамелеон,1
+constellation/circinus,Циркуль,1
+constellation/columba,Голуб,1
+constellation/coma_berenices,Волосся Вероніки,1
+constellation/corona_australis,Південна корона,1
+constellation/corona_borealis,Північна корона,1
+constellation/corvus,Ворон,1
+constellation/crater,Чаша,1
+constellation/crux,Південний хрест,1
+constellation/cygnus,Лебідь,1
+constellation/delphinus,Дельфін,1
+constellation/dorado,Золота Риба,1
+constellation/draco,Дракон,1
+constellation/equuleus,Малий Кінь,1
+constellation/eridanus,Ерідан,1
+constellation/fornax,Піч,1
+constellation/gemini,Близнюки,1
+constellation/grus,Журавель,1
+constellation/hercules,Геркулес,1
+constellation/horologium,Годинник,1
+constellation/hydra,Гідра,1
+constellation/hydrus,Гідра,1
+constellation/indus,Індіанець,1
+constellation/lacerta,Ящірка,1
+constellation/leo,Лев,1
+constellation/leo_minor,Малий Лев,1
+constellation/lepus,Заєць,1
+constellation/libra,Терези,1
+constellation/lupus,Вовк,1
+constellation/lynx,Рись,1
+constellation/lyra,Ліра,1
+constellation/mensa,Столова Гора,1
+constellation/microscopium,Мікроскоп,1
+constellation/monoceros,Єдиноріг,1
+constellation/musca,Муха,1
+constellation/norma,Косинець,1
+constellation/octans,Октант,1
+constellation/ophiuchus,Змієносець,1
+constellation/orion,Оріон,1
+constellation/pavo,Павлін,1
+constellation/pegasus,Пегас,1
+constellation/perseus,Персей,1
+constellation/phoenix,Фенікс,1
+constellation/pictor,Живописець,1
+constellation/pisces,Риби,1
+constellation/piscis_austrinus,Південна Риба,1
+constellation/puppis,Корма,1
+constellation/pyxis,Компас,1
+constellation/reticulum,Сітка,1
+constellation/sagitta,Стріла,1
+constellation/sagittarius,Стрілець,1
+constellation/scorpius,Скорпіон,1
+constellation/sculptor,Скульптор,1
+constellation/scutum,Щит,1
+constellation/serpens_caput,Голова Змії,1
+constellation/serpens_cauda,Хвіст Змії,1
+constellation/sextans,Секстант,1
+constellation/taurus,Телець,1
+constellation/telescopium,Телескоп,1
+constellation/triangulum,Трикутник,1
+constellation/triangulum_australe,Південний Трикутник,1
+constellation/tucana,Тукан,1
+constellation/ursa_major,Велика Ведмедиця,1
+constellation/ursa_minor,Мала Ведмедиця,1
+constellation/vela,Вітрила,1
+constellation/virgo,Діва,1
+constellation/volans,Летюча Риба,1
+constellation/vulpecula,Лисичка,1
+dso/blue_snowball_nebula,Туманність Блакитна Сніжка,1
+dso/centaurus_a,Центавр A,1
+dso/coathanger,Вішак,1
+dso/coathanger,Скупчення Брокки,0
+dso/coma_star_cluster,Скупчення Волосся Вероніки,1
+dso/coma_star_cluster,Скупчення Кома Беренік,0
+dso/cygnus_x_1,Подвійна система чорних дір,1
+dso/cygnus_x_1,Зоряна чорна діра,0
+dso/double_cluster,Подвійне скупчення,1
+dso/double_cluster,h та χ Персея,0
+dso/double_cluster,NGC 869 & NGC 884,0
+dso/eta_carinae_nebula,Туманність Ета Карини,1
+dso/eta_carinae_nebula,Туманність Карини,0
+dso/exposed_cranium_nebula,Туманність Відкритий Череп,1
+dso/ghost_of_jupiter,Привид Юпітера,1
+dso/hdf,Глибоке поле Габбла,1
+dso/hdf,Область глибокого огляду Хаббла,0
+dso/helix_nebula,Туманність Гелікс,1
+dso/helix_nebula,Око Бога,0
+dso/hyades,Гіади,1
+dso/jewel_box,Скарбниця,1
+dso/jewel_box,Скарбниця Гершеля,0
+dso/jewel_box,Скупчення Капа Хреста,0
+dso/lmc,ВМЗ,1
+dso/lmc,Велика Магеланова Хмара,0
+dso/lmc,Nubecula Major,0
+dso/m1,Крабовидна туманність,1
+dso/m101,Галактика Вертушка,1
+dso/m102,Галактика Веретено,1
+dso/m104,Галактика Сомбреро,1
+dso/m11,Скупчення Дика Качка,1
+dso/m13,Кульове скупчення Геркулеса,1
+dso/m13,Кульове скупчення Геркулеса,0
+dso/m16,Туманність Орла,1
+dso/m20,Туманність Потрійна,1
+dso/m24,Хмара Стрільця,1
+dso/m27,Туманність Гантель,1
+dso/m31,Туманність Андромеди,1
+dso/m33,Галактика Трикутника,1
+dso/m40,Віннеке 4,1
+dso/m42,Туманність Оріона,1
+dso/m43,Туманність де Мейрана,1
+dso/m44,Скупчення Вулик,1
+dso/m44,Ясла,0
+dso/m45,Плеяди,1
+dso/m45,Сім сестер,0
+dso/m51,Галактика Вир,1
+dso/m57,Кільцева туманність,1
+dso/m6,Скупчення Метелик,1
+dso/m63,Галактика Соняшник,1
+dso/m64,Галактика Чорне Око,1
+dso/m7,Хвіст Скорпіона,1
+dso/m7,Скупчення Птолемея,0
+dso/m74,Галактика Фантом,1
+dso/m76,Мала Туманність Гантель,1
+dso/m8,Туманність Лагуна,1
+dso/m81,Галактика Боде,1
+dso/m82,Галактика Сигара,1
+dso/m83,Галактика Південна Вертушка,1
+dso/m97,Туманність Сова,1
+dso/n47_tucanae,47 Тукани,1
+dso/ngc_6543,Туманність Котяче Око,1
+dso/north_america_nebula,Туманність Північна Америка,1
+dso/omega_centauri,Кулясте скупчення Омега Центавра,1
+dso/omega_centauri,ω Centauri,0
+dso/saturn_nebula,Туманність Сатурна,1
+dso/sculptor_galaxy,Галактика Скульптора,1
+dso/sculptor_galaxy,Галактика Срібного долара,0
+dso/sculptor_galaxy,Галактика Срібної монети,0
+dso/sgr_a_star,Sgr A*,1
+dso/sgr_a_star,Чорна діра,0
+dso/sgr_a_star,Галактичний центр,0
+dso/smc,ММЗ,1
+dso/smc,Мала Магеланова Хмара,0
+dso/smc,Nubecula Minor,0
+dso/t_crb,T Корони Бореаліс,1
+dso/t_crb,Зоря Полум'я,0
+dso/tarantula_nebula,Туманність Тарантул,1
+dso/tarantula_nebula,30 Золотої Рибки,0
+dso/willman_1,Willman 1,1
+dso/willman_1,Галактика Бет Вілман,0
+moon/ariel,Аріель,1
+moon/callisto,Каліст,1
+moon/deimos,Деймос,1
+moon/dione,Діона,1
+moon/europa,Європа,1
+moon/ganymede,Ганімед,1
+moon/iapetus,Япет,1
+moon/io,Іо,1
+moon/oberon,Оберон,1
+moon/phobos,Фобос,1
+moon/rhea,Рея,1
+moon/tethys,Тефія,1
+moon/titan,Титан,1
+moon/titania,Титанія,1
+moon/triton,Тритон,1
+moon/umbriel,Умбріель,1
+planet/jupiter,Юпітер,1
+planet/mars,Марс,1
+planet/mercury,Меркурій,1
+planet/moon,Місяць,1
+planet/neptune,Нептун,1
+planet/pluto,Плутон,1
+planet/saturn,Сатурн,1
+planet/sun,Сонце,1
+planet/uranus,Уран,1
+planet/venus,Венера,1
+shower/aquariids,Ета Аквариди,1
+shower/deltaaquariids,Дельта Аквариди,1
+shower/geminids,Гемініди,1
+shower/leonids,Леоніди,1
+shower/lyrids,Ліриди,1
+shower/orionids,Оріоніди,1
+shower/perseids,Персеїди,1
+shower/puppidvelids,Пуппіди-Веліди,1
+shower/quadrantids,Квадрантиди,1
+shower/ursids,Урсіди,1
+star/achernar,Ахернар,1
+star/acrux,Акрукс,1
+star/adhara,Адхара,1
+star/alcyone,Альціона,1
+star/aldebaran,Альдебаран,1
+star/alderamin,Альдерамін,1
+star/algenib,Альгеніб (Пуп Коня),1
+star/algieba,Альджеба,1
+star/algol,Алголь,1
+star/alhena,Альхена,1
+star/alioth,Аліот,1
+star/alkaid,АлькаЇд,1
+star/alnair,АльнаЇр,1
+star/alnath,Альнах,1
+star/alnilam,Альнілам,1
+star/alphard,Альфард,1
+star/alphekka,Альфекка,1
+star/alpheratz,Альферац,1
+star/altair,Альтаїр,1
+star/ankaa,Анкаа,1
+star/antares,Антарес,1
+star/arcturus,Арктур,1
+star/arneb,Арнеб,1
+star/betelgeuse,Бетельгейзе,1
+star/canopus,Канопус,1
+star/capella,Капелла,1
+star/caph,Каф,1
+star/castor,Кастор,1
+star/deneb,Денеб,1
+star/denebola,Денебола,1
+star/diphda,Діфда,1
+star/dubhe,Дубхе,1
+star/e_lyrae,ε Ліри,1
+star/enif,Еніф,1
+star/etamin,Етамін,1
+star/fomalhaut,Фомальгаут,1
+star/hadar,Хадар,1
+star/hamal,Гамаль,1
+star/izar,Міцар,1
+star/kaus_australis,Каус Австраліс,1
+star/kochab,Кохаб,1
+star/markab,Маркаб,1
+star/menkar,Менкар,1
+star/merak,Мерак,1
+star/mirach,Мірах,1
+star/mirphak,Мірфак,1
+star/nunki,Нункі,1
+star/phad,Фекда,1
+star/polaris,Полярна зірка,1
+star/polaris,Полярна зірка,0
+star/polaris,Полярна зірка,0
+star/pollux,Поллукс,1
+star/procyon,Проціон,1
+star/rasalhague,Рас-Альхаг,1
+star/regulus,Регул,1
+star/rigel,Рігель,1
+star/rigil_kentaurus_a,Альфа Центавра,1
+star/rigil_kentaurus_a,Рігіл Центавра А,0
+star/rigil_kentaurus_a,Рігель Центавра А,0
+star/rigil_kentaurus_a,Рігіль Кент,0
+star/saiph,Саїф,1
+star/scheat,Шеат,1
+star/shaula,Шаула,1
+star/shedir,Шедар,1
+star/sirius,Сіріус,1
+star/sirius,Собача зірка,0
+star/spica,Спіка,1
+star/unukalhai,Унукалхай,1
+star/vega,Вега,1
+star/vindemiatrix,Віндеміатрікс,1
+dso/v838_mon,V838 Єдинорога,1

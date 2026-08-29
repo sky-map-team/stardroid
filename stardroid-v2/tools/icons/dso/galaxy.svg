@@ -1,0 +1,14 @@
+<!-- Sky Map sky-marker icon. Copyright (c) 2026 Penterakt LLC.
+     All Rights Reserved - see LICENSE.md in this directory. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <g opacity="0.35">
+    <circle cx="12.00" cy="12.00" r="2.45" fill="#000"/>
+    <path d="M13.23 9.58 L12.76 9.16 L12.17 8.85 L11.48 8.66 L10.72 8.63 L9.94 8.79 L9.16 9.12 L8.44 9.65 L7.83 10.36 L7.36 11.22 L7.08 12.21 L7.01 13.27 L7.19 14.37 L7.61 15.46 L8.28 16.46 L9.18 17.33 L10.28 18.01 L11.54 18.45 L12.92 18.63" fill="none" stroke="#000" stroke-width="3.60" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M10.77 14.42 L11.24 14.84 L11.83 15.15 L12.52 15.34 L13.28 15.37 L14.06 15.21 L14.84 14.88 L15.56 14.35 L16.17 13.64 L16.64 12.78 L16.92 11.79 L16.99 10.73 L16.81 9.63 L16.39 8.54 L15.72 7.54 L14.82 6.67 L13.72 5.99 L12.46 5.55 L11.08 5.37" fill="none" stroke="#000" stroke-width="3.60" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g>
+    <circle cx="12.00" cy="12.00" r="1.35" fill="#fff"/>
+    <path d="M13.23 9.58 L12.76 9.16 L12.17 8.85 L11.48 8.66 L10.72 8.63 L9.94 8.79 L9.16 9.12 L8.44 9.65 L7.83 10.36 L7.36 11.22 L7.08 12.21 L7.01 13.27 L7.19 14.37 L7.61 15.46 L8.28 16.46 L9.18 17.33 L10.28 18.01 L11.54 18.45 L12.92 18.63" fill="none" stroke="#fff" stroke-width="1.40" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M10.77 14.42 L11.24 14.84 L11.83 15.15 L12.52 15.34 L13.28 15.37 L14.06 15.21 L14.84 14.88 L15.56 14.35 L16.17 13.64 L16.64 12.78 L16.92 11.79 L16.99 10.73 L16.81 9.63 L16.39 8.54 L15.72 7.54 L14.82 6.67 L13.72 5.99 L12.46 5.55 L11.08 5.37" fill="none" stroke="#fff" stroke-width="1.40" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

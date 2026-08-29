@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- The tonight's-sky widget (D69 phase 2): 4×2 cells by default (fits the header plus
+     three highlight rows), resizable down to 4×1 for quieter skies. updatePeriodMillis
+     stays 0 — refresh belongs to WidgetScheduler's WorkManager job. -->
+<appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
+    android:description="@string/tonight_widget_description"
+    android:initialLayout="@layout/tonight_widget_initial"
+    android:minWidth="250dp"
+    android:minHeight="110dp"
+    android:minResizeWidth="180dp"
+    android:minResizeHeight="55dp"
+    android:previewLayout="@layout/tonight_widget_initial"
+    android:resizeMode="horizontal|vertical"
+    android:targetCellWidth="4"
+    android:targetCellHeight="2"
+    android:updatePeriodMillis="0"
+    android:widgetCategory="home_screen" />

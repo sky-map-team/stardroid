@@ -1,0 +1,22 @@
+<!-- Sky Map sky-marker icon. Copyright (c) 2026 Penterakt LLC.
+     All Rights Reserved - see LICENSE.md in this directory. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <g opacity="0.35">
+    <circle cx="8.20" cy="8.80" r="2.25" fill="#000"/>
+    <circle cx="13.40" cy="6.60" r="2.05" fill="#000"/>
+    <circle cx="17.20" cy="10.20" r="2.25" fill="#000"/>
+    <circle cx="6.60" cy="13.80" r="2.05" fill="#000"/>
+    <circle cx="11.60" cy="12.40" r="1.90" fill="#000"/>
+    <circle cx="15.80" cy="15.40" r="2.25" fill="#000"/>
+    <circle cx="9.60" cy="17.40" r="2.05" fill="#000"/>
+  </g>
+  <g>
+    <circle cx="8.20" cy="8.80" r="1.15" fill="#fff"/>
+    <circle cx="13.40" cy="6.60" r="0.95" fill="#fff"/>
+    <circle cx="17.20" cy="10.20" r="1.15" fill="#fff"/>
+    <circle cx="6.60" cy="13.80" r="0.95" fill="#fff"/>
+    <circle cx="11.60" cy="12.40" r="0.80" fill="#fff"/>
+    <circle cx="15.80" cy="15.40" r="1.15" fill="#fff"/>
+    <circle cx="9.60" cy="17.40" r="0.95" fill="#fff"/>
+  </g>
+</svg>

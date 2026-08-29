@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Branding: the launcher-icon navy, reused as the OS splash background and the
+         version-banner ground so cold start flows seamlessly into the banner.
+         Deliberately close to but not identical with the D67 theme surface (#0E1428): the
+         banner fades out before the chrome appears, so the two are never adjacent, and this
+         value stays tied to the icon it is matching. -->
+    <color name="splash_navy">#0B1130</color>
+</resources>

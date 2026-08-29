@@ -1,0 +1,166 @@
+object_id,name,is_primary
+constellation/antlia,แอนทเลีย,1
+constellation/apus,อาปุส,1
+constellation/ara,อาร่า,1
+constellation/aries,ราศีเมษ,1
+constellation/auriga,ราศีเกวียน,1
+constellation/bootes,ราศีโคลงเหล้า,1
+constellation/caelum,แคเอลุม,1
+constellation/camelopardalis,คาเมโลปาร์ดาลิส,1
+constellation/cancer,ราศีกรกฎ,1
+constellation/canes_venatici,สุนัขล่าสัตว์,1
+constellation/canis_major,ราศีสุนัขใหญ่,1
+constellation/canis_minor,สุนัขเล็ก,1
+constellation/capricornus,ราศีมังกร,1
+constellation/carina,ราศีเรือ,1
+constellation/cassiopeia,ราศีแคสสิโอเปีย,1
+constellation/centaurus,ราศีเคนทอรัส,1
+constellation/cepheus,เซเฟอุส,1
+constellation/cetus,กลุ่มดาววาฬ,1
+constellation/chamaeleon,แคมาเลออน,1
+constellation/circinus,เซอร์คินัส,1
+constellation/columba,โคลัมบา,1
+constellation/coma_berenices,โคมาเบเรนิเซส,1
+constellation/corona_australis,มงกุฎใต้,1
+constellation/crux,กลุ่มดาวกางเขน,1
+constellation/cygnus,กลุ่มดาวหงส์,1
+constellation/draco,กลุ่มดาวมังกร,1
+constellation/eridanus,กลุ่มดาวแม่น้ำ,1
+constellation/gemini,ราศีเมถุน,1
+constellation/puppis,พุปปิส,1
+constellation/sagittarius,ราศีธนู,1
+constellation/scorpius,ราศีแมงป่อง,1
+constellation/taurus,ราศีพฤษภ,1
+constellation/triangulum,สามเหลี่ยม,1
+constellation/triangulum_australe,สามเหลี่ยมใต้,1
+constellation/tucana,ทูกานา,1
+constellation/ursa_major,หมีใหญ่,1
+constellation/ursa_minor,หมีน้อย,1
+constellation/vela,เวลา,1
+constellation/virgo,ราศีกันย์,1
+constellation/volans,ปลาบิน,1
+constellation/vulpecula,สุนัขจิ้งจอก,1
+dso/blue_snowball_nebula,เนบิวลาลูกหิมะสีน้ำเงิน,1
+dso/coathanger,เสื้อคลุมแขวน,1
+dso/coathanger,กระจุกดาวบรอคคี,0
+dso/coma_star_cluster,กระจุกดาวโคมาเบเรนิเซส,1
+dso/coma_star_cluster,กระจุกดาวโคมา เบเรนิเซส,0
+dso/cygnus_x_1,ระบบดาวคู่หลุมดำ,1
+dso/cygnus_x_1,หลุมดำมวลดาวฤกษ์,0
+dso/double_cluster,กระจุกดาวคู่,1
+dso/double_cluster,h และ χ Persei,0
+dso/double_cluster,NGC 869 & NGC 884,0
+dso/exposed_cranium_nebula,เนบิวลากะโหลกเปิดโปง,1
+dso/ghost_of_jupiter,เนบิวลาผีจูปีเตอร์,1
+dso/hdf,Hubble Deep Field,1
+dso/hdf,สนามลึกฮับเบิล,0
+dso/helix_nebula,เนบิวลาเฮลิกซ์,1
+dso/helix_nebula,ตาของพระเจ้า,0
+dso/hyades,ไฮเอดส,1
+dso/jewel_box,กล่องอัญมณี,1
+dso/jewel_box,กล่องอัญมณีของเฮอร์เชล,0
+dso/jewel_box,กระจุกดาวแคปปาครูซิส,0
+dso/lmc,เมฆแมเจลแลนิกขนาดใหญ่,1
+dso/lmc,Nubecula Major,0
+dso/m1,เนบิวลาปู,1
+dso/m101,ดาราจักรลมหมุน,1
+dso/m102,กาแล็กซีทรงกระสวย,1
+dso/m104,ดาราจักรหมวกแม่มด,1
+dso/m11,กระจุกดาวเป็ดป่า,1
+dso/m13,กระจุกดาวทรงกลมเฮอร์คิวลีส,1
+dso/m13,กระจุกดาวทรงกลมเฮอร์คิวลีส,0
+dso/m16,เนบิวลาอินทรีย์,1
+dso/m20,เนบิวลาไตรฟิด,1
+dso/m24,เมฆดาวคนยิงธนู,1
+dso/m27,เนบิวลาดัมบ์เบล,1
+dso/m31,ดาราจักรแอนโดรเมดา,1
+dso/m33,กาแล็กซีสามเหลี่ยม,1
+dso/m42,เนบิวลาโอไรออน,1
+dso/m43,เนบิวลาเดอไมรัน,1
+dso/m44,กระจุกดาวรังผึ้ง,1
+dso/m44,Praesepe,0
+dso/m45,เพลียาดีส,1
+dso/m45,เจ็ดพี่น้องสาว,0
+dso/m51,ดาราจักรหมวนหมุน,1
+dso/m57,เนบิวลาวงแหวน,1
+dso/m6,กระจุกดาวผีเสื้อ,1
+dso/m63,กาแล็กซีทานตะวัน,1
+dso/m64,กาแล็กซีตาดำ,1
+dso/m7,หางแมงป่อง,1
+dso/m7,กระจุกดาวปโตเลมี,0
+dso/m74,กาแล็กซีผี,1
+dso/m76,เนบิวลาดัมบ์เบลเล็ก,1
+dso/m8,เนบิวลาลากูน,1
+dso/m81,กาแล็กซีโบเด,1
+dso/m82,กาแล็กซีซิการ์,1
+dso/m83,กาแล็กซีกังหันลมใต้,1
+dso/m97,เนบิวลานกฮูก,1
+dso/ngc_6543,เนบิวลาตาแมว,1
+dso/north_america_nebula,เนบิวลาอเมริกาเหนือ,1
+dso/omega_centauri,กระจุกดาวทรงกลมโอเมกา เซนทอรี,1
+dso/omega_centauri,ω Centauri,0
+dso/saturn_nebula,เนบิวลาดาวเสาร์,1
+dso/sculptor_galaxy,แกแลกซีสคัลปเตอร์,1
+dso/sculptor_galaxy,ดาราจักรเหรียญเงิน,0
+dso/sculptor_galaxy,ดาราจักรเหรียญเงิน,0
+dso/sgr_a_star,Sgr A*,1
+dso/sgr_a_star,หลุมดำ,0
+dso/sgr_a_star,ศูนย์กลางของทางช้างเผือก,0
+dso/smc,เมฆแมเจลแลนิกขนาดเล็ก,1
+dso/smc,Nubecula Minor,0
+dso/willman_1,Willman 1,1
+dso/willman_1,แกแลกซี่เบธ วิลล์แมน,0
+moon/ariel,เอเรียล,1
+moon/callisto,คาลลิสโต,1
+moon/deimos,ดีมอส,1
+moon/dione,ไดโอนี,1
+moon/europa,ยูโรปา,1
+moon/ganymede,แกนีมีด,1
+moon/iapetus,ไอเอเพตัส,1
+moon/io,ไอโอ,1
+moon/oberon,โอเบรอน,1
+moon/phobos,ฟอบอส,1
+moon/rhea,เรีย,1
+moon/tethys,เทธิส,1
+moon/titan,ไททัน,1
+moon/titania,ทิทาเนีย,1
+moon/triton,ไทรตัน,1
+moon/umbriel,อัมเบรียล,1
+planet/jupiter,พฤหัสบดี,1
+planet/mars,อังคาร,1
+planet/mercury,ปรอท,1
+planet/moon,ดวงจันทร์,1
+planet/neptune,เนปจูน,1
+planet/pluto,พลูโต,1
+planet/saturn,เสาร์,1
+planet/sun,ดวงอาทิตย์,1
+planet/uranus,ยูเรนัส,1
+planet/venus,ศุกร์,1
+shower/aquariids,เอตา อควาริอิดส์,1
+shower/deltaaquariids,เดลตา อควาริอิดส์,1
+shower/geminids,ฝนดาวเจมินิดส์,1
+shower/leonids,ฝนดาวลีโอนิดส์,1
+shower/lyrids,ไลริดส์,1
+shower/orionids,ออริออนิดส์,1
+shower/perseids,เพอร์เซอิดส์,1
+shower/puppidvelids,พัพพิด-เวลิดส์,1
+shower/quadrantids,ควอดแรนติดส์,1
+shower/ursids,เออร์ซิดส์,1
+star/alcyone,อัลไซโอนี,1
+star/algenib,อัลเจนิบ,1
+star/arneb,อาร์เนบ,1
+star/e_lyrae,ε ไลเร,1
+star/markab,มาร์กับ,1
+star/menkar,เมนการ์,1
+star/polaris,Polaris,1
+star/polaris,ดาวเหนือ,0
+star/polaris,ดาวขั้วโลก,0
+star/rigil_kentaurus_a,อัลฟา เซนทาวรี,1
+star/rigil_kentaurus_a,Rigil Kentaurus A,0
+star/rigil_kentaurus_a,Rigel Kentaurus A,0
+star/rigil_kentaurus_a,ริจิล เคนต์,0
+star/sirius,Sirius,1
+star/sirius,ดาวสุนัข,0
+star/unukalhai,อูนูกัลไห,1
+star/vindemiatrix,วินเดเมียทริกซ์,1
+dso/v838_mon,วี838 โมโนเซโรติส,1

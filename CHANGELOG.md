@@ -5,6 +5,147 @@ All notable changes to Sky Map are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [2.0.0-beta03:Hannah] (v2) - 2026-08-25
+
+_Pre-release development build of the Sky Map v2 rewrite, not a stable release._
+
+### Added
+- French translation — the first localization shipped in the v2 rewrite.
+
+---
+
+## [2.0.0-beta02:Hannah] (v2) - 2026-08-24
+
+_Pre-release development build of the Sky Map v2 rewrite, not a stable release._
+
+### Added
+- Optional notifications: meteor shower peak alerts and a one-time evening "tonight's sky"
+  digest, configurable in Settings (D77). Ships on by default in this build.
+- Lunar eclipse astronomy: geocentric shadow-cone geometry, umbra/penumbra separation, and a
+  `nextLunarEclipse` search that also finds an eclipse already in progress (D106).
+- Lunar eclipse rendering: copper-red umbra tint and penumbral dimming on the GLES1 map backend,
+  recomposited as an eclipse progresses (D106).
+- Lunar eclipses now surface in the Moon's info-card, the tonight/digest highlights, the
+  countdown widget, and the time-travel picker, with an opt-in reminder notification
+  (`CHANNEL_ECLIPSES`) (D106).
+- Satellite tracking: TLE parsing, SGP4 propagation, CelesTrak fetch with caching and a circuit
+  breaker, pass search/visibility, a map layer, pass alerts, and an object-info pass row
+  (D92, D93-D103). Ships off by default in this build pending public rollout.
+- Device permissions are now disclosed on the Terms screen, in Help, and on the Play Store
+  listing.
+- Refreshed Play Store assets and launcher icon (D104).
+- A Diagnostics "Graphics" section that can be emailed to the developers (debug builds).
+- Design doc proposing a GLES3 renderer port (proposed only, no code).
+
+### Fixed
+- A security/robustness audit (`audit-2026-08`) closed several issues, including: bounding and
+  freeing bitmaps on the share path, capping the CelesTrak response body read, re-arming pass
+  alerts across a reboot, moving `PassAlertReceiver`'s opt-in check off `runBlocking`, and
+  guarding `SatellitePassNotifier`'s `notify()` call for lint.
+- The renderer perf gate now anchors on the first real frame instead of a fixed sleep, removing
+  a source of flaky CI runs.
+- Camera-share accuracy fix; the `ko` locale-only regression from the previous release.
+
+### Changed
+- The gms build no longer requests the advertising-ID permission, which it didn't use.
+
+---
+
+## [2.0.0-beta01:Hannah] (v2) - 2026-08-16
+
+_Pre-release development build of the Sky Map v2 rewrite, not a stable release._
+
+### Added
+- Upgrading from v1 (or from an older v2 build) now shows the What's New dialog, so returning
+  and newly-upgraded users see what changed instead of landing straight in the map.
+- The Warm Welcome tour is shown again to existing v2 testers upgrading to this release, since
+  2.0.0 is a substantial enough update to re-introduce itself.
+- A new `upgraded_to_v2_ev` analytics event fires once for devices with v1 history, to track
+  the v1-to-v2 migration.
+
+### Fixed
+- Camera panning, fling momentum, the horizon leveler and the search zoom now step on the
+  display's actual frame clock instead of a fixed 20 Hz pump, fixing a stutter on high
+  refresh-rate screens where five out of every six frames were duplicates
+  (sky-map-team/stardroid#959).
+- The What's New dialog no longer gets silently suppressed for upgraders who also need the
+  re-shown Warm Welcome tour.
+
+### Changed
+- The Warm Welcome background is a fresh in-app capture instead of the earlier cluttered image.
+- The What's New dialog now leads with the support/beta-feedback text ahead of the release
+  notes, so a long feature list can't push it below the fold. When both the Warm Welcome tour
+  and What's New are pending, What's New always shows first.
+
+---
+
+## [2.0.0-alpha07:Apollo] (v2) - 2026-08-14
+
+_Pre-release development build of the Sky Map v2 rewrite, not a stable release._
+
+### Added
+- Planets can be drawn at their true angular size instead of fixed glyphs, selectable from the
+  Layers sheet (glyphs remain the default, so the map opens looking as v1 did).
+- A high-precision Meeus ephemeris for the Sun and Moon, returned in the J2000 frame the app
+  draws in.
+
+### Changed
+- The solar-system discs have been re-derived from their original NASA imagery, with each disc's
+  limb found by its half-maximum contour rather than a brightness threshold.
+- The Moon's terminator is now computed from the real illumination geometry instead of being
+  baked into eight fixed bitmaps, so the phase is continuous and correct.
+- Image textures are now blended, mipmapped and cached rather than alpha-tested, which removes
+  the hard edges and aliasing on planet and deep-sky imagery.
+
+### Fixed
+- Eclipse timing, which was wrong because of Sun and Moon position errors
+  (sky-map-team/stardroid#957).
+- The HUD field-of-view readout jittered between values instead of holding a stable precision.
+- Faint planets lost their labels at the magnitude cutoff.
+- The label-size hint re-showed on every return to the map.
+- Restored a dedicated single-star icon for the Warm Welcome page dots.
+- Clarified the wording in the Layers sheet.
+
+---
+
+## [2.0.0-alpha05:Apollo] (v2) - 2026-08-08
+
+_Pre-release development build of the Sky Map v2 rewrite, not a stable release._
+
+### Fixed
+- Corrected the initial map zoom level, which had opened roughly four times wider than intended,
+  showing far more sky than v1's equivalent view.
+- The on-screen map controls (chrome) no longer auto-hide until the user has hidden them once
+  themselves, so first-run users can find their way around before the controls disappear.
+- Chrome show/hide is now a directional slide toward each control zone's own screen edge, and
+  this slide direction is now correctly mirrored for right-to-left languages (Arabic, Persian).
+
+### Added
+- The HUD (coordinate readout) can now be toggled on or off from the Layers sheet.
+
+---
+
+## [2.0.0-alpha04:Apollo] (v2) - 2026-08-05
+
+_Pre-release development build of the Sky Map v2 rewrite, not a stable release._
+
+### Changed
+- Sky Map has been rebuilt from the ground up with a modern rendering and data pipeline and a
+  refreshed UI.
+
+---
+
+## [2.0.0-alpha02:Apollo] (v2) - 2026-07-23
+
+_Pre-release development build of the Sky Map v2 rewrite, not a stable release._
+
+### Changed
+- Complete rewrite of Sky Map from the ground up: a modern rendering and data pipeline,
+  redesigned location handling, coordinate search, time travel, info cards, and a refreshed
+  gallery.
+
+---
+
 ## [1.18.1] Eclipse - 2026-08-13
 
 <img src="stardroid-v1/assets/splashscreens/1_18_0_eclipse_icon.png" width="80" alt="Eclipse" />

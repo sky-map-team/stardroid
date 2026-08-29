@@ -1,0 +1,2356 @@
+{
+ "cards": {
+  "constellation/andromeda": {
+   "description": "Andromède la Princesse contient la Galaxie d'Andromède (M31), la galaxie spirale géante la plus proche de notre Voie lactée.",
+   "fun_fact": "La Galaxie d'Andromède s'approche de nous à 110 km/s et fusionnera avec la Voie lactée dans environ 4,5 milliards d'années !",
+   "size": "722 degrés carrés",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/antlia": {
+   "description": "Antlia (la Machine pneumatique) est une faible constellation australe créée par Nicolas-Louis de Lacaille au XVIIIe siècle en l'honneur de la machine pneumatique inventée par Robert Boyle.",
+   "fun_fact": "Antlia contient la Galaxie naine d'Antlia, l'une des galaxies les plus proches de la Voie lactée, à seulement 4,3 millions d'années-lumière !",
+   "size": "239 degrés carrés",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/apus": {
+   "description": "Apus (l'Oiseau de Paradis) est une faible constellation australe introduite par les navigateurs néerlandais Keyser et de Houtman à la fin du XVIe siècle.",
+   "fun_fact": "Apus a été nommée d'après les oiseaux de paradis des Indes orientales, que les premiers explorateurs européens croyaient sans pattes — d'où le nom latin signifiant « sans pieds ».",
+   "size": "206 degrés carrés",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/aquarius": {
+   "description": "Le Verseau, le Porteur d'eau, est une constellation du zodiaque située dans une région du ciel souvent appelée la Mer, et entourée de constellations liées à l'eau.",
+   "fun_fact": "Le Verseau contient la Nébuleuse de l'Hélice, l'une des nébuleuses planétaires les plus proches de la Terre à seulement 700 années-lumière !",
+   "size": "980 degrés carrés",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/aquila": {
+   "description": "L'Aigle est une constellation sur l'équateur céleste, contenant l'étoile brillante Altaïr en son centre.",
+   "fun_fact": "Altaïr dans l'Aigle est l'une des étoiles à rotation la plus rapide connues, tournant si vite qu'elle est bombée à son équateur !",
+   "size": "652 degrés carrés",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/ara": {
+   "description": "Ara (l'Autel) est une constellation australe connue depuis l'Antiquité. Dans la mythologie grecque, elle représente l'autel sur lequel les dieux ont prêté serment avant de combattre les Titans.",
+   "fun_fact": "Ara contient la Nébuleuse de la Raie, la plus jeune nébuleuse planétaire connue, dont la formation n'a été observée que dans les années 1980 — un événement cosmique capturé en temps réel !",
+   "size": "237 degrés carrés",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/aries": {
+   "description": "Le Bélier est une constellation du zodiaque qui abritait autrefois l'équinoxe de printemps, nous donnant l'expression « Point vernal ».",
+   "fun_fact": "Bien que l'équinoxe de printemps se soit déplacé vers les Poissons il y a environ 2 000 ans, nous l'appelons toujours le Premier Point du Bélier !",
+   "size": "441 degrés carrés",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/auriga": {
+   "description": "Auriga le Cocher est une constellation boréale qui abrite Capella, la sixième étoile la plus brillante, et plusieurs amas ouverts.",
+   "fun_fact": "Epsilon Aurigae est l'une des étoiles les plus étranges connues, s'assombrissant pendant deux ans tous les 27 ans à cause d'un mystérieux disque sombre !",
+   "size": "657 degrés carrés",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/bootes": {
+   "description": "Le Bouvier est une constellation qui contient Arcturus, la quatrième étoile la plus brillante du ciel nocturne.",
+   "fun_fact": "Suivez l'arc de la queue de la Grande Casserole jusqu'à \"arc vers Arcturus\" – l'un des conseils de navigation les plus célèbres !",
+   "size": "907 degrés carrés",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/caelum": {
+   "description": "Caelum (le Burin) est l'une des constellations les plus faibles du ciel, créée par Lacaille au XVIIIe siècle pour représenter un outil de gravure.",
+   "fun_fact": "Le Caelum est la huitième plus petite constellation et ne contient aucune étoile plus brillante que la magnitude 4,5 — il faut un ciel très sombre et des yeux perçants pour la repérer !",
+   "size": "125 degrés carrés",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/camelopardalis": {
+   "description": "Camelopardalis (la Girafe) est une constellation boréale vaste mais peu lumineuse. Son nom vient du grec pour « chameau-léopard », une ancienne description de la girafe.",
+   "fun_fact": "Bien qu'étant la 18e plus grande constellation, la Girafe n'a aucune étoile plus brillante que la magnitude 4,0 — elle occupe une vaste étendue de ciel, apparemment vide, près de l'Étoile polaire !",
+   "size": "757 degrés carrés",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/cancer": {
+   "description": "Cancer le Crabe est la plus faible constellation du zodiaque mais contient le célèbre Amas de la Ruche (M44) visible à l'œil nu.",
+   "fun_fact": "Le tropique du Cancer a été nommé lorsque le Soleil était dans le Cancer au solstice d'été, bien qu'il soit maintenant dans le Taureau !",
+   "size": "506 degrés carrés",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/canes_venatici": {
+   "description": "Canes Venatici (les Chiens de Chasse) représente les deux chiens tenus par le Bouvier. Elle a été introduite par Johannes Hevelius en 1687.",
+   "fun_fact": "Les Chiens de Chasse contient M51, la Galaxie du Tourbillon — la première galaxie dont la structure spirale a été découverte, esquissée par Lord Rosse en 1845 !",
+   "size": "465 degrés carrés",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/canis_major": {
+   "description": "Le Grand Chien suit Orion dans le ciel et contient Sirius, l'étoile la plus brillante visible depuis la Terre.",
+   "fun_fact": "Les anciens Égyptiens ont basé leur calendrier sur le lever héliaque de Sirius, qui coïncidait avec la crue annuelle du Nil !",
+   "size": "380 degrés carrés",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/canis_minor": {
+   "description": "Canis Minor (le Petit Chien) est une petite constellation notable pour Procyon, la huitième étoile la plus brillante du ciel.",
+   "fun_fact": "Procyon signifie \"avant le chien\" en grec car elle se lève juste avant Sirius (l'Étoile du Chien) chaque nuit !",
+   "size": "183 degrés carrés",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/capricornus": {
+   "description": "Capricorne la Chèvre de mer est une ancienne constellation du zodiaque représentant une créature mythique qui est mi-chèvre, mi-poisson.",
+   "fun_fact": "Le Capricorne est l'une des plus anciennes constellations reconnues, apparaissant dans les catalogues d'étoiles babyloniens il y a plus de 3 000 ans !",
+   "size": "414 degrés carrés",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/carina": {
+   "description": "La Carène faisait partie de l'immense constellation du Navire Argo, contenant la brillante étoile Canopus.",
+   "fun_fact": "Êta Carinae dans la Carène est l'une des étoiles les plus lumineuses connues et pourrait exploser en supernova de notre vivant !",
+   "size": "494 degrés carrés",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/cassiopeia": {
+   "description": "Cassiopée est une constellation distinctive en forme de W dans le ciel boréal, nommée d'après une reine vaniteuse de la mythologie grecque.",
+   "fun_fact": "La supernova de Tycho Brahe de 1572 est apparue dans Cassiopée, contribuant à prouver que les cieux pouvaient changer !",
+   "size": "598 degrés carrés",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/centaurus": {
+   "description": "Centaure le Centaure est une grande constellation australe contenant Alpha Centauri, le système stellaire le plus proche de notre Soleil.",
+   "fun_fact": "Proxima du Centaure dans le Centaure n'est qu'à 4,24 années-lumière, ce qui en fait l'étoile la plus proche de notre système solaire !",
+   "size": "1 060 degrés carrés",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/cepheus": {
+   "description": "Céphée le Roi est une constellation boréale dont les étoiles incluent Delta Cephei, le prototype des étoiles variables céphéides.",
+   "fun_fact": "Les variables céphéides découvertes par Henrietta Leavitt ont révolutionné l'astronomie en nous permettant de mesurer les distances cosmiques !",
+   "size": "588 degrés carrés",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/cetus": {
+   "description": "Cetus la Baleine est une grande constellation contenant Mira, la première étoile variable jamais découverte.",
+   "fun_fact": "Mira dans la Baleine varie de visible à invisible sur 11 mois et possède une queue de gaz de 13 années-lumière de long !",
+   "size": "1 231 degrés carrés",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/chamaeleon": {
+   "description": "Le Caméléon est une petite constellation australe introduite par les navigateurs néerlandais à la fin du XVIe siècle, représentant le lézard changeant de couleur.",
+   "fun_fact": "Le Caméléon contient un grand complexe de nuages moléculaires où de nouvelles étoiles se forment activement — c'est l'une des régions de formation d'étoiles les plus proches de la Terre, à seulement 500 années-lumière !",
+   "size": "132 degrés carrés",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/circinus": {
+   "description": "Circinus (le Compas) est l'une des plus petites constellations, créée par Lacaille pour représenter un compas de traçage utilisé pour dessiner des cercles.",
+   "fun_fact": "La galaxie du Compas est l'une des galaxies de Seyfert les plus proches de nous — une galaxie active dotée d'un trou noir supermassif qui alimente de brillants jets de matière !",
+   "size": "93 degrés carrés",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/columba": {
+   "description": "Colombe représente la colombe envoyée par Noé de l'Arche pour trouver la terre ferme. Elle se trouve au sud du Lièvre et du Grand Chien.",
+   "fun_fact": "L'étoile fuyarde Mu Columbae a été éjectée de la Nébuleuse d'Orion il y a environ 2,5 millions d'années et traverse maintenant la Colombe à plus de 100 km/s!",
+   "size": "270 degrés carrés",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/coma_berenices": {
+   "description": "Coma Berenices (Chevelure de Bérénice) représente la chevelure de la reine égyptienne Bérénice II, qui l'a offerte aux dieux. C'est l'une des rares constellations nommées d'après une personne historique.",
+   "fun_fact": "La Chevelure de Bérénice contient le pôle galactique nord — la direction perpendiculaire au disque de la Voie lactée — c'est pourquoi elle est riche en galaxies visibles sans poussière galactique pour les masquer !",
+   "size": "386 degrés carrés",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/corona_australis": {
+   "description": "Corona Australis (la Couronne Australe) est l'une des 48 constellations répertoriées par Ptolémée. Elle représente une couronne placée aux pieds du Sagittaire.",
+   "fun_fact": "Corona Australis contient l'une des régions de formation d'étoiles les plus proches et les plus actives — l'Amas du Couronnet, où des dizaines de jeunes étoiles naissent en ce moment même !",
+   "size": "128 degrés carrés",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/corona_borealis": {
+   "description": "Corona Borealis (la Couronne Boréale) est une petite constellation semi-circulaire représentant la couronne d'Ariane de la mythologie grecque.",
+   "fun_fact": "T Coronae Borealis est une nova récurrente qui entre en éruption environ tous les 80 ans – une autre éruption pourrait se produire bientôt !",
+   "size": "179 degrés carrés",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/corvus": {
+   "description": "Corvus le Corbeau est une petite constellation quadrilatère au sud de la Vierge, représentant l'oiseau sacré d'Apollon.",
+   "fun_fact": "Les quatre étoiles principales du Corbeau forment une forme de voile distinctive, facile à repérer dans le ciel printanier !",
+   "size": "184 degrés carrés",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/crater": {
+   "description": "Cratère (la Coupe) représente le gobelet d'Apollon dans la mythologie grecque. Elle se trouve sur le dos de l'Hydre, le serpent d'eau, à côté du Corbeau.",
+   "fun_fact": "Dans la mythologie grecque, Apollon envoya le Corbeau chercher de l'eau dans cette Coupe, mais le Corbeau tarda en mangeant des figues — alors Apollon les plaça tous les trois dans le ciel en guise de punition !",
+   "size": "282 degrés carrés",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/crux": {
+   "description": "Crux (la Croix du Sud) est la plus petite constellation mais l'une des plus distinctives, utilisée pour la navigation dans l'hémisphère sud.",
+   "fun_fact": "Bien qu'étant la plus petite constellation, la Croix du Sud possède plus d'étoiles brillantes par unité de surface que toute autre constellation !",
+   "size": "68 degrés carrés",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/cygnus": {
+   "description": "Le Cygne parcourt la Voie lactée, contenant l'astérisme de la Croix du Nord et l'étoile brillante Deneb.",
+   "fun_fact": "Cygnus X-1 dans cette constellation a été le premier trou noir largement accepté, identifié au début des années 1970 !",
+   "size": "804 degrés carrés",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/delphinus": {
+   "description": "Delphinus le Dauphin est une petite constellation mais distinctive dont les étoiles forment la silhouette d'un dauphin bondissant.",
+   "fun_fact": "Deux des étoiles de Delphinus sont nommées Sualocin et Rotanev – « Nicolaus Venator » épelé à l'envers, l'astronome qui les a nommées !",
+   "size": "189 degrés carrés",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/dorado": {
+   "description": "La Dorade (l'Espadon ou la Coryphène) est une constellation australe créée par des navigateurs néerlandais. Elle contient la majeure partie du Grand Nuage de Magellan.",
+   "fun_fact": "La Dorade abrite la Nébuleuse de la Tarentule (30 Doradus), la région de formation d'étoiles la plus lumineuse du Groupe Local — si elle était aussi proche que la Nébuleuse d'Orion, elle projetterait des ombres sur Terre !",
+   "size": "179 degrés carrés",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/draco": {
+   "description": "Le Dragon est une constellation longue et sinueuse qui tourne autour de la Petite Ourse dans le ciel de l'extrême nord.",
+   "fun_fact": "Thuban, dans le Dragon, était l'Étoile Polaire lorsque les pyramides égyptiennes ont été construites, il y a 5 000 ans !",
+   "size": "1 083 degrés carrés",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/equuleus": {
+   "description": "Equuleus (le Petit Cheval) est la deuxième plus petite constellation. Dans la mythologie grecque, il représente Celeris, le frère ou le poulain de Pégase.",
+   "fun_fact": "Le Petit Cheval est la deuxième plus petite des 88 constellations (seule la Croix du Sud est plus petite), et pourtant elle faisait partie des 48 originales répertoriées par Ptolémée il y a près de 2 000 ans !",
+   "size": "72 degrés carrés",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/eridanus": {
+   "description": "Éridan le Fleuve est la sixième plus grande constellation, serpentant depuis les environs d'Orion jusqu'au ciel austral lointain.",
+   "fun_fact": "Achernar, à l'extrémité de l'Éridan, est l'étoile la plus aplatie connue, son équateur étant 56 % plus large en raison de sa rotation rapide !",
+   "size": "1 138 degrés carrés",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/fornax": {
+   "description": "Le Fourneau (le Fourneau) a été créée par Lacaille pour représenter un fourneau chimique. C'est une faible constellation australe située entre la Baleine et l'Éridan.",
+   "fun_fact": "Le Champ ultra-profond de Hubble — l'une des images les plus profondes de l'univers jamais prises, révélant des galaxies à 13 milliards d'années-lumière — a été photographié dans le Fourneau !",
+   "size": "398 degrés carrés",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/gemini": {
+   "description": "Gémeaux les Jumeaux abrite les étoiles brillantes Castor et Pollux, représentant les frères jumeaux de la mythologie grecque.",
+   "fun_fact": "Bien qu'appelés jumeaux, Castor est en réalité six étoiles et Pollux est une géante orange – ils ne se ressemblent pas du tout !",
+   "size": "514 degrés carrés",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/grus": {
+   "description": "Grus la Grue est une constellation australe introduite à la fin du XVIe siècle par les navigateurs européens.",
+   "fun_fact": "La Grue était autrefois connue sous le nom de Phoenicopterus (le Flamant) avant d'être renommée pour représenter une grue !",
+   "size": "366 degrés carrés",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/hercules": {
+   "description": "Hercule est une grande constellation représentant le héros grec, contenant le grand amas globulaire M13.",
+   "fun_fact": "Notre système solaire se déplace vers un point dans Hercule appelé l'apex solaire à environ 20 km/s !",
+   "size": "1 225 degrés carrés",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/horologium": {
+   "description": "Horologium (l'Horloge à pendule) a été créée par Lacaille pour honorer l'invention de l'horloge à pendule par Christiaan Huygens en 1656.",
+   "fun_fact": "L'Horloge contient un superamas de galaxies massif appelé le Superamas de l'Horloge-Réticule, l'une des plus grandes structures de l'univers proche !",
+   "size": "249 degrés carrés",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/hydra": {
+   "description": "L'Hydre est la plus grande constellation du ciel, représentant le serpent d'eau de la mythologie grecque.",
+   "fun_fact": "L'Hydre s'étend sur plus de 100 degrés du ciel, soit plus d'un quart de la sphère céleste entière !",
+   "size": "1 303 degrés carrés",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/hydrus": {
+   "description": "L'Hydre Mâle (le petit serpent d'eau) est une petite constellation australe près du pôle céleste sud. À ne pas confondre avec l'Hydre, l'hydre beaucoup plus grande.",
+   "fun_fact": "L'Hydre Mâle se trouve entre le Grand et le Petit Nuage de Magellan, ce qui en fait un repère utile pour trouver ces deux galaxies satellites de la Voie lactée !",
+   "size": "243 degrés carrés",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/indus": {
+   "description": "Indus (l'Indien) est une constellation australe créée par les navigateurs néerlandais, représentant à l'origine un indigène des Indes orientales ou de Madagascar.",
+   "fun_fact": "Epsilon Indi, l'une des étoiles les plus proches de type solaire, à seulement 12 années-lumière, se trouve dans l'Indien — et elle possède un système compagnon de naines brunes !",
+   "size": "294 degrés carrés",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/lacerta": {
+   "description": "Lacerta (le Lézard) est une petite constellation boréale introduite par Hevelius en 1687. Elle se situe entre le Cygne et Andromède.",
+   "fun_fact": "Le Lézard contient BL Lacertae, le prototype d'une classe de galaxies actives appelées « blazars » — des galaxies avec des trous noirs supermassifs projetant des jets de matière directement vers la Terre !",
+   "size": "201 degrés carrés",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/leo": {
+   "description": "Le Lion est une constellation du zodiaque qui abrite Régulus au cœur du Lion et l'astérisme distinctif de la Faucille.",
+   "fun_fact": "La pluie de météores des Léonides en novembre semble rayonner du Lion et peut produire des tempêtes spectaculaires !",
+   "size": "947 degrés carrés",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/leo_minor": {
+   "description": "Le Petit Lion (le Lion mineur) est une constellation faible entre le Lion et la Grande Ourse, introduite par Hevelius en 1687.",
+   "fun_fact": "Le Petit Lion est l'une des rares constellations dont l'étoile la plus brillante n'a pas de désignation Alpha — Hevelius a oublié de l'étiqueter, ainsi son étoile la plus brillante est 46 Leonis Minoris (Beta) !",
+   "size": "232 degrés carrés",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/lepus": {
+   "description": "Lepus, le Lièvre, se tapit sous les pieds d'Orion, une constellation petite mais distinctive avec une riche mythologie.",
+   "fun_fact": "Dans la mythologie, Orion était réputé aimer chasser les lièvres, c'est pourquoi l'un d'eux fut placé sous ses pieds dans le ciel !",
+   "size": "290 degrés carrés",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/libra": {
+   "description": "La Balance est la seule constellation du zodiaque représentant un objet inanimé, autrefois considérée comme faisant partie du Scorpion.",
+   "fun_fact": "Les principales étoiles de la Balance étaient autrefois connues sous le nom des Pinces du Scorpion avant de devenir les Plateaux de la Justice !",
+   "size": "538 degrés carrés",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/lupus": {
+   "description": "Lupus (le Loup) est une ancienne constellation australe. Les Grecs et les Romains le voyaient comme un animal sauvage empalé sur un pieu tenu par le Centaure.",
+   "fun_fact": "En 1006 apr. J.-C., la plus brillante supernova jamais observée par l'humanité est apparue dans la constellation du Loup — SN 1006 était visible en plein jour et aurait pu atteindre une magnitude de −7,5 !",
+   "size": "334 degrés carrés",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/lynx": {
+   "description": "Lynx est une constellation boréale étendue mais faible, créée par Hevelius en 1687. Il a dit qu'il faudrait les yeux d'un lynx pour la voir !",
+   "fun_fact": "Le Lynx contient le Vagabond Intergalactique (NGC 2419), un amas globulaire si distant, à 300 000 années-lumière, qu'on a longtemps cru qu'il orbitait en dehors de la Voie lactée !",
+   "size": "545 degrés carrés",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/lyra": {
+   "description": "La Lyre est une petite mais proéminente constellation contenant Véga, la cinquième étoile la plus brillante du ciel nocturne.",
+   "fun_fact": "Véga était l'Étoile Polaire vers 12 000 av. J.-C. et le sera de nouveau dans environ 12 000 ans en raison de la précession de la Terre !",
+   "size": "286 degrés carrés",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/mensa": {
+   "description": "Mensa (Table) a été créée par Lacaille en l'honneur de la Table, au Cap, en Afrique du Sud, où il a effectué ses observations du ciel austral.",
+   "fun_fact": "Mensa est la seule constellation nommée d'après une caractéristique géographique spécifique sur Terre. Une partie du Grand Nuage de Magellan s'étend en elle, comme un nuage au-dessus de la montagne !",
+   "size": "153 degrés carrés",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/microscopium": {
+   "description": "Microscopium (le Microscope) a été créée par Lacaille en l'honneur du microscope composé. Il s'agit de l'une des constellations les plus faibles du ciel.",
+   "fun_fact": "L'étoile la plus brillante du Microscope, Gamma Microscopii, faisait autrefois partie du Sagittaire voisin — elle a été réaffectée lorsque les limites des constellations ont été standardisées en 1930 !",
+   "size": "210 degrés carrés",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/monoceros": {
+   "description": "Monocéros la Licorne est une constellation faible dans la Voie lactée d'hiver, riche en nébuleuses et en amas d'étoiles.",
+   "fun_fact": "La Nébuleuse de la Rosette, dans la Licorne, est une vaste région de formation d'étoiles ressemblant à une rose céleste !",
+   "size": "482 degrés carrés",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/musca": {
+   "description": "Musca (la Mouche) est une petite constellation australe près de la Croix du Sud. C'est la seule constellation d'insectes dans le ciel.",
+   "fun_fact": "Musca était à l'origine appelée « Apis » (l'Abeille) par ses créateurs. C'est la seule constellation représentant un insecte — et elle est juste à côté du Caméléon, qui les mange !",
+   "size": "138 degrés carrés",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/norma": {
+   "description": "Norma (l'Équerre du charpentier) a été créée par Lacaille pour représenter un niveau et une équerre. Elle se trouve dans la riche Voie lactée entre le Scorpion et le Loup.",
+   "fun_fact": "En regardant vers la Règle, vous contemplez l'un des bras spiraux de la Voie lactée — le Bras de la Règle, nommé d'après cette constellation, est rempli d'amas d'étoiles et de nébuleuses !",
+   "size": "165 degrés carrés",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/octans": {
+   "description": "Octans (l'Octant) a été créée par Lacaille en l'honneur de l'instrument de navigation. Elle contient le pôle céleste sud.",
+   "fun_fact": "L'Octant contient le pôle céleste sud, mais contrairement au pôle Nord avec l'Étoile polaire, il n'y a pas d'étoile brillante marquant le pôle sud — Sigma de l'Octant (magnitude 5,4) est la faible « Étoile du Sud ».",
+   "size": "291 degrés carrés",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/ophiuchus": {
+   "description": "Le Serpentaire se trouve le long de l'écliptique mais n'est pas un signe du zodiaque, divisé par le serpent qu'il tient.",
+   "fun_fact": "Le Soleil passe plus de temps dans le Serpentaire que dans le Scorpion, et pourtant le Serpentaire n'est pas considéré comme un signe du zodiaque !",
+   "size": "948 degrés carrés",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/orion": {
+   "description": "Orion le Chasseur est l'une des constellations les plus reconnaissables, visible depuis les deux hémisphères avec sa Ceinture distinctive de trois étoiles.",
+   "fun_fact": "La Ceinture d'Orion pointe vers Sirius (l'Étoile la plus brillante) dans une direction et Aldébaran (dans le Taureau) dans l'autre !",
+   "size": "594 degrés carrés",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/pavo": {
+   "description": "Le Paon est une constellation australe contenant l'étoile brillante Paon et plusieurs galaxies intéressantes.",
+   "fun_fact": "L'étoile Paon (Alpha Pavonis) est la deuxième étoile la plus lumineuse à moins de 200 années-lumière de notre Soleil !",
+   "size": "378 degrés carrés",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/pegasus": {
+   "description": "Pégase, le Cheval Ailé, est une grande constellation qui comprend le Grand Carré de Pégase, un astérisme proéminent de l'automne.",
+   "fun_fact": "51 Pegasi b, découverte en 1995 dans cette constellation, a été la première exoplanète trouvée en orbite autour d'une étoile de type solaire !",
+   "size": "1 121 degrés carrés",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/perseus": {
+   "description": "Persée le Héros abrite la célèbre étoile variable Algol et le Double amas de Persée, une magnifique paire d'amas ouverts.",
+   "fun_fact": "Algol (l'Étoile du Démon) était considérée comme maléfique dans l'Antiquité car elle s'assombrit mystérieusement tous les 2,87 jours !",
+   "size": "615 degrés carrés",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/phoenix": {
+   "description": "Le Phénix est une constellation australe représentant l'oiseau mythique qui renaît de ses cendres.",
+   "fun_fact": "Phénix fut l'une des 12 constellations créées par des explorateurs néerlandais à la fin du XVIe siècle à partir d'étoiles australes inexplorées !",
+   "size": "469 degrés carrés",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/pictor": {
+   "description": "Pictor (le Peintre) est une faible constellation australe créée par Lacaille, nommée à l'origine d'après le chevalet de l'artiste.",
+   "fun_fact": "Beta Pictoris, dans cette constellation, a été l'une des premières étoiles découvertes à posséder un disque de débris visible — et elle possède deux exoplanètes confirmées en orbite autour d'elle !",
+   "size": "247 degrés carrés",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/pisces": {
+   "description": "Poissons est une grande constellation du zodiaque représentant deux poissons liés ensemble, marquant le point de l'équinoxe de printemps.",
+   "fun_fact": "L'équinoxe de printemps (premier jour du printemps) se trouve actuellement dans les Poissons et s'y déplace lentement depuis 2 000 ans !",
+   "size": "889 degrés carrés",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/piscis_austrinus": {
+   "description": "Piscis Austrinus (le Poisson Austral) est une constellation ancienne. On dit qu'il est le parent des deux poissons du Poissons, buvant l'eau versée par le Verseau.",
+   "fun_fact": "Fomalhaut, l'étoile la plus brillante de Piscis Austrinus, a été l'une des premières étoiles dont une exoplanète a été directement photographiée par Hubble — bien que la \"planète\" puisse en fait être un nuage de poussière !",
+   "size": "245 degrés carrés",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/puppis": {
+   "description": "Puppis, la Poupe, représente la poupe du navire Argo Navis, riche en amas ouverts le long de la Voie lactée.",
+   "fun_fact": "La Poupe contient M47, un amas ouvert visible à l'œil nu qui fut \"perdu\" pendant plus de 200 ans en raison d'une erreur de catalogage !",
+   "size": "673 degrés carrés",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/pyxis": {
+   "description": "Pyxis (le Compas) représente une boussole. Lacaille l'a créée à partir d'étoiles qui faisaient autrefois partie de l'ancienne constellation Argo Navis (le Navire).",
+   "fun_fact": "Pyxis contient T Pyxidis, une nova récurrente qui a éclaté au moins six fois depuis 1890 — c'est l'une des novae les mieux étudiées du ciel !",
+   "size": "221 degrés carrés",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/reticulum": {
+   "description": "Réticule (le Réticule) a été créée par Lacaille pour représenter le réticule de son télescope, utilisé lors de son relevé du ciel austral.",
+   "fun_fact": "Le Réticule est célèbre dans le folklore OVNI — l'« incident de Zeta Reticuli » de 1961 a affirmé que des visiteurs extraterrestres provenaient d'un système stellaire de cette constellation !",
+   "size": "114 degrés carrés",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/sagitta": {
+   "description": "Sagitta la Flèche est la troisième plus petite constellation, représentant diverses flèches mythologiques des légendes grecques.",
+   "fun_fact": "Bien que minuscule, Sagitta contient M71, un amas globulaire qui fut pris à tort pour un amas ouvert pendant des siècles !",
+   "size": "80 degrés carrés",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/sagittarius": {
+   "description": "Le Sagittaire, l'Archer, pointe vers le centre de notre galaxie, la Voie lactée, ce qui la rend riche en nébuleuses et amas d'étoiles.",
+   "fun_fact": "Lorsque vous regardez le Sagittaire, vous regardez vers Sagittarius A*, le trou noir supermassif au centre de notre galaxie !",
+   "size": "867 degrés carrés",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/scorpius": {
+   "description": "Le Scorpion est une constellation zodiacale proéminente avec une queue courbée distinctive, dominée par la supergéante rouge Antarès.",
+   "fun_fact": "Dans la mythologie, le Scorpion fut placé dans le ciel à l'opposé d'Orion afin que le chasseur ne soit plus jamais piqué !",
+   "size": "497 degrés carrés",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/sculptor": {
+   "description": "Le Sculpteur (le sculpteur) a été créée par Lacaille, représentant à l'origine l'atelier d'un sculpteur. Elle contient le pôle galactique sud.",
+   "fun_fact": "Le Sculpteur contient le pôle galactique sud et la Galaxie naine du Sculpteur, l'une des galaxies satellites les plus proches de la Voie lactée, à seulement 260 000 années-lumière de distance !",
+   "size": "475 degrés carrés",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/scutum": {
+   "description": "Scutum (l'Écu) a été créée par Hevelius en 1684 en l'honneur du roi Jean III Sobieski de Pologne. C'est l'une des rares constellations nommées d'après une figure historique non mythologique.",
+   "fun_fact": "Scutum contient le Nuage stellaire du Scutum, l'une des zones les plus brillantes et les plus denses de la Voie lactée visible à l'œil nu — c'est une fenêtre sur le bras spiral intérieur de notre galaxie !",
+   "size": "109 degrés carrés",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/serpens_caput": {
+   "description": "Serpens Caput (la Tête du Serpent) est la moitié occidentale du Serpent, la seule constellation divisée en deux parties non contiguës par le Serpentaire.",
+   "fun_fact": "La Tête du Serpent contient M5, l'un des amas globulaires les plus anciens et les plus grands connus — il a 13 milliards d'années et contient plus de 100 000 étoiles!",
+   "size": "428 degrés carrés (les deux parties)",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/serpens_cauda": {
+   "description": "Serpens Cauda (la Queue du Serpent) est la moitié orientale du Serpent, séparée de la tête par la constellation du Serpentaire.",
+   "fun_fact": "Serpent-Queue contient la Nébuleuse de l'Aigle (M16) et ses célèbres « Piliers de la Création » — d'imposantes colonnes de gaz et de poussière où de nouvelles étoiles naissent !",
+   "size": "428 degrés carrés (les deux parties)",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/sextans": {
+   "description": "Sextant (le Sextant) a été créée par Hevelius pour commémorer son sextant astronomique, qui fut détruit dans un incendie en 1679.",
+   "fun_fact": "Le Sextant contient la galaxie naine Sextans A, l'une des galaxies les plus isolées du Groupe Local, à 4,3 millions d'années-lumière !",
+   "size": "314 degrés carrés",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/taurus": {
+   "description": "Le Taureau est une constellation du Zodiaque contenant les amas d'étoiles des Pléiades et des Hyades, et la brillante étoile Aldébaran.",
+   "fun_fact": "La Nébuleuse du Crabe dans le Taureau est le rémanent d'une supernova observée et enregistrée par des astronomes chinois en 1054 après J.-C.!",
+   "size": "797 degrés carrés",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/telescopium": {
+   "description": "Télescope (le Télescope) a été créée par Lacaille pour honorer l'invention du télescope réfracteur. Elle se trouve au sud du Sagittaire et de la Couronne australe.",
+   "fun_fact": "Le Télescope était à l'origine bien plus vaste — lorsque Lacaille l'a dessinée pour la première fois, elle englobait des régions qui font aujourd'hui partie du Sagittaire et du Serpentaire !",
+   "size": "252 degrés carrés",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/triangulum": {
+   "description": "Le Triangle est une petite constellation boréale contenant la galaxie du Triangle (M33), la troisième plus grande du Groupe Local.",
+   "fun_fact": "La Galaxie du Triangle est l'objet le plus éloigné visible à l'œil nu dans des conditions idéales !",
+   "size": "132 degrés carrés",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/triangulum_australe": {
+   "description": "Le Triangle Austral est une petite constellation australe mais distinctive. Ses trois étoiles les plus brillantes forment un triangle presque équilatéral.",
+   "fun_fact": "Le Triangle Austral contient NGC 6025, un magnifique amas ouvert facilement visible aux jumelles, et il apparaît sur les drapeaux du Brésil et de la Papouasie-Nouvelle-Guinée !",
+   "size": "110 degrés carrés",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/tucana": {
+   "description": "Tucana (le Toucan) est une constellation australe créée par les navigateurs néerlandais, représentant l'oiseau tropical avec son énorme bec.",
+   "fun_fact": "Le Toucan contient 47 Tucanae (NGC 104), le deuxième amas globulaire le plus brillant du ciel, abritant des millions d'étoiles et plusieurs pulsars millisecondes !",
+   "size": "295 degrés carrés",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/ursa_major": {
+   "description": "La Grande Ourse contient l'astérisme de la Grande Casserole, l'un des motifs d'étoiles les plus reconnus dans le ciel boréal.",
+   "fun_fact": "Cinq des étoiles de la Grande Casserole sont physiquement liées, se déplaçant ensemble dans l'espace, formant le Groupe mouvant de la Grande Ourse!",
+   "size": "1 280 degrés carrés",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/ursa_minor": {
+   "description": "La Petite Ourse contient la Petite Casserole et l'Étoile polaire, l'actuelle Étoile Polaire marquant le pôle nord céleste de la Terre.",
+   "fun_fact": "En raison de la précession, l'Étoile polaire ne sera pas toujours l'Étoile Polaire – dans 14 000 ans, Véga prendra sa place !",
+   "size": "256 degrés carrés",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/vela": {
+   "description": "Voiles faisait autrefois partie du grand Navire Argo, située dans une région riche de la Voie lactée.",
+   "fun_fact": "Le pulsar de Vela est le pulsar le plus brillant du ciel et le vestige d'une supernova qui a explosé il y a 11 000 ans!",
+   "size": "500 degrés carrés",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/virgo": {
+   "description": "La Vierge est la deuxième plus grande constellation et un signe du zodiaque, contenant l'Amas de la Vierge de plus de 2 000 galaxies.",
+   "fun_fact": "L'Amas de la Vierge est le cœur du Superamas de la Vierge, qui contient notre propre galaxie, la Voie lactée !",
+   "size": "1 294 degrés carrés",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/volans": {
+   "description": "Volans (le Poisson Volant) est une faible constellation australe introduite par des navigateurs néerlandais, représentant le poisson tropical capable de sauter hors de l'eau et de planer.",
+   "fun_fact": "Volans se trouve près du Grand Nuage de Magellan et contient l'Anneau de Lindsay-Shapley, l'une des galaxies à anneau les plus parfaites jamais observées !",
+   "size": "141 degrés carrés",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/vulpecula": {
+   "description": "Vulpecula (le Petit Renard) est une faible constellation boréale créée par Hevelius en 1687. Elle se situe au cœur de la Voie lactée, entre Cygnus et Sagitta.",
+   "fun_fact": "Le Petit Renard contient la Nébuleuse de l'Haltère (M27), la première nébuleuse planétaire jamais découverte (par Charles Messier en 1764), et une belle cible aux jumelles !",
+   "size": "268 degrés carrés",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "dso/blue_snowball_nebula": {
+   "description": "La Nébuleuse Boule de Neige Bleue est une nébuleuse planétaire dans Andromède — l'enveloppe de gaz lumineuse expulsée par une étoile mourante. Avec une magnitude de 8,3, c'est l'une des nébuleuses planétaires les plus brillantes et les plus colorées du ciel, apparaissant comme un disque bleu-vert éclatant même dans de petits télescopes. Sa forme symétrique et sa couleur intense en font une favorite des observateurs.",
+   "fun_fact": "La couleur éclatante de la Nébuleuse de la Boule de Neige Bleue provient de l'oxygène doublement ionisé qui brille à une longueur d'onde verte spécifique, combiné à l'émission d'hydrogène — une palette de couleurs que l'œil humain perçoit comme bleu-vert. La naine blanche centrale a une température de surface d'environ 100 000 °C, suffisamment chaude pour ioniser le gaz environnant à cette distance.",
+   "distance": "Environ 2 500 années-lumière",
+   "size": "Environ 0,8 année-lumière de diamètre",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/centaurus_a": {
+   "description": "Centaurus A (NGC 5128) est la galaxie radio active la plus proche de la Terre, une galaxie elliptique géante dans la constellation du Centaure dont la remarquable bande de poussière sombre trahit un passé violent — une galaxie spirale avalée il y a environ 200 à 700 millions d'années. En son cœur se cache un trou noir supermassif de 55 millions de masses solaires qui propulse des jets relativistes s'étendant sur plus d'un million d'années-lumière en ondes radio. À une distance d'environ 12 millions d'années-lumière, c'est l'une des galaxies les plus étudiées du ciel.",
+   "fun_fact": "Centaure A est l'une des plus puissantes sources radio naturelles du ciel — ses jets propulsent du plasma vers l'extérieur à une vitesse proche de celle de la lumière, et l'étendue totale de ses lobes radio couvre une zone équivalente à environ 100 pleines lunes alignées bout à bout dans le ciel.",
+   "distance": "Environ 12 millions d'années-lumière",
+   "size": "~123 000 années-lumière de diamètre",
+   "image_credit": "ESO"
+  },
+  "dso/coathanger": {
+   "description": "Le Cintre est un astérisme remarquable de dix étoiles situé dans la constellation du Petit Renard, formant une figure caractéristique : six étoiles alignées et quatre autres suspendues en dessous en forme de crochet, rappelant exactement un cintre inversé. C'est l'un des meilleurs objets à observer aux jumelles dans le ciel d'été, car il tient parfaitement dans un champ de vision typique de jumelles.",
+   "fun_fact": "Bien qu'il ressemble à un amas, les étoiles du Cintre ne sont pas physiquement liées — elles se trouvent à des distances très différentes et ne sont qu'une coïncidence de ligne de visée. L'Amas de Brocchi a été catalogué par Dalmiro Brocchi dans les années 1920, et le premier télescope spatial à l'imager fut Hipparcos, qui a confirmé que les étoiles ne sont pas liées.",
+   "distance": "~420 années-lumière (Étoile la plus brillante)",
+   "size": "~1° de diamètre",
+   "image_credit": "DSS/Giuseppe Donatiello"
+  },
+  "dso/coma_star_cluster": {
+   "description": "L'Amas de la Chevelure de Bérénice est un amas ouvert proche d'environ 40 étoiles dispersées lâchement sur près de 5° du ciel, facilement visible à l'œil nu comme un voile diffus dans un ciel sombre. C'est le troisième amas ouvert le plus proche du système solaire et la source de la constellation de la Chevelure de Bérénice.",
+   "fun_fact": "Les observateurs de l'Antiquité voyaient cet amas comme la chevelure de la reine Bérénice II d'Égypte, qui, selon la légende, coupa ses boucles d'or en offrande pour le retour sain et sauf de son mari de la guerre. Ptolémée III aurait fait officiellement nommer cette constellation inhabituelle en son honneur vers 245 av. J.-C.",
+   "distance": "288 années-lumière",
+   "size": "~5° de diamètre",
+   "image_credit": "Alberto Pisabarro/CC BY-SA 4.0"
+  },
+  "dso/cygnus_x_1": {
+   "description": "Cygnus X-1 est un trou noir de masse stellaire situé à environ 7 200 années-lumière dans la constellation du Cygne, et l'une des sources de rayons X les plus puissantes du ciel. Il forme un système binaire avec l'étoile supergéante bleue HDE 226868, orbitant l'une autour de l'autre tous les 5,6 jours. Le trou noir arrache du gaz à son compagnon, formant un disque d'accrétion superchaud qui brille en rayons X.",
+   "fun_fact": "Cygnus X-1 a été le premier objet largement accepté comme un trou noir. En 1975, Stephen Hawking a fait un célèbre pari scientifique avec Kip Thorne selon lequel ce n'était PAS un trou noir, un pari qu'il a ensuite concédé.",
+   "distance": "7 200 années-lumière",
+   "size": "Masse du trou noir : ~21 masses solaires",
+   "image_credit": "NASA/CXC/M.Weiss"
+  },
+  "dso/double_cluster": {
+   "description": "Le Double amas de Persée (NGC 869 et NGC 884) est une paire éblouissante de jeunes amas ouverts d'étoiles dans Persée, situés côte à côte dans le ciel, à un peu plus d'un degré l'un de l'autre. Les deux sont visibles à l'œil nu comme une tache brumeuse, mais même un petit télescope révèle des centaines de supergéantes bleu-blanc brillantes regroupées en deux essaims scintillants. À environ 7 500 années-lumière de distance, ils se trouvent dans le Bras de Persée de notre galaxie et comptent parmi les plus beaux objets binoculaires du ciel boréal.",
+   "fun_fact": "À seulement 14 millions d'années, le Double amas de Persée est extraordinairement jeune — si récemment né que ses étoiles les plus massives sont encore des supergéantes bleues flamboyantes, avec une poignée déjà évoluée en supergéantes rouges rares et ardentes.",
+   "distance": "~7 500 années-lumière",
+   "size": "Chaque amas ~70 années-lumière de diamètre ; la paire séparée par ~1 000 années-lumière",
+   "image_credit": "Genuson/CC BY-SA 3.0"
+  },
+  "dso/eta_carinae_nebula": {
+   "description": "La Nébuleuse d'Eta Carinae (NGC 3372) est l'une des nébuleuses les plus grandes et les plus brillantes du ciel, s'étendant sur plus de 300 années-lumière. En son cœur se trouve Eta Carinae, l'une des étoiles les plus massives et les plus lumineuses connues, pesant plus de 100 masses solaires.",
+   "fun_fact": "En 1843, Éta Carinae est entrée en éruption et est brièvement devenue la deuxième étoile la plus brillante du ciel, et pourtant elle a survécu — elle pourrait être sur le point d'exploser en supernova !",
+   "distance": "7 500 années-lumière",
+   "size": "300 années-lumière de diamètre"
+  },
+  "dso/exposed_cranium_nebula": {
+   "description": "La Nébuleuse du Crâne Exposé (PMR 1) est une nébuleuse planétaire dans la constellation de la Voile, à environ 5 000 années-lumière. Son nom étrange vient d'une bande sombre de gaz traversant verticalement son centre, divisant ses lobes lumineux en une forme qui ressemble étrangement à un cerveau à l'intérieur d'un crâne transparent. En son cœur brûle une chaude étoile Wolf-Rayet rejetant les couches externes qu'elle a accumulées au cours de sa vie.",
+   "fun_fact": "En 2026, le télescope spatial James Webb a capturé de nouvelles images saisissantes de la Nébuleuse du Crâne, révélant sa structure à double couche avec un niveau de détail sans précédent : une enveloppe externe riche en hydrogène et un nuage interne rempli d'éléments plus lourds forgés par l'étoile mourante.",
+   "distance": "~5 000 années-lumière",
+   "size": "~2 années-lumière de diamètre",
+   "image_credit": "NASA, ESA, CSA, STScI/Joseph DePasquale"
+  },
+  "dso/ghost_of_jupiter": {
+   "description": "Le Fantôme de Jupiter est une nébuleuse planétaire brillante dans l'Hydre dont la taille apparente est similaire à celle de la planète Jupiter — d'où son nom. D'une magnitude de 8,6, c'est l'une des nébuleuses planétaires les plus accessibles du ciel pour les petits télescopes, montrant un disque clair et un soupçon de couleur dans des ouvertures modérées.",
+   "fun_fact": "Le Fantôme de Jupiter possède une coquille intérieure brillante entourée d'un halo extérieur plus faible — une structure à deux coquilles suggérant que l'étoile mourante a expulsé du gaz en au moins deux épisodes distincts. Son étoile centrale est l'une des naines blanches les plus chaudes connues, avec une température de surface estimée à environ 75 000 °C.",
+   "distance": "~1 400 années-lumière",
+   "size": "~1 année-lumière de diamètre",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/hdf": {
+   "description": "Le Champ profond de Hubble est une minuscule parcelle de 2,6 minutes d'arc de ciel apparemment vide dans la Grande Ourse, photographiée par le télescope spatial Hubble sur 10 jours consécutifs en décembre 1995. Ce qui semblait être un espace vide a révélé environ 3 000 galaxies — couvrant des milliards d'années d'histoire cosmique — et a fondamentalement changé notre vision de l'univers.",
+   "fun_fact": "Cette portion de ciel a été choisie spécifiquement parce qu'elle était vide d'étoiles brillantes et de galaxies proches. Pourtant, l'image résultante était remplie d'environ 3 000 galaxies, ce qui a conduit à l'estimation que le ciel entier contient environ 200 milliards de galaxies — presque toutes invisibles à tout télescope avant Hubble.",
+   "distance": "~13 milliards d'années-lumière (le plus éloigné)",
+   "size": "2,6 minutes d'arc (champ de vision)",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/helix_nebula": {
+   "description": "La Nébuleuse de l'Hélice est la plus grande nébuleuse planétaire en taille apparente dans le ciel — l'enveloppe de gaz en expansion éjectée par une étoile de type Soleil à la fin de sa vie. S'étendant sur environ un demi-degré, elle est visible aux jumelles comme une faible lueur circulaire dans le Verseau et est surnommée l'Œil de Dieu pour son apparence sur les photographies à longue exposition.",
+   "fun_fact": "Au centre de la Nébuleuse de l'Hélice se trouve l'une des naines blanches connues les plus proches de la Terre — un vestige stellaire intensément chaud de la taille de la Terre mais avec la masse du Soleil. C'est le destin qui attend notre propre Soleil dans environ cinq milliards d'années.",
+   "distance": "650 années-lumière",
+   "size": "~3 années-lumière de diamètre",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/hyades": {
+   "description": "Les Hyades sont l'amas ouvert d'étoiles le plus proche du système solaire et l'un des plus étudiés en astronomie. Visibles à l'œil nu sous la forme d'un motif d'étoiles en V formant le visage du Taureau, elles contiennent plusieurs centaines d'étoiles réparties sur environ 5° du ciel.",
+   "fun_fact": "L'étoile orange brillante Aldébaran semble se trouver au sein des Hyades, mais est en réalité un objet d'avant-plan à la moitié de la distance — un alignement fortuit. Le véritable amas se trouve à environ 153 années-lumière et contient les premières étoiles dont les distances ont été mesurées par parallaxe grâce au satellite Hipparcos.",
+   "distance": "153 années-lumière",
+   "size": "~5° de diamètre",
+   "image_credit": "NOIRLab/NSF/AURA"
+  },
+  "dso/jewel_box": {
+   "description": "La Boîte à Bijoux (NGC 4755) est un jeune et brillant amas ouvert dans la constellation de la Croix du Sud, facilement visible à l'œil nu comme une tache floue de quatrième magnitude juste au sud-est de Mimosa. Observées à travers un télescope, ses étoiles brillent de couleurs vives et contrastées — des supergéantes d'un bleu profond côtoient une impressionnante supergéante rouge — ce qui lui a valu le nom que John Herschel lui a donné : un superbe bijou fantaisie. Âgé de seulement 14 à 16 millions d'années, c'est l'un des amas les plus jeunes et les plus colorés du ciel.",
+   "fun_fact": "L'étoile rouge remarquable de l'amas, κ Crucis, est une supergéante rouge si lumineuse qu'elle éclipse le Soleil par plus de 100 000 fois — un rappel frappant que les amas d'étoiles n'ont pas tous la même couleur.",
+   "distance": "~6 500 années-lumière",
+   "size": "~19 années-lumière de diamètre",
+   "image_credit": "ESO/Y. Beletsky"
+  },
+  "dso/lmc": {
+   "description": "Le Grand Nuage de Magellan est une galaxie satellite irrégulière de la Voie lactée, visible à l'œil nu comme une tache lumineuse détachée dans le ciel. C'est l'une de nos plus proches voisines galactiques et l'une des galaxies les plus actives en formation d'étoiles du Groupe Local.",
+   "fun_fact": "En 1987, une étoile dans le LMC a explosé comme la Supernova 1987A — la première supernova visible à l'œil nu observée depuis 1604. Des neutrinos de l'explosion ont atteint la Terre trois heures avant la lumière, confirmant nos modèles d'effondrement du cœur stellaire.",
+   "distance": "160 000 années-lumière",
+   "size": "14 000 années-lumière de diamètre",
+   "image_credit": "ESO/C. Bardon"
+  },
+  "dso/m1": {
+   "description": "La Nébuleuse du Crabe est un rémanent de supernova dans le Taureau, le résultat d'une explosion stellaire enregistrée par des astronomes chinois en 1054 apr. J.-C.",
+   "fun_fact": "La Nébuleuse du Crabe contient un pulsar tournant 30 fois par seconde, le noyau effondré de l'étoile explosée!",
+   "distance": "6 500 années-lumière",
+   "size": "11 années-lumière de diamètre",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m10": {
+   "description": "M10 est un amas globulaire brillant dans le Serpentaire, l'un des amas globulaires les plus proches de notre système solaire.",
+   "fun_fact": "M10 s'approche de nous à plus de 70 km/s et présente une concentration d'Étoiles inhabituellement faible en son cœur !",
+   "distance": "14 300 années-lumière",
+   "size": "83 années-lumière de diamètre",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m100": {
+   "description": "Messier 100 est une galaxie spirale à grand design dans la Chevelure de Bérénice et l'une des plus brillantes de l'Amas de la Vierge.",
+   "fun_fact": "Sept supernovae ont été observées dans M100, la plus récente en 2020 – peu de galaxies ont offert un tel spectacle !",
+   "distance": "55 millions d'années-lumière",
+   "size": "166 000 années-lumière de diamètre"
+  },
+  "dso/m101": {
+   "description": "La Galaxie Pinwheel est une galaxie spirale vue de face dans la Grande Ourse, l'une des plus grandes galaxies spirales connues.",
+   "fun_fact": "La Galaxie Pinwheel contient plus d'un billion d'étoiles et possède des bras spiraux asymétriques en raison d'interactions galactiques passées !",
+   "distance": "21 millions d'années-lumière",
+   "size": "170 000 années-lumière de diamètre",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m102": {
+   "description": "Messier 102 est la grande énigme du catalogue de Messier - un objet enregistré en 1781 qui n'a jamais été identifié avec certitude.",
+   "fun_fact": "Messier n'a publié aucune coordonnée pour M102, et son collègue Méchain a ensuite entièrement rétracté la découverte, affirmant qu'il s'agissait simplement de M101 enregistré deux fois par erreur ! La NASA l'identifie à la Galaxie du Fuseau, NGC 5866."
+  },
+  "dso/m103": {
+   "description": "M103 est un petit amas ouvert compact dans Cassiopée, contenant environ 40 étoiles dans un groupe serré facilement visible aux jumelles. Une étoile double frappante et une géante rouge près du centre lui donnent une apparence colorée dans de petits télescopes, situé au sein des riches champs d'étoiles de la Voie lactée de Cassiopée.",
+   "fun_fact": "M103 était l'objet avec le numéro le plus élevé dans le catalogue original de Messier publié en 1781. Toutes les entrées suivantes (M104 à M110) ont été ajoutées à titre posthume par des astronomes ultérieurs à partir des notes et de la correspondance de Messier. Pierre Méchain a découvert M103 peu avant que le catalogue ne soit mis sous presse, et Messier l'a inclus d'après le rapport de Méchain.",
+   "distance": "8 500 années-lumière",
+   "size": "~15 années-lumière de diamètre"
+  },
+  "dso/m104": {
+   "description": "La Galaxie du Sombrero est une galaxie spirale dans la Vierge, célèbre pour son noyau brillant et son grand bulbe central avec une bande de poussière sombre.",
+   "fun_fact": "La Galaxie du Sombrero possède un trou noir supermassif en son centre, estimé à 1 milliard de masses solaires !",
+   "distance": "31 millions d'années-lumière",
+   "size": "50 000 années-lumière de diamètre",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m105": {
+   "description": "Messier 105 est une galaxie elliptique dans la constellation du Lion, la plus grande galaxie elliptique du catalogue Messier en dehors de l'Amas de la Vierge.",
+   "fun_fact": "M105 partage un anneau colossal d'hydrogène gazeux avec sa voisine NGC 3384, s'étendant sur environ 650 000 années-lumière !",
+   "distance": "37 millions d'années-lumière",
+   "size": "67 000 années-lumière de diamètre"
+  },
+  "dso/m106": {
+   "description": "M106 est une galaxie spirale dans les Chiens de Chasse avec des bras spiraux anormaux causés par des jets de son trou noir central.",
+   "fun_fact": "M106 possède des masers à eau dans son noyau, permettant aux astronomes de mesurer précisément sa distance !",
+   "distance": "23,5 millions d'années-lumière",
+   "size": "135 000 années-lumière de diamètre",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m107": {
+   "description": "M107 est l'un des amas globulaires de Messier les moins concentrés, avec des étoiles dispersées selon un motif relativement ouvert autour d'un noyau modeste. Avec une magnitude de 8,1, il est une cible pour jumelles dans un ciel sombre et se résout partiellement dans de petits télescopes, montrant une texture granulaire plutôt qu'une condensation centrale nette.",
+   "fun_fact": "M107 a été la dernière entrée officiellement ajoutée au catalogue Messier — il apparaît dans la correspondance de Pierre Méchain mais n'a pas été inclus dans l'édition originale de 1781. Il a été officiellement ajouté comme M107 en 1947 par l'astronome canadienne Helen Sawyer Hogg, qui a codifié plusieurs objets \"manquants\" que Méchain avait observés mais que Messier n'avait jamais formellement enregistrés.",
+   "distance": "20 900 années-lumière",
+   "size": "~61 années-lumière de diamètre"
+  },
+  "dso/m108": {
+   "description": "Messier 108 est une galaxie spirale barrée dans la Grande Ourse, surnommée la galaxie du Surfboard.",
+   "fun_fact": "M108 est vue presque par la tranche, ce qui lui a valu le nom de Planche de Surf – et elle abrite environ 290 amas globulaires !",
+   "distance": "46 millions d'années-lumière"
+  },
+  "dso/m109": {
+   "description": "M109 est une galaxie spirale barrée dans la Grande Ourse, le membre le plus brillant d'un groupe de galaxies portant son nom.",
+   "fun_fact": "M109 est située très près de l'étoile Phecda dans la Grande Casserole, ce qui la rend facile à localiser !",
+   "distance": "83 millions d'années-lumière",
+   "size": "180 000 années-lumière de diamètre",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m11": {
+   "description": "L'Amas du Canard Sauvage est un riche amas ouvert dans l'Écu, l'un des amas ouverts les plus compacts connus.",
+   "fun_fact": "M11 contient près de 3 000 étoiles concentrées dans une petite zone, offrant un spectacle magnifique à travers les télescopes !",
+   "distance": "6 200 années-lumière",
+   "size": "20 années-lumière de diamètre",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m110": {
+   "description": "M110 est une galaxie elliptique naine et un satellite de la Galaxie d'Andromède, le dernier objet ajouté au catalogue Messier.",
+   "fun_fact": "M110 a en fait été observée par Messier en 1773 mais n'a été ajoutée à son catalogue qu'en 1966 !",
+   "distance": "2,7 millions d'années-lumière",
+   "size": "17 000 années-lumière de diamètre",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m12": {
+   "description": "M12 est un amas globulaire dans le Serpentaire, remarquable par sa concentration centrale relativement lâche.",
+   "fun_fact": "M12 a perdu beaucoup de ses étoiles de faible masse en raison de l'attraction gravitationnelle de la Voie lactée sur des milliards d'années !",
+   "distance": "15 700 années-lumière",
+   "size": "75 années-lumière de diamètre",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m13": {
+   "description": "M13 est un amas globulaire spectaculaire dans Hercule, contenant environ 300 000 étoiles, l'un des plus brillants du ciel boréal.",
+   "fun_fact": "En 1974, le message d'Arecibo a été envoyé vers M13 dans une tentative de contacter une intelligence extraterrestre !",
+   "distance": "22 200 années-lumière",
+   "size": "145 années-lumière de diamètre",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m14": {
+   "description": "M14 est un amas globulaire dans le Serpentaire contenant plusieurs centaines de milliers d'étoiles.",
+   "fun_fact": "En 1938, une nova est apparue dans M14, mais elle n'a été découverte qu'en 1964 lorsque d'anciennes plaques photographiques ont été examinées !",
+   "distance": "30 300 années-lumière",
+   "size": "100 années-lumière de diamètre",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m15": {
+   "description": "M15 est un amas globulaire dense dans Pégase, remarquable pour la présence d'une nébuleuse planétaire en son centre – un phénomène très rare pour les amas globulaires.",
+   "fun_fact": "M15 pourrait contenir un trou noir central d'environ 4 000 masses solaires, bien que cela soit encore débattu !",
+   "distance": "33 600 années-lumière",
+   "size": "175 années-lumière de diamètre",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m16": {
+   "description": "La Nébuleuse de l'Aigle est une nébuleuse à formation d'étoiles dans le Serpent, célèbre pour les Piliers de la Création photographiés par Hubble.",
+   "fun_fact": "Les Piliers de la Création dans M16 mesurent environ 5 années-lumière de haut et sont lentement érodés par le rayonnement des étoiles proches !",
+   "distance": "7 000 années-lumière",
+   "size": "70 années-lumière de diamètre",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m17": {
+   "description": "La Nébuleuse Oméga (également Nébuleuse du Cygne) est une région de formation d'étoiles dans le Sagittaire, l'une des nébuleuses à émission les plus brillantes.",
+   "fun_fact": "La Nébuleuse Oméga contient un amas ouvert d'environ 800 jeunes étoiles caché dans son gaz et sa poussière !",
+   "distance": "5 500 années-lumière",
+   "size": "15 années-lumière de diamètre",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m18": {
+   "description": "Messier 18 est un petit amas ouvert de jeunes étoiles dans le Sagittaire, également connu sous le nom de l'Amas du Cygne Noir.",
+   "fun_fact": "M18 est l'un des très rares objets de Messier que le télescope spatial Hubble n'a jamais photographié !",
+   "distance": "4 200 années-lumière",
+   "size": "26 années-lumière de diamètre"
+  },
+  "dso/m19": {
+   "description": "M19 est un amas globulaire compact et riche dans le Serpentaire — l'un des amas globulaires les plus proches du centre galactique. Sa caractéristique la plus distinctive est sa forme nettement aplatie : M19 est l'amas globulaire le plus aplati connu, avec un contour elliptique visible même dans un petit télescope.",
+   "fun_fact": "L'aplatissement prononcé de M19 — son axe le plus long est environ 10 % plus long que le plus court — est unique parmi les amas globulaires connus et est censé résulter d'un étirement par les forces de marée du champ gravitationnel de la Voie lactée. Plus un amas globulaire orbite près du centre galactique, plus il est fortement déformé ; M19 se trouve à seulement environ 5 200 années-lumière du noyau galactique.",
+   "distance": "28 700 années-lumière",
+   "size": "~113 années-lumière de diamètre"
+  },
+  "dso/m2": {
+   "description": "M2 est l'un des amas globulaires les plus grands et les plus riches connus, situé dans le Verseau.",
+   "fun_fact": "M2 contient environ 150 000 étoiles et a un diamètre de 175 années-lumière, ce qui en fait l'un des plus grands amas globulaires !",
+   "distance": "37 500 années-lumière",
+   "size": "175 années-lumière de diamètre",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m20": {
+   "description": "La Nébuleuse Trifide est une combinaison de nébuleuses à émission, à réflexion et obscures dans le Sagittaire, divisée par des bandes de poussière sombres.",
+   "fun_fact": "La Trifide présente trois types distincts de nébuleuses en un seul objet : l'émission rouge, la réflexion bleue et l'absorption sombre !",
+   "distance": "5 200 années-lumière",
+   "size": "20 années-lumière de diamètre",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m21": {
+   "description": "M21 est un amas ouvert compact dans le Sagittaire, situé à seulement un demi-degré au nord de la Nébuleuse Trifide (M20), ce qui en fait un couple saisissant à observer aux jumelles. L'amas contient environ 57 étoiles concentrées dans un champ plus petit que de nombreux amas de Messier, avec plusieurs étoiles bleu-blanc brillantes comme membres dominants.",
+   "fun_fact": "Bien que physiquement sans lien, M21 et M20 (la Nébuleuse Trifide) forment l'une des paires les plus attrayantes à observer aux jumelles dans le ciel d'été — un amas d'étoiles brillant à côté d'une nébuleuse colorée à trois lobes. M21 est à environ 4 250 années-lumière, tandis que M20 est légèrement plus proche, à environ 4 100 années-lumière.",
+   "distance": "4 250 années-lumière",
+   "size": "~16 années-lumière de diamètre"
+  },
+  "dso/m22": {
+   "description": "M22 est l'un des amas globulaires les plus proches et les plus brillants de la Terre, situé dans le Sagittaire près du Centre galactique.",
+   "fun_fact": "M22 fut l'un des premiers amas globulaires découverts, trouvé par Abraham Ihle en 1665 !",
+   "distance": "10 600 années-lumière",
+   "size": "70 années-lumière de diamètre",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m23": {
+   "description": "M23 est un amas ouvert riche dans le Sagittaire, noyé dans les champs d'étoiles denses de la Voie lactée estivale. Environ 150 étoiles sont réparties sur un champ d'un demi-degré aux jumelles, ce qui en fait un objet généreux aux jumelles dans la même région du ciel que de nombreux autres joyaux de Messier.",
+   "fun_fact": "M23 est estimé avoir environ 300 millions d'années — d'âge intermédiaire, la plupart de ses étoiles massives ayant déjà évolué hors de la séquence principale. Messier l'a découvert en 1764 lors d'une de ses prolifiques campagnes d'observation balayant les champs d'étoiles du Sagittaire.",
+   "distance": "2 150 années-lumière",
+   "size": "~17 années-lumière de diamètre"
+  },
+  "dso/m24": {
+   "description": "M24 est le Nuage stellaire du Sagittaire — non pas un amas ou une nébuleuse, mais une fenêtre à travers une brèche dans la poussière de la Voie lactée, révélant un champ d'étoiles éblouissant de 2° de diamètre. C'est la région la plus riche visible aux jumelles dans tout le ciel, regorgeant de milliers d'étoiles s'étendant sur de nombreuses distances différentes simultanément.",
+   "fun_fact": "Les étoiles de M24 ne sont pas à la même distance — le nuage d'étoiles représente une coupe transversale du disque de la Galaxie, vue à travers un tunnel naturel dans la poussière interstellaire, s'étendant sur des distances de 10 000 à 16 000 années-lumière. Encastrés dans le nuage se trouvent des nébuleuses obscures et de minuscules amas d'étoiles qui apparaissent comme des taches sombres sur la brillante toile de fond stellaire.",
+   "distance": "~10 000–16 000 années-lumière (plage)",
+   "size": "Fenêtre de ~600 années-lumière de profondeur"
+  },
+  "dso/m25": {
+   "description": "M25 est un amas ouvert brillant visible à l'œil nu dans le Sagittaire, situé sur le fond des champs d'étoiles denses de la Voie lactée estivale. Environ 600 étoiles sont dispersées sur un champ d'un demi-degré, ce qui en fait un objet riche pour les jumelles. Ses membres les plus brillants comprennent plusieurs supergéantes bleu-blanc et l'une des étoiles variables céphéides les plus étudiées du ciel.",
+   "fun_fact": "M25 contient U Sagittarii, une étoile variable céphéide classique qui s'illumine et s'assombrit sur une période de 6,7 jours. Les céphéides sont des « chandelles étalons » vitales pour mesurer les distances cosmiques, car leur période de pulsation révèle directement leur luminosité intrinsèque — les astronomes les ont utilisées pour déterminer d'abord la taille de la Voie lactée, puis l'échelle de l'univers observable.",
+   "distance": "2 000 années-lumière",
+   "size": "~19 années-lumière de diamètre"
+  },
+  "dso/m26": {
+   "description": "M26 est un amas ouvert modérément faible dans l'Écu, visible aux jumelles et bien résolu dans les petits télescopes. Environ 90 étoiles sont réparties sur un champ compact dans le riche nuage d'étoiles de l'Écu, bien que l'amas soit situé sur un fond si dense que l'identification de ses membres par rapport au champ stellaire environnant demande une certaine attention.",
+   "fun_fact": "M26 se trouve le long de la même riche bande de ciel que M11 — l'Amas du Canard sauvage, l'un des plus beaux amas ouverts du ciel. Les deux ne sont séparés que d'environ 3,5° et sont visibles dans le même champ de jumelles, faisant de Scutum une destination remarquable pour les observateurs d'amas, bien qu'il s'agisse d'une constellation petite et souvent négligée.",
+   "distance": "5 000 années-lumière",
+   "size": "~22 années-lumière de diamètre"
+  },
+  "dso/m27": {
+   "description": "La nébuleuse de l'Haltère est une nébuleuse planétaire dans Vulpecula, la première nébuleuse planétaire jamais découverte.",
+   "fun_fact": "La Nébuleuse de l'Haltère a été découverte par Charles Messier en 1764, ce qui en fait la première nébuleuse planétaire jamais découverte !",
+   "distance": "1 360 années-lumière",
+   "size": "2,5 années-lumière de diamètre",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m28": {
+   "description": "M28 est un amas globulaire compact dans le Sagittaire, situé près de la brillante étoile Lambda Sagittarii dans les riches champs d'étoiles d'été. Avec une magnitude de 6,9, c'est une cible gratifiante aux jumelles et il est bien résolu dans les petits télescopes, montrant un noyau brillant et condensé entouré d'un halo modéré d'étoiles.",
+   "fun_fact": "En 1987, M28 est devenu le premier amas globulaire dans lequel un pulsar milliseconde a été détecté. Les pulsars millisecondes, des étoiles à neutrons tournant des centaines de fois par seconde, se forment lorsqu'une étoile à neutrons accrète de la matière d'une étoile compagnon et sont trouvés à un taux bien plus élevé dans les amas globulaires que dans la galaxie en général, car leurs environnements stellaires denses produisent beaucoup plus de rencontres binaires rapprochées.",
+   "distance": "18 300 années-lumière",
+   "size": "~60 années-lumière de diamètre"
+  },
+  "dso/m29": {
+   "description": "M29 est un petit amas ouvert jeune dans le Cygne, situé dans l'une des régions les plus obscurcies par la poussière de la Voie lactée. Cinq supergéantes bleues brillantes dominent l'amas, visibles aux jumelles comme un astérisme serré d'étoiles chaudes et lumineuses. Sans la dense poussière d'avant-plan, M29 serait l'un des amas ouverts les plus spectaculaires du ciel.",
+   "fun_fact": "M29 est estimé n'avoir qu'environ 10 millions d'années — un amas stellaire très jeune — et se trouve au sein de l'association Cygnus OB1, un vaste groupe de jeunes étoiles massives. Une épaisse poussière interstellaire atténue la luminosité de l'amas d'environ 3 magnitudes ; sans cette extinction, les étoiles de M29 brilleraient plusieurs fois plus fort qu'elles n'apparaissent réellement.",
+   "distance": "4 000 années-lumière",
+   "size": "~8 années-lumière de diamètre"
+  },
+  "dso/m3": {
+   "description": "M3 est l'un des amas globulaires les plus grands et les plus brillants du ciel, situé dans les Chiens de Chasse.",
+   "fun_fact": "M3 contient environ 500 000 Étoiles et est estimé à 11,4 milliards d'années !",
+   "distance": "33 900 années-lumière",
+   "size": "180 années-lumière de diamètre",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m30": {
+   "description": "M30 est un amas globulaire compact dans le Capricorne — un bel objet dans de petits télescopes qui montre un noyau brillant et condensé et de faibles chaînes d'étoiles périphériques. De magnitude 7,5, il nécessite un ciel sombre pour être vu aux jumelles et récompense un petit télescope par son halo extérieur partiellement résolu.",
+   "fun_fact": "M30 a subi un « effondrement de cœur » — un processus où l'attraction gravitationnelle mutuelle d'étoiles très denses provoque la contraction spectaculaire du centre de l'amas, créant une concentration extrême d'étoiles dans un volume minuscule. Environ un cinquième de tous les amas globulaires ont des cœurs effondrés, et M30 est l'un des exemples les mieux étudiés de ce phénomène.",
+   "distance": "27 100 années-lumière",
+   "size": "~87 années-lumière de diamètre"
+  },
+  "dso/m31": {
+   "description": "La Galaxie d'Andromède est la galaxie spirale géante la plus proche de la Voie lactée et l'un des objets les plus éloignés visibles à l'œil nu.",
+   "fun_fact": "La Galaxie d'Andromède s'approche de nous à 110 km/s et entrera en collision avec la Voie lactée dans environ 4,5 milliards d'années !",
+   "distance": "2,5 millions d'années-lumière",
+   "size": "220 000 années-lumière de diamètre",
+   "mass": "1 500 milliards de masses solaires",
+   "image_credit": "Adam Kennett/Wikimedia Commons"
+  },
+  "dso/m32": {
+   "description": "M32 est une galaxie naine elliptique compacte et un satellite proche de la Galaxie d'Andromède.",
+   "fun_fact": "M32 a été la première galaxie elliptique jamais découverte et pourrait avoir été autrefois une galaxie spirale plus grande arrachée par Andromède !",
+   "distance": "2,5 millions d'années-lumière",
+   "size": "6 500 années-lumière de diamètre",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m33": {
+   "description": "La Galaxie du Triangle est le troisième plus grand membre du Groupe Local, une galaxie spirale visible dans la constellation du Triangle.",
+   "fun_fact": "La Galaxie du Triangle pourrait être liée gravitationnellement à la Galaxie d'Andromède en tant que satellite lointain !",
+   "distance": "2,7 millions d'années-lumière",
+   "size": "60 000 années-lumière de diamètre",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m34": {
+   "description": "M34 est un amas ouvert brillant et dispersé dans Persée, facilement visible aux jumelles comme une riche éclaboussure d'étoiles sur la Voie lactée hivernale. Ses quelque 400 étoiles couvrent une zone presque aussi large que la pleine Lune, avec une poignée d'étoiles doubles larges visibles pour les observateurs attentifs aux jumelles.",
+   "fun_fact": "Âgé d'environ 200 millions d'années, M34 a un âge intermédiaire — assez jeune pour que ses étoiles bleues chaudes brillent encore, assez vieille pour que les plus massives aient déjà explosé en supernovae. À 1 500 années-lumière, c'est l'un des amas de Messier les plus proches et il reste un bel objet même depuis les cieux de banlieue.",
+   "distance": "1 500 années-lumière",
+   "size": "~15 années-lumière de diamètre"
+  },
+  "dso/m35": {
+   "description": "M35 est un grand amas ouvert d'Étoiles dans les Gémeaux, visible à l'œil nu dans de bonnes conditions.",
+   "fun_fact": "M35 contient environ 200 étoiles et apparaît près d'un amas beaucoup plus ancien, NGC 2158, dans le même champ de vision !",
+   "distance": "2 800 années-lumière",
+   "size": "24 années-lumière de diamètre",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m36": {
+   "description": "M36 est le plus petit et le plus jeune des trois amas ouverts catalogués par Messier dans le Cocher. Ses quelque 60 étoiles sont rassemblées en un champ serré et scintillant, visible aux jumelles et bien résolu en étoiles individuelles dans un petit télescope, dominé par des étoiles chaudes bleu-blanc.",
+   "fun_fact": "M36 est estimé à seulement environ 25 millions d'années — l'un des plus jeunes amas de Messier — ce qui signifie que les étoiles massives bleu-blanc dominent encore et qu'aucune géante rouge n'est encore apparue. Il partage les champs d'étoiles d'Auriga avec M37 et M38, et les trois amas tiennent dans le même champ de vision de jumelles à grand champ.",
+   "distance": "4 100 années-lumière",
+   "size": "~14 années-lumière de diamètre"
+  },
+  "dso/m37": {
+   "description": "M37 est le plus riche et le plus brillant des trois amas ouverts de Messier dans Auriga, contenant environ 500 étoiles dans un champ compact. C'est un objet spectaculaire aux jumelles et avec un petit télescope, avec une dispersion d'étoiles géantes oranges ajoutant un contraste de couleur à l'essaim bleu-blanc.",
+   "fun_fact": "M37 contient environ une douzaine d'étoiles géantes rouges — un nombre exceptionnellement élevé qui reflète son âge relativement avancé d'environ 300 millions d'années. Bien qu'il se trouve à environ 4 500 années-lumière — le plus éloigné des trois amas de Messier du Cocher — il figure toujours parmi les plus beaux amas ouverts du ciel.",
+   "distance": "4 500 années-lumière",
+   "size": "~31 années-lumière de diamètre"
+  },
+  "dso/m38": {
+   "description": "M38 est le plus grand et le plus étendu des trois amas ouverts catalogués par Messier dans le Cocher. Ses quelque 100 étoiles sont disposées selon un motif que certains observateurs comparent à une croix ou à la lettre grecque pi, visibles aux jumelles et bien résolues dans un petit télescope. Le plus petit amas NGC 1907 se trouve à proximité, au sud.",
+   "fun_fact": "M38 est le plus ancien des trois amas de Messier du Cocher, avec environ 220 millions d'années. Il est suffisamment âgé pour que certaines de ses étoiles massives aient évolué en géantes jaunes et oranges. L'amas voisin NGC 1907 peut être observé dans le même champ à faible grossissement, formant ainsi une excellente paire pour jumelles — à l'instar de M46 et M47 dans la Poupe.",
+   "distance": "4 200 années-lumière",
+   "size": "~26 années-lumière de diamètre"
+  },
+  "dso/m39": {
+   "description": "M39 est un grand amas ouvert diffus dans le Cygne, visible à l\\’œil nu près de Deneb dans la riche Voie lactée estivale. Ses quelque 30 étoiles brillantes sont regroupées de manière lâche sur un degré de ciel, mieux apprécié à faible grossissement avec des jumelles ou un télescope à grand champ — un grossissement plus élevé le résout simplement en un champ d\\’étoiles clairsemé et sans particularité.",
+   "fun_fact": "À environ 825 années-lumière, M39 est l'un des amas ouverts les plus proches de la Terre, et, avec environ 240 millions d'années, c'est l'un des amas visibles à l'œil nu les plus anciens — suffisamment ancien pour que ses étoiles les plus massives aient déjà terminé leur vie. Messier l'a enregistré en 1764 et il figurait parmi les premières additions à son catalogue.",
+   "distance": "825 années-lumière",
+   "size": "~8 années-lumière de diamètre"
+  },
+  "dso/m4": {
+   "description": "M4 est l'un des amas globulaires les plus proches de la Terre et l'un des plus faciles à trouver, situé près d'Antarès dans le Scorpion.",
+   "fun_fact": "M4 contient une naine blanche estimée à 13 milliards d'années – l'une des plus anciennes étoiles connues de la Voie lactée !",
+   "distance": "7 200 années-lumière",
+   "size": "75 années-lumière de diamètre",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m40": {
+   "description": "M40 est unique dans le catalogue de Messier — ce n'est pas une nébuleuse, un amas ou une galaxie, mais une étoile double optique. Messier l'a catalogué en 1764 alors qu'il recherchait une nébuleuse signalée par Johann Hevelius dans la Grande Ourse, il n'a trouvé que cette paire d'étoiles, et l'a enregistrée afin que les futurs observateurs ne la confondent pas avec quelque chose de plus intéressant.",
+   "fun_fact": "Les deux étoiles de M40 — connues sous le nom de Winnecke 4 — ne sont pas liées gravitationnellement ; elles se trouvent à des distances différentes et sont simplement un alignement fortuit. Messier lui-même a noté qu'il n'y avait \"rien de remarquable\", mais l'a inclus \"pour montrer que cette nébuleuse n'est pas la même que celles que j'ai examinées\". Son habitude méthodique de documenter les non-observations a fourni aux futurs observateurs une référence définitive.",
+   "distance": "~500 années-lumière",
+   "size": "~50 secondes d'arc (séparation)"
+  },
+  "dso/m41": {
+   "description": "M41 est un bel amas ouvert dans le Grand Chien, situé à seulement 4° au sud de Sirius — l'étoile la plus brillante du ciel nocturne. Visible à l'œil nu depuis des sites sombres et spectaculaire aux jumelles, il contient environ 100 étoiles réparties sur un champ généreux, avec plusieurs étoiles géantes orange frappantes parmi des membres bleu-blanc plus faibles.",
+   "fun_fact": "Aristote aurait pu noter M41 vers 325 av. J.-C. — possiblement la plus ancienne observation enregistrée d'un objet du ciel profond. Il a décrit une « tache nuageuse » au sud de Sirius qui correspond à la position de M41. Si l'identification est correcte, M41 était discuté près de deux mille ans avant l'invention du télescope.",
+   "distance": "2 300 années-lumière",
+   "size": "~25 années-lumière de diamètre"
+  },
+  "dso/m42": {
+   "description": "La Nébuleuse d'Orion est une nébuleuse par émission diffuse visible à l'œil nu, l'un des objets les plus photographiés dans le ciel nocturne.",
+   "fun_fact": "La Nébuleuse d'Orion est une pouponnière stellaire où de nouvelles étoiles naissent en ce moment même. Plus de 700 étoiles sont en formation à l'intérieur !",
+   "distance": "1 344 années-lumière",
+   "size": "24 années-lumière de diamètre",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m43": {
+   "description": "La Nébuleuse de De Mairan est une portion détachée du grand complexe de la Nébuleuse d'Orion, séparée de M42 par une bande de poussière sombre mais appartenant au même vaste nuage moléculaire. Nommée d'après l'astronome français Jean-Jacques Dortous de Mairan, qui l'a observée en 1731, c'est une nébuleuse en émission ionisée par la jeune étoile chaude NU Orionis intégrée en son centre.",
+   "fun_fact": "Bien que M43 apparaisse comme un objet distinct de M42, la bande sombre qui les sépare est un nuage de poussière d'avant-plan — faisant partie du Nuage Moléculaire d'Orion — qui bloque simplement notre vue de la connexion physique entre les deux régions lumineuses. Ensemble, ils ne sont que le bord intérieur illuminé d'un énorme nuage sombre s'étendant sur une grande partie d'Orion.",
+   "distance": "1 350 années-lumière",
+   "size": "~8 années-lumière de diamètre"
+  },
+  "dso/m44": {
+   "description": "L'Amas de la Ruche (Praesepe) est un amas ouvert dans le Cancer, connu depuis l'Antiquité et visible à l'œil nu.",
+   "fun_fact": "Les astronomes de l'Antiquité utilisaient la visibilité de l'Amas de la Ruche pour prédire la météo – s'il était invisible, la pluie arrivait !",
+   "distance": "577 années-lumière",
+   "size": "15 années-lumière de diamètre",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m45": {
+   "description": "Les Pléiades sont un amas ouvert d'étoiles dans le Taureau, également connu sous le nom des Sept Sœurs, visible à l'œil nu depuis l'Antiquité.",
+   "fun_fact": "Les Pléiades comptent parmi les amas d'étoiles les plus proches de la Terre et ont été reconnues par pratiquement toutes les civilisations antiques !",
+   "distance": "444 années-lumière",
+   "size": "17 années-lumière de diamètre",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m46": {
+   "description": "M46 est un amas ouvert riche et dense dans la constellation de la Poupe, contenant environ 500 étoiles réparties sur un large champ, impressionnant aux jumelles et magnifique dans les petits télescopes. Un bonus remarquable flotte à son bord nord : NGC 2438, une petite nébuleuse planétaire qui semble être intégrée à l'amas — une coïncidence spectaculaire de ligne de visée.",
+   "fun_fact": "La nébuleuse planétaire NGC 2438 semble se trouver à l'intérieur de M46, mais il s'agit en réalité d'un objet d'avant-plan sans lien, situé à une distance très différente — environ 1 400 années-lumière contre 5 400 pour M46. La coïncidence d'une enveloppe d'étoile mourante superposée à un jeune amas d'étoiles en fait l'un des champs les plus photogéniques du catalogue.",
+   "distance": "5 400 années-lumière",
+   "size": "~42 années-lumière de diamètre"
+  },
+  "dso/m47": {
+   "description": "M47 est un amas ouvert brillant et lâche dans la Poupe, facilement visible à l'œil nu et saisissant aux jumelles. Environ 50 étoiles sont dispersées sur un demi-degré de ciel, avec plusieurs étoiles géantes oranges ajoutant une couleur chaude aux membres bleu-blanc plus faibles.",
+   "fun_fact": "M47 était l'un des objets de Messier « perdus » — une erreur administrative dans les coordonnées originales de Messier le plaça dans un ciel vide, laissant l'amas non identifié pendant près de deux siècles. Sa véritable identité en tant que NGC 2422 ne fut confirmée qu'en 1959, lorsque des observateurs remontèrent la description de Messier pour trouver l'erreur.",
+   "distance": "1 600 années-lumière",
+   "size": "~14 années-lumière de diamètre"
+  },
+  "dso/m48": {
+   "description": "M48 est un grand amas ouvert brillant dans l'Hydre, s'étendant sur près d'un degré du ciel et visible à l'œil nu depuis des sites sombres. Ses quelque 80 étoiles sont dispersées de manière lâche sur un large champ, mieux adapté aux jumelles, avec une dispersion d'étoiles géantes oranges et jaunes parmi les membres bleu-blanc plus brillants.",
+   "fun_fact": "M48 a été l'un des objets de Messier « perdus » pendant près de deux siècles, car la position enregistrée par Messier était décalée d'environ 5° par rapport à son emplacement réel. Il est resté non identifié jusqu'en 1959, date à laquelle il a été associé à NGC 2548 et où il a été démontré qu'une simple erreur de transcription l'avait en fait placé dans un ciel vide.",
+   "distance": "1 500 années-lumière",
+   "size": "~23 années-lumière de diamètre"
+  },
+  "dso/m49": {
+   "description": "M49 est une galaxie elliptique géante dans la Vierge, le membre le plus brillant de l'Amas de la Vierge.",
+   "fun_fact": "M49 a été le premier membre de l'Amas de la Vierge à être découvert et contient environ 6 000 amas globulaires !",
+   "distance": "55 millions d'années-lumière",
+   "size": "160 000 années-lumière de diamètre",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m5": {
+   "description": "M5 est un amas globulaire dans le Serpent, l'un des plus anciens amas globulaires, âgé d'environ 13 milliards d'années.",
+   "fun_fact": "M5 contient plus de 100 000 étoiles et possède l'un des plus grands nombres d'étoiles variables connues de tous les amas globulaires !",
+   "distance": "24 500 années-lumière",
+   "size": "165 années-lumière de diamètre",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m50": {
+   "description": "M50 est un amas ouvert brillant dans la Licorne, contenant environ 200 étoiles regroupées dans un champ compact et saisissant, idéal pour les jumelles et les petits télescopes. Il est facilement repérable sur une ligne entre Sirius et Procyon et contient une géante rouge notable — un phare orange chaud se détachant vivement parmi les étoiles bleu-blanc de l'amas.",
+   "fun_fact": "M50 est estimé à environ 78 millions d'années – l'un des plus jeunes amas ouverts de Messier – ce qui signifie que ses étoiles bleues et blanches chaudes sont encore en évolution, avec quelques-uns des membres les plus massifs ayant récemment gonflé pour devenir des géantes. C'est typique d'un amas au début de son âge moyen.",
+   "distance": "3 200 années-lumière",
+   "size": "~15 années-lumière de diamètre"
+  },
+  "dso/m51": {
+   "description": "La Galaxie du Tourbillon (Whirlpool) est une galaxie spirale de grand style située dans la constellation des Chiens de Chasse, célèbre pour ses bras spiraux spectaculaires et sa galaxie compagne.",
+   "fun_fact": "La Galaxie du Tourbillon fut la première galaxie à être reconnue comme ayant une structure spirale, découverte par Lord Rosse en 1845 !",
+   "distance": "23 millions d'années-lumière",
+   "size": "76 000 années-lumière de diamètre",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m52": {
+   "description": "M52 est un amas ouvert riche dans Cassiopée, contenant environ 200 étoiles regroupées dans une région compacte de la Voie lactée boréale. C'est un bel amas pour jumelles et il montre un champ stellaire magnifique et dense dans les petits télescopes, avec une étoile orange nettement plus brillante qui se distingue près du bord sud de l'amas.",
+   "fun_fact": "La distance de M52 est exceptionnellement incertaine — les estimations varient de 3 000 à 7 000 années-lumière — car la poussière interstellaire dense le long de cette ligne de visée rend sa véritable luminosité difficile à déterminer. Messier l'a découvert en 1774, la même nuit où il suivait une comète qui l'a amené à enregistrer plusieurs autres entrées de catalogue.",
+   "distance": "~5 000 années-lumière",
+   "size": "~25 années-lumière de diamètre"
+  },
+  "dso/m53": {
+   "description": "M53 est un amas globulaire dans la Chevelure de Bérénice, l'un des amas globulaires les plus éloignés de notre galaxie.",
+   "fun_fact": "M53 est l'un des amas globulaires les plus éloignés du Centre galactique, à 60 000 années-lumière de celui-ci !",
+   "distance": "58 000 années-lumière",
+   "size": "220 années-lumière de diamètre",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m54": {
+   "description": "M54 est un grand et riche amas globulaire dans le Sagittaire et l'un des objets les plus éloignés de tout le catalogue Messier. Pendant des siècles, on a pensé qu'il s'agissait d'un amas globulaire lointain du halo de la Voie lactée, mais on sait maintenant qu'il est le noyau dense de la Galaxie naine elliptique du Sagittaire — une galaxie satellite actuellement absorbée par la nôtre.",
+   "fun_fact": "La découverte en 1994 que M54 appartient à la Galaxie naine du Sagittaire en a fait le premier amas globulaire connu pour appartenir à une autre galaxie. Alors que la Galaxie naine du Sagittaire est progressivement déchirée et absorbée par la Voie lactée, M54 deviendra finalement un véritable amas globulaire du halo de notre propre galaxie — un immigrant intergalactique arrivant sur des milliards d'années.",
+   "distance": "87 000 années-lumière",
+   "size": "~230 années-lumière de diamètre"
+  },
+  "dso/m55": {
+   "description": "M55 est un grand amas globulaire lâche dans le Sagittaire — l'un des amas globulaires de Messier les plus étendus et les moins concentrés. Il est facilement résolu en étoiles individuelles même à faible grossissement, avec une texture granulaire visible aux jumelles. Sa faible déclinaison australe limite sa visibilité depuis les latitudes nord, mais il est spectaculaire depuis l'hémisphère sud.",
+   "fun_fact": "La concentration stellaire inhabituellement faible de M55 le fait ressembler presque à un amas ouvert riche plutôt qu'à un amas globulaire typique. Ses étoiles sont réparties sur une région de près de 100 années-lumière de large, suggérant que l'auto-gravité de l'amas est relativement faible comparée à des amas globulaires plus centralisés comme M13 ou M3.",
+   "distance": "17 600 années-lumière",
+   "size": "~100 années-lumière de diamètre"
+  },
+  "dso/m56": {
+   "description": "M56 est un amas globulaire compact dans la Lyre, niché entre la Nébuleuse de l'Anneau (M57) et la brillante étoile double Albireo dans le Cygne. D'une magnitude de 8,3, il est une cible pour jumelles depuis des ciels sombres, et un petit télescope révèle une sphère granuleuse, modérément condensée, qui n'est que partiellement résolue même avec des ouvertures moyennes.",
+   "fun_fact": "M56 a été découvert par Messier en janvier 1779, au cours de la même saison d'observation durant laquelle il a également découvert la Nébuleuse de l'Anneau (M57). Bien qu'il se trouve dans le même champ binoculaire que Véga — la cinquième étoile la plus brillante du ciel — et à proximité de la célèbre Nébuleuse de l'Anneau, M56 est souvent négligé par les observateurs attirés par ses voisins plus célèbres.",
+   "distance": "32 900 années-lumière",
+   "size": "~68 années-lumière de diamètre"
+  },
+  "dso/m57": {
+   "description": "La Nébuleuse de l'Anneau est une nébuleuse planétaire dans la Lyre, une enveloppe de gaz lumineuse expulsée par une étoile mourante de type solaire.",
+   "fun_fact": "La Nébuleuse de l'Anneau s'étend à environ 20 km/s et finira par se disperser dans l'espace au cours des 10 000 prochaines années !",
+   "distance": "2 300 années-lumière",
+   "size": "1,3 année-lumière de diamètre",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m58": {
+   "description": "Messier 58 est une galaxie spirale barrée dans la Vierge et l'un des membres les plus brillants de l'Amas de la Vierge.",
+   "fun_fact": "Un trou noir supermassif d'environ 70 millions de masses solaires se trouve au cœur de M58, entouré d'une bande dense d'étoiles naissantes !",
+   "distance": "68 millions d'années-lumière",
+   "size": "133 000 années-lumière de diamètre"
+  },
+  "dso/m59": {
+   "description": "Messier 59 est une galaxie elliptique dans la Vierge, découverte en 1779 lors de la recherche d'une comète de passage.",
+   "fun_fact": "Le noyau de M59 tourne en sens inverse par rapport au reste de la galaxie, et environ 2 200 amas globulaires gravitent autour d'elle !",
+   "distance": "50 millions d'années-lumière",
+   "mass": "270 millions de masses solaires (trou noir central)"
+  },
+  "dso/m6": {
+   "description": "L'Amas du Papillon est un amas ouvert dans le Scorpion, nommé pour la disposition en forme de papillon de ses étoiles les plus brillantes.",
+   "fun_fact": "M6 a environ 100 millions d'années et contient plus de 300 étoiles, dont la géante orange BM Scorpii!",
+   "distance": "1 600 années-lumière",
+   "size": "25 années-lumière de diamètre",
+   "image_credit": "NOAO/AURA/NSF"
+  },
+  "dso/m60": {
+   "description": "Messier 60 est une galaxie elliptique géante dans la Vierge, la troisième galaxie elliptique géante la plus brillante de l'Amas de la Vierge.",
+   "fun_fact": "Le trou noir central de M60 pèse environ 4,5 milliards de Soleils – l'un des plus grands jamais découverts !",
+   "distance": "57 millions d'années-lumière"
+  },
+  "dso/m61": {
+   "description": "Messier 61 est une galaxie spirale barrée dans la Vierge et l'une des plus grandes galaxies de l'Amas de la Vierge.",
+   "fun_fact": "Huit supernovae ont été observées dans M61 - l'un des nombres les plus élevés pour une galaxie ! Messier lui-même l'a d'abord prise pour une comète.",
+   "distance": "52 millions d'années-lumière",
+   "size": "92 000 années-lumière de diamètre"
+  },
+  "dso/m62": {
+   "description": "M62 est un amas globulaire riche dans le Serpentaire — l'un des amas globulaires les plus proches du centre galactique et visiblement asymétrique, avec des étoiles plus densément regroupées sur le côté sud. Avec une magnitude de 6,6, c'est un bel objet pour jumelles, bien que sa faible déclinaison en fasse une cible de courte saison pour les observateurs de l'hémisphère nord.",
+   "fun_fact": "Le cœur décentré de M62 est une conséquence directe de sa proximité avec le centre galactique — de puissantes forces de marée provenant du bulbe central déforment l'amas et entraînent les étoiles vers le plan galactique. C'est aussi l'un des amas globulaires les plus dynamiquement évolués connus, montrant des signes d'effondrement du cœur et une densité inhabituellement élevée de pulsars millisecondes.",
+   "distance": "22 500 années-lumière",
+   "size": "~92 années-lumière de diamètre"
+  },
+  "dso/m63": {
+   "description": "La Galaxie du Tournesol est une galaxie spirale lumineuse dans les Chiens de Chasse dont les bras serrés, parsemés de régions de formation d'étoiles, lui confèrent une texture distinctive en forme de fleur sur les photographies à longue exposition. Avec une magnitude de 8,6, elle est visible aux jumelles depuis des ciels sombres et révèle facilement sa forme allongée et son noyau brillant dans de petits télescopes.",
+   "fun_fact": "M63 a été découverte par Pierre Méchain en 1779 — l'un des rares objets de Messier trouvés par Méchain plutôt que par Messier lui-même. Elle est membre du Groupe de M51, physiquement associée à la Galaxie du Tourbillon (M51), et montre des signes d'une interaction passée : un faible et ancien courant stellaire s'enroule autour de son disque externe.",
+   "distance": "29 millions d'années-lumière",
+   "size": "~100 000 années-lumière de diamètre"
+  },
+  "dso/m64": {
+   "description": "La Galaxie de l'Œil noir est une galaxie spirale dans la Chevelure de Bérénice, célèbre pour la bande sombre de poussière absorbante autour de son noyau.",
+   "fun_fact": "Les régions extérieures de M64 tournent en sens inverse de ses régions intérieures, probablement le résultat d'une ancienne fusion de galaxies !",
+   "distance": "17 millions d'années-lumière",
+   "size": "70 000 années-lumière de diamètre",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m65": {
+   "description": "M65 est une galaxie spirale dans le Lion, faisant partie du célèbre Triplet du Lion avec M66 et NGC 3628.",
+   "fun_fact": "Les galaxies du Triplet du Lion interagissent gravitationnellement, provoquant des queues de marée et des structures déformées !",
+   "distance": "35 millions d'années-lumière",
+   "size": "90 000 années-lumière de diamètre",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m66": {
+   "description": "M66 est le plus grand membre du Triplet du Lion, une galaxie spirale avec des bras spiraux asymétriques.",
+   "fun_fact": "L'apparence asymétrique de M66 est causée par les interactions gravitationnelles avec ses voisines M65 et NGC 3628 !",
+   "distance": "36 millions d'années-lumière",
+   "size": "95 000 années-lumière de diamètre",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m67": {
+   "description": "M67 est un bel amas ouvert dans le Cancer et l'un des amas ouverts les plus anciens et les mieux étudiés du ciel. Âgé d'environ 3,2 à 3,5 milliards d'années, il contient de nombreuses étoiles de masse et d'âge similaires à notre propre Soleil, ce qui en fait un laboratoire naturel pour étudier comment les étoiles de type solaire évoluent au cours du temps cosmique.",
+   "fun_fact": "Plusieurs étoiles de M67 ressemblent étroitement au Soleil en température, en masse et en âge — une combinaison rare qui a amené les chercheurs à se demander si le Soleil lui-même était originaire d'un amas comme M67. Parce que les étoiles naissent dans des amas qui se dispersent progressivement, le Soleil est presque certainement issu d'un groupe frère aujourd'hui dispersé il y a des milliards d'années — bien que l'amas n'ait jamais été identifié.",
+   "distance": "2 700 années-lumière",
+   "size": "~24 années-lumière de diamètre"
+  },
+  "dso/m68": {
+   "description": "M68 est un riche amas globulaire dans l'Hydre — un objet austral et l'un des rares amas globulaires les mieux placés dans le ciel de la fin de l'hiver et du printemps. Avec une magnitude de 8,2, il récompense un petit télescope avec un noyau modérément condensé et un grand halo d'étoiles résolues sur les champs d'étoiles relativement clairsemés de l'Hydre.",
+   "fun_fact": "Malgré sa relative proximité — permettant de bien distinguer les étoiles individuelles avec des télescopes d'amateur — M68 est souvent négligé en raison de sa déclinaison très méridionale. Depuis les latitudes supérieures à 50°N, il dépasse à peine l'horizon ; depuis l'hémisphère sud, cependant, il s'élève haut dans le ciel et constitue un magnifique amas globulaire à observer.",
+   "distance": "33 600 années-lumière",
+   "size": "~117 années-lumière de diamètre"
+  },
+  "dso/m69": {
+   "description": "M69 est un amas globulaire modérément riche dans le Sagittaire, positionné près du centre galactique. À la magnitude 7,7, c'est un objet visible aux jumelles depuis un ciel sombre qui révèle, avec un petit télescope, une boule d'étoiles partiellement résolue et un centre brillant et granuleux.",
+   "fun_fact": "M69 orbite exceptionnellement près du centre galactique — à seulement environ 6 200 années-lumière du cœur de la Voie lactée — et a par conséquent une concentration exceptionnellement élevée d'éléments plus lourds pour un amas globulaire. Les amas globulaires plus proches du centre galactique ont tendance à être chimiquement enrichis par de multiples générations de formation d'étoiles dans le bulbe environnant.",
+   "distance": "29 700 années-lumière",
+   "size": "environ 61 années-lumière de diamètre"
+  },
+  "dso/m7": {
+   "description": "L'Amas de Ptolémée est un amas ouvert brillant dans le Scorpion, l'un des amas les plus remarquables visibles à l'œil nu.",
+   "fun_fact": "M7 a été enregistré pour la première fois par Ptolémée en 130 après J.-C. et a été observé pendant près de 2 000 ans !",
+   "distance": "980 années-lumière",
+   "size": "25 années-lumière de diamètre",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m70": {
+   "description": "M70 est un amas globulaire compact dans le Sagittaire, ressemblant étroitement à son quasi-jumeau M69 tant par son apparence que par sa distance. De magnitude 8,1, c'est un bel objet pour petit télescope qui montre un noyau compact et des indices de résolution dans le halo extérieur. Il se trouve à seulement 2° de M69 et les deux peuvent être observés dans le même champ de jumelles.",
+   "fun_fact": "M70 a brièvement gagné en notoriété en 1995 comme l'emplacement approximatif dans le ciel où Alan Hale et Thomas Bopp ont découvert indépendamment la comète Hale-Bopp — la comète la plus brillante de la fin du XXe siècle. Les deux observateurs sont initialement passés près de M70 tout en cherchant d'autres cibles et ont remarqué la comète comme un objet flou inattendu à proximité.",
+   "distance": "29 400 années-lumière",
+   "size": "environ 67 années-lumière de diamètre"
+  },
+  "dso/m71": {
+   "description": "M71 est un amas globulaire inhabituel dans la constellation de la Flèche, débattu par les astronomes pendant des décennies qui ne pouvaient pas décider s'il s'agissait d'un amas ouvert ancien très riche ou d'un amas globulaire jeune très lâche. Une analyse moderne confirme qu'il s'agit bien d'un amas globulaire, mais d'une concentration exceptionnellement faible, avec relativement peu d'étoiles et un noyau moins dominant que les amas globulaires typiques.",
+   "fun_fact": "La structure lâche de M71 a fait qu'il n'a pas été répertorié dans de nombreux catalogues anciens, car il ressemblait davantage à un champ d'Étoiles riche qu'à un véritable amas. À seulement 12 000 années-lumière, c'est l'un des amas globulaires de Messier les plus proches, et ses Étoiles sont partiellement résolues dans un petit Télescope sous un ciel sombre — lui donnant l'apparence d'un champ d'Étoiles riche, compact et légèrement condensé.",
+   "distance": "12 000 années-lumière",
+   "size": "environ 25 années-lumière de diamètre"
+  },
+  "dso/m72": {
+   "description": "Messier 72 est un amas globulaire faible et lointain dans le Verseau, découvert par Pierre Méchain en 1780.",
+   "fun_fact": "M72 regroupe environ 168 000 masses solaires d'étoiles dans une boule âgée d'environ 9,5 milliards d'années, dont 43 étoiles variables !",
+   "distance": "55 000 années-lumière"
+  },
+  "dso/m73": {
+   "description": "Messier 73 est un petit groupe de quatre étoiles dans le Verseau qui ne semble être qu'un amas.",
+   "fun_fact": "Les astronomes ont débattu pendant des décennies pour savoir si M73 était un véritable amas. En 2002, la question a été tranchée : les quatre étoiles se trouvent à des distances très différentes et ne s'alignent que par hasard !",
+   "distance": "1 000 à 2 300 années-lumière (les étoiles individuelles)"
+  },
+  "dso/m74": {
+   "description": "La galaxie du Fantôme est une galaxie spirale de face située dans les Poissons, connue pour sa parfaite structure spirale de grand dessein.",
+   "fun_fact": "M74 est surnommée la Galaxie Fantôme en raison de sa très faible brillance de surface, ce qui la rend difficile à observer !",
+   "distance": "32 millions d'années-lumière",
+   "size": "95 000 années-lumière de diamètre",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m75": {
+   "description": "Messier 75 est un amas globulaire lointain et très concentré dans le Sagittaire.",
+   "fun_fact": "M75 est l'un des amas globulaires les plus compacts connus, et on pense qu'il est le vestige d'une galaxie naine que la Voie lactée a engloutie il y a longtemps !",
+   "distance": "68 000 années-lumière",
+   "size": "134 années-lumière de diamètre"
+  },
+  "dso/m76": {
+   "description": "La Petite Haltère est une nébuleuse planétaire dans Persée, avec une forme distinctive en huit — une cousine plus petite de M27, la Nébuleuse de l'Haltère dans la Vulpecula. Bien que l'entrée la plus faible du catalogue Messier, elle récompense l'observation patiente avec de petits télescopes et révèle une belle structure dans des instruments plus grands, avec deux lobes plus brillants flanquant une taille plus faible.",
+   "fun_fact": "M76 a été initialement cataloguée comme deux objets distincts — NGC 650 et NGC 651 — parce que les premiers observateurs ont décrit les deux lobes brillants indépendamment. C'est une nébuleuse planétaire bipolaire formée lorsque le flux d'une étoile mourante a été pincé à l'équateur, créant deux lobes en expansion le long de l'axe polaire, tandis que du gaz s'échappe également vers l'extérieur au niveau de sa partie médiane.",
+   "distance": "environ 2 500 années-lumière",
+   "size": "environ 2 années-lumière de diamètre"
+  },
+  "dso/m77": {
+   "description": "M77 est une galaxie spirale barrée dans la Baleine contenant un noyau galactique actif alimenté par un trou noir supermassif.",
+   "fun_fact": "M77 abrite un noyau galactique actif avec un trou noir 15 millions de fois plus massif que notre Soleil !",
+   "distance": "47 millions d'années-lumière",
+   "size": "120 000 années-lumière de diamètre",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m78": {
+   "description": "M78 est la nébuleuse par réflexion diffuse la plus brillante du ciel, située dans Orion près des célèbres étoiles de la Ceinture.",
+   "fun_fact": "M78 contient environ 45 jeunes étoiles variables de type T Tauri, des étoiles très jeunes qui sont encore en phase de contraction vers la séquence principale !",
+   "distance": "1 600 années-lumière",
+   "size": "4 années-lumière de diamètre",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m79": {
+   "description": "M79 est un amas globulaire compact dans le Lièvre — l'un des très rares amas globulaires de Messier les mieux placés dans le ciel d'hiver, lorsque la plupart des amas globulaires sont sous l'horizon ou à peine levés. Avec une magnitude de 8,0, il nécessite un télescope pour révéler son noyau compact et son faible halo, se détachant des champs d'étoiles hivernaux relativement clairsemés.",
+   "fun_fact": "M79 est considéré par certains astronomes comme un intrus provenant de la Galaxie naine du Grand Chien — une galaxie satellite perturbée actuellement absorbée par la Voie lactée. Si tel est le cas, M79 ne s'est pas formé au sein du propre système globulaire de la Voie lactée, mais a été capturé à partir d'une galaxie en approche et est maintenant lentement intégré dans le halo de notre galaxie.",
+   "distance": "41 000 années-lumière",
+   "size": "environ 104 années-lumière de diamètre"
+  },
+  "dso/m8": {
+   "description": "La Nébuleuse de la Lagune est un gigantesque nuage interstellaire dans le Sagittaire, l'une des nébuleuses les plus belles et les plus brillantes du ciel d'été.",
+   "fun_fact": "La nébuleuse de la Lagune contient Herschel 36, l'une des étoiles les plus massives et les plus lumineuses connues !",
+   "distance": "4 100 années-lumière",
+   "size": "55 années-lumière de diamètre",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m80": {
+   "description": "M80 est l'un des amas globulaires les plus denses de la Voie lactée, une boule compacte et riche de plusieurs centaines de milliers d'étoiles dans le Scorpion. D'une magnitude de 7,2, c'est une excellente cible pour les jumelles et il révèle un noyau brillant et très concentré dans les petits télescopes.",
+   "fun_fact": "En 1860, une nova a éclaté au sein de M80 — désignée T Scorpii — devenant brièvement aussi brillante que l'amas lui-même et visible à l'œil nu. Elle reste l'une des deux seules novae jamais observées au sein d'un amas globulaire. Les novae dans les amas globulaires proviennent d'interactions entre étoiles binaires, qui sont beaucoup plus courantes dans l'environnement stellaire dense du cœur d'un amas globulaire.",
+   "distance": "32 600 années-lumière",
+   "size": "environ 84 années-lumière de diamètre"
+  },
+  "dso/m81": {
+   "description": "M81 est une galaxie spirale de grand style dans la Grande Ourse, l'une des galaxies les plus brillantes visibles depuis la Terre.",
+   "fun_fact": "M81 interagit gravitationnellement avec la galaxie voisine M82, déclenchant une intense formation d'étoiles dans M82 !",
+   "distance": "12 millions d'années-lumière",
+   "size": "90 000 années-lumière de diamètre",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m82": {
+   "description": "La Galaxie du Cigare est une galaxie à flambée d'étoiles dans la Grande Ourse, connue pour son orientation de profil et sa formation stellaire intense.",
+   "fun_fact": "M82 forme des étoiles 10 fois plus vite que notre Voie lactée en raison de l'interaction gravitationnelle avec la galaxie voisine M81!",
+   "distance": "12 millions d'années-lumière",
+   "size": "37 000 années-lumière de diamètre",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m83": {
+   "description": "La Galaxie du Moulinet austral est une galaxie spirale barrée dans l'Hydre, l'une des spirales barrées les plus proches et les plus brillantes de notre ciel.",
+   "fun_fact": "M83 a produit six supernovae observées, plus que toute autre galaxie – un record de production de supernovae !",
+   "distance": "15 millions d'années-lumière",
+   "size": "55 000 années-lumière de diamètre",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m84": {
+   "description": "Messier 84 est une galaxie elliptique géante au cœur encombré de l'amas de la Vierge.",
+   "fun_fact": "M84 éjecte deux jets de matière de son noyau, propulsés par un trou noir d'environ 1,5 milliard de masses solaires !",
+   "distance": "55 millions d'années-lumière"
+  },
+  "dso/m85": {
+   "description": "Messier 85 est une galaxie lenticulaire située à la périphérie de l'Amas de la Vierge, dans la Chevelure de Bérénice.",
+   "fun_fact": "Des ondulations et des coquilles dans les régions externes de M85 sont les vestiges d'une fusion de galaxies il y a 4 à 7 milliards d'années !",
+   "distance": "60 millions d'années-lumière",
+   "size": "120 600 années-lumière de diamètre"
+  },
+  "dso/m86": {
+   "description": "Messier 86 est une grande galaxie elliptique dans l'Amas de la Vierge, formant une paire frappante avec M84, située à proximité.",
+   "fun_fact": "M86 se précipite vers nous à 244 km/s – l'approche la plus rapide de tout objet Messier ! Son passage à travers l'amas laisse une longue traînée de gaz chaud arraché.",
+   "distance": "52 millions d'années-lumière"
+  },
+  "dso/m87": {
+   "description": "M87 est une galaxie elliptique supergéante dans la Vierge, l'une des galaxies les plus massives de l'univers local.",
+   "fun_fact": "Le trou noir central de M87 a été le premier jamais imagé par le Télescope de l'Horizon des Événements en 2019 - il a 6,5 milliards de masses solaires !",
+   "distance": "53 millions d'années-lumière",
+   "size": "240 000 années-lumière de diamètre",
+   "mass": "2,4 mille milliards de masses solaires",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m88": {
+   "description": "Messier 88 est une élégante galaxie spirale dans la Chevelure de Bérénice, l'un des quinze objets de Messier dans l'Amas de la Vierge.",
+   "fun_fact": "M88 plonge vers le centre de l'Amas de la Vierge et y arrivera dans 200 à 300 millions d'années, son gaz extérieur étant arraché au fur et à mesure de sa chute !",
+   "distance": "59 millions d'années-lumière",
+   "size": "131 000 années-lumière de diamètre"
+  },
+  "dso/m89": {
+   "description": "Messier 89 est une galaxie elliptique dans la Vierge, découverte par Charles Messier en 1781.",
+   "fun_fact": "M89 pourrait être presque une sphère parfaite – ce qui est inhabituel pour une galaxie elliptique, qui sont normalement nettement aplaties !",
+   "distance": "50 millions d'années-lumière"
+  },
+  "dso/m9": {
+   "description": "M9 est un amas globulaire compact dans le Serpentaire — l'un des amas globulaires de Messier les plus affectés par l'absorption de la poussière interstellaire. Il se trouve en direction du bulbe galactique, où une épaisse poussière l'atténue considérablement. Sans cette occultation, M9 apparaîtrait près d'une magnitude plus lumineux et serait visible à l'œil nu.",
+   "fun_fact": "M9 subit une absorption de poussière interstellaire plus importante que presque tout autre amas globulaire Messier — environ 1,3 magnitudes d'atténuation par rapport à une ligne de visée dégagée. Deux amas globulaires plus petits (NGC 6342 et NGC 6356) se trouvent à environ 1° de M9, ce qui en fait le centre d'un regroupement remarquable de trois amas globulaires dans une petite portion de ciel.",
+   "distance": "25 800 années-lumière",
+   "size": "environ 70 années-lumière de diamètre"
+  },
+  "dso/m90": {
+   "description": "Messier 90 est une grande galaxie spirale dans la Vierge, et l'exemple typique d'une galaxie « anémique ».",
+   "fun_fact": "M90 a vu son gaz formateur d'étoiles arraché par sa plongée à travers l'Amas de la Vierge, laissant des queues de gaz incandescent mesurant jusqu'à 260 000 années-lumière de long !",
+   "distance": "59 millions d'années-lumière",
+   "size": "132 000 années-lumière de diamètre"
+  },
+  "dso/m91": {
+   "description": "Messier 91 est une galaxie spirale barrée dans la Chevelure de Bérénice et l'objet le plus faible du catalogue Messier.",
+   "fun_fact": "M91 a été perdue pendant près de 200 ans ! Messier a enregistré sa position en utilisant la mauvaise galaxie de référence, et elle n'a été réidentifiée qu'en 1969 par un astronome amateur.",
+   "distance": "63 millions d'années-lumière",
+   "size": "105 500 années-lumière de diamètre"
+  },
+  "dso/m92": {
+   "description": "M92 est un amas globulaire brillant dans Hercule, souvent négligé en raison de sa proximité avec le plus célèbre M13.",
+   "fun_fact": "M92 est l'un des plus anciens amas globulaires, âgé d'environ 14,2 milliards d'années – presque aussi vieux que l'univers !",
+   "distance": "26 700 années-lumière",
+   "size": "109 années-lumière de diamètre",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m93": {
+   "description": "M93 est un amas ouvert brillant et compact dans la Poupe, situé dans la riche Voie lactée australe et facilement observable aux jumelles. Ses quelque 80 étoiles sont disposées en une forme frappante de coin ou de papillon et comprennent plusieurs supergéantes bleues chaudes, ce qui en fait l'un des amas ouverts les plus attrayants du ciel d'hiver.",
+   "fun_fact": "M93 est relativement jeune — environ 100 millions d'années — avec des étoiles bleues et bleu-blanc dominantes qui n'ont pas encore évolué en géantes. C'est l'un des amas de Messier les plus austraux, et depuis les latitudes au nord d'environ 50°N, il ne s'élève jamais très haut au-dessus de l'horizon.",
+   "distance": "3 600 années-lumière",
+   "size": "environ 23 années-lumière de diamètre"
+  },
+  "dso/m94": {
+   "description": "M94 est une galaxie spirale dans les Chiens de Chasse avec un anneau intérieur brillant où une formation d'étoiles active est en cours.",
+   "fun_fact": "L'anneau intérieur de M94 est un anneau de formation stellaire intense où de nouvelles étoiles se forment à un rythme très élevé !",
+   "distance": "16 millions d'années-lumière",
+   "size": "50 000 années-lumière de diamètre",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m95": {
+   "description": "Messier 95 est une galaxie spirale barrée dans le Lion, faisant partie du Groupe de M96 avec M96 et M105.",
+   "fun_fact": "Un anneau de formation stellaire intense d'environ 70 000 années-lumière de large entoure le noyau de M95, et une supernova y a éclaté en 2012!",
+   "distance": "33 millions d'années-lumière",
+   "size": "80 000 années-lumière de diamètre"
+  },
+  "dso/m96": {
+   "description": "Messier 96 est une galaxie spirale dans le Lion, le membre le plus brillant du Groupe de galaxies de M96.",
+   "fun_fact": "M96 est à peu près de la même taille et de la même masse que notre propre Voie lactée, mais étonnamment asymétrique – sa poussière et son gaz sont répartis de manière inégale dans ses bras!",
+   "distance": "31 millions d'années-lumière",
+   "size": "78 000 années-lumière de diamètre"
+  },
+  "dso/m97": {
+   "description": "La Nébuleuse du Hibou est une nébuleuse planétaire située dans la Grande Ourse, nommée ainsi en raison de son apparence de hibou avec deux taches sombres.",
+   "fun_fact": "Les yeux de hibou sombres dans M97 sont des cavités tridimensionnelles dans la nébuleuse, alignées avec notre ligne de visée !",
+   "distance": "2 030 années-lumière",
+   "size": "2 années-lumière de diamètre",
+   "image_credit": "Gemini Observatory/NOIRLab/NSF/AURA"
+  },
+  "dso/m98": {
+   "description": "Messier 98 est une galaxie spirale dans la Chevelure de Bérénice, vue presque par la tranche et faisant partie de l'Amas de la Vierge.",
+   "fun_fact": "M98 est l'une des rares galaxies se déplaçant vers nous plutôt que s'éloignant, se rapprochant à environ 140 km/s !",
+   "distance": "44 millions d'années-lumière"
+  },
+  "dso/m99": {
+   "description": "Messier 99 est une galaxie spirale de grand style dans la Chevelure de Bérénice, montrant des bras spiraux clairs et bien dessinés.",
+   "fun_fact": "M99 fut l'un des tout premiers objets reconnus comme spiraux, esquissé par Lord Rosse en 1846 – et elle forme des étoiles trois fois plus vite que les galaxies similaires !",
+   "distance": "45 millions d'années-lumière",
+   "size": "98 000 années-lumière de diamètre"
+  },
+  "dso/n47_tucanae": {
+   "description": "47 Tucanae (NGC 104) est le deuxième amas globulaire le plus brillant du ciel, une boule dense d'environ un million d'étoiles anciennes orbitant autour de la Voie lactée dans la constellation du Toucan. Situé à environ 14 500 années-lumière, il apparaît à l'œil nu comme une étoile floue de quatrième magnitude, mais un télescope résout son noyau compressé en un extraordinaire essaim de soleils dorés et bleu-blanc. Ses étoiles se sont formées il y a environ 13 milliards d'années, ce qui rend l'amas presque aussi vieux que l'univers lui-même.",
+   "fun_fact": "47 Tucanae est une usine cosmique à pulsars : les astronomes y ont découvert au moins 35 pulsars millisecondes tournant des centaines de fois par seconde en son sein — plus que dans tout autre amas globulaire connu — le résultat de rencontres stellaires rapprochées qui recyclent de vieilles étoiles à neutrons en les faisant tourner plus vite.",
+   "distance": "~14 500 années-lumière",
+   "size": "~120 années-lumière de diamètre",
+   "image_credit": "ESO"
+  },
+  "dso/ngc_2903": {
+   "description": "NGC 2903 est une galaxie spirale barrée brillante située dans le Lion, souvent appelée « l'objet de Messier que Messier a manqué » — c'est l'une des galaxies les plus proéminentes du ciel qui n'a pas été incluse dans son célèbre catalogue. Avec une magnitude de 8,9, elle est facilement visible aux jumelles et révèle une magnifique structure spirale dans des télescopes de taille moyenne.",
+   "fun_fact": "NGC 2903 possède l'une des plus fortes concentrations de « points chauds » de formation d'étoiles connus dans la région de la barre centrale d'une galaxie — des amas denses de jeunes étoiles massives illuminés par une formation stellaire intense. Elle est utilisée comme référence pour l'étude de l'activité de sursaut de formation d'étoiles dans les galaxies spirales barrées.",
+   "distance": "30 millions d'années-lumière",
+   "size": "~80 000 années-lumière de diamètre",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/ngc_6543": {
+   "description": "La Nébuleuse de l'Œil de Chat est l'une des nébuleuses planétaires les plus complexes structurellement connues — le gaz expulsé d'une étoile mourante sculpté en coquilles concentriques, jets et nœuds brillants visibles sur les images de Hubble. Dans les petits télescopes, elle apparaît comme un disque bleu-vert vif dans le Dragon, l'un des objets les plus colorés du ciel d'automne.",
+   "fun_fact": "En 1864, l'astronome William Huggins a pointé un spectroscope sur la Nébuleuse de l'Œil de Chat et a découvert qu'elle était composée de gaz incandescent plutôt que d'étoiles non résolues — la première fois que la nature d'une nébuleuse planétaire était confirmée. Cette découverte a fondé le domaine de la spectroscopie nébulaire et a renversé l'idée dominante selon laquelle toutes les nébuleuses étaient des amas d'étoiles lointains.",
+   "distance": "~3 300 années-lumière",
+   "size": "~0,5 année-lumière de diamètre",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/north_america_nebula": {
+   "description": "La Nébuleuse de l'Amérique du Nord (NGC 7000) est une grande nébuleuse en émission dans le Cygne dont la forme ressemble remarquablement au continent nord-américain, avec une région du golfe du Mexique. S'étendant sur environ 120 minutes d'arc — soit environ quatre fois le diamètre de la pleine Lune — elle se trouve à environ 2 600 années-lumière et mesure plus de 100 années-lumière de large.",
+   "fun_fact": "Malgré sa magnitude visuelle de 4, la nébuleuse est trop grande et diffuse pour être vue à l'œil nu sous la plupart des cieux — pourtant elle se photographie magnifiquement, révélant le Mur du Cygne, un arc dense de formation d'Étoiles intense le long de son bord sud.",
+   "distance": "~2 590 années-lumière",
+   "size": "~140 années-lumière de diamètre",
+   "image_credit": "Giuseppe Donatiello/CC0"
+  },
+  "dso/omega_centauri": {
+   "description": "Omega Centauri est l'amas globulaire le plus grand et le plus massif en orbite autour de la Voie lactée, contenant environ 10 millions d'étoiles regroupées dans une sphère d'environ 150 années-lumière de diamètre. Il est facilement visible à l'œil nu comme une étoile floue dans le Centaure, et se résout en une boule d'étoiles à couper le souffle à travers des jumelles ou n'importe quel télescope.",
+   "fun_fact": "Contrairement aux amas globulaires typiques, Omega Centauri contient des étoiles d'âges et de compositions chimiques très différents — un signe qu'il pourrait être le noyau dépouillé d'une galaxie naine qui a été déchirée et avalée par la Voie lactée il y a des milliards d'années. Il pourrait même abriter un trou noir central de masse intermédiaire.",
+   "distance": "17 090 années-lumière",
+   "size": "~150 années-lumière de diamètre",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/saturn_nebula": {
+   "description": "La Nébuleuse de la Saturne est une nébuleuse planétaire située dans le Verseau, nommée pour sa ressemblance avec la planète Saturne — des extensions appelées anses dépassent de chaque côté comme des poignées d'anneau, visibles dans des télescopes de taille moyenne. D'une magnitude de 8,0, c'est l'une des nébuleuses planétaires les plus brillantes du ciel et elle montre une structure complexe dans des instruments plus grands.",
+   "fun_fact": "William Herschel a découvert la Nébuleuse de Saturne en 1782 et a noté son apparence saturnienne. Les observations modernes révèlent au moins quatre enveloppes de gaz distinctes entourant la naine blanche centrale, reflétant de multiples épisodes de perte de masse dans les dernières étapes de la vie de l'étoile.",
+   "distance": "~5 000 années-lumière",
+   "size": "~1 année-lumière de diamètre",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/sculptor_galaxy": {
+   "description": "La Galaxie du Sculpteur est l'une des galaxies spirales vues par la tranche les plus brillantes et les plus belles, visible depuis la Terre. Elle apparaît comme une lueur allongée dans la constellation australe du Sculpteur. C'est l'une des galaxies à sursaut de formation d'étoiles les plus proches — une galaxie subissant un intense sursaut de formation d'étoiles — visible aux astronomes amateurs munis de jumelles depuis des cieux sombres.",
+   "fun_fact": "La Galaxie du Sculpteur est l'un des membres les plus brillants du Groupe du Sculpteur — le groupe de galaxies le plus proche de notre propre Groupe Local. Sa région centrale à sursaut de formation d'étoiles produit de nouvelles étoiles à un rythme plusieurs fois supérieur à celui de la Voie lactée, entraînée par des interactions passées avec des galaxies voisines.",
+   "distance": "11,4 millions d'années-lumière",
+   "size": "~90 000 années-lumière de diamètre",
+   "image_credit": "ESO/VST"
+  },
+  "dso/sgr_a_star": {
+   "description": "Sagittarius A* (Sgr A*) est le trou noir supermassif au centre de la Voie lactée, situé à 26 000 années-lumière en direction du Sagittaire. Avec une masse d'environ 4 millions de masses solaires compressée dans une région plus petite que notre système solaire, il est si dense que même la lumière ne peut échapper à son horizon des événements.",
+   "fun_fact": "En 2022, la collaboration Event Horizon Telescope a publié la première image directe de Sgr A*, révélant un anneau lumineux de gaz surchauffé entourant son ombre — produite en combinant des données d'observatoires radio répartis sur toute la planète.",
+   "distance": "26 000 années-lumière",
+   "size": "Diamètre de l'horizon des événements : ~24 millions de km",
+   "image_credit": "EHT Collaboration"
+  },
+  "dso/smc": {
+   "description": "Le Petit Nuage de Magellan est une galaxie naine irrégulière satellite de la Voie lactée, associée à son grand frère, le LMC. Ensemble, ils sont lentement déchirés par la gravité de la Voie lactée, laissant derrière eux un vaste courant de gaz à travers le ciel.",
+   "fun_fact": "En étudiant les étoiles variables céphéides dans le Petit Nuage de Magellan entre 1908 et 1912, Henrietta Swan Leavitt a découvert la loi période-luminosité — la percée qui a permis pour la première fois aux astronomes de mesurer les distances à travers l'univers !",
+   "distance": "200 000 années-lumière",
+   "size": "7 000 années-lumière de diamètre",
+   "image_credit": "ESO/VISTA VMC"
+  },
+  "dso/t_crb": {
+   "description": "T Coronae Borealis (T CrB) est une nova récurrente dans la Couronne boréale — un système binaire composé d'une géante rouge et d'une naine blanche. La naine blanche accumule périodiquement suffisamment d'hydrogène de son compagnon pour déclencher une explosion thermonucléaire.",
+   "fun_fact": "T CrB a éclaté pour la dernière fois en 1946, atteignant brièvement la magnitude 2,0 et devenant visible à l'œil nu. Les astronomes prévoient qu'une autre éruption est imminente — restez à l'affût !",
+   "distance": "3 000 années-lumière",
+   "size": "0,2 UA de séparation orbitale"
+  },
+  "dso/tarantula_nebula": {
+   "description": "La Nébuleuse de la Tarentule est la région de formation d'étoiles la plus grande et la plus lumineuse du Groupe Local, une vaste nébuleuse en émission intégrée au Grand Nuage de Magellan, s'étendant sur environ 600 années-lumière. Bien qu'elle se trouve à 163 000 années-lumière, elle est suffisamment lumineuse pour être visible à l'œil nu.",
+   "fun_fact": "Si la Nébuleuse de la Tarentule était aussi proche que la Nébuleuse d'Orion, elle serait assez brillante pour projeter des ombres la nuit et couvrirait la moitié du ciel visible !",
+   "distance": "163 000 années-lumière",
+   "size": "600 années-lumière de diamètre",
+   "image_credit": "ESO/R. Fosbury/ST-ECF"
+  },
+  "dso/v838_mon": {
+   "description": "V838 Monocerotis est une étoile variable atypique de la constellation de la Licorne qui a connu une éruption spectaculaire en 2002, devenant brièvement l'une des étoiles les plus lumineuses de la Voie lactée. Bien que beaucoup trop faible pour les observateurs visuels aujourd'hui, son écho lumineux en expansion — un front d'onde de lumière illuminant d'anciennes coquilles de poussière — a produit certaines des images les plus spectaculaires jamais prises par le télescope spatial Hubble.",
+   "fun_fact": "La nature de l'éruption de V838 Mon reste débattue. La théorie principale est une fusion stellaire — deux étoiles s'enroulant l'une autour de l'autre et entrant en collision — plutôt qu'une nova classique ou une éruption de supergéante. Si cela est confirmé, ce fut le premier aperçu en temps réel d'une « nova rouge lumineuse », une classe rare d'explosion causée par des fusions stellaires ; des événements similaires ont depuis été découverts dans d'autres galaxies.",
+   "distance": "~20 000 années-lumière",
+   "size": "~3 années-lumière (étendue de l'écho lumineux)",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/willman_1": {
+   "description": "Willman 1 est une galaxie naine satellite ultra-faible de la Voie lactée, découverte en 2004 par Beth Willman dans les données du Sloan Digital Sky Survey. C'est l'une des galaxies les moins lumineuses connues et l'un des laboratoires les plus extrêmes pour la matière noire dans l'univers.",
+   "fun_fact": "Pour chaque unité de matière ordinaire dans Willman 1, il y a environ 660 unités de matière noire, ce qui en fait l'un des objets les plus dominés par la matière noire jamais découverts. Ses étoiles montrent également des signes de disruption marémotrice alors que la Voie lactée le déchire lentement.",
+   "distance": "~130 000 années-lumière",
+   "size": "~130 années-lumière de diamètre",
+   "image_credit": "Sky Map team (it's very faint)"
+  },
+  "moon/ariel": {
+   "description": "Ariel possède la surface la plus jeune et la plus brillante des cinq lunes majeures d'Uranus. Son paysage est dominé par un réseau de vallées profondes et de plaines lisses qui ont été resurfacées il y a longtemps par un fluide — probablement de l'eau ou des mélanges d'eau et d'ammoniac — remontant de l'intérieur et inondant les terrains anciens.",
+   "fun_fact": "Les vallées d'Ariel peuvent atteindre 10 km de profondeur — bien plus profond que le Grand Canyon. Les observations du Télescope Spatial James Webb ont depuis détecté de la glace de dioxyde de carbone à la surface d'Ariel, suggérant une chimie de surface continue, alimentée par des particules chargées provenant du champ magnétique d'Uranus.",
+   "distance": "191 020 km de Uranus",
+   "size": "1 158 km de diamètre",
+   "image_credit": "NASA/JPL",
+   "search_subtext": "Lune d'Uranus"
+  },
+  "moon/callisto": {
+   "description": "Callisto est la plus éloignée des lunes galiléennes et l'un des corps les plus cratérisés du système solaire, sa surface ancienne conservant un témoignage des impacts du début du système solaire.",
+   "fun_fact": "Callisto orbite au-delà des principales ceintures de radiation de Jupiter, ce qui en fait la plus sûre des lunes galiléennes pour la future exploration humaine — elle est parfois appelée la 'lune passerelle'.",
+   "distance": "1 882 700 km de Jupiter",
+   "size": "4 821 km de diamètre",
+   "image_credit": "NASA/JPL/DLR",
+   "search_subtext": "Lune de Jupiter"
+  },
+  "moon/deimos": {
+   "description": "Deimos est la plus petite et la plus éloignée des deux lunes de Mars, avec une surface lisse et couverte de poussière qui lui donne une apparence plus ronde que Phobos. Comme son compagnon, on pense qu'il s'agit d'un astéroïde capturé de la ceinture externe.",
+   "fun_fact": "Deimos est si petit et si éloigné que depuis la surface martienne, il ressemble à peine plus qu'à une étoile brillante, mettant environ 30 heures à traverser lentement le ciel nocturne.",
+   "distance": "23 460 km de Mars",
+   "size": "15 × 12 × 11 km",
+   "image_credit": "NASA/JPL-Caltech/University of Arizona",
+   "search_subtext": "Lune de Mars"
+  },
+  "moon/dione": {
+   "description": "Dioné est une lune glacée de Saturne avec une face avant fortement cratérisée et un hémisphère arrière parcouru de falaises de glace brillantes — des lignes de fracture où d'anciennes forces tectoniques ont exposé de la glace fraîche venue d'en dessous. Les données gravitationnelles de Cassini suggèrent l'existence d'un océan liquide souterrain sous la croûte.",
+   "fun_fact": "Dioné partage son orbite avec deux petites lunes, Hélène et Pollux, qui sont bloquées à 60° en avance et en retard sur elle, aux points d'équilibre gravitationnel appelés points de Lagrange. Hélène en particulier peut être observée se déplaçant comme un auto-stoppeur cosmique sur les images de Cassini.",
+   "distance": "377 396 km de Saturne",
+   "size": "1 122 km de diamètre",
+   "image_credit": "NASA/JPL-Caltech/SSI",
+   "search_subtext": "Lune de Saturne"
+  },
+  "moon/europa": {
+   "description": "Europe est la deuxième lune galiléenne et on pense qu'elle abrite un vaste océan d'eau liquide sous sa croûte glacée, ce qui en fait l'un des endroits les plus prometteurs pour la recherche de vie.",
+   "fun_fact": "L'océan souterrain d'Europe pourrait contenir deux fois plus d'eau liquide que tous les océans de la Terre réunis, maintenue liquide par le chauffage par effet de marée de Jupiter.",
+   "distance": "671 100 km de Jupiter",
+   "size": "3 122 km de diamètre",
+   "image_credit": "NASA/JPL-Caltech/SETI Institute",
+   "search_subtext": "Lune de Jupiter"
+  },
+  "moon/ganymede": {
+   "description": "Ganymède est la plus grande lune du système solaire — plus grande encore que la planète Mercure. C'est la seule lune connue pour générer son propre champ magnétique.",
+   "fun_fact": "Ganymède est plus grand que Mercure en taille, bien qu'il n'ait qu'environ la moitié de sa masse. Son champ magnétique interne crée sa propre magnétosphère miniature au sein de celle de Jupiter, qui est bien plus grande.",
+   "distance": "1 070 400 km de Jupiter",
+   "size": "5 268 km de diamètre",
+   "image_credit": "NASA/JPL/DLR",
+   "search_subtext": "Lune de Jupiter"
+  },
+  "moon/iapetus": {
+   "description": "Japet est l'une des lunes les plus distinctives de Saturne : son hémisphère avant est recouvert d'un matériau noir de jais, aussi sombre que du charbon, tandis que son hémisphère arrière est de glace d'un blanc éclatant. Cette apparence bicolore extrême a intrigué Giovanni Cassini lorsqu'il a découvert la lune en 1671, et le contraste est si frappant qu'il est visible même avec de petits télescopes.",
+   "fun_fact": "Japet arbore également une imposante crête équatoriale s'élevant à 20 km de haut — plus haute que n'importe quelle montagne sur Terre — s'étendant sur des milliers de kilomètres autour de son équateur. Son origine est inconnue : il pourrait s'agir du vestige d'un anneau effondré, ou d'un ancien plissement tectonique, formé lorsque la lune tournait beaucoup plus vite il y a longtemps.",
+   "distance": "3 560 820 km de Saturne",
+   "size": "1 469 km de diamètre",
+   "image_credit": "NASA/JPL-Caltech/SSI",
+   "search_subtext": "Lune de Saturne"
+  },
+  "moon/io": {
+   "description": "Io est la plus intérieure des quatre grandes lunes galiléennes de Jupiter et le corps le plus volcaniquement actif du système solaire.",
+   "fun_fact": "Io possède des centaines de volcans actifs, certains projetant des fontaines de lave de plusieurs dizaines de kilomètres de haut. Son activité constante est alimentée par l'échauffement par effet de marée dû à l'énorme gravité de Jupiter.",
+   "distance": "421 700 km de Jupiter",
+   "size": "3 643 km de diamètre",
+   "image_credit": "NASA/JPL/University of Arizona",
+   "search_subtext": "Lune de Jupiter"
+  },
+  "moon/oberon": {
+   "description": "Obéron est la plus externe des cinq lunes majeures d'Uranus et l'une des plus fortement cratérisées, avec une surface ancienne qui a peu changé depuis le début du système solaire. Plusieurs de ses grands cratères d'impact ont un matériau sombre sur leurs fonds, possiblement des dépôts organiques apportés par les corps impacteurs.",
+   "fun_fact": "Oberon abrite une montagne qui s'élève à environ 6 km au-dessus des plaines environnantes — comparable aux plus hauts sommets de la Terre. Contrairement aux montagnes de la Terre, qui se sont formées par la tectonique des plaques, cette formation pourrait être le pic central d'un ancien cratère d'impact ou un vestige d'une activité volcanique précoce.",
+   "distance": "583 520 km d'Uranus",
+   "size": "1 523 km de diamètre",
+   "image_credit": "NASA/JPL",
+   "search_subtext": "Lune d'Uranus"
+  },
+  "moon/phobos": {
+   "description": "Phobos est le plus grand et le plus interne des deux satellites de Mars, orbitant plus près de sa planète que tout autre satellite du système solaire. C'est un corps de forme irrégulière, fortement rainuré et criblé de cratères, que l'on pense être un astéroïde capturé.",
+   "fun_fact": "Phobos orbite Mars si rapidement qu'il se lève à l'ouest et se couche à l'est — et il se rapproche lentement en spirale, destiné soit à s'écraser sur Mars, soit à se désintégrer en un anneau dans environ 50 millions d'années.",
+   "distance": "9 376 km de Mars",
+   "size": "27 × 22 × 18 km",
+   "image_credit": "NASA/JPL-Caltech/University of Arizona",
+   "search_subtext": "Lune de Mars"
+  },
+  "moon/rhea": {
+   "description": "Rhéa est la deuxième plus grande lune de Saturne et un monde de glace et de roche fortement cratérisé. Sa surface pâle et ancienne préserve certains des cratères d'impact les plus intacts du système solaire, aux côtés de falaises de glace brillantes où des glissements de terrain ont exposé de nouveaux matériaux provenant de l'intérieur.",
+   "fun_fact": "En 2008, les données de Cassini ont suggéré que Rhéa pourrait avoir un mince anneau de débris en orbite autour d'elle, ce qui en ferait la première lune jamais découverte avec son propre système d'anneaux. Si cela était confirmé, ce serait une découverte remarquable ; les preuves restent un domaine de recherche actif.",
+   "distance": "527 108 km de Saturne",
+   "size": "1 527 km de diamètre",
+   "image_credit": "NASA/JPL-Caltech/SSI",
+   "search_subtext": "Lune de Saturne"
+  },
+  "moon/tethys": {
+   "description": "Téthys est une lune glacée de Saturne dominée par deux caractéristiques spectaculaires : le vaste cratère Ulysse, de 400 km de large et couvrant près d'un tiers de la face de la lune, et Ithaca Chasma, un système de canyons s'étendant sur les trois quarts du tour du globe.",
+   "fun_fact": "Téthys est presque entièrement composée de glace d'eau pure — elle a l'une des densités les plus faibles de toutes les lunes du système solaire, à peine plus dense que l'eau gelée. Ithaca Chasma pourrait s'être formé lorsque l'intérieur s'est gelé et dilaté, fissurant la croûte sus-jacente de l'intérieur.",
+   "distance": "294 619 km de Saturne",
+   "size": "1 062 km de diamètre",
+   "image_credit": "NASA/JPL-Caltech/SSI",
+   "search_subtext": "Lune de Saturne"
+  },
+  "moon/titan": {
+   "description": "Titan est la plus grande lune de Saturne et la deuxième plus grande lune du système solaire. C'est la seule lune connue pour avoir une atmosphère dense — une épaisse couverture d'azote mêlée de méthane — et le seul monde au-delà de la Terre connu pour avoir des mers liquides stables à sa surface.",
+   "fun_fact": "Les lacs et les mers de Titan sont remplis non pas d'eau, mais de méthane et d'éthane liquides à une température glaciale de −179 °C. La mission d'engin à rotor Dragonfly de la NASA, dont l'arrivée est prévue en 2034, volera entre différents sites à la surface de Titan pour rechercher la chimie de la vie.",
+   "distance": "1 221 870 km de Saturne",
+   "size": "5 151 km de diamètre",
+   "image_credit": "NASA/JPL-Caltech/SSI",
+   "search_subtext": "Lune de Saturne"
+  },
+  "moon/titania": {
+   "description": "Titania est la plus grande lune d'Uranus et la huitième plus grande lune du système solaire. Sa surface présente un mélange de plaines cratérisées anciennes et d'escarpements et vallées plus jeunes, suggérant une histoire géologique complexe qui pourrait avoir inclus une activité tectonique passée remodelant la croûte glacée.",
+   "fun_fact": "Toutes les lunes d'Uranus portent le nom de personnages de Shakespeare et d'Alexander Pope — Titania est la reine des fées dans Le Songe d'une nuit d'été. C'est l'une des très rares lunes planétaires majeures à ne pas porter le nom d'une figure de la mythologie grecque ou romaine.",
+   "distance": "435 910 km d'Uranus",
+   "size": "1 578 km de diamètre",
+   "image_credit": "NASA/JPL",
+   "search_subtext": "Lune d'Uranus"
+  },
+  "moon/triton": {
+   "description": "Triton est la plus grande lune de Neptune et l'un des corps les plus extraordinaires du système solaire. Elle orbite autour de Neptune à l'envers — à l'opposé de la rotation propre de la planète — un signe fort qu'elle a été capturée depuis le système solaire externe, très probablement depuis la ceinture de Kuiper, au début de l'histoire de Neptune.",
+   "fun_fact": "Malgré sa température de surface de −235 °C — la plus froide mesurée sur tout corps visité par un engin spatial — Voyager 2 a découvert des geysers d'azote actifs sur Triton en 1989. Des traînées sombres à la surface marquent les endroits où des panaches de gaz et de matière sombre ont jailli sur des kilomètres dans la fine atmosphère.",
+   "distance": "354 759 km de Neptune",
+   "size": "2 707 km de diamètre",
+   "image_credit": "NASA/JPL",
+   "search_subtext": "Lune de Neptune"
+  },
+  "moon/umbriel": {
+   "description": "Umbriel est la plus sombre des cinq lunes majeures d'Uranus, avec une surface uniformément ancienne et fortement cratérisée qui montre peu de signes du remodelage géologique observé sur ses voisines. Son intérieur semble être resté froid et gelé depuis le début de l'histoire du système solaire.",
+   "fun_fact": "La caractéristique la plus frappante d'Umbriel est Wunda, un anneau brillant d'environ 140 km de diamètre près de son équateur. Découverte par Voyager 2 en 1986, la nature exacte de Wunda reste un mystère — il pourrait s'agir d'un fond de cratère recouvert de dioxyde de carbone ou de givre d'ammoniac déposé longtemps après l'impact qui l'a formé.",
+   "distance": "266 300 km d'Uranus",
+   "size": "1 170 km de diamètre",
+   "image_credit": "NASA/JPL",
+   "search_subtext": "Lune d'Uranus"
+  },
+  "planet/jupiter": {
+   "description": "Jupiter est la plus grande planète de notre système solaire. C'est une géante gazeuse avec une célèbre tempête, la Grande Tache rouge.",
+   "fun_fact": "Jupiter possède au moins 95 lunes connues ! Sa plus grande lune, Ganymède, est plus grande que la planète Mercure.",
+   "distance": "778 millions de km (moyenne)",
+   "size": "139 820 km de diamètre",
+   "mass": "1,898 × 10²⁷ kg",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "planet/mars": {
+   "description": "Mars est la quatrième planète du Soleil, connue sous le nom de Planète rouge en raison de l'oxyde de fer à sa surface.",
+   "fun_fact": "Mars possède le plus grand volcan du système solaire : Olympus Mons, qui est environ 2,5 fois plus haut que l'Everest !",
+   "distance": "228 millions de km (moyenne)",
+   "size": "6 779 km de diamètre",
+   "mass": "6,39 × 10²³ kg",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "planet/mercury": {
+   "description": "Mercure est la plus petite planète et la plus proche du Soleil. Une année sur Mercure ne dure que 88 jours terrestres.",
+   "fun_fact": "Bien qu'étant la plus proche du Soleil, Mercure n'est pas la planète la plus chaude. Vénus est plus chaude en raison de son atmosphère épaisse !",
+   "distance": "58 millions de km (du Soleil)",
+   "size": "4 880 km de diamètre",
+   "mass": "3,3 × 10²³ kg",
+   "image_credit": "NASA/GSFC"
+  },
+  "planet/moon": {
+   "description": "La Lune est le seul satellite naturel de la Terre. Elle influence nos marées et a été visitée par 12 astronautes.",
+   "fun_fact": "La Lune s'éloigne lentement de la Terre d'environ 3,8 cm par an. Elle était beaucoup plus proche il y a des milliards d'années !",
+   "distance": "384 400 km",
+   "size": "3 474 km de diamètre",
+   "mass": "7,35 × 10²² kg",
+   "image_credit": "NASA/GSFC/ASU"
+  },
+  "planet/neptune": {
+   "description": "Neptune est la planète la plus éloignée de notre système solaire. Elle possède les vents les plus violents, atteignant 2 100 km/h.",
+   "fun_fact": "Neptune a été découverte grâce aux mathématiques ! Les scientifiques ont prédit sa position avant que quiconque ne la voie à travers un télescope.",
+   "distance": "4,5 milliards de km (moyenne)",
+   "size": "49 244 km de diamètre",
+   "mass": "1,024 × 10²⁶ kg",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "planet/pluto": {
+   "description": "Pluton est une planète naine de la ceinture de Kuiper. Elle était considérée comme la neuvième planète jusqu'en 2006.",
+   "fun_fact": "Pluton possède un glacier en forme de cœur composé de glace d'azote, visible sur les images de la mission New Horizons de la NASA !",
+   "distance": "5,9 milliards de km (moyenne)",
+   "size": "2 377 km de diamètre",
+   "mass": "1,3 × 10²² kg",
+   "image_credit": "NASA/JHUAPL/SwRI"
+  },
+  "planet/saturn": {
+   "description": "Saturne est la sixième planète du Soleil, célèbre pour son spectaculaire système d'anneaux composé de glace et de roche.",
+   "fun_fact": "Saturne est si légère qu'elle flotterait dans l'eau ! Sa densité est inférieure à celle de l'eau, bien qu'il n'y ait pas de baignoire assez grande pour le vérifier.",
+   "distance": "1,4 milliard de km (en moyenne)",
+   "size": "116 460 km de diamètre",
+   "mass": "5,68 × 10²⁶ kg",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "planet/sun": {
+   "description": "Le Soleil est l'étoile au centre de notre système solaire. Il fournit la lumière et la chaleur qui rendent la vie sur Terre possible.",
+   "fun_fact": "Le Soleil contient 99,86 % de toute la masse de notre système solaire. Environ 1,3 million de Terres pourraient y tenir !",
+   "distance": "150 millions de km",
+   "size": "1,4 million de km de diamètre",
+   "mass": "1,989 × 10³⁰ kg",
+   "spectral_class": "G2V",
+   "image_credit": "NASA/SDO"
+  },
+  "planet/uranus": {
+   "description": "Uranus est une géante de glace qui tourne sur le flanc. Ce fut la première planète découverte à l'aide d'un télescope.",
+   "fun_fact": "Uranus tourne sur le côté avec une inclinaison de 98 degrés, probablement à cause d'une collision avec un objet de la taille de la Terre il y a longtemps !",
+   "distance": "2,9 milliards de km (en moyenne)",
+   "size": "50 724 km de diamètre",
+   "mass": "8,68 × 10²⁵ kg",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "planet/venus": {
+   "description": "Vénus est la deuxième planète à partir du Soleil et la plus chaude de notre système solaire. Elle est souvent appelée la jumelle de la Terre en raison de sa taille similaire.",
+   "fun_fact": "Un jour sur Vénus est plus long que son année ! Il lui faut 243 jours terrestres pour effectuer une rotation, mais seulement 225 jours pour orbiter autour du Soleil.",
+   "distance": "108 millions de km (en moyenne)",
+   "size": "12 104 km de diamètre",
+   "mass": "4,87 × 10²⁴ kg",
+   "image_credit": "NASA/JPL"
+  },
+  "shower/aquariids": {
+   "description": "Les Êta aquarides sont l'une des deux pluies annuelles produites par les débris de la comète de Halley. Atteignant un pic de jusqu'à 70 météores par heure, cette pluie est fortement favorisée dans l'hémisphère sud, où le radiant s'élève haut avant l'aube. Les observateurs de l'hémisphère nord bénéficient toujours d'un taux respectable de 30 ou plus par heure.",
+   "fun_fact": "Les météores des Êta Aquarides voyagent à 66 km/s — assez vite pour que l'air ionisé qu'ils créent puisse briller pendant plusieurs secondes après le passage du météore. Vous pourriez voir l'ancienne poussière de la comète de Halley se consumer sous vos yeux, libérée lors de l'une des nombreuses visites de la comète il y a des milliers d'années."
+  },
+  "shower/deltaaquariids": {
+   "description": "Les Delta Aquarides du Sud atteignent leur maximum fin juillet et sont mieux visibles depuis les latitudes tropicales et australes, où le radiant dans le Verseau monte haut avant l'aube. Elles produisent un flux constant de météores de vitesse moyenne, jusqu'à 16 par heure, avec peu de bolides brillants.",
+   "fun_fact": "Le corps parent exact des Delta Aquarides reste incertain. Le principal candidat est la comète 96P/Machholz, une comète à courte période inhabituelle avec une orbite très inclinée qui passe remarquablement près du Soleil — plus près que la planète Mercure."
+  },
+  "shower/geminids": {
+   "description": "Les Géminides sont largement considérées comme la plus belle pluie de météores de l'année — prolifiques (jusqu'à 120 par heure), fiables et actives dès le début de soirée plutôt que seulement après minuit. Elles rayonnent depuis la constellation des Gémeaux et produisent une large gamme de luminosités de météores, y compris des boules de feu éclatantes.",
+   "fun_fact": "Unique parmi les principales pluies d'étoiles filantes, les Géminides proviennent d'un astéroïde plutôt que d'une comète : 3200 Phæton, une « comète rocheuse » dont l'orbite l'amène plus près du Soleil que tout autre astéroïde nommé. La chaleur extrême pourrait fracturer sa surface rocheuse et expulser la poussière qui produit la pluie d'étoiles filantes."
+  },
+  "shower/leonids": {
+   "description": "Les Léonides rayonnent depuis la faucille du Lion et produisent généralement environ 20 météores par heure. Elles sont célèbres pour des tempêtes spectaculaires qui se produisent environ tous les 33 ans lorsque la Terre traverse un dense filament de poussière laissé par la comète 55P/Tempel-Tuttle. Ces tempêtes peuvent produire des milliers de météores par heure.",
+   "fun_fact": "La tempête des Léonides de 1833 a produit environ 100 000 météores par heure, terrifiant les observateurs à travers l'Amérique du Nord qui craignaient que le ciel ne soit en feu. Cet événement a lancé l'étude scientifique des pluies de météores. Des tempêtes comparables se sont produites en 1966 et 1999."
+  },
+  "shower/lyrids": {
+   "description": "Les Lyrides sont une pluie printanière fiable rayonnant de près de l'étoile brillante Véga dans la Lyre. Elles produisent des météores rapides et modérément brillants, avec un pic d'environ 18 par heure, et génèrent occasionnellement des boules de feu qui laissent des traînées de fumée lumineuses.",
+   "fun_fact": "Les Lyrides sont la plus ancienne pluie de météores enregistrée de manière fiable dans l'histoire. Des astronomes chinois ont documenté une tempête de météores « tombant comme la pluie » en 687 av. J.-C. Les débris proviennent de la comète Thatcher, qui met 415 ans à orbiter autour du Soleil et a visité le système solaire interne pour la dernière fois en 1861."
+  },
+  "shower/orionids": {
+   "description": "Les Orionides sont la deuxième pluie de météores produite chaque année par la comète de Halley, rayonnant depuis la zone proche de la massue levée d'Orion. Atteignant un pic d'environ 25 météores par heure, elles sont connues pour leurs météores rapides, souvent brillants, qui laissent fréquemment des traînées d'ionisation lumineuses durant plusieurs secondes.",
+   "fun_fact": "La comète de Halley est responsable de deux pluies de météores annuelles : les Êta aquarides en mai, lorsque la Terre traverse le sillage de débris sortant de la comète, et les Orionides en octobre, lorsque la Terre traverse le sillage entrant. Ensemble, elles nous permettent d'échantillonner la poussière ancienne de Halley deux fois par an."
+  },
+  "shower/perseids": {
+   "description": "Les Perséides sont la pluie de météores la plus populaire de l'année, atteignant leur maximum les chaudes nuits d'août avec jusqu'à 100 météores par heure. Les débris laissés par la comète Swift-Tuttle se consument en haute atmosphère terrestre, produisant des météores rapides et brillants — dont beaucoup laissent des traînées lumineuses persistantes — rayonnant de la constellation de Persée.",
+   "fun_fact": "Le corps parent des Perséides, la comète Swift-Tuttle, possède un noyau de 26 km de large — plus grand que l'objet qui aurait causé l'extinction de masse qui a mis fin aux dinosaures. La comète est passée pour la dernière fois dans le système solaire interne en 1992 et ne reviendra pas avant 2125."
+  },
+  "shower/puppidvelids": {
+   "description": "Les Puppides-Vélides sont un complexe de pluies mineures superposées, rayonnant des constellations de la Poupe et des Voiles dans la Voie lactée australe. Atteignant un pic d'environ 10 météores par heure, elles sont mieux observées depuis l'hémisphère sud, où le radiant s'élève haut dans le ciel de décembre.",
+   "fun_fact": "Les Puppides-Vélides proviendraient de débris de plusieurs comètes parentes différentes plutôt que d\\u0027une source unique, y compris la comète 26P/Grigg-Skjellerup. Leur radiant austral ne s\\u0027élève jamais au-dessus de l\\u0027horizon pour les observateurs situés à des latitudes au nord d\\u0027environ 40°N, ce qui en fait une pluie que la majeure partie du monde voit rarement."
+  },
+  "shower/quadrantids": {
+   "description": "Les Quadrantides sont une pluie de météores prolifique de janvier avec un pic très net et bref ne durant que quelques heures. Le radiant se situe dans la constellation du Bouvier, près de la position de la constellation disparue du Quadrant Mural d'après laquelle la pluie est nommée. Jusqu'à 120 météores par heure sont visibles dans des conditions idéales.",
+   "fun_fact": "Contrairement à la plupart des grands essaims météoritiques qui proviennent de comètes, le corps parent des Quadrantides est l'astéroïde 2003 EH1 — que l'on pense être le noyau inactif d'une comète qui s'est éteinte il y a des siècles. Son existence n'a été confirmée qu'en 2003."
+  },
+  "shower/ursids": {
+   "description": "Les Ursides sont une pluie mineure rayonnant de la Petite Ourse, près de l'Étoile polaire, ce qui les rend circumpolaires pour les observateurs de l'hémisphère nord — visibles toute la nuit sans se coucher. Elles atteignent leur maximum autour du solstice d'hiver à environ 10 météores par heure, et la comète parente est 8P/Tuttle.",
+   "fun_fact": "Les Ursides produisent occasionnellement des sursauts inattendus bien au-dessus de leur taux typique. En 1945 et de nouveau en 2006, les observateurs ont enregistré 50 météores ou plus par heure — cinq fois le pic normal. Ces poussées se produisent lorsque la Terre traverse un ruban de débris exceptionnellement dense, libéré lors d'un passage rapproché de la comète Tuttle."
+  },
+  "star/achernar": {
+   "description": "Achernar est l'étoile la plus brillante d'Éridan (le Fleuve) et la neuvième étoile la plus brillante du ciel nocturne.",
+   "fun_fact": "Achernar est l'Étoile la plus aplatie connue ! Elle tourne si vite que son diamètre équatorial est 56 % plus grand que son diamètre polaire.",
+   "distance": "139 années-lumière",
+   "size": "7,3 rayons solaires",
+   "mass": "6,7 masses solaires",
+   "spectral_class": "B6 Vep",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/acrux": {
+   "description": "Acrux (Alpha Crucis) est l'étoile la plus brillante de la Croix du Sud et la 13e étoile la plus brillante du ciel.",
+   "fun_fact": "Acrux apparaît sur les drapeaux de l'Australie, de la Nouvelle-Zélande, du Brésil, de la Papouasie-Nouvelle-Guinée et des Samoa !",
+   "distance": "320 années-lumière",
+   "size": "7,8 rayons solaires",
+   "mass": "18 masses solaires",
+   "spectral_class": "B0.5 IV",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/adhara": {
+   "description": "Adhara (Epsilon Canis Majoris) est la deuxième étoile la plus brillante du Grand Chien, après Sirius.",
+   "fun_fact": "Il y a environ 4,7 millions d'années, Adhara était l'Étoile la plus brillante dans le ciel nocturne, encore plus brillante que ne l'est Sirius aujourd'hui !",
+   "distance": "430 années-lumière",
+   "size": "14 rayons solaires",
+   "mass": "12,6 masses solaires",
+   "spectral_class": "B2 II",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/alcyone": {
+   "description": "Alcyone est l'étoile la plus brillante de l'amas des Pléiades (M45) dans la constellation du Taureau. C'est une étoile géante bleue-blanche.",
+   "fun_fact": "Alcyone est en fait un système multiple d'étoiles avec au moins trois compagnons ! Elle tourne aussi si vite qu'elle possède un disque de gaz autour de son équateur.",
+   "distance": "~440 années-lumière",
+   "size": "~10 rayons solaires",
+   "mass": "~6,0 masses solaires",
+   "spectral_class": "B7IIIe",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/aldebaran": {
+   "description": "Aldébaran est une étoile géante orange qui représente l'œil du Taureau. Son nom signifie « le suiveur » en arabe.",
+   "fun_fact": "Aldébaran semble faire partie de l'amas d'étoiles des Hyades, mais se trouve en réalité à seulement la moitié de notre distance – une illusion d'optique cosmique !",
+   "distance": "65 années-lumière",
+   "size": "44 rayons solaires",
+   "mass": "1,2 masses solaires",
+   "spectral_class": "K5+ III",
+   "image_credit": "ESO"
+  },
+  "star/alderamin": {
+   "description": "Alderamin est l'étoile la plus brillante de Céphée (le Roi). Son nom vient de l'arabe signifiant « le bras droit ».",
+   "fun_fact": "En raison de la précession axiale de la Terre, Alderamin deviendra l'Étoile Polaire vers l'an 7500 apr. J.-C. !",
+   "distance": "49 années-lumière",
+   "size": "2,5 rayons solaires",
+   "mass": "1,9 masses solaires",
+   "spectral_class": "A7V",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/algenib": {
+   "description": "Algénib marque un coin du Grand Carré de Pégase. C'est une étoile sous-géante bleue chaude et une variable de type Beta Cephei.",
+   "fun_fact": "Algenib pulse, changeant légèrement sa luminosité toutes les 3,6 heures ! C'est aussi l'une des étoiles les plus éloignées qui forment un astérisme proéminent visible à l'œil nu.",
+   "distance": "~390 années-lumière",
+   "size": "4,8 rayons solaires",
+   "mass": "~8,9 masses solaires",
+   "spectral_class": "B2IV",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/algieba": {
+   "description": "Algieba est une belle étoile double dans le Lion, formant la crinière du lion céleste. Son nom signifie « le front » en arabe.",
+   "fun_fact": "Au télescope, Algieba se divise en une magnifique paire d'étoiles géantes dorées et jaune-orangé — l'une des plus belles étoiles doubles du ciel ! Une planète a été découverte en orbite autour de l'étoile principale en 2009.",
+   "distance": "~130 années-lumière",
+   "size": "~23 rayons solaires",
+   "mass": "~1,2 masses solaires",
+   "spectral_class": "K1IIIbCN",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/algol": {
+   "description": "Algol est une célèbre étoile binaire à éclipses dans Persée, connue sous le nom d'« Étoile du Démon » depuis l'Antiquité.",
+   "fun_fact": "Tous les 2,87 jours, Algol faiblit de manière notable lorsque son compagnon moins lumineux passe devant elle – les astronomes de l'Antiquité trouvaient cela effrayant !",
+   "distance": "90 années-lumière",
+   "size": "2,7 rayons solaires",
+   "mass": "3,2 masses solaires",
+   "spectral_class": "B8 V",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/alhena": {
+   "description": "Alhéna marque le pied de Pollux, l'un des jumeaux des Gémeaux. C'est une étoile sous-géante blanche brillante et l'une des étoiles les plus proéminentes des Gémeaux.",
+   "fun_fact": "Le nom d'Alhéna vient de l'arabe et signifie « la marque au fer rouge » — les anciens Arabes voyaient cette étoile comme une marque sur le cou d'un chameau !",
+   "distance": "109 années-lumière",
+   "size": "3,3 rayons solaires",
+   "mass": "2,8 masses solaires",
+   "spectral_class": "A1IV",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/alioth": {
+   "description": "Alioth est l'Étoile la plus brillante de la Grande Ourse et l'Étoile la plus brillante de l'astérisme de la Grande Casserole.",
+   "fun_fact": "Alioth possède un champ magnétique particulier qui provoque la concentration d'éléments chimiques en taches à sa surface !",
+   "distance": "83 années-lumière",
+   "size": "4,1 rayons solaires",
+   "mass": "2,9 masses solaires",
+   "spectral_class": "A1 III-IVp",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/alkaid": {
+   "description": "Alkaïd est l'étoile à l'extrémité du manche de la Grande Casserole dans la Grande Ourse. C'est la troisième étoile la plus brillante de la Grande Ourse.",
+   "fun_fact": "Contrairement à la plupart des étoiles de la Grande Casserole, Alkaïd ne fait pas partie du Groupe mouvant de la Grande Ourse — elle se déplace dans l'espace dans une direction différente, de sorte que la forme de la Grande Casserole changera lentement au fil des milliers d'années !",
+   "distance": "104 années-lumière",
+   "size": "3,4 rayons solaires",
+   "mass": "6,1 masses solaires",
+   "spectral_class": "B3V",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/alnair": {
+   "description": "Alnair est l'Étoile la plus brillante de la Grue. Son nom signifie « la brillante » en arabe.",
+   "fun_fact": "Alnair tourne extrêmement rapidement — au moins 215 km/s à son équateur — ce qui est si rapide que l'étoile est visiblement aplatie, renflée en son milieu !",
+   "distance": "101 années-lumière",
+   "size": "3,4 rayons solaires",
+   "mass": "4,0 masses solaires",
+   "spectral_class": "B7IV",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/alnath": {
+   "description": "Alnath est la deuxième étoile la plus brillante du Taureau, marquant la pointe de la corne nord du taureau. Elle se situe juste à la frontière entre le Taureau et l'Aurige.",
+   "fun_fact": "Alnath était autrefois partagée entre deux constellations ! Elle était désignée à la fois comme Beta Tauri et Gamma Aurigae avant que l'UAI ne l'assigne officiellement au Taureau en 1930.",
+   "distance": "134 années-lumière",
+   "size": "4,2 rayons solaires",
+   "mass": "5,0 masses solaires",
+   "spectral_class": "B7III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/alnilam": {
+   "description": "Alnilam est l'Étoile centrale de la Ceinture d'Orion et l'une des Étoiles les plus lumineuses connues dans notre galaxie.",
+   "fun_fact": "Alnilam perd de la masse à un rythme 20 millions de fois plus rapide que notre Soleil par son puissant vent stellaire !",
+   "distance": "~2 000 années-lumière",
+   "size": "42 rayons solaires",
+   "mass": "40 masses solaires",
+   "spectral_class": "B0 Ia",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/alphard": {
+   "description": "Alphard est l'Étoile la plus brillante de l'Hydre, la plus grande constellation du ciel.",
+   "fun_fact": "Alphard signifie « la solitaire » en arabe car elle se trouve seule dans une région du ciel autrement peu lumineuse !",
+   "distance": "177 années-lumière",
+   "size": "50 rayons solaires",
+   "mass": "3 masses solaires",
+   "spectral_class": "K3 II-III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/alphekka": {
+   "description": "Alphecca (également appelée Gemma) est l'étoile la plus brillante de la Couronne Boréale. C'est le joyau de ce petit cercle d'étoiles.",
+   "fun_fact": "Alphecca est une binaire à éclipses — son faible compagnon passe devant elle tous les 17,4 jours, provoquant une légère baisse de luminosité presque impossible à observer sans instruments !",
+   "distance": "75 années-lumière",
+   "size": "2,9 rayons solaires",
+   "mass": "2,6 masses solaires",
+   "spectral_class": "A0V",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/alpheratz": {
+   "description": "Alpheratz est l'Étoile la plus brillante d'Andromède, bien qu'elle ait été autrefois considérée comme faisant partie de Pégase.",
+   "fun_fact": "Alpheratz a une composition chimique extrêmement inhabituelle avec de fortes concentrations de mercure et de manganèse dans son atmosphère !",
+   "distance": "97 années-lumière",
+   "size": "2,7 rayons solaires",
+   "mass": "3,6 masses solaires",
+   "spectral_class": "B8 IVp",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/altair": {
+   "description": "Altaïr est l'étoile la plus brillante de l'Aigle et l'une des étoiles les plus proches visibles à l'œil nu.",
+   "fun_fact": "Altaïr tourne si vite (une fois toutes les 9 heures) qu'elle est visiblement aplatie à ses pôles - elle est 14 % plus large que haute !",
+   "distance": "17 années-lumière",
+   "size": "1,8 rayons solaires",
+   "mass": "1,8 masses solaires",
+   "spectral_class": "A7 V",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/ankaa": {
+   "description": "Ankaa est l'étoile la plus brillante de la constellation du Phénix, une constellation mieux observée depuis l'hémisphère sud. Son nom vient du mot arabe signifiant « le phénix ».",
+   "fun_fact": "Ankaa est une étoile binaire spectroscopique, ce qui signifie que son compagnon est si proche que les deux ne peuvent être détectés que par des décalages dans leur spectre lumineux — elles orbitent l'une autour de l'autre tous les 10,2 ans !",
+   "distance": "85 années-lumière",
+   "size": "15 rayons solaires",
+   "mass": "1,3 masses solaires",
+   "spectral_class": "K0III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/antares": {
+   "description": "Antarès est une étoile supergéante rouge, le cœur du Scorpion. Son nom signifie « rivale de Mars » en raison de sa couleur rouge.",
+   "fun_fact": "Antarès est si grande que si elle était placée dans notre système solaire, sa surface s'étendrait au-delà de l'orbite de Mars !",
+   "distance": "~550 années-lumière",
+   "size": "~680 rayons solaires",
+   "mass": "~12 masses solaires",
+   "spectral_class": "M1.5 Iab",
+   "image_credit": "ESO/K. Ohnaka"
+  },
+  "star/arcturus": {
+   "description": "Arcturus est l'étoile la plus brillante de l'hémisphère nord, une géante orange dans la constellation du Bouvier (le Bouvier).",
+   "fun_fact": "Arcturus se déplace dans l'espace à une vitesse prodigieuse et passera au plus près de notre système solaire dans environ 4 000 ans !",
+   "distance": "37 années-lumière",
+   "size": "26 rayons solaires",
+   "mass": "1,1 masses solaires",
+   "spectral_class": "K1.5 III",
+   "image_credit": "ESO"
+  },
+  "star/arneb": {
+   "description": "Arneb est l'Étoile la plus brillante de Lepus (le Lièvre), la constellation accroupie sous les pieds d'Orion. C'est une supergéante blanche rare.",
+   "fun_fact": "Arneb est une étoile mourante qui a probablement déjà fusionné tout l'hydrogène de son noyau. Elle pourrait terminer sa vie en supernova au cours des prochains millions d'années !",
+   "distance": "~2 200 années-lumière",
+   "size": "~75 rayons solaires",
+   "mass": "~14 masses solaires",
+   "spectral_class": "F0Ib",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/betelgeuse": {
+   "description": "Bételgeuse est une étoile supergéante rouge marquant l'épaule d'Orion. C'est l'une des plus grandes étoiles visibles à l'œil nu.",
+   "fun_fact": "Bételgeuse est si grande que si elle était placée à la position de notre Soleil, elle engloutirait Mercure, Vénus, la Terre, Mars, et peut-être Jupiter !",
+   "distance": "~700 années-lumière",
+   "size": "~900 rayons solaires",
+   "mass": "~12 masses solaires",
+   "spectral_class": "M1-M2 Iab",
+   "image_credit": "ALMA (ESO/NAOJ/NRAO)/E. O'Gorman/P. Kervella"
+  },
+  "star/canopus": {
+   "description": "Canopus est la deuxième étoile la plus brillante du ciel nocturne. Elle est principalement visible depuis l'hémisphère sud.",
+   "fun_fact": "Canopus est utilisée par les engins spatiaux pour la navigation car elle est très brillante et loin du plan de l'écliptique !",
+   "distance": "310 années-lumière",
+   "size": "72 rayons solaires",
+   "mass": "8,0 masses solaires",
+   "spectral_class": "A9 II",
+   "image_credit": "ESO"
+  },
+  "star/capella": {
+   "description": "Capella est l'étoile la plus brillante d'Auriga et la sixième plus brillante du ciel nocturne. C'est en fait un système de quatre étoiles.",
+   "fun_fact": "Capella signifie « petite chèvre » en latin. Les cultures anciennes la voyaient comme une chèvre portée sur l'épaule d'Auriga, le Cocher !",
+   "distance": "43 années-lumière",
+   "size": "12 rayons solaires",
+   "mass": "2,6 masses solaires",
+   "spectral_class": "G3 III + G0 III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/caph": {
+   "description": "Caph est la deuxième étoile la plus brillante de Cassiopée, formant le point le plus à droite de la forme en W emblématique. Son nom signifie « la paume » en arabe.",
+   "fun_fact": "Caph est une variable de type Delta Scuti — elle pulse avec plusieurs fréquences simultanément, changeant légèrement de luminosité toutes les 2,5 heures !",
+   "distance": "54 années-lumière",
+   "size": "3,5 rayons solaires",
+   "mass": "1,9 masses solaires",
+   "spectral_class": "F2III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/castor": {
+   "description": "Castor est l'une des étoiles jumelles des Gémeaux. Bien qu'elle apparaisse comme une seule étoile, il s'agit en fait d'un système de six étoiles !",
+   "fun_fact": "Castor est un système stellaire sextuple - trois paires d'étoiles binaires, toutes en orbite les unes autour des autres. C'est l'un des systèmes stellaires les plus complexes près de la Terre !",
+   "distance": "51 années-lumière",
+   "size": "2,4 rayons solaires",
+   "mass": "2,8 masses solaires",
+   "spectral_class": "A1 V",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/deneb": {
+   "description": "Deneb marque la queue du Cygne. Elle fait partie de l'astérisme du Triangle d'été avec Véga et Altaïr.",
+   "fun_fact": "Deneb est l'une des étoiles les plus éloignées visibles à l'œil nu, située à environ 2 600 années-lumière !",
+   "distance": "~2 600 années-lumière",
+   "size": "~200 rayons solaires",
+   "mass": "~19 masses solaires",
+   "spectral_class": "A2 Ia",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/denebola": {
+   "description": "Dénébola marque la queue du Lion. Son nom signifie littéralement « queue du lion » en arabe.",
+   "fun_fact": "Dénébola possède un disque de débris poussiéreux qui pourrait indiquer la formation de planètes ou la collision d'astéroïdes autour d'elle !",
+   "distance": "36 années-lumière",
+   "size": "1,7 rayons solaires",
+   "mass": "1,8 masses solaires",
+   "spectral_class": "A3 V",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/diphda": {
+   "description": "Diphda (Beta Ceti) est l'étoile la plus brillante de la Baleine et une étoile proéminente d'automne.",
+   "fun_fact": "Diphda apparaît isolée dans une région du ciel plutôt déserte, ce qui la rend utile pour les navigateurs bien qu'elle ne soit pas extrêmement brillante !",
+   "distance": "96 années-lumière",
+   "size": "18 rayons solaires",
+   "mass": "2,8 masses solaires",
+   "spectral_class": "K0 III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/dubhe": {
+   "description": "Dubhe est l'une des deux « étoiles pointeuses » de la Grande Casserole qui indiquent l'Étoile polaire.",
+   "fun_fact": "Contrairement à la plupart des étoiles de la Grande Casserole, Dubhe et Alkaïd se déplacent dans la direction opposée – l'astérisme aura une apparence différente dans 50 000 ans !",
+   "distance": "123 années-lumière",
+   "size": "30 rayons solaires",
+   "mass": "4,3 masses solaires",
+   "spectral_class": "K0 III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/e_lyrae": {
+   "description": "Epsilon Lyrae est un système stellaire multiple dans la Lyre, célèbre parmi les observateurs sous le nom de « Double Double ».",
+   "fun_fact": "Des yeux perçants peuvent séparer Epsilon Lyrae en deux étoiles – et un télescope divise chacune de ces deux étoiles en deux à nouveau ! Elle contient au moins cinq étoiles au total.",
+   "distance": "160 années-lumière"
+  },
+  "star/enif": {
+   "description": "Enif est l'étoile la plus brillante de Pégase et marque le nez du cheval ailé dans la constellation.",
+   "fun_fact": "En 1972, Enif a connu un événement d'éruption spectaculaire, multipliant brièvement sa luminosité par cinq !",
+   "distance": "670 années-lumière",
+   "size": "185 rayons solaires",
+   "mass": "10,7 masses solaires",
+   "spectral_class": "K2 Ib",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/etamin": {
+   "description": "Etamin (également Eltanin) est l'étoile la plus brillante de la constellation du Dragon. Elle représente la tête du dragon, et son nom signifie « le grand serpent » en arabe.",
+   "fun_fact": "Les observations d'Etamin en 1728 par James Bradley ont conduit à la découverte de l'aberration de la lumière — l'une des premières preuves directes que la Terre se déplace dans l'espace !",
+   "distance": "148 années-lumière",
+   "size": "48 rayons solaires",
+   "mass": "1,7 masses solaires",
+   "spectral_class": "K5III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/fomalhaut": {
+   "description": "Fomalhaut est l'étoile la plus brillante de la constellation du Poisson austral et l'une des étoiles les plus brillantes du ciel d'automne.",
+   "fun_fact": "Fomalhaut possède un disque de débris spectaculaire qui a été l'un des premiers à être directement imagé autour d'une autre étoile !",
+   "distance": "25 années-lumière",
+   "size": "1,8 rayons solaires",
+   "mass": "1,9 masses solaires",
+   "spectral_class": "A3 V",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/hadar": {
+   "description": "Hadar (Beta Centauri) est la deuxième étoile la plus brillante du Centaure et la 11e plus brillante du ciel nocturne.",
+   "fun_fact": "Hadar et Alpha Centauri sont connus sous le nom de « Pointeurs du Sud » – ils indiquent la constellation de la Croix du Sud !",
+   "distance": "390 années-lumière",
+   "size": "9 rayons solaires",
+   "mass": "12,8 masses solaires",
+   "spectral_class": "B1 III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/hamal": {
+   "description": "Hamal est l'étoile la plus brillante du Bélier et était autrefois utilisée pour marquer l'équinoxe de printemps il y a environ 2 000 ans.",
+   "fun_fact": "Une exoplanète géante a été découverte en orbite autour de Hamal en 2011, d'au moins 1,8 fois la masse de Jupiter !",
+   "distance": "66 années-lumière",
+   "size": "15 rayons solaires",
+   "mass": "1,5 masses solaires",
+   "spectral_class": "K2 III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/izar": {
+   "description": "Izar est une belle étoile double dans le Bouvier (le Bouvier). Son nom signifie \"la ceinture\" ou \"le voile\" en arabe.",
+   "fun_fact": "L'astronome du XIXe siècle Friedrich Georg Wilhelm von Struve a appelé Izar « Pulcherrima » (du latin « la plus belle ») en raison du contraste de couleurs saisissant entre ses composantes orange et bleu-blanc !",
+   "distance": "202 années-lumière",
+   "size": "33 rayons solaires",
+   "mass": "~4,6 masses solaires",
+   "spectral_class": "K0II-III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/j052512+062100": {
+   "description": "Bellatrix marque l'épaule gauche d'Orion (le Chasseur). Son nom signifie en latin « guerrière ».",
+   "fun_fact": "Bellatrix n'a qu'environ 28 millions d'années et épuisera son hydrogène dans 7 millions d'années supplémentaires – une vie brève pour une étoile !",
+   "distance": "250 années-lumière",
+   "size": "6,2 rayons solaires",
+   "mass": "8,4 masses solaires",
+   "spectral_class": "B2 III"
+  },
+  "star/j054048-015624": {
+   "description": "Alnitak est l'étoile la plus à l'est de la ceinture d'Orion, située à côté des nébuleuses de la Flamme et de la Tête de Cheval.",
+   "fun_fact": "Alnitak est l'étoile de classe O la plus brillante de tout le ciel nocturne ! Dans environ un million d'années, elle gonflera au-delà de l'orbite de Jupiter et explosera en supernova.",
+   "distance": "1 260 années-lumière",
+   "size": "20 rayons solaires",
+   "mass": "33 masses solaires",
+   "spectral_class": "O9.5 Iab"
+  },
+  "star/j055924+445700": {
+   "description": "Menkalinan est la deuxième étoile la plus brillante d'Auriga (le Cocher). Son nom signifie « épaule du porte-rênes » en arabe.",
+   "fun_fact": "Menkalinan est en réalité deux étoiles presque identiques s'éclipsant mutuellement toutes les 47,5 heures - et dans environ un million d'années, elle deviendra l'étoile la plus brillante de notre ciel nocturne !",
+   "distance": "79 années-lumière",
+   "size": "2,8 rayons solaires",
+   "mass": "2,4 masses solaires",
+   "spectral_class": "A1m IV + A1m IV"
+  },
+  "star/j062248-175736": {
+   "description": "Mirzam (Beta Canis Majoris) se lève juste avant Sirius, ce qui lui a valu le nom signifiant « L'Annonceur » en arabe.",
+   "fun_fact": "Il y a environ quatre millions d'années, Mirzam était l'étoile la plus brillante du ciel, brillant à une magnitude de -3,65 – bien plus brillante que Sirius ne l'est aujourd'hui !",
+   "distance": "490 années-lumière",
+   "size": "8,4 rayons solaires",
+   "mass": "13 masses solaires",
+   "spectral_class": "B1 II-III"
+  },
+  "star/j070824-262324": {
+   "description": "Wezen est une supergéante jaune-blanc dans le Grand Chien. Son nom vient de l'arabe et signifie « poids ».",
+   "fun_fact": "Si Wezen était aussi proche de nous que Sirius, elle brillerait aussi fort qu'une Lune à moitié pleine !",
+   "distance": "1 600 années-lumière",
+   "size": "188 rayons solaires",
+   "mass": "14 masses solaires",
+   "spectral_class": "F8 Ia"
+  },
+  "star/j082248-593036": {
+   "description": "Avior (Epsilon Carinae) est une brillante étoile double dans la Carène et l'une des quatre étoiles de la Fausse Croix.",
+   "fun_fact": "La Fausse Croix est si souvent confondue avec la Croix du Sud qu'elle a causé de véritables erreurs de navigation ! Le nom d'Avior a été inventé par des fabricants d'almanachs britanniques dans les années 1930.",
+   "distance": "610 années-lumière",
+   "size": "151 rayons solaires",
+   "mass": "10,5 masses solaires",
+   "spectral_class": "K3 III + B2 Vp"
+  },
+  "star/j091312-694312": {
+   "description": "Miaplacidus est la deuxième étoile la plus brillante de la Carène et marque un coin de l'astérisme de la Croix du Diamant.",
+   "fun_fact": "Miaplacidus s'est transformée en géante après avoir épuisé l'hydrogène de son cœur, mais elle tourne toujours à 146 km/s !",
+   "distance": "113 années-lumière",
+   "size": "5,8 rayons solaires",
+   "mass": "3,9 masses solaires",
+   "spectral_class": "A1 III"
+  },
+  "star/j123112-570636": {
+   "description": "Gacrux (Gamma Crucis) est l'étoile la plus au nord de la Croix du Sud et l'étoile géante rouge la plus proche de la Terre.",
+   "fun_fact": "Gacrux est la géante rouge de type M la plus proche de nous, et son nom est simplement une contraction de « Gamma Crucis » inventée par un navigateur dans les années 1940 !",
+   "distance": "89 années-lumière",
+   "size": "73 rayons solaires",
+   "mass": "1,5 masses solaires",
+   "spectral_class": "M3.5 III"
+  },
+  "star/j124800-594124": {
+   "description": "Mimosa (Beta Crucis) est la deuxième étoile la plus brillante de la Croix du Sud et l'une des étoiles les plus chaudes visibles à l'œil nu.",
+   "fun_fact": "Mimosa est une variable pulsante de type Beta Cephei – elle se dilate et se contracte selon trois rythmes superposés, chacun ne durant qu'environ quatre heures !",
+   "distance": "280 années-lumière",
+   "size": "8 rayons solaires",
+   "mass": "14,5 masses solaires",
+   "spectral_class": "B0.5 III"
+  },
+  "star/j143936-605024": {
+   "description": "Toliman (Alpha Centauri B) est le compagnon orange du système stellaire le plus proche du Soleil, en orbite autour du plus lumineux Rigil Kentaurus.",
+   "fun_fact": "Toliman n'a obtenu son nom officiel qu'en 2018. Elle est légèrement plus petite et plus froide que le Soleil, et, avec ses deux sœurs, elle constitue nos plus proches voisines stellaires !",
+   "distance": "4,34 années-lumière",
+   "size": "0,86 rayons solaires",
+   "mass": "0,91 masses solaires",
+   "spectral_class": "K1 V"
+  },
+  "star/j164836-690148": {
+   "description": "Atria est l'étoile la plus brillante du Triangle Austral, une géante orange bien plus grande que le Soleil.",
+   "fun_fact": "Atria fait 139 fois le diamètre du Soleil - placée au centre du Système solaire, elle atteindrait presque l'orbite de Vénus !",
+   "distance": "391 années-lumière",
+   "size": "139 rayons solaires",
+   "mass": "6,4 masses solaires",
+   "spectral_class": "K2 Ib-IIa"
+  },
+  "star/j173712-430000": {
+   "description": "Sargas est une géante brillante dans la queue du Scorpion, portant un nom traditionnel d'origine sumérienne.",
+   "fun_fact": "Sargas tourne si vite qu'elle est bombée vers l'extérieur – elle est un tiers plus large à l'équateur qu'entre les pôles, et pourrait s'être formée lorsque deux étoiles ont fusionné !",
+   "distance": "329 années-lumière",
+   "size": "35 rayons solaires",
+   "mass": "3,1 masses solaires",
+   "spectral_class": "F1 III"
+  },
+  "star/j202548-564348": {
+   "description": "Paon est l'étoile la plus brillante de Pavo (le Paon), une étoile bleu-blanc chaude du ciel austral lointain.",
+   "fun_fact": "Le Paon a été nommé dans les années 1930 parce que la RAF a insisté pour que chaque étoile de son nouvel Air Almanac ait un nom – et celle-ci n'en avait pas !",
+   "distance": "179 années-lumière",
+   "size": "4,8 rayons solaires",
+   "mass": "5,9 masses solaires",
+   "spectral_class": "B3 V"
+  },
+  "star/kaus_australis": {
+   "description": "Kaus Australis est l'étoile la plus brillante du Sagittaire (l'Archer). Son nom signifie « l'arc austral » dans un mélange d'arabe et de latin.",
+   "fun_fact": "Kaus Australis se trouve près de la direction du centre de notre galaxie, la Voie lactée ! Lorsque vous regardez cette étoile, vous contemplez la partie la plus dense du plan galactique.",
+   "distance": "143 années-lumière",
+   "size": "6,8 rayons solaires",
+   "mass": "3,5 masses solaires",
+   "spectral_class": "B9.5III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/kochab": {
+   "description": "Kochab est la deuxième étoile la plus lumineuse d'Ursa Minor (la Petite Ourse). Avec Pherkad, elle forme les « Gardiennes du Pôle ».",
+   "fun_fact": "Vers 1500 av. J.-C., Kochab était l'étoile brillante la plus proche du pôle céleste nord, ce qui en faisait l'« Étoile Polaire » pour les anciens Égyptiens et les marins phéniciens !",
+   "distance": "131 années-lumière",
+   "size": "42 rayons solaires",
+   "mass": "1,3 masses solaires",
+   "spectral_class": "K4III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/markab": {
+   "description": "Markab est l'une des quatre étoiles formant le Grand Carré de Pégase, un astérisme facilement reconnaissable.",
+   "fun_fact": "Markab est une étoile de type B tardif qui achève tout juste sa vie sur la séquence principale et deviendra bientôt une géante rouge !",
+   "distance": "133 années-lumière",
+   "size": "4,6 rayons solaires",
+   "mass": "3,5 masses solaires",
+   "spectral_class": "B9 III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/menkar": {
+   "description": "Menkar est une étoile géante rouge qui marque le nez de la Baleine (le Monstre Marin). Son nom signifie « la narine » en arabe.",
+   "fun_fact": "Menkar approche de la fin de sa vie stellaire. Cette géante rouge vieillissante fusionne l'hélium dans son noyau et finira par se débarrasser de ses couches externes pour devenir une nébuleuse planétaire !",
+   "distance": "249 années-lumière",
+   "size": "~89 rayons solaires",
+   "mass": "~2,3 masses solaires",
+   "spectral_class": "M1.5IIIa",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/merak": {
+   "description": "Merak est l'une des deux « étoiles pointeuses » de la Grande Casserole qui indiquent le chemin vers l'Étoile polaire. Elle se trouve dans la Grande Ourse.",
+   "fun_fact": "Merak présente un excès infrarouge qui suggère la présence d'un disque de débris circumstellaire — peut-être un anneau de poussière et de matériaux rocheux similaire à notre ceinture d'astéroïdes !",
+   "distance": "80 années-lumière",
+   "size": "3,0 rayons solaires",
+   "mass": "2,7 masses solaires",
+   "spectral_class": "A1V",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/mirach": {
+   "description": "Mirach est une étoile géante rouge dans Andromède, souvent utilisée comme guide pour trouver la Galaxie d'Andromède.",
+   "fun_fact": "Le Fantôme de Mirach est une petite galaxie (NGC 404) qui apparaît très proche de Mirach - elle a été cachée par l'éclat de l'étoile pendant des siècles !",
+   "distance": "197 années-lumière",
+   "size": "100 rayons solaires",
+   "mass": "3,5 masses solaires",
+   "spectral_class": "M0 III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/mirphak": {
+   "description": "Mirfak (également Mirphak) est l'étoile la plus brillante de Persée, une supergéante jaune-blanche au cœur de l'Amas d'Alpha Persei.",
+   "fun_fact": "Mirphak est entourée d'un magnifique amas ouvert d'étoiles (Melotte 20) qui est mieux observé aux jumelles — une dispersion de jeunes étoiles bleu-blanc qui se déplacent ensemble dans l'espace !",
+   "distance": "~590 années-lumière",
+   "size": "~68 rayons solaires",
+   "mass": "~8,5 masses solaires",
+   "spectral_class": "F5Ib",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/n25": {
+   "description": "R Coronae Borealis est une supergéante jaune rare dans la Couronne boréale, et le prototype de la classe d'étoiles variables qui porte son nom.",
+   "fun_fact": "R Coronae Borealis est parfois surnommée une « nova inverse » – au lieu de s'embraser, elle s'assombrit de manière imprévisible jusqu'à 9 magnitudes lorsqu'elle éjecte des nuages de suie carbonée qui la dérobent à notre vue !",
+   "distance": "4 560 années-lumière",
+   "spectral_class": "G0Iep"
+  },
+  "star/nunki": {
+   "description": "Nunki est la deuxième étoile la plus brillante du Sagittaire et le plus ancien nom d'étoile encore couramment utilisé.",
+   "fun_fact": "Le nom Nunki vient de l'ancienne Babylone où elle représentait la ville d'Eridu sur la sphère céleste !",
+   "distance": "228 années-lumière",
+   "size": "4,5 rayons solaires",
+   "mass": "7,8 masses solaires",
+   "spectral_class": "B2.5 V",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/phad": {
+   "description": "Phad (également Phecda) est l'une des étoiles formant le « bol » de la Grande Casserole dans la Grande Ourse. Son nom signifie « la cuisse » en arabe.",
+   "fun_fact": "Phad fait partie du Groupe de mouvement de la Grande Ourse — un ensemble d'étoiles qui sont nées ensemble et voyagent dans l'espace comme un amas lâche, y compris la plupart des étoiles de la Grande Casserole !",
+   "distance": "84 années-lumière",
+   "size": "3,0 rayons solaires",
+   "mass": "2,9 masses solaires",
+   "spectral_class": "A0Ve",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/polaris": {
+   "description": "Étoile polaire, l'Étoile Polaire, apparaît presque immobile dans le ciel tandis que les autres étoiles tournent autour d'elle toute la nuit.",
+   "fun_fact": "L'Étoile polaire est en fait un système stellaire triple ! L'étoile principale est une supergéante environ 2 500 fois plus brillante que notre Soleil.",
+   "distance": "~430 années-lumière",
+   "size": "~44 rayons solaires",
+   "mass": "~5,4 masses solaires",
+   "spectral_class": "F7 Ib",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "star/pollux": {
+   "description": "Pollux est la plus brillante des étoiles jumelles des Gémeaux. Contrairement à Castor, c'est une étoile géante orange unique.",
+   "fun_fact": "Pollux a une exoplanète confirmée ! Pollux b est une géante gazeuse au moins deux fois plus massive que Jupiter.",
+   "distance": "34 années-lumière",
+   "size": "9,1 rayons solaires",
+   "mass": "1,9 masses solaires",
+   "spectral_class": "K0 III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/procyon": {
+   "description": "Procyon est une étoile brillante de la constellation du Petit Chien. C'est l'une de nos voisines stellaires les plus proches.",
+   "fun_fact": "Procyon signifie « avant le chien » en grec car elle se lève juste avant Sirius, l'Étoile du Chien, dans le ciel nocturne !",
+   "distance": "11,4 années-lumière",
+   "size": "2,0 rayons solaires",
+   "mass": "1,5 masses solaires",
+   "spectral_class": "F5 IV-V",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/rasalhague": {
+   "description": "Rasalhague est l'étoile la plus brillante d'Ophiuchus (le Serpentaire), une constellation associée à la guérison.",
+   "fun_fact": "Rasalhague est une étoile à rotation rapide – elle tourne si vite qu'elle est visiblement aplatie, effectuant une rotation en seulement 18 heures !",
+   "distance": "48,6 années-lumière",
+   "size": "2,5 rayons solaires",
+   "mass": "2,4 masses solaires",
+   "spectral_class": "A5 III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/regulus": {
+   "description": "Régulus est l'étoile la plus brillante de la constellation du Lion et représente le cœur du Lion. C'est un système stellaire multiple.",
+   "fun_fact": "Régulus tourne si vite qu'elle est sur le point de se déchirer ! Elle effectue une rotation en seulement 16 heures.",
+   "distance": "79 années-lumière",
+   "size": "4,4 rayons solaires",
+   "mass": "3,8 masses solaires",
+   "spectral_class": "B8 IVn",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/rigel": {
+   "description": "Rigel est une étoile supergéante bleue marquant le pied d'Orion. Bien qu'elle soit plus éloignée que Bételgeuse, elle apparaît d'une luminosité similaire.",
+   "fun_fact": "Rigel brille de la lumière d'environ 120 000 Soleils ! C'est l'une des étoiles les plus lumineuses de notre région de la Voie lactée.",
+   "distance": "~860 années-lumière",
+   "size": "~79 rayons solaires",
+   "mass": "~23 masses solaires",
+   "spectral_class": "B8 Ia",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/rigil_kentaurus_a": {
+   "description": "Alpha Centauri est le système stellaire le plus proche du Soleil, composé de trois étoiles dont Proxima Centauri.",
+   "fun_fact": "Proxima du Centaure, qui fait partie de ce système, possède une planète potentiellement habitable ! Proxima b n'est qu'à 4,2 années-lumière.",
+   "distance": "4,37 années-lumière",
+   "size": "1,2 rayons solaires",
+   "mass": "1,1 masses solaires",
+   "spectral_class": "G2 V + K1 V",
+   "image_credit": "ESO/Digitized Sky Survey 2/Davide De Martin"
+  },
+  "star/saiph": {
+   "description": "Saïph marque le genou inférieur droit d'Orion. Bien qu'elle semble moins brillante que Rigel, c'est en fait une supergéante bleue très chaude et lumineuse.",
+   "fun_fact": "Saïph apparaît plus faible que sa température ne le suggérerait car la majeure partie de son énergie est rayonnée sous forme de lumière ultraviolette, invisible à nos yeux ! C'est en fait l'une des étoiles brillantes les plus chaudes du ciel.",
+   "distance": "~650 années-lumière",
+   "size": "~22 rayons solaires",
+   "mass": "~15,5 masses solaires",
+   "spectral_class": "B0.5Ia",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/scheat": {
+   "description": "Scheat est une étoile géante rouge dans le Grand Carré de Pégase, remarquable par sa couleur rouge-orangé intense.",
+   "fun_fact": "Scheat est une étoile variable semi-régulière, dont la luminosité varie sur des périodes allant de quelques semaines à plusieurs mois !",
+   "distance": "196 années-lumière",
+   "size": "110 rayons solaires",
+   "mass": "2,1 masses solaires",
+   "spectral_class": "M2 II-III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/shaula": {
+   "description": "Shaula est la deuxième étoile la plus brillante du Scorpion et marque l'aiguillon du scorpion dans la queue.",
+   "fun_fact": "Shaula signifie « la queue levée » en arabe. Il s'agit en fait d'un système stellaire triple avec les étoiles très proches les unes des autres !",
+   "distance": "570 années-lumière",
+   "size": "8,8 rayons solaires",
+   "mass": "10,4 masses solaires",
+   "spectral_class": "B2 IV",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/shedir": {
+   "description": "Shedir (également Schedar) est l'étoile la plus brillante de Cassiopée, une géante orange à la base du célèbre motif en W. Son nom signifie « la poitrine » en arabe.",
+   "fun_fact": "Shedir était autrefois considérée comme une étoile variable, mais les mesures modernes montrent que sa luminosité est remarquablement stable — les rapports antérieurs de variabilité étaient probablement dus à un équipement primitif !",
+   "distance": "228 années-lumière",
+   "size": "45 rayons solaires",
+   "mass": "~4,0 masses solaires",
+   "spectral_class": "K0IIIa",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/sirius": {
+   "description": "Sirius est l'étoile la plus brillante du ciel nocturne, située dans la constellation du Grand Chien.",
+   "fun_fact": "Sirius est en fait un système binaire d'étoiles ! Sirius B, son compagnon, est une naine blanche de la taille de la Terre mais presque aussi massive que le Soleil.",
+   "distance": "8,6 années-lumière",
+   "size": "1,7 rayons solaires",
+   "mass": "2,1 masses solaires",
+   "spectral_class": "A1V",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "star/spica": {
+   "description": "Spica est l'Étoile la plus brillante de la Vierge et l'une des 20 Étoiles les plus brillantes du ciel nocturne. C'est un système stellaire binaire.",
+   "fun_fact": "Spica est si proche de l'écliptique qu'elle peut être occultée par la Lune. Son nom signifie « épi de blé » en latin !",
+   "distance": "250 années-lumière",
+   "size": "7,5 rayons solaires",
+   "mass": "11 masses solaires",
+   "spectral_class": "B1 III-IV",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/unukalhai": {
+   "description": "Unukalhai est l'étoile la plus brillante du Serpent (Tête) (la Tête du Serpent). Son nom signifie \"le cou du serpent\" en arabe.",
+   "fun_fact": "Le Serpent est la seule constellation divisée en deux parties distinctes — Serpens Caput (la tête) et Serpens Cauda (la queue) — séparées par le Serpentaire, et Unukalhai est l'étoile la plus brillante de la moitié de la tête !",
+   "distance": "74 années-lumière",
+   "size": "12 rayons solaires",
+   "mass": "~2,1 masses solaires",
+   "spectral_class": "K2III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/vega": {
+   "description": "Véga est l'une des étoiles les plus brillantes visibles depuis la Terre, située dans la constellation de la Lyre (la Harpe).",
+   "fun_fact": "Véga était l'Étoile Polaire il y a environ 14 000 ans et le sera de nouveau dans environ 12 000 ans en raison de la précession de la Terre !",
+   "distance": "25 années-lumière",
+   "size": "2,4 rayons solaires",
+   "mass": "2,1 masses solaires",
+   "spectral_class": "A0V",
+   "image_credit": "Stephen Rahn (CC0)"
+  },
+  "star/vindemiatrix": {
+   "description": "Vindemiatrix est la troisième étoile la plus lumineuse de la Vierge (la Vierge). Son nom signifie \"la vendangeuse\" en latin.",
+   "fun_fact": "Vindemiatrix tire son nom du fait que son lever héliaque (sa première apparition à l'aube) coïncidait autrefois avec la saison des vendanges en Méditerranée — c'était l'Étoile des vignerons !",
+   "distance": "109 années-lumière",
+   "size": "11 rayons solaires",
+   "mass": "2,6 masses solaires",
+   "spectral_class": "G8III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  }
+ }
+}

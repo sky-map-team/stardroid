@@ -1,0 +1,218 @@
+default_platform(:android)
+
+platform :android do
+  # v2 uses the Kotlin DSL build script, not the legacy Groovy `app/build.gradle`.
+  # Verified: fastlane-plugin-versioning_android (0.1.1) reads/writes the Kotlin DSL
+  # `versionCode = 1` / `versionName = "..."` syntax correctly (it splits on whitespace
+  # and takes the last token), leaving applicationId/namespace untouched. Confirmed
+  # end-to-end via `bundle exec fastlane` against app/build.gradle.kts.
+  GRADLE_FILE = "app/build.gradle.kts"
+
+  # v2 is minSdk 29, but the Play listing is shared with v1 (minSdk 26), so a v2 upload
+  # must keep the older v1 bundles active or devices that cannot install v2 are left with
+  # nothing. Play serves each device the highest version code it is eligible for, so these
+  # are what pre-29 devices receive:
+  #   1708 — v1 1.18.1:Eclipse, the last v1 release and the permanent build for API 26–28
+  #   1115, 1202 — v1's own long-standing retention set for still older devices
+  # Omitting these deactivates them; a v2 release must list every code it wants to survive.
+  V1_VERSION_CODES_TO_RETAIN = [1115, 1202, 1708]
+
+  desc "Run unit tests, ktlint, and the Konsist architecture gate via `check`"
+  lane :test do
+    gradle(task: "check")
+  end
+
+  desc "Increment version code"
+  lane :increment_version_code do
+    android_set_version_code(gradle_file: GRADLE_FILE)
+  end
+
+  desc "Sync local version code to the Play Console before incrementing, in case another " \
+       "upload (a different checkout, a manual upload) advanced it past our gradle file"
+  lane :sync_version_code_from_play_store do
+    tracks = ['internal', 'alpha', 'beta', 'production']
+    used_codes = tracks.flat_map do |track|
+      google_play_track_version_codes(
+        track: track,
+        package_name: "com.google.android.stardroid",
+        json_key: "fastlane/play-store-credentials.json"
+      )
+    end
+    highest_remote = used_codes.max || 0
+    local_code = android_get_version_code(gradle_file: GRADLE_FILE).to_i
+    if highest_remote > local_code
+      UI.important("Play Console has versionCode #{highest_remote} in use, ahead of the " \
+                    "local #{local_code} — syncing before increment.")
+      android_set_version_code(gradle_file: GRADLE_FILE, version_code: highest_remote)
+    end
+  end
+
+  desc "Set a specific version name (e.g., fastlane bump_version name:\"1.5.0:Mars\") The name must have no spaces."
+  lane :bump_version do |options|
+    options ||= {}
+    version_name = options[:name]
+    UI.user_error!("Provide a version name using name:\"value\" (no spaces)") unless version_name
+    android_set_version_name(
+      version_name: version_name,
+      gradle_file: GRADLE_FILE
+    )
+  end
+
+  desc "Build release bundle"
+  lane :build do
+    UI.message("***Make sure you have regenerated the data if necessary***")
+    gradle(
+      task: ":app:bundleGmsRelease",
+      project_dir: "./"
+    )
+  end
+
+  desc "Deploy to internal testing track"
+  lane :internal do
+    sync_version_code_from_play_store
+    sync_version_code_from_play_store
+    increment_version_code
+    build
+    v_code = android_get_version_code(gradle_file: GRADLE_FILE)
+    v_name = android_get_version_name(gradle_file: GRADLE_FILE)
+
+    upload_to_play_store(
+      track: "internal",
+      version_codes_to_retain: V1_VERSION_CODES_TO_RETAIN,
+      aab: "app/build/outputs/bundle/gmsRelease/app-gms-release.aab",
+      skip_upload_apk: true,
+      skip_upload_metadata: true,
+      skip_upload_images: true,
+      skip_upload_screenshots: true,
+      changes_not_sent_for_review: true,
+      version_name: "#{v_name} (#{v_code})",
+      version_code: v_code
+    )
+  end
+
+  desc "Promote Internal to Alpha (Closed Testing)"
+    lane :promote_to_alpha do
+      upload_to_play_store(
+        track: 'internal',
+        track_promote_to: 'alpha',
+        version_codes_to_retain: V1_VERSION_CODES_TO_RETAIN,
+        skip_upload_metadata: true,
+        skip_upload_images: true,
+        skip_upload_screenshots: true,
+        skip_upload_changelogs: true
+      )
+  end
+
+  desc "Promote Alpha to Beta (Open Testing @10%)"
+  lane :promote_to_beta do
+    upload_to_play_store(
+      track: 'alpha',
+      track_promote_to: 'beta',
+      version_codes_to_retain: V1_VERSION_CODES_TO_RETAIN,
+      rollout: '0.1', # Start with a 10% rollout
+      skip_upload_metadata: true,
+      skip_upload_images: true,
+      skip_upload_screenshots: true,
+      skip_upload_changelogs: true
+    )
+  end
+
+  desc "Promote Beta to Production @10%"
+  lane :promote_to_production do
+    # This lane assumes you've already tested the build in Beta
+    upload_to_play_store(
+      track: 'beta',
+      track_promote_to: 'production',
+      version_codes_to_retain: V1_VERSION_CODES_TO_RETAIN,
+      rollout: '0.1', # Start with a 10% rollout
+      skip_upload_metadata: true,
+      skip_upload_images: true,
+      skip_upload_screenshots: true,
+      skip_upload_changelogs: true
+    )
+  end
+
+  # Typically these lanes aren't needed - we upload to internal and promote from there
+  # rather than uploading directly to the other tracks.
+
+  desc "Deploy to alpha track"
+  lane :alpha do
+    sync_version_code_from_play_store
+    increment_version_code
+    build
+    upload_to_play_store(
+      track: "alpha",
+      aab: "app/build/outputs/bundle/gmsRelease/app-gms-release.aab",
+      skip_upload_apk: true,
+      skip_upload_metadata: true,
+      skip_upload_images: true,
+      skip_upload_screenshots: true
+    )
+  end
+
+  desc "Deploy to beta track - shouldn't you deploy to internal first?"
+  lane :beta_yes_im_sure do
+    sync_version_code_from_play_store
+    increment_version_code
+    build
+    upload_to_play_store(
+      track: "beta",
+      aab: "app/build/outputs/bundle/gmsRelease/app-gms-release.aab",
+      skip_upload_apk: true,
+      skip_upload_metadata: true,
+      skip_upload_images: true,
+      skip_upload_screenshots: true
+    )
+  end
+
+  desc "Deploy to production - shouldn't you deploy to internal first?"
+  lane :production_yes_im_sure do
+    sync_version_code_from_play_store
+    increment_version_code
+    build
+    upload_to_play_store(
+      track: "production",
+      aab: "app/build/outputs/bundle/gmsRelease/app-gms-release.aab",
+      skip_upload_apk: true,
+      skip_upload_metadata: true,
+      skip_upload_images: true,
+      skip_upload_screenshots: true
+    )
+  end
+
+  desc "Capture screenshots for Play Store. Specify --device_type=sevenInch for a tablet."
+  lane :screenshots do
+    gradle(
+      task: ":app:assembleGmsDebug",
+      project_dir: "./"
+    )
+    gradle(
+      task: ":app:assembleGmsDebugAndroidTest",
+      project_dir: "./"
+    )
+    screengrab
+  end
+
+  desc "Upload metadata. Options (defaults after the colon): whatsnew:true (include changelogs), imgs:true (include screenshots/images), all:false (everything), store:false (skip store metadata)."
+  lane :upload_metadata do |options|
+    options ||= {}
+    # Changelog uploads require a version code; fall back to the current Gradle value
+    # when the caller doesn't pass one explicitly.
+    v_code = options[:version_code] || android_get_version_code(gradle_file: GRADLE_FILE)
+    include_all = options.fetch(:all, false)
+    include_whatsnew = include_all || options.fetch(:whatsnew, true)
+    include_imgs = include_all || options.fetch(:imgs, true)
+    include_store = include_all || options.fetch(:store, false)
+    upload_to_play_store(
+      skip_upload_apk: true,
+      skip_upload_aab: true,
+      skip_upload_metadata: !include_store,
+      skip_upload_changelogs: !include_whatsnew,
+      skip_upload_images: !include_imgs,
+      skip_upload_screenshots: !include_imgs,
+      changes_not_sent_for_review: false,
+      version_code: v_code,
+      track: 'internal'
+    )
+  end
+end

@@ -1,0 +1,665 @@
+<title>Sky Map — Finding and Clearing Trails</title>
+<style>
+  :root {
+    --bg: #131720; --surface: #1b2230; --surface2: #222b3d; --text: #e7ecf5;
+    --muted: #93a0b4; --accent: #f2b04a; --accent-ink: #131720; --line: #2a3346;
+    --good: #6fbf8a; --bad: #e8776d; --chipbg: rgba(242, 176, 74, 0.14);
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #f6f3ec; --surface: #fffdf8; --surface2: #f0ebdf; --text: #24282f;
+      --muted: #6a6f78; --accent: #b4711d; --accent-ink: #fffdf8; --line: #e2dcce;
+      --good: #2e7d4f; --bad: #b03a2e; --chipbg: rgba(180, 113, 29, 0.12);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #131720; --surface: #1b2230; --surface2: #222b3d; --text: #e7ecf5;
+    --muted: #93a0b4; --accent: #f2b04a; --accent-ink: #131720; --line: #2a3346;
+    --good: #6fbf8a; --bad: #e8776d; --chipbg: rgba(242, 176, 74, 0.14);
+  }
+  :root[data-theme="light"] {
+    --bg: #f6f3ec; --surface: #fffdf8; --surface2: #f0ebdf; --text: #24282f;
+    --muted: #6a6f78; --accent: #b4711d; --accent-ink: #fffdf8; --line: #e2dcce;
+    --good: #2e7d4f; --bad: #b03a2e; --chipbg: rgba(180, 113, 29, 0.12);
+  }
+  * { box-sizing: border-box; }
+  body { background: var(--bg); color: var(--text); margin: 0;
+         font: 15px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  .cond { font-family: "Avenir Next Condensed", "Arial Narrow", "Roboto Condensed", sans-serif; }
+  header { max-width: 1180px; margin: 0 auto; padding: 40px 24px 8px; }
+  .eyebrow { letter-spacing: 0.14em; text-transform: uppercase; font-size: 12.5px;
+             font-weight: 600; color: var(--accent); }
+  h1 { font-family: "Avenir Next Condensed", "Arial Narrow", sans-serif;
+       font-size: clamp(28px, 4vw, 40px); font-weight: 600; margin: 6px 0 4px;
+       text-wrap: balance; }
+  header p { color: var(--muted); max-width: 68ch; margin: 6px 0 0; }
+  main { max-width: 1180px; margin: 0 auto; padding: 24px; display: grid;
+         grid-template-columns: 400px 1fr; gap: 32px; align-items: start; }
+  @media (max-width: 940px) { main { grid-template-columns: 1fr; } }
+
+  .phonewrap { position: sticky; top: 24px; }
+  @media (max-width: 940px) { .phonewrap { position: static; } }
+  .phone { width: 380px; max-width: 100%; border-radius: 34px; padding: 10px;
+           background: #06070a; border: 1px solid #2c3242;
+           box-shadow: 0 24px 60px rgba(0,0,0,0.45); margin: 0 auto; }
+  .screen { position: relative; border-radius: 26px; overflow: hidden; background: #000;
+            height: 700px; touch-action: none; }
+  .screen canvas#sky { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .caption { text-align: center; color: var(--muted); font-size: 13px; margin: 12px auto 0;
+             max-width: 380px; min-height: 34px; }
+
+  /* --- Option A: chips on the map --- */
+  .chipbar { position: absolute; left: 10px; right: 10px; bottom: 12px; display: flex;
+             flex-wrap: wrap; gap: 6px; }
+  .tchip { display: flex; align-items: center; gap: 6px; padding: 5px 6px 5px 10px;
+           border-radius: 999px; font-size: 12px; font-weight: 600;
+           background: rgba(20,26,38,0.90); border: 1px solid rgba(255,255,255,0.14);
+           color: #e7ecf5; backdrop-filter: blur(7px); }
+  .tchip .sw { width: 8px; height: 8px; border-radius: 50%; }
+  .tchip .fr { font-weight: 400; color: #93a0b4; font-size: 11px; }
+  .tchip .x { width: 18px; height: 18px; border-radius: 50%; display: grid;
+              place-items: center; background: rgba(255,255,255,0.12); cursor: pointer;
+              font-size: 11px; line-height: 1; color: #cfd8e8; }
+  .tchip .x:hover { background: rgba(232,119,109,0.35); color: #fff; }
+
+  /* --- Option B: layers-sheet section --- */
+  .sheet { position: absolute; left: 0; right: 0; bottom: 0; max-height: 82%;
+           overflow-y: auto; border-radius: 20px 20px 0 0; background: rgba(22,28,40,0.985);
+           border-top: 1px solid rgba(255,255,255,0.13); padding: 6px 0 16px; z-index: 6; }
+  .grabber { width: 34px; height: 4px; border-radius: 2px; background: rgba(255,255,255,0.28);
+             margin: 8px auto 8px; }
+  .shead { padding: 10px 16px 5px; font-size: 10.5px; letter-spacing: 0.1em;
+           text-transform: uppercase; color: #8f9cb0; display: flex;
+           justify-content: space-between; align-items: center; }
+  .shead .clr { text-transform: none; letter-spacing: 0; font-size: 12px;
+                color: #f2b04a; cursor: pointer; font-weight: 600; }
+  .srow { display: flex; align-items: center; gap: 11px; padding: 10px 16px; }
+  .srow .ico { width: 22px; text-align: center; font-size: 15px; }
+  .srow .lbl { flex: 1 1 auto; font-size: 13.5px; }
+  .srow .lbl small { display: block; color: #8f9cb0; font-size: 11.5px; }
+  .srow .x { color: #93a0b4; cursor: pointer; font-size: 16px; padding: 0 4px; }
+  .srow .x:hover { color: #e8776d; }
+  .sw2 { width: 34px; height: 19px; border-radius: 999px; background: rgba(255,255,255,0.18);
+         position: relative; cursor: pointer; flex: 0 0 auto; }
+  .sw2.on { background: rgba(242,176,74,0.55); }
+  .sw2::after { content: ""; position: absolute; top: 2px; left: 2px; width: 15px;
+                height: 15px; border-radius: 50%; background: #e7ecf5; transition: left 0.15s; }
+  .sw2.on::after { left: 17px; }
+  .divider { height: 1px; background: rgba(255,255,255,0.08); margin: 6px 16px; }
+
+  /* --- Option C: badge on the rail --- */
+  .rail { position: absolute; left: 10px; top: 50%; transform: translateY(-50%);
+          display: flex; flex-direction: column; gap: 5px; padding: 6px;
+          border-radius: 999px; background: rgba(20,26,38,0.86);
+          border: 1px solid rgba(255,255,255,0.11); }
+  .rbtn { width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center;
+          font-size: 14px; color: #93a0b4; cursor: pointer; position: relative; }
+  .rbtn.on { background: rgba(242,176,74,0.22); color: #f7d9a6; }
+  .badge { position: absolute; top: -1px; right: -1px; min-width: 15px; height: 15px;
+           border-radius: 999px; background: #f2b04a; color: #131720; font-size: 9.5px;
+           font-weight: 700; display: grid; place-items: center; padding: 0 3px; }
+
+  /* --- Option D: tap the trail --- */
+  .hint { position: absolute; left: 50%; transform: translateX(-50%); bottom: 16px;
+          padding: 8px 14px; border-radius: 10px; font-size: 12.5px; text-align: center;
+          background: rgba(20,26,38,0.9); border: 1px solid rgba(255,255,255,0.13);
+          color: #cfd8e8; max-width: 300px; }
+  .popover { position: absolute; padding: 9px 11px; border-radius: 13px;
+             background: rgba(24,30,42,0.98); border: 1px solid rgba(255,255,255,0.15);
+             box-shadow: 0 12px 34px rgba(0,0,0,0.55); z-index: 7; min-width: 172px; }
+  .popover.gone { display: none; }
+  .pop-t { font-size: 13.5px; font-weight: 600; margin-bottom: 1px; }
+  .pop-s { font-size: 11px; color: #93a0b4; margin-bottom: 8px; }
+  .pop-a { display: flex; gap: 6px; }
+  .pop-a div { flex: 1 1 0; text-align: center; padding: 6px; border-radius: 9px;
+               font-size: 11.5px; cursor: pointer; background: rgba(255,255,255,0.09);
+               color: #dce4f0; }
+  .pop-a div.danger:hover { background: rgba(232,119,109,0.32); color: #fff; }
+  .pop-a div:hover { background: rgba(255,255,255,0.17); }
+
+  .snack { position: absolute; left: 12px; right: 12px; bottom: 12px; padding: 11px 14px;
+           border-radius: 11px; background: rgba(40,48,64,0.97); font-size: 12.5px;
+           color: #e7ecf5; display: flex; justify-content: space-between; gap: 12px;
+           border: 1px solid rgba(255,255,255,0.13); opacity: 0;
+           transition: opacity 0.22s ease; pointer-events: none; z-index: 8; }
+  .snack.show { opacity: 1; pointer-events: auto; }
+  .snack b { color: #f2b04a; cursor: pointer; font-weight: 600; }
+
+  .toolbar { position: absolute; top: 12px; left: 50%; transform: translateX(-50%);
+             display: flex; gap: 5px; padding: 5px; border-radius: 999px;
+             background: rgba(20,26,38,0.86); border: 1px solid rgba(255,255,255,0.11); }
+  .tbtn { padding: 5px 11px; border-radius: 999px; font-size: 11.5px; cursor: pointer;
+          color: #b9c4d4; }
+  .tbtn.on { background: rgba(242,176,74,0.24); color: #f7d9a6; font-weight: 600; }
+
+  section { border-top: 1px solid var(--line); padding-top: 22px; margin-top: 26px; }
+  section:first-of-type { border-top: none; margin-top: 0; padding-top: 0; }
+  h2 { font-family: "Avenir Next Condensed", "Arial Narrow", sans-serif; font-size: 23px;
+       font-weight: 600; margin: 0 0 4px; }
+  h3 { font-size: 15px; margin: 18px 0 4px; }
+  .lede { color: var(--muted); margin-top: 0; }
+  ul { margin: 8px 0; padding-left: 20px; } li { margin: 5px 0; }
+  .switcher { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 4px; }
+  .tab { padding: 8px 14px; border-radius: 10px; border: 1px solid var(--line);
+         background: var(--surface); color: var(--text); cursor: pointer; font-size: 14px; }
+  .tab.on { background: var(--accent); border-color: var(--accent); color: var(--accent-ink);
+            font-weight: 600; }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
+          padding: 14px 16px; margin: 12px 0; }
+  .card h4 { margin: 0 0 6px; font-size: 14.5px; }
+  .card p:last-child { margin-bottom: 0; }
+  table { border-collapse: collapse; width: 100%; font-size: 14px; margin: 10px 0; }
+  th, td { text-align: left; padding: 7px 9px; border-bottom: 1px solid var(--line);
+           vertical-align: top; }
+  th { color: var(--accent); font-size: 12px; text-transform: uppercase;
+       letter-spacing: 0.07em; }
+  .yes { color: var(--good); font-weight: 600; }
+  .no { color: var(--bad); font-weight: 600; }
+  .qq { border-left: 3px solid var(--accent); padding: 2px 0 2px 12px; color: var(--muted);
+        margin: 12px 0; }
+  code { background: var(--surface2); padding: 1px 5px; border-radius: 4px; font-size: 13px;
+         font-family: ui-monospace, Menlo, monospace; }
+  .toggle { position: fixed; top: 14px; right: 14px; z-index: 9; padding: 7px 12px;
+            border-radius: 999px; border: 1px solid var(--line); background: var(--surface);
+            color: var(--text); cursor: pointer; font-size: 13px; }
+  footer { max-width: 1180px; margin: 0 auto; padding: 8px 24px 60px; color: var(--muted);
+           font-size: 13px; }
+</style>
+
+<button class="toggle" id="themeToggle">◐ Theme</button>
+
+<header>
+  <div class="eyebrow">Sky Map v2 · design mockup 4 of 4</div>
+  <h1 class="cond">Finding and clearing trails</h1>
+  <p>D113 removed the Layers-sheet toggle: a trail exists because you picked an object, so a
+  global switch is an off-switch for individually-created things. That leaves a real gap —
+  with no global list, how do you find a trail you set an hour ago and get rid of it? Four
+  options, each running on the same three live trails.</p>
+</header>
+
+<main>
+  <div class="phonewrap">
+    <div class="phone">
+      <div class="screen" id="screen">
+        <canvas id="sky"></canvas>
+
+        <div class="toolbar" id="toolbar">
+          <div class="tbtn on" data-n="3">3 trails</div>
+          <div class="tbtn" data-n="1">1 trail</div>
+          <div class="tbtn" data-n="0">none</div>
+        </div>
+
+        <div id="surfaces"></div>
+        <div class="snack" id="snack"><span id="snacktext"></span><b id="snackundo">UNDO</b></div>
+      </div>
+    </div>
+    <div class="caption" id="caption">Clear a trail and watch what happens.</div>
+  </div>
+
+  <div>
+    <div class="switcher">
+      <button class="tab on" data-opt="chips">A · Chips</button>
+      <button class="tab" data-opt="layers">B · Layers sheet</button>
+      <button class="tab" data-opt="rail">C · Rail badge</button>
+      <button class="tab" data-opt="tap">D · Tap the trail</button>
+      <button class="tab" data-opt="verdict">Verdict</button>
+    </div>
+    <div id="panels"></div>
+  </div>
+</main>
+
+<footer>Companion to <code>trails.html</code> · for
+<code>docs/design/time-travel.md</code> (D113)</footer>
+
+<script>
+const root = document.documentElement;
+document.getElementById('themeToggle').onclick = () => {
+  const cur = root.getAttribute('data-theme')
+    || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  root.setAttribute('data-theme', cur === 'dark' ? 'light' : 'dark');
+};
+
+// ---------------------------------------------------------------- sky (as trails.html)
+const LAT = 51.5 * Math.PI / 180, SIN_LAT = Math.sin(LAT), COS_LAT = Math.cos(LAT);
+const DEG = Math.PI / 180, HOUR = 3600, DAY = 86400, SIDEREAL = 86164.0905, OBL = 23.44 * DEG;
+const T0 = Date.UTC(2026, 9, 18, 3, 47, 0) / 1000;      // Mars high, dark sky
+const LST_OFF = 4.9255 + (Date.UTC(2026,9,18,3,47,0)/1000 - Date.UTC(2026,7,5,21,47,0)/1000)
+  / SIDEREAL * 2 * Math.PI;
+const lst = t => ((t - T0) / SIDEREAL * 2 * Math.PI) + LST_OFF;
+const EPOCH0 = Date.UTC(2026, 7, 5, 21, 47, 0) / 1000;
+
+let seed = 20260805;
+const rnd = () => (seed = (seed * 1664525 + 1013904223) % 4294967296) / 4294967296;
+const STARS = [];
+for (const [n, raH, dec, mag] of [['Vega',18.62,38.8,0],['Deneb',20.69,45.3,1.3],
+  ['Altair',19.85,8.9,0.8],['Capella',5.28,46,0.1],['Aldebaran',4.6,16.5,0.9],
+  ['Betelgeuse',5.92,7.4,0.5],['Rigel',5.24,-8.2,0.2],['Fomalhaut',22.96,-29.6,1.2]])
+  STARS.push({ ra: raH/24*2*Math.PI, dec: dec*DEG, mag, name: n });
+for (let i = 0; i < 700; i++)
+  STARS.push({ ra: rnd()*2*Math.PI, dec: Math.asin(rnd()*2-1), mag: 2.4+rnd()*3.4, name: null });
+
+function sunRD(t) {
+  const lon = 133*DEG + (t-EPOCH0)/(365.2422*DAY)*2*Math.PI;
+  return { ra: Math.atan2(Math.cos(OBL)*Math.sin(lon), Math.cos(lon)),
+           dec: Math.asin(Math.sin(OBL)*Math.sin(lon)) };
+}
+function moonRD(t) {
+  const d = (t-EPOCH0)/DAY, lon = 95*DEG + d*(2*Math.PI/27.32158);
+  const lat = 5.1*DEG*Math.sin(d*2*Math.PI/27.212);
+  const sl=Math.sin(lon), cl=Math.cos(lon), sb=Math.sin(lat), cb=Math.cos(lat);
+  return { ra: Math.atan2(cb*sl*Math.cos(OBL)-sb*Math.sin(OBL), cb*cl),
+           dec: Math.asin(sb*Math.cos(OBL)+cb*Math.sin(OBL)*sl) };
+}
+function planetRD(a, per, lon0, t) {
+  const d=(t-EPOCH0)/DAY, pl=lon0*DEG+d*2*Math.PI/per, el=313*DEG+d*2*Math.PI/365.256;
+  const x=a*Math.cos(pl)-Math.cos(el), y=a*Math.sin(pl)-Math.sin(el), lon=Math.atan2(y,x);
+  return { ra: Math.atan2(Math.cos(OBL)*Math.sin(lon), Math.cos(lon)),
+           dec: Math.asin(Math.sin(OBL)*Math.sin(lon)) };
+}
+const marsRD = t => planetRD(1.524, 687, 12, t);
+const jupRD  = t => planetRD(5.203, 4331, 96, t);
+function altAz(ra, dec, t) {
+  const H = lst(t) - ra;
+  return { alt: Math.asin(Math.max(-1,Math.min(1,
+             Math.sin(dec)*SIN_LAT + Math.cos(dec)*COS_LAT*Math.cos(H)))),
+           az: Math.atan2(-Math.cos(dec)*Math.sin(H),
+             Math.sin(dec)*COS_LAT - Math.cos(dec)*SIN_LAT*Math.cos(H)) };
+}
+
+// Three trails, deliberately in DIFFERENT frames — the case a follow-the-anchor rule
+// could not express, and the reason "stays as set" is the right rule.
+// The Moon is deliberately not one of these: at this epoch it is 16° below the horizon,
+// so its chip would point at nothing on screen. Betelgeuse takes the slot — and a star's
+// horizon-frame trail is the better example anyway, since the rise-set arc is exactly the
+// "where will this be tonight?" case.
+const betelRD = () => ({ ra: 5.92/24*2*Math.PI, dec: 7.4*DEG });
+const ALL_TRAILS = [
+  { id:'mars',  label:'Mars',       frame:'horizon', color:'#ff8f6b', fn:marsRD,  span:6*HOUR },
+  { id:'betel', label:'Betelgeuse', frame:'horizon', color:'#ffb38a', fn:betelRD, span:6*HOUR },
+  { id:'jup',   label:'Jupiter',    frame:'stars',   color:'#ffd9a0', fn:jupRD,   span:300*DAY },
+];
+const state = { opt:'chips', trails:['mars','moon','jup'], cleared:null,
+                cam:{az:180*DEG, alt:52*DEG, fov:110*DEG}, popover:null };
+
+const sky = document.getElementById('sky'), sctx = sky.getContext('2d');
+function project(alt, az, w, h) {
+  let d = az - state.cam.az;
+  while (d > Math.PI) d -= 2*Math.PI;
+  while (d < -Math.PI) d += 2*Math.PI;
+  const ca=Math.cos(alt), sa=Math.sin(alt);
+  const x=ca*Math.sin(d), y=ca*Math.cos(d), z=sa;
+  const cb=Math.cos(state.cam.alt), sb=Math.sin(state.cam.alt);
+  const y2=y*cb+z*sb, z2=-y*sb+z*cb;
+  if (y2 <= 0.06) return null;
+  const s=(w/2)/Math.tan(state.cam.fov/2);
+  return { x: w/2 + (x/y2)*s, y: h/2 - (z2/y2)*s };
+}
+// Horizon frame: alt/az at the sample time. Stars frame: hold the equatorial direction,
+// i.e. evaluate alt/az at T0 for every sample (the sky is frozen).
+function trailPts(tr, w, h) {
+  const pts = [];
+  for (let i = 0; i <= 140; i++) {
+    const t = T0 - tr.span/2 + tr.span*i/140;
+    const rd = tr.fn(t);
+    const ha = altAz(rd.ra, rd.dec, tr.frame === 'horizon' ? t : T0);
+    pts.push({ p: project(ha.alt, ha.az, w, h), t });
+  }
+  return pts;
+}
+function activeTrails() { return ALL_TRAILS.filter(t => state.trails.includes(t.id)); }
+
+function drawSky() {
+  const w = sky.width, h = sky.height;
+  const g = sctx.createLinearGradient(0,0,0,h);
+  g.addColorStop(0,'#04060c'); g.addColorStop(1,'#0a1120');
+  sctx.fillStyle=g; sctx.fillRect(0,0,w,h);
+  for (const s of STARS) {
+    const ha = altAz(s.ra, s.dec, T0);
+    if (ha.alt < -4*DEG) continue;
+    const p = project(ha.alt, ha.az, w, h); if (!p) continue;
+    const a = Math.max(0, Math.min(1, (3.4-s.mag)/3.4));
+    if (a <= 0.03) continue;
+    sctx.globalAlpha=a; sctx.fillStyle='#fff';
+    sctx.beginPath(); sctx.arc(p.x,p.y,Math.max(0.6,(3.2-s.mag)*0.6),0,7); sctx.fill();
+    if (s.name && s.mag < 1.4 && ha.alt > 0) {
+      sctx.globalAlpha=a*0.7; sctx.fillStyle='#cfe0ff'; sctx.font='10px system-ui';
+      sctx.fillText(s.name, p.x+5, p.y-4);
+    }
+  }
+  sctx.globalAlpha=1;
+  // horizon
+  const hp=[];
+  for (let a=-180;a<=180;a+=2){ const p=project(0, state.cam.az+a*DEG, w, h); if(p) hp.push(p); }
+  if (hp.length>1){
+    sctx.beginPath(); sctx.moveTo(hp[0].x,hp[0].y);
+    for (const p of hp) sctx.lineTo(p.x,p.y);
+    sctx.lineTo(hp[hp.length-1].x,h); sctx.lineTo(hp[0].x,h); sctx.closePath();
+    sctx.fillStyle='rgba(6,10,16,0.88)'; sctx.fill();
+    sctx.beginPath(); sctx.moveTo(hp[0].x,hp[0].y);
+    for (const p of hp) sctx.lineTo(p.x,p.y);
+    sctx.strokeStyle='rgba(120,190,150,0.6)'; sctx.lineWidth=1.3; sctx.stroke();
+  }
+  // trails
+  for (const tr of activeTrails()) {
+    const pts = trailPts(tr, w, h);
+    sctx.lineCap='round';
+    let prev=null;
+    for (const s of pts) {
+      if (s.p && prev) {
+        const d = Math.abs(s.t-T0)/(tr.span/2);
+        sctx.globalAlpha = 0.9*(1-d*0.7);
+        sctx.strokeStyle=tr.color; sctx.lineWidth=2.2;
+        sctx.beginPath(); sctx.moveTo(prev.x,prev.y); sctx.lineTo(s.p.x,s.p.y); sctx.stroke();
+      }
+      prev=s.p;
+    }
+    sctx.globalAlpha=1;
+    // the object now
+    const rd=tr.fn(T0), ha=altAz(rd.ra,rd.dec,T0), q=project(ha.alt,ha.az,w,h);
+    if (q) {
+      sctx.beginPath(); sctx.arc(q.x,q.y,5,0,7); sctx.fillStyle=tr.color; sctx.fill();
+      sctx.strokeStyle='rgba(255,255,255,0.85)'; sctx.lineWidth=1.3; sctx.stroke();
+      sctx.fillStyle='#fff'; sctx.font='600 11.5px system-ui';
+      sctx.fillText(tr.label, q.x+9, q.y-7);
+      tr._screen = q;
+    } else tr._screen = null;
+  }
+}
+
+// ---------------------------------------------------------------- surfaces
+function esc(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;'); }
+const FRAME_LABEL = { horizon: 'against the horizon', stars: 'against the stars' };
+
+function renderSurfaces() {
+  const host = document.getElementById('surfaces');
+  const ts = activeTrails();
+  let html = '';
+  if (state.opt === 'chips') {
+    html = `<div class="chipbar">` + ts.map(t =>
+      `<div class="tchip"><span class="sw" style="background:${t.color}"></span>
+        ${esc(t.label)} <span class="fr">${FRAME_LABEL[t.frame]}</span>
+        <span class="x" data-clr="${t.id}">✕</span></div>`).join('') + `</div>`;
+  } else if (state.opt === 'layers') {
+    html = `<div class="sheet">
+      <div class="grabber"></div>
+      <div class="shead">Object layers</div>
+      <div class="srow"><div class="ico">★</div><div class="lbl">Stars</div>
+        <div class="sw2 on"></div></div>
+      <div class="srow"><div class="ico">♄</div><div class="lbl">Solar system</div>
+        <div class="sw2 on"></div></div>
+      <div class="divider"></div>
+      <div class="shead">Trails${ts.length ? `<span class="clr" id="clrall">Clear all</span>` : ''}</div>` +
+      (ts.length ? ts.map(t => `<div class="srow">
+          <div class="ico" style="color:${t.color}">━</div>
+          <div class="lbl">${esc(t.label)}<small>${FRAME_LABEL[t.frame]}</small></div>
+          <div class="x" data-clr="${t.id}">✕</div></div>`).join('')
+        : `<div class="srow"><div class="lbl" style="color:#8f9cb0">
+             No trails. Tap an object and choose <i>Trace its path</i>.</div></div>`) +
+      `</div>`;
+  } else if (state.opt === 'rail') {
+    html = `<div class="rail">
+      <div class="rbtn">★</div><div class="rbtn">♄</div><div class="rbtn">◎</div>
+      <div class="rbtn on" id="railtrails">━${ts.length
+        ? `<span class="badge">${ts.length}</span>` : ''}</div>
+    </div>` + (state.railOpen && ts.length ? `<div class="sheet">
+      <div class="grabber"></div>
+      <div class="shead">Trails<span class="clr" id="clrall">Clear all</span></div>` +
+      ts.map(t => `<div class="srow">
+        <div class="ico" style="color:${t.color}">━</div>
+        <div class="lbl">${esc(t.label)}<small>${FRAME_LABEL[t.frame]}</small></div>
+        <div class="x" data-clr="${t.id}">✕</div></div>`).join('') + `</div>` : '');
+  } else if (state.opt === 'tap') {
+    html = `<div class="hint">Tap any trail line to manage it.</div>`;
+    if (state.popover) {
+      const t = ALL_TRAILS.find(x => x.id === state.popover.id);
+      html += `<div class="popover" style="left:${state.popover.x}px;top:${state.popover.y}px">
+        <div class="pop-t">${esc(t.label)}</div>
+        <div class="pop-s">Trail ${FRAME_LABEL[t.frame]}</div>
+        <div class="pop-a"><div data-info="${t.id}">Info</div>
+          <div class="danger" data-clr="${t.id}">Remove</div></div></div>`;
+    }
+  }
+  host.innerHTML = html;
+  for (const el of host.querySelectorAll('[data-clr]'))
+    el.onclick = e => { e.stopPropagation(); clearTrail(el.dataset.clr); };
+  const ca = host.querySelector('#clrall');
+  if (ca) ca.onclick = () => clearAll();
+  const rt = host.querySelector('#railtrails');
+  if (rt) rt.onclick = () => { state.railOpen = !state.railOpen; renderSurfaces(); };
+  for (const el of host.querySelectorAll('[data-info]'))
+    el.onclick = () => { toast('Opens the info card for ' +
+      ALL_TRAILS.find(x=>x.id===el.dataset.info).label, false); state.popover=null; renderSurfaces(); };
+}
+
+let snackTimer=null;
+function toast(msg, undoable=true) {
+  const s=document.getElementById('snack');
+  document.getElementById('snacktext').textContent=msg;
+  document.getElementById('snackundo').style.display = undoable ? '' : 'none';
+  s.classList.add('show');
+  clearTimeout(snackTimer);
+  snackTimer=setTimeout(()=>s.classList.remove('show'), 3400);
+}
+function clearTrail(id) {
+  const t = ALL_TRAILS.find(x=>x.id===id);
+  state.cleared = { ids:[...state.trails] };
+  state.trails = state.trails.filter(x=>x!==id);
+  state.popover=null;
+  toast(`${t.label} trail removed`);
+  render();
+}
+function clearAll() {
+  state.cleared = { ids:[...state.trails] };
+  const n = state.trails.length;
+  state.trails=[];
+  toast(`${n} trail${n===1?'':'s'} removed`);
+  render();
+}
+document.getElementById('snackundo').onclick = () => {
+  if (state.cleared) { state.trails = state.cleared.ids; state.cleared=null;
+    document.getElementById('snack').classList.remove('show'); render(); }
+};
+
+// tap-to-select on the sky (option D)
+document.getElementById('screen').addEventListener('click', e => {
+  if (state.opt !== 'tap') return;
+  const r = sky.getBoundingClientRect();
+  const mx = e.clientX - r.left, my = e.clientY - r.top;
+  let best=null;
+  for (const tr of activeTrails()) {
+    for (const s of trailPts(tr, sky.width, sky.height)) {
+      if (!s.p) continue;
+      const d = Math.hypot(s.p.x-mx, s.p.y-my);
+      if (d < 26 && (!best || d < best.d)) best = { d, id: tr.id, x: s.p.x, y: s.p.y };
+    }
+  }
+  state.popover = best ? { id: best.id,
+    x: Math.max(8, Math.min(sky.width-180, best.x-86)),
+    y: Math.max(8, Math.min(sky.height-110, best.y+14)) } : null;
+  renderSurfaces();
+});
+
+function render() { drawSky(); renderSurfaces(); syncToolbar(); }
+function syncToolbar() {
+  for (const el of document.querySelectorAll('[data-n]'))
+    el.classList.toggle('on', String(state.trails.length) === el.dataset.n);
+}
+for (const el of document.querySelectorAll('[data-n]'))
+  el.onclick = () => {
+    const n = Number(el.dataset.n);
+    state.trails = ALL_TRAILS.slice(0, n).map(t=>t.id);
+    state.popover=null; render();
+  };
+
+// ---------------------------------------------------------------- panels
+const PANELS = {
+  chips: `
+    <section>
+      <h2 class="cond">A · Chips on the map</h2>
+      <p class="lede">Each active trail gets a dismissible chip along the bottom.</p>
+      <p>The chip carries what a trail actually is — an <b>object and a frame</b> — with a
+      colour swatch matching the line, and an ✕ to clear it. Tap ✕ and the trail goes, with
+      an UNDO snackbar (D53's host already exists).</p>
+      <h3>What's good</h3>
+      <ul>
+        <li><b>Zero-hunt.</b> The control is where the thing is. No sheet to open, no
+          navigation — the answer to "what's on my screen?" is on the screen.</li>
+        <li>It states the frame, which is the part users will forget they chose.</li>
+        <li>Self-limiting: chips make three trails feel like a lot, which is honest, because
+          three trails <em>is</em> a lot of ink on the sky.</li>
+      </ul>
+      <h3>What's bad</h3>
+      <ul>
+        <li><b>It is permanent chrome</b>, which is the thing D112 spent a whole round
+          removing. Switch to "3 trails" above and it is a full row across the bottom —
+          exactly where the time-travel player now lives.</li>
+        <li>Collides with the expanded player and, in landscape, with the D57 action
+          column.</li>
+      </ul>
+      <div class="qq">The collision is the killer. The bottom strip is now spoken for by
+      the time player (D112 Part 4), and two stacked bars over the sky is precisely the
+      "jumble" the chrome redesign fixed.</div>
+    </section>`,
+
+  layers: `
+    <section>
+      <h2 class="cond">B · A Trails section in the Layers sheet</h2>
+      <p class="lede">Not a toggle — a list. That distinction is the whole point.</p>
+      <p>D113 ruled out a Layers <em>toggle</em> because a boolean cannot carry
+      object-plus-frame. But a <b>section listing active trails</b> is a different thing: one
+      row per trail, showing object and frame, each with its own ✕, plus <b>Clear all</b>.
+      Try it, and try the "none" state to see the empty text.</p>
+      <h3>What's good</h3>
+      <ul>
+        <li><b>Costs no permanent pixels</b> — the sheet is already there and already the
+          "configure what the map draws" surface. Trails are exactly that.</li>
+        <li>It is where people will look. The sheet is the canonical list of what's drawn;
+          a trail is drawn.</li>
+        <li>The empty state teaches the feature: "Tap an object and choose <i>Trace its
+          path</i>" is discovery for free.</li>
+        <li>Handles any number of trails without competing for sky.</li>
+      </ul>
+      <h3>What's bad</h3>
+      <ul>
+        <li>Two taps to reach (rail → expand, or long-press). Not zero-hunt.</li>
+        <li>Sits next to rows that <em>are</em> toggles, so it must look different enough not
+          to read as "turn trails off".</li>
+      </ul>
+      <div class="qq">The objection D113 raised was to a <b>global boolean</b>. A list of
+      individually-created items with individual ✕s is not that — it is the same pattern as
+      any "active filters" list.</div>
+    </section>`,
+
+  rail: `
+    <section>
+      <h2 class="cond">C · A rail item with a count badge</h2>
+      <p class="lede">Option B, plus a persistent signal that trails exist.</p>
+      <p>A trails entry on the layer rail carrying a <b>count badge</b>; tapping it opens the
+      list from option B directly. Tap the badged rail item on the phone.</p>
+      <h3>What's good</h3>
+      <ul>
+        <li><b>Solves discovery, which is the actual problem.</b> The gap is not "clearing is
+          hard", it is "I forgot a trail is on". A badge is ambient and always visible.</li>
+        <li>One tap to the list instead of two.</li>
+        <li>Reuses the rail's existing tint-for-state vocabulary (D57).</li>
+      </ul>
+      <h3>What's bad</h3>
+      <ul>
+        <li><b>Costs a rail slot</b>, and the rail is budget-constrained: on a landscape
+          phone only ~7 slots fit, and D57 already assigns them <code>always</code> /
+          <code>ifroom</code> / <code>never</code>. Trails would have to displace something
+          or be <code>ifroom</code> — and an <code>ifroom</code> item that vanishes in
+          landscape is a poor home for the only discovery signal.</li>
+        <li>A rail full of toggles gains one item that is not a toggle.</li>
+      </ul>
+    </section>`,
+
+  tap: `
+    <section>
+      <h2 class="cond">D · Tap the trail itself</h2>
+      <p class="lede">The most direct manipulation, and the least discoverable.</p>
+      <p><b>Try it:</b> tap any trail line on the phone. A popover offers Info and Remove.
+      The hit-test reuses <code>IdentifyGeometry</code>'s inverse projection — the same
+      machinery tap-to-identify already uses on objects (D45).</p>
+      <h3>What's good</h3>
+      <ul>
+        <li><b>Perfectly direct.</b> The thing you want to remove is the thing you touch.</li>
+        <li>Zero chrome. Nothing on screen until you interact.</li>
+        <li>Falls naturally out of existing tap-to-identify.</li>
+      </ul>
+      <h3>What's bad</h3>
+      <ul>
+        <li><b>Undiscoverable.</b> Nothing suggests a line is tappable, and this is the one
+          option that does nothing for the "I forgot it was on" problem.</li>
+        <li><b>Ambiguous with tap-to-identify.</b> Tapping near a trail that passes close to
+          a star has to choose between opening the star's card and the trail's popover.</li>
+        <li>A trail below the horizon or off-screen cannot be tapped at all — so it cannot be
+          the <em>only</em> route.</li>
+      </ul>
+    </section>`,
+
+  verdict: `
+    <section>
+      <h2 class="cond">Recommendation: B as the home, D as the shortcut</h2>
+      <p class="lede">Discovery and management are different problems.</p>
+      <table>
+        <tr><th>Option</th><th>Discovery</th><th>Chrome cost</th><th>Scales</th><th>Verdict</th></tr>
+        <tr><td><b>A · Chips</b></td><td class="yes">Best</td><td class="no">A permanent row</td>
+            <td class="no">Poor</td><td>Cut — collides with the player</td></tr>
+        <tr><td><b>B · Layers list</b></td><td>Adequate</td><td class="yes">None</td>
+            <td class="yes">Good</td><td><b>Ship</b></td></tr>
+        <tr><td><b>C · Rail badge</b></td><td class="yes">Best</td><td>One rail slot</td>
+            <td class="yes">Good</td><td>Defer — rail budget</td></tr>
+        <tr><td><b>D · Tap trail</b></td><td class="no">None</td><td class="yes">None</td>
+            <td>n/a</td><td><b>Ship</b> as a shortcut</td></tr>
+      </table>
+      <h3>The reasoning</h3>
+      <p><b>B is the home</b> because it costs nothing, scales, and puts trails where the
+      canonical list of drawn things already lives. The D113 objection was to a global
+      <em>boolean</em>; a list of individually-created items with individual ✕s is a
+      different pattern and does not reintroduce it.</p>
+      <p><b>D is the shortcut</b> because it is nearly free once <code>IdentifyGeometry</code>
+      is doing the hit-test anyway, and direct manipulation is the right verb for something
+      drawn on the sky. It cannot stand alone — off-screen trails are untappable — but as a
+      second route it costs one branch in an existing tap handler.</p>
+      <p><b>A is cut</b> on the collision: the bottom strip belongs to the time player now,
+      and stacking a chip row under it recreates the jumble D56/D57 removed.</p>
+      <p><b>C is deferred, not rejected.</b> It is the best answer to discovery, which is
+      the real gap — but it costs a rail slot the D57 budget cannot spare today. If usage
+      shows people forget trails are on, promoting the Layers row to a badged rail item is a
+      clean follow-up that changes nothing else.</p>
+      <div class="qq">Interim discovery without a rail slot: when a trail is created, the
+      confirmation snackbar can say "Trail added — manage in Layers", which teaches the
+      route once, at the moment it becomes relevant.</div>
+    </section>`,
+};
+
+function setOpt(o) {
+  state.opt = o; state.popover = null; state.railOpen = (o === 'rail');
+  for (const t of document.querySelectorAll('[data-opt]'))
+    t.classList.toggle('on', t.dataset.opt === o);
+  document.getElementById('panels').innerHTML = PANELS[o];
+  const caps = {
+    chips:'Switch to "3 trails" — see how much bottom strip it takes.',
+    layers:'Clear one, or Clear all; try the "none" state for the empty text.',
+    rail:'Tap the badged rail item at the left to open the list.',
+    tap:'Tap directly on a trail line.',
+    verdict:'All three trails, as they would ship.',
+  };
+  document.getElementById('caption').textContent = caps[o] || '';
+  if (o === 'verdict') state.trails = ALL_TRAILS.map(t=>t.id);
+  render();
+}
+for (const t of document.querySelectorAll('[data-opt]'))
+  t.onclick = () => setOpt(t.dataset.opt);
+
+function resize() {
+  const r = sky.getBoundingClientRect();
+  sky.width = Math.max(1, Math.round(r.width));
+  sky.height = Math.max(1, Math.round(r.height));
+  render();
+}
+addEventListener('resize', resize);
+setOpt('chips');
+resize();
+</script>

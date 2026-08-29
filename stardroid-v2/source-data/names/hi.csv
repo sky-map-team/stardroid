@@ -1,0 +1,259 @@
+object_id,name,is_primary
+constellation/andromeda,एंड्रोमेडा,1
+constellation/antlia,एंटलिया,1
+constellation/apus,अपस,1
+constellation/aquarius,कुंभ,1
+constellation/aquila,गरुड़,1
+constellation/ara,अरा,1
+constellation/aries,मेष,1
+constellation/auriga,सारथी,1
+constellation/bootes,गोपालक,1
+constellation/caelum,कैलम,1
+constellation/camelopardalis,कैमलोपार्डलिस,1
+constellation/cancer,कर्क,1
+constellation/canes_venatici,कैनिस वेनेटिसी,1
+constellation/canis_major,बड़ा कुत्ता,1
+constellation/canis_minor,कैनिस माइनर,1
+constellation/capricornus,मकर,1
+constellation/carina,कील,1
+constellation/cassiopeia,कसिओपिया,1
+constellation/centaurus,सेंटोरस,1
+constellation/cepheus,सेफियस,1
+constellation/cetus,व्हेल,1
+constellation/chamaeleon,कैमेलियॉन,1
+constellation/circinus,सर्किनस,1
+constellation/columba,कोलंबा,1
+constellation/coma_berenices,कोमा बेरेनिसेस,1
+constellation/corona_australis,कोरोना ऑस्ट्रेलिस,1
+constellation/corona_borealis,कोरोना बोरिएलिस,1
+constellation/corvus,कोर्वस,1
+constellation/crater,क्रेटर,1
+constellation/crux,दक्षिणी क्रॉस,1
+constellation/cygnus,हंस,1
+constellation/delphinus,डेल्फिनस,1
+constellation/dorado,डोराडो,1
+constellation/draco,ड्रैगन,1
+constellation/equuleus,इक्विलियस,1
+constellation/eridanus,नदी,1
+constellation/fornax,फोर्नैक्स,1
+constellation/gemini,मिथुन,1
+constellation/grus,ग्रस,1
+constellation/hercules,हरक्यूलिस,1
+constellation/horologium,होरोलोजियम,1
+constellation/hydra,हाइड्रा,1
+constellation/hydrus,हाइड्रस,1
+constellation/indus,इंडस,1
+constellation/lacerta,लेसर्टा,1
+constellation/leo,लियो,1
+constellation/leo_minor,लियो माइनर,1
+constellation/lepus,लेपस,1
+constellation/libra,तुला,1
+constellation/lupus,लूपस,1
+constellation/lynx,लिंक्स,1
+constellation/lyra,लीरा,1
+constellation/mensa,मेंसा,1
+constellation/microscopium,माइक्रोस्कोपियम,1
+constellation/monoceros,मोनोसेरोस,1
+constellation/musca,मस्का,1
+constellation/norma,नॉर्मा,1
+constellation/octans,ऑक्टन्स,1
+constellation/ophiuchus,ओफिउकस,1
+constellation/orion,ओरायन,1
+constellation/pavo,पावो,1
+constellation/pegasus,पेगासस,1
+constellation/perseus,पर्सियस,1
+constellation/phoenix,फीनिक्स,1
+constellation/pictor,पिक्टर,1
+constellation/pisces,मीन,1
+constellation/piscis_austrinus,दक्षिण मीन,1
+constellation/puppis,पुप्पिस,1
+constellation/pyxis,पाइक्सिस,1
+constellation/reticulum,रेटिकुलम,1
+constellation/sagitta,सागिट्टा,1
+constellation/sagittarius,धनु,1
+constellation/scorpius,वृश्चिक,1
+constellation/sculptor,स्कल्पटर,1
+constellation/scutum,स्कुटम,1
+constellation/serpens_caput,सर्पेंस कैपुट,1
+constellation/serpens_cauda,सर्पेंस कॉडा,1
+constellation/sextans,सेक्सटन्स,1
+constellation/taurus,वृष,1
+constellation/telescopium,टेलीस्कोपियम,1
+constellation/triangulum,त्रिभुज,1
+constellation/triangulum_australe,दक्षिणी त्रिभुज,1
+constellation/tucana,तुकाना,1
+constellation/ursa_major,बड़ी भालू,1
+constellation/ursa_minor,छोटी भालू,1
+constellation/vela,वेला,1
+constellation/virgo,कन्या,1
+constellation/volans,उड़ने वाली मछली,1
+constellation/vulpecula,लोमड़ी,1
+dso/blue_snowball_nebula,नीली स्नोबॉल नेबुला,1
+dso/coathanger,कोटहैंगर,1
+dso/coathanger,ब्रोची's क्लस्टर,0
+dso/coma_star_cluster,कोमा तारा समूह,1
+dso/coma_star_cluster,कोमा बेरेनिसेस क्लस्टर,0
+dso/cygnus_x_1,ब्लैक होल बाइनरी,1
+dso/cygnus_x_1,तारकीय ब्लैक होल,0
+dso/double_cluster,दोहरा समूह,1
+dso/double_cluster,h और χ पर्सी,0
+dso/double_cluster,NGC 869 & NGC 884,0
+dso/eta_carinae_nebula,एटा कैरिना नेबुला,1
+dso/eta_carinae_nebula,कैरिना नेबुला,0
+dso/exposed_cranium_nebula,उजागर खोपड़ी नेबुला,1
+dso/ghost_of_jupiter,बृहस्पति का भूत,1
+dso/hdf,हबल डीप फील्ड,1
+dso/hdf,हबल डीप फील्ड,0
+dso/helix_nebula,हेलिक्स नेबुला,1
+dso/helix_nebula,ईश्वर की आँख,0
+dso/hyades,हाइएडीज,1
+dso/jewel_box,जेवल बॉक्स,1
+dso/jewel_box,हर्शल का जेवल बॉक्स,0
+dso/jewel_box,कप्पा क्रूसिस समूह,0
+dso/lmc,बड़ा मैजेलैनिक बादल,1
+dso/lmc,Nubecula Major,0
+dso/m1,केकड़ा नेबुला,1
+dso/m101,पिनव्हील गैलेक्सी,1
+dso/m102,स्पिंडल गैलेक्सी,1
+dso/m104,सोम्ब्रेरो गैलेक्सी,1
+dso/m11,वाइल्ड डक क्लस्टर,1
+dso/m13,हरक्यूलिस ग्लोबुलर क्लस्टर,1
+dso/m13,हरक्यूलिस ग्लोबुलर क्लस्टर,0
+dso/m16,ईगल नेबुला,1
+dso/m20,ट्रिफिड नेबुला,1
+dso/m24,धनु तारा बादल,1
+dso/m27,डंबल नेबुला,1
+dso/m31,एंड्रोमेडा गैलेक्सी,1
+dso/m33,ट्रायंगुलम गैलेक्सी,1
+dso/m42,ओरियन नेबुला,1
+dso/m43,डी मैरन का नेबुला,1
+dso/m44,मधुमक्खी समूह,1
+dso/m44,Praesepe,0
+dso/m45,प्लेइएडेस,1
+dso/m45,सात बहनें,0
+dso/m51,व्हर्लपूल गैलेक्सी,1
+dso/m57,रिंग नेबुला,1
+dso/m6,तितली समूह,1
+dso/m63,सनफ्लावर गैलेक्सी,1
+dso/m64,ब्लैक आई गैलेक्सी,1
+dso/m7,बिच्छू की पूंछ,1
+dso/m7,टॉलेमी क्लस्टर,0
+dso/m74,फैंटम गैलेक्सी,1
+dso/m76,लिटिल डंबल नेबुला,1
+dso/m8,लैगून नेबुला,1
+dso/m81,बोड की गैलेक्सी,1
+dso/m82,सिगार गैलेक्सी,1
+dso/m83,दक्षिणी पिनव्हील,1
+dso/m97,आउल नेबुला,1
+dso/ngc_6543,कैट'स आई नेबुला,1
+dso/north_america_nebula,उत्तर अमेरिका नेबुला,1
+dso/north_america_nebula,कैल्डवेल 20,0
+dso/omega_centauri,ओमेगा सेंटॉरी ग्लोबुलर क्लस्टर,1
+dso/omega_centauri,ω Centauri,0
+dso/saturn_nebula,शनि नेबुला,1
+dso/sculptor_galaxy,मूर्तिकार आकाशगंगा,1
+dso/sculptor_galaxy,सिल्वर डॉलर गैलेक्सी,0
+dso/sculptor_galaxy,सिल्वर कॉइन गैलेक्सी,0
+dso/sgr_a_star,Sgr A*,1
+dso/sgr_a_star,ब्लैक होल,0
+dso/sgr_a_star,गैलेक्टिक केंद्र,0
+dso/smc,छोटा मैजेलैनिक बादल,1
+dso/smc,Nubecula Minor,0
+dso/t_crb,T कोरोना बोरिएलिस,1
+dso/t_crb,ब्लेज़ स्टार,0
+dso/tarantula_nebula,टारेंटुला नेबुला,1
+dso/tarantula_nebula,30 डोराडस,0
+dso/willman_1,विलमैन 1,1
+dso/willman_1,बेथ विलमैन गैलेक्सी,0
+moon/ariel,एरियल,1
+moon/callisto,कैलिस्टो,1
+moon/deimos,डीमोस,1
+moon/dione,डायोन,1
+moon/europa,यूरोपा,1
+moon/ganymede,गेनीमेड,1
+moon/iapetus,इयापेटस,1
+moon/io,आयो,1
+moon/oberon,ओबेरॉन,1
+moon/phobos,फोबोस,1
+moon/rhea,रिया,1
+moon/tethys,टेथिस,1
+moon/titan,टाइटन,1
+moon/titania,टाइटेनिया,1
+moon/triton,ट्राइटन,1
+moon/umbriel,अम्ब्रिएल,1
+planet/jupiter,बृहस्पति,1
+planet/mars,मंगल,1
+planet/mercury,बुध,1
+planet/moon,चंद्रमा,1
+planet/neptune,वरुण,1
+planet/pluto,प्लूटो,1
+planet/saturn,शनि,1
+planet/sun,सूर्य,1
+planet/uranus,अरुण,1
+planet/venus,शुक्र,1
+shower/aquariids,एटा एक्वेरिड्स,1
+shower/deltaaquariids,डेल्टा एक्वेरिड्स,1
+shower/geminids,जेमिनिड्स,1
+shower/leonids,लियोनिड्स,1
+shower/lyrids,लिरिड्स,1
+shower/orionids,ओरिओनिड्स,1
+shower/perseids,पर्सिड्स,1
+shower/puppidvelids,पप्पिड-वेलिड्स,1
+shower/quadrantids,क्वाड्रेंटिड्स,1
+shower/ursids,अर्सिड्स,1
+star/achernar,अचेरनार,1
+star/alcyone,अलसियोन,1
+star/alderamin,अल्देरामिन,1
+star/algenib,अलजेनिब,1
+star/algieba,अलजीबा,1
+star/algol,अलगोल,1
+star/alhena,अलहेना,1
+star/alkaid,अलकैद,1
+star/alphard,अलफर्द,1
+star/alphekka,अल्फेक्का,1
+star/alpheratz,अलफेराज़,1
+star/altair,अल्तैर,1
+star/ankaa,अंकाह,1
+star/arcturus,आर्कटुरस,1
+star/arneb,अर्नेब,1
+star/betelgeuse,बेटेलज्यूज,1
+star/canopus,कैनोपस,1
+star/capella,कपेला,1
+star/caph,काफ,1
+star/castor,कास्टर,1
+star/denebola,देनेबोला,1
+star/diphda,दिफदा,1
+star/dubhe,डबे,1
+star/e_lyrae,ε लाइरे,1
+star/enif,एनिफ,1
+star/etamin,एटामिन,1
+star/hadar,हदार,1
+star/hamal,हमल,1
+star/izar,इज़ार,1
+star/kaus_australis,कौस ऑस्ट्रेलिस,1
+star/kochab,कोचब,1
+star/markab,मरकब,1
+star/menkar,मेनकर,1
+star/merak,मेराक,1
+star/mirach,मिराच,1
+star/nunki,नुंकी,1
+star/phad,फद,1
+star/polaris,पोलारिस,1
+star/polaris,उत्तर तारा,0
+star/polaris,ध्रुव तारा,0
+star/procyon,प्रोसियॉन,1
+star/rasalhague,राशलहग,1
+star/rigel,रिजेल,1
+star/rigil_kentaurus_a,अल्फा सेंटॉरी,1
+star/rigil_kentaurus_a,रिजिल केंटौरस ए,0
+star/rigil_kentaurus_a,रिजेल केंटौरस ए,0
+star/rigil_kentaurus_a,रिजिल केंट,0
+star/saiph,सैफ,1
+star/scheat,शीट,1
+star/shedir,शेदिर,1
+star/sirius,सीरियस,1
+star/sirius,डॉग स्टार,0
+star/unukalhai,उनुकलहाई,1
+star/vega,वेगा,1
+star/vindemiatrix,विंडेमिएट्रिक्स,1
+dso/v838_mon,वी838 मोनोसेरोटिस,1

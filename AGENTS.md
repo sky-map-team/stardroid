@@ -8,7 +8,10 @@ Sky Map is an open-source Android planetarium app that displays the night sky in
 device sensors and OpenGL rendering. Originally "Google Sky Map" (open-sourced 2011), now
 community-maintained. The internal codename "Stardroid" remains in package names.
 
-Codebase: Java and Kotlin, targeting Android SDK 26–36.
+Codebase: Java and Kotlin. The v1 app (`stardroid-v1/`) targets Android SDK 26–36. The v2
+rewrite (`stardroid-v2/`) deliberately raises the floor to **minSdk 29**
+(compileSdk/targetSdk 36) and is Kotlin only — sub-Android-10 devices are ~1.6% of installs.
+Do not "correct" v2's minSdk back to 26.
 github: https://github.com/sky-map-team/stardroid
 
 ## Module Structure
@@ -129,20 +132,47 @@ which guards against duplicate dialogs after activity recreation (e.g. rotation)
 
 ## Code Style
 
-No copyright header on new files.
+**v1 (`stardroid-v1/`):** No copyright header on new files (Apache 2.0 governs; existing
+Google-authored files retain their original headers).
 
 Follow the [Google Java Style Guide](https://google.github.io/styleguide/javaguide.html):
 
 - 100 character line wrap
 - Do **not** prefix member variables with `m` (unlike common Android convention)
 - Use Java 17 toolchain features
+
+**v2 (`stardroid-v2/`):** Every new `.kt` file must begin with this GPLv3 short header:
+
+```
+/*
+ * Copyright (c) 2026 Penterakt LLC.
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ */
+```
+
+**v2 (`stardroid-v2/`, Kotlin only):** Follow the
+[Google Kotlin Style Guide](https://developer.android.com/kotlin/style-guide):
+
+- 100 character line wrap
+- No `m`-prefix on properties — this convention is obsolete
+- Prefer idiomatic Kotlin (`val`, data classes, extension functions, expression bodies) over
+  Java-style translations
+
+**Linting (v2 only):** `./gradlew ktlintCheck` enforces the 100-character limit and Google Kotlin
+Style Guide across all v2 modules. Run `./gradlew ktlintFormat` to auto-fix most violations before
+committing. Inline trailing comments (`foo, // note`) inside argument/parameter lists are not
+allowed by ktlint — place comments on their own line above the element instead.
+
 ## Threading and Concurrency
 
 - **No Raw Threads:** Never use `Thread { ... }.start()` or `new Thread()`. Raw threads are inefficient and difficult to manage/cancel.
 - **Background Executor:** For background tasks (e.g. geocoding, I/O), inject the shared `ScheduledExecutorService` provided by `ApplicationModule`.
 - **UI Thread:** Use `Handler(Looper.getMainLooper())` or `activity.runOnUiThread` (in fragments) to post results back to the UI thread.
 - **Coroutines:** While preferred for new Kotlin code, ensure they are integrated with the existing Hilt-managed scopes if used.
-
 
 ### Strings
 Remember to properly escape any text added as Android resource strings (e.g. ' must be escaped
@@ -163,7 +193,42 @@ Status colors follow a two-tier naming scheme:
 | `status_bad` | Red — error/missing | `night_status_bad` |
 | `status_absent` | Grey — hardware absent | `night_status_absent` |
 
-Night-mode variants are red-shifted; brighter = better (mirrors day-mode meaning).
+Night-mode variants are red-shifted; brighter = better (mirrors day-mode meaning). Note the
+color palette in @stardroid-v1/docs/design/visual_design.md.
+
+## Licensing
+
+The v2 rewrite uses a **split-license** structure to keep the code open-source and F-Droid
+compatible while protecting branding assets from copycat clones.
+
+| Artifact | License | Owner |
+|---|---|---|
+| All `.kt` source code in `stardroid-v2/` | GPLv3 (+ a section 7 app-store permission) | Penterakt LLC and contributors |
+| Functional resources — strings, translations, themes, layouts, UI artwork | GPLv3 | Penterakt LLC and contributors |
+| Brand assets enumerated in `stardroid-v2/ASSET-LICENSES.txt` `[arr]` | All Rights Reserved | Penterakt LLC |
+| Assets inherited from v1 (`[apache-v1]`) | Apache-2.0 | Varies — see `NOTICE.md` |
+| Scientific data and imagery (`[third-party]`) | Its own terms — public domain **or CC BY 4.0** | N/A |
+
+**Rules for new assets and code:**
+- Every new `.kt` file must carry the GPLv3 short header shown in the Code Style section above.
+- **Every new asset must be classified in `stardroid-v2/ASSET-LICENSES.txt` before it can
+  merge.** `tools/check_asset_licenses.py` runs in CI and fails on anything unclassified.
+  Put the file wherever it belongs functionally, then add its path to the right section:
+  `[arr]` (you drew it *and* it is brand identity), `[gpl]` (you drew it, functional),
+  `[apache-v1]` (inherited from v1), `[third-party]` (external).
+- **Do not put an asset in `[arr]` unless it is unambiguously our own brand artwork.** The
+  previous rule reserved two whole directories, which asserted ownership over 2,285
+  community-contributed translations and every string resource — an over-claim that also
+  contradicted the GPLv3 grant, since those files are Corresponding Source.
+- Do **not** place scientific datasets or third-party assets in `[arr]`.
+- There is no "branding directory". Asset location carries no licence meaning at all — put a
+  file where it belongs functionally, and let `ASSET-LICENSES.txt` say what it is.
+- `stardroid-v2/LICENSE.md` is the authoritative notice; `NOTICE.md` records Apache-2.0
+  ancestry; `CLA.md` (repo root) governs contributions.
+
+Exactly two documents govern asset licensing: `stardroid-v2/LICENSE.md` (the terms) and
+`stardroid-v2/ASSET-LICENSES.txt` (the list). `NOTICE.md` records the Apache-2.0 ancestry.
+Do not add a third notice — per-directory notices are what let the old claim drift.
 
 ## Key Files
 
@@ -178,8 +243,28 @@ Night-mode variants are red-shifted; brighter = better (mirrors day-mode meaning
   OpenGL rendering
 - [`source.proto`](stardroid-v1/datamodel/src/main/proto/source.proto) - Protocol buffer schema for astronomical
   objects
+- `stardroid-v1/` — the shipping legacy app; the definitive reference for existing behavior when
+  porting. Avoid changes beyond maintenance fixes.
+- `stardroid-v2/` — the active v2 rewrite:
+  - `docs/design/` — per-area design docs; `docs/README.md` tracks implementation status.
+  - `core/math`, `core/astronomy` — pure Kotlin modules (no Android SDK on the classpath).
+  - `render/api` — pure renderer contract + shared projection; `render/gles1` — a GLES1
+    backend written to match v1's rendering behaviour (an independent implementation, not a
+    port; see `stardroid-v2/NOTICE.md`).
+  - `app/` — the Android app shell (currently the dev test-scene activity and perf gate).
+  - `konsist/` — architecture-gate tests enforcing the pure/Android module boundary (D20).
+  - `build-logic/` — Gradle convention plugins (`skymap.pure-kotlin`, `skymap.android-*`).
 
 ## Testing
 
 Unit tests: JUnit 4, Robolectric, Mockito, Truth. Instrumented: Espresso.
 Structure mirrors main source: `stardroid-v1/app/src/test/` and `stardroid-v1/app/src/androidTest/`.
+
+**v2 (`stardroid-v2/`):** `./gradlew check` from the module root runs unit tests
+(JUnit 5 + Truth), ktlint, and the Konsist architecture gate — it must pass before any commit.
+Instrumented tests (`./gradlew connectedDebugAndroidTest`, including the D19 renderer perf smoke
+gate) need an emulator or device; CI runs both suites on every PR
+(`.github/workflows/android.yml`). Pure modules must stay testable without Android.
+
+**v1 (`stardroid-v1/`):** standard Gradle unit tests; remember to specify the flavor
+(e.g. `testGmsDebugUnitTest`).

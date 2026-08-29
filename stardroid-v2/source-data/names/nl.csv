@@ -1,0 +1,135 @@
+object_id,name,is_primary
+constellation/aquarius,Waterman,1
+constellation/aquila,Arend,1
+constellation/aries,Ram,1
+constellation/auriga,Voerman,1
+constellation/bootes,Boötes,1
+constellation/cancer,Kreeft,1
+constellation/canis_major,Grote Hond,1
+constellation/capricornus,Steenbok,1
+constellation/carina,Kiel,1
+constellation/centaurus,Centaur,1
+constellation/cetus,Walvis,1
+constellation/crux,Zuiderkruis,1
+constellation/cygnus,Zwaan,1
+constellation/draco,Draak,1
+constellation/gemini,Tweeling,1
+constellation/grus,Kraanvogel,1
+constellation/hydrus,Kleine Waterslang,1
+constellation/leo,Leeuw,1
+constellation/libra,Weegschaal,1
+constellation/lupus,Wolf,1
+constellation/lyra,Lier,1
+constellation/ophiuchus,Slangendrager,1
+constellation/pavo,Pauw,1
+constellation/pisces,Vissen,1
+constellation/piscis_austrinus,Zuidervis,1
+constellation/puppis,Achtersteven,1
+constellation/sagittarius,Boogschutter,1
+constellation/scorpius,Schorpioen,1
+constellation/taurus,Stier,1
+constellation/tucana,Toekan,1
+constellation/ursa_major,Grote Beer,1
+constellation/ursa_minor,Kleine Beer,1
+constellation/vela,Zeilen,1
+constellation/virgo,Maagd,1
+dso/blue_snowball_nebula,Blauwe Sneeuwbal-nevel,1
+dso/coathanger,Kledinghangercluster,1
+dso/coathanger,Brocchi's Cluster,0
+dso/coma_star_cluster,Coma Sterrencluster,1
+dso/coma_star_cluster,Coma Berenices Cluster,0
+dso/cygnus_x_1,Zwart gat dubbelster,1
+dso/cygnus_x_1,Stellair zwart gat,0
+dso/double_cluster,Dubbele Cluster,1
+dso/double_cluster,h en χ Persei,0
+dso/double_cluster,NGC 869 & NGC 884,0
+dso/eta_carinae_nebula,Eta Carinae Nevel,1
+dso/eta_carinae_nebula,Carinae Nevel,0
+dso/exposed_cranium_nebula,Blootgestelde Schedel-nevel,1
+dso/ghost_of_jupiter,Geest van Jupiter,1
+dso/helix_nebula,Helix-nevel,1
+dso/helix_nebula,Oog van God,0
+dso/hyades,Hyaden,1
+dso/jewel_box,Juwelendoos,1
+dso/jewel_box,Herschels Juwelendoos,0
+dso/jewel_box,Kappa Crucis-cluster,0
+dso/lmc,Grote Magelhaense Wolk,1
+dso/lmc,Nubecula Major,0
+dso/m1,Krabnevel,1
+dso/m101,Windmolenstelsel,1
+dso/m102,Spoelstelsel,1
+dso/m104,Sombrerostelsel,1
+dso/m11,Wilde Eendcluster,1
+dso/m13,Herculesbolhoop,1
+dso/m13,Hercules Bolvormige Cluster,0
+dso/m16,Adelaarsnevel,1
+dso/m20,Trifidnevel,1
+dso/m24,Boogschutter-sterrenwolk,1
+dso/m27,Halternevel,1
+dso/m31,Andromedastelsel,1
+dso/m33,Driehoekstelsel,1
+dso/m42,Orionnevel,1
+dso/m43,De Mairan's Nevel,1
+dso/m44,Bijenkorfcluster,1
+dso/m44,Kribbe,0
+dso/m45,Pleiaden,1
+dso/m45,Zevengesternte,0
+dso/m51,Draaikolknevel,1
+dso/m57,Ringnevel,1
+dso/m6,Vlindercluster,1
+dso/m63,Zonnebloemstelsel,1
+dso/m64,Zwarte Oogstelsel,1
+dso/m7,Schorpioenstaart,1
+dso/m7,Ptolemaeus Cluster,0
+dso/m74,Fantoomstelsel,1
+dso/m76,Kleine Halternevel,1
+dso/m8,Lagunenevel,1
+dso/m81,Bode's Stelsel,1
+dso/m82,Sigaarstelsel,1
+dso/m83,Zuidelijk Windmolenstelsel,1
+dso/m97,Uilnevel,1
+dso/ngc_6543,Kattenoognevel,1
+dso/north_america_nebula,Noord-Amerika-nevel,1
+dso/omega_centauri,Bolvormige sterrenhoop Omega Centauri,1
+dso/omega_centauri,ω Centauri,0
+dso/saturn_nebula,Saturnus-nevel,1
+dso/sculptor_galaxy,Beeldhouwer-sterrenstelsel,1
+dso/sculptor_galaxy,Zilveren Dollargalaxie,0
+dso/sculptor_galaxy,Zilveren Muntgalaxie,0
+dso/sgr_a_star,Sgr A*,1
+dso/sgr_a_star,Zwart gat,0
+dso/sgr_a_star,Galactisch centrum,0
+dso/smc,Kleine Magelhaense Wolk,1
+dso/smc,Nubecula Minor,0
+dso/tarantula_nebula,Tarantula Nevel,1
+dso/tarantula_nebula,30 Doradus,0
+moon/ganymede,Ganymedes,1
+planet/mercury,Mercurius,1
+planet/moon,Maan,1
+planet/neptune,Neptunus,1
+planet/saturn,Saturnus,1
+planet/sun,Zon,1
+shower/aquariids,Eta Aquariiden,1
+shower/deltaaquariids,Delta Aquariiden,1
+shower/geminids,Geminiden,1
+shower/leonids,Leoniden,1
+shower/lyrids,Lyriden,1
+shower/orionids,Orioniden,1
+shower/perseids,Perseïden,1
+shower/puppidvelids,Puppid-Veliden,1
+shower/quadrantids,Quadrantiden,1
+shower/ursids,Ursiden,1
+star/adhara,Adharaz,1
+star/betelgeuse,Betelgeuze,1
+star/hadar,Agena,1
+star/kochab,Kocab,1
+star/polaris,Polaris,1
+star/polaris,Noordster,0
+star/polaris,Poolster,0
+star/rigil_kentaurus_a,Alpha Centauri,1
+star/rigil_kentaurus_a,Rigil Kentaurus A,0
+star/rigil_kentaurus_a,Rigil Kentaurus A,0
+star/rigil_kentaurus_a,Rigil Kent,0
+star/sirius,Sirius,1
+star/sirius,Hondster,0
+star/vega,Wega,1

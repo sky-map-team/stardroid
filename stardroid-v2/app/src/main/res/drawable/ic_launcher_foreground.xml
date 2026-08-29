@@ -1,0 +1,159 @@
+<!--
+  Sky Map v2 launcher icon — foreground layer (Direction C, "deep space").
+  Branding asset: All Rights Reserved, (c) 2026 Penterakt LLC (see branding/LICENSE.md).
+  A gold hero star (with a soft glow) examined through a light-blue magnifier,
+  a small corner star, and green + orange planet dots. Art is authored in an
+  800-unit space and scaled into the 108 adaptive viewport.
+
+  The glass carries a faint coordinate lattice at 2.4x the density of the
+  background field, so five cells fall inside the rim and the glass reads as a
+  sky map rather than a window pane — the identity v1's curved grid gave the
+  icon, kept off the silhouette. Curves are single cubics fitted to that lattice
+  (max deviation 0.06u) and clipped to the inner rim.
+
+  The hero star is centred on the ring at 1.28x, leaving 2.62dp of air at the
+  rim and 1.11dp at the handle; see D96 for the clearance
+  budget and for why the green planet and corner star still cross a circular
+  mask at this composition scale.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <group
+        android:translateX="4"
+        android:translateY="4"
+        android:scaleX="0.125"
+        android:scaleY="0.125">
+        <!-- coordinate lattice, clipped to the glass -->
+        <group>
+            <clip-path android:pathData="M206,375a149,149 0,1 0,298 0a149,149 0,1 0,-298 0z" />
+            <path
+                android:fillColor="#00000000"
+                android:strokeColor="#6B9FD8EE"
+                android:strokeWidth="6"
+                android:strokeLineCap="round"
+                android:pathData="M213.6,337.5C215.2,370.6 215.1,403.8 211.8,436.8" />
+            <path
+                android:fillColor="#00000000"
+                android:strokeColor="#6B9FD8EE"
+                android:strokeWidth="6"
+                android:strokeLineCap="round"
+                android:pathData="M265.1,270.3C272.8,346.9 272.3,424.4 262.7,500.8" />
+            <path
+                android:fillColor="#00000000"
+                android:strokeColor="#6B9FD8EE"
+                android:strokeWidth="6"
+                android:strokeLineCap="round"
+                android:pathData="M323,240.6C327.5,336.2 327.3,432 322.1,527.5" />
+            <path
+                android:fillColor="#00000000"
+                android:strokeColor="#6B9FD8EE"
+                android:strokeWidth="6"
+                android:strokeLineCap="round"
+                android:pathData="M387,240.6C382.5,336.2 382.7,432 387.9,527.5" />
+            <path
+                android:fillColor="#00000000"
+                android:strokeColor="#6B9FD8EE"
+                android:strokeWidth="6"
+                android:strokeLineCap="round"
+                android:pathData="M444.9,270.3C437.2,346.9 437.7,424.4 447.3,500.8" />
+            <path
+                android:fillColor="#00000000"
+                android:strokeColor="#6B9FD8EE"
+                android:strokeWidth="6"
+                android:strokeLineCap="round"
+                android:pathData="M496.4,337.5C494.8,370.6 494.9,403.8 498.2,436.8" />
+            <path
+                android:fillColor="#00000000"
+                android:strokeColor="#6B9FD8EE"
+                android:strokeWidth="6"
+                android:strokeLineCap="round"
+                android:pathData="M317.5,233.6C350.6,235.2 383.8,235.1 416.8,231.8" />
+            <path
+                android:fillColor="#00000000"
+                android:strokeColor="#6B9FD8EE"
+                android:strokeWidth="6"
+                android:strokeLineCap="round"
+                android:pathData="M250.3,285.1C326.9,292.8 404.4,292.3 480.8,282.7" />
+            <path
+                android:fillColor="#00000000"
+                android:strokeColor="#6B9FD8EE"
+                android:strokeWidth="6"
+                android:strokeLineCap="round"
+                android:pathData="M220.6,343C316.2,347.5 412,347.3 507.5,342.1" />
+            <path
+                android:fillColor="#00000000"
+                android:strokeColor="#6B9FD8EE"
+                android:strokeWidth="6"
+                android:strokeLineCap="round"
+                android:pathData="M220.6,407C316.2,402.5 412,402.7 507.5,407.9" />
+            <path
+                android:fillColor="#00000000"
+                android:strokeColor="#6B9FD8EE"
+                android:strokeWidth="6"
+                android:strokeLineCap="round"
+                android:pathData="M250.3,464.9C326.9,457.2 404.4,457.7 480.8,467.3" />
+            <path
+                android:fillColor="#00000000"
+                android:strokeColor="#6B9FD8EE"
+                android:strokeWidth="6"
+                android:strokeLineCap="round"
+                android:pathData="M317.5,516.4C350.6,514.8 383.8,514.9 416.8,518.2" />
+        </group>
+        <!-- soft glow behind the hero star -->
+        <path android:pathData="M166,375a189,189 0,1 0,378 0a189,189 0,1 0,-378 0z">
+            <aapt:attr name="android:fillColor">
+                <gradient
+                    android:type="radial"
+                    android:centerX="355"
+                    android:centerY="375"
+                    android:gradientRadius="189">
+                    <item android:offset="0" android:color="#8CFFE58A" />
+                    <item android:offset="1" android:color="#00FFE58A" />
+                </gradient>
+            </aapt:attr>
+        </path>
+        <!-- planets -->
+        <path
+            android:fillColor="#FFE05C34"
+            android:pathData="M525,244a45,45 0,1 0,90 0a45,45 0,1 0,-90 0z" />
+        <path
+            android:fillColor="#FF4DB848"
+            android:pathData="M150,590a50,50 0,1 0,100 0a50,50 0,1 0,-100 0z" />
+        <!-- small corner star -->
+        <group
+            android:translateX="205"
+            android:translateY="150"
+            android:scaleX="0.5"
+            android:scaleY="0.5"
+            android:rotation="12">
+            <path
+                android:fillColor="#FFFFC107"
+                android:pathData="M0,-100L23.5,-32.4 95.1,-30.9 38,12.4 58.8,80.9 0,40 -58.8,80.9 -38,12.4 -95.1,-30.9 -23.5,-32.4z" />
+        </group>
+        <!-- hero star -->
+        <group
+            android:translateX="355"
+            android:translateY="375"
+            android:scaleX="1.28"
+            android:scaleY="1.28">
+            <path
+                android:fillColor="#FFFFC107"
+                android:pathData="M0,-100L23.5,-32.4 95.1,-30.9 38,12.4 58.8,80.9 0,40 -58.8,80.9 -38,12.4 -95.1,-30.9 -23.5,-32.4z" />
+        </group>
+        <!-- magnifier: open ring + handle, drawn over the star -->
+        <path
+            android:fillColor="#00000000"
+            android:strokeColor="#FF7EC8E3"
+            android:strokeWidth="52"
+            android:pathData="M180,375a175,175 0,1 0,350 0a175,175 0,1 0,-350 0z" />
+        <path
+            android:strokeColor="#FF7EC8E3"
+            android:strokeWidth="88"
+            android:strokeLineCap="round"
+            android:pathData="M479,499L640,660" />
+    </group>
+</vector>

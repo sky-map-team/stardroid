@@ -1,0 +1,212 @@
+object_id,name,is_primary
+constellation/antlia,Pompa,1
+constellation/apus,Ptak Rajski,1
+constellation/aquarius,Wodnik,1
+constellation/aquila,Orzeł,1
+constellation/ara,Ołtarz,1
+constellation/aries,Baran,1
+constellation/auriga,Woźnica,1
+constellation/bootes,Wolarz,1
+constellation/caelum,Rylec,1
+constellation/camelopardalis,Żyrafa,1
+constellation/cancer,Rak,1
+constellation/canes_venatici,Psy Gończe,1
+constellation/canis_major,Wielki Pies,1
+constellation/canis_minor,Mały Pies,1
+constellation/capricornus,Koziorożec,1
+constellation/carina,Kil,1
+constellation/cassiopeia,Kasjopeja,1
+constellation/centaurus,Centaur,1
+constellation/cepheus,Cefeusz,1
+constellation/cetus,Wieloryb,1
+constellation/chamaeleon,Kameleon,1
+constellation/circinus,Cyrkiel,1
+constellation/columba,Gołąb,1
+constellation/coma_berenices,Warkocz Bereniki,1
+constellation/corona_australis,Korona Południowa,1
+constellation/corona_borealis,Korona Północna,1
+constellation/corvus,Kruk,1
+constellation/crater,Puchar,1
+constellation/crux,Krzyż Południa,1
+constellation/cygnus,Łabędź,1
+constellation/delphinus,Delfin,1
+constellation/dorado,Złota Ryba,1
+constellation/draco,Smok,1
+constellation/equuleus,Źrebię,1
+constellation/eridanus,Erydan,1
+constellation/fornax,Piec,1
+constellation/gemini,Bliźnięta,1
+constellation/grus,Żuraw,1
+constellation/hercules,Herkules,1
+constellation/horologium,Zegar,1
+constellation/hydrus,Hydra,1
+constellation/indus,Indianin,1
+constellation/lacerta,Jaszczurka,1
+constellation/leo,Lew,1
+constellation/leo_minor,Lew,1
+constellation/lepus,Zając,1
+constellation/libra,Waga,1
+constellation/lupus,Wilk,1
+constellation/lynx,Ryś,1
+constellation/lyra,Lutnia,1
+constellation/mensa,Góra Stołowa,1
+constellation/microscopium,Mikroskop,1
+constellation/monoceros,Jednorożec,1
+constellation/musca,Mucha,1
+constellation/norma,Węgielnica,1
+constellation/octans,Oktant,1
+constellation/ophiuchus,Wężownik,1
+constellation/pavo,Paw,1
+constellation/pegasus,Pegaz,1
+constellation/perseus,Perseusz,1
+constellation/phoenix,Feniks,1
+constellation/pictor,Malarz,1
+constellation/pisces,Ryby,1
+constellation/piscis_austrinus,Ryba Południowa,1
+constellation/puppis,Rufa,1
+constellation/pyxis,Kompas,1
+constellation/reticulum,Sieć,1
+constellation/sagitta,Strzała,1
+constellation/sagittarius,Strzelec,1
+constellation/scorpius,Skorpion,1
+constellation/sculptor,Rzeźbiarz,1
+constellation/scutum,Tarcza,1
+constellation/serpens_caput,Głowa Węża,1
+constellation/serpens_cauda,Ogon Węża,1
+constellation/sextans,Sekstant,1
+constellation/taurus,Byk,1
+constellation/telescopium,Luneta,1
+constellation/triangulum,Trójkąt,1
+constellation/triangulum_australe,Trójkąt Południowy,1
+constellation/tucana,Tukan,1
+constellation/ursa_major,Wielka Niedźwiedzica,1
+constellation/ursa_minor,Mała Niedźwiedzica,1
+constellation/vela,Żagiel,1
+constellation/virgo,Panna,1
+constellation/volans,Ryba Latająca,1
+constellation/vulpecula,Lisek,1
+dso/blue_snowball_nebula,Mgławica Niebieska Kula Śnieżna,1
+dso/coathanger,Wieszak,1
+dso/coathanger,Gromada Brocciego,0
+dso/coma_star_cluster,Gromada Warkocza Bereniki,1
+dso/coma_star_cluster,Gromada Warkocza Bereniki,0
+dso/cygnus_x_1,Podwójna czarna dziura,1
+dso/cygnus_x_1,Gwiazdowa czarna dziura,0
+dso/double_cluster,Podwójna gromada Perseusza,1
+dso/double_cluster,h i χ Persei,0
+dso/double_cluster,NGC 869 & NGC 884,0
+dso/eta_carinae_nebula,Mgławica Eta Carinae,1
+dso/eta_carinae_nebula,Mgławica Carina,0
+dso/exposed_cranium_nebula,Mgławica Odsłonięta Czaszka,1
+dso/ghost_of_jupiter,Duch Jowisza,1
+dso/hdf,Głębokie pole Hubble’a,1
+dso/helix_nebula,Mgławica Ślimak,1
+dso/helix_nebula,Oko Boga,0
+dso/hyades,Hiady,1
+dso/jewel_box,Szkatułka Klejnotów,1
+dso/jewel_box,Gromada Kappa Crucis,0
+dso/lmc,Wielki Obłok Magellana,1
+dso/lmc,Nubecula Major,0
+dso/m1,Mgławica Kraba,1
+dso/m101,Galaktyka Wiatraczek,1
+dso/m102,Galaktyka Wrzeciono,1
+dso/m104,Galaktyka Sombrero,1
+dso/m11,Gromada Kaczka,1
+dso/m13,Gromada Herkulesa,1
+dso/m13,Gromada Herkulesa,0
+dso/m16,Mgławica Orzeł,1
+dso/m20,Mgławica Trójlistna Koniczyna,1
+dso/m24,Obłok Gwiazd Strzelca,1
+dso/m27,Mgławica Hantle,1
+dso/m31,Galaktyka Andromedy,1
+dso/m33,Galaktyka Trójkąta,1
+dso/m42,Mgławica Oriona,1
+dso/m43,Mgławica de Mairana,1
+dso/m44,Gromada Ul,1
+dso/m44,Gromada Żłóbek,0
+dso/m45,Plejady,1
+dso/m45,Siedem Sióstr,0
+dso/m51,Galaktyka Wir,1
+dso/m57,Mgławica Pierścień,1
+dso/m6,Gromada Motyl,1
+dso/m63,Galaktyka Słonecznik,1
+dso/m64,Galaktyka Czarne Oko,1
+dso/m7,Gromada Ptolemeusza,1
+dso/m7,Gromada Ptolemeusza,0
+dso/m74,Galaktyka Widmo,1
+dso/m76,Mała Mgławica Hantle,1
+dso/m8,Mgławica Laguna,1
+dso/m81,Galaktyka Bodesa,1
+dso/m82,Galaktyka Cygaro,1
+dso/m83,Galaktyka Południowy Wiatraczek,1
+dso/m97,Mgławica Sowa,1
+dso/ngc_6543,Mgławica Kocie Oko,1
+dso/north_america_nebula,Mgławica Ameryka Północna,1
+dso/omega_centauri,Omega Centauri Gromada Kulista,1
+dso/omega_centauri,ω Centauri,0
+dso/saturn_nebula,Mgławica Saturna,1
+dso/sculptor_galaxy,Galaktyka Rzeźbnika,1
+dso/sculptor_galaxy,Galaktyka Rzeźbiarza,0
+dso/sculptor_galaxy,Galaktyka Srebrnej Monety,0
+dso/sgr_a_star,Sgr A*,1
+dso/sgr_a_star,Czarna dziura,0
+dso/sgr_a_star,Centrum Galaktyki,0
+dso/smc,Mały Obłok Magellana,1
+dso/smc,Nubecula Minor,0
+dso/t_crb,T Coronae Borealis,1
+dso/t_crb,Gwiazda Blaze,0
+dso/tarantula_nebula,Mgławica Tarantula,1
+dso/tarantula_nebula,30 Doradus,0
+dso/willman_1,Willman 1,1
+dso/willman_1,Galaktyka Beth Willman,0
+moon/callisto,Kallisto,1
+moon/ganymede,Ganimedes,1
+moon/iapetus,Japet,1
+moon/phobos,Fobos,1
+moon/rhea,Rea,1
+moon/tethys,Tetyda,1
+moon/titan,Tytan,1
+moon/titania,Tytania,1
+moon/triton,Tryton,1
+planet/jupiter,Jowisz,1
+planet/mercury,Merkury,1
+planet/moon,Księżyc,1
+planet/neptune,Neptun,1
+planet/pluto,Pluton,1
+planet/sun,Słońce,1
+planet/uranus,Uran,1
+planet/venus,Wenus,1
+shower/aquariids,Eta Akwarydy,1
+shower/deltaaquariids,Południowe delta Akwarydy,1
+shower/geminids,Geminidy,1
+shower/leonids,Leonidy,1
+shower/lyrids,Lirydy,1
+shower/orionids,Orionidy,1
+shower/perseids,Perseidy,1
+shower/quadrantids,Kwadrantydy,1
+shower/ursids,Ursydy,1
+star/adhara,Adara,1
+star/alcyone,Alkione,1
+star/alnath,Elnath,1
+star/arcturus,Arktur,1
+star/betelgeuse,Betelgeza,1
+star/canopus,Kanopus,1
+star/capella,Kapella,1
+star/castor,Kastor,1
+star/e_lyrae,Epsilon Lyrae,1
+star/mirphak,Mirfak,1
+star/polaris,Gwiazda Polarna,1
+star/polaris,Gwiazda Północna,0
+star/polaris,Gwiazda Biegunowa,0
+star/pollux,Polluks,1
+star/procyon,Procjon,1
+star/rigil_kentaurus_a,Alfa Centauri,1
+star/rigil_kentaurus_a,Rigil Kentaurus A,0
+star/rigil_kentaurus_a,Rigel Kentaurus A,0
+star/rigil_kentaurus_a,Rigil Kentaurus,0
+star/saiph,Saif,1
+star/shedir,Szedar,1
+star/sirius,Syriusz,1
+star/sirius,Psia Gwiazda,0
+star/spica,Kłos,1
+star/vega,Wega,1

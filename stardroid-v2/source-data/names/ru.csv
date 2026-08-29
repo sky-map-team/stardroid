@@ -1,0 +1,173 @@
+object_id,name,is_primary
+constellation/andromeda,Андромеда,1
+constellation/aquarius,Водолей,1
+constellation/aquila,Орел,1
+constellation/aries,Овен,1
+constellation/auriga,Возничий,1
+constellation/bootes,Волопас,1
+constellation/cancer,Рак,1
+constellation/canis_major,Большой Пес,1
+constellation/capricornus,Козерог,1
+constellation/carina,Карина,1
+constellation/cassiopeia,Кассиопея,1
+constellation/centaurus,Центавр,1
+constellation/cetus,Кит,1
+constellation/crux,Южный Крест,1
+constellation/cygnus,Лебедь,1
+constellation/draco,Дракон,1
+constellation/eridanus,Эридан,1
+constellation/gemini,Близнецы,1
+constellation/grus,Журавль,1
+constellation/hercules,Геркулес,1
+constellation/hydrus,Гидра,1
+constellation/leo,Лев,1
+constellation/libra,Весы,1
+constellation/lupus,Волк,1
+constellation/lyra,Лира,1
+constellation/ophiuchus,Змееносец,1
+constellation/orion,Орион,1
+constellation/pavo,Павлин,1
+constellation/pegasus,Пегас,1
+constellation/perseus,Персей,1
+constellation/phoenix,Феникс,1
+constellation/pisces,Рыбы,1
+constellation/piscis_austrinus,Южная Рыба,1
+constellation/puppis,Корма,1
+constellation/sagittarius,Стрелец,1
+constellation/scorpius,Скорпион,1
+constellation/taurus,Телец,1
+constellation/tucana,Тукан,1
+constellation/ursa_major,Большая Медведица,1
+constellation/ursa_minor,Малая Медведица,1
+constellation/vela,Паруса,1
+constellation/virgo,Дева,1
+dso/hdf,Область глубокого обзора Хаббла,1
+dso/hdf,Область глубокого обзора Хаббла,0
+dso/m1,Крабовидная туманность,1
+dso/m101,Галактика Вертушка,1
+dso/m102,Галактика Веретено,1
+dso/m104,Галактика Сомбреро,1
+dso/m11,Рассеянное скопление Дикая Утка,1
+dso/m13,Шаровое скопление в созвездии Геркулеса,1
+dso/m13,Hercules Globular Cluster,0
+dso/m16,Туманность Орла,1
+dso/m20,Туманность Трёхраздельная,1
+dso/m24,Звёздное облако Стрельца,1
+dso/m27,Туманность Гантель,1
+dso/m31,Туманность Андромеды,1
+dso/m33,Галактика Треугольника,1
+dso/m40,Виннеке 4,1
+dso/m42,Туманность Ориона,1
+dso/m43,Туманность де Мейрана,1
+dso/m44,Скопление Улей,1
+dso/m44,Ясли,0
+dso/m45,Плеяды,1
+dso/m45,Семь сестер,0
+dso/m51,Галактика Водоворот,1
+dso/m57,Кольцевая туманность,1
+dso/m6,Скопление Бабочка,1
+dso/m63,Галактика Подсолнух,1
+dso/m64,Галактика Чёрный Глаз,1
+dso/m7,Хвост Скорпиона,1
+dso/m7,Ptolemy Cluster,0
+dso/m74,Галактика Фантом,1
+dso/m76,Туманность Малая Гантель,1
+dso/m8,Туманность Лагуна,1
+dso/m81,Галактика Боде,1
+dso/m82,Галактика Сигара,1
+dso/m83,Южная Вертушка,1
+dso/m97,Туманность Сова,1
+dso/ngc_6543,Туманность Кошачий Глаз,1
+dso/omega_centauri,Шаровое скопление Омега Центавра,1
+dso/omega_centauri,ω Centauri,0
+planet/jupiter,Юпитер,1
+planet/mars,Марс,1
+planet/mercury,Меркурий,1
+planet/moon,Луна,1
+planet/neptune,Нептун,1
+planet/pluto,Плутон,1
+planet/saturn,Сатурн,1
+planet/sun,Солнце,1
+planet/uranus,Уран,1
+planet/venus,Венера,1
+shower/aquariids,эта-Аквариды,1
+shower/deltaaquariids,дельта-Аквариды,1
+shower/geminids,Геминиды,1
+shower/leonids,Леониды,1
+shower/lyrids,Лириды,1
+shower/orionids,Ориониды,1
+shower/perseids,Персеиды,1
+shower/puppidvelids,Пуппиды-Велиды,1
+shower/quadrantids,Квадрантиды,1
+shower/ursids,Урсиды,1
+star/achernar,Ахернар,1
+star/acrux,Акрукс,1
+star/adhara,Адхара,1
+star/alcyone,Альциона,1
+star/aldebaran,Альдебаран,1
+star/alderamin,Альдерамин,1
+star/algenib,Альгениб,1
+star/algieba,Альджеба,1
+star/algol,Алголь,1
+star/alhena,Альхена,1
+star/alioth,Алиот,1
+star/alkaid,Алькаид,1
+star/alnair,Альнаир,1
+star/alnath,Альнах,1
+star/alnilam,Альнилам,1
+star/alphard,Альфард,1
+star/alphekka,Альфекка,1
+star/alpheratz,Альферац,1
+star/altair,Альтаир,1
+star/ankaa,Анкаа,1
+star/antares,Антарес,1
+star/arcturus,Арктур,1
+star/arneb,Арнеб,1
+star/betelgeuse,Бетельгейзе,1
+star/canopus,Канопус,1
+star/capella,Капелла,1
+star/caph,Каф,1
+star/castor,Кастор,1
+star/deneb,Денеб,1
+star/denebola,Денебола,1
+star/diphda,Дифда,1
+star/dubhe,Дубхе,1
+star/e_lyrae,ε Лиры,1
+star/enif,Эниф,1
+star/etamin,Этамин,1
+star/fomalhaut,Фомальгаут,1
+star/hadar,Хадар,1
+star/hamal,Гамаль,1
+star/izar,Ицар,1
+star/kaus_australis,Каус Аустралис,1
+star/kochab,Кохаб,1
+star/markab,Маркаб,1
+star/menkar,Менкар,1
+star/merak,Мерак,1
+star/mirach,Мирах,1
+star/mirphak,Мирфак,1
+star/nunki,Нунки,1
+star/phad,Фекда,1
+star/polaris,Полярная,1
+star/polaris,Полярная звезда,0
+star/polaris,Полярная звезда,0
+star/pollux,Поллукс,1
+star/procyon,Процион,1
+star/rasalhague,Рас-Альхаг,1
+star/regulus,Регул,1
+star/rigel,Ригель,1
+star/rigil_kentaurus_a,Альфа Центавра,1
+star/rigil_kentaurus_a,Ригель Центавра А,0
+star/rigil_kentaurus_a,Ригель Центавра А,0
+star/rigil_kentaurus_a,Ригель Кентаурус,0
+star/saiph,Саиф,1
+star/scheat,Шеат,1
+star/shaula,Шаула,1
+star/shedir,Шедар,1
+star/sirius,Сириус,1
+star/sirius,Собачья звезда,0
+star/spica,Спика,1
+star/unukalhai,Унукалхай,1
+star/vega,Вега,1
+star/vindemiatrix,Виндемиатрикс,1
+dso/v838_mon,V838 Единорога,1

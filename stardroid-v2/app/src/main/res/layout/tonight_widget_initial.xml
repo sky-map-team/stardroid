@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- initialLayout / picker previewLayout for the tonight widget; representative values,
+     replaced by the live Glance composition immediately after placement.
+
+     IFTTT: if you change TonightContent/HeaderRow/HighlightRow (TonightWidget.kt), change this
+     layout too. The launcher inflates this in its own process before ours runs, so Glance cannot
+     supply it — the resemblance is maintained by hand and silently drifts otherwise. Padding,
+     colors, text sizes and the dot size/margin below are duplicated from those composables. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/widget_background"
+    android:orientation="vertical"
+    android:paddingHorizontal="14dp"
+    android:paddingVertical="10dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:text="@string/tonight_widget_label"
+        android:textColor="#A9B4D0"
+        android:textSize="11sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:importantForAccessibility="no"
+            android:src="@drawable/widget_dot_gold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="9dp"
+            android:maxLines="1"
+            android:text="@string/tonight_widget_preview_row"
+            android:textColor="#E0E1DD"
+            android:textSize="13sp" />
+    </LinearLayout>
+</LinearLayout>

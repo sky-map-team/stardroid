@@ -1,0 +1,191 @@
+object_id,name,is_primary
+constellation/antlia,Vývěva,1
+constellation/apus,Rajka,1
+constellation/aquarius,Vodnář,1
+constellation/aquila,Orel,1
+constellation/ara,Oltář,1
+constellation/aries,Beran,1
+constellation/auriga,Vozka,1
+constellation/bootes,Pastýř,1
+constellation/caelum,Rydlo,1
+constellation/camelopardalis,Žirafa,1
+constellation/cancer,Rak,1
+constellation/canes_venatici,Honicí psi,1
+constellation/canis_major,Velký pes,1
+constellation/canis_minor,Malý pes,1
+constellation/capricornus,Kozoroh,1
+constellation/carina,Lodní kýl,1
+constellation/cassiopeia,Kasiopeja,1
+constellation/centaurus,Kentaur,1
+constellation/cepheus,Cefeus,1
+constellation/cetus,Velryba,1
+constellation/chamaeleon,Chameleon,1
+constellation/circinus,Kružítko,1
+constellation/columba,Holubice,1
+constellation/coma_berenices,Vlasy Bereniky,1
+constellation/corona_australis,Jižní koruna,1
+constellation/corona_borealis,Severní koruna,1
+constellation/corvus,Havran,1
+constellation/crater,Pohár,1
+constellation/crux,Jižní kříž,1
+constellation/cygnus,Labuť,1
+constellation/delphinus,Delfín,1
+constellation/dorado,Mečoun,1
+constellation/draco,Drak,1
+constellation/equuleus,Koníček,1
+constellation/fornax,Pec,1
+constellation/gemini,Blíženci,1
+constellation/grus,Jeřáb,1
+constellation/hercules,Herkules,1
+constellation/horologium,Hodiny,1
+constellation/hydrus,Malý vodní had,1
+constellation/indus,Indián,1
+constellation/lacerta,Ještěrka,1
+constellation/leo,Lev,1
+constellation/leo_minor,Malý lev,1
+constellation/lepus,Zajíc,1
+constellation/libra,Váhy,1
+constellation/lupus,Vlk,1
+constellation/lynx,Rys,1
+constellation/mensa,Tabulová hora,1
+constellation/microscopium,Mikroskop,1
+constellation/monoceros,Jednorožec,1
+constellation/musca,Moucha,1
+constellation/norma,Pravítko,1
+constellation/octans,Oktant,1
+constellation/ophiuchus,Hadonoš,1
+constellation/pavo,Páv,1
+constellation/pegasus,Pegas,1
+constellation/phoenix,Fénix,1
+constellation/pictor,Malíř,1
+constellation/pisces,Ryby,1
+constellation/piscis_austrinus,Jižní ryby,1
+constellation/puppis,Záď lodi,1
+constellation/pyxis,Kompas,1
+constellation/reticulum,Síť,1
+constellation/sagitta,Šíp,1
+constellation/sagittarius,Střelec,1
+constellation/scorpius,Štír,1
+constellation/sculptor,Sochař,1
+constellation/scutum,Štít,1
+constellation/serpens_caput,Hlava hada,1
+constellation/serpens_cauda,Ocas Hada,1
+constellation/sextans,Sextant,1
+constellation/taurus,Býk,1
+constellation/telescopium,Dalekohled,1
+constellation/triangulum,Trojúhelník,1
+constellation/triangulum_australe,Jižní trojúhelník,1
+constellation/tucana,Tukan,1
+constellation/ursa_major,Velká medvědice,1
+constellation/ursa_minor,Malá medvědice,1
+constellation/vela,Plachty,1
+constellation/virgo,Panna,1
+constellation/volans,Létající ryba,1
+constellation/vulpecula,Lištička,1
+dso/blue_snowball_nebula,Modrá sněhová mlhovina,1
+dso/coathanger,Věšák,1
+dso/coathanger,Brocchinova hvězdokupa,0
+dso/coma_star_cluster,Hvězdokupa ve Vlasech Bereniky,1
+dso/coma_star_cluster,Hvězdokupa Vlasů Bereniky,0
+dso/cygnus_x_1,Binární černá díra,1
+dso/cygnus_x_1,Hvězdná černá díra,0
+dso/double_cluster,Dvojitá hvězdokupa,1
+dso/double_cluster,h a χ Persei,0
+dso/double_cluster,NGC 869 & NGC 884,0
+dso/eta_carinae_nebula,Mlhovina Eta Carinae,1
+dso/eta_carinae_nebula,Mlhovina v Kýlu,0
+dso/exposed_cranium_nebula,Mlhovina Exponovaná lebka,1
+dso/ghost_of_jupiter,Duch Jupitera,1
+dso/hdf,Hubbleovo hluboké pole,1
+dso/hdf,Hubbleovo hluboké pole,0
+dso/helix_nebula,Helixová mlhovina,1
+dso/helix_nebula,Boží oko,0
+dso/hyades,Hyády,1
+dso/jewel_box,Klenotnice,1
+dso/jewel_box,Herschelova klenotnice,0
+dso/jewel_box,Hvězdokupa Kappa Crucis,0
+dso/lmc,Velké Magellanovo mračno,1
+dso/lmc,Velký Magellanův oblak,0
+dso/m1,Krabí mlhovina,1
+dso/m101,Galaxie Větrník,1
+dso/m102,Galaxie Vřeteno,1
+dso/m104,Galaxie Sombrero,1
+dso/m11,Hvězdokupa Divoká kachna,1
+dso/m13,Kulová hvězdokupa Herkules,1
+dso/m13,Kulová hvězdokupa v Herkulovi,0
+dso/m16,Orlí mlhovina,1
+dso/m20,Mlhovina Trifid,1
+dso/m24,Hvězdný oblak Střelce,1
+dso/m27,Mlhovina Činka,1
+dso/m31,Galaxie Andromeda,1
+dso/m33,Galaxie v Trojúhelníku,1
+dso/m42,Mlhovina Orion,1
+dso/m43,Mlhovina De Mairan,1
+dso/m44,Hvězdokupa Včelí úl,1
+dso/m44,Jesličky,0
+dso/m45,Plejády,1
+dso/m45,Sedm sester,0
+dso/m51,Vírová galaxie,1
+dso/m57,Prstencová mlhovina,1
+dso/m6,Motýlí hvězdokupa,1
+dso/m63,Galaxie Slunečnice,1
+dso/m64,Galaxie Černé oko,1
+dso/m7,Ocas štíra,1
+dso/m7,Ptolemaiova hvězdokupa,0
+dso/m74,Galaxie Fantom,1
+dso/m76,Malá mlhovina Činka,1
+dso/m8,Mlhovina Laguna,1
+dso/m81,Bodeho galaxie,1
+dso/m82,Galaxie Cigareta,1
+dso/m83,Jižní Větrník,1
+dso/m97,Mlhovina Soví oko,1
+dso/ngc_6543,Mlhovina Kočičí oko,1
+dso/north_america_nebula,Mlhovina Severní Amerika,1
+dso/omega_centauri,Kulová hvězdokupa Omega Centauri,1
+dso/omega_centauri,ω Centauri,0
+dso/saturn_nebula,Saturnova mlhovina,1
+dso/sculptor_galaxy,Galaxie Sochař,1
+dso/sculptor_galaxy,Galaxie Stříbrného dolaru,0
+dso/sculptor_galaxy,Galaxie Stříbrné mince,0
+dso/sgr_a_star,Sgr A*,1
+dso/sgr_a_star,Černá díra,0
+dso/sgr_a_star,Galaktické centrum,0
+dso/smc,Malý Magellanův oblak,1
+dso/smc,Nubecula Minor,0
+dso/t_crb,T Coronae Borealis,1
+dso/t_crb,Hvězda Blaze,0
+dso/tarantula_nebula,Mlhovina Tarantule,1
+dso/tarantula_nebula,30 Doradus,0
+dso/willman_1,Willman 1,1
+dso/willman_1,Galaxie Beth Willmanové,0
+moon/callisto,Kallisto,1
+moon/ganymede,Ganymedes,1
+moon/phobos,Fobos,1
+planet/mercury,Merkur,1
+planet/moon,Měsíc,1
+planet/neptune,Neptun,1
+planet/sun,Slunce,1
+planet/uranus,Uran,1
+planet/venus,Venuše,1
+shower/aquariids,Éta Aquaridy,1
+shower/deltaaquariids,Jižní Delta Aquaridy,1
+shower/geminids,Geminidy,1
+shower/leonids,Leonidy,1
+shower/lyrids,Lyridy,1
+shower/orionids,Orionidy,1
+shower/perseids,Perseidy,1
+shower/puppidvelids,Pí Puppidy,1
+shower/quadrantids,Kvadrantidy,1
+shower/ursids,Ursidy,1
+star/arcturus,Arktur,1
+star/diphda,Deneb Kaitos,1
+star/e_lyrae,Epsylon Lyrae,1
+star/polaris,Polárka,1
+star/polaris,Severka,0
+star/polaris,Polárka,0
+star/rigil_kentaurus_a,Alfa Centauri,1
+star/rigil_kentaurus_a,Rigil Kentaurus A,0
+star/rigil_kentaurus_a,Rigel Kentaurus A,0
+star/rigil_kentaurus_a,Rigil Kent,0
+star/sirius,Sírius,1
+star/sirius,Psí hvězda,0

@@ -1,0 +1,38 @@
+<!-- Sky Map sky-marker icon. Copyright (c) 2026 Penterakt LLC.
+     All Rights Reserved - see LICENSE.md in this directory. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <g opacity="0.35">
+    <circle cx="12.00" cy="12.00" r="2.60" fill="#000"/>
+    <circle cx="12.00" cy="8.60" r="1.95" fill="#000"/>
+    <circle cx="14.94" cy="10.30" r="1.95" fill="#000"/>
+    <circle cx="14.94" cy="13.70" r="1.95" fill="#000"/>
+    <circle cx="12.00" cy="15.40" r="1.95" fill="#000"/>
+    <circle cx="9.06" cy="13.70" r="1.95" fill="#000"/>
+    <circle cx="9.06" cy="10.30" r="1.95" fill="#000"/>
+    <circle cx="12.00" cy="5.20" r="1.70" fill="#000"/>
+    <circle cx="16.81" cy="7.19" r="1.70" fill="#000"/>
+    <circle cx="18.80" cy="12.00" r="1.70" fill="#000"/>
+    <circle cx="16.81" cy="16.81" r="1.70" fill="#000"/>
+    <circle cx="12.00" cy="18.80" r="1.70" fill="#000"/>
+    <circle cx="7.19" cy="16.81" r="1.70" fill="#000"/>
+    <circle cx="5.20" cy="12.00" r="1.70" fill="#000"/>
+    <circle cx="7.19" cy="7.19" r="1.70" fill="#000"/>
+  </g>
+  <g>
+    <circle cx="12.00" cy="12.00" r="1.50" fill="#fff"/>
+    <circle cx="12.00" cy="8.60" r="0.85" fill="#fff"/>
+    <circle cx="14.94" cy="10.30" r="0.85" fill="#fff"/>
+    <circle cx="14.94" cy="13.70" r="0.85" fill="#fff"/>
+    <circle cx="12.00" cy="15.40" r="0.85" fill="#fff"/>
+    <circle cx="9.06" cy="13.70" r="0.85" fill="#fff"/>
+    <circle cx="9.06" cy="10.30" r="0.85" fill="#fff"/>
+    <circle cx="12.00" cy="5.20" r="0.60" fill="#fff"/>
+    <circle cx="16.81" cy="7.19" r="0.60" fill="#fff"/>
+    <circle cx="18.80" cy="12.00" r="0.60" fill="#fff"/>
+    <circle cx="16.81" cy="16.81" r="0.60" fill="#fff"/>
+    <circle cx="12.00" cy="18.80" r="0.60" fill="#fff"/>
+    <circle cx="7.19" cy="16.81" r="0.60" fill="#fff"/>
+    <circle cx="5.20" cy="12.00" r="0.60" fill="#fff"/>
+    <circle cx="7.19" cy="7.19" r="0.60" fill="#fff"/>
+  </g>
+</svg>

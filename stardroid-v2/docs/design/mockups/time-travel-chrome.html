@@ -1,0 +1,1035 @@
+<title>Sky Map — Time Travel Chrome</title>
+<style>
+  :root {
+    --bg: #131720; --surface: #1b2230; --surface2: #222b3d; --text: #e7ecf5;
+    --muted: #93a0b4; --accent: #f2b04a; --accent-ink: #131720; --line: #2a3346;
+    --good: #6fbf8a; --chipbg: rgba(242, 176, 74, 0.14);
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #f6f3ec; --surface: #fffdf8; --surface2: #f0ebdf; --text: #24282f;
+      --muted: #6a6f78; --accent: #b4711d; --accent-ink: #fffdf8; --line: #e2dcce;
+      --good: #2e7d4f; --chipbg: rgba(180, 113, 29, 0.12);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #131720; --surface: #1b2230; --surface2: #222b3d; --text: #e7ecf5;
+    --muted: #93a0b4; --accent: #f2b04a; --accent-ink: #131720; --line: #2a3346;
+    --good: #6fbf8a; --chipbg: rgba(242, 176, 74, 0.14);
+  }
+  :root[data-theme="light"] {
+    --bg: #f6f3ec; --surface: #fffdf8; --surface2: #f0ebdf; --text: #24282f;
+    --muted: #6a6f78; --accent: #b4711d; --accent-ink: #fffdf8; --line: #e2dcce;
+    --good: #2e7d4f; --chipbg: rgba(180, 113, 29, 0.12);
+  }
+  * { box-sizing: border-box; }
+  body { background: var(--bg); color: var(--text); margin: 0;
+         font: 15px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  .cond { font-family: "Avenir Next Condensed", "Arial Narrow", "Roboto Condensed", sans-serif; }
+  .mono { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+          font-variant-numeric: tabular-nums; }
+  header { max-width: 1180px; margin: 0 auto; padding: 40px 24px 8px; }
+  .eyebrow { letter-spacing: 0.14em; text-transform: uppercase; font-size: 12.5px;
+             font-weight: 600; color: var(--accent); }
+  h1 { font-family: "Avenir Next Condensed", "Arial Narrow", sans-serif;
+       font-size: clamp(28px, 4vw, 40px); font-weight: 600; margin: 6px 0 4px;
+       text-wrap: balance; }
+  header p { color: var(--muted); max-width: 68ch; margin: 6px 0 0; }
+  main { max-width: 1180px; margin: 0 auto; padding: 24px; display: grid;
+         grid-template-columns: 400px 1fr; gap: 32px; align-items: start; }
+  @media (max-width: 940px) { main { grid-template-columns: 1fr; } }
+
+  .phonewrap { position: sticky; top: 24px; }
+  @media (max-width: 940px) { .phonewrap { position: static; } }
+  .phone { width: 380px; max-width: 100%; border-radius: 34px; padding: 10px;
+           background: #06070a; border: 1px solid #2c3242;
+           box-shadow: 0 24px 60px rgba(0,0,0,0.45); margin: 0 auto; }
+  .screen { position: relative; border-radius: 26px; overflow: hidden; background: #000;
+            height: 700px; touch-action: none; }
+  .screen canvas#sky { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .caption { text-align: center; color: var(--muted); font-size: 13px; margin: 12px auto 0;
+             max-width: 380px; min-height: 34px; }
+
+  /* ---- HUD (existing, for collision reference) ---- */
+  .hud { position: absolute; top: 12px; right: 12px; width: 118px; padding: 7px 9px;
+         border-radius: 12px; background: rgba(20,26,38,0.62);
+         border: 1px solid rgba(255,255,255,0.09); font-size: 10.5px; color: #b9c4d4;
+         line-height: 1.5; }
+  .hud b { color: #e7ecf5; font-weight: 600; float: right; }
+
+  /* ---- collapsed chip (top centre) ---- */
+  .chip { position: absolute; left: 50%; transform: translateX(-50%); top: 12px;
+          padding: 6px 13px; border-radius: 999px; font-size: 13px; font-weight: 600;
+          background: rgba(48,36,20,0.88); border: 1px solid rgba(242,176,74,0.42);
+          color: #f7d9a6; cursor: pointer; white-space: nowrap;
+          transition: opacity 0.2s ease, transform 0.2s ease; }
+  .chip.gone { opacity: 0; transform: translateX(-50%) translateY(-6px);
+               pointer-events: none; }
+
+  /* ---- expanded player (bottom) ---- */
+  .player { position: absolute; left: 10px; right: 10px; bottom: 10px; padding: 9px 11px 11px;
+            border-radius: 18px; background: rgba(20,26,38,0.90);
+            border: 1px solid rgba(255,255,255,0.11); backdrop-filter: blur(8px);
+            transition: opacity 0.22s ease, transform 0.22s ease; }
+  .player.moving { background: rgba(48,36,20,0.90); border-color: rgba(242,176,74,0.38); }
+  .player.gone { opacity: 0; transform: translateY(10px); pointer-events: none; }
+  .prow { display: flex; align-items: center; gap: 8px; }
+  .clockread { font-size: 16px; font-weight: 600; flex: 1 1 auto; }
+  .pill { padding: 4px 9px; border-radius: 999px; font-size: 11.5px; cursor: pointer;
+          background: rgba(255,255,255,0.10); border: 1px solid rgba(255,255,255,0.12);
+          color: #cfd8e8; white-space: nowrap; }
+  .pill.on { background: rgba(242,176,74,0.22); border-color: rgba(242,176,74,0.5);
+             color: #f7d9a6; font-weight: 600; }
+  .pill.rate { min-width: 74px; text-align: center; }
+
+  .scrub { position: relative; height: 44px; margin-top: 9px; cursor: grab;
+           border-radius: 9px; overflow: hidden; }
+  .scrub:active { cursor: grabbing; }
+  .scrub canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .thumb { position: absolute; top: -2px; bottom: -2px; width: 2px; background: #fff;
+           box-shadow: 0 0 9px rgba(255,255,255,0.9); pointer-events: none; }
+  .thumb::after { content: ""; position: absolute; left: 50%; top: -3px; width: 10px;
+                  height: 10px; margin-left: -5px; border-radius: 50%; background: #fff; }
+  .nowmark { position: absolute; top: 0; bottom: 0; width: 1px; pointer-events: none;
+             background: repeating-linear-gradient(to bottom,
+               rgba(255,255,255,0.7) 0 3px, transparent 3px 6px); }
+  .flingtrail { position: absolute; top: 0; bottom: 0; pointer-events: none;
+                background: linear-gradient(90deg, rgba(242,176,74,0), rgba(242,176,74,0.30));
+                opacity: 0; transition: opacity 0.25s ease; }
+
+  /* menus */
+  .menu { position: absolute; border-radius: 14px; background: rgba(24,30,42,0.97);
+          border: 1px solid rgba(255,255,255,0.13); padding: 5px; min-width: 160px;
+          box-shadow: 0 12px 34px rgba(0,0,0,0.5); z-index: 5; }
+  .menu.hidden { display: none; }
+  .menuitem { padding: 8px 11px; border-radius: 9px; font-size: 13px; cursor: pointer;
+              color: #dce4f0; display: flex; justify-content: space-between; gap: 10px; }
+  .menuitem:hover { background: rgba(255,255,255,0.09); }
+  .menuitem.sel { background: rgba(242,176,74,0.20); color: #f7d9a6; font-weight: 600; }
+  .menuitem small { color: #8f9cb0; font-weight: 400; }
+  .menuhead { padding: 7px 11px 4px; font-size: 10.5px; letter-spacing: 0.1em;
+              text-transform: uppercase; color: #8f9cb0; }
+  .sheet { position: absolute; left: 0; right: 0; bottom: 0; max-height: 78%;
+           overflow-y: auto; border-radius: 20px 20px 0 0; background: rgba(22,28,40,0.985);
+           border-top: 1px solid rgba(255,255,255,0.13); padding: 6px 0 14px; z-index: 6;
+           transition: transform 0.26s cubic-bezier(.2,.8,.3,1); }
+  .sheet.hidden { transform: translateY(102%); }
+  .grabber { width: 34px; height: 4px; border-radius: 2px; background: rgba(255,255,255,0.28);
+             margin: 8px auto 6px; }
+  .srow { display: flex; align-items: center; gap: 10px; padding: 9px 16px; cursor: pointer; }
+  .srow:hover { background: rgba(255,255,255,0.06); }
+  .srow .ico { width: 26px; text-align: center; font-size: 15px; }
+  .srow .lbl { flex: 1 1 auto; font-size: 13.5px; }
+  .srow .when { font-size: 11.5px; color: #8f9cb0; white-space: nowrap; }
+  .srow.past .lbl, .srow.past .when { color: #6c7688; }
+  .scrim { position: absolute; inset: 0; background: rgba(0,0,0,0.42); z-index: 5;
+           transition: opacity 0.22s ease; }
+  .scrim.hidden { opacity: 0; pointer-events: none; }
+
+  .modepill { position: absolute; left: 12px; bottom: 118px; padding: 5px 10px;
+              border-radius: 999px; font-size: 11.5px; background: rgba(20,26,38,0.82);
+              border: 1px solid rgba(255,255,255,0.12); color: #b9c4d4; cursor: pointer; }
+  .toast { position: absolute; left: 50%; transform: translateX(-50%); bottom: 122px;
+           padding: 8px 14px; border-radius: 10px; font-size: 12.5px;
+           background: rgba(38,46,62,0.96); border: 1px solid rgba(255,255,255,0.14);
+           color: #e7ecf5; opacity: 0; transition: opacity 0.25s ease; white-space: nowrap; }
+  .toast.show { opacity: 1; }
+
+  section { border-top: 1px solid var(--line); padding-top: 22px; margin-top: 26px; }
+  section:first-of-type { border-top: none; margin-top: 0; padding-top: 0; }
+  h2 { font-family: "Avenir Next Condensed", "Arial Narrow", sans-serif; font-size: 23px;
+       font-weight: 600; margin: 0 0 4px; }
+  h3 { font-size: 15px; margin: 18px 0 4px; }
+  .lede { color: var(--muted); margin-top: 0; }
+  ul { margin: 8px 0; padding-left: 20px; } li { margin: 5px 0; }
+  .switcher { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 4px; }
+  .tab { padding: 8px 14px; border-radius: 10px; border: 1px solid var(--line);
+         background: var(--surface); color: var(--text); cursor: pointer; font-size: 14px; }
+  .tab.on { background: var(--accent); border-color: var(--accent); color: var(--accent-ink);
+            font-weight: 600; }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
+          padding: 14px 16px; margin: 12px 0; }
+  .card h4 { margin: 0 0 6px; font-size: 14.5px; }
+  .card p:last-child { margin-bottom: 0; }
+  table { border-collapse: collapse; width: 100%; font-size: 14px; margin: 10px 0; }
+  th, td { text-align: left; padding: 7px 9px; border-bottom: 1px solid var(--line);
+           vertical-align: top; }
+  th { color: var(--accent); font-size: 12px; text-transform: uppercase;
+       letter-spacing: 0.07em; }
+  .q { border-left: 3px solid var(--accent); padding: 2px 0 2px 12px; color: var(--muted);
+       margin: 12px 0; }
+  code { background: var(--surface2); padding: 1px 5px; border-radius: 4px; font-size: 13px;
+         font-family: ui-monospace, Menlo, monospace; }
+  .toggle { position: fixed; top: 14px; right: 14px; z-index: 9; padding: 7px 12px;
+            border-radius: 999px; border: 1px solid var(--line); background: var(--surface);
+            color: var(--text); cursor: pointer; font-size: 13px; }
+  footer { max-width: 1180px; margin: 0 auto; padding: 8px 24px 60px; color: var(--muted);
+           font-size: 13px; }
+  .budget { display: grid; grid-template-columns: 1fr auto; gap: 2px 12px; font-size: 13.5px;
+            margin: 10px 0; }
+  .budget div:nth-child(even) { text-align: right; font-variant-numeric: tabular-nums;
+                                color: var(--muted); }
+  .budget .tot { border-top: 1px solid var(--line); padding-top: 6px; font-weight: 600;
+                 color: var(--text); }
+</style>
+
+<button class="toggle" id="themeToggle">◐ Theme</button>
+
+<header>
+  <div class="eyebrow">Sky Map v2 · design mockup 2 of 2</div>
+  <h1 class="cond">Time travel — the chrome</h1>
+  <p>The first mockup compared concepts side by side; this one is the shipping shape. The
+  player is bottom-anchored, collapsed to a chip at rest, and the ladder has become a
+  gesture plus a menu. Fling the scrubber to play. Everything here is one control surface
+  with two rows.</p>
+</header>
+
+<main>
+  <div class="phonewrap">
+    <div class="phone">
+      <div class="screen" id="screen">
+        <canvas id="sky"></canvas>
+
+        <div class="hud">
+          RA <b id="hudra">18h 37m</b><br>
+          Dec <b id="huddec">+38.8°</b><br>
+          Alt <b id="hudalt">61.2°</b><br>
+          FOV <b>75°</b>
+        </div>
+
+        <div class="chip gone" id="chip">+3.2h · 01:04</div>
+        <div class="modepill" id="modepill">Manual</div>
+        <div class="toast" id="toast"></div>
+
+        <div class="scrim hidden" id="scrim"></div>
+
+        <div class="player" id="player">
+          <div class="prow">
+            <div class="clockread mono" id="clockread">Wed 5 Aug · 21:47</div>
+            <div class="pill" id="anchorpill">Ground</div>
+            <div class="pill rate" id="ratepill">Frozen</div>
+          </div>
+          <div class="scrub" id="scrub">
+            <canvas id="scrubcv"></canvas>
+            <div class="flingtrail" id="flingtrail"></div>
+            <div class="nowmark" id="nowmark"></div>
+            <div class="thumb" id="thumb"></div>
+          </div>
+        </div>
+
+        <div class="menu hidden" id="anchormenu"></div>
+        <div class="menu hidden" id="ratemenu"></div>
+        <div class="sheet hidden" id="presetsheet"></div>
+      </div>
+    </div>
+    <div class="caption" id="caption">Flick the scrubber sideways and let go — time plays.</div>
+  </div>
+
+  <div>
+    <div class="switcher">
+      <button class="tab on" data-demo="fling">Fling to play</button>
+      <button class="tab" data-demo="collapse">Collapse &amp; expand</button>
+      <button class="tab" data-demo="ladder">Ladder menu</button>
+      <button class="tab" data-demo="presets">Presets</button>
+      <button class="tab" data-demo="budget">Pixel budget</button>
+    </div>
+    <div id="panels"></div>
+  </div>
+</main>
+
+<footer>Companion to <code>time-travel.html</code> · for
+<code>docs/design/time-travel.md</code></footer>
+
+<script>
+const root = document.documentElement;
+document.getElementById('themeToggle').onclick = () => {
+  const cur = root.getAttribute('data-theme')
+    || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  root.setAttribute('data-theme', cur === 'dark' ? 'light' : 'dark');
+};
+
+// ---------------------------------------------------------------- sky model (as mockup 1)
+const LAT = 51.5 * Math.PI / 180, SIN_LAT = Math.sin(LAT), COS_LAT = Math.cos(LAT);
+const DEG = Math.PI / 180, HOUR = 3600, DAY = 86400, SIDEREAL_DAY = 86164.0905;
+const T0 = Date.UTC(2026, 7, 5, 21, 47, 0) / 1000;
+const LST_OFFSET = 4.9255;
+const lst = t => ((t - T0) / SIDEREAL_DAY * 2 * Math.PI) + LST_OFFSET;
+
+const NAMED = [
+  ['Vega', 18.62, 38.8, 0.0], ['Deneb', 20.69, 45.3, 1.3], ['Altair', 19.85, 8.9, 0.8],
+  ['Arcturus', 14.26, 19.2, 0.0], ['Antares', 16.49, -26.4, 1.1], ['Polaris', 2.53, 89.3, 2.0],
+  ['Capella', 5.28, 46.0, 0.1], ['Betelgeuse', 5.92, 7.4, 0.5], ['Rigel', 5.24, -8.2, 0.2],
+  ['Sirius', 6.75, -16.7, -1.4], ['Aldebaran', 4.60, 16.5, 0.9], ['Spica', 13.42, -11.2, 1.0],
+  ['Pollux', 7.76, 28.0, 1.1], ['Regulus', 10.14, 12.0, 1.4], ['Fomalhaut', 22.96, -29.6, 1.2],
+];
+const STARS = NAMED.map(([name, raH, decD, mag]) =>
+  ({ ra: raH / 24 * 2 * Math.PI, dec: decD * DEG, mag, name }));
+let seed = 20260805;
+const rnd = () => (seed = (seed * 1664525 + 1013904223) % 4294967296) / 4294967296;
+for (let i = 0; i < 850; i++)
+  STARS.push({ ra: rnd() * 2 * Math.PI, dec: Math.asin(rnd() * 2 - 1),
+               mag: 2.2 + rnd() * 3.6, name: null });
+
+function sunRaDec(t) {
+  const lon = 133 * DEG + (t - T0) / (365.2422 * DAY) * 2 * Math.PI, obl = 23.44 * DEG;
+  return { ra: Math.atan2(Math.cos(obl) * Math.sin(lon), Math.cos(lon)),
+           dec: Math.asin(Math.sin(obl) * Math.sin(lon)) };
+}
+function moonRaDec(t) {
+  const d = (t - T0) / DAY;
+  const lon = 95 * DEG + d * (2 * Math.PI / 27.32158);
+  const lat = 5.1 * DEG * Math.sin(d * 2 * Math.PI / 27.212);
+  const obl = 23.44 * DEG, sl = Math.sin(lon), cl = Math.cos(lon);
+  const sb = Math.sin(lat), cb = Math.cos(lat);
+  return { ra: Math.atan2(cb * sl * Math.cos(obl) - sb * Math.sin(obl), cb * cl),
+           dec: Math.asin(sb * Math.cos(obl) + cb * Math.sin(obl) * sl) };
+}
+function moonPhase(t) {
+  let e = moonRaDec(t).ra - sunRaDec(t).ra;
+  while (e < 0) e += 2 * Math.PI; while (e > 2 * Math.PI) e -= 2 * Math.PI;
+  return e / (2 * Math.PI);
+}
+const PLANETS = [
+  { key: 'venus', name: 'Venus', a: 0.723, period: 224.7, lon0: 210, color: '#fff2cc', r: 3.0 },
+  { key: 'mars', name: 'Mars', a: 1.524, period: 687.0, lon0: 12, color: '#ff8f6b', r: 2.8 },
+  { key: 'jupiter', name: 'Jupiter', a: 5.203, period: 4331, lon0: 96, color: '#ffd9a0', r: 3.4 },
+];
+function planetRaDec(p, t) {
+  const d = (t - T0) / DAY;
+  const pl = p.lon0 * DEG + d * 2 * Math.PI / p.period;
+  const el = 313 * DEG + d * 2 * Math.PI / 365.256;
+  const x = p.a * Math.cos(pl) - Math.cos(el), y = p.a * Math.sin(pl) - Math.sin(el);
+  const lon = Math.atan2(y, x), obl = 23.44 * DEG;
+  return { ra: Math.atan2(Math.cos(obl) * Math.sin(lon), Math.cos(lon)),
+           dec: Math.asin(Math.sin(obl) * Math.sin(lon)) };
+}
+function altAz(ra, dec, t) {
+  const H = lst(t) - ra;
+  const alt = Math.asin(Math.max(-1, Math.min(1,
+    Math.sin(dec) * SIN_LAT + Math.cos(dec) * COS_LAT * Math.cos(H))));
+  const az = Math.atan2(-Math.cos(dec) * Math.sin(H),
+    Math.sin(dec) * COS_LAT - Math.cos(dec) * SIN_LAT * Math.cos(H));
+  return { alt, az };
+}
+
+// ---------------------------------------------------------------- state
+const state = {
+  t: T0, anchor: 'ground', mode: 'manual', window: 12 * HOUR,
+  rate: 0, collapsed: false, camAz: 10 * DEG, camAlt: 34 * DEG, fov: 75 * DEG,
+  anchorRaDec: null, camOffset: null, demo: 'fling',
+};
+const ANCHORS = {
+  ground: 'Ground', sky: 'Sky', sun: 'Sun', moon: 'Moon', mars: 'Mars',
+};
+const RATES = [
+  { r: -7 * DAY, l: '◀◀ 1 week/s' }, { r: -DAY, l: '◀◀ 1 day/s' },
+  { r: -HOUR, l: '◀◀ 1 hour/s' }, { r: -600, l: '◀◀ 10 min/s' },
+  { r: -60, l: '◀◀ 1 min/s' }, { r: -1, l: '◀ 1 sec/s' },
+  { r: 0, l: 'Frozen' },
+  { r: 1, l: '▶ 1 sec/s' }, { r: 60, l: '▶▶ 1 min/s' },
+  { r: 600, l: '▶▶ 10 min/s' }, { r: HOUR, l: '▶▶ 1 hour/s' },
+  { r: DAY, l: '▶▶ 1 day/s' }, { r: 7 * DAY, l: '▶▶ 1 week/s' },
+];
+
+function anchorRaDecAt(a, t) {
+  if (a === 'sun') return sunRaDec(t);
+  if (a === 'moon') return moonRaDec(t);
+  if (a === 'mars') return planetRaDec(PLANETS[1], t);
+  return null;
+}
+function captureAnchor() {
+  if (state.anchor === 'sky') {
+    const H = Math.atan2(-Math.sin(state.camAz) * Math.cos(state.camAlt),
+      Math.sin(state.camAlt) * COS_LAT - Math.cos(state.camAlt) * Math.cos(state.camAz) * SIN_LAT);
+    state.anchorRaDec = { ra: lst(state.t) - H,
+      dec: Math.asin(Math.sin(state.camAlt) * SIN_LAT +
+        Math.cos(state.camAlt) * COS_LAT * Math.cos(state.camAz)) };
+    state.camOffset = null;
+  } else if (state.anchor === 'ground') {
+    state.anchorRaDec = null; state.camOffset = null;
+  } else {
+    const h = altAz(anchorRaDecAt(state.anchor, state.t).ra,
+      anchorRaDecAt(state.anchor, state.t).dec, state.t);
+    let dAz = state.camAz - h.az;
+    while (dAz > Math.PI) dAz -= 2 * Math.PI;
+    while (dAz < -Math.PI) dAz += 2 * Math.PI;
+    state.camOffset = { dAz, dAlt: state.camAlt - h.alt };
+    state.anchorRaDec = null;
+  }
+}
+function setTime(nt) {
+  state.t = nt;
+  if (state.anchor === 'sky' && state.anchorRaDec) {
+    const h = altAz(state.anchorRaDec.ra, state.anchorRaDec.dec, nt);
+    state.camAz = h.az; state.camAlt = h.alt;
+  } else if (state.camOffset) {
+    const tgt = anchorRaDecAt(state.anchor, nt);
+    if (tgt) {
+      const h = altAz(tgt.ra, tgt.dec, nt);
+      state.camAz = h.az + state.camOffset.dAz;
+      state.camAlt = Math.max(-80 * DEG, Math.min(80 * DEG, h.alt + state.camOffset.dAlt));
+    }
+  }
+}
+
+// ---------------------------------------------------------------- rendering
+const sky = document.getElementById('sky'), sctx = sky.getContext('2d');
+const lerp = (a, b, t) => a + (b - a) * t;
+function project(alt, az, w, h) {
+  let dAz = az - state.camAz;
+  while (dAz > Math.PI) dAz -= 2 * Math.PI;
+  while (dAz < -Math.PI) dAz += 2 * Math.PI;
+  const ca = Math.cos(alt), sa = Math.sin(alt);
+  const x = ca * Math.sin(dAz), y = ca * Math.cos(dAz), z = sa;
+  const cb = Math.cos(state.camAlt), sb = Math.sin(state.camAlt);
+  const y2 = y * cb + z * sb, z2 = -y * sb + z * cb;
+  if (y2 <= 0.08) return null;
+  const s = (w / 2) / Math.tan(state.fov / 2);
+  return { x: w / 2 + (x / y2) * s, y: h / 2 - (z2 / y2) * s };
+}
+function drawSky() {
+  const w = sky.width, h = sky.height, t = state.t;
+  const sun = sunRaDec(t), sh = altAz(sun.ra, sun.dec, t);
+  const k = Math.max(0, Math.min(1, (sh.alt / DEG + 18) / 24));
+  const g = sctx.createLinearGradient(0, 0, 0, h);
+  g.addColorStop(0, `rgb(${Math.round(lerp(4,92,k*k))},${Math.round(lerp(6,140,k*k))},${Math.round(lerp(14,208,k*k))})`);
+  g.addColorStop(1, `rgb(${Math.round(lerp(10,168,k))},${Math.round(lerp(14,196,k))},${Math.round(lerp(26,232,k))})`);
+  sctx.fillStyle = g; sctx.fillRect(0, 0, w, h);
+  const night = 1 - k;
+  for (const s of STARS) {
+    const ha = altAz(s.ra, s.dec, t);
+    if (ha.alt < -6 * DEG) continue;
+    const p = project(ha.alt, ha.az, w, h); if (!p) continue;
+    let a = Math.max(0, Math.min(1, (3.4 - s.mag) / 3.4)) * night;
+    if (ha.alt < 3 * DEG) a *= Math.max(0, (ha.alt / DEG + 6) / 9);
+    if (a <= 0.02) continue;
+    sctx.globalAlpha = a; sctx.fillStyle = '#fff';
+    sctx.beginPath(); sctx.arc(p.x, p.y, Math.max(0.6, (3.2 - s.mag) * 0.62), 0, 7); sctx.fill();
+    if (s.name && s.mag < 1.3 && a > 0.35) {
+      sctx.globalAlpha = a * 0.7; sctx.fillStyle = '#cfe0ff';
+      sctx.font = '10px system-ui'; sctx.fillText(s.name, p.x + 5, p.y - 4);
+    }
+  }
+  sctx.globalAlpha = 1;
+  for (const p of PLANETS) {
+    const rd = planetRaDec(p, t), ha = altAz(rd.ra, rd.dec, t);
+    if (ha.alt < -4 * DEG) continue;
+    const q = project(ha.alt, ha.az, w, h); if (!q) continue;
+    sctx.globalAlpha = Math.max(0.25, night); sctx.fillStyle = p.color;
+    sctx.beginPath(); sctx.arc(q.x, q.y, p.r, 0, 7); sctx.fill();
+    sctx.globalAlpha = Math.max(0.35, night) * 0.9; sctx.fillStyle = '#e9eef8';
+    sctx.font = '10.5px system-ui'; sctx.fillText(p.name, q.x + 6, q.y - 5);
+  }
+  sctx.globalAlpha = 1;
+  const mrd = moonRaDec(t), mh = altAz(mrd.ra, mrd.dec, t);
+  if (mh.alt > -4 * DEG) {
+    const q = project(mh.alt, mh.az, w, h);
+    if (q) {
+      const R = 9, ph = moonPhase(t);
+      sctx.save(); sctx.beginPath(); sctx.arc(q.x, q.y, R, 0, 7); sctx.clip();
+      sctx.fillStyle = 'rgba(160,170,190,0.30)'; sctx.fillRect(q.x-R, q.y-R, 2*R, 2*R);
+      sctx.fillStyle = '#f4f1e6'; sctx.beginPath(); sctx.arc(q.x, q.y, R, 0, 7); sctx.fill();
+      sctx.globalCompositeOperation = 'destination-out';
+      const off = R * 2 * (ph < 0.5 ? (0.5 - ph) * 2 : (ph - 0.5) * 2);
+      sctx.beginPath(); sctx.arc(q.x + (ph < 0.5 ? -off : off), q.y, R * 1.02, 0, 7); sctx.fill();
+      sctx.restore();
+      sctx.globalAlpha = 0.9; sctx.fillStyle = '#e9eef8'; sctx.font = '10.5px system-ui';
+      sctx.fillText('Moon', q.x + 12, q.y - 6); sctx.globalAlpha = 1;
+    }
+  }
+  if (sh.alt > -6 * DEG) {
+    const q = project(sh.alt, sh.az, w, h);
+    if (q) {
+      const rg = sctx.createRadialGradient(q.x, q.y, 2, q.x, q.y, 30);
+      rg.addColorStop(0, 'rgba(255,236,180,0.95)'); rg.addColorStop(1, 'rgba(255,200,90,0)');
+      sctx.fillStyle = rg; sctx.beginPath(); sctx.arc(q.x, q.y, 30, 0, 7); sctx.fill();
+      sctx.fillStyle = '#fff4cf'; sctx.beginPath(); sctx.arc(q.x, q.y, 11, 0, 7); sctx.fill();
+    }
+  }
+  // horizon
+  const pts = [];
+  for (let a = -180; a <= 180; a += 2) {
+    const p = project(0, state.camAz + a * DEG, w, h); if (p) pts.push(p);
+  }
+  if (pts.length > 1) {
+    sctx.beginPath(); sctx.moveTo(pts[0].x, pts[0].y);
+    for (const p of pts) sctx.lineTo(p.x, p.y);
+    sctx.lineTo(pts[pts.length-1].x, h); sctx.lineTo(pts[0].x, h); sctx.closePath();
+    sctx.fillStyle = 'rgba(6,10,16,0.86)'; sctx.fill();
+    sctx.beginPath(); sctx.moveTo(pts[0].x, pts[0].y);
+    for (const p of pts) sctx.lineTo(p.x, p.y);
+    sctx.strokeStyle = 'rgba(120,160,200,0.55)'; sctx.lineWidth = 1.2; sctx.stroke();
+  }
+  sctx.font = '600 11px system-ui';
+  for (const [lab, az] of [['N',0],['E',90],['S',180],['W',270]]) {
+    const p = project(1.5 * DEG, az * DEG, w, h);
+    if (p) { sctx.fillStyle = 'rgba(160,190,220,0.85)'; sctx.fillText(lab, p.x - 4, p.y + 14); }
+  }
+}
+
+const scrubEl = document.getElementById('scrub'), scrubCv = document.getElementById('scrubcv');
+const scctx = scrubCv.getContext('2d');
+function drawScrub() {
+  const w = scrubCv.width, h = scrubCv.height;
+  scctx.clearRect(0, 0, w, h);
+  const half = state.window, t0 = T0 - half, t1 = T0 + half, N = Math.min(w, 240);
+  for (let i = 0; i < N; i++) {
+    const tt = t0 + (t1 - t0) * (i / N), s = sunRaDec(tt);
+    const a = altAz(s.ra, s.dec, tt).alt / DEG;
+    scctx.fillStyle = a > 0 ? '#3a6ea8' : a > -6 ? '#2b4a74' : a > -12 ? '#1f3355'
+      : a > -18 ? '#16233c' : '#0d1424';
+    scctx.fillRect(Math.floor(i * w / N), 0, Math.ceil(w / N) + 1, h);
+  }
+  const bodyFn = state.anchor === 'sun' ? sunRaDec : state.anchor === 'moon' ? moonRaDec
+    : (tt => planetRaDec(PLANETS[1], tt));
+  for (let i = 0; i < N; i++) {
+    const tt = t0 + (t1 - t0) * (i / N), rd = bodyFn(tt);
+    if (altAz(rd.ra, rd.dec, tt).alt > 0) {
+      scctx.fillStyle = '#f2b04a';
+      scctx.fillRect(Math.floor(i * w / N), h - 5, Math.ceil(w / N) + 1, 3);
+    }
+  }
+  scctx.fillStyle = 'rgba(255,255,255,0.30)';
+  const stepH = half > 3 * DAY ? 24 : half > 18 * HOUR ? 6 : 1;
+  for (let tt = Math.ceil(t0 / (stepH * HOUR)) * stepH * HOUR; tt < t1; tt += stepH * HOUR)
+    scctx.fillRect((tt - t0) / (t1 - t0) * w, 0, 1, 5);
+  let prev = null;
+  for (let i = 0; i <= N; i++) {
+    const tt = t0 + (t1 - t0) * (i / N), s = sunRaDec(tt);
+    const a = altAz(s.ra, s.dec, tt).alt;
+    if (prev !== null && (prev > 0) !== (a > 0)) {
+      scctx.fillStyle = a > 0 ? '#ffd27a' : '#7fa8d8';
+      scctx.beginPath(); scctx.arc(i * w / N, h / 2, 3.2, 0, 7); scctx.fill();
+    }
+    prev = a;
+  }
+}
+function syncThumb() {
+  const frac = (state.t - (T0 - state.window)) / (2 * state.window);
+  const w = scrubEl.clientWidth;
+  document.getElementById('thumb').style.left = (frac * w) + 'px';
+  document.getElementById('nowmark').style.left = (w / 2) + 'px';
+}
+
+// ---------------------------------------------------------------- readouts
+const DAYS = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+const MONS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+function fmt(t) {
+  const d = new Date(t * 1000);
+  return `${DAYS[d.getUTCDay()]} ${d.getUTCDate()} ${MONS[d.getUTCMonth()]} · ` +
+    `${String(d.getUTCHours()).padStart(2,'0')}:${String(d.getUTCMinutes()).padStart(2,'0')}`;
+}
+function hhmm(t) {
+  const d = new Date(t * 1000);
+  return `${String(d.getUTCHours()).padStart(2,'0')}:${String(d.getUTCMinutes()).padStart(2,'0')}`;
+}
+function fmtDelta(dt) {
+  const s = Math.abs(dt), sg = dt < 0 ? '−' : '+';
+  if (s < 60) return 'Now';
+  if (s < 3600) return `${sg}${Math.round(s/60)}m`;
+  if (s < 86400) return `${sg}${(s/3600).toFixed(1)}h`;
+  if (s < 86400*365) return `${sg}${(s/86400).toFixed(1)}d`;
+  return `${sg}${(s/(86400*365.25)).toFixed(1)}y`;
+}
+function rateLabel(r) {
+  if (r === 0) return 'Frozen';
+  let best = RATES[6];
+  for (const x of RATES) if (Math.abs(Math.abs(x.r) - Math.abs(r)) <
+    Math.abs(Math.abs(best.r) - Math.abs(r))) best = x;
+  const mag = Math.abs(r);
+  const nm = mag >= 6*DAY ? '1 week/s' : mag >= 0.7*DAY ? '1 day/s'
+    : mag >= 0.7*HOUR ? '1 hour/s' : mag >= 420 ? '10 min/s'
+    : mag >= 42 ? '1 min/s' : `${mag.toFixed(0)} sec/s`;
+  return (r < 0 ? '◀◀ ' : '▶▶ ') + nm;
+}
+
+function render() {
+  drawSky(); drawScrub(); syncThumb();
+  const dt = state.t - T0;
+  document.getElementById('clockread').textContent = fmt(state.t);
+  document.getElementById('ratepill').textContent =
+    state.rate === 0 ? (Math.abs(dt) < 60 ? 'Now' : fmtDelta(dt)) : rateLabel(state.rate);
+  document.getElementById('ratepill').className =
+    'pill rate' + (state.rate !== 0 ? ' on' : '');
+  document.getElementById('anchorpill').textContent = ANCHORS[state.anchor];
+  document.getElementById('anchorpill').className =
+    'pill' + (state.anchor !== 'ground' ? ' on' : '');
+  document.getElementById('player').className =
+    'player' + (state.rate !== 0 || Math.abs(dt) >= 60 ? ' moving' : '') +
+    (state.collapsed ? ' gone' : '');
+  document.getElementById('chip').className = 'chip' + (state.collapsed ? '' : ' gone');
+  document.getElementById('chip').textContent =
+    `${fmtDelta(dt)} · ${hhmm(state.t)}`;
+  document.getElementById('modepill').textContent =
+    state.mode === 'manual' ? 'Manual' : 'Auto (sensors)';
+  // HUD tracks the camera so the collision case is visible.
+  const H = Math.atan2(-Math.sin(state.camAz) * Math.cos(state.camAlt),
+    Math.sin(state.camAlt) * COS_LAT - Math.cos(state.camAlt) * Math.cos(state.camAz) * SIN_LAT);
+  const ra = ((lst(state.t) - H) / (2 * Math.PI) * 24 + 24) % 24;
+  const dec = Math.asin(Math.sin(state.camAlt) * SIN_LAT +
+    Math.cos(state.camAlt) * COS_LAT * Math.cos(state.camAz)) / DEG;
+  document.getElementById('hudra').textContent =
+    `${Math.floor(ra)}h ${String(Math.floor((ra % 1) * 60)).padStart(2,'0')}m`;
+  document.getElementById('huddec').textContent = `${dec >= 0 ? '+' : ''}${dec.toFixed(1)}°`;
+  document.getElementById('hudalt').textContent = `${(state.camAlt / DEG).toFixed(1)}°`;
+}
+
+// ---------------------------------------------------------------- fling physics
+// The scrubber thumb has position AND velocity. Drag sets position; releasing while
+// moving sets velocity, which IS playback. Velocity decays like the map's own fling.
+let dragging = false, lastX = 0, lastMoveT = 0, vel = 0;   // vel in px/s
+const FLING_MIN_PX_S = 90;          // below this a release is a "stop", not a fling
+const FLING_DECAY = 0.55;           // per second, exponential — v1's flinger feel
+
+// px/s → sim-seconds/s, expressed as *window-crossings per second* rather than absolute
+// time units. This is the key calibration: what matters is how fast the thumb crosses the
+// span you are looking at, so the gesture feels identical whether the window is ±12h or
+// ±4 months — only the sky moves faster. With this gain a gentle ~150 px/s flick crosses
+// the visible window in ~14 s and a hard ~1200 px/s fling in ~1.7 s.
+const FLING_GAIN = 0.35;
+function pxPerSecToRate(v) {
+  const w = scrubEl.clientWidth || 1;
+  return (v / w) * (2 * state.window) * FLING_GAIN;
+}
+function scrubTo(clientX) {
+  const r = scrubEl.getBoundingClientRect();
+  const frac = Math.max(0, Math.min(1, (clientX - r.left) / r.width));
+  setTime(T0 - state.window + frac * 2 * state.window);
+}
+scrubEl.addEventListener('pointerdown', e => {
+  dragging = true; vel = 0; state.rate = 0;
+  scrubEl.setPointerCapture(e.pointerId);
+  lastX = e.clientX; lastMoveT = performance.now();
+  scrubTo(e.clientX); render();
+});
+scrubEl.addEventListener('pointermove', e => {
+  if (!dragging) return;
+  const now = performance.now(), dt = Math.max(1, now - lastMoveT) / 1000;
+  const dx = e.clientX - lastX;
+  // Smooth the velocity estimate so a jittery finger doesn't produce a wild fling.
+  vel = 0.7 * vel + 0.3 * (dx / dt);
+  lastX = e.clientX; lastMoveT = now;
+  scrubTo(e.clientX); render();
+});
+function endDrag() {
+  if (!dragging) return;
+  dragging = false;
+  // Stale velocity guard: if the finger paused before lifting, that's a stop.
+  if (performance.now() - lastMoveT > 120) vel = 0;
+  if (Math.abs(vel) >= FLING_MIN_PX_S) {
+    state.rate = pxPerSecToRate(vel);
+    showFlingTrail(vel);
+    toast(`Playing ${rateLabel(state.rate)} — tap the track to stop`);
+  } else {
+    state.rate = 0;
+  }
+  render();
+}
+scrubEl.addEventListener('pointerup', endDrag);
+scrubEl.addEventListener('pointercancel', endDrag);
+// A tap (no movement) while playing = stop. Handled in pointerdown via vel=0/rate=0.
+
+function showFlingTrail(v) {
+  const el = document.getElementById('flingtrail');
+  const w = scrubEl.clientWidth;
+  const mag = Math.min(1, Math.abs(v) / 900);
+  el.style.left = v > 0 ? '0' : 'auto'; el.style.right = v > 0 ? 'auto' : '0';
+  el.style.width = (w * 0.55 * mag) + 'px';
+  el.style.transform = v > 0 ? 'none' : 'scaleX(-1)';
+  el.style.opacity = '1';
+  setTimeout(() => { el.style.opacity = '0'; }, 420);
+}
+
+let toastTimer = null;
+function toast(msg) {
+  const el = document.getElementById('toast');
+  el.textContent = msg; el.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => el.classList.remove('show'), 2200);
+}
+
+// Playback + decay loop.
+let last = performance.now();
+function tick(now) {
+  const dt = Math.min(0.1, (now - last) / 1000); last = now;
+  if (!dragging && state.rate !== 0) {
+    setTime(state.t + state.rate * dt);
+    // Decay toward zero unless the rate was pinned from the ladder menu. The cutoff is
+    // scale-relative (6 px/s of thumb travel), so playback stops feeling "stuck" at wide
+    // zooms where a small absolute rate is still visible motion.
+    if (!state.ratePinned) {
+      state.rate *= Math.pow(FLING_DECAY, dt);
+      if (Math.abs(state.rate) < Math.abs(pxPerSecToRate(6))) state.rate = 0;
+    }
+    // Clamp to the scrubber window so playback can't run off the end.
+    const lim = state.window;
+    if (state.t > T0 + lim) { state.t = T0 + lim; state.rate = 0; }
+    if (state.t < T0 - lim) { state.t = T0 - lim; state.rate = 0; }
+    render();
+  }
+  requestAnimationFrame(tick);
+}
+requestAnimationFrame(tick);
+
+// ---------------------------------------------------------------- menus
+const anchorMenu = document.getElementById('anchormenu');
+const rateMenu = document.getElementById('ratemenu');
+const scrim = document.getElementById('scrim');
+function closeMenus() {
+  anchorMenu.classList.add('hidden'); rateMenu.classList.add('hidden');
+  document.getElementById('presetsheet').classList.add('hidden');
+  scrim.classList.add('hidden');
+}
+scrim.onclick = closeMenus;
+
+document.getElementById('anchorpill').onclick = () => {
+  const sensor = state.mode === 'sensor';
+  anchorMenu.innerHTML = '<div class="menuhead">Anchor — what stays still</div>' +
+    Object.entries(ANCHORS).map(([k, v]) => {
+      const dis = sensor && k !== 'ground';
+      return `<div class="menuitem${state.anchor === k ? ' sel' : ''}" data-a="${k}"
+        style="${dis ? 'opacity:.35;pointer-events:none' : ''}">${v}
+        <small>${k === 'ground' ? 'horizon' : k === 'sky' ? 'stars' : 'that object'}</small></div>`;
+    }).join('') +
+    (sensor ? '<div class="menuhead" style="text-transform:none;letter-spacing:0">Auto mode pins the ground — the phone is the alt-az reference.</div>' : '');
+  anchorMenu.style.right = '11px';
+  anchorMenu.style.bottom = '78px';
+  anchorMenu.classList.remove('hidden'); scrim.classList.remove('hidden');
+  for (const el of anchorMenu.querySelectorAll('[data-a]'))
+    el.onclick = () => {
+      state.anchor = el.dataset.a; captureAnchor(); closeMenus(); render();
+    };
+};
+
+// Long-press (or right-click) the rate pill for the named ladder.
+let pressTimer = null;
+const ratePill = document.getElementById('ratepill');
+function openLadder() {
+  rateMenu.innerHTML = '<div class="menuhead">Playback rate</div>' +
+    RATES.map((x, i) => `<div class="menuitem" data-r="${i}">${x.l}</div>`).join('');
+  rateMenu.style.right = '11px'; rateMenu.style.bottom = '78px';
+  rateMenu.classList.remove('hidden'); scrim.classList.remove('hidden');
+  for (const el of rateMenu.querySelectorAll('[data-r]'))
+    el.onclick = () => {
+      state.rate = RATES[Number(el.dataset.r)].r;
+      state.ratePinned = state.rate !== 0;
+      closeMenus(); render();
+      if (state.rate !== 0) toast(`Playing ${rateLabel(state.rate)} — pinned`);
+    };
+}
+ratePill.addEventListener('pointerdown', () => {
+  pressTimer = setTimeout(openLadder, 450);
+});
+ratePill.addEventListener('pointerup', () => clearTimeout(pressTimer));
+ratePill.addEventListener('pointerleave', () => clearTimeout(pressTimer));
+ratePill.addEventListener('contextmenu', e => { e.preventDefault(); openLadder(); });
+ratePill.addEventListener('click', () => {
+  // Short tap: stop if playing, else back to now.
+  if (state.rate !== 0) { state.rate = 0; state.ratePinned = false; toast('Stopped'); }
+  else { setTime(T0); toast('Back to the present'); }
+  render();
+});
+
+// ---------------------------------------------------------------- presets
+const PRESETS = {
+  computed: [
+    ['🌇', 'Next evening sunset', 'Sun', () => nextSunEvent(true)],
+    ['🌅', 'Next morning sunrise', 'Sun', () => nextSunEvent(false)],
+    ['🌕', 'Next full moon', 'Moon', () => nextPhase(0.5)],
+    ['🌑', 'Next new moon', 'Moon', () => nextPhase(0.0)],
+  ],
+  dated: [
+    ['🌘', 'Total Solar Eclipse', 'Aug 12, 2026', Date.UTC(2026,7,12,17,30)/1000],
+    ['☄️', 'Perseids Meteor Shower', 'Aug 12–13, 2026', Date.UTC(2026,7,12,23,20)/1000],
+    ['🪐', 'Lunar Occultation of Jupiter', 'Oct 6, 2026', Date.UTC(2026,9,6,4,50)/1000],
+    ['☄️', 'Geminids Meteor Shower', 'Dec 13–14, 2026', Date.UTC(2026,11,13,22,0)/1000],
+    ['🌝', 'Christmas Eve Supermoon', 'Dec 24, 2026', Date.UTC(2026,11,24,9,10)/1000],
+  ],
+  historical: [
+    ['🚀', 'Apollo 11 Moon Landing', 'Jul 20, 1969', -14182953.622],
+    ['🌑', 'North American Solar Eclipse', 'Apr 8, 2024', Date.UTC(2024,3,8,18,18)/1000],
+    ['🪐', 'Jupiter–Saturn Conjunction', 'Dec 21, 2020', Date.UTC(2020,11,21,21,0)/1000],
+  ],
+};
+function sunAltAt(t) {
+  const s = sunRaDec(t);
+  return altAz(s.ra, s.dec, t).alt;
+}
+function nextSunEvent(wantSet) {
+  for (let i = 1; i < 2000; i++) {
+    const a = sunAltAt(state.t + (i - 1) * 300), b = sunAltAt(state.t + i * 300);
+    if (wantSet && a > 0 && b <= 0) return state.t + i * 300;
+    if (!wantSet && a <= 0 && b > 0) return state.t + i * 300;
+  }
+  return null;
+}
+function nextPhase(target) {
+  for (let i = 1; i < 3000; i++) {
+    const t = state.t + i * 1800;
+    const p0 = moonPhase(t - 1800), p1 = moonPhase(t);
+    const d0 = ((p0 - target) + 1.5) % 1 - 0.5, d1 = ((p1 - target) + 1.5) % 1 - 0.5;
+    if (d0 < 0 && d1 >= 0) return t;
+  }
+  return null;
+}
+function openPresets() {
+  const sheet = document.getElementById('presetsheet');
+  const row = (ico, lbl, when, past) =>
+    `<div class="srow${past ? ' past' : ''}" data-t="${when.t}">
+       <div class="ico">${ico}</div><div class="lbl">${lbl}</div>
+       <div class="when">${when.label}</div></div>`;
+  let html = '<div class="grabber"></div>';
+  html += '<div class="menuhead">Tonight</div>';
+  for (const [ico, lbl, tgt, fn] of PRESETS.computed) {
+    const t = fn();
+    if (t === null) continue;
+    const dh = (t - state.t) / 3600;
+    html += row(ico, lbl, { t, label: dh < 24 ? `in ${dh.toFixed(1)}h`
+      : `in ${(dh/24).toFixed(0)}d` }, false);
+  }
+  html += '<div class="menuhead">Coming up</div>';
+  for (const [ico, lbl, dstr, t] of PRESETS.dated) {
+    const past = t < T0;
+    html += row(ico, lbl, { t, label: dstr }, past);
+  }
+  html += '<div class="menuhead">From the past</div>';
+  for (const [ico, lbl, dstr, t] of PRESETS.historical)
+    html += row(ico, lbl, { t, label: dstr }, true);
+  sheet.innerHTML = html;
+  sheet.classList.remove('hidden'); scrim.classList.remove('hidden');
+  for (const el of sheet.querySelectorAll('[data-t]'))
+    el.onclick = () => {
+      const t = Number(el.dataset.t);
+      closeMenus();
+      travelTo(t, el.querySelector('.lbl').textContent);
+    };
+}
+// Travelling to a preset outside the window widens the window to contain it.
+function travelTo(t, label) {
+  const need = Math.abs(t - T0);
+  if (need > state.window) {
+    state.window = need < 2*DAY ? 2*DAY : need < 90*DAY ? 120*DAY
+      : need < 3*365*DAY ? 4*365*DAY : need * 1.3;
+    toast(`Scrubber zoomed out to reach ${label}`);
+  } else {
+    toast(`Travelling to ${label}`);
+  }
+  state.rate = 0; state.ratePinned = false;
+  setTime(t); render();
+}
+
+document.getElementById('clockread').onclick = openPresets;
+
+document.getElementById('modepill').onclick = () => {
+  state.mode = state.mode === 'manual' ? 'sensor' : 'manual';
+  if (state.mode === 'sensor' && state.anchor !== 'ground') {
+    state.anchor = 'ground'; captureAnchor();
+    toast('Auto mode — anchor forced to Ground');
+  }
+  render();
+};
+document.getElementById('chip').onclick = () => { state.collapsed = false; render(); };
+
+// ---------------------------------------------------------------- panels
+const PANELS = {
+  fling: `
+    <section>
+      <h2 class="cond">Fling to play — the scrubber <em>is</em> the ladder</h2>
+      <p class="lede">One control, read two ways.</p>
+      <p><b>Try it:</b> flick the scrubber sideways and let go. Time plays, and decays to a
+      stop like a fling on the map does. Tap the track to stop dead. Drag slowly and release
+      without motion and nothing plays — that's a position set, not a fling.</p>
+      <p>The thumb has a position <em>and</em> a velocity. Dragging sets position; releasing
+      while still moving sets velocity — and a velocity on a time axis <em>is</em> a playback
+      rate. The rate pill reads out whatever the fling produced. No transport row required.</p>
+      <h3>Why this is safe to build</h3>
+      <p><code>MapViewModel</code> already has fling handling with a <code>flingJob</code> and
+      a <code>stopFling()</code> that a touch-down cancels. The gesture, the decay curve, and
+      the stop-on-touch semantics are all ported rather than invented — the scrubber is a
+      second consumer of a physics model the map already uses on the sky itself.</p>
+      <div class="card">
+        <h4>Two edge cases the mockup implements</h4>
+        <p><b>Stale velocity:</b> if you drag, pause with your finger down, then lift, that's
+        a stop — not a fling at the velocity from a second ago. Guarded by a 120&nbsp;ms
+        staleness check.<br>
+        <b>Running off the end:</b> playback clamps at the window edge rather than scrolling
+        into unbounded time. Fling hard toward the edge and watch it stop there.</p>
+      </div>
+      <div class="q">This was the open question from last round: is fling too clever, given
+      playback is what v1 users already know? The mitigation is that they never need to
+      discover it — the rate pill's long-press menu (next tab) offers the named ladder, and
+      a short tap stops. Fling is the <em>fast</em> path, not the <em>only</em> path.</div>
+    </section>`,
+
+  collapse: `
+    <section>
+      <h2 class="cond">At rest it's one chip</h2>
+      <p class="lede">Time travel costs almost nothing when you aren't using it.</p>
+      <p>Three states, and the map only pays for the one it's in:</p>
+      <table>
+        <tr><th>State</th><th>Cost</th><th>Where</th></tr>
+        <tr><td><b>Real time</b></td><td>Nothing at all</td>
+            <td>The player doesn't exist — as today</td></tr>
+        <tr><td><b>Travelling, collapsed</b></td><td>One chip, ~30 dp</td>
+            <td>Top centre, where the player lives today</td></tr>
+        <tr><td><b>Travelling, expanded</b></td><td>Two rows, ~96 dp</td>
+            <td>Bottom, thumb-reachable</td></tr>
+      </table>
+      <div class="switcher" style="margin-top:12px">
+        <button class="tab" id="btncollapse">Collapse to chip</button>
+        <button class="tab" id="btnexpand">Expand</button>
+      </div>
+      <h3>Why the expanded player moved to the bottom</h3>
+      <p>Three reasons, in order of weight. It's a <b>drag target</b>, so it belongs under
+      your thumb. It stops <b>covering the sky you're watching</b> — the top of the screen is
+      where you're looking when you tilt the phone up. And it <b>dodges the HUD</b>: watch the
+      top-right readout while you expand the player. At 380 dp wide, a top-anchored scrubber
+      and that HUD are fighting for the same band, which is exactly the R2.2 cutout collision
+      in a new costume.</p>
+      <p>The collapsed chip stays top-centre because it's a <em>status</em> indicator, not a
+      control — same role the player plays today, same place users will look for it.</p>
+      <div class="q">Auto-collapse should ride the existing chrome linger timer, so the
+      player fades with the rail and action cluster and returns on sky-tap. That's the
+      <code>map-hud.md</code> argument reused: no new visibility state, and hide-during-search
+      comes free.</div>
+    </section>`,
+
+  ladder: `
+    <section>
+      <h2 class="cond">The ladder survives as a menu</h2>
+      <p class="lede">Zero permanent pixels, full v1 parity.</p>
+      <p><b>Try it:</b> long-press the rate pill (or right-click it here). All thirteen v1
+      speeds, named, one tap each. Short-tap the pill to stop if playing, or to return to the
+      present if frozen.</p>
+      <p>The thirteen rates are real v1 strings — <code>time_travel_week_speed</code> down
+      through <code>time_travel_second_speed_back</code>. Nothing is lost from the shipped
+      feature; it changes from a stepper you press repeatedly into a list you pick from
+      once, which is strictly fewer taps to reach a named rate.</p>
+      <h3>Pinned vs. flung rates</h3>
+      <p>A rate chosen from the menu is <b>pinned</b> — it doesn't decay, because you asked
+      for exactly that speed. A flung rate <b>decays</b>, because it's a gesture, not a
+      declaration. The mockup implements both: pick 1 day/s from the menu and it holds; fling
+      and it winds down.</p>
+      <p>This also preserves the ≥1 day/s whole-day stepping, which is genuinely different
+      behaviour (it shows the annual procession of the stars rather than a dizzying blur) and
+      deserves to be reachable deliberately rather than by flinging hard enough.</p>
+    </section>`,
+
+  presets: `
+    <section>
+      <h2 class="cond">Popular dates — the feature that shouldn't be lost</h2>
+      <p class="lede">19 events ship today. They get better, not smaller.</p>
+      <p><b>Try it:</b> tap the date readout in the player. The picker is now a sheet, and
+      the events are grouped by how you'd actually reach for them.</p>
+      <p>The shipped list is richer than a scrubber can replace: 5 computed presets (next
+      sunset, sunrise, full moon, new moon), 10 dated 2026 events, and 4 historical ones —
+      Apollo 11, the 2024 North American eclipse, the 2020 Jupiter–Saturn conjunction. And
+      crucially <b>each carries a <code>searchTarget</code></b>: the Perseids entry aims the
+      map at the radiant, Apollo 11 aims it at the Moon. A preset isn't a timestamp, it's a
+      <em>destination</em> — a time plus something to look at.</p>
+      <h3>What changes</h3>
+      <ul>
+        <li><b>The dialog becomes a sheet</b>, sibling to the Layers and ⋮ sheets, reached by
+          tapping the date readout — the readout <em>is</em> the affordance, so no button is
+          spent on it.</li>
+        <li><b>Grouped by reach:</b> Tonight (computed, relative to where you already are),
+          Coming up (dated, future), From the past (historical). The flat dropdown made a
+          1969 Moon landing sit adjacent to tonight's sunset.</li>
+        <li><b>Relative times on the computed rows</b> — "in 2.3h" — because that's the
+          question being asked.</li>
+        <li><b>Past events grey out</b>, which the shipped <code>isPastAt()</code> already
+          computes but a dropdown had nowhere to show.</li>
+      </ul>
+      <h3>Presets and the scrubber cooperate</h3>
+      <p>Picking an event outside the current window <b>zooms the scrubber to contain it</b>,
+      so you land with context rather than at an unmoored instant — arrive at the eclipse and
+      the track around it shows the twilight bands and the hours either side. Try Apollo 11:
+      the window opens to decades, and the toast says so.</p>
+      <div class="q">This answers the clutter question too — presets need no permanent pixels
+      at all. They're reached through a readout that has to exist anyway.</div>
+    </section>`,
+
+  budget: `
+    <section>
+      <h2 class="cond">The pixel budget, honestly</h2>
+      <p class="lede">What the first mockup cost versus what this one does.</p>
+      <p>The concepts mockup stacked four rows permanently over the sky. That was a
+      comparison surface, not a design — worth saying plainly, because it's the thing that
+      prompted this round.</p>
+      <div class="budget">
+        <div><b>Concepts mockup (mockup 1)</b></div><div></div>
+        <div>Clock + rate row</div><div>28 dp</div>
+        <div>Scrubber</div><div>40 dp</div>
+        <div>Step buttons (−1h … +1h)</div><div>32 dp</div>
+        <div>Anchor chips (5 across)</div><div>30 dp</div>
+        <div>Hint text</div><div>28 dp</div>
+        <div class="tot">Always on screen</div><div class="tot">158 dp</div>
+      </div>
+      <div class="budget" style="margin-top:18px">
+        <div><b>This mockup, expanded</b></div><div></div>
+        <div>Clock + anchor pill + rate pill</div><div>30 dp</div>
+        <div>Scrubber</div><div>44 dp</div>
+        <div>Padding</div><div>20 dp</div>
+        <div class="tot">While expanded</div><div class="tot">94 dp</div>
+        <div class="tot">At rest (chip only)</div><div class="tot">30 dp</div>
+        <div class="tot">In real time</div><div class="tot">0 dp</div>
+      </div>
+      <h3>Where the four rows went</h3>
+      <ul>
+        <li><b>Step buttons → deleted.</b> Exact reversibility was the argument for them, but
+          "Now" covers undo and the scrubber can snap to hours. If they return, they belong as
+          ± affordances at the track's ends, not a row.</li>
+        <li><b>Transport row → the fling gesture</b>, with the named ladder on long-press.</li>
+        <li><b>Anchor chips → one pill</b> showing the current anchor, opening a menu. Most
+          users will never leave Ground, so the common case shows one short word.</li>
+        <li><b>Hint row → onboarding.</b> Show it the first few times an anchor changes via
+          the existing snackbar host, then never again.</li>
+      </ul>
+      <h3>Still unresolved</h3>
+      <p>Landscape. The action cluster moves to a bottom-anchored right-edge column in
+      landscape (D57), and a full-width bottom player would collide with it. Likely answer:
+      the player insets its right edge by the cluster's width, the same way the rail budget
+      handles the left. Worth checking on a device before committing.</p>
+    </section>`,
+};
+
+function setDemo(d) {
+  state.demo = d;
+  for (const t of document.querySelectorAll('[data-demo]'))
+    t.classList.toggle('on', t.dataset.demo === d);
+  document.getElementById('panels').innerHTML = PANELS[d];
+  const caps = {
+    fling: 'Flick the scrubber sideways and let go — time plays and winds down.',
+    collapse: 'Use the buttons to collapse and expand; watch the HUD top-right.',
+    ladder: 'Long-press (or right-click) the rate pill for the named ladder.',
+    presets: 'Tap the date readout in the player to open the events sheet.',
+    budget: 'The player at rest is a single chip.',
+  };
+  document.getElementById('caption').textContent = caps[d];
+  const bc = document.getElementById('btncollapse'), be = document.getElementById('btnexpand');
+  if (bc) bc.onclick = () => { state.collapsed = true; render(); };
+  if (be) be.onclick = () => { state.collapsed = false; render(); };
+  if (d === 'presets') openPresets(); else closeMenus();
+  if (d === 'budget') { state.collapsed = true; } else if (d !== 'collapse') {
+    state.collapsed = false;
+  }
+  render();
+}
+for (const t of document.querySelectorAll('[data-demo]'))
+  t.onclick = () => setDemo(t.dataset.demo);
+
+function resize() {
+  const sr = sky.getBoundingClientRect();
+  sky.width = Math.max(1, Math.round(sr.width));
+  sky.height = Math.max(1, Math.round(sr.height));
+  const cr = scrubCv.getBoundingClientRect();
+  scrubCv.width = Math.max(1, Math.round(cr.width));
+  scrubCv.height = Math.max(1, Math.round(cr.height));
+  render();
+}
+addEventListener('resize', resize);
+
+captureAnchor();
+setDemo('fling');
+resize();
+</script>

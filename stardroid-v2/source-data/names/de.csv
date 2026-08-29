@@ -1,0 +1,146 @@
+object_id,name,is_primary
+constellation/aquarius,Wassermann,1
+constellation/aquila,Adler,1
+constellation/aries,Widder,1
+constellation/bootes,Bärenhüter,1
+constellation/camelopardalis,Giraffe,1
+constellation/cancer,Krebs,1
+constellation/canis_major,Großer Hund,1
+constellation/capricornus,Steinbock,1
+constellation/cassiopeia,Kassiopeia,1
+constellation/centaurus,Zentaur,1
+constellation/chamaeleon,Chamäleon,1
+constellation/circinus,Zirkel,1
+constellation/columba,Taube,1
+constellation/corona_australis,Südliche Krone,1
+constellation/corona_borealis,Nördliche Krone,1
+constellation/corvus,Rabe,1
+constellation/crater,Becher,1
+constellation/cygnus,Schwan,1
+constellation/delphinus,Delphin,1
+constellation/dorado,Schwertfisch,1
+constellation/draco,Drache,1
+constellation/equuleus,Kleines Pferd,1
+constellation/fornax,Chemischer Ofen,1
+constellation/gemini,Zwillinge,1
+constellation/grus,Kranich,1
+constellation/hercules,Herkules,1
+constellation/leo,Löwe,1
+constellation/leo_minor,Kleiner Löwe,1
+constellation/libra,Waage,1
+constellation/lupus,Wolf,1
+constellation/lyra,Leier,1
+constellation/ophiuchus,Schlangenträger,1
+constellation/pavo,Pfau,1
+constellation/phoenix,Phönix,1
+constellation/pisces,Fische,1
+constellation/sagittarius,Schütze,1
+constellation/scorpius,Skorpion,1
+constellation/taurus,Stier,1
+constellation/tucana,Tukan,1
+constellation/ursa_major,Großer Wagen,1
+constellation/ursa_minor,Kleiner Bär,1
+constellation/vela,Segel,1
+constellation/virgo,Jungfrau,1
+dso/blue_snowball_nebula,Blauer Schneeball-Nebel,1
+dso/coathanger,Kleiderbügel,1
+dso/coathanger,Brocchis Sternhaufen,0
+dso/coma_star_cluster,Coma-Sternhaufen,1
+dso/coma_star_cluster,Coma-Berenices-Sternhaufen,0
+dso/cygnus_x_1,Schwarzes-Loch-Doppelstern,1
+dso/cygnus_x_1,Stellares Schwarzes Loch,0
+dso/double_cluster,Doppelsternhaufen,1
+dso/double_cluster,h und χ Persei,0
+dso/double_cluster,NGC 869 & NGC 884,0
+dso/eta_carinae_nebula,Eta-Carinae-Nebel,1
+dso/eta_carinae_nebula,Carina-Nebel,0
+dso/exposed_cranium_nebula,Freiliegender Schädel-Nebel,1
+dso/ghost_of_jupiter,Gespenst des Jupiter,1
+dso/helix_nebula,Helix-Nebel,1
+dso/helix_nebula,Auge Gottes,0
+dso/hyades,Hyaden,1
+dso/jewel_box,Schmuckschatulle,1
+dso/jewel_box,Herschels Schmuckschatulle,0
+dso/jewel_box,Kappa-Crucis-Sternhaufen,0
+dso/lmc,Große Magellansche Wolke,1
+dso/lmc,Nubecula Major,0
+dso/m1,Krebsnebel,1
+dso/m101,Feuerradgalaxie,1
+dso/m102,Spindelgalaxie,1
+dso/m104,Sombrero-Galaxie,1
+dso/m11,Wildentenhaufen,1
+dso/m13,Kugelsternhaufen im Herkules,1
+dso/m13,Herkules-Kugelsternhaufen,0
+dso/m16,Adlernebel,1
+dso/m20,Trifidnebel,1
+dso/m24,Sagittarius-Sternwolke,1
+dso/m27,Hantelnebel,1
+dso/m31,Andromeda-Galaxie,1
+dso/m33,Dreiecksnebel,1
+dso/m42,Orionnebel,1
+dso/m43,De Mairans Nebel,1
+dso/m44,Bienenstockhaufen,1
+dso/m44,Praesepe,0
+dso/m45,Plejaden,1
+dso/m45,Sieben Schwestern,0
+dso/m51,Whirlpool-Galaxie,1
+dso/m57,Ringnebel,1
+dso/m6,Schmetterlingshaufen,1
+dso/m63,Sonnenblumen-Galaxie,1
+dso/m64,Schwarzes-Auge-Galaxie,1
+dso/m7,Schwanz des Skorpions,1
+dso/m7,Ptolemäus-Sternhaufen,0
+dso/m74,Phantomgalaxie,1
+dso/m76,Kleiner Hantelnebel,1
+dso/m8,Lagunennebel,1
+dso/m81,Bodes Galaxie,1
+dso/m82,Zigarrengalaxie,1
+dso/m83,Südliche Feuerrad-Galaxie,1
+dso/m97,Eulennebel,1
+dso/ngc_6543,Katzenaugennebel,1
+dso/north_america_nebula,Nordamerika-Nebel,1
+dso/omega_centauri,Kugelsternhaufen Omega Centauri,1
+dso/omega_centauri,ω Centauri,0
+dso/saturn_nebula,Saturn-Nebel,1
+dso/sculptor_galaxy,Bildhauer-Galaxie,1
+dso/sculptor_galaxy,Silberdollar-Galaxie,0
+dso/sculptor_galaxy,Silbermünzen-Galaxie,0
+dso/sgr_a_star,Sgr A*,1
+dso/sgr_a_star,Schwarzes Loch,0
+dso/sgr_a_star,Galaktisches Zentrum,0
+dso/smc,Kleine Magellansche Wolke,1
+dso/smc,Nubecula Minor,0
+dso/tarantula_nebula,Tarantelnebel,1
+dso/tarantula_nebula,30 Doradus,0
+dso/willman_1,Willman 1,1
+dso/willman_1,Beth-Willman-Galaxie,0
+moon/callisto,Kallisto,1
+moon/ganymede,Ganymed,1
+planet/mercury,Merkur,1
+planet/moon,Mond,1
+planet/neptune,Neptun,1
+planet/sun,Sonne,1
+shower/aquariids,Eta-Aquariiden,1
+shower/deltaaquariids,Delta-Aquariiden,1
+shower/geminids,Geminiden,1
+shower/leonids,Leoniden,1
+shower/lyrids,Lyriden,1
+shower/orionids,Orioniden,1
+shower/perseids,Perseiden,1
+shower/puppidvelids,Puppiden-Veliden,1
+shower/quadrantids,Quadrantiden,1
+shower/ursids,Ursiden,1
+star/alcyone,Alkyone,1
+star/alnath,Elnath,1
+star/arcturus,Arktur,1
+star/betelgeuse,Beteigeuze,1
+star/diphda,Deneb Kaitos,1
+star/mirphak,Mirfak,1
+star/polaris,Polaris,1
+star/polaris,Nordstern,0
+star/polaris,Polarstern,0
+star/procyon,Prokyon,1
+star/shedir,Schedir,1
+star/sirius,Sirius,1
+star/sirius,Hundsstern,0
+star/unukalhai,Unuk,1

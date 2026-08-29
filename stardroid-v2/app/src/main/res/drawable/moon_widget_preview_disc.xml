@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Static stand-in for the drawn moon disc in the widget picker preview and initial
+     layout: a waxing-gibbous shape with the correct convex terminator — the lit area is
+     the disc's right half closed by a half-ellipse bulging into the dark side, the same
+     geometry MoonDiscRenderer draws. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="64dp"
+    android:height="64dp"
+    android:viewportWidth="64"
+    android:viewportHeight="64">
+    <path
+        android:fillColor="#FF1B2340"
+        android:pathData="M32,32 m-28,0 a28,28 0 1 1 56,0 a28,28 0 1 1 -56,0" />
+    <path
+        android:fillColor="#FFE8E4D8"
+        android:pathData="M32,4 A28,28 0 0 1 32,60 A18,28 0 0 1 32,4 Z" />
+    <path
+        android:fillColor="#221B2340"
+        android:pathData="M44,22 m-4,0 a4,4 0 1 1 8,0 a4,4 0 1 1 -8,0" />
+    <path
+        android:fillColor="#221B2340"
+        android:pathData="M37,40 m-5.5,0 a5.5,5.5 0 1 1 11,0 a5.5,5.5 0 1 1 -11,0" />
+</vector>
