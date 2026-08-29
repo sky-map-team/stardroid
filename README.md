@@ -88,9 +88,3 @@ Subject to the platform terms of the public code hosting service (e.g., GitHub's
 ## Sky Map Prototype (2009)
 
 ![Sky Map Prototype (2009)](./stardroid-v1/assets/SkyMap_prototype.png)
-
-## Star Chart
-Appropriately, for a star chart app, here's a star chart:
-[![Star History Chart](https://app.repohistory.com/api/svg?repo=sky-map-team/stardroid&type=Timeline&background=0D1117&color=f88d62)](https://app.repohistory.com/star-history)
-
-
