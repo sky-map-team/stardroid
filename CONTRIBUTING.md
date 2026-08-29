@@ -151,6 +151,24 @@ Plug your phone in and run:
 3. Run the unit tests to make sure you didn't break anything.
 4. If you have multiple commits, please combine them into one by squashing.
 5. Open a Pull Request with a clear description of what you changed and why.
+6. Accept the Contributor License Agreement when the bot asks (once only, see below).
+
+## Contributor License Agreement
+
+Sky Map is distributed through several app-store channels whose terms are not all compatible with
+a single licence text. To keep offering the [additional permission](stardroid-v2/LICENSE.md) that
+allows distribution through those channels, we need contributors to grant us the rights to do so.
+
+So before your first pull request can be merged, please read and accept the
+[Contributor License Agreement](CLA.md). A bot will prompt you on the PR; accepting is a single
+comment, and you only need to do it once ever.
+
+**You keep the copyright in your contributions.** The CLA grants us a licence to use and
+sublicense them — it does not transfer ownership, and it does not restrict what you do with your
+own work.
+
+If your employer owns the IP you create, please make sure you have permission to contribute
+before signing. Questions: [skymapdevs@gmail.com](mailto:skymapdevs@gmail.com).
 
 ## Coding Style
 
