@@ -645,12 +645,22 @@
    "size": "83 lat świetlnych średnicy",
    "image_credit": "NASA/ESA/Hubble"
   },
+  "dso/m100": {
+   "description": "Messier 100 to galaktyka spiralna o wyraźnej strukturze w gwiazdozbiorze Warkocza Bereniki i jedna z najjaśniejszych w Gromadzie w Pannie.",
+   "fun_fact": "Siedem supernowych zaobserwowano w M100, najnowszą w 2020 roku – niewiele galaktyk dało taki spektakl!",
+   "distance": "55 milionów lat świetlnych",
+   "size": "166 000 lat świetlnych średnicy"
+  },
   "dso/m101": {
    "description": "Galaktyka Wiatraczek to galaktyka spiralna widoczna z przodu w gwiazdozbiorze Wielkiej Niedźwiedzicy, jedna z największych znanych galaktyk spiralnych.",
    "fun_fact": "Galaktyka Wiatraczek zawiera ponad bilion gwiazd i ma asymetryczne ramiona spiralne z powodu przeszłych interakcji z innymi galaktykami!",
    "distance": "21 milionów lat świetlnych",
    "size": "170 000 lat świetlnych średnicy",
    "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m102": {
+   "description": "Messier 102 to wielki nierozwiązany wpis w katalogu Messiera – obiekt zarejestrowany w 1781 roku, który nigdy nie został jednoznacznie zidentyfikowany.",
+   "fun_fact": "Messier nie opublikował współrzędnych dla M102, a jego kolega Mechain później całkowicie wycofał odkrycie, twierdząc, że to było po prostu M101 zarejestrowane dwukrotnie przez pomyłkę! NASA identyfikuje ją z Galaktyką Wrzeciono, NGC 5866."
   },
   "dso/m103": {
    "description": "M103 to mała, zwarta gromada otwarta w Kasjopeji, zawierająca około 40 gwiazd w ciasnej grupie łatwo widoczna w lornetce. Uderzająca gwiazda podwójna i czerwony olbrzym w pobliżu centrum nadają jej kolorowy wygląd w małych teleskopach, umieszczone w bogatych polach gwiazd Drogi Mlecznej w Kasjopeji.",
@@ -665,6 +675,12 @@
    "size": "50 000 lat świetlnych średnicy",
    "image_credit": "NASA/ESA/Hubble"
   },
+  "dso/m105": {
+   "description": "Messier 105 to galaktyka eliptyczna w konstelacji Lwa, największa galaktyka eliptyczna w Katalogu Messiera poza Gromadą w Pannie.",
+   "fun_fact": "M105 dzieli kolosalny pierścień gazu wodorowego ze swoim sąsiadem NGC 3384, rozciągający się na około 650 000 lat świetlnych!",
+   "distance": "37 milionów lat świetlnych",
+   "size": "67 000 lat świetlnych średnicy"
+  },
   "dso/m106": {
    "description": "M106 to galaktyka spiralna w gwiazdozbiorze Psów Gończych z anomalnymi ramionami spiralnymi powodowanymi przez dżety z jej centralnej czarnej dziury.",
    "fun_fact": "M106 ma masery wodne w swoim jądrze, co pozwala astronomom precyzyjnie zmierzyć jej odległość!",
@@ -677,6 +693,11 @@
    "fun_fact": "M107 był ostatnim obiektem formalnie dodanym do katalogu Messiera — pojawia się w korespondencji Pierre'a Méchaina, ale nie został uwzględniony w oryginalnym wydaniu z 1781 roku. Oficjalnie dodany jako M107 w 1947 roku przez kanadyjską astronomkę Helen Sawyer Hogg, która skodyfikowała kilka \"brakujących\" obiektów, które Méchain obserwował, ale Messier nigdy formalnie nie zanotował.",
    "distance": "20 900 lat świetlnych",
    "size": "~61 lat świetlnych średnicy"
+  },
+  "dso/m108": {
+   "description": "Messier 108 to galaktyka spiralna z poprzeczką w Wielkiej Niedźwiedzicy, nazywana Galaktyką Deska Surfingowa.",
+   "fun_fact": "M108 jest nachylona do nas niemal krawędzią, dzięki czemu zyskała nazwę Deska surfingowa – i zawiera około 290 gromad kulistych!",
+   "distance": "46 milionów lat świetlnych"
   },
   "dso/m109": {
    "description": "M109 to galaktyka spiralna z poprzeczką w gwiazdozbiorze Wielkiej Niedźwiedzicy, najjaśniejszy członek grupy galaktyk noszących jej imię.",
@@ -740,6 +761,12 @@
    "distance": "5 500 lat świetlnych",
    "size": "15 lat świetlnych średnicy",
    "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m18": {
+   "description": "Messier 18 to mała gromada otwarta młodych gwiazd w Strzelcu, znana również jako Gromada Czarny Łabędź.",
+   "fun_fact": "M18 to jeden z bardzo niewielu obiektów Messiera, których Kosmiczny Teleskop Hubble’a nigdy nie sfotografował!",
+   "distance": "4200 lat świetlnych",
+   "size": "26 lat świetlnych średnicy"
   },
   "dso/m19": {
    "description": "M19 to zwarta, bogata gromada kulista w Wężowniku — jedna z najbliższych gromad kulistych centrum galaktyki. Jej najbardziej charakterystyczną cechą jest wyraźnie spłaszczony kształt: M19 jest najbardziej spłaszczoną znaną gromadą kulistą, z widocznym eliptycznym zarysem nawet w małym teleskopie.",
@@ -1018,12 +1045,35 @@
    "size": "1,3 lat świetlnych średnicy",
    "image_credit": "NASA/ESA/Hubble"
   },
+  "dso/m58": {
+   "description": "Messier 58 to galaktyka spiralna z poprzeczką w Pannie i jeden z najjaśniejszych członków Gromady w Pannie.",
+   "fun_fact": "Supermasywna czarna dziura o masie około 70 milionów mas Słońca znajduje się w sercu M58, otoczona ciasnym pasem nowo narodzonych gwiazd!",
+   "distance": "68 milionów lat świetlnych",
+   "size": "133 000 lat świetlnych średnicy"
+  },
+  "dso/m59": {
+   "description": "Messier 59 to galaktyka eliptyczna w Pannie, odkryta w 1779 roku podczas poszukiwań przelatującej komety.",
+   "fun_fact": "Jądro M59 obraca się wstecznie w porównaniu z resztą galaktyki, a wokół niej roją się około 2200 gromad kulistych!",
+   "distance": "50 milionów lat świetlnych",
+   "mass": "270 milionów mas Słońca (centralna czarna dziura)"
+  },
   "dso/m6": {
    "description": "Gromada Motyl to otwarta gromada gwiazd w gwiazdozbiorze Skorpiona, nazwana tak ze względu na motylowy układ najjaśniejszych gwiazd.",
    "fun_fact": "M6 ma około 100 milionów lat i zawiera ponad 300 gwiazd, w tym pomarańczowego olbrzyma BM Scorpii!",
    "distance": "1 600 lat świetlnych",
    "size": "25 lat świetlnych średnicy",
    "image_credit": "NOAO/AURA/NSF"
+  },
+  "dso/m60": {
+   "description": "Messier 60 to olbrzymia galaktyka eliptyczna w konstelacji Panny, trzecia najjaśniejsza olbrzymia galaktyka eliptyczna w Gromadzie w Pannie.",
+   "fun_fact": "Centralna czarna dziura M60 waży około 4,5 miliarda Słońc – to jedna z największych, jakie kiedykolwiek odkryto!",
+   "distance": "57 milionów lat świetlnych"
+  },
+  "dso/m61": {
+   "description": "Messier 61 to galaktyka spiralna z poprzeczką w Pannie i jedna z największych galaktyk w Gromadzie w Pannie.",
+   "fun_fact": "Osiem supernowych zaobserwowano w M61 – to jeden z najwyższych wyników dla jakiejkolwiek galaktyki! Sam Messier początkowo pomylił ją z kometą.",
+   "distance": "52 miliony lat świetlnych",
+   "size": "92 000 lat świetlnych średnicy"
   },
   "dso/m62": {
    "description": "M62 to bogata gromada kulista w Wężowniku — jedna z najbliższych gromad względem centrum galaktyki i wyraźnie asymetryczna, z gwiazdami bardziej zagęszczonymi po stronie południowej. Przy jasności 6,6 mag jest doskonałym obiektem do obserwacji lornetką, choć jej niska deklinacja czyni ją obiektem dostępnym tylko przez krótki sezon dla obserwatorów na północy.",
@@ -1095,12 +1145,28 @@
    "distance": "12 000 lat świetlnych",
    "size": "~25 lat świetlnych średnicy"
   },
+  "dso/m72": {
+   "description": "Messier 72 to słaba, odległa gromada kulista w Wodniku, odkryta przez Pierre'a Méchaina w 1780 roku.",
+   "fun_fact": "M72 skupia gwiazdy o łącznej masie około 168 000 Słońc w kulę liczącą około 9,5 miliarda lat, w tym 43 gwiazdy zmienne!",
+   "distance": "55 000 lat świetlnych"
+  },
+  "dso/m73": {
+   "description": "Messier 73 to mała grupa czterech gwiazd w Wodniku, która tylko wydaje się być gromadą.",
+   "fun_fact": "Astronomowie przez dziesięciolecia spierali się, czy M73 to prawdziwa gromada. W 2002 roku ustalono: cztery gwiazdy leżą w bardzo różnych odległościach i jedynie przypadkowo tworzą układ!",
+   "distance": "od 1000 do 2300 lat świetlnych (poszczególne gwiazdy)"
+  },
   "dso/m74": {
    "description": "Galaktyka Widmo to galaktyka spiralna widoczna z przodu w gwiazdozbiorze Ryb, znana ze swojej doskonałej struktury spiralnej.",
    "fun_fact": "M74 nosi przydomek Galaktyka Widmo ze względu na bardzo niską jasność powierzchniową, co czyni ją trudną do obserwacji!",
    "distance": "32 miliony lat świetlnych",
    "size": "95 000 lat świetlnych średnicy",
    "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m75": {
+   "description": "Messier 75 to odległa, bogato skoncentrowana gromada kulista w Strzelcu.",
+   "fun_fact": "M75 jest jedną z najgęściej upakowanych znanych gromad kulistych i uważa się, że jest pozostałością po galaktyce karłowatej, którą Droga Mleczna pochłonęła dawno temu!",
+   "distance": "68 000 lat świetlnych",
+   "size": "134 lata świetlne średnicy"
   },
   "dso/m76": {
    "description": "Mała Hantel to mgławica planetarna w gwiazdozbiorze Perseusza o charakterystycznym kształcie ósemki — mniejsza kuzynka M27, Mgławicy Hantli w Lisiczce. Choć jest najsłabszym obiektem w katalogu Messiera, nagradza cierpliwą obserwację w małych teleskopach i wykazuje piękną strukturę w większych instrumentach, z dwoma jaśniejszymi płatami po bokach słabszej talii.",
@@ -1162,6 +1228,22 @@
    "size": "55 000 lat świetlnych średnicy",
    "image_credit": "NASA/ESA/Hubble"
   },
+  "dso/m84": {
+   "description": "Messier 84 to olbrzymia galaktyka eliptyczna w zatłoczonym sercu Gromady w Pannie.",
+   "fun_fact": "M84 wyrzuca dwa dżety materii ze swojego jądra, napędzane przez czarną dziurę o masie około 1,5 miliarda mas Słońca!",
+   "distance": "55 milionów lat świetlnych"
+  },
+  "dso/m85": {
+   "description": "Messier 85 to galaktyka soczewkowata na obrzeżach Gromady w Pannie, w Warkoczu Bereniki.",
+   "fun_fact": "Zmarszczki i powłoki w zewnętrznych rejonach M85 to pozostałości po fuzji galaktyk, która miała miejsce od 4 do 7 miliardów lat temu!",
+   "distance": "60 milionów lat świetlnych",
+   "size": "120 600 lat świetlnych średnicy"
+  },
+  "dso/m86": {
+   "description": "Messier 86 to duża galaktyka eliptyczna w Gromadzie Panny, tworząca wyraźną parę z pobliską M84.",
+   "fun_fact": "M86 pędzi w naszym kierunku z prędkością 244 km/s – to najszybsze zbliżanie się spośród wszystkich obiektów Messiera! Jego przejście przez gromadę pozostawia długi ślad zerwanego gorącego gazu.",
+   "distance": "52 miliony lat świetlnych"
+  },
   "dso/m87": {
    "description": "M87 to superolbrzymia galaktyka eliptyczna w gwiazdozbiorze Panny, jedna z najmasywniejszych galaktyk w lokalnym wszechświecie.",
    "fun_fact": "Centralna czarna dziura M87 była pierwszą w historii sfotografowaną przez Teleskop Horyzontu Zdarzeń w 2019 roku — ma 6,5 miliarda mas Słońca!",
@@ -1170,11 +1252,34 @@
    "mass": "2,4 biliona mas Słońca",
    "image_credit": "NASA/ESA/Hubble"
   },
+  "dso/m88": {
+   "description": "Messier 88 to elegancka galaktyka spiralna w Warkoczu Bereniki, jeden z piętnastu obiektów Messiera w Gromadzie w Pannie.",
+   "fun_fact": "M88 pędzi w kierunku centrum Gromady w Pannie i dotrze tam za 200 do 300 milionów lat, a jej zewnętrzny gaz jest odrywany w miarę jej spadania!",
+   "distance": "59 milionów lat świetlnych",
+   "size": "131 000 lat świetlnych średnicy"
+  },
+  "dso/m89": {
+   "description": "Messier 89 to galaktyka eliptyczna w Pannie, odkryta przez Charlesa Messiera w 1781 roku.",
+   "fun_fact": "M89 może być niemal idealną kulą – co jest niezwykłe jak na galaktykę eliptyczną, które zazwyczaj są wyraźnie spłaszczone!",
+   "distance": "50 milionów lat świetlnych"
+  },
   "dso/m9": {
    "description": "M9 to zwarty gromada kulista w Wężowniku — jeden z gromad Messiera najbardziej dotkniętych absorpcją pyłu międzygwiazdowego. Leży w kierunku wybrzuszenia galaktycznego, gdzie gęsty pył znacznie ją przyciemnia. Bez tego zaciemnienia M9 byłaby widoczna prawie o wielkość gwiazdową jaśniejsza i byłaby widoczna gołym okiem.",
    "fun_fact": "M9 cierpi na większą absorpcję pyłu międzygwiezdnego niż prawie każdy inny gromadziec kulisty Messiera — około 1,3 magnitudo przyciemnienia w porównaniu z czystą linią widzenia. Dwa mniejsze gromadzce kuliste (NGC 6342 i NGC 6356) znajdują się w odległości około 1° od M9, czyniąc go centrum niezwykłego skupienia trzech gromadzców kulistych na małym obszarze nieba.",
    "distance": "25 800 lat świetlnych",
    "size": "~70 lat świetlnych średnicy"
+  },
+  "dso/m90": {
+   "description": "Messier 90 to duża galaktyka spiralna w Pannie i podręcznikowy przykład \"anemicznej\" galaktyki.",
+   "fun_fact": "M90 został pozbawiony swojego gazu gwiazdotwórczego w wyniku przelotu przez Gromadę w Pannie, pozostawiając ogony świecącego gazu o długości do 260 000 lat świetlnych!",
+   "distance": "59 milionów lat świetlnych",
+   "size": "132 000 lat świetlnych średnicy"
+  },
+  "dso/m91": {
+   "description": "Messier 91 to galaktyka spiralna z poprzeczką w gwiazdozbiorze Warkocza Bereniki i najsłabszy obiekt w Katalogu Messiera.",
+   "fun_fact": "M91 była zagubiona przez prawie 200 lat! Messier zapisał jej pozycję, używając błędnej galaktyki referencyjnej, i została ponownie zidentyfikowana dopiero w 1969 roku przez astronoma amatora.",
+   "distance": "63 miliony lat świetlnych",
+   "size": "105 500 lat świetlnych średnicy"
   },
   "dso/m92": {
    "description": "M92 to jasna gromada kulista w gwiazdozbiorze Herkulesa, często pomijana ze względu na bliskość słynniejszej M13.",
@@ -1196,12 +1301,35 @@
    "size": "50 000 lat świetlnych średnicy",
    "image_credit": "NASA/ESA/Hubble"
   },
+  "dso/m95": {
+   "description": "Messier 95 to galaktyka spiralna z poprzeczką w Lwie, część Grupy M96 wraz z M96 i M105.",
+   "fun_fact": "Pierścień intensywnego formowania się gwiazd o szerokości około 70 000 lat świetlnych otacza jądro M95, a supernowa rozbłysła tam w 2012 roku!",
+   "distance": "33 miliony lat świetlnych",
+   "size": "80 000 lat świetlnych średnicy"
+  },
+  "dso/m96": {
+   "description": "Messier 96 to galaktyka spiralna w Lwie, najjaśniejszy członek Grupy Galaktyk M96.",
+   "fun_fact": "M96 jest mniej więcej tej samej wielkości i masy co nasza własna Droga Mleczna, ale uderzająco asymetryczna – jej pył i gaz są nierównomiernie rozłożone w jej ramionach!",
+   "distance": "31 milionów lat świetlnych",
+   "size": "78 000 lat świetlnych średnicy"
+  },
   "dso/m97": {
    "description": "Mgławica Sowa to mgławica planetarna w gwiazdozbiorze Wielkiej Niedźwiedzicy, nazwana tak z powodu wyglądu przypominającego sowę z dwoma ciemnymi plamami.",
    "fun_fact": "Ciemne oczy sowy w M97 to trójwymiarowe wnęki w mgławicy, skierowane w naszą stronę!",
    "distance": "2 030 lat świetlnych",
    "size": "2 lat świetlnych średnicy",
    "image_credit": "Gemini Observatory/NOIRLab/NSF/AURA"
+  },
+  "dso/m98": {
+   "description": "Messier 98 to galaktyka spiralna w Warkoczu Bereniki, widziana niemal z boku jako część Gromady w Pannie.",
+   "fun_fact": "M98 to jedna z rzadkich galaktyk poruszających się w naszym kierunku, a nie oddalających się, zbliżająca się z prędkością około 140 km/s!",
+   "distance": "44 miliony lat świetlnych"
+  },
+  "dso/m99": {
+   "description": "Messier 99 to galaktyka spiralna o wyraźnej strukturze w Warkoczu Bereniki, wykazująca wyraźne, rozległe ramiona spiralne.",
+   "fun_fact": "M99 była jednym z pierwszych obiektów rozpoznanych jako spiralne, naszkicowanych przez Lorda Rosse'a w 1846 roku - i tworzy gwiazdy trzy razy szybciej niż podobne galaktyki!",
+   "distance": "45 milionów lat świetlnych",
+   "size": "98 000 lat świetlnych średnicy"
   },
   "dso/n47_tucanae": {
    "description": "47 Tucanae (NGC 104) to druga najjaśniejsza gromada kulista na niebie, gęsta kula złożona z około miliona starych gwiazd krążących wokół Drogi Mlecznej w konstelacji Tukana. W odległości około 14 500 lat świetlnych wydaje się gołemu oku jako rozmyta gwiazda czwartej wielkości, ale teleskop rozwiązuje jej ściśnięte jądro w niezwykły rój złotych i niebiesko-białych słońc. Gwiazdy w tej gromadzie powstały około 13 miliardów lat temu, co czyni ją prawie tak starą jak sam wszechświat.",
@@ -1313,8 +1441,9 @@
    "description": "Deimos jest mniejszym i zewnętrznym z dwóch księżyców Marsa, z gładką, pokrytą kurzem powierzchnią, która nadaje mu bardziej okrągły wygląd niż Fobos. Podobnie jak jego towarzysz, uważa się, że jest przechwyconym asteroidem z zewnętrznego pasa.",
    "fun_fact": "Deimos jest tak mały i odległy, że z powierzchni Marsa wygląda jak niewiele więcej niż jasna gwiazda, powoli dryfując przez nocne niebo przez około 30 godzin.",
    "distance": "23 460 km od Marsa",
+   "size": "15 × 12 × 11 km",
    "image_credit": "NASA/JPL-Caltech/University of Arizona",
-   "search_subtext": "Moon of Mars"
+   "search_subtext": "Księżyc Marsa"
   },
   "moon/dione": {
    "description": "Dione to lodowaty księżyc Saturna z silnie pokratertowaną twarzą wiodącą i półkulą śledową pokrytą jasnymi klifami lodowymi — liniami pęknięć, gdzie starożytne siły tektoniczne odsłoniły świeży lód spod powierzchni. Dane grawitacyjne sondy Cassini sugerują istnienie podziemnego oceanu cieczy pod skorupą.",
@@ -1368,8 +1497,9 @@
    "description": "Fobos jest większym i wewnętrznym z dwóch księżyców Marsa, krążącym bliżej swojej planety niż jakikolwiek inny księżyc w Układzie Słonecznym. Jest to nieregularnie ukształtowane, głęboko porysowane i pokryte kraterami ciało, uważane za przechwycony asteroid.",
    "fun_fact": "Fobos krąży wokół Marsa tak szybko, że wschodzi na zachodzie i zachodzi na wschodzie — i powoli spiraluje w stronę planety, skazany na zderzenie się z Marsem lub rozpad na pierścień za około 50 milionów lat.",
    "distance": "9 376 km od Marsa",
+   "size": "27 × 22 × 18 km",
    "image_credit": "NASA/JPL-Caltech/University of Arizona",
-   "search_subtext": "Moon of Mars"
+   "search_subtext": "Księżyc Marsa"
   },
   "moon/rhea": {
    "description": "Rhea jest drugim co do wielkości księżycem Saturna i silnie pokrajowan ym światem lodu i skały. Jej blada, starożytna powierzchnia zachowuje jedne z najbardziej nietkniętych kraterów uderzeniowych w Układzie Słonecznym, obok jasnych lodowych klifów, gdzie osuwiska odsłoniły świeży materiał spod powierzchni.",
@@ -1716,6 +1846,7 @@
    "fun_fact": "Ankaa jest gwiazdą podwójną spektroskopową, co oznacza, że jej towarzyszka jest tak bliska, że obie mogą być wykryte tylko poprzez przesunięcia w ich widmie światła — orbitują wokół siebie co 10,2 roku!",
    "distance": "85 lat świetlnych",
    "size": "15 promieni słonecznych",
+   "mass": "1,3 masy Słońca",
    "spectral_class": "K0III",
    "image_credit": "ESO/Digitized Sky Survey 2"
   },
@@ -1742,6 +1873,7 @@
    "fun_fact": "Arneb to umierająca gwiazda, która prawdopodobnie już połączyła cały wodór w swoim jądrze. Może zakończyć swoje życie jako supernowa w ciągu następnych kilku milionów lat!",
    "distance": "~2 200 lat świetlnych",
    "size": "~75 promieni słonecznych",
+   "mass": "~14 mas Słońca",
    "spectral_class": "F0Ib",
    "image_credit": "ESO/Digitized Sky Survey 2"
   },
@@ -1777,6 +1909,7 @@
    "fun_fact": "Caph to zmienna Delta Scuti — pulsuje z wieloma częstotliwościami jednocześnie, zmieniając jasność nieznacznie co 2,5 godziny!",
    "distance": "54 lata świetlne",
    "size": "3,5 promienia słonecznego",
+   "mass": "1,9 masy Słońca",
    "spectral_class": "F2III",
    "image_credit": "ESO/Digitized Sky Survey 2"
   },
@@ -1825,6 +1958,11 @@
    "spectral_class": "K0 III",
    "image_credit": "ESO/Digitized Sky Survey 2"
   },
+  "star/e_lyrae": {
+   "description": "Epsilon Lyrae to układ wielokrotny gwiazd w Lutni, znany wśród obserwatorów jako „Podwójna Podwójna”.",
+   "fun_fact": "Bystre oko jest w stanie rozdzielić Epsilon Lutni na dwie gwiazdy – a teleskop rozdziela każdą z nich ponownie na dwie! W sumie zawiera co najmniej pięć gwiazd.",
+   "distance": "160 lat świetlnych"
+  },
   "star/enif": {
    "description": "Enif to najjaśniejsza gwiazda w gwiazdozbiorze Pegaza i wyznacza nos latającego konia w konstelacji.",
    "fun_fact": "W 1972 roku Enif doświadczył dramatycznego rozbłysku, na krótko zwiększając swoją jasność pięciokrotnie!",
@@ -1839,6 +1977,7 @@
    "fun_fact": "Obserwacje Etamina w 1728 roku przez Jamesa Bradleya doprowadziły do odkrycia aberracji światła — jednego z pierwszych bezpośrednich dowodów, że Ziemia porusza się w przestrzeni!",
    "distance": "148 lat świetlnych",
    "size": "48 promieni słonecznych",
+   "mass": "1,7 masy Słońca",
    "spectral_class": "K5III",
    "image_credit": "ESO/Digitized Sky Survey 2"
   },
@@ -1874,8 +2013,113 @@
    "fun_fact": "Astronom z XIX wieku Friedrich Georg Wilhelm von Struve nazwał Izar \"Pulcherrima\" (łacina: \"najpiękniejsza\") ze względu na oszałamiający kontrast kolorów między jej pomarańczowymi i niebiesko-białymi składnikami!",
    "distance": "202 lata świetlne",
    "size": "33 promienie słoneczne",
+   "mass": "~4,6 mas Słońca",
    "spectral_class": "K0II-III",
    "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/j052512+062100": {
+   "description": "Bellatrix oznacza lewe ramię Oriona (Łowcy). Jego nazwa po łacinie oznacza „wojowniczkę”.",
+   "fun_fact": "Bellatrix ma zaledwie około 28 milionów lat i wypali swój wodór w ciągu kolejnych 7 milionów lat – krótkie życie jak na gwiazdę!",
+   "distance": "250 lat świetlnych",
+   "size": "6,2 promieni Słońca",
+   "mass": "8,4 mas Słońca",
+   "spectral_class": "B2 III"
+  },
+  "star/j054048-015624": {
+   "description": "Alnitak to najbardziej wschodnia gwiazda Pasa Oriona, znajdująca się obok Mgławicy Płomień i Mgławicy Koński Łeb.",
+   "fun_fact": "Alnitak jest najjaśniejszą gwiazdą typu O na całym nocnym niebie! Za około milion lat rozszerzy się poza orbitę Jowisza i eksploduje jako supernowa.",
+   "distance": "1 260 lat świetlnych",
+   "size": "20 promieni Słońca",
+   "mass": "33 masy Słońca",
+   "spectral_class": "O9.5 Iab"
+  },
+  "star/j055924+445700": {
+   "description": "Menkalinan to druga najjaśniejsza gwiazda w Woźnicy (Woźnica). Jej nazwa oznacza po arabsku \"ramię trzymającego lejce\".",
+   "fun_fact": "Menkalinan to tak naprawdę dwie niemal identyczne gwiazdy zaćmiewające się wzajemnie co 47,5 godziny - a za około milion lat stanie się najjaśniejszą gwiazdą na naszym nocnym niebie!",
+   "distance": "79 lat świetlnych",
+   "size": "2,8 promieni Słońca",
+   "mass": "2,4 masy Słońca",
+   "spectral_class": "A1m IV + A1m IV"
+  },
+  "star/j062248-175736": {
+   "description": "Mirzam (Beta Canis Majoris) wschodzi tuż przed Syriuszem, co nadało mu nazwę oznaczającą po arabsku „Zwiastun”.",
+   "fun_fact": "Około czterech milionów lat temu Mirzam była najjaśniejszą gwiazdą na niebie, świecąc z jasnością -3,65 magnitudo – znacznie jaśniejszą niż Syriusz wydaje się dzisiaj!",
+   "distance": "490 lat świetlnych",
+   "size": "8,4 promieni Słońca",
+   "mass": "13 mas Słońca",
+   "spectral_class": "B1 II-III"
+  },
+  "star/j070824-262324": {
+   "description": "Wezen to żółto-biały nadolbrzym w gwiazdozbiorze Wielkiego Psa. Jego nazwa pochodzi od arabskiego słowa oznaczającego \"wagę\".",
+   "fun_fact": "Gdyby Wezen znajdował się tak blisko nas jak Syriusz, świeciłby tak jasno jak Księżyc w kwadrze!",
+   "distance": "1 600 lat świetlnych",
+   "size": "188 promieni Słońca",
+   "mass": "14 mas Słońca",
+   "spectral_class": "F8 Ia"
+  },
+  "star/j082248-593036": {
+   "description": "Avior (Epsilon Kila) to jasna gwiazda podwójna w gwiazdozbiorze Kila i jedna z czterech gwiazd Fałszywego Krzyża.",
+   "fun_fact": "Fałszywy Krzyż jest tak często mylony z Krzyżem Południa, że powodował prawdziwe błędy nawigacyjne! Nazwa Avior została wymyślona przez brytyjskich twórców almanachów w latach 30. XX wieku.",
+   "distance": "610 lat świetlnych",
+   "size": "151 promieni Słońca",
+   "mass": "10,5 mas Słońca",
+   "spectral_class": "K3 III + B2 Vp"
+  },
+  "star/j091312-694312": {
+   "description": "Miaplacidus to druga najjaśniejsza gwiazda w Karynie (Kil) i wyznacza jeden z rogów asteryzmu Diamentowy Krzyż.",
+   "fun_fact": "Miaplacidus zmieniła się w olbrzyma po wyczerpaniu wodoru w swoim jądrze, jednak nadal obraca się z prędkością 146 km/s!",
+   "distance": "113 lat świetlnych",
+   "size": "5,8 promieni Słońca",
+   "mass": "3,9 mas Słońca",
+   "spectral_class": "A1 III"
+  },
+  "star/j123112-570636": {
+   "description": "Gacrux (Gamma Crucis) jest najwyższą gwiazdą Krzyża Południa i najbliższym Ziemi czerwonym olbrzymem.",
+   "fun_fact": "Gacrux to najbliższy nam czerwony olbrzym typu M, a jego nazwa to po prostu marynarskie skrócenie od „Gamma Crucis” ukute w latach 40. XX wieku!",
+   "distance": "89 lat świetlnych",
+   "size": "73 promienie Słońca",
+   "mass": "1,5 masy Słońca",
+   "spectral_class": "M3.5 III"
+  },
+  "star/j124800-594124": {
+   "description": "Mimosa (Beta Crucis) jest drugą najjaśniejszą gwiazdą w Krzyżu Południa i jedną z najgorętszych gwiazd widocznych gołym okiem.",
+   "fun_fact": "Mimosa to pulsująca zmienna typu Beta Cephei – rozszerza się i kurczy w trzech nakładających się rytmach, każdy trwający zaledwie około czterech godzin!",
+   "distance": "280 lat świetlnych",
+   "size": "8 promieni Słońca",
+   "mass": "14,5 masy Słońca",
+   "spectral_class": "B0.5 III"
+  },
+  "star/j143936-605024": {
+   "description": "Toliman (Alfa Centauri B) jest pomarańczowym towarzyszem w najbliższym Słońcu układzie gwiezdnym, krążącym wokół jaśniejszego Rigila Kentaurusa.",
+   "fun_fact": "Toliman otrzymał swoją oficjalną nazwę dopiero w 2018 roku. Jest nieco mniejszy i chłodniejszy od Słońca, a wraz ze swoimi dwoma towarzyszami tworzy naszych najbliższych gwiezdnych sąsiadów!",
+   "distance": "4,34 lat świetlnych",
+   "size": "0,86 promieni Słońca",
+   "mass": "0,91 masy Słońca",
+   "spectral_class": "K1 V"
+  },
+  "star/j164836-690148": {
+   "description": "Atria jest najjaśniejszą gwiazdą Trójkąta Południowego (Trójkąt Południowy), pomarańczowym olbrzymem znacznie większym od Słońca.",
+   "fun_fact": "Atria jest 139 razy większa od średnicy Słońca – umieszczona w centrum Układu Słonecznego, prawie sięgałaby orbity Wenus!",
+   "distance": "391 lat świetlnych",
+   "size": "139 promieni Słońca",
+   "mass": "6,4 masy Słońca",
+   "spectral_class": "K2 Ib-IIa"
+  },
+  "star/j173712-430000": {
+   "description": "Sargas to jasny olbrzym w ogonie Skorpiona, noszący tradycyjną nazwę pochodzenia sumeryjskiego.",
+   "fun_fact": "Sargas obraca się tak szybko, że jest spłaszczony na biegunach – jest o jedną trzecią szerszy na równiku niż od bieguna do bieguna i mógł powstać w wyniku połączenia się dwóch gwiazd!",
+   "distance": "329 lat świetlnych",
+   "size": "35 promieni Słońca",
+   "mass": "3,1 masy Słońca",
+   "spectral_class": "F1 III"
+  },
+  "star/j202548-564348": {
+   "description": "Paw to najjaśniejsza gwiazda w gwiazdozbiorze Pawia, gorąca, niebiesko-biała gwiazda dalekiego nieba południowego.",
+   "fun_fact": "Peacock został nazwany w latach 30. XX wieku, ponieważ RAF nalegał, by każda gwiazda w jego nowym Almanachu Lotniczym miała nazwę – a ta nie miała żadnej!",
+   "distance": "179 lat świetlnych",
+   "size": "4,8 promieni Słońca",
+   "mass": "5,9 masy Słońca",
+   "spectral_class": "B3 V"
   },
   "star/kaus_australis": {
    "description": "Kaus Australis to najjaśniejsza gwiazda w Strzelcu (Łuczniku). Jej nazwa oznacza \"południowy łuk\" w mieszaninie arabskiego i łaciny.",
@@ -1939,6 +2183,12 @@
    "mass": "~8,5 solar masses",
    "spectral_class": "F5Ib",
    "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/n25": {
+   "description": "R Coronae Borealis jest rzadkim żółtym nadolbrzymem w Koronie Północnej i prototypem klasy gwiazd zmiennych nazwanej jej imieniem.",
+   "fun_fact": "R Coronae Borealis jest czasem nazywana \"odwrotną nową\" – zamiast rozbłysnąć, nieprzewidywalnie słabnie nawet o 9 magnitudo, gdy wyrzuca z siebie chmury sadzy węglowej, które ją zasłaniają!",
+   "distance": "4560 lat świetlnych",
+   "spectral_class": "G0Iep"
   },
   "star/nunki": {
    "description": "Nunki to druga najjaśniejsza gwiazda w gwiazdozbiorze Strzelca i najstarsza nazwa gwiazdy wciąż w powszechnym użyciu.",
