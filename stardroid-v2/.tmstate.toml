@@ -1621,6 +1621,365 @@ keys = [
     "star/vindemiatrix",
 ]
 
+[same_as_parent.object-names.names.pt]
+keys = [
+    "constellation/antlia",
+    "constellation/apus",
+    "constellation/ara",
+    "constellation/caelum",
+    "constellation/camelopardalis",
+    "constellation/cassiopeia",
+    "constellation/coma_berenices",
+    "constellation/dorado",
+    "constellation/mensa",
+    "constellation/norma",
+    "constellation/serpens_caput",
+    "constellation/serpens_cauda",
+    "constellation/sextans",
+    "constellation/telescopium",
+    "constellation/triangulum",
+    "constellation/triangulum_australe",
+    "constellation/volans",
+    "constellation/vulpecula",
+    "dso/centaurus_a",
+    "dso/m40",
+    "dso/n47_tucanae",
+    "dso/sgr_a_star",
+    "dso/t_crb",
+    "dso/willman_1",
+    "moon/ariel",
+    "moon/deimos",
+    "moon/dione",
+    "moon/europa",
+    "moon/io",
+    "moon/oberon",
+    "moon/umbriel",
+    "star/achernar",
+    "star/acrux",
+    "star/adhara",
+    "star/alcyone",
+    "star/alderamin",
+    "star/algenib",
+    "star/algieba",
+    "star/algol",
+    "star/alhena",
+    "star/alioth",
+    "star/alkaid",
+    "star/alnair",
+    "star/alnath",
+    "star/alnilam",
+    "star/alphard",
+    "star/alpheratz",
+    "star/altair",
+    "star/ankaa",
+    "star/antares",
+    "star/arcturus",
+    "star/arneb",
+    "star/betelgeuse",
+    "star/canopus",
+    "star/capella",
+    "star/caph",
+    "star/castor",
+    "star/deneb",
+    "star/denebola",
+    "star/diphda",
+    "star/dubhe",
+    "star/e_lyrae",
+    "star/enif",
+    "star/etamin",
+    "star/fomalhaut",
+    "star/hadar",
+    "star/hamal",
+    "star/izar",
+    "star/j003712+535400",
+    "star/j004912+574912",
+    "star/j005624+591048",
+    "star/j010824-551500",
+    "star/j011348+073448",
+    "star/j012212+453148",
+    "star/j012548+601424",
+    "star/j013112+152100",
+    "star/j013636+412436",
+    "star/j013748+483748",
+    "star/j014536+090936",
+    "star/j015136-101948",
+    "star/j015248+293448",
+    "star/j015436+204836",
+    "star/j015436+634012",
+    "star/j020148+024536",
+    "star/j020336+421948",
+    "star/j024312+031424",
+    "star/j024800+291500",
+    "star/j024948+271536",
+    "star/j025024+555400",
+    "star/j025100-210000",
+    "star/j025624-085400",
+    "star/j025812-401800",
+    "star/j030936+445136",
+    "star/j031124+194348",
+    "star/j031200-285924",
+    "star/j031536-084912",
+    "star/j033300-092736",
+    "star/j034312-094612",
+    "star/j034424+321724",
+    "star/j034500+240636",
+    "star/j034536+242212",
+    "star/j034612+243300",
+    "star/j034912+240300",
+    "star/j035812-133036",
+    "star/j035848+354724",
+    "star/j041200-065024",
+    "star/j041500-073824",
+    "star/j041948+153748",
+    "star/j042248+173224",
+    "star/j042400-340112",
+    "star/j042848+155212",
+    "star/j042848+191048",
+    "star/j043524-303336",
+    "star/j043824-141800",
+    "star/j044948+065736",
+    "star/j045700+331012",
+    "star/j050148+434912",
+    "star/j050224+410448",
+    "star/j050636+411348",
+    "star/j050748-050524",
+    "star/j052512+062100",
+    "star/j052812-204536",
+    "star/j053148-001800",
+    "star/j053524+095548",
+    "star/j053524-055436",
+    "star/j053748+210824",
+    "star/j053936-340412",
+    "star/j054048-015624",
+    "star/j055100-354612",
+    "star/j055924+445700",
+    "star/j060000+371236",
+    "star/j060748-371500",
+    "star/j061500+223036",
+    "star/j062024-300336",
+    "star/j062248+223036",
+    "star/j062248-175736",
+    "star/j064348+250748",
+    "star/j064500+125400",
+    "star/j070148-275548",
+    "star/j070336-153748",
+    "star/j070412+203412",
+    "star/j070824-262324",
+    "star/j072024+215848",
+    "star/j072400-291800",
+    "star/j072700+081724",
+    "star/j073900+343448",
+    "star/j074912-245136",
+    "star/j080336-400000",
+    "star/j080748-241800",
+    "star/j081200+173900",
+    "star/j081648+091124",
+    "star/j082024+240112",
+    "star/j082248+431124",
+    "star/j082248-593036",
+    "star/j083000+604312",
+    "star/j083900+032024",
+    "star/j084312+212812",
+    "star/j084424+180900",
+    "star/j084500-544236",
+    "star/j084648+062512",
+    "star/j085248+281948",
+    "star/j085812+115136",
+    "star/j085924+480224",
+    "star/j090336+470936",
+    "star/j090748-432548",
+    "star/j090936+220300",
+    "star/j091312-694312",
+    "star/j091648-591648",
+    "star/j092212-550036",
+    "star/j092848+453600",
+    "star/j093148+225812",
+    "star/j093936-010824",
+    "star/j094124+095324",
+    "star/j095136-145100",
+    "star/j095248+260036",
+    "star/j095436-190036",
+    "star/j101648+232512",
+    "star/j101648+425436",
+    "star/j102212+413000",
+    "star/j105324+341312",
+    "star/j105924+402548",
+    "star/j110000-181800",
+    "star/j111424+152548",
+    "star/j111424+203112",
+    "star/j111800+313224",
+    "star/j111836+330524",
+    "star/j113112+691948",
+    "star/j114612+474648",
+    "star/j115024+014612",
+    "star/j120524+765436",
+    "star/j120824-244348",
+    "star/j121500-584500",
+    "star/j121536+570148",
+    "star/j121536-173224",
+    "star/j121948-004012",
+    "star/j122136-602400",
+    "star/j123000-163112",
+    "star/j123112-570636",
+    "star/j123336+412136",
+    "star/j123412-232400",
+    "star/j124124-012700",
+    "star/j124500+452624",
+    "star/j124724+664724",
+    "star/j124800-594124",
+    "star/j125512+652624",
+    "star/j125548+032400",
+    "star/j125548+381912",
+    "star/j131012+173148",
+    "star/j132400+545548",
+    "star/j132512+545924",
+    "star/j133448-003600",
+    "star/j135436+182400",
+    "star/j140412+642248",
+    "star/j140636-362212",
+    "star/j141236-101612",
+    "star/j141612+460524",
+    "star/j141612-060000",
+    "star/j141912-132212",
+    "star/j142812-021348",
+    "star/j143148+381836",
+    "star/j143936-605024",
+    "star/j144912+460712",
+    "star/j145100-160224",
+    "star/j150148+402324",
+    "star/j150412-251648",
+    "star/j151648-092248",
+    "star/j152100+714948",
+    "star/j152436+372248",
+    "star/j152512+585812",
+    "star/j152736+290636",
+    "star/j153524-144724",
+    "star/j154836+180824",
+    "star/j155700-291236",
+    "star/j155848-260636",
+    "star/j160036-223712",
+    "star/j160524-194836",
+    "star/j160748+170300",
+    "star/j161200-192736",
+    "star/j161424-034124",
+    "star/j161836-044124",
+    "star/j162100-253524",
+    "star/j162400+613036",
+    "star/j162512+140148",
+    "star/j163000+212924",
+    "star/j163112+015848",
+    "star/j163600-281312",
+    "star/j164836-690148",
+    "star/j165024-341724",
+    "star/j165136-380300",
+    "star/j165212-380112",
+    "star/j170524+542812",
+    "star/j170900+654236",
+    "star/j171012-154348",
+    "star/j171424+142324",
+    "star/j171500+245024",
+    "star/j171536-263524",
+    "star/j173036+260636",
+    "star/j173036+521800",
+    "star/j173036-371800",
+    "star/j173224+863524",
+    "star/j173712-430000",
+    "star/j174200+720900",
+    "star/j174312+043412",
+    "star/j174348+534800",
+    "star/j174424-514948",
+    "star/j174948-370224",
+    "star/j175324+565212",
+    "star/j180600-302512",
+    "star/j181348-210336",
+    "star/j182100-294948",
+    "star/j182548+653336",
+    "star/j182812-252512",
+    "star/j184348+363336",
+    "star/j184948+332136",
+    "star/j185400-224424",
+    "star/j185624+041200",
+    "star/j185848+324124",
+    "star/j190224-295248",
+    "star/j190524+135136",
+    "star/j190936-210112",
+    "star/j190936-375400",
+    "star/j191236+673936",
+    "star/j191348+390900",
+    "star/j192248-442736",
+    "star/j192324-444800",
+    "star/j192400-403712",
+    "star/j192848+244012",
+    "star/j193036+275736",
+    "star/j193224+694012",
+    "star/j194012+180036",
+    "star/j194500+450748",
+    "star/j194612+103636",
+    "star/j195400+082736",
+    "star/j195512+062436",
+    "star/j195548-261800",
+    "star/j201800-123224",
+    "star/j202024-124536",
+    "star/j202100-144648",
+    "star/j202212+401536",
+    "star/j202548-564348",
+    "star/j203300+111800",
+    "star/j203748+143600",
+    "star/j203936+155436",
+    "star/j204612+335812",
+    "star/j204724-093000",
+    "star/j205812+105024",
+    "star/j210900-885736",
+    "star/j211536+051500",
+    "star/j212848+703336",
+    "star/j213148-053412",
+    "star/j213748-075100",
+    "star/j214012-163936",
+    "star/j214200+511124",
+    "star/j214648-160748",
+    "star/j215400-372136",
+    "star/j220336+643748",
+    "star/j220600-001912",
+    "star/j221012+061200",
+    "star/j221648-074648",
+    "star/j222136-012324",
+    "star/j223748-041348",
+    "star/j224124+104948",
+    "star/j224236-465248",
+    "star/j224312+301312",
+    "star/j224948+243600",
+    "star/j225436-154912",
+    "star/j225736+204612",
+    "star/j230336+034912",
+    "star/j232024+234424",
+    "star/j232512+232400",
+    "star/j233112+391424",
+    "star/j233936+773748",
+    "star/kaus_australis",
+    "star/kochab",
+    "star/markab",
+    "star/menkar",
+    "star/merak",
+    "star/mirach",
+    "star/mirphak",
+    "star/nunki",
+    "star/phad",
+    "star/polaris",
+    "star/rasalhague",
+    "star/regulus",
+    "star/rigel",
+    "star/rigil_kentaurus_a",
+    "star/saiph",
+    "star/scheat",
+    "star/shaula",
+    "star/shedir",
+    "star/sirius",
+    "star/spica",
+    "star/unukalhai",
+    "star/vega",
+    "star/vindemiatrix",
+]
+
 [same_as_parent.object-types.fr]
 keys = [
     "constellation",
@@ -4125,6 +4484,324 @@ whats_new_button = "What\\'s new"
 whats_new_screen_title = "What\\'s New & Credits"
 whats_new_version_heading = "New in version %1$s"
 
+[source_snapshot.app."strings.xml".pt]
+app_name = "Sky Map"
+ar_alignment_adjusted_message = "Map alignment adjusted"
+ar_auto_mode_snackbar = "Auto mode turned on for the camera view"
+ar_dimmer_slider = "Camera dimmer"
+ar_exposure_auto = "Auto"
+ar_exposure_slider = "Camera exposure"
+ar_iso_slider = "Camera ISO"
+ar_iso_slider_label = "ISO"
+ar_permission_denied = "Through-camera mode needs the camera permission"
+ar_shutter_slider = "Camera shutter time"
+ar_shutter_slider_label = "Shtr"
+auto_level_off_toast = "Horizon auto-leveling off"
+auto_level_on_toast = "Horizon auto-leveling on"
+calibration_complete_toast = "Sensors have high accuracy"
+calibration_what_to_do = "\nYour phone\\'s compass sensor is reporting poor calibration. The figure-8 motion (<a href=\"%s\">watch a demonstration</a>) prompts your phone\\'s\n hardware to reset its compass sensor — Sky Map has no control over this process.<br/><br/>\n<blockquote><b>Calibrated does not mean accurate.</b> The figure-8 gesture helps reset the sensor, but it cannot remove interference from nearby metal objects,\ncar dashboards, or phone cases. If the map is still off after calibrating, those external sources are the most likely cause — not Sky Map.</blockquote>\nMove to an open area away from metal and try again.\n    "
+calibration_what_to_do_user = "\nYour phone is reporting its compass calibration status as shown above.<br/><br/>\nIf necessary, perform the figure-8 motion (<a href=\"%s\">watch a demonstration</a>) to prompt your phone\\'s hardware to recalibrate its compass sensor.<br/><br/>\n<blockquote><b>Important:</b> calibration helps the sensor reset itself internally. It does not mean the compass is necessarily accurate!\nLocal magnetic interference (metal objects, car dashboards, phone cases) can still cause your phone\\'s compass to send inaccurate\nreadings to Sky Map.</blockquote>\n<b>If the map isn\\'t showing positions correctly the problem is likely your phone - not Sky Map!</b>\n    "
+channel_digest_description = "One evening summary, skipped on quiet nights"
+channel_digest_name = "Tonight\\'s sky digest"
+channel_eclipses_description = "A single alert before a lunar eclipse begins"
+channel_eclipses_name = "Lunar eclipses"
+channel_passes_description = "A single alert shortly before the best visible pass of the night"
+channel_passes_name = "Satellite passes"
+channel_showers_description = "About a dozen a year, on the evening of the peak"
+channel_showers_name = "Meteor shower peaks"
+countdown_days = "days"
+countdown_full_moon = "Full Moon"
+countdown_new_moon = "New Moon"
+countdown_new_moon_peak = "New-moon peak"
+countdown_shower_peak = "%1$s peak"
+countdown_tonight = "now"
+countdown_widget_description = "Days until the next meteor shower peak or moon event."
+countdown_widget_label = "Sky countdown"
+countdown_widget_preview_days = "14"
+countdown_widget_preview_name = "Perseids peak"
+diagnostics_alignment_adjustment = "Alignment adjustment"
+diagnostics_alignment_format = "%1$+.1f° az, %2$+.1f° alt"
+diagnostics_dec_format = "%1$.2f°"
+diagnostics_east = "East"
+diagnostics_gl_limits = "GL limits"
+diagnostics_gl_limits_format = "tex %1$d, line %2$s, point %3$s"
+diagnostics_gl_renderer = "Renderer"
+diagnostics_gl_unavailable = "Not available yet"
+diagnostics_gl_version = "OpenGL"
+diagnostics_gl_version_format = "%1$s [%2$s]"
+diagnostics_gps = "GPS"
+diagnostics_location_format = "%1$.4f°, %2$.4f° (%3$s)"
+diagnostics_location_hardware_unavailable = "No location hardware"
+diagnostics_location_unset = "Not set"
+diagnostics_magnetic_correction_format = "%1$.2f° %2$s"
+diagnostics_phone_format = "%1$s (%2$s) %3$s"
+diagnostics_report_header = "--- Sky Map diagnostics. Please describe the problem above this line. ---"
+diagnostics_satellite_circuit_open = "Downloads paused"
+diagnostics_satellite_circuit_open_format = "Until %1$s (%2$d failures)"
+diagnostics_satellite_data = "Orbit data"
+diagnostics_satellite_data_format = "%1$d satellites, %2$.1f days old"
+diagnostics_satellite_data_none = "Not downloaded"
+diagnostics_satellite_force_fetch = "Fetch satellite data now (debug)"
+diagnostics_satellite_last_fetch = "Last fetch"
+diagnostics_satellite_never_fetched = "Never"
+diagnostics_section_graphics = "Graphics"
+diagnostics_section_satellites = "Satellites"
+diagnostics_share = "Send to developers"
+diagnostics_share_subject = "Sky Map diagnostics report"
+diagnostics_sky_map_version_format = "%1$s (%2$d) [%3$s]"
+diagnostics_west = "West"
+dialog_ok_button = "OK"
+gallery_back = "Back"
+gallery_button = "Sky gallery"
+gallery_title = "Sky gallery"
+help_symbol_key_intro = "Deep-sky objects and meteor showers are marked with a symbol showing their type:"
+help_symbol_key_title = "Map symbols"
+help_version = "Version %1$s"
+hud_alignment_reset_message = "Alignment correction reset"
+hud_alt_label = "Alt"
+hud_az_label = "Az"
+hud_azimuth_value = "%1$d° %2$s"
+"hud_cardinal_directions[0]" = "N"
+"hud_cardinal_directions[10]" = "SW"
+"hud_cardinal_directions[11]" = "WSW"
+"hud_cardinal_directions[12]" = "W"
+"hud_cardinal_directions[13]" = "WNW"
+"hud_cardinal_directions[14]" = "NW"
+"hud_cardinal_directions[15]" = "NNW"
+"hud_cardinal_directions[1]" = "NNE"
+"hud_cardinal_directions[2]" = "NE"
+"hud_cardinal_directions[3]" = "ENE"
+"hud_cardinal_directions[4]" = "E"
+"hud_cardinal_directions[5]" = "ESE"
+"hud_cardinal_directions[6]" = "SE"
+"hud_cardinal_directions[7]" = "SSE"
+"hud_cardinal_directions[8]" = "S"
+"hud_cardinal_directions[9]" = "SSW"
+hud_correction_label = "Adj"
+hud_correction_reset = "Reset alignment correction"
+hud_correction_value = "%1$+.1f° %2$+.1f°"
+hud_dec_label = "Dec"
+hud_fov_label = "FOV"
+hud_fov_locked = "Zoom locked to the camera"
+hud_fov_value = "%1$d°"
+hud_fov_value_fine = "%1$.1f°"
+hud_fov_value_finest = "%1$.2f°"
+hud_ra_label = "RA"
+hud_ra_value = "%1$dh %2$02dm"
+hud_signed_degrees_value = "%1$+.1f°"
+label_size_hint_action = "Settings"
+label_size_hint_message = "Label size doesn\\'t change with zoom — set it in Settings"
+layer_camera = "Through-camera mode"
+layer_camera_needs_sensors = "Needs motion sensors this device doesn\\'t have"
+layer_deep_sky = "Deep-sky objects"
+layer_grid = "Celestial grid"
+layer_hud = "Pointing readout"
+layer_param_disc_size = "Disc size"
+layer_param_disc_size_auto = "Steady"
+layer_param_disc_size_auto_desc = "Holds a fixed size on screen as you zoom, then switches to real size."
+layer_param_disc_size_glyphs = "Glyphs"
+layer_param_disc_size_glyphs_desc = "Sized by how big each body really is, not how big it looks. Easy to see at any zoom."
+layer_param_disc_size_true = "True scale"
+layer_param_disc_size_true_desc = "Real size in the sky at every zoom. Planets are specks until you zoom right in."
+layer_param_eclipse_alerts = "Eclipse alerts"
+layer_param_eclipse_alerts_description = "Notify me before a lunar eclipse starts"
+layer_param_expand = "Show options for %1$s"
+layer_param_pass_alerts = "Pass alerts"
+layer_param_pass_alerts_description = "Notify me before the best visible pass each night"
+layer_satellites = "Satellites"
+layers_group_display = "Display"
+layers_group_objects = "Objects"
+layers_group_reference = "Reference"
+layers_sheet_title = "Layers"
+location_button = "Location"
+location_coordinate_format = "%.6f"
+location_long_lat = "Longitude:%1$.2f, Latitude:%2$.2f"
+location_map_content_description = "Map of your current location"
+location_source_manual = "Manual"
+moon_phase_first_quarter = "First Quarter"
+moon_phase_full = "Full Moon"
+moon_phase_last_quarter = "Last Quarter"
+moon_phase_new = "New Moon"
+moon_phase_waning_crescent = "Waning Crescent"
+moon_phase_waning_gibbous = "Waning Gibbous"
+moon_phase_waxing_crescent = "Waxing Crescent"
+moon_phase_waxing_gibbous = "Waxing Gibbous"
+moon_widget_description = "The Moon\\'s phase, illumination and rise and set times, updated daily."
+moon_widget_illumination = "%1$d%% illuminated"
+moon_widget_label = "Moon phase"
+moon_widget_pin_unsupported_body = "Your launcher doesn\\'t support adding widgets from an app. Touch and hold your home screen, choose Widgets, then find Sky Map."
+moon_widget_pin_unsupported_ok = "Got it"
+moon_widget_pin_unsupported_title = "Add the widget from your home screen"
+moon_widget_preview_illumination = "83% illuminated"
+moon_widget_promo_add = "Add widget"
+moon_widget_promo_dismiss = "Dismiss widget suggestion"
+moon_widget_promo_subtitle = "Phase, illumination and rise times, updated daily"
+moon_widget_promo_title = "Keep the Moon on your home screen"
+moon_widget_rise_time = "rises %1$s"
+moon_widget_set_time = "sets %1$s"
+more_button = "More options"
+nadir = "NADIR"
+no_sensor_warning = "This device has no compass or motion sensors, so Sky Map can\\'t follow where you point it. Drag the map by hand instead."
+no_sensor_warning_dismiss = "OK"
+notif_action_mute_showers = "Mute showers"
+notif_digest_title = "Worth a look tonight"
+notif_eclipse_text = "Begins around %1$s — worth stepping outside for"
+notif_eclipse_title = "%1$s starting soon"
+notif_pass_text = "Visible from about %1$s — head outside and let your eyes adjust"
+notif_pass_title = "%1$s passes overhead soon"
+notif_shower_bright_moon = "The %1$d%%-lit moon will wash out fainter meteors — up to %2$d an hour under ideal skies."
+notif_shower_dark_moon = "Dark, moonless skies — expect up to %1$d meteors an hour away from city light."
+notif_shower_direction = "Best after midnight, looking %1$s."
+notif_shower_title = "%1$s peak tonight"
+object_info_also_known_as = "Also known as:"
+object_info_always_above_horizon = "Always above the horizon at your location"
+object_info_always_below_horizon = "Always below the horizon at your location"
+object_info_close = "Close"
+object_info_eclipse_greatest = "%1$s — greatest eclipse %2$s at %3$s"
+object_info_eclipse_title = "Lunar eclipse"
+object_info_eclipse_totality = "Totality %1$s – %2$s"
+object_info_fun_fact = "Fun fact: %1$s"
+object_info_image_credit = "Image: %1$s"
+object_info_magnitude = "Magnitude:"
+object_info_no_eclipse = "No lunar eclipse expected soon"
+object_info_rises = "Rises:"
+object_info_see_also = "See also"
+object_info_sets = "Sets:"
+object_info_spectral_class = "Spectral class:"
+satellite_description = "An artificial satellite in low Earth orbit, sunlit against a dark sky. It crosses from horizon to horizon in a few minutes, moving steadily and without blinking."
+satellite_name_iss = "The Space Station"
+satellite_name_tiangong = "Tiangong"
+satellite_next_pass = "Next visible pass"
+satellite_no_pass = "No visible passes in the next couple of days"
+satellite_pass_magnitude = "Magnitude %1$.1f at its brightest"
+satellite_pass_shadow = "Fades into Earth\\'s shadow at %1$s"
+satellite_pass_unknown = "Orbit data is too old to predict passes"
+satellite_pass_when = "%1$s, rising %2$s, reaching %3$d°"
+satellites_no_data = "Satellite positions need an internet connection to update."
+satellites_refresh = "Refresh"
+satellites_retry_days = "Try again in a few days"
+satellites_retry_hours = "Try again in a few hours"
+satellites_retry_soon = "Try again in a few minutes"
+satellites_retry_tomorrow = "Try again tomorrow"
+satellites_retry_within_hour = "Try again within the hour"
+search_coordinates_hint = "Or enter coordinates: 12h 30m, +45° or 187.5 -45.2"
+search_go = "Go"
+search_hint = "e.g. Mars or M31"
+search_target_found_message = "Found: %1$s"
+search_target_looking_message = "Looking for: %1$s"
+settings_auto_dimness_classic = "Classic"
+settings_auto_dimness_dim = "Very Dim"
+settings_auto_dimness_summary = "How much night mode dims the screen"
+settings_auto_dimness_system = "System Default"
+settings_back = "Back"
+settings_classic_sensors_only = "Only applies when legacy sensors are in use"
+settings_diagnostics_summary = "Sensor, location and performance details"
+settings_disable_gyro = "Use legacy sensors"
+settings_disable_gyro_summary = "Point the map using the compass and accelerometer instead of the gyroscope. Try this if the map drifts or your device\\'s gyro misbehaves; devices without a gyro use these sensors automatically."
+settings_font_size = "Sky label size"
+settings_font_size_extra_large = "Extra Large"
+settings_font_size_large = "Large"
+settings_font_size_medium = "Medium"
+settings_font_size_small = "Small"
+settings_font_size_summary = "Label text stays this size at any zoom"
+settings_magnetic_correction_summary = "Corrects the compass for the difference between magnetic and true north"
+settings_notifications_blocked = "Notifications are blocked for Sky Map"
+settings_notifications_blocked_action = "Tap to allow them in system settings"
+settings_notifications_intro = "Sky Map only notifies about rare sky events, at most once a day. Everything is off until you turn it on."
+settings_ok = "OK"
+settings_section_notifications = "Notifications"
+settings_sensor_damping_extra_high = "About right"
+settings_sensor_damping_high = "Medium"
+settings_sensor_damping_really_high = "Laggy"
+settings_sensor_damping_standard = "Jumpy"
+settings_sensor_speed_fast = "Fast"
+settings_sensor_speed_slow = "Slow"
+settings_sensor_speed_standard = "Medium"
+settings_shower_alerts = "Meteor shower peaks"
+settings_shower_alerts_summary = "About a dozen a year, on the evening of the peak"
+settings_tonight_digest = "Tonight\\'s sky digest"
+settings_tonight_digest_summary = "One summary after sunset, skipped on quiet nights"
+settings_view_direction_rotate90 = "Rotated horizon"
+settings_view_direction_standard = "Normal"
+settings_view_direction_summary = "Rotate horizon by 90 degrees (for devices with forced landscape) or use pointer mode for the screen to show what the top of the phone is pointing at"
+settings_view_direction_telescope = "Pointer mode"
+share_button = "Share the sky"
+share_chooser_title = "Share this sky"
+share_failed_message = "Couldn\\'t capture the sky — try again"
+share_invitation = "See what you\\'re looking at — get Sky Map free"
+share_layout_overlay = "Overlay"
+share_layout_side_by_side = "Side by side"
+share_shutter_button = "Share this view"
+share_store_link = "https://getskymap.app"
+share_text = "See what you\\'re looking at — get Sky Map free: %1$s"
+show_layers = "More layers and options"
+snackbar_action_open = "Open"
+snackbar_action_undo = "Undo"
+splash_dismiss = "Dismiss"
+splash_version = "v%1$s"
+support_email = "skymapdevs@gmail.com"
+switch_to_auto = "Switch to auto mode"
+switch_to_manual = "Switch to manual mode"
+symbol_key_asterism = "Asterism or star cloud"
+symbol_key_diffuse_nebula = "Diffuse nebula"
+symbol_key_galaxy = "Galaxy"
+symbol_key_globular_cluster = "Globular cluster"
+symbol_key_meteor_radiant = "Meteor shower radiant"
+symbol_key_meteor_radiant_peak = "Meteor shower near its peak"
+symbol_key_open_cluster = "Open cluster"
+symbol_key_other = "Other deep-sky object"
+symbol_key_planetary_nebula = "Planetary nebula"
+symbol_key_supernova_remnant = "Supernova remnant"
+time_travel_faster = "▶▶"
+time_travel_go = "Go"
+time_travel_lunar_eclipse_aug_2026 = "Partial Lunar Eclipse, Aug 28, 2026"
+time_travel_now = "Now"
+time_travel_ok = "OK"
+time_travel_pause = "❚❚"
+time_travel_pick_date = "Set date"
+time_travel_pick_time = "Set time"
+time_travel_return = "Now"
+time_travel_select_event = "Select a popular event…"
+time_travel_slower = "◀◀"
+time_travel_start_message = "Traveling through time to %1$s ..."
+time_travel_stopped = "Time travel paused"
+time_travel_visiting = "Visiting: %1$s"
+tonight_bright_moon = "Bright moon washes out faint objects"
+tonight_dark_skies = "dark skies"
+tonight_full_moon = "Full Moon tonight"
+tonight_lunar_eclipse_partial = "Partial lunar eclipse"
+tonight_lunar_eclipse_penumbral = "Penumbral lunar eclipse"
+tonight_lunar_eclipse_total = "Total lunar eclipse"
+tonight_new_moon = "New Moon — darkest skies of the month"
+tonight_quiet = "Quiet sky tonight"
+tonight_quiet_next = "Next: %1$s in %2$d days"
+tonight_satellite_pass = "%1$s passes over at %2$s"
+tonight_shower_days = "%1$s peak in %2$d days"
+tonight_shower_peak = "%1$s peak tonight"
+tonight_trailing_direction = "%1$s · %2$d°"
+tonight_trailing_moon = "moon %1$d%%"
+tonight_trailing_pass = "Rising %1$s, %2$d°, mag %3$.1f"
+tonight_well_placed = "%1$s well placed from %2$s"
+tonight_widget_description = "Tonight\\'s best sights: well-placed planets, meteor showers and moon events, updated daily."
+tonight_widget_header = "Tonight · %1$s"
+tonight_widget_label = "Tonight\\'s sky"
+tonight_widget_preview_row = "Jupiter well placed from 9:30 PM"
+tonight_widget_sun_times = "sun sets %1$s · dark %2$s"
+tonight_widget_sunset_only = "sun sets %1$s"
+tutorial_button = "Tutorial"
+warm_welcome_card_description = "The Crab Nebula is a supernova remnant in Taurus, the result of a stellar explosion recorded by Chinese astronomers in 1054 AD."
+warm_welcome_card_distance = "6,500 light-years"
+warm_welcome_card_fun_fact = "The Crab Nebula contains a pulsar spinning 30 times per second, the collapsed core of the exploded star!"
+warm_welcome_card_size = "11 light-years across"
+warm_welcome_slide1_desc = "Use the layers on the left to filter stars, constellations, planets, and more. The buttons at the bottom right search the sky, travel through time, and switch display modes. Tap the sky at any time to hide or show the controls."
+warm_welcome_slide2_desc = "Point your phone to look around in <b>Auto Mode</b>, or tap to switch to <b>Manual</b> and explore by swiping and pinching."
+warm_welcome_slide2_info_desc = "Tap any labeled object to open an Info Card like this one, with a photo, fun facts, and celestial details."
+warm_welcome_slide3_compass_calib = "To keep things accurate, give your phone a quick <b>figure-8</b> wave every once in a while."
+warm_welcome_slide3_no_sensors = "Your device seems to be missing the required sensors needed for automatic tracking. Don\\'t worry—you can still explore the entire cosmos in <b>Manual Mode</b>!"
+whats_new_button = "What\\'s new"
+whats_new_screen_title = "What\\'s New & Credits"
+whats_new_version_heading = "New in version %1$s"
+
 [source_snapshot.app."credits.xml".fr]
 credits_text = "\n<h2>Sky Map Supporters</h2>\n<h3>Thank you to these folks who have recently <a href=\"https://buymeacoffee.com/skymapdevs?utm_source=skymap&amp;utm_medium=app&amp;utm_campaign=credits_donated\">donated!</a></h3>\n<p>%1$s</p>\n<h1>Credits</h1>\n<h2>Engineering</h2>\n<p>John Taylor</p>\n<h2>Open Source Contributors</h2>\n<p>%2$s</p>\n<p>Thank you! See the latest contributors on <a href=\"https://github.com/sky-map-team/stardroid/graphs/contributors\">GitHub</a>.</p>\n<h2>Original Engineering, Design and Product Management at Google</h2>\n<p>Brent Bryan, Dominic Widdows, Hector Ouilhet, James Powell, John Taylor, Kevin Serafini, Lior Ron.</p>\n<h1>Acknowledgments</h1>\n<p>Sky Map was originally developed as \\\"Google Sky Map\\\" by Google Inc. and open sourced in 2012.</p>\n<p>Special thanks to Pat Stephenson for sparking the idea with his G1-phone competition and to Chris DiBona and Michael Weiss-Malik for their helping with the transition from Google to Open Source.</p>\n<h2>Data</h2>\n<p>Sky Map uses maps derived from data from:</p>\n<p>• Centre de Donnees astronomiques de Strasbourg (<a href=\"https://cdsweb.u-strasbg.fr/\">cdsweb.u-strasbg.fr</a>)<br/>\n• The Bright Star Catalogue, 5th Revised Ed. (Hoffleit D., Warren Jr W.H.)<br/>\n• Star names: IAU Catalog of Star Names, IAU Working Group on Star Names (<a href=\"https://www.iau.org/public/themes/naming_stars/\">iau.org</a>), CC BY 4.0<br/>\n• The HYG Database, HYG v1.0. (<a href=\"https://www.astronexus.com/\">astronexus.com</a>)<br/>\n• History and Accurate Positions for the NGC/IC Objects (Harold G. Corwin Jr)<br/>\n• Revised New General Catalogue of Nonstellar Astronomical Objects (Sulentic J.W., Tifft W.G.)<br/>\n• SFA Star Charts (<a href=\"https://observe.phy.sfasu.edu/SFAStarCharts/SFAStarChartFAQ.html\">observe.phy.sfasu.edu</a>)<br/>\n• Positions of Solar System Objects are calculated from data provided by the USNO (<a href=\"https://www.usno.navy.mil/USNO/astronomical-applications\">usno.navy.mil</a>)<br/>\n• Spherical coverage data obtained from <a href=\"https://www2.research.att.com/~njas/coverings\">research.att.com</a></p>\n<h2>Image Credits</h2>\n<p>Celestial images in this app are provided courtesy of the following sources:</p>\n<p>• Hubble Space Telescope images: NASA, ESA, and the Space Telescope Science Institute (<a href=\"https://hubblesite.org/\">hubblesite.org</a>)<br/>\n• Planet images: NASA/JPL-Caltech, NASA/Johns Hopkins APL/Carnegie (MESSENGER), NASA/Johns Hopkins APL/SwRI (New Horizons)<br/>\n• Moon image: NASA/GSFC/Arizona State University (Lunar Reconnaissance Orbiter)<br/>\n• Star field images: ESO Digitized Sky Survey 2 (<a href=\"https://archive.eso.org/dss/dss\">archive.eso.org/dss</a>), CC BY 4.0<br/>\n• Constellation charts: IAU and Sky &amp; Telescope (Roger Sinnott &amp; Rick Fienberg), CC BY 4.0<br/>\n• Additional deep-sky object images: Gemini Observatory/NOIRLab/NSF/AURA (<a href=\"https://noirlab.edu/\">noirlab.edu</a>)<br/>\n• M31 image: Peter Kennett (<a href=\"https://commons.wikimedia.org/wiki/File:M31(Kennett).jpg\">Wikimedia Commons</a>)<br/>\n• Sagittarius A* image: EHT Collaboration (<a href=\"https://www.eso.org/public/images/eso2208-eht-mwa/\">eso.org</a>), CC BY 4.0<br/>\n• Cygnus X-1 illustration: NASA/CXC/M.Weiss (<a href=\"https://chandra.harvard.edu/photo/2011/cygx1/\">chandra.harvard.edu</a>)</p>\n    "
 
@@ -4135,6 +4812,9 @@ credits_text = "\n<h2>Sky Map Supporters</h2>\n<h3>Thank you to these folks who 
 credits_text = "\n<h2>Sky Map Supporters</h2>\n<h3>Thank you to these folks who have recently <a href=\"https://buymeacoffee.com/skymapdevs?utm_source=skymap&amp;utm_medium=app&amp;utm_campaign=credits_donated\">donated!</a></h3>\n<p>%1$s</p>\n<h1>Credits</h1>\n<h2>Engineering</h2>\n<p>John Taylor</p>\n<h2>Open Source Contributors</h2>\n<p>%2$s</p>\n<p>Thank you! See the latest contributors on <a href=\"https://github.com/sky-map-team/stardroid/graphs/contributors\">GitHub</a>.</p>\n<h2>Original Engineering, Design and Product Management at Google</h2>\n<p>Brent Bryan, Dominic Widdows, Hector Ouilhet, James Powell, John Taylor, Kevin Serafini, Lior Ron.</p>\n<h1>Acknowledgments</h1>\n<p>Sky Map was originally developed as \\\"Google Sky Map\\\" by Google Inc. and open sourced in 2012.</p>\n<p>Special thanks to Pat Stephenson for sparking the idea with his G1-phone competition and to Chris DiBona and Michael Weiss-Malik for their helping with the transition from Google to Open Source.</p>\n<h2>Data</h2>\n<p>Sky Map uses maps derived from data from:</p>\n<p>• Centre de Donnees astronomiques de Strasbourg (<a href=\"https://cdsweb.u-strasbg.fr/\">cdsweb.u-strasbg.fr</a>)<br/>\n• The Bright Star Catalogue, 5th Revised Ed. (Hoffleit D., Warren Jr W.H.)<br/>\n• Star names: IAU Catalog of Star Names, IAU Working Group on Star Names (<a href=\"https://www.iau.org/public/themes/naming_stars/\">iau.org</a>), CC BY 4.0<br/>\n• The HYG Database, HYG v1.0. (<a href=\"https://www.astronexus.com/\">astronexus.com</a>)<br/>\n• History and Accurate Positions for the NGC/IC Objects (Harold G. Corwin Jr)<br/>\n• Revised New General Catalogue of Nonstellar Astronomical Objects (Sulentic J.W., Tifft W.G.)<br/>\n• SFA Star Charts (<a href=\"https://observe.phy.sfasu.edu/SFAStarCharts/SFAStarChartFAQ.html\">observe.phy.sfasu.edu</a>)<br/>\n• Positions of Solar System Objects are calculated from data provided by the USNO (<a href=\"https://www.usno.navy.mil/USNO/astronomical-applications\">usno.navy.mil</a>)<br/>\n• Spherical coverage data obtained from <a href=\"https://www2.research.att.com/~njas/coverings\">research.att.com</a></p>\n<h2>Image Credits</h2>\n<p>Celestial images in this app are provided courtesy of the following sources:</p>\n<p>• Hubble Space Telescope images: NASA, ESA, and the Space Telescope Science Institute (<a href=\"https://hubblesite.org/\">hubblesite.org</a>)<br/>\n• Planet images: NASA/JPL-Caltech, NASA/Johns Hopkins APL/Carnegie (MESSENGER), NASA/Johns Hopkins APL/SwRI (New Horizons)<br/>\n• Moon image: NASA/GSFC/Arizona State University (Lunar Reconnaissance Orbiter)<br/>\n• Star field images: ESO Digitized Sky Survey 2 (<a href=\"https://archive.eso.org/dss/dss\">archive.eso.org/dss</a>), CC BY 4.0<br/>\n• Constellation charts: IAU and Sky &amp; Telescope (Roger Sinnott &amp; Rick Fienberg), CC BY 4.0<br/>\n• Additional deep-sky object images: Gemini Observatory/NOIRLab/NSF/AURA (<a href=\"https://noirlab.edu/\">noirlab.edu</a>)<br/>\n• M31 image: Peter Kennett (<a href=\"https://commons.wikimedia.org/wiki/File:M31(Kennett).jpg\">Wikimedia Commons</a>)<br/>\n• Sagittarius A* image: EHT Collaboration (<a href=\"https://www.eso.org/public/images/eso2208-eht-mwa/\">eso.org</a>), CC BY 4.0<br/>\n• Cygnus X-1 illustration: NASA/CXC/M.Weiss (<a href=\"https://chandra.harvard.edu/photo/2011/cygx1/\">chandra.harvard.edu</a>)</p>\n    "
 
 [source_snapshot.app."credits.xml".es]
+credits_text = "\n<h2>Sky Map Supporters</h2>\n<h3>Thank you to these folks who have recently <a href=\"https://buymeacoffee.com/skymapdevs?utm_source=skymap&amp;utm_medium=app&amp;utm_campaign=credits_donated\">donated!</a></h3>\n<p>%1$s</p>\n<h1>Credits</h1>\n<h2>Engineering</h2>\n<p>John Taylor</p>\n<h2>Open Source Contributors</h2>\n<p>%2$s</p>\n<p>Thank you! See the latest contributors on <a href=\"https://github.com/sky-map-team/stardroid/graphs/contributors\">GitHub</a>.</p>\n<h2>Original Engineering, Design and Product Management at Google</h2>\n<p>Brent Bryan, Dominic Widdows, Hector Ouilhet, James Powell, John Taylor, Kevin Serafini, Lior Ron.</p>\n<h1>Acknowledgments</h1>\n<p>Sky Map was originally developed as \\\"Google Sky Map\\\" by Google Inc. and open sourced in 2012.</p>\n<p>Special thanks to Pat Stephenson for sparking the idea with his G1-phone competition and to Chris DiBona and Michael Weiss-Malik for their helping with the transition from Google to Open Source.</p>\n<h2>Data</h2>\n<p>Sky Map uses maps derived from data from:</p>\n<p>• Centre de Donnees astronomiques de Strasbourg (<a href=\"https://cdsweb.u-strasbg.fr/\">cdsweb.u-strasbg.fr</a>)<br/>\n• The Bright Star Catalogue, 5th Revised Ed. (Hoffleit D., Warren Jr W.H.)<br/>\n• Star names: IAU Catalog of Star Names, IAU Working Group on Star Names (<a href=\"https://www.iau.org/public/themes/naming_stars/\">iau.org</a>), CC BY 4.0<br/>\n• The HYG Database, HYG v1.0. (<a href=\"https://www.astronexus.com/\">astronexus.com</a>)<br/>\n• History and Accurate Positions for the NGC/IC Objects (Harold G. Corwin Jr)<br/>\n• Revised New General Catalogue of Nonstellar Astronomical Objects (Sulentic J.W., Tifft W.G.)<br/>\n• SFA Star Charts (<a href=\"https://observe.phy.sfasu.edu/SFAStarCharts/SFAStarChartFAQ.html\">observe.phy.sfasu.edu</a>)<br/>\n• Positions of Solar System Objects are calculated from data provided by the USNO (<a href=\"https://www.usno.navy.mil/USNO/astronomical-applications\">usno.navy.mil</a>)<br/>\n• Spherical coverage data obtained from <a href=\"https://www2.research.att.com/~njas/coverings\">research.att.com</a></p>\n<h2>Image Credits</h2>\n<p>Celestial images in this app are provided courtesy of the following sources:</p>\n<p>• Hubble Space Telescope images: NASA, ESA, and the Space Telescope Science Institute (<a href=\"https://hubblesite.org/\">hubblesite.org</a>)<br/>\n• Planet images: NASA/JPL-Caltech, NASA/Johns Hopkins APL/Carnegie (MESSENGER), NASA/Johns Hopkins APL/SwRI (New Horizons)<br/>\n• Moon image: NASA/GSFC/Arizona State University (Lunar Reconnaissance Orbiter)<br/>\n• Star field images: ESO Digitized Sky Survey 2 (<a href=\"https://archive.eso.org/dss/dss\">archive.eso.org/dss</a>), CC BY 4.0<br/>\n• Constellation charts: IAU and Sky &amp; Telescope (Roger Sinnott &amp; Rick Fienberg), CC BY 4.0<br/>\n• Additional deep-sky object images: Gemini Observatory/NOIRLab/NSF/AURA (<a href=\"https://noirlab.edu/\">noirlab.edu</a>)<br/>\n• M31 image: Peter Kennett (<a href=\"https://commons.wikimedia.org/wiki/File:M31(Kennett).jpg\">Wikimedia Commons</a>)<br/>\n• Sagittarius A* image: EHT Collaboration (<a href=\"https://www.eso.org/public/images/eso2208-eht-mwa/\">eso.org</a>), CC BY 4.0<br/>\n• Cygnus X-1 illustration: NASA/CXC/M.Weiss (<a href=\"https://chandra.harvard.edu/photo/2011/cygx1/\">chandra.harvard.edu</a>)</p>\n    "
+
+[source_snapshot.app."credits.xml".pt]
 credits_text = "\n<h2>Sky Map Supporters</h2>\n<h3>Thank you to these folks who have recently <a href=\"https://buymeacoffee.com/skymapdevs?utm_source=skymap&amp;utm_medium=app&amp;utm_campaign=credits_donated\">donated!</a></h3>\n<p>%1$s</p>\n<h1>Credits</h1>\n<h2>Engineering</h2>\n<p>John Taylor</p>\n<h2>Open Source Contributors</h2>\n<p>%2$s</p>\n<p>Thank you! See the latest contributors on <a href=\"https://github.com/sky-map-team/stardroid/graphs/contributors\">GitHub</a>.</p>\n<h2>Original Engineering, Design and Product Management at Google</h2>\n<p>Brent Bryan, Dominic Widdows, Hector Ouilhet, James Powell, John Taylor, Kevin Serafini, Lior Ron.</p>\n<h1>Acknowledgments</h1>\n<p>Sky Map was originally developed as \\\"Google Sky Map\\\" by Google Inc. and open sourced in 2012.</p>\n<p>Special thanks to Pat Stephenson for sparking the idea with his G1-phone competition and to Chris DiBona and Michael Weiss-Malik for their helping with the transition from Google to Open Source.</p>\n<h2>Data</h2>\n<p>Sky Map uses maps derived from data from:</p>\n<p>• Centre de Donnees astronomiques de Strasbourg (<a href=\"https://cdsweb.u-strasbg.fr/\">cdsweb.u-strasbg.fr</a>)<br/>\n• The Bright Star Catalogue, 5th Revised Ed. (Hoffleit D., Warren Jr W.H.)<br/>\n• Star names: IAU Catalog of Star Names, IAU Working Group on Star Names (<a href=\"https://www.iau.org/public/themes/naming_stars/\">iau.org</a>), CC BY 4.0<br/>\n• The HYG Database, HYG v1.0. (<a href=\"https://www.astronexus.com/\">astronexus.com</a>)<br/>\n• History and Accurate Positions for the NGC/IC Objects (Harold G. Corwin Jr)<br/>\n• Revised New General Catalogue of Nonstellar Astronomical Objects (Sulentic J.W., Tifft W.G.)<br/>\n• SFA Star Charts (<a href=\"https://observe.phy.sfasu.edu/SFAStarCharts/SFAStarChartFAQ.html\">observe.phy.sfasu.edu</a>)<br/>\n• Positions of Solar System Objects are calculated from data provided by the USNO (<a href=\"https://www.usno.navy.mil/USNO/astronomical-applications\">usno.navy.mil</a>)<br/>\n• Spherical coverage data obtained from <a href=\"https://www2.research.att.com/~njas/coverings\">research.att.com</a></p>\n<h2>Image Credits</h2>\n<p>Celestial images in this app are provided courtesy of the following sources:</p>\n<p>• Hubble Space Telescope images: NASA, ESA, and the Space Telescope Science Institute (<a href=\"https://hubblesite.org/\">hubblesite.org</a>)<br/>\n• Planet images: NASA/JPL-Caltech, NASA/Johns Hopkins APL/Carnegie (MESSENGER), NASA/Johns Hopkins APL/SwRI (New Horizons)<br/>\n• Moon image: NASA/GSFC/Arizona State University (Lunar Reconnaissance Orbiter)<br/>\n• Star field images: ESO Digitized Sky Survey 2 (<a href=\"https://archive.eso.org/dss/dss\">archive.eso.org/dss</a>), CC BY 4.0<br/>\n• Constellation charts: IAU and Sky &amp; Telescope (Roger Sinnott &amp; Rick Fienberg), CC BY 4.0<br/>\n• Additional deep-sky object images: Gemini Observatory/NOIRLab/NSF/AURA (<a href=\"https://noirlab.edu/\">noirlab.edu</a>)<br/>\n• M31 image: Peter Kennett (<a href=\"https://commons.wikimedia.org/wiki/File:M31(Kennett).jpg\">Wikimedia Commons</a>)<br/>\n• Sagittarius A* image: EHT Collaboration (<a href=\"https://www.eso.org/public/images/eso2208-eht-mwa/\">eso.org</a>), CC BY 4.0<br/>\n• Cygnus X-1 illustration: NASA/CXC/M.Weiss (<a href=\"https://chandra.harvard.edu/photo/2011/cygx1/\">chandra.harvard.edu</a>)</p>\n    "
 
 [source_snapshot.app."help.xml".fr]
@@ -4213,6 +4893,25 @@ help_search = "\n<h2>Search</h2>\n<p>Tap the <b>magnifier</b> button (bottom) to
 help_time_travel = "\n<h2>Time Travel</h2>\n<p>Time Travel lets you see the sky at any moment from the year 1600 to 3000. Tap the <b>clock</b> button (bottom).</p>\n<br/>\n<p>Pick a popular event (eclipses, meteor-shower peaks, the next full or new moon, planet conjunctions,\nthe Apollo 11 landing, and more) from the event list, set your own moment with the <b>Set date</b>\nand <b>Set time</b> buttons, or tap \\\"Start from now\\\" if you simply want to go forwards or backwards\nfrom the current moment.</p>\n<p>Once in Time Travel mode, the date is shown on screen and playback controls let you move through time:</p>\n<p>• Tap <b>▶▶</b> (faster) or <b>◀◀</b> (slower) to step the playback speed forward or backward through time<br/>\n• Tap <b>❚❚</b> to pause<br/>\n• Tap <b>Now</b> to jump back to the present</p>\n<p>Some things you can use it for:</p>\n<p>• <i>What can I see just after sunset tonight?</i><br/>\n• <i>When is the next good chance to spot Mercury?</i><br/>\n• <i>What did the sky look like the night I was born?</i></p>\n<p>Accuracy decreases for dates far from the present, mainly due to the gravitational influence of Jupiter.</p>\n    "
 help_troubleshooting = "\n<h2>Troubleshooting</h2>\n<h3>The map doesn\\'t move</h3>\n<p>• Check you\\'re in Auto Mode (not Manual)<br/>\n• Check the Diagnostics page (<b>Settings → Diagnostics</b>) to confirm your device has a compass and accelerometer<br/>\n• Try the figure-8 calibration gesture: wave your phone slowly in a large, smooth figure-8 shape</p>\n<h3>The map is pointing the wrong way or is inaccurate</h3>\n<p>Sky Map needs three things to show the correct sky: the direction your phone is facing, your location, and the current time. If the map looks wrong, one of these is likely off.</p>\n<p>• <b>Compass (most common cause):</b> This is a hardware issue with your phone — not a Sky Map bug. The figure-8 calibration gesture asks your phone to reset its compass sensor internally, but <i>a calibrated compass is not necessarily an accurate one</i>. If you\\'re near a metal object, car dashboard, or magnetic phone case the map can still be off even after calibrating. Move to an open area and repeat the figure-8 gesture.<br/>\n• <b>Location:</b> Grant location permission via <b>App Settings → Permissions</b>. Check the Diagnostics page (<b>Settings → Diagnostics</b>) to confirm your coordinates. A telltale symptom of missing location is Polaris appearing directly overhead.<br/>\n• <b>Time:</b> Less common, but an incorrect time zone shifts the whole sky. Check the Diagnostics page (<b>Settings → Diagnostics</b>) to confirm your device\\'s time and time zone are correct.</p>\n<h3>The map is jittery</h3>\n<p>\n• If your phone has no gyroscope, turn on <b>Use legacy sensors</b> in sensor settings<br/>\n• Adjust <b>Sensor Speed</b> and <b>Damping</b> under <b>Settings → Sensor Settings (experts)</b>\n(shown when <b>Use legacy sensors</b> is on)</p>\n<p>For full troubleshooting details see the online <a href=\"https://ts.stardroid.app\">troubleshooting</a> guide.</p>\n<p>If you\\'re still stuck, email us at <a href=\"mailto:skymapdevs@gmail.com\">skymapdevs@gmail.com</a> — a screenshot of your Diagnostics page is very helpful.</p>\n    "
 
+[source_snapshot.app."help.xml".pt]
+help_calibrate = "\n    <h2>Calibrate</h2>\n    From time to time you should calibrate your phone\\'s compass – this page shows you how. Sky Map will\n    also warn you if your compass requires calibration.\n    <blockquote><b>IMPORTANT:</b> A calibrated compass does NOT mean an <b>accurate</b> compass.\n    All calibration does is reset the compass internally. It can still be inaccurate due to nearby\n    magnetic interference or simply bad hardware. Almost all accuracy issues are due to the\n    phone\\'s hardware and are <b>nothing to do with Sky Map</b>. All Sky Map does is report to\n    you what the phone is reporting to it.</blockquote>\n    <br/>\n    <p>See the troubleshooting section below for more help.</p>\n    "
+help_diagnostics = "\n    <h2>Diagnostics</h2>\n    <p>This page lists various data about your phone and Sky Map that can be useful for debugging issues. Find it under <b>Settings → Diagnostics</b>.</p>\n    <br/>\n    <p>When reporting a problem, tap the share button at the top of the page to email these details to us at <a href=\"mailto:skymapdevs@gmail.com\">skymapdevs@gmail.com</a>. You can read and edit the report before sending it.</p>\n    "
+help_gallery = "\n<h2>Gallery</h2>\n<p>The Gallery contains a curated collection of beautiful images of the night sky, including some\n from the Hubble Space Telescope.</p>\n <br/>\n<p>Browse thumbnails by scrolling, and tap one to see details.\nUse the <b>Find</b> button to locate that object in the sky.</p>\n    "
+help_hardware = "\n<h2>Hardware Requirements</h2>\n<p>Not all devices can fully support Sky Map!</p>\n <br/>\n <p>At the very least you need a phone with:</p>\n<p>• A magnetic field sensor (aka a Compass) — to tell which direction you\\'re facing<br/>\n• An accelerometer — to tell how high up in the sky you\\'re looking</p>\n<p>Ideally also:</p>\n<p>• A gyroscope — this will smooth out the motion and make it less jerky</p>\n<blockquote><b>Phone compasses are notoriously unreliable.</b>\nIf the sky map looks wrong, it is almost always a hardware issue with your phone\\'s compass — not a bug in Sky Map.\nSky Map reads exactly what your phone\\'s sensor reports; it has no way to automatically correct a bad or biased reading.\nSee Troubleshooting below.</blockquote>\n<h3>How do I know which sensors my phone has?</h3>\n<p>Open <b>Settings → Diagnostics</b> — any sensors your phone doesn\\'t have will be marked absent. You will also have been informed\nduring the tutorial.</p>\n<h3>What if my device is missing required sensors?</h3>\n<p>Sky Map will fall back into manual mode. You can still explore the sky, but without the sensors there\nis no way any app can show you your direction.</p>\n    "
+help_home_link = "\n<p><a href=\"https://stardroid.app\">https://stardroid.app</a></p>\n    "
+help_info_cards = "\n<h2>Info Cards</h2>\n<p>Tap a labeled celestial object on the sky map to bring up an info card — a panel with a photo and details about that object.\nInfo cards are available for hundreds of objects including stars, planets, the Moon, notable deep-sky objects, and constellations.</p>\n<br/>\n<p>Each card shows:</p>\n<p>• A photograph or chart of the object<br/>\n• A short description and a fun fact<br/>\n• Scientific data such as distance, size, and object type</p>\n<p>Tap the image inside the card to view it fullscreen. Dismiss the card by tapping outside it or pressing <b>Back</b>.</p>\n<blockquote>Not all objects have info cards, but we\\'re adding more all the time.</blockquote>\n    "
+help_intro = "\n<h2>Introduction and Quick Start</h2>\n<p>Hold your phone up and look through it like a window into space. Sky Map uses your phone\\'s sensors\n to track where you\\'re looking and update the star map in real time.</p>\n<blockquote>Not all phones are capable of running Sky Map! See the hardware requirements section below.</blockquote>\n<h3>If this is your first time:</h3>\n<p>1. Allow location access when prompted — Sky Map needs your approximate location to draw the right sky for where you are.<br/>\n2. Point your phone at the sky in any direction.<br/>\n3. The map will move to match where you\\'re looking.</p>\n    "
+help_layers = "\n<h2>Layers</h2>\n<p>Sky Map organizes what it shows into layers, each of which can be toggled on or off independently\nvia the layer buttons on the left-hand side. Long press, or tap the <b>Layers</b> button near the\nbottom, to bring up toggles for more layers.</p>\n<br/>\n<p>Current layers include:<br/>\n• <b>Stars:</b> The brightest stars, with labels for notable ones<br/>\n• <b>Constellations:</b> Constellation outlines and names<br/>\n• <b>Deep-sky objects:</b> Galaxies, nebulae, star clusters, and other remarkable objects<br/>\n• <b>Solar system:</b> The Sun, Moon, and planets, displayed as images<br/>\n• <b>Meteor showers:</b> The radiant points of the annual meteor showers<br/>\n• <b>Celestial grid:</b> The right-ascension / declination coordinate grid<br/>\n• <b>Ecliptic:</b> The Sun\\'s annual path through the sky, which the Moon and planets roughly follow<br/>\n• <b>Horizon:</b> The horizon line and cardinal direction labels (N, S, E, W)<br/>\n• <b>Sky gradient:</b> The daytime sky glow and twilight coloring near the horizon</p>\n<blockquote>The meteor shower radiants only show on the dates when the meteor showers are happening.\n</blockquote>\n<br/>\n<p><b>How big the planets are drawn</b></p>\n<p>Tap the arrow beside <b>Solar system</b> in the Layers sheet to choose how the Sun, Moon and\nplanets are sized:</p>\n<p>• <b>Glyphs</b> (the default): big enough to see at any zoom, and sized by how big each body\nactually <i>is</i> rather than how big it looks from here — a model of the solar system rather\nthan a view through a telescope. Saturn and its rings are the widest thing of all, then the Sun,\nthen Jupiter, down to Pluto. The differences are squeezed to fit the screen: the Sun is really 586\ntimes Pluto\\'s width, not seven. The Moon is the exception, drawn the same size as the Sun,\nbecause that is how the two look from here.<br/>\n• <b>True scale:</b> every body at its real size in the sky. The Sun and Moon are about half a\ndegree across — roughly a pencil eraser held at arm\\'s length — and the planets are specks until\nyou zoom right in. Zoom all the way and Jupiter shows its belts, Saturn\\'s rings separate from the\nplanet, and an eclipse lines up exactly as it does in the sky.<br/>\n• <b>Steady:</b> holds each body at a fixed size on the screen as you zoom, switching to the real\nsize once you are zoomed in far enough for it to be the larger of the two.</p>\n<blockquote>The two modes tell you different things. <b>Glyphs</b> says Jupiter is a giant and\nPluto is tiny. <b>True scale</b> says the Sun and Moon look almost exactly the same size from\nEarth — which is why a total solar eclipse works at all, and you can watch it happen.</blockquote>\n<blockquote>Sky Map shows the geometric horizon — a perfectly flat, unobstructed view.\nObjects just above it may still be hidden by buildings, hills, or trees in practice.</blockquote>\n    "
+help_location = "\n<h2>Setting Your Location</h2>\n<p>Sky Map needs your approximate location to draw the correct sky. By default it uses your device\\'s location\nservices (mobile network or GPS).</p>\n<br/>\n<p>If location access is unavailable or you\\'d rather set it manually, tap the <b>Enter Location Manually</b> button\nand enter a <b>place name</b> or a <b>latitude and longitude</b> in degrees.</p>\n<blockquote>Internet is required to decode location place names.</blockquote>\n<p>If you\\'ve previously denied Sky Map location permission, you may need to re-enable it in your\ndevice\\'s <b>App Settings → Permissions</b>.</p>\n<blockquote>If you don\\'t grant it access, Sky Map will assume you are at (0, 90) — the North Pole!</blockquote>\n    "
+help_misc = "\n        <h1>Miscellaneous and Troubleshooting</h1>\n    "
+help_navigating = "\n<h2>Navigating the Sky</h2>\nTap the screen to bring up the controls and the head-up display (top right).\n<h3>Automatic Mode</h3>\n<p>In Auto Mode (the default), Sky Map uses your phone\\'s compass, accelerometer, and gyro\n sensors to show whatever is in\nthe direction your phone is pointing. Just move your phone around and the map follows.</p>\n<p>Use a two finger pinch to zoom in and out.</p>\n<h3>Manual Mode</h3>\n<p>With the controls visible, tap the <b>hand</b> button (bottom right) to switch to Manual Mode. In this mode you can:</p>\n<p>• Drag the map with one finger to pan around.<br/>\n• Pinch to zoom in or out.<br/>\n• Rotate with two fingers to change orientation.<br/>\n• Double tap the screen to toggle whether the horizon is kept horizontal as you drag.</p>\n<p>Tap the <b>compass</b> button (bottom right) to switch back to Auto Mode.</p>\n    "
+help_night_vision = "\n<h2>Night Vision Mode</h2>\n<p>If you\\'re outside doing real observing, Night Vision mode helps preserve your dark-adapted eyesight. Toggle it with the <b>Night Mode</b> button\nat the bottom.</p>\n<br/>\n<p>In Night Vision mode, Sky Map switches the display to deep red tones and dims the screen.\nThe <b>Auto screen dimming</b> option in <b>Settings</b> gives you additional control over how dark the screen gets.</p>\n    "
+help_other = "\n        <h1>Other functions</h1>\n        <p>Other functions can be found under the overflow menu (…) at the bottom right.</p>\n    "
+help_pointer_mode = "\n<h2>Telescope Users — Pointer Mode</h2>\n<p>Under <b>Settings → Sensor Settings</b>, change the <b>View Direction</b> to <b>Pointer Mode</b>. In this mode, Sky Map shows what the <i>long edge</i> of the phone is pointing at, rather than what the screen is facing.</p>\n<p>This lets you mount your phone along the side of a telescope tube so the screen is perpendicular to the tube while the map still tracks what the telescope is aimed at.</p>\n    "
+help_search = "\n<h2>Search</h2>\n<p>Tap the <b>magnifier</b> button (bottom) to search for anything in the sky.</p>\n<br/>\n<p>You can search for:</p>\n<p>• <b>Stars</b> — by name, e.g. \\\"Sirius\\\", \\\"Betelgeuse\\\", \\\"Polaris\\\"<br/>\n• <b>Planets</b> — e.g. \\\"Mars\\\", \\\"Saturn\\\"<br/>\n• <b>Constellations</b> — e.g. \\\"Orion\\\", \\\"Cassiopeia\\\"<br/>\n• <b>Deep-sky objects</b> — e.g. \\\"M31\\\", \\\"Andromeda Galaxy\\\", \\\"Pleiades\\\"<br/>\n• <b>Coordinates</b> — right ascension and declination, e.g. \\\"5h 55m, 7° 24\\'\\\" (you can use an \\'o\\' for a degree symbol)</p>\n<p><b>In Auto Mode:</b> after selecting a result, Sky Map shows a targeting circle and a directional arrow. Follow the arrow by rotating your phone — the circle changes color as the object comes into your field of view. Tap <b>Cancel</b> (or press Back) to exit search.</p>\n<p><b>In Manual Mode:</b> the map simply jumps to center on the object.</p>\n<blockquote>You can search for objects that Sky Map doesn\\'t show such as Europa, one of Jupiter\\'s moons.\nIn this case search will lead you to the parent object (Jupiter).</blockquote>\n    "
+help_time_travel = "\n<h2>Time Travel</h2>\n<p>Time Travel lets you see the sky at any moment from the year 1600 to 3000. Tap the <b>clock</b> button (bottom).</p>\n<br/>\n<p>Pick a popular event (eclipses, meteor-shower peaks, the next full or new moon, planet conjunctions,\nthe Apollo 11 landing, and more) from the event list, set your own moment with the <b>Set date</b>\nand <b>Set time</b> buttons, or tap \\\"Start from now\\\" if you simply want to go forwards or backwards\nfrom the current moment.</p>\n<p>Once in Time Travel mode, the date is shown on screen and playback controls let you move through time:</p>\n<p>• Tap <b>▶▶</b> (faster) or <b>◀◀</b> (slower) to step the playback speed forward or backward through time<br/>\n• Tap <b>❚❚</b> to pause<br/>\n• Tap <b>Now</b> to jump back to the present</p>\n<p>Some things you can use it for:</p>\n<p>• <i>What can I see just after sunset tonight?</i><br/>\n• <i>When is the next good chance to spot Mercury?</i><br/>\n• <i>What did the sky look like the night I was born?</i></p>\n<p>Accuracy decreases for dates far from the present, mainly due to the gravitational influence of Jupiter.</p>\n    "
+help_troubleshooting = "\n<h2>Troubleshooting</h2>\n<h3>The map doesn\\'t move</h3>\n<p>• Check you\\'re in Auto Mode (not Manual)<br/>\n• Check the Diagnostics page (<b>Settings → Diagnostics</b>) to confirm your device has a compass and accelerometer<br/>\n• Try the figure-8 calibration gesture: wave your phone slowly in a large, smooth figure-8 shape</p>\n<h3>The map is pointing the wrong way or is inaccurate</h3>\n<p>Sky Map needs three things to show the correct sky: the direction your phone is facing, your location, and the current time. If the map looks wrong, one of these is likely off.</p>\n<p>• <b>Compass (most common cause):</b> This is a hardware issue with your phone — not a Sky Map bug. The figure-8 calibration gesture asks your phone to reset its compass sensor internally, but <i>a calibrated compass is not necessarily an accurate one</i>. If you\\'re near a metal object, car dashboard, or magnetic phone case the map can still be off even after calibrating. Move to an open area and repeat the figure-8 gesture.<br/>\n• <b>Location:</b> Grant location permission via <b>App Settings → Permissions</b>. Check the Diagnostics page (<b>Settings → Diagnostics</b>) to confirm your coordinates. A telltale symptom of missing location is Polaris appearing directly overhead.<br/>\n• <b>Time:</b> Less common, but an incorrect time zone shifts the whole sky. Check the Diagnostics page (<b>Settings → Diagnostics</b>) to confirm your device\\'s time and time zone are correct.</p>\n<h3>The map is jittery</h3>\n<p>\n• If your phone has no gyroscope, turn on <b>Use legacy sensors</b> in sensor settings<br/>\n• Adjust <b>Sensor Speed</b> and <b>Damping</b> under <b>Settings → Sensor Settings (experts)</b>\n(shown when <b>Use legacy sensors</b> is on)</p>\n<p>For full troubleshooting details see the online <a href=\"https://ts.stardroid.app\">troubleshooting</a> guide.</p>\n<p>If you\\'re still stuck, email us at <a href=\"mailto:skymapdevs@gmail.com\">skymapdevs@gmail.com</a> — a screenshot of your Diagnostics page is very helpful.</p>\n    "
+
 [source_snapshot.app."whatsnew.xml".fr]
 beta_user_help_text = "\n<h3>Beta users!</h3>\n<p>Your help is needed more than ever in reporting bugs and crashes at <a href=\"mailto:skymapdevs@gmail.com\">skymapdevs@gmail.com</a>\nor <a href=\"https://github.com/sky-map-team/stardroid/issues\">GitHub</a>. It is not fully feature complete yet and (sorry) is not fully\ntranslated. If you\nwant to leave the beta and revert to classic sky map please visit\n<a href=\"https://play.google.com/apps/testing/com.google.android.stardroid\">the testing page</a>.</p>\n    "
 whats_new_content = "\n<h2>A New Foundation</h2>\n<p>Sky Map has been rebuilt from the ground up with a modern rendering and data pipeline and a refreshed UI.</p>\n<h2>A Sharper Solar System</h2>\n<p>The Sun, Moon and planets have been redrawn from their original NASA imagery, and pictures across the map are now smoothed and blended so they hold up at every zoom level. Planets can also be drawn at their true angular size — pick glyphs or true scale in the Layers sheet.</p>\n<h2>A Moon That Matches the Sky</h2>\n<p>The Moon\\'s phase is now worked out from its real geometry instead of chosen from eight fixed pictures, so the line between light and dark falls where you actually see it.</p>\n<h2>Better Sun and Moon Positions</h2>\n<p>More accurate Sun and Moon calculations put both bodies where they belong and fix the timing of eclipses.</p>\n<h2>Smoother Panning</h2>\n<p>Fixed a stutter that showed up when flinging or dragging the map on high refresh-rate screens — panning, momentum and the search zoom now track your display\\'s actual frame rate instead of a fixed rate.</p>\n<h2>A Fresher Welcome</h2>\n<p>The background on the very first screen you see has been refreshed with a new in-app capture of the sky.</p>\n<h2>Sky Notifications</h2>\n<p>Turn on optional notifications for meteor shower peaks and a one-time evening digest of what\\'s visible tonight, right from Settings.</p>\n<h2>Lunar Eclipses</h2>\n<p>The map now renders the Moon\\'s copper-red tint during a lunar eclipse, and the Moon\\'s info card, tonight\\'s-sky digest and countdown widget all know when one is coming — with an optional reminder notification.</p>\n<h2>Clearer Permissions</h2>\n<p>The Terms screen and Help now spell out exactly what each device permission is used for, and the app no longer requests the advertising-ID permission it didn\\'t need.</p>\n    "
@@ -4233,6 +4932,11 @@ beta_user_help_text = "\n<h3>Beta users!</h3>\n<p>Your help is needed more than 
 whats_new_content = "\n<h2>A New Foundation</h2>\n<p>Sky Map has been rebuilt from the ground up with a modern rendering and data pipeline and a refreshed UI.</p>\n<h2>A Sharper Solar System</h2>\n<p>The Sun, Moon and planets have been redrawn from their original NASA imagery, and pictures across the map are now smoothed and blended so they hold up at every zoom level. Planets can also be drawn at their true angular size — pick glyphs or true scale in the Layers sheet.</p>\n<h2>A Moon That Matches the Sky</h2>\n<p>The Moon\\'s phase is now worked out from its real geometry instead of chosen from eight fixed pictures, so the line between light and dark falls where you actually see it.</p>\n<h2>Better Sun and Moon Positions</h2>\n<p>More accurate Sun and Moon calculations put both bodies where they belong and fix the timing of eclipses.</p>\n<h2>Smoother Panning</h2>\n<p>Fixed a stutter that showed up when flinging or dragging the map on high refresh-rate screens — panning, momentum and the search zoom now track your display\\'s actual frame rate instead of a fixed rate.</p>\n<h2>A Fresher Welcome</h2>\n<p>The background on the very first screen you see has been refreshed with a new in-app capture of the sky.</p>\n<h2>Sky Notifications</h2>\n<p>Turn on optional notifications for meteor shower peaks and a one-time evening digest of what\\'s visible tonight, right from Settings.</p>\n<h2>Lunar Eclipses</h2>\n<p>The map now renders the Moon\\'s copper-red tint during a lunar eclipse, and the Moon\\'s info card, tonight\\'s-sky digest and countdown widget all know when one is coming — with an optional reminder notification.</p>\n<h2>Clearer Permissions</h2>\n<p>The Terms screen and Help now spell out exactly what each device permission is used for, and the app no longer requests the advertising-ID permission it didn\\'t need.</p>\n<h2>Bonjour!</h2>\n<p>Sky Map now speaks French, the first translation in the v2 rewrite.</p>\n    "
 whats_new_support = "\n<h1>Support Sky Map</h1>\n<p>Sky Map is free and open source. If you find it useful, please consider supporting development at our <a href=\"https://github.com/sky-map-team/stardroid/?tab=readme-ov-file#support-the-project\">GitHub</a> page or <a href=\"https://buymeacoffee.com/skymapdevs?utm_source=skymap&amp;utm_medium=app&amp;utm_campaign=whatsnew\">buying us a coffee</a>.</p>\n    "
 
+[source_snapshot.app."whatsnew.xml".pt]
+beta_user_help_text = "\n<h3>Beta users!</h3>\n<p>Your help is needed more than ever in reporting bugs and crashes at <a href=\"mailto:skymapdevs@gmail.com\">skymapdevs@gmail.com</a>\nor <a href=\"https://github.com/sky-map-team/stardroid/issues\">GitHub</a>. It is not fully feature complete yet and (sorry) is not fully\ntranslated. If you\nwant to leave the beta and revert to classic sky map please visit\n<a href=\"https://play.google.com/apps/testing/com.google.android.stardroid\">the testing page</a>.</p>\n    "
+whats_new_content = "\n<h2>A New Foundation</h2>\n<p>Sky Map has been rebuilt from the ground up with a modern rendering and data pipeline and a refreshed UI.</p>\n<h2>A Sharper Solar System</h2>\n<p>The Sun, Moon and planets have been redrawn from their original NASA imagery, and pictures across the map are now smoothed and blended so they hold up at every zoom level. Planets can also be drawn at their true angular size — pick glyphs or true scale in the Layers sheet.</p>\n<h2>A Moon That Matches the Sky</h2>\n<p>The Moon\\'s phase is now worked out from its real geometry instead of chosen from eight fixed pictures, so the line between light and dark falls where you actually see it.</p>\n<h2>Better Sun and Moon Positions</h2>\n<p>More accurate Sun and Moon calculations put both bodies where they belong and fix the timing of eclipses.</p>\n<h2>Smoother Panning</h2>\n<p>Fixed a stutter that showed up when flinging or dragging the map on high refresh-rate screens — panning, momentum and the search zoom now track your display\\'s actual frame rate instead of a fixed rate.</p>\n<h2>A Fresher Welcome</h2>\n<p>The background on the very first screen you see has been refreshed with a new in-app capture of the sky.</p>\n<h2>Sky Notifications</h2>\n<p>Turn on optional notifications for meteor shower peaks and a one-time evening digest of what\\'s visible tonight, right from Settings.</p>\n<h2>Lunar Eclipses</h2>\n<p>The map now renders the Moon\\'s copper-red tint during a lunar eclipse, and the Moon\\'s info card, tonight\\'s-sky digest and countdown widget all know when one is coming — with an optional reminder notification.</p>\n<h2>Clearer Permissions</h2>\n<p>The Terms screen and Help now spell out exactly what each device permission is used for, and the app no longer requests the advertising-ID permission it didn\\'t need.</p>\n<h2>Bonjour!</h2>\n<p>Sky Map now speaks French, the first translation in the v2 rewrite.</p>\n    "
+whats_new_support = "\n<h1>Support Sky Map</h1>\n<p>Sky Map is free and open source. If you find it useful, please consider supporting development at our <a href=\"https://github.com/sky-map-team/stardroid/?tab=readme-ov-file#support-the-project\">GitHub</a> page or <a href=\"https://buymeacoffee.com/skymapdevs?utm_source=skymap&amp;utm_medium=app&amp;utm_campaign=whatsnew\">buying us a coffee</a>.</p>\n    "
+
 [source_snapshot.app."eula.xml".fr]
 eula_agree_line = "\n<br/>\n<p><i>By clicking \\\"Accept,\\\" you agree to these terms.</i></p>\n    "
 eula_text = "\n<h1>Welcome to Sky Map</h1>\n<p>To get you stargazing, please review this quick summary of our terms.</p>\n<h2>Privacy</h2>\n<p><b>We don\\'t know who you are.</b> We collect anonymous usage data to help us fix bugs and improve features. You can opt out of this at any time in the Settings menu.</p>\n<h2>Safety &amp; Liability</h2>\n<p>Sky Map is provided \\\"as is.\\\" Use it safely—we aren\\'t responsible for any damages or injuries (like neck ache!) resulting from your use of the app.</p>\n<h2>Open Source</h2>\n<p>Sky Map is a labor of love. You are free to use our source code, but please respect our branding and logos.</p>\n<p>Read the full legal document here: <a href=\"https://github.com/sky-map-team/stardroid/blob/master/TERMS.md\">Full Terms and Privacy Policy</a></p>\n    "
@@ -4249,6 +4953,11 @@ eula_text = "\n<h1>Welcome to Sky Map</h1>\n<p>To get you stargazing, please rev
 permissions_notice = "\n<h2>Permissions</h2>\n<p><b>Sky Map has no required permissions.</b> Every permission below is optional — you may refuse\nany of them and still use the app. Sky Map never asks at startup: each permission is requested only\nwhen you first use the feature that needs it, and you can grant or withdraw each one separately at\nany time under <b>Settings → Apps → Sky Map → Permissions</b> on your device.</p>\n<h3>Location — optional</h3>\n<p><b>What is accessed:</b> your approximate location.</p>\n<p><b>Why:</b> which stars are above you depends on where you are, so Sky Map uses your approximate\nlocation to draw the correct sky.</p>\n<p><b>If you refuse:</b> you can type in a place name or coordinates instead, and the whole app\nkeeps working.</p>\n<blockquote>Your location is used on your device to draw the sky. It is never sent to us.</blockquote>\n<h3>Camera — optional</h3>\n<p><b>What is accessed:</b> the camera preview.</p>\n<p><b>Why:</b> through-camera mode draws the sky on top of the live camera view, so you can match\nthe map against what you are really looking at.</p>\n<p><b>If you refuse:</b> every other mode works as normal.</p>\n<blockquote>Sky Map never records the camera view or sends it to us. It is drawn on screen and\nthen discarded — unless you share a picture: choosing an AR layout from the share sheet saves that\none image on your device and hands it to the app you pick. Nothing is shared until you ask for\nit.</blockquote>\n<h3>Notifications — optional</h3>\n<p><b>What is accessed:</b> permission to show notifications.</p>\n<p><b>Why:</b> to let you know about meteor-shower peaks and what is worth seeing tonight, if you\nask for those.</p>\n<p><b>If you refuse:</b> nothing else changes — these notifications stay off until you turn\nthem on.</p>\n    "
 
 [source_snapshot.app."eula.xml".es]
+eula_agree_line = "\n<br/>\n<p><i>By clicking \\\"Accept,\\\" you agree to these terms.</i></p>\n    "
+eula_text = "\n<h1>Welcome to Sky Map</h1>\n<p>To get you stargazing, please review this quick summary of our terms.</p>\n<h2>Privacy</h2>\n<p><b>We don\\'t know who you are.</b> We collect anonymous usage data to help us fix bugs and improve features. You can opt out of this at any time in the Settings menu.</p>\n<h2>Safety &amp; Liability</h2>\n<p>Sky Map is provided \\\"as is.\\\" Use it safely—we aren\\'t responsible for any damages or injuries (like neck ache!) resulting from your use of the app.</p>\n<h2>Open Source</h2>\n<p>Sky Map is a labor of love. You are free to use our source code, but please respect our branding and logos.</p>\n<p>Read the full legal document here: <a href=\"https://github.com/sky-map-team/stardroid/blob/master/TERMS.md\">Full Terms and Privacy Policy</a></p>\n    "
+permissions_notice = "\n<h2>Permissions</h2>\n<p><b>Sky Map has no required permissions.</b> Every permission below is optional — you may refuse\nany of them and still use the app. Sky Map never asks at startup: each permission is requested only\nwhen you first use the feature that needs it, and you can grant or withdraw each one separately at\nany time under <b>Settings → Apps → Sky Map → Permissions</b> on your device.</p>\n<h3>Location — optional</h3>\n<p><b>What is accessed:</b> your approximate location.</p>\n<p><b>Why:</b> which stars are above you depends on where you are, so Sky Map uses your approximate\nlocation to draw the correct sky.</p>\n<p><b>If you refuse:</b> you can type in a place name or coordinates instead, and the whole app\nkeeps working.</p>\n<blockquote>Your location is used on your device to draw the sky. It is never sent to us.</blockquote>\n<h3>Camera — optional</h3>\n<p><b>What is accessed:</b> the camera preview.</p>\n<p><b>Why:</b> through-camera mode draws the sky on top of the live camera view, so you can match\nthe map against what you are really looking at.</p>\n<p><b>If you refuse:</b> every other mode works as normal.</p>\n<blockquote>Sky Map never records the camera view or sends it to us. It is drawn on screen and\nthen discarded — unless you share a picture: choosing an AR layout from the share sheet saves that\none image on your device and hands it to the app you pick. Nothing is shared until you ask for\nit.</blockquote>\n<h3>Notifications — optional</h3>\n<p><b>What is accessed:</b> permission to show notifications.</p>\n<p><b>Why:</b> to let you know about meteor-shower peaks and what is worth seeing tonight, if you\nask for those.</p>\n<p><b>If you refuse:</b> nothing else changes — these notifications stay off until you turn\nthem on.</p>\n    "
+
+[source_snapshot.app."eula.xml".pt]
 eula_agree_line = "\n<br/>\n<p><i>By clicking \\\"Accept,\\\" you agree to these terms.</i></p>\n    "
 eula_text = "\n<h1>Welcome to Sky Map</h1>\n<p>To get you stargazing, please review this quick summary of our terms.</p>\n<h2>Privacy</h2>\n<p><b>We don\\'t know who you are.</b> We collect anonymous usage data to help us fix bugs and improve features. You can opt out of this at any time in the Settings menu.</p>\n<h2>Safety &amp; Liability</h2>\n<p>Sky Map is provided \\\"as is.\\\" Use it safely—we aren\\'t responsible for any damages or injuries (like neck ache!) resulting from your use of the app.</p>\n<h2>Open Source</h2>\n<p>Sky Map is a labor of love. You are free to use our source code, but please respect our branding and logos.</p>\n<p>Read the full legal document here: <a href=\"https://github.com/sky-map-team/stardroid/blob/master/TERMS.md\">Full Terms and Privacy Policy</a></p>\n    "
 permissions_notice = "\n<h2>Permissions</h2>\n<p><b>Sky Map has no required permissions.</b> Every permission below is optional — you may refuse\nany of them and still use the app. Sky Map never asks at startup: each permission is requested only\nwhen you first use the feature that needs it, and you can grant or withdraw each one separately at\nany time under <b>Settings → Apps → Sky Map → Permissions</b> on your device.</p>\n<h3>Location — optional</h3>\n<p><b>What is accessed:</b> your approximate location.</p>\n<p><b>Why:</b> which stars are above you depends on where you are, so Sky Map uses your approximate\nlocation to draw the correct sky.</p>\n<p><b>If you refuse:</b> you can type in a place name or coordinates instead, and the whole app\nkeeps working.</p>\n<blockquote>Your location is used on your device to draw the sky. It is never sent to us.</blockquote>\n<h3>Camera — optional</h3>\n<p><b>What is accessed:</b> the camera preview.</p>\n<p><b>Why:</b> through-camera mode draws the sky on top of the live camera view, so you can match\nthe map against what you are really looking at.</p>\n<p><b>If you refuse:</b> every other mode works as normal.</p>\n<blockquote>Sky Map never records the camera view or sends it to us. It is drawn on screen and\nthen discarded — unless you share a picture: choosing an AR layout from the share sheet saves that\none image on your device and hands it to the app you pick. Nothing is shared until you ask for\nit.</blockquote>\n<h3>Notifications — optional</h3>\n<p><b>What is accessed:</b> permission to show notifications.</p>\n<p><b>Why:</b> to let you know about meteor-shower peaks and what is worth seeing tonight, if you\nask for those.</p>\n<p><b>If you refuse:</b> nothing else changes — these notifications stay off until you turn\nthem on.</p>\n    "
@@ -7548,9 +8257,92 @@ permissions_notice = "\n<h2>Permissions</h2>\n<p><b>Sky Map has no required perm
 "star/n25:fun_fact" = "R Coronae Borealis is sometimes called a \"reverse nova\" - instead of flaring up, it unpredictably fades by up to 9 magnitudes when it puffs out clouds of carbon soot that hide it from view!"
 
 [source_snapshot.info-cards.info_cards.pt]
+"dso/m100:description" = "Messier 100 is a grand design spiral galaxy in Coma Berenices and one of the brightest in the Virgo Cluster."
+"dso/m100:distance" = "55 million light-years"
+"dso/m100:fun_fact" = "Seven supernovae have been seen in M100, the most recent in 2020 - few galaxies have put on such a show!"
+"dso/m100:size" = "166,000 light-years across"
+"dso/m102:description" = "Messier 102 is the great unsolved entry in Messier's catalogue - an object recorded in 1781 that has never been identified with certainty."
+"dso/m102:fun_fact" = "Messier published no coordinates for M102, and his colleague Mechain later retracted the discovery entirely, claiming it was just M101 recorded twice by mistake! NASA identifies it with the Spindle Galaxy, NGC 5866."
+"dso/m105:description" = "Messier 105 is an elliptical galaxy in Leo, the largest elliptical in the Messier catalogue outside the Virgo Cluster."
+"dso/m105:distance" = "37 million light-years"
+"dso/m105:fun_fact" = "M105 shares a colossal ring of hydrogen gas with its neighbour NGC 3384, spanning some 650,000 light-years!"
+"dso/m105:size" = "67,000 light-years across"
+"dso/m108:description" = "Messier 108 is a barred spiral galaxy in Ursa Major, nicknamed the Surfboard Galaxy."
+"dso/m108:distance" = "46 million light-years"
+"dso/m108:fun_fact" = "M108 is tilted almost edge-on to us, which is how it earned the name Surfboard - and it holds around 290 globular clusters!"
+"dso/m18:description" = "Messier 18 is a small open cluster of young stars in Sagittarius, also known as the Black Swan Cluster."
+"dso/m18:distance" = "4,200 light-years"
+"dso/m18:fun_fact" = "M18 is one of the very few Messier objects the Hubble Space Telescope has never photographed!"
+"dso/m18:size" = "26 light-years across"
+"dso/m58:description" = "Messier 58 is a barred spiral galaxy in Virgo and one of the brightest members of the Virgo Cluster."
+"dso/m58:distance" = "68 million light-years"
+"dso/m58:fun_fact" = "A supermassive black hole of about 70 million solar masses sits at M58's heart, ringed by a tight band of newborn stars!"
+"dso/m58:size" = "133,000 light-years across"
+"dso/m59:description" = "Messier 59 is an elliptical galaxy in Virgo, discovered in 1779 during the search for a passing comet."
+"dso/m59:distance" = "50 million light-years"
+"dso/m59:fun_fact" = "The core of M59 spins backwards compared with the rest of the galaxy, and around 2,200 globular clusters swarm around it!"
+"dso/m59:mass" = "270 million solar masses (central black hole)"
+"dso/m60:description" = "Messier 60 is a giant elliptical galaxy in Virgo, the third-brightest giant elliptical in the Virgo Cluster."
+"dso/m60:distance" = "57 million light-years"
+"dso/m60:fun_fact" = "M60's central black hole weighs about 4.5 billion Suns - one of the largest ever found!"
+"dso/m61:description" = "Messier 61 is a barred spiral galaxy in Virgo and one of the largest galaxies in the Virgo Cluster."
+"dso/m61:distance" = "52 million light-years"
+"dso/m61:fun_fact" = "Eight supernovae have been spotted in M61 - one of the highest tallies of any galaxy! Messier himself first mistook it for a comet."
+"dso/m61:size" = "92,000 light-years across"
+"dso/m72:description" = "Messier 72 is a faint, remote globular cluster in Aquarius, discovered by Pierre Mechain in 1780."
+"dso/m72:distance" = "55,000 light-years"
+"dso/m72:fun_fact" = "M72 packs about 168,000 Suns' worth of stars into a ball roughly 9.5 billion years old, including 43 variable stars!"
+"dso/m73:description" = "Messier 73 is a small group of four stars in Aquarius that only appears to be a cluster."
+"dso/m73:distance" = "1,000 to 2,300 light-years (the individual stars)"
+"dso/m73:fun_fact" = "Astronomers argued for decades over whether M73 was a real cluster - in 2002 it was settled: the four stars lie at wildly different distances and merely line up by chance!"
+"dso/m75:description" = "Messier 75 is a distant, richly concentrated globular cluster in Sagittarius."
+"dso/m75:distance" = "68,000 light-years"
+"dso/m75:fun_fact" = "M75 is one of the most densely packed globulars known, and is thought to be debris from a dwarf galaxy the Milky Way swallowed long ago!"
+"dso/m75:size" = "134 light-years across"
+"dso/m84:description" = "Messier 84 is a giant elliptical galaxy in the crowded heart of the Virgo Cluster."
+"dso/m84:distance" = "55 million light-years"
+"dso/m84:fun_fact" = "M84 fires two jets of matter out of its core, driven by a black hole of about 1.5 billion solar masses!"
+"dso/m85:description" = "Messier 85 is a lenticular galaxy on the outskirts of the Virgo Cluster, in Coma Berenices."
+"dso/m85:distance" = "60 million light-years"
+"dso/m85:fun_fact" = "Ripples and shells in M85's outer regions are the wreckage of a galaxy merger 4 to 7 billion years ago!"
+"dso/m85:size" = "120,600 light-years across"
+"dso/m86:description" = "Messier 86 is a large elliptical galaxy in the Virgo Cluster, forming a striking pair with nearby M84."
+"dso/m86:distance" = "52 million light-years"
+"dso/m86:fun_fact" = "M86 is rushing toward us at 244 km/s - the fastest approach of any Messier object! Its passage through the cluster leaves a long trail of stripped hot gas."
+"dso/m88:description" = "Messier 88 is an elegant spiral galaxy in Coma Berenices, one of fifteen Messier objects in the Virgo Cluster."
+"dso/m88:distance" = "59 million light-years"
+"dso/m88:fun_fact" = "M88 is plunging toward the centre of the Virgo Cluster and will arrive in 200 to 300 million years, its outer gas being stripped away as it falls!"
+"dso/m88:size" = "131,000 light-years across"
+"dso/m89:description" = "Messier 89 is an elliptical galaxy in Virgo, discovered by Charles Messier in 1781."
+"dso/m89:distance" = "50 million light-years"
+"dso/m89:fun_fact" = "M89 may be very nearly a perfect sphere - unusual for an elliptical galaxy, which are normally noticeably squashed!"
+"dso/m90:description" = "Messier 90 is a large spiral galaxy in Virgo, and the textbook example of an \"anemic\" galaxy."
+"dso/m90:distance" = "59 million light-years"
+"dso/m90:fun_fact" = "M90 has had its star-forming gas stripped away by its plunge through the Virgo Cluster, leaving tails of glowing gas up to 260,000 light-years long!"
+"dso/m90:size" = "132,000 light-years across"
+"dso/m91:description" = "Messier 91 is a barred spiral galaxy in Coma Berenices and the faintest object in the Messier catalogue."
+"dso/m91:distance" = "63 million light-years"
+"dso/m91:fun_fact" = "M91 was lost for nearly 200 years! Messier recorded its position using the wrong reference galaxy, and it was only re-identified in 1969 by an amateur astronomer."
+"dso/m91:size" = "105,500 light-years across"
+"dso/m95:description" = "Messier 95 is a barred spiral galaxy in Leo, part of the M96 Group along with M96 and M105."
+"dso/m95:distance" = "33 million light-years"
+"dso/m95:fun_fact" = "A ring of furious star formation about 70,000 light-years wide circles M95's core, and a supernova flared there in 2012!"
+"dso/m95:size" = "80,000 light-years across"
+"dso/m96:description" = "Messier 96 is a spiral galaxy in Leo, the brightest member of the M96 Group of galaxies."
+"dso/m96:distance" = "31 million light-years"
+"dso/m96:fun_fact" = "M96 is roughly the same size and mass as our own Milky Way, but strikingly lopsided - its dust and gas are spread unevenly through its arms!"
+"dso/m96:size" = "78,000 light-years across"
+"dso/m98:description" = "Messier 98 is a spiral galaxy in Coma Berenices, seen nearly edge-on as part of the Virgo Cluster."
+"dso/m98:distance" = "44 million light-years"
+"dso/m98:fun_fact" = "M98 is one of the rare galaxies moving toward us rather than away, closing at about 140 km/s!"
+"dso/m99:description" = "Messier 99 is a grand design spiral galaxy in Coma Berenices, showing clear, sweeping spiral arms."
+"dso/m99:distance" = "45 million light-years"
+"dso/m99:fun_fact" = "M99 was among the very first objects recognised as spiral, sketched by Lord Rosse in 1846 - and it forms stars three times faster than similar galaxies!"
+"dso/m99:size" = "98,000 light-years across"
 "moon/ariel:search_subtext" = "Moon of Uranus"
 "moon/callisto:search_subtext" = "Moon of Jupiter"
 "moon/deimos:search_subtext" = "Moon of Mars"
+"moon/deimos:size" = "15 × 12 × 11 km"
 "moon/dione:search_subtext" = "Moon of Saturn"
 "moon/europa:search_subtext" = "Moon of Jupiter"
 "moon/ganymede:search_subtext" = "Moon of Jupiter"
@@ -7558,12 +8350,84 @@ permissions_notice = "\n<h2>Permissions</h2>\n<p><b>Sky Map has no required perm
 "moon/io:search_subtext" = "Moon of Jupiter"
 "moon/oberon:search_subtext" = "Moon of Uranus"
 "moon/phobos:search_subtext" = "Moon of Mars"
+"moon/phobos:size" = "27 × 22 × 18 km"
 "moon/rhea:search_subtext" = "Moon of Saturn"
 "moon/tethys:search_subtext" = "Moon of Saturn"
 "moon/titan:search_subtext" = "Moon of Saturn"
 "moon/titania:search_subtext" = "Moon of Uranus"
 "moon/triton:search_subtext" = "Moon of Neptune"
 "moon/umbriel:search_subtext" = "Moon of Uranus"
+"star/e_lyrae:description" = "Epsilon Lyrae is a multiple star system in Lyra, famous among observers as the \"Double Double\"."
+"star/e_lyrae:distance" = "160 light-years"
+"star/e_lyrae:fun_fact" = "Sharp eyes can split Epsilon Lyrae into two stars - and a telescope splits each of those into two again! It holds at least five stars in total."
+"star/j052512+062100:description" = "Bellatrix marks the left shoulder of Orion (the Hunter). Its name is Latin for \"female warrior\"."
+"star/j052512+062100:distance" = "250 light-years"
+"star/j052512+062100:fun_fact" = "Bellatrix is only about 28 million years old, and will burn through its hydrogen in another 7 million years - a brief life for a star!"
+"star/j052512+062100:mass" = "8.4 solar masses"
+"star/j052512+062100:size" = "6.2 solar radii"
+"star/j054048-015624:description" = "Alnitak is the easternmost star of Orion's Belt, sitting beside the Flame and Horsehead Nebulae."
+"star/j054048-015624:distance" = "1,260 light-years"
+"star/j054048-015624:fun_fact" = "Alnitak is the brightest O-class star in the entire night sky! In about a million years it will swell wider than Jupiter's orbit and explode as a supernova."
+"star/j054048-015624:mass" = "33 solar masses"
+"star/j054048-015624:size" = "20 solar radii"
+"star/j055924+445700:description" = "Menkalinan is the second-brightest star in Auriga (the Charioteer). Its name means \"shoulder of the rein-holder\" in Arabic."
+"star/j055924+445700:distance" = "79 light-years"
+"star/j055924+445700:fun_fact" = "Menkalinan is really two nearly identical stars eclipsing each other every 47.5 hours - and in about a million years it will become the brightest star in our night sky!"
+"star/j055924+445700:mass" = "2.4 solar masses"
+"star/j055924+445700:size" = "2.8 solar radii"
+"star/j062248-175736:description" = "Mirzam (Beta Canis Majoris) rises just before Sirius, which earned it a name meaning \"The Announcer\" in Arabic."
+"star/j062248-175736:distance" = "490 light-years"
+"star/j062248-175736:fun_fact" = "About four million years ago Mirzam was the brightest star in the sky, blazing at magnitude -3.65 - far brighter than Sirius appears today!"
+"star/j062248-175736:mass" = "13 solar masses"
+"star/j062248-175736:size" = "8.4 solar radii"
+"star/j070824-262324:description" = "Wezen is a yellow-white supergiant in Canis Major (the Greater Dog). Its name comes from the Arabic for \"weight\"."
+"star/j070824-262324:distance" = "1,600 light-years"
+"star/j070824-262324:fun_fact" = "If Wezen sat as close to us as Sirius does, it would shine as brightly as a half-full Moon!"
+"star/j070824-262324:mass" = "14 solar masses"
+"star/j070824-262324:size" = "188 solar radii"
+"star/j082248-593036:description" = "Avior (Epsilon Carinae) is a bright double star in Carina and one of the four stars of the False Cross."
+"star/j082248-593036:distance" = "610 light-years"
+"star/j082248-593036:fun_fact" = "The False Cross is so often mistaken for the Southern Cross that it has caused real navigation errors! Avior's name was invented by British almanac makers in the 1930s."
+"star/j082248-593036:mass" = "10.5 solar masses"
+"star/j082248-593036:size" = "151 solar radii"
+"star/j091312-694312:description" = "Miaplacidus is the second-brightest star in Carina (the Keel) and marks a corner of the Diamond Cross asterism."
+"star/j091312-694312:distance" = "113 light-years"
+"star/j091312-694312:fun_fact" = "Miaplacidus has swollen into a giant after using up the hydrogen in its core, yet it still spins at a brisk 146 km/s!"
+"star/j091312-694312:mass" = "3.9 solar masses"
+"star/j091312-694312:size" = "5.8 solar radii"
+"star/j123112-570636:description" = "Gacrux (Gamma Crucis) is the topmost star of the Southern Cross and the nearest red giant star to Earth."
+"star/j123112-570636:distance" = "89 light-years"
+"star/j123112-570636:fun_fact" = "Gacrux is the closest M-type red giant to us, and its name is simply a navigator's contraction of \"Gamma Crucis\" coined in the 1940s!"
+"star/j123112-570636:mass" = "1.5 solar masses"
+"star/j123112-570636:size" = "73 solar radii"
+"star/j124800-594124:description" = "Mimosa (Beta Crucis) is the second-brightest star in the Southern Cross and one of the hottest stars visible to the naked eye."
+"star/j124800-594124:distance" = "280 light-years"
+"star/j124800-594124:fun_fact" = "Mimosa is a pulsating Beta Cephei variable - it swells and shrinks in three overlapping rhythms, each lasting only about four hours!"
+"star/j124800-594124:mass" = "14.5 solar masses"
+"star/j124800-594124:size" = "8 solar radii"
+"star/j143936-605024:description" = "Toliman (Alpha Centauri B) is the orange companion in the closest star system to the Sun, orbiting the brighter Rigil Kentaurus."
+"star/j143936-605024:distance" = "4.34 light-years"
+"star/j143936-605024:fun_fact" = "Toliman got its official name only in 2018. It is slightly smaller and cooler than the Sun, and together with its two siblings makes up our nearest stellar neighbours!"
+"star/j143936-605024:mass" = "0.91 solar masses"
+"star/j143936-605024:size" = "0.86 solar radii"
+"star/j164836-690148:description" = "Atria is the brightest star of Triangulum Australe (the Southern Triangle), an orange giant far larger than the Sun."
+"star/j164836-690148:distance" = "391 light-years"
+"star/j164836-690148:fun_fact" = "Atria is 139 times the Sun's diameter - placed at the centre of the Solar System it would nearly reach the orbit of Venus!"
+"star/j164836-690148:mass" = "6.4 solar masses"
+"star/j164836-690148:size" = "139 solar radii"
+"star/j173712-430000:description" = "Sargas is a bright giant in the tail of Scorpius (the Scorpion), bearing a traditional name of Sumerian origin."
+"star/j173712-430000:distance" = "329 light-years"
+"star/j173712-430000:fun_fact" = "Sargas spins so fast that it bulges outward - it is a third wider across the equator than pole to pole, and may have formed when two stars merged!"
+"star/j173712-430000:mass" = "3.1 solar masses"
+"star/j173712-430000:size" = "35 solar radii"
+"star/j202548-564348:description" = "Peacock is the brightest star in Pavo (the Peacock), a hot blue-white star of the far southern sky."
+"star/j202548-564348:distance" = "179 light-years"
+"star/j202548-564348:fun_fact" = "Peacock was named in the 1930s because the RAF insisted every star in its new Air Almanac have a name - and this one had none!"
+"star/j202548-564348:mass" = "5.9 solar masses"
+"star/j202548-564348:size" = "4.8 solar radii"
+"star/n25:description" = "R Coronae Borealis is a rare yellow supergiant in Corona Borealis, and the prototype of the variable-star class named after it."
+"star/n25:distance" = "4,560 light-years"
+"star/n25:fun_fact" = "R Coronae Borealis is sometimes called a \"reverse nova\" - instead of flaring up, it unpredictably fades by up to 9 magnitudes when it puffs out clouds of carbon soot that hide it from view!"
 
 [source_snapshot.info-cards.info_cards.ru]
 "moon/ariel:search_subtext" = "Moon of Uranus"
@@ -10162,12 +11026,33 @@ permissions_notice = "\n<h2>Permissions</h2>\n<p><b>Sky Map has no required perm
 "star/vindemiatrix" = "Vindemiatrix"
 
 [source_snapshot.object-names.names.pt]
+"constellation/antlia" = "Antlia"
+"constellation/apus" = "Apus"
+"constellation/ara" = "Ara"
+"constellation/caelum" = "Caelum"
+"constellation/camelopardalis" = "Camelopardalis"
+"constellation/cassiopeia" = "Cassiopeia"
+"constellation/coma_berenices" = "Coma Berenices"
+"constellation/dorado" = "Dorado"
+"constellation/mensa" = "Mensa"
+"constellation/norma" = "Norma"
+"constellation/serpens_caput" = "Serpens Caput"
+"constellation/serpens_cauda" = "Serpens Cauda"
+"constellation/sextans" = "Sextans"
+"constellation/telescopium" = "Telescopium"
+"constellation/triangulum" = "Triangulum"
+"constellation/triangulum_australe" = "Triangulum Australe"
+"constellation/volans" = "Volans"
+"constellation/vulpecula" = "Vulpecula"
+"dso/centaurus_a" = "Centaurus A"
+"dso/hdf" = "Hubble Deep Field"
 "dso/m102" = "Spindle Galaxy"
 "dso/m11" = "Wild Duck Cluster"
 "dso/m20" = "Trifid Nebula"
 "dso/m24" = "Sagittarius Star Cloud"
 "dso/m27" = "Dumbbell Nebula"
 "dso/m33" = "Triangulum Galaxy"
+"dso/m40" = "Winnecke 4"
 "dso/m43" = "De Mairan's Nebula"
 "dso/m63" = "Sunflower Galaxy"
 "dso/m64" = "Black Eye Galaxy"
@@ -10178,6 +11063,346 @@ permissions_notice = "\n<h2>Permissions</h2>\n<p><b>Sky Map has no required perm
 "dso/m82" = "Cigar Galaxy"
 "dso/m83" = "Southern Pinwheel"
 "dso/m97" = "Owl Nebula"
+"dso/n47_tucanae" = "47 Tucanae"
+"dso/sgr_a_star" = "Sgr A*"
+"dso/t_crb" = "T Coronae Borealis"
+"dso/willman_1" = "Willman 1"
+"moon/ariel" = "Ariel"
+"moon/deimos" = "Deimos"
+"moon/dione" = "Dione"
+"moon/europa" = "Europa"
+"moon/io" = "Io"
+"moon/oberon" = "Oberon"
+"moon/umbriel" = "Umbriel"
+"star/achernar" = "Achernar"
+"star/acrux" = "Acrux"
+"star/adhara" = "Adhara"
+"star/alcyone" = "Alcyone"
+"star/alderamin" = "Alderamin"
+"star/algenib" = "Algenib"
+"star/algieba" = "Algieba"
+"star/algol" = "Algol"
+"star/alhena" = "Alhena"
+"star/alioth" = "Alioth"
+"star/alkaid" = "Alkaid"
+"star/alnair" = "Alnair"
+"star/alnath" = "Alnath"
+"star/alnilam" = "Alnilam"
+"star/alphard" = "Alphard"
+"star/alpheratz" = "Alpheratz"
+"star/altair" = "Altair"
+"star/ankaa" = "Ankaa"
+"star/antares" = "Antares"
+"star/arcturus" = "Arcturus"
+"star/arneb" = "Arneb"
+"star/betelgeuse" = "Betelgeuse"
+"star/canopus" = "Canopus"
+"star/capella" = "Capella"
+"star/caph" = "Caph"
+"star/castor" = "Castor"
+"star/deneb" = "Deneb"
+"star/denebola" = "Denebola"
+"star/diphda" = "Diphda"
+"star/dubhe" = "Dubhe"
+"star/e_lyrae" = "ε Lyrae"
+"star/enif" = "Enif"
+"star/etamin" = "Etamin"
+"star/fomalhaut" = "Fomalhaut"
+"star/hadar" = "Hadar"
+"star/hamal" = "Hamal"
+"star/izar" = "Izar"
+"star/j003712+535400" = "Fulu"
+"star/j004912+574912" = "Achird"
+"star/j005624+591048" = "Castula"
+"star/j010824-551500" = "Wurren"
+"star/j011348+073448" = "Revati"
+"star/j012212+453148" = "Adhil"
+"star/j012548+601424" = "Ruchbah"
+"star/j013112+152100" = "Alpherg"
+"star/j013636+412436" = "Titawin"
+"star/j013748+483748" = "Nembus"
+"star/j014536+090936" = "Torcular"
+"star/j015136-101948" = "Baten Kaitos"
+"star/j015248+293448" = "Mothallah"
+"star/j015436+204836" = "Sheratan"
+"star/j015436+634012" = "Segin"
+"star/j020148+024536" = "Alrescha"
+"star/j020336+421948" = "Almach"
+"star/j024312+031424" = "Kaffaljidhma"
+"star/j024800+291500" = "Lilii Borea"
+"star/j024948+271536" = "Bharani"
+"star/j025024+555400" = "Miram"
+"star/j025100-210000" = "Angetenar"
+"star/j025624-085400" = "Azha"
+"star/j025812-401800" = "Acamar"
+"star/j030936+445136" = "Misam"
+"star/j031124+194348" = "Botein"
+"star/j031200-285924" = "Dalim"
+"star/j031536-084912" = "Zibal"
+"star/j033300-092736" = "Ran"
+"star/j034312-094612" = "Rana"
+"star/j034424+321724" = "Atik"
+"star/j034500+240636" = "Electra"
+"star/j034500+241724" = "Celaeno"
+"star/j034500+242812" = "Taygeta"
+"star/j034536+242212" = "Maia"
+"star/j034612+235700" = "Merope"
+"star/j034612+243300" = "Asterope"
+"star/j034912+240300" = "Atlas"
+"star/j034912+240824" = "Pleione"
+"star/j035812-133036" = "Zaurak"
+"star/j035848+354724" = "Menkib"
+"star/j041200-065024" = "Beid"
+"star/j041500-073824" = "Keid"
+"star/j041948+153748" = "Prima Hyadum"
+"star/j042248+173224" = "Secunda Hyadum"
+"star/j042400-340112" = "Beemim"
+"star/j042848+155212" = "Chamukuy"
+"star/j042848+191048" = "Ain"
+"star/j043524-303336" = "Theemin"
+"star/j043824-141800" = "Sceptrum"
+"star/j044948+065736" = "Tabit"
+"star/j045700+331012" = "Hassaleh"
+"star/j050148+434912" = "Almaaz"
+"star/j050224+410448" = "Saclateni"
+"star/j050636+411348" = "Haedus"
+"star/j050748-050524" = "Cursa"
+"star/j052512+062100" = "Bellatrix"
+"star/j052812-204536" = "Nihal"
+"star/j053148-001800" = "Mintaka"
+"star/j053524+095548" = "Meissa"
+"star/j053524-055436" = "Hatysa"
+"star/j053748+210824" = "Tianguan"
+"star/j053936-340412" = "Phact"
+"star/j054048-015624" = "Alnitak"
+"star/j055100-354612" = "Wazn"
+"star/j055924+445700" = "Menkalinan"
+"star/j060000+371236" = "Mahasim"
+"star/j060748-371500" = "Elkurud"
+"star/j061500+223036" = "Propus"
+"star/j062024-300336" = "Furud"
+"star/j062248+223036" = "Tejat"
+"star/j062248-175736" = "Mirzam"
+"star/j064348+250748" = "Mebsuta"
+"star/j064500+125400" = "Alzirr"
+"star/j070148-275548" = "Nganurganity"
+"star/j070336-153748" = "Muliphein"
+"star/j070412+203412" = "Mekbuda"
+"star/j070824-262324" = "Wezen"
+"star/j072024+215848" = "Wasat"
+"star/j072400-291800" = "Aludra"
+"star/j072700+081724" = "Gomeisa"
+"star/j073900+343448" = "Jishui"
+"star/j074912-245136" = "Azmidi"
+"star/j080336-400000" = "Naos"
+"star/j080748-241800" = "Tureis"
+"star/j081200+173900" = "Tegmine"
+"star/j081648+091124" = "Tarf"
+"star/j082024+240112" = "Piautos"
+"star/j082248+431124" = "Alsciaukat"
+"star/j082248-593036" = "Avior"
+"star/j083000+604312" = "Muscida"
+"star/j083900+032024" = "Minchir"
+"star/j084312+212812" = "Asellus Borealis"
+"star/j084424+180900" = "Asellus Australis"
+"star/j084500-544236" = "Alsephina"
+"star/j084648+062512" = "Ashlesha"
+"star/j085248+281948" = "Copernicus"
+"star/j085812+115136" = "Acubens"
+"star/j085924+480224" = "Talitha"
+"star/j090336+470936" = "Alkaphrah"
+"star/j090748-432548" = "Suhail"
+"star/j090936+220300" = "Nahn"
+"star/j091312-694312" = "Miaplacidus"
+"star/j091648-591648" = "Aspidiske"
+"star/j092212-550036" = "Markeb"
+"star/j092848+453600" = "Intercrus"
+"star/j093148+225812" = "Alterf"
+"star/j093936-010824" = "Ukdah"
+"star/j094124+095324" = "Subra"
+"star/j095136-145100" = "Zhang"
+"star/j095248+260036" = "Rasalas"
+"star/j095436-190036" = "Felis"
+"star/j101648+232512" = "Adhafera"
+"star/j101648+425436" = "Tania Borealis"
+"star/j102212+413000" = "Tania Australis"
+"star/j105324+341312" = "Praecipua"
+"star/j105924+402548" = "Chalawan"
+"star/j110000-181800" = "Alkes"
+"star/j111424+152548" = "Chertan"
+"star/j111424+203112" = "Zosma"
+"star/j111800+313224" = "Alula Australis"
+"star/j111836+330524" = "Alula Borealis"
+"star/j113112+691948" = "Giausar"
+"star/j114612+474648" = "Taiyangshou"
+"star/j115024+014612" = "Zavijava"
+"star/j120524+765436" = "Tonatiuh"
+"star/j120824-244348" = "Alchiba"
+"star/j121500-584500" = "Imai"
+"star/j121536+570148" = "Megrez"
+"star/j121536-173224" = "Gienah"
+"star/j121948-004012" = "Zaniah"
+"star/j122136-602400" = "Ginan"
+"star/j123000-163112" = "Algorab"
+"star/j123112-570636" = "Gacrux"
+"star/j123336+412136" = "Chara"
+"star/j123412-232400" = "Kraz"
+"star/j124124-012700" = "Porrima"
+"star/j124500+452624" = "La Superba"
+"star/j124724+664724" = "Tianyi"
+"star/j124800-594124" = "Mimosa"
+"star/j125512+652624" = "Taiyi"
+"star/j125548+032400" = "Minelauva"
+"star/j125548+381912" = "Cor Caroli"
+"star/j131012+173148" = "Diadem"
+"star/j132400+545548" = "Mizar"
+"star/j132512+545924" = "Alcor"
+"star/j133448-003600" = "Heze"
+"star/j135436+182400" = "Muphrid"
+"star/j140412+642248" = "Thuban"
+"star/j140636-362212" = "Menkent"
+"star/j141236-101612" = "Kang"
+"star/j141612+460524" = "Xuange"
+"star/j141612-060000" = "Syrma"
+"star/j141912-132212" = "Khambalia"
+"star/j142812-021348" = "Elgafar"
+"star/j143148+381836" = "Seginus"
+"star/j143936-605024" = "Toliman"
+"star/j144912+460712" = "Merga"
+"star/j145100-160224" = "Zubenelgenubi"
+"star/j150148+402324" = "Nekkar"
+"star/j150412-251648" = "Brachium"
+"star/j151648-092248" = "Zubeneschamali"
+"star/j152100+714948" = "Pherkad"
+"star/j152436+372248" = "Alkalurops"
+"star/j152512+585812" = "Edasich"
+"star/j152736+290636" = "Nusakan"
+"star/j153524-144724" = "Zubenelhakrabi"
+"star/j154836+180824" = "Gudja"
+"star/j155700-291236" = "Iklil"
+"star/j155848-260636" = "Fang"
+"star/j160036-223712" = "Dschubba"
+"star/j160524-194836" = "Acrab"
+"star/j160748+170300" = "Marsic"
+"star/j161200-192736" = "Jabbah"
+"star/j161424-034124" = "Yed Prior"
+"star/j161836-044124" = "Yed Posterior"
+"star/j162100-253524" = "Alniyat"
+"star/j162400+613036" = "Athebyne"
+"star/j162512+140148" = "Cujam"
+"star/j163000+212924" = "Kornephoros"
+"star/j163112+015848" = "Marfik"
+"star/j163600-281312" = "Paikauhale"
+"star/j164836-690148" = "Atria"
+"star/j165024-341724" = "Larawag"
+"star/j165136-380300" = "Xamidimura"
+"star/j165212-380112" = "Pipirima"
+"star/j170524+542812" = "Alrakis"
+"star/j170900+654236" = "Aldhibah"
+"star/j171012-154348" = "Sabik"
+"star/j171424+142324" = "Rasalgethi"
+"star/j171500+245024" = "Sarin"
+"star/j171536-263524" = "Guniibuu"
+"star/j173036+260636" = "Maasym"
+"star/j173036+521800" = "Rastaban"
+"star/j173036-371800" = "Lesath"
+"star/j173224+863524" = "Yildun"
+"star/j173712-430000" = "Sargas"
+"star/j174200+720900" = "Dziban"
+"star/j174312+043412" = "Cebalrai"
+"star/j174348+534800" = "Alruba"
+"star/j174424-514948" = "Cervantes"
+"star/j174948-370224" = "Fuyue"
+"star/j175324+565212" = "Grumium"
+"star/j180600-302512" = "Alnasl"
+"star/j181348-210336" = "Polis"
+"star/j182100-294948" = "Kaus Media"
+"star/j182548+653336" = "Fafnir"
+"star/j182812-252512" = "Kaus Borealis"
+"star/j184348+363336" = "Xihe"
+"star/j184948+332136" = "Sheliak"
+"star/j185400-224424" = "Ainalrami"
+"star/j185624+041200" = "Alya"
+"star/j185848+324124" = "Sulafat"
+"star/j190224-295248" = "Ascella"
+"star/j190524+135136" = "Okab"
+"star/j190936-210112" = "Albaldah"
+"star/j190936-375400" = "Meridiana"
+"star/j191236+673936" = "Altais"
+"star/j191348+390900" = "Aladfar"
+"star/j192248-442736" = "Arkab Prior"
+"star/j192324-444800" = "Arkab Posterior"
+"star/j192400-403712" = "Rukbat"
+"star/j192848+244012" = "Anser"
+"star/j193036+275736" = "Albireo"
+"star/j193224+694012" = "Alsafi"
+"star/j194012+180036" = "Sham"
+"star/j194500+450748" = "Fawaris"
+"star/j194612+103636" = "Tarazed"
+"star/j195400+082736" = "Libertas"
+"star/j195512+062436" = "Alshain"
+"star/j195548-261800" = "Terebellum"
+"star/j201800-123224" = "Algedi"
+"star/j202024-124536" = "Alshat"
+"star/j202100-144648" = "Dabih"
+"star/j202212+401536" = "Sadr"
+"star/j202548-564348" = "Peacock"
+"star/j203300+111800" = "Aldulfin"
+"star/j203748+143600" = "Rotanev"
+"star/j203936+155436" = "Sualocin"
+"star/j204612+335812" = "Aljanah"
+"star/j204724-093000" = "Albali"
+"star/j205812+105024" = "Musica"
+"star/j210900-885736" = "Polaris Australis"
+"star/j211536+051500" = "Kitalpha"
+"star/j212848+703336" = "Alfirk"
+"star/j213148-053412" = "Sadalsuud"
+"star/j213748-075100" = "Bunda"
+"star/j214012-163936" = "Nashira"
+"star/j214200+511124" = "Azelfafage"
+"star/j214648-160748" = "Deneb Algedi"
+"star/j215400-372136" = "Aldhanab"
+"star/j220336+643748" = "Kurhah"
+"star/j220600-001912" = "Sadalmelik"
+"star/j221012+061200" = "Biham"
+"star/j221648-074648" = "Ancha"
+"star/j222136-012324" = "Sadachbia"
+"star/j223748-041348" = "Situla"
+"star/j224124+104948" = "Homam"
+"star/j224236-465248" = "Tiaki"
+"star/j224312+301312" = "Matar"
+"star/j224948+243600" = "Sadalbari"
+"star/j225436-154912" = "Skat"
+"star/j225736+204612" = "Helvetios"
+"star/j230336+034912" = "Fumalsamakah"
+"star/j232024+234424" = "Salm"
+"star/j232512+232400" = "Alkarab"
+"star/j233112+391424" = "Veritate"
+"star/j233936+773748" = "Errai"
+"star/kaus_australis" = "Kaus Australis"
+"star/kochab" = "Kochab"
+"star/markab" = "Markab"
+"star/menkar" = "Menkar"
+"star/merak" = "Merak"
+"star/mirach" = "Mirach"
+"star/mirphak" = "Mirphak"
+"star/nunki" = "Nunki"
+"star/phad" = "Phad"
+"star/polaris" = "Polaris"
+"star/pollux" = "Pollux"
+"star/rasalhague" = "Rasalhague"
+"star/regulus" = "Regulus"
+"star/rigel" = "Rigel"
+"star/rigil_kentaurus_a" = "Alpha Centauri"
+"star/saiph" = "Saiph"
+"star/scheat" = "Scheat"
+"star/shaula" = "Shaula"
+"star/shedir" = "Shedir"
+"star/sirius" = "Sirius"
+"star/spica" = "Spica"
+"star/unukalhai" = "Unukalhai"
+"star/vega" = "Vega"
+"star/vindemiatrix" = "Vindemiatrix"
 
 [source_snapshot.object-names.names.ru]
 "dso/m102" = "Spindle Galaxy"
@@ -10364,6 +11589,35 @@ star = "Star"
 star_cloud = "Star cloud"
 
 [source_snapshot.object-types."types.json".es]
+asterism = "Asterism"
+black_hole = "Black hole"
+cluster = "Star cluster"
+"cluster.globular" = "Globular cluster"
+"cluster.open" = "Open cluster"
+constellation = "Constellation"
+dwarf_planet = "Dwarf planet"
+galaxy = "Galaxy"
+"galaxy.dwarf" = "Dwarf galaxy"
+"galaxy.elliptical" = "Elliptical galaxy"
+"galaxy.irregular" = "Irregular galaxy"
+"galaxy.lenticular" = "Lenticular galaxy"
+"galaxy.radio" = "Radio galaxy"
+"galaxy.spiral" = "Spiral galaxy"
+meteor_shower = "Meteor shower"
+moon = "Moon"
+nebula = "Nebula"
+"nebula.diffuse" = "Diffuse nebula"
+"nebula.emission" = "Emission nebula"
+"nebula.planetary" = "Planetary nebula"
+"nebula.supernova_remnant" = "Supernova remnant"
+other = "Deep-sky object"
+planet = "Planet"
+star = "Star"
+"star.double" = "Double star"
+"star.nova" = "Recurrent nova"
+star_cloud = "Star cloud"
+
+[source_snapshot.object-types."types.json".pt]
 asterism = "Asterism"
 black_hole = "Black hole"
 cluster = "Star cluster"
