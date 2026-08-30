@@ -138,5 +138,6 @@ Questions about this Agreement: **skymapdevs@gmail.com**
 
 ---
 
-*Sky Map is developed by Penterakt LLC. Source code is licensed under the GNU General Public
-License v3 or later; branding and visual assets are separately licensed. See `LICENSE.md`.*
+*Sky Map is developed by Penterakt LLC. The `stardroid-v2/` rewrite is licensed under the GNU
+General Public License v3 or later; the legacy `stardroid-v1/` app remains under the Apache
+License 2.0; branding and visual assets are separately licensed. See `LICENSE.md`.*
