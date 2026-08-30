@@ -1,11 +1,159 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
-  Carried over from v1 by tools/salvage-translations/salvage.py.
-  Only strings whose English source is identical between v1 and v2 appear here;
-  everything else is translated by `tm`. Safe to hand-edit thereafter.
--->
+<?xml version='1.0' encoding='UTF-8'?>
 <resources>
+    <!-- tm:omitted name="app_name" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="splash_version" reason="identical_to_source" -->
+    <!-- tm:omitted name="splash_dismiss" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="north_pole" reason="identical_to_source" -->
+    <!-- tm:omitted name="south_pole" reason="identical_to_source" -->
+    <!-- tm:omitted name="zenith" reason="identical_to_source" -->
+    <!-- tm:omitted name="nadir" reason="identical_to_source" -->
+    <!-- tm:omitted name="north" reason="identical_to_source" -->
+    <!-- tm:omitted name="south" reason="identical_to_source" -->
+    <!-- tm:omitted name="east" reason="identical_to_source" -->
+    <!-- tm:omitted name="west" reason="identical_to_source" -->
+    <!-- tm:omitted name="ecliptic" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="sun" reason="identical_to_source" -->
+    <!-- tm:omitted name="moon" reason="identical_to_source" -->
+    <!-- tm:omitted name="mercury" reason="identical_to_source" -->
+    <!-- tm:omitted name="venus" reason="identical_to_source" -->
+    <!-- tm:omitted name="earth" reason="identical_to_source" -->
+    <!-- tm:omitted name="mars" reason="identical_to_source" -->
+    <!-- tm:omitted name="jupiter" reason="identical_to_source" -->
+    <!-- tm:omitted name="saturn" reason="identical_to_source" -->
+    <!-- tm:omitted name="uranus" reason="identical_to_source" -->
+    <!-- tm:omitted name="neptune" reason="identical_to_source" -->
+    <!-- tm:omitted name="pluto" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="search_button" reason="identical_to_source" -->
+    <!-- tm:omitted name="search_label" reason="identical_to_source" -->
+    <!-- tm:omitted name="search_hint" reason="identical_to_source" -->
+    <!-- tm:omitted name="search_coordinates_hint" reason="identical_to_source" -->
+    <!-- tm:omitted name="search_go" reason="identical_to_source" -->
+    <!-- tm:omitted name="search_cancel" reason="identical_to_source" -->
+    <!-- tm:omitted name="search_no_results" reason="identical_to_source" -->
+    <!-- tm:omitted name="search_target_looking_message" reason="identical_to_source" -->
+    <!-- tm:omitted name="search_target_found_message" reason="identical_to_source" -->
     <string name="search_overlay_prompt">Point your phone towards the arrow</string>
+
+    <!-- tm:omitted name="layer_stars" reason="identical_to_source" -->
+    <!-- tm:omitted name="layer_constellations" reason="identical_to_source" -->
+    <!-- tm:omitted name="layer_deep_sky" reason="identical_to_source" -->
+    <!-- tm:omitted name="layer_solar_system" reason="identical_to_source" -->
+    <!-- tm:omitted name="layer_meteor_showers" reason="identical_to_source" -->
+    <!-- tm:omitted name="layer_satellites" reason="identical_to_source" -->
+    <!-- tm:omitted name="channel_passes_name" reason="identical_to_source" -->
+    <!-- tm:omitted name="channel_passes_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="notif_pass_title" reason="identical_to_source" -->
+    <!-- tm:omitted name="notif_pass_text" reason="identical_to_source" -->
+    <!-- tm:omitted name="channel_eclipses_name" reason="identical_to_source" -->
+    <!-- tm:omitted name="channel_eclipses_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="notif_eclipse_title" reason="identical_to_source" -->
+    <!-- tm:omitted name="notif_eclipse_text" reason="identical_to_source" -->
+    <!-- tm:omitted name="satellite_name_iss" reason="identical_to_source" -->
+    <!-- tm:omitted name="satellite_name_tiangong" reason="identical_to_source" -->
+    <!-- tm:omitted name="layer_param_pass_alerts" reason="identical_to_source" -->
+    <!-- tm:omitted name="layer_param_pass_alerts_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="layer_param_eclipse_alerts" reason="identical_to_source" -->
+    <!-- tm:omitted name="layer_param_eclipse_alerts_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="satellite_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="satellite_next_pass" reason="identical_to_source" -->
+    <!-- tm:omitted name="satellite_pass_when" reason="identical_to_source" -->
+    <!-- tm:omitted name="satellite_pass_magnitude" reason="identical_to_source" -->
+    <!-- tm:omitted name="satellite_pass_shadow" reason="identical_to_source" -->
+    <!-- tm:omitted name="satellite_no_pass" reason="identical_to_source" -->
+    <!-- tm:omitted name="satellite_pass_unknown" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_eclipse_title" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_no_eclipse" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_eclipse_greatest" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_eclipse_totality" reason="identical_to_source" -->
+    <!-- tm:omitted name="tonight_satellite_pass" reason="identical_to_source" -->
+    <!-- tm:omitted name="tonight_trailing_pass" reason="identical_to_source" -->
+    <!-- tm:omitted name="satellites_no_data" reason="identical_to_source" -->
+    <!-- tm:omitted name="satellites_refresh" reason="identical_to_source" -->
+    <!-- tm:omitted name="satellites_retry_soon" reason="identical_to_source" -->
+    <!-- tm:omitted name="satellites_retry_within_hour" reason="identical_to_source" -->
+    <!-- tm:omitted name="satellites_retry_hours" reason="identical_to_source" -->
+    <!-- tm:omitted name="satellites_retry_tomorrow" reason="identical_to_source" -->
+    <!-- tm:omitted name="satellites_retry_days" reason="identical_to_source" -->
+    <!-- tm:omitted name="layer_grid" reason="identical_to_source" -->
+    <!-- tm:omitted name="layer_horizon" reason="identical_to_source" -->
+    <!-- tm:omitted name="layer_ecliptic" reason="identical_to_source" -->
+    <!-- tm:omitted name="layer_sky_gradient" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="layers_sheet_title" reason="identical_to_source" -->
+    <!-- tm:omitted name="layers_group_objects" reason="identical_to_source" -->
+    <!-- tm:omitted name="layers_group_reference" reason="identical_to_source" -->
+    <!-- tm:omitted name="layers_group_display" reason="identical_to_source" -->
+    <!-- tm:omitted name="show_layers" reason="identical_to_source" -->
+    <!-- tm:omitted name="more_button" reason="identical_to_source" -->
+    <!-- tm:omitted name="night_mode" reason="identical_to_source" -->
+    <!-- tm:omitted name="switch_to_manual" reason="identical_to_source" -->
+    <!-- tm:omitted name="switch_to_auto" reason="identical_to_source" -->
+    <!-- tm:omitted name="no_sensor_warning" reason="identical_to_source" -->
+    <!-- tm:omitted name="no_sensor_warning_dismiss" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="hud_ra_label" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_dec_label" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_alt_label" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_az_label" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_fov_label" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_correction_label" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_ra_value" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_signed_degrees_value" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_azimuth_value" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_fov_value" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_fov_value_fine" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_fov_value_finest" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_correction_value" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_correction_reset" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_alignment_reset_message" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_fov_locked" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="layer_hud" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="layer_camera" reason="identical_to_source" -->
+    <!-- tm:omitted name="layer_camera_needs_sensors" reason="identical_to_source" -->
+    <!-- tm:omitted name="ar_auto_mode_snackbar" reason="identical_to_source" -->
+    <!-- tm:omitted name="ar_permission_denied" reason="identical_to_source" -->
+    <!-- tm:omitted name="ar_permission_settings_action" reason="identical_to_source" -->
+    <!-- tm:omitted name="ar_exposure_slider" reason="identical_to_source" -->
+    <!-- tm:omitted name="ar_alignment_adjusted_message" reason="identical_to_source" -->
+    <!-- tm:omitted name="ar_dimmer_slider" reason="identical_to_source" -->
+    <!-- tm:omitted name="ar_iso_slider_label" reason="identical_to_source" -->
+    <!-- tm:omitted name="ar_iso_slider" reason="identical_to_source" -->
+    <!-- tm:omitted name="ar_shutter_slider_label" reason="identical_to_source" -->
+    <!-- tm:omitted name="ar_shutter_slider" reason="identical_to_source" -->
+    <!-- tm:omitted name="share_button" reason="identical_to_source" -->
+    <!-- tm:omitted name="share_chooser_title" reason="identical_to_source" -->
+    <!-- tm:omitted name="share_invitation" reason="identical_to_source" -->
+    <!-- tm:omitted name="share_text" reason="identical_to_source" -->
+    <!-- tm:omitted name="share_store_link" reason="identical_to_source" -->
+    <!-- tm:omitted name="share_layout_overlay" reason="identical_to_source" -->
+    <!-- tm:omitted name="share_layout_side_by_side" reason="identical_to_source" -->
+    <!-- tm:omitted name="share_shutter_button" reason="identical_to_source" -->
+    <!-- tm:omitted name="share_failed_message" reason="identical_to_source" -->
+    <!-- tm:omitted name="ar_exposure_auto" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_cardinal_directions" reason="all_items_identical_to_source" -->
+
+    <!-- tm:omitted name="time_travel_button" reason="identical_to_source" -->
+    <!-- tm:omitted name="time_travel_title" reason="identical_to_source" -->
+    <!-- tm:omitted name="time_travel_visiting" reason="identical_to_source" -->
+    <!-- tm:omitted name="time_travel_pick_date" reason="identical_to_source" -->
+    <!-- tm:omitted name="time_travel_pick_time" reason="identical_to_source" -->
+    <!-- tm:omitted name="time_travel_select_event" reason="identical_to_source" -->
+    <!-- tm:omitted name="time_travel_go" reason="identical_to_source" -->
+    <!-- tm:omitted name="time_travel_from_now" reason="identical_to_source" -->
+    <!-- tm:omitted name="time_travel_ok" reason="identical_to_source" -->
+    <!-- tm:omitted name="time_travel_cancel" reason="identical_to_source" -->
+    <!-- tm:omitted name="time_travel_slower" reason="identical_to_source" -->
+    <!-- tm:omitted name="time_travel_pause" reason="identical_to_source" -->
+    <!-- tm:omitted name="time_travel_faster" reason="identical_to_source" -->
+    <!-- tm:omitted name="time_travel_return" reason="identical_to_source" -->
+
+    <!-- Time travel playback-rate labels (v1 wording). -->
     <string name="time_travel_second_speed">Travelling &gt; @ 1 sec/sec</string>
     <string name="time_travel_minute_speed">Travelling &gt; @ 1 min/sec</string>
     <string name="time_travel_10minute_speed">Travelling &gt; @ 10 min/sec</string>
@@ -18,6 +166,12 @@
     <string name="time_travel_hour_speed_back">Travelling &lt; @ 1 hour/sec</string>
     <string name="time_travel_day_speed_back">Travelling &lt; @ 1 day/sec</string>
     <string name="time_travel_week_speed_back">Travelling &lt; @ 1 week/sec</string>
+
+    <!-- tm:omitted name="time_travel_now" reason="identical_to_source" -->
+    <!-- tm:omitted name="time_travel_next_sunset" reason="identical_to_source" -->
+    <!-- tm:omitted name="time_travel_next_sunrise" reason="identical_to_source" -->
+    <!-- tm:omitted name="time_travel_next_full_moon" reason="identical_to_source" -->
+    <!-- tm:omitted name="time_travel_next_new_moon" reason="identical_to_source" -->
     <string name="time_travel_six_planet_parade_2026">Six-Planet Parade, 28 Feb 2026</string>
     <string name="time_travel_lunar_eclipse_2026">Total Lunar Eclipse, 3 Mar 2026</string>
     <string name="time_travel_lyrids_2026">Lyrids Meteor Shower, 22 Apr 2026</string>
@@ -25,10 +179,344 @@
     <string name="time_travel_mars_uranus_2026">Mars-Uranus Close Approach, 4 Jul 2026</string>
     <string name="time_travel_solar_eclipse_2026">Total Solar Eclipse, 12 Aug 2026</string>
     <string name="time_travel_perseids_2026">Perseids Meteor Shower, 12-13 Aug 2026</string>
+    <!-- tm:omitted name="time_travel_lunar_eclipse_aug_2026" reason="identical_to_source" -->
     <string name="time_travel_jupiter_occultation_2026">Lunar Occultation of Jupiter, 6 Oct 2026</string>
     <string name="time_travel_geminids_2026">Geminids Meteor Shower, 13-14 Dec 2026</string>
     <string name="time_travel_supermoon_2026">Christmas Eve Supermoon, 24 Dec 2026</string>
     <string name="time_travel_mercury_transit_2016">Mercury transit of 9 May 2016</string>
     <string name="time_travel_solar_eclipse_2024">North American Solar Eclipse of 8 Apr 2024</string>
+    <!-- tm:omitted name="time_travel_apollo_11" reason="identical_to_source" -->
+    <!-- tm:omitted name="time_travel_jupiter_saturn_2020" reason="identical_to_source" -->
+    <!-- tm:omitted name="sun_wont_set_message" reason="identical_to_source" -->
+    <string name="time_travel_start_message" translation_description="Toast message when time travel starts toward a chosen destination. %1$s is the formatted destination date and time.">Travelling through time to %1$s ...</string>
+    <!-- tm:omitted name="time_travel_close_message" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="location_button" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_management_title" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_source_auto" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_source_manual" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_source_acquiring" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_source_unset" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_source_hardware_unavailable" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_switch_to_auto" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_switch_to_manual" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_change" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_set_toast" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_long_lat" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_map_unavailable" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_map_content_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="snackbar_action_undo" reason="identical_to_source" -->
+    <!-- tm:omitted name="snackbar_action_open" reason="identical_to_source" -->
+    <!-- tm:omitted name="label_size_hint_message" reason="identical_to_source" -->
+    <!-- tm:omitted name="label_size_hint_action" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_permission_dialog_title" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_permission_dialog_message" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_permission_grant" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_permission_enter_manually" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_permission_later" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_permanently_denied_title" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_permanently_denied_message" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_open_settings" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_acquiring_title" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_acquiring_message" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_keep_waiting" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_manual_entry_title" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_place_name_hint" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_latitude_hint" reason="identical_to_source" -->
     <string name="location_longitude_hint">Longitude (e.g. −0.1)</string>
+    <!-- tm:omitted name="location_resolve_button" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_set_button" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_place_not_found" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_geocoder_offline" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_invalid_latitude" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_invalid_longitude" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_coordinate_format" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_image_credit" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_fun_fact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_size" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_mass" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_spectral_class" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_magnitude" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_rises" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_sets" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_always_above_horizon" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_always_below_horizon" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_also_known_as" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_see_also" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_find_in_sky" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_close" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_tap_to_close" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="gallery_button" reason="identical_to_source" -->
+    <!-- tm:omitted name="gallery_title" reason="identical_to_source" -->
+    <!-- tm:omitted name="gallery_back" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="settings_button" reason="identical_to_source" -->
+    <!-- tm:omitted name="settings_title" reason="identical_to_source" -->
+    <!-- tm:omitted name="settings_back" reason="identical_to_source" -->
+    <!-- tm:omitted name="settings_ok" reason="identical_to_source" -->
+    <!-- tm:omitted name="settings_cancel" reason="identical_to_source" -->
+    <!-- tm:omitted name="settings_section_controls" reason="identical_to_source" -->
+    <!-- tm:omitted name="settings_section_appearance" reason="identical_to_source" -->
+    <!-- tm:omitted name="settings_section_sensors" reason="identical_to_source" -->
+    <!-- tm:omitted name="settings_section_other" reason="identical_to_source" -->
+    <!-- tm:omitted name="enable_analytics" reason="identical_to_source" -->
+    <!-- tm:omitted name="enable_analytics_desc" reason="identical_to_source" -->
+    <!-- tm:omitted name="settings_diagnostics_summary" reason="identical_to_source" -->
+    <!-- tm:omitted name="settings_tap_to_identify" reason="identical_to_source" -->
+    <!-- tm:omitted name="settings_tap_to_identify_summary" reason="identical_to_source" -->
+    <!-- tm:omitted name="settings_tap_in_auto_mode" reason="identical_to_source" -->
+    <!-- tm:omitted name="settings_tap_in_auto_mode_summary" reason="identical_to_source" -->
+    <!-- tm:omitted name="settings_auto_level_horizon" reason="identical_to_source" -->
+    <!-- tm:omitted name="auto_level_on_toast" reason="identical_to_source" -->
+    <!-- tm:omitted name="auto_level_off_toast" reason="identical_to_source" -->
+    <!-- tm:omitted name="settings_auto_level_horizon_summary" reason="identical_to_source" -->
+    <!-- tm:omitted name="settings_font_size" reason="identical_to_source" -->
+    <!-- tm:omitted name="settings_font_size_summary" reason="identical_to_source" -->
+    <!-- tm:omitted name="settings_font_size_small" reason="identical_to_source" -->
+    <!-- tm:omitted name="settings_font_size_medium" reason="identical_to_source" -->
+    <!-- tm:omitted name="settings_font_size_large" reason="identical_to_source" -->
+    <!-- tm:omitted name="settings_font_size_extra_large" reason="identical_to_source" -->
+    <!-- tm:omitted name="settings_auto_dimness" reason="identical_to_source" -->
+    <!-- tm:omitted name="settings_auto_dimness_summary" reason="identical_to_source" -->
+    <!-- tm:omitted name="settings_auto_dimness_system" reason="identical_to_source" -->
+    <!-- tm:omitted name="settings_auto_dimness_dim" reason="identical_to_source" -->
+    <!-- tm:omitted name="settings_auto_dimness_classic" reason="identical_to_source" -->
+    <!-- tm:omitted name="settings_sky_gradient" reason="identical_to_source" -->
+    <!-- tm:omitted name="settings_sky_gradient_summary" reason="identical_to_source" -->
+    <!-- tm:omitted name="settings_disable_gyro" reason="identical_to_source" -->
+    <!-- tm:omitted name="settings_disable_gyro_summary" reason="identical_to_source" -->
+    <!-- tm:omitted name="settings_sensor_speed" reason="identical_to_source" -->
+    <!-- tm:omitted name="settings_sensor_speed_slow" reason="identical_to_source" -->
+    <!-- tm:omitted name="settings_sensor_speed_standard" reason="identical_to_source" -->
+    <!-- tm:omitted name="settings_sensor_speed_fast" reason="identical_to_source" -->
+    <!-- tm:omitted name="settings_sensor_damping" reason="identical_to_source" -->
+    <!-- tm:omitted name="settings_sensor_damping_standard" reason="identical_to_source" -->
+    <!-- tm:omitted name="settings_sensor_damping_high" reason="identical_to_source" -->
+    <!-- tm:omitted name="settings_sensor_damping_extra_high" reason="identical_to_source" -->
+    <!-- tm:omitted name="settings_sensor_damping_really_high" reason="identical_to_source" -->
+    <!-- tm:omitted name="settings_classic_sensors_only" reason="identical_to_source" -->
+    <!-- tm:omitted name="settings_reverse_magnetic_z" reason="identical_to_source" -->
+    <!-- tm:omitted name="settings_magnetic_correction" reason="identical_to_source" -->
+    <!-- tm:omitted name="settings_magnetic_correction_summary" reason="identical_to_source" -->
+    <!-- tm:omitted name="settings_view_direction" reason="identical_to_source" -->
+    <!-- tm:omitted name="settings_view_direction_summary" reason="identical_to_source" -->
+    <!-- tm:omitted name="settings_view_direction_standard" reason="identical_to_source" -->
+    <!-- tm:omitted name="settings_view_direction_rotate90" reason="identical_to_source" -->
+    <!-- tm:omitted name="settings_view_direction_telescope" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="support_email" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_button" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_title" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_share" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_share_subject" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_report_header" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_section_general" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_device" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_phone_format" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_android_version" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_sky_map_version" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_sky_map_version_format" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_section_graphics" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_gl_renderer" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_gl_version" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_gl_version_format" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_gl_limits" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_gl_limits_format" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_gl_unavailable" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_section_sensors" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_accelerometer" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_compass" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_gyroscope" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_rotation" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_rotation_matrix" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_light_level" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_sensor_absent" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_section_location_time" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_location_permission" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_permission_granted" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_permission_denied" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_gps" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_no_gps" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_enabled" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_disabled" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_permission_disabled" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_location" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_location_format" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_location_unset" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_location_acquiring" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_location_hardware_unavailable" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_pointing" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_dec_format" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_magnetic_correction" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_alignment_adjustment" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_alignment_format" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_magnetic_correction_format" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_east" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_west" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_local_datetime" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_utc_datetime" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_section_network" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_connection" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_section_satellites" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_satellite_data" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_satellite_data_none" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_satellite_data_format" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_satellite_last_fetch" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_satellite_never_fetched" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_satellite_circuit_open" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_satellite_circuit_open_format" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_satellite_force_fetch" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_connected" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_disconnected" reason="identical_to_source" -->
+    <string name="diagnostics_wifi" translation_description="Network type suffix appended to the connection status (e.g. \'Connected (wifi)\'). Note the leading space.">(wifi)</string>
+    <string name="diagnostics_cell" translation_description="Network type suffix appended to the connection status (e.g. \'Connected (cell)\'). Note the leading space.">(cell)</string>
+
+    <!-- tm:omitted name="calibration_button" reason="identical_to_source" -->
+    <!-- tm:omitted name="calibration_heading_user" reason="identical_to_source" -->
+    <!-- tm:omitted name="calibration_heading_warning" reason="identical_to_source" -->
+    <!-- tm:omitted name="calibration_accuracy_unknown" reason="identical_to_source" -->
+    <!-- tm:omitted name="calibration_accuracy_unreliable" reason="identical_to_source" -->
+    <!-- tm:omitted name="calibration_accuracy_low" reason="identical_to_source" -->
+    <!-- tm:omitted name="calibration_accuracy_medium" reason="identical_to_source" -->
+    <!-- tm:omitted name="calibration_accuracy_high" reason="identical_to_source" -->
+    <!-- tm:omitted name="calibration_accuracy_no_contact" reason="identical_to_source" -->
+    <!-- tm:omitted name="calibration_do_not_show_again" reason="identical_to_source" -->
+    <string name="calibration_what_to_do" translation_description="Information for the user on how to calibrate the compass when the screen auto-opens. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[Your phone\'s compass sensor is reporting poor calibration. The figure-8 motion (<a href="%s">watch a demonstration</a>) prompts your phone\'s hardware to reset its compass sensor — Sky Map has no control over this process.<br/><br/><blockquote><b>Calibrated does not mean accurate.</b> The figure-8 gesture helps reset the sensor, but it cannot remove interference from nearby metal objects, car dashboards, or phone cases. If the map is still off after calibrating, those external sources are the most likely cause — not Sky Map.</blockquote>Move to an open area away from metal and try again.]]></string>
+    <string name="calibration_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they open the calibration screen. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[Your phone is reporting its compass calibration status as shown above.<br/><br/>If necessary, perform the figure-8 motion (<a href="%s">watch a demonstration</a>) to prompt your phone\'s hardware to recalibrate its compass sensor.<br/><br/><blockquote><b>Important:</b> calibration helps the sensor reset itself internally. It does not mean the compass is necessarily accurate! Local magnetic interference (metal objects, car dashboards, phone cases) can still cause your phone\'s compass to send inaccurate readings to Sky Map.</blockquote><b>If the map isn\'t showing positions correctly the problem is likely your phone - not Sky Map!</b>]]></string>
+    <!-- tm:omitted name="calibration_low_accuracy_toast" reason="identical_to_source" -->
+    <!-- tm:omitted name="calibration_complete_toast" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="eula_title" reason="identical_to_source" -->
+    <!-- tm:omitted name="dialog_accept" reason="identical_to_source" -->
+    <!-- tm:omitted name="dialog_decline" reason="identical_to_source" -->
+    <!-- tm:omitted name="dialog_ok_button" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="whats_new_dialog_title" reason="identical_to_source" -->
+    <!-- tm:omitted name="whats_new_version_heading" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="warm_welcome_slide1_title" reason="identical_to_source" -->
+    <!-- tm:omitted name="warm_welcome_slide1_desc" reason="identical_to_source" -->
+    <!-- tm:omitted name="warm_welcome_slide2_title" reason="identical_to_source" -->
+    <!-- tm:omitted name="warm_welcome_slide2_desc" reason="identical_to_source" -->
+    <string name="warm_welcome_slide2_info_desc" translation_description="Description about info cards on the second slide of the Warm Welcome onboarding">
+    Tap any labelled object to open an Info Card like this one, with a photo, fun facts, and celestial details.
+    </string>
+    <!-- tm:omitted name="warm_welcome_card_name" reason="identical_to_source" -->
+    <!-- tm:omitted name="warm_welcome_card_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="warm_welcome_card_fun_fact" reason="identical_to_source" -->
+    <!-- tm:omitted name="warm_welcome_card_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="warm_welcome_card_size" reason="identical_to_source" -->
+    <!-- tm:omitted name="warm_welcome_slide3_title" reason="identical_to_source" -->
+    <!-- tm:omitted name="warm_welcome_slide3_desc" reason="identical_to_source" -->
+    <!-- tm:omitted name="warm_welcome_slide3_no_sensors" reason="identical_to_source" -->
+    <!-- tm:omitted name="warm_welcome_slide3_compass_calib" reason="identical_to_source" -->
+    <!-- tm:omitted name="warm_welcome_skip" reason="identical_to_source" -->
+    <!-- tm:omitted name="warm_welcome_next" reason="identical_to_source" -->
+    <!-- tm:omitted name="warm_welcome_finish" reason="identical_to_source" -->
+    <!-- tm:omitted name="warm_welcome_sensor_ok" reason="identical_to_source" -->
+    <!-- tm:omitted name="warm_welcome_sensor_missing" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="help_button" reason="identical_to_source" -->
+    <!-- tm:omitted name="tutorial_button" reason="identical_to_source" -->
+    <!-- tm:omitted name="help_dialog_title" reason="identical_to_source" -->
+    <!-- tm:omitted name="help_version" reason="identical_to_source" -->
+    <!-- tm:omitted name="whats_new_button" reason="identical_to_source" -->
+    <!-- tm:omitted name="whats_new_screen_title" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="help_symbol_key_title" reason="identical_to_source" -->
+    <!-- tm:omitted name="help_symbol_key_intro" reason="identical_to_source" -->
+    <!-- tm:omitted name="symbol_key_galaxy" reason="identical_to_source" -->
+    <!-- tm:omitted name="symbol_key_open_cluster" reason="identical_to_source" -->
+    <!-- tm:omitted name="symbol_key_globular_cluster" reason="identical_to_source" -->
+    <!-- tm:omitted name="symbol_key_diffuse_nebula" reason="identical_to_source" -->
+    <!-- tm:omitted name="symbol_key_planetary_nebula" reason="identical_to_source" -->
+    <!-- tm:omitted name="symbol_key_supernova_remnant" reason="identical_to_source" -->
+    <!-- tm:omitted name="symbol_key_asterism" reason="identical_to_source" -->
+    <!-- tm:omitted name="symbol_key_other" reason="identical_to_source" -->
+    <!-- tm:omitted name="symbol_key_meteor_radiant" reason="identical_to_source" -->
+    <!-- tm:omitted name="symbol_key_meteor_radiant_peak" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="moon_widget_label" reason="identical_to_source" -->
+    <!-- tm:omitted name="moon_widget_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="moon_widget_illumination" reason="identical_to_source" -->
+    <!-- tm:omitted name="moon_widget_rise_time" reason="identical_to_source" -->
+    <!-- tm:omitted name="moon_widget_set_time" reason="identical_to_source" -->
+    <!-- tm:omitted name="moon_phase_new" reason="identical_to_source" -->
+    <!-- tm:omitted name="moon_phase_waxing_crescent" reason="identical_to_source" -->
+    <!-- tm:omitted name="moon_phase_first_quarter" reason="identical_to_source" -->
+    <!-- tm:omitted name="moon_phase_waxing_gibbous" reason="identical_to_source" -->
+    <!-- tm:omitted name="moon_phase_full" reason="identical_to_source" -->
+    <!-- tm:omitted name="moon_phase_waning_gibbous" reason="identical_to_source" -->
+    <!-- tm:omitted name="moon_phase_last_quarter" reason="identical_to_source" -->
+    <!-- tm:omitted name="moon_phase_waning_crescent" reason="identical_to_source" -->
+    <!-- tm:omitted name="moon_widget_promo_title" reason="identical_to_source" -->
+    <!-- tm:omitted name="moon_widget_promo_subtitle" reason="identical_to_source" -->
+    <!-- tm:omitted name="moon_widget_promo_add" reason="identical_to_source" -->
+    <!-- tm:omitted name="moon_widget_promo_dismiss" reason="identical_to_source" -->
+    <!-- tm:omitted name="moon_widget_pin_unsupported_title" reason="identical_to_source" -->
+    <!-- tm:omitted name="moon_widget_pin_unsupported_body" reason="identical_to_source" -->
+    <!-- tm:omitted name="moon_widget_pin_unsupported_ok" reason="identical_to_source" -->
+    <!-- tm:omitted name="moon_widget_preview_illumination" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="tonight_widget_label" reason="identical_to_source" -->
+    <!-- tm:omitted name="tonight_widget_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="tonight_widget_header" reason="identical_to_source" -->
+    <!-- tm:omitted name="tonight_widget_sun_times" reason="identical_to_source" -->
+    <!-- tm:omitted name="tonight_widget_sunset_only" reason="identical_to_source" -->
+    <!-- tm:omitted name="tonight_well_placed" reason="identical_to_source" -->
+    <!-- tm:omitted name="tonight_trailing_direction" reason="identical_to_source" -->
+    <!-- tm:omitted name="tonight_shower_peak" reason="identical_to_source" -->
+    <!-- tm:omitted name="tonight_shower_days" reason="identical_to_source" -->
+    <!-- tm:omitted name="tonight_dark_skies" reason="identical_to_source" -->
+    <!-- tm:omitted name="tonight_trailing_moon" reason="identical_to_source" -->
+    <!-- tm:omitted name="tonight_new_moon" reason="identical_to_source" -->
+    <!-- tm:omitted name="tonight_full_moon" reason="identical_to_source" -->
+    <!-- tm:omitted name="tonight_bright_moon" reason="identical_to_source" -->
+    <!-- tm:omitted name="tonight_lunar_eclipse_total" reason="identical_to_source" -->
+    <!-- tm:omitted name="tonight_lunar_eclipse_partial" reason="identical_to_source" -->
+    <!-- tm:omitted name="tonight_lunar_eclipse_penumbral" reason="identical_to_source" -->
+    <!-- tm:omitted name="tonight_quiet" reason="identical_to_source" -->
+    <!-- tm:omitted name="tonight_quiet_next" reason="identical_to_source" -->
+    <!-- tm:omitted name="countdown_widget_label" reason="identical_to_source" -->
+    <!-- tm:omitted name="countdown_widget_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="countdown_days" reason="identical_to_source" -->
+    <!-- tm:omitted name="countdown_tonight" reason="identical_to_source" -->
+    <!-- tm:omitted name="countdown_shower_peak" reason="identical_to_source" -->
+    <!-- tm:omitted name="countdown_new_moon_peak" reason="identical_to_source" -->
+    <!-- tm:omitted name="countdown_full_moon" reason="identical_to_source" -->
+    <!-- tm:omitted name="countdown_new_moon" reason="identical_to_source" -->
+    <!-- tm:omitted name="tonight_widget_preview_row" reason="identical_to_source" -->
+    <!-- tm:omitted name="countdown_widget_preview_days" reason="identical_to_source" -->
+    <!-- tm:omitted name="countdown_widget_preview_name" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="settings_section_notifications" reason="identical_to_source" -->
+    <!-- tm:omitted name="settings_notifications_intro" reason="identical_to_source" -->
+    <!-- tm:omitted name="settings_shower_alerts" reason="identical_to_source" -->
+    <!-- tm:omitted name="settings_shower_alerts_summary" reason="identical_to_source" -->
+    <!-- tm:omitted name="settings_tonight_digest" reason="identical_to_source" -->
+    <!-- tm:omitted name="settings_tonight_digest_summary" reason="identical_to_source" -->
+    <!-- tm:omitted name="settings_notifications_blocked" reason="identical_to_source" -->
+    <!-- tm:omitted name="settings_notifications_blocked_action" reason="identical_to_source" -->
+    <!-- tm:omitted name="channel_showers_name" reason="identical_to_source" -->
+    <!-- tm:omitted name="channel_showers_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="channel_digest_name" reason="identical_to_source" -->
+    <!-- tm:omitted name="channel_digest_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="notif_shower_title" reason="identical_to_source" -->
+    <!-- tm:omitted name="notif_shower_direction" reason="identical_to_source" -->
+    <!-- tm:omitted name="notif_shower_dark_moon" reason="identical_to_source" -->
+    <!-- tm:omitted name="notif_shower_bright_moon" reason="identical_to_source" -->
+    <!-- tm:omitted name="notif_digest_title" reason="identical_to_source" -->
+    <!-- tm:omitted name="notif_action_mute_showers" reason="identical_to_source" -->
+    <!-- tm:omitted name="time_travel_stopped" reason="identical_to_source" -->
+    <!-- tm:omitted name="layer_param_disc_size" reason="identical_to_source" -->
+    <!-- tm:omitted name="layer_param_disc_size_true" reason="identical_to_source" -->
+    <!-- tm:omitted name="layer_param_disc_size_true_desc" reason="identical_to_source" -->
+    <!-- tm:omitted name="layer_param_disc_size_glyphs" reason="identical_to_source" -->
+    <!-- tm:omitted name="layer_param_disc_size_glyphs_desc" reason="identical_to_source" -->
+    <!-- tm:omitted name="layer_param_disc_size_auto" reason="identical_to_source" -->
+    <!-- tm:omitted name="layer_param_disc_size_auto_desc" reason="identical_to_source" -->
+    <!-- tm:omitted name="layer_param_expand" reason="identical_to_source" -->
 </resources>

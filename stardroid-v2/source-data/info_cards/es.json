@@ -645,12 +645,22 @@
    "size": "83 años luz de diámetro",
    "image_credit": "NASA/ESA/Hubble"
   },
+  "dso/m100": {
+   "description": "Messier 100 es una galaxia espiral de gran diseño en Coma Berenices y una de las más brillantes del Cúmulo de Virgo.",
+   "fun_fact": "Siete supernovas se han observado en M100, la más reciente en 2020 - ¡pocas galaxias han ofrecido tal espectáculo!",
+   "distance": "55 millones de años luz",
+   "size": "166.000 años luz de diámetro"
+  },
   "dso/m101": {
    "description": "La Galaxia del Molinete es una galaxia espiral de frente en la Osa Mayor, una de las galaxias espirales más grandes conocidas.",
    "fun_fact": "¡La Galaxia del Molinete contiene más de un billón de estrellas y tiene brazos espirales asimétricos debido a interacciones pasadas!",
    "distance": "21 millones de años luz",
    "size": "170.000 años luz de diámetro",
    "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m102": {
+   "description": "Messier 102 es la gran entrada sin resolver en el catálogo de Messier, un objeto registrado en 1781 que nunca ha sido identificado con certeza.",
+   "fun_fact": "Messier no publicó coordenadas para M102, y su colega Mechain más tarde se retractó por completo del descubrimiento, ¡afirmando que era solo M101 registrado dos veces por error! La NASA lo identifica con la Galaxia del Huso, NGC 5866."
   },
   "dso/m103": {
    "description": "M103 es un pequeño y compacto cúmulo abierto en Casiopea, que contiene alrededor de 40 estrellas en un grupo apretado fácilmente visible con binoculares. Una llamativa estrella doble y un gigante rojo cerca del centro le dan una apariencia colorida en telescopios pequeños, situado dentro de los ricos campos estelares de la Vía Láctea de Casiopea.",
@@ -665,6 +675,12 @@
    "size": "50.000 años luz de diámetro",
    "image_credit": "NASA/ESA/Hubble"
   },
+  "dso/m105": {
+   "description": "Messier 105 es una galaxia elíptica en Leo, la elíptica más grande del catálogo Messier fuera del Cúmulo de Virgo.",
+   "fun_fact": "M105 comparte un anillo colosal de gas de hidrógeno con su vecina NGC 3384, que abarca unos 650.000 años luz.",
+   "distance": "37 millones de años luz",
+   "size": "67.000 años luz de diámetro"
+  },
   "dso/m106": {
    "description": "M106 es una galaxia espiral en Canes Venatici con brazos espirales anómalos causados por jets de su agujero negro central.",
    "fun_fact": "¡M106 tiene máseres de agua en su núcleo, permitiendo a los astrónomos medir precisamente su distancia!",
@@ -677,6 +693,11 @@
    "fun_fact": "M107 fue la última entrada añadida formalmente al catálogo Messier — aparece en la correspondencia de Pierre Méchain pero no fue incluida en la edición original de 1781. Fue añadida oficialmente como M107 en 1947 por la astrónoma canadiense Helen Sawyer Hogg, quien codificó varios objetos \"faltantes\" que Méchain había observado pero Messier nunca registró formalmente.",
    "distance": "20.900 años luz",
    "size": "~61 años luz de diámetro"
+  },
+  "dso/m108": {
+   "description": "Messier 108 es una galaxia espiral barrada en la Osa Mayor, apodada la Galaxia Tabla de Surf.",
+   "fun_fact": "M108 está inclinada casi de canto hacia nosotros, por lo que se ganó el nombre de Tabla de Surf, ¡y alberga alrededor de 290 cúmulos globulares!",
+   "distance": "46 millones de años luz"
   },
   "dso/m109": {
    "description": "M109 es una galaxia espiral barrada en la Osa Mayor, el miembro más brillante de un grupo de galaxias que lleva su nombre.",
@@ -740,6 +761,12 @@
    "distance": "5.500 años luz",
    "size": "15 años luz de diámetro",
    "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m18": {
+   "description": "Messier 18 es un pequeño cúmulo abierto de estrellas jóvenes en Sagitario, también conocido como el Cúmulo del Cisne Negro.",
+   "fun_fact": "¡M18 es uno de los pocos objetos Messier que el Telescopio Espacial Hubble nunca ha fotografiado!",
+   "distance": "4.200 años luz",
+   "size": "26 años luz de diámetro"
   },
   "dso/m19": {
    "description": "M19 es un cúmulo globular compacto y rico en Ofiuco — uno de los cúmulos globulares más cercanos al centro galáctico. Su característica más distintiva es su forma notablemente oblata: M19 es el cúmulo globular más aplanado conocido, con un contorno elíptico visible incluso en un pequeño telescopio.",
@@ -1018,12 +1045,35 @@
    "size": "1,3 años luz de diámetro",
    "image_credit": "NASA/ESA/Hubble"
   },
+  "dso/m58": {
+   "description": "Messier 58 es una galaxia espiral barrada en Virgo y uno de los miembros más brillantes del Cúmulo de Virgo.",
+   "fun_fact": "Un agujero negro supermasivo de unos 70 millones de masas solares se encuentra en el corazón de M58, rodeado por un denso anillo de estrellas recién nacidas.",
+   "distance": "68 millones de años luz",
+   "size": "133.000 años luz de diámetro"
+  },
+  "dso/m59": {
+   "description": "Messier 59 es una galaxia elíptica en Virgo, descubierta en 1779 durante la búsqueda de un cometa de paso.",
+   "fun_fact": "El núcleo de M59 gira en sentido contrario respecto al resto de la galaxia, ¡y alrededor de 2.200 cúmulos globulares pululan a su alrededor!",
+   "distance": "50 millones de años luz",
+   "mass": "270 millones de masas solares (agujero negro central)"
+  },
   "dso/m6": {
    "description": "El Cúmulo de la Mariposa es un cúmulo abierto en Escorpio, nombrado por el arreglo en forma de mariposa de sus estrellas más brillantes.",
    "fun_fact": "¡M6 tiene unos 100 millones de años y contiene más de 300 estrellas, incluyendo la gigante naranja BM Scorpii!",
    "distance": "1.600 años luz",
    "size": "25 años luz de diámetro",
    "image_credit": "NOAO/AURA/NSF"
+  },
+  "dso/m60": {
+   "description": "Messier 60 es una galaxia elíptica gigante en Virgo, la tercera más brillante del Cúmulo de Virgo.",
+   "fun_fact": "El agujero negro central de M60 pesa alrededor de 4.500 millones de Soles, ¡uno de los más grandes jamás encontrados!",
+   "distance": "57 millones de años luz"
+  },
+  "dso/m61": {
+   "description": "Messier 61 es una galaxia espiral barrada en Virgo y una de las galaxias más grandes del Cúmulo de Virgo.",
+   "fun_fact": "Ocho supernovas han sido avistadas en M61, ¡uno de los recuentos más altos de cualquier galaxia! El propio Messier la confundió por primera vez con un cometa.",
+   "distance": "52 millones de años luz",
+   "size": "92.000 años luz de diámetro"
   },
   "dso/m62": {
    "description": "M62 es un rico cúmulo globular en Ofiuco — uno de los cúmulos globulares más cercanos al centro galáctico y notablemente asimétrico, con estrellas empaquetadas más densamente en el lado sur. Con una magnitud de 6,6 es un excelente objeto para binoculares, aunque su baja declinación lo convierte en un objetivo de corta temporada para observadores del norte.",
@@ -1095,12 +1145,28 @@
    "distance": "12.000 años luz",
    "size": "~25 años luz de diámetro"
   },
+  "dso/m72": {
+   "description": "Messier 72 es un cúmulo globular tenue y remoto en Acuario, descubierto por Pierre Mechain en 1780.",
+   "fun_fact": "M72 agrupa alrededor de 168.000 estrellas con una masa equivalente a la del Sol en una esfera de aproximadamente 9.500 millones de años de antigüedad, ¡incluyendo 43 estrellas variables!",
+   "distance": "55.000 años luz"
+  },
+  "dso/m73": {
+   "description": "Messier 73 es un pequeño grupo de cuatro estrellas en Acuario que solo parece ser un cúmulo.",
+   "fun_fact": "Los astrónomos debatieron durante décadas si M73 era un cúmulo real; en 2002 se resolvió: las cuatro estrellas se encuentran a distancias muy diferentes y solo se alinean por casualidad.",
+   "distance": "1.000 a 2.300 años luz (las estrellas individuales)"
+  },
   "dso/m74": {
    "description": "La Galaxia Fantasma es una galaxia espiral de frente en Piscis, conocida por su estructura espiral de gran diseño perfecta.",
    "fun_fact": "¡M74 es apodada la Galaxia Fantasma debido a su muy bajo brillo superficial, haciéndola difícil de observar!",
    "distance": "32 millones de años luz",
    "size": "95.000 años luz de diámetro",
    "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m75": {
+   "description": "Messier 75 es un cúmulo globular distante y ricamente concentrado en Sagitario.",
+   "fun_fact": "M75 es uno de los cúmulos globulares más densos conocidos, y se cree que son restos de una galaxia enana que la Vía Láctea engulló hace mucho tiempo.",
+   "distance": "68.000 años luz",
+   "size": "134 años luz de diámetro"
   },
   "dso/m76": {
    "description": "La Pequeña Mancuerna es una nebulosa planetaria en Perseo con una forma característica de ocho — una prima menor de M27, la Nebulosa Mancuerna en Vulpecula. Aunque es la entrada más débil del catálogo Messier, recompensa la observación paciente con telescopios pequeños y muestra una estructura hermosa en instrumentos más grandes, con dos lóbulos más brillantes flanqueando una cintura más débil.",
@@ -1162,6 +1228,22 @@
    "size": "55.000 años luz de diámetro",
    "image_credit": "NASA/ESA/Hubble"
   },
+  "dso/m84": {
+   "description": "Messier 84 es una galaxia elíptica gigante en el concurrido corazón del Cúmulo de Virgo.",
+   "fun_fact": "M84 lanza dos chorros de materia desde su núcleo, impulsados por un agujero negro de aproximadamente 1.5 mil millones de masas solares.",
+   "distance": "55 millones de años luz"
+  },
+  "dso/m85": {
+   "description": "Messier 85 es una galaxia lenticular en las afueras del Cúmulo de Virgo, en Coma Berenices.",
+   "fun_fact": "Las ondulaciones y capas en las regiones exteriores de M85 son los restos de una fusión de galaxias que ocurrió hace 4 a 7 mil millones de años.",
+   "distance": "60 millones de años luz",
+   "size": "120.600 años luz de diámetro"
+  },
+  "dso/m86": {
+   "description": "Messier 86 es una galaxia elíptica grande en el Cúmulo de Virgo, formando un par llamativo con la cercana M84.",
+   "fun_fact": "M86 se precipita hacia nosotros a 244 km/s, ¡el acercamiento más rápido de cualquier objeto Messier! Su paso a través del cúmulo deja un largo rastro de gas caliente despojado.",
+   "distance": "52 millones de años luz"
+  },
   "dso/m87": {
    "description": "M87 es una galaxia elíptica supergigante en Virgo, una de las galaxias más masivas del universo local.",
    "fun_fact": "¡El agujero negro central de M87 fue el primero en ser fotografiado por el Telescopio del Horizonte de Eventos en 2019 - tiene 6.500 millones de masas solares!",
@@ -1170,11 +1252,34 @@
    "mass": "2,4 billones de masas solares",
    "image_credit": "NASA/ESA/Hubble"
   },
+  "dso/m88": {
+   "description": "Messier 88 es una elegante galaxia espiral en Coma Berenices, uno de los quince objetos Messier en el Cúmulo de Virgo.",
+   "fun_fact": "M88 se precipita hacia el centro del Cúmulo de Virgo y llegará en 200 a 300 millones de años, ¡su gas exterior está siendo despojado a medida que cae!",
+   "distance": "59 millones de años luz",
+   "size": "131.000 años luz de diámetro"
+  },
+  "dso/m89": {
+   "description": "Messier 89 es una galaxia elíptica en Virgo, descubierta por Charles Messier en 1781.",
+   "fun_fact": "M89 podría ser casi una esfera perfecta, algo inusual para una galaxia elíptica, que normalmente están notablemente aplastadas.",
+   "distance": "50 millones de años luz"
+  },
   "dso/m9": {
    "description": "M9 es un cúmulo globular compacto en Ofiuco — uno de los globulares de Messier más afectados por la absorción del polvo interestelar. Se encuentra hacia el bulbo galáctico, donde el polvo espeso lo oscurece significativamente. Sin esta obscuración, M9 aparecería casi una magnitud más brillante y sería visible a simple vista.",
    "fun_fact": "M9 sufre más absorción de polvo interestelar que casi cualquier otro cúmulo globular de Messier, aproximadamente 1,3 magnitudes de oscurecimiento en comparación con una línea de visión clara. Dos cúmulos globulares más pequeños (NGC 6342 y NGC 6356) se encuentran dentro de aproximadamente 1° de M9, lo que lo convierte en el centro de un agrupamiento notable de tres cúmulos globulares en una pequeña región del cielo.",
    "distance": "25.800 años luz",
    "size": "~70 años luz de diámetro"
+  },
+  "dso/m90": {
+   "description": "Messier 90 es una gran galaxia espiral en Virgo y el ejemplo de libro de texto de una galaxia \"anémica\".",
+   "fun_fact": "M90 ha sido despojada de su gas de formación estelar debido a su inmersión a través del Cúmulo de Virgo, dejando colas de gas brillante de hasta 260.000 años luz de largo.",
+   "distance": "59 millones de años luz",
+   "size": "132.000 años luz de diámetro"
+  },
+  "dso/m91": {
+   "description": "Messier 91 es una galaxia espiral barrada en Coma Berenices y el objeto más débil del catálogo Messier.",
+   "fun_fact": "¡M91 estuvo perdida durante casi 200 años! Messier registró su posición usando una galaxia de referencia incorrecta, y solo fue reidentificada en 1969 por un astrónomo aficionado.",
+   "distance": "63 millones de años luz",
+   "size": "105.500 años luz de diámetro"
   },
   "dso/m92": {
    "description": "M92 es un cúmulo globular brillante en Hércules, a menudo pasado por alto debido a su proximidad al más famoso M13.",
@@ -1196,12 +1301,35 @@
    "size": "50.000 años luz de diámetro",
    "image_credit": "NASA/ESA/Hubble"
   },
+  "dso/m95": {
+   "description": "Messier 95 es una galaxia espiral barrada en Leo, parte del Grupo M96 junto con M96 y M105.",
+   "fun_fact": "Un anillo de furiosa formación estelar de unos 70.000 años luz de ancho rodea el núcleo de M95, ¡y una supernova estalló allí en 2012!",
+   "distance": "33 millones de años luz",
+   "size": "80.000 años luz de diámetro"
+  },
+  "dso/m96": {
+   "description": "Messier 96 es una galaxia espiral en Leo, el miembro más brillante del Grupo de galaxias M96.",
+   "fun_fact": "M96 tiene aproximadamente el mismo tamaño y masa que nuestra propia Vía Láctea, pero es sorprendentemente asimétrica - ¡su polvo y gas están distribuidos de manera desigual a través de sus brazos!",
+   "distance": "31 millones de años luz",
+   "size": "78.000 años luz de diámetro"
+  },
   "dso/m97": {
    "description": "La Nebulosa del Búho es una nebulosa planetaria en la Osa Mayor, nombrada por su apariencia de búho con dos manchas oscuras.",
    "fun_fact": "¡Los ojos oscuros del búho en M97 son cavidades tridimensionales en la nebulosa, alineadas con nuestra línea de visión!",
    "distance": "2.030 años luz",
    "size": "2 años luz de diámetro",
    "image_credit": "Gemini Observatory/NOIRLab/NSF/AURA"
+  },
+  "dso/m98": {
+   "description": "Messier 98 es una galaxia espiral en Coma Berenices, vista casi de canto como parte del Cúmulo de Virgo.",
+   "fun_fact": "M98 es una de las raras galaxias que se mueven hacia nosotros en lugar de alejarse, acercándose a unos 140 km/s.",
+   "distance": "44 millones de años luz"
+  },
+  "dso/m99": {
+   "description": "Messier 99 es una galaxia espiral de gran diseño en Coma Berenices, que muestra brazos espirales claros y amplios.",
+   "fun_fact": "M99 fue uno de los primeros objetos reconocidos como espirales, dibujada por Lord Rosse en 1846, ¡y forma estrellas tres veces más rápido que galaxias similares!",
+   "distance": "45 millones de años luz",
+   "size": "98.000 años luz de diámetro"
   },
   "dso/n47_tucanae": {
    "description": "47 Tucanae (NGC 104) es el segundo cúmulo globular más brillante del cielo, una densa esfera de aproximadamente un millón de estrellas antiguas que orbitan la Vía Láctea en la constelación de Tucana. A unos 14.500 años luz de distancia, aparece a simple vista como una estrella de cuarta magnitud borrosa, pero un telescopio resuelve su núcleo comprimido en un extraordinario enjambre de soles dorados y azul-blancos. Sus estrellas se formaron hace alrededor de 13 mil millones de años, lo que hace que el cúmulo sea casi tan antiguo como el universo mismo.",
@@ -1313,8 +1441,9 @@
    "description": "Deimos es la luna más pequeña y exterior de Marte, con una superficie lisa cubierta de polvo que le da una apariencia más redondeada que Fobos. Como su compañera, se cree que es un asteroide capturado del cinturón exterior.",
    "fun_fact": "Deimos es tan pequeño y distante que desde la superficie marciana parece poco más que una estrella brillante, tardando aproximadamente 30 horas en cruzar lentamente el cielo nocturno.",
    "distance": "23.460 km de Marte",
+   "size": "15 x 12 x 11 km",
    "image_credit": "NASA/JPL-Caltech/University of Arizona",
-   "search_subtext": "Moon of Mars"
+   "search_subtext": "Luna de Marte"
   },
   "moon/dione": {
    "description": "Dione es una luna helada de Saturno con una cara frontal fuertemente craterizada y un hemisferio trasero salpicado de acantilados de hielo brillante —líneas de fractura donde antiguas fuerzas tectónicas expusieron hielo fresco desde abajo. Los datos de gravedad del Cassini sugieren un océano líquido subsuperficial bajo la corteza.",
@@ -1368,8 +1497,9 @@
    "description": "Fobos es la luna más grande e interior de Marte, orbitando más cerca de su planeta que cualquier otra luna del sistema solar. Es un cuerpo de forma irregular, profundamente estriado y craterizado que se cree es un asteroide capturado.",
    "fun_fact": "Fobos orbita Marte tan rápidamente que sale por el oeste y se pone por el este, y está cayendo lentamente hacia adentro, destinado a chocar contra Marte o desintegrarse en un anillo en aproximadamente 50 millones de años.",
    "distance": "9.376 km de Marte",
+   "size": "27 x 22 x 18 km",
    "image_credit": "NASA/JPL-Caltech/University of Arizona",
-   "search_subtext": "Moon of Mars"
+   "search_subtext": "Luna de Marte"
   },
   "moon/rhea": {
    "description": "Rea es la segunda luna más grande de Saturno y un mundo fuertemente cratizado de hielo y roca. Su superficie pálida y antigua conserva algunos de los cráteres de impacto más prístinos del sistema solar, junto con acantilados de hielo brillante donde los deslizamientos de tierra han expuesto material fresco de debajo.",
@@ -1608,6 +1738,7 @@
    "fun_fact": "A través de un telescopio, Algieba se divide en un par impresionante de estrellas gigantes doradas y amarillo-anaranjadas, ¡una de las mejores estrellas dobles del cielo! Se descubrió un planeta orbitando la estrella primaria en 2009.",
    "distance": "~130 años luz",
    "size": "~23 radios solares",
+   "mass": "~1,2 masas solares",
    "spectral_class": "K1IIIbCN",
    "image_credit": "ESO/Digitized Sky Survey 2"
   },
@@ -1625,6 +1756,7 @@
    "fun_fact": "El nombre de Alhena proviene del árabe que significa \"la marca de fuego\" — los antiguos árabes veían esta estrella como una marca en el cuello de un camello!",
    "distance": "109 años luz",
    "size": "3,3 radios solares",
+   "mass": "2,8 masas solares",
    "spectral_class": "A1IV",
    "image_credit": "ESO/Digitized Sky Survey 2"
   },
@@ -1642,6 +1774,7 @@
    "fun_fact": "A diferencia de la mayoría de las estrellas de la Osa Mayor, Alkaid no forma parte del Grupo en Movimiento de la Osa Mayor — ¡viaja por el espacio en una dirección diferente, por lo que la forma de la Osa Mayor cambiará lentamente durante miles de años!",
    "distance": "104 años luz",
    "size": "3,4 radios solares",
+   "mass": "6,1 masas solares",
    "spectral_class": "B3V",
    "image_credit": "ESO/Digitized Sky Survey 2"
   },
@@ -1650,6 +1783,7 @@
    "fun_fact": "¡Alnair gira extremadamente rápido — al menos 215 km/s en su ecuador — lo que es tan rápido que la estrella es notablemente oblata, abultándose en su centro!",
    "distance": "101 años luz",
    "size": "3,4 radios solares",
+   "mass": "4,0 masas solares",
    "spectral_class": "B7IV",
    "image_credit": "ESO/Digitized Sky Survey 2"
   },
@@ -1658,6 +1792,7 @@
    "fun_fact": "¡Alnath fue compartida entre dos constelaciones! Fue designada como Beta Tauri y Gamma Aurigae antes de que la IAU la asignara oficialmente a Tauro en 1930.",
    "distance": "134 años luz",
    "size": "4,2 radios solares",
+   "mass": "5,0 masas solares",
    "spectral_class": "B7III",
    "image_credit": "ESO/Digitized Sky Survey 2"
   },
@@ -1823,6 +1958,11 @@
    "spectral_class": "K0 III",
    "image_credit": "ESO/Digitized Sky Survey 2"
   },
+  "star/e_lyrae": {
+   "description": "Epsilon Lyrae es un sistema estelar múltiple en Lyra, famoso entre los observadores como la \"Doble Doble\".",
+   "fun_fact": "Ojos agudos pueden dividir Épsilon Lira en dos estrellas, ¡y un telescopio divide cada una de ellas en otras dos! En total, alberga al menos cinco estrellas.",
+   "distance": "160 años luz"
+  },
   "star/enif": {
    "description": "Enif es la estrella más brillante de Pegaso y marca la nariz del caballo alado en la constelación.",
    "fun_fact": "¡En 1972, Enif experimentó un evento dramático de fulguración, aumentando brevemente su brillo por un factor de cinco!",
@@ -1876,6 +2016,110 @@
    "mass": "~4,6 masas solares",
    "spectral_class": "K0II-III",
    "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/j052512+062100": {
+   "description": "Bellatrix marca el hombro izquierdo de Orión (el Cazador). Su nombre en latín significa \"guerrera\".",
+   "fun_fact": "Bellatrix tiene apenas unos 28 millones de años, y consumirá su hidrógeno en otros 7 millones de años - ¡una vida breve para una estrella!",
+   "distance": "250 años luz",
+   "size": "6,2 radios solares",
+   "mass": "8,4 masas solares",
+   "spectral_class": "B2 III"
+  },
+  "star/j054048-015624": {
+   "description": "Alnitak es la estrella más oriental del Cinturón de Orión, situada junto a las Nebulosas de la Llama y Cabeza de Caballo.",
+   "fun_fact": "¡Alnitak es la estrella de clase O más brillante de todo el cielo nocturno! En aproximadamente un millón de años, se hinchará más allá de la órbita de Júpiter y explotará como una supernova.",
+   "distance": "1.260 años luz",
+   "size": "20 radios solares",
+   "mass": "33 masas solares",
+   "spectral_class": "O9.5 Iab"
+  },
+  "star/j055924+445700": {
+   "description": "Menkalinan es la segunda estrella más brillante de Auriga (el Cochero). Su nombre significa \"hombro del que sostiene las riendas\" en árabe.",
+   "fun_fact": "Menkalinan son en realidad dos estrellas casi idénticas que se eclipsan mutuamente cada 47,5 horas, y en aproximadamente un millón de años se convertirá en la estrella más brillante de nuestro cielo nocturno.",
+   "distance": "79 años luz",
+   "size": "2,8 radios solares",
+   "mass": "2,4 masas solares",
+   "spectral_class": "A1m IV + A1m IV"
+  },
+  "star/j062248-175736": {
+   "description": "Mirzam (Beta Canis Majoris) sale justo antes de Sirio, lo que le valió el nombre que significa \"El Anunciador\" en árabe.",
+   "fun_fact": "Hace unos cuatro millones de años, Mirzam era la estrella más brillante del cielo, brillando con una magnitud de -3.65, mucho más brillante de lo que Sirio aparece hoy en día.",
+   "distance": "490 años luz",
+   "size": "8,4 radios solares",
+   "mass": "13 masas solares",
+   "spectral_class": "B1 II-III"
+  },
+  "star/j070824-262324": {
+   "description": "Wezen es una supergigante amarillo-blanca en Canis Major (el Can Mayor). Su nombre proviene del árabe y significa \"peso\".",
+   "fun_fact": "Si Wezen estuviera tan cerca de nosotros como Sirio, brillaría tan intensamente como una media luna.",
+   "distance": "1.600 años luz",
+   "size": "188 radios solares",
+   "mass": "14 masas solares",
+   "spectral_class": "F8 Ia"
+  },
+  "star/j082248-593036": {
+   "description": "Avior (Épsilon Carinae) es una estrella doble brillante en Carina y una de las cuatro estrellas de la Falsa Cruz.",
+   "fun_fact": "La Falsa Cruz es tan a menudo confundida con la Cruz del Sur que ha causado errores de navegación reales. El nombre de Avior fue inventado por creadores de almanaques británicos en la década de 1930.",
+   "distance": "610 años luz",
+   "size": "151 radios solares",
+   "mass": "10,5 masas solares",
+   "spectral_class": "K3 III + B2 Vp"
+  },
+  "star/j091312-694312": {
+   "description": "Miaplacidus es la segunda estrella más brillante de Carina (la Quilla) y marca una esquina del asterismo de la Cruz de Diamante.",
+   "fun_fact": "Miaplacidus se ha hinchado hasta convertirse en una gigante después de agotar el hidrógeno de su núcleo, ¡sin embargo, todavía gira a 146 km/s!",
+   "distance": "113 años luz",
+   "size": "5,8 radios solares",
+   "mass": "3,9 masas solares",
+   "spectral_class": "A1 III"
+  },
+  "star/j123112-570636": {
+   "description": "Gacrux (Gamma Crucis) es la estrella superior de la Cruz del Sur y la gigante roja más cercana a la Tierra.",
+   "fun_fact": "Gacrux es la gigante roja tipo M más cercana a nosotros, y su nombre es simplemente una contracción de navegante de \"Gamma Crucis\" acuñada en la década de 1940.",
+   "distance": "89 años luz",
+   "size": "73 radios solares",
+   "mass": "1,5 masas solares",
+   "spectral_class": "M3.5 III"
+  },
+  "star/j124800-594124": {
+   "description": "Mimosa (Beta Crucis) es la segunda estrella más brillante de la Cruz del Sur y una de las estrellas más calientes visibles a simple vista.",
+   "fun_fact": "Mimosa es una variable pulsante Beta Cephei: se hincha y encoge en tres ritmos superpuestos, ¡cada uno durando solo unas cuatro horas!",
+   "distance": "280 años luz",
+   "size": "8 radios solares",
+   "mass": "14,5 masas solares",
+   "spectral_class": "B0.5 III"
+  },
+  "star/j143936-605024": {
+   "description": "Toliman (Alfa Centauri B) es la compañera naranja en el sistema estelar más cercano al Sol, orbitando a la más brillante Rigil Kentaurus.",
+   "fun_fact": "Toliman obtuvo su nombre oficial recién en 2018. Es ligeramente más pequeño y frío que el Sol, y junto con sus dos compañeras constituye nuestros vecinos estelares más cercanos.",
+   "distance": "4,34 años luz",
+   "size": "0,86 radios solares",
+   "mass": "0,91 masas solares",
+   "spectral_class": "K1 V"
+  },
+  "star/j164836-690148": {
+   "description": "Atria es la estrella más brillante de Triangulum Australe (el Triángulo Austral), una gigante naranja mucho más grande que el Sol.",
+   "fun_fact": "Atria tiene 139 veces el diámetro del Sol; si se colocara en el centro del Sistema Solar, casi alcanzaría la órbita de Venus.",
+   "distance": "391 años luz",
+   "size": "139 radios solares",
+   "mass": "6,4 masas solares",
+   "spectral_class": "K2 Ib-IIa"
+  },
+  "star/j173712-430000": {
+   "description": "Sargas es una gigante brillante en la cola de Escorpio (el Escorpión), con un nombre tradicional de origen sumerio.",
+   "fun_fact": "Sargas gira tan rápido que se abulta hacia afuera: es un tercio más ancho en el ecuador que de polo a polo, ¡y pudo haberse formado cuando dos estrellas se fusionaron!",
+   "distance": "329 años luz",
+   "size": "35 radios solares",
+   "mass": "3,1 masas solares",
+   "spectral_class": "F1 III"
+  },
+  "star/j202548-564348": {
+   "description": "Pavo es la estrella más brillante de Pavo (el Pavo Real), una estrella azul-blanca caliente del cielo austral lejano.",
+   "fun_fact": "Peacock recibió su nombre en la década de 1930 porque la RAF insistió en que cada estrella de su nuevo Almanaque Aéreo tuviera un nombre, ¡y esta no tenía ninguno!",
+   "distance": "179 años luz",
+   "size": "4,8 radios solares",
+   "mass": "5,9 masas solares",
+   "spectral_class": "B3 V"
   },
   "star/kaus_australis": {
    "description": "Kaus Australis es la estrella más brillante en Sagitario (el Arquero). Su nombre significa \"el arco meridional\" en una mezcla de árabe y latín.",
@@ -1939,6 +2183,12 @@
    "mass": "~8,5 masas solares",
    "spectral_class": "F5Ib",
    "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/n25": {
+   "description": "R Coronae Borealis es una rara supergigante amarilla en Corona Boreal, y el prototipo de la clase de estrellas variables que lleva su nombre.",
+   "fun_fact": "A R Coronae Borealis a veces se le llama una \"nova inversa\": en lugar de estallar, se atenúa impredeciblemente hasta 9 magnitudes cuando expulsa nubes de hollín de carbono que la ocultan de la vista.",
+   "distance": "4.560 años luz",
+   "spectral_class": "G0Iep"
   },
   "star/nunki": {
    "description": "Nunki es la segunda estrella más brillante de Sagitario y el nombre de estrella más antiguo aún en uso común.",
@@ -2098,6 +2348,7 @@
    "fun_fact": "¡Vindemiatrix recibió su nombre porque su salida heliaca (primera aparición al amanecer) coincidía una vez con la temporada de cosecha de uva en el Mediterráneo, era la estrella del viñador!",
    "distance": "109 años luz",
    "size": "11 radios solares",
+   "mass": "2,6 masas solares",
    "spectral_class": "G8III",
    "image_credit": "ESO/Digitized Sky Survey 2"
   }
