@@ -34,6 +34,8 @@ Even after a successful calibration, external magnetic interference will still s
 | Magnetic or RFID blocking phone cases | Extremely common cause of persistent compass errors |
 | Nearby electronics | Smaller effect but can add up |
 
+Standing near your car? That'll send your compass off course. Standing on the bleachers at your kid's sport game? Same. Move away from metal and magnets.
+
 The Earth's magnetic field is a weak signal. Your phone's sensor has no way of knowing it's
 sitting next to a source of interference — it just reports what it measures.
 
