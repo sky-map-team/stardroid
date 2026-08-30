@@ -13,8 +13,9 @@ are on the planet, and the current time. If the map looks wrong, one of these is
 
 Sky Map reads direction data from your phone's built-in compass sensor (magnetometer). If the
 sensor gives a wrong reading, the map will point the wrong way — and that is a phone hardware
-issue, not a Sky Map bug. Sky Map cannot automatically correct what the sensor reports, though a
-manual offset is available in Settings for phones with a consistent directional error.
+issue, not a Sky Map bug. Sky Map cannot automatically correct what the sensor reports; the v1
+app offers a manual offset in Settings for phones with a consistent directional error (v2
+doesn't have this option yet).
 
 **"I calibrated it but it's still wrong."** This is the most common misunderstanding. Calibration
 and accuracy are two different things:
@@ -47,6 +48,12 @@ sitting next to a source of interference — it just reports what it measures.
    You may need to repeat several times. The compass accuracy indicator in the calibration dialog
    shows whether the phone has accepted the calibration.
 3. **Remove your phone case.** Magnetic or RFID-blocking cases are a very common culprit. Try without it.
+4. **Toggle Magnetic Correction.** In some parts of the world, magnetic north and true north
+   differ by 20° or more. Switching this on or off can sometimes dramatically improve alignment.
+   Find it in **Settings → Sensor Settings (Experts)**.
+5. **Manual compass offset (v1 only).** On the legacy v1 app, phones with a consistent
+   directional error can use a manual offset in **Settings → Sensor Settings (Experts)**. This
+   option isn't currently available in the v2 app.
 
 > **If a recent phone update broke your compass:** this is unfortunately common. Android updates
 > and manufacturer firmware patches can reset or alter how the sensor is calibrated. Sky Map's
@@ -55,9 +62,9 @@ sitting next to a source of interference — it just reports what it measures.
 
 ### Location
 
-Sky Map must know where on Earth you are to draw the correct sky. Without location access it
-defaults to 0° latitude / 0° longitude — a point in the ocean — and the map will look completely
-wrong anywhere else.
+Sky Map must know where on Earth you are to draw the correct sky. Without location access, v1
+defaults to 0° latitude / 0° longitude — a point in the ocean; v2 defaults to Greenwich, UK
+(51.48°N, 0°). Either way, the map will look completely wrong anywhere else.
 
 **Telltale symptom:** Polaris (the Pole Star) appearing near the horizon rather than high in the
 northern sky almost always means Sky Map doesn't know your location.
@@ -66,10 +73,11 @@ To fix:
 
 - Grant location permission. Open **Settings → Apps → Sky Map → Permissions** and enable
   **Location**. If you declined the permission on first launch, this is the most likely cause.
-- Open Sky Map's **Location Settings** to see a map of your current location. This is the easiest
-  way to confirm that Sky Map has your location set correctly.
-- Open the **Diagnostics** page (overflow menu) and confirm the latitude and longitude shown there
-  are correct for where you are.
+- Check Sky Map's own location screen to see a map of your current location — this is the easiest
+  way to confirm that Sky Map has your location set correctly. In v1, this is **Location
+  Settings**; in v2, tap **Location** on the map screen.
+- Open the **Diagnostics** page and confirm the latitude and longitude shown there are correct for
+  where you are. In v1, Diagnostics is in the overflow menu; in v2, it's under **Settings**.
 
 See also: [Google's guide to app permissions](https://support.google.com/googleplay/answer/6270602?p=app_permissions_m)
 
@@ -121,9 +129,9 @@ the wrong direction.
 
 Not all magnetometers are equal. Some phones — particularly cheaper models or certain
 manufacturer lines — have sensors with a persistent bias of 5–15° regardless of environment or
-calibration. For these devices, the manual compass offset (**Settings → Sensor Settings
-(Experts)**) is the best available workaround. No app can compensate for a fundamentally poor
-sensor.
+calibration. On the v1 app, the manual compass offset (**Settings → Sensor Settings
+(Experts)**) is the best available workaround for these devices; v2 doesn't offer one yet. No
+app can compensate for a fundamentally poor sensor.
 
 > Sky Map can only display what your phone reports. If the phone's compass is biased, the map
 > will be biased by the same amount. This is a physical property of mobile hardware, not a
@@ -177,9 +185,9 @@ on Google Play.
 
 ## Still stuck?
 
-Open the **Diagnostics** page from the overflow menu and email us at **skymapdevs@gmail.com** with
-a screenshot. It contains your sensor readings, location, and time info which helps us understand
-what's happening on your device.
+Open the **Diagnostics** page (overflow menu on v1, **Settings** on v2) and email us at
+**skymapdevs@gmail.com** with a screenshot. It contains your sensor readings, location, and time
+info which helps us understand what's happening on your device.
 
 ---
 

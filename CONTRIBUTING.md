@@ -152,13 +152,14 @@ directories for the format.
 
 > **Note:** Sky Map team only
 
-We use `fastlane` to manage updates to the Play Store. Available commands can be seen by running:
+We use `fastlane` to manage updates to the Play Store. From within `stardroid-v2/`, available
+commands can be seen by running:
 
 ```bash
 bundle exec fastlane
 ```
 
-or by reading [fastlane/README.md](fastlane/README.md).
+or by reading [stardroid-v2/fastlane/README.md](stardroid-v2/fastlane/README.md).
 
 Before deploying a new release you will most likely want to update the `whatsnew` text and the
 list of contributors. Both these tasks can be done by Claude - see the Claude skills under
