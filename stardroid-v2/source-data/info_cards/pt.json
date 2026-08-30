@@ -645,12 +645,22 @@
    "size": "83 anos-luz de diâmetro",
    "image_credit": "NASA/ESA/Hubble"
   },
+  "dso/m100": {
+   "description": "Messier 100 é uma galáxia espiral de grande design na Cabeleira de Berenice e uma das mais brilhantes no Aglomerado de Virgem.",
+   "fun_fact": "Sete supernovas foram observadas em M100, a mais recente em 2020 - poucas galáxias proporcionaram um espetáculo como este!",
+   "distance": "55 milhões de anos-luz",
+   "size": "166.000 anos-luz de diâmetro"
+  },
   "dso/m101": {
    "description": "A Galáxia do Cata-Vento é uma galáxia espiral de frente em Ursa Maior, uma das maiores galáxias espirais conhecidas.",
    "fun_fact": "A Galáxia do Cata-Vento contém mais de um trilhão de estrelas e tem braços espirais assimétricos devido a interações passadas!",
    "distance": "21 milhões de anos-luz",
    "size": "170.000 anos-luz de diâmetro",
    "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m102": {
+   "description": "Messier 102 é a grande incógnita no catálogo de Messier - um objeto registrado em 1781 que nunca foi identificado com certeza.",
+   "fun_fact": "Messier não publicou coordenadas para M102, e seu colega Mechain mais tarde retratou completamente a descoberta, alegando que era apenas M101 registrado duas vezes por engano! A NASA a identifica como a Galáxia do Fuso, NGC 5866."
   },
   "dso/m103": {
    "description": "M103 é um pequeno e compacto aglomerado aberto em Cassiopeia, contendo cerca de 40 estrelas em um grupo cerrado facilmente visível em binóculos. Uma estrela dupla marcante e um gigante vermelho perto do centro lhe dão uma aparência colorida em pequenos telescópios, situado dentro dos ricos campos de estrelas da Via Láctea em Cassiopeia.",
@@ -665,6 +675,12 @@
    "size": "50.000 anos-luz de diâmetro",
    "image_credit": "NASA/ESA/Hubble"
   },
+  "dso/m105": {
+   "description": "Messier 105 é uma galáxia elíptica em Leão, a maior galáxia elíptica no Catálogo Messier fora do Aglomerado de Virgem.",
+   "fun_fact": "M105 partilha um anel colossal de gás hidrogénio com a sua vizinha NGC 3384, abrangendo cerca de 650.000 anos-luz!",
+   "distance": "37 milhões de anos-luz",
+   "size": "67.000 anos-luz de diâmetro"
+  },
   "dso/m106": {
    "description": "M106 é uma galáxia espiral em Cães de Caça com braços espirais anômalos causados por jatos de seu buraco negro central.",
    "fun_fact": "M106 tem masers de água em seu núcleo, permitindo aos astrônomos medir precisamente sua distância!",
@@ -677,6 +693,11 @@
    "fun_fact": "M107 foi a última entrada formalmente adicionada ao catálogo Messier — aparece na correspondência de Pierre Méchain, mas não foi incluída na edição original de 1781. Foi oficialmente adicionada como M107 em 1947 pela astrônoma canadense Helen Sawyer Hogg, que codificou vários objetos \"ausentes\" que Méchain havia observado, mas Messier nunca registrou formalmente.",
    "distance": "20.900 anos-luz",
    "size": "~61 anos-luz de diâmetro"
+  },
+  "dso/m108": {
+   "description": "Messier 108 é uma galáxia espiral barrada na Ursa Maior, apelidada de Galáxia da Prancha de Surf.",
+   "fun_fact": "M108 está inclinada quase de perfil para nós, o que lhe valeu o nome de Prancha de Surf – e contém cerca de 290 aglomerados globulares!",
+   "distance": "46 milhões de anos-luz"
   },
   "dso/m109": {
    "description": "M109 é uma galáxia espiral barrada em Ursa Maior, o membro mais brilhante de um grupo de galáxias com seu nome.",
@@ -740,6 +761,12 @@
    "distance": "5.500 anos-luz",
    "size": "15 anos-luz de diâmetro",
    "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m18": {
+   "description": "Messier 18 é um pequeno aglomerado aberto de estrelas jovens em Sagitário, também conhecido como Aglomerado do Cisne Negro.",
+   "fun_fact": "M18 é um dos pouquíssimos objetos Messier que o Telescópio Espacial Hubble nunca fotografou!",
+   "distance": "4.200 anos-luz",
+   "size": "26 anos-luz de diâmetro"
   },
   "dso/m19": {
    "description": "M19 é um aglomerado globular compacto e rico em Ofiúco — um dos aglomerados globulares mais próximos do centro galáctico. Sua característica mais distintiva é sua forma notavelmente oblata: M19 é o aglomerado globular mais achatado conhecido, com um contorno elíptico visível até mesmo em um pequeno telescópio.",
@@ -1018,12 +1045,35 @@
    "size": "1,3 anos-luz de diâmetro",
    "image_credit": "NASA/ESA/Hubble"
   },
+  "dso/m58": {
+   "description": "Messier 58 é uma galáxia espiral barrada em Virgem e um dos membros mais brilhantes do Aglomerado de Virgem.",
+   "fun_fact": "Um buraco negro supermassivo de cerca de 70 milhões de massas solares reside no coração de M58, rodeado por um anel denso de estrelas recém-nascidas!",
+   "distance": "68 milhões de anos-luz",
+   "size": "133.000 anos-luz de diâmetro"
+  },
+  "dso/m59": {
+   "description": "Messier 59 é uma galáxia elíptica na Virgem, descoberta em 1779 durante a busca por um cometa em passagem.",
+   "fun_fact": "O núcleo de M59 gira em sentido contrário em comparação com o resto da galáxia, e cerca de 2.200 aglomerados globulares pululam à sua volta!",
+   "distance": "50 milhões de anos-luz",
+   "mass": "270 milhões de massas solares (buraco negro central)"
+  },
   "dso/m6": {
    "description": "O Aglomerado da Borboleta é um aglomerado aberto em Escorpião, nomeado pelo arranjo em forma de borboleta de suas estrelas mais brilhantes.",
    "fun_fact": "M6 tem cerca de 100 milhões de anos e contém mais de 300 estrelas, incluindo a gigante laranja BM Scorpii!",
    "distance": "1.600 anos-luz",
    "size": "25 anos-luz de diâmetro",
    "image_credit": "NOAO/AURA/NSF"
+  },
+  "dso/m60": {
+   "description": "Messier 60 é uma galáxia elíptica gigante em Virgem, a terceira galáxia elíptica gigante mais brilhante no Aglomerado de Virgem.",
+   "fun_fact": "O buraco negro central de M60 pesa cerca de 4,5 bilhões de Sóis - um dos maiores já encontrados!",
+   "distance": "57 milhões de anos-luz"
+  },
+  "dso/m61": {
+   "description": "Messier 61 é uma galáxia espiral barrada em Virgem e uma das maiores galáxias do Aglomerado de Virgem.",
+   "fun_fact": "Oito supernovas foram avistadas em M61 - uma das maiores contagens de qualquer galáxia! O próprio Messier a confundiu inicialmente com um cometa.",
+   "distance": "52 milhões de anos-luz",
+   "size": "92.000 anos-luz de diâmetro"
   },
   "dso/m62": {
    "description": "M62 é um aglomerado globular rico em Ofiúco — um dos aglomerados globulares mais próximos do centro galáctico e notavelmente assimétrico, com estrelas mais densamente concentradas no lado sul. Com magnitude 6,6, é um excelente objeto para observação com binóculos, embora sua baixa declinação o torne um alvo de curta estação para observadores do hemisfério norte.",
@@ -1095,12 +1145,28 @@
    "distance": "12.000 anos-luz",
    "size": "~25 anos-luz de diâmetro"
   },
+  "dso/m72": {
+   "description": "Messier 72 é um aglomerado globular fraco e remoto em Aquário, descoberto por Pierre Mechain em 1780.",
+   "fun_fact": "M72 agrupa cerca de 168.000 massas solares em estrelas em uma esfera com aproximadamente 9,5 bilhões de anos, incluindo 43 estrelas variáveis!",
+   "distance": "55.000 anos-luz"
+  },
+  "dso/m73": {
+   "description": "Messier 73 é um pequeno grupo de quatro estrelas em Aquário que apenas parece ser um aglomerado.",
+   "fun_fact": "Astrônomos discutiram por décadas se M73 era um aglomerado real - em 2002, foi resolvido: as quatro estrelas estão a distâncias muito diferentes e apenas se alinham por acaso!",
+   "distance": "1.000 a 2.300 anos-luz (as estrelas individuais)"
+  },
   "dso/m74": {
    "description": "A Galáxia Fantasma é uma galáxia espiral de frente em Peixes, conhecida por sua estrutura espiral de grande desenho perfeita.",
    "fun_fact": "M74 é apelidada de Galáxia Fantasma por causa de seu brilho superficial muito baixo, tornando-a difícil de observar!",
    "distance": "32 milhões de anos-luz",
    "size": "95.000 anos-luz de diâmetro",
    "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m75": {
+   "description": "Messier 75 é um aglomerado globular distante e ricamente concentrado em Sagitário.",
+   "fun_fact": "M75 é um dos aglomerados globulares mais densos conhecidos e pensa-se que seja detritos de uma galáxia anã que a Via Láctea engoliu há muito tempo!",
+   "distance": "68.000 anos-luz",
+   "size": "134 anos-luz de diâmetro"
   },
   "dso/m76": {
    "description": "O Pequeno Haltere é uma nebulosa planetária em Perseu com uma forma de oito característica — uma prima menor de M27, a Nebulosa do Haltere em Vulpecula. Embora seja a entrada mais fraca do catálogo Messier, recompensa a observação paciente em pequenos telescópios e mostra uma estrutura bela em instrumentos maiores, com dois lóbulos mais brilhantes flanqueando uma cintura mais fraca.",
@@ -1162,6 +1228,22 @@
    "size": "55.000 anos-luz de diâmetro",
    "image_credit": "NASA/ESA/Hubble"
   },
+  "dso/m84": {
+   "description": "Messier 84 é uma galáxia elíptica gigante no coração aglomerado do Aglomerado de Virgem.",
+   "fun_fact": "M84 dispara dois jatos de matéria de seu núcleo, impulsionados por um buraco negro de cerca de 1,5 bilhão de massas solares!",
+   "distance": "55 milhões de anos-luz"
+  },
+  "dso/m85": {
+   "description": "Messier 85 é uma galáxia lenticular nos arredores do Aglomerado de Virgem, em Coma Berenices.",
+   "fun_fact": "Ondulações e conchas nas regiões externas de M85 são os destroços de uma fusão de galáxias ocorrida há 4 a 7 bilhões de anos!",
+   "distance": "60 milhões de anos-luz",
+   "size": "120.600 anos-luz de diâmetro"
+  },
+  "dso/m86": {
+   "description": "Messier 86 é uma grande galáxia elíptica no Aglomerado de Virgem, formando um par notável com a vizinha M84.",
+   "fun_fact": "M86 está se aproximando de nós a 244 km/s - a aproximação mais rápida de qualquer objeto Messier! Sua passagem pelo aglomerado deixa um longo rastro de gás quente despojado.",
+   "distance": "52 milhões de anos-luz"
+  },
   "dso/m87": {
    "description": "M87 é uma galáxia elíptica supergigante em Virgem, uma das galáxias mais massivas do universo local.",
    "fun_fact": "O buraco negro central de M87 foi o primeiro a ser fotografado pelo Telescópio do Horizonte de Eventos em 2019 - tem 6,5 bilhões de massas solares!",
@@ -1170,11 +1252,34 @@
    "mass": "2,4 trilhões de massas solares",
    "image_credit": "NASA/ESA/Hubble"
   },
+  "dso/m88": {
+   "description": "Messier 88 é uma elegante galáxia espiral em Coma Berenices, um dos quinze objetos Messier no Aglomerado de Virgem.",
+   "fun_fact": "M88 está mergulhando em direção ao centro do Aglomerado de Virgem e chegará em 200 a 300 milhões de anos, tendo seu gás exterior arrancado à medida que cai!",
+   "distance": "59 milhões de anos-luz",
+   "size": "131.000 anos-luz de diâmetro"
+  },
+  "dso/m89": {
+   "description": "Messier 89 é uma galáxia elíptica em Virgem, descoberta por Charles Messier em 1781.",
+   "fun_fact": "M89 pode ser quase uma esfera perfeita - incomum para uma galáxia elíptica, que normalmente são visivelmente achatadas!",
+   "distance": "50 milhões de anos-luz"
+  },
   "dso/m9": {
    "description": "M9 é um aglomerado globular compacto em Ofiúco — um dos aglomerados de Messier mais afetados pela absorção de poeira interestelar. Situa-se em direção ao bojo galáctico, onde a poeira espessa o enfraquece significativamente. Sem essa obscuração, M9 pareceria aproximadamente uma magnitude mais brilhante e seria visível a olho nu.",
    "fun_fact": "M9 sofre mais absorção de poeira interestelar do que quase qualquer outro aglomerado globular de Messier — cerca de 1,3 magnitudes de escurecimento em comparação com uma linha de visão clara. Dois aglomerados globulares menores (NGC 6342 e NGC 6356) estão dentro de cerca de 1° de M9, tornando-o o centro de um agrupamento notável de três aglomerados globulares em uma pequena região do céu.",
    "distance": "25.800 anos-luz",
    "size": "~70 anos-luz de diâmetro"
+  },
+  "dso/m90": {
+   "description": "Messier 90 é uma grande galáxia espiral em Virgem, e o exemplo clássico de uma galáxia \"anêmica\".",
+   "fun_fact": "M90 teve seu gás formador de estrelas arrancado por seu mergulho através do Aglomerado de Virgem, deixando caudas de gás brilhante de até 260.000 anos-luz de comprimento!",
+   "distance": "59 milhões de anos-luz",
+   "size": "132.000 anos-luz de diâmetro"
+  },
+  "dso/m91": {
+   "description": "Messier 91 é uma galáxia espiral barrada em Coma Berenices e o objeto mais fraco do Catálogo Messier.",
+   "fun_fact": "A M91 esteve perdida por quase 200 anos! Messier registrou sua posição usando a galáxia de referência errada, e só foi reidentificada em 1969 por um astrônomo amador.",
+   "distance": "63 milhões de anos-luz",
+   "size": "105.500 anos-luz de diâmetro"
   },
   "dso/m92": {
    "description": "M92 é um aglomerado globular brilhante em Hércules, frequentemente ignorado por causa de sua proximidade com o mais famoso M13.",
@@ -1196,12 +1301,35 @@
    "size": "50.000 anos-luz de diâmetro",
    "image_credit": "NASA/ESA/Hubble"
   },
+  "dso/m95": {
+   "description": "Messier 95 é uma galáxia espiral barrada em Leão, parte do Grupo M96, juntamente com M96 e M105.",
+   "fun_fact": "Um anel de furiosa formação estelar com cerca de 70.000 anos-luz de largura circunda o núcleo de M95, e uma supernova explodiu lá em 2012!",
+   "distance": "33 milhões de anos-luz",
+   "size": "80.000 anos-luz de diâmetro"
+  },
+  "dso/m96": {
+   "description": "Messier 96 é uma galáxia espiral em Leão, o membro mais brilhante do Grupo de galáxias M96.",
+   "fun_fact": "M96 tem aproximadamente o mesmo tamanho e massa que a nossa própria Via Láctea, mas é notavelmente assimétrica - a sua poeira e gás estão espalhados de forma desigual pelos seus braços!",
+   "distance": "31 milhões de anos-luz",
+   "size": "78.000 anos-luz de diâmetro"
+  },
   "dso/m97": {
    "description": "A Nebulosa da Coruja é uma nebulosa planetária em Ursa Maior, nomeada por sua aparência de coruja com duas manchas escuras.",
    "fun_fact": "Os olhos escuros da coruja em M97 são cavidades tridimensionais na nebulosa, alinhadas com nossa linha de visão!",
    "distance": "2.030 anos-luz",
    "size": "2 anos-luz de diâmetro",
    "image_credit": "Gemini Observatory/NOIRLab/NSF/AURA"
+  },
+  "dso/m98": {
+   "description": "Messier 98 é uma galáxia espiral em Coma Berenices, vista quase de perfil como parte do Aglomerado de Virgem.",
+   "fun_fact": "M98 é uma das raras galáxias movendo-se em nossa direção em vez de se afastar, aproximando-se a cerca de 140 km/s!",
+   "distance": "44 milhões de anos-luz"
+  },
+  "dso/m99": {
+   "description": "Messier 99 é uma galáxia espiral de grande design em Coma Berenices, mostrando braços espirais claros e amplos.",
+   "fun_fact": "M99 foi um dos primeiros objetos reconhecidos como espiral, esboçado por Lord Rosse em 1846 - e forma estrelas três vezes mais rápido do que galáxias semelhantes!",
+   "distance": "45 milhões de anos-luz",
+   "size": "98.000 anos-luz de diâmetro"
   },
   "dso/n47_tucanae": {
    "description": "47 Tucanae (NGC 104) é o segundo aglomerado globular mais brilhante do céu, uma densa esfera de aproximadamente um milhão de estrelas antigas orbitando a Via Láctea na constelação de Tucana. A cerca de 14.500 anos-luz de distância, aparece a olho nu como uma estrela de quarta magnitude difusa, mas um telescópio resolve seu núcleo comprimido em um enxame extraordinário de sóis dourados e azul-brancos. Suas estrelas se formaram há cerca de 13 bilhões de anos, tornando o aglomerado quase tão antigo quanto o próprio universo.",
@@ -1313,8 +1441,9 @@
    "description": "Deimos é a menor e mais externa das duas luas de Marte, com uma superfície lisa e coberta de poeira que lhe dá uma aparência mais arredondada do que Fobos. Como seu companheiro, acredita-se que seja um asteroide capturado do cinturão externo.",
    "fun_fact": "Deimos é tão pequeno e distante que da superfície marciana parece pouco mais que uma estrela brilhante, levando cerca de 30 horas para atravessar lentamente o céu noturno.",
    "distance": "23.460 km de Marte",
+   "size": "15 x 12 x 11 km",
    "image_credit": "NASA/JPL-Caltech/University of Arizona",
-   "search_subtext": "Moon of Mars"
+   "search_subtext": "Lua de Marte"
   },
   "moon/dione": {
    "description": "Dione é uma lua gelada de Saturno com uma face frontal densamente cratarizada e um hemisfério traseiro repleto de falésias de gelo brilhante — linhas de fratura onde forças tectônicas antigas expuseram gelo fresco de baixo. Os dados de gravidade do Cassini sugerem um oceano líquido subsuperficial sob a crosta.",
@@ -1368,8 +1497,9 @@
    "description": "Fobos é a maior e mais interna das duas luas de Marte, orbitando mais perto de seu planeta do que qualquer outra lua do sistema solar. É um corpo de forma irregular, profundamente sulcado e cratarizado, que se acredita ser um asteroide capturado.",
    "fun_fact": "Fobos orbita Marte tão rapidamente que nasce no oeste e se põe no leste — e está lentamente caindo em espiral para dentro, destinado a colidir com Marte ou se desintegrar em um anel em cerca de 50 milhões de anos.",
    "distance": "9.376 km de Marte",
+   "size": "27 x 22 x 18 km",
    "image_credit": "NASA/JPL-Caltech/University of Arizona",
-   "search_subtext": "Moon of Mars"
+   "search_subtext": "Lua de Marte"
   },
   "moon/rhea": {
    "description": "Rheia é a segunda maior lua de Saturno e um mundo densamente cratarizado de gelo e rocha. Sua superfície pálida e antiga preserva alguns dos crateras de impacto mais pristinos do sistema solar, juntamente com falésias de gelo brilhante onde deslizamentos de terra expuseram material fresco de baixo.",
@@ -1828,6 +1958,11 @@
    "spectral_class": "K0 III",
    "image_credit": "ESO/Digitized Sky Survey 2"
   },
+  "star/e_lyrae": {
+   "description": "Epsilon Lyrae é um sistema estelar múltiplo em Lira, famoso entre os observadores como o \"Duplo Duplo\".",
+   "fun_fact": "Olhos aguçados conseguem ver Epsilon Lyrae como duas estrelas – e um telescópio divide cada uma delas em duas novamente! No total, ela abriga pelo menos cinco estrelas.",
+   "distance": "160 anos-luz"
+  },
   "star/enif": {
    "description": "Enif é a estrela mais brilhante de Pégaso e marca o nariz do cavalo alado na constelação.",
    "fun_fact": "Em 1972, Enif experimentou um evento dramático de flare, aumentando brevemente seu brilho por um fator de cinco!",
@@ -1881,6 +2016,110 @@
    "mass": "~4,6 massas solares",
    "spectral_class": "K0II-III",
    "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/j052512+062100": {
+   "description": "Bellatrix marca o ombro esquerdo de Orion (o Caçador). Seu nome é latim para \"guerreira\".",
+   "fun_fact": "Bellatrix tem apenas cerca de 28 milhões de anos e queimará seu hidrogênio em mais 7 milhões de anos - uma vida breve para uma estrela!",
+   "distance": "250 anos-luz",
+   "size": "6,2 raios solares",
+   "mass": "8,4 massas solares",
+   "spectral_class": "B2 III"
+  },
+  "star/j054048-015624": {
+   "description": "Alnitak é a estrela mais a leste do Cinturão de Orion, situada ao lado das Nebulosas da Chama e da Cabeça do Cavalo.",
+   "fun_fact": "Alnitak é a estrela de classe O mais brilhante em todo o céu noturno! Em cerca de um milhão de anos, ela inchará mais do que a órbita de Júpiter e explodirá como uma supernova.",
+   "distance": "1.260 anos-luz",
+   "size": "20 raios solares",
+   "mass": "33 massas solares",
+   "spectral_class": "O9.5 Iab"
+  },
+  "star/j055924+445700": {
+   "description": "Menkalinan é a segunda estrela mais brilhante em Auriga (o Cocheiro). Seu nome significa \"ombro do que segura as rédeas\" em árabe.",
+   "fun_fact": "Menkalinan são na verdade duas estrelas quase idênticas que se eclipsam mutuamente a cada 47,5 horas - e em cerca de um milhão de anos se tornará a estrela mais brilhante no nosso céu noturno!",
+   "distance": "79 anos-luz",
+   "size": "2,8 raios solares",
+   "mass": "2,4 massas solares",
+   "spectral_class": "A1m IV + A1m IV"
+  },
+  "star/j062248-175736": {
+   "description": "Mirzam (Beta Canis Majoris) nasce pouco antes de Sirius, o que lhe valeu o nome que significa \"O Anunciador\" em árabe.",
+   "fun_fact": "Há cerca de quatro milhões de anos, Mirzam era a estrela mais brilhante no céu, brilhando com magnitude -3,65 - muito mais brilhante do que Sirius aparece hoje!",
+   "distance": "490 anos-luz",
+   "size": "8,4 raios solares",
+   "mass": "13 massas solares",
+   "spectral_class": "B1 II-III"
+  },
+  "star/j070824-262324": {
+   "description": "Wezen é uma supergigante amarelo-branca em Cão Maior (o Cão Maior). O seu nome vem do árabe para \"peso\".",
+   "fun_fact": "Se Wezen estivesse tão perto de nós quanto Sirius, brilharia tão intensamente quanto uma meia-lua!",
+   "distance": "1.600 anos-luz",
+   "size": "188 raios solares",
+   "mass": "14 massas solares",
+   "spectral_class": "F8 Ia"
+  },
+  "star/j082248-593036": {
+   "description": "Avior (Epsilon Carinae) é uma estrela dupla brilhante na Carina e uma das quatro estrelas do Falso Cruzeiro.",
+   "fun_fact": "A Falsa Cruz é tão frequentemente confundida com o Cruzeiro do Sul que causou erros de navegação reais! O nome Avior foi inventado por fabricantes britânicos de almanaques na década de 1930.",
+   "distance": "610 anos-luz",
+   "size": "151 raios solares",
+   "mass": "10,5 massas solares",
+   "spectral_class": "K3 III + B2 Vp"
+  },
+  "star/j091312-694312": {
+   "description": "Miaplacidus é a segunda estrela mais brilhante em Carina (a Quilha) e marca um canto do asterismo da Cruz de Diamante.",
+   "fun_fact": "Miaplacidus inchou e se tornou uma gigante após consumir o hidrogênio em seu núcleo, mas ainda gira a impressionantes 146 km/s!",
+   "distance": "113 anos-luz",
+   "size": "5,8 raios solares",
+   "mass": "3,9 massas solares",
+   "spectral_class": "A1 III"
+  },
+  "star/j123112-570636": {
+   "description": "Gacrux (Gamma Crucis) é a estrela mais ao norte do Cruzeiro do Sul e a estrela gigante vermelha mais próxima da Terra.",
+   "fun_fact": "Gacrux é a gigante vermelha tipo M mais próxima de nós, e seu nome é simplesmente uma contração de navegador de \"Gamma Crucis\" cunhada na década de 1940!",
+   "distance": "89 anos-luz",
+   "size": "73 raios solares",
+   "mass": "1,5 massas solares",
+   "spectral_class": "M3.5 III"
+  },
+  "star/j124800-594124": {
+   "description": "Mimosa (Beta Crucis) é a segunda estrela mais brilhante na constelação do Cruzeiro do Sul e uma das estrelas mais quentes visíveis a olho nu.",
+   "fun_fact": "Mimosa é uma variável pulsante do tipo Beta Cephei - ela incha e encolhe em três ritmos sobrepostos, cada um durando apenas cerca de quatro horas!",
+   "distance": "280 anos-luz",
+   "size": "8 raios solares",
+   "mass": "14,5 massas solares",
+   "spectral_class": "B0.5 III"
+  },
+  "star/j143936-605024": {
+   "description": "Toliman (Alpha Centauri B) é a companheira laranja no sistema estelar mais próximo do Sol, orbitando a mais brilhante Rigil Kentaurus.",
+   "fun_fact": "Toliman obteve seu nome oficial apenas em 2018. É ligeiramente menor e mais fria que o Sol e, juntamente com seus dois irmãos, forma nossos vizinhos estelares mais próximos!",
+   "distance": "4,34 anos-luz",
+   "size": "0,86 raios solares",
+   "mass": "0,91 massas solares",
+   "spectral_class": "K1 V"
+  },
+  "star/j164836-690148": {
+   "description": "Atria é a estrela mais brilhante do Triângulo Austral (o Triângulo Austral), uma gigante laranja muito maior que o Sol.",
+   "fun_fact": "Atria tem 139 vezes o diâmetro do Sol - se fosse colocada no centro do Sistema Solar, quase alcançaria a órbita de Vênus!",
+   "distance": "391 anos-luz",
+   "size": "139 raios solares",
+   "mass": "6,4 massas solares",
+   "spectral_class": "K2 Ib-IIa"
+  },
+  "star/j173712-430000": {
+   "description": "Sargas é uma gigante brilhante na cauda de Escorpião (o Escorpião), com um nome tradicional de origem suméria.",
+   "fun_fact": "Sargas gira tão rápido que se projeta para fora – é um terço mais largo no equador do que de polo a polo, e pode ter se formado quando duas estrelas se fundiram!",
+   "distance": "329 anos-luz",
+   "size": "35 raios solares",
+   "mass": "3,1 massas solares",
+   "spectral_class": "F1 III"
+  },
+  "star/j202548-564348": {
+   "description": "Pavão é a estrela mais brilhante na constelação do Pavão, uma estrela quente azul-branca do céu do extremo sul.",
+   "fun_fact": "A estrela Pavão recebeu seu nome na década de 1930 porque a RAF insistiu que cada estrela em seu novo Air Almanac tivesse um nome - e esta não tinha nenhum!",
+   "distance": "179 anos-luz",
+   "size": "4,8 raios solares",
+   "mass": "5,9 massas solares",
+   "spectral_class": "B3 V"
   },
   "star/kaus_australis": {
    "description": "Kaus Australis é a estrela mais brilhante em Sagitário (o Arqueiro). Seu nome significa \"o arco do sul\" em uma mistura de árabe e latim.",
@@ -1944,6 +2183,12 @@
    "mass": "~8,5 massas solares",
    "spectral_class": "F5Ib",
    "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/n25": {
+   "description": "R Coronae Borealis é uma rara supergigante amarela na Coroa Boreal, e o protótipo da classe de estrelas variáveis que leva o seu nome.",
+   "fun_fact": "R Coronae Borealis é por vezes chamada de \"nova inversa\" - em vez de brilhar intensamente, ela desvanece-se imprevisivelmente em até 9 magnitudes quando expele nuvens de fuligem de carbono que a escondem da vista!",
+   "distance": "4.560 anos-luz",
+   "spectral_class": "G0Iep"
   },
   "star/nunki": {
    "description": "Nunki é a segunda estrela mais brilhante de Sagitário e o nome de estrela mais antigo ainda em uso comum.",
