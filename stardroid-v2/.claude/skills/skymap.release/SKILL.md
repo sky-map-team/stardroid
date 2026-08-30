@@ -9,9 +9,8 @@ Some steps need input from the user.
 
 **Before running this for the first time**, confirm with the user that v2 is actually ready to
 ship a real release — as of the last recorded decision, v2's release
-signing / `app/no-checkin.properties` wiring was still being finalized, and v2 has no equivalent
-yet to v1's branded splash-screen step (see notes below). Ask rather than assuming this gap has
-since been closed.
+signing / `app/no-checkin.properties` wiring was still being finalized. Ask rather than assuming
+this gap has since been closed.
 
 ### Step 1. Bring the version up to date
 
@@ -25,11 +24,13 @@ since been closed.
    ```
    This writes to `app/build.gradle.kts` (Kotlin DSL) — see `skymap.deploy-play-store` for the
    `fastlane-plugin-versioning_android` caveat.
-
-v1's release process has a splash-screen branding step here (`skymap.release-splashscreen`). v2
-has **no equivalent** — it uses the stock AndroidX SplashScreen API (`installSplashScreen()` in
-`MainActivity.kt`), themed via `themes.xml`, with no per-release branded portrait image. Skip
-this step entirely for v2; don't fabricate a branding step that doesn't exist.
+3. Ask the user for an appropriate portrait image for the release's changelog/GitHub-release icon
+   (mirroring v1's step). Use the `skymap.release-splashscreen` skill for this — note that unlike
+   v1, this only produces a small circular icon for `CHANGELOG.md`/the GitHub release; it does
+   **not** touch the app's actual splash screen. v2 uses the stock AndroidX SplashScreen API
+   (`installSplashScreen()` in `MainActivity.kt`) with a single static image not swapped per
+   release — don't fabricate an app-branding step that doesn't exist. If the user has no image
+   handy, it's fine to skip and publish without an icon.
 
 ### Step 2. Bring the metadata up to date
 
@@ -79,14 +80,18 @@ Step 1 (e.g. `2.0.0` and `Jupiter`).
    heading — add the heading now. If not, add a new entry manually based on commits since the
    last tag (`git log <last-tag>..HEAD --oneline`):
    ```
-   ## [<version>] - YYYY-MM-DD
+   ## [<version>] (v2) - YYYY-MM-DD
+
+   <img src="stardroid-v2/assets/release-icons/<version>_<name_lowercase>_icon.png" width="80" alt="<ReleaseName>" />
 
    ### Added / Fixed / Changed
    - ...
    ```
    Use today's date. Follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Since
    both v1 and v2 share this changelog, make the entry heading clearly identify it as a v2
-   release (e.g. include "(v2)" or similar) to avoid confusing it with v1 tags.
+   release (e.g. include "(v2)" or similar) to avoid confusing it with v1 tags. Include the
+   `<img>` tag only if Step 1.3 produced an icon for this release — omit it entirely otherwise,
+   same as v1.
 
 2. Commit all changes from Steps 1–5 (version bump, whatsnew content, translations if any,
    CHANGELOG) in a single commit to `master`:
@@ -118,7 +123,19 @@ Step 1 (e.g. `2.0.0` and `Jupiter`).
    awk '/^## \[<version>\]/{flag=1; next} /^## \[/{flag=0} flag' ../CHANGELOG.md \
      | sed '/^[[:space:]]*---[[:space:]]*$/d' \
      > /tmp/release_notes.md
+   ```
 
+   **If Step 1.3 produced an icon**, the `<img>` tag's path is relative to the repo root
+   (`stardroid-v2/assets/release-icons/...`), which does not resolve inside a standalone GitHub
+   release description. Rewrite it to an absolute `raw.githubusercontent.com` URL pinned to the
+   commit just pushed in step 2, so the icon keeps rendering even if the file is later renamed or
+   moved — run this *before* `gh release create`:
+   ```bash
+   commit=$(git rev-parse HEAD)
+   sed -i '' "s#stardroid-v2/assets/release-icons/#https://raw.githubusercontent.com/sky-map-team/stardroid/${commit}/stardroid-v2/assets/release-icons/#" /tmp/release_notes.md
+   ```
+
+   ```bash
    gh release create <agreed-tag> \
      app/build/outputs/apk/gms/release/app-gms-release.apk \
      --title "Sky Map v2 <version>: <ReleaseName>" \
