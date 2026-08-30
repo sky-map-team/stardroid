@@ -24,7 +24,11 @@ Sky Map has a *long* history, launching as Google Sky Map on the very first Andr
 "Stardroid" was the internal name - you can see it's still used as an identifier in the code. Back in the day Google's lawyercats were concerned that 'stardroid' might attract the wrath of, let's say, followers of the Dark Side of the Force so we were _strongly_ encouraged not to call it that. Plus, Google likes to name products after what they are (Photos, Calendar, Docs...). So, Sky Map it is.
 
 ### Why does it lack feature _X_ or look so dated?
-Android has evolved significantly since 2009. While most of the code has been rewritten since its Google days, the architecture reflects its origins. We are currently working on a complete modernization of the app. In the meantime, we are continually inspired by the community of users who still find joy in its simplicity and quirks.
+
+> Check out Sky Map v2! It's a complete rewrite and not only does it look more like a modern Android app but it's a solid platform to build new features on. Expect more features very soon!
+
+If you're still on v1 though, Android has evolved significantly since 2009. While most of the code has been rewritten since its Google days, the architecture reflects its origins which is why it looks somewhat retro.
+Nevertheless, we are continually inspired by the community of users who still find joy in its simplicity and quirks.
 
 ### How can we help?
 I'm glad you asked! We have a section on that below.
@@ -51,7 +55,7 @@ If you enjoy using Sky Map, there are several ways to help keep the project aliv
 
 # Contributing
 
-IMPORTANT: Contributions are currently closed! The V1 codebase is about to be retired and any contributions would be wasted. Watch out for ways to contribute in V2.
+IMPORTANT: Contributions are currently closed! The V1 codebase has been retired and any contributions would be wasted. Watch out for ways to contribute in V2 once it's a little more settled.
 
 ~~Bug fixes, dependency upgrades, and translations are always welcome. For major changes or new features, **please [email us](mailto:skymapdevs@gmail.com) first** — we may have a different vision and it would be a shame for your work to go to waste.~~
 
