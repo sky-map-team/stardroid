@@ -44,8 +44,9 @@ Plus, we'll be able to review them faster.
 ### Prerequisites
 
 - Android Studio (latest stable recommended)
-- Android SDK (API level 26–35)
-- Java 17 toolchain
+- JDK 17
+- Android SDK with compileSdk 36; **minSdk 29** (a deliberate raise over v1's 26 — sub-Android-10
+  devices are ~1.6% of installs)
 - A `local.properties` file in the project root containing:
 
 ```
@@ -56,92 +57,50 @@ Android Studio can create this file for you.
 
 ### Project Structure
 
-You should see the following directories (from within the `stardroid-v1` directory):
+Active development happens in `stardroid-v2/`:
 
-- **app/** — Application source
-- **datamodel/** — Protocol buffer definitions for astronomical objects
-- **tools/** — Source for generating binary data used by the app
+- **app/** — the Android app shell
+- **core/math**, **core/astronomy** — pure Kotlin modules (no Android SDK on the classpath)
+- **render/api**, **render/gles1** — renderer contract and GLES1 backend
+- **konsist/** — architecture-gate tests enforcing the pure/Android module boundary
 
-See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for a detailed architecture overview.
+See [stardroid-v2/README.md](stardroid-v2/README.md) and
+[stardroid-v2/AGENTS.md](stardroid-v2/AGENTS.md) for a full module layout and architecture
+overview. `stardroid-v1/` holds the legacy app, retained as the reference for existing behavior;
+see [stardroid-v1/AGENTS.md](stardroid-v1/AGENTS.md) if you're working there instead.
 
 ## Building
 
-All commands below should be run from within the `stardroid-v1` directory:
-
-### Quick Build (Debug APK)
-
-```bash
-./gradlew :app:assembleGmsDebug
-```
-
-The APK can be found in `app/build/outputs/apk/`.
-
-### Quick Build (Default)
+All commands below should be run from within the `stardroid-v2` directory. Always specify a
+**flavor** — there is no plain `assembleDebug`:
 
 ```bash
-./build.sh             # GMS release
-./build.sh --fdroid    # F-Droid release
-./build.sh -d          # GMS debug
+./gradlew :app:installFdroidDebug    # pure open source, no Google dependencies
+./gradlew :app:installGmsDebug       # adds Play Services (Analytics, fused location)
 ```
 
-### Full Build (Including Data Generation)
-
-```bash
-./build.sh --full             # GMS including data generation
-./build.sh --full --fdroid    # F-Droid including data generation
-```
-
-Use `--full` when modifying star catalog or astronomical data.
-
-### Build Flavors
-
-- **gms** — Includes Google Play Services (Analytics, Location)
-- **fdroid** — Pure open source, no Google dependencies
-
-Always specify the flavor when building: `assembleGmsDebug` not `assembleDebug`.
-
-### Building a Release APK
-
-> **Note:** Sky Map team only
-
-Create a file in the `app` directory called `no-checkin.properties` with appropriate values:
-
-```
-store-pwd=
-key-pwd=
-analytics-key=
-```
-
-and overwrite `google-services.json` with the correct file. Then:
-
-```bash
-./gradlew :app:assembleGms
-```
+`gms` *release* builds additionally need `no-checkin.properties`, which is not in the repo.
+F-Droid builds need nothing extra.
 
 ## Running Tests
 
-### Unit Tests
-
 ```bash
-./gradlew :app:test
+./gradlew check                      # unit tests (JUnit 5 + Truth), ktlint, architecture gate
+./gradlew connectedDebugAndroidTest  # instrumented; needs a device or emulator
+./gradlew ktlintFormat               # auto-fix most style violations
 ```
 
-### Instrumented Tests
-
-Requires a connected device or emulator:
-
-```bash
-./gradlew :app:connectedAndroidTest
-```
+`check` must pass before any commit. CI runs both suites on every PR.
 
 ## Deploying to a Device
 
 Plug your phone in and run:
 
 ```bash
-./deploy.sh       # Release build
-./deploy.sh -d    # Debug build
-./undeploy.sh     # Remove the app
+./install.sh          # Release build
+./install.sh -d       # Debug build
+./install.sh --fdroid # F-Droid build (add -d for debug)
+./uninstall.sh         # Remove the app
 ```
 
 ## Submitting Changes
@@ -172,15 +131,22 @@ before signing. Questions: [skymapdevs@gmail.com](mailto:skymapdevs@gmail.com).
 
 ## Coding Style
 
-We follow the [Google Java Style Guide](https://google.github.io/styleguide/javaguide.html) (or try to):
+- **`stardroid-v2/` (Kotlin, active development):** follow the
+  [Google Kotlin Style Guide](https://developer.android.com/kotlin/style-guide); `./gradlew
+  ktlintCheck` enforces it in CI. See [stardroid-v2/AGENTS.md](stardroid-v2/AGENTS.md) for the
+  full conventions, including the required GPLv3 file header.
+- **`stardroid-v1/` (Java, legacy):** follow the
+  [Google Java Style Guide](https://google.github.io/styleguide/javaguide.html). See
+  [stardroid-v1/AGENTS.md](stardroid-v1/AGENTS.md) for the full conventions.
 
-- 100 character line wrap
-- Do **not** prefix member variables with `m` (unlike common Android convention)
-- Java 17 toolchain features are available
+Both: 100 character line wrap, no `m`-prefix on member variables/properties.
 
 ## Translations
 
-Translation files live under `app/src/main/res/values-<language>/`. If you'd like to contribute a new translation or fix an existing one, those PRs are very welcome. See the existing language directories for the format.
+Translation files live under `<module>/app/src/main/res/values-<language>/` (`stardroid-v2/` for
+current development, `stardroid-v1/` for the legacy app). If you'd like to contribute a new
+translation or fix an existing one, those PRs are very welcome. See the existing language
+directories for the format.
 
 ## Deploying to the Google Play Store
 
