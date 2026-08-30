@@ -210,6 +210,8 @@ private fun riseSetUtHours(
         delta = (ghaDeg + location.longitudeDeg + sign * hourAngleDeg) / 15.0
         if (!delta.isFinite()) return null
         delta %= 24.0
+        if (delta > 12.0) delta -= 24.0
+        if (delta < -12.0) delta += 24.0
         ut = (ut - delta) % 24.0
         if (ut < 0.0) ut += 24.0
         iterations++
