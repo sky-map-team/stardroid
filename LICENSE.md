@@ -1,3 +1,21 @@
+# Licensing in this repository
+
+This repository contains two applications with different licenses:
+
+* **`stardroid-v1/`** — the legacy Sky Map app. Licensed under the **Apache License, Version
+  2.0**. Original copyright headers and notices in inherited files are preserved as required
+  by that license.
+* **`stardroid-v2/`** — the current rewrite. Licensed under the **GNU General Public License
+  v3.0 (GPLv3)**, with an additional permission under GPLv3 §7 for distribution through app
+  stores, and a short, explicitly enumerated list of reserved brand assets. See
+  [`stardroid-v2/LICENSE.md`](stardroid-v2/LICENSE.md) for the full terms specific to that
+  module, and [`stardroid-v2/NOTICE.md`](stardroid-v2/NOTICE.md) for its Apache-2.0 provenance.
+
+As a combined distribution, the repository as a whole is licensed under the GPLv3 text below;
+see [`README.md`](README.md) for a plain-language summary of how the two licenses fit together.
+
+---
+
                     GNU GENERAL PUBLIC LICENSE
                        Version 3, 29 June 2007
 

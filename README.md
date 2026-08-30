@@ -24,7 +24,11 @@ Sky Map has a *long* history, launching as Google Sky Map on the very first Andr
 "Stardroid" was the internal name - you can see it's still used as an identifier in the code. Back in the day Google's lawyercats were concerned that 'stardroid' might attract the wrath of, let's say, followers of the Dark Side of the Force so we were _strongly_ encouraged not to call it that. Plus, Google likes to name products after what they are (Photos, Calendar, Docs...). So, Sky Map it is.
 
 ### Why does it lack feature _X_ or look so dated?
-Android has evolved significantly since 2009. While most of the code has been rewritten since its Google days, the architecture reflects its origins. We are currently working on a complete modernization of the app. In the meantime, we are continually inspired by the community of users who still find joy in its simplicity and quirks.
+
+> Check out Sky Map v2! It's a complete rewrite and not only does it look more like a modern Android app but it's a solid platform to build new features on. Expect more features very soon!
+
+If you're still on v1 though, Android has evolved significantly since 2009. While most of the code has been rewritten since its Google days, the architecture reflects its origins which is why it looks somewhat retro.
+Nevertheless, we are continually inspired by the community of users who still find joy in its simplicity and quirks.
 
 ### How can we help?
 I'm glad you asked! We have a section on that below.
@@ -51,7 +55,7 @@ If you enjoy using Sky Map, there are several ways to help keep the project aliv
 
 # Contributing
 
-IMPORTANT: Contributions are currently closed! The V1 codebase is about to be retired and any contributions would be wasted. Watch out for ways to contribute in V2.
+IMPORTANT: Contributions are currently closed! The V1 codebase has been retired and any contributions would be wasted. Watch out for ways to contribute in V2 once it's a little more settled.
 
 ~~Bug fixes, dependency upgrades, and translations are always welcome. For major changes or new features, **please [email us](mailto:skymapdevs@gmail.com) first** — we may have a different vision and it would be a shame for your work to go to waste.~~
 
@@ -64,16 +68,22 @@ IMPORTANT: Contributions are currently closed! The V1 codebase is about to be re
 Sigh. I'm sorry we have to do this. But this legalese is to prevent lazy people taking the source code and releasing a clone of Sky Map that is just stuffed full of ads. Yes people do this. It adds no value to the world and just lines their pockets.
 
 ## 1. Source Code License
-The source code of this project is a derivative work of the original open-source Sky Map application (formerly Google Sky Map). 
+The source code of this project is a derivative work of the original open-source Sky Map application (formerly Google Sky Map). The repository holds two applications:
 
-* **New Code & Modifications:** All new code, modernizations, and modifications authored by **Penterakt LLC** are licensed under the **GNU General Public License v3.0 (GPLv3)**.
-* **Legacy Provenance:** Portions of the underlying core logic, algorithms, and historical source files remain subject to their original **Apache License, Version 2.0**. Original copyright headers and notices within inherited files have been preserved as required by the Apache 2.0 terms. 
+* **`stardroid-v1/`** — the legacy app. Licensed under the **Apache License, Version 2.0**.
+  Original copyright headers and notices within inherited files have been preserved as
+  required by the Apache 2.0 terms.
+* **`stardroid-v2/`** — the current rewrite, authored by **Penterakt LLC**. Licensed under the
+  **GNU General Public License v3.0 (GPLv3)**, with an additional permission under GPLv3 §7 for
+  distribution through app stores. See [`stardroid-v2/LICENSE.md`](stardroid-v2/LICENSE.md) for
+  the full terms and [`stardroid-v2/NOTICE.md`](stardroid-v2/NOTICE.md) for its own
+  Apache-2.0 provenance.
 * **Combined Work:** The project as a combined distribution is compiled and distributed under the terms of the **GPLv3**. Any third-party forks, modifications, or derivative versions of this combined codebase must be completely open-sourced under the GPLv3.
 
 ## 2. Branding & Visual Assets (All Rights Reserved)
-The open-source code licenses (GPLv3 and Apache 2.0) apply strictly to the functional source code. All proprietary visual artwork, custom UI layouts, onboarding graphics, launcher icons, and designs contained within this repository are **Copyright © 2026 Penterakt LLC, All Rights Reserved**. 
+The open-source code licenses (GPLv3 and Apache 2.0) apply to the functional source code, resources, and translations. A short, explicitly enumerated list of **brand identity assets** — launcher and notification icons, onboarding artwork, and similar identity marks — is reserved as **Copyright © 2026 Penterakt LLC, All Rights Reserved**. For `stardroid-v2/`, the authoritative list is the `[arr]` section of [`stardroid-v2/ASSET-LICENSES.txt`](stardroid-v2/ASSET-LICENSES.txt); nothing else in that module is reserved.
 
-These visual assets are **NOT** open-source and may not be used, duplicated, or modified in any third-party fork or distribution without express written consent from [Penterakt LLC](http://penterakt.io). 
+Reserved brand assets are **NOT** open-source and may not be used, duplicated, or modified in any third-party fork or distribution without express written consent from [Penterakt LLC](http://penterakt.io).
 
 *(Note: This reservation excludes any public-domain or open-licensed scientific datasets, such as NASA/ESA astronomical imagery or public star catalogs, which remain governed by their original respective terms.)*
 
