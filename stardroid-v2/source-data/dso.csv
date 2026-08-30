@@ -1,0 +1,138 @@
+id,ra_deg,dec_deg,magnitude,type,size_arcmin,designations,names
+dso/m1,83.625,22.01667,8.4,nebula.supernova_remnant,6.0,M1|NGC 1952,crab nebula
+dso/m2,323.37495,-0.81667,6.5,cluster.globular,12.9,M2|NGC 7089,
+dso/m3,205.54995,28.38333,6.4,cluster.globular,16.2,M3|NGC 5272,
+dso/m4,245.89995,-26.53333,5.9,cluster.globular,26.3,M4|NGC 6121,
+dso/m5,229.65,2.08333,5.8,cluster.globular,17.4,M5|NGC 5904,
+dso/m6,265.02495,-32.21667,4.2,cluster.open,15.0,M6|NGC 6405,butterfly cluster
+dso/m7,268.47495000000004,-34.81667,3.3,cluster.open,80.0,M7|NGC 6475,scorpions tail|Ptolemy Cluster
+dso/m8,270.94995,-24.38333,5.8,nebula.diffuse,90.0,M8|NGC 6523,Lagoon Nebula
+dso/m9,259.8,-18.51667,7.9,cluster.globular,9.3,M9|NGC 6333,
+dso/m10,254.27505,-4.1,6.6,cluster.globular,15.1,M10|NGC 6254,
+dso/m11,282.77504999999996,-6.26667,5.8,cluster.open,14.0,M11|NGC 6705,Wild Duck Cluster
+dso/m12,251.80005,-1.95,6.6,cluster.globular,14.5,M12|NGC 6218,
+dso/m13,250.425,36.46667,5.9,cluster.globular,16.6,M13|NGC 6205,hercules_gc|Hercules Globular Cluster
+dso/m14,264.40005,-3.25,7.6,cluster.globular,11.7,M14|NGC 6402,
+dso/m15,322.5,12.16667,6.4,cluster.globular,12.3,M15|NGC 7078,
+dso/m16,274.69995,-13.78333,6.0,nebula.diffuse,35.0,M16|NGC 6611,eagle_nebula
+dso/m17,275.20005,-16.18333,6.0,nebula.diffuse,46.0,M17|NGC 6618,
+dso/m18,274.97505,-17.13333,6.9,cluster.open,9.0,M18|NGC 6613,
+dso/m19,255.64995000000002,-26.26667,7.2,cluster.globular,13.5,M19|NGC 6273,
+dso/m20,270.57495,-23.03333,6.3,nebula.diffuse,29.0,M20|NGC 6514,Trifid Nebula
+dso/m21,271.15005,-22.5,5.9,cluster.open,13.0,M21|NGC 6531,
+dso/m22,279.10005,-23.9,5.1,cluster.globular,24.0,M22|NGC 6656,
+dso/m23,269.20005000000003,-19.01667,5.5,cluster.open,27.0,M23|NGC 6494,
+dso/m24,274.60005,-18.41667,4.6,star_cloud,90.0,M24,Sagittarius Star Cloud
+dso/m25,277.90004999999996,-19.25,4.6,cluster.open,32.0,M25,
+dso/m26,281.29994999999997,-9.4,8.0,cluster.open,15.0,M26|NGC 6694,
+dso/m27,299.89995,22.71667,8.1,nebula.planetary,15.2,M27|NGC 6853,Dumbbell Nebula
+dso/m28,276.12495,-24.86667,6.9,cluster.globular,11.2,M28|NGC 6626,
+dso/m29,305.97495000000004,38.53333,6.6,cluster.open,7.0,M29|NGC 6913,
+dso/m30,325.09995,-23.18333,7.5,cluster.globular,11.0,M30|NGC 7099,
+dso/m31,10.67505,41.26667,3.5,galaxy.spiral,178.0,M31|NGC 224,andromeda galaxy
+dso/m32,10.67505,40.86667,8.2,galaxy.elliptical,7.6,M32|NGC 221,
+dso/m33,23.474999999999998,30.65,5.7,galaxy.spiral,62.0,M33|NGC 598,Triangulum Galaxy
+dso/m34,40.5,42.78333,5.2,cluster.open,35.0,M34|NGC 1039,
+dso/m35,92.22494999999999,24.33333,5.1,cluster.open,28.0,M35|NGC 2168,
+dso/m36,84.02505000000001,34.13333,6.0,cluster.open,12.0,M36|NGC 1960,
+dso/m37,88.09995,32.55,5.6,cluster.open,24.0,M37|NGC 2099,
+dso/m38,82.17495,35.83333,6.4,cluster.open,21.0,M38|NGC 1912,
+dso/m39,323.05005,48.43333,4.6,cluster.open,32.0,M39|NGC 7092,
+dso/m40,185.59994999999998,58.08333,8.4,star.double,0.8,M40,Winnecke 4
+dso/m41,101.50005,-20.73333,4.5,cluster.open,38.0,M41|NGC 2287,
+dso/m42,83.85,-5.45,4.0,nebula.diffuse,66.0,M42|NGC 1976,Orion Nebula
+dso/m43,83.89995,-5.26667,9.0,nebula.diffuse,20.0,M43|NGC 1982,De Mairan's Nebula
+dso/m44,130.02495,19.98333,3.1,cluster.open,95.0,M44|NGC 2632,beehive cluster|praesepe
+dso/m45,56.749995,24.11667,1.6,cluster.open,110.0,M45,pleiades|seven sisters
+dso/m46,115.45005,-14.81667,6.1,cluster.open,27.0,M46|NGC 2437,
+dso/m47,114.15,-14.5,4.4,cluster.open,30.0,M47|NGC 2422,
+dso/m48,123.45,-5.8,5.8,cluster.open,54.0,M48|NGC 2548,
+dso/m49,187.45005,8.0,8.4,galaxy.elliptical,8.9,M49|NGC 4472,
+dso/m50,105.79995,-8.33333,5.9,cluster.open,16.0,M50|NGC 2323,
+dso/m51,202.47494999999998,47.2,8.4,galaxy.spiral,11.0,M51|NGC 5194,whirlpool galaxy
+dso/m52,351.04995,61.58333,6.9,cluster.open,13.0,M52|NGC 7654,
+dso/m53,198.225,18.16667,7.7,cluster.globular,12.6,M53|NGC 5024,
+dso/m54,283.77495,-30.48333,7.7,cluster.globular,9.1,M54|NGC 6715,
+dso/m55,295.00005,-30.96667,7.0,cluster.globular,19.0,M55|NGC 6809,
+dso/m56,289.15004999999996,30.18333,8.3,cluster.globular,7.1,M56|NGC 6779,
+dso/m57,283.39995,33.03333,9.0,nebula.planetary,2.5,M57|NGC 6720,ring nebula
+dso/m58,189.42495,11.81667,9.8,galaxy.spiral,5.4,M58|NGC 4579,
+dso/m59,190.5,11.65,9.8,galaxy.elliptical,5.1,M59|NGC 4621,
+dso/m60,190.92495,11.55,8.8,galaxy.elliptical,7.2,M60|NGC 4649,
+dso/m61,185.475,4.46667,9.7,galaxy.spiral,6.0,M61|NGC 4303,
+dso/m62,255.29999999999998,-30.11667,6.6,cluster.globular,14.1,M62|NGC 6266,
+dso/m63,198.94995,42.03333,8.6,galaxy.spiral,12.3,M63|NGC 5055,Sunflower Galaxy
+dso/m64,194.175,21.68333,8.5,galaxy.spiral,9.3,M64|NGC 4826,Black Eye Galaxy
+dso/m65,169.725,13.08333,9.3,galaxy.spiral,10.0,M65|NGC 3623,Leo Triplet
+dso/m66,170.05005,12.98333,9.0,galaxy.spiral,8.7,M66|NGC 3627,Leo Triplet
+dso/m67,132.6,11.81667,6.9,cluster.open,30.0,M67|NGC 2682,
+dso/m68,189.87494999999998,-26.75,8.2,cluster.globular,12.0,M68|NGC 4590,
+dso/m69,277.84995000000004,-32.35,7.7,cluster.globular,7.1,M69|NGC 6637,
+dso/m70,280.79999999999995,-32.3,8.1,cluster.globular,7.8,M70|NGC 6681,
+dso/m71,298.45005000000003,18.78333,8.3,cluster.globular,7.2,M71|NGC 6838,
+dso/m72,313.37505000000004,-12.53333,9.4,cluster.globular,5.9,M72|NGC 6981,
+dso/m73,314.74994999999996,-12.63333,9.0,asterism,2.8,M73|NGC 6994,
+dso/m74,24.17505,15.78333,9.2,galaxy.spiral,10.2,M74|NGC 628,Phantom Galaxy
+dso/m75,301.52504999999996,-21.91667,8.6,cluster.globular,6.0,M75|NGC 6864,
+dso/m76,25.575000000000003,51.56667,10.1,nebula.planetary,2.7,M76|NGC 650,Little Dumbbell Nebula
+dso/m77,40.67505,-0.01667,8.8,galaxy.spiral,6.9,M77|NGC 1068,Cetus A
+dso/m78,86.67495000000001,0.05,8.0,nebula.diffuse,8.0,M78|NGC 2068,
+dso/m79,81.12495,-24.55,8.0,cluster.globular,8.7,M79|NGC 1904,
+dso/m80,244.24994999999998,-22.98333,7.2,cluster.globular,8.9,M80|NGC 6093,
+dso/m81,148.90005,69.06667,6.9,galaxy.spiral,25.7,M81|NGC 3031,Bode's Galaxy
+dso/m82,148.95,69.68333,8.4,galaxy.irregular,11.2,M82|NGC 3034,Cigar Galaxy
+dso/m83,204.25005,-29.86667,7.6,galaxy.spiral,11.2,M83|NGC 5236,Southern Pinwheel
+dso/m84,186.27495,12.88333,9.3,galaxy.lenticular,5.0,M84|NGC 4374,
+dso/m85,186.34995,18.18333,9.2,galaxy.lenticular,7.1,M85|NGC 4382,
+dso/m86,186.55005,12.95,9.2,galaxy.lenticular,7.4,M86|NGC 4406,
+dso/m87,187.69995,12.4,8.6,galaxy.elliptical,7.2,M87|NGC 4486,Virgo A
+dso/m88,187.99994999999998,14.41667,9.5,galaxy.spiral,6.9,M88|NGC 4501,
+dso/m89,188.925,12.55,9.8,galaxy.elliptical,4.2,M89|NGC 4552,
+dso/m90,189.19995,13.16667,9.5,galaxy.spiral,9.5,M90|NGC 4569,
+dso/m91,188.85,14.5,10.2,galaxy.spiral,5.4,M91|NGC 4548,
+dso/m92,259.275,43.13333,6.5,cluster.globular,11.2,M92|NGC 6341,
+dso/m93,116.14995,-23.86667,6.2,cluster.open,22.0,M93|NGC 2447,
+dso/m94,192.72495,41.11667,8.2,galaxy.spiral,11.0,M94|NGC 4736,
+dso/m95,160.99995,11.7,9.7,galaxy.spiral,7.4,M95|NGC 3351,
+dso/m96,161.7,11.81667,9.2,galaxy.spiral,7.1,M96|NGC 3368,
+dso/m97,168.70005,55.01667,9.9,nebula.planetary,3.2,M97|NGC 3587,Owl Nebula
+dso/m98,183.45000000000002,14.9,10.1,galaxy.spiral,9.5,M98|NGC 4192,
+dso/m99,184.69995,14.41667,9.8,galaxy.spiral,5.4,M99|NGC 4254,
+dso/m100,185.72505,15.81667,9.4,galaxy.spiral,6.9,M100|NGC 4321,
+dso/m101,210.79995000000002,54.35,7.9,galaxy.spiral,28.8,M101|NGC 5457,pinwheel_galaxy
+dso/m102,226.62495,55.76667,10.5,galaxy.lenticular,5.2,M102|NGC 5866,Spindle Galaxy
+dso/m103,23.299950000000003,60.7,7.4,cluster.open,6.0,M103|NGC 581,
+dso/m104,190.00005,-11.61667,8.3,galaxy.spiral,8.9,M104|NGC 4594,sombrero_galaxy
+dso/m105,161.95005,12.58333,9.3,galaxy.elliptical,4.5,M105|NGC 3379,
+dso/m106,184.75005000000002,47.3,8.3,galaxy.spiral,18.2,M106|NGC 4258,
+dso/m107,248.12505,-13.05,8.1,cluster.globular,10.0,M107|NGC 6171,
+dso/m108,167.87505000000002,55.66667,10.1,galaxy.spiral,8.3,M108|NGC 3556,
+dso/m109,179.4,53.38333,9.8,galaxy.spiral,7.6,M109|NGC 3992,
+dso/m110,10.09995,41.68333,8.0,galaxy.elliptical,17.4,M110|NGC 205,
+dso/ngc_6543,269.63925,66.6332,9.8,nebula.planetary,0.33,NGC 6543,cats eye nebula
+dso/omega_centauri,201.6912,-47.47686,3.7,cluster.globular,36.3,NGC 5139,omega centauri
+dso/v838_mon,106.02015,-3.84725,15.74,other,0.1,V838 Mon,V838 Monocerotis
+dso/hdf,189.20583,62.21611,20.0,other,0.1,HDF,hubble deep field
+dso/t_crb,239.87505,25.9202,10.8,star.nova,0.1,T CrB,Blaze Star|T Coronae Borealis
+dso/eta_carinae_nebula,161.286,-59.8678,1.0,nebula.diffuse,120.0,NGC 3372,Eta Carinae Nebula|Carina Nebula
+dso/tarantula_nebula,84.6765,-69.1003,8.0,nebula.emission,40.0,NGC 2070,Tarantula Nebula|30 Doradus
+dso/lmc,80.89200000000001,-69.7561,0.9,galaxy.irregular,646.0,LMC,Large Magellanic Cloud|Nubecula Major
+dso/smc,13.1865,-72.8286,2.7,galaxy.irregular,320.0,SMC,Small Magellanic Cloud|Nubecula Minor
+dso/willman_1,162.3495,51.05,15.4,galaxy.dwarf,3.6,,Willman 1|Beth Willman Galaxy
+dso/sgr_a_star,266.4165,-29.0078,28.0,black_hole,0.0,,Sgr A Star|Sagittarius A Star|Black Hole|Galactic Center|Sagittarius A*
+dso/cygnus_x_1,299.5905,35.2016,8.9,black_hole,0.0,,Cygnus X 1|Black Hole Binary|Stellar Black Hole|Cygnus X-1
+dso/north_america_nebula,314.8212,44.52889,4.0,nebula.diffuse,120.0,NGC 7000|Caldwell 20,North America Nebula
+dso/jewel_box,193.42499999999998,-60.3667,4.2,cluster.open,10.0,NGC 4755,Jewel Box|Herschel's Jewel Box|Kappa Crucis Cluster
+dso/double_cluster,35.16,57.125,3.7,cluster.open,60.0,NGC 869|NGC 884|Caldwell 14,Double Cluster|h and chi Persei
+dso/exposed_cranium_nebula,142.17195,-49.6107,,nebula.planetary,1.5,PMR 1,Exposed Cranium Nebula
+dso/n47_tucanae,6.0231,-72.08145,4.09,cluster.globular,43.8,47 Tuc|NGC 104,47 Tucanae
+dso/centaurus_a,201.3651,-43.01911,6.84,galaxy.radio,25.7,NGC 5128,Centaurus A
+dso/hyades,66.72,15.867,0.5,cluster.open,330.0,Mel 25|Melotte 25|Caldwell 41,Hyades
+dso/coma_star_cluster,186.255,26.0,1.8,cluster.open,275.0,Mel 111|Melotte 111,Coma Star Cluster|Coma Berenices Cluster
+dso/coathanger,291.34499999999997,20.183,3.6,asterism,60.0,Cr 399|Collinder 399,Coathanger|Brocchi's Cluster
+dso/helix_nebula,337.40999999999997,-20.837,7.3,nebula.planetary,25.0,NGC 7293|Caldwell 63,Helix Nebula|Eye of God
+dso/sculptor_galaxy,11.895000000000001,-25.288,7.1,galaxy.spiral,27.5,NGC 253,Sculptor Galaxy|Silver Dollar Galaxy|Silver Coin Galaxy
+dso/blue_snowball_nebula,351.47999999999996,42.533,8.3,nebula.planetary,0.33,NGC 7662|Caldwell 22,Blue Snowball Nebula
+dso/ghost_of_jupiter,156.195,-18.633,8.6,nebula.planetary,0.33,NGC 3242|Caldwell 59,Ghost of Jupiter
+dso/saturn_nebula,316.05,-11.363,8.0,nebula.planetary,0.4,NGC 7009|Caldwell 55,Saturn Nebula
+dso/ngc_2903,143.04,21.5,8.9,galaxy.spiral,12.6,NGC 2903,

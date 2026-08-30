@@ -1,0 +1,184 @@
+object_id,name,is_primary
+constellation/aquarius,Vodnar,1
+constellation/aquila,Orel,1
+constellation/aries,Oven,1
+constellation/auriga,Voznik,1
+constellation/bootes,Pastir,1
+constellation/cancer,Rak,1
+constellation/canes_venatici,Lovski psi,1
+constellation/canis_major,Veliki pes,1
+constellation/canis_minor,Mali pes,1
+constellation/capricornus,Kozorožec,1
+constellation/carina,Karina,1
+constellation/cassiopeia,Kasiopeja,1
+constellation/centaurus,Kentaver,1
+constellation/cepheus,Cefej,1
+constellation/cetus,Kit,1
+constellation/chamaeleon,Kameleon,1
+constellation/circinus,Šestilo,1
+constellation/columba,Golob,1
+constellation/coma_berenices,Berenikina kosa,1
+constellation/corona_australis,Južna krona,1
+constellation/corona_borealis,Severna krona,1
+constellation/corvus,Vrana,1
+constellation/crater,Čaša,1
+constellation/crux,Južni križ,1
+constellation/cygnus,Labod,1
+constellation/delphinus,Delfin,1
+constellation/dorado,Zlata riba,1
+constellation/draco,Zmaj,1
+constellation/equuleus,Mali konj,1
+constellation/fornax,Peč,1
+constellation/gemini,Dvojčka,1
+constellation/grus,Žerjav,1
+constellation/hercules,Herkul,1
+constellation/hydra,Hidra,1
+constellation/hydrus,Mali zmaj,1
+constellation/leo,Lev,1
+constellation/leo_minor,Mali lev,1
+constellation/lepus,Zajec,1
+constellation/libra,Tehtnica,1
+constellation/lupus,Volk,1
+constellation/lynx,Ris,1
+constellation/lyra,Lira,1
+constellation/mensa,Menza,1
+constellation/musca,Muva,1
+constellation/octans,Oktans,1
+constellation/pegasus,Pegaz,1
+constellation/perseus,Perzej,1
+constellation/phoenix,Feniks,1
+constellation/pisces,Ribe,1
+constellation/piscis_austrinus,Južna ribica,1
+constellation/puppis,Krma,1
+constellation/pyxis,Kompas,1
+constellation/sagittarius,Strelec,1
+constellation/scorpius,Škorpijon,1
+constellation/sculptor,Kipar,1
+constellation/scutum,Ščit,1
+constellation/taurus,Bik,1
+constellation/telescopium,Teleskopium,1
+constellation/triangulum,Trikotnik,1
+constellation/triangulum_australe,Južni trikotnik,1
+constellation/tucana,Tukan,1
+constellation/ursa_major,Velika medvedica,1
+constellation/ursa_minor,Mala medvedica,1
+constellation/virgo,Devica,1
+constellation/volans,Leteča riba,1
+constellation/vulpecula,Lisička,1
+dso/blue_snowball_nebula,Modra snežna krogla,1
+dso/coathanger,Obešalnik,1
+dso/coathanger,Brocchjevo jato,0
+dso/coma_star_cluster,Kopa zvezd,1
+dso/coma_star_cluster,Kopa Berenike,0
+dso/cygnus_x_1,Dvojna črna luknja,1
+dso/cygnus_x_1,Zvezdna črna luknja,0
+dso/double_cluster,Dvojna kopica,1
+dso/double_cluster,h in χ Persei,0
+dso/double_cluster,NGC 869 & NGC 884,0
+dso/eta_carinae_nebula,Meglica Eta Carinae,1
+dso/eta_carinae_nebula,Meglica Carinae,0
+dso/exposed_cranium_nebula,Meglica izpostavljenega lobanje,1
+dso/ghost_of_jupiter,Duh Jupitrja,1
+dso/hdf,Hubbleovo globoko polje,1
+dso/hdf,Hubbleovo globoko polje,0
+dso/helix_nebula,Spiralna meglica,1
+dso/helix_nebula,Božje oko,0
+dso/hyades,Hiade,1
+dso/jewel_box,Draguljna škatla,1
+dso/jewel_box,Herschelova draguljna škatla,0
+dso/jewel_box,Kapa Crucis kopica,0
+dso/lmc,VMS,1
+dso/lmc,Veliki Magellanov oblak,0
+dso/lmc,Nubecula Major,0
+dso/m1,Rakovska meglica,1
+dso/m101,Vetrničasta galaksija,1
+dso/m102,Galaksija Vreteno,1
+dso/m104,Galaksija Sombrero,1
+dso/m11,Jata Divjih rac,1
+dso/m13,Globularni zvezdni kopič Hercules,1
+dso/m13,Globularno jato v Herkulesih,0
+dso/m16,Orlova meglica,1
+dso/m20,Meglica Trifid,1
+dso/m24,Zvezdni oblak Strelca,1
+dso/m27,Meglica Ročka,1
+dso/m31,Andromeda galaksija,1
+dso/m33,Galaksija Trikotnik,1
+dso/m42,Orionova meglica,1
+dso/m43,De Mairanova meglica,1
+dso/m45,Pleiadi,1
+dso/m45,Sedem sester,0
+dso/m51,Vrtinčasta galaksija,1
+dso/m57,Obročna meglica,1
+dso/m63,Sončnična galaksija,1
+dso/m64,Galaksija Črno oko,1
+dso/m7,Škorpijonov rep,1
+dso/m7,Ptolemajevo jato,0
+dso/m74,Galaksija Fantom,1
+dso/m76,Meglica Mala ročka,1
+dso/m8,Meglica Laguna,1
+dso/m81,Bodejeva galaksija,1
+dso/m82,Cigarina galaksija,1
+dso/m83,Južna Vetrnica,1
+dso/m97,Meglica Sova,1
+dso/ngc_6543,Meglica Mačje oko,1
+dso/north_america_nebula,Severoameriška meglica,1
+dso/omega_centauri,Globularni zvezdni kopič Omega Centauri,1
+dso/omega_centauri,ω Centauri,0
+dso/saturn_nebula,Saturnova meglica,1
+dso/sculptor_galaxy,Kiparjeva galaksija,1
+dso/sculptor_galaxy,Galaksija srebrnega dolarja,0
+dso/sculptor_galaxy,Galaksija srebrnega kovanca,0
+dso/sgr_a_star,Sgr A*,1
+dso/sgr_a_star,Črna luknja,0
+dso/sgr_a_star,Galaktično središče,0
+dso/smc,MMS,1
+dso/smc,Mali Magellanov oblak,0
+dso/smc,Nubecula Minor,0
+dso/tarantula_nebula,Meglica Tarantula,1
+dso/tarantula_nebula,30 Doradus,0
+dso/willman_1,Willman 1,1
+dso/willman_1,Galaksija Beth Willman,0
+moon/callisto,Kalisto,1
+moon/dione,Diona,1
+moon/ganymede,Ganimed,1
+moon/iapetus,Japetus,1
+moon/phobos,Fobos,1
+moon/rhea,Reja,1
+moon/tethys,Tetida,1
+moon/titania,Titanija,1
+planet/mercury,Merkur,1
+planet/moon,Luna,1
+planet/neptune,Neptun,1
+planet/pluto,Pluton,1
+planet/sun,Sonce,1
+planet/uranus,Uran,1
+planet/venus,Venera,1
+shower/aquariids,Eta Akvaridi,1
+shower/deltaaquariids,Delta Akvaridi,1
+shower/geminids,Geminide,1
+shower/leonids,Leonide,1
+shower/lyrids,Liride,1
+shower/orionids,Orionidi,1
+shower/perseids,Perseide,1
+shower/puppidvelids,Puppidi-Velidi,1
+shower/quadrantids,Kvadrantide,1
+shower/ursids,Ursidi,1
+star/achernar,Akernar,1
+star/alcyone,Alkiona,1
+star/betelgeuse,Betelgeza,1
+star/capella,Kapela,1
+star/caph,Kaph,1
+star/e_lyrae,ε Lire,1
+star/phad,Fad,1
+star/polaris,Polaris,1
+star/polaris,Severna zvezda,0
+star/polaris,Polarna zvezda,0
+star/pollux,Polux,1
+star/rigil_kentaurus_a,Alfa Kentavra,1
+star/rigil_kentaurus_a,Rigil Kentaurus A,0
+star/rigil_kentaurus_a,Rigel Kentaurus A,0
+star/rigil_kentaurus_a,Rigil Kent,0
+star/scheat,Šeat,1
+star/sirius,Sirius,1
+star/sirius,Psova zvezda,0
+star/spica,Spika,1

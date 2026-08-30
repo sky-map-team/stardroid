@@ -1,0 +1,269 @@
+object_id,name,is_primary
+constellation/andromeda,Ανδρομέδα,1
+constellation/antlia,Αντλία,1
+constellation/apus,Πτηνόν,1
+constellation/aquarius,Υδροχόος,1
+constellation/aquila,Αετός,1
+constellation/ara,Βωμός,1
+constellation/aries,Κριός,1
+constellation/auriga,Ηνίοχος,1
+constellation/bootes,Βοώτης,1
+constellation/caelum,Γλυφείον,1
+constellation/camelopardalis,Καμηλοπάρδαλις,1
+constellation/cancer,Καρκίνος,1
+constellation/canes_venatici,Κύνες Θηρευτικοί,1
+constellation/canis_major,Μέγας Κύων,1
+constellation/canis_minor,Μικρός Κύων,1
+constellation/capricornus,Αιγόκερως,1
+constellation/carina,Τρόπις,1
+constellation/cassiopeia,Κασσιόπη,1
+constellation/centaurus,Κένταυρος,1
+constellation/cepheus,Κηφεύς,1
+constellation/cetus,Κήτος,1
+constellation/chamaeleon,Χαμαιλέων,1
+constellation/circinus,Διαβήτης,1
+constellation/columba,Περιστερά,1
+constellation/coma_berenices,Κόμη Βερενίκης,1
+constellation/corona_australis,Νότιος Στέφανος,1
+constellation/corona_borealis,Βόρειος Στέφανος,1
+constellation/corvus,Κόραξ,1
+constellation/crater,Κρατήρ,1
+constellation/crux,Νότιος Σταυρός,1
+constellation/cygnus,Κύκνος,1
+constellation/delphinus,Δελφίν,1
+constellation/dorado,Δοράς,1
+constellation/draco,Δράκων,1
+constellation/equuleus,Ιππάριον,1
+constellation/eridanus,Ηριδανός,1
+constellation/fornax,Κάμινος,1
+constellation/gemini,Δίδυμοι,1
+constellation/grus,Γερανός,1
+constellation/hercules,Ηρακλής,1
+constellation/horologium,Ωρολόγιον,1
+constellation/hydra,Ύδρα,1
+constellation/hydrus,Ύδρος,1
+constellation/indus,Ινδός,1
+constellation/lacerta,Σαύρα,1
+constellation/leo,Λέων,1
+constellation/leo_minor,Μικρός Λέων,1
+constellation/lepus,Λαγωός,1
+constellation/libra,Ζυγός,1
+constellation/lupus,Λύκος,1
+constellation/lynx,Λυγξ,1
+constellation/lyra,Λύρα,1
+constellation/mensa,Τράπεζα,1
+constellation/microscopium,Μικροσκόπιον,1
+constellation/monoceros,Μονόκερως,1
+constellation/musca,Μυία,1
+constellation/norma,Γνώμων,1
+constellation/octans,Οκτάς,1
+constellation/ophiuchus,Οφιούχος,1
+constellation/orion,Ωρίων,1
+constellation/pavo,Ταώς,1
+constellation/pegasus,Πήγασος,1
+constellation/perseus,Περσεύς,1
+constellation/phoenix,Φοίνιξ,1
+constellation/pictor,Οκρίβας,1
+constellation/pisces,Ιχθύες,1
+constellation/piscis_austrinus,Νότιος Ιχθύς,1
+constellation/puppis,Πρύμνη,1
+constellation/pyxis,Πυξίς,1
+constellation/reticulum,Δίκτυον,1
+constellation/sagitta,Τοξότης,1
+constellation/sagittarius,Τοξότης,1
+constellation/scorpius,Σκορπιός,1
+constellation/sculptor,Γλύπτης,1
+constellation/scutum,Ασπίς,1
+constellation/serpens_caput,Κεφαλή του Όφεως,1
+constellation/serpens_cauda,Ουρά του Όφεως,1
+constellation/sextans,Εξάς,1
+constellation/taurus,Ταύρος,1
+constellation/telescopium,Τηλεσκόπιον,1
+constellation/triangulum,Τρίγωνον,1
+constellation/triangulum_australe,Τρίγωνον Νότιον,1
+constellation/tucana,Τουκάνα,1
+constellation/ursa_major,Μεγάλη Άρκτος,1
+constellation/ursa_minor,Μικρή Άρκτος,1
+constellation/vela,Ιστία,1
+constellation/virgo,Παρθένος,1
+constellation/volans,Ιχθύς Ιπτάμενος,1
+constellation/vulpecula,Αλώπηξ,1
+dso/blue_snowball_nebula,Νεφέλωμα της Μπλε Χιονόμπαλας,1
+dso/coathanger,Κρεμαστάρι,1
+dso/coathanger,Σμήνος του Broccchi,0
+dso/coma_star_cluster,Σμήνος της Κόμης Βερενίκης,1
+dso/coma_star_cluster,Σμήνος Κόμης Βερενίκης,0
+dso/cygnus_x_1,Δυαδικό Σύστημα Μαύρης Τρύπας,1
+dso/cygnus_x_1,Αστρική Μαύρη Τρύπα,0
+dso/double_cluster,Διπλό Σμήνος,1
+dso/double_cluster,h και χ Περσέα,0
+dso/double_cluster,NGC 869 & NGC 884,0
+dso/eta_carinae_nebula,Νεφέλωμα Eta Carinae,1
+dso/eta_carinae_nebula,Νεφέλωμα Carina,0
+dso/exposed_cranium_nebula,Νεφέλωμα του Εκτεθειμένου Κρανίου,1
+dso/ghost_of_jupiter,Φάντασμα του Διός,1
+dso/hdf,Βαθύ Πεδίο Hubble,1
+dso/hdf,Βαθύ Πεδίο Hubble,0
+dso/helix_nebula,Νεφέλωμα της Έλικας,1
+dso/helix_nebula,Το Μάτι του Θεού,0
+dso/hyades,Υάδες,1
+dso/jewel_box,Κουτί Κοσμημάτων,1
+dso/jewel_box,Κουτί Κοσμημάτων του Herschel,0
+dso/jewel_box,Σμήνος Κάππα Σταυρού,0
+dso/lmc,Μεγάλο Νέφος του Μαγγελάνου,1
+dso/lmc,Νεφέλωμα Μέγα,0
+dso/m1,Νεφέλωμα Καρκίνου,1
+dso/m101,Γαλαξίας Ανεμόμυλος,1
+dso/m102,Γαλαξίας της Ατράκτου,1
+dso/m104,Γαλαξίας Σομπρέρο,1
+dso/m11,Σμήνος Άγριας Πάπιας,1
+dso/m13,Σφαιρωτό Σμήνος Ηρακλή,1
+dso/m13,Σφαιρωτό Σμήνος του Ηρακλή,0
+dso/m16,Νεφέλωμα Αετού,1
+dso/m20,Νεφέλωμα Τριφιδές,1
+dso/m24,Νέφος Αστέρων του Τοξότη,1
+dso/m27,Νεφέλωμα Αλτήρας,1
+dso/m31,Γαλαξίας της Ανδρομέδας,1
+dso/m33,Γαλαξίας του Τριγώνου,1
+dso/m42,Νεφέλωμα Ωρίωνα,1
+dso/m43,Νεφέλωμα του Ντε Μαϊράν,1
+dso/m44,Σμήνος Κυψέλη,1
+dso/m44,Φάτνη,0
+dso/m45,Πλειάδες,1
+dso/m45,Πούλια,0
+dso/m51,Γαλαξίας της Δίνης,1
+dso/m57,Δακτυλιοειδές Νεφέλωμα,1
+dso/m6,Σμήνος Πεταλούδα,1
+dso/m63,Γαλαξίας Ηλιοτρόπιο,1
+dso/m64,Γαλαξίας Μαύρο Μάτι,1
+dso/m7,Σμήνος Πτολεμαίου,1
+dso/m7,Σμήνος του Πτολεμαίου,0
+dso/m74,Γαλαξίας Φάντασμα,1
+dso/m76,Μικρό Νεφέλωμα Αλτήρας,1
+dso/m8,Νεφέλωμα Λιμνοθάλασσας,1
+dso/m81,Γαλαξίας του Μπόντε,1
+dso/m82,Γαλαξίας Πούρο,1
+dso/m83,Νότιος Ανεμόμυλος,1
+dso/m97,Νεφέλωμα Κουκουβάγια,1
+dso/ngc_6543,Νεφέλωμα Μάτι της Γάτας,1
+dso/north_america_nebula,Νεφέλωμα της Βόρειας Αμερικής,1
+dso/omega_centauri,Σφαιρωτό Σμήνος Ωμέγα Κενταύρου,1
+dso/omega_centauri,ω Centauri,0
+dso/saturn_nebula,Νεφέλωμα του Κρόνου,1
+dso/sculptor_galaxy,Γαλαξία του Γλύπτη,1
+dso/sculptor_galaxy,Γαλαξίας Ασημένιου Δολαρίου,0
+dso/sculptor_galaxy,Γαλαξίας Ασημένιου Νομίσματος,0
+dso/sgr_a_star,Sgr A*,1
+dso/sgr_a_star,Μαύρη Τρύπα,0
+dso/sgr_a_star,Γαλακτικό Κέντρο,0
+dso/smc,Νεφέλωμα Μικρό Magellan,1
+dso/smc,Νεφέλωμα Μικρό,0
+dso/tarantula_nebula,Νεφέλωμα Tarantula,1
+dso/tarantula_nebula,30 Doradus,0
+dso/willman_1,Willman 1,1
+dso/willman_1,Γαλαξία Beth Willman,0
+moon/ariel,Αριέλ,1
+moon/callisto,Καλλιστώ,1
+moon/deimos,Δείμος,1
+moon/dione,Διώνη,1
+moon/europa,Ευρώπη,1
+moon/ganymede,Γανυμήδης,1
+moon/iapetus,Ιάπετος,1
+moon/io,Ιώ,1
+moon/oberon,Οβέρων,1
+moon/phobos,Φόβος,1
+moon/rhea,Ρέα,1
+moon/tethys,Τέθυς,1
+moon/titan,Τιτάνας,1
+moon/titania,Τιτάνια,1
+moon/triton,Τρίτων,1
+moon/umbriel,Ουμπριέλ,1
+planet/jupiter,Δίας,1
+planet/mars,Άρης,1
+planet/mercury,Ερμής,1
+planet/moon,Σελήνη,1
+planet/neptune,Ποσειδώνας,1
+planet/pluto,Πλούτωνας,1
+planet/saturn,Κρόνος,1
+planet/sun,Ήλιος,1
+planet/uranus,Ουρανός,1
+planet/venus,Αφροδίτη,1
+shower/aquariids,ήτα Υδροχοΐδες,1
+shower/deltaaquariids,δέλτα Υδροχοΐδες,1
+shower/geminids,Διδυμίδες,1
+shower/leonids,Λεοντίδες,1
+shower/lyrids,Λυρίδες,1
+shower/orionids,Ωριωνίδες,1
+shower/perseids,Περσείδες,1
+shower/puppidvelids,Πρυμνίδες-Ιστιίδες,1
+shower/quadrantids,Τεταρτίδες,1
+shower/ursids,Αρκτίδες,1
+star/achernar,Αχερνάρ,1
+star/acrux,Άλφα Νοτίου Σταυρού,1
+star/adhara,Αντχάρα,1
+star/alcyone,Αλκυόνη,1
+star/aldebaran,Αλντεμπαράν,1
+star/alderamin,Αλντεραμίν,1
+star/algenib,Αλτζενίμπ,1
+star/algieba,Αλτζήμπα,1
+star/algol,Αλγκόλ,1
+star/alhena,Αλένα,1
+star/alioth,Άλιοθ,1
+star/alkaid,Αλκάιντ,1
+star/alnath,Ελ Ναθ,1
+star/alnilam,Αλνιλάμ,1
+star/alphard,Αλφάρντ,1
+star/alphekka,Αλφέκκα,1
+star/alpheratz,Αλφεράτζ,1
+star/altair,Αλτάιρ,1
+star/ankaa,Ανκάα,1
+star/antares,Αντάρης,1
+star/arcturus,Αρκτούρος,1
+star/arneb,Αρνέμπ,1
+star/betelgeuse,Μπετελγκέζ,1
+star/canopus,Κάνωπος,1
+star/capella,Αίγα,1
+star/caph,Καφ,1
+star/castor,Κάστορας,1
+star/deneb,Ντενέμπ,1
+star/denebola,Ντενέμπολα,1
+star/diphda,Ντίφντα,1
+star/dubhe,Ντουμπέ,1
+star/e_lyrae,ε Λύρας,1
+star/enif,Ενίφ,1
+star/etamin,Ελτανίν,1
+star/fomalhaut,Φομαλχώ,1
+star/hadar,Χαντάρ,1
+star/hamal,Χαμάλ,1
+star/izar,Ιζάρ,1
+star/kaus_australis,Κάους Αουστράλις,1
+star/kochab,Κοτσάμπ,1
+star/markab,Μαρκάμπ,1
+star/menkar,Μενκάρ,1
+star/merak,Μεράκ,1
+star/mirach,Μιράχ,1
+star/mirphak,Μιρφάκ,1
+star/nunki,Νούνκι,1
+star/phad,Φέκντα,1
+star/polaris,Πολικός Αστέρας,1
+star/polaris,Αστέρι του Βορρά,0
+star/polaris,Πολικός Αστέρας,0
+star/pollux,Πολυδεύκης,1
+star/procyon,Προκύων,1
+star/rasalhague,Ρας Αλχάγκ,1
+star/regulus,Βασιλίσκος,1
+star/rigel,Ρίγκελ,1
+star/rigil_kentaurus_a,Άλφα Κενταύρου,1
+star/rigil_kentaurus_a,Άλφα Κενταύρου,0
+star/rigil_kentaurus_a,Άλφα Κενταύρου,0
+star/rigil_kentaurus_a,Ρίγκιλ,0
+star/saiph,Σάιφ,1
+star/scheat,Σχεάτ,1
+star/shaula,Σάουλα,1
+star/shedir,Σεντίρ,1
+star/sirius,Σείριος,1
+star/sirius,Σείριος,0
+star/spica,Στάχυς,1
+star/unukalhai,Ουνουκαλχάι,1
+star/vega,Βέγας,1
+star/vindemiatrix,Προτρυγετήρ,1

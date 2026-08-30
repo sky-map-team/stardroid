@@ -1,0 +1,582 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" translation_description="The application name, shown under the launcher icon and in the app switcher.">Sky Map</string>
+
+    <!-- Launch splash banner. -->
+    <string name="splash_version" translation_description="Version line under the app name on the launch splash. %1$s is the app version name, e.g. 1.2.3">v%1$s</string>
+    <string name="splash_dismiss" translation_description="Accessibility label for the action that dismisses the launch splash when it is tapped">Dismiss</string>
+
+    <!-- Sky-map labels drawn by the computed layers (LayerStrings). -->
+    <string name="north_pole" translation_description="Short abbreviation for the North Celestial Pole, displayed as a label on the sky map grid. Translators: use the standard abbreviation in your language (e.g. NP in English, PN in French).">NP</string>
+    <string name="south_pole" translation_description="Short abbreviation for the South Celestial Pole, displayed as a label on the sky map grid. Translators: use the standard abbreviation in your language (e.g. SP in English, PS in French).">SP</string>
+    <string name="zenith" translation_description="Label for the zenith point (directly overhead) shown on the sky map. Displayed in capitals.">ZENITH</string>
+    <string name="nadir" translation_description="Label for the nadir point (directly below) shown on the sky map. Displayed in capitals.">NADIR</string>
+    <string name="north" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">NORTH</string>
+    <string name="south" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">SOUTH</string>
+    <string name="east" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">EAST</string>
+    <string name="west" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">WEST</string>
+    <string name="ecliptic" translation_description="Label for the ecliptic line — the apparent annual path of the Sun across the sky.">Ecliptic</string>
+
+    <!-- Solar-system body names, drawn as labels next to each body. -->
+    <string name="sun" translation_description="Name of the Sun, drawn as a label on the sky map.">Sun</string>
+    <string name="moon" translation_description="Name of Earth\'s Moon, drawn as a label on the sky map.">Moon</string>
+    <string name="mercury" translation_description="Name of the planet Mercury, drawn as a label on the sky map.">Mercury</string>
+    <string name="venus" translation_description="Name of the planet Venus, drawn as a label on the sky map.">Venus</string>
+    <string name="earth" translation_description="Name of the planet Earth.">Earth</string>
+    <string name="mars" translation_description="Name of the planet Mars, drawn as a label on the sky map.">Mars</string>
+    <string name="jupiter" translation_description="Name of the planet Jupiter, drawn as a label on the sky map.">Jupiter</string>
+    <string name="saturn" translation_description="Name of the planet Saturn, drawn as a label on the sky map.">Saturn</string>
+    <string name="uranus" translation_description="Name of the planet Uranus, drawn as a label on the sky map.">Uranus</string>
+    <string name="neptune" translation_description="Name of the planet Neptune, drawn as a label on the sky map.">Neptune</string>
+    <string name="pluto" translation_description="Name of the dwarf planet Pluto, drawn as a label on the sky map.">Pluto</string>
+
+    <!-- Search (map-screen search dialog and overlay). -->
+    <string name="search_button" translation_description="Button on the map screen that opens the sky search dialog.">Search</string>
+    <string name="search_label" translation_description="Title of the sky search dialog.">Search the Sky</string>
+    <string name="search_hint" translation_description="Placeholder text in the search field showing example search targets.">e.g. Mars or M31</string>
+    <string name="search_coordinates_hint" translation_description="Helper text under the search field showing that celestial coordinates (right ascension and declination) can be typed directly, with two example formats.">Or enter coordinates: 12h 30m, +45° or 187.5 -45.2</string>
+    <string name="search_go" translation_description="Button that starts navigating the sky map toward the typed search target.">Go</string>
+    <string name="search_cancel" translation_description="Button that dismisses the search dialog or ends the current search.">Cancel</string>
+    <string name="search_no_results" translation_description="Message shown when a sky search returns no results, suggesting the object may not currently be visible.">No results were found. Perhaps the object is not visible at this time.</string>
+    <string name="search_target_looking_message" translation_description="Status shown while the user is being guided toward a search target. %1$s is the object name.">Looking for: %1$s</string>
+    <string name="search_target_found_message" translation_description="Status shown when the search target has been found and is centered on screen. %1$s is the object name.">Found: %1$s</string>
+    <string name="search_overlay_prompt" translation_description="Instruction telling the user to physically point their phone in the direction of the on-screen arrow to find the search target.">Point your phone toward the arrow</string>
+
+    <!-- Layer names in the layer-visibility sheet. -->
+    <string name="layer_stars" translation_description="Toggle label for the layer showing stars.">Stars</string>
+    <string name="layer_constellations" translation_description="Toggle label for the layer showing constellation figures and names.">Constellations</string>
+    <string name="layer_deep_sky" translation_description="Toggle label for the layer showing deep-sky objects such as galaxies and nebulae.">Deep-sky objects</string>
+    <string name="layer_solar_system" translation_description="Toggle label for the layer showing the Sun, Moon, and planets.">Solar system</string>
+    <string name="layer_meteor_showers" translation_description="Toggle label for the layer showing the radiant points of annual meteor showers.">Meteor showers</string>
+    <string name="layer_satellites" translation_description="Toggle label for the layer showing artificial satellites such as the International Space Station.">Satellites</string>
+    <string name="channel_passes_name" translation_description="Name of the notification channel for alerts shortly before a satellite passes overhead.">Satellite passes</string>
+    <string name="channel_passes_description" translation_description="Description of the satellite-pass notification channel.">A single alert shortly before the best visible pass of the night</string>
+    <string name="notif_pass_title" translation_description="Title of the notification sent shortly before a satellite passes overhead. %1$s is the satellite name.">%1$s passes overhead soon</string>
+    <string name="notif_pass_text" translation_description="Body of the satellite pass notification, telling the user when to go outside. %1$s is a time.">Visible from about %1$s — head outside and let your eyes adjust</string>
+    <string name="channel_eclipses_name" translation_description="Name of the notification channel for alerts before a lunar eclipse starts.">Lunar eclipses</string>
+    <string name="channel_eclipses_description" translation_description="Description of the lunar-eclipse notification channel.">A single alert before a lunar eclipse begins</string>
+    <string name="notif_eclipse_title" translation_description="Title of the notification sent before a lunar eclipse starts. %1$s is a localized eclipse type like \'Total lunar eclipse\'.">%1$s starting soon</string>
+    <string name="notif_eclipse_text" translation_description="Body of the lunar eclipse notification, telling the user when it begins. %1$s is a time.">Begins around %1$s — worth stepping outside for</string>
+    <string name="satellite_name_iss" translation_description="Display name for the International Space Station.">The Space Station</string>
+    <string name="satellite_name_tiangong" translation_description="Display name for the Chinese space station Tiangong.">Tiangong</string>
+    <string name="layer_param_pass_alerts" translation_description="Label for the setting that turns on a notification shortly before a satellite passes overhead.">Pass alerts</string>
+    <string name="layer_param_pass_alerts_description" translation_description="Explains what the pass-alert setting does: a single notification before the best visible pass of the night.">Notify me before the best visible pass each night</string>
+    <string name="layer_param_eclipse_alerts" translation_description="Label for the setting that turns on a notification before a lunar eclipse begins.">Eclipse alerts</string>
+    <string name="layer_param_eclipse_alerts_description" translation_description="Explains what the eclipse-alert setting does: a single notification before a lunar eclipse starts.">Notify me before a lunar eclipse starts</string>
+    <string name="satellite_description" translation_description="Short description shown on the info card for an artificial satellite.">An artificial satellite in low Earth orbit, sunlit against a dark sky. It crosses from horizon to horizon in a few minutes, moving steadily and without blinking.</string>
+    <string name="satellite_next_pass" translation_description="Heading above the next visible pass details on a satellite\'s info card.">Next visible pass</string>
+    <string name="satellite_pass_when" translation_description="When and how high the next satellite pass will be. %1$s is a time, %2$s is a compass direction, %3$d is an angle in degrees.">%1$s, rising %2$s, reaching %3$d°</string>
+    <string name="satellite_pass_magnitude" translation_description="How bright the satellite will be at its peak. %1$.1f is a brightness magnitude.">Magnitude %1$.1f at its brightest</string>
+    <string name="satellite_pass_shadow" translation_description="Tells the user the satellite will fade out mid-pass when it enters the Earth\'s shadow. %1$s is a time.">Fades into Earth\'s shadow at %1$s</string>
+    <string name="satellite_no_pass" translation_description="Shown on a satellite info card when no visible pass is coming up in the next two days.">No visible passes in the next couple of days</string>
+    <string name="satellite_pass_unknown" translation_description="Shown on a satellite info card when the downloaded orbit data is too old to predict pass times reliably.">Orbit data is too old to predict passes</string>
+    <string name="object_info_eclipse_title" translation_description="Heading above the next lunar eclipse details on the Moon\'s info card.">Lunar eclipse</string>
+    <string name="object_info_no_eclipse" translation_description="Shown on the Moon\'s info card when no lunar eclipse is coming up in the searched time range.">No lunar eclipse expected soon</string>
+    <string name="object_info_eclipse_greatest" translation_description="The next lunar eclipse\'s type and greatest-eclipse date/time. %1$s is a localized eclipse type like \'Total lunar eclipse\', %2$s a date, %3$s a time.">%1$s — greatest eclipse %2$s at %3$s</string>
+    <string name="object_info_eclipse_totality" translation_description="The start and end time of totality during a total lunar eclipse. %1$s and %2$s are times.">Totality %1$s – %2$s</string>
+    <string name="tonight_satellite_pass" translation_description="Tonight-widget row announcing a visible satellite pass. %1$s is the satellite name, %2$s is a time of day.">%1$s passes over at %2$s</string>
+    <string name="tonight_trailing_pass" translation_description="Small trailing note on a satellite pass row. %1$s is a compass direction, %2$d is an angle in degrees, %3$.1f is a brightness magnitude.">Rising %1$s, %2$d°, mag %3$.1f</string>
+    <string name="satellites_no_data" translation_description="Explanation shown when satellite orbital data has not been downloaded yet and so no satellites can be drawn.">Satellite positions need an internet connection to update.</string>
+    <string name="satellites_refresh" translation_description="Button that tries to download satellite orbital data now.">Refresh</string>
+    <string name="satellites_retry_soon" translation_description="Shown instead of a Refresh button when satellite data was just requested and cannot be requested again for a few minutes.">Try again in a few minutes</string>
+    <string name="satellites_retry_within_hour" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for up to an hour.">Try again within the hour</string>
+    <string name="satellites_retry_hours" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for several hours.">Try again in a few hours</string>
+    <string name="satellites_retry_tomorrow" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again until the next day.">Try again tomorrow</string>
+    <string name="satellites_retry_days" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for several days.">Try again in a few days</string>
+    <string name="layer_grid" translation_description="Toggle label for the layer showing the right ascension / declination grid.">Celestial grid</string>
+    <string name="layer_horizon" translation_description="Toggle label for the layer showing the horizon line and compass points.">Horizon</string>
+    <string name="layer_ecliptic" translation_description="Toggle label for the layer showing the ecliptic line.">Ecliptic</string>
+    <string name="layer_sky_gradient" translation_description="Toggle label for the daytime sky-brightness gradient drawn behind the sky map.">Sky gradient</string>
+
+    <!-- Map screen controls. -->
+    <string name="layers_sheet_title" translation_description="Title of the bottom sheet listing sky map layers the user can show or hide.">Layers</string>
+    <string name="layers_group_objects" translation_description="Layers-sheet group header for layers that draw sky objects (stars, planets, deep-sky objects).">Objects</string>
+    <string name="layers_group_reference" translation_description="Layers-sheet group header for reference elements drawn over the sky (coordinate grid, horizon, ecliptic).">Reference</string>
+    <string name="layers_group_display" translation_description="Layers-sheet group header for display settings that change how the sky is rendered rather than what is drawn.">Display</string>
+    <string name="show_layers" translation_description="Accessibility description and label for the button opening the layer-visibility sheet, which holds the layers that do not fit on the rail plus display options.">More layers and options</string>
+    <string name="more_button" translation_description="Accessibility label and tooltip for the map-screen button (three vertical dots) opening the overflow menu of further destinations such as Gallery and Settings.">More options</string>
+    <string name="night_mode" translation_description="Label for the toggle switching the display to a dim red night-vision-preserving mode.">Night mode</string>
+    <string name="switch_to_manual" translation_description="Tooltip and accessibility label for the button that switches the map from auto (sensor-driven) mode to manual (drag) mode.">Switch to manual mode</string>
+    <string name="switch_to_auto" translation_description="Tooltip and accessibility label for the button that switches the map from manual (drag) mode to auto (sensor-driven) mode.">Switch to auto mode</string>
+    <string name="no_sensor_warning" translation_description="Warning shown when the device lacks the motion sensors needed to point the map at the sky automatically.">This device has no compass or motion sensors, so Sky Map can\'t follow where you point it. Drag the map by hand instead.</string>
+    <string name="no_sensor_warning_dismiss" translation_description="Button that dismisses the missing-sensors warning dialog.">OK</string>
+
+    <!-- The map HUD (map-hud.md, D65): the top-right pointing readout shown with the chrome. -->
+    <string name="hud_ra_label" translation_description="Map-HUD row label: right ascension of the point at the centre of the screen. Standard astronomy abbreviation; keep short.">RA</string>
+    <string name="hud_dec_label" translation_description="Map-HUD row label: declination of the point at the centre of the screen. Standard astronomy abbreviation; keep short.">Dec</string>
+    <string name="hud_alt_label" translation_description="Map-HUD row label: altitude (angle above the horizon) of the point at the centre of the screen. Keep short.">Alt</string>
+    <string name="hud_az_label" translation_description="Map-HUD row label: azimuth (compass bearing) of the point at the centre of the screen. Keep short.">Az</string>
+    <string name="hud_fov_label" translation_description="Map-HUD row label: the field of view (how many degrees of sky the screen spans). Keep short.">FOV</string>
+    <string name="hud_correction_label" translation_description="Map-HUD row label for the manual sensor-alignment correction the user set by dragging. Keep very short.">Adj</string>
+    <string name="hud_ra_value" translation_description="Right ascension in the conventional hours-and-minutes notation, e.g. \'18h 38m\'. %1$d is hours (0-23), %2$02d is minutes (00-59).">%1$dh %2$02dm</string>
+    <string name="hud_signed_degrees_value" translation_description="An angle in degrees with an explicit sign and one decimal, e.g. \'+38.8°\'. %1$+.1f is the angle.">%1$+.1f°</string>
+    <string name="hud_azimuth_value" translation_description="A compass bearing with its cardinal-direction abbreviation, e.g. \'312° NW\'. %1$d is whole degrees (0-359), %2$s is the abbreviation.">%1$d° %2$s</string>
+    <string name="hud_fov_value" translation_description="Field of view in whole degrees, e.g. \'45°\'. %1$d is the number of degrees.">%1$d°</string>
+    <string name="hud_fov_value_fine" translation_description="Field of view between one and ten degrees, with one decimal, e.g. \'5.5°\'. %1$.1f is the number of degrees.">%1$.1f°</string>
+    <string name="hud_fov_value_finest" translation_description="Field of view under one degree, with two decimals, e.g. \'0.25°\'. %1$.2f is the number of degrees.">%1$.2f°</string>
+    <string name="hud_correction_value" translation_description="The sensor-alignment correction pair: azimuth then altitude offset, each signed with one decimal, e.g. \'+4.5° −1.2°\'.">%1$+.1f° %2$+.1f°</string>
+    <string name="hud_correction_reset" translation_description="Accessibility label for the small button that clears the manual sensor-alignment correction back to zero.">Reset alignment correction</string>
+    <string name="hud_alignment_reset_message" translation_description="Snackbar confirming the sensor-alignment correction was cleared; shown with an Undo action.">Alignment correction reset</string>
+    <string name="hud_fov_locked" translation_description="Accessibility label for the small lock icon shown next to the field-of-view readout while the camera controls the zoom in through-camera mode.">Zoom locked to the camera</string>
+
+    <string name="layer_hud" translation_description="Layers-sheet Display toggle that shows the heads-up readout of where the phone is pointing (compass direction and altitude) over the star map.">Pointing readout</string>
+
+    <!-- Through-camera (AR) mode (camera-ar-mode.md, D64). -->
+    <string name="layer_camera" translation_description="Layers-sheet Display toggle that shows the live rear-camera image behind the star map, so the drawn sky overlays the real one.">Through-camera mode</string>
+    <string name="layer_camera_needs_sensors" translation_description="Subtitle explaining why the through-camera toggle is disabled: the device has no usable motion sensors, and the mode needs the map to follow where the phone points.">Needs motion sensors this device doesn\'t have</string>
+    <string name="ar_auto_mode_snackbar" translation_description="Snackbar shown when turning on through-camera mode switched the map from manual dragging back to automatic sensor pointing.">Auto mode turned on for the camera view</string>
+    <string name="ar_permission_denied" translation_description="Snackbar shown when the user declined the camera permission that through-camera mode needs.">Through-camera mode needs the camera permission</string>
+    <string name="ar_permission_settings_action" translation_description="Snackbar action opening the app\'s system settings page so the user can grant the camera permission after permanently denying it.">Settings</string>
+    <string name="ar_exposure_slider" translation_description="Accessibility label for the slider adjusting the camera\'s exposure compensation while through-camera mode is on.">Camera exposure</string>
+    <string name="ar_alignment_adjusted_message" translation_description="Snackbar shown after the user drags the star map to align it with the camera image; shown with an Undo action that reverts the whole drag.">Map alignment adjusted</string>
+    <string name="ar_dimmer_slider" translation_description="Accessibility label for the slider dimming the camera image behind the star map while through-camera mode is on.">Camera dimmer</string>
+    <string name="ar_iso_slider_label" translation_description="Very short label for the temporary developer slider setting the camera\'s manual ISO sensitivity in through-camera mode. Standard photography abbreviation; keep as-is.">ISO</string>
+    <string name="ar_iso_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual ISO sensitivity in through-camera mode.">Camera ISO</string>
+    <string name="ar_shutter_slider_label" translation_description="Very short label for the temporary developer slider setting the camera\'s manual shutter (exposure) time in through-camera mode.">Shtr</string>
+    <string name="ar_shutter_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual shutter (exposure) time in through-camera mode.">Camera shutter time</string>
+    <string name="share_button" translation_description="Overflow-menu row that captures the current sky view as an image and opens the system share sheet.">Share the sky</string>
+    <string name="share_chooser_title" translation_description="Title of the system share sheet when sharing a captured sky image.">Share this sky</string>
+    <string name="share_invitation" translation_description="Short invitation stamped on the footer of shared sky images, above the store link.">See what you\'re looking at — get Sky Map free</string>
+    <string name="share_text" translation_description="Text accompanying a shared sky image in apps that accept both an image and text. %1$s is the app-store link.">See what you\'re looking at — get Sky Map free: %1$s</string>
+    <!--
+      Untranslatable: the link in the share text and stamped on shared images. The same for every
+      flavor, because it addresses the *recipient*, whose platform and store we do not know — a
+      store URL would dead-end anyone who is not on the sender's (D110). The landing page sorts
+      them out; upstream it must stay a 302 so links already shared remain retargetable.
+    -->
+    <string name="share_store_link" translatable="false">https://getskymap.app</string>
+    <string name="share_layout_overlay" translation_description="Caption of the share-layout choice that draws the star map over the camera photo, as seen on screen.">Overlay</string>
+    <string name="share_layout_side_by_side" translation_description="Caption of the share-layout choice that puts the camera photo and the star map next to each other.">Side by side</string>
+    <string name="share_shutter_button" translation_description="Accessibility label for the round shutter button that captures and shares the current through-camera view.">Share this view</string>
+    <string name="share_failed_message" translation_description="Snackbar shown when capturing the sky image for sharing failed.">Couldn\'t capture the sky — try again</string>
+    <string name="ar_exposure_auto" translation_description="Readout shown when a manual camera exposure slider sits at its automatic position.">Auto</string>
+    <string-array name="hud_cardinal_directions" translation_description="The sixteen compass-point abbreviations, clockwise from north, used as the azimuth suffix in the map HUD (e.g. N, NNE, NE...). Translate to the locale\'s conventional compass abbreviations.">
+        <item>N</item>
+        <item>NNE</item>
+        <item>NE</item>
+        <item>ENE</item>
+        <item>E</item>
+        <item>ESE</item>
+        <item>SE</item>
+        <item>SSE</item>
+        <item>S</item>
+        <item>SSW</item>
+        <item>SW</item>
+        <item>WSW</item>
+        <item>W</item>
+        <item>WNW</item>
+        <item>NW</item>
+        <item>NNW</item>
+    </string-array>
+
+    <!-- Time travel: entry button, dialog, and the player bar shown while travelling. -->
+    <string name="time_travel_button" translation_description="Label for the button opening the time travel dialog, which shows the sky at another date.">Time travel</string>
+    <string name="time_travel_title" translation_description="Title of the time travel dialog.">Time travel</string>
+    <string name="time_travel_visiting" translation_description="Readout in the time travel dialog showing the currently chosen destination date and time. %1$s is the formatted date and time.">Visiting: %1$s</string>
+    <string name="time_travel_pick_date" translation_description="Button in the time travel dialog that opens a date picker.">Set date</string>
+    <string name="time_travel_pick_time" translation_description="Button in the time travel dialog that opens a time picker.">Set time</string>
+    <string name="time_travel_select_event" translation_description="Placeholder hint for the dropdown list of popular astronomical events in the time travel dialog.">Select a popular event…</string>
+    <string name="time_travel_go" translation_description="Button that starts time travel to the chosen date.">Go</string>
+    <string name="time_travel_from_now" translation_description="Button that starts time travel from the present moment, letting the user play time forward or backward from now.">Start from now</string>
+    <string name="time_travel_ok" translation_description="Confirmation button in the date and time pickers.">OK</string>
+    <string name="time_travel_cancel" translation_description="Button that closes a time travel dialog without doing anything.">Cancel</string>
+    <string name="time_travel_slower" translation_description="Player button that steps the time travel playback rate one step backward (slower forward, or faster backward). Rendered as a double left-pointing symbol.">◀◀</string>
+    <string name="time_travel_pause" translation_description="Player button that freezes time travel playback. Rendered as a pause symbol.">❚❚</string>
+    <string name="time_travel_faster" translation_description="Player button that steps the time travel playback rate one step forward (faster forward, or slower backward). Rendered as a double right-pointing symbol.">▶▶</string>
+    <string name="time_travel_return" translation_description="Player button that ends time travel and returns the map to the present.">Now</string>
+
+    <!-- Time travel playback-rate labels (v1 wording). -->
+    <string name="time_travel_second_speed" translation_description="Label showing rate of travel through time. The symbol means forward.">Traveling &gt; @ 1 sec/sec</string>
+    <string name="time_travel_minute_speed" translation_description="Label showing rate of travel through time. The symbol means forward.">Traveling &gt; @ 1 min/sec</string>
+    <string name="time_travel_10minute_speed" translation_description="Label showing rate of travel through time. The symbol means forward.">Traveling &gt; @ 10 min/sec</string>
+    <string name="time_travel_hour_speed" translation_description="Label showing rate of travel through time. The symbol means forward.">Traveling &gt; @ 1 hour/sec</string>
+    <string name="time_travel_day_speed" translation_description="Label showing rate of travel through time. The symbol means forward.">Traveling &gt; @ 1 day/sec</string>
+    <string name="time_travel_week_speed" translation_description="Label showing rate of travel through time. The symbol means forward.">Traveling &gt; @ 1 week/sec</string>
+    <string name="time_travel_second_speed_back" translation_description="Label showing rate of travel through time. The symbol means backward.">Traveling &lt; @ 1 sec/sec</string>
+    <string name="time_travel_minute_speed_back" translation_description="Label showing rate of travel through time. The symbol means backward.">Traveling &lt; @ 1 min/sec</string>
+    <string name="time_travel_10minute_speed_back" translation_description="Label showing rate of travel through time. The symbol means backward.">Traveling &lt; @ 10 min/sec</string>
+    <string name="time_travel_hour_speed_back" translation_description="Label showing rate of travel through time. The symbol means backward.">Traveling &lt; @ 1 hour/sec</string>
+    <string name="time_travel_day_speed_back" translation_description="Label showing rate of travel through time. The symbol means backward.">Traveling &lt; @ 1 day/sec</string>
+    <string name="time_travel_week_speed_back" translation_description="Label showing rate of travel through time. The symbol means backward.">Traveling &lt; @ 1 week/sec</string>
+
+    <!-- Popular events in the time travel dialog (timestamps live in TimeTravelEvents.kt). -->
+    <string name="time_travel_now" translation_description="Time travel picker entry that resets the destination to the present moment.">Now</string>
+    <string name="time_travel_next_sunset" translation_description="Name of a popular astronomical event in the time travel picker.">Next evening sunset</string>
+    <string name="time_travel_next_sunrise" translation_description="Name of a popular astronomical event in the time travel picker.">Next morning sunrise</string>
+    <string name="time_travel_next_full_moon" translation_description="Name of a popular astronomical event in the time travel picker.">Next full moon</string>
+    <string name="time_travel_next_new_moon" translation_description="Name of a popular astronomical event in the time travel picker.">Next new moon</string>
+    <string name="time_travel_six_planet_parade_2026" translation_description="Name of an astronomical event in the time travel picker. A planet parade is when several planets are visible at once. Keep the date format suitable for your locale.">Six-Planet Parade, Feb 28, 2026</string>
+    <string name="time_travel_lunar_eclipse_2026" translation_description="Name of an astronomical event in the time travel picker. Keep the date format suitable for your locale.">Total Lunar Eclipse, Mar 3, 2026</string>
+    <string name="time_travel_lyrids_2026" translation_description="Name of an astronomical event in the time travel picker. The Lyrids are an annual meteor shower. Keep the date format suitable for your locale.">Lyrids Meteor Shower, Apr 22, 2026</string>
+    <string name="time_travel_venus_jupiter_2026" translation_description="Name of an astronomical event in the time travel picker. A conjunction is when two planets appear very close together in the sky. Keep the date format suitable for your locale.">Venus-Jupiter Conjunction, Jun 9, 2026</string>
+    <string name="time_travel_mars_uranus_2026" translation_description="Name of an astronomical event in the time travel picker. A close approach is when two objects appear near each other in the sky. Keep the date format suitable for your locale.">Mars-Uranus Close Approach, Jul 4, 2026</string>
+    <string name="time_travel_solar_eclipse_2026" translation_description="Name of an astronomical event in the time travel picker. Keep the date format suitable for your locale.">Total Solar Eclipse, Aug 12, 2026</string>
+    <string name="time_travel_perseids_2026" translation_description="Name of an astronomical event in the time travel picker. The Perseids are an annual meteor shower. Keep the date format suitable for your locale.">Perseids Meteor Shower, Aug 12-13, 2026</string>
+    <string name="time_travel_lunar_eclipse_aug_2026" translation_description="Name of an astronomical event in the time travel picker. Keep the date format suitable for your locale.">Partial Lunar Eclipse, Aug 28, 2026</string>
+    <string name="time_travel_jupiter_occultation_2026" translation_description="Name of an astronomical event in the time travel picker. A lunar occultation is when the Moon passes in front of a planet, briefly hiding it. Keep the date format suitable for your locale.">Lunar Occultation of Jupiter, Oct 6, 2026</string>
+    <string name="time_travel_geminids_2026" translation_description="Name of an astronomical event in the time travel picker. The Geminids are an annual meteor shower. Keep the date format suitable for your locale.">Geminids Meteor Shower, Dec 13-14, 2026</string>
+    <string name="time_travel_supermoon_2026" translation_description="Name of an astronomical event in the time travel picker. A supermoon is a full moon that occurs near the Moon\'s closest approach to Earth. Keep the date format suitable for your locale.">Christmas Eve Supermoon, Dec 24, 2026</string>
+    <string name="time_travel_mercury_transit_2016" translation_description="Name of an astronomical event in the time travel picker. A Mercury transit is when Mercury passes across the face of the Sun as seen from Earth. Keep the date format suitable for your locale.">Mercury transit of May 09, 2016</string>
+    <string name="time_travel_solar_eclipse_2024" translation_description="Name of an astronomical event in the time travel picker. Keep the date format suitable for your locale.">North American Solar Eclipse of Apr 8, 2024</string>
+    <string name="time_travel_apollo_11" translation_description="Name of an astronomical event in the time travel picker: the first crewed Moon landing in 1969.">Apollo 11 Moon Landing</string>
+    <string name="time_travel_jupiter_saturn_2020" translation_description="Name of an astronomical event in the time travel picker. A conjunction is when two planets appear very close together in the sky.">Jupiter-Saturn Conjunction of 2020</string>
+    <string name="sun_wont_set_message" translation_description="Message shown when the sun will not set (or rise) during the next 24 hours at the user\'s location (polar day or polar night).">The sun will not set during the next 24 hours at your current location.</string>
+    <string name="time_travel_start_message" translation_description="Toast message when time travel starts toward a chosen destination. %1$s is the formatted destination date and time.">Traveling through time to %1$s ...</string>
+    <string name="time_travel_close_message" translation_description="Toast message shown when the user exits time travel and returns to the present.">Back to the present ...</string>
+
+    <!-- Location management. -->
+    <string name="location_button" translation_description="Button on the map screen that opens the location management sheet">Location</string>
+    <string name="location_management_title" translation_description="Title of the location management sheet">Your Location</string>
+    <string name="location_source_auto" translation_description="Label shown when the device is determining location automatically">Automatic</string>
+    <string name="location_source_manual" translation_description="Label shown when the user has manually entered their location">Manual</string>
+    <string name="location_source_acquiring" translation_description="Label shown while waiting for the first automatic location fix">Acquiring…</string>
+    <string name="location_source_unset" translation_description="Label shown when no location has been set">No location set</string>
+    <string name="location_source_hardware_unavailable" translation_description="Label shown when the device has no location hardware">Location unavailable on this device</string>
+    <string name="location_switch_to_auto" translation_description="Button to switch from manual location to automatic detection">Use Automatic Location</string>
+    <string name="location_switch_to_manual" translation_description="Button to switch from automatic to manual location entry">Enter Location Manually</string>
+    <string name="location_change" translation_description="Button to change or update the manually entered location">Change Location</string>
+    <string name="location_set_toast" translation_description="Toast message when a location is acquired or entered. %1$s is the place name or coordinates">Location set to %1$s</string>
+    <string name="location_long_lat" translation_description="Formatted display of longitude and latitude. %1$.2f is longitude, %2$.2f is latitude">Longitude:%1$.2f, Latitude:%2$.2f</string>
+    <string name="location_map_unavailable" translation_description="Message shown in the map area of the location sheet when the static map image cannot be loaded">Map Unavailable</string>
+    <string name="location_map_content_description" translation_description="Accessibility description of the static map image showing the current location of the user">Map of your current location</string>
+    <string name="snackbar_action_undo" translation_description="Snackbar action button that reverses the change the snackbar reports, e.g. re-enabling horizon auto-leveling">Undo</string>
+    <string name="snackbar_action_open" translation_description="Snackbar action button that opens the screen the snackbar refers to, e.g. the compass calibration screen">Open</string>
+    <string name="label_size_hint_message" translation_description="Snackbar shown once, the first time the user zooms in a long way. Explains that the text labels naming stars and other objects stay the same size however far you zoom, and that their size is changed in the app\'s Settings screen instead. Shown with an action button that opens Settings.">Label size doesn\'t change with zoom — set it in Settings</string>
+    <string name="label_size_hint_action" translation_description="Action button on the label size snackbar; opens the app\'s Settings screen, where the user can change how large the sky labels are">Settings</string>
+    <string name="location_permission_dialog_title" translation_description="Title of the dialog that requests location permission from the user. The permission is optional - the app works fully without it - and the title must not imply otherwise">Location (Optional)</string>
+    <string name="location_permission_dialog_message" translation_description="Body text of the dialog requesting location permission, explaining why the app uses it, that it is optional, and what happens without it">Sky Map uses your approximate location to show the correct night sky. This permission is optional — you may refuse it and enter your location manually instead, or decide later. If you decide later, the map will not be accurate until your location has been set.</string>
+    <string name="location_permission_grant" translation_description="Button in the location permission dialog to grant location access">Grant Permission</string>
+    <string name="location_permission_enter_manually" translation_description="Button in the location permission dialog to enter location by hand instead of granting permission">Enter Manually</string>
+    <string name="location_permission_later" translation_description="Button in the location permission dialog to defer the decision">Later</string>
+    <string name="location_permanently_denied_title" translation_description="Title of dialog shown when location permission was permanently denied by the user">Permission Required</string>
+    <string name="location_permanently_denied_message" translation_description="Body text explaining that location permission was permanently denied and how to fix it">Location permission was permanently denied. Open App Settings to re-enable it.</string>
+    <string name="location_open_settings" translation_description="Button that opens the system app settings page so the user can re-grant location permission">Open App Settings</string>
+    <string name="location_acquiring_title" translation_description="Title of dialog shown while acquiring the user\'s location automatically">Finding your location…</string>
+    <string name="location_acquiring_message" translation_description="Body text of dialog shown when Sky Map has been waiting a while for the device GPS or network location">Still trying to find your location…</string>
+    <string name="location_keep_waiting" translation_description="Button to keep waiting for an automatic location fix">Keep Waiting</string>
+    <string name="location_manual_entry_title" translation_description="Title of the dialog where the user types their location manually">Enter Your Location</string>
+    <string name="location_place_name_hint" translation_description="Placeholder text in the place name input field">City or place name</string>
+    <string name="location_latitude_hint" translation_description="Placeholder text in the latitude input field">Latitude (e.g. 51.5)</string>
+    <string name="location_longitude_hint" translation_description="Placeholder text in the longitude input field">Longitude (e.g. -0.1)</string>
+    <string name="location_resolve_button" translation_description="Button that looks up coordinates for a typed place name">Resolve</string>
+    <string name="location_set_button" translation_description="Button that confirms and applies the manually entered location">Set Location</string>
+    <string name="location_place_not_found" translation_description="Inline error shown when a place name search returns no results">Place not found — try a more specific name</string>
+    <string name="location_geocoder_offline" translation_description="Inline message shown when geocoding fails because there is no internet connection">No internet — enter coordinates directly</string>
+    <string name="location_invalid_latitude" translation_description="Validation error for latitude values outside the valid range">Latitude must be between −90 and 90</string>
+    <string name="location_invalid_longitude" translation_description="Validation error for longitude values outside the valid range">Longitude must be between −180 and 180</string>
+    <string name="location_coordinate_format" translatable="false">%.6f</string>
+
+    <!-- Object info card -->
+    <string name="object_info_image_credit" translation_description="Attribution line under the object\'s photo; %1$s is the credited source, e.g. NASA/ESA">Image: %1$s</string>
+    <string name="object_info_fun_fact" translation_description="An interesting trivia line on the object info card; %1$s is the fact text">Fun fact: %1$s</string>
+    <string name="object_info_distance" translation_description="Label for the object\'s distance from Earth on the info card">Distance:</string>
+    <string name="object_info_size" translation_description="Label for the object\'s physical or angular size on the info card">Size:</string>
+    <string name="object_info_mass" translation_description="Label for the object\'s mass on the info card">Mass:</string>
+    <string name="object_info_spectral_class" translation_description="Label for a star\'s spectral classification (e.g. G2V) on the info card">Spectral class:</string>
+    <string name="object_info_magnitude" translation_description="Label for the object\'s apparent visual magnitude (brightness) on the info card">Magnitude:</string>
+    <string name="object_info_rises" translation_description="Label on the info card for the time the object next rises above the horizon at the user\'s location">Rises:</string>
+    <string name="object_info_sets" translation_description="Label on the info card for the time the object next sets below the horizon at the user\'s location">Sets:</string>
+    <string name="object_info_always_above_horizon" translation_description="Info-card line shown for a circumpolar object that never sets at the user\'s location">Always above the horizon at your location</string>
+    <string name="object_info_always_below_horizon" translation_description="Info-card line shown for an object that never rises at the user\'s location">Always below the horizon at your location</string>
+    <string name="object_info_also_known_as" translation_description="Label on the info card above the object\'s alternative names (aliases and catalog designations), e.g. M31 and NGC 224">Also known as:</string>
+    <string name="object_info_see_also" translation_description="Heading above links to related celestial objects on the info card">See also</string>
+    <string name="object_info_find_in_sky" translation_description="Button on the info card that points the sky map toward this object (v1\'s gallery search button wording)">Find in sky</string>
+    <string name="object_info_close" translation_description="Button that closes the object info card">Close</string>
+    <string name="object_info_tap_to_close" translation_description="Hint shown on the expanded full-screen image telling the user a tap closes it">Tap to close</string>
+
+    <!-- Image gallery -->
+    <string name="gallery_button" translation_description="Map-screen menu item that opens a gallery of photographs of celestial objects. Not the user\'s own photos - these are catalog images from sources such as NASA and ESA.">Sky gallery</string>
+    <string name="gallery_title" translation_description="Title of the screen showing a gallery of photographs of celestial objects. Not the user\'s own photos - these are catalog images from sources such as NASA and ESA.">Sky gallery</string>
+    <string name="gallery_back" translation_description="Content description for the back arrow leaving the gallery screen">Back</string>
+
+    <!-- Settings screen (v1 wording where a v1 string existed) -->
+    <string name="settings_button" translation_description="Map-screen button that opens the settings screen">Settings</string>
+    <string name="settings_title" translation_description="Title of the settings screen">Settings</string>
+    <string name="settings_back" translation_description="Content description for the back arrow leaving the settings screen">Back</string>
+    <string name="settings_ok" translation_description="Confirm button in settings dialogs">OK</string>
+    <string name="settings_cancel" translation_description="Cancel button in settings dialogs">Cancel</string>
+    <string name="settings_section_controls" translation_description="Preferences category heading for touch control settings">Controls</string>
+    <string name="settings_section_appearance" translation_description="Preferences title for section about app appearance">Appearance</string>
+    <string name="settings_section_sensors" translation_description="Preferences category heading for sensor settings, intended for advanced/expert users">Sensor Settings (experts)</string>
+    <string name="settings_section_other" translation_description="Preferences category heading for miscellaneous settings such as the usage statistics opt-out">Other</string>
+    <string name="enable_analytics" translation_description="Preference label to opt in to sending anonymous usage statistics">Send usage statistics</string>
+    <string name="enable_analytics_desc" translation_description="Description/summary for the usage statistics preference">Make Sky Map better by sending anonymous data to Google Analytics</string>
+    <string name="settings_diagnostics_summary" translation_description="Summary for the settings row that opens the diagnostics screen, which shows technical sensor, location and performance readouts useful when reporting a problem">Sensor, location and performance details</string>
+    <string name="settings_tap_to_identify" translation_description="Preference title for showing info cards when tapping objects">Show info on tap</string>
+    <string name="settings_tap_to_identify_summary" translation_description="Preference summary for the tap info feature">Tap celestial objects to learn about them</string>
+    <string name="settings_tap_in_auto_mode" translation_description="Preference title for enabling info cards in auto/sensor mode">Info cards in auto mode</string>
+    <string name="settings_tap_in_auto_mode_summary" translation_description="Preference summary for auto mode info cards">Also show info cards when tapping objects in automatic (sensor) mode</string>
+    <string name="settings_auto_level_horizon" translation_description="Preference title for the auto-level horizon feature in manual mode">Auto-level horizon</string>
+    <string name="auto_level_on_toast" translation_description="Brief confirmation shown when a double tap turns horizon auto-leveling on in manual mode">Horizon auto-leveling on</string>
+    <string name="auto_level_off_toast" translation_description="Brief confirmation shown when a double tap turns horizon auto-leveling off in manual mode">Horizon auto-leveling off</string>
+    <string name="settings_auto_level_horizon_summary" translation_description="Summary for the auto-level horizon preference">In manual mode, the horizon gradually returns to horizontal after you lift your fingers</string>
+    <string name="settings_font_size" translation_description="Preference title: change the size of the text labels naming stars and other objects drawn on the sky">Sky label size</string>
+    <string name="settings_font_size_summary" translation_description="Help to go along with the sky label size preference. Explains that this size is fixed and does not change as the user zooms the map in or out.">Label text stays this size at any zoom</string>
+    <string name="settings_font_size_small" translation_description="Smallest font size">Small</string>
+    <string name="settings_font_size_medium" translation_description="Normal font size">Medium</string>
+    <string name="settings_font_size_large" translation_description="Large font size">Large</string>
+    <string name="settings_font_size_extra_large" translation_description="Largest font size">Extra Large</string>
+    <string name="settings_auto_dimness" translation_description="Preference title: mode for automatically dimming the screen when night mode is selected">Auto screen dimming</string>
+    <string name="settings_auto_dimness_summary" translation_description="Summary for the night-mode screen dimming preference">How much night mode dims the screen</string>
+    <string name="settings_auto_dimness_system" translation_description="Screen dimming option: leave brightness on the system setting">System Default</string>
+    <string name="settings_auto_dimness_dim" translation_description="Screen dimming option: dimmest screen setting">Very Dim</string>
+    <string name="settings_auto_dimness_classic" translation_description="Screen dimming option: the hand-tuned brightness Sky Map used for its first 15 years">Classic</string>
+    <string name="settings_sky_gradient" translation_description="Setting toggle title: whether to show the blue sky gradient during the day">Show sky gradient</string>
+    <string name="settings_sky_gradient_summary" translation_description="Setting toggle summary for sky gradient: explains what the feature does">Shades the sky blue near the Sun and dark on the opposite side</string>
+    <string name="settings_disable_gyro" translation_description="Preference title for switching from the gyroscope to the legacy compass + accelerometer sensor pipeline">Use legacy sensors</string>
+    <string name="settings_disable_gyro_summary" translation_description="Explanation of the legacy sensors preference and when to use it">Point the map using the compass and accelerometer instead of the gyroscope. Try this if the map drifts or your device\'s gyro misbehaves; devices without a gyro use these sensors automatically.</string>
+    <string name="settings_sensor_speed" translation_description="Old, non gyro sensors only: how quickly the sensor should send us data">Sensor Speed</string>
+    <string name="settings_sensor_speed_slow" translation_description="Slow sensor speed">Slow</string>
+    <string name="settings_sensor_speed_standard" translation_description="Normal sensor speed">Medium</string>
+    <string name="settings_sensor_speed_fast" translation_description="Fast sensor speed">Fast</string>
+    <string name="settings_sensor_damping" translation_description="Old, non gyro sensors only: the amount of smoothing applied to the sensor outputs">Damping</string>
+    <string name="settings_sensor_damping_standard" translation_description="Low sensor damping factor - this will make the app jittery">Jumpy</string>
+    <string name="settings_sensor_damping_high" translation_description="Medium sensor damping factor - this will make the app slightly jittery">Medium</string>
+    <string name="settings_sensor_damping_extra_high" translation_description="Extra high sensor damping factor">About right</string>
+    <string name="settings_sensor_damping_really_high" translation_description="Really high sensor damping factor - this will make the app sluggish">Laggy</string>
+    <string name="settings_classic_sensors_only" translation_description="Summary noting a sensor preference only applies to the legacy non-gyroscope sensor path">Only applies when legacy sensors are in use</string>
+    <string name="settings_reverse_magnetic_z" translation_description="Preference title for reversing the magnetometer Z axis, a workaround for devices with a mis-mounted compass sensor">Reverse magnetic Z</string>
+    <string name="settings_magnetic_correction" translation_description="Preference label: apply magnetic declination correction so the compass points to true north instead of magnetic north">Use magnetic correction</string>
+    <string name="settings_magnetic_correction_summary" translation_description="Summary for the magnetic correction preference">Corrects the compass for the difference between magnetic and true north</string>
+    <string name="settings_view_direction" translation_description="Preference title for choosing the view/pointing direction mode">View direction</string>
+    <string name="settings_view_direction_summary" translation_description="Explanation of the view direction preference, covering both landscape rotation and pointer modes">Rotate horizon by 90 degrees (for devices with forced landscape) or use pointer mode for the screen to show what the top of the phone is pointing at</string>
+    <string name="settings_view_direction_standard" translation_description="Normal viewing direction">Normal</string>
+    <string name="settings_view_direction_rotate90" translation_description="View direction option that rotates the screen by 90 degrees">Rotated horizon</string>
+    <string name="settings_view_direction_telescope" translation_description="View direction option that shows the sky as pointed at by the long edge of the phone">Pointer mode</string>
+
+    <!-- Diagnostics screen (slice 15) -->
+    <string name="support_email" translation_description="The developers\' contact email address" translatable="false">skymapdevs@gmail.com</string>
+    <string name="diagnostics_button" translation_description="Map-screen button that opens the diagnostics screen">Diagnostics</string>
+    <string name="diagnostics_title" translation_description="Title bar text for the diagnostics screen">Diagnostics</string>
+    <string name="diagnostics_share" translation_description="Accessibility label for the diagnostics screen button that emails these details to the developers">Send to developers</string>
+    <string name="diagnostics_share_subject" translation_description="Subject line of the email a user sends from the diagnostics screen">Sky Map diagnostics report</string>
+    <string name="diagnostics_report_header" translation_description="First line of the emailed diagnostics report, telling the user where to type their problem description. Keep it on one line.">--- Sky Map diagnostics. Please describe the problem above this line. ---</string>
+    <string name="diagnostics_section_general" translation_description="Section heading in the diagnostics screen for general device information">General</string>
+    <string name="diagnostics_device" translation_description="Row label in the diagnostics screen for the device model name">Device</string>
+    <string name="diagnostics_phone_format" translation_description="Format for phone info in diagnostics: model (hardware) language. %1$s is model, %2$s is hardware, %3$s is language">%1$s (%2$s) %3$s</string>
+    <string name="diagnostics_android_version" translation_description="Row label in the diagnostics screen for the Android OS version">Android version</string>
+    <string name="diagnostics_sky_map_version" translation_description="Row label in the diagnostics screen for the Sky Map app version">Sky Map version</string>
+    <string name="diagnostics_sky_map_version_format" translation_description="Format for the Sky Map version row in diagnostics: version name (version code) [build flavor]. %1$s is version name, %2$d is version code, %3$s is the build flavor label (e.g. Gms or F-Droid)" translatable="false">%1$s (%2$d) [%3$s]</string>
+    <string name="diagnostics_section_graphics" translation_description="Section heading in the diagnostics screen for graphics/GPU information">Graphics</string>
+    <string name="diagnostics_gl_renderer" translation_description="Row label in the diagnostics screen for the name of the graphics processor (GPU) drawing the sky">Renderer</string>
+    <string name="diagnostics_gl_version" translation_description="Row label in the diagnostics screen for the OpenGL graphics driver version">OpenGL</string>
+    <string name="diagnostics_gl_version_format" translation_description="Format for the OpenGL row in diagnostics: driver version then the rendering backend the app is using in brackets. %1$s is the driver version string, %2$s is the backend name." translatable="false">%1$s [%2$s]</string>
+    <string name="diagnostics_gl_limits" translation_description="Row label in the diagnostics screen for graphics hardware limits (maximum texture size, supported line widths and point sizes)">GL limits</string>
+    <string name="diagnostics_gl_limits_format" translation_description="Format for the GL limits row: maximum texture size in pixels, then the supported line width and point size ranges. \'tex\' abbreviates texture. %1$d is texture size, %2$s is the line width range, %3$s is the point size range.">tex %1$d, line %2$s, point %3$s</string>
+    <string name="diagnostics_gl_unavailable" translation_description="Value shown in the diagnostics Graphics rows before the sky map has drawn, when the graphics details are not known yet">Not available yet</string>
+    <string name="diagnostics_section_sensors" translation_description="Section heading in the diagnostics screen for sensor readings">Sensors</string>
+    <string name="diagnostics_accelerometer" translation_description="Row label in the diagnostics screen for the accelerometer sensor">Accelerometer</string>
+    <string name="diagnostics_compass" translation_description="Row label in the diagnostics screen for the compass (magnetic field) sensor">Compass</string>
+    <string name="diagnostics_gyroscope" translation_description="Row label in the diagnostics screen for the gyroscope sensor">Gyroscope</string>
+    <string name="diagnostics_rotation" translation_description="Row label in the diagnostics screen for the rotation vector (combined orientation) sensor">Rotation</string>
+    <string name="diagnostics_rotation_matrix" translation_description="Row label in the diagnostics screen showing the raw device rotation matrix used for orientation">Rot Matrix</string>
+    <string name="diagnostics_light_level" translation_description="Row label in the diagnostics screen for the ambient light sensor reading">Light level</string>
+    <string name="diagnostics_sensor_absent" translation_description="Sensor status shown in diagnostics when the sensor is not present on the device">Absent</string>
+    <string name="diagnostics_section_location_time" translation_description="Section heading in the diagnostics screen for location and time information">Location and Time</string>
+    <string name="diagnostics_location_permission" translation_description="Row label in the diagnostics screen showing whether location permission has been granted">Location Permission</string>
+    <string name="diagnostics_permission_granted" translation_description="Status value shown when location permission has been granted">Granted</string>
+    <string name="diagnostics_permission_denied" translation_description="Status value shown when location permission has been denied">Denied</string>
+    <string name="diagnostics_gps" translation_description="Row label in the diagnostics screen for the GPS provider status">GPS</string>
+    <string name="diagnostics_no_gps" translation_description="Status value shown in diagnostics when no GPS provider is available">No GPS</string>
+    <string name="diagnostics_enabled" translation_description="Generic status value meaning a feature or sensor is enabled/active">Enabled</string>
+    <string name="diagnostics_disabled" translation_description="Generic status value meaning a feature or sensor is disabled/inactive">Disabled</string>
+    <string name="diagnostics_permission_disabled" translation_description="Status value shown when a feature is unavailable because its permission was not granted">Permission disabled</string>
+    <string name="diagnostics_location" translation_description="Row label in the diagnostics screen showing the current latitude and longitude">Location (lat, long)</string>
+    <string name="diagnostics_location_format" translation_description="Format for location in diagnostics: lat, lon (source). %1$.4f is lat, %2$.4f is lon, %3$s is source">%1$.4f°, %2$.4f° (%3$s)</string>
+    <string name="diagnostics_location_unset" translation_description="Location status shown in diagnostics when no location has been set yet">Not set</string>
+    <string name="diagnostics_location_acquiring" translation_description="Location status shown in diagnostics while the location is being acquired">Acquiring…</string>
+    <string name="diagnostics_location_hardware_unavailable" translation_description="Location status shown in diagnostics when no location hardware is available">No location hardware</string>
+    <string name="diagnostics_pointing" translation_description="Row label in the diagnostics screen showing a snapshot of where the phone is currently pointing in the sky (Right Ascension and Declination)">Pointing snapshot</string>
+    <string name="diagnostics_dec_format" translation_description="Format for Declination in degrees. %1$.2f is the value">%1$.2f°</string>
+    <string name="diagnostics_magnetic_correction" translation_description="Row label in the diagnostics screen showing the applied magnetic declination correction">Mag correction</string>
+    <string name="diagnostics_alignment_adjustment" translation_description="Diagnostics row label for the manual sky-alignment correction the user set by dragging in through-camera mode.">Alignment adjustment</string>
+    <string name="diagnostics_alignment_format" translation_description="Value of the sky-alignment correction: azimuth then altitude offset in degrees, each signed with one decimal. \'az\' and \'alt\' abbreviate azimuth and altitude.">%1$+.1f° az, %2$+.1f° alt</string>
+    <string name="diagnostics_magnetic_correction_format" translation_description="Magnetic correction value: degrees then a compass direction. %1$.2f is degrees, %2$s is East or West">%1$.2f° %2$s</string>
+    <string name="diagnostics_east" translation_description="Compass direction shown for an eastward magnetic correction">East</string>
+    <string name="diagnostics_west" translation_description="Compass direction shown for a westward magnetic correction">West</string>
+    <string name="diagnostics_local_datetime" translation_description="Row label in the diagnostics screen for the local date and time">Local datetime</string>
+    <string name="diagnostics_utc_datetime" translation_description="Row label in the diagnostics screen for the UTC/universal date and time">Universal datetime</string>
+    <string name="diagnostics_section_network" translation_description="Section heading in the diagnostics screen for network connectivity information">Network</string>
+    <string name="diagnostics_connection" translation_description="Row label in the diagnostics screen for the current network connection status">Connection</string>
+    <string name="diagnostics_section_satellites" translation_description="Section heading in the diagnostics screen for satellite orbital-data status">Satellites</string>
+    <string name="diagnostics_satellite_data" translation_description="Row label in the diagnostics screen for the age and count of cached satellite orbital data">Orbit data</string>
+    <string name="diagnostics_satellite_data_none" translation_description="Row value in the diagnostics screen when no satellite orbital data has been downloaded yet">Not downloaded</string>
+    <string name="diagnostics_satellite_data_format" translation_description="Row value in the diagnostics screen showing how many satellites are cached and how many days old the data is. %1$d is a count, %2$.1f is a number of days">%1$d satellites, %2$.1f days old</string>
+    <string name="diagnostics_satellite_last_fetch" translation_description="Row label in the diagnostics screen for the result of the most recent attempt to download satellite orbital data">Last fetch</string>
+    <string name="diagnostics_satellite_never_fetched" translation_description="Row value in the diagnostics screen when satellite orbital data has never been downloaded">Never</string>
+    <string name="diagnostics_satellite_circuit_open" translation_description="Row label in the diagnostics screen for when satellite downloads are paused after repeated server errors">Downloads paused</string>
+    <string name="diagnostics_satellite_circuit_open_format" translation_description="Row value in the diagnostics screen showing when paused satellite downloads will resume and how many failures caused the pause. %1$s is a date and time, %2$d is a count">Until %1$s (%2$d failures)</string>
+    <string name="diagnostics_satellite_force_fetch" translation_description="Label on a debug-only button in the diagnostics screen that downloads satellite orbital data immediately">Fetch satellite data now (debug)</string>
+    <string name="diagnostics_connected" translation_description="Network status value shown when the device has an active network connection">Connected</string>
+    <string name="diagnostics_disconnected" translation_description="Network status value shown when the device has no network connection">Disconnected</string>
+    <string name="diagnostics_wifi" translation_description="Network type suffix appended to the connection status (e.g. \'Connected (wifi)\'). Note the leading space.">" (wifi)"</string>
+    <string name="diagnostics_cell" translation_description="Network type suffix appended to the connection status (e.g. \'Connected (cell)\'). Note the leading space.">" (cell)"</string>
+
+    <!-- Compass calibration screen (slice 15) -->
+    <string name="calibration_button" translation_description="Map-screen button that opens the compass calibration screen">Calibrate</string>
+    <string name="calibration_heading_user" translation_description="Heading shown in the compass calibration screen when the user opens it themselves">Your Phone\'s Compass</string>
+    <string name="calibration_heading_warning" translation_description="Heading shown in the compass calibration screen when it opens automatically due to low accuracy">Your Phone\'s Compass Needs Attention</string>
+    <string name="calibration_accuracy_unknown" translation_description="Sensor calibration level shown in the calibration screen">Calibration: Unknown</string>
+    <string name="calibration_accuracy_unreliable" translation_description="Sensor calibration level shown in the calibration screen">Calibration: Uncalibrated</string>
+    <string name="calibration_accuracy_low" translation_description="Sensor calibration level shown in the calibration screen">Calibration: Poor</string>
+    <string name="calibration_accuracy_medium" translation_description="Sensor calibration level shown in the calibration screen">Calibration: OK</string>
+    <string name="calibration_accuracy_high" translation_description="Sensor calibration level shown in the calibration screen">Calibration: Good</string>
+    <string name="calibration_accuracy_no_contact" translation_description="Sensor calibration level shown when the sensor has no contact - unlikely to appear in Sky Map but included for completeness">Calibration: No contact</string>
+    <string name="calibration_do_not_show_again" translation_description="Checkbox label in the compass calibration screen to suppress future automatic appearances">Do not show this again</string>
+    <string name="calibration_what_to_do"
+        translation_description="Information for the user on how to calibrate the compass when the screen auto-opens. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[
+Your phone\'s compass sensor is reporting poor calibration. The figure-8 motion (<a href="%s">watch a demonstration</a>) prompts your phone\'s
+ hardware to reset its compass sensor — Sky Map has no control over this process.<br/><br/>
+<blockquote><b>Calibrated does not mean accurate.</b> The figure-8 gesture helps reset the sensor, but it cannot remove interference from nearby metal objects,
+car dashboards, or phone cases. If the map is still off after calibrating, those external sources are the most likely cause — not Sky Map.</blockquote>
+Move to an open area away from metal and try again.
+    ]]></string>
+    <string name="calibration_what_to_do_user"
+        translation_description="Information for the user on how to calibrate the compass when they open the calibration screen. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[
+Your phone is reporting its compass calibration status as shown above.<br/><br/>
+If necessary, perform the figure-8 motion (<a href="%s">watch a demonstration</a>) to prompt your phone\'s hardware to recalibrate its compass sensor.<br/><br/>
+<blockquote><b>Important:</b> calibration helps the sensor reset itself internally. It does not mean the compass is necessarily accurate!
+Local magnetic interference (metal objects, car dashboards, phone cases) can still cause your phone\'s compass to send inaccurate
+readings to Sky Map.</blockquote>
+<b>If the map isn\'t showing positions correctly the problem is likely your phone - not Sky Map!</b>
+    ]]></string>
+    <string name="calibration_low_accuracy_toast" translation_description="Brief toast shown when compass accuracy is low and the user has disabled the calibration screen">Your phone\'s compass is reporting low accuracy</string>
+    <string name="calibration_complete_toast" translation_description="Toast shown when the compass reaches high accuracy and the auto-opened calibration screen closes itself">Sensors have high accuracy</string>
+
+    <!-- Startup routing: EULA, warm welcome, What's New (slice 16) -->
+    <string name="eula_title" translation_description="Title of the terms-of-service dialog shown on first launch">Terms of Service</string>
+    <string name="dialog_accept" translation_description="Button accepting the licence agreement">Accept</string>
+    <string name="dialog_decline" translation_description="Button declining the licence agreement">No Thanks</string>
+    <string name="dialog_ok_button" translation_description="Generic OK/confirm button label for dialogs">OK</string>
+
+    <string name="whats_new_dialog_title" translation_description="Title of the dialog shown on first launch after an update, listing new features">What\'s new</string>
+    <string name="whats_new_version_heading" translation_description="Heading above the list of new features. %1$s is the app version name">New in version %1$s</string>
+
+    <!-- Warm welcome (onboarding pager, slice 16) -->
+    <string name="warm_welcome_slide1_title" translation_description="Title for the first slide of the Warm Welcome onboarding">Explore the Cosmos</string>
+    <string name="warm_welcome_slide1_desc" translation_description="Description for the first slide of the Warm Welcome onboarding, shown under a guided tour of the map controls">Use the layers on the left to filter stars, constellations, planets, and more. The buttons at the bottom right search the sky, travel through time, and switch display modes. Tap the sky at any time to hide or show the controls.</string>
+    <string name="warm_welcome_slide2_title" translation_description="Title for the second slide of the Warm Welcome onboarding">Navigate the Sky</string>
+    <string name="warm_welcome_slide2_desc" translation_description="Description for the second slide of the Warm Welcome onboarding. Please do not change the &lt; and &gt; markup"><![CDATA[Point your phone to look around in <b>Auto Mode</b>, or tap to switch to <b>Manual</b> and explore by swiping and pinching.]]></string>
+    <string name="warm_welcome_slide2_info_desc" translation_description="Description about info cards on the second slide of the Warm Welcome onboarding">Tap any labeled object to open an Info Card like this one, with a photo, fun facts, and celestial details.</string>
+    <string name="warm_welcome_card_name" translation_description="Name of the Crab Nebula, shown on the sample info card on the second Warm Welcome slide">Crab Nebula</string>
+    <string name="warm_welcome_card_description" translation_description="Description of the Crab Nebula on the sample info card on the second Warm Welcome slide">The Crab Nebula is a supernova remnant in Taurus, the result of a stellar explosion recorded by Chinese astronomers in 1054 AD.</string>
+    <string name="warm_welcome_card_fun_fact" translation_description="Fun fact about the Crab Nebula on the sample info card on the second Warm Welcome slide">The Crab Nebula contains a pulsar spinning 30 times per second, the collapsed core of the exploded star!</string>
+    <string name="warm_welcome_card_distance" translation_description="Distance to the Crab Nebula on the sample info card on the second Warm Welcome slide">6,500 light-years</string>
+    <string name="warm_welcome_card_size" translation_description="Size of the Crab Nebula on the sample info card on the second Warm Welcome slide">11 light-years across</string>
+    <string name="warm_welcome_slide3_title" translation_description="Title for the third slide of the Warm Welcome onboarding">Sensors &amp; Calibration</string>
+    <string name="warm_welcome_slide3_desc" translation_description="Description for the third slide of the Warm Welcome onboarding">Sky Map uses your phone\'s sensors to align with the stars.</string>
+    <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message on the third Warm Welcome slide when sensors are missing. Please do not change the &lt; and &gt; markup"><![CDATA[Your device seems to be missing the required sensors needed for automatic tracking. Don\'t worry—you can still explore the entire cosmos in <b>Manual Mode</b>!]]></string>
+    <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration advice on the third Warm Welcome slide. Please do not change the &lt; and &gt; markup"><![CDATA[To keep things accurate, give your phone a quick <b>figure-8</b> wave every once in a while.]]></string>
+    <string name="warm_welcome_skip" translation_description="Button to skip the Warm Welcome onboarding">Skip</string>
+    <string name="warm_welcome_next" translation_description="Button to go to the next Warm Welcome slide">Next</string>
+    <string name="warm_welcome_finish" translation_description="Button to finish the Warm Welcome onboarding and start exploring. Needs to be short - the width of 9 letter Ms maximum.">Launch!</string>
+    <string name="warm_welcome_sensor_ok" translation_description="Status shown next to a sensor name when the sensor is working">Working</string>
+    <string name="warm_welcome_sensor_missing" translation_description="Status shown next to a sensor name when the sensor is missing">Missing</string>
+
+    <!-- Help dialog (slice 16) -->
+    <string name="help_button" translation_description="Map-screen button that opens the help dialog">Help</string>
+    <string name="tutorial_button" translation_description="Map-screen menu item that replays the warm welcome tutorial">Tutorial</string>
+    <string name="help_dialog_title" translation_description="Title of the help dialog">Help</string>
+    <string name="help_version" translation_description="Version line at the top of the Help screen. %1$s is the app version name">Version %1$s</string>
+    <string name="whats_new_button" translation_description="Map-screen menu item that opens the What's New and Credits screen">What\'s new</string>
+    <string name="whats_new_screen_title" translation_description="Title of the screen showing the release notes and the credits">What\'s New &amp; Credits</string>
+
+    <!-- The deep-sky symbol key at the foot of the Help screen. -->
+    <string name="help_symbol_key_title" translation_description="Heading of the Help section explaining the map symbols used for deep-sky objects">Map symbols</string>
+    <string name="help_symbol_key_intro" translation_description="Introductory sentence for the map-symbol key in Help">Deep-sky objects and meteor showers are marked with a symbol showing their type:</string>
+    <string name="symbol_key_galaxy" translation_description="Symbol-key label: the marker used for galaxies">Galaxy</string>
+    <string name="symbol_key_open_cluster" translation_description="Symbol-key label: the marker used for open star clusters">Open cluster</string>
+    <string name="symbol_key_globular_cluster" translation_description="Symbol-key label: the marker used for globular star clusters">Globular cluster</string>
+    <string name="symbol_key_diffuse_nebula" translation_description="Symbol-key label: the marker used for diffuse nebulae">Diffuse nebula</string>
+    <string name="symbol_key_planetary_nebula" translation_description="Symbol-key label: the marker used for planetary nebulae">Planetary nebula</string>
+    <string name="symbol_key_supernova_remnant" translation_description="Symbol-key label: the marker used for supernova remnants">Supernova remnant</string>
+    <string name="symbol_key_asterism" translation_description="Symbol-key label: the marker used for asterisms and star clouds">Asterism or star cloud</string>
+    <string name="symbol_key_other" translation_description="Symbol-key label: the marker used for deep-sky objects of any other type">Other deep-sky object</string>
+    <string name="symbol_key_meteor_radiant" translation_description="Symbol-key label: the marker for the point in the sky meteors of a shower appear to come from">Meteor shower radiant</string>
+    <string name="symbol_key_meteor_radiant_peak" translation_description="Symbol-key label: the brighter marker used when a meteor shower is near its peak activity">Meteor shower near its peak</string>
+
+    <!-- Moon-phase home-screen widget (D69). -->
+    <string name="moon_widget_label" translation_description="Name of the moon-phase home-screen widget, shown in the launcher\'s widget picker">Moon phase</string>
+    <string name="moon_widget_description" translation_description="Description of the moon-phase widget, shown under its preview in the launcher\'s widget picker">The Moon\'s phase, illumination and rise and set times, updated daily.</string>
+    <string name="moon_widget_illumination" translation_description="Widget line showing how much of the Moon\'s disc is lit; %1$d is a percentage number">%1$d%% illuminated</string>
+    <string name="moon_widget_rise_time" translation_description="Widget fragment showing today\'s moonrise time; %1$s is a clock time like 17:42">rises %1$s</string>
+    <string name="moon_widget_set_time" translation_description="Widget fragment showing today\'s moonset time; %1$s is a clock time like 03:12">sets %1$s</string>
+    <string name="moon_phase_new" translation_description="Name of the lunar phase when the Moon is fully dark">New Moon</string>
+    <string name="moon_phase_waxing_crescent" translation_description="Name of the lunar phase between new moon and first quarter">Waxing Crescent</string>
+    <string name="moon_phase_first_quarter" translation_description="Name of the lunar phase when half the disc is lit and growing">First Quarter</string>
+    <string name="moon_phase_waxing_gibbous" translation_description="Name of the lunar phase between first quarter and full moon">Waxing Gibbous</string>
+    <string name="moon_phase_full" translation_description="Name of the lunar phase when the disc is fully lit">Full Moon</string>
+    <string name="moon_phase_waning_gibbous" translation_description="Name of the lunar phase between full moon and last quarter">Waning Gibbous</string>
+    <string name="moon_phase_last_quarter" translation_description="Name of the lunar phase when half the disc is lit and shrinking">Last Quarter</string>
+    <string name="moon_phase_waning_crescent" translation_description="Name of the lunar phase between last quarter and new moon">Waning Crescent</string>
+    <string name="moon_widget_promo_title" translation_description="Title of the row on the Moon\'s info card offering to add the moon-phase widget to the home screen">Keep the Moon on your home screen</string>
+    <string name="moon_widget_promo_subtitle" translation_description="Subtitle of the row offering the moon-phase widget, summarizing what the widget shows">Phase, illumination and rise times, updated daily</string>
+    <string name="moon_widget_promo_add" translation_description="Button that adds the moon-phase widget to the home screen via the system dialog">Add widget</string>
+    <string name="moon_widget_promo_dismiss" translation_description="Accessibility label for the button that permanently dismisses the widget offer row">Dismiss widget suggestion</string>
+    <string name="moon_widget_pin_unsupported_title" translation_description="Title of the fallback dialog when the launcher cannot add widgets directly">Add the widget from your home screen</string>
+    <string name="moon_widget_pin_unsupported_body" translation_description="Body of the fallback dialog explaining how to add the widget manually">Your launcher doesn\'t support adding widgets from an app. Touch and hold your home screen, choose Widgets, then find Sky Map.</string>
+    <string name="moon_widget_pin_unsupported_ok" translation_description="Confirmation button of the manual widget-adding instructions dialog">Got it</string>
+    <string name="moon_widget_preview_illumination" translation_description="Representative illumination line shown in the widget picker\'s preview of the moon-phase widget">83% illuminated</string>
+
+    <!-- Tonight's-sky and countdown home-screen widgets (D69 phase 2). -->
+    <string name="tonight_widget_label" translation_description="Name of the tonight\'s-sky home-screen widget, shown in the launcher\'s widget picker">Tonight\'s sky</string>
+    <string name="tonight_widget_description" translation_description="Description of the tonight\'s-sky widget, shown under its preview in the launcher\'s widget picker">Tonight\'s best sights: well-placed planets, meteor showers and moon events, updated daily.</string>
+    <string name="tonight_widget_header" translation_description="Small header label on the tonight widget; %1$s is a short date like \'Wed 30 Jul\'">Tonight · %1$s</string>
+    <string name="tonight_widget_sun_times" translation_description="Header line on the tonight widget; %1$s is the sunset time, %2$s the time the sky becomes fully dark">sun sets %1$s · dark %2$s</string>
+    <string name="tonight_widget_sunset_only" translation_description="Header fragment when only the sunset time is known; %1$s is the sunset time">sun sets %1$s</string>
+    <string name="tonight_well_placed" translation_description="Tonight-widget row: a planet is high in the sky and easy to observe; %1$s is the planet name, %2$s the time from which it is well placed">%1$s well placed from %2$s</string>
+    <string name="tonight_trailing_direction" translation_description="Small trailing note on a tonight-widget row: compass direction and altitude in degrees; %1$s is a compass point like SE, %2$d the altitude">%1$s · %2$d°</string>
+    <string name="tonight_shower_peak" translation_description="Tonight-widget row: a meteor shower reaches its annual peak tonight; %1$s is the shower name">%1$s peak tonight</string>
+    <string name="tonight_shower_days" translation_description="Tonight-widget row: a meteor shower peaks within a few days; %1$s is the shower name, %2$d the number of days">%1$s peak in %2$d days</string>
+    <string name="tonight_dark_skies" translation_description="Small trailing note: the moon is dark, so viewing conditions are ideal">dark skies</string>
+    <string name="tonight_trailing_moon" translation_description="Small trailing note: how much of the moon is lit; %1$d is a percentage">moon %1$d%%</string>
+    <string name="tonight_new_moon" translation_description="Tonight-widget row shown at new moon">New Moon — darkest skies of the month</string>
+    <string name="tonight_full_moon" translation_description="Tonight-widget row shown at full moon">Full Moon tonight</string>
+    <string name="tonight_bright_moon" translation_description="Tonight-widget row warning that a bright moon washes out faint objects">Bright moon washes out faint objects</string>
+    <string name="tonight_lunar_eclipse_total" translation_description="Tonight-widget row: a total lunar eclipse is starting soon or under way">Total lunar eclipse</string>
+    <string name="tonight_lunar_eclipse_partial" translation_description="Tonight-widget row: a partial lunar eclipse is starting soon or under way">Partial lunar eclipse</string>
+    <string name="tonight_lunar_eclipse_penumbral" translation_description="Tonight-widget row: a penumbral lunar eclipse is starting soon or under way">Penumbral lunar eclipse</string>
+    <string name="tonight_quiet" translation_description="Tonight-widget line shown when nothing notable is visible tonight">Quiet sky tonight</string>
+    <string name="tonight_quiet_next" translation_description="Tonight-widget line under the quiet-night message; %1$s is an event name, %2$d the days until it">Next: %1$s in %2$d days</string>
+    <string name="countdown_widget_label" translation_description="Name of the countdown home-screen widget, shown in the launcher\'s widget picker">Sky countdown</string>
+    <string name="countdown_widget_description" translation_description="Description of the countdown widget, shown under its preview in the launcher\'s widget picker">Days until the next meteor shower peak or moon event.</string>
+    <string name="countdown_days" translation_description="Unit label inside the countdown ring, under the number of days">days</string>
+    <string name="countdown_tonight" translation_description="Shown inside the countdown ring when the event is tonight (zero days left)">now</string>
+    <string name="countdown_shower_peak" translation_description="Countdown-widget event name; %1$s is a meteor shower name">%1$s peak</string>
+    <string name="countdown_new_moon_peak" translation_description="Countdown-widget note: the shower peaks near new moon, so skies will be dark">New-moon peak</string>
+    <string name="countdown_full_moon" translation_description="Countdown-widget event name for the next full moon">Full Moon</string>
+    <string name="countdown_new_moon" translation_description="Countdown-widget event name for the next new moon">New Moon</string>
+    <string name="tonight_widget_preview_row" translation_description="Representative highlight row shown in the widget picker\'s preview of the tonight widget">Jupiter well placed from 9:30 PM</string>
+    <string name="countdown_widget_preview_days" translation_description="Representative day count shown in the widget picker\'s preview of the countdown widget">14</string>
+    <string name="countdown_widget_preview_name" translation_description="Representative event name shown in the widget picker\'s preview of the countdown widget">Perseids peak</string>
+
+    <!-- Sky-event notifications (D77). -->
+    <string name="settings_section_notifications" translation_description="Settings section header for notification preferences">Notifications</string>
+    <string name="settings_notifications_intro" translation_description="Introduction under the notifications settings header, stating how rarely the app notifies">Sky Map only notifies about rare sky events, at most once a day. Everything is off until you turn it on.</string>
+    <string name="settings_shower_alerts" translation_description="Preference title: notify on the evening a meteor shower reaches its annual peak">Meteor shower peaks</string>
+    <string name="settings_shower_alerts_summary" translation_description="Explanation of the meteor-shower notification preference">About a dozen a year, on the evening of the peak</string>
+    <string name="settings_tonight_digest" translation_description="Preference title: a single evening notification summarizing what\'s visible tonight">Tonight\'s sky digest</string>
+    <string name="settings_tonight_digest_summary" translation_description="Explanation of the tonight-digest notification preference">One summary after sunset, skipped on quiet nights</string>
+    <string name="settings_notifications_blocked" translation_description="Warning row shown when the user enabled notifications in the app but blocked them at the system level">Notifications are blocked for Sky Map</string>
+    <string name="settings_notifications_blocked_action" translation_description="Hint under the blocked-notifications warning; tapping opens the system settings page">Tap to allow them in system settings</string>
+    <string name="channel_showers_name" translation_description="Name of the meteor-shower notification channel, shown in the system\'s notification settings">Meteor shower peaks</string>
+    <string name="channel_showers_description" translation_description="Description of the meteor-shower notification channel in the system\'s notification settings">About a dozen a year, on the evening of the peak</string>
+    <string name="channel_digest_name" translation_description="Name of the tonight-digest notification channel, shown in the system\'s notification settings">Tonight\'s sky digest</string>
+    <string name="channel_digest_description" translation_description="Description of the tonight-digest notification channel in the system\'s notification settings">One evening summary, skipped on quiet nights</string>
+    <string name="notif_shower_title" translation_description="Title of the meteor-shower notification; %1$s is the shower name">%1$s peak tonight</string>
+    <string name="notif_shower_direction" translation_description="Notification sentence telling the user where to look; %1$s is a compass point like NE">Best after midnight, looking %1$s.</string>
+    <string name="notif_shower_dark_moon" translation_description="Notification sentence when the moon is dark during a meteor shower peak; %1$d is the expected meteors per hour">Dark, moonless skies — expect up to %1$d meteors an hour away from city light.</string>
+    <string name="notif_shower_bright_moon" translation_description="Notification sentence when a bright moon will interfere with a meteor shower; %1$d is the moon illumination percentage, %2$d the meteors per hour under ideal skies">The %1$d%%-lit moon will wash out fainter meteors — up to %2$d an hour under ideal skies.</string>
+    <string name="notif_digest_title" translation_description="Title of the tonight\'s-sky digest notification">Worth a look tonight</string>
+    <string name="notif_action_mute_showers" translation_description="Notification action button that opens the system toggle for the meteor-shower channel">Mute showers</string>
+    <string name="time_travel_stopped">Time travel paused</string>
+    <!-- Layers sheet: per-layer parameters (D87). -->
+    <string name="layer_param_disc_size">Disc size</string>
+    <string name="layer_param_disc_size_true">True scale</string>
+    <string name="layer_param_disc_size_true_desc">Real size in the sky at every zoom. Planets are specks until you zoom right in.</string>
+    <string name="layer_param_disc_size_glyphs">Glyphs</string>
+    <string name="layer_param_disc_size_glyphs_desc">Sized by how big each body really is, not how big it looks. Easy to see at any zoom.</string>
+    <string name="layer_param_disc_size_auto">Steady</string>
+    <string name="layer_param_disc_size_auto_desc">Holds a fixed size on screen as you zoom, then switches to real size.</string>
+    <string name="layer_param_expand">Show options for %1$s</string>
+</resources>

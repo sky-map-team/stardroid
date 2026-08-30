@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Carried over from v1 by tools/salvage-translations/salvage.py.
+  Only strings whose English source is identical between v1 and v2 appear here;
+  everything else is translated by `tm`. Safe to hand-edit thereafter.
+-->
+<resources>
+    <string name="app_name">별지도</string>
+    <string name="north_pole">북극</string>
+    <string name="south_pole">남극</string>
+    <string name="zenith">천정</string>
+    <string name="north">북쪽</string>
+    <string name="south">남쪽</string>
+    <string name="east">동쪽</string>
+    <string name="west">서쪽</string>
+    <string name="ecliptic">단주기 혜성</string>
+    <string name="sun">태양</string>
+    <string name="moon">달</string>
+    <string name="mercury">수성</string>
+    <string name="venus">금성</string>
+    <string name="earth">지구</string>
+    <string name="mars">화성</string>
+    <string name="jupiter">목성</string>
+    <string name="saturn">토성</string>
+    <string name="uranus">천왕성</string>
+    <string name="neptune">해왕성</string>
+    <string name="pluto">명왕성</string>
+    <string name="search_button">검색</string>
+    <string name="search_label">스카이 검색</string>
+    <string name="search_cancel">취소</string>
+    <string name="search_overlay_prompt">휴대전화로 화살표 방향 가리키기</string>
+    <string name="layer_stars">별</string>
+    <string name="layer_constellations">별자리</string>
+    <string name="layer_solar_system">행성</string>
+    <string name="layer_horizon">지평선</string>
+    <string name="layer_ecliptic">단주기 혜성</string>
+    <string name="layer_sky_gradient">스카이 그라데이션</string>
+    <string name="ar_permission_settings_action">설정</string>
+    <string name="time_travel_button">시간 여행</string>
+    <string name="time_travel_title">시간 여행</string>
+    <string name="time_travel_cancel">취소</string>
+    <string name="time_travel_stopped">시간 여행 고정</string>
+    <string name="time_travel_second_speed">여행 &gt; @ 1 초/초</string>
+    <string name="time_travel_minute_speed">여행 &gt; @ 1 분/초</string>
+    <string name="time_travel_10minute_speed">여행 &gt; @ 10분/초</string>
+    <string name="time_travel_hour_speed">여행 &gt; @ 1시간/초</string>
+    <string name="time_travel_day_speed">여행 &gt; @ 1일/초</string>
+    <string name="time_travel_week_speed">여행 &gt; @ 1주/초</string>
+    <string name="time_travel_second_speed_back">여행 &lt; @ 1초/초</string>
+    <string name="time_travel_minute_speed_back">여행 &lt; @ 1분/초</string>
+    <string name="time_travel_10minute_speed_back">여행 &lt; @10분/초</string>
+    <string name="time_travel_hour_speed_back">여행 &lt; @ 1시간/초</string>
+    <string name="time_travel_day_speed_back">여행 &lt; @ 1일/초</string>
+    <string name="time_travel_week_speed_back">여행 &lt; @ 1주/초</string>
+    <string name="time_travel_next_sunset">다음 일몰</string>
+    <string name="time_travel_next_sunrise">다음 일출</string>
+    <string name="time_travel_next_full_moon">다음 보름</string>
+    <string name="time_travel_mercury_transit_2016">Mercury transit of 2016-05-09</string>
+    <string name="time_travel_solar_eclipse_2024">2024 4월 8일 일식</string>
+    <string name="time_travel_apollo_11">아폴로 11호 달 착륙</string>
+    <string name="time_travel_jupiter_saturn_2020">목성-토성 결합</string>
+    <string name="sun_wont_set_message">현재 위치에서 다음 24시간 동안 태양이 지지 않습니다.</string>
+    <string name="time_travel_close_message">현재로 돌아오기...</string>
+    <string name="object_info_find_in_sky">하늘에서 찾기</string>
+    <string name="settings_button">설정</string>
+    <string name="settings_title">설정</string>
+    <string name="settings_cancel">취소</string>
+    <string name="settings_section_sensors">센서 설정</string>
+    <string name="settings_magnetic_correction">자기 수정 사용</string>
+    <string name="eula_title">서비스 약관</string>
+    <string name="dialog_accept">동의</string>
+    <string name="dialog_decline">아니요</string>
+    <string name="warm_welcome_card_name">게 성운</string>
+    <string name="help_button">도움말</string>
+    <string name="help_dialog_title">도움말</string>
+</resources>

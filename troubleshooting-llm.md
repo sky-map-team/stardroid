@@ -52,26 +52,32 @@ These facts should be expressed naturally (not recited verbatim) wherever releva
 
 **Response framing:** Acknowledge frustration, then explain that Sky Map reads the phone's compass
 sensor and cannot automatically correct what it reports. This is a phone hardware issue. Offer the
-steps below (including the manual offset for persistent cases). Do not imply Sky Map has a bug.
+steps below (including the manual offset for persistent cases, v1 only). Do not imply Sky Map has
+a bug.
 
 **Steps to suggest (in this order):**
 1. Remove any phone case and test without it
 2. Move to open ground, away from vehicles, buildings, and metal structures
 3. Perform the figure-8 calibration gesture (wave the phone in a large, slow figure-8 shape)
-4. If the phone has a consistent offset in all environments, use the manual compass offset in
-   Settings → Sensor Settings (Experts) — finding the right value may take some trial and error
-5. Check the Diagnostics page (overflow menu) — note that this shows **calibration status**, not
-   accuracy; a sensor showing "High" can still point in the wrong direction
+4. **v1 only:** if the phone has a consistent offset in all environments, use the manual compass
+   offset in Settings → Sensor Settings (Experts) — finding the right value may take some trial
+   and error. This option isn't currently available in the v2 app — don't suggest it if the
+   review is about v2.
+5. Check the Diagnostics page (overflow menu on v1, Settings on v2) — note that this shows
+   **calibration status**, not accuracy; a sensor showing "High" can still point in the wrong
+   direction
 
 **Do NOT suggest:**
 - Reinstalling the app, clearing app data, or waiting for a Sky Map update — these will not fix a
   hardware compass issue
-- Toggling Magnetic Correction (Settings → Location) — this only adjusts for the difference
-  between magnetic and true north (a small fixed offset), not for general compass inaccuracy
+- Toggling Magnetic Correction (Settings → Location on v1, Settings → Sensor Settings (Experts)
+  on v2) — this only adjusts for the difference between magnetic and true north (a small fixed
+  offset), not for general compass inaccuracy
 - Blaming an Android or firmware update — do not speculate about what changed on the user's device
 
 **Worth mentioning:** Some phones simply have poor compass hardware regardless of environment or
-calibration. For these, the manual offset is the best available workaround.
+calibration. On v1, the manual offset is the best available workaround; v2 doesn't have an
+equivalent yet.
 
 ---
 
@@ -95,7 +101,8 @@ the wrong direction if it's in a magnetically disturbed environment.
 1. Move well away from metal objects, vehicles, and buildings
 2. Remove any phone case
 3. Repeat the figure-8 gesture in the clear environment
-4. If there's a consistent offset, use the manual compass offset in Settings
+4. **v1 only:** if there's a consistent offset, use the manual compass offset in Settings (not
+   available on v2)
 
 ---
 
@@ -115,8 +122,10 @@ a known side-effect. This is not a Sky Map change.
 
 **Steps to suggest:**
 1. Perform a fresh figure-8 calibration in an open, interference-free area
-2. Check Diagnostics to see current sensor calibration status (note: calibration status ≠ accuracy)
-3. If there's a consistent offset, use the manual compass offset in Settings
+2. Check Diagnostics (overflow menu on v1, Settings on v2) to see current sensor calibration
+   status (note: calibration status ≠ accuracy)
+3. **v1 only:** if there's a consistent offset, use the manual compass offset in Settings (not
+   available on v2)
 
 ---
 
@@ -134,8 +143,8 @@ a known side-effect. This is not a Sky Map change.
 
 **Steps to suggest:**
 1. Tap the sensor icon on screen to make sure Automatic Mode is on (not Manual)
-2. Open Diagnostics — if any sensor shows `--,--,--` it is absent and the phone cannot run
-   Sky Map in automatic mode
+2. Open Diagnostics (overflow menu on v1, Settings on v2) — if any sensor shows `--,--,--` it is
+   absent and the phone cannot run Sky Map in automatic mode
 3. Try the figure-8 calibration gesture
 
 ---
@@ -178,15 +187,19 @@ also need tuning.
 **What users say:** "Polaris is near the horizon", "the whole sky is shifted", "stars are in
 completely wrong positions", "it doesn't know where I am"
 
-**Real cause:** Sky Map does not have the user's location. It defaults to 0°/90° (North Pole).
+**Real cause:** Sky Map does not have the user's location. v1 defaults to 0°/0° (a point in the
+ocean); v2 defaults to Greenwich, UK (51.48°N, 0°).
 
-**Telltale symptom:** Polaris near the horizon instead of high in the northern sky.
+**Telltale symptom:** Polaris near the horizon instead of high in the northern sky (consistent
+with both defaults — neither is far enough north for Polaris to sit high in the sky).
 
 **Steps to suggest:**
 1. Grant location permission: Settings → Apps → Sky Map → Permissions → Location
-2. Open Sky Map's Location Settings and use the map view to visually confirm that Sky Map has
-   the correct location — this is the most direct way to see what location the app is using
-3. Open Diagnostics and confirm the lat/lon shown there matches the user's actual location
+2. Use the map view to visually confirm Sky Map has the correct location — this is the most
+   direct way to see what location the app is using. In v1, open **Location Settings**; in v2,
+   tap **Location** on the map screen.
+3. Open Diagnostics (overflow menu on v1, Settings on v2) and confirm the lat/lon shown there
+   matches the user's actual location
 
 ---
 
@@ -218,8 +231,9 @@ user the complete picture.
   don't have. E.g. "Sorry to hear Sky Map isn't working as expected for you."
 - Be clear but not dismissive when the issue is hardware: "Sky Map reads directly from your
   phone's compass sensor and cannot automatically correct what it reports — compass accuracy
-  is ultimately determined by your phone's hardware and environment, though a manual offset
-  is available in Settings for phones with a consistent error."
+  is ultimately determined by your phone's hardware and environment." Add ", though a manual
+  offset is available in Settings for phones with a consistent error" only for v1 reviews — v2
+  doesn't have this option yet.
 - Never be defensive or blame the user. Frame hardware limitations as facts, not excuses.
 - Keep responses concise. Offer the most relevant 2–3 steps, not all of them.
 - If steps were already tried and failed, acknowledge that and escalate to email support.

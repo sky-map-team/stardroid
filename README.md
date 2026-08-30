@@ -68,16 +68,22 @@ IMPORTANT: Contributions are currently closed! The V1 codebase has been retired 
 Sigh. I'm sorry we have to do this. But this legalese is to prevent lazy people taking the source code and releasing a clone of Sky Map that is just stuffed full of ads. Yes people do this. It adds no value to the world and just lines their pockets.
 
 ## 1. Source Code License
-The source code of this project is a derivative work of the original open-source Sky Map application (formerly Google Sky Map). 
+The source code of this project is a derivative work of the original open-source Sky Map application (formerly Google Sky Map). The repository holds two applications:
 
-* **New Code & Modifications:** All new code, modernizations, and modifications authored by **Penterakt LLC** are licensed under the **GNU General Public License v3.0 (GPLv3)**.
-* **Legacy Provenance:** Portions of the underlying core logic, algorithms, and historical source files remain subject to their original **Apache License, Version 2.0**. Original copyright headers and notices within inherited files have been preserved as required by the Apache 2.0 terms. 
+* **`stardroid-v1/`** — the legacy app. Licensed under the **Apache License, Version 2.0**.
+  Original copyright headers and notices within inherited files have been preserved as
+  required by the Apache 2.0 terms.
+* **`stardroid-v2/`** — the current rewrite, authored by **Penterakt LLC**. Licensed under the
+  **GNU General Public License v3.0 (GPLv3)**, with an additional permission under GPLv3 §7 for
+  distribution through app stores. See [`stardroid-v2/LICENSE.md`](stardroid-v2/LICENSE.md) for
+  the full terms and [`stardroid-v2/NOTICE.md`](stardroid-v2/NOTICE.md) for its own
+  Apache-2.0 provenance.
 * **Combined Work:** The project as a combined distribution is compiled and distributed under the terms of the **GPLv3**. Any third-party forks, modifications, or derivative versions of this combined codebase must be completely open-sourced under the GPLv3.
 
 ## 2. Branding & Visual Assets (All Rights Reserved)
-The open-source code licenses (GPLv3 and Apache 2.0) apply strictly to the functional source code. All proprietary visual artwork, custom UI layouts, onboarding graphics, launcher icons, and designs contained within this repository are **Copyright © 2026 Penterakt LLC, All Rights Reserved**. 
+The open-source code licenses (GPLv3 and Apache 2.0) apply to the functional source code, resources, and translations. A short, explicitly enumerated list of **brand identity assets** — launcher and notification icons, onboarding artwork, and similar identity marks — is reserved as **Copyright © 2026 Penterakt LLC, All Rights Reserved**. For `stardroid-v2/`, the authoritative list is the `[arr]` section of [`stardroid-v2/ASSET-LICENSES.txt`](stardroid-v2/ASSET-LICENSES.txt); nothing else in that module is reserved.
 
-These visual assets are **NOT** open-source and may not be used, duplicated, or modified in any third-party fork or distribution without express written consent from [Penterakt LLC](http://penterakt.io). 
+Reserved brand assets are **NOT** open-source and may not be used, duplicated, or modified in any third-party fork or distribution without express written consent from [Penterakt LLC](http://penterakt.io).
 
 *(Note: This reservation excludes any public-domain or open-licensed scientific datasets, such as NASA/ESA astronomical imagery or public star catalogs, which remain governed by their original respective terms.)*
 

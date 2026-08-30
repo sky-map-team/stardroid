@@ -1,0 +1,46 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!--
+      A satellite: a small central bus with a solar panel spread either side, tilted so it reads
+      as an object in orbit rather than a plus sign.
+
+      Must not be mistaken for two neighbours it sits beside on the rail at 44dp pitch:
+        - ic_layer_solar_system's ringed planet — hence no ellipse around the body;
+        - the HUD's bracket corners — hence the panels are filled rectangles rather than
+          four detached right angles.
+      Authored white; RailItem tints it outline/primary like every other layer glyph (D90).
+    -->
+    <group android:pivotX="12" android:pivotY="12" android:rotation="-30">
+        <!-- Solar panels. -->
+        <path
+            android:pathData="M2.5,10.2h6.2v3.6h-6.2z"
+            android:strokeColor="#FFFFFFFF"
+            android:strokeWidth="1.6"
+            android:strokeLineJoin="round" />
+        <path
+            android:pathData="M15.3,10.2h6.2v3.6h-6.2z"
+            android:strokeColor="#FFFFFFFF"
+            android:strokeWidth="1.6"
+            android:strokeLineJoin="round" />
+        <!-- The bus. -->
+        <path
+            android:pathData="M10.4,9.6h3.2v4.8h-3.2z"
+            android:fillColor="#FFFFFFFF" />
+        <!-- Booms joining panels to bus. -->
+        <path
+            android:pathData="M8.7,12h1.7M13.6,12h1.7"
+            android:strokeColor="#FFFFFFFF"
+            android:strokeWidth="1.6"
+            android:strokeLineCap="round" />
+    </group>
+    <!-- A short trail, echoing the map marker's fading trail so rail and sky agree. -->
+    <path
+        android:pathData="M4.2,20.4L8.4,17.2"
+        android:strokeColor="#FFFFFFFF"
+        android:strokeWidth="1.6"
+        android:strokeLineCap="round"
+        android:strokeAlpha="0.55" />
+</vector>

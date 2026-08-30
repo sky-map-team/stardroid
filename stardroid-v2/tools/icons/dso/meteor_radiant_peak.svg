@@ -1,0 +1,34 @@
+<!-- Sky Map sky-marker icon. Copyright (c) 2026 Penterakt LLC.
+     All Rights Reserved - see LICENSE.md in this directory. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <g opacity="0.35">
+    <path d="M14.38 11.67 L21.21 10.71" fill="none" stroke="#000" stroke-width="3.60" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M14.30 9.78 L16.53 7.62" fill="none" stroke="#000" stroke-width="3.60" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M12.44 9.95 L13.79 3.59" fill="none" stroke="#000" stroke-width="3.60" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M10.51 8.94 L9.37 6.61" fill="none" stroke="#000" stroke-width="3.60" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M10.01 10.85 L4.21 7.50" fill="none" stroke="#000" stroke-width="3.60" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M8.92 12.38 L5.45 12.80" fill="none" stroke="#000" stroke-width="3.60" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M10.37 13.47 L5.83 17.55" fill="none" stroke="#000" stroke-width="3.60" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M11.09 15.38 L10.47 17.70" fill="none" stroke="#000" stroke-width="3.60" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M12.82 14.26 L15.11 20.55" fill="none" stroke="#000" stroke-width="3.60" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M14.52 13.63 L17.37 15.49" fill="none" stroke="#000" stroke-width="3.60" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="12.00" cy="12.00" r="2.20" fill="#000"/>
+    <circle cx="19.60" cy="16.90" r="1.70" fill="#000"/>
+    <circle cx="4.90" cy="6.80" r="1.70" fill="#000"/>
+  </g>
+  <g>
+    <path d="M14.38 11.67 L21.21 10.71" fill="none" stroke="#fff" stroke-width="1.40" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M14.30 9.78 L16.53 7.62" fill="none" stroke="#fff" stroke-width="1.40" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M12.44 9.95 L13.79 3.59" fill="none" stroke="#fff" stroke-width="1.40" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M10.51 8.94 L9.37 6.61" fill="none" stroke="#fff" stroke-width="1.40" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M10.01 10.85 L4.21 7.50" fill="none" stroke="#fff" stroke-width="1.40" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M8.92 12.38 L5.45 12.80" fill="none" stroke="#fff" stroke-width="1.40" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M10.37 13.47 L5.83 17.55" fill="none" stroke="#fff" stroke-width="1.40" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M11.09 15.38 L10.47 17.70" fill="none" stroke="#fff" stroke-width="1.40" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M12.82 14.26 L15.11 20.55" fill="none" stroke="#fff" stroke-width="1.40" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M14.52 13.63 L17.37 15.49" fill="none" stroke="#fff" stroke-width="1.40" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="12.00" cy="12.00" r="1.10" fill="#fff"/>
+    <circle cx="19.60" cy="16.90" r="0.60" fill="#fff"/>
+    <circle cx="4.90" cy="6.80" r="0.60" fill="#fff"/>
+  </g>
+</svg>

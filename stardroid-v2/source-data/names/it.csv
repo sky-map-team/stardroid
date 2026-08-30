@@ -1,0 +1,200 @@
+object_id,name,is_primary
+constellation/aquarius,Acquario,1
+constellation/aries,Ariete,1
+constellation/bootes,Boote,1
+constellation/cancer,Cancro,1
+constellation/canes_venatici,Cani Venatici,1
+constellation/canis_major,Cane Maggiore,1
+constellation/canis_minor,Cane Minore,1
+constellation/capricornus,Capricorno,1
+constellation/carina,Carena,1
+constellation/cassiopeia,Cassiopea,1
+constellation/centaurus,Centauro,1
+constellation/cepheus,Cefeo,1
+constellation/cetus,Balena,1
+constellation/chamaeleon,Camaleonte,1
+constellation/circinus,Compasso,1
+constellation/columba,Colomba,1
+constellation/coma_berenices,Chioma di Berenice,1
+constellation/corona_australis,Corona Australe,1
+constellation/corona_borealis,Corona Boreale,1
+constellation/corvus,Corvo,1
+constellation/crater,Cratere,1
+constellation/crux,Croce del Sud,1
+constellation/cygnus,Cigno,1
+constellation/delphinus,Delfino,1
+constellation/draco,Dragone,1
+constellation/equuleus,Cavallino,1
+constellation/eridanus,Eridano,1
+constellation/fornax,Fornace,1
+constellation/gemini,Gemelli,1
+constellation/grus,Gru,1
+constellation/hercules,Ercole,1
+constellation/horologium,Orologio,1
+constellation/hydra,Idra,1
+constellation/hydrus,Idra Maschio,1
+constellation/indus,Indiano,1
+constellation/lacerta,Lucertola,1
+constellation/leo,Leone,1
+constellation/leo_minor,Leone Minore,1
+constellation/lepus,Lepre,1
+constellation/libra,Bilancia,1
+constellation/lupus,Lupo,1
+constellation/lynx,Lince,1
+constellation/lyra,Lira,1
+constellation/mensa,Tavola,1
+constellation/microscopium,Microscopio,1
+constellation/monoceros,Monocero,1
+constellation/musca,Mosca,1
+constellation/octans,Ottante,1
+constellation/ophiuchus,Ofiuco,1
+constellation/orion,Orione,1
+constellation/pavo,Pavone,1
+constellation/pegasus,Pegaso,1
+constellation/perseus,Perseo,1
+constellation/phoenix,Fenice,1
+constellation/pictor,Pittore,1
+constellation/pisces,Pesci,1
+constellation/piscis_austrinus,Pesce Australe,1
+constellation/puppis,Poppa,1
+constellation/pyxis,Bussola,1
+constellation/reticulum,Reticolo,1
+constellation/sagittarius,Sagittario,1
+constellation/scorpius,Scorpione,1
+constellation/sculptor,Scultore,1
+constellation/scutum,Scudo,1
+constellation/serpens_caput,Serpente (Testa),1
+constellation/serpens_cauda,Serpente (Coda),1
+constellation/sextans,Sestante,1
+constellation/taurus,Toro,1
+constellation/telescopium,Telescopio,1
+constellation/triangulum,Triangolo,1
+constellation/triangulum_australe,Triangolo Australe,1
+constellation/tucana,Tucano,1
+constellation/ursa_major,Orsa Maggiore,1
+constellation/ursa_minor,Orsa Minore,1
+constellation/virgo,Vergine,1
+constellation/volans,Pesce Volante,1
+constellation/vulpecula,Volpetta,1
+dso/blue_snowball_nebula,Nebulosa Palla di Neve Blu,1
+dso/coathanger,Attaccapanni,1
+dso/coathanger,Ammasso di Brocchi,0
+dso/coma_star_cluster,Ammasso della Chioma di Berenice,1
+dso/coma_star_cluster,Ammasso della Chioma di Berenice,0
+dso/cygnus_x_1,Binaria di buchi neri,1
+dso/cygnus_x_1,Buco nero stellare,0
+dso/double_cluster,Ammasso Doppio,1
+dso/double_cluster,h e χ Persei,0
+dso/double_cluster,NGC 869 & NGC 884,0
+dso/eta_carinae_nebula,Nebulosa di Eta Carinae,1
+dso/eta_carinae_nebula,Nebulosa della Carena,0
+dso/exposed_cranium_nebula,Nebulosa del Cranio Esposto,1
+dso/ghost_of_jupiter,Fantasma di Giove,1
+dso/hdf,Hubble Deep Field,1
+dso/hdf,Campo profondo Hubble (HDF),0
+dso/helix_nebula,Nebulosa Elica,1
+dso/helix_nebula,Occhio di Dio,0
+dso/hyades,Iadi,1
+dso/jewel_box,Cassetta dei Gioielli,1
+dso/jewel_box,Cassetta dei Gioielli di Herschel,0
+dso/jewel_box,Ammasso Kappa Crucis,0
+dso/lmc,Grande Nube di Magellano,1
+dso/lmc,Nubecula Major,0
+dso/m1,Nebulosa Granchio,1
+dso/m101,Galassia Girandola,1
+dso/m102,Galassia del Fuso,1
+dso/m104,Galassia Sombrero,1
+dso/m11,Ammasso Anatra Selvatica,1
+dso/m13,Ammasso globulare di Ercole,1
+dso/m13,Ammasso Globulare di Ercole,0
+dso/m16,Nebulosa Aquila,1
+dso/m20,Nebulosa Trifida,1
+dso/m24,Nube Stellare del Sagittario,1
+dso/m27,Nebulosa Manubrio,1
+dso/m31,Galassia di Andromeda,1
+dso/m33,Galassia del Triangolo,1
+dso/m42,Nebulosa di Orione,1
+dso/m43,Nebulosa di De Mairan,1
+dso/m44,Ammasso Alveare,1
+dso/m44,Presepe,0
+dso/m45,Pleiadi,1
+dso/m45,Sette sorelle,0
+dso/m51,Galassia Vortice,1
+dso/m57,Nebulosa Anello,1
+dso/m6,Ammasso Farfalla,1
+dso/m63,Galassia Girasole,1
+dso/m64,Galassia Occhio Nero,1
+dso/m7,Coda dello scorpione,1
+dso/m7,Ammasso di Tolomeo,0
+dso/m74,Galassia Fantasma,1
+dso/m76,Piccola Nebulosa Manubrio,1
+dso/m8,Nebulosa Laguna,1
+dso/m81,Galassia di Bode,1
+dso/m82,Galassia Sigaro,1
+dso/m83,Galassia Girandola Australe,1
+dso/m97,Nebulosa Gufo,1
+dso/ngc_6543,Nebulosa Occhio di gatto,1
+dso/north_america_nebula,Nebulosa dell'America Settentrionale,1
+dso/omega_centauri,Ammasso globulare Omega Centauri,1
+dso/omega_centauri,ω Centauri,0
+dso/saturn_nebula,Nebulosa di Saturno,1
+dso/sculptor_galaxy,Galassia dello Scultore,1
+dso/sculptor_galaxy,Galassia del Dollaro d'Argento,0
+dso/sculptor_galaxy,Galassia della Moneta d'Argento,0
+dso/sgr_a_star,Sgr A*,1
+dso/sgr_a_star,Buco nero,0
+dso/sgr_a_star,Centro galattico,0
+dso/smc,Piccola Nube di Magellano,1
+dso/smc,Nubecula Minor,0
+dso/t_crb,T Coronae Borealis,1
+dso/t_crb,Stella Fiammeggiante,0
+dso/tarantula_nebula,Nebulosa Tarantola,1
+dso/tarantula_nebula,30 Doradus,0
+dso/willman_1,Willman 1,1
+dso/willman_1,Galassia di Beth Willman,0
+moon/ariel,Ariele,1
+moon/ganymede,Ganimede,1
+moon/iapetus,Giapeto,1
+moon/phobos,Fobos,1
+moon/rhea,Rea,1
+moon/tethys,Teti,1
+moon/titan,Titano,1
+moon/triton,Tritone,1
+moon/umbriel,Umbriele,1
+planet/jupiter,Giove,1
+planet/mars,Marte,1
+planet/mercury,Mercurio,1
+planet/moon,Luna,1
+planet/neptune,Nettuno,1
+planet/pluto,Plutone,1
+planet/saturn,Saturno,1
+planet/sun,Sole,1
+planet/uranus,Urano,1
+planet/venus,Venere,1
+shower/aquariids,Eta Aquaridi,1
+shower/deltaaquariids,Delta Aquaridi,1
+shower/geminids,Geminidi,1
+shower/leonids,Leonidi,1
+shower/lyrids,Liridi,1
+shower/orionids,Orionidi,1
+shower/perseids,Perseidi,1
+shower/puppidvelids,Puppidi-Velidi,1
+shower/quadrantids,Quadrantidi,1
+shower/ursids,Ursidi,1
+star/alphekka,Alphecca,1
+star/arcturus,Arturo,1
+star/canopus,Canopo,1
+star/castor,Castore,1
+star/phad,Phecda,1
+star/polaris,Stella polare,1
+star/polaris,Stella del Nord,0
+star/polaris,Stella polare,0
+star/pollux,Polluce,1
+star/procyon,Procione,1
+star/regulus,Regolo,1
+star/rigil_kentaurus_a,Alfa Centauri,1
+star/rigil_kentaurus_a,Rigil Kentaurus A,0
+star/rigil_kentaurus_a,Rigel Kentaurus A,0
+star/rigil_kentaurus_a,Rigil Kent,0
+star/sirius,Sirio,1
+star/sirius,Stella del Cane,0

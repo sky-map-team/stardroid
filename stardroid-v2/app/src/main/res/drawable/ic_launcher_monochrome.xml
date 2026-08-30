@@ -1,0 +1,36 @@
+<!--
+  Sky Map v2 launcher icon — monochrome / themed-icon layer (Android 13+).
+  Branding asset: All Rights Reserved, (c) 2026 Penterakt LLC (see branding/LICENSE.md).
+  Option M1: a single silhouette of the gold star nested INSIDE an open magnifier
+  ring, with clear space between them so the two shapes never merge into a blob
+  when the OS tints them one flat color. Color here is arbitrary — the system
+  uses only the alpha as a mask.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <group
+        android:translateX="4"
+        android:translateY="4"
+        android:scaleX="0.125"
+        android:scaleY="0.125">
+        <!-- star framed inside the ring -->
+        <path
+            android:fillColor="#FFFFFFFF"
+            android:pathData="M360,240L388.2,321.2 474.1,322.9 405.6,374.8 430.5,457.1 360,408 289.5,457.1 314.4,374.8 245.9,322.9 331.8,321.2z" />
+        <!-- lens ring -->
+        <path
+            android:fillColor="#00000000"
+            android:strokeColor="#FFFFFFFF"
+            android:strokeWidth="46"
+            android:pathData="M160,360a200,200 0,1 0,400 0a200,200 0,1 0,-400 0z" />
+        <!-- handle, clears the ring -->
+        <path
+            android:strokeColor="#FFFFFFFF"
+            android:strokeWidth="80"
+            android:strokeLineCap="round"
+            android:pathData="M518,518L660,660" />
+    </group>
+</vector>

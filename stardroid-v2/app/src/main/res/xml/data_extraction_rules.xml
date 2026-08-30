@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Explicit backup/transfer intent (audit-2026-08.md I5): everything is included, by design.
+  DataStoreSettings persists the user's saved latitude/longitude alongside their display
+  preferences (night mode, sensor settings, etc.) with no separation between the two, and a
+  returning user getting their location back on a new device is the behavior we want — so
+  rather than leave this to Android's allowBackup="true" default, this file states it on
+  purpose. Revisit this file, not just the manifest flag, if that stance ever changes.
+-->
+<data-extraction-rules>
+    <cloud-backup>
+        <include domain="sharedpref" path="." />
+        <include domain="file" path="." />
+        <include domain="database" path="." />
+    </cloud-backup>
+    <device-transfer>
+        <include domain="sharedpref" path="." />
+        <include domain="file" path="." />
+        <include domain="database" path="." />
+    </device-transfer>
+</data-extraction-rules>

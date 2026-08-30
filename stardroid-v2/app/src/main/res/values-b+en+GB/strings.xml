@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Carried over from v1 by tools/salvage-translations/salvage.py.
+  Only strings whose English source is identical between v1 and v2 appear here;
+  everything else is translated by `tm`. Safe to hand-edit thereafter.
+-->
+<resources>
+    <string name="search_overlay_prompt">Point your phone towards the arrow</string>
+    <string name="time_travel_second_speed">Travelling &gt; @ 1 sec/sec</string>
+    <string name="time_travel_minute_speed">Travelling &gt; @ 1 min/sec</string>
+    <string name="time_travel_10minute_speed">Travelling &gt; @ 10 min/sec</string>
+    <string name="time_travel_hour_speed">Travelling &gt; @ 1 hour/sec</string>
+    <string name="time_travel_day_speed">Travelling &gt; @ 1 day/sec</string>
+    <string name="time_travel_week_speed">Travelling &gt; @ 1 week/sec</string>
+    <string name="time_travel_second_speed_back">Travelling &lt; @ 1 sec/sec</string>
+    <string name="time_travel_minute_speed_back">Travelling &lt; @ 1 min/sec</string>
+    <string name="time_travel_10minute_speed_back">Travelling &lt; @ 10 min/sec</string>
+    <string name="time_travel_hour_speed_back">Travelling &lt; @ 1 hour/sec</string>
+    <string name="time_travel_day_speed_back">Travelling &lt; @ 1 day/sec</string>
+    <string name="time_travel_week_speed_back">Travelling &lt; @ 1 week/sec</string>
+    <string name="time_travel_six_planet_parade_2026">Six-Planet Parade, 28 Feb 2026</string>
+    <string name="time_travel_lunar_eclipse_2026">Total Lunar Eclipse, 3 Mar 2026</string>
+    <string name="time_travel_lyrids_2026">Lyrids Meteor Shower, 22 Apr 2026</string>
+    <string name="time_travel_venus_jupiter_2026">Venus-Jupiter Conjunction, 9 Jun 2026</string>
+    <string name="time_travel_mars_uranus_2026">Mars-Uranus Close Approach, 4 Jul 2026</string>
+    <string name="time_travel_solar_eclipse_2026">Total Solar Eclipse, 12 Aug 2026</string>
+    <string name="time_travel_perseids_2026">Perseids Meteor Shower, 12-13 Aug 2026</string>
+    <string name="time_travel_jupiter_occultation_2026">Lunar Occultation of Jupiter, 6 Oct 2026</string>
+    <string name="time_travel_geminids_2026">Geminids Meteor Shower, 13-14 Dec 2026</string>
+    <string name="time_travel_supermoon_2026">Christmas Eve Supermoon, 24 Dec 2026</string>
+    <string name="time_travel_mercury_transit_2016">Mercury transit of 9 May 2016</string>
+    <string name="time_travel_solar_eclipse_2024">North American Solar Eclipse of 8 Apr 2024</string>
+    <string name="location_longitude_hint">Longitude (e.g. −0.1)</string>
+</resources>

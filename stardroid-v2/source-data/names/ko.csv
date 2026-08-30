@@ -1,0 +1,162 @@
+object_id,name,is_primary
+constellation/andromeda,안드로메다자리,1
+constellation/aquarius,물병자리,1
+constellation/aquila,독수리자리,1
+constellation/aries,양자리,1
+constellation/auriga,마차부자리,1
+constellation/bootes,목자자리,1
+constellation/cancer,게자리,1
+constellation/canis_major,큰개자리,1
+constellation/capricornus,염소자리,1
+constellation/carina,용골자리,1
+constellation/cassiopeia,카시오페이아자리,1
+constellation/centaurus,센타우루스자리,1
+constellation/cetus,고래자리,1
+constellation/crux,남십자자리,1
+constellation/cygnus,백조자리,1
+constellation/draco,용자리,1
+constellation/eridanus,에리다누스자리,1
+constellation/gemini,쌍둥이자리,1
+constellation/grus,두루미자리,1
+constellation/hercules,헤르쿨레스자리,1
+constellation/hydrus,물뱀자리,1
+constellation/leo,사자자리,1
+constellation/libra,천칭자리,1
+constellation/lupus,이리자리,1
+constellation/lyra,거문고자리,1
+constellation/ophiuchus,땅꾼자리,1
+constellation/orion,오리온자리,1
+constellation/pavo,공작자리,1
+constellation/pegasus,페가수스자리,1
+constellation/perseus,페르세우스자리,1
+constellation/phoenix,불사조자리,1
+constellation/pisces,물고기자리,1
+constellation/piscis_austrinus,남쪽물고기자리,1
+constellation/puppis,고물자리,1
+constellation/sagittarius,궁수자리,1
+constellation/scorpius,전갈자리,1
+constellation/taurus,황소자리,1
+constellation/tucana,큰부리새자리,1
+constellation/ursa_major,큰곰자리,1
+constellation/ursa_minor,작은곰자리,1
+constellation/vela,돛자리,1
+constellation/virgo,처녀자리,1
+dso/hdf,Hubble Deep Field,1
+dso/hdf,허블 딥 필드,0
+dso/m1,게 성운,1
+dso/m101,바람개비 은하,1
+dso/m102,방추 은하,1
+dso/m104,솜브레로 은하,1
+dso/m11,들오리 성단,1
+dso/m13,헤라클레스 구상성단,1
+dso/m13,Hercules Globular Cluster,0
+dso/m16,독수리 성운,1
+dso/m20,삼렬 성운,1
+dso/m24,궁수자리 별구름,1
+dso/m27,아령 성운,1
+dso/m31,안드로메다 은하,1
+dso/m33,삼각형자리 은하,1
+dso/m40,비네케 4,1
+dso/m42,오리온 성운,1
+dso/m43,드 메랑 성운,1
+dso/m44,벌집 성단,1
+dso/m44,프레세페,0
+dso/m45,플레이아데스 성단,1
+dso/m45,일곱 자매,0
+dso/m51,소용돌이 은하,1
+dso/m57,고리 성운,1
+dso/m6,나비 성단,1
+dso/m63,해바라기 은하,1
+dso/m64,검은 눈 은하,1
+dso/m7,전갈의 독침,1
+dso/m7,Ptolemy Cluster,0
+dso/m74,유령 은하,1
+dso/m76,작은 아령 성운,1
+dso/m8,석호 성운,1
+dso/m81,보데 은하,1
+dso/m82,시가 은하,1
+dso/m83,남쪽 바람개비 은하,1
+dso/m97,부엉이 성운,1
+dso/ngc_6543,고양이눈 성운,1
+dso/omega_centauri,센타우르스 자리 오메가 구상성단,1
+dso/omega_centauri,ω Centauri,0
+planet/jupiter,목성,1
+planet/mars,화성,1
+planet/mercury,수성,1
+planet/moon,달,1
+planet/neptune,해왕성,1
+planet/pluto,명왕성,1
+planet/saturn,토성,1
+planet/sun,태양,1
+planet/uranus,천왕성,1
+planet/venus,금성,1
+star/achernar,아케르나르,1
+star/acrux,아크룩스,1
+star/adhara,아다라,1
+star/alcyone,알키오네,1
+star/aldebaran,알데바란,1
+star/alderamin,알데라민,1
+star/algenib,알게니브,1
+star/algieba,알기바,1
+star/algol,알골,1
+star/alhena,알헤나,1
+star/alioth,알리오츠,1
+star/alkaid,알카이드,1
+star/alnair,알나이르,1
+star/alnath,알나드,1
+star/alnilam,알니람,1
+star/alphard,알파르드,1
+star/alphekka,알페카,1
+star/alpheratz,알페라츠,1
+star/altair,알타이르(견우성),1
+star/ankaa,안카,1
+star/antares,안타레스,1
+star/arcturus,아르크투르스,1
+star/arneb,아르네브,1
+star/betelgeuse,베텔게우스,1
+star/canopus,카노푸스,1
+star/capella,카펠라,1
+star/caph,카프,1
+star/castor,카스토르,1
+star/deneb,데네브,1
+star/denebola,데네볼라,1
+star/diphda,디프다,1
+star/dubhe,두베,1
+star/enif,에니프,1
+star/etamin,에타민,1
+star/fomalhaut,포말하우트,1
+star/hadar,하다르,1
+star/hamal,하말,1
+star/izar,이자르,1
+star/kaus_australis,카우스 오스트랄리스,1
+star/kochab,코카브,1
+star/markab,마르카브,1
+star/menkar,멘카르,1
+star/merak,메라크,1
+star/mirach,미라크,1
+star/mirphak,미르파크,1
+star/nunki,눈키,1
+star/phad,파드,1
+star/polaris,북극성,1
+star/polaris,북극성,0
+star/polaris,북극성,0
+star/pollux,폴룩스,1
+star/procyon,프로시온,1
+star/rasalhague,라스알하게,1
+star/regulus,레굴루스,1
+star/rigel,리겔,1
+star/rigil_kentaurus_a,Alpha Centauri,1
+star/rigil_kentaurus_a,Rigil Kentaurus A,0
+star/rigil_kentaurus_a,리겔 켄타우루스 A,0
+star/rigil_kentaurus_a,Rigil Kent,0
+star/saiph,사이프,1
+star/scheat,쉬트,1
+star/shaula,샤울라,1
+star/shedir,세디르,1
+star/sirius,시리우스,1
+star/sirius,시리우스,0
+star/spica,스피카,1
+star/unukalhai,우누크알하이,1
+star/vega,베가(직녀성),1
+star/vindemiatrix,빈데미아트릭,1
+dso/v838_mon,V838 모노세로티스,1

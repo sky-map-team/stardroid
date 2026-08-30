@@ -1,0 +1,179 @@
+object_id,name,is_primary
+constellation/antlia,Luftpumpen,1
+constellation/apus,Paradisfuglen,1
+constellation/aquarius,Vannmannen,1
+constellation/aquila,Ørnen,1
+constellation/ara,Alteret,1
+constellation/aries,Væren,1
+constellation/auriga,Kusken,1
+constellation/bootes,Bjørnevokteren,1
+constellation/caelum,Meiselen,1
+constellation/camelopardalis,Giraffen,1
+constellation/cancer,Krepsen,1
+constellation/canes_venatici,Jakthundene,1
+constellation/canis_major,Store hund,1
+constellation/canis_minor,Lille hund,1
+constellation/capricornus,Steinbukken,1
+constellation/carina,Kjølen,1
+constellation/cassiopeia,Kassiopeia,1
+constellation/centaurus,Kentauren,1
+constellation/cepheus,Kefeus,1
+constellation/cetus,Hvalfisken,1
+constellation/chamaeleon,Kameleonen,1
+constellation/circinus,Passeren,1
+constellation/columba,Duen,1
+constellation/coma_berenices,Berenikes hår,1
+constellation/corona_australis,Sydlige krone,1
+constellation/corona_borealis,Nordlige krone,1
+constellation/corvus,Ravnen,1
+constellation/crater,Begeret,1
+constellation/crux,Sydkorset,1
+constellation/cygnus,Svanen,1
+constellation/delphinus,Delfinen,1
+constellation/dorado,Gullfisken,1
+constellation/draco,Dragen,1
+constellation/equuleus,Føllet,1
+constellation/eridanus,Floden,1
+constellation/fornax,Smelteovnen,1
+constellation/gemini,Tvillingene,1
+constellation/grus,Tranen,1
+constellation/hercules,Herkules,1
+constellation/horologium,Uret,1
+constellation/hydra,Vannslangen,1
+constellation/hydrus,Sydlige vannslange,1
+constellation/indus,Indianeren,1
+constellation/lacerta,Firfislen,1
+constellation/leo,Løven,1
+constellation/leo_minor,Lille løve,1
+constellation/lepus,Haren,1
+constellation/libra,Vekten,1
+constellation/lupus,Ulven,1
+constellation/lynx,Gaupen,1
+constellation/lyra,Lyren,1
+constellation/mensa,Bordet,1
+constellation/microscopium,Mikroskopet,1
+constellation/monoceros,Enhjørningen,1
+constellation/musca,Fluen,1
+constellation/norma,Vinkelhaken,1
+constellation/octans,Oktanten,1
+constellation/ophiuchus,Slangebæreren,1
+constellation/pavo,Påfuglen,1
+constellation/perseus,Persevs,1
+constellation/phoenix,Føniks,1
+constellation/pictor,Maleren,1
+constellation/pisces,Fiskene,1
+constellation/piscis_austrinus,Sydlige fisk,1
+constellation/puppis,Akterstavnen,1
+constellation/pyxis,Kompasset,1
+constellation/reticulum,Nettet,1
+constellation/sagitta,Pilen,1
+constellation/sagittarius,Skytten,1
+constellation/scorpius,Skorpionen,1
+constellation/sculptor,Billedhuggeren,1
+constellation/scutum,Skjoldet,1
+constellation/serpens_caput,Slangens hode,1
+constellation/serpens_cauda,Slangens hale,1
+constellation/sextans,Sekstanten,1
+constellation/taurus,Tyren,1
+constellation/telescopium,Teleskopet,1
+constellation/triangulum,Triangelet,1
+constellation/triangulum_australe,Sydlige triangelet,1
+constellation/tucana,Tukanen,1
+constellation/ursa_major,Store bjørn,1
+constellation/ursa_minor,Lille bjørn,1
+constellation/vela,Seilet,1
+constellation/virgo,Jomfruen,1
+constellation/volans,Flygefisken,1
+constellation/vulpecula,Reven,1
+dso/blue_snowball_nebula,Blå snøballnebula,1
+dso/coathanger,Kleshengeren,1
+dso/coathanger,Broccis klynge,0
+dso/coma_star_cluster,Coma-stjernehoben,1
+dso/coma_star_cluster,Coma Berenices-klyngen,0
+dso/cygnus_x_1,Svart hull-binær,1
+dso/cygnus_x_1,Stellart svart hull,0
+dso/double_cluster,Dobbelthoben,1
+dso/double_cluster,h og χ Persei,0
+dso/double_cluster,NGC 869 & NGC 884,0
+dso/eta_carinae_nebula,Eta Carinae-tåken,1
+dso/eta_carinae_nebula,Carina-tåken,0
+dso/exposed_cranium_nebula,Eksponert hodeskalle-nebula,1
+dso/ghost_of_jupiter,Jupiters gjenferd,1
+dso/helix_nebula,Helix-tåken,1
+dso/helix_nebula,Guds øye,0
+dso/hyades,Hyader,1
+dso/jewel_box,Juvelkassen,1
+dso/jewel_box,Herschels juvelkasse,0
+dso/jewel_box,Kappa Crucis-hoben,0
+dso/lmc,Store Magellanske Sky,1
+dso/lmc,Nubecula Major,0
+dso/m1,Krabbetåken,1
+dso/m101,Spinneteingalaksen,1
+dso/m102,Spindelgalaksen,1
+dso/m104,Sombrero-galaksen,1
+dso/m11,Villandhopen,1
+dso/m13,Herkules kulehop,1
+dso/m13,Hercules globulærklynge,0
+dso/m16,Ørnetåken,1
+dso/m20,Trifidtåken,1
+dso/m24,Skyttens stjernesky,1
+dso/m27,Hanteltåken,1
+dso/m31,Andromedagalaksen,1
+dso/m33,Triangelgalaksen,1
+dso/m42,Orion-tåken,1
+dso/m43,De Mairans tåke,1
+dso/m44,Bikubehopen,1
+dso/m44,Krybben,0
+dso/m45,Pleiadene,1
+dso/m45,De syv søstre,0
+dso/m51,Malstrømgalaksen,1
+dso/m57,Ringtåken,1
+dso/m6,Sommerfuglhopen,1
+dso/m63,Solsikkegalaksen,1
+dso/m64,Svarteøye-galaksen,1
+dso/m7,Skorpionens hale,1
+dso/m7,Ptolemaios-klyngen,0
+dso/m74,Fantomgalaksen,1
+dso/m76,Lille Hanteltåken,1
+dso/m8,Lagunetåken,1
+dso/m81,Bodes galakse,1
+dso/m82,Sigargalaksen,1
+dso/m83,Sørlige Pinwheel-galaksen,1
+dso/m97,Ugletåken,1
+dso/ngc_6543,Kattøyetåken,1
+dso/north_america_nebula,Nord-Amerika-tåken,1
+dso/omega_centauri,Omega Centauri kulehop,1
+dso/omega_centauri,ω Centauri,0
+dso/saturn_nebula,Saturn-tåken,1
+dso/sculptor_galaxy,Bildhugger-galaksen,1
+dso/sculptor_galaxy,Sølvdollargalaksen,0
+dso/sculptor_galaxy,Sølvmynten-galaksen,0
+dso/sgr_a_star,Sgr A*,1
+dso/sgr_a_star,Svart hull,0
+dso/sgr_a_star,Galaktisk sentrum,0
+dso/smc,Lille Magellanske Sky,1
+dso/smc,Nubecula Minor,0
+dso/tarantula_nebula,Tarantula-tåken,1
+dso/tarantula_nebula,30 Doradus,0
+dso/willman_1,Willman 1,1
+dso/willman_1,Beth Willman-galaksen,0
+planet/mercury,Merkur,1
+planet/moon,Månen,1
+planet/neptune,Neptun,1
+planet/sun,Solen,1
+shower/aquariids,Eta-Aquaridene,1
+shower/deltaaquariids,Delta-Aquaridene,1
+shower/geminids,Geminidene,1
+shower/leonids,Leonidene,1
+shower/lyrids,Lyridene,1
+shower/orionids,Orionidene,1
+shower/perseids,Perseidene,1
+shower/puppidvelids,Puppid-velidene,1
+shower/quadrantids,Quadrantidene,1
+shower/ursids,Ursidene,1
+star/alcyone,Alkyone,1
+star/polaris,Polaris,1
+star/polaris,Nordstjernen,0
+star/polaris,Polarstjernen,0
+star/sirius,Sirius,1
+star/sirius,Hundestjernen,0

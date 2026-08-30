@@ -1,0 +1,186 @@
+object_id,name,is_primary
+constellation/antlia,Pompa,1
+constellation/apus,Cennetkuşu,1
+constellation/aquarius,Kova,1
+constellation/aquila,Kartal,1
+constellation/ara,Sunak,1
+constellation/aries,Koç,1
+constellation/auriga,Arabacı,1
+constellation/bootes,Çoban,1
+constellation/caelum,Çelikkalem,1
+constellation/camelopardalis,Zürafa,1
+constellation/cancer,Yengeç,1
+constellation/canes_venatici,Avköpekleri,1
+constellation/canis_major,Büyük köpek,1
+constellation/canis_minor,Küçükköpek,1
+constellation/capricornus,Oğlak,1
+constellation/carina,Karina,1
+constellation/cassiopeia,Kraliçe,1
+constellation/centaurus,Erboğa,1
+constellation/cepheus,Kral,1
+constellation/cetus,Balina,1
+constellation/chamaeleon,Bukalemun,1
+constellation/circinus,Pergel,1
+constellation/columba,Güvercin,1
+constellation/coma_berenices,Berenis'in Saçı,1
+constellation/corona_australis,Güneytacı,1
+constellation/corona_borealis,Kuzeytacı,1
+constellation/corvus,Karga,1
+constellation/crater,Kupa,1
+constellation/crux,Güney haçı,1
+constellation/cygnus,Kuğu,1
+constellation/delphinus,Yunus,1
+constellation/dorado,Kılıçbalığı,1
+constellation/draco,Ejderha,1
+constellation/equuleus,Tay,1
+constellation/eridanus,Irmak,1
+constellation/fornax,Ocak,1
+constellation/gemini,İkizler,1
+constellation/grus,Turna,1
+constellation/hercules,Herkül,1
+constellation/horologium,Saat,1
+constellation/hydra,Suyılanı,1
+constellation/hydrus,Küçük su yılanı,1
+constellation/indus,Hintli,1
+constellation/lacerta,Kertenkele,1
+constellation/leo,Aslan,1
+constellation/leo_minor,Küçükaslan,1
+constellation/lepus,Tavşan,1
+constellation/libra,Terazi,1
+constellation/lupus,Kurt,1
+constellation/lynx,Vaşak,1
+constellation/lyra,Çalgı,1
+constellation/mensa,Masa,1
+constellation/microscopium,Mikroskop,1
+constellation/monoceros,Tekboynuzlu,1
+constellation/musca,Sinek,1
+constellation/norma,Cetvel,1
+constellation/octans,Sekizlik,1
+constellation/ophiuchus,Yılancı,1
+constellation/orion,Avcı,1
+constellation/pavo,Tavus kuşu,1
+constellation/pegasus,Kanatlı at,1
+constellation/perseus,Kahraman,1
+constellation/phoenix,Anka kuşu,1
+constellation/pictor,Ressam,1
+constellation/pisces,Balıklar,1
+constellation/piscis_austrinus,Güney balığı,1
+constellation/puppis,Pupa,1
+constellation/pyxis,Kumpas,1
+constellation/reticulum,Ağcık,1
+constellation/sagitta,Okçuk,1
+constellation/sagittarius,Yay,1
+constellation/scorpius,Akrep,1
+constellation/sculptor,Yontar,1
+constellation/scutum,Kalkan,1
+constellation/serpens_caput,Yılanın Başı,1
+constellation/serpens_cauda,Yılanın Kuyruğu,1
+constellation/sextans,Altılık,1
+constellation/taurus,Boğa,1
+constellation/telescopium,Dürbün,1
+constellation/triangulum,Üçgen,1
+constellation/triangulum_australe,Güneyüçgeni,1
+constellation/tucana,Tukan,1
+constellation/ursa_major,Büyükayı,1
+constellation/ursa_minor,Küçükayı,1
+constellation/vela,Yelken,1
+constellation/virgo,Başak,1
+constellation/volans,Uçanbalık,1
+constellation/vulpecula,Tilkicik,1
+dso/blue_snowball_nebula,Mavi Kar Topu Nebulası,1
+dso/coathanger,Elbise Askısı,1
+dso/coathanger,Brocchi's Kümesi,0
+dso/coma_star_cluster,Coma Yıldız Kümesi,1
+dso/coma_star_cluster,Coma Berenices Kümesi,0
+dso/cygnus_x_1,Kara Delik İkili Sistemi,1
+dso/cygnus_x_1,Yıldızsal Kara Delik,0
+dso/double_cluster,Çift Küme,1
+dso/double_cluster,h ve χ Persei,0
+dso/double_cluster,NGC 869 & NGC 884,0
+dso/eta_carinae_nebula,Eta Carinae Nebulası,1
+dso/eta_carinae_nebula,Carina Nebulası,0
+dso/exposed_cranium_nebula,Açık Kafatası Nebulası,1
+dso/ghost_of_jupiter,Jüpiter'in Hayaleti,1
+dso/hdf,Hubble Derin Alan,1
+dso/hdf,Hubble Derin Alan,0
+dso/helix_nebula,Helix Nebulası,1
+dso/helix_nebula,Tanrı's Gözü,0
+dso/jewel_box,Mücevher Kutusu,1
+dso/jewel_box,Herschel'in Mücevher Kutusu,0
+dso/jewel_box,Kappa Crucis Kümesi,0
+dso/lmc,Büyük Macellan Bulutu,1
+dso/lmc,Nubecula Major,0
+dso/m1,Yengeç Bulutsusu,1
+dso/m101,Fırıldak Gökadası,1
+dso/m102,İğ Galaksisi,1
+dso/m104,Sombrero Gökadası,1
+dso/m11,Yaban Ördeği Kümesi,1
+dso/m13,Herkül'deki Büyük Yıldız Kümesi,1
+dso/m13,Hercules Küresel Kümesi,0
+dso/m16,Kartal Bulutsusu,1
+dso/m20,Üçlü Bulutsu,1
+dso/m24,Yay Yıldız Bulutu,1
+dso/m27,Halter Bulutsusu,1
+dso/m31,Andromeda Gökadası,1
+dso/m33,Üçgen Gökadası,1
+dso/m42,Avcı Bulutsusu,1
+dso/m43,De Mairan Bulutsusu,1
+dso/m44,Beehive Kümesi,1
+dso/m44,Praesepe,0
+dso/m45,Ülker,1
+dso/m45,Yedi Kız,0
+dso/m51,Girdap Gökadası,1
+dso/m57,Halka Bulutsusu,1
+dso/m6,Butterfly Kümesi,1
+dso/m63,Ayçiçeği Galaksisi,1
+dso/m64,Kara Göz Galaksisi,1
+dso/m7,Akrep'in Kuyruğu,1
+dso/m7,Ptolemy Kümesi,0
+dso/m74,Hayalet Galaksi,1
+dso/m76,Küçük Halter Bulutsusu,1
+dso/m8,Lagün Bulutsusu,1
+dso/m81,Bode'nin Galaksisi,1
+dso/m82,Puro Galaksisi,1
+dso/m83,Güney Fırıldak Galaksisi,1
+dso/m97,Baykuş Bulutsusu,1
+dso/ngc_6543,Kedi Gözü Bulutsusu,1
+dso/north_america_nebula,Kuzey Amerika Nebulası,1
+dso/omega_centauri,Omega Centauri Yıldız Kümesi,1
+dso/omega_centauri,ω Centauri,0
+dso/saturn_nebula,Satürn Nebulası,1
+dso/sculptor_galaxy,Heykeltıraş Gökadası,1
+dso/sculptor_galaxy,Gümüş Dolar Galaksisi,0
+dso/sculptor_galaxy,Gümüş Para Galaksisi,0
+dso/sgr_a_star,Sgr A*,1
+dso/sgr_a_star,Kara Delik,0
+dso/sgr_a_star,Galaktik Merkez,0
+dso/smc,Küçük Macellan Bulutu,1
+dso/smc,Nubecula Minor,0
+dso/tarantula_nebula,Tarantula Nebulası,1
+dso/tarantula_nebula,30 Doradus,0
+dso/willman_1,Willman 1,1
+dso/willman_1,Beth Willman Galaksisi,0
+planet/jupiter,Jüpiter,1
+planet/mercury,Merkür,1
+planet/moon,Ay,1
+planet/neptune,Neptün,1
+planet/pluto,Plüton,1
+planet/saturn,Satürn,1
+planet/sun,Güneş,1
+planet/uranus,Uranüs,1
+planet/venus,Venüs,1
+shower/aquariids,Eta Akuariidler,1
+shower/deltaaquariids,Delta Akuariidler,1
+shower/geminids,Geminidler,1
+shower/leonids,Leonidler,1
+shower/lyrids,Liridler,1
+shower/orionids,Orionidler,1
+shower/perseids,Perseidler,1
+shower/puppidvelids,Puppid-Velidler,1
+shower/quadrantids,Kuadrantidler,1
+shower/ursids,Ursidler,1
+star/polaris,Kutup Yıldızı,1
+star/polaris,Kuzey Yıldızı,0
+star/polaris,Kutup Yıldızı,0
+star/sirius,Sirius,1
+star/sirius,Köpek Yıldızı,0

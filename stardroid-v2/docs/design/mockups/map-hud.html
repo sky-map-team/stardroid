@@ -1,0 +1,434 @@
+<title>Sky Map — Map HUD Mockup</title>
+<style>
+  :root {
+    --bg: #131720; --surface: #1b2230; --surface2: #222b3d; --text: #e7ecf5;
+    --muted: #93a0b4; --accent: #f2b04a; --accent-ink: #131720; --line: #2a3346;
+    --good: #6fbf8a; --chipbg: rgba(242, 176, 74, 0.14);
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #f6f3ec; --surface: #fffdf8; --surface2: #f0ebdf; --text: #24282f;
+      --muted: #6a6f78; --accent: #b4711d; --accent-ink: #fffdf8; --line: #e2dcce;
+      --good: #2e7d4f; --chipbg: rgba(180, 113, 29, 0.12);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #131720; --surface: #1b2230; --surface2: #222b3d; --text: #e7ecf5;
+    --muted: #93a0b4; --accent: #f2b04a; --accent-ink: #131720; --line: #2a3346;
+    --good: #6fbf8a; --chipbg: rgba(242, 176, 74, 0.14);
+  }
+  :root[data-theme="light"] {
+    --bg: #f6f3ec; --surface: #fffdf8; --surface2: #f0ebdf; --text: #24282f;
+    --muted: #6a6f78; --accent: #b4711d; --accent-ink: #fffdf8; --line: #e2dcce;
+    --good: #2e7d4f; --chipbg: rgba(180, 113, 29, 0.12);
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg); color: var(--text); margin: 0;
+    font: 15px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  .cond { font-family: "Avenir Next Condensed", "Arial Narrow", "Roboto Condensed", sans-serif; }
+  .mono { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+          font-variant-numeric: tabular-nums; }
+  header { max-width: 1100px; margin: 0 auto; padding: 40px 24px 8px; }
+  .eyebrow { letter-spacing: 0.14em; text-transform: uppercase; font-size: 12.5px;
+             font-weight: 600; color: var(--accent); }
+  h1 { font-family: "Avenir Next Condensed", "Arial Narrow", sans-serif;
+       font-size: clamp(28px, 4vw, 40px); font-weight: 600; letter-spacing: 0.01em;
+       margin: 6px 0 4px; text-wrap: balance; }
+  header p { color: var(--muted); max-width: 62ch; margin: 6px 0 0; }
+  main { max-width: 1100px; margin: 0 auto; padding: 24px; display: grid;
+         grid-template-columns: 400px 1fr; gap: 32px; align-items: start; }
+  @media (max-width: 880px) { main { grid-template-columns: 1fr; } }
+
+  /* ---------- phone ---------- */
+  .phonewrap { position: sticky; top: 24px; }
+  @media (max-width: 880px) { .phonewrap { position: static; } }
+  .phone { width: 380px; max-width: 100%; border-radius: 34px; padding: 10px;
+           background: #06070a; border: 1px solid #2c3242;
+           box-shadow: 0 24px 60px rgba(0,0,0,0.45); margin: 0 auto; }
+  .screen { position: relative; border-radius: 26px; overflow: hidden; background: #000;
+            height: 720px; touch-action: none; cursor: pointer; }
+  .screen canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+
+  /* chrome pieces share one show/hide transition, mirroring AnimatedVisibility */
+  .chrome { transition: opacity 0.22s ease, transform 0.22s ease; }
+  .hidden .chrome { opacity: 0; pointer-events: none; }
+  .hidden .rail { transform: translate(-8px, -50%); }
+  .hidden .zoneb { transform: translateY(8px); }
+  .hidden .hud { transform: translateY(-8px); }
+
+  .rail { position: absolute; left: 10px; top: 50%; transform: translateY(-50%);
+          display: flex; flex-direction: column; gap: 12px; padding: 10px 0;
+          border-radius: 999px; background: rgba(20, 26, 40, 0.55);
+          border: 1px solid rgba(255,255,255,0.10); width: 44px; align-items: center; }
+  .rail span { width: 30px; height: 30px; border-radius: 50%; display: grid;
+               place-items: center; font-size: 14px; color: #7d8aa0; }
+  .rail span.on { color: #ffd489; background: rgba(255, 212, 137, 0.16); }
+  .rail hr { width: 20px; border: none; border-top: 1px solid rgba(255,255,255,0.14);
+             margin: 0; }
+  .zoneb { position: absolute; right: 10px; bottom: 18px; display: flex;
+           flex-direction: column; gap: 12px; }
+  .zoneb button { width: 42px; height: 42px; border-radius: 50%; border: 1px solid
+                  rgba(255,255,255,0.14); background: rgba(20, 26, 40, 0.6);
+                  color: #e8edf7; font-size: 17px; cursor: pointer; }
+  .zoneb button.primary { background: #ffd489; color: #1a1508; border: none; }
+  .zoneb button.active { background: rgba(255, 212, 137, 0.22);
+                         border-color: rgba(255, 212, 137, 0.6); }
+
+  /* ---------- the HUD ---------- */
+  .hud { position: absolute; top: 14px; right: 12px; min-width: 128px;
+         border-radius: 12px; background: rgba(20, 26, 40, 0.60);
+         border: 1px solid rgba(255,255,255,0.10); padding: 8px 10px;
+         font-size: 12.5px; color: #cfd8ea; display: grid; gap: 3px; }
+  .hudrow { display: flex; align-items: baseline; justify-content: space-between;
+            gap: 10px; }
+  .hlab { font-size: 10px; letter-spacing: 0.1em; color: #8494ac;
+          text-transform: uppercase; }
+  .hudrow .val { white-space: nowrap; }
+  .hudrow.corr { border-top: 1px solid rgba(255,255,255,0.12); padding-top: 5px;
+                 margin-top: 3px; color: #ffd489; display: none; align-items: center; }
+  .hudrow.corr.show { display: flex; }
+  .hudrow.corr .hlab { color: #ffd489; }
+  .hudrow.corr button { border: none; background: rgba(255, 212, 137, 0.16);
+                        color: #ffd489; width: 20px; height: 20px; border-radius: 50%;
+                        cursor: pointer; font-size: 11px; line-height: 1; flex-shrink: 0; }
+  .night .hud { border-color: rgba(255, 70, 50, 0.35); }
+  .night .hud, .night .hud .val { color: #ff5a45; }
+  .night .hlab { color: #b03a2c; }
+  .night .hudrow.corr, .night .hudrow.corr .hlab { color: #ff7a60; }
+  .night .hudrow.corr button { background: rgba(255, 90, 69, 0.18); color: #ff7a60; }
+  .night .rail span.on { color: #ff5a45; background: rgba(255, 90, 69, 0.16); }
+  .night .zoneb button { color: #ff8a72; }
+  .night .zoneb button.primary { background: #ff5a45; color: #1a0503; }
+
+  .player { position: absolute; top: 14px; left: 50%; transform: translateX(-50%);
+            border-radius: 10px; background: rgba(64, 46, 92, 0.85); color: #e8ddf7;
+            font-size: 12px; padding: 6px 12px; display: none; text-align: center;
+            border: 1px solid rgba(216, 180, 254, 0.35); }
+  .player.show { display: block; }
+  .player .rate { font-weight: 700; letter-spacing: 0.04em; }
+  .night .player { background: rgba(70, 18, 12, 0.85); color: #ff8a72;
+                   border-color: rgba(255, 90, 69, 0.4); }
+
+  .snack { position: absolute; left: 12px; right: 12px; bottom: 88px; border-radius: 10px;
+           background: rgba(28, 33, 46, 0.95); color: #e8edf7; font-size: 13px;
+           padding: 10px 12px; display: none; align-items: center; gap: 10px;
+           justify-content: space-between; z-index: 3; }
+  .snack.show { display: flex; }
+  .snack button { background: none; border: none; color: #ffd489; font-weight: 700;
+                  letter-spacing: 0.06em; cursor: pointer; font-size: 12.5px; }
+  .hint { position: absolute; bottom: 26px; left: 50%; transform: translateX(-50%);
+          font-size: 11.5px; color: rgba(207, 216, 234, 0.55); pointer-events: none;
+          transition: opacity 0.3s; }
+  .hidden .hint { opacity: 1; } .screen:not(.hidden) .hint { opacity: 0; }
+
+  /* ---------- right column ---------- */
+  .panel { background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
+           padding: 18px 20px; margin-bottom: 18px; }
+  .panel h2 { font-family: "Avenir Next Condensed", "Arial Narrow", sans-serif;
+              font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase;
+              color: var(--muted); margin: 0 0 12px; font-weight: 600; }
+  .ctlrow { display: flex; align-items: center; justify-content: space-between; gap: 16px;
+            padding: 9px 0; border-top: 1px solid var(--line); }
+  .ctlrow:first-of-type { border-top: none; }
+  .ctlrow label.name { font-weight: 600; font-size: 14.5px; }
+  .ctlrow .sub { color: var(--muted); font-size: 13px; display: block; font-weight: 400; }
+  .ctlrow input[type="range"] { width: 150px; accent-color: var(--accent); }
+  .switch { appearance: none; width: 44px; height: 26px; border-radius: 999px;
+            background: var(--surface2); border: 1px solid var(--line); position: relative;
+            cursor: pointer; flex-shrink: 0; transition: background 0.15s; }
+  .switch::after { content: ""; position: absolute; top: 3px; left: 3px; width: 18px;
+                   height: 18px; border-radius: 50%; background: var(--muted);
+                   transition: transform 0.15s, background 0.15s; }
+  .switch:checked { background: var(--chipbg); border-color: var(--accent); }
+  .switch:checked::after { transform: translateX(18px); background: var(--accent); }
+  .switch:focus-visible, .zoneb button:focus-visible, .hudrow.corr button:focus-visible,
+  .snack button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  .q { border-left: 3px solid var(--accent); background: var(--surface);
+       border-radius: 0 12px 12px 0; padding: 13px 16px 13px 15px; margin-bottom: 12px;
+       border-top: 1px solid var(--line); border-right: 1px solid var(--line);
+       border-bottom: 1px solid var(--line); }
+  .q h3 { margin: 0; font-size: 14.5px; display: flex; gap: 8px; align-items: baseline; }
+  .q h3 .qno { color: var(--accent); font-size: 12.5px; letter-spacing: 0.08em; }
+  .q p { margin: 5px 0 0; color: var(--muted); font-size: 13.5px; }
+  .q .lean { display: inline-block; margin-top: 7px; font-size: 11.5px; font-weight: 700;
+             letter-spacing: 0.1em; text-transform: uppercase; color: var(--good); }
+  .q .try { display: inline-block; margin-top: 7px; margin-left: 10px; font-size: 11.5px;
+            letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); }
+  footer { max-width: 1100px; margin: 0 auto; padding: 8px 24px 48px;
+           color: var(--muted); font-size: 13px; }
+</style>
+
+<header>
+  <div class="eyebrow cond">Sky Map v2 · direction agreed 2026-07-27 (D65) · follows D64</div>
+  <h1>Map HUD — pointing readout</h1>
+  <p>The corner readout decided in the AR-mode round: RA/Dec, Alt/Az, field of view, and
+     the alignment correction with its reset — visible <strong>only while the map chrome
+     is visible</strong>. Tap the sky to toggle the chrome; the values tick with simulated
+     handheld wobble.</p>
+</header>
+
+<main>
+  <div class="phonewrap">
+    <div class="phone">
+      <div class="screen" id="screen" aria-label="Phone screen simulation">
+        <canvas id="map"></canvas>
+        <div class="rail chrome" aria-hidden="true">
+          <span class="on">✦</span><span class="on">◇</span><span>♆</span><span class="on">☄</span>
+          <hr><span class="on">▦</span><span>―</span><hr><span>≡</span>
+        </div>
+        <div class="hud chrome mono" id="hud" role="status" aria-label="Pointing readout">
+          <div class="hudrow"><span class="hlab">RA</span><span class="val" id="hra"></span></div>
+          <div class="hudrow"><span class="hlab">Dec</span><span class="val" id="hdec"></span></div>
+          <div class="hudrow"><span class="hlab">Alt</span><span class="val" id="halt"></span></div>
+          <div class="hudrow"><span class="hlab">Az</span><span class="val" id="haz"></span></div>
+          <div class="hudrow"><span class="hlab">FOV</span><span class="val" id="hfov"></span></div>
+          <div class="hudrow corr" id="hcorr">
+            <span class="hlab" aria-hidden="true">⇄</span>
+            <span class="val" id="hcorrval"></span>
+            <button id="hreset" title="Reset alignment" aria-label="Reset alignment">✕</button>
+          </div>
+        </div>
+        <div class="player" id="player">
+          <span class="rate">▶▶ Traveling @ 1 week/sec</span><br>21 Dec 2026 · 03:15
+        </div>
+        <div class="zoneb chrome">
+          <button class="primary" title="Search">⌕</button>
+          <button id="nightbtn" title="Night mode">☾</button>
+          <button class="active" title="Auto (sensor) mode">◎</button>
+          <button title="More">⋮</button>
+        </div>
+        <div class="snack" id="snack">
+          <span id="snacktext">Alignment reset</span><button id="undo">UNDO</button>
+        </div>
+        <div class="hint">tap to show controls</div>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <section class="panel">
+      <h2>Bench controls</h2>
+      <div class="ctlrow">
+        <label class="name" for="nighttoggle">Night mode
+          <span class="sub">HUD red-shifts with the rest of the chrome</span></label>
+        <input type="checkbox" class="switch" id="nighttoggle">
+      </div>
+      <div class="ctlrow">
+        <label class="name" for="artoggle">AR camera layer
+          <span class="sub">Camera under the map; FOV shows its lock glyph</span></label>
+        <input type="checkbox" class="switch" id="artoggle">
+      </div>
+      <div class="ctlrow">
+        <label class="name" for="ttoggle">Time travel
+          <span class="sub">Player owns top-centre; HUD keeps its corner</span></label>
+        <input type="checkbox" class="switch" id="ttoggle">
+      </div>
+      <div class="ctlrow">
+        <label class="name" for="corrtoggle">Alignment correction
+          <span class="sub">Simulates a drag-to-align of +4.5° az / −1.2° alt</span></label>
+        <input type="checkbox" class="switch" id="corrtoggle">
+      </div>
+      <div class="ctlrow">
+        <label class="name" for="fovctl">Zoom (FOV)
+          <span class="sub">SkyCamera.fovDeg — short-side field of view</span></label>
+        <input type="range" id="fovctl" min="15" max="90" value="45"
+               aria-label="Field of view in degrees">
+      </div>
+    </section>
+
+    <section>
+      <div class="q"><h3><span class="qno cond">Q1</span>Which corner?</h3>
+        <p>Top-right — free in both orientations: top-centre belongs to the time-travel
+           player, the left edge to the layer rail (nearly full-height in landscape), and
+           Zone B moves to the bottom-right edge column in landscape.</p>
+        <span class="lean">Decided: top-right</span>
+        <span class="try">Try: time travel toggle</span></div>
+      <div class="q"><h3><span class="qno cond">Q2</span>RA format</h3>
+        <p>Astronomy-conventional hours/minutes (<span class="mono">18h 38m</span>, shown).
+           Dec, Alt, and the correction stay signed decimal degrees.</p>
+        <span class="lean">Decided: hours/minutes</span></div>
+      <div class="q"><h3><span class="qno cond">Q3</span>Is Alt/Az in?</h3>
+        <p>Yes. RA/Dec answers "what am I looking at" for charts; Alt/Az answers it for
+           the actual sky ("how high, which way").</p>
+        <span class="lean">Decided: included</span></div>
+      <div class="q"><h3><span class="qno cond">Q4</span>Its own off-switch?</h3>
+        <p>None — the HUD rides the chrome show/hide, so it never costs sky pixels when
+           you're just looking. A Layers-sheet Display toggle only comes if feedback
+           demands one.</p>
+        <span class="lean">Decided: chrome-only, no toggle</span></div>
+      <div class="q"><h3><span class="qno cond">Q5</span>Correction row at zero</h3>
+        <p>Strictly hidden when no correction is active — no "aligned" state. The row
+           appearing is itself the signal that something is adjusting the sensors.</p>
+        <span class="lean">Decided: hidden at zero</span>
+        <span class="try">Try: correction toggle + its ✕</span></div>
+    </section>
+  </div>
+</main>
+<footer>
+  Design doc: <span class="mono">docs/design/map-hud.md</span> · values are simulated —
+  centre near Vega, ±0.25° handheld wobble, observer at mid-northern latitude.
+</footer>
+
+<script>
+(function () {
+  const W = 380, H = 720, DPR = Math.min(window.devicePixelRatio || 1, 2);
+  const map = document.getElementById('map');
+  map.width = W * DPR; map.height = H * DPR;
+  const g = map.getContext('2d'); g.scale(DPR, DPR);
+
+  // state
+  let night = false, ar = false, fovDeg = 45, corrOn = false, prevCorr = null;
+  const CORR = { az: 4.5, alt: -1.2 };
+  let corr = { az: 0, alt: 0 };
+  // view centre: Vega-ish. RA in degrees, plus local-frame alt/az for the readout.
+  const base = { raDeg: 279.4, decDeg: 38.8, alt: 63.6, az: 312.4 };
+
+  const stars = [
+    { x: -9, y: -14, m: 1.0, n: 'Vega' }, { x: -5.4, y: -10.8, m: 2.6 },
+    { x: -7.2, y: -7.6, m: 2.9 }, { x: -3.4, y: -6.0, m: 3.2 },
+    { x: -1.2, y: -3.0, m: 2.4 }, { x: 3.2, y: 1.4, m: 1.6, n: 'Altair' },
+    { x: 5.4, y: -0.4, m: 2.7 }, { x: 1.4, y: 3.2, m: 2.9 },
+    { x: 9.0, y: -9.0, m: 2.2, n: 'Albireo' }, { x: 11.5, y: -13.5, m: 2.8 },
+    { x: 7.4, y: -16.4, m: 2.1 }, { x: 12.6, y: -5.2, m: 3.0 },
+    { x: -12.5, y: 3.5, m: 3.3 }, { x: -6.5, y: 7.5, m: 3.1 }, { x: 10.5, y: 6.5, m: 3.4 },
+  ];
+  const lines = [[0,1],[1,2],[2,0],[1,3],[3,4],[4,5],[5,6],[4,7],[8,9],[8,10],[8,11],[4,8]];
+
+  let t0 = performance.now();
+  const wobble = (now) => {
+    const t = (now - t0) / 1000;
+    return { az: 0.25 * Math.sin(t * 0.7), alt: 0.18 * Math.sin(t * 1.1 + 1.3) };
+  };
+
+  function draw(now) {
+    const w = wobble(now), ppd = W / fovDeg;
+    g.clearRect(0, 0, W, H);
+    if (ar) { // faint camera scene under the map
+      const grad = g.createLinearGradient(0, 0, 0, H);
+      grad.addColorStop(0, '#0a0e19'); grad.addColorStop(0.75, '#101524');
+      grad.addColorStop(1, '#241a10');
+      g.fillStyle = grad; g.fillRect(0, 0, W, H);
+      g.fillStyle = '#020304'; g.beginPath(); g.moveTo(0, H); g.lineTo(0, H - 60);
+      for (let x = 0; x <= W; x += 10) {
+        const tl = Math.sin(x * 0.045) * 9 + Math.sin(x * 0.13 + 2) * 13;
+        g.lineTo(x, H - 66 - Math.max(0, tl));
+      }
+      g.lineTo(W, H); g.closePath(); g.fill();
+      g.fillStyle = 'rgba(0,0,0,0.35)'; g.fillRect(0, 0, W, H); // default scrim
+    } else {
+      const grad = g.createLinearGradient(0, 0, 0, H);
+      grad.addColorStop(0, '#03060f'); grad.addColorStop(1, '#0a1226');
+      g.fillStyle = grad; g.fillRect(0, 0, W, H);
+    }
+    const ox = w.az * ppd, oy = w.alt * ppd;
+    const P = (fx, fy) => [W / 2 + fx * ppd + ox, H / 2 + fy * ppd + oy];
+    const ink = night ? '255,64,48' : '176,205,255';
+    const starink = night ? '255,80,60' : '235,242,255';
+    g.strokeStyle = 'rgba(' + ink + ',0.55)'; g.lineWidth = 1.2;
+    for (const [a, b] of lines) {
+      const [x1, y1] = P(stars[a].x, stars[a].y), [x2, y2] = P(stars[b].x, stars[b].y);
+      g.beginPath(); g.moveTo(x1, y1); g.lineTo(x2, y2); g.stroke();
+    }
+    for (const s of stars) {
+      const [x, y] = P(s.x, s.y), r = Math.max(1.4, 4.4 - s.m * 1.1);
+      g.fillStyle = 'rgba(' + starink + ',0.95)';
+      g.beginPath(); g.arc(x, y, r, 0, 7); g.fill();
+      if (s.n) {
+        g.fillStyle = 'rgba(' + ink + ',0.9)';
+        g.font = '11px system-ui, sans-serif'; g.fillText(s.n, x + 8, y - 6);
+      }
+    }
+  }
+
+  // ---------- HUD ----------
+  const els = {
+    ra: document.getElementById('hra'), dec: document.getElementById('hdec'),
+    alt: document.getElementById('halt'), az: document.getElementById('haz'),
+    fov: document.getElementById('hfov'), corr: document.getElementById('hcorr'),
+    corrval: document.getElementById('hcorrval'),
+  };
+  const CARDINALS = ['N','NNE','NE','ENE','E','ESE','SE','SSE','S',
+                     'SSW','SW','WSW','W','WNW','NW','NNW'];
+  const fmtRa = (deg) => {
+    const hours = ((deg % 360) + 360) % 360 / 15;
+    const h = Math.floor(hours), m = Math.round((hours - h) * 60);
+    return (m === 60) ? (h + 1) % 24 + 'h 00m'
+                      : h + 'h ' + String(m).padStart(2, '0') + 'm';
+  };
+  const fmtDeg = (v, digits) => (v >= 0 ? '+' : '−') + Math.abs(v).toFixed(digits) + '°';
+  let lastHud = 0;
+  function updateHud(now) {
+    if (now - lastHud < 150) return;      // ~the real sample() cadence
+    lastHud = now;
+    const w = wobble(now);
+    els.ra.textContent = fmtRa(base.raDeg + w.az);
+    els.dec.textContent = fmtDeg(base.decDeg + w.alt, 1);
+    els.alt.textContent = fmtDeg(base.alt + w.alt, 1);
+    const az = (base.az + w.az + 360) % 360;
+    els.az.textContent = az.toFixed(0) + '° ' + CARDINALS[Math.round(az / 22.5) % 16];
+    els.fov.textContent = fovDeg.toFixed(0) + '°' + (ar ? ' 🔒' : '');
+    els.corrval.textContent = fmtDeg(corr.az, 1) + ' ' + fmtDeg(corr.alt, 1);
+    els.corr.classList.toggle('show', Math.hypot(corr.az, corr.alt) > 0.05);
+  }
+
+  function frame(now) { draw(now); updateHud(now); requestAnimationFrame(frame); }
+  requestAnimationFrame(frame);
+
+  // ---------- chrome show/hide (v1 FullscreenControlsManager behavior) ----------
+  const screen = document.getElementById('screen');
+  let flashTimer = setTimeout(() => screen.classList.add('hidden'), 4000);
+  screen.addEventListener('click', (e) => {
+    if (e.target.closest('button, .hud, .snack')) return;
+    clearTimeout(flashTimer);
+    screen.classList.toggle('hidden');
+  });
+
+  // ---------- bench wiring ----------
+  const snack = document.getElementById('snack');
+  let snackTimer = null;
+  function showSnack(text) {
+    document.getElementById('snacktext').textContent = text;
+    snack.classList.add('show');
+    clearTimeout(snackTimer);
+    snackTimer = setTimeout(() => snack.classList.remove('show'), 3500);
+  }
+  const corrtoggle = document.getElementById('corrtoggle');
+  function setCorr(on, announce) {
+    corrOn = on; corrtoggle.checked = on;
+    corr = on ? { ...CORR } : { az: 0, alt: 0 };
+    if (announce) showSnack(on ? 'Map alignment adjusted' : 'Alignment reset');
+    lastHud = 0;
+  }
+  corrtoggle.addEventListener('change', (e) => setCorr(e.target.checked, true));
+  document.getElementById('hreset').addEventListener('click', () => {
+    prevCorr = { ...corr }; setCorr(false, true);
+  });
+  document.getElementById('undo').addEventListener('click', () => {
+    if (prevCorr && Math.hypot(prevCorr.az, prevCorr.alt) > 0.05) setCorr(true, false);
+    else setCorr(!corrOn, false);
+    prevCorr = null; snack.classList.remove('show');
+  });
+
+  const nighttoggle = document.getElementById('nighttoggle');
+  function setNight(v) {
+    night = v; nighttoggle.checked = v;
+    screen.classList.toggle('night', v);
+    document.getElementById('nightbtn').classList.toggle('active', v);
+  }
+  nighttoggle.addEventListener('change', (e) => setNight(e.target.checked));
+  document.getElementById('nightbtn').addEventListener('click', () => setNight(!night));
+
+  document.getElementById('artoggle').addEventListener('change', (e) => {
+    ar = e.target.checked; lastHud = 0;
+  });
+  document.getElementById('ttoggle').addEventListener('change', (e) => {
+    document.getElementById('player').classList.toggle('show', e.target.checked);
+  });
+  document.getElementById('fovctl').addEventListener('input', (e) => {
+    fovDeg = +e.target.value; lastHud = 0;
+  });
+})();
+</script>

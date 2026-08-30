@@ -1,0 +1,31 @@
+{
+ "types": [
+  {"code": "star", "parent": null, "names": {"en": "Star", "fr": "Étoile"}},
+  {"code": "star.double", "parent": "star", "names": {"en": "Double star", "fr": "Étoile double"}},
+  {"code": "star.nova", "parent": "star", "names": {"en": "Recurrent nova", "fr": "Nova récurrente"}},
+  {"code": "planet", "parent": null, "names": {"en": "Planet", "fr": "Planète"}},
+  {"code": "dwarf_planet", "parent": null, "names": {"en": "Dwarf planet", "fr": "Planète naine"}},
+  {"code": "moon", "parent": null, "names": {"en": "Moon", "fr": "Lune"}},
+  {"code": "constellation", "parent": null, "names": {"en": "Constellation"}},
+  {"code": "galaxy", "parent": null, "names": {"en": "Galaxy", "fr": "Galaxie"}},
+  {"code": "galaxy.spiral", "parent": "galaxy", "names": {"en": "Spiral galaxy", "fr": "Galaxie spirale"}},
+  {"code": "galaxy.elliptical", "parent": "galaxy", "names": {"en": "Elliptical galaxy", "fr": "Galaxie elliptique"}},
+  {"code": "galaxy.irregular", "parent": "galaxy", "names": {"en": "Irregular galaxy", "fr": "Galaxie irrégulière"}},
+  {"code": "galaxy.lenticular", "parent": "galaxy", "names": {"en": "Lenticular galaxy", "fr": "Galaxie lenticulaire"}},
+  {"code": "galaxy.dwarf", "parent": "galaxy", "names": {"en": "Dwarf galaxy", "fr": "Galaxie naine"}},
+  {"code": "galaxy.radio", "parent": "galaxy", "names": {"en": "Radio galaxy", "fr": "Galaxie radio"}},
+  {"code": "cluster", "parent": null, "names": {"en": "Star cluster", "fr": "Amas d'étoiles"}},
+  {"code": "cluster.open", "parent": "cluster", "names": {"en": "Open cluster", "fr": "Amas ouvert"}},
+  {"code": "cluster.globular", "parent": "cluster", "names": {"en": "Globular cluster", "fr": "Amas globulaire"}},
+  {"code": "nebula", "parent": null, "names": {"en": "Nebula", "fr": "Nébuleuse"}},
+  {"code": "nebula.diffuse", "parent": "nebula", "names": {"en": "Diffuse nebula", "fr": "Nébuleuse diffuse"}},
+  {"code": "nebula.emission", "parent": "nebula", "names": {"en": "Emission nebula", "fr": "Nébuleuse en émission"}},
+  {"code": "nebula.planetary", "parent": "nebula", "names": {"en": "Planetary nebula", "fr": "Nébuleuse planétaire"}},
+  {"code": "nebula.supernova_remnant", "parent": "nebula", "names": {"en": "Supernova remnant", "fr": "Rémanent de supernova"}},
+  {"code": "star_cloud", "parent": null, "names": {"en": "Star cloud", "fr": "Nuage stellaire"}},
+  {"code": "asterism", "parent": null, "names": {"en": "Asterism", "fr": "Astérisme"}},
+  {"code": "black_hole", "parent": null, "names": {"en": "Black hole", "fr": "Trou noir"}},
+  {"code": "meteor_shower", "parent": null, "names": {"en": "Meteor shower", "fr": "Pluie de météores"}},
+  {"code": "other", "parent": null, "names": {"en": "Deep-sky object", "fr": "Objet du ciel profond"}}
+ ]
+}
