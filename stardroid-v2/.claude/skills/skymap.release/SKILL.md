@@ -41,10 +41,10 @@ v1's release process also syncs sponsors and contributors here (`skymap.sponsors
 `skymap.contributors` skills). v2 now mirrors this too: the Buy Me a Coffee supporter list and
 GitHub contributor list live in `app/src/main/res/values/contributors.xml` (`sponsors_text`,
 `contributors_text`, both `translatable="false"`), spliced into `credits_text`
-(`app/src/main/res/values/credits.xml`) via `stringResource` format args in `HelpScreen.kt`. If
-v1's corresponding skills have been run for this release (or the user has updated names to add),
-sync `contributors.xml` the same way. Ask the user if they have an updated supporter/contributor
-list before assuming it's unchanged.
+(`app/src/main/res/values/credits.xml`) via `stringResource` format args in `HelpScreen.kt`. Ask
+the user whether they want sponsors and/or contributors refreshed for this release, then use the
+`skymap.sync-credits` skill to do it — v2 has its own sync process (`tools/sync-credits.py` plus
+the `buymeacoffee` MCP server for sponsor data), separate from v1's token-based scripts.
 
 ### Step 3. Remove unneeded text
 
