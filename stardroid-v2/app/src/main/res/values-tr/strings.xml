@@ -503,7 +503,7 @@ Metalden uzak, açık bir alana geçin ve tekrar deneyin.]]></string>
     <string name="moon_widget_description" translation_description="Description of the moon-phase widget, shown under its preview in the launcher\'s widget picker">
     Günlük olarak güncellenen Ay evresi, aydınlanma oranı ile doğuş ve batış saatleri.
     </string>
-    <string name="moon_widget_illumination" translation_description="Widget line showing how much of the Moon\'s disc is lit; %1$d is a percentage number">%%1$d aydınlık</string>
+    <string name="moon_widget_illumination" translation_description="Widget line showing how much of the Moon\'s disc is lit; %1$d is a percentage number">%%%1$d aydınlık</string>
     <string name="moon_widget_rise_time" translation_description="Widget fragment showing today\'s moonrise time; %1$s is a clock time like 17:42">doğuş %1$s</string>
     <string name="moon_widget_set_time" translation_description="Widget fragment showing today\'s moonset time; %1$s is a clock time like 03:12">batış %1$s</string>
     <string name="moon_phase_new" translation_description="Name of the lunar phase when the Moon is fully dark">Yeni Ay</string>
@@ -538,7 +538,7 @@ Metalden uzak, açık bir alana geçin ve tekrar deneyin.]]></string>
     <string name="tonight_shower_peak" translation_description="Tonight-widget row: a meteor shower reaches its annual peak tonight; %1$s is the shower name">%1$s bu gece zirvede</string>
     <string name="tonight_shower_days" translation_description="Tonight-widget row: a meteor shower peaks within a few days; %1$s is the shower name, %2$d the number of days">%1$s %2$d gün içinde zirvede</string>
     <string name="tonight_dark_skies" translation_description="Small trailing note: the moon is dark, so viewing conditions are ideal">karanlık gökyüzü</string>
-    <string name="tonight_trailing_moon" translation_description="Small trailing note: how much of the moon is lit; %1$d is a percentage">ay %%1$d</string>
+    <string name="tonight_trailing_moon" translation_description="Small trailing note: how much of the moon is lit; %1$d is a percentage">ay %%%1$d</string>
     <string name="tonight_new_moon" translation_description="Tonight-widget row shown at new moon">Yeni Ay — ayın en karanlık geceleri</string>
     <string name="tonight_full_moon" translation_description="Tonight-widget row shown at full moon">Bu gece Dolunay</string>
     <string name="tonight_bright_moon" translation_description="Tonight-widget row warning that a bright moon washes out faint objects">Parlak ay sönük nesneleri görünmez kılıyor</string>

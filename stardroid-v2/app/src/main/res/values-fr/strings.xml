@@ -151,6 +151,25 @@
     <string name="share_shutter_button" translation_description="Accessibility label for the round shutter button that captures and shares the current through-camera view.">Partager cette vue</string>
     <string name="share_failed_message" translation_description="Snackbar shown when capturing the sky image for sharing failed.">Impossible de capturer le ciel — réessayez</string>
     <!-- tm:omitted name="ar_exposure_auto" reason="identical_to_source" -->
+    <string-array name="hud_cardinal_directions" translation_description="The sixteen compass-point abbreviations, clockwise from north, used as the azimuth suffix in the map HUD (e.g. N, NNE, NE...). Translate to the locale\'s conventional compass abbreviations.">
+        <item>N</item>
+        <item>NNE</item>
+        <item>NE</item>
+        <item>ENE</item>
+        <item>E</item>
+        <item>ESE</item>
+        <item>SE</item>
+        <item>SSE</item>
+        <item>S</item>
+        <item>SSO</item>
+        <item>SO</item>
+        <item>OSO</item>
+        <item>O</item>
+        <item>ONO</item>
+        <item>NO</item>
+        <item>NNO</item>
+    </string-array>
+
     <!-- Time travel: entry button, dialog, and the player bar shown while travelling. -->
     <string name="time_travel_button">Voyage dans le temps</string>
     <string name="time_travel_title">Voyage dans le temps</string>

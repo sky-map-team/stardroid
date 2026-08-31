@@ -49,7 +49,7 @@
     <string name="layer_satellites" translation_description="Toggle label for the layer showing artificial satellites such as the International Space Station.">ดาวเทียม</string>
     <string name="channel_passes_name" translation_description="Name of the notification channel for alerts shortly before a satellite passes overhead.">ดาวเทียมผ่าน</string>
     <string name="channel_passes_description" translation_description="Description of the satellite-pass notification channel.">การแจ้งเตือนเดียวก่อนรอบที่มองเห็นได้ดีที่สุดของคืน</string>
-    <string name="notif_pass_title" translation_description="Title of the notification sent shortly before a satellite passes overhead. %1$s is the satellite name.">%1$s กำลังจะผ่าน overhead เร็ว ๆ นี้</string>
+    <string name="notif_pass_title" translation_description="Title of the notification sent shortly before a satellite passes overhead. %1$s is the satellite name.">%1$s กำลังจะผ่านเหนือศีรษะเร็ว ๆ นี้</string>
     <string name="notif_pass_text" translation_description="Body of the satellite pass notification, telling the user when to go outside. %1$s is a time.">มองเห็นได้ตั้งแต่เวลาประมาณ %1$s — ออกไปข้างนอกและให้สายตาปรับรับแสง</string>
     <string name="channel_eclipses_name" translation_description="Name of the notification channel for alerts before a lunar eclipse starts.">จันทรุปราคา</string>
     <string name="channel_eclipses_description" translation_description="Description of the lunar-eclipse notification channel.">การแจ้งเตือนเดียวก่อนจันทรุปราคาจะเริ่มต้น</string>
@@ -463,7 +463,7 @@
     <string name="symbol_key_globular_cluster" translation_description="Symbol-key label: the marker used for globular star clusters">กระจุกดาวทรงกลม</string>
     <string name="symbol_key_diffuse_nebula" translation_description="Symbol-key label: the marker used for diffuse nebulae">เนบิวลากระจาย</string>
     <string name="symbol_key_planetary_nebula" translation_description="Symbol-key label: the marker used for planetary nebulae">เนบิวลาดาวเคราะห์</string>
-    <string name="symbol_key_supernova_remnant" translation_description="Symbol-key label: the marker used for supernova remnants">ซากมหานوفา</string>
+    <string name="symbol_key_supernova_remnant" translation_description="Symbol-key label: the marker used for supernova remnants">ซากซูเปอร์โนวา</string>
     <string name="symbol_key_asterism" translation_description="Symbol-key label: the marker used for asterisms and star clouds">กลุ่มดาวฤกษ์หรือเมฆดาว</string>
     <string name="symbol_key_other" translation_description="Symbol-key label: the marker used for deep-sky objects of any other type">วัตถุท้องฟ้าลึกอื่น ๆ</string>
     <string name="symbol_key_meteor_radiant" translation_description="Symbol-key label: the marker for the point in the sky meteors of a shower appear to come from">จุดศูนย์กลางฝนดาวตก</string>

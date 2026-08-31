@@ -600,7 +600,7 @@
    "description": "Hubble Deep Field er et lille 2,6-bueminut stort område af tilsyneladende tom himmel i Ursa Major, fotograferet af Hubble-rumteleskopet over 10 på hinanden følgende dage i december 1995. Det, der så ud til at være tomt rum, afslørede cirka 3.000 galakser – der spænder over milliarder af år af kosmisk historie – og ændrede fundamentalt vores billede af universet.",
    "fun_fact": "Himmelsstykket blev valgt specifikt, fordi det var tomt for lyse stjerner og nærliggende galakser. Alligevel var det resulterende billede fyldt med cirka 3.000 galakser, hvilket førte til estimatet, at hele himlen indeholder omkring 200 milliarder galakser – næsten alle usynlige for ethvert teleskop før Hubble.",
    "distance": "~13 milliarder lysår (fjernest)",
-   "size": "2,6 bueминutter (synsfelt)",
+   "size": "2,6 bueminutter (synsfelt)",
    "image_credit": "NASA/ESA/Hubble"
   },
   "dso/helix_nebula": {
@@ -1353,7 +1353,7 @@
    "image_credit": "NASA/ESA/Hubble"
   },
   "dso/north_america_nebula": {
-   "description": "Nordamerika-Nebula (NGC 7000) er en stor emissionsnebula i Cygnus, hvis form bemærkelsesværdigt ligner kontinentet Nordamerika, komplet med en Mexicogolf-region. Den spænder omkring 120 bueминutter på tværs — cirka fire gange diameteren af fuldmånen — og ligger omkring 2.600 lysår væk og er over 100 lysår bred.",
+   "description": "Nordamerika-Nebula (NGC 7000) er en stor emissionsnebula i Cygnus, hvis form bemærkelsesværdigt ligner kontinentet Nordamerika, komplet med en Mexicogolf-region. Den spænder omkring 120 bueminutter på tværs — cirka fire gange diameteren af fuldmånen — og ligger omkring 2.600 lysår væk og er over 100 lysår bred.",
    "fun_fact": "På trods af sin visuelle magnitude på 4 er nebulosaen for stor og diffus til at kunne ses med det blotte øje under de fleste himmelforhold — men den fotograferes smukt, hvilket afslører Cygnus Wall, en tæt bue af intens stjernedannelse langs dens sydlige kant.",
    "distance": "~2.590 lysår",
    "size": "~140 lysår på tværs",
@@ -1640,7 +1640,7 @@
   },
   "shower/geminids": {
    "description": "Geminiderne betragtes bredt som årets fineste meteorregn — produktive (op til 120 pr. time), pålidelige og aktive fra tidlig aften i stedet for kun efter midnat. De stammer fra stjernebilledet Gemini og producerer et bredt spektrum af meteorlysstyrker, herunder levende ildkugler.",
-   "fun_fact": "I modsætning til andre større meteorregn kommer Geminiderne unikt fra en asteroide i stedet for en komet: 3200 Phaethon, en \"stenkomeт\", hvis bane bringer den tættere på Solen end nogen anden navngivet asteroide. Den ekstreme varme kan få revner i dens stenede overflade og drive det støv af, som producerer regnen."
+   "fun_fact": "I modsætning til andre større meteorregn kommer Geminiderne unikt fra en asteroide i stedet for en komet: 3200 Phaethon, en \"stenkomet\", hvis bane bringer den tættere på Solen end nogen anden navngivet asteroide. Den ekstreme varme kan få revner i dens stenede overflade og drive det støv af, som producerer regnen."
   },
   "shower/leonids": {
    "description": "Leoniderne stråler fra Løvens segl og producerer typisk omkring 20 meteorer i timen. De er berømte for spektakulære storme, der opstår cirka hvert 33. år, når Jorden passerer gennem en tæt støvfilament, der er kastet af af Komet 55P/Tempel-Tuttle. Disse storme kan producere tusinder af meteorer i timen.",

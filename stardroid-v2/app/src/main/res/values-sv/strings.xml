@@ -351,7 +351,7 @@
     <string name="diagnostics_gl_limits_format" translation_description="Format for the GL limits row: maximum texture size in pixels, then the supported line width and point size ranges. \'tex\' abbreviates texture. %1$d is texture size, %2$s is the line width range, %3$s is the point size range.">tex %1$d, linje %2$s, punkt %3$s</string>
     <string name="diagnostics_gl_unavailable" translation_description="Value shown in the diagnostics Graphics rows before the sky map has drawn, when the graphics details are not known yet">Inte tillgängligt än</string>
     <string name="diagnostics_section_sensors">Sensorer</string>
-    <string name="diagnostics_accelerometer" translation_description="Row label in the diagnostics screen for the accelerometer sensor">加速度计</string>
+    <string name="diagnostics_accelerometer" translation_description="Row label in the diagnostics screen for the accelerometer sensor">Accelerometer</string>
     <string name="diagnostics_compass">Kompass</string>
     <string name="diagnostics_gyroscope">Gyroskop</string>
     <!-- tm:omitted name="diagnostics_rotation" reason="identical_to_source" -->

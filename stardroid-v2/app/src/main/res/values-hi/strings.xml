@@ -463,7 +463,7 @@
     <string name="warm_welcome_card_size" translation_description="Size of the Crab Nebula on the sample info card on the second Warm Welcome slide">11 प्रकाश-वर्ष चौड़ा</string>
     <string name="warm_welcome_slide3_title">सेंसर और कैलिब्रेशन</string>
     <string name="warm_welcome_slide3_desc">Sky Map आपके फ़ोन के सेंसर का उपयोग करके तारों के साथ संरेखित होता है।</string>
-    <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message on the third Warm Welcome slide when sensors are missing. Please do not change the &lt; and &gt; markup"><![CDATA[आपके डिवाइस में स्वचालित ट्रैकिंग के लिए आवश्यक सेंसर नहीं हैं। चिंता न करें—आप अभी भी <b>Manual Mode</b> में पूरे ब्रह्मांड का अन्वेषण कर सकते हैं!]]></string>
+    <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message on the third Warm Welcome slide when sensors are missing. Please do not change the &lt; and &gt; markup"><![CDATA[आपके डिवाइस में स्वचालित ट्रैकिंग के लिए आवश्यक सेंसर नहीं हैं। चिंता न करें—आप अभी भी <b>मैनुअल मोड</b> में पूरे ब्रह्मांड का अन्वेषण कर सकते हैं!]]></string>
     <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration advice on the third Warm Welcome slide. Please do not change the &lt; and &gt; markup"><![CDATA[सटीकता बनाए रखने के लिए, अपने फ़ोन को कभी-कभी एक त्वरित <b>आठ के आकार</b> में हिलाएँ।]]></string>
     <string name="warm_welcome_skip">छोड़ें</string>
     <string name="warm_welcome_next">अगला</string>
