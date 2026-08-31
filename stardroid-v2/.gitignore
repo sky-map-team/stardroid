@@ -23,6 +23,7 @@ fastlane/report.xml
 *google-services.json*
 *no-checkin*
 no-checkin.properties
+.env
 
 # Fetched sources for the planet-disc generator (see tools/planets/README.md)
 tools/planets/.cache/

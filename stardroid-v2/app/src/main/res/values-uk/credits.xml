@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+    <string name="credits_text" translation_description="This page credits the people and organizations who support and maintain the app Sky Map. It is appended to the Help screen. Please do not change the &lt; and &gt; markup"><![CDATA[<h2>Прихильники Sky Map</h2>
+<h3>Дякуємо всім, хто нещодавно <a href="https://buymeacoffee.com/skymapdevs?utm_source=skymap&amp;utm_medium=app&amp;utm_campaign=credits_donated">зробив пожертву!</a></h3>
+<p>%1$s</p>
+<h1>Подяки</h1>
+<h2>Розробка</h2>
+<p>John Taylor</p>
+<h2>Учасники проєкту з відкритим кодом</h2>
+<p>%2$s</p>
+<p>Дякуємо! Перегляньте останніх учасників на <a href="https://github.com/sky-map-team/stardroid/graphs/contributors">GitHub</a>.</p>
+<h2>Початкова розробка, дизайн і керування продуктом у Google</h2>
+<p>Brent Bryan, Dominic Widdows, Hector Ouilhet, James Powell, John Taylor, Kevin Serafini, Lior Ron.</p>
+<h1>Визнання</h1>
+<p>Sky Map початково розроблявся компанією Google Inc. як "Google Sky Map" і був випущений з відкритим кодом у 2012 році.</p> 
+<p>Особлива подяка Pat Stephenson за те, що він запалив цю ідею своїм конкурсом для телефонів G1, а також Chris DiBona та Michael Weiss-Malik за їхню допомогу з переходом від Google до формату з відкритим кодом.</p>
+<h2>Дані</h2>
+<p>Sky Map використовує карти, створені на основі даних:</p>
+<p>• Центру астрономічних даних у Страсбурзі (<a href="https://cdsweb.u-strasbg.fr/">cdsweb.u-strasbg.fr</a>)<br/>
+• Каталогу яскравих зір, 5-те перероблене вид. (Hoffleit D., Warren Jr W.H.)<br/>
+• Назви зір: Каталог назв зір МАС, Робоча група МАС з назв зір (<a href="https://www.iau.org/public/themes/naming_stars/">iau.org</a>), CC BY 4.0<br/>
+• Бази даних HYG, HYG v1.0. (<a href="https://www.astronexus.com/">astronexus.com</a>)<br/>
+• Історії та точних положень об\'єктів NGC/IC (Harold G. Corwin Jr)<br/>
+• Переробленого нового загального каталогу позагалактичних астрономічних об\'єктів (Sulentic J.W., Tifft W.G.)<br/>
+• Зіркових карт SFA (<a href="https://observe.phy.sfasu.edu/SFAStarCharts/SFAStarChartFAQ.html">observe.phy.sfasu.edu</a>)<br/>
+• Положення об\'єктів Сонячної системи розраховано на основі даних, наданих USNO (<a href="https://www.usno.navy.mil/USNO/astronomical-applications">usno.navy.mil</a>)<br/>
+• Даних сферичного покриття, отриманих з <a href="https://www2.research.att.com/~njas/coverings">research.att.com</a></p>
+<h2>Подяки за зображення</h2>
+<p>Зображення небесних тіл у цій програмі надано такими джерелами:</p>
+<p>• Зображення з космічного телескопа «Габбл»: NASA, ESA та Науковий інститут космічних телескопів (<a href="https://hubblesite.org/">hubblesite.org</a>)<br/>
+• Зображення планет: NASA/JPL-Caltech, NASA/Johns Hopkins APL/Carnegie (MESSENGER), NASA/Johns Hopkins APL/SwRI (New Horizons)<br/>
+• Зображення Місяця: NASA/GSFC/Arizona State University (Lunar Reconnaissance Orbiter)<br/>
+• Зображення зоряного поля: ESO Digitized Sky Survey 2 (<a href="https://archive.eso.org/dss/dss">archive.eso.org/dss</a>), CC BY 4.0<br/>
+• Сузір\'я: МАС та Sky &amp; Telescope (Roger Sinnott &amp; Rick Fienberg), CC BY 4.0<br/>
+• Додаткові зображення об\'єктів глибокого космосу: Gemini Observatory/NOIRLab/NSF/AURA (<a href="https://noirlab.edu/">noirlab.edu</a>)<br/>
+• Зображення M31: Peter Kennett (<a href="https://commons.wikimedia.org/wiki/File:M31(Kennett).jpg">Вікісховище</a>)<br/>
+• Зображення Стрільця A*: співпраця EHT (<a href="https://www.eso.org/public/images/eso2208-eht-mwa/">eso.org</a>), CC BY 4.0<br/>
+• Ілюстрація Лебедя X-1: NASA/CXC/M.Weiss (<a href="https://chandra.harvard.edu/photo/2011/cygx1/">chandra.harvard.edu</a>)</p>]]></string>
+</resources>

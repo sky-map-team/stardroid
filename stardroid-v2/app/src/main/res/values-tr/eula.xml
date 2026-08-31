@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+    <string name="eula_text" translation_description="A condensed, user-friendly version of the EULA and Privacy Policy with a link to the full terms. Please do not change the &lt; and &gt; markup"><![CDATA[<h1>Sky Map\'a Hoş Geldiniz</h1>
+<p>Yıldızları gözlemlemeye başlamadan önce lütfen şartlarımızın bu kısa özetini inceleyin.</p>
+<h2>Gizlilik</h2>
+<p><b>Kim olduğunuzu bilmiyoruz.</b> Hataları düzeltmemize ve özellikleri geliştirmemize yardımcı olmak amacıyla anonim kullanım verileri topluyoruz. Bunu Ayarlar menüsünden dilediğiniz zaman devre dışı bırakabilirsiniz.</p>
+<h2>Güvenlik ve Sorumluluk</h2>
+<p>Sky Map "olduğu gibi" sağlanır. Güvenli bir şekilde kullanın; uygulamayı kullanımınızdan kaynaklanan herhangi bir hasar veya yaralanmadan (boyun ağrısı gibi!) sorumlu değiliz.</p>
+<h2>Açık Kaynak</h2>
+<p>Sky Map bir sevgi emeğidir. Kaynak kodumuzu özgürce kullanabilirsiniz, ancak lütfen markamıza ve logolarımıza saygı gösterin.</p>
+<p>Yasal belgenin tamamını buradan okuyun: <a href="https://github.com/sky-map-team/stardroid/blob/master/TERMS.md">Tam Şartlar ve Gizlilik Politikası</a></p>]]></string>
+
+    <!-- Rendered last on the terms screen, after the permissions notice, so the sentence the
+         Accept button refers to is the final thing the user reads. -->
+    <string name="eula_agree_line" translation_description="Closing line of the first-launch terms screen, immediately above the Accept button. Please do not change the markup"><![CDATA[<br/>
+<p><i>"Kabul Et" seçeneğine tıklayarak bu şartları kabul etmiş olursunuz.</i></p>]]></string>
+
+    <!--
+      The access-permission notice (KISA / Korean Network Act art. 22-2, and good practice
+      everywhere). Rendered in two places from this one key so it is translated once: appended
+      to the first-launch EULA screen, and included in the help document as a permanent,
+      re-readable copy (HelpScreen.helpSections2). Every runtime permission Sky Map declares
+      must appear here, labelled required or optional, with its grounds and — for optional
+      ones — the user\'s right to refuse.
+    -->
+    <string name="permissions_notice" translation_description="Legally-required disclosure of the device permissions the app requests, why it requests them, and the user\'s right to refuse the optional ones. Shown on the first-launch terms screen and in Help. Please do not change the markup"><![CDATA[<h2>İzinler</h2>
+<p><b>Sky Map uygulamasının zorunlu izni yoktur.</b> Aşağıdaki tüm izinler isteğe bağlıdır; bunlardan herhangi birini reddedebilir ve yine de uygulamayı kullanabilirsiniz. Sky Map asla başlangıçta izin istemez: her izin yalnızca o izne ihtiyaç duyan özelliği ilk kullandığınızda istenir ve cihazınızdaki <b>Ayarlar → Uygulamalar → Sky Map → İzinler</b> bölümünden istediğiniz zaman her birini ayrı ayrı verebilir veya geri çekebilirsiniz.</p>
+<h3>Konum — isteğe bağlı</h3>
+<p><b>Neye erişilir:</b> yaklaşık konumunuza.</p>
+<p><b>Neden:</b> başınızın üzerinde hangi yıldızların olduğu nerede bulunduğunuza bağlıdır, bu nedenle Sky Map doğru gökyüzünü çizebilmek için yaklaşık konumunuzu kullanır.</p>
+<p><b>Reddederseniz:</b> bunun yerine bir yer adı veya koordinatları manuel olarak girebilirsiniz ve uygulamanın tamamı çalışmaya devam eder.</p>
+<blockquote>Konumunuz cihazınızda yalnızca gökyüzünü çizmek için kullanılır. Kesinlikle bize gönderilmez.</blockquote>
+<h3>Kamera — isteğe bağlı</h3>
+<p><b>Neye erişilir:</b> kamera önizlemesine.</p>
+<p><b>Neden:</b> kamera üzerinden mod, gökyüzünü canlı kamera görüntüsünün üzerine çizer, böylece haritayı gerçekten baktığınız şeyle eşleştirebilirsiniz.</p>
+<p><b>Reddederseniz:</b> diğer tüm modlar normal şekilde çalışmaya devam eder.</p>
+<blockquote>Sky Map kamera görüntüsünü asla kaydetmez veya bize göndermez. Görüntü ekrana çizilir ve ardından atılır; bir resmi paylaşmadığınız sürece: paylaşım sayfasından bir AR düzeni seçmek o tek resmi cihazınıza kaydeder ve seçtiğiniz uygulamaya iletir. Siz istemediğiniz sürece hiçbir şey paylaşılmaz.</blockquote>
+<h3>Bildirimler — isteğe bağlı</h3>
+<p><b>Neye erişilir:</b> bildirim gösterme izni.</p>
+<p><b>Neden:</b> eğer isterseniz, meteor yağmuru zirveleri ve bu akşam neyin izlenmeye değer olduğu hakkında sizi bilgilendirmek için.</p>
+<p><b>Reddederseniz:</b> başka hiçbir şey değişmez — siz açana kadar bu bildirimler kapalı kalır.</p>]]></string>
+</resources>

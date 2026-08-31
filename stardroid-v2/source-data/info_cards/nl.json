@@ -296,6 +296,7 @@
   },
   "constellation/lupus": {
    "description": "Lupus (de Wolf) is een oud zuidelijk sterrenbeeld. De Grieken en Romeinen zagen het als een wild dier doorboord op een paal die door Centaurus wordt vastgehouden.",
+   "fun_fact": "In 1006 n.Chr. verscheen de helderste supernova die ooit door mensen is waargenomen in Lupus — SN 1006 was overdag zichtbaar en heeft mogelijk magnitude −7,5 bereikt!",
    "size": "334 vierkante graden",
    "image_credit": "IAU/Sky & Telescope"
   },
@@ -644,12 +645,22 @@
    "size": "83 lichtjaar doorsnede",
    "image_credit": "NASA/ESA/Hubble"
   },
+  "dso/m100": {
+   "description": "Messier 100 is een grand design spiraalstelsel in Hoofdhaar en een van de helderste in de Virgo-cluster.",
+   "fun_fact": "Zeven supernovae zijn gezien in M100, de meest recente in 2020 - weinig sterrenstelsels hebben zo'n spektakel opgevoerd!",
+   "distance": "55 miljoen lichtjaar",
+   "size": "166.000 lichtjaar in doorsnede"
+  },
   "dso/m101": {
    "description": "Het Windmolenstelsel is een frontaal zichtbaar spiraalstelsel in Ursa Major, een van de grootste bekende spiraalstelsel.",
    "fun_fact": "Het Windmolenstelsel bevat meer dan een biljoen sterren en heeft asymmetrische spiraalarmen door eerdere interacties met andere sterrenstelsels!",
    "distance": "21 miljoen lichtjaar",
    "size": "170.000 lichtjaar doorsnede",
    "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m102": {
+   "description": "Messier 102 is de grote onopgeloste vermelding in Messiers catalogus - een object dat in 1781 werd vastgelegd en dat nooit met zekerheid is geïdentificeerd.",
+   "fun_fact": "Messier publiceerde geen coördinaten voor M102, en zijn collega Mechain trok de ontdekking later volledig in, bewerend dat het per ongeluk tweemaal opgenomen M101 was! NASA identificeert het met de Spoelnevel, NGC 5866."
   },
   "dso/m103": {
    "description": "M103 is een kleine, compacte open sterrenhoop in Cassiopeia, met ongeveer 40 sterren in een dichte groep die gemakkelijk met verrekijkers zichtbaar is. Een opvallende dubbelster en een rode reus dicht bij het centrum geven het een kleurrijk uiterlijk in kleine telescopen, gelegen in de rijke Melkwegvelden van Cassiopeia.",
@@ -664,6 +675,12 @@
    "size": "50.000 lichtjaar doorsnede",
    "image_credit": "NASA/ESA/Hubble"
   },
+  "dso/m105": {
+   "description": "Messier 105 is een elliptisch sterrenstelsel in Leeuw, het grootste elliptische in de Messiercatalogus buiten de Virgocluster.",
+   "fun_fact": "M105 deelt een kolossale ring van waterstofgas met zijn buur NGC 3384, die zich uitstrekt over zo'n 650.000 lichtjaar!",
+   "distance": "37 miljoen lichtjaar",
+   "size": "67.000 lichtjaar breed"
+  },
   "dso/m106": {
    "description": "M106 is een spiraalstelsel in Canes Venatici met afwijkende spiraalarmen veroorzaakt door jets vanuit zijn centrale zwarte gat.",
    "fun_fact": "M106 heeft watermasers in zijn kern, waardoor astronomen de afstand nauwkeurig kunnen meten!",
@@ -676,6 +693,11 @@
    "fun_fact": "M107 was het laatste object dat formeel aan de Messier-catalogus werd toegevoegd — het verschijnt in Pierre Méchain's correspondentie maar was niet opgenomen in de originele editie van 1781. Het werd officieel in 1947 als M107 toegevoegd door de Canadese astronoom Helen Sawyer Hogg, die verschillende \"ontbrekende\" objecten codificeerde die Méchain had waargenomen maar Messier nooit formeel had geregistreerd.",
    "distance": "20.900 lichtjaar",
    "size": "~61 lichtjaar in doorsnee"
+  },
+  "dso/m108": {
+   "description": "Messier 108 is een balkspiraalstelsel in de Grote Beer, bijgenaamd de Surfplankstelsel.",
+   "fun_fact": "M108 is bijna rand-op naar ons gekanteld, waardoor het de naam Surfplank kreeg - en het bevat ongeveer 290 bolvormige sterrenhopen!",
+   "distance": "46 miljoen lichtjaar"
   },
   "dso/m109": {
    "description": "M109 is een balkspiraalstelsel in Ursa Major, het helderste lid van een sterrenstelselgroep die zijn naam draagt.",
@@ -739,6 +761,12 @@
    "distance": "5.500 lichtjaar",
    "size": "15 lichtjaar doorsnede",
    "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m18": {
+   "description": "Messier 18 is een kleine open sterrenhoop van jonge sterren in Boogschutter, ook bekend als de Zwarte Zwaancluster.",
+   "fun_fact": "M18 is een van de weinige Messier-objecten die de Hubble-ruimtetelescoop nooit heeft gefotografeerd!",
+   "distance": "4.200 lichtjaar",
+   "size": "26 lichtjaar breed"
   },
   "dso/m19": {
    "description": "M19 is een compacte, rijke bolvormige sterrenhoop in Ophiuchus — een van de dichtstbijzijnde bolvormige sterre nhopen bij het galactische centrum. Het meest opvallende kenmerk is de duidelijk afgeplatte vorm: M19 is de meest afgeplatte bolvormige sterrenhoop die bekend is, met een zichtbare elliptische omtrek zelfs in een kleine telescoop.",
@@ -942,6 +970,7 @@
   },
   "dso/m47": {
    "description": "M47 is een helder, los open sterrenhoop in Puppis, gemakkelijk zichtbaar voor het blote oog en opvallend in verrekijkers. Ongeveer 50 sterren zijn verspreid over een halve graad van de hemel, met verschillende oranje reuzensterren die warme kleur toevoegen tegen de zwakkere blauw-witte leden.",
+   "fun_fact": "M47 was een van de \"verloren\" Messier-objecten — een administratieve fout in Messier's oorspronkelijke coördinaten plaatste het in een lege hemel, waardoor de cluster bijna twee eeuwen lang ongeïdentificeerd bleef. Zijn ware identiteit als NGC 2422 werd pas in 1959 bevestigd, toen waarnemers terugwerkten vanuit Messier's beschrijving om de fout te vinden.",
    "distance": "1.600 lichtjaar",
    "size": "~14 lichtjaar groot"
   },
@@ -998,6 +1027,7 @@
    "size": "~230 lichtjaar in doorsnee"
   },
   "dso/m55": {
+   "description": "M55 is een grote, losse bolvormige sterrenhoop in Boogschutter — een van de meest verspreide en minst geconcentreerde van alle Messier-bolhopen. Hij is gemakkelijk op te lossen in individuele sterren, zelfs bij lage vergroting, met een korrelige textuur die zichtbaar is met een verrekijker. Zijn lage zuidelijke declinatie beperkt de zichtbaarheid vanaf noordelijke breedtegraden, maar hij is spectaculair vanaf het zuidelijk halfrond.",
    "fun_fact": "M55's ongebruikelijk lage stellaire concentratie geeft het bijna het uiterlijk van een rijke open cluster in plaats van een typische bolvormige cluster. De sterren zijn verspreid over een gebied van bijna 100 lichtjaar breed, wat suggereert dat de zelfzwaartekracht van de cluster relatief zwak is in vergelijking met meer centraal verdichte bolvormige clusters zoals M13 of M3.",
    "distance": "17.600 lichtjaar",
    "size": "~100 lichtjaar in doorsnee"
@@ -1015,12 +1045,35 @@
    "size": "1,3 lichtjaar doorsnede",
    "image_credit": "NASA/ESA/Hubble"
   },
+  "dso/m58": {
+   "description": "Messier 58 is een balkspiraalstelsel in de Maagd en een van de helderste leden van de Virgo-cluster.",
+   "fun_fact": "Een superzwaar zwart gat van ongeveer 70 miljoen zonmassa's zit in het hart van M58, omringd door een strakke band van pasgeboren sterren!",
+   "distance": "68 miljoen lichtjaar",
+   "size": "133.000 lichtjaar breed"
+  },
+  "dso/m59": {
+   "description": "Messier 59 is een elliptisch sterrenstelsel in Maagd, ontdekt in 1779 tijdens de zoektocht naar een passerende komeet.",
+   "fun_fact": "De kern van M59 draait achteruit vergeleken met de rest van het sterrenstelsel, en ongeveer 2.200 bolvormige sterrenhopen zwermen eromheen!",
+   "distance": "50 miljoen lichtjaar",
+   "mass": "270 miljoen zonsmassa's (centraal zwart gat)"
+  },
   "dso/m6": {
    "description": "De Vlinderhoop is een open sterrenhoop in Scorpius, genoemd naar de vlinderachtige rangschikking van de helderste sterren.",
    "fun_fact": "M6 is ongeveer 100 miljoen jaar oud en bevat meer dan 300 sterren, waaronder de oranje reus BM Scorpii!",
    "distance": "1.600 lichtjaar",
    "size": "25 lichtjaar doorsnede",
    "image_credit": "NOAO/AURA/NSF"
+  },
+  "dso/m60": {
+   "description": "Messier 60 is een reusachtig elliptisch sterrenstelsel in Maagd, het op twee na helderste reusachtige elliptische sterrenstelsel in de Virgocluster.",
+   "fun_fact": "Het centrale zwarte gat van M60 weegt ongeveer 4,5 miljard zonnen - een van de grootste ooit gevonden!",
+   "distance": "57 miljoen lichtjaar"
+  },
+  "dso/m61": {
+   "description": "Messier 61 is een balkspiraalstelsel in de Maagd en een van de grootste sterrenstelsels in de Virgo-cluster.",
+   "fun_fact": "Acht supernovae zijn waargenomen in M61 - een van de hoogste aantallen van alle sterrenstelsels! Messier zelf zag het eerst aan voor een komeet.",
+   "distance": "52 miljoen lichtjaar",
+   "size": "92.000 lichtjaar breed"
   },
   "dso/m62": {
    "description": "M62 is een rijke bolvormige sterrenhoop in Ophiuchus — een van de dichtstbijzijnde bolvormige sterhopen bij het galactische centrum en opvallend asymmetrisch, met sterren dichter opeengepakt aan de zuidkant. Met magnitude 6,6 is het een fraai object voor verrekijkers, hoewel de lage declinatie het voor waarnemers op het noordelijk halfrond een doelwit voor een kort seizoen maakt.",
@@ -1092,12 +1145,28 @@
    "distance": "12.000 lichtjaar",
    "size": "~25 lichtjaar in doorsnee"
   },
+  "dso/m72": {
+   "description": "Messier 72 is een zwakke, afgelegen bolvormige sterrenhoop in de Waterman, ontdekt door Pierre Mechain in 1780.",
+   "fun_fact": "M72 bevat ongeveer 168.000 zonnen aan sterren in een bol die ruwweg 9,5 miljard jaar oud is, inclusief 43 veranderlijke sterren!",
+   "distance": "55.000 lichtjaar"
+  },
+  "dso/m73": {
+   "description": "Messier 73 is een kleine groep van vier sterren in de Waterman die alleen maar een sterrenhoop lijkt te zijn.",
+   "fun_fact": "Astronomen discussieerden decennia lang over de vraag of M73 een echt cluster was - in 2002 werd het beslecht: de vier sterren liggen op zeer verschillende afstanden en staan slechts toevallig op één lijn!",
+   "distance": "1.000 tot 2.300 lichtjaar (de individuele sterren)"
+  },
   "dso/m74": {
    "description": "Het Fantoomstelsel is een frontaal zichtbaar spiraalstelsel in Pisces, bekend om zijn perfecte grand-design spiraalstructuur.",
    "fun_fact": "M74 heeft de bijnaam Fantoomstelsel vanwege zijn zeer lage oppervlaktehelderheid, waardoor het moeilijk waar te nemen is!",
    "distance": "32 miljoen lichtjaar",
    "size": "95.000 lichtjaar doorsnede",
    "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m75": {
+   "description": "Messier 75 is een verre, rijk geconcentreerde bolvormige sterrenhoop in de Boogschutter.",
+   "fun_fact": "M75 is een van de meest dicht opeengepakte bekende bolhopen, en wordt beschouwd als puin van een dwergstelsel dat de Melkweg lang geleden heeft opgeslokt!",
+   "distance": "68.000 lichtjaar",
+   "size": "134 lichtjaar breed"
   },
   "dso/m76": {
    "description": "De Kleine Halter is een planetaire nevel in Perseus met een karakteristieke achtvorm — een kleinere neef van M27, de Halternevel in Vulpecula. Hoewel het zwakste object in de Messier-catalogus, beloont het geduldig waarnemen met kleine telescopen en toont het mooie structuur in grotere instrumenten, met twee helderder lobben aan weerszijden van een zwakker middenstuk.",
@@ -1159,6 +1228,22 @@
    "size": "55.000 lichtjaar doorsnede",
    "image_credit": "NASA/ESA/Hubble"
   },
+  "dso/m84": {
+   "description": "Messier 84 is een reusachtig elliptisch sterrenstelsel in het drukke hart van de Virgo-cluster.",
+   "fun_fact": "M84 stoot twee materiestralen uit zijn kern, aangedreven door een zwart gat van ongeveer 1,5 miljard zonsmassa's!",
+   "distance": "55 miljoen lichtjaar"
+  },
+  "dso/m85": {
+   "description": "Messier 85 is een lensvormig sterrenstelsel aan de rand van de Virgo-cluster, in Hoofdhaar.",
+   "fun_fact": "Rimpelingen en schillen in de buitenste regionen van M85 zijn de overblijfselen van een samensmelting van sterrenstelsels die 4 tot 7 miljard jaar geleden plaatsvond!",
+   "distance": "60 miljoen lichtjaar",
+   "size": "120.600 lichtjaar breed"
+  },
+  "dso/m86": {
+   "description": "Messier 86 is een groot elliptisch melkwegstelsel in de Virgo Cluster, en vormt een opvallend paar met het nabijgelegen M84.",
+   "fun_fact": "M86 snelt op ons af met 244 km/s - de snelste nadering van welk Messier-object dan ook! Zijn doorgang door de cluster laat een lang spoor van ontdaan heet gas achter.",
+   "distance": "52 miljoen lichtjaar"
+  },
   "dso/m87": {
    "description": "M87 is een superreusachtig elliptisch sterrenstelsel in Virgo, een van de zwaarste sterrenstelsels in het lokale heelal.",
    "fun_fact": "Het centrale zwarte gat van M87 was het eerste dat ooit werd gefotografeerd door de Event Horizon Telescope in 2019 - het heeft 6,5 miljard zonnemassa's!",
@@ -1167,11 +1252,34 @@
    "mass": "2,4 biljoen zonnemassa's",
    "image_credit": "NASA/ESA/Hubble"
   },
+  "dso/m88": {
+   "description": "Messier 88 is een elegant spiraalstelsel in Hoofdhaar, een van de vijftien Messier-objecten in de Virgo-cluster.",
+   "fun_fact": "M88 stort zich naar het centrum van de Virgocluster en zal over 200 tot 300 miljoen jaar arriveren, waarbij zijn buitenste gaslagen worden weggerukt terwijl het valt!",
+   "distance": "59 miljoen lichtjaar",
+   "size": "131.000 lichtjaar breed"
+  },
+  "dso/m89": {
+   "description": "Messier 89 is een elliptisch sterrenstelsel in de Maagd, ontdekt door Charles Messier in 1781.",
+   "fun_fact": "M89 is mogelijk bijna een perfecte bol – ongebruikelijk voor een elliptisch sterrenstelsel, die normaal gesproken merkbaar afgeplat zijn!",
+   "distance": "50 miljoen lichtjaar"
+  },
   "dso/m9": {
    "description": "M9 is een compacte bolvormige sterrenhoop in Ophiuchus — een van de Messier-bolvormige sterkerhopen die het meest worden beïnvloed door absorptie van interstellair stof. Het bevindt zich in de richting van de galactische kern, waar dik stof het aanzienlijk verzwakt. Zonder deze verduistering zou M9 bijna een magnitude helderder zijn en met het blote oog zichtbaar zijn.",
    "fun_fact": "M9 ondervindt meer absorptie door interstellair stof dan bijna enig ander Messier-bolsterhoop — ongeveer 1,3 magnituden verduistering in vergelijking met een helder gezichtsveld. Twee kleinere bolsterhopen (NGC 6342 en NGC 6356) bevinden zich binnen ongeveer 1° van M9, waardoor het het middelpunt vormt van een opmerkelijke groepering van drie bolsterhopen in een klein stukje hemel.",
    "distance": "25.800 lichtjaar",
    "size": "~70 lichtjaar in doorsnee"
+  },
+  "dso/m90": {
+   "description": "Messier 90 is een groot spiraalstelsel in de Maagd, en het schoolvoorbeeld van een 'anemisch' sterrenstelsel.",
+   "fun_fact": "M90 is zijn stervormend gas ontnomen door zijn duikvlucht door de Virgocluster, waardoor staarten van gloeiend gas achterbleven van wel 260.000 lichtjaar lang!",
+   "distance": "59 miljoen lichtjaar",
+   "size": "132.000 lichtjaar breed"
+  },
+  "dso/m91": {
+   "description": "Messier 91 is een balkspiraalstelsel in Coma Berenices en het zwakste object in de Messiercatalogus.",
+   "fun_fact": "M91 was bijna 200 jaar lang zoek! Messier noteerde de positie ervan, maar gebruikte een verkeerd referentiestelsel, en het werd pas in 1969 opnieuw geïdentificeerd door een amateurastronoom.",
+   "distance": "63 miljoen lichtjaar",
+   "size": "105.500 lichtjaar breed"
   },
   "dso/m92": {
    "description": "M92 is een heldere bolhoop in Hercules, vaak over het hoofd gezien vanwege de nabijheid van het beroemdere M13.",
@@ -1193,12 +1301,35 @@
    "size": "50.000 lichtjaar doorsnede",
    "image_credit": "NASA/ESA/Hubble"
   },
+  "dso/m95": {
+   "description": "Messier 95 is een balkspiraalstelsel in de Leeuw, onderdeel van de M96-groep, samen met M96 en M105.",
+   "fun_fact": "Een ring van intense stervorming, ongeveer 70.000 lichtjaar breed, omcirkelt de kern van M95, en in 2012 flakkerde daar een supernova op!",
+   "distance": "33 miljoen lichtjaar",
+   "size": "80.000 lichtjaar breed"
+  },
+  "dso/m96": {
+   "description": "Messier 96 is een spiraalstelsel in Leo, het helderste lid van de M96-groep van sterrenstelsels.",
+   "fun_fact": "M96 is ongeveer even groot en zwaar als onze eigen Melkweg, maar opvallend asymmetrisch - het stof en gas zijn ongelijkmatig verspreid door zijn armen!",
+   "distance": "31 miljoen lichtjaar",
+   "size": "78.000 lichtjaar breed"
+  },
   "dso/m97": {
    "description": "De Uilnevel is een planetaire nevel in Ursa Major, genoemd naar zijn uilachtige uiterlijk met twee donkere vlekken.",
    "fun_fact": "De donkere uilenogen in M97 zijn driedimensionale holtes in de nevel, uitgelijnd met onze kijkrichting!",
    "distance": "2.030 lichtjaar",
    "size": "2 lichtjaar doorsnede",
    "image_credit": "Gemini Observatory/NOIRLab/NSF/AURA"
+  },
+  "dso/m98": {
+   "description": "Messier 98 is een spiraalstelsel in Coma Berenices, bijna van opzij gezien als onderdeel van de Virgo-cluster.",
+   "fun_fact": "M98 is een van de zeldzame sterrenstelsels die naar ons toe beweegt in plaats van van ons af, met een snelheid van ongeveer 140 km/s!",
+   "distance": "44 miljoen lichtjaar"
+  },
+  "dso/m99": {
+   "description": "Messier 99 is een 'grand design' spiraalstelsel in Coma Berenices, met duidelijke, uitgestrekte spiraalarmen.",
+   "fun_fact": "M99 was een van de allereerste objecten die als spiraalvormig werden herkend, geschetst door Lord Rosse in 1846 - en het vormt sterren drie keer sneller dan vergelijkbare sterrenstelsels!",
+   "distance": "45 miljoen lichtjaar",
+   "size": "98.000 lichtjaar breed"
   },
   "dso/n47_tucanae": {
    "description": "47 Tucanae (NGC 104) is de op één na helderste bolvormige sterrenhoop aan de hemel, een dichte bal van ongeveer één miljoen oude sterren die rond de Melkweg draaien in het sterrenbeeld Tucana. Op ongeveer 14.500 lichtjaar afstand verschijnt het voor het blote oog als een vage ster van de vierde magnitude, maar een telescoop ontrafelt de samengeperste kern in een buitengewone zwerm van gouden en blauwwitte zonnen. De sterren ervan ontstonden ongeveer 13 miljard jaar geleden, waardoor de sterrenhoop bijna even oud is als het universum zelf.",
@@ -1310,8 +1441,9 @@
    "description": "Deimos is de kleinere en buitenste van Mars' twee manen, met een glad, stofbedekt oppervlak dat het een ronder uiterlijk geeft dan Phobos. Net als zijn metgezel wordt aangenomen dat het een gevangen asteroïde uit de buitenriem is.",
    "fun_fact": "Deimos is zo klein en ver weg dat het vanaf het Marsoppervlak niet meer lijkt dan een helder sterretje, dat ongeveer 30 uur nodig heeft om langzaam over de nachtelijke hemel te drijven.",
    "distance": "23.460 km van Mars",
+   "size": "15 × 12 × 11 km",
    "image_credit": "NASA/JPL-Caltech/University of Arizona",
-   "search_subtext": "Moon of Mars"
+   "search_subtext": "Maan van Mars"
   },
   "moon/dione": {
    "description": "Dione is een ijzige maan van Saturnus met een zwaar gekraterde voorkant en een achterkant vol heldere ijskliffen — breuklijnnen waar oude tektonische krachten vers ijs van onder blootlegden. Cassini-zwaartekrachtgegevens wijzen op een ondergrondse vloeibare oceaan onder de korst.",
@@ -1365,8 +1497,9 @@
    "description": "Phobos is de grootste en binnenste van Mars' twee manen, die dichter bij zijn planeet in een baan beweegt dan enige andere maan in het zonnestelsel. Het is een onregelmatig gevormd, zwaar gegroefd en gekraterd lichaam waarvan wordt aangenomen dat het een gevangen asteroïde is.",
    "fun_fact": "Phobos draait zo snel om Mars dat het in het westen opkomt en in het oosten ondergaat — en het spiraleert langzaam naar binnen, voorbestemd om over ongeveer 50 miljoen jaar tegen Mars te botsen of uiteen te vallen tot een ring.",
    "distance": "9.376 km van Mars",
+   "size": "27 × 22 × 18 km",
    "image_credit": "NASA/JPL-Caltech/University of Arizona",
-   "search_subtext": "Moon of Mars"
+   "search_subtext": "Maan van Mars"
   },
   "moon/rhea": {
    "description": "Rhea is Saturnus' tweede grootste maan en een zwaar gekraterde wereld van ijs en rots. Het bleke, oude oppervlak bewaart enkele van de meest ongerepte inslagkraters van ons zonnestelsel, samen met heldere ijskliffen waar aardverschuivingen vers materiaal van onder het oppervlak hebben blootgelegd.",
@@ -1825,6 +1958,11 @@
    "spectral_class": "K0 III",
    "image_credit": "ESO/Digitized Sky Survey 2"
   },
+  "star/e_lyrae": {
+   "description": "Epsilon Lyrae is een meervoudig sterrensysteem in Lier, beroemd onder waarnemers als de \"Dubbele Dubbele\".",
+   "fun_fact": "Scherpe ogen kunnen Epsilon Lyrae in twee sterren splitsen - en een telescoop splitst elk van die opnieuw in twee! Het bevat in totaal minstens vijf sterren.",
+   "distance": "160 lichtjaar"
+  },
   "star/enif": {
    "description": "Enif is de helderste ster in Pegasus en markeert de neus van het vliegende paard in het sterrenbeeld.",
    "fun_fact": "In 1972 onderging Enif een dramatische uitbarsting, waarbij zijn helderheid kortstondig met een factor vijf toenam!",
@@ -1878,6 +2016,110 @@
    "mass": "~4,6 zonnemassa's",
    "spectral_class": "K0II-III",
    "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/j052512+062100": {
+   "description": "Bellatrix markeert de linkerschouder van Orion (de Jager). De naam is Latijn voor \"vrouwelijke krijger\".",
+   "fun_fact": "Bellatrix is slechts ongeveer 28 miljoen jaar oud en zal zijn waterstof verbranden over nog eens 7 miljoen jaar – een kort leven voor een ster!",
+   "distance": "250 lichtjaar",
+   "size": "6,2 zonneradii",
+   "mass": "8,4 zonnemassa's",
+   "spectral_class": "B2 III"
+  },
+  "star/j054048-015624": {
+   "description": "Alnitak is de meest oostelijke ster van de Gordel van Orion, gelegen naast de Vlamnevel en Paardenkopnevel.",
+   "fun_fact": "Alnitak is de helderste O-klasse ster aan de gehele nachthemel! Over ongeveer een miljoen jaar zal hij opzwellen tot groter dan de baan van Jupiter en exploderen als een supernova.",
+   "distance": "1.260 lichtjaar",
+   "size": "20 zonneradii",
+   "mass": "33 zonnemassa's",
+   "spectral_class": "O9.5 Iab"
+  },
+  "star/j055924+445700": {
+   "description": "Menkalinan is de tweede helderste ster in Auriga (de Voerman). De naam betekent \"schouder van de teugelhouder\" in het Arabisch.",
+   "fun_fact": "Menkalinan is eigenlijk twee bijna identieke sterren die elkaar elke 47,5 uur verduisteren - en over ongeveer een miljoen jaar zal het de helderste ster aan onze nachthemel worden!",
+   "distance": "79 lichtjaar",
+   "size": "2,8 zonneradii",
+   "mass": "2,4 zonnemassa's",
+   "spectral_class": "A1m IV + A1m IV"
+  },
+  "star/j062248-175736": {
+   "description": "Mirzam (Beta Canis Majoris) komt vlak voor Sirius op, wat het de naam 'De Aankondiger' in het Arabisch opleverde.",
+   "fun_fact": "Ongeveer vier miljoen jaar geleden was Mirzam de helderste ster aan de hemel, stralend met een magnitude van -3,65 - veel helderder dan Sirius vandaag verschijnt!",
+   "distance": "490 lichtjaar",
+   "size": "8,4 zonneradii",
+   "mass": "13 zonnemassa's",
+   "spectral_class": "B1 II-III"
+  },
+  "star/j070824-262324": {
+   "description": "Wezen is een geelwitte superreus in Canis Major (de Grote Hond). De naam komt van het Arabische woord voor 'gewicht'.",
+   "fun_fact": "Als Wezen net zo dichtbij ons zou staan als Sirius, zou het net zo helder schijnen als een halfvolle Maan!",
+   "distance": "1.600 lichtjaar",
+   "size": "188 zonneradii",
+   "mass": "14 zonnemassa's",
+   "spectral_class": "F8 Ia"
+  },
+  "star/j082248-593036": {
+   "description": "Avior (Epsilon Carinae) is een heldere dubbelster in Carina en een van de vier sterren van het Valse Kruis.",
+   "fun_fact": "Het Valse Kruis wordt zo vaak verward met het Zuiderkruis dat het echte navigatiefouten heeft veroorzaakt! De naam Avior werd bedacht door Britse almanakmakers in de jaren 30.",
+   "distance": "610 lichtjaar",
+   "size": "151 zonneradii",
+   "mass": "10,5 zonnemassa's",
+   "spectral_class": "K3 III + B2 Vp"
+  },
+  "star/j091312-694312": {
+   "description": "Miaplacidus is de op één na helderste ster in Carina (de Kiel) en markeert een hoek van het Diamanten Kruis asterisme.",
+   "fun_fact": "Miaplacidus is opgezwollen tot een reus nadat het de waterstof in zijn kern heeft opgebruikt, toch draait het nog steeds met een flinke snelheid van 146 km/s!",
+   "distance": "113 lichtjaar",
+   "size": "5,8 zonneradii",
+   "mass": "3,9 zonsmassa's",
+   "spectral_class": "A1 III"
+  },
+  "star/j123112-570636": {
+   "description": "Gacrux (Gamma Crucis) is de bovenste ster van het Zuiderkruis en de dichtstbijzijnde rode reuzenster tot de Aarde.",
+   "fun_fact": "Gacrux is de dichtstbijzijnde M-type rode reus bij ons, en de naam is simpelweg een samentrekking van \"Gamma Crucis\" door zeevaarders, bedacht in de jaren 40!",
+   "distance": "89 lichtjaar",
+   "size": "73 zonsradii",
+   "mass": "1,5 zonsmassa's",
+   "spectral_class": "M3.5 III"
+  },
+  "star/j124800-594124": {
+   "description": "Mimosa (Beta Crucis) is de op één na helderste ster in het Zuiderkruis en een van de heetste sterren zichtbaar met het blote oog.",
+   "fun_fact": "Mimosa is een pulserende Beta Cephei-variabele - ze zwelt en krimpt in drie overlappende ritmes, elk duurt slechts ongeveer vier uur!",
+   "distance": "280 lichtjaar",
+   "size": "8 zonsradii",
+   "mass": "14,5 zonsmassa's",
+   "spectral_class": "B0.5 III"
+  },
+  "star/j143936-605024": {
+   "description": "Toliman (Alpha Centauri B) is de oranje begeleider in het dichtstbijzijnde sterrensysteem bij de Zon, die om de helderdere Rigil Kentaurus draait.",
+   "fun_fact": "Toliman kreeg zijn officiële naam pas in 2018. Hij is iets kleiner en koeler dan de Zon, en vormt samen met zijn twee broers en zussen onze dichtstbijzijnde stellaire buren!",
+   "distance": "4,34 lichtjaar",
+   "size": "0,86 zonsradii",
+   "mass": "0,91 zonsmassa's",
+   "spectral_class": "K1 V"
+  },
+  "star/j164836-690148": {
+   "description": "Atria is de helderste ster van Triangulum Australe (de Zuidelijke Driehoek), een oranje reus die veel groter is dan de Zon.",
+   "fun_fact": "Atria is 139 keer de diameter van de Zon - geplaatst in het centrum van het zonnestelsel zou het bijna de baan van Venus bereiken!",
+   "distance": "391 lichtjaar",
+   "size": "139 zonsradii",
+   "mass": "6,4 zonsmassa's",
+   "spectral_class": "K2 Ib-IIa"
+  },
+  "star/j173712-430000": {
+   "description": "Sargas is een heldere reus in de staart van Schorpioen (de Schorpioen), met een traditionele naam van Sumerische oorsprong.",
+   "fun_fact": "Sargas draait zo snel dat het naar buiten uitpuilt - het is een derde breder rond de evenaar dan van pool tot pool, en is mogelijk ontstaan toen twee sterren samensmolten!",
+   "distance": "329 lichtjaar",
+   "size": "35 zonsradii",
+   "mass": "3,1 zonsmassa's",
+   "spectral_class": "F1 III"
+  },
+  "star/j202548-564348": {
+   "description": "Peacock is de helderste ster in Pavo (de Pauw), een hete blauw-witte ster aan de verre zuidelijke hemel.",
+   "fun_fact": "Peacock kreeg zijn naam in de jaren 30 omdat de RAF erop stond dat elke ster in hun nieuwe Luchtvaartalmanak een naam zou hebben - en deze had er geen!",
+   "distance": "179 lichtjaar",
+   "size": "4,8 zonsradii",
+   "mass": "5,9 zonsmassa's",
+   "spectral_class": "B3 V"
   },
   "star/kaus_australis": {
    "description": "Kaus Australis is de helderste ster in Sagittarius (de Boogschutter). De naam betekent \"de zuidelijke boog\" in een mengeling van Arabisch en Latijn.",
@@ -1941,6 +2183,12 @@
    "mass": "~8,5 zonnenmassa's",
    "spectral_class": "F5Ib",
    "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/n25": {
+   "description": "R Coronae Borealis is een zeldzame gele superreus in Corona Borealis, en het prototype van de klasse van veranderlijke sterren die ernaar is vernoemd.",
+   "fun_fact": "R Coronae Borealis wordt soms een \"omgekeerde nova\" genoemd - in plaats van op te lichten, vervaagt hij onvoorspelbaar met wel 9 magnituden wanneer hij wolken koolstofroet uitstoot die hem aan het zicht onttrekken!",
+   "distance": "4.560 lichtjaar",
+   "spectral_class": "G0Iep"
   },
   "star/nunki": {
    "description": "Nunki is de op één na helderste ster in Sagittarius en de oudste sternaam die nog steeds in gebruik is.",

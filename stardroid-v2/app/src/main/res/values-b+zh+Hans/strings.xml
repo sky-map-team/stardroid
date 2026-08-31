@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
-  Carried over from v1 by tools/salvage-translations/salvage.py.
-  Only strings whose English source is identical between v1 and v2 appear here;
-  everything else is translated by `tm`. Safe to hand-edit thereafter.
--->
+<?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <string name="app_name">星空地图</string>
+
+    <!-- tm:omitted name="splash_version" reason="identical_to_source" -->
+    <string name="splash_dismiss" translation_description="Accessibility label for the action that dismisses the launch splash when it is tapped">关闭</string>
+
+    <!-- Sky-map labels drawn by the computed layers (LayerStrings). -->
     <string name="north_pole">北极</string>
     <string name="south_pole">南极</string>
     <string name="zenith">天顶</string>
@@ -15,6 +15,8 @@
     <string name="east">东</string>
     <string name="west">西</string>
     <string name="ecliptic">黄道</string>
+
+    <!-- Solar-system body names, drawn as labels next to each body. -->
     <string name="sun">太阳</string>
     <string name="moon">月球</string>
     <string name="mercury">水星</string>
@@ -26,26 +28,157 @@
     <string name="uranus">天王星</string>
     <string name="neptune">海王星</string>
     <string name="pluto">冥王星</string>
+
+    <!-- Search (map-screen search dialog and overlay). -->
     <string name="search_button">搜索</string>
     <string name="search_label">搜索星空</string>
+    <string name="search_hint" translation_description="Placeholder text in the search field showing example search targets.">例如火星或M31</string>
+    <string name="search_coordinates_hint" translation_description="Helper text under the search field showing that celestial coordinates (right ascension and declination) can be typed directly, with two example formats.">或输入坐标：12h 30m, +45° 或 187.5 -45.2</string>
+    <string name="search_go" translation_description="Button that starts navigating the sky map toward the typed search target.">前往</string>
     <string name="search_cancel">取消</string>
     <string name="search_no_results">未找到结果。该天体可能在此时不可见。</string>
+    <string name="search_target_looking_message" translation_description="Status shown while the user is being guided toward a search target. %1$s is the object name.">正在寻找：%1$s</string>
+    <string name="search_target_found_message" translation_description="Status shown when the search target has been found and is centered on screen. %1$s is the object name.">已找到：%1$s</string>
     <string name="search_overlay_prompt">将手机朝向箭头所指的方向</string>
+
+    <!-- Layer names in the layer-visibility sheet. -->
     <string name="layer_stars">恒星</string>
     <string name="layer_constellations">星座</string>
+    <string name="layer_deep_sky" translation_description="Toggle label for the layer showing deep-sky objects such as galaxies and nebulae.">深空天体</string>
     <string name="layer_solar_system">行星</string>
     <string name="layer_meteor_showers">流星雨</string>
+    <string name="layer_satellites" translation_description="Toggle label for the layer showing artificial satellites such as the International Space Station.">卫星</string>
+    <string name="channel_passes_name" translation_description="Name of the notification channel for alerts shortly before a satellite passes overhead.">卫星过境</string>
+    <string name="channel_passes_description" translation_description="Description of the satellite-pass notification channel.">当晚最佳可见过境前不久的单次提醒</string>
+    <string name="notif_pass_title" translation_description="Title of the notification sent shortly before a satellite passes overhead. %1$s is the satellite name.">%1$s即将过境</string>
+    <string name="notif_pass_text" translation_description="Body of the satellite pass notification, telling the user when to go outside. %1$s is a time.">大约从%1$s可见 — 请到户外，让眼睛适应黑暗</string>
+    <string name="channel_eclipses_name" translation_description="Name of the notification channel for alerts before a lunar eclipse starts.">月食</string>
+    <string name="channel_eclipses_description" translation_description="Description of the lunar-eclipse notification channel.">在月食开始前的单次提醒</string>
+    <string name="notif_eclipse_title" translation_description="Title of the notification sent before a lunar eclipse starts. %1$s is a localized eclipse type like \'Total lunar eclipse\'.">%1$s即将开始</string>
+    <string name="notif_eclipse_text" translation_description="Body of the lunar eclipse notification, telling the user when it begins. %1$s is a time.">大约在%1$s开始 — 值得出门观看</string>
+    <string name="satellite_name_iss" translation_description="Display name for the International Space Station.">国际空间站</string>
+    <string name="satellite_name_tiangong" translation_description="Display name for the Chinese space station Tiangong.">天宫</string>
+    <string name="layer_param_pass_alerts" translation_description="Label for the setting that turns on a notification shortly before a satellite passes overhead.">过境提醒</string>
+    <string name="layer_param_pass_alerts_description" translation_description="Explains what the pass-alert setting does: a single notification before the best visible pass of the night.">在每晚最佳可见过境前提醒我</string>
+    <string name="layer_param_eclipse_alerts" translation_description="Label for the setting that turns on a notification before a lunar eclipse begins.">月食提醒</string>
+    <string name="layer_param_eclipse_alerts_description" translation_description="Explains what the eclipse-alert setting does: a single notification before a lunar eclipse starts.">在月食开始前提醒我</string>
+    <string name="satellite_description" translation_description="Short description shown on the info card for an artificial satellite.">一颗处于低地球轨道的人造卫星，在黑暗天空中被阳光照亮。它在几分钟内划过整个地平线，稳定移动且不闪烁。</string>
+    <string name="satellite_next_pass" translation_description="Heading above the next visible pass details on a satellite\'s info card.">下次可见过境</string>
+    <string name="satellite_pass_when" translation_description="When and how high the next satellite pass will be. %1$s is a time, %2$s is a compass direction, %3$d is an angle in degrees.">%1$s，升起于%2$s，达到%3$d°</string>
+    <string name="satellite_pass_magnitude" translation_description="How bright the satellite will be at its peak. %1$.1f is a brightness magnitude.">最亮时亮度%1$.1f</string>
+    <string name="satellite_pass_shadow" translation_description="Tells the user the satellite will fade out mid-pass when it enters the Earth\'s shadow. %1$s is a time.">在%1$s没入地球阴影</string>
+    <string name="satellite_no_pass" translation_description="Shown on a satellite info card when no visible pass is coming up in the next two days.">未来几天没有可见过境</string>
+    <string name="satellite_pass_unknown" translation_description="Shown on a satellite info card when the downloaded orbit data is too old to predict pass times reliably.">轨道数据过旧，无法预测过境</string>
+    <string name="object_info_eclipse_title" translation_description="Heading above the next lunar eclipse details on the Moon\'s info card.">月食</string>
+    <string name="object_info_no_eclipse" translation_description="Shown on the Moon\'s info card when no lunar eclipse is coming up in the searched time range.">近期无月食</string>
+    <string name="object_info_eclipse_greatest" translation_description="The next lunar eclipse\'s type and greatest-eclipse date/time. %1$s is a localized eclipse type like \'Total lunar eclipse\', %2$s a date, %3$s a time.">%1$s — 食甚%2$s于%3$s</string>
+    <string name="object_info_eclipse_totality" translation_description="The start and end time of totality during a total lunar eclipse. %1$s and %2$s are times.">全食阶段 %1$s – %2$s</string>
+    <string name="tonight_satellite_pass" translation_description="Tonight-widget row announcing a visible satellite pass. %1$s is the satellite name, %2$s is a time of day.">%1$s于%2$s过境</string>
+    <string name="tonight_trailing_pass" translation_description="Small trailing note on a satellite pass row. %1$s is a compass direction, %2$d is an angle in degrees, %3$.1f is a brightness magnitude.">升起于%1$s，%2$d°，亮度%3$.1f</string>
+    <string name="satellites_no_data" translation_description="Explanation shown when satellite orbital data has not been downloaded yet and so no satellites can be drawn.">卫星位置需要互联网连接才能更新。</string>
+    <string name="satellites_refresh" translation_description="Button that tries to download satellite orbital data now.">刷新</string>
+    <string name="satellites_retry_soon" translation_description="Shown instead of a Refresh button when satellite data was just requested and cannot be requested again for a few minutes.">请几分钟后重试</string>
+    <string name="satellites_retry_within_hour" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for up to an hour.">请一小时内重试</string>
+    <string name="satellites_retry_hours" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for several hours.">请几小时后重试</string>
+    <string name="satellites_retry_tomorrow" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again until the next day.">明天再试</string>
+    <string name="satellites_retry_days" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for several days.">几天后重试</string>
+    <string name="layer_grid" translation_description="Toggle label for the layer showing the right ascension / declination grid.">天球网格</string>
     <string name="layer_horizon">水平线</string>
     <string name="layer_ecliptic">黄道</string>
     <string name="layer_sky_gradient">天空梯度</string>
+
+    <!-- Map screen controls. -->
+    <string name="layers_sheet_title" translation_description="Title of the bottom sheet listing sky map layers the user can show or hide.">图层</string>
+    <string name="layers_group_objects" translation_description="Layers-sheet group header for layers that draw sky objects (stars, planets, deep-sky objects).">天体</string>
+    <string name="layers_group_reference" translation_description="Layers-sheet group header for reference elements drawn over the sky (coordinate grid, horizon, ecliptic).">参考</string>
+    <string name="layers_group_display" translation_description="Layers-sheet group header for display settings that change how the sky is rendered rather than what is drawn.">显示</string>
+    <string name="show_layers" translation_description="Accessibility description and label for the button opening the layer-visibility sheet, which holds the layers that do not fit on the rail plus display options.">更多图层和选项</string>
+    <string name="more_button" translation_description="Accessibility label and tooltip for the map-screen button (three vertical dots) opening the overflow menu of further destinations such as Gallery and Settings.">更多选项</string>
     <string name="night_mode">夜间模式</string>
+    <string name="switch_to_manual" translation_description="Tooltip and accessibility label for the button that switches the map from auto (sensor-driven) mode to manual (drag) mode.">切换到手动模式</string>
+    <string name="switch_to_auto" translation_description="Tooltip and accessibility label for the button that switches the map from manual (drag) mode to auto (sensor-driven) mode.">切换到自动模式</string>
+    <string name="no_sensor_warning" translation_description="Warning shown when the device lacks the motion sensors needed to point the map at the sky automatically.">这台设备没有指南针或运动传感器，所以 Sky Map 无法跟随您指向的方向。请手动拖动地图。</string>
     <string name="no_sensor_warning_dismiss">确定</string>
+
+    <!-- The map HUD (map-hud.md, D65): the top-right pointing readout shown with the chrome. -->
+    <string name="hud_ra_label" translation_description="Map-HUD row label: right ascension of the point at the centre of the screen. Standard astronomy abbreviation; keep short.">赤经</string>
+    <string name="hud_dec_label" translation_description="Map-HUD row label: declination of the point at the centre of the screen. Standard astronomy abbreviation; keep short.">赤纬</string>
+    <string name="hud_alt_label" translation_description="Map-HUD row label: altitude (angle above the horizon) of the point at the centre of the screen. Keep short.">高度</string>
+    <string name="hud_az_label" translation_description="Map-HUD row label: azimuth (compass bearing) of the point at the centre of the screen. Keep short.">方位</string>
+    <string name="hud_fov_label" translation_description="Map-HUD row label: the field of view (how many degrees of sky the screen spans). Keep short.">视场</string>
+    <string name="hud_correction_label" translation_description="Map-HUD row label for the manual sensor-alignment correction the user set by dragging. Keep very short.">调整</string>
+    <string name="hud_ra_value" translation_description="Right ascension in the conventional hours-and-minutes notation, e.g. \'18h 38m\'. %1$d is hours (0-23), %2$02d is minutes (00-59).">%1$d时 %2$02d分</string>
+    <!-- tm:omitted name="hud_signed_degrees_value" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_azimuth_value" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_fov_value" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_fov_value_fine" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_fov_value_finest" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_correction_value" reason="identical_to_source" -->
+    <string name="hud_correction_reset" translation_description="Accessibility label for the small button that clears the manual sensor-alignment correction back to zero.">重置校准</string>
+    <string name="hud_alignment_reset_message" translation_description="Snackbar confirming the sensor-alignment correction was cleared; shown with an Undo action.">校准已重置</string>
+    <string name="hud_fov_locked" translation_description="Accessibility label for the small lock icon shown next to the field-of-view readout while the camera controls the zoom in through-camera mode.">缩放已锁定到相机</string>
+
+    <string name="layer_hud" translation_description="Layers-sheet Display toggle that shows the heads-up readout of where the phone is pointing (compass direction and altitude) over the star map.">指向读数</string>
+
+    <!-- Through-camera (AR) mode (camera-ar-mode.md, D64). -->
+    <string name="layer_camera" translation_description="Layers-sheet Display toggle that shows the live rear-camera image behind the star map, so the drawn sky overlays the real one.">穿透相机模式</string>
+    <string name="layer_camera_needs_sensors" translation_description="Subtitle explaining why the through-camera toggle is disabled: the device has no usable motion sensors, and the mode needs the map to follow where the phone points.">需要此设备不具备的运动传感器</string>
+    <string name="ar_auto_mode_snackbar" translation_description="Snackbar shown when turning on through-camera mode switched the map from manual dragging back to automatic sensor pointing.">相机视图已开启自动模式</string>
+    <string name="ar_permission_denied" translation_description="Snackbar shown when the user declined the camera permission that through-camera mode needs.">穿透相机模式需要相机权限</string>
     <string name="ar_permission_settings_action">设置</string>
+    <string name="ar_exposure_slider" translation_description="Accessibility label for the slider adjusting the camera\'s exposure compensation while through-camera mode is on.">相机曝光</string>
+    <string name="ar_alignment_adjusted_message" translation_description="Snackbar shown after the user drags the star map to align it with the camera image; shown with an Undo action that reverts the whole drag.">地图校准已调整</string>
+    <string name="ar_dimmer_slider" translation_description="Accessibility label for the slider dimming the camera image behind the star map while through-camera mode is on.">相机亮度调节</string>
+    <!-- tm:omitted name="ar_iso_slider_label" reason="identical_to_source" -->
+    <string name="ar_iso_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual ISO sensitivity in through-camera mode.">相机 ISO</string>
+    <string name="ar_shutter_slider_label" translation_description="Very short label for the temporary developer slider setting the camera\'s manual shutter (exposure) time in through-camera mode.">快门</string>
+    <string name="ar_shutter_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual shutter (exposure) time in through-camera mode.">相机快门时间</string>
+    <string name="share_button" translation_description="Overflow-menu row that captures the current sky view as an image and opens the system share sheet.">分享星空</string>
+    <string name="share_chooser_title" translation_description="Title of the system share sheet when sharing a captured sky image.">分享星空</string>
+    <string name="share_invitation" translation_description="Short invitation stamped on the footer of shared sky images, above the store link.">看看你正在看什么 — 免费获取 Sky Map</string>
+    <string name="share_text" translation_description="Text accompanying a shared sky image in apps that accept both an image and text. %1$s is the app-store link.">看看你正在看什么 — 免费获取 Sky Map：%1$s</string>
+    <!-- tm:omitted name="share_store_link" reason="identical_to_source" -->
+    <string name="share_layout_overlay" translation_description="Caption of the share-layout choice that draws the star map over the camera photo, as seen on screen.">叠加</string>
+    <string name="share_layout_side_by_side" translation_description="Caption of the share-layout choice that puts the camera photo and the star map next to each other.">并排</string>
+    <string name="share_shutter_button" translation_description="Accessibility label for the round shutter button that captures and shares the current through-camera view.">分享此视图</string>
+    <string name="share_failed_message" translation_description="Snackbar shown when capturing the sky image for sharing failed.">无法捕捉星空 — 请重试</string>
+    <string name="ar_exposure_auto" translation_description="Readout shown when a manual camera exposure slider sits at its automatic position.">自动</string>
+    <string-array name="hud_cardinal_directions" translation_description="The sixteen compass-point abbreviations, clockwise from north, used as the azimuth suffix in the map HUD (e.g. N, NNE, NE...). Translate to the locale\'s conventional compass abbreviations.">
+        <item>北</item>
+        <item>北偏东</item>
+        <item>东北</item>
+        <item>东偏北</item>
+        <item>东</item>
+        <item>东偏南</item>
+        <item>东南</item>
+        <item>东南偏南</item>
+        <item>南</item>
+        <item>西南偏南</item>
+        <item>西南</item>
+        <item>西南偏西</item>
+        <item>西</item>
+        <item>西北偏西</item>
+        <item>西北</item>
+        <item>西北偏北</item>
+    </string-array>
+
+    <!-- Time travel: entry button, dialog, and the player bar shown while travelling. -->
     <string name="time_travel_button">时间旅行</string>
     <string name="time_travel_title">时间旅行</string>
+    <string name="time_travel_visiting" translation_description="Readout in the time travel dialog showing the currently chosen destination date and time. %1$s is the formatted date and time.">正在访问：%1$s</string>
+    <string name="time_travel_pick_date" translation_description="Button in the time travel dialog that opens a date picker.">设置日期</string>
+    <string name="time_travel_pick_time" translation_description="Button in the time travel dialog that opens a time picker.">设置时间</string>
+    <string name="time_travel_select_event" translation_description="Placeholder hint for the dropdown list of popular astronomical events in the time travel dialog.">选择热门事件…</string>
+    <string name="time_travel_go" translation_description="Button that starts time travel to the chosen date.">前往</string>
     <string name="time_travel_from_now">从现在开始</string>
     <string name="time_travel_ok">确定</string>
     <string name="time_travel_cancel">取消</string>
+    <!-- tm:omitted name="time_travel_slower" reason="identical_to_source" -->
+    <!-- tm:omitted name="time_travel_pause" reason="identical_to_source" -->
+    <!-- tm:omitted name="time_travel_faster" reason="identical_to_source" -->
+    <string name="time_travel_return" translation_description="Player button that ends time travel and returns the map to the present.">现在</string>
+
+    <!-- Time travel playback-rate labels (v1 wording). -->
     <string name="time_travel_second_speed">穿梭速率 &gt; 1 秒/秒</string>
     <string name="time_travel_minute_speed">穿梭速率 &gt; 1 分钟/秒</string>
     <string name="time_travel_10minute_speed">穿梭速率 &gt; 10 分钟/秒</string>
@@ -58,6 +191,9 @@
     <string name="time_travel_hour_speed_back">穿梭速率 &lt; 1 小时/秒</string>
     <string name="time_travel_day_speed_back">穿梭速率 &lt; 1 天/秒</string>
     <string name="time_travel_week_speed_back">穿梭速率 &lt; 1 周/秒</string>
+
+    <!-- Popular events in the time travel dialog (timestamps live in TimeTravelEvents.kt). -->
+    <string name="time_travel_now" translation_description="Time travel picker entry that resets the destination to the present moment.">现在</string>
     <string name="time_travel_next_sunset">第二天傍晚日落</string>
     <string name="time_travel_next_sunrise">第二天日出</string>
     <string name="time_travel_next_full_moon">下一次满月</string>
@@ -69,6 +205,7 @@
     <string name="time_travel_mars_uranus_2026">火星-天王星接近，2026年7月4日</string>
     <string name="time_travel_solar_eclipse_2026">日全食，2026年8月12日</string>
     <string name="time_travel_perseids_2026">英仙座流星雨，2026年8月12-13日</string>
+    <string name="time_travel_lunar_eclipse_aug_2026" translation_description="Name of an astronomical event in the time travel picker. Keep the date format suitable for your locale.">2026年8月28日，月偏食</string>
     <string name="time_travel_jupiter_occultation_2026">月掩木星，2026年10月6日</string>
     <string name="time_travel_geminids_2026">双子座流星雨，2026年12月13-14日</string>
     <string name="time_travel_supermoon_2026">圣诞前夜超级月亮，2026年12月24日</string>
@@ -77,7 +214,11 @@
     <string name="time_travel_apollo_11">阿波罗 11 号登月</string>
     <string name="time_travel_jupiter_saturn_2020">2020 年木星土星合</string>
     <string name="sun_wont_set_message">在未来 24 小时内太阳不会在您当前所在的位置落下。</string>
+    <string name="time_travel_start_message" translation_description="Toast message when time travel starts toward a chosen destination. %1$s is the formatted destination date and time.">正在穿越时空到 %1$s ...</string>
     <string name="time_travel_close_message">回到现在...</string>
+
+    <!-- Location management. -->
+    <string name="location_button" translation_description="Button on the map screen that opens the location management sheet">位置</string>
     <string name="location_management_title">您的位置</string>
     <string name="location_source_auto">自动</string>
     <string name="location_source_manual">手动</string>
@@ -90,6 +231,11 @@
     <string name="location_set_toast">位置已设置为 %1$s</string>
     <string name="location_long_lat">经度：%1$.2f，纬度：%2$.2f</string>
     <string name="location_map_unavailable">地图不可用</string>
+    <string name="location_map_content_description" translation_description="Accessibility description of the static map image showing the current location of the user">您当前位置的地图</string>
+    <string name="snackbar_action_undo" translation_description="Snackbar action button that reverses the change the snackbar reports, e.g. re-enabling horizon auto-leveling">撤消</string>
+    <string name="snackbar_action_open" translation_description="Snackbar action button that opens the screen the snackbar refers to, e.g. the compass calibration screen">打开</string>
+    <string name="label_size_hint_message" translation_description="Snackbar shown once, the first time the user zooms in a long way. Explains that the text labels naming stars and other objects stay the same size however far you zoom, and that their size is changed in the app\'s Settings screen instead. Shown with an action button that opens Settings.">标签大小不随缩放改变 — 请在“设置”中调整</string>
+    <string name="label_size_hint_action" translation_description="Action button on the label size snackbar; opens the app\'s Settings screen, where the user can change how large the sky labels are">设置</string>
     <string name="location_permission_dialog_title">需要位置信息</string>
     <string name="location_permission_dialog_message">Sky Map 需要您的近似位置以显示正确的夜空。您可以授予权限、手动输入您的位置，或稍后决定。如果您稍后决定，地图将不准确，直到您的位置已设置。</string>
     <string name="location_permission_grant">授予权限</string>
@@ -111,14 +257,35 @@
     <string name="location_geocoder_offline">无网络 — 请直接输入坐标</string>
     <string name="location_invalid_latitude">纬度必须介于 −90 和 90 之间</string>
     <string name="location_invalid_longitude">经度必须介于 −180 和 180 之间</string>
+    <!-- tm:omitted name="location_coordinate_format" reason="identical_to_source" -->
+
+    <!-- Object info card -->
+    <string name="object_info_image_credit" translation_description="Attribution line under the object\'s photo; %1$s is the credited source, e.g. NASA/ESA">图片：%1$s</string>
+    <string name="object_info_fun_fact" translation_description="An interesting trivia line on the object info card; %1$s is the fact text">有趣的事实：%1$s</string>
     <string name="object_info_distance">距离：</string>
     <string name="object_info_size">大小：</string>
     <string name="object_info_mass">质量：</string>
+    <string name="object_info_spectral_class" translation_description="Label for a star\'s spectral classification (e.g. G2V) on the info card">光谱类型：</string>
     <string name="object_info_magnitude">星等：</string>
+    <string name="object_info_rises" translation_description="Label on the info card for the time the object next rises above the horizon at the user\'s location">升起：</string>
+    <string name="object_info_sets" translation_description="Label on the info card for the time the object next sets below the horizon at the user\'s location">落下：</string>
+    <string name="object_info_always_above_horizon" translation_description="Info-card line shown for a circumpolar object that never sets at the user\'s location">在您所在位置始终位于地平线上方</string>
+    <string name="object_info_always_below_horizon" translation_description="Info-card line shown for an object that never rises at the user\'s location">在您所在位置始终位于地平线下方</string>
+    <string name="object_info_also_known_as" translation_description="Label on the info card above the object\'s alternative names (aliases and catalog designations), e.g. M31 and NGC 224">也称为：</string>
+    <string name="object_info_see_also" translation_description="Heading above links to related celestial objects on the info card">另请参阅</string>
     <string name="object_info_find_in_sky">在星空中查找</string>
+    <string name="object_info_close" translation_description="Button that closes the object info card">关闭</string>
     <string name="object_info_tap_to_close">点击关闭</string>
+
+    <!-- Image gallery -->
+    <string name="gallery_button" translation_description="Map-screen menu item that opens a gallery of photographs of celestial objects. Not the user\'s own photos - these are catalog images from sources such as NASA and ESA.">星空图库</string>
+    <string name="gallery_title" translation_description="Title of the screen showing a gallery of photographs of celestial objects. Not the user\'s own photos - these are catalog images from sources such as NASA and ESA.">星空图库</string>
+    <string name="gallery_back" translation_description="Content description for the back arrow leaving the gallery screen">返回</string>
+
+    <!-- Settings screen (v1 wording where a v1 string existed) -->
     <string name="settings_button">设置</string>
     <string name="settings_title">设置</string>
+    <string name="settings_back" translation_description="Content description for the back arrow leaving the settings screen">返回</string>
     <string name="settings_ok">确定</string>
     <string name="settings_cancel">取消</string>
     <string name="settings_section_controls">控制</string>
@@ -127,26 +294,68 @@
     <string name="settings_section_other">其他</string>
     <string name="enable_analytics">传送使用统计资料</string>
     <string name="enable_analytics_desc">传送匿名资料给Google Analytics 以改善天象图</string>
+    <string name="settings_diagnostics_summary" translation_description="Summary for the settings row that opens the diagnostics screen, which shows technical sensor, location and performance readouts useful when reporting a problem">传感器、位置和性能详情</string>
     <string name="settings_tap_to_identify">点击时显示信息</string>
     <string name="settings_tap_to_identify_summary">点击天体对象以了解它们</string>
     <string name="settings_tap_in_auto_mode">自动模式下的信息卡</string>
     <string name="settings_tap_in_auto_mode_summary">在自动（传感器）模式下点击天体时也显示信息卡</string>
     <string name="settings_auto_level_horizon">自动水平地平线</string>
+    <string name="auto_level_on_toast" translation_description="Brief confirmation shown when a double tap turns horizon auto-leveling on in manual mode">地平线自动校平已开启</string>
+    <string name="auto_level_off_toast" translation_description="Brief confirmation shown when a double tap turns horizon auto-leveling off in manual mode">地平线自动校平已关闭</string>
     <string name="settings_auto_level_horizon_summary">在手动模式下，抬起手指后地平线会逐渐恢复水平</string>
+    <string name="settings_font_size" translation_description="Preference title: change the size of the text labels naming stars and other objects drawn on the sky">天空标签大小</string>
+    <string name="settings_font_size_summary" translation_description="Help to go along with the sky label size preference. Explains that this size is fixed and does not change as the user zooms the map in or out.">标签文本在任何缩放级别下都保持此大小</string>
+    <string name="settings_font_size_small" translation_description="Smallest font size">小</string>
+    <string name="settings_font_size_medium" translation_description="Normal font size">中</string>
+    <string name="settings_font_size_large" translation_description="Large font size">大</string>
+    <string name="settings_font_size_extra_large" translation_description="Largest font size">超大</string>
     <string name="settings_auto_dimness">自动屏幕变暗</string>
+    <string name="settings_auto_dimness_summary" translation_description="Summary for the night-mode screen dimming preference">夜间模式屏幕调暗程度</string>
+    <string name="settings_auto_dimness_system" translation_description="Screen dimming option: leave brightness on the system setting">系统默认</string>
+    <string name="settings_auto_dimness_dim" translation_description="Screen dimming option: dimmest screen setting">最暗</string>
+    <string name="settings_auto_dimness_classic" translation_description="Screen dimming option: the hand-tuned brightness Sky Map used for its first 15 years">经典</string>
     <string name="settings_sky_gradient">显示天空渐变</string>
     <string name="settings_sky_gradient_summary">在太阳附近将天空着色为蓝色，在相反方向着色为深色</string>
+    <string name="settings_disable_gyro" translation_description="Preference title for switching from the gyroscope to the legacy compass + accelerometer sensor pipeline">使用旧版传感器</string>
+    <string name="settings_disable_gyro_summary" translation_description="Explanation of the legacy sensors preference and when to use it">使用指南针和加速计（而非陀螺仪）来指向地图。如果地图漂移或您设备的陀螺仪出现异常，请尝试此选项；没有陀螺仪的设备会自动使用这些传感器。</string>
     <string name="settings_sensor_speed">传感器速度</string>
+    <string name="settings_sensor_speed_slow" translation_description="Slow sensor speed">慢</string>
+    <string name="settings_sensor_speed_standard" translation_description="Normal sensor speed">中</string>
+    <string name="settings_sensor_speed_fast" translation_description="Fast sensor speed">快</string>
     <string name="settings_sensor_damping">阻尼</string>
+    <string name="settings_sensor_damping_standard" translation_description="Low sensor damping factor - this will make the app jittery">跳动</string>
+    <string name="settings_sensor_damping_high" translation_description="Medium sensor damping factor - this will make the app slightly jittery">中</string>
+    <string name="settings_sensor_damping_extra_high" translation_description="Extra high sensor damping factor">适中</string>
+    <string name="settings_sensor_damping_really_high" translation_description="Really high sensor damping factor - this will make the app sluggish">迟滞</string>
+    <string name="settings_classic_sensors_only" translation_description="Summary noting a sensor preference only applies to the legacy non-gyroscope sensor path">仅在使用旧版传感器时适用</string>
     <string name="settings_reverse_magnetic_z">反向磁Z轴</string>
     <string name="settings_magnetic_correction">使用磁力修正</string>
+    <string name="settings_magnetic_correction_summary" translation_description="Summary for the magnetic correction preference">校正指南针以消除磁北和真北之间的差异</string>
     <string name="settings_view_direction">视图方向</string>
+    <string name="settings_view_direction_summary" translation_description="Explanation of the view direction preference, covering both landscape rotation and pointer modes">将地平线旋转90度（适用于强制横屏的设备），或使用指针模式让屏幕显示手机顶部所指的方向</string>
+    <string name="settings_view_direction_standard" translation_description="Normal viewing direction">普通</string>
+    <string name="settings_view_direction_rotate90" translation_description="View direction option that rotates the screen by 90 degrees">旋转地平线</string>
+    <string name="settings_view_direction_telescope" translation_description="View direction option that shows the sky as pointed at by the long edge of the phone">指针模式</string>
+
+    <!-- tm:omitted name="support_email" reason="identical_to_source" -->
     <string name="diagnostics_button">诊断</string>
     <string name="diagnostics_title">诊断</string>
+    <string name="diagnostics_share" translation_description="Accessibility label for the diagnostics screen button that emails these details to the developers">发送给开发者</string>
+    <string name="diagnostics_share_subject" translation_description="Subject line of the email a user sends from the diagnostics screen">Sky Map 诊断报告</string>
+    <string name="diagnostics_report_header" translation_description="First line of the emailed diagnostics report, telling the user where to type their problem description. Keep it on one line.">--- Sky Map 诊断。请在此行上方描述问题。 ---</string>
     <string name="diagnostics_section_general">常规</string>
     <string name="diagnostics_device">设备</string>
+    <!-- tm:omitted name="diagnostics_phone_format" reason="identical_to_source" -->
     <string name="diagnostics_android_version">Android 版本</string>
     <string name="diagnostics_sky_map_version">Sky Map 版本</string>
+    <!-- tm:omitted name="diagnostics_sky_map_version_format" reason="identical_to_source" -->
+    <string name="diagnostics_section_graphics" translation_description="Section heading in the diagnostics screen for graphics/GPU information">图形</string>
+    <string name="diagnostics_gl_renderer" translation_description="Row label in the diagnostics screen for the name of the graphics processor (GPU) drawing the sky">渲染器</string>
+    <!-- tm:omitted name="diagnostics_gl_version" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_gl_version_format" reason="identical_to_source" -->
+    <string name="diagnostics_gl_limits" translation_description="Row label in the diagnostics screen for graphics hardware limits (maximum texture size, supported line widths and point sizes)">GL 限制</string>
+    <string name="diagnostics_gl_limits_format" translation_description="Format for the GL limits row: maximum texture size in pixels, then the supported line width and point size ranges. \'tex\' abbreviates texture. %1$d is texture size, %2$s is the line width range, %3$s is the point size range.">纹理 %1$d，线 %2$s，点 %3$s</string>
+    <string name="diagnostics_gl_unavailable" translation_description="Value shown in the diagnostics Graphics rows before the sky map has drawn, when the graphics details are not known yet">暂不可用</string>
     <string name="diagnostics_section_sensors">传感器</string>
     <string name="diagnostics_accelerometer">加速度计</string>
     <string name="diagnostics_compass">指南针</string>
@@ -159,23 +368,43 @@
     <string name="diagnostics_location_permission">位置权限</string>
     <string name="diagnostics_permission_granted">已授予</string>
     <string name="diagnostics_permission_denied">已拒绝</string>
+    <!-- tm:omitted name="diagnostics_gps" reason="identical_to_source" -->
     <string name="diagnostics_no_gps">无GPS</string>
     <string name="diagnostics_enabled">已启用</string>
     <string name="diagnostics_disabled">已禁用</string>
     <string name="diagnostics_permission_disabled">权限已禁用</string>
     <string name="diagnostics_location">位置（纬度、经度）</string>
     <string name="diagnostics_location_format">%1$.4f°，%2$.4f° (%3$s)</string>
+    <string name="diagnostics_location_unset" translation_description="Location status shown in diagnostics when no location has been set yet">未设置</string>
     <string name="diagnostics_location_acquiring">正在获取…</string>
+    <string name="diagnostics_location_hardware_unavailable" translation_description="Location status shown in diagnostics when no location hardware is available">无定位硬件</string>
     <string name="diagnostics_pointing">指向快照</string>
+    <!-- tm:omitted name="diagnostics_dec_format" reason="identical_to_source" -->
     <string name="diagnostics_magnetic_correction">磁偏角修正</string>
+    <string name="diagnostics_alignment_adjustment" translation_description="Diagnostics row label for the manual sky-alignment correction the user set by dragging in through-camera mode.">校准调整</string>
+    <string name="diagnostics_alignment_format" translation_description="Value of the sky-alignment correction: azimuth then altitude offset in degrees, each signed with one decimal. \'az\' and \'alt\' abbreviate azimuth and altitude.">%1$+.1f° 方位角, %2$+.1f° 高度角</string>
+    <!-- tm:omitted name="diagnostics_magnetic_correction_format" reason="identical_to_source" -->
+    <string name="diagnostics_east" translation_description="Compass direction shown for an eastward magnetic correction">东</string>
+    <string name="diagnostics_west" translation_description="Compass direction shown for a westward magnetic correction">西</string>
     <string name="diagnostics_local_datetime">本地日期时间</string>
     <string name="diagnostics_utc_datetime">世界协调时日期时间</string>
     <string name="diagnostics_section_network">网络</string>
     <string name="diagnostics_connection">连接</string>
+    <string name="diagnostics_section_satellites" translation_description="Section heading in the diagnostics screen for satellite orbital-data status">卫星</string>
+    <string name="diagnostics_satellite_data" translation_description="Row label in the diagnostics screen for the age and count of cached satellite orbital data">轨道数据</string>
+    <string name="diagnostics_satellite_data_none" translation_description="Row value in the diagnostics screen when no satellite orbital data has been downloaded yet">未下载</string>
+    <string name="diagnostics_satellite_data_format" translation_description="Row value in the diagnostics screen showing how many satellites are cached and how many days old the data is. %1$d is a count, %2$.1f is a number of days">%1$d 颗卫星，%2$.1f 天前</string>
+    <string name="diagnostics_satellite_last_fetch" translation_description="Row label in the diagnostics screen for the result of the most recent attempt to download satellite orbital data">上次获取</string>
+    <string name="diagnostics_satellite_never_fetched" translation_description="Row value in the diagnostics screen when satellite orbital data has never been downloaded">从未</string>
+    <string name="diagnostics_satellite_circuit_open" translation_description="Row label in the diagnostics screen for when satellite downloads are paused after repeated server errors">下载已暂停</string>
+    <string name="diagnostics_satellite_circuit_open_format" translation_description="Row value in the diagnostics screen showing when paused satellite downloads will resume and how many failures caused the pause. %1$s is a date and time, %2$d is a count">直到 %1$s (%2$d 次失败)</string>
+    <string name="diagnostics_satellite_force_fetch" translation_description="Label on a debug-only button in the diagnostics screen that downloads satellite orbital data immediately">立即获取卫星数据 (调试)</string>
     <string name="diagnostics_connected">已连接</string>
     <string name="diagnostics_disconnected">已断开连接</string>
     <string name="diagnostics_wifi">(wifi)</string>
     <string name="diagnostics_cell">(蜂窝)</string>
+
+    <!-- Compass calibration screen (slice 15) -->
     <string name="calibration_button">校准</string>
     <string name="calibration_heading_user">改进您的对齐</string>
     <string name="calibration_heading_warning">需要硬件校准</string>
@@ -186,23 +415,145 @@
     <string name="calibration_accuracy_high">校准：良好</string>
     <string name="calibration_accuracy_no_contact">校准：无接触</string>
     <string name="calibration_do_not_show_again">不再显示</string>
+    <string name="calibration_what_to_do" translation_description="Information for the user on how to calibrate the compass when the screen auto-opens. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[您的手机指南针传感器报告校准不佳。画8字形运动（<a href="%s">观看演示</a>）会提示您手机的硬件重置其指南针传感器 — Sky Map 无法控制此过程。<br/><br/><blockquote><b>已校准不代表准确。</b>画8字形手势有助于重置传感器，但它无法消除附近金属物体、汽车仪表盘或手机壳的干扰。如果校准后地图仍然不准确，最可能的原因是这些外部来源 — 而非 Sky Map。</blockquote>请移至远离金属的开阔区域，然后重试。]]></string>
+    <string name="calibration_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they open the calibration screen. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[您的手机正在报告其指南针校准状态，如上所示。<br/><br/>如果需要，请执行“8字形”动作（<a href="%s">观看演示</a>），以促使您手机的硬件重新校准其指南针传感器。<br/><br/><blockquote><b>重要提示：</b>校准有助于传感器内部重置。这并不意味着指南针一定准确！局部磁场干扰（金属物体、汽车仪表盘、手机壳）仍然可能导致您手机的指南针向 Sky Map 发送不准确的读数。</blockquote><b>如果地图未正确显示位置，问题很可能出在您的手机上——而不是 Sky Map！</b>]]></string>
     <string name="calibration_low_accuracy_toast">您手机的指南针精度较低</string>
+    <string name="calibration_complete_toast" translation_description="Toast shown when the compass reaches high accuracy and the auto-opened calibration screen closes itself">传感器精度高</string>
+
+    <!-- Startup routing: EULA, warm welcome, What's New (slice 16) -->
     <string name="eula_title">服务条款</string>
     <string name="dialog_accept">接受</string>
     <string name="dialog_decline">否</string>
     <string name="dialog_ok_button">确定</string>
+
     <string name="whats_new_dialog_title">有什么新功能</string>
+    <string name="whats_new_version_heading" translation_description="Heading above the list of new features. %1$s is the app version name">%1$s 版本新增功能</string>
+
+    <!-- Warm welcome (onboarding pager, slice 16) -->
     <string name="warm_welcome_slide1_title">探索宇宙</string>
+    <string name="warm_welcome_slide1_desc" translation_description="Description for the first slide of the Warm Welcome onboarding, shown under a guided tour of the map controls">使用左侧图层筛选恒星、星座、行星等。右下角的按钮可搜索天空、穿越时间并切换显示模式。随时点击天空可隐藏或显示控件。</string>
     <string name="warm_welcome_slide2_title">导航星空</string>
+    <string name="warm_welcome_slide2_desc" translation_description="Description for the second slide of the Warm Welcome onboarding. Please do not change the &lt; and &gt; markup"><![CDATA[在<b>自动模式</b>下，举起手机即可环顾四周；或轻触切换到<b>手动模式</b>，并通过滑动和双指缩放来探索。]]></string>
+    <string name="warm_welcome_slide2_info_desc" translation_description="Description about info cards on the second slide of the Warm Welcome onboarding">轻触任何带标签的物体以打开一个像这样的信息卡，其中包含照片、趣味知识和天体详情。</string>
     <string name="warm_welcome_card_name">蟹状星云</string>
+    <string name="warm_welcome_card_description" translation_description="Description of the Crab Nebula on the sample info card on the second Warm Welcome slide">蟹状星云是金牛座中的一个超新星遗迹，是公元1054年中国天文学家记录的一次恒星爆炸的产物。</string>
+    <string name="warm_welcome_card_fun_fact" translation_description="Fun fact about the Crab Nebula on the sample info card on the second Warm Welcome slide">蟹状星云包含一颗每秒旋转30次的脉冲星，它是那颗爆发恒星坍缩后的核心！</string>
+    <string name="warm_welcome_card_distance" translation_description="Distance to the Crab Nebula on the sample info card on the second Warm Welcome slide">6,500 光年</string>
+    <string name="warm_welcome_card_size" translation_description="Size of the Crab Nebula on the sample info card on the second Warm Welcome slide">宽 11 光年</string>
     <string name="warm_welcome_slide3_title">传感器与校准</string>
     <string name="warm_welcome_slide3_desc">Sky Map 使用您手机的传感器来对准星空。</string>
+    <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message on the third Warm Welcome slide when sensors are missing. Please do not change the &lt; and &gt; markup"><![CDATA[您的设备似乎缺少自动跟踪所需的传感器。别担心—您仍然可以在<b>手动模式</b>下探索整个宇宙！]]></string>
+    <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration advice on the third Warm Welcome slide. Please do not change the &lt; and &gt; markup"><![CDATA[为了保持准确，请不时地将手机<b>画8字形</b>晃动。]]></string>
     <string name="warm_welcome_skip">跳过</string>
     <string name="warm_welcome_next">下一步</string>
     <string name="warm_welcome_finish">启动！</string>
     <string name="warm_welcome_sensor_ok">正常</string>
     <string name="warm_welcome_sensor_missing">缺失</string>
+
+    <!-- Help dialog (slice 16) -->
     <string name="help_button">帮助</string>
     <string name="tutorial_button">教程</string>
     <string name="help_dialog_title">帮助</string>
+    <string name="help_version" translation_description="Version line at the top of the Help screen. %1$s is the app version name">版本 %1$s</string>
+    <string name="whats_new_button" translation_description="Map-screen menu item that opens the What's New and Credits screen">新功能</string>
+    <string name="whats_new_screen_title" translation_description="Title of the screen showing the release notes and the credits">新功能与鸣谢</string>
+
+    <!-- The deep-sky symbol key at the foot of the Help screen. -->
+    <string name="help_symbol_key_title" translation_description="Heading of the Help section explaining the map symbols used for deep-sky objects">地图符号</string>
+    <string name="help_symbol_key_intro" translation_description="Introductory sentence for the map-symbol key in Help">深空天体和流星雨用符号标记，显示其类型：</string>
+    <string name="symbol_key_galaxy" translation_description="Symbol-key label: the marker used for galaxies">星系</string>
+    <string name="symbol_key_open_cluster" translation_description="Symbol-key label: the marker used for open star clusters">疏散星团</string>
+    <string name="symbol_key_globular_cluster" translation_description="Symbol-key label: the marker used for globular star clusters">球状星团</string>
+    <string name="symbol_key_diffuse_nebula" translation_description="Symbol-key label: the marker used for diffuse nebulae">弥散星云</string>
+    <string name="symbol_key_planetary_nebula" translation_description="Symbol-key label: the marker used for planetary nebulae">行星状星云</string>
+    <string name="symbol_key_supernova_remnant" translation_description="Symbol-key label: the marker used for supernova remnants">超新星遗迹</string>
+    <string name="symbol_key_asterism" translation_description="Symbol-key label: the marker used for asterisms and star clouds">星群或星云</string>
+    <string name="symbol_key_other" translation_description="Symbol-key label: the marker used for deep-sky objects of any other type">其他深空天体</string>
+    <string name="symbol_key_meteor_radiant" translation_description="Symbol-key label: the marker for the point in the sky meteors of a shower appear to come from">流星雨辐射点</string>
+    <string name="symbol_key_meteor_radiant_peak" translation_description="Symbol-key label: the brighter marker used when a meteor shower is near its peak activity">流星雨接近高峰期</string>
+
+    <!-- Moon-phase home-screen widget (D69). -->
+    <string name="moon_widget_label" translation_description="Name of the moon-phase home-screen widget, shown in the launcher\'s widget picker">月相</string>
+    <string name="moon_widget_description" translation_description="Description of the moon-phase widget, shown under its preview in the launcher\'s widget picker">月球的月相、亮度以及升落时间，每日更新。</string>
+    <string name="moon_widget_illumination" translation_description="Widget line showing how much of the Moon\'s disc is lit; %1$d is a percentage number">%1$d%% 已照亮</string>
+    <string name="moon_widget_rise_time" translation_description="Widget fragment showing today\'s moonrise time; %1$s is a clock time like 17:42">升起 %1$s</string>
+    <string name="moon_widget_set_time" translation_description="Widget fragment showing today\'s moonset time; %1$s is a clock time like 03:12">落下 %1$s</string>
+    <string name="moon_phase_new" translation_description="Name of the lunar phase when the Moon is fully dark">新月</string>
+    <string name="moon_phase_waxing_crescent" translation_description="Name of the lunar phase between new moon and first quarter">娥眉月</string>
+    <string name="moon_phase_first_quarter" translation_description="Name of the lunar phase when half the disc is lit and growing">上弦月</string>
+    <string name="moon_phase_waxing_gibbous" translation_description="Name of the lunar phase between first quarter and full moon">盈凸月</string>
+    <string name="moon_phase_full" translation_description="Name of the lunar phase when the disc is fully lit">满月</string>
+    <string name="moon_phase_waning_gibbous" translation_description="Name of the lunar phase between full moon and last quarter">亏凸月</string>
+    <string name="moon_phase_last_quarter" translation_description="Name of the lunar phase when half the disc is lit and shrinking">下弦月</string>
+    <string name="moon_phase_waning_crescent" translation_description="Name of the lunar phase between last quarter and new moon">残月</string>
+    <string name="moon_widget_promo_title" translation_description="Title of the row on the Moon\'s info card offering to add the moon-phase widget to the home screen">将月亮留在您的主屏幕上</string>
+    <string name="moon_widget_promo_subtitle" translation_description="Subtitle of the row offering the moon-phase widget, summarizing what the widget shows">月相、亮度、升起时间，每日更新</string>
+    <string name="moon_widget_promo_add" translation_description="Button that adds the moon-phase widget to the home screen via the system dialog">添加小组件</string>
+    <string name="moon_widget_promo_dismiss" translation_description="Accessibility label for the button that permanently dismisses the widget offer row">关闭小组件建议</string>
+    <string name="moon_widget_pin_unsupported_title" translation_description="Title of the fallback dialog when the launcher cannot add widgets directly">从您的主屏幕添加小组件</string>
+    <string name="moon_widget_pin_unsupported_body" translation_description="Body of the fallback dialog explaining how to add the widget manually">您的启动器不支持从应用添加小部件。长按您的主屏幕，选择“小部件”，然后找到 Sky Map。</string>
+    <string name="moon_widget_pin_unsupported_ok" translation_description="Confirmation button of the manual widget-adding instructions dialog">知道了</string>
+    <string name="moon_widget_preview_illumination" translation_description="Representative illumination line shown in the widget picker\'s preview of the moon-phase widget">83% 已照亮</string>
+
+    <!-- Tonight's-sky and countdown home-screen widgets (D69 phase 2). -->
+    <string name="tonight_widget_label" translation_description="Name of the tonight\'s-sky home-screen widget, shown in the launcher\'s widget picker">今晚\'的天空</string>
+    <string name="tonight_widget_description" translation_description="Description of the tonight\'s-sky widget, shown under its preview in the launcher\'s widget picker">今晚\'的最佳景观：位置良好的行星、流星雨和月球事件，每日更新。</string>
+    <string name="tonight_widget_header" translation_description="Small header label on the tonight widget; %1$s is a short date like \'Wed 30 Jul\'">今晚 · %1$s</string>
+    <string name="tonight_widget_sun_times" translation_description="Header line on the tonight widget; %1$s is the sunset time, %2$s the time the sky becomes fully dark">日落 %1$s · 天黑 %2$s</string>
+    <string name="tonight_widget_sunset_only" translation_description="Header fragment when only the sunset time is known; %1$s is the sunset time">日落 %1$s</string>
+    <string name="tonight_well_placed" translation_description="Tonight-widget row: a planet is high in the sky and easy to observe; %1$s is the planet name, %2$s the time from which it is well placed">%1$s 从 %2$s 起位置良好</string>
+    <!-- tm:omitted name="tonight_trailing_direction" reason="identical_to_source" -->
+    <string name="tonight_shower_peak" translation_description="Tonight-widget row: a meteor shower reaches its annual peak tonight; %1$s is the shower name">%1$s 今晚达到高峰</string>
+    <string name="tonight_shower_days" translation_description="Tonight-widget row: a meteor shower peaks within a few days; %1$s is the shower name, %2$d the number of days">%1$s 在 %2$d 天内达到高峰</string>
+    <string name="tonight_dark_skies" translation_description="Small trailing note: the moon is dark, so viewing conditions are ideal">黑暗的天空</string>
+    <string name="tonight_trailing_moon" translation_description="Small trailing note: how much of the moon is lit; %1$d is a percentage">月亮 %1$d%%</string>
+    <string name="tonight_new_moon" translation_description="Tonight-widget row shown at new moon">新月 — 本月最黑暗的天空</string>
+    <string name="tonight_full_moon" translation_description="Tonight-widget row shown at full moon">今晚满月</string>
+    <string name="tonight_bright_moon" translation_description="Tonight-widget row warning that a bright moon washes out faint objects">明亮的月亮会掩盖微弱的物体</string>
+    <string name="tonight_lunar_eclipse_total" translation_description="Tonight-widget row: a total lunar eclipse is starting soon or under way">月全食</string>
+    <string name="tonight_lunar_eclipse_partial" translation_description="Tonight-widget row: a partial lunar eclipse is starting soon or under way">月偏食</string>
+    <string name="tonight_lunar_eclipse_penumbral" translation_description="Tonight-widget row: a penumbral lunar eclipse is starting soon or under way">半影月食</string>
+    <string name="tonight_quiet" translation_description="Tonight-widget line shown when nothing notable is visible tonight">今晚天空平静</string>
+    <string name="tonight_quiet_next" translation_description="Tonight-widget line under the quiet-night message; %1$s is an event name, %2$d the days until it">下一次：%1$s 在 %2$d 天后</string>
+    <string name="countdown_widget_label" translation_description="Name of the countdown home-screen widget, shown in the launcher\'s widget picker">天空倒计时</string>
+    <string name="countdown_widget_description" translation_description="Description of the countdown widget, shown under its preview in the launcher\'s widget picker">距离下一次流星雨高峰或月球事件的天数。</string>
+    <string name="countdown_days" translation_description="Unit label inside the countdown ring, under the number of days">天</string>
+    <string name="countdown_tonight" translation_description="Shown inside the countdown ring when the event is tonight (zero days left)">现在</string>
+    <string name="countdown_shower_peak" translation_description="Countdown-widget event name; %1$s is a meteor shower name">%1$s 极大</string>
+    <string name="countdown_new_moon_peak" translation_description="Countdown-widget note: the shower peaks near new moon, so skies will be dark">新月极大</string>
+    <string name="countdown_full_moon" translation_description="Countdown-widget event name for the next full moon">满月</string>
+    <string name="countdown_new_moon" translation_description="Countdown-widget event name for the next new moon">新月</string>
+    <string name="tonight_widget_preview_row" translation_description="Representative highlight row shown in the widget picker\'s preview of the tonight widget">木星在晚上 9:30 后位置极佳</string>
+    <!-- tm:omitted name="countdown_widget_preview_days" reason="identical_to_source" -->
+    <string name="countdown_widget_preview_name" translation_description="Representative event name shown in the widget picker\'s preview of the countdown widget">英仙座流星雨极大</string>
+
+    <!-- Sky-event notifications (D77). -->
+    <string name="settings_section_notifications" translation_description="Settings section header for notification preferences">通知</string>
+    <string name="settings_notifications_intro" translation_description="Introduction under the notifications settings header, stating how rarely the app notifies">Sky Map 仅在罕见的天文事件发生时发送通知，每天最多一次。所有通知默认关闭，直到您手动开启。</string>
+    <string name="settings_shower_alerts" translation_description="Preference title: notify on the evening a meteor shower reaches its annual peak">流星雨极大</string>
+    <string name="settings_shower_alerts_summary" translation_description="Explanation of the meteor-shower notification preference">每年约十几次，在极大之夜通知</string>
+    <string name="settings_tonight_digest" translation_description="Preference title: a single evening notification summarizing what\'s visible tonight">今晚星空摘要</string>
+    <string name="settings_tonight_digest_summary" translation_description="Explanation of the tonight-digest notification preference">日落后一份摘要，平静的夜晚跳过</string>
+    <string name="settings_notifications_blocked" translation_description="Warning row shown when the user enabled notifications in the app but blocked them at the system level">Sky Map 的通知已被阻止</string>
+    <string name="settings_notifications_blocked_action" translation_description="Hint under the blocked-notifications warning; tapping opens the system settings page">轻触以在系统设置中允许</string>
+    <string name="channel_showers_name" translation_description="Name of the meteor-shower notification channel, shown in the system\'s notification settings">流星雨极大</string>
+    <string name="channel_showers_description" translation_description="Description of the meteor-shower notification channel in the system\'s notification settings">每年约十几次，在极大之夜通知</string>
+    <string name="channel_digest_name" translation_description="Name of the tonight-digest notification channel, shown in the system\'s notification settings">今晚星空摘要</string>
+    <string name="channel_digest_description" translation_description="Description of the tonight-digest notification channel in the system\'s notification settings">一份傍晚摘要，平静的夜晚跳过</string>
+    <string name="notif_shower_title" translation_description="Title of the meteor-shower notification; %1$s is the shower name">今晚 %1$s 极大</string>
+    <string name="notif_shower_direction" translation_description="Notification sentence telling the user where to look; %1$s is a compass point like NE">午夜后最佳，朝 %1$s 方向看。</string>
+    <string name="notif_shower_dark_moon" translation_description="Notification sentence when the moon is dark during a meteor shower peak; %1$d is the expected meteors per hour">黑暗无月的夜空 — 远离城市灯光，每小时可观测到多达 %1$d 颗流星。</string>
+    <string name="notif_shower_bright_moon" translation_description="Notification sentence when a bright moon will interfere with a meteor shower; %1$d is the moon illumination percentage, %2$d the meteors per hour under ideal skies">%1$d%% 月光会冲淡较暗的流星 — 在理想天空下，每小时最多 %2$d 颗。</string>
+    <string name="notif_digest_title" translation_description="Title of the tonight\'s-sky digest notification">今晚值得一看</string>
+    <string name="notif_action_mute_showers" translation_description="Notification action button that opens the system toggle for the meteor-shower channel">静音流星雨</string>
+    <string name="time_travel_stopped">时间旅行已暂停</string>
+    <!-- Layers sheet: per-layer parameters (D87). -->
+    <string name="layer_param_disc_size">盘面大小</string>
+    <string name="layer_param_disc_size_true">真实比例</string>
+    <string name="layer_param_disc_size_true_desc">在任何缩放级别下，天空中都是真实大小。行星在放大前只是小点。</string>
+    <string name="layer_param_disc_size_glyphs">符号</string>
+    <string name="layer_param_disc_size_glyphs_desc">按天体实际大小而非视觉大小调整。在任何缩放级别下都易于查看。</string>
+    <string name="layer_param_disc_size_auto">稳定</string>
+    <string name="layer_param_disc_size_auto_desc">缩放时在屏幕上保持固定大小，然后切换到真实大小。</string>
+    <string name="layer_param_expand">显示 %1$s 的选项</string>
 </resources>

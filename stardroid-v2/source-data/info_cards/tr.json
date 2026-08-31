@@ -645,12 +645,22 @@
    "size": "83 ışık yılı genişliğinde",
    "image_credit": "NASA/ESA/Hubble"
   },
+  "dso/m100": {
+   "description": "Messier 100, Saçlı Koma takımyıldızında yer alan büyük tasarımlı bir sarmal galaksidir ve Başak Kümesi'nin en parlak üyelerinden biridir.",
+   "fun_fact": "M100 galaksisinde, en küçüğü 2020 yılında olmak üzere yedi süpernova gözlemlenmiştir; çok az galaksi bu kadar görkemli bir gösteri sunmuştur!",
+   "distance": "55 milyon ışık yılı",
+   "size": "166.000 ışık yılı genişliğinde"
+  },
   "dso/m101": {
    "description": "Pinwheel Galaksisi, Büyük Ayı takımyıldızında yer alan ve bilinen en büyük spiral galaksilerden biri olan yüz yüze spiral galaksidir.",
    "fun_fact": "Pinwheel Galaksisi bir trilyondan fazla yıldız içerir ve geçmiş galaksi etkileşimleri nedeniyle asimetrik spiral kolları vardır!",
    "distance": "21 milyon ışık yılı",
    "size": "170.000 ışık yılı genişliğinde",
    "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m102": {
+   "description": "Messier 102, Messier kataloğundaki çözülememiş büyük gizemdir; 1781 yılında kaydedilmiş ve varlığı kesin olarak hiçbir zaman belirlenememiş bir gök cismidir.",
+   "fun_fact": "Messier, M102 için hiçbir koordinat yayımlamamıştır ve meslektaşı Méchain daha sonra keşfi tamamen geri çekerek bunun sadece yanlışlıkla iki kez kaydedilmiş bir M101 olduğunu iddia etmiştir! NASA bunu İğ Galaksisi olan NGC 5866 ile özdeşleştirmektedir."
   },
   "dso/m103": {
    "description": "M103, Cassiopeia'da yer alan küçük ve kompakt bir açık yıldız kümesidir ve sıkı bir grup içinde yaklaşık 40 yıldız içerir ve dürbünle kolayca görülebilir. Merkez yakınında yer alan göz alıcı bir çift yıldız ve kırmızı dev, Cassiopeia'nın zengin Samanyolu yıldız alanları içinde küçük teleskoplarda renkli bir görünüm verir.",
@@ -665,6 +675,12 @@
    "size": "50.000 ışık yılı genişliğinde",
    "image_credit": "NASA/ESA/Hubble"
   },
+  "dso/m105": {
+   "description": "Messier 105, Aslan takımyıldızında yer alan eliptik bir gökadadır ve Başak Kümesi dışındaki Messier kataloğundaki en büyük eliptik gökadadır.",
+   "fun_fact": "M105, yaklaşık 650.000 Işık yılı genişliğinde devasa bir hidrojen gazı halkasını komşusu NGC 3384 ile paylaşmaktadır!",
+   "distance": "37 milyon ışık yılı",
+   "size": "67.000 ışık yılı genişliğinde"
+  },
   "dso/m106": {
    "description": "M106, Avlı Köpekleri takımyıldızında yer alan ve merkezi kara deliğinden çıkan jetler tarafından neden olunan anormal spiral kolları olan bir spiral galaksidir.",
    "fun_fact": "M106'nın çekirdeğinde su maserleri vardır ve bu da astronomların mesafesini kesin olarak ölçmesine olanak tanır!",
@@ -677,6 +693,11 @@
    "fun_fact": "M107, Messier kataloğuna resmi olarak eklenen son giriştir — Pierre Méchain'in yazışmalarında görülür ancak orijinal 1781 baskısına dahil edilmemiştir. 1947'de Kanadalı gökbilimci Helen Sawyer Hogg tarafından M107 olarak resmi olarak eklendi; Hogg, Méchain'in gözlemlediği ancak Messier'in hiçbir zaman resmi olarak kaydetmediği birkaç \"eksik\" nesneyi kodlamıştır.",
    "distance": "20.900 ışık yılı",
    "size": "~61 ışık yılı çapında"
+  },
+  "dso/m108": {
+   "description": "Messier 108, Büyük Ayı takımyıldızında yer alan ve sörf tahtası galaksisi olarak da bilinen çubuklu sarmal bir galaksidir.",
+   "fun_fact": "M108 bize neredeyse tam yan bakmaktadır ve Sörf Tahtası adını buradan almıştır; ayrıca yaklaşık 290 küresel yıldız kümesi barındırmaktadır!",
+   "distance": "46 milyon ışık yılı"
   },
   "dso/m109": {
    "description": "M109, Ursa Major takımyıldızında yer alan çubuklu spiral bir galaksidir ve adını taşıyan galaksi grubunun en parlak üyesidir.",
@@ -740,6 +761,12 @@
    "distance": "5.500 ışık yılı",
    "size": "15 ışık yılı genişliğinde",
    "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m18": {
+   "description": "Messier 18, Yay takımyıldızında yer alan ve Kara Kuğu Kümesi olarak da bilinen genç yıldızlardan oluşan küçük bir açık yıldız kümesidir.",
+   "fun_fact": "M18, Hubble Uzay Teleskobu'nun bugüne kadar hiç fotoğraflamadığı çok az sayıdaki Messier nesnesinden biridir!",
+   "distance": "4.200 ışık yılı",
+   "size": "26 ışık yılı genişliğinde"
   },
   "dso/m19": {
    "description": "M19, Ophiuchus takımyıldızında yer alan, kompakt ve zengin bir küresel yığındır — galaktik merkeze en yakın küresel yığınlardan biridir. En belirgin özelliği, belirgin şekilde basık şeklidir: M19, bilinen en düzleştirilmiş küresel yığındır ve küçük bir teleskopla bile görülebilen eliptik bir kontura sahiptir.",
@@ -1018,12 +1045,35 @@
    "size": "1,3 ışık yılı genişliğinde",
    "image_credit": "NASA/ESA/Hubble"
   },
+  "dso/m58": {
+   "description": "Messier 58, Başak takımyıldızında bulunan çubuklu sarmal bir galaksidir ve Başak Kümesi'nin en parlak üyelerinden biridir.",
+   "fun_fact": "M58'in merkezinde, yaklaşık 70 milyon Güneş kütlesine sahip ve yeni doğmuş yıldızlardan oluşan sıkı bir kuşakla çevrili süper kütleli bir kara delik yer alır!",
+   "distance": "68 milyon ışık yılı",
+   "size": "133.000 ışık yılı genişliğinde"
+  },
+  "dso/m59": {
+   "description": "Messier 59, Başak takımyıldızında bulunan ve 1779 yılında yaklaşan bir kuyruklu yıldız aranırken keşfedilen eliptik bir gökadadır.",
+   "fun_fact": "M59'un çekirdeği galaksinin geri kalanının aksine ters yönde dönmektedir ve etrafında yaklaşık 2.200 küresel yıldız kümesi kümelenmektedir!",
+   "distance": "50 milyon ışık yılı",
+   "mass": "270 milyon güneş kütlesi (merkezi karadelik)"
+  },
   "dso/m6": {
    "description": "Kelebek Kümesi, Akrep takımyıldızında yer alan ve en parlak yıldızlarının kelebek benzeri düzenlemesi nedeniyle adlandırılan açık bir yıldız kümesidir.",
    "fun_fact": "M6 yaklaşık 100 milyon yaşında ve turuncu dev yıldız BM Scorpii dahil olmak üzere 300'den fazla yıldız içerir!",
    "distance": "1.600 ışık yılı",
    "size": "25 ışık yılı genişliğinde",
    "image_credit": "NOAO/AURA/NSF"
+  },
+  "dso/m60": {
+   "description": "Messier 60, Başak takımyıldızında yer alan dev bir eliptik galaksidir ve Başak Kümesi'ndeki en parlak üçüncü dev eliptik galaksidir.",
+   "fun_fact": "M60'ın merkezi karadeliği yaklaşık 4,5 milyar Güneş ağırlığındadır - bugüne kadar bulunan en büyüklerden biridir!",
+   "distance": "57 milyon ışık yılı"
+  },
+  "dso/m61": {
+   "description": "Messier 61, Başak takımyıldızında yer alan çubuklu sarmal bir galaksidir ve Başak Kümesi'ndeki en büyük galaksilerden biridir.",
+   "fun_fact": "M61 galaksisinde şimdiye kadar sekiz süpernova tespit edildi; bu, herhangi bir galaksi arasındaki en yüksek sayılardan biridir! Messier'nin kendisi onu ilk başta kuyruklu yıldız sanmıştır.",
+   "distance": "52 milyon ışık yılı",
+   "size": "92.000 ışık yılı genişliğinde"
   },
   "dso/m62": {
    "description": "M62, Ophiuchus takımyıldızında yer alan zengin bir küresel yığındır — galaktik merkeze en yakın küresel yığınlardan biri ve belirgin şekilde asimetrik, yıldızlar güney tarafında daha yoğun bir şekilde paketlenmiştir. Büyüklüğü 6,6 olan M62, mükemmel bir dürbün nesnesi olmasına rağmen, düşük deklinasyonu nedeniyle kuzey gözlemcileri için kısa bir mevsim hedefidir.",
@@ -1095,12 +1145,28 @@
    "distance": "12.000 ışık yılı",
    "size": "~25 ışık yılı çapında"
   },
+  "dso/m72": {
+   "description": "Messier 72, Kova takımyıldızında yer alan, 1780 yılında Pierre Méchain tarafından keşfedilmiş sönük ve uzak bir küresel yıldız kümesidir.",
+   "fun_fact": "M72, içerdiği 43 değişen yıldızla birlikte yaklaşık 9,5 milyar yıllık bir kürede, Güneş'in yaklaşık 168.000 katı yıldız barındırır!",
+   "distance": "55.000 ışık yılı"
+  },
+  "dso/m73": {
+   "description": "Messier 73, Kova takımyıldızında bulunan ve yalnızca küme gibi görünen küçük bir dört yıldız grubudur.",
+   "fun_fact": "Gökbilimciler M73'ün gerçek bir küme olup olmadığı konusunda onlarca yıl tartıştılar; 2002'de bu durum çözüme kavuştu: Dört yıldız birbirinden çok farklı uzaklıklarda yer alıyor ve yalnızca tesadüfen aynı çizgide görünüyor!",
+   "distance": "1.000 ila 2.300 ışık yılı (bireysel yıldızlar)"
+  },
   "dso/m74": {
    "description": "Phantom Galaksi, Balık Burcu'nda yer alan ve mükemmel grand-design spiral yapısıyla bilinen yüz-on spiral galaksidir.",
    "fun_fact": "M74, çok düşük yüzey parlaklığı nedeniyle Hayalet Galaksi olarak adlandırılır ve gözlemlenesi zordur!",
    "distance": "32 milyon ışık yılı",
    "size": "95.000 ışık yılı genişliğinde",
    "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m75": {
+   "description": "Messier 75, Yay takımyıldızında bulunan uzak ve yoğun yapılı bir küresel yıldız kümesidir.",
+   "fun_fact": "M75, bilinen en yoğun küme kümelerden biridir ve Samanyolu'nun uzun zaman önce yuttuğu cüce bir galaksinin kalıntısı olduğu düşünülmektedir!",
+   "distance": "68.000 ışık yılı",
+   "size": "134 ışık yılı genişliğinde"
   },
   "dso/m76": {
    "description": "Küçük Dumbbell, Perseus'taki karakteristik sekiz şekilli bir yapıya sahip bir gezegen nebulasıdır — Vulpecula'daki Dumbbell Nebulası (M27)'nin daha küçük bir akrabasıdır. Messier kataloğundaki en soluk giriş olmasına rağmen, küçük teleskoplarda sabırlı gözlemle ödüllendirilir ve daha büyük enstrümanlarda iki daha parlak lob ile daha soluk bir beli flanklayan güzel bir yapı gösterir.",
@@ -1162,6 +1228,22 @@
    "size": "55.000 ışık yılı genişliğinde",
    "image_credit": "NASA/ESA/Hubble"
   },
+  "dso/m84": {
+   "description": "Messier 84, Başak Kümesi'nin kalabalık merkezinde yer alan dev bir eliptik galaksidir.",
+   "fun_fact": "M84, yaklaşık 1,5 milyar güneş kütlesine sahip bir kara deliğin etkisiyle çekirdeğinden dışarıya iki madde püskürtmesi fırlatır!",
+   "distance": "55 milyon ışık yılı"
+  },
+  "dso/m85": {
+   "description": "Messier 85, Berenis'in Saçı takımyıldızında, Başak Kümesi'nin eteklerinde yer alan merceksi bir galaksidir.",
+   "fun_fact": "M85'in dış bölgelerindeki dalgalanmalar ve kabuklar, 4 ila 7 milyar yıl önceki bir gökada birleşmesinin kalıntılarıdır!",
+   "distance": "60 milyon ışık yılı",
+   "size": "120.600 ışık yılı genişliğinde"
+  },
+  "dso/m86": {
+   "description": "Messier 86, Başak Kümesi'nde yer alan ve yakınındaki M84 ile çarpıcı bir çift oluşturan büyük bir eliptik galaksidir.",
+   "fun_fact": "M86, 244 km/sn hızla bize doğru yaklaşmaktadır; bu, herhangi bir Messier nesnesinin en hızlı yaklaşma hızıdır! Küme içindeki geçişi, gerisinde soyulmuş sıcak gazdan uzun bir iz bırakır.",
+   "distance": "52 milyon ışık yılı"
+  },
   "dso/m87": {
    "description": "M87, Virgo takımyıldızında yer alan ve yerel evrendeki en kütleli galaksilerden biri olan dev eliptik bir galaksidir.",
    "fun_fact": "M87'nin merkezi kara deliği 2019 yılında Event Horizon Telescope tarafından ilk kez görüntülendi - 6,5 milyar güneş kütlesine sahiptir!",
@@ -1170,11 +1252,34 @@
    "mass": "2,4 trilyon güneş kütlesi",
    "image_credit": "NASA/ESA/Hubble"
   },
+  "dso/m88": {
+   "description": "Messier 88, Berenis Saçı takımyıldızında yer alan ve Virgo Kümesi'ndeki on beş Messier nesnesinden biri olan zarif bir sarmal galaksidir.",
+   "fun_fact": "M88, Başak Kümesi'nin merkezine doğru dalmaktadır ve 200 ila 300 milyon yıl içinde oraya ulaşacaktır; bu sırada düşerken dış gazları sıyrılarak koparılacaktır!",
+   "distance": "59 milyon ışık yılı",
+   "size": "131.000 ışık yılı çapında"
+  },
+  "dso/m89": {
+   "description": "Messier 89, Başak takımyıldızında yer alan ve 1781 yılında Charles Messier tarafından keşfedilen eliptik bir galaksidir.",
+   "fun_fact": "M89 neredeyse kusursuz bir küre olabilir; bu durum, normalde belirgin şekilde basık olan eliptik galaksiler için olağandışı bir özelliktir!",
+   "distance": "50 milyon ışık yılı"
+  },
   "dso/m9": {
    "description": "M9, Ophiuchus takımyıldızında yer alan kompakt bir küresel yığındır — Messier küresel yığınlarından en çok yıldızlararası toz soğurmasından etkilenen biridir. Galaktik çemberin yönünde yer alır; burada kalın toz onu önemli ölçüde karartır. Bu gölgeleme olmaksızın M9, neredeyse bir büyüklük kadar daha parlak görünür ve çıplak gözle görülebilir olurdu.",
    "fun_fact": "M9, neredeyse diğer tüm Messier küresel yığınlarından daha fazla yıldızlararası toz soğurmasına maruz kalır — açık bir görüş çizgisine kıyasla yaklaşık 1,3 büyüklük kadar kararma. İki daha küçük küresel yığın (NGC 6342 ve NGC 6356) M9'in yaklaşık 1° içinde yer alır ve bunu gökyüzünün küçük bir bölgesinde üç küresel yığının dikkat çekici bir gruplandırmasının merkezi haline getirir.",
    "distance": "25.800 ışık yılı",
    "size": "~70 ışık yılı çapında"
+  },
+  "dso/m90": {
+   "description": "Messier 90, Başak takımyıldızında bulunan büyük bir sarmal galaksidir ve \"anemik\" galaksilerin ders kitaplarındaki örneğidir.",
+   "fun_fact": "M90, Virgo Kümesi'nin içinden geçişi sırasında yıldız oluşturan gazından arınmış olup, 260.000 ışık yılı uzunluğa varan parlayan gaz kuyrukları bırakmıştır!",
+   "distance": "59 milyon ışık yılı",
+   "size": "132.000 ışık yılı çapında"
+  },
+  "dso/m91": {
+   "description": "Messier 91, Berenis Saçı takımyıldızında yer alan çubuklu sarmal gökadadır ve Messier kataloğundaki en sönük nesnedir.",
+   "fun_fact": "M91 neredeyse 200 yıl boyunca kayıp durumdaydı! Messier, konumunu yanlış bir referans galaksi kullanarak kaydetmiş ve galaksi ancak 1969 yılında amatör bir gökbilimci tarafından yeniden tanımlanabilmiştir.",
+   "distance": "63 milyon ışık yılı",
+   "size": "105.500 ışık yılı çapında"
   },
   "dso/m92": {
    "description": "M92, Herkül takımyıldızında yer alan ve daha ünlü M13'ye yakınlığı nedeniyle sıklıkla gözden kaçırılan parlak bir küresel yığındır.",
@@ -1196,12 +1301,35 @@
    "size": "50.000 ışık yılı genişliğinde",
    "image_credit": "NASA/ESA/Hubble"
   },
+  "dso/m95": {
+   "description": "Messier 95, Aslan takımyıldızında yer alan çubuklu sarmal galaksidir; M96 ve M105 ile birlikte M96 Grubu'nun bir parçasını oluşturur.",
+   "fun_fact": "M95'in çekirdeğini yaklaşık 70.000 Işık yılı genişliğinde şiddetli bir yıldız oluşum halkası çevreler ve 2012 yılında burada bir süpernova patlamıştır.",
+   "distance": "33 milyon ışık yılı",
+   "size": "80.000 ışık yılı çapında"
+  },
+  "dso/m96": {
+   "description": "Messier 96, Aslan takımyıldızında yer alan bir sarmal galaksidir ve M96 galaksi grubunun en parlak üyesidir.",
+   "fun_fact": "M96, Samanyolu'muzla kabaca aynı boyutta ve kütlededir, ancak çarpıcı biçimde asimetriktir; toz ve gazı kollarında düzensiz bir şekilde yayılmıştır!",
+   "distance": "31 milyon ışık yılı",
+   "size": "78.000 ışık yılı çapında"
+  },
   "dso/m97": {
    "description": "Baykuş Nebulası, Ursa Major takımyıldızında yer alan ve iki koyu leke ile baykuşa benzer görünüşü nedeniyle adlandırılan bir gezegen nebulasıdır.",
    "fun_fact": "M97'deki karanlık baykuş gözleri, bizim görüş çizgimize hizalanmış bulutsuluktaki üç boyutlu boşluklardır!",
    "distance": "2.030 ışık yılı",
    "size": "2 ışık yılı genişliğinde",
    "image_credit": "Gemini Observatory/NOIRLab/NSF/AURA"
+  },
+  "dso/m98": {
+   "description": "Messier 98, Berenis'in Saçı takımyıldızında yer alan bir sarmal galaksidir; Başak Kümesi'nin bir parçası olarak neredeyse yandan görünür.",
+   "fun_fact": "M98, uzaklaşmak yerine bize doğru hareket eden ve saniyede yaklaşık 140 km hızla yaklaşan nadir galaksilerden biridir!",
+   "distance": "44 milyon ışık yılı"
+  },
+  "dso/m99": {
+   "description": "Messier 99, Berenis'in Saçı takımyıldızında bulunan, açık ve belirgin sarmal kollara sahip görkemli bir sarmal galaksidir.",
+   "fun_fact": "M99, Lord Rosse tarafından 1846 yılında çizilen ve sarmal olduğu fark edilen ilk nesneler arasındaydı; ayrıca benzer galaksilere göre üç kat daha hızlı yıldız oluşturur!",
+   "distance": "45 milyon ışık yılı",
+   "size": "98.000 ışık yılı çapında"
   },
   "dso/n47_tucanae": {
    "description": "47 Tucanae (NGC 104), gökyüzündeki en parlak ikinci küresel yığındır; Tukan takımyıldızında Samanyolu'nu yörüngeleyen yaklaşık bir milyon eski yıldızdan oluşan yoğun bir toptur. Yaklaşık 14.500 ışık yılı uzaklıkta olup çıplak gözle dördüncü büyüklükteki bulanık bir yıldız olarak görünür, ancak bir teleskop sıkışmış çekirdeğini altın ve mavi-beyaz güneşlerin olağanüstü bir sürüsüne dönüştürür. Yıldızları yaklaşık 13 milyar yıl önce oluşmuş olup, yığın evreni kendisine neredeyse eşit yaştadır.",
@@ -1313,8 +1441,9 @@
    "description": "Deimos, Mars'ın iki ayından daha küçük ve dış olanıdır. Düzgün, toza kaplı yüzeyi, Phobos'tan daha yuvarlak bir görünüm verir. Eşi gibi, dış kuşaktan yakalanmış bir asteroit olduğu düşünülmektedir.",
    "fun_fact": "Deimos o kadar küçük ve uzak ki, Mars yüzeyinden bakıldığında parlak bir yıldızdan biraz daha fazlası gibi görünüyor ve gece gökyüzünde yavaşça sürüklenip geçmesi yaklaşık 30 saat sürüyor.",
    "distance": "Mars'tan 23.460 km",
+   "size": "15 × 12 × 11 km",
    "image_credit": "NASA/JPL-Caltech/University of Arizona",
-   "search_subtext": "Moon of Mars"
+   "search_subtext": "Mars'ın uydusu"
   },
   "moon/dione": {
    "description": "Dione, Satürn'ün buzlu bir uydusu olup, ağır çarpılmış öncü yüzü ve parlak buz kayalıklarıyla dolu geri yarımküre sahiptir — antik tektonik kuvvetlerin kabuğun altından taze buzu açığa çıkardığı kırılma çizgileri. Cassini yerçekimi verileri, kabuğun altında bir yüzey altı sıvı okyanus olduğunu göstermektedir.",
@@ -1368,8 +1497,9 @@
    "description": "Phobos, Mars'ın iki uydusu arasında daha büyük ve en içtekidir; güneş sistemindeki herhangi bir uydudan gezegenine daha yakın bir yörüngede döner. Yakalanmış bir asteroit olduğu düşünülen, düzensiz şekilli, yoğun olarak oluklu ve kraterlere sahip bir cisimdir.",
    "fun_fact": "Phobos, Mars'ı bu kadar hızlı yörüngede döner ki batıdan doğar ve doğudan batar — ve yavaş yavaş içe doğru spiral yaparak hareket ediyor, yaklaşık 50 milyon yıl içinde Mars'a çarpması ya da bir halka haline parçalanması kaçınılmaz.",
    "distance": "Mars'tan 9.376 km",
+   "size": "27 × 22 × 18 km",
    "image_credit": "NASA/JPL-Caltech/University of Arizona",
-   "search_subtext": "Moon of Mars"
+   "search_subtext": "Mars'ın uydusu"
   },
   "moon/rhea": {
    "description": "Rhea, Satürn'ün ikinci en büyük uydusu ve buz ile kayadan oluşan ağır çatlaklı bir dünyedir. Soluk, eski yüzeyi, güneş sisteminin en saf etki kraterleri ile birlikte, heyelanların altından taze malzemeyi ortaya çıkardığı parlak buz kayalıklarının yanında korunmaktadır.",
@@ -1456,6 +1586,7 @@
    "fun_fact": "Neptün matematik yoluyla keşfedildi! Bilim insanları, herhangi biri teleskopla görmeden önce konumunu tahmin ettiler.",
    "distance": "4,5 milyar km (ortalama)",
    "size": "49.244 km çap",
+   "mass": "1,024 × 10²⁶ kg",
    "image_credit": "NASA/ESA/Hubble"
   },
   "planet/pluto": {
@@ -1463,6 +1594,7 @@
    "fun_fact": "Pluto'nun nitrojen buzundan oluşan kalp şeklinde bir buzulu vardır ve bu, NASA'nın New Horizons görevinden gelen görüntülerde görülebilir!=",
    "distance": "5,9 milyar km (ortalama)",
    "size": "2.377 km çap",
+   "mass": "1,3 × 10²² kg",
    "image_credit": "NASA/JHUAPL/SwRI"
   },
   "planet/saturn": {
@@ -1826,6 +1958,11 @@
    "spectral_class": "K0 III",
    "image_credit": "ESO/Digitized Sky Survey 2"
   },
+  "star/e_lyrae": {
+   "description": "Epsilon Lyrae, Çalgı takımyıldızında yer alan ve gözlemciler arasında \"Çifte Çift\" olarak bilinen çoklu yıldız sistemidir.",
+   "fun_fact": "Keskin gözler Epsilon Lyrae'yi iki yıldıza ayırabilir; bir teleskop ise bunların her birini tekrar ikiye ayırır! Toplamda en az beş yıldız barındırır.",
+   "distance": "160 ışık yılı"
+  },
   "star/enif": {
    "description": "Enif, Pegasus'ta en parlak yıldız olup, takımyıldızda uçan atın burnunu işaret eder.",
    "fun_fact": "1972'de Enif dramatik bir parlama olayı yaşadı ve parlaklığı kısaca beş kat arttı!",
@@ -1879,6 +2016,110 @@
    "mass": "~4,6 güneş kütlesi",
    "spectral_class": "K0II-III",
    "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/j052512+062100": {
+   "description": "Bellatrix, Avcı takımyıldızının (Avcı) sol omuzunu işaret eder. Adı Latince \"kadın savaşçı\" anlamına gelir.",
+   "fun_fact": "Bellatrix yalnızca yaklaşık 28 milyon yaşındadır ve hidrojenini 7 milyon yıl içinde tüketecektir - bir yıldız için kısa bir ömür!",
+   "distance": "250 ışık yılı",
+   "size": "6,2 güneş yarıçapı",
+   "mass": "8,4 güneş kütlesi",
+   "spectral_class": "B2 III"
+  },
+  "star/j054048-015624": {
+   "description": "Alnitak, Avcı Kuşağı'nın en doğudaki yıldızı olup Alev ve Atbaşı Bulutsuları'nın yanında yer alır.",
+   "fun_fact": "Alnitak, tüm gece gökyüzündeki en parlak O sınıfı yıldızdır! Yaklaşık bir milyon yıl içinde Jüpiter'in yörüngesinden daha geniş bir şekilde şişecek ve bir süpernova olarak patlayacaktır.",
+   "distance": "1.260 ışık yılı",
+   "size": "20 güneş yarıçapı",
+   "mass": "33 güneş kütlesi",
+   "spectral_class": "O9.5 Iab"
+  },
+  "star/j055924+445700": {
+   "description": "Menkalinan, Auriga (Arabacı) takımyıldızının en parlak ikinci yıldızıdır. Adı Arapçada \"dizgin tutanın omuzu\" anlamına gelir.",
+   "fun_fact": "Menkalinan, her 47,5 saatte bir birbirini örten neredeyse aynı iki yıldızdan oluşur ve yaklaşık bir milyon yıl içinde gece gökyüzümüzdeki en parlak yıldız haline gelecektir!",
+   "distance": "79 ışık yılı",
+   "size": "2,8 güneş yarıçapı",
+   "mass": "2,4 güneş kütlesi",
+   "spectral_class": "A1m IV + A1m IV"
+  },
+  "star/j062248-175736": {
+   "description": "Mirzam (Beta Canis Majoris), Sirius'ten hemen önce doğar; bu özelliği ona Arapçada \"Haberci\" anlamına gelen bir isim kazandırmıştır.",
+   "fun_fact": "Yaklaşık dört milyon yıl önce Mirzam, gökyüzünün en parlak yıldızıydı ve -3.65 kadirden parlıyordu - bugün Sirius'un göründüğünden çok daha parlaktı!",
+   "distance": "490 ışık yılı",
+   "size": "8,4 güneş yarıçapı",
+   "mass": "13 güneş kütlesi",
+   "spectral_class": "B1 II-III"
+  },
+  "star/j070824-262324": {
+   "description": "Wezen, Büyük Köpek takımyıldızında yer alan sarı-beyaz bir üstdevdir. Adı, Arapçada \"ağırlık\" anlamına gelen kelimeden gelmektedir.",
+   "fun_fact": "Wezen, bize Sirius kadar yakın olsaydı, yarım ay kadar parlak parlardı!",
+   "distance": "1.600 ışık yılı",
+   "size": "188 güneş yarıçapı",
+   "mass": "14 güneş kütlesi",
+   "spectral_class": "F8 Ia"
+  },
+  "star/j082248-593036": {
+   "description": "Avior (Epsilon Carinae), Karina takımyıldızında yer alan parlak bir ikili yıldızdır ve Yalancı Haç'ı oluşturan dört yıldızdan biridir.",
+   "fun_fact": "Yalancı Haç, Güney Haçı ile o kadar sık karıştırılır ki gerçek seyrüsefer hatalarına yol açmıştır! Avior adı, 1930'larda Britanyalı almanak hazırlayıcıları tarafından uydurulmuştur.",
+   "distance": "610 ışık yılı",
+   "size": "151 güneş yarıçapı",
+   "mass": "10,5 güneş kütlesi",
+   "spectral_class": "K3 III + B2 Vp"
+  },
+  "star/j091312-694312": {
+   "description": "Miaplacidus, Carina (Omurga) takımyıldızının en parlak ikinci yıldızıdır ve Elmas Haç asterizminin bir köşesini oluşturur.",
+   "fun_fact": "Miaplacidus, çekirdeğindeki hidrojeni tükettikten sonra bir dev haline gelmiştir, ancak yine de saniyede 146 km gibi hızlı bir hızla dönmeye devam etmektedir!",
+   "distance": "113 ışık yılı",
+   "size": "5,8 güneş yarıçapı",
+   "mass": "3,9 güneş kütlesi",
+   "spectral_class": "A1 III"
+  },
+  "star/j123112-570636": {
+   "description": "Gacrux (Gamma Crucis), Güneyhaçı takımyıldızının en üstteki yıldızıdır ve Dünya'ya en yakın kırmızı dev yıldızdır.",
+   "fun_fact": "Gacrux, bize en yakın M tipi kırmızı devdir ve adı, 1940'larda türetilmiş \\",
+   "distance": "89 ışık yılı",
+   "size": "73 güneş yarıçapı",
+   "mass": "1,5 güneş kütlesi",
+   "spectral_class": "M3.5 III"
+  },
+  "star/j124800-594124": {
+   "description": "Mimosa (Beta Crucis), Güney Haçı takımyıldızının en parlak ikinci yıldızıdır ve çıplak gözle görülebilen en sıcak yıldızlardan biridir.",
+   "fun_fact": "Mimosa, atanmalı bir Beta Cephei değişen yıldızıdır; her biri yalnızca yaklaşık dört saat süren üç örtüşen ritimle şişer ve büzülür!",
+   "distance": "280 ışık yılı",
+   "size": "8 güneş yarıçapı",
+   "mass": "14,5 güneş kütlesi",
+   "spectral_class": "B0.5 III"
+  },
+  "star/j143936-605024": {
+   "description": "Toliman (Alpha Centauri B), Güneş'e en yakın yıldız sistemindeki turuncu yoldaştır ve daha parlak olan Rigil Kentaurus'un etrafında döner.",
+   "fun_fact": "Toliman resmi adını yalnızca 2018 yılında aldı. Güneş'ten biraz daha küçük ve daha serindir ve iki kardeşiyle birlikte bize en yakın yıldız komşularımızı oluşturur!",
+   "distance": "4,34 ışık yılı",
+   "size": "0,86 güneş yarıçapı",
+   "mass": "0,91 güneş kütlesi",
+   "spectral_class": "K1 V"
+  },
+  "star/j164836-690148": {
+   "description": "Atria, Güneş'ten çok daha büyük bir turuncu dev olan Triangulum Australe'nin (Güney Üçgeni) en parlak yıldızıdır.",
+   "fun_fact": "Atria, Güneş'in çapının 139 katıdır - Güneş Sistemi'nin merkezine konulsaydı neredeyse Venüs'ün yörüngesine ulaşırdı!",
+   "distance": "391 ışık yılı",
+   "size": "139 güneş yarıçapı",
+   "mass": "6,4 güneş kütlesi",
+   "spectral_class": "K2 Ib-IIa"
+  },
+  "star/j173712-430000": {
+   "description": "Sargas, Akrep takımyıldızının (Scorpius) kuyruğunda yer alan, Sümer kökenli geleneksel bir isme sahip parlak bir dev kuyluzdur.",
+   "fun_fact": "Sargas öyle hızlı döner ki dışa doğru şişmiştir; ekvatorda kutuplardan kutuplara olduğundan üçte bir daha attır ve iki yıldızın birleşmesiyle oluşmuş olabilir!",
+   "distance": "329 ışık yılı",
+   "size": "35 güneş yarıçapı",
+   "mass": "3,1 güneş kütlesi",
+   "spectral_class": "F1 III"
+  },
+  "star/j202548-564348": {
+   "description": "Peacock, Tavus Kuşu takımyıldızının (Pavo) en parlak yıldızıdır; güney gökkübenin derinliklerinde yer alan sıcak, mavi-beyaz bir yıldızdır.",
+   "fun_fact": "Peacock, 1930'lu yıllarda İngiliz Kraliyet Hava Kuvvetleri'nin yeni Hava Yıllığı'ndaki her yıldızın bir adı olmasında ısrar etmesi ve bu yıldızın bir adının olmaması nedeniyle adlandırılmıştır!",
+   "distance": "179 ışık yılı",
+   "size": "4,8 güneş yarıçapı",
+   "mass": "5,9 güneş kütlesi",
+   "spectral_class": "B3 V"
   },
   "star/kaus_australis": {
    "description": "Kaus Australis, Yay (Okçu) takımyıldızında en parlak yıldızdır. Adı Arapça ve Latince karışımında \"güney yayı\" anlamına gelir.",
@@ -1942,6 +2183,12 @@
    "mass": "~8,5 güneş kütlesi",
    "spectral_class": "F5Ib",
    "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/n25": {
+   "description": "R Coronae Borealis, Kuzey Tacı (Corona Borealis) takımyıldızında yer alan nadir bir sarı üstdevdir ve adını aldığı değişen yıldız sınıfının prototipidir.",
+   "fun_fact": "R Coronae Borealis bazen \"ters nova\" olarak adlandırılır; aniden parlamak yerine, kendisini gözlerden saklayan karbon kurum bulutları püskürttüğünde öngörülemez bir şekilde 9 kadire kadar sönükleşir!",
+   "distance": "4.560 ışık yılı",
+   "spectral_class": "G0Iep"
   },
   "star/nunki": {
    "description": "Nunki, Yay takımyıldızında ikinci en parlak yıldız ve hala yaygın olarak kullanılan en eski yıldız adıdır.",

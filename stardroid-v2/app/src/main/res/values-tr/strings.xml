@@ -1,10 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
-  Carried over from v1 by tools/salvage-translations/salvage.py.
-  Only strings whose English source is identical between v1 and v2 appear here;
-  everything else is translated by `tm`. Safe to hand-edit thereafter.
--->
+<?xml version='1.0' encoding='UTF-8'?>
 <resources>
+    <!-- tm:omitted name="app_name" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="splash_version" reason="identical_to_source" -->
+    <string name="splash_dismiss" translation_description="Accessibility label for the action that dismisses the launch splash when it is tapped">Kapat</string>
+
+    <!-- Sky-map labels drawn by the computed layers (LayerStrings). -->
     <string name="north_pole">KK</string>
     <string name="south_pole">GK</string>
     <string name="zenith">Başucu</string>
@@ -14,37 +15,176 @@
     <string name="east">DOĞU</string>
     <string name="west">BATI</string>
     <string name="ecliptic">Ekliptik</string>
+
+    <!-- Solar-system body names, drawn as labels next to each body. -->
     <string name="sun">Güneş</string>
     <string name="moon">Ay</string>
     <string name="mercury">Merkür</string>
     <string name="venus">Venüs</string>
     <string name="earth">Dünya</string>
+    <!-- tm:omitted name="mars" reason="identical_to_source" -->
     <string name="jupiter">Jüpiter</string>
     <string name="saturn">Satürn</string>
     <string name="uranus">Uranüs</string>
     <string name="neptune">Neptün</string>
     <string name="pluto">Plüton</string>
+
+    <!-- Search (map-screen search dialog and overlay). -->
     <string name="search_button">Ara</string>
     <string name="search_label">Gökyüzünde Ara</string>
+    <string name="search_hint" translation_description="Placeholder text in the search field showing example search targets.">örn. Mars veya M31</string>
+    <string name="search_coordinates_hint" translation_description="Helper text under the search field showing that celestial coordinates (right ascension and declination) can be typed directly, with two example formats.">Veya koordinat girin: 12h 30m, +45° veya 187.5 -45.2</string>
+    <string name="search_go" translation_description="Button that starts navigating the sky map toward the typed search target.">Git</string>
     <string name="search_cancel">İptal</string>
     <string name="search_no_results">Sonuç bulunamadı. Muhtemelen nesne şu anda görünmüyor.</string>
+    <string name="search_target_looking_message" translation_description="Status shown while the user is being guided toward a search target. %1$s is the object name.">Aranan: %1$s</string>
+    <string name="search_target_found_message" translation_description="Status shown when the search target has been found and is centered on screen. %1$s is the object name.">Bulundu: %1$s</string>
     <string name="search_overlay_prompt">Telefonunuzu ok yönüne çevirin</string>
+
+    <!-- Layer names in the layer-visibility sheet. -->
     <string name="layer_stars">Yıldızlar</string>
     <string name="layer_constellations">Takımyıldızları</string>
+    <string name="layer_deep_sky" translation_description="Toggle label for the layer showing deep-sky objects such as galaxies and nebulae.">Derin uzay cisimleri</string>
     <string name="layer_solar_system">Güneş Sistemi</string>
     <string name="layer_meteor_showers">Meteor Yağmurları</string>
+    <string name="layer_satellites" translation_description="Toggle label for the layer showing artificial satellites such as the International Space Station.">Uydular</string>
+    <string name="channel_passes_name" translation_description="Name of the notification channel for alerts shortly before a satellite passes overhead.">Uydu geçişleri</string>
+    <string name="channel_passes_description" translation_description="Description of the satellite-pass notification channel.">Gecenin en iyi görünür geçişinden kısa süre önce tek bir uyarı</string>
+    <string name="notif_pass_title" translation_description="Title of the notification sent shortly before a satellite passes overhead. %1$s is the satellite name.">%1$s yakında baş üstünden geçecek</string>
+    <string name="notif_pass_text" translation_description="Body of the satellite pass notification, telling the user when to go outside. %1$s is a time.">
+    Yaklaşık %1$s itibarıyla görünür — dışarı çıkın ve gözlerinizin karanlığa alışmasını sağlayın
+    </string>
+    <string name="channel_eclipses_name" translation_description="Name of the notification channel for alerts before a lunar eclipse starts.">Ay tutulmaları</string>
+    <string name="channel_eclipses_description" translation_description="Description of the lunar-eclipse notification channel.">Ay tutulması başlamadan önce tek bir uyarı</string>
+    <string name="notif_eclipse_title" translation_description="Title of the notification sent before a lunar eclipse starts. %1$s is a localized eclipse type like \'Total lunar eclipse\'.">%1$s yakında başlıyor</string>
+    <string name="notif_eclipse_text" translation_description="Body of the lunar eclipse notification, telling the user when it begins. %1$s is a time.">Saat %1$s civarında başlıyor — dışarı çıkmaya değer</string>
+    <string name="satellite_name_iss" translation_description="Display name for the International Space Station.">Uluslararası Uzay İstasyonu</string>
+    <!-- tm:omitted name="satellite_name_tiangong" reason="identical_to_source" -->
+    <string name="layer_param_pass_alerts" translation_description="Label for the setting that turns on a notification shortly before a satellite passes overhead.">Geçiş uyarıları</string>
+    <string name="layer_param_pass_alerts_description" translation_description="Explains what the pass-alert setting does: a single notification before the best visible pass of the night.">Her gece en iyi görünür geçişten önce beni bilgilendir</string>
+    <string name="layer_param_eclipse_alerts" translation_description="Label for the setting that turns on a notification before a lunar eclipse begins.">Tutulma uyarıları</string>
+    <string name="layer_param_eclipse_alerts_description" translation_description="Explains what the eclipse-alert setting does: a single notification before a lunar eclipse starts.">Ay tutulması başlamadan önce beni bilgilendir</string>
+    <string name="satellite_description" translation_description="Short description shown on the info card for an artificial satellite.">
+    Karanlık gökyüzünde güneş ışığı alan, alçak Dünya yörüngesindeki yapay bir uydu. Yanıp sönmeden, istikrarlı bir şekilde hareket ederek ufuktan ufuka birkaç dakikada geçer.
+    </string>
+    <string name="satellite_next_pass" translation_description="Heading above the next visible pass details on a satellite\'s info card.">Sonraki görünür geçiş</string>
+    <string name="satellite_pass_when" translation_description="When and how high the next satellite pass will be. %1$s is a time, %2$s is a compass direction, %3$d is an angle in degrees.">%1$s, %2$s yönünden yükseliyor, %3$d° yüksekliğe ulaşıyor</string>
+    <string name="satellite_pass_magnitude" translation_description="How bright the satellite will be at its peak. %1$.1f is a brightness magnitude.">En parlak anında %1$.1f kadir</string>
+    <string name="satellite_pass_shadow" translation_description="Tells the user the satellite will fade out mid-pass when it enters the Earth\'s shadow. %1$s is a time.">%1$s saatinde Dünya gölgesine girerek kayboluyor</string>
+    <string name="satellite_no_pass" translation_description="Shown on a satellite info card when no visible pass is coming up in the next two days.">Önümüzdeki birkaç gün içinde görünür geçiş yok</string>
+    <string name="satellite_pass_unknown" translation_description="Shown on a satellite info card when the downloaded orbit data is too old to predict pass times reliably.">Yörünge verileri geçişleri tahmin edemeyecek kadar eski</string>
+    <string name="object_info_eclipse_title" translation_description="Heading above the next lunar eclipse details on the Moon\'s info card.">Ay tutulması</string>
+    <string name="object_info_no_eclipse" translation_description="Shown on the Moon\'s info card when no lunar eclipse is coming up in the searched time range.">Yakın zamanda ay tutulması beklenmiyor</string>
+    <string name="object_info_eclipse_greatest" translation_description="The next lunar eclipse\'s type and greatest-eclipse date/time. %1$s is a localized eclipse type like \'Total lunar eclipse\', %2$s a date, %3$s a time.">%1$s — en büyük tutulma %2$s tarihinde saat %3$s</string>
+    <string name="object_info_eclipse_totality" translation_description="The start and end time of totality during a total lunar eclipse. %1$s and %2$s are times.">Tam tutulma %1$s – %2$s</string>
+    <string name="tonight_satellite_pass" translation_description="Tonight-widget row announcing a visible satellite pass. %1$s is the satellite name, %2$s is a time of day.">%1$s saat %2$s geçiyor</string>
+    <string name="tonight_trailing_pass" translation_description="Small trailing note on a satellite pass row. %1$s is a compass direction, %2$d is an angle in degrees, %3$.1f is a brightness magnitude.">%1$s yönünden yükseliyor, %2$d°, kadir %3$.1f</string>
+    <string name="satellites_no_data" translation_description="Explanation shown when satellite orbital data has not been downloaded yet and so no satellites can be drawn.">Uydu konumlarını güncellemek için internet bağlantısı gerekiyor.</string>
+    <string name="satellites_refresh" translation_description="Button that tries to download satellite orbital data now.">Yenile</string>
+    <string name="satellites_retry_soon" translation_description="Shown instead of a Refresh button when satellite data was just requested and cannot be requested again for a few minutes.">Birkaç dakika içinde tekrar deneyin</string>
+    <string name="satellites_retry_within_hour" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for up to an hour.">Bir saat içinde tekrar deneyin</string>
+    <string name="satellites_retry_hours" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for several hours.">Birkaç saat içinde tekrar deneyin</string>
+    <string name="satellites_retry_tomorrow" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again until the next day.">Yarın tekrar deneyin</string>
+    <string name="satellites_retry_days" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for several days.">Birkaç gün içinde tekrar deneyin</string>
+    <string name="layer_grid" translation_description="Toggle label for the layer showing the right ascension / declination grid.">Göksel ızgara</string>
     <string name="layer_horizon">Ufuk</string>
     <string name="layer_ecliptic">Ekliptik</string>
     <string name="layer_sky_gradient">Gökyüzü Gradyanı</string>
+
+    <!-- Map screen controls. -->
+    <string name="layers_sheet_title" translation_description="Title of the bottom sheet listing sky map layers the user can show or hide.">Katmanlar</string>
+    <string name="layers_group_objects" translation_description="Layers-sheet group header for layers that draw sky objects (stars, planets, deep-sky objects).">Cisimler</string>
+    <string name="layers_group_reference" translation_description="Layers-sheet group header for reference elements drawn over the sky (coordinate grid, horizon, ecliptic).">Referans</string>
+    <string name="layers_group_display" translation_description="Layers-sheet group header for display settings that change how the sky is rendered rather than what is drawn.">Görünüm</string>
+    <string name="show_layers" translation_description="Accessibility description and label for the button opening the layer-visibility sheet, which holds the layers that do not fit on the rail plus display options.">Daha fazla katman ve seçenek</string>
+    <string name="more_button" translation_description="Accessibility label and tooltip for the map-screen button (three vertical dots) opening the overflow menu of further destinations such as Gallery and Settings.">Daha fazla seçenek</string>
     <string name="night_mode">Gece Modu</string>
+    <string name="switch_to_manual" translation_description="Tooltip and accessibility label for the button that switches the map from auto (sensor-driven) mode to manual (drag) mode.">Manuel moda geç</string>
+    <string name="switch_to_auto" translation_description="Tooltip and accessibility label for the button that switches the map from manual (drag) mode to auto (sensor-driven) mode.">Otomatik moda geç</string>
+    <string name="no_sensor_warning" translation_description="Warning shown when the device lacks the motion sensors needed to point the map at the sky automatically.">
+    Bu cihazda pusula veya hareket sensörü yok, bu yüzden Sky Map cihazı nereye tuttuğunuzu takip edemez. Bunun yerine haritayı elle sürükleyin.
+    </string>
     <string name="no_sensor_warning_dismiss">Tamam</string>
+
+    <!-- The map HUD (map-hud.md, D65): the top-right pointing readout shown with the chrome. -->
+    <string name="hud_ra_label" translation_description="Map-HUD row label: right ascension of the point at the centre of the screen. Standard astronomy abbreviation; keep short.">SA</string>
+    <string name="hud_dec_label" translation_description="Map-HUD row label: declination of the point at the centre of the screen. Standard astronomy abbreviation; keep short.">Açıklık</string>
+    <string name="hud_alt_label" translation_description="Map-HUD row label: altitude (angle above the horizon) of the point at the centre of the screen. Keep short.">Yük</string>
+    <!-- tm:omitted name="hud_az_label" reason="identical_to_source" -->
+    <string name="hud_fov_label" translation_description="Map-HUD row label: the field of view (how many degrees of sky the screen spans). Keep short.">GKA</string>
+    <string name="hud_correction_label" translation_description="Map-HUD row label for the manual sensor-alignment correction the user set by dragging. Keep very short.">Ayar</string>
+    <string name="hud_ra_value" translation_description="Right ascension in the conventional hours-and-minutes notation, e.g. \'18h 38m\'. %1$d is hours (0-23), %2$02d is minutes (00-59).">%1$ds %2$02dd</string>
+    <!-- tm:omitted name="hud_signed_degrees_value" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_azimuth_value" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_fov_value" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_fov_value_fine" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_fov_value_finest" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_correction_value" reason="identical_to_source" -->
+    <string name="hud_correction_reset" translation_description="Accessibility label for the small button that clears the manual sensor-alignment correction back to zero.">Hizalama düzeltmesini sıfırla</string>
+    <string name="hud_alignment_reset_message" translation_description="Snackbar confirming the sensor-alignment correction was cleared; shown with an Undo action.">Hizalama düzeltmesi sıfırlandı</string>
+    <string name="hud_fov_locked" translation_description="Accessibility label for the small lock icon shown next to the field-of-view readout while the camera controls the zoom in through-camera mode.">Yakınlaştırma kameraya kilitlendi</string>
+
+    <string name="layer_hud" translation_description="Layers-sheet Display toggle that shows the heads-up readout of where the phone is pointing (compass direction and altitude) over the star map.">Konum bilgisi göstergesi</string>
+
+    <!-- Through-camera (AR) mode (camera-ar-mode.md, D64). -->
+    <string name="layer_camera" translation_description="Layers-sheet Display toggle that shows the live rear-camera image behind the star map, so the drawn sky overlays the real one.">Kamera üzerinden mod</string>
+    <string name="layer_camera_needs_sensors" translation_description="Subtitle explaining why the through-camera toggle is disabled: the device has no usable motion sensors, and the mode needs the map to follow where the phone points.">Bu cihazda olmayan hareket sensörleri gerektirir</string>
+    <string name="ar_auto_mode_snackbar" translation_description="Snackbar shown when turning on through-camera mode switched the map from manual dragging back to automatic sensor pointing.">Kamera görünümü için otomatik mod açıldı</string>
+    <string name="ar_permission_denied" translation_description="Snackbar shown when the user declined the camera permission that through-camera mode needs.">Kamera üzerinden mod, kamera izni gerektirir</string>
     <string name="ar_permission_settings_action">Ayarlar</string>
+    <string name="ar_exposure_slider" translation_description="Accessibility label for the slider adjusting the camera\'s exposure compensation while through-camera mode is on.">Kamera pozlaması</string>
+    <string name="ar_alignment_adjusted_message" translation_description="Snackbar shown after the user drags the star map to align it with the camera image; shown with an Undo action that reverts the whole drag.">Harita hizalaması ayarlandı</string>
+    <string name="ar_dimmer_slider" translation_description="Accessibility label for the slider dimming the camera image behind the star map while through-camera mode is on.">Kamera karartıcı</string>
+    <!-- tm:omitted name="ar_iso_slider_label" reason="identical_to_source" -->
+    <string name="ar_iso_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual ISO sensitivity in through-camera mode.">Kamera ISO değeri</string>
+    <string name="ar_shutter_slider_label" translation_description="Very short label for the temporary developer slider setting the camera\'s manual shutter (exposure) time in through-camera mode.">Perde</string>
+    <string name="ar_shutter_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual shutter (exposure) time in through-camera mode.">Kamera deklanşör süresi</string>
+    <string name="share_button" translation_description="Overflow-menu row that captures the current sky view as an image and opens the system share sheet.">Gökyüzünü paylaş</string>
+    <string name="share_chooser_title" translation_description="Title of the system share sheet when sharing a captured sky image.">Bu gökyüzünü paylaş</string>
+    <string name="share_invitation" translation_description="Short invitation stamped on the footer of shared sky images, above the store link.">Ne baktığını görün — Sky Map uygulamasını ücretsiz edinin</string>
+    <string name="share_text" translation_description="Text accompanying a shared sky image in apps that accept both an image and text. %1$s is the app-store link.">Ne baktığını görün — Sky Map uygulamasını ücretsiz edinin: %1$s</string>
+    <!-- tm:omitted name="share_store_link" reason="identical_to_source" -->
+    <string name="share_layout_overlay" translation_description="Caption of the share-layout choice that draws the star map over the camera photo, as seen on screen.">Bindir</string>
+    <string name="share_layout_side_by_side" translation_description="Caption of the share-layout choice that puts the camera photo and the star map next to each other.">Yan yana</string>
+    <string name="share_shutter_button" translation_description="Accessibility label for the round shutter button that captures and shares the current through-camera view.">Bu görünümü paylaş</string>
+    <string name="share_failed_message" translation_description="Snackbar shown when capturing the sky image for sharing failed.">Gökyüzü yakalanamadı — tekrar deneyin</string>
+    <string name="ar_exposure_auto" translation_description="Readout shown when a manual camera exposure slider sits at its automatic position.">Otomatik</string>
+    <string-array name="hud_cardinal_directions" translation_description="The sixteen compass-point abbreviations, clockwise from north, used as the azimuth suffix in the map HUD (e.g. N, NNE, NE...). Translate to the locale\'s conventional compass abbreviations.">
+        <item>K</item>
+        <item>KKD</item>
+        <item>KD</item>
+        <item>DKD</item>
+        <item>D</item>
+        <item>ÖDÖ</item>
+        <item>GD</item>
+        <item>GGD</item>
+        <item>G</item>
+        <item>GBB</item>
+        <item>GB</item>
+        <item>BGB</item>
+        <item>B</item>
+        <item>KBK</item>
+        <item>KB</item>
+        <item>KKB</item>
+    </string-array>
+
+    <!-- Time travel: entry button, dialog, and the player bar shown while travelling. -->
     <string name="time_travel_button">Zaman Yolculuğu</string>
     <string name="time_travel_title">Zaman Yolculuğu</string>
+    <string name="time_travel_visiting" translation_description="Readout in the time travel dialog showing the currently chosen destination date and time. %1$s is the formatted date and time.">Ziyaret edilen: %1$s</string>
+    <string name="time_travel_pick_date" translation_description="Button in the time travel dialog that opens a date picker.">Tarih ayarla</string>
+    <string name="time_travel_pick_time" translation_description="Button in the time travel dialog that opens a time picker.">Saat ayarla</string>
+    <string name="time_travel_select_event" translation_description="Placeholder hint for the dropdown list of popular astronomical events in the time travel dialog.">Popüler bir etkinlik seçin…</string>
+    <string name="time_travel_go" translation_description="Button that starts time travel to the chosen date.">Git</string>
     <string name="time_travel_from_now">Şimdi Başla</string>
     <string name="time_travel_ok">Tamam</string>
     <string name="time_travel_cancel">İptal</string>
-    <string name="time_travel_stopped">Zaman yolculuğu durdu</string>
+    <!-- tm:omitted name="time_travel_slower" reason="identical_to_source" -->
+    <!-- tm:omitted name="time_travel_pause" reason="identical_to_source" -->
+    <!-- tm:omitted name="time_travel_faster" reason="identical_to_source" -->
+    <string name="time_travel_return" translation_description="Player button that ends time travel and returns the map to the present.">Şimdi</string>
+
+    <!-- Time travel playback-rate labels (v1 wording). -->
     <string name="time_travel_second_speed">Yolculuk &gt; @ 1 sn/sn</string>
     <string name="time_travel_minute_speed">Yolculuk &gt; @ 1 dak/sn</string>
     <string name="time_travel_10minute_speed">Yolculuk &gt; @ 10 dak/sn</string>
@@ -57,6 +197,9 @@
     <string name="time_travel_hour_speed_back">Yolculuk &lt; @ 1 saat/sn</string>
     <string name="time_travel_day_speed_back">Yolculuk &lt; @ 1 gün/sn</string>
     <string name="time_travel_week_speed_back">Yolculuk &lt; @ 1 hafta/sn</string>
+
+    <!-- Popular events in the time travel dialog (timestamps live in TimeTravelEvents.kt). -->
+    <string name="time_travel_now" translation_description="Time travel picker entry that resets the destination to the present moment.">Şimdi</string>
     <string name="time_travel_next_sunset">Sonraki akşam günbatımı</string>
     <string name="time_travel_next_sunrise">Sonraki sabah gün doğumu</string>
     <string name="time_travel_next_full_moon">Sonraki dolunay</string>
@@ -68,6 +211,7 @@
     <string name="time_travel_mars_uranus_2026">Mars-Uranüs Yakın Yaklaşması, 4 Tem 2026</string>
     <string name="time_travel_solar_eclipse_2026">Toplam Güneş Tutulması, 12 Ağu 2026</string>
     <string name="time_travel_perseids_2026">Perseid Meteor Yağmuru, 12-13 Ağustos 2026</string>
+    <string name="time_travel_lunar_eclipse_aug_2026" translation_description="Name of an astronomical event in the time travel picker. Keep the date format suitable for your locale.">Parçalı Ay Tutulması, 28 Ağu 2026</string>
     <string name="time_travel_jupiter_occultation_2026">Jüpiter\'in Ay Tarafından Örtülmesi, 6 Ekim 2026</string>
     <string name="time_travel_geminids_2026">Geminid Meteor Shower, 13-14 Aralık 2026</string>
     <string name="time_travel_supermoon_2026">Noel Arifesi Süper Ay, 24 Aralık 2026</string>
@@ -76,7 +220,11 @@
     <string name="time_travel_apollo_11">Apollo 11 Ay İnişi</string>
     <string name="time_travel_jupiter_saturn_2020">2020 Jüpiter-Satürn Kavuşumu</string>
     <string name="sun_wont_set_message">24 saat boyunca güneş, mevcut konumunuzda batmayacak.</string>
+    <string name="time_travel_start_message" translation_description="Toast message when time travel starts toward a chosen destination. %1$s is the formatted destination date and time.">%1$s tarihine zaman yolculuğu yapılıyor ...</string>
     <string name="time_travel_close_message">Şimdiye geri dönülüyor…</string>
+
+    <!-- Location management. -->
+    <string name="location_button" translation_description="Button on the map screen that opens the location management sheet">Konum</string>
     <string name="location_management_title">Konumunuz</string>
     <string name="location_source_auto">Otomatik</string>
     <string name="location_source_manual">Manuel</string>
@@ -89,6 +237,11 @@
     <string name="location_set_toast">Konum %1$s olarak ayarlandı</string>
     <string name="location_long_lat">Boylam: %1$.2f, Enlem: %2$.2f</string>
     <string name="location_map_unavailable">Harita Kullanılamıyor</string>
+    <string name="location_map_content_description" translation_description="Accessibility description of the static map image showing the current location of the user">Mevcut konumunuzun haritası</string>
+    <string name="snackbar_action_undo" translation_description="Snackbar action button that reverses the change the snackbar reports, e.g. re-enabling horizon auto-leveling">Geri al</string>
+    <string name="snackbar_action_open" translation_description="Snackbar action button that opens the screen the snackbar refers to, e.g. the compass calibration screen">Aç</string>
+    <string name="label_size_hint_message" translation_description="Snackbar shown once, the first time the user zooms in a long way. Explains that the text labels naming stars and other objects stay the same size however far you zoom, and that their size is changed in the app\'s Settings screen instead. Shown with an action button that opens Settings.">Etiket boyutu yakınlaştırmayla değişmez — Ayarlar\'dan ayarlayın</string>
+    <string name="label_size_hint_action" translation_description="Action button on the label size snackbar; opens the app\'s Settings screen, where the user can change how large the sky labels are">Ayarlar</string>
     <string name="location_permission_dialog_title">Konum Gerekli</string>
     <string name="location_permission_dialog_message">
     Sky Map, doğru gece gökyüzünü göstermek için yaklaşık konumunuza ihtiyaç duyar. İzin verebilir, konumunuzu manuel olarak girebilir veya daha sonra karar verebilirsiniz. Daha sonra karar verirseniz, konumunuz ayarlanana kadar harita doğru olmayacaktır.
@@ -114,14 +267,35 @@
     <string name="location_geocoder_offline">İnternet yok — koordinatları doğrudan girin</string>
     <string name="location_invalid_latitude">Enlem −90 ile 90 arasında olmalıdır</string>
     <string name="location_invalid_longitude">Boylam −180 ile 180 arasında olmalıdır</string>
+    <!-- tm:omitted name="location_coordinate_format" reason="identical_to_source" -->
+
+    <!-- Object info card -->
+    <string name="object_info_image_credit" translation_description="Attribution line under the object\'s photo; %1$s is the credited source, e.g. NASA/ESA">Görsel: %1$s</string>
+    <string name="object_info_fun_fact" translation_description="An interesting trivia line on the object info card; %1$s is the fact text">İlginç bilgi: %1$s</string>
     <string name="object_info_distance">Mesafe:</string>
     <string name="object_info_size">Boyut:</string>
     <string name="object_info_mass">Kütle:</string>
+    <string name="object_info_spectral_class" translation_description="Label for a star\'s spectral classification (e.g. G2V) on the info card">Tayf sınıfı:</string>
     <string name="object_info_magnitude">Büyüklük:</string>
+    <string name="object_info_rises" translation_description="Label on the info card for the time the object next rises above the horizon at the user\'s location">Doğuş:</string>
+    <string name="object_info_sets" translation_description="Label on the info card for the time the object next sets below the horizon at the user\'s location">Batış:</string>
+    <string name="object_info_always_above_horizon" translation_description="Info-card line shown for a circumpolar object that never sets at the user\'s location">Konumunuzda her zaman ufkun üzerinde</string>
+    <string name="object_info_always_below_horizon" translation_description="Info-card line shown for an object that never rises at the user\'s location">Konumunuzda her zaman ufkun altında</string>
+    <string name="object_info_also_known_as" translation_description="Label on the info card above the object\'s alternative names (aliases and catalog designations), e.g. M31 and NGC 224">Diğer adları:</string>
+    <string name="object_info_see_also" translation_description="Heading above links to related celestial objects on the info card">Ayrıca bakın</string>
     <string name="object_info_find_in_sky">Gökyüzünde bul</string>
+    <string name="object_info_close" translation_description="Button that closes the object info card">Kapat</string>
     <string name="object_info_tap_to_close">Kapatmak için dokunun</string>
+
+    <!-- Image gallery -->
+    <string name="gallery_button" translation_description="Map-screen menu item that opens a gallery of photographs of celestial objects. Not the user\'s own photos - these are catalog images from sources such as NASA and ESA.">Gökyüzü galerisi</string>
+    <string name="gallery_title" translation_description="Title of the screen showing a gallery of photographs of celestial objects. Not the user\'s own photos - these are catalog images from sources such as NASA and ESA.">Gökyüzü galerisi</string>
+    <string name="gallery_back" translation_description="Content description for the back arrow leaving the gallery screen">Geri</string>
+
+    <!-- Settings screen (v1 wording where a v1 string existed) -->
     <string name="settings_button">Ayarlar</string>
     <string name="settings_title">Ayarlar</string>
+    <string name="settings_back" translation_description="Content description for the back arrow leaving the settings screen">Geri</string>
     <string name="settings_ok">Tamam</string>
     <string name="settings_cancel">İptal</string>
     <string name="settings_section_controls">Kontroller</string>
@@ -130,26 +304,72 @@
     <string name="settings_section_other">Diğer</string>
     <string name="enable_analytics">Kullanım istatistikleri gönder</string>
     <string name="enable_analytics_desc">Google Analytics\'e anonim veri göndererek Sky Map\'i daha iyi hale getirin</string>
+    <string name="settings_diagnostics_summary" translation_description="Summary for the settings row that opens the diagnostics screen, which shows technical sensor, location and performance readouts useful when reporting a problem">Sensör, konum ve performans ayrıntıları</string>
     <string name="settings_tap_to_identify">Dokunduğunda bilgi göster</string>
     <string name="settings_tap_to_identify_summary">Gök cisimlerine dokunarak onlar hakkında bilgi edinin</string>
     <string name="settings_tap_in_auto_mode">Otomatik modda bilgi kartları</string>
     <string name="settings_tap_in_auto_mode_summary">Otomatik (sensör) modda nesnelere dokunurken de bilgi kartlarını göster</string>
     <string name="settings_auto_level_horizon">Ufku otomatik olarak düzelt</string>
+    <string name="auto_level_on_toast" translation_description="Brief confirmation shown when a double tap turns horizon auto-leveling on in manual mode">Ufuk otomatik hizalama açık</string>
+    <string name="auto_level_off_toast" translation_description="Brief confirmation shown when a double tap turns horizon auto-leveling off in manual mode">Ufuk otomatik hizalama kapalı</string>
     <string name="settings_auto_level_horizon_summary">Manuel modda, parmağınızı kaldırdıktan sonra ufuk yavaş yavaş yatay konuma döner</string>
+    <string name="settings_font_size" translation_description="Preference title: change the size of the text labels naming stars and other objects drawn on the sky">Gökyüzü etiketi boyutu</string>
+    <string name="settings_font_size_summary" translation_description="Help to go along with the sky label size preference. Explains that this size is fixed and does not change as the user zooms the map in or out.">Etiket metni her yakınlaştırmada bu boyutta kalır</string>
+    <string name="settings_font_size_small" translation_description="Smallest font size">Küçük</string>
+    <string name="settings_font_size_medium" translation_description="Normal font size">Orta</string>
+    <string name="settings_font_size_large" translation_description="Large font size">Büyük</string>
+    <string name="settings_font_size_extra_large" translation_description="Largest font size">Çok Büyük</string>
     <string name="settings_auto_dimness">Otomatik ekran kararması</string>
+    <string name="settings_auto_dimness_summary" translation_description="Summary for the night-mode screen dimming preference">Gece modunun ekranı karartma derecesi</string>
+    <string name="settings_auto_dimness_system" translation_description="Screen dimming option: leave brightness on the system setting">Sistem Varsayılanı</string>
+    <string name="settings_auto_dimness_dim" translation_description="Screen dimming option: dimmest screen setting">Çok Karanlık</string>
+    <string name="settings_auto_dimness_classic" translation_description="Screen dimming option: the hand-tuned brightness Sky Map used for its first 15 years">Klasik</string>
     <string name="settings_sky_gradient">Gökyüzü gradyanını göster</string>
     <string name="settings_sky_gradient_summary">Gökyüzünü Güneş\'in yakınında mavi, karşı tarafında koyu renklendirir</string>
+    <string name="settings_disable_gyro" translation_description="Preference title for switching from the gyroscope to the legacy compass + accelerometer sensor pipeline">Eski sensörleri kullan</string>
+    <string name="settings_disable_gyro_summary" translation_description="Explanation of the legacy sensors preference and when to use it">
+    Pusula ve ivmeölçeri jiroskop yerine haritayı yönlendirmek için kullanın. Harita kayıyorsa veya cihazınızın jiroskopu düzgün çalışmıyorsa bunu deneyin; jiroskopu olmayan cihazlar bu sensörleri otomatik olarak kullanır.
+    </string>
     <string name="settings_sensor_speed">Sensör Hızı</string>
+    <string name="settings_sensor_speed_slow" translation_description="Slow sensor speed">Yavaş</string>
+    <string name="settings_sensor_speed_standard" translation_description="Normal sensor speed">Orta</string>
+    <string name="settings_sensor_speed_fast" translation_description="Fast sensor speed">Hızlı</string>
     <string name="settings_sensor_damping">Sönümleme</string>
+    <string name="settings_sensor_damping_standard" translation_description="Low sensor damping factor - this will make the app jittery">Titrek</string>
+    <string name="settings_sensor_damping_high" translation_description="Medium sensor damping factor - this will make the app slightly jittery">Orta</string>
+    <string name="settings_sensor_damping_extra_high" translation_description="Extra high sensor damping factor">Tam kararında</string>
+    <string name="settings_sensor_damping_really_high" translation_description="Really high sensor damping factor - this will make the app sluggish">Gecikmeli</string>
+    <string name="settings_classic_sensors_only" translation_description="Summary noting a sensor preference only applies to the legacy non-gyroscope sensor path">Yalnızca eski sensörler kullanımda olduğunda geçerlidir</string>
     <string name="settings_reverse_magnetic_z">Manyetik Z Tersi</string>
     <string name="settings_magnetic_correction">Manyetik düzeltmeyi uygulayın</string>
+    <string name="settings_magnetic_correction_summary" translation_description="Summary for the magnetic correction preference">Pusulayı manyetik ve coğrafi kuzey arasındaki farka göre düzeltir</string>
     <string name="settings_view_direction">Görünüm Yönü</string>
+    <string name="settings_view_direction_summary" translation_description="Explanation of the view direction preference, covering both landscape rotation and pointer modes">
+    Ufku 90 derece döndür (zorunlu yatay konuma sahip cihazlar için) veya ekranın telefonun üst kısmının işaret ettiği yeri göstermesi için işaretçi modunu kullan
+    </string>
+    <!-- tm:omitted name="settings_view_direction_standard" reason="identical_to_source" -->
+    <string name="settings_view_direction_rotate90" translation_description="View direction option that rotates the screen by 90 degrees">Döndürülmüş ufuk</string>
+    <string name="settings_view_direction_telescope" translation_description="View direction option that shows the sky as pointed at by the long edge of the phone">İşaretçi modu</string>
+
+    <!-- tm:omitted name="support_email" reason="identical_to_source" -->
     <string name="diagnostics_button">Kontrol</string>
     <string name="diagnostics_title">Kontrol</string>
+    <string name="diagnostics_share" translation_description="Accessibility label for the diagnostics screen button that emails these details to the developers">Geliştiricilere gönder</string>
+    <string name="diagnostics_share_subject" translation_description="Subject line of the email a user sends from the diagnostics screen">Sky Map tanılama raporu</string>
+    <string name="diagnostics_report_header" translation_description="First line of the emailed diagnostics report, telling the user where to type their problem description. Keep it on one line.">--- Sky Map tanılama. Lütfen sorunu bu çizginin üzerine yazın. ---</string>
     <string name="diagnostics_section_general">Genel</string>
     <string name="diagnostics_device">Cihaz</string>
+    <!-- tm:omitted name="diagnostics_phone_format" reason="identical_to_source" -->
     <string name="diagnostics_android_version">Android sürümü</string>
     <string name="diagnostics_sky_map_version">Sky Map sürümü</string>
+    <!-- tm:omitted name="diagnostics_sky_map_version_format" reason="identical_to_source" -->
+    <string name="diagnostics_section_graphics" translation_description="Section heading in the diagnostics screen for graphics/GPU information">Grafik</string>
+    <string name="diagnostics_gl_renderer" translation_description="Row label in the diagnostics screen for the name of the graphics processor (GPU) drawing the sky">Oluşturucu</string>
+    <!-- tm:omitted name="diagnostics_gl_version" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_gl_version_format" reason="identical_to_source" -->
+    <string name="diagnostics_gl_limits" translation_description="Row label in the diagnostics screen for graphics hardware limits (maximum texture size, supported line widths and point sizes)">GL sınırları</string>
+    <string name="diagnostics_gl_limits_format" translation_description="Format for the GL limits row: maximum texture size in pixels, then the supported line width and point size ranges. \'tex\' abbreviates texture. %1$d is texture size, %2$s is the line width range, %3$s is the point size range.">tex %1$d, çizgi %2$s, nokta %3$s</string>
+    <string name="diagnostics_gl_unavailable" translation_description="Value shown in the diagnostics Graphics rows before the sky map has drawn, when the graphics details are not known yet">Henüz kullanılabilir değil</string>
     <string name="diagnostics_section_sensors">Sensörler</string>
     <string name="diagnostics_accelerometer">İvmeölçer</string>
     <string name="diagnostics_compass">Pusula</string>
@@ -162,22 +382,43 @@
     <string name="diagnostics_location_permission">Konum İzni</string>
     <string name="diagnostics_permission_granted">Verildi</string>
     <string name="diagnostics_permission_denied">Reddedildi</string>
+    <!-- tm:omitted name="diagnostics_gps" reason="identical_to_source" -->
     <string name="diagnostics_no_gps">GPS Yok</string>
     <string name="diagnostics_enabled">Etkin</string>
     <string name="diagnostics_disabled">Devre Dışı</string>
     <string name="diagnostics_permission_disabled">İzin devre dışı</string>
     <string name="diagnostics_location">Konum (enlem, boylam)</string>
+    <!-- tm:omitted name="diagnostics_location_format" reason="identical_to_source" -->
+    <string name="diagnostics_location_unset" translation_description="Location status shown in diagnostics when no location has been set yet">Ayarlanmadı</string>
     <string name="diagnostics_location_acquiring">Alınıyor…</string>
+    <string name="diagnostics_location_hardware_unavailable" translation_description="Location status shown in diagnostics when no location hardware is available">Konum donanımı yok</string>
     <string name="diagnostics_pointing">Yönlendirme anı</string>
+    <!-- tm:omitted name="diagnostics_dec_format" reason="identical_to_source" -->
     <string name="diagnostics_magnetic_correction">Manyetik düzeltme</string>
+    <string name="diagnostics_alignment_adjustment" translation_description="Diagnostics row label for the manual sky-alignment correction the user set by dragging in through-camera mode.">Hizalama ayarı</string>
+    <string name="diagnostics_alignment_format" translation_description="Value of the sky-alignment correction: azimuth then altitude offset in degrees, each signed with one decimal. \'az\' and \'alt\' abbreviate azimuth and altitude.">az %1$+.1f°, alt %2$+.1f°</string>
+    <!-- tm:omitted name="diagnostics_magnetic_correction_format" reason="identical_to_source" -->
+    <string name="diagnostics_east" translation_description="Compass direction shown for an eastward magnetic correction">Doğu</string>
+    <string name="diagnostics_west" translation_description="Compass direction shown for a westward magnetic correction">Batı</string>
     <string name="diagnostics_local_datetime">Yerel saat</string>
     <string name="diagnostics_utc_datetime">Evrensel saat</string>
     <string name="diagnostics_section_network">Ağ</string>
     <string name="diagnostics_connection">Bağlantı</string>
+    <string name="diagnostics_section_satellites" translation_description="Section heading in the diagnostics screen for satellite orbital-data status">Uydular</string>
+    <string name="diagnostics_satellite_data" translation_description="Row label in the diagnostics screen for the age and count of cached satellite orbital data">Yörünge verisi</string>
+    <string name="diagnostics_satellite_data_none" translation_description="Row value in the diagnostics screen when no satellite orbital data has been downloaded yet">İndirilmedi</string>
+    <string name="diagnostics_satellite_data_format" translation_description="Row value in the diagnostics screen showing how many satellites are cached and how many days old the data is. %1$d is a count, %2$.1f is a number of days">%1$d uydu, %2$.1f günlük</string>
+    <string name="diagnostics_satellite_last_fetch" translation_description="Row label in the diagnostics screen for the result of the most recent attempt to download satellite orbital data">Son getirme</string>
+    <string name="diagnostics_satellite_never_fetched" translation_description="Row value in the diagnostics screen when satellite orbital data has never been downloaded">Asla</string>
+    <string name="diagnostics_satellite_circuit_open" translation_description="Row label in the diagnostics screen for when satellite downloads are paused after repeated server errors">İndirmeler duraklatıldı</string>
+    <string name="diagnostics_satellite_circuit_open_format" translation_description="Row value in the diagnostics screen showing when paused satellite downloads will resume and how many failures caused the pause. %1$s is a date and time, %2$d is a count">%1$s tarihine kadar (%2$d hata)</string>
+    <string name="diagnostics_satellite_force_fetch" translation_description="Label on a debug-only button in the diagnostics screen that downloads satellite orbital data immediately">Uydu verilerini şimdi getir (hata ayıklama)</string>
     <string name="diagnostics_connected">Bağlı</string>
     <string name="diagnostics_disconnected">Bağlantı Kesildi</string>
     <string name="diagnostics_wifi">(wifi)</string>
     <string name="diagnostics_cell">(mobil)</string>
+
+    <!-- Compass calibration screen (slice 15) -->
     <string name="calibration_button">Kalibrasyon</string>
     <string name="calibration_heading_user">Telefonunuzun Pusulası</string>
     <string name="calibration_heading_warning">Telefonunuzun Pusulası Dikkat Gerektiriyor</string>
@@ -188,23 +429,173 @@
     <string name="calibration_accuracy_high">Kalibrasyon: İyi</string>
     <string name="calibration_accuracy_no_contact">Kalibrasyon: Temas yok</string>
     <string name="calibration_do_not_show_again">Bu mesajı tekrar gösterme</string>
+    <string name="calibration_what_to_do" translation_description="Information for the user on how to calibrate the compass when the screen auto-opens. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[Telefonunuzun pusula sensörünün kalibrasyonu zayıf görünüyor. 8 çizme hareketi (<a href="%s">gösteriyi izleyin</a>) telefonunuzun donanımının pusula sensörünü sıfırlamasını sağlar — Sky Map bu süreç üzerinde kontrol sahibi değildir.<br/><br/>
+<blockquote><b>Kalibre edilmiş olmak doğru olduğu anlamına gelmez.</b> 8 işareti hareketi sensörün sıfırlanmasına yardımcı olur, ancak yakındaki metal nesnelerden, araç torpidolarından veya telefon kılıflarından kaynaklanan paraziti gideremez. Kalibrasyon sonrasında harita hâlâ yanlış gösteriyorsa, en olası neden Sky Map değil, bu dış kaynaklardır.</blockquote>
+Metalden uzak, açık bir alana geçin ve tekrar deneyin.]]></string>
+    <string name="calibration_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they open the calibration screen. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[Telefonunuz pusula kalibrasyon durumunu yukarıda gösterildiği gibi bildiriyor.<br/><br/>Gerekirse, telefonunuzun donanımını pusula sensörünü yeniden kalibre etmeye teşvik etmek için 8 figürü hareketini yapın (<a href="%s">gösteriyi izleyin</a>).<br/><br/><blockquote><b>Önemli:</b> kalibrasyon, sensörün dahili olarak sıfırlanmasına yardımcı olur. Bu, pusulanın mutlaka doğru çalıştığı anlamına gelmez!<br/>Yerel manyetik parazitler (metal nesneler, araba torpidoları, telefon kılıfları) telefonunuzun pusulasının Sky Map uygulamasına yanlış okumalar göndermesine neden olabilir.</blockquote><br/><b>Harita konumları doğru göstermiyorsa, sorun muhtemelen Sky Map değil, telefonunuzdur!</b>]]></string>
     <string name="calibration_low_accuracy_toast">Telefonunuzun pusulası düşük doğruluk bildiriyor</string>
+    <string name="calibration_complete_toast" translation_description="Toast shown when the compass reaches high accuracy and the auto-opened calibration screen closes itself">Sensörler yüksek doğruluğa sahip</string>
+
+    <!-- Startup routing: EULA, warm welcome, What's New (slice 16) -->
     <string name="eula_title">Kullanım Şartları</string>
     <string name="dialog_accept">Kabul et</string>
     <string name="dialog_decline">Hayır, teşekkürler</string>
     <string name="dialog_ok_button">Tamam</string>
+
     <string name="whats_new_dialog_title">Yenilikler</string>
+    <string name="whats_new_version_heading" translation_description="Heading above the list of new features. %1$s is the app version name">Sürüm %1$s yenilikleri</string>
+
+    <!-- Warm welcome (onboarding pager, slice 16) -->
     <string name="warm_welcome_slide1_title">Evreni Keşfedin</string>
+    <string name="warm_welcome_slide1_desc" translation_description="Description for the first slide of the Warm Welcome onboarding, shown under a guided tour of the map controls">
+    Yıldızları, takımyıldızlarını, gezegenleri ve daha fazlasını filtrelemek için soldaki katmanları kullanın. Sağ alttaki düğmeler gökyüzünde arama yapar, zaman içinde yolculuk yapar ve ekran modlarını değiştirir. Kontrolleri gizlemek veya göstermek için istediğiniz zaman gökyüzüne dokunun.
+    </string>
     <string name="warm_welcome_slide2_title">Gökyüzünde Gezinin</string>
+    <string name="warm_welcome_slide2_desc" translation_description="Description for the second slide of the Warm Welcome onboarding. Please do not change the &lt; and &gt; markup"><![CDATA[Telefonunuzu çevrenize doğrultarak <b>Otomatik Mod</b>\'u kullanın veya dokunarak <b>Manuel</b> moda geçin, parmağınızı kaydırıp kıstırarak keşfedin.]]></string>
+    <string name="warm_welcome_slide2_info_desc" translation_description="Description about info cards on the second slide of the Warm Welcome onboarding">
+    Fotoğraf, eğlenceli gerçekler ve göksel ayrıntılar içeren bunun gibi bir Bilgi Kartı açmak için etiketlenmiş herhangi bir nesneye dokunun.
+    </string>
     <string name="warm_welcome_card_name">Yengeç Bulutsusu</string>
+    <string name="warm_welcome_card_description" translation_description="Description of the Crab Nebula on the sample info card on the second Warm Welcome slide">
+    Yengeç Bulutsusu, Boğa takımyıldızında yer alan bir süpernova kalıntısı olup, MS 1054 yılında Çinli gökbilimciler tarafından kaydedilen bir yıldız patlamasının sonucudur.
+    </string>
+    <string name="warm_welcome_card_fun_fact" translation_description="Fun fact about the Crab Nebula on the sample info card on the second Warm Welcome slide">
+    Yengeç Bulutsusu, patlayan yıldızın çökmüş çekirdeği olan ve saniyede 30 kez dönen bir atarcalı yıldız (pulsar) içerir!
+    </string>
+    <string name="warm_welcome_card_distance" translation_description="Distance to the Crab Nebula on the sample info card on the second Warm Welcome slide">6.500 ışık yılı</string>
+    <string name="warm_welcome_card_size" translation_description="Size of the Crab Nebula on the sample info card on the second Warm Welcome slide">11 ışık yılı genişliğinde</string>
     <string name="warm_welcome_slide3_title">Sensörler ve Kalibrasyon</string>
     <string name="warm_welcome_slide3_desc">Sky Map, yıldızlarla hizalamak için telefonunuzun sensörlerini kullanır.</string>
+    <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message on the third Warm Welcome slide when sensors are missing. Please do not change the &lt; and &gt; markup"><![CDATA[Cihazınızda otomatik takip için gereken sensörler bulunmuyor gibi görünüyor. Endişelenmeyin, <b>Manuel Mod</b> ile tüm evreni keşfetmeye devam edebilirsiniz!]]></string>
+    <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration advice on the third Warm Welcome slide. Please do not change the &lt; and &gt; markup"><![CDATA[Konumun doğru kalması için telefonunuzu arada bir hızlıca <b>8 şekli</b> çizecek şekilde sallayın.]]></string>
     <string name="warm_welcome_skip">Atla</string>
     <string name="warm_welcome_next">İleri</string>
     <string name="warm_welcome_finish">Başlat!</string>
     <string name="warm_welcome_sensor_ok">Çalışıyor</string>
     <string name="warm_welcome_sensor_missing">Eksik</string>
+
+    <!-- Help dialog (slice 16) -->
     <string name="help_button">Yardım</string>
     <string name="tutorial_button">Eğitim</string>
     <string name="help_dialog_title">Yardım</string>
+    <string name="help_version" translation_description="Version line at the top of the Help screen. %1$s is the app version name">Sürüm %1$s</string>
+    <string name="whats_new_button" translation_description="Map-screen menu item that opens the What's New and Credits screen">Yenilikler</string>
+    <string name="whats_new_screen_title" translation_description="Title of the screen showing the release notes and the credits">Yenilikler ve Emeği Geçenler</string>
+
+    <!-- The deep-sky symbol key at the foot of the Help screen. -->
+    <string name="help_symbol_key_title" translation_description="Heading of the Help section explaining the map symbols used for deep-sky objects">Harita simgeleri</string>
+    <string name="help_symbol_key_intro" translation_description="Introductory sentence for the map-symbol key in Help">
+    Derin uzay nesneleri ve gök taşı yağmurları, türlerini gösteren bir simgeyle işaretlenir:
+    </string>
+    <string name="symbol_key_galaxy" translation_description="Symbol-key label: the marker used for galaxies">Galaksi</string>
+    <string name="symbol_key_open_cluster" translation_description="Symbol-key label: the marker used for open star clusters">Açık küme</string>
+    <string name="symbol_key_globular_cluster" translation_description="Symbol-key label: the marker used for globular star clusters">Küresel küme</string>
+    <string name="symbol_key_diffuse_nebula" translation_description="Symbol-key label: the marker used for diffuse nebulae">Yayılı bulutsu</string>
+    <string name="symbol_key_planetary_nebula" translation_description="Symbol-key label: the marker used for planetary nebulae">Gezegenimsi bulutsu</string>
+    <string name="symbol_key_supernova_remnant" translation_description="Symbol-key label: the marker used for supernova remnants">Süpernova kalıntısı</string>
+    <string name="symbol_key_asterism" translation_description="Symbol-key label: the marker used for asterisms and star clouds">Yıldız kümesi veya yıldız bulutu</string>
+    <string name="symbol_key_other" translation_description="Symbol-key label: the marker used for deep-sky objects of any other type">Diğer derin uzay nesnesi</string>
+    <string name="symbol_key_meteor_radiant" translation_description="Symbol-key label: the marker for the point in the sky meteors of a shower appear to come from">Gök taşı yağmuru yayan nokta</string>
+    <string name="symbol_key_meteor_radiant_peak" translation_description="Symbol-key label: the brighter marker used when a meteor shower is near its peak activity">Zirve noktasına yakın meteor yağmuru</string>
+
+    <!-- Moon-phase home-screen widget (D69). -->
+    <string name="moon_widget_label" translation_description="Name of the moon-phase home-screen widget, shown in the launcher\'s widget picker">Ay evresi</string>
+    <string name="moon_widget_description" translation_description="Description of the moon-phase widget, shown under its preview in the launcher\'s widget picker">
+    Günlük olarak güncellenen Ay evresi, aydınlanma oranı ile doğuş ve batış saatleri.
+    </string>
+    <string name="moon_widget_illumination" translation_description="Widget line showing how much of the Moon\'s disc is lit; %1$d is a percentage number">%%1$d aydınlık</string>
+    <string name="moon_widget_rise_time" translation_description="Widget fragment showing today\'s moonrise time; %1$s is a clock time like 17:42">doğuş %1$s</string>
+    <string name="moon_widget_set_time" translation_description="Widget fragment showing today\'s moonset time; %1$s is a clock time like 03:12">batış %1$s</string>
+    <string name="moon_phase_new" translation_description="Name of the lunar phase when the Moon is fully dark">Yeni Ay</string>
+    <string name="moon_phase_waxing_crescent" translation_description="Name of the lunar phase between new moon and first quarter">İlk Hilal</string>
+    <string name="moon_phase_first_quarter" translation_description="Name of the lunar phase when half the disc is lit and growing">İlk Dördün</string>
+    <string name="moon_phase_waxing_gibbous" translation_description="Name of the lunar phase between first quarter and full moon">Şişkin Ay</string>
+    <string name="moon_phase_full" translation_description="Name of the lunar phase when the disc is fully lit">Dolunay</string>
+    <string name="moon_phase_waning_gibbous" translation_description="Name of the lunar phase between full moon and last quarter">Küçülen Şişkin Ay</string>
+    <string name="moon_phase_last_quarter" translation_description="Name of the lunar phase when half the disc is lit and shrinking">Son Dördün</string>
+    <string name="moon_phase_waning_crescent" translation_description="Name of the lunar phase between last quarter and new moon">Son Hilal</string>
+    <string name="moon_widget_promo_title" translation_description="Title of the row on the Moon\'s info card offering to add the moon-phase widget to the home screen">Ay\'ı ana ekranınızda tutun</string>
+    <string name="moon_widget_promo_subtitle" translation_description="Subtitle of the row offering the moon-phase widget, summarizing what the widget shows">Günlük güncellenen evre, aydınlanma ve doğuş saatleri</string>
+    <string name="moon_widget_promo_add" translation_description="Button that adds the moon-phase widget to the home screen via the system dialog">Widget ekle</string>
+    <string name="moon_widget_promo_dismiss" translation_description="Accessibility label for the button that permanently dismisses the widget offer row">Widget önerisini kapat</string>
+    <string name="moon_widget_pin_unsupported_title" translation_description="Title of the fallback dialog when the launcher cannot add widgets directly">Widget\'ı ana ekranınızdan ekleyin</string>
+    <string name="moon_widget_pin_unsupported_body" translation_description="Body of the fallback dialog explaining how to add the widget manually">
+    Başlatıcınız uygulamadan widget eklemeyi desteklemiyor. Ana ekranınıza dokunup basılı tutun, Widget\'lar öğesini seçin ve ardından Sky Map uygulamasını bulun.
+    </string>
+    <string name="moon_widget_pin_unsupported_ok" translation_description="Confirmation button of the manual widget-adding instructions dialog">Anladım</string>
+    <string name="moon_widget_preview_illumination" translation_description="Representative illumination line shown in the widget picker\'s preview of the moon-phase widget">%%83 aydınlık</string>
+
+    <!-- Tonight's-sky and countdown home-screen widgets (D69 phase 2). -->
+    <string name="tonight_widget_label" translation_description="Name of the tonight\'s-sky home-screen widget, shown in the launcher\'s widget picker">Bu geceki gökyüzü</string>
+    <string name="tonight_widget_description" translation_description="Description of the tonight\'s-sky widget, shown under its preview in the launcher\'s widget picker">
+    Bu gecenin en iyi manzaraları: Günlük güncellenen iyi konumdaki gezegenler, meteor yağmurları ve ay olayları.
+    </string>
+    <string name="tonight_widget_header" translation_description="Small header label on the tonight widget; %1$s is a short date like \'Wed 30 Jul\'">Bu gece · %1$s</string>
+    <string name="tonight_widget_sun_times" translation_description="Header line on the tonight widget; %1$s is the sunset time, %2$s the time the sky becomes fully dark">gün batımı %1$s · karanlık %2$s</string>
+    <string name="tonight_widget_sunset_only" translation_description="Header fragment when only the sunset time is known; %1$s is the sunset time">gün batımı %1$s</string>
+    <string name="tonight_well_placed" translation_description="Tonight-widget row: a planet is high in the sky and easy to observe; %1$s is the planet name, %2$s the time from which it is well placed">%1$s, %2$s itibarıyla iyi konumda</string>
+    <!-- tm:omitted name="tonight_trailing_direction" reason="identical_to_source" -->
+    <string name="tonight_shower_peak" translation_description="Tonight-widget row: a meteor shower reaches its annual peak tonight; %1$s is the shower name">%1$s bu gece zirvede</string>
+    <string name="tonight_shower_days" translation_description="Tonight-widget row: a meteor shower peaks within a few days; %1$s is the shower name, %2$d the number of days">%1$s %2$d gün içinde zirvede</string>
+    <string name="tonight_dark_skies" translation_description="Small trailing note: the moon is dark, so viewing conditions are ideal">karanlık gökyüzü</string>
+    <string name="tonight_trailing_moon" translation_description="Small trailing note: how much of the moon is lit; %1$d is a percentage">ay %%1$d</string>
+    <string name="tonight_new_moon" translation_description="Tonight-widget row shown at new moon">Yeni Ay — ayın en karanlık geceleri</string>
+    <string name="tonight_full_moon" translation_description="Tonight-widget row shown at full moon">Bu gece Dolunay</string>
+    <string name="tonight_bright_moon" translation_description="Tonight-widget row warning that a bright moon washes out faint objects">Parlak ay sönük nesneleri görünmez kılıyor</string>
+    <string name="tonight_lunar_eclipse_total" translation_description="Tonight-widget row: a total lunar eclipse is starting soon or under way">Tam ay tutulması</string>
+    <string name="tonight_lunar_eclipse_partial" translation_description="Tonight-widget row: a partial lunar eclipse is starting soon or under way">Parçalı ay tutulması</string>
+    <string name="tonight_lunar_eclipse_penumbral" translation_description="Tonight-widget row: a penumbral lunar eclipse is starting soon or under way">Yarı gölgeli ay tutulması</string>
+    <string name="tonight_quiet" translation_description="Tonight-widget line shown when nothing notable is visible tonight">Bu gece gökyüzü sakin</string>
+    <string name="tonight_quiet_next" translation_description="Tonight-widget line under the quiet-night message; %1$s is an event name, %2$d the days until it">Sırada: %2$d gün sonra %1$s</string>
+    <string name="countdown_widget_label" translation_description="Name of the countdown home-screen widget, shown in the launcher\'s widget picker">Gökyüzü geri sayımı</string>
+    <string name="countdown_widget_description" translation_description="Description of the countdown widget, shown under its preview in the launcher\'s widget picker">Sonraki meteor yağmuru zirvesine veya ay olayına kalan günler.</string>
+    <string name="countdown_days" translation_description="Unit label inside the countdown ring, under the number of days">gün</string>
+    <string name="countdown_tonight" translation_description="Shown inside the countdown ring when the event is tonight (zero days left)">şimdi</string>
+    <string name="countdown_shower_peak" translation_description="Countdown-widget event name; %1$s is a meteor shower name">%1$s zirvesi</string>
+    <string name="countdown_new_moon_peak" translation_description="Countdown-widget note: the shower peaks near new moon, so skies will be dark">Yeniay zirvesi</string>
+    <string name="countdown_full_moon" translation_description="Countdown-widget event name for the next full moon">Dolunay</string>
+    <string name="countdown_new_moon" translation_description="Countdown-widget event name for the next new moon">Yeniay</string>
+    <string name="tonight_widget_preview_row" translation_description="Representative highlight row shown in the widget picker\'s preview of the tonight widget">Jüpiter 21:30\'den itibaren iyi konumda</string>
+    <!-- tm:omitted name="countdown_widget_preview_days" reason="identical_to_source" -->
+    <string name="countdown_widget_preview_name" translation_description="Representative event name shown in the widget picker\'s preview of the countdown widget">Perseid zirvesi</string>
+
+    <!-- Sky-event notifications (D77). -->
+    <string name="settings_section_notifications" translation_description="Settings section header for notification preferences">Bildirimler</string>
+    <string name="settings_notifications_intro" translation_description="Introduction under the notifications settings header, stating how rarely the app notifies">
+    Sky Map yalnızca nadir gökyüzü olayları hakkında, günde en fazla bir kez bildirim gönderir. Siz açana kadar her şey kapalıdır.
+    </string>
+    <string name="settings_shower_alerts" translation_description="Preference title: notify on the evening a meteor shower reaches its annual peak">Meteor yağmuru zirveleri</string>
+    <string name="settings_shower_alerts_summary" translation_description="Explanation of the meteor-shower notification preference">Yılda yaklaşık bir düzine, zirve akşamında</string>
+    <string name="settings_tonight_digest" translation_description="Preference title: a single evening notification summarizing what\'s visible tonight">Bu akşamki gökyüzü özeti</string>
+    <string name="settings_tonight_digest_summary" translation_description="Explanation of the tonight-digest notification preference">Gün batımından sonra tek bir özet, sakin gecelerde atlanır</string>
+    <string name="settings_notifications_blocked" translation_description="Warning row shown when the user enabled notifications in the app but blocked them at the system level">Sky Map için bildirimler engellendi</string>
+    <string name="settings_notifications_blocked_action" translation_description="Hint under the blocked-notifications warning; tapping opens the system settings page">Sistem ayarlarından izin vermek için dokunun</string>
+    <string name="channel_showers_name" translation_description="Name of the meteor-shower notification channel, shown in the system\'s notification settings">Meteor yağmuru zirveleri</string>
+    <string name="channel_showers_description" translation_description="Description of the meteor-shower notification channel in the system\'s notification settings">Yılda yaklaşık bir düzine, zirve akşamında</string>
+    <string name="channel_digest_name" translation_description="Name of the tonight-digest notification channel, shown in the system\'s notification settings">Bu akşamki gökyüzü özeti</string>
+    <string name="channel_digest_description" translation_description="Description of the tonight-digest notification channel in the system\'s notification settings">Tek bir akşam özeti, sakin gecelerde atlanır</string>
+    <string name="notif_shower_title" translation_description="Title of the meteor-shower notification; %1$s is the shower name">Bu gece %1$s zirvesi</string>
+    <string name="notif_shower_direction" translation_description="Notification sentence telling the user where to look; %1$s is a compass point like NE">En iyisi gece yarısından sonra, %1$s yönüne bakılarak.</string>
+    <string name="notif_shower_dark_moon" translation_description="Notification sentence when the moon is dark during a meteor shower peak; %1$d is the expected meteors per hour">
+    Karanlık, aysız gökyüzü — şehir ışıklarından uzakta saatte %1$d meteora kadar görebilirsiniz.
+    </string>
+    <string name="notif_shower_bright_moon" translation_description="Notification sentence when a bright moon will interfere with a meteor shower; %1$d is the moon illumination percentage, %2$d the meteors per hour under ideal skies">
+    %%%1$d\'si aydınlık olan ay sönük meteorları gizleyecek — ideal gökyüzünde saatte %2$d\'ye kadar.
+    </string>
+    <string name="notif_digest_title" translation_description="Title of the tonight\'s-sky digest notification">Bu gece bakmaya değer</string>
+    <string name="notif_action_mute_showers" translation_description="Notification action button that opens the system toggle for the meteor-shower channel">Yağmurları sessize al</string>
+    <string name="time_travel_stopped">Zaman yolculuğu durdu</string>
+    <!-- Layers sheet: per-layer parameters (D87). -->
+    <string name="layer_param_disc_size">Disk boyutu</string>
+    <string name="layer_param_disc_size_true">Gerçek ölçek</string>
+    <string name="layer_param_disc_size_true_desc">
+    Her yakınlaştırmada gökyüzündeki gerçek boyut. Siz iyice yakınlaştırana kadar gezegenler birer noktadır.
+    </string>
+    <string name="layer_param_disc_size_glyphs">Semboller</string>
+    <string name="layer_param_disc_size_glyphs_desc">
+    Nasıl göründüğüne değil, her cismin gerçek boyutuna göre boyutlandırılmıştır. Her yakınlaştırmada kolayca görülür.
+    </string>
+    <string name="layer_param_disc_size_auto">Sabit</string>
+    <string name="layer_param_disc_size_auto_desc">Yakınlaştırırken ekranda sabit bir boyut korur, ardından gerçek boyuta geçer.</string>
+    <string name="layer_param_expand">%1$s için seçenekleri göster</string>
 </resources>

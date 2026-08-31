@@ -645,12 +645,22 @@
    "size": "83 anni luce di diametro",
    "image_credit": "NASA/ESA/Hubble"
   },
+  "dso/m100": {
+   "description": "Messier 100 è una galassia spirale a grande disegno nella Chioma di Berenice e una delle più luminose nell'Ammasso della Vergine.",
+   "fun_fact": "Sette supernove sono state osservate nella M100, la più recente nel 2020 - poche galassie hanno offerto uno spettacolo simile!",
+   "distance": "55 milioni di anni luce",
+   "size": "166.000 anni luce di diametro"
+  },
   "dso/m101": {
    "description": "La Galassia Girandola è una galassia a spirale vista di fronte nell'Orsa Maggiore, una delle più grandi galassie a spirale conosciute.",
    "fun_fact": "La Galassia Girandola contiene oltre mille miliardi di stelle e ha bracci a spirale asimmetrici a causa di passate interazioni galattiche!",
    "distance": "21 milioni di anni luce",
    "size": "170.000 anni luce di diametro",
    "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m102": {
+   "description": "Messier 102 è la grande voce irrisolta nel catalogo di Messier - un oggetto registrato nel 1781 che non è mai stato identificato con certezza.",
+   "fun_fact": "Messier non pubblicò coordinate per M102, e il suo collega Mechain in seguito ritrattò completamente la scoperta, affermando che si trattava solo di M101 registrata due volte per errore! La NASA la identifica con la Galassia Fuso, NGC 5866."
   },
   "dso/m103": {
    "description": "M103 è un piccolo e compatto ammasso aperto nella Cassiopea, contenente circa 40 stelle in un gruppo ristretto facilmente visibile con i binocoli. Una suggestiva stella doppia e un gigante rosso vicino al centro gli conferiscono un aspetto colorato nei piccoli telescopi, inserito nei ricchi campi stellari della Via Lattea della Cassiopea.",
@@ -665,6 +675,12 @@
    "size": "50.000 anni luce di diametro",
    "image_credit": "NASA/ESA/Hubble"
   },
+  "dso/m105": {
+   "description": "Messier 105 è una galassia ellittica nel Leone, la più grande galassia ellittica del catalogo di Messier al di fuori dell'Ammasso della Vergine.",
+   "fun_fact": "M105 condivide un anello colossale di idrogeno gassoso con la sua vicina NGC 3384, che si estende per circa 650.000 anni luce!",
+   "distance": "37 milioni di anni luce",
+   "size": "67.000 anni luce di diametro"
+  },
   "dso/m106": {
    "description": "M106 è una galassia a spirale nei Cani da Caccia con bracci a spirale anomali causati da getti provenienti dal suo buco nero centrale.",
    "fun_fact": "M106 ha dei maser ad acqua nel suo nucleo, che permettono agli astronomi di misurarne con precisione la distanza!",
@@ -677,6 +693,11 @@
    "fun_fact": "M107 è stata l'ultima voce aggiunta formalmente al catalogo Messier — appare nella corrispondenza di Pierre Méchain ma non era inclusa nell'edizione originale del 1781. È stata ufficialmente aggiunta come M107 nel 1947 dall'astronoma canadese Helen Sawyer Hogg, che ha codificato diversi oggetti \"mancanti\" che Méchain aveva osservato ma Messier non aveva mai registrato formalmente.",
    "distance": "20.900 anni luce",
    "size": "~61 anni luce di diametro"
+  },
+  "dso/m108": {
+   "description": "Messier 108 è una galassia a spirale barrata nell'Orsa Maggiore, soprannominata la Galassia Tavola da Surf.",
+   "fun_fact": "M108 è inclinata quasi di taglio rispetto a noi, ed è per questo che si è guadagnata il nome di Tavola da Surf – e ospita circa 290 ammassi globulari!",
+   "distance": "46 milioni di anni luce"
   },
   "dso/m109": {
    "description": "M109 è una galassia a spirale barrata nell'Orsa Maggiore, il membro più luminoso di un gruppo di galassie che porta il suo nome.",
@@ -740,6 +761,12 @@
    "distance": "5.500 anni luce",
    "size": "15 anni luce di diametro",
    "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m18": {
+   "description": "Messier 18 è un piccolo ammasso aperto di giovani stelle nel Sagittario, conosciuto anche come l'Ammasso del Cigno Nero.",
+   "fun_fact": "M18 è uno dei pochissimi oggetti Messier che il Telescopio Spaziale Hubble non ha mai fotografato!",
+   "distance": "4.200 anni luce",
+   "size": "26 anni luce di diametro"
   },
   "dso/m19": {
    "description": "M19 è un ammasso globulare compatto e ricco in Ofiuco — uno dei globulari più vicini al centro galattico. La sua caratteristica più distintiva è la sua forma notevolmente oblata: M19 è l'ammasso globulare più appiattito conosciuto, con un contorno ellittico visibile anche in un piccolo telescopio.",
@@ -1018,12 +1045,35 @@
    "size": "1,3 anni luce di diametro",
    "image_credit": "NASA/ESA/Hubble"
   },
+  "dso/m58": {
+   "description": "Messier 58 è una galassia a spirale barrata nella Vergine e uno dei membri più luminosi dell'Ammasso della Vergine.",
+   "fun_fact": "Un buco nero supermassiccio di circa 70 milioni di masse solari si trova al centro di M58, circondato da una stretta fascia di stelle neonate!",
+   "distance": "68 milioni di anni luce",
+   "size": "133.000 anni luce di diametro"
+  },
+  "dso/m59": {
+   "description": "Messier 59 è una galassia ellittica nella costellazione della Vergine, scoperta nel 1779 durante la ricerca di una cometa di passaggio.",
+   "fun_fact": "Il nucleo di M59 ruota all'indietro rispetto al resto della galassia, e circa 2.200 ammassi globulari sciamano attorno ad esso!",
+   "distance": "50 milioni di anni luce",
+   "mass": "270 milioni di masse solari (buco nero centrale)"
+  },
   "dso/m6": {
    "description": "L'Ammasso Farfalla è un ammasso aperto nello Scorpione, chiamato così per la disposizione a farfalla delle sue stelle più luminose.",
    "fun_fact": "M6 ha circa 100 milioni di anni e contiene oltre 300 stelle, tra cui la gigante arancione BM Scorpii!",
    "distance": "1.600 anni luce",
    "size": "25 anni luce di diametro",
    "image_credit": "NOAO/AURA/NSF"
+  },
+  "dso/m60": {
+   "description": "Messier 60 è una galassia ellittica gigante nella Vergine, la terza più luminosa dell'Ammasso della Vergine.",
+   "fun_fact": "Il buco nero centrale di M60 pesa circa 4,5 miliardi di Soli, uno dei più grandi mai scoperti!",
+   "distance": "57 milioni di anni luce"
+  },
+  "dso/m61": {
+   "description": "Messier 61 è una galassia a spirale barrata nella Vergine e una delle galassie più grandi dell'Ammasso della Vergine.",
+   "fun_fact": "Otto supernovae sono state avvistate in M61, uno dei conteggi più alti di qualsiasi galassia! Messier stesso la scambiò inizialmente per una cometa.",
+   "distance": "52 milioni di anni luce",
+   "size": "92.000 anni luce di diametro"
   },
   "dso/m62": {
    "description": "M62 è un ricco ammasso globulare in Ofiuco — uno dei globulari più vicini al centro galattico e notevolmente asimmetrico, con stelle più densamente concentrate sul lato meridionale. Con magnitudine 6,6 è un bellissimo oggetto binoculare, anche se la sua bassa declinazione lo rende un bersaglio stagionale breve per gli osservatori dell'emisfero boreale.",
@@ -1095,12 +1145,28 @@
    "distance": "12.000 anni luce",
    "size": "~25 anni luce di diametro"
   },
+  "dso/m72": {
+   "description": "Messier 72 è un ammasso globulare debole e remoto nell'Acquario, scoperto da Pierre Méchain nel 1780.",
+   "fun_fact": "M72 racchiude circa 168.000 stelle, l'equivalente di 168.000 Soli, in un ammasso di circa 9,5 miliardi di anni, incluse 43 stelle variabili!",
+   "distance": "55.000 anni luce"
+  },
+  "dso/m73": {
+   "description": "Messier 73 è un piccolo gruppo di quattro stelle nell'Acquario che appare solo come un ammasso.",
+   "fun_fact": "Gli astronomi hanno discusso per decenni se M73 fosse un vero ammasso. Nel 2002 la questione è stata risolta: le quattro stelle si trovano a distanze estremamente diverse e si allineano solo per caso!",
+   "distance": "Da 1.000 a 2.300 anni luce (le singole stelle)"
+  },
   "dso/m74": {
    "description": "La Galassia Fantasma è una galassia a spirale vista di fronte nei Pesci, nota per la sua perfetta struttura a spirale di grande disegno.",
    "fun_fact": "M74 è soprannominata la Galassia Fantasma a causa della sua bassissima luminosità superficiale, che la rende difficile da osservare!",
    "distance": "32 milioni di anni luce",
    "size": "95.000 anni luce di diametro",
    "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m75": {
+   "description": "Messier 75 è un ammasso globulare distante e riccamente concentrato nel Sagittario.",
+   "fun_fact": "M75 è uno degli ammassi globulari più densi conosciuti, e si ritiene sia un residuo di una galassia nana che la Via Lattea ha inghiottito molto tempo fa!",
+   "distance": "68.000 anni luce",
+   "size": "134 anni luce di diametro"
   },
   "dso/m76": {
    "description": "La Piccola Manubrio è una nebulosa planetaria in Perseo con una forma caratteristica a otto — una cugina più piccola di M27, la Nebulosa Manubrio nella Volpetta. Sebbene sia la voce più debole del catalogo Messier, ripaga l'osservazione paziente con piccoli telescopi e mostra una bella struttura negli strumenti più grandi, con due lobi più luminosi che fiancheggiano una vita più debole.",
@@ -1162,6 +1228,22 @@
    "size": "55.000 anni luce di diametro",
    "image_credit": "NASA/ESA/Hubble"
   },
+  "dso/m84": {
+   "description": "Messier 84 è una galassia ellittica gigante nel cuore affollato dell'Ammasso della Vergine.",
+   "fun_fact": "M84 spara due getti di materia dal suo nucleo, alimentati da un buco nero di circa 1,5 miliardi di masse solari!",
+   "distance": "55 milioni di anni luce"
+  },
+  "dso/m85": {
+   "description": "Messier 85 è una galassia lenticolare alla periferia dell'Ammasso della Vergine, nella Chioma di Berenice.",
+   "fun_fact": "Le increspature e le strutture a guscio nelle regioni esterne di M85 sono i resti di una fusione galattica avvenuta da 4 a 7 miliardi di anni fa!",
+   "distance": "60 milioni di anni luce",
+   "size": "120.600 anni luce di diametro"
+  },
+  "dso/m86": {
+   "description": "Messier 86 è una grande galassia ellittica nell'Ammasso della Vergine, formando una coppia notevole con la vicina M84.",
+   "fun_fact": "M86 si sta precipitando verso di noi a 244 km/s - l'avvicinamento più rapido di qualsiasi oggetto Messier! Il suo passaggio attraverso l'ammasso lascia una lunga scia di gas caldo strappato.",
+   "distance": "52 milioni di anni luce"
+  },
   "dso/m87": {
    "description": "M87 è una galassia ellittica supergigante nella Vergine, una delle galassie più massicce dell'universo locale.",
    "fun_fact": "Il buco nero centrale di M87 è stato il primo in assoluto a essere fotografato dall'Event Horizon Telescope nel 2019 - ha 6,5 miliardi di masse solari!",
@@ -1170,11 +1252,34 @@
    "mass": "2,4 bilioni di masse solari",
    "image_credit": "NASA/ESA/Hubble"
   },
+  "dso/m88": {
+   "description": "Messier 88 è un'elegante galassia a spirale nella Chioma di Berenice, uno dei quindici oggetti Messier nell'Ammasso della Vergine.",
+   "fun_fact": "M88 sta precipitando verso il centro dell'Ammasso della Vergine e arriverà tra 200 e 300 milioni di anni, con il suo gas esterno che viene strappato via mentre cade!",
+   "distance": "59 milioni di anni luce",
+   "size": "131.000 anni luce di diametro"
+  },
+  "dso/m89": {
+   "description": "Messier 89 è una galassia ellittica nella Vergine, scoperta da Charles Messier nel 1781.",
+   "fun_fact": "M89 potrebbe essere quasi una sfera perfetta - insolito per una galassia ellittica, che normalmente sono visibilmente schiacciate!",
+   "distance": "50 milioni di anni luce"
+  },
   "dso/m9": {
    "description": "M9 è un ammasso globulare compatto in Ofiuco — uno degli ammassi di Messier più colpiti dall'assorbimento della polvere interstellare. Si trova verso il rigonfiamento galattico, dove la polvere spessa lo oscura significativamente. Senza questa oscurazione M9 apparirebbe quasi una magnitudine più luminoso e sarebbe visibile a occhio nudo.",
    "fun_fact": "M9 soffre di un assorbimento di polvere interstellare maggiore di quasi qualsiasi altro ammasso globulare di Messier — circa 1,3 magnitudini di offuscamento rispetto a una linea di vista libera. Due ammassi globulari più piccoli (NGC 6342 e NGC 6356) si trovano entro circa 1° da M9, rendendolo il centro di un notevole raggruppamento di tre globulari in una piccola porzione di cielo.",
    "distance": "25.800 anni luce",
    "size": "~70 anni luce di diametro"
+  },
+  "dso/m90": {
+   "description": "Messier 90 è una grande galassia a spirale nella Vergine, ed è l'esempio da manuale di una galassia \"anemica\".",
+   "fun_fact": "M90 ha visto il suo gas di formazione stellare strappato via dal suo tuffo attraverso l'Ammasso della Vergine, lasciando code di gas incandescente lunghe fino a 260.000 anni luce!",
+   "distance": "59 milioni di anni luce",
+   "size": "132.000 anni luce di diametro"
+  },
+  "dso/m91": {
+   "description": "Messier 91 è una galassia a spirale barrata nella Chioma di Berenice e l'oggetto più debole nel catalogo di Messier.",
+   "fun_fact": "M91 è stata persa per quasi 200 anni! Messier ne registrò la posizione usando la galassia di riferimento sbagliata, ed è stata ri-identificata solo nel 1969 da un astronomo amatoriale.",
+   "distance": "63 milioni di anni luce",
+   "size": "105.500 anni luce di diametro"
   },
   "dso/m92": {
    "description": "M92 è un luminoso ammasso globulare in Ercole, spesso trascurato per la sua vicinanza al più famoso M13.",
@@ -1196,12 +1301,35 @@
    "size": "50.000 anni luce di diametro",
    "image_credit": "NASA/ESA/Hubble"
   },
+  "dso/m95": {
+   "description": "Messier 95 è una galassia a spirale barrata nel Leone, parte del Gruppo M96 insieme a M96 e M105.",
+   "fun_fact": "Un anello di furiosa formazione stellare, largo circa 70.000 anni luce, circonda il nucleo di M95, e una supernova è esplosa lì nel 2012!",
+   "distance": "33 milioni di anni luce",
+   "size": "80.000 anni luce di diametro"
+  },
+  "dso/m96": {
+   "description": "Messier 96 è una galassia a spirale nel Leone, il membro più luminoso del Gruppo di galassie M96.",
+   "fun_fact": "M96 ha all'incirca le stesse dimensioni e massa della nostra Via Lattea, ma è sorprendentemente sbilanciata: la sua polvere e il suo gas sono distribuiti in modo non uniforme attraverso i suoi bracci!",
+   "distance": "31 milioni di anni luce",
+   "size": "78.000 anni luce di diametro"
+  },
   "dso/m97": {
    "description": "La Nebulosa Gufo è una nebulosa planetaria nell'Orsa Maggiore, chiamata così per il suo aspetto simile a un gufo con due macchie scure.",
    "fun_fact": "Gli occhi scuri del gufo in M97 sono cavità tridimensionali nella nebulosa, allineate con la nostra linea di vista!",
    "distance": "2.030 anni luce",
    "size": "2 anni luce di diametro",
    "image_credit": "Gemini Observatory/NOIRLab/NSF/AURA"
+  },
+  "dso/m98": {
+   "description": "Messier 98 è una galassia a spirale nella Chioma di Berenice, vista quasi di taglio come parte dell'Ammasso della Vergine.",
+   "fun_fact": "M98 è una delle rare galassie che si muove verso di noi anziché allontanarsi, avvicinandosi a circa 140 km/s!",
+   "distance": "44 milioni di anni luce"
+  },
+  "dso/m99": {
+   "description": "Messier 99 è una galassia a spirale di grande struttura nella Chioma di Berenice, che mostra bracci a spirale chiari e ampi.",
+   "fun_fact": "M99 fu tra i primissimi oggetti riconosciuti come a spirale, disegnata da Lord Rosse nel 1846 - e forma stelle tre volte più velocemente di galassie simili!",
+   "distance": "45 milioni di anni luce",
+   "size": "98.000 anni luce di diametro"
   },
   "dso/n47_tucanae": {
    "description": "47 Tucanae (NGC 104) è l'ammasso globulare secondo più luminoso del cielo, una densa sfera di circa un milione di stelle antiche che orbita la Via Lattea nella costellazione del Tucano. A circa 14.500 anni luce di distanza appare all'occhio nudo come una stella sfocata di quarta magnitudine, ma un telescopio risolve il suo nucleo compresso in uno straordinario sciame di soli dorati e bianco-azzurri. Le sue stelle si sono formate circa 13 miliardi di anni fa, rendendo l'ammasso quasi vecchio quanto l'universo stesso.",
@@ -1313,8 +1441,9 @@
    "description": "Deimos è il più piccolo e il più esterno dei due satelliti di Marte, con una superficie liscia e ricoperta di polvere che gli conferisce un aspetto più arrotondato rispetto a Fobos. Come il suo compagno, si ritiene che sia un asteroide catturato dalla fascia esterna.",
    "fun_fact": "Deimos è così piccolo e lontano che dalla superficie marziana sembra poco più di una stella luminosa, impiegando circa 30 ore per attraversare lentamente il cielo notturno.",
    "distance": "23.460 km da Marte",
+   "size": "15 x 12 x 11 km",
    "image_credit": "NASA/JPL-Caltech/University of Arizona",
-   "search_subtext": "Moon of Mars"
+   "search_subtext": "Luna di Marte"
   },
   "moon/dione": {
    "description": "Dione è una luna ghiacciata di Saturno con una faccia anteriore pesantemente craterizzata e un emisfero posteriore costellato di scarpate di ghiaccio brillante — linee di frattura dove antiche forze tettoniche hanno esposto ghiaccio fresco dal basso. I dati di gravità di Cassini suggeriscono un oceano liquido subsuperficiale sotto la crosta.",
@@ -1368,8 +1497,9 @@
    "description": "Fobos è il più grande e il più interno dei due satelliti di Marte, orbitando più vicino al suo pianeta di qualsiasi altro satellite del sistema solare. È un corpo di forma irregolare, profondamente solcato e craterizzato, ritenuto essere un asteroide catturato.",
    "fun_fact": "Fobos orbita Marte così velocemente che sorge a ovest e tramonta a est — e sta lentamente spiralando verso l'interno, destinato a schiantarsi su Marte o a disintegrarsi in un anello tra circa 50 milioni di anni.",
    "distance": "9.376 km da Marte",
+   "size": "27 x 22 x 18 km",
    "image_credit": "NASA/JPL-Caltech/University of Arizona",
-   "search_subtext": "Moon of Mars"
+   "search_subtext": "Luna di Marte"
   },
   "moon/rhea": {
    "description": "Rea è il secondo satellite più grande di Saturno e un mondo pesantemente craterizzato di ghiaccio e roccia. La sua superficie pallida e antica conserva alcuni dei crateri da impatto più incontaminati del sistema solare, insieme a scogliere di ghiaccio luminose dove le frane hanno esposto materiale fresco da sotto.",
@@ -1716,6 +1846,7 @@
    "fun_fact": "Ankaa è una stella binaria spettroscopica, il che significa che la sua compagna è così vicina che i due possono essere rilevati solo da variazioni nel loro spettro luminoso — orbitano l'uno intorno all'altro ogni 10,2 anni!",
    "distance": "85 anni luce",
    "size": "15 raggi solari",
+   "mass": "1,3 masse solari",
    "spectral_class": "K0III",
    "image_credit": "ESO/Digitized Sky Survey 2"
   },
@@ -1742,6 +1873,7 @@
    "fun_fact": "Arneb è una stella morente che probabilmente ha già fuso tutto l'idrogeno del suo nucleo. Potrebbe terminare la sua vita come una supernova nei prossimi milioni di anni!",
    "distance": "~2.200 anni luce",
    "size": "~75 raggi solari",
+   "mass": "~14 masse solari",
    "spectral_class": "F0Ib",
    "image_credit": "ESO/Digitized Sky Survey 2"
   },
@@ -1777,6 +1909,7 @@
    "fun_fact": "Caph è una variabile Delta Scuti — pulsa con molteplici frequenze simultaneamente, cambiando leggermente luminosità ogni 2,5 ore!",
    "distance": "54 anni luce",
    "size": "3,5 raggi solari",
+   "mass": "1,9 masse solari",
    "spectral_class": "F2III",
    "image_credit": "ESO/Digitized Sky Survey 2"
   },
@@ -1825,6 +1958,11 @@
    "spectral_class": "K0 III",
    "image_credit": "ESO/Digitized Sky Survey 2"
   },
+  "star/e_lyrae": {
+   "description": "Epsilon Lyrae è un sistema stellare multiplo nella Lira, famosa tra gli osservatori come la \"Doppia Doppia\".",
+   "fun_fact": "Occhi acuti possono distinguere Epsilon Lyrae come due stelle - e un telescopio divide ciascuna di queste a sua volta in due! Contiene in totale almeno cinque stelle.",
+   "distance": "160 anni luce"
+  },
   "star/enif": {
    "description": "Enif è la stella più luminosa di Pegaso e segna il naso del cavallo alato nella costellazione.",
    "fun_fact": "Nel 1972, Enif ha avuto un drammatico evento di brillamento, aumentando brevemente la sua luminosità di cinque volte!",
@@ -1839,6 +1977,7 @@
    "fun_fact": "Le osservazioni di Etamin nel 1728 da parte di James Bradley hanno portato alla scoperta dell'aberrazione della luce — una delle prime prove dirette che la Terra si muove nello spazio!",
    "distance": "148 anni luce",
    "size": "48 raggi solari",
+   "mass": "1,7 masse solari",
    "spectral_class": "K5III",
    "image_credit": "ESO/Digitized Sky Survey 2"
   },
@@ -1877,6 +2016,110 @@
    "mass": "~4,6 solar masses",
    "spectral_class": "K0II-III",
    "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/j052512+062100": {
+   "description": "Bellatrix segna la spalla sinistra di Orione (il Cacciatore). Il suo nome è latino e significa \"guerriera\".",
+   "fun_fact": "Bellatrix ha solo circa 28 milioni di anni e consumerà il suo idrogeno in altri 7 milioni di anni - una vita breve per una stella!",
+   "distance": "250 anni luce",
+   "size": "6,2 raggi solari",
+   "mass": "8,4 masse solari",
+   "spectral_class": "B2 III"
+  },
+  "star/j054048-015624": {
+   "description": "Alnitak è la stella più orientale della Cintura di Orione, situata accanto alle Nebulose Fiamma e Testa di Cavallo.",
+   "fun_fact": "Alnitak è la stella di classe O più luminosa dell'intero cielo notturno! Tra circa un milione di anni si gonfierà fino a superare l'orbita di Giove ed esploderà come una supernova.",
+   "distance": "1.260 anni luce",
+   "size": "20 raggi solari",
+   "mass": "33 masse solari",
+   "spectral_class": "O9.5 Iab"
+  },
+  "star/j055924+445700": {
+   "description": "Menkalinan è la seconda stella più luminosa dell'Auriga (il Cocchiere). Il suo nome significa \"spalla del detentore delle redini\" in arabo.",
+   "fun_fact": "Menkalinan è in realtà un sistema di due stelle quasi identiche che si eclissano a vicenda ogni 47,5 ore, e tra circa un milione di anni diventerà la stella più luminosa nel nostro cielo notturno!",
+   "distance": "79 anni luce",
+   "size": "2,8 raggi solari",
+   "mass": "2,4 masse solari",
+   "spectral_class": "A1m IV + A1m IV"
+  },
+  "star/j062248-175736": {
+   "description": "Mirzam (Beta Canis Majoris) sorge poco prima di Sirio, il che le ha valso il nome che significa \"L'Annunciatore\" in arabo.",
+   "fun_fact": "Circa quattro milioni di anni fa, Mirzam era la stella più luminosa nel cielo, splendendo con una magnitudine di -3,65 - molto più luminosa di quanto appaia oggi Sirio!",
+   "distance": "490 anni luce",
+   "size": "8,4 raggi solari",
+   "mass": "13 masse solari",
+   "spectral_class": "B1 II-III"
+  },
+  "star/j070824-262324": {
+   "description": "Wezen è una supergigante giallo-bianca nella costellazione del Cane Maggiore (il Grande Cane). Il suo nome deriva dall'arabo e significa \"peso\".",
+   "fun_fact": "Se Wezen fosse vicina a noi quanto Sirio, brillerebbe luminosa come una Luna a metà!",
+   "distance": "1.600 anni luce",
+   "size": "188 raggi solari",
+   "mass": "14 masse solari",
+   "spectral_class": "F8 Ia"
+  },
+  "star/j082248-593036": {
+   "description": "Avior (Epsilon Carinae) è una stella doppia luminosa nella Carena e una delle quattro stelle della Falsa Croce.",
+   "fun_fact": "La Falsa Croce è così spesso scambiata per la Croce del Sud da aver causato veri errori di navigazione! Il nome Avior è stato inventato dai produttori di almanacchi britannici negli anni '30.",
+   "distance": "610 anni luce",
+   "size": "151 raggi solari",
+   "mass": "10,5 masse solari",
+   "spectral_class": "K3 III + B2 Vp"
+  },
+  "star/j091312-694312": {
+   "description": "Miaplacidus è la seconda stella più luminosa nella Carena (la Chiglia) e segna un angolo dell'asterismo della Croce di Diamante.",
+   "fun_fact": "Miaplacidus si è gonfiata in una gigante dopo aver esaurito l'idrogeno nel suo nucleo, eppure ruota ancora a una velocità di 146 km/s!",
+   "distance": "113 anni luce",
+   "size": "5,8 raggi solari",
+   "mass": "3,9 masse solari",
+   "spectral_class": "A1 III"
+  },
+  "star/j123112-570636": {
+   "description": "Gacrux (Gamma Crucis) è la stella più settentrionale della Croce del Sud e la gigante rossa più vicina alla Terra.",
+   "fun_fact": "Gacrux è la gigante rossa di tipo M più vicina a noi, e il suo nome è semplicemente una contrazione da navigatore di \"Gamma Crucis\" coniato negli anni '40!",
+   "distance": "89 anni luce",
+   "size": "73 raggi solari",
+   "mass": "1,5 masse solari",
+   "spectral_class": "M3.5 III"
+  },
+  "star/j124800-594124": {
+   "description": "Mimosa (Beta Crucis) è la seconda stella più luminosa nella Croce del Sud e una delle stelle più calde visibili a occhio nudo.",
+   "fun_fact": "Mimosa è una variabile pulsante Beta Cephei: si espande e si contrae con tre ritmi sovrapposti, ciascuno della durata di appena quattro ore!",
+   "distance": "280 anni luce",
+   "size": "8 raggi solari",
+   "mass": "14,5 masse solari",
+   "spectral_class": "B0.5 III"
+  },
+  "star/j143936-605024": {
+   "description": "Toliman (Alfa Centauri B) è la compagna arancione nel sistema stellare più vicino al Sole, che orbita attorno alla più luminosa Rigil Kentaurus.",
+   "fun_fact": "Toliman ha ricevuto il suo nome ufficiale solo nel 2018. È leggermente più piccolo e più freddo del Sole e, insieme ai suoi due compagni, costituiscono i nostri vicini stellari più prossimi!",
+   "distance": "4,34 anni luce",
+   "size": "0,86 raggi solari",
+   "mass": "0,91 masse solari",
+   "spectral_class": "K1 V"
+  },
+  "star/j164836-690148": {
+   "description": "Atria è la stella più luminosa di Triangulum Australe (il Triangolo Australe), un gigante arancione molto più grande del Sole.",
+   "fun_fact": "Atria è 139 volte il diametro del Sole – se posta al centro del Sistema Solare, raggiungerebbe quasi l'orbita di Venere!",
+   "distance": "391 anni luce",
+   "size": "139 raggi solari",
+   "mass": "6,4 masse solari",
+   "spectral_class": "K2 Ib-IIa"
+  },
+  "star/j173712-430000": {
+   "description": "Sargas è una gigante brillante nella coda dello Scorpione (lo Scorpione), che porta un nome tradizionale di origine sumera.",
+   "fun_fact": "Sargas ruota così velocemente da essere rigonfio: è un terzo più largo all'equatore che da polo a polo e potrebbe essersi formato quando due stelle si sono fuse!",
+   "distance": "329 anni luce",
+   "size": "35 raggi solari",
+   "mass": "3,1 masse solari",
+   "spectral_class": "F1 III"
+  },
+  "star/j202548-564348": {
+   "description": "Peacock è la stella più luminosa in Pavo (il Pavone), una stella calda bianco-blu del cielo meridionale più lontano.",
+   "fun_fact": "Peacock fu chiamato negli anni '30 perché la RAF insistette che ogni stella nel suo nuovo Air Almanac avesse un nome, e questa non ne aveva!",
+   "distance": "179 anni luce",
+   "size": "4,8 raggi solari",
+   "mass": "5,9 masse solari",
+   "spectral_class": "B3 V"
   },
   "star/kaus_australis": {
    "description": "Kaus Australis è la stella più luminosa del Sagittario (l'Arciere). Il suo nome significa \"l'arco meridionale\" in un mix di arabo e latino.",
@@ -1940,6 +2183,12 @@
    "mass": "~8,5 masse solari",
    "spectral_class": "F5Ib",
    "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/n25": {
+   "description": "R Coronae Borealis è una rara supergigante gialla nella Corona Boreale, e il prototipo della classe di stelle variabili che prende il nome da essa.",
+   "fun_fact": "R Coronae Borealis è talvolta chiamata una \"nova inversa\": invece di brillare, si affievolisce imprevedibilmente fino a 9 magnitudini quando espelle nubi di fuliggine di carbonio che la nascondono alla vista!",
+   "distance": "4.560 anni luce",
+   "spectral_class": "G0Iep"
   },
   "star/nunki": {
    "description": "Nunki è la seconda stella più luminosa del Sagittario e il nome stellare più antico ancora in uso comune.",

@@ -645,12 +645,22 @@
    "size": "83 svetlobnih let v premeru",
    "image_credit": "NASA/ESA/Hubble"
   },
+  "dso/m100": {
+   "description": "Messier 100 je spiralna galaksija velikega sloga v Laseh Veronike in ena najsvetlejših v jati v Devici.",
+   "fun_fact": "V galaksiji M100 je bilo opaženih sedem supernov, zadnja leta 2020 – le redke galaksije so pripravile tako predstavo!",
+   "distance": "55 milijonov svetlobnih let",
+   "size": "premer 166.000 svetlobnih let"
+  },
   "dso/m101": {
    "description": "Galaksija Pinwheel je spiralna galaksija s čelnim pogledom v Veliki medvedici, ena največjih znanih spiralnih galaksij.",
    "fun_fact": "Galaksija Pinwheel vsebuje več kot bilijon zvezd in ima asimetrične spiralne roke zaradi preteklih interakcij galaksij!",
    "distance": "21 milijonov svetlobnih let",
    "size": "170.000 svetlobnih let v premeru",
    "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m102": {
+   "description": "Messier 102 je veliki nerazrešeni vnos v Messierjevem katalogu – predmet, zabeležen leta 1781, ki ni bil še nikoli zanesljivo identificiran.",
+   "fun_fact": "Messier ni objavil koordinat za M102, njegov kolega Méchain pa je kasneje odkritega popolnoma umaknil s trditvijo, da je šlo le za dvakrat zabeleženi M101 pomotoma! NASA ga enači z vretenasto galaksijo NGC 5866."
   },
   "dso/m103": {
    "description": "M103 je majhna, kompaktna odprta zvezdna kopica v Kasiopeji, ki vsebuje približno 40 zvezd v tesni skupini, ki jo je mogoče zlahka videti v daljnogledu. Presenetljiva dvojna zvezda in rdeči velikan blizu središča ji dajeta pisano videz v majhnih teleskopih, postavljeni v bogata polja Rimske ceste v Kasiopeji.",
@@ -665,6 +675,12 @@
    "size": "50.000 svetlobnih let v premeru",
    "image_credit": "NASA/ESA/Hubble"
   },
+  "dso/m105": {
+   "description": "Messier 105 je eliptična galaksija v ozvezdjih Lev, največja eliptična galaksija v Messierovem katalogu zunaj kope v Devici.",
+   "fun_fact": "M105 si z sosednjo galaksijo NGC 3384 deli ogromen obroč vodikovega plina, ki meri okoli 650.000 svetlobnih let!",
+   "distance": "37 milijonov svetlobnih let",
+   "size": "premer 67.000 svetlobnih let"
+  },
   "dso/m106": {
    "description": "M106 je spiralna galaksija v Psih lovcem z anomalnimi spiralnimi kraki, ki jih povzročajo curki iz njene osrednje črne luknje.",
    "fun_fact": "M106 ima vodne masarje v svojem jedru, kar astronomom omogoča natančno merjenje njegove razdalje!",
@@ -677,6 +693,11 @@
    "fun_fact": "M107 je bil zadnji vnos, ki je bil formalno dodan v Messierov katalog — pojavi se v dopisovanju Pierrea Méchaina, vendar ni bil vključen v izvirno izdajo iz leta 1781. Uradno je bil dodan kot M107 leta 1947 s strani kanadske astronomke Helen Sawyer Hogg, ki je kodificirala več \"manjkajočih\" objektov, ki jih je Méchain opazoval, vendar jih Messier nikoli ni formalno zabeležil.",
    "distance": "20.900 svetlobnih let",
    "size": "~61 svetlobnih let v premeru"
+  },
+  "dso/m108": {
+   "description": "Messier 108 je prečkasta spiralna galaksija v Velikem medvedu, z vzdevkom galaksija Deska za surfanje.",
+   "fun_fact": "M108 je nagnjen skoraj z robom proti nam, zaradi česar si je prislužil ime deska za surfanje – in vsebuje okoli 290 kroglastih kopic!",
+   "distance": "46 milijonov svetlobnih let"
   },
   "dso/m109": {
    "description": "M109 je prečna spiralna galaksija v Veliki medvedici, najsvetlejši član galaksijske skupine, ki nosi njeno ime.",
@@ -740,6 +761,12 @@
    "distance": "5.500 svetlobnih let",
    "size": "15 svetlobnih let v premeru",
    "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m18": {
+   "description": "Messier 18 je majhna odprta kopica mladih zvezd v Strelcu, znana tudi kot kopica Črni labod.",
+   "fun_fact": "M18 je eden redkih Messierjevih objektov, ki jih vesoljski teleskop Hubble ni nikoli fotografiral!",
+   "distance": "4.200 svetlobnih let",
+   "size": "premer 26 svetlobnih let"
   },
   "dso/m19": {
    "description": "M19 je kompakten, bogat kuglasti zvezdni jato v Ophiuchu — eno izmed najbližjih kuglastih zvezdnih jat galaktičnemu središču. Njegova najbolj značilna lastnost je opazno sploščena oblika: M19 je najbolj sploščeno znano kuglasto zvezdno jato, z vidno eliptično obliko tudi v majhnem teleskopu.",
@@ -1018,12 +1045,35 @@
    "size": "1,3 svetlobnega leta v premeru",
    "image_credit": "NASA/ESA/Hubble"
   },
+  "dso/m58": {
+   "description": "Messier 58 je prečkasta spiralna galaksija v Devici in eden najsvetlejših članov jate v Devici.",
+   "fun_fact": "V središču galaksije M58 je supermasivna črna luknja z masa okoli 70 milijonov sončevih mas, ki jo obdaja tesen pas novorojenih zvezd!",
+   "distance": "68 milijonov svetlobnih let",
+   "size": "premer 133.000 svetlobnih let"
+  },
+  "dso/m59": {
+   "description": "Messier 59 je eliptična galaksija v ozvezdju Devica, odkrita leta 1779 med iskanjem mimoletnega kometa.",
+   "fun_fact": "Jedro galaksije M59 se vrti v nasprotni smeri od preostalega dela galaksije, okoli njega pa mrgoli približno 2200 krogelne kopice!",
+   "distance": "50 milijonov svetlobnih let",
+   "mass": "270 milijonov sončevih mas (osrednja črna luknja)"
+  },
   "dso/m6": {
    "description": "Butterfly Cluster je odprta zvezdna kopica v Škorpijonu, poimenovana po podobnosti njenega najsvetlejšega zvezdnega vzorca s perlico.",
    "fun_fact": "M6 je star približno 100 milijonov let in vsebuje več kot 300 zvezd, vključno z oranžnim velikanom BM Scorpii!",
    "distance": "1.600 svetlobnih let",
    "size": "25 svetlobnih let v premeru",
    "image_credit": "NOAO/AURA/NSF"
+  },
+  "dso/m60": {
+   "description": "Messier 60 je velika eliptična galaksija v Devici, tretja najsvetlejša velika eliptična galaksija v Deviški jati.",
+   "fun_fact": "Osrednja črna luknja v M60 tehta približno 4,5 milijarde sonc – ena največjih, kar jih je bilo doslej najdenih!",
+   "distance": "57 milijonov svetlobnih let"
+  },
+  "dso/m61": {
+   "description": "Messier 61 je prečkasta spiralna galaksija v Devici in ena največjih galaksij v jati v Devici.",
+   "fun_fact": "V galaksiji M61 je bilo odkritih osem supernov – kar je ena izmed največjih številk v kateri koli galaksiji! Sam Messier jo je najprej zamenjal za komet.",
+   "distance": "52 milijonov svetlobnih let",
+   "size": "premer 92.000 svetlobnih let"
   },
   "dso/m62": {
    "description": "M62 je bogat kroglasti zvezdni sistem v Ophiuchu — eden izmed najbližjih kroglastih sistemov galaktičnemu jedru in opazno asimetričen, s zvezdam, ki so na južni strani gosteje napakovane. Pri magnitudi 6,6 je odličen predmet za dvogled, čeprav njegova nizka deklinacija naredijo, da je za severozahodne opazovalce le kratko-sezonski cilj.",
@@ -1095,12 +1145,28 @@
    "distance": "12.000 svetlobnih let",
    "size": "~25 svetlobnih let v premeru"
   },
+  "dso/m72": {
+   "description": "Messier 72 je bled, oddaljen kroglasti kopast v Vodnarju, ki ga je leta 1780 odkril Pierre Méchain.",
+   "fun_fact": "M72 vsebuje število zvezd v vrednosti okoli 168.000 Sonc v krogli, ki je stara približno 9,5 milijarde let, vključno s 43 spremenljivimi zvezdami!",
+   "distance": "55.000 svetlobnih let"
+  },
+  "dso/m73": {
+   "description": "Messier 73 je majhna skupina štirih zvezd v Vodnarju, ki je videti le kot zvezdna kopica.",
+   "fun_fact": "Astronomje so desetletja razpravljali o tem, ali je M73 resnična kopica – leta 2002 pa je bila zadeva razrešena: štiri zvezde ležijo na povsem različnih razdaljah in se le po naključju poravnajo!",
+   "distance": "1.000 do 2.300 svetlobnih let (posamezne zvezde)"
+  },
   "dso/m74": {
    "description": "Galaksija Fantom je čelna spiralna galaksija v Ribah, znana po svoji popolni veliki spiralni strukturi.",
    "fun_fact": "M74 je vzdevek Fantomska galaksija, ker ima zelo nizko površinsko svetlost, kar otežuje njeno opazovanje!",
    "distance": "32 milijonov svetlobnih let",
    "size": "95.000 svetlobnih let v premeru",
    "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m75": {
+   "description": "Messier 75 je oddaljen, gosto zgoščen kroglasti kopast v Strelcu.",
+   "fun_fact": "M75 je ena najbolj gosto zapakiranih krogelnih kopic in velja za ostanek pritlikave galaksije, ki jo je Rimska cesta posrkala pred davnimi časi!",
+   "distance": "68.000 svetlobnih let",
+   "size": "premer 134 svetlobnih let"
   },
   "dso/m76": {
    "description": "Majhna ročica je planetarna meglica v Perzeeju z značilno obliko osmice — manjša sestrična M27, Ročice v Lisičarki. Čeprav je najšibkejši vnos v Messierov katalog, nagrajuje potrpljivo opazovanje v majhnih teleskopih in kaže lepo strukturo v večjih instrumentih, z dvema svetlejšima režnjema ob obeh straneh šibkejšega pasu.",
@@ -1162,6 +1228,22 @@
    "size": "55.000 svetlobnih let v premeru",
    "image_credit": "NASA/ESA/Hubble"
   },
+  "dso/m84": {
+   "description": "Messier 84 je velikanska eliptična galaksija v natrpanem središču jate v Devici.",
+   "fun_fact": "M84 izstrelja dva curka snovi iz svojega jedra, kar poganja črna luknja z masa okoli 1,5 milijarde sončnih mas!",
+   "distance": "55 milijonov svetlobnih let"
+  },
+  "dso/m85": {
+   "description": "Messier 85 je lečasta galaksija na obrobju jate v Devici, v ozvezdju Berenikini kodri.",
+   "fun_fact": "Valovi in lupine v zunanjih območjih M85 so ostanki galaktičnega zdrwa pred 4 do 7 milijardami let!",
+   "distance": "60 milijonov svetlobnih let",
+   "size": "premer 120.600 svetlobnih let"
+  },
+  "dso/m86": {
+   "description": "Messier 86 je velika eliptična galaksija v jati Devica, ki s sosednjo galaksijo M84 tvori izjemen par.",
+   "fun_fact": "M86 se nam proti s hitrostjo 244 km/s – to je najhitrejši približevalni gib katerega koli Messierjevega predmeta! Njen prehod skozi jato pušča dolgo sled odstranjenega vročega plina.",
+   "distance": "52 milijonov svetlobnih let"
+  },
   "dso/m87": {
    "description": "M87 je nadvelik eliptična galaksija v Devici, ena izmed najbolj masivnih galaksij v lokalnem vesolju.",
    "fun_fact": "Črna luknja v središču M87 je bila prva, ki jo je Event Horizon Telescope posnel leta 2019 - ima 6,5 milijarde sončnih mas!",
@@ -1170,11 +1252,34 @@
    "mass": "2,4 bilijona sončnih mas",
    "image_credit": "NASA/ESA/Hubble"
   },
+  "dso/m88": {
+   "description": "Messier 88 je elegantna spiralna galaksija v Laseh Berenike, eden od petnajstih Messierjevih objektov v jati v Devici.",
+   "fun_fact": "M88 se strmoglavi proti središču Jate v Devici in bo tja prispel čez 200 do 300 milijonov let, pri čemer se mu med padanjem odnašajo zunanji plini!",
+   "distance": "59 milijonov svetlobnih let",
+   "size": "premer 131.000 svetlobnih let"
+  },
+  "dso/m89": {
+   "description": "Messier 89 je eliptična galaksija v Devici, ki jo je leta 1781 odkril Charles Messier.",
+   "fun_fact": "M89 je morda skoraj popolna sfera – nenavadno za eliptično galaksijo, ki so običajno opazno sploščene!",
+   "distance": "50 milijonov svetlobnih let"
+  },
   "dso/m9": {
    "description": "M9 je kompakten globularni zvezdni kopič v Ophiuchu — eden izmed Messierjevih globularnih kopičev, ki ga najbolj prizadene medzvezdna prah. Leži proti galaktičnemu jedru, kjer ga gost prah znatno zatemnuje. Brez te zasenčenosti bi se M9 zdel svetlejši za skoraj magnitudo in bi bil viden s prostim očesom.",
    "fun_fact": "M9 trpi več medzvezdne absorpcije prahu kot skoraj kateri koli drugi Messierov globularni kopič — približno 1,3 magnitude zatemnitve v primerjavi s čistim vidnim poljem. Dva manjša globularna kopička (NGC 6342 in NGC 6356) ležita v razdalji približno 1° od M9, kar ga naredi središče izjemne skupine treh globularnih kopičev na majhnem območju neba.",
    "distance": "25.800 svetlobnih let",
    "size": "~70 svetlobnih let v premeru"
+  },
+  "dso/m90": {
+   "description": "Messier 90 je velika spiralna galaksija v Devici in učbeniški primer \"anemične\" galaksije.",
+   "fun_fact": "M90 je zaradi divjega prodora skozi Devico (Virgo Cluster) izgubil plin, iz katerega nastajajo zvezde, za seboj pa pušča repa svetlečega plina, dolga do 260.000 svetlobnih let!",
+   "distance": "59 milijonov svetlobnih let",
+   "size": "premer 132.000 svetlobnih let"
+  },
+  "dso/m91": {
+   "description": "Messier 91 je prečasta spiralna galaksija v Berenikinih kodrih in najšibkejši objekt v Messierjevem katalogu.",
+   "fun_fact": "Objekt M91 je bil izgubljen skoraj 200 let! Messier je njegov položaj zabeležil z napačno referenčno galaksijo, ponovno pa ga je leta 1969 identificiral amaterski astronom.",
+   "distance": "63 milijonov svetlobnih let",
+   "size": "premerj 105.500 svetlobnih let"
   },
   "dso/m92": {
    "description": "M92 je svetel kroglasti zvezdni kopič v Herkulesу, ki ga pogosto spregledamo zaradi njegove bližine bolj slavnemu M13.",
@@ -1196,12 +1301,35 @@
    "size": "50.000 svetlobnih let v premeru",
    "image_credit": "NASA/ESA/Hubble"
   },
+  "dso/m95": {
+   "description": "Messier 95 je prečkana spiralna galaksija v ozvezdjih Leva, ki je del skupine M96 skupaj z M96 in M105.",
+   "fun_fact": "Ob jedru galaksije M95 poteka obroč z intenzivnim nastajanjem zvezd, širok približno 70.000 svetlobnih let, v njem pa je leta 2012 izbruhnila supernova.",
+   "distance": "33 milijonov svetlobnih let",
+   "size": "premerj 80.000 svetlobnih let"
+  },
+  "dso/m96": {
+   "description": "Messier 96 je spiralna galaksija v Levu, najsvetlejši član skupine galaksij M96.",
+   "fun_fact": "M96 je po velikosti in masi precej podobna naši lastni Rimski cesti, vendar je presenetljivo nesimetrična – njen prah in plin sta v njenih krakih neenakomerno razporejena!",
+   "distance": "31 milijonov svetlobnih let",
+   "size": "premerj 78.000 svetlobnih let"
+  },
   "dso/m97": {
    "description": "Sovja meglica je planetarna meglica v Veliki medvedici, poimenovana po svoji sovji podobi z dvema temnimi pegami.",
    "fun_fact": "Temne sove oči v M97 so tridimenzionalne votline v meglici, poravnane z našo linijo vida!",
    "distance": "2.030 svetlobnih let",
    "size": "2 svetlobni leti v premeru",
    "image_credit": "Gemini Observatory/NOIRLab/NSF/AURA"
+  },
+  "dso/m98": {
+   "description": "Messier 98 je spiralna galaksija v Berenikinih laseh, vidna skoraj od roba kot del Jate v Devici.",
+   "fun_fact": "M98 je ena redkih galaksij, ki se premika proti nam in ne stran, približuje se s hitrostjo približno 140 km/s!",
+   "distance": "44 milijonov svetlobnih let"
+  },
+  "dso/m99": {
+   "description": "Messier 99 je veličastna spiralna galaksija v Veronikini kosi z jasnimi, razprostrtimi spiralnimi kraki.",
+   "fun_fact": "M99 je bil med prvimi objekti, ki so jih prepoznali kot spiralne; leta 1846 ga je narisal lord Rosse – in zvezde tvori trikrat hitreje kot podobne galaksije!",
+   "distance": "45 milijonov svetlobnih let",
+   "size": "premerj 98.000 svetlobnih let"
   },
   "dso/n47_tucanae": {
    "description": "47 Tucanae (NGC 104) je drugi najsvetlejši kroglasti zvezdni kopič na nebu, gosta krogla približno milijona starih zvezd, ki krožijo okrog Mlečne poti v ozvezdju Tucana. Na razdalji približno 14.500 svetlobnih let se golemu očesu prikazuje kot nejasna zvezda četrte magnitude, vendar teleskop razreši njeno stisnjeno jedro v izjemno roj zlatih in modro-belih sonc. Njegove zvezde so nastale pred približno 13 milijardami let, kar naredi kopič skoraj tako star kot vesolje samo.",
@@ -1313,8 +1441,9 @@
    "description": "Deimos je manjši in zunanji od obeh Marsovih lun, s gladko, prahom pokrito površino, ki mu daje bolj okrogel videz kot Fobos. Kot njegov spremljevalec se domneva, da je ujeti asteroid iz zunanjega pasu.",
    "fun_fact": "Deimos je tako majhen in oddaljen, da z Marsove površine izgleda kot malo več kot svetla zvezda, ki se počasi premika čez nočno nebo v približno 30 urah.",
    "distance": "23.460 km od Marsa",
+   "size": "15 × 12 × 11 km",
    "image_credit": "NASA/JPL-Caltech/University of Arizona",
-   "search_subtext": "Moon of Mars"
+   "search_subtext": "Luna Marsa"
   },
   "moon/dione": {
    "description": "Dione je ledena luna Saturna s težko krateriranim sprednjim obrazom in zadnjim polkrogom, prepletenim z svetlimi ledenimi pečinami — prelomnimi linijami, kjer so starodavne tektonske sile izpostavile svež led od spodaj. Podatki o gravitaciji Cassinija nakazujejo na podzemni tekoči ocean pod skorjo.",
@@ -1368,8 +1497,9 @@
    "description": "Fobos je večji in notranji od obeh Marsovih lun, ki kroži bližje svojemu planetu kot katera koli druga luna v osončju. Je nepravilno oblikovano, globoko žlebasto in kratersko telo, za katero se domneva, da je zajeti asteroid.",
    "fun_fact": "Fobos se giblje okrog Marsa tako hitro, da se dviga na zahodu in zahaja na vzhodu — počasi se spiralno premika navznoter in je namenjen, da se bodisi zruši v Mars bodisi razpade v obroč v približno 50 milijonih letih.",
    "distance": "9.376 km od Marsa",
+   "size": "27 × 22 × 18 km",
    "image_credit": "NASA/JPL-Caltech/University of Arizona",
-   "search_subtext": "Moon of Mars"
+   "search_subtext": "Luna Marsa"
   },
   "moon/rhea": {
    "description": "Rhea je Saturnov drugi največji mesec in težko krateriran svet ledu in kamnine. Njegova bleda, stara površina ohranja nekatere najbolj nedotaknjene udarne kraterje našega sončnega sistema, skupaj z svetlimi ledenimi pečinami, kjer so plazovi razkrili svežo snov spodaj.",
@@ -1424,6 +1554,7 @@
    "fun_fact": "Jupiter ima najmanj 95 znanih lun! Njegova največja luna, Ganimed, je večja od planeta Merkurja.",
    "distance": "778 milijonov km (povprečno)",
    "size": "139.820 km premer",
+   "mass": "1,898 × 10²⁷ kg",
    "image_credit": "NASA/ESA/Hubble"
   },
   "planet/mars": {
@@ -1431,6 +1562,7 @@
    "fun_fact": "Mars ima največji vulkan v sončnem sistemu: Olympus Mons, ki je približno 2,5-krat višji od Mount Everesta!",
    "distance": "228 milijonov km (povprečno)",
    "size": "6.779 km premer",
+   "mass": "6,39 × 10²³ kg",
    "image_credit": "NASA/ESA/Hubble"
   },
   "planet/mercury": {
@@ -1438,6 +1570,7 @@
    "fun_fact": "Čeprav je Merkur najbližji Soncu, ni najtoplejši planet. Venera je toplejša zaradi svoje goste atmosfere!",
    "distance": "58 milijonov km (od Sonca)",
    "size": "4.880 km premer",
+   "mass": "3,3 × 10²³ kg",
    "image_credit": "NASA/GSFC"
   },
   "planet/moon": {
@@ -1453,6 +1586,7 @@
    "fun_fact": "Neptun je bil odkrit z matematiko! Znanstveniki so napovedali njegovo lokacijo, preden ga je kdo videl skozi teleskop.",
    "distance": "4,5 milijard km (povprečno)",
    "size": "49.244 km premer",
+   "mass": "1,024 × 10²⁶ kg",
    "image_credit": "NASA/ESA/Hubble"
   },
   "planet/pluto": {
@@ -1460,6 +1594,7 @@
    "fun_fact": "Pluton ima ledenik v obliki srca, narejen iz dušikovega ledu, viden na slikah iz NASA-ine misije New Horizons!",
    "distance": "5,9 milijard km (povprečno)",
    "size": "2.377 km premer",
+   "mass": "1,3 × 10²² kg",
    "image_credit": "NASA/JHUAPL/SwRI"
   },
   "planet/saturn": {
@@ -1467,6 +1602,7 @@
    "fun_fact": "Saturn je tako lahek, da bi plaval v vodi! Njegova gostota je manjša od vode, čeprav ni kadi dovolj velike, da bi to preizkusili.",
    "distance": "1,4 milijarde km (povprečno)",
    "size": "116.460 km premer",
+   "mass": "5.68 × 10²⁶ kg",
    "image_credit": "NASA/ESA/Hubble"
   },
   "planet/sun": {
@@ -1483,6 +1619,7 @@
    "fun_fact": "Uran se vrti na boku s naklonom 98 stopinj, verjetno zaradi trka z objektom velikosti Zemlje pred dolgo časom!",
    "distance": "2,9 milijard km (povprečno)",
    "size": "50.724 km premer",
+   "mass": "8.68 × 10²⁵ kg",
    "image_credit": "NASA/ESA/Hubble"
   },
   "planet/venus": {
@@ -1490,6 +1627,7 @@
    "fun_fact": "Dan na Veneri je daljši kot njeno leto! Potrebuje 243 Zemljinih dni, da se enkrat zavrti, vendar samo 225 dni, da obide Sonce.",
    "distance": "108 milijonov km (povprečno)",
    "size": "12.104 km premer",
+   "mass": "4.87 × 10²⁴ kg",
    "image_credit": "NASA/JPL"
   },
   "shower/aquariids": {
@@ -1820,6 +1958,11 @@
    "spectral_class": "K0 III",
    "image_credit": "ESO/Digitized Sky Survey 2"
   },
+  "star/e_lyrae": {
+   "description": "Epsilon Lyrae je večzvezdni sistem v Liri, med opazovalci znan kot \"dvojni dvojček\".",
+   "fun_fact": "S Skeenim očesom lahko Epsilon Lyrae ločite na dve zvezdi, teleskop pa vsako od njiju razdeli še na dve! Skupaj vsebuje vsaj pet zvezd.",
+   "distance": "160 svetlobnih let"
+  },
   "star/enif": {
    "description": "Enif je najsvetlejša zvezda v Pegazu in označuje nos letečega konja v ozvezdju.",
    "fun_fact": "Leta 1972 je Enif doživela dramatičan flare event, ki je na kratko povečal njeno svetlost za faktor pet!",
@@ -1873,6 +2016,110 @@
    "mass": "~4,6 sončne mase",
    "spectral_class": "K0II-III",
    "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/j052512+062100": {
+   "description": "Belatrika označuje levo ramo Oriona (Lovca). Ime izhaja iz latinščine za \"bojevnico\".",
+   "fun_fact": "Bellatrix je stara le približno 28 milijonov let in bo svoj vodik porabila v naslednjih 7 milijonih letih – kratek življenjski cikel za zvezdo!",
+   "distance": "250 svetlobnih let",
+   "size": "6,2 sončnega polmera",
+   "mass": "8,4 sončeve mase",
+   "spectral_class": "B2 III"
+  },
+  "star/j054048-015624": {
+   "description": "Alnitak je skrajno vzhodna zvezda Orionovega pasu, ki leži poleg meglic Ognjeni plamen in Konjska glava.",
+   "fun_fact": "Alnitak je najsvetlejša zvezda razreda O na celotnem nočnem nebu! Čez približno milijon let se bo razširila prek Jupitrovega tira in eksplodirala kot supernova.",
+   "distance": "1.260 svetlobnih let",
+   "size": "20 sončnih polmerov",
+   "mass": "33 sončevih mas",
+   "spectral_class": "O9.5 Iab"
+  },
+  "star/j055924+445700": {
+   "description": "Menkalinan je druga najsvetlejša zvezda v Vozniku (Auriga). Njeno ime v arabščini pomeni \"rama držača vajeti\".",
+   "fun_fact": "Menkalinan je pravzaprav dvojica skoraj enakih zvezd, ki druga drugo zamračita vsakih 47,5 ure – in čez približno milijon let bo postala najsvetlejša zvezda na našem nočnem nebu!",
+   "distance": "79 svetlobnih let",
+   "size": "2,8 sončnega polmera",
+   "mass": "2,4 sončeve mase",
+   "spectral_class": "A1m IV + A1m IV"
+  },
+  "star/j062248-175736": {
+   "description": "Mirzam (Beta Canis Majoris) vzhaja tik pred Siriusom, zaradi česar si je prislužil arabsko ime, ki pomeni \"Glasnik\".",
+   "fun_fact": "Pred približno štirimi milijoni let je bil Mirzam najsvetlejša zvezda na nebu z izjemnim sijem -3,65 magnitude – precej svetlejši, kot je Sirius videti danes!",
+   "distance": "490 svetlobnih let",
+   "size": "8,4 sončnega polmera",
+   "mass": "13 sončevih mas",
+   "spectral_class": "B1 II-III"
+  },
+  "star/j070824-262324": {
+   "description": "Wezen je rumeno-beli supergigant v ozvezdju Velikega psa. Ime izhaja iz arabščine za \"težo\".",
+   "fun_fact": "Če bi Wezen sedel tako blizu nas kot Sirij, bi svetil tako močno kot polna Luna!",
+   "distance": "1.600 svetlobnih let",
+   "size": "188 sončnih polmerov",
+   "mass": "14 sončevih mas",
+   "spectral_class": "F8 Ia"
+  },
+  "star/j082248-593036": {
+   "description": "Avior (Epsilon Carinae) je svetla dvojna zvezda v Kobilici in ena od štirih zvezd Lažnega križa.",
+   "fun_fact": "Lažni križ pogosto zamenjujejo s Južnim križem, kar je povzročilo že prave navigacijske napake! Aviorjevo ime so izumili britanski ustvarjalci almanahov v tridesetih letih 20. stoletja.",
+   "distance": "610 svetlobnih let",
+   "size": "151 sončnih polmerov",
+   "mass": "10,5 sončeve mase",
+   "spectral_class": "K3 III + B2 Vp"
+  },
+  "star/j091312-694312": {
+   "description": "Miaplacidus je drugo najsvetlejše zvezdo v ozvezdju Gredlja in označuje vogal asterizma Diamantni križ.",
+   "fun_fact": "Miaplacidus se je napadel v velikanko, potem ko je porabil vodik v svojem jedru, vendar še vedno vrti s hitrostjo 146 km/s!",
+   "distance": "113 svetlobnih let",
+   "size": "5,8 sončnega polmera",
+   "mass": "3,9 sončeve mase",
+   "spectral_class": "A1 III"
+  },
+  "star/j123112-570636": {
+   "description": "Gacrux (Gamma Crucis) je najvišja zvezda Jučnega križa in Soncu najbližja rdeča velikanovka.",
+   "fun_fact": "Gacrux je nam najbližja rdeča velikanka tipa M, njeno ime pa je preprosta pomorščakova skraênitev za \"Gamma Crucis\", ki je nastala v štiridesetih letih 20. stoletja!",
+   "distance": "89 svetlobnih let",
+   "size": "73 sončnih polmerov",
+   "mass": "1,5 sončeve mase",
+   "spectral_class": "M3.5 III"
+  },
+  "star/j124800-594124": {
+   "description": "Mimosa (Beta Crucis) je druga najsvetlejša zvezda v Južnem križu in ena najbolj vročih zvezd, vidnih s prostim očesom.",
+   "fun_fact": "Mimosa je utripajoča spremenljivka tipa Beta Cephei – nabrekča in se krči v treh prekrivajočih se ritmih, od katerih vsak traja le okoli štiri ure!",
+   "distance": "280 svetlobnih let",
+   "size": "8 sončnih polmerov",
+   "mass": "14,5 sončne mase",
+   "spectral_class": "B0.5 III"
+  },
+  "star/j143936-605024": {
+   "description": "Toliman (Alfa Centauri B) je oranžni spremljevalec v Soncu najbližjem zvezdnem sistemu, ki kroži okoli svetlejšega Rigila Kentaurusa.",
+   "fun_fact": "Toliman je uradno ime dobil šele leta 2018. Je nekoliko manjši in hladnejši od Sonca ter z obema sestrama tvori nam najbližje zvezdne sosede!",
+   "distance": "4,34 svetlobnega leta",
+   "size": "0,86 sončnega polmera",
+   "mass": "0,91 sončne mase",
+   "spectral_class": "K1 V"
+  },
+  "star/j164836-690148": {
+   "description": "Atria je najsvetlejša zvezda Južnega trikotnika (Triangulum Australe), oranžna velika zvezda, veliko večja od Sonca.",
+   "fun_fact": "Atria je 139-krat večja od Sonca – če bi jo postavili v središče sončnega sistema, bi segala skoraj do Venere!",
+   "distance": "391 svetlobnih let",
+   "size": "139 sončnih polmerov",
+   "mass": "6,4 sončne mase",
+   "spectral_class": "K2 Ib-IIa"
+  },
+  "star/j173712-430000": {
+   "description": "Sargas je svetla orjakinja v repu Škorpijona, ki nosi tradicionalno ime sumerskega izvora.",
+   "fun_fact": "Sargas se vrti tako hitro, da je navzven izbočen – na ekvatorju je za tretjino širši kot od pola do pola, morda pa je nastal z zlivanjem dveh zvezd!",
+   "distance": "329 svetlobnih let",
+   "size": "35 sončnih polmerov",
+   "mass": "3,1 sončne mase",
+   "spectral_class": "F1 III"
+  },
+  "star/j202548-564348": {
+   "description": "Pav je najsvetlejša zvezda v ozvezdju Pava, vroča modro-bela zvezda daljnega južnega neba.",
+   "fun_fact": "Paun je bil poimenovan v 30. letih 20. stoletja, ker je britansko vojno letalstvo (RAF) vztrajalo, da mora imeti vsaka zvezda v njihovem novem zvezdnem almanahu ime – ta pa ga ni imela!",
+   "distance": "179 svetlobnih let",
+   "size": "4,8 sončnega polmera",
+   "mass": "5,9 sončne mase",
+   "spectral_class": "B3 V"
   },
   "star/kaus_australis": {
    "description": "Kaus Australis je najsvetlejša zvezda v Strelcu (Archer). Njegovo ime pomeni \"južni lok\" v mešanici arabščine in latinščine.",
@@ -1936,6 +2183,12 @@
    "mass": "~8,5 sončnih mas",
    "spectral_class": "F5Ib",
    "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/n25": {
+   "description": "R Coronae Borealis je redek rumeni supergigant v Severni kroni in prototip razreda spremenljivih zvezd, ki je po njem dobil ime.",
+   "fun_fact": "Zvezdo R Coronae Borealis včasih imenujejo »obratna nova« – namesto da bi izbruhnila, ji svetlost nepredvidljivo upade za do 9 magnitud, ko izpuhne oblake ogljikove saje, ki jo skrijejo pred našimi očmi!",
+   "distance": "4.560 svetlobnih let",
+   "spectral_class": "G0Iep"
   },
   "star/nunki": {
    "description": "Nunki je druga najsvetlejša zvezda v Strelcu in najstarejše ime zvezde, ki se še vedno pogosto uporablja.",

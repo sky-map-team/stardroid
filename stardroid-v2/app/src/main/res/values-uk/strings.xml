@@ -1,10 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
-  Carried over from v1 by tools/salvage-translations/salvage.py.
-  Only strings whose English source is identical between v1 and v2 appear here;
-  everything else is translated by `tm`. Safe to hand-edit thereafter.
--->
+<?xml version='1.0' encoding='UTF-8'?>
 <resources>
+    <!-- tm:omitted name="app_name" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="splash_version" reason="identical_to_source" -->
+    <string name="splash_dismiss" translation_description="Accessibility label for the action that dismisses the launch splash when it is tapped">Закрити</string>
+
+    <!-- Sky-map labels drawn by the computed layers (LayerStrings). -->
     <string name="north_pole">Пн.П</string>
     <string name="south_pole">Пд.П</string>
     <string name="zenith">ЗЕНІТ</string>
@@ -14,6 +15,8 @@
     <string name="east">СХІД</string>
     <string name="west">ЗАХІД</string>
     <string name="ecliptic">Екліптика</string>
+
+    <!-- Solar-system body names, drawn as labels next to each body. -->
     <string name="sun">Сонце</string>
     <string name="moon">Місяць</string>
     <string name="mercury">Меркурій</string>
@@ -25,25 +28,161 @@
     <string name="uranus">Уран</string>
     <string name="neptune">Нептун</string>
     <string name="pluto">Плутон</string>
+
+    <!-- Search (map-screen search dialog and overlay). -->
     <string name="search_button">Пошук</string>
     <string name="search_label">Пошук на небі</string>
+    <string name="search_hint" translation_description="Placeholder text in the search field showing example search targets.">напр. Марс або M31</string>
+    <string name="search_coordinates_hint" translation_description="Helper text under the search field showing that celestial coordinates (right ascension and declination) can be typed directly, with two example formats.">Або введіть координати: 12h 30m, +45° чи 187.5 -45.2</string>
+    <string name="search_go" translation_description="Button that starts navigating the sky map toward the typed search target.">Перейти</string>
     <string name="search_cancel">Відміна</string>
     <string name="search_no_results">Результатів не знайдено. Можливо, об\'єкт зараз не видимий.</string>
+    <string name="search_target_looking_message" translation_description="Status shown while the user is being guided toward a search target. %1$s is the object name.">Пошук: %1$s</string>
+    <string name="search_target_found_message" translation_description="Status shown when the search target has been found and is centered on screen. %1$s is the object name.">Знайдено: %1$s</string>
     <string name="search_overlay_prompt">Поверніть телефон в напрямку стрілки</string>
+
+    <!-- Layer names in the layer-visibility sheet. -->
     <string name="layer_stars">Зірки</string>
     <string name="layer_constellations">Сузір\'я</string>
+    <string name="layer_deep_sky" translation_description="Toggle label for the layer showing deep-sky objects such as galaxies and nebulae.">Об\'єкти далекого космосу</string>
     <string name="layer_solar_system">Планети</string>
     <string name="layer_meteor_showers">Метеорні потоки</string>
+    <string name="layer_satellites" translation_description="Toggle label for the layer showing artificial satellites such as the International Space Station.">Супутники</string>
+    <string name="channel_passes_name" translation_description="Name of the notification channel for alerts shortly before a satellite passes overhead.">Прольоти супутників</string>
+    <string name="channel_passes_description" translation_description="Description of the satellite-pass notification channel.">Одне сповіщення незадовго до найкращого видимого прольоту за ніч</string>
+    <string name="notif_pass_title" translation_description="Title of the notification sent shortly before a satellite passes overhead. %1$s is the satellite name.">%1$s скоро пролетить над головою</string>
+    <string name="notif_pass_text" translation_description="Body of the satellite pass notification, telling the user when to go outside. %1$s is a time.">Видно приблизно з %1$s — вийдіть на вулицю та дайте очам звикнути до темряви</string>
+    <string name="channel_eclipses_name" translation_description="Name of the notification channel for alerts before a lunar eclipse starts.">Місячні затемнення</string>
+    <string name="channel_eclipses_description" translation_description="Description of the lunar-eclipse notification channel.">Одне сповіщення перед початком місячного затемнення</string>
+    <string name="notif_eclipse_title" translation_description="Title of the notification sent before a lunar eclipse starts. %1$s is a localized eclipse type like \'Total lunar eclipse\'.">%1$s починається незабаром</string>
+    <string name="notif_eclipse_text" translation_description="Body of the lunar eclipse notification, telling the user when it begins. %1$s is a time.">Починається близько %1$s — варто вийти на вулицю</string>
+    <string name="satellite_name_iss" translation_description="Display name for the International Space Station.">Космічна станція</string>
+    <string name="satellite_name_tiangong" translation_description="Display name for the Chinese space station Tiangong.">Тяньгун</string>
+    <string name="layer_param_pass_alerts" translation_description="Label for the setting that turns on a notification shortly before a satellite passes overhead.">Сповіщення про прольоти</string>
+    <string name="layer_param_pass_alerts_description" translation_description="Explains what the pass-alert setting does: a single notification before the best visible pass of the night.">Повідомляти мене перед найкращим видимим прольотом щоночі</string>
+    <string name="layer_param_eclipse_alerts" translation_description="Label for the setting that turns on a notification before a lunar eclipse begins.">Сповіщення про затемнення</string>
+    <string name="layer_param_eclipse_alerts_description" translation_description="Explains what the eclipse-alert setting does: a single notification before a lunar eclipse starts.">Повідомляти мене перед початком місячного затемнення</string>
+    <string name="satellite_description" translation_description="Short description shown on the info card for an artificial satellite.">
+    Штучний супутник на низькій навколоземній орбіті, освітлений Сонцем на темному тлі неба. Він перетинає небо від обрію до обрію за кілька хвилин, рухаючись рівномірно та безблимально.
+    </string>
+    <string name="satellite_next_pass" translation_description="Heading above the next visible pass details on a satellite\'s info card.">Наступний видимий проліт</string>
+    <string name="satellite_pass_when" translation_description="When and how high the next satellite pass will be. %1$s is a time, %2$s is a compass direction, %3$d is an angle in degrees.">%1$s, схід о %2$s, досягає %3$d°</string>
+    <string name="satellite_pass_magnitude" translation_description="How bright the satellite will be at its peak. %1$.1f is a brightness magnitude.">Зоряна величина %1$.1f у піку яскравості</string>
+    <string name="satellite_pass_shadow" translation_description="Tells the user the satellite will fade out mid-pass when it enters the Earth\'s shadow. %1$s is a time.">Зникає в тіні Землі о %1$s</string>
+    <string name="satellite_no_pass" translation_description="Shown on a satellite info card when no visible pass is coming up in the next two days.">Найближчими днями видимих прольотів немає</string>
+    <string name="satellite_pass_unknown" translation_description="Shown on a satellite info card when the downloaded orbit data is too old to predict pass times reliably.">Дані про орбіту занадто старі для прогнозування прольотів</string>
+    <string name="object_info_eclipse_title" translation_description="Heading above the next lunar eclipse details on the Moon\'s info card.">Місячне затемнення</string>
+    <string name="object_info_no_eclipse" translation_description="Shown on the Moon\'s info card when no lunar eclipse is coming up in the searched time range.">Найближчим часом місячних затемнень не очікується</string>
+    <string name="object_info_eclipse_greatest" translation_description="The next lunar eclipse\'s type and greatest-eclipse date/time. %1$s is a localized eclipse type like \'Total lunar eclipse\', %2$s a date, %3$s a time.">%1$s — найбільша фаза затемнення %2$s о %3$s</string>
+    <string name="object_info_eclipse_totality" translation_description="The start and end time of totality during a total lunar eclipse. %1$s and %2$s are times.">Повна фаза %1$s – %2$s</string>
+    <string name="tonight_satellite_pass" translation_description="Tonight-widget row announcing a visible satellite pass. %1$s is the satellite name, %2$s is a time of day.">%1$s пролітає о %2$s</string>
+    <string name="tonight_trailing_pass" translation_description="Small trailing note on a satellite pass row. %1$s is a compass direction, %2$d is an angle in degrees, %3$.1f is a brightness magnitude.">Схід %1$s, %2$d°, зов. вел. %3$.1f</string>
+    <string name="satellites_no_data" translation_description="Explanation shown when satellite orbital data has not been downloaded yet and so no satellites can be drawn.">Для оновлення положення супутників потрібне підключення до інтернету.</string>
+    <string name="satellites_refresh" translation_description="Button that tries to download satellite orbital data now.">Оновити</string>
+    <string name="satellites_retry_soon" translation_description="Shown instead of a Refresh button when satellite data was just requested and cannot be requested again for a few minutes.">Повторіть спробу за кілька хвилин</string>
+    <string name="satellites_retry_within_hour" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for up to an hour.">Повторіть спробу протягом години</string>
+    <string name="satellites_retry_hours" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for several hours.">Спробуйте за кілька годин</string>
+    <string name="satellites_retry_tomorrow" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again until the next day.">Спробуйте завтра</string>
+    <string name="satellites_retry_days" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for several days.">Спробуйте за кілька днів</string>
+    <string name="layer_grid" translation_description="Toggle label for the layer showing the right ascension / declination grid.">Небесна сітка</string>
     <string name="layer_horizon">Горизонт</string>
     <string name="layer_ecliptic">Екліптика</string>
     <string name="layer_sky_gradient">Градієнт неба</string>
+
+    <!-- Map screen controls. -->
+    <string name="layers_sheet_title" translation_description="Title of the bottom sheet listing sky map layers the user can show or hide.">Шари</string>
+    <string name="layers_group_objects" translation_description="Layers-sheet group header for layers that draw sky objects (stars, planets, deep-sky objects).">Об\'єкти</string>
+    <string name="layers_group_reference" translation_description="Layers-sheet group header for reference elements drawn over the sky (coordinate grid, horizon, ecliptic).">Довідкові лінії</string>
+    <string name="layers_group_display" translation_description="Layers-sheet group header for display settings that change how the sky is rendered rather than what is drawn.">Відображення</string>
+    <string name="show_layers" translation_description="Accessibility description and label for the button opening the layer-visibility sheet, which holds the layers that do not fit on the rail plus display options.">Більше шарів і параметрів</string>
+    <string name="more_button" translation_description="Accessibility label and tooltip for the map-screen button (three vertical dots) opening the overflow menu of further destinations such as Gallery and Settings.">Більше параметрів</string>
     <string name="night_mode">Нічний режим</string>
+    <string name="switch_to_manual" translation_description="Tooltip and accessibility label for the button that switches the map from auto (sensor-driven) mode to manual (drag) mode.">Увімкнути ручний режим</string>
+    <string name="switch_to_auto" translation_description="Tooltip and accessibility label for the button that switches the map from manual (drag) mode to auto (sensor-driven) mode.">Увімкнути авторежим</string>
+    <string name="no_sensor_warning" translation_description="Warning shown when the device lacks the motion sensors needed to point the map at the sky automatically.">
+    Цей пристрій не має компаса або датчиків руху, тому Sky Map не може стежити за тим, куди ви його спрямовуєте. Замість цього перетягуйте карту вручну.
+    </string>
+    <string name="no_sensor_warning_dismiss" translation_description="Button that dismisses the missing-sensors warning dialog.">ОК</string>
+
+    <!-- The map HUD (map-hud.md, D65): the top-right pointing readout shown with the chrome. -->
+    <string name="hud_ra_label" translation_description="Map-HUD row label: right ascension of the point at the centre of the screen. Standard astronomy abbreviation; keep short.">ПС</string>
+    <string name="hud_dec_label" translation_description="Map-HUD row label: declination of the point at the centre of the screen. Standard astronomy abbreviation; keep short.">Сх</string>
+    <string name="hud_alt_label" translation_description="Map-HUD row label: altitude (angle above the horizon) of the point at the centre of the screen. Keep short.">Вис</string>
+    <string name="hud_az_label" translation_description="Map-HUD row label: azimuth (compass bearing) of the point at the centre of the screen. Keep short.">Аз</string>
+    <string name="hud_fov_label" translation_description="Map-HUD row label: the field of view (how many degrees of sky the screen spans). Keep short.">ОЗ</string>
+    <string name="hud_correction_label" translation_description="Map-HUD row label for the manual sensor-alignment correction the user set by dragging. Keep very short.">Кор</string>
+    <!-- tm:omitted name="hud_ra_value" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_signed_degrees_value" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_azimuth_value" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_fov_value" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_fov_value_fine" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_fov_value_finest" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_correction_value" reason="identical_to_source" -->
+    <string name="hud_correction_reset" translation_description="Accessibility label for the small button that clears the manual sensor-alignment correction back to zero.">Скинути корекцію вирівнювання</string>
+    <string name="hud_alignment_reset_message" translation_description="Snackbar confirming the sensor-alignment correction was cleared; shown with an Undo action.">Корекцію вирівнювання скинуто</string>
+    <string name="hud_fov_locked" translation_description="Accessibility label for the small lock icon shown next to the field-of-view readout while the camera controls the zoom in through-camera mode.">Масштабування заблоковано за камерою</string>
+
+    <string name="layer_hud" translation_description="Layers-sheet Display toggle that shows the heads-up readout of where the phone is pointing (compass direction and altitude) over the star map.">Дані про напрямок</string>
+
+    <!-- Through-camera (AR) mode (camera-ar-mode.md, D64). -->
+    <string name="layer_camera" translation_description="Layers-sheet Display toggle that shows the live rear-camera image behind the star map, so the drawn sky overlays the real one.">Режим накладання на камеру</string>
+    <string name="layer_camera_needs_sensors" translation_description="Subtitle explaining why the through-camera toggle is disabled: the device has no usable motion sensors, and the mode needs the map to follow where the phone points.">Потрібні датчики руху, яких немає на цьому пристрої</string>
+    <string name="ar_auto_mode_snackbar" translation_description="Snackbar shown when turning on through-camera mode switched the map from manual dragging back to automatic sensor pointing.">Для вигляду з камери увімкнено авторежим</string>
+    <string name="ar_permission_denied" translation_description="Snackbar shown when the user declined the camera permission that through-camera mode needs.">Для режиму накладання на камеру потрібен дозвіл на використання камери</string>
     <string name="ar_permission_settings_action">Налаштування</string>
+    <string name="ar_exposure_slider" translation_description="Accessibility label for the slider adjusting the camera\'s exposure compensation while through-camera mode is on.">Експозиція камери</string>
+    <string name="ar_alignment_adjusted_message" translation_description="Snackbar shown after the user drags the star map to align it with the camera image; shown with an Undo action that reverts the whole drag.">Вирівнювання карти змінено</string>
+    <string name="ar_dimmer_slider" translation_description="Accessibility label for the slider dimming the camera image behind the star map while through-camera mode is on.">Затемнення камери</string>
+    <!-- tm:omitted name="ar_iso_slider_label" reason="identical_to_source" -->
+    <string name="ar_iso_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual ISO sensitivity in through-camera mode.">ISO камери</string>
+    <string name="ar_shutter_slider_label" translation_description="Very short label for the temporary developer slider setting the camera\'s manual shutter (exposure) time in through-camera mode.">Витрим</string>
+    <string name="ar_shutter_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual shutter (exposure) time in through-camera mode.">Час затвора камери</string>
+    <string name="share_button" translation_description="Overflow-menu row that captures the current sky view as an image and opens the system share sheet.">Поділитися зоряним небом</string>
+    <string name="share_chooser_title" translation_description="Title of the system share sheet when sharing a captured sky image.">Поділитися цим небом</string>
+    <string name="share_invitation" translation_description="Short invitation stamped on the footer of shared sky images, above the store link.">Дізнайтеся, що ви бачите — завантажте Sky Map безплатно</string>
+    <string name="share_text" translation_description="Text accompanying a shared sky image in apps that accept both an image and text. %1$s is the app-store link.">Дізнайтеся, що ви бачите — завантажте Sky Map безплатно: %1$s</string>
+    <!-- tm:omitted name="share_store_link" reason="identical_to_source" -->
+    <string name="share_layout_overlay" translation_description="Caption of the share-layout choice that draws the star map over the camera photo, as seen on screen.">Накладання</string>
+    <string name="share_layout_side_by_side" translation_description="Caption of the share-layout choice that puts the camera photo and the star map next to each other.">Пліч-о-пліч</string>
+    <string name="share_shutter_button" translation_description="Accessibility label for the round shutter button that captures and shares the current through-camera view.">Поділитися цим виглядом</string>
+    <string name="share_failed_message" translation_description="Snackbar shown when capturing the sky image for sharing failed.">Не вдалося зняти небо — спробуйте ще раз</string>
+    <string name="ar_exposure_auto" translation_description="Readout shown when a manual camera exposure slider sits at its automatic position.">Авто</string>
+    <string-array name="hud_cardinal_directions" translation_description="The sixteen compass-point abbreviations, clockwise from north, used as the azimuth suffix in the map HUD (e.g. N, NNE, NE...). Translate to the locale\'s conventional compass abbreviations.">
+        <item>Пн</item>
+        <item>Пн-ПнС</item>
+        <item>ПнС</item>
+        <item>С-ПнС</item>
+        <item>С</item>
+        <item>С-ПдС</item>
+        <item>ПдС</item>
+        <item>Пд-ПдС</item>
+        <item>Пд</item>
+        <item>Пд-ПдЗ</item>
+        <item>ПдЗ</item>
+        <item>З-ПдЗ</item>
+        <item>З</item>
+        <item>З-ПнЗ</item>
+        <item>ПнЗ</item>
+        <item>Пн-ПнЗ</item>
+    </string-array>
+
+    <!-- Time travel: entry button, dialog, and the player bar shown while travelling. -->
     <string name="time_travel_button">Подорож у часі</string>
     <string name="time_travel_title">Подорож у часі</string>
+    <string name="time_travel_visiting" translation_description="Readout in the time travel dialog showing the currently chosen destination date and time. %1$s is the formatted date and time.">Відвідування: %1$s</string>
+    <string name="time_travel_pick_date" translation_description="Button in the time travel dialog that opens a date picker.">Встановити дату</string>
+    <string name="time_travel_pick_time" translation_description="Button in the time travel dialog that opens a time picker.">Встановити час</string>
+    <string name="time_travel_select_event" translation_description="Placeholder hint for the dropdown list of popular astronomical events in the time travel dialog.">Виберіть популярну подію…</string>
+    <string name="time_travel_go" translation_description="Button that starts time travel to the chosen date.">Перейти</string>
     <string name="time_travel_from_now">Почати з тепер</string>
+    <!-- tm:omitted name="time_travel_ok" reason="identical_to_source" -->
     <string name="time_travel_cancel">Відміна</string>
-    <string name="time_travel_stopped">Подорож у часі зупинено</string>
+    <!-- tm:omitted name="time_travel_slower" reason="identical_to_source" -->
+    <!-- tm:omitted name="time_travel_pause" reason="identical_to_source" -->
+    <!-- tm:omitted name="time_travel_faster" reason="identical_to_source" -->
+    <string name="time_travel_return" translation_description="Player button that ends time travel and returns the map to the present.">Зараз</string>
+
+    <!-- Time travel playback-rate labels (v1 wording). -->
     <string name="time_travel_second_speed">Подорож зі швидкістю &gt; @ 1 с/с</string>
     <string name="time_travel_minute_speed">Подорож зі швидкістю &gt; @ 1 хв/с</string>
     <string name="time_travel_10minute_speed">Подорож зі швидкістю &gt; @ 10 хв/с</string>
@@ -56,6 +195,9 @@
     <string name="time_travel_hour_speed_back">Подорож зі швидкістю &lt; @ 1 год/с</string>
     <string name="time_travel_day_speed_back">Подорож зі швидкістю &lt; @ 1 дн/с</string>
     <string name="time_travel_week_speed_back">Подорож зі швидкістю &lt; @ 1 тжд/с</string>
+
+    <!-- Popular events in the time travel dialog (timestamps live in TimeTravelEvents.kt). -->
+    <string name="time_travel_now" translation_description="Time travel picker entry that resets the destination to the present moment.">Зараз</string>
     <string name="time_travel_next_sunset">Наступний захід Сонця</string>
     <string name="time_travel_next_sunrise">Наступний схід Сонця</string>
     <string name="time_travel_next_full_moon">Наступний повний місяць</string>
@@ -67,6 +209,7 @@
     <string name="time_travel_mars_uranus_2026">Близьке зближення Марса та Урана, 4 липня 2026</string>
     <string name="time_travel_solar_eclipse_2026">Повне сонячне затемнення, 12 серп. 2026</string>
     <string name="time_travel_perseids_2026">Метеорний потік Персеїди, 12-13 серп. 2026</string>
+    <string name="time_travel_lunar_eclipse_aug_2026" translation_description="Name of an astronomical event in the time travel picker. Keep the date format suitable for your locale.">Часткове місячне затемнення, 28 серпня 2026 р.</string>
     <string name="time_travel_jupiter_occultation_2026">Покриття Юпітера Місяцем, 6 жовт. 2026</string>
     <string name="time_travel_geminids_2026">Метеорний потік Близнюки, 13-14 груд. 2026</string>
     <string name="time_travel_supermoon_2026">Супермісяць у Святвечір, 24 груд. 2026</string>
@@ -75,7 +218,11 @@
     <string name="time_travel_apollo_11">Посадка на Місяць Аполлона 11</string>
     <string name="time_travel_jupiter_saturn_2020">З\'єднання Юпітер-Сатурн</string>
     <string name="sun_wont_set_message">Протягом найближчих 24 годин заходу Сонця в вашому місці розташування не буде.</string>
+    <string name="time_travel_start_message" translation_description="Toast message when time travel starts toward a chosen destination. %1$s is the formatted destination date and time.">Подорож у часі до %1$s ...</string>
     <string name="time_travel_close_message">Назад в сьогодення...</string>
+
+    <!-- Location management. -->
+    <string name="location_button" translation_description="Button on the map screen that opens the location management sheet">Місце розташування</string>
     <string name="location_management_title">Ваше місцезнаходження</string>
     <string name="location_source_auto">Автоматично</string>
     <string name="location_source_manual">Вручну</string>
@@ -86,7 +233,13 @@
     <string name="location_switch_to_manual">Введіть місцезнаходження вручну</string>
     <string name="location_change">Змінити місцезнаходження</string>
     <string name="location_set_toast">Місцезнаходження встановлено на %1$s</string>
+    <string name="location_long_lat" translation_description="Formatted display of longitude and latitude. %1$.2f is longitude, %2$.2f is latitude">Довгота: %1$.2f, Широта: %2$.2f</string>
     <string name="location_map_unavailable">Карта недоступна</string>
+    <string name="location_map_content_description" translation_description="Accessibility description of the static map image showing the current location of the user">Карта вашого поточного місця розташування</string>
+    <string name="snackbar_action_undo" translation_description="Snackbar action button that reverses the change the snackbar reports, e.g. re-enabling horizon auto-leveling">Скасувати</string>
+    <string name="snackbar_action_open" translation_description="Snackbar action button that opens the screen the snackbar refers to, e.g. the compass calibration screen">Відкрити</string>
+    <string name="label_size_hint_message" translation_description="Snackbar shown once, the first time the user zooms in a long way. Explains that the text labels naming stars and other objects stay the same size however far you zoom, and that their size is changed in the app\'s Settings screen instead. Shown with an action button that opens Settings.">Розмір міток не змінюється при масштабуванні — налаштуйте його в Налаштуваннях</string>
+    <string name="label_size_hint_action" translation_description="Action button on the label size snackbar; opens the app\'s Settings screen, where the user can change how large the sky labels are">Налаштування</string>
     <string name="location_permission_dialog_title">Потрібна геолокація</string>
     <string name="location_permission_dialog_message">
     Sky Map потребує вашого приблизного місцезнаходження, щоб показати правильне нічне небо. Ви можете надати дозвіл, ввести своє місцезнаходження вручну або вирішити пізніше. Якщо ви вирішите пізніше, карта не буде точною, доки ваше місцезнаходження не буде встановлено.
@@ -112,14 +265,36 @@
     <string name="location_geocoder_offline">Немає інтернету — введіть координати вручну</string>
     <string name="location_invalid_latitude">Широта має бути від −90 до 90</string>
     <string name="location_invalid_longitude">Довгота має бути від −180 до 180</string>
+    <!-- tm:omitted name="location_coordinate_format" reason="identical_to_source" -->
+
+    <!-- Object info card -->
+    <string name="object_info_image_credit" translation_description="Attribution line under the object\'s photo; %1$s is the credited source, e.g. NASA/ESA">Зображення: %1$s</string>
+    <string name="object_info_fun_fact" translation_description="An interesting trivia line on the object info card; %1$s is the fact text">Цікавий факт: %1$s</string>
     <string name="object_info_distance">Відстань:</string>
     <string name="object_info_size">Розмір:</string>
     <string name="object_info_mass">Маса:</string>
+    <string name="object_info_spectral_class" translation_description="Label for a star\'s spectral classification (e.g. G2V) on the info card">Спектральний клас:</string>
     <string name="object_info_magnitude">Видима зоряна величина:</string>
+    <string name="object_info_rises" translation_description="Label on the info card for the time the object next rises above the horizon at the user\'s location">Схід:</string>
+    <string name="object_info_sets" translation_description="Label on the info card for the time the object next sets below the horizon at the user\'s location">Захід:</string>
+    <string name="object_info_always_above_horizon" translation_description="Info-card line shown for a circumpolar object that never sets at the user\'s location">Завжди над горизонтом у вашій місцевості</string>
+    <string name="object_info_always_below_horizon" translation_description="Info-card line shown for an object that never rises at the user\'s location">Завжди під горизонтом у вашій місцевості</string>
+    <string name="object_info_also_known_as" translation_description="Label on the info card above the object\'s alternative names (aliases and catalog designations), e.g. M31 and NGC 224">Також відомо як:</string>
+    <string name="object_info_see_also" translation_description="Heading above links to related celestial objects on the info card">Дивіться також</string>
     <string name="object_info_find_in_sky">Знайти на небі</string>
+    <string name="object_info_close" translation_description="Button that closes the object info card">Закрити</string>
     <string name="object_info_tap_to_close">Дотикніться, щоб закрити</string>
+
+    <!-- Image gallery -->
+    <string name="gallery_button" translation_description="Map-screen menu item that opens a gallery of photographs of celestial objects. Not the user\'s own photos - these are catalog images from sources such as NASA and ESA.">Галерея неба</string>
+    <string name="gallery_title" translation_description="Title of the screen showing a gallery of photographs of celestial objects. Not the user\'s own photos - these are catalog images from sources such as NASA and ESA.">Галерея неба</string>
+    <string name="gallery_back" translation_description="Content description for the back arrow leaving the gallery screen">Назад</string>
+
+    <!-- Settings screen (v1 wording where a v1 string existed) -->
     <string name="settings_button">Налаштування</string>
     <string name="settings_title">Налаштування</string>
+    <string name="settings_back" translation_description="Content description for the back arrow leaving the settings screen">Назад</string>
+    <!-- tm:omitted name="settings_ok" reason="identical_to_source" -->
     <string name="settings_cancel">Відміна</string>
     <string name="settings_section_controls">Керування</string>
     <string name="settings_section_appearance">Зовнішній вигляд</string>
@@ -127,6 +302,7 @@
     <string name="settings_section_other">Інше</string>
     <string name="enable_analytics">Надсилати статистику використання</string>
     <string name="enable_analytics_desc">Зробіть Sky Map кращою, відправивши анонімні дані в Google Analytics</string>
+    <string name="settings_diagnostics_summary" translation_description="Summary for the settings row that opens the diagnostics screen, which shows technical sensor, location and performance readouts useful when reporting a problem">Дані про датчики, місцезнаходження та продуктивність</string>
     <string name="settings_tap_to_identify">Показувати інформацію при дотику</string>
     <string name="settings_tap_to_identify_summary">Дотикніться до небесних об\'єктів, щоб дізнатися про них</string>
     <string name="settings_tap_in_auto_mode">Картки інформації в автоматичному режимі</string>
@@ -134,23 +310,68 @@
     Також показувати картки інформації при натисканні на об\'єкти в автоматичному (сенсорному) режимі
     </string>
     <string name="settings_auto_level_horizon">Автоматичне вирівнювання горизонту</string>
+    <string name="auto_level_on_toast" translation_description="Brief confirmation shown when a double tap turns horizon auto-leveling on in manual mode">Автовирівнювання горизонту ввімкнено</string>
+    <string name="auto_level_off_toast" translation_description="Brief confirmation shown when a double tap turns horizon auto-leveling off in manual mode">Автовирівнювання горизонту вимкнено</string>
     <string name="settings_auto_level_horizon_summary">
     У ручному режимі горизонт поступово повертається в горизонтальне положення після того, як ви відпустите пальці
     </string>
+    <string name="settings_font_size" translation_description="Preference title: change the size of the text labels naming stars and other objects drawn on the sky">Розмір підписів неба</string>
+    <string name="settings_font_size_summary" translation_description="Help to go along with the sky label size preference. Explains that this size is fixed and does not change as the user zooms the map in or out.">Текст міток зберігає цей розмір при будь-якому масштабуванні</string>
+    <string name="settings_font_size_small" translation_description="Smallest font size">Малий</string>
+    <string name="settings_font_size_medium" translation_description="Normal font size">Середній</string>
+    <string name="settings_font_size_large" translation_description="Large font size">Великий</string>
+    <string name="settings_font_size_extra_large" translation_description="Largest font size">Дуже великий</string>
     <string name="settings_auto_dimness">Автоматичне затемнення екрана</string>
+    <string name="settings_auto_dimness_summary" translation_description="Summary for the night-mode screen dimming preference">Рівень затемнення екрана в нічному режимі</string>
+    <string name="settings_auto_dimness_system" translation_description="Screen dimming option: leave brightness on the system setting">Системний за замовчуванням</string>
+    <string name="settings_auto_dimness_dim" translation_description="Screen dimming option: dimmest screen setting">Дуже темний</string>
+    <string name="settings_auto_dimness_classic" translation_description="Screen dimming option: the hand-tuned brightness Sky Map used for its first 15 years">Класичний</string>
     <string name="settings_sky_gradient">Показувати градієнт неба</string>
     <string name="settings_sky_gradient_summary">Затінює небо синім біля Сонця та темним на протилежній стороні</string>
+    <string name="settings_disable_gyro" translation_description="Preference title for switching from the gyroscope to the legacy compass + accelerometer sensor pipeline">Використовувати застарілі датчики</string>
+    <string name="settings_disable_gyro_summary" translation_description="Explanation of the legacy sensors preference and when to use it">
+    Наведіть карту за допомогою компаса й акселерометра замість гіроскопа. Спробуйте це, якщо карта дрейфує або гіроскоп вашого пристрою працює некоректно; пристрої без гіроскопа використовують ці датчики автоматично.
+    </string>
     <string name="settings_sensor_speed">Швидкість датчика</string>
+    <string name="settings_sensor_speed_slow" translation_description="Slow sensor speed">Повільно</string>
+    <string name="settings_sensor_speed_standard" translation_description="Normal sensor speed">Середньо</string>
+    <string name="settings_sensor_speed_fast" translation_description="Fast sensor speed">Швидко</string>
     <string name="settings_sensor_damping">Демпфування</string>
+    <string name="settings_sensor_damping_standard" translation_description="Low sensor damping factor - this will make the app jittery">Нестабільно</string>
+    <string name="settings_sensor_damping_high" translation_description="Medium sensor damping factor - this will make the app slightly jittery">Середньо</string>
+    <string name="settings_sensor_damping_extra_high" translation_description="Extra high sensor damping factor">Як треба</string>
+    <string name="settings_sensor_damping_really_high" translation_description="Really high sensor damping factor - this will make the app sluggish">Із затримкою</string>
+    <string name="settings_classic_sensors_only" translation_description="Summary noting a sensor preference only applies to the legacy non-gyroscope sensor path">Застосовується лише під час використання застарілих датчиків</string>
     <string name="settings_reverse_magnetic_z">Зворотне магнітне Z</string>
     <string name="settings_magnetic_correction">Викор. магнітну корекцію</string>
+    <string name="settings_magnetic_correction_summary" translation_description="Summary for the magnetic correction preference">Коригує компас на різницю між магнітною та істинною півноччю</string>
     <string name="settings_view_direction">Обертати по горизонту</string>
+    <string name="settings_view_direction_summary" translation_description="Explanation of the view direction preference, covering both landscape rotation and pointer modes">
+    Повернути горизонт на 90 градусів (для пристроїв із примусовим ландшафтним режимом) або використовувати режим покажчика, щоб на екрані відображалося те, на що вказує верхня частина телефона
+    </string>
+    <string name="settings_view_direction_standard" translation_description="Normal viewing direction">Звичайний</string>
+    <string name="settings_view_direction_rotate90" translation_description="View direction option that rotates the screen by 90 degrees">Повернений горизонт</string>
+    <string name="settings_view_direction_telescope" translation_description="View direction option that shows the sky as pointed at by the long edge of the phone">Режим вказівника</string>
+
+    <!-- tm:omitted name="support_email" reason="identical_to_source" -->
     <string name="diagnostics_button">Діагностика</string>
     <string name="diagnostics_title">Діагностика</string>
+    <string name="diagnostics_share" translation_description="Accessibility label for the diagnostics screen button that emails these details to the developers">Надіслати розробникам</string>
+    <string name="diagnostics_share_subject" translation_description="Subject line of the email a user sends from the diagnostics screen">Звіт про діагностику Sky Map</string>
+    <string name="diagnostics_report_header" translation_description="First line of the emailed diagnostics report, telling the user where to type their problem description. Keep it on one line.">--- Діагностика Sky Map. Будь ласка, опишіть проблему вище цієї лінії. ---</string>
     <string name="diagnostics_section_general">Загальний</string>
     <string name="diagnostics_device">Пристрій</string>
+    <!-- tm:omitted name="diagnostics_phone_format" reason="identical_to_source" -->
     <string name="diagnostics_android_version">Версія Android</string>
     <string name="diagnostics_sky_map_version">Версія Sky Map</string>
+    <!-- tm:omitted name="diagnostics_sky_map_version_format" reason="identical_to_source" -->
+    <string name="diagnostics_section_graphics" translation_description="Section heading in the diagnostics screen for graphics/GPU information">Графіка</string>
+    <string name="diagnostics_gl_renderer" translation_description="Row label in the diagnostics screen for the name of the graphics processor (GPU) drawing the sky">Рендерер</string>
+    <!-- tm:omitted name="diagnostics_gl_version" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_gl_version_format" reason="identical_to_source" -->
+    <string name="diagnostics_gl_limits" translation_description="Row label in the diagnostics screen for graphics hardware limits (maximum texture size, supported line widths and point sizes)">Ліміти GL</string>
+    <string name="diagnostics_gl_limits_format" translation_description="Format for the GL limits row: maximum texture size in pixels, then the supported line width and point size ranges. \'tex\' abbreviates texture. %1$d is texture size, %2$s is the line width range, %3$s is the point size range.">текстура %1$d, лінія %2$s, точка %3$s</string>
+    <string name="diagnostics_gl_unavailable" translation_description="Value shown in the diagnostics Graphics rows before the sky map has drawn, when the graphics details are not known yet">Ще недоступно</string>
     <string name="diagnostics_section_sensors">Сенсори</string>
     <string name="diagnostics_accelerometer">Акселерометр</string>
     <string name="diagnostics_compass">Компас</string>
@@ -163,22 +384,43 @@
     <string name="diagnostics_location_permission">Дозвіл на доступ до місцезнаходження</string>
     <string name="diagnostics_permission_granted">Надано</string>
     <string name="diagnostics_permission_denied">Відмовлено</string>
+    <!-- tm:omitted name="diagnostics_gps" reason="identical_to_source" -->
     <string name="diagnostics_no_gps">Немає GPS</string>
     <string name="diagnostics_enabled">Ввімкнено</string>
     <string name="diagnostics_disabled">Вимкнено</string>
     <string name="diagnostics_permission_disabled">Дозвіл не надано</string>
     <string name="diagnostics_location">Розташування (ш., д.)</string>
+    <!-- tm:omitted name="diagnostics_location_format" reason="identical_to_source" -->
+    <string name="diagnostics_location_unset" translation_description="Location status shown in diagnostics when no location has been set yet">Не встановлено</string>
     <string name="diagnostics_location_acquiring">Отримання…</string>
+    <string name="diagnostics_location_hardware_unavailable" translation_description="Location status shown in diagnostics when no location hardware is available">Немає апаратного забезпечення геолокації</string>
     <string name="diagnostics_pointing">Вказівник</string>
+    <!-- tm:omitted name="diagnostics_dec_format" reason="identical_to_source" -->
     <string name="diagnostics_magnetic_correction">Mag корекція</string>
+    <string name="diagnostics_alignment_adjustment" translation_description="Diagnostics row label for the manual sky-alignment correction the user set by dragging in through-camera mode.">Коригування вирівнювання</string>
+    <string name="diagnostics_alignment_format" translation_description="Value of the sky-alignment correction: azimuth then altitude offset in degrees, each signed with one decimal. \'az\' and \'alt\' abbreviate azimuth and altitude.">%1$+.1f° аз, %2$+.1f° вис</string>
+    <!-- tm:omitted name="diagnostics_magnetic_correction_format" reason="identical_to_source" -->
+    <string name="diagnostics_east" translation_description="Compass direction shown for an eastward magnetic correction">Сх</string>
+    <string name="diagnostics_west" translation_description="Compass direction shown for a westward magnetic correction">Зх</string>
     <string name="diagnostics_local_datetime">Місцевий час</string>
     <string name="diagnostics_utc_datetime">Універсальний час</string>
     <string name="diagnostics_section_network">Мережа</string>
     <string name="diagnostics_connection">З\'єднання</string>
+    <string name="diagnostics_section_satellites" translation_description="Section heading in the diagnostics screen for satellite orbital-data status">Супутники</string>
+    <string name="diagnostics_satellite_data" translation_description="Row label in the diagnostics screen for the age and count of cached satellite orbital data">Дані орбіт</string>
+    <string name="diagnostics_satellite_data_none" translation_description="Row value in the diagnostics screen when no satellite orbital data has been downloaded yet">Не завантажено</string>
+    <string name="diagnostics_satellite_data_format" translation_description="Row value in the diagnostics screen showing how many satellites are cached and how many days old the data is. %1$d is a count, %2$.1f is a number of days">супутників: %1$d, вік даних: %2$.1f дн.</string>
+    <string name="diagnostics_satellite_last_fetch" translation_description="Row label in the diagnostics screen for the result of the most recent attempt to download satellite orbital data">Останнє завантаження</string>
+    <string name="diagnostics_satellite_never_fetched" translation_description="Row value in the diagnostics screen when satellite orbital data has never been downloaded">Ніколи</string>
+    <string name="diagnostics_satellite_circuit_open" translation_description="Row label in the diagnostics screen for when satellite downloads are paused after repeated server errors">Завантаження призупинено</string>
+    <string name="diagnostics_satellite_circuit_open_format" translation_description="Row value in the diagnostics screen showing when paused satellite downloads will resume and how many failures caused the pause. %1$s is a date and time, %2$d is a count">До %1$s (помилок: %2$d)</string>
+    <string name="diagnostics_satellite_force_fetch" translation_description="Label on a debug-only button in the diagnostics screen that downloads satellite orbital data immediately">Завантажити дані супутників зараз (налагодження)</string>
     <string name="diagnostics_connected">З\'єднано</string>
     <string name="diagnostics_disconnected">Роз\'єднано</string>
     <string name="diagnostics_wifi">(wifi)</string>
     <string name="diagnostics_cell">" (мобільна мережа)"</string>
+
+    <!-- Compass calibration screen (slice 15) -->
     <string name="calibration_button">Калібрувати</string>
     <string name="calibration_heading_user">Компас вашого телефону</string>
     <string name="calibration_heading_warning">Компас вашого телефону потребує уваги</string>
@@ -189,22 +431,171 @@
     <string name="calibration_accuracy_high">Калібрування: добре</string>
     <string name="calibration_accuracy_no_contact">Калібрування: Немає зв\'язку</string>
     <string name="calibration_do_not_show_again">Більше не показувати</string>
+    <string name="calibration_what_to_do" translation_description="Information for the user on how to calibrate the compass when the screen auto-opens. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[Датчик компаса вашого телефону повідомляє про погане калібрування. Рух вісімкою (<a href="%s">подивіться демонстрацію</a>) спонукає апаратне забезпечення вашого телефону скинути датчик компаса — Sky Map не контролює цей процес.<br/><br/><blockquote><b>Калібрований не означає точний.</b> Жест вісімкою допомагає скинути датчик, але він не може усунути перешкоди від сусідніх металевих предметів, автомобільних панелей приладів або чохлів для телефонів. Якщо після калібрування карта все ще зміщена, найбільш вірогідною причиною є ці зовнішні джерела, а не Sky Map.</blockquote>Перейдіть на відкриту місцевість подалі від металу та спробуйте ще раз.]]></string>
+    <string name="calibration_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they open the calibration screen. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[Стан калібрування компаса вашого телефону показано вище.<br/><br/>Якщо необхідно, виконайте рух у вигляді вісімки (<a href="%s">переглянути демонстрацію</a>), щоб апаратне забезпечення вашого телефону повторно відкалібрувало датчик компаса.<br/><br/><blockquote><b>Важливо:</b> калібрування допомагає датчику скинути свої внутрішні параметри. Це не означає, що компас обов\'язково точний!<br/>Місцеві магнітні перешкоди (металеві предмети, панелі приладів автомобілів, чохли для телефонів) все одно можуть спричинити передачу вашим телефоном неточних даних у Sky Map.</blockquote><br/><b>Якщо карта відображає положення неправильно, проблема, швидше за все, у вашому телефоні, а не в Sky Map!</b>]]></string>
     <string name="calibration_low_accuracy_toast">Компас вашого телефону повідомляє про низьку точність</string>
+    <string name="calibration_complete_toast" translation_description="Toast shown when the compass reaches high accuracy and the auto-opened calibration screen closes itself">Висока точність датчиків</string>
+
+    <!-- Startup routing: EULA, warm welcome, What's New (slice 16) -->
     <string name="eula_title">Умови надання послуг</string>
     <string name="dialog_accept">Прийняти</string>
     <string name="dialog_decline">Ні, дякую</string>
+    <!-- tm:omitted name="dialog_ok_button" reason="identical_to_source" -->
+
     <string name="whats_new_dialog_title">Що нового</string>
+    <string name="whats_new_version_heading" translation_description="Heading above the list of new features. %1$s is the app version name">Нове у версії %1$s</string>
+
+    <!-- Warm welcome (onboarding pager, slice 16) -->
     <string name="warm_welcome_slide1_title">Дослідіть Космос</string>
+    <string name="warm_welcome_slide1_desc" translation_description="Description for the first slide of the Warm Welcome onboarding, shown under a guided tour of the map controls">
+    Використовуйте шари ліворуч для фільтрації зір, сузір\'їв, планет тощо. Кнопки в правому нижньому кутку призначені для пошуку на небосхилі, подорожей у часі та перемикання режимів відображення. Торкніться будь-якого місця на небі в будь-який момент, щоб приховати або показати елементи керування.
+    </string>
     <string name="warm_welcome_slide2_title">Навігація по небу</string>
+    <string name="warm_welcome_slide2_desc" translation_description="Description for the second slide of the Warm Welcome onboarding. Please do not change the &lt; and &gt; markup"><![CDATA[Наведіть телефон, щоб оглянутися в <b>автоматичному режимі</b>, або торкніться, щоб перейти в <b>ручний режим</b> і досліджувати за допомогою свайпів і зведення пальців.]]></string>
+    <string name="warm_welcome_slide2_info_desc" translation_description="Description about info cards on the second slide of the Warm Welcome onboarding">
+    Торкніться будь-якого підписаного об\'єкта, щоб відкрити інформаційну картку, подібну до цієї, з фотографією, цікавими фактами та астрономічними даними.
+    </string>
     <string name="warm_welcome_card_name">Крабовидна туманність</string>
+    <string name="warm_welcome_card_description" translation_description="Description of the Crab Nebula on the sample info card on the second Warm Welcome slide">
+    Крабоподібна туманність — це залишок наднової у сузір\'ї Тельця, результат зоряного вибуху, зафіксованого китайськими астрономами в 1054 році нашої ери.
+    </string>
+    <string name="warm_welcome_card_fun_fact" translation_description="Fun fact about the Crab Nebula on the sample info card on the second Warm Welcome slide">
+    Крабоподібна туманність містить пульсар, що обертається 30 разів на секунду — це колапсуюче ядро зірки, що вибухнула!
+    </string>
+    <string name="warm_welcome_card_distance" translation_description="Distance to the Crab Nebula on the sample info card on the second Warm Welcome slide">6 500 світлових років</string>
+    <string name="warm_welcome_card_size" translation_description="Size of the Crab Nebula on the sample info card on the second Warm Welcome slide">11 світлових років у поперечнику</string>
     <string name="warm_welcome_slide3_title">Датчики та калібрування</string>
     <string name="warm_welcome_slide3_desc">Sky Map використовує датчики вашого телефону для вирівнювання зі зірками.</string>
+    <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message on the third Warm Welcome slide when sensors are missing. Please do not change the &lt; and &gt; markup"><![CDATA[Схоже, на вашому пристрої немає датчиків, необхідних для автоматичного відстеження. Але не хвилюйтеся — ви все одно можете досліджувати всю макрокосмічну систему в <b>ручному режимі</b>!]]></string>
+    <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration advice on the third Warm Welcome slide. Please do not change the &lt; and &gt; markup"><![CDATA[Щоби тримати все під контролем, періодично робіть своїм телефоном швидкі рухи у формі <b>вісімки</b>.]]></string>
     <string name="warm_welcome_skip">Пропустити</string>
     <string name="warm_welcome_next">Далі</string>
     <string name="warm_welcome_finish">Запуск!</string>
     <string name="warm_welcome_sensor_ok">Працює</string>
     <string name="warm_welcome_sensor_missing">Відсутній</string>
+
+    <!-- Help dialog (slice 16) -->
     <string name="help_button">Довідка</string>
     <string name="tutorial_button">Навчання</string>
     <string name="help_dialog_title">Довідка</string>
+    <string name="help_version" translation_description="Version line at the top of the Help screen. %1$s is the app version name">Версія %1$s</string>
+    <string name="whats_new_button" translation_description="Map-screen menu item that opens the What's New and Credits screen">Що нового</string>
+    <string name="whats_new_screen_title" translation_description="Title of the screen showing the release notes and the credits">Що нового й подяки</string>
+
+    <!-- The deep-sky symbol key at the foot of the Help screen. -->
+    <string name="help_symbol_key_title" translation_description="Heading of the Help section explaining the map symbols used for deep-sky objects">Позначки на карті</string>
+    <string name="help_symbol_key_intro" translation_description="Introductory sentence for the map-symbol key in Help">
+    Об\'єкти далекого космосу та метеорні потоки позначено символами, що вказують їхній тип:
+    </string>
+    <string name="symbol_key_galaxy" translation_description="Symbol-key label: the marker used for galaxies">Галактика</string>
+    <string name="symbol_key_open_cluster" translation_description="Symbol-key label: the marker used for open star clusters">Розсіяне скупчення</string>
+    <string name="symbol_key_globular_cluster" translation_description="Symbol-key label: the marker used for globular star clusters">Кулясте скупчення</string>
+    <string name="symbol_key_diffuse_nebula" translation_description="Symbol-key label: the marker used for diffuse nebulae">Дифузна туманність</string>
+    <string name="symbol_key_planetary_nebula" translation_description="Symbol-key label: the marker used for planetary nebulae">Планетарна туманність</string>
+    <string name="symbol_key_supernova_remnant" translation_description="Symbol-key label: the marker used for supernova remnants">Залишок сверхнової</string>
+    <string name="symbol_key_asterism" translation_description="Symbol-key label: the marker used for asterisms and star clouds">Астеризм або зоряна хмара</string>
+    <string name="symbol_key_other" translation_description="Symbol-key label: the marker used for deep-sky objects of any other type">Інший об\'єкт далекого космосу</string>
+    <string name="symbol_key_meteor_radiant" translation_description="Symbol-key label: the marker for the point in the sky meteors of a shower appear to come from">Радіант метеорного потоку</string>
+    <string name="symbol_key_meteor_radiant_peak" translation_description="Symbol-key label: the brighter marker used when a meteor shower is near its peak activity">Метеорний потік поблизу піку</string>
+
+    <!-- Moon-phase home-screen widget (D69). -->
+    <string name="moon_widget_label" translation_description="Name of the moon-phase home-screen widget, shown in the launcher\'s widget picker">Фаза Місяця</string>
+    <string name="moon_widget_description" translation_description="Description of the moon-phase widget, shown under its preview in the launcher\'s widget picker">Фаза Місяця, освітленість, час сходження та заходу, щодня оновлюється.</string>
+    <string name="moon_widget_illumination" translation_description="Widget line showing how much of the Moon\'s disc is lit; %1$d is a percentage number">освітленість %1$d%%</string>
+    <string name="moon_widget_rise_time" translation_description="Widget fragment showing today\'s moonrise time; %1$s is a clock time like 17:42">сходження о %1$s</string>
+    <string name="moon_widget_set_time" translation_description="Widget fragment showing today\'s moonset time; %1$s is a clock time like 03:12">захід о %1$s</string>
+    <string name="moon_phase_new" translation_description="Name of the lunar phase when the Moon is fully dark">Молодий Місяць</string>
+    <string name="moon_phase_waxing_crescent" translation_description="Name of the lunar phase between new moon and first quarter">Зростаючий серп</string>
+    <string name="moon_phase_first_quarter" translation_description="Name of the lunar phase when half the disc is lit and growing">Перша чверть</string>
+    <string name="moon_phase_waxing_gibbous" translation_description="Name of the lunar phase between first quarter and full moon">Зростаючий місяць</string>
+    <string name="moon_phase_full" translation_description="Name of the lunar phase when the disc is fully lit">Повний місяць</string>
+    <string name="moon_phase_waning_gibbous" translation_description="Name of the lunar phase between full moon and last quarter">Спадний місяць</string>
+    <string name="moon_phase_last_quarter" translation_description="Name of the lunar phase when half the disc is lit and shrinking">Остання чверть</string>
+    <string name="moon_phase_waning_crescent" translation_description="Name of the lunar phase between last quarter and new moon">Спадний серп</string>
+    <string name="moon_widget_promo_title" translation_description="Title of the row on the Moon\'s info card offering to add the moon-phase widget to the home screen">Тримайте Місяць на головному екрані</string>
+    <string name="moon_widget_promo_subtitle" translation_description="Subtitle of the row offering the moon-phase widget, summarizing what the widget shows">Фаза, освітленість і час сходження, оновлюється щодня</string>
+    <string name="moon_widget_promo_add" translation_description="Button that adds the moon-phase widget to the home screen via the system dialog">Додати віджет</string>
+    <string name="moon_widget_promo_dismiss" translation_description="Accessibility label for the button that permanently dismisses the widget offer row">Закрити пропозицію віджета</string>
+    <string name="moon_widget_pin_unsupported_title" translation_description="Title of the fallback dialog when the launcher cannot add widgets directly">Додайте віджет з головного екрана</string>
+    <string name="moon_widget_pin_unsupported_body" translation_description="Body of the fallback dialog explaining how to add the widget manually">
+    Ваш запускник не підтримує додавання віджетів із додатків. Натисніть і утримуйте головний екран, виберіть «Віджети», а потім знайдіть Sky Map.
+    </string>
+    <string name="moon_widget_pin_unsupported_ok" translation_description="Confirmation button of the manual widget-adding instructions dialog">Зрозуміло</string>
+    <string name="moon_widget_preview_illumination" translation_description="Representative illumination line shown in the widget picker\'s preview of the moon-phase widget">освітленість 83%</string>
+
+    <!-- Tonight's-sky and countdown home-screen widgets (D69 phase 2). -->
+    <string name="tonight_widget_label" translation_description="Name of the tonight\'s-sky home-screen widget, shown in the launcher\'s widget picker">Нічне небо</string>
+    <string name="tonight_widget_description" translation_description="Description of the tonight\'s-sky widget, shown under its preview in the launcher\'s widget picker">
+    Найкращі видовища ночі: зручно розташовані планети, метеорні потоки та місячні події, оновлюється щодня.
+    </string>
+    <string name="tonight_widget_header" translation_description="Small header label on the tonight widget; %1$s is a short date like \'Wed 30 Jul\'">Сьогодні · %1$s</string>
+    <string name="tonight_widget_sun_times" translation_description="Header line on the tonight widget; %1$s is the sunset time, %2$s the time the sky becomes fully dark">захід сонця %1$s · темно %2$s</string>
+    <string name="tonight_widget_sunset_only" translation_description="Header fragment when only the sunset time is known; %1$s is the sunset time">захід сонця %1$s</string>
+    <string name="tonight_well_placed" translation_description="Tonight-widget row: a planet is high in the sky and easy to observe; %1$s is the planet name, %2$s the time from which it is well placed">%1$s добре видно з %2$s</string>
+    <!-- tm:omitted name="tonight_trailing_direction" reason="identical_to_source" -->
+    <string name="tonight_shower_peak" translation_description="Tonight-widget row: a meteor shower reaches its annual peak tonight; %1$s is the shower name">пік %1$s сьогодні ввечері</string>
+    <string name="tonight_shower_days" translation_description="Tonight-widget row: a meteor shower peaks within a few days; %1$s is the shower name, %2$d the number of days">пік %1$s через %2$d дн.</string>
+    <string name="tonight_dark_skies" translation_description="Small trailing note: the moon is dark, so viewing conditions are ideal">темне небо</string>
+    <string name="tonight_trailing_moon" translation_description="Small trailing note: how much of the moon is lit; %1$d is a percentage">місяць %1$d%%</string>
+    <string name="tonight_new_moon" translation_description="Tonight-widget row shown at new moon">Молодий Місяць — найтемніше небо місяця</string>
+    <string name="tonight_full_moon" translation_description="Tonight-widget row shown at full moon">Повний місяць сьогодні ввечері</string>
+    <string name="tonight_bright_moon" translation_description="Tonight-widget row warning that a bright moon washes out faint objects">Яскравий місяць затьмарює слабкі об\'єкти</string>
+    <string name="tonight_lunar_eclipse_total" translation_description="Tonight-widget row: a total lunar eclipse is starting soon or under way">Повне місячне затемнення</string>
+    <string name="tonight_lunar_eclipse_partial" translation_description="Tonight-widget row: a partial lunar eclipse is starting soon or under way">Часткове місячне затемнення</string>
+    <string name="tonight_lunar_eclipse_penumbral" translation_description="Tonight-widget row: a penumbral lunar eclipse is starting soon or under way">Напівтіньове місячне затемнення</string>
+    <string name="tonight_quiet" translation_description="Tonight-widget line shown when nothing notable is visible tonight">Сьогодні спокійне небо</string>
+    <string name="tonight_quiet_next" translation_description="Tonight-widget line under the quiet-night message; %1$s is an event name, %2$d the days until it">Далі: %1$s через %2$d дн.</string>
+    <string name="countdown_widget_label" translation_description="Name of the countdown home-screen widget, shown in the launcher\'s widget picker">Зворотний відлік до неба</string>
+    <string name="countdown_widget_description" translation_description="Description of the countdown widget, shown under its preview in the launcher\'s widget picker">Дні до піку наступного зорепаду чи місячної події.</string>
+    <string name="countdown_days" translation_description="Unit label inside the countdown ring, under the number of days">днів</string>
+    <string name="countdown_tonight" translation_description="Shown inside the countdown ring when the event is tonight (zero days left)">зараз</string>
+    <string name="countdown_shower_peak" translation_description="Countdown-widget event name; %1$s is a meteor shower name">Пік %1$s</string>
+    <string name="countdown_new_moon_peak" translation_description="Countdown-widget note: the shower peaks near new moon, so skies will be dark">Пік під час молодика</string>
+    <string name="countdown_full_moon" translation_description="Countdown-widget event name for the next full moon">Повня</string>
+    <string name="countdown_new_moon" translation_description="Countdown-widget event name for the next new moon">Молодик</string>
+    <string name="tonight_widget_preview_row" translation_description="Representative highlight row shown in the widget picker\'s preview of the tonight widget">Юпітер добре видно з 21:30</string>
+    <!-- tm:omitted name="countdown_widget_preview_days" reason="identical_to_source" -->
+    <string name="countdown_widget_preview_name" translation_description="Representative event name shown in the widget picker\'s preview of the countdown widget">Пік Персеїд</string>
+
+    <!-- Sky-event notifications (D77). -->
+    <string name="settings_section_notifications" translation_description="Settings section header for notification preferences">Сповіщення</string>
+    <string name="settings_notifications_intro" translation_description="Introduction under the notifications settings header, stating how rarely the app notifies">
+    Sky Map надсилає сповіщення лише про рідкісні астрономічні події, не частіше ніж раз на день. Усі сповіщення вимкнено, доки ви їх не ввімкнете.
+    </string>
+    <string name="settings_shower_alerts" translation_description="Preference title: notify on the evening a meteor shower reaches its annual peak">Піки метеорних потоків</string>
+    <string name="settings_shower_alerts_summary" translation_description="Explanation of the meteor-shower notification preference">Близько десятка на рік, увечері в день піку</string>
+    <string name="settings_tonight_digest" translation_description="Preference title: a single evening notification summarizing what\'s visible tonight">Зведення про нічне небо</string>
+    <string name="settings_tonight_digest_summary" translation_description="Explanation of the tonight-digest notification preference">Одне зведення після заходу сонця, пропускається у спокійні ночі</string>
+    <string name="settings_notifications_blocked" translation_description="Warning row shown when the user enabled notifications in the app but blocked them at the system level">Сповіщення для Sky Map заблоковано</string>
+    <string name="settings_notifications_blocked_action" translation_description="Hint under the blocked-notifications warning; tapping opens the system settings page">Торкніться, щоб дозволити їх у системних налаштуваннях</string>
+    <string name="channel_showers_name" translation_description="Name of the meteor-shower notification channel, shown in the system\'s notification settings">Піки метеорних потоків</string>
+    <string name="channel_showers_description" translation_description="Description of the meteor-shower notification channel in the system\'s notification settings">Близько десятка на рік, увечері в день піку</string>
+    <string name="channel_digest_name" translation_description="Name of the tonight-digest notification channel, shown in the system\'s notification settings">Зведення про нічне небо</string>
+    <string name="channel_digest_description" translation_description="Description of the tonight-digest notification channel in the system\'s notification settings">Одне вечірнє зведення, пропускається у спокійні ночі</string>
+    <string name="notif_shower_title" translation_description="Title of the meteor-shower notification; %1$s is the shower name">Пік %1$s сьогодні</string>
+    <string name="notif_shower_direction" translation_description="Notification sentence telling the user where to look; %1$s is a compass point like NE">Найкраще після опівночі, дивіться на %1$s.</string>
+    <string name="notif_shower_dark_moon" translation_description="Notification sentence when the moon is dark during a meteor shower peak; %1$d is the expected meteors per hour">
+    Темне небо без місяця — очікуйте до %1$d метеорів на годину подалі від міського світла.
+    </string>
+    <string name="notif_shower_bright_moon" translation_description="Notification sentence when a bright moon will interfere with a meteor shower; %1$d is the moon illumination percentage, %2$d the meteors per hour under ideal skies">
+    Місяць із підсвічуванням %1$d%% затьмарить слабкіші метеори — до %2$d на годину за ідеальних умов.
+    </string>
+    <string name="notif_digest_title" translation_description="Title of the tonight\'s-sky digest notification">Варто поглянути сьогодні ввечері</string>
+    <string name="notif_action_mute_showers" translation_description="Notification action button that opens the system toggle for the meteor-shower channel">Вимкнути зорепади</string>
+    <string name="time_travel_stopped">Подорож у часі зупинено</string>
+    <!-- Layers sheet: per-layer parameters (D87). -->
+    <string name="layer_param_disc_size">Розмір диска</string>
+    <string name="layer_param_disc_size_true">Справжній масштаб</string>
+    <string name="layer_param_disc_size_true_desc">
+    Реальний розмір на небі при будь-якому масштабуванні. Планети виглядають як цятки, поки ви не наблизите їх.
+    </string>
+    <string name="layer_param_disc_size_glyphs">Символи</string>
+    <string name="layer_param_disc_size_glyphs_desc">
+    Розмір визначається реальним розміром кожного тіла, а не тим, яким воно здається. Легко розгледіти при будь-якому масштабі.
+    </string>
+    <string name="layer_param_disc_size_auto">Фіксований</string>
+    <string name="layer_param_disc_size_auto_desc">
+    Зберігає фіксований розмір на екрані під час масштабування, а потім перемикається на реальний розмір.
+    </string>
+    <string name="layer_param_expand">Показати параметри для %1$s</string>
 </resources>

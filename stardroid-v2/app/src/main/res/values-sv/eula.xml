@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+    <string name="eula_text" translation_description="A condensed, user-friendly version of the EULA and Privacy Policy with a link to the full terms. Please do not change the &lt; and &gt; markup"><![CDATA[<h1>Välkommen till Sky Map</h1>
+<p>För att komma igång med stjärnskådningen, läs igenom denna snabba sammanfattning av våra villkor.</p>
+<h2>Integritet</h2>
+<p><b>Vi vet inte vem du är.</b> Vi samlar in anonym användningsdata för att hjälpa oss att åtgärda buggar och förbättra funktioner. Du kan när som helst välja bort detta i inställningsmenyn.</p>
+<h2>Säkerhet &amp; Ansvarsbegränsning</h2>
+<p>Sky Map tillhandahålls i befintligt skick ("as is"). Använd den på ett säkert sätt – vi ansvarar inte för några skador (som nackspärr!) till följd av din användning av appen.</p>
+<h2>Öppen källkod</h2>
+<p>Sky Map är ett kärleksverk. Du har fri tillgång till vår källkod, men var vänlig respektera våra varumärken och logotyper.</p>
+<p>Läs hela det juridiska dokumentet här: <a href="https://github.com/sky-map-team/stardroid/blob/master/TERMS.md">Fullständiga villkor och integritetspolicy</a></p>]]></string>
+
+    <!-- Rendered last on the terms screen, after the permissions notice, so the sentence the
+         Accept button refers to is the final thing the user reads. -->
+    <string name="eula_agree_line" translation_description="Closing line of the first-launch terms screen, immediately above the Accept button. Please do not change the markup"><![CDATA[<br/>
+<p><i>Genom att klicka på "Godkänn" godkänner du dessa villkor.</i></p>]]></string>
+
+    <!--
+      The access-permission notice (KISA / Korean Network Act art. 22-2, and good practice
+      everywhere). Rendered in two places from this one key so it is translated once: appended
+      to the first-launch EULA screen, and included in the help document as a permanent,
+      re-readable copy (HelpScreen.helpSections2). Every runtime permission Sky Map declares
+      must appear here, labelled required or optional, with its grounds and — for optional
+      ones — the user\'s right to refuse.
+    -->
+    <string name="permissions_notice" translation_description="Legally-required disclosure of the device permissions the app requests, why it requests them, and the user\'s right to refuse the optional ones. Shown on the first-launch terms screen and in Help. Please do not change the markup"><![CDATA[<h2>Behörigheter</h2>
+<p><b>Sky Map har inga obligatoriska behörigheter.</b> Varje behörighet nedan är valfri – du kan neka
+någon av dem och ändå använda appen. Sky Map frågar aldrig vid start: varje behörighet begärs bara
+när du först använder den funktion som behöver den, och du kan bevilja eller återkalla var och en separat när
+som helst under <b>Inställningar → Appar → Sky Map → Behörigheter</b> på din enhet.</p>
+<h3>Plats – valfri</h3>
+<p><b>Vad som nås:</b> din ungefärliga plats.</p>
+<p><b>Varför:</b> vilka stjärnor som finns ovanför dig beror på var du befinner dig, så Sky Map använder din ungefärliga
+plats för att rita upp rätt himmel.</p>
+<p><b>Om du nekar:</b> du kan skriva in en ort eller koordinater i stället, och hela appen
+fortsätter att fungera.</p>
+<blockquote>Din plats används på din enhet för att rita upp himlen. Den skickas aldrig till oss.</blockquote>
+<h3>Kamera – valfri</h3>
+<p><b>Vad som nås:</b> kamerans förhandsvisning.</p>
+<p><b>Varför:</b> läget med kameran ritad i bakgrunden visar himlen ovanpå den livsströmmade kameravyn, så att du kan matcha
+kartan mot det du faktiskt tittar på.</p>
+<p><b>Om du nekar:</b> alla andra lägen fungerar som vanligt.</p>
+<blockquote>Sky Map spelar aldrig in kameravyn eller skickar den till oss. Den ritas på skärmen och
+slängs sedan bort – såvida du inte delar en bild: om du väljer en AR-layout från delningsmenyn sparas just den
+bilden på din enhet och lämnas över till den app du väljer. Inget delas förrän du ber om det.</blockquote>
+<h3>Aviseringar – valfria</h3>
+<p><b>Vad som nås:</b> behörighet att visa aviseringar.</p>
+<p><b>Varför:</b> för att meddela dig om när meteorskurar når sin höjdpunkt och vad som är värt att titta på i natt, om du
+bär om det.</p>
+<p><b>Om du nekar:</b> inget annat ändras – dessa aviseringar förblir avstängda tills du slår
+på dem.</p>]]></string>
+</resources>

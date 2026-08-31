@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+    <string name="eula_text" translation_description="A condensed, user-friendly version of the EULA and Privacy Policy with a link to the full terms. Please do not change the &lt; and &gt; markup"><![CDATA[<h1>Ласкаво просимо до Sky Map</h1>
+<p>Перш ніж почати спостереження за зоряним небом, будь ласка, ознайомтеся з цим коротким зведенням наших умов.</p>
+<h2>Конфіденційність</h2>
+<p><b>Ми не знаємо, хто ви.</b> Ми збираємо анонімні дані про використання, щоб допомагати нам виправляти помилки та вдосконалювати функції. Ви можете відмовитися від цього в будь-який час у меню «Налаштування».</p>
+<h2>Безпека та відповідальність</h2>
+<p>Sky Map надається «як є». Використовуйте його безпечно — ми не несемо відповідальності за будь-які пошкодження чи травми (наприклад, біль у шиї!), що виникли внаслідок використання вами додатку.</p>
+<h2>Відкритий вихідний код</h2>
+<p>Sky Map створюється з любов\'ю. Ви можете вільно використовувати наш вихідний код, але, будь ласка, поважайте наш бренд та логотипи.</p>
+<p>Читайте повний юридичний документ тут: <a href="https://github.com/sky-map-team/stardroid/blob/master/TERMS.md">Повні умови та Політика конфіденційності</a></p>]]></string>
+
+    <!-- Rendered last on the terms screen, after the permissions notice, so the sentence the
+         Accept button refers to is the final thing the user reads. -->
+    <string name="eula_agree_line" translation_description="Closing line of the first-launch terms screen, immediately above the Accept button. Please do not change the markup"><![CDATA[<br/>
+<p><i>Натиснувши «Прийняти», ви погоджуєтеся з цими умовами.</i></p>]]></string>
+
+    <!--
+      The access-permission notice (KISA / Korean Network Act art. 22-2, and good practice
+      everywhere). Rendered in two places from this one key so it is translated once: appended
+      to the first-launch EULA screen, and included in the help document as a permanent,
+      re-readable copy (HelpScreen.helpSections2). Every runtime permission Sky Map declares
+      must appear here, labelled required or optional, with its grounds and — for optional
+      ones — the user\'s right to refuse.
+    -->
+    <string name="permissions_notice" translation_description="Legally-required disclosure of the device permissions the app requests, why it requests them, and the user\'s right to refuse the optional ones. Shown on the first-launch terms screen and in Help. Please do not change the markup"><![CDATA[<h2>Дозволи</h2>
+<p><b>Sky Map не вимагає жодних обов\'язкових дозволів.</b> Усі дозволи нижче є необов\'язковими — ви можете відмовитися від будь-якого з них і все одно користуватися додатком. Sky Map ніколи не запитує нічого під час запуску: кожен дозвіл запитується лише тоді, коли ви вперше використовуєте функцію, яка його потребує, і ви можете надати або скасувати кожен із них окремо в будь-який час у розділі <b>Налаштування → Додатки → Sky Map → Дозволи</b> на вашому пристрої.</p>
+<h3>Місцезнаходження — необов\'язково</h3>
+<p><b>До чого надається доступ:</b> до вашого приблизного місцезнаходження.</p>
+<p><b>Чому:</b> те, які зорі знаються над вами, залежить від вашого розташування, тому Sky Map використовує ваше приблизне місцезнаходження, щоб правильно намалювати небо.</p>
+<p><b>Якщо ви відмовитесь:</b> натомість ви можете ввести назву місця або координати вручну, і весь додаток продовжить працювати.</p>
+<blockquote>Ваше місцезнаходження використовується на вашому пристрої для відображення зоряного неба. Воно ніколи не надсилається нам.</blockquote>
+<h3>Камера — необов\'язково</h3>
+<p><b>До чого надається доступ:</b> до попереднього перегляду камери.</p>
+<p><b>Чому:</b> режим огляду через камеру малює небо поверх зображення з камери в реальному часі, щоб ви могли звірити карту з тим, що бачите на власні очі.</p>
+<p><b>Якщо ви відмовитесь:</b> усі інші режими працюватимуть у звичайному режимі.</p>
+<blockquote>Sky Map ніколи не записує відео з камери і не надсилає його нам. Воно виводиться на екран, а потім відкидається — за винятком випадків, коли ви ділитеся зображенням: вибір макета доповненої реальності (AR) у меню спільного доступу зберігає це єдине зображення на вашому пристрої та передає його обраному додатку. Нічого не передається без вашого запиту.</blockquote>
+<h3>Сповіщення — необов\'язково</h3>
+<p><b>До чого надається доступ:</b> дозвіл показувати сповіщення.</p>
+<p><b>Чому:</b> щоб повідомляти вас про пікові періоди метеорних потоків та те, що варто побачити сьогодні ввечері, якщо ви попросите про це.</p>
+<p><b>Якщо ви відмовитесь:</b> нічого не зміниться — ці сповіщення залишатимуться вимкненими, доки ви їх не увімкнете.</p>]]></string>
+</resources>

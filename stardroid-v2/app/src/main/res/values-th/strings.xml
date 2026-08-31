@@ -1,10 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
-  Carried over from v1 by tools/salvage-translations/salvage.py.
-  Only strings whose English source is identical between v1 and v2 appear here;
-  everything else is translated by `tm`. Safe to hand-edit thereafter.
--->
+<?xml version='1.0' encoding='UTF-8'?>
 <resources>
+    <!-- tm:omitted name="app_name" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="splash_version" reason="identical_to_source" -->
+    <string name="splash_dismiss" translation_description="Accessibility label for the action that dismisses the launch splash when it is tapped">ปิด</string>
+
+    <!-- tm:omitted name="north_pole" reason="identical_to_source" -->
+    <!-- tm:omitted name="south_pole" reason="identical_to_source" -->
     <string name="zenith">จุดสูงสุด</string>
     <string name="nadir">จุดต่ำสุด</string>
     <string name="north">เหนือ</string>
@@ -12,6 +14,8 @@
     <string name="east">ตะวันออก</string>
     <string name="west">ตะวันตก</string>
     <string name="ecliptic">สุริยวิถี</string>
+
+    <!-- Solar-system body names, drawn as labels next to each body. -->
     <string name="sun">ดวงอาทิตย์</string>
     <string name="moon">ดวงจันทร์</string>
     <string name="mercury">ปรอท</string>
@@ -23,27 +27,141 @@
     <string name="uranus">ยูเรนัส</string>
     <string name="neptune">เนปจูน</string>
     <string name="pluto">พลูโต</string>
+
+    <!-- Search (map-screen search dialog and overlay). -->
     <string name="search_button">ค้นหา</string>
     <string name="search_label">ค้นหาท้องฟ้า</string>
+    <string name="search_hint" translation_description="Placeholder text in the search field showing example search targets.">เช่น ดาวอังคาร หรือ M31</string>
+    <string name="search_coordinates_hint" translation_description="Helper text under the search field showing that celestial coordinates (right ascension and declination) can be typed directly, with two example formats.">หรือป้อนพิกัด: 12h 30m, +45° หรือ 187.5 -45.2</string>
+    <string name="search_go" translation_description="Button that starts navigating the sky map toward the typed search target.">ไป</string>
     <string name="search_cancel">ยกเลิก</string>
     <string name="search_no_results">ไม่พบผลลัพธ์ บางทีวัตถุอาจไม่มองเห็นได้ในขณะนี้</string>
+    <string name="search_target_looking_message" translation_description="Status shown while the user is being guided toward a search target. %1$s is the object name.">กำลังค้นหา: %1$s</string>
+    <string name="search_target_found_message" translation_description="Status shown when the search target has been found and is centered on screen. %1$s is the object name.">พบแล้ว: %1$s</string>
     <string name="search_overlay_prompt">ชี้โทรศัพท์ของคุณไปยังลูกศร</string>
+
+    <!-- Layer names in the layer-visibility sheet. -->
     <string name="layer_stars">ดาวฤกษ์</string>
     <string name="layer_constellations">กลุ่มดาว</string>
+    <string name="layer_deep_sky" translation_description="Toggle label for the layer showing deep-sky objects such as galaxies and nebulae.">วัตถุท้องฟ้าลึก</string>
     <string name="layer_solar_system">ระบบสุริยะ</string>
     <string name="layer_meteor_showers">ฝนดาวตกแบบกระจาย</string>
+    <string name="layer_satellites" translation_description="Toggle label for the layer showing artificial satellites such as the International Space Station.">ดาวเทียม</string>
+    <string name="channel_passes_name" translation_description="Name of the notification channel for alerts shortly before a satellite passes overhead.">ดาวเทียมผ่าน</string>
+    <string name="channel_passes_description" translation_description="Description of the satellite-pass notification channel.">การแจ้งเตือนเดียวก่อนรอบที่มองเห็นได้ดีที่สุดของคืน</string>
+    <string name="notif_pass_title" translation_description="Title of the notification sent shortly before a satellite passes overhead. %1$s is the satellite name.">%1$s กำลังจะผ่าน overhead เร็ว ๆ นี้</string>
+    <string name="notif_pass_text" translation_description="Body of the satellite pass notification, telling the user when to go outside. %1$s is a time.">มองเห็นได้ตั้งแต่เวลาประมาณ %1$s — ออกไปข้างนอกและให้สายตาปรับรับแสง</string>
+    <string name="channel_eclipses_name" translation_description="Name of the notification channel for alerts before a lunar eclipse starts.">จันทรุปราคา</string>
+    <string name="channel_eclipses_description" translation_description="Description of the lunar-eclipse notification channel.">การแจ้งเตือนเดียวก่อนจันทรุปราคาจะเริ่มต้น</string>
+    <string name="notif_eclipse_title" translation_description="Title of the notification sent before a lunar eclipse starts. %1$s is a localized eclipse type like \'Total lunar eclipse\'.">%1$s จะเริ่มในไม่ช้า</string>
+    <string name="notif_eclipse_text" translation_description="Body of the lunar eclipse notification, telling the user when it begins. %1$s is a time.">เริ่มต้นประมาณ %1$s — น่าออกไปดูข้างนอก</string>
+    <string name="satellite_name_iss" translation_description="Display name for the International Space Station.">สถานีอวกาศ</string>
+    <string name="satellite_name_tiangong" translation_description="Display name for the Chinese space station Tiangong.">เทียนกง</string>
+    <string name="layer_param_pass_alerts" translation_description="Label for the setting that turns on a notification shortly before a satellite passes overhead.">แจ้งเตือนการผ่าน</string>
+    <string name="layer_param_pass_alerts_description" translation_description="Explains what the pass-alert setting does: a single notification before the best visible pass of the night.">แจ้งเตือนฉันก่อนรอบการผ่านที่มองเห็นได้ดีที่สุดในแต่ละคืน</string>
+    <string name="layer_param_eclipse_alerts" translation_description="Label for the setting that turns on a notification before a lunar eclipse begins.">แจ้งเตือนอุปราคา</string>
+    <string name="layer_param_eclipse_alerts_description" translation_description="Explains what the eclipse-alert setting does: a single notification before a lunar eclipse starts.">แจ้งเตือนฉันก่อนจันทรุปราคาเริ่มต้น</string>
+    <string name="satellite_description" translation_description="Short description shown on the info card for an artificial satellite.">
+    ดาวเทียมประดิษฐ์ในวงโคจรโลกระดับต่ำ สะท้อนแสงอาทิตย์ตัดกับท้องฟ้ามืด มันเคลื่อนขอบฟ้าถึงขอบฟ้าภายในเวลาไม่กี่วินาที เคลื่อนที่อย่างมั่นคงและไม่มีการกะพริบ
+    </string>
+    <string name="satellite_next_pass" translation_description="Heading above the next visible pass details on a satellite\'s info card.">รอบการผ่านที่มองเห็นได้ครั้งถัดไป</string>
+    <string name="satellite_pass_when" translation_description="When and how high the next satellite pass will be. %1$s is a time, %2$s is a compass direction, %3$d is an angle in degrees.">%1$s, ขึ้นทาง %2$s, ถึงมุมเงย %3$d°</string>
+    <string name="satellite_pass_magnitude" translation_description="How bright the satellite will be at its peak. %1$.1f is a brightness magnitude.">ความสว่างระดับ %1$.1f เมื่อสว่างที่สุด</string>
+    <string name="satellite_pass_shadow" translation_description="Tells the user the satellite will fade out mid-pass when it enters the Earth\'s shadow. %1$s is a time.">เข้าสู่เงาของโลกและจางหายไปตอน %1$s</string>
+    <string name="satellite_no_pass" translation_description="Shown on a satellite info card when no visible pass is coming up in the next two days.">ไม่มีรอบการผ่านที่มองเห็นได้ในอีกสองสามวันนี้</string>
+    <string name="satellite_pass_unknown" translation_description="Shown on a satellite info card when the downloaded orbit data is too old to predict pass times reliably.">ข้อมูลวงโคจรเก่าเกินกว่าจะทำนายการผ่านได้</string>
+    <string name="object_info_eclipse_title" translation_description="Heading above the next lunar eclipse details on the Moon\'s info card.">จันทรุปราคา</string>
+    <string name="object_info_no_eclipse" translation_description="Shown on the Moon\'s info card when no lunar eclipse is coming up in the searched time range.">ไม่มีจันทรุปราคาในเร็ว ๆ นี้</string>
+    <string name="object_info_eclipse_greatest" translation_description="The next lunar eclipse\'s type and greatest-eclipse date/time. %1$s is a localized eclipse type like \'Total lunar eclipse\', %2$s a date, %3$s a time.">%1$s — คราสเต็มดวง %2$s เวลา %3$s</string>
+    <string name="object_info_eclipse_totality" translation_description="The start and end time of totality during a total lunar eclipse. %1$s and %2$s are times.">ช่วงคราสเต็มดวง %1$s – %2$s</string>
+    <string name="tonight_satellite_pass" translation_description="Tonight-widget row announcing a visible satellite pass. %1$s is the satellite name, %2$s is a time of day.">%1$s ผ่านไปตอน %2$s</string>
+    <string name="tonight_trailing_pass" translation_description="Small trailing note on a satellite pass row. %1$s is a compass direction, %2$d is an angle in degrees, %3$.1f is a brightness magnitude.">ขึ้นทาง %1$s, %2$d°, โชติมาตร %3$.1f</string>
+    <string name="satellites_no_data" translation_description="Explanation shown when satellite orbital data has not been downloaded yet and so no satellites can be drawn.">ตำแหน่งดาวเทียมจำเป็นต้องเชื่อมต่ออินเทอร์เน็ตจึงจะอัปเดตได้</string>
+    <string name="satellites_refresh" translation_description="Button that tries to download satellite orbital data now.">รีเฟรช</string>
+    <string name="satellites_retry_soon" translation_description="Shown instead of a Refresh button when satellite data was just requested and cannot be requested again for a few minutes.">ลองอีกครั้งในอีกสักครู่</string>
+    <string name="satellites_retry_within_hour" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for up to an hour.">ลองอีกครั้งภายในหนึ่งชั่วโมง</string>
+    <string name="satellites_retry_hours" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for several hours.">ลองอีกครั้งในอีกไม่กี่ชั่วโมง</string>
+    <string name="satellites_retry_tomorrow" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again until the next day.">ลองอีกครั้งในวันพรุ่งนี้</string>
+    <string name="satellites_retry_days" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for several days.">ลองอีกครั้งในอีกไม่กี่วัน</string>
+    <string name="layer_grid" translation_description="Toggle label for the layer showing the right ascension / declination grid.">ตารางพิกัดท้องฟ้า</string>
     <string name="layer_horizon">ขอบฟ้า</string>
     <string name="layer_ecliptic">สุริยวิถี</string>
     <string name="layer_sky_gradient">การไล่ระดับสีท้องฟ้า</string>
+
+    <!-- Map screen controls. -->
+    <string name="layers_sheet_title" translation_description="Title of the bottom sheet listing sky map layers the user can show or hide.">เลเยอร์</string>
+    <string name="layers_group_objects" translation_description="Layers-sheet group header for layers that draw sky objects (stars, planets, deep-sky objects).">วัตถุ</string>
+    <string name="layers_group_reference" translation_description="Layers-sheet group header for reference elements drawn over the sky (coordinate grid, horizon, ecliptic).">อ้างอิง</string>
+    <string name="layers_group_display" translation_description="Layers-sheet group header for display settings that change how the sky is rendered rather than what is drawn.">การแสดงผล</string>
+    <string name="show_layers" translation_description="Accessibility description and label for the button opening the layer-visibility sheet, which holds the layers that do not fit on the rail plus display options.">เลเยอร์และตัวเลือกเพิ่มเติม</string>
+    <string name="more_button" translation_description="Accessibility label and tooltip for the map-screen button (three vertical dots) opening the overflow menu of further destinations such as Gallery and Settings.">ตัวเลือกเพิ่มเติม</string>
     <string name="night_mode">โหมดกลางคืน</string>
+    <string name="switch_to_manual" translation_description="Tooltip and accessibility label for the button that switches the map from auto (sensor-driven) mode to manual (drag) mode.">สลับเป็นโหมดกำหนดเอง</string>
+    <string name="switch_to_auto" translation_description="Tooltip and accessibility label for the button that switches the map from manual (drag) mode to auto (sensor-driven) mode.">สลับเป็นโหมดอัตโนมัติ</string>
+    <string name="no_sensor_warning" translation_description="Warning shown when the device lacks the motion sensors needed to point the map at the sky automatically.">
+    อุปกรณ์นี้ไม่มีเข็มทิศหรือเซ็นเซอร์ตรวจจับการเคลื่อนไหว Sky Map จึงไม่สามารถติดตามทิศทางที่คุณชี้ได้ ให้ใช้วิธีลากแผนที่ด้วยมือแทน
+    </string>
     <string name="no_sensor_warning_dismiss">ตกลง</string>
+
+    <!-- tm:omitted name="hud_ra_label" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_dec_label" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_alt_label" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_az_label" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_fov_label" reason="identical_to_source" -->
+    <string name="hud_correction_label" translation_description="Map-HUD row label for the manual sensor-alignment correction the user set by dragging. Keep very short.">ปรับ</string>
+    <!-- tm:omitted name="hud_ra_value" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_signed_degrees_value" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_azimuth_value" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_fov_value" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_fov_value_fine" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_fov_value_finest" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_correction_value" reason="identical_to_source" -->
+    <string name="hud_correction_reset" translation_description="Accessibility label for the small button that clears the manual sensor-alignment correction back to zero.">รีเซ็ตการปรับแนว</string>
+    <string name="hud_alignment_reset_message" translation_description="Snackbar confirming the sensor-alignment correction was cleared; shown with an Undo action.">รีเซ็ตการปรับแนวแล้ว</string>
+    <string name="hud_fov_locked" translation_description="Accessibility label for the small lock icon shown next to the field-of-view readout while the camera controls the zoom in through-camera mode.">ล็อคการซูมไว้ที่กล้อง</string>
+
+    <string name="layer_hud" translation_description="Layers-sheet Display toggle that shows the heads-up readout of where the phone is pointing (compass direction and altitude) over the star map.">ค่าการชี้</string>
+
+    <!-- Through-camera (AR) mode (camera-ar-mode.md, D64). -->
+    <string name="layer_camera" translation_description="Layers-sheet Display toggle that shows the live rear-camera image behind the star map, so the drawn sky overlays the real one.">โหมดผ่านกล้อง</string>
+    <string name="layer_camera_needs_sensors" translation_description="Subtitle explaining why the through-camera toggle is disabled: the device has no usable motion sensors, and the mode needs the map to follow where the phone points.">ต้องใช้เซ็นเซอร์การเคลื่อนไหวที่อุปกรณ์นี้ไม่มี</string>
+    <string name="ar_auto_mode_snackbar" translation_description="Snackbar shown when turning on through-camera mode switched the map from manual dragging back to automatic sensor pointing.">เปิดใช้งานโหมดอัตโนมัติสำหรับมุมมองกล้องแล้ว</string>
+    <string name="ar_permission_denied" translation_description="Snackbar shown when the user declined the camera permission that through-camera mode needs.">โหมดผ่านกล้องต้องใช้สิทธิ์เข้าถึงกล้อง</string>
     <string name="ar_permission_settings_action">การตั้งค่า</string>
+    <string name="ar_exposure_slider" translation_description="Accessibility label for the slider adjusting the camera\'s exposure compensation while through-camera mode is on.">ความสว่างกล้อง</string>
+    <string name="ar_alignment_adjusted_message" translation_description="Snackbar shown after the user drags the star map to align it with the camera image; shown with an Undo action that reverts the whole drag.">ปรับการจัดแนวแผนที่แล้ว</string>
+    <string name="ar_dimmer_slider" translation_description="Accessibility label for the slider dimming the camera image behind the star map while through-camera mode is on.">ตัวหรี่กล้อง</string>
+    <!-- tm:omitted name="ar_iso_slider_label" reason="identical_to_source" -->
+    <string name="ar_iso_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual ISO sensitivity in through-camera mode.">ISO กล้อง</string>
+    <string name="ar_shutter_slider_label" translation_description="Very short label for the temporary developer slider setting the camera\'s manual shutter (exposure) time in through-camera mode.">ชัตเตอร์</string>
+    <string name="ar_shutter_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual shutter (exposure) time in through-camera mode.">เวลาชัตเตอร์กล้อง</string>
+    <string name="share_button" translation_description="Overflow-menu row that captures the current sky view as an image and opens the system share sheet.">แชร์ท้องฟ้า</string>
+    <string name="share_chooser_title" translation_description="Title of the system share sheet when sharing a captured sky image.">แชร์ท้องฟ้านี้</string>
+    <string name="share_invitation" translation_description="Short invitation stamped on the footer of shared sky images, above the store link.">ดูว่าคุณกำลังมองอะไรอยู่ — ดาวน์โหลด Sky Map ได้ฟรี</string>
+    <string name="share_text" translation_description="Text accompanying a shared sky image in apps that accept both an image and text. %1$s is the app-store link.">ดูว่าคุณกำลังมองอะไรอยู่ — ดาวน์โหลด Sky Map ได้ฟรี: %1$s</string>
+    <!-- tm:omitted name="share_store_link" reason="identical_to_source" -->
+    <string name="share_layout_overlay" translation_description="Caption of the share-layout choice that draws the star map over the camera photo, as seen on screen.">ซ้อนทับ</string>
+    <string name="share_layout_side_by_side" translation_description="Caption of the share-layout choice that puts the camera photo and the star map next to each other.">เคียงข้าง</string>
+    <string name="share_shutter_button" translation_description="Accessibility label for the round shutter button that captures and shares the current through-camera view.">แชร์มุมมองนี้</string>
+    <string name="share_failed_message" translation_description="Snackbar shown when capturing the sky image for sharing failed.">ไม่สามารถบันทึกภาพท้องฟ้าได้ — ลองใหม่อีกครั้ง</string>
+    <string name="ar_exposure_auto" translation_description="Readout shown when a manual camera exposure slider sits at its automatic position.">อัตโนมัติ</string>
+    <!-- Time travel: entry button, dialog, and the player bar shown while travelling. -->
     <string name="time_travel_button">การเดินทางข้ามเวลา</string>
     <string name="time_travel_title">การเดินทางข้ามเวลา</string>
+    <string name="time_travel_visiting" translation_description="Readout in the time travel dialog showing the currently chosen destination date and time. %1$s is the formatted date and time.">กำลังเยี่ยมชม: %1$s</string>
+    <string name="time_travel_pick_date" translation_description="Button in the time travel dialog that opens a date picker.">ตั้งค่าวันที่</string>
+    <string name="time_travel_pick_time" translation_description="Button in the time travel dialog that opens a time picker.">ตั้งค่าเวลา</string>
+    <string name="time_travel_select_event" translation_description="Placeholder hint for the dropdown list of popular astronomical events in the time travel dialog.">เลือกเหตุการณ์ยอดนิยม…</string>
+    <string name="time_travel_go" translation_description="Button that starts time travel to the chosen date.">ไป</string>
     <string name="time_travel_from_now">เริ่มจากตอนนี้</string>
     <string name="time_travel_ok">ตกลง</string>
     <string name="time_travel_cancel">ยกเลิก</string>
-    <string name="time_travel_stopped">การเดินทางข้ามเวลาหยุดชั่วคราว</string>
+    <!-- tm:omitted name="time_travel_slower" reason="identical_to_source" -->
+    <!-- tm:omitted name="time_travel_pause" reason="identical_to_source" -->
+    <!-- tm:omitted name="time_travel_faster" reason="identical_to_source" -->
+    <string name="time_travel_return" translation_description="Player button that ends time travel and returns the map to the present.">ปัจจุบัน</string>
+
+    <!-- Time travel playback-rate labels (v1 wording). -->
     <string name="time_travel_second_speed">กำลังเดินทาง &gt; @ 1 วินาที/วินาที</string>
     <string name="time_travel_minute_speed">กำลังเดินทาง &gt; @ 1 นาที/วินาที</string>
     <string name="time_travel_10minute_speed">กำลังเดินทาง &gt; @ 10 นาที/วินาที</string>
@@ -56,6 +174,9 @@
     <string name="time_travel_hour_speed_back">เดินทางด้วยความเร็ว &lt; @ 1 ชั่วโมง/วินาที</string>
     <string name="time_travel_day_speed_back">เดินทางด้วยความเร็ว &lt; @ 1 วัน/วินาที</string>
     <string name="time_travel_week_speed_back">เดินทางด้วยความเร็ว &lt; @ 1 สัปดาห์/วินาที</string>
+
+    <!-- Popular events in the time travel dialog (timestamps live in TimeTravelEvents.kt). -->
+    <string name="time_travel_now" translation_description="Time travel picker entry that resets the destination to the present moment.">ปัจจุบัน</string>
     <string name="time_travel_next_sunset">พระอาทิตย์ตกในเย็นวันถัดไป</string>
     <string name="time_travel_next_sunrise">พระอาทิตย์ขึ้นในเช้าวันถัดไป</string>
     <string name="time_travel_next_full_moon">พระจันทร์เต็มดวงครั้งถัดไป</string>
@@ -67,6 +188,7 @@
     <string name="time_travel_mars_uranus_2026">การเข้าใกล้ระหว่างดาวอังคารและดาวยูเรนัส 4 กรกฎาคม 2026</string>
     <string name="time_travel_solar_eclipse_2026">สุริยุปราคาเต็มดวง 12 สิงหาคม 2026</string>
     <string name="time_travel_perseids_2026">ฝนดาวแสดรรค์เพอร์เซอิด 12-13 สิงหาคม 2026</string>
+    <string name="time_travel_lunar_eclipse_aug_2026" translation_description="Name of an astronomical event in the time travel picker. Keep the date format suitable for your locale.">จันทรุปราคาบางส่วน, 28 สิงหาคม 2026</string>
     <string name="time_travel_jupiter_occultation_2026">ดวงจันทร์บดบังดาวพฤหัสบดี 6 ตุลาคม 2026</string>
     <string name="time_travel_geminids_2026">ฝนดาวแสดรรค์เจมินิด 13-14 ธันวาคม 2026</string>
     <string name="time_travel_supermoon_2026">ดวงจันทร์เต็มดวงวันคริสต์มาส 24 ธันวาคม 2026</string>
@@ -75,7 +197,11 @@
     <string name="time_travel_apollo_11">การลงจอดบนดวงจันทร์ของอพอลโล 11</string>
     <string name="time_travel_jupiter_saturn_2020">ความสัมพันธ์ระหว่างดาวพฤหัสบดีและดาวเสาร์ ค.ศ. 2020</string>
     <string name="sun_wont_set_message">ดวงอาทิตย์จะไม่ตกในช่วง 24 ชั่วโมงถัดไปที่ตำแหน่งปัจจุบันของคุณ</string>
+    <string name="time_travel_start_message" translation_description="Toast message when time travel starts toward a chosen destination. %1$s is the formatted destination date and time.">กำลังเดินทางข้ามเวลาไปยัง %1$s ...</string>
     <string name="time_travel_close_message">กลับไปยังปัจจุบัน ...</string>
+
+    <!-- Location management. -->
+    <string name="location_button" translation_description="Button on the map screen that opens the location management sheet">ตำแหน่ง</string>
     <string name="location_management_title">ตำแหน่งของคุณ</string>
     <string name="location_source_auto">อัตโนมัติ</string>
     <string name="location_source_manual">ด้วยตนเอง</string>
@@ -88,6 +214,11 @@
     <string name="location_set_toast">ตั้งค่าตำแหน่งเป็น %1$s</string>
     <string name="location_long_lat">ลองจิจูด:%1$.2f, ละติจูด:%2$.2f</string>
     <string name="location_map_unavailable">แผนที่ไม่พร้อมใช้งาน</string>
+    <string name="location_map_content_description" translation_description="Accessibility description of the static map image showing the current location of the user">แผนที่ตำแหน่งปัจจุบันของคุณ</string>
+    <string name="snackbar_action_undo" translation_description="Snackbar action button that reverses the change the snackbar reports, e.g. re-enabling horizon auto-leveling">เลิกทำ</string>
+    <string name="snackbar_action_open" translation_description="Snackbar action button that opens the screen the snackbar refers to, e.g. the compass calibration screen">เปิด</string>
+    <string name="label_size_hint_message" translation_description="Snackbar shown once, the first time the user zooms in a long way. Explains that the text labels naming stars and other objects stay the same size however far you zoom, and that their size is changed in the app\'s Settings screen instead. Shown with an action button that opens Settings.">ขนาดป้ายชื่อไม่เปลี่ยนแปลงตามการซูม — ตั้งค่าได้ในหน้าการตั้งค่า</string>
+    <string name="label_size_hint_action" translation_description="Action button on the label size snackbar; opens the app\'s Settings screen, where the user can change how large the sky labels are">การตั้งค่า</string>
     <string name="location_permission_dialog_title">จำเป็นต้องใช้ตำแหน่ง</string>
     <string name="location_permission_dialog_message">
     Sky Map ต้องการตำแหน่งโดยประมาณของคุณเพื่อแสดงท้องฟ้ายามค่ำคืนที่ถูกต้อง คุณสามารถให้สิทธิ์การเข้าถึง ป้อนตำแหน่งของคุณด้วยตนเอง หรือตัดสินใจภายหลัง หากคุณตัดสินใจภายหลัง แผนที่จะไม่แม่นยำจนกว่าจะตั้งค่าตำแหน่งของคุณ
@@ -111,14 +242,35 @@
     <string name="location_geocoder_offline">ไม่มีอินเทอร์เน็ต — ป้อนพิกัดโดยตรง</string>
     <string name="location_invalid_latitude">ละติจูดต้องอยู่ระหว่าง −90 ถึง 90</string>
     <string name="location_invalid_longitude">ลองจิจูดต้องอยู่ระหว่าง −180 ถึง 180</string>
+    <!-- tm:omitted name="location_coordinate_format" reason="identical_to_source" -->
+
+    <!-- Object info card -->
+    <string name="object_info_image_credit" translation_description="Attribution line under the object\'s photo; %1$s is the credited source, e.g. NASA/ESA">ภาพ: %1$s</string>
+    <string name="object_info_fun_fact" translation_description="An interesting trivia line on the object info card; %1$s is the fact text">เกร็ดน่ารู้: %1$s</string>
     <string name="object_info_distance">ระยะทาง:</string>
     <string name="object_info_size">ขนาด:</string>
     <string name="object_info_mass">มวล:</string>
+    <string name="object_info_spectral_class" translation_description="Label for a star\'s spectral classification (e.g. G2V) on the info card">ประเภทสเปกตรัม:</string>
     <string name="object_info_magnitude">โชติมาตร:</string>
+    <string name="object_info_rises" translation_description="Label on the info card for the time the object next rises above the horizon at the user\'s location">ขึ้น:</string>
+    <string name="object_info_sets" translation_description="Label on the info card for the time the object next sets below the horizon at the user\'s location">ตก:</string>
+    <string name="object_info_always_above_horizon" translation_description="Info-card line shown for a circumpolar object that never sets at the user\'s location">อยู่เหนือขอบฟ้าเสมอ ณ ตำแหน่งของคุณ</string>
+    <string name="object_info_always_below_horizon" translation_description="Info-card line shown for an object that never rises at the user\'s location">อยู่ใต้ขอบฟ้าเสมอ ณ ตำแหน่งของคุณ</string>
+    <string name="object_info_also_known_as" translation_description="Label on the info card above the object\'s alternative names (aliases and catalog designations), e.g. M31 and NGC 224">ชื่ออื่น:</string>
+    <string name="object_info_see_also" translation_description="Heading above links to related celestial objects on the info card">ดูเพิ่มเติม</string>
     <string name="object_info_find_in_sky">ค้นหาในท้องฟ้า</string>
+    <string name="object_info_close" translation_description="Button that closes the object info card">ปิด</string>
     <string name="object_info_tap_to_close">แตะเพื่อปิด</string>
+
+    <!-- Image gallery -->
+    <string name="gallery_button" translation_description="Map-screen menu item that opens a gallery of photographs of celestial objects. Not the user\'s own photos - these are catalog images from sources such as NASA and ESA.">แกลเลอรีท้องฟ้า</string>
+    <string name="gallery_title" translation_description="Title of the screen showing a gallery of photographs of celestial objects. Not the user\'s own photos - these are catalog images from sources such as NASA and ESA.">แกลเลอรีท้องฟ้า</string>
+    <string name="gallery_back" translation_description="Content description for the back arrow leaving the gallery screen">ย้อนกลับ</string>
+
+    <!-- Settings screen (v1 wording where a v1 string existed) -->
     <string name="settings_button">การตั้งค่า</string>
     <string name="settings_title">การตั้งค่า</string>
+    <string name="settings_back" translation_description="Content description for the back arrow leaving the settings screen">ย้อนกลับ</string>
     <string name="settings_ok">ตกลง</string>
     <string name="settings_cancel">ยกเลิก</string>
     <string name="settings_section_controls">การควบคุม</string>
@@ -127,26 +279,72 @@
     <string name="settings_section_other">อื่นๆ</string>
     <string name="enable_analytics">ส่งสถิติการใช้งาน</string>
     <string name="enable_analytics_desc">ปรับปรุง Sky Map โดยการส่งข้อมูลที่ไม่ระบุตัวตนไปยัง Google Analytics</string>
+    <string name="settings_diagnostics_summary" translation_description="Summary for the settings row that opens the diagnostics screen, which shows technical sensor, location and performance readouts useful when reporting a problem">รายละเอียดเซ็นเซอร์ ตำแหน่ง และประสิทธิภาพ</string>
     <string name="settings_tap_to_identify">แสดงข้อมูลเมื่อแตะ</string>
     <string name="settings_tap_to_identify_summary">แตะวัตถุท้องฟ้าเพื่อเรียนรู้เกี่ยวกับพวกมัน</string>
     <string name="settings_tap_in_auto_mode">การ์ดข้อมูลในโหมดอัตโนมัติ</string>
     <string name="settings_tap_in_auto_mode_summary">แสดงการ์ดข้อมูลเมื่อแตะวัตถุในโหมดอัตโนมัติ (เซ็นเซอร์) ด้วย</string>
     <string name="settings_auto_level_horizon">ขอบฟ้าอัตโนมัติ</string>
+    <string name="auto_level_on_toast" translation_description="Brief confirmation shown when a double tap turns horizon auto-leveling on in manual mode">เปิดปรับระดับขอบฟ้าอัตโนมัติแล้ว</string>
+    <string name="auto_level_off_toast" translation_description="Brief confirmation shown when a double tap turns horizon auto-leveling off in manual mode">ปิดปรับระดับขอบฟ้าอัตโนมัติแล้ว</string>
     <string name="settings_auto_level_horizon_summary">ในโหมดแมนนวล ขอบฟ้าจะค่อยๆ กลับไปอยู่ในแนวนอนหลังจากที่คุณยกนิ้วของคุณขึ้น</string>
+    <string name="settings_font_size" translation_description="Preference title: change the size of the text labels naming stars and other objects drawn on the sky">ขนาดป้ายชื่อบนท้องฟ้า</string>
+    <string name="settings_font_size_summary" translation_description="Help to go along with the sky label size preference. Explains that this size is fixed and does not change as the user zooms the map in or out.">ข้อความป้ายชื่อจะมีขนาดเท่านี้เสมอในทุกระดับการซูม</string>
+    <string name="settings_font_size_small" translation_description="Smallest font size">เล็ก</string>
+    <string name="settings_font_size_medium" translation_description="Normal font size">ปานกลาง</string>
+    <string name="settings_font_size_large" translation_description="Large font size">ใหญ่</string>
+    <string name="settings_font_size_extra_large" translation_description="Largest font size">ใหญ่มาก</string>
     <string name="settings_auto_dimness">ลดความสว่างของหน้าจออัตโนมัติ</string>
+    <string name="settings_auto_dimness_summary" translation_description="Summary for the night-mode screen dimming preference">ระดับความมืดของหน้าจอในโหมดกลางคืน</string>
+    <string name="settings_auto_dimness_system" translation_description="Screen dimming option: leave brightness on the system setting">ค่าเริ่มต้นของระบบ</string>
+    <string name="settings_auto_dimness_dim" translation_description="Screen dimming option: dimmest screen setting">มืดมาก</string>
+    <string name="settings_auto_dimness_classic" translation_description="Screen dimming option: the hand-tuned brightness Sky Map used for its first 15 years">คลาสสิก</string>
     <string name="settings_sky_gradient">แสดงการไล่ระดับสีท้องฟ้า</string>
     <string name="settings_sky_gradient_summary">ทำให้ท้องฟ้าเป็นสีน้ำเงินใกล้ดวงอาทิตย์และมืดในด้านตรงข้าม</string>
+    <string name="settings_disable_gyro" translation_description="Preference title for switching from the gyroscope to the legacy compass + accelerometer sensor pipeline">ใช้เซ็นเซอร์แบบเดิม</string>
+    <string name="settings_disable_gyro_summary" translation_description="Explanation of the legacy sensors preference and when to use it">
+    ใช้เข็มทิศและมาตรความเร่งในการเล็งแผนที่แทนไจโรสโคป ลองใช้วิธีนี้หากแผนที่เกิดการเคลื่อนหรือไจโรสโคปของอุปกรณ์ทำงานผิดปกติ โดยอุปกรณ์ที่ไม่มีไจโรสโคปจะใช้เซ็นเซอร์เหล่านี้โดยอัตโนมัติ
+    </string>
     <string name="settings_sensor_speed">ความเร็วเซนเซอร์</string>
+    <string name="settings_sensor_speed_slow" translation_description="Slow sensor speed">ช้า</string>
+    <string name="settings_sensor_speed_standard" translation_description="Normal sensor speed">ปานกลาง</string>
+    <string name="settings_sensor_speed_fast" translation_description="Fast sensor speed">เร็ว</string>
     <string name="settings_sensor_damping">การหน่วงเวลา</string>
+    <string name="settings_sensor_damping_standard" translation_description="Low sensor damping factor - this will make the app jittery">กระตุก</string>
+    <string name="settings_sensor_damping_high" translation_description="Medium sensor damping factor - this will make the app slightly jittery">ปานกลาง</string>
+    <string name="settings_sensor_damping_extra_high" translation_description="Extra high sensor damping factor">กำลังดี</string>
+    <string name="settings_sensor_damping_really_high" translation_description="Really high sensor damping factor - this will make the app sluggish">หน่วง</string>
+    <string name="settings_classic_sensors_only" translation_description="Summary noting a sensor preference only applies to the legacy non-gyroscope sensor path">ใช้ได้เฉพาะเมื่อใช้งานเซ็นเซอร์แบบเดิมเท่านั้น</string>
     <string name="settings_reverse_magnetic_z">ย้อนกลับแกน Z แม่เหล็ก</string>
     <string name="settings_magnetic_correction">ใช้การแก้ไขแม่เหล็ก</string>
+    <string name="settings_magnetic_correction_summary" translation_description="Summary for the magnetic correction preference">แก้ไขเข็มทิศสำหรับความแตกต่างระหว่างขั้วแม่เหล็กโลกและขั้วเหนือจริง</string>
     <string name="settings_view_direction">ทิศทางการมอง</string>
+    <string name="settings_view_direction_summary" translation_description="Explanation of the view direction preference, covering both landscape rotation and pointer modes">
+    หมุนขอบฟ้าไป 90 องศา (สำหรับอุปกรณ์ที่บังคับแสดงผลแนวนอน) หรือใช้โหมดตัวชี้เพื่อให้หน้าจอแสดงสิ่งที่ส่วนบนของโทรศัพท์กำลังชี้ไป
+    </string>
+    <string name="settings_view_direction_standard" translation_description="Normal viewing direction">ปกติ</string>
+    <string name="settings_view_direction_rotate90" translation_description="View direction option that rotates the screen by 90 degrees">หมุนขอบฟ้า</string>
+    <string name="settings_view_direction_telescope" translation_description="View direction option that shows the sky as pointed at by the long edge of the phone">โหมดตัวชี้</string>
+
+    <!-- tm:omitted name="support_email" reason="identical_to_source" -->
     <string name="diagnostics_button">การวินิจฉัย</string>
     <string name="diagnostics_title">การวินิจฉัย</string>
+    <string name="diagnostics_share" translation_description="Accessibility label for the diagnostics screen button that emails these details to the developers">ส่งให้ผู้พัฒนา</string>
+    <string name="diagnostics_share_subject" translation_description="Subject line of the email a user sends from the diagnostics screen">รายงานการวินิจฉัย Sky Map</string>
+    <string name="diagnostics_report_header" translation_description="First line of the emailed diagnostics report, telling the user where to type their problem description. Keep it on one line.">--- การวินิจฉัย Sky Map โปรดอธิบายปัญหาเหนือเส้นนี้ ---</string>
     <string name="diagnostics_section_general">ทั่วไป</string>
     <string name="diagnostics_device">อุปกรณ์</string>
+    <!-- tm:omitted name="diagnostics_phone_format" reason="identical_to_source" -->
     <string name="diagnostics_android_version">เวอร์ชัน Android</string>
     <string name="diagnostics_sky_map_version">เวอร์ชัน Sky Map</string>
+    <!-- tm:omitted name="diagnostics_sky_map_version_format" reason="identical_to_source" -->
+    <string name="diagnostics_section_graphics" translation_description="Section heading in the diagnostics screen for graphics/GPU information">กราฟิก</string>
+    <string name="diagnostics_gl_renderer" translation_description="Row label in the diagnostics screen for the name of the graphics processor (GPU) drawing the sky">ตัวแสดงผล</string>
+    <!-- tm:omitted name="diagnostics_gl_version" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_gl_version_format" reason="identical_to_source" -->
+    <string name="diagnostics_gl_limits" translation_description="Row label in the diagnostics screen for graphics hardware limits (maximum texture size, supported line widths and point sizes)">ขีดจำกัด GL</string>
+    <string name="diagnostics_gl_limits_format" translation_description="Format for the GL limits row: maximum texture size in pixels, then the supported line width and point size ranges. \'tex\' abbreviates texture. %1$d is texture size, %2$s is the line width range, %3$s is the point size range.">เท็กซ์ %1$d, เส้น %2$s, จุด %3$s</string>
+    <string name="diagnostics_gl_unavailable" translation_description="Value shown in the diagnostics Graphics rows before the sky map has drawn, when the graphics details are not known yet">ยังไม่พร้อมใช้งาน</string>
     <string name="diagnostics_section_sensors">เซนเซอร์</string>
     <string name="diagnostics_accelerometer">เครื่องวัดความเร่ง</string>
     <string name="diagnostics_compass">เข็มทิศ</string>
@@ -159,22 +357,43 @@
     <string name="diagnostics_location_permission">สิทธิ์การเข้าถึงตำแหน่ง</string>
     <string name="diagnostics_permission_granted">อนุญาต</string>
     <string name="diagnostics_permission_denied">ปฏิเสธ</string>
+    <!-- tm:omitted name="diagnostics_gps" reason="identical_to_source" -->
     <string name="diagnostics_no_gps">ไม่มี GPS</string>
     <string name="diagnostics_enabled">เปิดใช้งาน</string>
     <string name="diagnostics_disabled">ปิดใช้งาน</string>
     <string name="diagnostics_permission_disabled">ปิดใช้งานสิทธิ์</string>
     <string name="diagnostics_location">ตำแหน่ง (ละติจูด ลองจิจูด)</string>
+    <!-- tm:omitted name="diagnostics_location_format" reason="identical_to_source" -->
+    <string name="diagnostics_location_unset" translation_description="Location status shown in diagnostics when no location has been set yet">ยังไม่ได้ตั้งค่า</string>
     <string name="diagnostics_location_acquiring">กำลังรับ…</string>
+    <string name="diagnostics_location_hardware_unavailable" translation_description="Location status shown in diagnostics when no location hardware is available">ไม่มีฮาร์ดแวร์ระบุตำแหน่ง</string>
     <string name="diagnostics_pointing">สแนปชอตการชี้</string>
+    <!-- tm:omitted name="diagnostics_dec_format" reason="identical_to_source" -->
     <string name="diagnostics_magnetic_correction">การแก้ไขแม่เหล็ก</string>
+    <string name="diagnostics_alignment_adjustment" translation_description="Diagnostics row label for the manual sky-alignment correction the user set by dragging in through-camera mode.">การปรับแต่งการจัดวาง</string>
+    <string name="diagnostics_alignment_format" translation_description="Value of the sky-alignment correction: azimuth then altitude offset in degrees, each signed with one decimal. \'az\' and \'alt\' abbreviate azimuth and altitude.">ทิศ %1$+.1f°, ความสูง %2$+.1f°</string>
+    <!-- tm:omitted name="diagnostics_magnetic_correction_format" reason="identical_to_source" -->
+    <string name="diagnostics_east" translation_description="Compass direction shown for an eastward magnetic correction">ตะวันออก</string>
+    <string name="diagnostics_west" translation_description="Compass direction shown for a westward magnetic correction">ตะวันตก</string>
     <string name="diagnostics_local_datetime">วันที่และเวลาท้องถิ่น</string>
     <string name="diagnostics_utc_datetime">วันที่และเวลา UTC</string>
     <string name="diagnostics_section_network">เครือข่าย</string>
     <string name="diagnostics_connection">การเชื่อมต่อ</string>
+    <string name="diagnostics_section_satellites" translation_description="Section heading in the diagnostics screen for satellite orbital-data status">ดาวเทียม</string>
+    <string name="diagnostics_satellite_data" translation_description="Row label in the diagnostics screen for the age and count of cached satellite orbital data">ข้อมูลวงโคจร</string>
+    <string name="diagnostics_satellite_data_none" translation_description="Row value in the diagnostics screen when no satellite orbital data has been downloaded yet">ยังไม่ได้ดาวน์โหลด</string>
+    <string name="diagnostics_satellite_data_format" translation_description="Row value in the diagnostics screen showing how many satellites are cached and how many days old the data is. %1$d is a count, %2$.1f is a number of days">ดาวเทียม %1$d ดวง, เก่า %2$.1f วัน</string>
+    <string name="diagnostics_satellite_last_fetch" translation_description="Row label in the diagnostics screen for the result of the most recent attempt to download satellite orbital data">ดึงข้อมูลล่าสุด</string>
+    <string name="diagnostics_satellite_never_fetched" translation_description="Row value in the diagnostics screen when satellite orbital data has never been downloaded">ไม่เคย</string>
+    <string name="diagnostics_satellite_circuit_open" translation_description="Row label in the diagnostics screen for when satellite downloads are paused after repeated server errors">หยุดการดาวน์โหลดชั่วคราว</string>
+    <string name="diagnostics_satellite_circuit_open_format" translation_description="Row value in the diagnostics screen showing when paused satellite downloads will resume and how many failures caused the pause. %1$s is a date and time, %2$d is a count">จนถึง %1$s (ล้มเหลว %2$d ครั้ง)</string>
+    <string name="diagnostics_satellite_force_fetch" translation_description="Label on a debug-only button in the diagnostics screen that downloads satellite orbital data immediately">ดึงข้อมูลดาวเทียมตอนนี้ (ดีบั๊ก)</string>
     <string name="diagnostics_connected">เชื่อมต่อแล้ว</string>
     <string name="diagnostics_disconnected">ไม่เชื่อมต่อ</string>
     <string name="diagnostics_wifi">(wifi)</string>
     <string name="diagnostics_cell">(cell)</string>
+
+    <!-- Compass calibration screen (slice 15) -->
     <string name="calibration_button">ปรับเทียบ</string>
     <string name="calibration_heading_user">เข็มทิศโทรศัพท์ของคุณ</string>
     <string name="calibration_heading_warning">เข็มทิศในโทรศัพท์ของคุณต้องได้รับการดูแล</string>
@@ -185,23 +404,167 @@
     <string name="calibration_accuracy_high">การสอบเทียบ: ดี</string>
     <string name="calibration_accuracy_no_contact">การสอบเทียบ: ไม่มีการติดต่อ</string>
     <string name="calibration_do_not_show_again">อย่าแสดงอีกครั้ง</string>
+    <string name="calibration_what_to_do" translation_description="Information for the user on how to calibrate the compass when the screen auto-opens. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[เซนเซอร์เข็มทิศในโทรศัพท์ของคุณรายงานว่ามีการสอบเทียบที่ไม่ดี การเคลื่อนไหวรูปเลข 8 (<a href="%s">ดูวิดีโอสาธิต</a>) จะช่วยกระตุ้นให้ฮาร์ดแวร์ของโทรศัพท์รีเซ็ตเซนเซอร์เข็มทิศ — Sky Map ไม่สามารถควบคุมกระบวนการนี้ได้<br/><br/><blockquote><b>สอบเทียบแล้วไม่ได้แปลว่าแม่นยำ</b> ท่าทางรูปเลข 8 ช่วยรีเซ็ตเซนเซอร์ แต่ไม่สามารถกำจัดสัญญาณรบกวนจากวัตถุโลหะที่อยู่ใกล้เคียง แดชบอร์ดรถยนต์ หรือเคสโทรศัพท์ได้ หากแผนียังคงไม่ตรงหลังจากสอบเทียบ สาเหตุที่เป็นไปได้มากที่สุดคือแหล่งสัญญาณภายนอกเหล่านั้น — ไม่ใช่ Sky Map</blockquote>ย้ายไปที่โล่งแจ้งที่ห่างจากโลหะแล้วลองใหม่อีกครั้ง。]]></string>
+    <string name="calibration_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they open the calibration screen. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[โทรศัพท์ของคุณกำลังรายงานสถานะการปรับเทียบเข็มทิศดังที่แสดงด้านบน<br/><br/>หากจำเป็น ให้ทำการเคลื่อนที่เป็นรูปเลข 8 (<a href="%s">ดูวิดีโอสาธิต</a>) เพื่อกระตุ้นฮาร์ดแวร์ของโทรศัพท์ให้ปรับเทียบเซ็นเซอร์เข็มทิศใหม่<br/><br/><blockquote><b>ข้อสำคัญ:</b> การปรับเทียบจะช่วยให้เซ็นเซอร์รีเซ็ตตัวเองภายใน แต่นั่นไม่ได้หมายความว่าเข็มทิศจะแม่นยำเสมอไป!<br/>สัญญาณรบกวนแม่เหล็กในพื้นที่ (วัตถุที่เป็นโลหะ, แดชบอร์ดรถยนต์, เคสโทรศัพท์) ยังคงทำให้เข็มทิศของโทรศัพท์ส่งค่าที่คลาดเคลื่อนไปยัง Sky Map ได้</blockquote><b>หากแผนที่แสดงตำแหน่งไม่ถูกต้อง ปัญหาคือน่าจะมาจากโทรศัพท์ของคุณ ไม่ใช่ Sky Map!</b>]]></string>
     <string name="calibration_low_accuracy_toast">เข็มทิศโทรศัพท์ของคุณกำลังรายงานความแม่นยำต่ำ</string>
+    <string name="calibration_complete_toast" translation_description="Toast shown when the compass reaches high accuracy and the auto-opened calibration screen closes itself">เซ็นเซอร์มีความแม่นยำสูง</string>
+
+    <!-- Startup routing: EULA, warm welcome, What's New (slice 16) -->
     <string name="eula_title">เงื่อนไขการให้บริการ</string>
     <string name="dialog_accept">ยอมรับ</string>
     <string name="dialog_decline">ไม่ขอบคุณ</string>
     <string name="dialog_ok_button">ตกลง</string>
+
     <string name="whats_new_dialog_title">มีอะไรใหม่</string>
+    <string name="whats_new_version_heading" translation_description="Heading above the list of new features. %1$s is the app version name">มีอะไรใหม่ในเวอร์ชัน %1$s</string>
+
+    <!-- Warm welcome (onboarding pager, slice 16) -->
     <string name="warm_welcome_slide1_title">สำรวจจักรวาล</string>
+    <string name="warm_welcome_slide1_desc" translation_description="Description for the first slide of the Warm Welcome onboarding, shown under a guided tour of the map controls">
+    ใช้เลเยอร์ทางด้านซ้ายเพื่อกรองดวงดาว กลุ่มดาว ดาวเคราะห์ และอื่นๆ ปุ่มที่มุมขวาลา่างใช้เพื่อค้นหาวัตถุบนท้องฟ้า เดินทางข้ามเวลา และสลับโหมดการแสดงผล แตะที่ท้องฟ้าเวลาใดก็ได้เพื่อซ่อนหรือแสดงปุ่มควบคุม
+    </string>
     <string name="warm_welcome_slide2_title">นำทางท้องฟ้า</string>
+    <string name="warm_welcome_slide2_desc" translation_description="Description for the second slide of the Warm Welcome onboarding. Please do not change the &lt; and &gt; markup"><![CDATA[หันโทรศัพท์ของคุณเพื่อมองไปรอบ ๆ ใน<b>โหมดอัตโนมัติ</b> หรือแตะเพื่อสลับเป็น<b>โหมดแมนนวล</b> แล้วสำรวจด้วยการปัดและจีบนิ้ว]]></string>
+    <string name="warm_welcome_slide2_info_desc" translation_description="Description about info cards on the second slide of the Warm Welcome onboarding">
+    แตะที่วัตถุที่มีป้ายกำกับเพื่อเปิดการ์ดข้อมูลเช่นนี้ พร้อมรูปภาพ เกร็ดความรู้ และรายละเอียดทางดาราศาสตร์
+    </string>
     <string name="warm_welcome_card_name">เนบิวลาปู</string>
+    <string name="warm_welcome_card_description" translation_description="Description of the Crab Nebula on the sample info card on the second Warm Welcome slide">
+    เนบิวลาปู (Crab Nebula) เป็นซากมหานนท์ในกลุ่มดาววัว ซึ่งเกิดจากการระเบิดของดาวฤกษ์ที่นักดาราศาสตร์ชาวจีนบันทึกไว้ในปี ค.ศ. 1054
+    </string>
+    <string name="warm_welcome_card_fun_fact" translation_description="Fun fact about the Crab Nebula on the sample info card on the second Warm Welcome slide">
+    เนบิวลาปู (Crab Nebula) มีพัลซาร์ที่หมุนด้วยความเร็ว 30 รอบต่อวินาที ซึ่งเป็นแกนกลางที่ยุบตัวของดาวฤกษ์ที่ระเบิด!
+    </string>
+    <string name="warm_welcome_card_distance" translation_description="Distance to the Crab Nebula on the sample info card on the second Warm Welcome slide">6,500 ปีแสง</string>
+    <string name="warm_welcome_card_size" translation_description="Size of the Crab Nebula on the sample info card on the second Warm Welcome slide">กว้าง 11 ปีแสง</string>
     <string name="warm_welcome_slide3_title">เซ็นเซอร์และการปรับเทียบ</string>
     <string name="warm_welcome_slide3_desc">Sky Map ใช้เซ็นเซอร์ของโทรศัพท์คุณเพื่อจัดตำแหน่งให้ตรงกับดวงดาว</string>
+    <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message on the third Warm Welcome slide when sensors are missing. Please do not change the &lt; and &gt; markup"><![CDATA[ดูเหมือนว่าอุปกรณ์ของคุณจะไม่มีเซนเซอร์ที่จำเป็นสำหรับการติดตามอัตโนมัติ แต่ไม่ต้องกังวล คุณยังคงสามารถสำรวจห้วงอวกาศทั้งหมดได้ใน <b>โหมดกำหนดเอง</b>!]]></string>
+    <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration advice on the third Warm Welcome slide. Please do not change the &lt; and &gt; markup"><![CDATA[เพื่อให้ข้อมูลมีความแม่นยำอยู่เสมอ ให้ลองเหวี่ยงโทรศัพท์ของคุณเป็นรูปเลข <b>8</b> สลับไปมาเป็นครั้งคราว]]></string>
     <string name="warm_welcome_skip">ข้าม</string>
     <string name="warm_welcome_next">ถัดไป</string>
     <string name="warm_welcome_finish">เริ่ม!</string>
     <string name="warm_welcome_sensor_ok">ทำงานอยู่</string>
     <string name="warm_welcome_sensor_missing">ขาดหายไป</string>
+
+    <!-- Help dialog (slice 16) -->
     <string name="help_button">ความช่วยเหลือ</string>
     <string name="tutorial_button">บทช่วยสอน</string>
     <string name="help_dialog_title">ความช่วยเหลือ</string>
+    <string name="help_version" translation_description="Version line at the top of the Help screen. %1$s is the app version name">เวอร์ชัน %1$s</string>
+    <string name="whats_new_button" translation_description="Map-screen menu item that opens the What's New and Credits screen">มีอะไรใหม่</string>
+    <string name="whats_new_screen_title" translation_description="Title of the screen showing the release notes and the credits">มีอะไรใหม่และเครดิต</string>
+
+    <!-- The deep-sky symbol key at the foot of the Help screen. -->
+    <string name="help_symbol_key_title" translation_description="Heading of the Help section explaining the map symbols used for deep-sky objects">สัญลักษณ์บนแผนที่</string>
+    <string name="help_symbol_key_intro" translation_description="Introductory sentence for the map-symbol key in Help">วัตถุท้องฟ้าลึกและฝนดาวตกจะมีสัญลักษณ์แสดงประเภทของวัตถุดังนี้:</string>
+    <string name="symbol_key_galaxy" translation_description="Symbol-key label: the marker used for galaxies">กาแล็กซี</string>
+    <string name="symbol_key_open_cluster" translation_description="Symbol-key label: the marker used for open star clusters">กระจุกดาวเปิด</string>
+    <string name="symbol_key_globular_cluster" translation_description="Symbol-key label: the marker used for globular star clusters">กระจุกดาวทรงกลม</string>
+    <string name="symbol_key_diffuse_nebula" translation_description="Symbol-key label: the marker used for diffuse nebulae">เนบิวลากระจาย</string>
+    <string name="symbol_key_planetary_nebula" translation_description="Symbol-key label: the marker used for planetary nebulae">เนบิวลาดาวเคราะห์</string>
+    <string name="symbol_key_supernova_remnant" translation_description="Symbol-key label: the marker used for supernova remnants">ซากมหานوفา</string>
+    <string name="symbol_key_asterism" translation_description="Symbol-key label: the marker used for asterisms and star clouds">กลุ่มดาวฤกษ์หรือเมฆดาว</string>
+    <string name="symbol_key_other" translation_description="Symbol-key label: the marker used for deep-sky objects of any other type">วัตถุท้องฟ้าลึกอื่น ๆ</string>
+    <string name="symbol_key_meteor_radiant" translation_description="Symbol-key label: the marker for the point in the sky meteors of a shower appear to come from">จุดศูนย์กลางฝนดาวตก</string>
+    <string name="symbol_key_meteor_radiant_peak" translation_description="Symbol-key label: the brighter marker used when a meteor shower is near its peak activity">ฝนดาวตกใกล้ถึงช่วงสูงสุด</string>
+
+    <!-- Moon-phase home-screen widget (D69). -->
+    <string name="moon_widget_label" translation_description="Name of the moon-phase home-screen widget, shown in the launcher\'s widget picker">ข้างขึ้นข้างแรม</string>
+    <string name="moon_widget_description" translation_description="Description of the moon-phase widget, shown under its preview in the launcher\'s widget picker">เฟสของดวงจันทร์ การส่องสว่าง รวมถึงเวลาดวงจันทร์ขึ้นและตก อัปเดตทุกวัน</string>
+    <string name="moon_widget_illumination" translation_description="Widget line showing how much of the Moon\'s disc is lit; %1$d is a percentage number">สว่าง %1$d%%</string>
+    <string name="moon_widget_rise_time" translation_description="Widget fragment showing today\'s moonrise time; %1$s is a clock time like 17:42">ขึ้น %1$s</string>
+    <string name="moon_widget_set_time" translation_description="Widget fragment showing today\'s moonset time; %1$s is a clock time like 03:12">ตก %1$s</string>
+    <string name="moon_phase_new" translation_description="Name of the lunar phase when the Moon is fully dark">จันทร์ดับ</string>
+    <string name="moon_phase_waxing_crescent" translation_description="Name of the lunar phase between new moon and first quarter">จันทร์เสี้ยวข้างขึ้น</string>
+    <string name="moon_phase_first_quarter" translation_description="Name of the lunar phase when half the disc is lit and growing">จันทร์ครึ่งดวงข้างขึ้น</string>
+    <string name="moon_phase_waxing_gibbous" translation_description="Name of the lunar phase between first quarter and full moon">ดวงจันทร์ค่อนดวงข้างขึ้น</string>
+    <string name="moon_phase_full" translation_description="Name of the lunar phase when the disc is fully lit">จันทร์เพ็ญ</string>
+    <string name="moon_phase_waning_gibbous" translation_description="Name of the lunar phase between full moon and last quarter">ดวงจันทร์ค่อนดวงข้างแรม</string>
+    <string name="moon_phase_last_quarter" translation_description="Name of the lunar phase when half the disc is lit and shrinking">จันทร์ครึ่งดวงข้างแรม</string>
+    <string name="moon_phase_waning_crescent" translation_description="Name of the lunar phase between last quarter and new moon">จันทร์เสี้ยวข้างแรม</string>
+    <string name="moon_widget_promo_title" translation_description="Title of the row on the Moon\'s info card offering to add the moon-phase widget to the home screen">เพิ่มวิดเจ็ตดวงจันทร์ไว้ที่หน้าจอหลัก</string>
+    <string name="moon_widget_promo_subtitle" translation_description="Subtitle of the row offering the moon-phase widget, summarizing what the widget shows">ข้างขึ้นข้างแรม การส่องสว่าง และเวลาดวงจันทร์ขึ้น อัปเดตทุกวัน</string>
+    <string name="moon_widget_promo_add" translation_description="Button that adds the moon-phase widget to the home screen via the system dialog">เพิ่มวิดเจ็ต</string>
+    <string name="moon_widget_promo_dismiss" translation_description="Accessibility label for the button that permanently dismisses the widget offer row">ปิดคำแนะนำวิดเจ็ต</string>
+    <string name="moon_widget_pin_unsupported_title" translation_description="Title of the fallback dialog when the launcher cannot add widgets directly">เพิ่มวิดเจ็ตจากหน้าจอหลักของคุณ</string>
+    <string name="moon_widget_pin_unsupported_body" translation_description="Body of the fallback dialog explaining how to add the widget manually">
+    ตัวเรียกใช้งานแอปของคุณไม่รองรับการเพิ่มวิดเจ็ตจากแอป แตะหน้าจอหลักค้างไว้ เลือก วิดเจ็ต แล้วค้นหา Sky Map
+    </string>
+    <string name="moon_widget_pin_unsupported_ok" translation_description="Confirmation button of the manual widget-adding instructions dialog">เข้าใจแล้ว</string>
+    <string name="moon_widget_preview_illumination" translation_description="Representative illumination line shown in the widget picker\'s preview of the moon-phase widget">สว่าง 83%</string>
+
+    <!-- Tonight's-sky and countdown home-screen widgets (D69 phase 2). -->
+    <string name="tonight_widget_label" translation_description="Name of the tonight\'s-sky home-screen widget, shown in the launcher\'s widget picker">ท้องฟ้าคืนนี้</string>
+    <string name="tonight_widget_description" translation_description="Description of the tonight\'s-sky widget, shown under its preview in the launcher\'s widget picker">
+    ทัศนียภาพยามค่ำคืนที่ดีที่สุด: ดาวเคราะห์ที่อยู่ในตำแหน่งเหมาะ ฝนดาวตก และเหตุการณ์เกี่ยวกับดวงจันทร์ อัปเดตทุกวัน
+    </string>
+    <string name="tonight_widget_header" translation_description="Small header label on the tonight widget; %1$s is a short date like \'Wed 30 Jul\'">คืนนี้ · %1$s</string>
+    <string name="tonight_widget_sun_times" translation_description="Header line on the tonight widget; %1$s is the sunset time, %2$s the time the sky becomes fully dark">ดวงอาทิตย์ตก %1$s · มืดสนิท %2$s</string>
+    <string name="tonight_widget_sunset_only" translation_description="Header fragment when only the sunset time is known; %1$s is the sunset time">ดวงอาทิตย์ตก %1$s</string>
+    <string name="tonight_well_placed" translation_description="Tonight-widget row: a planet is high in the sky and easy to observe; %1$s is the planet name, %2$s the time from which it is well placed">%1$s อยู่ในตำแหน่งที่สังเกตการณ์ได้ดีตั้งแต่ %2$s</string>
+    <!-- tm:omitted name="tonight_trailing_direction" reason="identical_to_source" -->
+    <string name="tonight_shower_peak" translation_description="Tonight-widget row: a meteor shower reaches its annual peak tonight; %1$s is the shower name">%1$s ถึงจุดสูงสุดคืนนี้</string>
+    <string name="tonight_shower_days" translation_description="Tonight-widget row: a meteor shower peaks within a few days; %1$s is the shower name, %2$d the number of days">%1$s ถึงจุดสูงสุดในอีก %2$d วัน</string>
+    <string name="tonight_dark_skies" translation_description="Small trailing note: the moon is dark, so viewing conditions are ideal">ท้องฟ้ามืดสนิท</string>
+    <string name="tonight_trailing_moon" translation_description="Small trailing note: how much of the moon is lit; %1$d is a percentage">ดวงจันทร์ %1$d%%</string>
+    <string name="tonight_new_moon" translation_description="Tonight-widget row shown at new moon">จันทร์ดับ — ท้องฟ้ามืดสนิทที่สุดในรอบเดือน</string>
+    <string name="tonight_full_moon" translation_description="Tonight-widget row shown at full moon">คืนนี้ดวงจันทร์เต็มดวง</string>
+    <string name="tonight_bright_moon" translation_description="Tonight-widget row warning that a bright moon washes out faint objects">แสงจันทร์ที่สว่างทำให้วัตถุจางๆ มองเห็นได้ไม่ชัด</string>
+    <string name="tonight_lunar_eclipse_total" translation_description="Tonight-widget row: a total lunar eclipse is starting soon or under way">จันทรุปราคาเต็มดวง</string>
+    <string name="tonight_lunar_eclipse_partial" translation_description="Tonight-widget row: a partial lunar eclipse is starting soon or under way">จันทรุปราคาบางส่วน</string>
+    <string name="tonight_lunar_eclipse_penumbral" translation_description="Tonight-widget row: a penumbral lunar eclipse is starting soon or under way">จันทรุปราคาเงามัว</string>
+    <string name="tonight_quiet" translation_description="Tonight-widget line shown when nothing notable is visible tonight">คืนนี้ท้องฟ้าเงียบสงบ</string>
+    <string name="tonight_quiet_next" translation_description="Tonight-widget line under the quiet-night message; %1$s is an event name, %2$d the days until it">ถัดไป: %1$s อีก %2$d วัน</string>
+    <string name="countdown_widget_label" translation_description="Name of the countdown home-screen widget, shown in the launcher\'s widget picker">นับถอยหลังท้องฟ้า</string>
+    <string name="countdown_widget_description" translation_description="Description of the countdown widget, shown under its preview in the launcher\'s widget picker">จำนวนวันจนถึงจุดสูงสุดของฝนดาวตกครั้งถัดไปหรือเหตุการณ์ดวงจันทร์</string>
+    <string name="countdown_days" translation_description="Unit label inside the countdown ring, under the number of days">วัน</string>
+    <string name="countdown_tonight" translation_description="Shown inside the countdown ring when the event is tonight (zero days left)">คืนนี้</string>
+    <string name="countdown_shower_peak" translation_description="Countdown-widget event name; %1$s is a meteor shower name">จุดสูงสุดของ %1$s</string>
+    <string name="countdown_new_moon_peak" translation_description="Countdown-widget note: the shower peaks near new moon, so skies will be dark">จุดสูงสุดในคืนเดือนมืด</string>
+    <string name="countdown_full_moon" translation_description="Countdown-widget event name for the next full moon">วันเพ็ญ</string>
+    <string name="countdown_new_moon" translation_description="Countdown-widget event name for the next new moon">วันเดือนมืด</string>
+    <string name="tonight_widget_preview_row" translation_description="Representative highlight row shown in the widget picker\'s preview of the tonight widget">ดาวพฤหัสบดีอยู่ในตำแหน่งที่ดีตั้งแต่ 21:30 น.</string>
+    <!-- tm:omitted name="countdown_widget_preview_days" reason="identical_to_source" -->
+    <string name="countdown_widget_preview_name" translation_description="Representative event name shown in the widget picker\'s preview of the countdown widget">จุดสูงสุดของฝนดาวตก Perseids</string>
+
+    <!-- Sky-event notifications (D77). -->
+    <string name="settings_section_notifications" translation_description="Settings section header for notification preferences">การแจ้งเตือน</string>
+    <string name="settings_notifications_intro" translation_description="Introduction under the notifications settings header, stating how rarely the app notifies">
+    Sky Map จะแจ้งเตือนเฉพาะเหตุการณ์บนท้องฟ้าที่เกิดขึ้นได้ยาก สูงสุดวันละครั้งเท่านั้น ทุกอย่างจะถูกปิดไว้จนกว่าคุณจะเปิดใช้งาน
+    </string>
+    <string name="settings_shower_alerts" translation_description="Preference title: notify on the evening a meteor shower reaches its annual peak">จุดสูงสุดของฝนดาวตก</string>
+    <string name="settings_shower_alerts_summary" translation_description="Explanation of the meteor-shower notification preference">ประมาณโหลครั้งต่อปี ในเย็นวันที่ถึงจุดสูงสุด</string>
+    <string name="settings_tonight_digest" translation_description="Preference title: a single evening notification summarizing what\'s visible tonight">สรุปท้องฟ้าคืนนี้</string>
+    <string name="settings_tonight_digest_summary" translation_description="Explanation of the tonight-digest notification preference">สรุปหนึ่งครั้งหลังพระอาทิตย์ตกดิน ข้ามไปในคืนที่ไม่มีเหตุการณ์</string>
+    <string name="settings_notifications_blocked" translation_description="Warning row shown when the user enabled notifications in the app but blocked them at the system level">การแจ้งเตือนถูกบล็อกสำหรับ Sky Map</string>
+    <string name="settings_notifications_blocked_action" translation_description="Hint under the blocked-notifications warning; tapping opens the system settings page">แตะเพื่ออนุญาตในการตั้งค่าระบบ</string>
+    <string name="channel_showers_name" translation_description="Name of the meteor-shower notification channel, shown in the system\'s notification settings">จุดสูงสุดของฝนดาวตก</string>
+    <string name="channel_showers_description" translation_description="Description of the meteor-shower notification channel in the system\'s notification settings">ประมาณโหลครั้งต่อปี ในเย็นวันที่ถึงจุดสูงสุด</string>
+    <string name="channel_digest_name" translation_description="Name of the tonight-digest notification channel, shown in the system\'s notification settings">สรุปท้องฟ้าคืนนี้</string>
+    <string name="channel_digest_description" translation_description="Description of the tonight-digest notification channel in the system\'s notification settings">สรุปช่วงค่ำหนึ่งครั้ง ข้ามไปในคืนที่ไม่มีเหตุการณ์</string>
+    <string name="notif_shower_title" translation_description="Title of the meteor-shower notification; %1$s is the shower name">จุดสูงสุดของ %1$s คืนนี้</string>
+    <string name="notif_shower_direction" translation_description="Notification sentence telling the user where to look; %1$s is a compass point like NE">ดีที่สุดหลังเที่ยงคืน มองไปทาง %1$s</string>
+    <string name="notif_shower_dark_moon" translation_description="Notification sentence when the moon is dark during a meteor shower peak; %1$d is the expected meteors per hour">
+    ท้องฟ้ามืดไร้แสงจันทร์ — คาดว่าจะเห็นดาวตกสูงสุดถึง %1$d ดวงต่อชั่วโมงเมื่ออยู่ห่างจากแสงไฟในเมือง
+    </string>
+    <string name="notif_shower_bright_moon" translation_description="Notification sentence when a bright moon will interfere with a meteor shower; %1$d is the moon illumination percentage, %2$d the meteors per hour under ideal skies">
+    ดวงจันทร์สว่าง %1$d%% จะกลบแสงดาวตกที่จางกว่า — สูงสุดถึง %2$d ดวงต่อชั่วโมงภายใต้ท้องฟ้าในอุดมคติ
+    </string>
+    <string name="notif_digest_title" translation_description="Title of the tonight\'s-sky digest notification">น่าดูในคืนนี้</string>
+    <string name="notif_action_mute_showers" translation_description="Notification action button that opens the system toggle for the meteor-shower channel">ปิดเสียงฝนดาวตก</string>
+    <string name="time_travel_stopped">การเดินทางข้ามเวลาหยุดชั่วคราว</string>
+    <!-- Layers sheet: per-layer parameters (D87). -->
+    <string name="layer_param_disc_size">ขนาดดิสก์</string>
+    <string name="layer_param_disc_size_true">สัดส่วนจริง</string>
+    <string name="layer_param_disc_size_true_desc">
+    ขนาดจริงบนท้องฟ้าในทุกระดับการซูม ดาวเคราะห์จะเป็นเพียงจุดเล็กๆ จนกว่าคุณจะซูมเข้าไปใกล้
+    </string>
+    <string name="layer_param_disc_size_glyphs">สัญลักษณ์</string>
+    <string name="layer_param_disc_size_glyphs_desc">
+    ปรับขนาดตามขนาดจริงของวัตถุแต่ละชิ้น ไม่ใช่ตามขนาดที่มองเห็น สังเกตได้ง่ายในทุกระดับการซูม
+    </string>
+    <string name="layer_param_disc_size_auto">คงที่</string>
+    <string name="layer_param_disc_size_auto_desc">รักษากลุ่มขนาดคงพิกัดบนหน้าจอขณะซูม แล้วจึงเปลี่ยนเป็นขนาดจริง</string>
+    <string name="layer_param_expand">แสดงตัวเลือกสำหรับ %1$s</string>
 </resources>

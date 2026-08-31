@@ -645,12 +645,22 @@
    "size": "83 světelných let na průměr",
    "image_credit": "NASA/ESA/Hubble"
   },
+  "dso/m100": {
+   "description": "Messier 100 je velká spirální galaxie ve Vlasech Bereniky a jedna z nejjasnějších v Kupě galaxií Panna.",
+   "fun_fact": "Sedm supernov bylo pozorováno v M100, nejnovější v roce 2020 – jen málo galaxií předvedlo takovou podívanou!",
+   "distance": "55 milionů světelných let",
+   "size": "166 000 světelných let v průměru"
+  },
   "dso/m101": {
    "description": "Galaxie Větrnice je spirální galaxie viditelná zepředu v souhvězdí Velkého medvěda, jedna z největších známých spirálních galaxií.",
    "fun_fact": "Galaxie Větrnice obsahuje více než bilion hvězd a má asymetrické spirální ramena kvůli minulým interakcím galaxií!",
    "distance": "21 milionů světelných let",
    "size": "170 000 světelných let na průměr",
    "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m102": {
+   "description": "Messier 102 je velký nevyřešený záznam v Messierově katalogu – objekt zaznamenaný v roce 1781, který nikdy nebyl s jistotou identifikován.",
+   "fun_fact": "Messier nezveřejnil žádné souřadnice pro M102 a jeho kolega Méchain později zcela odvolal objev s tvrzením, že to byla jen M101 zaznamenaná dvakrát omylem! NASA ji identifikuje s Galaxií Vřeteno, NGC 5866."
   },
   "dso/m103": {
    "description": "M103 je malá, kompaktní otevřená hvězdokupa v Kasiopeji obsahující kolem 40 hvězd v těsné skupině snadno viditelné v dalekohledu. Nápadná dvojhvězda a červený obr poblíž středu jí dávají barevný vzhled v malých teleskopech, umístěné v bohatých polích Mléčné dráhy v Kasiopeji.",
@@ -665,6 +675,12 @@
    "size": "50 000 světelných let na průměr",
    "image_credit": "NASA/ESA/Hubble"
   },
+  "dso/m105": {
+   "description": "Messier 105 je eliptická galaxie v souhvězdí Lva, největší eliptická galaxie v Messierově katalogu mimo Kupu galaxií v Panně.",
+   "fun_fact": "M105 sdílí kolosální prstenec vodíkového plynu se svým sousedem NGC 3384, rozkládající se na zhruba 650 000 světelných let!",
+   "distance": "37 milionů světelných let",
+   "size": "67 000 světelných let v průměru"
+  },
   "dso/m106": {
    "description": "M106 je spirální galaxie v Honech loveckých s anomálními spirálními rameny způsobenými paprsky z její centrální černé díry.",
    "fun_fact": "M106 má v jádru vodní masery, což astronomům umožňuje přesně měřit její vzdálenost!",
@@ -677,6 +693,11 @@
    "fun_fact": "M107 byla poslední položka formálně přidaná do katalogu Messiera — objevuje se v korespondenci Pierra Méchaina, ale nebyla zahrnuta v původním vydání z roku 1781. Byla oficiálně přidána jako M107 v roce 1947 kanadskou astronomkou Helen Sawyer Hoggovou, která kodifikovala několik \"chybějících\" objektů, které Méchain pozoroval, ale Messier nikdy formálně nezaznamenal.",
    "distance": "20 900 světelných let",
    "size": "~61 světelných let na průměr"
+  },
+  "dso/m108": {
+   "description": "Messier 108 je spirální galaxie s příčkou v souhvězdí Velké medvědice, přezdívaná Galaxie Surfboard.",
+   "fun_fact": "M108 je k nám nakloněna téměř hranou, díky čemuž si vysloužila jméno Surfboard – a obsahuje kolem 290 kulových hvězdokup!",
+   "distance": "46 milionů světelných let"
   },
   "dso/m109": {
    "description": "M109 je spirální galaxie se sloupkem v Velkém medvědu, nejjasnější člen skupiny galaxií nesoucí její jméno.",
@@ -740,6 +761,12 @@
    "distance": "5 500 světelných let",
    "size": "15 světelných let na průměr",
    "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m18": {
+   "description": "Messier 18 je malá otevřená hvězdokupa mladých hvězd ve Střelci, známá také jako Hvězdokupa Černá labuť.",
+   "fun_fact": "M18 je jedním z mála Messierových objektů, které Hubbleův vesmírný dalekohled nikdy nevyfotografoval!",
+   "distance": "4 200 světelných let",
+   "size": "26 světelných let v průměru"
   },
   "dso/m19": {
    "description": "M19 je kompaktní, bohatý kulový hvězdokup v Hadonoši — jeden z nejbližších kulových hvězdokup k galaktickému středu. Jeho nejcharakterističtější vlastností je jeho výrazně zploštělý tvar: M19 je nejzploštělejší známý kulový hvězdokup s viditelným eliptickým obrysom i v malém dalekohledu.",
@@ -1018,12 +1045,35 @@
    "size": "1,3 světelného roku na průměr",
    "image_credit": "NASA/ESA/Hubble"
   },
+  "dso/m58": {
+   "description": "Messier 58 je spirální galaxie s příčkou v souhvězdí Panny a jeden z nejjasnějších členů Kupy Panny.",
+   "fun_fact": "V srdci M58 se nachází supermasivní černá díra o hmotnosti přibližně 70 milionů slunečních hmotností, obklopená těsným pásem nově vzniklých hvězd!",
+   "distance": "68 milionů světelných let",
+   "size": "133 000 světelných let v průměru"
+  },
+  "dso/m59": {
+   "description": "Messier 59 je eliptická galaxie v souhvězdí Panny, objevena v roce 1779 při hledání procházející komety.",
+   "fun_fact": "Jádro M59 se otáčí pozpátku ve srovnání se zbytkem galaxie a kolem ní se rojí asi 2 200 kulových hvězdokup!",
+   "distance": "50 milionů světelných let",
+   "mass": "270 milionů hmotností Slunce (centrální černá díra)"
+  },
   "dso/m6": {
    "description": "Motýlí hvězdokupa je otevřená hvězdokupa v Štírovi, pojmenovaná podle motýlího uspořádání jejích nejjasnějších hvězd.",
    "fun_fact": "M6 je stará přibližně 100 milionů let a obsahuje více než 300 hvězd, včetně oranžového obra BM Scorpii!",
    "distance": "1 600 světelných let",
    "size": "25 světelných let na průměr",
    "image_credit": "NOAO/AURA/NSF"
+  },
+  "dso/m60": {
+   "description": "Messier 60 je obří eliptická galaxie v souhvězdí Panny, třetí nejjasnější obří eliptická galaxie v Kupě galaxií v Panně.",
+   "fun_fact": "Centrální černá díra M60 váží asi 4,5 miliardy Sluncí – jedna z největších, jaké kdy byly nalezeny!",
+   "distance": "57 milionů světelných let"
+  },
+  "dso/m61": {
+   "description": "Messier 61 je spirální galaxie s příčkou v souhvězdí Panny a jedna z největších galaxií v Kupě Panny.",
+   "fun_fact": "V M61 bylo pozorováno osm supernov – jeden z nejvyšších počtů ze všech galaxií! Sám Messier si ji nejprve spletl s kometou.",
+   "distance": "52 milionů světelných let",
+   "size": "92 000 světelných let v průměru"
   },
   "dso/m62": {
    "description": "M62 je bohatá kulová hvězdokupa v Hadonoši — jedna z nejbližších kulovitých hvězdokup k galaktickému středu a výrazně asymetrická, s hvězdami hustěji seskupenými na jižní straně. Při magnitudě 6,6 je to krásný objekt pro dalekohled, ačkoli její nízká deklinace ji činí krátkodobým cílem pro severní pozorovatele.",
@@ -1095,12 +1145,28 @@
    "distance": "12 000 světelných let",
    "size": "~25 světelných let na průměr"
   },
+  "dso/m72": {
+   "description": "Messier 72 je slabá, vzdálená kulová hvězdokupa v souhvězdí Vodnáře, objevená Pierrem Méchainem v roce 1780.",
+   "fun_fact": "M72 obsahuje přibližně 168 000 hvězd o hmotnosti Slunce v kouli staré zhruba 9,5 miliardy let, včetně 43 proměnných hvězd!",
+   "distance": "55 000 světelných let"
+  },
+  "dso/m73": {
+   "description": "Messier 73 je malá skupina čtyř hvězd v souhvězdí Vodnáře, která se pouze jeví jako hvězdokupa.",
+   "fun_fact": "Astronomové se po desetiletí dohadovali o tom, zda M73 je skutečná hvězdokupa – v roce 2002 bylo rozhodnuto: čtyři hvězdy leží v divoce odlišných vzdálenostech a pouze se náhodou seřadily!",
+   "distance": "1 000 až 2 300 světelných let (jednotlivé hvězdy)"
+  },
   "dso/m74": {
    "description": "Galaxie Fantom je galaxie se spirální strukturou čelně orientovaná v souhvězdí Ryb, známá svou dokonalou velkoryse navrhovanou spirální strukturou.",
    "fun_fact": "M74 je přezdívána Fantomová galaxie kvůli své velmi nízké povrchové jasnosti, což ji činí obtížnou na pozorování!",
    "distance": "32 milionů světelných let",
    "size": "95 000 světelných let na průměr",
    "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m75": {
+   "description": "Messier 75 je vzdálená, bohatě koncentrovaná kulová hvězdokupa v souhvězdí Střelce.",
+   "fun_fact": "M75 je jednou z nejhustěji koncentrovaných kulových hvězdokup, které známe, a předpokládá se, že je pozůstatkem trpasličí galaxie, kterou Mléčná dráha pohltila už dávno!",
+   "distance": "68 000 světelných let",
+   "size": "134 světelných let v průměru"
   },
   "dso/m76": {
    "description": "Malá činka je planetární mlhovina v souhvězdí Persea s charakteristickým tvarem osmičky — menší příbuzná M27, Činky v souhvězdí Lišky. Přestože je nejslabší položkou v katalogu Messiera, odměňuje trpělivé pozorování v malých dalekohledech a vykazuje krásnou strukturu ve větších přístrojích se dvěma jasnějšími laloky obklopujícími slabší pás.",
@@ -1162,6 +1228,22 @@
    "size": "55 000 světelných let na průměr",
    "image_credit": "NASA/ESA/Hubble"
   },
+  "dso/m84": {
+   "description": "Messier 84 je obří eliptická galaxie v přeplněném srdci Kupy Panny.",
+   "fun_fact": "M84 vypouští dva proudy hmoty ze svého jádra, poháněny černou dírou o hmotnosti přibližně 1,5 miliardy slunečních hmotností!",
+   "distance": "55 milionů světelných let"
+  },
+  "dso/m85": {
+   "description": "Messier 85 je čočková galaxie na okraji Kupy Panny, ve Vlasech Bereniky.",
+   "fun_fact": "Zvlnění a obaly ve vnějších oblastech M85 jsou pozůstatky splynutí galaxií, k němuž došlo před 4 až 7 miliardami let!",
+   "distance": "60 milionů světelných let",
+   "size": "120 600 světelných let v průměru"
+  },
+  "dso/m86": {
+   "description": "Messier 86 je velká eliptická galaxie v Kupě galaxií v Panně, tvořící výrazný pár s nedalekou M84.",
+   "fun_fact": "M86 se k nám řítí rychlostí 244 km/s – nejrychlejší přiblížení ze všech Messierových objektů! Jeho průchod shlukem zanechává dlouhou stopu strženého horkého plynu.",
+   "distance": "52 milionů světelných let"
+  },
   "dso/m87": {
    "description": "M87 je nadřídící eliptická galaxie v Panně, jedna z nejhmotnějších galaxií v místním vesmíru.",
    "fun_fact": "Centrální černá díra M87 byla poprvé vyfotografována Teleskopem Event Horizon v roce 2019 - má 6,5 miliardy slunečních hmotností!",
@@ -1170,11 +1252,34 @@
    "mass": "2,4 bilionů hmotností Slunce",
    "image_credit": "NASA/ESA/Hubble"
   },
+  "dso/m88": {
+   "description": "Messier 88 je elegantní spirální galaxie v souhvězdí Vlasy Bereniky, jeden z patnácti Messierových objektů v kupě galaxií Panna.",
+   "fun_fact": "M88 se řítí k centru Kupy Panny a dorazí za 200 až 300 milionů let, přičemž její vnější plyn je strháván, jak padá!",
+   "distance": "59 milionů světelných let",
+   "size": "131 000 světelných let v průměru"
+  },
+  "dso/m89": {
+   "description": "Messier 89 je eliptická galaxie v Panně, objevená Charlesem Messierem v roce 1781.",
+   "fun_fact": "M89 může být téměř dokonalá koule – což je neobvyklé pro eliptickou galaxii, které jsou obvykle znatelně zploštělé!",
+   "distance": "50 milionů světelných let"
+  },
   "dso/m9": {
    "description": "M9 je kompaktní kulová hvězdokupa v Hadonoši — jedna z Messierových kulovitých hvězdokup nejvíce postižená absorpcí mezihvězdného prachu. Nachází se směrem k galaktickému bulge, kde hustý prach ji výrazně zeslabuje. Bez této obscurace by se M9 jevila téměř o jednu magnitudu jasnější a byla by viditelná pouhým okem.",
    "fun_fact": "M9 trpí více absorpcí mezihvězdného prachu než téměř jakýkoli jiný Messierův kulový hvězdokupa — přibližně 1,3 magnitudy zeslabení ve srovnání s čistou přímou viditelností. Dva menší kulové hvězdokupy (NGC 6342 a NGC 6356) se nacházejí v rozsahu přibližně 1° od M9, což z něj činí střed pozoruhodného seskupení tří kulových hvězdokup na malé části oblohy.",
    "distance": "25 800 světelných let",
    "size": "~70 světelných let na průměr"
+  },
+  "dso/m90": {
+   "description": "Messier 90 je velká spirální galaxie v Panně a učebnicový příklad „anemické“ galaxie.",
+   "fun_fact": "M90 přišla o svůj hvězdotvorný plyn v důsledku průletu Kupou galaxií v Panně, zanechávající za sebou ohony zářícího plynu dlouhé až 260 000 světelných let!",
+   "distance": "59 milionů světelných let",
+   "size": "132 000 světelných let v průměru"
+  },
+  "dso/m91": {
+   "description": "Messier 91 je spirální galaxie s příčkou v souhvězdí Vlasy Bereniky a nejslabší objekt v Messierově katalogu.",
+   "fun_fact": "M91 byl ztracen téměř 200 let! Messier zaznamenal jeho polohu pomocí špatné referenční galaxie a byl znovu identifikován až v roce 1969 amatérským astronomem.",
+   "distance": "63 milionů světelných let",
+   "size": "105 500 světelných let v průměru"
   },
   "dso/m92": {
    "description": "M92 je jasná kulová hvězdokupa v Herkulovi, často přehlížená kvůli její blízkosti k slavnější M13.",
@@ -1196,12 +1301,35 @@
    "size": "50 000 světelných let na průměr",
    "image_credit": "NASA/ESA/Hubble"
   },
+  "dso/m95": {
+   "description": "Messier 95 je spirální galaxie s příčkou ve Lvu, součást skupiny M96 spolu s M96 a M105.",
+   "fun_fact": "Prstenec intenzivní tvorby hvězd, široký asi 70 000 světelných let, obklopuje jádro M95 a v roce 2012 tam vzplanula supernova!",
+   "distance": "33 milionů světelných let",
+   "size": "80 000 světelných let v průměru"
+  },
+  "dso/m96": {
+   "description": "Messier 96 je spirální galaxie ve Lvu, nejjasnější člen skupiny galaxií M96.",
+   "fun_fact": "M96 má zhruba stejnou velikost a hmotnost jako naše Mléčná dráha, ale je nápadně nevyvážená – její prach a plyn jsou nerovnoměrně rozloženy v jejích ramenech!",
+   "distance": "31 milionů světelných let",
+   "size": "78 000 světelných let v průměru"
+  },
   "dso/m97": {
    "description": "Sova je planetární mlhovina v Velkém medvědu, pojmenovaná podle své podoby připomínající sovu se dvěma tmavými skvrnami.",
    "fun_fact": "Tmavé sovy oči v M97 jsou trojrozměrné dutiny v mlhovině, zarovnané s naší linií pohledu!",
    "distance": "2 030 světelných let",
    "size": "2 světelné roky na průměr",
    "image_credit": "Gemini Observatory/NOIRLab/NSF/AURA"
+  },
+  "dso/m98": {
+   "description": "Messier 98 je spirální galaxie ve Vlasech Bereniky, viditelná téměř z boku jako součást Kupy Panny.",
+   "fun_fact": "M98 je jednou ze vzácných galaxií pohybujících se k nám, nikoli od nás, přibližující se rychlostí asi 140 km/s!",
+   "distance": "44 milionů světelných let"
+  },
+  "dso/m99": {
+   "description": "Messier 99 je spirální galaxie velkého designu ve Vlasech Bereniky, vykazující jasná, rozmáchlá spirální ramena.",
+   "fun_fact": "M99 patřila mezi vůbec první objekty rozpoznané jako spirální, načrtnuté Lordem Rossem v roce 1846 – a tvoří hvězdy třikrát rychleji než podobné galaxie!",
+   "distance": "45 milionů světelných let",
+   "size": "98 000 světelných let v průměru"
   },
   "dso/n47_tucanae": {
    "description": "47 Tucanae (NGC 104) je druhý nejjasnější kulový hvězdokupa na obloze, hustá koule přibližně jednoho milionu starých hvězd obíhajících Mléčnou dráhu v souhvězdí Tukána. Ve vzdálenosti asi 14 500 světelných let se jeví pouhému oku jako mlhavá hvězda čtvrté magnitudy, ale dalekohled rozlišuje její stlačené jádro v mimořádný roj zlatých a modrobílých sluncí. Její hvězdy vznikly před přibližně 13 miliardami let, což činí hvězdokupu téměř stejně starou jako samotný vesmír.",
@@ -1313,8 +1441,9 @@
    "description": "Deimos je menší a vnější ze dvou Marsových měsíců s hladkým, prachem pokrytým povrchem, který mu dává kulatější vzhled než Fobos. Stejně jako jeho společník se předpokládá, že jde o zachycený asteroid z vnějšího pásu.",
    "fun_fact": "Deimos je tak malý a vzdálený, že z povrchu Marsu vypadá jako pouhá jasná hvězda a pomalu se pohybuje po noční obloze přibližně 30 hodin.",
    "distance": "23 460 km od Marsu",
+   "size": "15 × 12 × 11 km",
    "image_credit": "NASA/JPL-Caltech/University of Arizona",
-   "search_subtext": "Moon of Mars"
+   "search_subtext": "Měsíc Marsu"
   },
   "moon/dione": {
    "description": "Dione je lednatý měsíc Saturnu s hustě kráterizovanou přední stranou a zadní hemisférou protkánou jasnými ledovými srázy — zlomovými liniemi, kde staré tektonické síly odhalily čerstvý led z hloubky. Gravitační data ze sondy Cassini naznačují podpovrchový kapalný oceán pod kůrou.",
@@ -1368,8 +1497,9 @@
    "description": "Phobos je větší a vnitřnější ze dvou Marsových měsíců, obíhající blíže své planetě než kterýkoli jiný měsíc ve sluneční soustavě. Je to nepravidelně tvarované těleso s hlubokými drážkami a krátery, které se předpokládá, že je zachyceným asteroidem.",
    "fun_fact": "Fobos obíhá Mars tak rychle, že vychází na západě a zapadá na východě — a pomalu se spirálovitě přibližuje, přičemž je určen buď k pádu na Mars, nebo k rozpadu na prstenec za přibližně 50 milionů let.",
    "distance": "9 376 km od Marsu",
+   "size": "27 × 22 × 18 km",
    "image_credit": "NASA/JPL-Caltech/University of Arizona",
-   "search_subtext": "Moon of Mars"
+   "search_subtext": "Měsíc Marsu"
   },
   "moon/rhea": {
    "description": "Rhea je druhý největší měsíc Saturnu a silně kráterovaný svět ledu a horniny. Její bledý, starověký povrch uchovává některé z nejčistších impaktních kráterů sluneční soustavy, spolu s jasnými ledovými útesy, kde sesuvy půdy odhalily čerstvý materiál z hloubky.",
@@ -1424,6 +1554,7 @@
    "fun_fact": "Jupiter má nejméně 95 známých měsíců! Jeho největší měsíc Ganymedes je větší než planeta Merkur.",
    "distance": "778 milionů km (průměr)",
    "size": "139 820 km průměr",
+   "mass": "1,898 × 10²⁷ kg",
    "image_credit": "NASA/ESA/Hubble"
   },
   "planet/mars": {
@@ -1431,6 +1562,7 @@
    "fun_fact": "Mars má největší vulkán v sluneční soustavě: Olympus Mons, který je přibližně 2,5krát vyšší než Mount Everest!",
    "distance": "228 milionů km (průměr)",
    "size": "6 779 km průměr",
+   "mass": "6,39 × 10²³ kg",
    "image_credit": "NASA/ESA/Hubble"
   },
   "planet/mercury": {
@@ -1438,6 +1570,7 @@
    "fun_fact": "Přestože je Merkur nejblíže Slunci, není to nejteplejší planeta. Venuše je teplejší kvůli své husté atmosféře!",
    "distance": "58 milionů km (od Slunce)",
    "size": "4 880 km průměr",
+   "mass": "3,3 × 10²³ kg",
    "image_credit": "NASA/GSFC"
   },
   "planet/moon": {
@@ -1445,6 +1578,7 @@
    "fun_fact": "Měsíc se pomalu vzdaluje od Země rychlostí přibližně 3,8 cm za rok. Před miliardami let byl Zemi mnohem blíže!",
    "distance": "384 400 km",
    "size": "3 474 km průměr",
+   "mass": "7,35 × 10²² kg",
    "image_credit": "NASA/GSFC/ASU"
   },
   "planet/neptune": {
@@ -1452,6 +1586,7 @@
    "fun_fact": "Neptun byl objeven pomocí matematiky! Vědci předpověděli jeho polohu dříve, než ho kdokoli viděl dalekohledem.",
    "distance": "4,5 miliardy km (průměr)",
    "size": "49 244 km průměr",
+   "mass": "1,024 × 10²⁶ kg",
    "image_credit": "NASA/ESA/Hubble"
   },
   "planet/pluto": {
@@ -1459,6 +1594,7 @@
    "fun_fact": "Pluto má ledovec ve tvaru srdce vytvořený z dusíkového ledu, viditelný na snímcích z mise NASA New Horizons!=",
    "distance": "5,9 miliardy km (průměr)",
    "size": "2 377 km průměr",
+   "mass": "1,3 × 10²² kg",
    "image_credit": "NASA/JHUAPL/SwRI"
   },
   "planet/saturn": {
@@ -1466,6 +1602,7 @@
    "fun_fact": "Saturn je tak lehký, že by se vznášel ve vodě! Jeho hustota je menší než hustota vody, ačkoli neexistuje vana dostatečně velká na to, aby se to otestovalo.",
    "distance": "1,4 miliardy km (průměr)",
    "size": "116 460 km průměr",
+   "mass": "5,68 × 10²⁶ kg",
    "image_credit": "NASA/ESA/Hubble"
   },
   "planet/sun": {
@@ -1482,6 +1619,7 @@
    "fun_fact": "Uran se otáčí na boku se sklonem 98 stupňů, pravděpodobně kvůli srážce se zemí velkým objektem v dávné minulosti!",
    "distance": "2,9 miliardy km (průměr)",
    "size": "50 724 km průměr",
+   "mass": "8,68 × 10²⁵ kg",
    "image_credit": "NASA/ESA/Hubble"
   },
   "planet/venus": {
@@ -1489,6 +1627,7 @@
    "fun_fact": "Den na Venuši je delší než její rok! Trvá 243 zemských dní, než se jednou otočí, ale pouze 225 dní, než obíhne Slunce.",
    "distance": "108 milionů km (průměr)",
    "size": "12 104 km průměr",
+   "mass": "4,87 × 10²⁴ kg",
    "image_credit": "NASA/JPL"
   },
   "shower/aquariids": {
@@ -1819,6 +1958,11 @@
    "spectral_class": "K0 III",
    "image_credit": "ESO/Digitized Sky Survey 2"
   },
+  "star/e_lyrae": {
+   "description": "Epsilon Lyrae je vícenásobná hvězdná soustava v Lyře, známá mezi pozorovateli jako „Dvojitá dvojhvězda“.",
+   "fun_fact": "Ostré oči dokážou rozdělit Epsilon Lyrae na dvě hvězdy – a dalekohled každou z nich rozdělí znovu na dvě! Celkem obsahuje nejméně pět hvězd.",
+   "distance": "160 světelných let"
+  },
   "star/enif": {
    "description": "Enif je nejjasnější hvězda v Pegasu a označuje nos létajícího koně v souhvězdí.",
    "fun_fact": "V roce 1972 zažila hvězda Enif dramatický výbuch, který krátce zvýšil její jas pětkrát!==/TRANSLATION ITEM==",
@@ -1872,6 +2016,110 @@
    "mass": "~4,6 slunečních hmotností",
    "spectral_class": "K0II-III",
    "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/j052512+062100": {
+   "description": "Bellatrix označuje levé rameno Oriona (Lovce). Její jméno v latině znamená „ženská bojovnice“.",
+   "fun_fact": "Bellatrix je stará jen asi 28 milionů let a svůj vodík spálí za dalších 7 milionů let – krátký život pro hvězdu!",
+   "distance": "250 světelných let",
+   "size": "6,2 slunečních poloměrů",
+   "mass": "8,4 slunečních hmotností",
+   "spectral_class": "B2 III"
+  },
+  "star/j054048-015624": {
+   "description": "Alnitak je nejvýchodnější hvězda Orionova pásu, ležící vedle mlhovin Plamínek a Koňská hlava.",
+   "fun_fact": "Alnitak je nejjasnější hvězda třídy O na celé noční obloze! Přibližně za milion let nabobtná tak, že přesáhne oběžnou dráhu Jupitera, a exploduje jako supernova.",
+   "distance": "1 260 světelných let",
+   "size": "20 slunečních poloměrů",
+   "mass": "33 slunečních hmotností",
+   "spectral_class": "O9.5 Iab"
+  },
+  "star/j055924+445700": {
+   "description": "Menkalinan je druhá nejjasnější hvězda v souhvězdí Vozky (Vozataje). Jeho jméno znamená v arabštině „rameno držitele otěží“.",
+   "fun_fact": "Menkalinan jsou ve skutečnosti dvě téměř identické hvězdy, které se vzájemně zatmívají každých 47,5 hodiny – a přibližně za milion let se stane nejjasnější hvězdou na naší noční obloze!",
+   "distance": "79 světelných let",
+   "size": "2,8 slunečních poloměrů",
+   "mass": "2,4 slunečních hmotností",
+   "spectral_class": "A1m IV + A1m IV"
+  },
+  "star/j062248-175736": {
+   "description": "Mirzam (Beta Canis Majoris) vychází těsně před Siriem, což mu v arabštině vyneslo jméno znamenající „Ohlašovatel“.",
+   "fun_fact": "Přibližně před čtyřmi miliony let byla Mirzam nejjasnější hvězdou na obloze, zářící s magnitudou -3,65 – mnohem jasnější než Sírius dnes!",
+   "distance": "490 světelných let",
+   "size": "8,4 slunečních poloměrů",
+   "mass": "13 slunečních hmotností",
+   "spectral_class": "B1 II-III"
+  },
+  "star/j070824-262324": {
+   "description": "Wezen je žluto-bílý veleoobr v souhvězdí Velkého psa. Jeho jméno pochází z arabštiny a znamená 'váha'.",
+   "fun_fact": "Kdyby Wezen seděl tak blízko k nám jako Sirius, zářil by stejně jasně jako poloviční Měsíc!",
+   "distance": "1 600 světelných let",
+   "size": "188 slunečních poloměrů",
+   "mass": "14 slunečních hmotností",
+   "spectral_class": "F8 Ia"
+  },
+  "star/j082248-593036": {
+   "description": "Avior (Epsilon Carinae) je jasná dvojhvězda v souhvězdí Lodního kýlu a jedna ze čtyř hvězd Nepravého kříže.",
+   "fun_fact": "Nepravý kříž je tak často zaměňován za Jižní kříž, že to způsobilo skutečné navigační chyby! Jméno Avior bylo vymyšleno britskými tvůrci almanachů ve 30. letech.",
+   "distance": "610 světelných let",
+   "size": "151 slunečních poloměrů",
+   "mass": "10,5 slunečních hmotností",
+   "spectral_class": "K3 III + B2 Vp"
+  },
+  "star/j091312-694312": {
+   "description": "Miaplacidus je druhá nejjasnější hvězda v souhvězdí Kýlu a označuje jeden z rohů asterismu Diamantový kříž.",
+   "fun_fact": "Miaplacidus nabobtnal do obra poté, co spotřeboval vodík ve svém jádru, přesto se stále otáčí svižnou rychlostí 146 km/s!",
+   "distance": "113 světelných let",
+   "size": "5,8 slunečních poloměrů",
+   "mass": "3,9 slunečních hmotností",
+   "spectral_class": "A1 III"
+  },
+  "star/j123112-570636": {
+   "description": "Gacrux (Gamma Crucis) je nejsevernější hvězdou Jižního kříže a nejbližším červeným obrem k Zemi.",
+   "fun_fact": "Gacrux je nám nejbližší červený obr typu M a jeho jméno je jednoduše navigační zkratkou pro „Gamma Crucis“, vytvořenou ve 40. letech 20. století!",
+   "distance": "89 světelných let",
+   "size": "73 slunečních poloměrů",
+   "mass": "1,5 slunečních hmotností",
+   "spectral_class": "M3.5 III"
+  },
+  "star/j124800-594124": {
+   "description": "Mimosa (Beta Crucis) je druhá nejjasnější hvězda v Jižním kříži a jedna z nejžhavějších hvězd viditelných pouhým okem.",
+   "fun_fact": "Mimosa je pulzující proměnná hvězda typu Beta Cephei – bobtná a smršťuje se ve třech překrývajících se rytmech, z nichž každý trvá jen asi čtyři hodiny!",
+   "distance": "280 světelných let",
+   "size": "8 slunečních poloměrů",
+   "mass": "14,5 slunečních hmotností",
+   "spectral_class": "B0.5 III"
+  },
+  "star/j143936-605024": {
+   "description": "Toliman (Alfa Centauri B) je oranžový společník v nejbližším hvězdném systému ke Slunci, obíhající jasnější Rigil Kentaurus.",
+   "fun_fact": "Toliman získal své oficiální jméno teprve v roce 2018. Je o něco menší a chladnější než Slunce a společně se svými dvěma sourozenci tvoří naše nejbližší hvězdné sousedy!",
+   "distance": "4,34 světelných let",
+   "size": "0,86 slunečních poloměrů",
+   "mass": "0,91 slunečních hmotností",
+   "spectral_class": "K1 V"
+  },
+  "star/j164836-690148": {
+   "description": "Atria je nejjasnější hvězda Triangulum Australe (Jižního trojúhelníku), oranžový obr mnohem větší než Slunce.",
+   "fun_fact": "Atria je 139krát větší než průměr Slunce – kdyby byla umístěna do středu Sluneční soustavy, téměř by dosáhla oběžné dráhy Venuše!",
+   "distance": "391 světelných let",
+   "size": "139 slunečních poloměrů",
+   "mass": "6,4 slunečních hmotností",
+   "spectral_class": "K2 Ib-IIa"
+  },
+  "star/j173712-430000": {
+   "description": "Sargas je jasný obr v ocase souhvězdí Štíra (Štír), nesoucí tradiční jméno sumerského původu.",
+   "fun_fact": "Sargas se otáčí tak rychle, že se vybouluje – je o třetinu širší na rovníku než od pólu k pólu a možná vznikl spojením dvou hvězd!",
+   "distance": "329 světelných let",
+   "size": "35 slunečních poloměrů",
+   "mass": "3,1 slunečních hmotností",
+   "spectral_class": "F1 III"
+  },
+  "star/j202548-564348": {
+   "description": "Peacock je nejjasnější hvězda v souhvězdí Páva (Páv), horká modrobílá hvězda daleké jižní oblohy.",
+   "fun_fact": "Hvězda Peacock byla pojmenována ve 30. letech 20. století, protože RAF trvala na tom, aby každá hvězda v jejím novém leteckém almanachu měla jméno – a tato žádné neměla!",
+   "distance": "179 světelných let",
+   "size": "4,8 slunečních poloměrů",
+   "mass": "5,9 slunečních hmotností",
+   "spectral_class": "B3 V"
   },
   "star/kaus_australis": {
    "description": "Kaus Australis je nejjasnější hvězda v souhvězdí Střelce. Její jméno znamená \"jižní luk\" v kombinaci arabštiny a latiny.",
@@ -1935,6 +2183,12 @@
    "mass": "~8,5 slunečních hmotností",
    "spectral_class": "F5Ib",
    "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/n25": {
+   "description": "R Coronae Borealis je vzácný žlutý veleobr v Severní koruně a prototyp třídy proměnných hvězd pojmenované po ní.",
+   "fun_fact": "R Coronae Borealis je někdy nazývána „reverzní nova“ – namísto vzplanutí nepředvídatelně slábne až o 9 magnitud, když vypouští oblaky uhlíkových sazí, které ji zakrývají!",
+   "distance": "4 560 světelných let",
+   "spectral_class": "G0Iep"
   },
   "star/nunki": {
    "description": "Nunki je druhá nejjasnější hvězda v Střelci a nejstarší název hvězdy stále v běžném použití.",
@@ -2094,6 +2348,7 @@
    "fun_fact": "Vindemiatrix dostala své jméno proto, že její heliakální východ (první vzhled v úsvitu) kdysi splynul se sezónou sklizně hroznů v Středomoří — byla to hvězda vinařů!",
    "distance": "109 světelných let",
    "size": "11 slunečních poloměrů",
+   "mass": "2,6 slunečních hmotností",
    "spectral_class": "G8III",
    "image_credit": "ESO/Digitized Sky Survey 2"
   }

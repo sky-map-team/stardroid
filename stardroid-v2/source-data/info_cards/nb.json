@@ -645,12 +645,22 @@
    "size": "83 lysår på tvers",
    "image_credit": "NASA/ESA/Hubble"
   },
+  "dso/m100": {
+   "description": "Messier 100 er en spiralgalakse av typen 'grand design' i Berenikes hår og en av de lyseste i Virgo-hopen.",
+   "fun_fact": "Syv supernovaer er blitt observert i M100, den siste i 2020 – få galakser har bydd på et slikt skue!",
+   "distance": "55 millioner lysår",
+   "size": "166 000 lysår i diameter"
+  },
   "dso/m101": {
    "description": "Pinwheel-galaksen er en spiralgalakse sett forfra i Ursa Major, en av de største kjente spiralgalaksene.",
    "fun_fact": "Pinwheel-galaksen inneholder over en billion stjerner og har asymmetriske spiralarmer på grunn av tidligere galaksekolleksjoner!",
    "distance": "21 millioner lysår",
    "size": "170 000 lysår på tvers",
    "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m102": {
+   "description": "Messier 102 er den store uløste oppføringen i Messiers katalog - et objekt registrert i 1781 som aldri har blitt identifisert med sikkerhet.",
+   "fun_fact": "Messier publiserte ingen koordinater for M102, og hans kollega Mechain trakk senere hele oppdagelsen tilbake, og hevdet at det bare var M101 registrert to ganger ved en feil! NASA identifiserer den med Spindelgalaksen, NGC 5866."
   },
   "dso/m103": {
    "description": "M103 er en liten, kompakt åpen stjernehop i Kassiopeia, som inneholder rundt 40 stjerner i en tett gruppe som lett ses med kikkerter. En slående dobbeltstjerne og en rød kjempe nær sentrum gir den et fargerikt utseende i små teleskoper, plassert innenfor de rike Melkeveien-stjernefeltene i Kassiopeia.",
@@ -665,6 +675,12 @@
    "size": "50 000 lysår på tvers",
    "image_credit": "NASA/ESA/Hubble"
   },
+  "dso/m105": {
+   "description": "Messier 105 er en elliptisk galakse i Løven, den største elliptiske i Messier-katalogen utenfor Virgo-hopen.",
+   "fun_fact": "M105 deler en kolossal ring av hydrogengass med sin nabo NGC 3384, som strekker seg over omtrent 650 000 lysår!",
+   "distance": "37 millioner lysår",
+   "size": "67 000 lysår i diameter"
+  },
   "dso/m106": {
    "description": "M106 er en spiralgalakse i Canes Venatici med unormale spiralarmer forårsaket av stråler fra dens sentrale sorte hull.",
    "fun_fact": "M106 har vannmasere i kjernen sin, som gjør det mulig for astronomer å måle avstanden nøyaktig!",
@@ -677,6 +693,11 @@
    "fun_fact": "M107 var den siste oppføringen som formelt ble lagt til Messier-katalogen — den vises i Pierre Méchains korrespondanse, men var ikke inkludert i originalutgaven fra 1781. Den ble offisielt lagt til som M107 i 1947 av den kanadiske astronomen Helen Sawyer Hogg, som kodifiserte flere \"manglende\" objekter som Méchain hadde observert, men som Messier aldri formelt registrerte.",
    "distance": "20 900 lysår",
    "size": "~61 lysår på tvers"
+  },
+  "dso/m108": {
+   "description": "Messier 108 er en stavspiralgalakse i Store bjørn, kallenavnet Surfbrettgalaksen.",
+   "fun_fact": "M108 er nesten kantstilt mot oss, som er grunnen til at den fikk navnet Surfboard – og den inneholder rundt 290 kulehoper!",
+   "distance": "46 millioner lysår"
   },
   "dso/m109": {
    "description": "M109 er en stangspiral-galakse i Ursa Major, det lyseste medlemmet av en galaksegruppe som bærer dens navn.",
@@ -740,6 +761,12 @@
    "distance": "5 500 lysår",
    "size": "15 lysår på tvers",
    "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m18": {
+   "description": "Messier 18 er en liten åpen stjernehop av unge stjerner i Skytten, også kjent som Den svarte svanehopen.",
+   "fun_fact": "M18 er et av de svært få Messier-objektene Hubble-romteleskopet aldri har fotografert!",
+   "distance": "4 200 lysår",
+   "size": "26 lysår i diameter"
   },
   "dso/m19": {
    "description": "M19 er en kompakt, rik kulegropsamling i Ophiuchus — en av de nærmeste kulegropsamlingene til galaksens sentrum. Dens mest karakteristiske trekk er dens merkbart oblate form: M19 er den mest flattede kulegropsamlingen som er kjent, med en synlig elliptisk omriss selv i et lite teleskop.",
@@ -1018,12 +1045,35 @@
    "size": "1,3 lysår på tvers",
    "image_credit": "NASA/ESA/Hubble"
   },
+  "dso/m58": {
+   "description": "Messier 58 er en stavspiralgalakse i Jomfruen og et av de lyseste medlemmene av Jomfruklusteret.",
+   "fun_fact": "Et supermassivt sort hull på rundt 70 millioner solmasser ligger i hjertet av M58, omgitt av et tett bånd av nyfødte stjerner!",
+   "distance": "68 millioner lysår",
+   "size": "133 000 lysår i diameter"
+  },
+  "dso/m59": {
+   "description": "Messier 59 er en elliptisk galakse i Jomfruen, oppdaget i 1779 under letingen etter en passerende komet.",
+   "fun_fact": "M59s kjerne spinner bakover sammenlignet med resten av galaksen, og rundt 2200 kulehoper svermer rundt den!",
+   "distance": "50 millioner lysår",
+   "mass": "270 millioner solmasser (sentralt sort hull)"
+  },
   "dso/m6": {
    "description": "Butterfly Cluster er en åpen stjernehop i Skorpionen, oppkalt etter sommerfuglliknende arrangement av dens lyseste stjerner.",
    "fun_fact": "M6 er omtrent 100 millioner år gammel og inneholder over 300 stjerner, inkludert den oransje kjempen BM Scorpii!",
    "distance": "1 600 lysår",
    "size": "25 lysår på tvers",
    "image_credit": "NOAO/AURA/NSF"
+  },
+  "dso/m60": {
+   "description": "Messier 60 er en gigantisk elliptisk galakse i Jomfruen, den tredje-lyseste gigantiske elliptiske i Virgohopen.",
+   "fun_fact": "M60s sentrale sorte hull veier omtrent 4,5 milliarder soler – et av de største som noensinne er funnet!",
+   "distance": "57 millioner lysår"
+  },
+  "dso/m61": {
+   "description": "Messier 61 er en stavspiralgalakse i Jomfruen og en av de største galaksene i Jomfruklusteret.",
+   "fun_fact": "Åtte supernovaer har blitt oppdaget i M61 – et av de høyeste antallene i noen galakse! Messier selv forvekslet den først med en komet.",
+   "distance": "52 millioner lysår",
+   "size": "92 000 lysår i diameter"
   },
   "dso/m62": {
    "description": "M62 er en rik kuleklynge i Ophiuchus — en av de nærmeste kuklyngene til galaksens sentrum og merkbart asymmetrisk, med stjerner pakket tettere på den sørlige siden. Med størrelse 6,6 er det et fint objekt for kikert, selv om dens lave deklinasjon gjør det til et kortsesongmål for nordlige observatører.",
@@ -1095,12 +1145,28 @@
    "distance": "12 000 lysår",
    "size": "~25 lysår på tvers"
   },
+  "dso/m72": {
+   "description": "Messier 72 er en svak, fjern kulehop i Vannmannen, oppdaget av Pierre Mechain i 1780.",
+   "fun_fact": "M72 pakker omtrent 168 000 solmasser med stjerner inn i en kule som er rundt 9,5 milliarder år gammel, inkludert 43 variable stjerner!",
+   "distance": "55 000 lysår"
+  },
+  "dso/m73": {
+   "description": "Messier 73 er en liten gruppe på fire stjerner i Vannmannen som bare ser ut til å være en hop.",
+   "fun_fact": "Astronomer diskuterte i tiår om M73 var en ekte stjernehop – i 2002 ble det avgjort: de fire stjernene ligger på vidt forskjellige avstander og er bare tilfeldig på linje!",
+   "distance": "1 000 til 2 300 lysår (de individuelle stjernene)"
+  },
   "dso/m74": {
    "description": "Phantom Galaxy er en spiralgalakse sett forfra i Fiskene, kjent for sin perfekte grand-design spiralstruktur.",
    "fun_fact": "M74 har kallenavnet Phantom Galaxy på grunn av sin svært lave overflatelysstyrke, noe som gjør det utfordrende å observere!",
    "distance": "32 millioner lysår",
    "size": "95 000 lysår på tvers",
    "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m75": {
+   "description": "Messier 75 er en fjern, rikt konsentrert kulehop i Skytten.",
+   "fun_fact": "M75 er en av de mest tettpakkede kulehopene som er kjent, og antas å være rester fra en dverggalakse som Melkeveien slukte for lenge siden!",
+   "distance": "68 000 lysår",
+   "size": "134 lysår i diameter"
   },
   "dso/m76": {
    "description": "Little Dumbbell er en planetarisk tåke i Perseus med en karakteristisk åttetallsform — en mindre fetter av M27, Dumbbell-tåken i Vulpecula. Selv om det er det svakeste objektet i Messier-katalogen, belønner det tålmodig observasjon med små teleskoper og viser vakker struktur i større instrumenter, med to lysere lapper som flankerer en svakere midje.",
@@ -1162,6 +1228,22 @@
    "size": "55 000 lysår på tvers",
    "image_credit": "NASA/ESA/Hubble"
   },
+  "dso/m84": {
+   "description": "Messier 84 er en gigantisk elliptisk galakse i det overfylte hjertet av Jomfruklusteret.",
+   "fun_fact": "M84 sender ut to materiestråler fra kjernen sin, drevet av et sort hull på omtrent 1,5 milliarder solmasser!",
+   "distance": "55 millioner lysår"
+  },
+  "dso/m85": {
+   "description": "Messier 85 er en linseformet galakse i utkanten av Jomfruklusteret, i Berenikes hår.",
+   "fun_fact": "Ringmønstre og skall i M85s ytre områder er restene etter en galaksesammenslåing for 4 til 7 milliarder år siden!",
+   "distance": "60 millioner lysår",
+   "size": "120 600 lysår i diameter"
+  },
+  "dso/m86": {
+   "description": "Messier 86 er en stor elliptisk galakse i Jomfruklusteret, som danner et slående par med nærliggende M84.",
+   "fun_fact": "M86 suser mot oss i 244 km/s – den raskeste tilnærmingen av noe Messier-objekt! Dens passasje gjennom hopen etterlater et langt spor av strippet varm gass.",
+   "distance": "52 millioner lysår"
+  },
   "dso/m87": {
    "description": "M87 er en supergiganteliptisk galakse i Virgo, en av de mest massive galaksene i det lokale universet.",
    "fun_fact": "M87's sentrale sorte hull var det første som noensinne ble avbildet av Event Horizon Telescope i 2019 - det har 6,5 milliarder solmasser!",
@@ -1170,11 +1252,34 @@
    "mass": "2,4 billioner solmasser",
    "image_credit": "NASA/ESA/Hubble"
   },
+  "dso/m88": {
+   "description": "Messier 88 er en elegant spiralgalakse i Coma Berenices, et av femten Messier-objekter i Virgohopen.",
+   "fun_fact": "M88 stuper mot sentrum av Jomfruklusteret og vil ankomme om 200 til 300 millioner år, mens dens ytre gass strippes bort idet den faller!",
+   "distance": "59 millioner lysår",
+   "size": "131 000 lysår i diameter"
+  },
+  "dso/m89": {
+   "description": "Messier 89 er en elliptisk galakse i Jomfruen, oppdaget av Charles Messier i 1781.",
+   "fun_fact": "M89 kan være nesten en perfekt sfære – uvanlig for en elliptisk galakse, som vanligvis er merkbart flattrykte!",
+   "distance": "50 millioner lysår"
+  },
   "dso/m9": {
    "description": "M9 er en kompakt kuleglobul i Slangen — en av Messiers kuleglobuler som er mest påvirket av absorpsjon fra interstellart støv. Den ligger mot galaksens sentrale oppsvulling, hvor tykt støv gjør den betydelig svakere. Uten denne mørkningen ville M9 virke nesten en størrelsesklasse lysere og være synlig for det blotte øye.",
    "fun_fact": "M9 lider mer fra interstellart støvabsorpsjon enn nesten alle andre Messier-kulegalakser — omtrent 1,3 magnityder dimming sammenlignet med en klar siktlinje. To mindre kulegalakser (NGC 6342 og NGC 6356) ligger innenfor omtrent 1° fra M9, noe som gjør den til sentrum av en bemerkelsesverdig gruppering av tre kulegalakser på et lite område av himmelen.",
    "distance": "25 800 lysår",
    "size": "~70 lysår på tvers"
+  },
+  "dso/m90": {
+   "description": "Messier 90 er en stor spiralgalakse i Jomfruen, og lærebokeksempelet på en «anemisk» galakse.",
+   "fun_fact": "M90 har fått sin stjernedannende gass strippet bort under sin ferd gjennom Virgoballen, og etterlater haler av glødende gass på opptil 260 000 lysår lange!",
+   "distance": "59 millioner lysår",
+   "size": "132 000 lysår i diameter"
+  },
+  "dso/m91": {
+   "description": "Messier 91 er en stavspiralgalakse i Berenikes hår og det svakeste objektet i Messier-katalogen.",
+   "fun_fact": "M91 var tapt i nesten 200 år! Messier registrerte posisjonen dens ved å bruke feil referansegalakse, og den ble først gjenidentifisert i 1969 av en amatørastronom.",
+   "distance": "63 millioner lysår",
+   "size": "105 500 lysår i diameter"
   },
   "dso/m92": {
    "description": "M92 er en lysende kulesternhop i Herkules, ofte oversett på grunn av sin nærhet til den mer kjente M13.",
@@ -1196,12 +1301,35 @@
    "size": "50 000 lysår på tvers",
    "image_credit": "NASA/ESA/Hubble"
   },
+  "dso/m95": {
+   "description": "Messier 95 er en stavspiralgalakse i Løven, en del av M96-gruppen sammen med M96 og M105.",
+   "fun_fact": "En ring med voldsom stjernedannelse, omtrent 70 000 lysårs bred, omkranser M95s kjerne, og en supernova eksploderte der i 2012!",
+   "distance": "33 millioner lysår",
+   "size": "80 000 lysår i diameter"
+  },
+  "dso/m96": {
+   "description": "Messier 96 er en spiralgalakse i Løven, det lyseste medlemmet av M96-galaksegruppen.",
+   "fun_fact": "M96 er omtrent like stor og massiv som vår egen Melkevei, men påfallende skjev – dens støv og gass er ujevnt fordelt i armene!",
+   "distance": "31 millioner lysår",
+   "size": "78 000 lysår i diameter"
+  },
   "dso/m97": {
    "description": "Owl-tåken er en planetarisk tåke i Ursa Major, oppkalt etter sitt ugle-lignende utseende med to mørke flekker.",
    "fun_fact": "De mørke ugleøynene i M97 er tredimensjonale hulrom i nebulosen, justert med vår siktlinje!",
    "distance": "2 030 lysår",
    "size": "2 lysår på tvers",
    "image_credit": "Gemini Observatory/NOIRLab/NSF/AURA"
+  },
+  "dso/m98": {
+   "description": "Messier 98 er en spiralgalakse i Berenikes hår, sett nesten kant-på som en del av Jomfruklusteret.",
+   "fun_fact": "M98 er en av de sjeldne galaksene som beveger seg mot oss i stedet for bort, med en hastighet på omtrent 140 km/s!",
+   "distance": "44 millioner lysår"
+  },
+  "dso/m99": {
+   "description": "Messier 99 er en spiralgalakse av typen «grand design» i Berenikes hår, som viser tydelige, feiende spiralarmer.",
+   "fun_fact": "M99 var blant de aller første objektene som ble anerkjent som spiralformede, skissert av Lord Rosse i 1846 – og den danner stjerner tre ganger raskere enn lignende galakser!",
+   "distance": "45 millioner lysår",
+   "size": "98 000 lysår i diameter"
   },
   "dso/n47_tucanae": {
    "description": "47 Tucanae (NGC 104) er den nest-lyseste globulære stjernehopen på himmelen, en tett ball med omtrent en million gamle stjerner som kretser rundt Melkeveien i stjernebildet Tucana. I en avstand på omkring 14 500 lysår fremstår den for det blotte øye som en uklar stjerne av fjerde magnitude, men et teleskop løser opp den komprimerte kjernen til en ekstraordinær sverm av gylne og blåhvite soler. Stjernene dens ble dannet for omkring 13 milliarder år siden, noe som gjør hopen nesten like gammel som universet selv.",
@@ -1313,8 +1441,9 @@
    "description": "Deimos er den mindre og ytterste av Mars' to måner, med en glatt, støvdekket overflate som gir den et rundere utseende enn Phobos. Som sin følgesvenn antas det å være en fanget asteroide fra den ytre beltegionen.",
    "fun_fact": "Deimos er så liten og fjern at den fra Marsoverflaten ser ut som ikke mer enn en lys stjerne, og tar omtrent 30 timer å langsomt drive over nattehimmelen.",
    "distance": "23 460 km fra Mars",
+   "size": "15 x 12 x 11 km",
    "image_credit": "NASA/JPL-Caltech/University of Arizona",
-   "search_subtext": "Moon of Mars"
+   "search_subtext": "Måne til Mars"
   },
   "moon/dione": {
    "description": "Dione er en isete måne rundt Saturn med et sterkt kratrmarkert forside og en bakside dekket av lyse isklipper — bruddlinjer hvor gamle tektoniske krefter eksponerte frisk is fra dypet. Cassini-gravitasjonsdata antyder et underjordisk flytende hav under skorpen.",
@@ -1368,8 +1497,9 @@
    "description": "Phobos er den større og innerste av Mars' to måner, og går i bane nærmere planeten sin enn noen annen måne i solsystemet. Det er en uregelmessig formet, sterkt furet og kraterkrysset himmellegeme som antas å være en fanget asteroide.",
    "fun_fact": "Phobos går i bane rundt Mars så raskt at det stiger i vest og går ned i øst — og det spiraler langsomt innover, bestemt til enten å krasje inn i Mars eller brytes opp til en ring om cirka 50 millioner år.",
    "distance": "9 376 km fra Mars",
+   "size": "27 x 22 x 18 km",
    "image_credit": "NASA/JPL-Caltech/University of Arizona",
-   "search_subtext": "Moon of Mars"
+   "search_subtext": "Måne til Mars"
   },
   "moon/rhea": {
    "description": "Rhea er Saturns nest største måne og en sterkt kratrmarkert verden av is og stein. Dens bleke, gamle overflate bevarer noen av solsystemets mest uskadte nedslagskratere, sammen med lyse isklipper hvor jordskred har blottlagt friskt materiale fra under.",
@@ -1424,6 +1554,7 @@
    "fun_fact": "Jupiter har minst 95 kjente måner! Dens største måne, Ganymedes, er større enn planeten Merkur.",
    "distance": "778 millioner km (gjennomsnitt)",
    "size": "139 820 km diameter",
+   "mass": "1,898 x 10²⁷ kg",
    "image_credit": "NASA/ESA/Hubble"
   },
   "planet/mars": {
@@ -1431,6 +1562,7 @@
    "fun_fact": "Mars har den største vulkanen i solsystemet: Olympus Mons, som er omtrent 2,5 ganger høyere enn Mount Everest!",
    "distance": "228 millioner km (gjennomsnitt)",
    "size": "6 779 km diameter",
+   "mass": "6,39 x 10²³ kg",
    "image_credit": "NASA/ESA/Hubble"
   },
   "planet/mercury": {
@@ -1438,6 +1570,7 @@
    "fun_fact": "Til tross for at Merkur er nærmest Solen, er det ikke den varmeste planeten. Venus er varmere på grunn av sin tykke atmosfære!",
    "distance": "58 millioner km (fra Solen)",
    "size": "4 880 km diameter",
+   "mass": "3,3 x 10²³ kg",
    "image_credit": "NASA/GSFC"
   },
   "planet/moon": {
@@ -1445,6 +1578,7 @@
    "fun_fact": "Månen driver sakte bort fra Jorden med omtrent 3,8 cm per år. Den var mye nærmere for milliarder av år siden!",
    "distance": "384 400 km",
    "size": "3 474 km diameter",
+   "mass": "7,35 x 10²² kg",
    "image_credit": "NASA/GSFC/ASU"
   },
   "planet/neptune": {
@@ -1452,6 +1586,7 @@
    "fun_fact": "Neptun ble oppdaget gjennom matematikk! Forskere forutsatte plasseringen før noen så det gjennom et teleskop.",
    "distance": "4,5 milliarder km (gjennomsnitt)",
    "size": "49 244 km diameter",
+   "mass": "1,024 x 10²⁶ kg",
    "image_credit": "NASA/ESA/Hubble"
   },
   "planet/pluto": {
@@ -1467,6 +1602,7 @@
    "fun_fact": "Saturn er så lett at det ville flyte i vann! Tettheten er mindre enn vann, selv om det ikke finnes noe badekar stort nok til å teste dette.",
    "distance": "1,4 milliarder km (gjennomsnitt)",
    "size": "116 460 km diameter",
+   "mass": "5,68 x 10²⁶ kg",
    "image_credit": "NASA/ESA/Hubble"
   },
   "planet/sun": {
@@ -1474,6 +1610,7 @@
    "fun_fact": "Solen inneholder 99,86 % av all masse i solsystemet vårt. Omtrent 1,3 millioner Jorder kunne passe inni den!",
    "distance": "150 millioner km",
    "size": "1,4 millioner km diameter",
+   "mass": "1,989 x 10³⁰ kg",
    "spectral_class": "G2V",
    "image_credit": "NASA/SDO"
   },
@@ -1482,6 +1619,7 @@
    "fun_fact": "Uranus roterer på siden med en 98-graders helning, muligens på grunn av en kollisjon med et jordstørrelse objekt for lenge siden!",
    "distance": "2,9 milliarder km (gjennomsnitt)",
    "size": "50 724 km diameter",
+   "mass": "8,68 x 10²⁵ kg",
    "image_credit": "NASA/ESA/Hubble"
   },
   "planet/venus": {
@@ -1489,6 +1627,7 @@
    "fun_fact": "En dag på Venus er lengre enn året! Det tar 243 jordiske dager å rotere en gang, men bare 225 dager å gå i bane rundt Solen.",
    "distance": "108 millioner km (gjennomsnitt)",
    "size": "12 104 km diameter",
+   "mass": "4,87 x 10²⁴ kg",
    "image_credit": "NASA/JPL"
   },
   "shower/aquariids": {
@@ -1819,6 +1958,11 @@
    "spectral_class": "K0 III",
    "image_credit": "ESO/Digitized Sky Survey 2"
   },
+  "star/e_lyrae": {
+   "description": "Epsilon Lyrae er et flerstjernesystem i Lyren, kjent blant observatører som «Dobbel-dobbelen».",
+   "fun_fact": "Skarpe øyne kan dele Epsilon Lyrae i to stjerner – og et teleskop deler hver av dem i to igjen! Den inneholder minst fem stjerner totalt.",
+   "distance": "160 lysår"
+  },
   "star/enif": {
    "description": "Enif er den lyseste stjernen i Pegasus og markerer nesen på den flyvende hesten i stjernebildet.",
    "fun_fact": "I 1972 opplevde Enif en dramatisk utbruddsbegivenhet som kort tid økte lysstyrken med en faktor på fem!",
@@ -1872,6 +2016,110 @@
    "mass": "~4,6 solmasser",
    "spectral_class": "K0II-III",
    "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/j052512+062100": {
+   "description": "Bellatrix markerer den venstre skulderen av Orion (Jageren). Navnet er latin for «kvinnelig kriger».",
+   "fun_fact": "Bellatrix er bare rundt 28 millioner år gammel, og vil brenne gjennom hydrogenet sitt om ytterligere 7 millioner år – et kort liv for en stjerne!",
+   "distance": "250 lysår",
+   "size": "6,2 solradier",
+   "mass": "8,4 solmasser",
+   "spectral_class": "B2 III"
+  },
+  "star/j054048-015624": {
+   "description": "Alnitak er den østligste stjernen i Orions belte, og ligger ved siden av Flammetåken og Hestehodetåken.",
+   "fun_fact": "Alnitak er den mest lyssterke O-klasse-stjernen på hele nattehimmelen! Om omtrent en million år vil den svelle ut bredere enn Jupiters bane og eksplodere som en supernova.",
+   "distance": "1 260 lysår",
+   "size": "20 solradier",
+   "mass": "33 solmasser",
+   "spectral_class": "O9.5 Iab"
+  },
+  "star/j055924+445700": {
+   "description": "Menkalinan er den nest lyseste stjernen i Kusken. Navnet dens betyr \"skulderen til tøyleholderen\" på arabisk.",
+   "fun_fact": "Menkalinan er egentlig to nesten identiske stjerner som formørker hverandre hver 47,5 time – og om omtrent en million år vil den bli den lyseste stjernen på nattehimmelen vår!",
+   "distance": "79 lysår",
+   "size": "2,8 solradier",
+   "mass": "2,4 solmasser",
+   "spectral_class": "A1m IV + A1m IV"
+  },
+  "star/j062248-175736": {
+   "description": "Mirzam (Beta Canis Majoris) står opp like før Sirius, noe som ga den navnet «Kunngjøreren» på arabisk.",
+   "fun_fact": "For omtrent fire millioner år siden var Mirzam den klareste stjernen på himmelen, og lyste med en størrelsesklasse på -3,65 – langt klarere enn Sirius fremstår i dag!",
+   "distance": "490 lysår",
+   "size": "8,4 solradier",
+   "mass": "13 solmasser",
+   "spectral_class": "B1 II-III"
+  },
+  "star/j070824-262324": {
+   "description": "Wezen er en gulhvit superkjempe i Store Hund. Navnet kommer fra arabisk og betyr «vekt».",
+   "fun_fact": "Hvis Wezen var like nær oss som Sirius, ville den skinne like sterkt som en halvmåne!",
+   "distance": "1 600 lysår",
+   "size": "188 solradier",
+   "mass": "14 solmasser",
+   "spectral_class": "F8 Ia"
+  },
+  "star/j082248-593036": {
+   "description": "Avior (Epsilon Carinae) er en lys dobbeltstjerne i Kjølen og en av de fire stjernene i Det falske korset.",
+   "fun_fact": "Det Falske Kors forveksles så ofte med Sørkorset at det har forårsaket reelle navigasjonsfeil! Navnet Avior ble funnet opp av britiske almanakkprodusenter på 1930-tallet.",
+   "distance": "610 lysår",
+   "size": "151 solradier",
+   "mass": "10,5 solmasser",
+   "spectral_class": "K3 III + B2 Vp"
+  },
+  "star/j091312-694312": {
+   "description": "Miaplacidus er den nest lyseste stjernen i Carina (Kjølen) og markerer et hjørne av asterismen Diamantkorset.",
+   "fun_fact": "Miaplacidus har svulmet opp til en kjempe etter å ha brukt opp hydrogenet i kjernen sin, men den spinner fortsatt med hele 146 km/s!",
+   "distance": "113 lysår",
+   "size": "5,8 solradier",
+   "mass": "3,9 solmasser",
+   "spectral_class": "A1 III"
+  },
+  "star/j123112-570636": {
+   "description": "Gacrux (Gamma Crucis) er den øverste stjernen i Sørkorset og den nærmeste røde kjempen til Jorden.",
+   "fun_fact": "Gacrux er den nærmeste M-type røde kjempen til oss, og navnet er rett og slett en navigatørs sammentrekning av «Gamma Crucis» myntet på 1940-tallet!",
+   "distance": "89 lysår",
+   "size": "73 solradier",
+   "mass": "1,5 solmasser",
+   "spectral_class": "M3.5 III"
+  },
+  "star/j124800-594124": {
+   "description": "Mimosa (Beta Crucis) er den nest lyseste stjernen i Sydkorset og en av de varmeste stjernene som er synlige for det blotte øye.",
+   "fun_fact": "Mimosa er en pulserende Beta Cephei-variabel – den svulmer og krymper i tre overlappende rytmer, hver varer bare omtrent fire timer!",
+   "distance": "280 lysår",
+   "size": "8 solradier",
+   "mass": "14,5 solmasser",
+   "spectral_class": "B0.5 III"
+  },
+  "star/j143936-605024": {
+   "description": "Toliman (Alpha Centauri B) er den oransje følgesvennen i det nærmeste stjernesystemet til Solen, som kretser rundt den lysere Rigil Kentaurus.",
+   "fun_fact": "Toliman fikk sitt offisielle navn først i 2018. Den er litt mindre og kjøligere enn Solen, og utgjør sammen med sine to søsken våre nærmeste stjernenaboer!",
+   "distance": "4,34 lysår",
+   "size": "0,86 solradier",
+   "mass": "0,91 solmasser",
+   "spectral_class": "K1 V"
+  },
+  "star/j164836-690148": {
+   "description": "Atria er den lyseste stjernen i Triangulum Australe (Sydtriangelet), en oransje kjempe mye større enn Solen.",
+   "fun_fact": "Atria er 139 ganger Solens diameter – plassert i sentrum av solsystemet ville den nesten nådd banen til Venus!",
+   "distance": "391 lysår",
+   "size": "139 solradier",
+   "mass": "6,4 solmasser",
+   "spectral_class": "K2 Ib-IIa"
+  },
+  "star/j173712-430000": {
+   "description": "Sargas er en lyskjempe i halen av Skorpionen (Skorpionen), med et tradisjonelt navn av sumerisk opprinnelse.",
+   "fun_fact": "Sargas roterer så raskt at den buler utover – den er en tredjedel bredere ved ekvator enn fra pol til pol, og kan ha blitt dannet da to stjerner smeltet sammen!",
+   "distance": "329 lysår",
+   "size": "35 solradier",
+   "mass": "3,1 solmasser",
+   "spectral_class": "F1 III"
+  },
+  "star/j202548-564348": {
+   "description": "Påfuglen er den lyseste stjernen i Pavo (Påfuglen), en varm blåhvit stjerne på den fjerne sørlige himmelen.",
+   "fun_fact": "Peacock ble navngitt på 1930-tallet fordi RAF insisterte på at hver stjerne i deres nye Air Almanac skulle ha et navn – og denne hadde ingen!",
+   "distance": "179 lysår",
+   "size": "4,8 solradier",
+   "mass": "5,9 solmasser",
+   "spectral_class": "B3 V"
   },
   "star/kaus_australis": {
    "description": "Kaus Australis er den lyseste stjernen i Sagittarius (Bueskytteren). Navnet betyr \"den sørlige bue\" på en blanding av arabisk og latin.",
@@ -1935,6 +2183,12 @@
    "mass": "~8,5 solmasser",
    "spectral_class": "F5Ib",
    "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/n25": {
+   "description": "R Coronae Borealis er en sjelden gul superkjempe i Corona Borealis, og prototypen for variabelstjerneklassen oppkalt etter den.",
+   "fun_fact": "R Coronae Borealis blir noen ganger kalt en \"omvendt nova\" – i stedet for å blusse opp, falmer den uforutsigbart med opptil 9 magnituder når den spyr ut skyer av karbonsot som skjuler den for synet!",
+   "distance": "4 560 lysår",
+   "spectral_class": "G0Iep"
   },
   "star/nunki": {
    "description": "Nunki er den nest lyseste stjernen i Sagittarius og det eldste stjernenavnet som fortsatt er i vanlig bruk.",
