@@ -523,7 +523,7 @@ Metalden uzak, açık bir alana geçin ve tekrar deneyin.]]></string>
     Başlatıcınız uygulamadan widget eklemeyi desteklemiyor. Ana ekranınıza dokunup basılı tutun, Widget\'lar öğesini seçin ve ardından Sky Map uygulamasını bulun.
     </string>
     <string name="moon_widget_pin_unsupported_ok" translation_description="Confirmation button of the manual widget-adding instructions dialog">Anladım</string>
-    <string name="moon_widget_preview_illumination" translation_description="Representative illumination line shown in the widget picker\'s preview of the moon-phase widget">%%83 aydınlık</string>
+    <string name="moon_widget_preview_illumination" translation_description="Representative illumination line shown in the widget picker\'s preview of the moon-phase widget">%83 aydınlık</string>
 
     <!-- Tonight's-sky and countdown home-screen widgets (D69 phase 2). -->
     <string name="tonight_widget_label" translation_description="Name of the tonight\'s-sky home-screen widget, shown in the launcher\'s widget picker">Bu geceki gökyüzü</string>
