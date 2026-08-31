@@ -28,44 +28,44 @@ smeri, v katero kaže vaš telefon. Preprosto premikajte telefon in zemljevid sl
 
     <!-- Symbol map will go here-->
 
-    <string name="help_layers" translation_description="Help section: the visible layers of the sky map. Please do not change the markup"><![CDATA[<h2>Slojevi</h2>
-<p>Sky Map prikazuje nebo u slojevima, od kojih se svaki može zasebno uključiti ili isključiti
-pomoću gumba za slojeve s lijeve strane. Pritisnite i držite ili dodirnite gumb <b>Slojevi</b> pri
-dnu kako biste otvorili prekidače za dodatne slojeve.</p>
+    <string name="help_layers" translation_description="Help section: the visible layers of the sky map. Please do not change the markup"><![CDATA[<h2>Plasti</h2>
+<p>Sky Map prikazuje nebo v plasteh, ki jih je mogoče neodvisno vklopiti ali izklopiti
+z gumbi za plasti na levi strani. Pritisnite in držite ali tapnite gumb <b>Plasti</b> na
+dnu, da odprete stikala za dodatne plasti.</p>
 <br/>
-<p>Trenutni slojevi uključuju:<br/>
-• <b>Zvijezde:</b> Najsjajnije zvijezde s oznakama za istaknute primjerke<br/>
-• <b>Sveučevlja (Zodijak):</b> Zviježđa i njihovi obrisi<br/>
-• <b>Objekti dubokog neba:</b> Galaksije, maglice, zvjezdana jata i drugi izuzetni objekti<br/>
-• <b>Sunčev sustav:</b> Sunce, Mjesec i planeti, prikazani kao slike<br/>
-• <b>Meteorski roj:</b> Radiantne točke godišnjih meteorskih strojeva<br/>
-• <b>Nebeska mreža:</b> Koordinatna mreža rektascenzije i deklinacije<br/>
-• <b>Ekliptika:</b> Sunčeva godišnja putanja po nebu, koju Mjesec i planeti otprilike prate<br/>
-• <b>Obzor:</b> Linija obzora i oznake strana svijeta (S, J, I, Z)<br/>
-• <b>Zračni gradijent:</b> Sjaj dnevnog neba i sumračne boje blizu obzora</p>
-<blockquote>Radianti meteorskih rojeva prikazuju se samo na datume kada se meteorski roj događa.
+<p>Trenutne plasti vključujejo:<br/>
+• <b>Zvezde:</b> Najsvetlejše zvezde z oznakami za pomembnejše<br/>
+• <b>Ozvezdja:</b> Obrisi in imena ozvezdij<br/>
+• <b>Objekti globokega neba:</b> Galaksije, meglice, zvezdne kopice in drugi izjemni objekti<br/>
+• <b>Sončni sistem:</b> Sonce, Luna in planeti, prikazani kot slike<br/>
+• <b>Meteorski roji:</b> Radiantne točke letnih meteorskih rojev<br/>
+• <b>Nebesna mreža:</b> Koordinatna mreža rektascenzije in deklinacije<br/>
+• <b>Ekliptika:</b> Letna pot Sonca po nebu, ki ji Luna in planeti približno sledijo<br/>
+• <b>Obzorje:</b> Črta obzorja in oznake strani neba (S, J, V, Z)<br/>
+• <b>Gradient neba:</b> Sij dnevnega neba in barve mraka blizu obzorja</p>
+<blockquote>Radianti meteorskih rojev so prikazani samo na datume, ko meteorski roji dejansko potekajo.
 </blockquote>
 <br/>
-<p><b>Veličina prikaza planeta</b></p>
-<p>Dodirnite strelicu pokraj stavke <b>Sunčev sustav</b> u izborniku slojeva kako biste odabrali veličinu Sunca, Mjeseca i
-planeta:</p>
-<p>• <b>Ikone</b> (zadano): dovoljno velike da se vide pri bilo kojem zumiranju, a veličina ovisi o tome koliko je svako tijelo
-zapravo <i>veliko</i>, a ne o tome kako izgleda odavde – to je model Sunčevog sustava, a
-ne pogled kroz teleskop. Saturn i njegovi prsteni su najveći, zatim Sunce,
-pa Jupiter, sve do Plutona. Razlike su prilagođene zaslonu: Sunce je zapravo 586
-puta šire od Plutona, a ne sedam. Mjesec je iznimka, nacrtan je u istoj veličini kao Sunce,
-jer tako izgledaju odavde.<br/>
-• <b>Pravi omjer:</b> svako tijelo u svojoj stvarnoj veličini na nebu. Sunce i Mjesec zauzimaju oko pola
-stupnja – otprilike kao gumica na olovci držeći je na dohvat ruke – a planeti su točkice dok
-ne zumirate. Ako zumirate do kraja, na Jupiteru se vide pojasevi, Saturnovi prsteni se odvajaju od
-planeta, a pomrčina se poravnava točno onako kako se vidi na nebu.<br/>
-• <b>Stalno:</b> zadržava svako tijelo u fiksnoj veličini na zaslonu dok zumirate, a prelazi na stvarnu
-veličinu kada zumirate dovoljno blizu da postane veće od dvoje.</p>
-<blockquote>Dva načina prikazuju različite stvari. <b>Ikone</b> govore da je Jupiter div, a
-Pluton malen. <b>Pravi omjer</b> pokazuje da Sunce i Mjesec izgledaju gotovo potpuno iste veličine sa
-Zemlje – zbog čega potpuna pomrčina Sunca uopće funkcionira i možete je promatrati.</blockquote>
-<blockquote>Sky Map prikazuje geometrijski obzor – potpuno ravan, nesmetan pogled.
-Objekti neposredno iznad njega u praksi još uvijek mogu biti skriveni zgradama, brdima ili drvećem.</blockquote>]]></string>
+<p><b>Kako veliki so narisani planeti</b></p>
+<p>Tapnite puščico ob možnosti <b>Sončni sistem</b> na listu Plasti, da izberete velikost Sonca, Lune in
+planetov:</p>
+<p>• <b>Glifi</b> (privzeto): dovolj veliki, da jih vidite pri vsaki povečavi, velikost pa je določena s tem,
+kako veliko vsako telo dejansko <i>je</i>, in ne s tem, kako veliko je videti od tod — to je model
+Sončnega sistema in ne pogled skozi teleskop. Saturn s svojimi obroči je najširši, nato Sonce,
+nato Jupiter, vse do Plutona. Razlike so stisnjene, da se prilegajo zaslonu: Sonce je v resnici 586-krat
+širše od Plutona, in ne sedemkrat. Luna je izjema, narisana je enako veliko kot Sonce,
+ker sta od tod videti prav takšna.<br/>
+• <b>Prava velikost:</b> vsako telo v svoji resnični velikosti na nebu. Sonce in Luna merita približno pol
+stopinje — približno toliko kot radirka na svinčniku, ki ga držite v iztegnjeni roki — planeti pa so
+pikice, dokler ne povečate do konca. Če povečate do konca, Jupiter pokaže svoje pasove, Saturnovi obroči
+se ločijo od planeta, mrk pa se poravna natanko tako, kot se poravna na nebu.<br/>
+• <b>Nespremenljivo:</b> ohranja vsako telo v nespremenjeni velikosti na zaslonu med povečevanjem, nato pa
+preklopi na pravo velikost, ko dovolj povečate, da je ta večja od obeh.</p>
+<blockquote>Načina povesta različni stvari. <b>Glifi</b> povedo, da je Jupiter velikan in
+Pluton majhen. <b>Prava velikost</b> pokaže, da sta Sonce in Luna z Zemlje videti skoraj
+popolnoma enako velika — zato popolni sončni mrk sploh deluje in ga lahko opazujete.</blockquote>
+<blockquote>Sky Map prikazuje geometrijsko obzorje — popolnoma ravno in neovirano.
+Objekti tik nad njim so v praksi lahko še vedno skriti za stavbami, hribi ali drevesi.</blockquote>]]></string>
 
     <string name="help_info_cards" translation_description="Help section: the object info cards. Please do not change the markup"><![CDATA[<h2>Informacijske kartice</h2>
 <p>Tapnite označen nebesni objekt na zvezdnem karti, da se prikaže informacijska kartica – plošča s fotografijo in podrobnostmi o tem objektu.

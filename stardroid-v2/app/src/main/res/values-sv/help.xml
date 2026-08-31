@@ -157,7 +157,7 @@ Använd knappen <b>Hitta</b> för att leta upp det objektet på himlen.</p>]]></
 <p>• Ett magnetfältssensor (även känd som en kompass) – för att avgöra vilken riktning du tittar åt<br/>
 • En accelerometer – för att avgöra hur högt upp på himlen du tittar</p>
 <p>Helst också:</p>
-<p>• Ett gyroskop – detta gör rörelserna mjukare och mindre rckiga</p>
+<p>• Ett gyroskop – detta gör rörelserna mjukare och mindre ryckiga</p>
 <blockquote><b>Telefonkompasser är ökända för att vara opålitliga.</b>
 Om stjärnkartan ser fel ut beror det nästan alltid på ett hårdvaruproblem med din telefons kompass – inte på en bugg i Sky Map.
 Sky Map läser av exakt det din telefons sensor rapporterar; appen har inget sätt att automatiskt korrigera en felaktig eller snedvriden avläsning.
@@ -167,7 +167,7 @@ Se Felsökning nedan.</blockquote>
 under introduktionen.</p>
 <h3>Vad händer om min enhet saknar nödvändiga sensorer?</h3>
 <p>Sky Map växlar över till manuellt läge. Du kan fortfarande utforska himlen, men utan sensorerna finns det
-inet sätt för någon app att visa din riktning.</p>]]></string>
+inget sätt för någon app att visa din riktning.</p>]]></string>
 
     <string name="help_troubleshooting" translation_description="Help section: troubleshooting a map that does not move or points the wrong way. Please do not change the markup"><![CDATA[<h2>Felsökning</h2>
 <h3>Kartan rör sig inte</h3>
@@ -184,7 +184,7 @@ inet sätt för någon app att visa din riktning.</p>]]></string>
 • Om din telefon saknar gyroskop slår du på <b>Använd äldre sensorer</b> i sensorinställningarna<br/>
 • Justera <b>Sensorhastighet</b> och <b>Dämpning</b> under <b>Inställningar → Sensorinställningar (avancerat)</b>
 (visas när <b>Använd äldre sensorer</b> är på)</p>
-<p>För fullständig felsökningsinformation, se den onlinenaserade <a href="https://ts.stardroid.app">felsökningsguiden</a>.</p>
+<p>För fullständig felsökningsinformation, se den onlinebaserade <a href="https://ts.stardroid.app">felsökningsguiden</a>.</p>
 <p>Om du fortfarande har problem, skicka ett e-postmeddelande till <a href="mailto:skymapdevs@gmail.com">skymapdevs@gmail.com</a> – en skärmdump av din diagnostiksida är till stor hjälp.</p>]]></string>
 
     <string name="help_pointer_mode" translation_description="Help section: pointer mode for telescope users. Please do not change the markup"><![CDATA[<h2>Teleskopanvändare – Pekarläge</h2>
