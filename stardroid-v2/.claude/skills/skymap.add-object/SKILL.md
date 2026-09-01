@@ -1,6 +1,6 @@
 ---
 name: skymap.add-object
-description: Add a new deep-sky object or virtual object to Sky Map v2's catalog from a Wikipedia URL or user-supplied data. Handles source-data CSV/JSON files (no protobuf/XML — v2 uses a Room-backed catalog generated from source-data/). Trigger on "add object to v2", "add nebula/galaxy/cluster to v2", "add <object name> to stardroid-v2", etc. ARGUMENTS — "[wikipedia_url_or_object_name]"
+description: Add a new deep-sky object or virtual object to Sky Map v2's catalog from a Wikipedia URL or user-supplied data, or add a new searchable alias/name to an existing object. Handles source-data CSV/JSON files (no protobuf/XML — v2 uses a Room-backed catalog generated from source-data/). Trigger on "add object to v2", "add nebula/galaxy/cluster to v2", "add <object name> to stardroid-v2", "add <name> as an alias for <object>", etc. ARGUMENTS — "[wikipedia_url_or_object_name]"
 ---
 
 # Sky Map v2: Add Catalog Object
@@ -133,6 +133,37 @@ of the positional catalog — only add fields you actually have:
 Add `image_ref` once Step 8 (image) has deployed the asset. `see_also` (array of related object
 ids, reciprocal both ways) is optional — add it if there's an obvious related object (parent
 planet for a moon, sibling galaxies, etc.).
+
+## Adding an Alias to an Existing Object
+
+Sometimes the ask isn't a new object at all — it's an additional searchable name for one that
+already exists (e.g. a culturally significant name, a colloquial nickname). This is much
+lighter than the full flow above: no `dso.csv`/`stars.csv` row, no info card, no `objects.json`
+change, no image.
+
+1. Find the object's existing id — grep `source-data/names/en.csv` or `dso.csv`/`stars.csv` for
+   its current display name.
+2. Add one row to `source-data/names/en.csv` (or `names/universal.csv` if the name is a catalog
+   designation that should match in every locale, e.g. an NGC number): `<object_id>,<Name>,0`.
+   Use `is_primary=0` — you're adding a search alias, not replacing the map label. Group it next
+   to the object's other existing rows for diff-friendliness.
+3. Don't invent translations for other locales — that's a separate task. Per `LocaleSpec`'s
+   fallback chain (exact tag → language → English → universal), an English-only alias is still
+   searchable from any locale that doesn't override that object's names.
+4. Sanity-build and confirm the row landed: `./gradlew :data:generateCatalogDb`, then inspect
+   the generated db (`data/build/generated/assets/generateCatalogDb/skymap.db`) — e.g.
+   `sqlite3 <path> "SELECT * FROM object_name WHERE object_id='<object_id>';"`.
+5. Run `./gradlew :data:test :data:generator:test ktlintCheck` before committing.
+
+Example: adding "Matariki" (the Māori name for the Pleiades, and NZ's official holiday marking
+the Māori new year) as a search alias for `dso/m45`:
+
+```
+dso/m45,Matariki,0
+```
+
+added next to the existing `dso/m45,Pleiades,1` / `dso/m45,Seven Sisters,0` rows in
+`names/en.csv`.
 
 ## Adding a Virtual (Map-less) Object
 
