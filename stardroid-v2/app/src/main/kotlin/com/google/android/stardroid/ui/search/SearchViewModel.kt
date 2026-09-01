@@ -73,7 +73,7 @@ data class SearchTarget(
  */
 class SearchViewModel(
     private val catalog: suspend () -> CatalogRepository,
-    private val locale: LocaleSpec,
+    private val locale: StateFlow<LocaleSpec>,
     private val ephemeris: Ephemeris,
     private val now: () -> Instant,
     private val settings: Settings,
@@ -109,7 +109,7 @@ class SearchViewModel(
                 if (q.isBlank()) {
                     emptyList()
                 } else {
-                    catalog().searchByPrefix(q.trim(), locale, SUGGESTION_LIMIT)
+                    catalog().searchByPrefix(q.trim(), locale.value, SUGGESTION_LIMIT)
                 }
             }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(), emptyList())
 
@@ -125,7 +125,7 @@ class SearchViewModel(
      */
     fun selectById(id: CelestialObjectId) {
         viewModelScope.launch {
-            val info = catalog().objectInfo(id, locale) ?: return@launch
+            val info = catalog().objectInfo(id, locale.value) ?: return@launch
             select(
                 SearchHit(
                     id = info.id,
@@ -141,7 +141,7 @@ class SearchViewModel(
     /** The user picked a hit from the list (v1's single-result / "Did you mean?" selection). */
     fun select(hit: SearchHit) {
         viewModelScope.launch {
-            val info = catalog().objectInfo(hit.id, locale)
+            val info = catalog().objectInfo(hit.id, locale.value)
             val direction = resolveDirection(hit, info)
             if (direction != null) {
                 // Search spans hidden layers (D43); re-enable the hit's layer so the arrow
@@ -167,7 +167,7 @@ class SearchViewModel(
             return
         }
         viewModelScope.launch {
-            val hits = catalog().searchByPrefix(q, locale, SUGGESTION_LIMIT)
+            val hits = catalog().searchByPrefix(q, locale.value, SUGGESTION_LIMIT)
             val chosen =
                 hits.firstOrNull { it.name.equals(q, ignoreCase = true) } ?: hits.singleOrNull()
             if (chosen != null) {

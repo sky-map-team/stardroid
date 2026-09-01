@@ -50,8 +50,8 @@ import com.google.android.stardroid.analytics.SessionBucket
 import com.google.android.stardroid.astronomy.MeeusEphemeris
 import com.google.android.stardroid.camera.SkyCameraPreview
 import com.google.android.stardroid.catalog.CelestialObjectId
-import com.google.android.stardroid.catalog.LocaleSpec
 import com.google.android.stardroid.data.satellites.RefreshResult
+import com.google.android.stardroid.locale.LocaleSource
 import com.google.android.stardroid.location.AndroidGeocoding
 import com.google.android.stardroid.location.LocationController
 import com.google.android.stardroid.location.LocationSource
@@ -141,7 +141,7 @@ class MainActivity : ComponentActivity() {
 
     @Inject lateinit var startupState: StartupState
 
-    @Inject lateinit var localeSpec: LocaleSpec
+    @Inject lateinit var localeSource: LocaleSource
 
     @Inject lateinit var displayRotation: DisplayRotationBus
 
@@ -215,7 +215,7 @@ class MainActivity : ComponentActivity() {
             initializer {
                 SearchViewModel(
                     catalog = catalogAccess::repository,
-                    locale = localeSpec,
+                    locale = localeSource.specs,
                     ephemeris = MeeusEphemeris,
                     now = timeController::now,
                     settings = settings,
@@ -234,7 +234,7 @@ class MainActivity : ComponentActivity() {
             initializer {
                 ObjectInfoViewModel(
                     catalog = catalogAccess::repository,
-                    locale = localeSpec,
+                    locale = localeSource.specs,
                     ephemeris = MeeusEphemeris,
                     now = timeController::now,
                     settings = settings,
@@ -282,7 +282,7 @@ class MainActivity : ComponentActivity() {
 
     private val galleryViewModel: GalleryViewModel by viewModels {
         viewModelFactory {
-            initializer { GalleryViewModel(catalogAccess::repository, localeSpec) }
+            initializer { GalleryViewModel(catalogAccess::repository, localeSource.specs) }
         }
     }
 
@@ -597,7 +597,7 @@ class MainActivity : ComponentActivity() {
                 AnalyticsEvents.HAS_ROTATION_VECTOR,
                 sensors.hasSensor(SensorKind.ROTATION_VECTOR).toString(),
             )
-            analytics.setUserProperty(AnalyticsEvents.USER_LOCALE, localeSpec.tag)
+            analytics.setUserProperty(AnalyticsEvents.USER_LOCALE, localeSource.current.tag)
             val nightMode = settings.nightMode.first()
             val disableGyro = settings.disableGyro.first()
             val sensorPath =

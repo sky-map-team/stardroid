@@ -34,6 +34,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.cancel
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.emptyFlow
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
@@ -113,7 +114,7 @@ class SearchViewModelTest {
     private fun viewModel(): SearchViewModel =
         SearchViewModel(
             catalog = { repository },
-            locale = LocaleSpec("en"),
+            locale = MutableStateFlow(LocaleSpec("en")),
             ephemeris = KeplerianEphemeris,
             now = { NOW },
             settings = settings,

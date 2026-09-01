@@ -55,6 +55,7 @@ import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.drop
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
@@ -90,7 +91,7 @@ sealed interface RiseSetState {
  */
 class ObjectInfoViewModel(
     private val catalog: suspend () -> CatalogRepository,
-    private val locale: LocaleSpec,
+    private val locale: StateFlow<LocaleSpec>,
     private val ephemeris: Ephemeris,
     private val now: () -> Instant,
     private val settings: Settings,
@@ -195,13 +196,7 @@ class ObjectInfoViewModel(
     /** Opens [id]'s card — a see-also chip tap, v1's `onSeeAlsoClicked`. */
     fun show(id: CelestialObjectId) {
         viewModelScope.launch {
-            // Satellites are not in the bundled catalog — they arrive from the network — so their
-            // card is synthesized rather than looked up. See SatelliteIds.
-            val info =
-                SatelliteIds.noradIdFor(id)?.let { norad ->
-                    satellites().firstOrNull { it.info.id == id }?.info
-                } ?: catalog().objectInfo(id, locale)
-            info?.let {
+            cardFor(id)?.let {
                 analytics.trackEvent(
                     AnalyticsEvents.OBJECT_INFO_VIEWED_EVENT,
                     mapOf(AnalyticsEvents.OBJECT_INFO_ID to id.value),
@@ -258,7 +253,7 @@ class ObjectInfoViewModel(
                         .minByOrNull { (_, separation) -> separation }
                         ?.first
                 } ?: return@launch
-            catalog().objectInfo(hit.id, locale)?.let { openCard(it) }
+            catalog().objectInfo(hit.id, locale.value)?.let { openCard(it) }
         }
     }
 
@@ -352,7 +347,7 @@ class ObjectInfoViewModel(
                         if (!settings.layerEnabled(layerId).first()) {
                             emptyList()
                         } else {
-                            repo.layerObjects(kind, locale).first()
+                            repo.layerObjects(kind, locale.value).first()
                         }
                     }
                 }
@@ -362,7 +357,7 @@ class ObjectInfoViewModel(
                         emptyList()
                     } else {
                         val today = utcMonthDay(now())
-                        repo.meteorShowers(locale).first().filter { it.isActiveOn(today) }
+                        repo.meteorShowers(locale.value).first().filter { it.isActiveOn(today) }
                     }
                 }
             val solarSystemDeferred =
@@ -397,6 +392,28 @@ class ObjectInfoViewModel(
             catalogCandidates + showerCandidates + solarSystemDeferred.await() +
                 satelliteCandidates
         }
+
+    /**
+     * [id]'s card content in the current locale. Satellites are not in the bundled catalog —
+     * they arrive from the network — so their card is synthesized rather than looked up. See
+     * [SatelliteIds].
+     */
+    private suspend fun cardFor(id: CelestialObjectId): ObjectInfo? =
+        SatelliteIds.noradIdFor(id)?.let { norad ->
+            satellites().firstOrNull { it.info.id == id }?.info
+        } ?: catalog().objectInfo(id, locale.value)
+
+    // A language switch recreates the activity but not this view model, so a card left open
+    // across one would keep the language it was opened in: look it up again in the new locale.
+    // Last in the class body so every property it touches is initialized before it runs.
+    init {
+        viewModelScope.launch {
+            locale.drop(1).collect {
+                val open = _card.value ?: return@collect
+                cardFor(open.id)?.let(::openCard)
+            }
+        }
+    }
 
     private companion object {
         val MOON_ID: CelestialObjectId = SolarSystemIds.idFor(SolarSystemBody.MOON)

@@ -244,6 +244,12 @@ D44), sensors, sound effects, and the `FlavorEdges`-supplied platform services.
 Suspend-initialized state (catalog open, layer registry) lives in `CatalogAccess` — a
 mutex-guarded first-use open with recovery.
 
+The app's locale is deliberately *not* one of the captured singletons: `locale/LocaleSource`
+re-reads the configuration per request (`current`) and re-emits it on a configuration change
+(`specs`). A language switch recreates the activities but not the process, so a captured
+`LocaleSpec` would leave every catalog-sourced string — names, map labels, info-card prose —
+in the old language until the process happened to die.
+
 `ui/MainActivity.kt` is the single activity: it owns the `GLSurfaceView` + `GLSkyRenderer`,
 and `RenderBinder` bridges Flows → renderer inside `repeatOnLifecycle(STARTED)`: camera and
 render state from `MapViewModel`, and per-layer

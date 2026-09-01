@@ -110,7 +110,7 @@ class NotificationPlannerWorker(
             entryPoint
                 .catalogAccess()
                 .repository()
-                .meteorShowers(entryPoint.localeSpec())
+                .meteorShowers(entryPoint.localeSource().current)
                 .first()
         val now = Clock.System.now()
         val sky =
@@ -152,7 +152,7 @@ class NotificationPosterWorker(
             entryPoint
                 .catalogAccess()
                 .repository()
-                .meteorShowers(entryPoint.localeSpec())
+                .meteorShowers(entryPoint.localeSource().current)
                 .first()
         val now = Clock.System.now()
         val sky =

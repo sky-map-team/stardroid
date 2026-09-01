@@ -20,7 +20,6 @@ import androidx.lifecycle.ProcessLifecycleOwner
 import androidx.lifecycle.flowWithLifecycle
 import com.google.android.stardroid.FlavorEdges
 import com.google.android.stardroid.analytics.Analytics
-import com.google.android.stardroid.catalog.LocaleSpec
 import com.google.android.stardroid.data.satellites.HttpUrlConnectionCelesTrakClient
 import com.google.android.stardroid.data.satellites.SatelliteElementsRepository
 import com.google.android.stardroid.data.satellites.TleStore
@@ -226,13 +225,4 @@ object AppModule {
     @Singleton
     fun sensorStatusSource(application: Application): SensorStatusSource =
         SensorManagerStatusSource(application.getSystemService(SensorManager::class.java))
-
-    /**
-     * The process's locale, read once — a system locale change shows fresh strings after
-     * process death, as in v1.
-     */
-    @Provides
-    @Singleton
-    fun localeSpec(application: Application): LocaleSpec =
-        LocaleSpec(application.resources.configuration.locales[0].toLanguageTag())
 }

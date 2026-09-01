@@ -62,6 +62,7 @@ class ObjectInfoViewModelTest {
         val objectsByKind =
             LayerKind.entries.associateWith { MutableStateFlow<List<CatalogObject>>(emptyList()) }
         val infos = mutableMapOf<CelestialObjectId, ObjectInfo>()
+        var lastInfoLocale: LocaleSpec? = null
         val showers = MutableStateFlow<List<MeteorShower>>(emptyList())
 
         override fun layerObjects(
@@ -83,7 +84,10 @@ class ObjectInfoViewModelTest {
         override suspend fun objectInfo(
             id: CelestialObjectId,
             locale: LocaleSpec,
-        ): ObjectInfo? = infos[id]
+        ): ObjectInfo? {
+            lastInfoLocale = locale
+            return infos[id]
+        }
 
         override suspend fun infoCardObjectIds(): Set<CelestialObjectId> = infos.keys
 
@@ -104,10 +108,12 @@ class ObjectInfoViewModelTest {
 
     private val createdViewModels = mutableListOf<ObjectInfoViewModel>()
 
+    private val locale = MutableStateFlow(LocaleSpec("en"))
+
     private fun viewModel(): ObjectInfoViewModel =
         ObjectInfoViewModel(
             catalog = { repository },
-            locale = LocaleSpec("en"),
+            locale = locale,
             ephemeris = KeplerianEphemeris,
             now = { NOW },
             settings = settings,
@@ -126,6 +132,53 @@ class ObjectInfoViewModelTest {
             assertThat(vm.card.value?.name).isEqualTo("Sirius")
 
             vm.dismiss()
+            assertThat(vm.card.value).isNull()
+        }
+
+    @Test
+    fun `show looks the card up in the language the app is in now`() =
+        testScope.runCurrentTest {
+            repository.infos[SIRIUS_ID] = objectInfo(SIRIUS_ID, "Sirius")
+            val vm = viewModel()
+            vm.show(SIRIUS_ID)
+            runCurrent()
+
+            // A language switch recreates the activity but not the view model, so a captured
+            // locale would keep every later card in the language the app started in.
+            locale.value = LocaleSpec("es")
+            repository.infos[SIRIUS_ID] = objectInfo(SIRIUS_ID, "Sirio")
+            vm.dismiss()
+            vm.show(SIRIUS_ID)
+            runCurrent()
+
+            assertThat(repository.lastInfoLocale).isEqualTo(LocaleSpec("es"))
+            assertThat(vm.card.value?.name).isEqualTo("Sirio")
+        }
+
+    @Test
+    fun `an open card re-reads itself when the app language changes`() =
+        testScope.runCurrentTest {
+            repository.infos[SIRIUS_ID] = objectInfo(SIRIUS_ID, "Sirius")
+            val vm = viewModel()
+            vm.show(SIRIUS_ID)
+            runCurrent()
+
+            repository.infos[SIRIUS_ID] = objectInfo(SIRIUS_ID, "Sirio")
+            locale.value = LocaleSpec("es")
+            runCurrent()
+
+            assertThat(vm.card.value?.name).isEqualTo("Sirio")
+        }
+
+    @Test
+    fun `a language change with no card open opens nothing`() =
+        testScope.runCurrentTest {
+            repository.infos[SIRIUS_ID] = objectInfo(SIRIUS_ID, "Sirius")
+            val vm = viewModel()
+
+            locale.value = LocaleSpec("es")
+            runCurrent()
+
             assertThat(vm.card.value).isNull()
         }
 

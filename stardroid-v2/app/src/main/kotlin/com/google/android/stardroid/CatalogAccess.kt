@@ -12,11 +12,11 @@ package com.google.android.stardroid
 import android.app.Application
 import com.google.android.stardroid.astronomy.MeeusEphemeris
 import com.google.android.stardroid.catalog.CatalogRepository
-import com.google.android.stardroid.catalog.LocaleSpec
 import com.google.android.stardroid.data.RoomCatalogRepository
 import com.google.android.stardroid.data.SkyMapDatabaseFactory
 import com.google.android.stardroid.layers.LayerRegistry
 import com.google.android.stardroid.layers.ResourceLayerStrings
+import com.google.android.stardroid.locale.LocaleSource
 import com.google.android.stardroid.location.LocationController
 import com.google.android.stardroid.satellites.satelliteElementsFlow
 import com.google.android.stardroid.satellites.satelliteEntryPoint
@@ -25,7 +25,7 @@ import com.google.android.stardroid.startup.Experiment
 import com.google.android.stardroid.startup.ExperimentConfig
 import com.google.android.stardroid.time.TimeController
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.flowOf
+import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
 import kotlinx.coroutines.withContext
@@ -45,7 +45,7 @@ class CatalogAccess
         private val application: Application,
         private val timeController: TimeController,
         private val locationController: LocationController,
-        private val localeSpec: LocaleSpec,
+        private val localeSource: LocaleSource,
         private val settings: Settings,
         private val experimentConfig: ExperimentConfig,
     ) {
@@ -78,8 +78,13 @@ class CatalogAccess
                     registry
                         ?: LayerRegistry.create(
                             catalog = repository,
-                            locale = flowOf(localeSpec),
-                            strings = flowOf(ResourceLayerStrings(application.resources)),
+                            locale = localeSource.specs,
+                            // A new reader per locale, so the computed layers' own labels
+                            // ("Zenith", the planet names) re-resolve with the scene.
+                            strings =
+                                localeSource.specs.map {
+                                    ResourceLayerStrings(application.resources)
+                                },
                             clock = timeController.times,
                             location = locationController.locations,
                             ephemeris = MeeusEphemeris,

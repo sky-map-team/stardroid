@@ -17,6 +17,7 @@ import com.google.android.stardroid.layers.FakeCatalogRepository
 import com.google.common.truth.Truth.assertThat
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.test.StandardTestDispatcher
 import kotlinx.coroutines.test.resetMain
 import kotlinx.coroutines.test.runCurrent
@@ -41,13 +42,15 @@ class GalleryViewModelTest {
     }
 
     private class GalleryRepository(
-        private val items: List<GalleryItem>,
+        private val items: (LocaleSpec) -> List<GalleryItem>,
     ) : CatalogRepository by FakeCatalogRepository() {
+        constructor(items: List<GalleryItem>) : this({ items })
+
         var requestedLocale: LocaleSpec? = null
 
         override suspend fun galleryItems(locale: LocaleSpec): List<GalleryItem> {
             requestedLocale = locale
-            return items
+            return items(locale)
         }
     }
 
@@ -62,7 +65,8 @@ class GalleryViewModelTest {
             val repository = GalleryRepository(catalogItems)
             val locale = LocaleSpec("es")
 
-            val viewModel = GalleryViewModel(catalog = { repository }, locale = locale)
+            val viewModel =
+                GalleryViewModel(catalog = { repository }, locale = MutableStateFlow(locale))
             runCurrent()
 
             assertThat(viewModel.items.value).isEqualTo(catalogItems)
@@ -75,9 +79,32 @@ class GalleryViewModelTest {
             val viewModel =
                 GalleryViewModel(
                     catalog = { GalleryRepository(emptyList()) },
-                    locale = LocaleSpec("en"),
+                    locale = MutableStateFlow(LocaleSpec("en")),
                 )
 
             assertThat(viewModel.items.value).isEmpty()
+        }
+
+    @Test
+    fun items_reListWhenTheAppLanguageChanges() =
+        runTest(dispatcher) {
+            val m31 = CelestialObjectId("dso/m31")
+            val repository =
+                GalleryRepository { locale ->
+                    val name =
+                        if (locale.tag == "es") "Galaxia de Andrómeda" else "Andromeda Galaxy"
+                    listOf(GalleryItem(m31, name, "m31.webp"))
+                }
+            val locale = MutableStateFlow(LocaleSpec("en"))
+
+            val viewModel = GalleryViewModel(catalog = { repository }, locale = locale)
+            runCurrent()
+            assertThat(viewModel.items.value.single().name).isEqualTo("Andromeda Galaxy")
+
+            // The view model outlives the activity recreation a language switch triggers.
+            locale.value = LocaleSpec("es")
+            runCurrent()
+
+            assertThat(viewModel.items.value.single().name).isEqualTo("Galaxia de Andrómeda")
         }
 }
