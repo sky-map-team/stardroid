@@ -11,7 +11,7 @@ package com.google.android.stardroid.widget
 
 import android.content.Context
 import com.google.android.stardroid.CatalogAccess
-import com.google.android.stardroid.catalog.LocaleSpec
+import com.google.android.stardroid.locale.LocaleSource
 import com.google.android.stardroid.settings.Settings
 import com.google.android.stardroid.startup.ExperimentConfig
 import dagger.hilt.EntryPoint
@@ -32,7 +32,7 @@ interface WidgetEntryPoint {
 
     fun catalogAccess(): CatalogAccess
 
-    fun localeSpec(): LocaleSpec
+    fun localeSource(): LocaleSource
 }
 
 fun widgetEntryPoint(context: Context): WidgetEntryPoint =

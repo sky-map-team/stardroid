@@ -19,6 +19,7 @@ import com.google.android.stardroid.catalog.LocaleSpec
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
 /**
@@ -29,7 +30,7 @@ import kotlinx.coroutines.launch
  */
 class GalleryViewModel(
     private val catalog: suspend () -> CatalogRepository,
-    private val locale: LocaleSpec,
+    private val locale: StateFlow<LocaleSpec>,
 ) : ViewModel() {
     private val _items = MutableStateFlow<List<GalleryItem>>(emptyList())
     val items: StateFlow<List<GalleryItem>> = _items.asStateFlow()
@@ -39,7 +40,11 @@ class GalleryViewModel(
     // scroll-back. ~48 tiles × ~256 KB ≈ 12 MB ceiling.
     val thumbnailCache = LruCache<String, ImageBitmap>(48)
 
+    // Re-listed on a language change: the view model outlives the activity recreation the
+    // switch triggers, so a once-only load would keep showing the old language's names.
     init {
-        viewModelScope.launch { _items.value = catalog().galleryItems(locale) }
+        viewModelScope.launch {
+            locale.collectLatest { _items.value = catalog().galleryItems(it) }
+        }
     }
 }

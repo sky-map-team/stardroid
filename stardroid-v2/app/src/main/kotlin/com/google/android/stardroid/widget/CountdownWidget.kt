@@ -70,7 +70,7 @@ class CountdownWidget : GlanceAppWidget() {
                     entryPoint
                         .catalogAccess()
                         .repository()
-                        .meteorShowers(entryPoint.localeSpec())
+                        .meteorShowers(entryPoint.localeSource().current)
                         .first()
                 // Location-free: the countdown is about dates, not local geometry.
                 tonightSky(Clock.System.now(), location = null, showers = showers).countdown

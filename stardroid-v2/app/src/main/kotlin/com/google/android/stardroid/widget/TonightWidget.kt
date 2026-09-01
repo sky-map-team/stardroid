@@ -74,7 +74,7 @@ class TonightWidget : GlanceAppWidget() {
                     entryPoint
                         .catalogAccess()
                         .repository()
-                        .meteorShowers(entryPoint.localeSpec())
+                        .meteorShowers(entryPoint.localeSource().current)
                         .first()
                 tonightSky(
                     Clock.System.now(),

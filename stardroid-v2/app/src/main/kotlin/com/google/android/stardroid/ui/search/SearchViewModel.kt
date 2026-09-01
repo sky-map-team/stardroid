@@ -37,6 +37,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.debounce
 import kotlinx.coroutines.flow.mapLatest
 import kotlinx.coroutines.flow.stateIn
@@ -73,7 +74,7 @@ data class SearchTarget(
  */
 class SearchViewModel(
     private val catalog: suspend () -> CatalogRepository,
-    private val locale: LocaleSpec,
+    private val locale: StateFlow<LocaleSpec>,
     private val ephemeris: Ephemeris,
     private val now: () -> Instant,
     private val settings: Settings,
@@ -103,13 +104,17 @@ class SearchViewModel(
      */
     @OptIn(ExperimentalCoroutinesApi::class, FlowPreview::class)
     val suggestions: StateFlow<List<SearchHit>> =
-        _query
-            .debounce { if (it.isBlank()) Duration.ZERO else SEARCH_DEBOUNCE }
-            .mapLatest { q ->
+        combine(
+            _query.debounce { if (it.isBlank()) Duration.ZERO else SEARCH_DEBOUNCE },
+            // A language switch leaves this view model alive, so a list already on screen would
+            // otherwise keep the old language's names until the next keystroke.
+            locale,
+        ) { q, spec -> q to spec }
+            .mapLatest { (q, spec) ->
                 if (q.isBlank()) {
                     emptyList()
                 } else {
-                    catalog().searchByPrefix(q.trim(), locale, SUGGESTION_LIMIT)
+                    catalog().searchByPrefix(q.trim(), spec, SUGGESTION_LIMIT)
                 }
             }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(), emptyList())
 
@@ -125,7 +130,7 @@ class SearchViewModel(
      */
     fun selectById(id: CelestialObjectId) {
         viewModelScope.launch {
-            val info = catalog().objectInfo(id, locale) ?: return@launch
+            val info = catalog().objectInfo(id, locale.value) ?: return@launch
             select(
                 SearchHit(
                     id = info.id,
@@ -141,7 +146,7 @@ class SearchViewModel(
     /** The user picked a hit from the list (v1's single-result / "Did you mean?" selection). */
     fun select(hit: SearchHit) {
         viewModelScope.launch {
-            val info = catalog().objectInfo(hit.id, locale)
+            val info = catalog().objectInfo(hit.id, locale.value)
             val direction = resolveDirection(hit, info)
             if (direction != null) {
                 // Search spans hidden layers (D43); re-enable the hit's layer so the arrow
@@ -167,7 +172,7 @@ class SearchViewModel(
             return
         }
         viewModelScope.launch {
-            val hits = catalog().searchByPrefix(q, locale, SUGGESTION_LIMIT)
+            val hits = catalog().searchByPrefix(q, locale.value, SUGGESTION_LIMIT)
             val chosen =
                 hits.firstOrNull { it.name.equals(q, ignoreCase = true) } ?: hits.singleOrNull()
             if (chosen != null) {
