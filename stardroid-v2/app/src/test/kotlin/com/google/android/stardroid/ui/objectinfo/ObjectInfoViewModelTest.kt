@@ -33,6 +33,7 @@ import com.google.android.stardroid.math.Vector3
 import com.google.android.stardroid.render.api.SkyCamera
 import com.google.android.stardroid.settings.FakeSettings
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.CompletableDeferred
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.cancel
@@ -63,6 +64,9 @@ class ObjectInfoViewModelTest {
             LayerKind.entries.associateWith { MutableStateFlow<List<CatalogObject>>(emptyList()) }
         val infos = mutableMapOf<CelestialObjectId, ObjectInfo>()
         var lastInfoLocale: LocaleSpec? = null
+
+        /** Set to hold [objectInfo] mid-read, so a test can interleave a call against it. */
+        var infoGate: CompletableDeferred<Unit>? = null
         val showers = MutableStateFlow<List<MeteorShower>>(emptyList())
 
         override fun layerObjects(
@@ -86,6 +90,7 @@ class ObjectInfoViewModelTest {
             locale: LocaleSpec,
         ): ObjectInfo? {
             lastInfoLocale = locale
+            infoGate?.await()
             return infos[id]
         }
 
@@ -168,6 +173,29 @@ class ObjectInfoViewModelTest {
             runCurrent()
 
             assertThat(vm.card.value?.name).isEqualTo("Sirio")
+        }
+
+    @Test
+    fun `a card dismissed while a language change re-reads it stays dismissed`() =
+        testScope.runCurrentTest {
+            repository.infos[SIRIUS_ID] = objectInfo(SIRIUS_ID, "Sirius")
+            val vm = viewModel()
+            vm.show(SIRIUS_ID)
+            runCurrent()
+
+            val gate = CompletableDeferred<Unit>()
+            repository.infoGate = gate
+            repository.infos[SIRIUS_ID] = objectInfo(SIRIUS_ID, "Sirio")
+            locale.value = LocaleSpec("es")
+            runCurrent()
+
+            // The re-read is suspended in the catalog; the user closes the card before it lands.
+            vm.dismiss()
+            repository.infoGate = null
+            gate.complete(Unit)
+            runCurrent()
+
+            assertThat(vm.card.value).isNull()
         }
 
     @Test

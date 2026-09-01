@@ -37,6 +37,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.debounce
 import kotlinx.coroutines.flow.mapLatest
 import kotlinx.coroutines.flow.stateIn
@@ -103,13 +104,17 @@ class SearchViewModel(
      */
     @OptIn(ExperimentalCoroutinesApi::class, FlowPreview::class)
     val suggestions: StateFlow<List<SearchHit>> =
-        _query
-            .debounce { if (it.isBlank()) Duration.ZERO else SEARCH_DEBOUNCE }
-            .mapLatest { q ->
+        combine(
+            _query.debounce { if (it.isBlank()) Duration.ZERO else SEARCH_DEBOUNCE },
+            // A language switch leaves this view model alive, so a list already on screen would
+            // otherwise keep the old language's names until the next keystroke.
+            locale,
+        ) { q, spec -> q to spec }
+            .mapLatest { (q, spec) ->
                 if (q.isBlank()) {
                     emptyList()
                 } else {
-                    catalog().searchByPrefix(q.trim(), locale.value, SUGGESTION_LIMIT)
+                    catalog().searchByPrefix(q.trim(), spec, SUGGESTION_LIMIT)
                 }
             }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(), emptyList())
 

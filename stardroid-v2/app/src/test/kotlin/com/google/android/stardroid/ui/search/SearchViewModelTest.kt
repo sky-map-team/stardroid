@@ -63,6 +63,9 @@ class SearchViewModelTest {
         var lastPrefix: String? = null
         var searchCount = 0
 
+        /** Overrides [hits] when set, so a test can vary the results by locale. */
+        var hitsFor: ((LocaleSpec) -> List<SearchHit>)? = null
+
         override fun layerObjects(
             kind: LayerKind,
             locale: LocaleSpec,
@@ -80,7 +83,8 @@ class SearchViewModelTest {
         ): List<SearchHit> {
             lastPrefix = prefix
             searchCount++
-            return hits.filter { it.name.startsWith(prefix, ignoreCase = true) }
+            return (hitsFor?.invoke(locale) ?: hits)
+                .filter { it.name.startsWith(prefix, ignoreCase = true) }
         }
 
         override suspend fun objectInfo(
@@ -111,10 +115,12 @@ class SearchViewModelTest {
 
     private var manualMode = false
 
+    private val locale = MutableStateFlow(LocaleSpec("en"))
+
     private fun viewModel(): SearchViewModel =
         SearchViewModel(
             catalog = { repository },
-            locale = MutableStateFlow(LocaleSpec("en")),
+            locale = locale,
             ephemeris = KeplerianEphemeris,
             now = { NOW },
             settings = settings,
@@ -139,6 +145,28 @@ class SearchViewModelTest {
             vm.setQuery("")
             runCurrent()
             assertThat(vm.suggestions.value).isEmpty()
+        }
+
+    @Test
+    fun `suggestions re-run in the new language when the app language changes`() =
+        testScope.runCurrentTest {
+            val spanish = SIRIUS_HIT.copy(name = "Sirio")
+            repository.hitsFor = { if (it.tag == "es") listOf(spanish) else listOf(SIRIUS_HIT) }
+            val vm = viewModel()
+            backgroundScope.launch { vm.suggestions.collect {} }
+            runCurrent()
+
+            vm.setQuery("sir")
+            advanceTimeBy(debounceSettle)
+            runCurrent()
+            assertThat(vm.suggestions.value).containsExactly(SIRIUS_HIT)
+
+            // The view model outlives the activity recreation a language switch triggers.
+            locale.value = LocaleSpec("es")
+            advanceTimeBy(debounceSettle)
+            runCurrent()
+
+            assertThat(vm.suggestions.value).containsExactly(spanish)
         }
 
     @Test

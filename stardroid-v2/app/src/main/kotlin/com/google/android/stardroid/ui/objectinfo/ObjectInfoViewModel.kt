@@ -410,7 +410,9 @@ class ObjectInfoViewModel(
         viewModelScope.launch {
             locale.drop(1).collect {
                 val open = _card.value ?: return@collect
-                cardFor(open.id)?.let(::openCard)
+                // The re-read suspends, so the user may have dismissed the card or opened a
+                // different one meanwhile; reopening then would resurrect what they closed.
+                cardFor(open.id)?.let { if (_card.value?.id == open.id) openCard(it) }
             }
         }
     }
