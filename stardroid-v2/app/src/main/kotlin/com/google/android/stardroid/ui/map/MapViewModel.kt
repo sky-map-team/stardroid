@@ -830,7 +830,12 @@ class MapViewModel(
                     val sinAngle = (cam.up cross target) dot cam.lineOfSight
                     val cosAngle = cam.up dot target
                     val angleDeg = atan2(sinAngle, cosAngle) * RADIANS_TO_DEGREES
-                    if (abs(angleDeg) < LEVEL_STOP_DEG) break
+                    // A diagonal fling's pitch+yaw composition isn't a true combined rotation
+                    // (MapViewModel#onDrag), so it reintroduces a little roll on every frame it
+                    // runs. Don't declare victory on an instantaneous close-enough reading while
+                    // the fling is still actively re-tilting the horizon underneath us (#960) —
+                    // only stop once the fling itself is done.
+                    if (abs(angleDeg) < LEVEL_STOP_DEG && flingJob?.isActive != true) break
                     // The share of the remaining angle this frame takes: v1's flat 20% per
                     // 50 ms tick, re-expressed as a continuous rate so the spring settles in
                     // the same time whatever the refresh rate (D93).
