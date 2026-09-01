@@ -37,15 +37,15 @@
     <string name="search_go" translation_description="Button that starts navigating the sky map toward the typed search target.">Vai</string>
     <string name="search_cancel">Annulla</string>
     <string name="search_no_results">Nessun risultato trovato. Forse l\'oggetto non è visibile in questo momento.</string>
-    <string name="search_target_looking_message" translation_description="Status shown while the user is being guided toward a search target. %1$s is the object name.">Cerca: %1$s</string>
+    <string name="search_target_looking_message" tm_human="true" translation_description="Status shown while the user is being guided toward a search target. %1$s is the object name.">Ricerca di: %1$s</string>
     <string name="search_target_found_message" translation_description="Status shown when the search target has been found and is centered on screen. %1$s is the object name.">Trovato: %1$s</string>
     <string name="search_overlay_prompt">Punta il telefono verso la freccia</string>
 
     <!-- Layer names in the layer-visibility sheet. -->
     <string name="layer_stars">Stelle</string>
     <string name="layer_constellations">Costellazioni</string>
-    <string name="layer_deep_sky" translation_description="Toggle label for the layer showing deep-sky objects such as galaxies and nebulae.">Oggetti del profondo cielo</string>
-    <string name="layer_solar_system">Pianeti</string>
+    <string name="layer_deep_sky" tm_human="true" translation_description="Toggle label for the layer showing deep-sky objects such as galaxies and nebulae.">Oggetti del cielo profondo</string>
+    <string name="layer_solar_system" tm_human="true">Sistema solare</string>
     <string name="layer_meteor_showers">Piogge meteoriche</string>
     <string name="layer_satellites" translation_description="Toggle label for the layer showing artificial satellites such as the International Space Station.">Satelliti</string>
     <string name="channel_passes_name" translation_description="Name of the notification channel for alerts shortly before a satellite passes overhead.">Passaggi satellitari</string>
@@ -130,7 +130,7 @@
     <string name="layer_camera" translation_description="Layers-sheet Display toggle that shows the live rear-camera image behind the star map, so the drawn sky overlays the real one.">Modalità fotocamera pass-through</string>
     <string name="layer_camera_needs_sensors" translation_description="Subtitle explaining why the through-camera toggle is disabled: the device has no usable motion sensors, and the mode needs the map to follow where the phone points.">Richiede sensori di movimento non presenti su questo dispositivo</string>
     <string name="ar_auto_mode_snackbar" translation_description="Snackbar shown when turning on through-camera mode switched the map from manual dragging back to automatic sensor pointing.">Modalità automatica attivata per la visualizzazione fotocamera</string>
-    <string name="ar_permission_denied" translation_description="Snackbar shown when the user declined the camera permission that through-camera mode needs.">La modalità fotocamera pass-through richiede il permesso della fotocamera</string>
+    <string name="ar_permission_denied" tm_human="true" translation_description="Snackbar shown when the user declined the camera permission that through-camera mode needs.">La modalità fotocamera pass-through richiede il permesso di accesso alla fotocamera</string>
     <string name="ar_permission_settings_action">Impostazioni</string>
     <string name="ar_exposure_slider" translation_description="Accessibility label for the slider adjusting the camera\'s exposure compensation while through-camera mode is on.">Esposizione fotocamera</string>
     <string name="ar_alignment_adjusted_message" translation_description="Snackbar shown after the user drags the star map to align it with the camera image; shown with an Undo action that reverts the whole drag.">Allineamento mappa regolato</string>
@@ -194,7 +194,7 @@
     <string name="time_travel_second_speed_back">Velocità di viaggio &lt; 1 sec/sec</string>
     <string name="time_travel_minute_speed_back">Velocità di viaggio &lt; 1 min/sec</string>
     <string name="time_travel_10minute_speed_back">Velocità di viaggio &lt; 10 min/sec</string>
-    <string name="time_travel_hour_speed_back">Velocità &lt; 1 ora/sec</string>
+    <string name="time_travel_hour_speed_back" tm_human="true">Velocità di viaggio &lt; 1 ora/sec</string>
     <string name="time_travel_day_speed_back">Velocità di viaggio &lt; 1 giorno/sec</string>
     <string name="time_travel_week_speed_back">Velocità di viaggio &lt; 1 settimana/sec</string>
 
@@ -211,15 +211,15 @@
     <string name="time_travel_mars_uranus_2026">Avvicinamento Marte-Urano, 4 luglio 2026</string>
     <string name="time_travel_solar_eclipse_2026">Eclissi solare totale, 12 agosto 2026</string>
     <string name="time_travel_perseids_2026">Sciame meteorico delle Perseidi, 12-13 agosto 2026</string>
-    <string name="time_travel_lunar_eclipse_aug_2026" translation_description="Name of an astronomical event in the time travel picker. Keep the date format suitable for your locale.">Eclissi Lunare Parziale, 28 ago 2026</string>
+    <string name="time_travel_lunar_eclipse_aug_2026" tm_human="true" translation_description="Name of an astronomical event in the time travel picker. Keep the date format suitable for your locale.">Eclissi lunare parziale, 28 agosto 2026</string>
     <string name="time_travel_jupiter_occultation_2026">Occultazione lunare di Giove, 6 ottobre 2026</string>
     <string name="time_travel_geminids_2026">Sciame meteorico dei Geminidi, 13-14 dicembre 2026</string>
     <string name="time_travel_supermoon_2026">Superluna della Vigilia di Natale, 24 dicembre 2026</string>
     <string name="time_travel_mercury_transit_2016">Transito di Mercurio del 9 maggio 2016</string>
-    <string name="time_travel_solar_eclipse_2024">Eclissi solare del Apr 8, 2024</string>
+    <string name="time_travel_solar_eclipse_2024" tm_human="true">Eclissi solare dell\'8 aprile 2024</string>
     <string name="time_travel_apollo_11">Allunaggio dell\'Apollo 11</string>
-    <string name="time_travel_jupiter_saturn_2020">Congiunzione Giove-Saturno</string>
-    <string name="sun_wont_set_message">Nella tua località corrente, il sole non tramonterà per le prossime 24 ore</string>
+    <string name="time_travel_jupiter_saturn_2020" tm_human="true">Congiunzione Giove-Saturno del 2020</string>
+    <string name="sun_wont_set_message" tm_human="true">Nella tua località corrente, il sole non tramonterà per le prossime 24 ore.</string>
     <string name="time_travel_start_message" translation_description="Toast message when time travel starts toward a chosen destination. %1$s is the formatted destination date and time.">Viaggiando nel tempo fino a %1$s ...</string>
     <string name="time_travel_close_message">Torna al presente...</string>
 
@@ -244,9 +244,9 @@
     La dimensione delle etichette non cambia con lo zoom — impostala nelle Impostazioni
     </string>
     <string name="label_size_hint_action" translation_description="Action button on the label size snackbar; opens the app\'s Settings screen, where the user can change how large the sky labels are">Impostazioni</string>
-    <string name="location_permission_dialog_title">Posizione richiesta</string>
-    <string name="location_permission_dialog_message">
-    Sky Map ha bisogno della tua posizione approssimativa per mostrare il cielo notturno corretto. Puoi concedere l\'autorizzazione, inserire la tua posizione manualmente o decidere più tardi. Se decidi più tardi, la mappa non sarà accurata finché la tua posizione non sarà stata impostata.
+    <string name="location_permission_dialog_title" tm_human="true">Posizione (facoltativa)</string>
+    <string name="location_permission_dialog_message" tm_human="true">
+    Sky Map ha bisogno della tua posizione approssimativa per mostrare il cielo notturno corretto. Questa autorizzazione è facoltativa: puoi rifiutarla e inserire la posizione manualmente, oppure decidere più tardi. Se decidi più tardi, la mappa non corrisponderà al cielo sopra di te finché non avrai impostato la tua posizione.
     </string>
     <string name="location_permission_grant">Concedi autorizzazione</string>
     <string name="location_permission_enter_manually">Inserisci manualmente</string>
@@ -302,7 +302,7 @@
     <string name="settings_cancel">Annulla</string>
     <string name="settings_section_controls">Controlli</string>
     <string name="settings_section_appearance">Aspetto</string>
-    <string name="settings_section_sensors">Impostazioni sensori</string>
+    <string name="settings_section_sensors" tm_human="true">Impostazioni sensori (esperti)</string>
     <string name="settings_section_other">Altro</string>
     <string name="enable_analytics">Invia statistiche di utilizzo</string>
     <string name="enable_analytics_desc">Migliora Sky Map inviando dati anonimi a Google Analytics</string>
@@ -314,8 +314,8 @@
     Mostra le schede info anche toccando gli oggetti in modalità automatica (sensori)
     </string>
     <string name="settings_auto_level_horizon">Orizzonte auto-livellato</string>
-    <string name="auto_level_on_toast" translation_description="Brief confirmation shown when a double tap turns horizon auto-leveling on in manual mode">Livellamento automatico orizzonte attivo</string>
-    <string name="auto_level_off_toast" translation_description="Brief confirmation shown when a double tap turns horizon auto-leveling off in manual mode">Livellamento automatico orizzonte disattivo</string>
+    <string name="auto_level_on_toast" tm_human="true" translation_description="Brief confirmation shown when a double tap turns horizon auto-leveling on in manual mode">Livellamento automatico orizzonte attivato</string>
+    <string name="auto_level_off_toast" tm_human="true" translation_description="Brief confirmation shown when a double tap turns horizon auto-leveling off in manual mode">Livellamento automatico orizzonte disattivato</string>
     <string name="settings_auto_level_horizon_summary">
     In modalità manuale, l\'orizzonte ritorna gradualmente all\'orizzontale dopo aver sollevato le dita
     </string>
@@ -326,9 +326,9 @@
     <string name="settings_font_size_large" translation_description="Large font size">Grande</string>
     <string name="settings_font_size_extra_large" translation_description="Largest font size">Molto grande</string>
     <string name="settings_auto_dimness">Oscuramento automatico dello schermo</string>
-    <string name="settings_auto_dimness_summary" translation_description="Summary for the night-mode screen dimming preference">Intensità attenuazione schermo modalità notte</string>
+    <string name="settings_auto_dimness_summary" tm_human="true" translation_description="Summary for the night-mode screen dimming preference">Di quanto la modalità notte attenua lo schermo</string>
     <string name="settings_auto_dimness_system" translation_description="Screen dimming option: leave brightness on the system setting">Predefinito di sistema</string>
-    <string name="settings_auto_dimness_dim" translation_description="Screen dimming option: dimmest screen setting">Molto tenue</string>
+    <string name="settings_auto_dimness_dim" tm_human="true" translation_description="Screen dimming option: dimmest screen setting">Molto scuro</string>
     <string name="settings_auto_dimness_classic" translation_description="Screen dimming option: the hand-tuned brightness Sky Map used for its first 15 years">Classico</string>
     <string name="settings_sky_gradient">Mostra gradiente del cielo</string>
     <string name="settings_sky_gradient_summary">Sfuma il cielo di blu vicino al Sole e scuro dal lato opposto</string>
@@ -407,7 +407,7 @@
     <string name="diagnostics_east" translation_description="Compass direction shown for an eastward magnetic correction">Est</string>
     <string name="diagnostics_west" translation_description="Compass direction shown for a westward magnetic correction">Ovest</string>
     <string name="diagnostics_local_datetime">Data e ora locali</string>
-    <string name="diagnostics_utc_datetime">Data e ora universale</string>
+    <string name="diagnostics_utc_datetime" tm_human="true">Data e ora universali</string>
     <string name="diagnostics_section_network">Rete</string>
     <string name="diagnostics_connection">Connessione</string>
     <string name="diagnostics_section_satellites" translation_description="Section heading in the diagnostics screen for satellite orbital-data status">Satelliti</string>
@@ -421,13 +421,13 @@
     <string name="diagnostics_satellite_force_fetch" translation_description="Label on a debug-only button in the diagnostics screen that downloads satellite orbital data immediately">Recupera dati satellitari ora (debug)</string>
     <string name="diagnostics_connected">Connesso</string>
     <string name="diagnostics_disconnected">Disconnesso</string>
-    <string name="diagnostics_wifi">(wifi)</string>
-    <string name="diagnostics_cell">(rete mobile)</string>
+    <string name="diagnostics_wifi" tm_human="true">" (wifi)"</string>
+    <string name="diagnostics_cell" tm_human="true">" (rete mobile)"</string>
 
     <!-- Compass calibration screen (slice 15) -->
     <string name="calibration_button">Calibra</string>
     <string name="calibration_heading_user">La bussola del tuo telefono</string>
-    <string name="calibration_heading_warning">La bussola del tuo telefono necessita di attenzione</string>
+    <string name="calibration_heading_warning" tm_human="true">La bussola del tuo telefono richiede la tua attenzione!</string>
     <string name="calibration_accuracy_unknown">Calibrazione: Sconosciuta</string>
     <string name="calibration_accuracy_unreliable">Calibrazione: Non calibrata</string>
     <string name="calibration_accuracy_low">Calibrazione: Scarsa</string>
@@ -436,7 +436,7 @@
     <string name="calibration_accuracy_no_contact">Calibrazione: Nessun contatto</string>
     <string name="calibration_do_not_show_again">Non mostrare più</string>
     <string name="calibration_what_to_do" translation_description="Information for the user on how to calibrate the compass when the screen auto-opens. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[Il sensore bussola del tuo telefono sta segnalando una calibrazione scarsa. Il movimento a forma di otto (<a href="%s">guarda una dimostrazione</a>) spinge l\'hardware del tuo telefono a ripristinare il sensore bussola — Sky Map non ha alcun controllo su questo processo.<br/><br/><blockquote><b>Calibrato non significa preciso.</b> Il gesto a forma di otto aiuta a ripristinare il sensore, ma non può rimuovere le interferenze da oggetti metallici vicini, cruscotti di auto o custodie del telefono. Se la mappa è ancora imprecisa dopo la calibrazione, le cause più probabili sono quelle esterne — non Sky Map.</blockquote>Spostati in un\'area aperta lontano da metalli e riprova.]]></string>
-    <string name="calibration_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they open the calibration screen. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[Il tuo telefono sta segnalando lo stato di calibrazione della bussola come mostrato sopra.<br/><br/>Se necessario, esegui il movimento a otto (<a href="%s">guarda una dimostrazione</a>) per indurre l\'hardware del telefono a ricalibrare il sensore della bussola.<br/><br/><blockquote><b>Importante:</b> la calibrazione aiuta il sensore a resettarsi internamente. Non significa che la bussola sia necessariamente precisa!L\'interferenza magnetica locale (oggetti metallici, cruscotti di auto, custodie per telefono) può comunque indurre la bussola del telefono a inviare letture imprecisea Sky Map.</blockquote><b>Se la mappa non sta mostrando le posizioni correttamente, il problema è probabilmente il tuo telefono, non Sky Map!</b>]]></string>
+    <string name="calibration_what_to_do_user" tm_human="true" translation_description="Information for the user on how to calibrate the compass when they open the calibration screen. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[Il tuo telefono sta segnalando lo stato di calibrazione della bussola come mostrato sopra.<br/><br/>Se necessario, esegui un movimento a forma di 8 (<a href="%s">guarda una dimostrazione</a>) per indurre l\'hardware del telefono a ricalibrare il sensore della bussola.<br/><br/><blockquote><b>Importante:</b> la calibrazione aiuta il sensore a resettarsi internamente. Non significa che la bussola sia necessariamente precisa! L\'interferenza magnetica locale (oggetti metallici, cruscotti di auto, custodie per telefono) può comunque indurre la bussola del telefono a inviare dati imprecisi a Sky Map.</blockquote><b>Se la mappa non sta mostrando le posizioni correttamente, il problema è probabilmente il tuo telefono, non Sky Map!</b>]]></string>
     <string name="calibration_low_accuracy_toast">La bussola del tuo telefono segnala bassa precisione</string>
     <string name="calibration_complete_toast" translation_description="Toast shown when the compass reaches high accuracy and the auto-opened calibration screen closes itself">Sensori ad alta precisione</string>
 
@@ -471,7 +471,7 @@
     <string name="warm_welcome_slide3_title">Sensori e calibrazione</string>
     <string name="warm_welcome_slide3_desc">Sky Map utilizza i sensori del tuo telefono per allinearsi con le stelle.</string>
     <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message on the third Warm Welcome slide when sensors are missing. Please do not change the &lt; and &gt; markup"><![CDATA[Il tuo dispositivo sembra non avere i sensori necessari per il tracciamento automatico. Non preoccuparti—puoi comunque esplorare l\'intero cosmo in <b>Modalità Manuale</b>!]]></string>
-    <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration advice on the third Warm Welcome slide. Please do not change the &lt; and &gt; markup"><![CDATA[Per mantenere la precisione, fai fare al telefono un rapido <b>movimento a otto</b> di tanto in tanto.]]></string>
+    <string name="warm_welcome_slide3_compass_calib" tm_human="true" translation_description="Compass calibration advice on the third Warm Welcome slide. Please do not change the &lt; and &gt; markup"><![CDATA[Per mantenere la precisione, fai di tanto in tanto un breve movimento a forma di <b>8</b> con il telefono.]]></string>
     <string name="warm_welcome_skip">Salta</string>
     <string name="warm_welcome_next">Avanti</string>
     <string name="warm_welcome_finish">Inizia!</string>
@@ -483,8 +483,8 @@
     <!-- tm:omitted name="tutorial_button" reason="identical_to_source" -->
     <string name="help_dialog_title">Guida</string>
     <string name="help_version" translation_description="Version line at the top of the Help screen. %1$s is the app version name">Versione %1$s</string>
-    <string name="whats_new_button" translation_description="Map-screen menu item that opens the What's New and Credits screen">Novit\'a</string>
-    <string name="whats_new_screen_title" translation_description="Title of the screen showing the release notes and the credits">Novit\'a e Crediti</string>
+    <string name="whats_new_button" tm_human="true" translation_description="Map-screen menu item that opens the What's New and Credits screen">Novità</string>
+    <string name="whats_new_screen_title" tm_human="true" translation_description="Title of the screen showing the release notes and the credits">Novità e crediti</string>
 
     <!-- The deep-sky symbol key at the foot of the Help screen. -->
     <string name="help_symbol_key_title" translation_description="Heading of the Help section explaining the map symbols used for deep-sky objects">Simboli della mappa</string>
@@ -498,7 +498,7 @@
     <string name="symbol_key_planetary_nebula" translation_description="Symbol-key label: the marker used for planetary nebulae">Nebulosa planetaria</string>
     <string name="symbol_key_supernova_remnant" translation_description="Symbol-key label: the marker used for supernova remnants">Resto di supernova</string>
     <string name="symbol_key_asterism" translation_description="Symbol-key label: the marker used for asterisms and star clouds">Asterismo o nube stellare</string>
-    <string name="symbol_key_other" translation_description="Symbol-key label: the marker used for deep-sky objects of any other type">Altro oggetto del profondo cielo</string>
+    <string name="symbol_key_other" tm_human="true" translation_description="Symbol-key label: the marker used for deep-sky objects of any other type">Altro oggetto del cielo profondo</string>
     <string name="symbol_key_meteor_radiant" translation_description="Symbol-key label: the marker for the point in the sky meteors of a shower appear to come from">Radiante di sciame meteorico</string>
     <string name="symbol_key_meteor_radiant_peak" translation_description="Symbol-key label: the brighter marker used when a meteor shower is near its peak activity">Sciame meteorico vicino al picco</string>
 
@@ -510,14 +510,14 @@
     <string name="moon_widget_illumination" translation_description="Widget line showing how much of the Moon\'s disc is lit; %1$d is a percentage number">%1$d%% illuminata</string>
     <string name="moon_widget_rise_time" translation_description="Widget fragment showing today\'s moonrise time; %1$s is a clock time like 17:42">sorge %1$s</string>
     <string name="moon_widget_set_time" translation_description="Widget fragment showing today\'s moonset time; %1$s is a clock time like 03:12">tramonta %1$s</string>
-    <string name="moon_phase_new" translation_description="Name of the lunar phase when the Moon is fully dark">Luna Nuova</string>
-    <string name="moon_phase_waxing_crescent" translation_description="Name of the lunar phase between new moon and first quarter">Luna Crescente</string>
-    <string name="moon_phase_first_quarter" translation_description="Name of the lunar phase when half the disc is lit and growing">Primo Quarto</string>
-    <string name="moon_phase_waxing_gibbous" translation_description="Name of the lunar phase between first quarter and full moon">Gibbosa Crescente</string>
-    <string name="moon_phase_full" translation_description="Name of the lunar phase when the disc is fully lit">Luna Piena</string>
-    <string name="moon_phase_waning_gibbous" translation_description="Name of the lunar phase between full moon and last quarter">Gibbosa Calante</string>
-    <string name="moon_phase_last_quarter" translation_description="Name of the lunar phase when half the disc is lit and shrinking">Ultimo Quarto</string>
-    <string name="moon_phase_waning_crescent" translation_description="Name of the lunar phase between last quarter and new moon">Luna Calante</string>
+    <string name="moon_phase_new" tm_human="true" translation_description="Name of the lunar phase when the Moon is fully dark">Luna nuova</string>
+    <string name="moon_phase_waxing_crescent" tm_human="true" translation_description="Name of the lunar phase between new moon and first quarter">Luna crescente</string>
+    <string name="moon_phase_first_quarter" tm_human="true" translation_description="Name of the lunar phase when half the disc is lit and growing">Primo quarto</string>
+    <string name="moon_phase_waxing_gibbous" tm_human="true" translation_description="Name of the lunar phase between first quarter and full moon">Gibbosa crescente</string>
+    <string name="moon_phase_full" tm_human="true" translation_description="Name of the lunar phase when the disc is fully lit">Luna piena</string>
+    <string name="moon_phase_waning_gibbous" tm_human="true" translation_description="Name of the lunar phase between full moon and last quarter">Gibbosa calante</string>
+    <string name="moon_phase_last_quarter" tm_human="true" translation_description="Name of the lunar phase when half the disc is lit and shrinking">Ultimo quarto</string>
+    <string name="moon_phase_waning_crescent" tm_human="true" translation_description="Name of the lunar phase between last quarter and new moon">Luna calante</string>
     <string name="moon_widget_promo_title" translation_description="Title of the row on the Moon\'s info card offering to add the moon-phase widget to the home screen">Tieni la Luna sulla tua schermata iniziale</string>
     <string name="moon_widget_promo_subtitle" translation_description="Subtitle of the row offering the moon-phase widget, summarizing what the widget shows">Fase, illuminazione e orari di levata, aggiornati quotidianamente</string>
     <string name="moon_widget_promo_add" translation_description="Button that adds the moon-phase widget to the home screen via the system dialog">Aggiungi widget</string>
@@ -539,8 +539,8 @@
     <string name="tonight_widget_sunset_only" translation_description="Header fragment when only the sunset time is known; %1$s is the sunset time">sole tramonta %1$s</string>
     <string name="tonight_well_placed" translation_description="Tonight-widget row: a planet is high in the sky and easy to observe; %1$s is the planet name, %2$s the time from which it is well placed">%1$s ben posizionato dalle %2$s</string>
     <!-- tm:omitted name="tonight_trailing_direction" reason="identical_to_source" -->
-    <string name="tonight_shower_peak" translation_description="Tonight-widget row: a meteor shower reaches its annual peak tonight; %1$s is the shower name">Picco %1$s stasera</string>
-    <string name="tonight_shower_days" translation_description="Tonight-widget row: a meteor shower peaks within a few days; %1$s is the shower name, %2$d the number of days">Picco %1$s tra %2$d giorni</string>
+    <string name="tonight_shower_peak" tm_human="true" translation_description="Tonight-widget row: a meteor shower reaches its annual peak tonight; %1$s is the shower name">Picco delle %1$s stasera</string>
+    <string name="tonight_shower_days" tm_human="true" translation_description="Tonight-widget row: a meteor shower peaks within a few days; %1$s is the shower name, %2$d the number of days">Picco delle %1$s tra %2$d giorni</string>
     <string name="tonight_dark_skies" translation_description="Small trailing note: the moon is dark, so viewing conditions are ideal">cieli bui</string>
     <string name="tonight_trailing_moon" translation_description="Small trailing note: how much of the moon is lit; %1$d is a percentage">luna %1$d%%</string>
     <string name="tonight_new_moon" translation_description="Tonight-widget row shown at new moon">Luna Nuova — cieli più bui del mese</string>
@@ -559,7 +559,7 @@
     <string name="countdown_new_moon_peak" translation_description="Countdown-widget note: the shower peaks near new moon, so skies will be dark">Picco in luna nuova</string>
     <string name="countdown_full_moon" translation_description="Countdown-widget event name for the next full moon">Luna Piena</string>
     <string name="countdown_new_moon" translation_description="Countdown-widget event name for the next new moon">Luna Nuova</string>
-    <string name="tonight_widget_preview_row" translation_description="Representative highlight row shown in the widget picker\'s preview of the tonight widget">Giove ben visibile dalle 21:30</string>
+    <string name="tonight_widget_preview_row" tm_human="true" translation_description="Representative highlight row shown in the widget picker\'s preview of the tonight widget">Giove ben posizionato dalle 21:30</string>
     <!-- tm:omitted name="countdown_widget_preview_days" reason="identical_to_source" -->
     <string name="countdown_widget_preview_name" translation_description="Representative event name shown in the widget picker\'s preview of the countdown widget">Picco delle Perseidi</string>
 
@@ -588,7 +588,7 @@
     </string>
     <string name="notif_digest_title" translation_description="Title of the tonight\'s-sky digest notification">Vale la pena dare un\'occhiata stanotte</string>
     <string name="notif_action_mute_showers" translation_description="Notification action button that opens the system toggle for the meteor-shower channel">Disattiva sciami</string>
-    <string name="time_travel_stopped">Viaggio nel tempo bloccato</string>
+    <string name="time_travel_stopped" tm_human="true">Viaggio nel tempo in pausa</string>
     <!-- Layers sheet: per-layer parameters (D87). -->
     <string name="layer_param_disc_size">Dimensione disco</string>
     <string name="layer_param_disc_size_true">Scala reale</string>
