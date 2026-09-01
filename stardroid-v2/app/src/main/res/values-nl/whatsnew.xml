@@ -1,11 +1,29 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Een Nieuwe Fundering</h2><p>Sky Map is volledig opnieuw opgebouwd met een moderne rendering- en datapijplijn en een vernieuwde gebruikersinterface.</p><h2>Een Scherper Zonnestelsel</h2><p>De Zon, Maan en planeten zijn opnieuw getekend op basis van hun originele NASA-beelden, en afbeeldingen op de kaart zijn nu vloeiender en gemengd, zodat ze op elk zoomniveau scherp blijven. Planeten kunnen ook worden weergegeven op hun ware schijnbare grootte — kies symbolen of ware schaal in het lagenoverzicht.</p><h2>Een Maan Die Bij de Hemel Past</h2><p>De fase van de Maan wordt nu berekend op basis van de werkelijke geometrie in plaats van gekozen uit acht vaste afbeeldingen, zodat de lijn tussen licht en donker valt waar je die daadwerkelijk ziet.</p><h2>Betere Posities van Zon en Maan</h2><p>Nauwkeurigere berekeningen voor Zon en Maan plaatsen beide hemellichamen waar ze horen en corrigeren de timing van verduisteringen.</p><h2>Vloeiender Pannen</h2><p>Een hapering verholpen die optrad bij het vegen of slepen van de kaart op schermen met een hoge verversingssnelheid — pannen, momentum en de zoekzoom volgen nu de werkelijke framesnelheid van je scherm in plaats van een vaste snelheid.</p><h2>Een Frissere Welkomst</h2><p>De achtergrond op het allereerste scherm dat je ziet, is vernieuwd met een nieuwe in-app opname van de hemel.</p><h2>Hemelmeldingen</h2><p>Schakel optionele meldingen in voor pieken van meteorenregens en een eenmalige avondoverzicht van wat er vanavond zichtbaar is, direct vanuit Instellingen.</p><h2>Maansverduisteringen</h2><p>De kaart geeft nu de koperrode tint van de Maan weer tijdens een maansverduistering, en de informatiekaart van de Maan, het overzicht van de hemel vanavond en de aftelwidget weten allemaal wanneer er een aankomt — met een optionele herinneringsmelding.</p><h2>Duidelijkere Machtigingen</h2><p>Het scherm met de Voorwaarden en de Help leggen nu precies uit waarvoor elke apparaatmachtiging wordt gebruikt, en de app vraagt niet langer om de advertentie-ID-machtiging die het niet nodig had.</p><h2>¡Hola! Bonjour! Olá!</h2><p>Sky Map spreekt nu Frans, Spaans, Pools en Portugees, en er komen nog meer talen aan.</p>]]></string>
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Een nieuw fundament</h2>
+<p>Sky Map is helemaal opnieuw opgebouwd met een moderne weergave- en datapipeline en een vernieuwde gebruikersinterface.</p>
+<h2>Een scherper zonnestelsel</h2>
+<p>De Zon, Maan en planeten zijn opnieuw getekend op basis van hun originele NASA-beelden, en afbeeldingen op de kaart zijn nu soepeler gemaakt en samengevoegd zodat ze bij elk zoomniveau mooi blijven. Planeten kunnen nu ook op hun werkelijke hoekgrootte worden weergegeven — kies symbolen of werkelijke schaal in het Lagen-venster.</p>
+<h2>Een Maan die bij de hemel past</h2>
+<p>De maanfase wordt nu berekend op basis van de echte geometrie in plaats van gekozen uit acht vaste afbeeldingen, zodat de grens tussen licht en donker valt waar je hem daadwerkelijk ziet.</p>
+<h2>Betere posities voor Zon en Maan</h2>
+<p>Nauwkeurigere berekeningen voor de Zon en Maan plaatsen beide hemellichamen op de juiste plek en verhelpen de timing van verduisteringen.</p>
+<h2>Soepeler verschuiven</h2>
+<p>Een hapering is verholpen die optrad bij het snel swipen of verslepen van de kaart op schermen met een hoge verversingssnelheid — verschuiven, momentum en de zoekzoom volgen nu de werkelijke framerate van je beeldscherm in plaats van een vaste snelheid.</p>
+<h2>Een frissere verwelkoming</h2>
+<p>De achtergrond van het allereerste scherm dat je ziet is vernieuwd met een nieuwe opname van de hemel gemaakt binnen de app.</p>
+<h2>Hemelse meldingen</h2>
+<p>Schakel rechtstreeks via Instellingen optionele meldingen in voor pieken van meteorenzwermen en een eenmalig avondoverzicht van wat er vanavond zichtbaar is.</p>
+<h2>Maanverduisteringen</h2>
+<p>De kaart toont nu de koperrode tint van de Maan tijdens een maanverduistering, en de informatiekaart van de Maan, het overzicht van de avondhemel en de aftelwidget weten allemaal wanneer er een aankomt — met een optionele herinneringsmelding.</p>
+<h2>Duidelijkere toestemmingen</h2>
+<p>Het scherm met voorwaarden en de hulp leggen nu precies uit waar elke apparaattoestemming voor wordt gebruikt, en de app vraagt niet langer om de advertentie-id-toestemming die niet nodig was.</p>
+<h2>¡Hola! Bonjour! Olá!</h2>
+<p>Sky Map is nu volledig vertaald in 28 talen.</p>]]></string>
     <string name="whats_new_support" translation_description="HTML paragraph inviting users to support the project, shown in the What's new dialog and the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h1>Ondersteun Sky Map</h1><p>Sky Map is gratis en open source. Als je het nuttig vindt, overweeg dan om de ontwikkeling te ondersteunen via onze <a href="https://github.com/sky-map-team/stardroid/?tab=readme-ov-file#support-the-project">GitHub</a>-pagina of door <a href="https://buymeacoffee.com/skymapdevs?utm_source=skymap&amp;utm_medium=app&amp;utm_campaign=whatsnew">ons een koffie te kopen</a>.</p>]]></string>
     <string name="beta_user_help_text" translation_description="Usually-empty HTML content shown to beta testers asking for feedback, appended in the What's new dialog and the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h3>Bètagebruikers!</h3>
-<p>Je hulp is meer dan ooit nodig bij het melden van bugs en crashes via <a href="mailto:skymapdevs@gmail.com">skymapdevs@gmail.com</a>
-of <a href="https://github.com/sky-map-team/stardroid/issues">GitHub</a>. Het is nog niet volledig functioneel en (sorry) nog niet volledig
-vertaald. Als je
-de bèta wilt verlaten en wilt terugkeren naar de klassieke Sky Map, bezoek dan
+<p>Jouw hulp is hard nodig bij het melden van bugs en crashes via <a href="mailto:skymapdevs@gmail.com">skymapdevs@gmail.com</a>
+of <a href="https://github.com/sky-map-team/stardroid/issues">GitHub</a>. De app is nog niet helemaal klaar. Als je
+uit de bèta wilt stappen en terug wilt naar de klassieke Sky Map, ga dan naar
 <a href="https://play.google.com/apps/testing/com.google.android.stardroid">de testpagina</a>.</p>]]></string>
 </resources>

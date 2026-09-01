@@ -1,11 +1,29 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Sylfaen Newydd</h2><p>Mae Sky Map wedi\'i ailadeiladu o\'r gwaelod i fyny gyda phiblinell rendro a data modern ac UI wedi\'i adnewyddu.</p><h2>System Solar Fwy Miniog</h2><p>Mae\'r Haul, y Lleuad a\'r planedau wedi\'u hail-lunio o\'u delweddaeth NASA wreiddiol, ac mae lluniau ar draws y map bellach wedi\'u llyfnhau a\'u cyfuno fel eu bod yn dal i fyny ar bob lefel chwyddo. Gellir hefyd dynnu planedau ar eu gwir faint onglog — dewiswch glyphs neu wir raddfa yn y daflen Haenau.</p><h2>Lleuad Sy\'n Cydweddu â\'r Awyr</h2><p>Mae cyfnod y Lleuad bellach yn cael ei gyfrifo o\'i geometreg go iawn yn hytrach nag o wyth llun sefydlog, felly mae\'r llinell rhwng golau a thywyllwch yn disgyn lle rydych chi\'n ei gweld mewn gwirionedd.</p><h2>Gwell Safleoedd Haul a Lleuad</h2><p>Mae cyfrifiadau Haul a Lleuad mwy cywir yn gosod y ddau gorff lle maent yn perthyn ac yn trwsio amseriad eclipsau.</p><h2>Panio Llyfnach</h2><p>Wedi trwsio\'r oedi a ymddangosodd wrth daflu neu lusgo\'r map ar sgriniau cyfradd adnewyddu uchel — mae panio, momentwm a\'r chwyddo chwilio bellach yn dilyn cyfradd ffrâm wirioneddol eich sgrin yn hytrach na chyfradd sefydlog.</p><h2>Croeso Ffresach</h2><p>Mae cefndir y sgrin gyntaf un a welwch wedi\'i adnewyddu gyda dalfa newydd o\'r awyr yn yr ap.</p><h2>Hysbysiadau Awyr</h2><p>Trowch hysbysiadau dewisol ymlaen ar gyfer brigau cawodydd meteor a chrynodeb un-tro gyda\'r nos o\'r hyn sy\'n weladwy heno, yn syth o Gosodiadau.</p><h2>Eclipsau Lleuad</h2><p>Mae\'r map bellach yn rendro lliw coch-copr y Lleuad yn ystod eclips lleuad, ac mae cerdyn gwybodaeth y Lleuad, crynodeb awyr heno a theclyn cyfrif i lawr i gyd yn gwybod pryd mae un yn dod — gydag hysbysiad atgoffa dewisol.</p><h2>Caniatadau Cliriach</h2><p>Mae sgrin y Telerau a\'r Help bellach yn nodi\'n union beth mae pob caniatâd dyfais yn cael ei ddefnyddio ar ei gyfer, ac nid yw\'r ap bellach yn gofyn am y caniatâd ID hysbysebu nad oedd ei angen.</p><h2>¡Hola! Bonjour! Olá!</h2><p>Mae Sky Map bellach yn siarad Ffrangeg, Sbaeneg, Pwyleg a Phortiwgaleg, gyda mwy o ieithoedd ar y ffordd.</p>]]></string>
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Sylfaen Newydd</h2>
+<p>Mae Sky Map wedi\'i ailadeiladu o\'r llawr i fyny gyda phiblinell rendro a data fodern a rhyngwyneb defnyddiwr wedi\'i adnewyddu.</p>
+<h2>System Solar Fwy Talpog</h2>
+<p>Mae\'r Haul, y Lleuad a\'r planedau wedi\'u hail-lunio o\'u delweddaeth wreiddiol gan NASA, ac mae lluniau ledled y map bellach yn cael eu llyfnu a\'u cymysgu fel y maent yn dal i fyny ar bob lefel chwyddo. Gellir hefyd ddenu planedau ar eu maint onglog gwirioneddol - dewiswch symbolau neu raddfa wirioneddol yn y ddalen Haenau.</p>
+<h2>Lleuad sy\'n Cyfateb i\'r Awyr</h2>
+<p>Mae cyfnod y Lleuad bellach yn cael ei gyfrifo o\'i geometrig go iawn yn hytrach na\'i ddewis o wyth llun sefydlog, felly mae\'r llinell rhwng golau a thywyllwch yn disgyn lle rydych chi\'n ei weld mewn gwirionedd.</p>
+<h2>Safleoedd Haul a Lleuad Gwell</h2>
+<p>Mae cyfrifiadau Haul a Lleuad mwy cywir yn rhoi\'r ddau gorff lle maent yn perthyn ac yn trwsio amseriad eclipsau.</p>
+<h2>Symud Llyfnach</h2>
+<p>Wedi trwsio cnoc a oedd yn ymddangos wrth daflu neu lusgo\'r map ar sgriniau cyfradd adnewyddu uchel - mae symud, momentwm a chwyddo chwilio bellach yn olrhain cyfradd ffrâm wirioneddol eich arddangosfa yn hytrach na chyfradd sefydlog.</p>
+<h2>Croeso Ffresach</h2>
+<p>Mae\'r cefndir ar y sgrin gyntaf iawn a welwch wedi\'i adnewyddu gyda dal newydd yn yr ap o\'r awyr.</p>
+<h2>Hysbysiadau Awyr</h2>
+<p>Trowch hysbysiadau dewisol ymlaen ar gyfer brigau cawodydd meteor a chrynodeb gyda\'nos un-tro o\'r hyn sy\'n weladwy heno, yn iawn o\'r Gosodiadau.</p>
+<h2>Eclipsau Lleuad</h2>
+<p>Mae\'r map bellach yn rendro lliw copr-goch y Lleuad yn ystod eclips lleuad, ac mae cerdyn gwybodaeth y Lleuad, crynodeb awyr heno a theclyn cyfri i lawr i gyd yn gwybod pryd mae un ar fin digwydd - gyda hysbysiad nodyn atgoffa dewisol.</p>
+<h2>Caniatâd Cliriach</h2>
+<p>Mae\'r sgrin Amodau a Chymorth bellach yn sillafu\'n union ar gyfer beth y defnyddir pob caniatâd dyfeisiau, ac nid yw\'r ap bellach yn gofyn am y caniatâd ID hysbysebu nad oedd ei angen arno.</p>
+<h2>¡Hola! Bonjour! Olá!</h2>
+<p>Mae Sky Map bellach wedi\'i gyfieithu\'n llawn i 28 o ie。]]></string>
     <string name="whats_new_support" translation_description="HTML paragraph inviting users to support the project, shown in the What's new dialog and the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h1>Cefnogi Sky Map</h1><p>Mae Sky Map yn rhad ac am ddim ac yn ffynhonnell agored. Os ydych chi\'n ei chael hi\'n ddefnyddiol, ystyriwch gefnogi datblygiad ar ein <a href="https://github.com/sky-map-team/stardroid/?tab=readme-ov-file#support-the-project">tudalen GitHub</a> neu <a href="https://buymeacoffee.com/skymapdevs?utm_source=skymap&amp;utm_medium=app&amp;utm_campaign=whatsnew">prynu coffi i ni</a>.</p>]]></string>
-    <string name="beta_user_help_text" translation_description="Usually-empty HTML content shown to beta testers asking for feedback, appended in the What's new dialog and the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h3>Defnyddwyr Beta!</h3>
-<p>Mae angen eich help yn fwy nag erioed wrth adrodd am chwilod a damweiniau yn <a href="mailto:skymapdevs@gmail.com">skymapdevs@gmail.com</a>
-neu <a href="https://github.com/sky-map-team/stardroid/issues">GitHub</a>. Nid yw wedi\'i gwblhau\'n llawn eto o ran nodweddion ac (mae\'n ddrwg gennym) nid yw wedi\'i
-gyfieithu\'n llawn. Os ydych
-am adael y fersiwn beta a dychwelyd i Sky Map clasurol ewch i
+    <string name="beta_user_help_text" translation_description="Usually-empty HTML content shown to beta testers asking for feedback, appended in the What's new dialog and the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h3>Defnyddwyr beta!</h3>
+<p>Mae angen eich help chi fwy nag erioed i adrodd am fygiau a damweiniau yn <a href="mailto:skymapdevs@gmail.com">skymapdevs@gmail.com</a>
+neu <a href="https://github.com/sky-map-team/stardroid/issues">GitHub</a>. Nid yw wedi\'i gwblhau\'n llawn o hyd. Os ydych chi
+yn eisiau gadael y beta a dychwelyd at y map awyr clasurol, ewch i
 <a href="https://play.google.com/apps/testing/com.google.android.stardroid">y dudalen brofi</a>.</p>]]></string>
 </resources>

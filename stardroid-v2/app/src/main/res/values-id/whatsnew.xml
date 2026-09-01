@@ -1,25 +1,29 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Fondasi Baru</h2>
-<p>Sky Map telah dibangun kembali dari awal dengan rendering modern dan pipeline data serta UI yang diperbarui.</p>
+<p>Sky Map telah dibangun ulang dari awal dengan rendering modern dan pipa data serta antarmuka yang diperbarui.</p>
 <h2>Tata Surya yang Lebih Tajam</h2>
-<p>Matahari, Bulan, dan planet-planet telah digambar ulang dari citra NASA aslinya, dan gambar-gambar di seluruh peta kini dihaluskan dan dicampur sehingga tetap jelas di setiap tingkat zoom. Planet juga dapat digambar dalam ukuran sudut sebenarnya — pilih glif atau skala sebenarnya di lembar Lapisan.</p>
+<p>Matahari, Bulan, dan planet-planet telah digambar ulang dari citra asli NASA, dan gambar di seluruh peta kini diperhalus dan dipadu agar tetap tajam di setiap tingkat zoom. Planet juga dapat digambar sesuai ukuran sudut sebenarnya — pilih simbol atau skala sebenarnya di lembar Lapisan.</p>
 <h2>Bulan yang Sesuai dengan Langit</h2>
-<p>Fase Bulan kini dihitung dari geometri sebenarnya, bukan dipilih dari delapan gambar tetap, sehingga garis antara terang dan gelap jatuh di tempat yang sebenarnya Anda lihat.</p>
+<p>Fase Bulan kini dihitung dari geometri aslinya alih-alih dipilih dari delapan gambar tetap, sehingga garis antara terang dan gelap jatuh tepat di tempat yang Anda lihat.</p>
 <h2>Posisi Matahari dan Bulan yang Lebih Baik</h2>
-<p>Perhitungan Matahari dan Bulan yang lebih akurat menempatkan kedua benda langit di tempatnya dan memperbaiki waktu gerhana.</p>
-<h2>Geseran yang Lebih Halus</h2>
-<p>Memperbaiki gagap yang muncul saat menggeser atau menyeret peta di layar dengan refresh rate tinggi — geseran, momentum, dan zoom pencarian kini melacak frame rate aktual layar Anda, bukan kecepatan tetap.</p>
-<h2>Sambutan yang Lebih Segar</h2>
-<p>Latar belakang di layar pertama yang Anda lihat telah diperbarui dengan tangkapan langit baru di dalam aplikasi.</p>
+<p>Perhitungan Matahari dan Bulan yang lebih akurat menempatkan kedua benda langit tersebut di tempat yang semestinya dan memperbaiki waktu gerhana.</p>
+<h2>Pergerakan yang Lebih Mulus</h2>
+<p>Memperbaiki kedutan yang muncul saat menggeser atau menyeret peta pada layar dengan laju penyegaran tinggi — penggeseran, momentum, dan zoom pencarian kini mengikuti laju bingkai aktual layar Anda, bukan laju tetap.</p>
+<h2>Tampilan Sambutan yang Lebih Segar</h2>
+<p>Latar belakang pada layar pertama yang Anda lihat telah diperbarui dengan tangkapan layar langit baru di dalam aplikasi.</p>
 <h2>Notifikasi Langit</h2>
-<p>Aktifkan notifikasi opsional untuk puncak hujan meteor dan ringkasan malam satu kali tentang apa yang terlihat malam ini, langsung dari Pengaturan.</p>
+<p>Aktifkan notifikasi opsional untuk puncak hujan meteor dan ringkasan malam hari satu kali tentang apa yang terlihat malam ini, langsung dari Pengaturan.</p>
 <h2>Gerhana Bulan</h2>
-<p>Peta kini menampilkan warna tembaga-merah Bulan selama gerhana bulan, dan kartu info Bulan, ringkasan langit malam ini, serta widget hitung mundur semuanya tahu kapan gerhana akan datang — dengan notifikasi pengingat opsional.</p>
+<p>Peta kini merender warna merah tembaga Bulan selama gerhana bulan, dan kartu informasi Bulan, ringkasan langit malam ini, serta widget hitung mundur semuanya mengetahui kapan gerhana akan terjadi — lengkap dengan notifikasi pengingat opsional.</p>
 <h2>Izin yang Lebih Jelas</h2>
-<p>Layar Ketentuan dan Bantuan kini menjelaskan dengan tepat untuk apa setiap izin perangkat digunakan, dan aplikasi tidak lagi meminta izin ID iklan yang tidak dibutuhkan.</p>
+<p>Layar Ketentuan dan Bantuan kini merinci dengan tepat untuk apa setiap izin perangkat digunakan, dan aplikasi tidak lagi meminta izin ID iklan yang sebenarnya tidak dibutuhkannya.</p>
 <h2>¡Hola! Bonjour! Olá!</h2>
-<p>Sky Map kini tersedia dalam bahasa Prancis, Spanyol, Polandia, dan Portugis, dengan lebih banyak bahasa akan segera hadir.</p>]]></string>
+<p>Sky Map kini telah sepenuhnya diterjemahkan ke dalam 28 bahasa.</p>]]></string>
     <string name="whats_new_support" translation_description="HTML paragraph inviting users to support the project, shown in the What's new dialog and the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h1>Dukung Sky Map</h1><p>Sky Map gratis dan sumber terbuka. Jika Anda merasa ini bermanfaat, mohon pertimbangkan untuk mendukung pengembangan di halaman <a href="https://github.com/sky-map-team/stardroid/?tab=readme-ov-file#support-the-project">GitHub</a> kami atau <a href="https://buymeacoffee.com/skymapdevs?utm_source=skymap&amp;utm_medium=app&amp;utm_campaign=whatsnew">membelikan kami kopi</a>.</p>]]></string>
-    <string name="beta_user_help_text" translation_description="Usually-empty HTML content shown to beta testers asking for feedback, appended in the What's new dialog and the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h3>Pengguna Beta!</h3><p>Bantuan Anda sangat dibutuhkan untuk melaporkan bug dan crash di <a href="mailto:skymapdevs@gmail.com">skymapdevs@gmail.com</a> atau <a href="https://github.com/sky-map-team/stardroid/issues">GitHub</a>. Aplikasi ini belum sepenuhnya lengkap fiturnya dan (maaf) belum sepenuhnya diterjemahkan. Jika Anda ingin keluar dari beta dan kembali ke Sky Map klasik, silakan kunjungi <a href="https://play.google.com/apps/testing/com.google.android.stardroid">halaman pengujian</a>.</p>]]></string>
+    <string name="beta_user_help_text" translation_description="Usually-empty HTML content shown to beta testers asking for feedback, appended in the What's new dialog and the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h3>Pengguna Beta!</h3>
+<p>Bantuan Anda sangat dibutuhkan untuk melaporkan bug dan crash di <a href="mailto:skymapdevs@gmail.com">skymapdevs@gmail.com</a>
+atau <a href="https://github.com/sky-map-team/stardroid/issues">GitHub</a>. Aplikasi ini belum sepenuhnya lengkap fiturnya. Jika Anda
+ingin keluar dari program beta dan kembali ke Sky Map klasik, silakan kunjungi
+<a href="https://play.google.com/apps/testing/com.google.android.stardroid">halaman pengujian</a>.</p>]]></string>
 </resources>

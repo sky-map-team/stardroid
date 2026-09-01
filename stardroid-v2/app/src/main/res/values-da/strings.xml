@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <!-- tm:omitted name="app_name" reason="identical_to_source" -->
 
     <!-- tm:omitted name="splash_version" reason="identical_to_source" -->
@@ -149,7 +149,7 @@
     <!-- tm:omitted name="ar_exposure_auto" reason="identical_to_source" -->
     <string-array name="hud_cardinal_directions" translation_description="The sixteen compass-point abbreviations, clockwise from north, used as the azimuth suffix in the map HUD (e.g. N, NNE, NE...). Translate to the locale\'s conventional compass abbreviations.">
         <item>N</item>
-        <item>NNE</item>
+        <item>NNØ</item>
         <item>NØ</item>
         <item>ØNØ</item>
         <item>Ø</item>
@@ -519,7 +519,7 @@
     Din launcher understøtter ikke at tilføje widgets fra en app. Tryk og hold din startskærm, vælg Widgets, find derefter Sky Map.
     </string>
     <string name="moon_widget_pin_unsupported_ok" translation_description="Confirmation button of the manual widget-adding instructions dialog">Forstået</string>
-    <string name="moon_widget_preview_illumination" tools:ignore="StringFormatInvalid" translation_description="Representative illumination line shown in the widget picker\'s preview of the moon-phase widget">83% belyst</string>
+    <string xmlns:tools="http://schemas.android.com/tools" name="moon_widget_preview_illumination" tools:ignore="StringFormatInvalid" translation_description="Representative illumination line shown in the widget picker\'s preview of the moon-phase widget">83% belyst</string>
 
     <!-- Tonight's-sky and countdown home-screen widgets (D69 phase 2). -->
     <string name="tonight_widget_label" translation_description="Name of the tonight\'s-sky home-screen widget, shown in the launcher\'s widget picker">Himlen i aften</string>

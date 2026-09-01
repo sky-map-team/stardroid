@@ -1,10 +1,29 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>新基礎</h2><p>Sky Map 已從頭開始重建，採用現代渲染和資料管線，並更新了使用者介面。</p><h2>更清晰的太陽系</h2><p>太陽、月亮和行星已根據其原始 NASA 圖像重新繪製，地圖上的圖片現在經過平滑和混合處理，因此在任何縮放級別下都能保持清晰。行星也可以按其真實角大小繪製 — 在圖層表中選擇圖示或真實比例。</p><h2>與天空相符的月亮</h2><p>月亮的相位現在是根據其真實幾何形狀計算出來的，而不是從八張固定圖片中選擇，因此明暗分界線會落在您實際看到的位置。</p><h2>更好的太陽和月亮位置</h2><p>更精確的太陽和月亮計算將兩者置於其應有的位置，並修正了日食和月食的時間。</p><h2>更流暢的平移</h2><p>修正了在高更新率螢幕上拖曳或滑動地圖時出現的卡頓 — 平移、動量和搜尋縮放現在會追蹤您顯示器的實際影格率，而不是固定速率。</p><h2>更清新的歡迎畫面</h2><p>您看到的第一個畫面背景已更新，採用了新的應用程式內天空擷取畫面。</p><h2>天空通知</h2><p>開啟流星雨高峰的選用通知，以及今晚可見天象的一次性晚間摘要，直接從「設定」中操作。</p><h2>月食</h2><p>地圖現在會在月食期間呈現月亮的銅紅色調，月亮資訊卡、今晚天空摘要和倒數小工具都知道月食何時到來 — 並附有選用提醒通知。</p><h2>更清晰的權限</h2><p>「條款」畫面和「說明」現在詳細說明了每個裝置權限的用途，並且應用程式不再請求其不需要的廣告 ID 權限。</p><h2>¡Hola! Bonjour! Olá!</h2><p>Sky Map 現在支援法語、西班牙語、波蘭語和葡萄牙語，更多語言即將推出。</p>]]></string>
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>全新的基礎</h2>
+<p>Sky Map 已從頭開始重建，採用了現代化的渲染與資料處理管線以及煥然一新的使用者介面。</p>
+<h2>更清晰的太陽系</h2>
+<p>太陽、月亮與行星已根據其原始的 NASA 影像重新繪製，地圖上的圖片現在經過平滑與混合處理，在任何縮放層級下都能保持清晰。您也可以在圖層頁面中選擇以真實視角大小或圖示來繪製行星。</p>
+<h2>與天空相符的月相</h2>
+<p>月相現在是透過真實的幾何計算得出，而不是從八張固定圖片中選取，因此明暗交界線會落在您實際看到的正確位置。</p>
+<h2>更準確的日、月位置</h2>
+<p>更精確的日、月計算將這兩個天體置於應有的位置，並修正了日食與月食的時間。</p>
+<h2>更流暢的平移</h2>
+<p>修正了在高重新整理頻率螢幕上平移或拖曳地圖時出現的卡頓現象——現在平移、動量與搜尋縮放會追蹤顯示器的實際影格率，而非固定速率。</p>
+<h2>全新的歡迎畫面</h2>
+<p>您看到的的第一個畫面的背景已經過更新，採用了應用程式內最新的星空擷取畫面。</p>
+<h2>星空通知</h2>
+<p>直接從設定中開啟選用的通知，即可接收流星雨極大期以及今晚可見天體的單次晚間摘要。</p>
+<h2>月食</h2>
+<p>地圖現在會在月食期間呈現月球的銅紅色調，且月球資訊卡、今晚星空摘要與倒數計時小工具都能掌握月食何時發生——並提供選用的提醒通知。</p>
+<h2>更清晰的權限</h2>
+<p>「服務條款」與「說明」畫面現在詳細說明瞭各個裝置權限的用途，且應用程式不再請求其不需要的廣告 ID 權限。</p>
+<h2>¡Hola! Bonjour! Olá!</h2>
+<p>Sky Map 現已完整翻譯成 28 種語言。</p>]]></string>
     <string name="whats_new_support" translation_description="HTML paragraph inviting users to support the project, shown in the What's new dialog and the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h1>支援 Sky Map</h1><p>Sky Map 是免費且開源的。如果您覺得它有用，請考慮透過我們的<a href="https://github.com/sky-map-team/stardroid/?tab=readme-ov-file#support-the-project">GitHub</a> 頁面或<a href="https://buymeacoffee.com/skymapdevs?utm_source=skymap&amp;utm_medium=app&amp;utm_campaign=whatsnew">請我們喝杯咖啡</a>來支援開發。</p>]]></string>
-    <string name="beta_user_help_text" translation_description="Usually-empty HTML content shown to beta testers asking for feedback, appended in the What's new dialog and the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h3>Beta 使用者！</h3><p>我們比以往任何時候都更需要您的幫助，請向 <a href="mailto:skymapdevs@gmail.com">skymapdevs@gmail.com</a>
-或 <a href="https://github.com/sky-map-team/stardroid/issues">GitHub</a> 報告錯誤和當機問題。它尚未完全具備所有功能，而且（抱歉）尚未完全
-翻譯。如果您
-想退出測試版並恢復到經典版 Sky Map，請造訪
+    <string name="beta_user_help_text" translation_description="Usually-empty HTML content shown to beta testers asking for feedback, appended in the What's new dialog and the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h3>Beta 測試人員注意！</h3>
+<p>我們比以往更需要您的協助，請透過 <a href="mailto:skymapdevs@gmail.com">skymapdevs@gmail.com</a>
+或 <a href="https://github.com/sky-map-team/stardroid/issues">GitHub</a> 回報錯誤與當機狀況。本版本尚未具備完整功能。如果您
+想退出測試計畫並恢復使用傳統的 Sky Map，請造訪
 <a href="https://play.google.com/apps/testing/com.google.android.stardroid">測試頁面</a>。</p>]]></string>
 </resources>

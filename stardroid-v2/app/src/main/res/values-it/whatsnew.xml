@@ -1,12 +1,30 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Una nuova base</h2><p>Sky Map è stato ricostruito da zero con una moderna pipeline di rendering e dati e un\'interfaccia utente rinnovata.</p><h2>Un sistema solare più nitido</h2><p>Il Sole, la Luna e i pianeti sono stati ridisegnati dalle loro immagini originali NASA, e le immagini sulla mappa sono ora levigate e sfumate in modo da mantenere la qualità a ogni livello di zoom. I pianeti possono anche essere disegnati con la loro vera dimensione angolare — scegli simboli o scala reale nel pannello Livelli.</p><h2>Una Luna che corrisponde al cielo</h2><p>La fase della Luna è ora calcolata dalla sua geometria reale invece di essere scelta tra otto immagini fisse, così la linea tra luce e buio cade dove la vedi realmente.</p><h2>Posizioni di Sole e Luna più precise</h2><p>Calcoli più precisi di Sole e Luna posizionano entrambi i corpi dove dovrebbero essere e correggono la tempistica delle eclissi.</p><h2>Scorrimento più fluido</h2><p>Risolto un\'incertezza che si presentava trascinando o scorrendo la mappa su schermi ad alta frequenza di aggiornamento — lo scorrimento, l\'inerzia e lo zoom di ricerca ora seguono la frequenza di fotogrammi effettiva del tuo display invece di una frequenza fissa.</p><h2>Un\'accoglienza rinnovata</h2><p>Lo sfondo della primissima schermata che vedi è stato aggiornato con una nuova acquisizione del cielo dall\'app.</p><h2>Notifiche del cielo</h2><p>Attiva le notifiche opzionali per i picchi di sciami meteorici e un riepilogo serale unico di ciò che è visibile stasera, direttamente dalle Impostazioni.</p><h2>Eclissi lunari</h2><p>La mappa ora rende la tinta rosso rame della Luna durante un\'eclissi lunare, e la scheda informativa della Luna, il riepilogo del cielo di stasera e il widget del conto alla rovescia sanno tutti quando ne sta arrivando una — con una notifica di promemoria opzionale.</p><h2>Permessi più chiari</h2><p>La schermata Termini e Aiuto ora spiegano esattamente a cosa serve ogni permesso del dispositivo, e l\'app non richiede più il permesso ID pubblicità di cui non aveva bisogno.</p><h2>¡Hola! Bonjour! Olá!</h2><p>Sky Map ora parla francese, spagnolo, polacco e portoghese, con altre lingue in arrivo.</p>]]></string>
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Una nuova base</h2>
+<p>Sky Map è stata ricostruita da zero con un moderno sistema di rendering e dati e un\'interfaccia rinnovata.</p>
+<h2>Un sistema solare più nitido</h2>
+<p>Il Sole, la Luna e i pianeti sono stati ridisegnati a partire dalle immagini originali della NASA, e le immagini sulla mappa ora sono smussate e sfumate in modo da risultare perfette a qualsiasi livello di zoom. I pianeti possono anche essere disegnati con le loro dimensioni angolari reali: seleziona i simboli o la scala reale nel foglio Livelli.</p>
+<h2>Una Luna che corrisponde al cielo</h2>
+<p>La fase della Luna ora viene calcolata in base alla sua geometria reale anziché scelta tra otto immagini fisse, in modo che la linea tra luce e buio si trovi esattamente dove la vedi.</p>
+<h2>Posizioni di Sole e Luna migliori</h2>
+<p>Calcoli di Sole e Luna più accurati posizionano entrambi i corpi celesti dove devono stare e correggono i tempi delle eclissi.</p>
+<h2>Panoramica più fluida</h2>
+<p>Risolto un problema di scatti che si verificava durante lo scorrimento o il trascinamento della mappa su schermi ad alto refresh rate: la panoramica, il momento d\'inerzia e lo zoom della ricerca ora seguono il framerate effettivo del display anziché un valore fisso.</p>
+<h2>Un benvenuto più fresco</h2>
+<p>Lo sfondo della primissima schermata che vedi è stato rinnovato con una nuova cattura del cielo direttamente dall\'app.</p>
+<h2>Notifiche del cielo</h2>
+<p>Attiva le notifiche opzionali per i picchi di sciami meteorici e un riepilogo serale una tantum di ciò che è visibile stasera, direttamente dalle Impostazioni.</p>
+<h2>Eclissi lunari</h2>
+<p>La mappa ora mostra la tonalità rosso rame della Luna durante un\'eclissi lunare, e la scheda informativa della Luna, il riepilogo del cielo di stasera e il widget del conto alla rovescia sanno quando ne è prevista una, con una notifica di promemoria opzionale.</p>
+<h2>Permessi più chiari</h2>
+<p>La schermata dei Termini e la Guida ora spiegano esattamente a cosa serve ciascun permesso del dispositivo, e l\'app non richiede più il permesso per l\'ID pubblicitario di cui non aveva bisogno.</p>
+<h2>¡Hola! Bonjour! Olá!</h2>
+<p>Sky Map è ora completamente tradotta in 28 lingue.</p>]]></string>
     <string name="whats_new_support" translation_description="HTML paragraph inviting users to support the project, shown in the What's new dialog and the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h1>Sostieni Sky Map</h1>
 <p>Sky Map è gratuito e open source. Se lo trovi utile, considera di sostenere lo sviluppo sulla nostra pagina <a href="https://github.com/sky-map-team/stardroid/?tab=readme-ov-file#support-the-project">GitHub</a> o <a href="https://buymeacoffee.com/skymapdevs?utm_source=skymap&amp;utm_medium=app&amp;utm_campaign=whatsnew">offrendoci un caffè</a>.</p>]]></string>
-    <string name="beta_user_help_text" translation_description="Usually-empty HTML content shown to beta testers asking for feedback, appended in the What's new dialog and the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h3>Utenti beta!</h3>
-<p>Il vostro aiuto è più che mai necessario per segnalare bug e crash a <a href="mailto:skymapdevs@gmail.com">skymapdevs@gmail.com</a>
-o <a href="https://github.com/sky-map-team/stardroid/issues">GitHub</a>. Non è ancora completamente funzionale e (ci dispiace) non è completamente
-tradotto. Se desiderate
-lasciare la beta e tornare alla versione classica di Sky Map, visitate
-<a href="https://play.google.com/apps/testing/com.google.android.stardroid">la pagina di test</a>.</p>]]></string>
+    <string name="beta_user_help_text" translation_description="Usually-empty HTML content shown to beta testers asking for feedback, appended in the What's new dialog and the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h3>Utenti della versione beta!</h3>
+<p>Il vostro aiuto è più che mai necessario per segnalare bug e arresti anomali all\'indirizzo <a href="mailto:skymapdevs@gmail.com">skymapdevs@gmail.com</a>
+o su <a href="https://github.com/sky-map-team/stardroid/issues">GitHub</a>. L\'app non è ancora completa in tutte le sue funzionalità. Se
+desiderate abbandonare la versione beta e tornare alla versione classica di Sky Map, visitate
+<a href="https://play.google.com/apps/testing/com.google.android.stardroid">la pagina di testing</a>.</p>]]></string>
 </resources>

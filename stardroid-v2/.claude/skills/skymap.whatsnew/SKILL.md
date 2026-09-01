@@ -86,7 +86,9 @@ separate `whatsnew_content.xml`, that's a v1-only split v2 doesn't mirror at tha
 - Always read existing output files before writing (see Pre-flight above).
 - Never report internal refactors or chore-level commits to the user.
 - **After writing all three targets, pause and show the user the English `whats_new_content`
-  string and `default.txt` content for review. Ask explicitly: "Does this look good?"** (v1's
-  equivalent skill also asks about proceeding to translation — v2 has no translation pipeline
-  wired up yet, so skip that step entirely; translations happen in a later, separate pipeline
-  per `AGENTS.md`.)
+  string and `default.txt` content for review. Ask explicitly: "Does this look good?"** Once
+  approved, v2's translation pipeline (`.tmconfig.toml` + the `tm` CLI, same tool as v1) is now
+  live — run `tm translate --all-primary --include-stale` so the new/changed English content is
+  translated into all 28 core locales, then verify with `tm languages` (100% coverage, 0 stale
+  for every `primary_languages` entry; `ca`/`hu`/`ru` are intentionally excluded and will show
+  low coverage). See `stardroid-v2/AGENTS.md`'s Translations section.

@@ -20,7 +20,7 @@
 <h2>Clearer Permissions</h2>
 <p>The Terms screen and Help now spell out exactly what each device permission is used for, and the app no longer requests the advertising-ID permission it didn\'t need.</p>
 <h2>¡Hola! Bonjour! Olá!</h2>
-<p>Sky Map now speaks French, Spanish, Polish and Portuguese, with more languages on the way.</p>
+<p>Sky Map is now fully translated into 28 languages.</p>
     ]]></string>
     <string name="whats_new_support" translation_description="HTML paragraph inviting users to support the project, shown in the What's new dialog and the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[
 <h1>Support Sky Map</h1>
@@ -29,8 +29,7 @@
     <string name="beta_user_help_text" translation_description="Usually-empty HTML content shown to beta testers asking for feedback, appended in the What's new dialog and the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[
 <h3>Beta users!</h3>
 <p>Your help is needed more than ever in reporting bugs and crashes at <a href="mailto:skymapdevs@gmail.com">skymapdevs@gmail.com</a>
-or <a href="https://github.com/sky-map-team/stardroid/issues">GitHub</a>. It is not fully feature complete yet and (sorry) is not fully
-translated. If you
+or <a href="https://github.com/sky-map-team/stardroid/issues">GitHub</a>. It is not fully feature complete yet. If you
 want to leave the beta and revert to classic sky map please visit
 <a href="https://play.google.com/apps/testing/com.google.android.stardroid">the testing page</a>.</p>
     ]]></string>

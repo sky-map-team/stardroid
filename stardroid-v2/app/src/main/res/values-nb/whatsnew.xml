@@ -1,11 +1,29 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Et nytt fundament</h2><p>Sky Map er bygget opp fra grunnen av med en moderne gjengivelses- og databehandlingsarkitektur og et oppdatert brukergrensesnitt.</p><h2>Et skarpere solsystem</h2><p>Solen, Månen og planetene er tegnet på nytt basert på originale NASA-bilder, og bilder på kartet er nå jevnet ut og blandet slik at de holder seg skarpe på alle zoomnivåer. Planeter kan også tegnes i sin sanne vinkelstørrelse — velg glyfer eller sann skala i Lag-panelet.</p><h2>En Måne som matcher himmelen</h2><p>Månens fase beregnes nå ut fra dens virkelige geometri i stedet for å velges fra åtte faste bilder, slik at grensen mellom lys og mørke faller der du faktisk ser den.</p><h2>Bedre sol- og måneposisjoner</h2><p>Mer nøyaktige sol- og måneberegninger plasserer begge himmellegemene der de hører hjemme og korrigerer tidspunktet for formørkelser.</p><h2>Jevnere panorering</h2><p>Fikset en hakking som oppsto når du kastet eller dro kartet på skjermer med høy oppdateringsfrekvens — panorering, bevegelsesmengde og søkezoom følger nå skjermens faktiske bildefrekvens i stedet for en fast frekvens.</p><h2>En friskere velkomst</h2><p>Bakgrunnen på den aller første skjermen du ser, er oppdatert med et nytt skjermbilde av himmelen fra appen.</p><h2>Himmelvarsler</h2><p>Slå på valgfrie varsler for meteorsvermtopper og en engangs kveldsoversikt over hva som er synlig i kveld, rett fra Innstillinger.</p><h2>Måneformørkelser</h2><p>Kartet gjengir nå Månens kobberrøde fargetone under en måneformørkelse, og Månens infokort, kveldens-himmel-oversikt og nedtellingswidget vet alle når en er på vei — med et valgfritt påminnelsesvarsel.</p><h2>Klarere tillatelser</h2><p>Vilkår-skjermen og Hjelp forklarer nå nøyaktig hva hver enhetstillatelse brukes til, og appen ber ikke lenger om annonserings-ID-tillatelsen den ikke trengte.</p><h2>¡Hola! Bonjour! Olá!</h2><p>Sky Map snakker nå fransk, spansk, polsk og portugisisk, med flere språk på vei.</p>]]></string>
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Et nytt fundament</h2>
+<p>Sky Map har blitt gjenoppbygd fra bunnen av med en moderne gjengivelses- og datapipeline og et forfrisket brukergrensesnitt.</p>
+<h2>Et skarpere solsystem</h2>
+<p>Sola, månen og planetene har blitt tegnet på nytt fra sine originale NASA-bilder, og bilder over hele kartet er nå glattet ut og blandet slik at de holder seg på alle zoomnivåer. Planeter kan også tegnes i sin sanne vinkelstørrelse – velg symboler eller sann skala i lag-menyen.</p>
+<h2>En måne som matcher himmelen</h2>
+<p>Månens fase er nå beregnet ut fra dens ekte geometri i stedet for å velges fra åtte faste bilder, slik at linjen mellom lys og mørke faller der du faktisk ser den.</p>
+<h2>Bedre sol- og måneposisjoner</h2>
+<p>Mer nøyaktige beregninger av sol og måne plasserer begge legemene der de hører hjemme, og retter opp tidspunktet for formørkelser.</p>
+<h2>Jevnere panorering</h2>
+<p>Fikset en hakking som dukket opp ved sveip eller draking av kartet på skjermer med høy oppdateringsfrekvens – panorering, bevegelse og søkezoom følger nå skjermens faktiske bildefrekvens i stedet for en fast rate.</p>
+<h2>En friskere velkomst</h2>
+<p>Bakgrunnen på den aller første skjermen du ser har blitt oppdatert med et nytt bilde av himmelen tatt i appen.</p>
+<h2>Himmelvarsler</h2>
+<p>Slå på valgfri varsling for meteorsvermtopper og en engangs kveldsrapport om hva som er synlig i kveld, rett fra Innstillinger.</p>
+<h2>Måneformørkelser</h2>
+<p>Kartet gjengir nå månen med en kobberrød fargetone under en måneformørkelse, og månens infokort, kveldens-himmel-rapport og nedtellingswidget vet alle når en er på vei – med en valgfri påminnelsesvarsling.</p>
+<h2>Tydeligere tillatelser</h2>
+<p>Vilkårsskjermen og Hjelp forklarer nå nøyaktig hva hver enhetstillatelse brukes til, og appen ber ikke lenger om tillatelsen for annonserings-ID som den ikke trengte.</p>
+<h2>¡Hola! Bonjour! Olá!</h2>
+<p>Sky Map er nå fullstendig oversatt til 28 språk.</p>]]></string>
     <string name="whats_new_support" translation_description="HTML paragraph inviting users to support the project, shown in the What's new dialog and the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h1>Støtt Sky Map</h1><p>Sky Map er gratis og åpen kildekode. Hvis du finner den nyttig, kan du vurdere å støtte utviklingen på vår <a href="https://github.com/sky-map-team/stardroid/?tab=readme-ov-file#support-the-project">GitHub</a>-side eller <a href="https://buymeacoffee.com/skymapdevs?utm_source=skymap&amp;utm_medium=app&amp;utm_campaign=whatsnew">kjøpe oss en kaffe</a>.</p>]]></string>
-    <string name="beta_user_help_text" translation_description="Usually-empty HTML content shown to beta testers asking for feedback, appended in the What's new dialog and the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h3>Beta-brukere!</h3>
-<p>Din hjelp trengs mer enn noensinne for å rapportere feil og krasj på <a href="mailto:skymapdevs@gmail.com">skymapdevs@gmail.com</a>
-eller <a href="https://github.com/sky-map-team/stardroid/issues">GitHub</a>. Den er ikke fullt funksjonskomplett ennå og (beklager) er ikke fullt
-oversatt. Hvis du
-vil forlate betaen og gå tilbake til klassisk Sky Map, vennligst besøk
-<a href="https://play.google.com/apps/testing/com.google.android.stardroid">testingssiden</a>.</p>]]></string>
+    <string name="beta_user_help_text" translation_description="Usually-empty HTML content shown to beta testers asking for feedback, appended in the What's new dialog and the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h3>Betabrukere!</h3>
+<p>Hjelpen din trengs mer enn noensinne for å rapportere feil og krasjer til <a href="mailto:skymapdevs@gmail.com">skymapdevs@gmail.com</a>
+eller <a href="https://github.com/sky-map-team/stardroid/issues">GitHub</a>. Appen har ikke alle funksjoner på plass enda. Hvis du
+vil avslutte betatesten og gå tilbake til den klassiske versjonen av Sky Map, kan du besøke
+<a href="https://play.google.com/apps/testing/com.google.android.stardroid">testesiden</a>.</p>]]></string>
 </resources>

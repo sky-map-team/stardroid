@@ -79,6 +79,29 @@ Do not add a third notice — per-directory notices are what let the old claim d
 - `konsist/` — architecture-gate tests enforcing the pure/Android module boundary (D20).
 - `build-logic/` — Gradle convention plugins (`skymap.pure-kotlin`, `skymap.android-*`).
 
+## Translations
+
+v2's translation pipeline is now live (`.tmconfig.toml` + the `tm` CLI, same tool as v1) —
+this supersedes the root `AGENTS.md` note that translations happen later via a separate
+pipeline; that note was written before this was wired up.
+
+- `tm languages` — coverage summary per locale. `tm coverage <locale>` — per-file detail.
+- `.tmconfig.toml`'s `primary_languages` list is the 28 **core** languages v2 ships
+  officially. `ca` (Catalan), `hu` (Hungarian) and `ru` (Russian) exist as partial/legacy
+  locale directories but are **intentionally excluded** from core — do not treat their low
+  coverage as a bug or try to backfill them.
+- Any change to translatable content (`whatsnew.xml`, `strings.xml`, `credits.xml`,
+  `help.xml`, `eula.xml`, the fastlane changelog, or catalog `source-data/` content covered
+  by `.tmconfig.toml`'s `[[sources]]`) goes stale in every locale's translation the moment
+  the English source changes. Before finishing any such change — and always as part of a
+  release — run:
+  ```bash
+  tm translate --all-primary --include-stale
+  ```
+  This is normally a handful of strings (the ones you just touched, plus anything newly
+  added since the last run), not a large backlog. Verify with `tm languages` afterward —
+  all 28 primary locales should read 100% coverage, 0 stale.
+
 ## Testing
 
 `./gradlew check` from the module root runs unit tests (JUnit 5 + Truth), ktlint, and the

@@ -55,11 +55,18 @@ as v1's equivalent step.
 
 ### Step 4. Translations
 
-v2 has no translation pipeline wired up yet (`AGENTS.md`: "translations to other locales will be
-done after features are implemented by a separate pipeline" — this applies to v2 specifically,
-unlike v1 where the `tm` tool is already in use). **Skip this step entirely** for v2 releases —
-release in English only, and don't invoke `tm` commands against this module (there is no
-`.tmconfig.toml` here).
+v2's translation pipeline (`.tmconfig.toml` + the `tm` CLI, same tool as v1) is now live — see
+`stardroid-v2/AGENTS.md`'s Translations section. Any translatable content touched in Steps 1–3
+(`whatsnew.xml`, `strings.xml`, the fastlane changelog, etc.) goes stale in every locale the
+moment its English source changes, so run this before moving on:
+
+```bash
+tm translate --all-primary --include-stale
+```
+
+Then verify with `tm languages` — every locale in `.tmconfig.toml`'s `primary_languages` list
+should read 100% coverage, 0 stale. `ca`, `hu`, and `ru` are intentionally excluded from that
+list and will show low coverage — that's expected, not a gap to fix.
 
 ### Step 5. Upload to the Google Play Store
 

@@ -1,6 +1,26 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>新しい基盤</h2><p>Sky Mapは、最新のレンダリングとデータパイプライン、そして刷新されたUIで、ゼロから再構築されました。</p><h2>より鮮明な太陽系</h2><p>太陽、月、惑星は、NASAのオリジナル画像から再描画され、マップ上の画像はすべてズームレベルで鮮明に表示されるように滑らかにブレンドされています。惑星は実際の視直径で描画することもできます。レイヤーシートでグリフまたは実スケールを選択してください。</p><h2>空に合った月</h2><p>月の満ち欠けは、8枚の固定画像から選択するのではなく、実際の幾何学に基づいて計算されるようになったため、光と影の境界線は実際に目にする位置に表示されます。</p><h2>太陽と月の位置の改善</h2><p>より正確な太陽と月の計算により、両天体が本来の位置に表示され、食のタイミングが修正されました。</p><h2>よりスムーズなパン操作</h2><p>高リフレッシュレート画面でマップをフリックまたはドラッグしたときに発生していたカクつきを修正しました。パン、慣性、検索ズームは、固定レートではなくディスプレイの実際のフレームレートを追跡するようになりました。</p><h2>新しいウェルカム画面</h2><p>最初に表示される画面の背景が、新しいアプリ内での空のキャプチャで更新されました。</p><h2>空の通知</h2><p>設定から、流星群のピークや今夜見えるものの1回限りの夜間ダイジェストのオプション通知をオンにできます。</p><h2>月食</h2><p>マップは月食中の月の銅赤色の色合いを表示するようになり、月の情報カード、今夜の空のダイジェスト、カウントダウンウィジェットはすべて、月食がいつ来るかを知るようになりました。オプションのリマインダー通知も利用できます。</p><h2>より明確な権限</h2><p>利用規約画面とヘルプで、各デバイス権限が何に使用されるかが正確に明記され、アプリは不要な広告ID権限を要求しなくなりました。</p><h2>¡Hola! Bonjour! Olá!</h2><p>Sky Mapはフランス語、スペイン語、ポーランド語、ポルトガル語に対応しました。今後さらに多くの言語に対応する予定です。</p>]]></string>
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>新しい基礎</h2>
+<p>Sky Mapは、最新のレンダリングおよびデータパイプライン、そして刷新されたUIにより、ゼロから再構築されました。</p>
+<h2>より鮮明な太陽系</h2>
+<p>太陽、月、惑星がNASAのオリジナル画像をもとに描き直され、マップ上の画像は滑らかにブレンドされるようになったため、どのズームレベルでも美しく表示されます。レイヤー画面で、記号（グリフ）表示または実際のスケール表示を選択すると、惑星を実際の視直径で描画することも可能です。</p>
+<h2>実際の空に合わせた月</h2>
+<p>月の満ち欠けが、8枚の固定画像から選ぶ方式ではなく、実際の幾何学的計算に基づいて算出されるようになったため、明暗の境界線が実際の空の見た目通りに表示されます。</p>
+<h2>太陽と月の位置の精度向上</h2>
+<p>太陽と月の計算がより正確になり、両天体が正しい位置に表示されるようになったほか、日食のタイミングも修正されました。</p>
+<h2>よりスムーズなパン移動</h2>
+<p>高リフレッシュレート画面でマップをフリックまたはドラッグした際に発生していたカクつきを修正しました。パン移動、慣性スクロール、検索時のズームが、固定レートではなくお使いのディスプレイの実際のフレームレートに追従するようになっています。</p>
+<h2>新しくなったウェルカム画面</h2>
+<p>アプリを起動して最初に表示される画面の背景が、アプリ内で新しく撮影された夜空の画像に刷新されました。</p>
+<h2>天文現象の通知</h2>
+<p>設定から、流星群の極大や、今夜見える天体の夕方のダイジェスト（1日1回）の通知（オプショナル）を有効にできるようになりました。</p>
+<h2>月食</h2>
+<p>月食中の月の銅赤色の色合いがマップに描画されるようになり、月の情報カード、今夜の空ダイジェスト、カウントダウンウィジェットのすべてで月食の到来が把握できるようになりました（リマインダー通知もオプションで利用可能です）。</p>
+<h2>より分かりやすくなった権限</h2>
+<p>利用規約画面とヘルプに、デバイスの各権限が何のために使用されるのかが明記されるようになり、不要な広告IDの権限は要求されなくなりました。</p>
+<h2>¡Hola! Bonjour! Olá!</h2>
+<p>Sky Mapは28言語に完全対応しました。</p>]]></string>
     <string name="whats_new_support" translation_description="HTML paragraph inviting users to support the project, shown in the What's new dialog and the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h1>Sky Mapをサポート</h1><p>Sky Mapは無料でオープンソースです。もしお役に立てましたら、私たちの<a href="https://github.com/sky-map-team/stardroid/?tab=readme-ov-file#support-the-project">GitHub</a>ページで開発をサポートするか、<a href="https://buymeacoffee.com/skymapdevs?utm_source=skymap&amp;utm_medium=app&amp;utm_campaign=whatsnew">コーヒーをご馳走する</a>ことをご検討ください。</p>]]></string>
-    <string name="beta_user_help_text" translation_description="Usually-empty HTML content shown to beta testers asking for feedback, appended in the What's new dialog and the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h3>ベータユーザーの皆様！</h3><p>バグやクラッシュの報告は、<a href="mailto:skymapdevs@gmail.com">skymapdevs@gmail.com</a> または <a href="https://github.com/sky-map-team/stardroid/issues">GitHub</a> までお願いします。皆様のご協力がこれまで以上に必要です。まだすべての機能が実装されておらず、(申し訳ありませんが)完全に翻訳されていません。ベータ版を終了して従来の Sky Map に戻したい場合は、<a href="https://play.google.com/apps/testing/com.google.android.stardroid">テストページ</a>をご覧ください。</p>]]></string>
+    <string name="beta_user_help_text" translation_description="Usually-empty HTML content shown to beta testers asking for feedback, appended in the What's new dialog and the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h3>ベータ版をご利用の皆様へ</h3>
+<p>バグやクラッシュの報告について、これまで以上に皆様のご協力が必要です。<a href="mailto:skymapdevs@gmail.com">skymapdevs@gmail.com</a> または <a href="https://github.com/sky-map-team/stardroid/issues">GitHub</a> までご連絡ください。このバージョンはまだすべての機能が実装されているわけではありません。ベータ版を終了して従来の Sky Map に戻る場合は、<a href="https://play.google.com/apps/testing/com.google.android.stardroid">テストページ</a>にアクセスしてください。</p>]]></string>
 </resources>

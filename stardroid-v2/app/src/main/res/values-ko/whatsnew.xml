@@ -1,10 +1,26 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>새로운 기반</h2><p>Sky Map은 현대적인 렌더링 및 데이터 파이프라인과 새로워진 UI로 처음부터 다시 구축되었습니다.</p><h2>더 선명해진 태양계</h2><p>태양, 달, 행성은 NASA의 원본 이미지를 기반으로 다시 그려졌으며, 지도 전체의 그림은 이제 모든 확대/축소 수준에서 선명하게 유지되도록 부드럽게 처리되고 혼합됩니다. 행성은 실제 각 크기로도 그릴 수 있습니다. 레이어 시트에서 글리프 또는 실제 크기를 선택하세요.</p><h2>하늘과 일치하는 달</h2><p>달의 위상은 이제 8개의 고정된 그림 중에서 선택하는 대신 실제 기하학적 구조를 기반으로 계산되므로, 밝고 어두운 경계선이 실제로 보이는 곳에 나타납니다.</p><h2>더 정확해진 태양 및 달 위치</h2><p>더 정확한 태양 및 달 계산으로 두 천체가 제자리에 위치하며 일식 및 월식의 타이밍이 수정됩니다.</p><h2>더 부드러워진 패닝</h2><p>고주사율 화면에서 지도를 빠르게 움직이거나 드래그할 때 나타나던 끊김 현상이 수정되었습니다. 이제 패닝, 모멘텀 및 검색 확대/축소는 고정된 속도 대신 디스플레이의 실제 프레임 속도를 따릅니다.</p><h2>더 신선한 환영</h2><p>가장 처음 보이는 화면의 배경이 새로운 앱 내 하늘 캡처 이미지로 새로워졌습니다.</p><h2>하늘 알림</h2><p>설정에서 유성우 극대기 및 오늘 밤 볼 수 있는 것에 대한 일회성 저녁 요약 알림을 켤 수 있습니다.</p><h2>월식</h2><p>이제 지도는 월식 중 달의 구리빛 붉은색을 렌더링하며, 달 정보 카드, 오늘 밤 하늘 요약 및 카운트다운 위젯은 월식이 언제 다가오는지 모두 알려줍니다. 선택적 알림도 제공됩니다.</p><h2>더 명확해진 권한</h2><p>이용 약관 화면과 도움말은 이제 각 장치 권한이 무엇에 사용되는지 정확히 설명하며, 앱은 더 이상 필요하지 않던 광고 ID 권한을 요청하지 않습니다.</p><h2>¡Hola! Bonjour! Olá!</h2><p>Sky Map은 이제 프랑스어, 스페인어, 폴란드어, 포르투갈어를 지원하며, 더 많은 언어가 추가될 예정입니다.</p>]]></string>
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>새로운 기반</h2>
+<p>Sky Map이 최신 렌더링 및 데이터 파이프라인, 그리고 새롭게 단장된 UI로 바닥부터 다시 구축되었습니다.</p>
+<h2>더 선명해진 태양계</h2>
+<p>태양, 달, 행성이 원래의 NASA 이미지를 바탕으로 다시 그려졌으며, 지도의 이미지들이 이제 부드럽게 처리되고 블렌딩되어 모든 확대/축소 수준에서 선명하게 유지됩니다. 레이어 시트에서 아이콘(글리프) 또는 실제 크기 중 하나를 선택하여 행성을 실제 각크기로 표시할 수도 있습니다.</p>
+<h2>실제 하늘과 일치하는 달</h2>
+<p>이제 달의 위상이 8개의 고정된 이미지 대신 실제 기하학적 구조를 바탕으로 계산되므로, 밝고 어두운 부분의 경계선이 실제로 보이는 위치에 정확히 나타납니다.</p>
+<h2>더 정확해진 태양과 달의 위치</h2>
+<p>더 정확해진 태양과 달의 계산을 통해 두 천체가 제 위치에 표시되며 일식의 타이밍도 바로잡혔습니다.</p>
+<h2>더 부드러운 패닝</h2>
+<p>고주사율 화면에서 지도를 밀거나 드래그할 때 발생하던 끊김 현상이 수정되었습니다. 이제 패닝, 모멘텀, 검색 확대/축소가 고정된 속도가 아닌 디스플레이의 실제 프레임 속도를 따릅니다.</p>
+<h2>더 새로워진 시작 화면</h2>
+<p>앱을 처음 실행할 때 보이는 배경이 앱 내에서 새로 촬영한 하늘 이미지로 산뜻하게 바뀌었습니다.</p>
+<h2>천체 알림</h2>
+<p>설정에서 유성우 절정 시기와 오늘 밤 볼 수 있는 천체에 대한 저녁 요약 알림을 선택하여 켤 수 있습니다.</p>
+<h2>월식</h2>
+<p>이제 월식 동안 달의 구리빛 붉은색 틴트가 지도에 렌더링되며, 달 정보 카드, 오늘 밤의 하늘 요약, 카운트다운 위젯 모두 월식 시점을 알려줍니다. 선택적 리마인더 알림도 제공됩니다.</p>
+<h2>더 명확해진 권한</h2>
+<p>이용약관 화면과 도움말에 각 기기 권한이 사용되는 용도가 명확하게 설명되며, 앱에서 더 이상 필요하지 않은 광고 ID 권한을 요청하지 않습니다.</p>
+<h2>¡Hola! Bonjour! Olá!</h2>
+<p>Sky Map이 이제 28개 언어로 완전히 번역되었습니다.</p>]]></string>
     <string name="whats_new_support" translation_description="HTML paragraph inviting users to support the project, shown in the What's new dialog and the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h1>Sky Map 지원</h1><p>Sky Map은 무료 오픈 소스입니다. 유용하다고 생각하시면, 다음을 통해 개발을 지원해 주세요: 저희 <a href="https://github.com/sky-map-team/stardroid/?tab=readme-ov-file#support-the-project">GitHub</a> 페이지 또는 <a href="https://buymeacoffee.com/skymapdevs?utm_source=skymap&amp;utm_medium=app&amp;utm_campaign=whatsnew">저희에게 커피 한 잔 사주기</a>.</p>]]></string>
     <string name="beta_user_help_text" translation_description="Usually-empty HTML content shown to beta testers asking for feedback, appended in the What's new dialog and the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h3>베타 사용자 여러분!</h3>
-<p>버그 및 충돌 보고에 여러분의 도움이 그 어느 때보다 필요합니다. 다음 주소로 보고해 주세요: <a href="mailto:skymapdevs@gmail.com">skymapdevs@gmail.com</a>
-또는 <a href="https://github.com/sky-map-team/stardroid/issues">GitHub</a>. 아직 모든 기능이 완성되지 않았으며 (죄송합니다) 완전히
-번역되지도 않았습니다. 베타를 종료하고 기존 Sky Map으로 돌아가려면
-<a href="https://play.google.com/apps/testing/com.google.android.stardroid">테스트 페이지</a>를 방문해 주세요.</p>]]></string>
+<p>버그 및 충돌 제보는 <a href="mailto:skymapdevs@gmail.com">skymapdevs@gmail.com</a> 또는 <a href="https://github.com/sky-map-team/stardroid/issues">GitHub</a>를 통해 그 어느 때보다 적극적으로 부탁드립니다. 아직 모든 기능이 완성된 것은 아닙니다. 베타 참여를 중단하고 클래식 버전으로 돌아가려면 <a href="https://play.google.com/apps/testing/com.google.android.stardroid">테스트 페이지</a>를 방문해 주세요.</p>]]></string>
 </resources>

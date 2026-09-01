@@ -87,4 +87,9 @@ all build, test, deploy, and data-generation commands.
 
 Remember to properly escape any text added as Android resource strings (e.g. ' must be escaped
 with a single backslash as \'). New strings should be in *US English* - translations to
-other locales will be done after features are implemented by a separate pipeline.
+other locales are handled by a separate pipeline after features are implemented.
+
+For v2 (`stardroid-v2/`), that pipeline (the `tm` CLI, driven by `.tmconfig.toml`) is now
+live — see [`stardroid-v2/AGENTS.md`](stardroid-v2/AGENTS.md#translations) for how and when
+to run it. v1 has its own longer-standing `tm` setup; see
+[`stardroid-v1/AGENTS.md`](stardroid-v1/AGENTS.md) for its conventions.
