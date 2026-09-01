@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <!-- tm:omitted name="app_name" reason="identical_to_source" -->
 
     <!-- tm:omitted name="splash_version" reason="identical_to_source" -->
@@ -146,6 +146,25 @@
     <string name="share_shutter_button" translation_description="Accessibility label for the round shutter button that captures and shares the current through-camera view.">Dela den här vyn</string>
     <string name="share_failed_message" translation_description="Snackbar shown when capturing the sky image for sharing failed.">Kunde inte fånga himlen — försök igen</string>
     <!-- tm:omitted name="ar_exposure_auto" reason="identical_to_source" -->
+    <string-array name="hud_cardinal_directions" translation_description="The sixteen compass-point abbreviations, clockwise from north, used as the azimuth suffix in the map HUD (e.g. N, NNE, NE...). Translate to the locale\'s conventional compass abbreviations.">
+        <item>N</item>
+        <item>NNÖ</item>
+        <item>NO</item>
+        <item>ÖNO</item>
+        <item>Ö</item>
+        <item>ÖSO</item>
+        <item>SO</item>
+        <item>SSÖ</item>
+        <item>S</item>
+        <item>SSV</item>
+        <item>SV</item>
+        <item>VSV</item>
+        <item>V</item>
+        <item>VNV</item>
+        <item>NV</item>
+        <item>NNV</item>
+    </string-array>
+
     <!-- Time travel: entry button, dialog, and the player bar shown while travelling. -->
     <string name="time_travel_button">Tidsresor</string>
     <string name="time_travel_title">Tidsresor</string>
@@ -351,7 +370,7 @@
     <string name="diagnostics_gl_limits_format" translation_description="Format for the GL limits row: maximum texture size in pixels, then the supported line width and point size ranges. \'tex\' abbreviates texture. %1$d is texture size, %2$s is the line width range, %3$s is the point size range.">tex %1$d, linje %2$s, punkt %3$s</string>
     <string name="diagnostics_gl_unavailable" translation_description="Value shown in the diagnostics Graphics rows before the sky map has drawn, when the graphics details are not known yet">Inte tillgängligt än</string>
     <string name="diagnostics_section_sensors">Sensorer</string>
-    <string name="diagnostics_accelerometer" translation_description="Row label in the diagnostics screen for the accelerometer sensor">Accelerometer</string>
+    <!-- tm:omitted name="diagnostics_accelerometer" reason="identical_to_source" -->
     <string name="diagnostics_compass">Kompass</string>
     <string name="diagnostics_gyroscope">Gyroskop</string>
     <!-- tm:omitted name="diagnostics_rotation" reason="identical_to_source" -->
@@ -499,7 +518,7 @@ Gå till en öppen plats utan metall och försök igen.]]></string>
     Din startskärm stöder inte att lägga till widgetar från en app. Tryck och håll kvar på startskärmen, välj Widgetar och leta sedan upp Sky Map.
     </string>
     <string name="moon_widget_pin_unsupported_ok" translation_description="Confirmation button of the manual widget-adding instructions dialog">Uppfattat</string>
-    <string name="moon_widget_preview_illumination" tools:ignore="StringFormatInvalid" translation_description="Representative illumination line shown in the widget picker\'s preview of the moon-phase widget">83% belyst</string>
+    <string xmlns:tools="http://schemas.android.com/tools" name="moon_widget_preview_illumination" tools:ignore="StringFormatInvalid" translation_description="Representative illumination line shown in the widget picker\'s preview of the moon-phase widget">83% belyst</string>
 
     <!-- Tonight's-sky and countdown home-screen widgets (D69 phase 2). -->
     <string name="tonight_widget_label" translation_description="Name of the tonight\'s-sky home-screen widget, shown in the launcher\'s widget picker">Kvällens himmel</string>

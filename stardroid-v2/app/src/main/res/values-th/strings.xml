@@ -145,6 +145,8 @@
     <string name="share_shutter_button" translation_description="Accessibility label for the round shutter button that captures and shares the current through-camera view.">แชร์มุมมองนี้</string>
     <string name="share_failed_message" translation_description="Snackbar shown when capturing the sky image for sharing failed.">ไม่สามารถบันทึกภาพท้องฟ้าได้ — ลองใหม่อีกครั้ง</string>
     <string name="ar_exposure_auto" translation_description="Readout shown when a manual camera exposure slider sits at its automatic position.">อัตโนมัติ</string>
+    <!-- tm:omitted name="hud_cardinal_directions" reason="all_items_identical_to_source" -->
+
     <!-- Time travel: entry button, dialog, and the player bar shown while travelling. -->
     <string name="time_travel_button">การเดินทางข้ามเวลา</string>
     <string name="time_travel_title">การเดินทางข้ามเวลา</string>
