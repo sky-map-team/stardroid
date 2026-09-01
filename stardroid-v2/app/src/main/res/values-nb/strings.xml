@@ -1,40 +1,187 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
-  Carried over from v1 by tools/salvage-translations/salvage.py.
-  Only strings whose English source is identical between v1 and v2 appear here;
-  everything else is translated by `tm`. Safe to hand-edit thereafter.
--->
-<resources>
+<?xml version='1.0' encoding='UTF-8'?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- tm:omitted name="app_name" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="splash_version" reason="identical_to_source" -->
+    <string name="splash_dismiss" translation_description="Accessibility label for the action that dismisses the launch splash when it is tapped">Lukk</string>
+
+    <!-- tm:omitted name="north_pole" reason="identical_to_source" -->
+    <!-- tm:omitted name="south_pole" reason="identical_to_source" -->
     <string name="zenith">SENIT</string>
+    <!-- tm:omitted name="nadir" reason="identical_to_source" -->
     <string name="north">NORD</string>
     <string name="south">SØR</string>
     <string name="east">ØST</string>
     <string name="west">VEST</string>
     <string name="ecliptic">Ekliptikken</string>
+
+    <!-- Solar-system body names, drawn as labels next to each body. -->
     <string name="sun">Solen</string>
     <string name="moon">Månen</string>
     <string name="mercury">Merkur</string>
+    <!-- tm:omitted name="venus" reason="identical_to_source" -->
     <string name="earth">Jorden</string>
+    <!-- tm:omitted name="mars" reason="identical_to_source" -->
+    <!-- tm:omitted name="jupiter" reason="identical_to_source" -->
+    <!-- tm:omitted name="saturn" reason="identical_to_source" -->
+    <!-- tm:omitted name="uranus" reason="identical_to_source" -->
     <string name="neptune">Neptun</string>
+    <!-- tm:omitted name="pluto" reason="identical_to_source" -->
+
+    <!-- Search (map-screen search dialog and overlay). -->
     <string name="search_button">Søk</string>
     <string name="search_label">Søk</string>
+    <string name="search_hint" translation_description="Placeholder text in the search field showing example search targets.">f.eks. Mars eller M31</string>
+    <string name="search_coordinates_hint" translation_description="Helper text under the search field showing that celestial coordinates (right ascension and declination) can be typed directly, with two example formats.">Eller skriv inn koordinater: 12t 30m, +45° eller 187.5 -45.2</string>
+    <string name="search_go" translation_description="Button that starts navigating the sky map toward the typed search target.">Gå</string>
     <string name="search_cancel">Avbryt</string>
     <string name="search_no_results">Ingen resultater funnet. Kanskje er objektet ikke
         synlig på denne tiden.</string>
+    <string name="search_target_looking_message" translation_description="Status shown while the user is being guided toward a search target. %1$s is the object name.">Søker etter: %1$s</string>
+    <string name="search_target_found_message" translation_description="Status shown when the search target has been found and is centered on screen. %1$s is the object name.">Funnet: %1$s</string>
     <string name="search_overlay_prompt">Beveg telefonen din i pilretning</string>
+
+    <!-- Layer names in the layer-visibility sheet. -->
     <string name="layer_stars">Stjerner</string>
     <string name="layer_constellations">Stjernebilder</string>
+    <string name="layer_deep_sky" translation_description="Toggle label for the layer showing deep-sky objects such as galaxies and nebulae.">Dypromsobjekter</string>
     <string name="layer_solar_system">Solsystem</string>
     <string name="layer_meteor_showers">Meteorsvermer</string>
+    <string name="layer_satellites" translation_description="Toggle label for the layer showing artificial satellites such as the International Space Station.">Satellitter</string>
+    <string name="channel_passes_name" translation_description="Name of the notification channel for alerts shortly before a satellite passes overhead.">Satellittpasseringer</string>
+    <string name="channel_passes_description" translation_description="Description of the satellite-pass notification channel.">Ett enkelt varsel like før nattens beste synlige passering</string>
+    <string name="notif_pass_title" translation_description="Title of the notification sent shortly before a satellite passes overhead. %1$s is the satellite name.">%1$s passerer snart over deg</string>
+    <string name="notif_pass_text" translation_description="Body of the satellite pass notification, telling the user when to go outside. %1$s is a time.">Synlig fra ca. %1$s – gå ut og la øynene dine tilpasse seg</string>
+    <string name="channel_eclipses_name" translation_description="Name of the notification channel for alerts before a lunar eclipse starts.">Måneformørkelser</string>
+    <string name="channel_eclipses_description" translation_description="Description of the lunar-eclipse notification channel.">Ett enkelt varsel før en måneformørkelse begynner</string>
+    <string name="notif_eclipse_title" translation_description="Title of the notification sent before a lunar eclipse starts. %1$s is a localized eclipse type like \'Total lunar eclipse\'.">%1$s starter snart</string>
+    <string name="notif_eclipse_text" translation_description="Body of the lunar eclipse notification, telling the user when it begins. %1$s is a time.">Begynner rundt %1$s – verdt å gå ut for</string>
+    <string name="satellite_name_iss" translation_description="Display name for the International Space Station.">Romstasjonen</string>
+    <!-- tm:omitted name="satellite_name_tiangong" reason="identical_to_source" -->
+    <string name="layer_param_pass_alerts" translation_description="Label for the setting that turns on a notification shortly before a satellite passes overhead.">Passeringsvarsler</string>
+    <string name="layer_param_pass_alerts_description" translation_description="Explains what the pass-alert setting does: a single notification before the best visible pass of the night.">Varsle meg før nattens beste synlige passering</string>
+    <string name="layer_param_eclipse_alerts" translation_description="Label for the setting that turns on a notification before a lunar eclipse begins.">Formørkelsesvarsler</string>
+    <string name="layer_param_eclipse_alerts_description" translation_description="Explains what the eclipse-alert setting does: a single notification before a lunar eclipse starts.">Varsle meg før en måneformørkelse starter</string>
+    <string name="satellite_description" translation_description="Short description shown on the info card for an artificial satellite.">
+    En kunstig satellitt i lav jordbane, solbelyst mot en mørk himmel. Den krysser fra horisont til horisont på noen få minutter, beveger seg jevnt og uten å blinke.
+    </string>
+    <string name="satellite_next_pass" translation_description="Heading above the next visible pass details on a satellite\'s info card.">Neste synlige passering</string>
+    <string name="satellite_pass_when" translation_description="When and how high the next satellite pass will be. %1$s is a time, %2$s is a compass direction, %3$d is an angle in degrees.">%1$s, stiger %2$s, når %3$d°</string>
+    <string name="satellite_pass_magnitude" translation_description="How bright the satellite will be at its peak. %1$.1f is a brightness magnitude.">Magnitude %1$.1f på sitt lyseste</string>
+    <string name="satellite_pass_shadow" translation_description="Tells the user the satellite will fade out mid-pass when it enters the Earth\'s shadow. %1$s is a time.">Forsvinner inn i jordens skygge kl. %1$s</string>
+    <string name="satellite_no_pass" translation_description="Shown on a satellite info card when no visible pass is coming up in the next two days.">Ingen synlige passeringer de neste par dagene</string>
+    <string name="satellite_pass_unknown" translation_description="Shown on a satellite info card when the downloaded orbit data is too old to predict pass times reliably.">Banedata er for gamle til å forutsi passeringer</string>
+    <string name="object_info_eclipse_title" translation_description="Heading above the next lunar eclipse details on the Moon\'s info card.">Måneformørkelse</string>
+    <string name="object_info_no_eclipse" translation_description="Shown on the Moon\'s info card when no lunar eclipse is coming up in the searched time range.">Ingen måneformørkelse forventes snart</string>
+    <string name="object_info_eclipse_greatest" translation_description="The next lunar eclipse\'s type and greatest-eclipse date/time. %1$s is a localized eclipse type like \'Total lunar eclipse\', %2$s a date, %3$s a time.">%1$s — største formørkelse %2$s kl. %3$s</string>
+    <string name="object_info_eclipse_totality" translation_description="The start and end time of totality during a total lunar eclipse. %1$s and %2$s are times.">Totalitet %1$s – %2$s</string>
+    <string name="tonight_satellite_pass" translation_description="Tonight-widget row announcing a visible satellite pass. %1$s is the satellite name, %2$s is a time of day.">%1$s passerer over kl. %2$s</string>
+    <string name="tonight_trailing_pass" translation_description="Small trailing note on a satellite pass row. %1$s is a compass direction, %2$d is an angle in degrees, %3$.1f is a brightness magnitude.">Stiger %1$s, %2$d°, mag %3$.1f</string>
+    <string name="satellites_no_data" translation_description="Explanation shown when satellite orbital data has not been downloaded yet and so no satellites can be drawn.">Satellittposisjoner krever en internettilkobling for å oppdateres.</string>
+    <string name="satellites_refresh" translation_description="Button that tries to download satellite orbital data now.">Oppdater</string>
+    <string name="satellites_retry_soon" translation_description="Shown instead of a Refresh button when satellite data was just requested and cannot be requested again for a few minutes.">Prøv igjen om noen minutter</string>
+    <string name="satellites_retry_within_hour" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for up to an hour.">Prøv igjen innen timen</string>
+    <string name="satellites_retry_hours" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for several hours.">Prøv igjen om noen timer</string>
+    <string name="satellites_retry_tomorrow" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again until the next day.">Prøv igjen i morgen</string>
+    <string name="satellites_retry_days" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for several days.">Prøv igjen om noen dager</string>
+    <string name="layer_grid" translation_description="Toggle label for the layer showing the right ascension / declination grid.">Himmelgitter</string>
     <string name="layer_horizon">Horisont</string>
     <string name="layer_ecliptic">Ekliptikken</string>
     <string name="layer_sky_gradient">Himmelgradient</string>
+
+    <!-- Map screen controls. -->
+    <string name="layers_sheet_title" translation_description="Title of the bottom sheet listing sky map layers the user can show or hide.">Lag</string>
+    <string name="layers_group_objects" translation_description="Layers-sheet group header for layers that draw sky objects (stars, planets, deep-sky objects).">Objekter</string>
+    <string name="layers_group_reference" translation_description="Layers-sheet group header for reference elements drawn over the sky (coordinate grid, horizon, ecliptic).">Referanse</string>
+    <string name="layers_group_display" translation_description="Layers-sheet group header for display settings that change how the sky is rendered rather than what is drawn.">Visning</string>
+    <string name="show_layers" translation_description="Accessibility description and label for the button opening the layer-visibility sheet, which holds the layers that do not fit on the rail plus display options.">Flere lag og alternativer</string>
+    <string name="more_button" translation_description="Accessibility label and tooltip for the map-screen button (three vertical dots) opening the overflow menu of further destinations such as Gallery and Settings.">Flere alternativer</string>
     <string name="night_mode">Nattmodus</string>
+    <string name="switch_to_manual" translation_description="Tooltip and accessibility label for the button that switches the map from auto (sensor-driven) mode to manual (drag) mode.">Bytt til manuell modus</string>
+    <string name="switch_to_auto" translation_description="Tooltip and accessibility label for the button that switches the map from manual (drag) mode to auto (sensor-driven) mode.">Bytt til automatisk modus</string>
+    <string name="no_sensor_warning" translation_description="Warning shown when the device lacks the motion sensors needed to point the map at the sky automatically.">
+    Denne enheten har ingen kompass eller bevegelsessensorer, så Sky Map kan ikke følge hvor du peker den. Dra kartet for hånd i stedet.
+    </string>
+    <!-- tm:omitted name="no_sensor_warning_dismiss" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="hud_ra_label" reason="identical_to_source" -->
+    <string name="hud_dec_label" translation_description="Map-HUD row label: declination of the point at the centre of the screen. Standard astronomy abbreviation; keep short.">Dekl.</string>
+    <string name="hud_alt_label" translation_description="Map-HUD row label: altitude (angle above the horizon) of the point at the centre of the screen. Keep short.">Høyde</string>
+    <string name="hud_az_label" translation_description="Map-HUD row label: azimuth (compass bearing) of the point at the centre of the screen. Keep short.">Azimut</string>
+    <string name="hud_fov_label" translation_description="Map-HUD row label: the field of view (how many degrees of sky the screen spans). Keep short.">Synsfelt</string>
+    <string name="hud_correction_label" translation_description="Map-HUD row label for the manual sensor-alignment correction the user set by dragging. Keep very short.">Just.</string>
+    <string name="hud_ra_value" translation_description="Right ascension in the conventional hours-and-minutes notation, e.g. \'18h 38m\'. %1$d is hours (0-23), %2$02d is minutes (00-59).">%1$dt %2$02dm</string>
+    <!-- tm:omitted name="hud_signed_degrees_value" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_azimuth_value" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_fov_value" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_fov_value_fine" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_fov_value_finest" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_correction_value" reason="identical_to_source" -->
+    <string name="hud_correction_reset" translation_description="Accessibility label for the small button that clears the manual sensor-alignment correction back to zero.">Tilbakestill justeringskorreksjon</string>
+    <string name="hud_alignment_reset_message" translation_description="Snackbar confirming the sensor-alignment correction was cleared; shown with an Undo action.">Justeringskorreksjon tilbakestilt</string>
+    <string name="hud_fov_locked" translation_description="Accessibility label for the small lock icon shown next to the field-of-view readout while the camera controls the zoom in through-camera mode.">Zoom låst til kameraet</string>
+
+    <string name="layer_hud" translation_description="Layers-sheet Display toggle that shows the heads-up readout of where the phone is pointing (compass direction and altitude) over the star map.">Peileavlesning</string>
+
+    <!-- Through-camera (AR) mode (camera-ar-mode.md, D64). -->
+    <string name="layer_camera" translation_description="Layers-sheet Display toggle that shows the live rear-camera image behind the star map, so the drawn sky overlays the real one.">Gjennom-kamera-modus</string>
+    <string name="layer_camera_needs_sensors" translation_description="Subtitle explaining why the through-camera toggle is disabled: the device has no usable motion sensors, and the mode needs the map to follow where the phone points.">Krever bevegelsessensorer som denne enheten ikke har</string>
+    <string name="ar_auto_mode_snackbar" translation_description="Snackbar shown when turning on through-camera mode switched the map from manual dragging back to automatic sensor pointing.">Automatisk modus slått på for kameravisningen</string>
+    <string name="ar_permission_denied" translation_description="Snackbar shown when the user declined the camera permission that through-camera mode needs.">Gjennom-kamera-modus krever kameratillatelsen</string>
     <string name="ar_permission_settings_action">Innstillinger</string>
+    <string name="ar_exposure_slider" translation_description="Accessibility label for the slider adjusting the camera\'s exposure compensation while through-camera mode is on.">Kameraeksponering</string>
+    <string name="ar_alignment_adjusted_message" translation_description="Snackbar shown after the user drags the star map to align it with the camera image; shown with an Undo action that reverts the whole drag.">Kartjustering justert</string>
+    <string name="ar_dimmer_slider" translation_description="Accessibility label for the slider dimming the camera image behind the star map while through-camera mode is on.">Kamerademper</string>
+    <!-- tm:omitted name="ar_iso_slider_label" reason="identical_to_source" -->
+    <string name="ar_iso_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual ISO sensitivity in through-camera mode.">Kamera-ISO</string>
+    <!-- tm:omitted name="ar_shutter_slider_label" reason="identical_to_source" -->
+    <string name="ar_shutter_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual shutter (exposure) time in through-camera mode.">Kamerautløsertid</string>
+    <string name="share_button" translation_description="Overflow-menu row that captures the current sky view as an image and opens the system share sheet.">Del himmelen</string>
+    <string name="share_chooser_title" translation_description="Title of the system share sheet when sharing a captured sky image.">Del denne himmelen</string>
+    <string name="share_invitation" translation_description="Short invitation stamped on the footer of shared sky images, above the store link.">Se hva du ser på — få Sky Map gratis</string>
+    <string name="share_text" translation_description="Text accompanying a shared sky image in apps that accept both an image and text. %1$s is the app-store link.">Se hva du ser på — få Sky Map gratis: %1$s</string>
+    <!-- tm:omitted name="share_store_link" reason="identical_to_source" -->
+    <string name="share_layout_overlay" translation_description="Caption of the share-layout choice that draws the star map over the camera photo, as seen on screen.">Overlegg</string>
+    <string name="share_layout_side_by_side" translation_description="Caption of the share-layout choice that puts the camera photo and the star map next to each other.">Side ved side</string>
+    <string name="share_shutter_button" translation_description="Accessibility label for the round shutter button that captures and shares the current through-camera view.">Del denne visningen</string>
+    <string name="share_failed_message" translation_description="Snackbar shown when capturing the sky image for sharing failed.">Kunne ikke fange himmelen — prøv igjen</string>
+    <!-- tm:omitted name="ar_exposure_auto" reason="identical_to_source" -->
+    <string-array name="hud_cardinal_directions" translation_description="The sixteen compass-point abbreviations, clockwise from north, used as the azimuth suffix in the map HUD (e.g. N, NNE, NE...). Translate to the locale\'s conventional compass abbreviations.">
+        <item>N</item>
+        <item>NNE</item>
+        <item>NØ</item>
+        <item>ØNØ</item>
+        <item>Ø</item>
+        <item>ØSØ</item>
+        <item>SØ</item>
+        <item>SSØ</item>
+        <item>S</item>
+        <item>SSV</item>
+        <item>SV</item>
+        <item>VSV</item>
+        <item>V</item>
+        <item>VNV</item>
+        <item>NV</item>
+        <item>NNV</item>
+    </string-array>
+
+    <!-- Time travel: entry button, dialog, and the player bar shown while travelling. -->
     <string name="time_travel_button">Tidsreise</string>
     <string name="time_travel_title">Tidsreise</string>
+    <string name="time_travel_visiting" translation_description="Readout in the time travel dialog showing the currently chosen destination date and time. %1$s is the formatted date and time.">Besøker: %1$s</string>
+    <string name="time_travel_pick_date" translation_description="Button in the time travel dialog that opens a date picker.">Angi dato</string>
+    <string name="time_travel_pick_time" translation_description="Button in the time travel dialog that opens a time picker.">Angi tid</string>
+    <string name="time_travel_select_event" translation_description="Placeholder hint for the dropdown list of popular astronomical events in the time travel dialog.">Velg en populær hendelse…</string>
+    <string name="time_travel_go" translation_description="Button that starts time travel to the chosen date.">Gå</string>
     <string name="time_travel_from_now">Start fra nå</string>
+    <!-- tm:omitted name="time_travel_ok" reason="identical_to_source" -->
     <string name="time_travel_cancel">Avbryt</string>
+    <!-- tm:omitted name="time_travel_slower" reason="identical_to_source" -->
+    <!-- tm:omitted name="time_travel_pause" reason="identical_to_source" -->
+    <!-- tm:omitted name="time_travel_faster" reason="identical_to_source" -->
+    <string name="time_travel_return" translation_description="Player button that ends time travel and returns the map to the present.">Nå</string>
+
+    <!-- Time travel playback-rate labels (v1 wording). -->
     <string name="time_travel_second_speed">Reiser &gt; @ 1 sek/sek</string>
     <string name="time_travel_minute_speed">Reiser &gt; @ 1 min/sek</string>
     <string name="time_travel_10minute_speed">Reiser &gt; @ 10 min/sek</string>
@@ -47,6 +194,9 @@
     <string name="time_travel_hour_speed_back">Reiser &lt; @ 1 time/sek</string>
     <string name="time_travel_day_speed_back">Reiser &lt; @ 1 døgn/sek</string>
     <string name="time_travel_week_speed_back">Reiser &lt; @ 1 uke/sek</string>
+
+    <!-- Popular events in the time travel dialog (timestamps live in TimeTravelEvents.kt). -->
+    <string name="time_travel_now" translation_description="Time travel picker entry that resets the destination to the present moment.">Nå</string>
     <string name="time_travel_next_sunset">Neste solnedgang</string>
     <string name="time_travel_next_sunrise">Neste soloppgang</string>
     <string name="time_travel_next_full_moon">Neste fullmåne</string>
@@ -58,6 +208,7 @@
     <string name="time_travel_mars_uranus_2026">Mars-Uranus nærmeste tilnærming, 4. juli 2026</string>
     <string name="time_travel_solar_eclipse_2026">Total solformørkelse, 12. august 2026</string>
     <string name="time_travel_perseids_2026">Perseidene meteorsverm, 12.-13. august 2026</string>
+    <string name="time_travel_lunar_eclipse_aug_2026" translation_description="Name of an astronomical event in the time travel picker. Keep the date format suitable for your locale.">Delvis måneformørkelse, 28. aug. 2026</string>
     <string name="time_travel_jupiter_occultation_2026">Månens okkultasjon av Jupiter, 6. oktober 2026</string>
     <string name="time_travel_geminids_2026">Geminidene meteorsverm, 13.-14. desember 2026</string>
     <string name="time_travel_supermoon_2026">Julaftens supermåne, 24. desember 2026</string>
@@ -66,7 +217,11 @@
     <string name="time_travel_apollo_11">Apollo 11 månelanding</string>
     <string name="time_travel_jupiter_saturn_2020">Jupiter-Saturn-konjunksjon i 2020</string>
     <string name="sun_wont_set_message">Solen går ikke ned i løpet av de neste 24 timene på ditt nåværende sted.</string>
+    <string name="time_travel_start_message" translation_description="Toast message when time travel starts toward a chosen destination. %1$s is the formatted destination date and time.">Reiser gjennom tid til %1$s ...</string>
     <string name="time_travel_close_message">Tilbake til nåtiden...</string>
+
+    <!-- Location management. -->
+    <string name="location_button" translation_description="Button on the map screen that opens the location management sheet">Sted</string>
     <string name="location_management_title">Din posisjon</string>
     <string name="location_source_auto">Automatisk</string>
     <string name="location_source_manual">Manuell</string>
@@ -77,7 +232,13 @@
     <string name="location_switch_to_manual">Angi posisjon manuelt</string>
     <string name="location_change">Endre posisjon</string>
     <string name="location_set_toast">Sted satt til %1$s</string>
+    <string name="location_long_lat" translation_description="Formatted display of longitude and latitude. %1$.2f is longitude, %2$.2f is latitude">Lengdegrad:%1$.2f, Breddegrad:%2$.2f</string>
     <string name="location_map_unavailable">Kart utilgjengelig</string>
+    <string name="location_map_content_description" translation_description="Accessibility description of the static map image showing the current location of the user">Kart over din nåværende posisjon</string>
+    <string name="snackbar_action_undo" translation_description="Snackbar action button that reverses the change the snackbar reports, e.g. re-enabling horizon auto-leveling">Angre</string>
+    <string name="snackbar_action_open" translation_description="Snackbar action button that opens the screen the snackbar refers to, e.g. the compass calibration screen">Åpne</string>
+    <string name="label_size_hint_message" translation_description="Snackbar shown once, the first time the user zooms in a long way. Explains that the text labels naming stars and other objects stay the same size however far you zoom, and that their size is changed in the app\'s Settings screen instead. Shown with an action button that opens Settings.">Etikettstørrelse endres ikke med zoom — angi den i Innstillinger</string>
+    <string name="label_size_hint_action" translation_description="Action button on the label size snackbar; opens the app\'s Settings screen, where the user can change how large the sky labels are">Innstillinger</string>
     <string name="location_permission_dialog_title">Lokasjon påkrevd</string>
     <string name="location_permission_dialog_message">
     Sky Map trenger omtrentlig plassering din for å vise riktig nattehimmel. Du kan gi tillatelse, angi plasseringen manuelt, eller bestemme deg senere. Hvis du bestemmer deg senere, vil kartet ikke være nøyaktig før plasseringen din er angitt.
@@ -103,13 +264,36 @@
     <string name="location_geocoder_offline">Ingen internett – angi koordinater direkte</string>
     <string name="location_invalid_latitude">Breddegrad må være mellom −90 og 90</string>
     <string name="location_invalid_longitude">Lengdegrad må være mellom −180 og 180</string>
+    <!-- tm:omitted name="location_coordinate_format" reason="identical_to_source" -->
+
+    <!-- Object info card -->
+    <string name="object_info_image_credit" translation_description="Attribution line under the object\'s photo; %1$s is the credited source, e.g. NASA/ESA">Bilde: %1$s</string>
+    <string name="object_info_fun_fact" translation_description="An interesting trivia line on the object info card; %1$s is the fact text">Morsomt fakta: %1$s</string>
     <string name="object_info_distance">Avstand:</string>
     <string name="object_info_size">Størrelse:</string>
     <string name="object_info_mass">Masse:</string>
+    <string name="object_info_spectral_class" translation_description="Label for a star\'s spectral classification (e.g. G2V) on the info card">Spektralklasse:</string>
+    <string name="object_info_magnitude" translation_description="Label for the object\'s apparent visual magnitude (brightness) on the info card">Magnitud:</string>
+    <string name="object_info_rises" translation_description="Label on the info card for the time the object next rises above the horizon at the user\'s location">Stiger:</string>
+    <string name="object_info_sets" translation_description="Label on the info card for the time the object next sets below the horizon at the user\'s location">Går ned:</string>
+    <string name="object_info_always_above_horizon" translation_description="Info-card line shown for a circumpolar object that never sets at the user\'s location">Alltid over horisonten på din posisjon</string>
+    <string name="object_info_always_below_horizon" translation_description="Info-card line shown for an object that never rises at the user\'s location">Alltid under horisonten på din posisjon</string>
+    <string name="object_info_also_known_as" translation_description="Label on the info card above the object\'s alternative names (aliases and catalog designations), e.g. M31 and NGC 224">Også kjent som:</string>
+    <string name="object_info_see_also" translation_description="Heading above links to related celestial objects on the info card">Se også</string>
     <string name="object_info_find_in_sky">Finn på himmelen</string>
+    <string name="object_info_close" translation_description="Button that closes the object info card">Lukk</string>
     <string name="object_info_tap_to_close">Trykk for å lukke</string>
+
+    <!-- Image gallery -->
+    <string name="gallery_button" translation_description="Map-screen menu item that opens a gallery of photographs of celestial objects. Not the user\'s own photos - these are catalog images from sources such as NASA and ESA.">Himmelgalleri</string>
+    <string name="gallery_title" translation_description="Title of the screen showing a gallery of photographs of celestial objects. Not the user\'s own photos - these are catalog images from sources such as NASA and ESA.">Himmelgalleri</string>
+    <string name="gallery_back" translation_description="Content description for the back arrow leaving the gallery screen">Tilbake</string>
+
+    <!-- Settings screen (v1 wording where a v1 string existed) -->
     <string name="settings_button">Innstillinger</string>
     <string name="settings_title">Innstillinger</string>
+    <string name="settings_back" translation_description="Content description for the back arrow leaving the settings screen">Tilbake</string>
+    <!-- tm:omitted name="settings_ok" reason="identical_to_source" -->
     <string name="settings_cancel">Avbryt</string>
     <string name="settings_section_controls">Kontroller</string>
     <string name="settings_section_appearance">Utseende</string>
@@ -117,28 +301,74 @@
     <string name="settings_section_other">Annet</string>
     <string name="enable_analytics">Send bruksstatistikk</string>
     <string name="enable_analytics_desc">Gjør Sky Map bedre ved å sende anonyme data til Google Analytics</string>
+    <string name="settings_diagnostics_summary" translation_description="Summary for the settings row that opens the diagnostics screen, which shows technical sensor, location and performance readouts useful when reporting a problem">Sensor-, posisjons- og ytelsesdetaljer</string>
     <string name="settings_tap_to_identify">Vis info ved trykk</string>
     <string name="settings_tap_to_identify_summary">Trykk på himmelobjekter for å lære om dem</string>
     <string name="settings_tap_in_auto_mode">Infokort i automatisk modus</string>
     <string name="settings_tap_in_auto_mode_summary">Vis også infokort når du trykker på objekter i automatisk (sensor) modus</string>
     <string name="settings_auto_level_horizon">Autonivelering av horisont</string>
+    <string name="auto_level_on_toast" translation_description="Brief confirmation shown when a double tap turns horizon auto-leveling on in manual mode">Horisont automatisk nivåjustering på</string>
+    <string name="auto_level_off_toast" translation_description="Brief confirmation shown when a double tap turns horizon auto-leveling off in manual mode">Horisont automatisk nivåjustering av</string>
     <string name="settings_auto_level_horizon_summary">
     I manuell modus returnerer horisonten gradvis til horisontalt etter at du løfter fingrene
     </string>
+    <string name="settings_font_size" translation_description="Preference title: change the size of the text labels naming stars and other objects drawn on the sky">Størrelse på himmelmerker</string>
+    <string name="settings_font_size_summary" translation_description="Help to go along with the sky label size preference. Explains that this size is fixed and does not change as the user zooms the map in or out.">Merketekst beholder denne størrelsen uansett zoom</string>
+    <string name="settings_font_size_small" translation_description="Smallest font size">Liten</string>
+    <string name="settings_font_size_medium" translation_description="Normal font size">Middels</string>
+    <string name="settings_font_size_large" translation_description="Large font size">Stor</string>
+    <string name="settings_font_size_extra_large" translation_description="Largest font size">Ekstra stor</string>
     <string name="settings_auto_dimness">Automatisk skjermdemping</string>
+    <string name="settings_auto_dimness_summary" translation_description="Summary for the night-mode screen dimming preference">Hvor mye nattmodus dimmer skjermen</string>
+    <string name="settings_auto_dimness_system" translation_description="Screen dimming option: leave brightness on the system setting">Systemstandard</string>
+    <string name="settings_auto_dimness_dim" translation_description="Screen dimming option: dimmest screen setting">Veldig svak</string>
+    <string name="settings_auto_dimness_classic" translation_description="Screen dimming option: the hand-tuned brightness Sky Map used for its first 15 years">Klassisk</string>
     <string name="settings_sky_gradient">Vis himmelgradient</string>
     <string name="settings_sky_gradient_summary">Skygger himmelen blå nær solen og mørk på motsatt side</string>
+    <string name="settings_disable_gyro" translation_description="Preference title for switching from the gyroscope to the legacy compass + accelerometer sensor pipeline">Bruk eldre sensorer</string>
+    <string name="settings_disable_gyro_summary" translation_description="Explanation of the legacy sensors preference and when to use it">
+    Pek kartet ved hjelp av kompasset og akselerometeret i stedet for gyroskopet. Prøv dette hvis kartet driver eller enhetens gyroskop oppfører seg feil; enheter uten gyroskop bruker disse sensorene automatisk.
+    </string>
     <string name="settings_sensor_speed">Sensorhastighet</string>
+    <string name="settings_sensor_speed_slow" translation_description="Slow sensor speed">Sakte</string>
+    <string name="settings_sensor_speed_standard" translation_description="Normal sensor speed">Middels</string>
+    <string name="settings_sensor_speed_fast" translation_description="Fast sensor speed">Rask</string>
     <string name="settings_sensor_damping">Demping</string>
+    <string name="settings_sensor_damping_standard" translation_description="Low sensor damping factor - this will make the app jittery">Urolig</string>
+    <string name="settings_sensor_damping_high" translation_description="Medium sensor damping factor - this will make the app slightly jittery">Middels</string>
+    <string name="settings_sensor_damping_extra_high" translation_description="Extra high sensor damping factor">Passende</string>
+    <string name="settings_sensor_damping_really_high" translation_description="Really high sensor damping factor - this will make the app sluggish">Treg</string>
+    <string name="settings_classic_sensors_only" translation_description="Summary noting a sensor preference only applies to the legacy non-gyroscope sensor path">Gjelder kun når eldre sensorer er i bruk</string>
     <string name="settings_reverse_magnetic_z">Reverser Magnetisk Z</string>
     <string name="settings_magnetic_correction">Bruk magnetisk korrigering</string>
+    <string name="settings_magnetic_correction_summary" translation_description="Summary for the magnetic correction preference">Korrigering av kompasset for forskjellen mellom magnetisk og sann nord</string>
     <string name="settings_view_direction">Visningsretning</string>
+    <string name="settings_view_direction_summary" translation_description="Explanation of the view direction preference, covering both landscape rotation and pointer modes">
+    Roter horisonten 90 grader (for enheter med tvungen liggende visning) eller bruk pekemodus for at skjermen skal vise hva toppen av telefonen peker på
+    </string>
+    <!-- tm:omitted name="settings_view_direction_standard" reason="identical_to_source" -->
+    <string name="settings_view_direction_rotate90" translation_description="View direction option that rotates the screen by 90 degrees">Rotert horisont</string>
+    <string name="settings_view_direction_telescope" translation_description="View direction option that shows the sky as pointed at by the long edge of the phone">Pekermodus</string>
+
+    <!-- tm:omitted name="support_email" reason="identical_to_source" -->
     <string name="diagnostics_button">Diagnostikk</string>
     <string name="diagnostics_title">Diagnostikk</string>
+    <string name="diagnostics_share" translation_description="Accessibility label for the diagnostics screen button that emails these details to the developers">Send til utviklere</string>
+    <string name="diagnostics_share_subject" translation_description="Subject line of the email a user sends from the diagnostics screen">Sky Map-diagnoserapport</string>
+    <string name="diagnostics_report_header" translation_description="First line of the emailed diagnostics report, telling the user where to type their problem description. Keep it on one line.">--- Sky Map-diagnose. Beskriv problemet over denne linjen. ---</string>
     <string name="diagnostics_section_general">Generelt</string>
     <string name="diagnostics_device">Enhet</string>
+    <!-- tm:omitted name="diagnostics_phone_format" reason="identical_to_source" -->
     <string name="diagnostics_android_version">Android-versjon</string>
     <string name="diagnostics_sky_map_version">Sky Map-versjon</string>
+    <!-- tm:omitted name="diagnostics_sky_map_version_format" reason="identical_to_source" -->
+    <string name="diagnostics_section_graphics" translation_description="Section heading in the diagnostics screen for graphics/GPU information">Grafikk</string>
+    <string name="diagnostics_gl_renderer" translation_description="Row label in the diagnostics screen for the name of the graphics processor (GPU) drawing the sky">Gjengiver</string>
+    <!-- tm:omitted name="diagnostics_gl_version" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_gl_version_format" reason="identical_to_source" -->
+    <string name="diagnostics_gl_limits" translation_description="Row label in the diagnostics screen for graphics hardware limits (maximum texture size, supported line widths and point sizes)">GL-grenser</string>
+    <string name="diagnostics_gl_limits_format" translation_description="Format for the GL limits row: maximum texture size in pixels, then the supported line width and point size ranges. \'tex\' abbreviates texture. %1$d is texture size, %2$s is the line width range, %3$s is the point size range.">tekstur %1$d, linje %2$s, punkt %3$s</string>
+    <string name="diagnostics_gl_unavailable" translation_description="Value shown in the diagnostics Graphics rows before the sky map has drawn, when the graphics details are not known yet">Ikke tilgjengelig ennå</string>
     <string name="diagnostics_section_sensors">Sensorer</string>
     <string name="diagnostics_accelerometer">Akselerometer</string>
     <string name="diagnostics_compass">Kompass</string>
@@ -151,22 +381,43 @@
     <string name="diagnostics_location_permission">Posisjonstillatelse</string>
     <string name="diagnostics_permission_granted">Gitt</string>
     <string name="diagnostics_permission_denied">Nektet</string>
+    <!-- tm:omitted name="diagnostics_gps" reason="identical_to_source" -->
     <string name="diagnostics_no_gps">Ingen GPS</string>
     <string name="diagnostics_enabled">Aktivert</string>
     <string name="diagnostics_disabled">Deaktivert</string>
     <string name="diagnostics_permission_disabled">Tillatelse deaktivert</string>
     <string name="diagnostics_location">Posisjon (br., le.)</string>
+    <!-- tm:omitted name="diagnostics_location_format" reason="identical_to_source" -->
+    <string name="diagnostics_location_unset" translation_description="Location status shown in diagnostics when no location has been set yet">Ikke angitt</string>
     <string name="diagnostics_location_acquiring">Henter…</string>
+    <string name="diagnostics_location_hardware_unavailable" translation_description="Location status shown in diagnostics when no location hardware is available">Ingen posisjonsmaskinvare</string>
     <string name="diagnostics_pointing">Peke-øyeblikksbilde</string>
+    <!-- tm:omitted name="diagnostics_dec_format" reason="identical_to_source" -->
     <string name="diagnostics_magnetic_correction">Magnetisk korreksjon</string>
+    <string name="diagnostics_alignment_adjustment" translation_description="Diagnostics row label for the manual sky-alignment correction the user set by dragging in through-camera mode.">Innrettingsjustering</string>
+    <!-- tm:omitted name="diagnostics_alignment_format" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_magnetic_correction_format" reason="identical_to_source" -->
+    <string name="diagnostics_east" translation_description="Compass direction shown for an eastward magnetic correction">Øst</string>
+    <string name="diagnostics_west" translation_description="Compass direction shown for a westward magnetic correction">Vest</string>
     <string name="diagnostics_local_datetime">Lokal dato-tid</string>
     <string name="diagnostics_utc_datetime">Universell dato-tid</string>
     <string name="diagnostics_section_network">Nettverk</string>
     <string name="diagnostics_connection">Forbindelse</string>
+    <string name="diagnostics_section_satellites" translation_description="Section heading in the diagnostics screen for satellite orbital-data status">Satellitter</string>
+    <string name="diagnostics_satellite_data" translation_description="Row label in the diagnostics screen for the age and count of cached satellite orbital data">Banedata</string>
+    <string name="diagnostics_satellite_data_none" translation_description="Row value in the diagnostics screen when no satellite orbital data has been downloaded yet">Ikke lastet ned</string>
+    <string name="diagnostics_satellite_data_format" translation_description="Row value in the diagnostics screen showing how many satellites are cached and how many days old the data is. %1$d is a count, %2$.1f is a number of days">%1$d satellitter, %2$.1f dager gammel</string>
+    <string name="diagnostics_satellite_last_fetch" translation_description="Row label in the diagnostics screen for the result of the most recent attempt to download satellite orbital data">Siste henting</string>
+    <string name="diagnostics_satellite_never_fetched" translation_description="Row value in the diagnostics screen when satellite orbital data has never been downloaded">Aldri</string>
+    <string name="diagnostics_satellite_circuit_open" translation_description="Row label in the diagnostics screen for when satellite downloads are paused after repeated server errors">Nedlastinger satt på pause</string>
+    <string name="diagnostics_satellite_circuit_open_format" translation_description="Row value in the diagnostics screen showing when paused satellite downloads will resume and how many failures caused the pause. %1$s is a date and time, %2$d is a count">Til %1$s (%2$d feil)</string>
+    <string name="diagnostics_satellite_force_fetch" translation_description="Label on a debug-only button in the diagnostics screen that downloads satellite orbital data immediately">Hent satellittdata nå (feilsøking)</string>
     <string name="diagnostics_connected">Tilkoblet</string>
     <string name="diagnostics_disconnected">Frakoblet</string>
     <string name="diagnostics_wifi">(wifi)</string>
     <string name="diagnostics_cell">" (mobilnett)"</string>
+
+    <!-- Compass calibration screen (slice 15) -->
     <string name="calibration_button">Kalibrer</string>
     <string name="calibration_heading_user">Telefonens kompass</string>
     <string name="calibration_heading_warning">Telefonens kompass trenger oppmerksomhet</string>
@@ -177,22 +428,169 @@
     <string name="calibration_accuracy_high">Kalibrering: God</string>
     <string name="calibration_accuracy_no_contact">Kalibrering: Ingen kontakt</string>
     <string name="calibration_do_not_show_again">Ikke vis dette igjen</string>
+    <string name="calibration_what_to_do" translation_description="Information for the user on how to calibrate the compass when the screen auto-opens. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[Telefonens kompassensor rapporterer dårlig kalibrering. Å utføre åttetallsbevegelsen (<a href="%s">se en demonstrasjon</a>) ber telefonens maskinvare om å nullstille kompassensoren – Sky Map har ingen kontroll over denne prosessen.<br/><br/>
+<blockquote><b>Kalibrert betyr ikke nøyaktig.</b> Åttetallsbevegelsen hjelper til med å nullstille sensoren, men den kan ikke fjerne forstyrrelser fra metallgjenstander i nærheten, bilens dashbord eller telefondeksler. Hvis kartet fortsatt er unøyaktig etter kalibrering, er disse eksterne kildene den mest sannsynlige årsaken – ikke Sky Map.</blockquote>
+Flytt deg til et åpent område vekk fra metall og prøv igjen.]]></string>
+    <string name="calibration_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they open the calibration screen. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[Telefonen din rapporterer kompasskalibreringsstatusen sin som vist ovenfor.<br/><br/>Om nødvendig, utfør åttetallsbevegelsen (<a href="%s">se en demonstrasjon</a>) for å få telefonens maskinvare til å rekalibrere kompasssensoren.<br/><br/><blockquote><b>Viktig:</b> kalibrering hjelper sensoren med å nullstille seg internt. Det betyr ikke at kompasset nødvendigvis er nøyaktig! Lokal magnetisk interferens (metallgjenstander, bilens dashbord, telefondeksler) kan fortsatt føre til at telefonens kompass sender unøyaktige avlesninger til Sky Map.</blockquote><b>Hvis kartet ikke viser posisjoner riktig er problemet sannsynligvis telefonen din - ikke Sky Map!</b>]]></string>
     <string name="calibration_low_accuracy_toast">Telefonens kompass rapporterer lav nøyaktighet</string>
+    <string name="calibration_complete_toast" translation_description="Toast shown when the compass reaches high accuracy and the auto-opened calibration screen closes itself">Sensorer har høy nøyaktighet</string>
+
+    <!-- Startup routing: EULA, warm welcome, What's New (slice 16) -->
     <string name="eula_title">Vilkår for bruk</string>
     <string name="dialog_accept">Aksepter</string>
     <string name="dialog_decline">Nei takk</string>
+    <!-- tm:omitted name="dialog_ok_button" reason="identical_to_source" -->
+
     <string name="whats_new_dialog_title">Hva er nytt</string>
+    <string name="whats_new_version_heading" translation_description="Heading above the list of new features. %1$s is the app version name">Nytt i versjon %1$s</string>
+
+    <!-- Warm welcome (onboarding pager, slice 16) -->
     <string name="warm_welcome_slide1_title">Utforsk universet</string>
+    <string name="warm_welcome_slide1_desc" translation_description="Description for the first slide of the Warm Welcome onboarding, shown under a guided tour of the map controls">
+    Bruk lagene til venstre for å filtrere stjerner, stjernebilder, planeter og mer. Knappene nederst til høyre søker i himmelen, reiser gjennom tid og bytter visningsmodus. Trykk på himmelen når som helst for å skjule eller vise kontrollene.
+    </string>
     <string name="warm_welcome_slide2_title">Naviger på himmelen</string>
+    <string name="warm_welcome_slide2_desc" translation_description="Description for the second slide of the Warm Welcome onboarding. Please do not change the &lt; and &gt; markup"><![CDATA[Pek telefonen din for å se deg rundt i <b>Automatisk modus</b>, eller trykk for å bytte til <b>Manuell</b> og utforsk ved å sveipe og klype.]]></string>
+    <string name="warm_welcome_slide2_info_desc" translation_description="Description about info cards on the second slide of the Warm Welcome onboarding">
+    Trykk på et hvilket som helst merket objekt for å åpne et infokort som dette, med et bilde, morsomme fakta og himmelske detaljer.
+    </string>
     <string name="warm_welcome_card_name">Krabbetåken</string>
+    <string name="warm_welcome_card_description" translation_description="Description of the Crab Nebula on the sample info card on the second Warm Welcome slide">
+    Krabbetåken er en supernovarest i Tyren, resultatet av en stjerneeksplosjon registrert av kinesiske astronomer i 1054 e.Kr.
+    </string>
+    <string name="warm_welcome_card_fun_fact" translation_description="Fun fact about the Crab Nebula on the sample info card on the second Warm Welcome slide">
+    Krabbetåken inneholder en pulsar som spinner 30 ganger i sekundet, den kollapsede kjernen av den eksploderte stjernen!
+    </string>
+    <string name="warm_welcome_card_distance" translation_description="Distance to the Crab Nebula on the sample info card on the second Warm Welcome slide">6 500 lysår</string>
+    <string name="warm_welcome_card_size" translation_description="Size of the Crab Nebula on the sample info card on the second Warm Welcome slide">11 lysår i diameter</string>
     <string name="warm_welcome_slide3_title">Sensorer og kalibrering</string>
     <string name="warm_welcome_slide3_desc">Sky Map bruker telefonens sensorer til å justere seg etter stjernene.</string>
+    <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message on the third Warm Welcome slide when sensors are missing. Please do not change the &lt; and &gt; markup"><![CDATA[Enheten din ser ut til å mangle de nødvendige sensorene for automatisk sporing. Ikke bekymre deg—du kan fortsatt utforske hele kosmos i <b>Manuell modus</b>!]]></string>
+    <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration advice on the third Warm Welcome slide. Please do not change the &lt; and &gt; markup"><![CDATA[For å holde det nøyaktig, vink telefonen din raskt i et <b>åttetall</b> innimellom.]]></string>
     <string name="warm_welcome_skip">Hopp over</string>
     <string name="warm_welcome_next">Neste</string>
     <string name="warm_welcome_finish">Start!</string>
     <string name="warm_welcome_sensor_ok">Fungerer</string>
     <string name="warm_welcome_sensor_missing">Mangler</string>
+
+    <!-- Help dialog (slice 16) -->
     <string name="help_button">Hjelp</string>
     <string name="tutorial_button">Veiledning</string>
     <string name="help_dialog_title">Hjelp</string>
+    <string name="help_version" translation_description="Version line at the top of the Help screen. %1$s is the app version name">Versjon %1$s</string>
+    <string name="whats_new_button" translation_description="Map-screen menu item that opens the What's New and Credits screen">Hva er nytt</string>
+    <string name="whats_new_screen_title" translation_description="Title of the screen showing the release notes and the credits">Hva er nytt og bidragsytere</string>
+
+    <!-- The deep-sky symbol key at the foot of the Help screen. -->
+    <string name="help_symbol_key_title" translation_description="Heading of the Help section explaining the map symbols used for deep-sky objects">Kartsymboler</string>
+    <string name="help_symbol_key_intro" translation_description="Introductory sentence for the map-symbol key in Help">Dypromsobjekter og meteorsvermer er merket med et symbol som viser deres type:</string>
+    <string name="symbol_key_galaxy" translation_description="Symbol-key label: the marker used for galaxies">Galakse</string>
+    <string name="symbol_key_open_cluster" translation_description="Symbol-key label: the marker used for open star clusters">Åpen stjernehop</string>
+    <string name="symbol_key_globular_cluster" translation_description="Symbol-key label: the marker used for globular star clusters">Kulehop</string>
+    <string name="symbol_key_diffuse_nebula" translation_description="Symbol-key label: the marker used for diffuse nebulae">Diffus tåke</string>
+    <string name="symbol_key_planetary_nebula" translation_description="Symbol-key label: the marker used for planetary nebulae">Planetarisk tåke</string>
+    <string name="symbol_key_supernova_remnant" translation_description="Symbol-key label: the marker used for supernova remnants">Supernovarest</string>
+    <string name="symbol_key_asterism" translation_description="Symbol-key label: the marker used for asterisms and star clouds">Asterisme eller stjernetåke</string>
+    <string name="symbol_key_other" translation_description="Symbol-key label: the marker used for deep-sky objects of any other type">Annet dypromsobjekt</string>
+    <string name="symbol_key_meteor_radiant" translation_description="Symbol-key label: the marker for the point in the sky meteors of a shower appear to come from">Meteorsvermradiant</string>
+    <string name="symbol_key_meteor_radiant_peak" translation_description="Symbol-key label: the brighter marker used when a meteor shower is near its peak activity">Meteorsverm nær sitt høydepunkt</string>
+
+    <!-- Moon-phase home-screen widget (D69). -->
+    <string name="moon_widget_label" translation_description="Name of the moon-phase home-screen widget, shown in the launcher\'s widget picker">Månefase</string>
+    <string name="moon_widget_description" translation_description="Description of the moon-phase widget, shown under its preview in the launcher\'s widget picker">Månens fase, belysning og opp- og nedgangstider, oppdatert daglig.</string>
+    <string name="moon_widget_illumination" translation_description="Widget line showing how much of the Moon\'s disc is lit; %1$d is a percentage number">%1$d%% belyst</string>
+    <string name="moon_widget_rise_time" translation_description="Widget fragment showing today\'s moonrise time; %1$s is a clock time like 17:42">står opp %1$s</string>
+    <string name="moon_widget_set_time" translation_description="Widget fragment showing today\'s moonset time; %1$s is a clock time like 03:12">går ned %1$s</string>
+    <string name="moon_phase_new" translation_description="Name of the lunar phase when the Moon is fully dark">Nymåne</string>
+    <string name="moon_phase_waxing_crescent" translation_description="Name of the lunar phase between new moon and first quarter">Voksende sigd</string>
+    <string name="moon_phase_first_quarter" translation_description="Name of the lunar phase when half the disc is lit and growing">Første kvarter</string>
+    <string name="moon_phase_waxing_gibbous" translation_description="Name of the lunar phase between first quarter and full moon">Voksende gibbous</string>
+    <string name="moon_phase_full" translation_description="Name of the lunar phase when the disc is fully lit">Fullmåne</string>
+    <string name="moon_phase_waning_gibbous" translation_description="Name of the lunar phase between full moon and last quarter">Avtagende gibbous</string>
+    <string name="moon_phase_last_quarter" translation_description="Name of the lunar phase when half the disc is lit and shrinking">Siste kvarter</string>
+    <string name="moon_phase_waning_crescent" translation_description="Name of the lunar phase between last quarter and new moon">Avtagende sigd</string>
+    <string name="moon_widget_promo_title" translation_description="Title of the row on the Moon\'s info card offering to add the moon-phase widget to the home screen">Ha Månen på startskjermen din</string>
+    <string name="moon_widget_promo_subtitle" translation_description="Subtitle of the row offering the moon-phase widget, summarizing what the widget shows">Fase, belysning og oppgangstider, oppdatert daglig</string>
+    <string name="moon_widget_promo_add" translation_description="Button that adds the moon-phase widget to the home screen via the system dialog">Legg til widget</string>
+    <string name="moon_widget_promo_dismiss" translation_description="Accessibility label for the button that permanently dismisses the widget offer row">Avvis widgetforslag</string>
+    <string name="moon_widget_pin_unsupported_title" translation_description="Title of the fallback dialog when the launcher cannot add widgets directly">Legg til widgeten fra startskjermen din</string>
+    <string name="moon_widget_pin_unsupported_body" translation_description="Body of the fallback dialog explaining how to add the widget manually">
+    Startskjermen din støtter ikke å legge til widgeter fra en app. Trykk og hold på startskjermen din, velg Widgeter, og finn Sky Map.
+    </string>
+    <string name="moon_widget_pin_unsupported_ok" translation_description="Confirmation button of the manual widget-adding instructions dialog">Forstått</string>
+    <string name="moon_widget_preview_illumination" tools:ignore="StringFormatInvalid" translation_description="Representative illumination line shown in the widget picker\'s preview of the moon-phase widget">83% belyst</string>
+
+    <!-- Tonight's-sky and countdown home-screen widgets (D69 phase 2). -->
+    <string name="tonight_widget_label" translation_description="Name of the tonight\'s-sky home-screen widget, shown in the launcher\'s widget picker">Kveldens himmel</string>
+    <string name="tonight_widget_description" translation_description="Description of the tonight\'s-sky widget, shown under its preview in the launcher\'s widget picker">
+    Kveldens beste severdigheter: velplasserte planeter, meteorsvermer og månehendelser, oppdatert daglig.
+    </string>
+    <string name="tonight_widget_header" translation_description="Small header label on the tonight widget; %1$s is a short date like \'Wed 30 Jul\'">I kveld · %1$s</string>
+    <string name="tonight_widget_sun_times" translation_description="Header line on the tonight widget; %1$s is the sunset time, %2$s the time the sky becomes fully dark">solen går ned %1$s · mørkt %2$s</string>
+    <string name="tonight_widget_sunset_only" translation_description="Header fragment when only the sunset time is known; %1$s is the sunset time">solen går ned %1$s</string>
+    <string name="tonight_well_placed" translation_description="Tonight-widget row: a planet is high in the sky and easy to observe; %1$s is the planet name, %2$s the time from which it is well placed">%1$s godt synlig fra %2$s</string>
+    <!-- tm:omitted name="tonight_trailing_direction" reason="identical_to_source" -->
+    <string name="tonight_shower_peak" translation_description="Tonight-widget row: a meteor shower reaches its annual peak tonight; %1$s is the shower name">%1$s på topp i kveld</string>
+    <string name="tonight_shower_days" translation_description="Tonight-widget row: a meteor shower peaks within a few days; %1$s is the shower name, %2$d the number of days">%1$s på topp om %2$d dager</string>
+    <string name="tonight_dark_skies" translation_description="Small trailing note: the moon is dark, so viewing conditions are ideal">mørk himmel</string>
+    <string name="tonight_trailing_moon" translation_description="Small trailing note: how much of the moon is lit; %1$d is a percentage">måne %1$d%%</string>
+    <string name="tonight_new_moon" translation_description="Tonight-widget row shown at new moon">Nymåne — månedens mørkeste himmel</string>
+    <string name="tonight_full_moon" translation_description="Tonight-widget row shown at full moon">Fullmåne i kveld</string>
+    <string name="tonight_bright_moon" translation_description="Tonight-widget row warning that a bright moon washes out faint objects">Lys måne overskygger svake objekter</string>
+    <string name="tonight_lunar_eclipse_total" translation_description="Tonight-widget row: a total lunar eclipse is starting soon or under way">Total måneformørkelse</string>
+    <string name="tonight_lunar_eclipse_partial" translation_description="Tonight-widget row: a partial lunar eclipse is starting soon or under way">Delvis måneformørkelse</string>
+    <string name="tonight_lunar_eclipse_penumbral" translation_description="Tonight-widget row: a penumbral lunar eclipse is starting soon or under way">Halvskygge-måneformørkelse</string>
+    <string name="tonight_quiet" translation_description="Tonight-widget line shown when nothing notable is visible tonight">Rolig himmel i kveld</string>
+    <string name="tonight_quiet_next" translation_description="Tonight-widget line under the quiet-night message; %1$s is an event name, %2$d the days until it">Neste: %1$s om %2$d dager</string>
+    <string name="countdown_widget_label" translation_description="Name of the countdown home-screen widget, shown in the launcher\'s widget picker">Himmel-nedtelling</string>
+    <string name="countdown_widget_description" translation_description="Description of the countdown widget, shown under its preview in the launcher\'s widget picker">Dager til neste meteorsverm-topp eller månehendelse.</string>
+    <string name="countdown_days" translation_description="Unit label inside the countdown ring, under the number of days">dager</string>
+    <string name="countdown_tonight" translation_description="Shown inside the countdown ring when the event is tonight (zero days left)">nå</string>
+    <string name="countdown_shower_peak" translation_description="Countdown-widget event name; %1$s is a meteor shower name">%1$s topp</string>
+    <string name="countdown_new_moon_peak" translation_description="Countdown-widget note: the shower peaks near new moon, so skies will be dark">Nymåne-topp</string>
+    <string name="countdown_full_moon" translation_description="Countdown-widget event name for the next full moon">Fullmåne</string>
+    <string name="countdown_new_moon" translation_description="Countdown-widget event name for the next new moon">Nymåne</string>
+    <string name="tonight_widget_preview_row" translation_description="Representative highlight row shown in the widget picker\'s preview of the tonight widget">Jupiter godt synlig fra kl. 21:30</string>
+    <!-- tm:omitted name="countdown_widget_preview_days" reason="identical_to_source" -->
+    <string name="countdown_widget_preview_name" translation_description="Representative event name shown in the widget picker\'s preview of the countdown widget">Perseidene topp</string>
+
+    <!-- Sky-event notifications (D77). -->
+    <string name="settings_section_notifications" translation_description="Settings section header for notification preferences">Varsler</string>
+    <string name="settings_notifications_intro" translation_description="Introduction under the notifications settings header, stating how rarely the app notifies">
+    Sky Map varsler bare om sjeldne himmelhendelser, maksimalt én gang om dagen. Alt er slått av til du slår det på.
+    </string>
+    <string name="settings_shower_alerts" translation_description="Preference title: notify on the evening a meteor shower reaches its annual peak">Meteorsverm-topper</string>
+    <string name="settings_shower_alerts_summary" translation_description="Explanation of the meteor-shower notification preference">Rundt et dusin i året, på kvelden for toppen</string>
+    <string name="settings_tonight_digest" translation_description="Preference title: a single evening notification summarizing what\'s visible tonight">Kveldens himmel-oversikt</string>
+    <string name="settings_tonight_digest_summary" translation_description="Explanation of the tonight-digest notification preference">Ett sammendrag etter solnedgang, hoppes over på rolige netter</string>
+    <string name="settings_notifications_blocked" translation_description="Warning row shown when the user enabled notifications in the app but blocked them at the system level">Varsler er blokkert for Sky Map</string>
+    <string name="settings_notifications_blocked_action" translation_description="Hint under the blocked-notifications warning; tapping opens the system settings page">Trykk for å tillate dem i systeminnstillingene</string>
+    <string name="channel_showers_name" translation_description="Name of the meteor-shower notification channel, shown in the system\'s notification settings">Meteorsverm-topper</string>
+    <string name="channel_showers_description" translation_description="Description of the meteor-shower notification channel in the system\'s notification settings">Rundt et dusin i året, på kvelden for toppen</string>
+    <string name="channel_digest_name" translation_description="Name of the tonight-digest notification channel, shown in the system\'s notification settings">Kveldens himmel-oversikt</string>
+    <string name="channel_digest_description" translation_description="Description of the tonight-digest notification channel in the system\'s notification settings">Ett kveldssammendrag, hoppes over på rolige netter</string>
+    <string name="notif_shower_title" translation_description="Title of the meteor-shower notification; %1$s is the shower name">%1$s på topp i kveld</string>
+    <string name="notif_shower_direction" translation_description="Notification sentence telling the user where to look; %1$s is a compass point like NE">Best etter midnatt, seende mot %1$s.</string>
+    <string name="notif_shower_dark_moon" translation_description="Notification sentence when the moon is dark during a meteor shower peak; %1$d is the expected meteors per hour">Mørk, måneløs himmel — forvent opptil %1$d meteorer i timen vekk fra bylys.</string>
+    <string name="notif_shower_bright_moon" translation_description="Notification sentence when a bright moon will interfere with a meteor shower; %1$d is the moon illumination percentage, %2$d the meteors per hour under ideal skies">
+    Den %1$d%%-belyste månen vil overskygge svakere meteorer — opptil %2$d i timen under ideelle forhold.
+    </string>
+    <string name="notif_digest_title" translation_description="Title of the tonight\'s-sky digest notification">Verdt å se i kveld</string>
+    <string name="notif_action_mute_showers" translation_description="Notification action button that opens the system toggle for the meteor-shower channel">Demp meteorsvermer</string>
+    <string name="time_travel_stopped">Tidsreise satt på pause</string>
+    <!-- Layers sheet: per-layer parameters (D87). -->
+    <string name="layer_param_disc_size">Skivestørrelse</string>
+    <string name="layer_param_disc_size_true">Sann skala</string>
+    <string name="layer_param_disc_size_true_desc">
+    Real størrelse på himmelen ved alle zoomnivåer. Planeter er prikker til du zoomer helt inn.
+    </string>
+    <string name="layer_param_disc_size_glyphs">Glyfer</string>
+    <string name="layer_param_disc_size_glyphs_desc">
+    Størrelse basert på hvor stor hver kropp faktisk er, ikke hvor stor den ser ut. Lett å se ved alle zoomnivåer.
+    </string>
+    <string name="layer_param_disc_size_auto">Jevn</string>
+    <string name="layer_param_disc_size_auto_desc">
+    Holder en fast størrelse på skjermen når du zoomer, bytter deretter til real størrelse.
+    </string>
+    <string name="layer_param_expand">Vis alternativer for %1$s</string>
 </resources>

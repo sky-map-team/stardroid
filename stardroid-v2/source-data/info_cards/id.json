@@ -645,12 +645,22 @@
    "size": "Lebar 83 tahun cahaya",
    "image_credit": "NASA/ESA/Hubble"
   },
+  "dso/m100": {
+   "description": "Messier 100 adalah galaksi spiral berdesain agung di Coma Berenices dan salah satu yang paling terang di Gugus Virgo.",
+   "fun_fact": "Tujuh supernova telah terlihat di M100, yang terbaru pada tahun 2020 - hanya sedikit galaksi yang menampilkan pertunjukan sehebat itu!",
+   "distance": "55 juta tahun cahaya",
+   "size": "166.000 tahun cahaya melintang"
+  },
   "dso/m101": {
    "description": "Galaksi Kincir adalah galaksi spiral tampak depan di Ursa Major, salah satu galaksi spiral terbesar yang diketahui.",
    "fun_fact": "Galaksi Kincir berisi lebih dari satu triliun bintang dan memiliki lengan spiral asimetris karena interaksi galaksi masa lalu!",
    "distance": "21 juta tahun cahaya",
    "size": "Lebar 170.000 tahun cahaya",
    "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m102": {
+   "description": "Messier 102 adalah entri besar yang belum terpecahkan dalam katalog Messier - sebuah objek yang dicatat pada tahun 1781 yang belum pernah diidentifikasi dengan pasti.",
+   "fun_fact": "Messier tidak memublikasikan koordinat untuk M102, dan rekannya Mechain kemudian menarik kembali penemuan itu sepenuhnya, mengklaim bahwa itu hanyalah M101 yang tercatat dua kali secara tidak sengaja! NASA mengidentifikasinya dengan Galaksi Spindel, NGC 5866."
   },
   "dso/m103": {
    "description": "M103 adalah gugus bintang terbuka yang kecil dan padat di Cassiopeia, berisi sekitar 40 bintang dalam kelompok yang rapat dan mudah terlihat dengan teropong. Sebuah bintang ganda yang mencolok dan raksasa merah di dekat pusat memberikan penampilan yang penuh warna di teleskop kecil, terletak dalam medan bintang Milky Way yang kaya di Cassiopeia.",
@@ -665,6 +675,12 @@
    "size": "Lebar 50.000 tahun cahaya",
    "image_credit": "NASA/ESA/Hubble"
   },
+  "dso/m105": {
+   "description": "Messier 105 adalah galaksi elips di Leo, galaksi elips terbesar dalam katalog Messier di luar Gugus Virgo.",
+   "fun_fact": "M105 berbagi cincin gas hidrogen raksasa dengan tetangganya NGC 3384, membentang sekitar 650.000 tahun cahaya!",
+   "distance": "37 juta tahun cahaya",
+   "size": "67.000 tahun cahaya melintang"
+  },
   "dso/m106": {
    "description": "M106 adalah galaksi spiral di Canes Venatici dengan lengan spiral anomali yang disebabkan oleh jet dari lubang hitam pusatnya.",
    "fun_fact": "M106 memiliki maser air di nukleusnya, memungkinkan astronom mengukur jaraknya dengan tepat!",
@@ -677,6 +693,11 @@
    "fun_fact": "M107 adalah entri terakhir yang secara resmi ditambahkan ke katalog Messier — muncul dalam korespondensi Pierre Méchain tetapi tidak disertakan dalam edisi asli 1781. Secara resmi ditambahkan sebagai M107 pada tahun 1947 oleh astronom Kanada Helen Sawyer Hogg, yang mengkodifikasi beberapa objek \"hilang\" yang telah diamati Méchain tetapi Messier tidak pernah secara resmi mencatat.",
    "distance": "20.900 tahun cahaya",
    "size": "~61 tahun cahaya melintasi"
+  },
+  "dso/m108": {
+   "description": "Messier 108 adalah galaksi spiral berbatang di Ursa Mayor, dijuluki Galaksi Papan Selancar.",
+   "fun_fact": "M108 terlihat hampir menyamping dari sudut pandang kita, sehingga dijuluki Papan Selancar - dan menampung sekitar 290 gugus bola!",
+   "distance": "46 juta tahun cahaya"
   },
   "dso/m109": {
    "description": "M109 adalah galaksi spiral berpalang di Ursa Major, anggota paling terang dari grup galaksi yang menyandang namanya.",
@@ -740,6 +761,12 @@
    "distance": "5.500 tahun cahaya",
    "size": "Lebar 15 tahun cahaya",
    "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m18": {
+   "description": "Messier 18 adalah gugus terbuka kecil bintang-bintang muda di Sagitarius, juga dikenal sebagai Gugus Angsa Hitam.",
+   "fun_fact": "M18 adalah salah satu dari sedikit objek Messier yang belum pernah difoto oleh Teleskop Luar Angkasa Hubble!",
+   "distance": "4.200 tahun cahaya",
+   "size": "26 tahun cahaya melintang"
   },
   "dso/m19": {
    "description": "M19 adalah gugus bola yang padat dan kaya di Ophiuchus — salah satu gugus bola terdekat dengan pusat galaksi. Fitur paling khasnya adalah bentuknya yang terlihat oblate: M19 adalah gugus bola yang paling pipih yang diketahui, dengan garis besar elips yang terlihat bahkan dalam teleskop kecil.",
@@ -1018,12 +1045,35 @@
    "size": "Lebar 1,3 tahun cahaya",
    "image_credit": "NASA/ESA/Hubble"
   },
+  "dso/m58": {
+   "description": "Messier 58 adalah galaksi spiral berbatang di Virgo dan salah satu anggota paling terang dari Gugus Virgo.",
+   "fun_fact": "Lubang hitam supermasif sekitar 70 juta massa matahari berada di pusat M58, dikelilingi oleh pita ketat bintang-bintang yang baru lahir!",
+   "distance": "68 juta tahun cahaya",
+   "size": "133.000 tahun cahaya melintang"
+  },
+  "dso/m59": {
+   "description": "Messier 59 adalah galaksi elips di Virgo, ditemukan pada tahun 1779 saat mencari komet yang melintas.",
+   "fun_fact": "Inti M59 berputar mundur dibandingkan dengan bagian galaksi lainnya, dan sekitar 2.200 gugus bola mengerumuninya!",
+   "distance": "50 juta tahun cahaya",
+   "mass": "270 juta massa Matahari (lubang hitam pusat)"
+  },
   "dso/m6": {
    "description": "Gugus Kupu-Kupu adalah gugus terbuka di Scorpius, dinamai berdasarkan susunan bintang-bintang paling terangnya yang mirip kupu-kupu.",
    "fun_fact": "M6 berusia sekitar 100 juta tahun dan berisi lebih dari 300 bintang, termasuk raksasa oranye BM Scorpii!",
    "distance": "1.600 tahun cahaya",
    "size": "Lebar 25 tahun cahaya",
    "image_credit": "NOAO/AURA/NSF"
+  },
+  "dso/m60": {
+   "description": "Messier 60 adalah galaksi elips raksasa di Virgo, galaksi elips raksasa ketiga paling terang di Gugus Virgo.",
+   "fun_fact": "Lubang hitam pusat M60 memiliki massa sekitar 4,5 miliar Matahari - salah satu yang terbesar yang pernah ditemukan!",
+   "distance": "57 juta tahun cahaya"
+  },
+  "dso/m61": {
+   "description": "Messier 61 adalah galaksi spiral berbatang di Virgo dan salah satu galaksi terbesar di Gugus Virgo.",
+   "fun_fact": "Delapan supernova telah terlihat di M61 - salah satu jumlah tertinggi dari galaksi mana pun! Messier sendiri awalnya salah mengira itu komet.",
+   "distance": "52 juta tahun cahaya",
+   "size": "92.000 tahun cahaya melintang"
   },
   "dso/m62": {
    "description": "M62 adalah gugus bola yang kaya di Ophiuchus — salah satu globular terdekat dengan pusat galaksi dan terlihat asimetris, dengan bintang-bintang yang lebih padat di sisi selatan. Dengan magnitudo 6,6, ini adalah objek binokular yang indah, meskipun deklinasi rendahnya menjadikannya target musim pendek bagi pengamat di belahan utara.",
@@ -1095,12 +1145,28 @@
    "distance": "12.000 tahun cahaya",
    "size": "~25 tahun cahaya melintasi"
   },
+  "dso/m72": {
+   "description": "Messier 72 adalah gugus bola yang redup dan jauh di Aquarius, ditemukan oleh Pierre Mechain pada tahun 1780.",
+   "fun_fact": "M72 mengemas bintang-bintang dengan massa total sekitar 168.000 Matahari ke dalam bola yang berusia sekitar 9,5 miliar tahun, termasuk 43 bintang variabel!",
+   "distance": "55.000 tahun cahaya"
+  },
+  "dso/m73": {
+   "description": "Messier 73 adalah kelompok kecil empat bintang di Aquarius yang hanya tampak seperti gugus.",
+   "fun_fact": "Para astronom berdebat selama beberapa dekade apakah M73 adalah gugus bintang yang nyata - pada tahun 2002 diputuskan: keempat bintang itu berada pada jarak yang sangat berbeda dan hanya sejajar secara kebetulan!",
+   "distance": "1.000 hingga 2.300 tahun cahaya (bintang-bintang individual)"
+  },
   "dso/m74": {
    "description": "Galaksi Hantu adalah galaksi spiral tampak depan di Pisces, dikenal karena struktur spiral desain besarnya yang sempurna.",
    "fun_fact": "M74 dijuluki Galaksi Hantu karena kecerahan permukaannya yang sangat rendah, membuatnya menantang untuk diamati!",
    "distance": "32 juta tahun cahaya",
    "size": "Lebar 95.000 tahun cahaya",
    "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m75": {
+   "description": "Messier 75 adalah gugus bola yang jauh dan sangat terkonsentrasi di Sagitarius.",
+   "fun_fact": "M75 adalah salah satu gugus bola terpadat yang diketahui, dan diperkirakan merupakan sisa-sisa dari galaksi katai yang ditelan Bima Sakti sejak lama!",
+   "distance": "68.000 tahun cahaya",
+   "size": "134 tahun cahaya melintang"
   },
   "dso/m76": {
    "description": "Little Dumbbell adalah nebula planet di Perseus dengan bentuk angka delapan yang khas — sepupu yang lebih kecil dari M27, Nebula Dumbbell di Vulpecula. Meskipun merupakan entri paling redup dalam katalog Messier, ia memberikan hadiah untuk pengamatan sabar dengan teleskop kecil dan menunjukkan struktur indah di instrumen yang lebih besar, dengan dua lobus yang lebih terang mengelilingi pinggang yang lebih redup.",
@@ -1162,6 +1228,22 @@
    "size": "Lebar 55.000 tahun cahaya",
    "image_credit": "NASA/ESA/Hubble"
   },
+  "dso/m84": {
+   "description": "Messier 84 adalah galaksi elips raksasa di pusat padat Gugus Virgo.",
+   "fun_fact": "M84 melontarkan dua jet materi dari intinya, didorong oleh lubang hitam sekitar 1,5 miliar massa matahari!",
+   "distance": "55 juta tahun cahaya"
+  },
+  "dso/m85": {
+   "description": "Messier 85 adalah galaksi lentikular di pinggiran Gugus Virgo, di Coma Berenices.",
+   "fun_fact": "Riak dan cangkang di wilayah luar M85 adalah sisa-sisa penggabungan galaksi 4 hingga 7 miliar tahun yang lalu!",
+   "distance": "60 juta tahun cahaya",
+   "size": "120.600 tahun cahaya melintang"
+  },
+  "dso/m86": {
+   "description": "Messier 86 adalah galaksi elips besar di Gugus Virgo, membentuk pasangan yang mencolok dengan M84 di dekatnya.",
+   "fun_fact": "M86 melaju ke arah kita dengan kecepatan 244 km/dtk - pendekatan tercepat dari objek Messier mana pun! Perjalanannya melalui gugus meninggalkan jejak panjang gas panas yang terlucuti.",
+   "distance": "52 juta tahun cahaya"
+  },
   "dso/m87": {
    "description": "M87 adalah galaksi elips superraksasa di Virgo, salah satu galaksi paling masif di alam semesta lokal.",
    "fun_fact": "Lubang hitam pusat M87 adalah yang pertama difoto oleh Event Horizon Telescope pada 2019 - memiliki 6,5 miliar massa matahari!",
@@ -1170,11 +1252,34 @@
    "mass": "2,4 triliun massa matahari",
    "image_credit": "NASA/ESA/Hubble"
   },
+  "dso/m88": {
+   "description": "Messier 88 adalah galaksi spiral elegan di Coma Berenices, salah satu dari lima belas objek Messier di Gugus Virgo.",
+   "fun_fact": "M88 meluncur menuju pusat Gugus Virgo dan akan tiba dalam 200 hingga 300 juta tahun, dengan gas luarnya terlucuti saat ia jatuh!",
+   "distance": "59 juta tahun cahaya",
+   "size": "131.000 tahun cahaya melintang"
+  },
+  "dso/m89": {
+   "description": "Messier 89 adalah galaksi elips di Virgo, ditemukan oleh Charles Messier pada tahun 1781.",
+   "fun_fact": "M89 mungkin hampir merupakan bola yang sempurna - tidak biasa untuk galaksi elips, yang biasanya terlihat pipih!",
+   "distance": "50 juta tahun cahaya"
+  },
   "dso/m9": {
    "description": "M9 adalah gugus bola kompak di Ophiuchus — salah satu globular Messier yang paling terpengaruh oleh penyerapan debu antarbintang. Terletak menuju tonjolan galaksi, di mana debu tebal membuatnya jauh lebih redup. Tanpa pengaburan ini, M9 akan tampak hampir satu magnitudo lebih terang dan terlihat oleh mata telanjang.",
    "fun_fact": "M9 mengalami penyerapan debu antarbintang lebih banyak daripada hampir semua globular Messier lainnya — sekitar 1,3 magnitudo penggelapan dibandingkan dengan garis pandang yang jelas. Dua gugus globular yang lebih kecil (NGC 6342 dan NGC 6356) terletak dalam jarak sekitar 1° dari M9, menjadikannya pusat pengelompokan luar biasa dari tiga globular dalam area kecil langit.",
    "distance": "25.800 tahun cahaya",
    "size": "~70 tahun cahaya melintasi"
+  },
+  "dso/m90": {
+   "description": "Messier 90 adalah galaksi spiral besar di Virgo, dan contoh klasik dari galaksi \"anemik\".",
+   "fun_fact": "Gas pembentuk bintang M90 telah dilucuti akibat terjunnya melalui Gugus Virgo, meninggalkan ekor gas bercahaya sepanjang hingga 260.000 tahun cahaya!",
+   "distance": "59 juta tahun cahaya",
+   "size": "132.000 tahun cahaya melintang"
+  },
+  "dso/m91": {
+   "description": "Messier 91 adalah galaksi spiral berbatang di Coma Berenices dan objek paling redup dalam katalog Messier.",
+   "fun_fact": "M91 hilang selama hampir 200 tahun! Messier mencatat posisinya menggunakan galaksi referensi yang salah, dan baru diidentifikasi ulang pada tahun 1969 oleh seorang astronom amatir.",
+   "distance": "63 juta tahun cahaya",
+   "size": "105.500 tahun cahaya melintang"
   },
   "dso/m92": {
    "description": "M92 adalah gugus bola terang di Hercules, sering diabaikan karena kedekatannya dengan M13 yang lebih terkenal.",
@@ -1196,12 +1301,35 @@
    "size": "Lebar 50.000 tahun cahaya",
    "image_credit": "NASA/ESA/Hubble"
   },
+  "dso/m95": {
+   "description": "Messier 95 adalah galaksi spiral berbatang di Leo, bagian dari Grup M96 bersama dengan M96 dan M105.",
+   "fun_fact": "Cincin pembentukan bintang yang dahsyat selebar sekitar 70.000 tahun cahaya mengelilingi inti M95, dan sebuah supernova meledak di sana pada tahun 2012!",
+   "distance": "33 juta tahun cahaya",
+   "size": "80.000 tahun cahaya melintang"
+  },
+  "dso/m96": {
+   "description": "Messier 96 adalah galaksi spiral di Leo, anggota paling terang dari Grup galaksi M96.",
+   "fun_fact": "M96 kira-kira memiliki ukuran dan massa yang sama dengan Bima Sakti kita, tetapi sangat tidak simetris - debu dan gasnya tersebar tidak merata di seluruh lengannya!",
+   "distance": "31 juta tahun cahaya",
+   "size": "78.000 tahun cahaya melintang"
+  },
   "dso/m97": {
    "description": "Nebula Burung Hantu adalah nebula planet di Ursa Major, dinamai karena penampilannya seperti burung hantu dengan dua bintik gelap.",
    "fun_fact": "Mata burung hantu gelap di M97 adalah rongga tiga dimensi di nebula, sejajar dengan garis pandang kita!",
    "distance": "2.030 tahun cahaya",
    "size": "Lebar 2 tahun cahaya",
    "image_credit": "Gemini Observatory/NOIRLab/NSF/AURA"
+  },
+  "dso/m98": {
+   "description": "Messier 98 adalah galaksi spiral di Coma Berenices, terlihat hampir dari samping sebagai bagian dari Gugus Virgo.",
+   "fun_fact": "M98 adalah salah satu galaksi langka yang bergerak mendekati kita daripada menjauh, mendekat dengan kecepatan sekitar 140 km/detik!",
+   "distance": "44 juta tahun cahaya"
+  },
+  "dso/m99": {
+   "description": "Messier 99 adalah galaksi spiral desain agung di Coma Berenices, menunjukkan lengan spiral yang jelas dan melengkung.",
+   "fun_fact": "M99 adalah salah satu objek pertama yang dikenali sebagai spiral, digambar oleh Lord Rosse pada tahun 1846 - dan ia membentuk bintang tiga kali lebih cepat daripada galaksi serupa!",
+   "distance": "45 juta tahun cahaya",
+   "size": "98.000 tahun cahaya melintang"
   },
   "dso/n47_tucanae": {
    "description": "47 Tucanae (NGC 104) adalah gugus bola kedua paling terang di langit, bola padat yang terdiri dari kira-kira satu juta bintang kuno yang mengorbit Galaksi Bimasakti di konstelasi Tucana. Pada jarak sekitar 14.500 tahun cahaya, ia tampak bagi mata telanjang sebagai bintang magnitudo empat yang kabur, tetapi teleskop menyelesaikan intinya yang terkompresi menjadi kawanan luar biasa dari matahari emas dan putih-biru. Bintang-bintangnya terbentuk sekitar 13 miliar tahun yang lalu, menjadikan gugus ini hampir setua alam semesta itu sendiri.",
@@ -1313,8 +1441,9 @@
    "description": "Deimos adalah bulan Mars yang lebih kecil dan terletak di luar, dengan permukaan yang halus dan tertutup debu yang memberikannya penampilan lebih bulat daripada Phobos. Seperti pendampingnya, diyakini bahwa itu adalah asteroid yang tertangkap dari sabuk luar.",
    "fun_fact": "Deimos sangat kecil dan jauh sehingga dari permukaan Mars terlihat seperti bintang terang biasa, membutuhkan waktu sekitar 30 jam untuk perlahan bergerak melintasi langit malam.",
    "distance": "23.460 km dari Mars",
+   "size": "15 x 12 x 11 km",
    "image_credit": "NASA/JPL-Caltech/University of Arizona",
-   "search_subtext": "Moon of Mars"
+   "search_subtext": "Bulan Mars"
   },
   "moon/dione": {
    "description": "Dione adalah bulan es Saturnus dengan permukaan depan yang berat terkena kawah dan belahan belakang yang penuh dengan tebing es cerah — garis patahan tempat gaya tektonik kuno mengekspos es segar dari bawah. Data gravitasi Cassini menunjukkan adanya kemungkinan samudra cair di bawah kerak.",
@@ -1368,8 +1497,9 @@
    "description": "Phobos adalah bulan Mars yang lebih besar dan paling dalam dari dua bulannya, mengorbit lebih dekat ke planetnya daripada bulan lain mana pun di tata surya. Ini adalah benda yang berbentuk tidak teratur, banyak alur dan kawah yang diduga merupakan asteroid yang tertangkap.",
    "fun_fact": "Phobos mengorbit Mars dengan sangat cepat sehingga terbit di barat dan terbenam di timur — dan perlahan-lahan spiral ke dalam, ditakdirkan untuk menabrak Mars atau pecah menjadi cincin dalam sekitar 50 juta tahun.",
    "distance": "9.376 km dari Mars",
+   "size": "27 x 22 x 18 km",
    "image_credit": "NASA/JPL-Caltech/University of Arizona",
-   "search_subtext": "Moon of Mars"
+   "search_subtext": "Bulan Mars"
   },
   "moon/rhea": {
    "description": "Rhea adalah bulan terbesar kedua Saturnus dan dunia yang berat dengan kawah es dan batu. Permukaannya yang pucat dan kuno menyimpan beberapa kawah dampak paling murni di tata surya, bersama dengan tebing es cerah tempat longsor telah mengekspos material segar dari bawah.",
@@ -1828,6 +1958,11 @@
    "spectral_class": "K0 III",
    "image_credit": "ESO/Digitized Sky Survey 2"
   },
+  "star/e_lyrae": {
+   "description": "Epsilon Lyrae adalah sistem bintang ganda di Lyra, terkenal di kalangan pengamat sebagai \"Ganda Ganda\".",
+   "fun_fact": "Mata tajam dapat memisahkan Epsilon Lyrae menjadi dua bintang - dan teleskop memisahkan masing-masing dari keduanya menjadi dua lagi! Totalnya, bintang ini memiliki setidaknya lima bintang.",
+   "distance": "160 tahun cahaya"
+  },
   "star/enif": {
    "description": "Enif adalah bintang paling terang di Pegasus dan menandai hidung kuda terbang di rasi.",
    "fun_fact": "Pada tahun 1972, Enif mengalami ledakan dramatis, secara singkat meningkatkan kecerahannya lima kali lipat!",
@@ -1881,6 +2016,110 @@
    "mass": "~4,6 massa matahari",
    "spectral_class": "K0II-III",
    "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/j052512+062100": {
+   "description": "Bellatrix menandai bahu kiri Orion (Sang Pemburu). Namanya dalam bahasa Latin berarti \"pejuang wanita\".",
+   "fun_fact": "Bellatrix hanya sekitar 28 juta tahun usianya, dan akan menghabiskan hidrogennya dalam 7 juta tahun lagi - usia yang singkat untuk sebuah bintang!",
+   "distance": "250 tahun cahaya",
+   "size": "6,2 jari-jari Matahari",
+   "mass": "8,4 massa Matahari",
+   "spectral_class": "B2 III"
+  },
+  "star/j054048-015624": {
+   "description": "Alnitak adalah bintang paling timur dari Sabuk Orion, berada di samping Nebula Api dan Kepala Kuda.",
+   "fun_fact": "Alnitak adalah bintang kelas O paling terang di seluruh langit malam! Dalam sekitar satu juta tahun ia akan mengembang lebih besar dari orbit Jupiter dan meledak sebagai supernova.",
+   "distance": "1.260 tahun cahaya",
+   "size": "20 jari-jari Matahari",
+   "mass": "33 massa Matahari",
+   "spectral_class": "O9.5 Iab"
+  },
+  "star/j055924+445700": {
+   "description": "Menkalinan adalah bintang paling terang kedua di Auriga (Sang Kusir). Namanya berarti \"bahu pemegang kendali\" dalam bahasa Arab.",
+   "fun_fact": "Menkalinan sebenarnya adalah dua bintang yang hampir identik yang saling menggerhanai setiap 47,5 jam - dan dalam sekitar satu juta tahun bintang ini akan menjadi bintang paling terang di langit malam kita!",
+   "distance": "79 tahun cahaya",
+   "size": "2,8 jari-jari Matahari",
+   "mass": "2,4 massa Matahari",
+   "spectral_class": "A1m IV + A1m IV"
+  },
+  "star/j062248-175736": {
+   "description": "Mirzam (Beta Canis Majoris) terbit sesaat sebelum Sirius, yang membuatnya dinamai 'Sang Pengumum' dalam bahasa Arab.",
+   "fun_fact": "Sekitar empat juta tahun yang lalu, Mirzam adalah bintang paling terang di langit, bersinar dengan magnitudo -3,65 – jauh lebih terang daripada Sirius yang terlihat hari ini!",
+   "distance": "490 tahun cahaya",
+   "size": "8,4 jari-jari matahari",
+   "mass": "13 massa matahari",
+   "spectral_class": "B1 II-III"
+  },
+  "star/j070824-262324": {
+   "description": "Wezen adalah bintang mahaksasa kuning-putih di Canis Mayor (Anjing Besar). Namanya berasal dari bahasa Arab yang berarti \"berat\".",
+   "fun_fact": "Jika Wezen berada sedekat Sirius dengan kita, ia akan bersinar seterang Bulan separuh!",
+   "distance": "1.600 tahun cahaya",
+   "size": "188 jari-jari matahari",
+   "mass": "14 massa matahari",
+   "spectral_class": "F8 Ia"
+  },
+  "star/j082248-593036": {
+   "description": "Avior (Epsilon Carinae) adalah bintang ganda terang di Carina dan salah satu dari empat bintang Salib Palsu.",
+   "fun_fact": "Salib Palsu seringkali disalahartikan sebagai Salib Selatan sehingga menyebabkan kesalahan navigasi yang nyata! Nama Avior diciptakan oleh pembuat almanak Inggris pada tahun 1930-an.",
+   "distance": "610 tahun cahaya",
+   "size": "151 jari-jari matahari",
+   "mass": "10,5 massa matahari",
+   "spectral_class": "K3 III + B2 Vp"
+  },
+  "star/j091312-694312": {
+   "description": "Miaplacidus adalah bintang paling terang kedua di Carina (Lunas) dan menandai salah satu sudut asterisme Salib Berlian.",
+   "fun_fact": "Miaplacidus telah membengkak menjadi raksasa setelah menghabiskan hidrogen di intinya, namun ia masih berputar dengan kecepatan 146 km/detik yang cepat!",
+   "distance": "113 tahun cahaya",
+   "size": "5,8 jari-jari matahari",
+   "mass": "3,9 massa matahari",
+   "spectral_class": "A1 III"
+  },
+  "star/j123112-570636": {
+   "description": "Gacrux (Gamma Crucis) adalah bintang paling atas dari Salib Selatan dan bintang raksasa merah terdekat ke Bumi.",
+   "fun_fact": "Gacrux adalah bintang raksasa merah tipe M terdekat dengan kita, dan namanya hanyalah singkatan pelaut dari \"Gamma Crucis\" yang diciptakan pada tahun 1940-an!",
+   "distance": "89 tahun cahaya",
+   "size": "73 jari-jari matahari",
+   "mass": "1,5 massa matahari",
+   "spectral_class": "M3.5 III"
+  },
+  "star/j124800-594124": {
+   "description": "Mimosa (Beta Crucis) adalah bintang paling terang kedua di Salib Selatan dan salah satu bintang terpanas yang terlihat dengan mata telanjang.",
+   "fun_fact": "Mimosa adalah bintang variabel Beta Cephei berdenyut - ia mengembang dan mengerut dalam tiga ritme yang saling tumpang tindih, masing-masing hanya berlangsung sekitar empat jam!",
+   "distance": "280 tahun cahaya",
+   "size": "8 jari-jari matahari",
+   "mass": "14,5 massa matahari",
+   "spectral_class": "B0.5 III"
+  },
+  "star/j143936-605024": {
+   "description": "Toliman (Alpha Centauri B) adalah pendamping oranye dalam sistem bintang terdekat dengan Matahari, mengorbit Rigil Kentaurus yang lebih terang.",
+   "fun_fact": "Toliman mendapatkan nama resminya baru pada tahun 2018. Bintang ini sedikit lebih kecil dan lebih dingin dari Matahari, dan bersama dengan dua saudaranya, membentuk tetangga bintang terdekat kita!",
+   "distance": "4,34 tahun cahaya",
+   "size": "0,86 jari-jari matahari",
+   "mass": "0,91 massa matahari",
+   "spectral_class": "K1 V"
+  },
+  "star/j164836-690148": {
+   "description": "Atria adalah bintang paling terang dari Triangulum Australe (Segitiga Selatan), raksasa jingga yang jauh lebih besar dari Matahari.",
+   "fun_fact": "Atria berdiameter 139 kali diameter Matahari - jika ditempatkan di pusat Tata Surya, ia akan hampir mencapai orbit Venus!",
+   "distance": "391 tahun cahaya",
+   "size": "139 jari-jari matahari",
+   "mass": "6,4 massa matahari",
+   "spectral_class": "K2 Ib-IIa"
+  },
+  "star/j173712-430000": {
+   "description": "Sargas adalah raksasa terang di ekor Scorpius (Kalajengking), dengan nama tradisional asal Sumeria.",
+   "fun_fact": "Sargas berputar sangat cepat sehingga menggembung keluar - lebarnya sepertiga lebih besar di khatulistiwa daripada dari kutub ke kutub, dan mungkin terbentuk ketika dua bintang bergabung!",
+   "distance": "329 tahun cahaya",
+   "size": "35 jari-jari matahari",
+   "mass": "3,1 massa matahari",
+   "spectral_class": "F1 III"
+  },
+  "star/j202548-564348": {
+   "description": "Peacock adalah bintang paling terang di Pavo (Burung Merak), sebuah bintang biru-putih panas di langit selatan yang jauh.",
+   "fun_fact": "Peacock dinamai pada tahun 1930-an karena RAF mengharuskan setiap bintang dalam Almanak Udara barunya memiliki nama – dan bintang ini belum punya nama!",
+   "distance": "179 tahun cahaya",
+   "size": "4,8 jari-jari matahari",
+   "mass": "5,9 massa matahari",
+   "spectral_class": "B3 V"
   },
   "star/kaus_australis": {
    "description": "Kaus Australis adalah bintang paling terang di Sagittarius (Pemanah). Namanya berarti \"busur selatan\" dalam campuran bahasa Arab dan Latin.",
@@ -1944,6 +2183,12 @@
    "mass": "~8,5 massa matahari",
    "spectral_class": "F5Ib",
    "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/n25": {
+   "description": "R Coronae Borealis adalah maharaksasa kuning langka di Corona Borealis, dan prototipe kelas bintang variabel yang dinamai menurut namanya.",
+   "fun_fact": "R Coronae Borealis kadang disebut 'nova terbalik' – bukannya menyala terang, bintang ini meredup tak terduga hingga 9 magnitudo saat mengeluarkan awan jelaga karbon yang menyembunyikannya dari pandangan!",
+   "distance": "4.560 tahun cahaya",
+   "spectral_class": "G0Iep"
   },
   "star/nunki": {
    "description": "Nunki adalah bintang kedua paling terang di Sagittarius dan nama bintang tertua yang masih umum digunakan.",

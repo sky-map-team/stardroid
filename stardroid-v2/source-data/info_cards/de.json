@@ -645,12 +645,22 @@
    "size": "83 Lichtjahre Durchmesser",
    "image_credit": "NASA/ESA/Hubble"
   },
+  "dso/m100": {
+   "description": "Messier 100 ist eine Grand-Design-Spiralgalaxie im Haar der Berenike und eine der hellsten im Virgo-Haufen.",
+   "fun_fact": "Sieben Supernovae wurden in M100 beobachtet, die jüngste im Jahr 2020 – nur wenige Galaxien haben eine solche Show geboten!",
+   "distance": "55 Millionen Lichtjahre",
+   "size": "166.000 Lichtjahre Durchmesser"
+  },
   "dso/m101": {
    "description": "Die Feuerradgalaxie ist eine von vorne sichtbare Spiralgalaxie im Großen Bären, eine der größten bekannten Spiralgalaxien.",
    "fun_fact": "Die Feuerradgalaxie enthält über eine Billion Sterne und hat asymmetrische Spiralarme aufgrund vergangener Galaxienwechselwirkungen!",
    "distance": "21 Millionen Lichtjahre",
    "size": "170.000 Lichtjahre Durchmesser",
    "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m102": {
+   "description": "Messier 102 ist der große ungelöste Eintrag in Messiers Katalog – ein 1781 verzeichnetes Objekt, das nie mit Sicherheit identifiziert werden konnte.",
+   "fun_fact": "Messier veröffentlichte keine Koordinaten für M102, und sein Kollege Mechain zog die Entdeckung später vollständig zurück, indem er behauptete, es sei lediglich M101, das versehentlich zweimal erfasst wurde! Die NASA identifiziert es mit der Spindelgalaxie, NGC 5866."
   },
   "dso/m103": {
    "description": "M103 ist ein kleiner, kompakter offener Sternhaufen in der Kassiopeia mit etwa 40 Sternen in einer engen Gruppe, die leicht mit Ferngläsern zu sehen ist. Ein auffälliger Doppelstern und ein roter Riese in der Nähe des Zentrums verleihen ihm ein farbenprächtiges Aussehen in kleinen Teleskopen, eingebettet in die reichen Milchstraßen-Sternfelder der Kassiopeia.",
@@ -665,6 +675,12 @@
    "size": "50.000 Lichtjahre Durchmesser",
    "image_credit": "NASA/ESA/Hubble"
   },
+  "dso/m105": {
+   "description": "Messier 105 ist eine elliptische Galaxie im Löwen, die größte elliptische im Messier-Katalog außerhalb des Virgo-Galaxienhaufens.",
+   "fun_fact": "M105 teilt sich einen kolossalen Ring aus Wasserstoffgas mit seinem Nachbarn NGC 3384, der sich über etwa 650.000 Lichtjahre erstreckt!",
+   "distance": "37 Millionen Lichtjahre",
+   "size": "67.000 Lichtjahre Durchmesser"
+  },
   "dso/m106": {
    "description": "M106 ist eine Spiralgalaxie in den Jagdhunden mit ungewöhnlichen Spiralarmen, die durch Jets von ihrem zentralen Schwarzen Loch verursacht werden.",
    "fun_fact": "M106 hat Wasser-Maser in seinem Kern, die es Astronomen ermöglichen, seine Entfernung präzise zu messen!",
@@ -677,6 +693,11 @@
    "fun_fact": "M107 war der letzte Eintrag, der formal zum Messier-Katalog hinzugefügt wurde – er erscheint in Pierre Méchains Korrespondenz, war aber nicht in der ursprünglichen Ausgabe von 1781 enthalten. Er wurde 1947 offiziell als M107 von der kanadischen Astronomin Helen Sawyer Hogg hinzugefügt, die mehrere \"fehlende\" Objekte kodifizierte, die Méchain beobachtet hatte, aber Messier nie formal aufgezeichnet hatte.",
    "distance": "20.900 Lichtjahre",
    "size": "~61 Lichtjahre Durchmesser"
+  },
+  "dso/m108": {
+   "description": "Messier 108 ist eine Balkenspiralgalaxie im Großen Bären, die den Spitznamen „Surfbrett-Galaxie“ trägt.",
+   "fun_fact": "M108 ist uns fast randständig zugeneigt, weshalb sie den Namen Surfbrett erhielt – und sie beherbergt etwa 290 Kugelsternhaufen!",
+   "distance": "46 Millionen Lichtjahre"
   },
   "dso/m109": {
    "description": "M109 ist eine Balkenspiralgalaxie im Großen Bären, das hellste Mitglied einer nach ihr benannten Galaxiengruppe.",
@@ -740,6 +761,12 @@
    "distance": "5.500 Lichtjahre",
    "size": "15 Lichtjahre Durchmesser",
    "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m18": {
+   "description": "Messier 18 ist ein kleiner offener Sternhaufen junger Sterne im Schützen, auch bekannt als Schwarzer Schwan-Haufen.",
+   "fun_fact": "M18 ist eines der wenigen Messier-Objekte, das das Hubble-Weltraumteleskop nie fotografiert hat!",
+   "distance": "4.200 Lichtjahre",
+   "size": "26 Lichtjahre Durchmesser"
   },
   "dso/m19": {
    "description": "M19 ist ein kompakter, reicher Kugelsternhaufen im Schlangenträger – einer der nächsten Kugelsternhaufen zum galaktischen Zentrum. Sein charakteristischstes Merkmal ist seine deutlich abgeplattete Form: M19 ist der am stärksten abgeplattete bekannte Kugelsternhaufen mit einer sichtbaren elliptischen Kontur selbst in einem kleinen Teleskop.",
@@ -1018,12 +1045,35 @@
    "size": "1,3 Lichtjahre Durchmesser",
    "image_credit": "NASA/ESA/Hubble"
   },
+  "dso/m58": {
+   "description": "Messier 58 ist eine Balkenspiralgalaxie in der Jungfrau und eines der hellsten Mitglieder des Virgo-Galaxienhaufens.",
+   "fun_fact": "Ein supermassives Schwarzes Loch von etwa 70 Millionen Sonnenmassen sitzt im Herzen von M58, umgeben von einem engen Band neugeborener Sterne!",
+   "distance": "68 Millionen Lichtjahre",
+   "size": "133.000 Lichtjahre Durchmesser"
+  },
+  "dso/m59": {
+   "description": "Messier 59 ist eine elliptische Galaxie im Sternbild Jungfrau, die 1779 während der Suche nach einem vorbeiziehenden Kometen entdeckt wurde.",
+   "fun_fact": "Der Kern von M59 dreht sich rückwärts im Vergleich zum Rest der Galaxie, und etwa 2.200 Kugelsternhaufen schwärmen um sie herum!",
+   "distance": "50 Millionen Lichtjahre",
+   "mass": "270 Millionen Sonnenmassen (zentrales Schwarzes Loch)"
+  },
   "dso/m6": {
    "description": "Der Schmetterlingshaufen ist ein offener Sternhaufen im Skorpion, benannt nach der schmetterlingsartigen Anordnung seiner hellsten Sterne.",
    "fun_fact": "M6 ist etwa 100 Millionen Jahre alt und enthält über 300 Sterne, darunter den orangefarbenen Riesen BM Scorpii!",
    "distance": "1.600 Lichtjahre",
    "size": "25 Lichtjahre Durchmesser",
    "image_credit": "NOAO/AURA/NSF"
+  },
+  "dso/m60": {
+   "description": "Messier 60 ist eine riesige elliptische Galaxie in der Jungfrau, die dritthellste riesige elliptische Galaxie im Virgo-Galaxienhaufen.",
+   "fun_fact": "Das zentrale Schwarze Loch von M60 wiegt etwa 4,5 Milliarden Sonnenmassen – eines der größten, das je gefunden wurde!",
+   "distance": "57 Millionen Lichtjahre"
+  },
+  "dso/m61": {
+   "description": "Messier 61 ist eine Balkenspiralgalaxie in der Jungfrau und eine der größten Galaxien im Virgo-Galaxienhaufen.",
+   "fun_fact": "Acht Supernovae wurden in M61 gesichtet – eine der höchsten Zahlen, die je in einer Galaxie beobachtet wurden! Messier selbst verwechselte sie zuerst mit einem Kometen.",
+   "distance": "52 Millionen Lichtjahre",
+   "size": "92.000 Lichtjahre im Durchmesser"
   },
   "dso/m62": {
    "description": "M62 ist ein reichhaltiger Kugelsternhaufen im Schlangenträger – einer der nächsten Kugelsternhaufen zum galaktischen Zentrum und bemerkenswert asymmetrisch, mit Sternen, die auf der Südseite dichter gepackt sind. Mit einer Helligkeit von 6,6 ist er ein schönes Objekt für Ferngläser, obwohl seine niedrige Deklination ihn für nördliche Beobachter zu einem Ziel mit kurzer Beobachtungszeit macht.",
@@ -1095,12 +1145,28 @@
    "distance": "12.000 Lichtjahre",
    "size": "~25 Lichtjahre Durchmesser"
   },
+  "dso/m72": {
+   "description": "Messier 72 ist ein schwacher, entfernter Kugelsternhaufen im Wassermann, entdeckt von Pierre Méchain im Jahr 1780.",
+   "fun_fact": "M72 enthält etwa 168.000 Sonnenmassen an Sternen in einem Kugelsternhaufen, der etwa 9,5 Milliarden Jahre alt ist, darunter 43 veränderliche Sterne!",
+   "distance": "55.000 Lichtjahre"
+  },
+  "dso/m73": {
+   "description": "Messier 73 ist eine kleine Gruppe von vier Sternen im Wassermann, die nur wie ein Sternhaufen aussieht.",
+   "fun_fact": "Astronomen stritten jahrzehntelang darüber, ob M73 ein echter Sternhaufen war – 2002 wurde es geklärt: Die vier Sterne liegen in völlig unterschiedlichen Entfernungen und reihen sich nur zufällig aneinander!",
+   "distance": "1.000 bis 2.300 Lichtjahre (die einzelnen Sterne)"
+  },
   "dso/m74": {
    "description": "Die Phantomgalaxie ist eine von vorne sichtbare Spiralgalaxie in den Fischen, bekannt für ihre perfekte Spiralstruktur.",
    "fun_fact": "M74 wird Phantomgalaxie genannt, weil ihre sehr niedrige Oberflächenheligkeit sie schwer beobachtbar macht!",
    "distance": "32 Millionen Lichtjahre",
    "size": "95.000 Lichtjahre Durchmesser",
    "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m75": {
+   "description": "Messier 75 ist ein entfernter, dicht konzentrierter Kugelsternhaufen im Schützen.",
+   "fun_fact": "M75 ist einer der dichtesten bekannten Kugelsternhaufen und gilt als Überrest einer Zwerggalaxie, die die Milchstraße vor langer Zeit verschluckt hat!",
+   "distance": "68.000 Lichtjahre",
+   "size": "134 Lichtjahre im Durchmesser"
   },
   "dso/m76": {
    "description": "Der Kleine Hantel ist ein Planetarischer Nebel im Perseus mit einer charakteristischen Achterfigur – ein kleinerer Verwandter von M27, dem Hantelnebel in der Füchsin. Obwohl der lichtschwächste Eintrag im Messier-Katalog, belohnt er geduldige Beobachtung in kleinen Teleskopen und zeigt eine wunderbare Struktur in größeren Instrumenten, mit zwei helleren Lappen, die eine schwächere Taille flankieren.",
@@ -1162,6 +1228,22 @@
    "size": "55.000 Lichtjahre Durchmesser",
    "image_credit": "NASA/ESA/Hubble"
   },
+  "dso/m84": {
+   "description": "Messier 84 ist eine riesige elliptische Galaxie im dicht besiedelten Herzen des Virgo-Haufens.",
+   "fun_fact": "M84 schleudert zwei Materiejets aus seinem Kern, angetrieben von einem Schwarzen Loch von etwa 1,5 Milliarden Sonnenmassen!",
+   "distance": "55 Millionen Lichtjahre"
+  },
+  "dso/m85": {
+   "description": "Messier 85 ist eine Linsengalaxie am Rand des Virgo-Haufens, im Haar der Berenike.",
+   "fun_fact": "Wellen und Schalen in den äußeren Regionen von M85 sind die Überreste einer Galaxienverschmelzung vor 4 bis 7 Milliarden Jahren!",
+   "distance": "60 Millionen Lichtjahre",
+   "size": "120.600 Lichtjahre im Durchmesser"
+  },
+  "dso/m86": {
+   "description": "Messier 86 ist eine große elliptische Galaxie im Virgo-Galaxienhaufen, die ein auffälliges Paar mit der nahegelegenen M84 bildet.",
+   "fun_fact": "M86 rast mit 244 km/s auf uns zu – die schnellste Annäherung eines Messier-Objekts! Sein Durchgang durch den Haufen hinterlässt eine lange Spur aus abgestreiftem heißem Gas.",
+   "distance": "52 Millionen Lichtjahre"
+  },
   "dso/m87": {
    "description": "M87 ist eine riesige elliptische Galaxie in der Jungfrau, eine der massereichsten Galaxien im lokalen Universum.",
    "fun_fact": "Das zentrale Schwarze Loch von M87 war das erste, das 2019 vom Event Horizon Telescope abgebildet wurde - es hat 6,5 Milliarden Sonnenmassen!",
@@ -1170,11 +1252,34 @@
    "mass": "2,4 Billionen Sonnenmassen",
    "image_credit": "NASA/ESA/Hubble"
   },
+  "dso/m88": {
+   "description": "Messier 88 ist eine elegante Spiralgalaxie im Haar der Berenike, eines von fünfzehn Messier-Objekten im Virgo-Galaxienhaufen.",
+   "fun_fact": "M88 stürzt auf das Zentrum des Virgo-Haufens zu und wird in 200 bis 300 Millionen Jahren dort ankommen, wobei sein äußeres Gas beim Sturz abgestreift wird!",
+   "distance": "59 Millionen Lichtjahre",
+   "size": "131.000 Lichtjahre im Durchmesser"
+  },
+  "dso/m89": {
+   "description": "Messier 89 ist eine elliptische Galaxie in der Jungfrau, entdeckt von Charles Messier im Jahr 1781.",
+   "fun_fact": "M89 könnte fast eine perfekte Kugel sein – ungewöhnlich für eine elliptische Galaxie, die normalerweise merklich abgeflacht sind!",
+   "distance": "50 Millionen Lichtjahre"
+  },
   "dso/m9": {
    "description": "M9 ist ein kompakter Kugelsternhaufen im Schlangenträger – einer der Messier-Kugelsternhaufen, der am stärksten durch interstellare Staubabsorption beeinflusst wird. Er liegt in Richtung der galaktischen Ausbuchtung, wo dichter Staub ihn erheblich verdunkelt. Ohne diese Verdunkelung würde M9 etwa eine Größenklasse heller erscheinen und mit bloßem Auge sichtbar sein.",
    "fun_fact": "M9 leidet unter stärkerer interstellarer Staubabsorption als fast jeder andere Messier-Kugelsternhaufen – etwa 1,3 Magnituden Helligkeitsverlust im Vergleich zu einer freien Sichtlinie. Zwei kleinere Kugelsternhaufen (NGC 6342 und NGC 6356) liegen innerhalb von etwa 1° von M9, was ihn zum Zentrum einer bemerkenswerten Gruppe von drei Kugelsternhaufen in einem kleinen Himmelsausschnitt macht.",
    "distance": "25.800 Lichtjahre",
    "size": "~70 Lichtjahre Durchmesser"
+  },
+  "dso/m90": {
+   "description": "Messier 90 ist eine große Spiralgalaxie in der Jungfrau und das Lehrbuchbeispiel einer „anämischen“ Galaxie.",
+   "fun_fact": "M90 wurde sein sternbildendes Gas durch seinen Sturz durch den Virgo-Galaxienhaufen entrissen, wobei bis zu 260.000 Lichtjahre lange Schweife aus glühendem Gas zurückblieben!",
+   "distance": "59 Millionen Lichtjahre",
+   "size": "132.000 Lichtjahre im Durchmesser"
+  },
+  "dso/m91": {
+   "description": "Messier 91 ist eine Balkenspiralgalaxie im Haar der Berenike und das lichtschwächste Objekt im Messier-Katalog.",
+   "fun_fact": "M91 war fast 200 Jahre lang verschollen! Messier verzeichnete ihre Position anhand der falschen Referenzgalaxie, und sie wurde erst 1969 von einem Amateurastronomen wiederentdeckt.",
+   "distance": "63 Millionen Lichtjahre",
+   "size": "105.500 Lichtjahre im Durchmesser"
   },
   "dso/m92": {
    "description": "M92 ist ein heller Kugelsternhaufen im Herkules, der oft übersehen wird, weil er neben dem berühmteren M13 liegt.",
@@ -1196,12 +1301,35 @@
    "size": "50.000 Lichtjahre Durchmesser",
    "image_credit": "NASA/ESA/Hubble"
   },
+  "dso/m95": {
+   "description": "Messier 95 ist eine Balkenspiralgalaxie im Löwen, Teil der M96-Gruppe zusammen mit M96 und M105.",
+   "fun_fact": "Ein Ring intensiver Sternentstehung von etwa 70.000 Lichtjahren Durchmesser umgibt den Kern von M95, und dort flammte 2012 eine Supernova auf!",
+   "distance": "33 Millionen Lichtjahre",
+   "size": "80.000 Lichtjahre im Durchmesser"
+  },
+  "dso/m96": {
+   "description": "Messier 96 ist eine Spiralgalaxie im Löwen, das hellste Mitglied der M96-Galaxiengruppe.",
+   "fun_fact": "M96 hat ungefähr die gleiche Größe und Masse wie unsere eigene Milchstraße, ist aber auffallend asymmetrisch – ihr Staub und Gas sind ungleichmäßig in ihren Spiralarmen verteilt!",
+   "distance": "31 Millionen Lichtjahre",
+   "size": "78.000 Lichtjahre im Durchmesser"
+  },
   "dso/m97": {
    "description": "Der Eulennebel ist ein planetarischer Nebel im Großen Bären, benannt nach seinem eulenartigen Aussehen mit zwei dunklen Flecken.",
    "fun_fact": "Die dunklen Eulenaugen in M97 sind dreidimensionale Hohlräume im Nebel, die auf unsere Sichtlinie ausgerichtet sind!",
    "distance": "2.030 Lichtjahre",
    "size": "2 Lichtjahre Durchmesser",
    "image_credit": "Gemini Observatory/NOIRLab/NSF/AURA"
+  },
+  "dso/m98": {
+   "description": "Messier 98 ist eine Spiralgalaxie im Haar der Berenike, die als Teil des Virgo-Haufens fast randständig gesehen wird.",
+   "fun_fact": "M98 ist eine der seltenen Galaxien, die sich auf uns zubewegt, anstatt sich zu entfernen, und mit etwa 140 km/s auf uns zukommt!",
+   "distance": "44 Millionen Lichtjahre"
+  },
+  "dso/m99": {
+   "description": "Messier 99 ist eine Grand-Design-Spiralgalaxie im Haar der Berenike, die klare, ausladende Spiralarme zeigt.",
+   "fun_fact": "M99 gehörte zu den allerersten Objekten, die als Spiralgalaxie erkannt wurden, 1846 von Lord Rosse skizziert – und sie bildet Sterne dreimal schneller als ähnliche Galaxien!",
+   "distance": "45 Millionen Lichtjahre",
+   "size": "98.000 Lichtjahre im Durchmesser"
   },
   "dso/n47_tucanae": {
    "description": "47 Tucanae (NGC 104) ist der zweithellste Kugelsternhaufen am Himmel, eine dichte Kugel aus etwa einer Million alter Sterne, die die Milchstraße im Sternbild Tukan umkreisen. In etwa 14.500 Lichtjahren Entfernung erscheint er dem bloßen Auge als unscharfer Stern der vierten Größenklasse, aber ein Teleskop löst seinen komprimierten Kern in einen außergewöhnlichen Schwarm aus goldenen und blauweißen Sonnen auf. Seine Sterne entstanden vor etwa 13 Milliarden Jahren, was den Sternhaufen fast so alt wie das Universum selbst macht.",
@@ -1313,8 +1441,9 @@
    "description": "Deimos ist der kleinere und äußere der beiden Monde des Mars mit einer glatten, staubbedeckten Oberfläche, die ihm ein runderes Aussehen verleiht als Phobos. Wie sein Begleiter wird angenommen, dass er ein eingefangener Asteroid aus dem äußeren Gürtel ist.",
    "fun_fact": "Deimos ist so klein und weit entfernt, dass er von der Marsoberfläche aus wie nicht mehr als ein heller Stern aussieht und etwa 30 Stunden braucht, um langsam über den Nachthimmel zu driften.",
    "distance": "23.460 km von Mars entfernt",
+   "size": "15 x 12 x 11 km",
    "image_credit": "NASA/JPL-Caltech/University of Arizona",
-   "search_subtext": "Moon of Mars"
+   "search_subtext": "Mond des Mars"
   },
   "moon/dione": {
    "description": "Dione ist ein eisiger Mond des Saturn mit einer stark verkratzten Vorderseite und einer Rückseite, die von hellen Eisklippen durchzogen ist – Bruchlinien, wo antike tektonische Kräfte frisches Eis von unten freilegten. Cassini-Gravitationsdaten deuten auf einen flüssigen Ozean unter der Kruste hin.",
@@ -1368,8 +1497,9 @@
    "description": "Phobos ist der größere und innerste der beiden Monde des Mars und umkreist seinen Planeten näher als jeder andere Mond im Sonnensystem. Es ist ein unregelmäßig geformter, stark gefurchter und kraterbespannter Körper, von dem angenommen wird, dass er ein eingefangener Asteroid ist.",
    "fun_fact": "Phobos umkreist den Mars so schnell, dass er im Westen aufgeht und im Osten untergeht – und er spiralt langsam nach innen, wobei er in etwa 50 Millionen Jahren entweder auf dem Mars einschlagen oder in einen Ring zerfallen wird.",
    "distance": "9.376 km von Mars entfernt",
+   "size": "27 x 22 x 18 km",
    "image_credit": "NASA/JPL-Caltech/University of Arizona",
-   "search_subtext": "Moon of Mars"
+   "search_subtext": "Mond des Mars"
   },
   "moon/rhea": {
    "description": "Rhea ist Saturns zweitgrößter Mond und eine stark verkraterte Welt aus Eis und Gestein. Seine blasse, alte Oberfläche bewahrt einige der ursprünglichsten Einschlagskrater des Sonnensystems, zusammen mit hellen Eisklippen, wo Erdrutsche frisches Material von darunter freigelegt haben.",
@@ -1653,6 +1783,7 @@
    "fun_fact": "Alnair dreht sich extrem schnell — mindestens 215 km/s am Äquator — was so schnell ist, dass der Stern merklich abgeplattet ist und in der Mitte aufgewölbt ist!",
    "distance": "101 Lichtjahre",
    "size": "3,4 Sonnenradien",
+   "mass": "4,0 Sonnenmassen",
    "spectral_class": "B7IV",
    "image_credit": "ESO/Digitized Sky Survey 2"
   },
@@ -1661,6 +1792,7 @@
    "fun_fact": "Alnath war einmal zwischen zwei Sternbildern geteilt! Es wurde sowohl als Beta Tauri als auch als Gamma Aurigae bezeichnet, bevor die IAU es 1930 offiziell dem Stier zuordnete.",
    "distance": "134 Lichtjahre",
    "size": "4,2 Sonnenradien",
+   "mass": "5,0 Sonnenmassen",
    "spectral_class": "B7III",
    "image_credit": "ESO/Digitized Sky Survey 2"
   },
@@ -1687,6 +1819,7 @@
    "fun_fact": "Alphekka ist ein bedeckungsveränderliches Doppelsternsystem – sein schwacher Begleiter zieht alle 17,4 Tage vor ihm vorbei und verursacht einen winzigen Helligkeitsabfall, der ohne Instrumente kaum zu sehen ist!",
    "distance": "75 Lichtjahre",
    "size": "2,9 Sonnenradien",
+   "mass": "2,6 Sonnenmassen",
    "spectral_class": "A0V",
    "image_credit": "ESO/Digitized Sky Survey 2"
   },
@@ -1713,6 +1846,7 @@
    "fun_fact": "Ankaa ist ein spektroskopischer Doppelstern, was bedeutet, dass sein Begleiter so nah ist, dass die beiden nur durch Verschiebungen in ihrem Lichtspektrum erkannt werden können – sie umkreisen sich gegenseitig alle 10,2 Jahre!",
    "distance": "85 Lichtjahre",
    "size": "15 Sonnenradien",
+   "mass": "1,3 Sonnenmassen",
    "spectral_class": "K0III",
    "image_credit": "ESO/Digitized Sky Survey 2"
   },
@@ -1739,6 +1873,7 @@
    "fun_fact": "Arneb ist ein sterbender Stern, der wahrscheinlich bereits seinen gesamten Wasserstoff im Kern fusioniert hat. Er könnte sein Leben als Supernova in den nächsten Millionen Jahren beenden!",
    "distance": "~2.200 Lichtjahre",
    "size": "~75 Sonnenradien",
+   "mass": "~14 Sonnenmassen",
    "spectral_class": "F0Ib",
    "image_credit": "ESO/Digitized Sky Survey 2"
   },
@@ -1823,6 +1958,11 @@
    "spectral_class": "K0 III",
    "image_credit": "ESO/Digitized Sky Survey 2"
   },
+  "star/e_lyrae": {
+   "description": "Epsilon Lyrae ist ein Mehrfachsternsystem im Sternbild Leier, das bei Beobachtern als das „Doppel-Doppel“ bekannt ist.",
+   "fun_fact": "Scharfe Augen können Epsilon Lyrae in zwei Sterne teilen – und ein Teleskop teilt jeden dieser Sterne wiederum in zwei! Es beherbergt insgesamt mindestens fünf Sterne.",
+   "distance": "160 Lichtjahre"
+  },
   "star/enif": {
    "description": "Enif ist der hellste Stern im Pegasus und markiert die Nase des fliegenden Pferdes im Sternbild.",
    "fun_fact": "1972 erlebte Enif einen dramatischen Helligkeitsausbruch und wurde kurzzeitig fünfmal heller!",
@@ -1876,6 +2016,110 @@
    "mass": "~4,6 Sonnenmassen",
    "spectral_class": "K0II-III",
    "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/j052512+062100": {
+   "description": "Bellatrix markiert die linke Schulter des Orion (des Jägers). Sein Name ist lateinisch für „weibliche Kriegerin“.",
+   "fun_fact": "Bellatrix ist nur etwa 28 Millionen Jahre alt und wird seinen Wasserstoff in weiteren 7 Millionen Jahren verbrennen – ein kurzes Leben für einen Stern!",
+   "distance": "250 Lichtjahre",
+   "size": "6,2 Sonnenradien",
+   "mass": "8,4 Sonnenmassen",
+   "spectral_class": "B2 III"
+  },
+  "star/j054048-015624": {
+   "description": "Alnitak ist der östlichste Stern des Oriongürtels und liegt neben dem Flammennebel und dem Pferdekopfnebel.",
+   "fun_fact": "Alnitak ist der hellste Stern der O-Klasse am gesamten Nachthimmel! In etwa einer Million Jahre wird er sich über Jupiters Umlaufbahn hinaus ausdehnen und als Supernova explodieren.",
+   "distance": "1.260 Lichtjahre",
+   "size": "20 Sonnenradien",
+   "mass": "33 Sonnenmassen",
+   "spectral_class": "O9.5 Iab"
+  },
+  "star/j055924+445700": {
+   "description": "Menkalinan ist der zweithellste Stern im Fuhrmann (Auriga). Sein Name bedeutet im Arabischen „Schulter des Zügelhalters“.",
+   "fun_fact": "Menkalinan sind eigentlich zwei fast identische Sterne, die sich alle 47,5 Stunden gegenseitig bedecken – und in etwa einer Million Jahren wird er der hellste Stern an unserem Nachthimmel sein!",
+   "distance": "79 Lichtjahre",
+   "size": "2,8 Sonnenradien",
+   "mass": "2,4 Sonnenmassen",
+   "spectral_class": "A1m IV + A1m IV"
+  },
+  "star/j062248-175736": {
+   "description": "Mirzam (Beta Canis Majoris) geht kurz vor Sirius auf, was ihm im Arabischen den Namen „Der Verkündiger“ einbrachte.",
+   "fun_fact": "Vor etwa vier Millionen Jahren war Mirzam der hellste Stern am Himmel und leuchtete mit einer Magnitude von -3,65 – viel heller, als Sirius heute erscheint!",
+   "distance": "490 Lichtjahre",
+   "size": "8,4 Sonnenradien",
+   "mass": "13 Sonnenmassen",
+   "spectral_class": "B1 II-III"
+  },
+  "star/j070824-262324": {
+   "description": "Wezen ist ein gelb-weißer Überriese im Sternbild Canis Major (der Große Hund). Sein Name stammt aus dem Arabischen und bedeutet 'Gewicht'.",
+   "fun_fact": "Wenn Wezen so nah bei uns wäre wie Sirius, würde er so hell leuchten wie ein Halbmond!",
+   "distance": "1.600 Lichtjahre",
+   "size": "188 Sonnenradien",
+   "mass": "14 Sonnenmassen",
+   "spectral_class": "F8 Ia"
+  },
+  "star/j082248-593036": {
+   "description": "Avior (Epsilon Carinae) ist ein heller Doppelstern in Carina und einer der vier Sterne des Falschen Kreuzes.",
+   "fun_fact": "Das Falsche Kreuz wird so oft mit dem Kreuz des Südens verwechselt, dass es zu echten Navigationsfehlern geführt hat! Der Name Avior wurde in den 1930er Jahren von britischen Almanachmachern erfunden.",
+   "distance": "610 Lichtjahre",
+   "size": "151 Sonnenradien",
+   "mass": "10,5 Sonnenmassen",
+   "spectral_class": "K3 III + B2 Vp"
+  },
+  "star/j091312-694312": {
+   "description": "Miaplacidus ist der zweithellste Stern im Sternbild Carina (der Kiel) und markiert eine Ecke des Diamantkreuz-Asterismus.",
+   "fun_fact": "Miaplacidus ist zu einem Riesenstern angeschwollen, nachdem er den Wasserstoff in seinem Kern verbraucht hat, doch er rotiert immer noch mit flotten 146 km/s!",
+   "distance": "113 Lichtjahre",
+   "size": "5,8 Sonnenradien",
+   "mass": "3,9 Sonnenmassen",
+   "spectral_class": "A1 III"
+  },
+  "star/j123112-570636": {
+   "description": "Gacrux (Gamma Crucis) ist der oberste Stern des Kreuzes des Südens und der nächste rote Riesenstern zur Erde.",
+   "fun_fact": "Gacrux ist der uns am nächsten gelegene rote Riese vom Typ M, und sein Name ist einfach eine von Navigatoren in den 1940er Jahren geprägte Abkürzung von „Gamma Crucis“!",
+   "distance": "89 Lichtjahre",
+   "size": "73 Sonnenradien",
+   "mass": "1,5 Sonnenmassen",
+   "spectral_class": "M3.5 III"
+  },
+  "star/j124800-594124": {
+   "description": "Mimosa (Beta Crucis) ist der zweithellste Stern im Kreuz des Südens und einer der heißesten mit bloßem Auge sichtbaren Sterne.",
+   "fun_fact": "Mimosa ist ein pulsierender Beta-Cephei-Veränderlicher – sie schwillt an und schrumpft in drei überlappenden Rhythmen, jeder dauert nur etwa vier Stunden!",
+   "distance": "280 Lichtjahre",
+   "size": "8 Sonnenradien",
+   "mass": "14,5 Sonnenmassen",
+   "spectral_class": "B0.5 III"
+  },
+  "star/j143936-605024": {
+   "description": "Toliman (Alpha Centauri B) ist der orangefarbene Begleiter im sonnennächsten Sternsystem, der den helleren Rigil Kentaurus umkreist.",
+   "fun_fact": "Toliman erhielt seinen offiziellen Namen erst 2018. Er ist etwas kleiner und kühler als die Sonne und bildet zusammen mit seinen zwei Geschwistern unsere nächsten Sternennachbarn!",
+   "distance": "4,34 Lichtjahre",
+   "size": "0,86 Sonnenradien",
+   "mass": "0,91 Sonnenmassen",
+   "spectral_class": "K1 V"
+  },
+  "star/j164836-690148": {
+   "description": "Atria ist der hellste Stern des Triangulum Australe (des Südlichen Dreiecks), ein oranger Riese, der viel größer als die Sonne ist.",
+   "fun_fact": "Atria hat den 139-fachen Durchmesser der Sonne – würde man sie ins Zentrum des Sonnensystems stellen, würde sie fast die Venusbahn erreichen!",
+   "distance": "391 Lichtjahre",
+   "size": "139 Sonnenradien",
+   "mass": "6,4 Sonnenmassen",
+   "spectral_class": "K2 Ib-IIa"
+  },
+  "star/j173712-430000": {
+   "description": "Sargas ist ein heller Riese im Schwanz des Skorpions mit einem traditionellen Namen sumerischen Ursprungs.",
+   "fun_fact": "Sargas dreht sich so schnell, dass es sich ausbeult – es ist am Äquator ein Drittel breiter als von Pol zu Pol und könnte entstanden sein, als zwei Sterne verschmolzen sind!",
+   "distance": "329 Lichtjahre",
+   "size": "35 Sonnenradien",
+   "mass": "3,1 Sonnenmassen",
+   "spectral_class": "F1 III"
+  },
+  "star/j202548-564348": {
+   "description": "Peacock ist der hellste Stern im Pfau (Pavo), ein heißer blau-weißer Stern des tiefen Südhimmels.",
+   "fun_fact": "Peacock wurde in den 1930er Jahren benannt, weil die RAF darauf bestand, dass jeder Stern in ihrem neuen Air Almanac einen Namen haben sollte – und dieser hatte keinen!",
+   "distance": "179 Lichtjahre",
+   "size": "4,8 Sonnenradien",
+   "mass": "5,9 Sonnenmassen",
+   "spectral_class": "B3 V"
   },
   "star/kaus_australis": {
    "description": "Kaus Australis ist der hellste Stern im Schützen (Sagittarius). Sein Name bedeutet \"der südliche Bogen\" in einer Mischung aus Arabisch und Latein.",
@@ -1939,6 +2183,12 @@
    "mass": "~8,5 Sonnenmassen",
    "spectral_class": "F5Ib",
    "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/n25": {
+   "description": "R Coronae Borealis ist ein seltener gelber Überriese in der Nördlichen Krone und der Prototyp der nach ihr benannten Klasse von veränderlichen Sternen.",
+   "fun_fact": "R Coronae Borealis wird manchmal als „umgekehrte Nova“ bezeichnet – anstatt aufzuflammen, verblasst er unvorhersehbar um bis zu 9 Magnituden, wenn er Wolken aus Kohlenstoffruß ausstößt, die ihn verdecken!",
+   "distance": "4.560 Lichtjahre",
+   "spectral_class": "G0Iep"
   },
   "star/nunki": {
    "description": "Nunki ist der zweithellste Stern im Schützen (Sagittarius) und trägt den ältesten noch gebräuchlichen Sternnamen.",

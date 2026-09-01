@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+    <!-- tm:omitted name="help_home_link" reason="identical_to_source" -->
+
+    <string name="help_intro" translation_description="Help section: introduction and quick start. Please do not change the markup"><![CDATA[<h2>Úvod a rychlý start</h2><p>Držte telefon vzhůru a dívejte se skrz něj jako oknem do vesmíru. Sky Map používá senzory vašeho telefonu k sledování, kam se díváte, a aktualizuje hvězdnou mapu v reálném čase.</p><blockquote>Ne všechny telefony jsou schopny spustit Sky Map! Viz sekce hardwarových požadavků níže.</blockquote><h3>Pokud jste zde poprvé:</h3><p>1. Povolte přístup k poloze, když budete vyzváni — Sky Map potřebuje vaši přibližnou polohu, aby nakreslila správnou oblohu pro místo, kde se nacházíte.<br/>2. Namiřte telefon na oblohu v libovolném směru.<br/>3. Mapa se bude pohybovat tak, aby odpovídala tomu, kam se díváte.</p>]]></string>
+
+    <string name="help_navigating" translation_description="Help section: navigating the sky, automatic and manual modes. Please do not change the markup"><![CDATA[<h2>Navigace po obloze</h2>Klepněte na obrazovku pro zobrazení ovládacích prvků a head-up displeje (vpravo nahoře).<h3>Automatický režim</h3><p>V automatickém režimu (výchozí nastavení) Sky Map používá kompas, akcelerometr a gyroskopické senzory vašeho telefonu k zobrazení toho, co je ve směru, kam telefon míří. Stačí pohybovat telefonem a mapa se bude řídit.</p><p>Pro přiblížení a oddálení použijte štípnutí dvěma prsty.</p><h3>Manuální režim</h3><p>Když jsou ovládací prvky viditelné, klepněte na tlačítko <b>ruka</b> (vpravo dole) pro přepnutí do manuálního režimu. V tomto režimu můžete:</p><p>• Přetahovat mapu jedním prstem pro posouvání.<br/>• Štípnutí pro přiblížení nebo oddálení.<br/>• Otáčet dvěma prsty pro změnu orientace.<br/>• Dvojitým klepnutím na obrazovku přepnete, zda se horizont při přetahování udržuje vodorovně.</p><p>Klepněte na tlačítko <b>kompas</b> (vpravo dole) pro přepnutí zpět do automatického režimu.</p>]]></string>
+
+    <!-- Symbol map will go here-->
+
+    <string name="help_layers" translation_description="Help section: the visible layers of the sky map. Please do not change the markup"><![CDATA[<h2>Vrstvy</h2>
+<p>Sky Map organizuje to, co zobrazuje, do vrstev, z nichž každou lze nezávisle zapnout nebo vypnout
+pomocí tlačítek vrstev na levé straně. Dlouze stiskněte nebo klepněte na tlačítko <b>Vrstvy</b> dole,
+abyste zobrazili přepínače pro další vrstvy.</p>
+<br/>
+<p>Aktuální vrstvy zahrnují:<br/>
+• <b>Hvězdy:</b> Nejjasnější hvězdy s popisky pro ty významné<br/>
+• <b>Souhvězdí:</b> Obrysy a názvy souhvězdí<br/>
+• <b>Objekty hlubokého vesmíru:</b> Galaxie, mlhoviny, hvězdokupy a další pozoruhodné objekty<br/>
+• <b>Sluneční soustava:</b> Slunce, Měsíc a planety zobrazené jako obrázky<br/>
+• <b>Meteorické roje:</b> Radianty každoročních meteorických rojů<br/>
+• <b>Nebeská síť:</b> Souřadnicová síť rektascenze / deklinace<br/>
+• <b>Ekliptika:</b> Roční dráha Slunce po obloze, kterou zhruba sledují Měsíc a planety<br/>
+• <b>Horizont:</b> Horizontální čára a popisky světových stran (S, J, V, Z)<br/>
+• <b>Gradient oblohy:</b> Záře denní oblohy a zbarvení soumraku v blízkosti horizontu</p>
+<blockquote>Radianty meteorických rojů se zobrazují pouze v datech, kdy meteorické roje probíhají.
+</blockquote>
+<br/>
+<p><b>Jak jsou planety vykresleny velké</b></p>
+<p>Klepněte na šipku vedle <b>Sluneční soustavy</b> v panelu Vrstvy, abyste zvolili, jakou velikost budou mít Slunce, Měsíc a
+planety:</p>
+<p>• <b>Glyfy</b> (výchozí): dostatečně velké, aby byly viditelné při jakémkoli přiblížení, a jejich velikost je dána tím, jak velké každé těleso skutečně <i>je</i>, spíše než jak velké se jeví odtud — model sluneční soustavy spíše než pohled dalekohledem. Saturn a jeho prstence jsou nejširší ze všech, pak Slunce,
+pak Jupiter, až po Pluto. Rozdíly jsou stlačeny, aby se vešly na obrazovku: Slunce je ve skutečnosti 586krát širší než Pluto, ne sedmkrát. Měsíc je výjimkou, je vykreslen ve stejné velikosti jako Slunce,
+protože takto se obě tělesa jeví odtud.<br/>
+• <b>Skutečné měřítko:</b> každé těleso ve své skutečné velikosti na obloze. Slunce a Měsíc mají průměr asi půl
+stupně — zhruba jako guma na tužce držená na délku paže — a planety jsou pouhé tečky, dokud nepřiblížíte. Přibližte úplně a Jupiter ukáže své pásy, Saturnovy prstence se oddělí od planety,
+a zatmění se zarovná přesně tak, jak se děje na obloze.<br/>
+• <b>Stabilní:</b> drží každé těleso v pevné velikosti na obrazovce při přibližování, přepne na skutečnou
+velikost, jakmile přiblížíte dostatečně daleko, aby byla větší z obou.</p>
+<blockquote>Tyto dva režimy vám říkají různé věci. <b>Glyfy</b> říkají, že Jupiter je obr a
+Pluto je maličké. <b>Skutečné měřítko</b> říká, že Slunce a Měsíc vypadají téměř přesně stejně velké ze
+Země — proto vůbec funguje úplné zatmění Slunce a můžete ho sledovat.</blockquote>
+<blockquote>Sky Map zobrazuje geometrický horizont — dokonale rovný, ničím nerušený pohled.
+Objekty těsně nad ním mohou být v praxi stále skryty budovami, kopci nebo stromy.</blockquote>]]></string>
+
+    <string name="help_info_cards" translation_description="Help section: the object info cards. Please do not change the markup"><![CDATA[<h2>Informační karty</h2><p>Klepnutím na označený nebeský objekt na mapě oblohy zobrazíte informační kartu – panel s fotografií a podrobnostmi o daném objektu. Informační karty jsou k dispozici pro stovky objektů, včetně hvězd, planet, Měsíce, významných objektů hlubokého vesmíru a souhvězdí.</p><br/><p>Každá karta zobrazuje:</p><p>• Fotografii nebo mapu objektu<br/>• Krátký popis a zajímavost<br/>• Vědecká data, jako je vzdálenost, velikost a typ objektu</p><p>Klepnutím na obrázek uvnitř karty jej zobrazíte na celou obrazovku. Kartu zavřete klepnutím mimo ni nebo stisknutím tlačítka <b>Zpět</b>.</p><blockquote>Ne všechny objekty mají informační karty, ale neustále přidáváme další.</blockquote>]]></string>
+
+    <string name="help_search" translation_description="Help section: searching for objects in the sky. Please do not change the markup"><![CDATA[<h2>Hledání</h2><p>Klepnutím na tlačítko <b>lupy</b> (dole) můžete vyhledávat cokoli na obloze.</p><br/><p>Můžete hledat:</p><p>• <b>Hvězdy</b> — podle názvu, např. „Sirius“, „Betelgeuse“, „Polaris“<br/>• <b>Planety</b> — např. „Mars“, „Saturn“<br/>• <b>Souhvězdí</b> — např. „Orion“, „Cassiopeia“<br/>• <b>Objekty hlubokého vesmíru</b> — např. „M31“, „Galaxie Andromeda“, „Plejády“<br/>• <b>Souřadnice</b> — rektascenze a deklinace, např. „5h 55m, 7° 24\'“ (pro symbol stupně můžete použít „o“)</p><p><b>V automatickém režimu:</b> po výběru výsledku zobrazí Sky Map zaměřovací kruh a směrovou šipku. Sledujte šipku otáčením telefonu — kruh mění barvu, jakmile se objekt dostane do vašeho zorného pole. Klepnutím na <b>Zrušit</b> (nebo stisknutím Zpět) ukončíte hledání.</p><p><b>V manuálním režimu:</b> mapa se jednoduše přesune a vycentruje na objekt.</p><blockquote>Můžete hledat objekty, které Sky Map nezobrazuje, jako je Europa, jeden z Jupiterových měsíců.V takovém případě vás hledání dovede k mateřskému objektu (Jupiter).</blockquote>]]></string>
+
+    <string name="help_time_travel" translation_description="Help section: the time travel feature. Please do not change the markup"><![CDATA[<h2>Cestování časem</h2><p>Cestování časem vám umožní vidět oblohu v jakémkoli okamžiku od roku 1600 do roku 3000. Klepněte na tlačítko <b>hodin</b> (dole).</p><br/><p>Vyberte si oblíbenou událost (zatmění, maxima meteorických rojů, další úplněk nebo novoluní, konjunkce planet, přistání Apolla 11 a další) ze seznamu událostí, nastavte si vlastní okamžik pomocí tlačítek <b>Nastavit datum</b> a <b>Nastavit čas</b>, nebo klepněte na „Začít od teď“, pokud se chcete jednoduše posunout vpřed nebo vzad od aktuálního okamžiku.</p><p>Jakmile jste v režimu Cestování časem, datum se zobrazí na obrazovce a ovládací prvky přehrávání vám umožní pohybovat se časem:</p><p>• Klepněte na <b>▶▶</b> (rychleji) nebo <b>◀◀</b> (pomaleji) pro posun rychlosti přehrávání vpřed nebo vzad v čase<br/>• Klepněte na <b>❚❚</b> pro pozastavení<br/>• Klepněte na <b>Teď</b> pro návrat do současnosti</p><p>K čemu to můžete použít:</p><p>• <i>Co mohu vidět dnes večer hned po západu slunce?</i><br/>• <i>Kdy je další dobrá příležitost spatřit Merkur?</i><br/>• <i>Jak vypadala obloha v noci, kdy jsem se narodil/a?</i></p><p>Přesnost se snižuje pro data vzdálená od současnosti, hlavně kvůli gravitačnímu vlivu Jupitera.</p>]]></string>
+
+    <string name="help_night_vision" translation_description="Help section: night vision mode. Please do not change the markup"><![CDATA[<h2>Režim nočního vidění</h2><p>Pokud pozorujete venku, režim nočního vidění pomáhá zachovat váš zrak adaptovaný na tmu. Přepněte jej pomocí tlačítka <b>Noční režim</b> dole.</p><br/><p>V režimu nočního vidění Sky Map přepne zobrazení na tmavě červené tóny a ztlumí obrazovku. Možnost <b>Automatické ztlumení obrazovky</b> v <b>Nastavení</b> vám dává další kontrolu nad tím, jak tmavá obrazovka bude.</p>]]></string>
+
+    <string name="help_other" translation_description="Help section: other options"><![CDATA[<h1>Další funkce</h1>
+        <p>Další funkce naleznete v nabídce přetečení (…) vpravo dole.</p>]]></string>
+
+    <string name="help_gallery" translation_description="Help section: the image gallery. Please do not change the markup"><![CDATA[<h2>Galerie</h2>
+<p>Galerie obsahuje vybranou sbírku krásných snímků noční oblohy, včetně některých
+z Hubbleova vesmírného dalekohledu.</p>
+ <br/>
+<p>Procházejte miniatury posouváním a klepnutím na jednu zobrazíte podrobnosti.
+Pomocí tlačítka <b>Najít</b> vyhledejte tento objekt na obloze.</p>]]></string>
+
+    <string name="help_location" translation_description="Help section: setting your observing location. Please do not change the markup"><![CDATA[<h2>Nastavení vaší polohy</h2><p>Sky Map potřebuje vaši přibližnou polohu, aby správně vykreslila oblohu. Ve výchozím nastavení používá lokalizační služby vašeho zařízení (mobilní síť nebo GPS).</p><br/><p>Pokud není přístup k poloze dostupný nebo ji raději nastavíte ručně, klepněte na tlačítko <b>Zadat polohu ručně</b> a zadejte <b>název místa</b> nebo <b>zeměpisnou šířku a délku</b> ve stupních.</p><blockquote>K dekódování názvů míst je vyžadován internet.</blockquote><p>Pokud jste dříve aplikaci Sky Map odepřeli oprávnění k poloze, možná jej budete muset znovu povolit v <b>Nastavení aplikací → Oprávnění</b> vašeho zařízení.</p><blockquote>Pokud jí neudělíte přístup, Sky Map bude předpokládat, že jste na (0, 90) – na severním pólu!</blockquote>]]></string>
+
+    <string name="help_diagnostics" translation_description="Help section: the diagnostics page. Please do not change the markup"><![CDATA[<h2>Diagnostika</h2><p>Tato stránka uvádí různá data o vašem telefonu a Sky Map, která mohou být užitečná pro ladění problémů. Najdete ji pod <b>Nastavení → Diagnostika</b>.</p><br/><p>Při hlášení problému klepněte na tlačítko sdílení v horní části stránky a odešlete nám tyto podrobnosti e-mailem na <a href="mailto:skymapdevs@gmail.com">skymapdevs@gmail.com</a>. Zprávu si můžete přečíst a upravit před odesláním.</p>]]></string>
+
+    <string name="help_calibrate" translation_description="Help section: the calibrate page. Please do not change the markup"><![CDATA[<h2>Kalibrace</h2>Čas od času byste měli zkalibrovat kompas svého telefonu – tato stránka vám ukáže, jak na to. Sky Map vás také upozorní, pokud váš kompas vyžaduje kalibraci.<blockquote><b>DŮLEŽITÉ:</b> Zkalibrovaný kompas NEZNAMENÁ <b>přesný</b> kompas. Veškerá kalibrace pouze resetuje kompas interně. Stále může být nepřesný kvůli blízkému magnetickému rušení nebo jednoduše kvůli špatnému hardwaru. Téměř všechny problémy s přesností jsou způsobeny hardwarem telefonu a <b>nemají nic společného se Sky Map</b>. Sky Map vám pouze hlásí to, co mu hlásí telefon.</blockquote><br/><p>Další nápovědu naleznete v sekci řešení problémů níže.</p>]]></string>
+
+    <string name="help_misc" translation_description="Help section: miscellaneous"><![CDATA[<h1>Různé a řešení problémů</h1>]]></string>
+
+    <string name="help_hardware" translation_description="Help section: hardware and sensor requirements. Please do not change the markup"><![CDATA[<h2>Hardwarové požadavky</h2>
+<p>Ne všechna zařízení mohou plně podporovat Sky Map!</p>
+ <br/>
+ <p>Minimálně potřebujete telefon s:</p>
+<p>• Senzor magnetického pole (neboli kompas) — pro určení směru, kterým se díváte<br/>
+• Akcelerometr — pro určení, jak vysoko na oblohu se díváte</p>
+<p>Ideálně také:</p>
+<p>• Gyroskop — ten vyhladí pohyb a učiní ho méně trhaným</p>
+<blockquote><b>Kompas v telefonu je notoricky nespolehlivý.</b>
+Pokud se mapa oblohy zdá špatná, je to téměř vždy hardwarový problém s kompasem vašeho telefonu — ne chyba v Sky Map.
+Sky Map čte přesně to, co hlásí senzor vašeho telefonu; nemá žádný způsob, jak automaticky opravit špatné nebo zkreslené údaje.
+Viz Řešení problémů níže.</blockquote>
+<h3>Jak zjistím, jaké senzory má můj telefon?</h3>
+<p>Otevřete <b>Nastavení → Diagnostika</b> — všechny senzory, které váš telefon nemá, budou označeny jako chybějící. Budete také informováni
+během tutoriálu.</p>
+<h3>Co když mému zařízení chybí požadované senzory?</h3>
+<p>Sky Map se přepne do manuálního režimu. Stále můžete prozkoumávat oblohu, ale bez senzorů
+žádná aplikace nemůže ukázat váš směr.</p>]]></string>
+
+    <string name="help_troubleshooting" translation_description="Help section: troubleshooting a map that does not move or points the wrong way. Please do not change the markup"><![CDATA[<h2>Odstraňování problémů</h2><h3>Mapa se nepohybuje</h3><p>• Zkontrolujte, zda jste v automatickém režimu (ne v manuálním)<br/>• Zkontrolujte stránku Diagnostika (<b>Nastavení → Diagnostika</b>), abyste potvrdili, že vaše zařízení má kompas a akcelerometr<br/>• Vyzkoušejte kalibrační gesto ve tvaru osmičky: pomalu mávejte telefonem ve velkém, plynulém tvaru osmičky</p><h3>Mapa ukazuje špatným směrem nebo je nepřesná</h3><p>Sky Map potřebuje tři věci, aby zobrazila správnou oblohu: směr, kterým je váš telefon otočen, vaši polohu a aktuální čas. Pokud mapa vypadá špatně, jedna z těchto věcí je pravděpodobně mimo.</p><p>• <b>Kompas (nejčastější příčina):</b> Toto je hardwarový problém vašeho telefonu – ne chyba Sky Map. Kalibrační gesto ve tvaru osmičky požádá váš telefon o interní resetování senzoru kompasu, ale <i>kalibrovaný kompas nemusí být nutně přesný</i>. Pokud jste v blízkosti kovového předmětu, palubní desky auta nebo magnetického pouzdra na telefon, mapa může být nepřesná i po kalibraci. Přesuňte se na otevřené prostranství a zopakujte gesto ve tvaru osmičky.<br/>• <b>Poloha:</b> Udělte povolení k poloze přes <b>Nastavení aplikace → Oprávnění</b>. Zkontrolujte stránku Diagnostika (<b>Nastavení → Diagnostika</b>), abyste potvrdili své souřadnice. Charakteristickým příznakem chybějící polohy je Polárka objevující se přímo nad hlavou.<br/>• <b>Čas:</b> Méně časté, ale nesprávné časové pásmo posune celou oblohu. Zkontrolujte stránku Diagnostika (<b>Nastavení → Diagnostika</b>), abyste potvrdili, že čas a časové pásmo vašeho zařízení jsou správné.</p><h3>Mapa se třese</h3><p>• Pokud váš telefon nemá gyroskop, zapněte <b>Použít starší senzory</b> v nastavení senzorů<br/>• Upravte <b>Rychlost senzoru</b> a <b>Tlumení</b> v <b>Nastavení → Nastavení senzorů (pro experty)</b> (zobrazeno, když je zapnuto <b>Použít starší senzory</b>)</p><p>Úplné podrobnosti o odstraňování problémů naleznete v online průvodci <a href="https://ts.stardroid.app">odstraňováním problémů</a>.</p><p>Pokud si stále nevíte rady, napište nám e-mail na <a href="mailto:skymapdevs@gmail.com">skymapdevs@gmail.com</a> – snímek obrazovky vaší stránky Diagnostika je velmi užitečný.</p>]]></string>
+
+    <string name="help_pointer_mode" translation_description="Help section: pointer mode for telescope users. Please do not change the markup"><![CDATA[<h2>Uživatelé dalekohledů — Režim ukazatele</h2>
+<p>V části <b>Nastavení → Nastavení senzoru</b> změňte <b>Směr pohledu</b> na <b>Režim ukazatele</b>. V tomto režimu Sky Map ukazuje, na co míří <i>delší hrana</i> telefonu, spíše než na co je otočena obrazovka.</p>
+<p>To vám umožní připevnit telefon podél tubusu dalekohledu tak, aby obrazovka byla kolmo k tubusu, zatímco mapa stále sleduje, na co je dalekohled namířen.</p>]]></string>
+</resources>

@@ -1,0 +1,189 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+    <!-- tm:omitted name="help_home_link" reason="identical_to_source" -->
+
+    <string name="help_intro" translation_description="Help section: introduction and quick start. Please do not change the markup"><![CDATA[<h2>Uvod in hiter začetek</h2>
+<p>Dvignite telefon in skozenj glejte kot skozi okno v vesolje. Sky Map uporablja senzorje vašega telefona
+ za sledenje kam gledate in sprotno posodabljanje zemljevida zvezd.</p>
+<blockquote>Vsi telefoni ne zmorejo poganjati aplikacije Sky Map! Glejte razdelek o strojni opremi spodaj.</blockquote>
+<h3>Če je to vaša prva uporaba:</h3>
+<p>1. Ko se prikaže poziv, dovolite dostop do lokacije – Sky Map potrebuje vašo približno lokacijo, da prikaže pravilno nebo za kraj, kjer se nahajate.<br/>
+2. Usmerite telefon proti nebu v poljubni smeri.<br/>
+3. Zemljevid se bo premaknil in se ujemal s tem, kam gledate.</p>]]></string>
+
+    <string name="help_navigating" translation_description="Help section: navigating the sky, automatic and manual modes. Please do not change the markup"><![CDATA[<h2>Krmarjenje po nebu</h2>
+Dotaknite se zaslona, da prikažete kontrolnike in zaslonski prikazovalnik (zgoraj desno).
+<h3>Samodejni način</h3>
+<p>V samodejnem načinu (privzeto) Sky Map uporablja kompas, merilnik pospeška in žiroskop
+vašega telefona za prikaz tistega, kar je v
+smeri, v katero kaže vaš telefon. Preprosto premikajte telefon in zemljevid sledi.</p>
+<p>Uporabite ščipanje z dvema prstoma za približevanje in oddaljevanje.</p>
+<h3>Ročni način</h3>
+<p>Ko so kontrolniki vidni, se dotaknite gumba z <b>roko</b> (spodaj desno), da preklopite v ročni način. V tem načinu lahko:</p>
+<p>• Povlečete zemljevid z enim prstom za pomikanje.<br/>
+• Stisnete za približevanje ali oddaljevanje.<br/>
+• Zasukate z dvema prstoma za spremembo usmerjenosti.<br/>
+• Dvakrat tapnete zaslon, da preklopite, ali naj ob vlečenju obzorje ostane vodoravno.</p>
+<p>Dotaknite se gumba s <b>kompasom</b> (spodaj desno), da se vrnete v samodejni način.</p>]]></string>
+
+    <!-- Symbol map will go here-->
+
+    <string name="help_layers" translation_description="Help section: the visible layers of the sky map. Please do not change the markup"><![CDATA[<h2>Plasti</h2>
+<p>Sky Map prikazuje nebo v plasteh, ki jih je mogoče neodvisno vklopiti ali izklopiti
+z gumbi za plasti na levi strani. Pritisnite in držite ali tapnite gumb <b>Plasti</b> na
+dnu, da odprete stikala za dodatne plasti.</p>
+<br/>
+<p>Trenutne plasti vključujejo:<br/>
+• <b>Zvezde:</b> Najsvetlejše zvezde z oznakami za pomembnejše<br/>
+• <b>Ozvezdja:</b> Obrisi in imena ozvezdij<br/>
+• <b>Objekti globokega neba:</b> Galaksije, meglice, zvezdne kopice in drugi izjemni objekti<br/>
+• <b>Sončni sistem:</b> Sonce, Luna in planeti, prikazani kot slike<br/>
+• <b>Meteorski roji:</b> Radiantne točke letnih meteorskih rojev<br/>
+• <b>Nebesna mreža:</b> Koordinatna mreža rektascenzije in deklinacije<br/>
+• <b>Ekliptika:</b> Letna pot Sonca po nebu, ki ji Luna in planeti približno sledijo<br/>
+• <b>Obzorje:</b> Črta obzorja in oznake strani neba (S, J, V, Z)<br/>
+• <b>Gradient neba:</b> Sij dnevnega neba in barve mraka blizu obzorja</p>
+<blockquote>Radianti meteorskih rojev so prikazani samo na datume, ko meteorski roji dejansko potekajo.
+</blockquote>
+<br/>
+<p><b>Kako veliki so narisani planeti</b></p>
+<p>Tapnite puščico ob možnosti <b>Sončni sistem</b> na listu Plasti, da izberete velikost Sonca, Lune in
+planetov:</p>
+<p>• <b>Glifi</b> (privzeto): dovolj veliki, da jih vidite pri vsaki povečavi, velikost pa je določena s tem,
+kako veliko vsako telo dejansko <i>je</i>, in ne s tem, kako veliko je videti od tod — to je model
+Sončnega sistema in ne pogled skozi teleskop. Saturn s svojimi obroči je najširši, nato Sonce,
+nato Jupiter, vse do Plutona. Razlike so stisnjene, da se prilegajo zaslonu: Sonce je v resnici 586-krat
+širše od Plutona, in ne sedemkrat. Luna je izjema, narisana je enako veliko kot Sonce,
+ker sta od tod videti prav takšna.<br/>
+• <b>Prava velikost:</b> vsako telo v svoji resnični velikosti na nebu. Sonce in Luna merita približno pol
+stopinje — približno toliko kot radirka na svinčniku, ki ga držite v iztegnjeni roki — planeti pa so
+pikice, dokler ne povečate do konca. Če povečate do konca, Jupiter pokaže svoje pasove, Saturnovi obroči
+se ločijo od planeta, mrk pa se poravna natanko tako, kot se poravna na nebu.<br/>
+• <b>Nespremenljivo:</b> ohranja vsako telo v nespremenjeni velikosti na zaslonu med povečevanjem, nato pa
+preklopi na pravo velikost, ko dovolj povečate, da je ta večja od obeh.</p>
+<blockquote>Načina povesta različni stvari. <b>Glifi</b> povedo, da je Jupiter velikan in
+Pluton majhen. <b>Prava velikost</b> pokaže, da sta Sonce in Luna z Zemlje videti skoraj
+popolnoma enako velika — zato popolni sončni mrk sploh deluje in ga lahko opazujete.</blockquote>
+<blockquote>Sky Map prikazuje geometrijsko obzorje — popolnoma ravno in neovirano.
+Objekti tik nad njim so v praksi lahko še vedno skriti za stavbami, hribi ali drevesi.</blockquote>]]></string>
+
+    <string name="help_info_cards" translation_description="Help section: the object info cards. Please do not change the markup"><![CDATA[<h2>Informacijske kartice</h2>
+<p>Tapnite označen nebesni objekt na zvezdnem karti, da se prikaže informacijska kartica – plošča s fotografijo in podrobnostmi o tem objektu.
+Informacijske kartice so na voljo za več sto objektov, vključno z zvezdami, planeti, Luno, opaznimi objekti globokega neba in ozvezdji.</p>
+<br/>
+<p>Vsaka kartica prikazuje:</p>
+<p>• Fotografijo ali shemo objekta<br/>
+• Kratek opis in zanimivo dejstvo<br/>
+• Znanstvene podatke, kot so oddaljenost, velikost in vrsta objekta</p>
+<p>Tapnite sliko znotraj kartice, da si jo ogledate čez celoten zaslon. Kartico zaprete tako, da tapnete zunaj nje ali pritisnete gumb <b>Nazaj</b>.</p>
+<blockquote>Vsi objekti nimajo informacijskih kartic, vendar jih ves čas dodajamo.</blockquote>]]></string>
+
+    <string name="help_search" translation_description="Help section: searching for objects in the sky. Please do not change the markup"><![CDATA[<h2>Iskanje</h2>
+<p>Tapnite gumb <b>povečevalnega stekla</b> (na dnu) za iskanje katerega koli predmeta na nebu.</p>
+<br/>
+<p>Iščete lahko:</p>
+<p>• <b>Zvezde</b> — po imenu, npr. \"Sirij\", \"Betelgeza\", \"Polaris\"<br/>
+• <b>Planete</b> — npr. \"Mars\", \"Saturn\"<br/>
+• <b>Zvezdoverdje</b> — npr. \"Orion\", \"Kasiopeja\"<br/>
+• <b>Predmete globokega neba</b> — npr. \"M31\", \"Galaksija Andromeda\", \"Plejade\"<br/>
+• <b>Koordinate</b> — rektascenzijo in deklinacijo, npr. \"5h 55m, 7° 24\'\" (za znak za stopinjo lahko uporabite črko \'o\')</p>
+<p><b>V samodejnem načinu:</b> po izbiri rezultata Sky Map prikaže ciljni krog in smerno puščico. Sledite puščici tako, da obračate telefon — krog spremeni barvo, ko predmet preide v vaše vidno polje. Tapnite <b>Prekliči</b> (ali pritisnite Nazaj), da zapustite iskanje.</p>
+<p><b>V ročnem načinu:</b> zemljevid preprosto skoči in centrira predmet.</p>
+<blockquote>Iščete lahko tudi predmete, ki jih Sky Map ne prikaže, na primer Evropo, eno od Jupitrovih lun.
+V tem primeru vas bo iskanje usmerilo na matični predmet (Jupiter).</blockquote>]]></string>
+
+    <string name="help_time_travel" translation_description="Help section: the time travel feature. Please do not change the markup"><![CDATA[<h2>Potovanje skozi čas</h2>
+<p>Potovanje skozi čas vam omogoča, da si ogledate nebo v katerem koli trenutku od leta 1600 do 3000. Pritisnite gumb <b>ura</b> (spodaj).</p>
+<br/>
+<p>Izberite priljubljen dogodek (mrke, vrhunce meteorskih utrinkov, naslednjo polno streho ali mlaj, konjunkcije planetov, pristanek Apolla 11 in še več) s seznama dogodkov, nastavite svoj trenutek z gumboma <b>Nastavi datum</b> in <b>Nastavi čas</b> ali pritisnite "Začni od zdaj", če se želite preprosto premikati naprej ali nazaj iz sedanjega trenutka.</p>
+<p>Ko ste v načinu potovanja skozi čas, je datum prikazan na zaslonu, nadzor predvajanja pa vam omogoča premikanje skozi čas:</p>
+<p>• Pritisnite <b>▶▶</b> (hitreje) ali <b>◀◀</b> (počasneje), da spremenite hitrost predvajanja naprej ali nazaj skozi čas<br/>
+• Pritisnite <b>❚❚</b> za zaustavitev<br/>
+• Pritisnite <b>Zdaj</b> za skok nazaj v sedanjost</p>
+<p>Nekaj primerov, za kaj ga lahko uporabite:</p>
+<p>• <i>Kaj lahko vidim takoj po sončnem zahodu nocoj?</i><br/>
+• <i>Kdaj je naslednja dobra priložnost za opazovanje Merkurja?</i><br/>
+• <i>Kako je izgledalo nebo na noč, ko sem se rodil?</i></p>
+<p>Natančnost se zmanjšuje za datume, ki so daleč od sedanjosti, predvsem zaradi gravitacijskega vpliva Jupitra.</p>]]></string>
+
+    <string name="help_night_vision" translation_description="Help section: night vision mode. Please do not change the markup"><![CDATA[<h2>Način za nočni vid</h2>
+<p>Če opazujete nebo na prostem, vam način za nočni vid pomaga ohraniti vid v temi. Vklopite ga s tasterjem <b>Nočni način</b> na dnu zaslona.</p>
+<br/>
+<p>V načinu za nočni vid Sky Map preklopi zaslon na temno rdeče tone in zatemni zaslon. Možnost <b>Samodejno zatemnjevanje zaslona</b> v <b>Nastavitvah</b> vam nudi dodaten nadzor nad tem, kako temen bo zaslon.</p>]]></string>
+
+    <string name="help_other" translation_description="Help section: other options"><![CDATA[<h1>Druge funkcije</h1>
+        <p>Druge funkcije najdete v meniju z možnostmi (…) spodaj desno.</p>]]></string>
+
+    <string name="help_gallery" translation_description="Help section: the image gallery. Please do not change the markup"><![CDATA[<h2>Galerija</h2>
+<p>Galerija vsebuje izbran nabor čudovitih slik nočnega neba, vključno z nekaterimi slikami vesoljskega teleskop Hubble.</p>
+ <br/>
+<p>S pomikom brskajte po sličicah in tapnite eno, če si želite ogledati podrobnosti.
+Uporabite gumb <b>Najdi</b>, da poiščete tisti objekt na nebu.</p>]]></string>
+
+    <string name="help_location" translation_description="Help section: setting your observing location. Please do not change the markup"><![CDATA[<h2>Nastavitev lokacije</h2>
+<p>Sky Map potrebuje vašo približno lokacijo za prikaz pravilnega neba. Privzeto uporablja lokacijske storitve vaše naprave (mobilno omrežje ali GPS).</p>
+<br/>
+<p>Če dostop do lokacije ni na voljo ali jo raje nastavite ročno, tapnite gumb <b>Vnesi lokacijo ročno</b> in vnesite <b>ime kraja</b> ali <b>zemljepisno širino in dolžino</b> v stopinjah.</p>
+<blockquote>Za pretvorbo imen krajev v koordinate je potrebna internetna povezava.</blockquote>
+<p>Če ste aplikaciji Sky Map v preteklosti zavrnili dovoljenje za lokacijo, boste morda morali to ponovno omogočiti v <b>Nastavitvah aplikacije → Dovoljenja</b> v vaši napravi.</p>
+<blockquote>Če aplikaciji ne omogočite dostopa, bo Sky Map privzeto predpostavil, da se nahajate na koordinatah (0, 90) – na severnem polu!</blockquote>]]></string>
+
+    <string name="help_diagnostics" translation_description="Help section: the diagnostics page. Please do not change the markup"><![CDATA[<h2>Diagnostika</h2>
+    <p>Ta stran prikazuje različne podatke o vašem telefonu in aplikaciji Sky Map, ki so lahko uporabni pri odpravljanju težav. Najdete jo pod možnostjo <b>Nastavitve → Diagnostika</b>.</p>
+    <br/>
+    <p>Ko poročate o težavi, tapnite gumb za skupno rabo na vrhu strani, da nam te podatke pošljete po e-pošti na naslov <a href="mailto:skymapdevs@gmail.com">skymapdevs@gmail.com</a>. Poročilo lahko pred pošiljanjem preberete in uredite.</p>]]></string>
+
+    <string name="help_calibrate" translation_description="Help section: the calibrate page. Please do not change the markup"><![CDATA[<h2>Umerjanje</h2>
+    Občasno morate umeriti kompas svojega telefona – ta stran vam prikazuje, kako. Sky Map vas bo
+    tudi opozoril, če vaš kompas potrebuje umerjanje.
+    <blockquote><b>POMEMBNO:</b> Umerjen kompas NE pomeni <b>natančnega</b> kompasa.
+    Umerjanje služi le ponastavitvi kompasa v napravi. Še vedno je lahko nenatančen zaradi bližnjih
+    magnetnih motenj ali preprosto slabe strojne opreme. Skoraj vse težave z natančnostjo so posledica
+    strojne opreme telefona in <b>nimajo nikakršne veze s programom Sky Map</b>. Sky Map vam le
+    prikazuje tisto, kar mu sporoča telefon.</blockquote>
+    <br/>
+    <p>Za več pomoči si oglejte spodnji razdelek o odpravljanju težav.</p>]]></string>
+
+    <string name="help_misc" translation_description="Help section: miscellaneous"><![CDATA[<h1>Razno in odpravljanje težav</h1>]]></string>
+
+    <string name="help_hardware" translation_description="Help section: hardware and sensor requirements. Please do not change the markup"><![CDATA[<h2>Strojne zahteve</h2>
+<p>Vse naprave ne podpirajo v celoti aplikacije Sky Map!</p>
+ <br/>
+ <p>Vsaj potrebujejo telefon z:</p>
+<p>• Senzorjem magnetnega polja (kompasom) – ki določa, v katero smer gledate<br/>
+• Pospeškomerom – ki določa, kako visoko na nebu gledate</p>
+<p>Idealno pa tudi:</p>
+<p>• Žiroskopom – to bo zgladilo gibanje in zmanjšalo zatikanje</p>
+<blockquote><b>Telefonski kompasi so znani po tem, da so nezanesljivi.</b>
+Če se vam zdi zvezdni zemljevid napačen, gre skoraj vedno za težavo s strojno opremo telefonskega kompasa – in ne za napako v aplikaciji Sky Map.
+Sky Map bere natančno to, kar sporoča senzor vašega telefona; nima načina za samodejno popravljanje napačne ali zamaknjene meritve.
+Glejte Odpravljanje težav spodaj.</blockquote>
+<h3>Kakovem, katere senzorje ima moj telefon?</h3>
+<p>Odprite <b>Nastavitve → Diagnostika</b> – vsi senzorji, ki jih vaš telefon nima, bodo označeni kot manjkajoči. O tem ste bili obveščeni tudi
+med vadnico.</p>
+<h3>Kaj če moji napravi manjkajo zahtevani senzorji?</h3>
+<p>Sky Map preklopi v ročni način. Nebo lahko še vedno raziskujete, vendar brez senzorjev
+nobena aplikacija ne more prikazati vaše smeri.</p>]]></string>
+
+    <string name="help_troubleshooting" translation_description="Help section: troubleshooting a map that does not move or points the wrong way. Please do not change the markup"><![CDATA[<h2>Odpravljanje težav</h2>
+<h3>Zemljevid se ne premika</h3>
+<p>• Preverite, ali ste v samodejnem načinu (in ne ročnem)<br/>
+• Preverite stran z diagnostiko (<b>Nastavitve → Diagnostika</b>), da potrdite, ali ima vaša naprava kompas in merilnik pospeška<br/>
+• Poskusite s kretnjo umerjanja v obliki številke 8: telefon počasi pomikajte v veliki, gladki obliki številke 8</p>
+<h3>Zemljevid kaže v napačno smer ali je nenatančen</h3>
+<p>Sky Map za prikaz pravilnega neba potrebuje tri stvari: smer, v katero je obrnjen vaš telefon, vašo lokacijo in trenutni čas. Če je videti, da je zemlja narobe, je ena od teh stvari verjetno napačna.</p>
+<p>• <b>Kompas (najpogostejši vzrok):</b> To je težava s strojno opremo vašega telefona in ne napaka v aplikaciji Sky Map. Kretnja umerjanja v obliki številke 8 zahteva, da telefon ponastavi tipalo kompasa v svoji notranjosti, vendar <i>umerjen kompas ni nujno tudi natančen</i>. Če ste v bližini kovinskega predmeta, avtomobilske armaturne plošče ali magnetnega ovitka za telefon, je lahko zemljevid še vedno napačen tudi po umerjanju. Premaknite se na odprto območje in ponovite kretnjo v obliki številke 8.<br/>
+• <b>Lokacija:</b> Dovoljenje za lokacijo dodelite prek <b>Nastavitve aplikacije → Dovoljenja</b>. Preverite stran z diagnostiko (<b>Nastavitve → Diagnostika</b>) za potrditev vaših koordinat. Značilen znak manjkajoče lokacije je Severnica (Polaris), ki je prikazana neposredno nad glavo.<br/>
+• <b>Čas:</b> Manj pogosto, vendar napačen časovni pas premakne celotno nebo. Preverite stran z diagnostiko (<b>Nastavitve → Diagnostika</b>), da potrdite pravilnost časa in časovnega pasu vaše naprave.</p>
+<h3>Zemljevid trese</h3>
+<p>
+• Če vaš telefon nima žiroskopa, v nastavitvah tipal vklopite <b>Uporabi prejšnja tipala</b><br/>
+• Prilagodite <b>Hitrost tipal</b> in <b>Dušenje</b> pod <b>Nastavitve → Nastavitve tipal (za strokovnjake)</b>
+(prikazano, ko je vklopljena možnost <b>Uporabi prejšnja tipala</b>)</p>
+<p>Za popolne podrobnosti o odpravljanju težav si oglejte spletni vodnik za <a href="https://ts.stardroid.app">odpravljanje težav</a>.</p>
+<p>Če se še vedno zatikate, nam pišite na <a href="mailto:skymapdevs@gmail.com">skymapdevs@gmail.com</a> – posnetek zaslona vaše strani z diagnostiko je zelo v pomoč.</p>]]></string>
+
+    <string name="help_pointer_mode" translation_description="Help section: pointer mode for telescope users. Please do not change the markup"><![CDATA[<h2>Uporabniki teleskopov – način kazalca</h2>
+<p>V meniju <b>Nastavitve → Nastavitve senzorjev</b> spremenite <b>Smer prikaza</b> v <b>Način kazalca</b>. V tem načinu Sky Map prikazuje, kam kaže <i>daljši rob</i> telefona, in ne tisto, kamor je usmerjen zaslon.</p>
+<p>To vam omogoča, da telefon namestite ob stran cevi teleskopa, tako da je zaslon pravokoten na cev, medtem ko zemljevid še vedno sledi temu, kam je usmerjen teleskop.</p>]]></string>
+</resources>

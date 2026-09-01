@@ -645,12 +645,22 @@
    "size": "83 ljusår tvärsöver",
    "image_credit": "NASA/ESA/Hubble"
   },
+  "dso/m100": {
+   "description": "Messier 100 är en storslagen spiralgalax i stjärnbilden Berenikes hår och en av de ljusaste i Virgohopen.",
+   "fun_fact": "Sju supernovor har observerats i M100, den senaste år 2020 – få galaxer har bjudit på en sådan show!",
+   "distance": "55 miljoner ljusår",
+   "size": "166 000 ljusår tvärs över"
+  },
   "dso/m101": {
    "description": "Solrosgalaxen är en spiralgalax sedd framifrån i Stora björnen, en av de största kända spiralgalaxerna.",
    "fun_fact": "Solrosgalaxen innehåller över en biljon stjärnor och har asymmetriska spiralarmar på grund av tidigare galaxinteraktioner!",
    "distance": "21 miljoner ljusår",
    "size": "170 000 ljusår tvärsöver",
    "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m102": {
+   "description": "Messier 102 är den stora olösta posten i Messiers katalog - ett objekt som noterades 1781 och som aldrig har identifierats med säkerhet.",
+   "fun_fact": "Messier publicerade inga koordinater för M102, och hans kollega Méchain drog senare tillbaka upptäckten helt och hållet med påståendet att det bara var M101 som råkat registreras två gånger! NASA identifierar den med Spindelgalaxen, NGC 5866."
   },
   "dso/m103": {
    "description": "M103 är ett litet, kompakt öppet stjärnhop i Cassiopeja, innehållande omkring 40 stjärnor i en tätt grupp som lätt ses i kikare. En slående dubbelstjärna och en röd jätte nära centrum ger det ett färgglatt utseende i små teleskop, beläget inom de rika Vintergatan-stjärnfälten i Cassiopeja.",
@@ -665,6 +675,12 @@
    "size": "50 000 ljusår tvärsöver",
    "image_credit": "NASA/ESA/Hubble"
   },
+  "dso/m105": {
+   "description": "Messier 105 är en elliptisk galax i Lejonet, den största elliptiska galaxen i Messierkatalogens utkant utanför Virgohopen.",
+   "fun_fact": "M105 delar en kolossal ring av vätgas med sin granne NGC 3384, som spänner över cirka 650 000 ljusår!",
+   "distance": "37 miljoner ljusår",
+   "size": "67 000 ljusår tvärs över"
+  },
   "dso/m106": {
    "description": "M106 är en spiralgalax i Jakthundarna med avvikande spiralarmar orsakade av strålar från dess centrala svarta hål.",
    "fun_fact": "M106 har vattenmasrar i sin kärna, vilket låter astronomer mäta dess avstånd exakt!",
@@ -677,6 +693,11 @@
    "fun_fact": "M107 var den sista posten som formellt lades till Messier-katalogen — den förekommer i Pierre Méchains korrespondens men inkluderades inte i originalutgåvan från 1781. Den lades officiellt till som M107 1947 av den kanadensiska astronomen Helen Sawyer Hogg, som kodifierade flera \"saknade\" objekt som Méchain hade observerat men som Messier aldrig formellt registrerade.",
    "distance": "20 900 ljusår",
    "size": "~61 ljusår i diameter"
+  },
+  "dso/m108": {
+   "description": "Messier 108 är en stavgalax i Stora björnen, med smeknamnet Surfbrädsgalaxen.",
+   "fun_fact": "M108 lutar nästan helt från sidan sett från oss, vilket har gett den smeknamnet Surfbrädan - och den rymmer omkring 290 klotformiga stjärnhopar!",
+   "distance": "46 miljoner ljusår"
   },
   "dso/m109": {
    "description": "M109 är en spiralgalax med central stav i Stora björnen, den ljusaste medlemmen i en galaxgrupp som bär dess namn.",
@@ -740,6 +761,12 @@
    "distance": "5 500 ljusår",
    "size": "15 ljusår tvärsöver",
    "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m18": {
+   "description": "Messier 18 är en liten öppen stjärnhop av unga stjärnor i Skytten, även känd som Svart svan-hopen.",
+   "fun_fact": "M18 är ett av väldigt få Messier-objekt som Rymdteleskopet Hubble aldrig har fotograferat!",
+   "distance": "4 200 ljusår",
+   "size": "26 ljusår tvärs över"
   },
   "dso/m19": {
    "description": "M19 är ett kompakt, rikt klotformat stjärnhop i Ophiuchus — ett av de närmaste klotformade stjärnhopen till galaxens centrum. Dess mest karakteristiska egenskap är dess märkbart oblata form: M19 är det mest tillplattade klotformade stjärnhopen som är känt, med en synlig elliptisk kontur även i ett litet teleskop.",
@@ -1018,12 +1045,35 @@
    "size": "1,3 ljusår tvärsöver",
    "image_credit": "NASA/ESA/Hubble"
   },
+  "dso/m58": {
+   "description": "Messier 58 är en stavgalax i Jungfrun och en av de ljusstarkaste medlemmarna i Virgohopen.",
+   "fun_fact": "Ett supermassivt svart hål på omkring 70 miljoner solmassor finns i M58:s kärna, omgivet av ett tätt band av nyfödda stjärnor!",
+   "distance": "68 miljoner ljusår",
+   "size": "133 000 ljusår tvärs över"
+  },
+  "dso/m59": {
+   "description": "Messier 59 är en elliptisk galax i Jungfrun, upptäckt 1779 under sökandet efter en förbipasserande komet.",
+   "fun_fact": "Kärnan i M59 roterar baklänges jämfört med resten av galaxen, och omkring 2 200 klotformiga stjärnhopar svärmar runt den!",
+   "distance": "50 miljoner ljusår",
+   "mass": "270 miljoner solmassor (centralt svart hål)"
+  },
   "dso/m6": {
    "description": "Fjärilshopen är en öppen stjärnhop i Skorpionen, uppkallad efter det fjärilsliknande arrangemanget av dess ljusaste stjärnor.",
    "fun_fact": "M6 är ungefär 100 miljoner år gammal och innehåller över 300 stjärnor, inklusive den orange jätten BM Scorpii!",
    "distance": "1 600 ljusår",
    "size": "25 ljusår tvärsöver",
    "image_credit": "NOAO/AURA/NSF"
+  },
+  "dso/m60": {
+   "description": "Messier 60 är en jätteelliptisk galax i stjärnbilden Jungfrun och den tredje ljusstarkaste jätteelliptiska galaxen i Virgohopen.",
+   "fun_fact": "M60:s centrala svarta hål väger ungefär 4,5 miljarder solar – ett av de största som någonsin hittats!",
+   "distance": "57 miljoner ljusår"
+  },
+  "dso/m61": {
+   "description": "Messier 61 är en stavgalax i stjärnbilden Jungfrun och en av de största galaxerna i Virgohopen.",
+   "fun_fact": "Åtta supernovor har upptäckts i M61 – vilket är en av de högsta noteringarna för någon galax! Messier själv misstog den först för en komet.",
+   "distance": "52 miljoner ljusår",
+   "size": "92 000 ljusår i diameter"
   },
   "dso/m62": {
    "description": "M62 är ett rikt klotformat stjärnhop i Ormen — ett av de närmaste klothopen till galaxens centrum och märkbart asymmetriskt, med stjärnor packade tätare på södra sidan. Med magnitud 6,6 är det ett utmärkt kikareföremål, även om dess låga deklination gör det till ett kortsäsongobjekt för observatörer på norra halvklotet.",
@@ -1095,12 +1145,28 @@
    "distance": "12 000 ljusår",
    "size": "~25 ljusår i diameter"
   },
+  "dso/m72": {
+   "description": "Messier 72 är en svag, avlägsen klotformig stjärnhop i Vattumannen, upptäckt av Pierre Méchain 1780.",
+   "fun_fact": "M72 rymmer stjärnor motsvarande ungefär 168 000 solar i ett klot som är cirka 9,5 miljarder år gammalt, inklusive 43 variabla stjärnor!",
+   "distance": "55 000 ljusår"
+  },
+  "dso/m73": {
+   "description": "Messier 73 är en liten grupp med fyra stjärnor i Vattumannen som bara ser ut som en stjärnhop.",
+   "fun_fact": "Astronomer bråkade i årtionden om huruvida M73 var en äkta stjärnhop – år 2002 fick man svaret: de fyra stjärnorna ligger på helt olika avstånd och bildar bara en slumpmässig rad!",
+   "distance": "1 000 till 2 300 ljusår (de enskilda stjärnorna)"
+  },
   "dso/m74": {
    "description": "Fantomgalaxen är en spiralgalax sedd framifrån i Fiskarna, känd för sin perfekta storslagna spiralstruktur.",
    "fun_fact": "M74 kallas Fantomgalaxen på grund av sin mycket låga ytljusstyrka, vilket gör den utmanande att observera!",
    "distance": "32 miljoner ljusår",
    "size": "95 000 ljusår tvärsöver",
    "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m75": {
+   "description": "Messier 75 är en avlägsen, mycket tät klotformig stjärnhop i Skytten.",
+   "fun_fact": "M75 är en av de tätast packade klotformiga stjärnhoparna som är kända, och tros vara resterna från en dvärggalax som Vintergatan slukade för länge sedan!",
+   "distance": "68 000 ljusår",
+   "size": "134 ljusår i diameter"
   },
   "dso/m76": {
    "description": "Little Dumbbell är en planetarisk nebulosa i Perseus med en karakteristisk åttatalsform — en mindre kusin till M27, Dumbbell-nebulosan i Vulpecula. Även om den är den svagaste posten i Messier-katalogen, belönar den tålmodig observation med små teleskop och visar vacker struktur i större instrument, med två ljusare lober som flankerar en svagare midja.",
@@ -1162,6 +1228,22 @@
    "size": "55 000 ljusår tvärsöver",
    "image_credit": "NASA/ESA/Hubble"
   },
+  "dso/m84": {
+   "description": "Messier 84 är en jättestor elliptisk galax i Virgohopens täta mitt.",
+   "fun_fact": "M84 skjuter ut två strålar av materia från sitt kärnhus, som drivs av ett svart hål på cirka 1,5 miljarder solmassor!",
+   "distance": "55 miljoner ljusår"
+  },
+  "dso/m85": {
+   "description": "Messier 85 är en linsformad galax i utkanten av Virgohopen, i stjärnbilden Berenikes hår.",
+   "fun_fact": "Krusningar och skal i M85:s yttre regioner är resterna av en galaxkollision för 4 till 7 miljarder år sedan!",
+   "distance": "60 miljoner ljusår",
+   "size": "120 600 ljusår i diameter"
+  },
+  "dso/m86": {
+   "description": "Messier 86 är en stor elliptisk galax i Virgohopen som bildar ett slående par med närliggande M84.",
+   "fun_fact": "M86 rusar mot oss i 244 km/s – den snabbaste ankomsten av alla Messier-objekt! Dess färd genom hopar lämnar ett långt spår av avskalad het gas.",
+   "distance": "52 miljoner ljusår"
+  },
   "dso/m87": {
    "description": "M87 är en superjätte elliptisk galax i Jungfrun, en av de mest massiva galaxerna i det lokala universumet.",
    "fun_fact": "M87:s centrala svarta hål var det första som någonsin fotograferades av Event Horizon Telescope 2019 - det har 6,5 miljarder solmassor!",
@@ -1170,11 +1252,34 @@
    "mass": "2,4 biljoner solmassor",
    "image_credit": "NASA/ESA/Hubble"
   },
+  "dso/m88": {
+   "description": "Messier 88 är en elegant spiralgalax i Berenikes hår, ett av femton Messier-objekt i Virgohopen.",
+   "fun_fact": "M88 störtar mot centrum av Virgohopen och kommer fram om 200 till 300 miljoner år, varvid dess yttre gas slits bort under fallet!",
+   "distance": "59 miljoner ljusår",
+   "size": "131 000 ljusår i diameter"
+  },
+  "dso/m89": {
+   "description": "Messier 89 är en elliptisk galax i Jungfrun, upptäckt av Charles Messier 1781.",
+   "fun_fact": "M89 kan vara näst intill ett perfekt klot – ovanligt för en elliptisk galax, som i regel är märkbart hoptryckta!",
+   "distance": "50 miljoner ljusår"
+  },
   "dso/m9": {
    "description": "M9 är ett kompakt klotformat stjärnhop i Ormen — ett av Messiers klotformade stjärnhop som påverkas mest av interstellär dammabsorption. Det ligger mot den galaktiska bulgen, där tjockt damm gör det betydligt svagare. Utan denna dunklet skulle M9 verka nästan en magnitud ljusare och vara synligt för blotta ögat.",
    "fun_fact": "M9 drabbas mer av interstellärt dammabsorption än nästan någon annan Messier-klothopar — ungefär 1,3 magnituder dimning jämfört med en klar siktlinje. Två mindre klothopor (NGC 6342 och NGC 6356) ligger inom cirka 1° från M9, vilket gör den till centrum för en anmärkningsvärd gruppering av tre klothopor på en liten del av himlen.",
    "distance": "25 800 ljusår",
    "size": "~70 ljusår i diameter"
+  },
+  "dso/m90": {
+   "description": "Messier 90 är en stor spiralgalax i Jungfrun och ett skolboksexempel på en ”anemisk” galax.",
+   "fun_fact": "M90 har fått sin stjärnbildande gas bortrövad genom sin färd genom Virgohopen, vilket lämnar efter sig svansar av glödande gas som är upp till 260 000 ljusår långa!",
+   "distance": "59 miljoner ljusår",
+   "size": "132 000 ljusår i diameter"
+  },
+  "dso/m91": {
+   "description": "Messier 91 är en stavgalax i Berenikes hår och det svagaste objektet i Messierkatalogen.",
+   "fun_fact": "M91 var försvunnen i nästan 200 år! Messier angav dess position med fel referensgalax, och den återidentifierades först 1969 av en amatörastronom.",
+   "distance": "63 miljoner ljusår",
+   "size": "105 500 ljusår i diameter"
   },
   "dso/m92": {
    "description": "M92 är en ljus klotformig stjärnhop i Herkules, ofta förbisedd på grund av sin närhet till den mer berömda M13.",
@@ -1196,12 +1301,35 @@
    "size": "50 000 ljusår tvärsöver",
    "image_credit": "NASA/ESA/Hubble"
   },
+  "dso/m95": {
+   "description": "Messier 95 är en stavgalax i Lejonet, och en del av M96-gruppen tillsammans med M96 och M105.",
+   "fun_fact": "En ring av intensiv stjärnbildning som är omkring 70 000 ljusår bred kretsar kring M95:s kärna, och en supernova flammade upp där 2012!",
+   "distance": "33 miljoner ljusår",
+   "size": "80 000 ljusår i diameter"
+  },
+  "dso/m96": {
+   "description": "Messier 96 är en spiralgalax i Lejonet, och den ljusstarkaste medlemmen i galaxgruppen M96.",
+   "fun_fact": "M96 är ungefär lika stor och har samma massa som vår egen Vintergata, men den är påfallande osymmetriska – dess stoft och gas är ojämnt utspridda i dess armar!",
+   "distance": "31 miljoner ljusår",
+   "size": "78 000 ljusår i diameter"
+  },
   "dso/m97": {
    "description": "Ugglenebulan är en planetarisk nebulosa i Stora björnen, uppkallad efter sitt uggleliknande utseende med två mörka fläckar.",
    "fun_fact": "De mörka uggleögonen i M97 är tredimensionella hålrum i nebulosan, riktade mot vår synlinje!",
    "distance": "2 030 ljusår",
    "size": "2 ljusår tvärsöver",
    "image_credit": "Gemini Observatory/NOIRLab/NSF/AURA"
+  },
+  "dso/m98": {
+   "description": "Messier 98 är en spiralgalax i Berenikes hår, som ses nästan rakt från sidan som en del av Virgohopen.",
+   "fun_fact": "M98 är en av de sällsynta galaxer som rör sig mot oss i stället för bort från oss, och närmar sig med cirka 140 km/s!",
+   "distance": "44 miljoner ljusår"
+  },
+  "dso/m99": {
+   "description": "Messier 99 är en storslagen spiralgalax i Berenikes hår med tydliga, svepande spiralarmar.",
+   "fun_fact": "M99 var ett av de allra första objekten som erkändes som spiralformade, skissat av Lord Rosse 1846 – och den bildar stjärnor tre gånger snabbare än liknande galaxer!",
+   "distance": "45 miljoner ljusår",
+   "size": "98 000 ljusår tvärsöver"
   },
   "dso/n47_tucanae": {
    "description": "47 Tucanae (NGC 104) är den näst ljusstarkaste klothopar på himlen, en tät boll med ungefär en miljon gamla stjärnor som kretsar runt Vintergatan i stjärnbilden Tukan. På ett avstånd av cirka 14 500 ljusår framträder den för blotta ögat som en dimmig stjärna av fjärde magnituden, men ett teleskop löser upp dess komprimerade kärna till en extraordinär svärm av gyllene och blåvita solar. Dess stjärnor bildades för omkring 13 miljarder år sedan, vilket gör klothopen nästan lika gammal som universum själv.",
@@ -1313,8 +1441,9 @@
    "description": "Deimos är den mindre och yttre av Mars två månar, med en slät, dammtäckt yta som ger den ett rundare utseende än Phobos. Liksom sin följeslagare tros den vara en infångad asteroid från den yttre bältet.",
    "fun_fact": "Deimos är så liten och långt bort att den från Marsytan ser ut som inte mycket mer än en ljus stjärna och tar ungefär 30 timmar att långsamt driva över nattehimlen.",
    "distance": "23 460 km från Mars",
+   "size": "15 × 12 × 11 km",
    "image_credit": "NASA/JPL-Caltech/University of Arizona",
-   "search_subtext": "Moon of Mars"
+   "search_subtext": "Måne till Mars"
   },
   "moon/dione": {
    "description": "Dione är en isig måne kring Saturnus med en kraftigt kraterad framvänd sida och en bakvänd hemisfär genomkorsad av ljusa isklipper — spricklinjer där gamla tektoniska krafter exponerade färsk is från djupet. Cassinis gravimetridata antyder ett underjordiskt flytande hav under skorpan.",
@@ -1368,8 +1497,9 @@
    "description": "Phobos är den större och innersta av Mars två månar och kretsar närmare sin planet än någon annan måne i solsystemet. Det är en oregelbundet formad kropp med djupa spår och kratrar som antas vara en infångad asteroid.",
    "fun_fact": "Phobos kretsar runt Mars så snabbt att det går upp i väster och går ned i öster — och det spiralerar långsamt inåt, destineradt att antingen krascha in i Mars eller splittras upp till en ring om cirka 50 miljoner år.",
    "distance": "9 376 km från Mars",
+   "size": "27 × 22 × 18 km",
    "image_credit": "NASA/JPL-Caltech/University of Arizona",
-   "search_subtext": "Moon of Mars"
+   "search_subtext": "Måne till Mars"
   },
   "moon/rhea": {
    "description": "Rhea är Saturnus andra största måne och en kraftigt kraterad värld av is och sten. Dess bleka, gamla yta bevarar några av solsystemets mest orörda nedslagskratrar, tillsammans med ljusa isklippor där jordskred har blottlagt färskt material från under ytan.",
@@ -1828,6 +1958,11 @@
    "spectral_class": "K0 III",
    "image_credit": "ESO/Digitized Sky Survey 2"
   },
+  "star/e_lyrae": {
+   "description": "Epsilon Lyrae är ett stjärnsystem med flera stjärnor i Lyra, känt bland observatörer som \"Double Double\".",
+   "fun_fact": "Med skarpa ögon kan du dela upp Epsilon Lyrae i två stjärnor – och med ett teleskop delas var och en av dem upp i två till! Den innehåller minst fem stjärnor totalt.",
+   "distance": "160 ljusår"
+  },
   "star/enif": {
    "description": "Enif är den ljusaste stjärnan i Pegasus och markerar nosen på den flygande hästen i stjärnbilden.",
    "fun_fact": "1972 upplevde Enif ett dramatiskt utbrott som tillfälligt ökade dess ljusstyrka med en faktor fem!",
@@ -1881,6 +2016,110 @@
    "mass": "~4.6 solmassor",
    "spectral_class": "K0II-III",
    "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/j052512+062100": {
+   "description": "Bellatrix markerar Orions (jägarens) vänstra skuldra. Dess namn betyder \"kvinnlig krigare\" på latin.",
+   "fun_fact": "Bellatrix är bara omkring 28 miljoner år gammal och kommer att förbruka sitt väte på ytterligare 7 miljoner år – ett kort liv för en stjärna!",
+   "distance": "250 ljusår",
+   "size": "6,2 solradier",
+   "mass": "8,4 solmassor",
+   "spectral_class": "B2 III"
+  },
+  "star/j054048-015624": {
+   "description": "Alnitak är den östligaste stjärnan i Orions bälte, bredvid Flammiga nebulosan och Hästhuvudnebulosan.",
+   "fun_fact": "Alnitak är den klaraste O-stjärnan på hela natthimlen! Om ungefär en miljon år kommer den att svälla upp till att bli större än Jupiters bana och explodera som en supernova.",
+   "distance": "1 260 ljusår",
+   "size": "20 solradier",
+   "mass": "33 solmassor",
+   "spectral_class": "O9.5 Iab"
+  },
+  "star/j055924+445700": {
+   "description": "Menkalinan är den näst ljusstarkaste stjärnan i Kusken. Dess namn betyder \"tygelhållarens axel\" på arabiska.",
+   "fun_fact": "Menkalinan är i själva verket två nästan identiska stjärnor som förmörkar varandra var 47,5:e timme – och om ungefär en miljon år kommer den att bli den klaraste stjärnan på vår natthimmel!",
+   "distance": "79 ljusår",
+   "size": "2,8 solradier",
+   "mass": "2,4 solmassor",
+   "spectral_class": "A1m IV + A1m IV"
+  },
+  "star/j062248-175736": {
+   "description": "Mirzam (Beta Canis Majoris) går upp strax före Sirius, vilket har gett den ett namn som betyder \"Budbäraren\" på arabiska.",
+   "fun_fact": "För ungefär fyra miljoner år sedan var Mirzam den ljusaste stjärnan på himlen med en magnitud på -3,65 – mycket ljusstarkare än Sirius framstår i dag!",
+   "distance": "490 ljusår",
+   "size": "8,4 solradier",
+   "mass": "13 solmassor",
+   "spectral_class": "B1 II-III"
+  },
+  "star/j070824-262324": {
+   "description": "Wezen är en gulvit superjätte i Stora hunden (Canis Major). Dess namn kommer från det arabiska ordet för \"vikt\".",
+   "fun_fact": "Om Wezen befann sig lika nära oss som Sirius gör, skulle den lysa lika starkt som en halvfull måne!",
+   "distance": "1 600 ljusår",
+   "size": "188 solradier",
+   "mass": "14 solmassor",
+   "spectral_class": "F8 Ia"
+  },
+  "star/j082248-593036": {
+   "description": "Avior (Epsilon Carinae) är en ljusstark dubbelstjärna i Kölen och en av de fyra stjärnorna i Falska korset.",
+   "fun_fact": "Falska korset förväxlas så ofta med Södra korset att det har orsakat verkliga navigeringsfel! Aviors namn uppfanns av brittiska almanacksskapare på 1930-talet.",
+   "distance": "610 ljusår",
+   "size": "151 solradier",
+   "mass": "10,5 solmassor",
+   "spectral_class": "K3 III + B2 Vp"
+  },
+  "star/j091312-694312": {
+   "description": "Miaplacidus är den näst ljusstarkaste stjärnan i Kölen (Carina) och utgör ett av hörnen i asterismen Diamantkorset.",
+   "fun_fact": "Miaplacidus har vuxit till en jätte efter att ha förbrukat vätet i sin kärna, men den snurrar ändå i raska 146 km/s!",
+   "distance": "113 ljusår",
+   "size": "5,8 solradier",
+   "mass": "3,9 solmassor",
+   "spectral_class": "A1 III"
+  },
+  "star/j123112-570636": {
+   "description": "Gacrux (Gamma Crucis) är den översta stjärnan i Södra korset och den röda jättestjärna som ligger närmast jorden.",
+   "fun_fact": "Gacrux är den närmaste M-typ röda jätten till oss, och dess namn är helt enkelt en navigators sammandragning av \"Gamma Crucis\" som skapades på 1940-talet!",
+   "distance": "89 ljusår",
+   "size": "73 solradier",
+   "mass": "1,5 solmassor",
+   "spectral_class": "M3.5 III"
+  },
+  "star/j124800-594124": {
+   "description": "Mimosa (Beta Crucis) är den näst ljusstarkaste stjärnan i Södra korset och en av de varmaste stjärnorna som kan ses med blotta ögat.",
+   "fun_fact": "Mimosa är en pulserande Beta Cephei-variabel – den sväller och krymper i tre överlappande rytmer som var och en bara varar i ungefär fyra timmar!",
+   "distance": "280 ljusår",
+   "size": "8 solradier",
+   "mass": "14,5 solmassor",
+   "spectral_class": "B0.5 III"
+  },
+  "star/j143936-605024": {
+   "description": "Toliman (Alpha Centauri B) är den orangea följeslagaren i det stjärnsystem som ligger närmast solen, i omloppsbana kring den ljusstarkare Rigil Kentaurus.",
+   "fun_fact": "Toliman fick sitt officiella namn först 2018. Den är något mindre och svalare än solen, och utgör tillsammans med sina två syskon våra närmaste stjärngrannar!",
+   "distance": "4,34 ljusår",
+   "size": "0,86 solradier",
+   "mass": "0,91 solmassor",
+   "spectral_class": "K1 V"
+  },
+  "star/j164836-690148": {
+   "description": "Atria är den ljusaste stjärnan i Södra triangeln, en oranget jätte långt större än solen.",
+   "fun_fact": "Atria är 139 gånger så stor som solens diameter – placerad i solsystemets mitt skulle den nästan nå Venus omloppsbanan!",
+   "distance": "391 ljusår",
+   "size": "139 solradier",
+   "mass": "6,4 solmassor",
+   "spectral_class": "K2 Ib-IIa"
+  },
+  "star/j173712-430000": {
+   "description": "Sargas är en ljusstark jätte i Skorpionens (Scorpius) stjärt, och bär ett traditionellt namn av sumeriskt ursprung.",
+   "fun_fact": "Sargas roterar så snabbt att den buktar utåt - den är en tredjedel bredare vid ekvatorn än från pol till pol, och kan ha bildats när två stjärnor sammansmälte!",
+   "distance": "329 ljusår",
+   "size": "35 solradier",
+   "mass": "3,1 solmassor",
+   "spectral_class": "F1 III"
+  },
+  "star/j202548-564348": {
+   "description": "Peacock är den ljusstarkaste stjärnan i Pavo (Påfågeln), en het blåvit stjärna på det djupa södra stjärnhimlen.",
+   "fun_fact": "Peacock fick sitt namn på 1930-talet eftersom RAF krävde att varje stjärna i deras nya flygalmanacka skulle ha ett namn – och den här hade inget!",
+   "distance": "179 ljusår",
+   "size": "4,8 solradier",
+   "mass": "5,9 solmassor",
+   "spectral_class": "B3 V"
   },
   "star/kaus_australis": {
    "description": "Kaus Australis är den ljusaste stjärnan i Skytten (Bågskytten). Dess namn betyder \"den södra bågen\" på en blandning av arabiska och latin.",
@@ -1944,6 +2183,12 @@
    "mass": "~8,5 solmassor",
    "spectral_class": "F5Ib",
    "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/n25": {
+   "description": "R Coronae Borealis är en sällsynt gul superjätte i stjärnbilden Norra auran, och prototypen för den klass av variabla stjärnor som har fått sitt namn efter den.",
+   "fun_fact": "R Coronae Borealis kallas ibland för en \"omvänd nova\" – i stället för att flamma upp bleknar den oförutsägbart med upp till 9 magnituder när den blåser ut moln av kolstoft som döljer den från sikte!",
+   "distance": "4 560 ljusår",
+   "spectral_class": "G0Iep"
   },
   "star/nunki": {
    "description": "Nunki är den näst ljusaste stjärnan i Skytten och det äldsta stjärnnamnet som fortfarande används.",

@@ -1,39 +1,186 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
-  Carried over from v1 by tools/salvage-translations/salvage.py.
-  Only strings whose English source is identical between v1 and v2 appear here;
-  everything else is translated by `tm`. Safe to hand-edit thereafter.
--->
+<?xml version='1.0' encoding='UTF-8'?>
 <resources>
+    <!-- tm:omitted name="app_name" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="splash_version" reason="identical_to_source" -->
+    <string name="splash_dismiss" translation_description="Accessibility label for the action that dismisses the launch splash when it is tapped">Sluiten</string>
+
+    <!-- tm:omitted name="north_pole" reason="identical_to_source" -->
     <string name="south_pole">ZP</string>
     <string name="zenith">ZENIT</string>
+    <!-- tm:omitted name="nadir" reason="identical_to_source" -->
     <string name="north">NOORD</string>
     <string name="south">ZUID</string>
     <string name="east">OOST</string>
+    <!-- tm:omitted name="west" reason="identical_to_source" -->
     <string name="ecliptic">Ecliptica</string>
+
+    <!-- Solar-system body names, drawn as labels next to each body. -->
     <string name="sun">Zon</string>
     <string name="moon">Maan</string>
     <string name="mercury">Mercurius</string>
+    <!-- tm:omitted name="venus" reason="identical_to_source" -->
     <string name="earth">Aarde</string>
+    <!-- tm:omitted name="mars" reason="identical_to_source" -->
+    <!-- tm:omitted name="jupiter" reason="identical_to_source" -->
     <string name="saturn">Saturnus</string>
+    <!-- tm:omitted name="uranus" reason="identical_to_source" -->
     <string name="neptune">Neptunus</string>
+    <!-- tm:omitted name="pluto" reason="identical_to_source" -->
+
+    <!-- Search (map-screen search dialog and overlay). -->
     <string name="search_button">Zoeken</string>
     <string name="search_label">Sterrenhemel doorzoeken</string>
+    <string name="search_hint" translation_description="Placeholder text in the search field showing example search targets.">bijv. Mars of M31</string>
+    <string name="search_coordinates_hint" translation_description="Helper text under the search field showing that celestial coordinates (right ascension and declination) can be typed directly, with two example formats.">Of voer coördinaten in: 12u 30m, +45° of 187.5 -45.2</string>
+    <string name="search_go" translation_description="Button that starts navigating the sky map toward the typed search target.">Zoeken</string>
     <string name="search_cancel">Annuleren</string>
     <string name="search_no_results">Geen resultaten gevonden. Mogelijk is het object op dit moment niet zichtbaar.</string>
+    <string name="search_target_looking_message" translation_description="Status shown while the user is being guided toward a search target. %1$s is the object name.">Zoeken naar: %1$s</string>
+    <string name="search_target_found_message" translation_description="Status shown when the search target has been found and is centered on screen. %1$s is the object name.">Gevonden: %1$s</string>
     <string name="search_overlay_prompt">Richt uw telefoon in de richting van de pijl</string>
+
+    <!-- Layer names in the layer-visibility sheet. -->
     <string name="layer_stars">Sterren</string>
     <string name="layer_constellations">Sterrenbeelden</string>
+    <string name="layer_deep_sky" translation_description="Toggle label for the layer showing deep-sky objects such as galaxies and nebulae.">Deep-sky objecten</string>
     <string name="layer_solar_system">Planeten</string>
     <string name="layer_meteor_showers">Meteorenregens</string>
+    <string name="layer_satellites" translation_description="Toggle label for the layer showing artificial satellites such as the International Space Station.">Satellieten</string>
+    <string name="channel_passes_name" translation_description="Name of the notification channel for alerts shortly before a satellite passes overhead.">Satellietovergangen</string>
+    <string name="channel_passes_description" translation_description="Description of the satellite-pass notification channel.">Eén melding kort voor de best zichtbare overgang van de nacht</string>
+    <string name="notif_pass_title" translation_description="Title of the notification sent shortly before a satellite passes overhead. %1$s is the satellite name.">%1$s komt binnenkort over</string>
+    <string name="notif_pass_text" translation_description="Body of the satellite pass notification, telling the user when to go outside. %1$s is a time.">Zichtbaar vanaf ongeveer %1$s — ga naar buiten en laat je ogen wennen</string>
+    <string name="channel_eclipses_name" translation_description="Name of the notification channel for alerts before a lunar eclipse starts.">Maansverduisteringen</string>
+    <string name="channel_eclipses_description" translation_description="Description of the lunar-eclipse notification channel.">Eén melding voordat een maansverduistering begint</string>
+    <string name="notif_eclipse_title" translation_description="Title of the notification sent before a lunar eclipse starts. %1$s is a localized eclipse type like \'Total lunar eclipse\'.">%1$s begint binnenkort</string>
+    <string name="notif_eclipse_text" translation_description="Body of the lunar eclipse notification, telling the user when it begins. %1$s is a time.">Begint rond %1$s — de moeite waard om even naar buiten te gaan</string>
+    <string name="satellite_name_iss" translation_description="Display name for the International Space Station.">Het Ruimtestation</string>
+    <!-- tm:omitted name="satellite_name_tiangong" reason="identical_to_source" -->
+    <string name="layer_param_pass_alerts" translation_description="Label for the setting that turns on a notification shortly before a satellite passes overhead.">Overgangsmeldingen</string>
+    <string name="layer_param_pass_alerts_description" translation_description="Explains what the pass-alert setting does: a single notification before the best visible pass of the night.">Meld me voor de best zichtbare overgang elke nacht</string>
+    <string name="layer_param_eclipse_alerts" translation_description="Label for the setting that turns on a notification before a lunar eclipse begins.">Verduisteringsmeldingen</string>
+    <string name="layer_param_eclipse_alerts_description" translation_description="Explains what the eclipse-alert setting does: a single notification before a lunar eclipse starts.">Meld me voordat een maansverduistering begint</string>
+    <string name="satellite_description" translation_description="Short description shown on the info card for an artificial satellite.">
+    Een kunstmatige satelliet in een lage baan om de aarde, verlicht door de zon tegen een donkere hemel. Hij beweegt in een paar minuten van horizon naar horizon, gestaag en zonder te knipperen.
+    </string>
+    <string name="satellite_next_pass" translation_description="Heading above the next visible pass details on a satellite\'s info card.">Volgende zichtbare overgang</string>
+    <string name="satellite_pass_when" translation_description="When and how high the next satellite pass will be. %1$s is a time, %2$s is a compass direction, %3$d is an angle in degrees.">%1$s, opkomend %2$s, bereikt %3$d°</string>
+    <string name="satellite_pass_magnitude" translation_description="How bright the satellite will be at its peak. %1$.1f is a brightness magnitude.">Magnitude %1$.1f op zijn helderst</string>
+    <string name="satellite_pass_shadow" translation_description="Tells the user the satellite will fade out mid-pass when it enters the Earth\'s shadow. %1$s is a time.">Vervaagt in de schaduw van de aarde om %1$s</string>
+    <string name="satellite_no_pass" translation_description="Shown on a satellite info card when no visible pass is coming up in the next two days.">Geen zichtbare overgangen in de komende dagen</string>
+    <string name="satellite_pass_unknown" translation_description="Shown on a satellite info card when the downloaded orbit data is too old to predict pass times reliably.">Baangegevens zijn te oud om overgangen te voorspellen</string>
+    <string name="object_info_eclipse_title" translation_description="Heading above the next lunar eclipse details on the Moon\'s info card.">Maansverduistering</string>
+    <string name="object_info_no_eclipse" translation_description="Shown on the Moon\'s info card when no lunar eclipse is coming up in the searched time range.">Geen maansverduistering binnenkort verwacht</string>
+    <string name="object_info_eclipse_greatest" translation_description="The next lunar eclipse\'s type and greatest-eclipse date/time. %1$s is a localized eclipse type like \'Total lunar eclipse\', %2$s a date, %3$s a time.">%1$s — grootste eclips %2$s om %3$s</string>
+    <string name="object_info_eclipse_totality" translation_description="The start and end time of totality during a total lunar eclipse. %1$s and %2$s are times.">Totaliteit %1$s – %2$s</string>
+    <string name="tonight_satellite_pass" translation_description="Tonight-widget row announcing a visible satellite pass. %1$s is the satellite name, %2$s is a time of day.">%1$s passeert om %2$s</string>
+    <string name="tonight_trailing_pass" translation_description="Small trailing note on a satellite pass row. %1$s is a compass direction, %2$d is an angle in degrees, %3$.1f is a brightness magnitude.">Opkomst %1$s, %2$d°, mag %3$.1f</string>
+    <string name="satellites_no_data" translation_description="Explanation shown when satellite orbital data has not been downloaded yet and so no satellites can be drawn.">Satellietposities hebben een internetverbinding nodig om bij te werken.</string>
+    <string name="satellites_refresh" translation_description="Button that tries to download satellite orbital data now.">Vernieuwen</string>
+    <string name="satellites_retry_soon" translation_description="Shown instead of a Refresh button when satellite data was just requested and cannot be requested again for a few minutes.">Probeer opnieuw over een paar minuten</string>
+    <string name="satellites_retry_within_hour" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for up to an hour.">Probeer opnieuw binnen een uur</string>
+    <string name="satellites_retry_hours" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for several hours.">Probeer opnieuw over een paar uur</string>
+    <string name="satellites_retry_tomorrow" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again until the next day.">Probeer morgen opnieuw</string>
+    <string name="satellites_retry_days" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for several days.">Probeer opnieuw over een paar dagen</string>
+    <string name="layer_grid" translation_description="Toggle label for the layer showing the right ascension / declination grid.">Hemelraster</string>
+    <!-- tm:omitted name="layer_horizon" reason="identical_to_source" -->
     <string name="layer_ecliptic">Ecliptica</string>
     <string name="layer_sky_gradient">Hemelgradiënt</string>
+
+    <!-- Map screen controls. -->
+    <string name="layers_sheet_title" translation_description="Title of the bottom sheet listing sky map layers the user can show or hide.">Lagen</string>
+    <string name="layers_group_objects" translation_description="Layers-sheet group header for layers that draw sky objects (stars, planets, deep-sky objects).">Objecten</string>
+    <string name="layers_group_reference" translation_description="Layers-sheet group header for reference elements drawn over the sky (coordinate grid, horizon, ecliptic).">Referentie</string>
+    <string name="layers_group_display" translation_description="Layers-sheet group header for display settings that change how the sky is rendered rather than what is drawn.">Weergave</string>
+    <string name="show_layers" translation_description="Accessibility description and label for the button opening the layer-visibility sheet, which holds the layers that do not fit on the rail plus display options.">Meer lagen en opties</string>
+    <string name="more_button" translation_description="Accessibility label and tooltip for the map-screen button (three vertical dots) opening the overflow menu of further destinations such as Gallery and Settings.">Meer opties</string>
     <string name="night_mode">Nachtmodus</string>
+    <string name="switch_to_manual" translation_description="Tooltip and accessibility label for the button that switches the map from auto (sensor-driven) mode to manual (drag) mode.">Schakel over naar handmatige modus</string>
+    <string name="switch_to_auto" translation_description="Tooltip and accessibility label for the button that switches the map from manual (drag) mode to auto (sensor-driven) mode.">Schakel over naar automatische modus</string>
+    <string name="no_sensor_warning" translation_description="Warning shown when the device lacks the motion sensors needed to point the map at the sky automatically.">
+    Dit apparaat heeft geen kompas of bewegingssensoren, dus Sky Map kan niet volgen waar je het naartoe richt. Sleep de kaart handmatig.
+    </string>
+    <!-- tm:omitted name="no_sensor_warning_dismiss" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="hud_ra_label" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_dec_label" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_alt_label" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_az_label" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_fov_label" reason="identical_to_source" -->
+    <string name="hud_correction_label" translation_description="Map-HUD row label for the manual sensor-alignment correction the user set by dragging. Keep very short.">Aanp.</string>
+    <!-- tm:omitted name="hud_ra_value" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_signed_degrees_value" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_azimuth_value" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_fov_value" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_fov_value_fine" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_fov_value_finest" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_correction_value" reason="identical_to_source" -->
+    <string name="hud_correction_reset" translation_description="Accessibility label for the small button that clears the manual sensor-alignment correction back to zero.">Uitlijningscorrectie resetten</string>
+    <string name="hud_alignment_reset_message" translation_description="Snackbar confirming the sensor-alignment correction was cleared; shown with an Undo action.">Uitlijningscorrectie gereset</string>
+    <string name="hud_fov_locked" translation_description="Accessibility label for the small lock icon shown next to the field-of-view readout while the camera controls the zoom in through-camera mode.">Zoom vergrendeld aan de camera</string>
+
+    <string name="layer_hud" translation_description="Layers-sheet Display toggle that shows the heads-up readout of where the phone is pointing (compass direction and altitude) over the star map.">Richtingsweergave</string>
+
+    <!-- Through-camera (AR) mode (camera-ar-mode.md, D64). -->
+    <string name="layer_camera" translation_description="Layers-sheet Display toggle that shows the live rear-camera image behind the star map, so the drawn sky overlays the real one.">Door-camera-modus</string>
+    <string name="layer_camera_needs_sensors" translation_description="Subtitle explaining why the through-camera toggle is disabled: the device has no usable motion sensors, and the mode needs the map to follow where the phone points.">Vereist bewegingssensoren die dit apparaat niet heeft</string>
+    <string name="ar_auto_mode_snackbar" translation_description="Snackbar shown when turning on through-camera mode switched the map from manual dragging back to automatic sensor pointing.">Automodus ingeschakeld voor de cameramodus</string>
+    <string name="ar_permission_denied" translation_description="Snackbar shown when the user declined the camera permission that through-camera mode needs.">Cameramodus vereist cameratoestemming</string>
     <string name="ar_permission_settings_action">Instellingen</string>
+    <string name="ar_exposure_slider" translation_description="Accessibility label for the slider adjusting the camera\'s exposure compensation while through-camera mode is on.">Belichting camera</string>
+    <string name="ar_alignment_adjusted_message" translation_description="Snackbar shown after the user drags the star map to align it with the camera image; shown with an Undo action that reverts the whole drag.">Kaartuitlijning aangepast</string>
+    <string name="ar_dimmer_slider" translation_description="Accessibility label for the slider dimming the camera image behind the star map while through-camera mode is on.">Cameradimmer</string>
+    <!-- tm:omitted name="ar_iso_slider_label" reason="identical_to_source" -->
+    <string name="ar_iso_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual ISO sensitivity in through-camera mode.">Camera-ISO</string>
+    <!-- tm:omitted name="ar_shutter_slider_label" reason="identical_to_source" -->
+    <string name="ar_shutter_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual shutter (exposure) time in through-camera mode.">Sluitertijd camera</string>
+    <string name="share_button" translation_description="Overflow-menu row that captures the current sky view as an image and opens the system share sheet.">Deel de hemel</string>
+    <string name="share_chooser_title" translation_description="Title of the system share sheet when sharing a captured sky image.">Deel deze hemel</string>
+    <string name="share_invitation" translation_description="Short invitation stamped on the footer of shared sky images, above the store link.">Zie waar je naar kijkt — download Sky Map gratis</string>
+    <string name="share_text" translation_description="Text accompanying a shared sky image in apps that accept both an image and text. %1$s is the app-store link.">Zie waar je naar kijkt — download Sky Map gratis: %1$s</string>
+    <!-- tm:omitted name="share_store_link" reason="identical_to_source" -->
+    <!-- tm:omitted name="share_layout_overlay" reason="identical_to_source" -->
+    <string name="share_layout_side_by_side" translation_description="Caption of the share-layout choice that puts the camera photo and the star map next to each other.">Naast elkaar</string>
+    <string name="share_shutter_button" translation_description="Accessibility label for the round shutter button that captures and shares the current through-camera view.">Deel deze weergave</string>
+    <string name="share_failed_message" translation_description="Snackbar shown when capturing the sky image for sharing failed.">Kon de hemel niet vastleggen — probeer opnieuw</string>
+    <!-- tm:omitted name="ar_exposure_auto" reason="identical_to_source" -->
+    <string-array name="hud_cardinal_directions" translation_description="The sixteen compass-point abbreviations, clockwise from north, used as the azimuth suffix in the map HUD (e.g. N, NNE, NE...). Translate to the locale\'s conventional compass abbreviations.">
+        <item>N</item>
+        <item>NNO</item>
+        <item>NO</item>
+        <item>ONO</item>
+        <item>O</item>
+        <item>OZO</item>
+        <item>ZO</item>
+        <item>ZZO</item>
+        <item>Z</item>
+        <item>ZZW</item>
+        <item>ZW</item>
+        <item>WZW</item>
+        <item>W</item>
+        <item>WNW</item>
+        <item>NW</item>
+        <item>NNW</item>
+    </string-array>
+
+    <!-- Time travel: entry button, dialog, and the player bar shown while travelling. -->
     <string name="time_travel_button">Tijdreizen</string>
     <string name="time_travel_title">Tijdreizen</string>
+    <string name="time_travel_visiting" translation_description="Readout in the time travel dialog showing the currently chosen destination date and time. %1$s is the formatted date and time.">Bezoekt: %1$s</string>
+    <string name="time_travel_pick_date" translation_description="Button in the time travel dialog that opens a date picker.">Datum instellen</string>
+    <string name="time_travel_pick_time" translation_description="Button in the time travel dialog that opens a time picker.">Tijd instellen</string>
+    <string name="time_travel_select_event" translation_description="Placeholder hint for the dropdown list of popular astronomical events in the time travel dialog.">Selecteer een populair evenement…</string>
+    <string name="time_travel_go" translation_description="Button that starts time travel to the chosen date.">Ga</string>
     <string name="time_travel_from_now">Nu starten</string>
+    <!-- tm:omitted name="time_travel_ok" reason="identical_to_source" -->
     <string name="time_travel_cancel">Annuleren</string>
+    <!-- tm:omitted name="time_travel_slower" reason="identical_to_source" -->
+    <!-- tm:omitted name="time_travel_pause" reason="identical_to_source" -->
+    <!-- tm:omitted name="time_travel_faster" reason="identical_to_source" -->
+    <string name="time_travel_return" translation_description="Player button that ends time travel and returns the map to the present.">Nu</string>
+
+    <!-- Time travel playback-rate labels (v1 wording). -->
     <string name="time_travel_second_speed">Beweegt &gt; @ 1 sec/sec</string>
     <string name="time_travel_minute_speed">Beweegt &gt; @ 1 min/sec</string>
     <string name="time_travel_10minute_speed">Beweegt &gt; @ 10 min/sec</string>
@@ -46,6 +193,9 @@
     <string name="time_travel_hour_speed_back">Beweegt &lt; @ 1 uur/sec</string>
     <string name="time_travel_day_speed_back">Beweegt &lt; @ 1 dag/sec</string>
     <string name="time_travel_week_speed_back">Beweegt &lt; @ 1 week/sec</string>
+
+    <!-- Popular events in the time travel dialog (timestamps live in TimeTravelEvents.kt). -->
+    <string name="time_travel_now" translation_description="Time travel picker entry that resets the destination to the present moment.">Nu</string>
     <string name="time_travel_next_sunset">Volgende zonsondergang</string>
     <string name="time_travel_next_sunrise">Volgende zonsopgang</string>
     <string name="time_travel_next_full_moon">Volgende volle maan</string>
@@ -57,6 +207,7 @@
     <string name="time_travel_mars_uranus_2026">Mars-Uranusnadering, 4 juli 2026</string>
     <string name="time_travel_solar_eclipse_2026">Totale zonsverduistering, 12 augustus 2026</string>
     <string name="time_travel_perseids_2026">Perseïden-meteorenregen, 12-13 augustus 2026</string>
+    <string name="time_travel_lunar_eclipse_aug_2026" translation_description="Name of an astronomical event in the time travel picker. Keep the date format suitable for your locale.">Gedeeltelijke maansverduistering, 28 aug 2026</string>
     <string name="time_travel_jupiter_occultation_2026">Maanbedekking van Jupiter, 6 oktober 2026</string>
     <string name="time_travel_geminids_2026">Geminiden-meteorenregen, 13-14 december 2026</string>
     <string name="time_travel_supermoon_2026">Kerstmis-supermaan, 24 december 2026</string>
@@ -65,7 +216,11 @@
     <string name="time_travel_apollo_11">Maanlanding van de Apollo 11</string>
     <string name="time_travel_jupiter_saturn_2020">Conjunctie Jupiter-Saturnus</string>
     <string name="sun_wont_set_message">De zon gaat op uw huidige locatie niet onder in de komende 24 uur.</string>
+    <string name="time_travel_start_message" translation_description="Toast message when time travel starts toward a chosen destination. %1$s is the formatted destination date and time.">Reist door de tijd naar %1$s ...</string>
     <string name="time_travel_close_message">Terug naar het heden ...</string>
+
+    <!-- Location management. -->
+    <string name="location_button" translation_description="Button on the map screen that opens the location management sheet">Locatie</string>
     <string name="location_management_title">Je locatie</string>
     <string name="location_source_auto">Automatisch</string>
     <string name="location_source_manual">Handmatig</string>
@@ -78,12 +233,18 @@
     <string name="location_set_toast">Locatie ingesteld op %1$s</string>
     <string name="location_long_lat">Lengtegraad:%1$.2f, breedtegraad:%2$.2f</string>
     <string name="location_map_unavailable">Kaart niet beschikbaar</string>
+    <string name="location_map_content_description" translation_description="Accessibility description of the static map image showing the current location of the user">Kaart van je huidige locatie</string>
+    <string name="snackbar_action_undo" translation_description="Snackbar action button that reverses the change the snackbar reports, e.g. re-enabling horizon auto-leveling">Ongedaan maken</string>
+    <string name="snackbar_action_open" translation_description="Snackbar action button that opens the screen the snackbar refers to, e.g. the compass calibration screen">Openen</string>
+    <string name="label_size_hint_message" translation_description="Snackbar shown once, the first time the user zooms in a long way. Explains that the text labels naming stars and other objects stay the same size however far you zoom, and that their size is changed in the app\'s Settings screen instead. Shown with an action button that opens Settings.">Labelgrootte verandert niet met zoom — stel deze in via Instellingen</string>
+    <string name="label_size_hint_action" translation_description="Action button on the label size snackbar; opens the app\'s Settings screen, where the user can change how large the sky labels are">Instellingen</string>
     <string name="location_permission_dialog_title">Locatie vereist</string>
     <string name="location_permission_dialog_message">
     Sky Map heeft uw geschatte locatie nodig om de juiste nachtelijke hemel weer te geven. U kunt toestemming geven, uw locatie handmatig invoeren of dit later beslissen. Als u dit later besluit, is de kaart niet nauwkeurig totdat uw locatie is ingesteld.
     </string>
     <string name="location_permission_grant">Toestemming geven</string>
     <string name="location_permission_enter_manually">Handmatig invoeren</string>
+    <!-- tm:omitted name="location_permission_later" reason="identical_to_source" -->
     <string name="location_permanently_denied_title">Toestemming vereist</string>
     <string name="location_permanently_denied_message">
     Locatietoestemming is permanent geweigerd. Open App-instellingen om dit opnieuw in te schakelen.
@@ -102,13 +263,36 @@
     <string name="location_geocoder_offline">Geen internet — voer coördinaten rechtstreeks in</string>
     <string name="location_invalid_latitude">Breedtegraad moet tussen −90 en 90 liggen</string>
     <string name="location_invalid_longitude">Lengtegraad moet tussen −180 en 180 liggen</string>
+    <!-- tm:omitted name="location_coordinate_format" reason="identical_to_source" -->
+
+    <!-- Object info card -->
+    <string name="object_info_image_credit" translation_description="Attribution line under the object\'s photo; %1$s is the credited source, e.g. NASA/ESA">Afbeelding: %1$s</string>
+    <string name="object_info_fun_fact" translation_description="An interesting trivia line on the object info card; %1$s is the fact text">Leuk weetje: %1$s</string>
     <string name="object_info_distance">Afstand:</string>
     <string name="object_info_size">Grootte:</string>
     <string name="object_info_mass">Massa:</string>
+    <string name="object_info_spectral_class" translation_description="Label for a star\'s spectral classification (e.g. G2V) on the info card">Spectraalklasse:</string>
+    <!-- tm:omitted name="object_info_magnitude" reason="identical_to_source" -->
+    <string name="object_info_rises" translation_description="Label on the info card for the time the object next rises above the horizon at the user\'s location">Komt op:</string>
+    <string name="object_info_sets" translation_description="Label on the info card for the time the object next sets below the horizon at the user\'s location">Gaat onder:</string>
+    <string name="object_info_always_above_horizon" translation_description="Info-card line shown for a circumpolar object that never sets at the user\'s location">Altijd boven de horizon op jouw locatie</string>
+    <string name="object_info_always_below_horizon" translation_description="Info-card line shown for an object that never rises at the user\'s location">Altijd onder de horizon op jouw locatie</string>
+    <string name="object_info_also_known_as" translation_description="Label on the info card above the object\'s alternative names (aliases and catalog designations), e.g. M31 and NGC 224">Ook bekend als:</string>
+    <string name="object_info_see_also" translation_description="Heading above links to related celestial objects on the info card">Zie ook</string>
     <string name="object_info_find_in_sky">Vinden in de sterrenhemel</string>
+    <string name="object_info_close" translation_description="Button that closes the object info card">Sluiten</string>
     <string name="object_info_tap_to_close">Tik om te sluiten</string>
+
+    <!-- Image gallery -->
+    <string name="gallery_button" translation_description="Map-screen menu item that opens a gallery of photographs of celestial objects. Not the user\'s own photos - these are catalog images from sources such as NASA and ESA.">Luchtgalerij</string>
+    <string name="gallery_title" translation_description="Title of the screen showing a gallery of photographs of celestial objects. Not the user\'s own photos - these are catalog images from sources such as NASA and ESA.">Luchtgalerij</string>
+    <string name="gallery_back" translation_description="Content description for the back arrow leaving the gallery screen">Terug</string>
+
+    <!-- Settings screen (v1 wording where a v1 string existed) -->
     <string name="settings_button">Instellingen</string>
     <string name="settings_title">Instellingen</string>
+    <string name="settings_back" translation_description="Content description for the back arrow leaving the settings screen">Terug</string>
+    <!-- tm:omitted name="settings_ok" reason="identical_to_source" -->
     <string name="settings_cancel">Annuleren</string>
     <string name="settings_section_controls">Bediening</string>
     <string name="settings_section_appearance">Uiterlijk</string>
@@ -116,30 +300,76 @@
     <string name="settings_section_other">Overig</string>
     <string name="enable_analytics">Gebruiksstatistieken verzenden</string>
     <string name="enable_analytics_desc">Verbeter Sky Map door anonieme gegevens naar Google Analytics te verzenden</string>
+    <string name="settings_diagnostics_summary" translation_description="Summary for the settings row that opens the diagnostics screen, which shows technical sensor, location and performance readouts useful when reporting a problem">Sensor-, locatie- en prestatiedetails</string>
     <string name="settings_tap_to_identify">Info weergeven bij tikken</string>
     <string name="settings_tap_to_identify_summary">Tik op hemellichamen om meer over hen te leren</string>
     <string name="settings_tap_in_auto_mode">Infokaarten in automatische modus</string>
     <string name="settings_tap_in_auto_mode_summary">Toon ook infokaarten bij het tikken op objecten in automatische (sensor) modus</string>
     <string name="settings_auto_level_horizon">Horizon automatisch nivelleren</string>
+    <string name="auto_level_on_toast" translation_description="Brief confirmation shown when a double tap turns horizon auto-leveling on in manual mode">Horizontale automatische nivellering aan</string>
+    <string name="auto_level_off_toast" translation_description="Brief confirmation shown when a double tap turns horizon auto-leveling off in manual mode">Horizontale automatische nivellering uit</string>
     <string name="settings_auto_level_horizon_summary">
     In handmatige modus keert de horizon geleidelijk terug naar horizontaal nadat u uw vingers loslaat
     </string>
+    <string name="settings_font_size" translation_description="Preference title: change the size of the text labels naming stars and other objects drawn on the sky">Grootte van hemellabels</string>
+    <string name="settings_font_size_summary" translation_description="Help to go along with the sky label size preference. Explains that this size is fixed and does not change as the user zooms the map in or out.">Labeltekst blijft deze grootte bij elke zoom</string>
+    <string name="settings_font_size_small" translation_description="Smallest font size">Klein</string>
+    <string name="settings_font_size_medium" translation_description="Normal font size">Normaal</string>
+    <string name="settings_font_size_large" translation_description="Large font size">Groot</string>
+    <string name="settings_font_size_extra_large" translation_description="Largest font size">Extra groot</string>
     <string name="settings_auto_dimness">Automatisch scherm dimmen</string>
+    <string name="settings_auto_dimness_summary" translation_description="Summary for the night-mode screen dimming preference">Hoeveel de nachtmodus het scherm dimt</string>
+    <string name="settings_auto_dimness_system" translation_description="Screen dimming option: leave brightness on the system setting">Systeemstandaard</string>
+    <string name="settings_auto_dimness_dim" translation_description="Screen dimming option: dimmest screen setting">Zeer gedimd</string>
+    <string name="settings_auto_dimness_classic" translation_description="Screen dimming option: the hand-tuned brightness Sky Map used for its first 15 years">Klassiek</string>
     <string name="settings_sky_gradient">Luchtverloop weergeven</string>
     <string name="settings_sky_gradient_summary">
     Geeft de lucht een blauwe tint nabij de zon en donker aan de tegenovergestelde zijde
     </string>
+    <string name="settings_disable_gyro" translation_description="Preference title for switching from the gyroscope to the legacy compass + accelerometer sensor pipeline">Gebruik oudere sensoren</string>
+    <string name="settings_disable_gyro_summary" translation_description="Explanation of the legacy sensors preference and when to use it">
+    Richting geven aan de kaart met het kompas en de versnellingsmeter in plaats van de gyroscoop. Probeer dit als de kaart afdrijft of als de gyroscoop van je apparaat hapert; apparaten zonder gyroscoop gebruiken deze sensoren automatisch.
+    </string>
     <string name="settings_sensor_speed">Sensorsnelheid</string>
+    <string name="settings_sensor_speed_slow" translation_description="Slow sensor speed">Langzaam</string>
+    <string name="settings_sensor_speed_standard" translation_description="Normal sensor speed">Normaal</string>
+    <string name="settings_sensor_speed_fast" translation_description="Fast sensor speed">Snel</string>
     <string name="settings_sensor_damping">Demping</string>
+    <string name="settings_sensor_damping_standard" translation_description="Low sensor damping factor - this will make the app jittery">Schokkerig</string>
+    <string name="settings_sensor_damping_high" translation_description="Medium sensor damping factor - this will make the app slightly jittery">Normaal</string>
+    <string name="settings_sensor_damping_extra_high" translation_description="Extra high sensor damping factor">Ongeveer goed</string>
+    <string name="settings_sensor_damping_really_high" translation_description="Really high sensor damping factor - this will make the app sluggish">Traag</string>
+    <string name="settings_classic_sensors_only" translation_description="Summary noting a sensor preference only applies to the legacy non-gyroscope sensor path">Alleen van toepassing wanneer oudere sensoren in gebruik zijn</string>
     <string name="settings_reverse_magnetic_z">Magnetische Z omkeren</string>
     <string name="settings_magnetic_correction">Magnetische correctie gebruiken</string>
+    <string name="settings_magnetic_correction_summary" translation_description="Summary for the magnetic correction preference">Corrigeert het kompas voor het verschil tussen magnetisch en geografisch noorden</string>
     <string name="settings_view_direction">Weergaverichting</string>
+    <string name="settings_view_direction_summary" translation_description="Explanation of the view direction preference, covering both landscape rotation and pointer modes">
+    Draai de horizon 90 graden (voor apparaten met een geforceerde liggende stand) of gebruik de aanwijsmodus zodat het scherm toont waar de bovenkant van de telefoon naar wijst
+    </string>
+    <string name="settings_view_direction_standard" translation_description="Normal viewing direction">Normaal</string>
+    <string name="settings_view_direction_rotate90" translation_description="View direction option that rotates the screen by 90 degrees">Gedraaide horizon</string>
+    <string name="settings_view_direction_telescope" translation_description="View direction option that shows the sky as pointed at by the long edge of the phone">Aanwijsmodus</string>
+
+    <!-- tm:omitted name="support_email" reason="identical_to_source" -->
     <string name="diagnostics_button">Diagnostiek</string>
     <string name="diagnostics_title">Diagnostiek</string>
+    <string name="diagnostics_share" translation_description="Accessibility label for the diagnostics screen button that emails these details to the developers">Verzenden naar ontwikkelaars</string>
+    <string name="diagnostics_share_subject" translation_description="Subject line of the email a user sends from the diagnostics screen">Sky Map diagnoseverslag</string>
+    <string name="diagnostics_report_header" translation_description="First line of the emailed diagnostics report, telling the user where to type their problem description. Keep it on one line.">--- Sky Map diagnose. Beschrijf het probleem boven deze regel. ---</string>
     <string name="diagnostics_section_general">Algemeen</string>
     <string name="diagnostics_device">Apparaat</string>
+    <!-- tm:omitted name="diagnostics_phone_format" reason="identical_to_source" -->
     <string name="diagnostics_android_version">Android-versie</string>
     <string name="diagnostics_sky_map_version">Sky Map-versie</string>
+    <!-- tm:omitted name="diagnostics_sky_map_version_format" reason="identical_to_source" -->
+    <string name="diagnostics_section_graphics" translation_description="Section heading in the diagnostics screen for graphics/GPU information">Grafisch</string>
+    <!-- tm:omitted name="diagnostics_gl_renderer" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_gl_version" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_gl_version_format" reason="identical_to_source" -->
+    <string name="diagnostics_gl_limits" translation_description="Row label in the diagnostics screen for graphics hardware limits (maximum texture size, supported line widths and point sizes)">GL-limieten</string>
+    <string name="diagnostics_gl_limits_format" translation_description="Format for the GL limits row: maximum texture size in pixels, then the supported line width and point size ranges. \'tex\' abbreviates texture. %1$d is texture size, %2$s is the line width range, %3$s is the point size range.">tex %1$d, lijn %2$s, punt %3$s</string>
+    <string name="diagnostics_gl_unavailable" translation_description="Value shown in the diagnostics Graphics rows before the sky map has drawn, when the graphics details are not known yet">Nog niet beschikbaar</string>
     <string name="diagnostics_section_sensors">Sensoren</string>
     <string name="diagnostics_accelerometer">Versnellingsmeter</string>
     <string name="diagnostics_compass">Kompas</string>
@@ -152,22 +382,43 @@
     <string name="diagnostics_location_permission">Locatiemachtiging</string>
     <string name="diagnostics_permission_granted">Verleend</string>
     <string name="diagnostics_permission_denied">Geweigerd</string>
+    <!-- tm:omitted name="diagnostics_gps" reason="identical_to_source" -->
     <string name="diagnostics_no_gps">Geen GPS</string>
     <string name="diagnostics_enabled">Ingeschakeld</string>
     <string name="diagnostics_disabled">Uitgeschakeld</string>
     <string name="diagnostics_permission_disabled">Toestemming uitgeschakeld</string>
     <string name="diagnostics_location">Locatie (lat, lang)</string>
+    <!-- tm:omitted name="diagnostics_location_format" reason="identical_to_source" -->
+    <string name="diagnostics_location_unset" translation_description="Location status shown in diagnostics when no location has been set yet">Niet ingesteld</string>
     <string name="diagnostics_location_acquiring">Bepalen…</string>
+    <string name="diagnostics_location_hardware_unavailable" translation_description="Location status shown in diagnostics when no location hardware is available">Geen locatiehardware</string>
     <string name="diagnostics_pointing">Richtingmomentopname</string>
+    <!-- tm:omitted name="diagnostics_dec_format" reason="identical_to_source" -->
     <string name="diagnostics_magnetic_correction">Mag. correctie</string>
+    <string name="diagnostics_alignment_adjustment" translation_description="Diagnostics row label for the manual sky-alignment correction the user set by dragging in through-camera mode.">Uitlijningsaanpassing</string>
+    <!-- tm:omitted name="diagnostics_alignment_format" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_magnetic_correction_format" reason="identical_to_source" -->
+    <string name="diagnostics_east" translation_description="Compass direction shown for an eastward magnetic correction">Oost</string>
+    <!-- tm:omitted name="diagnostics_west" reason="identical_to_source" -->
     <string name="diagnostics_local_datetime">Lokale datum/tijd</string>
     <string name="diagnostics_utc_datetime">Universele datum/tijd</string>
     <string name="diagnostics_section_network">Netwerk</string>
     <string name="diagnostics_connection">Verbinding</string>
+    <string name="diagnostics_section_satellites" translation_description="Section heading in the diagnostics screen for satellite orbital-data status">Satellieten</string>
+    <string name="diagnostics_satellite_data" translation_description="Row label in the diagnostics screen for the age and count of cached satellite orbital data">Baan gegevens</string>
+    <string name="diagnostics_satellite_data_none" translation_description="Row value in the diagnostics screen when no satellite orbital data has been downloaded yet">Niet gedownload</string>
+    <string name="diagnostics_satellite_data_format" translation_description="Row value in the diagnostics screen showing how many satellites are cached and how many days old the data is. %1$d is a count, %2$.1f is a number of days">%1$d satellieten, %2$.1f dagen oud</string>
+    <string name="diagnostics_satellite_last_fetch" translation_description="Row label in the diagnostics screen for the result of the most recent attempt to download satellite orbital data">Laatste ophaalpoging</string>
+    <string name="diagnostics_satellite_never_fetched" translation_description="Row value in the diagnostics screen when satellite orbital data has never been downloaded">Nooit</string>
+    <string name="diagnostics_satellite_circuit_open" translation_description="Row label in the diagnostics screen for when satellite downloads are paused after repeated server errors">Downloads gepauzeerd</string>
+    <string name="diagnostics_satellite_circuit_open_format" translation_description="Row value in the diagnostics screen showing when paused satellite downloads will resume and how many failures caused the pause. %1$s is a date and time, %2$d is a count">Tot %1$s (%2$d fouten)</string>
+    <string name="diagnostics_satellite_force_fetch" translation_description="Label on a debug-only button in the diagnostics screen that downloads satellite orbital data immediately">Satellietgegevens nu ophalen (debug)</string>
     <string name="diagnostics_connected">Verbonden</string>
     <string name="diagnostics_disconnected">Verbroken</string>
     <string name="diagnostics_wifi">(wifi)</string>
     <string name="diagnostics_cell">(mobiel)</string>
+
+    <!-- Compass calibration screen (slice 15) -->
     <string name="calibration_button">Kalibreren</string>
     <string name="calibration_heading_user">Het kompas van je telefoon</string>
     <string name="calibration_heading_warning">Het kompas van je telefoon heeft aandacht nodig</string>
@@ -178,20 +429,172 @@
     <string name="calibration_accuracy_high">Kalibratie: Goed</string>
     <string name="calibration_accuracy_no_contact">Kalibratie: Geen contact</string>
     <string name="calibration_do_not_show_again">Niet meer weergeven</string>
+    <string name="calibration_what_to_do" translation_description="Information for the user on how to calibrate the compass when the screen auto-opens. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[De kompassensor van je telefoon meldt een slechte kalibratie. De \'acht\'-beweging (<a href="%s">bekijk een demonstratie</a>) zorgt ervoor dat de hardware van je telefoon de kompassensor reset — Sky Map heeft geen controle over dit proces.<br/><br/><blockquote><b>Gekalibreerd betekent niet nauwkeurig.</b> Het \'acht\'-gebaar helpt de sensor te resetten, maar het kan geen storingen verwijderen van nabijgelegen metalen voorwerpen, autodashboards of telefoonhoesjes. Als de kaart na kalibratie nog steeds afwijkt, zijn die externe bronnen de meest waarschijnlijke oorzaak — niet Sky Map.</blockquote>Ga naar een open ruimte weg van metaal en probeer het opnieuw.]]></string>
+    <string name="calibration_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they open the calibration screen. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[Je telefoon rapporteert de kalibratiestatus van het kompas zoals hierboven weergegeven.<br/><br/>Voer indien nodig de \'acht\'-beweging uit (<a href="%s">bekijk een demonstratie</a>) om de hardware van je telefoon te vragen de kompassensor opnieuw te kalibreren.<br/><br/><blockquote><b>Belangrijk:</b> kalibratie helpt de sensor zichzelf intern te resetten. Het betekent niet dat het kompas noodzakelijkerwijs nauwkeurig is!Lokale magnetische interferentie (metalen voorwerpen, autodashboards, telefoonhoesjes) kan er nog steeds voor zorgen dat het kompas van je telefoon onnauwkeurige metingen naar Sky Map stuurt.</blockquote><b>Als de kaart de posities niet correct weergeeft, ligt het probleem waarschijnlijk bij je telefoon - niet bij Sky Map!</b>]]></string>
     <string name="calibration_low_accuracy_toast">Het kompas van je telefoon meldt een lage nauwkeurigheid</string>
+    <string name="calibration_complete_toast" translation_description="Toast shown when the compass reaches high accuracy and the auto-opened calibration screen closes itself">Sensoren hebben hoge nauwkeurigheid</string>
+
+    <!-- Startup routing: EULA, warm welcome, What's New (slice 16) -->
     <string name="eula_title">Servicevoorwaarden</string>
     <string name="dialog_accept">Accepteren</string>
     <string name="dialog_decline">Nee, bedankt</string>
-    <string name="whats_new_dialog_title">Wat\'s nieuw</string>
+    <!-- tm:omitted name="dialog_ok_button" reason="identical_to_source" -->
+
+    <string name="whats_new_dialog_title">Wat is er nieuw</string>
+    <string name="whats_new_version_heading" translation_description="Heading above the list of new features. %1$s is the app version name">Nieuw in versie %1$s</string>
+
+    <!-- Warm welcome (onboarding pager, slice 16) -->
     <string name="warm_welcome_slide1_title">Verken het heelal</string>
+    <string name="warm_welcome_slide1_desc" translation_description="Description for the first slide of the Warm Welcome onboarding, shown under a guided tour of the map controls">
+    Gebruik de lagen aan de linkerkant om sterren, sterrenbeelden, planeten en meer te filteren. De knoppen rechtsonder zoeken de hemel af, reizen door de tijd en wisselen weergavemodi. Tik op elk moment op de hemel om de bedieningselementen te verbergen of weer te geven.
+    </string>
     <string name="warm_welcome_slide2_title">Navigeer door de hemel</string>
+    <string name="warm_welcome_slide2_desc" translation_description="Description for the second slide of the Warm Welcome onboarding. Please do not change the &lt; and &gt; markup"><![CDATA[Richt je telefoon om rond te kijken in <b>Automodus</b>, of tik om over te schakelen naar <b>Handmatig</b> en verken door te vegen en te knijpen.]]></string>
+    <string name="warm_welcome_slide2_info_desc" translation_description="Description about info cards on the second slide of the Warm Welcome onboarding">
+    Tik op een gelabeld object om een infokaart zoals deze te openen, met een foto, leuke weetjes en hemelse details.
+    </string>
     <string name="warm_welcome_card_name">Krabnevel</string>
+    <string name="warm_welcome_card_description" translation_description="Description of the Crab Nebula on the sample info card on the second Warm Welcome slide">
+    De Krabnevel is een supernovarestant in Stier, het resultaat van een stellaire explosie die in 1054 n.Chr. door Chinese astronomen werd vastgelegd.
+    </string>
+    <string name="warm_welcome_card_fun_fact" translation_description="Fun fact about the Crab Nebula on the sample info card on the second Warm Welcome slide">
+    De Kreeftsnevel bevat een pulsar die 30 keer per seconde draait, de ingestorte kern van de geëxplodeerde ster!
+    </string>
+    <string name="warm_welcome_card_distance" translation_description="Distance to the Crab Nebula on the sample info card on the second Warm Welcome slide">6.500 lichtjaar</string>
+    <string name="warm_welcome_card_size" translation_description="Size of the Crab Nebula on the sample info card on the second Warm Welcome slide">11 lichtjaar breed</string>
     <string name="warm_welcome_slide3_title">Sensoren en kalibratie</string>
     <string name="warm_welcome_slide3_desc">Sky Map gebruikt de sensoren van je telefoon om uit te lijnen met de sterren.</string>
+    <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message on the third Warm Welcome slide when sensors are missing. Please do not change the &lt; and &gt; markup"><![CDATA[Je apparaat lijkt de benodigde sensoren voor automatische tracking te missen. Maak je geen zorgen—je kunt nog steeds de hele kosmos verkennen in <b>Handmatige Modus</b>!]]></string>
+    <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration advice on the third Warm Welcome slide. Please do not change the &lt; and &gt; markup"><![CDATA[Om nauwkeurig te blijven, beweeg je je telefoon af en toe snel in een <b>achtje</b>.]]></string>
     <string name="warm_welcome_skip">Overslaan</string>
     <string name="warm_welcome_next">Volgende</string>
     <string name="warm_welcome_finish">Start!</string>
     <string name="warm_welcome_sensor_ok">Werkt</string>
     <string name="warm_welcome_sensor_missing">Ontbreekt</string>
+
+    <!-- tm:omitted name="help_button" reason="identical_to_source" -->
     <string name="tutorial_button">Zelfstudie</string>
+    <!-- tm:omitted name="help_dialog_title" reason="identical_to_source" -->
+    <string name="help_version" translation_description="Version line at the top of the Help screen. %1$s is the app version name">Versie %1$s</string>
+    <string name="whats_new_button" translation_description="Map-screen menu item that opens the What's New and Credits screen">Wat is nieuw</string>
+    <string name="whats_new_screen_title" translation_description="Title of the screen showing the release notes and the credits">Wat is nieuw &amp; Credits</string>
+
+    <!-- The deep-sky symbol key at the foot of the Help screen. -->
+    <string name="help_symbol_key_title" translation_description="Heading of the Help section explaining the map symbols used for deep-sky objects">Kaartsymbolen</string>
+    <string name="help_symbol_key_intro" translation_description="Introductory sentence for the map-symbol key in Help">
+    Deep-sky objecten en meteorenzwermen worden gemarkeerd met een symbool dat hun type aangeeft:
+    </string>
+    <string name="symbol_key_galaxy" translation_description="Symbol-key label: the marker used for galaxies">Sterrenstelsel</string>
+    <!-- tm:omitted name="symbol_key_open_cluster" reason="identical_to_source" -->
+    <string name="symbol_key_globular_cluster" translation_description="Symbol-key label: the marker used for globular star clusters">Bolvormige cluster</string>
+    <string name="symbol_key_diffuse_nebula" translation_description="Symbol-key label: the marker used for diffuse nebulae">Diffuse nevel</string>
+    <string name="symbol_key_planetary_nebula" translation_description="Symbol-key label: the marker used for planetary nebulae">Planetaire nevel</string>
+    <string name="symbol_key_supernova_remnant" translation_description="Symbol-key label: the marker used for supernova remnants">Supernovarest</string>
+    <string name="symbol_key_asterism" translation_description="Symbol-key label: the marker used for asterisms and star clouds">Asterisme of sterrenwolk</string>
+    <string name="symbol_key_other" translation_description="Symbol-key label: the marker used for deep-sky objects of any other type">Ander deep-sky object</string>
+    <string name="symbol_key_meteor_radiant" translation_description="Symbol-key label: the marker for the point in the sky meteors of a shower appear to come from">Radiant van meteorenzwerm</string>
+    <string name="symbol_key_meteor_radiant_peak" translation_description="Symbol-key label: the brighter marker used when a meteor shower is near its peak activity">Meteorenzwerm nabij hoogtepunt</string>
+
+    <!-- Moon-phase home-screen widget (D69). -->
+    <string name="moon_widget_label" translation_description="Name of the moon-phase home-screen widget, shown in the launcher\'s widget picker">Maanfase</string>
+    <string name="moon_widget_description" translation_description="Description of the moon-phase widget, shown under its preview in the launcher\'s widget picker">
+    De fase, verlichting en opkomst- en ondergangstijden van de Maan, dagelijks bijgewerkt.
+    </string>
+    <string name="moon_widget_illumination" translation_description="Widget line showing how much of the Moon\'s disc is lit; %1$d is a percentage number">%1$d%% verlicht</string>
+    <string name="moon_widget_rise_time" translation_description="Widget fragment showing today\'s moonrise time; %1$s is a clock time like 17:42">opkomst %1$s</string>
+    <string name="moon_widget_set_time" translation_description="Widget fragment showing today\'s moonset time; %1$s is a clock time like 03:12">ondergang %1$s</string>
+    <string name="moon_phase_new" translation_description="Name of the lunar phase when the Moon is fully dark">Nieuwe Maan</string>
+    <string name="moon_phase_waxing_crescent" translation_description="Name of the lunar phase between new moon and first quarter">Wassende Sikkel</string>
+    <string name="moon_phase_first_quarter" translation_description="Name of the lunar phase when half the disc is lit and growing">Eerste Kwartier</string>
+    <string name="moon_phase_waxing_gibbous" translation_description="Name of the lunar phase between first quarter and full moon">Wassende Gibbous</string>
+    <string name="moon_phase_full" translation_description="Name of the lunar phase when the disc is fully lit">Volle Maan</string>
+    <string name="moon_phase_waning_gibbous" translation_description="Name of the lunar phase between full moon and last quarter">Afnemende Gibbous</string>
+    <string name="moon_phase_last_quarter" translation_description="Name of the lunar phase when half the disc is lit and shrinking">Laatste Kwartier</string>
+    <string name="moon_phase_waning_crescent" translation_description="Name of the lunar phase between last quarter and new moon">Afnemende Sikkel</string>
+    <string name="moon_widget_promo_title" translation_description="Title of the row on the Moon\'s info card offering to add the moon-phase widget to the home screen">Houd de Maan op je startscherm</string>
+    <string name="moon_widget_promo_subtitle" translation_description="Subtitle of the row offering the moon-phase widget, summarizing what the widget shows">Fase, verlichting en opkomsttijden, dagelijks bijgewerkt</string>
+    <string name="moon_widget_promo_add" translation_description="Button that adds the moon-phase widget to the home screen via the system dialog">Widget toevoegen</string>
+    <string name="moon_widget_promo_dismiss" translation_description="Accessibility label for the button that permanently dismisses the widget offer row">Widgetsuggestie sluiten</string>
+    <string name="moon_widget_pin_unsupported_title" translation_description="Title of the fallback dialog when the launcher cannot add widgets directly">Voeg de widget toe vanaf je startscherm</string>
+    <string name="moon_widget_pin_unsupported_body" translation_description="Body of the fallback dialog explaining how to add the widget manually">
+    Je launcher ondersteunt het toevoegen van widgets vanuit een app niet. Houd je startscherm ingedrukt, kies Widgets en zoek dan Sky Map.
+    </string>
+    <string name="moon_widget_pin_unsupported_ok" translation_description="Confirmation button of the manual widget-adding instructions dialog">Begrepen</string>
+    <string name="moon_widget_preview_illumination" translation_description="Representative illumination line shown in the widget picker\'s preview of the moon-phase widget">83% verlicht</string>
+
+    <!-- Tonight's-sky and countdown home-screen widgets (D69 phase 2). -->
+    <string name="tonight_widget_label" translation_description="Name of the tonight\'s-sky home-screen widget, shown in the launcher\'s widget picker">De hemel vanavond</string>
+    <string name="tonight_widget_description" translation_description="Description of the tonight\'s-sky widget, shown under its preview in the launcher\'s widget picker">
+    De beste bezienswaardigheden vanavond: goed geplaatste planeten, meteorenzwermen en maanevenementen, dagelijks bijgewerkt.
+    </string>
+    <string name="tonight_widget_header" translation_description="Small header label on the tonight widget; %1$s is a short date like \'Wed 30 Jul\'">Vanavond · %1$s</string>
+    <string name="tonight_widget_sun_times" translation_description="Header line on the tonight widget; %1$s is the sunset time, %2$s the time the sky becomes fully dark">zon onder %1$s · donker %2$s</string>
+    <string name="tonight_widget_sunset_only" translation_description="Header fragment when only the sunset time is known; %1$s is the sunset time">zon onder %1$s</string>
+    <string name="tonight_well_placed" translation_description="Tonight-widget row: a planet is high in the sky and easy to observe; %1$s is the planet name, %2$s the time from which it is well placed">%1$s goed zichtbaar vanaf %2$s</string>
+    <!-- tm:omitted name="tonight_trailing_direction" reason="identical_to_source" -->
+    <string name="tonight_shower_peak" translation_description="Tonight-widget row: a meteor shower reaches its annual peak tonight; %1$s is the shower name">%1$s piek vanavond</string>
+    <string name="tonight_shower_days" translation_description="Tonight-widget row: a meteor shower peaks within a few days; %1$s is the shower name, %2$d the number of days">%1$s piek over %2$d dagen</string>
+    <string name="tonight_dark_skies" translation_description="Small trailing note: the moon is dark, so viewing conditions are ideal">donkere hemel</string>
+    <string name="tonight_trailing_moon" translation_description="Small trailing note: how much of the moon is lit; %1$d is a percentage">maan %1$d%%</string>
+    <string name="tonight_new_moon" translation_description="Tonight-widget row shown at new moon">Nieuwe Maan — donkerste hemel van de maand</string>
+    <string name="tonight_full_moon" translation_description="Tonight-widget row shown at full moon">Volle Maan vanavond</string>
+    <string name="tonight_bright_moon" translation_description="Tonight-widget row warning that a bright moon washes out faint objects">Heldere maan overstraalt zwakke objecten</string>
+    <string name="tonight_lunar_eclipse_total" translation_description="Tonight-widget row: a total lunar eclipse is starting soon or under way">Totale maansverduistering</string>
+    <string name="tonight_lunar_eclipse_partial" translation_description="Tonight-widget row: a partial lunar eclipse is starting soon or under way">Gedeeltelijke maansverduistering</string>
+    <string name="tonight_lunar_eclipse_penumbral" translation_description="Tonight-widget row: a penumbral lunar eclipse is starting soon or under way">Penumbrale maansverduistering</string>
+    <string name="tonight_quiet" translation_description="Tonight-widget line shown when nothing notable is visible tonight">Rustige hemel vanavond</string>
+    <string name="tonight_quiet_next" translation_description="Tonight-widget line under the quiet-night message; %1$s is an event name, %2$d the days until it">Volgende: %1$s over %2$d dagen</string>
+    <string name="countdown_widget_label" translation_description="Name of the countdown home-screen widget, shown in the launcher\'s widget picker">Aftellen hemel</string>
+    <string name="countdown_widget_description" translation_description="Description of the countdown widget, shown under its preview in the launcher\'s widget picker">Dagen tot de volgende meteorenzwermpiek of maangebeurtenis.</string>
+    <string name="countdown_days" translation_description="Unit label inside the countdown ring, under the number of days">dagen</string>
+    <string name="countdown_tonight" translation_description="Shown inside the countdown ring when the event is tonight (zero days left)">nu</string>
+    <string name="countdown_shower_peak" translation_description="Countdown-widget event name; %1$s is a meteor shower name">%1$s piek</string>
+    <string name="countdown_new_moon_peak" translation_description="Countdown-widget note: the shower peaks near new moon, so skies will be dark">Piek bij nieuwe maan</string>
+    <string name="countdown_full_moon" translation_description="Countdown-widget event name for the next full moon">Volle Maan</string>
+    <string name="countdown_new_moon" translation_description="Countdown-widget event name for the next new moon">Nieuwe Maan</string>
+    <string name="tonight_widget_preview_row" translation_description="Representative highlight row shown in the widget picker\'s preview of the tonight widget">Jupiter goed zichtbaar vanaf 21:30 uur</string>
+    <!-- tm:omitted name="countdown_widget_preview_days" reason="identical_to_source" -->
+    <string name="countdown_widget_preview_name" translation_description="Representative event name shown in the widget picker\'s preview of the countdown widget">Perseïden piek</string>
+
+    <!-- Sky-event notifications (D77). -->
+    <string name="settings_section_notifications" translation_description="Settings section header for notification preferences">Meldingen</string>
+    <string name="settings_notifications_intro" translation_description="Introduction under the notifications settings header, stating how rarely the app notifies">
+    Sky Map stuurt alleen meldingen over zeldzame hemelgebeurtenissen, maximaal één keer per dag. Alles staat uit totdat je het aanzet.
+    </string>
+    <string name="settings_shower_alerts" translation_description="Preference title: notify on the evening a meteor shower reaches its annual peak">Meteorenzwermpieken</string>
+    <string name="settings_shower_alerts_summary" translation_description="Explanation of the meteor-shower notification preference">Ongeveer een dozijn per jaar, op de avond van de piek</string>
+    <string name="settings_tonight_digest" translation_description="Preference title: a single evening notification summarizing what\'s visible tonight">Hemeloverzicht vanavond</string>
+    <string name="settings_tonight_digest_summary" translation_description="Explanation of the tonight-digest notification preference">Eén samenvatting na zonsondergang, overgeslagen op rustige nachten</string>
+    <string name="settings_notifications_blocked" translation_description="Warning row shown when the user enabled notifications in the app but blocked them at the system level">Meldingen zijn geblokkeerd voor Sky Map</string>
+    <string name="settings_notifications_blocked_action" translation_description="Hint under the blocked-notifications warning; tapping opens the system settings page">Tik om ze toe te staan in systeeminstellingen</string>
+    <string name="channel_showers_name" translation_description="Name of the meteor-shower notification channel, shown in the system\'s notification settings">Meteorenzwermpieken</string>
+    <string name="channel_showers_description" translation_description="Description of the meteor-shower notification channel in the system\'s notification settings">Ongeveer een dozijn per jaar, op de avond van de piek</string>
+    <string name="channel_digest_name" translation_description="Name of the tonight-digest notification channel, shown in the system\'s notification settings">Hemeloverzicht vanavond</string>
+    <string name="channel_digest_description" translation_description="Description of the tonight-digest notification channel in the system\'s notification settings">Eén avondoverzicht, overgeslagen op rustige nachten</string>
+    <string name="notif_shower_title" translation_description="Title of the meteor-shower notification; %1$s is the shower name">%1$s piek vanavond</string>
+    <string name="notif_shower_direction" translation_description="Notification sentence telling the user where to look; %1$s is a compass point like NE">Het beste na middernacht, richting %1$s.</string>
+    <string name="notif_shower_dark_moon" translation_description="Notification sentence when the moon is dark during a meteor shower peak; %1$d is the expected meteors per hour">
+    Donkere, maanloze hemel — verwacht tot %1$d meteoren per uur weg van stadslampen.
+    </string>
+    <string name="notif_shower_bright_moon" translation_description="Notification sentence when a bright moon will interfere with a meteor shower; %1$d is the moon illumination percentage, %2$d the meteors per hour under ideal skies">
+    De %1$d%% verlichte maan zal zwakkere meteoren overstralen — tot %2$d per uur onder ideale omstandigheden.
+    </string>
+    <string name="notif_digest_title" translation_description="Title of the tonight\'s-sky digest notification">Vanavond de moeite waard</string>
+    <string name="notif_action_mute_showers" translation_description="Notification action button that opens the system toggle for the meteor-shower channel">Meteorenregens dempen</string>
+    <string name="time_travel_stopped">Tijdreizen gepauzeerd</string>
+    <!-- Layers sheet: per-layer parameters (D87). -->
+    <string name="layer_param_disc_size">Schijfgrootte</string>
+    <string name="layer_param_disc_size_true">Ware schaal</string>
+    <string name="layer_param_disc_size_true_desc">
+    Ware grootte aan de hemel bij elke zoom. Planeten zijn stipjes totdat je helemaal inzoomt.
+    </string>
+    <string name="layer_param_disc_size_glyphs">Symbolen</string>
+    <string name="layer_param_disc_size_glyphs_desc">
+    Grootte gebaseerd op de werkelijke grootte van elk object, niet op hoe groot het lijkt. Gemakkelijk te zien bij elke zoom.
+    </string>
+    <string name="layer_param_disc_size_auto">Vast</string>
+    <string name="layer_param_disc_size_auto_desc">
+    Houdt een vaste grootte op het scherm terwijl je inzoomt, en schakelt dan over naar de ware grootte.
+    </string>
+    <string name="layer_param_expand">Toon opties voor %1$s</string>
 </resources>

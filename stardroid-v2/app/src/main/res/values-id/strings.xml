@@ -1,42 +1,187 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
-  Carried over from v1 by tools/salvage-translations/salvage.py.
-  Only strings whose English source is identical between v1 and v2 appear here;
-  everything else is translated by `tm`. Safe to hand-edit thereafter.
--->
+<?xml version='1.0' encoding='UTF-8'?>
 <resources>
+    <!-- tm:omitted name="app_name" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="splash_version" reason="identical_to_source" -->
+    <string name="splash_dismiss" translation_description="Accessibility label for the action that dismisses the launch splash when it is tapped">Tutup</string>
+
+    <!-- Sky-map labels drawn by the computed layers (LayerStrings). -->
     <string name="north_pole">KU</string>
     <string name="south_pole">KS</string>
     <string name="zenith">ZENIT</string>
+    <!-- tm:omitted name="nadir" reason="identical_to_source" -->
     <string name="north">UTARA</string>
     <string name="south">SELATAN</string>
     <string name="east">TIMUR</string>
     <string name="west">BARAT</string>
     <string name="ecliptic">Ekliptika</string>
+
+    <!-- Solar-system body names, drawn as labels next to each body. -->
     <string name="sun">Matahari</string>
     <string name="moon">Bulan</string>
     <string name="mercury">Merkurius</string>
+    <!-- tm:omitted name="venus" reason="identical_to_source" -->
     <string name="earth">Bumi</string>
+    <!-- tm:omitted name="mars" reason="identical_to_source" -->
+    <!-- tm:omitted name="jupiter" reason="identical_to_source" -->
     <string name="saturn">Saturnus</string>
+    <!-- tm:omitted name="uranus" reason="identical_to_source" -->
     <string name="neptune">Neptunus</string>
+    <!-- tm:omitted name="pluto" reason="identical_to_source" -->
+
+    <!-- Search (map-screen search dialog and overlay). -->
     <string name="search_button">Cari</string>
     <string name="search_label">Cari Langit</string>
+    <string name="search_hint" translation_description="Placeholder text in the search field showing example search targets.">misalnya Mars atau M31</string>
+    <string name="search_coordinates_hint" translation_description="Helper text under the search field showing that celestial coordinates (right ascension and declination) can be typed directly, with two example formats.">Atau masukkan koordinat: 12j 30m, +45° atau 187.5 -45.2</string>
+    <string name="search_go" translation_description="Button that starts navigating the sky map toward the typed search target.">Cari</string>
     <string name="search_cancel">Batal</string>
     <string name="search_no_results">Tidak ada hasil yang ditemukan. Mungkin objek tidak terlihat pada saat ini.</string>
+    <string name="search_target_looking_message" translation_description="Status shown while the user is being guided toward a search target. %1$s is the object name.">Mencari: %1$s</string>
+    <string name="search_target_found_message" translation_description="Status shown when the search target has been found and is centered on screen. %1$s is the object name.">Ditemukan: %1$s</string>
     <string name="search_overlay_prompt">Arahkan ponsel Anda ke arah panah</string>
+
+    <!-- Layer names in the layer-visibility sheet. -->
     <string name="layer_stars">Bintang</string>
     <string name="layer_constellations">Konstelasi</string>
+    <string name="layer_deep_sky" translation_description="Toggle label for the layer showing deep-sky objects such as galaxies and nebulae.">Objek langit dalam</string>
     <string name="layer_solar_system">Sistem Surya</string>
     <string name="layer_meteor_showers">Hujan Meteor</string>
+    <string name="layer_satellites" translation_description="Toggle label for the layer showing artificial satellites such as the International Space Station.">Satelit</string>
+    <string name="channel_passes_name" translation_description="Name of the notification channel for alerts shortly before a satellite passes overhead.">Lintasan satelit</string>
+    <string name="channel_passes_description" translation_description="Description of the satellite-pass notification channel.">Satu peringatan sesaat sebelum lintasan terlihat terbaik malam ini</string>
+    <string name="notif_pass_title" translation_description="Title of the notification sent shortly before a satellite passes overhead. %1$s is the satellite name.">%1$s akan melintas di atas segera</string>
+    <string name="notif_pass_text" translation_description="Body of the satellite pass notification, telling the user when to go outside. %1$s is a time.">Terlihat mulai sekitar %1$s — keluarlah dan biarkan mata Anda menyesuaikan</string>
+    <string name="channel_eclipses_name" translation_description="Name of the notification channel for alerts before a lunar eclipse starts.">Gerhana bulan</string>
+    <string name="channel_eclipses_description" translation_description="Description of the lunar-eclipse notification channel.">Satu peringatan sebelum gerhana bulan dimulai</string>
+    <string name="notif_eclipse_title" translation_description="Title of the notification sent before a lunar eclipse starts. %1$s is a localized eclipse type like \'Total lunar eclipse\'.">%1$s akan segera dimulai</string>
+    <string name="notif_eclipse_text" translation_description="Body of the lunar eclipse notification, telling the user when it begins. %1$s is a time.">Dimulai sekitar %1$s — layak untuk keluar melihatnya</string>
+    <string name="satellite_name_iss" translation_description="Display name for the International Space Station.">Stasiun Luar Angkasa</string>
+    <!-- tm:omitted name="satellite_name_tiangong" reason="identical_to_source" -->
+    <string name="layer_param_pass_alerts" translation_description="Label for the setting that turns on a notification shortly before a satellite passes overhead.">Peringatan lintasan</string>
+    <string name="layer_param_pass_alerts_description" translation_description="Explains what the pass-alert setting does: a single notification before the best visible pass of the night.">Beri tahu saya sebelum lintasan terlihat terbaik setiap malam</string>
+    <string name="layer_param_eclipse_alerts" translation_description="Label for the setting that turns on a notification before a lunar eclipse begins.">Peringatan gerhana</string>
+    <string name="layer_param_eclipse_alerts_description" translation_description="Explains what the eclipse-alert setting does: a single notification before a lunar eclipse starts.">Beri tahu saya sebelum gerhana bulan dimulai</string>
+    <string name="satellite_description" translation_description="Short description shown on the info card for an artificial satellite.">
+    Satelit buatan di orbit Bumi rendah, terkena sinar matahari di langit gelap. Melintasi dari ufuk ke ufuk dalam beberapa menit, bergerak stabil dan tanpa berkedip.
+    </string>
+    <string name="satellite_next_pass" translation_description="Heading above the next visible pass details on a satellite\'s info card.">Lintasan terlihat berikutnya</string>
+    <string name="satellite_pass_when" translation_description="When and how high the next satellite pass will be. %1$s is a time, %2$s is a compass direction, %3$d is an angle in degrees.">%1$s, terbit %2$s, mencapai %3$d°</string>
+    <string name="satellite_pass_magnitude" translation_description="How bright the satellite will be at its peak. %1$.1f is a brightness magnitude.">Magnitudo %1$.1f pada puncaknya</string>
+    <string name="satellite_pass_shadow" translation_description="Tells the user the satellite will fade out mid-pass when it enters the Earth\'s shadow. %1$s is a time.">Memudar ke bayangan Bumi pada %1$s</string>
+    <string name="satellite_no_pass" translation_description="Shown on a satellite info card when no visible pass is coming up in the next two days.">Tidak ada lintasan terlihat dalam beberapa hari ke depan</string>
+    <string name="satellite_pass_unknown" translation_description="Shown on a satellite info card when the downloaded orbit data is too old to predict pass times reliably.">Data orbit terlalu lama untuk memprediksi lintasan</string>
+    <string name="object_info_eclipse_title" translation_description="Heading above the next lunar eclipse details on the Moon\'s info card.">Gerhana bulan</string>
+    <string name="object_info_no_eclipse" translation_description="Shown on the Moon\'s info card when no lunar eclipse is coming up in the searched time range.">Tidak ada gerhana bulan yang diperkirakan segera</string>
+    <string name="object_info_eclipse_greatest" translation_description="The next lunar eclipse\'s type and greatest-eclipse date/time. %1$s is a localized eclipse type like \'Total lunar eclipse\', %2$s a date, %3$s a time.">%1$s — puncak gerhana %2$s pada %3$s</string>
+    <string name="object_info_eclipse_totality" translation_description="The start and end time of totality during a total lunar eclipse. %1$s and %2$s are times.">Totalitas %1$s – %2$s</string>
+    <string name="tonight_satellite_pass" translation_description="Tonight-widget row announcing a visible satellite pass. %1$s is the satellite name, %2$s is a time of day.">%1$s melintas di atas pada %2$s</string>
+    <string name="tonight_trailing_pass" translation_description="Small trailing note on a satellite pass row. %1$s is a compass direction, %2$d is an angle in degrees, %3$.1f is a brightness magnitude.">Terbit %1$s, %2$d°, mag %3$.1f</string>
+    <string name="satellites_no_data" translation_description="Explanation shown when satellite orbital data has not been downloaded yet and so no satellites can be drawn.">Posisi satelit membutuhkan koneksi internet untuk memperbarui.</string>
+    <string name="satellites_refresh" translation_description="Button that tries to download satellite orbital data now.">Segarkan</string>
+    <string name="satellites_retry_soon" translation_description="Shown instead of a Refresh button when satellite data was just requested and cannot be requested again for a few minutes.">Coba lagi dalam beberapa menit</string>
+    <string name="satellites_retry_within_hour" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for up to an hour.">Coba lagi dalam satu jam</string>
+    <string name="satellites_retry_hours" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for several hours.">Coba lagi dalam beberapa jam</string>
+    <string name="satellites_retry_tomorrow" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again until the next day.">Coba lagi besok</string>
+    <string name="satellites_retry_days" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for several days.">Coba lagi dalam beberapa hari</string>
+    <string name="layer_grid" translation_description="Toggle label for the layer showing the right ascension / declination grid.">Kisi langit</string>
     <string name="layer_horizon">Cakrawala</string>
     <string name="layer_ecliptic">Ekliptika</string>
     <string name="layer_sky_gradient">Gradien Langit</string>
+
+    <!-- Map screen controls. -->
+    <string name="layers_sheet_title" translation_description="Title of the bottom sheet listing sky map layers the user can show or hide.">Lapisan</string>
+    <string name="layers_group_objects" translation_description="Layers-sheet group header for layers that draw sky objects (stars, planets, deep-sky objects).">Objek</string>
+    <string name="layers_group_reference" translation_description="Layers-sheet group header for reference elements drawn over the sky (coordinate grid, horizon, ecliptic).">Referensi</string>
+    <string name="layers_group_display" translation_description="Layers-sheet group header for display settings that change how the sky is rendered rather than what is drawn.">Tampilan</string>
+    <string name="show_layers" translation_description="Accessibility description and label for the button opening the layer-visibility sheet, which holds the layers that do not fit on the rail plus display options.">Lapisan dan opsi lainnya</string>
+    <string name="more_button" translation_description="Accessibility label and tooltip for the map-screen button (three vertical dots) opening the overflow menu of further destinations such as Gallery and Settings.">Opsi lainnya</string>
     <string name="night_mode">Mode Malam</string>
+    <string name="switch_to_manual" translation_description="Tooltip and accessibility label for the button that switches the map from auto (sensor-driven) mode to manual (drag) mode.">Beralih ke mode manual</string>
+    <string name="switch_to_auto" translation_description="Tooltip and accessibility label for the button that switches the map from manual (drag) mode to auto (sensor-driven) mode.">Beralih ke mode otomatis</string>
+    <string name="no_sensor_warning" translation_description="Warning shown when the device lacks the motion sensors needed to point the map at the sky automatically.">
+    Perangkat ini tidak memiliki kompas atau sensor gerak, sehingga Sky Map tidak dapat mengikuti arah yang Anda tunjuk. Seret peta secara manual saja.
+    </string>
+    <string name="no_sensor_warning_dismiss" translation_description="Button that dismisses the missing-sensors warning dialog.">OKE</string>
+
+    <!-- tm:omitted name="hud_ra_label" reason="identical_to_source" -->
+    <string name="hud_dec_label" translation_description="Map-HUD row label: declination of the point at the centre of the screen. Standard astronomy abbreviation; keep short.">Dek</string>
+    <!-- tm:omitted name="hud_alt_label" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_az_label" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_fov_label" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_correction_label" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_ra_value" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_signed_degrees_value" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_azimuth_value" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_fov_value" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_fov_value_fine" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_fov_value_finest" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_correction_value" reason="identical_to_source" -->
+    <string name="hud_correction_reset" translation_description="Accessibility label for the small button that clears the manual sensor-alignment correction back to zero.">Setel ulang koreksi penyelarasan</string>
+    <string name="hud_alignment_reset_message" translation_description="Snackbar confirming the sensor-alignment correction was cleared; shown with an Undo action.">Koreksi penyelarasan disetel ulang</string>
+    <string name="hud_fov_locked" translation_description="Accessibility label for the small lock icon shown next to the field-of-view readout while the camera controls the zoom in through-camera mode.">Zoom terkunci ke kamera</string>
+
+    <string name="layer_hud" translation_description="Layers-sheet Display toggle that shows the heads-up readout of where the phone is pointing (compass direction and altitude) over the star map.">Pembacaan arah</string>
+
+    <!-- Through-camera (AR) mode (camera-ar-mode.md, D64). -->
+    <string name="layer_camera" translation_description="Layers-sheet Display toggle that shows the live rear-camera image behind the star map, so the drawn sky overlays the real one.">Mode melalui kamera</string>
+    <string name="layer_camera_needs_sensors" translation_description="Subtitle explaining why the through-camera toggle is disabled: the device has no usable motion sensors, and the mode needs the map to follow where the phone points.">Membutuhkan sensor gerak yang tidak dimiliki perangkat ini</string>
+    <string name="ar_auto_mode_snackbar" translation_description="Snackbar shown when turning on through-camera mode switched the map from manual dragging back to automatic sensor pointing.">Mode otomatis diaktifkan untuk tampilan kamera</string>
+    <string name="ar_permission_denied" translation_description="Snackbar shown when the user declined the camera permission that through-camera mode needs.">Mode melalui kamera membutuhkan izin kamera</string>
     <string name="ar_permission_settings_action">Pengaturan</string>
+    <string name="ar_exposure_slider" translation_description="Accessibility label for the slider adjusting the camera\'s exposure compensation while through-camera mode is on.">Eksposur kamera</string>
+    <string name="ar_alignment_adjusted_message" translation_description="Snackbar shown after the user drags the star map to align it with the camera image; shown with an Undo action that reverts the whole drag.">Penyelarasan peta disesuaikan</string>
+    <string name="ar_dimmer_slider" translation_description="Accessibility label for the slider dimming the camera image behind the star map while through-camera mode is on.">Peredup kamera</string>
+    <!-- tm:omitted name="ar_iso_slider_label" reason="identical_to_source" -->
+    <string name="ar_iso_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual ISO sensitivity in through-camera mode.">ISO kamera</string>
+    <!-- tm:omitted name="ar_shutter_slider_label" reason="identical_to_source" -->
+    <string name="ar_shutter_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual shutter (exposure) time in through-camera mode.">Waktu rana kamera</string>
+    <string name="share_button" translation_description="Overflow-menu row that captures the current sky view as an image and opens the system share sheet.">Bagikan langit</string>
+    <string name="share_chooser_title" translation_description="Title of the system share sheet when sharing a captured sky image.">Bagikan langit ini</string>
+    <string name="share_invitation" translation_description="Short invitation stamped on the footer of shared sky images, above the store link.">Lihat apa yang Anda lihat — dapatkan Sky Map gratis</string>
+    <string name="share_text" translation_description="Text accompanying a shared sky image in apps that accept both an image and text. %1$s is the app-store link.">Lihat apa yang Anda lihat — dapatkan Sky Map gratis: %1$s</string>
+    <!-- tm:omitted name="share_store_link" reason="identical_to_source" -->
+    <string name="share_layout_overlay" translation_description="Caption of the share-layout choice that draws the star map over the camera photo, as seen on screen.">Hamparan</string>
+    <string name="share_layout_side_by_side" translation_description="Caption of the share-layout choice that puts the camera photo and the star map next to each other.">Berdampingan</string>
+    <string name="share_shutter_button" translation_description="Accessibility label for the round shutter button that captures and shares the current through-camera view.">Bagikan tampilan ini</string>
+    <string name="share_failed_message" translation_description="Snackbar shown when capturing the sky image for sharing failed.">Tidak dapat mengambil gambar langit — coba lagi</string>
+    <string name="ar_exposure_auto" translation_description="Readout shown when a manual camera exposure slider sits at its automatic position.">Otomatis</string>
+    <string-array name="hud_cardinal_directions" translation_description="The sixteen compass-point abbreviations, clockwise from north, used as the azimuth suffix in the map HUD (e.g. N, NNE, NE...). Translate to the locale\'s conventional compass abbreviations.">
+        <item>U</item>
+        <item>UTU</item>
+        <item>TL</item>
+        <item>TTL</item>
+        <item>T</item>
+        <item>TTS</item>
+        <item>TG</item>
+        <item>STG</item>
+        <item>S</item>
+        <item>SSB</item>
+        <item>BD</item>
+        <item>BBD</item>
+        <item>B</item>
+        <item>BBL</item>
+        <item>BL</item>
+        <item>UBL</item>
+    </string-array>
+
+    <!-- Time travel: entry button, dialog, and the player bar shown while travelling. -->
     <string name="time_travel_button">Perjalanan Waktu</string>
     <string name="time_travel_title">Perjalanan Waktu</string>
+    <string name="time_travel_visiting" translation_description="Readout in the time travel dialog showing the currently chosen destination date and time. %1$s is the formatted date and time.">Mengunjungi: %1$s</string>
+    <string name="time_travel_pick_date" translation_description="Button in the time travel dialog that opens a date picker.">Atur tanggal</string>
+    <string name="time_travel_pick_time" translation_description="Button in the time travel dialog that opens a time picker.">Atur waktu</string>
+    <string name="time_travel_select_event" translation_description="Placeholder hint for the dropdown list of popular astronomical events in the time travel dialog.">Pilih acara populer…</string>
+    <string name="time_travel_go" translation_description="Button that starts time travel to the chosen date.">Mulai</string>
     <string name="time_travel_from_now">Mulai dari Sekarang</string>
+    <string name="time_travel_ok" translation_description="Confirmation button in the date and time pickers.">OKE</string>
     <string name="time_travel_cancel">Batal</string>
+    <!-- tm:omitted name="time_travel_slower" reason="identical_to_source" -->
+    <!-- tm:omitted name="time_travel_pause" reason="identical_to_source" -->
+    <!-- tm:omitted name="time_travel_faster" reason="identical_to_source" -->
+    <string name="time_travel_return" translation_description="Player button that ends time travel and returns the map to the present.">Sekarang</string>
+
+    <!-- Time travel playback-rate labels (v1 wording). -->
     <string name="time_travel_second_speed">Bepergian &gt; @ 1 det/det</string>
     <string name="time_travel_minute_speed">Bepergian &gt; @ 1 menit/det</string>
     <string name="time_travel_10minute_speed">Bepergian &gt; @ 10 menit/det</string>
@@ -49,6 +194,9 @@
     <string name="time_travel_hour_speed_back">Bepergian &lt; @ 1 jam/det</string>
     <string name="time_travel_day_speed_back">Bepergian &lt; @ 1 hari/det</string>
     <string name="time_travel_week_speed_back">Bepergian &lt; @ 1 minggu/det</string>
+
+    <!-- Popular events in the time travel dialog (timestamps live in TimeTravelEvents.kt). -->
+    <string name="time_travel_now" translation_description="Time travel picker entry that resets the destination to the present moment.">Sekarang</string>
     <string name="time_travel_next_sunset">Matahari terbenam sore berikutnya</string>
     <string name="time_travel_next_sunrise">Matahari terbit pagi berikutnya</string>
     <string name="time_travel_next_full_moon">Bulan purnama berikutnya</string>
@@ -60,6 +208,7 @@
     <string name="time_travel_mars_uranus_2026">Pendekatan Dekat Mars-Uranus, 4 Jul 2026</string>
     <string name="time_travel_solar_eclipse_2026">Gerhana Matahari Total, 12 Agu 2026</string>
     <string name="time_travel_perseids_2026">Hujan Meteor Perseids, 12-13 Agu 2026</string>
+    <string name="time_travel_lunar_eclipse_aug_2026" translation_description="Name of an astronomical event in the time travel picker. Keep the date format suitable for your locale.">Gerhana Bulan Sebagian, 28 Agu 2026</string>
     <string name="time_travel_jupiter_occultation_2026">Okultasi Bulan Jupiter, 6 Okt 2026</string>
     <string name="time_travel_geminids_2026">Hujan Meteor Geminids, 13-14 Des 2026</string>
     <string name="time_travel_supermoon_2026">Supermoon Malam Natal, 24 Des 2026</string>
@@ -68,9 +217,14 @@
     <string name="time_travel_apollo_11">Pendaratan Bulan Apollo 11</string>
     <string name="time_travel_jupiter_saturn_2020">Konjungsi Jupiter-Saturnus 2020</string>
     <string name="sun_wont_set_message">Matahari tidak akan terbenam selama 24 jam ke depan di lokasi Anda saat ini.</string>
+    <string name="time_travel_start_message" translation_description="Toast message when time travel starts toward a chosen destination. %1$s is the formatted destination date and time.">Melakukan perjalanan waktu ke %1$s ...</string>
     <string name="time_travel_close_message">Kembali ke masa kini ...</string>
+
+    <!-- Location management. -->
+    <string name="location_button" translation_description="Button on the map screen that opens the location management sheet">Lokasi</string>
     <string name="location_management_title">Lokasi Anda</string>
     <string name="location_source_auto">Otomatis</string>
+    <!-- tm:omitted name="location_source_manual" reason="identical_to_source" -->
     <string name="location_source_acquiring">Mengakuisisi…</string>
     <string name="location_source_unset">Lokasi belum diatur</string>
     <string name="location_source_hardware_unavailable">Lokasi tidak tersedia di perangkat ini</string>
@@ -80,6 +234,11 @@
     <string name="location_set_toast">Lokasi diatur ke %1$s</string>
     <string name="location_long_lat">Bujur:%1$.2f, Lintang:%2$.2f</string>
     <string name="location_map_unavailable">Peta Tidak Tersedia</string>
+    <string name="location_map_content_description" translation_description="Accessibility description of the static map image showing the current location of the user">Peta lokasi Anda saat ini</string>
+    <string name="snackbar_action_undo" translation_description="Snackbar action button that reverses the change the snackbar reports, e.g. re-enabling horizon auto-leveling">Urungkan</string>
+    <string name="snackbar_action_open" translation_description="Snackbar action button that opens the screen the snackbar refers to, e.g. the compass calibration screen">Buka</string>
+    <string name="label_size_hint_message" translation_description="Snackbar shown once, the first time the user zooms in a long way. Explains that the text labels naming stars and other objects stay the same size however far you zoom, and that their size is changed in the app\'s Settings screen instead. Shown with an action button that opens Settings.">Ukuran label tidak berubah dengan zoom — atur di Pengaturan</string>
+    <string name="label_size_hint_action" translation_description="Action button on the label size snackbar; opens the app\'s Settings screen, where the user can change how large the sky labels are">Pengaturan</string>
     <string name="location_permission_dialog_title">Lokasi Diperlukan</string>
     <string name="location_permission_dialog_message">
     Sky Map memerlukan lokasi perkiraan Anda untuk menampilkan langit malam yang benar. Anda dapat memberikan izin, memasukkan lokasi Anda secara manual, atau memutuskan nanti. Jika Anda memutuskan nanti, peta tidak akan akurat sampai lokasi Anda telah diatur.
@@ -105,14 +264,36 @@
     <string name="location_geocoder_offline">Tidak ada internet — masukkan koordinat secara langsung</string>
     <string name="location_invalid_latitude">Lintang harus antara −90 dan 90</string>
     <string name="location_invalid_longitude">Bujur harus antara −180 dan 180</string>
+    <!-- tm:omitted name="location_coordinate_format" reason="identical_to_source" -->
+
+    <!-- Object info card -->
+    <string name="object_info_image_credit" translation_description="Attribution line under the object\'s photo; %1$s is the credited source, e.g. NASA/ESA">Gambar: %1$s</string>
+    <string name="object_info_fun_fact" translation_description="An interesting trivia line on the object info card; %1$s is the fact text">Fakta menarik: %1$s</string>
     <string name="object_info_distance">Jarak:</string>
     <string name="object_info_size">Ukuran:</string>
     <string name="object_info_mass">Massa:</string>
+    <string name="object_info_spectral_class" translation_description="Label for a star\'s spectral classification (e.g. G2V) on the info card">Kelas spektrum:</string>
     <string name="object_info_magnitude">Magnitudo:</string>
+    <string name="object_info_rises" translation_description="Label on the info card for the time the object next rises above the horizon at the user\'s location">Terbit:</string>
+    <string name="object_info_sets" translation_description="Label on the info card for the time the object next sets below the horizon at the user\'s location">Terbenam:</string>
+    <string name="object_info_always_above_horizon" translation_description="Info-card line shown for a circumpolar object that never sets at the user\'s location">Selalu di atas cakrawala di lokasi Anda</string>
+    <string name="object_info_always_below_horizon" translation_description="Info-card line shown for an object that never rises at the user\'s location">Selalu di bawah cakrawala di lokasi Anda</string>
+    <string name="object_info_also_known_as" translation_description="Label on the info card above the object\'s alternative names (aliases and catalog designations), e.g. M31 and NGC 224">Juga dikenal sebagai:</string>
+    <string name="object_info_see_also" translation_description="Heading above links to related celestial objects on the info card">Lihat juga</string>
     <string name="object_info_find_in_sky">Temukan di langit</string>
+    <string name="object_info_close" translation_description="Button that closes the object info card">Tutup</string>
     <string name="object_info_tap_to_close">Ketuk untuk menutup</string>
+
+    <!-- Image gallery -->
+    <string name="gallery_button" translation_description="Map-screen menu item that opens a gallery of photographs of celestial objects. Not the user\'s own photos - these are catalog images from sources such as NASA and ESA.">Galeri langit</string>
+    <string name="gallery_title" translation_description="Title of the screen showing a gallery of photographs of celestial objects. Not the user\'s own photos - these are catalog images from sources such as NASA and ESA.">Galeri langit</string>
+    <string name="gallery_back" translation_description="Content description for the back arrow leaving the gallery screen">Kembali</string>
+
+    <!-- Settings screen (v1 wording where a v1 string existed) -->
     <string name="settings_button">Pengaturan</string>
     <string name="settings_title">Pengaturan</string>
+    <string name="settings_back" translation_description="Content description for the back arrow leaving the settings screen">Kembali</string>
+    <string name="settings_ok" translation_description="Confirm button in settings dialogs">OKE</string>
     <string name="settings_cancel">Batal</string>
     <string name="settings_section_controls">Kontrol</string>
     <string name="settings_section_appearance">Penampilan</string>
@@ -120,28 +301,74 @@
     <string name="settings_section_other">Lainnya</string>
     <string name="enable_analytics">Kirim statistik penggunaan</string>
     <string name="enable_analytics_desc">Tingkatkan Sky Map dengan mengirim data anonim ke Google Analytics</string>
+    <string name="settings_diagnostics_summary" translation_description="Summary for the settings row that opens the diagnostics screen, which shows technical sensor, location and performance readouts useful when reporting a problem">Detail sensor, lokasi, dan kinerja</string>
     <string name="settings_tap_to_identify">Tampilkan info saat diketuk</string>
     <string name="settings_tap_to_identify_summary">Ketuk objek langit untuk mempelajari tentang mereka</string>
     <string name="settings_tap_in_auto_mode">Kartu info dalam mode otomatis</string>
     <string name="settings_tap_in_auto_mode_summary">Tampilkan juga kartu info saat mengetuk objek dalam mode otomatis (sensor)</string>
     <string name="settings_auto_level_horizon">Horison penyeimbang otomatis</string>
+    <string name="auto_level_on_toast" translation_description="Brief confirmation shown when a double tap turns horizon auto-leveling on in manual mode">Perataan otomatis cakrawala aktif</string>
+    <string name="auto_level_off_toast" translation_description="Brief confirmation shown when a double tap turns horizon auto-leveling off in manual mode">Perataan otomatis cakrawala nonaktif</string>
     <string name="settings_auto_level_horizon_summary">
     Dalam mode manual, horison secara bertahap kembali ke horizontal setelah Anda mengangkat jari
     </string>
+    <string name="settings_font_size" translation_description="Preference title: change the size of the text labels naming stars and other objects drawn on the sky">Ukuran label langit</string>
+    <string name="settings_font_size_summary" translation_description="Help to go along with the sky label size preference. Explains that this size is fixed and does not change as the user zooms the map in or out.">Teks label tetap ukuran ini pada zoom apa pun</string>
+    <string name="settings_font_size_small" translation_description="Smallest font size">Kecil</string>
+    <string name="settings_font_size_medium" translation_description="Normal font size">Sedang</string>
+    <string name="settings_font_size_large" translation_description="Large font size">Besar</string>
+    <string name="settings_font_size_extra_large" translation_description="Largest font size">Ekstra Besar</string>
     <string name="settings_auto_dimness">Penggelapan layar otomatis</string>
+    <string name="settings_auto_dimness_summary" translation_description="Summary for the night-mode screen dimming preference">Seberapa banyak mode malam meredupkan layar</string>
+    <string name="settings_auto_dimness_system" translation_description="Screen dimming option: leave brightness on the system setting">Default Sistem</string>
+    <string name="settings_auto_dimness_dim" translation_description="Screen dimming option: dimmest screen setting">Sangat Redup</string>
+    <string name="settings_auto_dimness_classic" translation_description="Screen dimming option: the hand-tuned brightness Sky Map used for its first 15 years">Klasik</string>
     <string name="settings_sky_gradient">Tampilkan gradien langit</string>
     <string name="settings_sky_gradient_summary">Mengarsir langit biru di dekat Matahari dan gelap di sisi sebaliknya</string>
+    <string name="settings_disable_gyro" translation_description="Preference title for switching from the gyroscope to the legacy compass + accelerometer sensor pipeline">Gunakan sensor lama</string>
+    <string name="settings_disable_gyro_summary" translation_description="Explanation of the legacy sensors preference and when to use it">
+    Arahkan peta menggunakan kompas dan akselerometer, bukan giroskop. Coba ini jika peta melayang atau giroskop perangkat Anda bermasalah; perangkat tanpa giroskop menggunakan sensor ini secara otomatis.
+    </string>
     <string name="settings_sensor_speed">Kecepatan Sensor</string>
+    <string name="settings_sensor_speed_slow" translation_description="Slow sensor speed">Lambat</string>
+    <string name="settings_sensor_speed_standard" translation_description="Normal sensor speed">Sedang</string>
+    <string name="settings_sensor_speed_fast" translation_description="Fast sensor speed">Cepat</string>
     <string name="settings_sensor_damping">Peredam</string>
+    <string name="settings_sensor_damping_standard" translation_description="Low sensor damping factor - this will make the app jittery">Gemetar</string>
+    <string name="settings_sensor_damping_high" translation_description="Medium sensor damping factor - this will make the app slightly jittery">Sedang</string>
+    <string name="settings_sensor_damping_extra_high" translation_description="Extra high sensor damping factor">Cukup tepat</string>
+    <string name="settings_sensor_damping_really_high" translation_description="Really high sensor damping factor - this will make the app sluggish">Lamban</string>
+    <string name="settings_classic_sensors_only" translation_description="Summary noting a sensor preference only applies to the legacy non-gyroscope sensor path">Hanya berlaku saat sensor lama digunakan</string>
     <string name="settings_reverse_magnetic_z">Balikkan Magnetik Z</string>
     <string name="settings_magnetic_correction">Gunakan koreksi magnetik</string>
+    <string name="settings_magnetic_correction_summary" translation_description="Summary for the magnetic correction preference">Mengoreksi kompas untuk perbedaan antara utara magnetis dan utara sejati</string>
     <string name="settings_view_direction">Arah pandangan</string>
+    <string name="settings_view_direction_summary" translation_description="Explanation of the view direction preference, covering both landscape rotation and pointer modes">
+    Putar cakrawala sebesar 90 derajat (untuk perangkat dengan lanskap paksa) atau gunakan mode penunjuk agar layar menunjukkan apa yang ditunjuk oleh bagian atas ponsel
+    </string>
+    <!-- tm:omitted name="settings_view_direction_standard" reason="identical_to_source" -->
+    <string name="settings_view_direction_rotate90" translation_description="View direction option that rotates the screen by 90 degrees">Cakrawala diputar</string>
+    <string name="settings_view_direction_telescope" translation_description="View direction option that shows the sky as pointed at by the long edge of the phone">Mode penunjuk</string>
+
+    <!-- tm:omitted name="support_email" reason="identical_to_source" -->
     <string name="diagnostics_button">Diagnostik</string>
     <string name="diagnostics_title">Diagnostik</string>
+    <string name="diagnostics_share" translation_description="Accessibility label for the diagnostics screen button that emails these details to the developers">Kirim ke pengembang</string>
+    <string name="diagnostics_share_subject" translation_description="Subject line of the email a user sends from the diagnostics screen">Laporan diagnostik Sky Map</string>
+    <string name="diagnostics_report_header" translation_description="First line of the emailed diagnostics report, telling the user where to type their problem description. Keep it on one line.">--- Diagnostik Sky Map. Harap jelaskan masalah di atas garis ini. ---</string>
     <string name="diagnostics_section_general">Umum</string>
     <string name="diagnostics_device">Perangkat</string>
+    <!-- tm:omitted name="diagnostics_phone_format" reason="identical_to_source" -->
     <string name="diagnostics_android_version">Versi Android</string>
     <string name="diagnostics_sky_map_version">Versi Sky Map</string>
+    <!-- tm:omitted name="diagnostics_sky_map_version_format" reason="identical_to_source" -->
+    <string name="diagnostics_section_graphics" translation_description="Section heading in the diagnostics screen for graphics/GPU information">Grafis</string>
+    <string name="diagnostics_gl_renderer" translation_description="Row label in the diagnostics screen for the name of the graphics processor (GPU) drawing the sky">Perender</string>
+    <!-- tm:omitted name="diagnostics_gl_version" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_gl_version_format" reason="identical_to_source" -->
+    <string name="diagnostics_gl_limits" translation_description="Row label in the diagnostics screen for graphics hardware limits (maximum texture size, supported line widths and point sizes)">Batas GL</string>
+    <string name="diagnostics_gl_limits_format" translation_description="Format for the GL limits row: maximum texture size in pixels, then the supported line width and point size ranges. \'tex\' abbreviates texture. %1$d is texture size, %2$s is the line width range, %3$s is the point size range.">tekstur %1$d, garis %2$s, titik %3$s</string>
+    <string name="diagnostics_gl_unavailable" translation_description="Value shown in the diagnostics Graphics rows before the sky map has drawn, when the graphics details are not known yet">Belum tersedia</string>
     <string name="diagnostics_section_sensors">Sensor</string>
     <string name="diagnostics_accelerometer">Akselerometer</string>
     <string name="diagnostics_compass">Kompas</string>
@@ -154,22 +381,43 @@
     <string name="diagnostics_location_permission">Izin Lokasi</string>
     <string name="diagnostics_permission_granted">Diberikan</string>
     <string name="diagnostics_permission_denied">Ditolak</string>
+    <!-- tm:omitted name="diagnostics_gps" reason="identical_to_source" -->
     <string name="diagnostics_no_gps">Tidak ada GPS</string>
     <string name="diagnostics_enabled">Diaktifkan</string>
     <string name="diagnostics_disabled">Dinonaktifkan</string>
     <string name="diagnostics_permission_disabled">Izin dinonaktifkan</string>
     <string name="diagnostics_location">Lokasi (lat, long)</string>
+    <!-- tm:omitted name="diagnostics_location_format" reason="identical_to_source" -->
+    <string name="diagnostics_location_unset" translation_description="Location status shown in diagnostics when no location has been set yet">Belum diatur</string>
     <string name="diagnostics_location_acquiring">Mengakuisisi…</string>
+    <string name="diagnostics_location_hardware_unavailable" translation_description="Location status shown in diagnostics when no location hardware is available">Tidak ada perangkat keras lokasi</string>
     <string name="diagnostics_pointing">Snapshot penunjukan</string>
+    <!-- tm:omitted name="diagnostics_dec_format" reason="identical_to_source" -->
     <string name="diagnostics_magnetic_correction">Koreksi mag</string>
+    <string name="diagnostics_alignment_adjustment" translation_description="Diagnostics row label for the manual sky-alignment correction the user set by dragging in through-camera mode.">Penyesuaian penyelarasan</string>
+    <!-- tm:omitted name="diagnostics_alignment_format" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_magnetic_correction_format" reason="identical_to_source" -->
+    <string name="diagnostics_east" translation_description="Compass direction shown for an eastward magnetic correction">Timur</string>
+    <string name="diagnostics_west" translation_description="Compass direction shown for a westward magnetic correction">Barat</string>
     <string name="diagnostics_local_datetime">Waktu lokal</string>
     <string name="diagnostics_utc_datetime">Waktu universal</string>
     <string name="diagnostics_section_network">Jaringan</string>
     <string name="diagnostics_connection">Koneksi</string>
+    <string name="diagnostics_section_satellites" translation_description="Section heading in the diagnostics screen for satellite orbital-data status">Satelit</string>
+    <string name="diagnostics_satellite_data" translation_description="Row label in the diagnostics screen for the age and count of cached satellite orbital data">Data orbit</string>
+    <string name="diagnostics_satellite_data_none" translation_description="Row value in the diagnostics screen when no satellite orbital data has been downloaded yet">Belum diunduh</string>
+    <string name="diagnostics_satellite_data_format" translation_description="Row value in the diagnostics screen showing how many satellites are cached and how many days old the data is. %1$d is a count, %2$.1f is a number of days">%1$d satelit, %2$.1f hari yang lalu</string>
+    <string name="diagnostics_satellite_last_fetch" translation_description="Row label in the diagnostics screen for the result of the most recent attempt to download satellite orbital data">Pengambilan terakhir</string>
+    <string name="diagnostics_satellite_never_fetched" translation_description="Row value in the diagnostics screen when satellite orbital data has never been downloaded">Tidak pernah</string>
+    <string name="diagnostics_satellite_circuit_open" translation_description="Row label in the diagnostics screen for when satellite downloads are paused after repeated server errors">Unduhan dijeda</string>
+    <string name="diagnostics_satellite_circuit_open_format" translation_description="Row value in the diagnostics screen showing when paused satellite downloads will resume and how many failures caused the pause. %1$s is a date and time, %2$d is a count">Hingga %1$s (%2$d kegagalan)</string>
+    <string name="diagnostics_satellite_force_fetch" translation_description="Label on a debug-only button in the diagnostics screen that downloads satellite orbital data immediately">Ambil data satelit sekarang (debug)</string>
     <string name="diagnostics_connected">Terhubung</string>
     <string name="diagnostics_disconnected">Terputus</string>
     <string name="diagnostics_wifi">(wifi)</string>
     <string name="diagnostics_cell">(seluler)</string>
+
+    <!-- Compass calibration screen (slice 15) -->
     <string name="calibration_button">Kalibrasi</string>
     <string name="calibration_heading_user">Kompas Ponsel Anda</string>
     <string name="calibration_heading_warning">Kompas Ponsel Anda Perlu Perhatian</string>
@@ -180,23 +428,175 @@
     <string name="calibration_accuracy_high">Kalibrasi: Baik</string>
     <string name="calibration_accuracy_no_contact">Kalibrasi: Tidak ada kontak</string>
     <string name="calibration_do_not_show_again">Jangan tampilkan lagi</string>
+    <string name="calibration_what_to_do" translation_description="Information for the user on how to calibrate the compass when the screen auto-opens. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[Sensor kompas ponsel Anda melaporkan kalibrasi yang buruk. Gerakan angka-8 (<a href="%s">tonton demonstrasinya</a>) akan meminta perangkat keras ponsel Anda untuk mengatur ulang sensor kompasnya — Sky Map tidak memiliki kendali atas proses ini.<br/><br/><blockquote><b>Terkalibrasi bukan berarti akurat.</b> Gerakan angka-8 membantu mengatur ulang sensor, tetapi tidak dapat menghilangkan gangguan dari benda logam di dekatnya, dasbor mobil, atau casing ponsel. Jika peta masih tidak akurat setelah kalibrasi, sumber eksternal tersebut adalah penyebab yang paling mungkin — bukan Sky Map.</blockquote>Pindah ke area terbuka yang jauh dari logam dan coba lagi.]]></string>
+    <string name="calibration_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they open the calibration screen. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[Ponsel Anda melaporkan status kalibrasi kompasnya seperti yang ditunjukkan di atas.<br/><br/>Jika perlu, lakukan gerakan angka-8 (<a href="%s">tonton demonstrasi</a>) untuk meminta perangkat keras ponsel Anda mengkalibrasi ulang sensor kompasnya.<br/><br/><blockquote><b>Penting:</b> kalibrasi membantu sensor mengatur ulang dirinya secara internal. Ini tidak berarti kompas pasti akurat! Interferensi magnetik lokal (benda logam, dasbor mobil, casing ponsel) masih dapat menyebabkan kompas ponsel Anda mengirimkan pembacaan yang tidak akurat ke Sky Map.</blockquote><b>Jika peta tidak menampilkan posisi dengan benar, masalahnya kemungkinan besar ada pada ponsel Anda - bukan Sky Map!</b>]]></string>
     <string name="calibration_low_accuracy_toast">Kompas ponsel Anda melaporkan akurasi rendah</string>
+    <string name="calibration_complete_toast" translation_description="Toast shown when the compass reaches high accuracy and the auto-opened calibration screen closes itself">Sensor memiliki akurasi tinggi</string>
+
+    <!-- Startup routing: EULA, warm welcome, What's New (slice 16) -->
     <string name="eula_title">Syarat Layanan</string>
     <string name="dialog_accept">Terima</string>
     <string name="dialog_decline">Tidak, Terima Kasih</string>
+    <string name="dialog_ok_button" translation_description="Generic OK/confirm button label for dialogs">OKE</string>
+
     <string name="whats_new_dialog_title">Yang baru</string>
+    <string name="whats_new_version_heading" translation_description="Heading above the list of new features. %1$s is the app version name">Baru di versi %1$s</string>
+
+    <!-- Warm welcome (onboarding pager, slice 16) -->
     <string name="warm_welcome_slide1_title">Jelajahi Kosmos</string>
+    <string name="warm_welcome_slide1_desc" translation_description="Description for the first slide of the Warm Welcome onboarding, shown under a guided tour of the map controls">
+    Gunakan lapisan di kiri untuk menyaring bintang, rasi bintang, planet, dan lainnya. Tombol di kanan bawah mencari di langit, menjelajahi waktu, dan mengganti mode tampilan. Ketuk langit kapan saja untuk menyembunyikan atau menampilkan kontrol.
+    </string>
     <string name="warm_welcome_slide2_title">Navigasi Langit</string>
+    <string name="warm_welcome_slide2_desc" translation_description="Description for the second slide of the Warm Welcome onboarding. Please do not change the &lt; and &gt; markup"><![CDATA[Arahkan ponsel Anda untuk melihat-lihat dalam <b>Mode Otomatis</b>, atau ketuk untuk beralih ke <b>Mode Manual</b> dan jelajahi dengan menggeser dan mencubit.]]></string>
+    <string name="warm_welcome_slide2_info_desc" translation_description="Description about info cards on the second slide of the Warm Welcome onboarding">
+    Ketuk objek berlabel apa pun untuk membuka Kartu Info seperti ini, dengan foto, fakta menarik, dan detail benda langit.
+    </string>
     <string name="warm_welcome_card_name">Nebula Kepiting</string>
+    <string name="warm_welcome_card_description" translation_description="Description of the Crab Nebula on the sample info card on the second Warm Welcome slide">
+    Nebula Kepiting adalah sisa-sisa supernova di Taurus, hasil dari ledakan bintang yang dicatat oleh astronom Tiongkok pada tahun 1054 Masehi.
+    </string>
+    <string name="warm_welcome_card_fun_fact" translation_description="Fun fact about the Crab Nebula on the sample info card on the second Warm Welcome slide">
+    Nebula Kepiting berisi pulsar yang berputar 30 kali per detik, inti yang runtuh dari bintang yang meledak!
+    </string>
+    <string name="warm_welcome_card_distance" translation_description="Distance to the Crab Nebula on the sample info card on the second Warm Welcome slide">6.500 tahun cahaya</string>
+    <string name="warm_welcome_card_size" translation_description="Size of the Crab Nebula on the sample info card on the second Warm Welcome slide">Lebar 11 tahun cahaya</string>
     <string name="warm_welcome_slide3_title">Sensor &amp; Kalibrasi</string>
     <string name="warm_welcome_slide3_desc">
     Sky Map menggunakan sensor ponsel Anda untuk menyelaraskan dengan bintang-bintang.
     </string>
+    <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message on the third Warm Welcome slide when sensors are missing. Please do not change the &lt; and &gt; markup"><![CDATA[Perangkat Anda tampaknya tidak memiliki sensor yang diperlukan untuk pelacakan otomatis. Jangan khawatir—Anda masih bisa menjelajahi seluruh kosmos dalam <b>Mode Manual</b>!]]></string>
+    <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration advice on the third Warm Welcome slide. Please do not change the &lt; and &gt; markup"><![CDATA[Agar tetap akurat, goyangkan ponsel Anda dengan cepat membentuk <b>angka 8</b> sesekali.]]></string>
     <string name="warm_welcome_skip">Lewati</string>
     <string name="warm_welcome_next">Berikutnya</string>
     <string name="warm_welcome_finish">Mulai!</string>
     <string name="warm_welcome_sensor_ok">Berfungsi</string>
     <string name="warm_welcome_sensor_missing">Hilang</string>
+
+    <!-- Help dialog (slice 16) -->
     <string name="help_button">Bantuan</string>
+    <!-- tm:omitted name="tutorial_button" reason="identical_to_source" -->
     <string name="help_dialog_title">Bantuan</string>
+    <string name="help_version" translation_description="Version line at the top of the Help screen. %1$s is the app version name">Versi %1$s</string>
+    <string name="whats_new_button" translation_description="Map-screen menu item that opens the What's New and Credits screen">Apa yang baru</string>
+    <string name="whats_new_screen_title" translation_description="Title of the screen showing the release notes and the credits">Apa yang Baru &amp; Kredit</string>
+
+    <!-- The deep-sky symbol key at the foot of the Help screen. -->
+    <string name="help_symbol_key_title" translation_description="Heading of the Help section explaining the map symbols used for deep-sky objects">Simbol peta</string>
+    <string name="help_symbol_key_intro" translation_description="Introductory sentence for the map-symbol key in Help">
+    Objek langit dalam dan hujan meteor ditandai dengan simbol yang menunjukkan jenisnya:
+    </string>
+    <string name="symbol_key_galaxy" translation_description="Symbol-key label: the marker used for galaxies">Galaksi</string>
+    <string name="symbol_key_open_cluster" translation_description="Symbol-key label: the marker used for open star clusters">Gugus terbuka</string>
+    <string name="symbol_key_globular_cluster" translation_description="Symbol-key label: the marker used for globular star clusters">Gugus bola</string>
+    <string name="symbol_key_diffuse_nebula" translation_description="Symbol-key label: the marker used for diffuse nebulae">Nebula difus</string>
+    <string name="symbol_key_planetary_nebula" translation_description="Symbol-key label: the marker used for planetary nebulae">Nebula planet</string>
+    <string name="symbol_key_supernova_remnant" translation_description="Symbol-key label: the marker used for supernova remnants">Sisa supernova</string>
+    <string name="symbol_key_asterism" translation_description="Symbol-key label: the marker used for asterisms and star clouds">Asterisme atau awan bintang</string>
+    <string name="symbol_key_other" translation_description="Symbol-key label: the marker used for deep-sky objects of any other type">Objek langit dalam lainnya</string>
+    <string name="symbol_key_meteor_radiant" translation_description="Symbol-key label: the marker for the point in the sky meteors of a shower appear to come from">Radiant hujan meteor</string>
+    <string name="symbol_key_meteor_radiant_peak" translation_description="Symbol-key label: the brighter marker used when a meteor shower is near its peak activity">Hujan meteor mendekati puncaknya</string>
+
+    <!-- Moon-phase home-screen widget (D69). -->
+    <string name="moon_widget_label" translation_description="Name of the moon-phase home-screen widget, shown in the launcher\'s widget picker">Fase Bulan</string>
+    <string name="moon_widget_description" translation_description="Description of the moon-phase widget, shown under its preview in the launcher\'s widget picker">
+    Fase Bulan, iluminasi, serta waktu terbit dan terbenamnya, diperbarui setiap hari.
+    </string>
+    <string name="moon_widget_illumination" translation_description="Widget line showing how much of the Moon\'s disc is lit; %1$d is a percentage number">%1$d%% teriluminasi</string>
+    <string name="moon_widget_rise_time" translation_description="Widget fragment showing today\'s moonrise time; %1$s is a clock time like 17:42">terbit %1$s</string>
+    <string name="moon_widget_set_time" translation_description="Widget fragment showing today\'s moonset time; %1$s is a clock time like 03:12">terbenam %1$s</string>
+    <string name="moon_phase_new" translation_description="Name of the lunar phase when the Moon is fully dark">Bulan Baru</string>
+    <string name="moon_phase_waxing_crescent" translation_description="Name of the lunar phase between new moon and first quarter">Sabit Awal</string>
+    <string name="moon_phase_first_quarter" translation_description="Name of the lunar phase when half the disc is lit and growing">Perempat Pertama</string>
+    <string name="moon_phase_waxing_gibbous" translation_description="Name of the lunar phase between first quarter and full moon">Cembung Awal</string>
+    <string name="moon_phase_full" translation_description="Name of the lunar phase when the disc is fully lit">Bulan Purnama</string>
+    <string name="moon_phase_waning_gibbous" translation_description="Name of the lunar phase between full moon and last quarter">Cembung Akhir</string>
+    <string name="moon_phase_last_quarter" translation_description="Name of the lunar phase when half the disc is lit and shrinking">Perempat Akhir</string>
+    <string name="moon_phase_waning_crescent" translation_description="Name of the lunar phase between last quarter and new moon">Sabit Akhir</string>
+    <string name="moon_widget_promo_title" translation_description="Title of the row on the Moon\'s info card offering to add the moon-phase widget to the home screen">Pertahankan Bulan di layar utama Anda</string>
+    <string name="moon_widget_promo_subtitle" translation_description="Subtitle of the row offering the moon-phase widget, summarizing what the widget shows">Fase, iluminasi, dan waktu terbit, diperbarui setiap hari</string>
+    <string name="moon_widget_promo_add" translation_description="Button that adds the moon-phase widget to the home screen via the system dialog">Tambahkan widget</string>
+    <string name="moon_widget_promo_dismiss" translation_description="Accessibility label for the button that permanently dismisses the widget offer row">Tutup saran widget</string>
+    <string name="moon_widget_pin_unsupported_title" translation_description="Title of the fallback dialog when the launcher cannot add widgets directly">Tambahkan widget dari layar utama Anda</string>
+    <string name="moon_widget_pin_unsupported_body" translation_description="Body of the fallback dialog explaining how to add the widget manually">
+    Peluncur Anda tidak mendukung penambahan widget dari aplikasi. Sentuh dan tahan layar beranda Anda, pilih Widget, lalu temukan Sky Map.
+    </string>
+    <string name="moon_widget_pin_unsupported_ok" translation_description="Confirmation button of the manual widget-adding instructions dialog">Mengerti</string>
+    <string name="moon_widget_preview_illumination" translation_description="Representative illumination line shown in the widget picker\'s preview of the moon-phase widget">83% teriluminasi</string>
+
+    <!-- Tonight's-sky and countdown home-screen widgets (D69 phase 2). -->
+    <string name="tonight_widget_label" translation_description="Name of the tonight\'s-sky home-screen widget, shown in the launcher\'s widget picker">Langit malam ini</string>
+    <string name="tonight_widget_description" translation_description="Description of the tonight\'s-sky widget, shown under its preview in the launcher\'s widget picker">
+    Pemandangan terbaik malam ini: planet yang berada di posisi baik, hujan meteor, dan peristiwa bulan, diperbarui setiap hari.
+    </string>
+    <string name="tonight_widget_header" translation_description="Small header label on the tonight widget; %1$s is a short date like \'Wed 30 Jul\'">Malam ini · %1$s</string>
+    <string name="tonight_widget_sun_times" translation_description="Header line on the tonight widget; %1$s is the sunset time, %2$s the time the sky becomes fully dark">matahari terbenam %1$s · gelap %2$s</string>
+    <string name="tonight_widget_sunset_only" translation_description="Header fragment when only the sunset time is known; %1$s is the sunset time">matahari terbenam %1$s</string>
+    <string name="tonight_well_placed" translation_description="Tonight-widget row: a planet is high in the sky and easy to observe; %1$s is the planet name, %2$s the time from which it is well placed">%1$s berada di posisi baik mulai %2$s</string>
+    <!-- tm:omitted name="tonight_trailing_direction" reason="identical_to_source" -->
+    <string name="tonight_shower_peak" translation_description="Tonight-widget row: a meteor shower reaches its annual peak tonight; %1$s is the shower name">%1$s puncak malam ini</string>
+    <string name="tonight_shower_days" translation_description="Tonight-widget row: a meteor shower peaks within a few days; %1$s is the shower name, %2$d the number of days">Puncak %1$s dalam %2$d hari</string>
+    <string name="tonight_dark_skies" translation_description="Small trailing note: the moon is dark, so viewing conditions are ideal">langit gelap</string>
+    <string name="tonight_trailing_moon" translation_description="Small trailing note: how much of the moon is lit; %1$d is a percentage">bulan %1$d%%</string>
+    <string name="tonight_new_moon" translation_description="Tonight-widget row shown at new moon">Bulan Baru — langit tergelap bulan ini</string>
+    <string name="tonight_full_moon" translation_description="Tonight-widget row shown at full moon">Bulan Purnama malam ini</string>
+    <string name="tonight_bright_moon" translation_description="Tonight-widget row warning that a bright moon washes out faint objects">Bulan terang mengaburkan objek redup</string>
+    <string name="tonight_lunar_eclipse_total" translation_description="Tonight-widget row: a total lunar eclipse is starting soon or under way">Gerhana Bulan Total</string>
+    <string name="tonight_lunar_eclipse_partial" translation_description="Tonight-widget row: a partial lunar eclipse is starting soon or under way">Gerhana Bulan Sebagian</string>
+    <string name="tonight_lunar_eclipse_penumbral" translation_description="Tonight-widget row: a penumbral lunar eclipse is starting soon or under way">Gerhana Bulan Penumbra</string>
+    <string name="tonight_quiet" translation_description="Tonight-widget line shown when nothing notable is visible tonight">Langit tenang malam ini</string>
+    <string name="tonight_quiet_next" translation_description="Tonight-widget line under the quiet-night message; %1$s is an event name, %2$d the days until it">Berikutnya: %1$s dalam %2$d hari</string>
+    <string name="countdown_widget_label" translation_description="Name of the countdown home-screen widget, shown in the launcher\'s widget picker">Hitung mundur langit</string>
+    <string name="countdown_widget_description" translation_description="Description of the countdown widget, shown under its preview in the launcher\'s widget picker">Hari hingga puncak hujan meteor atau peristiwa bulan berikutnya.</string>
+    <string name="countdown_days" translation_description="Unit label inside the countdown ring, under the number of days">hari</string>
+    <string name="countdown_tonight" translation_description="Shown inside the countdown ring when the event is tonight (zero days left)">sekarang</string>
+    <string name="countdown_shower_peak" translation_description="Countdown-widget event name; %1$s is a meteor shower name">Puncak %1$s</string>
+    <string name="countdown_new_moon_peak" translation_description="Countdown-widget note: the shower peaks near new moon, so skies will be dark">Puncak bulan baru</string>
+    <string name="countdown_full_moon" translation_description="Countdown-widget event name for the next full moon">Bulan Purnama</string>
+    <string name="countdown_new_moon" translation_description="Countdown-widget event name for the next new moon">Bulan Baru</string>
+    <string name="tonight_widget_preview_row" translation_description="Representative highlight row shown in the widget picker\'s preview of the tonight widget">Jupiter terlihat jelas mulai pukul 21.30</string>
+    <!-- tm:omitted name="countdown_widget_preview_days" reason="identical_to_source" -->
+    <string name="countdown_widget_preview_name" translation_description="Representative event name shown in the widget picker\'s preview of the countdown widget">Puncak Perseid</string>
+
+    <!-- Sky-event notifications (D77). -->
+    <string name="settings_section_notifications" translation_description="Settings section header for notification preferences">Notifikasi</string>
+    <string name="settings_notifications_intro" translation_description="Introduction under the notifications settings header, stating how rarely the app notifies">
+    Sky Map hanya memberi notifikasi tentang peristiwa langit langka, paling banyak sekali sehari. Semuanya mati sampai Anda menyalakannya.
+    </string>
+    <string name="settings_shower_alerts" translation_description="Preference title: notify on the evening a meteor shower reaches its annual peak">Puncak hujan meteor</string>
+    <string name="settings_shower_alerts_summary" translation_description="Explanation of the meteor-shower notification preference">Sekitar selusin setahun, pada malam puncak</string>
+    <string name="settings_tonight_digest" translation_description="Preference title: a single evening notification summarizing what\'s visible tonight">Ringkasan langit malam ini</string>
+    <string name="settings_tonight_digest_summary" translation_description="Explanation of the tonight-digest notification preference">Satu ringkasan setelah matahari terbenam, dilewati pada malam yang tenang</string>
+    <string name="settings_notifications_blocked" translation_description="Warning row shown when the user enabled notifications in the app but blocked them at the system level">Notifikasi diblokir untuk Sky Map</string>
+    <string name="settings_notifications_blocked_action" translation_description="Hint under the blocked-notifications warning; tapping opens the system settings page">Ketuk untuk mengizinkan di pengaturan sistem</string>
+    <string name="channel_showers_name" translation_description="Name of the meteor-shower notification channel, shown in the system\'s notification settings">Puncak hujan meteor</string>
+    <string name="channel_showers_description" translation_description="Description of the meteor-shower notification channel in the system\'s notification settings">Sekitar selusin setahun, pada malam puncak</string>
+    <string name="channel_digest_name" translation_description="Name of the tonight-digest notification channel, shown in the system\'s notification settings">Ringkasan langit malam ini</string>
+    <string name="channel_digest_description" translation_description="Description of the tonight-digest notification channel in the system\'s notification settings">Satu ringkasan malam, dilewati pada malam yang tenang</string>
+    <string name="notif_shower_title" translation_description="Title of the meteor-shower notification; %1$s is the shower name">Puncak %1$s malam ini</string>
+    <string name="notif_shower_direction" translation_description="Notification sentence telling the user where to look; %1$s is a compass point like NE">Terbaik setelah tengah malam, melihat ke arah %1$s.</string>
+    <string name="notif_shower_dark_moon" translation_description="Notification sentence when the moon is dark during a meteor shower peak; %1$d is the expected meteors per hour">
+    Langit gelap, tanpa bulan — perkirakan hingga %1$d meteor per jam jauh dari cahaya kota.
+    </string>
+    <string name="notif_shower_bright_moon" translation_description="Notification sentence when a bright moon will interfere with a meteor shower; %1$d is the moon illumination percentage, %2$d the meteors per hour under ideal skies">
+    Bulan yang diterangi %1$d%% akan mengaburkan meteor yang lebih redup — hingga %2$d per jam di bawah langit ideal.
+    </string>
+    <string name="notif_digest_title" translation_description="Title of the tonight\'s-sky digest notification">Layak dilihat malam ini</string>
+    <string name="notif_action_mute_showers" translation_description="Notification action button that opens the system toggle for the meteor-shower channel">Bisukan hujan meteor</string>
+    <string name="time_travel_stopped">Perjalanan waktu dijeda</string>
+    <!-- Layers sheet: per-layer parameters (D87). -->
+    <string name="layer_param_disc_size">Ukuran cakram</string>
+    <string name="layer_param_disc_size_true">Skala sebenarnya</string>
+    <string name="layer_param_disc_size_true_desc">
+    Ukuran sebenarnya di langit pada setiap zoom. Planet-planet terlihat seperti bintik sampai Anda memperbesar.
+    </string>
+    <string name="layer_param_disc_size_glyphs">Glif</string>
+    <string name="layer_param_disc_size_glyphs_desc">
+    Ukurannya ditentukan oleh seberapa besar setiap benda sebenarnya, bukan seberapa besar kelihatannya. Mudah dilihat pada setiap zoom.
+    </string>
+    <string name="layer_param_disc_size_auto">Stabil</string>
+    <string name="layer_param_disc_size_auto_desc">
+    Mempertahankan ukuran tetap di layar saat Anda memperbesar, lalu beralih ke ukuran sebenarnya.
+    </string>
+    <string name="layer_param_expand">Tampilkan opsi untuk %1$s</string>
 </resources>

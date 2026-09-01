@@ -170,7 +170,7 @@
   },
   "constellation/crater": {
    "description": "Crater (Pohár) predstavuje pohár Apolla v gréckej mytológii. Nachádza sa na chrbte Hydry, vodného hada, vedľa Corvusu, vrany.",
-   "fun_fact": "V gréckej mytológii poslal Apolo Vranu, aby priniesla vodu v tomto Pohári, ale Vrana sa zdržala jedením fík — preto Apolo umiestnил všetky tri na oblohu ako trest!",
+   "fun_fact": "V gréckej mytológii poslal Apolo Vranu, aby priniesla vodu v tomto Pohári, ale Vrana sa zdržala jedením fík — preto Apolo umiestnil všetky tri na oblohu ako trest!",
    "size": "282 štvorcových stupňov",
    "image_credit": "IAU/Sky & Telescope"
   },
@@ -645,12 +645,22 @@
    "size": "83 svetelných rokov v priemere",
    "image_credit": "NASA/ESA/Hubble"
   },
+  "dso/m100": {
+   "description": "Messier 100 je veľká špirálová galaxia s výraznými ramenami vo Vlasoch Bereniky a jedna z najjasnejších v Kope Panny.",
+   "fun_fact": "Sedem supernov bolo pozorovaných v M100, najnovšia v roku 2020 - len málo galaxií predviedlo takúto šou!",
+   "distance": "55 miliónov svetelných rokov",
+   "size": "166 000 svetelných rokov v priemere"
+  },
   "dso/m101": {
    "description": "Galaxia Pinwheel je galaxia so spirálnou štruktúrou videná zospodu v súhvezdí Veľký medveď, jedna z najväčších známych špirálnych galaxií.",
    "fun_fact": "Galaxia Pinwheel obsahuje viac ako bilión hviezd a má asymetrické špirálové ramená kvôli minulým interakciám galaxií!",
    "distance": "21 miliónov svetelných rokov",
    "size": "170 000 svetelných rokov v priemere",
    "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m102": {
+   "description": "Messier 102 je veľký nevyriešený záznam v Messierovom katalógu – objekt zaznamenaný v roku 1781, ktorý nikdy nebol s istotou identifikovaný.",
+   "fun_fact": "Messier nezverejnil žiadne súradnice pre M102 a jeho kolega Mechain neskôr úplne stiahol objav, tvrdiac, že to bola len M101 zaznamenaná dvakrát omylom! NASA ju identifikuje s Galaxiou Vreteno, NGC 5866."
   },
   "dso/m103": {
    "description": "M103 je malá, kompaktná otvorená hviezdokopa v Kasiopei, obsahujúca okolo 40 hviezd v tesnej skupine ľahko viditeľnej v ďalekohľade. Nápadná dvojhviezda a červený obor v blízkosti stredu jej dávajú farebný vzhľad v malých ďalekohľadoch, umiestnené v bohatých poliach Mliečnej dráhy v Kasiopei.",
@@ -665,6 +675,12 @@
    "size": "50 000 svetelných rokov v priemere",
    "image_credit": "NASA/ESA/Hubble"
   },
+  "dso/m105": {
+   "description": "Messier 105 je eliptická galaxia v súhvezdí Lev, najväčšia eliptická galaxia v Messierovom katalógu mimo Kopy Panny.",
+   "fun_fact": "M105 zdieľa kolosálny prstenec vodíkového plynu so svojím susedom NGC 3384, rozprestierajúci sa na približne 650 000 svetelných rokov!",
+   "distance": "37 miliónov svetelných rokov",
+   "size": "67 000 svetelných rokov v priemere"
+  },
   "dso/m106": {
    "description": "M106 je špirálna galaxia v Honoch loveckých s anomálnymi špirálnymi ramenami spôsobenými prúdmi z jej centrálnej čiernej diery.",
    "fun_fact": "M106 má vodné masery v svojom jadre, čo umožňuje astronómom presne zmerať jeho vzdialenosť!",
@@ -677,6 +693,11 @@
    "fun_fact": "M107 bola posledným objektom formálne pridaným do katalógu Messiera — objavuje sa v korešpondencii Pierra Méchaina, ale nebol zahrnutý v pôvodnom vydaní z roku 1781. Oficiálne bol pridaný ako M107 v roku 1947 kanadskou astronómkou Helen Sawyer Hoggovou, ktorá kodifikovala niekoľko \"chýbajúcich\" objektov, ktoré Méchain pozoroval, ale Messier nikdy formálne nezaznamenal.",
    "distance": "20 900 svetelných rokov",
    "size": "~61 svetelných rokov na priemer"
+  },
+  "dso/m108": {
+   "description": "Messier 108 je špirálová galaxia s priečkou v súhvezdí Veľká medvedica, prezývaná Galaxia Surfová doska.",
+   "fun_fact": "M108 je k nám takmer zboku natočená, vďaka čomu si vyslúžila názov Surfboard – a obsahuje približne 290 guľových hviezdokôp!",
+   "distance": "46 miliónov svetelných rokov"
   },
   "dso/m109": {
    "description": "M109 je stĺpcovitá špirálna galaxia v Malej medvedici, najjasnejší člen skupiny galaxií, ktorá nesie jej meno.",
@@ -740,6 +761,12 @@
    "distance": "5 500 svetelných rokov",
    "size": "15 svetelných rokov v priemere",
    "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m18": {
+   "description": "Messier 18 je malá otvorená hviezdokopa mladých hviezd v súhvezdí Strelec, známa aj ako Hviezdokopa Čierna labuť.",
+   "fun_fact": "M18 je jedným z veľmi mála Messierových objektov, ktoré Hubblov vesmírny ďalekohľad nikdy neodfotografoval!",
+   "distance": "4 200 svetelných rokov",
+   "size": "26 svetelných rokov v priemere"
   },
   "dso/m19": {
    "description": "M19 je kompaktný, bohatý guľový zhluk v Hadonoši — jeden z najbližších guľových zhlukov k galaktickému stredu. Jeho najvýraznejšou črtou je jeho výrazne sploštená forma: M19 je najviac sploštený guľový zhluk, ktorý je známy, s viditeľným eliptickým obrysom dokonca aj v malom ďalekohľade.",
@@ -1018,12 +1045,35 @@
    "size": "1,3 svetelného roku",
    "image_credit": "NASA/ESA/Hubble"
   },
+  "dso/m58": {
+   "description": "Messier 58 je špirálová galaxia s priečkou v súhvezdí Panna a jeden z najjasnejších členov Kopy Panny.",
+   "fun_fact": "Supermasívna čierna diera s hmotnosťou približne 70 miliónov hmotností Slnka sa nachádza v srdci M58, obklopená tesným pásom novonarodených hviezd!",
+   "distance": "68 miliónov svetelných rokov",
+   "size": "133 000 svetelných rokov v priemere"
+  },
+  "dso/m59": {
+   "description": "Messier 59 je eliptická galaxia v súhvezdí Panna, objavená v roku 1779 počas hľadania prechádzajúcej kométy.",
+   "fun_fact": "Jadro M59 sa otáča dozadu v porovnaní so zvyškom galaxie a okolo neho sa rojí približne 2 200 guľových hviezdokôp!",
+   "distance": "50 miliónov svetelných rokov",
+   "mass": "270 miliónov hmotností Slnka (centrálna čierna diera)"
+  },
   "dso/m6": {
    "description": "Motýlia hviezdokopa je otvorená hviezdokopa v Škorpióne, pomenovaná podľa motýľovitého usporiadania jej najjasnejších hviezd.",
    "fun_fact": "M6 má približne 100 miliónov rokov a obsahuje viac ako 300 hviezd, vrátane oranžového obra BM Scorpii!",
    "distance": "1 600 svetelných rokov",
    "size": "25 svetelných rokov v priemere",
    "image_credit": "NOAO/AURA/NSF"
+  },
+  "dso/m60": {
+   "description": "Messier 60 je obria eliptická galaxia v súhvezdí Panna, tretia najjasnejšia obria eliptická v Kope Panny.",
+   "fun_fact": "Centrálna čierna diera M60 váži približne 4,5 miliardy Sĺnc – jedna z najväčších, aké kedy boli objavené!",
+   "distance": "57 miliónov svetelných rokov"
+  },
+  "dso/m61": {
+   "description": "Messier 61 je špirálová galaxia s priečkou v súhvezdí Panna a jedna z najväčších galaxií v Kope Panny.",
+   "fun_fact": "Osem supernov bolo spozorovaných v M61 – jeden z najvyšších počtov zo všetkých galaxií! Sám Messier si ju najprv pomýlil s kométou.",
+   "distance": "52 miliónov svetelných rokov",
+   "size": "92 000 svetelných rokov v priemere"
   },
   "dso/m62": {
    "description": "M62 je bohatá guľová hviezdokopa v Hadonošovi — jedna z najbližších guľových hviezd k galaktickému stredu a výrazne asymetrická, s hviezdami hustejšie zhusteným na južnej strane. Pri magnitúde 6,6 je to pekný objekt na ďalekohľad, hoci jej nízka deklinácia ju robí krátkodobým cieľom pre severných pozorovateľov.",
@@ -1095,12 +1145,28 @@
    "distance": "12 000 svetelných rokov",
    "size": "~25 svetelných rokov na priemer"
   },
+  "dso/m72": {
+   "description": "Messier 72 je slabá, vzdialená guľová hviezdokopa v súhvezdí Vodnár, objavená Pierrom Mechainom v roku 1780.",
+   "fun_fact": "M72 obsahuje hviezdy s celkovou hmotnosťou približne 168 000 Sĺnc, zhromaždené v guľovitom zoskupení starom približne 9,5 miliardy rokov, vrátane 43 premenných hviezd!",
+   "distance": "55 000 svetelných rokov"
+  },
+  "dso/m73": {
+   "description": "Messier 73 je malá skupina štyroch hviezd v súhvezdí Vodnár, ktorá sa len javí ako hviezdokopa.",
+   "fun_fact": "Astronómovia desaťročia diskutovali o tom, či M73 bola skutočná hviezdokopa – v roku 2002 bolo rozhodnuté: štyri hviezdy ležia v úplne odlišných vzdialenostiach a len sa náhodou zoradili!",
+   "distance": "1 000 až 2 300 svetelných rokov (jednotlivé hviezdy)"
+  },
   "dso/m74": {
    "description": "Phantom Galaxy je galaxia s čelným pohľadom na spirálu v Rybách, známa svojou dokonalou štruktúrou veľkého dizajnu spirály.",
    "fun_fact": "M74 má prezývku Phantom Galaxy (Fantómna galaxia) kvôli jej veľmi nízkemu povrchového jasu, čo ju robí náročnou na pozorovanie!",
    "distance": "32 miliónov svetelných rokov",
    "size": "95 000 svetelných rokov na priemer",
    "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m75": {
+   "description": "Messier 75 je vzdialená, bohato koncentrovaná guľová hviezdokopa v súhvezdí Strelec.",
+   "fun_fact": "M75 je jedna z najhustejších známych guľových hviezdokôp a predpokladá sa, že je pozostatkom trpasličej galaxie, ktorú Mliečna dráha pohltila dávno!",
+   "distance": "68 000 svetelných rokov",
+   "size": "134 svetelných rokov v priemere"
   },
   "dso/m76": {
    "description": "Malá činžová hmlovina je planetárna hmlovina v Perzejovi s charakteristickým tvarom osmičky — menší príbuzná M27, Činžovej hmloviny vo Vulpekule. Hoci je to najslabšia položka v katalógu Messiera, odmeňuje trpezlivé pozorovanie v malých ďalekohľadoch a v väčších prístrojoch vykazuje krásnu štruktúru s dvoma jasnejšími lalôčkami po stranách slabšieho pásu.",
@@ -1162,6 +1228,22 @@
    "size": "55 000 svetelných rokov na priemer",
    "image_credit": "NASA/ESA/Hubble"
   },
+  "dso/m84": {
+   "description": "Messier 84 je obria eliptická galaxia v preplnenom srdci Kopy Panny.",
+   "fun_fact": "M84 vypúšťa dva prúdy hmoty zo svojho jadra, poháňané čiernou dierou s hmotnosťou približne 1,5 miliardy slnečných hmotností!",
+   "distance": "55 miliónov svetelných rokov"
+  },
+  "dso/m85": {
+   "description": "Messier 85 je šošovková galaxia na okraji Kopy Panny, v súhvezdí Vlasy Bereniky.",
+   "fun_fact": "Vlnky a obaly vo vonkajších oblastiach M85 sú pozostatkami splynutia galaxií pred 4 až 7 miliardami rokov!",
+   "distance": "60 miliónov svetelných rokov",
+   "size": "120 600 svetelných rokov v priemere"
+  },
+  "dso/m86": {
+   "description": "Messier 86 je veľká eliptická galaxia v Kope Panny, tvoriaca nápadný pár s neďalekou M84.",
+   "fun_fact": "M86 sa k nám rúti rýchlosťou 244 km/s – je to najrýchlejšie sa približujúci Messierov objekt! Jeho prechod klastrom zanecháva dlhú stopu strhnutého horúceho plynu.",
+   "distance": "52 miliónov svetelných rokov"
+  },
   "dso/m87": {
    "description": "M87 je supergigantická eliptická galaxia v Panne, jedna z najmasívnejších galaxií v lokálnom vesmíre.",
    "fun_fact": "Centrálna čierna diera M87 bola prvá, ktorú odfotografoval Event Horizon Telescope v roku 2019 - má hmotnosť 6,5 miliardy slnečných hmotností!",
@@ -1170,11 +1252,34 @@
    "mass": "2,4 bilióna slnečných hmotností",
    "image_credit": "NASA/ESA/Hubble"
   },
+  "dso/m88": {
+   "description": "Messier 88 je elegantná špirálová galaxia vo Vlasoch Bereniky, jeden z pätnástich Messierových objektov v Kope Panny.",
+   "fun_fact": "M88 sa rúti smerom k centru Kopy Panny a dorazí tam za 200 až 300 miliónov rokov, pričom jej vonkajší plyn je strhávaný počas pádu!",
+   "distance": "59 miliónov svetelných rokov",
+   "size": "131 000 svetelných rokov v priemere"
+  },
+  "dso/m89": {
+   "description": "Messier 89 je eliptická galaxia v súhvezdí Panna, objavená Charlesom Messierom v roku 1781.",
+   "fun_fact": "M89 môže byť takmer dokonalá guľa – čo je nezvyčajné pre eliptickú galaxiu, ktoré sú zvyčajne nápadne sploštené!",
+   "distance": "50 miliónov svetelných rokov"
+  },
   "dso/m9": {
    "description": "M9 je kompaktný guľový zhluk v Hadonoši — jeden z Messierovych guľových zhlukov najviac postihnutý absorpciou medzihviezdneho prachu. Nachádza sa smerom k jadru galaxie, kde hustý prach ho výrazne stmavuje. Bez tejto obscurácie by sa M9 javí takmer o jednu magnitudu jasnejší a bol by viditeľný voľným okom.",
    "fun_fact": "M9 trpí väčšou absorpciou medzihviezdneho prachu ako takmer akýkoľvek iný Messierov guľový zhluk — približne 1,3 magnitúdy stmavnutia v porovnaní s čistou priamou viditeľnosťou. Dva menšie guľové zhluky (NGC 6342 a NGC 6356) sa nachádzajú v rámci približne 1° od M9, čo z neho robí centrum pozoruhodného zoskupenia troch guľových zhlukov na malom kúsku oblohy.",
    "distance": "25 800 svetelných rokov",
    "size": "~70 svetelných rokov na priemer"
+  },
+  "dso/m90": {
+   "description": "Messier 90 je veľká špirálová galaxia v súhvezdí Panna a učebnicový príklad „anemickej“ galaxie.",
+   "fun_fact": "M90 pri prechode Kopou Panny stratila svoj hviezdotvorný plyn, pričom zanechala chvosty žiariaceho plynu dlhé až 260 000 svetelných rokov!",
+   "distance": "59 miliónov svetelných rokov",
+   "size": "132 000 svetelných rokov v priemere"
+  },
+  "dso/m91": {
+   "description": "Messier 91 je špirálová galaxia s tyčou v súhvezdí Vlasy Bereniky a najslabší objekt v Messierovom katalógu.",
+   "fun_fact": "M91 bola stratená takmer 200 rokov! Messier zaznamenal jej polohu použitím nesprávnej referenčnej galaxie a bola znovu identifikovaná až v roku 1969 amatérskym astronómom.",
+   "distance": "63 miliónov svetelných rokov",
+   "size": "105 500 svetelných rokov v priemere"
   },
   "dso/m92": {
    "description": "M92 je jasný guľový zhluk v Herkulovi, často prehliadaný kvôli jeho blízkosti k slávnejšiemu M13.",
@@ -1196,12 +1301,35 @@
    "size": "50 000 svetelných rokov na priemer",
    "image_credit": "NASA/ESA/Hubble"
   },
+  "dso/m95": {
+   "description": "Messier 95 je špirálová galaxia s priečkou v súhvezdí Lev, súčasť skupiny M96 spolu s M96 a M105.",
+   "fun_fact": "Prstenec búrlivej tvorby hviezd, široký asi 70 000 svetelných rokov, obklopuje jadro M95 a v roku 2012 tam vzplanula supernova!",
+   "distance": "33 miliónov svetelných rokov",
+   "size": "80 000 svetelných rokov v priemere"
+  },
+  "dso/m96": {
+   "description": "Messier 96 je špirálová galaxia v súhvezdí Lev, najjasnejší člen skupiny galaxií M96.",
+   "fun_fact": "M96 má približne rovnakú veľkosť a hmotnosť ako naša Mliečna dráha, ale je nápadne nesúmerná – jej prach a plyn sú nerovnomerne rozložené v jej ramenách!",
+   "distance": "31 miliónov svetelných rokov",
+   "size": "78 000 svetelných rokov v priemere"
+  },
   "dso/m97": {
    "description": "Sovacia hmlovina je planetárna hmlovina v Veľkej medvedici, pomenovaná podľa svojho vzhľadu podobného sove s dvoma tmavými škvrnami.",
    "fun_fact": "Tmavé sovy oči v M97 sú trojrozmerné dutiny v hmlovine, zarovnané s našou líniou pohľadu!",
    "distance": "2 030 svetelných rokov",
    "size": "2 svetelné roky na priemer",
    "image_credit": "Gemini Observatory/NOIRLab/NSF/AURA"
+  },
+  "dso/m98": {
+   "description": "Messier 98 je špirálová galaxia vo Vlasoch Bereniky, viditeľná takmer z boku ako súčasť Kopy Panny.",
+   "fun_fact": "M98 je jednou zo vzácnych galaxií pohybujúcich sa smerom k nám, nie od nás, približujúcich sa rýchlosťou približne 140 km/s!",
+   "distance": "44 miliónov svetelných rokov"
+  },
+  "dso/m99": {
+   "description": "Messier 99 je špirálová galaxia s výraznými ramenami vo Vlasoch Bereniky, ukazujúca jasné, rozsiahle špirálové ramená.",
+   "fun_fact": "M99 bolo medzi prvými objektmi rozpoznanými ako špirálové, načrtnuté Lordom Rossem v roku 1846 – a vytvára hviezdy trikrát rýchlejšie ako podobné galaxie!",
+   "distance": "45 miliónov svetelných rokov",
+   "size": "98 000 svetelných rokov v priemere"
   },
   "dso/n47_tucanae": {
    "description": "47 Tucanae (NGC 104) je druhý najjasnejší guľový hvezdokop na oblohe, hustá guľa približne jedného milióna starých hviezd obiehajúcich Mliečnu cestu v súhvezdí Tucana. V diaľke približne 14 500 svetelných rokov sa javí voľnému oku ako nejasná hviezda štvrtej magnitúdy, ale ďalekohľad rozlíši jej stlačené jadro na mimoriadny roj zlatých a modrobielych slnečníc. Jej hviezdy vznikli pred približne 13 miliardami rokov, čo robí hvezdokop takmer rovnako starým ako samotný vesmír.",
@@ -1313,8 +1441,9 @@
    "description": "Deimos je menší a vonkajší z dvoch mesiacov Marsu s hladkým, prachom pokrytým povrchom, ktorý mu dáva zaoblenený vzhľad v porovnaní s Fobom. Ako jeho spoločník sa predpokladá, že ide o zachytený asteroid z vonkajšieho pásu.",
    "fun_fact": "Deimos je taký malý a vzdialený, že z povrchu Marsu vyzerá len ako jasná hviezda, ktorá sa pomaly pohybuje po nočnej oblohe približne 30 hodín.",
    "distance": "23 460 km od Marsu",
+   "size": "15 x 12 x 11 km",
    "image_credit": "NASA/JPL-Caltech/University of Arizona",
-   "search_subtext": "Moon of Mars"
+   "search_subtext": "Mesiac Marsu"
   },
   "moon/dione": {
    "description": "Dione je ľadová mesiac Saturna s ťažko krátovanou prednou stranou a zadnou hemisférou pokrytou jasnými ľadovými útesmi — zlomovými čiarami, kde staré tektonické sily odhalili čerstvý ľad z hĺbky. Gravitačné údaje zo sondy Cassini naznačujú podpovrchový kvapalný oceán pod kôrou.",
@@ -1368,8 +1497,9 @@
    "description": "Phobos je väčší a vnútornejší z dvoch mesiacov Marsu, ktorý obieha bližšie k svojej planéte ako ktorýkoľvek iný mesiac v slnečnej sústave. Je to nepravidelne tvarované teleso s hlbokými drážkami a krátermi, ktoré sa predpokladá, že je zachyteným asteroidom.",
    "fun_fact": "Fobos obieha Mars tak rýchlo, že vychádza na západe a zapadá na východe — a pomaly sa spirálovite približuje dovnútra, pričom je určený buď na zrážku s Marsom, alebo sa rozpadne na krúžok za približne 50 miliónov rokov.",
    "distance": "9 376 km od Marsu",
+   "size": "27 x 22 x 18 km",
    "image_credit": "NASA/JPL-Caltech/University of Arizona",
-   "search_subtext": "Moon of Mars"
+   "search_subtext": "Mesiac Marsu"
   },
   "moon/rhea": {
    "description": "Rhea je druhý najväčší mesiac Saturna a ťažko posiaty svet ľadu a skaly. Jeho bledý, staroveký povrch zachováva niektoré z najčistejších dopadových kráterov slnečnej sústavy, spolu s jasnými ľadovými útesmi, kde zosuvy pôdy odhalili čerstvý materiál spod povrchu.",
@@ -1424,6 +1554,7 @@
    "fun_fact": "Jupiter má najmenej 95 známych mesiacov! Jeho najväčší mesiac Ganymedes je väčší ako planéta Merkúr.",
    "distance": "778 miliónov km (priemer)",
    "size": "139 820 km priemer",
+   "mass": "1.898 × 10²⁷ kg",
    "image_credit": "NASA/ESA/Hubble"
   },
   "planet/mars": {
@@ -1431,6 +1562,7 @@
    "fun_fact": "Mars má najväčší vulkán v slnečnej sústave: Olympus Mons, ktorý je približne 2,5-krát vyšší ako Mount Everest!",
    "distance": "228 miliónov km (priemer)",
    "size": "6 779 km priemer",
+   "mass": "6.39 × 10²³ kg",
    "image_credit": "NASA/ESA/Hubble"
   },
   "planet/mercury": {
@@ -1454,6 +1586,7 @@
    "fun_fact": "Neptún bol objavený pomocou matematiky! Vedci predpovedali jeho polohu skôr, ako ho niekto videl cez ďalekohľad.",
    "distance": "4,5 miliardy km (priemer)",
    "size": "49 244 km priemer",
+   "mass": "1.024 × 10²⁶ kg",
    "image_credit": "NASA/ESA/Hubble"
   },
   "planet/pluto": {
@@ -1461,6 +1594,7 @@
    "fun_fact": "Pluto má ľadovec v tvare srdca zložený z dusíkového ľadu, viditeľný na snímkach z misie NASA New Horizons!=",
    "distance": "5,9 miliardy km (priemer)",
    "size": "2 377 km priemer",
+   "mass": "1.3 × 10²² kg",
    "image_credit": "NASA/JHUAPL/SwRI"
   },
   "planet/saturn": {
@@ -1468,6 +1602,7 @@
    "fun_fact": "Saturn je taký ľahký, že by plával vo vode! Jeho hustota je menšia ako hustota vody, hoci neexistuje vaňa dosť veľká na to, aby sme to mohli otestovať.",
    "distance": "1,4 miliardy km (priemer)",
    "size": "116 460 km priemer",
+   "mass": "5.68 × 10²⁶ kg",
    "image_credit": "NASA/ESA/Hubble"
   },
   "planet/sun": {
@@ -1484,6 +1619,7 @@
    "fun_fact": "Urán sa otáča na boku s náklonom 98 stupňov, pravdepodobne v dôsledku zrážky so zemeguľou podobným objektom pred dávnymi časmi!",
    "distance": "2,9 miliardy km (priemer)",
    "size": "50 724 km priemer",
+   "mass": "8.68 × 10²⁵ kg",
    "image_credit": "NASA/ESA/Hubble"
   },
   "planet/venus": {
@@ -1491,6 +1627,7 @@
    "fun_fact": "Deň na Venuši je dlhší ako jej rok! Trvá 243 zemských dní, kým sa raz otočí, ale len 225 dní, kým obehne Slnko.",
    "distance": "108 miliónov km (priemer)",
    "size": "12 104 km priemer",
+   "mass": "4.87 × 10²⁴ kg",
    "image_credit": "NASA/JPL"
   },
   "shower/aquariids": {
@@ -1637,6 +1774,7 @@
    "fun_fact": "Na rozdiel od väčšiny hviezd Veľkého voza, Alkaid nie je súčasťou skupiny Veľký voz — cestuje vesmírom v inom smere, takže sa tvar Veľkého voza bude pomaly meniť počas tisícov rokov!",
    "distance": "104 svetelných rokov",
    "size": "3,4 slnečných polomerov",
+   "mass": "6,1 slnečných hmotností",
    "spectral_class": "B3V",
    "image_credit": "ESO/Digitized Sky Survey 2"
   },
@@ -1645,6 +1783,7 @@
    "fun_fact": "Alnair sa otáča mimoriadne rýchlo — aspoň 215 km/s na svojom rovníku — čo je také rýchle, že hviezda je viditeľne sploštená, vypuklá v strede!",
    "distance": "101 svetelných rokov",
    "size": "3,4 slnečných polomerov",
+   "mass": "4,0 slnečných hmotností",
    "spectral_class": "B7IV",
    "image_credit": "ESO/Digitized Sky Survey 2"
   },
@@ -1653,6 +1792,7 @@
    "fun_fact": "Alnath bol kedysi zdieľaný medzi dvoma súhvezdiami! Bol označený ako Beta Tauri aj Gamma Aurigae, kým ho IAU oficiálne nepriradila k Taurusu v roku 1930.",
    "distance": "134 svetelných rokov",
    "size": "4,2 slnečných polomerov",
+   "mass": "5,0 slnečných hmotností",
    "spectral_class": "B7III",
    "image_credit": "ESO/Digitized Sky Survey 2"
   },
@@ -1679,6 +1819,7 @@
    "fun_fact": "Alphekka je zatmievajúca sa binárna hviezda — jej slabý sprievodca sa pred ňu dostane každých 17,4 dňa, čo spôsobuje malý pokles jasu, ktorý je bez prístrojov takmer nemožné vidieť!",
    "distance": "75 svetelných rokov",
    "size": "2,9 slnečných polomerov",
+   "mass": "2,6 slnečných hmotností",
    "spectral_class": "A0V",
    "image_credit": "ESO/Digitized Sky Survey 2"
   },
@@ -1705,6 +1846,7 @@
    "fun_fact": "Ankaa je spektroskopická dvojhviezda, čo znamená, že jej spoločník je tak blízko, že obe hviezdy je možné zistiť iba podľa zmien v ich svetelnom spektre — obiehajú sa navzájom každých 10,2 rokov!",
    "distance": "85 svetelných rokov",
    "size": "15 slnečných polomerov",
+   "mass": "1,3 slnečných hmotností",
    "spectral_class": "K0III",
    "image_credit": "ESO/Digitized Sky Survey 2"
   },
@@ -1816,6 +1958,11 @@
    "spectral_class": "K0 III",
    "image_credit": "ESO/Digitized Sky Survey 2"
   },
+  "star/e_lyrae": {
+   "description": "Epsilon Lyrae je viacnásobný hviezdny systém v súhvezdí Lýra, známy medzi pozorovateľmi ako „Dvojitá dvojhviezda“.",
+   "fun_fact": "Ostré oči dokážu rozdeliť Epsilon Lyrae na dve hviezdy – a ďalekohľad rozdelí každú z nich opäť na dve! Celkovo obsahuje najmenej päť hviezd.",
+   "distance": "160 svetelných rokov"
+  },
   "star/enif": {
    "description": "Enif je najjasnejšia hviezda v Pegaze a označuje nos lietajúceho koňa v súhvezdí.",
    "fun_fact": "V roku 1972 zažila Enif dramatickú erupciu, ktorá krátko zvýšila jej jas päťnásobne!",
@@ -1869,6 +2016,110 @@
    "mass": "~4,6 slnečnej hmotnosti",
    "spectral_class": "K0II-III",
    "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/j052512+062100": {
+   "description": "Bellatrix označuje ľavé rameno Orióna (Lovca). Jej názov je latinský pre „bojovníčku“.",
+   "fun_fact": "Bellatrix má len asi 28 miliónov rokov a spáli svoje zásoby vodíka za ďalších 7 miliónov rokov – krátky život pre hviezdu!",
+   "distance": "250 svetelných rokov",
+   "size": "6,2 slnečných polomerov",
+   "mass": "8,4 slnečných hmotností",
+   "spectral_class": "B2 III"
+  },
+  "star/j054048-015624": {
+   "description": "Alnitak je najvýchodnejšia hviezda Oriónovho pásu, nachádzajúca sa vedľa hmlovín Plameň a Konská hlava.",
+   "fun_fact": "Alnitak je najjasnejšia hviezda triedy O na celej nočnej oblohe! Asi o milión rokov sa zväčší viac ako obežná dráha Jupitera a exploduje ako supernova.",
+   "distance": "1 260 svetelných rokov",
+   "size": "20 slnečných polomerov",
+   "mass": "33 slnečných hmotností",
+   "spectral_class": "O9.5 Iab"
+  },
+  "star/j055924+445700": {
+   "description": "Menkalinan je druhá najjasnejšia hviezda v súhvezdí Auriga (Povozník). Jeho názov v arabčine znamená \"rameno držiteľa oprát\".",
+   "fun_fact": "Menkalinan je v skutočnosti tvorená dvoma takmer identickými hviezdami, ktoré sa navzájom zakrývajú každých 47,5 hodiny – a približne o milión rokov sa stane najjasnejšou hviezdou na našej nočnej oblohe!",
+   "distance": "79 svetelných rokov",
+   "size": "2,8 slnečných polomerov",
+   "mass": "2,4 slnečných hmotností",
+   "spectral_class": "A1m IV + A1m IV"
+  },
+  "star/j062248-175736": {
+   "description": "Mirzam (Beta Canis Majoris) vychádza tesne pred Síriom, čo mu v arabčine vynieslo meno znamenajúce \"Ohlasovateľ\".",
+   "fun_fact": "Približne pred štyrmi miliónmi rokov bola Mirzam najjasnejšou hviezdou na oblohe, žiariaca s magnitúdou -3,65 – oveľa jasnejšia, než sa dnes javí Sírius!",
+   "distance": "490 svetelných rokov",
+   "size": "8,4 slnečných polomerov",
+   "mass": "13 slnečných hmotností",
+   "spectral_class": "B1 II-III"
+  },
+  "star/j070824-262324": {
+   "description": "Wezen je žlto-biela nadobor v súhvezdí Veľký pes. Jeho názov pochádza z arabského slova pre 'váhu'.",
+   "fun_fact": "Keby bol Wezen k nám tak blízko ako Sírius, svietil by tak jasne ako polovičný Mesiac!",
+   "distance": "1 600 svetelných rokov",
+   "size": "188 slnečných polomerov",
+   "mass": "14 slnečných hmotností",
+   "spectral_class": "F8 Ia"
+  },
+  "star/j082248-593036": {
+   "description": "Avior (Epsilon Carinae) je jasná dvojhviezda v Kýle a jedna zo štyroch hviezd Falošného kríža.",
+   "fun_fact": "Nepravý kríž je tak často zamieňaný s Južným krížom, že to spôsobilo skutočné navigačné chyby! Meno Avior bolo vymyslené britskými tvorcami almanachov v 30. rokoch.",
+   "distance": "610 svetelných rokov",
+   "size": "151 slnečných polomerov",
+   "mass": "10,5 slnečných hmotností",
+   "spectral_class": "K3 III + B2 Vp"
+  },
+  "star/j091312-694312": {
+   "description": "Miaplacidus je druhá najjasnejšia hviezda v súhvezdí Kýl a označuje jeden z rohov asterizmu Diamantový kríž.",
+   "fun_fact": "Miaplacidus sa po spotrebovaní vodíka vo svojom jadre zväčšila na obra, no napriek tomu sa stále otáča svižnou rýchlosťou 146 km/s!",
+   "distance": "113 svetelných rokov",
+   "size": "5,8 slnečných polomerov",
+   "mass": "3,9 slnečných hmotností",
+   "spectral_class": "A1 III"
+  },
+  "star/j123112-570636": {
+   "description": "Gacrux (Gamma Crucis) je najvyššou hviezdou Južného kríža a najbližšou červenou obrou hviezdou k Zemi.",
+   "fun_fact": "Gacrux je najbližší červený obor typu M k nám a jeho názov je jednoducho námornícka skratka pre „Gamma Crucis“ vytvorená v 40. rokoch 20. storočia!",
+   "distance": "89 svetelných rokov",
+   "size": "73 slnečných polomerov",
+   "mass": "1,5 slnečných hmotností",
+   "spectral_class": "M3.5 III"
+  },
+  "star/j124800-594124": {
+   "description": "Mimosa (Beta Crucis) je druhá najjasnejšia hviezda v súhvezdí Južný kríž a jedna z najhorúcejších hviezd viditeľných voľným okom.",
+   "fun_fact": "Mimosa je pulzujúca premenná hviezda typu Beta Cephei – zväčšuje sa a zmenšuje v troch prekrývajúcich sa rytmoch, každý trvá len asi štyri hodiny!",
+   "distance": "280 svetelných rokov",
+   "size": "8 slnečných polomerov",
+   "mass": "14,5 slnečných hmotností",
+   "spectral_class": "B0.5 III"
+  },
+  "star/j143936-605024": {
+   "description": "Toliman (Alpha Centauri B) je oranžový spoločník v najbližšom hviezdnom systéme k Slnku, obiehajúci jasnejší Rigil Kentaurus.",
+   "fun_fact": "Toliman dostal svoje oficiálne meno až v roku 2018. Je o niečo menší a chladnejší ako Slnko a spolu so svojimi dvoma súrodencami tvorí našich najbližších hviezdnych susedov!",
+   "distance": "4,34 svetelných rokov",
+   "size": "0,86 slnečných polomerov",
+   "mass": "0,91 slnečných hmotností",
+   "spectral_class": "K1 V"
+  },
+  "star/j164836-690148": {
+   "description": "Atria je najjasnejšia hviezda súhvezdia Južný trojuholník, oranžový obor oveľa väčší ako Slnko.",
+   "fun_fact": "Atria má priemer 139-krát väčší ako Slnko – ak by bola umiestnená v strede Slnečnej sústavy, takmer by dosiahla obežnú dráhu Venuše!",
+   "distance": "391 svetelných rokov",
+   "size": "139 slnečných polomerov",
+   "mass": "6,4 slnečných hmotností",
+   "spectral_class": "K2 Ib-IIa"
+  },
+  "star/j173712-430000": {
+   "description": "Sargas je jasný obor v chvoste Škorpióna, nesúci tradičné meno sumerského pôvodu.",
+   "fun_fact": "Sargas rotuje tak rýchlo, že sa vydúva smerom von – je o tretinu širší na rovníku ako od pólu k pólu a možno vznikol spojením dvoch hviezd!",
+   "distance": "329 svetelných rokov",
+   "size": "35 slnečných polomerov",
+   "mass": "3,1 slnečných hmotností",
+   "spectral_class": "F1 III"
+  },
+  "star/j202548-564348": {
+   "description": "Páv je najjasnejšou hviezdou v súhvezdí Páv (Pavo), horúca modro-biela hviezda ďalekej južnej oblohy.",
+   "fun_fact": "Peacock dostal svoje meno v 30. rokoch 20. storočia, pretože RAF trvala na tom, aby každá hviezda v jej novom Leteckom almanachu mala meno – a táto ho nemala!",
+   "distance": "179 svetelných rokov",
+   "size": "4,8 slnečných polomerov",
+   "mass": "5,9 slnečných hmotností",
+   "spectral_class": "B3 V"
   },
   "star/kaus_australis": {
    "description": "Kaus Australis je najjasnejšia hviezda v Strelcovi (Lukostrelec). Jej názov znamená \"južný luk\" v zmesi arabčiny a latinčiny.",
@@ -1932,6 +2183,12 @@
    "mass": "~8.5 slnečných hmotností",
    "spectral_class": "F5Ib",
    "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/n25": {
+   "description": "R Coronae Borealis je zriedkavá žltá nadobor v Severnej korune a prototyp triedy premenných hviezd pomenovanej po nej.",
+   "fun_fact": "R Coronae Borealis je niekedy nazývaná „reverzná nova“ – namiesto vzplanutia nepredvídateľne zoslabne až o 9 magnitúd, keď vypúšťa oblaky uhlíkových sadzí, ktoré ju zakrývajú pred pohľadom!",
+   "distance": "4 560 svetelných rokov",
+   "spectral_class": "G0Iep"
   },
   "star/nunki": {
    "description": "Nunki je druhá najjasnejšia hviezda v Strelcovi a najstaršie meno hviezdy stále v bežnom používaní.",

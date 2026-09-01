@@ -1,43 +1,187 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
-  Carried over from v1 by tools/salvage-translations/salvage.py.
-  Only strings whose English source is identical between v1 and v2 appear here;
-  everything else is translated by `tm`. Safe to hand-edit thereafter.
--->
+<?xml version='1.0' encoding='UTF-8'?>
 <resources>
+    <!-- tm:omitted name="app_name" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="splash_version" reason="identical_to_source" -->
+    <string name="splash_dismiss" translation_description="Accessibility label for the action that dismisses the launch splash when it is tapped">Zavrieť</string>
+
+    <!-- Sky-map labels drawn by the computed layers (LayerStrings). -->
     <string name="north_pole">SP</string>
     <string name="south_pole">JP</string>
     <string name="zenith">ZENIT</string>
+    <!-- tm:omitted name="nadir" reason="identical_to_source" -->
     <string name="north">SEVER</string>
     <string name="south">JUH</string>
     <string name="east">VÝCHOD</string>
     <string name="west">ZÁPAD</string>
     <string name="ecliptic">Ekliptika</string>
+
+    <!-- Solar-system body names, drawn as labels next to each body. -->
     <string name="sun">Slnko</string>
     <string name="moon">Mesiac</string>
     <string name="mercury">Merkúr</string>
     <string name="venus">Venuša</string>
     <string name="earth">Zem</string>
+    <!-- tm:omitted name="mars" reason="identical_to_source" -->
+    <!-- tm:omitted name="jupiter" reason="identical_to_source" -->
+    <!-- tm:omitted name="saturn" reason="identical_to_source" -->
     <string name="uranus">Urán</string>
     <string name="neptune">Neptún</string>
+    <!-- tm:omitted name="pluto" reason="identical_to_source" -->
+
+    <!-- Search (map-screen search dialog and overlay). -->
     <string name="search_button">Hľadať</string>
     <string name="search_label">Hľadať na nebi</string>
+    <string name="search_hint" translation_description="Placeholder text in the search field showing example search targets.">napr. Mars alebo M31</string>
+    <string name="search_coordinates_hint" translation_description="Helper text under the search field showing that celestial coordinates (right ascension and declination) can be typed directly, with two example formats.">Alebo zadajte súradnice: 12h 30m, +45° alebo 187.5 -45.2</string>
+    <string name="search_go" translation_description="Button that starts navigating the sky map toward the typed search target.">Ísť</string>
     <string name="search_cancel">Zrušiť</string>
     <string name="search_no_results">Nenašli sa žiadne výsledky. Objekt možno nie je teraz viditeľný.</string>
+    <string name="search_target_looking_message" translation_description="Status shown while the user is being guided toward a search target. %1$s is the object name.">Hľadám: %1$s</string>
+    <string name="search_target_found_message" translation_description="Status shown when the search target has been found and is centered on screen. %1$s is the object name.">Nájdené: %1$s</string>
     <string name="search_overlay_prompt">Nasmerujte telefón podľa šípky</string>
+
+    <!-- Layer names in the layer-visibility sheet. -->
     <string name="layer_stars">Hviezdy</string>
     <string name="layer_constellations">Súhvezdia</string>
+    <string name="layer_deep_sky" translation_description="Toggle label for the layer showing deep-sky objects such as galaxies and nebulae.">Objekty hlbokého vesmíru</string>
     <string name="layer_solar_system">Planéty</string>
     <string name="layer_meteor_showers">Meteorické roje</string>
+    <string name="layer_satellites" translation_description="Toggle label for the layer showing artificial satellites such as the International Space Station.">Satelity</string>
+    <string name="channel_passes_name" translation_description="Name of the notification channel for alerts shortly before a satellite passes overhead.">Prelety satelitov</string>
+    <string name="channel_passes_description" translation_description="Description of the satellite-pass notification channel.">Jedno upozornenie krátko pred najlepším viditeľným preletom noci</string>
+    <string name="notif_pass_title" translation_description="Title of the notification sent shortly before a satellite passes overhead. %1$s is the satellite name.">%1$s čoskoro preletí nad hlavou</string>
+    <string name="notif_pass_text" translation_description="Body of the satellite pass notification, telling the user when to go outside. %1$s is a time.">Viditeľné približne od %1$s – choďte von a nechajte si zvyknúť oči</string>
+    <string name="channel_eclipses_name" translation_description="Name of the notification channel for alerts before a lunar eclipse starts.">Zatmenia Mesiaca</string>
+    <string name="channel_eclipses_description" translation_description="Description of the lunar-eclipse notification channel.">Jedno upozornenie pred začiatkom zatmenia Mesiaca</string>
+    <string name="notif_eclipse_title" translation_description="Title of the notification sent before a lunar eclipse starts. %1$s is a localized eclipse type like \'Total lunar eclipse\'.">%1$s sa čoskoro začne</string>
+    <string name="notif_eclipse_text" translation_description="Body of the lunar eclipse notification, telling the user when it begins. %1$s is a time.">Začína sa okolo %1$s – oplatí sa vyjsť von</string>
+    <string name="satellite_name_iss" translation_description="Display name for the International Space Station.">Medzinárodná vesmírna stanica</string>
+    <!-- tm:omitted name="satellite_name_tiangong" reason="identical_to_source" -->
+    <string name="layer_param_pass_alerts" translation_description="Label for the setting that turns on a notification shortly before a satellite passes overhead.">Upozornenia na prelety</string>
+    <string name="layer_param_pass_alerts_description" translation_description="Explains what the pass-alert setting does: a single notification before the best visible pass of the night.">Upozorniť ma pred najlepším viditeľným preletom každú noc</string>
+    <string name="layer_param_eclipse_alerts" translation_description="Label for the setting that turns on a notification before a lunar eclipse begins.">Upozornenia na zatmenia</string>
+    <string name="layer_param_eclipse_alerts_description" translation_description="Explains what the eclipse-alert setting does: a single notification before a lunar eclipse starts.">Upozorniť ma pred začiatkom zatmenia Mesiaca</string>
+    <string name="satellite_description" translation_description="Short description shown on the info card for an artificial satellite.">
+    Umelá družica na nízkej obežnej dráhe Zeme, osvetlená Slnkom na tmavom nebi. Prechádza od obzoru k obzoru za niekoľko minút, pohybuje sa plynule a bez blikania.
+    </string>
+    <string name="satellite_next_pass" translation_description="Heading above the next visible pass details on a satellite\'s info card.">Ďalší viditeľný prelet</string>
+    <string name="satellite_pass_when" translation_description="When and how high the next satellite pass will be. %1$s is a time, %2$s is a compass direction, %3$d is an angle in degrees.">%1$s, vychádza %2$s, dosahuje %3$d°</string>
+    <string name="satellite_pass_magnitude" translation_description="How bright the satellite will be at its peak. %1$.1f is a brightness magnitude.">Magnitúda %1$.1f pri najvyššej jasnosti</string>
+    <string name="satellite_pass_shadow" translation_description="Tells the user the satellite will fade out mid-pass when it enters the Earth\'s shadow. %1$s is a time.">Zmizne v zemskom tieni o %1$s</string>
+    <string name="satellite_no_pass" translation_description="Shown on a satellite info card when no visible pass is coming up in the next two days.">Žiadne viditeľné prelety v najbližších dňoch</string>
+    <string name="satellite_pass_unknown" translation_description="Shown on a satellite info card when the downloaded orbit data is too old to predict pass times reliably.">Údaje o obežnej dráhe sú príliš staré na predpovedanie preletov</string>
+    <string name="object_info_eclipse_title" translation_description="Heading above the next lunar eclipse details on the Moon\'s info card.">Zatmenie Mesiaca</string>
+    <string name="object_info_no_eclipse" translation_description="Shown on the Moon\'s info card when no lunar eclipse is coming up in the searched time range.">Žiadne zatmenie Mesiaca sa čoskoro neočakáva</string>
+    <string name="object_info_eclipse_greatest" translation_description="The next lunar eclipse\'s type and greatest-eclipse date/time. %1$s is a localized eclipse type like \'Total lunar eclipse\', %2$s a date, %3$s a time.">%1$s — maximálne zatmenie %2$s o %3$s</string>
+    <string name="object_info_eclipse_totality" translation_description="The start and end time of totality during a total lunar eclipse. %1$s and %2$s are times.">Totalita %1$s – %2$s</string>
+    <string name="tonight_satellite_pass" translation_description="Tonight-widget row announcing a visible satellite pass. %1$s is the satellite name, %2$s is a time of day.">%1$s preletí o %2$s</string>
+    <string name="tonight_trailing_pass" translation_description="Small trailing note on a satellite pass row. %1$s is a compass direction, %2$d is an angle in degrees, %3$.1f is a brightness magnitude.">Východ %1$s, %2$d°, mag %3$.1f</string>
+    <string name="satellites_no_data" translation_description="Explanation shown when satellite orbital data has not been downloaded yet and so no satellites can be drawn.">Polohy satelitov vyžadujú na aktualizáciu internetové pripojenie.</string>
+    <string name="satellites_refresh" translation_description="Button that tries to download satellite orbital data now.">Obnoviť</string>
+    <string name="satellites_retry_soon" translation_description="Shown instead of a Refresh button when satellite data was just requested and cannot be requested again for a few minutes.">Skúste to znova o pár minút</string>
+    <string name="satellites_retry_within_hour" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for up to an hour.">Skúste to znova do hodiny</string>
+    <string name="satellites_retry_hours" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for several hours.">Skúste to znova o pár hodín</string>
+    <string name="satellites_retry_tomorrow" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again until the next day.">Skúste to znova zajtra</string>
+    <string name="satellites_retry_days" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for several days.">Skúste to znova o pár dní</string>
+    <string name="layer_grid" translation_description="Toggle label for the layer showing the right ascension / declination grid.">Nebeská mriežka</string>
     <string name="layer_horizon">Horizont</string>
     <string name="layer_ecliptic">Ekliptika</string>
     <string name="layer_sky_gradient">Gradient oblohy</string>
+
+    <!-- Map screen controls. -->
+    <string name="layers_sheet_title" translation_description="Title of the bottom sheet listing sky map layers the user can show or hide.">Vrstvy</string>
+    <string name="layers_group_objects" translation_description="Layers-sheet group header for layers that draw sky objects (stars, planets, deep-sky objects).">Objekty</string>
+    <string name="layers_group_reference" translation_description="Layers-sheet group header for reference elements drawn over the sky (coordinate grid, horizon, ecliptic).">Referencia</string>
+    <string name="layers_group_display" translation_description="Layers-sheet group header for display settings that change how the sky is rendered rather than what is drawn.">Zobrazenie</string>
+    <string name="show_layers" translation_description="Accessibility description and label for the button opening the layer-visibility sheet, which holds the layers that do not fit on the rail plus display options.">Ďalšie vrstvy a možnosti</string>
+    <string name="more_button" translation_description="Accessibility label and tooltip for the map-screen button (three vertical dots) opening the overflow menu of further destinations such as Gallery and Settings.">Ďalšie možnosti</string>
     <string name="night_mode">Nočný režim</string>
+    <string name="switch_to_manual" translation_description="Tooltip and accessibility label for the button that switches the map from auto (sensor-driven) mode to manual (drag) mode.">Prepnúť do manuálneho režimu</string>
+    <string name="switch_to_auto" translation_description="Tooltip and accessibility label for the button that switches the map from manual (drag) mode to auto (sensor-driven) mode.">Prepnúť do automatického režimu</string>
+    <string name="no_sensor_warning" translation_description="Warning shown when the device lacks the motion sensors needed to point the map at the sky automatically.">
+    Toto zariadenie nemá kompas ani pohybové senzory, takže Sky Map nedokáže sledovať, kam ho namierite. Namiesto toho ťahajte mapu ručne.
+    </string>
+    <!-- tm:omitted name="no_sensor_warning_dismiss" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="hud_ra_label" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_dec_label" reason="identical_to_source" -->
+    <string name="hud_alt_label" translation_description="Map-HUD row label: altitude (angle above the horizon) of the point at the centre of the screen. Keep short.">Výš.</string>
+    <!-- tm:omitted name="hud_az_label" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_fov_label" reason="identical_to_source" -->
+    <string name="hud_correction_label" translation_description="Map-HUD row label for the manual sensor-alignment correction the user set by dragging. Keep very short.">Úpr.</string>
+    <!-- tm:omitted name="hud_ra_value" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_signed_degrees_value" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_azimuth_value" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_fov_value" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_fov_value_fine" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_fov_value_finest" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_correction_value" reason="identical_to_source" -->
+    <string name="hud_correction_reset" translation_description="Accessibility label for the small button that clears the manual sensor-alignment correction back to zero.">Obnoviť korekciu zarovnania</string>
+    <string name="hud_alignment_reset_message" translation_description="Snackbar confirming the sensor-alignment correction was cleared; shown with an Undo action.">Korekcia zarovnania obnovená</string>
+    <string name="hud_fov_locked" translation_description="Accessibility label for the small lock icon shown next to the field-of-view readout while the camera controls the zoom in through-camera mode.">Priblíženie uzamknuté na kameru</string>
+
+    <string name="layer_hud" translation_description="Layers-sheet Display toggle that shows the heads-up readout of where the phone is pointing (compass direction and altitude) over the star map.">Ukazovateľ smeru</string>
+
+    <!-- Through-camera (AR) mode (camera-ar-mode.md, D64). -->
+    <string name="layer_camera" translation_description="Layers-sheet Display toggle that shows the live rear-camera image behind the star map, so the drawn sky overlays the real one.">Režim cez kameru</string>
+    <string name="layer_camera_needs_sensors" translation_description="Subtitle explaining why the through-camera toggle is disabled: the device has no usable motion sensors, and the mode needs the map to follow where the phone points.">Vyžaduje pohybové senzory, ktoré toto zariadenie nemá</string>
+    <string name="ar_auto_mode_snackbar" translation_description="Snackbar shown when turning on through-camera mode switched the map from manual dragging back to automatic sensor pointing.">Automatický režim zapnutý pre zobrazenie kamery</string>
+    <string name="ar_permission_denied" translation_description="Snackbar shown when the user declined the camera permission that through-camera mode needs.">Režim cez kameru vyžaduje povolenie na prístup ku kamere</string>
     <string name="ar_permission_settings_action">Nastavenia</string>
+    <string name="ar_exposure_slider" translation_description="Accessibility label for the slider adjusting the camera\'s exposure compensation while through-camera mode is on.">Expozícia kamery</string>
+    <string name="ar_alignment_adjusted_message" translation_description="Snackbar shown after the user drags the star map to align it with the camera image; shown with an Undo action that reverts the whole drag.">Zarovnanie mapy upravené</string>
+    <string name="ar_dimmer_slider" translation_description="Accessibility label for the slider dimming the camera image behind the star map while through-camera mode is on.">Stmievač fotoaparátu</string>
+    <!-- tm:omitted name="ar_iso_slider_label" reason="identical_to_source" -->
+    <string name="ar_iso_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual ISO sensitivity in through-camera mode.">ISO fotoaparátu</string>
+    <!-- tm:omitted name="ar_shutter_slider_label" reason="identical_to_source" -->
+    <string name="ar_shutter_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual shutter (exposure) time in through-camera mode.">Čas uzávierky fotoaparátu</string>
+    <string name="share_button" translation_description="Overflow-menu row that captures the current sky view as an image and opens the system share sheet.">Zdieľať oblohu</string>
+    <string name="share_chooser_title" translation_description="Title of the system share sheet when sharing a captured sky image.">Zdieľať túto oblohu</string>
+    <string name="share_invitation" translation_description="Short invitation stamped on the footer of shared sky images, above the store link.">Pozrite sa, na čo sa pozeráte — získajte Sky Map zadarmo</string>
+    <string name="share_text" translation_description="Text accompanying a shared sky image in apps that accept both an image and text. %1$s is the app-store link.">Pozrite sa, na čo sa pozeráte — získajte Sky Map zadarmo: %1$s</string>
+    <!-- tm:omitted name="share_store_link" reason="identical_to_source" -->
+    <string name="share_layout_overlay" translation_description="Caption of the share-layout choice that draws the star map over the camera photo, as seen on screen.">Prekrytie</string>
+    <string name="share_layout_side_by_side" translation_description="Caption of the share-layout choice that puts the camera photo and the star map next to each other.">Vedľa seba</string>
+    <string name="share_shutter_button" translation_description="Accessibility label for the round shutter button that captures and shares the current through-camera view.">Zdieľať tento pohľad</string>
+    <string name="share_failed_message" translation_description="Snackbar shown when capturing the sky image for sharing failed.">Nepodarilo sa zachytiť oblohu — skúste to znova</string>
+    <!-- tm:omitted name="ar_exposure_auto" reason="identical_to_source" -->
+    <string-array name="hud_cardinal_directions" translation_description="The sixteen compass-point abbreviations, clockwise from north, used as the azimuth suffix in the map HUD (e.g. N, NNE, NE...). Translate to the locale\'s conventional compass abbreviations.">
+        <item>S</item>
+        <item>SSV</item>
+        <item>SV</item>
+        <item>VSV</item>
+        <item>V</item>
+        <item>VJV</item>
+        <item>JV</item>
+        <item>JJV</item>
+        <item>J</item>
+        <item>JJZ</item>
+        <item>JZ</item>
+        <item>ZJZ</item>
+        <item>Z</item>
+        <item>ZSZ</item>
+        <item>SZ</item>
+        <item>SSZ</item>
+    </string-array>
+
+    <!-- Time travel: entry button, dialog, and the player bar shown while travelling. -->
     <string name="time_travel_button">Cestovanie v čase</string>
     <string name="time_travel_title">Cestovanie v čase</string>
+    <string name="time_travel_visiting" translation_description="Readout in the time travel dialog showing the currently chosen destination date and time. %1$s is the formatted date and time.">Navštevujem: %1$s</string>
+    <string name="time_travel_pick_date" translation_description="Button in the time travel dialog that opens a date picker.">Nastaviť dátum</string>
+    <string name="time_travel_pick_time" translation_description="Button in the time travel dialog that opens a time picker.">Nastaviť čas</string>
+    <string name="time_travel_select_event" translation_description="Placeholder hint for the dropdown list of popular astronomical events in the time travel dialog.">Vybrať populárnu udalosť…</string>
+    <string name="time_travel_go" translation_description="Button that starts time travel to the chosen date.">Prejsť</string>
     <string name="time_travel_from_now">Spustiť od teraz</string>
+    <!-- tm:omitted name="time_travel_ok" reason="identical_to_source" -->
     <string name="time_travel_cancel">Zrušiť</string>
+    <!-- tm:omitted name="time_travel_slower" reason="identical_to_source" -->
+    <!-- tm:omitted name="time_travel_pause" reason="identical_to_source" -->
+    <!-- tm:omitted name="time_travel_faster" reason="identical_to_source" -->
+    <string name="time_travel_return" translation_description="Player button that ends time travel and returns the map to the present.">Teraz</string>
+
+    <!-- Time travel playback-rate labels (v1 wording). -->
     <string name="time_travel_second_speed">Rýchlosť cestovania &gt; 1 s/s</string>
     <string name="time_travel_minute_speed">Rýchlosť cestovania &gt; 1 min/s</string>
     <string name="time_travel_10minute_speed">Rýchlosť cestovania &gt; 10 min/s</string>
@@ -50,6 +194,9 @@
     <string name="time_travel_hour_speed_back">Rýchlosť cestovania &lt; 1 hod/s</string>
     <string name="time_travel_day_speed_back">Rýchlosť cestovania &lt; 1 deň/s</string>
     <string name="time_travel_week_speed_back">Rýchlosť cestovania &lt; 1 týždeň/s</string>
+
+    <!-- Popular events in the time travel dialog (timestamps live in TimeTravelEvents.kt). -->
+    <string name="time_travel_now" translation_description="Time travel picker entry that resets the destination to the present moment.">Teraz</string>
     <string name="time_travel_next_sunset">Ďalší západ Slnka</string>
     <string name="time_travel_next_sunrise">Ďalší východ Slnka</string>
     <string name="time_travel_next_full_moon">Ďalší spln</string>
@@ -61,6 +208,7 @@
     <string name="time_travel_mars_uranus_2026">Blízke priblíženie Marsu a Uránu, 4. júl 2026</string>
     <string name="time_travel_solar_eclipse_2026">Úplné slnečné zatmenie, 12. august 2026</string>
     <string name="time_travel_perseids_2026">Meteorický roj Perseid, 12.-13. august 2026</string>
+    <string name="time_travel_lunar_eclipse_aug_2026" translation_description="Name of an astronomical event in the time travel picker. Keep the date format suitable for your locale.">Čiastočné zatmenie Mesiaca, 28. augusta 2026</string>
     <string name="time_travel_jupiter_occultation_2026">Mesačná okulácia Jupitera, 6. október 2026</string>
     <string name="time_travel_geminids_2026">Geminidy - meteorický dážď, 13.-14. dec. 2026</string>
     <string name="time_travel_supermoon_2026">Vianočný supermesiac, 24. dec. 2026</string>
@@ -69,7 +217,11 @@
     <string name="time_travel_apollo_11">Pristátie lode Apollo 11 na Mesiaci</string>
     <string name="time_travel_jupiter_saturn_2020">Konjunkcia Jupiter - Saturn v roku 2020</string>
     <string name="sun_wont_set_message">Na vašej aktuálnej polohe nezapadne Slnko počas nasledujúcich 24 hodín.</string>
+    <string name="time_travel_start_message" translation_description="Toast message when time travel starts toward a chosen destination. %1$s is the formatted destination date and time.">Cestovanie časom do %1$s ...</string>
     <string name="time_travel_close_message">Späť do súčasnosti...</string>
+
+    <!-- Location management. -->
+    <string name="location_button" translation_description="Button on the map screen that opens the location management sheet">Poloha</string>
     <string name="location_management_title">Vaša poloha</string>
     <string name="location_source_auto">Automatická</string>
     <string name="location_source_manual">Manuálna</string>
@@ -82,6 +234,11 @@
     <string name="location_set_toast">Poloha nastavená na %1$s</string>
     <string name="location_long_lat">Zemepisná dĺžka:%1$.2f, Zemepisná šírka:%2$.2f</string>
     <string name="location_map_unavailable">Mapa nie je dostupná</string>
+    <string name="location_map_content_description" translation_description="Accessibility description of the static map image showing the current location of the user">Mapa vašej aktuálnej polohy</string>
+    <string name="snackbar_action_undo" translation_description="Snackbar action button that reverses the change the snackbar reports, e.g. re-enabling horizon auto-leveling">Späť</string>
+    <string name="snackbar_action_open" translation_description="Snackbar action button that opens the screen the snackbar refers to, e.g. the compass calibration screen">Otvoriť</string>
+    <string name="label_size_hint_message" translation_description="Snackbar shown once, the first time the user zooms in a long way. Explains that the text labels naming stars and other objects stay the same size however far you zoom, and that their size is changed in the app\'s Settings screen instead. Shown with an action button that opens Settings.">Veľkosť popisku sa nemení s priblížením — nastavte ju v Nastaveniach</string>
+    <string name="label_size_hint_action" translation_description="Action button on the label size snackbar; opens the app\'s Settings screen, where the user can change how large the sky labels are">Nastavenia</string>
     <string name="location_permission_dialog_title">Vyžaduje sa poloha</string>
     <string name="location_permission_dialog_message">
     Sky Map potrebuje vašu približnú polohu, aby zobrazil správnu nočnú oblohu. Môžete udeliť povolenie, zadať svoju polohu ručne alebo sa rozhodnúť neskôr. Ak sa rozhodnete neskôr, mapa nebude presná, kým nebude nastavená vaša poloha.
@@ -107,14 +264,36 @@
     <string name="location_geocoder_offline">Bez internetu – zadajte súradnice priamo</string>
     <string name="location_invalid_latitude">Zemepisná šírka musí byť medzi −90 a 90</string>
     <string name="location_invalid_longitude">Zemepisná dĺžka musí byť medzi −180 a 180</string>
+    <!-- tm:omitted name="location_coordinate_format" reason="identical_to_source" -->
+
+    <!-- Object info card -->
+    <string name="object_info_image_credit" translation_description="Attribution line under the object\'s photo; %1$s is the credited source, e.g. NASA/ESA">Obrázok: %1$s</string>
+    <string name="object_info_fun_fact" translation_description="An interesting trivia line on the object info card; %1$s is the fact text">Zaujímavosť: %1$s</string>
     <string name="object_info_distance">Vzdialenosť:</string>
     <string name="object_info_size">Veľkosť:</string>
     <string name="object_info_mass">Hmotnosť:</string>
+    <string name="object_info_spectral_class" translation_description="Label for a star\'s spectral classification (e.g. G2V) on the info card">Spektrálna trieda:</string>
     <string name="object_info_magnitude">Magnitúda:</string>
+    <string name="object_info_rises" translation_description="Label on the info card for the time the object next rises above the horizon at the user\'s location">Vychádza:</string>
+    <string name="object_info_sets" translation_description="Label on the info card for the time the object next sets below the horizon at the user\'s location">Západ:</string>
+    <string name="object_info_always_above_horizon" translation_description="Info-card line shown for a circumpolar object that never sets at the user\'s location">Vždy nad obzorom vo vašej polohe</string>
+    <string name="object_info_always_below_horizon" translation_description="Info-card line shown for an object that never rises at the user\'s location">Vždy pod obzorom vo vašej polohe</string>
+    <string name="object_info_also_known_as" translation_description="Label on the info card above the object\'s alternative names (aliases and catalog designations), e.g. M31 and NGC 224">Tiež známe ako:</string>
+    <string name="object_info_see_also" translation_description="Heading above links to related celestial objects on the info card">Pozri tiež</string>
     <string name="object_info_find_in_sky">Nájsť na oblohe</string>
+    <string name="object_info_close" translation_description="Button that closes the object info card">Zavrieť</string>
     <string name="object_info_tap_to_close">Klepnite na zatvorenie</string>
+
+    <!-- Image gallery -->
+    <string name="gallery_button" translation_description="Map-screen menu item that opens a gallery of photographs of celestial objects. Not the user\'s own photos - these are catalog images from sources such as NASA and ESA.">Galéria oblohy</string>
+    <string name="gallery_title" translation_description="Title of the screen showing a gallery of photographs of celestial objects. Not the user\'s own photos - these are catalog images from sources such as NASA and ESA.">Galéria oblohy</string>
+    <string name="gallery_back" translation_description="Content description for the back arrow leaving the gallery screen">Späť</string>
+
+    <!-- Settings screen (v1 wording where a v1 string existed) -->
     <string name="settings_button">Nastavenia</string>
     <string name="settings_title">Nastavenia</string>
+    <string name="settings_back" translation_description="Content description for the back arrow leaving the settings screen">Späť</string>
+    <!-- tm:omitted name="settings_ok" reason="identical_to_source" -->
     <string name="settings_cancel">Zrušiť</string>
     <string name="settings_section_controls">Ovládanie</string>
     <string name="settings_section_appearance">Vzhľad</string>
@@ -122,6 +301,7 @@
     <string name="settings_section_other">Ostatné</string>
     <string name="enable_analytics">Posielať štatistiky používania</string>
     <string name="enable_analytics_desc">Vylepšite Sky Map odosielaním anonymných údajov do služby Google Analytics</string>
+    <string name="settings_diagnostics_summary" translation_description="Summary for the settings row that opens the diagnostics screen, which shows technical sensor, location and performance readouts useful when reporting a problem">Podrobnosti o senzore, polohe a výkone</string>
     <string name="settings_tap_to_identify">Zobraziť informácie pri klepnutí</string>
     <string name="settings_tap_to_identify_summary">Klepnite na nebeské objekty, aby ste sa o nich dozvedeli</string>
     <string name="settings_tap_in_auto_mode">Info karty v automatickom režime</string>
@@ -129,23 +309,68 @@
     Zobraziť info karty aj pri klepnutí na objekty v automatickom (senzorovom) režime
     </string>
     <string name="settings_auto_level_horizon">Automatické vyrovnanie horizontu</string>
+    <string name="auto_level_on_toast" translation_description="Brief confirmation shown when a double tap turns horizon auto-leveling on in manual mode">Automatické vyrovnávanie horizontu zapnuté</string>
+    <string name="auto_level_off_toast" translation_description="Brief confirmation shown when a double tap turns horizon auto-leveling off in manual mode">Automatické vyrovnávanie horizontu vypnuté</string>
     <string name="settings_auto_level_horizon_summary">
     V manuálnom režime sa horizont postupne vracia do horizontálnej polohy po zdvihnutí prstov
     </string>
+    <string name="settings_font_size" translation_description="Preference title: change the size of the text labels naming stars and other objects drawn on the sky">Veľkosť popiskov oblohy</string>
+    <string name="settings_font_size_summary" translation_description="Help to go along with the sky label size preference. Explains that this size is fixed and does not change as the user zooms the map in or out.">Text popisku zostáva v tejto veľkosti pri akomkoľvek priblížení</string>
+    <string name="settings_font_size_small" translation_description="Smallest font size">Malé</string>
+    <string name="settings_font_size_medium" translation_description="Normal font size">Stredné</string>
+    <string name="settings_font_size_large" translation_description="Large font size">Veľké</string>
+    <string name="settings_font_size_extra_large" translation_description="Largest font size">Extra veľké</string>
     <string name="settings_auto_dimness">Autom. stmievanie</string>
+    <string name="settings_auto_dimness_summary" translation_description="Summary for the night-mode screen dimming preference">Ako veľmi nočný režim stlmí obrazovku</string>
+    <string name="settings_auto_dimness_system" translation_description="Screen dimming option: leave brightness on the system setting">Predvolené systémom</string>
+    <string name="settings_auto_dimness_dim" translation_description="Screen dimming option: dimmest screen setting">Veľmi tmavé</string>
+    <string name="settings_auto_dimness_classic" translation_description="Screen dimming option: the hand-tuned brightness Sky Map used for its first 15 years">Klasické</string>
     <string name="settings_sky_gradient">Zobraziť gradient oblohy</string>
     <string name="settings_sky_gradient_summary">Tieňuje oblohu modrou blízko Slnka a tmavou na opačnej strane</string>
+    <string name="settings_disable_gyro" translation_description="Preference title for switching from the gyroscope to the legacy compass + accelerometer sensor pipeline">Použiť staršie senzory</string>
+    <string name="settings_disable_gyro_summary" translation_description="Explanation of the legacy sensors preference and when to use it">
+    Nasmerujte mapu pomocou kompasu a akcelerometra namiesto gyroskopu. Skúste to, ak sa mapa posúva alebo sa gyroskop vášho zariadenia správa nesprávne; zariadenia bez gyroskopu používajú tieto senzory automaticky.
+    </string>
     <string name="settings_sensor_speed">Rýchlosť senzora</string>
+    <string name="settings_sensor_speed_slow" translation_description="Slow sensor speed">Pomalé</string>
+    <string name="settings_sensor_speed_standard" translation_description="Normal sensor speed">Stredné</string>
+    <string name="settings_sensor_speed_fast" translation_description="Fast sensor speed">Rýchle</string>
     <string name="settings_sensor_damping">Tlmenie</string>
+    <string name="settings_sensor_damping_standard" translation_description="Low sensor damping factor - this will make the app jittery">Trhavé</string>
+    <string name="settings_sensor_damping_high" translation_description="Medium sensor damping factor - this will make the app slightly jittery">Stredné</string>
+    <string name="settings_sensor_damping_extra_high" translation_description="Extra high sensor damping factor">Akurát</string>
+    <string name="settings_sensor_damping_really_high" translation_description="Really high sensor damping factor - this will make the app sluggish">Pomalé</string>
+    <string name="settings_classic_sensors_only" translation_description="Summary noting a sensor preference only applies to the legacy non-gyroscope sensor path">Platí len pri použití starších senzorov</string>
     <string name="settings_reverse_magnetic_z">Obrátiť magnetické pole v ose Z</string>
     <string name="settings_magnetic_correction">Použiť magnetickú korekciu</string>
+    <string name="settings_magnetic_correction_summary" translation_description="Summary for the magnetic correction preference">Koriguje kompas pre rozdiel medzi magnetickým a skutočným severom</string>
     <string name="settings_view_direction">Zobraziť smer</string>
+    <string name="settings_view_direction_summary" translation_description="Explanation of the view direction preference, covering both landscape rotation and pointer modes">
+    Otočiť horizont o 90 stupňov (pre zariadenia s vynútenou orientáciou na šírku) alebo použiť režim ukazovateľa, aby obrazovka ukazovala, na čo smeruje horná časť telefónu
+    </string>
+    <string name="settings_view_direction_standard" translation_description="Normal viewing direction">Normálne</string>
+    <string name="settings_view_direction_rotate90" translation_description="View direction option that rotates the screen by 90 degrees">Otočený horizont</string>
+    <string name="settings_view_direction_telescope" translation_description="View direction option that shows the sky as pointed at by the long edge of the phone">Režim ukazovateľa</string>
+
+    <!-- tm:omitted name="support_email" reason="identical_to_source" -->
     <string name="diagnostics_button">Diagnostika</string>
     <string name="diagnostics_title">Diagnostika</string>
+    <string name="diagnostics_share" translation_description="Accessibility label for the diagnostics screen button that emails these details to the developers">Poslať vývojárom</string>
+    <string name="diagnostics_share_subject" translation_description="Subject line of the email a user sends from the diagnostics screen">Správa o diagnostike Sky Map</string>
+    <string name="diagnostics_report_header" translation_description="First line of the emailed diagnostics report, telling the user where to type their problem description. Keep it on one line.">--- Diagnostika Sky Map. Popíšte problém nad týmto riadkom. ---</string>
     <string name="diagnostics_section_general">Všeobecné</string>
     <string name="diagnostics_device">Zariadenie</string>
+    <!-- tm:omitted name="diagnostics_phone_format" reason="identical_to_source" -->
     <string name="diagnostics_android_version">Verzia Androidu</string>
     <string name="diagnostics_sky_map_version">Verzia Sky Map</string>
+    <!-- tm:omitted name="diagnostics_sky_map_version_format" reason="identical_to_source" -->
+    <string name="diagnostics_section_graphics" translation_description="Section heading in the diagnostics screen for graphics/GPU information">Grafika</string>
+    <string name="diagnostics_gl_renderer" translation_description="Row label in the diagnostics screen for the name of the graphics processor (GPU) drawing the sky">Renderovač</string>
+    <!-- tm:omitted name="diagnostics_gl_version" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_gl_version_format" reason="identical_to_source" -->
+    <string name="diagnostics_gl_limits" translation_description="Row label in the diagnostics screen for graphics hardware limits (maximum texture size, supported line widths and point sizes)">Limity GL</string>
+    <string name="diagnostics_gl_limits_format" translation_description="Format for the GL limits row: maximum texture size in pixels, then the supported line width and point size ranges. \'tex\' abbreviates texture. %1$d is texture size, %2$s is the line width range, %3$s is the point size range.">tex %1$d, čiara %2$s, bod %3$s</string>
+    <string name="diagnostics_gl_unavailable" translation_description="Value shown in the diagnostics Graphics rows before the sky map has drawn, when the graphics details are not known yet">Zatiaľ nedostupné</string>
     <string name="diagnostics_section_sensors">Senzory</string>
     <string name="diagnostics_accelerometer">Akcelerometer</string>
     <string name="diagnostics_compass">Kompas</string>
@@ -158,22 +383,43 @@
     <string name="diagnostics_location_permission">Povolenie na určenie polohy</string>
     <string name="diagnostics_permission_granted">Povolené</string>
     <string name="diagnostics_permission_denied">Zamietnuté</string>
+    <!-- tm:omitted name="diagnostics_gps" reason="identical_to_source" -->
     <string name="diagnostics_no_gps">Bez GPS</string>
     <string name="diagnostics_enabled">Povolené</string>
     <string name="diagnostics_disabled">Zakázané</string>
     <string name="diagnostics_permission_disabled">Povolenie zakázané</string>
     <string name="diagnostics_location">Poloha (šírka, dĺžka)</string>
+    <!-- tm:omitted name="diagnostics_location_format" reason="identical_to_source" -->
+    <string name="diagnostics_location_unset" translation_description="Location status shown in diagnostics when no location has been set yet">Nenastavené</string>
     <string name="diagnostics_location_acquiring">Získavanie…</string>
+    <string name="diagnostics_location_hardware_unavailable" translation_description="Location status shown in diagnostics when no location hardware is available">Žiadny hardvér polohy</string>
     <string name="diagnostics_pointing">Zobrazená snímka</string>
+    <!-- tm:omitted name="diagnostics_dec_format" reason="identical_to_source" -->
     <string name="diagnostics_magnetic_correction">Magnetická korekcia</string>
+    <string name="diagnostics_alignment_adjustment" translation_description="Diagnostics row label for the manual sky-alignment correction the user set by dragging in through-camera mode.">Nastavenie zarovnania</string>
+    <!-- tm:omitted name="diagnostics_alignment_format" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_magnetic_correction_format" reason="identical_to_source" -->
+    <string name="diagnostics_east" translation_description="Compass direction shown for an eastward magnetic correction">Východ</string>
+    <string name="diagnostics_west" translation_description="Compass direction shown for a westward magnetic correction">Západ</string>
     <string name="diagnostics_local_datetime">Miestny čas</string>
     <string name="diagnostics_utc_datetime">Univerzálny čas</string>
     <string name="diagnostics_section_network">Sieť</string>
     <string name="diagnostics_connection">Pripojenie</string>
+    <string name="diagnostics_section_satellites" translation_description="Section heading in the diagnostics screen for satellite orbital-data status">Satelity</string>
+    <string name="diagnostics_satellite_data" translation_description="Row label in the diagnostics screen for the age and count of cached satellite orbital data">Údaje o obežnej dráhe</string>
+    <string name="diagnostics_satellite_data_none" translation_description="Row value in the diagnostics screen when no satellite orbital data has been downloaded yet">Nestiahnuté</string>
+    <string name="diagnostics_satellite_data_format" translation_description="Row value in the diagnostics screen showing how many satellites are cached and how many days old the data is. %1$d is a count, %2$.1f is a number of days">%1$d satelitov, %2$.1f dní staré</string>
+    <string name="diagnostics_satellite_last_fetch" translation_description="Row label in the diagnostics screen for the result of the most recent attempt to download satellite orbital data">Posledné stiahnutie</string>
+    <string name="diagnostics_satellite_never_fetched" translation_description="Row value in the diagnostics screen when satellite orbital data has never been downloaded">Nikdy</string>
+    <string name="diagnostics_satellite_circuit_open" translation_description="Row label in the diagnostics screen for when satellite downloads are paused after repeated server errors">Sťahovanie pozastavené</string>
+    <string name="diagnostics_satellite_circuit_open_format" translation_description="Row value in the diagnostics screen showing when paused satellite downloads will resume and how many failures caused the pause. %1$s is a date and time, %2$d is a count">Do %1$s (%2$d zlyhaní)</string>
+    <string name="diagnostics_satellite_force_fetch" translation_description="Label on a debug-only button in the diagnostics screen that downloads satellite orbital data immediately">Stiahnuť satelitné dáta teraz (ladenie)</string>
     <string name="diagnostics_connected">Pripojené</string>
     <string name="diagnostics_disconnected">Odpojené</string>
     <string name="diagnostics_wifi">(wifi)</string>
     <string name="diagnostics_cell">" (mobilná sieť)"</string>
+
+    <!-- Compass calibration screen (slice 15) -->
     <string name="calibration_button">Kalibrovať</string>
     <string name="calibration_heading_user">Kompas vášho telefónu</string>
     <string name="calibration_heading_warning">Kompas vášho telefónu potrebuje pozornosť</string>
@@ -184,22 +430,171 @@
     <string name="calibration_accuracy_high">Kalibrácia: Dobrá</string>
     <string name="calibration_accuracy_no_contact">Kalibrácia: Bez kontaktu</string>
     <string name="calibration_do_not_show_again">Toto znovu nezobrazovať</string>
+    <string name="calibration_what_to_do" translation_description="Information for the user on how to calibrate the compass when the screen auto-opens. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[Senzor kompasu vášho telefónu hlási zlú kalibráciu. Pohyb v tvare osmičky (<a href="%s">pozrite si ukážku</a>) vyzve hardvér vášho telefónu, aby resetoval senzor kompasu — Sky Map nemá nad týmto procesom žiadnu kontrolu.<br/><br/><blockquote><b>Kalibrované neznamená presné.</b> Gesto v tvare osmičky pomáha resetovať senzor, ale nedokáže odstrániť rušenie z blízkych kovových predmetov, palubných dosiek áut alebo puzdier na telefón. Ak je mapa po kalibrácii stále nepresná, najpravdepodobnejšou príčinou sú tieto externé zdroje — nie Sky Map.</blockquote>Presuňte sa na otvorené priestranstvo mimo kovových predmetov a skúste to znova.]]></string>
+    <string name="calibration_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they open the calibration screen. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[Váš telefón hlási stav kalibrácie kompasu, ako je uvedené vyššie.<br/><br/>V prípade potreby vykonajte pohyb v tvare osmičky (<a href="%s">pozrite si ukážku</a>), aby ste vyzvali hardvér telefónu na rekalibráciu snímača kompasu.<br/><br/><blockquote><b>Dôležité:</b> kalibrácia pomáha snímaču interne sa resetovať. Neznamená to, že kompas je nevyhnutne presný! Miestne magnetické rušenie (kovové predmety, palubné dosky áut, puzdrá na telefóny) môže stále spôsobovať, že kompas vášho telefónu posiela nepresné údaje do Sky Map.</blockquote><b>Ak mapa nezobrazuje polohy správne, problém je pravdepodobne vo vašom telefóne – nie v Sky Map!</b>]]></string>
     <string name="calibration_low_accuracy_toast">Kompas vášho telefónu hlási nízku presnosť</string>
+    <string name="calibration_complete_toast" translation_description="Toast shown when the compass reaches high accuracy and the auto-opened calibration screen closes itself">Senzory majú vysokú presnosť</string>
+
+    <!-- Startup routing: EULA, warm welcome, What's New (slice 16) -->
     <string name="eula_title">Podmienky služby</string>
     <string name="dialog_accept">Prijať</string>
     <string name="dialog_decline">Odmietnuť</string>
+    <!-- tm:omitted name="dialog_ok_button" reason="identical_to_source" -->
+
     <string name="whats_new_dialog_title">Čo je nové</string>
+    <string name="whats_new_version_heading" translation_description="Heading above the list of new features. %1$s is the app version name">Nové vo verzii %1$s</string>
+
+    <!-- Warm welcome (onboarding pager, slice 16) -->
     <string name="warm_welcome_slide1_title">Objavujte vesmír</string>
+    <string name="warm_welcome_slide1_desc" translation_description="Description for the first slide of the Warm Welcome onboarding, shown under a guided tour of the map controls">
+    Použite vrstvy vľavo na filtrovanie hviezd, súhvezdí, planét a ďalších. Tlačidlá vpravo dole slúžia na vyhľadávanie na oblohe, cestovanie v čase a prepínanie režimov zobrazenia. Kedykoľvek ťuknite na oblohu, aby ste skryli alebo zobrazili ovládacie prvky.
+    </string>
     <string name="warm_welcome_slide2_title">Navigujte po oblohe</string>
+    <string name="warm_welcome_slide2_desc" translation_description="Description for the second slide of the Warm Welcome onboarding. Please do not change the &lt; and &gt; markup"><![CDATA[Namierte telefónom, aby ste sa rozhliadli v <b>Automatickom režime</b>, alebo ťuknite pre prepnutie na <b>Manuálny režim</b> a objavujte potiahnutím a priblížením/oddialením.]]></string>
+    <string name="warm_welcome_slide2_info_desc" translation_description="Description about info cards on the second slide of the Warm Welcome onboarding">
+    Klepnite na akýkoľvek označený objekt pre otvorenie informačnej karty, ako je táto, s fotografiou, zaujímavými faktami a nebeskými detailmi.
+    </string>
     <string name="warm_welcome_card_name">Krabia hmlovina</string>
+    <string name="warm_welcome_card_description" translation_description="Description of the Crab Nebula on the sample info card on the second Warm Welcome slide">
+    Krabia hmlovina je pozostatok supernovy v súhvezdí Býka, výsledok hviezdnej explózie zaznamenanej čínskymi astronómami v roku 1054 n. l.
+    </string>
+    <string name="warm_welcome_card_fun_fact" translation_description="Fun fact about the Crab Nebula on the sample info card on the second Warm Welcome slide">
+    Krabia hmlovina obsahuje pulzar rotujúci 30-krát za sekundu, zrútené jadro explodovanej hviezdy!
+    </string>
+    <string name="warm_welcome_card_distance" translation_description="Distance to the Crab Nebula on the sample info card on the second Warm Welcome slide">6 500 svetelných rokov</string>
+    <string name="warm_welcome_card_size" translation_description="Size of the Crab Nebula on the sample info card on the second Warm Welcome slide">11 svetelných rokov naprieč</string>
     <string name="warm_welcome_slide3_title">Senzory a kalibrácia</string>
     <string name="warm_welcome_slide3_desc">Sky Map používa senzory vášho telefónu na zarovnanie s hviezdami.</string>
+    <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message on the third Warm Welcome slide when sensors are missing. Please do not change the &lt; and &gt; markup"><![CDATA[Vaše zariadenie zrejme nemá potrebné senzory pre automatické sledovanie. Nebojte sa – stále môžete preskúmať celý kozmos v <b>manuálnom režime</b>!]]></string>
+    <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration advice on the third Warm Welcome slide. Please do not change the &lt; and &gt; markup"><![CDATA[Pre presnosť, z času na čas rýchlo zamávajte telefónom do <b>osmičky</b>.]]></string>
     <string name="warm_welcome_skip">Preskočiť</string>
     <string name="warm_welcome_next">Ďalej</string>
     <string name="warm_welcome_finish">Spustiť!</string>
     <string name="warm_welcome_sensor_ok">Funguje</string>
     <string name="warm_welcome_sensor_missing">Chýba</string>
+
+    <!-- Help dialog (slice 16) -->
     <string name="help_button">Pomoc</string>
     <string name="tutorial_button">Návod</string>
     <string name="help_dialog_title">Pomoc</string>
+    <string name="help_version" translation_description="Version line at the top of the Help screen. %1$s is the app version name">Verzia %1$s</string>
+    <string name="whats_new_button" translation_description="Map-screen menu item that opens the What's New and Credits screen">Čo je nové</string>
+    <string name="whats_new_screen_title" translation_description="Title of the screen showing the release notes and the credits">Čo je nové a zásluhy</string>
+
+    <!-- The deep-sky symbol key at the foot of the Help screen. -->
+    <string name="help_symbol_key_title" translation_description="Heading of the Help section explaining the map symbols used for deep-sky objects">Symboly mapy</string>
+    <string name="help_symbol_key_intro" translation_description="Introductory sentence for the map-symbol key in Help">
+    Objekty hlbokého vesmíru a meteorické roje sú označené symbolom, ktorý ukazuje ich typ:
+    </string>
+    <string name="symbol_key_galaxy" translation_description="Symbol-key label: the marker used for galaxies">Galaxia</string>
+    <string name="symbol_key_open_cluster" translation_description="Symbol-key label: the marker used for open star clusters">Otvorená hviezdokopa</string>
+    <string name="symbol_key_globular_cluster" translation_description="Symbol-key label: the marker used for globular star clusters">Guľová hviezdokopa</string>
+    <string name="symbol_key_diffuse_nebula" translation_description="Symbol-key label: the marker used for diffuse nebulae">Difúzna hmlovina</string>
+    <string name="symbol_key_planetary_nebula" translation_description="Symbol-key label: the marker used for planetary nebulae">Planetárna hmlovina</string>
+    <string name="symbol_key_supernova_remnant" translation_description="Symbol-key label: the marker used for supernova remnants">Zvyšok supernovy</string>
+    <string name="symbol_key_asterism" translation_description="Symbol-key label: the marker used for asterisms and star clouds">Asterizmus alebo hviezdny oblak</string>
+    <string name="symbol_key_other" translation_description="Symbol-key label: the marker used for deep-sky objects of any other type">Iný objekt hlbokého vesmíru</string>
+    <string name="symbol_key_meteor_radiant" translation_description="Symbol-key label: the marker for the point in the sky meteors of a shower appear to come from">Radiant meteorického roja</string>
+    <string name="symbol_key_meteor_radiant_peak" translation_description="Symbol-key label: the brighter marker used when a meteor shower is near its peak activity">Meteorický roj blízko maxima</string>
+
+    <!-- Moon-phase home-screen widget (D69). -->
+    <string name="moon_widget_label" translation_description="Name of the moon-phase home-screen widget, shown in the launcher\'s widget picker">Fáza Mesiaca</string>
+    <string name="moon_widget_description" translation_description="Description of the moon-phase widget, shown under its preview in the launcher\'s widget picker">Fáza Mesiaca, osvetlenie a časy východu a západu, aktualizované denne.</string>
+    <string name="moon_widget_illumination" translation_description="Widget line showing how much of the Moon\'s disc is lit; %1$d is a percentage number">%1$d%% osvetlený</string>
+    <string name="moon_widget_rise_time" translation_description="Widget fragment showing today\'s moonrise time; %1$s is a clock time like 17:42">vychádza %1$s</string>
+    <string name="moon_widget_set_time" translation_description="Widget fragment showing today\'s moonset time; %1$s is a clock time like 03:12">zapadá %1$s</string>
+    <string name="moon_phase_new" translation_description="Name of the lunar phase when the Moon is fully dark">Nov</string>
+    <string name="moon_phase_waxing_crescent" translation_description="Name of the lunar phase between new moon and first quarter">Dorastajúci kosák</string>
+    <string name="moon_phase_first_quarter" translation_description="Name of the lunar phase when half the disc is lit and growing">Prvá štvrť</string>
+    <string name="moon_phase_waxing_gibbous" translation_description="Name of the lunar phase between first quarter and full moon">Dorastajúci Mesiac</string>
+    <string name="moon_phase_full" translation_description="Name of the lunar phase when the disc is fully lit">Spln</string>
+    <string name="moon_phase_waning_gibbous" translation_description="Name of the lunar phase between full moon and last quarter">Cúvajúci Mesiac</string>
+    <string name="moon_phase_last_quarter" translation_description="Name of the lunar phase when half the disc is lit and shrinking">Posledná štvrť</string>
+    <string name="moon_phase_waning_crescent" translation_description="Name of the lunar phase between last quarter and new moon">Cúvajúci kosák</string>
+    <string name="moon_widget_promo_title" translation_description="Title of the row on the Moon\'s info card offering to add the moon-phase widget to the home screen">Majte Mesiac na domovskej obrazovke</string>
+    <string name="moon_widget_promo_subtitle" translation_description="Subtitle of the row offering the moon-phase widget, summarizing what the widget shows">Fáza, osvetlenie a časy východu, aktualizované denne</string>
+    <string name="moon_widget_promo_add" translation_description="Button that adds the moon-phase widget to the home screen via the system dialog">Pridať widget</string>
+    <string name="moon_widget_promo_dismiss" translation_description="Accessibility label for the button that permanently dismisses the widget offer row">Zavrieť návrh widgetu</string>
+    <string name="moon_widget_pin_unsupported_title" translation_description="Title of the fallback dialog when the launcher cannot add widgets directly">Pridajte widget z domovskej obrazovky</string>
+    <string name="moon_widget_pin_unsupported_body" translation_description="Body of the fallback dialog explaining how to add the widget manually">
+    Váš spúšťač nepodporuje pridávanie miniaplikácií z aplikácie. Dotknite sa a podržte domovskú obrazovku, vyberte Miniaplikácie, potom nájdite Sky Map.
+    </string>
+    <string name="moon_widget_pin_unsupported_ok" translation_description="Confirmation button of the manual widget-adding instructions dialog">Rozumiem</string>
+    <string name="moon_widget_preview_illumination" translation_description="Representative illumination line shown in the widget picker\'s preview of the moon-phase widget">83% osvetlený</string>
+
+    <!-- Tonight's-sky and countdown home-screen widgets (D69 phase 2). -->
+    <string name="tonight_widget_label" translation_description="Name of the tonight\'s-sky home-screen widget, shown in the launcher\'s widget picker">Dnešná obloha</string>
+    <string name="tonight_widget_description" translation_description="Description of the tonight\'s-sky widget, shown under its preview in the launcher\'s widget picker">
+    Najlepšie úkazy dnešnej noci: dobre umiestnené planéty, meteorické roje a mesačné udalosti, aktualizované denne.
+    </string>
+    <string name="tonight_widget_header" translation_description="Small header label on the tonight widget; %1$s is a short date like \'Wed 30 Jul\'">Dnes · %1$s</string>
+    <string name="tonight_widget_sun_times" translation_description="Header line on the tonight widget; %1$s is the sunset time, %2$s the time the sky becomes fully dark">západ slnka %1$s · tma %2$s</string>
+    <string name="tonight_widget_sunset_only" translation_description="Header fragment when only the sunset time is known; %1$s is the sunset time">západ slnka %1$s</string>
+    <string name="tonight_well_placed" translation_description="Tonight-widget row: a planet is high in the sky and easy to observe; %1$s is the planet name, %2$s the time from which it is well placed">%1$s dobre pozorovateľný od %2$s</string>
+    <!-- tm:omitted name="tonight_trailing_direction" reason="identical_to_source" -->
+    <string name="tonight_shower_peak" translation_description="Tonight-widget row: a meteor shower reaches its annual peak tonight; %1$s is the shower name">%1$s maximum dnes</string>
+    <string name="tonight_shower_days" translation_description="Tonight-widget row: a meteor shower peaks within a few days; %1$s is the shower name, %2$d the number of days">%1$s maximum o %2$d dní</string>
+    <string name="tonight_dark_skies" translation_description="Small trailing note: the moon is dark, so viewing conditions are ideal">tmavá obloha</string>
+    <string name="tonight_trailing_moon" translation_description="Small trailing note: how much of the moon is lit; %1$d is a percentage">Mesiac %1$d%%</string>
+    <string name="tonight_new_moon" translation_description="Tonight-widget row shown at new moon">Nov – najtmavšia obloha mesiaca</string>
+    <string name="tonight_full_moon" translation_description="Tonight-widget row shown at full moon">Spln dnes večer</string>
+    <string name="tonight_bright_moon" translation_description="Tonight-widget row warning that a bright moon washes out faint objects">Jasný Mesiac prekrýva slabé objekty</string>
+    <string name="tonight_lunar_eclipse_total" translation_description="Tonight-widget row: a total lunar eclipse is starting soon or under way">Úplné zatmenie Mesiaca</string>
+    <string name="tonight_lunar_eclipse_partial" translation_description="Tonight-widget row: a partial lunar eclipse is starting soon or under way">Čiastočné zatmenie Mesiaca</string>
+    <string name="tonight_lunar_eclipse_penumbral" translation_description="Tonight-widget row: a penumbral lunar eclipse is starting soon or under way">Polotieňové zatmenie Mesiaca</string>
+    <string name="tonight_quiet" translation_description="Tonight-widget line shown when nothing notable is visible tonight">Pokojná obloha dnes večer</string>
+    <string name="tonight_quiet_next" translation_description="Tonight-widget line under the quiet-night message; %1$s is an event name, %2$d the days until it">Ďalej: %1$s o %2$d dní</string>
+    <string name="countdown_widget_label" translation_description="Name of the countdown home-screen widget, shown in the launcher\'s widget picker">Odpočítavanie oblohy</string>
+    <string name="countdown_widget_description" translation_description="Description of the countdown widget, shown under its preview in the launcher\'s widget picker">Dní do ďalšieho vrcholu meteorického roja alebo mesačnej udalosti.</string>
+    <string name="countdown_days" translation_description="Unit label inside the countdown ring, under the number of days">dní</string>
+    <string name="countdown_tonight" translation_description="Shown inside the countdown ring when the event is tonight (zero days left)">teraz</string>
+    <string name="countdown_shower_peak" translation_description="Countdown-widget event name; %1$s is a meteor shower name">Vrchol %1$s</string>
+    <string name="countdown_new_moon_peak" translation_description="Countdown-widget note: the shower peaks near new moon, so skies will be dark">Vrchol novu</string>
+    <string name="countdown_full_moon" translation_description="Countdown-widget event name for the next full moon">Spln</string>
+    <string name="countdown_new_moon" translation_description="Countdown-widget event name for the next new moon">Nov</string>
+    <string name="tonight_widget_preview_row" translation_description="Representative highlight row shown in the widget picker\'s preview of the tonight widget">Jupiter dobre pozorovateľný od 21:30</string>
+    <!-- tm:omitted name="countdown_widget_preview_days" reason="identical_to_source" -->
+    <string name="countdown_widget_preview_name" translation_description="Representative event name shown in the widget picker\'s preview of the countdown widget">Vrchol Perzeíd</string>
+
+    <!-- Sky-event notifications (D77). -->
+    <string name="settings_section_notifications" translation_description="Settings section header for notification preferences">Upozornenia</string>
+    <string name="settings_notifications_intro" translation_description="Introduction under the notifications settings header, stating how rarely the app notifies">
+    Sky Map upozorňuje len na zriedkavé nebeské udalosti, najviac raz denne. Všetko je vypnuté, kým to nezapnete.
+    </string>
+    <string name="settings_shower_alerts" translation_description="Preference title: notify on the evening a meteor shower reaches its annual peak">Vrcholy meteorických rojov</string>
+    <string name="settings_shower_alerts_summary" translation_description="Explanation of the meteor-shower notification preference">Približne tucet ročne, večer v deň vrcholu</string>
+    <string name="settings_tonight_digest" translation_description="Preference title: a single evening notification summarizing what\'s visible tonight">Prehľad dnešnej oblohy</string>
+    <string name="settings_tonight_digest_summary" translation_description="Explanation of the tonight-digest notification preference">Jeden súhrn po západe slnka, vynechaný počas pokojných nocí</string>
+    <string name="settings_notifications_blocked" translation_description="Warning row shown when the user enabled notifications in the app but blocked them at the system level">Upozornenia sú zablokované pre Sky Map</string>
+    <string name="settings_notifications_blocked_action" translation_description="Hint under the blocked-notifications warning; tapping opens the system settings page">Ťuknutím ich povolíte v nastaveniach systému</string>
+    <string name="channel_showers_name" translation_description="Name of the meteor-shower notification channel, shown in the system\'s notification settings">Vrcholy meteorických rojov</string>
+    <string name="channel_showers_description" translation_description="Description of the meteor-shower notification channel in the system\'s notification settings">Približne tucet ročne, večer v deň vrcholu</string>
+    <string name="channel_digest_name" translation_description="Name of the tonight-digest notification channel, shown in the system\'s notification settings">Prehľad dnešnej oblohy</string>
+    <string name="channel_digest_description" translation_description="Description of the tonight-digest notification channel in the system\'s notification settings">Jeden večerný súhrn, vynechaný počas pokojných nocí</string>
+    <string name="notif_shower_title" translation_description="Title of the meteor-shower notification; %1$s is the shower name">Vrchol %1$s dnes večer</string>
+    <string name="notif_shower_direction" translation_description="Notification sentence telling the user where to look; %1$s is a compass point like NE">Najlepšie po polnoci, pri pohľade na %1$s.</string>
+    <string name="notif_shower_dark_moon" translation_description="Notification sentence when the moon is dark during a meteor shower peak; %1$d is the expected meteors per hour">
+    Tmavá obloha bez Mesiaca — očakávajte až %1$d meteorov za hodinu ďaleko od mestského svetla.
+    </string>
+    <string name="notif_shower_bright_moon" translation_description="Notification sentence when a bright moon will interfere with a meteor shower; %1$d is the moon illumination percentage, %2$d the meteors per hour under ideal skies">
+    Mesiac osvetlený na %1$d %% prekryje slabšie meteory — až %2$d za hodinu za ideálnych podmienok.
+    </string>
+    <string name="notif_digest_title" translation_description="Title of the tonight\'s-sky digest notification">Oplatí sa pozrieť dnes večer</string>
+    <string name="notif_action_mute_showers" translation_description="Notification action button that opens the system toggle for the meteor-shower channel">Stlmiť roje</string>
+    <string name="time_travel_stopped">Cestovanie časom pozastavené</string>
+    <!-- Layers sheet: per-layer parameters (D87). -->
+    <string name="layer_param_disc_size">Veľkosť disku</string>
+    <string name="layer_param_disc_size_true">Skutočná mierka</string>
+    <string name="layer_param_disc_size_true_desc">
+    Skutočná veľkosť na oblohe pri každom priblížení. Planéty sú bodky, kým nepriblížite úplne.
+    </string>
+    <string name="layer_param_disc_size_glyphs">Glyfy</string>
+    <string name="layer_param_disc_size_glyphs_desc">
+    Veľkosťou podľa skutočnej veľkosti každého telesa, nie podľa toho, ako vyzerá. Ľahko viditeľné pri akomkoľvek priblížení.
+    </string>
+    <string name="layer_param_disc_size_auto">Konštantné</string>
+    <string name="layer_param_disc_size_auto_desc">
+    Zachováva si pevnú veľkosť na obrazovke pri priblížení, potom sa prepne na skutočnú veľkosť.
+    </string>
+    <string name="layer_param_expand">Zobraziť možnosti pre %1$s</string>
 </resources>

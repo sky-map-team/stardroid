@@ -145,6 +145,7 @@
     <string name="share_chooser_title" translation_description="Title of the system share sheet when sharing a captured sky image.">Partager ce ciel</string>
     <string name="share_invitation" translation_description="Short invitation stamped on the footer of shared sky images, above the store link.">Voyez ce que vous regardez — obtenez Sky Map gratuitement</string>
     <string name="share_text" translation_description="Text accompanying a shared sky image in apps that accept both an image and text. %1$s is the app-store link.">Voyez ce que vous regardez — obtenez Sky Map gratuitement : %1$s</string>
+    <!-- tm:omitted name="share_store_link" reason="identical_to_source" -->
     <string name="share_layout_overlay" translation_description="Caption of the share-layout choice that draws the star map over the camera photo, as seen on screen.">Superposition</string>
     <string name="share_layout_side_by_side" translation_description="Caption of the share-layout choice that puts the camera photo and the star map next to each other.">Côte à côte</string>
     <string name="share_shutter_button" translation_description="Accessibility label for the round shutter button that captures and shares the current through-camera view.">Partager cette vue</string>

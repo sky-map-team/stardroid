@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+    <!-- tm:omitted name="help_home_link" reason="identical_to_source" -->
+
+    <string name="help_intro" translation_description="Help section: introduction and quick start. Please do not change the markup"><![CDATA[<h2>Pengenalan dan Mula Pantas</h2><p>Pegang telefon anda dan lihat melaluinya seperti tingkap ke angkasa. Sky Map menggunakan penderia telefon anda untuk menjejak arah pandangan anda dan mengemas kini peta bintang dalam masa nyata.</p><blockquote>Tidak semua telefon mampu menjalankan Sky Map! Lihat bahagian keperluan perkakasan di bawah.</blockquote><h3>Jika ini kali pertama anda:</h3><p>1. Benarkan akses lokasi apabila digesa — Sky Map memerlukan lokasi anggaran anda untuk melukis langit yang betul untuk tempat anda berada.<br/>2. Halakan telefon anda ke langit dalam mana-mana arah.<br/>3. Peta akan bergerak untuk sepadan dengan arah pandangan anda.</p>]]></string>
+
+    <string name="help_navigating" translation_description="Help section: navigating the sky, automatic and manual modes. Please do not change the markup"><![CDATA[<h2>Menavigasi Langit</h2>Ketik skrin untuk memaparkan kawalan dan paparan head-up (kanan atas).<h3>Mod Automatik</h3><p>Dalam Mod Automatik (lalai), Sky Map menggunakan kompas, pecutan, dan penderia giroskop telefon anda untuk menunjukkan apa sahaja yang berada di arah telefon anda menghala. Hanya gerakkan telefon anda dan peta akan mengikutinya.</p><p>Gunakan cubitan dua jari untuk mengezum masuk dan keluar.</p><h3>Mod Manual</h3><p>Dengan kawalan kelihatan, ketik butang <b>tangan</b> (kanan bawah) untuk bertukar ke Mod Manual. Dalam mod ini anda boleh:</p><p>• Seret peta dengan satu jari untuk menyorot.<br/>• Cubit untuk mengezum masuk atau keluar.<br/>• Putar dengan dua jari untuk menukar orientasi.<br/>• Ketik dua kali skrin untuk menogol sama ada ufuk dikekalkan mendatar semasa anda menyeret.</p><p>Ketik butang <b>kompas</b> (kanan bawah) untuk bertukar kembali ke Mod Automatik.</p>]]></string>
+
+    <!-- Symbol map will go here-->
+
+    <string name="help_layers" translation_description="Help section: the visible layers of the sky map. Please do not change the markup"><![CDATA[<h2>Lapisan</h2>
+<p>Sky Map menyusun apa yang ditunjukkannya ke dalam lapisan, setiap satunya boleh dihidupkan atau dimatikan secara bebas
+melalui butang lapisan di sebelah kiri. Tekan lama, atau ketik butang <b>Lapisan</b> berhampiran
+bahagian bawah, untuk memaparkan suis bagi lebih banyak lapisan.</p>
+<br/>
+<p>Lapisan semasa termasuk:<br/>
+• <b>Bintang:</b> Bintang-bintang paling terang, dengan label untuk yang terkenal<br/>
+• <b>Buruj:</b> Garis besar dan nama buruj<br/>
+• <b>Objek langit dalam:</b> Galaksi, nebula, gugusan bintang, dan objek luar biasa lain<br/>
+• <b>Sistem suria:</b> Matahari, Bulan, dan planet, dipaparkan sebagai imej<br/>
+• <b>Hujan meteor:</b> Titik-titik radian hujan meteor tahunan<br/>
+• <b>Grid cakerawala:</b> Grid koordinat jarak hamal / deklinasi<br/>
+• <b>Ekliptik:</b> Laluan tahunan Matahari melalui langit, yang diikuti secara kasar oleh Bulan dan planet<br/>
+• <b>Ufuk:</b> Garis ufuk dan label arah mata angin (U, S, T, B)<br/>
+• <b>Kecerunan langit:</b> Cahaya langit siang dan warna senja berhampiran ufuk</p>
+<blockquote>Radian hujan meteor hanya akan ditunjukkan pada tarikh-tarikh hujan meteor berlaku.
+</blockquote>
+<br/>
+<p><b>Bagaimana saiz planet dilukis</b></p>
+<p>Ketik anak panah di sebelah <b>Sistem suria</b> dalam helaian Lapisan untuk memilih bagaimana Matahari, Bulan dan
+planet disuaikan saiznya:</p>
+<p>• <b>Glif</b> (lalai): cukup besar untuk dilihat pada sebarang zum, dan disuaikan saiznya mengikut saiz sebenar setiap jasad <i>itu</i>
+dan bukannya bagaimana ia kelihatan dari sini — model sistem suria dan bukannya pandangan melalui teleskop. Zuhal dan cincinnya adalah yang paling lebar, diikuti oleh Matahari,
+kemudian Musytari, hingga ke Pluto. Perbezaan-perbezaan ini dimampatkan agar muat pada skrin: Matahari sebenarnya 586
+kali lebar Pluto, bukan tujuh. Bulan adalah pengecualian, dilukis dengan saiz yang sama seperti Matahari,
+kerana begitulah kedua-duanya kelihatan dari sini.<br/>
+• <b>Skala sebenar:</b> setiap jasad pada saiz sebenar di langit. Matahari dan Bulan adalah kira-kira separuh
+darjah lebar — lebih kurang seperti pemadam pensel yang dipegang pada jarak lengan — dan planet-planet adalah bintik-bintik sehingga anda zum masuk sepenuhnya. Zum sepenuhnya dan Musytari akan menunjukkan jalur-jalurnya, cincin Zuhal akan terpisah dari
+planet, dan gerhana akan sejajar tepat seperti yang berlaku di langit.<br/>
+• <b>Stabil:</b> mengekalkan setiap jasad pada saiz tetap di skrin semasa anda zum, beralih kepada saiz sebenar apabila anda telah zum masuk cukup jauh untuk ia menjadi yang lebih besar antara kedua-duanya.</p>
+<blockquote>Kedua-dua mod memberitahu anda perkara yang berbeza. <b>Glif</b> mengatakan Musytari adalah gergasi dan
+Pluto adalah kecil. <b>Skala sebenar</b> mengatakan Matahari dan Bulan kelihatan hampir sama saiz dari
+Bumi — itulah sebabnya gerhana matahari penuh boleh berlaku, dan anda boleh menyaksikannya.</blockquote>
+<blockquote>Sky Map menunjukkan ufuk geometri — pandangan yang rata sempurna dan tidak terhalang.
+Objek-objek tepat di atasnya mungkin masih tersembunyi oleh bangunan, bukit, atau pokok dalam praktiknya.</blockquote>]]></string>
+
+    <string name="help_info_cards" translation_description="Help section: the object info cards. Please do not change the markup"><![CDATA[<h2>Kad Maklumat</h2><p>Ketik objek cakerawala berlabel pada peta langit untuk memaparkan kad maklumat — panel dengan foto dan butiran tentang objek tersebut. Kad maklumat tersedia untuk ratusan objek termasuk bintang, planet, Bulan, objek langit dalam yang terkenal, dan buruj.</p><br/><p>Setiap kad menunjukkan:</p><p>• Foto atau carta objek<br/>• Penerangan ringkas dan fakta menarik<br/>• Data saintifik seperti jarak, saiz, dan jenis objek</p><p>Ketik imej di dalam kad untuk melihatnya dalam skrin penuh. Tutup kad dengan mengetik di luar kad atau menekan <b>Kembali</b>.</p><blockquote>Tidak semua objek mempunyai kad maklumat, tetapi kami sentiasa menambah lebih banyak.</blockquote>]]></string>
+
+    <string name="help_search" translation_description="Help section: searching for objects in the sky. Please do not change the markup"><![CDATA[<h2>Carian</h2><p>Ketik butang <b>kanta pembesar</b> (bawah) untuk mencari apa sahaja di langit.</p><br/><p>Anda boleh mencari:</p><p>• <b>Bintang</b> — mengikut nama, cth. "Sirius", "Betelgeuse", "Polaris"<br/>• <b>Planet</b> — cth. "Marikh", "Zuhal"<br/>• <b>Buruj</b> — cth. "Belantik", "Cassiopeia"<br/>• <b>Objek langit dalam</b> — cth. "M31", "Galaksi Andromeda", "Pleiades"<br/>• <b>Koordinat</b> — jarak hamal dan sudut istiwa, cth. "5j 55m, 7° 24\'" (anda boleh menggunakan \'o\' untuk simbol darjah)</p><p><b>Dalam Mod Auto:</b> selepas memilih hasil, Sky Map menunjukkan bulatan sasaran dan anak panah arah. Ikut anak panah dengan memutar telefon anda — bulatan akan bertukar warna apabila objek memasuki medan pandangan anda. Ketik <b>Batal</b> (atau tekan Kembali) untuk keluar dari carian.</p><p><b>Dalam Mod Manual:</b> peta hanya melompat untuk berpusat pada objek tersebut.</p><blockquote>Anda boleh mencari objek yang Sky Map tidak tunjukkan seperti Europa, salah satu bulan Musytari.<br/>Dalam kes ini, carian akan membawa anda kepada objek induk (Musytari).</blockquote>]]></string>
+
+    <string name="help_time_travel" translation_description="Help section: the time travel feature. Please do not change the markup"><![CDATA[<h2>Perjalanan Masa</h2><p>Perjalanan Masa membolehkan anda melihat langit pada bila-bila masa dari tahun 1600 hingga 3000. Ketik butang <b>jam</b> (bawah).</p><br/><p>Pilih acara popular (gerhana, puncak hujan meteor, bulan purnama atau anak bulan seterusnya, konjungsi planet, pendaratan Apollo 11, dan banyak lagi) daripada senarai acara, tetapkan masa anda sendiri dengan butang <b>Tetapkan tarikh</b> dan <b>Tetapkan masa</b>, atau ketik "Mula dari sekarang" jika anda hanya ingin bergerak ke hadapan atau ke belakang dari masa semasa.</p><p>Apabila dalam mod Perjalanan Masa, tarikh dipaparkan pada skrin dan kawalan main balik membolehkan anda bergerak melalui masa:</p><p>• Ketik <b>▶▶</b> (lebih pantas) atau <b>◀◀</b> (lebih perlahan) untuk melangkah kelajuan main balik ke hadapan atau ke belakang melalui masa<br/>• Ketik <b>❚❚</b> untuk menjeda<br/>• Ketik <b>Sekarang</b> untuk melompat kembali ke masa kini</p><p>Beberapa perkara yang boleh anda gunakan untuknya:</p><p>• <i>Apa yang boleh saya lihat sejurus selepas matahari terbenam malam ini?</i><br/>• <i>Bilakah peluang terbaik seterusnya untuk melihat Utarid?</i><br/>• <i>Bagaimanakah rupa langit pada malam saya dilahirkan?</i></p><p>Ketepatan berkurangan untuk tarikh yang jauh dari masa kini, terutamanya disebabkan oleh pengaruh graviti Musytari.</p>]]></string>
+
+    <string name="help_night_vision" translation_description="Help section: night vision mode. Please do not change the markup"><![CDATA[<h2>Mod Penglihatan Malam</h2><p>Jika anda berada di luar melakukan pemerhatian sebenar, mod Penglihatan Malam membantu mengekalkan penglihatan anda yang disesuaikan dengan kegelapan. Togol ia dengan butang <b>Mod Malam</b> di bahagian bawah.</p><br/><p>Dalam mod Penglihatan Malam, Sky Map menukar paparan kepada warna merah gelap dan meredupkan skrin. Pilihan <b>Peredupan skrin automatik</b> dalam <b>Tetapan</b> memberi anda kawalan tambahan tentang seberapa gelap skrin itu.</p>]]></string>
+
+    <string name="help_other" translation_description="Help section: other options"><![CDATA[<h1>Fungsi lain</h1>        <p>Fungsi lain boleh didapati di bawah menu limpahan (…) di bahagian kanan bawah.</p>]]></string>
+
+    <string name="help_gallery" translation_description="Help section: the image gallery. Please do not change the markup"><![CDATA[<h2>Galeri</h2><p>Galeri mengandungi koleksi imej langit malam yang indah yang dipilih susun, termasuk beberapa daripada Teleskop Angkasa Hubble.</p><br/><p>Semak imbas lakaran kecil dengan menatal, dan ketik satu untuk melihat butiran. Gunakan butang <b>Cari</b> untuk mencari objek tersebut di langit.</p>]]></string>
+
+    <string name="help_location" translation_description="Help section: setting your observing location. Please do not change the markup"><![CDATA[<h2>Menetapkan Lokasi Anda</h2><p>Sky Map memerlukan lokasi anggaran anda untuk melukis langit yang betul. Secara lalai, ia menggunakan perkhidmatan lokasi peranti anda (rangkaian mudah alih atau GPS).</p><br/><p>Jika akses lokasi tidak tersedia atau anda lebih suka menetapkannya secara manual, ketik butang <b>Masukkan Lokasi Secara Manual</b> dan masukkan <b>nama tempat</b> atau <b>latitud dan longitud</b> dalam darjah.</p><blockquote>Internet diperlukan untuk menyahkod nama tempat lokasi.</blockquote><p>Jika anda sebelum ini menafikan kebenaran lokasi Sky Map, anda mungkin perlu mengaktifkannya semula dalam <b>Tetapan Aplikasi → Kebenaran</b> peranti anda.</p><blockquote>Jika anda tidak memberikan akses kepadanya, Sky Map akan menganggap anda berada di (0, 90) — Kutub Utara!</blockquote>]]></string>
+
+    <string name="help_diagnostics" translation_description="Help section: the diagnostics page. Please do not change the markup"><![CDATA[<h2>Diagnostik</h2><p>Halaman ini menyenaraikan pelbagai data tentang telefon anda dan Sky Map yang boleh berguna untuk menyahpepijat isu. Cari ia di bawah <b>Tetapan → Diagnostik</b>.</p><br/><p>Apabila melaporkan masalah, ketik butang kongsi di bahagian atas halaman untuk menghantar butiran ini kepada kami melalui e-mel di <a href="mailto:skymapdevs@gmail.com">skymapdevs@gmail.com</a>. Anda boleh membaca dan mengedit laporan sebelum menghantarnya.</p>]]></string>
+
+    <string name="help_calibrate" translation_description="Help section: the calibrate page. Please do not change the markup"><![CDATA[<h2>Kalibrasi</h2>Dari semasa ke semasa anda perlu menentukur kompas telefon anda – halaman ini menunjukkan caranya. Sky Map juga akan memberi amaran kepada anda jika kompas anda memerlukan penentukuran.<blockquote><b>PENTING:</b> Kompas yang ditentukur TIDAK bermakna kompas yang <b>tepat</b>. Semua penentukuran hanyalah menetapkan semula kompas secara dalaman. Ia masih boleh tidak tepat disebabkan oleh gangguan magnetik berdekatan atau perkakasan yang rosak. Hampir semua isu ketepatan adalah disebabkan oleh perkakasan telefon dan <b>tiada kaitan dengan Sky Map</b>. Apa yang Sky Map lakukan hanyalah melaporkan kepada anda apa yang telefon laporkan kepadanya.</blockquote><br/><p>Lihat bahagian penyelesaian masalah di bawah untuk bantuan lanjut.</p>]]></string>
+
+    <string name="help_misc" translation_description="Help section: miscellaneous"><![CDATA[<h1>Pelbagai dan Penyelesaian Masalah</h1>]]></string>
+
+    <string name="help_hardware" translation_description="Help section: hardware and sensor requirements. Please do not change the markup"><![CDATA[<h2>Keperluan Perkakasan</h2>
+<p>Tidak semua peranti boleh menyokong Sky Map sepenuhnya!</p>
+ <br/>
+ <p>Sekurang-kurangnya anda memerlukan telefon dengan:</p>
+<p>• Penderia medan magnet (atau Kompas) — untuk memberitahu arah mana anda menghadap<br/>
+• Pecutan — untuk memberitahu seberapa tinggi anda melihat ke langit</p>
+<p>Sebaik-baiknya juga:</p>
+<p>• Giroskop — ini akan melancarkan pergerakan dan menjadikannya kurang tersentak-sentak</p>
+<blockquote><b>Kompas telefon terkenal tidak boleh dipercayai.</b>
+Jika peta langit kelihatan salah, ia hampir selalu merupakan isu perkakasan dengan kompas telefon anda — bukan pepijat dalam Sky Map.
+Sky Map membaca dengan tepat apa yang dilaporkan oleh penderia telefon anda; ia tidak mempunyai cara untuk membetulkan bacaan yang buruk atau berat sebelah secara automatik.
+Lihat Penyelesaian Masalah di bawah.</blockquote>
+<h3>Bagaimana saya tahu penderia mana yang ada pada telefon saya?</h3>
+<p>Buka <b>Tetapan → Diagnostik</b> — mana-mana penderia yang tiada pada telefon anda akan ditandakan sebagai tiada. Anda juga akan dimaklumkan
+semasa tutorial.</p>
+<h3>Bagaimana jika peranti saya tiada penderia yang diperlukan?</h3>
+<p>Sky Map akan kembali ke mod manual. Anda masih boleh meneroka langit, tetapi tanpa penderia, tiada cara mana-mana aplikasi boleh menunjukkan arah anda.</p>]]></string>
+
+    <string name="help_troubleshooting" translation_description="Help section: troubleshooting a map that does not move or points the wrong way. Please do not change the markup"><![CDATA[<h2>Penyelesaian Masalah</h2><h3>Peta tidak bergerak</h3><p>• Semak anda berada dalam Mod Auto (bukan Manual)<br/>• Semak halaman Diagnostik (<b>Tetapan → Diagnostik</b>) untuk mengesahkan peranti anda mempunyai kompas dan pecutan<br/>• Cuba gerak isyarat penentukuran angka-8: lambai telefon anda perlahan-lahan dalam bentuk angka-8 yang besar dan licin</p><h3>Peta menunjuk arah yang salah atau tidak tepat</h3><p>Sky Map memerlukan tiga perkara untuk menunjukkan langit yang betul: arah telefon anda menghadap, lokasi anda, dan waktu semasa. Jika peta kelihatan salah, salah satu daripadanya mungkin tidak tepat.</p><p>• <b>Kompas (punca paling biasa):</b> Ini adalah isu perkakasan dengan telefon anda — bukan pepijat Sky Map. Gerak isyarat penentukuran angka-8 meminta telefon anda untuk menetapkan semula sensor kompasnya secara dalaman, tetapi <i>kompas yang ditentukur tidak semestinya tepat</i>. Jika anda berhampiran objek logam, papan pemuka kereta, atau sarung telefon magnetik, peta masih boleh tersasar walaupun selepas penentukuran. Bergerak ke kawasan lapang dan ulangi gerak isyarat angka-8.<br/>• <b>Lokasi:</b> Berikan kebenaran lokasi melalui <b>Tetapan Aplikasi → Kebenaran</b>. Semak halaman Diagnostik (<b>Tetapan → Diagnostik</b>) untuk mengesahkan koordinat anda. Simptom jelas lokasi yang hilang ialah Polaris muncul betul-betul di atas kepala.<br/>• <b>Masa:</b> Kurang biasa, tetapi zon waktu yang salah mengalihkan seluruh langit. Semak halaman Diagnostik (<b>Tetapan → Diagnostik</b>) untuk mengesahkan masa dan zon waktu peranti anda adalah betul.</p><h3>Peta bergegar</h3><p>• Jika telefon anda tiada giroskop, hidupkan <b>Guna penderia legasi</b> dalam tetapan penderia<br/>• Laraskan <b>Kelajuan Penderia</b> dan <b>Peredam</b> di bawah <b>Tetapan → Tetapan Penderia (pakar)</b> (ditunjukkan apabila <b>Guna penderia legasi</b> dihidupkan)</p><p>Untuk butiran penyelesaian masalah penuh, lihat panduan <a href="https://ts.stardroid.app">penyelesaian masalah</a> dalam talian.</p><p>Jika anda masih buntu, e-mel kami di <a href="mailto:skymapdevs@gmail.com">skymapdevs@gmail.com</a> — tangkapan skrin halaman Diagnostik anda sangat membantu.</p>]]></string>
+
+    <string name="help_pointer_mode" translation_description="Help section: pointer mode for telescope users. Please do not change the markup"><![CDATA[<h2>Pengguna Teleskop — Mod Penunjuk</h2><p>Di bawah <b>Tetapan → Tetapan Penderia</b>, tukar <b>Arah Paparan</b> kepada <b>Mod Penunjuk</b>. Dalam mod ini, Sky Map menunjukkan apa yang <i>tepi panjang</i> telefon sedang menunjuk, bukannya apa yang skrin sedang hadapi.</p><p>Ini membolehkan anda memasang telefon anda di sepanjang sisi tiub teleskop supaya skrin berserenjang dengan tiub sementara peta masih menjejaki apa yang teleskop sedang sasar.</p>]]></string>
+</resources>

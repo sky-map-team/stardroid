@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Yeni Bir Temel</h2>
+<p>Sky Map, modern bir işleme ve veri boru hattı ile yenilenmiş bir arayüz kullanılarak sıfırdan yeniden inşa edildi.</p>
+<h2>Daha Net Bir Güneş Sistemi</h2>
+<p>Güneş, Ay ve gezegenler orijinal NASA görüntüleri temel alınarak yeniden çizildi ve haritadaki görseller artık her yakınlaştırma seviyesinde net kalmaları için yumuşatılıp harmanlandı. Gezegenler ayrıca gerçek açısal boyutlarında da çizilebilir; Katmanlar sayfasından sembolleri veya gerçek ölçeği seçebilirsiniz.</p>
+<h2>Gökyüzüyle Eşleşen Bir Ay</h2>
+<p>Ay\'ın evresi artık sabit sekiz resim arasından seçilmek yerine gerçek geometrisinden hesaplanıyor, böylece aydınlık ve karanlık arasındaki çizgi gerçekten gördüğünüz yere denk geliyor.</p>
+<h2>Daha İyi Güneş ve Ay Konumları</h2>
+<p>Daha doğru Güneş ve Ay hesaplamaları, her iki cismi de ait oldukları yere koyar ve tutulmaların zamanlamasını düzeltir.</p>
+<h2>Daha Akıcı Kaydırma</h2>
+<p>Yüksek yenileme hızına sahip ekranlarda harita kaydırılırken veya sürüklenirken ortaya çıkan takılma düzeltildi; kaydırma, ivme ve arama yakınlaştırması artık sabit bir oran yerine ekranınızın gerçek kare hızını takip ediyor.</p>
+<h2>Daha Taze Bir Karşılama</h2>
+<p>Gördüğünüz ilk ekranın arka planı, gökyüzünün uygulama içi yeni bir görüntüsüyle yenilendi.</p>
+<h2>Gökyüzü Bildirimleri</h2>
+<p>Doğrudan Ayarlar\'dan meteor yağmuru zirveleri ve bu gece görülebileceklerin tek seferlik akşam özeti için isteğe bağlı bildirimleri açın.</p>
+<h2>Ay Tutulmaları</h2>
+<p>Harita artık Ay\'ın bir ay tutulması sırasındaki bakır kırmızı tonunu gösteriyor ve Ay\'ın bilgi kartı, bu gecenin gökyüzü özeti ile geri sayım widget\'ı bir tutulmanın ne zaman geleceğini biliyor; ayrıca isteğe bağlı bir hatırlatıcı bildirim de sunuyor.</p>
+<h2>Daha Net İzinler</h2>
+<p>Şartlar ekranı ve Yardım, her cihaz izninin tam olarak ne için kullanıldığını açıkça belirtir ve uygulama artık ihtiyaç duymadığı reklam kimliği iznini istemez.</p>
+<h2>¡Hola! Bonjour! Olá!</h2>
+<p>Sky Map artık Fransızca, İspanyolca, Lehçe ve Portekizce konuşuyor, yolda daha fazla dil var.</p>]]></string>
+    <string name="whats_new_support" translation_description="HTML paragraph inviting users to support the project, shown in the What's new dialog and the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h1>Sky Map\'i Destekleyin</h1>
+<p>Sky Map ücretsiz ve açık kaynaklıdır. Faydalı buluyorsanız, lütfen <a href="https://github.com/sky-map-team/stardroid/?tab=readme-ov-file#support-the-project">GitHub</a> sayfamızdan gelişimi desteklemeyi veya <a href="https://buymeacoffee.com/skymapdevs?utm_source=skymap&amp;utm_medium=app&amp;utm_campaign=whatsnew">bize bir kahve ısmarlamayı</a> düşünün.</p>]]></string>
+    <string name="beta_user_help_text" translation_description="Usually-empty HTML content shown to beta testers asking for feedback, appended in the What's new dialog and the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h3>Beta kullanıcıları!</h3>
+<p>Hataları ve çökmeleri <a href="mailto:skymapdevs@gmail.com">skymapdevs@gmail.com</a> adresinden veya <a href="https://github.com/sky-map-team/stardroid/issues">GitHub</a> üzerinden bildirmeniz konusunda yardımınıza her zamankinden çok ihtiyaç var. Uygulama henüz tam olarak özelliklerini tamamlamamıştır ve (üzgünüm) tam olarak çevrilmemiştir. Beta programından ayrılmak ve klasik Sky Map sürümüne geri dönmek istiyorsanız lütfen <a href="https://play.google.com/apps/testing/com.google.android.stardroid">test sayfasını</a> ziyaret edin.</p>]]></string>
+</resources>

@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+    <string name="eula_text" translation_description="A condensed, user-friendly version of the EULA and Privacy Policy with a link to the full terms. Please do not change the &lt; and &gt; markup"><![CDATA[<h1>ยินดีต้อนรับสู่ Sky Map</h1>
+<p>เพื่อให้คุณเริ่มต้นดูดาวได้ โปรดตรวจสอบบทสรุปสั้นๆ ของข้อกำหนดเหล่านี้</p>
+<h2>ความเป็นส่วนตัว</h2>
+<p><b>เราไม่รู้ว่าคุณคือใคร.</b> เรารวบรวมข้อมูลการใช้งานที่ไม่ระบุตัวตนเพื่อช่วยเราแก้ไขข้อบกพร่องและปรับปรุงฟีเจอร์ต่างๆ คุณสามารถยกเลิกได้ทุกเมื่อในเมนูการตั้งค่า</p>
+<h2>ความปลอดภัยและความรับผิดชอบ</h2>
+<p>Sky Map มีให้ "ตามสภาพ" ใช้งานอย่างปลอดภัย—เราไม่รับผิดชอบต่อความเสียหายหรือการบาดเจ็บใดๆ (เช่น อาการปวดคอ!) ที่เกิดจากการใช้แอปของคุณ</p>
+<h2>โอเพนซอร์ส</h2>
+<p>Sky Map เป็นผลงานจากความรัก คุณมีอิสระที่จะใช้ซอร์สโค้ดของเรา แต่โปรดเคารพแบรนด์และโลโก้ของเรา</p>
+<p>อ่านเอกสารทางกฎหมายฉบับเต็มได้ที่นี่: <a href="https://github.com/sky-map-team/stardroid/blob/master/TERMS.md">ข้อกำหนดและนโยบายความเป็นส่วนตัวฉบับเต็ม</a></p>]]></string>
+
+    <!-- Rendered last on the terms screen, after the permissions notice, so the sentence the
+         Accept button refers to is the final thing the user reads. -->
+    <string name="eula_agree_line" translation_description="Closing line of the first-launch terms screen, immediately above the Accept button. Please do not change the markup"><![CDATA[<br/>
+<p><i>การคลิก "ยอมรับ" ถือว่าคุณยอมรับข้อกำหนดเหล่านี้</i></p>]]></string>
+
+    <!--
+      The access-permission notice (KISA / Korean Network Act art. 22-2, and good practice
+      everywhere). Rendered in two places from this one key so it is translated once: appended
+      to the first-launch EULA screen, and included in the help document as a permanent,
+      re-readable copy (HelpScreen.helpSections2). Every runtime permission Sky Map declares
+      must appear here, labelled required or optional, with its grounds and — for optional
+      ones — the user\'s right to refuse.
+    -->
+    <string name="permissions_notice" translation_description="Legally-required disclosure of the device permissions the app requests, why it requests them, and the user\'s right to refuse the optional ones. Shown on the first-launch terms screen and in Help. Please do not change the markup"><![CDATA[<h2>สิทธิ์การเข้าถึง</h2>
+<p><b>Sky Map ไม่มีสิทธิ์การเข้าถึงที่จำเป็นต้องมี</b> สิทธิ์การเข้าถึงทั้งหมดด้านล่างนี้เป็นแบบเสริม คุณสามารถปฏิเสธสิทธิ์ใดก็ได้และยังคงใช้งานแอปได้ตามปกติ Sky Map จะไม่ขอสิทธิ์ขณะเปิดแอป: แต่ละสิทธิ์จะถูกขอเมื่อคุณใช้งานฟีเจอร์ที่ต้องใช้สิทธิ์นั้นเป็นครั้งแรกเท่านั้น และคุณสามารถให้สิทธิ์หรือเพิกถอนแต่ละสิทธิ์แยกกันได้ตลอดเวลาที่ <b>การตั้งค่า → แอป → Sky Map → สิทธิ์</b> บนอุปกรณ์ของคุณ</p>
+<h3>ตำแหน่งที่ตั้ง — เป็นเสริม</h3>
+<p><b>สิ่งที่เข้าถึง:</b> ตำแหน่งโดยประมาณของคุณ</p>
+<p><b>เหตุผล:</b> ดาวดวงใดที่อยู่เหนือคุณขึ้นอยู่กับว่าคุณอยู่ที่ไหน ดังนั้น Sky Map จึงใช้ตำแหน่งโดยประมาณของคุณเพื่อแสดงแผนที่ท้องฟ้าให้ถูกต้อง</p>
+<p><b>หากคุณปฏิเสธ:</b> คุณสามารถพิมพ์ชื่อสถานที่หรือพิกัดแทนได้ และแอปทั้งหมดจะยังคงใช้งานได้ปกติเช่นเดิม</p>
+<blockquote>ตำแหน่งของคุณจะถูกใช้บนอุปกรณ์ของคุณเพื่อแสดงท้องฟ้า จะไม่มีการส่งตำแหน่งของคุณมาที่เราแต่อย่างใด</blockquote>
+<h3>กล้อง — เป็นเสริม</h3>
+<p><b>สิ่งที่เข้าถึง:</b> ภาพตัวอย่างจากกล้อง</p>
+<p><b>เหตุผล:</b> โหมดผ่านกล้องจะแสดงแผนที่ท้องฟ้าทับบนภาพกล้องสด เพื่อให้คุณสามารถเทียบแผนที่กับสิ่งที่คุณกำลังมองดูอยู่จริงๆ ได้</p>
+<p><b>หากคุณปฏิเสธ:</b> โหมดอื่นๆ ทั้งหมดจะทำงานได้ตามปกติ</p>
+<blockquote>Sky Map จะไม่บันทึกภาพจากกล้องหรือส่งภาพนั้นมาที่เรา ภาพจะถูกวาดลงบนหน้าจอแล้วทิ้งไป เว้นแต่คุณจะแชร์รูปภาพ: การเลือกเลย์เอาต์ AR จากแผ่นงานแชร์จะบันทึกภาพนั้นไว้บนอุปกรณ์ของคุณและส่งต่อไปยังแอปที่คุณเลือก จะไม่มีการแชร์สิ่งใดจนกว่าคุณจะร้องขอ</blockquote>
+<h3>การแจ้งเตือน — เป็นเสริม</h3>
+<p><b>สิ่งที่เข้าถึง:</b> สิทธิ์ในการแสดงการแจ้งเตือน</p>
+<p><b>เหตุผล:</b> เพื่อแจ้งให้คุณทราบเกี่ยวกับช่วงเวลาที่ฝนดาวตก, ดาวตกพีก และสิ่งที่น่าดูในคืนนี้ หากคุณร้องขอสิ่งเหล่านั้น</p>
+<p><b>หากคุณปฏิเสธ:</b> จะไม่มีสิ่งอื่นใดเปลี่ยนแปลง การแจ้งเตือนเหล่านี้จะยังคงปิดอยู่จนกว่าคุณจะเปิดใช้งาน</p>]]></string>
+</resources>

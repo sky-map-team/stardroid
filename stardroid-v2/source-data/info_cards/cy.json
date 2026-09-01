@@ -645,12 +645,22 @@
    "size": "83 blwyddyn-golau ar draws",
    "image_credit": "NASA/ESA/Hubble"
   },
+  "dso/m100": {
+   "description": "Mae Messier 100 yn alaeth droellog dyluniad mawreddog yng Ngwallt Berenice ac un o'r rhai mwyaf disglair yng Nghlwstwr Virgo.",
+   "fun_fact": "Gwelwyd saith uwchnofa yn M100, y diweddaraf yn 2020 - ychydig o alaethau sydd wedi rhoi sioe o'r fath!",
+   "distance": "55 miliwn o flynyddoedd golau",
+   "size": "166,000 o flynyddoedd golau ar draws"
+  },
   "dso/m101": {
    "description": "Mae Galaeth y Troell yn ddreigalaeth troellog wyneb-ymlaen yn Ursa Major, un o'r dreigalaetha troellog mwyaf hysbys.",
    "fun_fact": "Mae Galaeth y Pinwheel yn cynnwys dros driliwn o sêr ac mae ganddi freichiau troellog anghymesur oherwydd rhyngweithiadau galaeth yn y gorffennol!",
    "distance": "21 miliwn o flynyddoedd golau",
    "size": "170,000 o flynyddoedd golau ar draws",
    "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m102": {
+   "description": "Messier 102 yw'r cofnod mawr heb ei ddatrys yng nghatalog Messier - gwrthrych a gofnodwyd yn 1781 nad yw erioed wedi'i adnabod yn sicr.",
+   "fun_fact": "Ni chyhoeddodd Messier unrhyw gyfesurynnau ar gyfer M102, ac yn ddiweddarach tynnodd ei gydweithiwr Mechain y darganfyddiad yn ôl yn gyfan gwbl, gan honni mai dim ond M101 a gofnodwyd ddwywaith trwy gamgymeriad! Mae NASA yn ei adnabod fel Galaeth y Gwerthyd, NGC 5866."
   },
   "dso/m103": {
    "description": "Mae M103 yn glwstwr sêr agored bach, cryno yng Nghasiopeia, yn cynnwys tua 40 seren mewn grŵp tynn sy'n hawdd ei weld mewn dwy-wydr. Mae seren ddwbl drawiadol a chawr coch ger y canol yn rhoi golwg lliwgar iddo mewn telescopau bach, wedi'i osod o fewn caeau sêr cyfoethog Llwybr Llaethog Nghasiopeia.",
@@ -665,6 +675,12 @@
    "size": "50,000 o flynyddoedd golau ar draws",
    "image_credit": "NASA/ESA/Hubble"
   },
+  "dso/m105": {
+   "description": "Mae Messier 105 yn alaeth eliptigol yn y Llew, yr eliptigol fwyaf yng nghatalog Messier y tu allan i Glwstwr Virgo.",
+   "fun_fact": "Mae M105 yn rhannu cylch enfawr o nwy hydrogen gyda'i gymydog NGC 3384, sy'n ymestyn tua 650,000 blwyddyn golau!",
+   "distance": "37 miliwn o flynyddoedd golau",
+   "size": "67,000 o flynyddoedd golau ar draws"
+  },
   "dso/m106": {
    "description": "Mae M106 yn alaeth troellog yng Nghŵn y Cŵn gyda breichiau troellog anormal a achosir gan jêts o'r twll du canolog.",
    "fun_fact": "Mae gan M106 faseri dŵr yn ei niwclews, sy'n caniatáu i seryddwyr fesur ei bellter yn fanwl gywir!",
@@ -677,6 +693,11 @@
    "fun_fact": "M107 oedd y cofnod olaf a ychwanegwyd yn ffurfiol at y catalog Messier — mae'n ymddangos mewn gohebiaeth Pierre Méchain ond ni chafwyd ei gynnwys yn yr argraffiad gwreiddiol 1781. Cafodd ei ychwanegu'n swyddogol fel M107 yn 1947 gan yr seryddwr Canadaidd Helen Sawyer Hogg, a oedd yn codio nifer o wrthrychau \"coll\" a arsylwodd Méchain ond na chofnododd Messier erioed yn ffurfiol.",
    "distance": "20,900 blwyddyn-olau",
    "size": "~61 blwyddyn-olau ar draws"
+  },
+  "dso/m108": {
+   "description": "Messier 108 yw galaeth droellog farrog yn Ursa Major, a elwir yn Galaeth y Bwrdd Syrffio.",
+   "fun_fact": "Mae M108 wedi'i ogwyddo bron ar ei ymyl atom ni, dyna sut yr enillodd yr enw Bwrdd Syrffio - ac mae'n cynnwys tua 290 o glystyrau globwlaidd!",
+   "distance": "46 miliwn o flynyddoedd golau"
   },
   "dso/m109": {
    "description": "Mae M109 yn alaeth troellog â bar yn Ursa Major, yr aelod disgleiraf mewn grŵp o alaeth sy'n dwyn ei enw.",
@@ -740,6 +761,12 @@
    "distance": "5,500 blwyddyn-olau",
    "size": "15 blwyddyn-olau ar draws",
    "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m18": {
+   "description": "Mae Messier 18 yn glwstwr agored bach o sêr ifanc yn y Saethydd, a elwir hefyd yn Glwstwr yr Alarch Du.",
+   "fun_fact": "M18 yw un o'r ychydig iawn o wrthrychau Messier nad yw Telesgop Gofod Hubble erioed wedi tynnu llun ohono!",
+   "distance": "4,200 o flynyddoedd golau",
+   "size": "26 o flynyddoedd golau ar draws"
   },
   "dso/m19": {
    "description": "Mae M19 yn glwstwr globwlaidd cryno, cyfoethog yn Ophiuchus — un o'r clystyrau globwlaidd agosaf at ganolfan y Galaeth. Ei nodwedd fwyaf nodedig yw ei siâp oblate amlwg: M19 yw'r clwstwr globwlaidd mwyaf fflat a adnabyddir, gyda amlinell eliptig weladwy hyd yn oed mewn telesgop bach.",
@@ -1018,12 +1045,35 @@
    "size": "1.3 o flynyddoedd golau ar draws",
    "image_credit": "NASA/ESA/Hubble"
   },
+  "dso/m58": {
+   "description": "Messier 58 yw galaeth droellog farrog yn Virgo ac un o aelodau disgleiriaf Clwstwr Virgo.",
+   "fun_fact": "Mae tylluan ddu archfawr o tua 70 miliwn màs solar yn eistedd yng nghalon M58, wedi'i hamgylchynu gan fand tynn o sêr newydd-anedig!",
+   "distance": "68 miliwn o flynyddoedd golau",
+   "size": "133,000 o flynyddoedd golau ar draws"
+  },
+  "dso/m59": {
+   "description": "Messier 59 yw alaeth eliptig yn Y Forwyn, a ddarganfuwyd yn 1779 yn ystod y chwiliad am gomed oedd yn pasio.",
+   "fun_fact": "Mae craidd M59 yn troelli tuag yn ôl o'i gymharu â gweddill yr alaeth, ac mae tua 2,200 o glystyrau globwlaidd yn heidio o'i chwmpas!",
+   "distance": "50 miliwn o flynyddoedd golau",
+   "mass": "270 miliwn o fasau solar (twll du canolog)"
+  },
   "dso/m6": {
    "description": "Mae Clwstwr yr Iâr Wen yn glwstwr agored yn Scorpius, a enwyd ar ôl trefniant tebyg i aderyn y to ei sêr disgleiraf.",
    "fun_fact": "Mae M6 tua 100 miliwn mlwydd oed ac yn cynnwys dros 300 o sêr, gan gynnwys y cawr oren BM Scorpii!",
    "distance": "1,600 blwyddyn-olau",
    "size": "25 blwyddyn-olau ar draws",
    "image_credit": "NOAO/AURA/NSF"
+  },
+  "dso/m60": {
+   "description": "Messier 60 yw alaeth eliptigol enfawr yn Y Forwyn, y drydedd alaeth eliptigol enfawr fwyaf disglair yng Nghlwstwr Y Forwyn.",
+   "fun_fact": "Mae twll du canolog M60 yn pwyso tua 4.5 biliwn o Haul - un o'r mwyaf a ddarganfuwyd erioed!",
+   "distance": "57 miliwn o flynyddoedd golau"
+  },
+  "dso/m61": {
+   "description": "Messier 61 yw galaeth droellog farrog yn Virgo ac un o'r galaethau mwyaf yn Nghlwstwr Virgo.",
+   "fun_fact": "Mae wyth uwchnofa wedi'u gweld yn M61 - un o'r cyfrifau uchaf o unrhyw alaeth! Camgymerodd Messier ei hun hi am gomed i ddechrau.",
+   "distance": "52 miliwn o flynyddoedd golau",
+   "size": "92,000 o flynyddoedd golau ar draws"
   },
   "dso/m62": {
    "description": "Mae M62 yn glwstwr globwlaidd cyfoethog yn Ophiuchus — un o'r clystyrau globwlaidd agosaf at ganolfan y Galaeth ac yn amlwg anghymesur, gyda sêr wedi'u pacio'n fwy trwchus ar yr ochr ddeheuol. Ar faint 6.6 mae'n wrthrych dwynoculars da, er bod ei ddeclination isel yn ei wneud yn darged tymor byr i arsylwyr gogleddol.",
@@ -1095,12 +1145,28 @@
    "distance": "12,000 blwyddyn-olau",
    "size": "~25 blwyddyn-olau ar draws"
   },
+  "dso/m72": {
+   "description": "Mae Messier 72 yn glwstwr globwlaidd gwan, pell yn yr Hyrddwr, a ddarganfuwyd gan Pierre Mechain yn 1780.",
+   "fun_fact": "Mae M72 yn cynnwys sêr sydd â màs cyfunol o tua 168,000 o Haul, mewn pêl sydd tua 9.5 biliwn o flynyddoedd oed, gan gynnwys 43 seren newidiol!",
+   "distance": "55,000 flynyddoedd golau"
+  },
+  "dso/m73": {
+   "description": "Mae Messier 73 yn grŵp bach o bedair seren yn yr Hyrddwr sydd ond yn ymddangos fel clwstwr.",
+   "fun_fact": "Dadleuodd seryddwyr am ddegawdau ynghylch a oedd M73 yn glwstwr go iawn - yn 2002 cafodd ei setlo: mae'r pedair seren yn gorwedd ar bellteroedd hollol wahanol ac yn cyd-fynd ar hap yn unig!",
+   "distance": "1,000 i 2,300 o flynyddoedd golau (y sêr unigol)"
+  },
   "dso/m74": {
    "description": "Mae Galaeth y Fantom yn alaeth troellog wyneb-ymlaen yn Pisces, sy'n adnabyddus am ei strwythur troellog grand-design perffaith.",
    "fun_fact": "Mae M74 yn cael ei alw'n Galaeth y Fantom oherwydd ei ddisglerder arwyneb iawn isel, sy'n ei gwneud yn anodd ei arsylwi!",
    "distance": "32 miliwn o flynyddoedd golau",
    "size": "95,000 o flynyddoedd golau ar draws",
    "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m75": {
+   "description": "Mae Messier 75 yn glwstwr globwlaidd pell, dwys ei grynodiad yn y Saethydd.",
+   "fun_fact": "M75 yw un o'r clystyrau globwlaidd mwyaf trwchus sy'n hysbys, ac fe'i hystyrir yn falurion o alaeth gorrach a lyncwyd gan y Llwybr Llaethog amser maith yn ôl!",
+   "distance": "68,000 flynyddoedd golau",
+   "size": "134 o flynyddoedd golau o led"
   },
   "dso/m76": {
    "description": "Mae'r Little Dumbbell yn nifwla blanedol yn Perseus gyda siâp wyth-ffigur nodweddiadol — cefnder llai o M27, y Dumbbell Nebula yn Vulpecula. Er ei fod yn y cofnod lleiaf llachar yn y catalog Messier, mae'n gwobrwyo arsylwi amyneddgar mewn telescopau bach ac yn dangos strwythur hardd mewn offerynnau mwy, gyda dwy lob fwy llachar yn flangio canol llai llachar.",
@@ -1162,6 +1228,22 @@
    "size": "55,000 blwyddyn-olau ar draws",
    "image_credit": "NASA/ESA/Hubble"
   },
+  "dso/m84": {
+   "description": "Mae Messier 84 yn alaeth eliptigol enfawr yng nghanol gorlawn Clwstwr y Forwyn.",
+   "fun_fact": "Mae M84 yn tanio dau jet o fater allan o'i chraidd, wedi'u gyrru gan dwll du o tua 1.5 biliwn o fasau solar!",
+   "distance": "55 miliwn o flynyddoedd golau"
+  },
+  "dso/m85": {
+   "description": "Mae Messier 85 yn alaeth lenticular ar gyrion Clwstwr y Forwyn, yn Coma Berenices.",
+   "fun_fact": "Crychdonnau a chregyn yn rhanbarthau allanol M85 yw adfeilion cyfuniad galaeth 4 i 7 biliwn o flynyddoedd yn ôl!",
+   "distance": "60 miliwn o flynyddoedd golau",
+   "size": "120,600 o flynyddoedd golau o led"
+  },
+  "dso/m86": {
+   "description": "Mae Messier 86 yn alaeth eliptig fawr yng Nghlwstwr Virgo, gan ffurfio pâr trawiadol gyda M84 gerllaw.",
+   "fun_fact": "Mae M86 yn rhuthro tuag atom ar 244 km/s – y dull cyflymaf o unrhyw wrthrych Messier! Mae ei daith drwy'r clwstwr yn gadael llwybr hir o nwy poeth wedi'i dynnu.",
+   "distance": "52 miliwn o flynyddoedd golau"
+  },
   "dso/m87": {
    "description": "Mae M87 yn alaeth eliptig anferth yn Virgo, un o'r galathau mwyaf yn y bydysawd lleol.",
    "fun_fact": "Twll du canolog M87 oedd y cyntaf erioed i gael ei ddelweddu gan y Telesgop Gorwel Digwyddiad yn 2019 - mae ganddo 6.5 biliwn o fasau'r Haul!",
@@ -1170,11 +1252,34 @@
    "mass": "2.4 triliwn masau solar",
    "image_credit": "NASA/ESA/Hubble"
   },
+  "dso/m88": {
+   "description": "Mae Messier 88 yn alaeth droellog gain yn Coma Berenices, un o bymtheg gwrthrych Messier yng Nghlwstwr Virgo.",
+   "fun_fact": "Mae M88 yn plymio tuag at ganol Clwstwr Virgo a bydd yn cyrraedd mewn 200 i 300 miliwn o flynyddoedd, gyda'i nwy allanol yn cael ei dynnu i ffwrdd wrth iddo syrthio!",
+   "distance": "59 miliwn o flynyddoedd golau",
+   "size": "131,000 o flynyddoedd golau o led"
+  },
+  "dso/m89": {
+   "description": "Mae Messier 89 yn alaeth eliptigol yn y Forwyn, a ddarganfuwyd gan Charles Messier yn 1781.",
+   "fun_fact": "Gall M89 fod bron yn sffêr perffaith - yn anarferol i alaeth eliptigol, sydd fel arfer yn cael eu gwasgu'n amlwg!",
+   "distance": "50 miliwn o flynyddoedd golau"
+  },
   "dso/m9": {
    "description": "Mae M9 yn glwstwr globwlaidd cryno yn Ophiuchus — un o'r clystyrau globwlaidd Messier sydd fwyaf wedi'u heffeithio gan amsugno llwch rhyngserol. Mae'n gorwedd tuag at y chwyddiad galactig, lle mae llwch trwchus yn ei dywyllu'n sylweddol. Heb yr anuniaeth hon byddai M9 yn ymddangos bron yn fagnitud yn fwy disglair ac yn weladwy i'r llygad noeth.",
    "fun_fact": "Mae M9 yn dioddef mwy o amsugno llwch rhyngserol nag bron unrhyw glwstwr globwlaidd Messier arall — tua 1.3 maint o ddimio o'i gymharu â llinell olwg glir. Mae dau glwstwr globwlaidd llai (NGC 6342 a NGC 6356) yn gorwedd o fewn tua 1° o M9, gan ei wneud yn ganolfan grwpiad rhyfeddol o dri globwlaidd mewn darn bach o'r awyr.",
    "distance": "25,800 blwyddyn-olau",
    "size": "~70 blwyddyn-olau ar draws"
+  },
+  "dso/m90": {
+   "description": "Mae Messier 90 yn alaeth droellog fawr yn y Forwyn, a'r enghraifft lyfr-testun o alaeth \"anemig\".",
+   "fun_fact": "Mae M90 wedi colli ei nwy sy'n ffurfio sêr oherwydd ei blymio drwy Glwstwr y Forwyn, gan adael cynffonnau o nwy disglair hyd at 260,000 o flynyddoedd golau o hyd!",
+   "distance": "59 miliwn o flynyddoedd golau",
+   "size": "132,000 o flynyddoedd golau o led"
+  },
+  "dso/m91": {
+   "description": "Messier 91 yw galaeth droellog farrog yng Nghoma Berenices a'r gwrthrych gwanaf yng Nghatalog Messier.",
+   "fun_fact": "Collwyd M91 am bron i 200 mlynedd! Cofnododd Messier ei safle gan ddefnyddio'r alaeth gyfeirio anghywir, a dim ond yn 1969 y cafodd ei ailddarganfod gan seryddwr amatur.",
+   "distance": "63 miliwn o flynyddoedd golau",
+   "size": "105,500 o flynyddoedd golau o led"
   },
   "dso/m92": {
    "description": "Mae M92 yn glwstwr globwlaidd disglair yn Hercwles, a amlygir yn aml oherwydd ei agosrwydd at y M13 mwy enwog.",
@@ -1196,12 +1301,35 @@
    "size": "50,000 blwyddyn-olau ar draws",
    "image_credit": "NASA/ESA/Hubble"
   },
+  "dso/m95": {
+   "description": "Mae Messier 95 yn alaeth droellog farrog yn y Llew, rhan o Grŵp M96 ynghyd â M96 a M105.",
+   "fun_fact": "Cylch o ffurfiant seren dwys, tua 70,000 o flynyddoedd golau o led, sy'n cylchu craidd M95, ac ymddangosodd uwchnofa yno yn 2012!",
+   "distance": "33 miliwn o flynyddoedd golau",
+   "size": "80,000 o flynyddoedd golau o led"
+  },
+  "dso/m96": {
+   "description": "Mae Messier 96 yn alaeth droellog yn y Llew, yr aelod disgleiriaf o Grŵp galaethau M96.",
+   "fun_fact": "Mae M96 tua'r un maint a màs â'n Llwybr Llaethog ein hunain, ond mae'n hynod o anghymesur - mae ei lwch a'i nwy wedi'u lledaenu'n anwastad drwy ei breichiau!",
+   "distance": "31 miliwn o flynyddoedd golau",
+   "size": "78,000 o flynyddoedd golau o led"
+  },
   "dso/m97": {
    "description": "Mae Nifwla'r Tylluan yn nifwla blanedol yn Ursa Major, a enwyd ar ôl ei hymddangosiad tebyg i dylluan gyda dwy smotyn tywyll.",
    "fun_fact": "Mae llygaid tywyll y dylluan yn M97 yn geudodau tri dimensiwn yn y nifwla, wedi'u halinio â'n llinell olwg!",
    "distance": "2,030 blwyddyn-olau",
    "size": "2 flwyddyn-olau ar draws",
    "image_credit": "Gemini Observatory/NOIRLab/NSF/AURA"
+  },
+  "dso/m98": {
+   "description": "Mae Messier 98 yn alaeth droellog yn Coma Berenices, a welir bron ar ei hochr fel rhan o Glwstwr y Forwyn.",
+   "fun_fact": "Mae M98 yn un o'r galaethau prin sy'n symud tuag atom ni yn hytrach nag i ffwrdd, gan gau ar oddeutu 140 km/s!",
+   "distance": "44 miliwn o flynyddoedd golau"
+  },
+  "dso/m99": {
+   "description": "Mae Messier 99 yn alaeth droellog ddyluniad mawreddog yn Coma Berenices, yn dangos breichiau troellog clir, ysgubol.",
+   "fun_fact": "Roedd M99 ymhlith yr gwrthrychau cyntaf un a gydnabuwyd fel rhai troellog, a chafodd ei fraslunio gan yr Arglwydd Rosse yn 1846 – ac mae’n ffurfio sêr deirgwaith yn gyflymach na galaethau tebyg!",
+   "distance": "45 miliwn o flynyddoedd golau",
+   "size": "98,000 o flynyddoedd golau o led"
   },
   "dso/n47_tucanae": {
    "description": "Mae 47 Tucanae (NGC 104) yn yr ail glwstwr globwlaidd disgleiriaf yn yr awyr, pêl drwchus o tua miliwn o sêr hynafol yn cylchdroi o amgylch y Llwybr Llaethog yn y seren-ddarlun Tucana. Ar tua 14,500 blwyddyn-golau i ffwrdd, mae'n ymddangos i'r llygad noeth fel seren tywyll pedwerydd-maint, ond mae telesgop yn datrys ei chraidd cywasgeddig yn haid ryfeddol o haul aur a glas-wyn. Ffurfiwyd ei sêr tua 13 biliwn o flynyddoedd yn ôl, gan wneud y clwstwr bron mor hen â'r bydysawd ei hun.",
@@ -1313,8 +1441,9 @@
    "description": "Deimos yw'r llai a'r allanol o ddwy leuad Mars, gyda wyneb llyfn, wedi'i orchuddio â llwch sy'n rhoi iddo ymddangosiad crwn na Phobos. Fel ei gyfaill, credir ei fod yn asteroid a gipiasid o'r gwregys allanol.",
    "fun_fact": "Mae Deimos mor fach ac mor bell fel ei fod yn edrych fel dim mwy na seren ddisglair o wyneb Mawrth, gan gymryd tua 30 awr i symud yn araf ar draws yr awyr nos.",
    "distance": "23,460 km o Fawrth",
+   "size": "15 x 12 x 11 km",
    "image_credit": "NASA/JPL-Caltech/University of Arizona",
-   "search_subtext": "Moon of Mars"
+   "search_subtext": "Lleuad Mawrth"
   },
   "moon/dione": {
    "description": "Mae Dione yn leuad rewllyd o Saturn gyda wyneb arweiniol wedi'i grafu'n drwm ac hemisffer olaf wedi'i frithio â clogwyni iâ disglair — llinellau toriad lle mae grymoedd tectonig hynafol wedi amlygu iâ ffres o'r isod. Mae data disgyrchiant Cassini yn awgrymu bod cefnfor hylif tanddaearol o dan y gramen.",
@@ -1368,8 +1497,9 @@
    "description": "Phobos yw'r mwy mawr ac agosaf at Mars o'i ddwy loer, gan orbitu'n agosach at ei blaned nag unrhyw loer arall yn y system solar. Mae'n gorff siâp afreolaidd, wedi'i rygnu a'i grafu'n drwm, a ystyrir yn asteroid a gipiasid.",
    "fun_fact": "Mae Phobos yn cylchdroi Mars mor gyflym fel ei fod yn codi yn y gorllewin ac yn machlud yn y dwyrain — ac mae'n araf droi tuag i mewn, wedi'i dynged i naill ai daro Mars neu dorri'n ddarnau i ffurfio cylch mewn tua 50 miliwn o flynyddoedd.",
    "distance": "9,376 km o Fawrth",
+   "size": "27 x 22 x 18 km",
    "image_credit": "NASA/JPL-Caltech/University of Arizona",
-   "search_subtext": "Moon of Mars"
+   "search_subtext": "Lleuad Mawrth"
   },
   "moon/rhea": {
    "description": "Mae Rhea yn ail loeren fwyaf Saturnus ac yn fyd wedi'i grafu'n drwm o rew a chareg. Mae ei wyneb golau, hynafol yn cadw rhai o'r craterau trawiad mwyaf glân y system solar, ochr yn ochr â chllogwyni iâ disglair lle mae llithro tir wedi datgelu deunydd ffres o dan y wyneb.",
@@ -1424,6 +1554,7 @@
    "fun_fact": "Mae gan Iau o leiaf 95 lloer hysbys! Mae ei loer fwyaf, Ganymede, yn fwy na'r blaned Mercwri.",
    "distance": "778 miliwn km (ar gyfartaledd)",
    "size": "139,820 km diamedr",
+   "mass": "1.898 x 10²⁷ kg",
    "image_credit": "NASA/ESA/Hubble"
   },
   "planet/mars": {
@@ -1431,6 +1562,7 @@
    "fun_fact": "Mae gan Mars y llosgfynydd mwyaf yn y system solar: Olympus Mons, sydd tua 2.5 gwaith yn dalach na Mount Everest!",
    "distance": "228 miliwn km (ar gyfartaledd)",
    "size": "6,779 km diamedr",
+   "mass": "6.39 x 10²³ kg",
    "image_credit": "NASA/ESA/Hubble"
   },
   "planet/mercury": {
@@ -1438,12 +1570,15 @@
    "fun_fact": "Er gwaethaf ei fod agosaf at yr Haul, nid yw Mercwri yn y blaned poethaf. Mae Gwener yn boethach oherwydd ei hatmosffer trwchus!",
    "distance": "58 miliwn km (o'r Haul)",
    "size": "4,880 km diamedr",
+   "mass": "3.3 × 10²³ kg",
    "image_credit": "NASA/GSFC"
   },
   "planet/moon": {
    "description": "Lloer yw'r unig loeren naturiol y Ddaear. Mae'n dylanwadu ar ein llanwau ac mae 12 astronot wedi ymweld â hi.",
    "fun_fact": "Mae'r Lleuad yn araf ddrifftio i ffwrdd o'r Ddaear ar tua 3.8 cm y flwyddyn. Roedd yn llawer yn nes filoedd o filynnau o flynyddoedd yn ôl!",
+   "distance": "384,400 km",
    "size": "3,474 km diamedr",
+   "mass": "7.35 × 10²² kg",
    "image_credit": "NASA/GSFC/ASU"
   },
   "planet/neptune": {
@@ -1451,6 +1586,7 @@
    "fun_fact": "Darganfyddwyd Neifion trwy fathemateg! Roedd gwyddonwyr wedi rhagfynegi ei leoliad cyn i neb ei weld trwy delesgop.",
    "distance": "4.5 biliwn km (cyfartaledd)",
    "size": "49,244 km diamedr",
+   "mass": "1.024 × 10²⁶ kg",
    "image_credit": "NASA/ESA/Hubble"
   },
   "planet/pluto": {
@@ -1458,6 +1594,7 @@
    "fun_fact": "Mae gan Pluto rewlifan siâp calon wedi'i wneud o rew nitrogen, sy'n weladwy mewn delweddau o genhadaeth New Horizons NASA!=",
    "distance": "5.9 biliwn km (cyfartaledd)",
    "size": "2,377 km diamedr",
+   "mass": "1.3 × 10²² kg",
    "image_credit": "NASA/JHUAPL/SwRI"
   },
   "planet/saturn": {
@@ -1465,6 +1602,7 @@
    "fun_fact": "Mae Sadwrn mor ysgafn fel y byddai'n arnofio mewn dŵr! Mae ei ddwysedd yn llai na dŵr, er nad oes baddon digon mawr i brofi hyn.",
    "distance": "1.4 biliwn km (cyfartaledd)",
    "size": "116,460 km diamedr",
+   "mass": "5.68 × 10²⁶ kg",
    "image_credit": "NASA/ESA/Hubble"
   },
   "planet/sun": {
@@ -1472,6 +1610,7 @@
    "fun_fact": "Mae'r Haul yn cynnwys 99.86% o holl fàs ein system solar. Gallai tua 1.3 miliwn o Ddaearoedd ffitio y tu mewn iddo!",
    "distance": "150 miliwn km",
    "size": "1.4 miliwn km diamedr",
+   "mass": "1.989 × 10³⁰ kg",
    "spectral_class": "G2V",
    "image_credit": "NASA/SDO"
   },
@@ -1480,6 +1619,7 @@
    "fun_fact": "Mae Wranws yn cylchdroi ar ei ochr ar ongl gogwydd o 98 gradd, o bosibl oherwydd gwrthdrawiad â gwrthrych maint y Ddaear amser maith yn ôl!",
    "distance": "2.9 biliwn km (cyfartaledd)",
    "size": "50,724 km diamedr",
+   "mass": "8.68 × 10²⁵ kg",
    "image_credit": "NASA/ESA/Hubble"
   },
   "planet/venus": {
@@ -1487,6 +1627,7 @@
    "fun_fact": "Mae diwrnod ar Venus yn hirach na'i flwyddyn! Mae'n cymryd 243 diwrnod y Ddaear iddo droi unwaith, ond dim ond 225 diwrnod i orbitu'r Haul.",
    "distance": "108 miliwn km (ar gyfartaledd)",
    "size": "12,104 km diamedr",
+   "mass": "4.87 × 10²⁴ kg",
    "image_credit": "NASA/JPL"
   },
   "shower/aquariids": {
@@ -1561,6 +1702,7 @@
    "fun_fact": "Mae Alcyone mewn gwirionedd yn system sêr lluosog gyda o leiaf tri chymrawd! Mae hefyd yn troi mor gyflym fel bod ganddi ddisg o nwy o amgylch ei chyhydedd.",
    "distance": "~440 blwyddyn-olau",
    "size": "~10 radiws solar",
+   "mass": "~6.0 masau solar",
    "spectral_class": "B7IIIe",
    "image_credit": "ESO/Digitized Sky Survey 2"
   },
@@ -1578,6 +1720,7 @@
    "fun_fact": "Oherwydd rhagflaeniad echelinol y Ddaear, bydd Alderamin yn dod yn Seren y Pegwn Gogleddol tua'r flwyddyn 7500 OC!",
    "distance": "49 blwyddyn-olau",
    "size": "2.5 radiws solar",
+   "mass": "1.9 masau solar",
    "spectral_class": "A7V",
    "image_credit": "ESO/Digitized Sky Survey 2"
   },
@@ -1586,6 +1729,7 @@
    "fun_fact": "Mae Algenib yn pulsadio, gan newid ei lewyrch ychydig bob 3.6 awr! Mae'n un o'r sêr mwyaf pell hefyd sy'n ffurfio asterism amlwg sy'n weladwy i'r llygad noeth.",
    "distance": "~390 blwyddyn-olau",
    "size": "4.8 radiws solar",
+   "mass": "~8.9 masau solar",
    "spectral_class": "B2IV",
    "image_credit": "ESO/Digitized Sky Survey 2"
   },
@@ -1594,6 +1738,7 @@
    "fun_fact": "Drwy delesgop, mae Algieba yn hollti'n bâr syfrdanol o sêr cawr aur ac oren-felyn — un o'r sêr dwbl gorau yn yr awyr! Darganfuwyd planed yn cylchdroi'r seren gynradd yn 2009.",
    "distance": "~130 blwyddyn-olau",
    "size": "~23 radiws solar",
+   "mass": "~1.2 masau solar",
    "spectral_class": "K1IIIbCN",
    "image_credit": "ESO/Digitized Sky Survey 2"
   },
@@ -1611,6 +1756,7 @@
    "fun_fact": "Mae enw Alhena yn dod o'r Arabeg yn golygu \"y marc brand\" — roedd yr hen Arabiaid yn gweld y seren hon fel marc brand ar wddf camel!",
    "distance": "109 blwyddyn-olau",
    "size": "3.3 radiws solar",
+   "mass": "2.8 masau solar",
    "spectral_class": "A1IV",
    "image_credit": "ESO/Digitized Sky Survey 2"
   },
@@ -1628,6 +1774,7 @@
    "fun_fact": "Yn wahanol i'r rhan fwyaf o sêr y Llwy Fawr, nid yw Alkaid yn rhan o'r Grŵp Symudol Ursa Major — mae'n teithio drwy'r gofod mewn cyfeiriad gwahanol, felly bydd siâp y Llwy Fawr yn newid yn araf dros filoedd o flynyddoedd!",
    "distance": "104 blwyddyn-olau",
    "size": "3.4 radiws solar",
+   "mass": "6.1 masau solar",
    "spectral_class": "B3V",
    "image_credit": "ESO/Digitized Sky Survey 2"
   },
@@ -1636,6 +1783,7 @@
    "fun_fact": "Mae Alnair yn troelli'n hynod o gyflym — o leiaf 215 km/s wrth ei gyhydedd — sy'n mor gyflym fel bod y seren yn amlwg yn oblate, yn chwyddo yn ei chanol!",
    "distance": "101 blwyddyn-olau",
    "size": "3.4 radiws solar",
+   "mass": "4.0 masau solar",
    "spectral_class": "B7IV",
    "image_credit": "ESO/Digitized Sky Survey 2"
   },
@@ -1644,6 +1792,7 @@
    "fun_fact": "Roedd Alnath unwaith yn cael ei rannu rhwng dwy seren-batrwm! Cafodd ei ddynodi fel Beta Tauri a Gamma Aurigae cyn i'r IAU ei neilltuo'n swyddogol i Taurus yn 1930.",
    "distance": "134 blwyddyn-olau",
    "size": "4.2 radiws solar",
+   "mass": "5.0 masau solar",
    "spectral_class": "B7III",
    "image_credit": "ESO/Digitized Sky Survey 2"
   },
@@ -1670,6 +1819,7 @@
    "fun_fact": "Mae Alphekka yn ddeuddeuol eclipsio — mae ei gymrawd tywyll yn pasio o'i flaen bob 17.4 diwrnod, gan achosi gostwngiad bychan mewn disgleirdeb na ellir ei weld heb offerynnau!",
    "distance": "75 blwyddyn-olau",
    "size": "2.9 radiws solar",
+   "mass": "2.6 masau solar",
    "spectral_class": "A0V",
    "image_credit": "ESO/Digitized Sky Survey 2"
   },
@@ -1696,6 +1846,7 @@
    "fun_fact": "Mae Ankaa yn seren ddeuaidd sbectrosgopig, sy'n golygu bod ei chymrawd mor agos fel na ellir canfod y ddwy ond trwy symudiadau yn eu sbectrwm golau — maent yn cylchdroi o amgylch ei gilydd bob 10.2 blynedd!",
    "distance": "85 blwyddyn-olau",
    "size": "15 radiws solar",
+   "mass": "1.3 masau solar",
    "spectral_class": "K0III",
    "image_credit": "ESO/Digitized Sky Survey 2"
   },
@@ -1722,6 +1873,7 @@
    "fun_fact": "Mae Arneb yn seren farw sy'n debygol wedi toddi'r holl hydrogen craidd yn barod. Efallai y bydd yn diweddu ei fywyd fel supernova o fewn yr ychydig filiwn blwyddyn nesaf!",
    "distance": "~2,200 blwyddyn-olau",
    "size": "~75 radiws solar",
+   "mass": "~14 masau solar",
    "spectral_class": "F0Ib",
    "image_credit": "ESO/Digitized Sky Survey 2"
   },
@@ -1757,6 +1909,7 @@
    "fun_fact": "Mae Caph yn newidyn Delta Scuti — mae'n dirgrynnu gyda thonfeddau lluosog ar yr un pryd, gan newid disglerder ychydig bob 2.5 awr!",
    "distance": "54 blwyddyn-olau",
    "size": "3.5 radiws solar",
+   "mass": "1.9 masau solar",
    "spectral_class": "F2III",
    "image_credit": "ESO/Digitized Sky Survey 2"
   },
@@ -1805,6 +1958,11 @@
    "spectral_class": "K0 III",
    "image_credit": "ESO/Digitized Sky Survey 2"
   },
+  "star/e_lyrae": {
+   "description": "Mae Epsilon Lyrae yn system seren lluosog yn Lyra, sy'n enwog ymhlith arsylwyr fel y \"Dwbl Dwbl\".",
+   "fun_fact": "Gall llygaid craff hollti Epsilon Lyrae yn ddwy seren - ac mae telesgop yn hollti pob un o'r rheini yn ddwy eto! Mae'n cynnwys o leiaf bum seren i gyd.",
+   "distance": "160 blynedd-golau"
+  },
   "star/enif": {
    "description": "Enif yw'r seren loywaf yn Pegasus ac mae'n nodi trwyn y ceffyl hedfan yn y seren-ddarlun.",
    "fun_fact": "Yn 1972, profodd Enif ddigwyddiad fflâr dramatig, gan gynyddu ei ddisglerder yn sydyn gan ffactor o bump!",
@@ -1819,6 +1977,7 @@
    "fun_fact": "Arweinyddodd arsylwadau Etamin yn 1728 gan James Bradley at ddarganfyddiad aberiad golau — un o'r tystiolaeth uniongyrchol gyntaf fod y Ddaear yn symud drwy ofod!",
    "distance": "148 blwyddyn-olau",
    "size": "48 radiws solar",
+   "mass": "1.7 masau solar",
    "spectral_class": "K5III",
    "image_credit": "ESO/Digitized Sky Survey 2"
   },
@@ -1857,6 +2016,110 @@
    "mass": "~4.6 màs solar",
    "spectral_class": "K0II-III",
    "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/j052512+062100": {
+   "description": "Mae Bellatrix yn nodi ysgwydd chwith Orion (yr Heliwr). Mae ei enw yn Lladin am \"rhyfelwraig\".",
+   "fun_fact": "Dim ond tua 28 miliwn o flynyddoedd oed yw Bellatrix, a bydd yn llosgi drwy ei hydrogen mewn 7 miliwn o flynyddoedd arall - bywyd byr i seren!",
+   "distance": "250 blynedd-golau",
+   "size": "6.2 radii solar",
+   "mass": "8.4 masau solar",
+   "spectral_class": "B2 III"
+  },
+  "star/j054048-015624": {
+   "description": "Alnitak yw seren fwyaf dwyreiniol Gwregys Orion, yn eistedd wrth ymyl Niwloedd y Fflam a Phen y Ceffyl.",
+   "fun_fact": "Alnitak yw'r seren ddosbarth O ddisgleiriaf yn yr holl awyr nos! Mewn tua miliwn o flynyddoedd bydd yn chwyddo'n ehangach nag orbit Iau ac yn ffrwydro fel uwchnofa.",
+   "distance": "1,260 blynedd-golau",
+   "size": "20 radii solar",
+   "mass": "33 masau solar",
+   "spectral_class": "O9.5 Iab"
+  },
+  "star/j055924+445700": {
+   "description": "Menkalinan yw'r ail seren ddisgleiriaf yn Auriga (y Cerbydwr). Mae ei enw'n golygu \"ysgwydd y daliwr ffrwynau\" mewn Arabeg.",
+   "fun_fact": "Menkalinan yw dwy seren bron yn union yr un fath yn eclipsio ei gilydd bob 47.5 awr - ac mewn tua miliwn o flynyddoedd bydd yn dod y seren fwyaf disglair yn ein nos awyr!",
+   "distance": "79 blynedd-golau",
+   "size": "2.8 radii solar",
+   "mass": "2.4 masau solar",
+   "spectral_class": "A1m IV + A1m IV"
+  },
+  "star/j062248-175736": {
+   "description": "Mae Mirzam (Beta Canis Majoris) yn codi ychydig cyn Sirius, a enillodd iddo enw sy'n golygu \"Y Cyhoeddwr\" yn Arabeg.",
+   "fun_fact": "Tua phedair miliwn o flynyddoedd yn ôl, Mirzam oedd y seren ddisgleiriaf yn yr awyr, yn disgleirio ar faint -3,65 – llawer disgleiriach nag y mae Sirius yn ymddangos heddiw!",
+   "distance": "490 blynedd-golau",
+   "size": "8.4 radii solar",
+   "mass": "13 masau solar",
+   "spectral_class": "B1 II-III"
+  },
+  "star/j070824-262324": {
+   "description": "Mae Wezen yn uwch-gawr melyn-wyn yn Canis Major (Y Ci Mawr). Daw ei enw o'r Arabeg am 'bwysau'.",
+   "fun_fact": "Pe bai Wezen mor agos atom â Sirius, byddai'n disgleirio mor llachar â Lloer hanner llawn!",
+   "distance": "1,600 blynedd-golau",
+   "size": "188 radiwsau solar",
+   "mass": "14 masau solar",
+   "spectral_class": "F8 Ia"
+  },
+  "star/j082248-593036": {
+   "description": "Mae Avior (Epsilon Carinae) yn seren ddwbl ddisglair yng Ngharina ac un o bedair seren y Groes Ffug.",
+   "fun_fact": "Mae'r Groes Ffug mor aml yn cael ei chamgymryd am y Groes Ddeheuol fel ei fod wedi achosi gwallau llywio go iawn! Cafodd enw Avior ei ddyfeisio gan wneuthurwyr almanaciau Prydeinig yn y 1930au.",
+   "distance": "610 blynyddoedd golau",
+   "size": "151 radiwsau solar",
+   "mass": "10.5 masau solar",
+   "spectral_class": "K3 III + B2 Vp"
+  },
+  "star/j091312-694312": {
+   "description": "Miaplacidus yw'r ail seren ddisgleiriaf yn Carina (y Cilbren) ac mae'n nodi cornel o asterism y Groes Ddiemwnt.",
+   "fun_fact": "Mae Miaplacidus wedi chwyddo'n gawr ar ôl defnyddio'r hydrogen yn ei graidd, eto mae'n dal i droelli ar gyflymder bywiog o 146 km/s!",
+   "distance": "113 blynyddoedd golau",
+   "size": "5.8 radiwsau solar",
+   "mass": "3.9 masau solar",
+   "spectral_class": "A1 III"
+  },
+  "star/j123112-570636": {
+   "description": "Gacrux (Gamma Crucis) yw seren uchaf Y Groes Ddeheuol a'r seren goch enfawr agosaf at y Ddaear.",
+   "fun_fact": "Gacrux yw'r cawr coch math M agosaf atom ni, ac mae ei enw yn syml yn gontractiad morwr o \"Gamma Crucis\" a fathwyd yn y 1940au!",
+   "distance": "89 blynyddoedd golau",
+   "size": "73 radiwsau solar",
+   "mass": "1.5 masau solar",
+   "spectral_class": "M3.5 III"
+  },
+  "star/j124800-594124": {
+   "description": "Mimosa (Beta Crucis) yw'r ail seren ddisgleiriaf yn Y Groes Ddeheuol ac un o'r sêr poethaf sydd i'w gweld â'r llygad noeth.",
+   "fun_fact": "Mae Mimosa yn newidyn Beta Cephei pwlsio - mae'n chwyddo ac yn crebachu mewn tri rhythm sy'n gorgyffwrdd, pob un yn para tua phedair awr yn unig!",
+   "distance": "280 blynyddoedd golau",
+   "size": "8 radiwsau solar",
+   "mass": "14.5 masau solar",
+   "spectral_class": "B0.5 III"
+  },
+  "star/j143936-605024": {
+   "description": "Toliman (Alpha Centauri B) yw'r cydymaith oren yn y system seren agosaf i'r Haul, gan gylchdroi Rigil Kentaurus mwy disglair.",
+   "fun_fact": "Cafodd Toliman ei enw swyddogol dim ond yn 2018. Mae ychydig yn llai ac yn oerach na'r Haul, ac ynghyd â'i ddau gydymaith, mae'n ffurfio ein cymdogion seryddol agosaf!",
+   "distance": "4.34 blynyddoedd golau",
+   "size": "0.86 radiwsau solar",
+   "mass": "0.91 masau solar",
+   "spectral_class": "K1 V"
+  },
+  "star/j164836-690148": {
+   "description": "Atria yw seren ddisgleiriaf Triangulum Australe (y Triongl Deheuol), cawr oren sydd lawer mwy na'r Haul.",
+   "fun_fact": "Mae Atria 139 gwaith diamedr yr Haul - pe bai wedi'i osod yng nghanol Cysawd yr Haul, byddai bron yn cyrraedd orbit Gwener!",
+   "distance": "391 blynyddoedd golau",
+   "size": "139 radiwsau solar",
+   "mass": "6.4 masau solar",
+   "spectral_class": "K2 Ib-IIa"
+  },
+  "star/j173712-430000": {
+   "description": "Sargas yw cawr disglair yng nghynffon Scorpius (y Sgorpion), sy'n dwyn enw traddodiadol o darddiad Swmeraidd.",
+   "fun_fact": "Mae Sargas yn troelli mor gyflym fel ei fod yn chwyddo allan - mae'n draean yn ehangach ar draws y cyhydedd nag o bolyn i bolyn, ac efallai ei fod wedi ffurfio pan unodd dwy seren!",
+   "distance": "329 blynyddoedd golau",
+   "size": "35 radiwsau solar",
+   "mass": "3.1 masau solar",
+   "spectral_class": "F1 III"
+  },
+  "star/j202548-564348": {
+   "description": "Y Paun yw'r seren ddisgleiriaf yn Pavo (y Paun), seren boeth las-wyn o awyr ddeheuol bell.",
+   "fun_fact": "Cafodd Peacock ei enwi yn y 1930au oherwydd mynnodd yr RAF fod gan bob seren yn ei 'Air Almanac' newydd enw - ac nid oedd gan hon ddim!",
+   "distance": "179 blynyddoedd golau",
+   "size": "4.8 radiwsau solar",
+   "mass": "5.9 masau solar",
+   "spectral_class": "B3 V"
   },
   "star/kaus_australis": {
    "description": "Kaus Australis yw'r seren loywaf yn Sagittarius (yr Archer). Mae ei enw yn golygu \"y bwa deheuol\" mewn cymysgedd o Arabeg a Lladin.",
@@ -1917,8 +2180,15 @@
    "fun_fact": "Mae Mirphak wedi'i amgylchynu gan glwstwr sêr agored hardd (Melotte 20) sy'n well ei weld gyda dwy-wydr — tasgiad o sêr ifanc, glas-wyn sy'n symud gyda'i gilydd trwy'r gofod!",
    "distance": "~590 blwyddyn-olau",
    "size": "~68 radiws solar",
+   "mass": "Tua 8.5 masau solar",
    "spectral_class": "F5Ib",
    "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/n25": {
+   "description": "Mae R Coronae Borealis yn uwch-gawr melyn prin yn Corona Borealis, a phrototeip y dosbarth sêr amrywiol a enwyd ar ei ôl.",
+   "fun_fact": "Gelwir R Coronae Borealis weithiau yn 'nova gwrthdro' - yn lle fflachio i fyny, mae'n pylu'n anrhagweladwy hyd at 9 magnedd pan fydd yn chwythu cymylau o huddygl carbon sy'n ei guddio rhag golwg!",
+   "distance": "4,560 blynyddoedd golau",
+   "spectral_class": "G0Iep"
   },
   "star/nunki": {
    "description": "Nunki yw'r ail-seren loywaf yn Sagittarius ac yw'r enw seren hynaf sy'n dal mewn defnydd cyffredin.",
@@ -1934,6 +2204,7 @@
    "fun_fact": "Mae Phad yn aelod o'r Ursa Major Moving Group — set o sêr a anwyd gyda'i gilydd ac sy'n teithio drwy'r gofod fel clwstwr llac, gan gynnwys y rhan fwyaf o sêr y Big Dipper!",
    "distance": "84 blwyddyn-olau",
    "size": "3.0 radiws solar",
+   "mass": "2.9 masau solar",
    "spectral_class": "A0Ve",
    "image_credit": "ESO/Digitized Sky Survey 2"
   },
@@ -2005,6 +2276,7 @@
    "fun_fact": "Mae Saiph yn ymddangos yn wannach nag y byddai ei dymheredd yn ei awgrymu oherwydd bod y rhan fwyaf o'i egni yn cael ei drydar fel golau uwchfioled, anweledig i'n llygaid! Mewn gwirionedd, mae'n un o'r sêr disglair poethaf yn yr awyr.",
    "distance": "~650 blwyddyn-olau",
    "size": "~22 radiws solar",
+   "mass": "Tua 15.5 masau solar",
    "spectral_class": "B0.5Ia",
    "image_credit": "ESO/Digitized Sky Survey 2"
   },
@@ -2031,6 +2303,7 @@
    "fun_fact": "Roedd Shedir unwaith yn cael ei ystyried yn seren amrywiol, ond mae mesuriadau modern yn dangos bod ei disgleirdeb yn rhyfeddol gyson — roedd adroddiadau cynharach o amrywioedd yn debygol yn ddyledus i offer cyntefig!",
    "distance": "228 blwyddyn-olau",
    "size": "45 radiws solar",
+   "mass": "Tua 4.0 masau solar",
    "spectral_class": "K0IIIa",
    "image_credit": "ESO/Digitized Sky Survey 2"
   },
@@ -2057,6 +2330,7 @@
    "fun_fact": "Serpens yw'r unig seren-batrwm wedi'i rhannu'n ddwy ran ar wahân — Serpens Caput (pen) a Serpens Cauda (cynffon) — wedi'u gwahanu gan Ophiuchus, ac Unukalhai yw'r seren loywaf yn hanner y pen!",
    "distance": "74 blwyddyn-olau",
    "size": "12 radiws solar",
+   "mass": "Tua 2.1 masau solar",
    "spectral_class": "K2III",
    "image_credit": "ESO/Digitized Sky Survey 2"
   },
@@ -2074,6 +2348,7 @@
    "fun_fact": "Cafodd Vindemiatrix ei henw oherwydd bod ei godiad heliaidd (ei ymddangosiad cyntaf wrth y wawr) unwaith yn cyd-ddigwydd â thymor y cynhaeaf grawnwin yn y Môr Canoldir — roedd yn seren y gwinydd!",
    "distance": "109 blwyddyn-olau",
    "size": "11 radiws solar",
+   "mass": "2.6 masau solar",
    "spectral_class": "G8III",
    "image_credit": "ESO/Digitized Sky Survey 2"
   }
