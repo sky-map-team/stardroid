@@ -1,10 +1,5 @@
 version = 1
 
-[human_translated.object-types."types.json".fr]
-keys = [
-    "constellation",
-]
-
 [same_as_parent.object-names.names.fr]
 keys = [
     "constellation/cancer",
@@ -13,6 +8,8 @@ keys = [
     "dso/centaurus_a",
     "dso/hyades",
     "dso/m40",
+    "dso/m65",
+    "dso/m66",
     "dso/n47_tucanae",
     "dso/sgr_a_star",
     "dso/t_crb",
@@ -470,6 +467,8 @@ keys = [
     "dso/m6",
     "dso/m63",
     "dso/m64",
+    "dso/m65",
+    "dso/m66",
     "dso/m7",
     "dso/m74",
     "dso/m76",
@@ -861,6 +860,8 @@ keys = [
 
 [same_as_parent.object-names.names.zh-Hans]
 keys = [
+    "dso/m65",
+    "dso/m66",
     "star/j003712+535400",
     "star/j004912+574912",
     "star/j005624+591048",
@@ -951,6 +952,8 @@ keys = [
 
 [same_as_parent.object-names.names.zh-Hant]
 keys = [
+    "dso/m65",
+    "dso/m66",
     "dso/willman_1",
     "star/j003712+535400",
     "star/j004912+574912",
@@ -1039,6 +1042,8 @@ keys = [
     "constellation/orion",
     "dso/centaurus_a",
     "dso/m40",
+    "dso/m65",
+    "dso/m66",
     "dso/n47_tucanae",
     "dso/sgr_a_star",
     "dso/t_crb",
@@ -1373,6 +1378,8 @@ keys = [
     "constellation/virgo",
     "dso/centaurus_a",
     "dso/m40",
+    "dso/m65",
+    "dso/m66",
     "dso/n47_tucanae",
     "dso/sgr_a_star",
     "dso/t_crb",
@@ -1723,6 +1730,8 @@ keys = [
     "constellation/vulpecula",
     "dso/centaurus_a",
     "dso/m40",
+    "dso/m65",
+    "dso/m66",
     "dso/n47_tucanae",
     "dso/sgr_a_star",
     "dso/t_crb",
@@ -2066,6 +2075,8 @@ keys = [
     "constellation/hydra",
     "dso/centaurus_a",
     "dso/m40",
+    "dso/m65",
+    "dso/m66",
     "dso/n47_tucanae",
     "dso/sgr_a_star",
     "dso/t_crb",
@@ -2479,6 +2490,8 @@ keys = [
     "dso/hyades",
     "dso/m40",
     "dso/m45",
+    "dso/m65",
+    "dso/m66",
     "dso/n47_tucanae",
     "dso/sgr_a_star",
     "dso/t_crb",
@@ -2859,6 +2872,8 @@ keys = [
     "constellation/perseus",
     "dso/centaurus_a",
     "dso/m40",
+    "dso/m65",
+    "dso/m66",
     "dso/n47_tucanae",
     "dso/sgr_a_star",
     "dso/t_crb",
@@ -3226,6 +3241,8 @@ keys = [
     "dso/centaurus_a",
     "dso/hdf",
     "dso/m40",
+    "dso/m65",
+    "dso/m66",
     "dso/n47_tucanae",
     "dso/sgr_a_star",
     "dso/t_crb",
@@ -3946,6 +3963,8 @@ keys = [
 [same_as_parent.object-names.names.el]
 keys = [
     "dso/m40",
+    "dso/m65",
+    "dso/m66",
     "dso/sgr_a_star",
     "dso/willman_1",
     "star/j090936+220300",
@@ -4161,6 +4180,8 @@ keys = [
     "dso/hyades",
     "dso/m40",
     "dso/m45",
+    "dso/m65",
+    "dso/m66",
     "dso/n47_tucanae",
     "dso/sgr_a_star",
     "dso/t_crb",
@@ -4547,6 +4568,8 @@ keys = [
     "dso/centaurus_a",
     "dso/hdf",
     "dso/m40",
+    "dso/m65",
+    "dso/m66",
     "dso/n47_tucanae",
     "dso/sgr_a_star",
     "dso/t_crb",
@@ -4878,6 +4901,8 @@ keys = [
 
 [same_as_parent.object-names.names.ja]
 keys = [
+    "dso/m65",
+    "dso/m66",
     "star/j163600-281312",
     "star/j165024-341724",
     "star/j165136-380300",
@@ -4896,6 +4921,8 @@ keys = [
 
 [same_as_parent.object-names.names.ko]
 keys = [
+    "dso/m65",
+    "dso/m66",
     "star/j175324+565212",
     "star/j180600-302512",
     "star/j181348-210336",
@@ -5031,6 +5058,8 @@ keys = [
     "dso/hyades",
     "dso/m40",
     "dso/m45",
+    "dso/m65",
+    "dso/m66",
     "dso/n47_tucanae",
     "dso/sgr_a_star",
     "dso/t_crb",
@@ -5405,6 +5434,8 @@ keys = [
     "dso/centaurus_a",
     "dso/hdf",
     "dso/m40",
+    "dso/m65",
+    "dso/m66",
     "dso/n47_tucanae",
     "dso/sgr_a_star",
     "dso/t_crb",
@@ -5788,6 +5819,8 @@ keys = [
     "dso/centaurus_a",
     "dso/hdf",
     "dso/m40",
+    "dso/m65",
+    "dso/m66",
     "dso/n47_tucanae",
     "dso/sgr_a_star",
     "dso/t_crb",
@@ -6145,6 +6178,8 @@ keys = [
     "constellation/andromeda",
     "constellation/orion",
     "dso/m40",
+    "dso/m65",
+    "dso/m66",
     "dso/n47_tucanae",
     "dso/sgr_a_star",
     "dso/t_crb",
@@ -6485,6 +6520,8 @@ keys = [
     "dso/centaurus_a",
     "dso/hdf",
     "dso/m40",
+    "dso/m65",
+    "dso/m66",
     "dso/n47_tucanae",
     "dso/sgr_a_star",
     "dso/t_crb",
@@ -6844,6 +6881,8 @@ keys = [
 
 [same_as_parent.object-names.names.th]
 keys = [
+    "dso/m65",
+    "dso/m66",
     "star/j050748-050524",
     "star/j052512+062100",
     "star/j052812-204536",
@@ -6892,6 +6931,8 @@ keys = [
     "dso/centaurus_a",
     "dso/hyades",
     "dso/m40",
+    "dso/m65",
+    "dso/m66",
     "dso/n47_tucanae",
     "dso/sgr_a_star",
     "dso/t_crb",
@@ -7248,7 +7289,15 @@ keys = [
 
 [same_as_parent.object-names.names.uk]
 keys = [
+    "dso/m65",
+    "dso/m66",
     "dso/willman_1",
+]
+
+[same_as_parent.object-names.names.hi]
+keys = [
+    "dso/m65",
+    "dso/m66",
 ]
 
 [same_as_parent.object-types."types.json".en-GB]
@@ -8890,6 +8939,11 @@ keys = [
 keys = [
     "moon/deimos:size",
     "moon/phobos:size",
+]
+
+[human_translated.object-types."types.json".fr]
+keys = [
+    "constellation",
 ]
 
 [source_snapshot.app."strings.xml".fr]
@@ -27496,6 +27550,8 @@ permissions_notice = "\n<h2>Permissions</h2>\n<p><b>Sky Map has no required perm
 "dso/m43" = "De Mairan's Nebula"
 "dso/m63" = "Sunflower Galaxy"
 "dso/m64" = "Black Eye Galaxy"
+"dso/m65" = "M65"
+"dso/m66" = "M66"
 "dso/m74" = "Phantom Galaxy"
 "dso/m76" = "Little Dumbbell Nebula"
 "dso/m8" = "Lagoon Nebula"
@@ -27922,6 +27978,8 @@ permissions_notice = "\n<h2>Permissions</h2>\n<p><b>Sky Map has no required perm
 "dso/m6" = "Butterfly Cluster"
 "dso/m63" = "Sunflower Galaxy"
 "dso/m64" = "Black Eye Galaxy"
+"dso/m65" = "M65"
+"dso/m66" = "M66"
 "dso/m7" = "Scorpion's Tail"
 "dso/m74" = "Phantom Galaxy"
 "dso/m76" = "Little Dumbbell Nebula"
@@ -28320,6 +28378,8 @@ permissions_notice = "\n<h2>Permissions</h2>\n<p><b>Sky Map has no required perm
 "dso/m43" = "De Mairan's Nebula"
 "dso/m63" = "Sunflower Galaxy"
 "dso/m64" = "Black Eye Galaxy"
+"dso/m65" = "M65"
+"dso/m66" = "M66"
 "dso/m74" = "Phantom Galaxy"
 "dso/m76" = "Little Dumbbell Nebula"
 "dso/m8" = "Lagoon Nebula"
@@ -28607,6 +28667,8 @@ permissions_notice = "\n<h2>Permissions</h2>\n<p><b>Sky Map has no required perm
 "dso/m43" = "De Mairan's Nebula"
 "dso/m63" = "Sunflower Galaxy"
 "dso/m64" = "Black Eye Galaxy"
+"dso/m65" = "M65"
+"dso/m66" = "M66"
 "dso/m74" = "Phantom Galaxy"
 "dso/m76" = "Little Dumbbell Nebula"
 "dso/m8" = "Lagoon Nebula"
@@ -28920,6 +28982,8 @@ permissions_notice = "\n<h2>Permissions</h2>\n<p><b>Sky Map has no required perm
 "dso/m43" = "De Mairan's Nebula"
 "dso/m63" = "Sunflower Galaxy"
 "dso/m64" = "Black Eye Galaxy"
+"dso/m65" = "M65"
+"dso/m66" = "M66"
 "dso/m74" = "Phantom Galaxy"
 "dso/m76" = "Little Dumbbell Nebula"
 "dso/m8" = "Lagoon Nebula"
@@ -29371,6 +29435,8 @@ permissions_notice = "\n<h2>Permissions</h2>\n<p><b>Sky Map has no required perm
 "dso/m45" = "Pleiades"
 "dso/m63" = "Sunflower Galaxy"
 "dso/m64" = "Black Eye Galaxy"
+"dso/m65" = "M65"
+"dso/m66" = "M66"
 "dso/m74" = "Phantom Galaxy"
 "dso/m76" = "Little Dumbbell Nebula"
 "dso/m8" = "Lagoon Nebula"
@@ -29836,6 +29902,8 @@ permissions_notice = "\n<h2>Permissions</h2>\n<p><b>Sky Map has no required perm
 "dso/m43" = "De Mairan's Nebula"
 "dso/m63" = "Sunflower Galaxy"
 "dso/m64" = "Black Eye Galaxy"
+"dso/m65" = "M65"
+"dso/m66" = "M66"
 "dso/m74" = "Phantom Galaxy"
 "dso/m76" = "Little Dumbbell Nebula"
 "dso/m8" = "Lagoon Nebula"
@@ -30261,6 +30329,8 @@ permissions_notice = "\n<h2>Permissions</h2>\n<p><b>Sky Map has no required perm
 "dso/m43" = "De Mairan's Nebula"
 "dso/m63" = "Sunflower Galaxy"
 "dso/m64" = "Black Eye Galaxy"
+"dso/m65" = "M65"
+"dso/m66" = "M66"
 "dso/m74" = "Phantom Galaxy"
 "dso/m76" = "Little Dumbbell Nebula"
 "dso/m8" = "Lagoon Nebula"
@@ -30628,6 +30698,8 @@ permissions_notice = "\n<h2>Permissions</h2>\n<p><b>Sky Map has no required perm
 "dso/m43" = "De Mairan's Nebula"
 "dso/m63" = "Sunflower Galaxy"
 "dso/m64" = "Black Eye Galaxy"
+"dso/m65" = "M65"
+"dso/m66" = "M66"
 "dso/m74" = "Phantom Galaxy"
 "dso/m76" = "Little Dumbbell Nebula"
 "dso/m8" = "Lagoon Nebula"
@@ -30928,6 +31000,8 @@ permissions_notice = "\n<h2>Permissions</h2>\n<p><b>Sky Map has no required perm
 "dso/m43" = "De Mairan's Nebula"
 "dso/m63" = "Sunflower Galaxy"
 "dso/m64" = "Black Eye Galaxy"
+"dso/m65" = "M65"
+"dso/m66" = "M66"
 "dso/m74" = "Phantom Galaxy"
 "dso/m76" = "Little Dumbbell Nebula"
 "dso/m8" = "Lagoon Nebula"
@@ -31272,6 +31346,8 @@ permissions_notice = "\n<h2>Permissions</h2>\n<p><b>Sky Map has no required perm
 "dso/m43" = "De Mairan's Nebula"
 "dso/m63" = "Sunflower Galaxy"
 "dso/m64" = "Black Eye Galaxy"
+"dso/m65" = "M65"
+"dso/m66" = "M66"
 "dso/m74" = "Phantom Galaxy"
 "dso/m76" = "Little Dumbbell Nebula"
 "dso/m8" = "Lagoon Nebula"
@@ -31561,6 +31637,8 @@ permissions_notice = "\n<h2>Permissions</h2>\n<p><b>Sky Map has no required perm
 "dso/m43" = "De Mairan's Nebula"
 "dso/m63" = "Sunflower Galaxy"
 "dso/m64" = "Black Eye Galaxy"
+"dso/m65" = "M65"
+"dso/m66" = "M66"
 "dso/m74" = "Phantom Galaxy"
 "dso/m76" = "Little Dumbbell Nebula"
 "dso/m8" = "Lagoon Nebula"
@@ -31979,6 +32057,8 @@ permissions_notice = "\n<h2>Permissions</h2>\n<p><b>Sky Map has no required perm
 "dso/m6" = "Butterfly Cluster"
 "dso/m63" = "Sunflower Galaxy"
 "dso/m64" = "Black Eye Galaxy"
+"dso/m65" = "M65"
+"dso/m66" = "M66"
 "dso/m7" = "Scorpion's Tail"
 "dso/m74" = "Phantom Galaxy"
 "dso/m76" = "Little Dumbbell Nebula"
@@ -32381,6 +32461,8 @@ permissions_notice = "\n<h2>Permissions</h2>\n<p><b>Sky Map has no required perm
 "dso/m43" = "De Mairan's Nebula"
 "dso/m63" = "Sunflower Galaxy"
 "dso/m64" = "Black Eye Galaxy"
+"dso/m65" = "M65"
+"dso/m66" = "M66"
 "dso/m74" = "Phantom Galaxy"
 "dso/m76" = "Little Dumbbell Nebula"
 "dso/m8" = "Lagoon Nebula"
@@ -32732,6 +32814,8 @@ permissions_notice = "\n<h2>Permissions</h2>\n<p><b>Sky Map has no required perm
 "dso/m43" = "De Mairan's Nebula"
 "dso/m63" = "Sunflower Galaxy"
 "dso/m64" = "Black Eye Galaxy"
+"dso/m65" = "M65"
+"dso/m66" = "M66"
 "dso/m74" = "Phantom Galaxy"
 "dso/m76" = "Little Dumbbell Nebula"
 "dso/m8" = "Lagoon Nebula"
@@ -33082,6 +33166,8 @@ permissions_notice = "\n<h2>Permissions</h2>\n<p><b>Sky Map has no required perm
 "dso/m43" = "De Mairan's Nebula"
 "dso/m63" = "Sunflower Galaxy"
 "dso/m64" = "Black Eye Galaxy"
+"dso/m65" = "M65"
+"dso/m66" = "M66"
 "dso/m74" = "Phantom Galaxy"
 "dso/m76" = "Little Dumbbell Nebula"
 "dso/m8" = "Lagoon Nebula"
@@ -33500,6 +33586,8 @@ permissions_notice = "\n<h2>Permissions</h2>\n<p><b>Sky Map has no required perm
 "dso/m45" = "Pleiades"
 "dso/m63" = "Sunflower Galaxy"
 "dso/m64" = "Black Eye Galaxy"
+"dso/m65" = "M65"
+"dso/m66" = "M66"
 "dso/m74" = "Phantom Galaxy"
 "dso/m76" = "Little Dumbbell Nebula"
 "dso/m8" = "Lagoon Nebula"
@@ -33889,6 +33977,8 @@ permissions_notice = "\n<h2>Permissions</h2>\n<p><b>Sky Map has no required perm
 "dso/m43" = "De Mairan's Nebula"
 "dso/m63" = "Sunflower Galaxy"
 "dso/m64" = "Black Eye Galaxy"
+"dso/m65" = "M65"
+"dso/m66" = "M66"
 "dso/m74" = "Phantom Galaxy"
 "dso/m76" = "Little Dumbbell Nebula"
 "dso/m8" = "Lagoon Nebula"
@@ -34322,6 +34412,8 @@ permissions_notice = "\n<h2>Permissions</h2>\n<p><b>Sky Map has no required perm
 "dso/m43" = "De Mairan's Nebula"
 "dso/m63" = "Sunflower Galaxy"
 "dso/m64" = "Black Eye Galaxy"
+"dso/m65" = "M65"
+"dso/m66" = "M66"
 "dso/m74" = "Phantom Galaxy"
 "dso/m76" = "Little Dumbbell Nebula"
 "dso/m8" = "Lagoon Nebula"
@@ -34696,6 +34788,8 @@ permissions_notice = "\n<h2>Permissions</h2>\n<p><b>Sky Map has no required perm
 "dso/m43" = "De Mairan's Nebula"
 "dso/m63" = "Sunflower Galaxy"
 "dso/m64" = "Black Eye Galaxy"
+"dso/m65" = "M65"
+"dso/m66" = "M66"
 "dso/m74" = "Phantom Galaxy"
 "dso/m76" = "Little Dumbbell Nebula"
 "dso/m8" = "Lagoon Nebula"
@@ -35062,6 +35156,8 @@ permissions_notice = "\n<h2>Permissions</h2>\n<p><b>Sky Map has no required perm
 "dso/m43" = "De Mairan's Nebula"
 "dso/m63" = "Sunflower Galaxy"
 "dso/m64" = "Black Eye Galaxy"
+"dso/m65" = "M65"
+"dso/m66" = "M66"
 "dso/m74" = "Phantom Galaxy"
 "dso/m76" = "Little Dumbbell Nebula"
 "dso/m8" = "Lagoon Nebula"
@@ -35443,6 +35539,8 @@ permissions_notice = "\n<h2>Permissions</h2>\n<p><b>Sky Map has no required perm
 "dso/m43" = "De Mairan's Nebula"
 "dso/m63" = "Sunflower Galaxy"
 "dso/m64" = "Black Eye Galaxy"
+"dso/m65" = "M65"
+"dso/m66" = "M66"
 "dso/m74" = "Phantom Galaxy"
 "dso/m76" = "Little Dumbbell Nebula"
 "dso/m8" = "Lagoon Nebula"
@@ -35821,6 +35919,8 @@ permissions_notice = "\n<h2>Permissions</h2>\n<p><b>Sky Map has no required perm
 "dso/m6" = "Butterfly Cluster"
 "dso/m63" = "Sunflower Galaxy"
 "dso/m64" = "Black Eye Galaxy"
+"dso/m65" = "M65"
+"dso/m66" = "M66"
 "dso/m74" = "Phantom Galaxy"
 "dso/m76" = "Little Dumbbell Nebula"
 "dso/m8" = "Lagoon Nebula"
@@ -36261,6 +36361,8 @@ permissions_notice = "\n<h2>Permissions</h2>\n<p><b>Sky Map has no required perm
 "dso/m43" = "De Mairan's Nebula"
 "dso/m63" = "Sunflower Galaxy"
 "dso/m64" = "Black Eye Galaxy"
+"dso/m65" = "M65"
+"dso/m66" = "M66"
 "dso/m74" = "Phantom Galaxy"
 "dso/m76" = "Little Dumbbell Nebula"
 "dso/m8" = "Lagoon Nebula"
@@ -36687,6 +36789,8 @@ permissions_notice = "\n<h2>Permissions</h2>\n<p><b>Sky Map has no required perm
 "dso/m43" = "De Mairan's Nebula"
 "dso/m63" = "Sunflower Galaxy"
 "dso/m64" = "Black Eye Galaxy"
+"dso/m65" = "M65"
+"dso/m66" = "M66"
 "dso/m74" = "Phantom Galaxy"
 "dso/m76" = "Little Dumbbell Nebula"
 "dso/m8" = "Lagoon Nebula"
@@ -37037,6 +37141,8 @@ permissions_notice = "\n<h2>Permissions</h2>\n<p><b>Sky Map has no required perm
 "dso/m43" = "De Mairan's Nebula"
 "dso/m63" = "Sunflower Galaxy"
 "dso/m64" = "Black Eye Galaxy"
+"dso/m65" = "M65"
+"dso/m66" = "M66"
 "dso/m74" = "Phantom Galaxy"
 "dso/m76" = "Little Dumbbell Nebula"
 "dso/m8" = "Lagoon Nebula"
@@ -37407,6 +37513,8 @@ permissions_notice = "\n<h2>Permissions</h2>\n<p><b>Sky Map has no required perm
 "dso/m43" = "De Mairan's Nebula"
 "dso/m63" = "Sunflower Galaxy"
 "dso/m64" = "Black Eye Galaxy"
+"dso/m65" = "M65"
+"dso/m66" = "M66"
 "dso/m74" = "Phantom Galaxy"
 "dso/m76" = "Little Dumbbell Nebula"
 "dso/m8" = "Lagoon Nebula"

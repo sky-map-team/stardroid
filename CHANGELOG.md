@@ -5,6 +5,26 @@ All notable changes to Sky Map are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [2.0.0:Apollo] (v2) - 2026-09-02
+
+<img src="stardroid-v2/assets/release-icons/2.0.0_apollo_icon.png" width="80" alt="Apollo" />
+
+First stable release of the Sky Map v2 rewrite.
+
+### Added
+- Human-reviewed and improved French and Italian UI translations.
+- Matariki added as a searchable alias for the Pleiades (M45).
+
+### Fixed
+- M65/M66 no longer lose their primary catalog label to the shared Leo Triplet alias.
+- The horizon leveller keeps running until a fling actually stops, instead of stopping early.
+- The warm welcome and terms screens now lay out correctly in landscape.
+
+### Changed
+- Catalog text now follows the app's selected language, not just resource strings.
+
+---
+
 ## [2.0.0-beta07:Louise] (v2) - 2026-08-31
 
 <img src="stardroid-v2/assets/release-icons/2.0.0-beta07_louise_icon.png" width="80" alt="Louise" />

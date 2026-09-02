@@ -421,7 +421,7 @@
     <string name="diagnostics_satellite_force_fetch" translation_description="Label on a debug-only button in the diagnostics screen that downloads satellite orbital data immediately">Recupera dati satellitari ora (debug)</string>
     <string name="diagnostics_connected">Connesso</string>
     <string name="diagnostics_disconnected">Disconnesso</string>
-    <string name="diagnostics_wifi" tm_human="true">" (wifi)"</string>
+    <!-- tm:omitted name="diagnostics_wifi" reason="identical_to_source" -->
     <string name="diagnostics_cell" tm_human="true">" (rete mobile)"</string>
 
     <!-- Compass calibration screen (slice 15) -->
