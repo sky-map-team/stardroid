@@ -12,8 +12,10 @@ package com.google.android.stardroid.ui.onboarding
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.WindowInsetsSides
 import androidx.compose.foundation.layout.consumeWindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.only
 import androidx.compose.foundation.layout.safeDrawing
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -68,8 +70,8 @@ private const val TOUR_STEP_MS = 1500L
  * string resources, and lays out correctly on every screen. Each control reports its bounds
  * through `tourTargetModifier`; stops whose control isn't on screen — an `ifroom` rail toggle
  * dropped on a short screen, or anything clipped by a small demo box — are skipped, so the
- * tour always shows the chrome this window actually has. The chrome is display-only: its semantics are
- * cleared (TalkBack users get the slide's text) and taps are swallowed.
+ * tour always shows the chrome this window actually has. The chrome is display-only: its
+ * semantics are cleared (TalkBack users get the slide's text) and taps are swallowed.
  */
 @Composable
 internal fun ChromeTourDemo(
@@ -94,9 +96,19 @@ internal fun ChromeTourDemo(
     // it would pay the navigation-bar inset the welcome screen has already applied and a
     // landscape display cutout's inset on an edge it does not touch, both out of the height
     // the chrome is shortest of.
+    //
+    // The top edge is deliberately left unconsumed. This box's top really is the window's top
+    // (the welcome screen applies only navigationBarsPadding), so anything MapChrome anchors
+    // there would land under the status bar or a cutout. Nothing does today — the tour passes
+    // no hudState, and the HUD is the only top-anchored zone — but consuming the whole set
+    // would make that a silent dependency on a default argument.
     Box(
         modifier
-            .consumeWindowInsets(WindowInsets.safeDrawing)
+            .consumeWindowInsets(
+                WindowInsets.safeDrawing.only(
+                    WindowInsetsSides.Horizontal + WindowInsetsSides.Bottom,
+                ),
+            )
             .onGloballyPositioned { rootCoordinates = it },
     ) {
         // The chrome is a live rendering, not a working control surface: cleared semantics

@@ -27,6 +27,7 @@ import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.rememberPagerState
@@ -89,6 +90,14 @@ private const val SENSOR_CHECK_STEP_MS = 800L
  * illustration — which is the half that is starved in landscape.
  */
 private val PANEL_MAX_WIDTH: Dp = 340.dp
+
+/**
+ * The most of a landscape slide the text panel may take. A `Row` measures its unweighted
+ * children first, so [PANEL_MAX_WIDTH] on its own would let the panel swallow a narrow
+ * landscape window — multi-window, freeform, a small cover screen — and leave the
+ * illustration a sliver or nothing at all. Whichever of the two limits is smaller wins.
+ */
+private const val PANEL_MAX_FRACTION = 0.45f
 
 /**
  * The sensor check's content width in landscape. Its rows push the status icon to the far
@@ -219,9 +228,10 @@ private fun BottomBar(
  * overflowed what was left, clipping the rail and the last of the bottom-right actions off
  * the slide entirely.
  *
- * The panel takes a fixed [PANEL_MAX_WIDTH] rather than a fraction of the slide, so on wide
- * landscape windows and tablets the surplus goes to the illustration instead of stretching
- * the text to an unreadable measure.
+ * The panel is capped both by measure ([PANEL_MAX_WIDTH]) and by share
+ * ([PANEL_MAX_FRACTION]): the measure keeps the text readable on a wide window or tablet by
+ * handing the surplus to the illustration, and the share keeps the illustration alive on a
+ * narrow one.
  */
 @Composable
 private fun SlideLayout(
@@ -232,6 +242,7 @@ private fun SlideLayout(
     BoxWithConstraints(Modifier.fillMaxSize()) {
         backdrop()
         if (isLandscape()) {
+            val panelWidth = minOf(PANEL_MAX_WIDTH, maxWidth * PANEL_MAX_FRACTION)
             Row(Modifier.fillMaxSize()) {
                 illustration(
                     Modifier
@@ -240,7 +251,7 @@ private fun SlideLayout(
                 )
                 panel(
                     Modifier
-                        .widthIn(max = PANEL_MAX_WIDTH)
+                        .width(panelWidth)
                         .fillMaxHeight(),
                 )
             }
