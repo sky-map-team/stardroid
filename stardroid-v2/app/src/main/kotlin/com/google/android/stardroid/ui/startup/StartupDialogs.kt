@@ -151,12 +151,12 @@ fun WhatsNewDialog(
         onDismissRequest = onDismiss,
         title = { Text(stringResource(R.string.whats_new_dialog_title)) },
         text = {
-            val heading =
-                stringResource(R.string.whats_new_version_heading, appVersionName())
+            // The "New in version X" heading is dropped for the 2.0 launch copy, which opens
+            // with its own splash line instead — restore it for later point releases once the
+            // launch announcement has aged out.
             val html =
                 stringResource(R.string.whats_new_support) +
                     stringResource(R.string.beta_user_help_text) +
-                    "<h1>$heading</h1>" +
                     stringResource(R.string.whats_new_content)
             StyledHtml(
                 html,
