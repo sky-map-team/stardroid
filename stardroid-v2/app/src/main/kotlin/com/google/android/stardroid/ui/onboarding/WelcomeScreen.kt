@@ -9,6 +9,7 @@
 
 package com.google.android.stardroid.ui.onboarding
 
+import android.content.res.Configuration
 import android.graphics.BitmapFactory
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -18,6 +19,7 @@ import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -25,6 +27,7 @@ import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.foundation.rememberScrollState
@@ -53,11 +56,13 @@ import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.graphics.ImageBitmap
 import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.fromHtml
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.google.android.stardroid.R
 import com.google.android.stardroid.catalog.CelestialObjectId
@@ -76,6 +81,21 @@ private const val SLIDE_COUNT = 3
 
 /** Delay between revealing each sensor's result in the slide-3 check (v1's 0.8 s cadence). */
 private const val SENSOR_CHECK_STEP_MS = 800L
+
+/**
+ * The text panel's width when it sits beside the illustration in landscape. Chosen for the
+ * measure, not the space available: past roughly this width the slide descriptions stretch
+ * into a line too long to read comfortably, and every dp beyond it is worth more to the
+ * illustration — which is the half that is starved in landscape.
+ */
+private val PANEL_MAX_WIDTH: Dp = 340.dp
+
+/**
+ * The sensor check's content width in landscape. Its rows push the status icon to the far
+ * end with a weighted spacer, so across a full landscape window the label and its tick end
+ * up a screen apart.
+ */
+private val SENSOR_CONTENT_MAX_WIDTH: Dp = 480.dp
 
 /** v1's bottom text-panel scrim (`#DD0B0F19` in `fragment_welcome_slide_1.xml`). */
 private val PanelScrim = Color(0xDD0B0F19)
@@ -187,63 +207,116 @@ private fun BottomBar(
     }
 }
 
+/**
+ * A slide's two halves — the illustration and its text panel — stacked in portrait and set
+ * side by side in landscape.
+ *
+ * Landscape is the orientation with width to spare and none of the height, and the two halves
+ * want opposite things: the panel is height-cheap (it scrolls), while the illustration is
+ * width-cheap and height-hungry — [ChromeTourDemo] renders the real `MapChrome`, whose layer
+ * rail and action cluster are edge-anchored columns in landscape. Stacked, they were sharing
+ * a window height that neither could live in: the panel took its half and the chrome
+ * overflowed what was left, clipping the rail and the last of the bottom-right actions off
+ * the slide entirely.
+ *
+ * The panel takes a fixed [PANEL_MAX_WIDTH] rather than a fraction of the slide, so on wide
+ * landscape windows and tablets the surplus goes to the illustration instead of stretching
+ * the text to an unreadable measure.
+ */
+@Composable
+private fun SlideLayout(
+    backdrop: @Composable () -> Unit,
+    illustration: @Composable (Modifier) -> Unit,
+    panel: @Composable (Modifier) -> Unit,
+) {
+    BoxWithConstraints(Modifier.fillMaxSize()) {
+        backdrop()
+        if (isLandscape()) {
+            Row(Modifier.fillMaxSize()) {
+                illustration(
+                    Modifier
+                        .weight(1f)
+                        .fillMaxHeight(),
+                )
+                panel(
+                    Modifier
+                        .widthIn(max = PANEL_MAX_WIDTH)
+                        .fillMaxHeight(),
+                )
+            }
+        } else {
+            // Portrait keeps v1's stack, panel capped at half the slide so a large font
+            // scale scrolls the text instead of squeezing the illustration to nothing.
+            val panelMaxHeight = maxHeight / 2
+            Column(Modifier.fillMaxSize()) {
+                illustration(
+                    Modifier
+                        .weight(1f)
+                        .fillMaxWidth(),
+                )
+                panel(Modifier.heightIn(max = panelMaxHeight))
+            }
+        }
+    }
+}
+
+@Composable
+private fun isLandscape(): Boolean =
+    LocalConfiguration.current.orientation == Configuration.ORIENTATION_LANDSCAPE
+
 /** Slide 1: the guided tour of the real map chrome over a real v2 sky capture. */
 @Composable
 private fun ChromeTourSlide(
     active: Boolean,
     nightMode: Boolean,
 ) {
-    BoxWithConstraints(Modifier.fillMaxSize()) {
-        val panelMaxHeight = maxHeight / 2
-        Image(
-            painterResource(R.drawable.welcome_sky_bg),
-            contentDescription = null,
-            contentScale = ContentScale.Crop,
-            colorFilter = nightPhotoFilter(nightMode),
-            modifier = Modifier.fillMaxSize(),
-        )
-        Column(Modifier.fillMaxSize()) {
-            ChromeTourDemo(
-                active = active,
-                nightMode = nightMode,
-                modifier =
-                    Modifier
-                        .weight(1f)
-                        .fillMaxWidth(),
+    SlideLayout(
+        backdrop = {
+            Image(
+                painterResource(R.drawable.welcome_sky_bg),
+                contentDescription = null,
+                contentScale = ContentScale.Crop,
+                colorFilter = nightPhotoFilter(nightMode),
+                modifier = Modifier.fillMaxSize(),
             )
+        },
+        illustration = { modifier ->
+            ChromeTourDemo(active = active, nightMode = nightMode, modifier = modifier)
+        },
+        panel = { modifier ->
             TextPanel(
                 R.string.warm_welcome_slide1_title,
                 R.string.warm_welcome_slide1_desc,
-                modifier = Modifier.heightIn(max = panelMaxHeight),
+                modifier = modifier,
             )
-        }
-    }
+        },
+    )
 }
 
 /** Slide 2: navigation modes plus a genuine info card of the Crab Nebula, over its photo. */
 @Composable
 private fun InfoCardSlide(nightMode: Boolean) {
-    BoxWithConstraints(Modifier.fillMaxSize()) {
-        val panelMaxHeight = maxHeight / 2
-        AssetBackdrop("celestial_images/deep_sky_objects/hubble_m1.jpg", nightMode)
-        Column(Modifier.fillMaxSize()) {
+    SlideLayout(
+        backdrop = {
+            AssetBackdrop("celestial_images/deep_sky_objects/hubble_m1.jpg", nightMode)
+        },
+        illustration = { modifier ->
             Box(
-                Modifier
-                    .weight(1f)
-                    .fillMaxWidth()
-                    .padding(horizontal = 32.dp, vertical = 16.dp),
+                modifier.padding(horizontal = 32.dp, vertical = 16.dp),
                 contentAlignment = Alignment.Center,
             ) {
                 SampleInfoCard(nightMode)
             }
+        },
+        panel = { modifier ->
             TextPanel(
                 R.string.warm_welcome_slide2_title,
                 R.string.warm_welcome_slide2_desc,
                 R.string.warm_welcome_slide2_info_desc,
-                modifier = Modifier.heightIn(max = panelMaxHeight),
+                modifier = modifier,
             )
-        }
-    }
+        },
+    )
 }
 
 /**
@@ -334,7 +407,18 @@ private fun SensorSlide(
         AssetBackdrop("celestial_images/planets/cassini_iapetus.webp", nightMode)
         Column(
             Modifier
-                .fillMaxSize()
+                .fillMaxHeight()
+                // This slide has no separate text panel to set beside anything, so landscape
+                // only needs its content held to a readable block rather than stretched the
+                // full width of the window (see SENSOR_CONTENT_MAX_WIDTH).
+                .then(
+                    if (isLandscape()) {
+                        Modifier.widthIn(max = SENSOR_CONTENT_MAX_WIDTH)
+                    } else {
+                        Modifier.fillMaxWidth()
+                    },
+                )
+                .align(Alignment.Center)
                 .verticalScroll(rememberScrollState())
                 .padding(24.dp),
             verticalArrangement = Arrangement.Center,
@@ -413,9 +497,9 @@ private fun nightPhotoFilter(nightMode: Boolean): ColorFilter? =
     if (nightMode) ColorFilter.tint(NightPhotoTint, BlendMode.Modulate) else null
 
 /**
- * v1's bottom text panel: title and body over the dark scrim strip. Callers cap its height at
- * half the slide so at large font scales it scrolls instead of squeezing the illustration
- * above it to nothing.
+ * v1's text panel: title and body over the dark scrim. Sits under the illustration in
+ * portrait and beside it in landscape; [SlideLayout] owns that placement and the size cap
+ * that goes with it, and the panel scrolls when the text outgrows what it is given.
  */
 @Composable
 private fun TextPanel(

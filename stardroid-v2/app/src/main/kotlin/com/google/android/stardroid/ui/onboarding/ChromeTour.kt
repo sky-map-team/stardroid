@@ -11,7 +11,10 @@ package com.google.android.stardroid.ui.onboarding
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.consumeWindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.safeDrawing
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -38,6 +41,7 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.drawText
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.rememberTextMeasurer
+import androidx.compose.ui.unit.IntSize
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.google.android.stardroid.ui.map.CHROME_TOUR_STOPS
@@ -62,8 +66,9 @@ private const val TOUR_STEP_MS = 1500L
  * with a v1-style neon ring + arrow + label spotlight cycling through every control. Because
  * the chrome is the real thing, the tour can't drift out of date, localizes through the same
  * string resources, and lays out correctly on every screen. Each control reports its bounds
- * through `tourTargetModifier`; stops whose control isn't on screen (an `ifroom` rail toggle
- * dropped on a short screen) are skipped. The chrome is display-only: its semantics are
+ * through `tourTargetModifier`; stops whose control isn't on screen — an `ifroom` rail toggle
+ * dropped on a short screen, or anything clipped by a small demo box — are skipped, so the
+ * tour always shows the chrome this window actually has. The chrome is display-only: its semantics are
  * cleared (TalkBack users get the slide's text) and taps are swallowed.
  */
 @Composable
@@ -84,7 +89,16 @@ internal fun ChromeTourDemo(
         }
     }
 
-    Box(modifier.onGloballyPositioned { rootCoordinates = it }) {
+    // MapChrome insets itself against the window's safe-drawing area, which is right for a
+    // full-screen map and wrong for a demo panel that is nowhere near those edges: unconsumed,
+    // it would pay the navigation-bar inset the welcome screen has already applied and a
+    // landscape display cutout's inset on an edge it does not touch, both out of the height
+    // the chrome is shortest of.
+    Box(
+        modifier
+            .consumeWindowInsets(WindowInsets.safeDrawing)
+            .onGloballyPositioned { rootCoordinates = it },
+    ) {
         // The chrome is a live rendering, not a working control surface: cleared semantics
         // keep TalkBack from announcing a dozen dead buttons, and the overlay swallows taps
         // so a press can't ripple a control that does nothing (pager swipes still work —
@@ -120,25 +134,46 @@ internal fun ChromeTourDemo(
                     .pointerInput(Unit) {},
             )
         }
+        // Attachment alone is not enough to earn a stop: a control that overflows a short
+        // demo box is still composed and positioned, just clipped, so filtering on isAttached
+        // would spend TOUR_STEP_MS spotlighting a ring drawn outside the visible box. Only
+        // controls whose bounds land inside the box are on the tour.
         val root = rootCoordinates?.takeIf { it.isAttached }
-        val stops = CHROME_TOUR_STOPS.filter { targetCoordinates[it]?.isAttached == true }
-        val stop = stops.getOrNull(step % max(1, stops.size))
-        val bounds =
-            if (root != null && stop != null) {
-                targetCoordinates[stop]?.let { root.localBoundingBoxOf(it, clipBounds = false) }
+        val stops =
+            if (root == null) {
+                emptyList()
             } else {
-                null
+                CHROME_TOUR_STOPS.mapNotNull { target ->
+                    val coordinates =
+                        targetCoordinates[target]?.takeIf { it.isAttached }
+                            ?: return@mapNotNull null
+                    val bounds = root.localBoundingBoxOf(coordinates, clipBounds = false)
+                    if (bounds.isVisibleIn(root.size)) target to bounds else null
+                }
             }
-        if (stop != null && bounds != null) {
+        val stop = stops.getOrNull(step % max(1, stops.size))
+        if (stop != null) {
             TourSpotlight(
-                bounds = bounds,
-                label = stringResource(chromeTourLabel(stop)),
+                bounds = stop.second,
+                label = stringResource(chromeTourLabel(stop.first)),
                 colors = tourColors(nightMode),
                 modifier = Modifier.fillMaxSize(),
             )
         }
     }
 }
+
+/**
+ * Whether a control's bounds sit wholly inside a box of [size]. A half-clipped control is not
+ * worth a stop — the ring would run off the edge — so this asks for the whole thing, with a
+ * pixel of tolerance for controls laid out flush against the box's own padding.
+ */
+private fun Rect.isVisibleIn(size: IntSize): Boolean =
+    !isEmpty &&
+        left >= -1f &&
+        top >= -1f &&
+        right <= size.width + 1f &&
+        bottom <= size.height + 1f
 
 /**
  * The v1 neon highlight, generalized: a glowing ring around [bounds], an arrow pointing at it
