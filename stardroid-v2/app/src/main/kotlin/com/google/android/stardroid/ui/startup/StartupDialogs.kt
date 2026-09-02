@@ -11,12 +11,14 @@ package com.google.android.stardroid.ui.startup
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.AlertDialog
@@ -36,9 +38,17 @@ import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.google.android.stardroid.R
 import com.google.android.stardroid.ui.common.StyledHtml
+
+/**
+ * The terms' reading measure. A portrait phone is narrower than this, so the cap does nothing
+ * there; it bites in landscape and on tablets, where the full window width would otherwise run
+ * the paragraphs to well over a hundred characters a line.
+ */
+private val EULA_MAX_WIDTH: Dp = 560.dp
 
 /** The manifest version name, for the What's New and Help headings (v1 `getVersionName`). */
 @Composable
@@ -94,18 +104,31 @@ fun EulaScreen(
         // The access-permission notice rides on the terms screen so it is disclosed before any
         // permission is requested (Korean Network Act art. 22-2 items 1-3; see eula.xml). Help
         // renders the same key, so a user who has already accepted can still read it.
-        StyledHtml(
-            stringResource(R.string.eula_text) +
-                stringResource(R.string.permissions_notice) +
-                stringResource(R.string.eula_agree_line),
-            nightMode = nightMode,
-            modifier =
-                Modifier
-                    .fillMaxSize()
-                    .padding(padding)
-                    .verticalScroll(rememberScrollState())
-                    .padding(horizontal = 16.dp, vertical = 8.dp),
-        )
+        // The scroll lives on the full-width box, not on the capped column: a narrower
+        // scrollable would leave the surplus width beside it inert, and a drag started there
+        // — the natural place to put a thumb on a wide screen — would do nothing.
+        Box(
+            Modifier
+                .fillMaxSize()
+                .padding(padding)
+                .verticalScroll(rememberScrollState()),
+            // Start-aligned, not centred: the top app bar's title sits at the leading edge,
+            // and a centred column would start well inboard of it — and land on the centred
+            // Sky Map watermark behind the screen.
+            contentAlignment = Alignment.TopStart,
+        ) {
+            StyledHtml(
+                stringResource(R.string.eula_text) +
+                    stringResource(R.string.permissions_notice) +
+                    stringResource(R.string.eula_agree_line),
+                nightMode = nightMode,
+                modifier =
+                    Modifier
+                        .widthIn(max = EULA_MAX_WIDTH)
+                        .fillMaxWidth()
+                        .padding(horizontal = 16.dp, vertical = 8.dp),
+            )
+        }
     }
 }
 
