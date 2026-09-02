@@ -27,9 +27,5 @@ Je to úplne nová aplikácia pod kapotou — nový renderovací engine, nový a
 <h2>A toto je len začiatok...</h2>
 <p>Máme mnoho dlho žiadaných funkcií, ktoré prídu veľmi skoro.</p>]]></string>
     <string name="whats_new_support" translation_description="HTML paragraph inviting users to support the project, shown in the What's new dialog and the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h1>Podporte Sky Map</h1><p>Sky Map je bezplatná a s otvoreným zdrojovým kódom. Ak ju považujete za užitočnú, zvážte podporu vývoja na našej stránke <a href="https://github.com/sky-map-team/stardroid/?tab=readme-ov-file#support-the-project">GitHub</a> alebo <a href="https://buymeacoffee.com/skymapdevs?utm_source=skymap&amp;utm_medium=app&amp;utm_campaign=whatsnew">nám kúpte kávu</a>.</p>]]></string>
-    <string name="beta_user_help_text" translation_description="Usually-empty HTML content shown to beta testers asking for feedback, appended in the What's new dialog and the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h3>Beta používatelia!</h3>
-<p>Vaša pomoc je teraz dôležitejšia ako kedykoľvek predtým pri hlásení chýb a pádom na <a href="mailto:skymapdevs@gmail.com">skymapdevs@gmail.com</a>
-nie <a href="https://github.com/sky-map-team/stardroid/issues">GitHub</a>. Aplikácia ešte nie je úplne dokončená. Ak chcete
-opustiť beta verziu a vrátiť sa ku klasickej Sky Map, navštívte
-<a href="https://play.google.com/apps/testing/com.google.android.stardroid">stránku pre testovanie</a>.</p>]]></string>
+    <string name="beta_user_help_text" translation_description="Usually-empty HTML content shown to beta testers asking for feedback, appended in the What's new dialog and the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[]]></string>
 </resources>

@@ -27,9 +27,5 @@ C\'est une application entièrement nouvelle sous le capot — nouveau moteur de
 <h2>Et ce n\'est que le début...</h2>
 <p>De nombreuses fonctionnalités très attendues arriveront très bientôt.</p>]]></string>
     <string name="whats_new_support" translation_description="HTML paragraph inviting users to support the project, shown in the What's new dialog and the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h1>Soutenir Sky Map</h1><p>Sky Map est gratuit et open source. Si vous le trouvez utile, veuillez envisager de soutenir son développement sur notre <a href="https://github.com/sky-map-team/stardroid/?tab=readme-ov-file#support-the-project">page GitHub</a> ou <a href="https://buymeacoffee.com/skymapdevs?utm_source=skymap&amp;utm_medium=app&amp;utm_campaign=whatsnew">nous offrir un café</a>.</p>]]></string>
-    <string name="beta_user_help_text" translation_description="Usually-empty HTML content shown to beta testers asking for feedback, appended in the What's new dialog and the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h3>Utilisateurs de la version bêta !</h3>
-<p>Votre aide est plus que jamais nécessaire pour signaler les bugs et les plantages à l\'adresse <a href="mailto:skymapdevs@gmail.com">skymapdevs@gmail.com</a>
-ou sur <a href="https://github.com/sky-map-team/stardroid/issues">GitHub</a>. L\'application n\'est pas encore totalement finalisée. Si vous
-souhaitez quitter le programme bêta et revenir à la version classique de Sky Map, veuillez consulter
-<a href="https://play.google.com/apps/testing/com.google.android.stardroid">la page de test</a>.</p>]]></string>
+    <string name="beta_user_help_text" translation_description="Usually-empty HTML content shown to beta testers asking for feedback, appended in the What's new dialog and the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[]]></string>
 </resources>

@@ -28,9 +28,5 @@ Det är en helt ny app från grunden – ny renderingsmotor, ny astronomimotor, 
 <p>Vi har många efterfrågade funktioner som kommer mycket snart.</p>]]></string>
     <string name="whats_new_support" translation_description="HTML paragraph inviting users to support the project, shown in the What's new dialog and the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h1>Stöd Sky Map</h1>
 <p>Sky Map är gratis och har öppen källkod. Om du har nytta av appen får du gärna stödja utvecklingen på vår <a href="https://github.com/sky-map-team/stardroid/?tab=readme-ov-file#support-the-project">GitHub</a>-sida eller genom att <a href="https://buymeacoffee.com/skymapdevs?utm_source=skymap&amp;utm_medium=app&amp;utm_campaign=whatsnew">köpa en kaffe åt oss</a>.</p>]]></string>
-    <string name="beta_user_help_text" translation_description="Usually-empty HTML content shown to beta testers asking for feedback, appended in the What's new dialog and the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h3>Betaanvändare!</h3>
-<p>Din hjälp behövs mer än någonsin för att rapportera buggar och krascher till <a href="mailto:skymapdevs@gmail.com">skymapdevs@gmail.com</a>
-eller <a href="https://github.com/sky-map-team/stardroid/issues">GitHub</a>. Appen är inte helt komplett gällande funktioner ännu. Om du
-vill lämna betatestet och gå tillbaka till den klassiska versionen av Sky Map kan du besöka
-<a href="https://play.google.com/apps/testing/com.google.android.stardroid">testningssidan</a>.</p>]]></string>
+    <string name="beta_user_help_text" translation_description="Usually-empty HTML content shown to beta testers asking for feedback, appended in the What's new dialog and the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[]]></string>
 </resources>

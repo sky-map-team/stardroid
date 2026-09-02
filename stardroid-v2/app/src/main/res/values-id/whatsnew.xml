@@ -27,9 +27,5 @@ Ini adalah aplikasi yang sepenuhnya baru dari dasarnya — mesin rendering baru,
 <h2>Dan ini hanyalah permulaan...</h2>
 <p>Kami memiliki banyak fitur yang telah lama diminta akan segera hadir.</p>]]></string>
     <string name="whats_new_support" translation_description="HTML paragraph inviting users to support the project, shown in the What's new dialog and the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h1>Dukung Sky Map</h1><p>Sky Map gratis dan sumber terbuka. Jika Anda merasa ini bermanfaat, mohon pertimbangkan untuk mendukung pengembangan di halaman <a href="https://github.com/sky-map-team/stardroid/?tab=readme-ov-file#support-the-project">GitHub</a> kami atau <a href="https://buymeacoffee.com/skymapdevs?utm_source=skymap&amp;utm_medium=app&amp;utm_campaign=whatsnew">membelikan kami kopi</a>.</p>]]></string>
-    <string name="beta_user_help_text" translation_description="Usually-empty HTML content shown to beta testers asking for feedback, appended in the What's new dialog and the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h3>Pengguna Beta!</h3>
-<p>Bantuan Anda sangat dibutuhkan untuk melaporkan bug dan crash di <a href="mailto:skymapdevs@gmail.com">skymapdevs@gmail.com</a>
-atau <a href="https://github.com/sky-map-team/stardroid/issues">GitHub</a>. Aplikasi ini belum sepenuhnya lengkap fiturnya. Jika Anda
-ingin keluar dari program beta dan kembali ke Sky Map klasik, silakan kunjungi
-<a href="https://play.google.com/apps/testing/com.google.android.stardroid">halaman pengujian</a>.</p>]]></string>
+    <string name="beta_user_help_text" translation_description="Usually-empty HTML content shown to beta testers asking for feedback, appended in the What's new dialog and the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[]]></string>
 </resources>
