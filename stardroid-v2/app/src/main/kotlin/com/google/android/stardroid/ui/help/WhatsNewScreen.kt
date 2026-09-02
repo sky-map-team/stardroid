@@ -30,7 +30,6 @@ import androidx.compose.ui.unit.dp
 import com.google.android.stardroid.R
 import com.google.android.stardroid.ui.common.StyledHtml
 import com.google.android.stardroid.ui.common.topBarWindowInsets
-import com.google.android.stardroid.ui.startup.appVersionName
 
 /**
  * The What's New & Credits destination (D74): the release notes, the support pitch, and the
@@ -64,15 +63,15 @@ fun WhatsNewScreen(
             )
         },
     ) { padding ->
-        val versionHeading =
-            stringResource(R.string.whats_new_version_heading, appVersionName())
         val sponsors = stringResource(R.string.sponsors_text)
         val contributors = stringResource(R.string.contributors_text)
         val creditsText = stringResource(R.string.credits_text, sponsors, contributors)
         // The parse is remembered inside StyledHtml; the concat here is cheap.
+        // The "New in version X" heading is dropped for the 2.0 launch copy, which opens with
+        // its own splash line instead — restore it for later point releases once the launch
+        // announcement has aged out.
         val html =
-            "<h1>$versionHeading</h1>" +
-                stringResource(R.string.whats_new_content) +
+            stringResource(R.string.whats_new_content) +
                 stringResource(R.string.beta_user_help_text) +
                 stringResource(R.string.whats_new_support) +
                 creditsText
