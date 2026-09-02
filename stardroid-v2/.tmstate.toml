@@ -1,5 +1,10 @@
 version = 1
 
+[human_translated.object-types."types.json".fr]
+keys = [
+    "constellation",
+]
+
 [same_as_parent.object-names.names.fr]
 keys = [
     "constellation/cancer",
@@ -7246,11 +7251,6 @@ keys = [
     "dso/willman_1",
 ]
 
-[same_as_parent.object-types.fr]
-keys = [
-    "constellation",
-]
-
 [same_as_parent.object-types."types.json".en-GB]
 keys = [
     "asterism",
@@ -7295,6 +7295,11 @@ keys = [
 [same_as_parent.object-types."types.json".de]
 keys = [
     "planet",
+]
+
+[same_as_parent.object-types."types.json".fr]
+keys = [
+    "constellation",
 ]
 
 [same_as_parent.object-types."types.json".id]

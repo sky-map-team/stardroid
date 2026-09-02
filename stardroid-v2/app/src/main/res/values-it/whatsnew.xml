@@ -28,9 +28,9 @@
 <p>Abbiamo molte funzionalità a lungo richieste in arrivo molto presto.</p>]]></string>
     <string name="whats_new_support" translation_description="HTML paragraph inviting users to support the project, shown in the What's new dialog and the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h1>Sostieni Sky Map</h1>
 <p>Sky Map è gratuito e open source. Se lo trovi utile, considera di sostenere lo sviluppo sulla nostra pagina <a href="https://github.com/sky-map-team/stardroid/?tab=readme-ov-file#support-the-project">GitHub</a> o <a href="https://buymeacoffee.com/skymapdevs?utm_source=skymap&amp;utm_medium=app&amp;utm_campaign=whatsnew">offrendoci un caffè</a>.</p>]]></string>
-    <string name="beta_user_help_text" translation_description="Usually-empty HTML content shown to beta testers asking for feedback, appended in the What's new dialog and the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h3>Utenti della versione beta!</h3>
-<p>Il vostro aiuto è più che mai necessario per segnalare bug e arresti anomali all\'indirizzo <a href="mailto:skymapdevs@gmail.com">skymapdevs@gmail.com</a>
-o su <a href="https://github.com/sky-map-team/stardroid/issues">GitHub</a>. L\'app non è ancora completa in tutte le sue funzionalità. Se
-desiderate abbandonare la versione beta e tornare alla versione classica di Sky Map, visitate
+    <string name="beta_user_help_text" tm_human="true" translation_description="Usually-empty HTML content shown to beta testers asking for feedback, appended in the What's new dialog and the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h3>Utenti della versione beta!</h3>
+<p>Il tuo aiuto è più che mai necessario per segnalare bug e arresti anomali all\'indirizzo <a href="mailto:skymapdevs@gmail.com">skymapdevs@gmail.com</a>
+o su <a href="https://github.com/sky-map-team/stardroid/issues">GitHub</a>. L\'app non ha ancora tutte le funzionalità! Se
+desideri abbandonare la versione beta e tornare alla versione classica di Sky Map, visita
 <a href="https://play.google.com/apps/testing/com.google.android.stardroid">la pagina di testing</a>.</p>]]></string>
 </resources>

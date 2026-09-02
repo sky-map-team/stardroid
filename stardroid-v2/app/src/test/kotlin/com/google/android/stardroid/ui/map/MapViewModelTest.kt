@@ -828,6 +828,53 @@ class MapViewModelTest {
             assertThat(vm.camera.value).isEqualTo(stopped)
         }
 
+    /**
+     * Issue #960: `onFling` and `onGestureEnd` are two independent coroutines racing on the
+     * same camera. The old exit condition — "the angle read under the stop threshold, so
+     * stop" — only ever sampled the angle instantaneously; if the fling was still running,
+     * and still capable of re-tilting the horizon (as a diagonal fling does, frame by frame),
+     * the leveler could see a momentary zero and quit for good, leaving any later drift
+     * uncorrected until the next gesture. A rotate mid-fling stands in for that drift here,
+     * since it's a controllable way to introduce it without depending on the exact numeric
+     * roll error a diagonal drag happens to accumulate.
+     */
+    @Test
+    fun `the leveler keeps fixing drift that lands while a fling is still running`() =
+        testScope.runCurrentTest {
+            val vm = viewModel(sensors = false)
+            runCurrent()
+
+            // Level the horizon first and let it fully settle with nothing else running.
+            vm.onRotate(37f)
+            vm.onGestureEnd()
+            advanceTimeBy(10_000)
+            runCurrent()
+            vm.stopLeveling()
+
+            // Start a fling; onGestureEnd fires right after it, as MapScreen does on lift.
+            vm.onFling(1000f, 0f, 1000)
+            vm.onGestureEnd()
+            // Give the leveler time to read the (already level) horizon and, pre-fix, exit.
+            advanceTimeBy(500)
+            runCurrent()
+
+            // Something re-tilts the horizon while the fling is still going.
+            vm.onRotate(5f)
+            val tilted = vm.camera.value.up
+
+            // ~1000 px/s decays under the fling's stop threshold at ~3 s (see the fling tests
+            // above); give the leveler ample time after that too.
+            advanceTimeBy(4_500)
+            runCurrent()
+
+            val cam = vm.camera.value
+            val zenith = SkyModel.localFrame(TIME, LocationController.DEFAULT_LOCATION).up
+            val target =
+                (zenith - cam.lineOfSight * (zenith dot cam.lineOfSight)).normalized()
+            assertThat(cam.up.distanceTo(target)).isLessThan(0.01)
+            assertThat(cam.up.distanceTo(tilted)).isGreaterThan(0.01)
+        }
+
     // ---- The map HUD (map-hud.md, D65) ---------------------------------------------------
 
     @Test
