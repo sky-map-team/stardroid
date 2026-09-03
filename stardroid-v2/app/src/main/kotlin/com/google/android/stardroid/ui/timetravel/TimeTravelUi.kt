@@ -17,7 +17,10 @@ import androidx.compose.animation.fadeOut
 import androidx.compose.animation.slideInVertically
 import androidx.compose.animation.slideOutVertically
 import androidx.compose.animation.togetherWith
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.ExperimentalLayoutApi
+import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.IntrinsicSize
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -158,7 +161,7 @@ fun TimeTravelPlayer(viewModel: TimeTravelViewModel) {
  * v1's time-travel dialog in Compose: pick a date, a time, or a popular event, then Go —
  * or just "Start from now" if nothing was touched (v1's two-mode Go button).
  */
-@OptIn(ExperimentalMaterial3Api::class)
+@OptIn(ExperimentalMaterial3Api::class, ExperimentalLayoutApi::class)
 @Composable
 fun TimeTravelDialog(
     viewModel: TimeTravelViewModel,
@@ -187,10 +190,16 @@ fun TimeTravelDialog(
                     stringResource(R.string.time_travel_visiting, formatter.formatInstant(target)),
                     modifier = Modifier.padding(bottom = 12.dp),
                 )
-                Row(modifier = Modifier.padding(bottom = 12.dp)) {
+                // FlowRow rather than Row: long translations (e.g. Greek) can outgrow the
+                // dialog's width side by side, which squeezed the second button into an
+                // unreadably narrow, many-line sliver instead of simply wrapping.
+                FlowRow(
+                    horizontalArrangement = Arrangement.spacedBy(8.dp),
+                    verticalArrangement = Arrangement.spacedBy(8.dp),
+                    modifier = Modifier.padding(bottom = 12.dp),
+                ) {
                     FilledTonalButton(
                         onClick = { showDatePicker = true },
-                        modifier = Modifier.padding(end = 8.dp),
                     ) { Text(stringResource(R.string.time_travel_pick_date)) }
                     FilledTonalButton(
                         onClick = { showTimePicker = true },
