@@ -5,6 +5,15 @@ All notable changes to Sky Map are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [2.0.1:Apollo] (v2) - 2026-09-03
+
+<img src="stardroid-v2/assets/release-icons/2.0.1_apollo_icon.png" width="80" alt="Apollo" />
+
+### Fixed
+- Fixed a crash on app start for the Greek locale caused by a malformed RA value format string.
+
+---
+
 ## [2.0.0:Apollo] (v2) - 2026-09-02
 
 <img src="stardroid-v2/assets/release-icons/2.0.0_apollo_icon.png" width="80" alt="Apollo" />
