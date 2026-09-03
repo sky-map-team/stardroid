@@ -89,8 +89,12 @@ collected under [Open questions](#open-questions).
   563 objects have locales that disagree on name count. The count difference is *correct data*,
   not a defect — see [Why counts differ](#why-counts-differ).
 - **Objects may have universal names (M31) that are never translated, and may or may not be
-  primary.** Resolved with an amendment: **universal is not absolute**. See
-  [Universal names are not universal](#universal-names-are-not-universal).
+  primary.** Resolved, and tightened: a universal name is a single **atomic** catalog
+  designation, so compound forms are banned outright. The only case where one is ever
+  locale-specific is a script that re-renders its digits. See
+  [Universal names are atomic](#universal-names-are-atomic). Whether it may be primary is
+  settled by Decision 7 and the measured cases in
+  [What the DB already gets right](#what-the-db-already-gets-right).
 - **Not every string needs its own translation; follow the usual fallback rules.** Already
   implemented: `LocaleSpec.fallbackChain`.
 - **`en` is the root; fall back to it from any locale so text is never blank — and the tool
@@ -187,6 +191,36 @@ should match what `tm` actually maintains. This is not a change to
 
 ---
 
+### 7. Exactly one primary name per (object, locale) — enforced at build, tolerated at runtime
+
+The invariant holds in the data today: **zero** objects have more than one primary name in the
+same locale. Codify it.
+
+The generator fails the build on a second primary for the same `(object, locale)`, alongside the
+existing asset-licence and format-string checks. The runtime keeps its deterministic tiebreak
+anyway — `bestNameInChain` sorts primary-first then alphabetically — because a downloaded pack
+is exactly the case the build gate cannot cover, and a bad pack must not crash the app.
+
+Runtime robustness without the build gate would be the worst of both: a violation would resolve
+silently to whichever name sorts first and ship as a plausible-looking label. The two halves
+only work together.
+
+### 8. One info card stays in JSON as a canary
+
+`dso/willman_1` keeps its card in `source-data/info_cards/` in all 29 locales it has, and does
+**not** get XML resources. Everything else moves.
+
+This keeps the `json-cards` `tm` source, the DB card path, and the two-tier resolver from
+bit-rotting in the window between this work and packs shipping. Two things make it a real test
+rather than a decoration: the card must exist *only* in JSON, so the resolver genuinely falls
+through instead of being shadowed by an XML entry, and there must be a test asserting it
+resolves.
+
+Willman 1 is the right choice because it is invisible. An ultra-faint dwarf satellite galaxy at
+magnitude 15.4, it is beyond naked-eye and most amateur telescopes, so a regression in the card
+path costs nothing user-visible while still failing the test. Its `image_credit` already reads
+"Sky Map team (it's very faint)".
+
 ## Why names stay in the database
 
 Moving names to XML costs 1.90 MB installed / ~0.7 MB download. Against that:
@@ -232,37 +266,45 @@ size pressure changes, reopen it — the price and the complexity list are above
 
 ---
 
-## Universal names are not universal
+## Universal names are atomic
 
-The requirement that universal names are never translated does not survive contact with the
-corpus. Two genuine exceptions, plus one bug.
+A universal name is **a single atomic catalog designation** — `M31`, `NGC 7662`, `Mel 25`,
+`ω Centauri`. No connectives, no joins, no compounds. Expressing "these two catalog entries
+together" is a job for the object model (`object_link`, or a parent object with children), not
+for a name string.
 
-**Scripts with their own numerals re-render designations.** Persian writes Caldwell 22 as
+**Compound designations are banned, and it costs nothing.** Exactly one exists in the corpus:
+`NGC 869 & NGC 884` for Double Cluster. `universal.csv` already carries `NGC 869` and `NGC 884`
+as separate atoms, so deleting the compound loses no findability — a user typing `NGC 869`
+already matches. It was never worth what it cost: 23 of the 29 locales copy it verbatim, and
+three (`es` with `y`, `ar` and `fa` with `و`) translate the connective, which is the entire
+reason "universal names are never translated" appeared to fail. English has *two* names for
+Double Cluster where translated locales have three purely because of this one row.
+
+`h and χ Persei` is not affected and is not a compound designation. It is a conventional name
+for the pair rather than a catalog-ID join, it is genuinely translated (`h und χ Persei`,
+`h et χ Persei`, `h och χ Persei`), and it already lives in the per-locale files where it
+belongs. It never gets a universal row.
+
+**One real exception remains: scripts with their own numerals.** Persian writes Caldwell 22 as
 `کالدول ۲۲`, Melotte 25 as `Melotte ۲۵`, NGC 7662 as `NGC ۷۶۶۲`. That is why `fa` has three
-names for Blue Snowball where every other locale has one.
+names for Blue Snowball where every other locale has one. This is handled as a locale override
+on the universal tier — the mechanism the data already uses — so "never translated" is an
+invariant `tm` enforces for every designation except a locale that re-renders its digits.
 
-**Compound designations contain a translatable connective.** `NGC 869 & NGC 884` becomes
-`NGC 869 y NGC 884` in Spanish and `NGC 869 و NGC 884` in Arabic; `h and χ Persei` becomes
-`h a χ Persei` in Czech and `h und χ Persei` in German. English has *two* names for Double
-Cluster while translated locales have three, precisely because English's compound form sits in
-`universal.csv` and every other locale had to write its own.
-
-**Resolution: split pure designations from compound ones.** A pure catalog ID (`M31`,
-`NGC 7662`, `Mel 25`) is immutable and never translated. A compound or connective-bearing form
-is prose: it leaves `universal.csv` entirely and becomes a locale-specific name in every locale
-including `en`. Not every object has a universal name, and that is fine.
-
-The Persian numeral case is left as a locale override on the universal tier — the mechanism the
-data already uses. This means "never translated" is an invariant `tm` can enforce for pure
-designations only, which is the honest version of the rule.
+**Redundant copies of universal names should be deleted.** 78 locale rows are byte-identical to
+a universal name for the same object, across 29 locales and 7 objects: `ω Centauri` (27
+locales), `NGC 869 & NGC 884` (23), `30 Doradus` (20), `M65` and `M66` (3 each), `Alpha Leonis`
+and `Alpha1 Centauri` (1 each). The fallback chain already reaches the universal row, so every
+one is dead weight — `same_as_parent` / `tm compact` territory.
 
 ### Why counts differ
 
 For the record, since this drove several of the decisions above — 59 of 563 objects have locales
-disagreeing on name count, from three causes:
+disagreeing on name count, from three causes, only one of which is legitimate:
 
-1. Locale-specific renderings of universal designations (genuine — Persian numerals).
-2. Compound designations with a translatable connective (genuine — resolved by the split above).
+1. Locale-specific renderings of universal designations (**genuine** — Persian numerals).
+2. The one compound designation (**resolved** — banned above; the row is deleted).
 3. Collapsed aliases never deduplicated (**bug** — 97 rows, see Decision 4).
 
 ---
@@ -278,7 +320,11 @@ In scope. Concrete items found while measuring:
   record the shorter list as complete rather than as missing coverage (Decision 5).
 - **`spectral_class` and `image_credit` stored 31 times each** (Decision 1).
 - **`size`/`distance`/`mass` as translated prose** (Decision 1).
-- **Compound designations sitting in `universal.csv`** (see above).
+- **The one compound designation in `universal.csv`** — `NGC 869 & NGC 884`, plus the 23
+  per-locale copies and 3 translations of it (see [Universal names are
+  atomic](#universal-names-are-atomic)).
+- **78 locale rows byte-identical to a universal name** for the same object, across 29 locales
+  and 7 objects. The fallback chain already reaches the universal row.
 - **`ru` has names but no info cards; `ca`/`hu` have both but are non-core** (Decision 6).
 
 ---
@@ -340,8 +386,8 @@ if it holds, it is a live defect for UI strings today. See [Open questions](#ope
 - The unit-formatting layer for `size`/`distance`/`mass` (Decision 1) — what it looks like, and
   whether ~318 size values and 240 distances are cleanly parseable back into numbers.
 - Whether `tm` needs a new source type for the two-tier card model, or whether bundled cards
-  simply become part of the existing `android` source and the `json-cards` source is retired for
-  bundled content and kept for packs.
+  simply join the existing `android` source. The `json-cards` source is not retired either way —
+  Decision 8 keeps it carrying `dso/willman_1` and, later, pack content.
 - The per-locale "list is complete" flag (Decision 5) — its representation, and whether it is
   in-band or joins `same_as_parent` in the sidecar.
 - **Whether Play auto-fetches a language split for a per-app locale selection.** Settle it on a
