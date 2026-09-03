@@ -39,6 +39,8 @@ jobs:
       # a full check. See stardroid-v2/LICENSE.md.
       - name: Asset licence manifest
         run: python3 tools/check_asset_licenses.py
+      - name: Translated format-string check
+        run: python3 tools/check_format_strings.py
       - name: Build and test
         run: ./gradlew check --no-daemon
         env:
