@@ -47,7 +47,7 @@ notifications. Single-activity Jetpack Compose app, minSdk 29, targetSdk 36, two
 | [design/localization.md](design/localization.md) | Proposed; the shipped localization work (D78) is 31 salvaged `values-*` locales plus the split help document — see §7 |
 | [design/layers-and-app.md](design/layers-and-app.md) | Current (status header refreshed 2026-08-03; the body's `AppGraph` sketch is superseded by Hilt per D59, which the header notes) |
 | [design/build-and-tooling.md](design/build-and-tooling.md) | Refreshed 2026-08-03 to the as-built state: 10-module graph, `:data:generator`, `:konsist`, the smoke-not-benchmark perf gate, CI at the monorepo root |
-| [README.md](README.md) | Groups every doc as built / proposed / reference, tracks implementation slice-by-slice, and carries the standing "Not built" list; also lists [improvements-over-v1.md](improvements-over-v1.md) and [launch-feature-set.md](launch-feature-set.md) (release-notes/store-copy sources), neither of which this doc duplicates |
+| [README.md](README.md) | Groups every doc as built / proposed / reference, tracks implementation slice-by-slice, and carries the standing "Not built" list; also lists [improvements-over-v1.md](improvements-over-v1.md) (release-notes/store-copy source), which this doc does not duplicate |
 
 decisions.md runs D1–D84 with no gaps or duplicates as of this writing. An earlier draft of
 this doc warned that D67–D71 existed twice (an AR-track set and a mainline set assigned on
