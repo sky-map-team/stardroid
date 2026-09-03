@@ -58,6 +58,11 @@ cost. **For info cards, yes** — 3.11 MB of the 3.23 MB of bundled card prose s
 users, and Play cannot split an asset by language. **For names, no** — the splittable portion is
 ~1.96 MB and shrinks further once non-core locales are pruned.
 
+**The saving is `gms`-only.** It comes entirely from Play delivering language splits; F-Droid
+distributes a universal APK with no splits, so an `fdroid` user carries every locale either way.
+The pivot is roughly size-neutral for that flavour — the same text moves from an asset to
+resources. See [Split delivery](#split-delivery).
+
 ---
 
 ## Requirements
@@ -143,6 +148,14 @@ This falls out for free: index the resolved name plus the universal designations
 English search tier. An English name appearing in a French UI is visible in `tm languages` as
 the coverage gap it is.
 
+**Two different faults look identical on screen.** A *coverage* gap — nobody has written the
+French string — shows up in `tm languages`. A *delivery* gap — the `values-fr` split is not on
+the device — does not: `tm` reports 100% because the string exists in the repo. Both render as
+English text in a French UI. Only card prose can have a delivery gap, because only card prose
+becomes a split resource; names stay in the DB. Whatever diagnostic reports coverage in the app
+has to tell these apart, or a delivery failure will be misread as missing translation and
+"fixed" by retranslating something that is already correct.
+
 ### 4. Alias lists are not machine-translated
 
 `tm` owns primary names — they are the map label, user-visible, and worth generating
@@ -193,6 +206,11 @@ at read time.
 **It adds runtime machinery.** A first-run index build (~540 rows per locale), a stored locale
 tag, and a re-index when the device language changes — none of which exists today, because
 `createFromAsset` ships the index prebuilt.
+
+**Names in the DB are immune to split delivery.** Assets are never split by language, so the
+catalog and its search index are complete on every device from install, whatever the user later
+picks as their language. Card prose in XML gives that up in exchange for the size win; names
+would give it up for ~0.7 MB. See [Split delivery](#split-delivery).
 
 **The DB already satisfies every naming requirement in this document.** That is the strongest
 argument: the work is to write down what already works, not to rebuild it.
@@ -265,6 +283,47 @@ In scope. Concrete items found while measuring:
 
 ---
 
+## Split delivery
+
+Moving card prose into `res/values-*/` makes it subject to Play's language splitting, which is
+where the size win comes from and also the one new failure mode the pivot introduces.
+
+**Splitting is already on, and already applies to UI strings.** There is no `bundle {}` block in
+`app/build.gradle.kts`, no `resourceConfigurations` or `localeFilters`, and the release AAB's
+`BundleConfig.pb` carries no `splitsConfig` override — so AGP's default holds and language,
+density and ABI splits are all enabled. The 332 UI strings in `values-*/` have this exposure
+today. The pivot extends it to card prose; it does not invent it.
+
+**`android:localeConfig` does not change delivery.** The manifest declares
+`android:localeConfig="@xml/locales_config"` with 32 locales, which populates the Android 13+
+per-app language picker. It is a declaration of what the app supports, not an input to how Play
+splits or delivers resources — splits are computed from the resource configurations in the
+bundle and served against the device's locale settings. Declaring it does **not** force users to
+download every locale.
+
+**The app switches language live.** `LocaleSource` deliberately never caches the locale: it
+re-reads the live configuration on every call and re-emits on configuration change, so catalog
+reads follow a language switch without a process restart. That is the path where a missing
+split would show.
+
+**What happens when the user changes language after install.** Install-time splits match the
+device's configured locales, so the common case is complete. After that:
+
+- **System language change** — Play tracks the device locale list and fetches the missing split.
+  The app may show English briefly; it self-heals. Needs network and a Play sync, so "briefly"
+  is not bounded, and an offline user stays on English until they reconnect.
+- **Per-app language picker** — a per-app locale is held by the system `LocaleManager` and does
+  *not* alter the device locale list, which is what Play watches. The expectation is that Play
+  does **not** auto-fetch for this path, which is why Google's guidance for apps combining
+  `localeConfig` with language splits is to call `SplitInstallManager.installLanguages()` /
+  `deferredLanguageInstall()` before applying the locale.
+
+That second point is **unverified** — it is stated from general knowledge of Play's behaviour,
+not measured, and Play has changed here before. It is also not a consequence of this document:
+if it holds, it is a live defect for UI strings today. See [Open questions](#open-questions).
+
+---
+
 ## Out of scope
 
 - **The `.tmstate.toml` sidecar.** 2.7 MB in the repo, never ships to a device. Worth noting
@@ -285,3 +344,10 @@ In scope. Concrete items found while measuring:
   bundled content and kept for packs.
 - The per-locale "list is complete" flag (Decision 5) — its representation, and whether it is
   in-band or joins `same_as_parent` in the sidecar.
+- **Whether Play auto-fetches a language split for a per-app locale selection.** Settle it on a
+  device rather than from documentation: build the `gms` AAB, `bundletool build-apks` +
+  `install-apks` with a restricted language set, then change the system language and Sky Map's
+  per-app language separately and watch whether the split arrives. If it does not, UI strings
+  need `SplitInstallManager` regardless of what happens to card prose.
+- How the in-app coverage diagnostic distinguishes a delivery gap from a coverage gap
+  (Decision 3).
