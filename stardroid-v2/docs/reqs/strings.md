@@ -21,3 +21,4 @@ Relevant docs: stardroid-v2/docs/design/data-layer.md stardroid-v2/docs/design/d
 We should not discount that the current solution could be optimal.
 
 Design decisions should be made in parallel on Sky Map code and also https://github.com/jaydeetay/translationmanager
+Cleaning up stardroid-v2/source-data to simplify and remove duplication is in scope.
