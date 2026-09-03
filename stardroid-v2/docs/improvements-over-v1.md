@@ -17,17 +17,18 @@ changed.
 
 ## Read this before writing copy
 
-Two constraints that would otherwise produce false claims:
+One constraint that would otherwise produce a false claim:
 
-- **UI translation is partial, and uneven by locale.** 31 locale directories ship, but the
-  salvage carried 213 of 337 strings (~63%) over from v1 — most locales sit around **50%
-  coverage**, so a non-English user sees a mix of translated and English text. The help
-  document is not translated at all yet: it was split into 14 per-section keys and awaits
-  retranslation (D78). Catalog data (object names, info cards) is separately localized and
-  in better shape. **Safe to say the app speaks 31 languages; do not claim it is fully
-  translated, and check per-locale coverage before shooting non-English screenshots.**
 - **Comets are the one unported v1 layer** (D37, D58). Any v1 material mentioning comets
   does not carry over.
+
+UI translation is no longer a caveat: the `tm` pipeline (D78) shipped full coverage across
+all **28 core languages** as of 2.0.0-beta07, including the help document, which was split
+into per-section keys precisely so it could be translated the same way as everything else.
+**Safe to say the app is fully translated into 28 languages, help included.** Three more
+locale directories ship alongside those 28 — `ru`, `ca`, `hu` — but they're intentionally
+excluded from core and sit at 11–25% coverage (partial/legacy, not a bug to fix or backfill).
+Don't count them toward "the app speaks N languages," and don't shoot screenshots in them.
 
 ## The full at-launch feature surface
 
@@ -59,8 +60,8 @@ below.
 | Solar-system bodies | **26** — the Sun, 7 planets, 17 moons, 1 dwarf planet |
 | Meteor showers | **10** |
 | Celestial photos | **250** referenced by the catalog (254 files ship; 4 unreferenced) |
-| Catalog-data locales | **30** (see the translation caveat above) |
-| UI locales | **31**, partially translated (~50% coverage in most) |
+| Catalog-data locales | **30** |
+| UI locales | **31** — 28 core at 100% coverage, plus 3 partial/legacy (`ru`, `ca`, `hu`) |
 
 **"88 constellations" and "89 figures" are both correct — don't merge them.** The catalog holds
 89 rows under `layer_kind='constellations'` because Serpens is drawn as two separate figures.
@@ -125,7 +126,8 @@ bundled DB (D63). **Use 3,186 in copy** — the remainder is seed data for a fut
 - The tour is replayable any time via overflow → Tutorial
 - Settings in five sections: Controls, Appearance, Sensors, Notifications, Other
 - Analytics opt-out on gms; the F-Droid build has no analytics at all
-- 31 UI locales, partially translated — see the translation caveat above (D78)
+- 31 UI locales — 28 core languages fully translated including Help, plus 3 partial/legacy
+  (`ru`, `ca`, `hu`) — see above (D78)
 
 ### Screenshot shortlist
 
