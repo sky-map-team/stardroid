@@ -111,7 +111,7 @@
     <string name="hud_az_label" translation_description="Map-HUD row label: azimuth (compass bearing) of the point at the centre of the screen. Keep short.">Αζ.</string>
     <string name="hud_fov_label" translation_description="Map-HUD row label: the field of view (how many degrees of sky the screen spans). Keep short.">ΟΠ</string>
     <string name="hud_correction_label" translation_description="Map-HUD row label for the manual sensor-alignment correction the user set by dragging. Keep very short.">Ρύθμ.</string>
-    <string name="hud_ra_value" translation_description="Right ascension in the conventional hours-and-minutes notation, e.g. \'18h 38m\'. %1$d is hours (0-23), %2$02d is minutes (00-59).">%1$dω %2$02λ</string>
+    <string name="hud_ra_value" translation_description="Right ascension in the conventional hours-and-minutes notation, e.g. \'18h 38m\'. %1$d is hours (0-23), %2$02d is minutes (00-59).">%1$dω %2$02dλ</string>
     <!-- tm:omitted name="hud_signed_degrees_value" reason="identical_to_source" -->
     <!-- tm:omitted name="hud_azimuth_value" reason="identical_to_source" -->
     <!-- tm:omitted name="hud_fov_value" reason="identical_to_source" -->
