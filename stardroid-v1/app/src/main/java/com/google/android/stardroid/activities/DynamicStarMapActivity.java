@@ -59,6 +59,7 @@ import androidx.annotation.VisibleForTesting;
 import androidx.core.app.ActivityCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.FragmentManager;
 
@@ -335,17 +336,16 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
 
     sharedPreferences.registerOnSharedPreferenceChangeListener(this);
 
-    // Set up full screen mode, hide the system UI etc.
-    getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON |
-        WindowManager.LayoutParams.FLAG_FULLSCREEN);
+    getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
-    // TODO(jontayler): upgrade to
-    // getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN);
-    // when we reach API level 16.
-    // http://developer.android.com/training/system-ui/immersive.html for the right
-    // way
-    // to do it at API level 19.
-    // getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
+    // Draw edge-to-edge: let the sky view extend behind the status and navigation bars
+    // instead of the platform reserving opaque (grey) space for them. This matches the
+    // behavior Android 15+ enforces automatically, but must be opted into on older
+    // versions. Chrome views (search bar, time player, layer buttons) apply their own
+    // insets below so they stay clear of the bars and any display cutout.
+    WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
+    getWindow().setStatusBarColor(Color.TRANSPARENT);
+    getWindow().setNavigationBarColor(Color.TRANSPARENT);
 
     playServicesChecker.maybeCheckForGooglePlayServices();
 
@@ -1176,6 +1176,9 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
     applyWindowInsets(searchControlBar, true, false);
 
     ButtonLayerView providerButtons = findViewById(R.id.layer_buttons_control);
+    // These buttons are pinned to the left edge, so keep them clear of the nav bar
+    // or a display cutout there; they're vertically centered so top/bottom don't apply.
+    applyWindowInsets(providerButtons, false, false);
 
     int numChildren = providerButtons.getChildCount();
     List<View> buttonViews = new ArrayList<>();
@@ -1185,6 +1188,8 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
     }
     PreferencesButton manualAutoToggle = findViewById(R.id.manual_auto_toggle);
     ButtonLayerView manualButtonGroup = findViewById(R.id.layer_manual_auto_toggle);
+    // This button sits in the bottom-right corner, so keep it clear of the nav bar.
+    applyWindowInsets(manualButtonGroup, false, true);
 
     List<View> buttonGroups = new ArrayList<>();
     if (hasNeededSensors()) {
