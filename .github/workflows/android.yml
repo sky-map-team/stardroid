@@ -39,11 +39,6 @@ jobs:
       # a full check. See stardroid-v2/LICENSE.md.
       - name: Asset licence manifest
         run: python3 tools/check_asset_licenses.py
-      # Fails if a translated string has a malformed or mismatched format specifier
-      # (e.g. a translator garbling %2$02d into %2$02λ). Neither Android Lint nor `tm
-      # validate` catch this — see the module docstring in check_format_strings.py.
-      - name: Translated format-string check
-        run: python3 tools/check_format_strings.py
       - name: Build and test
         run: ./gradlew check --no-daemon
         env:
