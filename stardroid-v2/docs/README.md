@@ -47,8 +47,7 @@ the two ever drift.
 |---|---|
 | decisions.md | Running log of product/technical decisions and their rationale — the authority behind every status above |
 | [code-overview.md](code-overview.md) | Top-down tour of the codebase as built — module graph, build machinery, subsystem pointers, doc-health table |
-| [improvements-over-v1.md](improvements-over-v1.md) | Net-new features and fixes v1 lacked — the source for launch highlights and release notes |
-| [launch-feature-set.md](launch-feature-set.md) | The full at-launch feature surface (unflagged only) — the source for help text, store copy, and screenshots |
+| [improvements-over-v1.md](improvements-over-v1.md) | The full at-launch feature surface (unflagged only) plus the net-new-vs-v1 highlights drawn from it — the source for help text, store copy, screenshots, and release notes |
 | [info-card-coverage.md](info-card-coverage.md) | Which labelled objects still lack info cards, why that blocks tap-to-identify, and how to write new ones |
 | [design/sensor-correction-model.md](design/sensor-correction-model.md) | Sensor error physics and why drag-to-align's az/alt correction matches them |
 | [design/ephemeris-accuracy.md](design/ephemeris-accuracy.md) §1–2 | Coordinate-frame audit and the residual error budget (precession fix, D84) |
@@ -228,6 +227,6 @@ The complete list of things these docs describe that do **not** exist in the cod
   ([design/widgets-and-notifications.md](design/widgets-and-notifications.md)).
 - The splash-to-sky cross-fade ([design/ux-polish.md](design/ux-polish.md) item 2, step 2).
 
-For the user-facing view of what v2 adds over v1 — and which features are built but
-unannounced — see [improvements-over-v1.md](improvements-over-v1.md). For the full
-at-launch feature surface, see [launch-feature-set.md](launch-feature-set.md).
+For the user-facing view of what v2 adds over v1, the full at-launch feature surface, and
+which features are built but unannounced, see
+[improvements-over-v1.md](improvements-over-v1.md).
