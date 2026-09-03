@@ -191,19 +191,49 @@ should match what `tm` actually maintains. This is not a change to
 
 ---
 
-### 7. Exactly one primary name per (object, locale) — enforced at build, tolerated at runtime
+### 7. Exactly one primary name for any object that has any name at all
 
-The invariant holds in the data today: **zero** objects have more than one primary name in the
-same locale. Codify it.
+Not *at most* one — **exactly** one. Every object with a name has a primary, and no
+`(object, locale)` has two.
 
-The generator fails the build on a second primary for the same `(object, locale)`, alongside the
-existing asset-licence and format-string checks. The runtime keeps its deterministic tiebreak
-anyway — `bestNameInChain` sorts primary-first then alphabetically — because a downloaded pack
-is exactly the case the build gate cannot cover, and a bad pack must not crash the app.
+The "at most one" half already holds: zero objects have two primaries in the same locale. The
+"at least one" half **does not** — 1,871 objects have names and no primary anywhere. All of them
+are stars, and all the gaps are in the universal tier; the localized data is clean. The star
+catalog simply never set the flag.
 
-Runtime robustness without the build gate would be the worst of both: a violation would resolve
-silently to whichever name sorts first and ship as a plausible-looking label. The two halves
-only work together.
+**This is a live labelling bug, not a hygiene issue.** 1,026 of those stars have more than one
+name, so `bestNameInChain` falls through to its alphabetical tiebreak — and because ASCII digits
+sort before letters, that picks the Flamsteed number over the Bayer name:
+
+| Star | Mag | Candidates | Currently labelled |
+|---|---:|---|---|
+| Gamma Cassiopeiae | 2.15 | `27 Cas`, `Gamma Cassiopeiae`, `γ Cas` | **27 Cas** |
+| Zeta Ophiuchi | 2.54 | `13 Oph`, `Zeta Ophiuchi`, `ζ Oph` | **13 Oph** |
+
+33 of the ambiguous stars are brighter than magnitude 3, so these are prominent naked-eye stars
+carrying a catalog number where a Bayer designation exists. This is traced through
+`bestNameInChain` → `pickByChain` rather than observed on screen; worth an eyeball, though the
+sort order is not in doubt.
+
+**Backfill rule: Greek abbreviation > spelled-out Bayer > Flamsteed.** `γ Cas` beats
+`Gamma Cassiopeiae` beats `27 Cas` — compact, which matters on a crowded star field, and the
+form astronomers actually use.
+
+Applied to the data this resolves **all 1,871 with no residue**: 1,026 take a Greek form and
+845 take a Flamsteed number. The spelled-out tier never fires, because every star carrying a
+spelled-out Bayer name also carries the Greek one. The 845 are single-name stars, so marking
+their sole name primary changes nothing on screen.
+
+**It does change 1,026 labels**, including the 33 brighter than magnitude 3 — from
+`Gamma Centauri` and `27 Cas` to `γ Cen` and `γ Cas`. That is a deliberate product change, not a
+silent side effect of a data fix, and should be called out in release notes.
+
+**Enforcement: strict at build, tolerant at runtime.** The generator fails on an object with
+names and no primary, or with two primaries in one locale, alongside the existing asset-licence
+and format-string checks. The runtime keeps its deterministic tiebreak anyway, because a
+downloaded pack is exactly the case the build gate cannot cover and a bad pack must not crash
+the app. Runtime tolerance without the build gate would be the worst of both — which is
+precisely how 1,871 missing flags went unnoticed.
 
 ### 8. One info card stays in JSON as a canary
 
@@ -326,6 +356,8 @@ In scope. Concrete items found while measuring:
 - **78 locale rows byte-identical to a universal name** for the same object, across 29 locales
   and 7 objects. The fallback chain already reaches the universal row.
 - **`ru` has names but no info cards; `ca`/`hu` have both but are non-core** (Decision 6).
+- **1,871 stars with no primary name** — backfill per the precedence rule in Decision 7. All in
+  the universal tier; the localized data is clean.
 
 ---
 
