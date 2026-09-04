@@ -122,6 +122,12 @@ complexity being felt is not their absence.
 
 Translatable prose only: `description`, `fun_fact`, `search_subtext`.
 
+They need no new `tm` machinery: once in `res/values-*/` they are ordinary Android string
+resources, so the card file simply joins the existing `android` source's `files` list. The
+two-tier model is not a `tm` concern at all — `tm` translates sources, and the runtime resolver
+is what merges bundled resources with pack rows. `json-cards` stays configured only for the
+Willman 1 canary and, later, pack content (Decision 8).
+
 The other five fields stop being per-locale strings:
 
 | Field | Today | Becomes |
@@ -321,26 +327,33 @@ is a smaller wrong than wrong-language alternates, and the gap is visible as mis
 rather than disguised as translated content.
 
 **But this only holds once language-neutral aliases are reclassified.** `en.csv` has just 36
-alias rows, and nine of them are not English:
+alias rows, and eight of them are not English — and are already duplicated across most locales:
 
-| Object | Primary | Alias | Actually |
-|---|---|---|---|
-| `star/alnath` | Alnath | Elnath | Arabic transliteration variant |
-| `star/alphekka` | Alphekka | Alphecca | Arabic transliteration variant |
-| `star/etamin` | Etamin | Eltanin | Arabic transliteration variant |
-| `star/mirphak` | Mirphak | Mirfak | Arabic transliteration variant |
-| `star/phad` | Phad | Phecda | Arabic transliteration variant |
-| `dso/m44` | Beehive Cluster | Praesepe | Latin |
-| `dso/lmc` | Large Magellanic Cloud | Nubecula Major | Latin |
-| `dso/smc` | Small Magellanic Cloud | Nubecula Minor | Latin |
-| `dso/m45` | Pleiades | Matariki | Māori |
+| Object | Primary | Alias | Actually | Locale files carrying it |
+|---|---|---|---|---:|
+| `dso/lmc` | Large Magellanic Cloud | Nubecula Major | Latin | 24 |
+| `dso/smc` | Small Magellanic Cloud | Nubecula Minor | Latin | 24 |
+| `star/alphekka` | Alphekka | Alphecca | Arabic transliteration variant | 20 |
+| `star/alnath` | Alnath | Elnath | Arabic transliteration variant | 19 |
+| `star/mirphak` | Mirphak | Mirfak | Arabic transliteration variant | 19 |
+| `star/etamin` | Etamin | Eltanin | Arabic transliteration variant | 18 |
+| `star/phad` | Phad | Phecda | Arabic transliteration variant | 17 |
+| `dso/m44` | Beehive Cluster | Praesepe | Latin | 14 |
 
-These move to `universal.csv`, where every locale gets them. Nobody should be translating
-`Praesepe` or `Elnath`, and a French user typing either should find the object. Without the
-move, this decision silently removes them from 30 locales' search — which would read as a
-coverage gap while actually being a data-classification bug.
+These move to `universal.csv`: **155 locale rows collapse to 8**. The duplication is the proof —
+a string every locale independently carries verbatim is by definition not a translation. Nobody
+should be translating `Praesepe` or `Elnath`, and a French user typing either should find the
+object. Without the move, this decision silently removes them from 30 locales' search, which
+would read as a coverage gap while actually being a data-classification bug.
 
-The remaining 27 (`Seven Sisters`, `Eye of God`, `Blaze Star`, `Silver Dollar Galaxy`,
+**`Matariki` is not one of them and stays in `en.csv`.** It is the Māori name for the Pleiades,
+and it appears in exactly one locale file — `en`. It is a Māori word naturalised into New
+Zealand English (Matariki is a public holiday there, called that in English), not a
+language-neutral designation. Promoting it would push a culturally specific name into 30 locales
+that have no use for it. "Not English" and "universal" are different tests, and this is the case
+that separates them.
+
+The remaining 27 aliases (`Seven Sisters`, `Eye of God`, `Blaze Star`, `Silver Dollar Galaxy`,
 `Hercules Globular Cluster`, …) are genuine English prose and stay in `en.csv`.
 
 ## Why names stay in the database
@@ -451,8 +464,8 @@ In scope. Concrete items found while measuring:
 - **1,871 stars with no primary name** — backfill per the precedence rule in Decision 7. All in
   the universal tier; the localized data is clean.
 - **Dead `names` / `designations` columns** in `dso.csv` and `stars.csv` (Decision 10).
-- **Nine language-neutral aliases misfiled in `en.csv`** — promote to `universal.csv`
-  (Decision 11).
+- **Eight language-neutral aliases misfiled in `en.csv`** — promote to `universal.csv`,
+  collapsing 155 duplicated locale rows to 8 (Decision 11).
 - **6,283 rows duplicating English** — kept in source and tagged, dropped at generation
   (Decision 9). Not a defect: mostly IAU proper names identical across languages.
 
@@ -514,9 +527,6 @@ if it holds, it is a live defect for UI strings today. See [Open questions](#ope
 
 - The unit-formatting layer for `size`/`distance`/`mass` (Decision 1) — what it looks like, and
   whether ~318 size values and 240 distances are cleanly parseable back into numbers.
-- Whether `tm` needs a new source type for the two-tier card model, or whether bundled cards
-  simply join the existing `android` source. The `json-cards` source is not retired either way —
-  Decision 8 keeps it carrying `dso/willman_1` and, later, pack content.
 - The per-locale "list is complete" flag (Decision 5) — its representation, and whether it is
   in-band or joins `same_as_parent` in the sidecar.
 - **Whether Play auto-fetches a language split for a per-app locale selection.** Settle it on a
