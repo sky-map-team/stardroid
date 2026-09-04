@@ -142,8 +142,8 @@ sent through a translation model that correctly declines to change them. `size`/
 into 30 languages is 318 model calls per locale to render a number and a unit. Both go to the
 language-free tier; the unit formatting becomes a presentation concern.
 
-This needs a unit-formatting layer that does not exist yet. That is the main implementation
-cost of this decision and should be scoped in the design doc.
+This needs a unit-formatting layer that does not exist yet — see Decision 12, which specifies it
+and records the locale-formatting bugs that motivate it.
 
 ### 2. Object names stay in `source-data/` → Room
 
@@ -366,6 +366,52 @@ that separates them.
 The remaining 27 aliases (`Seven Sisters`, `Eye of God`, `Blaze Star`, `Silver Dollar Galaxy`,
 `Hercules Globular Cluster`, …) are genuine English prose and stay in `en.csv`.
 
+### 12. Measurements become a number plus a unit key, with a prose escape hatch
+
+Decision 1 said `size`, `distance` and `mass` stop being translated prose. This is how, and why
+the obvious version — a plain numeric column — does not work.
+
+**The fields are 97% regular and 3% genuinely prose.** Of 647 values across the three fields,
+627 decompose into `[approximation marker] [number] [unit phrase] [optional qualifier]`. The
+other 20 carry information a numeric column cannot hold:
+
+| Shape | Example |
+|---|---|
+| Three-axis dimensions | `15 × 12 × 11 km` (asteroids) |
+| Ranges | `~10,000–16,000 light-years (range)` |
+| Labelled sub-values | `Black hole mass: ~21 solar masses` (in the `size` field) |
+| Scientific notation | `1.898 × 10²⁷ kg` |
+| Whole sentences | `Each cluster ~70 light-years across; the pair separated by ~1,000 light-years` |
+
+**The design.** A numeric value stored as data, plus a *unit key* resolving to a translatable
+format string (`%1$s square degrees`, `%1$s light-years across`), rendered through ICU at display
+time. Qualifiers become their own keys. There are **19 distinct unit phrases and 9 qualifiers —
+28 translatable strings replacing 647 translated measurements per locale.** The 20 irregular
+values keep a free-text override field that stays translated prose and wins when present.
+
+**The justification is correctness, not translation volume.** Number formatting is locale-specific
+and the current per-value translation gets it wrong:
+
+- **`hi` is wrong.** Hindi uses the Indian numbering system, which regroups above 100,000:
+  `123,000` should be `1,23,000`. All sampled values keep Western grouping.
+- **`ko` contradicts itself.** `160,000광년` sits beside `20만 광년` — Western grouping and
+  Korean myriad notation, same field, adjacent entries.
+- **`fa` is the only locale that gets it right**, with Perso-Arabic digits and the Arabic
+  thousands separator: `۱۶۰٬۰۰۰ سال نوری`.
+- **Unit phrases drift within a locale.** Hindi renders "light-years across" three ways —
+  `प्रकाश-वर्ष व्यास`, `प्रकाश-वर्ष चौड़ा`, `प्रकाश-वर्ष चौड़ाई में` — because each of the 318
+  values was translated independently against no shared unit vocabulary.
+
+A formatter cannot make these mistakes and a translator cannot reliably avoid them: rendering
+`1,23,000` correctly is a property of the locale's number system, not of the sentence. One shared
+phrase per unit also cannot drift three ways.
+
+**These are live bugs, not consequences of the pivot.** `hi` and `ko` are wrong in the shipped
+catalog today and could be fixed independently of everything else in this document. The sampling
+covered the Indic and CJK locales plus `ar`/`fa`; `zh-Hans`, `zh-Hant`, `ja`, `th` and `ar` keep
+Western grouping, which is defensible in modern technical writing but is a choice nobody made
+deliberately.
+
 ## Why names stay in the database
 
 Moving names to XML costs 1.90 MB installed / ~0.7 MB download. Against that:
@@ -535,8 +581,6 @@ if it holds, it is a live defect for UI strings today. See [Open questions](#ope
 
 ## Open questions
 
-- The unit-formatting layer for `size`/`distance`/`mass` (Decision 1) — what it looks like, and
-  whether ~318 size values and 240 distances are cleanly parseable back into numbers.
 - **Whether Play auto-fetches a language split for a per-app locale selection.** Settle it on a
   device rather than from documentation: build the `gms` AAB, `bundletool build-apks` +
   `install-apks` with a restricted language set, then change the system language and Sky Map's
