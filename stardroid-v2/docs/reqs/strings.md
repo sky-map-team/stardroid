@@ -179,15 +179,25 @@ the same word four times: `es.csv` has `Alfa Centauri` for `rigil_kentaurus_a` f
 worst in zh-hans (12), zh-hant (10), fa (7), es (7). Aliases are search keys, so a bad one is
 invisible until someone's search silently fails.
 
-### 5. Coverage is per-locale, not counted against English
+### 5. Coverage counts primary names only
 
 If Spanish genuinely has one distinct name where English has five aliases, that object is
-**100% covered** in Spanish. A locale's name list is complete when someone has written it,
-regardless of length.
+**100% covered** in Spanish.
 
-Counting against English is what created the duplicates: it structurally rewards writing
-"Alfa Centauri" four times to satisfy a counter. This needs a per-locale "this list is
-complete" flag in `tm`, analogous to `same_as_parent`.
+This needs no mechanism — it is what the pipeline already does. `tm`'s translatable unit for
+`csv-overrides` is an object's primary row, keyed by object id: `_units_from_rows` skips every
+row with `is_primary=0`. Coverage is computed over units, so there is exactly one per object per
+locale and alias cardinality is structurally invisible to it.
+
+An earlier draft of this document proposed a per-locale "list is complete" flag. That was a
+leftover from assuming names would become XML `<string-array>`s, where the whole array is one
+variable-length unit and "is this list finished?" cannot be answered from the data. Decisions 2
+and 4 dissolved the problem: names stay in CSV with per-row granularity, and aliases are not
+translation units at all. No flag is needed.
+
+What the alternative would have cost is worth recording, because it is what created the 97
+duplicate rows: counting a locale's aliases against English structurally rewards writing
+"Alfa Centauri" four times to satisfy a counter.
 
 ### 6. The generated DB is pruned to the 28 core languages
 
@@ -527,8 +537,6 @@ if it holds, it is a live defect for UI strings today. See [Open questions](#ope
 
 - The unit-formatting layer for `size`/`distance`/`mass` (Decision 1) — what it looks like, and
   whether ~318 size values and 240 distances are cleanly parseable back into numbers.
-- The per-locale "list is complete" flag (Decision 5) — its representation, and whether it is
-  in-band or joins `same_as_parent` in the sidecar.
 - **Whether Play auto-fetches a language split for a per-app locale selection.** Settle it on a
   device rather than from documentation: build the `gms` AAB, `bundletool build-apks` +
   `install-apks` with a restricted language set, then change the system language and Sky Map's
