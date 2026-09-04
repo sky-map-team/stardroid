@@ -308,6 +308,41 @@ and 62 overlap `stars.csv`. The split is bulk tabular data versus sparse curated
 is sound; the name is misleading, and its `ra`/`dec`/`magnitude`/`search_fov` for 10 objects do
 genuinely overlap the CSVs' job.
 
+### 11. English aliases are never copied into another locale
+
+`tm` currently copies the baseline's alias rows verbatim when it introduces an object into a
+locale that lacked it, so a freshly-translated French object arrives carrying English
+alternates. It should not. A French user sees French names and universal designations; an
+English alias on a French info card is the same defect as an English label.
+
+The consequence is accepted: because fallback is whole-object, a locale gets its translated
+primary and *no* alternates until someone writes them. That is the correct trade — no alternates
+is a smaller wrong than wrong-language alternates, and the gap is visible as missing content
+rather than disguised as translated content.
+
+**But this only holds once language-neutral aliases are reclassified.** `en.csv` has just 36
+alias rows, and nine of them are not English:
+
+| Object | Primary | Alias | Actually |
+|---|---|---|---|
+| `star/alnath` | Alnath | Elnath | Arabic transliteration variant |
+| `star/alphekka` | Alphekka | Alphecca | Arabic transliteration variant |
+| `star/etamin` | Etamin | Eltanin | Arabic transliteration variant |
+| `star/mirphak` | Mirphak | Mirfak | Arabic transliteration variant |
+| `star/phad` | Phad | Phecda | Arabic transliteration variant |
+| `dso/m44` | Beehive Cluster | Praesepe | Latin |
+| `dso/lmc` | Large Magellanic Cloud | Nubecula Major | Latin |
+| `dso/smc` | Small Magellanic Cloud | Nubecula Minor | Latin |
+| `dso/m45` | Pleiades | Matariki | Māori |
+
+These move to `universal.csv`, where every locale gets them. Nobody should be translating
+`Praesepe` or `Elnath`, and a French user typing either should find the object. Without the
+move, this decision silently removes them from 30 locales' search — which would read as a
+coverage gap while actually being a data-classification bug.
+
+The remaining 27 (`Seven Sisters`, `Eye of God`, `Blaze Star`, `Silver Dollar Galaxy`,
+`Hercules Globular Cluster`, …) are genuine English prose and stay in `en.csv`.
+
 ## Why names stay in the database
 
 Moving names to XML costs 1.90 MB installed / ~0.7 MB download. Against that:
@@ -416,6 +451,8 @@ In scope. Concrete items found while measuring:
 - **1,871 stars with no primary name** — backfill per the precedence rule in Decision 7. All in
   the universal tier; the localized data is clean.
 - **Dead `names` / `designations` columns** in `dso.csv` and `stars.csv` (Decision 10).
+- **Nine language-neutral aliases misfiled in `en.csv`** — promote to `universal.csv`
+  (Decision 11).
 - **6,283 rows duplicating English** — kept in source and tagged, dropped at generation
   (Decision 9). Not a defect: mostly IAU proper names identical across languages.
 
@@ -489,7 +526,3 @@ if it holds, it is a live defect for UI strings today. See [Open questions](#ope
   need `SplitInstallManager` regardless of what happens to card prose.
 - How the in-app coverage diagnostic distinguishes a delivery gap from a coverage gap
   (Decision 3).
-- **Whether `tm` should copy English alias rows into a locale it is introducing an object to.**
-  It does today. Because fallback is whole-object, the alternative is that the locale shows a
-  translated primary and *no* alternates at all. So the choice is English alternates on a
-  translated info card, or none — neither obviously right, and currently unstated.
