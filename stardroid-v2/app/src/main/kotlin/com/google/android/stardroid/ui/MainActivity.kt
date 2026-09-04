@@ -35,6 +35,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import androidx.core.view.WindowCompat
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.lifecycleScope
@@ -379,6 +380,13 @@ class MainActivity : ComponentActivity() {
         // v1 kept the screen alive unconditionally while the map is up (stargazers stare,
         // they don't touch); the flag replaces v1's belt-and-braces SCREEN_BRIGHT_WAKE_LOCK.
         window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
+        // The postSplashScreenTheme's windowFullscreen hides the status bar, but leaves the
+        // window fitting itself around the navigation bar — opaque nav bar on API <35, where
+        // the OS doesn't yet force edge-to-edge (R2.2/R2.4's cutout fixes already assume the
+        // sky extends under both bars). This is what makes every navigationBarsPadding() call
+        // in MapScreen/MapChrome mean something instead of resolving to ~0.
+        WindowCompat.setDecorFitsSystemWindows(window, false)
+        window.isNavigationBarContrastEnforced = false
         displayRotation.rotation.value = currentDisplayRotation()
         // v1 StardroidApplication's per-process start snapshot; rotation recreates this
         // activity, so only the first creation logs.
