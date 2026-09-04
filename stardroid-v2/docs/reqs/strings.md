@@ -48,6 +48,7 @@ so every user downloads all 31 locales.
 |---|---:|---:|
 | Today | 9.42 MB | 3.39 MB |
 | **Cards → XML, names stay in DB** | **3.32 MB** | ~1.2 MB |
+| ...plus dropping same-as-parent rows at generation (Decision 9) | **~2.50 MB** | ~0.9 MB |
 | Cards *and* names → XML | 1.42 MB | ~0.5 MB |
 
 Moving names as well buys a further 1.90 MB installed / ~0.7 MB download. It was rejected: see
@@ -251,6 +252,62 @@ magnitude 15.4, it is beyond naked-eye and most amateur telescopes, so a regress
 path costs nothing user-visible while still failing the test. Its `image_credit` already reads
 "Sky Map team (it's very faint)".
 
+### 9. Same-as-parent row sets are dropped at generation, not in source
+
+6,283 name rows across 6,147 `(object, locale)` groups duplicate English entirely — mostly IAU
+proper names that genuinely are identical in other languages (`Baten Kaitos`, `Cor Caroli`,
+`Kaus Borealis`, `Tania Australis`, `Nubecula Major`). They are correct data, not a defect, and
+the fallback chain already resolves them without help.
+
+**Source keeps them, tagged `same_as_parent`. The generator omits them.** Keeping them in
+`names/*.csv` is what makes coverage honest and stops `tm` retranslating them every run;
+omitting them from `skymap.db` cuts `object_name` by 32% and takes the post-pivot DB from
+3.32 MB to **~2.5 MB**.
+
+`tm compact` is not the mechanism. It marks rather than deletes — its write path states that
+"same_as_parent units are included too: their `.value` already equals what the fallback chain
+resolves to" — which is the behaviour we want in source, and the reason the drop has to happen
+at build time instead.
+
+**The generator must test the whole row set, never individual rows.** Fallback is whole-object:
+`pickByChain` takes the earliest chain locale with *any* row for an object and uses only that
+locale's rows. 183 groups are partially identical — a translated alias beside an
+identical-to-English primary. Dropping the primary there would leave the locale holding rows but
+no primary, violating Decision 7 and resolving the map label to an alias. A locale's rows for an
+object come out only if *all* of them are redundant.
+
+### 10. The dead `names` and `designations` columns are deleted
+
+`dso.csv` and `stars.csv` each carry a `names` column, and `dso.csv` a `designations` column.
+**Nothing reads them.** `SourceDataLoader` takes `id`, `ra_deg`, `dec_deg`, `magnitude` from
+`stars.csv` and adds `type`/`size_arcmin` from `dso.csv`; every name in the DB comes from
+`source-data/names/`. They are residue from `tools/harvest-v1/harvest.py`.
+
+They are also a worse version of what replaced them — a hand-maintained lowercase, unpunctuated,
+ASCII-transliterated alias layer that `object_name.name_normalized` plus FTS now derives
+automatically:
+
+| CSV column | `names/en.csv` |
+|---|---|
+| `crab nebula` | `Crab Nebula` |
+| `scorpions tail` | `Scorpion's Tail` |
+| `hercules_gc`, `eagle_nebula`, `pinwheel_galaxy` | the proper names |
+| `h and chi Persei` | `h and χ Persei` |
+| `Cygnus X 1` | `Cygnus X-1` |
+
+And they have rotted, which is what dead data does: `m45` lists `pleiades, seven sisters` where
+`names/en.csv` has `Matariki, Pleiades, Seven Sisters`; `omega_centauri` says `omega centauri`
+against `Omega Centauri Globular Cluster`; `star/n25` has `25` and no `en.csv` entry at all.
+Meanwhile 134 of 137 `designations` values are already fully present in `universal.csv`.
+
+`objects.json` is **not** part of this problem and stays. It is a sidecar of 260 sparse
+hand-authored attributes — `image_ref` (250), `see_also` (31), `type` (36), `parent` (16),
+`activity` (10) — spanning kinds that have no CSV at all, since constellations come from
+`constellations/iau.json` and planets and moons are computed. Only 73 entries overlap `dso.csv`
+and 62 overlap `stars.csv`. The split is bulk tabular data versus sparse curated extras, which
+is sound; the name is misleading, and its `ra`/`dec`/`magnitude`/`search_fov` for 10 objects do
+genuinely overlap the CSVs' job.
+
 ## Why names stay in the database
 
 Moving names to XML costs 1.90 MB installed / ~0.7 MB download. Against that:
@@ -358,6 +415,9 @@ In scope. Concrete items found while measuring:
 - **`ru` has names but no info cards; `ca`/`hu` have both but are non-core** (Decision 6).
 - **1,871 stars with no primary name** — backfill per the precedence rule in Decision 7. All in
   the universal tier; the localized data is clean.
+- **Dead `names` / `designations` columns** in `dso.csv` and `stars.csv` (Decision 10).
+- **6,283 rows duplicating English** — kept in source and tagged, dropped at generation
+  (Decision 9). Not a defect: mostly IAU proper names identical across languages.
 
 ---
 
@@ -429,3 +489,7 @@ if it holds, it is a live defect for UI strings today. See [Open questions](#ope
   need `SplitInstallManager` regardless of what happens to card prose.
 - How the in-app coverage diagnostic distinguishes a delivery gap from a coverage gap
   (Decision 3).
+- **Whether `tm` should copy English alias rows into a locale it is introducing an object to.**
+  It does today. Because fallback is whole-object, the alternative is that the locale shows a
+  translated primary and *no* alternates at all. So the choice is English alternates on a
+  translated info card, or none — neither obviously right, and currently unstated.
