@@ -108,11 +108,12 @@ Step 1 (e.g. `2.0.0` and `Jupiter`).
    git push origin master
    ```
 
-3. Tag the commit — use a v2-distinguishing tag scheme since tags are shared with v1
-   (ask the user for the exact tag format if unsure, e.g. `v2-<version>` vs `stardroid-v2-<version>`):
+3. Tag the commit — the established convention (already used for `v2.0.0`, `v2.0.1`, and
+   `v2.0.0-betaXX`) is `v2.<version>`, e.g. `v2.0.2`. Confirm with the user if a release ever
+   needs to deviate from this:
    ```bash
-   git tag <agreed-tag>
-   git push origin <agreed-tag>
+   git tag v2.<version>
+   git push origin v2.<version>
    ```
 
 4. Build the signed release APK for direct download (the `internal` fastlane lane builds an AAB
