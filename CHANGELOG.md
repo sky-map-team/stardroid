@@ -5,6 +5,17 @@ All notable changes to Sky Map are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [2.0.2:Apollo] (v2) - 2026-09-05
+
+<img src="stardroid-v2/assets/release-icons/2.0.2_apollo_icon.png" width="80" alt="Apollo" />
+
+### Fixed
+- Enabled true edge-to-edge display in the main activity.
+- Fixed the Time Travel dialog's "Set date"/"Set time" buttons squeezing into an unreadable
+  sliver when a long translation didn't fit both on one row — they now wrap instead.
+
+---
+
 ## [2.0.1:Apollo] (v2) - 2026-09-03
 
 <img src="stardroid-v2/assets/release-icons/2.0.1_apollo_icon.png" width="80" alt="Apollo" />
