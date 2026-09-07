@@ -12,15 +12,15 @@ Single-activity Navigation-Compose graph:
 
 ```
 map (start)                      settings          gallery
-  ├─ dialogs/sheets owned by      diagnostics       locationManagement
-  │  map features (search         compassCalibration
-  │  results, object info,        onboarding (conditional start, see below)
-  │  time travel, help, …)
+  ├─ dialogs/sheets owned by      options           locationManagement
+  │  map features (search         diagnostics
+  │  results, object info,        compassCalibration
+  │  time travel, layers, …)      onboarding (conditional start, see below)
 ```
 
 *Status (D48)*: implemented. Map (or the warm welcome) is the start destination; settings,
-gallery, diagnostics, and calibration are destinations; dialogs/sheets (including help and
-the D43 location sheet) stay map-owned.
+options, gallery, diagnostics, and calibration are destinations; dialogs/sheets (notably the
+D43 location sheet) stay map-owned.
 
 ## Startup routing (port of `StartupRouter`)
 

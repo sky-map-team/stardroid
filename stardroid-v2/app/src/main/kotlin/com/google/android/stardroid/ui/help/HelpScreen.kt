@@ -96,7 +96,7 @@ fun HelpScreen(
         topBar = {
             LargeTopAppBar(
                 title = { Text(stringResource(R.string.help_dialog_title)) },
-                windowInsets = topBarWindowInsets(stringResource(R.string.help_dialog_title)),
+                windowInsets = topBarWindowInsets(),
                 navigationIcon = {
                     IconButton(onClick = onBack) {
                         Icon(

@@ -84,7 +84,7 @@ fun SettingsScreen(
         topBar = {
             TopAppBar(
                 title = { Text(stringResource(R.string.settings_title)) },
-                windowInsets = topBarWindowInsets(stringResource(R.string.settings_title)),
+                windowInsets = topBarWindowInsets(),
                 navigationIcon = {
                     IconButton(onClick = onBack) {
                         Icon(
@@ -208,7 +208,7 @@ fun SettingsScreen(
                     checked = state.enableAnalytics,
                     onCheckedChange = viewModel::setEnableAnalytics,
                 )
-                // Relocated from the ⋮ overflow sheet: a sensor/location readout is a
+                // Relocated from the ⋮ menu: a sensor/location readout is a
                 // support tool, not something most people need most of the time, and it
                 // was crowding out Help there (Hannah's feedback, 2026-08). "Settings →
                 // Diagnostics" stays an easy instruction to give in a support reply.

@@ -58,7 +58,9 @@ outline, same corner radius family), right-aligned text in tabular figures
 `labelSmall`-ish caps. Day mode: dim neutral text with the theme primary reserved for the
 correction row; night mode: everything through the red scheme like the rest of the chrome.
 Target width ≈ 120–140 dp; four rows ≈ 88 dp tall — comparable footprint to the
-time-travel player, but in a corner.
+time-travel player, but in a corner. As built, the card holds a fixed width (176 dp —
+room for the correction row's widest value plus its reset button), so ticking values and
+rows appearing never resize it.
 
 ## Data plumbing
 

@@ -34,7 +34,7 @@ import com.google.android.stardroid.ui.common.topBarWindowInsets
 /**
  * The What's New & Credits destination (D74): the release notes, the support pitch, and the
  * credits that used to be appended to the bottom of the Help document, now first-class and
- * reachable from the overflow sheet. The startup `WhatsNewDialog` still shows the short
+ * reachable from the options page. The startup `WhatsNewDialog` still shows the short
  * release notes once per upgrade; this screen is where they stay findable afterwards.
  */
 @OptIn(ExperimentalMaterial3Api::class)
@@ -49,8 +49,7 @@ fun WhatsNewScreen(
         topBar = {
             LargeTopAppBar(
                 title = { Text(stringResource(R.string.whats_new_screen_title)) },
-                windowInsets =
-                    topBarWindowInsets(stringResource(R.string.whats_new_screen_title)),
+                windowInsets = topBarWindowInsets(),
                 navigationIcon = {
                     IconButton(onClick = onBack) {
                         Icon(

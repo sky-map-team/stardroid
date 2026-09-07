@@ -485,7 +485,7 @@ time plus something to look at. That is why the scrubber does not subsume it.
 
 What changes:
 
-- **The dialog becomes a sheet**, sibling to the Layers and ⋮ sheets (D57), opened by
+- **The dialog becomes a sheet**, sibling to the Layers sheet (D57), opened by
   **tapping the date readout**. The readout is the affordance, so no button is spent on it
   and presets cost no permanent pixels.
 - **Grouped by how you reach for them** — *Tonight* (computed, relative to where the clock

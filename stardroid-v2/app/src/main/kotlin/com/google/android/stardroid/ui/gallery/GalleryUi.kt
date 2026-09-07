@@ -83,7 +83,7 @@ fun GalleryScreen(
         topBar = {
             TopAppBar(
                 title = { Text(stringResource(R.string.gallery_title)) },
-                windowInsets = topBarWindowInsets(stringResource(R.string.gallery_title)),
+                windowInsets = topBarWindowInsets(),
                 navigationIcon = {
                     IconButton(onClick = onBack) {
                         Icon(

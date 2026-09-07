@@ -980,8 +980,9 @@ class MapViewModel(
          * D86 dropped this from 0.5°, and on-device evaluation dropped it again from 0.1°. At
          * 0.1° only Jupiter and Saturn resolve as discs; Mars and Mercury are 21 px and the ice
          * giants sit on the absolute floor. At 0.03° Mars and Mercury reach 71 px, Uranus 31 and
-         * Neptune 20, while Jupiter's 256-pixel texture is magnified only 1.4x. Going further to
-         * 0.02° would magnify it 2.1x and undo the sharpness the re-derived art (D85) bought.
+         * Neptune 20, and Jupiter's disc spans ~46% of the screen with Saturn's rings resolved
+         * (solar-system-imagery.md §3) — exactly the framing the 512-pixel art (D85) was sized
+         * for. Going deeper magnifies that art past its native resolution, and the discs soften.
          */
         const val MIN_FOV_DEG = 0.03
 

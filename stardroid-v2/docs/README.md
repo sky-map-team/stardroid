@@ -22,7 +22,7 @@ the two ever drift.
 | [design/catalog-and-schema.md](design/catalog-and-schema.md) | `:core:catalog`, Room schema, build-time DB generation | slices 4a–4d, D32–D35 |
 | [design/layers-and-app.md](design/layers-and-app.md) | Layer system, ViewModel decomposition, app edges | slices 4d–23; **comets still to come** |
 | [design/screens-and-startup.md](design/screens-and-startup.md) | Supporting screens, startup routing, settings | slice 16, D48 |
-| [design/ux-polish.md](design/ux-polish.md) | Two hands-on feedback rounds: chrome, dialogs, time travel, snackbars, location map, meteor layer | slices 20–23, D52–D58, D60; **one loose end — the splash cross-fade** |
+| [design/ux-polish.md](design/ux-polish.md) | Two hands-on feedback rounds: chrome, dialogs, time travel, snackbars, location map, meteor layer | slices 20–23, D52–D58, D60; splash cross-fade landed |
 | [design/map-hud.md](design/map-hud.md) | The top-right map pointing readout — RA/Dec, Alt/Az, FOV, alignment correction | agreed D65, implemented D66 |
 | [design/camera-ar-mode.md](design/camera-ar-mode.md) | Through-camera (AR) mode, drag-to-align, share | D64, D67–D71 (flag-gated, D80) |
 | [design/color-scheme-proposal.md](design/color-scheme-proposal.md) | The "Deep Space / Star Gold" brand palette — rationale and before/after | accepted and implemented, D73 |
@@ -48,6 +48,7 @@ the two ever drift.
 | decisions.md | Running log of product/technical decisions and their rationale — the authority behind every status above |
 | [code-overview.md](code-overview.md) | Top-down tour of the codebase as built — module graph, build machinery, subsystem pointers, doc-health table |
 | [improvements-over-v1.md](improvements-over-v1.md) | The full at-launch feature surface (unflagged only) plus the net-new-vs-v1 highlights drawn from it — the source for help text, store copy, screenshots, and release notes |
+| [CONTRIBUTING-translations.md](CONTRIBUTING-translations.md) | Contributor guide for translation PRs — scope, the `tm_human` / `.tmstate.toml` human-review marking, PR mechanics |
 | [info-card-coverage.md](info-card-coverage.md) | Which labelled objects still lack info cards, why that blocks tap-to-identify, and how to write new ones |
 | [design/sensor-correction-model.md](design/sensor-correction-model.md) | Sensor error physics and why drag-to-align's az/alt correction matches them |
 | [design/ephemeris-accuracy.md](design/ephemeris-accuracy.md) §1–2 | Coordinate-frame audit and the residual error budget (precession fix, D84) |
@@ -184,7 +185,7 @@ rewrite brief in [../README.md](../README.md).
   snackbars, the location map (D52/D53), plus the topocentric Moon (D54) and the
   sun/moon-disc-size stance (D55).
 - **Slice 22** — the three-zone map chrome: layer rail, action cluster, overflow sheet
-  (D56/D57).
+  (D56/D57); the sheet was later replaced by the full-screen ⋮ options page.
 - **Slice 23** — the meteor-shower layer, closing D37's last computed-layer deferral (D58).
 - **Slice 24** — Hilt replaces the hand-wired `AppGraph` for the singleton graph (D59).
 - **Polish and identity** — second hands-on feedback round (D60), the warm welcome rebuilt as
@@ -225,7 +226,6 @@ The complete list of things these docs describe that do **not** exist in the cod
   ([design/render-gles3.md](design/render-gles3.md)).
 - Widgets & notifications phase 4 — conjunctions, moon phases, rise alerts
   ([design/widgets-and-notifications.md](design/widgets-and-notifications.md)).
-- The splash-to-sky cross-fade ([design/ux-polish.md](design/ux-polish.md) item 2, step 2).
 
 For the user-facing view of what v2 adds over v1, the full at-launch feature surface, and
 which features are built but unannounced, see

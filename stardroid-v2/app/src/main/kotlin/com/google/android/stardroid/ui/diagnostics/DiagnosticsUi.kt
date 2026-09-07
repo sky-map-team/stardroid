@@ -103,7 +103,7 @@ fun DiagnosticsScreen(
         topBar = {
             TopAppBar(
                 title = { Text(stringResource(R.string.diagnostics_title)) },
-                windowInsets = topBarWindowInsets(stringResource(R.string.diagnostics_title)),
+                windowInsets = topBarWindowInsets(),
                 navigationIcon = {
                     IconButton(onClick = onBack) {
                         Icon(

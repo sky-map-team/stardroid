@@ -402,11 +402,15 @@ class MainActivity : ComponentActivity() {
         }
 
         val imageLoader = AssetImageLoader(assets)
+        // Splash→sky reveal (ux-polish.md item 2, step 2): a cold start fades the sky in on
+        // first composition; a recreation (rotation, process restore) starts visible.
+        val isRecreation = savedInstanceState != null
         val glRenderer =
             GLSkyRenderer(
                 resources.displayMetrics.density,
                 imageLoader::load,
                 rendererInfoStore::set,
+                onFirstFrame = { if (!isRecreation) runOnUiThread(::revealSky) },
             )
         glSurfaceView =
             GLSurfaceView(this).apply {
@@ -419,6 +423,8 @@ class MainActivity : ComponentActivity() {
                 // Costless when the renderer clears opaque (the non-AR default).
                 holder.setFormat(PixelFormat.TRANSLUCENT)
                 setZOrderMediaOverlay(true)
+                // Covered until the renderer reports its first drawn frame; see revealSky.
+                alpha = if (isRecreation) 1f else 0f
             }
         val connector = RenderConnector(glRenderer, glSurfaceView)
         val binder = RenderBinder(connector)
@@ -544,6 +550,11 @@ class MainActivity : ComponentActivity() {
             hasAccelerometer = sensors.hasSensor(SensorKind.ACCELEROMETER),
             hasGyroscope = sensors.hasSensor(SensorKind.GYROSCOPE),
         )
+    }
+
+    /** Cross-fades the sky in over ~1 s (ux-polish.md item 2, step 2); runs on the UI thread. */
+    private fun revealSky() {
+        glSurfaceView.animate().alpha(1f).setDuration(SKY_REVEAL_MILLIS).start()
     }
 
     private fun applyScreenDimming(
@@ -727,6 +738,9 @@ class MainActivity : ComponentActivity() {
 
     companion object {
         private const val SAVED_SESSION_START_TIME_KEY = "saved_session_start_time"
+
+        /** The splash→sky cross-fade length (ux-polish.md item 2, step 2). */
+        private const val SKY_REVEAL_MILLIS = 1_000L
 
         /** v1 `DiagnosticActivity.updateLocation`'s GPS-provider probe. */
         private fun gpsStatus(context: Context): GpsStatus {

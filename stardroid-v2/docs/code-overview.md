@@ -282,7 +282,8 @@ accel+magnetometer fusion fallback and speed/damping settings; `SensorAccuracyMo
 calibration prompts.
 
 `MapChrome` implements the three-zone chrome (D56/D57): layer rail (with `ifroom` overflow
-semantics), action cluster, overflow sheet — all tagged with `ChromeTourTarget` so the warm
+semantics), action cluster, and the ⋮ button that opens the full-screen options page
+(`ui/options/OptionsScreen.kt`) — all tagged with `ChromeTourTarget` so the warm
 welcome can spotlight the *real* chrome with canned state.
 
 ### Supporting screens

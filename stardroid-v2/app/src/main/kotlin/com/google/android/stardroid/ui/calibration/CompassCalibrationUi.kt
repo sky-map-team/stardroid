@@ -95,7 +95,7 @@ fun CompassCalibrationScreen(
         topBar = {
             TopAppBar(
                 title = { Text(barTitle) },
-                windowInsets = topBarWindowInsets(barTitle),
+                windowInsets = topBarWindowInsets(),
                 navigationIcon = {
                     IconButton(onClick = onBack) {
                         Icon(

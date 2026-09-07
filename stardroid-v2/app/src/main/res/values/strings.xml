@@ -94,7 +94,7 @@
     <string name="layers_group_reference" translation_description="Layers-sheet group header for reference elements drawn over the sky (coordinate grid, horizon, ecliptic).">Reference</string>
     <string name="layers_group_display" translation_description="Layers-sheet group header for display settings that change how the sky is rendered rather than what is drawn.">Display</string>
     <string name="show_layers" translation_description="Accessibility description and label for the button opening the layer-visibility sheet, which holds the layers that do not fit on the rail plus display options.">More layers and options</string>
-    <string name="more_button" translation_description="Accessibility label and tooltip for the map-screen button (three vertical dots) opening the overflow menu of further destinations such as Gallery and Settings.">More options</string>
+    <string name="more_button" translation_description="Accessibility label and tooltip for the map-screen button (three vertical dots) opening the full-screen options page of further destinations such as Gallery and Settings.">More options</string>
     <string name="night_mode" translation_description="Label for the toggle switching the display to a dim red night-vision-preserving mode.">Night mode</string>
     <string name="switch_to_manual" translation_description="Tooltip and accessibility label for the button that switches the map from auto (sensor-driven) mode to manual (drag) mode.">Switch to manual mode</string>
     <string name="switch_to_auto" translation_description="Tooltip and accessibility label for the button that switches the map from manual (drag) mode to auto (sensor-driven) mode.">Switch to auto mode</string>
@@ -134,7 +134,7 @@
     <string name="ar_iso_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual ISO sensitivity in through-camera mode.">Camera ISO</string>
     <string name="ar_shutter_slider_label" translation_description="Very short label for the temporary developer slider setting the camera\'s manual shutter (exposure) time in through-camera mode.">Shtr</string>
     <string name="ar_shutter_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual shutter (exposure) time in through-camera mode.">Camera shutter time</string>
-    <string name="share_button" translation_description="Overflow-menu row that captures the current sky view as an image and opens the system share sheet.">Share the sky</string>
+    <string name="share_button" translation_description="Row on the options page (opened with the three-dots button) that captures the current sky view as an image and opens the system share sheet.">Share the sky</string>
     <string name="share_chooser_title" translation_description="Title of the system share sheet when sharing a captured sky image.">Share this sky</string>
     <string name="share_invitation" translation_description="Short invitation stamped on the footer of shared sky images, above the store link.">See what you\'re looking at — get Sky Map free</string>
     <string name="share_text" translation_description="Text accompanying a shared sky image in apps that accept both an image and text. %1$s is the app-store link.">See what you\'re looking at — get Sky Map free: %1$s</string>

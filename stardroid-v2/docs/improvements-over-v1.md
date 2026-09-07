@@ -123,7 +123,7 @@ bundled DB (D63). **Use 3,186 in copy** — the remainder is seed data for a fut
   SharedPreferences while v2 reads DataStore, and v1's preferences are deliberately not
   migrated (D1), so the pager shows for everyone (D80). Its experiment flag was retired at
   launch — this is a fully shipped feature, safe for help text and store copy.
-- The tour is replayable any time via overflow → Tutorial
+- The tour is replayable any time via the ⋮ options page → Tutorial
 - Settings in five sections: Controls, Appearance, Sensors, Notifications, Other
 - Analytics opt-out on gms; the F-Droid build has no analytics at all
 - 31 UI locales — 28 core languages fully translated including Help, plus 3 partial/legacy
@@ -205,7 +205,7 @@ or [the full surface](#the-full-at-launch-feature-surface) above with a real
 | Feature | Flag | Decisions |
 |---|---|---|
 | Through-camera (AR) mode, with drag-to-align | `camera_ar_enabled` | D64, D67, D68 |
-| Share the sky (overflow row + in-AR shutter, camera composite layouts) | `share_sky_enabled` | D70, D71 |
+| Share the sky (options-page row + in-AR shutter, camera composite layouts) | `share_sky_enabled` | D70, D71 |
 | Moon-phase home-screen widget | `moon_widget_enabled` | D75 |
 | Tonight's-Sky and Countdown widgets | `tonight_widget_enabled` | D76 |
 | Shower-peak and tonight-digest notifications | `notifications_enabled` | D77 |

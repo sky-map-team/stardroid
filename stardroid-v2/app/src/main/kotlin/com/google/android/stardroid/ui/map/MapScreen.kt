@@ -117,6 +117,7 @@ import com.google.android.stardroid.ui.timetravel.TravelEffect
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.cancelAndJoin
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.filterNotNull
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
@@ -127,6 +128,13 @@ import kotlin.math.min
 
 /** What [ImageExpandOverlay] needs from an [ObjectInfo] — small enough to survive rotation. */
 private data class ExpandedImage(val imageRef: String, val name: String, val credit: String?)
+
+/**
+ * A one-shot action the options page hands back to the map: its Location and Share rows
+ * are map-anchored (the location sheet and the sky capture live on the map), so they pop
+ * home and deliver the action through the nav back stack entry's saved state.
+ */
+enum class PendingMapAction { OPEN_LOCATION, SHARE_SKY }
 
 private val ExpandedImageSaver =
     Saver<ExpandedImage?, List<String?>>(
@@ -155,11 +163,15 @@ fun MapScreen(
     calibrationViewModel: CompassCalibrationViewModel,
     sensorWarningSuppressed: Boolean,
     onOpenSettings: () -> Unit,
+    onOpenOptions: () -> Unit,
     onOpenGallery: () -> Unit,
     onOpenTutorial: () -> Unit,
     onOpenHelp: () -> Unit,
     onOpenWhatsNew: () -> Unit,
     onOpenCalibration: (userInitiated: Boolean) -> Unit,
+    // The options page's two map-anchored rows arrive here after it pops back home.
+    mapActionRequests: StateFlow<PendingMapAction?>,
+    onPendingMapActionConsumed: () -> Unit,
     onRequestLocationPermission: () -> Unit,
     onRequestAutoLocation: () -> Unit,
     onOpenAppSettings: () -> Unit,
@@ -189,7 +201,6 @@ fun MapScreen(
     // diagnostics, and calibration are no longer local booleans here — they're Navigation
     // destinations (D48), reached through the onOpenX callbacks below.
     var showLayersSheet by rememberSaveable { mutableStateOf(false) }
-    var showOverflowSheet by rememberSaveable { mutableStateOf(false) }
     var showTimeTravelDialog by rememberSaveable { mutableStateOf(false) }
     var showSearchDialog by rememberSaveable { mutableStateOf(false) }
     var showLocationSheet by rememberSaveable { mutableStateOf(false) }
@@ -371,6 +382,22 @@ fun MapScreen(
             // otherwise be leaked outright.
             map?.recycle()
             still?.recycle()
+        }
+    }
+    // The options page's Location/Share rows deliver their action on return; consume it and
+    // act here, where the sheet state and the GL surface the share captures both live.
+    val pendingMapAction by mapActionRequests.collectAsStateWithLifecycle()
+    LaunchedEffect(pendingMapAction) {
+        when (pendingMapAction) {
+            PendingMapAction.OPEN_LOCATION -> {
+                onPendingMapActionConsumed()
+                showLocationSheet = true
+            }
+            PendingMapAction.SHARE_SKY -> {
+                onPendingMapActionConsumed()
+                startShare()
+            }
+            null -> Unit
         }
     }
     // The camera layer's plumbing lives while the layer is on: the preview binds under the
@@ -675,7 +702,7 @@ fun MapScreen(
                     showTimeTravelDialog = true
                 },
                 onOpenLayersSheet = { showLayersSheet = true },
-                onOpenOverflow = { showOverflowSheet = true },
+                onOpenOptions = onOpenOptions,
             )
         }
 
@@ -733,51 +760,6 @@ fun MapScreen(
                         }
                     }
                 },
-            )
-        }
-
-        if (showOverflowSheet) {
-            OverflowSheet(
-                onShareSky = {
-                    showOverflowSheet = false
-                    startShare()
-                },
-                shareEnabled = shareEnabled,
-                onOpenGallery = {
-                    showOverflowSheet = false
-                    mapViewModel.logMenuItem(AnalyticsEvents.GALLERY_OPENED_LABEL)
-                    onOpenGallery()
-                },
-                onOpenLocation = {
-                    showOverflowSheet = false
-                    showLocationSheet = true
-                },
-                onOpenCalibration = {
-                    showOverflowSheet = false
-                    mapViewModel.logMenuItem(AnalyticsEvents.CALIBRATION_OPENED_LABEL)
-                    onOpenCalibration(true)
-                },
-                onOpenTutorial = {
-                    showOverflowSheet = false
-                    mapViewModel.logMenuItem(AnalyticsEvents.TUTORIAL_OPENED_LABEL)
-                    onOpenTutorial()
-                },
-                onOpenHelp = {
-                    showOverflowSheet = false
-                    mapViewModel.logMenuItem(AnalyticsEvents.HELP_OPENED_LABEL)
-                    onOpenHelp()
-                },
-                onOpenWhatsNew = {
-                    showOverflowSheet = false
-                    mapViewModel.logMenuItem(AnalyticsEvents.WHATS_NEW_OPENED_LABEL)
-                    onOpenWhatsNew()
-                },
-                onOpenSettings = {
-                    showOverflowSheet = false
-                    mapViewModel.logMenuItem(AnalyticsEvents.SETTINGS_OPENED_LABEL)
-                    onOpenSettings()
-                },
-                onDismiss = { showOverflowSheet = false },
             )
         }
 

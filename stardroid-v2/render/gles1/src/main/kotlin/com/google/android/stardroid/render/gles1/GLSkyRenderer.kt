@@ -52,11 +52,15 @@ import javax.microedition.khronos.opengles.GL11
  * @param onRendererInfo invoked on the GL thread once per surface creation with what the GPU
  *   and driver turned out to be (diagnostics only — see [RendererInfo]). Called again after
  *   EGL context loss, since the replacement context may not be the same implementation.
+ * @param onFirstFrame invoked on the GL thread once, at the end of the first [onDrawFrame]
+ *   that draws actual sky content (the gradient dome, or at least one submitted layer scene) —
+ *   a camera-only frame can precede any layer submit. Never re-armed on EGL context loss.
  */
 class GLSkyRenderer(
     private val density: Float,
     private val imageLoader: (ImageRef) -> Bitmap?,
     private val onRendererInfo: (RendererInfo) -> Unit = {},
+    private val onFirstFrame: () -> Unit = {},
 ) : GLSurfaceView.Renderer, SkyRenderer {
     @Volatile private var camera: SkyCamera? = null
 
@@ -64,6 +68,9 @@ class GLSkyRenderer(
 
     @Volatile private var viewport: Viewport? = null
     private val scenes = ConcurrentHashMap<LayerId, LayerScene>()
+
+    // GL-thread-only: guards the one-shot [onFirstFrame] callback.
+    private var firstFrameReported = false
 
     /** Bumped after every [scenes] mutation so the GL thread knows to rebuild [drawOrder]. */
     private val scenesVersion = AtomicLong()
@@ -317,6 +324,18 @@ class GLSkyRenderer(
             // 4. Labels
             val labelGpu = cachedLabel(gl, layerId, scene, state, viewport.density)
             LabelDrawer.draw(gl, labelGpu, camera, projection, viewport, state)
+        }
+
+        // First frame with real content: a camera-only render can beat the first layer
+        // submit, and revealing that frame would fade the splash into a black surface.
+        // First frame with real content: a camera-only render can beat the first layer
+        // submit, and revealing that frame would fade the splash into a black surface.
+        val hasSkyContent =
+            drawOrder.isNotEmpty() ||
+                (gradient != null && !state.nightMode && !state.transparentBackground)
+        if (!firstFrameReported && hasSkyContent) {
+            firstFrameReported = true
+            onFirstFrame()
         }
     }
 

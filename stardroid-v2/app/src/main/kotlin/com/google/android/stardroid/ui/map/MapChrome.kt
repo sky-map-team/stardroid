@@ -173,7 +173,7 @@ fun MapChrome(
     onOpenSearch: () -> Unit,
     onOpenTimeTravel: () -> Unit,
     onOpenLayersSheet: () -> Unit,
-    onOpenOverflow: () -> Unit,
+    onOpenOptions: () -> Unit,
     modifier: Modifier = Modifier,
     // Null hides the HUD — the warm-welcome tour renders this chrome with canned state and
     // no live pointing to show.
@@ -280,7 +280,7 @@ fun MapChrome(
                 onToggleNightMode = onToggleNightMode,
                 onOpenSearch = onOpenSearch,
                 onOpenTimeTravel = onOpenTimeTravel,
-                onOpenOverflow = onOpenOverflow,
+                onOpenOptions = onOpenOptions,
                 tourTargetModifier = tourTargetModifier,
                 modifier = Modifier.padding(end = 8.dp, bottom = 8.dp),
             )
@@ -687,7 +687,7 @@ private fun ActionCluster(
     onToggleNightMode: () -> Unit,
     onOpenSearch: () -> Unit,
     onOpenTimeTravel: () -> Unit,
-    onOpenOverflow: () -> Unit,
+    onOpenOptions: () -> Unit,
     tourTargetModifier: (ChromeTourTarget) -> Modifier,
     modifier: Modifier = Modifier,
 ) {
@@ -746,13 +746,9 @@ private fun ActionCluster(
                 }
             }
         }
-        // Tonal, not bare: ⋮ is the only way to reach Help, Settings and seven other
-        // destinations, and as an unfilled glyph on the starfield it read as decoration and
-        // went unfound (Hannah's feedback, 2026-08). Search keeps the sole filled-primary
-        // slot, so promoting this to match its three neighbours costs no hierarchy.
         ActionTooltip(stringResource(R.string.more_button)) { description ->
             FilledTonalIconButton(
-                onClick = onOpenOverflow,
+                onClick = onOpenOptions,
                 modifier = tourTargetModifier(ChromeTourTarget.Overflow),
             ) {
                 Icon(painterResource(R.drawable.ic_more_vert), description)
@@ -810,75 +806,6 @@ private fun ActionTooltip(
         state = rememberTooltipState(),
     ) {
         content(label)
-    }
-}
-
-/**
- * Zone C: the ⋮ overflow sheet — destinations and one-shot actions, not sky-drawing
- * controls, so they don't earn permanent pixels. Sibling of [LayersSheet]: this sheet
- * navigates away from the map; the Layers sheet configures what it draws.
- */
-@OptIn(ExperimentalMaterial3Api::class)
-@Composable
-fun OverflowSheet(
-    onShareSky: () -> Unit,
-    // Sharing is behind the SHARE_SKY experiment; off, the row simply isn't offered.
-    shareEnabled: Boolean = true,
-    onOpenGallery: () -> Unit,
-    onOpenLocation: () -> Unit,
-    onOpenCalibration: () -> Unit,
-    onOpenTutorial: () -> Unit,
-    onOpenHelp: () -> Unit,
-    onOpenWhatsNew: () -> Unit,
-    onOpenSettings: () -> Unit,
-    onDismiss: () -> Unit,
-) {
-    ModalBottomSheet(onDismissRequest = onDismiss) {
-        Column(
-            Modifier
-                .verticalScroll(rememberScrollState())
-                .padding(horizontal = 12.dp, vertical = 4.dp),
-        ) {
-            // Ordered by when a user needs them, not by how the app is built: Help and
-            // Tutorial were 7th and 6th of nine and fell below the fold on a short phone,
-            // which is precisely where a lost newcomer stops scrolling (Hannah's feedback,
-            // 2026-08). Diagnostics has left for Settings → Advanced entirely.
-            OverflowRow(R.drawable.ic_help, R.string.help_button, onOpenHelp)
-            OverflowRow(R.drawable.ic_tutorial, R.string.tutorial_button, onOpenTutorial)
-            OverflowRow(R.drawable.ic_settings, R.string.settings_button, onOpenSettings)
-            OverflowRow(R.drawable.ic_location, R.string.location_button, onOpenLocation)
-            OverflowRow(R.drawable.ic_gallery, R.string.gallery_button, onOpenGallery)
-            if (shareEnabled) {
-                OverflowRow(R.drawable.ic_share, R.string.share_button, onShareSky)
-            }
-            OverflowRow(R.drawable.ic_whats_new, R.string.whats_new_button, onOpenWhatsNew)
-            OverflowRow(R.drawable.ic_calibrate, R.string.calibration_button, onOpenCalibration)
-        }
-    }
-}
-
-@Composable
-private fun OverflowRow(
-    @DrawableRes icon: Int,
-    @StringRes label: Int,
-    onClick: () -> Unit,
-) {
-    Row(
-        verticalAlignment = Alignment.CenterVertically,
-        horizontalArrangement = Arrangement.spacedBy(16.dp),
-        modifier =
-            Modifier
-                .fillMaxWidth()
-                .clip(CircleShape)
-                .clickable(onClick = onClick)
-                .padding(horizontal = 12.dp, vertical = 14.dp),
-    ) {
-        Icon(
-            painterResource(icon),
-            contentDescription = null,
-            tint = MaterialTheme.colorScheme.primary,
-        )
-        Text(stringResource(label), style = MaterialTheme.typography.bodyLarge)
     }
 }
 

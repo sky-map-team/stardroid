@@ -5,8 +5,8 @@ round were resolved on 2026-07-26 (see Decisions at the end; recorded as D64 in
 `decisions.md`); slice 1 (the camera underlay, plus D69's dev exposure controls), slice 2
 (drag-to-align), slice 3 (map-only Share), and slice 4 (the camera share layouts) are
 implemented. This expands the two stubs already reserved in `ux-polish.md`: the
-"through-camera / AR mode" Display toggle (Layers sheet) and the "Share" action (overflow
-sheet).
+"through-camera / AR mode" Display toggle (Layers sheet) and the "Share" action (options
+page).
 
 An interactive mockup accompanies this doc: open `mockups/camera-ar-mode.html` in a browser.
 It simulates the stacked-plane compositing model (Part 1, Option A) with a misaligned sky to
@@ -233,7 +233,7 @@ Deferred to its own design pass once Part 1 exists, but the exploration so far:
   Play/F-Droid link (QR?) — assets in `assets/branding/` (All Rights Reserved, per the
   split-license rules). `EXTRA_TEXT` carries the invitation + store link for apps that
   take text; the image goes via `FileProvider` + `ACTION_SEND` chooser.
-- **UX home**: Share row in the Zone C overflow sheet (already reserved in `ux-polish.md`),
+- **UX home**: Share row on the Zone C options page (already reserved in `ux-polish.md`),
   plus likely a transient in-AR shutter affordance, since "photograph the moment" is most
   compelling while the camera layer is live. Layout choice (overlay vs side-by-side) at
   share time — a small two-option sheet with thumbnails.

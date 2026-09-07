@@ -13,7 +13,6 @@ import androidx.annotation.StringRes
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.IntrinsicSize
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -38,11 +37,19 @@ import com.google.android.stardroid.R
 import kotlin.math.roundToInt
 
 /**
+ * The card's fixed width, sized to fit the widest row — the correction row's label,
+ * widest value, and 48 dp reset button — so appearing rows and changing values never
+ * resize the card.
+ */
+private val HUD_WIDTH = 176.dp
+
+/**
  * The map HUD (map-hud.md, D65): a compact top-right pointing readout — RA/Dec, Alt/Az,
  * FOV, and the drag-to-align correction with its reset. Information chrome: it renders
  * inside the same show/hide container as the rest of the chrome and re-tints through the
  * theme in night mode. Values arrive pre-throttled ([MapViewModel.hudState]); tabular
- * figures keep them from jittering as they tick.
+ * figures keep them from jittering as they tick, and the fixed card width ([HUD_WIDTH])
+ * keeps appearing rows from resizing it.
  */
 @Composable
 fun MapHud(
@@ -54,7 +61,7 @@ fun MapHud(
     Column(
         modifier =
             modifier
-                .width(IntrinsicSize.Max)
+                .width(HUD_WIDTH)
                 .clip(shape)
                 .background(MaterialTheme.colorScheme.surface.copy(alpha = 0.62f))
                 .border(1.dp, MaterialTheme.colorScheme.outline.copy(alpha = 0.3f), shape)

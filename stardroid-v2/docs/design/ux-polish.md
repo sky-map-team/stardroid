@@ -63,27 +63,38 @@ The four actions used *while looking at the sky*, as icon buttons, plus overflow
   making all four filled-primary would recreate the jumble in miniature.
 - **Time travel**, **Night mode** (moon ↔ sun glyph swap), **Auto/Manual**
   (compass ↔ hand glyph swap) — `FilledTonalIconButton`s.
-- **⋮ More** — a plain `IconButton` opening the overflow sheet. Three-step visual
-  hierarchy: filled → tonal → bare.
+- **⋮ More** — a `FilledTonalIconButton` opening the options page. Three-step visual
+  hierarchy: filled → tonal → bare. (It was a bare `IconButton` in the sheet days; it
+  earned the promotion in slice 22 — ⋮ is the only route to Help, Settings and the other
+  secondary destinations, and as an unfilled glyph on the starfield it read as decoration.)
 
 In **landscape** the cluster moves to the right edge as a bottom-anchored column (roughly
 where v1's right panel sat); the rail stays on the left. Both edges use the existing
 safe-drawing/cutout padding.
 
-### Zone C — the overflow sheet (⋮)
+### Zone C — the options page (⋮)
 
-A `ModalBottomSheet` of icon + label `ListItem` rows: Gallery, Location, Diagnostics,
-Calibrate, Help, Settings. These are destinations and one-shot actions — things that are
-*not* sky-drawing controls — so they don't earn permanent pixels. A future **Share** action
-belongs here too.
+As shipped, ⋮ opens a **full-screen options page** (a Navigation destination like Settings
+or Help, `ui/options/OptionsScreen.kt`) rather than the originally designed bottom sheet —
+a page of icon + label rows: Help, Tutorial, Settings, Location, Gallery, (Share, behind
+the SHARE_SKY experiment), What's New, Calibration. These are destinations and one-shot
+actions — things that are *not* sky-drawing controls — so they don't earn permanent map
+pixels. Ordered by when a user needs them: Help and Tutorial sit on top, where a lost
+newcomer finds them without scrolling (Hannah's feedback, 2026-08). Diagnostics lives in
+Settings → Advanced.
 
-### The Layers sheet, and how the two sheets relate
+Location and Share stay map-anchored (the location sheet and the sky capture live on the
+map), so their rows hand a pending action through the nav back stack's saved state and pop
+home; the map consumes it on return. Everything else navigates onward from the page, so
+e.g. Settings' back button returns to the options page.
 
-The two sheets are siblings (same anatomy, both modal over the map) with distinct jobs:
-the ⋮ sheet **navigates away** from the map; the Layers sheet **configures** what the map
-draws while you stay put. Neither embeds the other. The rail is not a third concept — it is
-a shortcut surface showing the primary subset of the Layers sheet, which is the canonical,
-unbounded list.
+### The Layers sheet, and how the two surfaces relate
+
+The Layers sheet and the options page are siblings with distinct jobs: the ⋮ page
+**navigates away** from the map; the Layers sheet **configures** what the map draws while
+you stay put. Neither embeds the other. The rail is not a third concept — it is a shortcut
+surface showing the primary subset of the Layers sheet, which is the canonical, unbounded
+list.
 
 The Layers sheet replaces the current "boring list of check boxes": the same vector icons,
 labels, and M3 `Switch`es, grouped to mirror the rail:
@@ -117,20 +128,23 @@ truth: the existing layer-visibility preferences).
   rail-to-sheet alternatives evaluated, and the pinnable-rail future) was reviewed on
   2026-07-11; the agreed variant is the one described here.
 
-## 2. Splash screen — ⚠️ step 1 done, step 2 still proposed
+## 2. Splash screen — ✅ done (both steps)
 
 > On first open the splash screen is plain and generic
 
-v2 uses the AndroidX `SplashScreen` API. Two-step proposal:
+v2 uses the AndroidX `SplashScreen` API. Two steps:
 
 1. **Quick — ✅ done:** a branded `windowSplashScreenAnimatedIcon` (the Sky Map logo) on
    `Theme.SkyMap.Starting`, over `splash_navy` from the brand palette (D73); assets live in
    `app/src/main/res/` (All Rights Reserved per the split-license rules).
-2. **Richer — proposed, not built:** v1 faded a full-bleed night-sky photograph
-   (`stardroid_big_image`) into the
-   app. The modern equivalent: keep the system splash minimal, then cross-fade the GL sky in
-   from black over ~1 s on first composition (the renderer already starts black), which
-   reads as "the sky reveals itself" rather than a static plate. No extra asset needed.
+2. **The sky reveals itself — ✅ done:** v1 faded a full-bleed night-sky photograph
+   (`stardroid_big_image`) into the app; v2 keeps the system splash minimal and cross-fades
+   the GL sky in from the window background over ~1 s on first composition. `GLSkyRenderer`
+   grew a one-shot `onFirstFrame` hook (GL thread, fired at the end of the first frame that
+   draws an actual sky); `MainActivity` starts the surface at alpha 0 and animates it to 1
+   when the hook fires, so the sky reads as revealing itself rather than popping in.
+   Rotations and process restores skip the reveal — the surface just starts visible. No
+   extra asset needed.
 
 ## 3. EULA / What's New / Help dialogs — ✅ done (slice 21, D53)
 

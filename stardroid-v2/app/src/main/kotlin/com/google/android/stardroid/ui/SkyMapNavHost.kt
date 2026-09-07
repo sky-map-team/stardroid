@@ -28,8 +28,10 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
 import com.google.android.stardroid.R
+import com.google.android.stardroid.analytics.AnalyticsEvents
 import com.google.android.stardroid.camera.SkyCameraPreview
 import com.google.android.stardroid.catalog.ObjectInfo
+import com.google.android.stardroid.startup.Experiment
 import com.google.android.stardroid.startup.ExperimentConfig
 import com.google.android.stardroid.ui.calibration.CompassCalibrationScreen
 import com.google.android.stardroid.ui.calibration.CompassCalibrationViewModel
@@ -43,11 +45,13 @@ import com.google.android.stardroid.ui.layers.LayersViewModel
 import com.google.android.stardroid.ui.location.LocationViewModel
 import com.google.android.stardroid.ui.map.MapScreen
 import com.google.android.stardroid.ui.map.MapViewModel
+import com.google.android.stardroid.ui.map.PendingMapAction
 import com.google.android.stardroid.ui.objectinfo.ImageExpandOverlay
 import com.google.android.stardroid.ui.objectinfo.MoonWidgetPromoRow
 import com.google.android.stardroid.ui.objectinfo.ObjectInfoCard
 import com.google.android.stardroid.ui.objectinfo.ObjectInfoViewModel
 import com.google.android.stardroid.ui.onboarding.WelcomeScreen
+import com.google.android.stardroid.ui.options.OptionsScreen
 import com.google.android.stardroid.ui.search.SearchViewModel
 import com.google.android.stardroid.ui.settings.SettingsScreen
 import com.google.android.stardroid.ui.settings.SettingsViewModel
@@ -57,6 +61,7 @@ import kotlinx.coroutines.launch
 /** The Navigation-Compose destinations (screens-and-startup.md's graph). */
 object Routes {
     const val MAP = "map"
+    const val OPTIONS = "options"
     const val WELCOME = "welcome?replay={replay}"
     const val SETTINGS = "settings"
     const val GALLERY = "gallery"
@@ -68,6 +73,19 @@ object Routes {
     fun calibration(userInitiated: Boolean) = "calibration/$userInitiated"
 
     fun welcomeReplay() = "welcome?replay=true"
+}
+
+/** Saved-state key on the map entry: a [PendingMapAction] the options page handed over. */
+private const val PENDING_MAP_ACTION = "pending_map_action"
+
+/**
+ * Hands a map-anchored action to the map and returns to it: the options page's Location
+ * and Share rows pop home first, because the location sheet and the sky capture live on
+ * the map screen.
+ */
+private fun NavHostController.requestMapAction(action: PendingMapAction) {
+    previousBackStackEntry?.savedStateHandle?.set(PENDING_MAP_ACTION, action)
+    popBackStack()
 }
 
 /** Presence of the sensors the warm welcome's third slide reports on. */
@@ -133,7 +151,7 @@ fun SkyMapNavHost(
         navController = navController,
         startDestination = if (startOnWelcome) Routes.WELCOME else Routes.MAP,
     ) {
-        composable(Routes.MAP) {
+        composable(Routes.MAP) { entry ->
             MapScreen(
                 glSurfaceView,
                 snackbarHostState,
@@ -148,12 +166,21 @@ fun SkyMapNavHost(
                 calibrationViewModel,
                 sensorWarningSuppressed = sensorWarningSuppressed,
                 onOpenSettings = { navController.navigate(Routes.SETTINGS) },
+                onOpenOptions = { navController.navigate(Routes.OPTIONS) },
                 onOpenGallery = { navController.navigate(Routes.GALLERY) },
                 onOpenTutorial = { navController.navigate(Routes.welcomeReplay()) },
                 onOpenHelp = { navController.navigate(Routes.HELP) },
                 onOpenWhatsNew = { navController.navigate(Routes.WHATS_NEW) },
                 onOpenCalibration = { userInitiated ->
                     navController.navigate(Routes.calibration(userInitiated))
+                },
+                mapActionRequests =
+                    entry.savedStateHandle.getStateFlow<PendingMapAction?>(
+                        PENDING_MAP_ACTION,
+                        null,
+                    ),
+                onPendingMapActionConsumed = {
+                    entry.savedStateHandle[PENDING_MAP_ACTION] = null
                 },
                 onRequestLocationPermission = onRequestLocationPermission,
                 onRequestAutoLocation = onRequestAutoLocation,
@@ -162,6 +189,47 @@ fun SkyMapNavHost(
                 hasCameraPermission = hasCameraPermission,
                 onRequestCameraPermission = onRequestCameraPermission,
                 experimentConfig = experimentConfig,
+            )
+        }
+
+        composable(Routes.OPTIONS) {
+            OptionsScreen(
+                onBack = { navController.popBackStack() },
+                onOpenHelp = {
+                    mapViewModel.logMenuItem(AnalyticsEvents.HELP_OPENED_LABEL)
+                    navController.navigate(Routes.HELP)
+                },
+                onOpenTutorial = {
+                    mapViewModel.logMenuItem(AnalyticsEvents.TUTORIAL_OPENED_LABEL)
+                    navController.navigate(Routes.welcomeReplay())
+                },
+                onOpenSettings = {
+                    mapViewModel.logMenuItem(AnalyticsEvents.SETTINGS_OPENED_LABEL)
+                    navController.navigate(Routes.SETTINGS)
+                },
+                onOpenLocation = {
+                    navController.requestMapAction(PendingMapAction.OPEN_LOCATION)
+                },
+                onOpenGallery = {
+                    mapViewModel.logMenuItem(AnalyticsEvents.GALLERY_OPENED_LABEL)
+                    navController.navigate(Routes.GALLERY)
+                },
+                // Sharing is behind the SHARE_SKY experiment; off, the row simply isn't
+                // offered.
+                onShareSky =
+                    if (experimentConfig.isEnabled(Experiment.SHARE_SKY)) {
+                        { navController.requestMapAction(PendingMapAction.SHARE_SKY) }
+                    } else {
+                        null
+                    },
+                onOpenWhatsNew = {
+                    mapViewModel.logMenuItem(AnalyticsEvents.WHATS_NEW_OPENED_LABEL)
+                    navController.navigate(Routes.WHATS_NEW)
+                },
+                onOpenCalibration = {
+                    mapViewModel.logMenuItem(AnalyticsEvents.CALIBRATION_OPENED_LABEL)
+                    navController.navigate(Routes.calibration(true))
+                },
             )
         }
 
@@ -176,7 +244,7 @@ fun SkyMapNavHost(
                 ),
         ) { entry ->
             // Two ways in: the first-run flow starts here with no map below (navigate to the
-            // map, dropping the welcome), and the overflow sheet's Tutorial replays it over a
+            // map, dropping the welcome), and the options page's Tutorial replays it over a
             // live map (just pop back to it). Replays stay out of the D49 first-run funnel —
             // no analytics, no re-marking the seen preference.
             val replay = entry.arguments?.getBoolean("replay") == true
