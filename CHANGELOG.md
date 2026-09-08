@@ -5,6 +5,18 @@ All notable changes to Sky Map are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [2.0.3:Apollo] (v2) - 2026-09-08
+
+<img src="stardroid-v2/assets/release-icons/2.0.3_apollo_icon.png" width="80" alt="Apollo" />
+
+### Added
+- Optional smoothing for the fused rotation-vector sensor path.
+
+### Fixed
+- Search catalog queries no longer crash the app on exception.
+
+---
+
 ## [2.0.2:Apollo] (v2) - 2026-09-05
 
 <img src="stardroid-v2/assets/release-icons/2.0.2_apollo_icon.png" width="80" alt="Apollo" />
