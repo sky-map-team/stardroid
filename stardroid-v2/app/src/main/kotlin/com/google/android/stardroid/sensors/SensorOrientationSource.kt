@@ -17,6 +17,7 @@ import android.view.Surface
 import com.google.android.stardroid.astronomy.orientationFromSensors
 import com.google.android.stardroid.math.Matrix3
 import com.google.android.stardroid.math.Vector3
+import com.google.android.stardroid.settings.RotationSmoothingLevel
 import com.google.android.stardroid.settings.SensorDamping
 import com.google.android.stardroid.settings.SensorSpeed
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -62,9 +63,11 @@ class SensorOrientationSource(
             when {
                 old.disableGyro != new.disableGyro -> false
                 rotationSensor != null && !old.disableGyro ->
-                    // The settings screen disables speed/damping/reverseMagneticZ while the
-                    // gyro path is active, so they can't have changed underneath us here.
-                    true
+                    // The settings screen hides speed/damping/reverseMagneticZ while the fused
+                    // path is active (they don't apply to it); rotationLowPass/rotationDeadband
+                    // are the settings shown here, so they're the only ones that can change.
+                    old.rotationLowPass == new.rotationLowPass &&
+                        old.rotationDeadband == new.rotationDeadband
                 else ->
                     old.speed == new.speed &&
                         old.damping == new.damping &&
@@ -74,7 +77,12 @@ class SensorOrientationSource(
             when {
                 sensorManager == null -> emptyFlow()
                 rotationSensor != null && !current.disableGyro ->
-                    rotationVectorOrientations(sensorManager, rotationSensor)
+                    rotationVectorOrientations(
+                        sensorManager,
+                        rotationSensor,
+                        current.rotationLowPass,
+                        current.rotationDeadband,
+                    )
                 accelerometer != null && magnetometer != null ->
                     legacyOrientations(sensorManager, accelerometer, magnetometer, current)
                 else -> emptyFlow()
@@ -84,6 +92,8 @@ class SensorOrientationSource(
     private fun rotationVectorOrientations(
         manager: SensorManager,
         sensor: Sensor,
+        rotationLowPass: RotationSmoothingLevel,
+        rotationDeadband: RotationSmoothingLevel,
     ): Flow<Matrix3> =
         callbackFlow {
             // Some devices (e.g. Galaxy S4) report more than four values; Android only needs four.
@@ -92,13 +102,32 @@ class SensorOrientationSource(
             // so keep a three-element buffer too and pass whichever matches the sample's arity.
             val truncated3 = FloatArray(3)
             val truncated4 = FloatArray(4)
+            val quaternion = FloatArray(4)
             val rotationMatrix = FloatArray(9)
             val remappedMatrix = FloatArray(9)
+            // Both off by default (see SensorConfig): only allocate/run the smoother when at
+            // least one is actually selected, so devices that leave both off pay no cost at all.
+            val smoother =
+                if (rotationLowPass == RotationSmoothingLevel.OFF &&
+                    rotationDeadband == RotationSmoothingLevel.OFF
+                ) {
+                    null
+                } else {
+                    QuaternionSlerpSmoother(
+                        alpha = QuaternionSlerpSmoother.alphaFor(rotationLowPass),
+                        deadbandRadians =
+                            QuaternionSlerpSmoother.deadbandRadiansFor(
+                                rotationDeadband,
+                            ),
+                    )
+                }
             val listener =
                 object : SensorEventListener {
                     override fun onSensorChanged(event: SensorEvent) {
                         val vector =
-                            if (event.values.size >= 4) {
+                            if (smoother != null) {
+                                smoother.update(toQuaternion(event.values, quaternion))
+                            } else if (event.values.size >= 4) {
                                 System.arraycopy(event.values, 0, truncated4, 0, 4)
                                 truncated4
                             } else {
@@ -124,6 +153,24 @@ class SensorOrientationSource(
             manager.registerListener(listener, sensor, SensorManager.SENSOR_DELAY_GAME)
             awaitClose { manager.unregisterListener(listener) }
         }.conflate()
+
+    /** Fills [out] with the sample's quaternion `(x, y, z, w)`, deriving `w` if absent. */
+    private fun toQuaternion(
+        values: FloatArray,
+        out: FloatArray,
+    ): FloatArray {
+        out[0] = values[0]
+        out[1] = values[1]
+        out[2] = values[2]
+        out[3] =
+            if (values.size >= 4) {
+                values[3]
+            } else {
+                val sumSquares = out[0] * out[0] + out[1] * out[1] + out[2] * out[2]
+                kotlin.math.sqrt(kotlin.math.max(0f, 1f - sumSquares))
+            }
+        return out
+    }
 
     private fun legacyOrientations(
         manager: SensorManager,

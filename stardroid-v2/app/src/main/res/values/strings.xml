@@ -335,6 +335,14 @@
     <string name="settings_sensor_damping_extra_high" translation_description="Extra high sensor damping factor">About right</string>
     <string name="settings_sensor_damping_really_high" translation_description="Really high sensor damping factor - this will make the app sluggish">Laggy</string>
     <string name="settings_classic_sensors_only" translation_description="Summary noting a sensor preference only applies to the legacy non-gyroscope sensor path">Only applies when legacy sensors are in use</string>
+    <string name="settings_rotation_low_pass" translation_description="Preference title for low-pass filtering the gyroscope-based sensor path, to reduce jitter on some devices">Sensor Low-Pass</string>
+    <string name="settings_rotation_low_pass_summary" translation_description="Explanation of the sensor low-pass preference and its trade-off">Reduces jitter on devices with a noisy sensor by blending in new readings gradually. Higher settings are steadier but slower to respond to real movement.</string>
+    <string name="settings_rotation_deadband" translation_description="Preference title for ignoring tiny gyroscope-based sensor movements, to reduce jitter on some devices">Sensor Deadband</string>
+    <string name="settings_rotation_deadband_summary" translation_description="Explanation of the sensor deadband preference and its trade-off">Ignores movements smaller than a threshold. Higher settings ignore bigger movements, which can make small deliberate adjustments less responsive.</string>
+    <string name="settings_rotation_smoothing_off" translation_description="Sensor smoothing disabled">Off</string>
+    <string name="settings_rotation_smoothing_low" translation_description="Low sensor smoothing strength">Low</string>
+    <string name="settings_rotation_smoothing_medium" translation_description="Medium sensor smoothing strength">Medium</string>
+    <string name="settings_rotation_smoothing_high" translation_description="High sensor smoothing strength">High</string>
     <string name="settings_reverse_magnetic_z" translation_description="Preference title for reversing the magnetometer Z axis, a workaround for devices with a mis-mounted compass sensor">Reverse magnetic Z</string>
     <string name="settings_magnetic_correction" translation_description="Preference label: apply magnetic declination correction so the compass points to true north instead of magnetic north">Use magnetic correction</string>
     <string name="settings_magnetic_correction_summary" translation_description="Summary for the magnetic correction preference">Corrects the compass for the difference between magnetic and true north</string>

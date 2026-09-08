@@ -54,6 +54,23 @@ enum class SensorDamping {
 }
 
 /**
+ * A strength level shared by the two fused-rotation-vector smoothing knobs below (issues #963 /
+ * #1001) — unlike [SensorSpeed]/[SensorDamping], these act on the gyro path itself, since some
+ * phones' fusion is noisy enough to jitter the view even held still. Both default to OFF: most
+ * devices fuse cleanly already, and this must not regress them.
+ *
+ * Kept as two independent settings (low-pass and deadband) rather than one combined "smoothing"
+ * level so their effects can be evaluated separately in the field — it's not yet known whether
+ * jitter on a given device needs one, the other, or both.
+ */
+enum class RotationSmoothingLevel {
+    OFF,
+    LOW,
+    MEDIUM,
+    HIGH,
+}
+
+/**
  * The app's persisted preferences, as flows so consumers react to changes from any writer
  * (map controls now, the settings screen later). Keys are new — v1's `source_provider.N`
  * SharedPreferences are deliberately not migrated (D1).
@@ -178,6 +195,23 @@ interface Settings {
     val sensorDamping: Flow<SensorDamping>
 
     suspend fun setSensorDamping(damping: SensorDamping)
+
+    /**
+     * Low-pass (SLERP) strength on the fused rotation-vector quaternion (issues #963 / #1001).
+     * Off by default. See [RotationSmoothingLevel].
+     */
+    val rotationLowPass: Flow<RotationSmoothingLevel>
+
+    suspend fun setRotationLowPass(level: RotationSmoothingLevel)
+
+    /**
+     * Deadband strength on the fused rotation-vector quaternion: samples within the angular
+     * threshold of the current value are ignored outright (issues #963 / #1001). Off by
+     * default. See [RotationSmoothingLevel].
+     */
+    val rotationDeadband: Flow<RotationSmoothingLevel>
+
+    suspend fun setRotationDeadband(level: RotationSmoothingLevel)
 
     /**
      * Negate the magnetometer's Z axis before fusion (v1's `reverse_magnetic_z`) — a

@@ -166,6 +166,22 @@ class FakeSettings : Settings {
         sensorDampingState.value = damping
     }
 
+    val rotationLowPassState = MutableStateFlow(RotationSmoothingLevel.OFF)
+
+    override val rotationLowPass: Flow<RotationSmoothingLevel> = rotationLowPassState
+
+    override suspend fun setRotationLowPass(level: RotationSmoothingLevel) {
+        rotationLowPassState.value = level
+    }
+
+    val rotationDeadbandState = MutableStateFlow(RotationSmoothingLevel.OFF)
+
+    override val rotationDeadband: Flow<RotationSmoothingLevel> = rotationDeadbandState
+
+    override suspend fun setRotationDeadband(level: RotationSmoothingLevel) {
+        rotationDeadbandState.value = level
+    }
+
     val reverseMagneticZState = MutableStateFlow(false)
 
     override val reverseMagneticZ: Flow<Boolean> = reverseMagneticZState

@@ -17,6 +17,7 @@ import com.google.android.stardroid.analytics.NoOpAnalytics
 import com.google.android.stardroid.astronomy.ViewDirectionMode
 import com.google.android.stardroid.settings.AutoDimness
 import com.google.android.stardroid.settings.FontSize
+import com.google.android.stardroid.settings.RotationSmoothingLevel
 import com.google.android.stardroid.settings.SensorDamping
 import com.google.android.stardroid.settings.SensorSpeed
 import com.google.android.stardroid.settings.Settings
@@ -39,6 +40,8 @@ data class SettingsUiState(
     val disableGyro: Boolean = false,
     val sensorSpeed: SensorSpeed = SensorSpeed.STANDARD,
     val sensorDamping: SensorDamping = SensorDamping.EXTRA_HIGH,
+    val rotationLowPass: RotationSmoothingLevel = RotationSmoothingLevel.OFF,
+    val rotationDeadband: RotationSmoothingLevel = RotationSmoothingLevel.OFF,
     val reverseMagneticZ: Boolean = false,
     val useMagneticCorrection: Boolean = true,
     val viewDirectionMode: ViewDirectionMode = ViewDirectionMode.STANDARD,
@@ -46,6 +49,52 @@ data class SettingsUiState(
     val showerAlerts: Boolean = false,
     val tonightDigest: Boolean = false,
     val satelliteData: Boolean = false,
+)
+
+// Grouped so `state` below combines at most 5 flows at a time, each into a small typed data
+// class via a constructor reference — combine's array-unpacking overload (kicks in past 5
+// flows) loses static types and made the old flat version an `values[N] as T` index puzzle
+// that grew more error-prone with every added setting.
+private data class ControlsPrefs(
+    val tapToIdentify: Boolean,
+    val tapToIdentifyInAutoMode: Boolean,
+    val autoLevelHorizon: Boolean,
+)
+
+private data class AppearancePrefs(
+    val fontSize: FontSize,
+    val autoDimness: AutoDimness,
+    val showSkyGradient: Boolean,
+)
+
+// Split further into a legacy-path sub-group since SensorPrefs itself now has 6 fields —
+// past combine's 5-flow typed overload (same nesting used in AppModule's SensorConfig combine).
+private data class LegacySensorPrefs(
+    val disableGyro: Boolean,
+    val sensorSpeed: SensorSpeed,
+    val sensorDamping: SensorDamping,
+    val reverseMagneticZ: Boolean,
+)
+
+private data class SensorPrefs(
+    val disableGyro: Boolean,
+    val sensorSpeed: SensorSpeed,
+    val sensorDamping: SensorDamping,
+    val reverseMagneticZ: Boolean,
+    val rotationLowPass: RotationSmoothingLevel,
+    val rotationDeadband: RotationSmoothingLevel,
+)
+
+private data class MagneticPrefs(
+    val useMagneticCorrection: Boolean,
+    val viewDirectionMode: ViewDirectionMode,
+)
+
+private data class OtherPrefs(
+    val enableAnalytics: Boolean,
+    val showerAlertsEnabled: Boolean,
+    val tonightDigestEnabled: Boolean,
+    val satelliteDataEnabled: Boolean,
 )
 
 /**
@@ -68,42 +117,66 @@ class SettingsViewModel(
 
     val state: StateFlow<SettingsUiState> =
         combine(
-            settings.tapToIdentify,
-            settings.tapToIdentifyInAutoMode,
-            settings.autoLevelHorizon,
-            settings.fontSize,
-            settings.autoDimness,
-            settings.showSkyGradient,
-            settings.disableGyro,
-            settings.sensorSpeed,
-            settings.sensorDamping,
-            settings.reverseMagneticZ,
-            settings.useMagneticCorrection,
-            settings.viewDirectionMode,
-            settings.enableAnalytics,
-            settings.showerAlertsEnabled,
-            settings.tonightDigestEnabled,
-            settings.satelliteDataEnabled,
-        ) { values ->
+            combine(
+                settings.tapToIdentify,
+                settings.tapToIdentifyInAutoMode,
+                settings.autoLevelHorizon,
+                ::ControlsPrefs,
+            ),
+            combine(
+                settings.fontSize,
+                settings.autoDimness,
+                settings.showSkyGradient,
+                ::AppearancePrefs,
+            ),
+            combine(
+                combine(
+                    settings.disableGyro,
+                    settings.sensorSpeed,
+                    settings.sensorDamping,
+                    settings.reverseMagneticZ,
+                    ::LegacySensorPrefs,
+                ),
+                settings.rotationLowPass,
+                settings.rotationDeadband,
+            ) { legacy, rotationLowPass, rotationDeadband ->
+                SensorPrefs(
+                    disableGyro = legacy.disableGyro,
+                    sensorSpeed = legacy.sensorSpeed,
+                    sensorDamping = legacy.sensorDamping,
+                    reverseMagneticZ = legacy.reverseMagneticZ,
+                    rotationLowPass = rotationLowPass,
+                    rotationDeadband = rotationDeadband,
+                )
+            },
+            combine(settings.useMagneticCorrection, settings.viewDirectionMode, ::MagneticPrefs),
+            combine(
+                settings.enableAnalytics,
+                settings.showerAlertsEnabled,
+                settings.tonightDigestEnabled,
+                settings.satelliteDataEnabled,
+                ::OtherPrefs,
+            ),
+        ) { controls, appearance, sensors, magnetic, other ->
             SettingsUiState(
-                tapToIdentify = values[0] as Boolean,
-                tapToIdentifyInAutoMode = values[1] as Boolean,
-                autoLevelHorizon = values[2] as Boolean,
-                fontSize = values[3] as FontSize,
-                autoDimness = values[4] as AutoDimness,
-                showSkyGradient = values[5] as Boolean,
-                disableGyro = values[6] as Boolean,
-                sensorSpeed = values[7] as SensorSpeed,
-                sensorDamping = values[8] as SensorDamping,
-                reverseMagneticZ = values[9] as Boolean,
-                useMagneticCorrection = values[10] as Boolean,
-                viewDirectionMode = values[11] as ViewDirectionMode,
-                enableAnalytics = values[12] as Boolean,
-                showerAlerts = values[13] as Boolean,
-                tonightDigest = values[14] as Boolean,
-                // Appended, never inserted: this combine unpacks by position, so a new flow in the
-                // middle would silently shift every index after it.
-                satelliteData = values[15] as Boolean,
+                tapToIdentify = controls.tapToIdentify,
+                tapToIdentifyInAutoMode = controls.tapToIdentifyInAutoMode,
+                autoLevelHorizon = controls.autoLevelHorizon,
+                fontSize = appearance.fontSize,
+                autoDimness = appearance.autoDimness,
+                showSkyGradient = appearance.showSkyGradient,
+                disableGyro = sensors.disableGyro,
+                sensorSpeed = sensors.sensorSpeed,
+                sensorDamping = sensors.sensorDamping,
+                reverseMagneticZ = sensors.reverseMagneticZ,
+                rotationLowPass = sensors.rotationLowPass,
+                rotationDeadband = sensors.rotationDeadband,
+                useMagneticCorrection = magnetic.useMagneticCorrection,
+                viewDirectionMode = magnetic.viewDirectionMode,
+                enableAnalytics = other.enableAnalytics,
+                showerAlerts = other.showerAlertsEnabled,
+                tonightDigest = other.tonightDigestEnabled,
+                satelliteData = other.satelliteDataEnabled,
             )
         }.stateIn(viewModelScope, SharingStarted.Eagerly, SettingsUiState())
 
@@ -150,6 +223,16 @@ class SettingsViewModel(
     fun setSensorDamping(damping: SensorDamping) {
         trackChange("sensor_damping", damping)
         viewModelScope.launch { settings.setSensorDamping(damping) }
+    }
+
+    fun setRotationLowPass(level: RotationSmoothingLevel) {
+        trackChange("rotation_low_pass", level)
+        viewModelScope.launch { settings.setRotationLowPass(level) }
+    }
+
+    fun setRotationDeadband(level: RotationSmoothingLevel) {
+        trackChange("rotation_deadband", level)
+        viewModelScope.launch { settings.setRotationDeadband(level) }
     }
 
     fun setReverseMagneticZ(enabled: Boolean) {
