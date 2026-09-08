@@ -37,7 +37,10 @@ class QuaternionSlerpSmoother(private val alpha: Float, private val deadbandRadi
         val prev = current
         if (prev == null) {
             // Start at the first sample rather than decaying in from zero — see
-            // ExponentiallyWeightedSmoother for the same reasoning.
+            // ExponentiallyWeightedSmoother for the same reasoning. Returning the caller's own
+            // [raw] array (rather than a copy) is only safe because the caller consumes it
+            // synchronously before the next event can mutate the shared scratch buffer behind
+            // it — don't buffer/retain this return value across events.
             current = raw.copyOf()
             return raw
         }
