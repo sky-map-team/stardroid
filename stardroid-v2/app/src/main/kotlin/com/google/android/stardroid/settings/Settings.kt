@@ -54,6 +54,19 @@ enum class SensorDamping {
 }
 
 /**
+ * Smoothing strength for the fused rotation-vector path (issues #963 / #1001) — unlike
+ * [SensorSpeed]/[SensorDamping], this acts on the gyro path itself, since some phones' fusion is
+ * noisy enough to jitter the view even held still. Off by default: most devices fuse cleanly
+ * already, and this must not regress them.
+ */
+enum class RotationSmoothing {
+    OFF,
+    LOW,
+    MEDIUM,
+    HIGH,
+}
+
+/**
  * The app's persisted preferences, as flows so consumers react to changes from any writer
  * (map controls now, the settings screen later). Keys are new — v1's `source_provider.N`
  * SharedPreferences are deliberately not migrated (D1).
@@ -178,6 +191,11 @@ interface Settings {
     val sensorDamping: Flow<SensorDamping>
 
     suspend fun setSensorDamping(damping: SensorDamping)
+
+    /** Fused rotation-vector smoothing strength (issues #963 / #1001). Off by default. */
+    val rotationSmoothing: Flow<RotationSmoothing>
+
+    suspend fun setRotationSmoothing(smoothing: RotationSmoothing)
 
     /**
      * Negate the magnetometer's Z axis before fusion (v1's `reverse_magnetic_z`) — a

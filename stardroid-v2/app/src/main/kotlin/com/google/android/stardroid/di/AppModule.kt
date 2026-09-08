@@ -197,6 +197,7 @@ object AppModule {
                 settings.sensorSpeed,
                 settings.sensorDamping,
                 settings.reverseMagneticZ,
+                settings.rotationSmoothing,
                 ::SensorConfig,
             )
         val delegate =

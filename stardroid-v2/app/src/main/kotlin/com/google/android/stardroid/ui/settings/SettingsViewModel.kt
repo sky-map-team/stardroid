@@ -17,6 +17,7 @@ import com.google.android.stardroid.analytics.NoOpAnalytics
 import com.google.android.stardroid.astronomy.ViewDirectionMode
 import com.google.android.stardroid.settings.AutoDimness
 import com.google.android.stardroid.settings.FontSize
+import com.google.android.stardroid.settings.RotationSmoothing
 import com.google.android.stardroid.settings.SensorDamping
 import com.google.android.stardroid.settings.SensorSpeed
 import com.google.android.stardroid.settings.Settings
@@ -39,6 +40,7 @@ data class SettingsUiState(
     val disableGyro: Boolean = false,
     val sensorSpeed: SensorSpeed = SensorSpeed.STANDARD,
     val sensorDamping: SensorDamping = SensorDamping.EXTRA_HIGH,
+    val rotationSmoothing: RotationSmoothing = RotationSmoothing.OFF,
     val reverseMagneticZ: Boolean = false,
     val useMagneticCorrection: Boolean = true,
     val viewDirectionMode: ViewDirectionMode = ViewDirectionMode.STANDARD,
@@ -84,6 +86,7 @@ class SettingsViewModel(
             settings.showerAlertsEnabled,
             settings.tonightDigestEnabled,
             settings.satelliteDataEnabled,
+            settings.rotationSmoothing,
         ) { values ->
             SettingsUiState(
                 tapToIdentify = values[0] as Boolean,
@@ -104,6 +107,7 @@ class SettingsViewModel(
                 // Appended, never inserted: this combine unpacks by position, so a new flow in the
                 // middle would silently shift every index after it.
                 satelliteData = values[15] as Boolean,
+                rotationSmoothing = values[16] as RotationSmoothing,
             )
         }.stateIn(viewModelScope, SharingStarted.Eagerly, SettingsUiState())
 
@@ -150,6 +154,11 @@ class SettingsViewModel(
     fun setSensorDamping(damping: SensorDamping) {
         trackChange("sensor_damping", damping)
         viewModelScope.launch { settings.setSensorDamping(damping) }
+    }
+
+    fun setRotationSmoothing(smoothing: RotationSmoothing) {
+        trackChange("rotation_smoothing", smoothing)
+        viewModelScope.launch { settings.setRotationSmoothing(smoothing) }
     }
 
     fun setReverseMagneticZ(enabled: Boolean) {

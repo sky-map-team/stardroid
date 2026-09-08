@@ -62,6 +62,7 @@ import com.google.android.stardroid.analytics.AnalyticsEvents
 import com.google.android.stardroid.astronomy.ViewDirectionMode
 import com.google.android.stardroid.settings.AutoDimness
 import com.google.android.stardroid.settings.FontSize
+import com.google.android.stardroid.settings.RotationSmoothing
 import com.google.android.stardroid.settings.SensorDamping
 import com.google.android.stardroid.settings.SensorSpeed
 import com.google.android.stardroid.ui.common.topBarWindowInsets
@@ -180,6 +181,17 @@ fun SettingsScreen(
                         summary = stringResource(R.string.settings_classic_sensors_only),
                         checked = state.reverseMagneticZ,
                         onCheckedChange = viewModel::setReverseMagneticZ,
+                    )
+                } else {
+                    // The inverse of the block above: this only acts on the fused path, so it
+                    // only shows while that path is selected (issues #963 / #1001).
+                    ChoiceRow(
+                        title = stringResource(R.string.settings_rotation_smoothing),
+                        summary = stringResource(R.string.settings_rotation_smoothing_summary),
+                        options = RotationSmoothing.entries,
+                        selected = state.rotationSmoothing,
+                        label = { rotationSmoothingLabel(it) },
+                        onSelect = viewModel::setRotationSmoothing,
                     )
                 }
                 SwitchRow(
@@ -507,6 +519,17 @@ private fun sensorDampingLabel(damping: SensorDamping): String =
             SensorDamping.HIGH -> R.string.settings_sensor_damping_high
             SensorDamping.EXTRA_HIGH -> R.string.settings_sensor_damping_extra_high
             SensorDamping.REALLY_HIGH -> R.string.settings_sensor_damping_really_high
+        },
+    )
+
+@Composable
+private fun rotationSmoothingLabel(smoothing: RotationSmoothing): String =
+    stringResource(
+        when (smoothing) {
+            RotationSmoothing.OFF -> R.string.settings_rotation_smoothing_off
+            RotationSmoothing.LOW -> R.string.settings_rotation_smoothing_low
+            RotationSmoothing.MEDIUM -> R.string.settings_rotation_smoothing_medium
+            RotationSmoothing.HIGH -> R.string.settings_rotation_smoothing_high
         },
     )
 
