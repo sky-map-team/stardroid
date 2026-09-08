@@ -17,7 +17,7 @@ import android.view.Surface
 import com.google.android.stardroid.astronomy.orientationFromSensors
 import com.google.android.stardroid.math.Matrix3
 import com.google.android.stardroid.math.Vector3
-import com.google.android.stardroid.settings.RotationSmoothing
+import com.google.android.stardroid.settings.RotationSmoothingLevel
 import com.google.android.stardroid.settings.SensorDamping
 import com.google.android.stardroid.settings.SensorSpeed
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -64,9 +64,10 @@ class SensorOrientationSource(
                 old.disableGyro != new.disableGyro -> false
                 rotationSensor != null && !old.disableGyro ->
                     // The settings screen hides speed/damping/reverseMagneticZ while the fused
-                    // path is active (they don't apply to it); rotationSmoothing is the one
-                    // setting shown here, so it's the only one that can actually have changed.
-                    old.rotationSmoothing == new.rotationSmoothing
+                    // path is active (they don't apply to it); rotationLowPass/rotationDeadband
+                    // are the settings shown here, so they're the only ones that can change.
+                    old.rotationLowPass == new.rotationLowPass &&
+                        old.rotationDeadband == new.rotationDeadband
                 else ->
                     old.speed == new.speed &&
                         old.damping == new.damping &&
@@ -79,7 +80,8 @@ class SensorOrientationSource(
                     rotationVectorOrientations(
                         sensorManager,
                         rotationSensor,
-                        current.rotationSmoothing,
+                        current.rotationLowPass,
+                        current.rotationDeadband,
                     )
                 accelerometer != null && magnetometer != null ->
                     legacyOrientations(sensorManager, accelerometer, magnetometer, current)
@@ -90,7 +92,8 @@ class SensorOrientationSource(
     private fun rotationVectorOrientations(
         manager: SensorManager,
         sensor: Sensor,
-        rotationSmoothing: RotationSmoothing,
+        rotationLowPass: RotationSmoothingLevel,
+        rotationDeadband: RotationSmoothingLevel,
     ): Flow<Matrix3> =
         callbackFlow {
             // Some devices (e.g. Galaxy S4) report more than four values; Android only needs four.
@@ -102,15 +105,21 @@ class SensorOrientationSource(
             val quaternion = FloatArray(4)
             val rotationMatrix = FloatArray(9)
             val remappedMatrix = FloatArray(9)
-            // Off by default (see SensorConfig): only allocate/run the smoother when a level is
-            // actually selected, so devices that leave this off pay no cost at all.
+            // Both off by default (see SensorConfig): only allocate/run the smoother when at
+            // least one is actually selected, so devices that leave both off pay no cost at all.
             val smoother =
-                if (rotationSmoothing == RotationSmoothing.OFF) {
+                if (rotationLowPass == RotationSmoothingLevel.OFF &&
+                    rotationDeadband == RotationSmoothingLevel.OFF
+                ) {
                     null
                 } else {
-                    val (alpha, deadbandRadians) =
-                        QuaternionSlerpSmoother.alphaAndDeadbandRadiansFor(rotationSmoothing)
-                    QuaternionSlerpSmoother(alpha, deadbandRadians)
+                    QuaternionSlerpSmoother(
+                        alpha = QuaternionSlerpSmoother.alphaFor(rotationLowPass),
+                        deadbandRadians =
+                            QuaternionSlerpSmoother.deadbandRadiansFor(
+                                rotationDeadband,
+                            ),
+                    )
                 }
             val listener =
                 object : SensorEventListener {

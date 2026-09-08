@@ -9,7 +9,7 @@
 
 package com.google.android.stardroid.sensors
 
-import com.google.android.stardroid.settings.RotationSmoothing
+import com.google.android.stardroid.settings.RotationSmoothingLevel
 import kotlin.math.abs
 import kotlin.math.acos
 import kotlin.math.min
@@ -87,13 +87,25 @@ class QuaternionSlerpSmoother(private val alpha: Float, private val deadbandRadi
             return FloatArray(4) { q[it] / length }
         }
 
-        /** v1-style ladder: OFF disables smoothing entirely; higher levels damp harder. */
-        internal fun alphaAndDeadbandRadiansFor(smoothing: RotationSmoothing): Pair<Float, Float> =
-            when (smoothing) {
-                RotationSmoothing.OFF -> 1f to 0f
-                RotationSmoothing.LOW -> 0.5f to Math.toRadians(0.15).toFloat()
-                RotationSmoothing.MEDIUM -> 0.3f to Math.toRadians(0.3).toFloat()
-                RotationSmoothing.HIGH -> 0.15f to Math.toRadians(0.5).toFloat()
+        /**
+         * Low-pass ladder: OFF passes samples through unsmoothed (`alpha = 1`); higher levels
+         * move less of the way toward each new sample, i.e. damp harder.
+         */
+        internal fun alphaFor(level: RotationSmoothingLevel): Float =
+            when (level) {
+                RotationSmoothingLevel.OFF -> 1f
+                RotationSmoothingLevel.LOW -> 0.5f
+                RotationSmoothingLevel.MEDIUM -> 0.3f
+                RotationSmoothingLevel.HIGH -> 0.15f
+            }
+
+        /** Deadband ladder: OFF suppresses nothing; higher levels ignore larger movements. */
+        internal fun deadbandRadiansFor(level: RotationSmoothingLevel): Float =
+            when (level) {
+                RotationSmoothingLevel.OFF -> 0f
+                RotationSmoothingLevel.LOW -> Math.toRadians(0.15).toFloat()
+                RotationSmoothingLevel.MEDIUM -> Math.toRadians(0.3).toFloat()
+                RotationSmoothingLevel.HIGH -> Math.toRadians(0.5).toFloat()
             }
     }
 }

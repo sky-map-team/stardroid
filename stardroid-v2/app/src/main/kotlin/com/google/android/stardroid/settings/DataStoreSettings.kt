@@ -157,11 +157,18 @@ class DataStoreSettings(
         dataStore.edit { it[SENSOR_DAMPING] = damping.name }
     }
 
-    override val rotationSmoothing: Flow<RotationSmoothing> =
-        enum(ROTATION_SMOOTHING, RotationSmoothing.OFF)
+    override val rotationLowPass: Flow<RotationSmoothingLevel> =
+        enum(ROTATION_LOW_PASS, RotationSmoothingLevel.OFF)
 
-    override suspend fun setRotationSmoothing(smoothing: RotationSmoothing) {
-        dataStore.edit { it[ROTATION_SMOOTHING] = smoothing.name }
+    override suspend fun setRotationLowPass(level: RotationSmoothingLevel) {
+        dataStore.edit { it[ROTATION_LOW_PASS] = level.name }
+    }
+
+    override val rotationDeadband: Flow<RotationSmoothingLevel> =
+        enum(ROTATION_DEADBAND, RotationSmoothingLevel.OFF)
+
+    override suspend fun setRotationDeadband(level: RotationSmoothingLevel) {
+        dataStore.edit { it[ROTATION_DEADBAND] = level.name }
     }
 
     override val reverseMagneticZ: Flow<Boolean> = boolean(REVERSE_MAGNETIC_Z, default = false)
@@ -344,7 +351,9 @@ class DataStoreSettings(
 
         private val SENSOR_DAMPING = stringPreferencesKey("sensor_damping")
 
-        private val ROTATION_SMOOTHING = stringPreferencesKey("rotation_smoothing")
+        private val ROTATION_LOW_PASS = stringPreferencesKey("rotation_low_pass")
+
+        private val ROTATION_DEADBAND = stringPreferencesKey("rotation_deadband")
 
         private val REVERSE_MAGNETIC_Z = booleanPreferencesKey("reverse_magnetic_z")
 

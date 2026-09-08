@@ -17,7 +17,7 @@ import com.google.android.stardroid.analytics.NoOpAnalytics
 import com.google.android.stardroid.astronomy.ViewDirectionMode
 import com.google.android.stardroid.settings.AutoDimness
 import com.google.android.stardroid.settings.FontSize
-import com.google.android.stardroid.settings.RotationSmoothing
+import com.google.android.stardroid.settings.RotationSmoothingLevel
 import com.google.android.stardroid.settings.SensorDamping
 import com.google.android.stardroid.settings.SensorSpeed
 import com.google.android.stardroid.settings.Settings
@@ -40,7 +40,8 @@ data class SettingsUiState(
     val disableGyro: Boolean = false,
     val sensorSpeed: SensorSpeed = SensorSpeed.STANDARD,
     val sensorDamping: SensorDamping = SensorDamping.EXTRA_HIGH,
-    val rotationSmoothing: RotationSmoothing = RotationSmoothing.OFF,
+    val rotationLowPass: RotationSmoothingLevel = RotationSmoothingLevel.OFF,
+    val rotationDeadband: RotationSmoothingLevel = RotationSmoothingLevel.OFF,
     val reverseMagneticZ: Boolean = false,
     val useMagneticCorrection: Boolean = true,
     val viewDirectionMode: ViewDirectionMode = ViewDirectionMode.STANDARD,
@@ -66,12 +67,22 @@ private data class AppearancePrefs(
     val showSkyGradient: Boolean,
 )
 
+// Split further into a legacy-path sub-group since SensorPrefs itself now has 6 fields —
+// past combine's 5-flow typed overload (same nesting used in AppModule's SensorConfig combine).
+private data class LegacySensorPrefs(
+    val disableGyro: Boolean,
+    val sensorSpeed: SensorSpeed,
+    val sensorDamping: SensorDamping,
+    val reverseMagneticZ: Boolean,
+)
+
 private data class SensorPrefs(
     val disableGyro: Boolean,
     val sensorSpeed: SensorSpeed,
     val sensorDamping: SensorDamping,
     val reverseMagneticZ: Boolean,
-    val rotationSmoothing: RotationSmoothing,
+    val rotationLowPass: RotationSmoothingLevel,
+    val rotationDeadband: RotationSmoothingLevel,
 )
 
 private data class MagneticPrefs(
@@ -119,13 +130,25 @@ class SettingsViewModel(
                 ::AppearancePrefs,
             ),
             combine(
-                settings.disableGyro,
-                settings.sensorSpeed,
-                settings.sensorDamping,
-                settings.reverseMagneticZ,
-                settings.rotationSmoothing,
-                ::SensorPrefs,
-            ),
+                combine(
+                    settings.disableGyro,
+                    settings.sensorSpeed,
+                    settings.sensorDamping,
+                    settings.reverseMagneticZ,
+                    ::LegacySensorPrefs,
+                ),
+                settings.rotationLowPass,
+                settings.rotationDeadband,
+            ) { legacy, rotationLowPass, rotationDeadband ->
+                SensorPrefs(
+                    disableGyro = legacy.disableGyro,
+                    sensorSpeed = legacy.sensorSpeed,
+                    sensorDamping = legacy.sensorDamping,
+                    reverseMagneticZ = legacy.reverseMagneticZ,
+                    rotationLowPass = rotationLowPass,
+                    rotationDeadband = rotationDeadband,
+                )
+            },
             combine(settings.useMagneticCorrection, settings.viewDirectionMode, ::MagneticPrefs),
             combine(
                 settings.enableAnalytics,
@@ -146,7 +169,8 @@ class SettingsViewModel(
                 sensorSpeed = sensors.sensorSpeed,
                 sensorDamping = sensors.sensorDamping,
                 reverseMagneticZ = sensors.reverseMagneticZ,
-                rotationSmoothing = sensors.rotationSmoothing,
+                rotationLowPass = sensors.rotationLowPass,
+                rotationDeadband = sensors.rotationDeadband,
                 useMagneticCorrection = magnetic.useMagneticCorrection,
                 viewDirectionMode = magnetic.viewDirectionMode,
                 enableAnalytics = other.enableAnalytics,
@@ -201,9 +225,14 @@ class SettingsViewModel(
         viewModelScope.launch { settings.setSensorDamping(damping) }
     }
 
-    fun setRotationSmoothing(smoothing: RotationSmoothing) {
-        trackChange("rotation_smoothing", smoothing)
-        viewModelScope.launch { settings.setRotationSmoothing(smoothing) }
+    fun setRotationLowPass(level: RotationSmoothingLevel) {
+        trackChange("rotation_low_pass", level)
+        viewModelScope.launch { settings.setRotationLowPass(level) }
+    }
+
+    fun setRotationDeadband(level: RotationSmoothingLevel) {
+        trackChange("rotation_deadband", level)
+        viewModelScope.launch { settings.setRotationDeadband(level) }
     }
 
     fun setReverseMagneticZ(enabled: Boolean) {

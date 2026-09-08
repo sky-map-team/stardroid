@@ -62,7 +62,7 @@ import com.google.android.stardroid.analytics.AnalyticsEvents
 import com.google.android.stardroid.astronomy.ViewDirectionMode
 import com.google.android.stardroid.settings.AutoDimness
 import com.google.android.stardroid.settings.FontSize
-import com.google.android.stardroid.settings.RotationSmoothing
+import com.google.android.stardroid.settings.RotationSmoothingLevel
 import com.google.android.stardroid.settings.SensorDamping
 import com.google.android.stardroid.settings.SensorSpeed
 import com.google.android.stardroid.ui.common.topBarWindowInsets
@@ -183,15 +183,25 @@ fun SettingsScreen(
                         onCheckedChange = viewModel::setReverseMagneticZ,
                     )
                 } else {
-                    // The inverse of the block above: this only acts on the fused path, so it
-                    // only shows while that path is selected (issues #963 / #1001).
+                    // The inverse of the block above: these only act on the fused path, so
+                    // they only show while that path is selected (issues #963 / #1001). Kept
+                    // as two independent controls rather than one combined level so their
+                    // effects can be evaluated separately in the field.
                     ChoiceRow(
-                        title = stringResource(R.string.settings_rotation_smoothing),
-                        summary = stringResource(R.string.settings_rotation_smoothing_summary),
-                        options = RotationSmoothing.entries,
-                        selected = state.rotationSmoothing,
-                        label = { rotationSmoothingLabel(it) },
-                        onSelect = viewModel::setRotationSmoothing,
+                        title = stringResource(R.string.settings_rotation_low_pass),
+                        summary = stringResource(R.string.settings_rotation_low_pass_summary),
+                        options = RotationSmoothingLevel.entries,
+                        selected = state.rotationLowPass,
+                        label = { rotationSmoothingLevelLabel(it) },
+                        onSelect = viewModel::setRotationLowPass,
+                    )
+                    ChoiceRow(
+                        title = stringResource(R.string.settings_rotation_deadband),
+                        summary = stringResource(R.string.settings_rotation_deadband_summary),
+                        options = RotationSmoothingLevel.entries,
+                        selected = state.rotationDeadband,
+                        label = { rotationSmoothingLevelLabel(it) },
+                        onSelect = viewModel::setRotationDeadband,
                     )
                 }
                 SwitchRow(
@@ -522,14 +532,16 @@ private fun sensorDampingLabel(damping: SensorDamping): String =
         },
     )
 
+// Shared by both the low-pass and deadband ChoiceRows — same four generic strength labels
+// regardless of which knob is being set.
 @Composable
-private fun rotationSmoothingLabel(smoothing: RotationSmoothing): String =
+private fun rotationSmoothingLevelLabel(level: RotationSmoothingLevel): String =
     stringResource(
-        when (smoothing) {
-            RotationSmoothing.OFF -> R.string.settings_rotation_smoothing_off
-            RotationSmoothing.LOW -> R.string.settings_rotation_smoothing_low
-            RotationSmoothing.MEDIUM -> R.string.settings_rotation_smoothing_medium
-            RotationSmoothing.HIGH -> R.string.settings_rotation_smoothing_high
+        when (level) {
+            RotationSmoothingLevel.OFF -> R.string.settings_rotation_smoothing_off
+            RotationSmoothingLevel.LOW -> R.string.settings_rotation_smoothing_low
+            RotationSmoothingLevel.MEDIUM -> R.string.settings_rotation_smoothing_medium
+            RotationSmoothingLevel.HIGH -> R.string.settings_rotation_smoothing_high
         },
     )
 

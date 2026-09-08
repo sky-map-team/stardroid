@@ -9,7 +9,7 @@
 
 package com.google.android.stardroid.sensors
 
-import com.google.android.stardroid.settings.RotationSmoothing
+import com.google.android.stardroid.settings.RotationSmoothingLevel
 import com.google.common.truth.Truth.assertThat
 import org.junit.jupiter.api.Test
 import kotlin.math.cos
@@ -78,18 +78,26 @@ class QuaternionSlerpSmootherTest {
     }
 
     @Test
-    fun `smoothing ladder is off by default and strictly increasing in deadband`() {
-        val off = QuaternionSlerpSmoother.alphaAndDeadbandRadiansFor(RotationSmoothing.OFF)
-        assertThat(off.first).isEqualTo(1f)
-        assertThat(off.second).isEqualTo(0f)
+    fun `low-pass ladder is off by default and strictly decreasing in alpha`() {
+        assertThat(QuaternionSlerpSmoother.alphaFor(RotationSmoothingLevel.OFF)).isEqualTo(1f)
 
-        val low = QuaternionSlerpSmoother.alphaAndDeadbandRadiansFor(RotationSmoothing.LOW)
-        val medium = QuaternionSlerpSmoother.alphaAndDeadbandRadiansFor(RotationSmoothing.MEDIUM)
-        val high = QuaternionSlerpSmoother.alphaAndDeadbandRadiansFor(RotationSmoothing.HIGH)
-        assertThat(low.second).isLessThan(medium.second)
-        assertThat(medium.second).isLessThan(high.second)
-        assertThat(low.first).isGreaterThan(medium.first)
-        assertThat(medium.first).isGreaterThan(high.first)
+        val low = QuaternionSlerpSmoother.alphaFor(RotationSmoothingLevel.LOW)
+        val medium = QuaternionSlerpSmoother.alphaFor(RotationSmoothingLevel.MEDIUM)
+        val high = QuaternionSlerpSmoother.alphaFor(RotationSmoothingLevel.HIGH)
+        assertThat(low).isGreaterThan(medium)
+        assertThat(medium).isGreaterThan(high)
+    }
+
+    @Test
+    fun `deadband ladder is off by default and strictly increasing`() {
+        assertThat(QuaternionSlerpSmoother.deadbandRadiansFor(RotationSmoothingLevel.OFF))
+            .isEqualTo(0f)
+
+        val low = QuaternionSlerpSmoother.deadbandRadiansFor(RotationSmoothingLevel.LOW)
+        val medium = QuaternionSlerpSmoother.deadbandRadiansFor(RotationSmoothingLevel.MEDIUM)
+        val high = QuaternionSlerpSmoother.deadbandRadiansFor(RotationSmoothingLevel.HIGH)
+        assertThat(low).isLessThan(medium)
+        assertThat(medium).isLessThan(high)
     }
 
     companion object {
