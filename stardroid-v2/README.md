@@ -3,11 +3,10 @@
 The ground-up Kotlin rewrite of [Sky Map](../README.md) — the real-time planetarium that shows
 you the sky you are actually standing under, offline, with no account and no ads.
 
-v2 is currently in **beta**, shipping as an update to the existing Play listing
-(`com.google.android.stardroid`). The v1 app in [`../stardroid-v1`](../stardroid-v1) remains the
-reference for existing behavior until v2 fully replaces it.
+v2 is currently rolling out to all users. The v1 app in [`../stardroid-v1`](../stardroid-v1) is now
+deprecated.
 
-**Our north star:** Sky Map is not trying to be Stellarium. It should be small, very fast,
+**Our north star:** Sky Map is not trying to be a professional astronomer-grade app. It should be small, very fast,
 uncluttered, and easy to use — a few things done well.
 
 ---
