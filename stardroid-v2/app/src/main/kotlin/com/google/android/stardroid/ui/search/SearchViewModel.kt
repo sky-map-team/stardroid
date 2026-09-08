@@ -9,6 +9,7 @@
 
 package com.google.android.stardroid.ui.search
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.google.android.stardroid.analytics.Analytics
@@ -31,6 +32,7 @@ import com.google.android.stardroid.math.RaDec
 import com.google.android.stardroid.math.Vector3
 import com.google.android.stardroid.render.api.LayerId
 import com.google.android.stardroid.settings.Settings
+import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -114,7 +116,7 @@ class SearchViewModel(
                 if (q.isBlank()) {
                     emptyList()
                 } else {
-                    catalog().searchByPrefix(q.trim(), spec, SUGGESTION_LIMIT)
+                    searchByPrefixSafely(q.trim(), spec)
                 }
             }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(), emptyList())
 
@@ -172,7 +174,7 @@ class SearchViewModel(
             return
         }
         viewModelScope.launch {
-            val hits = catalog().searchByPrefix(q, locale.value, SUGGESTION_LIMIT)
+            val hits = searchByPrefixSafely(q, locale.value)
             val chosen =
                 hits.firstOrNull { it.name.equals(q, ignoreCase = true) } ?: hits.singleOrNull()
             if (chosen != null) {
@@ -213,6 +215,35 @@ class SearchViewModel(
         _target.value = target
         setQuery("")
     }
+
+    /**
+     * The catalog query is a Room/SQLite call we do not fully control (issue #1003: reports
+     * from two unrelated OEMs crashing on ordinary queries like "sun"/"moon", cause unconfirmed
+     * — possibly a third-party IME/Compose interop bug upstream of this call, possibly a Room
+     * failure). Whichever it is, a failed lookup should degrade to "no results" rather than take
+     * the app down. [CancellationException] is rethrown so `mapLatest` can still cancel a
+     * superseded query.
+     */
+    private suspend fun searchByPrefixSafely(
+        query: String,
+        spec: LocaleSpec,
+    ): List<SearchHit> =
+        try {
+            catalog().searchByPrefix(query, spec, SUGGESTION_LIMIT)
+        } catch (e: CancellationException) {
+            throw e
+        } catch (e: Exception) {
+            // No Crashlytics wired up (D92's satellite-fetch events are the closest precedent):
+            // this aggregate event, not a stack trace, is how we'd notice a systemic bug is loose
+            // in production. `adb logcat` still has the full exception for anyone who can repro.
+            Log.e(TAG, "Search query failed", e)
+            val errorType = e::class.simpleName ?: "unknown"
+            analytics.trackEvent(
+                AnalyticsEvents.SEARCH_QUERY_ERROR_EVENT,
+                mapOf(AnalyticsEvents.SEARCH_QUERY_ERROR_TYPE to errorType),
+            )
+            emptyList()
+        }
 
     private fun searchFailed(term: String) {
         analytics.trackEvent(
@@ -262,6 +293,8 @@ class SearchViewModel(
         ephemeris.topocentricPosition(body, now(), location()).toGeocentricVector()
 
     companion object {
+        private const val TAG = "SearchViewModel"
+
         /** Ranked-list length; v1's suggestion cursor was unbounded, the FTS query is not. */
         private const val SUGGESTION_LIMIT = 20
 

@@ -66,6 +66,9 @@ class SearchViewModelTest {
         /** Overrides [hits] when set, so a test can vary the results by locale. */
         var hitsFor: ((LocaleSpec) -> List<SearchHit>)? = null
 
+        /** Set to simulate a Room/SQLite failure (issue #1003) instead of returning [hits]. */
+        var throwOnSearch: (() -> Throwable)? = null
+
         override fun layerObjects(
             kind: LayerKind,
             locale: LocaleSpec,
@@ -83,6 +86,7 @@ class SearchViewModelTest {
         ): List<SearchHit> {
             lastPrefix = prefix
             searchCount++
+            throwOnSearch?.let { throw it() }
             return (hitsFor?.invoke(locale) ?: hits)
                 .filter { it.name.startsWith(prefix, ignoreCase = true) }
         }
@@ -246,6 +250,46 @@ class SearchViewModelTest {
                 .containsExactly(AnalyticsEvents.SEARCH_FAILED_EVENT)
             assertThat(analytics.events[0].params)
                 .containsEntry(AnalyticsEvents.SEARCH_TERM, "xyzzy")
+        }
+
+    @Test
+    fun `a catalog exception while typing is caught, not thrown`() =
+        testScope.runCurrentTest {
+            repository.throwOnSearch = { IllegalStateException("boom") }
+            val vm = viewModel()
+            backgroundScope.launch { vm.suggestions.collect {} }
+            runCurrent()
+
+            vm.setQuery("sir")
+            advanceTimeBy(debounceSettle)
+            runCurrent()
+
+            assertThat(vm.suggestions.value).isEmpty()
+            assertThat(analytics.eventNames())
+                .containsExactly(AnalyticsEvents.SEARCH_QUERY_ERROR_EVENT)
+            assertThat(analytics.events[0].params)
+                .containsEntry(AnalyticsEvents.SEARCH_QUERY_ERROR_TYPE, "IllegalStateException")
+        }
+
+    @Test
+    fun `a catalog exception on submit reports no results instead of crashing`() =
+        testScope.runCurrentTest {
+            repository.throwOnSearch = { IllegalStateException("boom") }
+            val vm = viewModel()
+            vm.setQuery("sir")
+            vm.submit()
+            runCurrent()
+
+            assertThat(vm.target.value).isNull()
+            assertThat(vm.noResults.value).isTrue()
+            // The caught exception yields an empty hit list, which submit() then reports as an
+            // ordinary no-results failure on top of the error event — the user sees one dialog,
+            // not a crash, but two signals reach analytics.
+            assertThat(analytics.eventNames())
+                .containsExactly(
+                    AnalyticsEvents.SEARCH_QUERY_ERROR_EVENT,
+                    AnalyticsEvents.SEARCH_FAILED_EVENT,
+                ).inOrder()
         }
 
     @Test
