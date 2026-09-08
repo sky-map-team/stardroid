@@ -85,6 +85,13 @@ object AnalyticsEvents {
     const val SEARCH_TERM = "search_term"
     const val SEARCH_SUCCESS = "search_success"
     const val SEARCH_FAILED_EVENT = "search_failed_ev"
+
+    // A caught exception from the catalog query itself (issue #1003), distinct from
+    // [SEARCH_FAILED_EVENT]'s "the query legitimately matched nothing". Same rationale as the
+    // satellite-fetch events above: no per-device stack trace, so the aggregate count by
+    // [SEARCH_QUERY_ERROR_TYPE] is what would surface a systemic bug in production.
+    const val SEARCH_QUERY_ERROR_EVENT = "search_query_error_ev"
+    const val SEARCH_QUERY_ERROR_TYPE = "error_type"
     const val OBJECT_LOCKED_EVENT = "object_locked_ev"
     const val OBJECT_LOCKED_NAME = "object_name"
     const val OBJECT_LOCKED_MODE = "mode"

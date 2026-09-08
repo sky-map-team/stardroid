@@ -96,6 +96,14 @@ android {
         // string per locale (356 on the first salvage import) and buries real lint findings.
         warning += "MissingTranslation"
     }
+
+    testOptions {
+        // JVM unit tests run without Robolectric, so android.util.Log (and other unmocked
+        // android.jar stubs) throw at call time instead of no-oping (issue #1003 PR review:
+        // SearchViewModel's Log.e in a catch block was silently swallowing the exception it
+        // was meant to log, since the RuntimeException it threw escaped the catch entirely).
+        unitTests.isReturnDefaultValues = true
+    }
 }
 
 dependencies {
