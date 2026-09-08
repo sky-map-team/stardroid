@@ -143,6 +143,8 @@ Both: 100 character line wrap, no `m`-prefix on member variables/properties.
 
 ## Translations
 
+> This is out of date.
+
 Translation files live under `<module>/app/src/main/res/values-<language>/` (`stardroid-v2/` for
 current development, `stardroid-v1/` for the legacy app). If you'd like to contribute a new
 translation or fix an existing one, those PRs are very welcome. See the existing language
