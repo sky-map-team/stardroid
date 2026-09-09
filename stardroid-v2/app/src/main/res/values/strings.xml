@@ -359,6 +359,7 @@
     <string name="diagnostics_share" translation_description="Accessibility label for the diagnostics screen button that emails these details to the developers">Send to developers</string>
     <string name="diagnostics_share_subject" translation_description="Subject line of the email a user sends from the diagnostics screen">Sky Map diagnostics report</string>
     <string name="diagnostics_report_header" translation_description="First line of the emailed diagnostics report, telling the user where to type their problem description. Keep it on one line.">--- Sky Map diagnostics. Please describe the problem above this line. ---</string>
+    <string name="diagnostics_section_recent_log" translation_description="Section heading, in the emailed diagnostics report only (not shown on screen), for the app's own recent log lines">Recent Log</string>
     <string name="diagnostics_section_general" translation_description="Section heading in the diagnostics screen for general device information">General</string>
     <string name="diagnostics_device" translation_description="Row label in the diagnostics screen for the device model name">Device</string>
     <string name="diagnostics_phone_format" translation_description="Format for phone info in diagnostics: model (hardware) language. %1$s is model, %2$s is hardware, %3$s is language">%1$s (%2$s) %3$s</string>

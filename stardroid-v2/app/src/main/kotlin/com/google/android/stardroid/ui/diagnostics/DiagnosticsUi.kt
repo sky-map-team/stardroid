@@ -57,7 +57,9 @@ import com.google.android.stardroid.sensors.SensorKind
 import com.google.android.stardroid.ui.common.topBarWindowInsets
 import com.google.android.stardroid.ui.theme.StatusColors
 import com.google.android.stardroid.ui.theme.statusColors
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import kotlinx.datetime.Instant
 import java.time.ZoneId
 import java.time.ZoneOffset
@@ -99,6 +101,7 @@ fun DiagnosticsScreen(
         }
     val reportHeader = stringResource(R.string.diagnostics_report_header)
     val reportSubject = stringResource(R.string.diagnostics_share_subject)
+    val recentLogTitle = stringResource(R.string.diagnostics_section_recent_log)
     Scaffold(
         topBar = {
             TopAppBar(
@@ -115,11 +118,25 @@ fun DiagnosticsScreen(
                 actions = {
                     IconButton(
                         onClick = {
-                            DiagnosticsShare.send(
-                                context,
-                                reportSubject,
-                                DiagnosticsReport.format(reportHeader, sections),
-                            )
+                            scope.launch {
+                                val logLines =
+                                    withContext(Dispatchers.IO) { DiagnosticsLog.recentLines() }
+                                val reportSections =
+                                    if (logLines.isEmpty()) {
+                                        sections
+                                    } else {
+                                        sections +
+                                            DiagnosticsSection(
+                                                recentLogTitle,
+                                                logLines.map { DiagnosticsRow("", it) },
+                                            )
+                                    }
+                                DiagnosticsShare.send(
+                                    context,
+                                    reportSubject,
+                                    DiagnosticsReport.format(reportHeader, reportSections),
+                                )
+                            }
                         },
                     ) {
                         Icon(
