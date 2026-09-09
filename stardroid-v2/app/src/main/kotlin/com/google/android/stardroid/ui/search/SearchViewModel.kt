@@ -254,6 +254,16 @@ class SearchViewModel(
     }
 
     /**
+     * [SearchUi]'s `SearchDialog` reports a failed `FocusRequester.requestFocus()` here rather
+     * than letting it propagate — missing the initial focus is a minor UX miss, not a reason to
+     * crash the dialog (issue #1003 follow-up).
+     */
+    fun reportFocusRequestFailed(e: Throwable) {
+        Log.e(TAG, "Search field focus request failed", e)
+        analytics.trackEvent(AnalyticsEvents.SEARCH_FOCUS_REQUEST_FAILED_EVENT, emptyMap())
+    }
+
+    /**
      * The schema's independent-capabilities rule, extended to the solar system: the hit's own
      * resolved position, else the ephemeris for a `planet/` id, else the parent's — which for
      * a card-only moon (`moon/io` → Jupiter) again means the ephemeris.

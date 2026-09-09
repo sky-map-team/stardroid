@@ -288,7 +288,17 @@ fun SearchDialog(
         },
     )
 
-    LaunchedEffect(Unit) { focusRequester.requestFocus() }
+    // `AlertDialog` composes its content into a separate dialog window, so this can race the
+    // field's attach to the composition tree and throw on slower devices (issue #1003 follow-up,
+    // GA-reported as SearchDialogKt$SearchDialog$4$1.invokeSuspend / IllegalStateException).
+    // Missing the initial focus is a minor UX miss, not a reason to crash the dialog.
+    LaunchedEffect(Unit) {
+        try {
+            focusRequester.requestFocus()
+        } catch (e: IllegalStateException) {
+            viewModel.reportFocusRequestFailed(e)
+        }
+    }
 }
 
 @Composable

@@ -293,6 +293,16 @@ class SearchViewModelTest {
         }
 
     @Test
+    fun `a failed focus request is reported, not thrown`() =
+        testScope.runCurrentTest {
+            val vm = viewModel()
+            vm.reportFocusRequestFailed(IllegalStateException("boom"))
+
+            assertThat(analytics.eventNames())
+                .containsExactly(AnalyticsEvents.SEARCH_FOCUS_REQUEST_FAILED_EVENT)
+        }
+
+    @Test
     fun `a planet hit resolves through the ephemeris at the shared clock`() =
         testScope.runCurrentTest {
             val vm = viewModel()

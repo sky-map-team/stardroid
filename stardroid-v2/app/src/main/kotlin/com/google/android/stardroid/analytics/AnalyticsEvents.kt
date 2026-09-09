@@ -92,6 +92,13 @@ object AnalyticsEvents {
     // [SEARCH_QUERY_ERROR_TYPE] is what would surface a systemic bug in production.
     const val SEARCH_QUERY_ERROR_EVENT = "search_query_error_ev"
     const val SEARCH_QUERY_ERROR_TYPE = "error_type"
+
+    // A caught exception requesting focus for the search field (issue #1003 follow-up):
+    // `AlertDialog` composes its content into a separate window, so
+    // `FocusRequester.requestFocus()` can race the field's attach to the composition and throw
+    // `IllegalStateException` — more likely to lose on slower devices. Same aggregate-count
+    // rationale as [SEARCH_QUERY_ERROR_EVENT].
+    const val SEARCH_FOCUS_REQUEST_FAILED_EVENT = "search_focus_request_failed_ev"
     const val OBJECT_LOCKED_EVENT = "object_locked_ev"
     const val OBJECT_LOCKED_NAME = "object_name"
     const val OBJECT_LOCKED_MODE = "mode"
