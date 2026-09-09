@@ -332,6 +332,16 @@
     <string name="settings_sensor_damping_extra_high" translation_description="Extra high sensor damping factor">적당함</string>
     <string name="settings_sensor_damping_really_high" translation_description="Really high sensor damping factor - this will make the app sluggish">지연됨</string>
     <string name="settings_classic_sensors_only" translation_description="Summary noting a sensor preference only applies to the legacy non-gyroscope sensor path">레거시 센서 사용 시에만 적용됩니다</string>
+    <string name="settings_rotation_low_pass" translation_description="Preference title for low-pass filtering the gyroscope-based sensor path, to reduce jitter on some devices">센서 로우패스</string>
+    <string name="settings_rotation_low_pass_summary" translation_description="Explanation of the sensor low-pass preference and its trade-off">
+    센서 노이즈가 있는 기기에서 새 측정값을 점진적으로 혼합하여 흔들림을 줄여줍니다. 설정이 높을수록 화면이 안정적이지만 실제 움직임에 대한 반응은 느려집니다.
+    </string>
+    <string name="settings_rotation_deadband" translation_description="Preference title for ignoring tiny gyroscope-based sensor movements, to reduce jitter on some devices">센서 데드밴드</string>
+    <string name="settings_rotation_deadband_summary" translation_description="Explanation of the sensor deadband preference and its trade-off">임계값보다 작은 움직임은 무시합니다. 설정이 높을수록 더 큰 움직임을 무시하므로, 세밀하고 의도적인 조작의 반응성이 떨어질 수 있습니다.</string>
+    <string name="settings_rotation_smoothing_off" translation_description="Sensor smoothing disabled">끄기</string>
+    <string name="settings_rotation_smoothing_low" translation_description="Low sensor smoothing strength">낮음</string>
+    <string name="settings_rotation_smoothing_medium" translation_description="Medium sensor smoothing strength">중간</string>
+    <string name="settings_rotation_smoothing_high" translation_description="High sensor smoothing strength">높음</string>
     <string name="settings_reverse_magnetic_z" translation_description="Preference title for reversing the magnetometer Z axis, a workaround for devices with a mis-mounted compass sensor">자기 Z축 반전</string>
     <string name="settings_magnetic_correction">자기 수정 사용</string>
     <string name="settings_magnetic_correction_summary" translation_description="Summary for the magnetic correction preference">나침반을 자기 북극과 진북의 차이에 맞게 보정합니다</string>
@@ -347,6 +357,7 @@
     <string name="diagnostics_share" translation_description="Accessibility label for the diagnostics screen button that emails these details to the developers">개발자에게 보내기</string>
     <string name="diagnostics_share_subject" translation_description="Subject line of the email a user sends from the diagnostics screen">Sky Map 진단 보고서</string>
     <string name="diagnostics_report_header" translation_description="First line of the emailed diagnostics report, telling the user where to type their problem description. Keep it on one line.">--- Sky Map 진단. 이 줄 위에 문제를 설명해 주세요. ---</string>
+    <string name="diagnostics_section_recent_log" translation_description="Section heading, in the emailed diagnostics report only (not shown on screen), for the app's own recent log lines">최근 로그</string>
     <string name="diagnostics_section_general" translation_description="Section heading in the diagnostics screen for general device information">일반</string>
     <string name="diagnostics_device" translation_description="Row label in the diagnostics screen for the device model name">기기</string>
     <!-- tm:omitted name="diagnostics_phone_format" reason="identical_to_source" -->

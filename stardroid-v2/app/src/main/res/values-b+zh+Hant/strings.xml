@@ -328,6 +328,14 @@
     <string name="settings_sensor_damping_extra_high" translation_description="Extra high sensor damping factor">恰到好處</string>
     <string name="settings_sensor_damping_really_high" translation_description="Really high sensor damping factor - this will make the app sluggish">遲鈍</string>
     <string name="settings_classic_sensors_only" translation_description="Summary noting a sensor preference only applies to the legacy non-gyroscope sensor path">僅適用於使用舊版感測器時</string>
+    <string name="settings_rotation_low_pass" translation_description="Preference title for low-pass filtering the gyroscope-based sensor path, to reduce jitter on some devices">感測器低通濾波</string>
+    <string name="settings_rotation_low_pass_summary" translation_description="Explanation of the sensor low-pass preference and its trade-off">透過逐漸融合新讀數，減少感測器雜訊較大的裝置上的抖動。設定越高越穩定，但對實際移動的反應越慢。</string>
+    <string name="settings_rotation_deadband" translation_description="Preference title for ignoring tiny gyroscope-based sensor movements, to reduce jitter on some devices">感測器無效區</string>
+    <string name="settings_rotation_deadband_summary" translation_description="Explanation of the sensor deadband preference and its trade-off">忽略小於閾值的移動。設定越高會忽略越大的移動，這可能會使微小的刻意調整變得較不靈敏。</string>
+    <string name="settings_rotation_smoothing_off" translation_description="Sensor smoothing disabled">關閉</string>
+    <string name="settings_rotation_smoothing_low" translation_description="Low sensor smoothing strength">低</string>
+    <string name="settings_rotation_smoothing_medium" translation_description="Medium sensor smoothing strength">中</string>
+    <string name="settings_rotation_smoothing_high" translation_description="High sensor smoothing strength">高</string>
     <string name="settings_reverse_magnetic_z">磁場反向</string>
     <string name="settings_magnetic_correction">使用地磁校正</string>
     <string name="settings_magnetic_correction_summary" translation_description="Summary for the magnetic correction preference">校正指南針以修正磁北與正北之間的差異</string>
@@ -343,6 +351,7 @@
     <string name="diagnostics_share" translation_description="Accessibility label for the diagnostics screen button that emails these details to the developers">傳送給開發人員</string>
     <string name="diagnostics_share_subject" translation_description="Subject line of the email a user sends from the diagnostics screen">Sky Map 診斷報告</string>
     <string name="diagnostics_report_header" translation_description="First line of the emailed diagnostics report, telling the user where to type their problem description. Keep it on one line.">--- Sky Map 診斷。請在此行上方描述問題。---</string>
+    <string name="diagnostics_section_recent_log" translation_description="Section heading, in the emailed diagnostics report only (not shown on screen), for the app's own recent log lines">近期記錄</string>
     <string name="diagnostics_section_general">一般</string>
     <string name="diagnostics_device">裝置</string>
     <!-- tm:omitted name="diagnostics_phone_format" reason="identical_to_source" -->

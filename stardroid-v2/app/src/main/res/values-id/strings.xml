@@ -339,6 +339,18 @@
     <string name="settings_sensor_damping_extra_high" translation_description="Extra high sensor damping factor">Cukup tepat</string>
     <string name="settings_sensor_damping_really_high" translation_description="Really high sensor damping factor - this will make the app sluggish">Lamban</string>
     <string name="settings_classic_sensors_only" translation_description="Summary noting a sensor preference only applies to the legacy non-gyroscope sensor path">Hanya berlaku saat sensor lama digunakan</string>
+    <!-- tm:omitted name="settings_rotation_low_pass" reason="identical_to_source" -->
+    <string name="settings_rotation_low_pass_summary" translation_description="Explanation of the sensor low-pass preference and its trade-off">
+    Mengurangi getaran pada perangkat dengan sensor yang bising dengan mencampur pembacaan baru secara bertahap. Pengaturan yang lebih tinggi lebih stabil tetapi lebih lambat merespons gerakan nyata.
+    </string>
+    <string name="settings_rotation_deadband" translation_description="Preference title for ignoring tiny gyroscope-based sensor movements, to reduce jitter on some devices">Deadband Sensor</string>
+    <string name="settings_rotation_deadband_summary" translation_description="Explanation of the sensor deadband preference and its trade-off">
+    Mengabaikan gerakan yang lebih kecil dari ambang batas. Pengaturan yang lebih tinggi akan mengabaikan gerakan yang lebih besar, yang dapat membuat penyesuaian kecil yang disengaja menjadi kurang responsif.
+    </string>
+    <string name="settings_rotation_smoothing_off" translation_description="Sensor smoothing disabled">Mati</string>
+    <string name="settings_rotation_smoothing_low" translation_description="Low sensor smoothing strength">Rendah</string>
+    <string name="settings_rotation_smoothing_medium" translation_description="Medium sensor smoothing strength">Sedang</string>
+    <string name="settings_rotation_smoothing_high" translation_description="High sensor smoothing strength">Tinggi</string>
     <string name="settings_reverse_magnetic_z">Balikkan Magnetik Z</string>
     <string name="settings_magnetic_correction">Gunakan koreksi magnetik</string>
     <string name="settings_magnetic_correction_summary" translation_description="Summary for the magnetic correction preference">Mengoreksi kompas untuk perbedaan antara utara magnetis dan utara sejati</string>
@@ -356,6 +368,7 @@
     <string name="diagnostics_share" translation_description="Accessibility label for the diagnostics screen button that emails these details to the developers">Kirim ke pengembang</string>
     <string name="diagnostics_share_subject" translation_description="Subject line of the email a user sends from the diagnostics screen">Laporan diagnostik Sky Map</string>
     <string name="diagnostics_report_header" translation_description="First line of the emailed diagnostics report, telling the user where to type their problem description. Keep it on one line.">--- Diagnostik Sky Map. Harap jelaskan masalah di atas garis ini. ---</string>
+    <string name="diagnostics_section_recent_log" translation_description="Section heading, in the emailed diagnostics report only (not shown on screen), for the app's own recent log lines">Log Terbaru</string>
     <string name="diagnostics_section_general">Umum</string>
     <string name="diagnostics_device">Perangkat</string>
     <!-- tm:omitted name="diagnostics_phone_format" reason="identical_to_source" -->
