@@ -14,6 +14,8 @@ import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.PixelFormat
+import android.hardware.Sensor
+import android.hardware.SensorManager
 import android.location.LocationManager
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
@@ -277,7 +279,16 @@ class MainActivity : ComponentActivity() {
 
     private val settingsViewModel: SettingsViewModel by viewModels {
         viewModelFactory {
-            initializer { SettingsViewModel(settings, analytics, experimentConfig) }
+            initializer {
+                SettingsViewModel(
+                    settings,
+                    analytics,
+                    experimentConfig,
+                    fusedSensorAvailable =
+                        getSystemService(SensorManager::class.java)
+                            ?.getDefaultSensor(Sensor.TYPE_ROTATION_VECTOR) != null,
+                )
+            }
         }
     }
 

@@ -35,10 +35,12 @@ import kotlinx.coroutines.flow.flowOf
  * `SensorOrientationController`.
  *
  * Prefers the fused rotation-vector sensor (unless [SensorConfig.disableGyro]); devices
- * without one fall back to v1's classic accelerometer+magnetometer path: each stream smoothed
- * by an [ExponentiallyWeightedSmoother] at the configured damping/speed, then fused by the
- * pure `orientationFromSensors` vector-rejection construction. A [config] change re-registers
- * the listeners under the new parameters — v1 applied its preferences on controller restart.
+ * without one fall back to v1's classic accelerometer+magnetometer path: the two raw streams
+ * fused by the pure `orientationFromSensors` vector-rejection construction, and the resulting
+ * orientation smoothed by a [QuaternionSlerpSmoother] at the configured damping — the same
+ * smoother the fused path uses, applied post-fusion (issue #1007). v1 instead smoothed each
+ * raw stream per-axis before fusing. A [config] change re-registers the listeners under the
+ * new parameters — v1 applied its preferences on controller restart.
  *
  * Sensors report in the device's *natural* frame; [displayRotation] (a [Surface] `ROTATION_*`
  * value, read per sample) remaps each matrix into the current display frame so `STANDARD`
@@ -179,52 +181,58 @@ class SensorOrientationSource(
         config: SensorConfig,
     ): Flow<Matrix3> =
         callbackFlow {
-            val (accDamping, magDamping) = dampingSettingsFor(config.damping)
-            val accelerationSmoother =
-                ExponentiallyWeightedSmoother(accDamping.alpha, accDamping.exponent)
-            val magneticSmoother =
-                ExponentiallyWeightedSmoother(magDamping.alpha, magDamping.exponent)
+            val damping = dampingSettingsFor(config.damping)
+            // No deadband: the exponent law is itself a soft one, and unlike the fused path
+            // (where deadband is a separate user setting) the legacy ladder has never had a
+            // hard cut-off to preserve.
+            val smoother =
+                QuaternionSlerpSmoother(
+                    alpha = damping.alpha,
+                    deadbandRadians = 0f,
+                    exponent = damping.exponent,
+                )
             val delay = sensorDelayFor(config.speed)
             var acceleration: Vector3? = null
             var magneticField: Vector3? = null
+            val quaternion = FloatArray(4)
             val naturalMatrix = FloatArray(9)
             val remappedMatrix = FloatArray(9)
             val listener =
                 object : SensorEventListener {
                     override fun onSensorChanged(event: SensorEvent) {
                         when (event.sensor.type) {
-                            Sensor.TYPE_ACCELEROMETER ->
-                                acceleration = accelerationSmoother.update(event.values)
-                            Sensor.TYPE_MAGNETIC_FIELD -> {
-                                val smoothed = magneticSmoother.update(event.values)
+                            Sensor.TYPE_ACCELEROMETER -> acceleration = event.values.toVector3()
+                            Sensor.TYPE_MAGNETIC_FIELD ->
                                 // v1 PlainSmootherModelAdaptor: the mis-mounted-magnetometer
-                                // workaround negates Z (smoothing is linear, so the order is
-                                // immaterial).
+                                // workaround negates Z.
                                 magneticField =
-                                    if (config.reverseMagneticZ) {
-                                        Vector3(smoothed.x, smoothed.y, -smoothed.z)
-                                    } else {
-                                        smoothed
-                                    }
-                            }
+                                    event.values.toVector3(negateZ = config.reverseMagneticZ)
                         }
                         val accel = acceleration ?: return
                         val mag = magneticField ?: return
-                        orientationFromSensors(accel, mag)?.let { matrix ->
-                            // ROTATION_0 needs no remap; skip the FloatArray round-trip (two
-                            // allocations per event) on the hot path in that common case.
-                            val remapped =
-                                if (displayRotation() == Surface.ROTATION_0) {
-                                    matrix
-                                } else {
-                                    matrix.writeToFloatArray(naturalMatrix)
-                                    remapToDisplayFrame(
-                                        naturalMatrix,
-                                        remappedMatrix,
-                                    ).toMatrix3()
-                                }
-                            trySend(remapped)
-                        }
+                        val fused = orientationFromSensors(accel, mag) ?: return
+                        // Smoothing happens here, on the fused orientation in the natural
+                        // frame, rather than on the two raw vectors feeding
+                        // orientationFromSensors. v1's per-axis smoothers ran the
+                        // accelerometer far more responsively than the magnetometer, so during
+                        // motion "up" tracked while "north" lagged and the constructed frame
+                        // was transiently inconsistent in a way neither the raw nor the settled
+                        // data is; one smoother on the result gives the whole frame a single
+                        // uniform lag. Smoothing before the display remap also keeps a screen
+                        // rotation from being smoothed through as though it were movement.
+                        val smoothed =
+                            smoother.update(fused.writeQuaternion(quaternion))
+                                .toRotationMatrix3()
+                        // ROTATION_0 needs no remap; skip the FloatArray round-trip (two
+                        // allocations per event) on the hot path in that common case.
+                        val remapped =
+                            if (displayRotation() == Surface.ROTATION_0) {
+                                smoothed
+                            } else {
+                                smoothed.writeToFloatArray(naturalMatrix)
+                                remapToDisplayFrame(naturalMatrix, remappedMatrix).toMatrix3()
+                            }
+                        trySend(remapped)
                     }
 
                     override fun onAccuracyChanged(
@@ -236,6 +244,14 @@ class SensorOrientationSource(
             manager.registerListener(listener, magnetometer, delay)
             awaitClose { manager.unregisterListener(listener) }
         }.conflate()
+
+    /** One raw 3-axis sample as a [Vector3], optionally with Z negated. */
+    private fun FloatArray.toVector3(negateZ: Boolean = false) =
+        Vector3(
+            this[0].toDouble(),
+            this[1].toDouble(),
+            if (negateZ) -this[2].toDouble() else this[2].toDouble(),
+        )
 
     /**
      * Rotates a natural-frame rotation matrix into the current display frame. The axis pairs
@@ -275,26 +291,29 @@ class SensorOrientationSource(
             this[6].toDouble(), this[7].toDouble(), this[8].toDouble(),
         )
 
-    /** One smoother's parameters — v1 `SensorOrientationController.SensorDampingSettings`. */
+    /** One smoother's parameters: SLERP fraction `alpha · angle^(exponent - 1)`, clamped to 1. */
     internal data class DampingSettings(val alpha: Float, val exponent: Int)
 
     companion object {
         /**
-         * v1's `ACC_DAMPING_SETTINGS`/`MAG_DAMPING_SETTINGS` tables, indexed by the same
-         * ladder (standard → really high).
+         * The legacy path's damping ladder, re-expressed for [QuaternionSlerpSmoother].
+         *
+         * v1's `ACC_DAMPING_SETTINGS`/`MAG_DAMPING_SETTINGS` constants can't be carried over
+         * numerically — they acted on raw sensor units (m/s², µT) where these act on radians of
+         * rotation — but the character they gave each rung is preserved: crush sub-degree
+         * jitter, pass real movement through almost unattenuated. At half a degree per sample
+         * the fractions here run 0.18 / 0.05 / 0.03 / 0.001; by ten degrees they are 1.0 / 1.0
+         * / 0.52 / 0.37. (`REALLY_HIGH`'s steeper exponent makes it overtake `EXTRA_HIGH` above
+         * roughly fourteen degrees per sample — inherent to the exponent law, and v1's tables
+         * crossed over the same way.) The rungs want checking on a real gyro-less device; they
+         * are a starting point, not measured values.
          */
-        internal fun dampingSettingsFor(
-            damping: SensorDamping,
-        ): Pair<DampingSettings, DampingSettings> =
+        internal fun dampingSettingsFor(damping: SensorDamping): DampingSettings =
             when (damping) {
-                SensorDamping.STANDARD ->
-                    DampingSettings(0.7f, 3) to DampingSettings(0.05f, 3)
-                SensorDamping.HIGH ->
-                    DampingSettings(0.7f, 3) to DampingSettings(0.001f, 4)
-                SensorDamping.EXTRA_HIGH ->
-                    DampingSettings(0.1f, 3) to DampingSettings(0.0001f, 5)
-                SensorDamping.REALLY_HIGH ->
-                    DampingSettings(0.1f, 3) to DampingSettings(0.000001f, 5)
+                SensorDamping.STANDARD -> DampingSettings(20f, 2)
+                SensorDamping.HIGH -> DampingSettings(6f, 2)
+                SensorDamping.EXTRA_HIGH -> DampingSettings(3f, 2)
+                SensorDamping.REALLY_HIGH -> DampingSettings(12f, 3)
             }
 
         /** v1's speed mapping: standard = GAME, slow = NORMAL, fast = FASTEST. */

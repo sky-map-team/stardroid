@@ -78,6 +78,34 @@ class QuaternionSlerpSmootherTest {
     }
 
     @Test
+    fun `an exponent above one damps small movements harder than large ones`() {
+        // The legacy path's law (issue #1007): fraction = alpha * angle, so a half-degree
+        // wobble barely moves the output while a twenty-degree sweep tracks almost fully.
+        val jitterSmoother = QuaternionSlerpSmoother(alpha = 3f, deadbandRadians = 0f, exponent = 2)
+        jitterSmoother.update(IDENTITY)
+        val wobbled = jitterSmoother.update(rotationAboutZ(0.5))
+        assertThat(angleBetweenDegrees(wobbled, IDENTITY)).isLessThan(0.05)
+
+        val motionSmoother = QuaternionSlerpSmoother(alpha = 3f, deadbandRadians = 0f, exponent = 2)
+        motionSmoother.update(IDENTITY)
+        val swept = motionSmoother.update(rotationAboutZ(20.0))
+        // Measured against the starting point rather than the target: comparing two nearly
+        // identical quaternions runs acos right up against 1, where a single float ulp is
+        // worth a few hundredths of a degree.
+        assertThat(angleBetweenDegrees(swept, IDENTITY)).isGreaterThan(19.9)
+    }
+
+    @Test
+    fun `an exponent of one is a plain low-pass`() {
+        val exponential = QuaternionSlerpSmoother(alpha = 0.3f, deadbandRadians = 0f, exponent = 1)
+        val default = QuaternionSlerpSmoother(alpha = 0.3f, deadbandRadians = 0f)
+        exponential.update(IDENTITY)
+        default.update(IDENTITY)
+        val target = rotationAboutZ(30.0)
+        assertThat(exponential.update(target).toList()).isEqualTo(default.update(target).toList())
+    }
+
+    @Test
     fun `low-pass ladder is off by default and strictly decreasing in alpha`() {
         assertThat(QuaternionSlerpSmoother.alphaFor(RotationSmoothingLevel.OFF)).isEqualTo(1f)
 

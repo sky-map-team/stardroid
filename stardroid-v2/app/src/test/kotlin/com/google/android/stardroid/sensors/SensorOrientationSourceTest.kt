@@ -15,27 +15,32 @@ import com.google.android.stardroid.settings.SensorSpeed
 import com.google.common.truth.Truth.assertThat
 import org.junit.jupiter.api.Test
 
-/** The preference→parameter tables, pinned to v1 `SensorOrientationController`'s values. */
+/** The preference→parameter tables. Speed is pinned to v1 `SensorOrientationController`'s
+ * values; damping is v1's ladder re-expressed for [QuaternionSlerpSmoother] (issue #1007), so
+ * it's the ordering and the character of each rung that's pinned, not v1's raw constants. */
 class SensorOrientationSourceTest {
     @Test
-    fun `damping ladder matches v1's smoothing tables`() {
-        val standard = SensorOrientationSource.dampingSettingsFor(SensorDamping.STANDARD)
-        assertThat(standard.first).isEqualTo(SensorOrientationSource.DampingSettings(0.7f, 3))
-        assertThat(standard.second).isEqualTo(SensorOrientationSource.DampingSettings(0.05f, 3))
+    fun `damping ladder damps sub-degree jitter progressively harder`() {
+        val jitter = Math.toRadians(0.5).toFloat()
+        val fractions = SensorDamping.entries.map { fractionAt(it, jitter) }
+        fractions.zipWithNext { looser, tighter ->
+            assertThat(looser).isGreaterThan(tighter)
+        }
+        // Even the least-damped rung meaningfully attenuates jitter of half a degree...
+        assertThat(fractions.first()).isLessThan(0.5f)
+        // ...and the most-damped one all but freezes it.
+        assertThat(fractions.last()).isLessThan(0.01f)
+    }
 
-        val high = SensorOrientationSource.dampingSettingsFor(SensorDamping.HIGH)
-        assertThat(high.first).isEqualTo(SensorOrientationSource.DampingSettings(0.7f, 3))
-        assertThat(high.second).isEqualTo(SensorOrientationSource.DampingSettings(0.001f, 4))
-
-        val extraHigh = SensorOrientationSource.dampingSettingsFor(SensorDamping.EXTRA_HIGH)
-        assertThat(extraHigh.first).isEqualTo(SensorOrientationSource.DampingSettings(0.1f, 3))
-        assertThat(extraHigh.second)
-            .isEqualTo(SensorOrientationSource.DampingSettings(0.0001f, 5))
-
-        val reallyHigh = SensorOrientationSource.dampingSettingsFor(SensorDamping.REALLY_HIGH)
-        assertThat(reallyHigh.first).isEqualTo(SensorOrientationSource.DampingSettings(0.1f, 3))
-        assertThat(reallyHigh.second)
-            .isEqualTo(SensorOrientationSource.DampingSettings(0.000001f, 5))
+    @Test
+    fun `damping ladder passes real movement through`() {
+        // Twenty degrees between samples is unambiguous movement, not noise: every rung should
+        // track it at close to full speed, which is what the exponent law buys over a flat
+        // low-pass.
+        val movement = Math.toRadians(20.0).toFloat()
+        SensorDamping.entries.forEach {
+            assertThat(fractionAt(it, movement)).isGreaterThan(0.9f)
+        }
     }
 
     @Test
@@ -46,5 +51,18 @@ class SensorOrientationSourceTest {
             .isEqualTo(SensorManager.SENSOR_DELAY_GAME)
         assertThat(SensorOrientationSource.sensorDelayFor(SensorSpeed.FAST))
             .isEqualTo(SensorManager.SENSOR_DELAY_FASTEST)
+    }
+
+    private companion object {
+        /** The SLERP fraction a rung yields for a sample [angle] radians away. */
+        fun fractionAt(
+            damping: SensorDamping,
+            angle: Float,
+        ): Float {
+            val settings = SensorOrientationSource.dampingSettingsFor(damping)
+            var fraction = settings.alpha
+            repeat(settings.exponent - 1) { fraction *= angle }
+            return minOf(1f, fraction)
+        }
     }
 }

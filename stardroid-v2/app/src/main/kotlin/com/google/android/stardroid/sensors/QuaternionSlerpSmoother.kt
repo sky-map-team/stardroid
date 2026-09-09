@@ -24,20 +24,32 @@ import kotlin.math.sin
  * the derived rotation matrix, since SLERP is the geometrically correct way to interpolate along
  * the rotation manifold.
  *
- * Each sample moves the smoothed quaternion a fraction [alpha] of the way toward the raw sample
- * (lower = more smoothing, more lag), except samples within [deadbandRadians] of the current
- * smoothed value, which are ignored outright — the "hold steady through micro-movements" half of
- * the fix.
+ * Each sample moves the smoothed quaternion a fraction of the way toward the raw sample (lower
+ * = more smoothing, more lag), except samples within [deadbandRadians] of the current smoothed
+ * value, which are ignored outright — the "hold steady through micro-movements" half of the fix.
+ *
+ * That fraction is `alpha · angle^(exponent - 1)`, clamped to 1. At the default [exponent] of 1
+ * it is simply [alpha], the plain low-pass the fused path uses. Higher exponents make it
+ * angle-dependent — jitter of a fraction of a degree is damped hard while genuine movement
+ * passes through almost immediately — which is the character v1's per-axis
+ * `ExponentiallyWeightedSmoother` gave the legacy accelerometer+magnetometer path, carried over
+ * to the rotation manifold so that path can smooth its orientation post-fusion instead
+ * (issue #1007). [alpha] may therefore exceed 1 when [exponent] is greater than 1.
  */
-class QuaternionSlerpSmoother(private val alpha: Float, private val deadbandRadians: Float) {
+class QuaternionSlerpSmoother(
+    private val alpha: Float,
+    private val deadbandRadians: Float,
+    private val exponent: Int = 1,
+) {
     private var current: FloatArray? = null
 
     /** [raw] is a unit quaternion as `(x, y, z, w)`. Returns the smoothed quaternion, same form. */
     fun update(raw: FloatArray): FloatArray {
         val prev = current
         if (prev == null) {
-            // Start at the first sample rather than decaying in from zero — see
-            // ExponentiallyWeightedSmoother for the same reasoning. Returning the caller's own
+            // Start at the first sample rather than decaying in from zero, which would cost a
+            // visible settle on startup (v1's per-axis smoother had exactly that bug).
+            // Returning the caller's own
             // [raw] array (rather than a copy) is only safe because the caller consumes it
             // synchronously before the next event can mutate the shared scratch buffer behind
             // it — don't buffer/retain this return value across events.
@@ -52,9 +64,16 @@ class QuaternionSlerpSmoother(private val alpha: Float, private val deadbandRadi
         val angle = 2f * acos(min(1f, abs(dot)))
         if (angle < deadbandRadians) return prev
 
-        val smoothed = slerp(prev, target, alpha)
+        val smoothed = slerp(prev, target, fractionFor(angle))
         current = smoothed
         return smoothed
+    }
+
+    /** The SLERP fraction for a sample [angle] radians away — see the class KDoc. */
+    private fun fractionFor(angle: Float): Float {
+        var fraction = alpha
+        repeat(exponent - 1) { fraction *= angle }
+        return min(1f, fraction)
     }
 
     companion object {

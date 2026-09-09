@@ -80,6 +80,7 @@ fun SettingsScreen(
     onOpenDiagnostics: () -> Unit,
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
+    val legacyPathActive by viewModel.legacyPathActive.collectAsStateWithLifecycle()
     BackHandler(onBack = onBack)
     Scaffold(
         topBar = {
@@ -158,8 +159,10 @@ fun SettingsScreen(
                     onCheckedChange = viewModel::setDisableGyro,
                 )
                 // Speed/damping/reverse-Z only act on the legacy (non-gyro) sensor path, so
-                // they only show while that path is selected — less noise for everyone else.
-                if (state.disableGyro) {
+                // they only show while that path is what's running — less noise for everyone
+                // else. Note that's not the same as `disableGyro`: a device with no
+                // rotation-vector sensor runs the legacy path with `disableGyro` false.
+                if (legacyPathActive) {
                     ChoiceRow(
                         title = stringResource(R.string.settings_sensor_speed),
                         summary = stringResource(R.string.settings_classic_sensors_only),
