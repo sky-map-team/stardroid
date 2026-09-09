@@ -340,6 +340,18 @@
     <string name="settings_sensor_damping_extra_high" translation_description="Extra high sensor damping factor">Tam kararında</string>
     <string name="settings_sensor_damping_really_high" translation_description="Really high sensor damping factor - this will make the app sluggish">Gecikmeli</string>
     <string name="settings_classic_sensors_only" translation_description="Summary noting a sensor preference only applies to the legacy non-gyroscope sensor path">Yalnızca eski sensörler kullanımda olduğunda geçerlidir</string>
+    <string name="settings_rotation_low_pass" translation_description="Preference title for low-pass filtering the gyroscope-based sensor path, to reduce jitter on some devices">Sensör Alçak Geçiren</string>
+    <string name="settings_rotation_low_pass_summary" translation_description="Explanation of the sensor low-pass preference and its trade-off">
+    Yeni ölçümleri kademeli olarak birleştirerek gürültülü sensöre sahip cihazlarda titremeyi azaltır. Daha yüksek ayarlar daha kararlıdır ancak gerçek harekete yanıt vermeleri daha yavaştır.
+    </string>
+    <string name="settings_rotation_deadband" translation_description="Preference title for ignoring tiny gyroscope-based sensor movements, to reduce jitter on some devices">Sensör Ölü Bölgesi</string>
+    <string name="settings_rotation_deadband_summary" translation_description="Explanation of the sensor deadband preference and its trade-off">
+    Belirli bir eşikten küçük hareketleri yoksayar. Daha yüksek ayarlar daha büyük hareketleri yoksayar, bu da küçük kasıtlı ayarlamaları daha az duyarlı hale getirebilir.
+    </string>
+    <string name="settings_rotation_smoothing_off" translation_description="Sensor smoothing disabled">Kapalı</string>
+    <string name="settings_rotation_smoothing_low" translation_description="Low sensor smoothing strength">Düşük</string>
+    <string name="settings_rotation_smoothing_medium" translation_description="Medium sensor smoothing strength">Orta</string>
+    <string name="settings_rotation_smoothing_high" translation_description="High sensor smoothing strength">Yüksek</string>
     <string name="settings_reverse_magnetic_z">Manyetik Z Tersi</string>
     <string name="settings_magnetic_correction">Manyetik düzeltmeyi uygulayın</string>
     <string name="settings_magnetic_correction_summary" translation_description="Summary for the magnetic correction preference">Pusulayı manyetik ve coğrafi kuzey arasındaki farka göre düzeltir</string>
@@ -357,6 +369,7 @@
     <string name="diagnostics_share" translation_description="Accessibility label for the diagnostics screen button that emails these details to the developers">Geliştiricilere gönder</string>
     <string name="diagnostics_share_subject" translation_description="Subject line of the email a user sends from the diagnostics screen">Sky Map tanılama raporu</string>
     <string name="diagnostics_report_header" translation_description="First line of the emailed diagnostics report, telling the user where to type their problem description. Keep it on one line.">--- Sky Map tanılama. Lütfen sorunu bu çizginin üzerine yazın. ---</string>
+    <string name="diagnostics_section_recent_log" translation_description="Section heading, in the emailed diagnostics report only (not shown on screen), for the app's own recent log lines">Son Günlük</string>
     <string name="diagnostics_section_general">Genel</string>
     <string name="diagnostics_device">Cihaz</string>
     <!-- tm:omitted name="diagnostics_phone_format" reason="identical_to_source" -->

@@ -350,6 +350,18 @@
     <string name="settings_sensor_damping_extra_high" translation_description="Extra high sensor damping factor">Optimal</string>
     <string name="settings_sensor_damping_really_high" translation_description="Really high sensor damping factor - this will make the app sluggish">Lent</string>
     <string name="settings_classic_sensors_only" translation_description="Summary noting a sensor preference only applies to the legacy non-gyroscope sensor path">S\'applique uniquement lorsque les capteurs hérités sont utilisés</string>
+    <string name="settings_rotation_low_pass" translation_description="Preference title for low-pass filtering the gyroscope-based sensor path, to reduce jitter on some devices">Filtre passe-bas pour capteur</string>
+    <string name="settings_rotation_low_pass_summary" translation_description="Explanation of the sensor low-pass preference and its trade-off">
+    Réduit les oscillations sur les appareils dotés d\'un capteur bruité en combinant progressivement les nouvelles mesures. Des réglages plus élevés offrent plus de stabilité mais réagissent plus lentement aux mouvements réels.
+    </string>
+    <string name="settings_rotation_deadband" translation_description="Preference title for ignoring tiny gyroscope-based sensor movements, to reduce jitter on some devices">Zone morte du capteur</string>
+    <string name="settings_rotation_deadband_summary" translation_description="Explanation of the sensor deadband preference and its trade-off">
+    Ignore les mouvements inférieurs à un certain seuil. Des valeurs plus élevées ignorent les mouvements plus importants, ce qui peut rendre les petits ajustements délibérés moins réactifs.
+    </string>
+    <string name="settings_rotation_smoothing_off" translation_description="Sensor smoothing disabled">Désactivé</string>
+    <string name="settings_rotation_smoothing_low" translation_description="Low sensor smoothing strength">Faible</string>
+    <string name="settings_rotation_smoothing_medium" translation_description="Medium sensor smoothing strength">Moyen</string>
+    <string name="settings_rotation_smoothing_high" translation_description="High sensor smoothing strength">Élevé</string>
     <string name="settings_reverse_magnetic_z">Inverser l\'axe Z magnétique</string>
     <string name="settings_magnetic_correction">Correction magnétique</string>
     <string name="settings_magnetic_correction_summary" translation_description="Summary for the magnetic correction preference">
@@ -371,6 +383,7 @@
     <string name="diagnostics_report_header" translation_description="First line of the emailed diagnostics report, telling the user where to type their problem description. Keep it on one line.">
     --- Diagnostic Sky Map. Veuillez décrire le problème au-dessus de cette ligne. ---
     </string>
+    <string name="diagnostics_section_recent_log" translation_description="Section heading, in the emailed diagnostics report only (not shown on screen), for the app's own recent log lines">Journal récent</string>
     <string name="diagnostics_section_general">Général</string>
     <string name="diagnostics_device">Appareil</string>
     <!-- tm:omitted name="diagnostics_phone_format" reason="identical_to_source" -->

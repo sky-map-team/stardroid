@@ -25,19 +25,20 @@ import java.io.IOException
 object DiagnosticsLog {
     fun recentLines(maxLines: Int = 200): List<String> =
         try {
-            ProcessBuilder(
-                "logcat",
-                "-d",
-                "-t",
-                maxLines.toString(),
-                "--pid",
-                Process.myPid().toString(),
-            )
-                .redirectErrorStream(true)
-                .start()
-                .inputStream
-                .bufferedReader()
-                .readLines()
+            val process =
+                ProcessBuilder(
+                    "logcat",
+                    "-d",
+                    "-t",
+                    maxLines.toString(),
+                    "--pid",
+                    Process.myPid().toString(),
+                )
+                    .redirectErrorStream(true)
+                    .start()
+            val lines = process.inputStream.bufferedReader().use { it.readLines() }
+            process.waitFor()
+            lines
         } catch (e: IOException) {
             emptyList()
         } catch (e: SecurityException) {

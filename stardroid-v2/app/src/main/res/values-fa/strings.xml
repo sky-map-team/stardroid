@@ -342,6 +342,18 @@
     <string name="settings_sensor_damping_extra_high" translation_description="Extra high sensor damping factor">تقریباً مناسب</string>
     <string name="settings_sensor_damping_really_high" translation_description="Really high sensor damping factor - this will make the app sluggish">کند</string>
     <string name="settings_classic_sensors_only" translation_description="Summary noting a sensor preference only applies to the legacy non-gyroscope sensor path">فقط هنگام استفاده از حسگرهای قدیمی اعمال می‌شود</string>
+    <string name="settings_rotation_low_pass" translation_description="Preference title for low-pass filtering the gyroscope-based sensor path, to reduce jitter on some devices">پاس پایین حسگر</string>
+    <string name="settings_rotation_low_pass_summary" translation_description="Explanation of the sensor low-pass preference and its trade-off">
+    با ترکیب تدریجی داده‌های جدید، لرزش را در دستگاه‌هایی که حسگر نویزدار دارند کاهش می‌دهد. تنظیمات بالاتر پایدارتر هستند اما به حرکت واقعی کندتر واکنش نشان می‌دهند.
+    </string>
+    <string name="settings_rotation_deadband" translation_description="Preference title for ignoring tiny gyroscope-based sensor movements, to reduce jitter on some devices">منطقه مرده حسگر</string>
+    <string name="settings_rotation_deadband_summary" translation_description="Explanation of the sensor deadband preference and its trade-off">
+    حرکات کوچکتر از آستانه را نادیده می‌گیرد. تنظیمات بالاتر حرکات بزرگتر را نادیده می‌گیرند، که می‌تواند تنظیمات دقیق و عمدی کوچک را کمتر پاسخگو کند.
+    </string>
+    <string name="settings_rotation_smoothing_off" translation_description="Sensor smoothing disabled">خاموش</string>
+    <string name="settings_rotation_smoothing_low" translation_description="Low sensor smoothing strength">کم</string>
+    <string name="settings_rotation_smoothing_medium" translation_description="Medium sensor smoothing strength">متوسط</string>
+    <string name="settings_rotation_smoothing_high" translation_description="High sensor smoothing strength">زیاد</string>
     <string name="settings_reverse_magnetic_z">معکوس کردن حسگر مغناطیسی</string>
     <string name="settings_magnetic_correction">اصلاح با جهت‌نمای مغناطیسی</string>
     <string name="settings_magnetic_correction_summary" translation_description="Summary for the magnetic correction preference">قطب‌نما را برای تفاوت بین شمال مغناطیسی و شمال واقعی تصحیح می‌کند</string>
@@ -359,6 +371,7 @@
     <string name="diagnostics_share" translation_description="Accessibility label for the diagnostics screen button that emails these details to the developers">ارسال به توسعه‌دهندگان</string>
     <string name="diagnostics_share_subject" translation_description="Subject line of the email a user sends from the diagnostics screen">گزارش عیب‌یابی Sky Map</string>
     <string name="diagnostics_report_header" translation_description="First line of the emailed diagnostics report, telling the user where to type their problem description. Keep it on one line.">--- عیب‌یابی Sky Map. لطفاً مشکل را بالای این خط توضیح دهید. ---</string>
+    <string name="diagnostics_section_recent_log" translation_description="Section heading, in the emailed diagnostics report only (not shown on screen), for the app's own recent log lines">گزارش‌های اخیر</string>
     <string name="diagnostics_section_general">عمومی</string>
     <string name="diagnostics_device">وسیله</string>
     <!-- tm:omitted name="diagnostics_phone_format" reason="identical_to_source" -->

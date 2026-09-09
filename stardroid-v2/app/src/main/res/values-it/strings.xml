@@ -346,6 +346,18 @@
     <string name="settings_sensor_damping_extra_high" translation_description="Extra high sensor damping factor">Adeguato</string>
     <string name="settings_sensor_damping_really_high" translation_description="Really high sensor damping factor - this will make the app sluggish">Lento</string>
     <string name="settings_classic_sensors_only" translation_description="Summary noting a sensor preference only applies to the legacy non-gyroscope sensor path">Si applica solo quando sono in uso i sensori legacy</string>
+    <string name="settings_rotation_low_pass" translation_description="Preference title for low-pass filtering the gyroscope-based sensor path, to reduce jitter on some devices">Filtro passa-basso per i sensori</string>
+    <string name="settings_rotation_low_pass_summary" translation_description="Explanation of the sensor low-pass preference and its trade-off">
+    Riduce le oscillazioni sui dispositivi con sensori rumorosi combinando gradualmente le nuove letture. Impostazioni più elevate offrono maggiore stabilità ma rispondono più lentamente ai movimenti reali.
+    </string>
+    <string name="settings_rotation_deadband" translation_description="Preference title for ignoring tiny gyroscope-based sensor movements, to reduce jitter on some devices">Banda morta dei sensori</string>
+    <string name="settings_rotation_deadband_summary" translation_description="Explanation of the sensor deadband preference and its trade-off">
+    Ignora i movimenti inferiori a una soglia. Impostazioni più elevate ignorano movimenti più ampi, il che può rendere meno reattivi i piccoli aggiustamenti deliberati.
+    </string>
+    <string name="settings_rotation_smoothing_off" translation_description="Sensor smoothing disabled">Disattivato</string>
+    <string name="settings_rotation_smoothing_low" translation_description="Low sensor smoothing strength">Bassa</string>
+    <string name="settings_rotation_smoothing_medium" translation_description="Medium sensor smoothing strength">Media</string>
+    <string name="settings_rotation_smoothing_high" translation_description="High sensor smoothing strength">Alta</string>
     <string name="settings_reverse_magnetic_z">Inverti asse Z magnetico</string>
     <string name="settings_magnetic_correction">Usa correzione magnetica</string>
     <string name="settings_magnetic_correction_summary" translation_description="Summary for the magnetic correction preference">Corregge la bussola per la differenza tra nord magnetico e nord vero</string>
@@ -363,6 +375,7 @@
     <string name="diagnostics_share" translation_description="Accessibility label for the diagnostics screen button that emails these details to the developers">Invia agli sviluppatori</string>
     <string name="diagnostics_share_subject" translation_description="Subject line of the email a user sends from the diagnostics screen">Report diagnostico Sky Map</string>
     <string name="diagnostics_report_header" translation_description="First line of the emailed diagnostics report, telling the user where to type their problem description. Keep it on one line.">--- Diagnostica Sky Map. Descrivi il problema sopra questa riga. ---</string>
+    <string name="diagnostics_section_recent_log" translation_description="Section heading, in the emailed diagnostics report only (not shown on screen), for the app's own recent log lines">Log recenti</string>
     <string name="diagnostics_section_general">Generale</string>
     <string name="diagnostics_device">Dispositivo</string>
     <!-- tm:omitted name="diagnostics_phone_format" reason="identical_to_source" -->

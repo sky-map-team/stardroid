@@ -298,6 +298,14 @@
     <!-- tm:omitted name="settings_sensor_damping_extra_high" reason="identical_to_source" -->
     <!-- tm:omitted name="settings_sensor_damping_really_high" reason="identical_to_source" -->
     <!-- tm:omitted name="settings_classic_sensors_only" reason="identical_to_source" -->
+    <!-- tm:omitted name="settings_rotation_low_pass" reason="identical_to_source" -->
+    <!-- tm:omitted name="settings_rotation_low_pass_summary" reason="identical_to_source" -->
+    <!-- tm:omitted name="settings_rotation_deadband" reason="identical_to_source" -->
+    <!-- tm:omitted name="settings_rotation_deadband_summary" reason="identical_to_source" -->
+    <!-- tm:omitted name="settings_rotation_smoothing_off" reason="identical_to_source" -->
+    <!-- tm:omitted name="settings_rotation_smoothing_low" reason="identical_to_source" -->
+    <!-- tm:omitted name="settings_rotation_smoothing_medium" reason="identical_to_source" -->
+    <!-- tm:omitted name="settings_rotation_smoothing_high" reason="identical_to_source" -->
     <!-- tm:omitted name="settings_reverse_magnetic_z" reason="identical_to_source" -->
     <!-- tm:omitted name="settings_magnetic_correction" reason="identical_to_source" -->
     <!-- tm:omitted name="settings_magnetic_correction_summary" reason="identical_to_source" -->
@@ -313,6 +321,7 @@
     <!-- tm:omitted name="diagnostics_share" reason="identical_to_source" -->
     <!-- tm:omitted name="diagnostics_share_subject" reason="identical_to_source" -->
     <!-- tm:omitted name="diagnostics_report_header" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_section_recent_log" reason="identical_to_source" -->
     <!-- tm:omitted name="diagnostics_section_general" reason="identical_to_source" -->
     <!-- tm:omitted name="diagnostics_device" reason="identical_to_source" -->
     <!-- tm:omitted name="diagnostics_phone_format" reason="identical_to_source" -->
