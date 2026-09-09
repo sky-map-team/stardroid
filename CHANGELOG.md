@@ -5,6 +5,16 @@ All notable changes to Sky Map are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [2.0.4:Apollo] (v2) - 2026-09-09
+
+<img src="stardroid-v2/assets/release-icons/2.0.3_apollo_icon.png" width="80" alt="Apollo" />
+
+### Added
+- The diagnostics report sent from "Send to developers" now includes the app's own recent
+  log lines, giving full stack traces for caught-and-logged exceptions.
+
+---
+
 ## [2.0.3:Apollo] (v2) - 2026-09-08
 
 <img src="stardroid-v2/assets/release-icons/2.0.3_apollo_icon.png" width="80" alt="Apollo" />
