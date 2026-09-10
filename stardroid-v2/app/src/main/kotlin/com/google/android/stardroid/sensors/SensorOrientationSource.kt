@@ -302,18 +302,24 @@ class SensorOrientationSource(
          * numerically — they acted on raw sensor units (m/s², µT) where these act on radians of
          * rotation — but the character they gave each rung is preserved: crush sub-degree
          * jitter, pass real movement through almost unattenuated. At half a degree per sample
-         * the fractions here run 0.18 / 0.05 / 0.03 / 0.001; by ten degrees they are 1.0 / 1.0
-         * / 0.52 / 0.37. (`REALLY_HIGH`'s steeper exponent makes it overtake `EXTRA_HIGH` above
-         * roughly fourteen degrees per sample — inherent to the exponent law, and v1's tables
-         * crossed over the same way.) The rungs want checking on a real gyro-less device; they
-         * are a starting point, not measured values.
+         * the fractions here run 0.015 / 0.004 / 0.0009 / 0.0002; by ten degrees they are
+         * 1.0 / 1.0 / 0.37 / 0.09.
+         *
+         * Every rung shares the same exponent, so the ladder is strictly monotonic at every
+         * angle — a mixed-exponent ladder has rungs that overtake each other on fast movement,
+         * which is confusing to tune against.
+         *
+         * Field-tuned on a Pixel 9 Pro (issue #1007): the first pass sat well over a rung too
+         * light — its "Laggy" rung was what actually felt right and its "Jumpy" rung was
+         * unusable — so "About right" now carries what that pass called "Laggy". Still one
+         * device's judgement, and worth re-checking on a genuinely gyro-less one.
          */
         internal fun dampingSettingsFor(damping: SensorDamping): DampingSettings =
             when (damping) {
-                SensorDamping.STANDARD -> DampingSettings(20f, 2)
-                SensorDamping.HIGH -> DampingSettings(6f, 2)
-                SensorDamping.EXTRA_HIGH -> DampingSettings(3f, 2)
-                SensorDamping.REALLY_HIGH -> DampingSettings(12f, 3)
+                SensorDamping.STANDARD -> DampingSettings(200f, 3)
+                SensorDamping.HIGH -> DampingSettings(50f, 3)
+                SensorDamping.EXTRA_HIGH -> DampingSettings(12f, 3)
+                SensorDamping.REALLY_HIGH -> DampingSettings(3f, 3)
             }
 
         /** v1's speed mapping: standard = GAME, slow = NORMAL, fast = FASTEST. */
