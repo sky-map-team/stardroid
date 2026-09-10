@@ -44,6 +44,37 @@ class OneEuroQuaternionSmootherTest {
     }
 
     @Test
+    fun `noise on a stationary signal must not open the cutoff`() {
+        // The legacy accelerometer+magnetometer path feeds in raw sensor noise scattered in
+        // every direction. Keying the cutoff off the *size* of each sample's rotation reads
+        // that as fast movement — a size is always positive, so it never averages out — which
+        // opens the cutoff and passes the noise straight through. Steering by a low-passed
+        // velocity *vector* lets it cancel, so a stationary phone should filter essentially as
+        // hard with ease-off engaged as with it switched off. Asserted as a ratio because
+        // that's the property; the absolute jitter depends on the noise amplitude.
+        fun worstDeviation(easeOff: OneEuroEaseOff): Double {
+            val smoother =
+                OneEuroQuaternionSmoother(
+                    minCutoff = OneEuroQuaternionSmoother.minCutoffFor(OneEuroSteadiness.MEDIUM),
+                    beta = OneEuroQuaternionSmoother.betaFor(easeOff),
+                )
+            smoother.update(IDENTITY, t(0))
+            var worst = 0.0
+            repeat(300) {
+                val out = smoother.update(noiseAbout(IDENTITY, it), t(it + 1))
+                worst = maxOf(worst, angleBetweenDegrees(out, IDENTITY))
+            }
+            return worst
+        }
+        val withEaseOff = worstDeviation(OneEuroEaseOff.HIGH)
+        val withoutEaseOff = worstDeviation(OneEuroEaseOff.NONE)
+        // Measured at 1.4x with the velocity vector and 4.0x when keyed off the unsigned
+        // angle, so 2x separates them with room either side. Not 1x: some residual coupling
+        // is inherent, since noise leaves a little velocity behind however it's estimated.
+        assertThat(withEaseOff).isLessThan(withoutEaseOff * 2.0)
+    }
+
+    @Test
     fun `keeps up with sustained movement far better than with jitter`() {
         // The whole point of the adaptive cutoff: the same parameters that crush the wobble
         // above track a steady sweep closely. A flat low-pass cannot do both.
@@ -130,6 +161,38 @@ class OneEuroQuaternionSmootherTest {
 
         /** Timestamp for sample [index] at the 50 Hz the sensors are registered at, in nanos. */
         fun t(index: Int): Long = 1_000_000_000L + index * 20_000_000L
+
+        /**
+         * [about], displaced by roughly a degree in a direction that varies with [step] — a
+         * stand-in for raw sensor noise, deterministic so the test can't flake.
+         */
+        fun noiseAbout(
+            about: FloatArray,
+            step: Int,
+        ): FloatArray {
+            val half = Math.toRadians(2.0) / 2.0
+            val phase = step * 2.399963
+            val axis =
+                doubleArrayOf(cos(phase), sin(phase), cos(phase * 0.5))
+                    .let { a ->
+                        val len = kotlin.math.sqrt(a[0] * a[0] + a[1] * a[1] + a[2] * a[2])
+                        doubleArrayOf(a[0] / len, a[1] / len, a[2] / len)
+                    }
+            val n =
+                floatArrayOf(
+                    (axis[0] * sin(half)).toFloat(),
+                    (axis[1] * sin(half)).toFloat(),
+                    (axis[2] * sin(half)).toFloat(),
+                    cos(half).toFloat(),
+                )
+            // n ⊗ about
+            return floatArrayOf(
+                n[3] * about[0] + n[0] * about[3] + n[1] * about[2] - n[2] * about[1],
+                n[3] * about[1] - n[0] * about[2] + n[1] * about[3] + n[2] * about[0],
+                n[3] * about[2] + n[0] * about[1] - n[1] * about[0] + n[2] * about[3],
+                n[3] * about[3] - n[0] * about[0] - n[1] * about[1] - n[2] * about[2],
+            )
+        }
 
         fun rotationAboutZ(degrees: Double): FloatArray {
             val halfAngle = Math.toRadians(degrees) / 2.0

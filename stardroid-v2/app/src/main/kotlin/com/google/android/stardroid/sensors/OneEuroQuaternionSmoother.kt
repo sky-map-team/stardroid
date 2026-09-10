@@ -48,7 +48,17 @@ class OneEuroQuaternionSmoother(
     private val beta: Float,
 ) {
     private var current: FloatArray? = null
-    private var smoothedRate = 0f
+    private var previousRaw: FloatArray? = null
+
+    /**
+     * The low-passed angular velocity, as a 3-vector in radians/second. A *vector*, not a
+     * speed: sensor noise pushes it in a different direction each sample and so averages
+     * toward zero, where the magnitude of each sample's rotation never can — it is always
+     * positive, so low-passing it converges on the average size of the noise rather than on
+     * zero. Getting that wrong makes the filter read a noisy-but-stationary phone as moving
+     * fast, open the cutoff, and pass the noise straight through.
+     */
+    private val smoothedVelocity = FloatArray(3)
     private var lastTimestampNanos = 0L
 
     /**
@@ -68,8 +78,9 @@ class OneEuroQuaternionSmoother(
         // of smoothing.
         if (prev == null || dtSeconds <= 0f || dtSeconds > MAX_GAP_SECONDS) {
             current = raw.copyOf()
+            previousRaw = raw.copyOf()
             lastTimestampNanos = timestampNanos
-            smoothedRate = 0f
+            smoothedVelocity.fill(0f)
             // Safe to hand back the caller's own array only because it's consumed synchronously
             // before the next event can overwrite the shared scratch buffer behind it.
             return raw
@@ -80,18 +91,31 @@ class OneEuroQuaternionSmoother(
         // toward the "wrong" sign spins the long way around. Flip raw if it's closer to -prev.
         val dot = dot(prev, raw)
         val target = if (dot < 0f) negate(raw) else raw
-        val angle = 2f * acos(min(1f, abs(dot)))
 
-        // Low-pass the angular speed before it steers the cutoff, so a lone noisy sample can't
-        // convince the filter that real movement has started.
-        val rate = angle / dtSeconds
-        smoothedRate += smoothingFactor(DERIVATIVE_CUTOFF_HZ, dtSeconds) * (rate - smoothedRate)
+        // Steer the cutoff by how fast the *raw* signal is actually turning, low-passed
+        // component by component so noise cancels rather than accumulating (see
+        // [smoothedVelocity]).
+        val velocityFactor = smoothingFactor(DERIVATIVE_CUTOFF_HZ, dtSeconds)
+        angularVelocity(previousRaw ?: raw, raw, dtSeconds, velocityScratch)
+        for (axis in 0..2) {
+            smoothedVelocity[axis] +=
+                velocityFactor * (velocityScratch[axis] - smoothedVelocity[axis])
+        }
+        previousRaw = raw.copyOf()
 
-        val cutoff = minCutoff + beta * smoothedRate
+        val speed =
+            sqrt(
+                smoothedVelocity[0] * smoothedVelocity[0] +
+                    smoothedVelocity[1] * smoothedVelocity[1] +
+                    smoothedVelocity[2] * smoothedVelocity[2],
+            )
+        val cutoff = minCutoff + beta * speed
         val smoothed = slerp(prev, target, smoothingFactor(cutoff, dtSeconds))
         current = smoothed
         return smoothed
     }
+
+    private val velocityScratch = FloatArray(3)
 
     companion object {
         private const val NANOS_PER_SECOND = 1_000_000_000f
@@ -105,6 +129,37 @@ class OneEuroQuaternionSmoother(
          * delaying the filter's reaction to genuine movement.
          */
         private const val DERIVATIVE_CUTOFF_HZ = 1f
+
+        /**
+         * Writes the angular velocity carrying [from] to [to] over [dtSeconds] into [out], as
+         * an axis-angle 3-vector in radians/second.
+         *
+         * Uses the small-angle form of the quaternion log map: for `dq = to ⊗ conj(from)` with
+         * a positive scalar part, the rotation vector is `2 · dq.xyz` to well within a
+         * rounding error at the fraction of a degree a single sample covers.
+         */
+        private fun angularVelocity(
+            from: FloatArray,
+            to: FloatArray,
+            dtSeconds: Float,
+            out: FloatArray,
+        ) {
+            // to ⊗ conj(from)
+            var dx = -to[3] * from[0] + to[0] * from[3] - to[1] * from[2] + to[2] * from[1]
+            var dy = -to[3] * from[1] + to[1] * from[3] - to[2] * from[0] + to[0] * from[2]
+            var dz = -to[3] * from[2] + to[2] * from[3] - to[0] * from[1] + to[1] * from[0]
+            val dw = to[3] * from[3] + to[0] * from[0] + to[1] * from[1] + to[2] * from[2]
+            // Take the shorter of the two equivalent rotations, so a sign flip in the source
+            // quaternions doesn't read as a near-360-degree lurch.
+            if (dw < 0f) {
+                dx = -dx
+                dy = -dy
+                dz = -dz
+            }
+            out[0] = 2f * dx / dtSeconds
+            out[1] = 2f * dy / dtSeconds
+            out[2] = 2f * dz / dtSeconds
+        }
 
         /** The exponential-smoothing factor for a given [cutoffHz] over [dtSeconds]. */
         private fun smoothingFactor(
