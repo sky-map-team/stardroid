@@ -204,37 +204,69 @@ class OneEuroQuaternionSmoother(
         /**
          * Cutoff-at-rest ladder, in Hz. Steadier means a *lower* cutoff, so the ladder runs
          * downward — hence naming the setting for steadiness rather than for the frequency.
-         * Provisional: these want field tuning, which is why steadiness is exposed as its own
-         * setting for now rather than folded in with [betaFor].
          *
-         * The bottom two rungs exist for the legacy accelerometer+magnetometer path, whose raw
-         * noise is far coarser than the fused sensor's. For scale, the `alpha · angle^3` law
-         * this replaced sat near 0.007 Hz at rest on its default rung — two orders of magnitude
-         * below what suits the fused path, which is why one ladder has to span so much. Rungs
-         * this low would feel dead on their own; they rely on [betaFor] opening the cutoff the
-         * moment the phone actually moves.
+         * Two tables, because the two sensor paths differ by orders of magnitude in how noisy
+         * their orientation is (issue #1007). The fused sensor arrives already filtered by the
+         * platform; the legacy path is raw accelerometer and magnetometer put through a
+         * vector rejection, and its noise floor is far coarser. One shared table meant every
+         * rung was either useless on one path or useless on the other.
+         *
+         * Provisional on both paths — these want field tuning, which is why steadiness stays
+         * its own setting for now rather than folded in with [betaFor].
          */
-        internal fun minCutoffFor(level: OneEuroSteadiness): Float =
-            when (level) {
-                OneEuroSteadiness.LOW -> 2.5f
-                OneEuroSteadiness.MEDIUM -> 1.2f
-                OneEuroSteadiness.HIGH -> 0.6f
-                OneEuroSteadiness.VERY_HIGH -> 0.3f
-                OneEuroSteadiness.EXTREME -> 0.05f
-                OneEuroSteadiness.MAXIMUM -> 0.01f
+        internal fun minCutoffFor(
+            level: OneEuroSteadiness,
+            legacyPath: Boolean,
+        ): Float =
+            if (legacyPath) {
+                when (level) {
+                    OneEuroSteadiness.LOW -> 0.6f
+                    OneEuroSteadiness.MEDIUM -> 0.3f
+                    OneEuroSteadiness.HIGH -> 0.1f
+                    OneEuroSteadiness.VERY_HIGH -> 0.05f
+                    OneEuroSteadiness.EXTREME -> 0.02f
+                    OneEuroSteadiness.MAXIMUM -> 0.005f
+                }
+            } else {
+                when (level) {
+                    OneEuroSteadiness.LOW -> 2.5f
+                    OneEuroSteadiness.MEDIUM -> 1.2f
+                    OneEuroSteadiness.HIGH -> 0.6f
+                    OneEuroSteadiness.VERY_HIGH -> 0.3f
+                    OneEuroSteadiness.EXTREME -> 0.05f
+                    OneEuroSteadiness.MAXIMUM -> 0.01f
+                }
             }
 
         /**
          * Ease-off ladder, in Hz per radian/second: how fast the cutoff climbs as the phone
          * moves, trading stillness for keeping up. `NONE` never relaxes, leaving a plain
          * low-pass — the paper's starting point for tuning [minCutoffFor] on its own.
+         *
+         * The legacy table is an order of magnitude smaller, and that matters more than the
+         * cutoff table does. Its noise leaves a residual speed estimate behind however
+         * carefully that's computed, and `beta · speed` is *added* to the cutoff — so too
+         * large a beta swamps the minimum entirely and drags the cutoff back up, making the
+         * steadiness setting arithmetically irrelevant no matter how far down it goes.
          */
-        internal fun betaFor(level: OneEuroEaseOff): Float =
-            when (level) {
-                OneEuroEaseOff.NONE -> 0f
-                OneEuroEaseOff.LOW -> 0.2f
-                OneEuroEaseOff.MEDIUM -> 1f
-                OneEuroEaseOff.HIGH -> 4f
+        internal fun betaFor(
+            level: OneEuroEaseOff,
+            legacyPath: Boolean,
+        ): Float =
+            if (legacyPath) {
+                when (level) {
+                    OneEuroEaseOff.NONE -> 0f
+                    OneEuroEaseOff.LOW -> 0.02f
+                    OneEuroEaseOff.MEDIUM -> 0.1f
+                    OneEuroEaseOff.HIGH -> 0.4f
+                }
+            } else {
+                when (level) {
+                    OneEuroEaseOff.NONE -> 0f
+                    OneEuroEaseOff.LOW -> 0.2f
+                    OneEuroEaseOff.MEDIUM -> 1f
+                    OneEuroEaseOff.HIGH -> 4f
+                }
             }
     }
 }

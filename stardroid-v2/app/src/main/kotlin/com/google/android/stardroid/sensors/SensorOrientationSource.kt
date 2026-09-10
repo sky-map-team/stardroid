@@ -254,9 +254,10 @@ class SensorOrientationSource(
         if (!config.smoothingEnabled) {
             null
         } else {
+            val legacyPath = !usesFusedPath(config)
             OneEuroQuaternionSmoother(
-                minCutoff = OneEuroQuaternionSmoother.minCutoffFor(config.steadiness),
-                beta = OneEuroQuaternionSmoother.betaFor(config.easeOff),
+                minCutoff = OneEuroQuaternionSmoother.minCutoffFor(config.steadiness, legacyPath),
+                beta = OneEuroQuaternionSmoother.betaFor(config.easeOff, legacyPath),
             )
         }
 

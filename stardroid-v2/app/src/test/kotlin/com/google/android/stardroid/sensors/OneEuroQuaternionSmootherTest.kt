@@ -55,8 +55,8 @@ class OneEuroQuaternionSmootherTest {
         fun worstDeviation(easeOff: OneEuroEaseOff): Double {
             val smoother =
                 OneEuroQuaternionSmoother(
-                    minCutoff = OneEuroQuaternionSmoother.minCutoffFor(OneEuroSteadiness.MEDIUM),
-                    beta = OneEuroQuaternionSmoother.betaFor(easeOff),
+                    minCutoff = OneEuroQuaternionSmoother.minCutoffFor(OneEuroSteadiness.MEDIUM, legacyPath = false),
+                    beta = OneEuroQuaternionSmoother.betaFor(easeOff, legacyPath = false),
                 )
             smoother.update(IDENTITY, t(0))
             var worst = 0.0
@@ -92,8 +92,8 @@ class OneEuroQuaternionSmootherTest {
         fun lagAfterSweep(beta: OneEuroEaseOff): Double {
             val smoother =
                 OneEuroQuaternionSmoother(
-                    minCutoff = OneEuroQuaternionSmoother.minCutoffFor(OneEuroSteadiness.MEDIUM),
-                    beta = OneEuroQuaternionSmoother.betaFor(beta),
+                    minCutoff = OneEuroQuaternionSmoother.minCutoffFor(OneEuroSteadiness.MEDIUM, legacyPath = false),
+                    beta = OneEuroQuaternionSmoother.betaFor(beta, legacyPath = false),
                 )
             smoother.update(IDENTITY, t(0))
             var last = IDENTITY
@@ -141,12 +141,27 @@ class OneEuroQuaternionSmootherTest {
     }
 
     @Test
+    fun `the legacy tables are gentler than the fused ones at every rung`() {
+        // The legacy path's noise floor is far coarser, so both its tables sit lower. Beta
+        // especially: `beta * speed` is added to the cutoff, so a beta sized for the fused
+        // sensor swamps the minimum on the legacy path and makes steadiness do nothing.
+        OneEuroSteadiness.entries.forEach {
+            assertThat(OneEuroQuaternionSmoother.minCutoffFor(it, legacyPath = true))
+                .isLessThan(OneEuroQuaternionSmoother.minCutoffFor(it, legacyPath = false))
+        }
+        OneEuroEaseOff.entries.filter { it != OneEuroEaseOff.NONE }.forEach {
+            assertThat(OneEuroQuaternionSmoother.betaFor(it, legacyPath = true))
+                .isLessThan(OneEuroQuaternionSmoother.betaFor(it, legacyPath = false))
+        }
+    }
+
+    @Test
     fun `ladders are ordered and beta starts at zero`() {
-        assertThat(OneEuroQuaternionSmoother.betaFor(OneEuroEaseOff.NONE)).isEqualTo(0f)
-        val betas = OneEuroEaseOff.entries.map { OneEuroQuaternionSmoother.betaFor(it) }
+        assertThat(OneEuroQuaternionSmoother.betaFor(OneEuroEaseOff.NONE, legacyPath = false)).isEqualTo(0f)
+        val betas = OneEuroEaseOff.entries.map { OneEuroQuaternionSmoother.betaFor(it, legacyPath = false) }
         betas.zipWithNext { lower, higher -> assertThat(lower).isLessThan(higher) }
         // Steadier means a lower cutoff, so this ladder descends as the rungs climb.
-        val cutoffs = OneEuroSteadiness.entries.map { OneEuroQuaternionSmoother.minCutoffFor(it) }
+        val cutoffs = OneEuroSteadiness.entries.map { OneEuroQuaternionSmoother.minCutoffFor(it, legacyPath = false) }
         cutoffs.zipWithNext { looser, steadier -> assertThat(looser).isGreaterThan(steadier) }
     }
 
@@ -155,8 +170,8 @@ class OneEuroQuaternionSmootherTest {
 
         fun smoother() =
             OneEuroQuaternionSmoother(
-                minCutoff = OneEuroQuaternionSmoother.minCutoffFor(OneEuroSteadiness.MEDIUM),
-                beta = OneEuroQuaternionSmoother.betaFor(OneEuroEaseOff.MEDIUM),
+                minCutoff = OneEuroQuaternionSmoother.minCutoffFor(OneEuroSteadiness.MEDIUM, legacyPath = false),
+                beta = OneEuroQuaternionSmoother.betaFor(OneEuroEaseOff.MEDIUM, legacyPath = false),
             )
 
         /** Timestamp for sample [index] at the 50 Hz the sensors are registered at, in nanos. */
