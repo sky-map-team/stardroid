@@ -329,10 +329,6 @@
     <string name="settings_disable_gyro_summary" translation_description="Explanation of the legacy sensors preference and when to use it">
     Arahkan peta menggunakan kompas dan pecutan dan bukannya giroskop. Cuba ini jika peta melayang atau giroskop peranti anda tidak berfungsi dengan baik; peranti tanpa giroskop menggunakan penderia ini secara automatik.
     </string>
-    <string name="settings_sensor_speed">Kecepatan Sensor</string>
-    <string name="settings_sensor_speed_slow" translation_description="Slow sensor speed">Perlahan</string>
-    <string name="settings_sensor_speed_standard" translation_description="Normal sensor speed">Sederhana</string>
-    <string name="settings_sensor_speed_fast" translation_description="Fast sensor speed">Pantas</string>
     <string name="settings_sensor_damping">Pelembapan</string>
     <string name="settings_sensor_damping_standard" translation_description="Low sensor damping factor - this will make the app jittery">Melompat-lompat</string>
     <string name="settings_sensor_damping_high" translation_description="Medium sensor damping factor - this will make the app slightly jittery">Sederhana</string>

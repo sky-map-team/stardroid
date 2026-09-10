@@ -336,10 +336,6 @@
     <string name="settings_disable_gyro_summary" translation_description="Explanation of the legacy sensors preference and when to use it">
     Punta la mappa usando la bussola e l\'accelerometro invece del giroscopio. Prova questa opzione se la mappa si sposta o il giroscopio del tuo dispositivo funziona male; i dispositivi senza giroscopio usano questi sensori automaticamente.
     </string>
-    <string name="settings_sensor_speed">Velocità sensore</string>
-    <string name="settings_sensor_speed_slow" translation_description="Slow sensor speed">Lento</string>
-    <string name="settings_sensor_speed_standard" translation_description="Normal sensor speed">Medio</string>
-    <string name="settings_sensor_speed_fast" translation_description="Fast sensor speed">Veloce</string>
     <string name="settings_sensor_damping">Smorzamento</string>
     <string name="settings_sensor_damping_standard" translation_description="Low sensor damping factor - this will make the app jittery">Instabile</string>
     <string name="settings_sensor_damping_high" translation_description="Medium sensor damping factor - this will make the app slightly jittery">Medio</string>

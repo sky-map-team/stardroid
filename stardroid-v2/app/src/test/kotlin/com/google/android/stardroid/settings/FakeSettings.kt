@@ -150,14 +150,6 @@ class FakeSettings : Settings {
         disableGyroState.value = enabled
     }
 
-    val sensorSpeedState = MutableStateFlow(SensorSpeed.STANDARD)
-
-    override val sensorSpeed: Flow<SensorSpeed> = sensorSpeedState
-
-    override suspend fun setSensorSpeed(speed: SensorSpeed) {
-        sensorSpeedState.value = speed
-    }
-
     val sensorDampingState = MutableStateFlow(SensorDamping.EXTRA_HIGH)
 
     override val sensorDamping: Flow<SensorDamping> = sensorDampingState

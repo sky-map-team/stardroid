@@ -34,8 +34,6 @@ import com.google.android.stardroid.sensors.SensorManagerStatusSource
 import com.google.android.stardroid.sensors.SensorOrientationSource
 import com.google.android.stardroid.sensors.SensorStatusSource
 import com.google.android.stardroid.settings.DataStoreSettings
-import com.google.android.stardroid.settings.SensorDamping
-import com.google.android.stardroid.settings.SensorSpeed
 import com.google.android.stardroid.settings.Settings
 import com.google.android.stardroid.startup.DataStoreStartupState
 import com.google.android.stardroid.startup.ExperimentConfig
@@ -60,14 +58,6 @@ private val Context.settingsDataStore by preferencesDataStore(name = "settings")
 // v1 `ApplicationConstants.READ_TOS_PREF_VERSION`: set once v1's EULA is accepted, so its
 // presence means this device ran v1. Read-only, detection-only — never written from v2.
 private const val V1_READ_TOS_PREF_KEY = "read_tos_version"
-
-/** The legacy (non-gyro) sensor path's settings, grouped for a typed [combine]. */
-private data class LegacyPathSettings(
-    val disableGyro: Boolean,
-    val sensorSpeed: SensorSpeed,
-    val sensorDamping: SensorDamping,
-    val reverseMagneticZ: Boolean,
-)
 
 /**
  * The app's singleton object graph, moved verbatim from the hand-wired `AppGraph` when Hilt
@@ -201,32 +191,18 @@ object AppModule {
         settings: Settings,
         displayRotation: DisplayRotationBus,
     ): OrientationSource {
-        // Nested because SensorConfig now has 6 fields — past combine's 5-flow typed overload,
-        // so the legacy-path settings are grouped first (see SettingsViewModel for the same
-        // pattern, adopted after PR #1006 review flagged the array-cast alternative as fragile).
-        val legacyPathSettings =
-            combine(
-                settings.disableGyro,
-                settings.sensorSpeed,
-                settings.sensorDamping,
-                settings.reverseMagneticZ,
-                ::LegacyPathSettings,
-            )
+        // Exactly 5 flows, so combine's typed overload applies and SensorConfig can be built
+        // directly. Dropping the sensor-speed setting (issue #1007) is what got it back under
+        // the limit; it used to need a nested grouping to stay typed.
         val sensorConfigs =
             combine(
-                legacyPathSettings,
+                settings.disableGyro,
+                settings.sensorDamping,
+                settings.reverseMagneticZ,
                 settings.rotationLowPass,
                 settings.rotationDeadband,
-            ) { legacy, rotationLowPass, rotationDeadband ->
-                SensorConfig(
-                    disableGyro = legacy.disableGyro,
-                    speed = legacy.sensorSpeed,
-                    damping = legacy.sensorDamping,
-                    reverseMagneticZ = legacy.reverseMagneticZ,
-                    rotationLowPass = rotationLowPass,
-                    rotationDeadband = rotationDeadband,
-                )
-            }
+                ::SensorConfig,
+            )
         val delegate =
             SensorOrientationSource(
                 application.getSystemService(SensorManager::class.java),

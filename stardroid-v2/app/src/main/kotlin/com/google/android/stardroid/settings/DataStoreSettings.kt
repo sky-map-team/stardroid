@@ -142,12 +142,6 @@ class DataStoreSettings(
         dataStore.edit { it[DISABLE_GYRO] = enabled }
     }
 
-    override val sensorSpeed: Flow<SensorSpeed> = enum(SENSOR_SPEED, SensorSpeed.STANDARD)
-
-    override suspend fun setSensorSpeed(speed: SensorSpeed) {
-        dataStore.edit { it[SENSOR_SPEED] = speed.name }
-    }
-
     // v1's effective default: its preference XML said EXTRA HIGH and setDefaultValues
     // persisted it, so the code-path STANDARD fallback never applied in practice.
     override val sensorDamping: Flow<SensorDamping> =
@@ -346,8 +340,6 @@ class DataStoreSettings(
         private val AUTO_DIMNESS = stringPreferencesKey("auto_dimness")
 
         private val DISABLE_GYRO = booleanPreferencesKey("disable_gyro")
-
-        private val SENSOR_SPEED = stringPreferencesKey("sensor_speed")
 
         private val SENSOR_DAMPING = stringPreferencesKey("sensor_damping")
 

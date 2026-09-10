@@ -318,10 +318,6 @@
     <string name="settings_sky_gradient_summary">在太阳附近将天空着色为蓝色，在相反方向着色为深色</string>
     <string name="settings_disable_gyro" translation_description="Preference title for switching from the gyroscope to the legacy compass + accelerometer sensor pipeline">使用旧版传感器</string>
     <string name="settings_disable_gyro_summary" translation_description="Explanation of the legacy sensors preference and when to use it">使用指南针和加速计（而非陀螺仪）来指向地图。如果地图漂移或您设备的陀螺仪出现异常，请尝试此选项；没有陀螺仪的设备会自动使用这些传感器。</string>
-    <string name="settings_sensor_speed">传感器速度</string>
-    <string name="settings_sensor_speed_slow" translation_description="Slow sensor speed">慢</string>
-    <string name="settings_sensor_speed_standard" translation_description="Normal sensor speed">中</string>
-    <string name="settings_sensor_speed_fast" translation_description="Fast sensor speed">快</string>
     <string name="settings_sensor_damping">阻尼</string>
     <string name="settings_sensor_damping_standard" translation_description="Low sensor damping factor - this will make the app jittery">跳动</string>
     <string name="settings_sensor_damping_high" translation_description="Medium sensor damping factor - this will make the app slightly jittery">中</string>

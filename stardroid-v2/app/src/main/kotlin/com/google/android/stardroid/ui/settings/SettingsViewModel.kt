@@ -19,13 +19,13 @@ import com.google.android.stardroid.settings.AutoDimness
 import com.google.android.stardroid.settings.FontSize
 import com.google.android.stardroid.settings.RotationSmoothingLevel
 import com.google.android.stardroid.settings.SensorDamping
-import com.google.android.stardroid.settings.SensorSpeed
 import com.google.android.stardroid.settings.Settings
 import com.google.android.stardroid.startup.Experiment
 import com.google.android.stardroid.startup.ExperimentConfig
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 
@@ -38,7 +38,6 @@ data class SettingsUiState(
     val autoDimness: AutoDimness = AutoDimness.SYSTEM,
     val showSkyGradient: Boolean = true,
     val disableGyro: Boolean = false,
-    val sensorSpeed: SensorSpeed = SensorSpeed.STANDARD,
     val sensorDamping: SensorDamping = SensorDamping.EXTRA_HIGH,
     val rotationLowPass: RotationSmoothingLevel = RotationSmoothingLevel.OFF,
     val rotationDeadband: RotationSmoothingLevel = RotationSmoothingLevel.OFF,
@@ -67,18 +66,8 @@ private data class AppearancePrefs(
     val showSkyGradient: Boolean,
 )
 
-// Split further into a legacy-path sub-group since SensorPrefs itself now has 6 fields —
-// past combine's 5-flow typed overload (same nesting used in AppModule's SensorConfig combine).
-private data class LegacySensorPrefs(
-    val disableGyro: Boolean,
-    val sensorSpeed: SensorSpeed,
-    val sensorDamping: SensorDamping,
-    val reverseMagneticZ: Boolean,
-)
-
 private data class SensorPrefs(
     val disableGyro: Boolean,
-    val sensorSpeed: SensorSpeed,
     val sensorDamping: SensorDamping,
     val reverseMagneticZ: Boolean,
     val rotationLowPass: RotationSmoothingLevel,
@@ -110,10 +99,23 @@ class SettingsViewModel(
     private val settings: Settings,
     private val analytics: Analytics = NoOpAnalytics,
     experimentConfig: ExperimentConfig = ExperimentConfig.Static,
+    private val fusedSensorAvailable: Boolean = true,
 ) : ViewModel() {
     /** Whether the notifications section shows at all (D77 experiment gate). */
     val notificationsAvailable: Boolean =
         experimentConfig.isEnabled(Experiment.NOTIFICATIONS)
+
+    /**
+     * Whether the classic accelerometer+magnetometer path is what's actually running, and so
+     * whether its settings are the ones worth showing. `disableGyro` alone isn't enough:
+     * `SensorOrientationSource` also falls back to that path on a device with no
+     * `TYPE_ROTATION_VECTOR` sensor at all, where `disableGyro` stays false and the user would
+     * otherwise be shown only the fused-path controls, which do nothing for them.
+     */
+    val legacyPathActive: StateFlow<Boolean> =
+        settings.disableGyro
+            .map { it || !fusedSensorAvailable }
+            .stateIn(viewModelScope, SharingStarted.Eagerly, !fusedSensorAvailable)
 
     val state: StateFlow<SettingsUiState> =
         combine(
@@ -130,25 +132,13 @@ class SettingsViewModel(
                 ::AppearancePrefs,
             ),
             combine(
-                combine(
-                    settings.disableGyro,
-                    settings.sensorSpeed,
-                    settings.sensorDamping,
-                    settings.reverseMagneticZ,
-                    ::LegacySensorPrefs,
-                ),
+                settings.disableGyro,
+                settings.sensorDamping,
+                settings.reverseMagneticZ,
                 settings.rotationLowPass,
                 settings.rotationDeadband,
-            ) { legacy, rotationLowPass, rotationDeadband ->
-                SensorPrefs(
-                    disableGyro = legacy.disableGyro,
-                    sensorSpeed = legacy.sensorSpeed,
-                    sensorDamping = legacy.sensorDamping,
-                    reverseMagneticZ = legacy.reverseMagneticZ,
-                    rotationLowPass = rotationLowPass,
-                    rotationDeadband = rotationDeadband,
-                )
-            },
+                ::SensorPrefs,
+            ),
             combine(settings.useMagneticCorrection, settings.viewDirectionMode, ::MagneticPrefs),
             combine(
                 settings.enableAnalytics,
@@ -166,7 +156,6 @@ class SettingsViewModel(
                 autoDimness = appearance.autoDimness,
                 showSkyGradient = appearance.showSkyGradient,
                 disableGyro = sensors.disableGyro,
-                sensorSpeed = sensors.sensorSpeed,
                 sensorDamping = sensors.sensorDamping,
                 reverseMagneticZ = sensors.reverseMagneticZ,
                 rotationLowPass = sensors.rotationLowPass,
@@ -213,11 +202,6 @@ class SettingsViewModel(
     fun setDisableGyro(enabled: Boolean) {
         trackChange("disable_gyro", enabled)
         viewModelScope.launch { settings.setDisableGyro(enabled) }
-    }
-
-    fun setSensorSpeed(speed: SensorSpeed) {
-        trackChange("sensor_speed", speed)
-        viewModelScope.launch { settings.setSensorSpeed(speed) }
     }
 
     fun setSensorDamping(damping: SensorDamping) {

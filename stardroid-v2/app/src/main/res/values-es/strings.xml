@@ -332,10 +332,6 @@
     <string name="settings_disable_gyro_summary" translation_description="Explanation of the legacy sensors preference and when to use it">
     Apunte el mapa usando la brújula y el acelerómetro en lugar del giroscopio. Pruebe esto si el mapa se desvía o el giroscopio de su dispositivo funciona mal; los dispositivos sin giroscopio usan estos sensores automáticamente.
     </string>
-    <string name="settings_sensor_speed">Velocidad del sensor</string>
-    <string name="settings_sensor_speed_slow" translation_description="Slow sensor speed">Lento</string>
-    <string name="settings_sensor_speed_standard" translation_description="Normal sensor speed">Medio</string>
-    <string name="settings_sensor_speed_fast" translation_description="Fast sensor speed">Rápido</string>
     <string name="settings_sensor_damping">Amortiguación</string>
     <string name="settings_sensor_damping_standard" translation_description="Low sensor damping factor - this will make the app jittery">Saltarín</string>
     <string name="settings_sensor_damping_high" translation_description="Medium sensor damping factor - this will make the app slightly jittery">Medio</string>

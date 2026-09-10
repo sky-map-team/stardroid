@@ -9,42 +9,52 @@
 
 package com.google.android.stardroid.sensors
 
-import android.hardware.SensorManager
 import com.google.android.stardroid.settings.SensorDamping
-import com.google.android.stardroid.settings.SensorSpeed
 import com.google.common.truth.Truth.assertThat
 import org.junit.jupiter.api.Test
 
-/** The preference→parameter tables, pinned to v1 `SensorOrientationController`'s values. */
+/**
+ * The damping ladder — v1's smoothing tables re-expressed for [QuaternionSlerpSmoother]
+ * (issue #1007), so what's pinned here is the ordering and the character of each rung, not
+ * v1's raw constants, which acted on different units entirely.
+ */
 class SensorOrientationSourceTest {
     @Test
-    fun `damping ladder matches v1's smoothing tables`() {
-        val standard = SensorOrientationSource.dampingSettingsFor(SensorDamping.STANDARD)
-        assertThat(standard.first).isEqualTo(SensorOrientationSource.DampingSettings(0.7f, 3))
-        assertThat(standard.second).isEqualTo(SensorOrientationSource.DampingSettings(0.05f, 3))
-
-        val high = SensorOrientationSource.dampingSettingsFor(SensorDamping.HIGH)
-        assertThat(high.first).isEqualTo(SensorOrientationSource.DampingSettings(0.7f, 3))
-        assertThat(high.second).isEqualTo(SensorOrientationSource.DampingSettings(0.001f, 4))
-
-        val extraHigh = SensorOrientationSource.dampingSettingsFor(SensorDamping.EXTRA_HIGH)
-        assertThat(extraHigh.first).isEqualTo(SensorOrientationSource.DampingSettings(0.1f, 3))
-        assertThat(extraHigh.second)
-            .isEqualTo(SensorOrientationSource.DampingSettings(0.0001f, 5))
-
-        val reallyHigh = SensorOrientationSource.dampingSettingsFor(SensorDamping.REALLY_HIGH)
-        assertThat(reallyHigh.first).isEqualTo(SensorOrientationSource.DampingSettings(0.1f, 3))
-        assertThat(reallyHigh.second)
-            .isEqualTo(SensorOrientationSource.DampingSettings(0.000001f, 5))
+    fun `damping ladder damps sub-degree jitter progressively harder`() {
+        val jitter = Math.toRadians(0.5).toFloat()
+        val fractions = SensorDamping.entries.map { fractionAt(it, jitter) }
+        fractions.zipWithNext { looser, tighter ->
+            assertThat(looser).isGreaterThan(tighter)
+        }
+        // Even the least-damped rung meaningfully attenuates jitter of half a degree...
+        assertThat(fractions.first()).isLessThan(0.01f)
+        // ...and the most-damped one all but freezes it.
+        assertThat(fractions.last()).isLessThan(0.01f)
     }
 
     @Test
-    fun `speed ladder matches v1's sensor delays`() {
-        assertThat(SensorOrientationSource.sensorDelayFor(SensorSpeed.SLOW))
-            .isEqualTo(SensorManager.SENSOR_DELAY_NORMAL)
-        assertThat(SensorOrientationSource.sensorDelayFor(SensorSpeed.STANDARD))
-            .isEqualTo(SensorManager.SENSOR_DELAY_GAME)
-        assertThat(SensorOrientationSource.sensorDelayFor(SensorSpeed.FAST))
-            .isEqualTo(SensorManager.SENSOR_DELAY_FASTEST)
+    fun `every rung responds far more to real movement than to jitter`() {
+        // The point of the exponent law, and what a flat low-pass cannot do: the same rung
+        // that all but freezes a half-degree wobble tracks a twenty-degree sweep readily. The
+        // heaviest rung deliberately still lags a sweep somewhat — that's what it's for — so
+        // this asserts the ratio rather than an absolute fraction.
+        val jitter = Math.toRadians(0.5).toFloat()
+        val movement = Math.toRadians(20.0).toFloat()
+        SensorDamping.entries.forEach {
+            assertThat(fractionAt(it, movement)).isGreaterThan(100 * fractionAt(it, jitter))
+        }
+    }
+
+    private companion object {
+        /** The SLERP fraction a rung yields for a sample [angle] radians away. */
+        fun fractionAt(
+            damping: SensorDamping,
+            angle: Float,
+        ): Float {
+            val settings = SensorOrientationSource.dampingSettingsFor(damping)
+            var fraction = settings.alpha
+            repeat(settings.exponent - 1) { fraction *= angle }
+            return minOf(1f, fraction)
+        }
     }
 }

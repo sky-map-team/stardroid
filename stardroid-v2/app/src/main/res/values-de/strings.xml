@@ -338,10 +338,6 @@
     <string name="settings_disable_gyro_summary" translation_description="Explanation of the legacy sensors preference and when to use it">
     Richte die Karte mit Kompass und Beschleunigungssensor anstelle des Gyroskops aus. Probiere dies, wenn die Karte abdriftet oder der Gyro deines Handys nicht richtig funktioniert; Geräte ohne Gyro verwenden diese Sensoren automatisch.
     </string>
-    <string name="settings_sensor_speed">Sensorgeschwindigkeit</string>
-    <string name="settings_sensor_speed_slow" translation_description="Slow sensor speed">Langsam</string>
-    <string name="settings_sensor_speed_standard" translation_description="Normal sensor speed">Mittel</string>
-    <string name="settings_sensor_speed_fast" translation_description="Fast sensor speed">Schnell</string>
     <string name="settings_sensor_damping">Dämpfung</string>
     <string name="settings_sensor_damping_standard" translation_description="Low sensor damping factor - this will make the app jittery">Zittrig</string>
     <string name="settings_sensor_damping_high" translation_description="Medium sensor damping factor - this will make the app slightly jittery">Mittel</string>

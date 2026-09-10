@@ -330,10 +330,6 @@
     <string name="settings_disable_gyro_summary" translation_description="Explanation of the legacy sensors preference and when to use it">
     Richting geven aan de kaart met het kompas en de versnellingsmeter in plaats van de gyroscoop. Probeer dit als de kaart afdrijft of als de gyroscoop van je apparaat hapert; apparaten zonder gyroscoop gebruiken deze sensoren automatisch.
     </string>
-    <string name="settings_sensor_speed">Sensorsnelheid</string>
-    <string name="settings_sensor_speed_slow" translation_description="Slow sensor speed">Langzaam</string>
-    <string name="settings_sensor_speed_standard" translation_description="Normal sensor speed">Normaal</string>
-    <string name="settings_sensor_speed_fast" translation_description="Fast sensor speed">Snel</string>
     <string name="settings_sensor_damping">Demping</string>
     <string name="settings_sensor_damping_standard" translation_description="Low sensor damping factor - this will make the app jittery">Schokkerig</string>
     <string name="settings_sensor_damping_high" translation_description="Medium sensor damping factor - this will make the app slightly jittery">Normaal</string>
