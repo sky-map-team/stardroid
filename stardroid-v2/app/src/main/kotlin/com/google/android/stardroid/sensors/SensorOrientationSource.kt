@@ -304,24 +304,26 @@ class SensorOrientationSource(
          * numerically — they acted on raw sensor units (m/s², µT) where these act on radians of
          * rotation — but the character they gave each rung is preserved: crush sub-degree
          * jitter, pass real movement through almost unattenuated. At half a degree per sample
-         * the fractions here run 0.015 / 0.004 / 0.0009 / 0.0002; by ten degrees they are
-         * 1.0 / 1.0 / 0.37 / 0.09.
+         * the fractions here run 0.0009 / 0.0005 / 0.0002 / 0.00006; by ten degrees they are
+         * 0.37 / 0.18 / 0.09 / 0.02.
          *
          * Every rung shares the same exponent, so the ladder is strictly monotonic at every
          * angle — a mixed-exponent ladder has rungs that overtake each other on fast movement,
          * which is confusing to tune against.
          *
-         * Field-tuned on a Pixel 9 Pro (issue #1007): the first pass sat well over a rung too
-         * light — its "Laggy" rung was what actually felt right and its "Jumpy" rung was
-         * unusable — so "About right" now carries what that pass called "Laggy". Still one
-         * device's judgement, and worth re-checking on a genuinely gyro-less one.
+         * Field-tuned on a Pixel 9 Pro over two passes (issue #1007), each of which picked the
+         * heaviest rung on offer, so each shifted the whole ladder down: "About right" now
+         * carries what the first pass called "Laggy" twice over. "Laggy" is deliberately set
+         * heavier than anything yet judged, to bracket the top end rather than keep chasing
+         * it. Still one device's judgement, and worth re-checking on a genuinely gyro-less
+         * one.
          */
         internal fun dampingSettingsFor(damping: SensorDamping): DampingSettings =
             when (damping) {
-                SensorDamping.STANDARD -> DampingSettings(200f, 3)
-                SensorDamping.HIGH -> DampingSettings(50f, 3)
-                SensorDamping.EXTRA_HIGH -> DampingSettings(12f, 3)
-                SensorDamping.REALLY_HIGH -> DampingSettings(3f, 3)
+                SensorDamping.STANDARD -> DampingSettings(12f, 3)
+                SensorDamping.HIGH -> DampingSettings(6f, 3)
+                SensorDamping.EXTRA_HIGH -> DampingSettings(3f, 3)
+                SensorDamping.REALLY_HIGH -> DampingSettings(0.8f, 3)
             }
     }
 }

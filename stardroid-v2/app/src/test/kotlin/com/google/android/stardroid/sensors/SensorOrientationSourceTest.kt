@@ -27,19 +27,21 @@ class SensorOrientationSourceTest {
             assertThat(looser).isGreaterThan(tighter)
         }
         // Even the least-damped rung meaningfully attenuates jitter of half a degree...
-        assertThat(fractions.first()).isLessThan(0.05f)
+        assertThat(fractions.first()).isLessThan(0.01f)
         // ...and the most-damped one all but freezes it.
         assertThat(fractions.last()).isLessThan(0.01f)
     }
 
     @Test
-    fun `damping ladder passes real movement through`() {
-        // Forty-five degrees between samples is a whip, not noise: every rung, including the
-        // most damped, should track it at full speed. That's what the exponent law buys over a
-        // flat low-pass, which would lag this as badly as it lags jitter.
-        val movement = Math.toRadians(45.0).toFloat()
+    fun `every rung responds far more to real movement than to jitter`() {
+        // The point of the exponent law, and what a flat low-pass cannot do: the same rung
+        // that all but freezes a half-degree wobble tracks a twenty-degree sweep readily. The
+        // heaviest rung deliberately still lags a sweep somewhat — that's what it's for — so
+        // this asserts the ratio rather than an absolute fraction.
+        val jitter = Math.toRadians(0.5).toFloat()
+        val movement = Math.toRadians(20.0).toFloat()
         SensorDamping.entries.forEach {
-            assertThat(fractionAt(it, movement)).isGreaterThan(0.9f)
+            assertThat(fractionAt(it, movement)).isGreaterThan(100 * fractionAt(it, jitter))
         }
     }
 
