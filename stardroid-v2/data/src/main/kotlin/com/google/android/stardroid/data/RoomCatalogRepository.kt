@@ -9,6 +9,8 @@
 
 package com.google.android.stardroid.data
 
+import android.database.sqlite.SQLiteException
+import android.util.Log
 import com.google.android.stardroid.catalog.CatalogObject
 import com.google.android.stardroid.catalog.CatalogRepository
 import com.google.android.stardroid.catalog.CelestialObjectId
@@ -28,7 +30,26 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.sync.Mutex
+import kotlinx.coroutines.sync.withLock
 import kotlinx.coroutines.withContext
+
+/**
+ * On-device catalog self-healing signals (issue #1003), handed up rather than reported
+ * directly: this module has no analytics dependency (D20's pure/Android boundary), so
+ * [RoomCatalogRepository]'s caller (`CatalogAccess`) is what turns these into GA4 events.
+ */
+sealed interface CatalogRepairEvent {
+    /**
+     * The `object_name_fts` "unknown tokenizer" self-heal ([RoomCatalogRepository]) ran;
+     * [success] is whether the sqlite_master rewrite + rebuild completed without throwing.
+     * Fired exactly once per process, the first time the repair is attempted.
+     */
+    data class FtsTokenizerRepairAttempted(val success: Boolean) : CatalogRepairEvent
+
+    /** A query retried after a successful repair still failed with [errorType]. */
+    data class FtsTokenizerErrorPersisted(val errorType: String) : CatalogRepairEvent
+}
 
 /**
  * The Room-backed [CatalogRepository] (catalog-and-schema.md). SQL narrows to candidates
@@ -36,10 +57,13 @@ import kotlinx.coroutines.withContext
  * per object along the fallback chain, search ranking) — see [CatalogDao].
  */
 class RoomCatalogRepository(
-    database: SkyMapDatabase,
+    private val database: SkyMapDatabase,
     private val backgroundContext: CoroutineDispatcher = Dispatchers.Default,
+    private val onRepairEvent: (CatalogRepairEvent) -> Unit = {},
 ) : CatalogRepository {
     private val dao = database.catalogDao()
+    private val ftsRepairMutex = Mutex()
+    private var ftsRepairState = FtsRepairState.NOT_ATTEMPTED
 
     override fun layerObjects(
         kind: LayerKind,
@@ -105,7 +129,12 @@ class RoomCatalogRepository(
         // rank (audit-2026-08 M3).
         val candidateLimit = limit * SEARCH_CANDIDATE_OVERFETCH
         val candidates =
-            dao.searchNameRows(ftsQuery, locale.fallbackChain, normalizedPrefix, candidateLimit)
+            searchNameRowsSelfHealing(
+                ftsQuery,
+                locale.fallbackChain,
+                normalizedPrefix,
+                candidateLimit,
+            )
         if (candidates.isEmpty()) return emptyList()
 
         // Whole-object locale fallback (D33): once an object is translated, only its winning
@@ -366,7 +395,118 @@ class RoomCatalogRepository(
     private fun tokenize(query: String): List<String> =
         query.lowercase().split(NON_ALPHANUMERIC).filter { it.isNotEmpty() }
 
+    /**
+     * [CatalogDao.searchNameRows], self-healing once per process against "unknown tokenizer"
+     * (#1003): some OEM system-SQLite builds ship FTS4 without `unicode61` registered, so every
+     * statement touching `object_name_fts` throws deterministically. On exactly that failure,
+     * [repairFtsTokenizer] patches the table in place and this retries once; any other
+     * exception — or a retry that still fails after a successful repair — propagates to the
+     * caller (`SearchViewModel`'s existing catch-and-degrade guard), so this can't make things
+     * worse than before #1003's first fix.
+     */
+    private suspend fun searchNameRowsSelfHealing(
+        ftsQuery: String,
+        locales: List<String>,
+        normalizedPrefix: String,
+        candidateLimit: Int,
+    ): List<SearchNameRow> =
+        try {
+            dao.searchNameRows(ftsQuery, locales, normalizedPrefix, candidateLimit)
+        } catch (e: SQLiteException) {
+            if (!e.isUnknownTokenizer() || !repairFtsTokenizer(e)) throw e
+            try {
+                dao.searchNameRows(ftsQuery, locales, normalizedPrefix, candidateLimit)
+            } catch (retryFailure: SQLiteException) {
+                Log.e(TAG, "Search still fails after FTS tokenizer repair", retryFailure)
+                onRepairEvent(
+                    CatalogRepairEvent.FtsTokenizerErrorPersisted(
+                        retryFailure::class.simpleName ?: "unknown",
+                    ),
+                )
+                throw retryFailure
+            }
+        }
+
+    private fun SQLiteException.isUnknownTokenizer(): Boolean =
+        message?.contains("unknown tokenizer") == true
+
+    /**
+     * Rewrites `object_name_fts`'s `sqlite_master` row from `tokenize=unicode61 ...` to
+     * `tokenize=simple` — compiled into every SQLite FTS4 build, unlike unicode61 — then
+     * reindexes `object_name`'s existing rows under it. A plain `DROP`/recreate cannot be used
+     * instead: a virtual table still has to connect to its module before it can be dropped,
+     * and that connection is exactly what "unknown tokenizer" fails on.
+     *
+     * `simple` folds case but not diacritics, a narrower match than normal, but only on the
+     * affected devices — everyone else's index is untouched, since this only ever runs after
+     * the original tokenizer has already thrown.
+     *
+     * Single-flight and memoized to [FtsRepairState.REPAIRED]/[FtsRepairState.FAILED]:
+     * concurrent suggestion + submit() searches can both hit this the first time a device shows
+     * the bug, and a failed repair (e.g. `writable_schema` itself sandboxed by an OEM) is not
+     * worth retrying on every keystroke.
+     */
+    private suspend fun repairFtsTokenizer(cause: SQLiteException): Boolean {
+        if (ftsRepairState != FtsRepairState.NOT_ATTEMPTED) {
+            return ftsRepairState == FtsRepairState.REPAIRED
+        }
+        return ftsRepairMutex.withLock {
+            if (ftsRepairState != FtsRepairState.NOT_ATTEMPTED) {
+                return@withLock ftsRepairState == FtsRepairState.REPAIRED
+            }
+            val success = withContext(Dispatchers.IO) { runFtsTokenizerRepair(cause) }
+            ftsRepairState = if (success) FtsRepairState.REPAIRED else FtsRepairState.FAILED
+            onRepairEvent(CatalogRepairEvent.FtsTokenizerRepairAttempted(success))
+            success
+        }
+    }
+
+    private fun runFtsTokenizerRepair(cause: SQLiteException): Boolean {
+        Log.w(
+            TAG,
+            "object_name_fts threw 'unknown tokenizer'; repairing onto 'simple' (#1003)",
+            cause,
+        )
+        val db = database.openHelper.writableDatabase
+        return try {
+            db.execSQL("PRAGMA writable_schema = ON")
+            db.execSQL(
+                "UPDATE sqlite_master SET sql = " +
+                    "'CREATE VIRTUAL TABLE IF NOT EXISTS `object_name_fts` USING FTS4(" +
+                    "`name` TEXT NOT NULL, tokenize=simple, content=`object_name`)' " +
+                    "WHERE type = 'table' AND name = 'object_name_fts'",
+            )
+            // A raw sqlite_master edit doesn't bump SQLite's own change counter, so every
+            // connection (including this one) keeps using its cached, pre-edit parse of the
+            // table until schema_version forces a reparse. Not the same pragma as `user_version`
+            // (Room's own migration counter) — that one must not be touched here.
+            val version =
+                db.query("PRAGMA schema_version").use {
+                    it.moveToFirst()
+                    it.getInt(0)
+                }
+            db.execSQL("PRAGMA schema_version = ${version + 1}")
+            db.execSQL("INSERT INTO object_name_fts(object_name_fts) VALUES('rebuild')")
+            Log.w(TAG, "object_name_fts repaired onto the 'simple' tokenizer (#1003)")
+            true
+        } catch (repairFailure: SQLiteException) {
+            Log.e(
+                TAG,
+                "FTS tokenizer repair failed; search stays degraded on this device",
+                repairFailure,
+            )
+            false
+        } finally {
+            // Always leave the connection out of writable_schema mode, success or not — it
+            // otherwise accepts *any* raw sqlite_master write, not just this one.
+            runCatching { db.execSQL("PRAGMA writable_schema = RESET") }
+        }
+    }
+
+    private enum class FtsRepairState { NOT_ATTEMPTED, REPAIRED, FAILED }
+
     private companion object {
+        private const val TAG = "RoomCatalogRepository"
         val NON_ALPHANUMERIC = Regex("[^\\p{L}\\p{N}]+")
 
         /**

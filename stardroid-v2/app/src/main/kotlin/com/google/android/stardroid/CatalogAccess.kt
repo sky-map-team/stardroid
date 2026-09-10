@@ -10,8 +10,11 @@
 package com.google.android.stardroid
 
 import android.app.Application
+import com.google.android.stardroid.analytics.Analytics
+import com.google.android.stardroid.analytics.AnalyticsEvents
 import com.google.android.stardroid.astronomy.MeeusEphemeris
 import com.google.android.stardroid.catalog.CatalogRepository
+import com.google.android.stardroid.data.CatalogRepairEvent
 import com.google.android.stardroid.data.RoomCatalogRepository
 import com.google.android.stardroid.data.SkyMapDatabaseFactory
 import com.google.android.stardroid.layers.LayerRegistry
@@ -48,6 +51,7 @@ class CatalogAccess
         private val localeSource: LocaleSource,
         private val settings: Settings,
         private val experimentConfig: ExperimentConfig,
+        private val analytics: Analytics,
     ) {
         private val catalogMutex = Mutex()
         private var catalog: CatalogRepository? = null
@@ -63,9 +67,33 @@ class CatalogAccess
                     catalog
                         ?: RoomCatalogRepository(
                             SkyMapDatabaseFactory.createWithRecovery(application),
+                            onRepairEvent = ::reportCatalogRepairEvent,
                         ).also { catalog = it }
                 }
             }
+
+        /**
+         * Forwards [RoomCatalogRepository]'s on-device DB self-heal (#1003) to analytics —
+         * `data` has no analytics dependency of its own (D20), so this is the edge that does.
+         */
+        private fun reportCatalogRepairEvent(event: CatalogRepairEvent) {
+            when (event) {
+                is CatalogRepairEvent.FtsTokenizerRepairAttempted ->
+                    analytics.trackEvent(
+                        AnalyticsEvents.FTS_TOKENIZER_REPAIR_EVENT,
+                        mapOf(
+                            AnalyticsEvents.FTS_TOKENIZER_REPAIR_SUCCESS to
+                                event.success.toString(),
+                        ),
+                    )
+
+                is CatalogRepairEvent.FtsTokenizerErrorPersisted ->
+                    analytics.trackEvent(
+                        AnalyticsEvents.FTS_TOKENIZER_ERROR_PERSISTED_EVENT,
+                        mapOf(AnalyticsEvents.SEARCH_QUERY_ERROR_TYPE to event.errorType),
+                    )
+            }
+        }
 
         private val registryMutex = Mutex()
         private var registry: LayerRegistry? = null

@@ -92,6 +92,19 @@ object AnalyticsEvents {
     // [SEARCH_QUERY_ERROR_TYPE] is what would surface a systemic bug in production.
     const val SEARCH_QUERY_ERROR_EVENT = "search_query_error_ev"
     const val SEARCH_QUERY_ERROR_TYPE = "error_type"
+
+    // The `object_name_fts` "unknown tokenizer" self-heal (issue #1003): some OEM system-SQLite
+    // builds ship FTS4 without `unicode61` registered, so every catalog search throws on those
+    // devices. `RoomCatalogRepository` rewrites the table onto the universally-available
+    // `simple` tokenizer the first time this is hit; these two events are how that on-device DB
+    // surgery becomes visible in aggregate, since there is no per-device stack trace.
+    const val FTS_TOKENIZER_REPAIR_EVENT = "fts_tokenizer_repair_ev"
+    const val FTS_TOKENIZER_REPAIR_SUCCESS = "success"
+
+    // Fired if a query retried right after a successful repair still fails — i.e. the repair
+    // did not actually fix this device's search, so [SEARCH_QUERY_ERROR_TYPE] is reused here.
+    const val FTS_TOKENIZER_ERROR_PERSISTED_EVENT = "fts_tokenizer_error_persisted_ev"
+
     const val OBJECT_LOCKED_EVENT = "object_locked_ev"
     const val OBJECT_LOCKED_NAME = "object_name"
     const val OBJECT_LOCKED_MODE = "mode"

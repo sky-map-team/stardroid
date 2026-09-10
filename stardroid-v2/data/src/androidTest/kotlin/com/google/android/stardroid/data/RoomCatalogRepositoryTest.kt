@@ -314,6 +314,66 @@ class RoomCatalogRepositoryTest {
             assertThat(repository.searchByPrefix("   ", english, limit = 10)).isEmpty()
         }
 
+    // --- FTS tokenizer self-heal (#1003) ---
+
+    /**
+     * Simulates the "unknown tokenizer" bug some OEM system-SQLite builds hit: a real device
+     * throws because its FTS4 build never registered `unicode61`, which cannot be reproduced
+     * against the test device's own SQLite — so instead the table's `sqlite_master` row is
+     * pointed at a tokenizer name that genuinely does not exist, via the same
+     * `PRAGMA writable_schema` surgery the production repair itself performs.
+     */
+    private fun breakFtsTokenizer() {
+        val db = database.openHelper.writableDatabase
+        db.execSQL("PRAGMA writable_schema = ON")
+        db.execSQL(
+            "UPDATE sqlite_master SET sql = " +
+                "'CREATE VIRTUAL TABLE IF NOT EXISTS `object_name_fts` USING FTS4(" +
+                "`name` TEXT NOT NULL, tokenize=nonexistent_1003_tokenizer, " +
+                "content=`object_name`)' " +
+                "WHERE type = 'table' AND name = 'object_name_fts'",
+        )
+        val version =
+            db.query("PRAGMA schema_version").use {
+                it.moveToFirst()
+                it.getInt(0)
+            }
+        db.execSQL("PRAGMA schema_version = ${version + 1}")
+        db.execSQL("PRAGMA writable_schema = RESET")
+    }
+
+    @Test
+    fun search_selfHealsAndReportsSuccessWhenFtsTokenizerIsUnknown() =
+        runTest {
+            breakFtsTokenizer()
+            val repairEvents = mutableListOf<CatalogRepairEvent>()
+            val healingRepository =
+                RoomCatalogRepository(database, onRepairEvent = repairEvents::add)
+
+            val hits = healingRepository.searchByPrefix("sir", english, limit = 10)
+
+            assertThat(hits.map { it.name })
+                .containsExactly("Sirius", "Little Sirius")
+                .inOrder()
+            assertThat(repairEvents)
+                .containsExactly(CatalogRepairEvent.FtsTokenizerRepairAttempted(success = true))
+        }
+
+    @Test
+    fun search_repairsOnlyOnceAcrossConcurrentAndSubsequentQueries() =
+        runTest {
+            breakFtsTokenizer()
+            val repairEvents = mutableListOf<CatalogRepairEvent>()
+            val healingRepository =
+                RoomCatalogRepository(database, onRepairEvent = repairEvents::add)
+
+            healingRepository.searchByPrefix("sir", english, limit = 10)
+            healingRepository.searchByPrefix("al", english, limit = 10)
+
+            assertThat(repairEvents)
+                .containsExactly(CatalogRepairEvent.FtsTokenizerRepairAttempted(success = true))
+        }
+
     // --- objectInfo ---
 
     @Test
