@@ -1,9 +1,9 @@
 import com.android.build.api.dsl.LibraryExtension
-import org.jetbrains.kotlin.gradle.dsl.KotlinAndroidProjectExtension
 
+// Kotlin support comes from AGP's built-in Kotlin (AGP 9+) rather than a separate
+// org.jetbrains.kotlin.android plugin application - see skymap.android-app for why.
 plugins {
     id("com.android.library")
-    id("org.jetbrains.kotlin.android")
     id("org.jlleitschuh.gradle.ktlint")
 }
 
@@ -16,8 +16,4 @@ extensions.configure<LibraryExtension> {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
-}
-
-extensions.configure<KotlinAndroidProjectExtension> {
-    jvmToolchain(17)
 }
