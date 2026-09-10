@@ -260,22 +260,24 @@ class OneEuroQuaternionSmoother(
          * standing still. The legacy path's figure is far larger because its orientation noise
          * is: a degree or two per sample at 50 Hz is already tens of degrees per second.
          *
-         * Provisional, and the legacy figure is the one most worth measuring: set it too low
-         * and the shake-freeze cycle survives, too high and slow deliberate pans are treated
-         * as noise and lag badly.
+         * The legacy figure was originally set far higher, to fight a shake that turned out to
+         * come from interleaved sensor clocks rather than from noise at all. With that cause
+         * removed the floor only has to clear what the velocity estimate actually retains, and
+         * a high floor costs real responsiveness: everything below it is treated as standing
+         * still, so a slow deliberate pan gets no ease-off and lags badly. 0.12 rad/s is about
+         * 7 degrees a second, under any pan someone means to make.
          */
-        internal fun speedFloorFor(legacyPath: Boolean): Float = if (legacyPath) 0.35f else 0.03f
+        internal fun speedFloorFor(legacyPath: Boolean): Float = if (legacyPath) 0.12f else 0.03f
 
         /**
          * Ease-off ladder, in Hz per radian/second: how fast the cutoff climbs as the phone
          * moves, trading stillness for keeping up. `NONE` never relaxes, leaving a plain
          * low-pass — the paper's starting point for tuning [minCutoffFor] on its own.
          *
-         * The legacy table is an order of magnitude smaller, and that matters more than the
-         * cutoff table does. Its noise leaves a residual speed estimate behind however
-         * carefully that's computed, and `beta · speed` is *added* to the cutoff — so too
-         * large a beta swamps the minimum entirely and drags the cutoff back up, making the
-         * steadiness setting arithmetically irrelevant no matter how far down it goes.
+         * The legacy table is the *larger* of the two, which is the opposite of what the
+         * cutoff tables do and worth being clear about. Beta has to carry the cutoff from its
+         * resting value up to something responsive, and the legacy path rests one to two orders
+         * of magnitude lower — so it has much further to climb in the same time.
          */
         internal fun betaFor(
             level: OneEuroEaseOff,
@@ -284,9 +286,9 @@ class OneEuroQuaternionSmoother(
             if (legacyPath) {
                 when (level) {
                     OneEuroEaseOff.NONE -> 0f
-                    OneEuroEaseOff.LOW -> 0.02f
-                    OneEuroEaseOff.MEDIUM -> 0.1f
-                    OneEuroEaseOff.HIGH -> 0.4f
+                    OneEuroEaseOff.LOW -> 1f
+                    OneEuroEaseOff.MEDIUM -> 4f
+                    OneEuroEaseOff.HIGH -> 12f
                 }
             } else {
                 when (level) {

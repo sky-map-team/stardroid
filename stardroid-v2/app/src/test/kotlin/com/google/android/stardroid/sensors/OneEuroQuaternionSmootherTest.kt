@@ -202,17 +202,17 @@ class OneEuroQuaternionSmootherTest {
     }
 
     @Test
-    fun `the legacy tables are gentler than the fused ones at every rung`() {
-        // The legacy path's noise floor is far coarser, so both its tables sit lower. Beta
-        // especially: `beta * speed` is added to the cutoff, so a beta sized for the fused
-        // sensor swamps the minimum on the legacy path and makes steadiness do nothing.
+    fun `the legacy path rests lower but eases off harder`() {
+        // The legacy path's noise floor is far coarser, so it rests at a lower cutoff.
         OneEuroSteadiness.entries.forEach {
             assertThat(OneEuroQuaternionSmoother.minCutoffFor(it, legacyPath = true))
                 .isLessThan(OneEuroQuaternionSmoother.minCutoffFor(it, legacyPath = false))
         }
+        // Beta runs the other way: the legacy path rests at a far lower cutoff, so ease-off
+        // has further to carry it before movement tracks.
         OneEuroEaseOff.entries.filter { it != OneEuroEaseOff.NONE }.forEach {
             assertThat(OneEuroQuaternionSmoother.betaFor(it, legacyPath = true))
-                .isLessThan(OneEuroQuaternionSmoother.betaFor(it, legacyPath = false))
+                .isGreaterThan(OneEuroQuaternionSmoother.betaFor(it, legacyPath = false))
         }
     }
 
