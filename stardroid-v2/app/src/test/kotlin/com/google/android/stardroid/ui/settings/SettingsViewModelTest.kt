@@ -15,7 +15,7 @@ import com.google.android.stardroid.astronomy.ViewDirectionMode
 import com.google.android.stardroid.settings.AutoDimness
 import com.google.android.stardroid.settings.FakeSettings
 import com.google.android.stardroid.settings.FontSize
-import com.google.android.stardroid.settings.OneEuroBeta
+import com.google.android.stardroid.settings.OneEuroEaseOff
 import com.google.common.truth.Truth.assertThat
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -74,7 +74,7 @@ class SettingsViewModelTest {
             viewModel.setAutoDimness(AutoDimness.CLASSIC)
             viewModel.setShowSkyGradient(false)
             viewModel.setDisableGyro(true)
-            viewModel.setOneEuroBeta(OneEuroBeta.HIGH)
+            viewModel.setEaseOff(OneEuroEaseOff.HIGH)
             viewModel.setReverseMagneticZ(true)
             viewModel.setUseMagneticCorrection(false)
             viewModel.setViewDirectionMode(ViewDirectionMode.TELESCOPE)
@@ -88,7 +88,7 @@ class SettingsViewModelTest {
             assertThat(state.autoDimness).isEqualTo(AutoDimness.CLASSIC)
             assertThat(state.showSkyGradient).isFalse()
             assertThat(state.disableGyro).isTrue()
-            assertThat(state.oneEuroBeta).isEqualTo(OneEuroBeta.HIGH)
+            assertThat(state.easeOff).isEqualTo(OneEuroEaseOff.HIGH)
             assertThat(state.reverseMagneticZ).isTrue()
             assertThat(state.useMagneticCorrection).isFalse()
             assertThat(state.viewDirectionMode).isEqualTo(ViewDirectionMode.TELESCOPE)

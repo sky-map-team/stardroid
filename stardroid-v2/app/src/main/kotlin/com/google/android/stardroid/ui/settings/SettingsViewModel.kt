@@ -17,8 +17,8 @@ import com.google.android.stardroid.analytics.NoOpAnalytics
 import com.google.android.stardroid.astronomy.ViewDirectionMode
 import com.google.android.stardroid.settings.AutoDimness
 import com.google.android.stardroid.settings.FontSize
-import com.google.android.stardroid.settings.OneEuroBeta
-import com.google.android.stardroid.settings.OneEuroMinCutoff
+import com.google.android.stardroid.settings.OneEuroEaseOff
+import com.google.android.stardroid.settings.OneEuroSteadiness
 import com.google.android.stardroid.settings.Settings
 import com.google.android.stardroid.startup.Experiment
 import com.google.android.stardroid.startup.ExperimentConfig
@@ -38,8 +38,9 @@ data class SettingsUiState(
     val autoDimness: AutoDimness = AutoDimness.SYSTEM,
     val showSkyGradient: Boolean = true,
     val disableGyro: Boolean = false,
-    val oneEuroMinCutoff: OneEuroMinCutoff = OneEuroMinCutoff.OFF,
-    val oneEuroBeta: OneEuroBeta = OneEuroBeta.MEDIUM,
+    val smoothingEnabled: Boolean = false,
+    val steadiness: OneEuroSteadiness = OneEuroSteadiness.MEDIUM,
+    val easeOff: OneEuroEaseOff = OneEuroEaseOff.MEDIUM,
     val reverseMagneticZ: Boolean = false,
     val useMagneticCorrection: Boolean = true,
     val viewDirectionMode: ViewDirectionMode = ViewDirectionMode.STANDARD,
@@ -68,8 +69,9 @@ private data class AppearancePrefs(
 private data class SensorPrefs(
     val disableGyro: Boolean,
     val reverseMagneticZ: Boolean,
-    val oneEuroMinCutoff: OneEuroMinCutoff,
-    val oneEuroBeta: OneEuroBeta,
+    val smoothingEnabled: Boolean,
+    val steadiness: OneEuroSteadiness,
+    val easeOff: OneEuroEaseOff,
 )
 
 private data class MagneticPrefs(
@@ -132,8 +134,9 @@ class SettingsViewModel(
             combine(
                 settings.disableGyro,
                 settings.reverseMagneticZ,
-                settings.oneEuroMinCutoff,
-                settings.oneEuroBeta,
+                settings.smoothingEnabled,
+                settings.steadiness,
+                settings.easeOff,
                 ::SensorPrefs,
             ),
             combine(settings.useMagneticCorrection, settings.viewDirectionMode, ::MagneticPrefs),
@@ -155,8 +158,9 @@ class SettingsViewModel(
                 disableGyro = sensors.disableGyro,
 
                 reverseMagneticZ = sensors.reverseMagneticZ,
-                oneEuroMinCutoff = sensors.oneEuroMinCutoff,
-                oneEuroBeta = sensors.oneEuroBeta,
+                smoothingEnabled = sensors.smoothingEnabled,
+                steadiness = sensors.steadiness,
+                easeOff = sensors.easeOff,
                 useMagneticCorrection = magnetic.useMagneticCorrection,
                 viewDirectionMode = magnetic.viewDirectionMode,
                 enableAnalytics = other.enableAnalytics,
@@ -201,14 +205,19 @@ class SettingsViewModel(
         viewModelScope.launch { settings.setDisableGyro(enabled) }
     }
 
-    fun setOneEuroMinCutoff(level: OneEuroMinCutoff) {
-        trackChange("one_euro_min_cutoff", level)
-        viewModelScope.launch { settings.setOneEuroMinCutoff(level) }
+    fun setSmoothingEnabled(enabled: Boolean) {
+        trackChange("sensor_smoothing_enabled", enabled)
+        viewModelScope.launch { settings.setSmoothingEnabled(enabled) }
     }
 
-    fun setOneEuroBeta(level: OneEuroBeta) {
-        trackChange("one_euro_beta", level)
-        viewModelScope.launch { settings.setOneEuroBeta(level) }
+    fun setSteadiness(level: OneEuroSteadiness) {
+        trackChange("sensor_steadiness", level)
+        viewModelScope.launch { settings.setSteadiness(level) }
+    }
+
+    fun setEaseOff(level: OneEuroEaseOff) {
+        trackChange("sensor_ease_off", level)
+        viewModelScope.launch { settings.setEaseOff(level) }
     }
 
     fun setReverseMagneticZ(enabled: Boolean) {

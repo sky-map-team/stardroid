@@ -39,32 +39,30 @@ enum class AutoDimness {
 }
 
 /**
- * The 1€ filter's cutoff frequency at rest, for both sensor paths — how hard the view is
- * filtered while the phone is held still. Lower is stiller but slower to settle.
+ * How steady the view is held while the phone is still — the 1€ filter's cutoff frequency at
+ * rest, named in the direction the user cares about (steadier = lower cutoff). Higher settings
+ * shake less but take longer to settle.
  *
- * Exposed alongside [OneEuroBeta] rather than as one combined "smoothing" level because the
- * two are meant to be tuned one at a time, in that order (issue #1007). Expect to collapse
- * them into a single ladder once field data says where the useful range is.
+ * Exposed alongside [OneEuroEaseOff] rather than as one combined level because the two are
+ * meant to be tuned one at a time, in that order (issue #1007). Expect to collapse them into a
+ * single ladder once field data says where the useful range is. Whether smoothing runs at all
+ * is [Settings.smoothingEnabled], not a rung here — a strength ladder whose first rung is
+ * secretly a power switch is the thing that made the previous arrangement confusing.
  */
-enum class OneEuroMinCutoff {
-    /**
-     * No filtering at all — the sensor's own orientation reaches the view untouched. The
-     * default, because most devices fuse cleanly already and 2.0.3 shipped smoothing off for
-     * exactly that reason (issue #1001); it's also the only way to A/B the filter honestly.
-     */
-    OFF,
-    VERY_LOW,
+enum class OneEuroSteadiness {
     LOW,
     MEDIUM,
     HIGH,
+    MAXIMUM,
 }
 
 /**
- * How fast the 1€ filter's cutoff climbs with angular speed — the knob that trades stillness
- * for responsiveness once you start moving. `NONE` reduces the filter to a flat low-pass,
- * which is where the paper's tuning procedure starts. See [OneEuroMinCutoff].
+ * How much the steadying relaxes once the phone starts moving, so the view keeps up — the 1€
+ * filter's `beta`. `NONE` never relaxes, leaving a plain low-pass that lags movement as much as
+ * it lags jitter; it's where the paper's tuning procedure starts, with [OneEuroSteadiness]
+ * tuned first against it.
  */
-enum class OneEuroBeta {
+enum class OneEuroEaseOff {
     NONE,
     LOW,
     MEDIUM,
@@ -188,19 +186,23 @@ interface Settings {
     suspend fun setDisableGyro(enabled: Boolean)
 
     /**
-     * The 1€ filter's cutoff at rest, for both sensor paths (issues #963 / #1001 / #1007).
-     * See [OneEuroMinCutoff].
+     * Whether the view is smoothed at all, on either sensor path (issues #963 / #1001 /
+     * #1007). Off by default: most devices fuse cleanly already and 2.0.3 shipped smoothing
+     * off for that reason, and an honest A/B needs a real off switch.
      */
-    val oneEuroMinCutoff: Flow<OneEuroMinCutoff>
+    val smoothingEnabled: Flow<Boolean>
 
-    suspend fun setOneEuroMinCutoff(level: OneEuroMinCutoff)
+    suspend fun setSmoothingEnabled(enabled: Boolean)
 
-    /**
-     * How fast that cutoff climbs with angular speed, for both sensor paths. See [OneEuroBeta].
-     */
-    val oneEuroBeta: Flow<OneEuroBeta>
+    /** How steady the view is held while the phone is still. See [OneEuroSteadiness]. */
+    val steadiness: Flow<OneEuroSteadiness>
 
-    suspend fun setOneEuroBeta(level: OneEuroBeta)
+    suspend fun setSteadiness(level: OneEuroSteadiness)
+
+    /** How much that steadying relaxes when the phone moves. See [OneEuroEaseOff]. */
+    val easeOff: Flow<OneEuroEaseOff>
+
+    suspend fun setEaseOff(level: OneEuroEaseOff)
 
     /**
      * Negate the magnetometer's Z axis before fusion (v1's `reverse_magnetic_z`) — a

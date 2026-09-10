@@ -9,8 +9,8 @@
 
 package com.google.android.stardroid.sensors
 
-import com.google.android.stardroid.settings.OneEuroBeta
-import com.google.android.stardroid.settings.OneEuroMinCutoff
+import com.google.android.stardroid.settings.OneEuroEaseOff
+import com.google.android.stardroid.settings.OneEuroSteadiness
 import com.google.common.truth.Truth.assertThat
 import org.junit.jupiter.api.Test
 import kotlin.math.cos
@@ -58,10 +58,10 @@ class OneEuroQuaternionSmootherTest {
 
     @Test
     fun `a higher beta lags a sweep less`() {
-        fun lagAfterSweep(beta: OneEuroBeta): Double {
+        fun lagAfterSweep(beta: OneEuroEaseOff): Double {
             val smoother =
                 OneEuroQuaternionSmoother(
-                    minCutoff = OneEuroQuaternionSmoother.minCutoffFor(OneEuroMinCutoff.MEDIUM),
+                    minCutoff = OneEuroQuaternionSmoother.minCutoffFor(OneEuroSteadiness.MEDIUM),
                     beta = OneEuroQuaternionSmoother.betaFor(beta),
                 )
             smoother.update(IDENTITY, t(0))
@@ -69,8 +69,8 @@ class OneEuroQuaternionSmootherTest {
             repeat(20) { last = smoother.update(rotationAboutZ(4.0 * (it + 1)), t(it + 1)) }
             return 80.0 - angleBetweenDegrees(last, IDENTITY)
         }
-        assertThat(lagAfterSweep(OneEuroBeta.HIGH)).isLessThan(lagAfterSweep(OneEuroBeta.LOW))
-        assertThat(lagAfterSweep(OneEuroBeta.LOW)).isLessThan(lagAfterSweep(OneEuroBeta.NONE))
+        assertThat(lagAfterSweep(OneEuroEaseOff.HIGH)).isLessThan(lagAfterSweep(OneEuroEaseOff.LOW))
+        assertThat(lagAfterSweep(OneEuroEaseOff.LOW)).isLessThan(lagAfterSweep(OneEuroEaseOff.NONE))
     }
 
     @Test
@@ -111,16 +111,12 @@ class OneEuroQuaternionSmootherTest {
 
     @Test
     fun `ladders are ordered and beta starts at zero`() {
-        assertThat(OneEuroQuaternionSmoother.betaFor(OneEuroBeta.NONE)).isEqualTo(0f)
-        val betas = OneEuroBeta.entries.map { OneEuroQuaternionSmoother.betaFor(it) }
+        assertThat(OneEuroQuaternionSmoother.betaFor(OneEuroEaseOff.NONE)).isEqualTo(0f)
+        val betas = OneEuroEaseOff.entries.map { OneEuroQuaternionSmoother.betaFor(it) }
         betas.zipWithNext { lower, higher -> assertThat(lower).isLessThan(higher) }
-        // Lower cutoff = steadier at rest, so the ladder runs the other way. OFF is excluded:
-        // it means "don't run the filter", not "run it with some cutoff".
-        val cutoffs =
-            OneEuroMinCutoff.entries
-                .filter { it != OneEuroMinCutoff.OFF }
-                .map { OneEuroQuaternionSmoother.minCutoffFor(it) }
-        cutoffs.zipWithNext { steadier, looser -> assertThat(steadier).isLessThan(looser) }
+        // Steadier means a lower cutoff, so this ladder descends as the rungs climb.
+        val cutoffs = OneEuroSteadiness.entries.map { OneEuroQuaternionSmoother.minCutoffFor(it) }
+        cutoffs.zipWithNext { looser, steadier -> assertThat(looser).isGreaterThan(steadier) }
     }
 
     private companion object {
@@ -128,8 +124,8 @@ class OneEuroQuaternionSmootherTest {
 
         fun smoother() =
             OneEuroQuaternionSmoother(
-                minCutoff = OneEuroQuaternionSmoother.minCutoffFor(OneEuroMinCutoff.MEDIUM),
-                beta = OneEuroQuaternionSmoother.betaFor(OneEuroBeta.MEDIUM),
+                minCutoff = OneEuroQuaternionSmoother.minCutoffFor(OneEuroSteadiness.MEDIUM),
+                beta = OneEuroQuaternionSmoother.betaFor(OneEuroEaseOff.MEDIUM),
             )
 
         /** Timestamp for sample [index] at the 50 Hz the sensors are registered at, in nanos. */

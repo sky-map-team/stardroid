@@ -17,7 +17,6 @@ import android.view.Surface
 import com.google.android.stardroid.astronomy.orientationFromSensors
 import com.google.android.stardroid.math.Matrix3
 import com.google.android.stardroid.math.Vector3
-import com.google.android.stardroid.settings.OneEuroMinCutoff
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.Flow
@@ -63,8 +62,9 @@ class SensorOrientationSource(
             // The smoothing parameters now drive both paths, so the only setting that doesn't
             // always matter is the magnetic-Z reversal, which the fused path never reads.
             old.disableGyro == new.disableGyro &&
-                old.minCutoff == new.minCutoff &&
-                old.beta == new.beta &&
+                old.smoothingEnabled == new.smoothingEnabled &&
+                old.steadiness == new.steadiness &&
+                old.easeOff == new.easeOff &&
                 (usesFusedPath(old) || old.reverseMagneticZ == new.reverseMagneticZ)
         }.flatMapLatest { current ->
             when {
@@ -251,12 +251,12 @@ class SensorOrientationSource(
      * and no filter is allocated or run at all.
      */
     private fun smootherFor(config: SensorConfig) =
-        if (config.minCutoff == OneEuroMinCutoff.OFF) {
+        if (!config.smoothingEnabled) {
             null
         } else {
             OneEuroQuaternionSmoother(
-                minCutoff = OneEuroQuaternionSmoother.minCutoffFor(config.minCutoff),
-                beta = OneEuroQuaternionSmoother.betaFor(config.beta),
+                minCutoff = OneEuroQuaternionSmoother.minCutoffFor(config.steadiness),
+                beta = OneEuroQuaternionSmoother.betaFor(config.easeOff),
             )
         }
 

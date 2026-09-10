@@ -145,17 +145,23 @@ class DataStoreSettings(
     // New keys rather than reusing rotation_low_pass/rotation_deadband/sensor_damping: those
     // held levels for filters that no longer exist, so an old value would be meaningless here
     // (issue #1007). Anyone who had tuned them starts from these defaults instead.
-    override val oneEuroMinCutoff: Flow<OneEuroMinCutoff> =
-        enum(ONE_EURO_MIN_CUTOFF, OneEuroMinCutoff.OFF)
+    override val smoothingEnabled: Flow<Boolean> = boolean(SMOOTHING_ENABLED, default = false)
 
-    override suspend fun setOneEuroMinCutoff(level: OneEuroMinCutoff) {
-        dataStore.edit { it[ONE_EURO_MIN_CUTOFF] = level.name }
+    override suspend fun setSmoothingEnabled(enabled: Boolean) {
+        dataStore.edit { it[SMOOTHING_ENABLED] = enabled }
     }
 
-    override val oneEuroBeta: Flow<OneEuroBeta> = enum(ONE_EURO_BETA, OneEuroBeta.MEDIUM)
+    override val steadiness: Flow<OneEuroSteadiness> =
+        enum(STEADINESS, OneEuroSteadiness.MEDIUM)
 
-    override suspend fun setOneEuroBeta(level: OneEuroBeta) {
-        dataStore.edit { it[ONE_EURO_BETA] = level.name }
+    override suspend fun setSteadiness(level: OneEuroSteadiness) {
+        dataStore.edit { it[STEADINESS] = level.name }
+    }
+
+    override val easeOff: Flow<OneEuroEaseOff> = enum(EASE_OFF, OneEuroEaseOff.MEDIUM)
+
+    override suspend fun setEaseOff(level: OneEuroEaseOff) {
+        dataStore.edit { it[EASE_OFF] = level.name }
     }
 
     override val reverseMagneticZ: Flow<Boolean> = boolean(REVERSE_MAGNETIC_Z, default = false)
@@ -334,9 +340,11 @@ class DataStoreSettings(
 
         private val DISABLE_GYRO = booleanPreferencesKey("disable_gyro")
 
-        private val ONE_EURO_MIN_CUTOFF = stringPreferencesKey("one_euro_min_cutoff")
+        private val SMOOTHING_ENABLED = booleanPreferencesKey("sensor_smoothing_enabled")
 
-        private val ONE_EURO_BETA = stringPreferencesKey("one_euro_beta")
+        private val STEADINESS = stringPreferencesKey("sensor_steadiness")
+
+        private val EASE_OFF = stringPreferencesKey("sensor_ease_off")
 
         private val REVERSE_MAGNETIC_Z = booleanPreferencesKey("reverse_magnetic_z")
 

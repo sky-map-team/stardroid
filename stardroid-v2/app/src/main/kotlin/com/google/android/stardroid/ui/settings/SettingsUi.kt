@@ -62,8 +62,8 @@ import com.google.android.stardroid.analytics.AnalyticsEvents
 import com.google.android.stardroid.astronomy.ViewDirectionMode
 import com.google.android.stardroid.settings.AutoDimness
 import com.google.android.stardroid.settings.FontSize
-import com.google.android.stardroid.settings.OneEuroBeta
-import com.google.android.stardroid.settings.OneEuroMinCutoff
+import com.google.android.stardroid.settings.OneEuroEaseOff
+import com.google.android.stardroid.settings.OneEuroSteadiness
 import com.google.android.stardroid.ui.common.topBarWindowInsets
 
 /**
@@ -157,27 +157,34 @@ fun SettingsScreen(
                     checked = state.disableGyro,
                     onCheckedChange = viewModel::setDisableGyro,
                 )
-                // One filter serves both sensor paths now (issue #1007), so these two show
-                // whichever path is running. Kept as separate controls while their useful
-                // range is still being found — steadiness is meant to be tuned first, with
-                // responsiveness at its lowest, then responsiveness raised.
-                ChoiceRow(
-                    title = stringResource(R.string.settings_steadiness),
-                    summary = stringResource(R.string.settings_steadiness_summary),
-                    options = OneEuroMinCutoff.entries,
-                    selected = state.oneEuroMinCutoff,
-                    label = { steadinessLabel(it) },
-                    onSelect = viewModel::setOneEuroMinCutoff,
+                // One filter serves both sensor paths now (issue #1007), so these show
+                // whichever path is running. Off by default — most devices fuse cleanly and
+                // this must not regress them (issue #1001).
+                SwitchRow(
+                    title = stringResource(R.string.settings_smoothing),
+                    summary = stringResource(R.string.settings_smoothing_summary),
+                    checked = state.smoothingEnabled,
+                    onCheckedChange = viewModel::setSmoothingEnabled,
                 )
-                // Responsiveness only means anything while something is being smoothed.
-                if (state.oneEuroMinCutoff != OneEuroMinCutoff.OFF) {
+                // Kept as two controls while their useful range is still being found. They are
+                // meant to be tuned in this order: steadiness first with ease-off at None,
+                // then ease-off raised until the view keeps up.
+                if (state.smoothingEnabled) {
                     ChoiceRow(
-                        title = stringResource(R.string.settings_responsiveness),
-                        summary = stringResource(R.string.settings_responsiveness_summary),
-                        options = OneEuroBeta.entries,
-                        selected = state.oneEuroBeta,
-                        label = { responsivenessLabel(it) },
-                        onSelect = viewModel::setOneEuroBeta,
+                        title = stringResource(R.string.settings_steadiness),
+                        summary = stringResource(R.string.settings_steadiness_summary),
+                        options = OneEuroSteadiness.entries,
+                        selected = state.steadiness,
+                        label = { steadinessLabel(it) },
+                        onSelect = viewModel::setSteadiness,
+                    )
+                    ChoiceRow(
+                        title = stringResource(R.string.settings_ease_off),
+                        summary = stringResource(R.string.settings_ease_off_summary),
+                        options = OneEuroEaseOff.entries,
+                        selected = state.easeOff,
+                        label = { easeOffLabel(it) },
+                        onSelect = viewModel::setEaseOff,
                     )
                 }
                 // Still legacy-path-only: the fused sensor never sees raw magnetometer data.
@@ -499,25 +506,24 @@ private fun autoDimnessLabel(dimness: AutoDimness): String =
     )
 
 @Composable
-private fun steadinessLabel(level: OneEuroMinCutoff): String =
+private fun steadinessLabel(level: OneEuroSteadiness): String =
     stringResource(
         when (level) {
-            OneEuroMinCutoff.OFF -> R.string.settings_steadiness_off
-            OneEuroMinCutoff.VERY_LOW -> R.string.settings_steadiness_very_high
-            OneEuroMinCutoff.LOW -> R.string.settings_steadiness_high
-            OneEuroMinCutoff.MEDIUM -> R.string.settings_steadiness_medium
-            OneEuroMinCutoff.HIGH -> R.string.settings_steadiness_low
+            OneEuroSteadiness.LOW -> R.string.settings_steadiness_low
+            OneEuroSteadiness.MEDIUM -> R.string.settings_steadiness_medium
+            OneEuroSteadiness.HIGH -> R.string.settings_steadiness_high
+            OneEuroSteadiness.MAXIMUM -> R.string.settings_steadiness_maximum
         },
     )
 
 @Composable
-private fun responsivenessLabel(level: OneEuroBeta): String =
+private fun easeOffLabel(level: OneEuroEaseOff): String =
     stringResource(
         when (level) {
-            OneEuroBeta.NONE -> R.string.settings_responsiveness_none
-            OneEuroBeta.LOW -> R.string.settings_responsiveness_low
-            OneEuroBeta.MEDIUM -> R.string.settings_responsiveness_medium
-            OneEuroBeta.HIGH -> R.string.settings_responsiveness_high
+            OneEuroEaseOff.NONE -> R.string.settings_ease_off_none
+            OneEuroEaseOff.LOW -> R.string.settings_ease_off_low
+            OneEuroEaseOff.MEDIUM -> R.string.settings_ease_off_medium
+            OneEuroEaseOff.HIGH -> R.string.settings_ease_off_high
         },
     )
 

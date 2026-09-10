@@ -12,8 +12,8 @@ package com.google.android.stardroid.settings
 import com.google.android.stardroid.astronomy.ViewDirectionMode
 import com.google.android.stardroid.math.LatLong
 import com.google.android.stardroid.render.api.LayerId
-import com.google.android.stardroid.settings.OneEuroBeta
-import com.google.android.stardroid.settings.OneEuroMinCutoff
+import com.google.android.stardroid.settings.OneEuroEaseOff
+import com.google.android.stardroid.settings.OneEuroSteadiness
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 
@@ -152,20 +152,28 @@ class FakeSettings : Settings {
         disableGyroState.value = enabled
     }
 
-    val oneEuroMinCutoffState = MutableStateFlow(OneEuroMinCutoff.OFF)
+    val smoothingEnabledState = MutableStateFlow(false)
 
-    override val oneEuroMinCutoff: Flow<OneEuroMinCutoff> = oneEuroMinCutoffState
+    override val smoothingEnabled: Flow<Boolean> = smoothingEnabledState
 
-    override suspend fun setOneEuroMinCutoff(level: OneEuroMinCutoff) {
-        oneEuroMinCutoffState.value = level
+    override suspend fun setSmoothingEnabled(enabled: Boolean) {
+        smoothingEnabledState.value = enabled
     }
 
-    val oneEuroBetaState = MutableStateFlow(OneEuroBeta.MEDIUM)
+    val steadinessState = MutableStateFlow(OneEuroSteadiness.MEDIUM)
 
-    override val oneEuroBeta: Flow<OneEuroBeta> = oneEuroBetaState
+    override val steadiness: Flow<OneEuroSteadiness> = steadinessState
 
-    override suspend fun setOneEuroBeta(level: OneEuroBeta) {
-        oneEuroBetaState.value = level
+    override suspend fun setSteadiness(level: OneEuroSteadiness) {
+        steadinessState.value = level
+    }
+
+    val easeOffState = MutableStateFlow(OneEuroEaseOff.MEDIUM)
+
+    override val easeOff: Flow<OneEuroEaseOff> = easeOffState
+
+    override suspend fun setEaseOff(level: OneEuroEaseOff) {
+        easeOffState.value = level
     }
 
     val reverseMagneticZState = MutableStateFlow(false)

@@ -195,8 +195,9 @@ object AppModule {
             combine(
                 settings.disableGyro,
                 settings.reverseMagneticZ,
-                settings.oneEuroMinCutoff,
-                settings.oneEuroBeta,
+                settings.smoothingEnabled,
+                settings.steadiness,
+                settings.easeOff,
                 ::SensorConfig,
             )
         val delegate =

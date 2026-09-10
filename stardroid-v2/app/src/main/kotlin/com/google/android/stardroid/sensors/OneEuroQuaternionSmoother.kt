@@ -9,8 +9,8 @@
 
 package com.google.android.stardroid.sensors
 
-import com.google.android.stardroid.settings.OneEuroBeta
-import com.google.android.stardroid.settings.OneEuroMinCutoff
+import com.google.android.stardroid.settings.OneEuroEaseOff
+import com.google.android.stardroid.settings.OneEuroSteadiness
 import kotlin.math.PI
 import kotlin.math.abs
 import kotlin.math.acos
@@ -147,33 +147,30 @@ class OneEuroQuaternionSmoother(
         }
 
         /**
-         * Cutoff-at-rest ladder, in Hz: lower filters harder when the phone is still, at the
-         * cost of taking longer to settle. Provisional — these want field tuning, which is why
-         * they're exposed as their own setting for now rather than folded in with [betaFor].
+         * Cutoff-at-rest ladder, in Hz. Steadier means a *lower* cutoff, so the ladder runs
+         * downward — hence naming the setting for steadiness rather than for the frequency.
+         * Provisional: these want field tuning, which is why steadiness is exposed as its own
+         * setting for now rather than folded in with [betaFor].
          */
-        internal fun minCutoffFor(level: OneEuroMinCutoff): Float =
+        internal fun minCutoffFor(level: OneEuroSteadiness): Float =
             when (level) {
-                // Callers must check for OFF and skip the filter entirely rather than ask for
-                // a cutoff; there is no frequency that means "no filtering".
-                OneEuroMinCutoff.OFF -> error("OFF has no cutoff — skip the filter instead")
-                OneEuroMinCutoff.VERY_LOW -> 0.3f
-                OneEuroMinCutoff.LOW -> 0.6f
-                OneEuroMinCutoff.MEDIUM -> 1.2f
-                OneEuroMinCutoff.HIGH -> 2.5f
+                OneEuroSteadiness.LOW -> 2.5f
+                OneEuroSteadiness.MEDIUM -> 1.2f
+                OneEuroSteadiness.HIGH -> 0.6f
+                OneEuroSteadiness.MAXIMUM -> 0.3f
             }
 
         /**
-         * Speed-coupling ladder, in Hz per radian/second: higher lets the cutoff climb faster
-         * as the phone moves, trading stillness for responsiveness. `NONE` pins the filter to
-         * a flat low-pass at [minCutoffFor], which is the paper's starting point for tuning
-         * [minCutoffFor] on its own.
+         * Ease-off ladder, in Hz per radian/second: how fast the cutoff climbs as the phone
+         * moves, trading stillness for keeping up. `NONE` never relaxes, leaving a plain
+         * low-pass — the paper's starting point for tuning [minCutoffFor] on its own.
          */
-        internal fun betaFor(level: OneEuroBeta): Float =
+        internal fun betaFor(level: OneEuroEaseOff): Float =
             when (level) {
-                OneEuroBeta.NONE -> 0f
-                OneEuroBeta.LOW -> 0.2f
-                OneEuroBeta.MEDIUM -> 1f
-                OneEuroBeta.HIGH -> 4f
+                OneEuroEaseOff.NONE -> 0f
+                OneEuroEaseOff.LOW -> 0.2f
+                OneEuroEaseOff.MEDIUM -> 1f
+                OneEuroEaseOff.HIGH -> 4f
             }
     }
 }

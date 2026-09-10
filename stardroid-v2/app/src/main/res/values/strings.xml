@@ -332,19 +332,20 @@
     <string name="settings_disable_gyro" translation_description="Preference title for switching from the gyroscope to the legacy compass + accelerometer sensor pipeline">Use legacy sensors</string>
     <string name="settings_disable_gyro_summary" translation_description="Explanation of the legacy sensors preference and when to use it">Point the map using the compass and accelerometer instead of the gyroscope. Try this if the map drifts or your device\'s gyro misbehaves; devices without a gyro use these sensors automatically.</string>
     <string name="settings_classic_sensors_only" translation_description="Summary noting a sensor preference only applies to the legacy non-gyroscope sensor path">Only applies when legacy sensors are in use</string>
+    <string name="settings_smoothing" translation_description="Preference title for the switch that turns sensor smoothing on or off">Smooth sensor movement</string>
+    <string name="settings_smoothing_summary" translation_description="Explanation of the sensor smoothing switch, noting it is only needed on some devices">Steadies the sky view on devices whose sensors are noisy. Leave this off if the sky already looks steady when you hold the phone still.</string>
     <string name="settings_steadiness" translation_description="Preference title for how much the sky view is steadied while the phone is held still">Steadiness</string>
-    <string name="settings_steadiness_summary" translation_description="Explanation of the steadiness preference and its trade-off">How much the view is steadied while you hold the phone still. Steadier settings shake less but take a moment longer to settle.</string>
-    <string name="settings_steadiness_off" translation_description="Sensor smoothing turned off entirely">Off</string>
-    <string name="settings_steadiness_very_high" translation_description="Strongest steadying of the view when the phone is held still">Steadiest</string>
-    <string name="settings_steadiness_high" translation_description="Strong steadying of the view when the phone is held still">Steadier</string>
-    <string name="settings_steadiness_medium" translation_description="Moderate steadying of the view when the phone is held still">Balanced</string>
-    <string name="settings_steadiness_low" translation_description="Least steadying of the view when the phone is held still, settles fastest">Quickest to settle</string>
-    <string name="settings_responsiveness" translation_description="Preference title for how quickly the sky view keeps up when the phone is moved">Responsiveness</string>
-    <string name="settings_responsiveness_summary" translation_description="Explanation of the responsiveness preference and its trade-off">How quickly the view keeps up once you start moving the phone. Higher settings follow your movement more closely.</string>
-    <string name="settings_responsiveness_none" translation_description="View is steadied by the same amount whether the phone is still or moving">Always steady</string>
-    <string name="settings_responsiveness_low" translation_description="View keeps up a little when the phone moves">Relaxed</string>
-    <string name="settings_responsiveness_medium" translation_description="View keeps up moderately when the phone moves">Balanced</string>
-    <string name="settings_responsiveness_high" translation_description="View keeps up closely when the phone moves">Snappy</string>
+    <string name="settings_steadiness_summary" translation_description="Explanation of the steadiness preference and its trade-off">How much the view is steadied while you hold the phone still. Higher settings shake less but take a moment longer to settle.</string>
+    <string name="settings_steadiness_low" translation_description="Least steadying of the view when the phone is held still">Low</string>
+    <string name="settings_steadiness_medium" translation_description="Moderate steadying of the view when the phone is held still">Medium</string>
+    <string name="settings_steadiness_high" translation_description="Strong steadying of the view when the phone is held still">High</string>
+    <string name="settings_steadiness_maximum" translation_description="Strongest steadying of the view when the phone is held still">Maximum</string>
+    <string name="settings_ease_off" translation_description="Preference title for how much the steadying relaxes once the phone starts moving">Ease off when moving</string>
+    <string name="settings_ease_off_summary" translation_description="Explanation of the ease-off preference and its trade-off">How much the steadying relaxes once you start moving, so the view keeps up with you. Choose None to steady the view by the same amount whether it is still or moving.</string>
+    <string name="settings_ease_off_none" translation_description="Steadying does not relax at all when the phone moves">None</string>
+    <string name="settings_ease_off_low" translation_description="Steadying relaxes a little when the phone moves">A little</string>
+    <string name="settings_ease_off_medium" translation_description="Steadying relaxes a moderate amount when the phone moves">Moderate</string>
+    <string name="settings_ease_off_high" translation_description="Steadying relaxes a lot when the phone moves">A lot</string>
     <string name="settings_reverse_magnetic_z" translation_description="Preference title for reversing the magnetometer Z axis, a workaround for devices with a mis-mounted compass sensor">Reverse magnetic Z</string>
     <string name="settings_magnetic_correction" translation_description="Preference label: apply magnetic declination correction so the compass points to true north instead of magnetic north">Use magnetic correction</string>
     <string name="settings_magnetic_correction_summary" translation_description="Summary for the magnetic correction preference">Corrects the compass for the difference between magnetic and true north</string>

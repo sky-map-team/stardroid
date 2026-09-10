@@ -9,8 +9,8 @@
 
 package com.google.android.stardroid.sensors
 
-import com.google.android.stardroid.settings.OneEuroBeta
-import com.google.android.stardroid.settings.OneEuroMinCutoff
+import com.google.android.stardroid.settings.OneEuroEaseOff
+import com.google.android.stardroid.settings.OneEuroSteadiness
 
 /**
  * The sensor-preference snapshot `SensorOrientationSource` runs under (v1's `disable_gyro` and
@@ -27,6 +27,7 @@ import com.google.android.stardroid.settings.OneEuroMinCutoff
 data class SensorConfig(
     val disableGyro: Boolean = false,
     val reverseMagneticZ: Boolean = false,
-    val minCutoff: OneEuroMinCutoff = OneEuroMinCutoff.OFF,
-    val beta: OneEuroBeta = OneEuroBeta.MEDIUM,
+    val smoothingEnabled: Boolean = false,
+    val steadiness: OneEuroSteadiness = OneEuroSteadiness.MEDIUM,
+    val easeOff: OneEuroEaseOff = OneEuroEaseOff.MEDIUM,
 )
