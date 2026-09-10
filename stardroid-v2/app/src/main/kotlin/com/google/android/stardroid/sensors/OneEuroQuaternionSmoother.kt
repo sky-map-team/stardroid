@@ -153,6 +153,9 @@ class OneEuroQuaternionSmoother(
          */
         internal fun minCutoffFor(level: OneEuroMinCutoff): Float =
             when (level) {
+                // Callers must check for OFF and skip the filter entirely rather than ask for
+                // a cutoff; there is no frequency that means "no filtering".
+                OneEuroMinCutoff.OFF -> error("OFF has no cutoff — skip the filter instead")
                 OneEuroMinCutoff.VERY_LOW -> 0.3f
                 OneEuroMinCutoff.LOW -> 0.6f
                 OneEuroMinCutoff.MEDIUM -> 1.2f

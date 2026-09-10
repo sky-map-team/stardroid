@@ -27,6 +27,6 @@ import com.google.android.stardroid.settings.OneEuroMinCutoff
 data class SensorConfig(
     val disableGyro: Boolean = false,
     val reverseMagneticZ: Boolean = false,
-    val minCutoff: OneEuroMinCutoff = OneEuroMinCutoff.MEDIUM,
+    val minCutoff: OneEuroMinCutoff = OneEuroMinCutoff.OFF,
     val beta: OneEuroBeta = OneEuroBeta.MEDIUM,
 )

@@ -47,6 +47,12 @@ enum class AutoDimness {
  * them into a single ladder once field data says where the useful range is.
  */
 enum class OneEuroMinCutoff {
+    /**
+     * No filtering at all — the sensor's own orientation reaches the view untouched. The
+     * default, because most devices fuse cleanly already and 2.0.3 shipped smoothing off for
+     * exactly that reason (issue #1001); it's also the only way to A/B the filter honestly.
+     */
+    OFF,
     VERY_LOW,
     LOW,
     MEDIUM,

@@ -17,6 +17,7 @@ import android.view.Surface
 import com.google.android.stardroid.astronomy.orientationFromSensors
 import com.google.android.stardroid.math.Matrix3
 import com.google.android.stardroid.math.Vector3
+import com.google.android.stardroid.settings.OneEuroMinCutoff
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.Flow
@@ -92,17 +93,12 @@ class SensorOrientationSource(
             val quaternion = FloatArray(4)
             val rotationMatrix = FloatArray(9)
             val remappedMatrix = FloatArray(9)
-            // Unlike the old low-pass/deadband pair there is no "off" rung, so the smoother is
-            // unconditional here. The 1€ filter's cost is a handful of float ops per sample.
             val smoother = smootherFor(config)
             val listener =
                 object : SensorEventListener {
                     override fun onSensorChanged(event: SensorEvent) {
-                        val vector =
-                            smoother.update(
-                                toQuaternion(event.values, quaternion),
-                                event.timestamp,
-                            )
+                        val raw = toQuaternion(event.values, quaternion)
+                        val vector = smoother?.update(raw, event.timestamp) ?: raw
                         SensorManager.getRotationMatrixFromVector(rotationMatrix, vector)
                         val remapped = remapToDisplayFrame(rotationMatrix, remappedMatrix)
                         trySend(remapped.toMatrix3())
@@ -172,8 +168,10 @@ class SensorOrientationSource(
                         // uniform lag. Smoothing before the display remap also keeps a screen
                         // rotation from being smoothed through as though it were movement.
                         val smoothed =
-                            smoother.update(fused.writeQuaternion(quaternion), event.timestamp)
-                                .toRotationMatrix3()
+                            smoother
+                                ?.update(fused.writeQuaternion(quaternion), event.timestamp)
+                                ?.toRotationMatrix3()
+                                ?: fused
                         // ROTATION_0 needs no remap; skip the FloatArray round-trip (two
                         // allocations per event) on the hot path in that common case.
                         val remapped =
@@ -247,11 +245,19 @@ class SensorOrientationSource(
             this[6].toDouble(), this[7].toDouble(), this[8].toDouble(),
         )
 
-    /** One [OneEuroQuaternionSmoother] under [config]'s parameters, for either path. */
+    /**
+     * One [OneEuroQuaternionSmoother] under [config]'s parameters, for either path, or `null`
+     * when smoothing is off — in which case the sensor's orientation reaches the view untouched
+     * and no filter is allocated or run at all.
+     */
     private fun smootherFor(config: SensorConfig) =
-        OneEuroQuaternionSmoother(
-            minCutoff = OneEuroQuaternionSmoother.minCutoffFor(config.minCutoff),
-            beta = OneEuroQuaternionSmoother.betaFor(config.beta),
-        )
+        if (config.minCutoff == OneEuroMinCutoff.OFF) {
+            null
+        } else {
+            OneEuroQuaternionSmoother(
+                minCutoff = OneEuroQuaternionSmoother.minCutoffFor(config.minCutoff),
+                beta = OneEuroQuaternionSmoother.betaFor(config.beta),
+            )
+        }
 
 }

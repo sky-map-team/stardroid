@@ -334,6 +334,7 @@
     <string name="settings_classic_sensors_only" translation_description="Summary noting a sensor preference only applies to the legacy non-gyroscope sensor path">Only applies when legacy sensors are in use</string>
     <string name="settings_steadiness" translation_description="Preference title for how much the sky view is steadied while the phone is held still">Steadiness</string>
     <string name="settings_steadiness_summary" translation_description="Explanation of the steadiness preference and its trade-off">How much the view is steadied while you hold the phone still. Steadier settings shake less but take a moment longer to settle.</string>
+    <string name="settings_steadiness_off" translation_description="Sensor smoothing turned off entirely">Off</string>
     <string name="settings_steadiness_very_high" translation_description="Strongest steadying of the view when the phone is held still">Steadiest</string>
     <string name="settings_steadiness_high" translation_description="Strong steadying of the view when the phone is held still">Steadier</string>
     <string name="settings_steadiness_medium" translation_description="Moderate steadying of the view when the phone is held still">Balanced</string>

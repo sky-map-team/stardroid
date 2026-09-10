@@ -114,8 +114,12 @@ class OneEuroQuaternionSmootherTest {
         assertThat(OneEuroQuaternionSmoother.betaFor(OneEuroBeta.NONE)).isEqualTo(0f)
         val betas = OneEuroBeta.entries.map { OneEuroQuaternionSmoother.betaFor(it) }
         betas.zipWithNext { lower, higher -> assertThat(lower).isLessThan(higher) }
-        // Lower cutoff = steadier at rest, so the ladder runs the other way.
-        val cutoffs = OneEuroMinCutoff.entries.map { OneEuroQuaternionSmoother.minCutoffFor(it) }
+        // Lower cutoff = steadier at rest, so the ladder runs the other way. OFF is excluded:
+        // it means "don't run the filter", not "run it with some cutoff".
+        val cutoffs =
+            OneEuroMinCutoff.entries
+                .filter { it != OneEuroMinCutoff.OFF }
+                .map { OneEuroQuaternionSmoother.minCutoffFor(it) }
         cutoffs.zipWithNext { steadier, looser -> assertThat(steadier).isLessThan(looser) }
     }
 

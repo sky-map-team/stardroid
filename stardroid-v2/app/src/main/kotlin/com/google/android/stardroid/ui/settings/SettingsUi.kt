@@ -169,14 +169,17 @@ fun SettingsScreen(
                     label = { steadinessLabel(it) },
                     onSelect = viewModel::setOneEuroMinCutoff,
                 )
-                ChoiceRow(
-                    title = stringResource(R.string.settings_responsiveness),
-                    summary = stringResource(R.string.settings_responsiveness_summary),
-                    options = OneEuroBeta.entries,
-                    selected = state.oneEuroBeta,
-                    label = { responsivenessLabel(it) },
-                    onSelect = viewModel::setOneEuroBeta,
-                )
+                // Responsiveness only means anything while something is being smoothed.
+                if (state.oneEuroMinCutoff != OneEuroMinCutoff.OFF) {
+                    ChoiceRow(
+                        title = stringResource(R.string.settings_responsiveness),
+                        summary = stringResource(R.string.settings_responsiveness_summary),
+                        options = OneEuroBeta.entries,
+                        selected = state.oneEuroBeta,
+                        label = { responsivenessLabel(it) },
+                        onSelect = viewModel::setOneEuroBeta,
+                    )
+                }
                 // Still legacy-path-only: the fused sensor never sees raw magnetometer data.
                 // Note the gate isn't `disableGyro` — a device with no rotation-vector sensor
                 // runs the legacy path with `disableGyro` false.
@@ -499,6 +502,7 @@ private fun autoDimnessLabel(dimness: AutoDimness): String =
 private fun steadinessLabel(level: OneEuroMinCutoff): String =
     stringResource(
         when (level) {
+            OneEuroMinCutoff.OFF -> R.string.settings_steadiness_off
             OneEuroMinCutoff.VERY_LOW -> R.string.settings_steadiness_very_high
             OneEuroMinCutoff.LOW -> R.string.settings_steadiness_high
             OneEuroMinCutoff.MEDIUM -> R.string.settings_steadiness_medium

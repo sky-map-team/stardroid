@@ -152,7 +152,7 @@ class FakeSettings : Settings {
         disableGyroState.value = enabled
     }
 
-    val oneEuroMinCutoffState = MutableStateFlow(OneEuroMinCutoff.MEDIUM)
+    val oneEuroMinCutoffState = MutableStateFlow(OneEuroMinCutoff.OFF)
 
     override val oneEuroMinCutoff: Flow<OneEuroMinCutoff> = oneEuroMinCutoffState
 

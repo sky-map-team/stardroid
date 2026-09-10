@@ -146,7 +146,7 @@ class DataStoreSettings(
     // held levels for filters that no longer exist, so an old value would be meaningless here
     // (issue #1007). Anyone who had tuned them starts from these defaults instead.
     override val oneEuroMinCutoff: Flow<OneEuroMinCutoff> =
-        enum(ONE_EURO_MIN_CUTOFF, OneEuroMinCutoff.MEDIUM)
+        enum(ONE_EURO_MIN_CUTOFF, OneEuroMinCutoff.OFF)
 
     override suspend fun setOneEuroMinCutoff(level: OneEuroMinCutoff) {
         dataStore.edit { it[ONE_EURO_MIN_CUTOFF] = level.name }

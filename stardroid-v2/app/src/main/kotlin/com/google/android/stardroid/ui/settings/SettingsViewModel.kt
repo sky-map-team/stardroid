@@ -38,7 +38,7 @@ data class SettingsUiState(
     val autoDimness: AutoDimness = AutoDimness.SYSTEM,
     val showSkyGradient: Boolean = true,
     val disableGyro: Boolean = false,
-    val oneEuroMinCutoff: OneEuroMinCutoff = OneEuroMinCutoff.MEDIUM,
+    val oneEuroMinCutoff: OneEuroMinCutoff = OneEuroMinCutoff.OFF,
     val oneEuroBeta: OneEuroBeta = OneEuroBeta.MEDIUM,
     val reverseMagneticZ: Boolean = false,
     val useMagneticCorrection: Boolean = true,
