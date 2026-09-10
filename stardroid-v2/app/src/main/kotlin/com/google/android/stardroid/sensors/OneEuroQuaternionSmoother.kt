@@ -206,13 +206,22 @@ class OneEuroQuaternionSmoother(
          * downward — hence naming the setting for steadiness rather than for the frequency.
          * Provisional: these want field tuning, which is why steadiness is exposed as its own
          * setting for now rather than folded in with [betaFor].
+         *
+         * The bottom two rungs exist for the legacy accelerometer+magnetometer path, whose raw
+         * noise is far coarser than the fused sensor's. For scale, the `alpha · angle^3` law
+         * this replaced sat near 0.007 Hz at rest on its default rung — two orders of magnitude
+         * below what suits the fused path, which is why one ladder has to span so much. Rungs
+         * this low would feel dead on their own; they rely on [betaFor] opening the cutoff the
+         * moment the phone actually moves.
          */
         internal fun minCutoffFor(level: OneEuroSteadiness): Float =
             when (level) {
                 OneEuroSteadiness.LOW -> 2.5f
                 OneEuroSteadiness.MEDIUM -> 1.2f
                 OneEuroSteadiness.HIGH -> 0.6f
-                OneEuroSteadiness.MAXIMUM -> 0.3f
+                OneEuroSteadiness.VERY_HIGH -> 0.3f
+                OneEuroSteadiness.EXTREME -> 0.05f
+                OneEuroSteadiness.MAXIMUM -> 0.01f
             }
 
         /**

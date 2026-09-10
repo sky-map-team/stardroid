@@ -339,6 +339,8 @@
     <string name="settings_steadiness_low" translation_description="Least steadying of the view when the phone is held still">Low</string>
     <string name="settings_steadiness_medium" translation_description="Moderate steadying of the view when the phone is held still">Medium</string>
     <string name="settings_steadiness_high" translation_description="Strong steadying of the view when the phone is held still">High</string>
+    <string name="settings_steadiness_very_high" translation_description="Very strong steadying of the view when the phone is held still">Very high</string>
+    <string name="settings_steadiness_extreme" translation_description="Extremely strong steadying of the view when the phone is held still, for devices with noisy sensors">Extreme</string>
     <string name="settings_steadiness_maximum" translation_description="Strongest steadying of the view when the phone is held still">Maximum</string>
     <string name="settings_ease_off" translation_description="Preference title for how much the steadying relaxes once the phone starts moving">Ease off when moving</string>
     <string name="settings_ease_off_summary" translation_description="Explanation of the ease-off preference and its trade-off">How much the steadying relaxes once you start moving, so the view keeps up with you. Choose None to steady the view by the same amount whether it is still or moving.</string>

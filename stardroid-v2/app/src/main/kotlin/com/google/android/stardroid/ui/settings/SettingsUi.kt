@@ -512,6 +512,8 @@ private fun steadinessLabel(level: OneEuroSteadiness): String =
             OneEuroSteadiness.LOW -> R.string.settings_steadiness_low
             OneEuroSteadiness.MEDIUM -> R.string.settings_steadiness_medium
             OneEuroSteadiness.HIGH -> R.string.settings_steadiness_high
+            OneEuroSteadiness.VERY_HIGH -> R.string.settings_steadiness_very_high
+            OneEuroSteadiness.EXTREME -> R.string.settings_steadiness_extreme
             OneEuroSteadiness.MAXIMUM -> R.string.settings_steadiness_maximum
         },
     )
