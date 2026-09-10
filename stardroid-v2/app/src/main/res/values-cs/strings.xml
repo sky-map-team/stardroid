@@ -329,10 +329,6 @@
     <string name="settings_disable_gyro_summary" translation_description="Explanation of the legacy sensors preference and when to use it">
     Namiřte mapu pomocí kompasu a akcelerometru namísto gyroskopu. Vyzkoušejte to, pokud se mapa posouvá nebo se gyroskop vašeho zařízení chová nestandardně; zařízení bez gyroskopu používají tyto senzory automaticky.
     </string>
-    <string name="settings_sensor_speed">Rychlost senzoru</string>
-    <string name="settings_sensor_speed_slow" translation_description="Slow sensor speed">Pomalá</string>
-    <string name="settings_sensor_speed_standard" translation_description="Normal sensor speed">Střední</string>
-    <string name="settings_sensor_speed_fast" translation_description="Fast sensor speed">Rychlá</string>
     <string name="settings_sensor_damping">Tlumení</string>
     <string name="settings_sensor_damping_standard" translation_description="Low sensor damping factor - this will make the app jittery">Trhavé</string>
     <string name="settings_sensor_damping_high" translation_description="Medium sensor damping factor - this will make the app slightly jittery">Střední</string>

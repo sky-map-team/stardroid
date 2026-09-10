@@ -325,10 +325,6 @@
     <string name="settings_sky_gradient_summary" translation_description="Setting toggle summary for sky gradient: explains what the feature does">Shades the sky blue near the Sun and dark on the opposite side</string>
     <string name="settings_disable_gyro" translation_description="Preference title for switching from the gyroscope to the legacy compass + accelerometer sensor pipeline">Use legacy sensors</string>
     <string name="settings_disable_gyro_summary" translation_description="Explanation of the legacy sensors preference and when to use it">Point the map using the compass and accelerometer instead of the gyroscope. Try this if the map drifts or your device\'s gyro misbehaves; devices without a gyro use these sensors automatically.</string>
-    <string name="settings_sensor_speed" translation_description="Old, non gyro sensors only: how quickly the sensor should send us data">Sensor Speed</string>
-    <string name="settings_sensor_speed_slow" translation_description="Slow sensor speed">Slow</string>
-    <string name="settings_sensor_speed_standard" translation_description="Normal sensor speed">Medium</string>
-    <string name="settings_sensor_speed_fast" translation_description="Fast sensor speed">Fast</string>
     <string name="settings_sensor_damping" translation_description="Old, non gyro sensors only: the amount of smoothing applied to the sensor outputs">Damping</string>
     <string name="settings_sensor_damping_standard" translation_description="Low sensor damping factor - this will make the app jittery">Jumpy</string>
     <string name="settings_sensor_damping_high" translation_description="Medium sensor damping factor - this will make the app slightly jittery">Medium</string>

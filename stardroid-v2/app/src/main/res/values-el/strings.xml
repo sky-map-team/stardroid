@@ -334,10 +334,6 @@
     <string name="settings_disable_gyro_summary" translation_description="Explanation of the legacy sensors preference and when to use it">
     Στρέψτε τον χάρτη χρησιμοποιώντας την πυξίδα και το επιταχυνσιόμετρο αντί για το γυροσκόπιο. Δοκιμάστε το αν ο χάρτης παρασύρεται ή αν το γυροσκόπιο της συσκευής σας δυσλειτουργεί. Οι συσκευές χωρίς γυροσκόπιο χρησιμοποιούν αυτούς τους αισθητήρες αυτόματα.
     </string>
-    <string name="settings_sensor_speed">Ταχύτητα αισθητήρα</string>
-    <string name="settings_sensor_speed_slow" translation_description="Slow sensor speed">Αργό</string>
-    <string name="settings_sensor_speed_standard" translation_description="Normal sensor speed">Μεσαίο</string>
-    <string name="settings_sensor_speed_fast" translation_description="Fast sensor speed">Γρήγορο</string>
     <string name="settings_sensor_damping">Απόσβεση</string>
     <string name="settings_sensor_damping_standard" translation_description="Low sensor damping factor - this will make the app jittery">Ασταθές</string>
     <string name="settings_sensor_damping_high" translation_description="Medium sensor damping factor - this will make the app slightly jittery">Μεσαίο</string>

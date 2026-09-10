@@ -38,13 +38,6 @@ enum class AutoDimness {
     CLASSIC,
 }
 
-/** Sensor sampling rate for the classic accelerometer+magnetometer path (v1 `sensor_speed`). */
-enum class SensorSpeed {
-    SLOW,
-    STANDARD,
-    FAST,
-}
-
 /** Smoothing strength for the classic sensor path (v1 `sensor_damping`). */
 enum class SensorDamping {
     STANDARD,
@@ -55,7 +48,7 @@ enum class SensorDamping {
 
 /**
  * A strength level shared by the two fused-rotation-vector smoothing knobs below (issues #963 /
- * #1001) — unlike [SensorSpeed]/[SensorDamping], these act on the gyro path itself, since some
+ * #1001) — unlike [SensorDamping], these act on the gyro path itself, since some
  * phones' fusion is noisy enough to jitter the view even held still. Both default to OFF: most
  * devices fuse cleanly already, and this must not regress them.
  *
@@ -185,11 +178,6 @@ interface Settings {
     val disableGyro: Flow<Boolean>
 
     suspend fun setDisableGyro(enabled: Boolean)
-
-    /** Classic-path sensor sampling rate (v1's `sensor_speed`). */
-    val sensorSpeed: Flow<SensorSpeed>
-
-    suspend fun setSensorSpeed(speed: SensorSpeed)
 
     /** Classic-path smoothing strength (v1's `sensor_damping`, `EXTRA HIGH` by default). */
     val sensorDamping: Flow<SensorDamping>

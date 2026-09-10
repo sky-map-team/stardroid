@@ -329,10 +329,6 @@
     <string name="settings_disable_gyro_summary" translation_description="Explanation of the legacy sensors preference and when to use it">
     Usmerite zemljevid s kompasom in merilnikom pospeška namesto žiroskopa. Poskusite to, če zemljevid drsi ali se žiroskop vaše naprave ne obnaša pravilno; naprave brez žiroskopa samodejno uporabljajo te senzorje.
     </string>
-    <string name="settings_sensor_speed">Hitrost senzorja</string>
-    <string name="settings_sensor_speed_slow" translation_description="Slow sensor speed">Počasno</string>
-    <string name="settings_sensor_speed_standard" translation_description="Normal sensor speed">Srednje</string>
-    <string name="settings_sensor_speed_fast" translation_description="Fast sensor speed">Hitro</string>
     <string name="settings_sensor_damping">Dušenje</string>
     <string name="settings_sensor_damping_standard" translation_description="Low sensor damping factor - this will make the app jittery">Nemirno</string>
     <string name="settings_sensor_damping_high" translation_description="Medium sensor damping factor - this will make the app slightly jittery">Srednje</string>

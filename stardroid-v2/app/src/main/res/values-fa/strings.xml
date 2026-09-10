@@ -332,10 +332,6 @@
     <string name="settings_disable_gyro_summary" translation_description="Explanation of the legacy sensors preference and when to use it">
     نقشه را با استفاده از قطب‌نما و شتاب‌سنج به جای ژیروسکوپ جهت‌دهی کنید. اگر نقشه منحرف می‌شود یا ژیروسکوپ دستگاه شما درست کار نمی‌کند، این گزینه را امتحان کنید؛ دستگاه‌هایی که ژیروسکوپ ندارند به طور خودکار از این حسگرها استفاده می‌کنند.
     </string>
-    <string name="settings_sensor_speed">سرعت حسگر</string>
-    <string name="settings_sensor_speed_slow" translation_description="Slow sensor speed">آهسته</string>
-    <string name="settings_sensor_speed_standard" translation_description="Normal sensor speed">متوسط</string>
-    <string name="settings_sensor_speed_fast" translation_description="Fast sensor speed">سریع</string>
     <string name="settings_sensor_damping">میرایی</string>
     <string name="settings_sensor_damping_standard" translation_description="Low sensor damping factor - this will make the app jittery">پرش‌دار</string>
     <string name="settings_sensor_damping_high" translation_description="Medium sensor damping factor - this will make the app slightly jittery">متوسط</string>

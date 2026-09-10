@@ -314,10 +314,6 @@
     <string name="settings_disable_gyro_summary" translation_description="Explanation of the legacy sensors preference and when to use it">
     Orientuj mapę za pomocą kompasu i akcelerometru zamiast żyroskopu. Wypróbuj to, jeśli mapa dryfuje lub żyroskop Twojego urządzenia działa nieprawidłowo; urządzenia bez żyroskopu używają tych czujników automatycznie.
     </string>
-    <string name="settings_sensor_speed">Prędkość czujnika</string>
-    <string name="settings_sensor_speed_slow" translation_description="Slow sensor speed">Wolno</string>
-    <string name="settings_sensor_speed_standard" translation_description="Normal sensor speed">Średnio</string>
-    <string name="settings_sensor_speed_fast" translation_description="Fast sensor speed">Szybko</string>
     <string name="settings_sensor_damping">Tłumienie</string>
     <string name="settings_sensor_damping_standard" translation_description="Low sensor damping factor - this will make the app jittery">Skaczący</string>
     <string name="settings_sensor_damping_high" translation_description="Medium sensor damping factor - this will make the app slightly jittery">Średni</string>

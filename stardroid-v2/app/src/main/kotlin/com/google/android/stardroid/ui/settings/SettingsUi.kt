@@ -64,7 +64,6 @@ import com.google.android.stardroid.settings.AutoDimness
 import com.google.android.stardroid.settings.FontSize
 import com.google.android.stardroid.settings.RotationSmoothingLevel
 import com.google.android.stardroid.settings.SensorDamping
-import com.google.android.stardroid.settings.SensorSpeed
 import com.google.android.stardroid.ui.common.topBarWindowInsets
 
 /**
@@ -163,14 +162,6 @@ fun SettingsScreen(
                 // else. Note that's not the same as `disableGyro`: a device with no
                 // rotation-vector sensor runs the legacy path with `disableGyro` false.
                 if (legacyPathActive) {
-                    ChoiceRow(
-                        title = stringResource(R.string.settings_sensor_speed),
-                        summary = stringResource(R.string.settings_classic_sensors_only),
-                        options = SensorSpeed.entries,
-                        selected = state.sensorSpeed,
-                        label = { sensorSpeedLabel(it) },
-                        onSelect = viewModel::setSensorSpeed,
-                    )
                     ChoiceRow(
                         title = stringResource(R.string.settings_sensor_damping),
                         summary = stringResource(R.string.settings_classic_sensors_only),
@@ -511,16 +502,6 @@ private fun autoDimnessLabel(dimness: AutoDimness): String =
             AutoDimness.SYSTEM -> R.string.settings_auto_dimness_system
             AutoDimness.DIM -> R.string.settings_auto_dimness_dim
             AutoDimness.CLASSIC -> R.string.settings_auto_dimness_classic
-        },
-    )
-
-@Composable
-private fun sensorSpeedLabel(speed: SensorSpeed): String =
-    stringResource(
-        when (speed) {
-            SensorSpeed.SLOW -> R.string.settings_sensor_speed_slow
-            SensorSpeed.STANDARD -> R.string.settings_sensor_speed_standard
-            SensorSpeed.FAST -> R.string.settings_sensor_speed_fast
         },
     )
 

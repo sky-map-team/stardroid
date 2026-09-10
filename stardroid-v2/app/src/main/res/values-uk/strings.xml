@@ -332,10 +332,6 @@
     <string name="settings_disable_gyro_summary" translation_description="Explanation of the legacy sensors preference and when to use it">
     Наведіть карту за допомогою компаса й акселерометра замість гіроскопа. Спробуйте це, якщо карта дрейфує або гіроскоп вашого пристрою працює некоректно; пристрої без гіроскопа використовують ці датчики автоматично.
     </string>
-    <string name="settings_sensor_speed">Швидкість датчика</string>
-    <string name="settings_sensor_speed_slow" translation_description="Slow sensor speed">Повільно</string>
-    <string name="settings_sensor_speed_standard" translation_description="Normal sensor speed">Середньо</string>
-    <string name="settings_sensor_speed_fast" translation_description="Fast sensor speed">Швидко</string>
     <string name="settings_sensor_damping">Демпфування</string>
     <string name="settings_sensor_damping_standard" translation_description="Low sensor damping factor - this will make the app jittery">Нестабільно</string>
     <string name="settings_sensor_damping_high" translation_description="Medium sensor damping factor - this will make the app slightly jittery">Середньо</string>

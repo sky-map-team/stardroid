@@ -328,10 +328,6 @@
     <string name="settings_disable_gyro_summary" translation_description="Explanation of the legacy sensors preference and when to use it">
     وجّه الخريطة باستخدام البوصلة ومقياس التسارع بدلاً من الجيروسكوب. جرّب هذا إذا كانت الخريطة تنحرف أو كان جيروسكوب جهازك لا يعمل بشكل صحيح؛ الأجهزة التي لا تحتوي على جيروسكوب تستخدم هذه المستشعرات تلقائيًا.
     </string>
-    <string name="settings_sensor_speed">سرعة المستشعر</string>
-    <string name="settings_sensor_speed_slow" translation_description="Slow sensor speed">بطيء</string>
-    <string name="settings_sensor_speed_standard" translation_description="Normal sensor speed">متوسط</string>
-    <string name="settings_sensor_speed_fast" translation_description="Fast sensor speed">سريع</string>
     <string name="settings_sensor_damping">التخميد</string>
     <string name="settings_sensor_damping_standard" translation_description="Low sensor damping factor - this will make the app jittery">متقطع</string>
     <string name="settings_sensor_damping_high" translation_description="Medium sensor damping factor - this will make the app slightly jittery">متوسط</string>

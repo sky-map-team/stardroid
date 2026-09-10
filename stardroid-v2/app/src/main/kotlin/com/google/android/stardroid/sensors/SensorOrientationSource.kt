@@ -19,7 +19,6 @@ import com.google.android.stardroid.math.Matrix3
 import com.google.android.stardroid.math.Vector3
 import com.google.android.stardroid.settings.RotationSmoothingLevel
 import com.google.android.stardroid.settings.SensorDamping
-import com.google.android.stardroid.settings.SensorSpeed
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.Flow
@@ -71,8 +70,7 @@ class SensorOrientationSource(
                     old.rotationLowPass == new.rotationLowPass &&
                         old.rotationDeadband == new.rotationDeadband
                 else ->
-                    old.speed == new.speed &&
-                        old.damping == new.damping &&
+                    old.damping == new.damping &&
                         old.reverseMagneticZ == new.reverseMagneticZ
             }
         }.flatMapLatest { current ->
@@ -191,7 +189,6 @@ class SensorOrientationSource(
                     deadbandRadians = 0f,
                     exponent = damping.exponent,
                 )
-            val delay = sensorDelayFor(config.speed)
             var acceleration: Vector3? = null
             var magneticField: Vector3? = null
             val quaternion = FloatArray(4)
@@ -240,8 +237,13 @@ class SensorOrientationSource(
                         accuracy: Int,
                     ) = Unit
                 }
-            manager.registerListener(listener, accelerometer, delay)
-            manager.registerListener(listener, magnetometer, delay)
+            // Both paths sample at the same fixed rate. v1 let the user pick, but the
+            // smoothing fraction below is applied per sample, so rate and damping interact:
+            // exposing both would mean twelve combinations of which only one is ever tuned.
+            // SENSOR_DELAY_FASTEST also meant a 0-microsecond request, which Android 12 and up
+            // reject outright unless the app declares HIGH_SAMPLING_RATE_SENSORS (issue #1007).
+            manager.registerListener(listener, accelerometer, SensorManager.SENSOR_DELAY_GAME)
+            manager.registerListener(listener, magnetometer, SensorManager.SENSOR_DELAY_GAME)
             awaitClose { manager.unregisterListener(listener) }
         }.conflate()
 
@@ -320,14 +322,6 @@ class SensorOrientationSource(
                 SensorDamping.HIGH -> DampingSettings(50f, 3)
                 SensorDamping.EXTRA_HIGH -> DampingSettings(12f, 3)
                 SensorDamping.REALLY_HIGH -> DampingSettings(3f, 3)
-            }
-
-        /** v1's speed mapping: standard = GAME, slow = NORMAL, fast = FASTEST. */
-        internal fun sensorDelayFor(speed: SensorSpeed): Int =
-            when (speed) {
-                SensorSpeed.SLOW -> SensorManager.SENSOR_DELAY_NORMAL
-                SensorSpeed.STANDARD -> SensorManager.SENSOR_DELAY_GAME
-                SensorSpeed.FAST -> SensorManager.SENSOR_DELAY_FASTEST
             }
     }
 }

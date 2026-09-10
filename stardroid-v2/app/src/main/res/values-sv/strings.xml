@@ -329,10 +329,6 @@
     <string name="settings_disable_gyro_summary" translation_description="Explanation of the legacy sensors preference and when to use it">
     Peka ut kartan med kompass och accelerometer i stället för gyroskop. Prova detta om kartan driver eller om enhetens gyroskop uppför sig felaktigt; enheter utan gyroskop använder dessa sensorer automatiskt.
     </string>
-    <string name="settings_sensor_speed">Sensorhastighet</string>
-    <string name="settings_sensor_speed_slow" translation_description="Slow sensor speed">Långsam</string>
-    <!-- tm:omitted name="settings_sensor_speed_standard" reason="identical_to_source" -->
-    <string name="settings_sensor_speed_fast" translation_description="Fast sensor speed">Snabb</string>
     <string name="settings_sensor_damping">Dämpning</string>
     <string name="settings_sensor_damping_standard" translation_description="Low sensor damping factor - this will make the app jittery">Ryckig</string>
     <!-- tm:omitted name="settings_sensor_damping_high" reason="identical_to_source" -->

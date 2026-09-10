@@ -329,10 +329,6 @@
     <string name="settings_disable_gyro_summary" translation_description="Explanation of the legacy sensors preference and when to use it">
     मानचित्र को जाइरोस्कोप के बजाय कंपास और एक्सेलेरोमीटर का उपयोग करके इंगित करें। यदि मानचित्र भटकता है या आपके डिवाइस का जाइरो ठीक से काम नहीं करता है, तो इसे आज़माएँ; जाइरो के बिना वाले डिवाइस इन सेंसरों का स्वचालित रूप से उपयोग करते हैं।
     </string>
-    <string name="settings_sensor_speed">सेंसर गति</string>
-    <string name="settings_sensor_speed_slow" translation_description="Slow sensor speed">धीमा</string>
-    <string name="settings_sensor_speed_standard" translation_description="Normal sensor speed">मध्यम</string>
-    <string name="settings_sensor_speed_fast" translation_description="Fast sensor speed">तेज़</string>
     <string name="settings_sensor_damping">डैम्पिंग</string>
     <string name="settings_sensor_damping_standard" translation_description="Low sensor damping factor - this will make the app jittery">अस्थिर</string>
     <string name="settings_sensor_damping_high" translation_description="Medium sensor damping factor - this will make the app slightly jittery">मध्यम</string>

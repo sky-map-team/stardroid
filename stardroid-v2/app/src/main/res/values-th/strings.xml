@@ -307,10 +307,6 @@
     <string name="settings_disable_gyro_summary" translation_description="Explanation of the legacy sensors preference and when to use it">
     ใช้เข็มทิศและมาตรความเร่งในการเล็งแผนที่แทนไจโรสโคป ลองใช้วิธีนี้หากแผนที่เกิดการเคลื่อนหรือไจโรสโคปของอุปกรณ์ทำงานผิดปกติ โดยอุปกรณ์ที่ไม่มีไจโรสโคปจะใช้เซ็นเซอร์เหล่านี้โดยอัตโนมัติ
     </string>
-    <string name="settings_sensor_speed">ความเร็วเซนเซอร์</string>
-    <string name="settings_sensor_speed_slow" translation_description="Slow sensor speed">ช้า</string>
-    <string name="settings_sensor_speed_standard" translation_description="Normal sensor speed">ปานกลาง</string>
-    <string name="settings_sensor_speed_fast" translation_description="Fast sensor speed">เร็ว</string>
     <string name="settings_sensor_damping">การหน่วงเวลา</string>
     <string name="settings_sensor_damping_standard" translation_description="Low sensor damping factor - this will make the app jittery">กระตุก</string>
     <string name="settings_sensor_damping_high" translation_description="Medium sensor damping factor - this will make the app slightly jittery">ปานกลาง</string>

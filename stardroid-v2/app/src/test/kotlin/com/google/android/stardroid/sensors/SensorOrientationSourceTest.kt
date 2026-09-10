@@ -9,15 +9,15 @@
 
 package com.google.android.stardroid.sensors
 
-import android.hardware.SensorManager
 import com.google.android.stardroid.settings.SensorDamping
-import com.google.android.stardroid.settings.SensorSpeed
 import com.google.common.truth.Truth.assertThat
 import org.junit.jupiter.api.Test
 
-/** The preference→parameter tables. Speed is pinned to v1 `SensorOrientationController`'s
- * values; damping is v1's ladder re-expressed for [QuaternionSlerpSmoother] (issue #1007), so
- * it's the ordering and the character of each rung that's pinned, not v1's raw constants. */
+/**
+ * The damping ladder — v1's smoothing tables re-expressed for [QuaternionSlerpSmoother]
+ * (issue #1007), so what's pinned here is the ordering and the character of each rung, not
+ * v1's raw constants, which acted on different units entirely.
+ */
 class SensorOrientationSourceTest {
     @Test
     fun `damping ladder damps sub-degree jitter progressively harder`() {
@@ -41,16 +41,6 @@ class SensorOrientationSourceTest {
         SensorDamping.entries.forEach {
             assertThat(fractionAt(it, movement)).isGreaterThan(0.9f)
         }
-    }
-
-    @Test
-    fun `speed ladder matches v1's sensor delays`() {
-        assertThat(SensorOrientationSource.sensorDelayFor(SensorSpeed.SLOW))
-            .isEqualTo(SensorManager.SENSOR_DELAY_NORMAL)
-        assertThat(SensorOrientationSource.sensorDelayFor(SensorSpeed.STANDARD))
-            .isEqualTo(SensorManager.SENSOR_DELAY_GAME)
-        assertThat(SensorOrientationSource.sensorDelayFor(SensorSpeed.FAST))
-            .isEqualTo(SensorManager.SENSOR_DELAY_FASTEST)
     }
 
     private companion object {

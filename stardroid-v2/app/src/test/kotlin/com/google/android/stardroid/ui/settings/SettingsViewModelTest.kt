@@ -16,7 +16,6 @@ import com.google.android.stardroid.settings.AutoDimness
 import com.google.android.stardroid.settings.FakeSettings
 import com.google.android.stardroid.settings.FontSize
 import com.google.android.stardroid.settings.SensorDamping
-import com.google.android.stardroid.settings.SensorSpeed
 import com.google.common.truth.Truth.assertThat
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -60,7 +59,6 @@ class SettingsViewModelTest {
             assertThat(state.autoDimness).isEqualTo(AutoDimness.SYSTEM)
             assertThat(state.showSkyGradient).isTrue()
             assertThat(state.disableGyro).isFalse()
-            assertThat(state.sensorSpeed).isEqualTo(SensorSpeed.STANDARD)
             assertThat(state.sensorDamping).isEqualTo(SensorDamping.EXTRA_HIGH)
             assertThat(state.reverseMagneticZ).isFalse()
             assertThat(state.useMagneticCorrection).isTrue()
@@ -77,7 +75,6 @@ class SettingsViewModelTest {
             viewModel.setAutoDimness(AutoDimness.CLASSIC)
             viewModel.setShowSkyGradient(false)
             viewModel.setDisableGyro(true)
-            viewModel.setSensorSpeed(SensorSpeed.FAST)
             viewModel.setSensorDamping(SensorDamping.REALLY_HIGH)
             viewModel.setReverseMagneticZ(true)
             viewModel.setUseMagneticCorrection(false)
@@ -92,7 +89,6 @@ class SettingsViewModelTest {
             assertThat(state.autoDimness).isEqualTo(AutoDimness.CLASSIC)
             assertThat(state.showSkyGradient).isFalse()
             assertThat(state.disableGyro).isTrue()
-            assertThat(state.sensorSpeed).isEqualTo(SensorSpeed.FAST)
             assertThat(state.sensorDamping).isEqualTo(SensorDamping.REALLY_HIGH)
             assertThat(state.reverseMagneticZ).isTrue()
             assertThat(state.useMagneticCorrection).isFalse()

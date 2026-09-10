@@ -322,10 +322,6 @@
     <string name="settings_disable_gyro_summary" translation_description="Explanation of the legacy sensors preference and when to use it">
     ジャイロスコープではなく、コンパスと加速度計を使用して地図を向けます。地図がずれたり、お使いのデバイスのジャイロが正常に動作しない場合は、これを試してください。ジャイロのないデバイスは、これらのセンサーを自動的に使用します。
     </string>
-    <string name="settings_sensor_speed">センサー速度</string>
-    <string name="settings_sensor_speed_slow" translation_description="Slow sensor speed">遅い</string>
-    <string name="settings_sensor_speed_standard" translation_description="Normal sensor speed">中間</string>
-    <string name="settings_sensor_speed_fast" translation_description="Fast sensor speed">速い</string>
     <string name="settings_sensor_damping">ダンピング</string>
     <string name="settings_sensor_damping_standard" translation_description="Low sensor damping factor - this will make the app jittery">動きが不安定</string>
     <string name="settings_sensor_damping_high" translation_description="Medium sensor damping factor - this will make the app slightly jittery">中間</string>

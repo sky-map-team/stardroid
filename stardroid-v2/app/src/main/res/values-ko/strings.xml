@@ -322,10 +322,6 @@
     <string name="settings_disable_gyro_summary" translation_description="Explanation of the legacy sensors preference and when to use it">
     지도를 자이로스코프 대신 나침반과 가속도계를 사용하여 가리킵니다. 지도가 흔들리거나 기기의 자이로 센서가 오작동할 때 시도해 보세요. 자이로 센서가 없는 기기는 이 센서들을 자동으로 사용합니다.
     </string>
-    <string name="settings_sensor_speed" translation_description="Old, non gyro sensors only: how quickly the sensor should send us data">센서 속도</string>
-    <string name="settings_sensor_speed_slow" translation_description="Slow sensor speed">느리게</string>
-    <string name="settings_sensor_speed_standard" translation_description="Normal sensor speed">보통</string>
-    <string name="settings_sensor_speed_fast" translation_description="Fast sensor speed">빠르게</string>
     <string name="settings_sensor_damping" translation_description="Old, non gyro sensors only: the amount of smoothing applied to the sensor outputs">감쇠</string>
     <string name="settings_sensor_damping_standard" translation_description="Low sensor damping factor - this will make the app jittery">불안정</string>
     <string name="settings_sensor_damping_high" translation_description="Medium sensor damping factor - this will make the app slightly jittery">보통</string>

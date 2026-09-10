@@ -340,10 +340,6 @@
     <string name="settings_disable_gyro_summary" translation_description="Explanation of the legacy sensors preference and when to use it">
     Orienter la carte à l\'aide de la boussole et de l\'accéléromètre au lieu du gyroscope. Essayez ceci si la carte dérive ou si le gyroscope de votre appareil se comporte mal ; les appareils sans gyroscope utilisent ces capteurs automatiquement.
     </string>
-    <string name="settings_sensor_speed">Vitesse du capteur</string>
-    <string name="settings_sensor_speed_slow" translation_description="Slow sensor speed">Lent</string>
-    <string name="settings_sensor_speed_standard" translation_description="Normal sensor speed">Moyen</string>
-    <string name="settings_sensor_speed_fast" translation_description="Fast sensor speed">Rapide</string>
     <string name="settings_sensor_damping">Amortissement</string>
     <string name="settings_sensor_damping_standard" translation_description="Low sensor damping factor - this will make the app jittery">Saccadé</string>
     <string name="settings_sensor_damping_high" translation_description="Medium sensor damping factor - this will make the app slightly jittery">Moyen</string>
