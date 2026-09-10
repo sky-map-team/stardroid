@@ -15,6 +15,11 @@
     <!-- Re-arms the pass alert (D92 phase 4c) after a reboot, which otherwise silently drops
          any AlarmManager alarm armed before the device restarted. -->
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <!-- The "Fast" sensor speed registers at SENSOR_DELAY_FASTEST (0 microseconds), which
+         Android 12 and up refuse without this. A normal permission: granted at install, no
+         runtime prompt. Without it registerListener throws SecurityException and takes the
+         app down. -->
+    <uses-permission android:name="android.permission.HIGH_SAMPLING_RATE_SENSORS" />
     <uses-feature
         android:name="android.hardware.camera.any"
         android:required="false" />
