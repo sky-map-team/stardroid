@@ -62,6 +62,7 @@ class OneEuroQuaternionSmoother(
      */
     private val smoothedVelocity = FloatArray(3)
     private var lastTimestampNanos = 0L
+    private var lastDtSeconds = 0f
 
     /**
      * Feeds one sample. [raw] is a unit quaternion as `(x, y, z, w)`; [timestampNanos] is the
@@ -72,22 +73,28 @@ class OneEuroQuaternionSmoother(
         timestampNanos: Long,
     ): FloatArray {
         val prev = current
-        val dtSeconds = (timestampNanos - lastTimestampNanos) / NANOS_PER_SECOND
-        // Restart on the first sample and on any implausible gap — a backwards or zero delta
-        // (some devices' timestamps step oddly across a suspend) would divide by ~0, and a long
-        // gap means the app was backgrounded, where resuming from a stale orientation would
-        // drag the view across the sky. Starting at the sample costs nothing but a lost frame
-        // of smoothing.
-        if (prev == null || dtSeconds <= 0f || dtSeconds > MAX_GAP_SECONDS) {
+        val elapsed = (timestampNanos - lastTimestampNanos) / NANOS_PER_SECOND
+        // A non-advancing timestamp must not restart the filter. Restarting snaps straight to
+        // the unfiltered sample, so anything that makes it happen repeatedly reads as the view
+        // shaking — and callers can hand over timestamps that stall or step backwards for
+        // reasons that have nothing to do with the phone moving. Carry on with the last known
+        // interval instead; it is only ever used as a divisor.
+        val dtSeconds = if (elapsed > 0f) elapsed else lastDtSeconds
+        // Restart on the first sample, and on a gap long enough to mean the app was
+        // backgrounded — resuming from a stale orientation there would drag the view across
+        // the sky, where starting fresh costs one frame of smoothing.
+        if (prev == null || dtSeconds <= 0f || elapsed > MAX_GAP_SECONDS) {
             current = raw.copyOf()
             previousRaw = raw.copyOf()
             lastTimestampNanos = timestampNanos
+            lastDtSeconds = 0f
             smoothedVelocity.fill(0f)
             // Safe to hand back the caller's own array only because it's consumed synchronously
             // before the next event can overwrite the shared scratch buffer behind it.
             return raw
         }
         lastTimestampNanos = timestampNanos
+        lastDtSeconds = dtSeconds
 
         // Quaternions double-cover rotations: q and -q are the same rotation, but SLERPing
         // toward the "wrong" sign spins the long way around. Flip raw if it's closer to -prev.

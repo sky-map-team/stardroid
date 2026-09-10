@@ -147,14 +147,21 @@ class SensorOrientationSource(
             val listener =
                 object : SensorEventListener {
                     override fun onSensorChanged(event: SensorEvent) {
-                        when (event.sensor.type) {
-                            Sensor.TYPE_ACCELEROMETER -> acceleration = event.values.toVector3()
-                            Sensor.TYPE_MAGNETIC_FIELD ->
-                                // v1 PlainSmootherModelAdaptor: the mis-mounted-magnetometer
-                                // workaround negates Z.
-                                magneticField =
-                                    event.values.toVector3(negateZ = config.reverseMagneticZ)
+                        if (event.sensor.type == Sensor.TYPE_MAGNETIC_FIELD) {
+                            // v1 PlainSmootherModelAdaptor: the mis-mounted-magnetometer
+                            // workaround negates Z.
+                            magneticField =
+                                event.values.toVector3(negateZ = config.reverseMagneticZ)
+                            // Cached, not acted on. Emitting an orientation from each stream
+                            // would interleave two sensors' hardware timestamps, which are
+                            // independent and step backwards against each other — and the
+                            // smoother reads elapsed time between samples. Driving everything
+                            // from the accelerometer keeps that clock monotonic and evenly
+                            // spaced, and stops each frame being computed twice, once from a
+                            // stale accelerometer and once from a stale magnetometer.
+                            return
                         }
+                        acceleration = event.values.toVector3()
                         val accel = acceleration ?: return
                         val mag = magneticField ?: return
                         val fused = orientationFromSensors(accel, mag) ?: return

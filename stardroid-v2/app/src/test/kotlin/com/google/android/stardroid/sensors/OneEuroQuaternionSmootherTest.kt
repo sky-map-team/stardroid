@@ -128,6 +128,19 @@ class OneEuroQuaternionSmootherTest {
     }
 
     @Test
+    fun `a stalled timestamp keeps filtering instead of snapping to the raw sample`() {
+        // Restarting on a non-advancing timestamp snaps to the unfiltered sample, and anything
+        // that makes that happen repeatedly reads as the view shaking. Two sensors' hardware
+        // clocks interleaving used to do exactly that on the legacy path.
+        val smoother = smoother()
+        smoother.update(IDENTITY, t(0))
+        repeat(5) { smoother.update(IDENTITY, t(it + 1)) }
+        val stalled = smoother.update(rotationAboutZ(30.0), t(5))
+        // Still smoothing: nowhere near the 30 degrees a restart would have jumped to.
+        assertThat(angleBetweenDegrees(stalled, IDENTITY)).isLessThan(15.0)
+    }
+
+    @Test
     fun `a non-advancing timestamp does not produce a broken quaternion`() {
         val smoother = smoother()
         smoother.update(IDENTITY, t(5))
