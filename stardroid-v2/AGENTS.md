@@ -93,14 +93,21 @@ pipeline; that note was written before this was wired up.
 - Any change to translatable content (`whatsnew.xml`, `strings.xml`, `credits.xml`,
   `help.xml`, `eula.xml`, the fastlane changelog, or catalog `source-data/` content covered
   by `.tmconfig.toml`'s `[[sources]]`) goes stale in every locale's translation the moment
-  the English source changes. Before finishing any such change — and always as part of a
-  release — run:
+  the English source changes.
+- **Never run `tm translate` without asking first.** It calls out to an LLM provider and
+  rewrites files across all 28 locales, so it is the maintainer's call, not an automatic
+  step. When a change leaves translations stale, say so, say roughly how many strings are
+  affected, and propose the command — then wait:
   ```bash
   tm translate --all-primary --include-stale
   ```
   This is normally a handful of strings (the ones you just touched, plus anything newly
-  added since the last run), not a large backlog. Verify with `tm languages` afterward —
-  all 28 primary locales should read 100% coverage, 0 stale.
+  added since the last run), not a large backlog. Once approved and run, verify with
+  `tm languages` — all 28 primary locales should read 100% coverage, 0 stale.
+- Read-only commands (`tm languages`, `tm coverage`, `tm validate`) need no permission; run
+  them freely to work out what a change actually left stale. Deleting strings usually
+  leaves nothing to translate at all — coverage stays at 100% because there is no new
+  English source — so check before assuming a run is needed.
 
 ## Testing
 

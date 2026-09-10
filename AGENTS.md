@@ -93,3 +93,8 @@ For v2 (`stardroid-v2/`), that pipeline (the `tm` CLI, driven by `.tmconfig.toml
 live — see [`stardroid-v2/AGENTS.md`](stardroid-v2/AGENTS.md#translations) for how and when
 to run it. v1 has its own longer-standing `tm` setup; see
 [`stardroid-v1/AGENTS.md`](stardroid-v1/AGENTS.md) for its conventions.
+
+**Ask before running `tm translate`, in either module.** It calls an LLM provider and
+rewrites every locale, so it is the maintainer's decision. Flag that translations have gone
+stale and propose the command; don't run it unprompted. The read-only `tm` commands
+(`languages`, `coverage`, `validate`) need no permission.
