@@ -258,6 +258,7 @@ class SensorOrientationSource(
             OneEuroQuaternionSmoother(
                 minCutoff = OneEuroQuaternionSmoother.minCutoffFor(config.steadiness, legacyPath),
                 beta = OneEuroQuaternionSmoother.betaFor(config.easeOff, legacyPath),
+                speedFloor = OneEuroQuaternionSmoother.speedFloorFor(legacyPath),
             )
         }
 

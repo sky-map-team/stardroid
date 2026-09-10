@@ -141,6 +141,54 @@ class OneEuroQuaternionSmootherTest {
     }
 
     @Test
+    fun `the speed floor stops noise opening the cutoff at all`() {
+        // With a floor above what stationary noise leaves behind, ease-off contributes exactly
+        // nothing while the phone is still — so the output is identical with it engaged and
+        // with it off, rather than merely close. That is what kills the shake-freeze cycle.
+        fun trace(easeOff: OneEuroEaseOff): List<Double> {
+            val smoother =
+                OneEuroQuaternionSmoother(
+                    minCutoff =
+                        OneEuroQuaternionSmoother.minCutoffFor(
+                            OneEuroSteadiness.MEDIUM,
+                            legacyPath = false,
+                        ),
+                    beta = OneEuroQuaternionSmoother.betaFor(easeOff, legacyPath = false),
+                    speedFloor = 100f,
+                )
+            smoother.update(IDENTITY, t(0))
+            return (0 until 200).map {
+                angleBetweenDegrees(smoother.update(noiseAbout(IDENTITY, it), t(it + 1)), IDENTITY)
+            }
+        }
+        assertThat(trace(OneEuroEaseOff.HIGH)).isEqualTo(trace(OneEuroEaseOff.NONE))
+    }
+
+    @Test
+    fun `movement above the floor still opens the cutoff immediately`() {
+        // The floor must not cost responsiveness: a real sweep clears it on the first sample,
+        // with none of the averaging delay that smoothing the estimate harder would have cost.
+        fun sweptDegrees(speedFloor: Float): Double {
+            val smoother =
+                OneEuroQuaternionSmoother(
+                    minCutoff =
+                        OneEuroQuaternionSmoother.minCutoffFor(
+                            OneEuroSteadiness.MEDIUM,
+                            legacyPath = false,
+                        ),
+                    beta = OneEuroQuaternionSmoother.betaFor(OneEuroEaseOff.HIGH, false),
+                    speedFloor = speedFloor,
+                )
+            smoother.update(IDENTITY, t(0))
+            var last = IDENTITY
+            repeat(20) { last = smoother.update(rotationAboutZ(4.0 * (it + 1)), t(it + 1)) }
+            return angleBetweenDegrees(last, IDENTITY)
+        }
+        // 4 degrees per sample at 50 Hz is about 3.5 rad/s, well clear of the 0.03 floor.
+        assertThat(sweptDegrees(0.03f)).isWithin(0.5).of(sweptDegrees(0f))
+    }
+
+    @Test
     fun `the legacy tables are gentler than the fused ones at every rung`() {
         // The legacy path's noise floor is far coarser, so both its tables sit lower. Beta
         // especially: `beta * speed` is added to the cutoff, so a beta sized for the fused

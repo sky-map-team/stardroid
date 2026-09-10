@@ -14,6 +14,7 @@ import com.google.android.stardroid.settings.OneEuroSteadiness
 import kotlin.math.PI
 import kotlin.math.abs
 import kotlin.math.acos
+import kotlin.math.max
 import kotlin.math.min
 import kotlin.math.sin
 import kotlin.math.sqrt
@@ -46,6 +47,7 @@ import kotlin.math.sqrt
 class OneEuroQuaternionSmoother(
     private val minCutoff: Float,
     private val beta: Float,
+    private val speedFloor: Float = 0f,
 ) {
     private var current: FloatArray? = null
     private var previousRaw: FloatArray? = null
@@ -109,7 +111,14 @@ class OneEuroQuaternionSmoother(
                     smoothedVelocity[1] * smoothedVelocity[1] +
                     smoothedVelocity[2] * smoothedVelocity[2],
             )
-        val cutoff = minCutoff + beta * speed
+        // Subtract the noise floor before the speed is allowed to open the cutoff. Averaging
+        // the velocity as a vector shrinks what noise leaves behind but cannot remove it: over
+        // any finite window the residual wanders, and whenever it happens to align for a few
+        // samples the cutoff opens, shakes, then closes as it decorrelates — a periodic
+        // shake-freeze-shake that is worse to look at than steady jitter. Below the floor the
+        // filter is simply a fixed low-pass at [minCutoff]; above it, genuine movement still
+        // opens the cutoff on the very first sample, with no averaging delay.
+        val cutoff = minCutoff + beta * max(0f, speed - speedFloor)
         val smoothed = slerp(prev, target, smoothingFactor(cutoff, dtSeconds))
         current = smoothed
         return smoothed
@@ -237,6 +246,18 @@ class OneEuroQuaternionSmoother(
                     OneEuroSteadiness.MAXIMUM -> 0.01f
                 }
             }
+
+        /**
+         * The residual speed, in radians/second, that a *stationary* phone's sensor noise
+         * leaves in the velocity estimate on each path — everything below this is treated as
+         * standing still. The legacy path's figure is far larger because its orientation noise
+         * is: a degree or two per sample at 50 Hz is already tens of degrees per second.
+         *
+         * Provisional, and the legacy figure is the one most worth measuring: set it too low
+         * and the shake-freeze cycle survives, too high and slow deliberate pans are treated
+         * as noise and lag badly.
+         */
+        internal fun speedFloorFor(legacyPath: Boolean): Float = if (legacyPath) 0.35f else 0.03f
 
         /**
          * Ease-off ladder, in Hz per radian/second: how fast the cutoff climbs as the phone
