@@ -329,24 +329,7 @@
     <string name="settings_disable_gyro_summary" translation_description="Explanation of the legacy sensors preference and when to use it">
     Usmerite zemljevid s kompasom in merilnikom pospeška namesto žiroskopa. Poskusite to, če zemljevid drsi ali se žiroskop vaše naprave ne obnaša pravilno; naprave brez žiroskopa samodejno uporabljajo te senzorje.
     </string>
-    <string name="settings_sensor_damping">Dušenje</string>
-    <string name="settings_sensor_damping_standard" translation_description="Low sensor damping factor - this will make the app jittery">Nemirno</string>
-    <string name="settings_sensor_damping_high" translation_description="Medium sensor damping factor - this will make the app slightly jittery">Srednje</string>
-    <string name="settings_sensor_damping_extra_high" translation_description="Extra high sensor damping factor">Ravno prav</string>
-    <string name="settings_sensor_damping_really_high" translation_description="Really high sensor damping factor - this will make the app sluggish">Zakasnjeno</string>
     <string name="settings_classic_sensors_only" translation_description="Summary noting a sensor preference only applies to the legacy non-gyroscope sensor path">Velja samo, ko so v uporabi starejši senzorji</string>
-    <string name="settings_rotation_low_pass" translation_description="Preference title for low-pass filtering the gyroscope-based sensor path, to reduce jitter on some devices">Nizkopasovni filter senzorjev</string>
-    <string name="settings_rotation_low_pass_summary" translation_description="Explanation of the sensor low-pass preference and its trade-off">
-    Zmanjša tresljaje na napravah z motenim senzorjem s postopnim vključevanjem novih meritev. Višje nastavitve so bolj stabilne, vendar počasneje odzivne na dejansko gibanje.
-    </string>
-    <string name="settings_rotation_deadband" translation_description="Preference title for ignoring tiny gyroscope-based sensor movements, to reduce jitter on some devices">Mrtvo območje senzorja</string>
-    <string name="settings_rotation_deadband_summary" translation_description="Explanation of the sensor deadband preference and its trade-off">
-    Zaznava premike, večje od določenega praga. Višje nastavitve prezrejo večje premike, zaradi česar so lahko majhni namerni popravki manj odzivni.
-    </string>
-    <string name="settings_rotation_smoothing_off" translation_description="Sensor smoothing disabled">Izklopljeno</string>
-    <string name="settings_rotation_smoothing_low" translation_description="Low sensor smoothing strength">Nizka</string>
-    <string name="settings_rotation_smoothing_medium" translation_description="Medium sensor smoothing strength">Srednja</string>
-    <string name="settings_rotation_smoothing_high" translation_description="High sensor smoothing strength">Visoka</string>
     <string name="settings_reverse_magnetic_z">Obrni magnetni Z</string>
     <string name="settings_magnetic_correction">Uporabi magnetno korekcijo</string>
     <string name="settings_magnetic_correction_summary" translation_description="Summary for the magnetic correction preference">Popravi kompas za razliko med magnetnim in pravim severom</string>

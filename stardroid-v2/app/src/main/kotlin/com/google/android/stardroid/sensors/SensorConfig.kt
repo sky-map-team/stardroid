@@ -9,23 +9,24 @@
 
 package com.google.android.stardroid.sensors
 
-import com.google.android.stardroid.settings.RotationSmoothingLevel
-import com.google.android.stardroid.settings.SensorDamping
+import com.google.android.stardroid.settings.OneEuroBeta
+import com.google.android.stardroid.settings.OneEuroMinCutoff
 
 /**
- * The sensor-preference snapshot `SensorOrientationSource` runs under (v1's `disable_gyro`,
- * `sensor_damping`, `reverse_magnetic_z`, plus v2's own `rotation_low_pass` and
- * `rotation_deadband`). Damping and the magnetic-Z reversal only affect the classic
- * accelerometer+magnetometer path — v1 ran the fused rotation-vector sensor at a fixed rate and
- * fed it no raw magnetometer data, and so does v2. Both paths now sample at a fixed
- * `SENSOR_DELAY_GAME`; v1's user-selectable `sensor_speed` is gone (issue #1007).
- * [rotationLowPass]/[rotationDeadband] are the opposite: they only affect the fused path (issues #963 / #1001 — some phones' fusion is noisy
- * enough to need it), and are kept independent so their effects can be evaluated separately.
+ * The sensor-preference snapshot `SensorOrientationSource` runs under (v1's `disable_gyro` and
+ * `reverse_magnetic_z`, plus v2's own 1€ filter parameters). The magnetic-Z reversal only
+ * affects the classic accelerometer+magnetometer path — v1 fed the fused rotation-vector sensor
+ * no raw magnetometer data, and neither does v2.
+ *
+ * [minCutoff]/[beta] apply to *both* paths, which is new: the fused path used to have its own
+ * low-pass and deadband levels and the legacy path its own damping ladder (issues #963 / #1001 /
+ * #1007). One filter now serves both, so one pair of knobs does too. They stay separate rather
+ * than combining into a single "smoothing" level while their useful range is still being found
+ * in the field.
  */
 data class SensorConfig(
     val disableGyro: Boolean = false,
-    val damping: SensorDamping = SensorDamping.EXTRA_HIGH,
     val reverseMagneticZ: Boolean = false,
-    val rotationLowPass: RotationSmoothingLevel = RotationSmoothingLevel.OFF,
-    val rotationDeadband: RotationSmoothingLevel = RotationSmoothingLevel.OFF,
+    val minCutoff: OneEuroMinCutoff = OneEuroMinCutoff.MEDIUM,
+    val beta: OneEuroBeta = OneEuroBeta.MEDIUM,
 )

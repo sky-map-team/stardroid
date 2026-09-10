@@ -142,27 +142,20 @@ class DataStoreSettings(
         dataStore.edit { it[DISABLE_GYRO] = enabled }
     }
 
-    // v1's effective default: its preference XML said EXTRA HIGH and setDefaultValues
-    // persisted it, so the code-path STANDARD fallback never applied in practice.
-    override val sensorDamping: Flow<SensorDamping> =
-        enum(SENSOR_DAMPING, SensorDamping.EXTRA_HIGH)
+    // New keys rather than reusing rotation_low_pass/rotation_deadband/sensor_damping: those
+    // held levels for filters that no longer exist, so an old value would be meaningless here
+    // (issue #1007). Anyone who had tuned them starts from these defaults instead.
+    override val oneEuroMinCutoff: Flow<OneEuroMinCutoff> =
+        enum(ONE_EURO_MIN_CUTOFF, OneEuroMinCutoff.MEDIUM)
 
-    override suspend fun setSensorDamping(damping: SensorDamping) {
-        dataStore.edit { it[SENSOR_DAMPING] = damping.name }
+    override suspend fun setOneEuroMinCutoff(level: OneEuroMinCutoff) {
+        dataStore.edit { it[ONE_EURO_MIN_CUTOFF] = level.name }
     }
 
-    override val rotationLowPass: Flow<RotationSmoothingLevel> =
-        enum(ROTATION_LOW_PASS, RotationSmoothingLevel.OFF)
+    override val oneEuroBeta: Flow<OneEuroBeta> = enum(ONE_EURO_BETA, OneEuroBeta.MEDIUM)
 
-    override suspend fun setRotationLowPass(level: RotationSmoothingLevel) {
-        dataStore.edit { it[ROTATION_LOW_PASS] = level.name }
-    }
-
-    override val rotationDeadband: Flow<RotationSmoothingLevel> =
-        enum(ROTATION_DEADBAND, RotationSmoothingLevel.OFF)
-
-    override suspend fun setRotationDeadband(level: RotationSmoothingLevel) {
-        dataStore.edit { it[ROTATION_DEADBAND] = level.name }
+    override suspend fun setOneEuroBeta(level: OneEuroBeta) {
+        dataStore.edit { it[ONE_EURO_BETA] = level.name }
     }
 
     override val reverseMagneticZ: Flow<Boolean> = boolean(REVERSE_MAGNETIC_Z, default = false)
@@ -341,11 +334,9 @@ class DataStoreSettings(
 
         private val DISABLE_GYRO = booleanPreferencesKey("disable_gyro")
 
-        private val SENSOR_DAMPING = stringPreferencesKey("sensor_damping")
+        private val ONE_EURO_MIN_CUTOFF = stringPreferencesKey("one_euro_min_cutoff")
 
-        private val ROTATION_LOW_PASS = stringPreferencesKey("rotation_low_pass")
-
-        private val ROTATION_DEADBAND = stringPreferencesKey("rotation_deadband")
+        private val ONE_EURO_BETA = stringPreferencesKey("one_euro_beta")
 
         private val REVERSE_MAGNETIC_Z = booleanPreferencesKey("reverse_magnetic_z")
 

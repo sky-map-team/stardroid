@@ -62,8 +62,8 @@ import com.google.android.stardroid.analytics.AnalyticsEvents
 import com.google.android.stardroid.astronomy.ViewDirectionMode
 import com.google.android.stardroid.settings.AutoDimness
 import com.google.android.stardroid.settings.FontSize
-import com.google.android.stardroid.settings.RotationSmoothingLevel
-import com.google.android.stardroid.settings.SensorDamping
+import com.google.android.stardroid.settings.OneEuroBeta
+import com.google.android.stardroid.settings.OneEuroMinCutoff
 import com.google.android.stardroid.ui.common.topBarWindowInsets
 
 /**
@@ -157,45 +157,35 @@ fun SettingsScreen(
                     checked = state.disableGyro,
                     onCheckedChange = viewModel::setDisableGyro,
                 )
-                // Speed/damping/reverse-Z only act on the legacy (non-gyro) sensor path, so
-                // they only show while that path is what's running — less noise for everyone
-                // else. Note that's not the same as `disableGyro`: a device with no
-                // rotation-vector sensor runs the legacy path with `disableGyro` false.
+                // One filter serves both sensor paths now (issue #1007), so these two show
+                // whichever path is running. Kept as separate controls while their useful
+                // range is still being found — steadiness is meant to be tuned first, with
+                // responsiveness at its lowest, then responsiveness raised.
+                ChoiceRow(
+                    title = stringResource(R.string.settings_steadiness),
+                    summary = stringResource(R.string.settings_steadiness_summary),
+                    options = OneEuroMinCutoff.entries,
+                    selected = state.oneEuroMinCutoff,
+                    label = { steadinessLabel(it) },
+                    onSelect = viewModel::setOneEuroMinCutoff,
+                )
+                ChoiceRow(
+                    title = stringResource(R.string.settings_responsiveness),
+                    summary = stringResource(R.string.settings_responsiveness_summary),
+                    options = OneEuroBeta.entries,
+                    selected = state.oneEuroBeta,
+                    label = { responsivenessLabel(it) },
+                    onSelect = viewModel::setOneEuroBeta,
+                )
+                // Still legacy-path-only: the fused sensor never sees raw magnetometer data.
+                // Note the gate isn't `disableGyro` — a device with no rotation-vector sensor
+                // runs the legacy path with `disableGyro` false.
                 if (legacyPathActive) {
-                    ChoiceRow(
-                        title = stringResource(R.string.settings_sensor_damping),
-                        summary = stringResource(R.string.settings_classic_sensors_only),
-                        options = SensorDamping.entries,
-                        selected = state.sensorDamping,
-                        label = { sensorDampingLabel(it) },
-                        onSelect = viewModel::setSensorDamping,
-                    )
                     SwitchRow(
                         title = stringResource(R.string.settings_reverse_magnetic_z),
                         summary = stringResource(R.string.settings_classic_sensors_only),
                         checked = state.reverseMagneticZ,
                         onCheckedChange = viewModel::setReverseMagneticZ,
-                    )
-                } else {
-                    // The inverse of the block above: these only act on the fused path, so
-                    // they only show while that path is selected (issues #963 / #1001). Kept
-                    // as two independent controls rather than one combined level so their
-                    // effects can be evaluated separately in the field.
-                    ChoiceRow(
-                        title = stringResource(R.string.settings_rotation_low_pass),
-                        summary = stringResource(R.string.settings_rotation_low_pass_summary),
-                        options = RotationSmoothingLevel.entries,
-                        selected = state.rotationLowPass,
-                        label = { rotationSmoothingLevelLabel(it) },
-                        onSelect = viewModel::setRotationLowPass,
-                    )
-                    ChoiceRow(
-                        title = stringResource(R.string.settings_rotation_deadband),
-                        summary = stringResource(R.string.settings_rotation_deadband_summary),
-                        options = RotationSmoothingLevel.entries,
-                        selected = state.rotationDeadband,
-                        label = { rotationSmoothingLevelLabel(it) },
-                        onSelect = viewModel::setRotationDeadband,
                     )
                 }
                 SwitchRow(
@@ -506,26 +496,24 @@ private fun autoDimnessLabel(dimness: AutoDimness): String =
     )
 
 @Composable
-private fun sensorDampingLabel(damping: SensorDamping): String =
+private fun steadinessLabel(level: OneEuroMinCutoff): String =
     stringResource(
-        when (damping) {
-            SensorDamping.STANDARD -> R.string.settings_sensor_damping_standard
-            SensorDamping.HIGH -> R.string.settings_sensor_damping_high
-            SensorDamping.EXTRA_HIGH -> R.string.settings_sensor_damping_extra_high
-            SensorDamping.REALLY_HIGH -> R.string.settings_sensor_damping_really_high
+        when (level) {
+            OneEuroMinCutoff.VERY_LOW -> R.string.settings_steadiness_very_high
+            OneEuroMinCutoff.LOW -> R.string.settings_steadiness_high
+            OneEuroMinCutoff.MEDIUM -> R.string.settings_steadiness_medium
+            OneEuroMinCutoff.HIGH -> R.string.settings_steadiness_low
         },
     )
 
-// Shared by both the low-pass and deadband ChoiceRows — same four generic strength labels
-// regardless of which knob is being set.
 @Composable
-private fun rotationSmoothingLevelLabel(level: RotationSmoothingLevel): String =
+private fun responsivenessLabel(level: OneEuroBeta): String =
     stringResource(
         when (level) {
-            RotationSmoothingLevel.OFF -> R.string.settings_rotation_smoothing_off
-            RotationSmoothingLevel.LOW -> R.string.settings_rotation_smoothing_low
-            RotationSmoothingLevel.MEDIUM -> R.string.settings_rotation_smoothing_medium
-            RotationSmoothingLevel.HIGH -> R.string.settings_rotation_smoothing_high
+            OneEuroBeta.NONE -> R.string.settings_responsiveness_none
+            OneEuroBeta.LOW -> R.string.settings_responsiveness_low
+            OneEuroBeta.MEDIUM -> R.string.settings_responsiveness_medium
+            OneEuroBeta.HIGH -> R.string.settings_responsiveness_high
         },
     )
 

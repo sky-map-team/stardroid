@@ -191,16 +191,12 @@ object AppModule {
         settings: Settings,
         displayRotation: DisplayRotationBus,
     ): OrientationSource {
-        // Exactly 5 flows, so combine's typed overload applies and SensorConfig can be built
-        // directly. Dropping the sensor-speed setting (issue #1007) is what got it back under
-        // the limit; it used to need a nested grouping to stay typed.
         val sensorConfigs =
             combine(
                 settings.disableGyro,
-                settings.sensorDamping,
                 settings.reverseMagneticZ,
-                settings.rotationLowPass,
-                settings.rotationDeadband,
+                settings.oneEuroMinCutoff,
+                settings.oneEuroBeta,
                 ::SensorConfig,
             )
         val delegate =

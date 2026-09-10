@@ -332,24 +332,7 @@
     <string name="settings_disable_gyro_summary" translation_description="Explanation of the legacy sensors preference and when to use it">
     Apunte el mapa usando la brújula y el acelerómetro en lugar del giroscopio. Pruebe esto si el mapa se desvía o el giroscopio de su dispositivo funciona mal; los dispositivos sin giroscopio usan estos sensores automáticamente.
     </string>
-    <string name="settings_sensor_damping">Amortiguación</string>
-    <string name="settings_sensor_damping_standard" translation_description="Low sensor damping factor - this will make the app jittery">Saltarín</string>
-    <string name="settings_sensor_damping_high" translation_description="Medium sensor damping factor - this will make the app slightly jittery">Medio</string>
-    <string name="settings_sensor_damping_extra_high" translation_description="Extra high sensor damping factor">Justo</string>
-    <string name="settings_sensor_damping_really_high" translation_description="Really high sensor damping factor - this will make the app sluggish">Lento</string>
     <string name="settings_classic_sensors_only" translation_description="Summary noting a sensor preference only applies to the legacy non-gyroscope sensor path">Solo se aplica cuando se usan sensores heredados</string>
-    <string name="settings_rotation_low_pass" translation_description="Preference title for low-pass filtering the gyroscope-based sensor path, to reduce jitter on some devices">Filtro de paso bajo para sensores</string>
-    <string name="settings_rotation_low_pass_summary" translation_description="Explanation of the sensor low-pass preference and its trade-off">
-    Reduce las sacudidas en dispositivos con un sensor ruidoso combinando gradualmente las nuevas lecturas. Los ajustes más altos son más estables pero tardan más en responder al movimiento real.
-    </string>
-    <string name="settings_rotation_deadband" translation_description="Preference title for ignoring tiny gyroscope-based sensor movements, to reduce jitter on some devices">Zona muerta del sensor</string>
-    <string name="settings_rotation_deadband_summary" translation_description="Explanation of the sensor deadband preference and its trade-off">
-    Ignora los movimientos menores que un umbral. Los ajustes más altos ignoran movimientos más grandes, lo que puede hacer que los pequeños ajustes deliberados respondan menos.
-    </string>
-    <string name="settings_rotation_smoothing_off" translation_description="Sensor smoothing disabled">Desactivado</string>
-    <string name="settings_rotation_smoothing_low" translation_description="Low sensor smoothing strength">Bajo</string>
-    <string name="settings_rotation_smoothing_medium" translation_description="Medium sensor smoothing strength">Medio</string>
-    <string name="settings_rotation_smoothing_high" translation_description="High sensor smoothing strength">Alto</string>
     <string name="settings_reverse_magnetic_z">Z magnética inversa</string>
     <string name="settings_magnetic_correction">Usar corrección magnética</string>
     <string name="settings_magnetic_correction_summary" translation_description="Summary for the magnetic correction preference">

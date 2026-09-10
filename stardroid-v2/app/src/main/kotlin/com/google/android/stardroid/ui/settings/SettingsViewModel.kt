@@ -17,8 +17,8 @@ import com.google.android.stardroid.analytics.NoOpAnalytics
 import com.google.android.stardroid.astronomy.ViewDirectionMode
 import com.google.android.stardroid.settings.AutoDimness
 import com.google.android.stardroid.settings.FontSize
-import com.google.android.stardroid.settings.RotationSmoothingLevel
-import com.google.android.stardroid.settings.SensorDamping
+import com.google.android.stardroid.settings.OneEuroBeta
+import com.google.android.stardroid.settings.OneEuroMinCutoff
 import com.google.android.stardroid.settings.Settings
 import com.google.android.stardroid.startup.Experiment
 import com.google.android.stardroid.startup.ExperimentConfig
@@ -38,9 +38,8 @@ data class SettingsUiState(
     val autoDimness: AutoDimness = AutoDimness.SYSTEM,
     val showSkyGradient: Boolean = true,
     val disableGyro: Boolean = false,
-    val sensorDamping: SensorDamping = SensorDamping.EXTRA_HIGH,
-    val rotationLowPass: RotationSmoothingLevel = RotationSmoothingLevel.OFF,
-    val rotationDeadband: RotationSmoothingLevel = RotationSmoothingLevel.OFF,
+    val oneEuroMinCutoff: OneEuroMinCutoff = OneEuroMinCutoff.MEDIUM,
+    val oneEuroBeta: OneEuroBeta = OneEuroBeta.MEDIUM,
     val reverseMagneticZ: Boolean = false,
     val useMagneticCorrection: Boolean = true,
     val viewDirectionMode: ViewDirectionMode = ViewDirectionMode.STANDARD,
@@ -68,10 +67,9 @@ private data class AppearancePrefs(
 
 private data class SensorPrefs(
     val disableGyro: Boolean,
-    val sensorDamping: SensorDamping,
     val reverseMagneticZ: Boolean,
-    val rotationLowPass: RotationSmoothingLevel,
-    val rotationDeadband: RotationSmoothingLevel,
+    val oneEuroMinCutoff: OneEuroMinCutoff,
+    val oneEuroBeta: OneEuroBeta,
 )
 
 private data class MagneticPrefs(
@@ -133,10 +131,9 @@ class SettingsViewModel(
             ),
             combine(
                 settings.disableGyro,
-                settings.sensorDamping,
                 settings.reverseMagneticZ,
-                settings.rotationLowPass,
-                settings.rotationDeadband,
+                settings.oneEuroMinCutoff,
+                settings.oneEuroBeta,
                 ::SensorPrefs,
             ),
             combine(settings.useMagneticCorrection, settings.viewDirectionMode, ::MagneticPrefs),
@@ -156,10 +153,10 @@ class SettingsViewModel(
                 autoDimness = appearance.autoDimness,
                 showSkyGradient = appearance.showSkyGradient,
                 disableGyro = sensors.disableGyro,
-                sensorDamping = sensors.sensorDamping,
+
                 reverseMagneticZ = sensors.reverseMagneticZ,
-                rotationLowPass = sensors.rotationLowPass,
-                rotationDeadband = sensors.rotationDeadband,
+                oneEuroMinCutoff = sensors.oneEuroMinCutoff,
+                oneEuroBeta = sensors.oneEuroBeta,
                 useMagneticCorrection = magnetic.useMagneticCorrection,
                 viewDirectionMode = magnetic.viewDirectionMode,
                 enableAnalytics = other.enableAnalytics,
@@ -204,19 +201,14 @@ class SettingsViewModel(
         viewModelScope.launch { settings.setDisableGyro(enabled) }
     }
 
-    fun setSensorDamping(damping: SensorDamping) {
-        trackChange("sensor_damping", damping)
-        viewModelScope.launch { settings.setSensorDamping(damping) }
+    fun setOneEuroMinCutoff(level: OneEuroMinCutoff) {
+        trackChange("one_euro_min_cutoff", level)
+        viewModelScope.launch { settings.setOneEuroMinCutoff(level) }
     }
 
-    fun setRotationLowPass(level: RotationSmoothingLevel) {
-        trackChange("rotation_low_pass", level)
-        viewModelScope.launch { settings.setRotationLowPass(level) }
-    }
-
-    fun setRotationDeadband(level: RotationSmoothingLevel) {
-        trackChange("rotation_deadband", level)
-        viewModelScope.launch { settings.setRotationDeadband(level) }
+    fun setOneEuroBeta(level: OneEuroBeta) {
+        trackChange("one_euro_beta", level)
+        viewModelScope.launch { settings.setOneEuroBeta(level) }
     }
 
     fun setReverseMagneticZ(enabled: Boolean) {

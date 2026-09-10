@@ -329,24 +329,7 @@
     <string name="settings_disable_gyro_summary" translation_description="Explanation of the legacy sensors preference and when to use it">
     मानचित्र को जाइरोस्कोप के बजाय कंपास और एक्सेलेरोमीटर का उपयोग करके इंगित करें। यदि मानचित्र भटकता है या आपके डिवाइस का जाइरो ठीक से काम नहीं करता है, तो इसे आज़माएँ; जाइरो के बिना वाले डिवाइस इन सेंसरों का स्वचालित रूप से उपयोग करते हैं।
     </string>
-    <string name="settings_sensor_damping">डैम्पिंग</string>
-    <string name="settings_sensor_damping_standard" translation_description="Low sensor damping factor - this will make the app jittery">अस्थिर</string>
-    <string name="settings_sensor_damping_high" translation_description="Medium sensor damping factor - this will make the app slightly jittery">मध्यम</string>
-    <string name="settings_sensor_damping_extra_high" translation_description="Extra high sensor damping factor">लगभग सही</string>
-    <string name="settings_sensor_damping_really_high" translation_description="Really high sensor damping factor - this will make the app sluggish">धीमा</string>
     <string name="settings_classic_sensors_only" translation_description="Summary noting a sensor preference only applies to the legacy non-gyroscope sensor path">केवल तभी लागू होता है जब पुराने सेंसर उपयोग में हों</string>
-    <string name="settings_rotation_low_pass" translation_description="Preference title for low-pass filtering the gyroscope-based sensor path, to reduce jitter on some devices">सेंसर लो-पास</string>
-    <string name="settings_rotation_low_pass_summary" translation_description="Explanation of the sensor low-pass preference and its trade-off">
-    नए रीडिंग को धीरे-धीरे मिलाकर शोरगुल वाले सेंसर वाले उपकरणों पर कंपन को कम करता है। उच्च सेटिंग अधिक स्थिर होती हैं लेकिन वास्तविक गति पर प्रतिक्रिया करने में धीमी होती हैं।
-    </string>
-    <string name="settings_rotation_deadband" translation_description="Preference title for ignoring tiny gyroscope-based sensor movements, to reduce jitter on some devices">सेंसर डेडबैंड</string>
-    <string name="settings_rotation_deadband_summary" translation_description="Explanation of the sensor deadband preference and its trade-off">
-    एक निश्चित सीमा से कम की गतिविधियों को छोड़ देता है। उच्च सेटिंग बड़ी गतिविधियों को छोड़ती है, जिससे छोटे जानबूझकर किए गए बदलाव कम प्रतिक्रियाशील हो सकते हैं।
-    </string>
-    <string name="settings_rotation_smoothing_off" translation_description="Sensor smoothing disabled">बंद</string>
-    <string name="settings_rotation_smoothing_low" translation_description="Low sensor smoothing strength">कम</string>
-    <string name="settings_rotation_smoothing_medium" translation_description="Medium sensor smoothing strength">मध्यम</string>
-    <string name="settings_rotation_smoothing_high" translation_description="High sensor smoothing strength">अधिक</string>
     <string name="settings_reverse_magnetic_z">चुंबकीय Z को उलटें</string>
     <string name="settings_magnetic_correction">चुंबकीय सुधार का उपयोग करें</string>
     <string name="settings_magnetic_correction_summary" translation_description="Summary for the magnetic correction preference">चुंबकीय और वास्तविक उत्तर के बीच के अंतर के लिए कंपास को ठीक करता है</string>

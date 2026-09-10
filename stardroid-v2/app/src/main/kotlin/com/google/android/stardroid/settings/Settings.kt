@@ -38,26 +38,28 @@ enum class AutoDimness {
     CLASSIC,
 }
 
-/** Smoothing strength for the classic sensor path (v1 `sensor_damping`). */
-enum class SensorDamping {
-    STANDARD,
+/**
+ * The 1€ filter's cutoff frequency at rest, for both sensor paths — how hard the view is
+ * filtered while the phone is held still. Lower is stiller but slower to settle.
+ *
+ * Exposed alongside [OneEuroBeta] rather than as one combined "smoothing" level because the
+ * two are meant to be tuned one at a time, in that order (issue #1007). Expect to collapse
+ * them into a single ladder once field data says where the useful range is.
+ */
+enum class OneEuroMinCutoff {
+    VERY_LOW,
+    LOW,
+    MEDIUM,
     HIGH,
-    EXTRA_HIGH,
-    REALLY_HIGH,
 }
 
 /**
- * A strength level shared by the two fused-rotation-vector smoothing knobs below (issues #963 /
- * #1001) — unlike [SensorDamping], these act on the gyro path itself, since some
- * phones' fusion is noisy enough to jitter the view even held still. Both default to OFF: most
- * devices fuse cleanly already, and this must not regress them.
- *
- * Kept as two independent settings (low-pass and deadband) rather than one combined "smoothing"
- * level so their effects can be evaluated separately in the field — it's not yet known whether
- * jitter on a given device needs one, the other, or both.
+ * How fast the 1€ filter's cutoff climbs with angular speed — the knob that trades stillness
+ * for responsiveness once you start moving. `NONE` reduces the filter to a flat low-pass,
+ * which is where the paper's tuning procedure starts. See [OneEuroMinCutoff].
  */
-enum class RotationSmoothingLevel {
-    OFF,
+enum class OneEuroBeta {
+    NONE,
     LOW,
     MEDIUM,
     HIGH,
@@ -179,27 +181,20 @@ interface Settings {
 
     suspend fun setDisableGyro(enabled: Boolean)
 
-    /** Classic-path smoothing strength (v1's `sensor_damping`, `EXTRA HIGH` by default). */
-    val sensorDamping: Flow<SensorDamping>
+    /**
+     * The 1€ filter's cutoff at rest, for both sensor paths (issues #963 / #1001 / #1007).
+     * See [OneEuroMinCutoff].
+     */
+    val oneEuroMinCutoff: Flow<OneEuroMinCutoff>
 
-    suspend fun setSensorDamping(damping: SensorDamping)
+    suspend fun setOneEuroMinCutoff(level: OneEuroMinCutoff)
 
     /**
-     * Low-pass (SLERP) strength on the fused rotation-vector quaternion (issues #963 / #1001).
-     * Off by default. See [RotationSmoothingLevel].
+     * How fast that cutoff climbs with angular speed, for both sensor paths. See [OneEuroBeta].
      */
-    val rotationLowPass: Flow<RotationSmoothingLevel>
+    val oneEuroBeta: Flow<OneEuroBeta>
 
-    suspend fun setRotationLowPass(level: RotationSmoothingLevel)
-
-    /**
-     * Deadband strength on the fused rotation-vector quaternion: samples within the angular
-     * threshold of the current value are ignored outright (issues #963 / #1001). Off by
-     * default. See [RotationSmoothingLevel].
-     */
-    val rotationDeadband: Flow<RotationSmoothingLevel>
-
-    suspend fun setRotationDeadband(level: RotationSmoothingLevel)
+    suspend fun setOneEuroBeta(level: OneEuroBeta)
 
     /**
      * Negate the magnetometer's Z axis before fusion (v1's `reverse_magnetic_z`) — a

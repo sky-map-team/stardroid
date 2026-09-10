@@ -331,20 +331,19 @@
     <string name="settings_sky_gradient_summary" translation_description="Setting toggle summary for sky gradient: explains what the feature does">Shades the sky blue near the Sun and dark on the opposite side</string>
     <string name="settings_disable_gyro" translation_description="Preference title for switching from the gyroscope to the legacy compass + accelerometer sensor pipeline">Use legacy sensors</string>
     <string name="settings_disable_gyro_summary" translation_description="Explanation of the legacy sensors preference and when to use it">Point the map using the compass and accelerometer instead of the gyroscope. Try this if the map drifts or your device\'s gyro misbehaves; devices without a gyro use these sensors automatically.</string>
-    <string name="settings_sensor_damping" translation_description="Old, non gyro sensors only: the amount of smoothing applied to the sensor outputs">Damping</string>
-    <string name="settings_sensor_damping_standard" translation_description="Low sensor damping factor - this will make the app jittery">Jumpy</string>
-    <string name="settings_sensor_damping_high" translation_description="Medium sensor damping factor - this will make the app slightly jittery">Medium</string>
-    <string name="settings_sensor_damping_extra_high" translation_description="Extra high sensor damping factor">About right</string>
-    <string name="settings_sensor_damping_really_high" translation_description="Really high sensor damping factor - this will make the app sluggish">Laggy</string>
     <string name="settings_classic_sensors_only" translation_description="Summary noting a sensor preference only applies to the legacy non-gyroscope sensor path">Only applies when legacy sensors are in use</string>
-    <string name="settings_rotation_low_pass" translation_description="Preference title for low-pass filtering the gyroscope-based sensor path, to reduce jitter on some devices">Sensor Low-Pass</string>
-    <string name="settings_rotation_low_pass_summary" translation_description="Explanation of the sensor low-pass preference and its trade-off">Reduces jitter on devices with a noisy sensor by blending in new readings gradually. Higher settings are steadier but slower to respond to real movement.</string>
-    <string name="settings_rotation_deadband" translation_description="Preference title for ignoring tiny gyroscope-based sensor movements, to reduce jitter on some devices">Sensor Deadband</string>
-    <string name="settings_rotation_deadband_summary" translation_description="Explanation of the sensor deadband preference and its trade-off">Ignores movements smaller than a threshold. Higher settings ignore bigger movements, which can make small deliberate adjustments less responsive.</string>
-    <string name="settings_rotation_smoothing_off" translation_description="Sensor smoothing disabled">Off</string>
-    <string name="settings_rotation_smoothing_low" translation_description="Low sensor smoothing strength">Low</string>
-    <string name="settings_rotation_smoothing_medium" translation_description="Medium sensor smoothing strength">Medium</string>
-    <string name="settings_rotation_smoothing_high" translation_description="High sensor smoothing strength">High</string>
+    <string name="settings_steadiness" translation_description="Preference title for how much the sky view is steadied while the phone is held still">Steadiness</string>
+    <string name="settings_steadiness_summary" translation_description="Explanation of the steadiness preference and its trade-off">How much the view is steadied while you hold the phone still. Steadier settings shake less but take a moment longer to settle.</string>
+    <string name="settings_steadiness_very_high" translation_description="Strongest steadying of the view when the phone is held still">Steadiest</string>
+    <string name="settings_steadiness_high" translation_description="Strong steadying of the view when the phone is held still">Steadier</string>
+    <string name="settings_steadiness_medium" translation_description="Moderate steadying of the view when the phone is held still">Balanced</string>
+    <string name="settings_steadiness_low" translation_description="Least steadying of the view when the phone is held still, settles fastest">Quickest to settle</string>
+    <string name="settings_responsiveness" translation_description="Preference title for how quickly the sky view keeps up when the phone is moved">Responsiveness</string>
+    <string name="settings_responsiveness_summary" translation_description="Explanation of the responsiveness preference and its trade-off">How quickly the view keeps up once you start moving the phone. Higher settings follow your movement more closely.</string>
+    <string name="settings_responsiveness_none" translation_description="View is steadied by the same amount whether the phone is still or moving">Always steady</string>
+    <string name="settings_responsiveness_low" translation_description="View keeps up a little when the phone moves">Relaxed</string>
+    <string name="settings_responsiveness_medium" translation_description="View keeps up moderately when the phone moves">Balanced</string>
+    <string name="settings_responsiveness_high" translation_description="View keeps up closely when the phone moves">Snappy</string>
     <string name="settings_reverse_magnetic_z" translation_description="Preference title for reversing the magnetometer Z axis, a workaround for devices with a mis-mounted compass sensor">Reverse magnetic Z</string>
     <string name="settings_magnetic_correction" translation_description="Preference label: apply magnetic declination correction so the compass points to true north instead of magnetic north">Use magnetic correction</string>
     <string name="settings_magnetic_correction_summary" translation_description="Summary for the magnetic correction preference">Corrects the compass for the difference between magnetic and true north</string>

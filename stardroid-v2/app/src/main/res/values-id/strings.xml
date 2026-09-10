@@ -329,24 +329,7 @@
     <string name="settings_disable_gyro_summary" translation_description="Explanation of the legacy sensors preference and when to use it">
     Arahkan peta menggunakan kompas dan akselerometer, bukan giroskop. Coba ini jika peta melayang atau giroskop perangkat Anda bermasalah; perangkat tanpa giroskop menggunakan sensor ini secara otomatis.
     </string>
-    <string name="settings_sensor_damping">Peredam</string>
-    <string name="settings_sensor_damping_standard" translation_description="Low sensor damping factor - this will make the app jittery">Gemetar</string>
-    <string name="settings_sensor_damping_high" translation_description="Medium sensor damping factor - this will make the app slightly jittery">Sedang</string>
-    <string name="settings_sensor_damping_extra_high" translation_description="Extra high sensor damping factor">Cukup tepat</string>
-    <string name="settings_sensor_damping_really_high" translation_description="Really high sensor damping factor - this will make the app sluggish">Lamban</string>
     <string name="settings_classic_sensors_only" translation_description="Summary noting a sensor preference only applies to the legacy non-gyroscope sensor path">Hanya berlaku saat sensor lama digunakan</string>
-    <!-- tm:omitted name="settings_rotation_low_pass" reason="identical_to_source" -->
-    <string name="settings_rotation_low_pass_summary" translation_description="Explanation of the sensor low-pass preference and its trade-off">
-    Mengurangi getaran pada perangkat dengan sensor yang bising dengan mencampur pembacaan baru secara bertahap. Pengaturan yang lebih tinggi lebih stabil tetapi lebih lambat merespons gerakan nyata.
-    </string>
-    <string name="settings_rotation_deadband" translation_description="Preference title for ignoring tiny gyroscope-based sensor movements, to reduce jitter on some devices">Deadband Sensor</string>
-    <string name="settings_rotation_deadband_summary" translation_description="Explanation of the sensor deadband preference and its trade-off">
-    Mengabaikan gerakan yang lebih kecil dari ambang batas. Pengaturan yang lebih tinggi akan mengabaikan gerakan yang lebih besar, yang dapat membuat penyesuaian kecil yang disengaja menjadi kurang responsif.
-    </string>
-    <string name="settings_rotation_smoothing_off" translation_description="Sensor smoothing disabled">Mati</string>
-    <string name="settings_rotation_smoothing_low" translation_description="Low sensor smoothing strength">Rendah</string>
-    <string name="settings_rotation_smoothing_medium" translation_description="Medium sensor smoothing strength">Sedang</string>
-    <string name="settings_rotation_smoothing_high" translation_description="High sensor smoothing strength">Tinggi</string>
     <string name="settings_reverse_magnetic_z">Balikkan Magnetik Z</string>
     <string name="settings_magnetic_correction">Gunakan koreksi magnetik</string>
     <string name="settings_magnetic_correction_summary" translation_description="Summary for the magnetic correction preference">Mengoreksi kompas untuk perbedaan antara utara magnetis dan utara sejati</string>

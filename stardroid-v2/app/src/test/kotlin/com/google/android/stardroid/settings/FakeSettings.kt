@@ -12,6 +12,8 @@ package com.google.android.stardroid.settings
 import com.google.android.stardroid.astronomy.ViewDirectionMode
 import com.google.android.stardroid.math.LatLong
 import com.google.android.stardroid.render.api.LayerId
+import com.google.android.stardroid.settings.OneEuroBeta
+import com.google.android.stardroid.settings.OneEuroMinCutoff
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 
@@ -150,28 +152,20 @@ class FakeSettings : Settings {
         disableGyroState.value = enabled
     }
 
-    val sensorDampingState = MutableStateFlow(SensorDamping.EXTRA_HIGH)
+    val oneEuroMinCutoffState = MutableStateFlow(OneEuroMinCutoff.MEDIUM)
 
-    override val sensorDamping: Flow<SensorDamping> = sensorDampingState
+    override val oneEuroMinCutoff: Flow<OneEuroMinCutoff> = oneEuroMinCutoffState
 
-    override suspend fun setSensorDamping(damping: SensorDamping) {
-        sensorDampingState.value = damping
+    override suspend fun setOneEuroMinCutoff(level: OneEuroMinCutoff) {
+        oneEuroMinCutoffState.value = level
     }
 
-    val rotationLowPassState = MutableStateFlow(RotationSmoothingLevel.OFF)
+    val oneEuroBetaState = MutableStateFlow(OneEuroBeta.MEDIUM)
 
-    override val rotationLowPass: Flow<RotationSmoothingLevel> = rotationLowPassState
+    override val oneEuroBeta: Flow<OneEuroBeta> = oneEuroBetaState
 
-    override suspend fun setRotationLowPass(level: RotationSmoothingLevel) {
-        rotationLowPassState.value = level
-    }
-
-    val rotationDeadbandState = MutableStateFlow(RotationSmoothingLevel.OFF)
-
-    override val rotationDeadband: Flow<RotationSmoothingLevel> = rotationDeadbandState
-
-    override suspend fun setRotationDeadband(level: RotationSmoothingLevel) {
-        rotationDeadbandState.value = level
+    override suspend fun setOneEuroBeta(level: OneEuroBeta) {
+        oneEuroBetaState.value = level
     }
 
     val reverseMagneticZState = MutableStateFlow(false)
