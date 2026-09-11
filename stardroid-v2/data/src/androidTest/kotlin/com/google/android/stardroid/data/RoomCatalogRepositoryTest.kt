@@ -9,7 +9,6 @@
 
 package com.google.android.stardroid.data
 
-import android.content.Context
 import androidx.room.Room
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -19,8 +18,6 @@ import com.google.android.stardroid.catalog.LocaleSpec
 import com.google.android.stardroid.catalog.MonthDay
 import com.google.android.stardroid.math.RaDec
 import com.google.common.truth.Truth.assertThat
-import kotlinx.coroutines.async
-import kotlinx.coroutines.awaitAll
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.test.runTest
 import org.junit.After
@@ -315,97 +312,6 @@ class RoomCatalogRepositoryTest {
     fun search_blankQueryReturnsNothing() =
         runTest {
             assertThat(repository.searchByPrefix("   ", english, limit = 10)).isEmpty()
-        }
-
-    // --- FTS tokenizer self-heal (#1003) ---
-
-    /**
-     * Simulates the "unknown tokenizer" bug some OEM system-SQLite builds hit: a real device
-     * throws because its FTS4 build never registered `unicode61`, which cannot be reproduced
-     * against the test device's own SQLite — so instead the table's `sqlite_master` row is
-     * pointed at a tokenizer name that genuinely does not exist, via the same
-     * `PRAGMA writable_schema` surgery the production repair itself performs.
-     */
-    private fun breakFtsTokenizer(target: SkyMapDatabase = database) {
-        val db = target.openHelper.writableDatabase
-        db.execSQL("PRAGMA writable_schema = ON")
-        db.execSQL(
-            "UPDATE sqlite_master SET sql = " +
-                "'CREATE VIRTUAL TABLE IF NOT EXISTS `object_name_fts` USING FTS4(" +
-                "`name` TEXT NOT NULL, tokenize=nonexistent_1003_tokenizer, " +
-                "content=`object_name`)' " +
-                "WHERE type = 'table' AND name = 'object_name_fts'",
-        )
-        val version =
-            db.query("PRAGMA schema_version").use {
-                it.moveToFirst()
-                it.getInt(0)
-            }
-        db.execSQL("PRAGMA schema_version = ${version + 1}")
-        db.execSQL("PRAGMA writable_schema = RESET")
-    }
-
-    @Test
-    fun search_selfHealsAndReportsSuccessWhenFtsTokenizerIsUnknown() =
-        runTest {
-            breakFtsTokenizer()
-            val repairEvents = mutableListOf<CatalogRepairEvent>()
-            val healingRepository =
-                RoomCatalogRepository(database, onRepairEvent = repairEvents::add)
-
-            val hits = healingRepository.searchByPrefix("sir", english, limit = 10)
-
-            assertThat(hits.map { it.name })
-                .containsExactly("Sirius", "Little Sirius")
-                .inOrder()
-            assertThat(repairEvents)
-                .containsExactly(CatalogRepairEvent.FtsTokenizerRepairAttempted(success = true))
-        }
-
-    @Test
-    fun search_repairsOnlyOnceAcrossConcurrentAndSubsequentQueries() =
-        runTest {
-            breakFtsTokenizer()
-            val repairEvents = mutableListOf<CatalogRepairEvent>()
-            val healingRepository =
-                RoomCatalogRepository(database, onRepairEvent = repairEvents::add)
-
-            listOf("sir", "al")
-                .map { async { healingRepository.searchByPrefix(it, english, limit = 10) } }
-                .awaitAll()
-            healingRepository.searchByPrefix("sir", english, limit = 10)
-
-            assertThat(repairEvents)
-                .containsExactly(CatalogRepairEvent.FtsTokenizerRepairAttempted(success = true))
-        }
-
-    /** The shipped DB is file-backed and WAL, unlike the in-memory one the other tests use. */
-    @Test
-    fun search_selfHealsFileBackedWalDbAcrossRepeatedQueries() =
-        runTest {
-            val context = ApplicationProvider.getApplicationContext<Context>()
-            val name = "fts-tokenizer-repair-test.db"
-            context.deleteDatabase(name)
-            val fileDb = Room.databaseBuilder(context, SkyMapDatabase::class.java, name).build()
-            try {
-                fileDb.packDao().applyPack(FixtureCatalog.corePack(), FixtureCatalog.coreContents())
-                fileDb.packDao().applyPack(
-                    FixtureCatalog.extraPack(),
-                    FixtureCatalog.extraContents(),
-                )
-                breakFtsTokenizer(fileDb)
-                val healingRepository = RoomCatalogRepository(fileDb)
-
-                repeat(3) {
-                    val hits = healingRepository.searchByPrefix("sir", english, limit = 10)
-                    assertThat(hits.map { it.name })
-                        .containsExactly("Sirius", "Little Sirius")
-                        .inOrder()
-                }
-            } finally {
-                fileDb.close()
-                context.deleteDatabase(name)
-            }
         }
 
     // --- objectInfo ---

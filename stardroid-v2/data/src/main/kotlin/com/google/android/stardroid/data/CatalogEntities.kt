@@ -101,9 +101,9 @@ data class ObjectLinkEntity(
 
 /**
  * One localized name row. Locale `""` is the universal locale for designations ("M31",
- * "NGC 224") that match in every request locale. [nameNormalized] (lowercased,
- * diacritic-stripped via [com.google.android.stardroid.catalog.NameNormalizer]) exists for whole-name-prefix ranking; word-prefix
- * *matching* goes through [ObjectNameFtsEntity].
+ * "NGC 224") that match in every request locale. [nameNormalized]
+ * ([com.google.android.stardroid.catalog.NameNormalizer] output) drives whole-name-prefix
+ * ranking and is the text [ObjectNameFtsEntity] indexes for word-prefix *matching*.
  */
 @Entity(
     tableName = "object_name",
@@ -123,21 +123,20 @@ data class ObjectNameEntity(
 )
 
 /**
- * External-content FTS4 index over [ObjectNameEntity.name]: word-prefix matching ("gal" →
- * "Andromeda **Gal**axy") with unicode61 folding case and diacritics on both document and
- * query terms. Room keeps it in sync with `object_name` via generated triggers, so downloaded
- * packs are searchable the moment their rows land — no startup index build.
+ * External-content FTS4 index over [ObjectNameEntity.nameNormalized]: word-prefix matching
+ * ("gal" → "Andromeda **Gal**axy"). Room keeps it in sync with `object_name` via generated
+ * triggers, so downloaded packs are searchable the moment their rows land — no startup index
+ * build.
+ *
+ * `simple` rather than `unicode61`: Android 10's system SQLite ships FTS4 without `unicode61`,
+ * so any statement touching the table throws "unknown tokenizer" there. Matching stays case-
+ * and accent-insensitive because the indexed text is already
+ * [com.google.android.stardroid.catalog.NameNormalizer] output, and queries go through it too.
  */
-@Fts4(
-    contentEntity = ObjectNameEntity::class,
-    tokenizer = FtsOptions.TOKENIZER_UNICODE61,
-    // 2 = strip diacritics even from characters whose base form is multi-byte; needs
-    // SQLite >= 3.27, satisfied by minSdk 29 (SQLite 3.28 — D9).
-    tokenizerArgs = ["remove_diacritics=2"],
-)
+@Fts4(contentEntity = ObjectNameEntity::class, tokenizer = FtsOptions.TOKENIZER_SIMPLE)
 @Entity(tableName = "object_name_fts")
 data class ObjectNameFtsEntity(
-    val name: String,
+    @ColumnInfo(name = "name_normalized") val nameNormalized: String,
 )
 
 /**

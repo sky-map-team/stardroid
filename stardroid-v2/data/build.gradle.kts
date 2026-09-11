@@ -51,7 +51,7 @@ val generateCatalogDb =
         mainClass.set("com.google.android.stardroid.data.generator.MainKt")
         schemaFile.set(
             layout.projectDirectory
-                .file("schemas/com.google.android.stardroid.data.SkyMapDatabase/1.json"),
+                .file("schemas/com.google.android.stardroid.data.SkyMapDatabase/2.json"),
         )
         sourceData.set(rootProject.layout.projectDirectory.dir("source-data"))
     }
