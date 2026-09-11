@@ -379,12 +379,9 @@ class RoomCatalogRepositoryTest {
                 .containsExactly(CatalogRepairEvent.FtsTokenizerRepairAttempted(success = true))
         }
 
-    /**
-     * The in-memory DB has one connection; the real file-backed DB runs WAL, whose reader
-     * connections each cache the broken schema and aren't healed by a repair on the writer.
-     */
+    /** The shipped DB is file-backed and WAL, unlike the in-memory one the other tests use. */
     @Test
-    fun search_selfHealsAcrossWalReaderConnectionsOfFileBackedDb() =
+    fun search_selfHealsFileBackedWalDbAcrossRepeatedQueries() =
         runTest {
             val context = ApplicationProvider.getApplicationContext<Context>()
             val name = "fts-tokenizer-repair-test.db"
