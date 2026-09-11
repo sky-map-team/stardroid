@@ -497,6 +497,14 @@ commitment.
 14. **Night mode as a post-process** — noted in §3 as a parity simplification, but worth calling
     out as a *quality* win too: it finally reddens photographs and DSO imagery correctly, which
     the current per-primitive colour bake handles only by shipping a second copy of every texture.
+15. **Label halos/outlines.** Motivated by issue #1014 (`horizon_label` green rendering
+    illegible against `HORIZON_LINE`'s own green glow). Under GLES1's fixed-function pipeline a
+    halo means rasterizing and drawing a second, wider glyph per label (a stroked outline quad
+    behind the fill quad) — real cost against the `LabelDrawer` TODO on batching for catalog-scale
+    label counts. In a fragment shader it is nearly free: sample the `R8` coverage mask twice at a
+    fixed pixel offset (or once against a signed-distance-field atlas) and composite outline colour
+    under fill colour in one draw call, no extra geometry. Worth revisiting once `sprite.vert/frag`
+    exists (§3, shader inventory) rather than building the GLES1 two-glyph version now.
 
 ---
 

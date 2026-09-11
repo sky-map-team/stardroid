@@ -34,10 +34,13 @@ object SkyColors {
     val HORIZON_LINE = Rgba(0x59 / 255f, 0x7c / 255f, 0x4a / 255f, 0x78 / 255f)
 
     /**
-     * Cardinal/zenith/nadir labels share the horizon line's green so the horizon reads as one
-     * element (upstream `horizon_label`).
+     * Cardinal/zenith/nadir labels: a lighter, higher-luminance tint of the horizon line's green
+     * (issue #1014 — the original opaque `#597C4A`, identical to [HORIZON_LINE], read as green
+     * text on the green glow band and was reported illegible). Keeping the same hue keeps the
+     * horizon reading as one element while the higher luminance gives real contrast against the
+     * darker glow.
      */
-    val HORIZON_LABEL = Rgba(0x59 / 255f, 0x7c / 255f, 0x4a / 255f, 1f)
+    val HORIZON_LABEL = Rgba(0xb8 / 255f, 0xde / 255f, 0x8e / 255f, 1f)
 
     /** RA/Dec graticule lines (upstream `grid_line` `#14BCEFF8`). */
     val GRID_LINE = Rgba(0xbc / 255f, 0xef / 255f, 0xf8 / 255f, 0x14 / 255f)
