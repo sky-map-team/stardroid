@@ -10,6 +10,7 @@
 package com.google.android.stardroid.data.generator
 
 import com.google.android.stardroid.catalog.MonthDay
+import com.google.android.stardroid.catalog.NameNormalizer
 
 /*
  * In-memory image of the rows the generator writes — one type per table of the
@@ -160,6 +161,9 @@ data class CatalogData(
         names.forEach { n ->
             requireObject(n.objectId, "name '${n.name}'")
             require(n.name.isNotBlank()) { "blank name for '${n.objectId}'" }
+            require(NameNormalizer.normalize(n.name).isNotEmpty()) {
+                "name '${n.name}' for '${n.objectId}' normalizes to nothing searchable"
+            }
         }
         links.forEach { l ->
             requireObject(l.objectId, "link")

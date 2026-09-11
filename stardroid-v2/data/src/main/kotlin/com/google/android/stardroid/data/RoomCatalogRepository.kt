@@ -93,13 +93,13 @@ class RoomCatalogRepository(
         locale: LocaleSpec,
         limit: Int,
     ): List<SearchHit> {
-        val terms = tokenize(prefix)
-        if (terms.isEmpty() || limit <= 0) return emptyList()
-        // Terms are lowercased alphanumeric-only after tokenizing, so no FTS syntax — including
-        // the uppercase-only AND/OR/NOT operator keywords — can leak through; unicode61 folds
-        // case/diacritics on query terms the same way it did on the index.
-        val ftsQuery = terms.joinToString(" ") { "$it*" }
         val normalizedPrefix = NameNormalizer.normalize(prefix)
+        // The indexed text went through the same normalization, so these are exactly the words
+        // the `simple` tokenizer stored. Only lowercase letters, marks and digits survive it, so
+        // no FTS syntax — including the uppercase-only AND/OR/NOT keywords — can leak through.
+        val terms = normalizedPrefix.split(' ').filter { it.isNotEmpty() }
+        if (terms.isEmpty() || limit <= 0) return emptyList()
+        val ftsQuery = terms.joinToString(" ") { "$it*" }
         // Over-fetch relative to the display limit: the candidate set is name rows, several per
         // object across the locale chain, and the Kotlin ranking below still needs something to
         // rank (audit-2026-08 M3).
@@ -361,14 +361,7 @@ class RoomCatalogRepository(
         parentSearchFov: Double?,
     ): Double? = if (ra != null && dec != null) searchFov else searchFov ?: parentSearchFov
 
-    // Lowercased (Kotlin's lowercase() is locale-invariant) so a bare AND/OR/NOT term cannot
-    // be parsed as an FTS4 operator keyword — those are recognized only in uppercase.
-    private fun tokenize(query: String): List<String> =
-        query.lowercase().split(NON_ALPHANUMERIC).filter { it.isNotEmpty() }
-
     private companion object {
-        val NON_ALPHANUMERIC = Regex("[^\\p{L}\\p{N}]+")
-
         /**
          * How many name rows the SQL candidate set holds per requested hit. Each object can
          * contribute one row per locale in the chain, and the Kotlin ranking reorders within the

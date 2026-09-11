@@ -299,4 +299,37 @@ class CatalogDbGeneratorTest {
         assertThat(error).isInstanceOf(IllegalArgumentException::class.java)
         assertThat(error).hasMessageThat().contains("star/nowhere")
     }
+
+    @Test
+    fun `a name that normalizes to nothing is rejected`() {
+        val punctuationOnly =
+            CatalogData(
+                pack = PackRow("core", 1, null, null, builtin = true),
+                types = listOf(TypeRow("star", null)),
+                typeNames = emptyList(),
+                objects =
+                    listOf(
+                        ObjectRow(
+                            id = "star/dots",
+                            layerKind = null,
+                            type = "star",
+                            ra = null,
+                            dec = null,
+                            magnitude = null,
+                            colorIndex = null,
+                            searchFov = null,
+                            parentObjectId = null,
+                            imageRef = null,
+                        ),
+                    ),
+                names = listOf(NameRow("star/dots", "en", "·–·", isPrimary = true)),
+                links = emptyList(),
+                cards = emptyList(),
+                figures = emptyList(),
+                vertices = emptyList(),
+            )
+        val error = runCatching { punctuationOnly.validate() }.exceptionOrNull()
+        assertThat(error).isInstanceOf(IllegalArgumentException::class.java)
+        assertThat(error).hasMessageThat().contains("star/dots")
+    }
 }

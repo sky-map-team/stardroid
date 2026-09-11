@@ -29,6 +29,8 @@ object SkyMapDatabaseFactory {
     fun create(context: Context): SkyMapDatabase =
         Room.databaseBuilder(context, SkyMapDatabase::class.java, DATABASE_NAME)
             .createFromAsset(DATABASE_NAME)
+            // The catalog holds no user state, so a schema bump just re-copies the bundled asset.
+            .fallbackToDestructiveMigration(dropAllTables = true)
             .build()
 
     /**
