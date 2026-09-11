@@ -9,6 +9,7 @@
 
 package com.google.android.stardroid.data
 
+import android.content.Context
 import androidx.room.Room
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -18,6 +19,8 @@ import com.google.android.stardroid.catalog.LocaleSpec
 import com.google.android.stardroid.catalog.MonthDay
 import com.google.android.stardroid.math.RaDec
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.async
+import kotlinx.coroutines.awaitAll
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.test.runTest
 import org.junit.After
@@ -323,8 +326,8 @@ class RoomCatalogRepositoryTest {
      * pointed at a tokenizer name that genuinely does not exist, via the same
      * `PRAGMA writable_schema` surgery the production repair itself performs.
      */
-    private fun breakFtsTokenizer() {
-        val db = database.openHelper.writableDatabase
+    private fun breakFtsTokenizer(target: SkyMapDatabase = database) {
+        val db = target.openHelper.writableDatabase
         db.execSQL("PRAGMA writable_schema = ON")
         db.execSQL(
             "UPDATE sqlite_master SET sql = " +
@@ -367,11 +370,45 @@ class RoomCatalogRepositoryTest {
             val healingRepository =
                 RoomCatalogRepository(database, onRepairEvent = repairEvents::add)
 
+            listOf("sir", "al")
+                .map { async { healingRepository.searchByPrefix(it, english, limit = 10) } }
+                .awaitAll()
             healingRepository.searchByPrefix("sir", english, limit = 10)
-            healingRepository.searchByPrefix("al", english, limit = 10)
 
             assertThat(repairEvents)
                 .containsExactly(CatalogRepairEvent.FtsTokenizerRepairAttempted(success = true))
+        }
+
+    /**
+     * The in-memory DB has one connection; the real file-backed DB runs WAL, whose reader
+     * connections each cache the broken schema and aren't healed by a repair on the writer.
+     */
+    @Test
+    fun search_selfHealsAcrossWalReaderConnectionsOfFileBackedDb() =
+        runTest {
+            val context = ApplicationProvider.getApplicationContext<Context>()
+            val name = "fts-tokenizer-repair-test.db"
+            context.deleteDatabase(name)
+            val fileDb = Room.databaseBuilder(context, SkyMapDatabase::class.java, name).build()
+            try {
+                fileDb.packDao().applyPack(FixtureCatalog.corePack(), FixtureCatalog.coreContents())
+                fileDb.packDao().applyPack(
+                    FixtureCatalog.extraPack(),
+                    FixtureCatalog.extraContents(),
+                )
+                breakFtsTokenizer(fileDb)
+                val healingRepository = RoomCatalogRepository(fileDb)
+
+                repeat(3) {
+                    val hits = healingRepository.searchByPrefix("sir", english, limit = 10)
+                    assertThat(hits.map { it.name })
+                        .containsExactly("Sirius", "Little Sirius")
+                        .inOrder()
+                }
+            } finally {
+                fileDb.close()
+                context.deleteDatabase(name)
+            }
         }
 
     // --- objectInfo ---

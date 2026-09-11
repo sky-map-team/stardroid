@@ -11,6 +11,7 @@ package com.google.android.stardroid.data
 
 import android.database.sqlite.SQLiteException
 import android.util.Log
+import androidx.room.withTransaction
 import com.google.android.stardroid.catalog.CatalogObject
 import com.google.android.stardroid.catalog.CatalogRepository
 import com.google.android.stardroid.catalog.CelestialObjectId
@@ -63,7 +64,7 @@ class RoomCatalogRepository(
 ) : CatalogRepository {
     private val dao = database.catalogDao()
     private val ftsRepairMutex = Mutex()
-    private var ftsRepairState = FtsRepairState.NOT_ATTEMPTED
+    @Volatile private var ftsRepairState = FtsRepairState.NOT_ATTEMPTED
 
     override fun layerObjects(
         kind: LayerKind,
@@ -415,7 +416,11 @@ class RoomCatalogRepository(
         } catch (e: SQLiteException) {
             if (!e.isUnknownTokenizer() || !repairFtsTokenizer(e)) throw e
             try {
-                dao.searchNameRows(ftsQuery, locales, normalizedPrefix, candidateLimit)
+                // In a transaction so the retry runs on the connection the repair just refreshed;
+                // a WAL reader that cached the broken schema still fails to compile against it.
+                database.withTransaction {
+                    dao.searchNameRows(ftsQuery, locales, normalizedPrefix, candidateLimit)
+                }
             } catch (retryFailure: SQLiteException) {
                 Log.e(TAG, "Search still fails after FTS tokenizer repair", retryFailure)
                 onRepairEvent(
@@ -450,15 +455,20 @@ class RoomCatalogRepository(
         if (ftsRepairState != FtsRepairState.NOT_ATTEMPTED) {
             return ftsRepairState == FtsRepairState.REPAIRED
         }
-        return ftsRepairMutex.withLock {
-            if (ftsRepairState != FtsRepairState.NOT_ATTEMPTED) {
-                return@withLock ftsRepairState == FtsRepairState.REPAIRED
+        var attemptedNow = false
+        val repaired =
+            ftsRepairMutex.withLock {
+                if (ftsRepairState != FtsRepairState.NOT_ATTEMPTED) {
+                    return@withLock ftsRepairState == FtsRepairState.REPAIRED
+                }
+                val success = withContext(Dispatchers.IO) { runFtsTokenizerRepair(cause) }
+                ftsRepairState = if (success) FtsRepairState.REPAIRED else FtsRepairState.FAILED
+                attemptedNow = true
+                success
             }
-            val success = withContext(Dispatchers.IO) { runFtsTokenizerRepair(cause) }
-            ftsRepairState = if (success) FtsRepairState.REPAIRED else FtsRepairState.FAILED
-            onRepairEvent(CatalogRepairEvent.FtsTokenizerRepairAttempted(success))
-            success
-        }
+        // Reported outside the lock so a slow analytics sink can't stall queued searches.
+        if (attemptedNow) onRepairEvent(CatalogRepairEvent.FtsTokenizerRepairAttempted(repaired))
+        return repaired
     }
 
     private fun runFtsTokenizerRepair(cause: SQLiteException): Boolean {
@@ -469,27 +479,42 @@ class RoomCatalogRepository(
         )
         val db = database.openHelper.writableDatabase
         return try {
-            db.execSQL("PRAGMA writable_schema = ON")
-            db.execSQL(
-                "UPDATE sqlite_master SET sql = " +
-                    "'CREATE VIRTUAL TABLE IF NOT EXISTS `object_name_fts` USING FTS4(" +
-                    "`name` TEXT NOT NULL, tokenize=simple, content=`object_name`)' " +
-                    "WHERE type = 'table' AND name = 'object_name_fts'",
-            )
-            // A raw sqlite_master edit doesn't bump SQLite's own change counter, so every
-            // connection (including this one) keeps using its cached, pre-edit parse of the
-            // table until schema_version forces a reparse. Not the same pragma as `user_version`
-            // (Room's own migration counter) — that one must not be touched here.
-            val version =
-                db.query("PRAGMA schema_version").use {
-                    it.moveToFirst()
-                    it.getInt(0)
-                }
-            db.execSQL("PRAGMA schema_version = ${version + 1}")
-            db.execSQL("INSERT INTO object_name_fts(object_name_fts) VALUES('rebuild')")
+            // One transaction pins every statement to this connection (Android otherwise routes
+            // plain reads to reader connections) and rolls the sqlite_master edit back if the
+            // rebuild fails, so a failed repair never leaves a half-rewritten schema behind.
+            db.beginTransaction()
+            try {
+                db.execSQL("PRAGMA writable_schema = ON")
+                db.execSQL(
+                    "UPDATE sqlite_master SET sql = " +
+                        "'CREATE VIRTUAL TABLE IF NOT EXISTS `object_name_fts` USING FTS4(" +
+                        "`name` TEXT NOT NULL, tokenize=simple, content=`object_name`)' " +
+                        "WHERE type = 'table' AND name = 'object_name_fts'",
+                )
+                // A raw sqlite_master edit doesn't change schema_version, so no connection would
+                // ever reparse the table. Not `user_version` (Room's migration counter) — that
+                // one must not be touched here.
+                val version =
+                    db.query("PRAGMA schema_version").use {
+                        it.moveToFirst()
+                        it.getInt(0)
+                    }
+                db.execSQL("PRAGMA schema_version = ${version + 1}")
+                db.execSQL("PRAGMA writable_schema = OFF")
+                // The bump only reparses once an *executed* statement trips the schema-cookie
+                // check, but the rebuild fails earlier — at compile, connecting the stale
+                // tokenizer. Reading sqlite_master trips the check first.
+                db.query("SELECT count(*) FROM sqlite_master").use { it.moveToFirst() }
+                db.execSQL("INSERT INTO object_name_fts(object_name_fts) VALUES('rebuild')")
+                db.setTransactionSuccessful()
+            } finally {
+                db.endTransaction()
+            }
             Log.w(TAG, "object_name_fts repaired onto the 'simple' tokenizer (#1003)")
             true
-        } catch (repairFailure: SQLiteException) {
+        } catch (repairFailure: RuntimeException) {
+            // Not just SQLiteException: an OEM sandboxing the pragma may throw anything, and it
+            // must still memoize as FAILED rather than re-run on every keystroke.
             Log.e(
                 TAG,
                 "FTS tokenizer repair failed; search stays degraded on this device",
