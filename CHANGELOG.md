@@ -5,6 +5,24 @@ All notable changes to Sky Map are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [2.0.5:Apollo] (v2) - 2026-09-11
+
+<img src="stardroid-v2/assets/release-icons/2.0.3_apollo_icon.png" width="80" alt="Apollo" />
+
+### Fixed
+- Fixed catalog search crashing on Android 10, caused by a missing FTS tokenizer in the
+  stock system SQLite. (#1013, closes #1003)
+- Fixed illegible N/S/E/W/zenith/nadir labels blending into the horizon glow. (#1018,
+  closes #1014)
+
+### Changed
+- The legacy (non-gyro) sensor path now smooths the fused orientation with the same
+  quaternion smoother as the rotation-vector path, instead of smoothing the accelerometer
+  and magnetometer separately beforehand — the two no longer drift out of sync with each
+  other during motion. (#1011)
+
+---
+
 ## [2.0.4:Apollo] (v2) - 2026-09-09
 
 <img src="stardroid-v2/assets/release-icons/2.0.3_apollo_icon.png" width="80" alt="Apollo" />
