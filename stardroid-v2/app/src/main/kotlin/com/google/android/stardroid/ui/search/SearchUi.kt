@@ -34,7 +34,9 @@ import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.FocusRequester
@@ -45,6 +47,7 @@ import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.graphics.drawscope.rotate
+import androidx.compose.ui.layout.onGloballyPositioned
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.unit.dp
@@ -240,6 +243,13 @@ fun SearchDialog(
     val suggestions by viewModel.suggestions.collectAsStateWithLifecycle()
     val noResults by viewModel.noResults.collectAsStateWithLifecycle()
     val focusRequester = remember { FocusRequester() }
+    // AlertDialog's content composes into a separate dialog window, one or more frames after
+    // this composable's own body runs. Racing that with an unconditional
+    // LaunchedEffect(Unit) { focusRequester.requestFocus() } crashes with "FocusRequester is
+    // not initialized" whenever the text field hasn't attached to the window yet
+    // (https://github.com/sky-map-team/stardroid/issues/1019). Wait for the field's first
+    // layout instead.
+    var textFieldPositioned by remember { mutableStateOf(false) }
 
     AlertDialog(
         onDismissRequest = onDismiss,
@@ -260,7 +270,8 @@ fun SearchDialog(
                     modifier =
                         Modifier
                             .fillMaxWidth()
-                            .focusRequester(focusRequester),
+                            .focusRequester(focusRequester)
+                            .onGloballyPositioned { textFieldPositioned = true },
                 )
                 if (noResults) {
                     Text(
@@ -288,7 +299,11 @@ fun SearchDialog(
         },
     )
 
-    LaunchedEffect(Unit) { focusRequester.requestFocus() }
+    LaunchedEffect(textFieldPositioned) {
+        if (textFieldPositioned) {
+            focusRequester.requestFocus()
+        }
+    }
 }
 
 @Composable
