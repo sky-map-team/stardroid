@@ -71,11 +71,6 @@ import com.google.android.stardroid.ui.common.topBarWindowInsets
  * sensors / other) as a full-screen Compose overlay. "Other" holds the analytics opt-out
  * (D49); v1's sound-effects toggle still waits for sounds to be ported (D45).
  */
-// Temporarily hidden while the fused-path low-pass/deadband smoothing settings bed in —
-// the mechanism (SensorConfig, DataStoreSettings, SettingsViewModel) stays wired up, but
-// nobody should be able to change these from the UI yet. Flip back on once we're ready.
-private const val SHOW_ROTATION_SMOOTHING_CONTROLS = false
-
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun SettingsScreen(
@@ -181,7 +176,7 @@ fun SettingsScreen(
                         checked = state.reverseMagneticZ,
                         onCheckedChange = viewModel::setReverseMagneticZ,
                     )
-                } else if (SHOW_ROTATION_SMOOTHING_CONTROLS) {
+                } else {
                     // The inverse of the block above: these only act on the fused path, so
                     // they only show while that path is selected (issues #963 / #1001). Kept
                     // as two independent controls rather than one combined level so their
