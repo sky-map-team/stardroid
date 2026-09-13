@@ -32,9 +32,10 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.FocusRequester
@@ -45,6 +46,7 @@ import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.graphics.drawscope.rotate
+import androidx.compose.ui.layout.onGloballyPositioned
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.unit.dp
@@ -240,6 +242,11 @@ fun SearchDialog(
     val suggestions by viewModel.suggestions.collectAsStateWithLifecycle()
     val noResults by viewModel.noResults.collectAsStateWithLifecycle()
     val focusRequester = remember { FocusRequester() }
+    // Requesting focus from a LaunchedEffect keyed on SearchDialog itself can fire before the
+    // AlertDialog's own subcomposition (it composes text into a separate Popup) has attached
+    // this field's focus node, throwing IllegalStateException. Request focus only once the
+    // field has actually been placed, when the node is guaranteed to be attached.
+    var hasRequestedFocus by remember { mutableStateOf(false) }
 
     AlertDialog(
         onDismissRequest = onDismiss,
@@ -260,7 +267,13 @@ fun SearchDialog(
                     modifier =
                         Modifier
                             .fillMaxWidth()
-                            .focusRequester(focusRequester),
+                            .focusRequester(focusRequester)
+                            .onGloballyPositioned {
+                                if (!hasRequestedFocus) {
+                                    hasRequestedFocus = true
+                                    focusRequester.requestFocus()
+                                }
+                            },
                 )
                 if (noResults) {
                     Text(
@@ -287,8 +300,6 @@ fun SearchDialog(
             }
         },
     )
-
-    LaunchedEffect(Unit) { focusRequester.requestFocus() }
 }
 
 @Composable
