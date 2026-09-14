@@ -264,6 +264,8 @@
     <string name="location_geocoder_offline" translation_description="Inline message shown when geocoding fails because there is no internet connection">No internet — enter coordinates directly</string>
     <string name="location_invalid_latitude" translation_description="Validation error for latitude values outside the valid range">Latitude must be between −90 and 90</string>
     <string name="location_invalid_longitude" translation_description="Validation error for longitude values outside the valid range">Longitude must be between −180 and 180</string>
+    <string name="location_toggle_sign_make_positive" translation_description="Accessibility label for the button that switches this coordinate to positive">Make positive</string>
+    <string name="location_toggle_sign_make_negative" translation_description="Accessibility label for the button that switches this coordinate to negative">Make negative</string>
     <string name="location_coordinate_format" translatable="false">%.6f</string>
 
     <!-- Object info card -->

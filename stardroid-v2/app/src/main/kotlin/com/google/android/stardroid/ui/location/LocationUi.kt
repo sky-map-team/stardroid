@@ -12,6 +12,8 @@ package com.google.android.stardroid.ui.location
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.ExperimentalLayoutApi
+import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -24,6 +26,7 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FilledTonalButton
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.ModalBottomSheet
 import androidx.compose.material3.OutlinedTextField
@@ -43,6 +46,8 @@ import androidx.compose.ui.graphics.BlendMode
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
@@ -61,7 +66,7 @@ import java.util.Locale
  * current fix (v1's Geoapify image, red-tinted in night mode), current source and
  * coordinates, the auto/manual mode toggle, and the entry point to manual entry.
  */
-@OptIn(ExperimentalMaterial3Api::class)
+@OptIn(ExperimentalMaterial3Api::class, ExperimentalLayoutApi::class)
 @Composable
 fun LocationSheet(
     viewModel: LocationViewModel,
@@ -93,7 +98,13 @@ fun LocationSheet(
                     style = MaterialTheme.typography.bodyMedium,
                 )
             }
-            Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+            // FlowRow rather than Row: two fairly long button labels ("Use Automatic
+            // Location" / "Change Location") squeezed side by side on narrow screens or
+            // longer translations, which is what made "Change Location" look squished.
+            FlowRow(
+                horizontalArrangement = Arrangement.spacedBy(8.dp),
+                verticalArrangement = Arrangement.spacedBy(8.dp),
+            ) {
                 if (manualMode) {
                     FilledTonalButton(onClick = onRequestAutoLocation) {
                         Text(stringResource(R.string.location_switch_to_auto))
@@ -215,6 +226,33 @@ private fun sourceLabel(state: LocationState): String =
     )
 
 /**
+ * A +/- button for a coordinate field, standing in for the IME's own sign key. Some OEM
+ * decimal keypads render +/- keys that don't commit a sign for a plain (non-signed) decimal
+ * input type, leaving them tappable but inert — this toggle edits the text directly so
+ * entering a negative coordinate never depends on IME behaviour.
+ */
+@Composable
+private fun SignToggle(
+    text: String,
+    onChange: (String) -> Unit,
+) {
+    val isNegative = text.startsWith("-")
+    val descriptionRes =
+        if (isNegative) {
+            R.string.location_toggle_sign_make_positive
+        } else {
+            R.string.location_toggle_sign_make_negative
+        }
+    val description = stringResource(descriptionRes)
+    IconButton(
+        onClick = { onChange(if (isNegative) text.removePrefix("-") else "-$text") },
+        modifier = Modifier.semantics { contentDescription = description },
+    ) {
+        Text(if (isNegative) "+" else "−", style = MaterialTheme.typography.titleMedium)
+    }
+}
+
+/**
  * v1 `ManualLocationEntryDialogFragment`: place-name geocoding into editable latitude and
  * longitude fields with explicit range validation. Field text lives here; validation and
  * geocoding live in [LocationViewModel].
@@ -300,6 +338,11 @@ fun ManualLocationEntryDialog(
                         } else {
                             null
                         },
+                    // Some OEM decimal keypads (e.g. Samsung's) draw +/- keys that don't
+                    // actually commit a sign for a plain (non-signed) decimal field, so typing
+                    // a negative latitude/longitude can silently do nothing. This in-app toggle
+                    // works regardless of what the IME does.
+                    trailingIcon = { SignToggle(latitudeText) { latitudeText = it } },
                     keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal),
                     modifier = Modifier.fillMaxWidth(),
                 )
@@ -315,6 +358,7 @@ fun ManualLocationEntryDialog(
                         } else {
                             null
                         },
+                    trailingIcon = { SignToggle(longitudeText) { longitudeText = it } },
                     keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal),
                     modifier = Modifier.fillMaxWidth(),
                 )
