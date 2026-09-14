@@ -207,9 +207,24 @@ with both defaults — neither is far enough north for Polaris to sit high in th
 
 **Response framing:** Express genuine regret. Ask what specifically went wrong so the team can
 help. Mention that compass problems are hardware limitations that affect all astronomy apps.
-Offer the email address for direct support with a Diagnostics screenshot.
+Offer the email address for direct support with the Diagnostics report (see below).
 
 **Contact:** skymapdevs@gmail.com
+
+---
+
+## Asking for Diagnostics (escalation / unknown issues)
+
+When a complaint doesn't match a category above, or the documented steps have already failed,
+ask the user to send their Diagnostics page and say we'll look into it.
+
+- **v2:** Diagnostics is at the bottom of **Settings**. Tapping **Share** emails the report to
+  skymapdevs@gmail.com, so the user doesn't need to take a screenshot.
+- **v1:** Diagnostics is in the overflow menu; ask for a screenshot emailed to
+  skymapdevs@gmail.com.
+
+Example (v2): "Could you send us your Diagnostics page? You'll find it at the bottom of Settings.
+Just tap Share and send it to skymapdevs@gmail.com, and we'll look into it."
 
 ---
 

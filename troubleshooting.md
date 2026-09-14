@@ -185,9 +185,12 @@ on Google Play.
 
 ## Still stuck?
 
-Open the **Diagnostics** page (overflow menu on v1, **Settings** on v2) and email us at
-**skymapdevs@gmail.com** with a screenshot. It contains your sensor readings, location, and time
-info which helps us understand what's happening on your device.
+Open the **Diagnostics** page and send it to us. It contains your sensor readings, location, and
+time info which helps us understand what's happening on your device.
+
+- **v2:** Diagnostics is at the bottom of **Settings**. Tap the **Share** button to email the
+  report to **skymapdevs@gmail.com** — describe the problem at the top of the email.
+- **v1:** Diagnostics is in the overflow menu. Email a screenshot to **skymapdevs@gmail.com**.
 
 ---
 
