@@ -237,7 +237,13 @@ private fun SignToggle(
     onChange: (String) -> Unit,
 ) {
     val isNegative = text.startsWith("-")
-    val description = stringResource(R.string.location_toggle_sign)
+    val descriptionRes =
+        if (isNegative) {
+            R.string.location_toggle_sign_make_positive
+        } else {
+            R.string.location_toggle_sign_make_negative
+        }
+    val description = stringResource(descriptionRes)
     IconButton(
         onClick = { onChange(if (isNegative) text.removePrefix("-") else "-$text") },
         modifier = Modifier.semantics { contentDescription = description },
