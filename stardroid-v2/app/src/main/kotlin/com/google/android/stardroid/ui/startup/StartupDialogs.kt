@@ -12,7 +12,8 @@ package com.google.android.stardroid.ui.startup
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.ExperimentalLayoutApi
+import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.heightIn
@@ -65,7 +66,7 @@ fun appVersionName(): String {
  * (or BACK — v1 routed cancel to reject) exits the app. The HTML terms render natively via
  * [StyledHtml] instead of a WebView (D48).
  */
-@OptIn(ExperimentalMaterial3Api::class)
+@OptIn(ExperimentalMaterial3Api::class, ExperimentalLayoutApi::class)
 @Composable
 fun EulaScreen(
     nightMode: Boolean,
@@ -84,8 +85,12 @@ fun EulaScreen(
         },
         bottomBar = {
             BottomAppBar {
-                Row(
+                // FlowRow rather than Row: a long translation of either label can outgrow the
+                // bar's width, which would squeeze the two buttons together instead of
+                // wrapping.
+                FlowRow(
                     horizontalArrangement = Arrangement.spacedBy(8.dp, Alignment.End),
+                    verticalArrangement = Arrangement.spacedBy(8.dp),
                     modifier =
                         Modifier
                             .fillMaxWidth()
