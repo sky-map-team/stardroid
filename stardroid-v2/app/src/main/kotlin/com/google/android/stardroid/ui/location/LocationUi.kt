@@ -289,6 +289,10 @@ fun ManualLocationEntryDialog(
     // Reuse the map HUD's 16-point compass abbreviations rather than defining new ones:
     // N/E/S/W sit at indices 0/4/8/12 of the clockwise-from-north array.
     val cardinalDirections = stringArrayResource(R.array.hud_cardinal_directions)
+    val north = cardinalDirections[0]
+    val east = cardinalDirections[4]
+    val south = cardinalDirections[8]
+    val west = cardinalDirections[12]
     var placeText by rememberSaveable { mutableStateOf("") }
     // Prefill from the current location, as v1 did when coordinates were known.
     var latitudeText by rememberSaveable {
@@ -377,8 +381,8 @@ fun ManualLocationEntryDialog(
                     trailingIcon = {
                         HemisphereToggle(
                             text = latitudeText,
-                            positiveLabel = cardinalDirections[0],
-                            negativeLabel = cardinalDirections[8],
+                            positiveLabel = north,
+                            negativeLabel = south,
                             positiveDescription =
                                 stringResource(R.string.location_hemisphere_north_description),
                             negativeDescription =
@@ -407,8 +411,8 @@ fun ManualLocationEntryDialog(
                     trailingIcon = {
                         HemisphereToggle(
                             text = longitudeText,
-                            positiveLabel = cardinalDirections[4],
-                            negativeLabel = cardinalDirections[12],
+                            positiveLabel = east,
+                            negativeLabel = west,
                             positiveDescription =
                                 stringResource(R.string.location_hemisphere_east_description),
                             negativeDescription =
