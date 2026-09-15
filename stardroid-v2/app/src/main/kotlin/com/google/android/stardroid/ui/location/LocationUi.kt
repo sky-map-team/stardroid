@@ -21,15 +21,21 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FilledTonalButton
+import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.ModalBottomSheet
 import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.SegmentedButton
+import androidx.compose.material3.SegmentedButtonDefaults
+import androidx.compose.material3.SingleChoiceSegmentedButtonRow
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
@@ -45,6 +51,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.BlendMode
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.stringArrayResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
@@ -226,29 +233,43 @@ private fun sourceLabel(state: LocationState): String =
     )
 
 /**
- * A +/- button for a coordinate field, standing in for the IME's own sign key. Some OEM
- * decimal keypads render +/- keys that don't commit a sign for a plain (non-signed) decimal
- * input type, leaving them tappable but inert — this toggle edits the text directly so
- * entering a negative coordinate never depends on IME behaviour.
+ * An N/S or E/W hemisphere toggle for a coordinate field, standing in for the IME's own sign
+ * key. Some OEM decimal keypads render +/- keys that don't commit a sign for a plain
+ * (non-signed) decimal input type, leaving them tappable but inert — this toggle edits the
+ * text's sign directly, and reads as a hemisphere choice rather than a math symbol so both the
+ * current state and the two options are legible at a glance (a bare +/- glyph is ambiguous
+ * about whether it's a stepper or a state indicator).
  */
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
-private fun SignToggle(
+private fun HemisphereToggle(
     text: String,
+    positiveLabel: String,
+    negativeLabel: String,
+    positiveDescription: String,
+    negativeDescription: String,
     onChange: (String) -> Unit,
 ) {
     val isNegative = text.startsWith("-")
-    val descriptionRes =
-        if (isNegative) {
-            R.string.location_toggle_sign_make_positive
-        } else {
-            R.string.location_toggle_sign_make_negative
+    // The trailingIcon slot doesn't give this wider-than-an-icon toggle the same end
+    // inset an actual icon gets for free, so it sits flush against the field's border.
+    SingleChoiceSegmentedButtonRow(modifier = Modifier.padding(end = 8.dp)) {
+        SegmentedButton(
+            selected = !isNegative,
+            onClick = { if (isNegative) onChange(text.removePrefix("-")) },
+            shape = SegmentedButtonDefaults.itemShape(index = 0, count = 2),
+            modifier = Modifier.semantics { contentDescription = positiveDescription },
+        ) {
+            Text(positiveLabel)
         }
-    val description = stringResource(descriptionRes)
-    IconButton(
-        onClick = { onChange(if (isNegative) text.removePrefix("-") else "-$text") },
-        modifier = Modifier.semantics { contentDescription = description },
-    ) {
-        Text(if (isNegative) "+" else "−", style = MaterialTheme.typography.titleMedium)
+        SegmentedButton(
+            selected = isNegative,
+            onClick = { if (!isNegative) onChange("-$text") },
+            shape = SegmentedButtonDefaults.itemShape(index = 1, count = 2),
+            modifier = Modifier.semantics { contentDescription = negativeDescription },
+        ) {
+            Text(negativeLabel)
+        }
     }
 }
 
@@ -265,6 +286,9 @@ fun ManualLocationEntryDialog(
     val entry by viewModel.manualEntry.collectAsStateWithLifecycle()
     val state by viewModel.state.collectAsStateWithLifecycle()
     val coordinateFormat = stringResource(R.string.location_coordinate_format)
+    // Reuse the map HUD's 16-point compass abbreviations rather than defining new ones:
+    // N/E/S/W sit at indices 0/4/8/12 of the clockwise-from-north array.
+    val cardinalDirections = stringArrayResource(R.array.hud_cardinal_directions)
     var placeText by rememberSaveable { mutableStateOf("") }
     // Prefill from the current location, as v1 did when coordinates were known.
     var latitudeText by rememberSaveable {
@@ -293,25 +317,30 @@ fun ManualLocationEntryDialog(
         title = { Text(stringResource(R.string.location_manual_entry_title)) },
         text = {
             Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                Row(
-                    verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.spacedBy(8.dp),
-                ) {
-                    OutlinedTextField(
-                        value = placeText,
-                        onValueChange = { placeText = it },
-                        label = { Text(stringResource(R.string.location_place_name_hint)) },
-                        singleLine = true,
-                        modifier = Modifier.weight(1f),
-                    )
-                    if (entry.resolving) {
-                        CircularProgressIndicator(Modifier.size(24.dp))
-                    } else {
-                        TextButton(onClick = { viewModel.resolvePlace(placeText) }) {
-                            Text(stringResource(R.string.location_resolve_button))
+                OutlinedTextField(
+                    value = placeText,
+                    onValueChange = { placeText = it },
+                    label = { Text(stringResource(R.string.location_place_name_hint)) },
+                    singleLine = true,
+                    // trailingIcon (rather than a sibling Row) lets Material position this
+                    // against the field's actual content box instead of its full bounds,
+                    // which include the floating label — a sibling Row's shared vertical
+                    // center drifted off both the label and the box depending on field state.
+                    trailingIcon = {
+                        if (entry.resolving) {
+                            CircularProgressIndicator(Modifier.size(24.dp))
+                        } else {
+                            IconButton(onClick = { viewModel.resolvePlace(placeText) }) {
+                                Icon(
+                                    Icons.Default.Search,
+                                    contentDescription =
+                                        stringResource(R.string.location_resolve_button),
+                                )
+                            }
                         }
-                    }
-                }
+                    },
+                    modifier = Modifier.fillMaxWidth(),
+                )
                 entry.placeError?.let { error ->
                     Text(
                         stringResource(
@@ -330,6 +359,9 @@ fun ManualLocationEntryDialog(
                     value = latitudeText,
                     onValueChange = { latitudeText = it },
                     label = { Text(stringResource(R.string.location_latitude_hint)) },
+                    placeholder = {
+                        Text(stringResource(R.string.location_latitude_placeholder))
+                    },
                     singleLine = true,
                     isError = entry.latitudeInvalid,
                     supportingText =
@@ -340,9 +372,20 @@ fun ManualLocationEntryDialog(
                         },
                     // Some OEM decimal keypads (e.g. Samsung's) draw +/- keys that don't
                     // actually commit a sign for a plain (non-signed) decimal field, so typing
-                    // a negative latitude/longitude can silently do nothing. This in-app toggle
-                    // works regardless of what the IME does.
-                    trailingIcon = { SignToggle(latitudeText) { latitudeText = it } },
+                    // a negative latitude can silently do nothing. This in-app toggle works
+                    // regardless of what the IME does.
+                    trailingIcon = {
+                        HemisphereToggle(
+                            text = latitudeText,
+                            positiveLabel = cardinalDirections[0],
+                            negativeLabel = cardinalDirections[8],
+                            positiveDescription =
+                                stringResource(R.string.location_hemisphere_north_description),
+                            negativeDescription =
+                                stringResource(R.string.location_hemisphere_south_description),
+                            onChange = { latitudeText = it },
+                        )
+                    },
                     keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal),
                     modifier = Modifier.fillMaxWidth(),
                 )
@@ -350,6 +393,9 @@ fun ManualLocationEntryDialog(
                     value = longitudeText,
                     onValueChange = { longitudeText = it },
                     label = { Text(stringResource(R.string.location_longitude_hint)) },
+                    placeholder = {
+                        Text(stringResource(R.string.location_longitude_placeholder))
+                    },
                     singleLine = true,
                     isError = entry.longitudeInvalid,
                     supportingText =
@@ -358,7 +404,18 @@ fun ManualLocationEntryDialog(
                         } else {
                             null
                         },
-                    trailingIcon = { SignToggle(longitudeText) { longitudeText = it } },
+                    trailingIcon = {
+                        HemisphereToggle(
+                            text = longitudeText,
+                            positiveLabel = cardinalDirections[4],
+                            negativeLabel = cardinalDirections[12],
+                            positiveDescription =
+                                stringResource(R.string.location_hemisphere_east_description),
+                            negativeDescription =
+                                stringResource(R.string.location_hemisphere_west_description),
+                            onChange = { longitudeText = it },
+                        )
+                    },
                     keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal),
                     modifier = Modifier.fillMaxWidth(),
                 )
