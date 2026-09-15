@@ -172,22 +172,22 @@ inget sätt för någon app att visa din riktning.</p>]]></string>
     <string name="help_troubleshooting" translation_description="Help section: troubleshooting a map that does not move or points the wrong way. Please do not change the markup"><![CDATA[<h2>Felsökning</h2>
 <h3>Kartan rör sig inte</h3>
 <p>• Kontrollera att du är i automatiskt läge (inte manuellt)<br/>
-• Kontrollera sidan för diagnostik (<b>Inställningar → Diagnostik</b>) för att bekräfta att din enhet har en kompass och en accelerometer<br/>
-• Prova att kalibrera genom att röra telefonen i en åtta: vifta med telefonen långsamt i en stor, mjuk åtta</p>
+• Kontrollera <b>diagnostiksidan (Inställningar → Diagnostik</b>) för att bekräfta att din enhet har en kompass och en accelerometer<br/>
+• Prova åttatalskalibreringen: vifta med telefonen långsamt i en stor, mjuk åttatorsform</p>
 <h3>Kartan pekar åt fel håll eller är felaktig</h3>
-<p>Sky Map behöver tre saker för att visa rätt stjärnhimmel: vilken riktning din telefon är vänd åt, din plats och den aktuella tiden. Om kartan ser fel ut är sannolikt en av dessa felaktig.</p>
-<p>• <b>Kompass (vanligaste orsaken):</b> Detta är ett hårdvaruproblem med din telefon – inte en bugg i Sky Map. Åtton-kalibreringen ber din telefon att återställa sin kompassensor internt, men <i>en kalibrerad kompass är inte nödvändigtvis en exakt kompass</i>. Om du är nära ett metallföremål, en bilpanel eller ett magnetiskt telefonfodral kan kartan ändå visa fel även efter kalibrering. Gå till en öppen plats och upprepa åttarörelsen.<br/>
-• <b>Plats:</b> Ge platsbehörighet via <b>Appinställningar → Behörigheter</b>. Kontrollera sidan för diagnostik (<b>Inställningar → Diagnostik</b>) för att bekräfta dina koordinater. Ett tydligt tecken på saknad platsinformation är att Polaris visas rakt ovanför dig.<br/>
-• <b>Tid:</b> Mindre vanligt, men en felaktig tidszon förskjuter hela himlavalvet. Kontrollera sidan för diagnostik (<b>Inställningar → Diagnostik</b>) för att bekräfta att enhetens tid och tidszon stämmer.</p>
-<h3>Kartan skakar</h3>
+<p>Sky Map behöver tre saker för att visa rätt stjärnhimmel: riktningen som din telefon är vänd åt, din plats och den aktuella tiden. Om kartan ser fel ut är sannolikt en av dessa fel.</p>
+<p>• <b>Kompass (vanligaste orsaken):</b> Det här är ett hårdvaruproblem med din telefon – inte en bugg i Sky Map. Åttatalskalibreringen ber telefonens kompassensor att återställa sig internt, men <i>en kalibrerad kompass är inte nödvändigtvis en exakt kompass</i>. Om du är nära ett metallföremål, en bilpanel eller ett magnetiskt telefonfodral kan kartan ändå visa fel efter kalibrering. Gå till en öppen yta och upprepa åttatalsrörelsen.<br/>
+• <b>Plats:</b> Ge platsbehörighet via <b>Appinställningar → Behörigheter</b>. Kontrollera diagnostiksidan (<b>Inställningar → Diagnostik</b>) för att bekräfta dina koordinater. Ett säkert tecken på att plats saknas är att Polaris visas rakt ovanför.<br/>
+• <b>Tid:</b> Mindre vanligt, men en felaktig tidszon förskjuter hela stjärnhimlen. Kontrollera diagnostiksidan (<b>Inställningar → Diagnostik</b>) för att bekräfta att enhetens tid och tidszon är korrekta.</p>
+<h3>Kartan hackar</h3>
 <p>
-• Om din telefon saknar gyroskop slår du på <b>Använd äldre sensorer</b> i sensorinställningarna<br/>
-• Justera <b>Sensorhastighet</b> och <b>Dämpning</b> under <b>Inställningar → Sensorinställningar (avancerat)</b>
-(visas när <b>Använd äldre sensorer</b> är på)</p>
-<p>För fullständig felsökningsinformation, se den onlinebaserade <a href="https://ts.stardroid.app">felsökningsguiden</a>.</p>
-<p>Om du fortfarande har problem, skicka ett e-postmeddelande till <a href="mailto:skymapdevs@gmail.com">skymapdevs@gmail.com</a> – en skärmdump av din diagnostiksida är till stor hjälp.</p>]]></string>
+• Kontrollera <b>Inställningar → Sensorer</b> – om <b>Använd äldre sensorer</b> är på, prova att stänga av det<br/>
+• <b>Mjuk sensorrörelse</b> är ny och på som standard medan vi samlar in feedback; öka <b>Stadighetsnivå</b> tills vyn stabiliseras när telefonen hålls stilla, och öka sedan <b>Släpp efter vid rörelse</b> om förflyttningen börjar kännas seg<br/>
+• Du kan stänga av Mjuk sensorrörelse igen under samma avsnitt om du hellre vill använda råsensorn medan den finjusteras</p>
+<p>För fullständiga felsökningsdetaljer, se onlineguiden för <a href="https://ts.stardroid.app">felsökning</a>.</p>
+<p>Om du fortfarande har problem, skicka e-post till oss på <a href="mailto:skymapdevs@gmail.com">skymapdevs@gmail.com</a> – en skärmdump av din diagnostiksida är till stor hjälp.</p>]]></string>
 
     <string name="help_pointer_mode" translation_description="Help section: pointer mode for telescope users. Please do not change the markup"><![CDATA[<h2>Teleskopanvändare – Pekarläge</h2>
-<p>Under <b>Inställningar → Sensorinställningar</b> ändrar du <b>Visningsriktning</b> till <b>Pekarläge</b>. I det här läget visar Sky Map det som telefonens <i>långsida</i> pekar mot, istället för det som skärmen är vänd mot.</p>
-<p>Detta gör att du kan montera din telefon längs sidan av ett teleskoprör så att skärmen är vinkelrät mot röret medan kartan fortfarande följer vad teleskopet är riktat mot.</p>]]></string>
+<p>Gå till <b>Inställningar → Sensorer</b> och ändra <b>Visningsriktning</b> till <b>Pekarläge</b>. I det här läget visar Sky Map vad telefonens <i>långsida</i> pekar mot, i stället för vad skärmen är vänd mot.</p>
+<p>På så sätt kan du montera telefonen längs sidan på ett teleskoprör så att skärmen är vinkelrät mot röret medan kartan fortfarande följer vad teleskopet är riktat mot.</p>]]></string>
 </resources>

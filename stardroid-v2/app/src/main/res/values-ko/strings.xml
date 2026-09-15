@@ -251,14 +251,20 @@
     <string name="location_keep_waiting" translation_description="Button to keep waiting for an automatic location fix">계속 기다리기</string>
     <string name="location_manual_entry_title" translation_description="Title of the dialog where the user types their location manually">위치 입력</string>
     <string name="location_place_name_hint" translation_description="Placeholder text in the place name input field">도시 또는 장소 이름</string>
-    <string name="location_latitude_hint" translation_description="Placeholder text in the latitude input field">위도 (예: 51.5)</string>
-    <string name="location_longitude_hint" translation_description="Placeholder text in the longitude input field">경도 (예: -0.1)</string>
+    <string name="location_latitude_hint" translation_description="Floating label above the latitude input field. Kept short so it doesn't wrap next to the N/S hemisphere toggle.">위도</string>
+    <!-- tm:omitted name="location_latitude_placeholder" reason="identical_to_source" -->
+    <string name="location_longitude_hint" translation_description="Floating label above the longitude input field. Kept short so it doesn't wrap next to the E/W hemisphere toggle.">경도</string>
+    <!-- tm:omitted name="location_longitude_placeholder" reason="identical_to_source" -->
     <string name="location_resolve_button" translation_description="Button that looks up coordinates for a typed place name">확인</string>
     <string name="location_set_button" translation_description="Button that confirms and applies the manually entered location">위치 설정</string>
     <string name="location_place_not_found" translation_description="Inline error shown when a place name search returns no results">장소를 찾을 수 없습니다. 더 구체적인 이름을 시도해 보세요.</string>
     <string name="location_geocoder_offline" translation_description="Inline message shown when geocoding fails because there is no internet connection">인터넷 연결 없음 — 좌표를 직접 입력하세요.</string>
     <string name="location_invalid_latitude" translation_description="Validation error for latitude values outside the valid range">위도는 -90에서 90 사이여야 합니다.</string>
     <string name="location_invalid_longitude" translation_description="Validation error for longitude values outside the valid range">경도는 -180에서 180 사이여야 합니다.</string>
+    <string name="location_hemisphere_north_description" translation_description="Accessibility label for the latitude hemisphere toggle button, selected for a positive value">북반구 (양수 위도)</string>
+    <string name="location_hemisphere_south_description" translation_description="Accessibility label for the latitude hemisphere toggle button, selected for a negative value">남반구 (음수 위도)</string>
+    <string name="location_hemisphere_east_description" translation_description="Accessibility label for the longitude hemisphere toggle button, selected for a positive value">동반구 (양수 경도)</string>
+    <string name="location_hemisphere_west_description" translation_description="Accessibility label for the longitude hemisphere toggle button, selected for a negative value">서반구 (음수 경도)</string>
     <!-- tm:omitted name="location_coordinate_format" reason="identical_to_source" -->
 
     <!-- Object info card -->
@@ -323,6 +329,27 @@
     지도를 자이로스코프 대신 나침반과 가속도계를 사용하여 가리킵니다. 지도가 흔들리거나 기기의 자이로 센서가 오작동할 때 시도해 보세요. 자이로 센서가 없는 기기는 이 센서들을 자동으로 사용합니다.
     </string>
     <string name="settings_classic_sensors_only" translation_description="Summary noting a sensor preference only applies to the legacy non-gyroscope sensor path">레거시 센서 사용 시에만 적용됩니다</string>
+    <string name="settings_smoothing" translation_description="Preference title for the switch that turns sensor smoothing on or off">센서 움직임 부드럽게 하기</string>
+    <string name="settings_smoothing_summary" translation_description="Explanation of the sensor smoothing switch: it steadies the sky view, is on by default during a beta trial, invites feedback, and explains how to turn it off">
+    밤하늘 화면을 안정화합니다. 이 기능은 새로 추가되었으며 조정하는 동안 기본적으로 켜져 있습니다. 지연, 떨림 또는 이상한 점이 있으면 피드백을 보내주세요. 원본 센서를 사용하려면 언제든지 여기에서 끌 수 있습니다.
+    </string>
+    <string name="settings_steadiness" translation_description="Preference title for how much the sky view is steadied while the phone is held still">안정감</string>
+    <string name="settings_steadiness_summary" translation_description="Explanation of the steadiness preference and its trade-off">
+    휴대폰을 가만히 들고 있을 때 화면이 흔들리지 않도록 보정하는 정도입니다. 설정이 높을수록 흔들림이 적어지지만 화면이 안정되는 데 시간이 조금 더 걸립니다.
+    </string>
+    <string name="settings_steadiness_low" translation_description="Least steadying of the view when the phone is held still">낮음</string>
+    <string name="settings_steadiness_medium" translation_description="Moderate steadying of the view when the phone is held still">중간</string>
+    <string name="settings_steadiness_high" translation_description="Strong steadying of the view when the phone is held still">높음</string>
+    <string name="settings_steadiness_very_high" translation_description="Very strong steadying of the view when the phone is held still">매우 높음</string>
+    <string name="settings_steadiness_extreme" translation_description="Extremely strong steadying of the view when the phone is held still, for devices with noisy sensors">매우 높음(극한)</string>
+    <string name="settings_ease_off" translation_description="Preference title for how much the steadying relaxes once the phone starts moving">움직일 때 완화</string>
+    <string name="settings_ease_off_summary" translation_description="Explanation of the ease-off preference and its trade-off">
+    움직이기 시작할 때 화면 보정 기능이 얼마나 완화되어 화면이 사용자의 움직임을 잘 따라가게 할지 설정합니다. 정지해 있거나 움직일 때 동일한 정도로 화면을 보정하려면 \'없음\'을 선택하세요.
+    </string>
+    <string name="settings_ease_off_none" translation_description="Steadying does not relax at all when the phone moves">없음</string>
+    <string name="settings_ease_off_low" translation_description="Steadying relaxes a little when the phone moves">조금</string>
+    <string name="settings_ease_off_medium" translation_description="Steadying relaxes a moderate amount when the phone moves">보통</string>
+    <string name="settings_ease_off_high" translation_description="Steadying relaxes a lot when the phone moves">많이</string>
     <string name="settings_reverse_magnetic_z" translation_description="Preference title for reversing the magnetometer Z axis, a workaround for devices with a mis-mounted compass sensor">자기 Z축 반전</string>
     <string name="settings_magnetic_correction">자기 수정 사용</string>
     <string name="settings_magnetic_correction_summary" translation_description="Summary for the magnetic correction preference">나침반을 자기 북극과 진북의 차이에 맞게 보정합니다</string>

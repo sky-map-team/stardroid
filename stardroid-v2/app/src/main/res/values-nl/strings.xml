@@ -256,13 +256,19 @@
     <string name="location_manual_entry_title">Voer je locatie in</string>
     <string name="location_place_name_hint">Plaats of plaatsnaam</string>
     <string name="location_latitude_hint">Breedtegraad (bijv. 51,5)</string>
+    <string name="location_latitude_placeholder" translation_description="Example value shown in the latitude field before the user types anything; disappears once they start typing. The sign is set by a separate N/S toggle, so this is always a positive number.">51,5</string>
     <string name="location_longitude_hint">Lengtegraad (bijv. -0,1)</string>
+    <string name="location_longitude_placeholder" translation_description="Example value shown in the longitude field before the user types anything; disappears once they start typing. The sign is set by a separate E/W toggle, so this is always a positive number.">0,1</string>
     <string name="location_resolve_button">Zoeken</string>
     <string name="location_set_button">Locatie instellen</string>
     <string name="location_place_not_found">Plaats niet gevonden — probeer een specifiekere naam</string>
     <string name="location_geocoder_offline">Geen internet — voer coördinaten rechtstreeks in</string>
     <string name="location_invalid_latitude">Breedtegraad moet tussen −90 en 90 liggen</string>
     <string name="location_invalid_longitude">Lengtegraad moet tussen −180 en 180 liggen</string>
+    <string name="location_hemisphere_north_description" translation_description="Accessibility label for the latitude hemisphere toggle button, selected for a positive value">Noordelijk halfrond (positieve breedtegraad)</string>
+    <string name="location_hemisphere_south_description" translation_description="Accessibility label for the latitude hemisphere toggle button, selected for a negative value">Zuidelijk halfrond (negatieve breedtegraad)</string>
+    <string name="location_hemisphere_east_description" translation_description="Accessibility label for the longitude hemisphere toggle button, selected for a positive value">Oostelijk halfrond (positieve lengtegraad)</string>
+    <string name="location_hemisphere_west_description" translation_description="Accessibility label for the longitude hemisphere toggle button, selected for a negative value">Westelijk halfrond (negatieve lengtegraad)</string>
     <!-- tm:omitted name="location_coordinate_format" reason="identical_to_source" -->
 
     <!-- Object info card -->
@@ -331,6 +337,27 @@
     Richting geven aan de kaart met het kompas en de versnellingsmeter in plaats van de gyroscoop. Probeer dit als de kaart afdrijft of als de gyroscoop van je apparaat hapert; apparaten zonder gyroscoop gebruiken deze sensoren automatisch.
     </string>
     <string name="settings_classic_sensors_only" translation_description="Summary noting a sensor preference only applies to the legacy non-gyroscope sensor path">Alleen van toepassing wanneer oudere sensoren in gebruik zijn</string>
+    <string name="settings_smoothing" translation_description="Preference title for the switch that turns sensor smoothing on or off">Sensorbeweging vervlakken</string>
+    <string name="settings_smoothing_summary" translation_description="Explanation of the sensor smoothing switch: it steadies the sky view, is on by default during a beta trial, invites feedback, and explains how to turn it off">
+    Maakt het sterrenbeeld rustiger. Dit is nieuw en staat standaard aan terwijl we het afstemmen — als je vertraging, schokkerigheid of iets vreemd merkt, horen we dat graag. Schakel dit hier op elk moment uit als je liever de ruwe sensor gebruikt.
+    </string>
+    <string name="settings_steadiness" translation_description="Preference title for how much the sky view is steadied while the phone is held still">Stabiliteit</string>
+    <string name="settings_steadiness_summary" translation_description="Explanation of the steadiness preference and its trade-off">
+    Hoe sterk het beeld wordt gestabiliseerd terwijl je de telefoon stilhoudt. Hogere instellingen trillen minder maar hebben even de tijd nodig om tot rust te komen.
+    </string>
+    <string name="settings_steadiness_low" translation_description="Least steadying of the view when the phone is held still">Laag</string>
+    <string name="settings_steadiness_medium" translation_description="Moderate steadying of the view when the phone is held still">Gemiddeld</string>
+    <string name="settings_steadiness_high" translation_description="Strong steadying of the view when the phone is held still">Hoog</string>
+    <string name="settings_steadiness_very_high" translation_description="Very strong steadying of the view when the phone is held still">Zeer hoog</string>
+    <string name="settings_steadiness_extreme" translation_description="Extremely strong steadying of the view when the phone is held still, for devices with noisy sensors">Extreem</string>
+    <string name="settings_ease_off" translation_description="Preference title for how much the steadying relaxes once the phone starts moving">Loslaten bij beweging</string>
+    <string name="settings_ease_off_summary" translation_description="Explanation of the ease-off preference and its trade-off">
+    Hoe sterk de stabilisatie vermindert zodra je begint te bewegen, zodat het beeld je kan bijbenen. Kies Geen om het beeld altijd in dezelfde mate te stabiliseren, ongeacht of het stilstaat of beweegt.
+    </string>
+    <string name="settings_ease_off_none" translation_description="Steadying does not relax at all when the phone moves">Geen</string>
+    <string name="settings_ease_off_low" translation_description="Steadying relaxes a little when the phone moves">Een beetje</string>
+    <string name="settings_ease_off_medium" translation_description="Steadying relaxes a moderate amount when the phone moves">Matig</string>
+    <string name="settings_ease_off_high" translation_description="Steadying relaxes a lot when the phone moves">Veel</string>
     <string name="settings_reverse_magnetic_z">Magnetische Z omkeren</string>
     <string name="settings_magnetic_correction">Magnetische correctie gebruiken</string>
     <string name="settings_magnetic_correction_summary" translation_description="Summary for the magnetic correction preference">Corrigeert het kompas voor het verschil tussen magnetisch en geografisch noorden</string>

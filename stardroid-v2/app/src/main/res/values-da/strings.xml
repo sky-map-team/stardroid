@@ -258,13 +258,19 @@
     <string name="location_manual_entry_title">Angiv din placering</string>
     <string name="location_place_name_hint">By eller stedsnavn</string>
     <string name="location_latitude_hint">Breddegrad (f.eks. 51,5)</string>
+    <!-- tm:omitted name="location_latitude_placeholder" reason="identical_to_source" -->
     <string name="location_longitude_hint">Længdegrad (f.eks. -0,1)</string>
+    <!-- tm:omitted name="location_longitude_placeholder" reason="identical_to_source" -->
     <string name="location_resolve_button">Løs</string>
     <string name="location_set_button">Indstil placering</string>
     <string name="location_place_not_found">Sted ikke fundet — prøv et mere specifikt navn</string>
     <string name="location_geocoder_offline">Ingen internet — angiv koordinater direkte</string>
     <string name="location_invalid_latitude">Breddegrad skal være mellem −90 og 90</string>
     <string name="location_invalid_longitude">Længdegrad skal være mellem −180 og 180</string>
+    <string name="location_hemisphere_north_description" translation_description="Accessibility label for the latitude hemisphere toggle button, selected for a positive value">Den nordlige hemisfære (positiv breddegrad)</string>
+    <string name="location_hemisphere_south_description" translation_description="Accessibility label for the latitude hemisphere toggle button, selected for a negative value">Den sydlige hemisfære (negativ breddegrad)</string>
+    <string name="location_hemisphere_east_description" translation_description="Accessibility label for the longitude hemisphere toggle button, selected for a positive value">Den østlige hemisfære (positiv længdegrad)</string>
+    <string name="location_hemisphere_west_description" translation_description="Accessibility label for the longitude hemisphere toggle button, selected for a negative value">Den vestlige hemisfære (negativ længdegrad)</string>
     <!-- tm:omitted name="location_coordinate_format" reason="identical_to_source" -->
 
     <!-- Object info card -->
@@ -331,6 +337,27 @@
     Ret kortet ved hjælp af kompasset og accelerometeret i stedet for gyroskopet. Prøv dette, hvis kortet driver, eller din enheds gyro driller; enheder uden en gyro bruger disse sensorer automatisk.
     </string>
     <string name="settings_classic_sensors_only" translation_description="Summary noting a sensor preference only applies to the legacy non-gyroscope sensor path">Gælder kun når ældre sensorer er i brug</string>
+    <string name="settings_smoothing" translation_description="Preference title for the switch that turns sensor smoothing on or off">Udæmpet sensorbevægelse</string>
+    <string name="settings_smoothing_summary" translation_description="Explanation of the sensor smoothing switch: it steadies the sky view, is on by default during a beta trial, invites feedback, and explains how to turn it off">
+    Gør himmelvisningen mere stabil. Dette er nyt og slået til som standard, mens vi finjusterer det – hvis du oplever forsinkelser, rystelser eller andet usædvanligt, vil vi meget gerne høre fra dig. Du kan slå det fra her når som helst, hvis du hellere vil bruge de rå sensorer.
+    </string>
+    <string name="settings_steadiness" translation_description="Preference title for how much the sky view is steadied while the phone is held still">Stabilitet</string>
+    <string name="settings_steadiness_summary" translation_description="Explanation of the steadiness preference and its trade-off">
+    Hvor meget billedet stabiliseres, når du holder telefonen stille. Højere indstillinger ryster mindre, men tager et øjeblik længere om at falde til ro.
+    </string>
+    <string name="settings_steadiness_low" translation_description="Least steadying of the view when the phone is held still">Lav</string>
+    <!-- tm:omitted name="settings_steadiness_medium" reason="identical_to_source" -->
+    <string name="settings_steadiness_high" translation_description="Strong steadying of the view when the phone is held still">Høj</string>
+    <string name="settings_steadiness_very_high" translation_description="Very strong steadying of the view when the phone is held still">Meget høj</string>
+    <string name="settings_steadiness_extreme" translation_description="Extremely strong steadying of the view when the phone is held still, for devices with noisy sensors">Ekstrem</string>
+    <string name="settings_ease_off" translation_description="Preference title for how much the steadying relaxes once the phone starts moving">Giv efter ved bevægelse</string>
+    <string name="settings_ease_off_summary" translation_description="Explanation of the ease-off preference and its trade-off">
+    Hvor meget stabiliseringen slappes, når du begynder at bevæge dig, så udsigten kan følge med dig. Vælg Ingen for at stabilisere udsigten med den samme mængde, uanset om den står stille eller bevæger sig.
+    </string>
+    <string name="settings_ease_off_none" translation_description="Steadying does not relax at all when the phone moves">Ingen</string>
+    <string name="settings_ease_off_low" translation_description="Steadying relaxes a little when the phone moves">Lidt</string>
+    <string name="settings_ease_off_medium" translation_description="Steadying relaxes a moderate amount when the phone moves">Moderat</string>
+    <string name="settings_ease_off_high" translation_description="Steadying relaxes a lot when the phone moves">Meget</string>
     <string name="settings_reverse_magnetic_z">Omvendt magnetisk Z</string>
     <string name="settings_magnetic_correction">Brug magnetisk korrektion</string>
     <string name="settings_magnetic_correction_summary" translation_description="Summary for the magnetic correction preference">Korrigerer kompasset for forskellen mellem magnetisk og sand nord</string>

@@ -262,13 +262,19 @@
     <string name="location_manual_entry_title">موقعیت خود را وارد کنید</string>
     <string name="location_place_name_hint">نام شهر یا مکان</string>
     <string name="location_latitude_hint">عرض جغرافیایی (مثلاً 51.5)</string>
+    <!-- tm:omitted name="location_latitude_placeholder" reason="identical_to_source" -->
     <string name="location_longitude_hint">طول جغرافیایی (مثلاً -0.1)</string>
+    <!-- tm:omitted name="location_longitude_placeholder" reason="identical_to_source" -->
     <string name="location_resolve_button">تعیین</string>
     <string name="location_set_button">تعیین موقعیت</string>
     <string name="location_place_not_found">مکان یافت نشد — نام دقیق‌تری را امتحان کنید</string>
     <string name="location_geocoder_offline">بدون اینترنت — مختصات را مستقیماً وارد کنید</string>
     <string name="location_invalid_latitude">عرض جغرافیایی باید بین −90 و 90 باشد</string>
     <string name="location_invalid_longitude">طول جغرافیایی باید بین −180 و 180 باشد</string>
+    <string name="location_hemisphere_north_description" translation_description="Accessibility label for the latitude hemisphere toggle button, selected for a positive value">نیمکره شمالی (عرض جغرافیایی مثبت)</string>
+    <string name="location_hemisphere_south_description" translation_description="Accessibility label for the latitude hemisphere toggle button, selected for a negative value">نیمکره جنوبی (عرض جغرافیایی منفی)</string>
+    <string name="location_hemisphere_east_description" translation_description="Accessibility label for the longitude hemisphere toggle button, selected for a positive value">نیمکره شرقی (طول جغرافیایی مثبت)</string>
+    <string name="location_hemisphere_west_description" translation_description="Accessibility label for the longitude hemisphere toggle button, selected for a negative value">نیمکره غربی (طول جغرافیایی منفی)</string>
     <!-- tm:omitted name="location_coordinate_format" reason="identical_to_source" -->
 
     <!-- Object info card -->
@@ -333,6 +339,27 @@
     نقشه را با استفاده از قطب‌نما و شتاب‌سنج به جای ژیروسکوپ جهت‌دهی کنید. اگر نقشه منحرف می‌شود یا ژیروسکوپ دستگاه شما درست کار نمی‌کند، این گزینه را امتحان کنید؛ دستگاه‌هایی که ژیروسکوپ ندارند به طور خودکار از این حسگرها استفاده می‌کنند.
     </string>
     <string name="settings_classic_sensors_only" translation_description="Summary noting a sensor preference only applies to the legacy non-gyroscope sensor path">فقط هنگام استفاده از حسگرهای قدیمی اعمال می‌شود</string>
+    <string name="settings_smoothing" translation_description="Preference title for the switch that turns sensor smoothing on or off">حسگر حرکتی روان</string>
+    <string name="settings_smoothing_summary" translation_description="Explanation of the sensor smoothing switch: it steadies the sky view, is on by default during a beta trial, invites feedback, and explains how to turn it off">
+    نمای آسمان را ثابت می‌کند. این ویژگی جدید است و برای تنظیم دقیق آن به طور پیش‌فرض فعال است. اگر متوجه تاخیر، لرزش یا مورد عجیبی شدید، خوشحال می‌شویم نظرات خود را با ما در میان بگذارید. اگر ترجیح می‌دهید از حسگر خام استفاده کنید، می‌توانید هر زمان آن را از اینجا خاموش کنید.
+    </string>
+    <string name="settings_steadiness" translation_description="Preference title for how much the sky view is steadied while the phone is held still">ثبات</string>
+    <string name="settings_steadiness_summary" translation_description="Explanation of the steadiness preference and its trade-off">
+    میزان پایداری تصویر هنگامی که گوشی را ثابت نگه می‌دارید. مقادیر بالاتر لرزش کمتری دارند اما تثبیت آن‌ها لحظه‌ای بیشتر طول می‌کشد.
+    </string>
+    <string name="settings_steadiness_low" translation_description="Least steadying of the view when the phone is held still">کم</string>
+    <string name="settings_steadiness_medium" translation_description="Moderate steadying of the view when the phone is held still">متوسط</string>
+    <string name="settings_steadiness_high" translation_description="Strong steadying of the view when the phone is held still">زیاد</string>
+    <string name="settings_steadiness_very_high" translation_description="Very strong steadying of the view when the phone is held still">بسیار زیاد</string>
+    <string name="settings_steadiness_extreme" translation_description="Extremely strong steadying of the view when the phone is held still, for devices with noisy sensors">شدید</string>
+    <string name="settings_ease_off" translation_description="Preference title for how much the steadying relaxes once the phone starts moving">کاهش ثبات هنگام حرکت</string>
+    <string name="settings_ease_off_summary" translation_description="Explanation of the ease-off preference and its trade-off">
+    میزان کاهش پایداری هنگام شروع حرکت، به‌طوری که نما بتواند با شما همراه شود. برای حفظ پایداری یکسان در حالت ثابت یا متحرک، گزینه «هیچ» را انتخاب کنید.
+    </string>
+    <string name="settings_ease_off_none" translation_description="Steadying does not relax at all when the phone moves">هیچ‌کدام</string>
+    <string name="settings_ease_off_low" translation_description="Steadying relaxes a little when the phone moves">کمی</string>
+    <string name="settings_ease_off_medium" translation_description="Steadying relaxes a moderate amount when the phone moves">متوسط</string>
+    <string name="settings_ease_off_high" translation_description="Steadying relaxes a lot when the phone moves">زیاد</string>
     <string name="settings_reverse_magnetic_z">معکوس کردن حسگر مغناطیسی</string>
     <string name="settings_magnetic_correction">اصلاح با جهت‌نمای مغناطیسی</string>
     <string name="settings_magnetic_correction_summary" translation_description="Summary for the magnetic correction preference">قطب‌نما را برای تفاوت بین شمال مغناطیسی و شمال واقعی تصحیح می‌کند</string>

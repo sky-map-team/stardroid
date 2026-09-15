@@ -250,13 +250,19 @@
     <string name="location_manual_entry_title">輸入您的位置</string>
     <string name="location_place_name_hint">城市或地點名稱</string>
     <string name="location_latitude_hint">緯度（例如 51.5）</string>
+    <!-- tm:omitted name="location_latitude_placeholder" reason="identical_to_source" -->
     <string name="location_longitude_hint">經度（例如 -0.1）</string>
+    <!-- tm:omitted name="location_longitude_placeholder" reason="identical_to_source" -->
     <string name="location_resolve_button">解析</string>
     <string name="location_set_button">設定位置</string>
     <string name="location_place_not_found">找不到地點 — 請嘗試更具體的名稱</string>
     <string name="location_geocoder_offline">無網際網路 — 請直接輸入座標</string>
     <string name="location_invalid_latitude">緯度必須介於 −90 和 90 之間</string>
     <string name="location_invalid_longitude">經度必須介於 −180 和 180 之間</string>
+    <string name="location_hemisphere_north_description" translation_description="Accessibility label for the latitude hemisphere toggle button, selected for a positive value">北半球（正緯度）</string>
+    <string name="location_hemisphere_south_description" translation_description="Accessibility label for the latitude hemisphere toggle button, selected for a negative value">南半球（負緯度）</string>
+    <string name="location_hemisphere_east_description" translation_description="Accessibility label for the longitude hemisphere toggle button, selected for a positive value">東半球（正經度）</string>
+    <string name="location_hemisphere_west_description" translation_description="Accessibility label for the longitude hemisphere toggle button, selected for a negative value">西半球（負經度）</string>
     <!-- tm:omitted name="location_coordinate_format" reason="identical_to_source" -->
 
     <!-- Object info card -->
@@ -319,6 +325,21 @@
     <string name="settings_disable_gyro" translation_description="Preference title for switching from the gyroscope to the legacy compass + accelerometer sensor pipeline">使用舊版感測器</string>
     <string name="settings_disable_gyro_summary" translation_description="Explanation of the legacy sensors preference and when to use it">使用指南針和加速計而非陀螺儀來指向地圖。如果地圖漂移或您裝置的陀螺儀出現異常，請嘗試此選項；沒有陀螺儀的裝置會自動使用這些感測器。</string>
     <string name="settings_classic_sensors_only" translation_description="Summary noting a sensor preference only applies to the legacy non-gyroscope sensor path">僅適用於使用舊版感測器時</string>
+    <string name="settings_smoothing" translation_description="Preference title for the switch that turns sensor smoothing on or off">平滑感測器移動</string>
+    <string name="settings_smoothing_summary" translation_description="Explanation of the sensor smoothing switch: it steadies the sky view, is on by default during a beta trial, invites feedback, and explains how to turn it off">平穩星空畫面。這是新功能，在我們調整期間預設為開啟——如果您注意到延遲、抖動或任何異常狀況，歡迎告訴我們。如果您偏好使用原始感應器，隨時可以在這裡將其關閉。</string>
+    <string name="settings_steadiness" translation_description="Preference title for how much the sky view is steadied while the phone is held still">穩定度</string>
+    <string name="settings_steadiness_summary" translation_description="Explanation of the steadiness preference and its trade-off">當你持穩手機時，畫面保持平穩的程度。設定越高晃動越少，但需要稍候片刻才能穩定。</string>
+    <string name="settings_steadiness_low" translation_description="Least steadying of the view when the phone is held still">低</string>
+    <string name="settings_steadiness_medium" translation_description="Moderate steadying of the view when the phone is held still">中</string>
+    <string name="settings_steadiness_high" translation_description="Strong steadying of the view when the phone is held still">高</string>
+    <string name="settings_steadiness_very_high" translation_description="Very strong steadying of the view when the phone is held still">很高</string>
+    <string name="settings_steadiness_extreme" translation_description="Extremely strong steadying of the view when the phone is held still, for devices with noisy sensors">極高</string>
+    <string name="settings_ease_off" translation_description="Preference title for how much the steadying relaxes once the phone starts moving">移動時放寬穩定</string>
+    <string name="settings_ease_off_summary" translation_description="Explanation of the ease-off preference and its trade-off">當您開始移動時，畫面穩定效果放寬的程度，以便視圖能跟上您的動作。選擇「無」可在畫面靜止或移動時保持相同的穩定程度。</string>
+    <string name="settings_ease_off_none" translation_description="Steadying does not relax at all when the phone moves">無</string>
+    <string name="settings_ease_off_low" translation_description="Steadying relaxes a little when the phone moves">少量</string>
+    <string name="settings_ease_off_medium" translation_description="Steadying relaxes a moderate amount when the phone moves">適中</string>
+    <string name="settings_ease_off_high" translation_description="Steadying relaxes a lot when the phone moves">大量</string>
     <string name="settings_reverse_magnetic_z">磁場反向</string>
     <string name="settings_magnetic_correction">使用地磁校正</string>
     <string name="settings_magnetic_correction_summary" translation_description="Summary for the magnetic correction preference">校正指南針以修正磁北與正北之間的差異</string>

@@ -33,7 +33,25 @@
 
     <string name="help_hardware" translation_description="Help section: hardware and sensor requirements. Please do not change the markup"><![CDATA[<h2>硬件要求</h2><p>并非所有设备都能完全支持 Sky Map！</p><br/><p>您至少需要一部具备以下功能的手机：</p><p>• 磁场传感器（即指南针）— 用于指示您所朝方向<br/>• 加速度计 — 用于指示您仰望天空的高度</p><p>理想情况下还应具备：</p><p>• 陀螺仪 — 这将使运动更平滑，减少卡顿</p><blockquote><b>手机指南针众所周知不可靠。</b>如果星图显示不正确，这几乎总是您手机指南针的硬件问题 — 而不是 Sky Map 的错误。Sky Map 会准确读取您手机传感器报告的数据；它无法自动纠正错误或有偏差的读数。请参阅下面的故障排除。</blockquote><h3>我如何知道我的手机有哪些传感器？</h3><p>打开<b>设置 → 诊断</b> — 您的手机没有的任何传感器都将标记为“缺失”。您也将在教程中收到通知。</p><h3>如果我的设备缺少所需的传感器怎么办？</h3><p>Sky Map 将回退到手动模式。您仍然可以探索天空，但如果没有传感器，任何应用都无法向您显示方向。</p>]]></string>
 
-    <string name="help_troubleshooting" translation_description="Help section: troubleshooting a map that does not move or points the wrong way. Please do not change the markup"><![CDATA[<h2>故障排除</h2><h3>地图不动</h3><p>• 检查您是否处于自动模式（而非手动模式）<br/>• 检查诊断页面（<b>设置 → 诊断</b>）以确认您的设备有指南针和加速度计<br/>• 尝试“8”字校准手势：缓慢地将手机以平滑的“8”字形挥动</p><h3>地图指向错误或不准确</h3><p>Sky Map 需要三项信息才能显示正确的星空：手机朝向、您的位置和当前时间。如果地图显示不正确，很可能是其中一项出了问题。</p><p>• <b>指南针（最常见原因）：</b>这是您手机的硬件问题，而非 Sky Map 的错误。“8”字校准手势要求您的手机内部重置其指南针传感器，但<i>校准过的指南针不一定准确</i>。如果您靠近金属物体、汽车仪表盘或磁性手机壳，即使校准后地图仍可能不准确。请移至开阔区域并重复“8”字手势。<br/>• <b>位置：</b>通过<b>应用设置 → 权限</b>授予位置权限。检查诊断页面（<b>设置 → 诊断</b>）以确认您的坐标。位置缺失的一个明显症状是北极星出现在正上方。<br/>• <b>时间：</b>不太常见，但错误的时区会使整个星空偏移。检查诊断页面（<b>设置 → 诊断</b>）以确认您设备的时间和时区是否正确。</p><h3>地图抖动</h3><p>• 如果您的手机没有陀螺仪，请在传感器设置中开启<b>使用旧版传感器</b><br/>• 在<b>设置 → 传感器设置（专家）</b>下调整<b>传感器速度</b>和<b>阻尼</b><br/>（当<b>使用旧版传感器</b>开启时显示）</p><p>有关完整的故障排除详情，请参阅在线<a href="https://ts.stardroid.app">故障排除</a>指南。</p><p>如果您仍然遇到问题，请发送电子邮件至 <a href="mailto:skymapdevs@gmail.com">skymapdevs@gmail.com</a> — 您的诊断页面截图将非常有帮助。</p>]]></string>
+    <string name="help_troubleshooting" translation_description="Help section: troubleshooting a map that does not move or points the wrong way. Please do not change the markup"><![CDATA[<h2>故障排除</h2>
+<h3>星图不移动</h3>
+<p>• 请检查您是否处于自动模式（而非手动模式）<br/>
+• 检查诊断页面（<b>设置 → 诊断</b>）以确认您的设备配备了罗盘和加速度计<br/>
+• 尝试 8 字形校准手势：缓慢地在空中划出一个大而平滑的 8 字形</p>
+<h3>星图指向错误或不准确</h3>
+<p>Sky Map 需要以下三个条件来显示正确的星空：手机朝向、您的地理位置以及当前时间。如果星图看起来不正确，很可能是其中一项出现了偏差。</p>
+<p>• <b>罗盘（最常见的原因）：</b> 这是您手机的硬件问题，而非 Sky Map 的漏洞。8 字形校准手势会要求手机内部重置罗盘传感器，但<i>校准后的罗盘并不一定准确</i>。如果您靠近金属物体、汽车仪表盘或带有磁吸功能的手机壳，即使校准后星图仍可能出现偏差。请移动到开阔区域并重复 8 字形手势。<br/>
+• <b>位置：</b> 通过<b>应用设置 → 权限</b>授予位置权限。检查诊断页面（<b>设置 → 诊断</b>）以确认您的坐标。缺少位置信息的一个明显症状是北极星直接显示在头顶上方。<br/>
+• <b>时间：</b> 这种情况不太常见，但错误的时区会使整个星空发生偏移。检查诊断页面（<b>设置 → 诊断</b>）以确认您设备的时间和时区正确无误。</p>
+<h3>星图画面抖动</h3>
+<p>
+• 检查 <b>Settings → 传感器</b> — 如果<b>使用旧版传感器</b>处于开启状态，请尝试将其关闭<br/>
+• <b>平滑传感器运动</b>是一项新功能，在收集反馈期间默认开启；如果在手机静止时视图晃动，请调高<b>稳定性</b>，如果平移时感觉有延迟，请调高<b>移动时减弱</b><br/>
+• 如果您在调整期间更愿意使用原始传感器，可以在同一部分重新关闭平滑传感器运动</p>
+<p>有关完整的故障排除详情，请参阅在线 <a href="https://ts.stardroid.app">故障排除</a> 指南。</p>
+<p>如果您仍然遇到问题，请发送电子邮件至 <a href="mailto:skymapdevs@gmail.com">skymapdevs@gmail.com</a> 联系我们——附上您诊断页面的屏幕截图会非常有帮助。</p>]]></string>
 
-    <string name="help_pointer_mode" translation_description="Help section: pointer mode for telescope users. Please do not change the markup"><![CDATA[<h2>望远镜用户 — 指针模式</h2><p>在<b>设置 → 传感器设置</b>下，将<b>视图方向</b>更改为<b>指针模式</b>。在此模式下，Sky Map 会显示手机的<i>长边</i>所指向的位置，而不是屏幕所朝向的位置。</p><p>这让您可以将手机安装在望远镜筒的侧面，使屏幕垂直于镜筒，同时地图仍能追踪望远镜所指向的位置。</p>]]></string>
+    <string name="help_pointer_mode" translation_description="Help section: pointer mode for telescope users. Please do not change the markup"><![CDATA[<h2>望远镜用户 — 指针模式</h2>
+<p>在<b>设置 → 传感器</b>中，将<b>视线方向</b>更改为<b>指针模式</b>。在此模式下，Sky Map 显示的是手机<i>长边</i>所指的方向，而不是屏幕正对的方向。</p>
+<p>这使您可以将手机固定在望远镜镜筒的侧面，从而使屏幕与镜筒垂直，同时星图仍能追踪望远镜所指的目标。</p>]]></string>
 </resources>

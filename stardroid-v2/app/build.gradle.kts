@@ -20,7 +20,7 @@ android {
     defaultConfig {
         applicationId = "com.google.android.stardroid"
         versionCode = 1736
-        versionName = "2.0.5:Apollo"
+        versionName = "2.0.6:Apollo"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         // D95: CI passes -PskipGlBenchmarks=true, which the D19 perf gate reads to skip
         // itself. Set through the DSL rather than

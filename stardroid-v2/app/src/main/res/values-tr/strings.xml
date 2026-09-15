@@ -260,13 +260,19 @@
     <string name="location_manual_entry_title">Konumunuzu Girin</string>
     <string name="location_place_name_hint">Şehir veya yer adı</string>
     <string name="location_latitude_hint">Enlem (örn. 51,5)</string>
+    <!-- tm:omitted name="location_latitude_placeholder" reason="identical_to_source" -->
     <string name="location_longitude_hint">Boylam (örn. -0,1)</string>
+    <!-- tm:omitted name="location_longitude_placeholder" reason="identical_to_source" -->
     <string name="location_resolve_button">Çöz</string>
     <string name="location_set_button">Konumu Ayarla</string>
     <string name="location_place_not_found">Yer bulunamadı — daha spesifik bir ad deneyin</string>
     <string name="location_geocoder_offline">İnternet yok — koordinatları doğrudan girin</string>
     <string name="location_invalid_latitude">Enlem −90 ile 90 arasında olmalıdır</string>
     <string name="location_invalid_longitude">Boylam −180 ile 180 arasında olmalıdır</string>
+    <string name="location_hemisphere_north_description" translation_description="Accessibility label for the latitude hemisphere toggle button, selected for a positive value">Kuzey yarımküre (pozitif enlem)</string>
+    <string name="location_hemisphere_south_description" translation_description="Accessibility label for the latitude hemisphere toggle button, selected for a negative value">Güney yarımküre (negatif enlem)</string>
+    <string name="location_hemisphere_east_description" translation_description="Accessibility label for the longitude hemisphere toggle button, selected for a positive value">Doğu yarımküre (pozitif boylam)</string>
+    <string name="location_hemisphere_west_description" translation_description="Accessibility label for the longitude hemisphere toggle button, selected for a negative value">Batı yarımküre (negatif boylam)</string>
     <!-- tm:omitted name="location_coordinate_format" reason="identical_to_source" -->
 
     <!-- Object info card -->
@@ -331,6 +337,27 @@
     Pusula ve ivmeölçeri jiroskop yerine haritayı yönlendirmek için kullanın. Harita kayıyorsa veya cihazınızın jiroskopu düzgün çalışmıyorsa bunu deneyin; jiroskopu olmayan cihazlar bu sensörleri otomatik olarak kullanır.
     </string>
     <string name="settings_classic_sensors_only" translation_description="Summary noting a sensor preference only applies to the legacy non-gyroscope sensor path">Yalnızca eski sensörler kullanımda olduğunda geçerlidir</string>
+    <string name="settings_smoothing" translation_description="Preference title for the switch that turns sensor smoothing on or off">Sensör hareketini yumuşat</string>
+    <string name="settings_smoothing_summary" translation_description="Explanation of the sensor smoothing switch: it steadies the sky view, is on by default during a beta trial, invites feedback, and explains how to turn it off">
+    Gökyüzü görünümünü sabitler. Bu yenidir ve ayar yaparken varsayılan olarak açıktır; gecikme, titreme veya garip bir durum fark ederseniz geri bildirimde bulunmanızı çok isteriz. Ham sensörü kullanmayı tercih ederseniz istediğiniz zaman buradan kapatabilirsiniz.
+    </string>
+    <string name="settings_steadiness" translation_description="Preference title for how much the sky view is steadied while the phone is held still">Kararlılık</string>
+    <string name="settings_steadiness_summary" translation_description="Explanation of the steadiness preference and its trade-off">
+    Telefonu sabit tuttuğunuzda görünümün ne kadar dengeleneceği. Daha yüksek ayarlar daha az sarsıntı yapar ancak sabitlenmesi biraz daha uzun sürer.
+    </string>
+    <string name="settings_steadiness_low" translation_description="Least steadying of the view when the phone is held still">Düşük</string>
+    <string name="settings_steadiness_medium" translation_description="Moderate steadying of the view when the phone is held still">Orta</string>
+    <string name="settings_steadiness_high" translation_description="Strong steadying of the view when the phone is held still">Yüksek</string>
+    <string name="settings_steadiness_very_high" translation_description="Very strong steadying of the view when the phone is held still">Çok yüksek</string>
+    <string name="settings_steadiness_extreme" translation_description="Extremely strong steadying of the view when the phone is held still, for devices with noisy sensors">Aşırı</string>
+    <string name="settings_ease_off" translation_description="Preference title for how much the steadying relaxes once the phone starts moving">Hareket ederken yumuşatmayı azalt</string>
+    <string name="settings_ease_off_summary" translation_description="Explanation of the ease-off preference and its trade-off">
+    Hareket etmeye başladığınızda sabitlemenin ne ölçüde gevşeyeceği, böylece görünümün size ayak uydurması. Görünümün sabit veya hareketli olmasına bakılmaksızın aynı miktarda sabitlenmesi için Hiçbiri seçeneğini belirleyin.
+    </string>
+    <string name="settings_ease_off_none" translation_description="Steadying does not relax at all when the phone moves">Hiçbiri</string>
+    <string name="settings_ease_off_low" translation_description="Steadying relaxes a little when the phone moves">Az</string>
+    <string name="settings_ease_off_medium" translation_description="Steadying relaxes a moderate amount when the phone moves">Orta</string>
+    <string name="settings_ease_off_high" translation_description="Steadying relaxes a lot when the phone moves">Çok</string>
     <string name="settings_reverse_magnetic_z">Manyetik Z Tersi</string>
     <string name="settings_magnetic_correction">Manyetik düzeltmeyi uygulayın</string>
     <string name="settings_magnetic_correction_summary" translation_description="Summary for the magnetic correction preference">Pusulayı manyetik ve coğrafi kuzey arasındaki farka göre düzeltir</string>

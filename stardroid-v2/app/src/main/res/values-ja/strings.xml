@@ -252,13 +252,19 @@
     <string name="location_manual_entry_title">現在地を入力</string>
     <string name="location_place_name_hint">都市または場所の名前</string>
     <string name="location_latitude_hint">緯度（例：51.5）</string>
+    <!-- tm:omitted name="location_latitude_placeholder" reason="identical_to_source" -->
     <string name="location_longitude_hint">経度（例：-0.1）</string>
+    <!-- tm:omitted name="location_longitude_placeholder" reason="identical_to_source" -->
     <string name="location_resolve_button">検索</string>
     <string name="location_set_button">現在地を設定</string>
     <string name="location_place_not_found">場所が見つかりません。より詳しい名前を入力してください</string>
     <string name="location_geocoder_offline">インターネットがありません。座標を直接入力してください</string>
     <string name="location_invalid_latitude">緯度は−90～90の間である必要があります</string>
     <string name="location_invalid_longitude">経度は−180～180の間である必要があります</string>
+    <string name="location_hemisphere_north_description" translation_description="Accessibility label for the latitude hemisphere toggle button, selected for a positive value">北半球（北緯）</string>
+    <string name="location_hemisphere_south_description" translation_description="Accessibility label for the latitude hemisphere toggle button, selected for a negative value">南半球（南緯）</string>
+    <string name="location_hemisphere_east_description" translation_description="Accessibility label for the longitude hemisphere toggle button, selected for a positive value">東半球（東経）</string>
+    <string name="location_hemisphere_west_description" translation_description="Accessibility label for the longitude hemisphere toggle button, selected for a negative value">西半球（西経）</string>
     <!-- tm:omitted name="location_coordinate_format" reason="identical_to_source" -->
 
     <!-- Object info card -->
@@ -323,6 +329,25 @@
     ジャイロスコープではなく、コンパスと加速度計を使用して地図を向けます。地図がずれたり、お使いのデバイスのジャイロが正常に動作しない場合は、これを試してください。ジャイロのないデバイスは、これらのセンサーを自動的に使用します。
     </string>
     <string name="settings_classic_sensors_only" translation_description="Summary noting a sensor preference only applies to the legacy non-gyroscope sensor path">レガシーセンサー使用時のみ適用されます</string>
+    <string name="settings_smoothing" translation_description="Preference title for the switch that turns sensor smoothing on or off">センサーの動きをスムーズにする</string>
+    <string name="settings_smoothing_summary" translation_description="Explanation of the sensor smoothing switch: it steadies the sky view, is on by default during a beta trial, invites feedback, and explains how to turn it off">
+    星空の表示を安定させます。これは新機能であり、調整中のためデフォルトでオンになっています。遅延、ちらつき、その他の異常にお気づきの際は、ぜひフィードバックをお寄せください。生のセンサーを使用したい場合は、いつでもここでオフにできます。
+    </string>
+    <string name="settings_steadiness" translation_description="Preference title for how much the sky view is steadied while the phone is held still">安定性</string>
+    <string name="settings_steadiness_summary" translation_description="Explanation of the steadiness preference and its trade-off">スマートフォンを静止させているときの表示の安定度。設定を高くすると揺れが少なくなる一方で、安定するまでに少し時間がかかります。</string>
+    <string name="settings_steadiness_low" translation_description="Least steadying of the view when the phone is held still">低</string>
+    <string name="settings_steadiness_medium" translation_description="Moderate steadying of the view when the phone is held still">中</string>
+    <string name="settings_steadiness_high" translation_description="Strong steadying of the view when the phone is held still">高</string>
+    <string name="settings_steadiness_very_high" translation_description="Very strong steadying of the view when the phone is held still">かなり高</string>
+    <string name="settings_steadiness_extreme" translation_description="Extremely strong steadying of the view when the phone is held still, for devices with noisy sensors">最高</string>
+    <string name="settings_ease_off" translation_description="Preference title for how much the steadying relaxes once the phone starts moving">移動時に緩める</string>
+    <string name="settings_ease_off_summary" translation_description="Explanation of the ease-off preference and its trade-off">
+    動き始めたときに画面ブレ補正がどの程度緩和され、視点が動きについていくようにするかを設定します。静止時と移動時で同じ強さの補正を維持するには「なし」を選択してください。
+    </string>
+    <string name="settings_ease_off_none" translation_description="Steadying does not relax at all when the phone moves">なし</string>
+    <string name="settings_ease_off_low" translation_description="Steadying relaxes a little when the phone moves">少し</string>
+    <string name="settings_ease_off_medium" translation_description="Steadying relaxes a moderate amount when the phone moves">中程度</string>
+    <string name="settings_ease_off_high" translation_description="Steadying relaxes a lot when the phone moves">多く</string>
     <string name="settings_reverse_magnetic_z">磁気センサーのZ軸を反転</string>
     <string name="settings_magnetic_correction">磁気補正機能を使用</string>
     <string name="settings_magnetic_correction_summary" translation_description="Summary for the magnetic correction preference">磁北と真北の差をコンパスで補正します</string>

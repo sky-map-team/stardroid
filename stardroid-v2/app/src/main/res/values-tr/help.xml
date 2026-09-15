@@ -147,22 +147,22 @@ Aşağıdaki Sorun Giderme bölümüne bakın.</blockquote>
     <string name="help_troubleshooting" translation_description="Help section: troubleshooting a map that does not move or points the wrong way. Please do not change the markup"><![CDATA[<h2>Sorun Giderme</h2>
 <h3>Harita hareket etmiyor</h3>
 <p>• Otomatik Modda (Manuel değil) olduğunuzu kontrol edin<br/>
-• Cihazınızda bir pusula ve ivmeölçer olduğunu doğrulamak için Tanılama sayfasını (<b>Ayarlar → Tanılama</b>) kontrol edin<br/>
-• 8 rakamı kalibrasyon hareketini deneyin: telefonunuzu yavaşça büyük, pürüzsüz bir 8 rakamı şeklinde sallayın</p>
-<h3>Harita yanlış yöne bakıyor veya hatalı</h3>
-<p>Sky Map\'in doğru gökyüzünü gösterebilmesi için üç şeye ihtiyacı vardır: telefonunuzun baktığı yön, konumunuz ve geçerli saat. Harita yanlış görünüyorsa, bunlardan biri muhtemelen hatalıdır.</p>
-<p>• <b>Pusula (en yaygın neden):</b> Bu, bir Sky Map hatası değil, telefonunuzun donanımıyla ilgili bir sorundur. 8 rakamı kalibrasyon hareketi, telefonunuzun pusula sensörünü dahili olarak sıfırlamasını sağlar, ancak <i>kalibre edilmiş bir pusula her zaman doğru bir pusula değildir</i>. Metal bir nesnenin, araba torpidosunun veya manyetik telefon kılıfının yakınındaysanız kalibrasyondan sonra bile harita hatalı olabilir. Açık bir alana gidin ve 8 rakamı hareketini tekrarlayın.<br/>
-• <b>Konum:</b> <b>Uygulama Ayarları → İzinler</b> aracılığıyla konum izni verin. Koordinatlarınızı doğrulamak için Tanılama sayfasını (<b>Ayarlar → Tanılama</b>) kontrol edin. Konum eksikliğinin belirgin bir işareti, Kutup Yıldızı\'nın (Polaris) doğrudan baş üzerinde görünmesidir.<br/>
+• Cihazınızda pusula ve ivmeölçer olduğunu doğrulamak için Tanılama sayfasını (<b>Ayarlar → Tanılama</b>) kontrol edin<br/>
+• 8 rakamı kalibrasyon hareketini deneyin: telefonunuzu yavaşça büyük, akıcı bir 8 rakamı şeklinde sallayın</p>
+<h3>Harita yanlış yönü gösteriyor veya hatalı</h3>
+<p>Sky Map\'in doğru gökyüzünü göstermesi için üç şeye ihtiyacı vardır: telefonunuzun baktığı yön, konumunuz ve güncel saat. Harita yanlış görünüyorsa, bunlardan biri muhtemelen hatalıdır.</p>
+<p>• <b>Pusula (en yaygın neden):</b> Bu, bir Sky Map hatası değil, telefonunuzla ilgili donanımsal bir sorundur. 8 rakamı kalibrasyon hareketi, telefonunuzun pusula sensörünü dahili olarak sıfırlamasını ister, ancak <i>kalibre edilmiş bir pusula mutlaka doğru bir pusula değildir</i>. Metal bir nesnenin, araba torpidosunun veya manyetik telefon kılıfının yakınındaysanız, kalibrasyondan sonra bile harita yanlış gösterebilir. Açık bir alana gidin ve 8 rakamı hareketini tekrarlayın.<br/>
+• <b>Konum:</b> <b>Uygulama Ayarları → İzinler</b> aracılığıyla konum izni verin. Koordinatlarınızı doğrulamak için Tanılama sayfasını (<b>Ayarlar → Tanılama</b>) kontrol edin. Eksik konumun ele veren bir belirtisi, Kutup Yıldızı\'nın doğrudan başucunda görünmesidir.<br/>
 • <b>Zaman:</b> Daha az yaygındır, ancak yanlış bir saat dilimi tüm gökyüzünü kaydırır. Cihazınızın saatinin ve saat diliminin doğru olduğunu doğrulamak için Tanılama sayfasını (<b>Ayarlar → Tanılama</b>) kontrol edin.</p>
 <h3>Harita titriyor</h3>
 <p>
-• Telefonunuzda jiroskop yoksa, sensör ayarlarında <b>Eski sensörleri kullan</b> seçeneğini açın<br/>
-• <b>Ayarlar → Sensör Ayarları (uzmanlar için)</b> altında <b>Sensör Hızı</b> ve <b>Sönümleme</b> ayarlarını yapın
-(<b>Eski sensörleri kullan</b> açıkken gösterilir)</p>
+• <b>Ayarlar → Sensörler</b> seçeneğini kontrol edin — <b>Eski sensörleri kullan</b> açıksa, kapatmayı deneyin<br/>
+• <b>Sensör hareketini yumuşat</b> yenidir ve geri bildirim toplarken varsayılan olarak açıktır; telefon sabit tutulduğunda görünüm sakinleşene kadar <b>Kararlılık</b> değerini artırın, ardından kaydırma gecikmeli gelmeye başlarsa <b>Hareket ederken yumuşatmayı azalt</b> değerini artırın<br/>
+• Ayar yapılırken ham sensörü kullanmayı tercih ederseniz, Sensör hareketini yumuşat seçeneğini aynı bölümde tekrar kapatabilirsiniz</p>
 <p>Ayrıntılı sorun giderme bilgileri için çevrimiçi <a href="https://ts.stardroid.app">sorun giderme</a> kılavuzuna bakın.</p>
-<p>Hala sorun yaşıyorsanız, <a href="mailto:skymapdevs@gmail.com">skymapdevs@gmail.com</a> adresinden bize e-posta gönderin; Tanılama sayfanızın bir ekran görüntüsü çok yardımcı olacaktır.</p>]]></string>
+<p>Hâlâ takılıp kaldıysanız, <a href="mailto:skymapdevs@gmail.com">skymapdevs@gmail.com</a> adresinden bize e-posta gönderin — Tanılama sayfanızın bir ekran görüntüsü çok yardımcı olur.</p>]]></string>
 
     <string name="help_pointer_mode" translation_description="Help section: pointer mode for telescope users. Please do not change the markup"><![CDATA[<h2>Teleskop Kullanıcıları — İşaretçi Modu</h2>
-<p><b>Ayarlar → Sensör Ayarları</b> bölümünden <b>Görüş Yönü</b> ayarını <b>İşaretçi Modu</b> olarak değiştirin. Bu modda Sky Map, ekranın baktığı yeri değil, telefonun <i>uzun kenarının</i> işaret ettiği yeri gösterir.</p>
-<p>Bu, telefonunuzu bir teleskop tüpünün kenarına monte etmenize olanak tanır; böylece harita teleskopun neye nişan aldığını takip etmeye devam ederken ekran tüpe dik açıda durur.</p>]]></string>
+<p><b>Ayarlar → Sensörler</b> altında, <b>Görüş Yönü</b> ayarını <b>İşaretçi Modu</b> olarak değiştirin. Bu modda Sky Map, ekranın baktığı yeri değil, telefonun <i>uzun kenarının</i> işaret ettiği yeri gösterir.</p>
+<p>Bu, telefonunuzu bir teleskop borusunun yanına monte etmenizi sağlar; böylece ekran boruya dik olurken harita hâlâ teleskopun nereye nişan aldığını takip eder.</p>]]></string>
 </resources>
