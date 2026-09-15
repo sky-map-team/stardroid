@@ -256,16 +256,20 @@
     <string name="location_keep_waiting" translation_description="Button to keep waiting for an automatic location fix">Keep Waiting</string>
     <string name="location_manual_entry_title" translation_description="Title of the dialog where the user types their location manually">Enter Your Location</string>
     <string name="location_place_name_hint" translation_description="Placeholder text in the place name input field">City or place name</string>
-    <string name="location_latitude_hint" translation_description="Placeholder text in the latitude input field">Latitude (e.g. 51.5)</string>
-    <string name="location_longitude_hint" translation_description="Placeholder text in the longitude input field">Longitude (e.g. -0.1)</string>
-    <string name="location_resolve_button" translation_description="Button that looks up coordinates for a typed place name">Resolve</string>
+    <string name="location_latitude_hint" translation_description="Floating label above the latitude input field. Kept short so it doesn't wrap next to the N/S hemisphere toggle.">Latitude</string>
+    <string name="location_latitude_placeholder" translation_description="Example value shown in the latitude field before the user types anything; disappears once they start typing. The sign is set by a separate N/S toggle, so this is always a positive number.">51.5</string>
+    <string name="location_longitude_hint" translation_description="Floating label above the longitude input field. Kept short so it doesn't wrap next to the E/W hemisphere toggle.">Longitude</string>
+    <string name="location_longitude_placeholder" translation_description="Example value shown in the longitude field before the user types anything; disappears once they start typing. The sign is set by a separate E/W toggle, so this is always a positive number.">0.1</string>
+    <string name="location_resolve_button" translation_description="Accessibility label for the search-icon button that looks up coordinates for a typed place name">Resolve</string>
     <string name="location_set_button" translation_description="Button that confirms and applies the manually entered location">Set Location</string>
     <string name="location_place_not_found" translation_description="Inline error shown when a place name search returns no results">Place not found — try a more specific name</string>
     <string name="location_geocoder_offline" translation_description="Inline message shown when geocoding fails because there is no internet connection">No internet — enter coordinates directly</string>
     <string name="location_invalid_latitude" translation_description="Validation error for latitude values outside the valid range">Latitude must be between −90 and 90</string>
     <string name="location_invalid_longitude" translation_description="Validation error for longitude values outside the valid range">Longitude must be between −180 and 180</string>
-    <string name="location_toggle_sign_make_positive" translation_description="Accessibility label for the button that switches this coordinate to positive">Make positive</string>
-    <string name="location_toggle_sign_make_negative" translation_description="Accessibility label for the button that switches this coordinate to negative">Make negative</string>
+    <string name="location_hemisphere_north_description" translation_description="Accessibility label for the latitude hemisphere toggle button, selected for a positive value">Northern hemisphere (positive latitude)</string>
+    <string name="location_hemisphere_south_description" translation_description="Accessibility label for the latitude hemisphere toggle button, selected for a negative value">Southern hemisphere (negative latitude)</string>
+    <string name="location_hemisphere_east_description" translation_description="Accessibility label for the longitude hemisphere toggle button, selected for a positive value">Eastern hemisphere (positive longitude)</string>
+    <string name="location_hemisphere_west_description" translation_description="Accessibility label for the longitude hemisphere toggle button, selected for a negative value">Western hemisphere (negative longitude)</string>
     <string name="location_coordinate_format" translatable="false">%.6f</string>
 
     <!-- Object info card -->
