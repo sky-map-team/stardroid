@@ -1,0 +1,1091 @@
+<title>Sky Map — Time Travel Concepts</title>
+<style>
+  :root {
+    --bg: #131720; --surface: #1b2230; --surface2: #222b3d; --text: #e7ecf5;
+    --muted: #93a0b4; --accent: #f2b04a; --accent-ink: #131720; --line: #2a3346;
+    --good: #6fbf8a; --chipbg: rgba(242, 176, 74, 0.14);
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #f6f3ec; --surface: #fffdf8; --surface2: #f0ebdf; --text: #24282f;
+      --muted: #6a6f78; --accent: #b4711d; --accent-ink: #fffdf8; --line: #e2dcce;
+      --good: #2e7d4f; --chipbg: rgba(180, 113, 29, 0.12);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #131720; --surface: #1b2230; --surface2: #222b3d; --text: #e7ecf5;
+    --muted: #93a0b4; --accent: #f2b04a; --accent-ink: #131720; --line: #2a3346;
+    --good: #6fbf8a; --chipbg: rgba(242, 176, 74, 0.14);
+  }
+  :root[data-theme="light"] {
+    --bg: #f6f3ec; --surface: #fffdf8; --surface2: #f0ebdf; --text: #24282f;
+    --muted: #6a6f78; --accent: #b4711d; --accent-ink: #fffdf8; --line: #e2dcce;
+    --good: #2e7d4f; --chipbg: rgba(180, 113, 29, 0.12);
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg); color: var(--text); margin: 0;
+    font: 15px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  .cond { font-family: "Avenir Next Condensed", "Arial Narrow", "Roboto Condensed", sans-serif; }
+  .mono { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+          font-variant-numeric: tabular-nums; }
+  header { max-width: 1180px; margin: 0 auto; padding: 40px 24px 8px; }
+  .eyebrow { letter-spacing: 0.14em; text-transform: uppercase; font-size: 12.5px;
+             font-weight: 600; color: var(--accent); }
+  h1 { font-family: "Avenir Next Condensed", "Arial Narrow", sans-serif;
+       font-size: clamp(28px, 4vw, 40px); font-weight: 600; letter-spacing: 0.01em;
+       margin: 6px 0 4px; text-wrap: balance; }
+  header p { color: var(--muted); max-width: 68ch; margin: 6px 0 0; }
+  main { max-width: 1180px; margin: 0 auto; padding: 24px; display: grid;
+         grid-template-columns: 400px 1fr; gap: 32px; align-items: start; }
+  @media (max-width: 940px) { main { grid-template-columns: 1fr; } }
+
+  /* ---------- phone ---------- */
+  .phonewrap { position: sticky; top: 24px; }
+  @media (max-width: 940px) { .phonewrap { position: static; } }
+  .phone { width: 380px; max-width: 100%; border-radius: 34px; padding: 10px;
+           background: #06070a; border: 1px solid #2c3242;
+           box-shadow: 0 24px 60px rgba(0,0,0,0.45); margin: 0 auto; }
+  .screen { position: relative; border-radius: 26px; overflow: hidden; background: #000;
+            height: 700px; touch-action: none; }
+  .screen canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .caption { text-align: center; color: var(--muted); font-size: 13px; margin: 12px auto 0;
+             max-width: 380px; }
+
+  /* ---------- in-phone chrome ---------- */
+  .player { position: absolute; left: 50%; transform: translateX(-50%); top: 14px;
+            width: 330px; border-radius: 16px; padding: 9px 10px 10px;
+            background: rgba(20,26,38,0.86); border: 1px solid rgba(255,255,255,0.10);
+            backdrop-filter: blur(7px); color: #e7ecf5; }
+  .player.moving { background: rgba(48,36,20,0.88); border-color: rgba(242,176,74,0.36); }
+  .prow { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+  .clockread { font-size: 17px; font-weight: 600; letter-spacing: 0.01em; }
+  .ratelabel { font-size: 11.5px; color: #f2b04a; text-transform: uppercase;
+               letter-spacing: 0.08em; font-weight: 600; }
+  .ratelabel.frozen { color: #93a0b4; }
+
+  /* scrubber */
+  .scrub { position: relative; height: 40px; margin-top: 8px; cursor: ew-resize;
+           border-radius: 8px; overflow: hidden; }
+  .scrub canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .thumb { position: absolute; top: -2px; bottom: -2px; width: 2px; background: #fff;
+           box-shadow: 0 0 8px rgba(255,255,255,0.9); pointer-events: none; }
+  .thumb::after { content: ""; position: absolute; left: 50%; top: -3px; width: 9px;
+                  height: 9px; margin-left: -4.5px; border-radius: 50%; background: #fff; }
+  .nowmark { position: absolute; top: 0; bottom: 0; width: 1px; pointer-events: none;
+             background: repeating-linear-gradient(to bottom,
+               rgba(255,255,255,0.75) 0 3px, transparent 3px 6px); }
+
+  .steprow { display: flex; align-items: center; gap: 6px; margin-top: 8px; }
+  .step { flex: 0 0 auto; padding: 5px 9px; border-radius: 9px; font-size: 12px;
+          background: rgba(255,255,255,0.10); border: 1px solid rgba(255,255,255,0.10);
+          color: #e7ecf5; cursor: pointer; font-variant-numeric: tabular-nums; }
+  .step:hover { background: rgba(255,255,255,0.18); }
+  .step.wide { flex: 1 1 auto; text-align: center; }
+  .step.home { background: rgba(242,176,74,0.20); border-color: rgba(242,176,74,0.42);
+               color: #f7d9a6; }
+  .anchorrow { display: flex; gap: 4px; margin-top: 8px; }
+  .anchor { flex: 1 1 0; text-align: center; padding: 5px 2px; font-size: 11.5px;
+            border-radius: 8px; cursor: pointer; color: #b9c4d4;
+            background: rgba(255,255,255,0.06); border: 1px solid transparent; }
+  .anchor.on { background: rgba(242,176,74,0.22); border-color: rgba(242,176,74,0.5);
+               color: #f7d9a6; font-weight: 600; }
+  .anchor.disabled { opacity: 0.32; cursor: not-allowed; }
+  .hint { margin-top: 7px; font-size: 11px; color: #93a0b4; line-height: 1.35;
+          min-height: 28px; }
+
+  /* collapsed chip concept */
+  .chip { position: absolute; left: 50%; transform: translateX(-50%); top: 14px;
+          padding: 7px 14px; border-radius: 999px; font-size: 13.5px; font-weight: 600;
+          background: rgba(20,26,38,0.86); border: 1px solid rgba(255,255,255,0.12);
+          color: #e7ecf5; backdrop-filter: blur(7px); cursor: pointer; }
+
+  .modepill { position: absolute; right: 12px; bottom: 12px; padding: 6px 11px;
+              border-radius: 999px; font-size: 12px; background: rgba(20,26,38,0.82);
+              border: 1px solid rgba(255,255,255,0.12); color: #b9c4d4; cursor: pointer; }
+  .legend { position: absolute; left: 12px; bottom: 12px; font-size: 11px; color: #8f9cb0;
+            background: rgba(20,26,38,0.72); border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 9px; padding: 6px 9px; line-height: 1.5; }
+  .legend b { color: #e7ecf5; font-weight: 600; }
+
+  /* ---------- right column ---------- */
+  section { border-top: 1px solid var(--line); padding-top: 22px; margin-top: 26px; }
+  section:first-of-type { border-top: none; margin-top: 0; padding-top: 0; }
+  h2 { font-family: "Avenir Next Condensed", "Arial Narrow", sans-serif; font-size: 23px;
+       font-weight: 600; margin: 0 0 4px; }
+  h3 { font-size: 15px; margin: 18px 0 4px; }
+  p { margin: 8px 0; }
+  .lede { color: var(--muted); margin-top: 0; }
+  ul { margin: 8px 0; padding-left: 20px; } li { margin: 4px 0; }
+  .switcher { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 4px; }
+  .tab { padding: 8px 14px; border-radius: 10px; border: 1px solid var(--line);
+         background: var(--surface); color: var(--text); cursor: pointer; font-size: 14px; }
+  .tab.on { background: var(--accent); border-color: var(--accent); color: var(--accent-ink);
+            font-weight: 600; }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
+          padding: 14px 16px; margin: 12px 0; }
+  .card h4 { margin: 0 0 6px; font-size: 14.5px; }
+  .card p:last-child { margin-bottom: 0; }
+  table { border-collapse: collapse; width: 100%; font-size: 14px; margin: 10px 0; }
+  th, td { text-align: left; padding: 7px 9px; border-bottom: 1px solid var(--line);
+           vertical-align: top; }
+  th { color: var(--accent); font-size: 12px; text-transform: uppercase;
+       letter-spacing: 0.07em; }
+  .q { border-left: 3px solid var(--accent); padding: 2px 0 2px 12px; color: var(--muted);
+       margin: 12px 0; }
+  code { background: var(--surface2); padding: 1px 5px; border-radius: 4px; font-size: 13px;
+         font-family: ui-monospace, Menlo, monospace; }
+  .toggle { position: fixed; top: 14px; right: 14px; z-index: 9; padding: 7px 12px;
+            border-radius: 999px; border: 1px solid var(--line); background: var(--surface);
+            color: var(--text); cursor: pointer; font-size: 13px; }
+  footer { max-width: 1180px; margin: 0 auto; padding: 8px 24px 60px; color: var(--muted);
+           font-size: 13px; }
+</style>
+
+<button class="toggle" id="themeToggle">◐ Theme</button>
+
+<header>
+  <div class="eyebrow">Sky Map v2 · design mockup</div>
+  <h1 class="cond">Time travel — four concepts</h1>
+  <p>Interactive. The phone runs a real (simplified) sky simulation: stars, the Sun, the Moon
+  and three planets at your latitude, projected through the same alt-az geometry the app uses.
+  Drag the scrubber, step the clock, switch anchors — the sky responds the way the shipped app
+  would. Pick a concept below to change what the phone is demonstrating.</p>
+</header>
+
+<main>
+  <div class="phonewrap">
+    <div class="phone">
+      <div class="screen" id="screen">
+        <canvas id="sky"></canvas>
+
+        <div class="chip" id="chip" style="display:none">Now · 21:47</div>
+
+        <div class="player" id="player">
+          <div class="prow">
+            <div class="clockread mono" id="clockread">Tue 5 Aug · 21:47</div>
+            <div class="ratelabel frozen" id="ratelabel">Frozen</div>
+          </div>
+
+          <div class="scrub" id="scrub" style="display:none">
+            <canvas id="scrubcv"></canvas>
+            <div class="nowmark" id="nowmark"></div>
+            <div class="thumb" id="thumb"></div>
+          </div>
+
+          <div class="steprow" id="steprow">
+            <div class="step" data-step="-3600">−1h</div>
+            <div class="step" data-step="-600">−10m</div>
+            <div class="step wide home" id="homebtn">Now</div>
+            <div class="step" data-step="600">+10m</div>
+            <div class="step" data-step="3600">+1h</div>
+          </div>
+
+          <div class="steprow" id="ladderrow" style="display:none">
+            <div class="step" id="slower">◀◀</div>
+            <div class="step wide" id="playpause">❚❚</div>
+            <div class="step" id="faster">▶▶</div>
+            <div class="step home" id="homebtn2">Now</div>
+          </div>
+
+          <div class="anchorrow" id="anchorrow" style="display:none">
+            <div class="anchor on" data-anchor="ground">Ground</div>
+            <div class="anchor" data-anchor="sky">Sky</div>
+            <div class="anchor" data-anchor="sun">Sun</div>
+            <div class="anchor" data-anchor="moon">Moon</div>
+            <div class="anchor" data-anchor="mars">Mars</div>
+          </div>
+
+          <div class="hint" id="hint"></div>
+        </div>
+
+        <div class="legend" id="legend">
+          <b>Sky:</b> looking south · lat 51°N
+        </div>
+        <div class="modepill" id="modepill">Manual</div>
+      </div>
+    </div>
+    <div class="caption" id="caption">Drag the scrubber left and right.</div>
+  </div>
+
+  <div>
+    <div class="switcher">
+      <button class="tab on" data-concept="scrub">A · Scrubber</button>
+      <button class="tab" data-concept="anchor">B · Anchors</button>
+      <button class="tab" data-concept="trail">C · Trails</button>
+      <button class="tab" data-concept="ladder">D · Ladder (today)</button>
+    </div>
+
+    <div id="panels"></div>
+
+    <section>
+      <h2 class="cond">What the phone is actually simulating</h2>
+      <p class="lede">So you can trust what you're seeing, and know what it fakes.</p>
+      <ul>
+        <li><b>Real:</b> sidereal rotation at your latitude, correct rise/set geometry, the
+          Sun's annual ecliptic motion, twilight bands computed from true solar altitude, the
+          Moon's ~29.5-day phase cycle and its eastward drift, and the alt-az → screen
+          projection.</li>
+        <li><b>Faked:</b> planet positions use circular coplanar orbits (so retrograde is
+          <em>qualitatively</em> right but not ephemeris-accurate), and the star field is a
+          scattering with a handful of real bright stars placed approximately.</li>
+      </ul>
+      <p>Everything the concepts depend on — that ground-anchoring holds the horizon still,
+      that sky-anchoring holds stars still, that object-anchoring isolates relative motion —
+      is geometrically honest here.</p>
+    </section>
+  </div>
+</main>
+
+<footer>Mockup for <code>docs/design/time-travel.md</code> · matches the house style of
+<code>map-hud.html</code> and <code>camera-ar-mode.html</code>.</footer>
+
+<script>
+// ---------------------------------------------------------------- theme
+const root = document.documentElement;
+document.getElementById('themeToggle').onclick = () => {
+  const cur = root.getAttribute('data-theme')
+    || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  root.setAttribute('data-theme', cur === 'dark' ? 'light' : 'dark');
+};
+
+// ---------------------------------------------------------------- constants
+const LAT = 51.5 * Math.PI / 180;
+const SIN_LAT = Math.sin(LAT), COS_LAT = Math.cos(LAT);
+const DEG = Math.PI / 180;
+const HOUR = 3600, DAY = 86400;
+const SIDEREAL_DAY = 86164.0905;
+// Fixed epoch: 2026-08-05 21:47 local. Date.now() is deliberately not used so the
+// mockup is deterministic across reloads.
+const T0 = Date.UTC(2026, 7, 5, 21, 47, 0) / 1000;
+
+// ---------------------------------------------------------------- sky model
+// Stars: a few real bright ones (approx RA hours / Dec deg) plus filler.
+const NAMED = [
+  ['Vega',        18.62,  38.8, 0.0],
+  ['Deneb',       20.69,  45.3, 1.3],
+  ['Altair',      19.85,   8.9, 0.8],
+  ['Arcturus',    14.26,  19.2, 0.0],
+  ['Antares',     16.49, -26.4, 1.1],
+  ['Polaris',      2.53,  89.3, 2.0],
+  ['Capella',      5.28,  46.0, 0.1],
+  ['Betelgeuse',   5.92,   7.4, 0.5],
+  ['Rigel',        5.24,  -8.2, 0.2],
+  ['Sirius',       6.75, -16.7, -1.4],
+  ['Aldebaran',    4.60,  16.5, 0.9],
+  ['Spica',       13.42, -11.2, 1.0],
+  ['Pollux',       7.76,  28.0, 1.1],
+  ['Regulus',     10.14,  12.0, 1.4],
+  ['Fomalhaut',   22.96, -29.6, 1.2],
+];
+const STARS = [];
+for (const [name, raH, decD, mag] of NAMED) {
+  STARS.push({ ra: raH / 24 * 2 * Math.PI, dec: decD * DEG, mag, name });
+}
+// Deterministic filler field (LCG, no Math.random so reloads match).
+let seed = 20260805;
+const rnd = () => (seed = (seed * 1664525 + 1013904223) % 4294967296) / 4294967296;
+for (let i = 0; i < 900; i++) {
+  STARS.push({
+    ra: rnd() * 2 * Math.PI,
+    dec: Math.asin(rnd() * 2 - 1),
+    mag: 2.2 + rnd() * 3.6,
+    name: null,
+  });
+}
+
+// Local sidereal time (radians). The offset is derived, not tuned by eye: it sets the Sun's
+// hour angle at the epoch to that of 21:47 local time, which puts solar noon at 12:03,
+// sunrise at 04:33 and sunset at 19:33 — correct for 51.5°N in early August.
+const LST_OFFSET = 4.9255;
+function lst(t) { return ((t - T0) / SIDEREAL_DAY * 2 * Math.PI) + LST_OFFSET; }
+
+// Sun: circular ecliptic motion. Returns {ra, dec}.
+function sunRaDec(t) {
+  const yearFrac = (t - T0) / (365.2422 * DAY);
+  // Solar longitude at the epoch (early August) ≈ 133°.
+  const lon = (133 * DEG) + yearFrac * 2 * Math.PI;
+  const obl = 23.44 * DEG;
+  const ra = Math.atan2(Math.cos(obl) * Math.sin(lon), Math.cos(lon));
+  const dec = Math.asin(Math.sin(obl) * Math.sin(lon));
+  return { ra, dec };
+}
+
+// Moon: ecliptic longitude advancing ~13.2°/day, 5° inclined.
+function moonRaDec(t) {
+  const d = (t - T0) / DAY;
+  const lon = (95 * DEG) + d * (2 * Math.PI / 27.32158);
+  const lat = 5.1 * DEG * Math.sin(d * 2 * Math.PI / 27.212);
+  const obl = 23.44 * DEG;
+  const sl = Math.sin(lon), cl = Math.cos(lon);
+  const sb = Math.sin(lat), cb = Math.cos(lat);
+  const ra = Math.atan2(cb * sl * Math.cos(obl) - sb * Math.sin(obl), cb * cl);
+  const dec = Math.asin(sb * Math.cos(obl) + cb * Math.sin(obl) * sl);
+  return { ra, dec };
+}
+// Moon phase 0..1 (0 = new) from Sun–Moon elongation.
+function moonPhase(t) {
+  const m = moonRaDec(t), s = sunRaDec(t);
+  let e = m.ra - s.ra;
+  while (e < 0) e += 2 * Math.PI;
+  while (e > 2 * Math.PI) e -= 2 * Math.PI;
+  return e / (2 * Math.PI);
+}
+
+// Planets: circular coplanar heliocentric orbits, geocentric projection.
+const PLANETS = [
+  { key: 'venus', name: 'Venus',   a: 0.723, period: 224.7,  lon0: 210, color: '#fff2cc', r: 3.0 },
+  { key: 'mars',  name: 'Mars',    a: 1.524, period: 687.0,  lon0: 12,  color: '#ff8f6b', r: 2.8 },
+  { key: 'jupiter', name: 'Jupiter', a: 5.203, period: 4331, lon0: 96,  color: '#ffd9a0', r: 3.4 },
+];
+const EARTH = { a: 1.0, period: 365.256, lon0: 313 };
+
+function planetRaDec(p, t) {
+  const d = (t - T0) / DAY;
+  const pl = (p.lon0 * DEG) + d * 2 * Math.PI / p.period;
+  const el = (EARTH.lon0 * DEG) + d * 2 * Math.PI / EARTH.period;
+  const x = p.a * Math.cos(pl) - EARTH.a * Math.cos(el);
+  const y = p.a * Math.sin(pl) - EARTH.a * Math.sin(el);
+  const lon = Math.atan2(y, x);
+  const obl = 23.44 * DEG;
+  const ra = Math.atan2(Math.cos(obl) * Math.sin(lon), Math.cos(lon));
+  const dec = Math.asin(Math.sin(obl) * Math.sin(lon));
+  return { ra, dec };
+}
+
+// Equatorial → horizontal.
+function altAz(ra, dec, t) {
+  const H = lst(t) - ra;
+  const sinAlt = Math.sin(dec) * SIN_LAT + Math.cos(dec) * COS_LAT * Math.cos(H);
+  const alt = Math.asin(Math.max(-1, Math.min(1, sinAlt)));
+  const az = Math.atan2(-Math.cos(dec) * Math.sin(H),
+                        Math.sin(dec) * COS_LAT - Math.cos(dec) * SIN_LAT * Math.cos(H));
+  return { alt, az };
+}
+
+// ---------------------------------------------------------------- state
+const state = {
+  concept: 'scrub',
+  t: T0,               // simulated time (s)
+  anchor: 'ground',    // ground | sky | sun | moon | mars
+  mode: 'manual',      // manual | sensor
+  window: 12 * HOUR,   // scrubber half-width
+  rate: 0,             // ladder rate, sim-seconds per wall-second
+  trails: false,
+  // Camera: azimuth/altitude of screen centre, and the anchor bookkeeping.
+  camAz: 0, camAlt: 30 * DEG,
+  anchorRefT: T0,      // time at which the anchor was engaged
+  anchorRaDec: null,   // for sky/object anchors: the held reference direction
+  camOffset: null,     // for object anchors: {dAz, dAlt} camera offset from the target
+  fov: 75 * DEG,
+};
+
+const RATES = [-DAY, -HOUR, -600, -60, 0, 60, 600, HOUR, DAY];
+let rateIdx = 4;
+
+// The direction an anchor holds fixed.
+function anchorRaDecAt(anchor, t) {
+  if (anchor === 'sun') return sunRaDec(t);
+  if (anchor === 'moon') return moonRaDec(t);
+  if (anchor === 'mars') return planetRaDec(PLANETS[1], t);
+  return null;
+}
+
+// Re-anchor the camera when the clock moves from `fromT` to `toT`.
+// This is the mockup's stand-in for `reanchor(camera, oldTime, newTime)`.
+function reanchor(fromT, toT) {
+  if (state.anchor === 'ground') return;            // alt/az held: nothing to do
+  if (state.anchor === 'sky') {
+    // Hold RA/Dec: the sky rotates by the sidereal delta, so the camera follows it.
+    const dLst = lst(toT) - lst(fromT);
+    // Convert the held equatorial direction back to alt/az at the new time.
+    const held = state.anchorRaDec;
+    if (!held) return;
+    const h = altAz(held.ra, held.dec, toT);
+    state.camAz = h.az; state.camAlt = h.alt;
+    return;
+  }
+  // Object anchor: preserve the camera's offset from the target.
+  const tgt = anchorRaDecAt(state.anchor, toT);
+  if (!tgt || !state.camOffset) return;
+  const h = altAz(tgt.ra, tgt.dec, toT);
+  state.camAz = h.az + state.camOffset.dAz;
+  state.camAlt = Math.max(-80 * DEG, Math.min(80 * DEG, h.alt + state.camOffset.dAlt));
+}
+
+// Capture what the current anchor should hold, given where the camera points now.
+function captureAnchor() {
+  state.anchorRefT = state.t;
+  if (state.anchor === 'sky') {
+    // The RA/Dec currently at screen centre.
+    const H = Math.atan2(-Math.sin(state.camAz) * Math.cos(state.camAlt),
+      Math.sin(state.camAlt) * COS_LAT - Math.cos(state.camAlt) * Math.cos(state.camAz) * SIN_LAT);
+    const dec = Math.asin(Math.sin(state.camAlt) * SIN_LAT +
+      Math.cos(state.camAlt) * COS_LAT * Math.cos(state.camAz));
+    state.anchorRaDec = { ra: lst(state.t) - H, dec };
+    state.camOffset = null;
+  } else if (state.anchor === 'ground') {
+    state.anchorRaDec = null; state.camOffset = null;
+  } else {
+    const tgt = anchorRaDecAt(state.anchor, state.t);
+    const h = altAz(tgt.ra, tgt.dec, state.t);
+    let dAz = state.camAz - h.az;
+    while (dAz > Math.PI) dAz -= 2 * Math.PI;
+    while (dAz < -Math.PI) dAz += 2 * Math.PI;
+    state.camOffset = { dAz, dAlt: state.camAlt - h.alt };
+    state.anchorRaDec = null;
+  }
+}
+
+function setTime(nt) {
+  const from = state.t;
+  state.t = nt;
+  reanchor(from, nt);
+}
+
+// ---------------------------------------------------------------- projection
+// Simple gnomonic-ish projection about the camera direction.
+function project(alt, az, w, h) {
+  let dAz = az - state.camAz;
+  while (dAz > Math.PI) dAz -= 2 * Math.PI;
+  while (dAz < -Math.PI) dAz += 2 * Math.PI;
+  // Unit vector in a frame where the camera looks along +y.
+  const ca = Math.cos(alt), sa = Math.sin(alt);
+  const x = ca * Math.sin(dAz);
+  const y = ca * Math.cos(dAz);
+  const z = sa;
+  // Rotate down by camera altitude.
+  const cb = Math.cos(state.camAlt), sb = Math.sin(state.camAlt);
+  const y2 = y * cb + z * sb;
+  const z2 = -y * sb + z * cb;
+  if (y2 <= 0.08) return null;                     // behind or too near the edge
+  const scale = (w / 2) / Math.tan(state.fov / 2);
+  return { x: w / 2 + (x / y2) * scale, y: h / 2 - (z2 / y2) * scale, depth: y2 };
+}
+
+// ---------------------------------------------------------------- sky canvas
+const sky = document.getElementById('sky');
+const sctx = sky.getContext('2d');
+
+function skyBackdrop(ctx, w, h, sunAlt) {
+  // Twilight: interpolate a night→day gradient by solar altitude.
+  const a = sunAlt / DEG;
+  const k = Math.max(0, Math.min(1, (a + 18) / 24));   // -18° → 0, +6° → 1
+  const top = [
+    lerp(4, 92, k * k), lerp(6, 140, k * k), lerp(14, 208, k * k)];
+  const bot = [
+    lerp(10, 168, k), lerp(14, 196, k), lerp(26, 232, k)];
+  const g = ctx.createLinearGradient(0, 0, 0, h);
+  g.addColorStop(0, `rgb(${top.map(Math.round).join(',')})`);
+  g.addColorStop(1, `rgb(${bot.map(Math.round).join(',')})`);
+  ctx.fillStyle = g; ctx.fillRect(0, 0, w, h);
+  return k;
+}
+const lerp = (a, b, t) => a + (b - a) * t;
+
+function drawTrail(ctx, w, h, bodyFn, color, spanS, steps) {
+  ctx.save();
+  ctx.lineCap = 'round';
+  let prev = null;
+  for (let i = 0; i <= steps; i++) {
+    const tt = state.t - spanS / 2 + (spanS * i / steps);
+    const rd = bodyFn(tt);
+    const p = trailPoint(rd, tt, w, h);
+    if (p && prev) {
+      // Fade with distance in time from the current instant.
+      const d = Math.abs(tt - state.t) / (spanS / 2);
+      ctx.globalAlpha = 0.85 * (1 - d * 0.75);
+      ctx.strokeStyle = color;
+      ctx.lineWidth = 1.6;
+      ctx.beginPath(); ctx.moveTo(prev.x, prev.y); ctx.lineTo(p.x, p.y); ctx.stroke();
+    }
+    // Hour ticks. Compare whole-hour indices between adjacent samples rather than testing
+    // a modulo against zero: `%` is sign-preserving in JS, so the naive test misses ticks
+    // on the past half of the trail.
+    if (p && i > 0) {
+      const prevT = state.t - spanS / 2 + (spanS * (i - 1) / steps);
+      if (Math.floor(tt / HOUR) !== Math.floor(prevT / HOUR)) {
+        ctx.globalAlpha = 0.55; ctx.fillStyle = color;
+        ctx.fillRect(p.x - 1.5, p.y - 1.5, 3, 3);
+      }
+    }
+    prev = p;
+  }
+  ctx.restore();
+}
+
+// A trail point must be drawn in the *current camera frame*, i.e. where that body was
+// at time tt, seen through the horizon frame of the instant being displayed. For a
+// ground anchor that's simply alt/az at tt.
+function trailPoint(raDec, tt, w, h) {
+  const ha = altAz(raDec.ra, raDec.dec, tt);
+  return project(ha.alt, ha.az, w, h);
+}
+
+function drawSky() {
+  const w = sky.width, h = sky.height;
+  const t = state.t;
+  const sun = sunRaDec(t), sunH = altAz(sun.ra, sun.dec, t);
+  const k = skyBackdrop(sctx, w, h, sunH.alt);
+  const nightness = 1 - k;
+
+  // stars
+  for (const s of STARS) {
+    const ha = altAz(s.ra, s.dec, t);
+    if (ha.alt < -6 * DEG) continue;
+    const p = project(ha.alt, ha.az, w, h);
+    if (!p) continue;
+    let a = Math.max(0, Math.min(1, (3.4 - s.mag) / 3.4)) * nightness;
+    if (ha.alt < 3 * DEG) a *= Math.max(0, (ha.alt / DEG + 6) / 9);
+    if (a <= 0.02) continue;
+    const r = Math.max(0.6, (3.2 - s.mag) * 0.62);
+    sctx.globalAlpha = a;
+    sctx.fillStyle = '#ffffff';
+    sctx.beginPath(); sctx.arc(p.x, p.y, r, 0, 7); sctx.fill();
+    if (s.name && s.mag < 1.3 && a > 0.35) {
+      sctx.globalAlpha = a * 0.75; sctx.fillStyle = '#cfe0ff';
+      sctx.font = '10px system-ui'; sctx.fillText(s.name, p.x + 5, p.y - 4);
+    }
+  }
+  sctx.globalAlpha = 1;
+
+  // trails (concept C, and always for an object anchor so the motion reads)
+  if (state.trails) {
+    drawTrail(sctx, w, h, tt => sunRaDec(tt), '#ffcf6b', 12 * HOUR, 96);
+    drawTrail(sctx, w, h, tt => moonRaDec(tt), '#cfd8e8', 12 * HOUR, 96);
+    drawTrail(sctx, w, h, tt => planetRaDec(PLANETS[1], tt), '#ff8f6b', 12 * HOUR, 96);
+  }
+
+  // planets
+  for (const p of PLANETS) {
+    const rd = planetRaDec(p, t);
+    const ha = altAz(rd.ra, rd.dec, t);
+    if (ha.alt < -4 * DEG) continue;
+    const q = project(ha.alt, ha.az, w, h);
+    if (!q) continue;
+    sctx.globalAlpha = Math.max(0.25, nightness);
+    sctx.fillStyle = p.color;
+    sctx.beginPath(); sctx.arc(q.x, q.y, p.r, 0, 7); sctx.fill();
+    sctx.globalAlpha = Math.max(0.35, nightness) * 0.9;
+    sctx.fillStyle = '#e9eef8'; sctx.font = '10.5px system-ui';
+    sctx.fillText(p.name, q.x + 6, q.y - 5);
+  }
+  sctx.globalAlpha = 1;
+
+  // moon (with phase)
+  const mrd = moonRaDec(t), mh = altAz(mrd.ra, mrd.dec, t);
+  if (mh.alt > -4 * DEG) {
+    const q = project(mh.alt, mh.az, w, h);
+    if (q) {
+      const R = 9, ph = moonPhase(t);
+      sctx.save();
+      sctx.beginPath(); sctx.arc(q.x, q.y, R, 0, 7); sctx.clip();
+      sctx.fillStyle = 'rgba(160,170,190,0.30)';
+      sctx.fillRect(q.x - R, q.y - R, 2 * R, 2 * R);
+      // Lit fraction as an offset disc — enough to read the phase.
+      const illum = -Math.cos(ph * 2 * Math.PI);      // -1 new → +1 full
+      sctx.fillStyle = '#f4f1e6';
+      sctx.beginPath();
+      sctx.ellipse(q.x + (ph < 0.5 ? 1 : -1) * R * (1 - Math.abs(illum)) * 0.0,
+        q.y, R, R, 0, 0, 7);
+      sctx.fill();
+      // Carve the shadow.
+      sctx.globalCompositeOperation = 'destination-out';
+      const off = R * 2 * (ph < 0.5 ? (0.5 - ph) * 2 : (ph - 0.5) * 2);
+      sctx.beginPath();
+      sctx.arc(q.x + (ph < 0.5 ? -off : off), q.y, R * 1.02, 0, 7);
+      sctx.fill();
+      sctx.restore();
+      sctx.globalAlpha = 0.9; sctx.fillStyle = '#e9eef8'; sctx.font = '10.5px system-ui';
+      sctx.fillText('Moon', q.x + 12, q.y - 6);
+      sctx.globalAlpha = 1;
+    }
+  }
+
+  // sun
+  if (sunH.alt > -6 * DEG) {
+    const q = project(sunH.alt, sunH.az, w, h);
+    if (q) {
+      const g = sctx.createRadialGradient(q.x, q.y, 2, q.x, q.y, 30);
+      g.addColorStop(0, 'rgba(255,236,180,0.95)');
+      g.addColorStop(1, 'rgba(255,200,90,0)');
+      sctx.fillStyle = g; sctx.beginPath(); sctx.arc(q.x, q.y, 30, 0, 7); sctx.fill();
+      sctx.fillStyle = '#fff4cf';
+      sctx.beginPath(); sctx.arc(q.x, q.y, 11, 0, 7); sctx.fill();
+    }
+  }
+
+  // horizon + cardinal marks
+  drawHorizon(sctx, w, h);
+
+  // anchor reticle
+  if (state.concept === 'anchor' && state.anchor !== 'ground') {
+    sctx.strokeStyle = 'rgba(242,176,74,0.85)'; sctx.lineWidth = 1.4;
+    sctx.setLineDash([4, 4]);
+    sctx.beginPath(); sctx.arc(w / 2, h / 2, 26, 0, 7); sctx.stroke();
+    sctx.setLineDash([]);
+    sctx.fillStyle = 'rgba(242,176,74,0.95)'; sctx.font = '10px system-ui';
+    sctx.fillText('anchored', w / 2 + 30, h / 2 + 3);
+  }
+}
+
+function drawHorizon(ctx, w, h) {
+  ctx.save();
+  ctx.beginPath();
+  let started = false, pts = [];
+  for (let a = -180; a <= 180; a += 2) {
+    const p = project(0, state.camAz + a * DEG, w, h);
+    if (p) pts.push(p);
+  }
+  if (pts.length > 1) {
+    // Ground fill below the horizon line.
+    ctx.beginPath();
+    ctx.moveTo(pts[0].x, pts[0].y);
+    for (const p of pts) ctx.lineTo(p.x, p.y);
+    ctx.lineTo(pts[pts.length - 1].x, h); ctx.lineTo(pts[0].x, h);
+    ctx.closePath();
+    ctx.fillStyle = 'rgba(6,10,16,0.86)'; ctx.fill();
+    ctx.beginPath();
+    ctx.moveTo(pts[0].x, pts[0].y);
+    for (const p of pts) ctx.lineTo(p.x, p.y);
+    ctx.strokeStyle = 'rgba(120,160,200,0.55)'; ctx.lineWidth = 1.2; ctx.stroke();
+  }
+  // cardinals
+  const cards = [['N', 0], ['E', 90], ['S', 180], ['W', 270]];
+  ctx.font = '600 11px system-ui';
+  for (const [label, az] of cards) {
+    const p = project(1.5 * DEG, az * DEG, w, h);
+    if (p) {
+      ctx.fillStyle = 'rgba(160,190,220,0.85)';
+      ctx.fillText(label, p.x - 4, p.y + 14);
+    }
+  }
+  ctx.restore();
+}
+
+// ---------------------------------------------------------------- scrubber canvas
+const scrubEl = document.getElementById('scrub');
+const scrubCv = document.getElementById('scrubcv');
+const scctx = scrubCv.getContext('2d');
+
+function drawScrub() {
+  const w = scrubCv.width, h = scrubCv.height;
+  scctx.clearRect(0, 0, w, h);
+  const half = state.window;
+  const t0 = T0 - half, t1 = T0 + half;
+  // Twilight bands: sample solar altitude across the window.
+  const N = Math.min(w, 240);
+  for (let i = 0; i < N; i++) {
+    const tt = t0 + (t1 - t0) * (i / N);
+    const s = sunRaDec(tt), sh = altAz(s.ra, s.dec, tt);
+    const a = sh.alt / DEG;
+    let col;
+    if (a > 0) col = '#3a6ea8';
+    else if (a > -6) col = '#2b4a74';
+    else if (a > -12) col = '#1f3355';
+    else if (a > -18) col = '#16233c';
+    else col = '#0d1424';
+    scctx.fillStyle = col;
+    scctx.fillRect(Math.floor(i * w / N), 0, Math.ceil(w / N) + 1, h);
+  }
+  // Object-up band: when the anchored/selected object is above the horizon.
+  const bodyFn = state.anchor === 'sun' ? sunRaDec
+    : state.anchor === 'moon' ? moonRaDec
+    : state.anchor === 'mars' ? (tt => planetRaDec(PLANETS[1], tt))
+    : (tt => planetRaDec(PLANETS[1], tt));
+  scctx.globalAlpha = 0.9;
+  for (let i = 0; i < N; i++) {
+    const tt = t0 + (t1 - t0) * (i / N);
+    const rd = bodyFn(tt), ha = altAz(rd.ra, rd.dec, tt);
+    if (ha.alt > 0) {
+      scctx.fillStyle = '#f2b04a';
+      scctx.fillRect(Math.floor(i * w / N), h - 5, Math.ceil(w / N) + 1, 3);
+    }
+  }
+  scctx.globalAlpha = 1;
+  // Hour ticks + midnight labels.
+  scctx.fillStyle = 'rgba(255,255,255,0.30)';
+  const stepH = half > 3 * DAY ? 24 : half > 18 * HOUR ? 6 : 1;
+  for (let tt = Math.ceil(t0 / (stepH * HOUR)) * stepH * HOUR; tt < t1; tt += stepH * HOUR) {
+    const x = (tt - t0) / (t1 - t0) * w;
+    scctx.fillRect(x, 0, 1, 5);
+  }
+  // Event markers: sunset/sunrise crossings.
+  let prevAlt = null;
+  for (let i = 0; i <= N; i++) {
+    const tt = t0 + (t1 - t0) * (i / N);
+    const s = sunRaDec(tt), sh = altAz(s.ra, s.dec, tt).alt;
+    if (prevAlt !== null && (prevAlt > 0) !== (sh > 0)) {
+      const x = i * w / N;
+      scctx.fillStyle = sh > 0 ? '#ffd27a' : '#7fa8d8';
+      scctx.beginPath(); scctx.arc(x, h / 2, 3.2, 0, 7); scctx.fill();
+    }
+    prevAlt = sh;
+  }
+}
+
+function syncThumb() {
+  const half = state.window;
+  const frac = (state.t - (T0 - half)) / (2 * half);
+  const w = scrubEl.clientWidth;
+  document.getElementById('thumb').style.left = (frac * w) + 'px';
+  document.getElementById('nowmark').style.left = (w / 2) + 'px';
+}
+
+// ---------------------------------------------------------------- readouts
+const DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+const MONS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+function fmt(t) {
+  const d = new Date(t * 1000);
+  const hh = String(d.getUTCHours()).padStart(2, '0');
+  const mm = String(d.getUTCMinutes()).padStart(2, '0');
+  return `${DAYS[d.getUTCDay()]} ${d.getUTCDate()} ${MONS[d.getUTCMonth()]} · ${hh}:${mm}`;
+}
+function fmtDelta(dt) {
+  const s = Math.abs(dt), sign = dt < 0 ? '−' : '+';
+  if (s < 60) return 'now';
+  if (s < 3600) return `${sign}${Math.round(s / 60)}m`;
+  if (s < 86400) return `${sign}${(s / 3600).toFixed(1)}h`;
+  return `${sign}${(s / 86400).toFixed(1)}d`;
+}
+
+const HINTS = {
+  ground: 'Ground anchor — your view stays pointed at the same patch of horizon. Stars, Sun and planets rise and set past it. This is what auto mode does, and the default for manual.',
+  sky: 'Sky anchor — the view follows the stars, so the constellation you framed stays framed. The horizon sweeps past instead. Good for watching planets drift against the fixed stars.',
+  sun: 'Sun anchor — the view tracks the Sun, holding your offset from it. Everything else moves relative to daylight. Travel far and the camera will follow the Sun below the horizon.',
+  moon: 'Moon anchor — the Moon holds still while the star field slides west past it, ~13°/day. The fastest way to see the Moon\'s own motion, and its phase cycling.',
+  mars: 'Mars anchor — hold a planet still and the stars drift behind it. Step a sidereal day at a time and you isolate planetary motion, including retrograde loops.',
+};
+
+function render() {
+  drawSky();
+  if (state.concept === 'scrub' || state.concept === 'anchor' || state.concept === 'trail') {
+    drawScrub(); syncThumb();
+  }
+  document.getElementById('clockread').textContent = fmt(state.t);
+  const dt = state.t - T0;
+  const rl = document.getElementById('ratelabel');
+  if (state.concept === 'ladder') {
+    const r = RATES[rateIdx];
+    rl.className = 'ratelabel' + (r === 0 ? ' frozen' : '');
+    rl.textContent = r === 0 ? 'Frozen'
+      : (r < 0 ? '◀◀ ' : '▶▶ ') + rateLabel(Math.abs(r));
+    document.getElementById('player').className = 'player' + (r !== 0 ? ' moving' : '');
+  } else {
+    rl.className = 'ratelabel' + (Math.abs(dt) < 60 ? ' frozen' : '');
+    rl.textContent = Math.abs(dt) < 60 ? 'Now' : fmtDelta(dt);
+    document.getElementById('player').className =
+      'player' + (Math.abs(dt) >= 60 ? ' moving' : '');
+  }
+  document.getElementById('chip').textContent =
+    (Math.abs(dt) < 60 ? 'Now · ' : fmtDelta(dt) + ' · ') + fmt(state.t).split('· ')[1];
+  document.getElementById('modepill').textContent =
+    state.mode === 'manual' ? 'Manual' : 'Auto (sensors)';
+  const hint = document.getElementById('hint');
+  if (state.concept === 'anchor') hint.textContent = HINTS[state.anchor];
+  else if (state.concept === 'trail')
+    hint.textContent = 'Trails show the 12 hours around the current instant — 6 back, 6 forward. Ticks are hours. Where a trail crosses the horizon line is a rise or a set.';
+  else if (state.concept === 'scrub')
+    hint.textContent = 'The track is an information display: blue = daylight, deepening bands = civil / nautical / astronomical twilight, dark = full night. The amber strip marks when Mars is up.';
+  else hint.textContent = '';
+}
+
+function rateLabel(r) {
+  if (r >= DAY) return '1 day/sec';
+  if (r >= HOUR) return '1 hour/sec';
+  if (r >= 600) return '10 min/sec';
+  if (r >= 60) return '1 min/sec';
+  return '1 sec/sec';
+}
+
+// ---------------------------------------------------------------- interaction
+function resize() {
+  // Backing store in CSS px: all drawing code works in CSS pixel space, and the canvas
+  // is stretched to its box by CSS. Simpler than a DPR transform and sharp enough here.
+  const sr = sky.getBoundingClientRect();
+  sky.width = Math.max(1, Math.round(sr.width));
+  sky.height = Math.max(1, Math.round(sr.height));
+  const cr = scrubCv.getBoundingClientRect();
+  scrubCv.width = Math.max(1, Math.round(cr.width));
+  scrubCv.height = Math.max(1, Math.round(cr.height));
+  render();
+}
+addEventListener('resize', resize);
+
+// Scrubber drag.
+let dragging = false;
+function scrubTo(clientX) {
+  const r = scrubEl.getBoundingClientRect();
+  const frac = Math.max(0, Math.min(1, (clientX - r.left) / r.width));
+  setTime(T0 - state.window + frac * 2 * state.window);
+  render();
+}
+scrubEl.addEventListener('pointerdown', e => {
+  dragging = true; scrubEl.setPointerCapture(e.pointerId); scrubTo(e.clientX);
+});
+scrubEl.addEventListener('pointermove', e => { if (dragging) scrubTo(e.clientX); });
+scrubEl.addEventListener('pointerup', () => { dragging = false; });
+
+// Step buttons.
+for (const el of document.querySelectorAll('[data-step]')) {
+  el.onclick = () => { setTime(state.t + Number(el.dataset.step)); render(); };
+}
+document.getElementById('homebtn').onclick = () => { setTime(T0); render(); };
+document.getElementById('homebtn2').onclick = () => {
+  rateIdx = 4; state.rate = 0; setTime(T0); render();
+};
+
+// Anchor chips.
+for (const el of document.querySelectorAll('[data-anchor]')) {
+  el.onclick = () => {
+    if (el.classList.contains('disabled')) return;
+    for (const o of document.querySelectorAll('[data-anchor]')) o.classList.remove('on');
+    el.classList.add('on');
+    state.anchor = el.dataset.anchor;
+    captureAnchor();
+    render();
+  };
+}
+
+// Auto/manual pill: in sensor mode the anchor is forced to ground.
+document.getElementById('modepill').onclick = () => {
+  state.mode = state.mode === 'manual' ? 'sensor' : 'manual';
+  applyMode();
+  render();
+};
+function applyMode() {
+  const sensor = state.mode === 'sensor';
+  for (const o of document.querySelectorAll('[data-anchor]')) {
+    const isGround = o.dataset.anchor === 'ground';
+    o.classList.toggle('disabled', sensor && !isGround);
+    if (sensor) o.classList.toggle('on', isGround);
+  }
+  if (sensor) { state.anchor = 'ground'; captureAnchor(); }
+  if (state.concept === 'anchor') {
+    document.getElementById('hint').textContent = sensor
+      ? 'In auto mode the phone\'s orientation IS an alt-az measurement, so the ground anchor is forced — there is no degree of freedom to expose. The chips grey out.'
+      : HINTS[state.anchor];
+  }
+}
+
+// Ladder.
+document.getElementById('slower').onclick = () => { rateIdx = Math.max(0, rateIdx - 1); render(); };
+document.getElementById('faster').onclick = () => {
+  rateIdx = Math.min(RATES.length - 1, rateIdx + 1); render();
+};
+document.getElementById('playpause').onclick = () => { rateIdx = 4; render(); };
+
+// Ladder animation loop.
+let last = performance.now();
+function tick(now) {
+  const dt = (now - last) / 1000; last = now;
+  if (state.concept === 'ladder' && RATES[rateIdx] !== 0) {
+    setTime(state.t + RATES[rateIdx] * dt);
+    render();
+  }
+  requestAnimationFrame(tick);
+}
+requestAnimationFrame(tick);
+
+// ---------------------------------------------------------------- concepts
+const PANELS = {
+  scrub: `
+    <section>
+      <h2 class="cond">A · The scrubber replaces the speed ladder</h2>
+      <p class="lede">A position control, not a transport control.</p>
+      <p>The thirteen-step rate ladder is a tape deck: to reach 2am you press fast-forward,
+      wait, and press stop. But "what will be up in three hours?" is a <em>position</em>
+      question, and it deserves a position control. Drag the thumb; the sky follows under
+      your finger. Release and it stays.</p>
+      <p>The dashed line is the present. Everything left of it is the past.</p>
+      <h3>The track earns its pixels twice</h3>
+      <p>It is also an <b>information display</b>, readable without touching it — which is
+      the part I'd fight for hardest. The bands are computed from true solar altitude:
+      daylight, then civil, nautical and astronomical twilight, then full night. The amber
+      strip along the bottom shows when the selected object is above the horizon; the dots
+      are sunset and sunrise crossings.</p>
+      <p>So "when should I go outside to see Mars?" is answered by <em>looking</em> at the
+      control — the amber strip that overlaps the dark band is your answer. No dragging
+      required.</p>
+      <h3>Nudge buttons flank it</h3>
+      <p>Discrete steps are <b>exactly reversible</b> in a way a rate ladder can never be:
+      tap +1h four times and −1h four times and you are precisely where you started. Try it.
+      The step sizes shown are a starting proposal; a <b>1 sidereal day</b> step is the
+      astronomy-specific one worth adding, since the stars land in exactly the same place and
+      only the planets and Moon move.</p>
+      <div class="card">
+        <h4>Zoom the window</h4>
+        <p>The chips below change the scrubber's span. Same control, four scales — hours for
+        tonight, months for a conjunction.</p>
+        <div class="switcher" style="margin-top:10px">
+          <button class="tab" data-win="${6 * HOUR}">±6h</button>
+          <button class="tab on" data-win="${12 * HOUR}">±12h</button>
+          <button class="tab" data-win="${7 * DAY}">±1w</button>
+          <button class="tab" data-win="${120 * DAY}">±4mo</button>
+        </div>
+      </div>
+      <div class="q">Open question: does the scrubber live inside the player permanently, or
+      does the player stay collapsed to a chip until tapped? Concept A shows it expanded.
+      <button class="tab" id="chiptoggle" style="margin-top:8px">Toggle collapsed chip</button></div>
+    </section>`,
+
+  anchor: `
+    <section>
+      <h2 class="cond">B · Anchors — what stays still when time moves</h2>
+      <p class="lede">The choice that is currently made by accident.</p>
+      <p>Today the anchor falls out of an implementation detail: the camera stores a
+      geocentric vector, so manual mode pins RA/Dec, while sensor mode recomputes from device
+      orientation each tick and so pins alt/az. Neither was decided. Concept B makes it an
+      explicit control — <b>in manual mode only</b>.</p>
+      <p>Switch anchors below the scrubber, then drag the scrubber and watch what holds
+      still. The dashed reticle marks the anchored point.</p>
+      <table>
+        <tr><th>Anchor</th><th>Holds still</th><th>Answers</th></tr>
+        <tr><td><b>Ground</b></td><td>The horizon and compass</td>
+            <td>"What will be over that tree at 10pm?" — the default</td></tr>
+        <tr><td><b>Sky</b></td><td>The stars</td>
+            <td>"How do the planets drift against the constellations?"</td></tr>
+        <tr><td><b>Object</b></td><td>A chosen body, with your offset preserved</td>
+            <td>Retrograde loops, elongations, the Moon's own march</td></tr>
+      </table>
+      <h3>Why sensor mode gets no choice</h3>
+      <p>Tap the <b>Manual</b> pill at the bottom-right of the phone to switch to auto mode.
+      The chips grey out. The phone's orientation <em>is</em> an alt-az measurement, so the
+      camera is pinned to the ground by physics — there is no degree of freedom to expose.
+      Sky-anchoring in sensor mode would rotate the map away from where the phone points,
+      breaking the one promise auto mode makes.</p>
+      <h3>Object anchors are universal, not a curated list</h3>
+      <p>The mechanism needs one thing per tick: the target's direction at time <i>t</i>.
+      Every catalog object can answer that, so a curated list would be the same code with an
+      arbitrary filter bolted on. Instead: <b>Sun and Moon are hardcoded</b> (everyone wants
+      them, neither should need a search), and every other object arrives through selection —
+      the info card gets a <b>Track through time</b> action. The last chip is whatever you
+      last selected; here, Mars.</p>
+      <div class="card">
+        <h4>What exactly stays fixed?</h4>
+        <p>Not the target centred — that yanks the camera every tick and stops you looking at
+        something <em>near</em> the object. Instead the camera's <b>offset</b> from the target
+        is recorded when the anchor engages and re-applied each tick. Engage while centred and
+        it stays centred; engage off to one side and it stays off to one side. This mockup
+        implements it that way — pan is not wired up, but the offset math is (see
+        <code>captureAnchor</code>).</p>
+      </div>
+      <div class="q">Consequence worth deciding: object anchors must suppress the auto-level
+      spring, otherwise the field twists relative to the thing you are holding still. And an
+      anchor can drag the camera below the horizon — travel 12 hours on a Sun anchor and you
+      are staring at the ground. Honest, and the horizon layer makes it legible.</div>
+    </section>`,
+
+  trail: `
+    <section>
+      <h2 class="cond">C · Trails — the paths objects take</h2>
+      <p class="lede">Cheap, given the architecture, and the highest-value item on the list.</p>
+      <p>The Sun, Moon and Mars now draw their track across the 12 hours surrounding the
+      current instant — six back, six forward. Ticks mark hours. The line fades with distance
+      in time so "now" stays legible. Drag the scrubber and the trails slide with the clock.</p>
+      <p>Where a trail crosses the horizon line, that is a rise or a set — which is exactly
+      the case that makes an object anchor's below-horizon excursion readable rather than
+      confusing.</p>
+      <h3>Three things get called "path"</h3>
+      <ul>
+        <li><b>Trail</b> — where the object has been and will be, drawn <em>in the current
+          anchor frame</em>. Ground-anchored it is the classic rise-transit-set arc; sky-
+          anchored the same computation shows a planet's track against the stars, which is
+          where retrograde loops live. One computation, two very different pictures — a real
+          payoff for the anchor concept.</li>
+        <li><b>Analemma</b> — falls out free as a trail with a one-solar-day sample step.</li>
+        <li><b>Diurnal circle</b> — the full 24h circle for a fixed star; shows what is
+          circumpolar. Probably a grid-layer option rather than its own feature.</li>
+      </ul>
+      <h3>Cost</h3>
+      <p>The obvious worry is sampling the ephemeris N times per frame. It is avoidable: a
+      trail's <em>shape</em> only changes when the window, anchor or selection changes, so
+      compute the polyline once on those events and cache it. Per-frame cost is then just
+      re-projection, which is what the renderer does to every star anyway.</p>
+      <div class="q">Scope proposal: trails for <b>the selected object plus the Sun and
+      Moon</b>. All-planets-always is visual noise; selection-only misses the two bodies
+      everyone is actually asking about.</div>
+    </section>`,
+
+  ladder: `
+    <section>
+      <h2 class="cond">D · The ladder as it ships today</h2>
+      <p class="lede">For comparison — this is the current behaviour, running.</p>
+      <p>Press ▶▶ to accelerate through the rate ladder (1 sec/sec → 1 min/sec → 10 min/sec →
+      1 hour/sec → 1 day/sec), ❚❚ to freeze, ◀◀ to slow and reverse. This is
+      <code>TimeTravelClock</code>'s thirteen-step ladder, and the player is the shipped
+      <code>TimeTravelPlayer</code> with its amber travelling surface and direction glyphs.</p>
+      <p>Try to use it to answer "where will Mars be at 1am?" — the interaction is: accelerate,
+      watch the readout, decelerate as you approach, overshoot, reverse, creep back. That is
+      the gap concept A closes.</p>
+      <h3>What the ladder is still good for</h3>
+      <p>It should not be deleted. Watching the sky wheel is a genuinely pleasant ambient
+      experience, and the ≥1 day/sec whole-day stepping shows the annual procession of the
+      stars in a way no scrubber does. The proposal is to <b>demote, not remove</b>: play /
+      pause plus a rate chip, with the scrubber as the headline control.</p>
+      <div class="card">
+        <h4>One fix worth making either way</h4>
+        <p>The 2.5s smoothstep transition is right for a six-hour jump and disorienting for a
+        four-century one. Cap angular sky velocity instead of duration: short jumps sweep,
+        long jumps cross-fade.</p>
+      </div>
+    </section>`,
+};
+
+function setConcept(c) {
+  state.concept = c;
+  for (const t of document.querySelectorAll('[data-concept]'))
+    t.classList.toggle('on', t.dataset.concept === c);
+  document.getElementById('panels').innerHTML = PANELS[c];
+
+  const showScrub = c !== 'ladder';
+  document.getElementById('scrub').style.display = showScrub ? 'block' : 'none';
+  document.getElementById('steprow').style.display = showScrub ? 'flex' : 'none';
+  document.getElementById('ladderrow').style.display = c === 'ladder' ? 'flex' : 'none';
+  document.getElementById('anchorrow').style.display = c === 'anchor' ? 'flex' : 'none';
+  state.trails = (c === 'trail');
+
+  if (c !== 'anchor') { state.anchor = 'ground'; captureAnchor(); }
+  if (c === 'ladder') { rateIdx = 4; setTime(T0); }
+
+  const caps = {
+    scrub: 'Drag the scrubber. The bands are real twilight; the amber strip is Mars above the horizon.',
+    anchor: 'Pick an anchor, then drag the scrubber to see what holds still.',
+    trail: 'Trails span 6 hours back and 6 forward. Ticks are hours.',
+    ladder: 'Press ▶▶ to accelerate. This is the shipped behaviour.',
+  };
+  document.getElementById('caption').textContent = caps[c];
+
+  // Panel-local controls.
+  for (const b of document.querySelectorAll('[data-win]')) {
+    b.onclick = () => {
+      for (const o of document.querySelectorAll('[data-win]')) o.classList.remove('on');
+      b.classList.add('on');
+      state.window = Number(b.dataset.win);
+      render();
+    };
+  }
+  const ct = document.getElementById('chiptoggle');
+  if (ct) ct.onclick = () => {
+    const chip = document.getElementById('chip'), pl = document.getElementById('player');
+    const collapsed = chip.style.display !== 'none';
+    chip.style.display = collapsed ? 'none' : 'block';
+    pl.style.display = collapsed ? 'block' : 'none';
+  };
+  document.getElementById('chip').style.display = 'none';
+  document.getElementById('player').style.display = 'block';
+  applyMode();
+  render();
+}
+document.getElementById('chip').onclick = () => {
+  document.getElementById('chip').style.display = 'none';
+  document.getElementById('player').style.display = 'block';
+};
+for (const t of document.querySelectorAll('[data-concept]'))
+  t.onclick = () => setConcept(t.dataset.concept);
+
+captureAnchor();
+setConcept('scrub');
+resize();
+</script>

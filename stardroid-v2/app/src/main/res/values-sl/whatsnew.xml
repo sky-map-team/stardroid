@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h1>Pozdravite novi Sky Map</h1>
+<h2>Sky Map je bil popolnoma prenovljen</h2>
+<p>To je največja posodobitev v zgodovini Sky Mapa.<br/><br/>Gre za povsem novo aplikacijo od znotraj — nov pogon za upodabljanje, nov astronomski pogon, nov vmesnik — zgrajena od začetka, da bo hitrejša, natančnejša in prijetnejša za oči. Tukaj je, kaj je izboljšano:</p>
+<h2>Natančnejše</h2>
+<p>Luna je zdaj postavljena točno tam, kjer jo <em>vi</em> vidite na nebu, ne tam, kjer bi se prikazala iz središča Zemlje — popravek do celotne stopinje, dveh širin Lune. Tudi mrki in konjunkcije se zgodijo ob pravi minuti: Sonce in Luna zdaj izhajata iz popolnih analitičnih izračunov namesto iz grobih približkov klasičnega Sky Mapa, ki so lahko odstopali za pol ure.</p>
+<h2>Sončni sistem, ki izgleda resnično</h2>
+<p>Lunina faza je izračunana iz njene prave geometrije, ne izbrana iz osmih vnaprej pripravljenih slik kot prej. Meja med svetlobo in temo pade točno tja, kamor mora, vsako noč, in mož na Luni se ne vrti več, ko mesec mineva. Venera in Merkur zdaj prav tako kažeta faze, nabrekata od majhnega polnega diska do širokega srpa, ko se približujeta Zemlji, Mars pa prevzame svojo grbasto fazo. Povečajte in opazujte, kako se spreminjajo. Imate možnost prikazati planete kot glife, približno razvrščene po njihovi dejanski fizični velikosti, ali preklopiti na njihove <em>dejanske</em> velikosti na nebu. Sonce in Luna sta približno velikosti vaše konice prsta na iztegnjeni roki, medtem ko se planeti kažejo le kot pikice, dokler ne povečate.</p>
+<h2>Dotaknite se česar koli, da izveste več</h2>
+<p>Dotik za identifikacijo je zdaj privzeto vklopljen — usmerite telefon v nebo in se dotaknite katerega koli označenega objekta za njegovo informacijsko kartico: fotografijo, opis, zanimivo dejstvo ter čase, ko naslednjič vzide in zaide s točke, kjer stojite.</p>
+<h2>Poiščite več, poiščite hitreje</h2>
+<p>268 novo dodanih imen zvezd IAU zdaj označuje zemljevid, in zvezde lahko iščete tudi po njihovi Bayerjevi ali Flamsteedovi oznaki — "Alpha Cygni", "α Cyg" in "50 Cyg" vsi najdejo Deneb.</p>
+<h2>Izjemno gladko, tudi na najnovejših telefonih</h2>
+<p>Premikanje ali vlečenje neba na zaslonu z visoko hitrostjo osveževanja ne zatika več — pomikanje, zagon in hitri skok iskanja zdaj sledijo dejanski hitrosti sličic vašega zaslona, do 120 Hz, namesto fiksiranih 20 posodobitev na sekundo.</p>
+<h2>Vedite točno, kam kažete</h2>
+<p>Nov prikaz v živo prikazuje rektascenzijo in deklinacijo, višino in azimut s smerjo kompasa ter vaše trenutno vidno polje — neposredno na zemljevidu.</p>
+<h2>Lunini mrki, upodobljeni</h2>
+<p>Luna zdaj prikazuje svoj pravi bakreno-rdeč odtenek med luninim mrkom na samem zemljevidu, in njena informacijska kartica, povzetek nočnega neba in odštevanje vsi vedo, kdaj se eden bliža.</p>
+<h2>Svež videz</h2>
+<p>Nova barvna shema "Globoki vesolje / Zlata zvezda", ostrejša umetniška dela Sonca/Lune/planetov, zglajena in zmešana na vsaki ravni povečave, prenovljen začetni ogled, ki vas popelje skozi aplikacijo v živo namesto statičnih posnetkov zaslona (ponovljiv kadar koli iz menija), in osvežen pozdravni zaslon, zgrajen iz novega posnetka neba v aplikaciji.</p>
+<h2>Jasnejše glede vaše zasebnosti</h2>
+<p>Zaslon s pogoji in Pomoč zdaj natančno pojasnjujeta, za kaj se uporablja vsako dovoljenje naprave, in aplikacija ne zahteva več dovoljenja za oglaševalski ID, ki ga nikoli ni potrebovala.</p>
+<h2>¡Hola! Bonjour!</h2>
+<p>Sky Map zdaj govori 28 jezikov, v celoti prevedenih.</p>
+<h2>In to je šele začetek...</h2>
+<p>Kmalu prihaja veliko dolgo pričakovanih funkcij.</p>]]></string>
+    <string name="whats_new_support" translation_description="HTML paragraph inviting users to support the project, shown in the What's new dialog and the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h1>Podprite Sky Map</h1>
+<p>Sky Map je brezplačna in odprtokodna programska oprema. Če se vam zdi uporabna, podprite razvoj na naši strani <a href="https://github.com/sky-map-team/stardroid/?tab=readme-ov-file#support-the-project">GitHub</a> ali nam <a href="https://buymeacoffee.com/skymapdevs?utm_source=skymap&amp;utm_medium=app&amp;utm_campaign=whatsnew">kupite kavo</a>.</p>]]></string>
+    <string name="beta_user_help_text" translation_description="Usually-empty HTML content shown to beta testers asking for feedback, appended in the What's new dialog and the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[]]></string>
+</resources>

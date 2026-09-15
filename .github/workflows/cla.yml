@@ -1,0 +1,56 @@
+name: CLA Assistant
+
+# Gates pull requests on acceptance of CLA.md and records each acceptance
+# (GitHub identity, timestamp, CLA version) to a signatures file on a side branch.
+# That record — not the presence of CLA.md in the repo — is what evidences assent.
+#
+# SECURITY NOTE: this workflow uses `pull_request_target`, which runs with repository
+# secrets available even for pull requests from forks. That is required here, because a
+# fork PR must be able to record a signature. It is safe ONLY because this workflow never
+# checks out or executes contributor-supplied code — there is no `actions/checkout` step
+# below, and there must never be one. Permissions are scoped to the minimum the action
+# needs. If you add steps here, re-read
+# https://securitylab.github.com/resources/github-actions-preventing-pwn-requests/ first.
+
+on:
+  issue_comment:
+    types: [created]
+  pull_request_target:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  actions: write
+  # write, not read: signatures are stored in THIS repo, so the action commits
+  # signatures/v1/cla.json to the cla-signatures branch using GITHUB_TOKEN. With
+  # contents:read it fails as "Resource not accessible by integration" and no
+  # signature is ever recorded, however many times a contributor signs.
+  contents: write
+  pull-requests: write
+  statuses: write
+
+jobs:
+  cla:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check CLA acceptance
+        if: >
+          github.event_name == 'pull_request_target' ||
+          contains(github.event.comment.body, 'I have read the CLA Document and I hereby sign the CLA') ||
+          github.event.comment.body == 'recheck'
+        uses: contributor-assistant/github-action@v2.6.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # Fine-grained PAT with contents:write on this repo, used to commit the
+          # signatures file to the side branch below. Repository secret; see CONTRIBUTING.md.
+          PERSONAL_ACCESS_TOKEN: ${{ secrets.CLA_SIGNATURES_TOKEN }}
+        with:
+          path-to-document: https://github.com/sky-map-team/stardroid/blob/master/CLA.md
+          path-to-signatures: signatures/v1/cla.json
+          branch: cla-signatures
+          allowlist: dependabot[bot],*[bot]
+          custom-notsigned-prcomment: >
+            Thanks for contributing to Sky Map. Before this can be merged, please read
+            the [Contributor License Agreement](https://github.com/sky-map-team/stardroid/blob/master/CLA.md)
+            and accept it by posting the comment below. You only need to do this once.
+          custom-pr-sign-comment: I have read the CLA Document and I hereby sign the CLA
+          custom-allsigned-prcomment: All contributors have accepted the CLA. Thank you.

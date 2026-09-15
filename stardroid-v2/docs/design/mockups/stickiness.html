@@ -1,0 +1,681 @@
+<title>Sky Map — Stickiness UX: Widgets &amp; Notifications</title>
+<style>
+  :root {
+    --bg: #131720; --surface: #1b2230; --surface2: #222b3d; --text: #e7ecf5;
+    --muted: #93a0b4; --accent: #f2b04a; --accent-ink: #131720; --line: #2a3346;
+    --good: #6fbf8a; --chipbg: rgba(242, 176, 74, 0.14);
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #f6f3ec; --surface: #fffdf8; --surface2: #f0ebdf; --text: #24282f;
+      --muted: #6a6f78; --accent: #b4711d; --accent-ink: #fffdf8; --line: #e2dcce;
+      --good: #2e7d4f; --chipbg: rgba(180, 113, 29, 0.12);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #131720; --surface: #1b2230; --surface2: #222b3d; --text: #e7ecf5;
+    --muted: #93a0b4; --accent: #f2b04a; --accent-ink: #131720; --line: #2a3346;
+    --good: #6fbf8a; --chipbg: rgba(242, 176, 74, 0.14);
+  }
+  :root[data-theme="light"] {
+    --bg: #f6f3ec; --surface: #fffdf8; --surface2: #f0ebdf; --text: #24282f;
+    --muted: #6a6f78; --accent: #b4711d; --accent-ink: #fffdf8; --line: #e2dcce;
+    --good: #2e7d4f; --chipbg: rgba(180, 113, 29, 0.12);
+  }
+
+  /* ---- widget-world tokens: always dark, these depict the shipped app palette ---- */
+  :root {
+    --w-bg: #0E1428;          /* v2 surface */
+    --w-bg2: #1B2340;         /* v2 surfaceVariant */
+    --w-ink: #E0E1DD;         /* Starlight */
+    --w-muted: #A9B4D0;       /* onSurfaceVariant */
+    --w-gold: #FFC107;        /* Star Gold */
+    --w-gold-ink: #231A00;
+    --w-blue: #7EC8E3;        /* Lens Blue */
+    --w-line: #2A3355;        /* outlineVariant */
+    --w-good: #4DB848;        /* Planet Green */
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg); color: var(--text); margin: 0;
+    font: 15px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  .cond { font-family: "Avenir Next Condensed", "Arial Narrow", "Roboto Condensed", sans-serif; }
+  .mono { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+          font-variant-numeric: tabular-nums; }
+  header { max-width: 1100px; margin: 0 auto; padding: 40px 24px 8px; }
+  .eyebrow { letter-spacing: 0.14em; text-transform: uppercase; font-size: 12.5px;
+             font-weight: 600; color: var(--accent); }
+  h1 { font-family: "Avenir Next Condensed", "Arial Narrow", sans-serif;
+       font-size: clamp(28px, 4vw, 40px); font-weight: 600; letter-spacing: 0.01em;
+       margin: 6px 0 4px; text-wrap: balance; }
+  header p { color: var(--muted); max-width: 68ch; margin: 6px 0 0; }
+  main { max-width: 1100px; margin: 0 auto; padding: 8px 24px 80px; }
+
+  h2 { font-family: "Avenir Next Condensed", "Arial Narrow", sans-serif;
+       font-size: 26px; font-weight: 600; margin: 56px 0 4px; letter-spacing: 0.01em; }
+  h2 + p.lede { color: var(--muted); max-width: 72ch; margin: 2px 0 20px; }
+  h3 { font-size: 16px; margin: 26px 0 8px; }
+
+  /* principles strip */
+  .principles { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+                gap: 14px; margin-top: 22px; }
+  .principle { background: var(--surface); border: 1px solid var(--line);
+               border-radius: 12px; padding: 14px 16px; }
+  .principle b { display: block; margin-bottom: 4px; font-size: 14.5px; }
+  .principle span { color: var(--muted); font-size: 13.5px; line-height: 1.5; }
+
+  /* home-screen board */
+  .board-wrap { display: grid; grid-template-columns: minmax(300px, 460px) 1fr;
+                gap: 32px; align-items: start; }
+  @media (max-width: 880px) { .board-wrap { grid-template-columns: 1fr; } }
+  .homescreen {
+    border-radius: 28px; padding: 22px 18px 18px; border: 1px solid #2c3242;
+    background:
+      radial-gradient(1.2px 1.2px at 12% 18%, rgba(224,225,221,0.9) 50%, transparent 51%),
+      radial-gradient(1px 1px at 78% 9%, rgba(224,225,221,0.7) 50%, transparent 51%),
+      radial-gradient(1.4px 1.4px at 64% 31%, rgba(255,223,156,0.8) 50%, transparent 51%),
+      radial-gradient(1px 1px at 31% 44%, rgba(224,225,221,0.55) 50%, transparent 51%),
+      radial-gradient(1px 1px at 88% 52%, rgba(224,225,221,0.6) 50%, transparent 51%),
+      radial-gradient(1.3px 1.3px at 17% 71%, rgba(126,200,227,0.7) 50%, transparent 51%),
+      radial-gradient(1px 1px at 55% 82%, rgba(224,225,221,0.5) 50%, transparent 51%),
+      radial-gradient(1.2px 1.2px at 92% 88%, rgba(224,225,221,0.7) 50%, transparent 51%),
+      radial-gradient(1px 1px at 42% 12%, rgba(224,225,221,0.5) 50%, transparent 51%),
+      linear-gradient(168deg, #060819 0%, #0b1130 55%, #14183a 100%);
+    display: flex; flex-direction: column; gap: 14px;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.35);
+  }
+  .wtag { align-self: flex-start; font-size: 11px; letter-spacing: 0.12em;
+          text-transform: uppercase; color: rgba(224,225,221,0.65); font-weight: 600;
+          display: flex; align-items: center; gap: 6px; }
+  .wtag i { display: inline-block; width: 18px; height: 18px; border-radius: 50%;
+            background: var(--accent); color: var(--accent-ink); font-style: normal;
+            font-weight: 700; font-size: 11.5px; line-height: 18px; text-align: center;
+            font-family: system-ui, sans-serif; letter-spacing: 0; }
+
+  .widget { border-radius: 22px; background: rgba(14, 20, 40, 0.86);
+            border: 1px solid var(--w-line); color: var(--w-ink); padding: 14px 16px;
+            backdrop-filter: blur(2px); }
+  .widget .wlabel { font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase;
+                    color: var(--w-muted); font-weight: 600; }
+
+  .wrow2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+  /* moon widget */
+  .w-moon { display: flex; flex-direction: column; align-items: center; gap: 6px;
+            padding-top: 16px; }
+  .w-moon canvas { display: block; }
+  .w-moon .phname { font-family: "Avenir Next Condensed", "Arial Narrow", sans-serif;
+                    font-size: 18px; font-weight: 600; letter-spacing: 0.02em; }
+  .w-moon .phpct { color: var(--w-gold); font-size: 13px; font-weight: 600; }
+  .w-moon .phtimes { color: var(--w-muted); font-size: 12px; }
+
+  /* countdown widget */
+  .w-count { display: flex; flex-direction: column; align-items: center; gap: 4px;
+             padding-top: 14px; }
+  .ringbox { position: relative; width: 84px; height: 84px; }
+  .ringbox svg { display: block; }
+  .ringnum { position: absolute; inset: 0; display: flex; flex-direction: column;
+             align-items: center; justify-content: center; }
+  .ringnum b { font-size: 26px; line-height: 1; font-family: "Avenir Next Condensed",
+               "Arial Narrow", sans-serif; }
+  .ringnum span { font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase;
+                  color: var(--w-muted); }
+  .w-count .cname { font-size: 14px; font-weight: 600; margin-top: 2px; }
+  .w-count .cnote { font-size: 11.5px; color: var(--w-good); font-weight: 600; }
+
+  /* tonight widget */
+  .w-tonight .whead { display: flex; justify-content: space-between; align-items: baseline;
+                      margin-bottom: 8px; }
+  .w-tonight .sunset { color: var(--w-muted); font-size: 12px; }
+  .w-tonight ul { list-style: none; margin: 0; padding: 0; display: flex;
+                  flex-direction: column; }
+  .w-tonight li { display: flex; gap: 10px; align-items: center; padding: 7px 2px;
+                  border-top: 1px solid rgba(42, 51, 85, 0.7); font-size: 13.5px; }
+  .w-tonight li:first-child { border-top: 0; }
+  .dot { width: 8px; height: 8px; border-radius: 50%; flex: none; }
+  .dot.gold { background: var(--w-gold); }
+  .dot.blue { background: var(--w-blue); }
+  .dot.dim  { background: var(--w-muted); }
+  .w-tonight li small { margin-left: auto; color: var(--w-muted); font-size: 11.5px;
+                        white-space: nowrap; }
+
+  /* rise/set widget */
+  .w-rise { display: flex; align-items: center; gap: 16px; }
+  .w-rise .obj { min-width: 92px; }
+  .w-rise .obj b { font-family: "Avenir Next Condensed", "Arial Narrow", sans-serif;
+                   font-size: 19px; font-weight: 600; letter-spacing: 0.03em; }
+  .w-rise .obj span { display: block; font-size: 11px; color: var(--w-muted); }
+  .w-rise .times { display: flex; gap: 18px; margin-left: auto; text-align: center; }
+  .w-rise .times div span { display: block; font-size: 10px; letter-spacing: 0.12em;
+                            text-transform: uppercase; color: var(--w-muted); }
+  .w-rise .times div b { font-size: 15px; font-weight: 600; }
+  .w-rise svg { flex: none; }
+
+  /* annotations */
+  .notes { display: flex; flex-direction: column; gap: 14px; position: sticky; top: 24px; }
+  @media (max-width: 880px) { .notes { position: static; } }
+  .note { background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
+          padding: 12px 14px; font-size: 13.5px; line-height: 1.55; display: flex;
+          gap: 10px; }
+  .note i { flex: none; width: 20px; height: 20px; border-radius: 50%;
+            background: var(--accent); color: var(--accent-ink); font-style: normal;
+            font-weight: 700; font-size: 12px; line-height: 20px; text-align: center; }
+  .note b { display: block; }
+  .note span { color: var(--muted); }
+
+  /* notification shade */
+  .shade { max-width: 480px; border-radius: 24px; border: 1px solid #2c3242;
+           background: linear-gradient(180deg, #0a0d17, #10141f); padding: 18px 14px;
+           display: flex; flex-direction: column; gap: 10px;
+           box-shadow: 0 24px 60px rgba(0,0,0,0.35); }
+  .shade .clock { color: rgba(231,236,245,0.85); font-size: 13px; padding: 0 8px 4px;
+                  display: flex; justify-content: space-between; }
+  .notif { border-radius: 18px; background: #1c2331; color: #e7ecf5; padding: 12px 16px; }
+  .notif .nhead { display: flex; align-items: center; gap: 8px; font-size: 12px;
+                  color: #93a0b4; margin-bottom: 4px; }
+  .notif .appdot { width: 16px; height: 16px; border-radius: 5px;
+                   background: radial-gradient(circle at 35% 35%, #FFC107 0 40%, #0b1130 41%);
+                   flex: none; }
+  .notif .ntitle { font-weight: 600; font-size: 14.5px; }
+  .notif .nbody { font-size: 13.5px; color: #b9c2d4; margin-top: 2px; line-height: 1.5; }
+  .notif .nactions { display: flex; gap: 22px; margin-top: 10px; }
+  .notif .nactions span { color: #f2b04a; font-size: 13px; font-weight: 600;
+                          letter-spacing: 0.02em; }
+  .notif.collapsed .nbody { white-space: nowrap; overflow: hidden;
+                            text-overflow: ellipsis; }
+
+  .shade-wrap { display: grid; grid-template-columns: minmax(300px, 480px) 1fr;
+                gap: 32px; align-items: start; }
+  @media (max-width: 880px) { .shade-wrap { grid-template-columns: 1fr; } }
+
+  /* settings phone */
+  .phone { width: 340px; max-width: 100%; border-radius: 30px; padding: 9px;
+           background: #06070a; border: 1px solid #2c3242;
+           box-shadow: 0 24px 60px rgba(0,0,0,0.4); }
+  .pscreen { border-radius: 22px; overflow: hidden; background: #080C1C; color: #E0E1DD;
+             font-size: 13.5px; }
+  .pbar { display: flex; align-items: center; gap: 12px; padding: 14px 16px 10px;
+          font-family: "Avenir Next Condensed", "Arial Narrow", sans-serif;
+          font-size: 18px; font-weight: 600; letter-spacing: 0.02em; }
+  .pbar .back { color: #A9B4D0; font-size: 18px; }
+  .pintro { padding: 2px 16px 12px; color: #A9B4D0; font-size: 12.5px; line-height: 1.5; }
+  .prow { display: flex; align-items: center; gap: 12px; padding: 12px 16px;
+          border-top: 1px solid #1B2340; }
+  .prow .ptxt { flex: 1; min-width: 0; }
+  .prow .ptxt b { display: block; font-size: 14px; font-weight: 600; }
+  .prow .ptxt span { display: block; color: #A9B4D0; font-size: 11.5px; margin-top: 1px; }
+  .prow.sub { padding-left: 30px; background: rgba(27, 35, 64, 0.35); }
+  .toggle { flex: none; width: 40px; height: 22px; border-radius: 11px; background: #2A3355;
+            position: relative; }
+  .toggle::after { content: ""; position: absolute; top: 3px; left: 4px; width: 16px;
+                   height: 16px; border-radius: 50%; background: #5A6486; }
+  .toggle.on { background: #5A4200; }
+  .toggle.on::after { left: 20px; background: #FFC107; }
+  .pfoot { padding: 12px 16px 18px; color: #5A6486; font-size: 11px; line-height: 1.5; }
+  .pchip { display: inline-block; border: 1px solid #2A3355; border-radius: 999px;
+           padding: 1px 9px; font-size: 11px; color: #7EC8E3; margin: 4px 4px 0 0; }
+  .pchip.add { color: #FFC107; border-color: #5A4200; }
+
+  /* flow */
+  .flow { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+          gap: 14px; counter-reset: step; }
+  .step { background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
+          padding: 14px 16px; font-size: 13.5px; }
+  .step::before { counter-increment: step; content: counter(step);
+                  display: inline-block; width: 22px; height: 22px; border-radius: 50%;
+                  background: var(--chipbg); color: var(--accent); font-weight: 700;
+                  font-size: 12.5px; line-height: 22px; text-align: center;
+                  margin-bottom: 8px; }
+  .step b { display: block; margin-bottom: 3px; }
+  .step span { color: var(--muted); line-height: 1.5; }
+
+  /* discovery mockups */
+  .disco { display: flex; flex-direction: column; gap: 20px; max-width: 480px; }
+  .infocard { border-radius: 18px; background: var(--w-bg); border: 1px solid var(--w-line);
+              color: var(--w-ink); overflow: hidden;
+              box-shadow: 0 24px 60px rgba(0,0,0,0.35); }
+  .infocard .ichero { height: 96px; background:
+      radial-gradient(circle at 72% 40%, #E8E4D8 0 26px, rgba(232,228,216,0.18) 27px 30px,
+        transparent 31px),
+      radial-gradient(1px 1px at 18% 30%, rgba(224,225,221,0.8) 50%, transparent 51%),
+      radial-gradient(1px 1px at 34% 68%, rgba(224,225,221,0.6) 50%, transparent 51%),
+      radial-gradient(1.3px 1.3px at 55% 22%, rgba(224,225,221,0.7) 50%, transparent 51%),
+      linear-gradient(160deg, #060819, #14183a); }
+  .infocard .icbody { padding: 12px 16px 14px; }
+  .infocard .icbody h4 { margin: 0; font-family: "Avenir Next Condensed", "Arial Narrow",
+      sans-serif; font-size: 20px; font-weight: 600; letter-spacing: 0.02em; }
+  .infocard .icbody p { margin: 4px 0 0; color: var(--w-muted); font-size: 12.5px;
+      line-height: 1.5; }
+  .icpromo { display: flex; align-items: center; gap: 12px; margin: 12px 16px 14px;
+             padding: 10px 12px; border: 1px solid var(--w-line); border-radius: 12px;
+             background: rgba(27, 35, 64, 0.5); }
+  .icpromo .mini { flex: none; width: 34px; height: 34px; border-radius: 9px;
+                   background: radial-gradient(circle at 62% 40%, #E8E4D8 0 9px,
+                     transparent 10px), #1B2340; border: 1px solid var(--w-line); }
+  .icpromo .ptext { flex: 1; font-size: 12.5px; color: var(--w-ink); line-height: 1.4; }
+  .icpromo .ptext small { display: block; color: var(--w-muted); font-size: 11px; }
+  .btn { flex: none; border-radius: 999px; padding: 6px 14px; font-size: 12.5px;
+         font-weight: 700; background: var(--w-gold); color: var(--w-gold-ink);
+         white-space: nowrap; }
+  .btn.ghost { background: transparent; color: var(--w-muted); font-weight: 600; }
+
+  .pinscrim { border-radius: 24px; border: 1px solid #2c3242; padding: 46px 22px 22px;
+              background:
+                linear-gradient(rgba(4, 6, 14, 0.72), rgba(4, 6, 14, 0.72)),
+                linear-gradient(168deg, #060819 0%, #0b1130 55%, #14183a 100%);
+              box-shadow: 0 24px 60px rgba(0,0,0,0.35); }
+  .pinsheet { border-radius: 20px; background: #171e30; border: 1px solid var(--w-line);
+              color: var(--w-ink); padding: 16px 18px; }
+  .pinsheet h4 { margin: 0 0 2px; font-size: 15px; font-weight: 600; }
+  .pinsheet p { margin: 0 0 12px; color: var(--w-muted); font-size: 12px; }
+  .pinsheet .pinpreview { display: flex; justify-content: center; padding: 14px 0 16px; }
+  .pinsheet .pinactions { display: flex; justify-content: flex-end; gap: 8px; }
+  .pinsheet .widget { width: 200px; box-shadow: 0 10px 30px rgba(0,0,0,0.45); }
+
+  table { border-collapse: collapse; width: 100%; font-size: 13.5px; margin-top: 12px; }
+  th, td { text-align: left; padding: 8px 12px; border-bottom: 1px solid var(--line); }
+  th { font-size: 11.5px; letter-spacing: 0.1em; text-transform: uppercase;
+       color: var(--muted); font-weight: 600; }
+  td:first-child { font-weight: 600; white-space: nowrap; }
+  .tablebox { overflow-x: auto; }
+
+  .openq { background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
+           padding: 6px 18px; margin-top: 16px; }
+  .openq li { margin: 10px 0; color: var(--text); }
+  .openq li span { color: var(--muted); }
+
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<header>
+  <div class="eyebrow">Sky Map v2 · Design exploration</div>
+  <h1>Stickiness: widgets &amp; notifications</h1>
+  <p>Home-screen widgets and rare, high-signal notifications, all computed offline from the
+     shipped catalog and ephemeris. Companion to the events-engine proposal; sequencing is
+     moon widget → tonight widget → shower notifications. Widget mockups use the shipped
+     Deep&nbsp;Space&nbsp;/&nbsp;Star&nbsp;Gold palette (D73).</p>
+</header>
+
+<main>
+
+  <div class="principles">
+    <div class="principle"><b>Quiet by default</b>
+      <span>Every notification channel ships off. Widgets are the default stickiness surface
+      because placing one is itself the opt-in.</span></div>
+    <div class="principle"><b>Rare and actionable</b>
+      <span>At most one notification per day, and only when there is something to do
+      tonight. A skipped night is a feature.</span></div>
+    <div class="principle"><b>We do the astronomy</b>
+      <span>Every alert carries the judgment call a calendar can't make: moon interference,
+      altitude, local darkness hours.</span></div>
+    <div class="principle"><b>One engine, many faces</b>
+      <span>Widgets and notifications are renderers over the same offline events scan —
+      one subsystem to test, not five.</span></div>
+  </div>
+
+  <h2>Widgets</h2>
+  <p class="lede">Four widgets on a night home screen. All use the app surface color at
+     86% opacity over the user's wallpaper, 22&nbsp;dp corner radius, Starlight text,
+     Star&nbsp;Gold reserved for the single most important value in each widget.</p>
+
+  <div class="board-wrap">
+    <div class="homescreen">
+      <div class="wrow2">
+        <div>
+          <div class="wtag"><i>A</i>Moon · 2×2</div>
+          <div class="widget w-moon" style="margin-top:8px;">
+            <canvas id="moon" width="144" height="144" style="width:72px;height:72px;"></canvas>
+            <div class="phname">Waxing Gibbous</div>
+            <div class="phpct">83% illuminated</div>
+            <div class="phtimes mono">rises 17:42 · sets 03:12</div>
+          </div>
+        </div>
+        <div>
+          <div class="wtag"><i>B</i>Countdown · 2×2</div>
+          <div class="widget w-count" style="margin-top:8px;">
+            <div class="ringbox">
+              <svg width="84" height="84" viewBox="0 0 84 84" aria-hidden="true">
+                <circle cx="42" cy="42" r="36" fill="none" stroke="#2A3355" stroke-width="5"/>
+                <circle cx="42" cy="42" r="36" fill="none" stroke="#FFC107" stroke-width="5"
+                        stroke-linecap="round" stroke-dasharray="226"
+                        stroke-dashoffset="105" transform="rotate(-90 42 42)"/>
+              </svg>
+              <div class="ringnum"><b>14</b><span>days</span></div>
+            </div>
+            <div class="cname">Perseids peak</div>
+            <div class="cnote">New-moon peak</div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="wtag"><i>C</i>Tonight · 4×2</div>
+        <div class="widget w-tonight" style="margin-top:8px;">
+          <div class="whead">
+            <span class="wlabel">Tonight · Tue 29 Jul</span>
+            <span class="sunset mono">sun sets 21:08 · dark 22:47</span>
+          </div>
+          <ul>
+            <li><span class="dot gold"></span>Jupiter well placed from 21:30
+                <small>SE · alt 34°</small></li>
+            <li><span class="dot blue"></span>Moon–Saturn pairing, 2° apart
+                <small>02:10 · E</small></li>
+            <li><span class="dot dim"></span>Bright moon — faint objects washed out
+                <small>sets 03:12</small></li>
+          </ul>
+        </div>
+      </div>
+
+      <div>
+        <div class="wtag"><i>D</i>Rise &amp; set · 4×1</div>
+        <div class="widget w-rise" style="margin-top:8px;">
+          <div class="obj"><b>SATURN</b><span>in Aquarius</span></div>
+          <svg width="88" height="40" viewBox="0 0 88 40" aria-hidden="true">
+            <line x1="4" y1="34" x2="84" y2="34" stroke="#2A3355" stroke-width="1.5"/>
+            <path d="M8 34 Q44 -6 80 34" fill="none" stroke="#5A6486" stroke-width="1.5"
+                  stroke-dasharray="3 3"/>
+            <circle cx="27" cy="18.5" r="4" fill="#FFC107"/>
+          </svg>
+          <div class="times mono">
+            <div><span>Rise</span><b>21:54</b></div>
+            <div><span>High</span><b>03:41</b></div>
+            <div><span>Set</span><b>11:26</b></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="notes">
+      <div class="note"><i>A</i><div><b>Moon phase — the anchor widget</b>
+        <span>Phase disc is drawn, not an image asset: correct terminator from
+        <code>LunarPhase</code>, correct orientation for the user's hemisphere. Updates once
+        per day plus on <code>onEnabled</code>; tap opens the app centered on the Moon.</span></div></div>
+      <div class="note"><i>B</i><div><b>Countdown — borrowed anticipation</b>
+        <span>Ring counts down from event announcement (or 30 days). Event auto-advances:
+        after the Perseids peak it rolls to the next shower or moon extreme. The green note
+        line is the "we did the astronomy" hook — shown only when true.</span></div></div>
+      <div class="note"><i>C</i><div><b>Tonight — the flagship</b>
+        <span>Two to three highlights max, ranked by the events engine; each row is
+        individually tappable and deep-links to that object on the map. The third slot may be
+        an honest downgrade ("bright moon") — credibility is the retention mechanism. On a
+        nothing night: "Quiet sky tonight — next event Thu."</span></div></div>
+      <div class="note"><i>D</i><div><b>Rise &amp; set — the customisable one</b>
+        <span>Object chosen in the widget configuration activity at placement (searchable
+        list: planets, Moon, bright stars, Messier). Arc shows tonight's altitude track with
+        "now" in gold. One object per instance; users who want three place three.</span></div></div>
+      <div class="note"><i>+</i><div><b>Shared mechanics</b>
+        <span>All widgets re-render via one daily WorkManager job using the last known
+        coarse location — no GPS wake, no network. Glance (Compose) implementation.
+        Follows system dark/light only in text contrast; the navy surface is the brand and
+        stays.</span></div></div>
+    </div>
+  </div>
+
+  <h2>Notifications</h2>
+  <p class="lede">Rendered as standard system notifications — no custom layouts to fight
+     OEM skins. The voice is a knowledgeable friend, not a service: plain sentences,
+     local times, one concrete tip. Each type is its own channel so the system settings
+     screen prunes exactly.</p>
+
+  <div class="shade-wrap">
+    <div class="shade">
+      <div class="clock mono"><span>21:38</span><span>Tue 29 Jul</span></div>
+      <div class="notif">
+        <div class="nhead"><span class="appdot"></span>Sky Map · Meteor showers · now</div>
+        <div class="ntitle">Perseids peak tonight</div>
+        <div class="nbody">Best after midnight, looking north-east. The moon sets at 23:40,
+          leaving dark skies at the peak — expect up to 60 meteors/hour away from city
+          light.</div>
+        <div class="nactions"><span>Open sky map</span><span>Mute showers</span></div>
+      </div>
+      <div class="notif">
+        <div class="nhead"><span class="appdot"></span>Sky Map · Events · 19:02</div>
+        <div class="ntitle">Moon meets Saturn tomorrow morning</div>
+        <div class="nbody">A close pairing, 2° apart, low in the east from 02:10. Easy with
+          the naked eye.</div>
+        <div class="nactions"><span>Open sky map</span><span>Remind me at 02:00</span></div>
+      </div>
+      <div class="notif collapsed">
+        <div class="nhead"><span class="appdot"></span>Sky Map · Tonight · 21:30</div>
+        <div class="ntitle">Worth a look tonight</div>
+        <div class="nbody">Jupiter well placed from 21:30 · dark skies after 23:40…</div>
+      </div>
+    </div>
+
+    <div class="notes">
+      <div class="note"><i>1</i><div><b>Shower peak — the flagship notification</b>
+        <span>Fires the evening of the peak, not at an astronomically-correct-but-useless
+        3 am. Body always answers: when, which direction, is the moon a problem, what will
+        I see. "Mute showers" opens the channel's system toggle — every alert names its own
+        off-switch.</span></div></div>
+      <div class="note"><i>2</i><div><b>Conjunction — the "what are those two?" moment</b>
+        <span>Sent the evening before for morning events. "Remind me at…" schedules a
+        one-shot follow-up via the events engine, not an exact alarm — inexact windows are
+        fine at these timescales.</span></div></div>
+      <div class="note"><i>3</i><div><b>Tonight digest — collapsed by default</b>
+        <span>User-scheduled time (default: 30 min after sunset). Suppressed entirely when
+        the engine ranks nothing above threshold — silence keeps the signal. Expands to the
+        same three lines as widget C.</span></div></div>
+      <div class="note"><i>!</i><div><b>What never happens</b>
+        <span>No streaks, no "we miss you", no more than one notification per channel per
+        day, no notification that duplicates what a placed widget already shows unless the
+        user opted into both.</span></div></div>
+    </div>
+  </div>
+
+  <h2>Settings surface</h2>
+  <p class="lede">One screen under Settings → Notifications, mirroring the channel list.
+     The intro sentence sets the contract; sub-rows appear only when a channel is on.</p>
+
+  <div class="board-wrap">
+    <div class="phone">
+      <div class="pscreen">
+        <div class="pbar"><span class="back">←</span>Notifications</div>
+        <div class="pintro">Sky Map only notifies about rare sky events, at most once a
+          day. Everything is off until you turn it on.</div>
+        <div class="prow"><div class="ptxt"><b>Meteor shower peaks</b>
+          <span>About 12 a year, the evening of the peak</span></div>
+          <div class="toggle on"></div></div>
+        <div class="prow"><div class="ptxt"><b>Tonight's sky digest</b>
+          <span>Skipped on quiet nights</span></div>
+          <div class="toggle on"></div></div>
+        <div class="prow sub"><div class="ptxt"><b>Time</b>
+          <span>30 min after sunset (changes daily)</span></div>
+          <span class="pchip mono">≈ 21:38</span></div>
+        <div class="prow"><div class="ptxt"><b>Close pairings</b>
+          <span>Moon–planet and planet–planet conjunctions</span></div>
+          <div class="toggle"></div></div>
+        <div class="prow"><div class="ptxt"><b>Moon phases</b>
+          <span>New moon (dark skies) and full moon</span></div>
+          <div class="toggle"></div></div>
+        <div class="prow"><div class="ptxt"><b>Rise alerts</b>
+          <span>When a chosen object rises into good view</span></div>
+          <div class="toggle on"></div></div>
+        <div class="prow sub"><div class="ptxt">
+          <span class="pchip">Saturn</span><span class="pchip">M31</span>
+          <span class="pchip add">+ Add object</span></div></div>
+        <div class="pfoot">Notifications use your last known location to compute local
+          times. Fine-tune or silence any type in system settings — each has its own
+          channel.</div>
+      </div>
+    </div>
+
+    <div class="notes">
+      <div class="note"><i>1</i><div><b>The contract is the copy</b>
+        <span>"At most once a day. Everything is off until you turn it on." — stated where
+        the user decides, not buried in a help page. Frequency expectations
+        ("about 12 a year") appear per channel.</span></div></div>
+      <div class="note"><i>2</i><div><b>Channels map 1:1 to system channels</b>
+        <span>The in-app toggles and Android's own notification settings can never
+        disagree; the screen reads channel state from <code>NotificationManager</code>.
+        If the user revoked notification permission, every row shows an inline
+        "Allow in system settings" affordance instead of a dead toggle.</span></div></div>
+      <div class="note"><i>3</i><div><b>Rise alerts are per-object opt-in</b>
+        <span>The chip row is the entire mental model: your objects, listed. "Add object"
+        reuses the search UI. This is deliberately not a general alarm clock — one alert
+        per object per night, "rises into good view" (alt &gt; 10°, sun down), not raw rise
+        time.</span></div></div>
+    </div>
+  </div>
+
+  <h2>Permission flow</h2>
+  <p class="lede">Android 13+ makes notifications opt-in; the ask has to be earned. Never
+     at first launch.</p>
+  <div class="flow">
+    <div class="step"><b>User flips a toggle</b>
+      <span>The first enabled channel is the trigger. Context is maximal: they just asked
+      for exactly this.</span></div>
+    <div class="step"><b>System sheet appears</b>
+      <span><code>POST_NOTIFICATIONS</code> requested only now. The toggle they flipped
+      stays visually on, pending.</span></div>
+    <div class="step"><b>If denied</b>
+      <span>Toggle returns to off with an inline row: "Notifications are blocked for Sky
+      Map — allow in system settings", deep-linking to the app's notification settings. No
+      nagging re-prompt.</span></div>
+    <div class="step"><b>Widgets need none of this</b>
+      <span>Another reason they ship first: full stickiness loop with zero permission
+      surface (coarse location is already granted for the map itself).</span></div>
+  </div>
+
+  <h2>Discovery</h2>
+  <p class="lede">Nobody finds widgets in the launcher's long-press picker, and the
+     notification sheet can't be the channel — those ship later and default to off.
+     Discovery is in-app, at moments of demonstrated interest, using the system pin dialog
+     (<code>requestPinAppWidget</code>) so placement is one tap instead of a home-screen
+     safari.</p>
+
+  <div class="board-wrap">
+    <div class="disco">
+      <div>
+        <div class="wtag"><i>A</i>Info card · promo row</div>
+        <div class="infocard" style="margin-top:8px;">
+          <div class="ichero"></div>
+          <div class="icbody">
+            <h4>The Moon</h4>
+            <p>Waxing gibbous, 83% illuminated. Rises 17:42, sets 03:12. At its fullest
+               on 9 August.</p>
+          </div>
+          <div class="icpromo">
+            <div class="mini"></div>
+            <div class="ptext">Keep the moon on your home screen
+              <small>Phase, illumination and rise times, updated daily</small></div>
+            <span class="btn">Add widget</span>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="wtag"><i>B</i>System pin dialog</div>
+        <div class="pinscrim" style="margin-top:8px;">
+          <div class="pinsheet">
+            <h4>Add to home screen?</h4>
+            <p>Sky Map · Moon phase</p>
+            <div class="pinpreview">
+              <div class="widget w-moon">
+                <canvas id="moon2" width="144" height="144"
+                        style="width:64px;height:64px;"></canvas>
+                <div class="phname">Waxing Gibbous</div>
+                <div class="phpct">83% illuminated</div>
+              </div>
+            </div>
+            <div class="pinactions">
+              <span class="btn ghost">Cancel</span>
+              <span class="btn">Add</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="notes">
+      <div class="note"><i>A</i><div><b>Contextual promo — the primary path</b>
+        <span>Shown at the bottom of an info card only when the object has a matching
+        widget (Moon → moon widget, planet → rise &amp; set pre-configured to that planet).
+        Someone reading the Moon's card has already voted with their attention. Dismissed
+        once for an object type → never shown for it again.</span></div></div>
+      <div class="note"><i>B</i><div><b>One tap, pre-configured</b>
+        <span>The pin dialog carries the configuration, so a rise &amp; set widget offered
+        from Saturn's card lands already set to Saturn — no config screen. On the few
+        launchers that don't support pinning, the button falls back to a short
+        instruction sheet.</span></div></div>
+      <div class="note"><i>+</i><div><b>The supporting cast</b>
+        <span>Settings → Widgets gallery row (the findable-on-purpose path); one
+        dismissible what's-new card when the feature first ships — shown once, never
+        repeated; proper Glance <code>previewLayout</code> previews and a Play-listing
+        screenshot for people who do browse the picker.</span></div></div>
+      <div class="note"><i>!</i><div><b>Ruled out</b>
+        <span>No widget pitch during first-run onboarding, no repeated nags, no discovery
+        via notifications. The reverse path is the one that works: a placed Tonight widget
+        deep-links into the map, which may quietly point at
+        Settings → Notifications → Meteor showers — widgets recruit for notifications,
+        not the other way round.</span></div></div>
+    </div>
+  </div>
+
+  <h2>What ships when</h2>
+  <div class="tablebox">
+    <table>
+      <thead><tr><th>Phase</th><th>Surface</th><th>New infrastructure</th></tr></thead>
+      <tbody>
+        <tr><td>1 · Moon widget</td>
+          <td>Widget A, info-card promo row + pin dialog</td>
+          <td>Glance plumbing, daily WorkManager refresh, location snapshot</td></tr>
+        <tr><td>2 · Tonight widget</td>
+          <td>Widget C (and B as a near-free sibling)</td>
+          <td>Events engine v1: N-day scan → ranked (event, time, quality) list</td></tr>
+        <tr><td>3 · Shower + digest notifications</td>
+          <td>Notifications 1 &amp; 3, settings screen, permission flow</td>
+          <td>Notification channels, digest scheduler; engine gains suppression
+              threshold</td></tr>
+        <tr><td>4 · If wanted</td>
+          <td>Conjunctions, moon phases, rise alerts, widget D</td>
+          <td>Engine minima-scan for pairings; per-object watch list</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Open questions for the decision log</h2>
+  <ul class="openq">
+    <li>Material You dynamic color on widgets: brand navy always, or offer a "follow
+      wallpaper" style? <span>Mockups assume brand-always; a translucency slider may be the
+      cheaper personalization.</span></li>
+    <li>Does the tonight digest merge into the shower channel on peak nights, or does the
+      shower alert replace the digest? <span>Proposal: shower alert wins, digest
+      suppressed — enforces the one-per-day contract.</span></li>
+    <li>Threshold for "worth a look tonight": what score suppresses the digest?
+      <span>Needs the events-engine quality metric defined first.</span></li>
+    <li>Night mode: should widgets red-shift after the user's chosen night-mode hours?
+      <span>Tempting, but home screens are day surfaces; lean no for v1.</span></li>
+    <li>Do rise alerts belong in v1 of the settings screen even if greyed "coming soon"?
+      <span>Lean no — ship rows only for channels that work.</span></li>
+  </ul>
+</main>
+
+<script>
+  ["moon", "moon2"].forEach(function (id) {
+    var c = document.getElementById(id);
+    if (!c) return;
+    var ctx = c.getContext("2d");
+    var r = 66, cx = 72, cy = 72, f = 0.83; // illuminated fraction, waxing
+    // dark disc
+    ctx.beginPath(); ctx.arc(cx, cy, r, 0, Math.PI * 2);
+    ctx.fillStyle = "#1B2340"; ctx.fill();
+    // lit portion: right half + terminator ellipse bulging left (gibbous)
+    var rx = r * (2 * f - 1);
+    ctx.beginPath();
+    ctx.arc(cx, cy, r, -Math.PI / 2, Math.PI / 2, false);
+    ctx.ellipse(cx, cy, rx, r, 0, Math.PI / 2, -Math.PI / 2, false);
+    ctx.closePath();
+    ctx.fillStyle = "#E8E4D8"; ctx.fill();
+    // craters, lit side
+    ctx.fillStyle = "rgba(27, 35, 64, 0.22)";
+    [[30, -20, 9], [12, 18, 12], [38, 26, 6], [20, -42, 5]].forEach(function (m) {
+      ctx.beginPath(); ctx.arc(cx + m[0], cy + m[1], m[2], 0, Math.PI * 2); ctx.fill();
+    });
+    // thin gold limb highlight
+    ctx.beginPath(); ctx.arc(cx, cy, r - 1, -Math.PI / 2, Math.PI / 2, false);
+    ctx.strokeStyle = "rgba(255, 193, 7, 0.35)"; ctx.lineWidth = 2; ctx.stroke();
+  });
+</script>

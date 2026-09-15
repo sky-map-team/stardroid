@@ -1,0 +1,541 @@
+object_id,name,is_primary
+constellation/andromeda,안드로메다자리,1
+constellation/antlia,펌프자리,1
+constellation/apus,극락조자리,1
+constellation/aquarius,물병자리,1
+constellation/aquila,독수리자리,1
+constellation/ara,제단자리,1
+constellation/aries,양자리,1
+constellation/auriga,마차부자리,1
+constellation/bootes,목자자리,1
+constellation/caelum,조각칼자리,1
+constellation/camelopardalis,기린자리,1
+constellation/cancer,게자리,1
+constellation/canes_venatici,사냥개자리,1
+constellation/canis_major,큰개자리,1
+constellation/canis_minor,작은개자리,1
+constellation/capricornus,염소자리,1
+constellation/carina,용골자리,1
+constellation/cassiopeia,카시오페이아자리,1
+constellation/centaurus,센타우루스자리,1
+constellation/cepheus,케페우스자리,1
+constellation/cetus,고래자리,1
+constellation/chamaeleon,카멜레온자리,1
+constellation/circinus,컴퍼스자리,1
+constellation/columba,비둘기자리,1
+constellation/coma_berenices,머리털자리,1
+constellation/corona_australis,남쪽왕관자리,1
+constellation/corona_borealis,북쪽왕관자리,1
+constellation/corvus,까마귀자리,1
+constellation/crater,컵자리,1
+constellation/crux,남십자자리,1
+constellation/cygnus,백조자리,1
+constellation/delphinus,돌고래자리,1
+constellation/dorado,황새치자리,1
+constellation/draco,용자리,1
+constellation/equuleus,조랑말자리,1
+constellation/eridanus,에리다누스자리,1
+constellation/fornax,화로자리,1
+constellation/gemini,쌍둥이자리,1
+constellation/grus,두루미자리,1
+constellation/hercules,헤르쿨레스자리,1
+constellation/horologium,시계자리,1
+constellation/hydra,바다뱀자리,1
+constellation/hydrus,물뱀자리,1
+constellation/indus,인디언자리,1
+constellation/lacerta,도마뱀자리,1
+constellation/leo,사자자리,1
+constellation/leo_minor,작은사자자리,1
+constellation/lepus,토끼자리,1
+constellation/libra,천칭자리,1
+constellation/lupus,이리자리,1
+constellation/lynx,살쾡이자리,1
+constellation/lyra,거문고자리,1
+constellation/mensa,테이블산자리,1
+constellation/microscopium,현미경자리,1
+constellation/monoceros,외뿔소자리,1
+constellation/musca,파리자리,1
+constellation/norma,삼각자자리,1
+constellation/octans,팔분의자리,1
+constellation/ophiuchus,땅꾼자리,1
+constellation/orion,오리온자리,1
+constellation/pavo,공작자리,1
+constellation/pegasus,페가수스자리,1
+constellation/perseus,페르세우스자리,1
+constellation/phoenix,불사조자리,1
+constellation/pictor,화가자리,1
+constellation/pisces,물고기자리,1
+constellation/piscis_austrinus,남쪽물고기자리,1
+constellation/puppis,고물자리,1
+constellation/pyxis,나침반자리,1
+constellation/reticulum,그물자리,1
+constellation/sagitta,화살자리,1
+constellation/sagittarius,궁수자리,1
+constellation/scorpius,전갈자리,1
+constellation/sculptor,조각가자리,1
+constellation/scutum,방패자리,1
+constellation/serpens_caput,뱀자리 머리,1
+constellation/serpens_cauda,뱀자리 꼬리,1
+constellation/sextans,육분의자리,1
+constellation/taurus,황소자리,1
+constellation/telescopium,망원경자리,1
+constellation/triangulum,삼각형자리,1
+constellation/triangulum_australe,남쪽삼각형자리,1
+constellation/tucana,큰부리새자리,1
+constellation/ursa_major,큰곰자리,1
+constellation/ursa_minor,작은곰자리,1
+constellation/vela,돛자리,1
+constellation/virgo,처녀자리,1
+constellation/volans,날치자리,1
+constellation/vulpecula,여우자리,1
+dso/blue_snowball_nebula,푸른 눈덩이 성운,1
+dso/centaurus_a,센타우루스자리 A,1
+dso/coathanger,옷걸이 성단,1
+dso/coathanger,Brocchi's Cluster,0
+dso/coma_star_cluster,머리털자리 성단,1
+dso/coma_star_cluster,Coma Berenices Cluster,0
+dso/cygnus_x_1,블랙홀 쌍성,1
+dso/cygnus_x_1,Stellar Black Hole,0
+dso/double_cluster,이중 성단,1
+dso/double_cluster,h and χ Persei,0
+dso/eta_carinae_nebula,용골자리 에타 성운,1
+dso/eta_carinae_nebula,Carina Nebula,0
+dso/exposed_cranium_nebula,노출된 두개골 성운,1
+dso/ghost_of_jupiter,목성의 유령,1
+dso/hdf,허블 딥 필드,1
+dso/hdf,허블 딥 필드,0
+dso/helix_nebula,나선 성운,1
+dso/helix_nebula,Eye of God,0
+dso/hyades,히아데스 성단,1
+dso/jewel_box,보석상자 성단,1
+dso/jewel_box,Herschel's Jewel Box,0
+dso/lmc,대마젤란 은하,1
+dso/lmc,Nubecula Major,0
+dso/m1,게 성운,1
+dso/m101,바람개비 은하,1
+dso/m102,방추 은하,1
+dso/m104,솜브레로 은하,1
+dso/m11,들오리 성단,1
+dso/m13,헤라클레스 구상성단,1
+dso/m13,Hercules Globular Cluster,0
+dso/m16,독수리 성운,1
+dso/m20,삼렬 성운,1
+dso/m24,궁수자리 별구름,1
+dso/m27,아령 성운,1
+dso/m31,안드로메다 은하,1
+dso/m33,삼각형자리 은하,1
+dso/m40,비네케 4,1
+dso/m42,오리온 성운,1
+dso/m43,드 메랑 성운,1
+dso/m44,벌집 성단,1
+dso/m44,프레세페,0
+dso/m45,플레이아데스 성단,1
+dso/m45,일곱 자매,0
+dso/m51,소용돌이 은하,1
+dso/m57,고리 성운,1
+dso/m6,나비 성단,1
+dso/m63,해바라기 은하,1
+dso/m64,검은 눈 은하,1
+dso/m7,전갈의 독침,1
+dso/m7,Ptolemy Cluster,0
+dso/m74,유령 은하,1
+dso/m76,작은 아령 성운,1
+dso/m8,석호 성운,1
+dso/m81,보데 은하,1
+dso/m82,시가 은하,1
+dso/m83,남쪽 바람개비 은하,1
+dso/m97,부엉이 성운,1
+dso/n47_tucanae,47 투카나에,1
+dso/ngc_6543,고양이눈 성운,1
+dso/north_america_nebula,북아메리카 성운,1
+dso/omega_centauri,센타우르스 자리 오메가 구상성단,1
+dso/omega_centauri,ω Centauri,0
+dso/saturn_nebula,토성 성운,1
+dso/sculptor_galaxy,조각가자리 은하,1
+dso/sculptor_galaxy,Silver Coin Galaxy,0
+dso/sculptor_galaxy,Silver Dollar Galaxy,0
+dso/sgr_a_star,궁수자리 A*,1
+dso/sgr_a_star,Black Hole,0
+dso/sgr_a_star,Galactic Center,0
+dso/smc,소마젤란 은하,1
+dso/smc,Nubecula Minor,0
+dso/t_crb,T 북쪽왕관자리,1
+dso/t_crb,Blaze Star,0
+dso/tarantula_nebula,독거미 성운,1
+dso/willman_1,윌먼 1,1
+dso/willman_1,Beth Willman Galaxy,0
+moon/ariel,아리엘,1
+moon/callisto,칼리스토,1
+moon/deimos,데이모스,1
+moon/dione,디오네,1
+moon/europa,에우로파,1
+moon/ganymede,가니메데,1
+moon/iapetus,이아페투스,1
+moon/io,이오,1
+moon/oberon,오베론,1
+moon/phobos,포보스,1
+moon/rhea,레아,1
+moon/tethys,테티스,1
+moon/titan,타이탄,1
+moon/titania,티타니아,1
+moon/triton,트리톤,1
+moon/umbriel,움브리엘,1
+planet/jupiter,목성,1
+planet/mars,화성,1
+planet/mercury,수성,1
+planet/moon,달,1
+planet/neptune,해왕성,1
+planet/pluto,명왕성,1
+planet/saturn,토성,1
+planet/sun,태양,1
+planet/uranus,천왕성,1
+planet/venus,금성,1
+shower/aquariids,에타 물병자리 유성우,1
+shower/deltaaquariids,델타 물병자리 유성우,1
+shower/geminids,쌍둥이자리 유성우,1
+shower/leonids,사자자리 유성우,1
+shower/lyrids,거문고자리 유성우,1
+shower/orionids,오리온자리 유성우,1
+shower/perseids,페르세우스자리 유성우,1
+shower/puppidvelids,고물-돛자리 유성우,1
+shower/quadrantids,사분의자리 유성우,1
+shower/ursids,작은곰자리 유성우,1
+star/achernar,아케르나르,1
+star/acrux,아크룩스,1
+star/adhara,아다라,1
+star/alcyone,알키오네,1
+star/aldebaran,알데바란,1
+star/alderamin,알데라민,1
+star/algenib,알게니브,1
+star/algieba,알기바,1
+star/algol,알골,1
+star/alhena,알헤나,1
+star/alioth,알리오츠,1
+star/alkaid,알카이드,1
+star/alnair,알나이르,1
+star/alnath,알나드,1
+star/alnilam,알니람,1
+star/alphard,알파르드,1
+star/alphekka,알페카,1
+star/alpheratz,알페라츠,1
+star/altair,알타이르(견우성),1
+star/ankaa,안카,1
+star/antares,안타레스,1
+star/arcturus,아르크투르스,1
+star/arneb,아르네브,1
+star/betelgeuse,베텔게우스,1
+star/canopus,카노푸스,1
+star/capella,카펠라,1
+star/caph,카프,1
+star/castor,카스토르,1
+star/deneb,데네브,1
+star/denebola,데네볼라,1
+star/diphda,디프다,1
+star/dubhe,두베,1
+star/e_lyrae,엡실론 거문고자리,1
+star/enif,에니프,1
+star/etamin,에타민,1
+star/fomalhaut,포말하우트,1
+star/hadar,하다르,1
+star/hamal,하말,1
+star/izar,이자르,1
+star/j003712+535400,풀루,1
+star/j004912+574912,아키르드,1
+star/j005624+591048,카스툴라,1
+star/j010824-551500,워렌,1
+star/j011348+073448,레바티,1
+star/j012212+453148,아딜,1
+star/j012548+601424,루크바,1
+star/j013112+152100,알페르그,1
+star/j013636+412436,티타윈,1
+star/j013748+483748,넴부스,1
+star/j014536+090936,토르쿨라르,1
+star/j015136-101948,바텐 카이토스,1
+star/j015248+293448,모탈라,1
+star/j015436+204836,셰라탄,1
+star/j015436+634012,세긴,1
+star/j020148+024536,알레샤,1
+star/j020336+421948,알마크,1
+star/j024312+031424,카팔지드마,1
+star/j024800+291500,릴리 보레아,1
+star/j024948+271536,바라니,1
+star/j025024+555400,미람,1
+star/j025100-210000,앙게테나르,1
+star/j025624-085400,아자,1
+star/j025812-401800,아카마르,1
+star/j030936+445136,미삼,1
+star/j031124+194348,보테인,1
+star/j031200-285924,달림,1
+star/j031536-084912,지발,1
+star/j033300-092736,란,1
+star/j034312-094612,라나,1
+star/j034424+321724,아티크,1
+star/j034500+240636,엘렉트라,1
+star/j034500+241724,켈라에노,1
+star/j034500+242812,타이게타,1
+star/j034536+242212,마이아,1
+star/j034612+235700,메로페,1
+star/j034612+243300,아스테로페,1
+star/j034912+240300,아틀라스,1
+star/j034912+240824,플레이오네,1
+star/j035812-133036,자우라크,1
+star/j035848+354724,멘키브,1
+star/j041200-065024,베이드,1
+star/j041500-073824,케이드,1
+star/j041948+153748,프리마 히아둠,1
+star/j042248+173224,세쿤다 히아둠,1
+star/j042400-340112,베밈,1
+star/j042848+155212,차무쿠이,1
+star/j042848+191048,아인,1
+star/j043524-303336,테민,1
+star/j043824-141800,셉트룸,1
+star/j044948+065736,타비트,1
+star/j045700+331012,하살레,1
+star/j050148+434912,알마즈,1
+star/j050224+410448,사클라테니,1
+star/j050636+411348,하에두스,1
+star/j050748-050524,쿠르사,1
+star/j052512+062100,벨라트릭스,1
+star/j052812-204536,니할,1
+star/j053148-001800,민타카,1
+star/j053524+095548,메이사,1
+star/j053524-055436,하티사,1
+star/j053748+210824,톈관,1
+star/j053936-340412,팩트,1
+star/j054048-015624,알니타크,1
+star/j055100-354612,와즌,1
+star/j055924+445700,멘칼리난,1
+star/j060000+371236,마하심,1
+star/j060748-371500,엘쿠루드,1
+star/j061500+223036,프로푸스,1
+star/j062024-300336,푸루드,1
+star/j062248+223036,테자트,1
+star/j062248-175736,미르잠,1
+star/j064348+250748,메브수타,1
+star/j064500+125400,알지르,1
+star/j070148-275548,응가누르가니티,1
+star/j070336-153748,물리페인,1
+star/j070412+203412,메크부다,1
+star/j070824-262324,웨젠,1
+star/j072024+215848,와사트,1
+star/j072400-291800,알루드라,1
+star/j072700+081724,고메이사,1
+star/j073900+343448,지수이,1
+star/j074912-245136,아즈미디,1
+star/j080336-400000,나오스,1
+star/j080748-241800,투레이스,1
+star/j081200+173900,테그민,1
+star/j081648+091124,타르프,1
+star/j082024+240112,피아우토스,1
+star/j082248+431124,알시아우카트,1
+star/j082248-593036,아비오르,1
+star/j083000+604312,무스키다,1
+star/j083900+032024,민치르,1
+star/j084312+212812,아셀루스 보레알리스,1
+star/j084424+180900,아셀루스 아우스트랄리스,1
+star/j084500-544236,알세피나,1
+star/j084648+062512,아슐레샤,1
+star/j085248+281948,코페르니쿠스,1
+star/j085812+115136,아쿠벤스,1
+star/j085924+480224,탈리타,1
+star/j090336+470936,알카프라,1
+star/j090748-432548,수하일,1
+star/j090936+220300,나흔,1
+star/j091312-694312,미아플라키두스,1
+star/j091648-591648,아스피디스케,1
+star/j092212-550036,마르케브,1
+star/j092848+453600,인테르크루스,1
+star/j093148+225812,알테르프,1
+star/j093936-010824,우크다,1
+star/j094124+095324,수브라,1
+star/j095136-145100,장,1
+star/j095248+260036,라살라스,1
+star/j095436-190036,펠리스,1
+star/j101648+232512,아다페라,1
+star/j101648+425436,타니아 보레알리스,1
+star/j102212+413000,타니아 아우스트랄리스,1
+star/j105324+341312,프라에키푸아,1
+star/j105924+402548,찰라완,1
+star/j110000-181800,알케스,1
+star/j111424+152548,체르탄,1
+star/j111424+203112,조스마,1
+star/j111800+313224,알룰라 아우스트랄리스,1
+star/j111836+330524,알룰라 보레알리스,1
+star/j113112+691948,가우사르,1
+star/j114612+474648,태양수,1
+star/j115024+014612,자비야바,1
+star/j120524+765436,토나티우,1
+star/j120824-244348,알키바,1
+star/j121500-584500,이마이,1
+star/j121536+570148,메그레즈,1
+star/j121536-173224,기나,1
+star/j121948-004012,자니아,1
+star/j122136-602400,기난,1
+star/j123000-163112,알고라브,1
+star/j123112-570636,가크룩스,1
+star/j123336+412136,카라,1
+star/j123412-232400,크라즈,1
+star/j124124-012700,포리마,1
+star/j124500+452624,라 수페르바,1
+star/j124724+664724,천이,1
+star/j124800-594124,미모사,1
+star/j125512+652624,태일,1
+star/j125548+032400,미넬라우바,1
+star/j125548+381912,코르 카롤리,1
+star/j131012+173148,다이아뎀,1
+star/j132400+545548,미자르,1
+star/j132512+545924,알코르,1
+star/j133448-003600,헤제,1
+star/j135436+182400,무프리드,1
+star/j140412+642248,투반,1
+star/j140636-362212,멘켄트,1
+star/j141236-101612,강,1
+star/j141612+460524,현개,1
+star/j141612-060000,시르마,1
+star/j141912-132212,캄발리아,1
+star/j142812-021348,엘가파르,1
+star/j143148+381836,세기누스,1
+star/j143936-605024,톨리만,1
+star/j144912+460712,메르가,1
+star/j145100-160224,주베넬게누비,1
+star/j150148+402324,네카르,1
+star/j150412-251648,브라키움,1
+star/j151648-092248,주베네스카말리,1
+star/j152100+714948,페르카드,1
+star/j152436+372248,알칼루롭스,1
+star/j152512+585812,에다시크,1
+star/j152736+290636,누사칸,1
+star/j153524-144724,주벤엘하크라비,1
+star/j154836+180824,구자,1
+star/j155700-291236,이클릴,1
+star/j155848-260636,팡,1
+star/j160036-223712,주바,1
+star/j160524-194836,아크라브,1
+star/j160748+170300,마르식,1
+star/j161200-192736,자바,1
+star/j161424-034124,예드 프라이어,1
+star/j161836-044124,예드 포스테리어,1
+star/j162100-253524,알니야트,1
+star/j162400+613036,아테빈,1
+star/j162512+140148,쿠잠,1
+star/j163000+212924,코르네포로스,1
+star/j163112+015848,마르피크,1
+star/j163600-281312,파이카우할레,1
+star/j164836-690148,아트리아,1
+star/j165024-341724,라라와그,1
+star/j165136-380300,자미디무라,1
+star/j165212-380112,피피리마,1
+star/j170524+542812,알라키스,1
+star/j170900+654236,알디바,1
+star/j171012-154348,사비크,1
+star/j171424+142324,라살게티,1
+star/j171500+245024,사린,1
+star/j171536-263524,구니부,1
+star/j173036+260636,마심,1
+star/j173036+521800,라스타반,1
+star/j173036-371800,레사트,1
+star/j173224+863524,일둔,1
+star/j173712-430000,사르가스,1
+star/j174200+720900,지반,1
+star/j174312+043412,세발라이,1
+star/j174348+534800,알루바,1
+star/j174424-514948,세르반테스,1
+star/j174948-370224,푸유에,1
+star/j175324+565212,Grumium,1
+star/j180600-302512,Alnasl,1
+star/j181348-210336,Polis,1
+star/j182100-294948,Kaus Media,1
+star/j182548+653336,Fafnir,1
+star/j182812-252512,Kaus Borealis,1
+star/j184348+363336,Xihe,1
+star/j184948+332136,Sheliak,1
+star/j185400-224424,Ainalrami,1
+star/j185624+041200,Alya,1
+star/j185848+324124,Sulafat,1
+star/j190224-295248,Ascella,1
+star/j190524+135136,Okab,1
+star/j190936-210112,Albaldah,1
+star/j190936-375400,Meridiana,1
+star/j191236+673936,Altais,1
+star/j191348+390900,Aladfar,1
+star/j192248-442736,Arkab Prior,1
+star/j192324-444800,Arkab Posterior,1
+star/j192400-403712,Rukbat,1
+star/j192848+244012,Anser,1
+star/j193036+275736,Albireo,1
+star/j193224+694012,Alsafi,1
+star/j194012+180036,Sham,1
+star/j194500+450748,Fawaris,1
+star/j194612+103636,Tarazed,1
+star/j195400+082736,Libertas,1
+star/j195512+062436,Alshain,1
+star/j195548-261800,Terebellum,1
+star/j201800-123224,Algedi,1
+star/j202024-124536,Alshat,1
+star/j202100-144648,Dabih,1
+star/j202212+401536,Sadr,1
+star/j202548-564348,Peacock,1
+star/j203300+111800,Aldulfin,1
+star/j203748+143600,Rotanev,1
+star/j203936+155436,Sualocin,1
+star/j204612+335812,Aljanah,1
+star/j204724-093000,Albali,1
+star/j205812+105024,Musica,1
+star/j210900-885736,남극성,1
+star/j211536+051500,키탈파,1
+star/j212848+703336,알피르크,1
+star/j213148-053412,사달수드,1
+star/j213748-075100,분다,1
+star/j214012-163936,나시라,1
+star/j214200+511124,아젤파파게,1
+star/j214648-160748,데네브 알게디,1
+star/j215400-372136,알다나브,1
+star/j220336+643748,쿠르하,1
+star/j220600-001912,사달멜리크,1
+star/j221012+061200,비함,1
+star/j221648-074648,안차,1
+star/j222136-012324,사다크비아,1
+star/j223748-041348,시툴라,1
+star/j224124+104948,호맘,1
+star/j224236-465248,티아키,1
+star/j224312+301312,마타르,1
+star/j224948+243600,사달바리,1
+star/j225436-154912,스카트,1
+star/j225736+204612,헬베티오스,1
+star/j230336+034912,푸말사마카,1
+star/j232024+234424,살름,1
+star/j232512+232400,알카라브,1
+star/j233112+391424,베리타테,1
+star/j233936+773748,에라이,1
+star/kaus_australis,카우스 오스트랄리스,1
+star/kochab,코카브,1
+star/markab,마르카브,1
+star/menkar,멘카르,1
+star/merak,메라크,1
+star/mirach,미라크,1
+star/mirphak,미르파크,1
+star/nunki,눈키,1
+star/phad,파드,1
+star/polaris,북극성,1
+star/polaris,북극성,0
+star/polaris,북극성,0
+star/pollux,폴룩스,1
+star/procyon,프로시온,1
+star/rasalhague,라스알하게,1
+star/regulus,레굴루스,1
+star/rigel,리겔,1
+star/rigil_kentaurus_a,알파 센타우리,1
+star/rigil_kentaurus_a,Rigil Kentaurus A,0
+star/rigil_kentaurus_a,리겔 켄타우루스 A,0
+star/rigil_kentaurus_a,Rigil Kent,0
+star/saiph,사이프,1
+star/scheat,쉬트,1
+star/shaula,샤울라,1
+star/shedir,세디르,1
+star/sirius,시리우스,1
+star/sirius,시리우스,0
+star/spica,스피카,1
+star/unukalhai,우누크알하이,1
+star/vega,베가(직녀성),1
+star/vindemiatrix,빈데미아트릭,1
+dso/v838_mon,V838 모노세로티스,1

@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+    <string name="eula_text" translation_description="A condensed, user-friendly version of the EULA and Privacy Policy with a link to the full terms. Please do not change the &lt; and &gt; markup"><![CDATA[<h1>欢迎使用 Sky Map</h1><p>为了让您更好地观星，请阅读我们的条款摘要。</p><h2>隐私</h2><p><b>我们不知道您是谁。</b>我们收集匿名使用数据，以帮助我们修复错误和改进功能。您可以随时在“设置”菜单中选择退出。</p><h2>安全&amp;责任</h2><p>Sky Map 按“原样”提供。请安全使用——我们不对因您使用本应用而造成的任何损害或伤害（例如颈部疼痛！）负责。</p><h2>开源</h2><p>Sky Map 是我们倾注心血的成果。您可以自由使用我们的源代码，但请尊重我们的品牌和标志。</p><p>在此阅读完整的法律文件：<a href="https://github.com/sky-map-team/stardroid/blob/master/TERMS.md">完整条款和隐私政策</a></p>]]></string>
+
+    <!-- Rendered last on the terms screen, after the permissions notice, so the sentence the
+         Accept button refers to is the final thing the user reads. -->
+    <string name="eula_agree_line" translation_description="Closing line of the first-launch terms screen, immediately above the Accept button. Please do not change the markup"><![CDATA[<br/><p><i>点击“接受”即表示您同意这些条款。</i></p>]]></string>
+
+    <!--
+      The access-permission notice (KISA / Korean Network Act art. 22-2, and good practice
+      everywhere). Rendered in two places from this one key so it is translated once: appended
+      to the first-launch EULA screen, and included in the help document as a permanent,
+      re-readable copy (HelpScreen.helpSections2). Every runtime permission Sky Map declares
+      must appear here, labelled required or optional, with its grounds and — for optional
+      ones — the user\'s right to refuse.
+    -->
+    <string name="permissions_notice" translation_description="Legally-required disclosure of the device permissions the app requests, why it requests them, and the user\'s right to refuse the optional ones. Shown on the first-launch terms screen and in Help. Please do not change the markup"><![CDATA[<h2>权限</h2><p><b>Sky Map 没有必需的权限。</b>以下所有权限均为可选 — 您可以拒绝其中任何一项，并且仍然可以使用本应用。Sky Map 绝不会在启动时请求权限：每项权限仅在您首次使用需要它的功能时请求，您可以随时在设备的<b>设置 → 应用 → Sky Map → 权限</b>下单独授予或撤销每项权限。</p><h3>位置 — 可选</h3><p><b>访问内容：</b>您的近似位置。</p><p><b>原因：</b>您上方的星星取决于您的位置，因此 Sky Map 使用您的近似位置来绘制正确的星空。</p><p><b>如果您拒绝：</b>您可以输入地点名称或坐标，整个应用仍可正常运行。</p><blockquote>您的位置仅用于您的设备上绘制星空。它绝不会发送给我们。</blockquote><h3>相机 — 可选</h3><p><b>访问内容：</b>相机预览。</p><p><b>原因：</b>透视相机模式在实时相机视图上方绘制星空，以便您可以将星图与您实际看到的内容进行匹配。</p><p><b>如果您拒绝：</b>所有其他模式均正常运行。</p><blockquote>Sky Map 绝不会录制相机视图或将其发送给我们。它在屏幕上绘制后即被丢弃 — 除非您分享图片：从分享表单中选择 AR 布局会将该图片保存在您的设备上，并将其交给您选择的应用。在您请求之前，不会分享任何内容。</blockquote><h3>通知 — 可选</h3><p><b>访问内容：</b>显示通知的权限。</p><p><b>原因：</b>如果您请求，我们会通知您流星雨高峰和今晚值得观看的内容。</p><p><b>如果您拒绝：</b>其他一切不变 — 这些通知将保持关闭状态，直到您将其打开。</p>]]></string>
+</resources>

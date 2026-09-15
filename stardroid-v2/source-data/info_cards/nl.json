@@ -1,0 +1,2356 @@
+{
+ "cards": {
+  "constellation/andromeda": {
+   "description": "Andromeda de Prinses bevat het Andromedastelsel (M31), het dichtstbijzijnde grote spiraalstelsel bij onze Melkweg.",
+   "fun_fact": "Het Andromedastelsel komt met 110 km/s op ons af en zal over ongeveer 4,5 miljard jaar samensmelten met de Melkweg!",
+   "size": "722 vierkante graden",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/antlia": {
+   "description": "Antlia (de Luchtpomp) is een zwakke zuidelijke sterrenbeeld gemaakt door Nicolas-Louis de Lacaille in de 18e eeuw ter ere van de luchtpomp uitgevonden door Robert Boyle.",
+   "fun_fact": "Antlia bevat het Antlia Dwarf Galaxy, een van de dichtstbijzijnde sterrenstelsels van de Melkweg op slechts 4,3 miljoen lichtjaar afstand!",
+   "size": "239 vierkante graden",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/apus": {
+   "description": "Apus (de Paradijsvogel) is een zwak zuidelijk sterrenbeeld dat in de late 16de eeuw door Nederlandse navigators Keyser en de Houtman is geïntroduceerd.",
+   "fun_fact": "Apus werd genoemd naar de paradijsvogels van de Oost-Indië, waarvan vroege Europese ontdekkingsreizigers dachten dat ze geen poten hadden — vandaar de Latijnse naam die \"voetloos\" betekent.",
+   "size": "206 vierkante graden",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/aquarius": {
+   "description": "Aquarius de Waterdrager is een sterrenbeeld van de dierenriem in een hemelgebied dat vaak de Zee wordt genoemd, omringd door watergerelateerde sterrenbeelden.",
+   "fun_fact": "Aquarius bevat de Helixnevel, een van de dichtstbijzijnde planetaire nevels bij de Aarde op slechts 700 lichtjaar afstand!",
+   "size": "980 vierkante graden",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/aquila": {
+   "description": "Aquila de Adelaar is een sterrenbeeld op de hemelevenaar, met de heldere ster Altair in het midden.",
+   "fun_fact": "Altair in Aquila is een van de snelst draaiende sterren die we kennen, zo snel dat hij uitpuilt aan zijn evenaar!",
+   "size": "652 vierkante graden",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/ara": {
+   "description": "Ara (het Altaar) is een zuidelijk sterrenbeeld dat sinds de oudheid bekend is. In de Griekse mythologie vertegenwoordigt het het altaar waarop de goden een eed zwoeren voordat zij tegen de Titanen streden.",
+   "fun_fact": "Ara bevat de Stingray Nebula, de jongste bekende planetaire nevel, die alleen in de jaren 1980 werd waargenomen te vormen — een kosmische gebeurtenis die in real-time werd vastgelegd!",
+   "size": "237 vierkante graden",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/aries": {
+   "description": "Aries de Ram is een sterrenbeeld van de dierenriem dat ooit het lentepunt herbergde, wat ons de uitdrukking \"Eerste Punt van Aries\" gaf.",
+   "fun_fact": "Hoewel het lentepunt zo'n 2.000 jaar geleden naar Pisces verschoof, noemen we het nog steeds het Eerste Punt van Aries!",
+   "size": "441 vierkante graden",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/auriga": {
+   "description": "Auriga de Wagenmenner is een noordelijk sterrenbeeld met Capella, de zesde helderste ster, en verscheidene open sterrenhopen.",
+   "fun_fact": "Epsilon Aurigae is een van de vreemdste sterren die we kennen; hij wordt elke 27 jaar twee jaar lang zwakker door een mysterieuze donkere schijf!",
+   "size": "657 vierkante graden",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/bootes": {
+   "description": "Boötes de Ossenhoeder is een sterrenbeeld dat Arcturus bevat, de vierde helderste ster aan de nachtelijke hemel.",
+   "fun_fact": "Volg de boog van het handvat van de Grote Beer om \"de boog naar Arcturus te maken\" - een van de beroemdste navigatietips!",
+   "size": "907 vierkante graden",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/caelum": {
+   "description": "Caelum (de Beitel) is een van de zwakste sterrenbeelden aan de hemel, gemaakt door Lacaille in de 18e eeuw om een graveergereedschap voor te stellen.",
+   "fun_fact": "Caelum is het achtste kleinste sterrenbeeld en bevat geen sterren helderder dan magnitude 4,5 — je hebt zeer donkere hemel en scherpe ogen nodig om het op te spotten!",
+   "size": "125 vierkante graden",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/camelopardalis": {
+   "description": "Camelopardalis (de Giraffe) is een groot maar zwak noordelijk sterrenbeeld. De naam komt van het Grieks voor \"kameel-luipaard,\" een vroege beschrijving van de giraffe.",
+   "fun_fact": "Ondanks dat Camelopardalis de 18e-grootste sterrenbeeld is, heeft het geen ster helderder dan magnitude 4,0 — het neemt een groot, schijnbaar leeg stuk hemel in beslag dicht bij Polaris!",
+   "size": "757 vierkante graden",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/cancer": {
+   "description": "Cancer de Kreeft is het zwakste sterrenbeeld van de dierenriem, maar bevat de beroemde Bijenkorfhoop (M44) die met het blote oog zichtbaar is.",
+   "fun_fact": "De Kreeftskeerkring werd zo genoemd toen de Zon bij de zomerzonnewende in Cancer stond, hoewel ze nu in Taurus staat!",
+   "size": "506 vierkante graden",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/canes_venatici": {
+   "description": "Canes Venatici (de Jachthonden) vertegenwoordigt de twee honden die door Boötes de Herder worden vastgehouden. Het werd in 1687 door Johannes Hevelius geïntroduceerd.",
+   "fun_fact": "Canes Venatici bevat M51, het Draaikolksterrenstelsel — het eerste sterrenstelsel waarvan de spiraalstructuur werd ontdekt, geschetst door Lord Rosse in 1845!",
+   "size": "465 vierkante graden",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/canis_major": {
+   "description": "Canis Major (de Grote Hond) volgt Orion over de hemel en bevat Sirius, de helderste ster zichtbaar vanaf de Aarde.",
+   "fun_fact": "De oude Egyptenaren baseerden hun kalender op de heliakische opkomst van Sirius, die samenviel met de jaarlijkse overstroming van de Nijl!",
+   "size": "380 vierkante graden",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/canis_minor": {
+   "description": "Canis Minor (de Kleine Hond) is een klein sterrenbeeld dat opvalt door Procyon, de achtste helderste ster aan de hemel.",
+   "fun_fact": "Procyon betekent \"vóór de hond\" in het Grieks omdat hij elke nacht net voor Sirius (de Hondsster) opkomt!",
+   "size": "183 vierkante graden",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/capricornus": {
+   "description": "Capricornus de Steenbok is een oud sterrenbeeld van de dierenriem dat een mythisch wezen afbeeldt, half geit, half vis.",
+   "fun_fact": "Capricornus is een van de oudst erkende sterrenbeelden en verschijnt in Babylonische sterrencatalogi van meer dan 3.000 jaar geleden!",
+   "size": "414 vierkante graden",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/carina": {
+   "description": "Carina de Kiel maakte ooit deel uit van het enorme sterrenbeeld Argo Navis en bevat de schitterende ster Canopus.",
+   "fun_fact": "Eta Carinae in Carina is een van de meest lichtgevende sterren die we kennen en kan tijdens ons leven als supernova ontploffen!",
+   "size": "494 vierkante graden",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/cassiopeia": {
+   "description": "Cassiopeia is een opvallend W-vormig sterrenbeeld aan de noordelijke hemel, vernoemd naar een ijdele koningin uit de Griekse mythologie.",
+   "fun_fact": "De supernova van Tycho Brahe uit 1572 verscheen in Cassiopeia en hielp bewijzen dat de hemel kon veranderen!",
+   "size": "598 vierkante graden",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/centaurus": {
+   "description": "Centaurus de Centaur is een groot zuidelijk sterrenbeeld dat Alpha Centauri bevat, het dichtstbijzijnde sterrensysteem bij onze Zon.",
+   "fun_fact": "Proxima Centauri in Centaurus is slechts 4,24 lichtjaar van ons verwijderd, waarmee het de dichtstbijzijnde ster bij ons zonnestelsel is!",
+   "size": "1.060 vierkante graden",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/cepheus": {
+   "description": "Cepheus de Koning is een noordelijk sterrenbeeld waarvan de sterren onder andere Delta Cephei omvatten, het prototype voor Cepheïden-veranderlijke sterren.",
+   "fun_fact": "Cepheïden-veranderlijken, ontdekt door Henrietta Leavitt, revolutioneerden de astronomie door ons in staat te stellen kosmische afstanden te meten!",
+   "size": "588 vierkante graden",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/cetus": {
+   "description": "Cetus het Zeemonster is een groot sterrenbeeld dat Mira bevat, de eerste veranderlijke ster die ooit werd ontdekt.",
+   "fun_fact": "Mira in Cetus varieert van zichtbaar tot onzichtbaar over 11 maanden en heeft een 13 lichtjaar lange gasstaart!",
+   "size": "1.231 vierkante graden",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/chamaeleon": {
+   "description": "Chamaeleon is een klein zuidelijk sterrenbeeld dat in de late 16e eeuw door Nederlandse navigators is geïntroduceerd en de kleurverwisselende hagedis voorstelt.",
+   "fun_fact": "Chamaeleon bevat een groot moleculair wolkencomplex waar actief nieuwe sterren ontstaan — het is een van de dichtstbijzijnde stervorming-regio's op aarde op slechts 500 lichtjaar afstand!",
+   "size": "132 vierkante graden",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/circinus": {
+   "description": "Circinus (de Passer) is een van de kleinste sterrenbeelden, gemaakt door Lacaille om een tekenpassers voor het tekenen van cirkels voor te stellen.",
+   "fun_fact": "Het Circinus-sterrenstelsel is een van de dichtstbijzijnde Seyfert-sterrenstelsels voor ons — een actief sterrenstelsel met een superzwaar zwart gat dat heldere materiaalstralen aandrijft!",
+   "size": "93 vierkante graden",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/columba": {
+   "description": "Columba (de Duif) vertegenwoordigt de duif die door Noach vanuit de Ark werd gestuurd om droog land te vinden. Het ligt ten zuiden van Lepus en Canis Major.",
+   "fun_fact": "De vluchtster Mu Columbae werd ongeveer 2,5 miljoen jaar geleden uit de Orionnevel uitgestoten en raast nu met meer dan 100 km/s door Columba!",
+   "size": "270 vierkante graden",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/coma_berenices": {
+   "description": "Coma Berenices (Berenice's Hair) vertegenwoordigt het haar van de Egyptische koningin Berenice II, die het aan de goden offerde. Het is een van de weinige sterrenbeelden genoemd naar een historische persoon.",
+   "fun_fact": "Coma Berenices bevat de noordelijke galactische pool — de richting loodrecht op de schijf van de Melkweg — daarom is het rijk aan zichtbare sterrenstelsels zonder galactisch stof in de weg!",
+   "size": "386 vierkante graden",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/corona_australis": {
+   "description": "Corona Australis (de Zuiderkroon) is een van de 48 sterrenbeelden die door Ptolemaeus zijn opgesomd. Het vertegenwoordigt een krans of kroon die aan de voeten van Boogschutter is geplaatst.",
+   "fun_fact": "Corona Australis bevat een van de dichtstbijzijnde en meest actieve stervorming-regio's — het Coronet Cluster, waar op dit moment tientallen jonge sterren worden geboren!",
+   "size": "128 vierkante graden",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/corona_borealis": {
+   "description": "Corona Borealis (de Noorderkroon) is een klein halfrond sterrenbeeld dat de kroon van Ariadne uit de Griekse mythologie voorstelt.",
+   "fun_fact": "T Coronae Borealis is een terugkerende nova die ongeveer elke 80 jaar uitbarst - een nieuwe uitbarsting kan binnenkort plaatsvinden!",
+   "size": "179 vierkante graden",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/corvus": {
+   "description": "Corvus de Kraai is een klein vierhoekig sterrenbeeld ten zuiden van Virgo, dat de heilige vogel van Apollo voorstelt.",
+   "fun_fact": "De vier hoofdsterren van Corvus vormen een kenmerkende zeilvorm die gemakkelijk te herkennen is aan de lentehemel!",
+   "size": "184 vierkante graden",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/crater": {
+   "description": "Crater (de Beker) vertegenwoordigt de beker van Apollo in de Griekse mythologie. Het zit op de rug van Hydra, de waterschlang, naast Corvus de Raaf.",
+   "fun_fact": "In de Griekse mythologie stuurde Apollo de Raaf om water in deze Beker te halen, maar de Raaf vertraagde door vijgen te eten — dus plaatste Apollo alle drie aan de hemel als straf!",
+   "size": "282 vierkante graden",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/crux": {
+   "description": "Crux (het Zuiderkruis) is het kleinste sterrenbeeld maar een van de meest kenmerkende, gebruikt voor navigatie op het zuidelijk halfrond.",
+   "fun_fact": "Ondanks dat het het kleinste sterrenbeeld is, heeft Crux meer heldere sterren per oppervlakte-eenheid dan elk ander sterrenbeeld!",
+   "size": "68 vierkante graden",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/cygnus": {
+   "description": "Cygnus de Zwaan vliegt langs de Melkweg en bevat het Noorderkruis-asterisme en de heldere ster Deneb.",
+   "fun_fact": "Cygnus X-1 in dit sterrenbeeld was het eerste breed geaccepteerde zwarte gat, geïdentificeerd in het begin van de jaren 1970!",
+   "size": "804 vierkante graden",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/delphinus": {
+   "description": "Delphinus de Dolfijn is een klein maar kenmerkend sterrenbeeld waarvan de sterren de vorm van een springende dolfijn vormen.",
+   "fun_fact": "Twee van de sterren van Delphinus heten Sualocin en Rotanev - \"Nicolaus Venator\" achterstevoren gespeld, de astronoom die ze noemde!",
+   "size": "189 vierkante graden",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/dorado": {
+   "description": "Dorado (de Zwaardvis of Goudmakreel) is een zuidelijk sterrenbeeld dat door Nederlandse zeevaarders is gecreëerd. Het bevat het grootste deel van de Grote Magelhaense Wolk.",
+   "fun_fact": "Dorado herbergt de Tarantula-nevel (30 Doradus), de meest lumineuze stervorming-regio in de Lokale Groep — als deze zo dicht bij ons zou zijn als de Orion-nevel, zou deze schaduwen op de Aarde werpen!",
+   "size": "179 vierkante graden",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/draco": {
+   "description": "Draco de Draak is een lang, kronkelend sterrenbeeld dat rond Ursa Minor cirkelt aan de verre noordelijke hemel.",
+   "fun_fact": "Thuban in Draco was de Poolster toen de Egyptische piramides werden gebouwd, 5.000 jaar geleden!",
+   "size": "1.083 vierkante graden",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/equuleus": {
+   "description": "Equuleus (het Kleine Paard) is het op één na kleinste sterrenbeeld. In de Griekse mythologie vertegenwoordigt het Celeris, de broer of veulen van Pegasus.",
+   "fun_fact": "Equuleus is het op één na kleinste van alle 88 sterrenbeelden (alleen Crux is kleiner), maar het was toch één van de oorspronkelijke 48 die bijna 2.000 jaar geleden door Ptolemaeus werden opgesomd!",
+   "size": "72 vierkante graden",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/eridanus": {
+   "description": "Eridanus de Rivier is het zesde grootste sterrenbeeld, slingerend van nabij Orion tot ver aan de zuidelijke hemel.",
+   "fun_fact": "Achernar aan het einde van Eridanus is de platste bekende ster, met een uitpuiling van 56% aan zijn evenaar door snelle rotatie!",
+   "size": "1.138 vierkante graden",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/fornax": {
+   "description": "Fornax (de Oven) werd door Lacaille gecreëerd om een chemische oven voor te stellen. Het is een zwak zuidelijk sterrenbeeld tussen Cetus en Eridanus.",
+   "fun_fact": "Het Hubble Ultra Deep Field — een van de diepste afbeeldingen van het universum ooit gemaakt, met sterrenstelsels op 13 miljard lichtjaar afstand — werd gefotografeerd in Fornax!",
+   "size": "398 vierkante graden",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/gemini": {
+   "description": "Gemini de Tweelingen bevat de heldere sterren Castor en Pollux, die de tweelingbroers uit de Griekse mythologie voorstellen.",
+   "fun_fact": "Ondanks dat ze tweelingen worden genoemd, bestaat Castor eigenlijk uit zes sterren en is Pollux een oranje reus - ze lijken helemaal niet op elkaar!",
+   "size": "514 vierkante graden",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/grus": {
+   "description": "Grus de Kraanvogel is een zuidelijk sterrenbeeld dat eind 16e eeuw werd geïntroduceerd door Europese zeevaarders.",
+   "fun_fact": "Grus stond ooit bekend als Phoenicopterus (de Flamingo) voordat het werd omgedoopt tot de kraanvogel!",
+   "size": "366 vierkante graden",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/hercules": {
+   "description": "Hercules is een groot sterrenbeeld dat de Griekse held voorstelt en de grote bolhoop M13 bevat.",
+   "fun_fact": "Ons zonnestelsel beweegt richting een punt in Hercules dat het zonne-apex wordt genoemd, met een snelheid van ongeveer 20 km/s!",
+   "size": "1.225 vierkante graden",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/horologium": {
+   "description": "Horologium (de Slingerklok) werd door Lacaille gemaakt ter ere van Christiaan Huygens' uitvinding van de slingerklok in 1656.",
+   "fun_fact": "Horologium bevat een massief supercluster van sterrenstelsels genaamd het Horologium-Reticulum Supercluster, een van de grootste structuren in het nabije universum!",
+   "size": "249 vierkante graden",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/hydra": {
+   "description": "Hydra is het grootste sterrenbeeld aan de hemel en stelt de waterslang uit de Griekse mythologie voor.",
+   "fun_fact": "Hydra strekt zich uit over meer dan 100 graden aan de hemel - meer dan een kwart van de hele hemelbol!",
+   "size": "1.303 vierkante graden",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/hydrus": {
+   "description": "Hydrus (de Kleine Waterslang) is een klein zuidelijk sterrenbeeld in de buurt van de zuidelijke hemelpool. Niet te verwarren met Hydra, de veel grotere waterslang.",
+   "fun_fact": "Hydrus ligt tussen de Grote en Kleine Magelhaense Wolken, waardoor het een nuttig oriëntatiepunt is voor het vinden van deze twee sterrenstelsels die rond de Melkweg draaien!",
+   "size": "243 vierkante graden",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/indus": {
+   "description": "Indus (de Indiaan) is een zuidelijk sterrenbeeld dat door Nederlandse zeevaarders is gecreëerd en oorspronkelijk een inheemse bewoner van de Oost-Indische eilanden of Madagaskar voorstelde.",
+   "fun_fact": "Epsilon Indi, een van de dichtstbijzijnde zonachtige sterren op slechts 12 lichtjaar afstand, ligt in Indus — en het heeft een bruine dwerg-begeleidsysteem!",
+   "size": "294 vierkante graden",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/lacerta": {
+   "description": "Lacerta (de Hagedis) is een klein noordelijk sterrenbeeld dat in 1687 door Hevelius werd geïntroduceerd. Het ligt tussen Cygnus en Andromeda.",
+   "fun_fact": "Lacerta bevat BL Lacertae, het prototype van een klasse van actieve sterrenstelsels genaamd \"blazars\" — sterrenstelsels met superzware zwarte gaten die materie rechtstreeks naar de Aarde schieten!",
+   "size": "201 vierkante graden",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/leo": {
+   "description": "Leo de Leeuw is een sterrenbeeld van de dierenriem met Regulus in het hart van de leeuw en het kenmerkende Sikkel-asterisme.",
+   "fun_fact": "De Leoniden-meteorenregen in november lijkt vanuit Leo te komen en kan spectaculaire buien produceren!",
+   "size": "947 vierkante graden",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/leo_minor": {
+   "description": "Leo Minor (de Kleine Leeuw) is een zwak sterrenbeeld tussen Leo en Ursa Major, geïntroduceerd door Hevelius in 1687.",
+   "fun_fact": "Leo Minor is een van de weinige sterrenbeelden waarvan de helderste ster geen Alfaaanduiding heeft — Hevelius vergat het te labelen, dus de helderste ster is 46 Leonis Minoris (Beta)!",
+   "size": "232 vierkante graden",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/lepus": {
+   "description": "Lepus de Haas zit gehukt onder de voeten van Orion, een klein maar markant sterrenbeeld met een rijke mythologie.",
+   "fun_fact": "In de mythologie werd gezegd dat Orion dol was op de hazenjacht, dus werd er een haas onder zijn voeten aan de hemel geplaatst!",
+   "size": "290 vierkante graden",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/libra": {
+   "description": "Libra de Weegschaal is het enige sterrenbeeld van de dierenriem dat een levenloos voorwerp voorstelt; het werd ooit als onderdeel van Scorpius beschouwd.",
+   "fun_fact": "De hoofdsterren van Libra stonden ooit bekend als de Klauwen van de Schorpioen voordat ze de Weegschaal van Justitia werden!",
+   "size": "538 vierkante graden",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/lupus": {
+   "description": "Lupus (de Wolf) is een oud zuidelijk sterrenbeeld. De Grieken en Romeinen zagen het als een wild dier doorboord op een paal die door Centaurus wordt vastgehouden.",
+   "fun_fact": "In 1006 n.Chr. verscheen de helderste supernova die ooit door mensen is waargenomen in Lupus — SN 1006 was overdag zichtbaar en heeft mogelijk magnitude −7,5 bereikt!",
+   "size": "334 vierkante graden",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/lynx": {
+   "description": "Lynx is een groot maar zwak noordelijk sterrenbeeld dat in 1687 door Hevelius is gecreëerd. Hij zei dat je de ogen van een lynx nodig zou hebben om het te zien!",
+   "fun_fact": "Lynx bevat de Intergalactic Wanderer (NGC 2419), een bolhoop die zo ver weg is op 300.000 lichtjaar dat men ooit dacht dat deze buiten de Melkweg zou draaien!",
+   "size": "545 vierkante graden",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/lyra": {
+   "description": "Lyra de Lier is een klein maar prominent sterrenbeeld dat Vega bevat, de vijfde helderste ster aan de nachtelijke hemel.",
+   "fun_fact": "Vega was rond 12.000 v.Chr. de Poolster en zal over ongeveer 12.000 jaar weer de Poolster zijn door de precessie van de Aarde!",
+   "size": "286 vierkante graden",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/mensa": {
+   "description": "Mensa (Tafelberg) werd door Lacaille gecreëerd ter ere van de Tafelberg in Kaapstad, Zuid-Afrika, waar hij zijn waarnemingen van de zuidelijke hemel maakte.",
+   "fun_fact": "Mensa is het enige sterrenbeeld genoemd naar een specifiek geografisch kenmerk op Aarde. Een deel van de Grote Magelhaense Wolk strekt zich erin uit, als een wolk boven de berg!",
+   "size": "153 vierkante graden",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/microscopium": {
+   "description": "Microscopium (de Microscoop) werd door Lacaille gemaakt ter ere van de samengestelde microscoop. Het is een van de zwakste sterrenbeelden aan de hemel.",
+   "fun_fact": "De helderste ster van Microscopium, Gamma Microscopii, maakte ooit deel uit van het naburige Sagittarius — deze werd opnieuw toegewezen toen de grenzen van sterrenbeelden in 1930 werden gestandaardiseerd!",
+   "size": "210 vierkante graden",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/monoceros": {
+   "description": "Monoceros de Eenhoorn is een zwak sterrenbeeld in de wintermelkweg, rijk aan nevels en sterrenhopen.",
+   "fun_fact": "De Rozettenevel in Monoceros is een massief stervormingsgebied dat lijkt op een hemelse roos!",
+   "size": "482 vierkante graden",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/musca": {
+   "description": "Musca (de Vlieg) is een klein zuidelijk sterrenbeeld in de buurt van het Zuiderkruis. Het is het enige insectensterrenbeeld aan de hemel.",
+   "fun_fact": "Musca werd oorspronkelijk \"Apis\" (de Bij) genoemd door zijn makers. Het is het enige sterrenbeeld dat een insect vertegenwoordigt — en het ligt vlak naast Chamaeleon, die ze eet!",
+   "size": "138 vierkante graden",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/norma": {
+   "description": "Norma (het Tekenhaak) werd door Lacaille gecreëerd om een waterpas en tekenhaak voor te stellen. Het ligt in de rijke Melkweg tussen Scorpius en Lupus.",
+   "fun_fact": "Als je naar Norma kijkt, kijk je langs een van de spiraalstelsels van de Melkweg — de Norma-arm, genoemd naar dit sterrenbeeld, zit vol met sterrenhopen en nevels!",
+   "size": "165 vierkante graden",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/octans": {
+   "description": "Octans (de Octant) werd door Lacaille gemaakt ter ere van het navigatie-instrument. Het bevat de zuidelijke hemelpool.",
+   "fun_fact": "Octans bevat de zuidelijke hemelpool, maar in tegenstelling tot de noordpool met Polaris is er geen heldere ster die de zuidelijke pool markeert — Sigma Octantis (mag 5,4) is de zwakke \"Zuidster.\"",
+   "size": "291 vierkante graden",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/ophiuchus": {
+   "description": "Ophiuchus de Slangendrager ligt langs de ecliptica maar is geen dierenriemteken, verdeeld door de slang die hij vasthoudt.",
+   "fun_fact": "De Zon brengt meer tijd door in Ophiuchus dan in Scorpius, maar toch wordt Ophiuchus niet als dierenriemteken beschouwd!",
+   "size": "948 vierkante graden",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/orion": {
+   "description": "Orion de Jager is een van de meest herkenbare sterrenbeelden, zichtbaar vanaf beide halfronden met zijn kenmerkende Gordel van drie sterren.",
+   "fun_fact": "De Gordel van Orion wijst in de ene richting naar Sirius (de helderste ster) en in de andere richting naar Aldebaran (in Taurus)!",
+   "size": "594 vierkante graden",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/pavo": {
+   "description": "Pavo de Pauw is een zuidelijk sterrenbeeld dat de heldere ster Peacock en verscheidene interessante sterrenstelsels bevat.",
+   "fun_fact": "De ster Peacock (Alpha Pavonis) is de op één na meest lichtgevende ster binnen 200 lichtjaar van onze Zon!",
+   "size": "378 vierkante graden",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/pegasus": {
+   "description": "Pegasus het Gevleugelde Paard is een groot sterrenbeeld met het Grote Vierkant van Pegasus, een prominent herfst-asterisme.",
+   "fun_fact": "51 Pegasi b, ontdekt in 1995 in dit sterrenbeeld, was de eerste exoplaneet gevonden rond een zonachtige ster!",
+   "size": "1.121 vierkante graden",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/perseus": {
+   "description": "Perseus de Held herbergt de beroemde veranderlijke ster Algol en de Dubbele Cluster, een prachtig paar open sterrenhopen.",
+   "fun_fact": "Algol (de Demonster) werd in de oudheid als kwaadaardig beschouwd omdat hij elke 2,87 dagen op mysterieuze wijze zwakker werd!",
+   "size": "615 vierkante graden",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/phoenix": {
+   "description": "Phoenix is een zuidelijk sterrenbeeld dat de mythische vogel voorstelt die uit zijn eigen as herrijst.",
+   "fun_fact": "Phoenix was een van de 12 sterrenbeelden die eind 16e eeuw door Nederlandse ontdekkingsreizigers werden gecreëerd uit onbekende zuidelijke sterren!",
+   "size": "469 vierkante graden",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/pictor": {
+   "description": "Pictor (de Schildersezel) is een zwak zuidelijk sterrenbeeld dat door Lacaille is gecreëerd en oorspronkelijk naar de schildersezel is genoemd.",
+   "fun_fact": "Beta Pictoris in dit sterrenbeeld was een van de eerste sterren waarvan een zichtbare puinschijf werd ontdekt — en het heeft twee bevestigde exoplaneten die erin omdraaien!",
+   "size": "247 vierkante graden",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/pisces": {
+   "description": "Pisces de Vissen is een groot sterrenbeeld van de dierenriem dat twee aan elkaar gebonden vissen voorstelt en het lentepunt markeert.",
+   "fun_fact": "Het lentepunt (eerste dag van de lente) ligt momenteel in Pisces en beweegt er al 2.000 jaar langzaam doorheen!",
+   "size": "889 vierkante graden",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/piscis_austrinus": {
+   "description": "Piscis Austrinus (de Zuidelijke Vis) is een oud sterrenbeeld. Het zou de ouder zijn van de twee vissen van Pisces, die water drinken dat door Waterman wordt uitgestort.",
+   "fun_fact": "Fomalhaut, de helderste ster in Piscis Austrinus, was een van de eerste sterren waarvan een exoplaneet rechtstreeks door Hubble werd gefotografeerd — hoewel de \"planeet\" eigenlijk een stofwolk kan zijn!",
+   "size": "245 vierkante graden",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/puppis": {
+   "description": "Puppis het Achterdek stelt het achterdek van het schip Argo Navis voor, rijk aan open sterrenhopen langs de Melkweg.",
+   "fun_fact": "Puppis bevat M47, een open sterrenhoop die met het blote oog zichtbaar is en meer dan 200 jaar \"verloren\" was door een catalogisatiefout!",
+   "size": "673 vierkante graden",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/pyxis": {
+   "description": "Pyxis (het Kompas) vertegenwoordigt een scheepskaart. Lacaille creëerde het uit sterren die ooit deel uitmaakten van het oude sterrenbeeld Argo Navis (het Schip).",
+   "fun_fact": "Pyxis bevat T Pyxidis, een terugkerende nova die sinds 1890 minstens zes keer is uitgebarsten — het's een van de best bestudeerde nova's aan de hemel!",
+   "size": "221 vierkante graden",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/reticulum": {
+   "description": "Reticulum (het Retikel) werd door Lacaille gecreëerd om het kruisdraad-oculair in zijn telescoop te vertegenwoordigen, dat hij gebruikte tijdens zijn onderzoek van de zuidelijke hemel.",
+   "fun_fact": "Reticulum is beroemd in UFO-folklore — het \"Zeta Reticuli incident\" van 1961 beweerde dat buitenaardse bezoekers uit een sterrenstelsel in dit sterrenbeeld kwamen!",
+   "size": "114 vierkante graden",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/sagitta": {
+   "description": "Sagitta de Pijl is het op twee na kleinste sterrenbeeld en stelt verschillende mythologische pijlen uit Griekse legenden voor.",
+   "fun_fact": "Ondanks zijn kleine formaat bevat Sagitta M71, een bolhoop die eeuwenlang voor een open sterrenhoop werd aangezien!",
+   "size": "80 vierkante graden",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/sagittarius": {
+   "description": "Sagittarius de Boogschutter wijst in de richting van het centrum van onze Melkweg, waardoor hij rijk is aan nevels en sterrenhopen.",
+   "fun_fact": "Als je naar Sagittarius kijkt, kijk je richting Sagittarius A*, het superzware zwarte gat in het centrum van ons sterrenstelsel!",
+   "size": "867 vierkante graden",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/scorpius": {
+   "description": "Scorpius is een prominent sterrenbeeld van de dierenriem met een kenmerkende gebogen staart, gedomineerd door de rode superreus Antares.",
+   "fun_fact": "In de mythologie werd Scorpius tegenover Orion aan de hemel geplaatst, zodat de jager nooit meer gestoken zou worden!",
+   "size": "497 vierkante graden",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/sculptor": {
+   "description": "Sculptor (de Beeldhouwer) werd door Lacaille gecreëerd en stelde oorspronkelijk een beeldhouwersatelier voor. Het bevat de zuidelijke galactische pool.",
+   "fun_fact": "Sculptor bevat de zuidelijke galactische pool en het Sculptor Dwarf Galaxy, een van de dichtstbijzijnde satellietstelsels van de Melkweg op slechts 260.000 lichtjaar afstand!",
+   "size": "475 vierkante graden",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/scutum": {
+   "description": "Scutum (het Schild) werd in 1684 door Hevelius gemaakt ter ere van koning Jan III Sobieski van Polen. Het is een van de weinige sterrenbeelden genoemd naar een niet-mythologische historische figuur.",
+   "fun_fact": "Scutum bevat de Scutum Star Cloud, een van de helderste en dichtste delen van de Melkweg die met het blote oog zichtbaar zijn — het is een venster naar de binnenste spiraalarm van ons sterrenstelsel!",
+   "size": "109 vierkante graden",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/serpens_caput": {
+   "description": "Serpens Caput (het Hoofd van de Slang) is het westelijke deel van Serpens, het enige sterrenbeeld dat door Ophiuchus in twee niet-aaneengesloten delen is verdeeld.",
+   "fun_fact": "Serpens Caput bevat M5, één van de oudste en grootste bolvormige sterrenhopen die bekend zijn — het is 13 miljard jaar oud en bevat meer dan 100.000 sterren!",
+   "size": "428 vierkante graden (beide delen)",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/serpens_cauda": {
+   "description": "Serpens Cauda (de Staart van de Slang) is het oostelijke deel van Serpens, gescheiden van het hoofd door het sterrenbeeld Ophiuchus.",
+   "fun_fact": "Serpens Cauda bevat de Adelaarsnevel (M16) en zijn beroemde \"Pilaren van de Schepping\" — imposante zuilen van gas en stof waar nieuwe sterren ontstaan!",
+   "size": "428 vierkante graden (beide delen)",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/sextans": {
+   "description": "Sextans (de Sextant) werd door Hevelius gemaakt ter herdenking van zijn astronomische sextant, die in 1679 in een brand werd verwoest.",
+   "fun_fact": "Sextans bevat de Sextans A dwergsterrenstelsel, een van de meest geïsoleerde sterrenstelsels in de Lokale Groep op 4,3 miljoen lichtjaar afstand!",
+   "size": "314 vierkante graden",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/taurus": {
+   "description": "Taurus de Stier is een sterrenbeeld van de dierenriem dat de Pleiaden en Hyaden sterrenhopen bevat, en de heldere ster Aldebaran.",
+   "fun_fact": "De Krabnevel in Taurus is het restant van een supernova die in 1054 n.Chr. door Chinese astronomen werd waargenomen en opgetekend!",
+   "size": "797 vierkante graden",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/telescopium": {
+   "description": "Telescopium (de Telescoop) werd door Lacaille gemaakt ter ere van de uitvinding van de refractortelescoop. Het ligt ten zuiden van Sagittarius en Corona Australis.",
+   "fun_fact": "Telescopium was oorspronkelijk veel groter — toen Lacaille het voor het eerst tekende, strekte het zich uit naar wat nu delen van Sagittarius en Ophiuchus zijn!",
+   "size": "252 vierkante graden",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/triangulum": {
+   "description": "Triangulum is een klein noordelijk sterrenbeeld dat het Driehoekstelsel (M33) bevat, het derde grootste in de Lokale Groep.",
+   "fun_fact": "Het Driehoekstelsel is het verste object dat onder ideale omstandigheden met het blote oog kan worden gezien!",
+   "size": "132 vierkante graden",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/triangulum_australe": {
+   "description": "Triangulum Australe (de Zuidelijke Driehoek) is een klein maar opvallend zuidelijk sterrenbeeld. De drie helderste sterren vormen een bijna gelijkzijdige driehoek.",
+   "fun_fact": "Triangulum Australe bevat NGC 6025, een prachtige open sterrenhoop die gemakkelijk met verrekijkers zichtbaar is, en het verschijnt op de vlaggen van Brazilië en Papoea-Nieuw-Guinea!",
+   "size": "110 vierkante graden",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/tucana": {
+   "description": "Tucana (de Toekan) is een zuidelijk sterrenbeeld dat door Nederlandse navigators is gecreëerd en de tropische vogel met zijn enorme snavel voorstelt.",
+   "fun_fact": "Tucana bevat 47 Tucanae (NGC 104), het op één na helderste bolvormige sterrenhoop aan de hemel, thuis voor miljoenen sterren en verschillende milliseconde pulsars!",
+   "size": "295 vierkante graden",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/ursa_major": {
+   "description": "Ursa Major (de Grote Beer) bevat het asterisme van de Steelpan, een van de meest herkende sterpatronen aan de noordelijke hemel.",
+   "fun_fact": "Vijf van de sterren van de Grote Beer zijn fysiek gerelateerd en bewegen samen door de ruimte als de Ursa Major Bewegende Groep!",
+   "size": "1.280 vierkante graden",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/ursa_minor": {
+   "description": "Ursa Minor (de Kleine Beer) bevat de Kleine Steelpan en Polaris, de huidige Poolster die de hemelse noordpool van de Aarde markeert.",
+   "fun_fact": "Door precessie zal Polaris niet altijd de Poolster zijn - over 14.000 jaar neemt Vega zijn plaats in!",
+   "size": "256 vierkante graden",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/vela": {
+   "description": "Vela de Zeilen maakte ooit deel uit van het grote schip Argo Navis, gelegen in een rijk gebied van de Melkweg.",
+   "fun_fact": "De Vela-pulsar is de helderste pulsar aan de hemel en het restant van een supernova die 11.000 jaar geleden ontplofte!",
+   "size": "500 vierkante graden",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/virgo": {
+   "description": "Virgo is het op één na grootste sterrenbeeld en een dierenriemteken, met de Virgohoop van meer dan 2.000 sterrenstelsels.",
+   "fun_fact": "De Virgohoop is het hart van de Virgo-superhoop, die ook ons eigen Melkwegstelsel bevat!",
+   "size": "1.294 vierkante graden",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/volans": {
+   "description": "Volans (de Vliegende Vis) is een zwak zuidelijk sterrenbeeld dat door Nederlandse zeevaarders is ingevoerd en de tropische vis voorstelt die uit het water kan springen en glijden.",
+   "fun_fact": "Volans ligt dicht bij de Grote Magelhaense Wolk en bevat de Lindsay-Shapley Ring, een van de meest perfecte ringgalaxieën ooit waargenomen!",
+   "size": "141 vierkante graden",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/vulpecula": {
+   "description": "Vulpecula (de Kleine Vos) is een zwak noordelijk sterrenbeeld dat in 1687 door Hevelius is gecreëerd. Het ligt in het hart van de Melkweg tussen Cygnus en Sagitta.",
+   "fun_fact": "Vulpecula bevat de Halternevel (M27), de eerste planetaire nevel die ooit is ontdekt (door Charles Messier in 1764), en een prachtig binoculair doelwit!",
+   "size": "268 vierkante graden",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "dso/blue_snowball_nebula": {
+   "description": "De Blauwe Sneeuwbal is een planetaire nevel in Andromeda — de glanzende gasschil die door een stervende ster is uitgestoten. Met een magnitude van 8,3 is het een van de helderste en kleurigste planetaire nevels aan de hemel, en verschijnt als een levendige blauwgroene schijf zelfs in kleine telescopen. De symmetrische vorm en intense kleur maken het een favoriet onder waarnemers.",
+   "fun_fact": "De opvallende kleur van de Blue Snowball komt van dubbel geïoniseerde zuurstof die gloedt op een specifieke groene golflengte, gecombineerd met waterstofemissie — een kleurenpalet dat het menselijk oog waarneemt als blauwgroen. De centrale witte dwerg heeft een oppervlaktetemperatuur van ongeveer 100.000°C, heet genoeg om het omringende gas op deze afstand te ioniseren.",
+   "distance": "~2.500 lichtjaar",
+   "size": "~0,8 lichtjaar diameter",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/centaurus_a": {
+   "description": "Centaurus A (NGC 5128) is het dichtst bij de Aarde gelegen actieve radiogalaxie, een reuzenachtige elliptische sterrenstelsel in het sterrenbeeld Centaurus waarvan de opvallende donkere stofband een gewelddadig verleden verraadt — een spiraalsterrenstelsel dat ongeveer 200–700 miljoen jaar geleden werd opgeslokt. In het hart ervan schuilt een superzwaar zwart gat met een massa van 55 miljoen zonnemassa's dat relativistische jets aandrijft die zich meer dan een miljoen lichtjaar uitstrekken in radiogolflengten. Op een afstand van ongeveer 12 miljoen lichtjaar is het een van de meest bestudeerde sterrenstelsels aan de hemel.",
+   "fun_fact": "Centaurus A is een van de krachtigste natuurlijke radiozenders aan de hemel — de jets blazen plasma naar buiten met bijna de snelheid van het licht, en de volledige uitbreiding van de radiokwabben beslaat een gebied dat gelijk is aan ongeveer 100 volle manen die van begin tot eind over de hemel zijn gelegd.",
+   "distance": "~12 miljoen lichtjaar",
+   "size": "~123.000 lichtjaar in doorsnee",
+   "image_credit": "ESO"
+  },
+  "dso/coathanger": {
+   "description": "De Kledinghangers is een opvallend asterisme van tien sterren in Vulpecula die een onmiskenbare vorm vormen: zes sterren in een rechte lijn met vier eronder hangend in een haak, precies lijkend op een ondersteboven kledinghangers. Het is een van de beste binoculaire objecten in de zomerhemel, perfect passend in een typisch binoculair gezichtsveld.",
+   "fun_fact": "Ondanks het uiterlijk van een cluster zijn de sterren van de Coathanger niet fysiek gerelateerd — ze bevinden zich op zeer verschillende afstanden en zijn slechts een toevallige lijnzichtcombinatie. Brocchi's Cluster werd in de jaren 1920 door Dalmiro Brocchi gecatalogiseerd, en de eerste ruimtetelescoop die het afbeeldde was Hipparcos, die bevestigde dat de sterren niet gerelateerd zijn.",
+   "distance": "~420 lichtjaar (helderste ster)",
+   "size": "~1° groot",
+   "image_credit": "DSS/Giuseppe Donatiello"
+  },
+  "dso/coma_star_cluster": {
+   "description": "Het Coma Berenices Sterrenhoop is een nabijgelegen open sterrenhoop met ongeveer 40 sterren die losjes verspreid zijn over bijna 5° van de hemel, gemakkelijk zichtbaar voor het blote oog als een zachte nevel onder donkere omstandigheden. Het is de derde dichtst bijzijnde open sterrenhoop voor het zonnestelsel en de bron van het sterrenbeeld Coma Berenices.",
+   "fun_fact": "Oude waarnemers zagen deze sterrenhoop als het haar van koningin Berenice II van Egypte, die volgens de legende haar gouden lokken afsneed als offer voor de veilige terugkeer van haar man uit de oorlog. Ptolemaeus III zou de ongebruikelijke sterrenbeeld rond 245 v.Chr. officieel naar haar hebben genoemd.",
+   "distance": "288 lichtjaar",
+   "size": "~5° groot",
+   "image_credit": "Alberto Pisabarro/CC BY-SA 4.0"
+  },
+  "dso/cygnus_x_1": {
+   "description": "Cygnus X-1 is een stellaire zwarte gat op ongeveer 7.200 lichtjaar afstand in Cygnus en een van de sterkste röntgenbronnen aan de hemel. Het vormt een dubbelster met de blauwe superreus HDE 226868, die elkaar elke 5,6 dagen omcirkelen. Het zwarte gat onttrekt gas aan zijn begeleider, waardoor een superhete accretieschijf ontstaat die in röntgenstraling oplicht.",
+   "fun_fact": "Cygnus X-1 was het eerste object dat algemeen werd aanvaard als een zwart gat. In 1975 sloot Stephen Hawking een beroemde wetenschappelijke weddenschap af met Kip Thorne dat het GEEN zwart gat was, een weddenschap die hij later toegaf.",
+   "distance": "7.200 lichtjaar",
+   "size": "Massa van zwart gat: ~21 zonnemassa's",
+   "image_credit": "NASA/CXC/M.Weiss"
+  },
+  "dso/double_cluster": {
+   "description": "De Dubbele Cluster (NGC 869 en NGC 884) is een schitterend paar jonge open sterrenhopen in Perseus, naast elkaar aan de hemel op iets meer dan een graad afstand. Beide zijn met het blote oog zichtbaar als een mistige vlek, maar zelfs een kleine telescoop onthult honderden briljante blauwwitte superreuzen die in twee glinsterende zwermen zijn samengeperst. Op ongeveer 7.500 lichtjaar afstand bevinden zij zich in de Perseus-arm van onze melkweg en behoren tot de mooiste binoculaire objecten aan de noordelijke hemel.",
+   "fun_fact": "Met slechts 14 miljoen jaar oud is het Dubbele Cluster buitengewoon jong — zo recent geboren dat de meest massieve sterren nog steeds blauwe superreuzen zijn, met enkele al geëvolueerd tot zeldzame, vurige rode superreuzen.",
+   "distance": "~7.500 lichtjaar",
+   "size": "Elk cluster ~70 lichtjaar in doorsnee; het paar gescheiden door ~1.000 lichtjaar",
+   "image_credit": "Genuson/CC BY-SA 3.0"
+  },
+  "dso/eta_carinae_nebula": {
+   "description": "De Eta Carinae Nevel (NGC 3372) is een van de grootste en helderste nevels aan de hemel, met een omvang van meer dan 300 lichtjaar. In het hart ervan bevindt zich Eta Carinae, een van de meest massieve en helderste sterren die bekend zijn, met een gewicht van meer dan 100 zonnemassa's.",
+   "fun_fact": "In 1843 barstte Eta Carinae uit en werd kort de tweede helderste ster aan de hemel, maar op de een of andere manier overleefde het — het staat mogelijk op het punt om supernova te worden!",
+   "distance": "7.500 lichtjaren",
+   "size": "300 lichtjaren in doorsnee"
+  },
+  "dso/exposed_cranium_nebula": {
+   "description": "De Exposed Cranium Nebula (PMR 1) is een planetaire nevel in Vela, ongeveer 5.000 lichtjaar verderop. De griezelige naam komt van een donkere gasstrook die verticaal door het midden loopt en de gloeiende lobben verdeelt in een vorm die griezelig lijkt op een hersenen in een doorzichtige schedel. In het hart brandt een hete Wolf-Rayet-ster die de buitenlagen afstoot die hij gedurende zijn leven heeft opgebouwd.",
+   "fun_fact": "In 2026 legde de James Webb Space Telescope opvallende nieuwe afbeeldingen van de Exposed Cranium Nebula vast, waarbij de dubbele laagstructuur in ongekende detail werd opgelost — een buitenschil rijk aan waterstof en een binnencloud vol zwaardere elementen die door de stervende ster zijn gesmeed.",
+   "distance": "~5.000 lichtjaar",
+   "size": "~2 lichtjaar in doorsnee",
+   "image_credit": "NASA, ESA, CSA, STScI/Joseph DePasquale"
+  },
+  "dso/ghost_of_jupiter": {
+   "description": "De Ghost of Jupiter is een heldere planetaire nevel in Hydra waarvan de schijnbare grootte vergelijkbaar is met de planeet Jupiter — vandaar de naam. Met een magnitude van 8,6 is het een van de meest toegankelijke planetaire nevels aan de hemel voor kleine telescopen, met een duidelijke schijf en een hint van kleur in matige openingen.",
+   "fun_fact": "De Ghost of Jupiter heeft een binnenste helder omhulsel omgeven door een zwakker buitenhalo — een twee-omhulselstructuur die suggereert dat de stervende ster gas in minstens twee afzonderlijke episodes heeft uitgestoten. De centrale ster is een van de heetste bekende witte dwergen, met een geschatte oppervlaktetemperatuur van ongeveer 75.000°C.",
+   "distance": "~1.400 lichtjaar",
+   "size": "~1 lichtjaar diameter",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/hdf": {
+   "description": "Het Hubble Deep Field is een klein stukje schijnbaar lege hemel van 2,6 boogminuten in Ursa Major, gefotografeerd door de Hubble Space Telescope gedurende 10 opeenvolgende dagen in december 1995. Wat leek lege ruimte te zijn, bleek ongeveer 3.000 sterrenstelsels te bevatten — die miljarden jaren kosmische geschiedenis omspannen — en veranderde fundamenteel ons beeld van het universum.",
+   "fun_fact": "Het stukje hemel werd specifiek gekozen omdat het leeg was van heldere sterren en nabijgelegen sterrenstelsels. Toch was de resulterende afbeelding vol met ongeveer 3.000 sterrenstelsels, wat leidde tot de schatting dat de hele hemel ongeveer 200 miljard sterrenstelsels bevat — bijna allemaal onzichtbaar voor telescopen vóór Hubble.",
+   "distance": "~13 miljard lichtjaar (meest verwijderd)",
+   "size": "2,6 boogminuten (gezichtsveld)",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/helix_nebula": {
+   "description": "De Helix-nevel is de grootste planetaire nevel naar schijnbare grootte aan de hemel — de uitdijende gasschil die door een zonachtige ster aan het einde van zijn leven wordt afgestoten. Met een omvang van ongeveer een halve graad is het zichtbaar in verrekijkers als een zwakke cirkelvormige gloed in Aquarius en staat het bekend als het Oog van God vanwege zijn verschijning op langbelichte foto's.",
+   "fun_fact": "In het centrum van de Helix-nevel bevindt zich een van de dichtstbijzijnde bekende witte dwergen van de Aarde — een extreem hete stellaire overblijfsel ongeveer ter grootte van de Aarde maar met de massa van de Zon. Dit is het lot dat onze eigen Zon over ongeveer vijf miljard jaar wacht.",
+   "distance": "650 lichtjaar",
+   "size": "~3 lichtjaar diameter",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/hyades": {
+   "description": "De Hyaden is het dichtstbijzijnde open sterrenhoop bij ons zonnestelsel en een van de meest bestudeerde in de astronomie. Zichtbaar voor het blote oog als het V-vormige patroon van sterren dat het gezicht van Stier vormt, bevat het enkele honderden sterren verspreid over ongeveer 5° van de hemel.",
+   "fun_fact": "De briljante oranje ster Aldebaran lijkt in de Hyaden te liggen, maar is eigenlijk een voorgrondsobject op halve afstand — een toevallige uitlijning. Het echte cluster ligt ongeveer 153 lichtjaar ver weg en bevat de eerste sterren waarvan de afstanden door parallax van de Hipparcos-satelliet werden gemeten.",
+   "distance": "153 lichtjaar",
+   "size": "~5° groot",
+   "image_credit": "NOIRLab/NSF/AURA"
+  },
+  "dso/jewel_box": {
+   "description": "De Juwelendoos (NGC 4755) is een jong, schitterend open sterrenhoop in het sterrenbeeld Crux, gemakkelijk zichtbaar voor het blote oog als een wazig sterkte-4-patch net ten zuidoosten van Mimosa. Wanneer je erdoorheen kijkt met een telescoop, stralen de sterren in levendige contrasterende kleuren — diepe blauwe superreuzen naast een opvallende rode superreus — wat hem de naam gaf die John Herschel eraan gaf: een prachtig stuk juwelierwerk. Met slechts 14–16 miljoen jaar oud is het een van de jongste en kleurigste sterrenhopen aan de hemel.",
+   "fun_fact": "De opvallende rode ster van de cluster, κ Crucis, is een rode superreus die zo lumineus is dat hij de Zon meer dan 100.000 keer overstraalt — een levendige herinnering dat sterrenhopen niet allemaal dezelfde kleur hebben.",
+   "distance": "~6.500 lichtjaar",
+   "size": "~19 lichtjaar in doorsnee",
+   "image_credit": "ESO/Y. Beletsky"
+  },
+  "dso/lmc": {
+   "description": "De Grote Magelhaense Wolk is een onregelmatige satellietsterrenstelsel van de Melkweg, zichtbaar voor het blote oog als een losstaande, gloeiende plek aan de hemel. Het is een van onze dichtstbijzijnde galactische buren en een van de meest actieve sterrenvormende sterrenstelsels in de Lokale Groep.",
+   "fun_fact": "In 1987 explodeerde een ster in de Grote Magelhaense Wolk als Supernova 1987A — de eerste supernova die met het blote oog zichtbaar was sinds 1604. Neutrino's van de explosie bereikten de Aarde drie uur voordat het licht arriveerde, wat onze modellen van stellaire kerninstorting bevestigde.",
+   "distance": "160.000 lichtjaar",
+   "size": "14.000 lichtjaar groot",
+   "image_credit": "ESO/C. Bardon"
+  },
+  "dso/m1": {
+   "description": "De Krabnevel is een supernovarestant in Taurus, het resultaat van een sterexplosie die in 1054 n.Chr. door Chinese astronomen werd opgetekend.",
+   "fun_fact": "De Krabnevel bevat een pulsar die 30 keer per seconde draait, de ineengestorte kern van de ontplofte ster!",
+   "distance": "6.500 lichtjaar",
+   "size": "11 lichtjaar doorsnede",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m10": {
+   "description": "M10 is een heldere bolhoop in Ophiuchus, een van de dichtstbijzijnde bolhopen bij ons zonnestelsel.",
+   "fun_fact": "M10 komt met meer dan 70 km/s op ons af en heeft een ongewoon lage concentratie sterren in zijn kern!",
+   "distance": "14.300 lichtjaar",
+   "size": "83 lichtjaar doorsnede",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m100": {
+   "description": "Messier 100 is een grand design spiraalstelsel in Hoofdhaar en een van de helderste in de Virgo-cluster.",
+   "fun_fact": "Zeven supernovae zijn gezien in M100, de meest recente in 2020 - weinig sterrenstelsels hebben zo'n spektakel opgevoerd!",
+   "distance": "55 miljoen lichtjaar",
+   "size": "166.000 lichtjaar in doorsnede"
+  },
+  "dso/m101": {
+   "description": "Het Windmolenstelsel is een frontaal zichtbaar spiraalstelsel in Ursa Major, een van de grootste bekende spiraalstelsel.",
+   "fun_fact": "Het Windmolenstelsel bevat meer dan een biljoen sterren en heeft asymmetrische spiraalarmen door eerdere interacties met andere sterrenstelsels!",
+   "distance": "21 miljoen lichtjaar",
+   "size": "170.000 lichtjaar doorsnede",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m102": {
+   "description": "Messier 102 is de grote onopgeloste vermelding in Messiers catalogus - een object dat in 1781 werd vastgelegd en dat nooit met zekerheid is geïdentificeerd.",
+   "fun_fact": "Messier publiceerde geen coördinaten voor M102, en zijn collega Mechain trok de ontdekking later volledig in, bewerend dat het per ongeluk tweemaal opgenomen M101 was! NASA identificeert het met de Spoelnevel, NGC 5866."
+  },
+  "dso/m103": {
+   "description": "M103 is een kleine, compacte open sterrenhoop in Cassiopeia, met ongeveer 40 sterren in een dichte groep die gemakkelijk met verrekijkers zichtbaar is. Een opvallende dubbelster en een rode reus dicht bij het centrum geven het een kleurrijk uiterlijk in kleine telescopen, gelegen in de rijke Melkwegvelden van Cassiopeia.",
+   "fun_fact": "M103 was het hoogst genummerde object in Messier's originele catalogus uit 1781 — alle volgende vermeldingen (M104–M110) werden later posthum toegevoegd door andere astronomen op basis van Messier's aantekeningen en correspondentie. Pierre Méchain ontdekte M103 kort voordat de catalogus ter perse ging, en Messier nam het op basis van Méchain's rapport op.",
+   "distance": "8.500 lichtjaar",
+   "size": "~15 lichtjaar in doorsnee"
+  },
+  "dso/m104": {
+   "description": "Het Sombrerostelsel is een spiraalstelsel in Virgo, beroemd om zijn heldere kern en grote centrale uitstulping met een donkere stofband.",
+   "fun_fact": "Het Sombrerostelsel heeft een superzwaar zwart gat in zijn centrum met een geschatte massa van 1 miljard zonnemassa's!",
+   "distance": "31 miljoen lichtjaar",
+   "size": "50.000 lichtjaar doorsnede",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m105": {
+   "description": "Messier 105 is een elliptisch sterrenstelsel in Leeuw, het grootste elliptische in de Messiercatalogus buiten de Virgocluster.",
+   "fun_fact": "M105 deelt een kolossale ring van waterstofgas met zijn buur NGC 3384, die zich uitstrekt over zo'n 650.000 lichtjaar!",
+   "distance": "37 miljoen lichtjaar",
+   "size": "67.000 lichtjaar breed"
+  },
+  "dso/m106": {
+   "description": "M106 is een spiraalstelsel in Canes Venatici met afwijkende spiraalarmen veroorzaakt door jets vanuit zijn centrale zwarte gat.",
+   "fun_fact": "M106 heeft watermasers in zijn kern, waardoor astronomen de afstand nauwkeurig kunnen meten!",
+   "distance": "23,5 miljoen lichtjaar",
+   "size": "135.000 lichtjaar doorsnede",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m107": {
+   "description": "M107 is een van de minst geconcentreerde Messier-bolsterhopen, met sterren verspreid in een relatief open patroon rond een bescheiden kern. Met magnitude 8,1 is het een binoculair doelwit vanuit donkere hemel en lost gedeeltelijk op in kleine telescopen, met een korrelige textuur in plaats van een scherpe centrale verdichting.",
+   "fun_fact": "M107 was het laatste object dat formeel aan de Messier-catalogus werd toegevoegd — het verschijnt in Pierre Méchain's correspondentie maar was niet opgenomen in de originele editie van 1781. Het werd officieel in 1947 als M107 toegevoegd door de Canadese astronoom Helen Sawyer Hogg, die verschillende \"ontbrekende\" objecten codificeerde die Méchain had waargenomen maar Messier nooit formeel had geregistreerd.",
+   "distance": "20.900 lichtjaar",
+   "size": "~61 lichtjaar in doorsnee"
+  },
+  "dso/m108": {
+   "description": "Messier 108 is een balkspiraalstelsel in de Grote Beer, bijgenaamd de Surfplankstelsel.",
+   "fun_fact": "M108 is bijna rand-op naar ons gekanteld, waardoor het de naam Surfplank kreeg - en het bevat ongeveer 290 bolvormige sterrenhopen!",
+   "distance": "46 miljoen lichtjaar"
+  },
+  "dso/m109": {
+   "description": "M109 is een balkspiraalstelsel in Ursa Major, het helderste lid van een sterrenstelselgroep die zijn naam draagt.",
+   "fun_fact": "M109 staat heel dicht bij de ster Phecda in de Grote Beer, waardoor hij makkelijk te vinden is!",
+   "distance": "83 miljoen lichtjaar",
+   "size": "180.000 lichtjaar doorsnede",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m11": {
+   "description": "De Wilde-Eendenhoop is een rijke open sterrenhoop in Scutum, een van de meest compacte open sterrenhopen die we kennen.",
+   "fun_fact": "M11 bevat bijna 3.000 sterren samengeperst in een klein gebied, wat een spectaculair beeld oplevert door telescopen!",
+   "distance": "6.200 lichtjaar",
+   "size": "20 lichtjaar doorsnede",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m110": {
+   "description": "M110 is een dwergelliptisch sterrenstelsel en satelliet van het Andromedastelsel, het laatste object dat aan de Messier-catalogus werd toegevoegd.",
+   "fun_fact": "M110 werd eigenlijk al door Messier waargenomen in 1773, maar pas in 1966 aan zijn catalogus toegevoegd!",
+   "distance": "2,7 miljoen lichtjaar",
+   "size": "17.000 lichtjaar doorsnede",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m12": {
+   "description": "M12 is een bolhoop in Ophiuchus, opmerkelijk door zijn relatief losse centrale concentratie.",
+   "fun_fact": "M12 heeft veel van zijn lichte sterren verloren door de zwaartekracht van de Melkweg over miljarden jaren!",
+   "distance": "15.700 lichtjaar",
+   "size": "75 lichtjaar doorsnede",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m13": {
+   "description": "M13 is een spectaculaire bolhoop in Hercules met ongeveer 300.000 sterren, een van de helderste aan de noordelijke hemel.",
+   "fun_fact": "In 1974 werd het Arecibo-bericht richting M13 gezonden als een poging om contact te maken met buitenaards intelligent leven!",
+   "distance": "22.200 lichtjaar",
+   "size": "145 lichtjaar doorsnede",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m14": {
+   "description": "M14 is een bolhoop in Ophiuchus die enkele honderdduizenden sterren bevat.",
+   "fun_fact": "In 1938 verscheen een nova in M14, maar deze werd pas in 1964 ontdekt toen oude fotografische platen werden onderzocht!",
+   "distance": "30.300 lichtjaar",
+   "size": "100 lichtjaar doorsnede",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m15": {
+   "description": "M15 is een dichte bolhoop in Pegasus, opmerkelijk omdat hij een planetaire nevel in zijn kern bevat - zeer zeldzaam voor bolhopen.",
+   "fun_fact": "M15 bevat mogelijk een centraal zwart gat van ongeveer 4.000 zonnemassa's, hoewel dit nog wordt betwist!",
+   "distance": "33.600 lichtjaar",
+   "size": "175 lichtjaar doorsnede",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m16": {
+   "description": "De Adelaarsnevel is een stervormingsnevel in Serpens, beroemd om de Pilaren van de Schepping gefotografeerd door Hubble.",
+   "fun_fact": "De Pilaren van de Schepping in M16 zijn ongeveer 5 lichtjaar hoog en worden langzaam geërodeerd door straling van nabijgelegen sterren!",
+   "distance": "7.000 lichtjaar",
+   "size": "70 lichtjaar doorsnede",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m17": {
+   "description": "De Omeganevel (ook Zwaannevel) is een stervormingsgebied in Sagittarius, een van de helderste emissienevels.",
+   "fun_fact": "De Omeganevel bevat een open sterrenhoop van ongeveer 800 jonge sterren verborgen in het gas en stof!",
+   "distance": "5.500 lichtjaar",
+   "size": "15 lichtjaar doorsnede",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m18": {
+   "description": "Messier 18 is een kleine open sterrenhoop van jonge sterren in Boogschutter, ook bekend als de Zwarte Zwaancluster.",
+   "fun_fact": "M18 is een van de weinige Messier-objecten die de Hubble-ruimtetelescoop nooit heeft gefotografeerd!",
+   "distance": "4.200 lichtjaar",
+   "size": "26 lichtjaar breed"
+  },
+  "dso/m19": {
+   "description": "M19 is een compacte, rijke bolvormige sterrenhoop in Ophiuchus — een van de dichtstbijzijnde bolvormige sterre nhopen bij het galactische centrum. Het meest opvallende kenmerk is de duidelijk afgeplatte vorm: M19 is de meest afgeplatte bolvormige sterrenhoop die bekend is, met een zichtbare elliptische omtrek zelfs in een kleine telescoop.",
+   "fun_fact": "M19's uitgesproken afgeplattingsgraad — de langste as is ongeveer 10% langer dan de kortste — is uniek onder bekende bolvormige sterrenhopen en wordt verondersteld het gevolg te zijn van getijdenstrekking door het zwaartekrachtveld van de Melkweg. Hoe dichter een bolvormige sterrenhoop naar het galactische centrum draait, hoe sterker deze wordt vervormd; M19 ligt slechts ongeveer 5.200 lichtjaar van de galactische kern.",
+   "distance": "28.700 lichtjaar",
+   "size": "~113 lichtjaar in doorsnee"
+  },
+  "dso/m2": {
+   "description": "M2 is een van de grootste en rijkste bolhopen die we kennen, gelegen in Aquarius.",
+   "fun_fact": "M2 bevat ongeveer 150.000 sterren en heeft een doorsnede van 175 lichtjaar, waarmee het een van de grootste bolhopen is!",
+   "distance": "37.500 lichtjaar",
+   "size": "175 lichtjaar doorsnede",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m20": {
+   "description": "De Trifidnevel is een combinatie van emissie-, reflectie- en donkere nevels in Sagittarius, verdeeld door donkere stofbanen.",
+   "fun_fact": "De Trifidnevel toont drie verschillende soorten nevels in één object: rode emissie, blauwe reflectie en donkere absorptie!",
+   "distance": "5.200 lichtjaar",
+   "size": "20 lichtjaar doorsnede",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m21": {
+   "description": "M21 is een compacte open sterrenhoop in Sagittarius, gelegen op slechts een halve graad ten noorden van de Trifid-nevel (M20), waardoor de twee een opvallend verrekijker-paar vormen. De hoop bevat ongeveer 57 sterren geconcentreerd in een kleiner veld dan veel Messier-hopen, met verschillende heldere blauwwitte sterren als dominante leden.",
+   "fun_fact": "Hoewel fysiek niet gerelateerd, vormen M21 en M20 (de Trifid-nevel) een van de meest aantrekkelijke verrekijker-paarlingen in de zomerhemel — een heldere sterrenhoop naast een kleurrijke drielobbige nevel. M21 ligt ongeveer 4.250 lichtjaar verderop, terwijl M20 iets dichterbij ligt op ongeveer 4.100 lichtjaar.",
+   "distance": "4.250 lichtjaar",
+   "size": "~16 lichtjaar in doorsnee"
+  },
+  "dso/m22": {
+   "description": "M22 is een van de dichtstbijzijnde en helderste bolhopen bij de Aarde, gelegen in Sagittarius nabij het galactisch centrum.",
+   "fun_fact": "M22 was een van de eerste bolhopen die werd ontdekt, gevonden door Abraham Ihle in 1665!",
+   "distance": "10.600 lichtjaar",
+   "size": "70 lichtjaar doorsnede",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m23": {
+   "description": "M23 is een rijke open sterrenhoop in Sagittarius, ingebed in de dichte stervelden van de zomermelkweg. Ongeveer 150 sterren zijn verspreid over een halve graad in verrekijkers, waardoor het een genereus object voor verrekijkers is in dezelfde hemelstreek als veel andere Messier-objecten.",
+   "fun_fact": "M23 wordt geschat ongeveer 300 miljoen jaar oud te zijn — intermediair in leeftijd, met de meeste van zijn massieve sterren die al van de hoofdreeks zijn afgeweken. Messier ontdekte het in 1764 tijdens een van zijn vruchtbare waarnemingscampagnes door de Sagittarius-stervelden.",
+   "distance": "2.150 lichtjaar",
+   "size": "~17 lichtjaar in doorsnee"
+  },
+  "dso/m24": {
+   "description": "M24 is de Sagittarius Star Cloud — geen cluster of nevel, maar een venster door een gat in het stof van de Melkweg, dat een schitterend sterrenveld van 2° breed onthult. Het is de rijkste regio die overal aan de hemel door verrekijkers zichtbaar is, vol met duizenden sterren die tegelijkertijd op veel verschillende afstanden liggen.",
+   "fun_fact": "De sterren in M24 bevinden zich niet op dezelfde afstand — de sterrenwolk vertegenwoordigt een dwarsdoorsnede van de schijf van de Melkweg gezien door een natuurlijke tunnel in het interstellaire stof, met afstanden van 10.000 tot 16.000 lichtjaar. Ingebed in de wolk bevinden zich donkere nevels en kleine sterrenhopen die als donkere vlekken tegen de briljante stellaire achtergrond verschijnen.",
+   "distance": "~10.000–16.000 lichtjaar (bereik)",
+   "size": "~600 lichtjaar diepe venster"
+  },
+  "dso/m25": {
+   "description": "M25 is een helder open sterrenhoop die met het blote oog zichtbaar is in Boogschutter, gelegen tegen de dichte stervelden van de zomermelkweg. Ongeveer 600 sterren zijn verspreid over een halve graad groot veld, wat het een rijk binoculair object maakt. De helderste leden ervan omvatten verschillende blauwwitte superreuzen en een van de meest bestudeerde Cepheïde-variabelen aan de hemel.",
+   "fun_fact": "M25 bevat U Sagittarii, een klassieke Cepheïde-variabele ster die gedurende een periode van 6,7 dagen helderder en donkerder wordt. Cepheïden zijn vitale \"standaardkaarsen\" voor het meten van kosmische afstanden omdat hun pulsatieperiode direct hun werkelijke helderheid onthult — astronomen gebruikten ze om eerst de grootte van de Melkweg en vervolgens de schaal van het waarneembare universum te bepalen.",
+   "distance": "2.000 lichtjaar",
+   "size": "~19 lichtjaar groot"
+  },
+  "dso/m26": {
+   "description": "M26 is een matig zwak open sterrenhoop in Scutum, zichtbaar in verrekijkers en goed opgelost in kleine telescopen. Ongeveer 90 sterren zijn verspreid over een compact veld in de rijke Scutum-sterwolk, hoewel de sterrenhoop tegen zo'n dichte achtergrond staat dat het identificeren van de leden ervan uit het omringende sterveld enige voorzichtigheid vereist.",
+   "fun_fact": "M26 ligt langs dezelfde rijke hemelstrook als M11 — het Wild Duck Cluster, een van de fraaiste open sterrenhopen aan de hemel. De twee liggen slechts ongeveer 3,5° uit elkaar en zijn zichtbaar in hetzelfde verrekijkerveld, waardoor Scutum een opmerkelijke bestemming voor sterrenhopenwaarnemers is, ondanks dat het een klein en vaak over het hoofd gezien sterrenbeeld is.",
+   "distance": "5.000 lichtjaar",
+   "size": "~22 lichtjaar in doorsnee"
+  },
+  "dso/m27": {
+   "description": "De Halternevel is een planetaire nevel in Vulpecula, de eerste planetaire nevel die ooit werd ontdekt.",
+   "fun_fact": "De Halternevel werd in 1764 ontdekt door Charles Messier, waarmee het de eerste planetaire nevel was die ooit werd ontdekt!",
+   "distance": "1.360 lichtjaar",
+   "size": "2,5 lichtjaar doorsnede",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m28": {
+   "description": "M28 is een compacte bolvormige sterrenhoop in Sagittarius, gelegen dicht bij de heldere ster Lambda Sagittarii in de rijke zomerse sterrenvelden. Met een magnitude van 6,9 is het een lonend doel voor verrekijkers en is het goed opgelost in kleine telescopen, met een heldere samengetrokken kern omgeven door een matige halo van sterren.",
+   "fun_fact": "In 1987 werd M28 het eerste bolhoop waarin een milliseconde-pulsar werd gedetecteerd. Milliseconde-pulsars — neutronensterren die honderden keren per seconde roteren — ontstaan wanneer een neutronenster materie van een begeleider ster accreëert en worden veel vaker aangetroffen in bolhoopen dan in sterrenstelsels in het algemeen, omdat hun dichte stellaire omgevingen veel meer nauwe binaire ontmoetingen produceren.",
+   "distance": "18.300 lichtjaar",
+   "size": "~60 lichtjaar in doorsnee"
+  },
+  "dso/m29": {
+   "description": "M29 is een kleine, jonge open sterrenhoop in Cygnus, gelegen tegen een van de meest stofverhulde gebieden van de Melkweg. Vijf briljante blauwe superreuzen domineren de sterrenhoop, zichtbaar in verrekijkers als een strak asterisme van hete, lumineuze sterren. Zonder het dichte voorgrondstof zou M29 een van de meest spectaculaire open sterhopen aan de hemel zijn.",
+   "fun_fact": "M29 wordt geschat slechts ongeveer 10 miljoen jaar oud te zijn — een stellaire zuigeling — en bevindt zich in de Cygnus OB1-associatie, een uitgebreide groep massieve jonge sterren. Zwaar interstellair stof verzwakt het cluster met ongeveer 3 magnitudes; zonder die verduistering zouden de sterren van M29 verschillende keren helderder schijnen dan ze werkelijk lijken.",
+   "distance": "4.000 lichtjaar",
+   "size": "~8 lichtjaar in doorsnee"
+  },
+  "dso/m3": {
+   "description": "M3 is een van de grootste en helderste bolhopen aan de hemel, gelegen in Canes Venatici.",
+   "fun_fact": "M3 bevat ongeveer 500.000 sterren en is naar schatting 11,4 miljard jaar oud!",
+   "distance": "33.900 lichtjaar",
+   "size": "180 lichtjaar doorsnede",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m30": {
+   "description": "M30 is een compacte bolvormige sterrenhoop in Steenbok — een fraai object in kleine telescopen dat een helder, samengeperst centrum en zwakke uitstekende sterrenkettingen toont. Met magnitude 7,5 vereist het donkere hemel in verrekijkers en beloont een kleine telescoop met zijn gedeeltelijk opgeloste buitenste halo.",
+   "fun_fact": "M30 heeft een \"kerninstorting\" ondergaan — een proces waarbij de wederzijdse zwaartekrachtaantrekking van dicht opeengepakte sterren ervoor zorgt dat het centrum van de cluster dramatisch samentrekt, wat resulteert in een extreme concentratie van sterren in een minuscuul volume. Ongeveer een vijfde van alle bolvormige sterrenhopen hebben ingestorte kernen, en M30 behoort tot de best bestudeerde voorbeelden van dit fenomeen.",
+   "distance": "27.100 lichtjaar",
+   "size": "~87 lichtjaar in doorsnee"
+  },
+  "dso/m31": {
+   "description": "Het Andromedastelsel is het dichtstbijzijnde grote spiraalstelsel bij de Melkweg en een van de verste objecten die met het blote oog zichtbaar zijn.",
+   "fun_fact": "Het Andromedastelsel komt met 110 km/s op ons af en zal over ongeveer 4,5 miljard jaar met de Melkweg botsen!",
+   "distance": "2,5 miljoen lichtjaar",
+   "size": "220.000 lichtjaar doorsnede",
+   "mass": "1,5 biljoen zonnemassa's",
+   "image_credit": "Adam Kennett/Wikimedia Commons"
+  },
+  "dso/m32": {
+   "description": "M32 is een compact dwergelliptisch sterrenstelsel en naaste satelliet van het Andromedastelsel.",
+   "fun_fact": "M32 was het eerste elliptische sterrenstelsel dat ooit werd ontdekt en was mogelijk ooit een groter spiraalstelsel dat door Andromeda werd ontmanteld!",
+   "distance": "2,5 miljoen lichtjaar",
+   "size": "6.500 lichtjaar doorsnede",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m33": {
+   "description": "Het Driehoekstelsel is het op twee na grootste lid van de Lokale Groep, een spiraalstelsel zichtbaar in het sterrenbeeld Triangulum.",
+   "fun_fact": "Het Driehoekstelsel is mogelijk gravitationeel gebonden aan het Andromedastelsel als een verre satelliet!",
+   "distance": "2,7 miljoen lichtjaar",
+   "size": "60.000 lichtjaar doorsnede",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m34": {
+   "description": "M34 is een helder, verspreide open sterrenhoop in Perseus, gemakkelijk zichtbaar in verrekijkers als een rijke verzameling sterren tegen de winterse Melkweg. De ongeveer 400 sterren beslaan een gebied bijna zo breed als de volle maan, met een handvol brede dubbelsterren zichtbaar voor aandachtige verrekijkersobservers.",
+   "fun_fact": "Met een leeftijd van ongeveer 200 miljoen jaar is M34 intermediair — jong genoeg dat zijn hete blauwe sterren nog steeds schijnen, oud genoeg dat de meest massieve al als supernovae zijn ontploft. Op 1.500 lichtjaar is het een van de dichtstbijzijnde Messier-clusters en blijft het een prachtig object zelfs vanuit suburbane hemel.",
+   "distance": "1.500 lichtjaar",
+   "size": "~15 lichtjaar in doorsnee"
+  },
+  "dso/m35": {
+   "description": "M35 is een grote open sterrenhoop in Gemini, onder goede omstandigheden met het blote oog zichtbaar.",
+   "fun_fact": "M35 bevat ongeveer 200 sterren en verschijnt naast een veel oudere sterrenhoop NGC 2158 in hetzelfde gezichtsveld!",
+   "distance": "2.800 lichtjaar",
+   "size": "24 lichtjaar doorsnede",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m36": {
+   "description": "M36 is de kleinste en jongste van de drie open sterrenhopen die Messier in de Auriga catalogiseerde. De ongeveer 60 sterren ervan zijn verzameld in een strak, glitterend veld dat met verrekijkers zichtbaar is en in een kleine telescoop goed opgelost in individuele sterren, gedomineerd door hete blauwwitte sterren.",
+   "fun_fact": "M36 wordt geschat slechts ongeveer 25 miljoen jaar oud te zijn — een van de jongere Messier-clusters — wat betekent dat massieve blauwwitte sterren nog steeds domineren en er nog geen rode reuzen zijn verschenen. Het deelt de sterrenvelden van Auriga met M37 en M38, en alle drie clusters passen in dezelfde brede binoculaire waarneming.",
+   "distance": "4.100 lichtjaar",
+   "size": "~14 lichtjaar in doorsnee"
+  },
+  "dso/m37": {
+   "description": "M37 is de rijkste en helderste van de drie Messier open sterrenhopen in Auriga, met naar schatting 500 sterren in een compact veld. Het is een spectaculair object voor verrekijker en kleine telescoop, met een verstrooiing van oranje reuzensterren die kleurcontrast toevoegen aan de blauwwitte zwerm.",
+   "fun_fact": "M37 bevat ongeveer een dozijn rode reuzen — een ongewoon hoog aantal dat zijn relatief gevorderde leeftijd van ongeveer 300 miljoen jaar weerspiegelt. Ondanks dat het ongeveer 4.500 lichtjaar verwijderd is — het verste van de drie Auriga Messier-clusters — behoort het nog steeds tot de mooiste open clusters aan de hemel.",
+   "distance": "4.500 lichtjaar",
+   "size": "~31 lichtjaar in doorsnee"
+  },
+  "dso/m38": {
+   "description": "M38 is het grootste en meest verspreide van de drie open sterrenhopen die Messier in Auriga catalogiseerde. De ongeveer 100 sterren ervan zijn gerangschikt in een patroon dat sommige waarnemers vergelijken met een kruis of de Griekse letter pi, zichtbaar in verrekijkers en goed opgelost in een kleine telescoop. De kleinere sterrenhoop NGC 1907 ligt dicht in de buurt naar het zuiden.",
+   "fun_fact": "M38 is de oudste van de drie Auriga Messier-clusters met ongeveer 220 miljoen jaar oud. Sommige van zijn massieve sterren zijn al geëvolueerd tot gele en oranje reuzen. De nabijgelegen cluster NGC 1907 past in hetzelfde lage-vergroting gezichtsveld, waardoor ze een mooi binoculair paar vormen — net als M46 en M47 in Puppis.",
+   "distance": "4.200 lichtjaar",
+   "size": "~26 lichtjaar in doorsnee"
+  },
+  "dso/m39": {
+   "description": "M39 is een groot, verspreid open sterrenhoop in Cygnus, zichtbaar voor het blote oog dicht bij Deneb in de rijke zomermelkweg. De ongeveer 30 heldere sterren zijn losjes verspreid over een graad aan de hemel, het best waarneembaar bij lage vergroting in verrekijkers of een telescoop met groot gezichtsveld — hogere vergroting lost het slechts op in een dun, onopvallend sterrenveldje.",
+   "fun_fact": "Op ongeveer 825 lichtjaar afstand is M39 één van de dichtstbijzijnde open sterrenhopen voor de Aarde, en met een leeftijd van ongeveer 240 miljoen jaar is het één van de oudere waarneembare sterrenhopen met het blote oog — oud genoeg dat de meest massieve sterren ervan al aan hun leven zijn gekomen. Messier registreerde het in 1764 en het behoorde tot de vroegste toevoegingen aan zijn catalogus.",
+   "distance": "825 lichtjaar",
+   "size": "~8 lichtjaar groot"
+  },
+  "dso/m4": {
+   "description": "M4 is een van de dichtstbijzijnde bolhopen bij de Aarde en een van de makkelijkst te vinden, gelegen nabij Antares in Scorpius.",
+   "fun_fact": "M4 bevat een witte dwerg die naar schatting 13 miljard jaar oud is - een van de oudste bekende sterren in de Melkweg!",
+   "distance": "7.200 lichtjaar",
+   "size": "75 lichtjaar doorsnede",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m40": {
+   "description": "M40 is uniek in de Messier-catalogus — het is geen nevel, cluster of sterrenstelsel, maar een wijde dubbelster. Messier catalogiseerde het in 1764 terwijl hij naar een nevel zocht die door Johann Hevelius in Ursa Major was gemeld, vond alleen dit sterpaar en noteerde het zodat toekomstige waarnemers het niet voor iets interessanters zouden aanzien.",
+   "fun_fact": "De twee sterren van M40 — bekend als Winnecke 4 — zijn niet gravitationeel gebonden; ze bevinden zich op verschillende afstanden en zijn slechts een toevallige uitlijning. Messier zelf noteerde dat er \"niets opmerkelijks\" was, maar voegde het toe \"om aan te tonen dat deze nevel niet hetzelfde is als die welke ik heb onderzocht.\" Zijn methodische gewoonte van het documenteren van negatieven gaf toekomstige waarnemers een definitieve referentie.",
+   "distance": "~500 lichtjaar",
+   "size": "~50 boogseconden (scheiding)"
+  },
+  "dso/m41": {
+   "description": "M41 is een fraai open sterrenhoop in Canis Major, gelegen op slechts 4° ten zuiden van Sirius — de helderste ster aan de nachtelijke hemel. Met het blote oog zichtbaar vanaf donkere locaties en spectaculair in verrekijkers, bevat het ongeveer 100 sterren verspreid over een ruim gezichtsveld, met verschillende opvallende oranje reuzensterren tussen zwakker blauwe-witte leden.",
+   "fun_fact": "Aristoteles kan M41 rond 325 v.Chr. hebben opgemerkt — mogelijk de vroegste geregistreerde waarneming van een diep-ruimteobject. Hij beschreef een \"wolkige vlek\" ten zuiden van Sirius die overeenkomt met de positie van M41. Als deze identificatie correct is, werd M41 bijna tweeduizend jaar voor de uitvinding van de telescoop al besproken.",
+   "distance": "2.300 lichtjaar",
+   "size": "~25 lichtjaar groot"
+  },
+  "dso/m42": {
+   "description": "De Orionnevel is een diffuse emissienevel die met het blote oog zichtbaar is, een van de meest gefotografeerde objecten aan de nachtelijke hemel.",
+   "fun_fact": "De Orionnevel is een stellaire kraamkamer waar op dit moment nieuwe sterren worden geboren. Er zijn meer dan 700 sterren aan het vormen!",
+   "distance": "1.344 lichtjaar",
+   "size": "24 lichtjaar doorsnede",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m43": {
+   "description": "De Mairan's Nebula is een afgescheiden deel van het grote Orion Nebula-complex, gescheiden van M42 door een donkere stofband maar behorend tot dezelfde uitgebreide moleculaire wolk. Genoemd naar de Franse astronoom Jean-Jacques Dortous de Mairan, die het in 1731 opmerkte, is het een emissienebulose die wordt geïoniseerd door de hete jonge ster NU Orionis die in het centrum is ingebed.",
+   "fun_fact": "Hoewel M43 als een afzonderlijk object van M42 lijkt te verschijnen, is de donkere lijn die hen scheidt een stofwolk op de voorgrond — onderdeel van de Orion Moleculaire Wolk — die simpelweg ons zicht op de fysieke verbinding tussen de twee gloeiende gebieden blokkeert. Samen vormen zij slechts de verlichte binnenrand van een enorme donkere wolk die zich over een groot deel van Orion uitstrekt.",
+   "distance": "1.350 lichtjaar",
+   "size": "~8 lichtjaar in doorsnee"
+  },
+  "dso/m44": {
+   "description": "De Praesepe (Bijenkorfhoop) is een open sterrenhoop in Cancer, sinds de oudheid bekend en met het blote oog zichtbaar.",
+   "fun_fact": "Oude astronomen gebruikten de zichtbaarheid van de Bijenkorfhoop om het weer te voorspellen - als hij onzichtbaar was, kwam er regen!",
+   "distance": "577 lichtjaar",
+   "size": "15 lichtjaar doorsnede",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m45": {
+   "description": "De Pleiaden zijn een open sterrenhoop in Taurus, ook bekend als de Zeven Zusters, sinds de oudheid met het blote oog zichtbaar.",
+   "fun_fact": "De Pleiaden behoren tot de dichtstbijzijnde sterrenhopen bij de Aarde en werden door vrijwel elke oude beschaving herkend!",
+   "distance": "444 lichtjaar",
+   "size": "17 lichtjaar doorsnede",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m46": {
+   "description": "M46 is een rijke, dichte open sterrenhoop in Puppis met ongeveer 500 sterren dicht opeengepakt in een breed gezichtsveld, indrukwekkend in verrekijkers en prachtig in kleine telescopen. Een opmerkelijke bonus zweeft aan de noordelijke rand: NGC 2438, een kleine planetaire nevel die lijkt ingebed in de sterrenhoop — een dramatische gezichtslijntoeval.",
+   "fun_fact": "De planetaire nevel NGC 2438 lijkt zich in M46 te bevinden, maar is eigenlijk een niet-gerelateerd voorgrond object op een veel grotere afstand — ongeveer 1.400 lichtjaar versus M46's 5.400. Het toeval dat de schil van een stervende ster zich op een jong sterrenhoop aftekent, maakt dit een van de meest fotogenieke velden in de catalogus.",
+   "distance": "5.400 lichtjaar",
+   "size": "~42 lichtjaar in doorsnee"
+  },
+  "dso/m47": {
+   "description": "M47 is een helder, los open sterrenhoop in Puppis, gemakkelijk zichtbaar voor het blote oog en opvallend in verrekijkers. Ongeveer 50 sterren zijn verspreid over een halve graad van de hemel, met verschillende oranje reuzensterren die warme kleur toevoegen tegen de zwakkere blauw-witte leden.",
+   "fun_fact": "M47 was een van de \"verloren\" Messier-objecten — een administratieve fout in Messier's oorspronkelijke coördinaten plaatste het in een lege hemel, waardoor de cluster bijna twee eeuwen lang ongeïdentificeerd bleef. Zijn ware identiteit als NGC 2422 werd pas in 1959 bevestigd, toen waarnemers terugwerkten vanuit Messier's beschrijving om de fout te vinden.",
+   "distance": "1.600 lichtjaar",
+   "size": "~14 lichtjaar groot"
+  },
+  "dso/m48": {
+   "description": "M48 is een groot, helder open sterrenhoop in Hydra, die bijna een graad van de hemel beslaat en vanaf donkere locaties met het blote oog zichtbaar is. De ongeveer 80 sterren zijn losjes verspreid over een breed gezichtsveld dat het best geschikt is voor verrekijkers, met een verstrooiing van oranje en gele reuzensterren onder de helderste blauwwitte leden.",
+   "fun_fact": "M48 was een van de \"verloren\" Messier-objecten gedurende bijna twee eeuwen omdat de geregistreerde positie van Messier ongeveer 5° afweek van de werkelijke locatie. Het bleef ongeïdentificeerd tot 1959, toen het werd gematcht met NGC 2548 en bleek dat een eenvoudige transcriptie-fout het de hele tijd in lege ruimte had geplaatst.",
+   "distance": "1.500 lichtjaar",
+   "size": "~23 lichtjaar in doorsnee"
+  },
+  "dso/m49": {
+   "description": "M49 is een reusachtig elliptisch sterrenstelsel in Virgo, het helderste lid van de Virgohoop.",
+   "fun_fact": "M49 was het eerste lid van de Virgohoop dat werd ontdekt en bevat ongeveer 6.000 bolhopen!",
+   "distance": "55 miljoen lichtjaar",
+   "size": "160.000 lichtjaar doorsnede",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m5": {
+   "description": "M5 is een bolhoop in Serpens, een van de oudste bolhopen met een leeftijd van ongeveer 13 miljard jaar.",
+   "fun_fact": "M5 bevat meer dan 100.000 sterren en heeft een van de hoogste aantallen bekende veranderlijke sterren van alle bolhopen!",
+   "distance": "24.500 lichtjaar",
+   "size": "165 lichtjaar doorsnede",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m50": {
+   "description": "M50 is een helder open sterrenhoop in Monoceros met ongeveer 200 sterren dicht opeengepakt in een opvallend compact veld voor verrekijkers en kleine telescopen. Het is gemakkelijk te vinden op een lijn tussen Sirius en Procyon en bevat een opmerkelijke rode reus — een warm oranje baken dat levendig opvalt tussen de blauwwitte sterren van de hoop.",
+   "fun_fact": "M50 wordt geschat ongeveer 78 miljoen jaar oud te zijn — een van de jongere Messier open sterrenhopen — wat betekent dat de hete blauwe en witte sterren nog steeds evolueren, waarbij enkele van de meer massieve leden onlangs tot reuzen zijn uitgegroeid. Dit is typisch voor een sterrenhoop in haar vroege middelbare leeftijd.",
+   "distance": "3.200 lichtjaar",
+   "size": "~15 lichtjaar in doorsnee"
+  },
+  "dso/m51": {
+   "description": "Het Draaikolkstelsel is een grand-design spiraalstelsel in Canes Venatici, beroemd om zijn opvallende spiraalarmen en begeleidend sterrenstelsel.",
+   "fun_fact": "Het Draaikolkstelsel was het eerste sterrenstelsel waarvan de spiraalstructuur werd herkend, ontdekt door Lord Rosse in 1845!",
+   "distance": "23 miljoen lichtjaar",
+   "size": "76.000 lichtjaar doorsnede",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m52": {
+   "description": "M52 is een rijke open sterrenhoop in Cassiopeia, met ongeveer 200 sterren dicht opeengepakt in een compact gebied van de noordelijke Melkweg. Het is een prachtige verrekijkersterrenhoop en toont een mooi, dicht stellair veld in kleine telescopen, met een opvallend helderder oranje ster die dicht bij de zuidelijke rand van de sterrenhoop uitsteekt.",
+   "fun_fact": "De afstand van M52 is ongewoon onzeker — schattingen variëren van 3.000 tot 7.000 lichtjaar — omdat zwaar interstellair stof langs deze gezichtslijn het bepalen van de werkelijke helderheid bemoeilijkt. Messier ontdekte het in 1774, dezelfde nacht waarop hij een komeet volgde die hem ertoe bracht verschillende andere catalogusingangen op te nemen.",
+   "distance": "~5.000 lichtjaar",
+   "size": "~25 lichtjaar in doorsnee"
+  },
+  "dso/m53": {
+   "description": "M53 is een bolhoop in Coma Berenices, een van de meer afgelegen bolhopen in ons sterrenstelsel.",
+   "fun_fact": "M53 is een van de verst verwijderde bolhopen van het galactisch centrum, op 60.000 lichtjaar afstand ervan!",
+   "distance": "58.000 lichtjaar",
+   "size": "220 lichtjaar doorsnede",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m54": {
+   "description": "M54 is een grote, rijke bolvormige sterrenhoop in Sagittarius en een van de meest verre objecten in de gehele Messier-catalogus. Eeuwenlang werd aangenomen dat het een afgelegen halo-bolvormige sterrenhoop van de Melkweg was, maar nu is bekend dat het de dichte kern is van de Sagittarius Dwarf Elliptical Galaxy — een satellietsterrenstelsel dat momenteel door onze eigen sterrenstelsel wordt opgenomen.",
+   "fun_fact": "De ontdekking in 1994 dat M54 tot het Dwergsterrenstelsel van de Boogschutter behoort, maakte het het eerste bolhoop dat bekend was toe te behoren aan een ander sterrenstelsel. Terwijl het Dwergsterrenstelsel van de Boogschutter geleidelijk uit elkaar wordt gerukt en door de Melkweg wordt opgeslokt, zal M54 uiteindelijk een echte halo-bolhoop van ons eigen sterrenstelsel worden — een intergalactische immigrant die over miljarden jaren aankomt.",
+   "distance": "87.000 lichtjaar",
+   "size": "~230 lichtjaar in doorsnee"
+  },
+  "dso/m55": {
+   "description": "M55 is een grote, losse bolvormige sterrenhoop in Boogschutter — een van de meest verspreide en minst geconcentreerde van alle Messier-bolhopen. Hij is gemakkelijk op te lossen in individuele sterren, zelfs bij lage vergroting, met een korrelige textuur die zichtbaar is met een verrekijker. Zijn lage zuidelijke declinatie beperkt de zichtbaarheid vanaf noordelijke breedtegraden, maar hij is spectaculair vanaf het zuidelijk halfrond.",
+   "fun_fact": "M55's ongebruikelijk lage stellaire concentratie geeft het bijna het uiterlijk van een rijke open cluster in plaats van een typische bolvormige cluster. De sterren zijn verspreid over een gebied van bijna 100 lichtjaar breed, wat suggereert dat de zelfzwaartekracht van de cluster relatief zwak is in vergelijking met meer centraal verdichte bolvormige clusters zoals M13 of M3.",
+   "distance": "17.600 lichtjaar",
+   "size": "~100 lichtjaar in doorsnee"
+  },
+  "dso/m56": {
+   "description": "M56 is een compacte bolvormige sterrenhoop in Lyra, gelegen tussen de Ringnevel (M57) en de heldere dubbelster Albireo in Cygnus. Met een magnitude van 8,3 is het een binoculair object vanuit donkere hemel, en een kleine telescoop onthult een korrelige, matig samengetrokken bol die zelfs in middelgrote openingen slechts gedeeltelijk opgelost is.",
+   "fun_fact": "M56 werd in januari 1779 door Messier ontdekt tijdens hetzelfde waarnemingsseizoen waarin hij ook de Ringnevel (M57) vond. Ondanks dat M56 in hetzelfde verrekijkerveld als Vega — de vijfde helderste ster aan de hemel — ligt en dicht bij de beroemde Ringnevel, wordt M56 vaak over het hoofd gezien door waarnemers die door de meer beroemde buren worden aangetrokken.",
+   "distance": "32.900 lichtjaar",
+   "size": "~68 lichtjaar in doorsnee"
+  },
+  "dso/m57": {
+   "description": "De Ringnevel is een planetaire nevel in Lyra, een gloeiende gasschil die is uitgestoten door een stervende zonachtige ster.",
+   "fun_fact": "De Ringnevel dijt uit met ongeveer 20 km/s en zal uiteindelijk in de komende 10.000 jaar in de ruimte oplossen!",
+   "distance": "2.300 lichtjaar",
+   "size": "1,3 lichtjaar doorsnede",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m58": {
+   "description": "Messier 58 is een balkspiraalstelsel in de Maagd en een van de helderste leden van de Virgo-cluster.",
+   "fun_fact": "Een superzwaar zwart gat van ongeveer 70 miljoen zonmassa's zit in het hart van M58, omringd door een strakke band van pasgeboren sterren!",
+   "distance": "68 miljoen lichtjaar",
+   "size": "133.000 lichtjaar breed"
+  },
+  "dso/m59": {
+   "description": "Messier 59 is een elliptisch sterrenstelsel in Maagd, ontdekt in 1779 tijdens de zoektocht naar een passerende komeet.",
+   "fun_fact": "De kern van M59 draait achteruit vergeleken met de rest van het sterrenstelsel, en ongeveer 2.200 bolvormige sterrenhopen zwermen eromheen!",
+   "distance": "50 miljoen lichtjaar",
+   "mass": "270 miljoen zonsmassa's (centraal zwart gat)"
+  },
+  "dso/m6": {
+   "description": "De Vlinderhoop is een open sterrenhoop in Scorpius, genoemd naar de vlinderachtige rangschikking van de helderste sterren.",
+   "fun_fact": "M6 is ongeveer 100 miljoen jaar oud en bevat meer dan 300 sterren, waaronder de oranje reus BM Scorpii!",
+   "distance": "1.600 lichtjaar",
+   "size": "25 lichtjaar doorsnede",
+   "image_credit": "NOAO/AURA/NSF"
+  },
+  "dso/m60": {
+   "description": "Messier 60 is een reusachtig elliptisch sterrenstelsel in Maagd, het op twee na helderste reusachtige elliptische sterrenstelsel in de Virgocluster.",
+   "fun_fact": "Het centrale zwarte gat van M60 weegt ongeveer 4,5 miljard zonnen - een van de grootste ooit gevonden!",
+   "distance": "57 miljoen lichtjaar"
+  },
+  "dso/m61": {
+   "description": "Messier 61 is een balkspiraalstelsel in de Maagd en een van de grootste sterrenstelsels in de Virgo-cluster.",
+   "fun_fact": "Acht supernovae zijn waargenomen in M61 - een van de hoogste aantallen van alle sterrenstelsels! Messier zelf zag het eerst aan voor een komeet.",
+   "distance": "52 miljoen lichtjaar",
+   "size": "92.000 lichtjaar breed"
+  },
+  "dso/m62": {
+   "description": "M62 is een rijke bolvormige sterrenhoop in Ophiuchus — een van de dichtstbijzijnde bolvormige sterhopen bij het galactische centrum en opvallend asymmetrisch, met sterren dichter opeengepakt aan de zuidkant. Met magnitude 6,6 is het een fraai object voor verrekijkers, hoewel de lage declinatie het voor waarnemers op het noordelijk halfrond een doelwit voor een kort seizoen maakt.",
+   "fun_fact": "M62's excentrische kern is een direct gevolg van de nabijheid tot het galactische centrum — krachtige getijdenkrachten van de centrale bolling vervormen de cluster en trekken sterren naar het galactische vlak. Het is ook een van de meest dynamisch ontwikkelde bolvormige sterrenhopen die bekend zijn, met tekenen van kerninstorting en een ongewoon hoge dichtheid van millisecondenpolsars.",
+   "distance": "22.500 lichtjaar",
+   "size": "~92 lichtjaar in doorsnee"
+  },
+  "dso/m63": {
+   "description": "Het Zonnebloem Sterrenstelsel is een lumineuze spiraal in Canes Venatici waarvan de strak gewonden armen, gevlekt met stervorming-regio's, het in lange-belichtingsfoto's een karakteristieke bloem-achtige textuur geven. Met magnitude 8,6 is het zichtbaar in verrekijkers vanaf donkere locaties en toont zijn langwerpige vorm en heldere kern gemakkelijk in kleine telescopen.",
+   "fun_fact": "M63 werd in 1779 door Pierre Méchain ontdekt — een van de weinige Messier-objecten die door Méchain in plaats van Messier zelf zijn gevonden. Het is lid van de M51-groep, fysiek geassocieerd met het Whirlpool Galaxy (M51), en vertoont tekenen van een eerdere interactie: een zwakke, oude stellaire stroom wikkelt zich rond zijn buitenschijf.",
+   "distance": "29 miljoen lichtjaar",
+   "size": "~100.000 lichtjaar in doorsnee"
+  },
+  "dso/m64": {
+   "description": "Het Zwartoogstelsel is een spiraalstelsel in Coma Berenices, beroemd om de donkere band van absorberend stof rond zijn kern.",
+   "fun_fact": "De buitenste gebieden van M64 draaien in de tegenovergestelde richting van de binnenste gebieden, waarschijnlijk door een eerdere samensmeling van sterrenstelsels!",
+   "distance": "17 miljoen lichtjaar",
+   "size": "70.000 lichtjaar doorsnede",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m65": {
+   "description": "M65 is een spiraalstelsel in Leo, onderdeel van het beroemde Leo Triplet samen met M66 en NGC 3628.",
+   "fun_fact": "De sterrenstelsels van het Leo Triplet staan in gravitationele wisselwerking, wat getijdenstaarten en vervormde structuren veroorzaakt!",
+   "distance": "35 miljoen lichtjaar",
+   "size": "90.000 lichtjaar doorsnede",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m66": {
+   "description": "M66 is het grootste lid van het Leo Triplet, een spiraalstelsel met asymmetrische spiraalarmen.",
+   "fun_fact": "Het asymmetrische uiterlijk van M66 wordt veroorzaakt door gravitationele wisselwerking met zijn buren M65 en NGC 3628!",
+   "distance": "36 miljoen lichtjaar",
+   "size": "95.000 lichtjaar doorsnede",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m67": {
+   "description": "M67 is een fraai open sterrenhoop in Kanker en een van de oudste goed bestudeerde open sterre nhopen aan de hemel. Met een leeftijd van ongeveer 3,2–3,5 miljard jaar bevat het veel sterren die qua massa en leeftijd vergelijkbaar zijn met onze eigen Zon — wat het een natuurlijk laboratorium maakt voor het bestuderen van hoe sterren als de Zon zich in de loop van kosmische tijd ontwikkelen.",
+   "fun_fact": "Verschillende sterren in M67 lijken sterk op de Zon in temperatuur, massa en leeftijd — een zeldzame combinatie die onderzoekers deed afvragen of de Zon zelf in een cluster zoals M67 is ontstaan. Omdat sterren in clusters worden geboren die geleidelijk uiteenvallen, is de Zon vrijwel zeker afkomstig van een nu verspreide broedergroep miljarden jaren geleden — hoewel welke cluster nooit is geïdentificeerd.",
+   "distance": "2.700 lichtjaar",
+   "size": "~24 lichtjaar in doorsnee"
+  },
+  "dso/m68": {
+   "description": "M68 is een rijke bolvormige sterrenhoop in Hydra — een zuidelijk object en een van de weinige bolvormige sterkenhopen die het best zichtbaar zijn in de late winter en lente. Met een magnitude van 8,2 beloont het een kleine telescoop met een matig samengestelde kern en een grote halo van opgeloste sterren tegen de relatief schaarse stervelden van Hydra.",
+   "fun_fact": "Ondanks de relatieve nabijheid — waardoor individuele sterren goed opgelost zijn in amateurtelescopen — wordt M68 vaak over het hoofd gezien vanwege de zeer zuidelijke declinatie. Vanaf breedtegraden boven 50°N komt het nauwelijks boven de horizon uit; vanuit het zuidelijk halfrond echter stijgt het hoog op en is het een prachtig bolstervorstel.",
+   "distance": "33.600 lichtjaar",
+   "size": "~117 lichtjaar in doorsnee"
+  },
+  "dso/m69": {
+   "description": "M69 is een matig rijke bolvormige sterrenhoop in Sagittarius, gepositioneerd dicht bij het galactische centrum. Met een magnitude van 7,7 is het een binoculair object vanuit donkere hemel dat een kleine telescoop beloont met een gedeeltelijk opgeloste bal van sterren en een helder, korrelig centrum.",
+   "fun_fact": "M69 draait ongewoon dicht om het galactische centrum — slechts ongeveer 6.200 lichtjaar van de kern van de Melkweg — en heeft daarom een ongewoon hoge concentratie van zwaardere elementen voor een bolvormige sterrenhoop. Bolvormige sterkenhopen dichter bij het galactische centrum hebben de neiging chemisch verrijkt te worden door meerdere generaties stervorming in de omringende bult.",
+   "distance": "29.700 lichtjaar",
+   "size": "~61 lichtjaar in doorsnee"
+  },
+  "dso/m7": {
+   "description": "De Ptolemaeushoop is een heldere open sterrenhoop in Scorpius, een van de meest prominente hopen die met het blote oog zichtbaar zijn.",
+   "fun_fact": "M7 werd voor het eerst opgetekend door Ptolemaeus in 130 n.Chr. en wordt al bijna 2.000 jaar waargenomen!",
+   "distance": "980 lichtjaar",
+   "size": "25 lichtjaar doorsnede",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m70": {
+   "description": "M70 is een compacte bolvormige sterrenhoop in Sagittarius, sterk gelijkend op zijn bijna-tweelingbroer M69 in zowel uiterlijk als afstand. Met magnitude 8,1 is het een prachtig object voor kleine telescopen dat een compacte kern toont en aanwijzingen van resolutie in de buitenste halo. Het ligt slechts 2° van M69 af en beide kunnen in hetzelfde verrekijkerveld worden waargenomen.",
+   "fun_fact": "M70 kreeg in 1995 kortstondig bekendheid als de ongeveer locatie aan de hemel waar Alan Hale en Thomas Bopp onafhankelijk van elkaar komeet Hale-Bopp ontdekten — de helderste komeet van de late 20e eeuw. Beide waarnemers zochten aanvankelijk voorbij M70 terwijl zij naar andere doelen zochten en merkten de komeet op als een onverwacht fuzzy object in de buurt.",
+   "distance": "29.400 lichtjaar",
+   "size": "~67 lichtjaar in doorsnee"
+  },
+  "dso/m71": {
+   "description": "M71 is een ongebruikelijke bolvormige sterrenhoop in Sagitta — decennialang betwist door astronomen die niet konden besluiten of het een zeer rijke oude open sterrenhoop of een zeer losse jonge bolvormige sterrenhoop was. Moderne analyse bevestigt dat het een echte bolvormige sterrenhoop is, maar een uitzonderlijk lage concentratie met relatief weinig sterren en een minder dominante kern dan typische bolvormige sterhopen.",
+   "fun_fact": "De losse structuur van M71 hield het lange tijd uit veel vroege catalogi omdat het meer op een rijkelijk sterrenveld leek dan op een echt cluster. Met slechts 12.000 lichtjaar is het een van de dichtstbijzijnde Messier-bolvormige stelsels, en de sterren ervan zijn gedeeltelijk opgelost in een kleine telescoop onder donkere hemel — wat het het uiterlijk geeft van een compact, licht verdicht rijkelijk sterrenveld.",
+   "distance": "12.000 lichtjaar",
+   "size": "~25 lichtjaar in doorsnee"
+  },
+  "dso/m72": {
+   "description": "Messier 72 is een zwakke, afgelegen bolvormige sterrenhoop in de Waterman, ontdekt door Pierre Mechain in 1780.",
+   "fun_fact": "M72 bevat ongeveer 168.000 zonnen aan sterren in een bol die ruwweg 9,5 miljard jaar oud is, inclusief 43 veranderlijke sterren!",
+   "distance": "55.000 lichtjaar"
+  },
+  "dso/m73": {
+   "description": "Messier 73 is een kleine groep van vier sterren in de Waterman die alleen maar een sterrenhoop lijkt te zijn.",
+   "fun_fact": "Astronomen discussieerden decennia lang over de vraag of M73 een echt cluster was - in 2002 werd het beslecht: de vier sterren liggen op zeer verschillende afstanden en staan slechts toevallig op één lijn!",
+   "distance": "1.000 tot 2.300 lichtjaar (de individuele sterren)"
+  },
+  "dso/m74": {
+   "description": "Het Fantoomstelsel is een frontaal zichtbaar spiraalstelsel in Pisces, bekend om zijn perfecte grand-design spiraalstructuur.",
+   "fun_fact": "M74 heeft de bijnaam Fantoomstelsel vanwege zijn zeer lage oppervlaktehelderheid, waardoor het moeilijk waar te nemen is!",
+   "distance": "32 miljoen lichtjaar",
+   "size": "95.000 lichtjaar doorsnede",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m75": {
+   "description": "Messier 75 is een verre, rijk geconcentreerde bolvormige sterrenhoop in de Boogschutter.",
+   "fun_fact": "M75 is een van de meest dicht opeengepakte bekende bolhopen, en wordt beschouwd als puin van een dwergstelsel dat de Melkweg lang geleden heeft opgeslokt!",
+   "distance": "68.000 lichtjaar",
+   "size": "134 lichtjaar breed"
+  },
+  "dso/m76": {
+   "description": "De Kleine Halter is een planetaire nevel in Perseus met een karakteristieke achtvorm — een kleinere neef van M27, de Halternevel in Vulpecula. Hoewel het zwakste object in de Messier-catalogus, beloont het geduldig waarnemen met kleine telescopen en toont het mooie structuur in grotere instrumenten, met twee helderder lobben aan weerszijden van een zwakker middenstuk.",
+   "fun_fact": "M76 werd oorspronkelijk als twee afzonderlijke objecten gecatalogiseerd — NGC 650 en NGC 651 — omdat vroege waarnemers de twee heldere lobben onafhankelijk beschreven. Het is een bipolaire planetaire nevel die ontstond toen de uitstroom van een stervende ster aan de evenaar werd samengeknepen, waardoor twee uitdijende lobben langs de poolas ontstonden terwijl gas ook naar buiten welt bij de taille.",
+   "distance": "~2.500 lichtjaar",
+   "size": "~2 lichtjaar in doorsnee"
+  },
+  "dso/m77": {
+   "description": "M77 is een balkspiraalstelsel in Cetus met een actieve galactische kern aangedreven door een superzwaar zwart gat.",
+   "fun_fact": "M77 herbergt een actieve galactische kern met een zwart gat van 15 miljoen keer de massa van onze Zon!",
+   "distance": "47 miljoen lichtjaar",
+   "size": "120.000 lichtjaar doorsnede",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m78": {
+   "description": "M78 is de helderste diffuse reflectienevel aan de hemel, gelegen in Orion nabij de beroemde Gordelsterren.",
+   "fun_fact": "M78 bevat ongeveer 45 jonge T Tauri-veranderlijke sterren, zeer jonge sterren die nog steeds inkrimpen richting de hoofdreeks!",
+   "distance": "1.600 lichtjaar",
+   "size": "4 lichtjaar doorsnede",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m79": {
+   "description": "M79 is een compacte bolhoop in Lepus — een van de zeer weinige Messier-bolhoopen die het best zichtbaar zijn in de winterhemel, wanneer de meeste bolhoopen onder de horizon liggen of net opkomen. Met een magnitude van 8,0 is een telescoop nodig om de compacte kern en zwakke halo zichtbaar te maken, die opvallen tegen de relatief schaarse wintersterrenveldenachtergrond.",
+   "fun_fact": "M79 wordt door sommige astronomen beschouwd als een indringer uit de Canis Major Dwarf Galaxy — een verstoorde satellietsterrenstelsel dat momenteel door de Melkweg wordt opgenomen. Zo ja, dan is M79 niet ontstaan in het eigen bolstelselsysteem van de Melkweg, maar werd het vastgelegd vanuit een invallend sterrenstelsel en wordt het nu langzaam in de halo van ons sterrenstelsel opgenomen.",
+   "distance": "41.000 lichtjaar",
+   "size": "~104 lichtjaar in doorsnee"
+  },
+  "dso/m8": {
+   "description": "De Lagunenevel is een reusachtige interstellaire wolk in Sagittarius, een van de mooiste en helderste nevels aan de zomerhemel.",
+   "fun_fact": "De Lagunenevel bevat Herschel 36, een van de zwaarste en meest lichtgevende sterren die we kennen!",
+   "distance": "4.100 lichtjaar",
+   "size": "55 lichtjaar doorsnede",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m80": {
+   "description": "M80 is een van de meest dicht opeengepakte bolvormige sterrenhopen in de Melkweg, een compacte, rijke bal van enkele honderdduizenden sterren in Scorpius. Met magnitude 7,2 is het een uitstekend binoculair doelwit en toont een briljante, sterk geconcentreerde kern in kleine telescopen.",
+   "fun_fact": "In 1860 barstte een nova uit in M80 — aangeduid als T Scorpii — en werd even helder als het cluster zelf, zichtbaar voor het blote oog. Het blijft een van slechts twee nova's die ooit in een bolvormig cluster zijn waargenomen. Nova's in bolvormige clusters ontstaan door interacties tussen dubbelsterren, die veel vaker voorkomen in de dichte stellaire omgeving van de kern van een bolvormig cluster.",
+   "distance": "32.600 lichtjaar",
+   "size": "~84 lichtjaar in doorsnee"
+  },
+  "dso/m81": {
+   "description": "M81 is een grand-design spiraalstelsel in Ursa Major, een van de helderste sterrenstelsels zichtbaar vanaf de Aarde.",
+   "fun_fact": "M81 staat in gravitationele wisselwerking met het naburige sterrenstelsel M82, wat intense stervorming in M82 veroorzaakt!",
+   "distance": "12 miljoen lichtjaar",
+   "size": "90.000 lichtjaar doorsnede",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m82": {
+   "description": "Het Sigaarstelsel is een starburst-sterrenstelsel in Ursa Major, bekend om zijn zijdelingse oriëntatie en intense stervorming.",
+   "fun_fact": "M82 vormt 10 keer zo snel sterren als onze Melkweg door de gravitationele wisselwerking met het naburige M81!",
+   "distance": "12 miljoen lichtjaar",
+   "size": "37.000 lichtjaar doorsnede",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m83": {
+   "description": "Het Zuidelijke Windmolenstelsel is een balkspiraalstelsel in Hydra, een van de dichtstbijzijnde en helderste balkspiraalstelsels aan onze hemel.",
+   "fun_fact": "M83 heeft zes waargenomen supernova's voortgebracht, meer dan elk ander sterrenstelsel - een record voor supernova-productie!",
+   "distance": "15 miljoen lichtjaar",
+   "size": "55.000 lichtjaar doorsnede",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m84": {
+   "description": "Messier 84 is een reusachtig elliptisch sterrenstelsel in het drukke hart van de Virgo-cluster.",
+   "fun_fact": "M84 stoot twee materiestralen uit zijn kern, aangedreven door een zwart gat van ongeveer 1,5 miljard zonsmassa's!",
+   "distance": "55 miljoen lichtjaar"
+  },
+  "dso/m85": {
+   "description": "Messier 85 is een lensvormig sterrenstelsel aan de rand van de Virgo-cluster, in Hoofdhaar.",
+   "fun_fact": "Rimpelingen en schillen in de buitenste regionen van M85 zijn de overblijfselen van een samensmelting van sterrenstelsels die 4 tot 7 miljard jaar geleden plaatsvond!",
+   "distance": "60 miljoen lichtjaar",
+   "size": "120.600 lichtjaar breed"
+  },
+  "dso/m86": {
+   "description": "Messier 86 is een groot elliptisch melkwegstelsel in de Virgo Cluster, en vormt een opvallend paar met het nabijgelegen M84.",
+   "fun_fact": "M86 snelt op ons af met 244 km/s - de snelste nadering van welk Messier-object dan ook! Zijn doorgang door de cluster laat een lang spoor van ontdaan heet gas achter.",
+   "distance": "52 miljoen lichtjaar"
+  },
+  "dso/m87": {
+   "description": "M87 is een superreusachtig elliptisch sterrenstelsel in Virgo, een van de zwaarste sterrenstelsels in het lokale heelal.",
+   "fun_fact": "Het centrale zwarte gat van M87 was het eerste dat ooit werd gefotografeerd door de Event Horizon Telescope in 2019 - het heeft 6,5 miljard zonnemassa's!",
+   "distance": "53 miljoen lichtjaar",
+   "size": "240.000 lichtjaar doorsnede",
+   "mass": "2,4 biljoen zonnemassa's",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m88": {
+   "description": "Messier 88 is een elegant spiraalstelsel in Hoofdhaar, een van de vijftien Messier-objecten in de Virgo-cluster.",
+   "fun_fact": "M88 stort zich naar het centrum van de Virgocluster en zal over 200 tot 300 miljoen jaar arriveren, waarbij zijn buitenste gaslagen worden weggerukt terwijl het valt!",
+   "distance": "59 miljoen lichtjaar",
+   "size": "131.000 lichtjaar breed"
+  },
+  "dso/m89": {
+   "description": "Messier 89 is een elliptisch sterrenstelsel in de Maagd, ontdekt door Charles Messier in 1781.",
+   "fun_fact": "M89 is mogelijk bijna een perfecte bol – ongebruikelijk voor een elliptisch sterrenstelsel, die normaal gesproken merkbaar afgeplat zijn!",
+   "distance": "50 miljoen lichtjaar"
+  },
+  "dso/m9": {
+   "description": "M9 is een compacte bolvormige sterrenhoop in Ophiuchus — een van de Messier-bolvormige sterkerhopen die het meest worden beïnvloed door absorptie van interstellair stof. Het bevindt zich in de richting van de galactische kern, waar dik stof het aanzienlijk verzwakt. Zonder deze verduistering zou M9 bijna een magnitude helderder zijn en met het blote oog zichtbaar zijn.",
+   "fun_fact": "M9 ondervindt meer absorptie door interstellair stof dan bijna enig ander Messier-bolsterhoop — ongeveer 1,3 magnituden verduistering in vergelijking met een helder gezichtsveld. Twee kleinere bolsterhopen (NGC 6342 en NGC 6356) bevinden zich binnen ongeveer 1° van M9, waardoor het het middelpunt vormt van een opmerkelijke groepering van drie bolsterhopen in een klein stukje hemel.",
+   "distance": "25.800 lichtjaar",
+   "size": "~70 lichtjaar in doorsnee"
+  },
+  "dso/m90": {
+   "description": "Messier 90 is een groot spiraalstelsel in de Maagd, en het schoolvoorbeeld van een 'anemisch' sterrenstelsel.",
+   "fun_fact": "M90 is zijn stervormend gas ontnomen door zijn duikvlucht door de Virgocluster, waardoor staarten van gloeiend gas achterbleven van wel 260.000 lichtjaar lang!",
+   "distance": "59 miljoen lichtjaar",
+   "size": "132.000 lichtjaar breed"
+  },
+  "dso/m91": {
+   "description": "Messier 91 is een balkspiraalstelsel in Coma Berenices en het zwakste object in de Messiercatalogus.",
+   "fun_fact": "M91 was bijna 200 jaar lang zoek! Messier noteerde de positie ervan, maar gebruikte een verkeerd referentiestelsel, en het werd pas in 1969 opnieuw geïdentificeerd door een amateurastronoom.",
+   "distance": "63 miljoen lichtjaar",
+   "size": "105.500 lichtjaar breed"
+  },
+  "dso/m92": {
+   "description": "M92 is een heldere bolhoop in Hercules, vaak over het hoofd gezien vanwege de nabijheid van het beroemdere M13.",
+   "fun_fact": "M92 is een van de oudste bolhopen met een leeftijd van ongeveer 14,2 miljard jaar - bijna net zo oud als het heelal!",
+   "distance": "26.700 lichtjaar",
+   "size": "109 lichtjaar doorsnede",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m93": {
+   "description": "M93 is een helder, compact open sterrenhoop in Puppis, gelegen in de rijke zuidelijke Melkweg en gemakkelijk te vinden met verrekijkers. De ongeveer 80 sterren zijn gerangschikt in een opvallende wig- of vlindervorm en omvatten verschillende hete blauwe superreuzen, waardoor het een van de aantrekkelijkere open sterhopen in de winterhemel is.",
+   "fun_fact": "M93 is relatief jong — ongeveer 100 miljoen jaar oud — met dominante blauwe en blauwwitte sterren die nog niet tot reuzen zijn uitgegroeid. Het is een van de meer zuidelijke Messier-clusters, en vanaf breedtegraden ten noorden van ongeveer 50°N komt het nooit erg hoog boven de horizon uit.",
+   "distance": "3.600 lichtjaar",
+   "size": "~23 lichtjaar in doorsnee"
+  },
+  "dso/m94": {
+   "description": "M94 is een spiraalstelsel in Canes Venatici met een heldere binnenring waar actieve stervorming plaatsvindt.",
+   "fun_fact": "De binnenring van M94 is een starburst-ring waar nieuwe sterren met een zeer hoge snelheid worden gevormd!",
+   "distance": "16 miljoen lichtjaar",
+   "size": "50.000 lichtjaar doorsnede",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m95": {
+   "description": "Messier 95 is een balkspiraalstelsel in de Leeuw, onderdeel van de M96-groep, samen met M96 en M105.",
+   "fun_fact": "Een ring van intense stervorming, ongeveer 70.000 lichtjaar breed, omcirkelt de kern van M95, en in 2012 flakkerde daar een supernova op!",
+   "distance": "33 miljoen lichtjaar",
+   "size": "80.000 lichtjaar breed"
+  },
+  "dso/m96": {
+   "description": "Messier 96 is een spiraalstelsel in Leo, het helderste lid van de M96-groep van sterrenstelsels.",
+   "fun_fact": "M96 is ongeveer even groot en zwaar als onze eigen Melkweg, maar opvallend asymmetrisch - het stof en gas zijn ongelijkmatig verspreid door zijn armen!",
+   "distance": "31 miljoen lichtjaar",
+   "size": "78.000 lichtjaar breed"
+  },
+  "dso/m97": {
+   "description": "De Uilnevel is een planetaire nevel in Ursa Major, genoemd naar zijn uilachtige uiterlijk met twee donkere vlekken.",
+   "fun_fact": "De donkere uilenogen in M97 zijn driedimensionale holtes in de nevel, uitgelijnd met onze kijkrichting!",
+   "distance": "2.030 lichtjaar",
+   "size": "2 lichtjaar doorsnede",
+   "image_credit": "Gemini Observatory/NOIRLab/NSF/AURA"
+  },
+  "dso/m98": {
+   "description": "Messier 98 is een spiraalstelsel in Coma Berenices, bijna van opzij gezien als onderdeel van de Virgo-cluster.",
+   "fun_fact": "M98 is een van de zeldzame sterrenstelsels die naar ons toe beweegt in plaats van van ons af, met een snelheid van ongeveer 140 km/s!",
+   "distance": "44 miljoen lichtjaar"
+  },
+  "dso/m99": {
+   "description": "Messier 99 is een 'grand design' spiraalstelsel in Coma Berenices, met duidelijke, uitgestrekte spiraalarmen.",
+   "fun_fact": "M99 was een van de allereerste objecten die als spiraalvormig werden herkend, geschetst door Lord Rosse in 1846 - en het vormt sterren drie keer sneller dan vergelijkbare sterrenstelsels!",
+   "distance": "45 miljoen lichtjaar",
+   "size": "98.000 lichtjaar breed"
+  },
+  "dso/n47_tucanae": {
+   "description": "47 Tucanae (NGC 104) is de op één na helderste bolvormige sterrenhoop aan de hemel, een dichte bal van ongeveer één miljoen oude sterren die rond de Melkweg draaien in het sterrenbeeld Tucana. Op ongeveer 14.500 lichtjaar afstand verschijnt het voor het blote oog als een vage ster van de vierde magnitude, maar een telescoop ontrafelt de samengeperste kern in een buitengewone zwerm van gouden en blauwwitte zonnen. De sterren ervan ontstonden ongeveer 13 miljard jaar geleden, waardoor de sterrenhoop bijna even oud is als het universum zelf.",
+   "fun_fact": "47 Tucanae is een kosmische pulsarfabriek: astronomen hebben er minstens 35 millisecondepulsars gevonden die honderden keren per seconde draaien — meer dan in enig ander bekend bolvormig sterrenstelsel — het resultaat van stellaire dichte ontmoetingen die oude neutronensterren recyclen door ze op te spinnen.",
+   "distance": "~14.500 lichtjaar",
+   "size": "~120 lichtjaar in doorsnee",
+   "image_credit": "ESO"
+  },
+  "dso/ngc_2903": {
+   "description": "NGC 2903 is een heldere spiraalsterrenstelsel met balkstructuur in de Leeuw, vaak aangeduid als \"het Messier-object dat Messier miste\" — het is een van de meest opvallende sterrenstelsels aan de hemel die niet in zijn beroemde catalogus zijn opgenomen. Met een magnitude van 8,9 is het gemakkelijk zichtbaar met verrekijkers en toont het een prachtige spiraalstructuur in matige telescopen.",
+   "fun_fact": "NGC 2903 heeft een van de hoogste concentraties van stervorming \"hotspots\" bekend in een centrale balkstreek van een sterrenstelsel — dichte clusters van jonge massieve sterren verlicht door intense stervorming. Het wordt gebruikt als referentiepunt voor het bestuderen van starburst-activiteit in spiraalstelsels met een balk.",
+   "distance": "30 miljoen lichtjaar",
+   "size": "~80.000 lichtjaar groot",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/ngc_6543": {
+   "description": "De Kattenoog-nevel is een van de meest structureel complexe planetaire nevels die bekend zijn — het uitgestoten gas van een stervende ster gevormd in concentrische schillen, jets en heldere knopen zichtbaar in Hubble-beelden. In kleine telescopen verschijnt het als een levendige blauwgroene schijf in Draco, een van de meest kleurrijke objecten aan de herfstlucht.",
+   "fun_fact": "In 1864 richtte astronoom William Huggins een spectroscoop op de Kattenoog en ontdekte dat deze uit gloeiend gas bestond in plaats van onopgeloste sterren — de eerste keer dat de aard van een planetaire nevel werd bevestigd. Deze ontdekking legde de grondslag voor het vakgebied van nebulair spectroscopie en weerlegde het heersende idee dat alle nevels verre sterrenhopen waren.",
+   "distance": "~3.300 lichtjaar",
+   "size": "~0,5 lichtjaar diameter",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/north_america_nebula": {
+   "description": "De Noordamerika-nevel (NGC 7000) is een grote emissienevel in Cygnus waarvan de vorm opmerkelijk lijkt op het continent Noord-Amerika, compleet met een Golfvan Mexico-regio. Met een omvang van ongeveer 120 boogminuten — ruwweg vier keer de diameter van de volle maan — ligt deze op ongeveer 2.600 lichtjaar afstand en is meer dan 100 lichtjaar breed.",
+   "fun_fact": "Ondanks de schijnbare magnitude van 4 is de nevel te groot en te diffuus om met het blote oog onder de meeste hemelomstandigheden te zien — maar op foto's ziet het er prachtig uit en onthult het de Cygnus Wall, een dichte boog van intense stervorming langs de zuidelijke rand.",
+   "distance": "~2.590 lichtjaar",
+   "size": "~140 lichtjaar in doorsnee",
+   "image_credit": "Giuseppe Donatiello/CC0"
+  },
+  "dso/omega_centauri": {
+   "description": "Omega Centauri is de grootste en meest massieve bolvormige sterrenhoop die rond de Melkweg draait. Deze bevat ongeveer 10 miljoen sterren die in een bol van ongeveer 150 lichtjaar doorsnee zijn samengeperst. Het is met het blote oog zichtbaar als een vage ster in Centaurus en lost op in een adembenemende bal van sterren wanneer je er met een verrekijker of telescoop naar kijkt.",
+   "fun_fact": "In tegenstelling tot typische bolvormige sterrenhopen bevat Omega Centauri sterren van veel verschillende leeftijden en chemische samenstelling — een teken dat het mogelijk de ontmantelde kern is van een dwergsterrenstelsel dat miljarden jaren geleden uit elkaar werd gescheurd en door de Melkweg werd opgeslokt. Het zou zelfs een centraal zwart gat van intermediaire massa kunnen herbergen.",
+   "distance": "17.090 lichtjaar",
+   "size": "~150 lichtjaar diameter",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/saturn_nebula": {
+   "description": "De Saturnusnevel is een planetaire nevel in Waterman die naar de planeet Saturnus is genoemd vanwege de gelijkenis — uitsteeksels genaamd ansae steken aan beide zijden uit als ringgrepen, zichtbaar in matige telescopen. Met een magnitude van 8,0 is het een van de helderste planetaire nevels aan de hemel en toont complexe structuur in grotere instrumenten.",
+   "fun_fact": "William Herschel ontdekte de Saturnusnevel in 1782 en merkte de Saturnusachtige verschijning op. Moderne waarnemingen onthullen minstens vier verschillende gasschillen rond de centrale witte dwerg, wat meerdere episodes van massaverlies in de laatste stadia van het leven van de ster weerspiegelt.",
+   "distance": "~5.000 lichtjaar",
+   "size": "~1 lichtjaar groot",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/sculptor_galaxy": {
+   "description": "Het Sculptor-sterrenstelsel is een van de helderste en mooiste edge-on spiraalstelsels zichtbaar vanaf de Aarde en verschijnt als een langgerekte gloed in het zuidelijke sterrenbeeld Sculptor. Het is een van de dichtstbijzijnde starburst-stelsels — een sterrenstelsel dat een intense uitbarsting van stervorming ondergaat — zichtbaar voor amateurastronomen met verrekijkers vanuit donkere hemel.",
+   "fun_fact": "Het Sculptorgalaxie is een van de helderste leden van de Sculptorgroep — de galaxiegroep het dichtst bij onze eigen Lokale Groep. De centrale starburst-regio produceert nieuwe sterren met een snelheid enkele keren hoger dan de Melkweg, aangedreven door eerdere interacties met naburige galaxieën.",
+   "distance": "11,4 miljoen lichtjaar",
+   "size": "~90.000 lichtjaar groot",
+   "image_credit": "ESO/VST"
+  },
+  "dso/sgr_a_star": {
+   "description": "Sagittarius A* (Sgr A*) is het superzware zwarte gat in het centrum van de Melkweg, op ongeveer 26.000 lichtjaar afstand in de richting van Boogschutter. Met een massa van ongeveer 4 miljoen zonnemassa's samengeperst in een gebied kleiner dan ons zonnestelsel, is het zo dicht dat zelfs licht niet aan de gebeurtenishorizon kan ontsnappen.",
+   "fun_fact": "In 2022 heeft de Event Horizon Telescope-samenwerking de eerste directe afbeelding van Sgr A* vrijgegeven, die een gloeiende ring van superhete gas rond zijn schaduw onthult — geproduceerd door gegevens van radiosterrenwachten over de hele planeet te combineren.",
+   "distance": "26.000 lichtjaar",
+   "size": "Diameter van de waarnemingshorizon: ~24 miljoen km",
+   "image_credit": "EHT Collaboration"
+  },
+  "dso/smc": {
+   "description": "De Kleine Magellaanse Wolk is een dwergsterrenstelsel van de Melkweg, samen met zijn grotere broer de Grote Magellaanse Wolk. Samen worden ze langzaam uit elkaar gescheurd door de zwaartekracht van de Melkweg, terwijl ze een enorme gasstroom achter zich aan slepen over de hemel.",
+   "fun_fact": "Door in 1908–12 Cepheïde-variabelen in de Kleine Magelhaense Wolk te bestuderen, ontdekte Henrietta Swan Leavitt de periode-luminositeitsrelatie — de doorbraak die astronomen voor het eerst in staat stelde afstanden in het universum te meten!",
+   "distance": "200.000 lichtjaar",
+   "size": "7.000 lichtjaren in doorsnee",
+   "image_credit": "ESO/VISTA VMC"
+  },
+  "dso/t_crb": {
+   "description": "T Coronae Borealis (T CrB) is een terugkerende nova in Corona Borealis — een binair systeem van een rode reus en een witte dwerg. De witte dwerg accumuleert periodiek genoeg waterstof van zijn begeleider om een thermonucleaire explosie uit te lokken.",
+   "fun_fact": "T CrB barstte voor het laatst uit in 1946, bereikte kort magnitude 2,0 en werd zichtbaar voor het blote oog. Astronomen voorspellen dat een volgende uitbarsting aanstaande is — blijf kijken!",
+   "distance": "3.000 lichtjaar",
+   "size": "0,2 AU orbitale scheiding"
+  },
+  "dso/tarantula_nebula": {
+   "description": "De Tarantula-nevel is de grootste en meest lumineuze stervorming-regio in de Lokale Groep, een uitgebreide emissieneveI ingebed in de Grote Magelhaense Wolk die zich uitstrekt over ongeveer 600 lichtjaar. Ondanks dat het 163.000 lichtjaar verwijderd is, is het helder genoeg om met het blote oog zichtbaar te zijn.",
+   "fun_fact": "Als de Tarantula-nevel zo dicht bij ons zou zijn als de Orion-nevel, zou het helder genoeg zijn om 's nachts schaduwen te werpen en zou het half de zichtbare hemel beslaan!",
+   "distance": "163.000 lichtjaar",
+   "size": "600 lichtjaar groot",
+   "image_credit": "ESO/R. Fosbury/ST-ECF"
+  },
+  "dso/v838_mon": {
+   "description": "V838 Monocerotis is een ongewone variabele ster in Monoceros die in 2002 een spectaculaire uitbarsting onderging en kort een van de helderste sterren in de Melkweg werd. Hoewel tegenwoordig veel te zwak voor visuele waarnemers, produceerde de uitdijende lichtecho ervan — een golffront van licht dat oude stofschillen verlicht — enkele van de meest dramatische Hubble Space Telescope-afbeeldingen ooit gemaakt.",
+   "fun_fact": "De aard van de uitbarsting van V838 Mon blijft omstreden. De leidende theorie is een stellaire fusie — twee sterren die in elkaar spiralen en botsen — in plaats van een klassieke nova of superreus-eruptie. Indien bevestigd, was het de eerste real-time waarneming van een \"luminous red nova\", een zeldzame klasse van explosie veroorzaakt door stellaire fusies. Soortgelijke gebeurtenissen zijn sindsdien in andere sterrenstelsels gevonden.",
+   "distance": "~20.000 lichtjaar",
+   "size": "~3 lichtjaar (lichtechouitbreiding)",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/willman_1": {
+   "description": "Willman 1 is een ultraschwak dwergsterrenstelsel van de Melkweg, ontdekt in 2004 door Beth Willman in gegevens van de Sloan Digital Sky Survey. Het is een van de minst lichtkrachtige sterrenstelsels die bekend zijn en een van de meest extreme laboratoria voor donkere materie in het universum.",
+   "fun_fact": "Voor elke eenheid gewone materie in Willman 1 zijn er ongeveer 660 eenheden donkere materie — wat het tot een van de meest donkere-materie-gedomineerde objecten maakt die ooit zijn ontdekt. De sterren ervan vertonen ook tekenen van getijdenverstoring terwijl de Melkweg het langzaam uit elkaar trekt.",
+   "distance": "~130.000 lichtjaar",
+   "size": "~130 lichtjaar in doorsnee",
+   "image_credit": "Sky Map team (it's very faint)"
+  },
+  "moon/ariel": {
+   "description": "Ariel heeft het jongste en helderste oppervlak van de vijf grote manen van Uranus. Het landschap wordt gedomineerd door een netwerk van diepe valleien en gladde vlakten die lang geleden opnieuw zijn gevormd door vloeistof — waarschijnlijk water of ammonia-watermengels — die uit het binnenste omhoog welden en oud terrein overstroomden.",
+   "fun_fact": "De valleien van Ariel kunnen tot 10 km diep zijn — veel dieper dan de Grand Canyon. Waarnemingen met de James Webb Space Telescope hebben sindsdien koolstofdioxide-ijs op het oppervlak van Ariel gedetecteerd, wat wijst op voortdurende oppervlaktechemie aangedreven door geladen deeltjes uit het magnetische veld van Uranus.",
+   "distance": "191.020 km van Uranus",
+   "size": "1.158 km diameter",
+   "image_credit": "NASA/JPL",
+   "search_subtext": "Maan van Uranus"
+  },
+  "moon/callisto": {
+   "description": "Callisto is de buitenste van de Galileïsche manen en een van de meest kraterrijke hemellichamen in het zonnestelsel. Het oude oppervlak bewaart een register van vroege inslagen in het zonnestelsel.",
+   "fun_fact": "Callisto beweegt zich buiten Jupiters belangrijkste stralingsgordels, waardoor het de veiligste van de Galileïsche manen is voor toekomstige menselijke exploratie — het wordt soms de 'poortmaan' genoemd.",
+   "distance": "1.882.700 km van Jupiter",
+   "size": "4.821 km diameter",
+   "image_credit": "NASA/JPL/DLR",
+   "search_subtext": "Maan van Jupiter"
+  },
+  "moon/deimos": {
+   "description": "Deimos is de kleinere en buitenste van Mars' twee manen, met een glad, stofbedekt oppervlak dat het een ronder uiterlijk geeft dan Phobos. Net als zijn metgezel wordt aangenomen dat het een gevangen asteroïde uit de buitenriem is.",
+   "fun_fact": "Deimos is zo klein en ver weg dat het vanaf het Marsoppervlak niet meer lijkt dan een helder sterretje, dat ongeveer 30 uur nodig heeft om langzaam over de nachtelijke hemel te drijven.",
+   "distance": "23.460 km van Mars",
+   "size": "15 × 12 × 11 km",
+   "image_credit": "NASA/JPL-Caltech/University of Arizona",
+   "search_subtext": "Maan van Mars"
+  },
+  "moon/dione": {
+   "description": "Dione is een ijzige maan van Saturnus met een zwaar gekraterde voorkant en een achterkant vol heldere ijskliffen — breuklijnnen waar oude tektonische krachten vers ijs van onder blootlegden. Cassini-zwaartekrachtgegevens wijzen op een ondergrondse vloeibare oceaan onder de korst.",
+   "fun_fact": "Dione deelt zijn baan met twee kleine maantjes, Helene en Polydeuces, die op 60° voor en achter zich vastzitten op zwaartekrachtevenwichtspunten die Lagrangepunten worden genoemd. Helene in het bijzonder is te zien als een kosmische lifter in Cassini-afbeeldingen.",
+   "distance": "377.396 km van Saturnus",
+   "size": "1.122 km diameter",
+   "image_credit": "NASA/JPL-Caltech/SSI",
+   "search_subtext": "Maan van Saturnus"
+  },
+  "moon/europa": {
+   "description": "Europa is de tweede Galileïsche maan en zou onder zijn ijzige korst een groot vloeibaar waterocean kunnen bevatten, wat het tot een van de meest veelbelovende plaatsen maakt om naar leven te zoeken.",
+   "fun_fact": "De ondergrondse oceaan van Europa kan twee keer zoveel vloeibaar water bevatten als alle oceanen van de Aarde samen, vloeibaar gehouden door getijdenverwarming van Jupiter.",
+   "distance": "671.100 km van Jupiter",
+   "size": "3.122 km diameter",
+   "image_credit": "NASA/JPL-Caltech/SETI Institute",
+   "search_subtext": "Maan van Jupiter"
+  },
+  "moon/ganymede": {
+   "description": "Ganymedes is de grootste maan in het zonnestelsel — zelfs groter dan de planeet Mercurius. Het is de enige maan waarvan bekend is dat deze zijn eigen magnetisch veld opwekt.",
+   "fun_fact": "Ganymede is groter dan Mercurius qua grootte, hoewel slechts ongeveer de helft van zijn massa. Zijn interne magnetisch veld creëert zijn eigen miniatuuraardmagnetisme binnen Jupiters veel grotere magnetosfeer.",
+   "distance": "1.070.400 km van Jupiter",
+   "size": "5.268 km diameter",
+   "image_credit": "NASA/JPL/DLR",
+   "search_subtext": "Maan van Jupiter"
+  },
+  "moon/iapetus": {
+   "description": "Iapetus is een van Saturnus' meest opvallende manen: het voorste halfrond is bedekt met pikzwart materiaal dat zo donker is als steenkool, terwijl het achterste halfrond helder wit ijs is. Dit extreme twee-kleurig uiterlijk verwarde Giovanni Cassini toen hij de maan in 1671 ontdekte, en het contrast is zo sterk dat het zichtbaar is in kleine telescopen.",
+   "fun_fact": "Iapetus heeft ook een imposante equatoriale bergrug die 20 km hoog uitsteekt — hoger dan enige berg op Aarde — en loopt duizenden kilometers rond zijn evenaar. De oorsprong ervan is onbekend: het kan het overblijfsel van een ingestorte ring zijn, of oude tektonische plooiing, gevormd toen de maan veel sneller draaide lang geleden.",
+   "distance": "3.560.820 km van Saturnus",
+   "size": "1.469 km diameter",
+   "image_credit": "NASA/JPL-Caltech/SSI",
+   "search_subtext": "Maan van Saturnus"
+  },
+  "moon/io": {
+   "description": "Io is de binnenste van Jupiters vier grote Galileïsche manen en het meest vulkanisch actieve hemellichaam in het zonnestelsel.",
+   "fun_fact": "Io heeft honderden actieve vulkanen, waarvan sommige lavafonteinen uitspuiten die tientallen kilometers hoog zijn. De constante activiteit wordt aangedreven door getijdenverwarming van Jupiters enorme zwaartekracht.",
+   "distance": "421.700 km van Jupiter",
+   "size": "3.643 km diameter",
+   "image_credit": "NASA/JPL/University of Arizona",
+   "search_subtext": "Maan van Jupiter"
+  },
+  "moon/oberon": {
+   "description": "Oberon is de buitenste van Uranus' vijf grote manen en een van de meest kraterrijke, met een oud oppervlak dat sinds het begin van het zonnestelsel weinig is veranderd. Verschillende van zijn grote inslagkraters hebben donker materiaal op hun bodem, mogelijk organische afzettingen gebracht door de ingeslagen lichamen.",
+   "fun_fact": "Oberon herbergt een berg die ongeveer 6 km boven de omliggende vlaktes uitstijgt — vergelijkbaar met de hoogste pieken op Aarde. In tegenstelling tot de bergen op Aarde, die door plaattektoniek zijn ontstaan, kan dit kenmerk de centrale piek van een oud inslagkrater zijn of een overblijfsel van vroege vulkanische activiteit.",
+   "distance": "583.520 km van Uranus",
+   "size": "1.523 km diameter",
+   "image_credit": "NASA/JPL",
+   "search_subtext": "Maan van Uranus"
+  },
+  "moon/phobos": {
+   "description": "Phobos is de grootste en binnenste van Mars' twee manen, die dichter bij zijn planeet in een baan beweegt dan enige andere maan in het zonnestelsel. Het is een onregelmatig gevormd, zwaar gegroefd en gekraterd lichaam waarvan wordt aangenomen dat het een gevangen asteroïde is.",
+   "fun_fact": "Phobos draait zo snel om Mars dat het in het westen opkomt en in het oosten ondergaat — en het spiraleert langzaam naar binnen, voorbestemd om over ongeveer 50 miljoen jaar tegen Mars te botsen of uiteen te vallen tot een ring.",
+   "distance": "9.376 km van Mars",
+   "size": "27 × 22 × 18 km",
+   "image_credit": "NASA/JPL-Caltech/University of Arizona",
+   "search_subtext": "Maan van Mars"
+  },
+  "moon/rhea": {
+   "description": "Rhea is Saturnus' tweede grootste maan en een zwaar gekraterde wereld van ijs en rots. Het bleke, oude oppervlak bewaart enkele van de meest ongerepte inslagkraters van ons zonnestelsel, samen met heldere ijskliffen waar aardverschuivingen vers materiaal van onder het oppervlak hebben blootgelegd.",
+   "fun_fact": "In 2008 suggereerden Cassini-gegevens dat Rhea mogelijk een dunne ring van puin om zich heen heeft die eraan orbiteert — wat het de eerste maan ooit zou maken die met zijn eigen ringstelsel is ontdekt. Indien bevestigd, zou het een opmerkelijke ontdekking zijn; het bewijs blijft een actief onderzoeksgebied.",
+   "distance": "527.108 km van Saturnus",
+   "size": "1.527 km diameter",
+   "image_credit": "NASA/JPL-Caltech/SSI",
+   "search_subtext": "Maan van Saturnus"
+  },
+  "moon/tethys": {
+   "description": "Tethys is een ijzige maan van Saturnus die wordt gedomineerd door twee dramatische kenmerken: de enorme Odysseus-krater, 400 km breed en bedekt bijna een derde van het maanoppervlak, en Ithaca Chasma, een canyonsysteem dat zich drie kwart van de weg rond de aardbol uitstrekt.",
+   "fun_fact": "Tethys bestaat bijna volledig uit waterijs — het heeft een van de laagste dichtheden van alle manen in het zonnestelsel, nauwelijks dichter dan bevroren water. Ithaca Chasma kan zijn ontstaan toen het binnenste bevroor en uitzette, waardoor de bovenliggende korst van binnenuit scheurde.",
+   "distance": "294.619 km van Saturnus",
+   "size": "1.062 km diameter",
+   "image_credit": "NASA/JPL-Caltech/SSI",
+   "search_subtext": "Maan van Saturnus"
+  },
+  "moon/titan": {
+   "description": "Titan is de grootste maan van Saturnus en de op één na grootste maan in het zonnestelsel. Het is de enige maan waarvan bekend is dat deze een dichte atmosfeer heeft — een dikke stikstoflaag doorweven met methaan — en de enige wereld buiten de Aarde waarvan bekend is dat deze stabiele vloeibare zeeën op het oppervlak heeft.",
+   "fun_fact": "De meren en zeeën van Titan zijn niet gevuld met water, maar met vloeibaar methaan en ethaan bij een ijzige −179°C. De Dragonfly-rotorcraft-missie van NASA, die in 2034 zal aankomen, zal tussen locaties op het oppervlak van Titan vliegen om naar de chemie van het leven te zoeken.",
+   "distance": "1.221.870 km van Saturnus",
+   "size": "5.151 km diameter",
+   "image_credit": "NASA/JPL-Caltech/SSI",
+   "search_subtext": "Maan van Saturnus"
+  },
+  "moon/titania": {
+   "description": "Titania is de grootste maan van Uranus en de achtste grootste maan in het zonnestelsel. Het oppervlak vertoont een mix van oude kratervlaktes en jongere hellingen en valleien, wat wijst op een complexe geologische geschiedenis die mogelijk in het verleden tektonische activiteit omvatte die de ijzige korst heeft omgevormd.",
+   "fun_fact": "Al Uranus' manen zijn genoemd naar personages uit Shakespeare en Alexander Pope — Titania is de koningin van de feeën in A Midsummer Night's Dream. Het is een van de zeer weinige grote planetaire manen die niet naar een figuur uit de Griekse of Romeinse mythologie is genoemd.",
+   "distance": "435.910 km van Uranus",
+   "size": "1.578 km diameter",
+   "image_credit": "NASA/JPL",
+   "search_subtext": "Maan van Uranus"
+  },
+  "moon/triton": {
+   "description": "Triton is Neptunus' grootste maan en een van de meest buitengewone hemellichamen in ons zonnestelsel. Het beweegt om Neptunus heen in tegengestelde richting — tegenovergesteld aan de rotatie van de planeet zelf — een sterk bewijs dat het in een vroeg stadium van Neptunus' geschiedenis uit het buitenste zonnestelsel is gevangen, waarschijnlijk uit de Kuiper Belt.",
+   "fun_fact": "Ondanks de oppervlaktetemperatuur van −235°C — de koudste gemeten op enig hemellichaam bezocht door een ruimtevaartuig — ontdekte Voyager 2 in 1989 actieve stikstofgeisers op Triton. Donkere strepen op het oppervlak markeren waar pluimen van gas en donker materiaal kilometers hoog in de dunne atmosfeer uitbraken.",
+   "distance": "354.759 km van Neptunus",
+   "size": "2.707 km diameter",
+   "image_credit": "NASA/JPL",
+   "search_subtext": "Maan van Neptunus"
+  },
+  "moon/umbriel": {
+   "description": "Umbriel is de donkerste van de vijf grote manen van Uranus, met een uniform oud en zwaar gekraterd oppervlak dat weinig tekenen vertoont van de geologische hervorming die op zijn buren te zien is. Het binnenste lijkt sinds het begin van de geschiedenis van het zonnestelsel koud en bevroren te zijn gebleven.",
+   "fun_fact": "Het meest opvallende kenmerk op Umbriel is Wunda, een helder ring van ongeveer 140 km in doorsnede nabij de evenaar. Ontdekt door Voyager 2 in 1986, blijft de exacte aard van Wunda een mysterie — het kan een kratervloer zijn bedekt met koolstofdioxide of ammoniakvorst die lang na de inslag die het vormde is afgezet.",
+   "distance": "266.300 km van Uranus",
+   "size": "1.170 km diameter",
+   "image_credit": "NASA/JPL",
+   "search_subtext": "Maan van Uranus"
+  },
+  "planet/jupiter": {
+   "description": "Jupiter is de grootste planeet in ons zonnestelsel. Het is een gasreus met de beroemde Grote Rode Vlek.",
+   "fun_fact": "Jupiter heeft minstens 95 bekende manen! De grootste maan, Ganymedes, is groter dan de planeet Mercurius.",
+   "distance": "778 miljoen km (gemiddeld)",
+   "size": "139.820 km doorsnede",
+   "mass": "1,898 × 10²⁷ kg",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "planet/mars": {
+   "description": "Mars is de vierde planeet vanaf de Zon, bekend als de Rode Planeet vanwege het ijzeroxide op het oppervlak.",
+   "fun_fact": "Mars heeft de grootste vulkaan van het zonnestelsel: Olympus Mons, die ongeveer 2,5 keer zo hoog is als de Mount Everest!",
+   "distance": "228 miljoen km (gemiddeld)",
+   "size": "6.779 km doorsnede",
+   "mass": "6,39 × 10²³ kg",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "planet/mercury": {
+   "description": "Mercurius is de kleinste planeet en staat het dichtst bij de Zon. Een jaar op Mercurius duurt slechts 88 aardse dagen.",
+   "fun_fact": "Hoewel Mercurius het dichtst bij de Zon staat, is het niet de heetste planeet. Venus is heter dankzij haar dikke atmosfeer!",
+   "distance": "58 miljoen km (vanaf de Zon)",
+   "size": "4.880 km doorsnede",
+   "mass": "3,3 × 10²³ kg",
+   "image_credit": "NASA/GSFC"
+  },
+  "planet/moon": {
+   "description": "De Maan is de enige natuurlijke satelliet van de Aarde. Ze beïnvloedt onze getijden en is bezocht door 12 astronauten.",
+   "fun_fact": "De Maan drijft langzaam van de Aarde weg met ongeveer 3,8 cm per jaar. Miljarden jaren geleden stond ze veel dichterbij!",
+   "distance": "384.400 km",
+   "size": "3.474 km doorsnede",
+   "mass": "7,35 × 10²² kg",
+   "image_credit": "NASA/GSFC/ASU"
+  },
+  "planet/neptune": {
+   "description": "Neptunus is de verst verwijderde planeet in ons zonnestelsel. Hij heeft de sterkste winden, met snelheden tot 2.100 km/u.",
+   "fun_fact": "Neptunus werd ontdekt door middel van wiskunde! Wetenschappers voorspelden zijn locatie voordat iemand hem door een telescoop zag.",
+   "distance": "4,5 miljard km (gemiddeld)",
+   "size": "49.244 km doorsnede",
+   "mass": "1,024 × 10²⁶ kg",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "planet/pluto": {
+   "description": "Pluto is een dwergplaneet in de Kuipergordel. Tot 2006 werd hij beschouwd als de negende planeet.",
+   "fun_fact": "Pluto heeft een hartvormige gletsjer van stikstofijs, zichtbaar op beelden van NASA's New Horizons-missie!",
+   "distance": "5,9 miljard km (gemiddeld)",
+   "size": "2.377 km doorsnede",
+   "mass": "1,3 × 10²² kg",
+   "image_credit": "NASA/JHUAPL/SwRI"
+  },
+  "planet/saturn": {
+   "description": "Saturnus is de zesde planeet vanaf de Zon, beroemd om zijn spectaculaire ringenstelsel van ijs en steen.",
+   "fun_fact": "Saturnus is zo licht dat hij zou drijven op water! Zijn dichtheid is minder dan die van water, al is er geen badkuip groot genoeg om dit te testen.",
+   "distance": "1,4 miljard km (gemiddeld)",
+   "size": "116.460 km doorsnede",
+   "mass": "5,68 × 10²⁶ kg",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "planet/sun": {
+   "description": "De Zon is de ster in het centrum van ons zonnestelsel. Ze levert het licht en de warmte die leven op aarde mogelijk maken.",
+   "fun_fact": "De Zon bevat 99,86% van alle massa in ons zonnestelsel. Er zouden ongeveer 1,3 miljoen aardes in passen!",
+   "distance": "150 miljoen km",
+   "size": "1,4 miljoen km doorsnede",
+   "mass": "1,989 × 10³⁰ kg",
+   "spectral_class": "G2V",
+   "image_credit": "NASA/SDO"
+  },
+  "planet/uranus": {
+   "description": "Uranus is een ijsreus die op zijn kant draait. Het was de eerste planeet die met een telescoop werd ontdekt.",
+   "fun_fact": "Uranus draait op zijn kant met een kanteling van 98 graden, mogelijk door een botsing met een object ter grootte van de Aarde lang geleden!",
+   "distance": "2,9 miljard km (gemiddeld)",
+   "size": "50.724 km doorsnede",
+   "mass": "8,68 × 10²⁵ kg",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "planet/venus": {
+   "description": "Venus is de tweede planeet vanaf de Zon en de heetste in ons zonnestelsel. Ze wordt vaak de tweelingzus van de Aarde genoemd vanwege haar vergelijkbare grootte.",
+   "fun_fact": "Een dag op Venus duurt langer dan een jaar! Het kost 243 aardse dagen om één keer rond haar as te draaien, maar slechts 225 dagen om rond de Zon te draaien.",
+   "distance": "108 miljoen km (gemiddeld)",
+   "size": "12.104 km doorsnede",
+   "mass": "4,87 × 10²⁴ kg",
+   "image_credit": "NASA/JPL"
+  },
+  "shower/aquariids": {
+   "description": "De Eta Aquariïden zijn een van twee jaarlijkse meteorenregens veroorzaakt door puin van de komeet van Halley. Met een piek van tot 70 meteoren per uur, begünstigt de regen sterk het zuidelijk halfrond, waar de radiaal hoog voor zonsopgang opkomt. Waarnemers op het noordelijk halfrond genieten nog steeds van een respectabel aantal van 30 of meer per uur.",
+   "fun_fact": "Eta Aquariïde meteoren reizen met 66 km/s — snel genoeg dat de geïoniseerde lucht die ze creëren enkele seconden na de meteorenval kan gaan gloeien. Je kunt mogelijk het oude stof van Halley zien verbranden voor je ogen, afgestoten tijdens een van de vele bezoeken van de komeet duizenden jaren geleden."
+  },
+  "shower/deltaaquariids": {
+   "description": "De Southern Delta Aquariids bereiken hun hoogtepunt in late juli en zijn het best zichtbaar vanaf tropische en zuidelijke breedtegraden, waar de radiaal in Aquarius hoog boven de horizon staat voor zonsopgang. Ze produceren een gestage stroom van meteoren met gemiddelde snelheid tot 16 per uur, met weinig heldere vuurpijlen.",
+   "fun_fact": "De exacte moederlichaam van de Delta Aquariïden blijft onzeker. De voornaamste kandidaat is Komeet 96P/Machholz, een ongebruikelijke kortperiodieke komeet met een sterk hellende baan die opmerkelijk dicht bij de Zon komt — dichter dan de planeet Mercurius."
+  },
+  "shower/geminids": {
+   "description": "De Geminiden worden algemeen beschouwd als de beste meteorenregen van het jaar — productief (tot 120 per uur), betrouwbaar en actief vanaf vroeg in de avond in plaats van alleen na middernacht. Ze stralen uit van het sterrenbeeld Gemini en produceren een breed scala aan meteorhelderheid, inclusief levendige vuurpijlen.",
+   "fun_fact": "In tegenstelling tot andere grote meteorenregens komen de Geminiden uniek van een asteroïde in plaats van een komeet: 3200 Phaethon, een \"rotskomeet\" waarvan de baan dichter bij de Zon komt dan enig ander benoemd asteroïde. De extreme hitte kan het rotsachtige oppervlak breken en het stof vrijmaken dat de regen veroorzaakt."
+  },
+  "shower/leonids": {
+   "description": "De Leoniden stralen uit van de sikkel van Leeuw en produceren doorgaans ongeveer 20 meteoren per uur. Ze zijn beroemd om spectaculaire stormen die zich ruwweg elke 33 jaar voordoen wanneer de Aarde door een dicht stoffilament van komeet 55P/Tempel-Tuttle gaat. Deze stormen kunnen duizenden meteoren per uur produceren.",
+   "fun_fact": "De Leonidenstorm van 1833 produceerde naar schatting 100.000 meteoren per uur, wat waarnemers in Noord-Amerika in schrik joeg die vreesden dat de hemel in brand stond. Dit evenement markeerde het begin van de wetenschappelijke studie van meteorenregens. Vergelijkbare stormen traden op in 1966 en 1999."
+  },
+  "shower/lyrids": {
+   "description": "De Lyriden zijn een betrouwbare lentestergstroom die uitstraalt vanuit de buurt van de heldere ster Vega in Lyra. Ze produceren snelle, matig heldere meteoren, met een piek van ongeveer 18 per uur, en genereren af en toe vuurpijlen die gloeiende rooksporen achterlaten.",
+   "fun_fact": "De Lyriden zijn de oudste betrouwbaar geregistreerde meteorenzwerm in de geschiedenis. Chinese astronomen documenteerden een storm van meteoren die \"als regen vielen\" in 687 v.Chr. Het puin komt van komeet Thatcher, die 415 jaar nodig heeft om de zon te omcirkelen en voor het laatst in 1861 het binnenste zonnestelsel bezocht."
+  },
+  "shower/orionids": {
+   "description": "De Orioniden zijn de tweede meteorenzwerm die elk jaar door de komeet van Halley wordt voortgebracht en straalt uit vanuit de buurt van de verheven knuppel van Orion. Met een piek van ongeveer 25 per uur, staan zij bekend om snelle, vaak heldere meteoren die regelmatig gloeiende ionisatiesporen achterlaten die enkele seconden aanhouden.",
+   "fun_fact": "De komeet van Halley is verantwoordelijk voor twee jaarlijkse meteorenregens: de Eta Aquariïden in mei, wanneer de Aarde de uitgaande puin van de komeet kruist, en de Orioniden in oktober, wanneer de Aarde de inkomende puin kruist. Samen stellen zij ons in staat om twee keer per jaar oud Halley-stof te bemonsteren."
+  },
+  "shower/perseids": {
+   "description": "De Perseïden zijn de populairste meteorenregen van het jaar, met een piek op warme augustusnachten met tot 100 meteoren per uur. Puin afgestoten door komeet Swift-Tuttle verbrandt hoog in de atmosfeer van de aarde en produceert snelle, heldere meteoren — veel met blijvende gloeiende staarten — uitstralend van het sterrenbeeld Perseus.",
+   "fun_fact": "De moederkomeet van de Perseïden, Komeet Swift-Tuttle, heeft een kern van 26 km breed — groter dan het object waarvan wordt aangenomen dat het de massale uitsterving veroorzaakte die het einde van de dinosauriërs markeerde. De komeet passeerde voor het laatst in 1992 door het binnenste zonnestelsel en zal pas in 2125 terugkeren."
+  },
+  "shower/puppidvelids": {
+   "description": "De Puppid-Veliden zijn een complex van overlappende kleine meteorenregens die uitstralen vanuit de sterrenbeelden Puppis en Vela in de zuidelijke Melkweg. Met een piek van ongeveer 10 meteoren per uur, worden zij het best waargenomen vanaf het zuidelijk halfrond, waar de radiaal hoog aan de decemberhemel staat.",
+   "fun_fact": "De Puppid-Veliden worden verondersteld afkomstig te zijn van puin van verschillende verschillende moederkometen in plaats van een enkele bron, waaronder Komeet 26P/Grigg-Skjellerup. Hun zuidelijke radiationspunt stijgt nooit boven de horizon voor waarnemers op breedtegraden ten noorden van ongeveer 40°N, waardoor het een meteorenzwerm is die de meeste wereld zelden ziet."
+  },
+  "shower/quadrantids": {
+   "description": "De Quadrantiden zijn een productieve januarimeteorenregen met een zeer scherpe, korte piek die slechts enkele uren duurt. De radiaal ligt in het sterrenbeeld Boötes, dicht bij de positie van het vervallen sterrenbeeld Quadrans Muralis, naar welk sterrenbeeld de meteorenregen is genoemd. Onder ideale omstandigheden zijn tot 120 meteoren per uur zichtbaar.",
+   "fun_fact": "In tegenstelling tot de meeste grote meteorenregens die afkomstig zijn van kometen, is het moederlichaam van de Quadrantiden de asteroïde 2003 EH1 — waarvan wordt aangenomen dat het de slapende kern is van een komeet die eeuwen geleden is uitgebreid. Het bestaan ervan werd pas in 2003 bevestigd."
+  },
+  "shower/ursids": {
+   "description": "De Ursiden zijn een zwakke meteorenzwerm die uitstraalt van Ursa Minor, dicht bij Polaris, waardoor ze voor waarnemers op het noordelijk halfrond circumpolair zijn — de hele nacht zichtbaar zonder onder te gaan. Ze bereiken hun hoogtepunt rond de winterzonnewende met ongeveer 10 meteoren per uur, en de moederkomeet is 8P/Tuttle.",
+   "fun_fact": "De Ursiden produceren af en toe onverwachte uitbarstingen die veel hoger zijn dan hun normale snelheid. In 1945 en opnieuw in 2006 registreerden waarnemers 50 of meer meteoren per uur — vijf keer de normale piek. Deze stijgingen treden op wanneer de Aarde door een ongewoon dicht lint van puin gaat dat vrijkwam tijdens een dichte benadering van komeet Tuttle."
+  },
+  "star/achernar": {
+   "description": "Achernar is de helderste ster in Eridanus (de Rivier) en de negende helderste ster aan de nachtelijke hemel.",
+   "fun_fact": "Achernar is de platste bekende ster! Hij draait zo snel dat zijn equatoriale doorsnede 56% groter is dan zijn polaire doorsnede.",
+   "distance": "139 lichtjaar",
+   "size": "7,3 zonnestralen",
+   "mass": "6,7 zonnemassa's",
+   "spectral_class": "B6 Vep",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/acrux": {
+   "description": "Acrux (Alpha Crucis) is de helderste ster in het Zuiderkruis en de 13e helderste ster aan de hemel.",
+   "fun_fact": "Acrux verschijnt op de vlaggen van Australië, Nieuw-Zeeland, Brazilië, Papoea-Nieuw-Guinea en Samoa!",
+   "distance": "320 lichtjaar",
+   "size": "7,8 zonnestralen",
+   "mass": "18 zonnemassa's",
+   "spectral_class": "B0.5 IV",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/adhara": {
+   "description": "Adhara (Epsilon Canis Majoris) is de op één na helderste ster in Canis Major, na Sirius.",
+   "fun_fact": "Ongeveer 4,7 miljoen jaar geleden was Adhara de helderste ster aan de nachtelijke hemel, nog helderder dan Sirius nu is!",
+   "distance": "430 lichtjaar",
+   "size": "14 zonnestralen",
+   "mass": "12,6 zonnemassa's",
+   "spectral_class": "B2 II",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/alcyone": {
+   "description": "Alcyone is de helderste ster in het Pleiaden-cluster (M45) in het sterrenbeeld Stier. Het's een blauw-witte reuzenster.",
+   "fun_fact": "Alcyone is eigenlijk een meervoudig sterstelsel met minstens drie begeleiders! Het draait ook zo snel dat het een gasschijf rond zijn evenaar heeft.",
+   "distance": "~440 lichtjaren",
+   "size": "~10 zonnestralen",
+   "mass": "~6,0 zonnemassa's",
+   "spectral_class": "B7IIIe",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/aldebaran": {
+   "description": "Aldebaran is een oranje reuzenster die het oog van Taurus (de Stier) voorstelt. Zijn naam betekent \"de volger\" in het Arabisch.",
+   "fun_fact": "Aldebaran lijkt deel uit te maken van de Hyaden-sterrenhoop, maar staat eigenlijk op slechts de helft van de afstand - een kosmische optische illusie!",
+   "distance": "65 lichtjaar",
+   "size": "44 zonnestralen",
+   "mass": "1,2 zonnemassa's",
+   "spectral_class": "K5+ III",
+   "image_credit": "ESO"
+  },
+  "star/alderamin": {
+   "description": "Alderamin is de helderste ster in Cepheus (de Koning). De naam komt uit het Arabisch en betekent \"de rechterarm.\"",
+   "fun_fact": "Door de precessie van de aardas zal Alderamin rond het jaar 7500 na Chr. de Poolster worden!",
+   "distance": "49 lichtjaren",
+   "size": "2,5 zonnestralen",
+   "mass": "1,9 zonnemassa's",
+   "spectral_class": "A7V",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/algenib": {
+   "description": "Algenib markeert een hoek van het Grote Vierkant van Pegasus. Het is een hete blauwe subgigant en een Beta Cephei-variabele.",
+   "fun_fact": "Algenib pulseert en verandert zijn helderheid licht elke 3,6 uur! Het is ook een van de meest verre sterren die een opvallend asterisme vormen dat met het blote oog zichtbaar is.",
+   "distance": "~390 lichtjaren",
+   "size": "4,8 zonnestralen",
+   "mass": "~8,9 zonnemassa's",
+   "spectral_class": "B2IV",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/algieba": {
+   "description": "Algieba is een prachtige dubbelster in Leo (de Leeuw), die de manen van de hemelse leeuw vormt. De naam betekent \"het voorhoofd\" in het Arabisch.",
+   "fun_fact": "Door een telescoop splitst Algieba zich in een prachtig paar gouden en geel-oranje reuzensterren — een van de mooiste dubbelsterren aan de hemel! Een planeet werd in 2009 ontdekt die rond de primaire ster draait.",
+   "distance": "~130 lichtjaren",
+   "size": "~23 zonnestralen",
+   "mass": "~1,2 zonnemassa's",
+   "spectral_class": "K1IIIbCN",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/algol": {
+   "description": "Algol is een beroemde bedekkingsveranderlijke ster in Perseus, sinds de oudheid bekend als de \"Demonster\".",
+   "fun_fact": "Elke 2,87 dagen wordt Algol merkbaar zwakker wanneer zijn zwakkere begeleider ervoor langs trekt - oude astronomen vonden dit angstaanjagend!",
+   "distance": "90 lichtjaar",
+   "size": "2,7 zonnestralen",
+   "mass": "3,2 zonnemassa's",
+   "spectral_class": "B8 V",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/alhena": {
+   "description": "Alhena markeert de voet van Pollux, een van de tweelingen in Gemini. Het is een heldere witte subgiant-ster en een van de meest opvallende sterren van Gemini.",
+   "fun_fact": "De naam van Alhena komt uit het Arabisch en betekent \"het brandmerk\" — oude Arabieren zagen deze ster als een brandmerk op de nek van een kameel!",
+   "distance": "109 lichtjaar",
+   "size": "3,3 zonnestralen",
+   "mass": "2,8 zonnemassa's",
+   "spectral_class": "A1IV",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/alioth": {
+   "description": "Alioth is de helderste ster in Ursa Major en de helderste ster in het asterisme van de Grote Beer.",
+   "fun_fact": "Alioth heeft een bijzonder magnetisch veld waardoor chemische elementen zich op vlekken op zijn oppervlak concentreren!",
+   "distance": "83 lichtjaar",
+   "size": "4,1 zonnestralen",
+   "mass": "2,9 zonnemassa's",
+   "spectral_class": "A1 III-IVp",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/alkaid": {
+   "description": "Alkaid is de ster aan de punt van het handvat van de Grote Beer in Ursa Major. Het is de derde helderste ster in Ursa Major.",
+   "fun_fact": "In tegenstelling tot de meeste sterren van de Grote Beer is Alkaid niet onderdeel van de Ursa Major Moving Group — het beweegt zich in een ander richting door de ruimte, dus de vorm van de Grote Beer zal langzaam veranderen over duizenden jaren!",
+   "distance": "104 lichtjaar",
+   "size": "3,4 zonnestralen",
+   "mass": "6,1 zonnemassa's",
+   "spectral_class": "B3V",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/alnair": {
+   "description": "Alnair is de helderste ster in Grus (de Kraan). De naam betekent \"de heldere\" in het Arabisch.",
+   "fun_fact": "Alnair draait extreem snel — minstens 215 km/s aan de evenaar — wat zo snel is dat de ster merkbaar afgeplat is, uitpuilend in het midden!",
+   "distance": "101 lichtjaar",
+   "size": "3,4 zonnestralen",
+   "mass": "4,0 zonnemassa's",
+   "spectral_class": "B7IV",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/alnath": {
+   "description": "Alnath is de tweede helderste ster in Stier, die de punt van de noordelijke hoorn van de stier markeert. Het ligt precies op de grens tussen Stier en Voerman.",
+   "fun_fact": "Alnath werd ooit gedeeld tussen twee sterrenbeelden! Het werd zowel Beta Tauri als Gamma Aurigae genoemd voordat de IAU het in 1930 officieel aan Stier toewijzde.",
+   "distance": "134 lichtjaar",
+   "size": "4,2 zonnestralen",
+   "mass": "5,0 zonnemassa's",
+   "spectral_class": "B7III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/alnilam": {
+   "description": "Alnilam is de middelste ster van de Gordel van Orion en een van de meest lichtgevende sterren in ons sterrenstelsel.",
+   "fun_fact": "Alnilam verliest massa 20 miljoen keer sneller dan onze Zon door zijn krachtige sterrenwind!",
+   "distance": "~2.000 lichtjaar",
+   "size": "42 zonnestralen",
+   "mass": "40 zonnemassa's",
+   "spectral_class": "B0 Ia",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/alphard": {
+   "description": "Alphard is de helderste ster in Hydra (de Waterslang), het grootste sterrenbeeld aan de hemel.",
+   "fun_fact": "Alphard betekent \"de eenzame\" in het Arabisch omdat hij alleen staat in een verder zwak verlicht deel van de hemel!",
+   "distance": "177 lichtjaar",
+   "size": "50 zonnestralen",
+   "mass": "3 zonnemassa's",
+   "spectral_class": "K3 II-III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/alphekka": {
+   "description": "Alphekka (ook wel Gemma genoemd) is de helderste ster in Corona Borealis (de Noorderkroon). Het is het juweel van deze kleine sterrenkrans.",
+   "fun_fact": "Alphekka is een eclipserend dubbelster — zijn zwakke begeleider passeert er elke 17,4 dagen voor langs, wat een minuscule helderheidsafname veroorzaakt die bijna onmogelijk is om zonder instrumenten waar te nemen!",
+   "distance": "75 lichtjaar",
+   "size": "2,9 zonnestralen",
+   "mass": "2,6 zonnemassa's",
+   "spectral_class": "A0V",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/alpheratz": {
+   "description": "Alpheratz is de helderste ster in Andromeda, hoewel hij ooit als onderdeel van Pegasus werd beschouwd.",
+   "fun_fact": "Alpheratz heeft een uiterst ongewone chemische samenstelling met hoge concentraties kwik en mangaan in zijn atmosfeer!",
+   "distance": "97 lichtjaar",
+   "size": "2,7 zonnestralen",
+   "mass": "3,6 zonnemassa's",
+   "spectral_class": "B8 IVp",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/altair": {
+   "description": "Altair is de helderste ster in Aquila (de Adelaar) en een van de dichtstbijzijnde sterren die met het blote oog zichtbaar zijn.",
+   "fun_fact": "Altair draait zo snel (eens per 9 uur) dat hij merkbaar is afgeplat aan de polen - hij is 14% breder dan hij hoog is!",
+   "distance": "17 lichtjaar",
+   "size": "1,8 zonnestralen",
+   "mass": "1,8 zonnemassa's",
+   "spectral_class": "A7 V",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/ankaa": {
+   "description": "Ankaa is de helderste ster in Phoenix, een sterrenbeeld dat het best vanuit het zuidelijk halfrond kan worden gezien. De naam komt van het Arabische woord voor \"de feniks.\"",
+   "fun_fact": "Ankaa is een spectroscopische dubbelster, wat betekent dat zijn begeleider zo dicht bij elkaar staan dat de twee alleen kunnen worden gedetecteerd door verschuivingen in hun lichtspectrum — zij draaien om elkaar heen in 10,2 jaar!",
+   "distance": "85 lichtjaren",
+   "size": "15 zonnestralen",
+   "mass": "1,3 zonnemassa's",
+   "spectral_class": "K0III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/antares": {
+   "description": "Antares is een rode superreus, het hart van Scorpius (de Schorpioen). Zijn naam betekent \"rivaal van Mars\" vanwege zijn rode kleur.",
+   "fun_fact": "Antares is zo groot dat als je hem in ons zonnestelsel zou plaatsen, zijn oppervlak voorbij de baan van Mars zou reiken!",
+   "distance": "~550 lichtjaar",
+   "size": "~680 zonnestralen",
+   "mass": "~12 zonnemassa's",
+   "spectral_class": "M1.5 Iab",
+   "image_credit": "ESO/K. Ohnaka"
+  },
+  "star/arcturus": {
+   "description": "Arcturus is de helderste ster op het noordelijk halfrond, een oranje reus in het sterrenbeeld Boötes (de Ossenhoeder).",
+   "fun_fact": "Arcturus beweegt met enorme snelheid door de ruimte en zal over ongeveer 4.000 jaar het dichtst bij ons zonnestelsel zijn!",
+   "distance": "37 lichtjaar",
+   "size": "26 zonnestralen",
+   "mass": "1,1 zonnemassa's",
+   "spectral_class": "K1.5 III",
+   "image_credit": "ESO"
+  },
+  "star/arneb": {
+   "description": "Arneb is de helderste ster in Lepus (de Haas), het sterrenbeeld dat onder Orions voeten hurkt. Het is een zeldzame witte supergigant.",
+   "fun_fact": "Arneb is een stervende ster die waarschijnlijk al zijn kernwaterstof heeft gefuseerd. Het kan zijn leven als een supernova beëindigen binnen de komende miljoen jaar!",
+   "distance": "~2.200 lichtjaren",
+   "size": "~75 zonnestralen",
+   "mass": "~14 zonnemassa's",
+   "spectral_class": "F0Ib",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/betelgeuse": {
+   "description": "Betelgeuse is een rode superreus die de schouder van Orion markeert. Het is een van de grootste sterren die met het blote oog zichtbaar zijn.",
+   "fun_fact": "Betelgeuse is zo groot dat als je hem op de positie van onze Zon zou plaatsen, hij Mercurius, Venus, de Aarde, Mars en mogelijk Jupiter zou verzwelgen!",
+   "distance": "~700 lichtjaar",
+   "size": "~900 zonnestralen",
+   "mass": "~12 zonnemassa's",
+   "spectral_class": "M1-M2 Iab",
+   "image_credit": "ALMA (ESO/NAOJ/NRAO)/E. O'Gorman/P. Kervella"
+  },
+  "star/canopus": {
+   "description": "Canopus is de op één na helderste ster aan de nachtelijke hemel. Hij is voornamelijk zichtbaar vanaf het zuidelijk halfrond.",
+   "fun_fact": "Canopus wordt door ruimtevaartuigen gebruikt voor navigatie omdat hij zeer helder is en ver van het eclipticavlak staat!",
+   "distance": "310 lichtjaar",
+   "size": "72 zonnestralen",
+   "mass": "8,0 zonnemassa's",
+   "spectral_class": "A9 II",
+   "image_credit": "ESO"
+  },
+  "star/capella": {
+   "description": "Capella is de helderste ster in Auriga en de zesde helderste aan de nachtelijke hemel. Het is eigenlijk een systeem van vier sterren.",
+   "fun_fact": "Capella betekent \"geitje\" in het Latijn. Oude beschavingen zagen het als een geit op de schouder van Auriga, de Wagenmenner!",
+   "distance": "43 lichtjaar",
+   "size": "12 zonnestralen",
+   "mass": "2,6 zonnemassa's",
+   "spectral_class": "G3 III + G0 III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/caph": {
+   "description": "Caph is de tweede helderste ster in Cassiopeia en vormt het rechterpunt van de iconische W-vorm. De naam betekent \"de palm\" in het Arabisch.",
+   "fun_fact": "Caph is een Delta Scuti-variabele — het pulseert met meerdere frequenties tegelijkertijd en verandert elke 2,5 uur licht van helderheid!",
+   "distance": "54 lichtjaren",
+   "size": "3,5 zonnestralen",
+   "mass": "1,9 zonnemassa's",
+   "spectral_class": "F2III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/castor": {
+   "description": "Castor is een van de tweelingsterren in Gemini. Hoewel het op één ster lijkt, is het eigenlijk een systeem van zes sterren!",
+   "fun_fact": "Castor is een zesvoudig sterrensysteem - drie paren dubbelsterren die allemaal om elkaar heen draaien. Het is een van de meest complexe sterrensystemen in de buurt van de Aarde!",
+   "distance": "51 lichtjaar",
+   "size": "2,4 zonnestralen",
+   "mass": "2,8 zonnemassa's",
+   "spectral_class": "A1 V",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/deneb": {
+   "description": "Deneb markeert de staart van Cygnus (de Zwaan). Het maakt deel uit van de Zomerdriehoek samen met Vega en Altair.",
+   "fun_fact": "Deneb is een van de verste sterren die met het blote oog zichtbaar zijn, op zo'n 2.600 lichtjaar afstand!",
+   "distance": "~2.600 lichtjaar",
+   "size": "~200 zonnestralen",
+   "mass": "~19 zonnemassa's",
+   "spectral_class": "A2 Ia",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/denebola": {
+   "description": "Denebola markeert de staart van Leo (de Leeuw). Zijn naam betekent letterlijk \"staart van de leeuw\" in het Arabisch.",
+   "fun_fact": "Denebola heeft een stoffige puinschijf die erop kan wijzen dat er planeten aan het vormen zijn of asteroïden aan het botsen zijn eromheen!",
+   "distance": "36 lichtjaar",
+   "size": "1,7 zonnestralen",
+   "mass": "1,8 zonnemassa's",
+   "spectral_class": "A3 V",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/diphda": {
+   "description": "Diphda (Beta Ceti) is de helderste ster in Cetus (het Zeemonster) en een prominente herfstster.",
+   "fun_fact": "Diphda staat geïsoleerd in een vrij kaal hemelgebied, waardoor hij ondanks dat hij niet extreem helder is toch nuttig is voor navigatie!",
+   "distance": "96 lichtjaar",
+   "size": "18 zonnestralen",
+   "mass": "2,8 zonnemassa's",
+   "spectral_class": "K0 III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/dubhe": {
+   "description": "Dubhe is een van de twee \"wijzersterren\" in de Grote Beer die naar Polaris, de Poolster, wijzen.",
+   "fun_fact": "In tegenstelling tot de meeste sterren van de Grote Beer bewegen Dubhe en Alkaid in de tegenovergestelde richting - het sterrenpatroon zal er over 50.000 jaar anders uitzien!",
+   "distance": "123 lichtjaar",
+   "size": "30 zonnestralen",
+   "mass": "4,3 zonnemassa's",
+   "spectral_class": "K0 III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/e_lyrae": {
+   "description": "Epsilon Lyrae is een meervoudig sterrensysteem in Lier, beroemd onder waarnemers als de \"Dubbele Dubbele\".",
+   "fun_fact": "Scherpe ogen kunnen Epsilon Lyrae in twee sterren splitsen - en een telescoop splitst elk van die opnieuw in twee! Het bevat in totaal minstens vijf sterren.",
+   "distance": "160 lichtjaar"
+  },
+  "star/enif": {
+   "description": "Enif is de helderste ster in Pegasus en markeert de neus van het vliegende paard in het sterrenbeeld.",
+   "fun_fact": "In 1972 onderging Enif een dramatische uitbarsting, waarbij zijn helderheid kortstondig met een factor vijf toenam!",
+   "distance": "670 lichtjaar",
+   "size": "185 zonnestralen",
+   "mass": "10,7 zonnemassa's",
+   "spectral_class": "K2 Ib",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/etamin": {
+   "description": "Etamin (ook Eltanin) is de helderste ster in Draco (de Draak). Het vertegenwoordigt het hoofd van de draak, en de naam betekent \"de grote slang\" in het Arabisch.",
+   "fun_fact": "Waarnemingen van Etamin in 1728 door James Bradley leidden tot de ontdekking van de aberratie van licht — een van de eerste directe bewijzen dat de Aarde door de ruimte beweegt!",
+   "distance": "148 lichtjaren",
+   "size": "48 zonnestralen",
+   "mass": "1,7 zonnemassa's",
+   "spectral_class": "K5III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/fomalhaut": {
+   "description": "Fomalhaut is de helderste ster in Piscis Austrinus en een van de helderste sterren aan de herfstelijke hemel.",
+   "fun_fact": "Fomalhaut heeft een spectaculaire puinschijf die een van de eerste was die rechtstreeks rond een andere ster werd gefotografeerd!",
+   "distance": "25 lichtjaar",
+   "size": "1,8 zonnestralen",
+   "mass": "1,9 zonnemassa's",
+   "spectral_class": "A3 V",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/hadar": {
+   "description": "Hadar (Beta Centauri) is de op één na helderste ster in Centaurus en de 11e helderste aan de nachtelijke hemel.",
+   "fun_fact": "Hadar en Alpha Centauri staan bekend als de \"Zuidelijke Wijzers\" - ze wijzen naar het sterrenbeeld Zuiderkruis!",
+   "distance": "390 lichtjaar",
+   "size": "9 zonnestralen",
+   "mass": "12,8 zonnemassa's",
+   "spectral_class": "B1 III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/hamal": {
+   "description": "Hamal is de helderste ster in Aries en werd ooit gebruikt om het lentepunt te markeren, zo'n 2.000 jaar geleden.",
+   "fun_fact": "In 2011 werd een reusachtige exoplaneet ontdekt die rond Hamal draait, met minstens 1,8 keer de massa van Jupiter!",
+   "distance": "66 lichtjaar",
+   "size": "15 zonnestralen",
+   "mass": "1,5 zonnemassa's",
+   "spectral_class": "K2 III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/izar": {
+   "description": "Izar is een prachtige dubbelster in Boötes (de Herder). De naam betekent \"de gordel\" of \"sluier\" in het Arabisch.",
+   "fun_fact": "De astronoom Friedrich Georg Wilhelm von Struve uit de 19e eeuw noemde Izar \"Pulcherrima\" (Latijn voor \"het mooiste\") vanwege het prachtige kleurcontrast tussen zijn oranje en blauwwitte componenten!",
+   "distance": "202 lichtjaren",
+   "size": "33 zonnestralen",
+   "mass": "~4,6 zonnemassa's",
+   "spectral_class": "K0II-III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/j052512+062100": {
+   "description": "Bellatrix markeert de linkerschouder van Orion (de Jager). De naam is Latijn voor \"vrouwelijke krijger\".",
+   "fun_fact": "Bellatrix is slechts ongeveer 28 miljoen jaar oud en zal zijn waterstof verbranden over nog eens 7 miljoen jaar – een kort leven voor een ster!",
+   "distance": "250 lichtjaar",
+   "size": "6,2 zonneradii",
+   "mass": "8,4 zonnemassa's",
+   "spectral_class": "B2 III"
+  },
+  "star/j054048-015624": {
+   "description": "Alnitak is de meest oostelijke ster van de Gordel van Orion, gelegen naast de Vlamnevel en Paardenkopnevel.",
+   "fun_fact": "Alnitak is de helderste O-klasse ster aan de gehele nachthemel! Over ongeveer een miljoen jaar zal hij opzwellen tot groter dan de baan van Jupiter en exploderen als een supernova.",
+   "distance": "1.260 lichtjaar",
+   "size": "20 zonneradii",
+   "mass": "33 zonnemassa's",
+   "spectral_class": "O9.5 Iab"
+  },
+  "star/j055924+445700": {
+   "description": "Menkalinan is de tweede helderste ster in Auriga (de Voerman). De naam betekent \"schouder van de teugelhouder\" in het Arabisch.",
+   "fun_fact": "Menkalinan is eigenlijk twee bijna identieke sterren die elkaar elke 47,5 uur verduisteren - en over ongeveer een miljoen jaar zal het de helderste ster aan onze nachthemel worden!",
+   "distance": "79 lichtjaar",
+   "size": "2,8 zonneradii",
+   "mass": "2,4 zonnemassa's",
+   "spectral_class": "A1m IV + A1m IV"
+  },
+  "star/j062248-175736": {
+   "description": "Mirzam (Beta Canis Majoris) komt vlak voor Sirius op, wat het de naam 'De Aankondiger' in het Arabisch opleverde.",
+   "fun_fact": "Ongeveer vier miljoen jaar geleden was Mirzam de helderste ster aan de hemel, stralend met een magnitude van -3,65 - veel helderder dan Sirius vandaag verschijnt!",
+   "distance": "490 lichtjaar",
+   "size": "8,4 zonneradii",
+   "mass": "13 zonnemassa's",
+   "spectral_class": "B1 II-III"
+  },
+  "star/j070824-262324": {
+   "description": "Wezen is een geelwitte superreus in Canis Major (de Grote Hond). De naam komt van het Arabische woord voor 'gewicht'.",
+   "fun_fact": "Als Wezen net zo dichtbij ons zou staan als Sirius, zou het net zo helder schijnen als een halfvolle Maan!",
+   "distance": "1.600 lichtjaar",
+   "size": "188 zonneradii",
+   "mass": "14 zonnemassa's",
+   "spectral_class": "F8 Ia"
+  },
+  "star/j082248-593036": {
+   "description": "Avior (Epsilon Carinae) is een heldere dubbelster in Carina en een van de vier sterren van het Valse Kruis.",
+   "fun_fact": "Het Valse Kruis wordt zo vaak verward met het Zuiderkruis dat het echte navigatiefouten heeft veroorzaakt! De naam Avior werd bedacht door Britse almanakmakers in de jaren 30.",
+   "distance": "610 lichtjaar",
+   "size": "151 zonneradii",
+   "mass": "10,5 zonnemassa's",
+   "spectral_class": "K3 III + B2 Vp"
+  },
+  "star/j091312-694312": {
+   "description": "Miaplacidus is de op één na helderste ster in Carina (de Kiel) en markeert een hoek van het Diamanten Kruis asterisme.",
+   "fun_fact": "Miaplacidus is opgezwollen tot een reus nadat het de waterstof in zijn kern heeft opgebruikt, toch draait het nog steeds met een flinke snelheid van 146 km/s!",
+   "distance": "113 lichtjaar",
+   "size": "5,8 zonneradii",
+   "mass": "3,9 zonsmassa's",
+   "spectral_class": "A1 III"
+  },
+  "star/j123112-570636": {
+   "description": "Gacrux (Gamma Crucis) is de bovenste ster van het Zuiderkruis en de dichtstbijzijnde rode reuzenster tot de Aarde.",
+   "fun_fact": "Gacrux is de dichtstbijzijnde M-type rode reus bij ons, en de naam is simpelweg een samentrekking van \"Gamma Crucis\" door zeevaarders, bedacht in de jaren 40!",
+   "distance": "89 lichtjaar",
+   "size": "73 zonsradii",
+   "mass": "1,5 zonsmassa's",
+   "spectral_class": "M3.5 III"
+  },
+  "star/j124800-594124": {
+   "description": "Mimosa (Beta Crucis) is de op één na helderste ster in het Zuiderkruis en een van de heetste sterren zichtbaar met het blote oog.",
+   "fun_fact": "Mimosa is een pulserende Beta Cephei-variabele - ze zwelt en krimpt in drie overlappende ritmes, elk duurt slechts ongeveer vier uur!",
+   "distance": "280 lichtjaar",
+   "size": "8 zonsradii",
+   "mass": "14,5 zonsmassa's",
+   "spectral_class": "B0.5 III"
+  },
+  "star/j143936-605024": {
+   "description": "Toliman (Alpha Centauri B) is de oranje begeleider in het dichtstbijzijnde sterrensysteem bij de Zon, die om de helderdere Rigil Kentaurus draait.",
+   "fun_fact": "Toliman kreeg zijn officiële naam pas in 2018. Hij is iets kleiner en koeler dan de Zon, en vormt samen met zijn twee broers en zussen onze dichtstbijzijnde stellaire buren!",
+   "distance": "4,34 lichtjaar",
+   "size": "0,86 zonsradii",
+   "mass": "0,91 zonsmassa's",
+   "spectral_class": "K1 V"
+  },
+  "star/j164836-690148": {
+   "description": "Atria is de helderste ster van Triangulum Australe (de Zuidelijke Driehoek), een oranje reus die veel groter is dan de Zon.",
+   "fun_fact": "Atria is 139 keer de diameter van de Zon - geplaatst in het centrum van het zonnestelsel zou het bijna de baan van Venus bereiken!",
+   "distance": "391 lichtjaar",
+   "size": "139 zonsradii",
+   "mass": "6,4 zonsmassa's",
+   "spectral_class": "K2 Ib-IIa"
+  },
+  "star/j173712-430000": {
+   "description": "Sargas is een heldere reus in de staart van Schorpioen (de Schorpioen), met een traditionele naam van Sumerische oorsprong.",
+   "fun_fact": "Sargas draait zo snel dat het naar buiten uitpuilt - het is een derde breder rond de evenaar dan van pool tot pool, en is mogelijk ontstaan toen twee sterren samensmolten!",
+   "distance": "329 lichtjaar",
+   "size": "35 zonsradii",
+   "mass": "3,1 zonsmassa's",
+   "spectral_class": "F1 III"
+  },
+  "star/j202548-564348": {
+   "description": "Peacock is de helderste ster in Pavo (de Pauw), een hete blauw-witte ster aan de verre zuidelijke hemel.",
+   "fun_fact": "Peacock kreeg zijn naam in de jaren 30 omdat de RAF erop stond dat elke ster in hun nieuwe Luchtvaartalmanak een naam zou hebben - en deze had er geen!",
+   "distance": "179 lichtjaar",
+   "size": "4,8 zonsradii",
+   "mass": "5,9 zonsmassa's",
+   "spectral_class": "B3 V"
+  },
+  "star/kaus_australis": {
+   "description": "Kaus Australis is de helderste ster in Sagittarius (de Boogschutter). De naam betekent \"de zuidelijke boog\" in een mengeling van Arabisch en Latijn.",
+   "fun_fact": "Kaus Australis ligt dicht bij de richting van het centrum van onze Melkweg! Wanneer je naar deze ster kijkt, kijk je naar het dichtste deel van het galactische vlak.",
+   "distance": "143 lichtjaar",
+   "size": "6,8 zonnestralen",
+   "mass": "3,5 zonnemassa's",
+   "spectral_class": "B9.5III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/kochab": {
+   "description": "Kochab is de op één na helderste ster in Ursa Minor (de Kleine Beer). Samen met Pherkad vormt het de \"Wachters van de Pool.\"",
+   "fun_fact": "Rond 1500 v.Chr. was Kochab de helderste ster het dichtst bij de noordelijke hemelpool, waardoor het de \"Poolster\" was voor oude Egyptenaren en Fenicische zeelieden!",
+   "distance": "131 lichtjaar",
+   "size": "42 zonnestralen",
+   "mass": "1,3 zonnemassa's",
+   "spectral_class": "K4III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/markab": {
+   "description": "Markab is een van de vier sterren die het Grote Vierkant van Pegasus vormen, een gemakkelijk herkenbaar asterisme.",
+   "fun_fact": "Markab is een \"laat B-type\" ster die bijna aan het einde is van zijn hoofdreeksleven en binnenkort een rode reus zal worden!",
+   "distance": "133 lichtjaar",
+   "size": "4,6 zonnestralen",
+   "mass": "3,5 zonnemassa's",
+   "spectral_class": "B9 III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/menkar": {
+   "description": "Menkar is een rode reuzenster die de neus van Cetus (het Zeeungeheuer) markeert. De naam betekent \"de neusgat\" in het Arabisch.",
+   "fun_fact": "Menkar nadert het einde van zijn stellaire leven. Deze verouderde rode reus fusioneert helium in zijn kern en zal uiteindelijk zijn buitenlagen afstoten om een planetaire nevel te worden!",
+   "distance": "249 lichtjaar",
+   "size": "~89 zonnestralen",
+   "mass": "~2,3 zonnemassa's",
+   "spectral_class": "M1.5IIIa",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/merak": {
+   "description": "Merak is een van de twee \"Pointer Stars\" in de Grote Beer die de weg naar Polaris, de Poolster, wijzen. Het bevindt zich in Ursa Major.",
+   "fun_fact": "Merak heeft een infrarood overschot dat suggereert dat het een circumstellaire puinschijf heeft — mogelijk een ring van stof en rotsachtig materiaal vergelijkbaar met onze asteroïdengordel!",
+   "distance": "80 lichtjaar",
+   "size": "3,0 zonnestralen",
+   "mass": "2,7 zonnemassa's",
+   "spectral_class": "A1V",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/mirach": {
+   "description": "Mirach is een rode reuzenster in Andromeda, vaak gebruikt als gids om het Andromedastelsel te vinden.",
+   "fun_fact": "Mirach's Ghost is een klein sterrenstelsel (NGC 404) dat heel dicht bij Mirach lijkt te staan - het was eeuwenlang verborgen door de gloed van de ster!",
+   "distance": "197 lichtjaar",
+   "size": "100 zonnestralen",
+   "mass": "3,5 zonnemassa's",
+   "spectral_class": "M0 III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/mirphak": {
+   "description": "Mirphak (ook Mirfak) is de helderste ster in Perseus, een geel-witte superreus in het hart van het Alpha Persei Cluster.",
+   "fun_fact": "Mirphak is omgeven door een prachtige open sterrenhoop (Melotte 20) die het best met verrekijkers te zien is — een verstrooiing van jonge, blauwwitte sterren die samen door de ruimte bewegen!",
+   "distance": "~590 lichtjaar",
+   "size": "~68 zonnestralen",
+   "mass": "~8,5 zonnenmassa's",
+   "spectral_class": "F5Ib",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/n25": {
+   "description": "R Coronae Borealis is een zeldzame gele superreus in Corona Borealis, en het prototype van de klasse van veranderlijke sterren die ernaar is vernoemd.",
+   "fun_fact": "R Coronae Borealis wordt soms een \"omgekeerde nova\" genoemd - in plaats van op te lichten, vervaagt hij onvoorspelbaar met wel 9 magnituden wanneer hij wolken koolstofroet uitstoot die hem aan het zicht onttrekken!",
+   "distance": "4.560 lichtjaar",
+   "spectral_class": "G0Iep"
+  },
+  "star/nunki": {
+   "description": "Nunki is de op één na helderste ster in Sagittarius en de oudste sternaam die nog steeds in gebruik is.",
+   "fun_fact": "De naam Nunki komt uit het oude Babylon waar hij de stad Eridu vertegenwoordigde aan de hemelbol!",
+   "distance": "228 lichtjaar",
+   "size": "4,5 zonnestralen",
+   "mass": "7,8 zonnemassa's",
+   "spectral_class": "B2.5 V",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/phad": {
+   "description": "Phad (ook Phecda) is een van de sterren die de kom van de Grote Beer in Ursa Major vormt. De naam betekent \"de dij\" in het Arabisch.",
+   "fun_fact": "Phad is een lid van de Ursa Major Moving Group — een groep sterren die samen zijn ontstaan en als losse cluster door de ruimte reizen, inclusief de meeste sterren van de Grote Lepel!",
+   "distance": "84 lichtjaar",
+   "size": "3,0 zonnestralen",
+   "mass": "2,9 zonnenmassa's",
+   "spectral_class": "A0Ve",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/polaris": {
+   "description": "Polaris, de Poolster, lijkt bijna stil te staan aan de hemel terwijl andere sterren er de hele nacht omheen draaien.",
+   "fun_fact": "Polaris is eigenlijk een drievoudig sterrensysteem! De hoofdster is een superreus die ongeveer 2.500 keer zo helder is als onze Zon.",
+   "distance": "~430 lichtjaar",
+   "size": "~44 zonnestralen",
+   "mass": "~5,4 zonnemassa's",
+   "spectral_class": "F7 Ib",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "star/pollux": {
+   "description": "Pollux is de helderste van de tweelingsterren in Gemini. Anders dan Castor is het een enkele oranje reuzenster.",
+   "fun_fact": "Pollux heeft een bevestigde exoplaneet! Pollux b is een gasreus met minstens twee keer de massa van Jupiter.",
+   "distance": "34 lichtjaar",
+   "size": "9,1 zonnestralen",
+   "mass": "1,9 zonnemassa's",
+   "spectral_class": "K0 III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/procyon": {
+   "description": "Procyon is een heldere ster in het sterrenbeeld Canis Minor (de Kleine Hond). Het is een van onze naaste stellaire buren.",
+   "fun_fact": "Procyon betekent \"vóór de hond\" in het Grieks, omdat hij net voor Sirius, de Hondsster, opkomt aan de nachtelijke hemel!",
+   "distance": "11,4 lichtjaar",
+   "size": "2,0 zonnestralen",
+   "mass": "1,5 zonnemassa's",
+   "spectral_class": "F5 IV-V",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/rasalhague": {
+   "description": "Rasalhague is de helderste ster in Ophiuchus (de Slangendrager), een sterrenbeeld dat wordt geassocieerd met genezing.",
+   "fun_fact": "Rasalhague is een snelle draaier - hij draait zo snel dat hij merkbaar is afgeplat en in slechts 18 uur een rotatie voltooit!",
+   "distance": "48,6 lichtjaar",
+   "size": "2,5 zonnestralen",
+   "mass": "2,4 zonnemassa's",
+   "spectral_class": "A5 III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/regulus": {
+   "description": "Regulus is de helderste ster in Leo (de Leeuw) en stelt het hart van de leeuw voor. Het is een meervoudig sterrensysteem.",
+   "fun_fact": "Regulus draait zo snel dat hij bijna uit elkaar wordt gescheurd! Hij voltooit een rotatie in slechts 16 uur.",
+   "distance": "79 lichtjaar",
+   "size": "4,4 zonnestralen",
+   "mass": "3,8 zonnemassa's",
+   "spectral_class": "B8 IVn",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/rigel": {
+   "description": "Rigel is een blauwe superreus die de voet van Orion markeert. Ondanks dat hij verder weg staat dan Betelgeuse, lijkt hij even helder.",
+   "fun_fact": "Rigel schijnt met het licht van ongeveer 120.000 Zonnen! Het is een van de meest lichtgevende sterren in ons deel van de Melkweg.",
+   "distance": "~860 lichtjaar",
+   "size": "~79 zonnestralen",
+   "mass": "~23 zonnemassa's",
+   "spectral_class": "B8 Ia",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/rigil_kentaurus_a": {
+   "description": "Alpha Centauri is het dichtstbijzijnde sterrensysteem bij de Zon, bestaande uit drie sterren waaronder Proxima Centauri.",
+   "fun_fact": "Proxima Centauri, onderdeel van dit systeem, heeft een mogelijk bewoonbare planeet! Proxima b is slechts 4,2 lichtjaar van ons verwijderd.",
+   "distance": "4,37 lichtjaar",
+   "size": "1,2 zonnestralen",
+   "mass": "1,1 zonnemassa's",
+   "spectral_class": "G2 V + K1 V",
+   "image_credit": "ESO/Digitized Sky Survey 2/Davide De Martin"
+  },
+  "star/saiph": {
+   "description": "Saiph markeert de rechterknie van Orion. Ondanks dat het zwakker lijkt dan Rigel, is het eigenlijk een zeer hete en lumineuze blauwe superreus.",
+   "fun_fact": "Saiph lijkt zwakker dan de temperatuur zou suggereren omdat het meeste van zijn energie wordt uitgestraald als ultraviolet licht, onzichtbaar voor onze ogen! Het is eigenlijk een van de heetste heldere sterren aan de hemel.",
+   "distance": "~650 lichtjaar",
+   "size": "~22 zonnestralen",
+   "mass": "~15,5 zonnenmassa's",
+   "spectral_class": "B0.5Ia",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/scheat": {
+   "description": "Scheat is een rode reuzenster in het Grote Vierkant van Pegasus, opvallend door zijn diepe oranjerode kleur.",
+   "fun_fact": "Scheat is een semi-reguliere veranderlijke ster die in helderheid verandert over perioden van weken tot maanden!",
+   "distance": "196 lichtjaar",
+   "size": "110 zonnestralen",
+   "mass": "2,1 zonnemassa's",
+   "spectral_class": "M2 II-III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/shaula": {
+   "description": "Shaula is de op één na helderste ster in Scorpius en markeert de angel van de schorpioen in de staart.",
+   "fun_fact": "Shaula betekent \"de opgeheven staart\" in het Arabisch. Het is eigenlijk een drievoudig sterrensysteem met de sterren heel dicht bij elkaar!",
+   "distance": "570 lichtjaar",
+   "size": "8,8 zonnestralen",
+   "mass": "10,4 zonnemassa's",
+   "spectral_class": "B2 IV",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/shedir": {
+   "description": "Shedir (ook Schedar) is de helderste ster in Cassiopeia, een oranje reus aan de basis van het beroemde W-patroon. De naam betekent \"de borst\" in het Arabisch.",
+   "fun_fact": "Shedir werd ooit voor een veranderlijke ster gehouden, maar moderne metingen tonen aan dat de helderheid opmerkelijk stabiel is — eerdere meldingen van variabiliteit waren waarschijnlijk te wijten aan primitieve apparatuur!",
+   "distance": "228 lichtjaar",
+   "size": "45 zonnestralen",
+   "mass": "~4,0 zonnenmassa's",
+   "spectral_class": "K0IIIa",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/sirius": {
+   "description": "Sirius is de helderste ster aan de nachtelijke hemel, gelegen in het sterrenbeeld Canis Major (de Grote Hond).",
+   "fun_fact": "Sirius is eigenlijk een dubbelster! Sirius B, zijn begeleider, is een witte dwerg ter grootte van de Aarde maar bijna net zo zwaar als de Zon.",
+   "distance": "8,6 lichtjaar",
+   "size": "1,7 zonnestralen",
+   "mass": "2,1 zonnemassa's",
+   "spectral_class": "A1V",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "star/spica": {
+   "description": "Spica is de helderste ster in Virgo en een van de 20 helderste sterren aan de nachtelijke hemel. Het is een dubbelster.",
+   "fun_fact": "Spica staat zo dicht bij de ecliptica dat hij door de Maan kan worden bedekt. De naam betekent \"korenaar\" in het Latijn!",
+   "distance": "250 lichtjaar",
+   "size": "7,5 zonnestralen",
+   "mass": "11 zonnemassa's",
+   "spectral_class": "B1 III-IV",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/unukalhai": {
+   "description": "Unukalhai is de helderste ster in Serpens Caput (het Hoofd van de Slang). De naam betekent \"de nek van de slang\" in het Arabisch.",
+   "fun_fact": "Serpens is het enige sterrenbeeld dat in twee afzonderlijke delen is verdeeld — Serpens Caput (kop) en Serpens Cauda (staart) — gescheiden door Ophiuchus, en Unukalhai is de helderste ster in het kopgedeelte!",
+   "distance": "74 lichtjaar",
+   "size": "12 zonnestralen",
+   "mass": "~2,1 zonnenmassa's",
+   "spectral_class": "K2III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/vega": {
+   "description": "Vega is een van de helderste sterren zichtbaar vanaf de Aarde, gelegen in het sterrenbeeld Lyra (de Lier).",
+   "fun_fact": "Vega was de Poolster zo'n 14.000 jaar geleden en zal dat over ongeveer 12.000 jaar weer zijn door de schommeling van de Aarde!",
+   "distance": "25 lichtjaar",
+   "size": "2,4 zonnestralen",
+   "mass": "2,1 zonnemassa's",
+   "spectral_class": "A0V",
+   "image_credit": "Stephen Rahn (CC0)"
+  },
+  "star/vindemiatrix": {
+   "description": "Vindemiatrix is de derde helderste ster in Maagd (de Maagd). De naam betekent \"de druivenplukker\" in het Latijn.",
+   "fun_fact": "Vindemiatrix kreeg zijn naam omdat zijn heliacale opkomst (eerste verschijning bij dageraad) ooit samenviel met het druivenoogstseizoen in de Middellandse Zee — het was de ster van de wijnbouwer!",
+   "distance": "109 lichtjaar",
+   "size": "11 zonnestralen",
+   "mass": "2.6 zonnemassa's",
+   "spectral_class": "G8III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  }
+ }
+}

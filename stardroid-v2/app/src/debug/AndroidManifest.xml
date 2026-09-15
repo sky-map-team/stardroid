@@ -1,0 +1,14 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <application>
+        <!--
+          Dev harness and D19 perf-gate host (audit-2026-08 H1). Debug-only: it opens the
+          catalog database, registers sensor listeners and requests location, so it must never
+          ship in a release APK or AAB. Exported so `adb shell am start` can reach it directly;
+          the instrumented perf gate uses ActivityScenario and does not need the export.
+        -->
+        <activity
+            android:name=".testscene.RendererTestActivity"
+            android:exported="true"
+            android:label="Sky Map v2 (renderer test)" />
+    </application>
+</manifest>

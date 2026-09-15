@@ -1,0 +1,15 @@
+<!--
+  A single filled five-point star, used only as a Warm Welcome page-progress dot.
+  Do not repoint this at ic_layer_stars: that drawable is deliberately a cluster of
+  three stars (D83) to avoid colliding with the platform favourite glyph, and a
+  three-star cluster reads as three page dots per page when used here.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <path
+        android:pathData="M12 3.2l2.6 5.3 5.9 0.9 -4.3 4.1 1 5.8L12 16.6l-5.2 2.7 1 -5.8 -4.3 -4.1 5.9 -0.9z"
+        android:fillColor="#FFFFFFFF" />
+</vector>

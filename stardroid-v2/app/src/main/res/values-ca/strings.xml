@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Carried over from v1 by tools/salvage-translations/salvage.py.
+  Only strings whose English source is identical between v1 and v2 appear here;
+  everything else is translated by `tm`. Safe to hand-edit thereafter.
+-->
+<resources>
+    <string name="object_info_distance">Distància:</string>
+    <string name="object_info_size">Mida:</string>
+    <string name="object_info_mass">Massa:</string>
+    <string name="object_info_magnitude">Magnitud:</string>
+    <string name="settings_tap_in_auto_mode">Fitxes d\'informació en mode automàtic</string>
+    <string name="settings_tap_in_auto_mode_summary">Mostra també fitxes d\'informació en tocar objectes en mode automàtic (sensors)</string>
+</resources>

@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h1>Säg hej till nya Sky Map</h1>
+<h2>Sky Map har byggts om helt</h2>
+<p>Detta är den största uppdateringen i Sky Maps historia.<br/><br/>
+Det är en helt ny app från grunden – ny renderingsmotor, ny astronomimotor, nytt gränssnitt – byggd från grunden för att vara snabbare, mer exakt och behagligare för ögat. Här är vad som är bättre:</p>
+<h2>Mer exakt</h2>
+<p>Månen är nu placerad exakt där <em>du</em> ser den på himlen, inte där den skulle synas från jordens mitt – en korrigering på upp till en hel grad, två månbredder. Förmörkelser och konjunktioner inträffar också vid rätt minut: Solen och Månen kommer nu från fullständiga analytiska beräkningar istället för klassiska Sky Maps grövre approximationer, som kunde vara fel med en halvtimme.</p>
+<h2>Ett solsystem som ser verkligt ut</h2>
+<p>Månens fas beräknas från dess sanna geometri, inte vald från åtta standardbilder som tidigare. Linjen mellan ljus och mörker faller exakt där den ska, varje natt, och mannen i månen snurrar inte längre när månaden går. Venus och Merkurius visar nu också faser, svällande från en liten full skiva till en bred halvmåne när de närmar sig jorden, och Mars får sin puckelformade fas. Zooma in och se dem förändras. Du har möjlighet att visa planeterna som symboler grovt ordnade efter deras faktiska fysiska storlek, eller växla till deras <em>faktiska</em> storlekar på himlen. Solen och månen är ungefär lika stora som din fingertopp på armlängds avstånd, medan planeterna bara syns som prickar tills du zoomar in.</p>
+<h2>Tryck på vad som helst för att lära dig mer</h2>
+<p>Tryck för att identifiera är nu aktiverat som standard – rikta din telefon mot himlen och tryck på vilket märkt objekt som helst för att få dess infokort: foto, beskrivning, ett roligt faktum och tiderna det nästa gång går upp och ner från där du står.</p>
+<h2>Hitta mer, hitta det snabbare</h2>
+<p>268 nyligen tillagda IAU-stjärnnamn märker nu kartan, och du kan söka stjärnor med deras Bayer- eller Flamsteed-beteckning också – "Alpha Cygni", "α Cyg" och "50 Cyg" hittar alla Deneb.</p>
+<h2>Silkeslent, även på de nyaste telefonerna</h2>
+<p>Att svepa eller dra himlen på en skärm med hög uppdateringsfrekvens hackar inte längre – panorering, momentum och sökningens flyg-till följer nu din skärms verkliga bildfrekvens, upp till 120 Hz, istället för fasta 20 uppdateringar per sekund.</p>
+<h2>Vet exakt vart du pekar</h2>
+<p>En ny liveavläsning visar rektascension och deklination, altitud och azimut med en kompassriktning, och ditt nuvarande synfält – direkt på kartan.</p>
+<h2>Månförmörkelser, renderade</h2>
+<p>Månen visar nu sin verkliga kopparröda nyans under en månförmörkelse på själva kartan, och dess infokort, sammanfattning av kvällens himmel och nedräkning vet alla när en är på väg.</p>
+<h2>En ny design</h2>
+<p>Ett nytt färgschema "Deep Space / Star Gold", skarpare konstverk för Solen/Månen/planeter som är utjämnade och blandade på varje zoomnivå, en ombyggd första-gångs-tur som guidar dig genom live-appen istället för statiska skärmbilder (kan spelas upp igen när som helst från menyn), och en uppdaterad välkomstskärm byggd från en ny himmelsfångst i appen.</p>
+<h2>Tydligare om din integritet</h2>
+<p>Skärmen för användarvillkor och Hjälp förklarar nu exakt vad varje enhetsbehörighet används för, och appen begär inte längre annons-ID-behörigheten som den aldrig behövde.</p>
+<h2>¡Hola! Bonjour! Hej!</h2>
+<p>Sky Map talar nu 28 språk, fullständigt översatta.</p>
+<h2>Och detta är bara början...</h2>
+<p>Vi har många efterfrågade funktioner som kommer mycket snart.</p>]]></string>
+    <string name="whats_new_support" translation_description="HTML paragraph inviting users to support the project, shown in the What's new dialog and the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h1>Stöd Sky Map</h1>
+<p>Sky Map är gratis och har öppen källkod. Om du har nytta av appen får du gärna stödja utvecklingen på vår <a href="https://github.com/sky-map-team/stardroid/?tab=readme-ov-file#support-the-project">GitHub</a>-sida eller genom att <a href="https://buymeacoffee.com/skymapdevs?utm_source=skymap&amp;utm_medium=app&amp;utm_campaign=whatsnew">köpa en kaffe åt oss</a>.</p>]]></string>
+    <string name="beta_user_help_text" translation_description="Usually-empty HTML content shown to beta testers asking for feedback, appended in the What's new dialog and the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[]]></string>
+</resources>

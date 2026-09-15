@@ -1,0 +1,524 @@
+object_id,name,is_primary
+constellation/andromeda,仙女座,1
+constellation/antlia,唧筒座,1
+constellation/apus,天燕座,1
+constellation/aquarius,水瓶座,1
+constellation/aquila,天鹰座,1
+constellation/ara,天坛座,1
+constellation/aries,白羊座,1
+constellation/auriga,御夫座,1
+constellation/bootes,牧夫座,1
+constellation/caelum,雕具座,1
+constellation/camelopardalis,鹿豹座,1
+constellation/cancer,巨蟹座,1
+constellation/canes_venatici,猎犬座,1
+constellation/canis_major,大犬座,1
+constellation/canis_minor,小犬座,1
+constellation/capricornus,摩羯座,1
+constellation/carina,船底座,1
+constellation/cassiopeia,仙后座,1
+constellation/centaurus,半人马座,1
+constellation/cepheus,仙王座,1
+constellation/cetus,鲸鱼座,1
+constellation/chamaeleon,蝘蜓座,1
+constellation/circinus,圆规座,1
+constellation/columba,天鸽座,1
+constellation/coma_berenices,后发座,1
+constellation/corona_australis,南冕座,1
+constellation/corona_borealis,北冕座,1
+constellation/corvus,乌鸦座,1
+constellation/crater,巨爵座,1
+constellation/crux,南十字座,1
+constellation/cygnus,天鹅座,1
+constellation/delphinus,海豚座,1
+constellation/dorado,劍魚座,1
+constellation/draco,天龙座,1
+constellation/equuleus,小马座,1
+constellation/eridanus,波江座,1
+constellation/fornax,天炉座,1
+constellation/gemini,双子座,1
+constellation/grus,天鹤座,1
+constellation/hercules,武仙座,1
+constellation/horologium,时钟座,1
+constellation/hydra,长蛇座,1
+constellation/hydrus,水蛇座,1
+constellation/indus,印第安座,1
+constellation/lacerta,蝎虎座,1
+constellation/leo,狮子座,1
+constellation/leo_minor,小狮座,1
+constellation/lepus,天兔座,1
+constellation/libra,天秤座,1
+constellation/lupus,豺狼座,1
+constellation/lynx,天猫座,1
+constellation/lyra,天琴座,1
+constellation/mensa,山案座,1
+constellation/microscopium,显微镜座,1
+constellation/monoceros,麒麟座,1
+constellation/musca,苍蝇座,1
+constellation/norma,矩尺座,1
+constellation/octans,南极座,1
+constellation/ophiuchus,蛇夫座,1
+constellation/orion,猎户座,1
+constellation/pavo,孔雀座,1
+constellation/pegasus,飞马座,1
+constellation/perseus,英仙座,1
+constellation/phoenix,凤凰座,1
+constellation/pictor,绘架座,1
+constellation/pisces,双鱼座,1
+constellation/piscis_austrinus,南鱼座,1
+constellation/puppis,船尾座,1
+constellation/pyxis,罗盘座,1
+constellation/reticulum,网罟座,1
+constellation/sagitta,天箭座,1
+constellation/sagittarius,人马座,1
+constellation/scorpius,天蝎座,1
+constellation/sculptor,玉夫座,1
+constellation/scutum,盾牌座,1
+constellation/serpens_caput,巨蛇座（蛇头）,1
+constellation/serpens_cauda,巨蛇座（蛇尾）,1
+constellation/sextans,六分仪座,1
+constellation/taurus,金牛座,1
+constellation/telescopium,望远镜座,1
+constellation/triangulum,三角座,1
+constellation/triangulum_australe,南三角座,1
+constellation/tucana,杜鹃座,1
+constellation/ursa_major,大熊座,1
+constellation/ursa_minor,小熊座,1
+constellation/vela,船帆座,1
+constellation/virgo,室女座,1
+constellation/volans,飞鱼座,1
+constellation/vulpecula,狐狸座,1
+dso/blue_snowball_nebula,蓝雪球星云,1
+dso/centaurus_a,半人马座A,1
+dso/coathanger,衣架星群,1
+dso/coathanger,布罗基星团,0
+dso/coma_star_cluster,后发座星团,1
+dso/coma_star_cluster,后发座星团,0
+dso/cygnus_x_1,天鹅座X-1,1
+dso/cygnus_x_1,恒星质量黑洞,0
+dso/cygnus_x_1,黑洞双星,0
+dso/double_cluster,双星团,1
+dso/double_cluster,NGC 869 & NGC 884,0
+dso/double_cluster,英仙座h和χ,0
+dso/eta_carinae_nebula,船底座η星云,1
+dso/eta_carinae_nebula,船底座星云,0
+dso/exposed_cranium_nebula,裸露颅骨星云,1
+dso/ghost_of_jupiter,木星幽灵星云,1
+dso/hdf,哈勃深空,1
+dso/hdf,哈勃深空,0
+dso/helix_nebula,螺旋星云,1
+dso/helix_nebula,上帝之眼,0
+dso/hyades,毕宿星团,1
+dso/jewel_box,珠宝盒星团,1
+dso/jewel_box,南十字座 κ 星团,0
+dso/jewel_box,赫歇尔珠宝盒,0
+dso/lmc,大麦哲伦星云,1
+dso/lmc,Nubecula Major,0
+dso/m1,M1 蟹状星云,1
+dso/m1,蟹状星云,0
+dso/m101,M101 风车星系,1
+dso/m101,风车星系,0
+dso/m102,纺锤星系,1
+dso/m104,墨西哥帽星系,1
+dso/m11,野鸭星团,1
+dso/m11,M11 野鸭星团,0
+dso/m13,M13 武仙座球状星团,1
+dso/m13,武仙座球状星团,0
+dso/m13,武仙座球状星团,0
+dso/m16,M16 鹰星云,1
+dso/m16,鹰状星云,0
+dso/m20,三裂星云,1
+dso/m20,M20 三裂星云,0
+dso/m24,射手座星云,1
+dso/m24,M24 人马座恒星云,0
+dso/m27,哑铃星云,1
+dso/m27,M27 哑铃星云,0
+dso/m31,M31 仙女座星系,1
+dso/m31,仙女座星系,0
+dso/m33,三角座星系,1
+dso/m33,M33 三角座星系,0
+dso/m40,梅西尔·40,1
+dso/m42,M42 猎户座星云,1
+dso/m42,猎户座星云,0
+dso/m43,德梅朗星云,1
+dso/m43,M43 迪马伦的星云,0
+dso/m44,M44 蜂巢星团,1
+dso/m44,鬼宿星团,0
+dso/m44,鬼宿星团,0
+dso/m45,M45 昴宿星团,1
+dso/m45,昴宿星团,0
+dso/m45,昴宿星团,0
+dso/m51,M51 涡状星系,1
+dso/m51,涡状星系,0
+dso/m57,M57 环状星云,1
+dso/m57,环状星云,0
+dso/m6,M6 蝴蝶星团,1
+dso/m6,蝴蝶星团,0
+dso/m63,向日葵星系,1
+dso/m63,M63 向日葵星系,0
+dso/m64,黑眼星系,1
+dso/m64,M64 黑眼星系,0
+dso/m7,M7 托勒密星团,1
+dso/m7,托勒密星团,0
+dso/m7,托勒密星团,0
+dso/m74,幽灵星系,1
+dso/m76,小哑铃星云,1
+dso/m76,M76 小哑铃星云,0
+dso/m8,礁湖星云,1
+dso/m8,M8 礁湖星云,0
+dso/m81,博德星系,1
+dso/m81,M81 波得星系,0
+dso/m82,雪茄星系,1
+dso/m82,M82 雪茄星系,0
+dso/m83,南方风车星系,1
+dso/m83,M83 南风车星系,0
+dso/m97,猫头鹰星云,1
+dso/m97,M97 猫头鹰星云,0
+dso/n47_tucanae,杜鹃座47,1
+dso/n47_tucanae,杜鹃47,0
+dso/ngc_6543,猫眼星云,1
+dso/north_america_nebula,北美星云,1
+dso/omega_centauri,半人马座 Ω 球状星团,1
+dso/omega_centauri,半人马座 ω,0
+dso/saturn_nebula,土星星云,1
+dso/sculptor_galaxy,雕塑家星系,1
+dso/sculptor_galaxy,银元星系,0
+dso/sculptor_galaxy,银币星系,0
+dso/sgr_a_star,人马座 A*,1
+dso/sgr_a_star,人马座 A*,0
+dso/sgr_a_star,银河系中心,0
+dso/sgr_a_star,黑洞,0
+dso/smc,小麦哲伦星云,1
+dso/smc,Nubecula Minor,0
+dso/t_crb,北冕座T星,1
+dso/t_crb,耀星,0
+dso/tarantula_nebula,蜘蛛星云,1
+dso/tarantula_nebula,30 Dor,0
+dso/willman_1,威尔曼1号,1
+dso/willman_1,贝丝·威尔曼星系,0
+moon/ariel,天卫一,1
+moon/callisto,木卫四,1
+moon/deimos,火卫二,1
+moon/dione,土卫四,1
+moon/europa,木卫二,1
+moon/ganymede,木卫三,1
+moon/iapetus,土卫八,1
+moon/io,木卫一,1
+moon/oberon,天卫四,1
+moon/phobos,火卫一,1
+moon/rhea,土卫五,1
+moon/tethys,土卫三,1
+moon/titan,土卫六,1
+moon/titania,天卫三,1
+moon/triton,海卫一,1
+moon/umbriel,天卫二,1
+planet/jupiter,木星,1
+planet/mars,火星,1
+planet/mercury,水星,1
+planet/moon,月球,1
+planet/neptune,海王星,1
+planet/pluto,冥王星,1
+planet/saturn,土星,1
+planet/sun,太阳,1
+planet/uranus,天王星,1
+planet/venus,金星,1
+shower/aquariids,水瓶座η流星雨,1
+shower/deltaaquariids,水瓶座δ南流星雨,1
+shower/geminids,双子座流星雨,1
+shower/leonids,狮子座流星雨,1
+shower/lyrids,天琴座流星雨,1
+shower/orionids,猎户座流星雨,1
+shower/perseids,英仙座流星雨,1
+shower/puppidvelids,船尾/船帆座流星雨,1
+shower/quadrantids,象限仪座流星雨,1
+shower/ursids,小熊座流星雨,1
+star/achernar,水委一（波江座 a）,1
+star/acrux,十字架二（南十字座 α）,1
+star/adhara,弧矢七（大犬座 ε）,1
+star/alcyone,昴宿六（金牛座 η）,1
+star/aldebaran,毕宿五（金牛座 α）,1
+star/alderamin,天钩五（仙王座 α）,1
+star/algenib,壁宿一（飞马座 γ）,1
+star/algieba,轩辕十二（狮子座 γ）,1
+star/algol,大陵五（英仙座 β）,1
+star/alhena,井宿三（双子座 γ）,1
+star/alioth,玉衡（大熊座 ε）,1
+star/alkaid,摇光（大熊座 η）,1
+star/alnair,鹤一（天鹤座 α）,1
+star/alnath,五车五（金牛座 β）,1
+star/alnilam,参宿二（猎户座 ε）,1
+star/alphard,星宿一（长蛇座 α）,1
+star/alphekka,贯索四（北冕座 α）,1
+star/alpheratz,壁宿二（仙女座 α）,1
+star/altair,河鼓二（天鹰座 α）,1
+star/ankaa,火鸟六（凤凰座 α）,1
+star/antares,心宿二（天蝎座 α）,1
+star/arcturus,大角星（牧夫座 α）,1
+star/arneb,厕一（天兔座 α）,1
+star/betelgeuse,参宿四（猎户座 α）,1
+star/canopus,老人星（船底座 α）,1
+star/capella,五车二（御夫座 α）,1
+star/caph,王良一（仙后座 β）,1
+star/castor,北河二（双子座 α）,1
+star/deneb,天津四（天鹅座 α）,1
+star/denebola,五帝座一（狮子座 β）,1
+star/diphda,土司空（鲸鱼座 β）,1
+star/dubhe,天枢（大熊座 α）,1
+star/e_lyrae,织女二,1
+star/enif,危宿三（飞马座 ε）,1
+star/etamin,天棓四（天龙座 γ）,1
+star/fomalhaut,北落师门（南鱼座 α）,1
+star/hadar,马腹一（半人马座 β）,1
+star/hamal,娄宿三（白羊座 α）,1
+star/izar,梗河一（牧夫座 ε）,1
+star/j003712+535400,Fulu,1
+star/j004912+574912,Achird,1
+star/j005624+591048,Castula,1
+star/j010824-551500,Wurren,1
+star/j011348+073448,Revati,1
+star/j012212+453148,Adhil,1
+star/j012548+601424,Ruchbah,1
+star/j013112+152100,Alpherg,1
+star/j013636+412436,Titawin,1
+star/j013748+483748,Nembus,1
+star/j014536+090936,Torcular,1
+star/j015136-101948,Baten Kaitos,1
+star/j015248+293448,Mothallah,1
+star/j015436+204836,Sheratan,1
+star/j015436+634012,Segin,1
+star/j020148+024536,Alrescha,1
+star/j020336+421948,Almach,1
+star/j024312+031424,Kaffaljidhma,1
+star/j024800+291500,Lilii Borea,1
+star/j024948+271536,Bharani,1
+star/j025024+555400,Miram,1
+star/j025100-210000,Angetenar,1
+star/j025624-085400,Azha,1
+star/j025812-401800,Acamar,1
+star/j030936+445136,Misam,1
+star/j031124+194348,Botein,1
+star/j031200-285924,Dalim,1
+star/j031536-084912,Zibal,1
+star/j033300-092736,Ran,1
+star/j034312-094612,天苑四,1
+star/j034424+321724,天船三,1
+star/j034500+240636,伊莱克特拉,1
+star/j034500+241724,刻莱诺,1
+star/j034500+242812,塔吉忒,1
+star/j034536+242212,玛雅,1
+star/j034612+235700,梅洛珀,1
+star/j034612+243300,阿斯特洛普,1
+star/j034912+240300,阿特拉斯,1
+star/j034912+240824,普勒俄涅,1
+star/j035812-133036,天苑三,1
+star/j035848+354724,天船五,1
+star/j041200-065024,天苑一,1
+star/j041500-073824,天苑二,1
+star/j041948+153748,毕宿五,1
+star/j042248+173224,毕宿三,1
+star/j042400-340112,天苑六,1
+star/j042848+155212,毕宿二,1
+star/j042848+191048,毕宿一,1
+star/j043524-303336,天苑七,1
+star/j044948+065736,参宿三,1
+star/j045700+331012,五车二,1
+star/j050148+434912,五车三,1
+star/j050224+410448,毕宿八,1
+star/j050636+411348,五车四,1
+star/j050748-050524,天苑八,1
+star/j052512+062100,参宿五,1
+star/j052812-204536,厕一,1
+star/j053148-001800,参宿三,1
+star/j053524+095548,参宿一,1
+star/j053524-055436,伐一,1
+star/j053748+210824,天关,1
+star/j053936-340412,法克特,1
+star/j054048-015624,参宿一,1
+star/j055100-354612,瓦兹恩,1
+star/j055924+445700,五车二,1
+star/j060000+371236,五车五,1
+star/j060748-371500,埃尔库鲁德,1
+star/j061500+223036,北河二,1
+star/j062024-300336,弧矢七,1
+star/j062248+223036,天社,1
+star/j062248-175736,弧矢一,1
+star/j064348+250748,井宿五,1
+star/j064500+125400,井宿增一,1
+star/j070148-275548,Nganurganity,1
+star/j070336-153748,弧矢五,1
+star/j070412+203412,井宿六,1
+star/j070824-262324,弧矢七,1
+star/j072024+215848,井宿八,1
+star/j072400-291800,弧矢八,1
+star/j072700+081724,参宿七,1
+star/j073900+343448,积水,1
+star/j074912-245136,船尾座ξ,1
+star/j080336-400000,船帆座ζ,1
+star/j080748-241800,船底座ι,1
+star/j081200+173900,井宿九,1
+star/j081648+091124,鬼宿四,1
+star/j082024+240112,船底座ε,1
+star/j082248+431124,轩辕十三,1
+star/j082248-593036,船底座ε,1
+star/j083000+604312,轩辕十二,1
+star/j083900+032024,轩辕十一,1
+star/j084312+212812,鬼宿一,1
+star/j084424+180900,鬼宿二,1
+star/j084500-544236,船帆座δ,1
+star/j084648+062512,柳宿增五,1
+star/j085248+281948,Copernicus,1
+star/j085812+115136,柳宿增一,1
+star/j085924+480224,轩辕十,1
+star/j090336+470936,轩辕九,1
+star/j090748-432548,船帆座γ,1
+star/j090936+220300,轩辕八,1
+star/j091312-694312,船底座β,1
+star/j091648-591648,船底座ι,1
+star/j092212-550036,船帆座κ,1
+star/j092848+453600,轩辕七,1
+star/j093148+225812,轩辕六,1
+star/j093936-010824,轩辕五,1
+star/j094124+095324,轩辕四,1
+star/j095136-145100,张宿,1
+star/j095248+260036,弧矢一,1
+star/j095436-190036,费利斯,1
+star/j101648+232512,丈人一,1
+star/j101648+425436,轩辕十四,1
+star/j102212+413000,轩辕十三,1
+star/j105324+341312,招摇,1
+star/j105924+402548,查拉湾,1
+star/j110000-181800,翼宿五,1
+star/j111424+152548,太微右垣一,1
+star/j111424+203112,太微右垣二,1
+star/j111800+313224,轩辕十二,1
+star/j111836+330524,轩辕十一,1
+star/j113112+691948,贾乌萨,1
+star/j114612+474648,太阳守,1
+star/j115024+014612,太微左垣一,1
+star/j120524+765436,托纳蒂乌,1
+star/j120824-244348,轸宿一,1
+star/j121500-584500,伊迈,1
+star/j121536+570148,天权,1
+star/j121536-173224,轸宿三,1
+star/j121948-004012,太微左垣二,1
+star/j122136-602400,吉南,1
+star/j123000-163112,轸宿四,1
+star/j123112-570636,十字架三,1
+star/j123336+412136,常陈四,1
+star/j123412-232400,轸宿二,1
+star/j124124-012700,太微左垣五,1
+star/j124500+452624,拉·苏佩尔巴,1
+star/j124724+664724,天乙,1
+star/j124800-594124,十字架二,1
+star/j125512+652624,太乙,1
+star/j125548+032400,太微左垣三,1
+star/j125548+381912,常陈一,1
+star/j131012+173148,贯索四,1
+star/j132400+545548,开阳,1
+star/j132512+545924,辅,1
+star/j133448-003600,太微左垣四,1
+star/j135436+182400,招摇,1
+star/j140412+642248,右枢,1
+star/j140636-362212,库楼二,1
+star/j141236-101612,亢,1
+star/j141612+460524,玄戈,1
+star/j141612-060000,瑟玛,1
+star/j141912-132212,坎巴利亚,1
+star/j142812-021348,埃尔加法尔,1
+star/j143148+381836,塞吉努斯,1
+star/j143936-605024,托利曼,1
+star/j145100-160224,祖本埃尔格努比,1
+star/j150148+402324,内卡尔,1
+star/j151648-092248,祖本埃沙马利,1
+star/j152100+714948,费尔卡德,1
+star/j152436+372248,阿尔卡卢罗普斯,1
+star/j152736+290636,努萨坎,1
+star/j153524-144724,祖本埃尔哈克拉比,1
+star/j155848-260636,房,1
+star/j160036-223712,贾巴,1
+star/j160524-194836,阿克拉布,1
+star/j161200-192736,贾巴赫,1
+star/j161424-034124,耶德前,1
+star/j161836-044124,耶德后,1
+star/j163000+212924,科尔内福罗斯,1
+star/j171012-154348,萨比克,1
+star/j171424+142324,拉萨尔格蒂,1
+star/j173036-371800,莱萨特,1
+star/j173224+863524,伊尔顿,1
+star/j173712-430000,萨尔加斯,1
+star/j174424-514948,塞万提斯,1
+star/j174948-370224,傅说,1
+star/j182548+653336,法夫尼尔,1
+star/j184348+363336,羲和,1
+star/j190936-375400,子午线,1
+star/j194012+180036,沙姆,1
+star/j194500+450748,法瓦里斯,1
+star/j195400+082736,自由,1
+star/j202548-564348,孔雀,1
+star/j203748+143600,罗塔涅夫,1
+star/j203936+155436,苏阿洛辛,1
+star/j204612+335812,阿尔贾纳赫,1
+star/j204724-093000,阿尔巴利,1
+star/j205812+105024,音乐,1
+star/j210900-885736,南极星,1
+star/j211536+051500,北落师门,1
+star/j212848+703336,天钩五,1
+star/j213148-053412,虚宿一,1
+star/j213748-075100,虚宿二,1
+star/j214012-163936,垒壁阵三,1
+star/j214200+511124,天津四,1
+star/j214648-160748,垒壁阵四,1
+star/j215400-372136,鹤一,1
+star/j220336+643748,天钩一,1
+star/j220600-001912,虚宿三,1
+star/j221012+061200,离宫四,1
+star/j221648-074648,虚宿五,1
+star/j222136-012324,虚宿四,1
+star/j223748-041348,虚宿六,1
+star/j224124+104948,离宫一,1
+star/j224236-465248,虚宿七,1
+star/j224312+301312,离宫二,1
+star/j224948+243600,离宫三,1
+star/j225436-154912,虚宿八,1
+star/j225736+204612,Helvetios,1
+star/j230336+034912,北落师门二,1
+star/j232024+234424,天箭座α,1
+star/j232512+232400,房宿四,1
+star/j233112+391424,Veritate,1
+star/j233936+773748,天钩三,1
+star/kaus_australis,箕宿三（人马座 ε）,1
+star/kochab,北极二（小熊座 β）,1
+star/markab,室宿一（飞马座 α）,1
+star/menkar,天囷一（鲸鱼座 α）,1
+star/merak,天璇（大熊座 β）,1
+star/mirach,奎宿九（仙女座 β）,1
+star/mirphak,天船三（英仙座 α）,1
+star/nunki,斗宿四（人马座 σ）,1
+star/phad,天玑（大熊座 γ）,1
+star/polaris,北极星（小熊座 α）,1
+star/polaris,北极星（小熊座 α）,0
+star/polaris,北极星（小熊座 α）,0
+star/pollux,北河三（双子座 β）,1
+star/procyon,南河三（小犬座 α）,1
+star/rasalhague,侯（蛇夫座 α）,1
+star/regulus,轩辕十四（狮子座 α）,1
+star/rigel,参宿七（猎户座 β）,1
+star/rigil_kentaurus_a,南門二,1
+star/rigil_kentaurus_a,南門二,0
+star/rigil_kentaurus_a,南門二（半人马座 α）,0
+star/rigil_kentaurus_a,南門二（半人马座 α）,0
+star/saiph,参宿六（猎户座 κ）,1
+star/scheat,室宿二（飞马座 β）,1
+star/shaula,尾宿八（天蝎座 λ）,1
+star/shedir,王良四（仙后座 α）,1
+star/sirius,天狼星（大犬座 α）,1
+star/sirius,天狼星（大犬座 α）,0
+star/spica,角宿一（室女座 α）,1
+star/unukalhai,蜀，天市右垣七（巨蛇座 α）,1
+star/vega,织女一（天琴座 α）,1
+star/vindemiatrix,东次将，太微左垣四（室女座 ε）,1
+dso/m17,M17 天鹅星云,1
+dso/m22,M22 人马座星团,1
+dso/m77,M77 鲸鱼A星系,1
+dso/m87,M87 室女A星系,1
+dso/v838_mon,麒麟座 V838 变星,1

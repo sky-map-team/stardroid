@@ -24,7 +24,7 @@ Japanese, Chinese, etc.).
 """
 
 [glossary]
-path = "translation_glossary.md"
+path = "../translation_glossary.md"
 
 [android]
 res_path = "app/src/main/res"

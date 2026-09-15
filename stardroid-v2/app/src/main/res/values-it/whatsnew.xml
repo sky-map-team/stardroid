@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h1>Diamo il benvenuto al nuovo Sky Map</h1>
+<h2>Sky Map è stato completamente ricostruito</h2>
+<p>Questo è il più grande aggiornamento nella storia di Sky Map.<br/><br/>
+È un\'app completamente nuova sotto il cofano — nuovo motore di rendering, nuovo motore astronomico, nuova interfaccia — costruita da zero per essere più veloce, più precisa e più gradevole alla vista. Ecco cosa c\'è di meglio:</p>
+<h2>Più preciso</h2>
+<p>La Luna è ora posizionata esattamente dove <em>tu</em> la vedi nel cielo, non dove apparirebbe dal centro della Terra — una correzione fino a un grado intero, due larghezze lunari. Anche le eclissi e le congiunzioni avvengono al minuto giusto: il Sole e la Luna ora provengono da calcoli analitici completi invece delle approssimazioni più grossolane del classico Sky Map, che potevano essere imprecise di mezz\'ora.</p>
+<h2>Un sistema solare che sembra reale</h2>
+<p>La fase della Luna è calcolata dalla sua vera geometria, non scelta tra otto immagini predefinite come prima. La linea tra luce e buio cade esattamente dove dovrebbe, ogni notte, e l\'uomo nella Luna non ruota più con il passare del mese. Anche Venere e Mercurio ora mostrano le fasi, gonfiandosi da un piccolo disco pieno a una larga falce mentre si avvicinano alla Terra, e Marte assume la sua fase gibbosa. Ingrandisci e osservali cambiare. Hai la possibilità di mostrare i pianeti come glifi ordinati approssimativamente in base alla loro dimensione fisica reale, o passare alle loro dimensioni <em>reali</em> nel cielo. Il sole e la luna hanno circa le dimensioni della punta del tuo dito a braccio teso, mentre i pianeti appaiono solo come puntini finché non ingrandisci.</p>
+<h2>Tocca qualsiasi cosa per saperne di più</h2>
+<p>La funzione "Tocca per identificare" è ora attiva per impostazione predefinita — punta il telefono verso il cielo e tocca qualsiasi oggetto etichettato per la sua scheda informativa: foto, descrizione, una curiosità e gli orari in cui sorge e tramonta dal punto in cui ti trovi.</p>
+<h2>Trova di più, trovalo più velocemente</h2>
+<p>268 nomi di stelle IAU appena aggiunti ora etichettano la mappa, e puoi cercare le stelle anche tramite la loro designazione di Bayer o Flamsteed — "Alpha Cygni", "α Cyg" e "50 Cyg" trovano tutti Deneb.</p>
+<h2>Estremamente fluido, anche sui telefoni più recenti</h2>
+<p>Scorrere o trascinare il cielo su uno schermo ad alta frequenza di aggiornamento non produce più scatti — il panning, lo slancio e la funzione "vola a" della ricerca ora seguono la frequenza di fotogrammi reale del tuo display, fino a 120 Hz, invece di un fisso di 20 aggiornamenti al secondo.</p>
+<h2>Sai esattamente dove stai puntando</h2>
+<p>Una nuova lettura in tempo reale mostra ascensione retta e declinazione, altitudine e azimut con un punto cardinale, e il tuo attuale campo visivo — direttamente sulla mappa.</p>
+<h2>Eclissi lunari, renderizzate</h2>
+<p>La Luna ora mostra la sua vera tinta rosso rame durante un\'eclissi lunare sulla mappa stessa, e la sua scheda informativa, il riepilogo del cielo di stasera e il conto alla rovescia sanno tutti quando ne sta arrivando una.</p>
+<h2>Una nuova veste grafica</h2>
+<p>Una nuova combinazione di colori "Spazio Profondo / Oro Stellare", grafica più nitida di Sole/Luna/pianeti levigata e sfumata a ogni livello di zoom, un tour iniziale ricostruito che ti guida attraverso l\'app in tempo reale invece di screenshot statici (riproducibile in qualsiasi momento dal menu), e una schermata di benvenuto aggiornata costruita da una nuova acquisizione del cielo in-app.</p>
+<h2>Più chiari sulla tua privacy</h2>
+<p>La schermata Termini e la Guida ora spiegano esattamente a cosa serve ogni permesso del dispositivo, e l\'app non richiede più il permesso dell\'ID pubblicitario di cui non ha mai avuto bisogno.</p>
+<h2>¡Hola! Bonjour!你好!</h2>
+<p>Sky Map ora parla 28 lingue, completamente tradotte.</p>
+<h2>E questo è solo l\'inizio...</h2>
+<p>Abbiamo molte funzionalità a lungo richieste in arrivo molto presto.</p>]]></string>
+    <string name="whats_new_support" translation_description="HTML paragraph inviting users to support the project, shown in the What's new dialog and the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h1>Sostieni Sky Map</h1>
+<p>Sky Map è gratuito e open source. Se lo trovi utile, considera di sostenere lo sviluppo sulla nostra pagina <a href="https://github.com/sky-map-team/stardroid/?tab=readme-ov-file#support-the-project">GitHub</a> o <a href="https://buymeacoffee.com/skymapdevs?utm_source=skymap&amp;utm_medium=app&amp;utm_campaign=whatsnew">offrendoci un caffè</a>.</p>]]></string>
+    <string name="beta_user_help_text" tm_human="true" translation_description="Usually-empty HTML content shown to beta testers asking for feedback, appended in the What's new dialog and the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[]]></string>
+</resources>

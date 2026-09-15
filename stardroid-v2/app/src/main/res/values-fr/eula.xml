@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+    <string name="eula_text" translation_description="A condensed, user-friendly version of the EULA and Privacy Policy with a link to the full terms. Please do not change the &lt; and &gt; markup"><![CDATA[<h1>Bienvenue sur Sky Map</h1><p>Pour vous aider à observer les étoiles, veuillez consulter ce bref résumé de nos conditions.</p><h2>Confidentialité</h2><p><b>Nous ne savons pas qui vous êtes.</b> Nous recueillons des données d\'utilisation anonymes pour nous aider à corriger les bugs et à améliorer les fonctionnalités. Vous pouvez vous désinscrire à tout moment dans le menu Paramètres.</p><h2>Sécurité &amp; Responsabilité</h2><p>Sky Map est fourni "tel quel". Utilisez-le en toute sécurité—nous ne sommes pas responsables des dommages ou blessures (comme un torticolis !) résultant de votre utilisation de l\'application.</p><h2>Open Source</h2><p>Sky Map est un travail passionné. Vous êtes libre d\'utiliser notre code source, mais veuillez respecter notre marque et nos logos.</p><p>Lisez le document juridique complet ici : <a href="https://github.com/sky-map-team/stardroid/blob/master/TERMS.md">Conditions générales et politique de confidentialité complètes</a></p>]]></string>
+
+    <!-- Rendered last on the terms screen, after the permissions notice, so the sentence the
+         Accept button refers to is the final thing the user reads. -->
+    <string name="eula_agree_line" translation_description="Closing line of the first-launch terms screen, immediately above the Accept button. Please do not change the markup"><![CDATA[<br/><p><i>En cliquant sur \"Accepter\", vous acceptez ces conditions.</i></p>]]></string>
+
+    <!--
+      The access-permission notice (KISA / Korean Network Act art. 22-2, and good practice
+      everywhere). Rendered in two places from this one key so it is translated once: appended
+      to the first-launch EULA screen, and included in the help document as a permanent,
+      re-readable copy (HelpScreen.helpSections2). Every runtime permission Sky Map declares
+      must appear here, labelled required or optional, with its grounds and — for optional
+      ones — the user\'s right to refuse.
+    -->
+    <string name="permissions_notice" translation_description="Legally-required disclosure of the device permissions the app requests, why it requests them, and the user\'s right to refuse the optional ones. Shown on the first-launch terms screen and in Help. Please do not change the markup"><![CDATA[<h2>Autorisations</h2>
+<p><b>Sky Map n\'a aucune autorisation requise.</b> Chaque autorisation ci-dessous est facultative — vous pouvez refuser
+n\'importe laquelle d\'entre elles et continuer à utiliser l\'application. Sky Map ne demande jamais au démarrage : chaque autorisation n\'est demandée que
+lorsque vous utilisez pour la première fois la fonctionnalité qui en a besoin, et vous pouvez accorder ou retirer chacune d\'elles séparément à
+tout moment sous <b>Paramètres → Applications → Sky Map → Autorisations</b> sur votre appareil.</p>
+<h3>Localisation — facultative</h3>
+<p><b>Ce qui est accédé :</b> votre position approximative.</p>
+<p><b>Pourquoi :</b> les étoiles au-dessus de vous dépendent de l\'endroit où vous vous trouvez, donc Sky Map utilise votre position approximative
+pour dessiner le ciel correct.</p>
+<p><b>Si vous refusez :</b> vous pouvez saisir un nom de lieu ou des coordonnées à la place, et l\'application entière
+continue de fonctionner.</p>
+<blockquote>Votre position est utilisée sur votre appareil pour dessiner le ciel. Elle ne nous est jamais envoyée.</blockquote>
+<h3>Appareil photo — facultatif</h3>
+<p><b>Ce qui est accédé :</b> l\'aperçu de l\'appareil photo.</p>
+<p><b>Pourquoi :</b> le mode à travers l\'appareil photo dessine le ciel par-dessus la vue en direct de l\'appareil photo, afin que vous puissiez faire correspondre
+la carte à ce que vous regardez réellement.</p>
+<p><b>Si vous refusez :</b> tous les autres modes fonctionnent normalement.</p>
+<blockquote>Sky Map n\'enregistre jamais la vue de l\'appareil photo et ne nous l\'envoie jamais. Elle est affichée à l\'écran et
+puis supprimée — à moins que vous ne partagiez une image : choisir une disposition AR depuis la feuille de partage enregistre cette
+image sur votre appareil et la transmet à l\'application que vous choisissez. Rien n\'est partagé tant que vous ne le demandez pas.</blockquote>
+<h3>Notifications — facultatives</h3>
+<p><b>Ce qui est accédé :</b> autorisation d\'afficher des notifications.</p>
+<p><b>Pourquoi :</b> pour vous informer des pics de pluies de météores et de ce qui vaut la peine d\'être vu ce soir, si vous
+le demandez.</p>
+<p><b>Si vous refusez :</b> rien d\'autre ne change — ces notifications restent désactivées jusqu\'à ce que vous les activiez.</p>]]></string>
+</resources>

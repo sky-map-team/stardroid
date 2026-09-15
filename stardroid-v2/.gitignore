@@ -1,0 +1,29 @@
+.claude/settings.local.json
+
+# Gradle / build
+.gradle/
+.kotlin/
+build/
+**/build/
+local.properties
+
+# IDE
+.idea/
+*.iml
+.DS_Store
+
+# Fastlane
+fastlane/report.xml
+
+# Secrets / signing (never commit)
+*.keystore
+*.jks
+*.pem
+*credentials*
+*google-services.json*
+*no-checkin*
+no-checkin.properties
+.env
+
+# Fetched sources for the planet-disc generator (see tools/planets/README.md)
+tools/planets/.cache/

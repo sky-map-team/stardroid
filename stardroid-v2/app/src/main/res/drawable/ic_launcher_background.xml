@@ -1,0 +1,50 @@
+<!--
+  Sky Map v2 launcher icon — background layer (Direction C, "deep space").
+  Branding asset: All Rights Reserved, (c) 2026 Penterakt LLC (see branding/LICENSE.md).
+  Density-independent vector: an indigo->violet nebula gradient with a faint cyan
+  glow and scattered background stars. minSdk 29 renders vector adaptive layers.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- base nebula gradient -->
+    <path android:pathData="M0,0h108v108h-108z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:type="radial"
+                android:centerX="41"
+                android:centerY="35"
+                android:gradientRadius="92">
+                <item android:offset="0" android:color="#FF3D2F74" />
+                <item android:offset="0.42" android:color="#FF1A1F4E" />
+                <item android:offset="1" android:color="#FF060819" />
+            </gradient>
+        </aapt:attr>
+    </path>
+    <!-- faint cyan nebula wash, lower-right -->
+    <path android:pathData="M0,0h108v108h-108z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:type="radial"
+                android:centerX="76"
+                android:centerY="78"
+                android:gradientRadius="46">
+                <item android:offset="0" android:color="#617EC8E3" />
+                <item android:offset="1" android:color="#007EC8E3" />
+            </gradient>
+        </aapt:attr>
+    </path>
+    <!-- background stars -->
+    <path
+        android:fillColor="#CCEAF0FF"
+        android:pathData="M31.2,30a0.8,0.8 0,1 0,1.6 0a0.8,0.8 0,1 0,-1.6 0z
+                          M75.4,24a0.6,0.6 0,1 0,1.2 0a0.6,0.6 0,1 0,-1.2 0z
+                          M85.3,49a0.7,0.7 0,1 0,1.4 0a0.7,0.7 0,1 0,-1.4 0z
+                          M40.4,84a0.6,0.6 0,1 0,1.2 0a0.6,0.6 0,1 0,-1.2 0z
+                          M23.3,65a0.7,0.7 0,1 0,1.4 0a0.7,0.7 0,1 0,-1.4 0z
+                          M69.4,81a0.6,0.6 0,1 0,1.2 0a0.6,0.6 0,1 0,-1.2 0z
+                          M60.5,18a0.5,0.5 0,1 0,1 0a0.5,0.5 0,1 0,-1 0z" />
+</vector>

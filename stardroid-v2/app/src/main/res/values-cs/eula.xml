@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+    <string name="eula_text" translation_description="A condensed, user-friendly version of the EULA and Privacy Policy with a link to the full terms. Please do not change the &lt; and &gt; markup"><![CDATA[<h1>Vítejte v aplikaci Sky Map</h1><p>Než se pustíte do pozorování hvězd, přečtěte si prosím tento stručný souhrn našich podmínek.</p><h2>Ochrana osobních údajů</h2><p><b>Nevíme, kdo jste.</b> Shromažďujeme anonymní data o používání, abychom nám pomohli opravit chyby a vylepšit funkce. Z této možnosti se můžete kdykoli odhlásit v nabídce Nastavení.</p><h2>Bezpečnost &amp; Odpovědnost</h2><p>Sky Map je poskytována „tak, jak je“. Používejte ji bezpečně – neneseme odpovědnost za žádné škody nebo zranění (například bolest krku!) vyplývající z používání aplikace.</p><h2>Otevřený zdrojový kód</h2><p>Sky Map je dílem lásky. Můžete volně používat náš zdrojový kód, ale prosím respektujte naši značku a loga.</p><p>Přečtěte si celý právní dokument zde: <a href="https://github.com/sky-map-team/stardroid/blob/master/TERMS.md">Úplné podmínky a zásady ochrany osobních údajů</a></p>]]></string>
+
+    <!-- Rendered last on the terms screen, after the permissions notice, so the sentence the
+         Accept button refers to is the final thing the user reads. -->
+    <string name="eula_agree_line" translation_description="Closing line of the first-launch terms screen, immediately above the Accept button. Please do not change the markup"><![CDATA[<br/>
+<p><i>Kliknutím na "Přijmout" souhlasíte s těmito podmínkami.</i></p>]]></string>
+
+    <!--
+      The access-permission notice (KISA / Korean Network Act art. 22-2, and good practice
+      everywhere). Rendered in two places from this one key so it is translated once: appended
+      to the first-launch EULA screen, and included in the help document as a permanent,
+      re-readable copy (HelpScreen.helpSections2). Every runtime permission Sky Map declares
+      must appear here, labelled required or optional, with its grounds and — for optional
+      ones — the user\'s right to refuse.
+    -->
+    <string name="permissions_notice" translation_description="Legally-required disclosure of the device permissions the app requests, why it requests them, and the user\'s right to refuse the optional ones. Shown on the first-launch terms screen and in Help. Please do not change the markup"><![CDATA[<h2>Oprávnění</h2>
+<p><b>Sky Map nemá žádná povinná oprávnění.</b> Každé níže uvedené oprávnění je volitelné — můžete kterékoli z nich odmítnout a aplikaci přesto používat. Sky Map nikdy nežádá o oprávnění při spuštění: každé oprávnění je vyžádáno pouze při prvním použití funkce, která jej potřebuje, a můžete jej kdykoli udělit nebo odebrat samostatně v části <b>Nastavení → Aplikace → Sky Map → Oprávnění</b> na vašem zařízení.</p>
+<h3>Poloha — volitelné</h3>
+<p><b>Co je přístupné:</b> vaše přibližná poloha.</p>
+<p><b>Proč:</b> které hvězdy jsou nad vámi, závisí na tom, kde se nacházíte, takže Sky Map používá vaši přibližnou polohu k zobrazení správné oblohy.</p>
+<p><b>Pokud odmítnete:</b> můžete místo toho zadat název místa nebo souřadnice a celá aplikace bude nadále fungovat.</p>
+<blockquote>Vaše poloha je použita na vašem zařízení k zobrazení oblohy. Nikdy nám není odeslána.</blockquote>
+<h3>Fotoaparát — volitelné</h3>
+<p><b>Co je přístupné:</b> náhled fotoaparátu.</p>
+<p><b>Proč:</b> režim průhledu fotoaparátem zobrazuje oblohu přes živý náhled fotoaparátu, takže můžete porovnat mapu s tím, na co se skutečně díváte.</p>
+<p><b>Pokud odmítnete:</b> všechny ostatní režimy fungují normálně.</p>
+<blockquote>Sky Map nikdy nezaznamenává náhled fotoaparátu ani nám jej neodesílá. Je zobrazen na obrazovce a poté zahozen — pokud nesdílíte obrázek: výběr rozvržení AR z nabídky sdílení uloží tento jeden obrázek na vaše zařízení a předá jej aplikaci, kterou si vyberete. Nic není sdíleno, dokud o to nepožádáte.</blockquote>
+<h3>Oznámení — volitelné</h3>
+<p><b>Co je přístupné:</b> oprávnění zobrazovat oznámení.</p>
+<p><b>Proč:</b> abychom vás informovali o vrcholech meteorických rojů a o tom, co stojí za to vidět dnes večer, pokud o to požádáte.</p>
+<p><b>Pokud odmítnete:</b> nic jiného se nezmění — tato oznámení zůstanou vypnutá, dokud je nezapnete.</p>]]></string>
+</resources>

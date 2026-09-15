@@ -1,0 +1,134 @@
+# .tmconfig.toml — Sky Map v2 (stardroid-v2)
+#
+# Adapted from stardroid-v1/.tmconfig.toml rather than written fresh: v1's version encodes
+# hard-won fixes (the brand-name preservation rule that stopped Gemini rendering "Sky Map"
+# as "Map Awyr" in Welsh; per-locale register guidance). See docs/design/localization.md.
+#
+# Migrated to the [[sources]] schema (`tm config migrate`) when the new translation
+# pipeline landed. The [app]/[glossary]/[locale_context] tables are untouched by that
+# migration and carry v1's hard-won guidance forward unchanged. The csv-overrides,
+# json-cards and json-inline sources are new: v2's catalog content (object names, info
+# cards, object-type vocabulary) lives in source-data/ rather than string resources, and
+# the new pipeline can translate it directly instead of leaving it English-only (see
+# docs/design/localization.md §3a).
+
+[app]
+name = "Sky Map"
+description = "a mobile astronomy/planetarium application for Android. Use your astronomy expertise to ensure that astronomical terms like constellation names are correct in the new locale"
+# ko is the one addition to v1's list: the Korean Network Act art. 22-2 notice in eula.xml is
+# only meaningful to a Korean reader in Korean, so ko has to be a translated locale rather
+# than falling back to English.
+primary_languages = [
+    "sk", "cy", "ar", "en-GB", "zh-Hant", "zh-Hans",
+    "cs", "da", "de", "el", "es", "fa", "fr", "hi",
+    "id", "it", "ja", "ko", "ms", "nb", "nl", "pl", "pt", "sl",
+    "sv", "th", "tr", "uk",
+]
+translation_notes = """
+For proper names of celestial objects (planets, moons, nebulae, star clusters, \
+constellations, galaxies, comets, asteroids), always use the established canonical \
+name in the target language as used in scientific literature and Wikipedia — do not \
+invent phonetic transliterations or literal translations of English names. If no \
+established translated name exists, retain the Latin or catalog designation \
+(e.g. "NGC 4755") rather than guessing.
+
+The app name "Sky Map" and the platform name "Android" must never be translated or \
+transliterated, regardless of language. Preserve them exactly as English text in \
+every locale, including languages that use non-Latin scripts (Arabic, Hindi, Thai, \
+Japanese, Chinese, etc.).
+
+The help document is split one string per section (help_intro, help_search, ...). \
+Each is a self-contained section of one manual — keep terminology consistent across \
+them, and keep the HTML markup (<h2>, <h3>, <p>, <b>, <i>, <br/>) exactly as it \
+appears in the source.
+
+The glossary's "Compass" entry names the constellation Circinus and applies only to \
+that constellation. It does not apply to the phone's magnetic/orientation sensor: \
+translate that sense of "compass" using each language's ordinary word for a \
+navigational compass (e.g. French "boussole", never "compas", which is a drafting \
+tool in French).
+
+permissions_notice is a regulatory disclosure, not marketing copy (Korean Network \
+Act art. 22-2). Translate it precisely and completely: every permission must keep \
+its "optional" label, its stated reason, and the sentence saying the user may \
+refuse it. Do not condense, reorder or drop any of those three parts, and do not \
+soften "no required permissions" into something weaker.
+
+Keep sky-map labels (compass points, pole markers) as short as the English original.
+"""
+
+[glossary]
+# v1's glossary — canonical astronomical names per language. Shared deliberately rather
+# than copied: the two apps name the same sky, and a fork would drift.
+path = "../translation_glossary.md"
+
+# Per-locale guidance injected into each translation request.
+# Keys are BCP-47 codes matching the locale codes used by this project.
+[locale_context]
+pl = "Follow Polish Wikipedia and PTAst (Polskie Towarzystwo Astronomiczne) naming conventions for astronomical objects. For software targeting the Android platform, use 'na Androida' not 'dla Androida'."
+de = "Follow IAU-approved German astronomical names and DIN conventions where applicable. Use the informal 'du/dein/dir' register throughout — never the formal 'Sie/Ihr/Ihnen'. Use 'Handy' rather than 'Telefon' when referring to a mobile phone."
+nl = "Use the informal 'je/jij/jouw' register throughout — never the formal 'u/uw'. Use 'het kompas' (neuter gender) not 'de kompas' when referring to the compass sensor."
+fr = "Follow Union astronomique internationale (UAI) French-language naming conventions."
+zh-Hant = "Use Traditional Chinese astronomical names as used in Taiwan (中華民國天文學會) conventions."
+da = "Use the informal 'du/din' register throughout — never the formal 'De/Dem'."
+sv = "Use the informal 'du/din' register throughout."
+nb = "Use the informal 'du/din' register throughout."
+en-GB = "The asterism within Ursa Major that American English calls \"The Big Dipper\" is called \"The Plough\" in British English. Use \"The Plough\", never \"The Big Dipper\"."
+
+# Android UI strings. Every string carries a translation_description
+# attribute with translator-facing context — preserved automatically.
+[[sources]]
+type = "android"
+name = "app"
+path = "app/src/main/res"
+files = ["strings.xml", "credits.xml", "help.xml", "whatsnew.xml", "eula.xml"]
+skip = ["colors.xml", "themes.xml", "contributors.xml"]
+resource_qualifier_excludes = ["w820dp", "night", "land", "nodpi", "anydpi-v26"]
+
+# Localized celestial object names: sparse per-object overrides.
+# universal.csv is the language-neutral pseudo-locale of catalog
+# designations (M31, NGC 224) and is never a translation target.
+[[sources]]
+type = "csv-overrides"
+name = "object-names"
+path = "source-data/names"
+key_column = "object_id"
+value_column = "name"
+primary_column = "is_primary"
+exclude_locales = ["universal"]
+
+# Localized info-card prose: sparse per-locale JSON. A present card shadows
+# the English one entirely, so written cards are always field-complete;
+# copy_fields are copied verbatim so cards stay self-contained.
+[[sources]]
+type = "json-cards"
+name = "info-cards"
+path = "source-data/info_cards"
+translatable_fields = [
+    "description",
+    "fun_fact",
+    "distance",
+    "size",
+    "mass",
+    # A user-visible sentence fragment ("Moon of Neptune"), not a datum — it is the subtitle
+    # under each search suggestion, so it has to be translated like the prose above it.
+    "search_subtext",
+]
+copy_fields = ["spectral_class", "image_credit"]
+indent = 1
+
+# Object-type vocabulary: locales live as sibling keys inside each entry's
+# "names" map, not as separate files.
+[[sources]]
+type = "json-inline"
+name = "object-types"
+path = "source-data/types.json"
+list_key = "types"
+id_field = "code"
+names_field = "names"
+
+# Play Store listing.
+[[sources]]
+type = "fastlane"
+name = "playstore"
+path = "fastlane/metadata/android"

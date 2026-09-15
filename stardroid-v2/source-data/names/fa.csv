@@ -1,0 +1,577 @@
+object_id,name,is_primary
+constellation/andromeda,زن زنجیر شده,1
+constellation/antlia,تلمبه,1
+constellation/apus,مرغ بهشتی,1
+constellation/aquarius,دلو,1
+constellation/aquila,عقاب,1
+constellation/ara,آتشدان,1
+constellation/aries,حمل,1
+constellation/auriga,ارابه‌ران,1
+constellation/bootes,گاوران,1
+constellation/caelum,اسکنه,1
+constellation/camelopardalis,زرافه,1
+constellation/cancer,سرطان,1
+constellation/canes_venatici,تازی‌ها,1
+constellation/canis_major,سگ بزرگ,1
+constellation/canis_minor,سگ کوچک,1
+constellation/capricornus,بزغاله (جدی),1
+constellation/carina,شاه‌تخته,1
+constellation/cassiopeia,کاسیوپه (ذات‌الکرسی),1
+constellation/centaurus,کنتاوروس (قنطورس),1
+constellation/cepheus,قیفاووس,1
+constellation/cetus,نهنگ,1
+constellation/chamaeleon,آفتاب‌پرست,1
+constellation/circinus,دوپرگار,1
+constellation/columba,کبوتر,1
+constellation/coma_berenices,گیسو,1
+constellation/corona_australis,تاج جنوبی,1
+constellation/corona_borealis,تاج شمالی,1
+constellation/corvus,کلاغ,1
+constellation/crater,پیاله,1
+constellation/crux,چلیپا,1
+constellation/cygnus,ماکیان,1
+constellation/delphinus,دلفین,1
+constellation/dorado,ماهی زرین,1
+constellation/draco,اژدها,1
+constellation/equuleus,اسب کوچک,1
+constellation/eridanus,رود,1
+constellation/fornax,کوره,1
+constellation/gemini,دوپیکر (جوزا),1
+constellation/grus,درنا,1
+constellation/hercules,هرکول,1
+constellation/horologium,ساعت,1
+constellation/hydra,مار باریک,1
+constellation/hydrus,آبمار (مار آبی),1
+constellation/indus,هندی,1
+constellation/lacerta,چلپاسه,1
+constellation/leo,شیر (اسد),1
+constellation/leo_minor,شیر کوچک,1
+constellation/lepus,خرگوش,1
+constellation/libra,ترازو (میزان),1
+constellation/lupus,گرگ,1
+constellation/lynx,سیاه‌گوش,1
+constellation/lyra,چنگ,1
+constellation/mensa,کوهمیز,1
+constellation/microscopium,میکروسکوپ,1
+constellation/monoceros,تک‌شاخ,1
+constellation/musca,مگس جنوبی,1
+constellation/norma,گونیا,1
+constellation/octans,هشتک,1
+constellation/ophiuchus,مارافسا/مارگیر/ماردار,1
+constellation/orion,اوریون,1
+constellation/pavo,طاووس,1
+constellation/pegasus,اسب بال‌دار,1
+constellation/perseus,پرسیوس,1
+constellation/phoenix,ققنوس,1
+constellation/pictor,سه‌پایه,1
+constellation/pisces,ماهی (حوت),1
+constellation/piscis_austrinus,ماهی جنوبی,1
+constellation/puppis,دم کشتی,1
+constellation/pyxis,قطب‌نما,1
+constellation/reticulum,تاربست,1
+constellation/sagitta,پیکان,1
+constellation/sagittarius,کمان (قوس),1
+constellation/scorpius,عقرب,1
+constellation/sculptor,سنگتراش,1
+constellation/scutum,سپر,1
+constellation/serpens_caput,سر مار,1
+constellation/serpens_cauda,دم مار,1
+constellation/sextans,سدس,1
+constellation/taurus,گاو (ثور),1
+constellation/telescopium,تلسکوپ,1
+constellation/triangulum,سه‌سو,1
+constellation/triangulum_australe,مثلث جنوبی,1
+constellation/tucana,توکان,1
+constellation/ursa_major,خرس بزرگ,1
+constellation/ursa_minor,خرس کوچک,1
+constellation/vela,بادبان,1
+constellation/virgo,دوشیزه,1
+constellation/volans,ماهی پرنده,1
+constellation/vulpecula,روباهک,1
+dso/blue_snowball_nebula,سحابی گلوله برفی آبی,1
+dso/blue_snowball_nebula,NGC ۷۶۶۲,0
+dso/blue_snowball_nebula,کالدول ۲۲,0
+dso/centaurus_a,سنتاروس A,1
+dso/centaurus_a,NGC ۵۱۲۸,0
+dso/coathanger,کت‌هنگر,1
+dso/coathanger,خوشه بروکی,0
+dso/coathanger,Collinder ۳۹۹,0
+dso/coma_star_cluster,خوشه ستاره‌ای کوما,1
+dso/coma_star_cluster,خوشه کوما برنیسز,0
+dso/coma_star_cluster,Melotte ۱۱۱,0
+dso/cygnus_x_1,دوتایی سیاهچاله,1
+dso/cygnus_x_1,سیاهچالهٔ ستاره‌ای,0
+dso/double_cluster,خوشه دوگانه,1
+dso/double_cluster,h و χ پرسئوس,0
+dso/double_cluster,NGC 869 و NGC 884,0
+dso/double_cluster,کالدول ۱۴,0
+dso/eta_carinae_nebula,سحابی اتا کارینا,1
+dso/eta_carinae_nebula,سحابی کارینا,0
+dso/exposed_cranium_nebula,سحابی جمجمه برملا,1
+dso/ghost_of_jupiter,شبح مشتری,1
+dso/ghost_of_jupiter,NGC ۳۲۴۲,0
+dso/ghost_of_jupiter,کالدول ۵۹,0
+dso/hdf,زمینه ژرف هابل,1
+dso/hdf,زمینه ژرف هابل,0
+dso/helix_nebula,سحابی هلیکس,1
+dso/helix_nebula,چشم خدا,0
+dso/helix_nebula,NGC ۷۲۹۳,0
+dso/helix_nebula,کالدول ۶۳,0
+dso/hyades,هیادس,1
+dso/hyades,Melotte ۲۵,0
+dso/hyades,کالدول ۴۱,0
+dso/jewel_box,جعبه جواهر,1
+dso/jewel_box,جعبه جواهر هرشل,0
+dso/jewel_box,خوشه کاپا کروسیس,0
+dso/jewel_box,NGC ۴۷۵۵,0
+dso/lmc,ابر ماژلانی بزرگ,1
+dso/lmc,Nubecula Major,0
+dso/m1,سحابی خرچنگ,1
+dso/m1,NGC ۱۹۵۲,0
+dso/m101,کهکشان فرفره,1
+dso/m101,NGC ۵۴۵۷,0
+dso/m102,کهکشان دوک,1
+dso/m104,کهکشان سومبررو,1
+dso/m104,NGC ۴۵۹۴,0
+dso/m11,خوشه اردک وحشی,1
+dso/m13,خوشه کروی هرکول,1
+dso/m13,خوشه کروی هرکول,0
+dso/m13,NGC ۶۲۰۵,0
+dso/m16,سحابی عقاب,1
+dso/m16,NGC ۶۶۱۱,0
+dso/m20,سحابی سه‌تکه,1
+dso/m24,ابر ستاره‌ای کمان,1
+dso/m27,سحابی دمبل,1
+dso/m31,کهکشان آندرومدا,1
+dso/m31,NGC ۲۲۴,0
+dso/m33,کهکشان مثلث,1
+dso/m40,وینکه ۴,1
+dso/m42,سحابی جبار,1
+dso/m43,سحابی دمیران,1
+dso/m44,خوشه کندوی عسل,1
+dso/m44,خوشه کندوی عسل,0
+dso/m44,NGC ۲۶۳۲,0
+dso/m45,پليادها,1
+dso/m45,خوشه پروین (ثریا),0
+dso/m51,کهکشان گرداب,1
+dso/m51,NGC ۵۱۹۴,0
+dso/m57,سحابی حلقه ای,1
+dso/m6,خوشه پروانه,1
+dso/m6,NGC ۶۴۰۵,0
+dso/m63,کهکشان آفتابگردان,1
+dso/m64,کهکشان چشم سیاه,1
+dso/m65,ام۶۵,1
+dso/m65,Leo Triplet,0
+dso/m66,ام۶۶,1
+dso/m66,Leo Triplet,0
+dso/m7,دم عقرب,1
+dso/m7,خوشه بطلمیوس,0
+dso/m7,NGC ۶۴۷۵,0
+dso/m74,کهکشان شبح,1
+dso/m76,سحابی دمبل کوچک,1
+dso/m8,سحابی مرداب,1
+dso/m81,کهکشان بود,1
+dso/m82,کهکشان سیگار,1
+dso/m83,کهکشان فرفره جنوبی,1
+dso/m97,سحابی جغد,1
+dso/n47_tucanae,۴۷ توکانه,1
+dso/n47_tucanae,۴۷ Tuc,0
+dso/n47_tucanae,NGC ۱۰۴,0
+dso/ngc_6543,سحابی چشم گربه,1
+dso/north_america_nebula,سحابی آمریکای شمالی,1
+dso/north_america_nebula,کالدول 20,0
+dso/omega_centauri,خوشه کروی امگا قنطورس,1
+dso/omega_centauri,ω Centauri,0
+dso/saturn_nebula,سحابی زحل,1
+dso/saturn_nebula,NGC ۷۰۰۹,0
+dso/saturn_nebula,کالدول ۵۵,0
+dso/sculptor_galaxy,کهکشان مجسمه‌ساز,1
+dso/sculptor_galaxy,کهکشان سکه نقره‌ای,0
+dso/sculptor_galaxy,کهکشان سکه نقره‌ای,0
+dso/sculptor_galaxy,NGC ۲۵۳,0
+dso/sgr_a_star,Sgr A*,1
+dso/sgr_a_star,سیاهچاله,0
+dso/sgr_a_star,مرکز کهکشان,0
+dso/smc,ابر ماژلانی کوچک,1
+dso/smc,Nubecula Minor,0
+dso/t_crb,T کرونا بورئالیس,1
+dso/t_crb,ستاره درخشان,0
+dso/tarantula_nebula,سحابی تارانتولا,1
+dso/tarantula_nebula,30 دورادوس,0
+dso/willman_1,ویلمن ۱,1
+dso/willman_1,کهکشان بت ویلمن,0
+moon/ariel,آریل,1
+moon/callisto,کالیستو,1
+moon/deimos,دیموس,1
+moon/dione,دیون,1
+moon/europa,اروپا,1
+moon/ganymede,گانیمد,1
+moon/iapetus,یاپتوس,1
+moon/io,ایو,1
+moon/oberon,اوبرون,1
+moon/phobos,فوبوس,1
+moon/rhea,رئا,1
+moon/tethys,تتیس,1
+moon/titan,تیتان,1
+moon/titania,تیتانیا,1
+moon/triton,تریتون,1
+moon/umbriel,آمبریل,1
+planet/jupiter,مشتری,1
+planet/mars,مریخ,1
+planet/mercury,عطارد,1
+planet/moon,ماه,1
+planet/neptune,نپتون,1
+planet/pluto,پلوتون,1
+planet/saturn,زحل,1
+planet/sun,خورشید,1
+planet/uranus,اورانوس,1
+planet/venus,زهره,1
+shower/aquariids,بارش شهابی اتا دلوی,1
+shower/deltaaquariids,بارش شهابی دلتای جنوبی,1
+shower/geminids,بارش شهابی جوزایی,1
+shower/leonids,بارش شهابی اسدی,1
+shower/lyrids,بارش شهابی شلیاقی,1
+shower/orionids,بارش شهابی جباری,1
+shower/perseids,بارش شهابی برساوشی,1
+shower/puppidvelids,بارش شهابی پی‌کشتیدمی,1
+shower/quadrantids,بارش شهابی ربعی,1
+shower/ursids,بارش شهابی دبی,1
+star/achernar,آخرالنهر,1
+star/acrux,آلفا صلیب,1
+star/adhara,عذارا,1
+star/alcyone,نیرثریا,1
+star/aldebaran,دبران,1
+star/alderamin,بازوی راست,1
+star/algenib,گاما پگاسوس,1
+star/algieba,جبهه,1
+star/algol,رأس‌الغول,1
+star/alhena,هنعه (میسان),1
+star/alioth,جون,1
+star/alkaid,قائد,1
+star/alnair,نیر,1
+star/alnath,نطح,1
+star/alnilam,نظام,1
+star/alphard,قلب‌الفرد,1
+star/alphekka,فکه,1
+star/alpheratz,سرةالفرس,1
+star/altair,کرکس پرنده,1
+star/ankaa,عنقا,1
+star/antares,قلب‌العقرب,1
+star/arcturus,ژوبین‌دار,1
+star/arneb,ارنب,1
+star/betelgeuse,ابط الجوزا / آلفای شکارچی,1
+star/canopus,سهیل,1
+star/capella,سروش (عیوق),1
+star/caph,کف‌الخضیب,1
+star/castor,سرپیشین,1
+star/deneb,دنب,1
+star/denebola,ذنب‌الاسد,1
+star/diphda,ضفدع,1
+star/dubhe,دبه,1
+star/e_lyrae,اپسیلون شلیاق,1
+star/enif,انف (اسب بالدار),1
+star/etamin,گاما اژدها,1
+star/fomalhaut,دهان ماهی,1
+star/hadar,بتا قنطورس (حضار),1
+star/hamal,حمل,1
+star/izar,ازار,1
+star/j003712+535400,Fulu,1
+star/j004912+574912,Achird,1
+star/j005624+591048,Castula,1
+star/j010824-551500,Wurren,1
+star/j011348+073448,Revati,1
+star/j012212+453148,Adhil,1
+star/j012548+601424,Ruchbah,1
+star/j013112+152100,Alpherg,1
+star/j013636+412436,Titawin,1
+star/j013748+483748,Nembus,1
+star/j014536+090936,Torcular,1
+star/j015136-101948,Baten Kaitos,1
+star/j015248+293448,Mothallah,1
+star/j015436+204836,Sheratan,1
+star/j015436+634012,Segin,1
+star/j020148+024536,Alrescha,1
+star/j020336+421948,Almach,1
+star/j024312+031424,Kaffaljidhma,1
+star/j024800+291500,Lilii Borea,1
+star/j024948+271536,Bharani,1
+star/j025024+555400,Miram,1
+star/j025100-210000,Angetenar,1
+star/j025624-085400,Azha,1
+star/j025812-401800,Acamar,1
+star/j030936+445136,Misam,1
+star/j031124+194348,Botein,1
+star/j031200-285924,Dalim,1
+star/j031536-084912,Zibal,1
+star/j033300-092736,Ran,1
+star/j034312-094612,Rana,1
+star/j034424+321724,عتیق,1
+star/j034500+240636,الکترا,1
+star/j034500+241724,سلنو,1
+star/j034500+242812,تایگتا,1
+star/j034536+242212,مایا,1
+star/j034612+235700,مروپه,1
+star/j034612+243300,استروپه,1
+star/j034912+240300,اطلس,1
+star/j034912+240824,پلیونه,1
+star/j035812-133036,ظورق,1
+star/j035848+354724,منکب,1
+star/j041200-065024,بید,1
+star/j041500-073824,کید,1
+star/j041948+153748,پریما هیادوم,1
+star/j042248+173224,سکوندا هیادوم,1
+star/j042400-340112,بیمیم,1
+star/j042848+155212,چاموکوی,1
+star/j042848+191048,عین,1
+star/j043524-303336,ثیمین,1
+star/j043824-141800,سسپتروم,1
+star/j044948+065736,ثابت,1
+star/j045700+331012,حساله,1
+star/j050148+434912,الماز,1
+star/j050224+410448,ساکلاتنی,1
+star/j050636+411348,هائدوس,1
+star/j050748-050524,کورسا,1
+star/j052512+062100,بلاتریکس,1
+star/j052812-204536,نهال,1
+star/j053148-001800,منطقه,1
+star/j053524+095548,میسا,1
+star/j053524-055436,هاتیسا,1
+star/j053748+210824,تیانگوان,1
+star/j053936-340412,فاکت,1
+star/j054048-015624,نطاق,1
+star/j055100-354612,وزن,1
+star/j055924+445700,منکالینان,1
+star/j060000+371236,محاصم,1
+star/j060748-371500,القرود,1
+star/j061500+223036,پروپوس,1
+star/j062024-300336,فرود,1
+star/j062248+223036,تجات,1
+star/j062248-175736,مرزم,1
+star/j064348+250748,مبسوطه,1
+star/j064500+125400,الزر,1
+star/j070148-275548,نگنورگانیتی,1
+star/j070336-153748,مولیفین,1
+star/j070412+203412,مقبوضه,1
+star/j070824-262324,وزن,1
+star/j072024+215848,وسط,1
+star/j072400-291800,الذرا,1
+star/j072700+081724,غمیصا,1
+star/j073900+343448,جیشویی,1
+star/j074912-245136,آزمیدی,1
+star/j080336-400000,نائوس,1
+star/j080748-241800,تورس,1
+star/j081200+173900,تگمین,1
+star/j081648+091124,طرف,1
+star/j082024+240112,پیاوتوس,1
+star/j082248+431124,السیاوکات,1
+star/j082248-593036,آویور,1
+star/j083000+604312,موسیدا,1
+star/j083900+032024,مینچیر,1
+star/j084312+212812,اسلوس بوریالیس,1
+star/j084424+180900,اسلوس استرالیس,1
+star/j084500-544236,السفینه,1
+star/j084648+062512,آشلشا,1
+star/j085248+281948,کوپرنیکوس,1
+star/j085812+115136,اکوبنس,1
+star/j085924+480224,تالیثا,1
+star/j090336+470936,الکافرا,1
+star/j090748-432548,سهیل,1
+star/j090936+220300,ناهن,1
+star/j091312-694312,میاپلاسیدوس,1
+star/j091648-591648,اسپیدیسکه,1
+star/j092212-550036,مارکب,1
+star/j092848+453600,اینترکروس,1
+star/j093148+225812,الطرف,1
+star/j093936-010824,اوکدا,1
+star/j094124+095324,سوبرا,1
+star/j095136-145100,ژانگ,1
+star/j095248+260036,راس‌الاسد,1
+star/j095436-190036,فلیس,1
+star/j101648+232512,الضفیره,1
+star/j101648+425436,تانیای شمالی,1
+star/j102212+413000,تانیای جنوبی,1
+star/j105324+341312,پراسیپوا,1
+star/j105924+402548,چالوان,1
+star/j110000-181800,الکس,1
+star/j111424+152548,خرتان,1
+star/j111424+203112,زوسما,1
+star/j111800+313224,الولای جنوبی,1
+star/j111836+330524,الولای شمالی,1
+star/j113112+691948,گیاوسار,1
+star/j114612+474648,تایانگ‌شو,1
+star/j115024+014612,زاویاوا,1
+star/j120524+765436,توناتیوه,1
+star/j120824-244348,الشیبا,1
+star/j121500-584500,ایمای,1
+star/j121536+570148,مگرز,1
+star/j121536-173224,جناح,1
+star/j121948-004012,زانیا,1
+star/j122136-602400,گینان,1
+star/j123000-163112,الغراب,1
+star/j123112-570636,گاکروکس,1
+star/j123336+412136,چارا,1
+star/j123412-232400,کراس,1
+star/j124124-012700,پورریما,1
+star/j124500+452624,لا سوپربا,1
+star/j124724+664724,تیان‌یی,1
+star/j124800-594124,میموزا,1
+star/j125512+652624,تای‌یی,1
+star/j125548+032400,مینلاوا,1
+star/j125548+381912,کور کارولی,1
+star/j131012+173148,دیادم,1
+star/j132400+545548,میزار,1
+star/j132512+545924,الکور,1
+star/j133448-003600,هزه,1
+star/j135436+182400,مفرید,1
+star/j140412+642248,ثعبان,1
+star/j140636-362212,منکنت,1
+star/j141236-101612,کانگ,1
+star/j141612+460524,شوانگه,1
+star/j141612-060000,سیرما,1
+star/j141912-132212,خامبالیا,1
+star/j142812-021348,الجعفر,1
+star/j143148+381836,سگینوس,1
+star/j143936-605024,تولیمان,1
+star/j144912+460712,مرگا,1
+star/j145100-160224,زوبن‌الجنوبی,1
+star/j150148+402324,نکار,1
+star/j150412-251648,براکیوم,1
+star/j151648-092248,زوبن‌الشمالی,1
+star/j152100+714948,فرقد,1
+star/j152436+372248,الکالوروپس,1
+star/j152512+585812,اداسیچ,1
+star/j152736+290636,نوساکان,1
+star/j153524-144724,زوبن‌الحقرابی,1
+star/j154836+180824,گودجا,1
+star/j155700-291236,اکلیل,1
+star/j155848-260636,فانگ,1
+star/j160036-223712,جبهه,1
+star/j160524-194836,عقرب,1
+star/j160748+170300,مارسیک,1
+star/j161200-192736,جبهه,1
+star/j161424-034124,ید پرایور,1
+star/j161836-044124,ید پوستریور,1
+star/j162100-253524,النیات,1
+star/j162400+613036,آتبین,1
+star/j162512+140148,کوجام,1
+star/j163000+212924,کورنه‌فوروس,1
+star/j163112+015848,مارفیک,1
+star/j163600-281312,پایکائوهاله,1
+star/j164836-690148,آتریا,1
+star/j165024-341724,لاراوگ,1
+star/j165136-380300,زامیدیمورا,1
+star/j165212-380112,پیپیریما,1
+star/j170524+542812,الراکیس,1
+star/j170900+654236,الذئبه,1
+star/j171012-154348,سابیک,1
+star/j171424+142324,رأس‌الجاثی,1
+star/j171500+245024,سارین,1
+star/j171536-263524,گونیبو,1
+star/j173036+260636,ماسیم,1
+star/j173036+521800,راستابان,1
+star/j173036-371800,لسات,1
+star/j173224+863524,ییلدون,1
+star/j173712-430000,سارگاس,1
+star/j174200+720900,دزیبان,1
+star/j174312+043412,سبالرای,1
+star/j174348+534800,الروبا,1
+star/j174424-514948,سروانتس,1
+star/j174948-370224,فویو,1
+star/j175324+565212,گرومیوم,1
+star/j180600-302512,الناسل,1
+star/j181348-210336,پولیس,1
+star/j182100-294948,کاوس مدیا,1
+star/j182548+653336,فافنیر,1
+star/j182812-252512,کاوس بورئالیس,1
+star/j184348+363336,شی‌هه,1
+star/j184948+332136,شلیاک,1
+star/j185400-224424,عین‌الرامی,1
+star/j185624+041200,آلیا,1
+star/j185848+324124,سولافات,1
+star/j190224-295248,آسلا,1
+star/j190524+135136,عقاب,1
+star/j190936-210112,البالدا,1
+star/j190936-375400,مریدیانا,1
+star/j191236+673936,آلتایس,1
+star/j191348+390900,الادفار,1
+star/j192248-442736,ارکاب پرایور,1
+star/j192324-444800,ارکاب پوستریور,1
+star/j192400-403712,رکبات,1
+star/j192848+244012,آنسر,1
+star/j193036+275736,آلبیرئو,1
+star/j193224+694012,السافی,1
+star/j194012+180036,شام,1
+star/j194500+450748,فواریس,1
+star/j194612+103636,تارازد,1
+star/j195400+082736,لیبرتاس,1
+star/j195512+062436,الشاین,1
+star/j195548-261800,تِرِبِلوم,1
+star/j201800-123224,الجدی,1
+star/j202024-124536,الشات,1
+star/j202100-144648,دبیح,1
+star/j202212+401536,صدر,1
+star/j202548-564348,طاووس,1
+star/j203300+111800,الدلفین,1
+star/j203748+143600,روتانف,1
+star/j203936+155436,سوالوسین,1
+star/j204612+335812,الجناح,1
+star/j204724-093000,البالی,1
+star/j205812+105024,موزیکا,1
+star/j210900-885736,پولاریس استرالیس,1
+star/j211536+051500,کیتالفا,1
+star/j212848+703336,الفیرک,1
+star/j213148-053412,سعدالسعود,1
+star/j213748-075100,بوندا,1
+star/j214012-163936,ناشیرا,1
+star/j214200+511124,ازلفافاژ,1
+star/j214648-160748,ذنب الجدی,1
+star/j215400-372136,الذنب,1
+star/j220336+643748,کرها,1
+star/j220600-001912,سعدالملک,1
+star/j221012+061200,بیهام,1
+star/j221648-074648,آنچا,1
+star/j222136-012324,سعداخبیه,1
+star/j223748-041348,سیتولا,1
+star/j224124+104948,همام,1
+star/j224236-465248,تیاکی,1
+star/j224312+301312,مطر,1
+star/j224948+243600,سعدالباری,1
+star/j225436-154912,اسکَت,1
+star/j225736+204612,هلوتیوس,1
+star/j230336+034912,فم‌السمکه,1
+star/j232024+234424,سالم,1
+star/j232512+232400,الکراب,1
+star/j233112+391424,وریتاته,1
+star/j233936+773748,ارای,1
+star/kaus_australis,قوس جنوبی,1
+star/kochab,کوکب,1
+star/markab,مرکب‌الفرس,1
+star/menkar,منخر,1
+star/merak,مراق,1
+star/mirach,جنب‌المسلسله,1
+star/mirphak,مرفق‌الثریا (جنب),1
+star/nunki,سیگما کمان (نانکی),1
+star/phad,فخْذ,1
+star/polaris,جدی,1
+star/polaris,ستاره شمالی,0
+star/polaris,ستاره قطبی,0
+star/pollux,سرپسین,1
+star/procyon,شعرای شامی,1
+star/rasalhague,آلفا مارافسای,1
+star/regulus,قلب‌الاسد,1
+star/rigel,پای شکارچی,1
+star/rigil_kentaurus_a,آلفا قنطورس,1
+star/rigil_kentaurus_a,آلفا قنطورس,0
+star/rigil_kentaurus_a,آلفا قنطورس,0
+star/rigil_kentaurus_a,آلفا قنطورس,0
+star/saiph,سیف (کاپا شکارچی),1
+star/scheat,ساعد الفرس,1
+star/shaula,لاندا کژدم,1
+star/shedir,صدر,1
+star/sirius,شعرا,1
+star/sirius,شباهنگ (شعرای یمانی),0
+star/spica,بی‌ژوبین,1
+star/unukalhai,عنق‌الحیه (گردن مار),1
+star/vega,کرکس نشسته (وگا),1
+star/vindemiatrix,انگورچین,1
+dso/v838_mon,تکشاخ وی۸۳۸,1

@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+    <string name="eula_text" translation_description="A condensed, user-friendly version of the EULA and Privacy Policy with a link to the full terms. Please do not change the &lt; and &gt; markup"><![CDATA[<h1>Dobrodošli v Sky Map</h1>
+<p>Da bi začeli z opazovanjem zvezd, si oglejte ta kratek povzetek naših pogojev.</p>
+<h2>Zasebnost</h2>
+<p><b>Ne vemo, kdo ste.</b> Zbiramo anonimne podatke o uporabi, ki nam pomagajo odpravljati napake in izboljšati funkcije. Od tega se lahko kadar koli odjavite v meniju z nastavitvami.</p>
+<h2>Varnost in odgovornost</h2>
+<p>Sky Map je na voljo »tak kot je«. Uporabljajte ga varno – ne odgovarjamo za škodo ali poškodbe (kot je bolečina v vratu!), ki bi nastale zaradi uporabe aplikacije.</p>
+<h2>Odprta koda</h2>
+<p>Sky Map je projekt iz ljubezni. Našo izvorno kodo lahko prosto uporabljate, vendar prosimo, da spoštujete našo blagovno znamko in logotipe.</p>
+<p>Celoten pravni dokument si lahko preberete tukaj: <a href="https://github.com/sky-map-team/stardroid/blob/master/TERMS.md">Celotni pogoji in pravilnik o zasebnosti</a></p>]]></string>
+
+    <!-- Rendered last on the terms screen, after the permissions notice, so the sentence the
+         Accept button refers to is the final thing the user reads. -->
+    <string name="eula_agree_line" translation_description="Closing line of the first-launch terms screen, immediately above the Accept button. Please do not change the markup"><![CDATA[<br/>
+<p><i>S klikom na gumb "Sprejmi" soglašate s temi pogoji.</i></p>]]></string>
+
+    <!--
+      The access-permission notice (KISA / Korean Network Act art. 22-2, and good practice
+      everywhere). Rendered in two places from this one key so it is translated once: appended
+      to the first-launch EULA screen, and included in the help document as a permanent,
+      re-readable copy (HelpScreen.helpSections2). Every runtime permission Sky Map declares
+      must appear here, labelled required or optional, with its grounds and — for optional
+      ones — the user\'s right to refuse.
+    -->
+    <string name="permissions_notice" translation_description="Legally-required disclosure of the device permissions the app requests, why it requests them, and the user\'s right to refuse the optional ones. Shown on the first-launch terms screen and in Help. Please do not change the markup"><![CDATA[<h2>Dovoljenja</h2>
+<p><b>Sky Map nima obveznih dovoljenj.</b> Vsa spodnja dovoljenja so izbirna – kateremukoli se lahko odrečete in še vedno uporabljate aplikacijo. Sky Map ob zagonu nikoli ne sprašuje po dovoljenjih: vsako dovoljenje se zahteva šele takrat, ko prvič uporabite funkcijo, ki ga potrebuje, posamezno dovoljenje pa lahko kadar koli podelite ali prekličete v napravi pod <b>Nastavitve → Aplikacije → Sky Map → Dovoljenja</b>.</p>
+<h3>Lokacija – izbirno</h3>
+<p><b>Do česa se dostopa:</b> do vaše približne lokacije.</p>
+<p><b>Zakaj:</b> katere zvezde so nad vami, je odvisno od tega, kje ste, zato Sky Map uporablja vašo približno lokacijo za izris pravilnega neba.</p>
+<p><b>Če zavrnete:</b> namesto tega lahko vnesete ime kraja ali koordinate, celotna aplikacija pa še naprej deluje.</p>
+<blockquote>Vaša lokacija se v vaši napravi uporablja za izris neba. Nikoli se ne pošilja nam.</blockquote>
+<h3>Kamera – izbirno</h3>
+<p><b>Do česa se dostopa:</b> do predogleda kamere.</p>
+<p><b>Zakaj:</b> način skozi kamero izriše nebo prek slikovnega prikaza kamere v živo, tako da lahko zemljevid primerjate s tem, kar dejansko gledate.</p>
+<p><b>Če zavrnete:</b> vsak drug način deluje normalno.</p>
+<blockquote>Sky Map nikoli ne snema prikaza kamere ali ga pošilja nam. Prikazan je na zaslonu in nato zavržen – razen če delite sliko: izbira postavitve AR v meniju za skupno rabo shrani tisto eno sliko v vašo napravo in jo preda izbrani aplikaciji. Dokler sami ne zahtevate, se ne deli ničesar.</blockquote>
+<h3>Obvestila – izbirno</h3>
+<p><b>Do česa se dostopa:</b> do dovoljenja za prikazovanje obvestil.</p>
+<p><b>Zakaj:</b> da vas obvestimo o viških meteorskih deževjev in tem, kaj je vredno videti nocoj, če to zahtevate.</p>
+<p><b>Če zavrnete:</b> nič drugega se ne spremeni – ta obvestila ostanejo izklopljena, dokler jih ne vklopite.</p>]]></string>
+</resources>

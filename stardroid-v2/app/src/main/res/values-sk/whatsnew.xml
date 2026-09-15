@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h1>Pozdravte nový Sky Map</h1>
+<h2>Sky Map bol kompletne prebudovaný</h2>
+<p>Toto je najväčšia aktualizácia v histórii aplikácie Sky Map.<br/><br/>
+Je to úplne nová aplikácia pod kapotou — nový renderovací engine, nový astronomický engine, nové rozhranie — postavená od základov, aby bola rýchlejšia, presnejšia a príjemnejšia pre oči. Tu sú vylepšenia:</p>
+<h2>Presnejšie</h2>
+<p>Mesiac je teraz umiestnený presne tam, kde ho <em>vy</em> vidíte na oblohe, nie tam, kde by sa javil zo stredu Zeme — korekcia až o celý stupeň, dve šírky Mesiaca. Zatmenia a konjunkcie sa tiež dejú v správnu minútu: Slnko a Mesiac sú teraz výsledkom plných analytických výpočtov namiesto hrubších aproximácií klasického Sky Mapu, ktoré sa mohli líšiť až o pol hodiny.</p>
+<h2>Slnečná sústava, ktorá vyzerá reálne</h2>
+<p>Fáza Mesiaca je vypočítaná z jeho skutočnej geometrie, nie vybraná z ôsmich predvolených obrázkov ako predtým. Hranica medzi svetlom a tmou padá presne tam, kde má, každú noc, a muž na Mesiaci sa už neotáča, ako mesiac plynie. Venuša a Merkúr teraz tiež ukazujú fázy, zväčšujú sa z malého plného disku na široký kosák, keď sa blížia k Zemi, a Mars získava svoju vypuklú fázu. Priblížte a sledujte, ako sa menia. Máte možnosť zobraziť planéty ako glyfy zhruba usporiadané podľa ich skutočnej fyzickej veľkosti, alebo prepnúť na ich <em>skutočné</em> veľkosti na oblohe. Slnko a Mesiac sú približne veľkosti vášho končeka prsta na dĺžku paže, zatiaľ čo planéty sa zobrazujú len ako bodky, kým nepriblížite.</p>
+<h2>Ťuknite na čokoľvek, aby ste sa o tom dozvedeli</h2>
+<p>Identifikácia ťuknutím je teraz predvolene zapnutá — namierte telefón na oblohu a ťuknite na akýkoľvek označený objekt pre jeho informačnú kartu: fotografiu, popis, zaujímavosť a časy, kedy najbližšie vychádza a zapadá z miesta, kde stojíte.</p>
+<h2>Nájdite viac, nájdite to rýchlejšie</h2>
+<p>268 novo pridaných názvov hviezd IAU teraz označuje mapu a hviezdy môžete vyhľadávať aj podľa ich Bayerovho alebo Flamsteedovho označenia — „Alpha Cygni“, „α Cyg“ a „50 Cyg“ nájdu všetky Deneb.</p>
+<h2>Hodvábne hladké, dokonca aj na najnovších telefónoch</h2>
+<p>Preťahovanie alebo ťahanie oblohy na obrazovke s vysokou obnovovacou frekvenciou sa už nezasekáva — posúvanie, hybnosť a funkcia „letieť k“ pri vyhľadávaní teraz sledujú skutočnú snímkovú frekvenciu vášho displeja, až do 120 Hz, namiesto pevných 20 aktualizácií za sekundu.</p>
+<h2>Vedzte presne, kam mierite</h2>
+<p>Nové živé zobrazenie ukazuje rektascenziu a deklináciu, výšku a azimut s bodom kompasu a vaše aktuálne zorné pole — priamo na mape.</p>
+<h2>Vykreslené zatmenia Mesiaca</h2>
+<p>Mesiac teraz zobrazuje svoj skutočný medenočervený odtieň počas zatmenia Mesiaca priamo na mape, a jeho informačná karta, súhrn oblohy na dnešnú noc a odpočítavanie vedia, kedy sa blíži.</p>
+<h2>Svieži vzhľad</h2>
+<p>Nová farebná schéma „Hlboký vesmír / Hviezdne zlato“, ostrejšie umelecké diela Slnka/Mesiaca/planét vyhladené a zmiešané na každej úrovni priblíženia, prebudovaná úvodná prehliadka, ktorá vás prevedie živou aplikáciou namiesto statických snímok obrazovky (prehrateľná kedykoľvek z menu), a osviežená uvítacia obrazovka vytvorená z nového zachytenia oblohy v aplikácii.</p>
+<h2>Jasnejšie o vašom súkromí</h2>
+<p>Obrazovka Podmienok a Pomocník teraz presne vysvetľujú, na čo sa používa každé povolenie zariadenia, a aplikácia už nepožaduje povolenie na reklamné ID, ktoré nikdy nepotrebovala.</p>
+<h2>¡Hola! Bonjour! Hallo!</h2>
+<p>Sky Map teraz hovorí 28 jazykmi, plne preložený.</p>
+<h2>A toto je len začiatok...</h2>
+<p>Máme mnoho dlho žiadaných funkcií, ktoré prídu veľmi skoro.</p>]]></string>
+    <string name="whats_new_support" translation_description="HTML paragraph inviting users to support the project, shown in the What's new dialog and the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h1>Podporte Sky Map</h1><p>Sky Map je bezplatná a s otvoreným zdrojovým kódom. Ak ju považujete za užitočnú, zvážte podporu vývoja na našej stránke <a href="https://github.com/sky-map-team/stardroid/?tab=readme-ov-file#support-the-project">GitHub</a> alebo <a href="https://buymeacoffee.com/skymapdevs?utm_source=skymap&amp;utm_medium=app&amp;utm_campaign=whatsnew">nám kúpte kávu</a>.</p>]]></string>
+    <string name="beta_user_help_text" translation_description="Usually-empty HTML content shown to beta testers asking for feedback, appended in the What's new dialog and the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[]]></string>
+</resources>

@@ -1,0 +1,538 @@
+<title>Sky Map — Through-Camera (AR) Mode Mockup</title>
+<style>
+  :root {
+    --bg: #131720; --surface: #1b2230; --surface2: #222b3d; --text: #e7ecf5;
+    --muted: #93a0b4; --accent: #f2b04a; --accent-ink: #131720; --line: #2a3346;
+    --good: #6fbf8a; --chipbg: rgba(242, 176, 74, 0.14);
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #f6f3ec; --surface: #fffdf8; --surface2: #f0ebdf; --text: #24282f;
+      --muted: #6a6f78; --accent: #b4711d; --accent-ink: #fffdf8; --line: #e2dcce;
+      --good: #2e7d4f; --chipbg: rgba(180, 113, 29, 0.12);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #131720; --surface: #1b2230; --surface2: #222b3d; --text: #e7ecf5;
+    --muted: #93a0b4; --accent: #f2b04a; --accent-ink: #131720; --line: #2a3346;
+    --good: #6fbf8a; --chipbg: rgba(242, 176, 74, 0.14);
+  }
+  :root[data-theme="light"] {
+    --bg: #f6f3ec; --surface: #fffdf8; --surface2: #f0ebdf; --text: #24282f;
+    --muted: #6a6f78; --accent: #b4711d; --accent-ink: #fffdf8; --line: #e2dcce;
+    --good: #2e7d4f; --chipbg: rgba(180, 113, 29, 0.12);
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg); color: var(--text); margin: 0;
+    font: 15px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  .cond { font-family: "Avenir Next Condensed", "Arial Narrow", "Roboto Condensed", sans-serif; }
+  .mono { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+          font-variant-numeric: tabular-nums; }
+  header { max-width: 1100px; margin: 0 auto; padding: 40px 24px 8px; }
+  .eyebrow { letter-spacing: 0.14em; text-transform: uppercase; font-size: 12.5px;
+             font-weight: 600; color: var(--accent); }
+  h1 { font-family: "Avenir Next Condensed", "Arial Narrow", sans-serif;
+       font-size: clamp(28px, 4vw, 40px); font-weight: 600; letter-spacing: 0.01em;
+       margin: 6px 0 4px; text-wrap: balance; }
+  header p { color: var(--muted); max-width: 62ch; margin: 6px 0 0; }
+  main { max-width: 1100px; margin: 0 auto; padding: 24px; display: grid;
+         grid-template-columns: 400px 1fr; gap: 32px; align-items: start; }
+  @media (max-width: 880px) { main { grid-template-columns: 1fr; } }
+
+  /* ---------- phone ---------- */
+  .phonewrap { position: sticky; top: 24px; }
+  @media (max-width: 880px) { .phonewrap { position: static; } }
+  .phone { width: 380px; max-width: 100%; border-radius: 34px; padding: 10px;
+           background: #06070a; border: 1px solid #2c3242;
+           box-shadow: 0 24px 60px rgba(0,0,0,0.45); margin: 0 auto; }
+  .screen { position: relative; border-radius: 26px; overflow: hidden; background: #000;
+            height: 720px; touch-action: none; cursor: grab; }
+  .screen.dragging { cursor: grabbing; }
+  .screen canvas, .screen .scrim { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .scrim { background: #000; pointer-events: none; }
+  /* in-phone chrome */
+  .rail { position: absolute; left: 10px; top: 50%; transform: translateY(-50%);
+          display: flex; flex-direction: column; gap: 14px; }
+  .rail span { width: 34px; height: 34px; border-radius: 50%; display: grid;
+               place-items: center; font-size: 15px; color: #cfd8ea;
+               background: rgba(20, 26, 40, 0.55); border: 1px solid rgba(255,255,255,0.10); }
+  .rail span.on { color: #ffd489; border-color: rgba(255, 212, 137, 0.55); }
+  .zoneb { position: absolute; right: 10px; bottom: 18px; display: flex;
+           flex-direction: column; gap: 12px; }
+  .zoneb button { width: 42px; height: 42px; border-radius: 50%; border: 1px solid
+                  rgba(255,255,255,0.14); background: rgba(20, 26, 40, 0.6);
+                  color: #e8edf7; font-size: 17px; cursor: pointer; }
+  .zoneb button.active { background: rgba(255, 212, 137, 0.22);
+                         border-color: rgba(255, 212, 137, 0.6); }
+  .alignchip { position: absolute; top: 14px; left: 50%; transform: translateX(-50%);
+               border-radius: 999px; border: 1px solid rgba(255, 212, 137, 0.6);
+               background: rgba(24, 20, 8, 0.72); color: #ffd489; font-size: 13px;
+               padding: 5px 12px; cursor: pointer; display: none; }
+  .alignchip.show { display: block; }
+  .fovtag { position: absolute; top: 14px; right: 12px; font-size: 11px; color: #aab6cc;
+            background: rgba(20,26,40,0.55); border: 1px solid rgba(255,255,255,0.10);
+            border-radius: 8px; padding: 3px 8px; }
+  .shutter { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%);
+             width: 54px; height: 54px; border-radius: 50%; cursor: pointer;
+             border: 3px solid rgba(255,255,255,0.85); background: rgba(255,255,255,0.18); }
+  .shutter:active { background: rgba(255,255,255,0.5); }
+  .exporow { position: absolute; bottom: 26px; left: 16px; width: 132px; display: flex;
+             align-items: center; gap: 8px; color: #cfd8ea; font-size: 13px; }
+  .exporow input { width: 100%; accent-color: #ffd489; }
+  .snack { position: absolute; left: 12px; right: 12px; bottom: 88px; border-radius: 10px;
+           background: rgba(28, 33, 46, 0.95); color: #e8edf7; font-size: 13px;
+           padding: 10px 12px; display: none; align-items: center; gap: 10px;
+           justify-content: space-between; }
+  .snack.show { display: flex; }
+  .snack button { background: none; border: none; color: #ffd489; font-weight: 700;
+                  letter-spacing: 0.06em; cursor: pointer; font-size: 12.5px; }
+  .sheet { position: absolute; left: 0; right: 0; bottom: 0; border-radius: 18px 18px 0 0;
+           background: rgba(18, 22, 32, 0.97); border-top: 1px solid rgba(255,255,255,0.12);
+           color: #e8edf7; padding: 16px; display: none; }
+  .sheet.show { display: block; }
+  .sheet h3 { margin: 0 0 4px; font-size: 15px; }
+  .sheet p { margin: 4px 0; font-size: 13px; color: #aab6cc; }
+  .sheet .vals { display: flex; gap: 18px; margin: 10px 0; font-size: 14px; }
+  .sheet .actions { display: flex; gap: 10px; margin-top: 10px; }
+  .sheet .actions button { flex: 1; border-radius: 999px; padding: 9px 0; font-size: 13.5px;
+    cursor: pointer; border: 1px solid rgba(255,255,255,0.2);
+    background: none; color: #e8edf7; }
+  .sheet .actions button.primary { background: #ffd489; color: #1a1508; border: none;
+                                   font-weight: 600; }
+  .sharegrid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 12px 0 2px; }
+  .sharegrid figure { margin: 0; cursor: pointer; }
+  .sharegrid img { width: 100%; border-radius: 10px; border: 2px solid transparent;
+                   display: block; }
+  .sharegrid figure:hover img, .sharegrid figure:focus-visible img {
+    border-color: #ffd489; }
+  .sharegrid figcaption { font-size: 12px; color: #aab6cc; text-align: center;
+                          margin-top: 5px; }
+
+  /* ---------- right column ---------- */
+  .panel { background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
+           padding: 18px 20px; margin-bottom: 18px; }
+  .panel h2 { font-family: "Avenir Next Condensed", "Arial Narrow", sans-serif;
+              font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase;
+              color: var(--muted); margin: 0 0 12px; font-weight: 600; }
+  .ctlrow { display: flex; align-items: center; justify-content: space-between; gap: 16px;
+            padding: 9px 0; border-top: 1px solid var(--line); }
+  .ctlrow:first-of-type { border-top: none; }
+  .ctlrow label.name { font-weight: 600; font-size: 14.5px; }
+  .ctlrow .sub { color: var(--muted); font-size: 13px; display: block; font-weight: 400; }
+  .ctlrow input[type="range"] { width: 150px; accent-color: var(--accent); }
+  .switch { appearance: none; width: 44px; height: 26px; border-radius: 999px;
+            background: var(--surface2); border: 1px solid var(--line); position: relative;
+            cursor: pointer; flex-shrink: 0; transition: background 0.15s; }
+  .switch::after { content: ""; position: absolute; top: 3px; left: 3px; width: 18px;
+                   height: 18px; border-radius: 50%; background: var(--muted);
+                   transition: transform 0.15s, background 0.15s; }
+  .switch:checked { background: var(--chipbg); border-color: var(--accent); }
+  .switch:checked::after { transform: translateX(18px); background: var(--accent); }
+  .switch:focus-visible, .zoneb button:focus-visible, .alignchip:focus-visible,
+  .shutter:focus-visible, .sheet button:focus-visible, .snack button:focus-visible,
+  .sharegrid figure:focus-visible {
+    outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  .q { border-left: 3px solid var(--accent); background: var(--surface);
+       border-radius: 0 12px 12px 0; padding: 13px 16px 13px 15px; margin-bottom: 12px;
+       border-top: 1px solid var(--line); border-right: 1px solid var(--line);
+       border-bottom: 1px solid var(--line); }
+  .q h3 { margin: 0; font-size: 14.5px; display: flex; gap: 8px; align-items: baseline; }
+  .q h3 .qno { color: var(--accent); font-size: 12.5px; letter-spacing: 0.08em; }
+  .q p { margin: 5px 0 0; color: var(--muted); font-size: 13.5px; }
+  .q .lean { display: inline-block; margin-top: 7px; font-size: 11.5px; font-weight: 700;
+             letter-spacing: 0.1em; text-transform: uppercase; color: var(--good); }
+  .q .try { display: inline-block; margin-top: 7px; margin-left: 10px; font-size: 11.5px;
+            letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); }
+  footer { max-width: 1100px; margin: 0 auto; padding: 8px 24px 48px;
+           color: var(--muted); font-size: 13px; }
+  footer a { color: var(--accent); }
+</style>
+
+<header>
+  <div class="eyebrow cond">Sky Map v2 · direction agreed 2026-07-26 (D64) · PR #60</div>
+  <h1>Through-camera mode, drag-to-align &amp; share</h1>
+  <p>A working simulation of the proposed UX. The phone renders the two real planes from the
+     design doc — a camera scene underneath, a transparent star-map surface on top. The map
+     starts misaligned, exactly as real sensors would leave it: <strong>drag the sky until the
+     drawn stars sit on the real ones</strong>, then try the shutter.</p>
+</header>
+
+<main>
+  <div class="phonewrap">
+    <div class="phone">
+      <div class="screen" id="screen" aria-label="Phone screen simulation">
+        <canvas id="cam"></canvas>
+        <div class="scrim" id="scrim"></div>
+        <canvas id="map"></canvas>
+        <div class="rail" aria-hidden="true">
+          <span class="on">✦</span><span class="on">☾</span><span>♆</span><span class="on">▦</span>
+        </div>
+        <button class="alignchip mono" id="chip" title="Alignment correction">⇄ 0.0°</button>
+        <div class="fovtag mono" id="fovtag">FOV 48° · 1.0×</div>
+        <div class="zoneb">
+          <button id="nightbtn" title="Night mode">☾</button>
+          <button id="autobtn" class="active" title="Auto (sensor) mode">◎</button>
+          <button title="More">⋮</button>
+        </div>
+        <div class="exporow" id="exporow">
+          <span aria-hidden="true">☀</span>
+          <input type="range" id="expo" min="-2" max="2" step="0.1" value="0"
+                 aria-label="Exposure compensation">
+        </div>
+        <button class="shutter" id="shutter" title="Share this view" aria-label="Share this view"></button>
+        <div class="snack" id="snack">
+          <span>Map alignment adjusted</span><button id="undo">UNDO</button>
+        </div>
+        <div class="sheet" id="alignsheet" role="dialog" aria-label="Alignment correction">
+          <h3>Alignment correction</h3>
+          <p>Applied to the compass and tilt sensors whenever Auto mode is on. Set only by
+             dragging here — the old Settings adjustment field is retired. In the app these
+             values and Reset live in the controls-visible HUD (separate design) and in
+             Diagnostics; this sheet stands in for that.</p>
+          <div class="vals mono">
+            <span>Azimuth <strong id="azval">0.0°</strong></span>
+            <span>Altitude <strong id="altval">0.0°</strong></span>
+          </div>
+          <div class="actions">
+            <button id="resetbtn">Reset to 0</button>
+            <button class="primary" id="donebtn">Done</button>
+          </div>
+        </div>
+        <div class="sheet" id="sharesheet" role="dialog" aria-label="Share">
+          <h3>Share this sky</h3>
+          <p>Both layouts carry the Sky Map footer and an invitation to download.</p>
+          <div class="sharegrid">
+            <figure tabindex="0" id="shareoverlay"><img alt="Overlay layout preview">
+              <figcaption>Overlay</figcaption></figure>
+            <figure tabindex="0" id="sharesbs"><img alt="Side-by-side layout preview">
+              <figcaption>Side by side</figcaption></figure>
+          </div>
+          <div class="actions"><button id="sharecancel">Cancel</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <section class="panel">
+      <h2>Bench controls</h2>
+      <div class="ctlrow">
+        <label class="name" for="camtoggle">Camera layer
+          <span class="sub">Layers sheet · Display group, next to sky gradient</span></label>
+        <input type="checkbox" class="switch" id="camtoggle" checked>
+      </div>
+      <div class="ctlrow">
+        <label class="name" for="scrimctl">Camera dimmer (scrim)
+          <span class="sub">GL quad over the video — blend &amp; night-vision knob</span></label>
+        <input type="range" id="scrimctl" min="0" max="80" value="35"
+               aria-label="Scrim percentage">
+      </div>
+      <div class="ctlrow">
+        <label class="name" for="zoomctl">Pinch zoom
+          <span class="sub">Drives camera zoomRatio; map FOV follows the lens</span></label>
+        <input type="range" id="zoomctl" min="1" max="4" step="0.1" value="1"
+               aria-label="Zoom ratio">
+      </div>
+      <div class="ctlrow">
+        <label class="name" for="nighttoggle">Night mode
+          <span class="sub">Red map &amp; chrome, camera un-reddened · ~65% scrim
+            floor</span></label>
+        <input type="checkbox" class="switch" id="nighttoggle">
+      </div>
+    </section>
+
+    <section>
+      <div class="q"><h3><span class="qno cond">Q1</span>Compositing model</h3>
+        <p>This mock <em>is</em> the chosen model: two independent planes, source-over blend,
+           scrim in between. Camera2-grade exposure control, if needed, comes via CameraX
+           Camera2Interop — it doesn’t force the GL-external-texture model.</p>
+        <span class="lean">Decided: stacked surfaces</span></div>
+      <div class="q"><h3><span class="qno cond">Q2</span>Where the correction lives</h3>
+        <p>Fresh DataStore keys for both axes
+           (<span class="mono">sensorAzimuthAdjustmentDeg</span> /
+           <span class="mono">sensorAltitudeAdjustmentDeg</span>); the old
+           <span class="mono">manualCompassAdjustmentDeg</span> key and its Settings row are
+           removed — everyone starts from zero, and dragging here is the only setter. No
+           camera (or permission denied) means no correction feature.</p>
+        <span class="lean">Decided: fresh keys, drag-only</span>
+        <span class="try">Try: open the ⇄ chip</span></div>
+      <div class="q"><h3><span class="qno cond">Q3</span>Direct drag vs armed align mode</h3>
+        <p>Dragging adjusts alignment immediately (drag is otherwise unused in Auto mode),
+           with a clear receipt that a correction was applied — snackbar with undo — and an
+           easy reset.</p>
+        <span class="lean">Decided: direct + receipt + reset</span>
+        <span class="try">Try: drag the sky</span></div>
+      <div class="q"><h3><span class="qno cond">Q4</span>Night mode × camera</h3>
+        <p>The modes coexist: night mode reds the map and chrome as today; the camera image
+           is not reddened, and night mode imposes a ~65% scrim floor (simulated here) so
+           the video doesn’t wreck dark adaptation — dim further, never brighter.</p>
+        <span class="lean">Decided: coexist + scrim floor</span>
+        <span class="try">Try: night toggle</span></div>
+      <div class="q"><h3><span class="qno cond">Q5</span>Does camera-on persist?</h3>
+        <p>Never — the camera layer starts off every launch and the camera is released when
+           the app backgrounds or closes. Session state, not a persisted setting.</p>
+        <span class="lean">Decided: always starts off</span></div>
+      <div class="q"><h3><span class="qno cond">Q6</span>Correction visibility</h3>
+        <p>No persistent chip. The correction surfaces in Diagnostics and in a HUD shown only
+           while the on-screen controls are visible — designed separately, alongside FOV and
+           current RA/Dec. The ⇄ chip in this mock stands in for that HUD.</p>
+        <span class="lean">Decided: diagnostics + controls HUD</span></div>
+    </section>
+  </div>
+</main>
+<footer>
+  Design doc: <span class="mono">docs/design/camera-ar-mode.md</span> ·
+  simulated scene — sensor misalignment of 5.5° az / −2.4° alt is baked in; a perfect drag
+  cancels it.
+</footer>
+
+<script>
+(function () {
+  const W = 380, H = 720, DPR = Math.min(window.devicePixelRatio || 1, 2);
+  const cam = document.getElementById('cam'), map = document.getElementById('map');
+  for (const c of [cam, map]) { c.width = W * DPR; c.height = H * DPR; }
+  const cctx = cam.getContext('2d'), mctx = map.getContext('2d');
+  cctx.scale(DPR, DPR); mctx.scale(DPR, DPR);
+
+  // state
+  const misalign = { az: 5.5, alt: -2.4 };       // baked-in sensor error, degrees
+  let corr = { az: 0, alt: 0 };                  // user's drag-to-align correction
+  let prevCorr = null;
+  let camOn = true, night = false, expo = 0, scrimPct = 35, zoom = 1;
+  const BASE_FOV = 48;                            // camera short-side FOV at 1x
+  let fov = BASE_FOV;
+
+  // sky features: deg offsets from view centre at zoom 1. A made-up "Lyra-ish" region.
+  const stars = [
+    { x: -9, y: -14, m: 1.0, n: 'Vega' }, { x: -5.4, y: -10.8, m: 2.6 },
+    { x: -7.2, y: -7.6, m: 2.9 }, { x: -3.4, y: -6.0, m: 3.2 },
+    { x: -1.2, y: -3.0, m: 2.4 }, { x: 3.2, y: 1.4, m: 1.6, n: 'Altair' },
+    { x: 5.4, y: -0.4, m: 2.7 }, { x: 1.4, y: 3.2, m: 2.9 },
+    { x: 9.0, y: -9.0, m: 2.2, n: 'Albireo' }, { x: 11.5, y: -13.5, m: 2.8 },
+    { x: 7.4, y: -16.4, m: 2.1 }, { x: 12.6, y: -5.2, m: 3.0 },
+    { x: -12.5, y: 3.5, m: 3.3 }, { x: -6.5, y: 7.5, m: 3.1 }, { x: 10.5, y: 6.5, m: 3.4 },
+  ];
+  const lines = [[0,1],[1,2],[2,0],[1,3],[3,4],[4,5],[5,6],[4,7],[8,9],[8,10],[8,11],[4,8]];
+  const moon = { x: -3.5, y: 12.5, r: 0.9 };
+
+  const ppd = () => (H / fov);                    // pixels per degree (short side = width…
+  // width is the shorter side in portrait; use W for fidelity:
+  const ppdW = () => (W / fov);
+  const toPx = (fx, fy) => [W / 2 + fx * ppdW(), H / 2 + fy * ppdW()];
+
+  function drawCamera() {
+    const g = cctx; g.clearRect(0, 0, W, H);
+    if (!camOn) {                                  // plain map background (no camera)
+      const grad = g.createLinearGradient(0, 0, 0, H);
+      grad.addColorStop(0, '#03060f'); grad.addColorStop(1, '#0a1226');
+      g.fillStyle = grad; g.fillRect(0, 0, W, H); return;
+    }
+    const gain = Math.pow(2, expo);                // exposure gain
+    const grad = g.createLinearGradient(0, 0, 0, H);
+    grad.addColorStop(0, shade(6, 9, 18, gain)); grad.addColorStop(0.72, shade(10, 13, 24, gain));
+    grad.addColorStop(1, shade(38, 26, 16, gain)); // light-pollution glow at horizon
+    g.fillStyle = grad; g.fillRect(0, 0, W, H);
+    // noise — heavier as gain rises (AE cranking in the dark)
+    const n = Math.floor(340 * gain);
+    for (let i = 0; i < n; i++) {
+      g.fillStyle = 'rgba(' + (150 + Math.random() * 105 | 0) + ',' +
+        (150 + Math.random() * 90 | 0) + ',' + (160 + Math.random() * 60 | 0) + ',' +
+        (0.02 + Math.random() * 0.05 * gain) + ')';
+      g.fillRect(Math.random() * W, Math.random() * H, 1.2, 1.2);
+    }
+    // real stars: only the bright ones survive the sensor, blurred
+    for (const s of stars) {
+      if (s.m > 2.8 && gain < 1.6) continue;
+      const [x, y] = toPx(s.x, s.y);
+      const a = Math.min(0.75, (3.4 - s.m) * 0.18 * gain);
+      if (a <= 0.02) continue;
+      const r = 2.6 - s.m * 0.4;
+      const rg = g.createRadialGradient(x, y, 0, x, y, r * 3.2);
+      rg.addColorStop(0, 'rgba(235,240,255,' + a + ')');
+      rg.addColorStop(1, 'rgba(235,240,255,0)');
+      g.fillStyle = rg; g.beginPath(); g.arc(x, y, r * 3.2, 0, 7); g.fill();
+    }
+    // the Moon — the anchor everyone aligns on
+    const [mx, my] = toPx(moon.x, moon.y); const mr = moon.r * ppdW() * 2.2;
+    const halo = g.createRadialGradient(mx, my, mr * 0.4, mx, my, mr * 4);
+    halo.addColorStop(0, 'rgba(250,248,238,' + Math.min(0.9, 0.5 * gain) + ')');
+    halo.addColorStop(1, 'rgba(250,248,238,0)');
+    g.fillStyle = halo; g.beginPath(); g.arc(mx, my, mr * 4, 0, 7); g.fill();
+    g.fillStyle = 'rgba(252,250,242,' + Math.min(1, 0.85 * gain) + ')';
+    g.beginPath(); g.arc(mx, my, mr, 0, 7); g.fill();
+    // tree-line silhouette
+    g.fillStyle = '#020304'; g.beginPath(); g.moveTo(0, H);
+    const hz = H - 74;
+    g.lineTo(0, hz + 18);
+    for (let x = 0; x <= W; x += 10) {
+      const t = Math.sin(x * 0.045) * 9 + Math.sin(x * 0.13 + 2) * 13 + Math.sin(x * 0.31) * 5;
+      g.lineTo(x, hz + 6 - Math.max(0, t));
+    }
+    g.lineTo(W, H); g.closePath(); g.fill();
+  }
+  function shade(r, gr, b, gain) {
+    const k = Math.min(2.4, gain);
+    return 'rgb(' + Math.min(255, r * k | 0) + ',' + Math.min(255, gr * k | 0) + ',' +
+      Math.min(255, b * k | 0) + ')';
+  }
+
+  function drawMap(ctx, width, height) {
+    const g = ctx || mctx, w = width || W, h = height || H;
+    g.clearRect(0, 0, w, h);
+    // residual error = misalignment the sensors report, minus the user's correction
+    const ex = (misalign.az - corr.az) * (w / fov), ey = (misalign.alt - corr.alt) * (w / fov);
+    const P = (fx, fy) => [w / 2 + fx * (w / fov) + ex, h / 2 + fy * (w / fov) + ey];
+    const ink = night ? '255,64,48' : '176,205,255';
+    const starink = night ? '255,80,60' : '235,242,255';
+    g.strokeStyle = 'rgba(' + ink + ',0.55)'; g.lineWidth = 1.2;
+    for (const [a, b] of lines) {
+      const [x1, y1] = P(stars[a].x, stars[a].y), [x2, y2] = P(stars[b].x, stars[b].y);
+      g.beginPath(); g.moveTo(x1, y1); g.lineTo(x2, y2); g.stroke();
+    }
+    for (const s of stars) {
+      const [x, y] = P(s.x, s.y); const r = Math.max(1.4, 4.4 - s.m * 1.1);
+      g.fillStyle = 'rgba(' + starink + ',0.95)';
+      g.beginPath(); g.arc(x, y, r, 0, 7); g.fill();
+      if (s.n) {
+        g.fillStyle = 'rgba(' + ink + ',0.9)';
+        g.font = '11px system-ui, sans-serif'; g.fillText(s.n, x + 8, y - 6);
+      }
+    }
+    // map's Moon outline — rides the same offset; aligns onto the camera moon
+    const [mx, my] = P(moon.x, moon.y);
+    g.strokeStyle = 'rgba(' + starink + ',0.9)'; g.lineWidth = 1.4;
+    g.beginPath(); g.arc(mx, my, moon.r * (w / fov) * 2.2 + 3, 0, 7); g.stroke();
+    g.fillStyle = 'rgba(' + ink + ',0.9)'; g.font = '11px system-ui, sans-serif';
+    g.fillText('Moon', mx + moon.r * (w / fov) * 2.2 + 8, my + 4);
+  }
+
+  // ---------- wiring ----------
+  const screen = document.getElementById('screen'), scrim = document.getElementById('scrim');
+  const chip = document.getElementById('chip'), snack = document.getElementById('snack');
+  const fovtag = document.getElementById('fovtag');
+  const alignsheet = document.getElementById('alignsheet');
+  const sharesheet = document.getElementById('sharesheet');
+  const exporow = document.getElementById('exporow');
+  const shutter = document.getElementById('shutter');
+  const nighttoggle = document.getElementById('nighttoggle');
+  const scrimctl = document.getElementById('scrimctl');
+  let snackTimer = null;
+
+  function render() {
+    fov = BASE_FOV / zoom;
+    drawCamera(); drawMap();
+    const effScrim = camOn ? (night ? Math.max(scrimPct, 65) : scrimPct) : 0;
+    scrim.style.opacity = (effScrim / 100).toFixed(2);
+    const mag = Math.hypot(corr.az, corr.alt);
+    chip.textContent = '⇄ ' + mag.toFixed(1) + '°';
+    chip.classList.toggle('show', mag > 0.05);
+    document.getElementById('azval').textContent = corr.az.toFixed(1) + '°';
+    document.getElementById('altval').textContent = corr.alt.toFixed(1) + '°';
+    fovtag.textContent = camOn
+      ? 'FOV ' + fov.toFixed(0) + '° · ' + zoom.toFixed(1) + '×  (camera-locked)'
+      : 'FOV ' + fov.toFixed(0) + '°';
+    exporow.style.display = camOn && !night ? 'flex' : 'none';
+    shutter.style.display = camOn ? 'block' : 'none';
+  }
+
+  // drag-to-align
+  let drag = null;
+  screen.addEventListener('pointerdown', (e) => {
+    if (e.target.closest('button, .sheet, input')) return;
+    drag = { x: e.clientX, y: e.clientY }; prevCorr = { ...corr };
+    screen.classList.add('dragging'); screen.setPointerCapture(e.pointerId);
+  });
+  screen.addEventListener('pointermove', (e) => {
+    if (!drag) return;
+    const rect = screen.getBoundingClientRect(), scale = rect.width / W;
+    corr.az -= (e.clientX - drag.x) / (ppdW() * scale);
+    corr.alt -= (e.clientY - drag.y) / (ppdW() * scale);
+    drag = { x: e.clientX, y: e.clientY }; render();
+  });
+  screen.addEventListener('pointerup', () => {
+    if (!drag) return; drag = null; screen.classList.remove('dragging');
+    if (prevCorr && (prevCorr.az !== corr.az || prevCorr.alt !== corr.alt)) {
+      snack.classList.add('show');
+      clearTimeout(snackTimer);
+      snackTimer = setTimeout(() => snack.classList.remove('show'), 3500);
+    }
+  });
+  document.getElementById('undo').addEventListener('click', () => {
+    if (prevCorr) corr = { ...prevCorr };
+    snack.classList.remove('show'); render();
+  });
+
+  chip.addEventListener('click', () => { alignsheet.classList.add('show'); });
+  document.getElementById('donebtn').addEventListener('click',
+    () => alignsheet.classList.remove('show'));
+  document.getElementById('resetbtn').addEventListener('click', () => {
+    corr = { az: 0, alt: 0 }; alignsheet.classList.remove('show'); render();
+  });
+
+  // bench controls
+  document.getElementById('camtoggle').addEventListener('change', (e) => {
+    camOn = e.target.checked; render();
+  });
+  scrimctl.addEventListener('input', (e) => { scrimPct = +e.target.value; render(); });
+  document.getElementById('zoomctl').addEventListener('input', (e) => {
+    zoom = +e.target.value; render();
+  });
+  document.getElementById('expo').addEventListener('input', (e) => {
+    expo = +e.target.value; render();
+  });
+  function setNight(v) {
+    night = v;
+    nighttoggle.checked = v;
+    document.getElementById('nightbtn').classList.toggle('active', v);
+    render();
+  }
+  nighttoggle.addEventListener('change', (e) => setNight(e.target.checked));
+  document.getElementById('nightbtn').addEventListener('click', () => setNight(!night));
+
+  // share
+  function composite(kind) {
+    const c = document.createElement('canvas');
+    const FOOT = 64;
+    if (kind === 'overlay') { c.width = W; c.height = H + FOOT; }
+    else { c.width = W * 2 + 8; c.height = H + FOOT; }
+    const g = c.getContext('2d');
+    g.fillStyle = '#0a0d14'; g.fillRect(0, 0, c.width, c.height);
+    const scene = document.createElement('canvas'); scene.width = W; scene.height = H;
+    const sg = scene.getContext('2d');
+    sg.drawImage(cam, 0, 0, W, H);
+    const effScrim = night ? Math.max(scrimPct, 65) : scrimPct;
+    sg.fillStyle = 'rgba(0,0,0,' + effScrim / 100 + ')'; sg.fillRect(0, 0, W, H);
+    if (kind === 'overlay') {
+      drawMap(sg, W, H);
+      g.drawImage(scene, 0, 0);
+    } else {
+      g.drawImage(scene, 0, 0);
+      const mapOnly = document.createElement('canvas');
+      mapOnly.width = W; mapOnly.height = H;
+      const mg = mapOnly.getContext('2d');
+      mg.fillStyle = '#03060f'; mg.fillRect(0, 0, W, H);
+      drawMap(mg, W, H);
+      g.drawImage(mapOnly, W + 8, 0);
+    }
+    // branding footer
+    g.fillStyle = '#131720'; g.fillRect(0, c.height - FOOT, c.width, FOOT);
+    g.fillStyle = '#f2b04a'; g.font = '600 20px "Avenir Next Condensed", sans-serif';
+    g.fillText('✦ SKY MAP', 16, c.height - FOOT + 27);
+    g.fillStyle = '#93a0b4'; g.font = '13px system-ui, sans-serif';
+    g.fillText('See what you’re looking at — get Sky Map free', 16, c.height - FOOT + 48);
+    return c.toDataURL('image/png');
+  }
+  shutter.addEventListener('click', () => {
+    document.querySelector('#shareoverlay img').src = composite('overlay');
+    document.querySelector('#sharesbs img').src = composite('sbs');
+    sharesheet.classList.add('show');
+  });
+  document.getElementById('sharecancel').addEventListener('click',
+    () => sharesheet.classList.remove('show'));
+
+  render();
+})();
+</script>

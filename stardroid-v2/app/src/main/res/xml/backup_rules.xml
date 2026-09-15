@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Pre-Android-12 fallback for data_extraction_rules.xml (minSdk 29; dataExtractionRules only
+  applies from API 31). Same include-everything intent — see that file for why.
+-->
+<full-backup-content>
+    <include domain="sharedpref" path="." />
+    <include domain="file" path="." />
+    <include domain="database" path="." />
+</full-backup-content>

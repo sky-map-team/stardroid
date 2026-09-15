@@ -1,0 +1,2356 @@
+{
+ "cards": {
+  "constellation/andromeda": {
+   "description": "Andromeda, princesa, vsebuje Andromedino galaksijo (M31), najbližjo veliko spiralno galaksijo naši Rimski cesti.",
+   "fun_fact": "Galaksija Andromeda se nam približuje s hitrostjo 110 km/s in se bo v približno 4,5 milijarde let zlila z Mlečno potjo!",
+   "size": "722 kvadratnih stopinj",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/antlia": {
+   "description": "Antlia (Zračna črpalka) je šibka južna konstelacija, ki jo je v 18. stoletju ustvaril Nicolas-Louis de Lacaille v čast zračni črpalki, ki jo je izumil Robert Boyle.",
+   "fun_fact": "Antlia vsebuje Antlijo Pritlikavo galaksijo, eno od najbližjih galaksij Rimski cesti na razdalji le 4,3 milijona svetlobnih let!=",
+   "size": "239 kvadratnih stopinj",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/apus": {
+   "description": "Apus (Ptica raja) je šibka južna konstelacija, ki so jo uvedli nizozemski navigatorja Keyser in de Houtman v poznem 16. stoletju.",
+   "fun_fact": "Apus je bil poimenovan po rajskim pticah Vzhodnih Indij, za katere so zgodnji evropski raziskovalci verjeli, da nimajo nog — zato latinsko ime pomeni »brez nog«.",
+   "size": "206 kvadratnih stopinj",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/aquarius": {
+   "description": "Vodnar je zodiakalno ozvezdje v delu neba, ki se pogosto imenuje Morje, obdano z vodnimi ozvezdji.",
+   "fun_fact": "Vodnar vsebuje Helix Nebulo, eno izmed najbližjih planetarnih meglice do Zemlje, ki je oddaljena le 700 svetlobnih let!",
+   "size": "980 kvadratnih stopinj",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/aquila": {
+   "description": "Aquila, Orel, je konstelacija na nebesnem ekvatorju, ki vsebuje svetlo zvezdo Altair v svojem središču.",
+   "fun_fact": "Altair v Aquili je ena najhitreje vrteče se zvezd, ki jih poznamo, vrti se tako hitro, da se na ekvatorju izbočuje!",
+   "size": "652 kvadratnih stopinj",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/ara": {
+   "description": "Ara (Oltar) je južna konstelacija, znana od antike. V grški mitologiji predstavlja oltar, na katerem so se bogovi prisegali pred bitko s Titani.",
+   "fun_fact": "Ara vsebuje Stingray Nebulo, najmladšo znano planetarno meglo, ki je bila prvič opažena pri nastanku v 1980-ih — kozmični dogodek, zajet v realnem času!",
+   "size": "237 kvadratnih stopinj",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/aries": {
+   "description": "Oven (Aries), Oven je zodiakalno ozvezdje, ki je nekoč gostilo pomladansko enakonočje, kar nam je dalo izraz \"Prva točka Ovna\".",
+   "fun_fact": "Čeprav se pomladansko enakonočje pred približno 2000 leti premakne v Ribe, ga še vedno imenujemo Prva točka Ovna!",
+   "size": "441 kvadratnih stopinj",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/auriga": {
+   "description": "Voznik Auriga je severna konstelacija, ki vsebuje Capello, šesto najsvetlejšo zvezdo, in več odprtih kopic.",
+   "fun_fact": "Epsilon Aurigae je ena izmed najbolj čudnih znanih zvezd, ki se za dve leti zatemi vsakih 27 let zaradi skrivnostnega temnega diska!",
+   "size": "657 kvadratnih stopinj",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/bootes": {
+   "description": "Bootes, Pastir, je sozvezdje, ki vsebuje Arktur, četrto najsvetlejšo zvezdo na nočnem nebu.",
+   "fun_fact": "Sledite loku ročaja Velikega medveda do \"loka do Arkturusa\" - enega najbolj znanih navigacijskih nasvetov!==/TRANSLATION ITEM==",
+   "size": "907 kvadratnih stopinj",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/caelum": {
+   "description": "Caelum (Dleto) je ena izmed najšibkejših konstelacij na nebu, ki jo je Lacaille v 18. stoletju ustvaril, da bi predstavljal gravurni nož.",
+   "fun_fact": "Caelum je osma najmanjša konstelacija in ne vsebuje nobene zvezde, svetlejše od magnitude 4,5 — potrebuješ zelo temno nebo in ostre oči, da jo opazuješ!",
+   "size": "125 kvadratnih stopinj",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/camelopardalis": {
+   "description": "Camelopardalis (Žirafa) je velika, a šibka severna konstelacija. Njeno ime izvira iz grščine za \"kamela-leopard\", zgodnji opis žirafe.",
+   "fun_fact": "Kljub temu da je Camelopardalis 18. največja konstelacija, nima nobene zvezde svetlejše od magnitude 4,0 — zavzema ogromno, navidezno prazno območje neba blizu Polarisa!",
+   "size": "757 kvadratnih stopinj",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/cancer": {
+   "description": "Rak je najšibkejše zodiakalno ozvezdje, vendar vsebuje znamenito Čebelnjak (M44), ki je viden s prostim očesom.",
+   "fun_fact": "Tropik raka je bil imenovan, ko je bilo Sonce v Raku ob poletnem solsticiju, čeprav je zdaj v Biku!",
+   "size": "506 kvadratnih stopinj",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/canes_venatici": {
+   "description": "Canes Venatici (Lovni psi) predstavlja dve psi, ki jih drži Boötes, Pastir. Predstavil ga je Johannes Hevelius leta 1687.",
+   "fun_fact": "Canes Venatici vsebuje M51, Galaksijo Vrtinec — prvo galaksijo, katere spiralno strukturo so odkrili, jo je skiciral Lord Rosse leta 1845!==/TRANSLATION ITEM==",
+   "size": "465 kvadratnih stopinj",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/canis_major": {
+   "description": "Canis Major (Veliki pes) sledi Orionu čez nebo in vsebuje Sirius, najsvetlejšo zvezdo, vidno z Zemlje.",
+   "fun_fact": "Stari Egipčani so svoj koledar temeljili na heliakičnem vzhodu Sirija, ki se je ujemalo z letnim poplavami Nila!",
+   "size": "380 kvadratnih stopinj",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/canis_minor": {
+   "description": "Canis Minor (Manjši pes) je majhna konstelacija, znana po zvezdi Procyon, osmi najsvetlejši zvezdi na nebu.",
+   "fun_fact": "Procyon pomeni \"pred psom\" v grščini, ker se vsako noč vzdiguje tik pred Siriusom (Psjo zvezdo)!",
+   "size": "183 kvadratnih stopinj",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/capricornus": {
+   "description": "Kozorog je starodavno zodiakalno ozvezdje, ki prikazuje mitološko bitje, ki je pol koza, pol riba.",
+   "fun_fact": "Kaprikorn je eno izmed najstarejših priznanih ozvezdij, ki se pojavljajo v babilonskih zvezdnih katalogih pred več kot 3000 leti!",
+   "size": "414 kvadratnih stopinj",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/carina": {
+   "description": "Carina, Krmilo, je bila del ogromnega ozvezdja Argo Navis, ki vsebuje svetlo zvezdo Kanop.",
+   "fun_fact": "Eta Carinae v Carini je ena izmed najbolj svetlečih znanih zvezd in se lahko v našem času eksplodira kot supernova!",
+   "size": "494 kvadratnih stopinj",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/cassiopeia": {
+   "description": "Kasiopeja je značilna W-oblikovana konstelacija na severnem nebu, poimenovana po ponos polni kraljici iz grške mitologije.",
+   "fun_fact": "Tychojeva supernova iz leta 1572 se je pojavila v Kasiopeji in s tem dokazala, da se lahko nebesni svet spreminja!",
+   "size": "598 kvadratnih stopinj",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/centaurus": {
+   "description": "Kentaver Kentavr je velika južna konstelacija, ki vsebuje Alfa Kentavra, najbližji zvezdni sistem našemu Soncu.",
+   "fun_fact": "Proxima Centauri v Kentavru je oddaljena le 4,24 svetlobnih let, kar jo naredi najbližjo zvezdo našemu Osončju!",
+   "size": "1.060 kvadratnih stopinj",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/cepheus": {
+   "description": "Cefej Kralj je severna konstelacija, katere zvezde vključujejo Delta Cefeja, prototip za spremenljive zvezde tipa Cefeid.",
+   "fun_fact": "Spremenljivke Cefeide, ki jih je odkrila Henrietta Leavitt, so revolucionalizirale astronomijo in nam omogočile merjenje kozmičnih razdalj!",
+   "size": "588 kvadratnih stopinj",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/cetus": {
+   "description": "Cetus, morski pošast, je velika konstelacija, ki vsebuje Miro, prvo spremenljivo zvezdo, ki je bila kdaj odkrita.",
+   "fun_fact": "Mira v Kitu se spreminja od vidne do nevidne v 11 mesecih in ima 13 svetlobnih let dolg rep plina!",
+   "size": "1.231 kvadratnih stopinj",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/chamaeleon": {
+   "description": "Chamaeleon je majhno južno ozvezdje, ki so ga uvedli nizozemski navigatorji v poznem 16. stoletju in predstavlja kuščarja, ki menja barvo.",
+   "fun_fact": "Chamaeleon vsebuje velik kompleks molekularnih oblakov, kjer se aktivno tvorijo nove zvezde — to je ena od najbližjih regij tvorbe zvezd do Zemlje, le 500 svetlobnih let oddaljena!",
+   "size": "132 kvadratnih stopinj",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/circinus": {
+   "description": "Circinus (Šestilo) je eno najmanjših ozvezdij, ki ga je Lacaille ustvaril, da bi predstavljal risarski šestilo za risanje krogov.",
+   "fun_fact": "Galaksija Circinus je ena izmed najbližjih Seyfertovih galaksij do nas — aktivna galaksija s supermasivno črno luknjo, ki poganja svetle curke snovi!",
+   "size": "93 kvadratnih stopinj",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/columba": {
+   "description": "Columba (Golob) predstavlja goloba, ki ga je Noe poslal iz Arke, da bi našel suho zemljo. Leži južno od Lepusa in Velikega psa.",
+   "fun_fact": "Ubežna zvezda Mu Columbae je bila izgnana iz Orionove meglice pred približno 2,5 milijona let in zdaj prehitro potuje skozi Columbo s hitrostjo več kot 100 km/s!",
+   "size": "270 kvadratnih stopinj",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/coma_berenices": {
+   "description": "Coma Berenices (Berenikina kosa) predstavlja kosu egipčanske kraljice Berenice II, ki jo je darovala bogom. To je ena redkih konstelacij, poimenovane po zgodovinski osebi.",
+   "fun_fact": "Coma Berenices vsebuje severni galaktični pol — smer, pravokotno na disk Mlečne poti — zato je bogata z vidnimi galaksijami brez galaktičnega prahu na poti!",
+   "size": "386 kvadratnih stopinj",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/corona_australis": {
+   "description": "Corona Australis (Južna krona) je ena od 48 konstelacij, ki jih je navedel Ptolemaj. Predstavlja venec ali krono, postavljeno pri nogah Strelca.",
+   "fun_fact": "Corona Australis vsebuje eno od najbližjih in najbolj aktivnih regij nastajanja zvezd — Coronet Cluster, kjer se trenutno rodi ducat mladih zvezd!",
+   "size": "128 kvadratnih stopinj",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/corona_borealis": {
+   "description": "Corona Borealis (Severna krona) je majhna polkrožna konstelacija, ki predstavlja Ariadnino krono iz grške mitologije.",
+   "fun_fact": "T Coronae Borealis je ponavljajoča se nova, ki izbruhne približno vsakih 80 let - naslednji izbruh se lahko zgodi kmalu!",
+   "size": "179 kvadratnih stopinj",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/corvus": {
+   "description": "Corvus, Vrana, je majhna štirikotna konstelacija južno od Device, ki predstavlja Apolonovega svetega ptiča.",
+   "fun_fact": "Štiri glavne zvezde Vranja tvorijo značilno obliko jadra, ki je enostavno vidna na pomladanskem nebu!",
+   "size": "184 kvadratnih stopinj",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/crater": {
+   "description": "Crater (Čaša) predstavlja Apolonovega kelih v grški mitologiji. Leži na hrbtu Hydre, vodne kače, poleg Corvusa, vrane.",
+   "fun_fact": "V grški mitologiji je Apolon poslal Vrano, da prinese vodo v tej Čaši, vendar je Vrana odlašala, ker je jedla fige – zato je Apolon vse tri postavil na nebo kot kazen!",
+   "size": "282 kvadratnih stopinj",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/crux": {
+   "description": "Crux (Južni križ) je najmanjše ozvezdje, vendar eno izmed najbolj značilnih, ki se uporablja za navigacijo na južni polobli.",
+   "fun_fact": "Kljub temu da je Crux najmanjše ozvezdje, ima več svetlih zvezd na enoto površine kot katero koli drugo ozvezdje!",
+   "size": "68 kvadratnih stopinj",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/cygnus": {
+   "description": "Labod Cygnus leti vzdolž Rimske ceste in vsebuje asterizem Severni križ ter svetlo zvezdo Deneb.",
+   "fun_fact": "Cygnus X-1 v tej konstelaciji je bila prva široko sprejeta črna luknja, identificirana v zgodnjih 1970-ih!",
+   "size": "804 kvadratnih stopinj",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/delphinus": {
+   "description": "Delphinus, delfin, je majhna, a vendar značilna konstelacija, katere zvezde tvorijo obliko skačočega delfina.",
+   "fun_fact": "Dve zvezdi Delfina sta poimenovani Sualocin in Rotanev - \"Nicolaus Venator\" napisano nazaj, astronom, ki ju je poimenoval!",
+   "size": "189 kvadratnih stopinj",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/dorado": {
+   "description": "Dorado (Meč-riba ali Delfin-riba) je južna konstelacija, ki so jo ustvarili nizozemski navigatorji. Vsebuje večino Velikega Magellanskega oblaka.",
+   "fun_fact": "Dorado je dom Tarantulove meglice (30 Doradus), najbolj svetlečega območja nastajanja zvezd v Lokalni skupini — če bi bila tako blizu kot Orionova meglica, bi metala sence na Zemljo!",
+   "size": "179 kvadratnih stopinj",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/draco": {
+   "description": "Zmaj Draco je dolga, vijugava konstelacija, ki se vije okrog Malega medveda na daljnem severnem nebu.",
+   "fun_fact": "Thuban v Zmaju je bila Severnica, ko so bili egipčanski piramidi zgrajeni, pred 5.000 leti!",
+   "size": "1.083 kvadratnih stopinj",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/equuleus": {
+   "description": "Equuleus (Mali konj) je druga najmanjša konstelacija. V grški mitologiji predstavlja Celeris, brata ali žrebeta Pegaza.",
+   "fun_fact": "Equuleus je druga najmanjša od vseh 88 ozvezdij (manjša je le Crux), vendar je bila ena izmed 48 prvotnih ozvezdij, ki jih je navedel Ptolemaj pred skoraj 2000 leti!",
+   "size": "72 kvadratnih stopinj",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/eridanus": {
+   "description": "Eridanus, Reka, je šesta največja konstelacija, ki se vije od blizu Oriona do dalenega južnega neba.",
+   "fun_fact": "Achernar na koncu Eridana je najsplošči znani zvezdici, ki je na ekvatorju 56 % širša zaradi hitre rotacije!",
+   "size": "1.138 kvadratnih stopinj",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/fornax": {
+   "description": "Fornax (Peč) je ustvaril Lacaille, da bi predstavljal kemično peč. To je šibka južna konstelacija med Cetom in Eridanom.",
+   "fun_fact": "Hubbleovo Ultra Deep Field — ena izmed najglobljih slik vesolja, ki je bila kdaj posneta, ki razkriva galaksije, oddaljene 13 milijard svetlobnih let — je bila fotografirana v Fornaxu!",
+   "size": "398 kvadratnih stopinj",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/gemini": {
+   "description": "Gemini, Dvojčka, ima svetli zvezdi Kastor in Poluh, ki predstavljata bratca dvojčka iz grške mitologije.",
+   "fun_fact": "Čeprav se imenujeta dvojčka, je Kastor pravzaprav šest zvezd, Polluks pa je oranžni velikan - sploh se ne podobata!",
+   "size": "514 kvadratnih stopinj",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/grus": {
+   "description": "Grus, Ţapă, je južna konstelacija, ki so jo evropski navigatorji uvedli v poznem 16. stoletju.",
+   "fun_fact": "Grus je bil nekoč znan kot Phoenicopterus (Flamingo), preden je bil spremenjen v predstavitev žerjava!",
+   "size": "366 kvadratnih stopinj",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/hercules": {
+   "description": "Herkul je velika konstelacija, ki predstavlja grškega junaka, in vsebuje velik kroglasti zvezdni kopič M13.",
+   "fun_fact": "Naš sončni sistem se premika proti točki v Herkulu, ki se imenuje sončni vrh, s hitrostjo približno 20 km/s!",
+   "size": "1.225 kvadratnih stopinj",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/horologium": {
+   "description": "Horologium (Nihajni ročaj) je ustvaril Lacaille v čast Christiaanu Huygensu za izum nihajnega ročaja leta 1656.",
+   "fun_fact": "Horologium vsebuje ogromno superzvezdo galaksij, ki se imenuje Horologium-Reticulum Supercluster, ena največjih struktur v bližnjem vesolju!",
+   "size": "249 kvadratnih stopinj",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/hydra": {
+   "description": "Hidra je največje ozvezdje na nebu, ki predstavlja vodnega kačo iz grške mitologije.",
+   "fun_fact": "Hidra se razteza čez več kot 100 stopinj neba - več kot četrtino celotne nebesne sfere!",
+   "size": "1.303 kvadratnih stopinj",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/hydrus": {
+   "description": "Hydrus (Mala vodna kača) je majhno južno ozvezdje blizu južnega nebesnega pola. Ne smete ga zamenjati s Hydro, veliko večjo vodno kačo.",
+   "fun_fact": "Hydrus leži med Veliko in Malo Magellanovo oblako, zato je odličan orientir za iskanje teh dveh satelitskih galaksij Mlečne poti!",
+   "size": "243 kvadratnih stopinj",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/indus": {
+   "description": "Indus (Indijec) je južna konstelacija, ki so jo ustvarili nizozemski navigatorji in je prvotno predstavljala domorodca Vzhodnih Indij ali Madagaskarja.",
+   "fun_fact": "Epsilon Indi, ena od najbližjih soncu podobnih zvezd na le 12 svetlobnih let oddaljenosti, leži v Indijcu — in ima sistem spremljevalca rjavega pritlika!=",
+   "size": "294 kvadratnih stopinj",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/lacerta": {
+   "description": "Lacerta (Kuščar) je majhno severno ozvezdje, ki ga je Hevelius predstavil leta 1687. Leži med Labodjem in Andromedjo.",
+   "fun_fact": "Lacerta vsebuje BL Lacertae, prototip razreda aktivnih galaksij, imenovanih \"blazarji\" — galaksije s supermasivnimi črnimi luknjami, ki izstrelujejo curke snovi neposredno proti Zemlji!",
+   "size": "201 kvadratnih stopinj",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/leo": {
+   "description": "Lev je zodiakalno ozvezdje, ki ima Regulusa v srcu leva in značilno asterizmo Srp.",
+   "fun_fact": "Leonidski meteorski tok v novembru se zdi, da seva iz Leona in lahko proizvede spektakularne nevihte!",
+   "size": "947 kvadratnih stopinj",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/leo_minor": {
+   "description": "Leo Minor (Mali lev) je šibka konstelacija med Levom in Veliko medvedico, ki jo je Hevelius predstavil leta 1687.",
+   "fun_fact": "Leo Minor je ena redkih konstelacij, katere najsvetlejša zvezda nima oznake Alfa — Hevelius je pozabil, da jo označi, zato je njena najsvetlejša zvezda 46 Leonis Minoris (Beta)!",
+   "size": "232 kvadratnih stopinj",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/lepus": {
+   "description": "Zajec Lepus se krči pod Orionovimi nogami, majhna, a vendar značilna konstelacija z bogatim mitološkim izročilom.",
+   "fun_fact": "V mitologiji je veljalo, da je Orion rad lovil zajce, zato je bil eden postavljen pod njegove noge na nebu!",
+   "size": "290 kvadratnih stopinj",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/libra": {
+   "description": "Libra, Tehtnica, je edina zodiakalna konstelacija, ki predstavlja neživo predmet, in je bila nekoč šteta za del Škorpijona.",
+   "fun_fact": "Glavne zvezde Libre so bile nekoč znane kot Škorpionove Prameni, preden so postale Tehtnice Pravičnosti!",
+   "size": "538 kvadratnih stopinj",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/lupus": {
+   "description": "Lupus (Volk) je stara južna konstelacija. Grki in Rimljani so jo videli kot divjo žival nabodeno na palici, ki jo drži Kentaver.",
+   "fun_fact": "Leta 1006 je v Volku nastala najsvetlejša supernova, ki so jo kdaj zabeležili ljudje — SN 1006 je bila vidna podnevi in je morda dosegla magnitudo −7,5!",
+   "size": "334 kvadratnih stopinj",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/lynx": {
+   "description": "Lynx je velika, a šibka severna konstelacija, ki jo je Hevelius ustvaril leta 1687. Rekel je, da bi potrebovali oči risa, da bi jo videli!",
+   "fun_fact": "Lynx vsebuje Medgalaktičnega popotnika (NGC 2419), kroglasto kopico, ki je od nas oddaljena 300.000 svetlobnih let in je bila nekoč mišljena, da kroži zunaj Mlečne poti!",
+   "size": "545 kvadratnih stopinj",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/lyra": {
+   "description": "Lira je majhna, a vendar vidna konstelacija, ki vsebuje Vego, peto najsvetlejšo zvezdo na nočnem nebu.",
+   "fun_fact": "Vega je bila Severnica okoli leta 12.000 pr. n. št. in bo spet v približno 12.000 letih zaradi precesije Zemlje!",
+   "size": "286 kvadratnih stopinj",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/mensa": {
+   "description": "Mensa (Miza) je ustvaril Lacaille v čast Tabli (Table Mountain) v Kapstadu, Južna Afrika, kjer je opazoval južno nebo.",
+   "fun_fact": "Mensa je edina konstelacija, poimenovana po specifični geografski značilnosti na Zemlji. Del Velikega Magelanovega oblaka se v njo razprostira, kot oblak nad goro!",
+   "size": "153 kvadratnih stopinj",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/microscopium": {
+   "description": "Mikroskop (Mikroskop) je ustvaril Lacaille v čast sestavljenemu mikroskopu. To je ena najšibkejših konstelacij na nebu.",
+   "fun_fact": "Najsvetlejša zvezda Microsopija, Gamma Microscopii, je bila nekoč del sosednjega Strelca — ponovno ji je bila dodeljena, ko so se meje konstelacij standardizirale leta 1930!",
+   "size": "210 kvadratnih stopinj",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/monoceros": {
+   "description": "Monoceros, Samoroga, je šibka konstelacija v zimski Rimski cesti, bogata z meglicami in zvezdnimi kopicami.",
+   "fun_fact": "Rosettina meglica v Enorogu je ogromna regija nastajanja zvezd, ki spominja na nebeško vrtnico!",
+   "size": "482 kvadratnih stopinj",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/musca": {
+   "description": "Musca (Muva) je majhno južno ozvezdje blizu Južnega križa. Je edino žuželčje ozvezdje na nebu.",
+   "fun_fact": "Musca je bila prvotno poimenovana \"Apis\" (čebela) s strani svojih ustvarjalcev. To je edina konstelacija, ki predstavlja insekt — in je tik ob Chamaeleonu, ki jih jedo!",
+   "size": "138 kvadratnih stopinj",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/norma": {
+   "description": "Norma (Tesarjev kvadrat) je bila ustvarjena s strani Lacaillea, da bi predstavljala nivo in tesarski kvadrat. Leži v bogati Rimski cesti med Škorpijonom in Volkom.",
+   "fun_fact": "Ko gledate proti Normi, gledate vzdolž ene od spiralnih krakov Mlečne poti — Normina roka, poimenovana po tej konstelaciji, je polna zvezdnih kopic in meglice!",
+   "size": "165 kvadratnih stopinj",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/octans": {
+   "description": "Octans (Oktant) je ustvaril Lacaille v čast navigacijskemu instrumentu. Vsebuje južni nebesni pol.",
+   "fun_fact": "Octans vsebuje južni nebesni pol, vendar za razliko od severnega pola s Polarisom ni svetle zvezde, ki bi označevala južni pol — Sigma Octantis (mag 5,4) je šibka \"južna zvezda\".",
+   "size": "291 kvadratnih stopinj",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/ophiuchus": {
+   "description": "Ophiuchus, Nosilec kače, leži vzdolž ekliptike, vendar ni zodiakalni znak, razdeljen s kačo, ki jo drži.",
+   "fun_fact": "Sonce preživi več časa v Ophiuchu kot v Škorpionu, vendar Ophiuchus ni veljal za znak zodiaka!",
+   "size": "948 kvadratnih stopinj",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/orion": {
+   "description": "Orion Lovac je ena od najbolj prepoznavnih konstelacij, vidna z obeh polobel s svojo značilno Pasom treh zvezd.",
+   "fun_fact": "Orionov pas kaže na Sirij (najsvetlejšo zvezdo) v eno smer in Aldebaran (v Biku) v drugo smer!",
+   "size": "594 kvadratnih stopinj",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/pavo": {
+   "description": "Pavo, Pav, je južna konstelacija, ki vsebuje svetlo zvezdo Pav in več zanimivih galaksij.",
+   "fun_fact": "Zvezda Peacock (Alfa Pavonis) je druga najbolj svetla zvezda v razdalji 200 svetlobnih let od našega Sonca!",
+   "size": "378 kvadratnih stopinj",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/pegasus": {
+   "description": "Pegaz, Krilatica konj, je velika konstelacija, ki vsebuje Veliki kvadrat Pegaza, vidno jesensko asterizmo.",
+   "fun_fact": "51 Pegasi b, odkrita leta 1995 v tej konstelaciji, je bil prvi eksoplanet, ki je bil odkrit v orbiti okrog Soncu podobne zvezde!",
+   "size": "1.121 kvadratnih stopinj",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/perseus": {
+   "description": "Perzej Junak je dom znamenitega spremenljivega zvezdnega Algola in Dvojnega gruče, čudovitega para odprtih grozdov.",
+   "fun_fact": "Algol (Demon Star) je bil v antiki veljal za zlo, ker se skrivnostno zatema vsakih 2,87 dni!",
+   "size": "615 kvadratnih stopinj",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/phoenix": {
+   "description": "Feniks je južno ozvezdje, ki predstavlja mitično ptico, ki se dvigne iz lastnega pepela.",
+   "fun_fact": "Phoenix je bila ena od 12 konstelacij, ki so jih ustvarili nizozemski raziskovalci v poznem 16. stoletju iz neznanih južnih zvezd!",
+   "size": "469 kvadratnih stopinj",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/pictor": {
+   "description": "Pictor (Slikarjev štafelaj) je šibka južna konstelacija, ki jo je ustvaril Lacaille in je bila prvotno poimenovana po slikarjevem štafelaju.",
+   "fun_fact": "Beta Pictoris v tej konstelaciji je bila ena prvih zvezd, za katero so odkrili vidni disk iz ostankov — in ima dva potrjena zunajsončna planeta, ki se vrtita v njem!",
+   "size": "247 kvadratnih stopinj",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/pisces": {
+   "description": "Ribi (Pisces) je velika zodiakalna konstelacija, ki predstavlja dve ribi, povezani skupaj, in označuje točko pomladanskega enakonočja.",
+   "fun_fact": "Pomladansko enakonočje (prvi dan pomladi) se trenutno nahaja v Ribah in se počasi premika skozi njih že 2000 let!",
+   "size": "889 kvadratnih stopinj",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/piscis_austrinus": {
+   "description": "Piscis Austrinus (Južna riba) je stara konstelacija. Pravijo, da je starš obeh rib Ribnika, ki pije vodo, ki jo izliva Vodnar.",
+   "fun_fact": "Fomalhaut, najsvetlejša zvezda v Piscis Austrinus, je bila ena prvih zvezd, katere eksoplanet je Hubble neposredno fotografiral — čeprav je \"planet\" morda dejansko le oblak prahu!",
+   "size": "245 kvadratnih stopinj",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/puppis": {
+   "description": "Puppis, Krma, predstavlja zadnji del ladje Argo Navis, bogat z odprtimi kopicami vzdolž Rimske ceste.",
+   "fun_fact": "Puppis vsebuje M47, odprto zvezdno kopico, vidno s prostim očesom, ki je bila \"izgubljena\" več kot 200 let zaradi napake pri katalogizaciji!",
+   "size": "673 kvadratnih stopinj",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/pyxis": {
+   "description": "Pyxis (Kompas) predstavlja mornarjev kompas. Lacaille ga je ustvaril iz zvezd, ki so bile nekoč del starodavnega ozvezdja Argo Navis (Ladja).",
+   "fun_fact": "Pyxis vsebuje T Pyxidis, ponavljajočo novo, ki je eksplodirala najmanj šestkrat od leta 1890 — to je ena najbolje proučevanih nov na nebu!",
+   "size": "221 kvadratnih stopinj",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/reticulum": {
+   "description": "Reticulum (Mrežica) je ustvaril Lacaille, da bi predstavljal križni nitni križ v njegovem teleskopu, ki ga je uporabljal med svojimi raziskavami južnega neba.",
+   "fun_fact": "Reticulum je znan v UFO legendah — \"incident Zeta Reticuli\" iz leta 1961 je trdil, da so tuji obiskovalci prišli iz zvezdnega sistema v tej konstelaciji!",
+   "size": "114 kvadratnih stopinj",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/sagitta": {
+   "description": "Sagitta, Puščica, je tretja najmanjša konstelacija, ki predstavlja različne mitološke puščice iz grških legend.",
+   "fun_fact": "Kljub temu da je Sagitta majhna, vsebuje M71, gručo zvezd, ki so jo stoletja napačno jemali za odprto gručo!",
+   "size": "80 kvadratnih stopinj",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/sagittarius": {
+   "description": "Strelec Sagittarius kaže proti središču naše galaksije Rimska cesta, zato je bogat z meglicami in zvezdnimi kopicami.",
+   "fun_fact": "Ko gledate Strelca, gledate proti Sagittarius A*, supermasivni črni luknji v središču naše galaksije!=",
+   "size": "867 kvadratnih stopinj",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/scorpius": {
+   "description": "Škorpijon je izrazita zodiakalna konstelacija z značilnim ukrivljenim repom, ki ga dominira rdeči supergigant Antares.",
+   "fun_fact": "V mitologiji je bil Škorpijon postavljen na nebo nasproti Orionu, da bi se lovca nikoli več ne pičil!=",
+   "size": "497 kvadratnih stopinj",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/sculptor": {
+   "description": "Kipar (Kipar) je ustvaril Lacaille in je prvotno predstavljal kiparsko delavnico. Vsebuje južni galaktični pol.",
+   "fun_fact": "Kipar vsebuje južni galaktični pol in Kiparsko pritlikavo galaksijo, eno od najbližjih satelitskih galaksij Mlečne poti, ki je oddaljena le 260.000 svetlobnih let!=",
+   "size": "475 kvadratnih stopinj",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/scutum": {
+   "description": "Scutum (Ščit) je ustvaril Hevelius leta 1684 v čast poljskemu kralju Janu III. Sobieskeemu. To je ena redkih konstelacij, poimenovane po ne-mitološki zgodovinski osebnosti.",
+   "fun_fact": "Scutum vsebuje Scutumov zvezdni oblak, eno najsvetlejših in najgostejših predelov Rimske ceste, vidnih s prostim očesom — to je okno v notranjo spiralno roko naše galaksije!",
+   "size": "109 kvadratnih stopinj",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/serpens_caput": {
+   "description": "Serpens Caput (Kača glava) je zahodna polovica Serpensa, edina konstelacija, ki je razdeljena na dva ločena dela s strani Ophiucha.",
+   "fun_fact": "Serpens Caput vsebuje M5, eno najstarejših in največjih krogelnih kopic, ki jih poznamo — stara je 13 milijard let in vsebuje več kot 100.000 zvezd!",
+   "size": "428 kvadratnih stopinj (oba dela)",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/serpens_cauda": {
+   "description": "Serpens Cauda (Reptin rep) je vzhodna polovica Serpensa, ločena od glave s konstelacijo Ophiuchus.",
+   "fun_fact": "Serpens Cauda vsebuje Orlovo meglico (M16) in njene znamenite \"Stebre stvarjanja\" — visoke stebre plina in prahu, kjer se rojevajo nove zvezde!",
+   "size": "428 kvadratnih stopinj (oba dela)",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/sextans": {
+   "description": "Sextans (Sekstant) je ustvaril Hevelius v spomin na svoj astronomski sekstant, ki je bil uničen v požaru leta 1679.",
+   "fun_fact": "Sextans vsebuje pritlikavo galaksijo Sextans A, eno najbolj izoliranih galaksij v Lokalni skupini na razdalji 4,3 milijona svetlobnih let!=",
+   "size": "314 kvadratnih stopinj",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/taurus": {
+   "description": "Bik (Taurus) je zodiakalno ozvezdje, ki vsebuje zvezdni skupini Plejad in Hiad ter svetlo zvezdo Aldebaran.",
+   "fun_fact": "Rakovična meglica v Biku je ostanki supernove, ki so jo kitajski astronomi opazovali in zabeležili leta 1054 n. št.!",
+   "size": "797 kvadratnih stopinj",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/telescopium": {
+   "description": "Teleskopij (Teleskop) je ustvaril Lacaille v čast izuma lomnega teleskopa. Leži južno od Strelca in Avstralske krone.",
+   "fun_fact": "Teleskopij je bil prvotno veliko večji — ko ga je Lacaille prvič narisal, se je razširil v dele, ki so zdaj del Strelca in Ofija!",
+   "size": "252 kvadratnih stopinj",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/triangulum": {
+   "description": "Triangulum je majhno severno ozvezdje, ki vsebuje galaksijo Triangulum (M33), tretjo največjo v Lokalni skupini.",
+   "fun_fact": "Galaksija Triangulum je najbolj oddaljen predmet, ki ga je mogoče videti s prostim očesom v idealnih pogojih!",
+   "size": "132 kvadratnih stopinj",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/triangulum_australe": {
+   "description": "Triangulum Australe (Južni trikotnik) je majhna, a značilna južna konstelacija. Njene tri najsvetlejše zvezde tvorijo skoraj enakostranični trikotnik.",
+   "fun_fact": "Triangulum Australe vsebuje NGC 6025, čudovito odprto kopico, ki je zlahka vidna s teleskopom, in se pojavi na zastavah Brazilije in Papue Nove Gvineje!",
+   "size": "110 kvadratnih stopinj",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/tucana": {
+   "description": "Tucana (Tukan) je južna konstelacija, ki so jo ustvarili nizozemski navigatorji in predstavlja tropsko ptico z ogromnim kljunom.",
+   "fun_fact": "Tucana vsebuje 47 Tucanae (NGC 104), drugo najsvetlejše kroglasto jato na nebu, dom milijonov zvezd in več milisekundnih pulzarjev!",
+   "size": "295 kvadratnih stopinj",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/ursa_major": {
+   "description": "Ursa Major (Veliki medved) vsebuje asterizem Veliki voz, enega najbolj prepoznavnih zvezdnih vzorcev na severnem nebu.",
+   "fun_fact": "Pet zvezd Velikega vozička je fizično povezanih, premikajo se skozi vesolje skupaj kot Skupina Ursa Major!=",
+   "size": "1.280 kvadratnih stopinj",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/ursa_minor": {
+   "description": "Ursa Minor (Mali medved) vsebuje Mali Voziček in Polarko, trenutno Severno zvezdo, ki označuje nebesni severni pol Zemlje.",
+   "fun_fact": "Zaradi precesije Polaris ne bo vedno Severnica - čez 14.000 let bo njeno mesto prevzela Vega!",
+   "size": "256 kvadratnih stopinj",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/vela": {
+   "description": "Vela, Jadra, je bila nekoč del velikega plovila Argo Navis, ki se nahaja v bogatem območju Rimske ceste.",
+   "fun_fact": "Vela Pulsar je najsvetlejši pulzar na nebu in ostanki supernove, ki je eksplodirala pred 11.000 leti!",
+   "size": "500 kvadratnih stopinj",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/virgo": {
+   "description": "Devica je druga največja konstelacija in zodiakalni znak, ki vsebuje Devičin gruč z več kot 2000 galaksijami.",
+   "fun_fact": "Virgo Cluster je srce Virgo Superclusterja, ki vsebuje našo lastno galaksijo Mlečno pot!",
+   "size": "1.294 kvadratnih stopinj",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/volans": {
+   "description": "Volans (Leteča riba) je šibka južna konstelacija, ki so jo uvedli nizozemski pomorščaki in predstavlja tropsko ribo, ki lahko skoči iz vode in se ploska po zraku.",
+   "fun_fact": "Volans leži blizu Velikega Magellanskega oblaka in vsebuje Lindsay-Shapleyjev prstan, enega najbolj popolnih obročastih galaksij, ki so jih kdaj opazili!",
+   "size": "141 kvadratnih stopinj",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/vulpecula": {
+   "description": "Vulpecula (Lisička) je šibka severna konstelacija, ki jo je ustvaril Hevelius leta 1687. Leži v srcu Mlečne poti med Labodjem in Puščico.",
+   "fun_fact": "Vulpecula vsebuje Dumbbell Nebulo (M27), prvo planetarno meglico, ki je bila kdaj odkrita (Charles Messier leta 1764), in lep cilj za dvogled!",
+   "size": "268 kvadratnih stopinj",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "dso/blue_snowball_nebula": {
+   "description": "Blue Snowball je planetarna meglica v Andromedah — svetleča lupina plina, ki jo je izgnala umirajoča zvezda. Z magnitudo 8,3 je ena najsvetlejših in najbolj barvitih planetarnih meglič na nebu, ki se v majhnih teleskopih pojavljajo kot živahna modro-zelena disk. Njegova simetrična oblika in intenzivna barva ga delata priljubljeno med opazovalci.",
+   "fun_fact": "Presenetljiva barva Modre snežne kepe izvira iz dvojno ioniziranega kisika, ki sveti pri specifični zeleni valovni dolžini, v kombinaciji z emisijo vodika — barvna paleta, ki jo človeško oko zaznava kot modro-zeleno. Beli pritlikavi zvezdni ostanki imajo površinsko temperaturo okoli 100.000°C, dovolj toplo, da ionizira okolni plin na tej razdalji.",
+   "distance": "~2.500 svetlobnih let",
+   "size": "~0,8 svetlobnih let premer",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/centaurus_a": {
+   "description": "Centaurus A (NGC 5128) je najbližja aktivna radijska galaksija Zemlji, velikanska eliptična galaksija v ozvezdju Kentavra, katere presenetljiva temna prašna proga izdaja nasilno preteklost — spiralno galaksijo, ki je bila požrta pred približno 200–700 milijoni let. V njenem srcu se skriva supermasivna črna luknja z maso 55 milijonov Sonc, ki poganja relativistične curke, ki se raztezajo več kot milijon svetlobnih let v radijskih valovnih dolžinah. Na razdalji približno 12 milijonov svetlobnih let je ena najbolj proučevanih galaksij na nebu.",
+   "fun_fact": "Centaurus A je eden izmed najmočnejših naravnih radijskih oddajnikov na nebu — njegovi curki izstrelijo plazmo navzven s hitrostjo blizu svetlobne hitrosti, celoten obseg njegovih radijskih lopatk pa zajema območje, ki je enakovredno približno 100 polnih lun, postavljenih druga za drugo čez nebo.",
+   "distance": "~12 milijonov svetlobnih let",
+   "size": "~123.000 svetlobnih let v premeru",
+   "image_credit": "ESO"
+  },
+  "dso/coathanger": {
+   "description": "Coathanger je presenetljiv asterizem desetih zvezd v Vulpekuli, ki tvorijo nezmotljivo obliko: šest zvezd v ravni črti s štirimi, ki visijo spodaj v kljuki, popolnoma podobno obrnjenemu obešalniku. Je eden najboljših predmetov za daljnogled v poletnem nebu, ki se lepo prilega tipičnemu polju vida daljnogleda.",
+   "fun_fact": "Čeprav izgleda kot kopica, zvezde Obešalnika niso fizično povezane — nahajajo se na zelo različnih razdaljah in so zgolj naključje vidne črte. Brocchijev zvezdni red je v 1920-ih letih katalogiziral Dalmiro Brocchi, prvi vesoljski teleskop, ki ga je fotografiral, pa je bil Hipparcos, ki je potrdil, da so zvezde nepovezane.",
+   "distance": "~420 svetlobnih let (najsvetlejša zvezda)",
+   "size": "~1° širine",
+   "image_credit": "DSS/Giuseppe Donatiello"
+  },
+  "dso/coma_star_cluster": {
+   "description": "Zvezdna kopica Koma Berenike je bližnja odprta kopica z približno 40 zvezd, razpršenih ohlapno čez skoraj 5° neba, zlahka vidna s prostim očesom kot mehka megla v temnih pogojih. Je tretja najbližja odprta kopica Sončnemu sistemu in vir ozvezdja Koma Berenike.",
+   "fun_fact": "Starodavni opazovalci so to skupino videli kot lase kraljice Berenice II. Egipta, ki je po legendi odrezala svoje zlate lase kot daritev za varno vrnitev svojega moža iz vojne. Ptolemej III. je naj bi to nenavadno konstelacijo uradno poimenoval v njeno čast okrog leta 245 pr. n. št.",
+   "distance": "288 svetlobnih let",
+   "size": "~5° širine",
+   "image_credit": "Alberto Pisabarro/CC BY-SA 4.0"
+  },
+  "dso/cygnus_x_1": {
+   "description": "Cygnus X-1 je črna luknja zvezdne mase, oddaljena približno 7.200 svetlobnih let v ozvezdju Laboda, in eden najmočnejših virov rentgenskih žarkov na nebu. Tvori binarni sistem z modro supergigantsko zvezdo HDE 226868, ki se medsebojno obideta vsakih 5,6 dni. Črna luknja odvzema plin svojemu spremljevalnemu zvezdnemu telesu in tvori superhvaljav akreacijski disk, ki blešči v rentgenskih žarkih.",
+   "fun_fact": "Cygnus X-1 je bil prvi objekt, ki je bil splošno sprejet kot črna luknja. Leta 1975 je Stephen Hawking sklenil znamenito znanstveno stavo s Kipom Thornom, da to NI črna luknja, a je stavo kasneje priznal.",
+   "distance": "7.200 svetlobnih let",
+   "size": "Masa črne luknje: ~21 sončnih mas",
+   "image_credit": "NASA/CXC/M.Weiss"
+  },
+  "dso/double_cluster": {
+   "description": "Dvojna gruča (NGC 869 in NGC 884) je osupljiv par mladih odprtih zvezdnih grozdov v Perzeeju, ki sta si v nebu blizu drug drugega, oddaljena le malo več kot eno stopinjo. Oba sta s prostim očesom vidna kot meglena pegica, vendar že majhov teleskop razkrije stotine svetlečih modro-belih supergigantov, stisnjenih v dve bleščeči roji. Na razdalji približno 7500 svetlobnih let se nahajata v Perzejski veji naše galaksije in sta med najlepšimi binokularnimi objekti na severnem nebu.",
+   "fun_fact": "Star skupini Double Cluster je star le 14 milijonov let, kar je izjemno mlado — tako nedavno rojen, da so njegovi najbolj masivni zvezde še vedno žareče modre supergiganti, nekaj pa se je že razvilo v redke, žareče rdeče supergigante.",
+   "distance": "~7.500 svetlobnih let",
+   "size": "Vsak gruč ~70 svetlobnih let v premeru; par ločen za ~1.000 svetlobnih let",
+   "image_credit": "Genuson/CC BY-SA 3.0"
+  },
+  "dso/eta_carinae_nebula": {
+   "description": "Meglina Eta Carinae (NGC 3372) je ena največjih in najsvetlejših meglih na nebu, ki se razteza čez več kot 300 svetlobnih let. V njenem srcu se nahaja Eta Carinae, ena najbolj masivnih in svetlih zvezd, ki jih poznamo, s težo več kot 100 sončnih mas.",
+   "fun_fact": "Leta 1843 je Eta Carinae eksplodirala in se je na kratko stala druga najsvetlejša zvezda na nebu, vendar je nekako preživela — morda je na robu, da postane supernova!",
+   "distance": "7.500 svetlobnih let",
+   "size": "300 svetlobnih let v premeru"
+  },
+  "dso/exposed_cranium_nebula": {
+   "description": "Meglena Exposed Cranium (PMR 1) je planetarna meglena v Veli, oddaljena približno 5000 svetlobnih let. Njeno nenavadno ime izvira iz temnega pasu plina, ki teče navpično skozi sredino in deli njena svetleča jedra v obliko, ki čudno spominja na možgane v prozornem lobanju. V njenem srcu gori vroča Wolf-Rayet-ova zvezda, ki odvrhuje zunanje plasti, ki jih je gradila vse življenje.",
+   "fun_fact": "Leta 2026 je Vesoljski teleskop James Webb ujel osupljive nove slike Meglice Izpostavljenega Lobanje, pri čemer je razrešil njeno dvojno plastno strukturo z neprecedentno podrobnostjo — zunanjo lupino bogato z vodikom in notranjo oblak nabit s težjimi elementi, ki jih je ustvarila umirajoča zvezda.",
+   "distance": "~5.000 svetlobnih let",
+   "size": "~2 svetlobni leti v premeru",
+   "image_credit": "NASA, ESA, CSA, STScI/Joseph DePasquale"
+  },
+  "dso/ghost_of_jupiter": {
+   "description": "Ghost of Jupiter je svetla planetarna meglica v Hydri, katere navidezna velikost je podobna planetu Jupiter — od tod tudi njeno ime. Z magnitudo 8,6 je ena najbolj dostopnih planetarnih meglič na nebu za majhove teleskope, ki kažejo jasen disk in namig barve v zmerno velikih odprtinah.",
+   "fun_fact": "Duh Jupitrove je notranja svetla lupina, obdana s šibkejšo zunanjo avolo — dvoslojno strukturo, ki kaže, da je umirajoča zvezda izgnala plin v najmanj dveh ločenih epizodah. Njena osrednja zvezda je ena izmed najbolj vročih znanih belih pritlikavk, s površinsko temperaturo, ocenjeno na približno 75.000 °C.",
+   "distance": "~1.400 svetlobnih let",
+   "size": "~1 svetlobno leto premer",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/hdf": {
+   "description": "Hubble Deep Field je majhen 2,6-arcminutni delček navidezno praznega neba v Veliki medvedici, ki ga je Hubbleov vesoljski teleskop fotografiral v 10 zaporednih dneh decembra 1995. Kar se je zdelo kot prazen prostor, je razkrilo približno 3000 galaksij — ki segajo milijarde let kozmične zgodovine — in temeljito spremenilo našo predstavo o vesolju.",
+   "fun_fact": "Območje neba je bilo izbrano posebej, ker je bilo prazno svetlih zvezd in bližnjih galaksij. Vendar je bila nastala slika polna približno 3.000 galaksij, kar je vodilo do ocene, da celotno nebo vsebuje približno 200 milijard galaksij — skoraj vse so bile nevidne za kateri koli teleskop pred Hubblom.",
+   "distance": "~13 milijard svetlobnih let (najbolj oddaljeni)",
+   "size": "2,6 ločnih minut (vidno polje)",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/helix_nebula": {
+   "description": "Helix Nebula je največja planetarna meglica po navidezni velikosti na nebu — razširjajoča se lupina plina, ki jo je izpustila Soncu podobna zvezda na koncu svojega življenja. S premerom približno pol stopinje je vidna v daljnogledu kot šibka krožna svetloba v Vodnarju in je poimenovana Božje oko zaradi svojega videza na dolgih ekspozicijah.",
+   "fun_fact": "V srcu Helix meglice se nahaja eden od najbližjih znanih belih pritlikavcev do Zemlje — izjemno vroč zvezdni ostanki velikosti Zemlje, vendar z maso Sonca. To je usoda, ki čaka naše lastno Sonce v približno petih milijardah let.",
+   "distance": "650 svetlobnih let",
+   "size": "~3 svetlobnih let premer",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/hyades": {
+   "description": "Hyade so najbližje odprto zvezdno kopico Sončnega sistema in ena najbolj proučevanih v astronomiji. Vidna s prostim očesom kot V-oblikovani vzorec zvezd, ki tvorijo obraz Bika, vsebuje več sto zvezd, razporejenih na približno 5° neba.",
+   "fun_fact": "Svetleča oranžna zvezda Aldebaran se zdi, da je v Hiadah, vendar je v resnici prednji predmet na polovici razdalje – naključna poravnava. Pravi skupek je oddaljen približno 153 svetlobnih let in vsebuje prve zvezde, katerih razdalje je izmerila satelitska misija Hipparcos s pomočjo paralakse.",
+   "distance": "153 svetlobnih let",
+   "size": "~5° širine",
+   "image_credit": "NOIRLab/NSF/AURA"
+  },
+  "dso/jewel_box": {
+   "description": "Škatla draguljev (NGC 4755) je mlado, svetlo odprto zvezdno jato v ozvezdju Južni križ, ki je s prostim očesom vidno kot meglena četrte magnitude pega malo jugovzhodno od zvezde Mimoza. Ko ga opazujemo skozi teleskop, njegove zvezde blestijo v živih nasprotnih barvah — globoki modri supergiganti ob strani udarne rdeče supergigantke — kar mu je prineslo ime, ki ga je dal John Herschel: odličen kos dragocene nakit. Staro je le 14–16 milijonov let, zato je eno najmladših in najbolj barvitih zvezdnih jat na nebu.",
+   "fun_fact": "Izstopna rdeča zvezda v gruči, κ Crucis, je rdeči supergigant, ki je tako svetel, da presija Sonce za več kot 100.000-krat — živahno opominjanje, da niso vsi zvezdni gruči enake barve.",
+   "distance": "~6.500 svetlobnih let",
+   "size": "~19 svetlobnih let v premeru",
+   "image_credit": "ESO/Y. Beletsky"
+  },
+  "dso/lmc": {
+   "description": "Velika Magellanovo oblaka je nepravilna satelitska galaksija Mlečne poti, vidna s prostim očesom kot ločena, svetleča pegla neba. Je ena izmed naših najbližjih galaktičnih sosedov in ena izmed najbolj aktivnih galaksij, ki tvorijo zvezde v Lokalni skupini.",
+   "fun_fact": "Leta 1987 je zvezda v Velikem Magelanovem oblaku eksplodirala kot Supernova 1987A — prva supernova, vidna s prostim očesom od leta 1604. Nevtrini iz eksplozije so na Zemljo prispeli tri ure pred svetlobo, kar je potrdilo naše modele kolapsa zvezdnih jeder.",
+   "distance": "160.000 svetlobnih let",
+   "size": "14.000 svetlobnih let v premeru",
+   "image_credit": "ESO/C. Bardon"
+  },
+  "dso/m1": {
+   "description": "Rakovična meglica je ostatek supernove v Biku, rezultat zvezdnega izbruha, ki so ga kitajski astronomi zabeležili leta 1054 n. št.",
+   "fun_fact": "Rakovična meglica vsebuje pulzar, ki se vrti 30-krat na sekundo, zrušeno jedro eksplodirane zvezde!",
+   "distance": "6.500 svetlobnih let",
+   "size": "11 svetlobnih let v premeru",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m10": {
+   "description": "M10 je svetel kroglasti kopič v Ophiuchu, eden od bližjih kroglastih kopičev našega sončnega sistema.",
+   "fun_fact": "M10 se nam približuje s hitrostjo več kot 70 km/s in ima nenavadno nizko koncentracijo zvezd v svojem jedru!",
+   "distance": "14.300 svetlobnih let",
+   "size": "83 svetlobnih let v premeru",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m100": {
+   "description": "Messier 100 je spiralna galaksija velikega sloga v Laseh Veronike in ena najsvetlejših v jati v Devici.",
+   "fun_fact": "V galaksiji M100 je bilo opaženih sedem supernov, zadnja leta 2020 – le redke galaksije so pripravile tako predstavo!",
+   "distance": "55 milijonov svetlobnih let",
+   "size": "premer 166.000 svetlobnih let"
+  },
+  "dso/m101": {
+   "description": "Galaksija Pinwheel je spiralna galaksija s čelnim pogledom v Veliki medvedici, ena največjih znanih spiralnih galaksij.",
+   "fun_fact": "Galaksija Pinwheel vsebuje več kot bilijon zvezd in ima asimetrične spiralne roke zaradi preteklih interakcij galaksij!",
+   "distance": "21 milijonov svetlobnih let",
+   "size": "170.000 svetlobnih let v premeru",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m102": {
+   "description": "Messier 102 je veliki nerazrešeni vnos v Messierjevem katalogu – predmet, zabeležen leta 1781, ki ni bil še nikoli zanesljivo identificiran.",
+   "fun_fact": "Messier ni objavil koordinat za M102, njegov kolega Méchain pa je kasneje odkritega popolnoma umaknil s trditvijo, da je šlo le za dvakrat zabeleženi M101 pomotoma! NASA ga enači z vretenasto galaksijo NGC 5866."
+  },
+  "dso/m103": {
+   "description": "M103 je majhna, kompaktna odprta zvezdna kopica v Kasiopeji, ki vsebuje približno 40 zvezd v tesni skupini, ki jo je mogoče zlahka videti v daljnogledu. Presenetljiva dvojna zvezda in rdeči velikan blizu središča ji dajeta pisano videz v majhnih teleskopih, postavljeni v bogata polja Rimske ceste v Kasiopeji.",
+   "fun_fact": "M103 je bil predmet z najvišjo številko v Messierjevem izvirnem katalogu iz leta 1781 — vsi naslednji vnosi (M104–M110) so bili pozneje dodani drugim astronomom iz Messierjevih zapiskov in dopisovanja. Pierre Méchain je M103 odkril tik preden je katalog šel v tisk, in Messier ga je vključil na podlagi Méchainovega poročila.",
+   "distance": "8.500 svetlobnih let",
+   "size": "~15 svetlobnih let v premeru"
+  },
+  "dso/m104": {
+   "description": "Galaksija Sombrero je spiralna galaksija v Devici, znana po svojem svetlem jedru in velikem osrednjem izboklinanju s temno prašno progo.",
+   "fun_fact": "Galaksija Sombrero ima v svojem središču supermasivno črno luknjo, katere masa je ocenjena na 1 milijardo sončnih mas!",
+   "distance": "31 milijonov svetlobnih let",
+   "size": "50.000 svetlobnih let v premeru",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m105": {
+   "description": "Messier 105 je eliptična galaksija v ozvezdjih Lev, največja eliptična galaksija v Messierovem katalogu zunaj kope v Devici.",
+   "fun_fact": "M105 si z sosednjo galaksijo NGC 3384 deli ogromen obroč vodikovega plina, ki meri okoli 650.000 svetlobnih let!",
+   "distance": "37 milijonov svetlobnih let",
+   "size": "premer 67.000 svetlobnih let"
+  },
+  "dso/m106": {
+   "description": "M106 je spiralna galaksija v Psih lovcem z anomalnimi spiralnimi kraki, ki jih povzročajo curki iz njene osrednje črne luknje.",
+   "fun_fact": "M106 ima vodne masarje v svojem jedru, kar astronomom omogoča natančno merjenje njegove razdalje!",
+   "distance": "23,5 milijona svetlobnih let",
+   "size": "135.000 svetlobnih let v premeru",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m107": {
+   "description": "M107 je ena izmed najmanj koncentriranih Messierjevih kroglastih kopic, s zvezami razpršenimi v relativno odprtem vzorcu okrog skromnega jedra. Pri magnitudi 8,1 je tarča za dvogled z temnega neba in se delno razreši v majhovih teleskopih, pri čemer kaže zrnato teksturo namesto ostre osrednje kondenzacije.",
+   "fun_fact": "M107 je bil zadnji vnos, ki je bil formalno dodan v Messierov katalog — pojavi se v dopisovanju Pierrea Méchaina, vendar ni bil vključen v izvirno izdajo iz leta 1781. Uradno je bil dodan kot M107 leta 1947 s strani kanadske astronomke Helen Sawyer Hogg, ki je kodificirala več \"manjkajočih\" objektov, ki jih je Méchain opazoval, vendar jih Messier nikoli ni formalno zabeležil.",
+   "distance": "20.900 svetlobnih let",
+   "size": "~61 svetlobnih let v premeru"
+  },
+  "dso/m108": {
+   "description": "Messier 108 je prečkasta spiralna galaksija v Velikem medvedu, z vzdevkom galaksija Deska za surfanje.",
+   "fun_fact": "M108 je nagnjen skoraj z robom proti nam, zaradi česar si je prislužil ime deska za surfanje – in vsebuje okoli 290 kroglastih kopic!",
+   "distance": "46 milijonov svetlobnih let"
+  },
+  "dso/m109": {
+   "description": "M109 je prečna spiralna galaksija v Veliki medvedici, najsvetlejši član galaksijske skupine, ki nosi njeno ime.",
+   "fun_fact": "M109 se nahaja zelo blizu zvezde Phecda v Velikem medvedu, kar ga naredi enostavno za lociranje!",
+   "distance": "83 milijonov svetlobnih let",
+   "size": "180.000 svetlobnih let v premeru",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m11": {
+   "description": "Gruča Divjih rac je bogata odprta gruča v Ščitu, ena najbolj kompaktnih znanih odprtih gruč.",
+   "fun_fact": "M11 vsebuje skoraj 3.000 zvezd, stisnjenih na majhnem območju, kar ustvari spektakularen pogled skozi teleskope!",
+   "distance": "6.200 svetlobnih let",
+   "size": "20 svetlobnih let v premeru",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m110": {
+   "description": "M110 je pritlikava eliptična galaksija in satelit Andromedine galaksije, zadnji predmet, dodan v Messierov katalog.",
+   "fun_fact": "M110 je bil dejansko opazovan s strani Messierja leta 1773, vendar ni bil dodan v njegov katalog do leta 1966!",
+   "distance": "2,7 milijona svetlobnih let",
+   "size": "17.000 svetlobnih let v premeru",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m12": {
+   "description": "M12 je kroglasta kopica v Ofiuhu, znana po relativno ohljani osrednji koncentraciji.",
+   "fun_fact": "M12 je izgubil številne svoje nizkomasne zvezde zaradi gravitacijskega privlaka Mlečne poti v milijardah let!",
+   "distance": "15.700 svetlobnih let",
+   "size": "75 svetlobnih let v premeru",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m13": {
+   "description": "M13 je spektakularen kroglast zvezdni kopič v Herkulesih s približno 300.000 zvezd, ena izmed najsvetlejših na severnem nebu.",
+   "fun_fact": "Leta 1974 je bila Arecibojeva sporočila usmerjena proti M13 kot poskus vzpostavitve stika z izvenzemeljsko inteligenco!",
+   "distance": "22.200 svetlobnih let",
+   "size": "145 svetlobnih let v premeru",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m14": {
+   "description": "M14 je kroglasta kopica v Ofiuhu, ki vsebuje več sto tisoč zvezd.",
+   "fun_fact": "Leta 1938 se je v M14 pojavila nova, vendar je bila odkrita šele leta 1964, ko so pregledali stare fotografske plošče!",
+   "distance": "30.300 svetlobnih let",
+   "size": "100 svetlobnih let v premeru",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m15": {
+   "description": "M15 je gosta kroglasta kopica v Pegazu, znana po tem, da ima planetarno meglico v svojem jedru - to je za kroglaste kopice zelo redko.",
+   "fun_fact": "M15 morda vsebuje osrednjo črno luknjo z maso približno 4.000 sončnih mas, čeprav je to še vedno predmet razprave!",
+   "distance": "33.600 svetlobnih let",
+   "size": "175 svetlobnih let v premeru",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m16": {
+   "description": "Orlova meglica je meglica nastajanja zvezd v Kačarju, znana po Stebrih stvarjanja, ki jih je fotografiral Hubble.",
+   "fun_fact": "Stebri stvarjenja v M16 so visoki približno 5 svetlobnih let in se počasi erodirajo zaradi sevanja bližnjih zvezd!",
+   "distance": "7.000 svetlobnih let",
+   "size": "70 svetlobnih let v premeru",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m17": {
+   "description": "Omega meglica (znana tudi kot Labodova meglica) je regija nastajanja zvezd v Strelcu, ena od najsvetlejših emisijskih meglič.",
+   "fun_fact": "Omegina meglica vsebuje odprto kopico približno 800 mladih zvezd, skritih v njeni plini in prahu!",
+   "distance": "5.500 svetlobnih let",
+   "size": "15 svetlobnih let v premeru",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m18": {
+   "description": "Messier 18 je majhna odprta kopica mladih zvezd v Strelcu, znana tudi kot kopica Črni labod.",
+   "fun_fact": "M18 je eden redkih Messierjevih objektov, ki jih vesoljski teleskop Hubble ni nikoli fotografiral!",
+   "distance": "4.200 svetlobnih let",
+   "size": "premer 26 svetlobnih let"
+  },
+  "dso/m19": {
+   "description": "M19 je kompakten, bogat kuglasti zvezdni jato v Ophiuchu — eno izmed najbližjih kuglastih zvezdnih jat galaktičnemu središču. Njegova najbolj značilna lastnost je opazno sploščena oblika: M19 je najbolj sploščeno znano kuglasto zvezdno jato, z vidno eliptično obliko tudi v majhnem teleskopu.",
+   "fun_fact": "Izrazita sploščenost M19 — njegova najdaljša os je približno 10 % daljša od najkrajše — je edinstvena med znanimi kroglastimi kopicami in se domneva, da je posledica plimskega raztezanja gravitacijskega polja Mlečne poti. Čim bližje je kroglasta kopica galaktičnemu središču, bolj je deformirana; M19 se nahaja le približno 5.200 svetlobnih let od galaktičnega jedra.",
+   "distance": "28.700 svetlobnih let",
+   "size": "~113 svetlobnih let v premeru"
+  },
+  "dso/m2": {
+   "description": "M2 je ena največjih in najbogatejših globularnih gruč, ki jih poznamo, nahaja se v Vodnarju.",
+   "fun_fact": "M2 vsebuje približno 150.000 zvezd in ima premer 175 svetlobnih let, kar ga uvršča med največje globularne kopice!",
+   "distance": "37.500 svetlobnih let",
+   "size": "175 svetlobnih let v premeru",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m20": {
+   "description": "Trifidna meglica je kombinacija emisijske, refleksivne in temne meglice v Strelcu, deljene s temnimi prašnimi pasovi.",
+   "fun_fact": "Trifid kaže tri različne vrste meglice v enem objektu: rdečo emisijsko, modro refleksijsko in temno absorpcijsko!",
+   "distance": "5.200 svetlobnih let",
+   "size": "20 svetlobnih let v premeru",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m21": {
+   "description": "M21 je kompaktna odprta zvezdna kopica v Strelcu, ki se nahaja le pol stopinje severno od Trifidne meglice (M20), kar ju naredi izjemno binokularno kombinacijo. Kopica vsebuje približno 57 zvezd, koncentriranih na manjšem področju kot številne Messierove kopice, z več svetlimi modro-belimi zvezdam kot prevladujočimi člani.",
+   "fun_fact": "Čeprav sta M21 in M20 (Trifidna meglica) fizično nepovezana, tvorita enega najbolj privlačnih binokularnih parov v poletnem nebu — svetlo zvezdno kopico ob barviti tri-režnjasti meglici. M21 je oddaljen približno 4.250 svetlobnih let, medtem ko je M20 nekoliko bližje, približno 4.100 svetlobnih let.",
+   "distance": "4.250 svetlobnih let",
+   "size": "~16 svetlobnih let v premeru"
+  },
+  "dso/m22": {
+   "description": "M22 je ena od najbližjih in najsvetlejših kroglastih kopic Zemlji, ki se nahaja v Strelcu blizu galaktičnega središča.",
+   "fun_fact": "M22 je bila ena prvih kroglastih kopic, ki so jo odkrili, Abraham Ihle jo je odkril leta 1665!",
+   "distance": "10.600 svetlobnih let",
+   "size": "70 svetlobnih let v premeru",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m23": {
+   "description": "M23 je bogat odprt zvezdni kopič v Strelcu, vgrajen v gostih zvezdnih poljih poletne Rimske ceste. Približno 150 zvezd je razporejenih na polstopinjskem polju v daljnogledu, kar ga naredi velikodušen predmet za daljnogled v istem območju neba kot mnogi drugi Messierjev dragulji.",
+   "fun_fact": "M23 je ocenjena na približno 300 milijonov let — srednje stara, z večino njenih masivnih zvezd, ki so že zapustile glavno zaporedje. Messier jo je odkril leta 1764 med enim od svojih plodnih opazovalnih kampanj, ki so preiskale polja zvezd v Strelcu.",
+   "distance": "2.150 svetlobnih let",
+   "size": "~17 svetlobnih let v premeru"
+  },
+  "dso/m24": {
+   "description": "M24 je Sagitarijev zvezdni oblak — ne gruča ali meglica, temveč okno skozi vrzel v prahu Mlečne poti, ki razkriva bleščeče zvezdno polje, ki je široko 2°. To je najbogatejša regija, vidna skozi daljnogled kjerkoli na nebu, napolnjena s tisočimi zvezd, ki se raztezajo na številnih različnih razdaljah hkrati.",
+   "fun_fact": "Zvezde v M24 niso na enaki razdalji — zvezdna oblaka predstavlja prečni prerez Galaksijskega diska, viden skozi naravni tunel v medzvezdnem prahu, ki se razteza na razdalje od 10.000 do 16.000 svetlobnih let. V oblaki so vdelane temne meglice in majhni zvezdni kopici, ki se pojavljajo kot temne lise na sijajni zvezdni ozadju.",
+   "distance": "~10.000–16.000 svetlobnih let (razpon)",
+   "size": "~600 svetlobnih let globoko okno"
+  },
+  "dso/m25": {
+   "description": "M25 je svetla, s prostim očesom vidna odprta zvezdna kopica v Strelcu, postavljena proti gostim zvezdnim poljem poletne Rimske ceste. Približno 600 zvezd je razpršenih čez polje pol stopinje, kar jo naredi bogat predmet za daljnogled. Njeni najsvetlejši člani vključujejo več modrih-belih supergigantov in eno najbolj proučevanih spremenljivih zvezd Cefeid na nebu.",
+   "fun_fact": "M25 vsebuje U Sagittarii, klasično spremenljivo zvezdo tipa Cefeid, ki se sija in bledi v obdobju 6,7 dni. Cefeide so ključne »standardne sveče« za merjenje kozmičnih razdalj, ker njihovo periodo pulsiranja neposredno razkrije njihovo pravo svetilnost — astronomi so jih uporabili, da so najprej določili velikost Rimske ceste in nato obseg opazljivega vesolja.",
+   "distance": "2.000 svetlobnih let",
+   "size": "~19 svetlobnih let širine"
+  },
+  "dso/m26": {
+   "description": "M26 je zmerno šibko vidna odprta zvezdna kopica v ozvezdju Ščita, vidna v daljnogledu in dobro razločena v manjših teleskopih. Približno 90 zvezd je razpršenih po kompaktnem polju v bogati zvezdni oblaki Ščita, čeprav je kopica postavljena pred tako gosto ozadje, da zahteva prepoznavanje njenih članov iz okoliške zvezdne slike nekaj pazljivosti.",
+   "fun_fact": "M26 leži vzdolž istega bogatega pasu neba kot M11 — Jato divjih rac, eno najlepših odprtih jat na nebu. Oba sta oddaljena le približno 3,5° in vidna v istem polju dvogled, kar naredi Scutum izjemno destinacijo za opazovalce jat, čeprav je majhno in pogosto prezrto ozvezdje.",
+   "distance": "5.000 svetlobnih let",
+   "size": "~22 svetlobnih let v premeru"
+  },
+  "dso/m27": {
+   "description": "Meglica Ročaj je planetarna meglica v ozvezdju Lisica in prva planetarna meglica, ki je bila kdaj odkrita.",
+   "fun_fact": "Meglino meglino je bila odkrita s strani Charlesa Messiera leta 1764, kar jo je naredilo prvo planetarno meglico, ki je bila kdaj odkrita!",
+   "distance": "1.360 svetlobnih let",
+   "size": "2,5 svetlobnih let v premeru",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m28": {
+   "description": "M28 je kompakten globularni zvezdni kopič v Strelcu, ki se nahaja blizu svetle zvezde Lambda Sagittarii v bogatih poletnih zvezdnih poljih. Pri magnitudi 6,9 je privlačen cilj za dvogled in je dobro razločljiv v majhnih teleskopih, pri čemer je viden svetel zbiti jedro, obdano z zmerno aureolo zvezd.",
+   "fun_fact": "Leta 1987 je bil M28 prvi kroglasti zvezdni kopič, v katerem je bil odkrit milisekundni pulzar. Milisekundni pulzarji — nevtronske zvezde, ki se vrtijo stokrat na sekundo — nastanejo, ko nevtronska zvezda akrecira snov od spremljevalne zvezde, in se v kroglastih zvezdnih kopičih pojavljajo s precej višjo frekvenco kot v splošni galaksiji, ker njihova gosta zvezdna okolja povzročajo veliko več tesnih dvojnih srečanj.",
+   "distance": "18.300 svetlobnih let",
+   "size": "~60 svetlobnih let v premeru"
+  },
+  "dso/m29": {
+   "description": "M29 je majhna, mlada odprta zvezdna kopica v Labodu, postavljena proti enemu najbolj prahu zasenčenih območij Rimske ceste. Pet svetlih modrih supergigantov dominira kopico, vidnih v daljnogledu kot tesna asterizma vročih, svetlih zvezd. Brez gostega prahu v ospredju bi bila M29 ena najbolj spektakularnih odprtih zvezdnih kopic na nebu.",
+   "fun_fact": "M29 je ocenjen na le približno 10 milijonov let star — dojenček zvezd — in se nahaja v asociaciji Cygnus OB1, razprostranjena skupina masivnih mladih zvezd. Gosta medzvezdna prašina zmanjša svetlost gruče za približno 3 magnitude; brez te zasenčitve bi zvezde M29 svetile večkrat bolj svetlo, kot se dejansko zdijo.",
+   "distance": "4.000 svetlobnih let",
+   "size": "~8 svetlobnih let v premeru"
+  },
+  "dso/m3": {
+   "description": "M3 je ena največjih in najsvetlejših kroglastih kopic na nebu, ki se nahaja v ozvezdju Lovska psa.",
+   "fun_fact": "M3 vsebuje približno 500.000 zvezd in je ocenjena na 11,4 milijarde let stara!",
+   "distance": "33.900 svetlobnih let",
+   "size": "180 svetlobnih let v premeru",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m30": {
+   "description": "M30 je kompakten kroglasti zvezdni kopič v Kozorcu — odličen predmet za majhove teleskope, ki kaže svetel, zgoščen jedro in šibke obrobne verige zvezd. Pri magnitudi 7,5 zahteva temno nebo za daljnogled in nagrajuje majhen teleskop s svojo delno razločeno zunanjo haloto.",
+   "fun_fact": "M30 je doživela \"kolapsa jedra\" — proces, pri katerem medsebojna gravitacijska privlačnost gosto pakiranih zvezd povzroči, da se sredisce gruče dramatično skrči, kar ustvari ekstremno koncentracijo zvezd v majhni prostornini. Približno petina vseh globularnih gruč ima porušena jedra, M30 pa je med najbolje preučevanimi primeri tega pojava.",
+   "distance": "27.100 svetlobnih let",
+   "size": "~87 svetlobnih let v premeru"
+  },
+  "dso/m31": {
+   "description": "Galaksija Andromeda je najbližja velika spiralna galaksija Rimski cesti in eden najbolj oddaljenih objektov, vidnih s prostim očesom.",
+   "fun_fact": "Galaksija Andromeda se približuje k nam s hitrostjo 110 km/s in se bo v približno 4,5 milijarde let trčila z Mlečno potjo!",
+   "distance": "2,5 milijona svetlobnih let",
+   "size": "220.000 svetlobnih let v premeru",
+   "mass": "1,5 bilijona sončnih mas",
+   "image_credit": "Adam Kennett/Wikimedia Commons"
+  },
+  "dso/m32": {
+   "description": "M32 je kompaktna pritlikava eliptična galaksija in blizu satelit Galaksije Andromeda.",
+   "fun_fact": "M32 je bila prva eliptična galaksija, ki je bila kdaj odkrita, in je bila morda nekoč večja spiralna galaksija, ki jo je Andromeda obgolila!",
+   "distance": "2,5 milijona svetlobnih let",
+   "size": "6.500 svetlobnih let v premeru",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m33": {
+   "description": "Galaksija Triangulum je tretji največji član Lokalne skupine, spiralna galaksija vidna v ozvezdju Triangulum.",
+   "fun_fact": "Galaksija Trikotnik je morda gravitacijsko vezana na Andromedino galaksijo kot oddaljen satelit!",
+   "distance": "2,7 milijona svetlobnih let",
+   "size": "60.000 svetlobnih let v premeru",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m34": {
+   "description": "M34 je svetel, razpršen odprt zvezdni kopič v Perzeeju, ki ga je mogoče zlahka videti v daljnogledu kot bogato razpršitev zvezd pred zimsko Rimsko cesto. Njegovih približno 400 zvezd pokriva območje, ki je skoraj tako široko kot polna Luna, z nekaj vidnimi dvojnimi zvezdam za pozorne opazovalce z daljnogledom.",
+   "fun_fact": "Star M34 je star približno 200 milijonov let in je v vmesni starosti — dovolj mlad, da njegove vroče modre zvezde še vedno svetijo, dovolj star, da so se najbolj masivne že eksplodirale kot supernovae. Na razdalji 1500 svetlobnih let je ena izmed bližjih Messierjevih kopulj in ostaja čudovit objekt tudi z neba v predmestjih.",
+   "distance": "1.500 svetlobnih let",
+   "size": "~15 svetlobnih let v premeru"
+  },
+  "dso/m35": {
+   "description": "M35 je velika odprta zvezdna kopica v ozvezdju Dvojčka, vidna s prostim očesom v dobrih pogojih.",
+   "fun_fact": "M35 vsebuje približno 200 zvezd in se pojavi blizu veliko starejšega zvezdnega jata NGC 2158 v istem vidnem polju!",
+   "distance": "2.800 svetlobnih let",
+   "size": "24 svetlobnih let v premeru",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m36": {
+   "description": "M36 je najmanjša in najmlajša od treh odprtih kopic, ki jih je Messier katalogiziral v Aurigii. Približno 60 njenih zvezd je zbrano v tesno, svetlečo polje, vidno v daljnogledu in dobro razločeno na posamezne zvezde v majhnem teleskopu, ki ga prevladujejo vroče modro-bele zvezde.",
+   "fun_fact": "M36 je ocenjen na le približno 25 milijonov let star — eden izmed mlajših Messierjevih kopic — kar pomeni, da masivne modro-bele zvezde še vedno prevladujejo in se rdeči velikani še niso pojavili. Deli polje zvezd Voznika z M37 in M38, in vsi trije kopici se prilegajo istemu širokokotnemu dvogledu.",
+   "distance": "4.100 svetlobnih let",
+   "size": "~14 svetlobnih let v premeru"
+  },
+  "dso/m37": {
+   "description": "M37 je najbogatejši in najsvetlejši od treh Messierjevih odprtih kopic v Aurigii, ki vsebuje ocenjenih 500 zvezd na kompaktnem področju. Je spektakularen predmet za dvogled in mali teleskop, z razpršenostjo oranžnih velikanskih zvezd, ki dodajajo barvni kontrast modro-belemu roju.",
+   "fun_fact": "M37 vsebuje približno ducat rdečih velikanskih zvezd — nenavadno visoko število, ki odraža njeno relativno napredovano starost približno 300 milijonov let. Čeprav je oddaljena približno 4500 svetlobnih let — najbolj oddaljena od treh Messierjevih gruč v Vozaču — je še vedno med najlepšimi odprtimi gruči na nebu.",
+   "distance": "4.500 svetlobnih let",
+   "size": "~31 svetlobnih let v premeru"
+  },
+  "dso/m38": {
+   "description": "M38 je največja in najbolj razširjena od treh odprtih kopic, ki jih je Messier katalogiziral v Aurigii. Njegovih približno 100 zvezd je razporejenih v vzorec, ki ga nekateri opazovalci primerjajo s križem ali grško črko pi, viden v daljnogledu in dobro razločen v majhnem teleskopu. Manjša kopa NGC 1907 se nahaja blizu na jugu.",
+   "fun_fact": "M38 je najstarejše od treh Messierjeve gruče v Vozaču, staro približno 220 milijonov let. Dovolj stara je, da so se nekateri njeni masivni zvezdi razvili v rumene in oranžne velikane. Bližnja gruča NGC 1907 se lahko prilega istemu polju z nizko povečavo, kar ju naredi odličen par za dvogled — kot sta M46 in M47 v Psu.",
+   "distance": "4.200 svetlobnih let",
+   "size": "~26 svetlobnih let v premeru"
+  },
+  "dso/m39": {
+   "description": "M39 je velik, razpršen odprt zvezdni kopič v Labodu, viden s prostim očesom blizu Deneba v bogati poletni Rimski cesti. Njegovih približno 30 svetlih zvezd je ohlapno razporejenih na stopinjo neba, najbolje vidnih pri nizki povečavi v daljnogledu ali teleskopom s širokim poljem - večja povečava ga preprosto razreši v redko, neopazno polje zvezd.",
+   "fun_fact": "M39 je na razdalji približno 825 svetlobnih let in je eno od najbližjih odprtih kopic Zemlji. S starostjo približno 240 milijonov let je eno od starejših kopic, vidnih s prostim očesom — dovolj stara, da so njene najbolj masivne zvezde že končale svoje življenje. Messier jo je zabeležil leta 1764 in je bila med najzgodnejšimi dodatki njegovega kataloga.",
+   "distance": "825 svetlobnih let",
+   "size": "~8 svetlobnih let širine"
+  },
+  "dso/m4": {
+   "description": "M4 je ena od najbližjih kroglastih kopic Zemlji in ena od najlažje najdljivih, nahaja se blizu Antaresa v Škorpijonu.",
+   "fun_fact": "M4 vsebuje beli pritlikavec, ki je star približno 13 milijard let - ena najstarejših znanih zvezd v Rimski cesti!",
+   "distance": "7.200 svetlobnih let",
+   "size": "75 svetlobnih let v premeru",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m40": {
+   "description": "M40 je edinstven v Messierjevem katalogu — ni meglica, kopica ali galaksija, temveč široki dvojni zvezdni sistem. Messier ga je katalogiziral leta 1764 med iskanjem meglice, ki jo je poročal Johann Hevelius v Veliki medvedici, našel pa je le ta par zvezd in ga zapisal, da bi prihodnji opazovalci ne bi zamenjali za kaj bolj zanimivega.",
+   "fun_fact": "Dve zvezdi M40 — znani kot Winnecke 4 — nista gravitacijsko vezani; ležita na različnih razdaljah in sta le naključno poravnani. Messier sam je opazil, da ni bilo »nič posebnega«, vendar ga je vključil »da pokaže, da ta meglica ni enaka tistim, ki sem jih preučil.« Njegova metodična navada dokumentiranja negativnih rezultatov je dala prihodnjim opazovalcem jasno referenco.",
+   "distance": "~500 svetlobnih let",
+   "size": "~50 ločnih sekund (ločitev)"
+  },
+  "dso/m41": {
+   "description": "M41 je lepa odprta zvezdna kopica v Velikem psu, ki se nahaja le 4° južno od Sirija — najsvetlejše zvezde na nočnem nebu. Vidna s prostim očesom z temnih lokacij in spektakularna v daljnogledu, vsebuje približno 100 zvezd, razporejenih na velikem polju, z več udarnima oranžnima velikanskima zvezdama med šibkejšimi modro-belimi člani.",
+   "fun_fact": "Aristotel je morda opazil M41 okrog leta 325 pr. n. št. — mogoče najzgodnejše zabeleženo opazovanje katerega koli globokosvečnega objekta. Opisal je \"megleno pego\" južno od Sirija, ki se ujema s položajem M41. Če je identifikacija pravilna, se je o M41 razpravljalo skoraj dve tisoči let pred izumom teleskopa.",
+   "distance": "2.300 svetlobnih let",
+   "size": "~25 svetlobnih let širine"
+  },
+  "dso/m42": {
+   "description": "Orionova meglica je difuzna emisijska meglica, vidna s prostim očesom, ena najbolj fotografiranih objektov na nočnem nebu.",
+   "fun_fact": "Orionova meglica je zvezdna jaslica, kjer se nove zvezde rojevajo ravno zdaj. V njej se oblikuje več kot 700 zvezd!",
+   "distance": "1.344 svetlobnih let",
+   "size": "24 svetlobnih let v premeru",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m43": {
+   "description": "De Mairanove meglice je odtrgana del velikega kompleksa Orionove meglice, ločena od M42 s temno prašno linijo, vendar pripada istemu ogromnem molekulskemu oblaku. Poimenovana je po francoskem astronomu Jean-Jacquesu Dortousu de Mairanu, ki jo je opazil leta 1731. Gre za emisijsko meglico, ioniziran s toplo mlado zvezdo NU Orionis, ki je vdelana v njeno sredino.",
+   "fun_fact": "Čeprav se M43 pojavi kot ločen predmet od M42, je temna črta, ki ju deli, oblak prahu v ospredju — del Orionskega molekularnega oblaka — ki preprosto blokira naš pogled na fizično povezavo med obema svetlečima regijama. Skupaj sta le osvetljena notranja robova ogromnega temnega oblaka, ki se razprostira čez večji del Oriona.",
+   "distance": "1.350 svetlobnih let",
+   "size": "~8 svetlobnih let v premeru"
+  },
+  "dso/m44": {
+   "description": "Beehive Cluster (Praesepe) je odprto zvezdno jato v Raku, znano že od antičnih časov in vidno s prostim očesom.",
+   "fun_fact": "Starodavni astronomi so uporabljali vidnost Čebeljega jata za napovedovanje vremena - če je bilo nevidno, je bila kiša na poti!",
+   "distance": "577 svetlobnih let",
+   "size": "15 svetlobnih let v premeru",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m45": {
+   "description": "Plejadi so odprto zvezdno kopico v Biku, znano tudi kot Sedem sester, vidno s prostim očesom že od antike.",
+   "fun_fact": "Plejadi so med najbližjimi zvezdnimi kopicami Zemlji in jih je prepoznala praktično vsaka starodavna civilizacija!",
+   "distance": "444 svetlobnih let",
+   "size": "17 svetlobnih let v premeru",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m46": {
+   "description": "M46 je bogato in gosto odprto zvezdno kopico v Puppisu s približno 500 zvezd, stisnjenih v široko polje, ki je presenetljiva v daljnogledi in lepa v majhnih teleskopih. Izjemna posebnost plava na njegovem severnem robu: NGC 2438, majhna planetarna meglica, ki se zdi, da je vgrajena v kopico — dramatična naključna poravnava vzdolž vidne črte.",
+   "fun_fact": "Planetarna meglica NGC 2438 se zdi, da je v M46, vendar je pravzaprav nepovezan predmet v ospredju na zelo različni razdalji — približno 1.400 svetlobnih let v primerjavi z M46's 5.400. Naključje, da je lupina umirajoče zvezde naložena na mlado zvezdno kopico, to naredi eno najbolj fotografičnih polj v katalogu.",
+   "distance": "5.400 svetlobnih let",
+   "size": "~42 svetlobnih let v premeru"
+  },
+  "dso/m47": {
+   "description": "M47 je svetla, ohlapna odprta kopica v Puppisu, ki je s prostim očesom zlahka vidna in privlačna v daljnogledu. Približno 50 zvezd je razpršenih čez pol stopinje neba, pri čemer več oranžnih velikanskih zvezd dodaja toplo barvo proti šibkejšim modro-belim članom.",
+   "fun_fact": "M47 je bil eden od \"izgubljenih\" Messierjevih objektov — pisarniška napaka v Messierjevih prvotnih koordinatah ga je postavila v prazno nebo, kar je povzročilo, da je kopica ostala neidentificirana skoraj dve stoletji. Njegova prava identiteta kot NGC 2422 je bila potrjena šele leta 1959, ko so opazovalci delali nazaj od Messierjevega opisa, da bi našli napako.",
+   "distance": "1.600 svetlobnih let",
+   "size": "~14 svetlobnih let širine"
+  },
+  "dso/m48": {
+   "description": "M48 je velika, svetla odprta zvezdna kopica v Hydri, ki se razprostira na skoraj eno stopinjo neba in je vidna s prostim očesom z temnih lokacij. Njenih približno 80 zvezd je razpršenih ohlapno čez široko polje, ki je najbolje primerno za daljnogled, s sipanjem oranžnih in rumenih velikanskih zvezd med svetlejšimi modro-belimi člani.",
+   "fun_fact": "M48 je bil eden od \"izgubljenih\" Messierjevih objektov skoraj dve stoletji, ker je bila Messierova zabeležena pozicija približno 5° oddaljena od prave lokacije. Ostal je neidentificiran do leta 1959, ko je bil primerjan z NGC 2548 in se je pokazalo, da je bila preprosta napaka pri prepisovanju vzrok, da je bil postavljen v prazno nebo ves čas.",
+   "distance": "1.500 svetlobnih let",
+   "size": "~23 svetlobnih let v premeru"
+  },
+  "dso/m49": {
+   "description": "M49 je ogromna eliptična galaksija v Devici, najsvetlejši član Jate Device.",
+   "fun_fact": "M49 je bil prvi član Virgovega jata, ki je bil odkrit, in vsebuje približno 6000 krogličnih gruč!",
+   "distance": "55 milijonov svetlobnih let",
+   "size": "160.000 svetlobnih let v premeru",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m5": {
+   "description": "M5 je kroglasta kopica v Kačarju, ena najstarejših kroglastih kopic, stara približno 13 milijard let.",
+   "fun_fact": "M5 vsebuje več kot 100.000 zvezd in ima eno od največjih števil znanih spremenljivih zvezd med katerimikoli kroglastim jatom!",
+   "distance": "24.500 svetlobnih let",
+   "size": "165 svetlobnih let v premeru",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m50": {
+   "description": "M50 je svetel odprt zvezdni kopič v Enorogu, ki vsebuje približno 200 zvezd stisnjenih v presenetljivo kompaktno polje, primerno za daljnogled in majhove teleskope. Enostavno ga najdete na črti med Siriusom in Procyonom in vsebuje opazno rdečo orjakinjo — toplo oranžno svetilko, ki se živahno izstopa med modro-belimi zvezdam kopička.",
+   "fun_fact": "M50 je ocenjen na približno 78 milijonov let — ena izmed mlajših Messierjevih odprtih kopic — kar pomeni, da so njegovi vroči modri in beli zvezde še vedno v razvoju, pri čemer se je nekaj bolj masivnih članov nedavno razširilo v velikane. To je značilno za kopico v njeni zgodnji srednji starosti.",
+   "distance": "3.200 svetlobnih let",
+   "size": "~15 svetlobnih let v premeru"
+  },
+  "dso/m51": {
+   "description": "Galaksija Vrtinec je velika spiralna galaksija tipa grand-design v Psih lovcem, znana po svojih izrazitih spiralnih rokavih in spremljajočih galaksiji.",
+   "fun_fact": "Vrtinec je bila prva galaksija, za katero je bila ugotovljena spiralna struktura, ki jo je odkril Lord Rosse leta 1845!=",
+   "distance": "23 milijonov svetlobnih let",
+   "size": "76.000 svetlobnih let v premeru",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m52": {
+   "description": "M52 je bogat odprt zvezdni kopič v Kasiopeji, ki vsebuje približno 200 zvezd, stisnjenih v kompaktno območje severne Rimske ceste. Je odličen dvogledi kopič in v majhnih teleskopih kaže lepo, gosto zvezdno polje s posebej svetlejšo oranžno zvezdo, ki izstopa blizu južnega roba kopička.",
+   "fun_fact": "Razdalja M52 je nenavadno negotova — ocene se gibljejo od 3000 do 7000 svetlobnih let — ker gosta medzvezdna prašina vzdolž te smeri opazovanja otežuje določitev njegove prave svetilnosti. Messier ga je odkril leta 1774, iste noči, ko je sledil kometu, ki ga je vodil k zapisanju več drugih vnosov v katalog.",
+   "distance": "~5.000 svetlobnih let",
+   "size": "~25 svetlobnih let v premeru"
+  },
+  "dso/m53": {
+   "description": "M53 je kroglasta kopica v ozvezdju Berenikini lasje, ena izmed bolj oddaljenih kroglastih kopic v naši galaksiji.",
+   "fun_fact": "M53 je ena izmed najbolj oddaljenih kroglastih kopic od galaktičnega središča, oddaljena 60.000 svetlobnih let!=",
+   "distance": "58.000 svetlobnih let",
+   "size": "220 svetlobnih let v premeru",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m54": {
+   "description": "M54 je velika, bogata kroglasta kopica v Strelcu in eden najbolj oddaljenih objektov v celotnem Messierjevem katalogu. Stoletja se je mislilo, da je oddaljena halo kroglasta kopica Rimske ceste, vendar je zdaj znano, da je gosta jedra Sagittarius Dwarf Elliptical Galaxy — satelitska galaksija, ki jo trenutno absorbira naša lastna.",
+   "fun_fact": "Odkritje leta 1994, da M54 pripada Patuljasti galaksiji Strelca, ga je naredilo prvi kulasti jat, za katerega je znano, da pripada drugi galaksiji. Ker se Patuljasta galaksija Strelca postopoma raztrga in požira Rimska cesta, bo M54 sčasoma postal pravi halo kulasti jat naše lastne galaksije — medgalaktični priseljenec, ki prihaja čez milijarde let.",
+   "distance": "87.000 svetlobnih let",
+   "size": "~230 svetlobnih let v premeru"
+  },
+  "dso/m55": {
+   "description": "M55 je velika, ohlapna kroglasta kopica v Strelcu — ena izmed najbolj razširjenih in najmanj koncentriranih med vsemi Messierjevimi kroglastimi kopicami. Tudi pri nizki povečavi se zlahka razloži na posamezne zvezde, z granularno teksturo vidno v daljnogledi. Njena nizka južna deklinacija omejuje vidljivost s severnih zemljepisnih širin, vendar je spektakularna s južne poloble.",
+   "fun_fact": "Nenavadna nizka zvezdna koncentracija M55 mu daje videz bogatega odprtega zvezdnega jata namesto tipičnega kroglastega jata. Njegove zvezde so razpršene po območju, ki je široko skoraj 100 svetlobnih let, kar nakazuje, da je lastna gravitacija jata relativno šibka v primerjavi z bolj centralno zgoščenimi kroglastimi jati, kot sta M13 ali M3.",
+   "distance": "17.600 svetlobnih let",
+   "size": "~100 svetlobnih let v premeru"
+  },
+  "dso/m56": {
+   "description": "M56 je kompakten globularni zvezdni kopič v Liri, vgnezden med Obročasto meglico (M57) in svetlo dvojno zvezdo Albireo v Labodu. Pri magnitudi 8,3 je tarča za dvogled s temnega neba, majlikov teleskop pa razkrije zrnato, zmerno kondenziran krogel, ki je tudi pri srednje velikih odprtinah le delno razločljiv.",
+   "fun_fact": "M56 je odkril Messier v januarju 1779 med isto opazovalno sezono, v kateri je odkril tudi Obročasto meglico (M57). Čeprav se nahaja v istem binokularnem polju kot Vega — peta najsvetlejša zvezda na nebu — in blizu znamenite Obročaste meglice, je M56 pogosto spregledan s strani opazovalcev, ki jih privlačijo njegovi bolj proslavljeni sosedje.",
+   "distance": "32.900 svetlobnih let",
+   "size": "~68 svetlobnih let v premeru"
+  },
+  "dso/m57": {
+   "description": "Meglična prstan je planetarna meglica v ozvezdju Lire, svetleča lupina plina, ki jo je izgnala umirajoča Soncu podobna zvezda.",
+   "fun_fact": "Obročna meglica se širi s hitrostjo približno 20 km/s in se bo v naslednjih 10.000 let sčasoma razpršila v vesolje!",
+   "distance": "2.300 svetlobnih let",
+   "size": "1,3 svetlobnega leta v premeru",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m58": {
+   "description": "Messier 58 je prečkasta spiralna galaksija v Devici in eden najsvetlejših članov jate v Devici.",
+   "fun_fact": "V središču galaksije M58 je supermasivna črna luknja z masa okoli 70 milijonov sončevih mas, ki jo obdaja tesen pas novorojenih zvezd!",
+   "distance": "68 milijonov svetlobnih let",
+   "size": "premer 133.000 svetlobnih let"
+  },
+  "dso/m59": {
+   "description": "Messier 59 je eliptična galaksija v ozvezdju Devica, odkrita leta 1779 med iskanjem mimoletnega kometa.",
+   "fun_fact": "Jedro galaksije M59 se vrti v nasprotni smeri od preostalega dela galaksije, okoli njega pa mrgoli približno 2200 krogelne kopice!",
+   "distance": "50 milijonov svetlobnih let",
+   "mass": "270 milijonov sončevih mas (osrednja črna luknja)"
+  },
+  "dso/m6": {
+   "description": "Butterfly Cluster je odprta zvezdna kopica v Škorpijonu, poimenovana po podobnosti njenega najsvetlejšega zvezdnega vzorca s perlico.",
+   "fun_fact": "M6 je star približno 100 milijonov let in vsebuje več kot 300 zvezd, vključno z oranžnim velikanom BM Scorpii!",
+   "distance": "1.600 svetlobnih let",
+   "size": "25 svetlobnih let v premeru",
+   "image_credit": "NOAO/AURA/NSF"
+  },
+  "dso/m60": {
+   "description": "Messier 60 je velika eliptična galaksija v Devici, tretja najsvetlejša velika eliptična galaksija v Deviški jati.",
+   "fun_fact": "Osrednja črna luknja v M60 tehta približno 4,5 milijarde sonc – ena največjih, kar jih je bilo doslej najdenih!",
+   "distance": "57 milijonov svetlobnih let"
+  },
+  "dso/m61": {
+   "description": "Messier 61 je prečkasta spiralna galaksija v Devici in ena največjih galaksij v jati v Devici.",
+   "fun_fact": "V galaksiji M61 je bilo odkritih osem supernov – kar je ena izmed največjih številk v kateri koli galaksiji! Sam Messier jo je najprej zamenjal za komet.",
+   "distance": "52 milijonov svetlobnih let",
+   "size": "premer 92.000 svetlobnih let"
+  },
+  "dso/m62": {
+   "description": "M62 je bogat kroglasti zvezdni sistem v Ophiuchu — eden izmed najbližjih kroglastih sistemov galaktičnemu jedru in opazno asimetričen, s zvezdam, ki so na južni strani gosteje napakovane. Pri magnitudi 6,6 je odličen predmet za dvogled, čeprav njegova nizka deklinacija naredijo, da je za severozahodne opazovalce le kratko-sezonski cilj.",
+   "fun_fact": "Ekscentrično jedro M62 je neposredna posledica njegove bližine galaktičnemu centru — moči plimske sile iz osrednjega izbokka izkrivljajo kopico in vlečejo zvezde proti galaktični ravnini. Je tudi ena najbolj dinamično razvitih globularnih kopic, ki kaže znake kolapsa jedra in nenavadno visoko gostoto milisekundnih pulzarjev.",
+   "distance": "22.500 svetlobnih let",
+   "size": "~92 svetlobnih let v premeru"
+  },
+  "dso/m63": {
+   "description": "Galaksija Sončnica je svetla spiralna galaksija v ozvezdju Lovska psa, katere tesno navite kraki, pstreni s področji tvorbe zvezd, ji v dolgih ekspozicijah dajejo značilno teksturo, podobno rožici. Pri magnitudi 8,6 je vidna v daljnogledu s temnega neba in v majhnih teleskopih jasno kaže svojo podolgovato obliko in svetel jedro.",
+   "fun_fact": "M63 je odkril Pierre Méchain leta 1779 — eden izmed redkih Messierjevih objektov, ki ga je odkril Méchain namesto Messierja samega. Je član M51 skupine, fizično povezan s Whirlpool galaksijo (M51), in kaže znake pretekle interakcije: šibak, star zvezdni tok se vije okrog njegovega zunanjega diska.",
+   "distance": "29 milijonov svetlobnih let",
+   "size": "~100.000 svetlobnih let širine"
+  },
+  "dso/m64": {
+   "description": "Galaksija Črno oko je spiralna galaksija v Komi Bereniki, znana po temnem pasu absorbirajočega prahu okrog njenega jedra.",
+   "fun_fact": "Zunanje regije M64 se vrtijo v nasprotni smeri kot njene notranje regije, verjetno kot posledica prejšnjega trka galaksij!",
+   "distance": "17 milijonov svetlobnih let",
+   "size": "70.000 svetlobnih let v premeru",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m65": {
+   "description": "M65 je spiralna galaksija v Levu, del znamenitega Levjega trojčka skupaj z M66 in NGC 3628.",
+   "fun_fact": "Galaksije Levjega trojčka gravitacijsko medsebojno delujejo, kar povzroča plimske repe in deformirane strukture!",
+   "distance": "35 milijonov svetlobnih let",
+   "size": "90.000 svetlobnih let v premeru",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m66": {
+   "description": "M66 je največji član Levjega trojčka, spiralna galaksija z asimetrično spiralno strukturo.",
+   "fun_fact": "Asimetrični videz M66 je posledica gravitacijskih interakcij s sosednjima M65 in NGC 3628!",
+   "distance": "36 milijonov svetlobnih let",
+   "size": "95.000 svetlobnih let v premeru",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m67": {
+   "description": "M67 je lepa odprta zvezdna kopica v Raku in ena najstarejših dobro proučenih odprtih zvezdnih kopičev na nebu. Stara je približno 3,2–3,5 milijarde let in vsebuje številne zvezde, podobne po masi in starosti našemu Soncu – kar jo naredi naravno laboratorijo za proučevanje, kako se zvezde, podobne Soncu, razvijajo skozi kozmični čas.",
+   "fun_fact": "Več zvezd v M67 se po temperaturi, masi in starosti tesno podobi Soncu — redka kombinacija, ki je raziskovalce vodila k razmisleku, ali je Sonce samo izviralo iz gruče, kot je M67. Ker se zvezde rojevajo v gručah, ki se postopoma razpršijo, je Sonce skoraj gotovo prišlo iz zdaj razpršene skupine sorodnih zvezd pred milijardami let — čeprav katere gruče nikoli ni bilo mogoče identificirati.",
+   "distance": "2.700 svetlobnih let",
+   "size": "~24 svetlobnih let v premeru"
+  },
+  "dso/m68": {
+   "description": "M68 je bogat kroglast zvezdni kopič v Hydri — južni objekt in eden od redkih kroglastih kopičev, ki so najbolje postavljeni v pozni zimski in pomladanski nebi. Pri magnitudi 8,2 nagrajuje mali teleskop z zmerno kondenziranim jedrom in velikim halojom razrešenih zvezd na relativno redkem zvezdnem polju Hydre.",
+   "fun_fact": "Kljub svoji relativni bližini — kar omogoča, da so posamezne zvezde dobro razločne v amaterskih teleskopih — je M68 pogosto zanemarjen zaradi svoje zelo južne deklinacije. Z zemljepisnih širin nad 50°S komaj presega obzorje; z južne poloble pa se dvigne visoko in je čudovit globularni kopič.",
+   "distance": "33.600 svetlobnih let",
+   "size": "~117 svetlobnih let v premeru"
+  },
+  "dso/m69": {
+   "description": "M69 je zmerno bogat kroglasti zvezdni kopič v Strelcu, ki se nahaja blizu galaktičnega središča. Pri magnitudi 7,7 je predmet za dvogled z temnega neba, ki nagrajuje mali teleskop z delno razrešeno kroglo zvezd in svetlim, zrnatim središčem.",
+   "fun_fact": "M69 se giblje nenavadno blizu galaktičnega centra — le približno 6.200 svetlobnih let od jedra Mlečne poti — in ima zato nenavadno visoko koncentracijo težjih elementov za kroglasto kopico. Kroglaste kopice bližje galaktičnemu centru so običajno kemično obogatene z več generacijami nastajanja zvezd v okoliški izbokli.",
+   "distance": "29.700 svetlobnih let",
+   "size": "~61 svetlobnih let v premeru"
+  },
+  "dso/m7": {
+   "description": "Ptolemajevo jato je svetlo odprto jato v Škorpijonu, eno najbolj vidnih jat, vidnih s prostim očesom.",
+   "fun_fact": "M7 je prvi zabeležio Ptolemej leta 130 n.š. in je bil opazovan že skoraj 2000 let!",
+   "distance": "980 svetlobnih let",
+   "size": "25 svetlobnih let v premeru",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m70": {
+   "description": "M70 je kompakten globularni zvezdni kopič v Strelcu, ki je po videzu in razdalji zelo podoben svojemu bližnjemu dvojniku M69. Pri magnitudi 8,1 je odličen predmet za majhove teleskope, ki kaže kompaktno jedro in naznake ločljivosti v zunanjem haloju. Nahaja se le 2° od M69 in oba lahko zajamete v istem polju dvogled.",
+   "fun_fact": "M70 je leta 1995 pridobil kratko slavo kot približna lokacija na nebu, kjer sta Alan Hale in Thomas Bopp neodvisno odkrila kometo Hale-Bopp — najsvetlejšo kometo poznega 20. stoletja. Oba opazovalca sta sprva mimo M70 pregledala nebo v iskanju drugih tarč in opazila kometo kot nepričakovan mehkast predmet v bližini.",
+   "distance": "29.400 svetlobnih let",
+   "size": "~67 svetlobnih let v premeru"
+  },
+  "dso/m71": {
+   "description": "M71 je nenavaden kroglasti zvezdni kopič v Strelici — astronomov je desetletja delilo vprašanje, ali je to bogat star odprt kopič ali mlad, razpršen kroglasti kopič. Sodobne analize potrjujejo, da je pravi kroglasti kopič, vendar z izjemno nizko koncentracijo, z relativno malo zvezd in manj izrazitim jedrom kot tipični kroglasti kopiči.",
+   "fun_fact": "M71's ohlapna struktura ga je dolgo časa držala izven številnih zgodnjih katalogov, ker je bila videti kot bogato zvezdno polje in ne kot pravi zvezdni kopič. Z le 12.000 svetlobnih let je eden od bližjih Messierjevih globularnih kopičev, njegove zvezde pa so delno razločljive v majhnem teleskopu pod temnim nebom — kar mu daje videz kompaktnega, rahlo zgostljenega bogatega zvezdnega polja.",
+   "distance": "12.000 svetlobnih let",
+   "size": "~25 svetlobnih let v premeru"
+  },
+  "dso/m72": {
+   "description": "Messier 72 je bled, oddaljen kroglasti kopast v Vodnarju, ki ga je leta 1780 odkril Pierre Méchain.",
+   "fun_fact": "M72 vsebuje število zvezd v vrednosti okoli 168.000 Sonc v krogli, ki je stara približno 9,5 milijarde let, vključno s 43 spremenljivimi zvezdami!",
+   "distance": "55.000 svetlobnih let"
+  },
+  "dso/m73": {
+   "description": "Messier 73 je majhna skupina štirih zvezd v Vodnarju, ki je videti le kot zvezdna kopica.",
+   "fun_fact": "Astronomje so desetletja razpravljali o tem, ali je M73 resnična kopica – leta 2002 pa je bila zadeva razrešena: štiri zvezde ležijo na povsem različnih razdaljah in se le po naključju poravnajo!",
+   "distance": "1.000 do 2.300 svetlobnih let (posamezne zvezde)"
+  },
+  "dso/m74": {
+   "description": "Galaksija Fantom je čelna spiralna galaksija v Ribah, znana po svoji popolni veliki spiralni strukturi.",
+   "fun_fact": "M74 je vzdevek Fantomska galaksija, ker ima zelo nizko površinsko svetlost, kar otežuje njeno opazovanje!",
+   "distance": "32 milijonov svetlobnih let",
+   "size": "95.000 svetlobnih let v premeru",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m75": {
+   "description": "Messier 75 je oddaljen, gosto zgoščen kroglasti kopast v Strelcu.",
+   "fun_fact": "M75 je ena najbolj gosto zapakiranih krogelnih kopic in velja za ostanek pritlikave galaksije, ki jo je Rimska cesta posrkala pred davnimi časi!",
+   "distance": "68.000 svetlobnih let",
+   "size": "premer 134 svetlobnih let"
+  },
+  "dso/m76": {
+   "description": "Majhna ročica je planetarna meglica v Perzeeju z značilno obliko osmice — manjša sestrična M27, Ročice v Lisičarki. Čeprav je najšibkejši vnos v Messierov katalog, nagrajuje potrpljivo opazovanje v majhnih teleskopih in kaže lepo strukturo v večjih instrumentih, z dvema svetlejšima režnjema ob obeh straneh šibkejšega pasu.",
+   "fun_fact": "M76 je bil prvotno katalogiziran kot dva ločena objekta — NGC 650 in NGC 651 — ker so zgodnji opazovalci opisali dve svetli reji neodvisno. Gre za bipolarna planetarno meglico, ki je nastala, ko je bil iztok umirajoče zvezde stisnjen na ekvatorju, kar je ustvarilo dve razširjajoči se reji vzdolž polarnih osi, medtem ko se plin tudi razširja na pasu.",
+   "distance": "~2.500 svetlobnih let",
+   "size": "~2 svetlobni leti v premeru"
+  },
+  "dso/m77": {
+   "description": "M77 je spiralna galaksija s prečko v Kitu z aktivnim galaktičnim jedrom, ki ga poganja supermasivna črna luknja.",
+   "fun_fact": "M77 ima aktivno jedro galaksije s črno luknjo, ki je 15 milijonov krat masivnejša od našega Sonca!",
+   "distance": "47 milijonov svetlobnih let",
+   "size": "120.000 svetlobnih let v premeru",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m78": {
+   "description": "M78 je najsvetlejša razpršena odbojnostna meglica na nebu, ki se nahaja v Orionu blizu znamenitih zvezd Orioninega pasu.",
+   "fun_fact": "M78 vsebuje približno 45 mladih spremenljivih zvezd T Tauri, zelo mlade zvezde, ki se še vedno krčijo proti glavni zaporednici!",
+   "distance": "1.600 svetlobnih let",
+   "size": "4 svetlobnih leta v premeru",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m79": {
+   "description": "M79 je kompakten globularni zvezdni kopič v Lepusu — eden od redkih Messierjevih globularnih kopičev, ki je najbolje viden v zimskem nebu, ko so večina globularnih kopičev pod obzorjem ali komaj vidni. Pri magnitudi 8,0 potrebuješ teleskop, da vidiš njegov kompakten jedro in šibko aureolo, ki se izstopa proti primerjalno redkim zimskim zvezdnim poljem.",
+   "fun_fact": "Nekateri astronomi menijo, da je M79 prišlak iz Pritlikave galaksije Veliki pes — porušene satelitske galaksije, ki jo trenutno vpija Mlečna pot. Če je tako, se M79 ni oblikoval v lastnem globularnem sistemu Mlečne poti, temveč je bil ujet iz padajoče galaksije in se počasi vključuje v halo naše galaksije.",
+   "distance": "41.000 svetlobnih let",
+   "size": "~104 svetlobnih let v premeru"
+  },
+  "dso/m8": {
+   "description": "Lagoonska meglica je oblak med zvezdami v Strelcu, ena najlepših in najsvetlejših meglice na poletnem nebu.",
+   "fun_fact": "Lagoonska meglica vsebuje Herschel 36, eno najbolj masivnih in svetlih zvezd, ki jih poznamo!",
+   "distance": "4.100 svetlobnih let",
+   "size": "55 svetlobnih let v premeru",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m80": {
+   "description": "M80 je eno od najbolj gosto pakiranih kroglastih kopic v Rimski cesti, kompaktna, bogata krogla več sto tisoč zvezd v Škorpijonu. Pri magnitudi 7,2 je odličen cilj za dvogled in razkrije bleščeče, visoko koncentrirano jedro v majhnih teleskopih.",
+   "fun_fact": "Leta 1860 je v M80 izbruhnila nova — označena kot T Scorpii — in je bila za kratek čas tako svetla kot samo kopica ter vidna s prostim očesom. Ostaja ena od samo dveh nov, ki so jih kdaj opazili v globularni kopici. Nove v globularnih kopicah nastanejo zaradi interakcij med dvojnimi zvezami, ki so v gosti zvezdni okolici jedra globularne kopice precej pogostejše.",
+   "distance": "32.600 svetlobnih let",
+   "size": "~84 svetlobnih let v premeru"
+  },
+  "dso/m81": {
+   "description": "M81 je velika spiralna galaksija v ozvezdju Veliki medved, ena najsvetlejših galaksij, vidnih z Zemlje.",
+   "fun_fact": "M81 gravitacijsko deluje z sosednjo galaksijo M82, kar sprožča intenzivno tvorbo zvezd v M82!",
+   "distance": "12 milijonov svetlobnih let",
+   "size": "90.000 svetlobnih let v premeru",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m82": {
+   "description": "Galaksija Cigara je galaksija z intenzivnim nastajanjem zvezd v ozvezdju Veliki medved, znana po svojem pogledu od roba in intenzivnem nastajanju zvezd.",
+   "fun_fact": "M82 tvori zvezde 10-krat hitreje kot naša Rimska cesta zaradi gravitacijske interakcije s sosednjim M81!",
+   "distance": "12 milijonov svetlobnih let",
+   "size": "37.000 svetlobnih let v premeru",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m83": {
+   "description": "Južna vrtavka je prečna spiralna galaksija v Hidri, ena izmed najbližjih in najsvetlejših prečnih spiralnih galaksij na našem nebu.",
+   "fun_fact": "M83 je proizvedla šest opazovanih supernov, več kot katera koli druga galaksija - rekord za proizvodnjo supernov!",
+   "distance": "15 milijonov svetlobnih let",
+   "size": "55.000 svetlobnih let v premeru",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m84": {
+   "description": "Messier 84 je velikanska eliptična galaksija v natrpanem središču jate v Devici.",
+   "fun_fact": "M84 izstrelja dva curka snovi iz svojega jedra, kar poganja črna luknja z masa okoli 1,5 milijarde sončnih mas!",
+   "distance": "55 milijonov svetlobnih let"
+  },
+  "dso/m85": {
+   "description": "Messier 85 je lečasta galaksija na obrobju jate v Devici, v ozvezdju Berenikini kodri.",
+   "fun_fact": "Valovi in lupine v zunanjih območjih M85 so ostanki galaktičnega zdrwa pred 4 do 7 milijardami let!",
+   "distance": "60 milijonov svetlobnih let",
+   "size": "premer 120.600 svetlobnih let"
+  },
+  "dso/m86": {
+   "description": "Messier 86 je velika eliptična galaksija v jati Devica, ki s sosednjo galaksijo M84 tvori izjemen par.",
+   "fun_fact": "M86 se nam proti s hitrostjo 244 km/s – to je najhitrejši približevalni gib katerega koli Messierjevega predmeta! Njen prehod skozi jato pušča dolgo sled odstranjenega vročega plina.",
+   "distance": "52 milijonov svetlobnih let"
+  },
+  "dso/m87": {
+   "description": "M87 je nadvelik eliptična galaksija v Devici, ena izmed najbolj masivnih galaksij v lokalnem vesolju.",
+   "fun_fact": "Črna luknja v središču M87 je bila prva, ki jo je Event Horizon Telescope posnel leta 2019 - ima 6,5 milijarde sončnih mas!",
+   "distance": "53 milijonov svetlobnih let",
+   "size": "240.000 svetlobnih let v premeru",
+   "mass": "2,4 bilijona sončnih mas",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m88": {
+   "description": "Messier 88 je elegantna spiralna galaksija v Laseh Berenike, eden od petnajstih Messierjevih objektov v jati v Devici.",
+   "fun_fact": "M88 se strmoglavi proti središču Jate v Devici in bo tja prispel čez 200 do 300 milijonov let, pri čemer se mu med padanjem odnašajo zunanji plini!",
+   "distance": "59 milijonov svetlobnih let",
+   "size": "premer 131.000 svetlobnih let"
+  },
+  "dso/m89": {
+   "description": "Messier 89 je eliptična galaksija v Devici, ki jo je leta 1781 odkril Charles Messier.",
+   "fun_fact": "M89 je morda skoraj popolna sfera – nenavadno za eliptično galaksijo, ki so običajno opazno sploščene!",
+   "distance": "50 milijonov svetlobnih let"
+  },
+  "dso/m9": {
+   "description": "M9 je kompakten globularni zvezdni kopič v Ophiuchu — eden izmed Messierjevih globularnih kopičev, ki ga najbolj prizadene medzvezdna prah. Leži proti galaktičnemu jedru, kjer ga gost prah znatno zatemnuje. Brez te zasenčenosti bi se M9 zdel svetlejši za skoraj magnitudo in bi bil viden s prostim očesom.",
+   "fun_fact": "M9 trpi več medzvezdne absorpcije prahu kot skoraj kateri koli drugi Messierov globularni kopič — približno 1,3 magnitude zatemnitve v primerjavi s čistim vidnim poljem. Dva manjša globularna kopička (NGC 6342 in NGC 6356) ležita v razdalji približno 1° od M9, kar ga naredi središče izjemne skupine treh globularnih kopičev na majhnem območju neba.",
+   "distance": "25.800 svetlobnih let",
+   "size": "~70 svetlobnih let v premeru"
+  },
+  "dso/m90": {
+   "description": "Messier 90 je velika spiralna galaksija v Devici in učbeniški primer \"anemične\" galaksije.",
+   "fun_fact": "M90 je zaradi divjega prodora skozi Devico (Virgo Cluster) izgubil plin, iz katerega nastajajo zvezde, za seboj pa pušča repa svetlečega plina, dolga do 260.000 svetlobnih let!",
+   "distance": "59 milijonov svetlobnih let",
+   "size": "premer 132.000 svetlobnih let"
+  },
+  "dso/m91": {
+   "description": "Messier 91 je prečasta spiralna galaksija v Berenikinih kodrih in najšibkejši objekt v Messierjevem katalogu.",
+   "fun_fact": "Objekt M91 je bil izgubljen skoraj 200 let! Messier je njegov položaj zabeležil z napačno referenčno galaksijo, ponovno pa ga je leta 1969 identificiral amaterski astronom.",
+   "distance": "63 milijonov svetlobnih let",
+   "size": "premerj 105.500 svetlobnih let"
+  },
+  "dso/m92": {
+   "description": "M92 je svetel kroglasti zvezdni kopič v Herkulesu, ki ga pogosto spregledamo zaradi njegove bližine bolj slavnemu M13.",
+   "fun_fact": "M92 je eno izmed najstarejših kroglastih kopic, stara približno 14,2 milijarde let - skoraj tako stara kot vesolje!",
+   "distance": "26.700 svetlobnih let",
+   "size": "109 svetlobnih let v premeru",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m93": {
+   "description": "M93 je svetel, kompakten odprti zvezdni kopič v Puppisu, ki se nahaja v bogatem južnem Rimski poti in ga je mogoče enostavno najti s daljnogledom. Njegovih približno 80 zvezd je razporejenih v presenetljivo klinasto ali metuljevo obliko in vključuje več vročih modrih supergigantov, kar ga naredi enega bolj privlačnih odprtih zvezdnih kopičev na zimskem nebu.",
+   "fun_fact": "M93 je relativno mlad — star je približno 100 milijonov let — z dominantnimi modrimi in modro-belimi zvezdam, ki se še niso razvile v velikane. Je no od bolj južnih Messierjevih kopic, in z zemljepisnih širin severno od približno 50°S se nikoli ne dvigne zelo visoko nad obzorjem.",
+   "distance": "3.600 svetlobnih let",
+   "size": "~23 svetlobnih let v premeru"
+  },
+  "dso/m94": {
+   "description": "M94 je spiralna galaksija v Psih lovcem s svetlim notranjim obročem, kjer poteka aktivna tvorba zvezd.",
+   "fun_fact": "Notranji obroč M94 je obroč z intenzivno tvorbo zvezd, kjer se nove zvezde tvorijo z zelo visoko hitrostjo!",
+   "distance": "16 milijonov svetlobnih let",
+   "size": "50.000 svetlobnih let v premeru",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m95": {
+   "description": "Messier 95 je prečkana spiralna galaksija v ozvezdjih Leva, ki je del skupine M96 skupaj z M96 in M105.",
+   "fun_fact": "Ob jedru galaksije M95 poteka obroč z intenzivnim nastajanjem zvezd, širok približno 70.000 svetlobnih let, v njem pa je leta 2012 izbruhnila supernova.",
+   "distance": "33 milijonov svetlobnih let",
+   "size": "premerj 80.000 svetlobnih let"
+  },
+  "dso/m96": {
+   "description": "Messier 96 je spiralna galaksija v Levu, najsvetlejši član skupine galaksij M96.",
+   "fun_fact": "M96 je po velikosti in masi precej podobna naši lastni Rimski cesti, vendar je presenetljivo nesimetrična – njen prah in plin sta v njenih krakih neenakomerno razporejena!",
+   "distance": "31 milijonov svetlobnih let",
+   "size": "premerj 78.000 svetlobnih let"
+  },
+  "dso/m97": {
+   "description": "Sovja meglica je planetarna meglica v Veliki medvedici, poimenovana po svoji sovji podobi z dvema temnimi pegami.",
+   "fun_fact": "Temne sove oči v M97 so tridimenzionalne votline v meglici, poravnane z našo linijo vida!",
+   "distance": "2.030 svetlobnih let",
+   "size": "2 svetlobni leti v premeru",
+   "image_credit": "Gemini Observatory/NOIRLab/NSF/AURA"
+  },
+  "dso/m98": {
+   "description": "Messier 98 je spiralna galaksija v Berenikinih laseh, vidna skoraj od roba kot del Jate v Devici.",
+   "fun_fact": "M98 je ena redkih galaksij, ki se premika proti nam in ne stran, približuje se s hitrostjo približno 140 km/s!",
+   "distance": "44 milijonov svetlobnih let"
+  },
+  "dso/m99": {
+   "description": "Messier 99 je veličastna spiralna galaksija v Veronikini kosi z jasnimi, razprostrtimi spiralnimi kraki.",
+   "fun_fact": "M99 je bil med prvimi objekti, ki so jih prepoznali kot spiralne; leta 1846 ga je narisal lord Rosse – in zvezde tvori trikrat hitreje kot podobne galaksije!",
+   "distance": "45 milijonov svetlobnih let",
+   "size": "premerj 98.000 svetlobnih let"
+  },
+  "dso/n47_tucanae": {
+   "description": "47 Tucanae (NGC 104) je drugi najsvetlejši kroglasti zvezdni kopič na nebu, gosta krogla približno milijona starih zvezd, ki krožijo okrog Mlečne poti v ozvezdju Tucana. Na razdalji približno 14.500 svetlobnih let se golemu očesu prikazuje kot nejasna zvezda četrte magnitude, vendar teleskop razreši njeno stisnjeno jedro v izjemno roj zlatih in modro-belih sonc. Njegove zvezde so nastale pred približno 13 milijardami let, kar naredi kopič skoraj tako star kot vesolje samo.",
+   "fun_fact": "47 Tucanae je kozmična tovarna pulsarjev: astronomi so v njej našli najmanj 35 milisekundnih pulsarjev, ki se vrtijo stokrat na sekundo — več kot v katerem koli drugem znanem globularnem jatu — rezultat bližnjih srečanj zvezd, ki reciklirajo stare nevtronske zvezde z njihovim pospeševanjem.",
+   "distance": "~14.500 svetlobnih let",
+   "size": "~120 svetlobnih let v premeru",
+   "image_credit": "ESO"
+  },
+  "dso/ngc_2903": {
+   "description": "NGC 2903 je svetla prečna spiralna galaksija v Levu, pogosto imenovana »Messierov predmet, ki ga je Messier zamudil« — je ena izmed najbolj vidnih galaksij na nebu, ki ni vključena v njegov znameniti katalog. Pri magnitudi 8,9 je zlahka vidna v daljnogledu in v zmerno močnih teleskopih kaže lepo spiralno strukturo.",
+   "fun_fact": "NGC 2903 ima eno od največjih koncentracij zvezdotvorne \"vroče točke\" znane v osrednji palici galaksije — guste gruče mladih masivnih zvezd, osvetljene z intenzivno tvorbo zvezd. Uporablja se kot merilo za proučevanje aktivnosti zvezdnega izbruha v spiralnih galaksijah s palico.",
+   "distance": "30 milijonov svetlobnih let",
+   "size": "~80.000 svetlobnih let širine",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/ngc_6543": {
+   "description": "Meglica Mačje oko je ena od najbolj strukturno zapletenih planetarnih meglic, ki jih poznamo — izgnani plin umirajoče zvezde je oblikovan v koncentrične lupine, curke in svetle vozle, vidne na posnetkih Hubbla. V majhnih teleskopih se pojavi kot živahna modro-zelena plošča v Zmaju, eden najbolj barvitih objektov na jesenskem nebu.",
+   "fun_fact": "Leta 1864 je astronom William Huggins usmeril spektroskop na Mačje oko in odkril, da je sestavljeno iz svetlečega plina in ne iz nerazrešenih zvezd — prvič je bila potrjena narava kateregakoli planetarne meglice. To odkritje je utemeljilo področje spektroskopije meglice in ovrglo prevladujočo predstavo, da so vse meglice oddaljeni zvezdni kopički.",
+   "distance": "~3.300 svetlobnih let",
+   "size": "~0,5 svetlobnih let premera",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/north_america_nebula": {
+   "description": "Meglenska megla Severna Amerika (NGC 7000) je velika emisijska megla v ozvezdju Laboda, katere oblika presenetljivo spominja na celino Severne Amerike, vključno z regijo Mehiškega zaliva. Razprostira se čez približno 120 ločnih minut — približno štirikrat večji premer kot polna Luna — in se nahaja približno 2600 svetlobnih let stran ter je široka več kot 100 svetlobnih let.",
+   "fun_fact": "Kljub vizualni magnitudi 4 je meglica premajhna in razpršena, da bi jo videli s prostim očesom pod večino neba — vendar se fotografira čudovito in razkriva Cygnus Wall, gost lok intenzivnega nastajanja zvezd ob njenem južnem robu.",
+   "distance": "~2.590 svetlobnih let",
+   "size": "~140 svetlobnih let v premeru",
+   "image_credit": "Giuseppe Donatiello/CC0"
+  },
+  "dso/omega_centauri": {
+   "description": "Omega Centauri je največja in najbolj masivna kroglasta kopica, ki kroži okrog Rimske ceste, in vsebuje približno 10 milijonov zvezd, stisnjenih v kroglo, ki je velika približno 150 svetlobnih let. Golemu očesu je vidna kot nejasna zvezda v Kentavru, skozi daljnogled ali teleskop pa se razkrije kot dih jemajoča krogla zvezd.",
+   "fun_fact": "Za razliko od tipičnih kroglastih kopic, Omega Centauri vsebuje zvezde različnih starosti in kemijskih sestav — znak, da je morda jedro razdete pritlikave galaksije, ki jo je Mlečna pot pred milijardami let raztrganila in pogoltnila. Morda celo skriva osrednje črno luknjo srednje mase.",
+   "distance": "17.090 svetlobnih let",
+   "size": "~150 svetlobnih let premer",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/saturn_nebula": {
+   "description": "Saturnova meglica je planetarna meglica v Vodnarju, poimenovana po podobnosti s planetom Saturn — razširitve, imenovane ansae, štrlijo z obeh strani kot ročaji prstanov, vidne v zmerno močnih teleskopih. Z magnitudo 8,0 je ena od najsvetlejših planetarnih meglic na nebu in kaže kompleksno strukturo v večjih instrumentih.",
+   "fun_fact": "William Herschel je odkril Saturnovo meglico leta 1782 in opazil njeno podobnost s Saturnom. Sodobna opazovanja razkrivajo najmanj štiri različne plasti plina, ki obdajajo osrednji beli pritlikavi, kar odraža več epizod izgube mase v končnih fazah življenja zvezde.",
+   "distance": "~5.000 svetlobnih let",
+   "size": "~1 svetlobno leto širine",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/sculptor_galaxy": {
+   "description": "Galaksija Kipar je ena od najsvetlejših in najlepših galaksij vidnih s strani Zemlje, ki se pojavi kot podolgovata svetloba v južnem ozvezdju Kipar. Je ena od najbližjih galaksij z izbruhom zvezd — galaksija, ki doživlja intenziven izbruh nastajanja zvezd — vidna amaterskim astronomom z daljnogledi s temnega neba.",
+   "fun_fact": "Galaksija Kipar je eden od najsvetlejših članov Kiparjeve skupine — skupine galaksij, ki je najbližja naši Lokalni skupini. Njeno osrednje območje z izbruhom zvezd proizvaja nove zvezde s hitrostjo, ki je večkratnik hitrosti Rimske ceste, kar je posledica preteklih interakcij s sosednjimi galaksijami.",
+   "distance": "11,4 milijona svetlobnih let",
+   "size": "~90.000 svetlobnih let širine",
+   "image_credit": "ESO/VST"
+  },
+  "dso/sgr_a_star": {
+   "description": "Sagittarius A* (Sgr A*) je supermasivna črna luknja v središču Rimske ceste, ki se nahaja 26.000 svetlobnih let stran v smeri Strelca. Z maso približno 4 milijonov sončnih mas, stisnjene v območje manjše od našega sončnega sistema, je tako gosta, da niti svetloba ne more pobegniti njenemu dogodkovnemu obzorju.",
+   "fun_fact": "Leta 2022 je kolaboracija Event Horizon Telescope objavila prvo neposredno sliko Sgr A*, ki je razkrila svetlečo prstan superogretega plina, ki obdaja njegovo senco — nastalo z kombiniranjem podatkov iz radijskih observatorijev, razporejenih po celotnem planetu.",
+   "distance": "26.000 svetlobnih let",
+   "size": "Premer dogodkovnega obzorja: ~24 milijonov km",
+   "image_credit": "EHT Collaboration"
+  },
+  "dso/smc": {
+   "description": "Mali Magellanjev oblak je pritlikava nepravilna satelitska galaksija Mlečne poti, povezana s svojim večjim bratom LMC. Skupaj ju Mlečna pot počasi raztrgava s svojo gravitacijo, pri čemer za seboj puščata ogromno plazmo, ki se razprostira po nebu.",
+   "fun_fact": "Z proučavanjem spremenljivih zvezd Cefeide v Magellanovih oblakih v letih 1908–12 je Henrietta Swan Leavitt odkrila zakon period-svetilnosti — preboj, ki je astronomom prvič omogočil merjenje razdalj po vesolju!",
+   "distance": "200.000 svetlobnih let",
+   "size": "7.000 svetlobnih let v premeru",
+   "image_credit": "ESO/VISTA VMC"
+  },
+  "dso/t_crb": {
+   "description": "T Coronae Borealis (T CrB) je ponavljajoča se nova v Severni kroni — binarni sistem rdečega velikana in belega pritlika. Beli pritlik periodično nabira dovolj vodika od svojega spremljevalca, da sproži termonuklearno eksplozijo.",
+   "fun_fact": "T CrB je zadnjič izbruhnila leta 1946, ko je na kratko dosegla magnitudo 2,0 in postala vidna s prostim očesom. Astronomi napovedujejo, da je naslednji izbruh neposredno pred vrati — ostanite pozorni!",
+   "distance": "3.000 svetlobnih let",
+   "size": "0,2 AE orbitalne ločitve"
+  },
+  "dso/tarantula_nebula": {
+   "description": "Tarantulina meglica je največja in najbolj svetleča regija tvorbe zvezd v Lokalni skupini, ogromna emisijska meglica vgrajena v Veliko Magellanovo oblako, ki se razteza čez približno 600 svetlobnih let. Čeprav je oddaljena 163.000 svetlobnih let, je dovolj svetla, da je vidna s prostim očesom.",
+   "fun_fact": "Če bi bila Tarantulina meglica tako blizu kot Orionova meglica, bi bila dovolj svetla, da bi metala sence ponoči in bi zajemala polovico vidnega neba!",
+   "distance": "163.000 svetlobnih let",
+   "size": "600 svetlobnih let v premeru",
+   "image_credit": "ESO/R. Fosbury/ST-ECF"
+  },
+  "dso/v838_mon": {
+   "description": "V838 Monocerotis je nenavadna spremenljiva zvezda v ozvezdju Monoceros, ki je leta 2002 doživela spektakularen izbruh in se je na kratko uvrstila med najbolj svetleče zvezde v Rimski cesti. Čeprav je danes za vizualne opazovalce premalo svetla, je njena razširjajoča se svetlobna odmeva — valovna fronta svetlobe, ki osvetljuje stare plasti prahu — ustvarila nekatere najbolj dramatične slike, ki jih je kdaj posnel Hubbleov vesoljski teleskop.",
+   "fun_fact": "Narava izbruha V838 Mon ostaja predmet razprav. Prevladujoča teorija je zvezdna fuzija — dve zvezdi, ki se spiralno približujeta druga drugi in trčita — namesto klasične nove ali erupcije supergiganta. Če se to potrdi, je bil to prvi pogled v realnem času na »svetlo rdečo novo«, redko vrsto eksplozije, ki jo povzročijo zvezdne fuzije; podobni dogodki so bili od takrat najdeni tudi v drugih galaksijah.",
+   "distance": "~20.000 svetlobnih let",
+   "size": "~3 svetlobni leti (obseg svetlobnega odmeva)",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/willman_1": {
+   "description": "Willman 1 je ultra-šibka pritlikava satelitska galaksija Mlečne poti, odkrita leta 2004 s strani Beth Willman v podatkih Sloan Digital Sky Survey. Je ena izmed najmanj svetlečih znanih galaksij in eno izmed najbolj ekstremnih laboratorjev za temno snov v vesolju.",
+   "fun_fact": "Za vsako enoto navadne snovi v Willmanu 1 je približno 660 enot temne snovi — kar ga uvršča med najbolj temno-snov-dominirane objekte, ki so jih kdaj odkrili. Njegove zvezde kažejo tudi znake plimske destrukcije, saj ga Rimska cesta počasi raztrga.",
+   "distance": "~130.000 svetlobnih let",
+   "size": "~130 svetlobnih let v premeru",
+   "image_credit": "Sky Map team (it's very faint)"
+  },
+  "moon/ariel": {
+   "description": "Ariel ima najmladšo in najsvetlejšo površino med petimi glavnimi luni Urana. Njeno krajino prevladuje omrežje globokih dolin in gladkih ravnin, ki so bile pred dolgo časom ponovno oblikovane s tekočino – verjetno vodo ali zmesmi vode in amonijaka – ki je izvirala iz notranjosti in poplavila staro teren.",
+   "fun_fact": "Arielove doline lahko dosežejo globino 10 km — veliko globlje kot Veliki kanjon. Opazovanja vesoljskega teleskopa James Webb so nato zaznala led ogljikov dioksida na Arielovi površini, kar nakazuje na tekočo kemijo površine, ki jo poganja nabiti delci iz magnetnega polja Urana.",
+   "distance": "191.020 km od Urana",
+   "size": "1.158 km premer",
+   "image_credit": "NASA/JPL",
+   "search_subtext": "Luna Urana"
+  },
+  "moon/callisto": {
+   "description": "Kalisto je najbolj oddaljen od Galilejevih lun in eno najbolj krateriranih teles v sončnem sistemu, njegova stara površina pa hrani zapis zgodnjih trkov v sončnem sistemu.",
+   "fun_fact": "Kallisto se giblje zunaj Jupitrovih glavnih sevalnos­tnih pasov, kar jo naredi za najvarnejšo od Galilejevih lun za prihodnje človeško raziskovanje — včasih jo imenujejo »vratna luna«.",
+   "distance": "1.882.700 km od Jupitra",
+   "size": "4.821 km premera",
+   "image_credit": "NASA/JPL/DLR",
+   "search_subtext": "Luna Jupitra"
+  },
+  "moon/deimos": {
+   "description": "Deimos je manjši in zunanji od obeh Marsovih lun, s gladko, prahom pokrito površino, ki mu daje bolj okrogel videz kot Fobos. Kot njegov spremljevalec se domneva, da je ujeti asteroid iz zunanjega pasu.",
+   "fun_fact": "Deimos je tako majhen in oddaljen, da z Marsove površine izgleda kot malo več kot svetla zvezda, ki se počasi premika čez nočno nebo v približno 30 urah.",
+   "distance": "23.460 km od Marsa",
+   "size": "15 × 12 × 11 km",
+   "image_credit": "NASA/JPL-Caltech/University of Arizona",
+   "search_subtext": "Luna Marsa"
+  },
+  "moon/dione": {
+   "description": "Dione je ledena luna Saturna s težko krateriranim sprednjim obrazom in zadnjim polkrogom, prepletenim z svetlimi ledenimi pečinami — prelomnimi linijami, kjer so starodavne tektonske sile izpostavile svež led od spodaj. Podatki o gravitaciji Cassinija nakazujejo na podzemni tekoči ocean pod skorjo.",
+   "fun_fact": "Dione si deli orbito s dvema majhnima lunama, Heleno in Polidevkom, ki sta zaklenjeni 60° pred in za njo na točkah gravitacijskega ravnovesja, ki se imenujejo Lagrangeve točke. Heleno je mogoče videti, kako se vozi kot kozmični avtostopist na slikah Cassinija.",
+   "distance": "377.396 km od Saturna",
+   "size": "1.122 km premera",
+   "image_credit": "NASA/JPL-Caltech/SSI",
+   "search_subtext": "Luna Saturna"
+  },
+  "moon/europa": {
+   "description": "Europa je drugi Galilejev mesec in se domneva, da skriva ogromno tekočega vodnega oceana pod svojo ledeno skorjo, kar jo uvršča med najbolj obetavna mesta za iskanje življenja.",
+   "fun_fact": "Podzemski ocean Evrope's lahko vsebuje dvakrat toliko tekočine vode kot vsi Zemljini oceani skupaj, ki jo ohranja v tekočem stanju plimski ogrev Jupitrja.",
+   "distance": "671.100 km od Jupitra",
+   "size": "3.122 km premera",
+   "image_credit": "NASA/JPL-Caltech/SETI Institute",
+   "search_subtext": "Luna Jupitra"
+  },
+  "moon/ganymede": {
+   "description": "Ganymede je največji mesec v osončju — celo večji od planeta Merkurja. To je edini mesec, za katerega je znano, da ustvarja svoje lastno magnetno polje.",
+   "fun_fact": "Ganymede je po velikosti večji od Merkurja, čeprav ima le približno polovico njegove mase. Njegovo notranjo magnetno polje ustvarja lastno miniaturno magnetosfero znotraj Jupitrove veliko večje magnetosfere.",
+   "distance": "1.070.400 km od Jupitra",
+   "size": "5.268 km premera",
+   "image_credit": "NASA/JPL/DLR",
+   "search_subtext": "Luna Jupitra"
+  },
+  "moon/iapetus": {
+   "description": "Iapetus je ena izmed najbolj značilnih Saturnovih lun: njeno vodilno poloblo je pokrito s črno črno snovjo, temno kot premog, medtem ko je njeno zaostajajočo poloblo svetlo bela led. Ta skrajni dvobarvni videz je zmešal Giovannija Cassinija, ko je odkril luno leta 1671, in kontrast je tako ostra, da je viden v majhnih teleskopih.",
+   "fun_fact": "Iapetus ima tudi mogočen ekvatorski greben, ki se dviga 20 km visoko — višje kot katera koli gora na Zemlji — in se razteza tisoče kilometrov okrog njegovega ekvatorja. Njegov izvor je neznan: lahko je ostanki porušenega prstena ali starodavnega tektonskega gubanja, nastalega, ko se je luna nekoč vrtela veliko hitreje.",
+   "distance": "3.560.820 km od Saturna",
+   "size": "1.469 km premera",
+   "image_credit": "NASA/JPL-Caltech/SSI",
+   "search_subtext": "Luna Saturna"
+  },
+  "moon/io": {
+   "description": "Io je najmanjša od štirih velikih Galilejevih lun Jupitera in najbolj vulkansko aktivno telo v sončnem sistemu.",
+   "fun_fact": "Io ima stotine aktivnih vulkanov, nekateri izbruhnejo lavljske fontane visoke ducat kilometrov. Njeno nenehno aktivnost poganja plimska toplota zaradi Jupitrove ogromne gravitacije.",
+   "distance": "421.700 km od Jupitra",
+   "size": "3.643 km premera",
+   "image_credit": "NASA/JPL/University of Arizona",
+   "search_subtext": "Luna Jupitra"
+  },
+  "moon/oberon": {
+   "description": "Oberon je najbolj oddaljen od petih večjih lun Urana in ena izmed najbolj krateriranih, s staro površino, ki se je malo spremenila od zgodnjega obdobja sončnega sistema. Več njegovih velikih udarcnih kraterjev ima na dnu temno snov, verjetno organske usedline, ki so jih prinesla telesa pri udarcu.",
+   "fun_fact": "Oberon ima goro, ki se dviga približno 6 km od okoliških ravnin — primerljiva z najvišjimi vrhovi na Zemlji. Za razliko od Zemljinih gora, ki so nastale s tektoniko plošč, je ta značilnost morda osrednji vrh starega udarca ali ostanki zgodnje vulkanske dejavnosti.",
+   "distance": "583.520 km od Urana",
+   "size": "1.523 km premer",
+   "image_credit": "NASA/JPL",
+   "search_subtext": "Luna Urana"
+  },
+  "moon/phobos": {
+   "description": "Fobos je večji in notranji od obeh Marsovih lun, ki kroži bližje svojemu planetu kot katera koli druga luna v osončju. Je nepravilno oblikovano, globoko žlebasto in kratersko telo, za katero se domneva, da je zajeti asteroid.",
+   "fun_fact": "Fobos se giblje okrog Marsa tako hitro, da se dviga na zahodu in zahaja na vzhodu — počasi se spiralno premika navznoter in je namenjen, da se bodisi zruši v Mars bodisi razpade v obroč v približno 50 milijonih letih.",
+   "distance": "9.376 km od Marsa",
+   "size": "27 × 22 × 18 km",
+   "image_credit": "NASA/JPL-Caltech/University of Arizona",
+   "search_subtext": "Luna Marsa"
+  },
+  "moon/rhea": {
+   "description": "Rhea je Saturnov drugi največji mesec in težko krateriran svet ledu in kamnine. Njegova bleda, stara površina ohranja nekatere najbolj nedotaknjene udarne kraterje našega sončnega sistema, skupaj z svetlimi ledenimi pečinami, kjer so plazovi razkrili svežo snov spodaj.",
+   "fun_fact": "Leta 2008 so podatki Cassinija nakazali, da bi lahko Reja imela tanek obroč ruševine, ki bi krožil okrog nje — kar bi jo naredilo prvi mesec, ki bi bil kdaj koli odkrit s svojim sistemom obročev. Če bi se to potrdilo, bi bila to izjemna odkritja; dokazi ostajajo aktivno področje raziskav.",
+   "distance": "527.108 km od Saturna",
+   "size": "1.527 km premera",
+   "image_credit": "NASA/JPL-Caltech/SSI",
+   "search_subtext": "Luna Saturna"
+  },
+  "moon/tethys": {
+   "description": "Tetida je ledena luna Saturna, ki jo zaznamujeta dve dramatični značilnosti: ogromni krater Odisej, ki je širok 400 km in pokriva skoraj tretjino površine lune, ter Itakski kanjon, sistem kanjonov, ki se razteza tri četrtine poti okrog planeta.",
+   "fun_fact": "Tetida je skoraj čista ledena voda — ima eno najnižjih gostot med vsemi luni v sončnem sistemu, le malo gostejša od zmrznjene vode. Itakski kanjon se je morda oblikoval, ko se je notranjost zmrznila in razširila, pri čemer je razpokala površinsko skorjo od znotraj.",
+   "distance": "294.619 km od Saturna",
+   "size": "1.062 km premera",
+   "image_credit": "NASA/JPL-Caltech/SSI",
+   "search_subtext": "Luna Saturna"
+  },
+  "moon/titan": {
+   "description": "Titan je največji Saturnov mesec in drugi največji mesec v sončnem sistemu. Je edini mesec, za katerega je znano, da ima gosto atmosfero — debelo dušikovo odejo prepleteno z metanom — in edini svet zunaj Zemlje, za katerega je znano, da ima stabilna tekoča morja na svoji površini.",
+   "fun_fact": "Titanove jezere in morja so napolnjena ne z vodo, temveč s tekočim metanom in etanom pri zmrznjujočih −179°C. Vesoljska agencija NASA bo s helikopterjem Dragonfly, ki bo prispel leta 2034, letela med lokacijami na Titanovem površju v iskanju kemije življenja.",
+   "distance": "1.221.870 km od Saturna",
+   "size": "5.151 km premera",
+   "image_credit": "NASA/JPL-Caltech/SSI",
+   "search_subtext": "Luna Saturna"
+  },
+  "moon/titania": {
+   "description": "Titania je največji mesec Urana in osmi največji mesec v osončju. Njegova površina kaže mešanico starih krateriranih ravnin in mlajših robov in dolin, kar nakazuje na zapleteno geološko zgodovino, ki je morda vključevala preteklo tektonsko aktivnost, ki je preoblikovala ledeno skorjo.",
+   "fun_fact": "Vsi Uranovovi meseci so poimenovani po likov iz Shakespeara in Alexanderja Popea — Titania je kraljica vil v Snu poletne noči. Je eden redkih večjih planetarnih mesecev, ki ni poimenovan po liku iz grške ali rimske mitologije.",
+   "distance": "435.910 km od Urana",
+   "size": "1.578 km premer",
+   "image_credit": "NASA/JPL",
+   "search_subtext": "Luna Urana"
+  },
+  "moon/triton": {
+   "description": "Triton je največji Neptunov mesec in eno izmed najbolj izjemnih teles v našem sončnem sistemu. Kroži okrog Neptuna v nasprotni smeri — nasprotno od lastne rotacije planeta — kar je jasen znak, da je bil ujeti iz zunanjega sončnega sistema, najverjetneje iz Kuiperjevega pasu, v zgodnjih dneh Neptunove zgodovine.",
+   "fun_fact": "Kljub površinski temperaturi −235°C — najnižji izmerjeni temperaturi na katerem koli nebesnem telesu, ki ga je obiskal vesoljski plovil — je Voyager 2 leta 1989 odkril aktivne dušikove gejzirje na Tritonu. Temne proge na površini označujejo mesta, kjer so se plumi plina in temnega materiala izbruhnili več kilometrov v tanko atmosfero.",
+   "distance": "354.759 km od Neptuna",
+   "size": "2.707 km premera",
+   "image_credit": "NASA/JPL",
+   "search_subtext": "Luna Neptuna"
+  },
+  "moon/umbriel": {
+   "description": "Umbriel je najtemnější z petih glavnih lun Urana, s enakomerno staro in težko kratersko površino, ki kaže malo znakov geološke preobrazbe, vidne na njegovih sosedih. Njegova notranjost je očitno ostala hladna in zamrznjena od zgodnjega obdobja zgodovine sončnega sistema.",
+   "fun_fact": "Najbolj značilna značilnost Umbrielja je Wunda, svetel obroč s premerom približno 140 km blizu njegovega ekvatorja. Voyager 2 ga je odkril leta 1986, vendar je natančna narava Wunde še vedno skrivnost — lahko bi bil kraterski pod, prekrit s sloji ogljičnega dioksida ali amoniakovega ledu, ki se je odložil dolgo po trku, ki ga je ustvaril.",
+   "distance": "266.300 km od Urana",
+   "size": "1.170 km premer",
+   "image_credit": "NASA/JPL",
+   "search_subtext": "Luna Urana"
+  },
+  "planet/jupiter": {
+   "description": "Jupiter je največji planet v našem sončnem sistemu. To je plinasti velikan s slavno Veliko rdečo pego nevihte.",
+   "fun_fact": "Jupiter ima najmanj 95 znanih lun! Njegova največja luna, Ganimed, je večja od planeta Merkurja.",
+   "distance": "778 milijonov km (povprečno)",
+   "size": "139.820 km premer",
+   "mass": "1,898 × 10²⁷ kg",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "planet/mars": {
+   "description": "Mars je četrti planet od Sonca, znan kot Rdeči planet zaradi železovega oksida na njegovi površini.",
+   "fun_fact": "Mars ima največji vulkan v sončnem sistemu: Olympus Mons, ki je približno 2,5-krat višji od Mount Everesta!",
+   "distance": "228 milijonov km (povprečno)",
+   "size": "6.779 km premer",
+   "mass": "6,39 × 10²³ kg",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "planet/mercury": {
+   "description": "Merkur je najmanjši planet in najbližji Soncu. Leto na Merkurju traja le 88 Zemljinih dni.",
+   "fun_fact": "Čeprav je Merkur najbližji Soncu, ni najtoplejši planet. Venera je toplejša zaradi svoje goste atmosfere!",
+   "distance": "58 milijonov km (od Sonca)",
+   "size": "4.880 km premer",
+   "mass": "3,3 × 10²³ kg",
+   "image_credit": "NASA/GSFC"
+  },
+  "planet/moon": {
+   "description": "Luna je edini naravni satelit Zemlje. Vpliva na naše plime in jo je obiskalo 12 astronavtov.",
+   "fun_fact": "Luna se počasi oddaljuje od Zemlje s hitrostjo približno 3,8 cm na leto. Pred milijardami let je bila veliko bližje!",
+   "distance": "384.400 km",
+   "size": "3.474 km premera",
+   "mass": "7,35 × 10²² kg",
+   "image_credit": "NASA/GSFC/ASU"
+  },
+  "planet/neptune": {
+   "description": "Neptun je najbolj oddaljen planet v našem sončnem sistemu. Ima najmočnejše vetrove, ki dosegajo 2.100 km/h.",
+   "fun_fact": "Neptun je bil odkrit z matematiko! Znanstveniki so napovedali njegovo lokacijo, preden ga je kdo videl skozi teleskop.",
+   "distance": "4,5 milijard km (povprečno)",
+   "size": "49.244 km premer",
+   "mass": "1,024 × 10²⁶ kg",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "planet/pluto": {
+   "description": "Pluton je pritlikavi planet v Kuiperjevem pasu. Do leta 2006 je bil veljal za deveti planet.",
+   "fun_fact": "Pluton ima ledenik v obliki srca, narejen iz dušikovega ledu, viden na slikah iz NASA-ine misije New Horizons!",
+   "distance": "5,9 milijard km (povprečno)",
+   "size": "2.377 km premer",
+   "mass": "1,3 × 10²² kg",
+   "image_credit": "NASA/JHUAPL/SwRI"
+  },
+  "planet/saturn": {
+   "description": "Saturn je šesti planet od Sonca, znan po svojem spektakularnem sistemu obročev iz ledu in kamnin.",
+   "fun_fact": "Saturn je tako lahek, da bi plaval v vodi! Njegova gostota je manjša od vode, čeprav ni kadi dovolj velike, da bi to preizkusili.",
+   "distance": "1,4 milijarde km (povprečno)",
+   "size": "116.460 km premer",
+   "mass": "5.68 × 10²⁶ kg",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "planet/sun": {
+   "description": "Sonce je zvezda v središču našega sončnega sistema. Zagotavlja svetlobo in toploto, ki omogočata življenje na Zemlji.",
+   "fun_fact": "Sonce vsebuje 99,86 % vse mase v našem sončnem sistemu. V njega bi se lahko zmestilo približno 1,3 milijona Zemlj!",
+   "distance": "150 milijonov km",
+   "size": "1,4 milijona km premera",
+   "mass": "1,989 × 10³⁰ kg",
+   "spectral_class": "G2V",
+   "image_credit": "NASA/SDO"
+  },
+  "planet/uranus": {
+   "description": "Uran je ledeni velikan, ki se vrti na svoji strani. To je bil prvi planet, odkrit s teleskopom.",
+   "fun_fact": "Uran se vrti na boku s naklonom 98 stopinj, verjetno zaradi trka z objektom velikosti Zemlje pred dolgo časom!",
+   "distance": "2,9 milijard km (povprečno)",
+   "size": "50.724 km premer",
+   "mass": "8.68 × 10²⁵ kg",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "planet/venus": {
+   "description": "Venera je drugi planet od Sonca in najtoplejši v našem sončnem sistemu. Pogosto jo imenujejo Zemljin dvojček zaradi podobne velikosti.",
+   "fun_fact": "Dan na Veneri je daljši kot njeno leto! Potrebuje 243 Zemljinih dni, da se enkrat zavrti, vendar samo 225 dni, da obide Sonce.",
+   "distance": "108 milijonov km (povprečno)",
+   "size": "12.104 km premer",
+   "mass": "4.87 × 10²⁴ kg",
+   "image_credit": "NASA/JPL"
+  },
+  "shower/aquariids": {
+   "description": "Eta Akvaridi so eden od dveh letnih meteornih rojev, ki jih povzroča razbitina Halleyjevega kometa. Z vrhuncem do 70 meteorjev na uro je roj posebej ugoden za južno poloblo, kjer se radianta pred zoro dvigne visoko. Tudi opazovalci na severu uživajo spoštljivo hitrost 30 ali več meteorjev na uro.",
+   "fun_fact": "Meteorji Eta Akvaridi potujejo s hitrostjo 66 km/s — dovolj hitro, da ioniziran zrak, ki ga ustvarijo, sveti še nekaj sekund potem, ko je meteor izginil. Morda boste videli Hallejev antični prah, ki se sežiga pred vašimi očmi, odvržen med enim od številnih obiskov kometa pred tisočletji."
+  },
+  "shower/deltaaquariids": {
+   "description": "Južni Delta Akvaridi dosežejo vrhunec v poznem juliju in so najbolje vidni z tropskih in južnih zemljepisnih širin, kjer se radianta v Vodnarju dviga visoko pred zoro. Proizvajajo stalen tok meteorjev srednje hitrosti do 16 na uro, s malo svetlih ognenih krogel.",
+   "fun_fact": "Natančen izvor meteorjev Delta Aquariids ostaja negotov. Vodilni kandidat je komet 96P/Machholz, nenavaden kratkoperiodičen komet z močno nagnjeno orbito, ki se nenavadno blizu približa Soncu — bliže kot planet Merkur."
+  },
+  "shower/geminids": {
+   "description": "Geminide se pogosto obravnavajo kot najboljši meteorski roj v letu — bogat (do 120 na uro), zanesljiv in aktiven že od zgodnjega večera, ne le po polnoči. Sevajo iz ozvezdja Gemini in proizvajajo širok spekter svetlosti meteorjev, vključno z živahnimi ognjenimi kroglami.",
+   "fun_fact": "Geminidi so med glavnimi meteornimi rojem edini, ki izvirajo iz asteroida in ne iz kometa: 3200 Phaethon, »kamniti komet«, katerega orbita ga pripelje bliže Soncu kot kateri koli drugi poimenovani asteroid. Ekstremna toplota lahko razpoka njegovo kamnito površino in sprosti prah, ki ustvari meteorni roj."
+  },
+  "shower/leonids": {
+   "description": "Leonidi izhajajo iz srpa Leva in običajno proizvajajo približno 20 meteorjev na uro. Sloviti so po spektakularnih nevihtah, ki se pojavijo približno vsakih 33 let, ko Zemlja preidejo skozi gost prašni filament, ki ga je izpustil komet 55P/Tempel-Tuttle. Te nevihte lahko proizvajajo tisoče meteorjev na uro.",
+   "fun_fact": "Leonidska nevihta leta 1833 je proizvedla ocenjenih 100.000 meteorjev na uro, kar je prestrašilo opazovalce v Severni Ameriki, ki so se bali, da gori nebo. Dogodek je sprožil znanstveno preučevanje meteorskih rojev. Primerljive nevihte so se zgodile leta 1966 in 1999."
+  },
+  "shower/lyrids": {
+   "description": "Liridi so zanesljiv pomladanski meteorski tok, ki seva blizu svetle zvezde Vega v ozvezdju Lira. Proizvajajo hitre, zmerno svetle meteorje, ki dosežejo vrh pri približno 18 na uro, in občasno ustvarjajo ognjene krogle, ki puščajo svetleče sled dima.",
+   "fun_fact": "Lyridi so najstarejši zanesljivo dokumentirani meteorski roj v zgodovini. Kitajski astronomi so leta 687 pr. n. št. dokumentirali nevihto meteorjev, ki so padali \"kot dež\". Razbitine izvirajo iz kometa Thatcher, ki potrebuje 415 let za obhod Sonca in je notranjega osončja nazadnje obiskal leta 1861."
+  },
+  "shower/orionids": {
+   "description": "Orionidi so drugi meteorski pljusak, ki ga vsako leto proizvede Halleyjev komet, in sevajo blizu dvignjene palice Oriona. S približno 25 meteorji na uro so znani po hitrim, pogosto svetlih meteorjih, ki pogosto puščajo svetleče ionizacijske sledi, ki trajajo več sekund.",
+   "fun_fact": "Halleyjev komet je odgovoren za dva letna meteorska roja: Eta Akvaridi v maju, ko Zemlja prečka kometnino sled odhajajoče trdne snovi, in Orionidi v oktobru, ko Zemlja prečka sled prihajajoče trdne snovi. Skupaj nam omogočata, da dvakrat letno vzorčimo starodavno Halleyevo prah."
+  },
+  "shower/perseids": {
+   "description": "Perseidni so najbolj priljubljen meteorski roj leta, ki dosega vrhunec v toplih avgustovskih nočeh z do 100 meteorji na uro. Ruševina, ki jo izloči komet Swift-Tuttle, se sežge visoko v Zemljini atmosferi in ustvari hitre, svetle meteorje — mnogi puščajo trajne svetleče sledi — ki se sevajo iz ozvezdja Perzej.",
+   "fun_fact": "Starš Perseidov, komet Swift-Tuttle, ima jedro široko 26 km — večje od predmeta, za katerega se misli, da je povzročil množično izumrtje, ki je končalo dobo dinozavrov. Komet je zadnjič prešel skozi notranji osončje leta 1992 in se ne bo vrnil do leta 2125."
+  },
+  "shower/puppidvelids": {
+   "description": "Puppidi-Velidi so kompleksen sistem prepletenih manjših meteorskih rojev, ki sevajo iz ozvezdij Puppis in Vela v južni Rimski cesti. Z vrhuncem okoli 10 meteorjev na uro so najbolje opazovani z južne poloble, kjer se radianta v decembrskem nebu dviga visoko.",
+   "fun_fact": "Puppidi-Velidi naj bi bili razbitine več različnih kometov-staršev in ne samo enega vira, vključno s kometom 26P/Grigg-Skjellerup. Njihov južni radiant se nikoli ne dvigne nad obzorje za opazovalce na zemljepisnih širinah severno od približno 40°S, kar jih naredi za meteorski roj, ki ga večina sveta redko vidi."
+  },
+  "shower/quadrantids": {
+   "description": "Kvadrantidi so bogat meteorski roj v januarju z zelo ostrim in kratkim vrhuncem, ki traja le nekaj ur. Radiant leži v ozvezdju Boötes, blizu položaja opuščenega ozvezdja Quadrans Muralis, po katerem je roj poimenovan. Pod idealnimi pogoji je vidnih do 120 meteorjev na uro.",
+   "fun_fact": "Za razliko od večine večjih meteornih rojev, ki izvirajo iz kometov, je matično telo Kvadrantidov asteroid 2003 EH1 — za katerega se domneva, da je mirujuče jedro kometa, ki je izgorel pred stoletji. Njegova obstoj je bil potrjen šele leta 2003."
+  },
+  "shower/ursids": {
+   "description": "Ursidi so manjši meteorski roj, ki seva iz Malega medveda blizu Severnice, kar jih naredi cirkumpolarne za opazovalce na severni polobli — vidni vso noč brez zahajanja. Dosežejo vrh okoli zimskega solsticija z približno 10 meteorji na uro, matična kometa pa je 8P/Tuttle.",
+   "fun_fact": "Ursidi občasno povzročijo nepričakovane izbruhe, ki so daleč nad njihovo tipično stopnjo. Leta 1945 in ponovno leta 2006 so opazovalci zabeležili 50 ali več meteorjev na uro — petkrat več od normalnega vrha. Ti porivi se pojavijo, ko Zemlja prehaja skozi nenavadno gosto trakovo ostankov, ki jo je izpustila kometa Tuttle med bližnjim pristopom."
+  },
+  "star/achernar": {
+   "description": "Achernar je najsvetlejša zvezda v Eridanu (Reka) in deveta najsvetlejša zvezda na nočnem nebu.",
+   "fun_fact": "Achernar je najploščejša znana zvezda! Vrti se tako hitro, da je njen ekvatorski premer 56 % večji od polarnega premera.",
+   "distance": "139 svetlobnih let",
+   "size": "7,3 sončnih radijev",
+   "mass": "6,7 sončne mase",
+   "spectral_class": "B6 Vep",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/acrux": {
+   "description": "Acrux (Alfa Crucis) je najsvetlejša zvezda v Južnem križu in 13. najsvetlejša zvezda na nebu.",
+   "fun_fact": "Acrux se pojavi na zastavah Avstralije, Nove Zelandije, Brazilije, Papue Nove Gvineje in Samoe!",
+   "distance": "320 svetlobnih let",
+   "size": "7,8 sončnih radijev",
+   "mass": "18 sončnih mas",
+   "spectral_class": "B0.5 IV",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/adhara": {
+   "description": "Adhara (Epsilon Canis Majoris) je druga najsvetlejša zvezda v Velikem psu, takoj za Siriusom.",
+   "fun_fact": "Pred približno 4,7 milijona let je bila Adhara najsvetlejša zvezda na nočnem nebu, celo svetlejša kot je Sirius danes!",
+   "distance": "430 svetlobnih let",
+   "size": "14 sončnih radijev",
+   "mass": "12,6 sončne mase",
+   "spectral_class": "B2 II",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/alcyone": {
+   "description": "Alkiona je najsvetlejša zvezda v gruči Pleiadi (M45) v ozvezdju Bika. To je modro-bela velikanica.",
+   "fun_fact": "Alcyone je pravzaprav večkratni zvezdni sistem z najmanj tremi spremljevalci! Vrti se tudi tako hitro, da ima okrog svojega ekvatorja disk plina.",
+   "distance": "~440 svetlobnih let",
+   "size": "~10 sončnih radijev",
+   "mass": "~6.0 sončnih mas",
+   "spectral_class": "B7IIIe",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/aldebaran": {
+   "description": "Aldebaran je oranžna orjakinja, ki predstavlja oko Bika (Tavrusa). Njegovo ime pomeni »sledilec« v arabščini.",
+   "fun_fact": "Aldebaran se zdi, da je del zvezdnega jata Hyade, vendar je v resnici le polovico bližje nam - kozmična optična iluzija!",
+   "distance": "65 svetlobnih let",
+   "size": "44 sončnih radijev",
+   "mass": "1,2 sončne mase",
+   "spectral_class": "K5+ III",
+   "image_credit": "ESO"
+  },
+  "star/alderamin": {
+   "description": "Alderamin je najsvetlejša zvezda v Cefeju (Kralj). Njegovo ime izvira iz arabščine in pomeni »desna roka«.",
+   "fun_fact": "Zaradi precesije Zemljine osi bo Alderamin postala Severnica približno leta 7500 AD!",
+   "distance": "49 svetlobnih let",
+   "size": "2,5 sončnih radijev",
+   "mass": "1,9 sončnih mas",
+   "spectral_class": "A7V",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/algenib": {
+   "description": "Algenib označuje kot Velikega kvadrata Pegaza. To je vroča modra podgigantska zvezda in spremenljiva zvezda Beta Cephei.",
+   "fun_fact": "Algenib pulzira in spreminja svojo svetlost rahlo vsakih 3,6 ure! To je tudi ena izmed najbolj oddaljenih zvezd, ki tvorijo vidno asterizmo s prostim očesom.",
+   "distance": "~390 svetlobnih let",
+   "size": "4,8 sončnih radijev",
+   "mass": "~8,9 sončnih mas",
+   "spectral_class": "B2IV",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/algieba": {
+   "description": "Algieba je čudovita dvojna zvezda v Levu (Lev), ki tvori grivico nebesnega leva. Njegovo ime pomeni »čelo« v arabščini.",
+   "fun_fact": "Skozi teleskop se Algieba razcepi v čudovit par zlato in rumeno-oranžnih velikanskih zvezd — ena najlepših dvojnih zvezd na nebu! Leta 2009 je bil odkrit planet, ki kroži okrog primarnega zvezdnega sistema.",
+   "distance": "~130 svetlobnih let",
+   "size": "~23 sončnih radijev",
+   "mass": "~1,2 sončnih mas",
+   "spectral_class": "K1IIIbCN",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/algol": {
+   "description": "Algol je znamenita dvojna spremenljiva zvezda v Perseju, znana kot »Demonska zvezda« že od antičnih časov.",
+   "fun_fact": "Vsakih 2,87 dni se Algol opazno zatemi, ko se njegov temnejši spremljevalec postavi pred njega - starodavni astronomi so to našli strašljivo!",
+   "distance": "90 svetlobnih let",
+   "size": "2,7 sončnih radijev",
+   "mass": "3,2 sončne mase",
+   "spectral_class": "B8 V",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/alhena": {
+   "description": "Alhena označuje nogo Polluksa, enega od dvojčkov v Dvojčkih. To je svetla bela podgigantska zvezda in ena izmed najbolj vidnih zvezd v Dvojčkih.",
+   "fun_fact": "Ime Alhena izhaja iz arabščine in pomeni »žig« — stari Arabci so to zvezdo videli kot žig na vratu kamele!",
+   "distance": "109 svetlobnih let",
+   "size": "3,3 sončnih radijev",
+   "mass": "2,8 sončne mase",
+   "spectral_class": "A1IV",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/alioth": {
+   "description": "Alioth je najsvetlejša zvezda v Veliki medvedici in najsvetlejša zvezda v asterizmu Veliki medved.",
+   "fun_fact": "Alioth ima nenavadno magnetno polje, ki povzroča, da se kemični elementi koncentrirajo na točkah na njegovi površini!",
+   "distance": "83 svetlobnih let",
+   "size": "4,1 sončnih radijev",
+   "mass": "2,9 sončne mase",
+   "spectral_class": "A1 III-IVp",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/alkaid": {
+   "description": "Alkaid je zvezda na konici ročaja Velikega medveda v Veliki medvedici. Je tretja najsvetlejša zvezda v Veliki medvedici.",
+   "fun_fact": "Za razliko od večine zvezd Velikega voznika se Alkaid ne giblje s skupino Veliki medved — potuje skozi vesolje v drugačni smeri, zato se bo oblika Velikega voznika počasi spreminjala v naslednjih tisočih let!",
+   "distance": "104 svetlobnih let",
+   "size": "3,4 sončnih radijev",
+   "mass": "6,1 sončne mase",
+   "spectral_class": "B3V",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/alnair": {
+   "description": "Alnair je najsvetlejša zvezda v Geranu (Jerebici). Njegovo ime pomeni »svetla« v arabščini.",
+   "fun_fact": "Alnair se vrti izjemno hitro — najmanj 215 km/s na njegovem ekvatorju — kar je tako hitro, da je zvezda opazno sploščena, izbočena v sredini!",
+   "distance": "101 svetlobnih let",
+   "size": "3,4 sončnih radijev",
+   "mass": "4,0 sončne mase",
+   "spectral_class": "B7IV",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/alnath": {
+   "description": "Alnath je druga najsvetlejša zvezda v Biku, ki označuje vrh severnega roga bika. Leži tik na meji med Bikom in Vozačem.",
+   "fun_fact": "Alnath je bil nekoč deljen med dve sozvezdji! Bil je označen kot Beta Tauri in Gamma Aurigae, preden ga je IAU leta 1930 uradno dodelil Taurusu.",
+   "distance": "134 svetlobnih let",
+   "size": "4,2 sončnih radijev",
+   "mass": "5,0 sončne mase",
+   "spectral_class": "B7III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/alnilam": {
+   "description": "Alnilam je srednja zvezda Orionovega pasu in ena izmed najbolj svetlečih zvezd, znanih v naši galaksiji.",
+   "fun_fact": "Alnilam izgublja maso s hitrostjo 20 milijonov krat hitrejšo kot naše Sonce skozi njegov moči zvezdni veter!",
+   "distance": "~2.000 svetlobnih let",
+   "size": "42 sončnih radijev",
+   "mass": "40 sončnih mas",
+   "spectral_class": "B0 Ia",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/alphard": {
+   "description": "Alphard je najsvetlejša zvezda v Hidri (Vodnem kaču), največjem ozvezdju na nebu.",
+   "fun_fact": "Alphard pomeni »samotni« v arabščini, ker se nahaja sama v sicer temnem delu neba!",
+   "distance": "177 svetlobnih let",
+   "size": "50 sončnih radijev",
+   "mass": "3 sončne mase",
+   "spectral_class": "K3 II-III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/alphekka": {
+   "description": "Alphekka (znana tudi kot Gemma) je najsvetlejša zvezda v Severni kroni (Corona Borealis). Je dragoceni kamen tega majhnega kroga zvezd.",
+   "fun_fact": "Alphekka je spremenljiva dvojna zvezda — njena šibka spremljevalka se ji vsaki 17,4 dni postavi pred njo in povzroči majhen padec svetlosti, ki ga je brez instrumentov skoraj nemogoče videti!",
+   "distance": "75 svetlobnih let",
+   "size": "2,9 sončnih radijev",
+   "mass": "2,6 sončne mase",
+   "spectral_class": "A0V",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/alpheratz": {
+   "description": "Alpheratz je najsvetlejša zvezda v Andromedii, čeprav je bila nekoč šteta za del Pegaza.",
+   "fun_fact": "Alpheratz ima izjemno nenavadno kemijsko sestavo z visokimi koncentracijami živega srebra in mangana v njeni atmosferi!",
+   "distance": "97 svetlobnih let",
+   "size": "2,7 sončnih radijev",
+   "mass": "3,6 sončne mase",
+   "spectral_class": "B8 IVp",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/altair": {
+   "description": "Altair je najsvetlejša zvezda v Aquili (Orlu) in ena od najbližjih zvezd, vidnih s prostim očesom.",
+   "fun_fact": "Altair se vrti tako hitro (enkrat na 9 ur), da je opazno sploščen na polih - je 14 % širši, kot je visok!",
+   "distance": "17 svetlobnih let",
+   "size": "1,8 sončnih radijev",
+   "mass": "1,8 sončne mase",
+   "spectral_class": "A7 V",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/ankaa": {
+   "description": "Ankaa je najsvetlejša zvezda v Feniksu, ozvezdju, ki se najbolje vidi z južne poloble. Njegovo ime izvira iz arabske besede za »feniks«.",
+   "fun_fact": "Ankaa je spektroskopski dvojna zvezda, kar pomeni, da je njen spremljevalec tako blizu, da se oba lahko zaznata le s premiki v njihovem svetlobnem spektru — krožita drug okrog drugega vsakih 10,2 leta!",
+   "distance": "85 svetlobnih let",
+   "size": "15 sončnih radijev",
+   "mass": "1.3 sončne mase",
+   "spectral_class": "K0III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/antares": {
+   "description": "Antares je rdeča supergigantska zvezda, srce Škorpijona. Njegovo ime pomeni \"tekmec Marsa\" zaradi njegove rdeče barve.",
+   "fun_fact": "Antares je tako velik, da bi se njegova površina, če bi ga postavili v naš osončje, razširila čez orbito Marsa!",
+   "distance": "~550 svetlobnih let",
+   "size": "~680 sončnih radijev",
+   "mass": "~12 sončnih mas",
+   "spectral_class": "M1.5 Iab",
+   "image_credit": "ESO/K. Ohnaka"
+  },
+  "star/arcturus": {
+   "description": "Arcturus je najsvetlejša zvezda na severni polobli, oranžni velikan v ozvezdju Boötes (Pastir).",
+   "fun_fact": "Arcturus se giblje skozi vesolje z ogromno hitrostjo in bo naš sončni sistem najbližje prešel v približno 4.000 letih!",
+   "distance": "37 svetlobnih let",
+   "size": "26 sončnih radijev",
+   "mass": "1,1 sončne mase",
+   "spectral_class": "K1.5 III",
+   "image_credit": "ESO"
+  },
+  "star/arneb": {
+   "description": "Arneb je najsvetlejša zvezda v Lepusu (Zajcu), ozvezdju, ki se skriva pod Orionovimi nogami. To je redka bela supergigantska zvezda.",
+   "fun_fact": "Arneb je umirajoča zvezda, ki je verjetno že porabila vodik v svojem jedru. V naslednjih nekaj milijonov let se lahko konča kot supernova!",
+   "distance": "~2.200 svetlobnih let",
+   "size": "~75 sončnih radijev",
+   "mass": "~14 sončnih mas",
+   "spectral_class": "F0Ib",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/betelgeuse": {
+   "description": "Betelgeuse je rdeči supergigant, ki označuje ramo Oriona. To je ena največjih zvezd, vidnih s prostim očesom.",
+   "fun_fact": "Betelgeuse je tako velik, da bi, če bi ga postavili na mesto našega Sonca, požrl Merkur, Venero, Zemljo, Mars in morda tudi Jupiter!",
+   "distance": "~700 svetlobnih let",
+   "size": "~900 sončnih radijev",
+   "mass": "~12 sončnih mas",
+   "spectral_class": "M1-M2 Iab",
+   "image_credit": "ALMA (ESO/NAOJ/NRAO)/E. O'Gorman/P. Kervella"
+  },
+  "star/canopus": {
+   "description": "Kanopus je druga najsvetlejša zvezda na nočnem nebu. Vidna je predvsem z južne poloble.",
+   "fun_fact": "Kanop je uporabljen s strani vesoljskih plovil za navigacijo, ker je zelo svetel in daleč od ekliptične ravnine!",
+   "distance": "310 svetlobnih let",
+   "size": "72 sončnih radijev",
+   "mass": "8,0 sončne mase",
+   "spectral_class": "A9 II",
+   "image_credit": "ESO"
+  },
+  "star/capella": {
+   "description": "Kapela je najsvetlejša zvezda v Aurigu in šesta najsvetlejša na nočnem nebu. Pravzaprav je sistem štirih zvezd.",
+   "fun_fact": "Capella pomeni \"majhna koza\" v latinščini. Starodavne kulture so jo videle kot kozo, ki jo nosi na ramenih Auriga, Voznik vozov!",
+   "distance": "43 svetlobnih let",
+   "size": "12 sončnih radijev",
+   "mass": "2,6 sončne mase",
+   "spectral_class": "G3 III + G0 III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/caph": {
+   "description": "Kaph je druga najsvetlejša zvezda v Kasiopeji in tvori desno točko ikonične W-oblike. Njegovo ime pomeni »dlan« v arabščini.",
+   "fun_fact": "Kaph je spremenljiva zvezda tipa Delta Scuti — pulzira z več frekvencami hkrati in spreminja svetlost nekoliko vsakih 2,5 ure!",
+   "distance": "54 svetlobnih let",
+   "size": "3,5 sončnih radijev",
+   "mass": "1,9 sončne mase",
+   "spectral_class": "F2III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/castor": {
+   "description": "Kastor je ena od dvojnih zvezd v Dvojčkih. Čeprav se zdi kot ena zvezda, je pravzaprav sistem šestih zvezd!",
+   "fun_fact": "Kastor je šesterni zvezdni sistem - tri pari dvojnih zvezd, ki se medsebojno obidejo. To je eden najbolj zapletenih zvezdnih sistemov blizu Zemlje!",
+   "distance": "51 svetlobnih let",
+   "size": "2,4 sončnih radijev",
+   "mass": "2,8 sončne mase",
+   "spectral_class": "A1 V",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/deneb": {
+   "description": "Deneb označuje rep Laboda (Labod). Je del poletnega trikotnika skupaj z Vego in Altairom.",
+   "fun_fact": "Deneb je ena izmed najbolj oddaljenih zvezd, vidnih s prostim očesom, oddaljena približno 2.600 svetlobnih let!",
+   "distance": "~2.600 svetlobnih let",
+   "size": "~200 sončnih radijev",
+   "mass": "~19 sončnih mas",
+   "spectral_class": "A2 Ia",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/denebola": {
+   "description": "Denebola označuje rep Leona (Leva). Njeno ime dobesedno pomeni »rep leva« v arabščini.",
+   "fun_fact": "Denebola ima prašnast disk ruševin, ki lahko kaže, da se planeti oblikujejo ali da se asteroidi trčijo okrog nje!",
+   "distance": "36 svetlobnih let",
+   "size": "1,7 sončnih radijev",
+   "mass": "1,8 sončne mase",
+   "spectral_class": "A3 V",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/diphda": {
+   "description": "Diphda (Beta Ceti) je najsvetlejša zvezda v Kitu (Morski pošasti) in vidna jesenska zvezda.",
+   "fun_fact": "Diphda se pojavi izolirana v precej prazni regiji neba, kar jo naredi uporabno za navigatorje, čeprav ni izjemno svetla!",
+   "distance": "96 svetlobnih let",
+   "size": "18 sončnih radijev",
+   "mass": "2,8 sončnih mas",
+   "spectral_class": "K0 III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/dubhe": {
+   "description": "Dubhe je ena od dveh \"kazalnih zvezd\" v Velikem medvedu, ki kažeta na Polarko, Severno zvezdo.",
+   "fun_fact": "Za razliko od večine zvezd Velikega vozička se Dubhe in Alkaid premikata v nasprotni smeri - asterizem bo videti drugače čez 50.000 let!",
+   "distance": "123 svetlobnih let",
+   "size": "30 sončnih radijev",
+   "mass": "4,3 sončne mase",
+   "spectral_class": "K0 III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/e_lyrae": {
+   "description": "Epsilon Lyrae je večzvezdni sistem v Liri, med opazovalci znan kot \"dvojni dvojček\".",
+   "fun_fact": "S Skeenim očesom lahko Epsilon Lyrae ločite na dve zvezdi, teleskop pa vsako od njiju razdeli še na dve! Skupaj vsebuje vsaj pet zvezd.",
+   "distance": "160 svetlobnih let"
+  },
+  "star/enif": {
+   "description": "Enif je najsvetlejša zvezda v Pegazu in označuje nos letečega konja v ozvezdju.",
+   "fun_fact": "Leta 1972 je Enif doživela dramatičan flare event, ki je na kratko povečal njeno svetlost za faktor pet!",
+   "distance": "670 svetlobnih let",
+   "size": "185 sončnih radijev",
+   "mass": "10,7 sončnih mas",
+   "spectral_class": "K2 Ib",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/etamin": {
+   "description": "Etamin (tudi Eltanin) je najsvetlejša zvezda v Zmaju. Predstavlja glavo zmaja, njegovo ime pa v arabščini pomeni »velika kača«.",
+   "fun_fact": "Opazovanja Etamina leta 1728 s strani Jamesa Bradleyja so vodila do odkritja aberacije svetlobe — enega prvih neposrednih dokazov, da se Zemlja giblje skozi vesolje!",
+   "distance": "148 svetlobnih let",
+   "size": "48 sončnih radijev",
+   "mass": "1,7 sončne mase",
+   "spectral_class": "K5III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/fomalhaut": {
+   "description": "Fomalhaut je najsvetlejša zvezda v Piscis Austrinus in ena izmed najsvetlejših zvezd jesenskega neba.",
+   "fun_fact": "Fomalhaut ima spektakularen disk iz ruševin, ki je bil eden prvih, ki je bil neposredno fotografiran okrog druge zvezde!",
+   "distance": "25 svetlobnih let",
+   "size": "1,8 sončnih radijev",
+   "mass": "1,9 sončne mase",
+   "spectral_class": "A3 V",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/hadar": {
+   "description": "Hadar (Beta Centauri) je druga najsvetlejša zvezda v Kentavru in 11. najsvetlejša v nočnem nebu.",
+   "fun_fact": "Hadar in Alfa Kentavra sta znana kot \"Južni kazalca\" - kažeta na ozvezdje Južni križ!==/TRANSLATION ITEM==",
+   "distance": "390 svetlobnih let",
+   "size": "9 sončnih radijev",
+   "mass": "12,8 sončne mase",
+   "spectral_class": "B1 III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/hamal": {
+   "description": "Hamal je najsvetlejša zvezda v Ovnu in je bila nekoč uporabljena za označevanje pomladanskega enakonočja pred približno 2000 leti.",
+   "fun_fact": "Ogromni eksoplanet, ki kroži okrog Hamala, je bil odkrit leta 2011, z maso najmanj 1,8-krat večjo od Jupitrove!",
+   "distance": "66 svetlobnih let",
+   "size": "15 sončnih radijev",
+   "mass": "1,5 sončne mase",
+   "spectral_class": "K2 III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/izar": {
+   "description": "Izar je lepa dvojna zvezda v Boötesu (Pastirju). Njegovo ime pomeni \"pas\" ali \"tančico\" v arabščini.",
+   "fun_fact": "Astronom Friedrich Georg Wilhelm von Struve iz 19. stoletja je Izar imenoval \"Pulcherrima\" (latinsko za \"najlepši\"), ker ima čudovit barvni kontrast med njegovimi oranžnimi in modro-belimi komponentami!",
+   "distance": "202 svetlobnih let",
+   "size": "33 sončnih radijev",
+   "mass": "~4,6 sončne mase",
+   "spectral_class": "K0II-III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/j052512+062100": {
+   "description": "Belatrika označuje levo ramo Oriona (Lovca). Ime izhaja iz latinščine za \"bojevnico\".",
+   "fun_fact": "Bellatrix je stara le približno 28 milijonov let in bo svoj vodik porabila v naslednjih 7 milijonih letih – kratek življenjski cikel za zvezdo!",
+   "distance": "250 svetlobnih let",
+   "size": "6,2 sončnega polmera",
+   "mass": "8,4 sončeve mase",
+   "spectral_class": "B2 III"
+  },
+  "star/j054048-015624": {
+   "description": "Alnitak je skrajno vzhodna zvezda Orionovega pasu, ki leži poleg meglic Ognjeni plamen in Konjska glava.",
+   "fun_fact": "Alnitak je najsvetlejša zvezda razreda O na celotnem nočnem nebu! Čez približno milijon let se bo razširila prek Jupitrovega tira in eksplodirala kot supernova.",
+   "distance": "1.260 svetlobnih let",
+   "size": "20 sončnih polmerov",
+   "mass": "33 sončevih mas",
+   "spectral_class": "O9.5 Iab"
+  },
+  "star/j055924+445700": {
+   "description": "Menkalinan je druga najsvetlejša zvezda v Vozniku (Auriga). Njeno ime v arabščini pomeni \"rama držača vajeti\".",
+   "fun_fact": "Menkalinan je pravzaprav dvojica skoraj enakih zvezd, ki druga drugo zamračita vsakih 47,5 ure – in čez približno milijon let bo postala najsvetlejša zvezda na našem nočnem nebu!",
+   "distance": "79 svetlobnih let",
+   "size": "2,8 sončnega polmera",
+   "mass": "2,4 sončeve mase",
+   "spectral_class": "A1m IV + A1m IV"
+  },
+  "star/j062248-175736": {
+   "description": "Mirzam (Beta Canis Majoris) vzhaja tik pred Siriusom, zaradi česar si je prislužil arabsko ime, ki pomeni \"Glasnik\".",
+   "fun_fact": "Pred približno štirimi milijoni let je bil Mirzam najsvetlejša zvezda na nebu z izjemnim sijem -3,65 magnitude – precej svetlejši, kot je Sirius videti danes!",
+   "distance": "490 svetlobnih let",
+   "size": "8,4 sončnega polmera",
+   "mass": "13 sončevih mas",
+   "spectral_class": "B1 II-III"
+  },
+  "star/j070824-262324": {
+   "description": "Wezen je rumeno-beli supergigant v ozvezdju Velikega psa. Ime izhaja iz arabščine za \"težo\".",
+   "fun_fact": "Če bi Wezen sedel tako blizu nas kot Sirij, bi svetil tako močno kot polna Luna!",
+   "distance": "1.600 svetlobnih let",
+   "size": "188 sončnih polmerov",
+   "mass": "14 sončevih mas",
+   "spectral_class": "F8 Ia"
+  },
+  "star/j082248-593036": {
+   "description": "Avior (Epsilon Carinae) je svetla dvojna zvezda v Kobilici in ena od štirih zvezd Lažnega križa.",
+   "fun_fact": "Lažni križ pogosto zamenjujejo s Južnim križem, kar je povzročilo že prave navigacijske napake! Aviorjevo ime so izumili britanski ustvarjalci almanahov v tridesetih letih 20. stoletja.",
+   "distance": "610 svetlobnih let",
+   "size": "151 sončnih polmerov",
+   "mass": "10,5 sončeve mase",
+   "spectral_class": "K3 III + B2 Vp"
+  },
+  "star/j091312-694312": {
+   "description": "Miaplacidus je drugo najsvetlejše zvezdo v ozvezdju Gredlja in označuje vogal asterizma Diamantni križ.",
+   "fun_fact": "Miaplacidus se je napadel v velikanko, potem ko je porabil vodik v svojem jedru, vendar še vedno vrti s hitrostjo 146 km/s!",
+   "distance": "113 svetlobnih let",
+   "size": "5,8 sončnega polmera",
+   "mass": "3,9 sončeve mase",
+   "spectral_class": "A1 III"
+  },
+  "star/j123112-570636": {
+   "description": "Gacrux (Gamma Crucis) je najvišja zvezda Jučnega križa in Soncu najbližja rdeča velikanovka.",
+   "fun_fact": "Gacrux je nam najbližja rdeča velikanka tipa M, njeno ime pa je preprosta pomorščakova skraênitev za \"Gamma Crucis\", ki je nastala v štiridesetih letih 20. stoletja!",
+   "distance": "89 svetlobnih let",
+   "size": "73 sončnih polmerov",
+   "mass": "1,5 sončeve mase",
+   "spectral_class": "M3.5 III"
+  },
+  "star/j124800-594124": {
+   "description": "Mimosa (Beta Crucis) je druga najsvetlejša zvezda v Južnem križu in ena najbolj vročih zvezd, vidnih s prostim očesom.",
+   "fun_fact": "Mimosa je utripajoča spremenljivka tipa Beta Cephei – nabrekča in se krči v treh prekrivajočih se ritmih, od katerih vsak traja le okoli štiri ure!",
+   "distance": "280 svetlobnih let",
+   "size": "8 sončnih polmerov",
+   "mass": "14,5 sončne mase",
+   "spectral_class": "B0.5 III"
+  },
+  "star/j143936-605024": {
+   "description": "Toliman (Alfa Centauri B) je oranžni spremljevalec v Soncu najbližjem zvezdnem sistemu, ki kroži okoli svetlejšega Rigila Kentaurusa.",
+   "fun_fact": "Toliman je uradno ime dobil šele leta 2018. Je nekoliko manjši in hladnejši od Sonca ter z obema sestrama tvori nam najbližje zvezdne sosede!",
+   "distance": "4,34 svetlobnega leta",
+   "size": "0,86 sončnega polmera",
+   "mass": "0,91 sončne mase",
+   "spectral_class": "K1 V"
+  },
+  "star/j164836-690148": {
+   "description": "Atria je najsvetlejša zvezda Južnega trikotnika (Triangulum Australe), oranžna velika zvezda, veliko večja od Sonca.",
+   "fun_fact": "Atria je 139-krat večja od Sonca – če bi jo postavili v središče sončnega sistema, bi segala skoraj do Venere!",
+   "distance": "391 svetlobnih let",
+   "size": "139 sončnih polmerov",
+   "mass": "6,4 sončne mase",
+   "spectral_class": "K2 Ib-IIa"
+  },
+  "star/j173712-430000": {
+   "description": "Sargas je svetla orjakinja v repu Škorpijona, ki nosi tradicionalno ime sumerskega izvora.",
+   "fun_fact": "Sargas se vrti tako hitro, da je navzven izbočen – na ekvatorju je za tretjino širši kot od pola do pola, morda pa je nastal z zlivanjem dveh zvezd!",
+   "distance": "329 svetlobnih let",
+   "size": "35 sončnih polmerov",
+   "mass": "3,1 sončne mase",
+   "spectral_class": "F1 III"
+  },
+  "star/j202548-564348": {
+   "description": "Pav je najsvetlejša zvezda v ozvezdju Pava, vroča modro-bela zvezda daljnega južnega neba.",
+   "fun_fact": "Paun je bil poimenovan v 30. letih 20. stoletja, ker je britansko vojno letalstvo (RAF) vztrajalo, da mora imeti vsaka zvezda v njihovem novem zvezdnem almanahu ime – ta pa ga ni imela!",
+   "distance": "179 svetlobnih let",
+   "size": "4,8 sončnega polmera",
+   "mass": "5,9 sončne mase",
+   "spectral_class": "B3 V"
+  },
+  "star/kaus_australis": {
+   "description": "Kaus Australis je najsvetlejša zvezda v Strelcu (Archer). Njegovo ime pomeni \"južni lok\" v mešanici arabščine in latinščine.",
+   "fun_fact": "Kaus Australis leži blizu smeri proti središču naše galaksije Mlečna pot! Ko gledate to zvezdo, gledate proti najgostejšemu delu galaktične ravnine.",
+   "distance": "143 svetlobnih let",
+   "size": "6,8 sončnih radijev",
+   "mass": "3,5 sončnih mas",
+   "spectral_class": "B9.5III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/kochab": {
+   "description": "Kochab je druga najsvetlejša zvezda v Ursa Minor (Mali medved). Skupaj s Pherkad tvori \"Čuvaje pola.\"",
+   "fun_fact": "Približno leta 1500 pr. n. št. je bil Kochab najbližja svetla zvezda severnega nebesnega pola, zato je bil \"Polarni zvezdica\" za stare Egipčane in feničanske mornarje!",
+   "distance": "131 svetlobnih let",
+   "size": "42 sončnih radijev",
+   "mass": "1,3 sončnih mas",
+   "spectral_class": "K4III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/markab": {
+   "description": "Markab je ena izmed štirih zvezd, ki tvorijo Veliki kvadrat Pegaza, zlahka prepoznavno asterizmo.",
+   "fun_fact": "Markab je \"pozno B-tipa\" zvezda, ki je pravkar končala svoje glavno zaporedje in se bo kmalu spremenila v rdečega velikana!=",
+   "distance": "133 svetlobnih let",
+   "size": "4,6 sončnih radijev",
+   "mass": "3,5 sončne mase",
+   "spectral_class": "B9 III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/menkar": {
+   "description": "Menkar je rdeča velikanica, ki označuje nos Cetusa (morskega pošasti). Njegovo ime v arabščini pomeni »nosnica«.",
+   "fun_fact": "Menkar se bliža koncu svoje zvezdne življenja. Ta starajoči se rdeči velikan fuzionira helij v svojem jedru in bo sčasoma odvrgnul svoje zunanje plasti, da bi postal planetarna meglica!",
+   "distance": "249 svetlobnih let",
+   "size": "~89 sončnih radijev",
+   "mass": "~2,3 sončnih mas",
+   "spectral_class": "M1.5IIIa",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/merak": {
+   "description": "Merak je ena od dveh \"Kazalnih zvezd\" v Velikem vozu, ki kažeta pot do Polarisa, Severnega zvezda. Leži v Veliki medvedici.",
+   "fun_fact": "Merak ima infrardečo presežnost, ki nakazuje na obstelaren disk iz ostankov — verjetno obroč prahu in kamnite snovi, podoben našemu asteroidnemu pasu!",
+   "distance": "80 svetlobnih let",
+   "size": "3,0 sončnih radijev",
+   "mass": "2,7 sončnih mas",
+   "spectral_class": "A1V",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/mirach": {
+   "description": "Mirach je rdeči velikan v Andromedii, pogosto uporabljen kot vodilo za iskanje galaksije Andromeda.",
+   "fun_fact": "Mirachov duh je majhna galaksija (NGC 404), ki se pojavi zelo blizu Miraha - stoletja je bila skrita v sijaju zvezde!",
+   "distance": "197 svetlobnih let",
+   "size": "100 sončnih radijev",
+   "mass": "3,5 sončne mase",
+   "spectral_class": "M0 III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/mirphak": {
+   "description": "Mirphak (tudi Mirfak) je najsvetlejša zvezda v Perseju, rumeno-bela supergigantska zvezda v srcu gruče Alfa Perseji.",
+   "fun_fact": "Mirphak je obdan s čudovitim odprtim zvezdnim jatom (Melotte 20), ki ga je najbolje videti s daljnogledom — razpršenost mladih, modro-belih zvezd, ki se skupaj gibljejo skozi vesolje!",
+   "distance": "~590 svetlobnih let",
+   "size": "~68 sončnih radijev",
+   "mass": "~8,5 sončnih mas",
+   "spectral_class": "F5Ib",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/n25": {
+   "description": "R Coronae Borealis je redek rumeni supergigant v Severni kroni in prototip razreda spremenljivih zvezd, ki je po njem dobil ime.",
+   "fun_fact": "Zvezdo R Coronae Borealis včasih imenujejo »obratna nova« – namesto da bi izbruhnila, ji svetlost nepredvidljivo upade za do 9 magnitud, ko izpuhne oblake ogljikove saje, ki jo skrijejo pred našimi očmi!",
+   "distance": "4.560 svetlobnih let",
+   "spectral_class": "G0Iep"
+  },
+  "star/nunki": {
+   "description": "Nunki je druga najsvetlejša zvezda v Strelcu in najstarejše ime zvezde, ki se še vedno pogosto uporablja.",
+   "fun_fact": "Ime Nunki izvira iz starega Babilona, kjer je predstavljalo mesto Eridu na nebesni sferi!",
+   "distance": "228 svetlobnih let",
+   "size": "4,5 sončnih radijev",
+   "mass": "7,8 sončnih mas",
+   "spectral_class": "B2.5 V",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/phad": {
+   "description": "Phad (tudi Phecda) je ena od zvezd, ki tvorijo skledo Velikega medveda v Veliki medvedici. Njegovo ime pomeni \"stegno\" v arabščini.",
+   "fun_fact": "Phad je član Ursa Major Moving Group — skupino zvezd, ki so se rodile skupaj in potujejo skozi vesolje kot ohlapna kopica, vključno z večino zvezd Velikega medveda!",
+   "distance": "84 svetlobnih let",
+   "size": "3,0 sončnih radijev",
+   "mass": "2,9 sončne mase",
+   "spectral_class": "A0Ve",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/polaris": {
+   "description": "Polaris, Severnica, se na nebu pojavljuje skoraj negibna, medtem ko se druge zvezde v nočnem času vrtijo okrog nje.",
+   "fun_fact": "Polaris je pravzaprav trojni zvezdni sistem! Glavna zvezda je supergigant, ki je približno 2.500-krat svetlejša od našega Sonca.",
+   "distance": "~430 svetlobnih let",
+   "size": "~44 sončnih radijev",
+   "mass": "~5,4 sončnih mas",
+   "spectral_class": "F7 Ib",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "star/pollux": {
+   "description": "Pollux je svetlejša od dvojne zvezde v Dvojčkih. Za razliko od Castor-ja je samotna oranžna orjakinja.",
+   "fun_fact": "Pollux ima potrjeni eksoplanet! Pollux b je plinski orjak, ki je najmanj dvakrat masivnejši od Jupitra.",
+   "distance": "34 svetlobnih let",
+   "size": "9,1 sončnih radijev",
+   "mass": "1,9 sončne mase",
+   "spectral_class": "K0 III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/procyon": {
+   "description": "Procyon je svetla zvezda v ozvezdju Canis Minor (Mali pes). Je eden izmed naših bližjih zvezdnih sosedov.",
+   "fun_fact": "Procyon pomeni \"pred psom\" v grščini, ker se pojavi tik pred Siriusom, Psovo zvezdo, na nočnem nebu!",
+   "distance": "11,4 svetlobnih let",
+   "size": "2,0 sončnih radijev",
+   "mass": "1,5 sončne mase",
+   "spectral_class": "F5 IV-V",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/rasalhague": {
+   "description": "Rasalhague je najsvetlejša zvezda v Ophiuchu (Nosilcu kače), ozvezdju, ki je povezano z zdravljenjem.",
+   "fun_fact": "Rasalhague je hiter rotator - vrti se tako hitro, da je opazno sploščena, in opravi rotacijo v samo 18 urah!",
+   "distance": "48,6 svetlobnih let",
+   "size": "2,5 sončnih radijev",
+   "mass": "2,4 sončne mase",
+   "spectral_class": "A5 III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/regulus": {
+   "description": "Regulus je najsvetlejša zvezda v Levu (Lev) in predstavlja srce leva. To je večkratni zvezdni sistem.",
+   "fun_fact": "Regulus se vrti tako hitro, da se skoraj trgajo narazen! Opravi en obrat v samo 16 urah.",
+   "distance": "79 svetlobnih let",
+   "size": "4,4 sončnih radijev",
+   "mass": "3,8 sončne mase",
+   "spectral_class": "B8 IVn",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/rigel": {
+   "description": "Rigel je modra supergigantska zvezda, ki označuje nogo Oriona. Čeprav je bolj oddaljena od Betelgeuzeja, se zdi enako svetla.",
+   "fun_fact": "Rigel sija s svetlobo približno 120.000 Sonc! To je ena izmed najbolj svetlečih zvezd v našem delu Rimske ceste.",
+   "distance": "~860 svetlobnih let",
+   "size": "~79 sončnih radijev",
+   "mass": "~23 sončnih mas",
+   "spectral_class": "B8 Ia",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/rigil_kentaurus_a": {
+   "description": "Alpha Centauri je najbližji zvezdni sistem Soncu, sestavljen iz treh zvezd, vključno s Proxima Centauri.",
+   "fun_fact": "Proxima Centauri, del tega sistema, ima potencialno naselljiv planet! Proxima b je oddaljena le 4,2 svetlobnih let.",
+   "distance": "4,37 svetlobnih let",
+   "size": "1,2 sončnih radijev",
+   "mass": "1,1 sončne mase",
+   "spectral_class": "G2 V + K1 V",
+   "image_credit": "ESO/Digitized Sky Survey 2/Davide De Martin"
+  },
+  "star/saiph": {
+   "description": "Saiph označuje spodnje desno koleno Oriona. Čeprav se zdi temnejši od Rigela, je pravzaprav zelo vroč in svetel modri supergigant.",
+   "fun_fact": "Saiph se zdi šibkejši, kot bi nakazala njegova temperatura, ker večino svoje energije seva kot ultravijolična svetloba, ki je za naše oči nevidna! Pravzaprav je ena najbolj vročih svetlih zvezd na nebu.",
+   "distance": "~650 svetlobnih let",
+   "size": "~22 sončnih radijev",
+   "mass": "~15,5 sončne mase",
+   "spectral_class": "B0.5Ia",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/scheat": {
+   "description": "Scheat je rdeči velikan v Velikem kvadratu Pegaza, znan po svoji globoki oranžno-rdeči barvi.",
+   "fun_fact": "Scheat je pol-redna spremenljiva zvezda, ki spreminja svetlost v obdobjih od tednov do mesecev!",
+   "distance": "196 svetlobnih let",
+   "size": "110 sončnih radijev",
+   "mass": "2,1 sončnih mas",
+   "spectral_class": "M2 II-III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/shaula": {
+   "description": "Shaula je druga najsvetlejša zvezda v Škorpijonu in označuje želo škorpijona v repu.",
+   "fun_fact": "Shaula pomeni \"dvignjeni rep\" v arabščini. Pravzaprav je to trojni zvezdni sistem s zvezdam, ki sta si zelo blizu!==/TRANSLATION ITEM==",
+   "distance": "570 svetlobnih let",
+   "size": "8,8 sončnih radijev",
+   "mass": "10,4 sončne mase",
+   "spectral_class": "B2 IV",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/shedir": {
+   "description": "Shedir (tudi Schedar) je najsvetlejša zvezda v Kasiopeji, oranžni velikan na dnu znamenitega vzorca W. Njegovo ime pomeni »prsi« v arabščini.",
+   "fun_fact": "Shedir je bil nekoč mišljen za spremenljivo zvezdo, vendar sodobne meritve kažejo, da je njegova svetlost izjemno stabilna — prejšnja poročila o spremenljivosti so bila verjetno posledica primitivne opreme!",
+   "distance": "228 svetlobnih let",
+   "size": "45 sončnih radijev",
+   "mass": "~4,0 sončne mase",
+   "spectral_class": "K0IIIa",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/sirius": {
+   "description": "Sirius je najsvetlejša zvezda na nočnem nebu, ki se nahaja v ozvezdju Canis Major (Veliki pes).",
+   "fun_fact": "Sirius je pravzaprav binarni zvezdni sistem! Sirius B, njegov spremljevalec, je beli škrat približno velikosti Zemlje, vendar skoraj tako masiven kot Sonce.",
+   "distance": "8,6 svetlobnih let",
+   "size": "1,7 sončnih radijev",
+   "mass": "2,1 sončne mase",
+   "spectral_class": "A1V",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "star/spica": {
+   "description": "Spica je najsvetlejša zvezda v Devici in ena od 20 najsvetlejših zvezd na nočnem nebu. To je dvojni zvezdni sistem.",
+   "fun_fact": "Spica je tako blizu ekliptike, da jo lahko zakriva Luna. Ime pomeni \"klasje pšenice\" v latinščini!",
+   "distance": "250 svetlobnih let",
+   "size": "7,5 sončnih radijev",
+   "mass": "11 sončnih mas",
+   "spectral_class": "B1 III-IV",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/unukalhai": {
+   "description": "Unukalhai je najsvetlejša zvezda v Serpens Caput (Glava Kače). Njegovo ime pomeni »vrat kače« v arabščini.",
+   "fun_fact": "Serpens je edina konstelacija, razdeljena na dva ločena dela — Serpens Caput (glava) in Serpens Cauda (rep) — ločena z Ophiuchus, in Unukalhai je najsvetlejša zvezda v delu glave!",
+   "distance": "74 svetlobnih let",
+   "size": "12 sončnih radijev",
+   "mass": "~2,1 sončne mase",
+   "spectral_class": "K2III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/vega": {
+   "description": "Vega je ena izmed najsvetlejših zvezd, vidnih s Zemlje, in se nahaja v ozvezdju Lira (Harfa).",
+   "fun_fact": "Vega je bila Severnica pred približno 14.000 leti in bo spet v približno 12.000 letih zaradi nihanja Zemlje!",
+   "distance": "25 svetlobnih let",
+   "size": "2,4 sončnih radijev",
+   "mass": "2,1 sončne mase",
+   "spectral_class": "A0V",
+   "image_credit": "Stephen Rahn (CC0)"
+  },
+  "star/vindemiatrix": {
+   "description": "Vindemiatrix je tretja najsvetlejša zvezda v Devici (Devi). Njeno ime v latinščini pomeni »trgalka grozdja«.",
+   "fun_fact": "Vindemiatrix je dobila svoje ime, ker je njen heliakalni vzhod (prvi videz ob zori) nekoč sovpadal s sezono trgatve v Sredozemlju — bila je zvezda vinogradnika!==/TRANSLATION ITEM==",
+   "distance": "109 svetlobnih let",
+   "size": "11 sončnih radijev",
+   "mass": "2,6 sončne mase",
+   "spectral_class": "G8III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  }
+ }
+}

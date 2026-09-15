@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="credits_text" translation_description="This page credits the people and organizations who support and maintain the app Sky Map. It is appended to the Help screen. Please do not change the &lt; and &gt; markup"><![CDATA[
+<h2>Sky Map Supporters</h2>
+<h3>Thank you to these folks who have recently <a href="https://buymeacoffee.com/skymapdevs?utm_source=skymap&amp;utm_medium=app&amp;utm_campaign=credits_donated">donated!</a></h3>
+<p>%1$s</p>
+<h1>Credits</h1>
+<h2>Dedication</h2>
+<p>Sky Map 2.0 is dedicated to my wife, Louise.</p>
+<h2>Engineering</h2>
+<p>John Taylor</p>
+<h2>Open Source Contributors</h2>
+<p>%2$s</p>
+<p>Thank you! See the latest contributors on <a href="https://github.com/sky-map-team/stardroid/graphs/contributors">GitHub</a>.</p>
+<h2>Original Engineering, Design and Product Management at Google</h2>
+<p>Brent Bryan, Dominic Widdows, Hector Ouilhet, James Powell, John Taylor, Kevin Serafini, Lior Ron.</p>
+<h1>Acknowledgments</h1>
+<p>Sky Map was originally developed as \"Google Sky Map\" by Google Inc. and open sourced in 2012.</p>
+<p>Special thanks to Pat Stephenson for sparking the idea with his G1-phone competition and to Chris DiBona and Michael Weiss-Malik for their helping with the transition from Google to Open Source.</p>
+<h2>Data</h2>
+<p>Sky Map uses maps derived from data from:</p>
+<p>• Centre de Donnees astronomiques de Strasbourg (<a href="https://cdsweb.u-strasbg.fr/">cdsweb.u-strasbg.fr</a>)<br/>
+• The Bright Star Catalogue, 5th Revised Ed. (Hoffleit D., Warren Jr W.H.)<br/>
+• Star names: IAU Catalog of Star Names, IAU Working Group on Star Names (<a href="https://www.iau.org/public/themes/naming_stars/">iau.org</a>), CC BY 4.0<br/>
+• The HYG Database, HYG v1.0. (<a href="https://www.astronexus.com/">astronexus.com</a>)<br/>
+• History and Accurate Positions for the NGC/IC Objects (Harold G. Corwin Jr)<br/>
+• Revised New General Catalogue of Nonstellar Astronomical Objects (Sulentic J.W., Tifft W.G.)<br/>
+• SFA Star Charts (<a href="https://observe.phy.sfasu.edu/SFAStarCharts/SFAStarChartFAQ.html">observe.phy.sfasu.edu</a>)<br/>
+• Positions of Solar System Objects are calculated from data provided by the USNO (<a href="https://www.usno.navy.mil/USNO/astronomical-applications">usno.navy.mil</a>)<br/>
+• Spherical coverage data obtained from <a href="https://www2.research.att.com/~njas/coverings">research.att.com</a></p>
+<h2>Image Credits</h2>
+<p>Celestial images in this app are provided courtesy of the following sources:</p>
+<p>• Hubble Space Telescope images: NASA, ESA, and the Space Telescope Science Institute (<a href="https://hubblesite.org/">hubblesite.org</a>)<br/>
+• Planet images: NASA/JPL-Caltech, NASA/Johns Hopkins APL/Carnegie (MESSENGER), NASA/Johns Hopkins APL/SwRI (New Horizons)<br/>
+• Moon image: NASA/GSFC/Arizona State University (Lunar Reconnaissance Orbiter)<br/>
+• Star field images: ESO Digitized Sky Survey 2 (<a href="https://archive.eso.org/dss/dss">archive.eso.org/dss</a>), CC BY 4.0<br/>
+• Constellation charts: IAU and Sky &amp; Telescope (Roger Sinnott &amp; Rick Fienberg), CC BY 4.0<br/>
+• Additional deep-sky object images: Gemini Observatory/NOIRLab/NSF/AURA (<a href="https://noirlab.edu/">noirlab.edu</a>)<br/>
+• M31 image: Peter Kennett (<a href="https://commons.wikimedia.org/wiki/File:M31(Kennett).jpg">Wikimedia Commons</a>)<br/>
+• Sagittarius A* image: EHT Collaboration (<a href="https://www.eso.org/public/images/eso2208-eht-mwa/">eso.org</a>), CC BY 4.0<br/>
+• Cygnus X-1 illustration: NASA/CXC/M.Weiss (<a href="https://chandra.harvard.edu/photo/2011/cygx1/">chandra.harvard.edu</a>)</p>
+    ]]></string>
+</resources>

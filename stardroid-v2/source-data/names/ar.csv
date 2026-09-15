@@ -1,0 +1,632 @@
+object_id,name,is_primary
+constellation/andromeda,المرأة المسلسلة,1
+constellation/antlia,أنتليا,1
+constellation/apus,أبوس,1
+constellation/aquarius,الدلو,1
+constellation/aquila,العقاب,1
+constellation/ara,آرا,1
+constellation/aries,الحمل,1
+constellation/auriga,ممسك الأعنة,1
+constellation/bootes,العواء,1
+constellation/caelum,كايلوم,1
+constellation/camelopardalis,كاميلوباردالس,1
+constellation/cancer,السرطان,1
+constellation/canes_venatici,كلاب الصيد,1
+constellation/canis_major,الكلب الأكبر,1
+constellation/canis_minor,الكلب الأصغر,1
+constellation/capricornus,الجدي,1
+constellation/carina,الجؤجؤ,1
+constellation/cassiopeia,ذات الكرسي,1
+constellation/centaurus,قنطورس,1
+constellation/cepheus,قيفاوس,1
+constellation/cetus,قيطس,1
+constellation/chamaeleon,الحرباء,1
+constellation/circinus,الفرجار,1
+constellation/columba,الحمامة,1
+constellation/coma_berenices,شعر برنيقة,1
+constellation/corona_australis,التاج الجنوبي,1
+constellation/corona_borealis,التاج الشمالي,1
+constellation/corvus,الغراب,1
+constellation/crater,الكأس,1
+constellation/crux,الصليب الجنوبي,1
+constellation/cygnus,الدجاجة,1
+constellation/delphinus,الدلفين,1
+constellation/dorado,السمك الذهبي,1
+constellation/draco,التنين,1
+constellation/equuleus,الحصان الصغير,1
+constellation/eridanus,النهر,1
+constellation/fornax,الفرن,1
+constellation/gemini,الجوزاء,1
+constellation/grus,الكركي,1
+constellation/hercules,الجاثي,1
+constellation/horologium,الساعة,1
+constellation/hydra,الحية,1
+constellation/hydrus,ثعبان البحر,1
+constellation/indus,الهندي,1
+constellation/lacerta,السحلية,1
+constellation/leo,الأسد,1
+constellation/leo_minor,الأسد الأصغر,1
+constellation/lepus,الأرنب,1
+constellation/libra,الميزان,1
+constellation/lupus,الذئب,1
+constellation/lynx,الوشق,1
+constellation/lyra,الشلياق,1
+constellation/mensa,الطاولة,1
+constellation/microscopium,المجهر,1
+constellation/monoceros,وحيد القرن,1
+constellation/musca,الذبابة,1
+constellation/norma,المسطرة,1
+constellation/octans,الثمان,1
+constellation/ophiuchus,الحواء,1
+constellation/orion,الجبار,1
+constellation/pavo,الطاووس,1
+constellation/pegasus,الفرس الأعظم,1
+constellation/perseus,حامل رأس الغول,1
+constellation/phoenix,العنقاء,1
+constellation/pictor,الرسام,1
+constellation/pisces,الحوت,1
+constellation/piscis_austrinus,الحوت الجنوبي,1
+constellation/puppis,الكوثل,1
+constellation/pyxis,البوصلة,1
+constellation/reticulum,الشبكة,1
+constellation/sagitta,السهم,1
+constellation/sagittarius,القوس,1
+constellation/scorpius,العقرب,1
+constellation/sculptor,النحات,1
+constellation/scutum,الدرع,1
+constellation/serpens_caput,رأس الحية,1
+constellation/serpens_cauda,ذيل الحية,1
+constellation/sextans,السدس,1
+constellation/taurus,الثور,1
+constellation/telescopium,التلسكوب,1
+constellation/triangulum,المثلث,1
+constellation/triangulum_australe,المثلث الجنوبي,1
+constellation/tucana,الطوقان,1
+constellation/ursa_major,الدب الأكبر,1
+constellation/ursa_minor,الدب الأصغر,1
+constellation/vela,الشراع,1
+constellation/virgo,العذراء,1
+constellation/volans,الطائر,1
+constellation/vulpecula,الثعلب الصغير,1
+dso/blue_snowball_nebula,سديم الكرة الثلجية الزرقاء,1
+dso/centaurus_a,قنطورس أ,1
+dso/coathanger,عنقود الشماعة,1
+dso/coathanger,عنقود بروكي,0
+dso/coma_star_cluster,عنقود شعر برنيس,1
+dso/coma_star_cluster,عنقود كوما برينيسيس,0
+dso/cygnus_x_1,نظام ثنائي من الثقوب السوداء,1
+dso/cygnus_x_1,ثقب أسود نجمي,0
+dso/double_cluster,العنقود المزدوج,1
+dso/double_cluster,NGC 869 و NGC 884,0
+dso/double_cluster,h و χ برسيوس,0
+dso/eta_carinae_nebula,سديم إيتا كارينا,1
+dso/eta_carinae_nebula,سديم كارينا,0
+dso/exposed_cranium_nebula,سديم الجمجمة المكشوفة,1
+dso/ghost_of_jupiter,شبح المشتري,1
+dso/hdf,حقل هابل العميق,1
+dso/hdf,حقل هابل العميق,0
+dso/helix_nebula,سديم الحلزون,1
+dso/helix_nebula,عين الله,0
+dso/hyades,القلائص,1
+dso/jewel_box,صندوق الجواهر,1
+dso/jewel_box,صندوق جواهر هرشل,0
+dso/jewel_box,عنقود كابا الصليب,0
+dso/lmc,السحابة الماجلانية الكبرى,1
+dso/lmc,Nubecula Major,0
+dso/m1,م١,1
+dso/m1,سديم السرطان,0
+dso/m101,م١٠١,1
+dso/m101,مجرة المروحة,0
+dso/m102,مجرة المغزل,1
+dso/m104,م١٠٤,1
+dso/m104,مجرة القبعة المكسيكية,0
+dso/m11,عنقود البطة البرية,1
+dso/m11,م١١,0
+dso/m13,م١٣,1
+dso/m13,عنقود هرقل الكروي,0
+dso/m13,مجموعة هرقل الكروية,0
+dso/m16,م١٦,1
+dso/m16,سديم النسر,0
+dso/m20,سديم تريفيد,1
+dso/m20,م٢٠,0
+dso/m24,سحابة القوس النجمية,1
+dso/m24,م٢٤,0
+dso/m27,سديم الدمبل,1
+dso/m27,م٢٧,0
+dso/m31,م٣١,1
+dso/m31,مجرة أندروميدا,0
+dso/m33,مجرة المثلث,1
+dso/m33,م٣٣,0
+dso/m40,م٤٠,1
+dso/m40,Winnecke 4,0
+dso/m42,م٤٢,1
+dso/m42,سديم الجبار,0
+dso/m43,سديم دي ميران,1
+dso/m43,م٤٣,0
+dso/m44,م٤٤,1
+dso/m44,النثرة,0
+dso/m44,حشد خلية النحل,0
+dso/m45,م٤٥,1
+dso/m45,الثريا,0
+dso/m45,سبع بنات صغيرات,0
+dso/m51,م٥١,1
+dso/m51,مجرة الدوامة,0
+dso/m57,م٥٧,1
+dso/m57,سديم الحلقة,0
+dso/m6,م٦,1
+dso/m6,حشد الفراشة,0
+dso/m63,مجرة عباد الشمس,1
+dso/m63,م٦٣,0
+dso/m64,مجرة العين السوداء,1
+dso/m64,م٦٤,0
+dso/m65,م٦٥,1
+dso/m66,م٦٦,1
+dso/m7,م٧,1
+dso/m7,ذيل العقرب,0
+dso/m7,عنقود بطليموس,0
+dso/m74,مجرة الشبح,1
+dso/m74,م٧٤,0
+dso/m76,سديم الدمبل الصغير,1
+dso/m76,م٧٦,0
+dso/m8,سديم البحيرة,1
+dso/m8,م٨,0
+dso/m81,مجرة بودي,1
+dso/m81,م٨١,0
+dso/m82,مجرة السيجار,1
+dso/m82,م٨٢,0
+dso/m83,مجرة دولاب الهواء الجنوبية,1
+dso/m83,م٨٣,0
+dso/m97,سديم البومة,1
+dso/m97,م٩٧,0
+dso/n47_tucanae,47 طوقان,1
+dso/ngc_6543,سديم عين القطة,1
+dso/north_america_nebula,سديم أمريكا الشمالية,1
+dso/north_america_nebula,كالدويل 20,0
+dso/omega_centauri,مجموعة أوميجا سنتاوري الكروية,1
+dso/omega_centauri,ω Centauri,0
+dso/saturn_nebula,سديم زحل,1
+dso/sculptor_galaxy,مجرة النحات,1
+dso/sculptor_galaxy,مجرة الدولار الفضي,0
+dso/sculptor_galaxy,مجرة العملة الفضية,0
+dso/sgr_a_star,القوس أ*,1
+dso/sgr_a_star,الثقب الأسود,0
+dso/sgr_a_star,مركز المجرة,0
+dso/smc,السحابة الماجلانية الصغرى,1
+dso/smc,السحابة الصغيرة,0
+dso/t_crb,تي الإكليل الشمالي,1
+dso/t_crb,نجم اللهب,0
+dso/tarantula_nebula,سديم العنكبوت,1
+dso/tarantula_nebula,30 Doradus,0
+dso/willman_1,ويلمان 1,1
+dso/willman_1,مجرة بيث ويلمان,0
+moon/ariel,آريل,1
+moon/callisto,كاليستو,1
+moon/deimos,ديموس,1
+moon/dione,ديون,1
+moon/europa,أوروبا,1
+moon/ganymede,جانيميد,1
+moon/iapetus,إيابيتوس,1
+moon/io,آيو,1
+moon/oberon,أوبيرون,1
+moon/phobos,فوبوس,1
+moon/rhea,ريا,1
+moon/tethys,تيثيس,1
+moon/titan,تيتان,1
+moon/titania,تيتانيا,1
+moon/triton,تريتون,1
+moon/umbriel,أمبريل,1
+planet/jupiter,المشتري,1
+planet/mars,المريخ,1
+planet/mercury,عطارد,1
+planet/moon,القمر,1
+planet/neptune,نبتون,1
+planet/pluto,بلوتو,1
+planet/saturn,زحل,1
+planet/sun,الشمس,1
+planet/uranus,اورانوس,1
+planet/venus,الزهرة,1
+shower/aquariids,إيتا الدلويات,1
+shower/deltaaquariids,دلتا الدلويات,1
+shower/geminids,التوأميات,1
+shower/leonids,الليونيات,1
+shower/lyrids,الليريات,1
+shower/orionids,الأوريونيات,1
+shower/perseids,الفرسيات,1
+shower/puppidvelids,بوبيد-فيليدز,1
+shower/quadrantids,الرباعيات,1
+shower/ursids,الدبيات,1
+star/achernar,آخر النهر,1
+star/acrux,ألفا الصليب,1
+star/adhara,العذارى,1
+star/alcyone,السيون,1
+star/aldebaran,الدبران,1
+star/alderamin,الذراعين,1
+star/algenib,جناح الفرس,1
+star/algieba,الجبهة,1
+star/algol,الغول,1
+star/alhena,الهنعة,1
+star/alioth,الجون,1
+star/alkaid,القائد,1
+star/alnair,النيِّر,1
+star/alnath,الناطح,1
+star/alnilam,النظام,1
+star/alphard,الفرد,1
+star/alphekka,الفكة,1
+star/alpheratz,الفرس,1
+star/altair,النسر الطائر,1
+star/ankaa,العنقاء,1
+star/antares,قلب العقرب,1
+star/arcturus,السماك الرامح,1
+star/arneb,الأرنب,1
+star/betelgeuse,منكب الجوزاء,1
+star/canopus,سهيل,1
+star/capella,العيوق,1
+star/caph,الكف الخضيب,1
+star/castor,رأس التوأم المقدم,1
+star/deneb,ذنب الدجاجة,1
+star/denebola,الصرفة,1
+star/diphda,الضفدع,1
+star/dubhe,الدب,1
+star/e_lyrae,إبسيلون القيثارة,1
+star/enif,جحفلة الفرس,1
+star/etamin,التنين,1
+star/fomalhaut,فم الحوت,1
+star/hadar,حضار,1
+star/hamal,الحمل,1
+star/izar,الإزار,1
+star/j003712+535400,فولو,1
+star/j004912+574912,أخيرد,1
+star/j005624+591048,كاستولا,1
+star/j010824-551500,وورين,1
+star/j011348+073448,ريڤاتي,1
+star/j012212+453148,أذيل,1
+star/j012548+601424,ركبة,1
+star/j013112+152100,الفرج,1
+star/j013636+412436,تيتاوين,1
+star/j013748+483748,نيمبوس,1
+star/j014536+090936,توركولار,1
+star/j015136-101948,بطن قيطس,1
+star/j015248+293448,مثلت,1
+star/j015436+204836,الشرطان,1
+star/j015436+634012,سيجين,1
+star/j020148+024536,الرشاء,1
+star/j020336+421948,ألمع,1
+star/j024312+031424,كف الجذماء,1
+star/j024800+291500,ليلي بوريا,1
+star/j024948+271536,بهاراني,1
+star/j025024+555400,ميرام,1
+star/j025100-210000,عنق التنين,1
+star/j025624-085400,أزها,1
+star/j025812-401800,آخر النهر,1
+star/j030936+445136,ميسام,1
+star/j031124+194348,بطين,1
+star/j031200-285924,داليم,1
+star/j031536-084912,زيبال,1
+star/j033300-092736,ران,1
+star/j034312-094612,رانا,1
+star/j034424+321724,عاتق,1
+star/j034500+240636,إلكترا,1
+star/j034500+241724,سيلينو,1
+star/j034500+242812,تايجيتا,1
+star/j034536+242212,مايا,1
+star/j034612+235700,ميروب,1
+star/j034612+243300,أستيروب,1
+star/j034912+240300,أطلس,1
+star/j034912+240824,بليون,1
+star/j035812-133036,زورق,1
+star/j035848+354724,منكب,1
+star/j041200-065024,بيد,1
+star/j041500-073824,كيد,1
+star/j041948+153748,بريما هيادوم,1
+star/j042248+173224,سكوندا هيادوم,1
+star/j042400-340112,بيميم,1
+star/j042848+155212,تشاموكوي,1
+star/j042848+191048,عين,1
+star/j043524-303336,ثيمين,1
+star/j043824-141800,سيبتروم,1
+star/j044948+065736,ثابت,1
+star/j045700+331012,حصالة,1
+star/j050148+434912,المعز,1
+star/j050224+410448,ساقلاتيني,1
+star/j050636+411348,هايدوس,1
+star/j050748-050524,كرسة,1
+star/j052512+062100,بيلاطريكس,1
+star/j052812-204536,نيهال,1
+star/j053148-001800,منتقة,1
+star/j053524+095548,ميساء,1
+star/j053524-055436,هاتيزا,1
+star/j053748+210824,تيانغوان,1
+star/j053936-340412,فاخت,1
+star/j054048-015624,النطاق,1
+star/j055100-354612,وزن,1
+star/j055924+445700,منكلينان,1
+star/j060000+371236,المحاسم,1
+star/j060748-371500,الكرود,1
+star/j061500+223036,بروبوس,1
+star/j062024-300336,فرود,1
+star/j062248+223036,تيجت,1
+star/j062248-175736,مرزم,1
+star/j064348+250748,مبسوطة,1
+star/j064500+125400,الزر,1
+star/j070148-275548,نغانورغانيتي,1
+star/j070336-153748,مليفين,1
+star/j070412+203412,مقبوضة,1
+star/j070824-262324,وزن,1
+star/j072024+215848,وسط,1
+star/j072400-291800,العذراء,1
+star/j072700+081724,غميساء,1
+star/j073900+343448,جيشوي,1
+star/j074912-245136,أزميدي,1
+star/j080336-400000,ناوس,1
+star/j080748-241800,تريس,1
+star/j081200+173900,تجمين,1
+star/j081648+091124,طرف,1
+star/j082024+240112,بياوتوس,1
+star/j082248+431124,الشوكة,1
+star/j082248-593036,أفيور,1
+star/j083000+604312,موسيدا,1
+star/j083900+032024,مينشير,1
+star/j084312+212812,أسيلوس بورياليس,1
+star/j084424+180900,أسيلوس أوستراليس,1
+star/j084500-544236,السفينة,1
+star/j084648+062512,أشليشا,1
+star/j085248+281948,كوبرنيكوس,1
+star/j085812+115136,أكوبينس,1
+star/j085924+480224,تاليثا,1
+star/j090336+470936,الكفراء,1
+star/j090748-432548,سهيل,1
+star/j090936+220300,ناهن,1
+star/j091312-694312,ميا بلاسيدوس,1
+star/j091648-591648,أسبيديسكي,1
+star/j092212-550036,مركب,1
+star/j092848+453600,إنتركروس,1
+star/j093148+225812,الطرف,1
+star/j093936-010824,العقدة,1
+star/j094124+095324,الضبرة,1
+star/j095136-145100,تشانغ,1
+star/j095248+260036,رأس الأسد,1
+star/j095436-190036,فيليس,1
+star/j101648+232512,الضفيرة,1
+star/j101648+425436,تانيا بورياليس,1
+star/j102212+413000,تانيا أوستراليس,1
+star/j105324+341312,برايسيبوا,1
+star/j105924+402548,تشالاوان,1
+star/j110000-181800,ألكس,1
+star/j111424+152548,الخرتان,1
+star/j111424+203112,الزوسمة,1
+star/j111800+313224,ألولا أوستراليس,1
+star/j111836+330524,ألولا بورياليس,1
+star/j113112+691948,غياوسار,1
+star/j114612+474648,تايانغشو,1
+star/j115024+014612,الزاوية,1
+star/j120524+765436,توناتيوه,1
+star/j120824-244348,الخباء,1
+star/j121500-584500,إيماي,1
+star/j121536+570148,المغرز,1
+star/j121536-173224,الجناح,1
+star/j121948-004012,الزانية,1
+star/j122136-602400,جينان,1
+star/j123000-163112,الغراب,1
+star/j123112-570636,جاكروكس,1
+star/j123336+412136,كارا,1
+star/j123412-232400,كراز,1
+star/j124124-012700,بوريما,1
+star/j124500+452624,لا سوبيربا,1
+star/j124724+664724,تيانيي,1
+star/j124800-594124,ميموزا,1
+star/j125512+652624,تايي,1
+star/j125548+032400,مينيلوفا,1
+star/j125548+381912,كور كارولي,1
+star/j131012+173148,ديادم,1
+star/j132400+545548,المئزر,1
+star/j132512+545924,السها,1
+star/j133448-003600,حزة,1
+star/j135436+182400,مفرد,1
+star/j140412+642248,ثعبان,1
+star/j140636-362212,منكب,1
+star/j141236-101612,كانغ,1
+star/j141612+460524,شوانج,1
+star/j141612-060000,سيرما,1
+star/j141912-132212,خامباليا,1
+star/j142812-021348,الجعفر,1
+star/j143148+381836,سجينوس,1
+star/j143936-605024,طليمان,1
+star/j144912+460712,مرغا,1
+star/j145100-160224,زُبَانَى الجَنُوبِيّ,1
+star/j150148+402324,نقار,1
+star/j150412-251648,براكيوم,1
+star/j151648-092248,زُبَانَى الشَّمَالِيّ,1
+star/j152100+714948,فرقد,1
+star/j152436+372248,الكالوربس,1
+star/j152512+585812,إداسخ,1
+star/j152736+290636,نوسكان,1
+star/j153524-144724,زُبَانَى العَقْرَبِيّ,1
+star/j154836+180824,غودجا,1
+star/j155700-291236,إكليل,1
+star/j155848-260636,فانغ,1
+star/j160036-223712,جبهة,1
+star/j160524-194836,عقرب,1
+star/j160748+170300,مارسيك,1
+star/j161200-192736,جبهة,1
+star/j161424-034124,يد سابق,1
+star/j161836-044124,يد لاحق,1
+star/j162100-253524,النياط,1
+star/j162400+613036,أثيبين,1
+star/j162512+140148,كوجام,1
+star/j163000+212924,كورنيفوروس,1
+star/j163112+015848,مارفيك,1
+star/j163600-281312,بايكاوحالي,1
+star/j164836-690148,أتريا,1
+star/j165024-341724,لاراواغ,1
+star/j165136-380300,زاميديمورا,1
+star/j165212-380112,بيبريميا,1
+star/j170524+542812,الراقص,1
+star/j170900+654236,الذئبة,1
+star/j171012-154348,السابق,1
+star/j171424+142324,رأس الجاثي,1
+star/j171500+245024,سارين,1
+star/j171536-263524,غونييبو,1
+star/j173036+260636,معصم,1
+star/j173036+521800,راستابان,1
+star/j173036-371800,ليساث,1
+star/j173224+863524,يلدون,1
+star/j173712-430000,سرجس,1
+star/j174200+720900,الذئبان,1
+star/j174312+043412,سيبالراي,1
+star/j174348+534800,الرُبى,1
+star/j174424-514948,سيرفانتس,1
+star/j174948-370224,فويو,1
+star/j175324+565212,غروميوم,1
+star/j180600-302512,النصل,1
+star/j181348-210336,بوليس,1
+star/j182100-294948,قوس الوسطى,1
+star/j182548+653336,فافنير,1
+star/j182812-252512,قوس الشمالية,1
+star/j184348+363336,شيخه,1
+star/j184948+332136,الشلياق,1
+star/j185400-224424,عين الرامي,1
+star/j185624+041200,أليا,1
+star/j185848+324124,السلحفاة,1
+star/j190224-295248,أسيللا,1
+star/j190524+135136,العقاب,1
+star/j190936-210112,البلدة,1
+star/j190936-375400,ميريديانا,1
+star/j191236+673936,التايس,1
+star/j191348+390900,الأظفار,1
+star/j192248-442736,عرقوب الأول,1
+star/j192324-444800,عرقوب الثاني,1
+star/j192400-403712,ركبة,1
+star/j192848+244012,أنسر,1
+star/j193036+275736,ألبيريو,1
+star/j193224+694012,الصافي,1
+star/j194012+180036,السهم,1
+star/j194500+450748,فوارس,1
+star/j194612+103636,تارازيد,1
+star/j195400+082736,ليبرتاس,1
+star/j195512+062436,الشين,1
+star/j195548-261800,تيريبيلوم,1
+star/j201800-123224,الجدي,1
+star/j202024-124536,الشاة,1
+star/j202100-144648,الذابح,1
+star/j202212+401536,صدر,1
+star/j202548-564348,الطاووس,1
+star/j203300+111800,الدلفين,1
+star/j203748+143600,روتانيف,1
+star/j203936+155436,سوالوسين,1
+star/j204612+335812,الجناح,1
+star/j204724-093000,البالي,1
+star/j205812+105024,ميوزيكا,1
+star/j210900-885736,بولاريس أستراليس,1
+star/j211536+051500,كتالفا,1
+star/j212848+703336,الفرك,1
+star/j213148-053412,سعد السعود,1
+star/j213748-075100,بوندا,1
+star/j214012-163936,ناشرا,1
+star/j214200+511124,أزل فافاج,1
+star/j214648-160748,ذنب الجدي,1
+star/j215400-372136,الذنب,1
+star/j220336+643748,قرحة,1
+star/j220600-001912,سعد الملك,1
+star/j221012+061200,بيهام,1
+star/j221648-074648,أنشا,1
+star/j222136-012324,سعد الأخبية,1
+star/j223748-041348,سيتولا,1
+star/j224124+104948,همام,1
+star/j224236-465248,تياكي,1
+star/j224312+301312,مطر,1
+star/j224948+243600,سعد الباري,1
+star/j225436-154912,سكات,1
+star/j225736+204612,هيلفيتيوس,1
+star/j230336+034912,فم السمكة,1
+star/j232024+234424,سلم,1
+star/j232512+232400,الكراب,1
+star/j233112+391424,Veritate,1
+star/j233936+773748,Errai,1
+star/kaus_australis,القوس الجنوبي,1
+star/kochab,أنور الفرقدين,1
+star/markab,متن الفرس,1
+star/menkar,المنخر,1
+star/merak,المراق,1
+star/mirach,المئزر,1
+star/mirphak,المرفق,1
+star/nunki,ننكي,1
+star/phad,الفخذ,1
+star/polaris,الجدي,1
+star/polaris,نجم الشمال,0
+star/polaris,نجم القطب,0
+star/pollux,رأس التوأم المؤخر,1
+star/procyon,الشعرى الشامية الغميصاء,1
+star/rasalhague,رأس الحواء,1
+star/regulus,قلب الأسد,1
+star/rigel,رجل الجوزاء,1
+star/rigil_kentaurus_a,ألفا قنطورس,1
+star/rigil_kentaurus_a,Rigel Kentaurus A,0
+star/rigil_kentaurus_a,Rigil Kent,0
+star/rigil_kentaurus_a,Rigil Kentaurus,0
+star/rigil_kentaurus_a,Rigil Kentaurus A,0
+star/saiph,السيف,1
+star/scheat,منكب الفرس,1
+star/shaula,الشولة,1
+star/shedir,الصدر,1
+star/sirius,الشعرى,1
+star/sirius,نجم الكلب,0
+star/spica,السماك الأعزل,1
+star/unukalhai,عنق الحية,1
+star/vega,النسر الواقع,1
+star/vindemiatrix,مقدم القطاف,1
+dso/m10,م١٠,1
+dso/m103,م١٠٣,1
+dso/m106,م١٠٦,1
+dso/m107,م١٠٧,1
+dso/m109,م١٠٩,1
+dso/m110,م١١٠,1
+dso/m12,م١٢,1
+dso/m14,م١٤,1
+dso/m15,م١٥,1
+dso/m17,م١٧,1
+dso/m19,م١٩,1
+dso/m2,م٢,1
+dso/m21,م٢١,1
+dso/m22,م٢٢,1
+dso/m23,م٢٣,1
+dso/m25,م٢٥,1
+dso/m26,م٢٦,1
+dso/m28,م٢٨,1
+dso/m29,م٢٩,1
+dso/m3,م٣,1
+dso/m30,م٣٠,1
+dso/m32,م٣٢,1
+dso/m34,م٣٤,1
+dso/m35,م٣٥,1
+dso/m36,م٣٦,1
+dso/m37,م٣٧,1
+dso/m38,م٣٨,1
+dso/m39,م٣٩,1
+dso/m4,م٤,1
+dso/m41,م٤١,1
+dso/m46,م٤٦,1
+dso/m47,م٤٧,1
+dso/m48,م٤٨,1
+dso/m49,م٤٩,1
+dso/m5,م٥,1
+dso/m50,م٥٠,1
+dso/m52,م٥٢,1
+dso/m53,م٥٣,1
+dso/m54,م٥٤,1
+dso/m55,م٥٥,1
+dso/m56,م٥٦,1
+dso/m62,م٦٢,1
+dso/m67,م٦٧,1
+dso/m68,م٦٨,1
+dso/m69,م٦٩,1
+dso/m70,م٧٠,1
+dso/m71,م٧١,1
+dso/m77,م٧٧,1
+dso/m78,م٧٨,1
+dso/m79,م٧٩,1
+dso/m80,م٨٠,1
+dso/m87,م٨٧,1
+dso/m9,م٩,1
+dso/m92,م٩٢,1
+dso/m93,م٩٣,1
+dso/m94,م٩٤,1

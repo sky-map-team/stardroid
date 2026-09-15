@@ -1,0 +1,4 @@
+# Magnitude-unchecked positional matches reviewed by a human and judged WRONG.
+# One entry per line, exactly as printed in the match report: Name -> object_id
+# augment_names.py skips these; matches judged right are vetted by adding the
+# name row to the CSV by hand instead.

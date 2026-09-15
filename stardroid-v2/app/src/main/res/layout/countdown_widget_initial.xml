@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- initialLayout / picker previewLayout for the countdown widget; representative values,
+     replaced by the live Glance composition immediately after placement.
+
+     IFTTT: if you change CountdownContent (CountdownWidget.kt), change this layout too. The
+     launcher inflates this in its own process before ours runs, so Glance cannot supply it —
+     the resemblance is maintained by hand and silently drifts otherwise. Colors and text sizes
+     below are duplicated from that composable. Note this preview deliberately omits the
+     progress ring CountdownRingRenderer draws behind the day count: it is a runtime bitmap
+     with no RemoteViews equivalent. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/widget_background"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/countdown_widget_preview_days"
+        android:textColor="#E0E1DD"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/countdown_days"
+        android:textColor="#A9B4D0"
+        android:textSize="9sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:maxLines="1"
+        android:text="@string/countdown_widget_preview_name"
+        android:textColor="#E0E1DD"
+        android:textSize="13sp"
+        android:textStyle="bold" />
+</LinearLayout>

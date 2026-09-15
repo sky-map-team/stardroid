@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+    <string name="eula_text" translation_description="A condensed, user-friendly version of the EULA and Privacy Policy with a link to the full terms. Please do not change the &lt; and &gt; markup"><![CDATA[<h1>Sky Map에 오신 것을 환영합니다</h1>
+<p>별을 관측하기 전에, 저희 약관의 요약본을 확인해 주세요.</p>
+<h2>개인정보 보호</h2>
+<p><b>저희는 귀하가 누구인지 알지 못합니다.</b> 저희는 버그 수정 및 기능 개선을 위해 익명 사용 데이터를 수집합니다. 이 기능은 설정 메뉴에서 언제든지 해제할 수 있습니다.</p>
+<h2>안전 및 책임</h2>
+<p>Sky Map은 "있는 그대로" 제공됩니다. 안전하게 사용하세요—저희는 앱 사용으로 인해 발생하는 어떠한 손해나 부상(예: 목 통증!)에 대해서도 책임지지 않습니다.</p>
+<h2>오픈 소스</h2>
+<p>Sky Map은 열정으로 만들어진 결과물입니다. 저희 소스 코드를 자유롭게 사용할 수 있지만, 저희 브랜드와 로고를 존중해 주십시오.</p>
+<p>전체 법률 문서는 여기에서 읽을 수 있습니다: <a href="https://github.com/sky-map-team/stardroid/blob/master/TERMS.md">전체 약관 및 개인정보 처리방침</a></p>]]></string>
+
+    <!-- Rendered last on the terms screen, after the permissions notice, so the sentence the
+         Accept button refers to is the final thing the user reads. -->
+    <string name="eula_agree_line" translation_description="Closing line of the first-launch terms screen, immediately above the Accept button. Please do not change the markup"><![CDATA[<br/>
+<p><i>"동의"를 클릭하면 이 약관에 동의하는 것입니다.</i></p>]]></string>
+
+    <!--
+      The access-permission notice (KISA / Korean Network Act art. 22-2, and good practice
+      everywhere). Rendered in two places from this one key so it is translated once: appended
+      to the first-launch EULA screen, and included in the help document as a permanent,
+      re-readable copy (HelpScreen.helpSections2). Every runtime permission Sky Map declares
+      must appear here, labelled required or optional, with its grounds and — for optional
+      ones — the user\'s right to refuse.
+    -->
+    <string name="permissions_notice" translation_description="Legally-required disclosure of the device permissions the app requests, why it requests them, and the user\'s right to refuse the optional ones. Shown on the first-launch terms screen and in Help. Please do not change the markup"><![CDATA[<h2>권한</h2>
+<p><b>Sky Map은 필수 권한이 없습니다.</b> 아래의 모든 권한은 선택 사항입니다. 어떤 권한이든 거부하더라도 앱을 계속 사용할 수 있습니다.
+Sky Map은 시작 시 권한을 요청하지 않습니다. 각 권한은 해당 기능이 필요할 때 처음 사용할 때만 요청되며,
+기기의 <b>설정 → 앱 → Sky Map → 권한</b>에서 언제든지 개별적으로 부여하거나 철회할 수 있습니다.</p>
+<h3>위치 — 선택 사항</h3>
+<p><b>접근하는 정보:</b> 사용자의 대략적인 위치.</p>
+<p><b>이유:</b> 사용자 위에 어떤 별이 있는지 여부는 사용자의 위치에 따라 달라지므로, Sky Map은 사용자의 대략적인
+위치를 사용하여 올바른 하늘을 그립니다.</p>
+<p><b>거부할 경우:</b> 대신 장소 이름이나 좌표를 입력할 수 있으며, 앱 전체는 계속 작동합니다.</p>
+<blockquote>사용자의 위치는 기기에서 하늘을 그리는 데 사용됩니다. 저희에게 전송되지 않습니다.</blockquote>
+<h3>카메라 — 선택 사항</h3>
+<p><b>접근하는 정보:</b> 카메라 미리보기.</p>
+<p><b>이유:</b> 카메라 통과 모드는 실시간 카메라 뷰 위에 하늘을 그려서, 사용자가 보고 있는 실제 모습과
+지도를 일치시킬 수 있도록 합니다.</p>
+<p><b>거부할 경우:</b> 다른 모든 모드는 정상적으로 작동합니다.</p>
+<blockquote>Sky Map은 카메라 뷰를 기록하거나 저희에게 전송하지 않습니다. 화면에 그려진 후
+폐기됩니다. 단, 사진을 공유하는 경우는 예외입니다. 공유 시트에서 AR 레이아웃을 선택하면 해당
+이미지가 기기에 저장되고 사용자가 선택한 앱으로 전달됩니다. 요청하기 전까지는 아무것도 공유되지 않습니다.</blockquote>
+<h3>알림 — 선택 사항</h3>
+<p><b>접근하는 정보:</b> 알림 표시 권한.</p>
+<p><b>이유:</b> 유성우 절정기와 오늘 밤 볼 만한 가치가 있는 것에 대해 사용자가
+요청할 경우 알려주기 위함입니다.</p>
+<p><b>거부할 경우:</b> 다른 것은 아무것도 변경되지 않으며, 이 알림은 사용자가
+켤 때까지 꺼진 상태로 유지됩니다.</p>]]></string>
+</resources>

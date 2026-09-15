@@ -1,0 +1,28 @@
+<!--
+  A field of stars: three filled five-point stars of graded size.
+  This shape has to dodge TWO look-alikes, so do not "simplify" it (D83):
+    - One hollow outlined five-point star is the platform favorite/rating
+      glyph. Three FILLED stars of unequal size is not - filled, plural and
+      asymmetric are all load-bearing.
+    - A large FOUR-point sparkle with smaller companions is the near-universal
+      "generate with AI" glyph (Material auto_awesome, Gemini). Five points
+      with straight shoulders, rather than four with pinched waists, is what
+      keeps this an astronomical star field.
+  Filled rather than stroked because stars are solid points of light, and
+  because thin outlines at rail size (~30px) collapse into blobs.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <path
+        android:pathData="M13.4 2.5L14.76 6.13L18.63 6.3L15.6 8.71L16.63 12.45L13.4 10.31L10.17 12.45L11.2 8.71L8.17 6.3L12.04 6.13z"
+        android:fillColor="#FFFFFFFF" />
+    <path
+        android:pathData="M6 13.1L6.79 15.21L9.04 15.31L7.28 16.72L7.88 18.89L6 17.64L4.12 18.89L4.72 16.72L2.96 15.31L5.21 15.21z"
+        android:fillColor="#FFFFFFFF" />
+    <path
+        android:pathData="M17.5 14.8L18.12 16.45L19.88 16.53L18.5 17.62L18.97 19.32L17.5 18.35L16.03 19.32L16.5 17.62L15.12 16.53L16.88 16.45z"
+        android:fillColor="#FFFFFFFF" />
+</vector>

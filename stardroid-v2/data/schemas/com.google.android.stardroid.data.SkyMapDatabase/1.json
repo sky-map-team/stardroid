@@ -1,0 +1,624 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "ab7a54abf65fd5076e61e98ff0907749",
+    "entities": [
+      {
+        "tableName": "pack",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `version` INTEGER NOT NULL, `license` TEXT, `source_url` TEXT, `installed_at` INTEGER NOT NULL, `builtin` INTEGER NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "version",
+            "columnName": "version",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "license",
+            "columnName": "license",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "sourceUrl",
+            "columnName": "source_url",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "installedAt",
+            "columnName": "installed_at",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "builtin",
+            "columnName": "builtin",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "object_type",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`code` TEXT NOT NULL, `parent_code` TEXT, PRIMARY KEY(`code`))",
+        "fields": [
+          {
+            "fieldPath": "code",
+            "columnName": "code",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "parentCode",
+            "columnName": "parent_code",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "code"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "type_name",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`code` TEXT NOT NULL, `locale` TEXT NOT NULL, `name` TEXT NOT NULL, PRIMARY KEY(`code`, `locale`))",
+        "fields": [
+          {
+            "fieldPath": "code",
+            "columnName": "code",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "locale",
+            "columnName": "locale",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "code",
+            "locale"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "celestial_object",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `pack_id` TEXT NOT NULL, `layer_kind` TEXT, `type` TEXT NOT NULL, `ra` REAL, `dec` REAL, `magnitude` REAL, `color_index` REAL, `search_fov` REAL, `parent_object_id` TEXT, `image_ref` TEXT, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "packId",
+            "columnName": "pack_id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "layerKind",
+            "columnName": "layer_kind",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "type",
+            "columnName": "type",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "ra",
+            "columnName": "ra",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "dec",
+            "columnName": "dec",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "magnitude",
+            "columnName": "magnitude",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "colorIndex",
+            "columnName": "color_index",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "searchFov",
+            "columnName": "search_fov",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "parentObjectId",
+            "columnName": "parent_object_id",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "imageRef",
+            "columnName": "image_ref",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_celestial_object_layer_kind",
+            "unique": false,
+            "columnNames": [
+              "layer_kind"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_celestial_object_layer_kind` ON `${TABLE_NAME}` (`layer_kind`)"
+          },
+          {
+            "name": "index_celestial_object_parent_object_id",
+            "unique": false,
+            "columnNames": [
+              "parent_object_id"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_celestial_object_parent_object_id` ON `${TABLE_NAME}` (`parent_object_id`)"
+          },
+          {
+            "name": "index_celestial_object_pack_id",
+            "unique": false,
+            "columnNames": [
+              "pack_id"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_celestial_object_pack_id` ON `${TABLE_NAME}` (`pack_id`)"
+          }
+        ],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "object_link",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`object_id` TEXT NOT NULL, `linked_id` TEXT NOT NULL, `seq` INTEGER NOT NULL, PRIMARY KEY(`object_id`, `linked_id`))",
+        "fields": [
+          {
+            "fieldPath": "objectId",
+            "columnName": "object_id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "linkedId",
+            "columnName": "linked_id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "seq",
+            "columnName": "seq",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "object_id",
+            "linked_id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_object_link_object_id",
+            "unique": false,
+            "columnNames": [
+              "object_id"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_object_link_object_id` ON `${TABLE_NAME}` (`object_id`)"
+          }
+        ],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "object_name",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `object_id` TEXT NOT NULL, `locale` TEXT NOT NULL, `name` TEXT NOT NULL, `name_normalized` TEXT NOT NULL, `is_primary` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "objectId",
+            "columnName": "object_id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "locale",
+            "columnName": "locale",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nameNormalized",
+            "columnName": "name_normalized",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isPrimary",
+            "columnName": "is_primary",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_object_name_name_normalized",
+            "unique": false,
+            "columnNames": [
+              "name_normalized"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_object_name_name_normalized` ON `${TABLE_NAME}` (`name_normalized`)"
+          },
+          {
+            "name": "index_object_name_object_id_locale",
+            "unique": false,
+            "columnNames": [
+              "object_id",
+              "locale"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_object_name_object_id_locale` ON `${TABLE_NAME}` (`object_id`, `locale`)"
+          }
+        ],
+        "foreignKeys": []
+      },
+      {
+        "ftsVersion": "FTS4",
+        "ftsOptions": {
+          "tokenizer": "unicode61",
+          "tokenizerArgs": [
+            "remove_diacritics=2"
+          ],
+          "contentTable": "object_name",
+          "languageIdColumnName": "",
+          "matchInfo": "FTS4",
+          "notIndexedColumns": [],
+          "prefixSizes": [],
+          "preferredOrder": "ASC"
+        },
+        "contentSyncTriggers": [
+          "CREATE TRIGGER IF NOT EXISTS room_fts_content_sync_object_name_fts_BEFORE_UPDATE BEFORE UPDATE ON `object_name` BEGIN DELETE FROM `object_name_fts` WHERE `docid`=OLD.`rowid`; END",
+          "CREATE TRIGGER IF NOT EXISTS room_fts_content_sync_object_name_fts_BEFORE_DELETE BEFORE DELETE ON `object_name` BEGIN DELETE FROM `object_name_fts` WHERE `docid`=OLD.`rowid`; END",
+          "CREATE TRIGGER IF NOT EXISTS room_fts_content_sync_object_name_fts_AFTER_UPDATE AFTER UPDATE ON `object_name` BEGIN INSERT INTO `object_name_fts`(`docid`, `name`) VALUES (NEW.`rowid`, NEW.`name`); END",
+          "CREATE TRIGGER IF NOT EXISTS room_fts_content_sync_object_name_fts_AFTER_INSERT AFTER INSERT ON `object_name` BEGIN INSERT INTO `object_name_fts`(`docid`, `name`) VALUES (NEW.`rowid`, NEW.`name`); END"
+        ],
+        "tableName": "object_name_fts",
+        "createSql": "CREATE VIRTUAL TABLE IF NOT EXISTS `${TABLE_NAME}` USING FTS4(`name` TEXT NOT NULL, tokenize=unicode61 `remove_diacritics=2`, content=`object_name`)",
+        "fields": [
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": []
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "meteor_shower",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`object_id` TEXT NOT NULL, `active_from` TEXT NOT NULL, `peak` TEXT NOT NULL, `active_to` TEXT NOT NULL, `peak_zhr` INTEGER NOT NULL, PRIMARY KEY(`object_id`))",
+        "fields": [
+          {
+            "fieldPath": "objectId",
+            "columnName": "object_id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "activeFrom",
+            "columnName": "active_from",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "peak",
+            "columnName": "peak",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "activeTo",
+            "columnName": "active_to",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "peakZhr",
+            "columnName": "peak_zhr",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "object_id"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "info_card",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`object_id` TEXT NOT NULL, `locale` TEXT NOT NULL, `description` TEXT, `fun_fact` TEXT, `distance` TEXT, `size` TEXT, `mass` TEXT, `spectral_class` TEXT, `image_credit` TEXT, `search_subtext` TEXT, PRIMARY KEY(`object_id`, `locale`))",
+        "fields": [
+          {
+            "fieldPath": "objectId",
+            "columnName": "object_id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "locale",
+            "columnName": "locale",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "description",
+            "columnName": "description",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "funFact",
+            "columnName": "fun_fact",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "distance",
+            "columnName": "distance",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "size",
+            "columnName": "size",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "mass",
+            "columnName": "mass",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "spectralClass",
+            "columnName": "spectral_class",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "imageCredit",
+            "columnName": "image_credit",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "searchSubtext",
+            "columnName": "search_subtext",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "object_id",
+            "locale"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "figure",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `owner_object_id` TEXT NOT NULL, `layer_kind` TEXT NOT NULL, `kind` TEXT NOT NULL, `culture` TEXT NOT NULL, `pack_id` TEXT NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "ownerObjectId",
+            "columnName": "owner_object_id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "layerKind",
+            "columnName": "layer_kind",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "kind",
+            "columnName": "kind",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "culture",
+            "columnName": "culture",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "packId",
+            "columnName": "pack_id",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_figure_layer_kind",
+            "unique": false,
+            "columnNames": [
+              "layer_kind"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_figure_layer_kind` ON `${TABLE_NAME}` (`layer_kind`)"
+          },
+          {
+            "name": "index_figure_owner_object_id",
+            "unique": false,
+            "columnNames": [
+              "owner_object_id"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_figure_owner_object_id` ON `${TABLE_NAME}` (`owner_object_id`)"
+          },
+          {
+            "name": "index_figure_pack_id",
+            "unique": false,
+            "columnNames": [
+              "pack_id"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_figure_pack_id` ON `${TABLE_NAME}` (`pack_id`)"
+          }
+        ],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "figure_vertex",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`figure_id` TEXT NOT NULL, `stroke` INTEGER NOT NULL, `seq` INTEGER NOT NULL, `ra` REAL NOT NULL, `dec` REAL NOT NULL, PRIMARY KEY(`figure_id`, `stroke`, `seq`))",
+        "fields": [
+          {
+            "fieldPath": "figureId",
+            "columnName": "figure_id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "stroke",
+            "columnName": "stroke",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "seq",
+            "columnName": "seq",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "ra",
+            "columnName": "ra",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dec",
+            "columnName": "dec",
+            "affinity": "REAL",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "figure_id",
+            "stroke",
+            "seq"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'ab7a54abf65fd5076e61e98ff0907749')"
+    ]
+  }
+}

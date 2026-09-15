@@ -1,0 +1,118 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- Diagnostics screen's connectivity row (v1 parity). -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- The location sheet's static-map image (Geoapify, both flavors — v1 parity). -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- Warm-welcome sensor check's per-sensor haptic feedback (v1 parity). -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <!-- Shower-peak and tonight-digest notifications (D77); requested in-context when the
+         user enables their first notification toggle, never at launch. -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <!-- Through-camera (AR) mode (camera-ar-mode.md/D64). Optional hardware: the toggle is
+         hidden on camera-less devices, everything else works without one. -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <!-- Re-arms the pass alert (D92 phase 4c) after a reboot, which otherwise silently drops
+         any AlarmManager alarm armed before the device restarted. -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-feature
+        android:name="android.hardware.camera.any"
+        android:required="false" />
+
+    <application
+        android:name=".SkyMapApplication"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:label="@string/app_name"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:localeConfig="@xml/locales_config">
+        <activity
+            android:name=".ui.MainActivity"
+            android:exported="true"
+            android:theme="@style/Theme.SkyMap.Starting">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!-- Shared sky captures (SkyShare): images leave via ACTION_SEND, never a path. -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/share_paths" />
+        </provider>
+        <!-- Home-screen widgets (D69); WidgetGate flips these components with their
+             experiment flags (moon_widget_enabled / tonight_widget_enabled) on app start. -->
+        <receiver
+            android:name=".widget.MoonWidgetReceiver"
+            android:exported="true"
+            android:label="@string/moon_widget_label">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/moon_widget_info" />
+        </receiver>
+        <receiver
+            android:name=".widget.TonightWidgetReceiver"
+            android:exported="true"
+            android:label="@string/tonight_widget_label">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/tonight_widget_info" />
+        </receiver>
+        <receiver
+            android:name=".widget.CountdownWidgetReceiver"
+            android:exported="true"
+            android:label="@string/countdown_widget_label">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/countdown_widget_info" />
+        </receiver>
+        <!-- Widgets show clock-derived content; refresh on clock/date/zone changes and the
+             midnight DATE_CHANGED rollover (all exempt implicit broadcasts). -->
+        <receiver
+            android:name=".widget.WidgetClockChangeReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.TIME_SET" />
+                <action android:name="android.intent.action.DATE_CHANGED" />
+                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
+            </intent-filter>
+        </receiver>
+
+        <!--
+          Fires the time-critical satellite pass alert (D92 phase 4c). Not exported: only our own
+          AlarmManager alarm ever targets it.
+        -->
+        <receiver
+            android:name=".satellites.PassAlertReceiver"
+            android:exported="false" />
+        <!--
+          AlarmManager alarms do not survive a reboot. This receiver's only job is to bring the
+          process up on BOOT_COMPLETED; Application.onCreate already re-arms the best pass from
+          current settings on every process start (see the comment there), so no logic is
+          duplicated here.
+        -->
+        <receiver
+            android:name=".satellites.PassAlertBootReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>

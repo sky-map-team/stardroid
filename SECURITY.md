@@ -4,9 +4,9 @@
 
 | Version | Supported          |
 | ------- | ------------------ |
-| 1.11.x  | :white_check_mark: |
-| 1.10.x  | :white_check_mark: |
-| < 1.10  | :x: except         |
+| 2.x     | :white_check_mark: |
+| 1.18.1  | :white_check_mark: |
+| < 1.18.1, except below | :x: |
 | 1.7.1   | :white_check_mark: |
 | 1.6.5   | :white_check_mark: |
 

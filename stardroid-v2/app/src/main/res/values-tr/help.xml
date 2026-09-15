@@ -1,0 +1,168 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+    <!-- tm:omitted name="help_home_link" reason="identical_to_source" -->
+
+    <string name="help_intro" translation_description="Help section: introduction and quick start. Please do not change the markup"><![CDATA[<h2>Giriş ve Hızlı Başlangıç</h2>
+<p>Telefonunuzu havaya kaldırın ve uzaya açılan bir pencere gibi bakın. Sky Map, nereye baktığınızı takip etmek ve yıldız haritasını gerçek zamanlı olarak güncellemek için telefonunuzun sensörlerini kullanır.</p>
+<blockquote>Her telefon Sky Map uygulamasını çalıştıramaz! Aşağıdaki donanım gereksinimleri bölümüne bakın.</blockquote>
+<h3>Bu ilk deneyiminizse:</h3>
+<p>1. İstendiğinde konum erişimine izin verin; Sky Map, bulunduğunuz yere uygun gökyüzünü çizebilmek için yaklaşık konumunuza ihtiyaç duyar.<br/>
+2. Telefonunuzu herhangi bir yönde gökyüzüne doğru tutun.<br/>
+3. Harita, baktığınız yöne uyum sağlayacak şekilde hareket edecektir.</p>]]></string>
+
+    <string name="help_navigating" translation_description="Help section: navigating the sky, automatic and manual modes. Please do not change the markup"><![CDATA[<h2>Gökyüzünde Gezinme</h2>
+Kontrolleri ve baş üstü göstergesini (sağ üst) açmak için ekrana dokunun.
+<h3>Otomatik Mod</h3>
+<p>Otomatik Modda (varsayılan), Sky Map, telefonunuzun yönünü gösterdiği yeri göstermek için telefonunuzun pusulasını, ivmeölçerini ve jiroskop sensörlerini kullanır. Sadece telefonunuzu hareket ettirin ve harita takip edecektir.</p>
+<p>Yakınlaştırmak ve uzaklaştırmak için iki parmağınızla sıkıştırma hareketi kullanın.</p>
+<h3>Manuel Mod</h3>
+<p>Kontroller görünür durumdayken Manuel Moda geçmek için <b>el</b> düğmesine (sağ alt) dokunun. Bu modda şunları yapabilirsiniz:</p>
+<p>• Etrafta kaydırma yapmak için haritayı tek parmağınızla sürükleyin.<br/>
+• Yakınlaştırmak veya uzaklaştırmak için sıkıştırın.<br/>
+• Yönü değiştirmek için iki parmağınızla döndürün.<br/>
+• Sürüklerken ufkun yatay tutulup tutulmayacağını değiştirmek için ekrana çift dokunun.</p>
+<p>Otomatik Moda geri dönmek için <b>pusula</b> düğmesine (sağ alt) dokunun.</p>]]></string>
+
+    <!-- Symbol map will go here-->
+
+    <string name="help_layers" translation_description="Help section: the visible layers of the sky map. Please do not change the markup"><![CDATA[<h2>Katmanlar</h2>
+<p>Sky Map, gösterdiklerini katmanlar halinde düzenler. Bu katmanların her biri sol taraftaki katman düğmeleri aracılığıyla bağımsız olarak açılıp kapatılabilir. Daha fazla katman için açma/kapatma düğmelerini getirmek üzere uzun basın veya alt tarafa yakın olan <b>Katmanlar</b> düğmesine dokunun.</p>
+<br/>
+<p>Mevcut katmanlar şunları içerir:<br/>
+• <b>Yıldızlar:</b> Önemli olanların etiketleriyle birlikte en parlak yıldızlar<br/>
+• <b>Takımyıldızlar:</b> Takımyıldız çizgileri ve adları<br/>
+• <b>Derin uzay nesneleri:</b> Galaksiler, bulutsular, yıldız kümeleri ve diğer dikkat çekici nesneler<br/>
+• <b>Güneş sistemi:</b> Resim olarak görüntülenen Güneş, Ay ve gezegenler<br/>
+• <b>Meteor yağmurları:</b> Yıllık meteor yağmurlarının radyant noktaları<br/>
+• <b>Gök koordinat sistemi:</b> Sağ açıklık / dik açıklık koordinat şebekesi<br/>
+• <b>Tutulum:</b> Güneş\'in gökyüzündeki yıllık yolu (Ay ve gezegenler kabaca bunu takip eder)<br/>
+• <b>Ufuk:</b> Ufuk çizgisi ve ana yön etiketleri (K, G, D, B)<br/>
+• <b>Gökyüzü gradyanı:</b> Ufka yakın gündüz gökyüzü parıltısı ve alacakaranlık renkleri</p>
+<blockquote>Meteor yağmuru radyantları yalnızca meteor yağmurlarının gerçekleştiği tarihlerde görünür.
+</blockquote>
+<br/>
+<p><b>Gezegenlerin çizim boyutu</b></p>
+<p>Güneş, Ay ve gezegenlerin boyutlarının nasıl belirleneceğini seçmek için Katmanlar panelindeki <b>Güneş sistemi</b> öğesinin yanında bulunan oka dokunun:</p>
+<p>• <b>Semboller</b> (varsayılan): Herhangi bir yakınlaştırma düzeyinde görülebilecek kadar büyük ve buradan nasıl göründüklerinden ziyade her gök cisminin gerçekte <i>ne kadar büyük</i> olduğuna göre boyutlandırılmış; bir teleskop görünümünden çok bir güneş sistemi modeli. Satürn ve halkaları en geniş nesnedir, ardından Güneş, Jüpiter ve Pluton\'a kadar iner. Aralarındaki farklar ekrana sığacak şekilde sıkıştırılmıştır: Güneş, Pluton\'un genişliğinin yedi katı değil, gerçekten 586 katıdır. Ay bu durumun istisnasıdır; Güneş ile aynı boyutta çizilir çünkü ikisi de buradan bakıldığında aynı boyutta görünür.<br/>
+• <b>Gerçek ölçek:</b> Gökyüzündeki gerçek boyutunda her gök cismi. Güneş ve Ay yaklaşık yarım derece genişliğindedir (kol mesafesinde tutulan bir kurşun kalem silgisi kadardır) ve siz iyice yakınlaştırana kadar gezegenler birer noktadır. Sonuna kadar yakınlaştırın; Jüpiter kuşaklarını gösterir, Satürn\'ün halkaları gezegenden ayrılır ve bir tutulma tam olarak gökyüzünde olduğu gibi hizalanır.<br/>
+• <b>Sabit:</b> Yakınlaştırma yaptıkça her gök cismini ekranda sabit bir boyutta tutar ve ikisinden büyük olanı haline geleceği kadar yakınlaştırma yaptığınızda gerçek boyuta geçer.</p>
+<blockquote>Bu iki mod size farklı şeyler söyler. <b>Semboller</b> modu Jüpiter\'in dev, Pluton\'un ise minik olduğunu söyler. <b>Gerçek ölçek</b> modu ise Güneş ve Ay\'ın Dünya\'dan neredeyse tamamen aynı boyutta göründüğünü söyler; tam güneş tutulmasının gerçekleşebilmesinin ve bunu izleyebilmenizin nedeni de budur.</blockquote>
+<blockquote>Sky Map, binaların, tepelerin veya ağaçların pratikte gizleyebileceği nesnelerin aksine, tamamen düz ve engelsiz bir görünüm sunan geometrik ufku gösterir.</blockquote>]]></string>
+
+    <string name="help_info_cards" translation_description="Help section: the object info cards. Please do not change the markup"><![CDATA[<h2>Bilgi Kartları</h2>
+<p>Gökyüzü haritasında etiketlenmiş bir gök cismine dokunarak, o cismin fotoğrafını ve detaylarını içeren bir panel olan bilgi kartını açabilirsiniz.
+Bilgi kartları; yıldızlar, gezegenler, Ay, önemli derin uzay cisimleri ve takımyıldızlar dahil olmak üzere yüzlerce cisim için mevcuttur.</p>
+<br/>
+<p>Her kart şunları gösterir:</p>
+<p>• Cisme ait bir fotoğraf veya harita<br/>
+• Kısa bir açıklama ve ilginç bir bilgi<br/>
+• Mesafe, boyut ve cisim türü gibi bilimsel veriler</p>
+<p>Kartın içindeki görsele dokunarak onu tam ekranda görüntüleyebilirsiniz. Kartı kapatmak için dışına dokunabilir veya <b>Geri</b> tuşuna basabilirsiniz.</p>
+<blockquote>Tüm cisimlerin bilgi kartları yoktur, ancak sürekli olarak yenilerini ekliyoruz.</blockquote>]]></string>
+
+    <string name="help_search" translation_description="Help section: searching for objects in the sky. Please do not change the markup"><![CDATA[<h2>Arama</h2>
+<p>Gökyüzündeki herhangi bir şeyi aramak için <b>büyüteç</b> düğmesine (altta) dokunun.</p>
+<br/>
+<p>Şunları arayabilirsiniz:</p>
+<p>• <b>Yıldızlar</b> — ada göre, ör. "Sirius", "Betelgeuse", "Polaris"<br/>
+• <b>Gezegenler</b> — ör. "Mars", "Satürn"<br/>
+• <b>Takımyıldızları</b> — ör. "Avcı", "Kraliçe"<br/>
+• <b>Derin uzay nesneleri</b> — ör. "M31", "Andromeda Gökadası", "Ülker"<br/>
+• <b>Koordinatlar</b> — sağ açıklık ve dik açıklık, ör. "5h 55m, 7° 24\'" (derece simgesi için \'o\' harfini kullanabilirsiniz)</p>
+<p><b>Otomatik Modda:</b> Bir sonuç seçtikten sonra Sky Map bir hedef çemberi ve yön oku gösterir. Telefonunuzu döndürerek oku takip edin; nesne görüş alanınıza girdikçe çemberin rengi değişir. Aramadan çıkmak için <b>İptal</b> düğmesine dokunun (veya Geri tuşuna basın).</p>
+<p><b>Manuel Modda:</b> Harita doğrudan nesneye odaklanır.</p>
+<blockquote>Sky Map\'in doğrudan göstermediği Jüpiter\'in uydusu Europa gibi nesneleri de arayabilirsiniz.
+Bu durumda arama sizi ana nesneye (Jüpiter) yönlendirecektir.</blockquote>]]></string>
+
+    <string name="help_time_travel" translation_description="Help section: the time travel feature. Please do not change the markup"><![CDATA[<h2>Zaman Yolculuğu</h2>
+<p>Zaman Yolculuğu, 1600 ile 3000 yılları arasındaki herhangi bir andaki gökyüzünü görmenizi sağlar. (Alttaki) <b>saat</b> düğmesine dokunun.</p>
+<br/>
+<p>Etkinlik listesinden popüler bir olay seçin (tutulmalar, meteor yağmuru zirveleri, bir sonraki dolunay veya yeni ay, gezegen kavuşumları, Apollo 11 inişi ve daha fazlası), <b>Tarihi ayarla</b> ve <b>Saati ayarla</b> düğmeleriyle kendi anınızı belirleyin veya sadece şimdiki andan ileri ya da geri gitmek istiyorsanız "Şimdiden başla" seçeneğine dokunun.</p>
+<p>Zaman Yolculuğu modundayken tarih ekranda gösterilir ve oynatma kontrolleri zaman içinde hareket etmenizi sağlar:</p>
+<p>• Oynatma hızını zaman içinde ileri veya geri yönde değiştirmek için <b>▶▶</b> (daha hızlı) veya <b>◀◀</b> (daha yavaş) düğmesine dokunun<br/>
+• Duraklatmak için <b>❚❚</b> düğmesine dokunun<br/>
+• Şimdiki ana geri dönmek için <b>Şimdi</b> düğmesine dokunun</p>
+<p>Bunu kullanabileceğiniz bazı durumlar:</p>
+<p>• <i>Bu akşam gün batımından hemen sonra ne görebilirim?</i><br/>
+• <i>Merkür\'ü gözlemlemek için bir sonraki iyi fırsat ne zaman?</i><br/>
+• <i>Doğduğum gece gökyüzü nasıl görünüyordu?</i></p>
+<p>Şimdiki zamandan uzak tarihler için, esas olarak Jüpiter\'in kütleçekimsel etkisi nedeniyle doğruluk azalır.</p>]]></string>
+
+    <string name="help_night_vision" translation_description="Help section: night vision mode. Please do not change the markup"><![CDATA[<h2>Gece Görüşü Modu</h2>
+<p>Dışarıda gerçek gözlem yapıyorsanız Gece Görüşü modu, karanlığa uyum sağlamış göz sağlığınızı korumanıza yardımcı olur. Alttaki <b>Gece Modu</b> düğmesini kullanarak bunu açıp kapatabilirsiniz.</p>
+<br/>
+<p>Gece Görüşü modunda Sky Map, ekranı koyu kırmızı tonlarına geçirir ve ekranı karartır. 
+<b>Ayarlar</b> bölümündeki <b>Otomatik ekran karartma</b> seçeneği, ekranın ne kadar karartılacağı konusunda size ek kontrol sağlar.</p>]]></string>
+
+    <string name="help_other" translation_description="Help section: other options"><![CDATA[<h1>Diğer işlevler</h1>
+        <p>Diğer işlevler sağ alttaki taşma menüsünde (…) bulunabilir.</p>]]></string>
+
+    <string name="help_gallery" translation_description="Help section: the image gallery. Please do not change the markup"><![CDATA[<h2>Galeri</h2>
+<p>Galeri, aralarında Hubble Uzay Teleskobu\'ndan bazı görüntülerin de bulunduğu, gece gökyüzünün güzel görsellerinden oluşan seçkin bir koleksiyon içerir.</p>
+ <br/>
+<p>Küçük resimleri kaydırarak göz atın ve ayrıntıları görmek için birine dokunun.
+Gökyüzündeki o nesneyi bulmak için <b>Bul</b> düğmesini kullanın.</p>]]></string>
+
+    <string name="help_location" translation_description="Help section: setting your observing location. Please do not change the markup"><![CDATA[<h2>Konumunuzu Ayarlama</h2>
+<p>Sky Map, doğru gökyüzünü çizebilmek için yaklaşık konumunuza ihtiyaç duyar. Varsayılan olarak cihazınızın konum servislerini (hücresel ağ veya GPS) kullanır.</p>
+<br/>
+<p>Konum erişimi kullanılamıyorsa veya bunu manuel olarak ayarlamak istiyorsanız, <b>Konumu Manuel Girin</b> düğmesine dokunun ve bir <b>yer adı</b> veya derece cinsinden <b>enlem ve boylam</b> girin.</p>
+<blockquote>Yer adlarını çözümlemek için internet bağlantısı gereklidir.</blockquote>
+<p>Daha önce Sky Map konum iznini reddettiyseniz, cihazınızın <b>Uygulama Ayarları → İzinler</b> bölümünden bu izni yeniden etkinleştirmeniz gerekebilir.</p>
+<blockquote>Erişim vermezseniz Sky Map, (0, 90) konumunda — Kuzey Kutbu\'nda olduğunuzu varsayar!</blockquote>]]></string>
+
+    <string name="help_diagnostics" translation_description="Help section: the diagnostics page. Please do not change the markup"><![CDATA[<h2>Tanılama</h2>
+    <p>Bu sayfa, sorunları ayıklamak için yararlı olabilecek telefonunuz ve Sky Map hakkındaki çeşitli verileri listeler. Bunu <b>Ayarlar → Tanılama</b> altında bulabilirsiniz.</p>
+    <br/>
+    <p>Bir sorun bildirirken, bu ayrıntıları bize <a href="mailto:skymapdevs@gmail.com">skymapdevs@gmail.com</a> adresinden e-posta ile göndermek için sayfanın üst kısmındaki paylaş düğmesine dokunun. Göndermeden önce raporu okuyabilir ve düzenleyebilirsiniz.</p>]]></string>
+
+    <string name="help_calibrate" translation_description="Help section: the calibrate page. Please do not change the markup"><![CDATA[<h2>Kalibrasyon</h2>
+    Zaman zaman telefonunuzun pusulasını kalibre etmeniz gerekir; bu sayfa bunu nasıl yapacağınızı gösterir. Sky Map ayrıca pusulanızın kalibre edilmesi gerektiğinde sizi uyaracaktır.
+    <blockquote><b>ÖNEMLİ:</b> Kalibre edilmiş bir pusula, <b>doğru</b> bir pusula olduğu anlamına <b>gelmez</b>.
+    Tek yapıldığı şey pusulayı dahili olarak sıfırlamaktır. Yakındaki manyetik parazitler veya sadece kötü donanım nedeniyle hala yanlış çalışabilir.
+    Neredeyse tüm doğruluk sorunları telefonun donanımından kaynaklanır ve <b>Sky Map ile hiçbir ilgisi yoktur</b>.
+    Sky Map\'in yaptığı tek şey, telefonun kendisine bildirdiği durumu size aktarmaktır.</blockquote>
+    <br/>
+    <p>Daha fazla yardım için aşağıdaki sorun giderme bölümüne bakın.</p>]]></string>
+
+    <string name="help_misc" translation_description="Help section: miscellaneous"><![CDATA[<h1>Çeşitli ve Sorun Giderme</h1>]]></string>
+
+    <string name="help_hardware" translation_description="Help section: hardware and sensor requirements. Please do not change the markup"><![CDATA[<h2>Donanım Gereksinimleri</h2>
+<p>Her cihaz Sky Map uygulamasını tamamen destekleyemez!</p>
+ <br/>
+ <p>En azından aşağıdakilere sahip bir telefona ihtiyacınız var:</p>
+<p>• Manyetik alan sensörü (diğer adıyla Pusula) — hangi yöne baktığınızı anlamak için<br/>
+• İvmeölçer — gökyüzünde ne kadar yüksekliğe baktığınızı anlamak için</p>
+<p>İdeal olarak ayrıca:</p>
+<p>• Jiroskop — bu, hareketi yumuşatacak ve sarsıntıyı azaltacaktır</p>
+<blockquote><b>Telefon pusulaları bilindiği üzere güvenilmezdir.</b>
+Gökyüzü haritası yanlış görünüyorsa, bu neredeyse her zaman telefonunuzun pusulası ile ilgili bir donanım sorunudur; Sky Map uygulamasındaki bir hata değildir.
+Sky Map, telefonunuzun sensörünün bildirdiği verileri aynen okur; hatalı veya sapmalı bir okumayı otomatik olarak düzeltmenin bir yolu yoktur.
+Aşağıdaki Sorun Giderme bölümüne bakın.</blockquote>
+<h3>Telefonumda hangi sensörlerin olduğunu nasıl anlarım?</h3>
+<p><b>Ayarlar → Tanılama</b> bölümünü açın — telefonunuzda bulunmayan sensörler yok olarak işaretlenecektir. Ayrıca eğitim sırasında da bilgilendirilmiş olacaksınız.</p>
+<h3>Cihazımda gerekli sensörler yoksa ne olur?</h3>
+<p>Sky Map manuel moda geçecektir. Yine de gökyüzünü keşfedebilirsiniz, ancak sensörler olmadan hiçbir uygulamanın size yönünüzü göstermesinin bir yolu yoktur.</p>]]></string>
+
+    <string name="help_troubleshooting" translation_description="Help section: troubleshooting a map that does not move or points the wrong way. Please do not change the markup"><![CDATA[<h2>Sorun Giderme</h2>
+<h3>Harita hareket etmiyor</h3>
+<p>• Otomatik Modda (Manuel değil) olduğunuzu kontrol edin<br/>
+• Cihazınızda bir pusula ve ivmeölçer olduğunu doğrulamak için Tanılama sayfasını (<b>Ayarlar → Tanılama</b>) kontrol edin<br/>
+• 8 rakamı kalibrasyon hareketini deneyin: telefonunuzu yavaşça büyük, pürüzsüz bir 8 rakamı şeklinde sallayın</p>
+<h3>Harita yanlış yöne bakıyor veya hatalı</h3>
+<p>Sky Map\'in doğru gökyüzünü gösterebilmesi için üç şeye ihtiyacı vardır: telefonunuzun baktığı yön, konumunuz ve geçerli saat. Harita yanlış görünüyorsa, bunlardan biri muhtemelen hatalıdır.</p>
+<p>• <b>Pusula (en yaygın neden):</b> Bu, bir Sky Map hatası değil, telefonunuzun donanımıyla ilgili bir sorundur. 8 rakamı kalibrasyon hareketi, telefonunuzun pusula sensörünü dahili olarak sıfırlamasını sağlar, ancak <i>kalibre edilmiş bir pusula her zaman doğru bir pusula değildir</i>. Metal bir nesnenin, araba torpidosunun veya manyetik telefon kılıfının yakınındaysanız kalibrasyondan sonra bile harita hatalı olabilir. Açık bir alana gidin ve 8 rakamı hareketini tekrarlayın.<br/>
+• <b>Konum:</b> <b>Uygulama Ayarları → İzinler</b> aracılığıyla konum izni verin. Koordinatlarınızı doğrulamak için Tanılama sayfasını (<b>Ayarlar → Tanılama</b>) kontrol edin. Konum eksikliğinin belirgin bir işareti, Kutup Yıldızı\'nın (Polaris) doğrudan baş üzerinde görünmesidir.<br/>
+• <b>Zaman:</b> Daha az yaygındır, ancak yanlış bir saat dilimi tüm gökyüzünü kaydırır. Cihazınızın saatinin ve saat diliminin doğru olduğunu doğrulamak için Tanılama sayfasını (<b>Ayarlar → Tanılama</b>) kontrol edin.</p>
+<h3>Harita titriyor</h3>
+<p>
+• Telefonunuzda jiroskop yoksa, sensör ayarlarında <b>Eski sensörleri kullan</b> seçeneğini açın<br/>
+• <b>Ayarlar → Sensör Ayarları (uzmanlar için)</b> altında <b>Sensör Hızı</b> ve <b>Sönümleme</b> ayarlarını yapın
+(<b>Eski sensörleri kullan</b> açıkken gösterilir)</p>
+<p>Ayrıntılı sorun giderme bilgileri için çevrimiçi <a href="https://ts.stardroid.app">sorun giderme</a> kılavuzuna bakın.</p>
+<p>Hala sorun yaşıyorsanız, <a href="mailto:skymapdevs@gmail.com">skymapdevs@gmail.com</a> adresinden bize e-posta gönderin; Tanılama sayfanızın bir ekran görüntüsü çok yardımcı olacaktır.</p>]]></string>
+
+    <string name="help_pointer_mode" translation_description="Help section: pointer mode for telescope users. Please do not change the markup"><![CDATA[<h2>Teleskop Kullanıcıları — İşaretçi Modu</h2>
+<p><b>Ayarlar → Sensör Ayarları</b> bölümünden <b>Görüş Yönü</b> ayarını <b>İşaretçi Modu</b> olarak değiştirin. Bu modda Sky Map, ekranın baktığı yeri değil, telefonun <i>uzun kenarının</i> işaret ettiği yeri gösterir.</p>
+<p>Bu, telefonunuzu bir teleskop tüpünün kenarına monte etmenize olanak tanır; böylece harita teleskopun neye nişan aldığını takip etmeye devam ederken ekran tüpe dik açıda durur.</p>]]></string>
+</resources>

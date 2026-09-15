@@ -1,0 +1,547 @@
+object_id,name,is_primary
+constellation/andromeda,एंड्रोमेडा,1
+constellation/antlia,एंटलिया,1
+constellation/apus,अपस,1
+constellation/aquarius,कुंभ,1
+constellation/aquila,गरुड़,1
+constellation/ara,अरा,1
+constellation/aries,मेष,1
+constellation/auriga,सारथी,1
+constellation/bootes,गोपालक,1
+constellation/caelum,कैलम,1
+constellation/camelopardalis,कैमलोपार्डलिस,1
+constellation/cancer,कर्क,1
+constellation/canes_venatici,कैनिस वेनेटिसी,1
+constellation/canis_major,बड़ा कुत्ता,1
+constellation/canis_minor,कैनिस माइनर,1
+constellation/capricornus,मकर,1
+constellation/carina,कील,1
+constellation/cassiopeia,कसिओपिया,1
+constellation/centaurus,सेंटोरस,1
+constellation/cepheus,सेफियस,1
+constellation/cetus,व्हेल,1
+constellation/chamaeleon,कैमेलियॉन,1
+constellation/circinus,सर्किनस,1
+constellation/columba,कोलंबा,1
+constellation/coma_berenices,कोमा बेरेनिसेस,1
+constellation/corona_australis,कोरोना ऑस्ट्रेलिस,1
+constellation/corona_borealis,कोरोना बोरिएलिस,1
+constellation/corvus,कोर्वस,1
+constellation/crater,क्रेटर,1
+constellation/crux,दक्षिणी क्रॉस,1
+constellation/cygnus,हंस,1
+constellation/delphinus,डेल्फिनस,1
+constellation/dorado,डोराडो,1
+constellation/draco,ड्रैगन,1
+constellation/equuleus,इक्विलियस,1
+constellation/eridanus,नदी,1
+constellation/fornax,फोर्नैक्स,1
+constellation/gemini,मिथुन,1
+constellation/grus,ग्रस,1
+constellation/hercules,हरक्यूलिस,1
+constellation/horologium,होरोलोजियम,1
+constellation/hydra,हाइड्रा,1
+constellation/hydrus,हाइड्रस,1
+constellation/indus,इंडस,1
+constellation/lacerta,लेसर्टा,1
+constellation/leo,लियो,1
+constellation/leo_minor,लियो माइनर,1
+constellation/lepus,लेपस,1
+constellation/libra,तुला,1
+constellation/lupus,लूपस,1
+constellation/lynx,लिंक्स,1
+constellation/lyra,लीरा,1
+constellation/mensa,मेंसा,1
+constellation/microscopium,माइक्रोस्कोपियम,1
+constellation/monoceros,मोनोसेरोस,1
+constellation/musca,मस्का,1
+constellation/norma,नॉर्मा,1
+constellation/octans,ऑक्टन्स,1
+constellation/ophiuchus,ओफिउकस,1
+constellation/orion,ओरायन,1
+constellation/pavo,पावो,1
+constellation/pegasus,पेगासस,1
+constellation/perseus,पर्सियस,1
+constellation/phoenix,फीनिक्स,1
+constellation/pictor,पिक्टर,1
+constellation/pisces,मीन,1
+constellation/piscis_austrinus,दक्षिण मीन,1
+constellation/puppis,पुप्पिस,1
+constellation/pyxis,पाइक्सिस,1
+constellation/reticulum,रेटिकुलम,1
+constellation/sagitta,सागिट्टा,1
+constellation/sagittarius,धनु,1
+constellation/scorpius,वृश्चिक,1
+constellation/sculptor,स्कल्पटर,1
+constellation/scutum,स्कुटम,1
+constellation/serpens_caput,सर्पेंस कैपुट,1
+constellation/serpens_cauda,सर्पेंस कॉडा,1
+constellation/sextans,सेक्सटन्स,1
+constellation/taurus,वृष,1
+constellation/telescopium,टेलीस्कोपियम,1
+constellation/triangulum,त्रिभुज,1
+constellation/triangulum_australe,दक्षिणी त्रिभुज,1
+constellation/tucana,तुकाना,1
+constellation/ursa_major,बड़ी भालू,1
+constellation/ursa_minor,छोटी भालू,1
+constellation/vela,वेला,1
+constellation/virgo,कन्या,1
+constellation/volans,उड़ने वाली मछली,1
+constellation/vulpecula,लोमड़ी,1
+dso/blue_snowball_nebula,नीली स्नोबॉल नेबुला,1
+dso/centaurus_a,सेंटॉरस ए,1
+dso/coathanger,कोटहैंगर,1
+dso/coathanger,ब्रोची's क्लस्टर,0
+dso/coma_star_cluster,कोमा तारा समूह,1
+dso/coma_star_cluster,कोमा बेरेनिसेस क्लस्टर,0
+dso/cygnus_x_1,ब्लैक होल बाइनरी,1
+dso/cygnus_x_1,तारकीय ब्लैक होल,0
+dso/double_cluster,दोहरा समूह,1
+dso/double_cluster,h और χ पर्सी,0
+dso/double_cluster,NGC 869 & NGC 884,0
+dso/eta_carinae_nebula,एटा कैरिना नेबुला,1
+dso/eta_carinae_nebula,कैरिना नेबुला,0
+dso/exposed_cranium_nebula,उजागर खोपड़ी नेबुला,1
+dso/ghost_of_jupiter,बृहस्पति का भूत,1
+dso/hdf,हबल डीप फील्ड,1
+dso/hdf,हबल डीप फील्ड,0
+dso/helix_nebula,हेलिक्स नेबुला,1
+dso/helix_nebula,ईश्वर की आँख,0
+dso/hyades,हाइएडीज,1
+dso/jewel_box,जेवल बॉक्स,1
+dso/jewel_box,हर्शल का जेवल बॉक्स,0
+dso/jewel_box,कप्पा क्रूसिस समूह,0
+dso/lmc,बड़ा मैजेलैनिक बादल,1
+dso/lmc,Nubecula Major,0
+dso/m1,केकड़ा नेबुला,1
+dso/m101,पिनव्हील गैलेक्सी,1
+dso/m102,स्पिंडल गैलेक्सी,1
+dso/m104,सोम्ब्रेरो गैलेक्सी,1
+dso/m11,वाइल्ड डक क्लस्टर,1
+dso/m13,हरक्यूलिस ग्लोबुलर क्लस्टर,1
+dso/m13,हरक्यूलिस ग्लोबुलर क्लस्टर,0
+dso/m16,ईगल नेबुला,1
+dso/m20,ट्रिफिड नेबुला,1
+dso/m24,धनु तारा बादल,1
+dso/m27,डंबल नेबुला,1
+dso/m31,एंड्रोमेडा गैलेक्सी,1
+dso/m33,ट्रायंगुलम गैलेक्सी,1
+dso/m40,विनिके 4,1
+dso/m42,ओरियन नेबुला,1
+dso/m43,डी मैरन का नेबुला,1
+dso/m44,मधुमक्खी समूह,1
+dso/m44,Praesepe,0
+dso/m45,प्लेइएडेस,1
+dso/m45,सात बहनें,0
+dso/m51,व्हर्लपूल गैलेक्सी,1
+dso/m57,रिंग नेबुला,1
+dso/m6,तितली समूह,1
+dso/m63,सनफ्लावर गैलेक्सी,1
+dso/m64,ब्लैक आई गैलेक्सी,1
+dso/m7,बिच्छू की पूंछ,1
+dso/m7,टॉलेमी क्लस्टर,0
+dso/m74,फैंटम गैलेक्सी,1
+dso/m76,लिटिल डंबल नेबुला,1
+dso/m8,लैगून नेबुला,1
+dso/m81,बोड की गैलेक्सी,1
+dso/m82,सिगार गैलेक्सी,1
+dso/m83,दक्षिणी पिनव्हील,1
+dso/m97,आउल नेबुला,1
+dso/n47_tucanae,47 टूकानाए,1
+dso/ngc_6543,कैट'स आई नेबुला,1
+dso/north_america_nebula,उत्तर अमेरिका नेबुला,1
+dso/north_america_nebula,कैल्डवेल 20,0
+dso/omega_centauri,ओमेगा सेंटॉरी ग्लोबुलर क्लस्टर,1
+dso/omega_centauri,ω Centauri,0
+dso/saturn_nebula,शनि नेबुला,1
+dso/sculptor_galaxy,मूर्तिकार आकाशगंगा,1
+dso/sculptor_galaxy,सिल्वर डॉलर गैलेक्सी,0
+dso/sculptor_galaxy,सिल्वर कॉइन गैलेक्सी,0
+dso/sgr_a_star,सैगिटेरियस ए*,1
+dso/sgr_a_star,ब्लैक होल,0
+dso/sgr_a_star,गैलेक्टिक केंद्र,0
+dso/smc,छोटा मैजेलैनिक बादल,1
+dso/smc,Nubecula Minor,0
+dso/t_crb,T कोरोना बोरिएलिस,1
+dso/t_crb,ब्लेज़ स्टार,0
+dso/tarantula_nebula,टारेंटुला नेबुला,1
+dso/tarantula_nebula,30 डोराडस,0
+dso/willman_1,विलमैन 1,1
+dso/willman_1,बेथ विलमैन गैलेक्सी,0
+moon/ariel,एरियल,1
+moon/callisto,कैलिस्टो,1
+moon/deimos,डीमोस,1
+moon/dione,डायोन,1
+moon/europa,यूरोपा,1
+moon/ganymede,गेनीमेड,1
+moon/iapetus,इयापेटस,1
+moon/io,आयो,1
+moon/oberon,ओबेरॉन,1
+moon/phobos,फोबोस,1
+moon/rhea,रिया,1
+moon/tethys,टेथिस,1
+moon/titan,टाइटन,1
+moon/titania,टाइटेनिया,1
+moon/triton,ट्राइटन,1
+moon/umbriel,अम्ब्रिएल,1
+planet/jupiter,बृहस्पति,1
+planet/mars,मंगल,1
+planet/mercury,बुध,1
+planet/moon,चंद्रमा,1
+planet/neptune,वरुण,1
+planet/pluto,प्लूटो,1
+planet/saturn,शनि,1
+planet/sun,सूर्य,1
+planet/uranus,अरुण,1
+planet/venus,शुक्र,1
+shower/aquariids,एटा एक्वेरिड्स,1
+shower/deltaaquariids,डेल्टा एक्वेरिड्स,1
+shower/geminids,जेमिनिड्स,1
+shower/leonids,लियोनिड्स,1
+shower/lyrids,लिरिड्स,1
+shower/orionids,ओरिओनिड्स,1
+shower/perseids,पर्सिड्स,1
+shower/puppidvelids,पप्पिड-वेलिड्स,1
+shower/quadrantids,क्वाड्रेंटिड्स,1
+shower/ursids,अर्सिड्स,1
+star/achernar,अचेरनार,1
+star/acrux,एक्रक्स,1
+star/adhara,अधारा,1
+star/alcyone,अलसियोन,1
+star/aldebaran,एल्डेबरान,1
+star/alderamin,अल्देरामिन,1
+star/algenib,अलजेनिब,1
+star/algieba,अलजीबा,1
+star/algol,अलगोल,1
+star/alhena,अलहेना,1
+star/alioth,एलिओथ,1
+star/alkaid,अलकैद,1
+star/alnair,अलनायर,1
+star/alnath,अलनाथ,1
+star/alnath,Elnath,0
+star/alnilam,अलनिलम,1
+star/alphard,अलफर्द,1
+star/alphekka,अल्फेक्का,1
+star/alpheratz,अलफेराज़,1
+star/altair,अल्तैर,1
+star/ankaa,अंकाह,1
+star/antares,एंटारेस,1
+star/arcturus,आर्कटुरस,1
+star/arneb,अर्नेब,1
+star/betelgeuse,बेटेलज्यूज,1
+star/canopus,कैनोपस,1
+star/capella,कपेला,1
+star/caph,काफ,1
+star/castor,कास्टर,1
+star/deneb,डेनेब,1
+star/denebola,देनेबोला,1
+star/diphda,दिफदा,1
+star/dubhe,डबे,1
+star/e_lyrae,ε लाइरे,1
+star/enif,एनिफ,1
+star/etamin,एटामिन,1
+star/fomalhaut,फोमलहॉट,1
+star/hadar,हदार,1
+star/hamal,हमल,1
+star/izar,इज़ार,1
+star/j003712+535400,फुलु,1
+star/j004912+574912,अचिर्ड,1
+star/j005624+591048,कास्टुला,1
+star/j010824-551500,वुरेन,1
+star/j011348+073448,रेवती,1
+star/j012212+453148,अधिल,1
+star/j012548+601424,रुचबा,1
+star/j013112+152100,अल्फेर्ग,1
+star/j013636+412436,टिटाविन,1
+star/j013748+483748,नेम्बस,1
+star/j014536+090936,टोरकुलर,1
+star/j015136-101948,बातेन काइटोस,1
+star/j015248+293448,मोथल्लाह,1
+star/j015436+204836,शेरटन,1
+star/j015436+634012,सेगिन,1
+star/j020148+024536,अलरेचा,1
+star/j020336+421948,अलमाक,1
+star/j024312+031424,कफालजिधमा,1
+star/j024800+291500,लिली बोरीया,1
+star/j024948+271536,भरणी,1
+star/j025024+555400,मिराम,1
+star/j025100-210000,अनगेतेनार,1
+star/j025624-085400,अझा,1
+star/j025812-401800,अकामार,1
+star/j030936+445136,मिसाम,1
+star/j031124+194348,बोतेइन,1
+star/j031200-285924,डालिम,1
+star/j031536-084912,ज़िबाल,1
+star/j033300-092736,रैन,1
+star/j034312-094612,राणा,1
+star/j034424+321724,अतीक,1
+star/j034500+240636,इलेक्ट्रा,1
+star/j034500+241724,सेलेनो,1
+star/j034500+242812,टायगेटा,1
+star/j034536+242212,माया,1
+star/j034612+235700,मेरोपे,1
+star/j034612+243300,एस्टेरोपे,1
+star/j034912+240300,एटलस,1
+star/j034912+240824,प्लीओन,1
+star/j035812-133036,ज़ौरक,1
+star/j035848+354724,मेनकिब,1
+star/j041200-065024,बेइड,1
+star/j041500-073824,केइड,1
+star/j041948+153748,प्राइमा हयाडम,1
+star/j042248+173224,सेकंडा हयाडम,1
+star/j042400-340112,बीमिम,1
+star/j042848+155212,चामुकुय,1
+star/j042848+191048,ऐन,1
+star/j043524-303336,थीमिन,1
+star/j043824-141800,सेप्ट्रम,1
+star/j044948+065736,ताबिट,1
+star/j045700+331012,हस्सालेह,1
+star/j050148+434912,अलमाज़,1
+star/j050224+410448,साक्लाटेनी,1
+star/j050636+411348,हेडस,1
+star/j050748-050524,कर्स,1
+star/j052512+062100,बेलैट्रिक्स,1
+star/j052812-204536,निहाल,1
+star/j053148-001800,मिन्टाका,1
+star/j053524+095548,मीसा,1
+star/j053524-055436,हैटिस्सा,1
+star/j053748+210824,तियांगुआन,1
+star/j053936-340412,फैक्ट,1
+star/j054048-015624,अलनिताक,1
+star/j055100-354612,वाज़न,1
+star/j055924+445700,मेनकालिनन,1
+star/j060000+371236,महासिम,1
+star/j060748-371500,एलकुरुद,1
+star/j061500+223036,प्रोपस,1
+star/j062024-300336,फुरुद,1
+star/j062248+223036,तेजात,1
+star/j062248-175736,मिर्ज़ाम,1
+star/j064348+250748,मेबसुता,1
+star/j064500+125400,अलज़िर्र,1
+star/j070148-275548,न्गानुरगानिटी,1
+star/j070336-153748,मुलफ़ीन,1
+star/j070412+203412,मेकबुडा,1
+star/j070824-262324,वेज़ेन,1
+star/j072024+215848,वासात,1
+star/j072400-291800,अलुद्रा,1
+star/j072700+081724,गोमेइसा,1
+star/j073900+343448,जिशुई,1
+star/j074912-245136,अज़मिडी,1
+star/j080336-400000,नाओस,1
+star/j080748-241800,तुरेइस,1
+star/j081200+173900,टेगमाइन,1
+star/j081648+091124,टार्फ़,1
+star/j082024+240112,पियाओटोस,1
+star/j082248+431124,अलशियाउकात,1
+star/j082248-593036,एवियोर,1
+star/j083000+604312,मुसिडा,1
+star/j083900+032024,मिनचिर,1
+star/j084312+212812,असेलस बोरियालिस,1
+star/j084424+180900,असेलस ऑस्ट्रालिस,1
+star/j084500-544236,अलसेफिना,1
+star/j084648+062512,आश्लेषा,1
+star/j085248+281948,कोपरनिकस,1
+star/j085812+115136,एक्यूबेंस,1
+star/j085924+480224,तालिथा,1
+star/j090336+470936,अलकाफरा,1
+star/j090748-432548,सुहैल,1
+star/j090936+220300,नाह्न,1
+star/j091312-694312,मियाप्लासिडस,1
+star/j091648-591648,एस्पिडिस्के,1
+star/j092212-550036,मार्केब,1
+star/j092848+453600,इंटरक्रस,1
+star/j093148+225812,अल्टरफ,1
+star/j093936-010824,उकदाह,1
+star/j094124+095324,सुबरा,1
+star/j095136-145100,झांग,1
+star/j095248+260036,रसालस,1
+star/j095436-190036,फेलिस,1
+star/j101648+232512,अधाफेरा,1
+star/j101648+425436,तानिया बोरियालिस,1
+star/j102212+413000,तानिया ऑस्ट्रालिस,1
+star/j105324+341312,प्रेसिपुआ,1
+star/j105924+402548,चालावन,1
+star/j110000-181800,अल्केस,1
+star/j111424+152548,चेर्टन,1
+star/j111424+203112,ज़ोस्मा,1
+star/j111800+313224,अलुला ऑस्ट्रालिस,1
+star/j111836+330524,अलुला बोरियालिस,1
+star/j113112+691948,जियाउसर,1
+star/j114612+474648,ताइयांगशौ,1
+star/j115024+014612,ज़ाविजावा,1
+star/j120524+765436,टोनाटियुह,1
+star/j120824-244348,अलचिबा,1
+star/j121500-584500,इमाई,1
+star/j121536+570148,मेग्रेज़,1
+star/j121536-173224,जिएनाह,1
+star/j121948-004012,ज़ानियाह,1
+star/j122136-602400,गिनन,1
+star/j123000-163112,अल्गोरब,1
+star/j123112-570636,गाक्रक्स,1
+star/j123336+412136,चारा,1
+star/j123412-232400,क्राज़,1
+star/j124124-012700,पोरिमा,1
+star/j124500+452624,ला सुपरबा,1
+star/j124724+664724,तियानयी,1
+star/j124800-594124,मिमोसा,1
+star/j125512+652624,ताईयी,1
+star/j125548+032400,मिनेलाउवा,1
+star/j125548+381912,कोर कैरोली,1
+star/j131012+173148,डायडेम,1
+star/j132400+545548,मिज़ार,1
+star/j132512+545924,एल्कोर,1
+star/j133448-003600,हेज़े,1
+star/j135436+182400,मुफ्रिड,1
+star/j140412+642248,थुबान,1
+star/j140636-362212,मेनकेंट,1
+star/j141236-101612,कांग,1
+star/j141612+460524,शुआनगे,1
+star/j141612-060000,सिरमा,1
+star/j141912-132212,खंबालिया,1
+star/j142812-021348,एल्गाफ़ार,1
+star/j143148+381836,सेगिनस,1
+star/j143936-605024,टोलिमन,1
+star/j144912+460712,मेरगा,1
+star/j145100-160224,ज़ुबेनेलगेनुबी,1
+star/j150148+402324,नेक्कार,1
+star/j150412-251648,ब्रेकियम,1
+star/j151648-092248,ज़ुबेनेशमाली,1
+star/j152100+714948,फेरकाद,1
+star/j152436+372248,अल्कैलुरोप्स,1
+star/j152512+585812,एडासिच,1
+star/j152736+290636,नुसाकन,1
+star/j153524-144724,ज़ुबेनेलहाकराबी,1
+star/j154836+180824,गुदजा,1
+star/j155700-291236,इकलिल,1
+star/j155848-260636,फांग,1
+star/j160036-223712,ड्शब्बा,1
+star/j160524-194836,एक्रैब,1
+star/j160748+170300,मार्सिक,1
+star/j161200-192736,जब्बा,1
+star/j161424-034124,येड प्रायर,1
+star/j161836-044124,येड पोस्टीरियर,1
+star/j162100-253524,अलनियात,1
+star/j162400+613036,एथेबीन,1
+star/j162512+140148,कुजाम,1
+star/j163000+212924,कोर्नेफोरोस,1
+star/j163112+015848,मार्फिक,1
+star/j163600-281312,पैकाउहाले,1
+star/j164836-690148,एट्रिया,1
+star/j165024-341724,लारावाग,1
+star/j165136-380300,ज़ामिदीमुरा,1
+star/j165212-380112,पिपिरिमा,1
+star/j170524+542812,अलराकिस,1
+star/j170900+654236,अलधिबाह,1
+star/j171012-154348,साबीक,1
+star/j171424+142324,रसलगेथी,1
+star/j171500+245024,सारिन,1
+star/j171536-263524,गुनीबू,1
+star/j173036+260636,मास्यम,1
+star/j173036+521800,रास्ताबान,1
+star/j173036-371800,लेसाथ,1
+star/j173224+863524,यिल्दुन,1
+star/j173712-430000,सरगास,1
+star/j174200+720900,ज़िबान,1
+star/j174312+043412,सेबलराई,1
+star/j174348+534800,अलरूबा,1
+star/j174424-514948,सरवांटेस,1
+star/j174948-370224,फुयुए,1
+star/j175324+565212,ग्रूमियम,1
+star/j180600-302512,अलनासल,1
+star/j181348-210336,पोलिस,1
+star/j182100-294948,काउस मीडिया,1
+star/j182548+653336,फाफनीर,1
+star/j182812-252512,काउस बोरियालिस,1
+star/j184348+363336,शीहे,1
+star/j184948+332136,शेलियाक,1
+star/j185400-224424,ऐनालरामी,1
+star/j185624+041200,आलिया,1
+star/j185848+324124,सुलाफत,1
+star/j190224-295248,असेला,1
+star/j190524+135136,ओकाब,1
+star/j190936-210112,अल्बल्दाह,1
+star/j190936-375400,मेरिडियाना,1
+star/j191236+673936,अल्टेस,1
+star/j191348+390900,अलदफ़ार,1
+star/j192248-442736,अर्कब प्रायर,1
+star/j192324-444800,अर्कब पोस्टीरियर,1
+star/j192400-403712,रुकबत,1
+star/j192848+244012,अंसर,1
+star/j193036+275736,अल्बिरेओ,1
+star/j193224+694012,अलसाफ़ी,1
+star/j194012+180036,शाम,1
+star/j194500+450748,फ़वारिस,1
+star/j194612+103636,ताराज़ेड,1
+star/j195400+082736,लिबर्टास,1
+star/j195512+062436,अलशैन,1
+star/j195548-261800,टेरेबेलम,1
+star/j201800-123224,अल्गेडी,1
+star/j202024-124536,अलशत,1
+star/j202100-144648,दाबिह,1
+star/j202212+401536,सद्र,1
+star/j202548-564348,पीकॉक,1
+star/j203300+111800,अल्डुल्फ़िन,1
+star/j203748+143600,रोटानेव,1
+star/j203936+155436,सुआलोसिन,1
+star/j204612+335812,अलजनाह,1
+star/j204724-093000,अल्बाली,1
+star/j205812+105024,म्यूज़िका,1
+star/j210900-885736,पोलारिस ऑस्ट्रेलिस,1
+star/j211536+051500,किताल्फा,1
+star/j212848+703336,अल्फ़िर्क,1
+star/j213148-053412,सदाल्सुउद,1
+star/j213748-075100,बुंडा,1
+star/j214012-163936,नशीरा,1
+star/j214200+511124,अज़ेल्फ़ाफ़ेज,1
+star/j214648-160748,देनेब अल्गेडी,1
+star/j215400-372136,अल्धानब,1
+star/j220336+643748,कुर्हाह,1
+star/j220600-001912,सदाल्मेलिक,1
+star/j221012+061200,बिहम,1
+star/j221648-074648,अंचा,1
+star/j222136-012324,सादाचबिया,1
+star/j223748-041348,सितुला,1
+star/j224124+104948,होमाम,1
+star/j224236-465248,टियाकी,1
+star/j224312+301312,मातर,1
+star/j224948+243600,सदलबारी,1
+star/j225436-154912,स्कैट,1
+star/j225736+204612,हेलवेटिओस,1
+star/j230336+034912,फुमलसमाकाह,1
+star/j232024+234424,साल्म,1
+star/j232512+232400,अलकरब,1
+star/j233112+391424,वेरिटेट,1
+star/j233936+773748,एर्राई,1
+star/kaus_australis,कौस ऑस्ट्रेलिस,1
+star/kochab,कोचब,1
+star/markab,मरकब,1
+star/menkar,मेनकर,1
+star/merak,मेराक,1
+star/mirach,मिराच,1
+star/mirphak,मिरफाक,1
+star/mirphak,Mirfak,0
+star/nunki,नुंकी,1
+star/phad,फद,1
+star/polaris,पोलारिस,1
+star/polaris,उत्तर तारा,0
+star/polaris,ध्रुव तारा,0
+star/pollux,पोलक्स,1
+star/procyon,प्रोसियॉन,1
+star/rasalhague,राशलहग,1
+star/regulus,रेगुलस,1
+star/rigel,रिजेल,1
+star/rigil_kentaurus_a,अल्फा सेंटॉरी,1
+star/rigil_kentaurus_a,रिजिल केंटौरस ए,0
+star/rigil_kentaurus_a,रिजेल केंटौरस ए,0
+star/rigil_kentaurus_a,रिजिल केंट,0
+star/saiph,सैफ,1
+star/scheat,शीट,1
+star/shaula,शौला,1
+star/shedir,शेदिर,1
+star/sirius,सीरियस,1
+star/sirius,डॉग स्टार,0
+star/spica,स्पिका,1
+star/unukalhai,उनुकलहाई,1
+star/vega,वेगा,1
+star/vindemiatrix,विंडेमिएट्रिक्स,1
+dso/v838_mon,वी838 मोनोसेरोटिस,1

@@ -35,3 +35,10 @@ ${user.home}/
 
 # Local Play Store review data
 stardroid-v1/stardroidreviews/
+
+# --- Python ---
+__pycache__/
+*.pyc
+
+# --- Playwright MCP debug output ---
+.playwright-mcp/

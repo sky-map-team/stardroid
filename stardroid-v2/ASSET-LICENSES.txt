@@ -1,0 +1,83 @@
+# Sky Map v2 — asset licence manifest
+#
+# THE AUTHORITATIVE LIST of which non-code assets are proprietary and which are not.
+# `LICENSE.md` reserves rights over the files listed under [arr] and nothing else.
+#
+# Enforced by `tools/check_asset_licenses.py`, which runs in CI, in both directions:
+#   - every asset under `app/src/main/res/` and `app/src/main/assets/` must match a rule
+#     below, so a new file cannot ship unclassified;
+#   - every rule below must match a shipped file, so a claim cannot outlive the asset it
+#     described.
+# Adding or removing an asset means editing this file in the same commit - that build
+# failure is the reminder.
+#
+# FORMAT
+#   [section]     one of: arr, gpl, apache-v1, third-party
+#   one glob per line, relative to app/src/main/
+#   '#' starts a comment; blank lines ignored
+#   First matching rule wins, so order matters within and between sections.
+#
+# WHEN ADDING AN ASSET, ask: did we draw it, and is it brand?
+#   yes / yes  -> [arr]           we reserve all rights
+#   yes / no   -> [gpl]           functional artwork, ships under GPLv3 like the code
+#   no, v1     -> [apache-v1]     Apache-2.0 from v1; check NOTICE.md for who owns it
+#   no, extern -> [third-party]   NASA/ESA/etc, under its own terms — NOT ours
+#
+# Misfiling into [arr] is the expensive mistake: it asserts ownership of someone else's
+# work and undermines the notices around it. When unsure, do not put it in [arr].
+
+
+[arr]
+# Brand identity. Original Penterakt LLC artwork, All Rights Reserved.
+# These are the files a clone would have to copy to pass itself off as Sky Map, and the
+# basis for a store takedown when one does.
+res/drawable/ic_launcher_background.xml
+res/drawable/ic_launcher_foreground.xml
+res/drawable/ic_launcher_monochrome.xml
+res/mipmap-anydpi-v26/ic_launcher.xml
+res/mipmap-anydpi-v26/ic_launcher_round.xml
+
+# Notification status icon — the launcher mark reduced to a monochrome glyph.
+res/drawable/ic_stat_skymap.xml
+
+# The welcome/onboarding backdrop: original composed artwork, not a sky photograph.
+res/drawable-nodpi/welcome_sky_bg.webp
+
+# Sky-marker icon set (D62). Original artwork generated from tools/icons/, replacing the
+# Apache-2.0 glyphs carried over from v1. Generated from tools/icons/generate_icons.py;
+# the SVG masters in tools/icons/dso/ are reserved too and carry their own notice.
+assets/catalog/icons/*.webp
+
+
+[gpl]
+# Functional UI artwork drawn for Sky Map and released under GPLv3 with the source.
+# These are utility glyphs — a gear, a magnifier, a chevron. Reserving rights over them
+# would be unenforceable in substance and would obstruct legitimate forks for no gain.
+res/drawable/ic_*.xml
+res/drawable/widget_*.xml
+res/drawable/moon_widget_preview_disc.xml
+
+
+[apache-v1]
+# Inherited from Sky Map v1 under Apache-2.0. The time-travel sounds - the only
+# Google-authored material v2 carried - were removed in #151, leaving one file.
+# calib.gif was added to v1 in 2016, after the 2012 Google release, so it is not
+# Google's either; its authorship has not been established. See NOTICE.md.
+# If it turns out to be our own work it belongs in [gpl], and this section goes.
+assets/calibration/calib.gif
+
+
+[third-party]
+# Scientific imagery under its own terms — public domain (NASA/ESA/JPL) or CC BY 4.0
+# (ESO, IAU, IAU/Sky & Telescope, EHT). Attribution is carried in res/values/credits.xml.
+# Explicitly NOT covered by the reserved-rights notice, per assets/planets/SOURCES.md.
+assets/celestial_images/**
+assets/planets/*.webp
+
+# Version-banner portrait: derived from the LRO full-disc Moon mosaic (NASA/GSFC/ASU).
+assets/splash/apollo.png
+
+
+# Provenance documentation shipped alongside the assets it describes.
+[gpl]
+assets/planets/SOURCES.md

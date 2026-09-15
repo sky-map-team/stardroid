@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+    <string name="eula_text" translation_description="A condensed, user-friendly version of the EULA and Privacy Policy with a link to the full terms. Please do not change the &lt; and &gt; markup"><![CDATA[<h1>Croeso i Sky Map</h1>
+<p>I\'ch cael chi i syllu ar y sêr, adolygwch y crynodeb cyflym hwn o\'n telerau.</p>
+<h2>Preifatrwydd</h2>
+<p><b>Nid ydym yn gwybod pwy ydych chi.</b> Rydym yn casglu data defnydd dienw i\'n helpu i drwsio bygiau a gwella nodweddion. Gallwch optio allan o hyn unrhyw bryd yn y ddewislen Gosodiadau.</p>
+<h2>Diogelwch &amp; Atebolrwydd</h2>
+<p>Darperir Sky Map \"fel y mae.\" Defnyddiwch ef yn ddiogel—nid ydym yn gyfrifol am unrhyw ddifrod neu anafiadau (fel poen gwddf!) sy\'n deillio o\'ch defnydd o\'r ap.</p>
+<h2>Ffynhonnell Agored</h2>
+<p>Mae Sky Map yn waith cariad. Mae croeso i chi ddefnyddio ein cod ffynhonnell, ond cofiwch barchu ein brandio a\'n logos.</p>
+<p>Darllenwch y ddogfen gyfreithiol lawn yma: <a href="https://github.com/sky-map-team/stardroid/blob/master/TERMS.md">Telerau Llawn a Pholisi Preifatrwydd</a></p>]]></string>
+
+    <!-- Rendered last on the terms screen, after the permissions notice, so the sentence the
+         Accept button refers to is the final thing the user reads. -->
+    <string name="eula_agree_line" translation_description="Closing line of the first-launch terms screen, immediately above the Accept button. Please do not change the markup"><![CDATA[<br/><p><i>Trwy glicio \"Derbyn,\" rydych yn cytuno i\'r telerau hyn.</i></p>]]></string>
+
+    <!--
+      The access-permission notice (KISA / Korean Network Act art. 22-2, and good practice
+      everywhere). Rendered in two places from this one key so it is translated once: appended
+      to the first-launch EULA screen, and included in the help document as a permanent,
+      re-readable copy (HelpScreen.helpSections2). Every runtime permission Sky Map declares
+      must appear here, labelled required or optional, with its grounds and — for optional
+      ones — the user\'s right to refuse.
+    -->
+    <string name="permissions_notice" translation_description="Legally-required disclosure of the device permissions the app requests, why it requests them, and the user\'s right to refuse the optional ones. Shown on the first-launch terms screen and in Help. Please do not change the markup"><![CDATA[<h2>Caniatâd</h2>
+<p><b>Nid oes gan Sky Map unrhyw ganiatâd gofynnol.</b> Mae pob caniatâd isod yn ddewisol — gallwch wrthod unrhyw un ohonynt a dal i ddefnyddio\'r ap. Nid yw Sky Map byth yn gofyn wrth gychwyn: dim ond pan fyddwch chi\'n defnyddio\'r nodwedd sydd ei hangen am y tro cyntaf y gofynnir am bob caniatâd, a gallwch roi neu dynnu pob un yn ôl ar wahân ar unrhyw adeg o dan <b>Gosodiadau → Apiau → Sky Map → Caniatâd</b> ar eich dyfais.</p>
+<h3>Lleoliad — dewisol</h3>
+<p><b>Beth sy\'n cael ei gyrchu:</b> eich lleoliad bras.</p>
+<p><b>Pam:</b> mae pa sêr sydd uwch eich pen yn dibynnu ar ble rydych chi, felly mae Sky Map yn defnyddio\'ch lleoliad bras i dynnu\'r awyr gywir.</p>
+<p><b>Os gwrthodwch:</b> gallwch deipio enw lle neu gyfesurynnau yn lle hynny, ac mae\'r ap cyfan yn parhau i weithio.</p>
+<blockquote>Defnyddir eich lleoliad ar eich dyfais i dynnu\'r awyr. Ni chaiff ei anfon atom byth.</blockquote>
+<h3>Camera — dewisol</h3>
+<p><b>Beth sy\'n cael ei gyrchu:</b> rhagolwg y camera.</p>
+<p><b>Pam:</b> mae modd drwy\'r camera yn tynnu\'r awyr ar ben y golygfa camera byw, fel y gallwch gyfateb y map â\'r hyn rydych chi\'n edrych arno mewn gwirionedd.</p>
+<p><b>Os gwrthodwch:</b> mae pob modd arall yn gweithio fel arfer.</p>
+<blockquote>Nid yw Sky Map byth yn recordio golygfa\'r camera nac yn ei anfon atom. Caiff ei dynnu ar y sgrin ac yna ei daflu — oni bai eich bod yn rhannu llun: mae dewis cynllun AR o\'r daflen rhannu yn arbed yr un ddelwedd honno ar eich dyfais ac yn ei throsglwyddo i\'r ap a ddewiswch. Ni rennir unrhyw beth nes i chi ofyn amdano.</blockquote>
+<h3>Hysbysiadau — dewisol</h3>
+<p><b>Beth sy\'n cael ei gyrchu:</b> caniatâd i ddangos hysbysiadau.</p>
+<p><b>Pam:</b> i roi gwybod i chi am uchafbwyntiau cawodydd meteor a beth sy\'n werth ei weld heno, os gofynnwch am y rheini.</p>
+<p><b>Os gwrthodwch:</b> nid oes unrhyw beth arall yn newid — mae\'r hysbysiadau hyn yn aros i ffwrdd nes i chi eu troi ymlaen.</p>]]></string>
+</resources>

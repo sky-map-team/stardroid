@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Shipped Remote Config defaults, applied before the first fetch completes. Keys match
+     the Experiment enum; kept in sync with ExperimentConfig.Static's fdroid default. -->
+<defaultsMap>
+    <entry>
+        <key>moon_widget_enabled</key>
+        <value>false</value>
+    </entry>
+    <entry>
+        <key>tonight_widget_enabled</key>
+        <value>false</value>
+    </entry>
+    <entry>
+        <key>notifications_enabled</key>
+        <value>false</value>
+    </entry>
+    <entry>
+        <key>camera_ar_enabled</key>
+        <value>false</value>
+    </entry>
+    <entry>
+        <key>share_sky_enabled</key>
+        <value>false</value>
+    </entry>
+    <entry>
+        <key>satellites_enabled</key>
+        <value>false</value>
+    </entry>
+</defaultsMap>

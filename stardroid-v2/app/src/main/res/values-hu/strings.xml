@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Carried over from v1 by tools/salvage-translations/salvage.py.
+  Only strings whose English source is identical between v1 and v2 appear here;
+  everything else is translated by `tm`. Safe to hand-edit thereafter.
+-->
+<resources>
+    <string name="object_info_distance">Távolság:</string>
+    <string name="object_info_size">Méret:</string>
+    <string name="object_info_mass">Tömeg:</string>
+    <string name="object_info_magnitude">Magnitúdó:</string>
+    <string name="settings_tap_in_auto_mode">Infókártyák automatikus módban</string>
+    <string name="settings_tap_in_auto_mode_summary">
+    Infókártyák megjelenítése automatikus (szenzor) módban is az objektumok megérintésekor
+    </string>
+</resources>

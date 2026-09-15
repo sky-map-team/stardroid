@@ -1,0 +1,543 @@
+object_id,name,is_primary
+constellation/andromeda,Ανδρομέδα,1
+constellation/antlia,Αντλία,1
+constellation/apus,Πτηνόν,1
+constellation/aquarius,Υδροχόος,1
+constellation/aquila,Αετός,1
+constellation/ara,Βωμός,1
+constellation/aries,Κριός,1
+constellation/auriga,Ηνίοχος,1
+constellation/bootes,Βοώτης,1
+constellation/caelum,Γλυφείον,1
+constellation/camelopardalis,Καμηλοπάρδαλις,1
+constellation/cancer,Καρκίνος,1
+constellation/canes_venatici,Κύνες Θηρευτικοί,1
+constellation/canis_major,Μέγας Κύων,1
+constellation/canis_minor,Μικρός Κύων,1
+constellation/capricornus,Αιγόκερως,1
+constellation/carina,Τρόπις,1
+constellation/cassiopeia,Κασσιόπη,1
+constellation/centaurus,Κένταυρος,1
+constellation/cepheus,Κηφεύς,1
+constellation/cetus,Κήτος,1
+constellation/chamaeleon,Χαμαιλέων,1
+constellation/circinus,Διαβήτης,1
+constellation/columba,Περιστερά,1
+constellation/coma_berenices,Κόμη Βερενίκης,1
+constellation/corona_australis,Νότιος Στέφανος,1
+constellation/corona_borealis,Βόρειος Στέφανος,1
+constellation/corvus,Κόραξ,1
+constellation/crater,Κρατήρ,1
+constellation/crux,Νότιος Σταυρός,1
+constellation/cygnus,Κύκνος,1
+constellation/delphinus,Δελφίν,1
+constellation/dorado,Δοράς,1
+constellation/draco,Δράκων,1
+constellation/equuleus,Ιππάριον,1
+constellation/eridanus,Ηριδανός,1
+constellation/fornax,Κάμινος,1
+constellation/gemini,Δίδυμοι,1
+constellation/grus,Γερανός,1
+constellation/hercules,Ηρακλής,1
+constellation/horologium,Ωρολόγιον,1
+constellation/hydra,Ύδρα,1
+constellation/hydrus,Ύδρος,1
+constellation/indus,Ινδός,1
+constellation/lacerta,Σαύρα,1
+constellation/leo,Λέων,1
+constellation/leo_minor,Μικρός Λέων,1
+constellation/lepus,Λαγωός,1
+constellation/libra,Ζυγός,1
+constellation/lupus,Λύκος,1
+constellation/lynx,Λυγξ,1
+constellation/lyra,Λύρα,1
+constellation/mensa,Τράπεζα,1
+constellation/microscopium,Μικροσκόπιον,1
+constellation/monoceros,Μονόκερως,1
+constellation/musca,Μυία,1
+constellation/norma,Γνώμων,1
+constellation/octans,Οκτάς,1
+constellation/ophiuchus,Οφιούχος,1
+constellation/orion,Ωρίων,1
+constellation/pavo,Ταώς,1
+constellation/pegasus,Πήγασος,1
+constellation/perseus,Περσεύς,1
+constellation/phoenix,Φοίνιξ,1
+constellation/pictor,Οκρίβας,1
+constellation/pisces,Ιχθύες,1
+constellation/piscis_austrinus,Νότιος Ιχθύς,1
+constellation/puppis,Πρύμνη,1
+constellation/pyxis,Πυξίς,1
+constellation/reticulum,Δίκτυον,1
+constellation/sagitta,Τοξότης,1
+constellation/sagittarius,Τοξότης,1
+constellation/scorpius,Σκορπιός,1
+constellation/sculptor,Γλύπτης,1
+constellation/scutum,Ασπίς,1
+constellation/serpens_caput,Κεφαλή του Όφεως,1
+constellation/serpens_cauda,Ουρά του Όφεως,1
+constellation/sextans,Εξάς,1
+constellation/taurus,Ταύρος,1
+constellation/telescopium,Τηλεσκόπιον,1
+constellation/triangulum,Τρίγωνον,1
+constellation/triangulum_australe,Τρίγωνον Νότιον,1
+constellation/tucana,Τουκάνα,1
+constellation/ursa_major,Μεγάλη Άρκτος,1
+constellation/ursa_minor,Μικρή Άρκτος,1
+constellation/vela,Ιστία,1
+constellation/virgo,Παρθένος,1
+constellation/volans,Ιχθύς Ιπτάμενος,1
+constellation/vulpecula,Αλώπηξ,1
+dso/blue_snowball_nebula,Νεφέλωμα της Μπλε Χιονόμπαλας,1
+dso/centaurus_a,Κένταυρος Α,1
+dso/coathanger,Κρεμαστάρι,1
+dso/coathanger,Σμήνος του Broccchi,0
+dso/coma_star_cluster,Σμήνος της Κόμης Βερενίκης,1
+dso/coma_star_cluster,Σμήνος Κόμης Βερενίκης,0
+dso/cygnus_x_1,Δυαδικό Σύστημα Μαύρης Τρύπας,1
+dso/cygnus_x_1,Αστρική Μαύρη Τρύπα,0
+dso/double_cluster,Διπλό Σμήνος,1
+dso/double_cluster,h και χ Περσέα,0
+dso/double_cluster,NGC 869 & NGC 884,0
+dso/eta_carinae_nebula,Νεφέλωμα Eta Carinae,1
+dso/eta_carinae_nebula,Νεφέλωμα Carina,0
+dso/exposed_cranium_nebula,Νεφέλωμα του Εκτεθειμένου Κρανίου,1
+dso/ghost_of_jupiter,Φάντασμα του Διός,1
+dso/hdf,Βαθύ Πεδίο Hubble,1
+dso/hdf,Βαθύ Πεδίο Hubble,0
+dso/helix_nebula,Νεφέλωμα της Έλικας,1
+dso/helix_nebula,Το Μάτι του Θεού,0
+dso/hyades,Υάδες,1
+dso/jewel_box,Κουτί Κοσμημάτων,1
+dso/jewel_box,Κουτί Κοσμημάτων του Herschel,0
+dso/jewel_box,Σμήνος Κάππα Σταυρού,0
+dso/lmc,Μεγάλο Νέφος του Μαγγελάνου,1
+dso/lmc,Νεφέλωμα Μέγα,0
+dso/m1,Νεφέλωμα Καρκίνου,1
+dso/m101,Γαλαξίας Ανεμόμυλος,1
+dso/m102,Γαλαξίας της Ατράκτου,1
+dso/m104,Γαλαξίας Σομπρέρο,1
+dso/m11,Σμήνος Άγριας Πάπιας,1
+dso/m13,Σφαιρωτό Σμήνος Ηρακλή,1
+dso/m13,Σφαιρωτό Σμήνος του Ηρακλή,0
+dso/m16,Νεφέλωμα Αετού,1
+dso/m20,Νεφέλωμα Τριφιδές,1
+dso/m24,Νέφος Αστέρων του Τοξότη,1
+dso/m27,Νεφέλωμα Αλτήρας,1
+dso/m31,Γαλαξίας της Ανδρομέδας,1
+dso/m33,Γαλαξίας του Τριγώνου,1
+dso/m40,Winnecke 4,1
+dso/m42,Νεφέλωμα Ωρίωνα,1
+dso/m43,Νεφέλωμα του Ντε Μαϊράν,1
+dso/m44,Σμήνος Κυψέλη,1
+dso/m44,Φάτνη,0
+dso/m45,Πλειάδες,1
+dso/m45,Πούλια,0
+dso/m51,Γαλαξίας της Δίνης,1
+dso/m57,Δακτυλιοειδές Νεφέλωμα,1
+dso/m6,Σμήνος Πεταλούδα,1
+dso/m63,Γαλαξίας Ηλιοτρόπιο,1
+dso/m64,Γαλαξίας Μαύρο Μάτι,1
+dso/m7,Σμήνος Πτολεμαίου,1
+dso/m7,Σμήνος του Πτολεμαίου,0
+dso/m74,Γαλαξίας Φάντασμα,1
+dso/m76,Μικρό Νεφέλωμα Αλτήρας,1
+dso/m8,Νεφέλωμα Λιμνοθάλασσας,1
+dso/m81,Γαλαξίας του Μπόντε,1
+dso/m82,Γαλαξίας Πούρο,1
+dso/m83,Νότιος Ανεμόμυλος,1
+dso/m97,Νεφέλωμα Κουκουβάγια,1
+dso/n47_tucanae,47 Τουκάνας,1
+dso/ngc_6543,Νεφέλωμα Μάτι της Γάτας,1
+dso/north_america_nebula,Νεφέλωμα της Βόρειας Αμερικής,1
+dso/omega_centauri,Σφαιρωτό Σμήνος Ωμέγα Κενταύρου,1
+dso/omega_centauri,ω Centauri,0
+dso/saturn_nebula,Νεφέλωμα του Κρόνου,1
+dso/sculptor_galaxy,Γαλαξία του Γλύπτη,1
+dso/sculptor_galaxy,Γαλαξίας Ασημένιου Δολαρίου,0
+dso/sculptor_galaxy,Γαλαξίας Ασημένιου Νομίσματος,0
+dso/sgr_a_star,Sgr A*,1
+dso/sgr_a_star,Μαύρη Τρύπα,0
+dso/sgr_a_star,Γαλακτικό Κέντρο,0
+dso/smc,Νεφέλωμα Μικρό Magellan,1
+dso/smc,Νεφέλωμα Μικρό,0
+dso/t_crb,T Βόρειου Στέφανου,1
+dso/t_crb,Blaze Star,0
+dso/tarantula_nebula,Νεφέλωμα Tarantula,1
+dso/tarantula_nebula,30 Doradus,0
+dso/willman_1,Willman 1,1
+dso/willman_1,Γαλαξία Beth Willman,0
+moon/ariel,Αριέλ,1
+moon/callisto,Καλλιστώ,1
+moon/deimos,Δείμος,1
+moon/dione,Διώνη,1
+moon/europa,Ευρώπη,1
+moon/ganymede,Γανυμήδης,1
+moon/iapetus,Ιάπετος,1
+moon/io,Ιώ,1
+moon/oberon,Οβέρων,1
+moon/phobos,Φόβος,1
+moon/rhea,Ρέα,1
+moon/tethys,Τέθυς,1
+moon/titan,Τιτάνας,1
+moon/titania,Τιτάνια,1
+moon/triton,Τρίτων,1
+moon/umbriel,Ουμπριέλ,1
+planet/jupiter,Δίας,1
+planet/mars,Άρης,1
+planet/mercury,Ερμής,1
+planet/moon,Σελήνη,1
+planet/neptune,Ποσειδώνας,1
+planet/pluto,Πλούτωνας,1
+planet/saturn,Κρόνος,1
+planet/sun,Ήλιος,1
+planet/uranus,Ουρανός,1
+planet/venus,Αφροδίτη,1
+shower/aquariids,ήτα Υδροχοΐδες,1
+shower/deltaaquariids,δέλτα Υδροχοΐδες,1
+shower/geminids,Διδυμίδες,1
+shower/leonids,Λεοντίδες,1
+shower/lyrids,Λυρίδες,1
+shower/orionids,Ωριωνίδες,1
+shower/perseids,Περσείδες,1
+shower/puppidvelids,Πρυμνίδες-Ιστιίδες,1
+shower/quadrantids,Τεταρτίδες,1
+shower/ursids,Αρκτίδες,1
+star/achernar,Αχερνάρ,1
+star/acrux,Άλφα Νοτίου Σταυρού,1
+star/adhara,Αντχάρα,1
+star/alcyone,Αλκυόνη,1
+star/aldebaran,Αλντεμπαράν,1
+star/alderamin,Αλντεραμίν,1
+star/algenib,Αλτζενίμπ,1
+star/algieba,Αλτζήμπα,1
+star/algol,Αλγκόλ,1
+star/alhena,Αλένα,1
+star/alioth,Άλιοθ,1
+star/alkaid,Αλκάιντ,1
+star/alnair,Αλναΐρ,1
+star/alnath,Ελ Ναθ,1
+star/alnilam,Αλνιλάμ,1
+star/alphard,Αλφάρντ,1
+star/alphekka,Αλφέκκα,1
+star/alpheratz,Αλφεράτζ,1
+star/altair,Αλτάιρ,1
+star/ankaa,Ανκάα,1
+star/antares,Αντάρης,1
+star/arcturus,Αρκτούρος,1
+star/arneb,Αρνέμπ,1
+star/betelgeuse,Μπετελγκέζ,1
+star/canopus,Κάνωπος,1
+star/capella,Αίγα,1
+star/caph,Καφ,1
+star/castor,Κάστορας,1
+star/deneb,Ντενέμπ,1
+star/denebola,Ντενέμπολα,1
+star/diphda,Ντίφντα,1
+star/dubhe,Ντουμπέ,1
+star/e_lyrae,ε Λύρας,1
+star/enif,Ενίφ,1
+star/etamin,Ελτανίν,1
+star/fomalhaut,Φομαλχώ,1
+star/hadar,Χαντάρ,1
+star/hamal,Χαμάλ,1
+star/izar,Ιζάρ,1
+star/j003712+535400,Φούλου,1
+star/j004912+574912,Αχίρντ,1
+star/j005624+591048,Καστούλα,1
+star/j010824-551500,Γούρεν,1
+star/j011348+073448,Ρεβάτι,1
+star/j012212+453148,Αντίλ,1
+star/j012548+601424,Ρουχμπά,1
+star/j013112+152100,Άλφεργκ,1
+star/j013636+412436,Τιταουίν,1
+star/j013748+483748,Νέμπους,1
+star/j014536+090936,Τορκουλάρ,1
+star/j015136-101948,Μπάτεν Κάιτος,1
+star/j015248+293448,Μοθάλα,1
+star/j015436+204836,Σερατάν,1
+star/j015436+634012,Σεγκίν,1
+star/j020148+024536,Αλρέσα,1
+star/j020336+421948,Άλμαχ,1
+star/j024312+031424,Καφαλτζίντμα,1
+star/j024800+291500,Λίλιι Μπορέα,1
+star/j024948+271536,Μπαράνι,1
+star/j025024+555400,Μίραμ,1
+star/j025100-210000,Ανγκετενάρ,1
+star/j025624-085400,Άζχα,1
+star/j025812-401800,Ακαμάρ,1
+star/j030936+445136,Μισάμ,1
+star/j031124+194348,Μποτέιν,1
+star/j031200-285924,Νταλίμ,1
+star/j031536-084912,Ζιμπάλ,1
+star/j033300-092736,Ραν,1
+star/j034312-094612,Ράνα,1
+star/j034424+321724,Ατίκ,1
+star/j034500+240636,Ηλέκτρα,1
+star/j034500+241724,Κελαινώ,1
+star/j034500+242812,Ταϋγέτη,1
+star/j034536+242212,Μαία,1
+star/j034612+235700,Μερόπη,1
+star/j034612+243300,Αστερόπη,1
+star/j034912+240300,Άτλας,1
+star/j034912+240824,Πλειόνη,1
+star/j035812-133036,Ζαουράκ,1
+star/j035848+354724,Μενκίμπ,1
+star/j041200-065024,Μπέιντ,1
+star/j041500-073824,Κέιντ,1
+star/j041948+153748,Πρώτη Υάδα,1
+star/j042248+173224,Δεύτερη Υάδα,1
+star/j042400-340112,Μπέεμιμ,1
+star/j042848+155212,Τσαμουκούι,1
+star/j042848+191048,Άιν,1
+star/j043524-303336,Θέεμιν,1
+star/j043824-141800,Σκέπτρουμ,1
+star/j044948+065736,Ταμπίτ,1
+star/j045700+331012,Χασάλεχ,1
+star/j050148+434912,Αλμάαζ,1
+star/j050224+410448,Σακλατένι,1
+star/j050636+411348,Χαέντους,1
+star/j050748-050524,Κούρσα,1
+star/j052512+062100,Μπελατρίξ,1
+star/j052812-204536,Νιχάλ,1
+star/j053148-001800,Μιντάκα,1
+star/j053524+095548,Μέισσα,1
+star/j053524-055436,Χατύσα,1
+star/j053748+210824,Τιάνγκουαν,1
+star/j053936-340412,Φακτ,1
+star/j054048-015624,Αλνιτάκ,1
+star/j055100-354612,Γουάζν,1
+star/j055924+445700,Μενκαλινάν,1
+star/j060000+371236,Μαχασίμ,1
+star/j060748-371500,Ελκουρούντ,1
+star/j061500+223036,Πρόπους,1
+star/j062024-300336,Φουρούντ,1
+star/j062248+223036,Τεγιάτ,1
+star/j062248-175736,Μίρζαμ,1
+star/j064348+250748,Μεμπσούτα,1
+star/j064500+125400,Αλζίρ,1
+star/j070148-275548,Νγκανουργκανίτι,1
+star/j070336-153748,Μουλιφέιν,1
+star/j070412+203412,Μεκμπούντα,1
+star/j070824-262324,Βέζεν,1
+star/j072024+215848,Γουασάτ,1
+star/j072400-291800,Αλούντρα,1
+star/j072700+081724,Γκομέισα,1
+star/j073900+343448,Τζισούι,1
+star/j074912-245136,Αζμίντι,1
+star/j080336-400000,Νάος,1
+star/j080748-241800,Τουρέις,1
+star/j081200+173900,Τέγκμινε,1
+star/j081648+091124,Ταρφ,1
+star/j082024+240112,Πιαούτος,1
+star/j082248+431124,Αλσκαουκάτ,1
+star/j082248-593036,Άβιορ,1
+star/j083000+604312,Μουσκίντα,1
+star/j083900+032024,Μίντσιρ,1
+star/j084312+212812,Ασέλλους Μπορεάλις,1
+star/j084424+180900,Ασέλλους Αουστράλις,1
+star/j084500-544236,Αλσεφίνα,1
+star/j084648+062512,Ασλέσα,1
+star/j085248+281948,Κοπέρνικος,1
+star/j085812+115136,Ακούμπενς,1
+star/j085924+480224,Ταλίθα,1
+star/j090336+470936,Αλκαφράχ,1
+star/j090748-432548,Σουχάιλ,1
+star/j090936+220300,Nahn,1
+star/j091312-694312,Miaplacidus,1
+star/j091648-591648,Aspidiske,1
+star/j092212-550036,Markeb,1
+star/j092848+453600,Intercrus,1
+star/j093148+225812,Alterf,1
+star/j093936-010824,Ukdah,1
+star/j094124+095324,Subra,1
+star/j095136-145100,Zhang,1
+star/j095248+260036,Rasalas,1
+star/j095436-190036,Felis,1
+star/j101648+232512,Adhafera,1
+star/j101648+425436,Tania Borealis,1
+star/j102212+413000,Tania Australis,1
+star/j105324+341312,Praecipua,1
+star/j105924+402548,Chalawan,1
+star/j110000-181800,Alkes,1
+star/j111424+152548,Chertan,1
+star/j111424+203112,Zosma,1
+star/j111800+313224,Alula Australis,1
+star/j111836+330524,Alula Borealis,1
+star/j113112+691948,Giausar,1
+star/j114612+474648,Taiyangshou,1
+star/j115024+014612,Zavijava,1
+star/j120524+765436,Tonatiuh,1
+star/j120824-244348,Alchiba,1
+star/j121500-584500,Imai,1
+star/j121536+570148,Megrez,1
+star/j121536-173224,Gienah,1
+star/j121948-004012,Zaniah,1
+star/j122136-602400,Ginan,1
+star/j123000-163112,Algorab,1
+star/j123112-570636,Gacrux,1
+star/j123336+412136,Chara,1
+star/j123412-232400,Kraz,1
+star/j124124-012700,Porrima,1
+star/j124500+452624,La Superba,1
+star/j124724+664724,Tianyi,1
+star/j124800-594124,Mimosa,1
+star/j125512+652624,Taiyi,1
+star/j125548+032400,Μινέλαυβα,1
+star/j125548+381912,Κορ Καρόλι,1
+star/j131012+173148,Διάδημα,1
+star/j132400+545548,Μιζάρ,1
+star/j132512+545924,Άλκορ,1
+star/j133448-003600,Χέζε,1
+star/j135436+182400,Μούφριντ,1
+star/j140412+642248,Θουμπάν,1
+star/j140636-362212,Μένκεντ,1
+star/j141236-101612,Κανγκ,1
+star/j141612+460524,Ξουάνγκε,1
+star/j141612-060000,Σύρμα,1
+star/j141912-132212,Χαμπάλια,1
+star/j142812-021348,Έλγκαφαρ,1
+star/j143148+381836,Σεγίνος,1
+star/j143936-605024,Τολίμαν,1
+star/j144912+460712,Μέργκα,1
+star/j145100-160224,Ζουμπενελτζενούμπι,1
+star/j150148+402324,Νέκκαρ,1
+star/j150412-251648,Βράχιουμ,1
+star/j151648-092248,Ζουμπενεσχαμάλι,1
+star/j152100+714948,Φερκάντ,1
+star/j152436+372248,Αλκαλούροψ,1
+star/j152512+585812,Έντασιχ,1
+star/j152736+290636,Νουσάκαν,1
+star/j153524-144724,Ζουμπενελχακράμπι,1
+star/j154836+180824,Γκούντζα,1
+star/j155700-291236,Ικλίλ,1
+star/j155848-260636,Φανγκ,1
+star/j160036-223712,Ντζούμπα,1
+star/j160524-194836,Άκραμπ,1
+star/j160748+170300,Μάρσικ,1
+star/j161200-192736,Τζάμπα,1
+star/j161424-034124,Γιεντ Πράιορ,1
+star/j161836-044124,Γιεντ Ποστέριορ,1
+star/j162100-253524,Αλνιγιάτ,1
+star/j162400+613036,Αθεμπίνε,1
+star/j162512+140148,Κούτζαμ,1
+star/j163000+212924,Κορνεφόρος,1
+star/j163112+015848,Μάρφικ,1
+star/j163600-281312,Paikauhale,1
+star/j164836-690148,Atria,1
+star/j165024-341724,Larawag,1
+star/j165136-380300,Xamidimura,1
+star/j165212-380112,Pipirima,1
+star/j170524+542812,Alrakis,1
+star/j170900+654236,Aldhibah,1
+star/j171012-154348,Sabik,1
+star/j171424+142324,Rasalgethi,1
+star/j171500+245024,Sarin,1
+star/j171536-263524,Guniibuu,1
+star/j173036+260636,Maasym,1
+star/j173036+521800,Rastaban,1
+star/j173036-371800,Lesath,1
+star/j173224+863524,Yildun,1
+star/j173712-430000,Sargas,1
+star/j174200+720900,Dziban,1
+star/j174312+043412,Cebalrai,1
+star/j174348+534800,Alruba,1
+star/j174424-514948,Cervantes,1
+star/j174948-370224,Fuyue,1
+star/j175324+565212,Grumium,1
+star/j180600-302512,Alnasl,1
+star/j181348-210336,Polis,1
+star/j182100-294948,Kaus Media,1
+star/j182548+653336,Fafnir,1
+star/j182812-252512,Kaus Borealis,1
+star/j184348+363336,Xihe,1
+star/j184948+332136,Sheliak,1
+star/j185400-224424,Ainalrami,1
+star/j185624+041200,Alya,1
+star/j185848+324124,Sulafat,1
+star/j190224-295248,Ascella,1
+star/j190524+135136,Okab,1
+star/j190936-210112,Albaldah,1
+star/j190936-375400,Meridiana,1
+star/j191236+673936,Altais,1
+star/j191348+390900,Aladfar,1
+star/j192248-442736,Arkab Prior,1
+star/j192324-444800,Arkab Posterior,1
+star/j192400-403712,Ρουκμπάτ,1
+star/j192848+244012,Άνσερ,1
+star/j193036+275736,Αλμπιρέο,1
+star/j193224+694012,Αλσάφι,1
+star/j194012+180036,Σαμ,1
+star/j194500+450748,Φαβάρις,1
+star/j194612+103636,Ταραζέντ,1
+star/j195400+082736,Λιμπερτάς,1
+star/j195512+062436,Αλσάιν,1
+star/j195548-261800,Τερεμπέλουμ,1
+star/j201800-123224,Αλγκέντι,1
+star/j202024-124536,Αλσάτ,1
+star/j202100-144648,Νταμπίχ,1
+star/j202212+401536,Σαντρ,1
+star/j202548-564348,Πίκοκ,1
+star/j203300+111800,Αλντούλφιν,1
+star/j203748+143600,Ροτάνεβ,1
+star/j203936+155436,Σουαλοσίν,1
+star/j204612+335812,Αλτζανάχ,1
+star/j204724-093000,Αλμπαλί,1
+star/j205812+105024,Μούζικα,1
+star/j210900-885736,Πολάρις Αυστράλις,1
+star/j211536+051500,Κιτάλφα,1
+star/j212848+703336,Αλφίρκ,1
+star/j213148-053412,Σανταλσούντ,1
+star/j213748-075100,Μπούντα,1
+star/j214012-163936,Νασίρα,1
+star/j214200+511124,Αζελφαφάγκε,1
+star/j214648-160748,Ντενέμπ Αλγκέντι,1
+star/j215400-372136,Αλντανάμπ,1
+star/j220336+643748,Κούρχα,1
+star/j220600-001912,Σανταλμέλικ,1
+star/j221012+061200,Μπιχάμ,1
+star/j221648-074648,Άνκα,1
+star/j222136-012324,Σανταχμπία,1
+star/j223748-041348,Σίτουλα,1
+star/j224124+104948,Χομάμ,1
+star/j224236-465248,Τιάκι,1
+star/j224312+301312,Ματάρ,1
+star/j224948+243600,Σανταλμπάρι,1
+star/j225436-154912,Σκατ,1
+star/j225736+204612,Ελβέτιος,1
+star/j230336+034912,Φουμαλσαμακάχ,1
+star/j232024+234424,Σαλμ,1
+star/j232512+232400,Αλκαράμπ,1
+star/j233112+391424,Βεριτάτε,1
+star/j233936+773748,Ερράι,1
+star/kaus_australis,Κάους Αουστράλις,1
+star/kochab,Κοτσάμπ,1
+star/markab,Μαρκάμπ,1
+star/menkar,Μενκάρ,1
+star/merak,Μεράκ,1
+star/mirach,Μιράχ,1
+star/mirphak,Μιρφάκ,1
+star/nunki,Νούνκι,1
+star/phad,Φέκντα,1
+star/polaris,Πολικός Αστέρας,1
+star/polaris,Αστέρι του Βορρά,0
+star/polaris,Πολικός Αστέρας,0
+star/pollux,Πολυδεύκης,1
+star/procyon,Προκύων,1
+star/rasalhague,Ρας Αλχάγκ,1
+star/regulus,Βασιλίσκος,1
+star/rigel,Ρίγκελ,1
+star/rigil_kentaurus_a,Άλφα Κενταύρου,1
+star/rigil_kentaurus_a,Άλφα Κενταύρου,0
+star/rigil_kentaurus_a,Άλφα Κενταύρου,0
+star/rigil_kentaurus_a,Ρίγκιλ,0
+star/saiph,Σάιφ,1
+star/scheat,Σχεάτ,1
+star/shaula,Σάουλα,1
+star/shedir,Σεντίρ,1
+star/sirius,Σείριος,1
+star/sirius,Σείριος,0
+star/spica,Στάχυς,1
+star/unukalhai,Ουνουκαλχάι,1
+star/vega,Βέγας,1
+star/vindemiatrix,Προτρυγετήρ,1

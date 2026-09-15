@@ -1,0 +1,549 @@
+object_id,name,is_primary
+constellation/andromeda,Andromeda,1
+constellation/antlia,Vývěva,1
+constellation/apus,Rajka,1
+constellation/aquarius,Vodnář,1
+constellation/aquila,Orel,1
+constellation/ara,Oltář,1
+constellation/aries,Beran,1
+constellation/auriga,Vozka,1
+constellation/bootes,Pastýř,1
+constellation/caelum,Rydlo,1
+constellation/camelopardalis,Žirafa,1
+constellation/cancer,Rak,1
+constellation/canes_venatici,Honicí psi,1
+constellation/canis_major,Velký pes,1
+constellation/canis_minor,Malý pes,1
+constellation/capricornus,Kozoroh,1
+constellation/carina,Lodní kýl,1
+constellation/cassiopeia,Kasiopeja,1
+constellation/centaurus,Kentaur,1
+constellation/cepheus,Cefeus,1
+constellation/cetus,Velryba,1
+constellation/chamaeleon,Chameleon,1
+constellation/circinus,Kružítko,1
+constellation/columba,Holubice,1
+constellation/coma_berenices,Vlasy Bereniky,1
+constellation/corona_australis,Jižní koruna,1
+constellation/corona_borealis,Severní koruna,1
+constellation/corvus,Havran,1
+constellation/crater,Pohár,1
+constellation/crux,Jižní kříž,1
+constellation/cygnus,Labuť,1
+constellation/delphinus,Delfín,1
+constellation/dorado,Mečoun,1
+constellation/draco,Drak,1
+constellation/equuleus,Koníček,1
+constellation/eridanus,Eridanus,1
+constellation/fornax,Pec,1
+constellation/gemini,Blíženci,1
+constellation/grus,Jeřáb,1
+constellation/hercules,Herkules,1
+constellation/horologium,Hodiny,1
+constellation/hydra,Hydra,1
+constellation/hydrus,Malý vodní had,1
+constellation/indus,Indián,1
+constellation/lacerta,Ještěrka,1
+constellation/leo,Lev,1
+constellation/leo_minor,Malý lev,1
+constellation/lepus,Zajíc,1
+constellation/libra,Váhy,1
+constellation/lupus,Vlk,1
+constellation/lynx,Rys,1
+constellation/lyra,Lyra,1
+constellation/mensa,Tabulová hora,1
+constellation/microscopium,Mikroskop,1
+constellation/monoceros,Jednorožec,1
+constellation/musca,Moucha,1
+constellation/norma,Pravítko,1
+constellation/octans,Oktant,1
+constellation/ophiuchus,Hadonoš,1
+constellation/orion,Orion,1
+constellation/pavo,Páv,1
+constellation/pegasus,Pegas,1
+constellation/perseus,Perseus,1
+constellation/phoenix,Fénix,1
+constellation/pictor,Malíř,1
+constellation/pisces,Ryby,1
+constellation/piscis_austrinus,Jižní ryby,1
+constellation/puppis,Záď lodi,1
+constellation/pyxis,Kompas,1
+constellation/reticulum,Síť,1
+constellation/sagitta,Šíp,1
+constellation/sagittarius,Střelec,1
+constellation/scorpius,Štír,1
+constellation/sculptor,Sochař,1
+constellation/scutum,Štít,1
+constellation/serpens_caput,Hlava hada,1
+constellation/serpens_cauda,Ocas Hada,1
+constellation/sextans,Sextant,1
+constellation/taurus,Býk,1
+constellation/telescopium,Dalekohled,1
+constellation/triangulum,Trojúhelník,1
+constellation/triangulum_australe,Jižní trojúhelník,1
+constellation/tucana,Tukan,1
+constellation/ursa_major,Velká medvědice,1
+constellation/ursa_minor,Malá medvědice,1
+constellation/vela,Plachty,1
+constellation/virgo,Panna,1
+constellation/volans,Létající ryba,1
+constellation/vulpecula,Lištička,1
+dso/blue_snowball_nebula,Modrá sněhová mlhovina,1
+dso/centaurus_a,Centaurus A,1
+dso/coathanger,Věšák,1
+dso/coathanger,Brocchinova hvězdokupa,0
+dso/coma_star_cluster,Hvězdokupa ve Vlasech Bereniky,1
+dso/coma_star_cluster,Hvězdokupa Vlasů Bereniky,0
+dso/cygnus_x_1,Binární černá díra,1
+dso/cygnus_x_1,Hvězdná černá díra,0
+dso/double_cluster,Dvojitá hvězdokupa,1
+dso/double_cluster,h a χ Persei,0
+dso/double_cluster,NGC 869 & NGC 884,0
+dso/eta_carinae_nebula,Mlhovina Eta Carinae,1
+dso/eta_carinae_nebula,Mlhovina v Kýlu,0
+dso/exposed_cranium_nebula,Mlhovina Exponovaná lebka,1
+dso/ghost_of_jupiter,Duch Jupitera,1
+dso/hdf,Hubbleovo hluboké pole,1
+dso/hdf,Hubbleovo hluboké pole,0
+dso/helix_nebula,Helixová mlhovina,1
+dso/helix_nebula,Boží oko,0
+dso/hyades,Hyády,1
+dso/jewel_box,Klenotnice,1
+dso/jewel_box,Herschelova klenotnice,0
+dso/jewel_box,Hvězdokupa Kappa Crucis,0
+dso/lmc,Velké Magellanovo mračno,1
+dso/lmc,Velký Magellanův oblak,0
+dso/m1,Krabí mlhovina,1
+dso/m101,Galaxie Větrník,1
+dso/m102,Galaxie Vřeteno,1
+dso/m104,Galaxie Sombrero,1
+dso/m11,Hvězdokupa Divoká kachna,1
+dso/m13,Kulová hvězdokupa Herkules,1
+dso/m13,Kulová hvězdokupa v Herkulovi,0
+dso/m16,Orlí mlhovina,1
+dso/m20,Mlhovina Trifid,1
+dso/m24,Hvězdný oblak Střelce,1
+dso/m27,Mlhovina Činka,1
+dso/m31,Galaxie Andromeda,1
+dso/m33,Galaxie v Trojúhelníku,1
+dso/m40,Winnecke 4,1
+dso/m42,Mlhovina Orion,1
+dso/m43,Mlhovina De Mairan,1
+dso/m44,Hvězdokupa Včelí úl,1
+dso/m44,Jesličky,0
+dso/m45,Plejády,1
+dso/m45,Sedm sester,0
+dso/m51,Vírová galaxie,1
+dso/m57,Prstencová mlhovina,1
+dso/m6,Motýlí hvězdokupa,1
+dso/m63,Galaxie Slunečnice,1
+dso/m64,Galaxie Černé oko,1
+dso/m7,Ocas štíra,1
+dso/m7,Ptolemaiova hvězdokupa,0
+dso/m74,Galaxie Fantom,1
+dso/m76,Malá mlhovina Činka,1
+dso/m8,Mlhovina Laguna,1
+dso/m81,Bodeho galaxie,1
+dso/m82,Galaxie Cigareta,1
+dso/m83,Jižní Větrník,1
+dso/m97,Mlhovina Soví oko,1
+dso/n47_tucanae,47 Tucanae,1
+dso/ngc_6543,Mlhovina Kočičí oko,1
+dso/north_america_nebula,Mlhovina Severní Amerika,1
+dso/omega_centauri,Kulová hvězdokupa Omega Centauri,1
+dso/omega_centauri,ω Centauri,0
+dso/saturn_nebula,Saturnova mlhovina,1
+dso/sculptor_galaxy,Galaxie Sochař,1
+dso/sculptor_galaxy,Galaxie Stříbrného dolaru,0
+dso/sculptor_galaxy,Galaxie Stříbrné mince,0
+dso/sgr_a_star,Sgr A*,1
+dso/sgr_a_star,Černá díra,0
+dso/sgr_a_star,Galaktické centrum,0
+dso/smc,Malý Magellanův oblak,1
+dso/smc,Nubecula Minor,0
+dso/t_crb,T Coronae Borealis,1
+dso/t_crb,Hvězda Blaze,0
+dso/tarantula_nebula,Mlhovina Tarantule,1
+dso/tarantula_nebula,30 Doradus,0
+dso/willman_1,Willman 1,1
+dso/willman_1,Galaxie Beth Willmanové,0
+moon/ariel,Ariel,1
+moon/callisto,Kallisto,1
+moon/deimos,Deimos,1
+moon/dione,Dione,1
+moon/europa,Europa,1
+moon/ganymede,Ganymedes,1
+moon/iapetus,Iapetus,1
+moon/io,Io,1
+moon/oberon,Oberon,1
+moon/phobos,Fobos,1
+moon/rhea,Rhea,1
+moon/tethys,Tethys,1
+moon/titan,Titan,1
+moon/titania,Titania,1
+moon/triton,Triton,1
+moon/umbriel,Umbriel,1
+planet/jupiter,Jupiter,1
+planet/mars,Mars,1
+planet/mercury,Merkur,1
+planet/moon,Měsíc,1
+planet/neptune,Neptun,1
+planet/pluto,Pluto,1
+planet/saturn,Saturn,1
+planet/sun,Slunce,1
+planet/uranus,Uran,1
+planet/venus,Venuše,1
+shower/aquariids,Éta Aquaridy,1
+shower/deltaaquariids,Jižní Delta Aquaridy,1
+shower/geminids,Geminidy,1
+shower/leonids,Leonidy,1
+shower/lyrids,Lyridy,1
+shower/orionids,Orionidy,1
+shower/perseids,Perseidy,1
+shower/puppidvelids,Pí Puppidy,1
+shower/quadrantids,Kvadrantidy,1
+shower/ursids,Ursidy,1
+star/achernar,Achernar,1
+star/acrux,Acrux,1
+star/adhara,Adhara,1
+star/alcyone,Alcyone,1
+star/aldebaran,Aldebaran,1
+star/alderamin,Alderamin,1
+star/algenib,Algenib,1
+star/algieba,Algieba,1
+star/algol,Algol,1
+star/alhena,Alhena,1
+star/alioth,Alioth,1
+star/alkaid,Alkaid,1
+star/alnair,Alnair,1
+star/alnath,Alnath,1
+star/alnath,Elnath,0
+star/alnilam,Alnilam,1
+star/alphard,Alphard,1
+star/alphekka,Alphecca,1
+star/alphekka,Alphecca,0
+star/alpheratz,Alpheratz,1
+star/altair,Altair,1
+star/ankaa,Ankaa,1
+star/antares,Antares,1
+star/arcturus,Arktur,1
+star/arneb,Arneb,1
+star/betelgeuse,Betelgeuse,1
+star/canopus,Canopus,1
+star/capella,Capella,1
+star/caph,Caph,1
+star/castor,Castor,1
+star/deneb,Deneb,1
+star/denebola,Denebola,1
+star/diphda,Deneb Kaitos,1
+star/dubhe,Dubhe,1
+star/e_lyrae,Epsylon Lyrae,1
+star/enif,Enif,1
+star/etamin,Etamin,1
+star/etamin,Eltanin,0
+star/fomalhaut,Fomalhaut,1
+star/hadar,Hadar,1
+star/hamal,Hamal,1
+star/izar,Izar,1
+star/j003712+535400,Fulu,1
+star/j004912+574912,Achird,1
+star/j005624+591048,Castula,1
+star/j010824-551500,Wurren,1
+star/j011348+073448,Revati,1
+star/j012212+453148,Adhil,1
+star/j012548+601424,Ruchbah,1
+star/j013112+152100,Alpherg,1
+star/j013636+412436,Titawin,1
+star/j013748+483748,Nembus,1
+star/j014536+090936,Torcular,1
+star/j015136-101948,Baten Kaitos,1
+star/j015248+293448,Mothallah,1
+star/j015436+204836,Sheratan,1
+star/j015436+634012,Segin,1
+star/j020148+024536,Alrescha,1
+star/j020336+421948,Almach,1
+star/j024312+031424,Kaffaljidhma,1
+star/j024800+291500,Lilii Borea,1
+star/j024948+271536,Bharani,1
+star/j025024+555400,Miram,1
+star/j025100-210000,Angetenar,1
+star/j025624-085400,Azha,1
+star/j025812-401800,Acamar,1
+star/j030936+445136,Misam,1
+star/j031124+194348,Botein,1
+star/j031200-285924,Dalim,1
+star/j031536-084912,Zibal,1
+star/j033300-092736,Ran,1
+star/j034312-094612,Rana,1
+star/j034424+321724,Atik,1
+star/j034500+240636,Elektra,1
+star/j034500+241724,Kelaeno,1
+star/j034500+242812,Taygeta,1
+star/j034536+242212,Maia,1
+star/j034612+235700,Merope,1
+star/j034612+243300,Asterope,1
+star/j034912+240300,Atlas,1
+star/j034912+240824,Pleione,1
+star/j035812-133036,Zaurak,1
+star/j035848+354724,Menkib,1
+star/j041200-065024,Beid,1
+star/j041500-073824,Keid,1
+star/j041948+153748,Prima Hyadum,1
+star/j042248+173224,Secunda Hyadum,1
+star/j042400-340112,Beemim,1
+star/j042848+155212,Chamukuy,1
+star/j042848+191048,Ain,1
+star/j043524-303336,Theemin,1
+star/j043824-141800,Sceptrum,1
+star/j044948+065736,Tabit,1
+star/j045700+331012,Hassaleh,1
+star/j050148+434912,Almaaz,1
+star/j050224+410448,Saclateni,1
+star/j050636+411348,Haedus,1
+star/j050748-050524,Cursa,1
+star/j052512+062100,Bellatrix,1
+star/j052812-204536,Nihal,1
+star/j053148-001800,Mintaka,1
+star/j053524+095548,Meissa,1
+star/j053524-055436,Hatysa,1
+star/j053748+210824,Tianguan,1
+star/j053936-340412,Phact,1
+star/j054048-015624,Alnitak,1
+star/j055100-354612,Wazn,1
+star/j055924+445700,Menkalinan,1
+star/j060000+371236,Mahasim,1
+star/j060748-371500,Elkurud,1
+star/j061500+223036,Propus,1
+star/j062024-300336,Furud,1
+star/j062248+223036,Tejat,1
+star/j062248-175736,Mirzam,1
+star/j064348+250748,Mebsuta,1
+star/j064500+125400,Alzirr,1
+star/j070148-275548,Nganurganity,1
+star/j070336-153748,Muliphein,1
+star/j070412+203412,Mekbuda,1
+star/j070824-262324,Wezen,1
+star/j072024+215848,Wasat,1
+star/j072400-291800,Aludra,1
+star/j072700+081724,Gomeisa,1
+star/j073900+343448,Jishui,1
+star/j074912-245136,Azmidi,1
+star/j080336-400000,Naos,1
+star/j080748-241800,Tureis,1
+star/j081200+173900,Tegmine,1
+star/j081648+091124,Tarf,1
+star/j082024+240112,Piautos,1
+star/j082248+431124,Alsciaukat,1
+star/j082248-593036,Avior,1
+star/j083000+604312,Muscida,1
+star/j083900+032024,Minchir,1
+star/j084312+212812,Asellus Borealis,1
+star/j084424+180900,Asellus Australis,1
+star/j084500-544236,Alsephina,1
+star/j084648+062512,Ashlesha,1
+star/j085248+281948,Copernicus,1
+star/j085812+115136,Acubens,1
+star/j085924+480224,Talitha,1
+star/j090336+470936,Alkaphrah,1
+star/j090748-432548,Suhail,1
+star/j090936+220300,Nahn,1
+star/j091312-694312,Miaplacidus,1
+star/j091648-591648,Aspidiske,1
+star/j092212-550036,Markeb,1
+star/j092848+453600,Intercrus,1
+star/j093148+225812,Alterf,1
+star/j093936-010824,Ukdah,1
+star/j094124+095324,Subra,1
+star/j095136-145100,Zhang,1
+star/j095248+260036,Rasalas,1
+star/j095436-190036,Felis,1
+star/j101648+232512,Adhafera,1
+star/j101648+425436,Tania Borealis,1
+star/j102212+413000,Tania Australis,1
+star/j105324+341312,Praecipua,1
+star/j105924+402548,Chalawan,1
+star/j110000-181800,Alkes,1
+star/j111424+152548,Chertan,1
+star/j111424+203112,Zosma,1
+star/j111800+313224,Alula Australis,1
+star/j111836+330524,Alula Borealis,1
+star/j113112+691948,Giausar,1
+star/j114612+474648,Taiyangshou,1
+star/j115024+014612,Zavijava,1
+star/j120524+765436,Tonatiuh,1
+star/j120824-244348,Alchiba,1
+star/j121500-584500,Imai,1
+star/j121536+570148,Megrez,1
+star/j121536-173224,Gienah,1
+star/j121948-004012,Zaniah,1
+star/j122136-602400,Ginan,1
+star/j123000-163112,Algorab,1
+star/j123112-570636,Gacrux,1
+star/j123336+412136,Chara,1
+star/j123412-232400,Kraz,1
+star/j124124-012700,Porrima,1
+star/j124500+452624,La Superba,1
+star/j124724+664724,Tianyi,1
+star/j124800-594124,Mimosa,1
+star/j125512+652624,Taiyi,1
+star/j125548+032400,Minelauva,1
+star/j125548+381912,Cor Caroli,1
+star/j131012+173148,Diadem,1
+star/j132400+545548,Mizar,1
+star/j132512+545924,Alcor,1
+star/j133448-003600,Heze,1
+star/j135436+182400,Muphrid,1
+star/j140412+642248,Thuban,1
+star/j140636-362212,Menkent,1
+star/j141236-101612,Kang,1
+star/j141612+460524,Xuange,1
+star/j141612-060000,Syrma,1
+star/j141912-132212,Khambalia,1
+star/j142812-021348,Elgafar,1
+star/j143148+381836,Seginus,1
+star/j143936-605024,Toliman,1
+star/j144912+460712,Merga,1
+star/j145100-160224,Zubenelgenubi,1
+star/j150148+402324,Nekkar,1
+star/j150412-251648,Brachium,1
+star/j151648-092248,Zubeneschamali,1
+star/j152100+714948,Ferkad,1
+star/j152436+372248,Alkalurops,1
+star/j152512+585812,Edasich,1
+star/j152736+290636,Nusakan,1
+star/j153524-144724,Zubenelhakrabi,1
+star/j154836+180824,Gudja,1
+star/j155700-291236,Iklil,1
+star/j155848-260636,Fang,1
+star/j160036-223712,Dschubba,1
+star/j160524-194836,Acrab,1
+star/j160748+170300,Marsic,1
+star/j161200-192736,Jabbah,1
+star/j161424-034124,Yed Prior,1
+star/j161836-044124,Yed Posterior,1
+star/j162100-253524,Alniyat,1
+star/j162400+613036,Athebyne,1
+star/j162512+140148,Cujam,1
+star/j163000+212924,Kornephoros,1
+star/j163112+015848,Marfik,1
+star/j163600-281312,Paikauhale,1
+star/j164836-690148,Atria,1
+star/j165024-341724,Larawag,1
+star/j165136-380300,Xamidimura,1
+star/j165212-380112,Pipirima,1
+star/j170524+542812,Alrakis,1
+star/j170900+654236,Aldhibah,1
+star/j171012-154348,Sabik,1
+star/j171424+142324,Rasalgethi,1
+star/j171500+245024,Sarin,1
+star/j171536-263524,Guniibuu,1
+star/j173036+260636,Maasym,1
+star/j173036+521800,Rastaban,1
+star/j173036-371800,Lesath,1
+star/j173224+863524,Yildun,1
+star/j173712-430000,Sargas,1
+star/j174200+720900,Dziban,1
+star/j174312+043412,Cebalrai,1
+star/j174348+534800,Alruba,1
+star/j174424-514948,Cervantes,1
+star/j174948-370224,Fuyue,1
+star/j175324+565212,Grumium,1
+star/j180600-302512,Alnasl,1
+star/j181348-210336,Polis,1
+star/j182100-294948,Kaus Media,1
+star/j182548+653336,Fafnir,1
+star/j182812-252512,Kaus Borealis,1
+star/j184348+363336,Xihe,1
+star/j184948+332136,Sheliak,1
+star/j185400-224424,Ainalrami,1
+star/j185624+041200,Alya,1
+star/j185848+324124,Sulafat,1
+star/j190224-295248,Ascella,1
+star/j190524+135136,Okab,1
+star/j190936-210112,Albaldah,1
+star/j190936-375400,Meridiana,1
+star/j191236+673936,Altais,1
+star/j191348+390900,Aladfar,1
+star/j192248-442736,Arkab Prior,1
+star/j192324-444800,Arkab Posterior,1
+star/j192400-403712,Rukbat,1
+star/j192848+244012,Anser,1
+star/j193036+275736,Albireo,1
+star/j193224+694012,Alsafi,1
+star/j194012+180036,Sham,1
+star/j194500+450748,Fawaris,1
+star/j194612+103636,Tarazed,1
+star/j195400+082736,Libertas,1
+star/j195512+062436,Alshain,1
+star/j195548-261800,Terebellum,1
+star/j201800-123224,Algedi,1
+star/j202024-124536,Alshat,1
+star/j202100-144648,Dabih,1
+star/j202212+401536,Sadr,1
+star/j202548-564348,Peacock,1
+star/j203300+111800,Aldulfin,1
+star/j203748+143600,Rotanev,1
+star/j203936+155436,Sualocin,1
+star/j204612+335812,Aljanah,1
+star/j204724-093000,Albali,1
+star/j205812+105024,Musica,1
+star/j210900-885736,Polaris Australis,1
+star/j211536+051500,Kitalpha,1
+star/j212848+703336,Alfirk,1
+star/j213148-053412,Sadalsuud,1
+star/j213748-075100,Bunda,1
+star/j214012-163936,Nashira,1
+star/j214200+511124,Azelfafage,1
+star/j214648-160748,Deneb Algedi,1
+star/j215400-372136,Aldhanab,1
+star/j220336+643748,Kurhah,1
+star/j220600-001912,Sadalmelik,1
+star/j221012+061200,Biham,1
+star/j221648-074648,Ancha,1
+star/j222136-012324,Sadachbia,1
+star/j223748-041348,Situla,1
+star/j224124+104948,Homam,1
+star/j224236-465248,Tiaki,1
+star/j224312+301312,Matar,1
+star/j224948+243600,Sadalbari,1
+star/j225436-154912,Skat,1
+star/j225736+204612,Helvetios,1
+star/j230336+034912,Fumalsamakah,1
+star/j232024+234424,Salm,1
+star/j232512+232400,Alkarab,1
+star/j233112+391424,Veritate,1
+star/j233936+773748,Errai,1
+star/kaus_australis,Kaus Australis,1
+star/kochab,Kochab,1
+star/markab,Markab,1
+star/menkar,Menkar,1
+star/merak,Merak,1
+star/mirach,Mirach,1
+star/mirphak,Mirphak,1
+star/mirphak,Mirfak,0
+star/nunki,Nunki,1
+star/phad,Phad,1
+star/phad,Phecda,0
+star/polaris,Polárka,1
+star/polaris,Severka,0
+star/polaris,Polárka,0
+star/pollux,Pollux,1
+star/procyon,Procyon,1
+star/rasalhague,Rasalhague,1
+star/regulus,Regulus,1
+star/rigel,Rigel,1
+star/rigil_kentaurus_a,Alfa Centauri,1
+star/rigil_kentaurus_a,Rigil Kentaurus A,0
+star/rigil_kentaurus_a,Rigel Kentaurus A,0
+star/rigil_kentaurus_a,Rigil Kent,0
+star/saiph,Saiph,1
+star/scheat,Scheat,1
+star/shaula,Shaula,1
+star/shedir,Shedir,1
+star/shedir,Schedar,0
+star/sirius,Sírius,1
+star/sirius,Psí hvězda,0
+star/spica,Spica,1
+star/unukalhai,Unukalhai,1
+star/vega,Vega,1
+star/vindemiatrix,Vindemiatrix,1

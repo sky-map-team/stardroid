@@ -1,0 +1,844 @@
+<title>Sky Map — Trails &amp; Reference Frames</title>
+<style>
+  :root {
+    --bg: #131720; --surface: #1b2230; --surface2: #222b3d; --text: #e7ecf5;
+    --muted: #93a0b4; --accent: #f2b04a; --accent-ink: #131720; --line: #2a3346;
+    --good: #6fbf8a; --chipbg: rgba(242, 176, 74, 0.14);
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #f6f3ec; --surface: #fffdf8; --surface2: #f0ebdf; --text: #24282f;
+      --muted: #6a6f78; --accent: #b4711d; --accent-ink: #fffdf8; --line: #e2dcce;
+      --good: #2e7d4f; --chipbg: rgba(180, 113, 29, 0.12);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #131720; --surface: #1b2230; --surface2: #222b3d; --text: #e7ecf5;
+    --muted: #93a0b4; --accent: #f2b04a; --accent-ink: #131720; --line: #2a3346;
+    --good: #6fbf8a; --chipbg: rgba(242, 176, 74, 0.14);
+  }
+  :root[data-theme="light"] {
+    --bg: #f6f3ec; --surface: #fffdf8; --surface2: #f0ebdf; --text: #24282f;
+    --muted: #6a6f78; --accent: #b4711d; --accent-ink: #fffdf8; --line: #e2dcce;
+    --good: #2e7d4f; --chipbg: rgba(180, 113, 29, 0.12);
+  }
+  * { box-sizing: border-box; }
+  body { background: var(--bg); color: var(--text); margin: 0;
+         font: 15px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  .cond { font-family: "Avenir Next Condensed", "Arial Narrow", "Roboto Condensed", sans-serif; }
+  .mono { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+          font-variant-numeric: tabular-nums; }
+  header { max-width: 1180px; margin: 0 auto; padding: 40px 24px 8px; }
+  .eyebrow { letter-spacing: 0.14em; text-transform: uppercase; font-size: 12.5px;
+             font-weight: 600; color: var(--accent); }
+  h1 { font-family: "Avenir Next Condensed", "Arial Narrow", sans-serif;
+       font-size: clamp(28px, 4vw, 40px); font-weight: 600; margin: 6px 0 4px;
+       text-wrap: balance; }
+  header p { color: var(--muted); max-width: 68ch; margin: 6px 0 0; }
+  main { max-width: 1180px; margin: 0 auto; padding: 24px; display: grid;
+         grid-template-columns: 400px 1fr; gap: 32px; align-items: start; }
+  @media (max-width: 940px) { main { grid-template-columns: 1fr; } }
+
+  .phonewrap { position: sticky; top: 24px; }
+  @media (max-width: 940px) { .phonewrap { position: static; } }
+  .phone { width: 380px; max-width: 100%; border-radius: 34px; padding: 10px;
+           background: #06070a; border: 1px solid #2c3242;
+           box-shadow: 0 24px 60px rgba(0,0,0,0.45); margin: 0 auto; }
+  .screen { position: relative; border-radius: 26px; overflow: hidden; background: #000;
+            height: 700px; touch-action: none; }
+  .screen canvas#sky { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .caption { text-align: center; color: var(--muted); font-size: 13px; margin: 12px auto 0;
+             max-width: 380px; min-height: 34px; }
+
+  .framebar { position: absolute; left: 10px; right: 10px; bottom: 10px; display: flex;
+              gap: 5px; padding: 7px; border-radius: 16px;
+              background: rgba(20,26,38,0.90); border: 1px solid rgba(255,255,255,0.11);
+              backdrop-filter: blur(8px); }
+  .fbtn { flex: 1 1 0; text-align: center; padding: 8px 4px; border-radius: 11px;
+          font-size: 11.5px; cursor: pointer; color: #b9c4d4;
+          background: rgba(255,255,255,0.06); border: 1px solid transparent;
+          line-height: 1.3; }
+  .fbtn b { display: block; font-size: 12.5px; color: #e7ecf5; font-weight: 600; }
+  .fbtn.on { background: rgba(242,176,74,0.22); border-color: rgba(242,176,74,0.5); }
+  .fbtn.on b { color: #f7d9a6; }
+  .fbtn.dis { opacity: 0.3; cursor: not-allowed; }
+
+  .infocard { position: absolute; left: 14px; right: 14px; bottom: 74px; border-radius: 16px;
+              background: rgba(24,30,42,0.97); border: 1px solid rgba(255,255,255,0.13);
+              padding: 12px 14px 13px; box-shadow: 0 14px 40px rgba(0,0,0,0.5);
+              transition: opacity 0.2s ease, transform 0.2s ease; }
+  .infocard.gone { opacity: 0; transform: translateY(8px); pointer-events: none; }
+  .ictitle { font-size: 16px; font-weight: 600; margin-bottom: 1px; }
+  .icsub { font-size: 11.5px; color: #93a0b4; margin-bottom: 9px; }
+  .icact { font-size: 11.5px; color: #8f9cb0; margin: 9px 0 6px;
+           text-transform: uppercase; letter-spacing: 0.08em; }
+  .icrow { display: flex; align-items: center; gap: 9px; padding: 8px 9px;
+           border-radius: 10px; cursor: pointer; font-size: 13px; color: #dce4f0;
+           background: rgba(255,255,255,0.055); margin-bottom: 5px; }
+  .icrow:hover { background: rgba(255,255,255,0.11); }
+  .icrow.on { background: rgba(242,176,74,0.20); color: #f7d9a6; font-weight: 600; }
+  .icrow.dis { opacity: 0.32; pointer-events: none; }
+  .icrow .q { flex: 1 1 auto; }
+  .icrow small { color: #8f9cb0; font-weight: 400; font-size: 11px; }
+  .icrow.on small { color: #d9bd8a; }
+
+  .objpick { position: absolute; top: 12px; left: 50%; transform: translateX(-50%);
+             display: flex; gap: 5px; padding: 5px; border-radius: 999px;
+             background: rgba(20,26,38,0.86); border: 1px solid rgba(255,255,255,0.11); }
+  .obtn { padding: 5px 11px; border-radius: 999px; font-size: 12px; cursor: pointer;
+          color: #b9c4d4; }
+  .obtn.on { background: rgba(242,176,74,0.24); color: #f7d9a6; font-weight: 600; }
+
+  .readout { position: absolute; top: 54px; left: 12px; font-size: 10.5px; color: #93a0b4;
+             background: rgba(20,26,38,0.74); border: 1px solid rgba(255,255,255,0.08);
+             border-radius: 10px; padding: 7px 10px; line-height: 1.55; max-width: 210px; }
+  .readout b { color: #e7ecf5; font-weight: 600; }
+  .readout .warn { color: #f2b04a; }
+
+  section { border-top: 1px solid var(--line); padding-top: 22px; margin-top: 26px; }
+  section:first-of-type { border-top: none; margin-top: 0; padding-top: 0; }
+  h2 { font-family: "Avenir Next Condensed", "Arial Narrow", sans-serif; font-size: 23px;
+       font-weight: 600; margin: 0 0 4px; }
+  h3 { font-size: 15px; margin: 18px 0 4px; }
+  .lede { color: var(--muted); margin-top: 0; }
+  ul { margin: 8px 0; padding-left: 20px; } li { margin: 5px 0; }
+  .switcher { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 4px; }
+  .tab { padding: 8px 14px; border-radius: 10px; border: 1px solid var(--line);
+         background: var(--surface); color: var(--text); cursor: pointer; font-size: 14px; }
+  .tab.on { background: var(--accent); border-color: var(--accent); color: var(--accent-ink);
+            font-weight: 600; }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
+          padding: 14px 16px; margin: 12px 0; }
+  .card h4 { margin: 0 0 6px; font-size: 14.5px; }
+  .card p:last-child { margin-bottom: 0; }
+  table { border-collapse: collapse; width: 100%; font-size: 14px; margin: 10px 0; }
+  th, td { text-align: left; padding: 7px 9px; border-bottom: 1px solid var(--line);
+           vertical-align: top; }
+  th { color: var(--accent); font-size: 12px; text-transform: uppercase;
+       letter-spacing: 0.07em; }
+  .qq { border-left: 3px solid var(--accent); padding: 2px 0 2px 12px; color: var(--muted);
+        margin: 12px 0; }
+  code { background: var(--surface2); padding: 1px 5px; border-radius: 4px; font-size: 13px;
+         font-family: ui-monospace, Menlo, monospace; }
+  pre { background: var(--surface2); padding: 12px 14px; border-radius: 10px;
+        overflow-x: auto; font-size: 12.5px; line-height: 1.5; margin: 10px 0;
+        font-family: ui-monospace, Menlo, monospace; }
+  .toggle { position: fixed; top: 14px; right: 14px; z-index: 9; padding: 7px 12px;
+            border-radius: 999px; border: 1px solid var(--line); background: var(--surface);
+            color: var(--text); cursor: pointer; font-size: 13px; }
+  footer { max-width: 1180px; margin: 0 auto; padding: 8px 24px 60px; color: var(--muted);
+           font-size: 13px; }
+</style>
+
+<button class="toggle" id="themeToggle">◐ Theme</button>
+
+<header>
+  <div class="eyebrow">Sky Map v2 · design mockup 3 of 3</div>
+  <h1 class="cond">Trails and reference frames</h1>
+  <p>One computation, three pictures. A trail is a path drawn <em>in a frame</em>, not a
+  property of an object — and the frame is what decides whether you see a rise-and-set arc,
+  a retrograde loop, or nothing at all. Switch frames at the bottom and watch the same
+  samples re-project.</p>
+</header>
+
+<main>
+  <div class="phonewrap">
+    <div class="phone">
+      <div class="screen" id="screen">
+        <canvas id="sky"></canvas>
+
+        <div class="objpick" id="objpick"></div>
+        <div class="readout" id="readout"></div>
+
+        <div class="infocard gone" id="infocard"></div>
+
+        <div class="framebar" id="framebar">
+          <div class="fbtn on" data-f="ground"><b>Against the horizon</b>rise &amp; set</div>
+          <div class="fbtn" data-f="sky"><b>Against the stars</b>drift &amp; retrograde</div>
+        </div>
+      </div>
+    </div>
+    <div class="caption" id="caption">Switch frames below the sky.</div>
+  </div>
+
+  <div>
+    <div class="switcher">
+      <button class="tab on" data-demo="frames">The three frames</button>
+      <button class="tab" data-demo="collapse">Stars collapse</button>
+      <button class="tab" data-demo="math">One rotation</button>
+      <button class="tab" data-demo="card">The affordance</button>
+      <button class="tab" data-demo="independent">Frame vs. camera</button>
+    </div>
+    <div id="panels"></div>
+  </div>
+</main>
+
+<footer>Companion to <code>time-travel.html</code> and <code>time-travel-chrome.html</code> ·
+for <code>docs/design/time-travel.md</code></footer>
+
+<script>
+const root = document.documentElement;
+document.getElementById('themeToggle').onclick = () => {
+  const cur = root.getAttribute('data-theme')
+    || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  root.setAttribute('data-theme', cur === 'dark' ? 'light' : 'dark');
+};
+
+// ---------------------------------------------------------------- constants & model
+const LAT = 51.5 * Math.PI / 180, SIN_LAT = Math.sin(LAT), COS_LAT = Math.cos(LAT);
+const DEG = Math.PI / 180, HOUR = 3600, DAY = 86400, SIDEREAL_DAY = 86164.0905;
+const T0 = Date.UTC(2026, 7, 5, 21, 47, 0) / 1000;
+const LST_OFFSET = 4.9255;
+const OBL = 23.44 * DEG;
+const lst = t => ((t - T0) / SIDEREAL_DAY * 2 * Math.PI) + LST_OFFSET;
+
+// ---- vector helpers (the real machinery: everything below is 3-vectors + rotations) ----
+const V = (x, y, z) => ({ x, y, z });
+const dot = (a, b) => a.x * b.x + a.y * b.y + a.z * b.z;
+const cross = (a, b) => V(a.y * b.z - a.z * b.y, a.z * b.x - a.x * b.z, a.x * b.y - a.y * b.x);
+const scale = (a, s) => V(a.x * s, a.y * s, a.z * s);
+const add = (a, b) => V(a.x + b.x, a.y + b.y, a.z + b.z);
+const len = a => Math.sqrt(dot(a, a));
+function norm(a) { const l = len(a) || 1; return scale(a, 1 / l); }
+// Rodrigues: rotate v about unit axis k by angle (right-handed).
+function rotAxis(v, k, angle) {
+  const c = Math.cos(angle), s = Math.sin(angle);
+  return add(add(scale(v, c), scale(cross(k, v), s)), scale(k, dot(k, v) * (1 - c)));
+}
+function raDecToVec(ra, dec) {
+  const cd = Math.cos(dec);
+  return V(cd * Math.cos(ra), cd * Math.sin(ra), Math.sin(dec));
+}
+const CELESTIAL_POLE = V(0, 0, 1);
+// Ecliptic pole, in equatorial coordinates — used to pin the roll of the Sun frame.
+const ECLIPTIC_POLE = norm(V(0, -Math.sin(OBL), Math.cos(OBL)));
+
+// ---- bodies ----
+const NAMED = [
+  ['Vega', 18.62, 38.8, 0.0], ['Deneb', 20.69, 45.3, 1.3], ['Altair', 19.85, 8.9, 0.8],
+  ['Arcturus', 14.26, 19.2, 0.0], ['Antares', 16.49, -26.4, 1.1], ['Polaris', 2.53, 89.3, 2.0],
+  ['Capella', 5.28, 46.0, 0.1], ['Betelgeuse', 5.92, 7.4, 0.5], ['Rigel', 5.24, -8.2, 0.2],
+  ['Sirius', 6.75, -16.7, -1.4], ['Aldebaran', 4.60, 16.5, 0.9], ['Spica', 13.42, -11.2, 1.0],
+  ['Pollux', 7.76, 28.0, 1.1], ['Regulus', 10.14, 12.0, 1.4], ['Fomalhaut', 22.96, -29.6, 1.2],
+];
+const STARS = NAMED.map(([name, raH, decD, mag]) =>
+  ({ ra: raH / 24 * 2 * Math.PI, dec: decD * DEG, mag, name }));
+let seed = 20260805;
+const rnd = () => (seed = (seed * 1664525 + 1013904223) % 4294967296) / 4294967296;
+for (let i = 0; i < 800; i++)
+  STARS.push({ ra: rnd() * 2 * Math.PI, dec: Math.asin(rnd() * 2 - 1),
+               mag: 2.4 + rnd() * 3.4, name: null });
+
+function sunRaDec(t) {
+  const lon = 133 * DEG + (t - T0) / (365.2422 * DAY) * 2 * Math.PI;
+  return { ra: Math.atan2(Math.cos(OBL) * Math.sin(lon), Math.cos(lon)),
+           dec: Math.asin(Math.sin(OBL) * Math.sin(lon)) };
+}
+function moonRaDec(t) {
+  const d = (t - T0) / DAY;
+  const lon = 95 * DEG + d * (2 * Math.PI / 27.32158);
+  const lat = 5.1 * DEG * Math.sin(d * 2 * Math.PI / 27.212);
+  const sl = Math.sin(lon), cl = Math.cos(lon), sb = Math.sin(lat), cb = Math.cos(lat);
+  return { ra: Math.atan2(cb * sl * Math.cos(OBL) - sb * Math.sin(OBL), cb * cl),
+           dec: Math.asin(sb * Math.cos(OBL) + cb * Math.sin(OBL) * sl) };
+}
+const PLANETS = [
+  { key: 'venus', name: 'Venus', a: 0.723, period: 224.7, lon0: 210, color: '#fff2cc', r: 3.0 },
+  { key: 'mars', name: 'Mars', a: 1.524, period: 687.0, lon0: 12, color: '#ff8f6b', r: 3.0 },
+  { key: 'jupiter', name: 'Jupiter', a: 5.203, period: 4331, lon0: 96, color: '#ffd9a0', r: 3.4 },
+];
+function planetRaDec(p, t) {
+  const d = (t - T0) / DAY;
+  const pl = p.lon0 * DEG + d * 2 * Math.PI / p.period;
+  const el = 313 * DEG + d * 2 * Math.PI / 365.256;
+  const x = p.a * Math.cos(pl) - Math.cos(el), y = p.a * Math.sin(pl) - Math.sin(el);
+  const lon = Math.atan2(y, x);
+  return { ra: Math.atan2(Math.cos(OBL) * Math.sin(lon), Math.cos(lon)),
+           dec: Math.asin(Math.sin(OBL) * Math.sin(lon)) };
+}
+function altAz(ra, dec, t) {
+  const H = lst(t) - ra;
+  const alt = Math.asin(Math.max(-1, Math.min(1,
+    Math.sin(dec) * SIN_LAT + Math.cos(dec) * COS_LAT * Math.cos(H))));
+  const az = Math.atan2(-Math.cos(dec) * Math.sin(H),
+    Math.sin(dec) * COS_LAT - Math.cos(dec) * SIN_LAT * Math.cos(H));
+  return { alt, az };
+}
+
+// ---------------------------------------------------------------- THE CORE IDEA
+// A trail is a path drawn IN A FRAME. Every frame is the same one-liner:
+//
+//     trailPoint(t) = R(t) · d(t)
+//
+// where R(t) is the rotation carrying the frame's reference direction at time t back to
+// where it was at t0. The three frames differ ONLY in what reference they use:
+//
+//   sky    -> R(t) = I                          (no transform; stars become points)
+//   ground -> R(t) = rotation about the pole    (undoes diurnal rotation)
+//   object -> R(t) = rotation ref(t) -> ref(t0) (roll pinned by the ecliptic pole)
+//
+function frameRotation(frame, t, t0) {
+  if (frame === 'sky') return v => v;                       // identity
+  if (frame === 'ground') {
+    // Undo the Earth's rotation between t and t0: spin about the celestial pole by the
+    // sidereal angle. This is exactly what "convert to alt/az at time t" amounts to, and
+    // it is why every object traces a circular arc in this frame.
+    const dAngle = lst(t0) - lst(t);
+    return v => rotAxis(v, CELESTIAL_POLE, dAngle);
+  }
+  // Object frame: carry ref(t) onto ref(t0). A rotation between two directions leaves the
+  // roll about the axis free, so we pin it with a secondary reference (the ecliptic pole).
+  // For a SUN reference this changes nothing — the Sun moves along the ecliptic, so the
+  // minimal rotation's axis already IS the ecliptic pole and the two agree exactly. It
+  // matters for an off-ecliptic reference: with the Moon (5.1° inclined) the unpinned
+  // minimal rotation lets the ecliptic pole wander by up to ~116° over a year, twisting
+  // the trail for no physical reason. Pinning costs nothing and removes the failure mode.
+  const refFn = frame === 'sun' ? sunRaDec : moonRaDec;
+  const a = raDecToVec(refFn(t).ra, refFn(t).dec);
+  const b = raDecToVec(refFn(t0).ra, refFn(t0).dec);
+  return v => alignFrames(v, a, b);
+}
+// Build the rotation taking (a, ecliptic pole) onto (b, ecliptic pole), then apply to v.
+function alignFrames(v, a, b) {
+  // Orthonormal triad about each reference direction, sharing the ecliptic pole as "up".
+  const ua = norm(cross(a, ECLIPTIC_POLE)), wa = cross(a, ua);
+  const ub = norm(cross(b, ECLIPTIC_POLE)), wb = cross(b, ub);
+  // Express v in a's triad, then rebuild it in b's — a change of basis, roll included.
+  const c1 = dot(v, a), c2 = dot(v, ua), c3 = dot(v, wa);
+  return add(add(scale(b, c1), scale(ub, c2)), scale(wb, c3));
+}
+
+// Sample a body's trail in a frame. `bodyFn(t) -> {ra,dec}`.
+function trailSamples(bodyFn, frame, t0, spanS, steps) {
+  const out = [];
+  for (let i = 0; i <= steps; i++) {
+    const t = t0 - spanS / 2 + spanS * i / steps;
+    const rd = bodyFn(t);
+    const R = frameRotation(frame, t, t0);
+    out.push({ t, v: R(raDecToVec(rd.ra, rd.dec)) });
+  }
+  return out;
+}
+
+// ---------------------------------------------------------------- state
+// Each object carries the epoch it is demonstrated at. Without this the mockup showed an
+// empty sky: at the base epoch (2026-08-05 21:47, camera SSE) every solar-system body is
+// both below the horizon and behind the camera — they cluster in the north where the Sun
+// has just set. `epochOffset` is seconds from T0, chosen so the object sits high in a dark
+// sky with its whole ±3 h trail above the horizon.
+// Venus is deliberately absent: with the circular coplanar orbits used here it never rises
+// above ~6°, so it can never share a field with the others. Jupiter replaces it and is the
+// better retrograde demo anyway (a 23° track over 300 days).
+const OBJECTS = {
+  mars:    { label: 'Mars',    fn: t => planetRaDec(PLANETS[1], t), color: '#ff8f6b',
+             epochOffset: 6328800 },
+  jupiter: { label: 'Jupiter', fn: t => planetRaDec(PLANETS[2], t), color: '#ffd9a0',
+             epochOffset: 18655200 },
+  moon:    { label: 'Moon',    fn: moonRaDec,                       color: '#dfe6f2',
+             epochOffset: 11847600, spanScale: 0.02 },
+  vega:    { label: 'Vega',    fn: () => ({ ra: 18.62/24*2*Math.PI, dec: 38.8*DEG }),
+             color: '#bcd4ff', isStar: true, epochOffset: 29984400 },
+};
+const state = {
+  obj: 'mars', frame: 'ground', demo: 'frames',
+  span: 6 * HOUR, cardOpen: false,
+  camAz: 150 * DEG, camAlt: 30 * DEG, fov: 96 * DEG, epoch: T0,
+};
+// Span is frame-dependent: hours show a diurnal arc, months show retrograde. It is also
+// object-dependent — the Moon laps the sky every 27 days, so a 300-day star-frame trail
+// wraps the whole celestial sphere and no camera can frame it. `spanScale` shortens the
+// long-frame spans for fast movers so one cycle is shown instead of eleven.
+const SPAN_FOR = { ground: 6 * HOUR, sky: 300 * DAY };
+function spanFor(frame, objKey) {
+  const base = SPAN_FOR[frame];
+  const scale = (OBJECTS[objKey] || {}).spanScale;
+  return frame === 'ground' || !scale ? base : base * scale;
+}
+
+const sky = document.getElementById('sky'), sctx = sky.getContext('2d');
+const lerp = (a, b, t) => a + (b - a) * t;
+
+/** The instant being displayed: T0 shifted by the selected object's demo epoch. */
+function now() { return T0 + (OBJECTS[state.obj].epochOffset || 0); }
+
+/**
+ * Point the camera at the middle of the current trail, framed to contain it. The real app
+ * does this on tap-to-identify and on search (`aimAt`), so the mockup matching it is not a
+ * cheat — and without it the demo is an empty sky, since the object is generally nowhere
+ * near wherever the camera happened to be left.
+ */
+function aimAtTrail() {
+  const obj = OBJECTS[state.obj];
+  const span = spanFor(state.frame, state.obj);
+  const s = trailSamples(obj.fn, state.frame, now(), span, 60);
+  // Mean direction of the trail, in the current frame.
+  let m = V(0, 0, 0);
+  for (const x of s) m = add(m, x.v);
+  if (len(m) < 1e-9) m = s[Math.floor(s.length / 2)].v;
+  const ha = vecToAltAz(norm(m), now());
+  state.camAz = ha.az;
+  // Keep the camera above the horizon so the ground fill never swallows the view.
+  state.camAlt = Math.max(12 * DEG, Math.min(72 * DEG, ha.alt));
+  // Frame the trail: widest angular separation from the centre, plus margin.
+  let maxSep = 0;
+  const c = norm(m);
+  for (const x of s) maxSep = Math.max(maxSep, Math.acos(Math.max(-1, Math.min(1, dot(x.v, c)))));
+  state.fov = Math.max(45 * DEG, Math.min(120 * DEG, maxSep * 2.6 + 22 * DEG));
+}
+
+// Project a *frame-space* unit vector. In the ground frame we first convert to alt/az;
+// in sky/object frames the vector is already in the (static) equatorial frame at t0, so
+// we convert using t0 — that's what makes the background hold still.
+function vecToAltAz(v, t) {
+  const ra = Math.atan2(v.y, v.x), dec = Math.asin(Math.max(-1, Math.min(1, v.z)));
+  return altAz(ra, dec, t);
+}
+function project(alt, az, w, h) {
+  let dAz = az - state.camAz;
+  while (dAz > Math.PI) dAz -= 2 * Math.PI;
+  while (dAz < -Math.PI) dAz += 2 * Math.PI;
+  const ca = Math.cos(alt), sa = Math.sin(alt);
+  const x = ca * Math.sin(dAz), y = ca * Math.cos(dAz), z = sa;
+  const cb = Math.cos(state.camAlt), sb = Math.sin(state.camAlt);
+  const y2 = y * cb + z * sb, z2 = -y * sb + z * cb;
+  if (y2 <= 0.06) return null;
+  const s = (w / 2) / Math.tan(state.fov / 2);
+  return { x: w / 2 + (x / y2) * s, y: h / 2 - (z2 / y2) * s };
+}
+function projectFrameVec(v, w, h) {
+  const ha = vecToAltAz(v, now());
+  return project(ha.alt, ha.az, w, h);
+}
+
+function drawSky() {
+  const w = sky.width, h = sky.height;
+  const g = sctx.createLinearGradient(0, 0, 0, h);
+  g.addColorStop(0, '#04060c'); g.addColorStop(1, '#0a1020');
+  sctx.fillStyle = g; sctx.fillRect(0, 0, w, h);
+
+  // Background stars, drawn in the CURRENT frame at t0. In every frame the background at
+  // t0 is identical — the frame only changes how things MOVE, not where they are now.
+  for (const s of STARS) {
+    const p = projectFrameVec(raDecToVec(s.ra, s.dec), w, h);
+    if (!p) continue;
+    const a = Math.max(0, Math.min(1, (3.4 - s.mag) / 3.4));
+    if (a <= 0.03) continue;
+    sctx.globalAlpha = a; sctx.fillStyle = '#fff';
+    sctx.beginPath(); sctx.arc(p.x, p.y, Math.max(0.6, (3.2 - s.mag) * 0.6), 0, 7); sctx.fill();
+    // Label the bright named stars. The threshold is 1.5 rather than 1.2 so this field
+    // shows the whole Summer Triangle (Vega/Deneb/Altair) — looking SSE in August, most of
+    // the other bright stars are below the horizon, and 1.2 left only two labels on screen.
+    // Skip anything under the horizon, where the ground plane covers it anyway.
+    if (s.name && s.mag < 1.5 && altAz(s.ra, s.dec, now()).alt > 0) {
+      sctx.globalAlpha = a * 0.75; sctx.fillStyle = '#cfe0ff';
+      sctx.font = '10px system-ui'; sctx.fillText(s.name, p.x + 5, p.y - 4);
+    }
+  }
+  sctx.globalAlpha = 1;
+
+  // Horizon — only meaningful in the ground frame. In sky/object frames the horizon is
+  // itself moving, so we draw it faintly and dashed to say "this is not held still".
+  drawHorizon(w, h);
+
+  // The trail.
+  const obj = OBJECTS[state.obj];
+  const span = state.span;
+  const samples = trailSamples(obj.fn, state.frame, now(), span, 220);
+  drawTrail(samples, obj.color, w, h, span);
+
+  // The object itself, at t0.
+  const nowV = frameRotation(state.frame, now(), now())(
+    raDecToVec(obj.fn(now()).ra, obj.fn(now()).dec));
+  const q = projectFrameVec(nowV, w, h);
+  if (q) {
+    sctx.beginPath(); sctx.arc(q.x, q.y, 5.5, 0, 7);
+    sctx.fillStyle = obj.color; sctx.fill();
+    sctx.strokeStyle = 'rgba(255,255,255,0.9)'; sctx.lineWidth = 1.4; sctx.stroke();
+    sctx.fillStyle = '#fff'; sctx.font = '600 12px system-ui';
+    sctx.fillText(obj.label, q.x + 10, q.y - 8);
+  }
+
+  // The reference body, when the frame is anchored to one. Unreachable with the two
+  // shipping trail frames — retained because the same general object-referenced form backs
+  // the *camera* anchor (D112 Part 1), where the Sun and Moon do appear.
+  if (state.frame === 'sun' || state.frame === 'moon') {
+    const rf = state.frame === 'sun' ? sunRaDec : moonRaDec;
+    const rv = raDecToVec(rf(now()).ra, rf(now()).dec);
+    const rp = projectFrameVec(rv, w, h);
+    if (rp) {
+      sctx.beginPath(); sctx.arc(rp.x, rp.y, 11, 0, 7);
+      sctx.fillStyle = 'rgba(255,220,140,0.95)'; sctx.fill();
+      sctx.setLineDash([3, 3]); sctx.strokeStyle = 'rgba(242,176,74,0.8)';
+      sctx.lineWidth = 1.2;
+      sctx.beginPath(); sctx.arc(rp.x, rp.y, 20, 0, 7); sctx.stroke();
+      sctx.setLineDash([]);
+      sctx.fillStyle = '#ffe6b0'; sctx.font = '600 11px system-ui';
+      sctx.fillText('Sun — held fixed', rp.x + 24, rp.y + 3);
+    }
+  }
+}
+
+function drawTrail(samples, color, w, h, span) {
+  // Fade with distance in time from now, so "now" stays legible.
+  let prev = null, prevT = null;
+  sctx.lineCap = 'round';
+  for (const s of samples) {
+    const p = projectFrameVec(s.v, w, h);
+    if (p && prev) {
+      const d = Math.abs(s.t - now()) / (span / 2);
+      sctx.globalAlpha = 0.9 * (1 - d * 0.72);
+      sctx.strokeStyle = color; sctx.lineWidth = 2.0;
+      sctx.beginPath(); sctx.moveTo(prev.x, prev.y); sctx.lineTo(p.x, p.y); sctx.stroke();
+    }
+    // Ticks: hourly for short spans, monthly for long ones.
+    const tickS = span > 30 * DAY ? 30 * DAY : HOUR;
+    if (p && prevT !== null && Math.floor(s.t / tickS) !== Math.floor(prevT / tickS)) {
+      sctx.globalAlpha = 0.75; sctx.fillStyle = color;
+      sctx.beginPath(); sctx.arc(p.x, p.y, 2.2, 0, 7); sctx.fill();
+    }
+    prev = p; prevT = s.t;
+  }
+  sctx.globalAlpha = 1;
+}
+
+function drawHorizon(w, h) {
+  const ground = state.frame === 'ground';
+  const pts = [];
+  for (let a = -180; a <= 180; a += 2) {
+    const p = project(0, state.camAz + a * DEG, w, h);
+    if (p) pts.push(p);
+  }
+  if (pts.length > 1) {
+    if (ground) {
+      sctx.beginPath(); sctx.moveTo(pts[0].x, pts[0].y);
+      for (const p of pts) sctx.lineTo(p.x, p.y);
+      sctx.lineTo(pts[pts.length-1].x, h); sctx.lineTo(pts[0].x, h); sctx.closePath();
+      sctx.fillStyle = 'rgba(6,10,16,0.88)'; sctx.fill();
+    }
+    sctx.beginPath(); sctx.moveTo(pts[0].x, pts[0].y);
+    for (const p of pts) sctx.lineTo(p.x, p.y);
+    sctx.strokeStyle = ground ? 'rgba(120,190,150,0.75)' : 'rgba(120,160,200,0.28)';
+    sctx.lineWidth = ground ? 1.4 : 1.0;
+    if (!ground) sctx.setLineDash([5, 5]);
+    sctx.stroke(); sctx.setLineDash([]);
+  }
+  if (ground) {
+    sctx.font = '600 11px system-ui';
+    for (const [lab, az] of [['N',0],['E',90],['S',180],['W',270]]) {
+      const p = project(1.5 * DEG, az * DEG, w, h);
+      if (p) { sctx.fillStyle = 'rgba(160,200,180,0.85)'; sctx.fillText(lab, p.x - 4, p.y + 14); }
+    }
+  }
+}
+
+// ---------------------------------------------------------------- measurements
+// Spread of a trail in degrees — used to show that a star collapses in the sky frame.
+function trailSpreadDeg(bodyFn, frame) {
+  const s = trailSamples(bodyFn, frame, now(), spanFor(frame, state.obj), 120);
+  let maxAng = 0;
+  for (let i = 0; i < s.length; i++)
+    for (let j = i + 1; j < s.length; j += 7) {
+      const c = Math.max(-1, Math.min(1, dot(s[i].v, s[j].v)));
+      maxAng = Math.max(maxAng, Math.acos(c));
+    }
+  return maxAng / DEG;
+}
+// How circular is the arc? A trail lies on a circle iff every sample makes the same angle
+// with some axis — i.e. it lies on a cone about that axis. NOT "distance from a plane
+// through the origin": a constant-declination circle sits on a plane that misses the
+// origin, so that test measures the cone's opening angle and reports degrees for a
+// perfectly circular arc. Here we fit the axis (for the ground frame it is the celestial
+// pole) and report the spread of the half-angle, which is 0 for an exact circle.
+function arcCircularityDeg(bodyFn, frame) {
+  const s = trailSamples(bodyFn, frame, now(), spanFor(frame, state.obj), 90).map(x => x.v);
+  // Axis: the pole for the ground frame; otherwise the mean of adjacent cross products,
+  // which is a serviceable axis estimate for a generally curved track.
+  let axis = CELESTIAL_POLE;
+  if (frame !== 'ground') {
+    let n = V(0, 0, 0);
+    for (let i = 0; i + 1 < s.length; i++) n = add(n, cross(s[i], s[i + 1]));
+    axis = len(n) > 1e-12 ? norm(n) : CELESTIAL_POLE;
+  }
+  const angles = s.map(v => Math.acos(Math.max(-1, Math.min(1, dot(v, axis)))));
+  const mean = angles.reduce((a, b) => a + b, 0) / angles.length;
+  const varr = angles.reduce((a, x) => a + (x - mean) * (x - mean), 0) / angles.length;
+  return Math.sqrt(varr) / DEG;
+}
+
+function updateReadout() {
+  const obj = OBJECTS[state.obj];
+  const spread = trailSpreadDeg(obj.fn, state.frame);
+  const circ = arcCircularityDeg(obj.fn, state.frame);
+  const spanTxt = state.span >= DAY ? `${(state.span / DAY).toFixed(0)} days`
+    : `${(state.span / HOUR).toFixed(0)} hours`;
+  const collapsed = spread < 0.05;
+  let html = `<b>${obj.label}</b> · ${spanTxt}<br>`;
+  html += `frame: <b>${{ ground: 'horizon', sky: 'stars' }[state.frame]}</b><br>`;
+  html += `trail spans <b>${spread < 0.01 ? '&lt;0.01' : spread.toFixed(2)}°</b><br>`;
+  if (collapsed) html += `<span class="warn">collapsed to a point</span>`;
+  else html += `off-circle <b>${circ < 0.001 ? '&lt;0.001' : circ.toFixed(3)}°</b>`;
+  document.getElementById('readout').innerHTML = html;
+}
+
+function render() { drawSky(); updateReadout(); syncChrome(); }
+
+// ---------------------------------------------------------------- chrome
+function syncChrome() {
+  const pick = document.getElementById('objpick');
+  pick.innerHTML = Object.entries(OBJECTS).map(([k, o]) =>
+    `<div class="obtn${state.obj === k ? ' on' : ''}" data-o="${k}">${o.label}</div>`).join('');
+  for (const el of pick.querySelectorAll('[data-o]'))
+    el.onclick = () => {
+      state.obj = el.dataset.o;
+      state.span = spanFor(state.frame, state.obj);
+      aimAtTrail(); render();
+      if (state.cardOpen) renderCard();
+    };
+
+  // Every frame stays reachable here: seeing a star's trail collapse in the star frame is
+  // the lesson, so the mockup must let you try it. (The shipped info card *does* disable
+  // that row — see the Affordance tab — because there it would be offering to draw
+  // nothing rather than demonstrating something.)
+  for (const el of document.querySelectorAll('[data-f]'))
+    el.classList.toggle('on', state.frame === el.dataset.f);
+}
+
+for (const el of document.querySelectorAll('[data-f]'))
+  el.onclick = () => {
+    state.frame = el.dataset.f;
+    state.span = spanFor(state.frame, state.obj);
+    aimAtTrail(); render();
+  };
+
+// ---------------------------------------------------------------- info card
+// Two frames ship. The Sun was considered and cut as a *trail* frame — it is below the
+// horizon whenever the app is in use, its trail is dominated by Earth's orbital motion,
+// and its real question (elongation) is a number rather than a shape. It survives as a
+// *camera anchor*, where "keep the Sun centred while I scrub" is coherent (D112 Part 1).
+const CARD_FRAMES = [
+  ['ground', 'Against the horizon', 'where it rises and sets'],
+  ['sky', 'Against the stars', 'drift and retrograde'],
+];
+function renderCard() {
+  const card = document.getElementById('infocard');
+  const obj = OBJECTS[state.obj];
+  const star = obj.isStar;
+  card.innerHTML =
+    `<div class="ictitle">${obj.label}</div>` +
+    `<div class="icsub">${star ? 'Star · mag 0.03 · Lyra' : 'Planet · in the solar system'}</div>` +
+    `<div class="icact">Trace its path</div>` +
+    CARD_FRAMES.map(([k, label, hint]) => {
+      const dis = star && k === 'sky';
+      return `<div class="icrow${state.frame === k && state.cardOpen ? ' on' : ''}${dis ? ' dis' : ''}"
+        data-cf="${k}"><span class="q">${label}<br><small>${dis
+          ? 'a star does not move against the stars' : hint}</small></span>
+        <span>${state.frame === k ? '✓' : '›'}</span></div>`;
+    }).join('');
+  for (const el of card.querySelectorAll('[data-cf]'))
+    el.onclick = () => {
+      state.frame = el.dataset.cf; state.span = spanFor(state.frame, state.obj);
+      aimAtTrail(); render(); renderCard();
+    };
+}
+
+// ---------------------------------------------------------------- panels
+const PANELS = {
+  frames: `
+    <section>
+      <h2 class="cond">Same samples, three pictures</h2>
+      <p class="lede">The frame is what decides what you see.</p>
+      <p>Switch frames at the bottom of the phone, and swap the object at the top. The
+      ephemeris calls are identical in all three cases — only the rotation applied before
+      projection changes.</p>
+      <table>
+        <tr><th>Frame</th><th>What's held still</th><th>Over its span</th></tr>
+        <tr><td><b>Against the horizon</b></td><td>The ground and compass</td>
+            <td>Everything traces a circular arc — 6 hours</td></tr>
+        <tr><td><b>Against the stars</b></td><td>The star field</td>
+            <td>Stars vanish to points; planets loop — 300 days</td></tr>
+      </table>
+      <p><b>Two frames ship, not three.</b> A Sun-referenced trail was built and cut: the
+      Sun is below the horizon whenever the app is in use (so the held point is underfoot),
+      its trail is dominated by Earth's orbital motion rather than by the object, and its
+      real question — elongation — is a <em>number</em>, not a shape, so it belongs as an
+      info-card row beside the rise/set rows. The Sun survives as a <em>camera anchor</em>,
+      where "keep it centred while I scrub" is coherent.</p>
+      <p>Note the span changes with the frame, and it has to. Six hours of retrograde is
+      invisible; 300 days of diurnal arc is a scribble. The frame carries a sensible default
+      span because the frame <em>is</em> the question being asked.</p>
+      <h3>Why the horizon frame is always an arc</h3>
+      <p>Over six hours the Earth's rotation dominates every other motion by orders of
+      magnitude. A star's arc is <em>exactly</em> circular — its trail is a fixed vector
+      spun about the celestial pole, so it traces a constant-declination circle, verified
+      here to machine precision (declination spread <b>1.1 × 10⁻¹⁶</b>). Mars over the same
+      six hours deviates by <b>6 × 10⁻⁴</b> — invisible. The readout top-left reports
+      <b>off-circle</b>, which stays near zero for everything in this frame.</p>
+      <p>Which means the horizon frame <em>cannot</em> show retrograde motion, and the star
+      frame <em>cannot</em> show rise and set. They are not two views of one feature; they
+      answer different questions, and both are needed.</p>
+    </section>`,
+
+  collapse: `
+    <section>
+      <h2 class="cond">A star's trail collapses to a point</h2>
+      <p class="lede">Not a degenerate case to guard — the entire mechanism.</p>
+      <p><b>Try it:</b> pick <b>Vega</b> at the top, then switch between <b>Horizon</b> and
+      <b>Stars</b>. In the horizon frame Vega sweeps a long arc. In the star frame the trail
+      spans <b>&lt;0.01°</b> — the readout says <i>collapsed to a point</i>.</p>
+      <p>That is not a bug to handle, it is what makes the star frame legible. Every star
+      collapsing is exactly what turns the background static, so a planet's loop reads
+      against it. If stars did not collapse, retrograde motion would be invisible in a
+      thicket of other arcs.</p>
+      <h3>What it means for the UI</h3>
+      <p>Offering "against the stars" for a star is offering to draw nothing. The info card
+      therefore <b>disables that row for stars and DSOs</b> with the reason stated — see the
+      Affordance tab, where Vega's row is greyed with "a star does not move against the
+      stars". Availability is derived from the object, not configured.</p>
+      <div class="qq">Corollary worth keeping: in the star frame, trailing <em>every</em>
+      star would be free (they are all points) and useless. The set of objects worth trailing
+      is small and frame-dependent, which is another argument against a global "trails on"
+      switch that would have to guess.</div>
+    </section>`,
+
+  math: `
+    <section>
+      <h2 class="cond">One rotation, three references</h2>
+      <p class="lede">The three frames are one code path.</p>
+      <p>A trail is a path in a frame:</p>
+      <pre>trailPoint(t) = R(t) · d(t)</pre>
+      <p>where <code>d(t)</code> is the object's direction from the ephemeris — the same call
+      in every frame — and <code>R(t)</code> carries the frame's reference at time <i>t</i>
+      back to where it sat at <i>t₀</i>. The frames differ only in the reference:</p>
+      <table>
+        <tr><th>Frame</th><th>R(t)</th></tr>
+        <tr><td><b>Against the stars</b></td><td>Identity — no transform at all</td></tr>
+        <tr><td><b>Against the horizon</b></td>
+            <td>Rotation about the celestial pole by the sidereal angle t → t₀</td></tr>
+        <tr><td><i>Object (camera anchor only)</i></td>
+            <td>Rotation carrying ref(t) onto ref(t₀)</td></tr>
+      </table>
+      <p>So the horizon frame is just the object frame with the celestial pole as its
+      reference, and the star frame is the trivial case. Building the general form first
+      means "trace Mars with the Sun fixed" costs nothing once the machinery exists — it is
+      a different argument, not different code.</p>
+      <h3>The roll subtlety</h3>
+      <p>A rotation carrying one direction onto another leaves the <b>roll about that axis
+      free</b>, so the construction has to pin it with a secondary reference. This mockup
+      uses the <b>ecliptic pole</b> (see <code>alignFrames()</code>).</p>
+      <p>Worth being precise about when this matters, because the obvious justification is
+      wrong. For a <b>Sun</b> reference it makes <em>no difference at all</em>: the Sun moves
+      along the ecliptic, so both directions lie in the ecliptic plane, their cross product
+      is parallel to the ecliptic pole, and the naive minimal rotation is already the pinned
+      one. Measured divergence over 240 days: <b>0.000°</b>.</p>
+      <p>It bites for an <b>off-ecliptic reference</b>. With the Moon (5.1° inclined) the
+      unpinned minimal rotation lets the ecliptic pole wander by up to <b>116°</b> over a
+      year, and a probe direction diverges by <b>98°</b> — the trail twists for no physical
+      reason. Pinning costs nothing and removes a failure mode that only appears once
+      someone anchors to the Moon or a planet.</p>
+      <div class="qq">Implementation note: this is pure vector math on 3-vectors and
+      rotations — no Android, no renderer. It belongs in <code>:core:astronomy</code> beside
+      the rise/set solver, and is unit-testable without a device.</div>
+    </section>`,
+
+  card: `
+    <section>
+      <h2 class="cond">The affordance — and why there's no layer toggle</h2>
+      <p class="lede">The frame choice lives where the object is.</p>
+      <p><b>Try it:</b> <button class="tab" id="opencard" style="padding:5px 11px;font-size:13px">Open the info card</button>
+      then pick a frame. Switch the object to <b>Vega</b> and note the "against the stars"
+      row greys out with its reason.</p>
+      <h3>Why the Layers toggle was wrong</h3>
+      <p>Every other Layers row governs a category the app draws from its own data — stars,
+      DSOs, grid, horizon. You never chose those individually, so a master switch is the only
+      control that makes sense.</p>
+      <p>A trail is the opposite: it exists <em>because</em> you picked an object. A global
+      toggle would be an off-switch for a set of things you individually turned on — and it
+      cannot express what a trail actually needs, which is an <b>object and a frame</b>. A
+      boolean cannot carry that. If you want a trail gone, you clear it on the object you set
+      it from.</p>
+      <h3>Named by the question, not the frame</h3>
+      <p>"Sky-anchored" means nothing to most people; "against the stars" does. The three
+      rows are phrased as questions the user might actually have, with the frame as the
+      implementation detail it is:</p>
+      <ul>
+        <li><b>Against the horizon</b> — where does it rise and set?</li>
+        <li><b>Against the stars</b> — drift and retrograde</li>
+      </ul>
+      <p>Availability is derived from the object: stars and DSOs don't offer "against the
+      stars", because for them it would draw nothing.</p>
+      <div class="qq">Open question this leaves: with no global toggle, how do you find and
+      clear trails you set earlier? Proposal — active trails appear as dismissible chips
+      wherever the trail is drawn, or a short list under the ⋮ sheet. Not a Layers row.</div>
+    </section>`,
+
+  independent: `
+    <section>
+      <h2 class="cond">Trail frame vs. camera anchor</h2>
+      <p class="lede">The question left open last round, answered by looking at it.</p>
+      <p>The camera anchor (D112 Part 1) and the trail frame are the same concept applied to
+      different things: one holds the <em>camera</em> still, the other draws a <em>path</em>.
+      The question was whether they should be coupled.</p>
+      <p><b>What the mockup shows:</b> the sky here is drawn ground-anchored — the horizon is
+      solid and level in the horizon frame. Switch to the <b>Stars</b> frame and the horizon
+      goes dashed and faint. That is the honest depiction of an independent pair: the trail is
+      in a frame the camera is not holding, so the horizon is no longer a fixed reference.</p>
+      <p>It does not read as broken, but it does need saying — hence the dashed treatment.
+      A trail drawn in a frame the camera isn't holding will translate across the screen as a
+      rigid shape when the clock moves, which is geometrically correct and needs a visual cue
+      so it doesn't look like drift.</p>
+      <h3>The recommendation</h3>
+      <p><b>Keep them independent, default the trail frame to the current camera anchor.</b>
+      Coupling would force a sky-frame trail to put the camera into sky-anchoring — which is
+      <em>impossible in sensor mode</em>, where the phone's orientation is the alt-az
+      reference. And sensor mode is exactly where the best trail case lives: the Sun's trail
+      drawn over the real tree line in AR, showing where it will set.</p>
+      <p>So coupling would forbid the feature's best use. Independent, with a sensible
+      default and a visual cue when they differ.</p>
+      <div class="qq">Consequence for the design doc: trails work in sensor mode, in real
+      time, with no time travel involved — which is the standalone-feature finding. The clock
+      is an input, and in real time that input is "now".</div>
+    </section>`,
+};
+
+function setDemo(d) {
+  state.demo = d;
+  for (const t of document.querySelectorAll('[data-demo]'))
+    t.classList.toggle('on', t.dataset.demo === d);
+  document.getElementById('panels').innerHTML = PANELS[d];
+  const caps = {
+    frames: 'Switch frames below; swap the object above.',
+    collapse: 'Pick Vega, then switch Horizon ↔ Stars and watch the readout.',
+    math: 'The frame bar drives one function with three references.',
+    card: 'Open the card and choose a frame; try Vega for the disabled row.',
+    independent: 'Switch to Stars — the horizon goes dashed: it is no longer held.',
+  };
+  document.getElementById('caption').textContent = caps[d];
+  const oc = document.getElementById('opencard');
+  if (oc) oc.onclick = () => {
+    state.cardOpen = !state.cardOpen;
+    document.getElementById('infocard').classList.toggle('gone', !state.cardOpen);
+    renderCard();
+  };
+  if (d === 'collapse') { state.obj = 'vega'; state.frame = 'sky';
+                          state.span = spanFor('sky', 'vega'); }
+  if (d === 'card') { state.obj = 'mars'; state.cardOpen = true; renderCard(); }
+  else { state.cardOpen = false; }
+  document.getElementById('infocard').classList.toggle('gone', !state.cardOpen);
+  if (d === 'independent') { state.obj = 'mars'; state.frame = 'ground';
+                             state.span = spanFor('ground', 'mars'); }
+  aimAtTrail();
+  render();
+}
+for (const t of document.querySelectorAll('[data-demo]'))
+  t.onclick = () => setDemo(t.dataset.demo);
+
+function resize() {
+  const sr = sky.getBoundingClientRect();
+  sky.width = Math.max(1, Math.round(sr.width));
+  sky.height = Math.max(1, Math.round(sr.height));
+  render();
+}
+addEventListener('resize', resize);
+setDemo('frames');
+resize();
+</script>

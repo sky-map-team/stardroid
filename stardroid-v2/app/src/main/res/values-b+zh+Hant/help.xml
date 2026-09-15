@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+    <!-- tm:omitted name="help_home_link" reason="identical_to_source" -->
+
+    <string name="help_intro" translation_description="Help section: introduction and quick start. Please do not change the markup"><![CDATA[<h2>簡介與快速入門</h2><p>將手機舉起，透過它如同望向太空的窗戶。Sky Map 會使用您手機的感應器來追蹤您所看的方向，並即時更新星圖。</p><blockquote>並非所有手機都能執行 Sky Map！請參閱下方的硬體需求部分。</blockquote><h3>如果您是第一次使用：</h3><p>1. 當系統提示時，允許位置存取權限 — Sky Map 需要您的約略位置，才能繪製您所在位置的正確星空圖。<br/>2. 將手機指向天空的任何方向。<br/>3. 地圖將會移動以符合您所看的方向。</p>]]></string>
+
+    <string name="help_navigating" translation_description="Help section: navigating the sky, automatic and manual modes. Please do not change the markup"><![CDATA[<h2>瀏覽星空</h2>輕觸螢幕以顯示控制項和抬頭顯示器 (右上角)。<h3>自動模式</h3><p>在自動模式 (預設) 下，Sky Map 會使用您手機的指南針、加速計和陀螺儀感測器，顯示您手機指向方向的內容。只需移動手機，地圖就會跟隨。</p><p>使用雙指縮放手勢以放大和縮小。</p><h3>手動模式</h3><p>當控制項顯示時，輕觸 (右下角的) <b>手形</b>按鈕以切換到手動模式。在此模式下，您可以：</p><p>• 用一根手指拖曳地圖以平移。<br/>• 雙指縮放以放大或縮小。<br/>• 用兩根手指旋轉以改變方向。<br/>• 輕觸螢幕兩次以切換拖曳時地平線是否保持水平。</p><p>輕觸 (右下角的) <b>指南針</b>按鈕以切換回自動模式。</p>]]></string>
+
+    <!-- Symbol map will go here-->
+
+    <string name="help_layers" translation_description="Help section: the visible layers of the sky map. Please do not change the markup"><![CDATA[<h2>圖層</h2><p>Sky Map 將其顯示的內容組織成圖層，每個圖層都可以透過左側的圖層按鈕獨立開啟或關閉。長按或輕觸底部附近的<b>圖層</b>按鈕，即可顯示更多圖層的開關。</p><br/><p>目前的圖層包括：<br/>• <b>恆星：</b>最亮的恆星，並標示出著名的恆星<br/>• <b>星座：</b>星座輪廓和名稱<br/>• <b>深空天體：</b>星系、星雲、星團及其他引人注目的天體<br/>• <b>太陽系：</b>太陽、月亮和行星，以圖像顯示<br/>• <b>流星雨：</b>年度流星雨的輻射點<br/>• <b>天球網格：</b>赤經／赤緯座標網格<br/>• <b>黃道：</b>太陽每年在天空中運行的路徑，月亮和行星大致沿此路徑運行<br/>• <b>地平線：</b>地平線和方位標籤（北、南、東、西）<br/>• <b>天空漸層：</b>白天的天空輝光和地平線附近的暮光色彩</p><blockquote>流星雨輻射點只會在流星雨發生的日期顯示。</blockquote><br/><p><b>行星的繪製大小</b></p><p>輕觸圖層表單中<b>太陽系</b>旁的箭頭，即可選擇太陽、月亮和行星的大小顯示方式：</p><p>• <b>符號</b>（預設）：在任何縮放程度下都足夠大，並且根據每個天體實際的<i>大小</i>而非從這裡看起來的大小來調整 — 這是太陽系的模型，而非透過望遠鏡看到的景象。土星及其光環是所有天體中最寬的，其次是太陽，然後是木星，一直到冥王星。這些差異被壓縮以適應螢幕：太陽的實際寬度是冥王星的586倍，而不是七倍。月亮是個例外，它被繪製成與太陽相同的大小，因為從這裡看，兩者的大小就是如此。<br/>• <b>真實比例：</b>每個天體都以其在天空中真實的大小顯示。太陽和月亮大約橫跨半度 — 大約是手臂伸直時拿著的鉛筆橡皮擦大小 — 而行星則只是小點，直到您放大。一直放大，木星會顯示其條紋，土星的光環會與行星分離，而日食會像在天空中一樣精確對齊。<br/>• <b>穩定：</b>在您縮放時，將每個天體保持在螢幕上的固定大小，一旦您放大到足夠遠，使其成為兩者中較大的一個時，就會切換到真實大小。</p><blockquote>這兩種模式傳達不同的資訊。<b>符號</b>模式表示木星是個巨行星，冥王星很小。<b>真實比例</b>模式表示太陽和月亮從地球上看幾乎完全相同的大小 — 這就是為什麼會發生日全食，而且您可以觀看它。</blockquote><blockquote>Sky Map 顯示的是幾何地平線 — 一個完全平坦、無遮蔽的視野。實際上，剛好在地平線上的物體仍可能被建築物、山丘或樹木遮擋。</blockquote>]]></string>
+
+    <string name="help_info_cards" translation_description="Help section: the object info cards. Please do not change the markup"><![CDATA[<h2>資訊卡</h2><p>輕觸星圖上標示的天體即可顯示資訊卡 — 一個包含該天體照片和詳細資訊的面板。<br/>資訊卡適用於數百個天體，包括恆星、行星、月球、著名的深空天體和星座。</p><br/><p>每張資訊卡顯示：</p><p>• 天體的照片或圖表<br/>• 簡短描述和趣味知識<br/>• 科學數據，例如距離、大小和天體類型</p><p>輕觸卡片內的影像可全螢幕檢視。輕觸卡片外部或按下<b>返回</b>鍵即可關閉卡片。</p><blockquote>並非所有天體都有資訊卡，但我們持續不斷地新增中。</blockquote>]]></string>
+
+    <string name="help_search" translation_description="Help section: searching for objects in the sky. Please do not change the markup"><![CDATA[<h2>搜尋</h2><p>輕觸（底部）的<b>放大鏡</b>按鈕，即可搜尋天空中的任何物體。</p><br/><p>您可以搜尋：</p><p>• <b>恆星</b> — 依名稱，例如「天狼星」、「參宿四」、「北極星」<br/>• <b>行星</b> — 例如「火星」、「土星」<br/>• <b>星座</b> — 例如「獵戶座」、「仙后座」<br/>• <b>深空天體</b> — 例如「M31」、「仙女座星系」、「昴宿星團」<br/>• <b>座標</b> — 赤經和赤緯，例如「5h 55m, 7° 24\'」（您可以使用「o」來表示度數符號）</p><p><b>在自動模式下：</b>選取結果後，Sky Map 會顯示一個目標圓圈和一個方向箭頭。透過轉動手機來跟隨箭頭 — 當物體進入您的視野時，圓圈會改變顏色。輕觸<b>取消</b>（或按下返回鍵）即可退出搜尋。</p><p><b>在手動模式下：</b>地圖會直接跳轉並將物體置於中心。</p><blockquote>您可以搜尋 Sky Map 未顯示的物體，例如木星的衛星之一歐羅巴。<br/>在這種情況下，搜尋會將您導向其母體（木星）。</blockquote>]]></string>
+
+    <string name="help_time_travel" translation_description="Help section: the time travel feature. Please do not change the markup"><![CDATA[<h2>時間旅行</h2><p>時間旅行讓您查看從 1600 年到 3000 年間任何時刻的天空。輕觸（底部）的<b>時鐘</b>按鈕。</p><br/><p>從事件清單中選擇一個熱門事件（日食、月食、流星雨高峰、下一個滿月或新月、行星合相、阿波羅 11 號登陸等等），使用<b>設定日期</b>和<b>設定時間</b>按鈕設定您自己的時刻，或者，如果您只是想從目前時刻向前或向後移動，請輕觸「從現在開始」。</p><p>進入時間旅行模式後，螢幕上會顯示日期，播放控制項可讓您在時間中移動：</p><p>• 輕觸 <b>▶▶</b> (加快) 或 <b>◀◀</b> (減慢) 以向前或向後調整時間播放速度<br/>• 輕觸 <b>❚❚</b> 暫停<br/>• 輕觸 <b>現在</b> 跳回目前時間</p><p>您可以將其用於：</p><p>• <i>今晚日落後我能看到什麼？</i><br/>• <i>下次觀測水星的最佳時機是什麼時候？</i><br/>• <i>我出生那天晚上的天空是什麼樣子？</i></p><p>距離現在越遠的日期，準確度會降低，這主要是由於木星的引力影響。</p>]]></string>
+
+    <string name="help_night_vision" translation_description="Help section: night vision mode. Please do not change the markup"><![CDATA[<h2>夜視模式</h2>
+<p>如果您在戶外進行實際觀測，夜視模式有助於保護您已適應黑暗的視力。可透過底部的<b>夜間模式</b>按鈕
+切換。</p>
+<br/>
+<p>在夜視模式下，Sky Map 會將顯示器切換為深紅色調並調暗螢幕。
+<b>設定</b>中的<b>自動螢幕調暗</b>選項可讓您進一步控制螢幕的亮度。</p>]]></string>
+
+    <string name="help_other" translation_description="Help section: other options"><![CDATA[<h1>其他功能</h1>
+        <p>其他功能可以在右下角的溢出選單（…）中找到。</p>]]></string>
+
+    <string name="help_gallery" translation_description="Help section: the image gallery. Please do not change the markup"><![CDATA[<h2>圖庫</h2><p>圖庫精選了許多美麗的夜空影像，其中包含一些來自哈伯太空望遠鏡的影像。</p><br/><p>捲動瀏覽縮圖，點擊其中一個即可查看詳細資訊。<br/>使用<b>尋找</b>按鈕可在天空中定位該天體。</p>]]></string>
+
+    <string name="help_location" translation_description="Help section: setting your observing location. Please do not change the markup"><![CDATA[<h2>設定您的位置</h2><p>Sky Map 需要您的約略位置才能繪製正確的星空。預設情況下，它會使用您裝置的定位
+服務（行動網路或 GPS）。</p><br/><p>如果無法使用定位服務，或者您寧願手動設定，請輕觸<b>手動輸入位置</b>按鈕，
+並輸入<b>地點名稱</b>或以度數表示的<b>經緯度</b>。</p><blockquote>解碼地點名稱需要網際網路連線。</blockquote><p>如果您曾拒絕 Sky Map 的定位權限，您可能需要在您裝置的<b>應用程式設定 → 權限</b>中
+重新啟用它。</p><blockquote>如果您不授予它存取權限，Sky Map 將會假設您位於 (0, 90) — 北極！</blockquote>]]></string>
+
+    <string name="help_diagnostics" translation_description="Help section: the diagnostics page. Please do not change the markup"><![CDATA[<h2>診斷</h2><p>此頁面列出關於您的手機和 Sky Map 的各種資料，有助於偵錯問題。請在<b>設定 → 診斷</b>中找到它。</p><br/><p>當您回報問題時，點擊頁面頂部的分享按鈕，將這些詳細資料透過電子郵件寄送給我們：<a href="mailto:skymapdevs@gmail.com">skymapdevs@gmail.com</a>。您可以在傳送前閱讀並編輯報告。</p>]]></string>
+
+    <string name="help_calibrate" translation_description="Help section: the calibrate page. Please do not change the markup"><![CDATA[<h2>校準</h2>您應該不時地校準您手機的指南針 – 此頁面會告訴您如何操作。如果您的指南針需要校準，Sky Map 也會發出警告。<blockquote><b>重要：</b>校準過的指南針<b>不</b>代表它是<b>準確</b>的指南針。所有校準只是在內部重置指南針。它仍然可能因為附近的磁場干擾或單純的硬體問題而不準確。幾乎所有的準確性問題都歸因於手機的硬體，並且與 <b>Sky Map 無關</b>。Sky Map 所做的只是向您報告手機向它報告的內容。</blockquote><br/><p>請參閱下面的疑難排解部分以獲取更多幫助。</p>]]></string>
+
+    <string name="help_misc" translation_description="Help section: miscellaneous"><![CDATA[<h1>雜項與疑難排解</h1>]]></string>
+
+    <string name="help_hardware" translation_description="Help section: hardware and sensor requirements. Please do not change the markup"><![CDATA[<h2>硬體需求</h2><p>並非所有裝置都能完全支援 Sky Map！</p><br/><p>至少您需要一支具備以下功能的電話：</p><p>• 磁場感測器（又稱指南針）— 用來判斷您面向哪個方向<br/>• 加速度計 — 用來判斷您正在看天空多高的地方</p><p>理想情況下還需要：</p><p>• 陀螺儀 — 這將使動作更流暢，減少抖動</p><blockquote><b>手機指南針的可靠性眾所周知地差。</b>如果星圖看起來不正確，幾乎總是您手機指南針的硬體問題 — 而不是 Sky Map 的錯誤。Sky Map 會精確讀取您手機感測器報告的內容；它無法自動校正錯誤或有偏差的讀數。請參閱下面的疑難排解。</blockquote><h3>我如何知道我的手機有哪些感測器？</h3><p>開啟 <b>設定 → 診斷</b> — 您的手機沒有的任何感測器都將標記為「不存在」。您也將在教學課程中收到通知。</p><h3>如果我的裝置缺少必要的感測器怎麼辦？</h3><p>Sky Map 將會退回手動模式。您仍然可以探索天空，但如果沒有感測器，任何應用程式都無法向您顯示您的方向。</p>]]></string>
+
+    <string name="help_troubleshooting" translation_description="Help section: troubleshooting a map that does not move or points the wrong way. Please do not change the markup"><![CDATA[<h2>疑難排解</h2><h3>地圖不動</h3><p>• 檢查您是否處於自動模式（而非手動模式）<br/>• 檢查「診斷」頁面（<b>設定 → 診斷</b>）以確認您的裝置具有指南針和加速規<br/>• 嘗試「8 字形」校準手勢：緩慢地將手機以平滑的「8 字形」大幅度揮動</p><h3>地圖指向錯誤或不準確</h3><p>Sky Map 需要三項資訊才能顯示正確的天空：手機的朝向、您的位置以及目前時間。如果地圖看起來不正確，其中一項可能出了問題。</p><p>• <b>指南針（最常見原因）：</b>這是您手機的硬體問題 — 而非 Sky Map 的錯誤。「8 字形」校準手勢會要求您的手機內部重設其指南針感測器，但<i>校準過的指南針不一定準確</i>。如果您靠近金屬物體、汽車儀表板或磁性手機殼，即使校準後地圖仍可能不準確。請移至開放區域並重複「8 字形」手勢。<br/>• <b>位置：</b>透過<b>應用程式設定 → 權限</b>授予位置權限。檢查「診斷」頁面（<b>設定 → 診斷</b>）以確認您的座標。位置資訊遺失的一個明顯症狀是北極星直接出現在頭頂。<br/>• <b>時間：</b>較不常見，但錯誤的時區會使整個天空偏移。檢查「診斷」頁面（<b>設定 → 診斷</b>）以確認您裝置的時間和時區正確。</p><h3>地圖抖動</h3><p>• 如果您的手機沒有陀螺儀，請在感測器設定中開啟<b>使用舊版感測器</b><br/>• 在<b>設定 → 感測器設定（專家）</b>下調整<b>感測器速度</b>和<b>阻尼</b><br/>（當<b>使用舊版感測器</b>開啟時顯示）</p><p>如需完整的疑難排解詳細資訊，請參閱線上<a href="https://ts.stardroid.app">疑難排解</a>指南。</p><p>如果您仍然遇到問題，請透過<a href="mailto:skymapdevs@gmail.com">skymapdevs@gmail.com</a>發送電子郵件給我們 — 您的「診斷」頁面截圖會非常有幫助。</p>]]></string>
+
+    <string name="help_pointer_mode" translation_description="Help section: pointer mode for telescope users. Please do not change the markup"><![CDATA[<h2>望遠鏡使用者 — 指標模式</h2><p>在<b>設定 → 感測器設定</b>下，將<b>檢視方向</b>變更為<b>指標模式</b>。在此模式下，Sky Map 會顯示手機的<i>長邊</i>所指向的位置，而不是螢幕所面對的方向。</p><p>這讓您可以將手機安裝在望遠鏡筒的側面，這樣螢幕就與鏡筒垂直，同時地圖仍會追蹤望遠鏡所指向的目標。</p>]]></string>
+</resources>

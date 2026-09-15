@@ -1,0 +1,1068 @@
+{
+ "objects": {
+  "constellation/andromeda": {
+   "image_ref": "constellations/iau_andromeda.webp"
+  },
+  "constellation/antlia": {
+   "image_ref": "constellations/iau_antlia.webp"
+  },
+  "constellation/apus": {
+   "image_ref": "constellations/iau_apus.webp"
+  },
+  "constellation/aquarius": {
+   "image_ref": "constellations/iau_aquarius.webp"
+  },
+  "constellation/aquila": {
+   "image_ref": "constellations/iau_aquila.webp"
+  },
+  "constellation/ara": {
+   "image_ref": "constellations/iau_ara.webp"
+  },
+  "constellation/aries": {
+   "image_ref": "constellations/iau_aries.webp"
+  },
+  "constellation/auriga": {
+   "image_ref": "constellations/iau_auriga.webp"
+  },
+  "constellation/bootes": {
+   "image_ref": "constellations/iau_bootes.webp"
+  },
+  "constellation/caelum": {
+   "image_ref": "constellations/iau_caelum.webp"
+  },
+  "constellation/camelopardalis": {
+   "image_ref": "constellations/iau_camelopardalis.webp"
+  },
+  "constellation/cancer": {
+   "image_ref": "constellations/iau_cancer.webp"
+  },
+  "constellation/canes_venatici": {
+   "image_ref": "constellations/iau_canes_venatici.webp"
+  },
+  "constellation/canis_major": {
+   "image_ref": "constellations/iau_canis_major.webp"
+  },
+  "constellation/canis_minor": {
+   "image_ref": "constellations/iau_canis_minor.webp"
+  },
+  "constellation/capricornus": {
+   "image_ref": "constellations/iau_capricornus.webp"
+  },
+  "constellation/carina": {
+   "image_ref": "constellations/iau_carina.webp"
+  },
+  "constellation/cassiopeia": {
+   "image_ref": "constellations/iau_cassiopeia.webp"
+  },
+  "constellation/centaurus": {
+   "image_ref": "constellations/iau_centaurus.webp"
+  },
+  "constellation/cepheus": {
+   "image_ref": "constellations/iau_cepheus.webp"
+  },
+  "constellation/cetus": {
+   "image_ref": "constellations/iau_cetus.webp"
+  },
+  "constellation/chamaeleon": {
+   "image_ref": "constellations/iau_chamaeleon.webp"
+  },
+  "constellation/circinus": {
+   "image_ref": "constellations/iau_circinus.webp"
+  },
+  "constellation/columba": {
+   "image_ref": "constellations/iau_columba.webp"
+  },
+  "constellation/coma_berenices": {
+   "image_ref": "constellations/iau_coma_berenices.webp"
+  },
+  "constellation/corona_australis": {
+   "image_ref": "constellations/iau_corona_australis.webp"
+  },
+  "constellation/corona_borealis": {
+   "image_ref": "constellations/iau_corona_borealis.webp"
+  },
+  "constellation/corvus": {
+   "image_ref": "constellations/iau_corvus.webp"
+  },
+  "constellation/crater": {
+   "image_ref": "constellations/iau_crater.webp"
+  },
+  "constellation/crux": {
+   "image_ref": "constellations/iau_crux.webp"
+  },
+  "constellation/cygnus": {
+   "image_ref": "constellations/iau_cygnus.webp"
+  },
+  "constellation/delphinus": {
+   "image_ref": "constellations/iau_delphinus.webp"
+  },
+  "constellation/dorado": {
+   "image_ref": "constellations/iau_dorado.webp"
+  },
+  "constellation/draco": {
+   "image_ref": "constellations/iau_draco.webp"
+  },
+  "constellation/equuleus": {
+   "image_ref": "constellations/iau_equuleus.webp"
+  },
+  "constellation/eridanus": {
+   "image_ref": "constellations/iau_eridanus.webp"
+  },
+  "constellation/fornax": {
+   "image_ref": "constellations/iau_fornax.webp"
+  },
+  "constellation/gemini": {
+   "image_ref": "constellations/iau_gemini.webp"
+  },
+  "constellation/grus": {
+   "image_ref": "constellations/iau_grus.webp"
+  },
+  "constellation/hercules": {
+   "image_ref": "constellations/iau_hercules.webp"
+  },
+  "constellation/horologium": {
+   "image_ref": "constellations/iau_horologium.webp"
+  },
+  "constellation/hydra": {
+   "image_ref": "constellations/iau_hydra.webp"
+  },
+  "constellation/hydrus": {
+   "image_ref": "constellations/iau_hydrus.webp"
+  },
+  "constellation/indus": {
+   "image_ref": "constellations/iau_indus.webp"
+  },
+  "constellation/lacerta": {
+   "image_ref": "constellations/iau_lacerta.webp"
+  },
+  "constellation/leo": {
+   "image_ref": "constellations/iau_leo.webp"
+  },
+  "constellation/leo_minor": {
+   "image_ref": "constellations/iau_leo_minor.webp"
+  },
+  "constellation/lepus": {
+   "image_ref": "constellations/iau_lepus.webp"
+  },
+  "constellation/libra": {
+   "image_ref": "constellations/iau_libra.webp"
+  },
+  "constellation/lupus": {
+   "image_ref": "constellations/iau_lupus.webp"
+  },
+  "constellation/lynx": {
+   "image_ref": "constellations/iau_lynx.webp"
+  },
+  "constellation/lyra": {
+   "image_ref": "constellations/iau_lyra.webp"
+  },
+  "constellation/mensa": {
+   "image_ref": "constellations/iau_mensa.webp"
+  },
+  "constellation/microscopium": {
+   "image_ref": "constellations/iau_microscopium.webp"
+  },
+  "constellation/monoceros": {
+   "image_ref": "constellations/iau_monoceros.webp"
+  },
+  "constellation/musca": {
+   "image_ref": "constellations/iau_musca.webp"
+  },
+  "constellation/norma": {
+   "image_ref": "constellations/iau_norma.webp"
+  },
+  "constellation/octans": {
+   "image_ref": "constellations/iau_octans.webp"
+  },
+  "constellation/ophiuchus": {
+   "image_ref": "constellations/iau_ophiuchus.webp"
+  },
+  "constellation/orion": {
+   "image_ref": "constellations/iau_orion.webp"
+  },
+  "constellation/pavo": {
+   "image_ref": "constellations/iau_pavo.webp"
+  },
+  "constellation/pegasus": {
+   "image_ref": "constellations/iau_pegasus.webp"
+  },
+  "constellation/perseus": {
+   "image_ref": "constellations/iau_perseus.webp"
+  },
+  "constellation/phoenix": {
+   "image_ref": "constellations/iau_phoenix.webp"
+  },
+  "constellation/pictor": {
+   "image_ref": "constellations/iau_pictor.webp"
+  },
+  "constellation/pisces": {
+   "image_ref": "constellations/iau_pisces.webp"
+  },
+  "constellation/piscis_austrinus": {
+   "image_ref": "constellations/iau_piscis_austrinus.webp"
+  },
+  "constellation/puppis": {
+   "image_ref": "constellations/iau_puppis.webp"
+  },
+  "constellation/pyxis": {
+   "image_ref": "constellations/iau_pyxis.webp"
+  },
+  "constellation/reticulum": {
+   "image_ref": "constellations/iau_reticulum.webp"
+  },
+  "constellation/sagitta": {
+   "image_ref": "constellations/iau_sagitta.webp"
+  },
+  "constellation/sagittarius": {
+   "image_ref": "constellations/iau_sagittarius.webp"
+  },
+  "constellation/scorpius": {
+   "image_ref": "constellations/iau_scorpius.webp"
+  },
+  "constellation/sculptor": {
+   "image_ref": "constellations/iau_sculptor.webp"
+  },
+  "constellation/scutum": {
+   "image_ref": "constellations/iau_scutum.webp"
+  },
+  "constellation/serpens_caput": {
+   "image_ref": "constellations/iau_serpens_caput.webp"
+  },
+  "constellation/serpens_cauda": {
+   "image_ref": "constellations/iau_serpens_cauda.webp"
+  },
+  "constellation/sextans": {
+   "image_ref": "constellations/iau_sextans.webp"
+  },
+  "constellation/taurus": {
+   "image_ref": "constellations/iau_taurus.webp"
+  },
+  "constellation/telescopium": {
+   "image_ref": "constellations/iau_telescopium.webp"
+  },
+  "constellation/triangulum": {
+   "image_ref": "constellations/iau_triangulum.webp"
+  },
+  "constellation/triangulum_australe": {
+   "image_ref": "constellations/iau_triangulum_australe.webp"
+  },
+  "constellation/tucana": {
+   "image_ref": "constellations/iau_tucana.webp"
+  },
+  "constellation/ursa_major": {
+   "image_ref": "constellations/iau_ursa_major.webp"
+  },
+  "constellation/ursa_minor": {
+   "image_ref": "constellations/iau_ursa_minor.webp"
+  },
+  "constellation/vela": {
+   "image_ref": "constellations/iau_vela.webp"
+  },
+  "constellation/virgo": {
+   "image_ref": "constellations/iau_virgo.webp"
+  },
+  "constellation/volans": {
+   "image_ref": "constellations/iau_volans.webp"
+  },
+  "constellation/vulpecula": {
+   "image_ref": "constellations/iau_vulpecula.webp"
+  },
+  "dso/blue_snowball_nebula": {
+   "image_ref": "deep_sky_objects/hubble_blue_snowball.webp"
+  },
+  "dso/centaurus_a": {
+   "image_ref": "deep_sky_objects/eso_centaurus_a.webp"
+  },
+  "dso/coathanger": {
+   "image_ref": "deep_sky_objects/dss_coathanger.webp"
+  },
+  "dso/coma_star_cluster": {
+   "image_ref": "deep_sky_objects/eso_coma_star_cluster.webp"
+  },
+  "dso/cygnus_x_1": {
+   "image_ref": "deep_sky_objects/cygnus_x_1.webp"
+  },
+  "dso/double_cluster": {
+   "image_ref": "deep_sky_objects/double_cluster.webp"
+  },
+  "dso/exposed_cranium_nebula": {
+   "image_ref": "deep_sky_objects/webb_exposed_cranium_nebula.webp"
+  },
+  "dso/ghost_of_jupiter": {
+   "image_ref": "deep_sky_objects/hubble_ghost_of_jupiter.webp"
+  },
+  "dso/hdf": {
+   "image_ref": "deep_sky_objects/hubble_ultra_deep_field.webp"
+  },
+  "dso/helix_nebula": {
+   "image_ref": "deep_sky_objects/hubble_helix_nebula.webp"
+  },
+  "dso/hyades": {
+   "image_ref": "deep_sky_objects/eso_hyades.webp"
+  },
+  "dso/jewel_box": {
+   "image_ref": "deep_sky_objects/eso_jewel_box.webp"
+  },
+  "dso/lmc": {
+   "image_ref": "deep_sky_objects/lmc.webp"
+  },
+  "dso/m1": {
+   "image_ref": "deep_sky_objects/hubble_m1.jpg"
+  },
+  "dso/m10": {
+   "image_ref": "deep_sky_objects/hubble_m10.jpg"
+  },
+  "dso/m101": {
+   "image_ref": "deep_sky_objects/hubble_m101.webp"
+  },
+  "dso/m104": {
+   "image_ref": "deep_sky_objects/hubble_m104.webp"
+  },
+  "dso/m106": {
+   "image_ref": "deep_sky_objects/hubble_m106.webp"
+  },
+  "dso/m109": {
+   "image_ref": "deep_sky_objects/hubble_m109.webp"
+  },
+  "dso/m11": {
+   "image_ref": "deep_sky_objects/hubble_m11.webp"
+  },
+  "dso/m110": {
+   "image_ref": "deep_sky_objects/hubble_m110.jpg"
+  },
+  "dso/m12": {
+   "image_ref": "deep_sky_objects/hubble_m12.jpg"
+  },
+  "dso/m13": {
+   "image_ref": "deep_sky_objects/hubble_m13.jpg"
+  },
+  "dso/m14": {
+   "image_ref": "deep_sky_objects/hubble_m14.jpg"
+  },
+  "dso/m15": {
+   "image_ref": "deep_sky_objects/hubble_m15.jpg"
+  },
+  "dso/m16": {
+   "image_ref": "deep_sky_objects/hubble_m16.webp"
+  },
+  "dso/m17": {
+   "image_ref": "deep_sky_objects/hubble_m17.webp"
+  },
+  "dso/m2": {
+   "image_ref": "deep_sky_objects/hubble_m2.jpg"
+  },
+  "dso/m20": {
+   "image_ref": "deep_sky_objects/hubble_m20.webp"
+  },
+  "dso/m22": {
+   "image_ref": "deep_sky_objects/hubble_m22.jpg"
+  },
+  "dso/m27": {
+   "image_ref": "deep_sky_objects/hubble_m27.webp"
+  },
+  "dso/m3": {
+   "image_ref": "deep_sky_objects/hubble_m3.jpg"
+  },
+  "dso/m31": {
+   "image_ref": "deep_sky_objects/kennett_m31.webp"
+  },
+  "dso/m32": {
+   "image_ref": "deep_sky_objects/hubble_m32.jpg"
+  },
+  "dso/m33": {
+   "image_ref": "deep_sky_objects/hubble_m33.jpg"
+  },
+  "dso/m35": {
+   "image_ref": "deep_sky_objects/hubble_m35.webp"
+  },
+  "dso/m4": {
+   "image_ref": "deep_sky_objects/hubble_m4.jpg"
+  },
+  "dso/m42": {
+   "image_ref": "deep_sky_objects/hubble_orion.webp"
+  },
+  "dso/m44": {
+   "image_ref": "deep_sky_objects/hubble_m44.webp"
+  },
+  "dso/m45": {
+   "image_ref": "deep_sky_objects/hubble_m45.webp"
+  },
+  "dso/m49": {
+   "image_ref": "deep_sky_objects/hubble_m49.webp"
+  },
+  "dso/m5": {
+   "image_ref": "deep_sky_objects/hubble_m5.jpg"
+  },
+  "dso/m51": {
+   "image_ref": "deep_sky_objects/hubble_m51a.webp"
+  },
+  "dso/m53": {
+   "image_ref": "deep_sky_objects/hubble_m53.jpg"
+  },
+  "dso/m57": {
+   "image_ref": "deep_sky_objects/hubble_m57.webp"
+  },
+  "dso/m6": {
+   "image_ref": "deep_sky_objects/noao_m6.webp"
+  },
+  "dso/m64": {
+   "image_ref": "deep_sky_objects/hubble_m64.webp"
+  },
+  "dso/m65": {
+   "image_ref": "deep_sky_objects/hubble_m65.webp"
+  },
+  "dso/m66": {
+   "image_ref": "deep_sky_objects/hubble_m66.webp"
+  },
+  "dso/m7": {
+   "image_ref": "deep_sky_objects/hubble_m7.webp"
+  },
+  "dso/m74": {
+   "image_ref": "deep_sky_objects/hubble_m74.jpg"
+  },
+  "dso/m77": {
+   "image_ref": "deep_sky_objects/hubble_m77.webp"
+  },
+  "dso/m78": {
+   "image_ref": "deep_sky_objects/hubble_m78.webp"
+  },
+  "dso/m8": {
+   "image_ref": "deep_sky_objects/hubble_m8.webp"
+  },
+  "dso/m81": {
+   "image_ref": "deep_sky_objects/hubble_m81.webp"
+  },
+  "dso/m82": {
+   "image_ref": "deep_sky_objects/hubble_m82.webp"
+  },
+  "dso/m83": {
+   "image_ref": "deep_sky_objects/hubble_m83.jpg"
+  },
+  "dso/m87": {
+   "image_ref": "deep_sky_objects/hubble_m87.webp"
+  },
+  "dso/m92": {
+   "image_ref": "deep_sky_objects/hubble_m92.jpg"
+  },
+  "dso/m94": {
+   "image_ref": "deep_sky_objects/hubble_m94.jpg"
+  },
+  "dso/m97": {
+   "image_ref": "deep_sky_objects/gemini_m97.webp"
+  },
+  "dso/n47_tucanae": {
+   "image_ref": "deep_sky_objects/eso_47_tucanae.webp"
+  },
+  "dso/ngc_2903": {
+   "image_ref": "deep_sky_objects/hubble_ngc_2903.webp"
+  },
+  "dso/ngc_6543": {
+   "image_ref": "deep_sky_objects/hubble_catseyenebula.webp"
+  },
+  "dso/north_america_nebula": {
+   "image_ref": "deep_sky_objects/north_america_nebula.webp"
+  },
+  "dso/omega_centauri": {
+   "image_ref": "deep_sky_objects/hubble_omega_centauri.webp"
+  },
+  "dso/saturn_nebula": {
+   "image_ref": "deep_sky_objects/hubble_saturn_nebula.webp"
+  },
+  "dso/sculptor_galaxy": {
+   "image_ref": "deep_sky_objects/eso_sculptor_galaxy.webp"
+  },
+  "dso/sgr_a_star": {
+   "image_ref": "deep_sky_objects/sgr_a_star.webp"
+  },
+  "dso/smc": {
+   "image_ref": "deep_sky_objects/smc.webp"
+  },
+  "dso/tarantula_nebula": {
+   "image_ref": "deep_sky_objects/eso_tarantula.webp"
+  },
+  "dso/v838_mon": {
+   "image_ref": "deep_sky_objects/hubble_v838.webp"
+  },
+  "dso/willman_1": {
+   "image_ref": "deep_sky_objects/willman_1.webp"
+  },
+  "moon/ariel": {
+   "type": "moon",
+   "parent": "planet/uranus",
+   "image_ref": "planets/voyager_ariel.webp",
+   "see_also": [
+    "planet/uranus",
+    "moon/titania",
+    "moon/oberon",
+    "moon/umbriel"
+   ]
+  },
+  "moon/callisto": {
+   "type": "moon",
+   "parent": "planet/jupiter",
+   "image_ref": "planets/galileo_callisto.webp",
+   "see_also": [
+    "planet/jupiter",
+    "moon/io",
+    "moon/europa",
+    "moon/ganymede"
+   ]
+  },
+  "moon/deimos": {
+   "type": "moon",
+   "parent": "planet/mars",
+   "image_ref": "planets/nasa_deimos.webp",
+   "see_also": [
+    "planet/mars",
+    "moon/phobos"
+   ]
+  },
+  "moon/dione": {
+   "type": "moon",
+   "parent": "planet/saturn",
+   "image_ref": "planets/cassini_dione.webp",
+   "see_also": [
+    "planet/saturn",
+    "moon/titan",
+    "moon/rhea",
+    "moon/tethys",
+    "moon/iapetus"
+   ]
+  },
+  "moon/europa": {
+   "type": "moon",
+   "parent": "planet/jupiter",
+   "image_ref": "planets/galileo_europa.webp",
+   "see_also": [
+    "planet/jupiter",
+    "moon/io",
+    "moon/ganymede",
+    "moon/callisto"
+   ]
+  },
+  "moon/ganymede": {
+   "type": "moon",
+   "parent": "planet/jupiter",
+   "image_ref": "planets/galileo_ganymede.webp",
+   "see_also": [
+    "planet/jupiter",
+    "moon/io",
+    "moon/europa",
+    "moon/callisto"
+   ]
+  },
+  "moon/iapetus": {
+   "type": "moon",
+   "parent": "planet/saturn",
+   "image_ref": "planets/cassini_iapetus.webp",
+   "see_also": [
+    "planet/saturn",
+    "moon/titan",
+    "moon/rhea",
+    "moon/tethys",
+    "moon/dione"
+   ]
+  },
+  "moon/io": {
+   "type": "moon",
+   "parent": "planet/jupiter",
+   "image_ref": "planets/galileo_io.webp",
+   "see_also": [
+    "planet/jupiter",
+    "moon/europa",
+    "moon/ganymede",
+    "moon/callisto"
+   ]
+  },
+  "moon/oberon": {
+   "type": "moon",
+   "parent": "planet/uranus",
+   "image_ref": "planets/voyager_oberon.webp",
+   "see_also": [
+    "planet/uranus",
+    "moon/titania",
+    "moon/ariel",
+    "moon/umbriel"
+   ]
+  },
+  "moon/phobos": {
+   "type": "moon",
+   "parent": "planet/mars",
+   "image_ref": "planets/nasa_phobos.webp",
+   "see_also": [
+    "planet/mars",
+    "moon/deimos"
+   ]
+  },
+  "moon/rhea": {
+   "type": "moon",
+   "parent": "planet/saturn",
+   "image_ref": "planets/cassini_rhea.webp",
+   "see_also": [
+    "planet/saturn",
+    "moon/titan",
+    "moon/tethys",
+    "moon/dione",
+    "moon/iapetus"
+   ]
+  },
+  "moon/tethys": {
+   "type": "moon",
+   "parent": "planet/saturn",
+   "image_ref": "planets/cassini_tethys.webp",
+   "see_also": [
+    "planet/saturn",
+    "moon/titan",
+    "moon/rhea",
+    "moon/dione",
+    "moon/iapetus"
+   ]
+  },
+  "moon/titan": {
+   "type": "moon",
+   "parent": "planet/saturn",
+   "image_ref": "planets/cassini_titan.webp",
+   "see_also": [
+    "planet/saturn",
+    "moon/rhea",
+    "moon/tethys",
+    "moon/dione",
+    "moon/iapetus"
+   ]
+  },
+  "moon/titania": {
+   "type": "moon",
+   "parent": "planet/uranus",
+   "image_ref": "planets/voyager_titania.webp",
+   "see_also": [
+    "planet/uranus",
+    "moon/oberon",
+    "moon/ariel",
+    "moon/umbriel"
+   ]
+  },
+  "moon/triton": {
+   "type": "moon",
+   "parent": "planet/neptune",
+   "image_ref": "planets/voyager_triton.webp",
+   "see_also": [
+    "planet/neptune"
+   ]
+  },
+  "moon/umbriel": {
+   "type": "moon",
+   "parent": "planet/uranus",
+   "image_ref": "planets/voyager_umbriel.webp",
+   "see_also": [
+    "planet/uranus",
+    "moon/titania",
+    "moon/oberon",
+    "moon/ariel"
+   ]
+  },
+  "planet/jupiter": {
+   "type": "planet",
+   "image_ref": "planets/hubble_jupiter.webp",
+   "see_also": [
+    "moon/io",
+    "moon/europa",
+    "moon/ganymede",
+    "moon/callisto"
+   ]
+  },
+  "planet/mars": {
+   "type": "planet",
+   "image_ref": "planets/hubble_mars.webp",
+   "see_also": [
+    "moon/phobos",
+    "moon/deimos"
+   ]
+  },
+  "planet/mercury": {
+   "type": "planet",
+   "image_ref": "planets/nasa_mercury.webp"
+  },
+  "planet/moon": {
+   "type": "moon",
+   "image_ref": "planets/moon_lroc.webp"
+  },
+  "planet/neptune": {
+   "type": "planet",
+   "image_ref": "planets/hubble_neptune.webp",
+   "see_also": [
+    "moon/triton"
+   ]
+  },
+  "planet/pluto": {
+   "type": "dwarf_planet",
+   "image_ref": "planets/nh_pluto_in_false_color.webp"
+  },
+  "planet/saturn": {
+   "type": "planet",
+   "image_ref": "planets/hubble_saturn.webp",
+   "see_also": [
+    "moon/titan",
+    "moon/rhea",
+    "moon/tethys",
+    "moon/dione",
+    "moon/iapetus"
+   ]
+  },
+  "planet/sun": {
+   "type": "star",
+   "image_ref": "stars/nasa_sun.webp",
+   "magnitude": -26.74
+  },
+  "planet/uranus": {
+   "type": "planet",
+   "image_ref": "planets/hubble_uranus.webp",
+   "see_also": [
+    "moon/titania",
+    "moon/oberon",
+    "moon/ariel",
+    "moon/umbriel"
+   ]
+  },
+  "planet/venus": {
+   "type": "planet",
+   "image_ref": "planets/nasa_venus.webp"
+  },
+  "shower/aquariids": {
+   "type": "meteor_shower",
+   "ra": 338.0,
+   "dec": -1.0,
+   "search_fov": 45.0,
+   "activity": {
+    "from": "04-19",
+    "peak": "05-06",
+    "to": "05-28",
+    "peak_zhr": 70
+   },
+   "see_also": [
+    "constellation/aquarius"
+   ]
+  },
+  "shower/deltaaquariids": {
+   "type": "meteor_shower",
+   "ra": 340.0,
+   "dec": -16.0,
+   "search_fov": 45.0,
+   "activity": {
+    "from": "07-12",
+    "peak": "07-30",
+    "to": "08-23",
+    "peak_zhr": 16
+   },
+   "see_also": [
+    "constellation/aquarius"
+   ]
+  },
+  "shower/geminids": {
+   "type": "meteor_shower",
+   "ra": 112.0,
+   "dec": 33.0,
+   "search_fov": 45.0,
+   "activity": {
+    "from": "12-06",
+    "peak": "12-14",
+    "to": "12-17",
+    "peak_zhr": 120
+   },
+   "see_also": [
+    "constellation/gemini"
+   ]
+  },
+  "shower/leonids": {
+   "type": "meteor_shower",
+   "ra": 152.0,
+   "dec": 22.0,
+   "search_fov": 45.0,
+   "activity": {
+    "from": "11-06",
+    "peak": "11-18",
+    "to": "11-30",
+    "peak_zhr": 20
+   },
+   "see_also": [
+    "constellation/leo"
+   ]
+  },
+  "shower/lyrids": {
+   "type": "meteor_shower",
+   "ra": 271.0,
+   "dec": 34.0,
+   "search_fov": 45.0,
+   "activity": {
+    "from": "04-16",
+    "peak": "04-22",
+    "to": "04-25",
+    "peak_zhr": 18
+   },
+   "see_also": [
+    "constellation/lyra"
+   ]
+  },
+  "shower/orionids": {
+   "type": "meteor_shower",
+   "ra": 95.0,
+   "dec": 16.0,
+   "search_fov": 45.0,
+   "activity": {
+    "from": "10-02",
+    "peak": "10-21",
+    "to": "11-07",
+    "peak_zhr": 25
+   },
+   "see_also": [
+    "constellation/orion"
+   ]
+  },
+  "shower/perseids": {
+   "type": "meteor_shower",
+   "ra": 48.0,
+   "dec": 58.0,
+   "search_fov": 45.0,
+   "activity": {
+    "from": "07-17",
+    "peak": "08-13",
+    "to": "08-24",
+    "peak_zhr": 100
+   },
+   "see_also": [
+    "constellation/perseus"
+   ]
+  },
+  "shower/puppidvelids": {
+   "type": "meteor_shower",
+   "ra": 123.0,
+   "dec": -45.0,
+   "search_fov": 45.0,
+   "activity": {
+    "from": "12-01",
+    "peak": "12-07",
+    "to": "12-15",
+    "peak_zhr": 10
+   },
+   "see_also": [
+    "constellation/puppis",
+    "constellation/vela"
+   ]
+  },
+  "shower/quadrantids": {
+   "type": "meteor_shower",
+   "ra": 230.0,
+   "dec": 49.0,
+   "search_fov": 45.0,
+   "activity": {
+    "from": "01-01",
+    "peak": "01-04",
+    "to": "01-12",
+    "peak_zhr": 120
+   },
+   "see_also": [
+    "constellation/bootes"
+   ]
+  },
+  "shower/ursids": {
+   "type": "meteor_shower",
+   "ra": 217.0,
+   "dec": 76.0,
+   "search_fov": 45.0,
+   "activity": {
+    "from": "12-16",
+    "peak": "12-23",
+    "to": "12-26",
+    "peak_zhr": 10
+   },
+   "see_also": [
+    "constellation/ursa_minor"
+   ]
+  },
+  "star/achernar": {
+   "image_ref": "stars/eso_achernar.webp"
+  },
+  "star/acrux": {
+   "image_ref": "stars/eso_acrux.webp"
+  },
+  "star/adhara": {
+   "image_ref": "stars/eso_adhara.webp"
+  },
+  "star/alcyone": {
+   "image_ref": "stars/eso_alcyone.webp"
+  },
+  "star/aldebaran": {
+   "image_ref": "stars/eso_aldebaran.webp"
+  },
+  "star/alderamin": {
+   "image_ref": "stars/eso_alderamin.webp"
+  },
+  "star/algenib": {
+   "image_ref": "stars/eso_algenib.webp"
+  },
+  "star/algieba": {
+   "image_ref": "stars/eso_algieba.webp"
+  },
+  "star/algol": {
+   "image_ref": "stars/eso_algol.webp"
+  },
+  "star/alhena": {
+   "image_ref": "stars/eso_alhena.webp"
+  },
+  "star/alioth": {
+   "image_ref": "stars/eso_alioth.webp"
+  },
+  "star/alkaid": {
+   "image_ref": "stars/eso_alkaid.webp"
+  },
+  "star/alnair": {
+   "image_ref": "stars/eso_alnair.webp"
+  },
+  "star/alnath": {
+   "image_ref": "stars/eso_alnath.webp"
+  },
+  "star/alnilam": {
+   "image_ref": "stars/eso_alnilam.webp"
+  },
+  "star/alphard": {
+   "image_ref": "stars/eso_alphard.webp"
+  },
+  "star/alphekka": {
+   "image_ref": "stars/eso_alphekka.webp"
+  },
+  "star/alpheratz": {
+   "image_ref": "stars/eso_alpheratz.webp"
+  },
+  "star/altair": {
+   "image_ref": "stars/eso_altair.webp"
+  },
+  "star/ankaa": {
+   "image_ref": "stars/eso_ankaa.webp"
+  },
+  "star/antares": {
+   "image_ref": "stars/eso_antares.webp"
+  },
+  "star/arcturus": {
+   "image_ref": "stars/eso_arcturus.webp"
+  },
+  "star/arneb": {
+   "image_ref": "stars/eso_arneb.webp"
+  },
+  "star/betelgeuse": {
+   "image_ref": "stars/eso_betelgeuse.webp"
+  },
+  "star/canopus": {
+   "image_ref": "stars/iss_canopus.webp"
+  },
+  "star/capella": {
+   "image_ref": "stars/eso_capella.webp"
+  },
+  "star/caph": {
+   "image_ref": "stars/eso_caph.webp"
+  },
+  "star/castor": {
+   "image_ref": "stars/eso_castor.webp"
+  },
+  "star/deneb": {
+   "image_ref": "stars/eso_deneb.webp"
+  },
+  "star/denebola": {
+   "image_ref": "stars/eso_denebola.webp"
+  },
+  "star/diphda": {
+   "image_ref": "stars/eso_diphda.webp"
+  },
+  "star/dubhe": {
+   "image_ref": "stars/eso_dubhe.webp"
+  },
+  "star/enif": {
+   "image_ref": "stars/eso_enif.webp"
+  },
+  "star/etamin": {
+   "image_ref": "stars/eso_etamin.webp"
+  },
+  "star/fomalhaut": {
+   "image_ref": "stars/eso_fomalhaut.webp"
+  },
+  "star/hadar": {
+   "image_ref": "stars/eso_hadar.webp"
+  },
+  "star/hamal": {
+   "image_ref": "stars/eso_hamal.webp"
+  },
+  "star/izar": {
+   "image_ref": "stars/eso_izar.webp"
+  },
+  "star/kaus_australis": {
+   "image_ref": "stars/eso_kaus_australis.webp"
+  },
+  "star/kochab": {
+   "image_ref": "stars/eso_kochab.webp"
+  },
+  "star/markab": {
+   "image_ref": "stars/eso_markab.webp"
+  },
+  "star/menkar": {
+   "image_ref": "stars/eso_menkar.webp"
+  },
+  "star/merak": {
+   "image_ref": "stars/eso_merak.webp"
+  },
+  "star/mirach": {
+   "image_ref": "stars/eso_mirach.webp"
+  },
+  "star/mirphak": {
+   "image_ref": "stars/eso_mirphak.webp"
+  },
+  "star/nunki": {
+   "image_ref": "stars/eso_nunki.webp"
+  },
+  "star/phad": {
+   "image_ref": "stars/eso_phad.webp"
+  },
+  "star/polaris": {
+   "image_ref": "stars/hubble_polaris.webp"
+  },
+  "star/pollux": {
+   "image_ref": "stars/eso_pollux.webp"
+  },
+  "star/procyon": {
+   "image_ref": "stars/eso_procyon.webp"
+  },
+  "star/rasalhague": {
+   "image_ref": "stars/eso_rasalhague.webp"
+  },
+  "star/regulus": {
+   "image_ref": "stars/eso_regulus.webp"
+  },
+  "star/rigel": {
+   "image_ref": "stars/eso_rigel.webp"
+  },
+  "star/saiph": {
+   "image_ref": "stars/eso_saiph.webp"
+  },
+  "star/scheat": {
+   "image_ref": "stars/eso_scheat.webp"
+  },
+  "star/shaula": {
+   "image_ref": "stars/eso_shaula.webp"
+  },
+  "star/shedir": {
+   "image_ref": "stars/eso_shedir.webp"
+  },
+  "star/sirius": {
+   "image_ref": "stars/eso_sirius.webp"
+  },
+  "star/spica": {
+   "image_ref": "stars/eso_spica.webp"
+  },
+  "star/unukalhai": {
+   "image_ref": "stars/eso_unukalhai.webp"
+  },
+  "star/vega": {
+   "image_ref": "stars/eso_vega.webp"
+  },
+  "star/vindemiatrix": {
+   "image_ref": "stars/eso_vindemiatrix.webp"
+  }
+ }
+}

@@ -1,6 +1,6 @@
 ---
 name: skymap.add-object
-description: Add a new deep-sky object or special object to Sky Map's catalog from a Wikipedia URL or user-supplied data. Handles all four required files. Trigger on "add object", "add nebula/galaxy/cluster", "add <object name> to Sky Map", etc. ARGUMENTS: "[wikipedia_url_or_object_name]"
+description: Add a new deep-sky object or special object to Sky Map's catalog from a Wikipedia URL or user-supplied data. Handles all four required files. Trigger on "add object", "add nebula/galaxy/cluster", "add <object name> to Sky Map", etc. ARGUMENTS — "[wikipedia_url_or_object_name]"
 ---
 
 # Sky Map: Add Catalog Object

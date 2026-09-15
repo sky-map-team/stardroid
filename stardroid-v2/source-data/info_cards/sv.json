@@ -1,0 +1,2356 @@
+{
+ "cards": {
+  "constellation/andromeda": {
+   "description": "Andromeda Prinsessan innehåller Andromedagalaxen (M31), den närmaste stora spiralgalaxen till vår Vintergatan.",
+   "fun_fact": "Andromedagalaxen närmar sig oss med 110 km/s och kommer att slås samman med Vintergatan om ungefär 4,5 miljarder år!",
+   "size": "722 kvadratgrader",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/antlia": {
+   "description": "Antlia (luftpumpen) är en svag sydlig konstellation skapad av Nicolas-Louis de Lacaille på 1700-talet för att hedra luftpumpen uppfunnen av Robert Boyle.",
+   "fun_fact": "Antlia innehåller Antlia-dvärggalaxen, en av de närmaste galaxerna till Vintergatan på bara 4,3 miljoner ljusår bort!",
+   "size": "239 kvadratgrader",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/apus": {
+   "description": "Apus (Paradisets fågel) är en svag sydlig konstellation som infördes av nederländska navigatörer Keyser och de Houtman i slutet av 1500-talet.",
+   "fun_fact": "Apus döptes efter paradisfåglarna från Östindien, som tidiga europeiska upptäcktsresande trodde saknade fötter — därav det latinska namnet som betyder \"fotlös.\"",
+   "size": "206 kvadratgrader",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/aquarius": {
+   "description": "Vattumannen är en zodiakstjärnbild i en del av himlen som ofta kallas Havet, omgiven av vattenrelaterade stjärnbilder.",
+   "fun_fact": "Vattumannen innehåller Helixnebulosan, en av de närmaste planetariska nebulorna till jorden på bara 700 ljusårs avstånd!",
+   "size": "980 kvadratgrader",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/aquila": {
+   "description": "Örnen är en stjärnbild på himmelsekvatorn, med den ljusa stjärnan Altair i sitt centrum.",
+   "fun_fact": "Altair i Örnen är en av de snabbast roterande stjärnorna som är kända och snurrar så snabbt att den buktar ut vid ekvatorn!",
+   "size": "652 kvadratgrader",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/ara": {
+   "description": "Ara (Altaret) är en sydlig konstellation som är känd sedan antiken. I den grekiska mytologin representerar den altaret på vilket gudarna svurit ed innan de stred mot titanerna.",
+   "fun_fact": "Ara innehåller Stingray-nebulosan, den yngsta kända planetariska nebulosan, som endast observerades bildas på 1980-talet — en kosmisk händelse som fångades i realtid!",
+   "size": "237 kvadratgrader",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/aries": {
+   "description": "Väduren är en zodiakstjärnbild som en gång var hem för vårdagjämningen, vilket gav oss frasen \"Vädurens första punkt\".",
+   "fun_fact": "Även om vårdagjämningen flyttade till Fiskarna för ungefär 2 000 år sedan kallar vi den fortfarande Vädurens första punkt!",
+   "size": "441 kvadratgrader",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/auriga": {
+   "description": "Kusken är en nordlig stjärnbild med Capella, den sjätte ljusaste stjärnan, och flera öppna stjärnhopar.",
+   "fun_fact": "Epsilon Aurigae är en av de märkligaste stjärnorna som är kända, den blir svagare i två år vart 27:e år på grund av en mystisk mörk skiva!",
+   "size": "657 kvadratgrader",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/bootes": {
+   "description": "Björnvaktaren är en stjärnbild som innehåller Arcturus, den fjärde ljusaste stjärnan på natthimlen.",
+   "fun_fact": "Följ bågen på Karlavagnens handtag för att \"båga till Arcturus\" - ett av de mest kända navigationstipsen!",
+   "size": "907 kvadratgrader",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/caelum": {
+   "description": "Caelum (mejseln) är en av de svagaste stjärnbilderna på himlen, skapad av Lacaille på 1700-talet för att representera ett gravyrstål.",
+   "fun_fact": "Caelum är den åttonde minsta stjärnbilden och innehåller inga stjärnor ljusare än magnitud 4,5 — du behöver mycket mörka himlar och skarpa ögon för att se den!",
+   "size": "125 kvadratgrader",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/camelopardalis": {
+   "description": "Camelopardalis (Giraffen) är en stor men svag nordlig konstellation. Dess namn kommer från det grekiska ordet för \"kamel-leopard\", en tidig beskrivning av giraffen.",
+   "fun_fact": "Trots att Camelopardalis är den 18:e största stjärnbilden har den ingen stjärna ljusare än magnitud 4,0 — den upptar ett stort, till synes tomt område på himlen nära Polaris!",
+   "size": "757 kvadratgrader",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/cancer": {
+   "description": "Kräftan är den svagaste zodiakstjärnbilden men innehåller den berömda Bikupan (M44) synlig för blotta ögat.",
+   "fun_fact": "Kräftans vändkrets fick sitt namn när solen var i Kräftan vid sommarsolståndet, även om den nu är i Oxen!",
+   "size": "506 kvadratgrader",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/canes_venatici": {
+   "description": "Canes Venatici (Jägarnas hundar) representerar de två hundar som hålls av Boötes, Herdsman. Det introducerades av Johannes Hevelius 1687.",
+   "fun_fact": "Canes Venatici innehåller M51, Virvelgalaxen — den första galaxen vars spiralstruktur upptäcktes, skisserad av Lord Rosse 1845!",
+   "size": "465 kvadratgrader",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/canis_major": {
+   "description": "Stora hunden följer Orion över himlen och innehåller Sirius, den ljusaste stjärnan synlig från jorden.",
+   "fun_fact": "Forntida egyptier baserade sin kalender på Sirius heliska uppgång, som sammanföll med Nilens årliga översvämning!",
+   "size": "380 kvadratgrader",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/canis_minor": {
+   "description": "Lilla hunden är en liten stjärnbild känd för Procyon, den åttonde ljusaste stjärnan på himlen.",
+   "fun_fact": "Procyon betyder \"före hunden\" på grekiska eftersom den stiger upp strax före Sirius (Hundstjärnan) varje natt!",
+   "size": "183 kvadratgrader",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/capricornus": {
+   "description": "Stenbocken är en forntida zodiakstjärnbild som föreställer en mytisk varelse som är hälften get, hälften fisk.",
+   "fun_fact": "Stenbocken är en av de äldsta erkända stjärnbilderna och finns i babyloniska stjärnkataloger över 3 000 år gamla!",
+   "size": "414 kvadratgrader",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/carina": {
+   "description": "Kölen var en del av den enorma stjärnbilden Argo Navis och innehåller den strålande stjärnan Canopus.",
+   "fun_fact": "Eta Carinae i Kölen är en av de mest lysande stjärnorna som är kända och kan explodera som supernova under vår livstid!",
+   "size": "494 kvadratgrader",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/cassiopeia": {
+   "description": "Cassiopeia är en distinkt W-formad stjärnbild på norra himlen, uppkallad efter en fåfäng drottning i grekisk mytologi.",
+   "fun_fact": "Tycho Brahes supernova 1572 dök upp i Cassiopeia och hjälpte till att bevisa att himlarna kunde förändras!",
+   "size": "598 kvadratgrader",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/centaurus": {
+   "description": "Kentauren är en stor sydlig stjärnbild som innehåller Alfa Centauri, det närmaste stjärnsystemet till vår sol.",
+   "fun_fact": "Proxima Centauri i Kentauren är bara 4,24 ljusår bort, vilket gör den till den närmaste stjärnan till vårt solsystem!",
+   "size": "1 060 kvadratgrader",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/cepheus": {
+   "description": "Cepheus Kungen är en nordlig stjärnbild vars stjärnor inkluderar Delta Cephei, prototypen för Cefeidvariabla stjärnor.",
+   "fun_fact": "Cefeidvariabler upptäckta av Henrietta Leavitt revolutionerade astronomin genom att låta oss mäta kosmiska avstånd!",
+   "size": "588 kvadratgrader",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/cetus": {
+   "description": "Valfisken är en stor stjärnbild som innehåller Mira, den första variabla stjärnan som någonsin upptäcktes.",
+   "fun_fact": "Mira i Valfisken varierar från synlig till osynlig under 11 månader och har en 13 ljusår lång svans av gas!",
+   "size": "1 231 kvadratgrader",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/chamaeleon": {
+   "description": "Chamaeleon är en liten sydlig konstellation som infördes av nederländska navigatörer i slutet av 1500-talet och föreställer ödlan som byter färg.",
+   "fun_fact": "Chamaeleon innehåller ett stort molekylärt molnkomplex där nya stjärnor aktivt bildas — det är en av de närmaste stjärnbildningsregionerna till jorden på bara 500 ljusår bort!",
+   "size": "132 kvadratgrader",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/circinus": {
+   "description": "Circinus (Passaren) är en av de minsta stjärnbilderna, skapad av Lacaille för att representera en ritningskompass som användes för att rita cirklar.",
+   "fun_fact": "Circinus-galaxen är en av de närmaste Seyfert-galaxerna till oss — en aktiv galax med ett supermassivt svart hål som driver ljusa strålar av materia!",
+   "size": "93 kvadratgrader",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/columba": {
+   "description": "Columba (Duvan) representerar duvan som Noa skickade från Arken för att hitta torr mark. Den ligger söder om Lepus och Canis Major.",
+   "fun_fact": "Flyktingstjärnan Mu Columbae kastades ut från Orionnebulosan för cirka 2,5 miljoner år sedan och färdas nu genom Columba med en hastighet på över 100 km/s!",
+   "size": "270 kvadratgrader",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/coma_berenices": {
+   "description": "Coma Berenices (Berenikes hår) representerar håret från den egyptiska drottningen Berenice II, som offrade det till gudarna. Det är en av få stjärnbilder som är uppkallad efter en historisk person.",
+   "fun_fact": "Coma Berenices innehåller den norra galaktiska polen — riktningen vinkelrät mot Vintergatans disk — vilket är varför den är rik på synliga galaxer utan galaktiskt damm i vägen!",
+   "size": "386 kvadratgrader",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/corona_australis": {
+   "description": "Corona Australis (Södra Kronan) är en av de 48 konstellationer som listades av Ptolemaios. Den representerar en krans eller krona placerad vid fötterna på Skytten.",
+   "fun_fact": "Corona Australis innehåller en av de närmaste och mest aktiva stjärnbildningsregionerna — Coronet Cluster, där dussintals unga stjärnor föds just nu!",
+   "size": "128 kvadratgrader",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/corona_borealis": {
+   "description": "Norra kronan är en liten halvbågsformad stjärnbild som representerar Ariadnes krona från grekisk mytologi.",
+   "fun_fact": "T Coronae Borealis är en återkommande nova som bryter ut ungefär vart 80:e år - ett annat utbrott kan hända snart!",
+   "size": "179 kvadratgrader",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/corvus": {
+   "description": "Korpen är en liten fyrkantig stjärnbild söder om Jungfrun, som representerar Apollons heliga fågel.",
+   "fun_fact": "De fyra huvudstjärnorna i Korpen bildar en distinkt segelform som är lätt att se på vårhimlen!",
+   "size": "184 kvadratgrader",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/crater": {
+   "description": "Crater (Bägaren) representerar Apollos bägare i grekisk mytologi. Den sitter på ryggen av Hydra, vattenormen, bredvid Corvus, Korpen.",
+   "fun_fact": "I grekisk mytologi skickade Apollo kråkan för att hämta vatten i denna Bägare, men kråkan dröjde genom att äta fikon — så Apollo placerade alla tre i himlen som straff!",
+   "size": "282 kvadratgrader",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/crux": {
+   "description": "Södra korset är den minsta stjärnbilden men en av de mest distinkta, använd för navigation på södra halvklotet.",
+   "fun_fact": "Trots att det är den minsta stjärnbilden har Södra korset fler ljusa stjärnor per ytenhet än någon annan stjärnbild!",
+   "size": "68 kvadratgrader",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/cygnus": {
+   "description": "Svanen flyger längs Vintergatan och innehåller Nordkorsets asterism och den ljusa stjärnan Deneb.",
+   "fun_fact": "Cygnus X-1 i denna stjärnbild var det första allmänt accepterade svarta hålet, identifierat i början av 1970-talet!",
+   "size": "804 kvadratgrader",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/delphinus": {
+   "description": "Delfinen är en liten men distinkt stjärnbild vars stjärnor bildar formen av en hoppande delfin.",
+   "fun_fact": "Två av Delfinens stjärnor heter Sualocin och Rotanev - \"Nicolaus Venator\" stavat baklänges, astronomen som namngav dem!",
+   "size": "189 kvadratgrader",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/dorado": {
+   "description": "Dorado (Svärdsfisken eller Guldmakrilen) är en sydlig konstellation skapad av nederländska navigatörer. Den innehåller större delen av Stora Magellanska Molnet.",
+   "fun_fact": "Dorado är värd för Tarantulnebulosan (30 Doradus), den mest lysande stjärnbildningsregionen i den lokala gruppen — om den vore lika nära som Orionnebulosan skulle den kasta skuggor på jorden!",
+   "size": "179 kvadratgrader",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/draco": {
+   "description": "Draken är en lång, slingrande stjärnbild som kretsar runt Lilla björnen på den yttersta norra himlen.",
+   "fun_fact": "Thuban i Draken var Polstjärnan när de egyptiska pyramiderna byggdes för 5 000 år sedan!",
+   "size": "1 083 kvadratgrader",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/equuleus": {
+   "description": "Equuleus (den lilla hästen) är den näst minsta stjärnbilden. I grekisk mytologi representerar den Celeris, brodern eller fölet till Pegasus.",
+   "fun_fact": "Equuleus är den näst minsta av alla 88 stjärnbilder (endast Crux är mindre), men det var en av de ursprungliga 48 som listades av Ptolemaios för nästan 2 000 år sedan!",
+   "size": "72 kvadratgrader",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/eridanus": {
+   "description": "Floden är den sjätte största stjärnbilden, som slingrar sig från nära Orion till den avlägsna södra himlen.",
+   "fun_fact": "Achernar i slutet av Floden är den plattaste kända stjärnan, som buktar 56% bredare vid ekvatorn på grund av snabb rotation!",
+   "size": "1 138 kvadratgrader",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/fornax": {
+   "description": "Fornax (Ugnen) skapades av Lacaille för att representera en kemisk ugn. Det är en svag sydlig konstellation mellan Cetus och Eridanus.",
+   "fun_fact": "Hubble Ultra Deep Field — en av de djupaste bilderna av universum som någonsin tagits, som avslöjar galaxer 13 miljarder ljusår bort — fotograferades i Fornax!",
+   "size": "398 kvadratgrader",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/gemini": {
+   "description": "Tvillingarna har de ljusa stjärnorna Castor och Pollux, som representerar tvillingbröderna från grekisk mytologi.",
+   "fun_fact": "Trots att de kallas tvillingar är Castor faktiskt sex stjärnor och Pollux är en orange jätte - de ser inte alls lika ut!",
+   "size": "514 kvadratgrader",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/grus": {
+   "description": "Tranan är en sydlig stjärnbild introducerad i slutet av 1500-talet av europeiska navigatörer.",
+   "fun_fact": "Tranan var en gång känd som Phoenicopterus (Flamingon) innan den ändrades till att representera en trana!",
+   "size": "366 kvadratgrader",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/hercules": {
+   "description": "Herkules är en stor stjärnbild som representerar den grekiska hjälten och innehåller den stora klothopen M13.",
+   "fun_fact": "Vårt solsystem rör sig mot en punkt i Herkules som kallas solapex med ungefär 20 km/s!",
+   "size": "1 225 kvadratgrader",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/horologium": {
+   "description": "Horologium (Pendelklockan) skapades av Lacaille för att hedra Christiaan Huygens' uppfinning av pendelklockan 1656.",
+   "fun_fact": "Horologium innehåller en massiv superkluster av galaxer kallad Horologium-Reticulum Superklustern, en av de största strukturerna i det närliggande universum!",
+   "size": "249 kvadratgrader",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/hydra": {
+   "description": "Vattenormen är den största stjärnbilden på himlen, som representerar vattenormen från grekisk mytologi.",
+   "fun_fact": "Vattenormen sträcker sig över 100 grader av himlen - mer än en fjärdedel av vägen runt hela himmelssfären!",
+   "size": "1 303 kvadratgrader",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/hydrus": {
+   "description": "Hydrus (den mindre vattenslanken) är en liten sydlig konstellation nära den södra himmelspolen. Ska inte förväxlas med Hydra, den mycket större vattenslanken.",
+   "fun_fact": "Hydrus ligger mellan de stora och små Magellanska molnen, vilket gör den till en användbar vägvisare för att hitta dessa två satellitgalaxer i Vintergatan!",
+   "size": "243 kvadratgrader",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/indus": {
+   "description": "Indus (indianen) är en sydlig konstellation skapad av nederländska navigatörer, ursprungligen representerade en inföding från Östindien eller Madagaskar.",
+   "fun_fact": "Epsilon Indi, en av de närmaste solliknande stjärnorna på bara 12 ljusår bort, ligger i Indus — och den har ett brunt dvärgsystem som följeslagare!",
+   "size": "294 kvadratgrader",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/lacerta": {
+   "description": "Lacerta (Ödlan) är en liten nordlig konstellation som introducerades av Hevelius 1687. Den ligger mellan Cygnus och Andromeda.",
+   "fun_fact": "Lacerta innehåller BL Lacertae, prototypen för en klass av aktiva galaxer som kallas \"blazars\" — galaxer med supermassiva svarta hål som skjuter strålstrålar av materia direkt mot jorden!",
+   "size": "201 kvadratgrader",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/leo": {
+   "description": "Lejonet är en zodiakstjärnbild med Regulus vid lejonets hjärta och den distinkta Skärans asterism.",
+   "fun_fact": "Leonidernas meteorskur i november verkar stråla ut från Lejonet och kan producera spektakulära stormar!",
+   "size": "947 kvadratgrader",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/leo_minor": {
+   "description": "Leo Minor (den mindre lejonet) är en svag stjärnbild mellan Leo och Stora björnen, introducerad av Hevelius 1687.",
+   "fun_fact": "Leo Minor är en av få stjärnbilder vars ljusaste stjärna saknar Alfabeteckning — Hevelius glömde att märka den, så dess ljusaste stjärna är 46 Leonis Minoris (Beta)!",
+   "size": "232 kvadratgrader",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/lepus": {
+   "description": "Haren kryper under Orions fötter, en liten men distinkt stjärnbild med en rik mytologi.",
+   "fun_fact": "I mytologin sades Orion älska att jaga harar, så en placerades under hans fötter på himlen!",
+   "size": "290 kvadratgrader",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/libra": {
+   "description": "Vågen är den enda zodiakstjärnbilden som representerar ett livlöst föremål, en gång ansedd som del av Skorpionen.",
+   "fun_fact": "Vagens huvudstjärnor var en gång kända som Skorpionens klor innan de blev Rättvisans våg!",
+   "size": "538 kvadratgrader",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/lupus": {
+   "description": "Lupus (Vargen) är en forntida sydlig konstellation. Greker och romare såg den som ett vilt djur genomborrat av en påle som hölls av Centaurus.",
+   "fun_fact": "År 1006 e.Kr. dök den ljusstarkaste supernovaen någonsin som registrerats av människor upp i Lupus — SN 1006 var synlig på dagen och kan ha nått magnituden −7,5!",
+   "size": "334 kvadratgrader",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/lynx": {
+   "description": "Lynx är en stor men svag nordlig konstellation skapad av Hevelius 1687. Han sa att du skulle behöva ögonen på en lodjur för att se den!",
+   "fun_fact": "Lynx innehåller Intergalactic Wanderer (NGC 2419), ett klotformat stjärnhop som är så långt bort på 300 000 ljusår att man en gång trodde att det kretsade utanför Vintergatan!",
+   "size": "545 kvadratgrader",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/lyra": {
+   "description": "Lyran är en liten men framträdande stjärnbild som innehåller Vega, den femte ljusaste stjärnan på natthimlen.",
+   "fun_fact": "Vega var Polstjärnan omkring 12 000 f.Kr. och kommer att vara det igen om ungefär 12 000 år på grund av jordens precession!",
+   "size": "286 kvadratgrader",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/mensa": {
+   "description": "Mensa (Bordsberget) skapades av Lacaille för att hedra Table Mountain i Kapstaden, Sydafrika, där han gjorde sina observationer av södra himlen.",
+   "fun_fact": "Mensa är den enda stjärnbilden uppkallad efter en specifik geografisk plats på jorden. En del av Stora Magellanska molnet sträcker sig in i den, som ett moln över berget!",
+   "size": "153 kvadratgrader",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/microscopium": {
+   "description": "Microscopium (Mikroskopet) skapades av Lacaille för att hedra det sammansatta mikroskopet. Det är en av de svagaste stjärnbilderna på himlen.",
+   "fun_fact": "Microscopiums ljusaste stjärna, Gamma Microscopii, var en gång en del av närliggande Sagittarius — den omtilldelades när gränserna för stjärnbilderna standardiserades 1930!",
+   "size": "210 kvadratgrader",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/monoceros": {
+   "description": "Enhörningen är en svag stjärnbild i vinter-Vintergatan, rik på nebulosor och stjärnhopar.",
+   "fun_fact": "Rosettnebulan i Enhörningen är en massiv stjärnbildningsregion som liknar en himmelsk ros!",
+   "size": "482 kvadratgrader",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/musca": {
+   "description": "Musca (Flugan) är en liten sydlig konstellation nära Södra Korset. Det är den enda insektkonstellationen på himlen.",
+   "fun_fact": "Musca kallades ursprungligen \"Apis\" (Biet) av dess skapare. Det är den enda stjärnbilden som föreställer ett insekt — och den ligger precis bredvid Chamaeleon, som äter dem!",
+   "size": "138 kvadratgrader",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/norma": {
+   "description": "Norma (Snickaren's Vinkelhake) skapades av Lacaille för att representera en vattenpass och en vinkelhake. Den ligger i den rika Vintergatan mellan Skorpionen och Vargen.",
+   "fun_fact": "När du tittar mot Norma, blickar du längs en av Vintergatans spiralarmarna — Norma-armen, uppkallad efter denna konstellation, är full av stjärnhopar och nebulor!",
+   "size": "165 kvadratgrader",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/octans": {
+   "description": "Octans (Oktanten) skapades av Lacaille för att hedra navigationsinstrumentet. Det innehåller den södra himmelspolen.",
+   "fun_fact": "Octans innehåller den södra himmelspolen, men till skillnad från Nordpolen med Polaris finns det ingen ljus stjärna som markerar den södra polen — Sigma Octantis (mag 5,4) är den svaga \"Södra stjärnan.\"",
+   "size": "291 kvadratgrader",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/ophiuchus": {
+   "description": "Ormbäraren ligger längs ekliptikan men är inte ett zodiaktecken, delad av ormen han håller.",
+   "fun_fact": "Solen tillbringar mer tid i Ormbäraren än i Skorpionen, men Ormbäraren anses ändå inte vara ett zodiaktecken!",
+   "size": "948 kvadratgrader",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/orion": {
+   "description": "Orion Jägaren är en av de mest igenkännliga stjärnbilderna, synlig från båda halvkloten med sitt distinkta Bälte av tre stjärnor.",
+   "fun_fact": "Orions bälte pekar mot Sirius (den ljusaste stjärnan) i en riktning och Aldebaran (i Oxen) i den andra!",
+   "size": "594 kvadratgrader",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/pavo": {
+   "description": "Påfågeln är en sydlig stjärnbild som innehåller den ljusa stjärnan Peacock och flera intressanta galaxer.",
+   "fun_fact": "Stjärnan Peacock (Alfa Pavonis) är den näst mest lysande stjärnan inom 200 ljusår från vår sol!",
+   "size": "378 kvadratgrader",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/pegasus": {
+   "description": "Pegasus den bevingade hästen är en stor stjärnbild med Pegasusfyrkanten, en framträdande höstasterism.",
+   "fun_fact": "51 Pegasi b, upptäckt 1995 i denna stjärnbild, var den första exoplaneten som hittades i omloppsbana runt en solliknande stjärna!",
+   "size": "1 121 kvadratgrader",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/perseus": {
+   "description": "Perseus Hjälten är hem för den berömda variabla stjärnan Algol och Dubbelklustret, ett fantastiskt par öppna stjärnhopar.",
+   "fun_fact": "Algol (Djävulsstjärnan) ansågs ond i antiken eftersom den mystiskt blev svagare var 2,87:e dag!",
+   "size": "615 kvadratgrader",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/phoenix": {
+   "description": "Fenix är en sydlig stjärnbild som representerar den mytiska fågeln som reser sig ur sin egen aska.",
+   "fun_fact": "Fenix var en av 12 stjärnbilder skapade av holländska upptäcktsresande i slutet av 1500-talet från okartlagda sydliga stjärnor!",
+   "size": "469 kvadratgrader",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/pictor": {
+   "description": "Pictor (Målares staffli) är en svag sydlig konstellation skapad av Lacaille, ursprungligen namngiven efter en konstnärs staffli.",
+   "fun_fact": "Beta Pictoris i denna konstellation var en av de första stjärnorna som upptäcktes ha en synlig skräpskiva — och den har två bekräftade exoplaneter som kretsar inom den!",
+   "size": "247 kvadratgrader",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/pisces": {
+   "description": "Fiskarna är en stor zodiakstjärnbild som representerar två fiskar bundna tillsammans, och markerar vårdagjämningspunkten.",
+   "fun_fact": "Vårdagjämningen (första dagen på våren) ligger för närvarande i Fiskarna och har långsamt rört sig genom den i 2 000 år!",
+   "size": "889 kvadratgrader",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/piscis_austrinus": {
+   "description": "Piscis Austrinus (den södra fisken) är en forntida konstellation. Det sägs att den är föräldern till de två fiskarna i Fiskarna, som dricker vatten som hälls av Vattumannen.",
+   "fun_fact": "Fomalhaut, den ljusaste stjärnan i Piscis Austrinus, var en av de första stjärnorna som fick en exoplanet direkt fotograferad av Hubble — även om \"planeten\" faktiskt kan vara ett stoftmoln!",
+   "size": "245 kvadratgrader",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/puppis": {
+   "description": "Akterskeppet representerar det bakre däcket på skeppet Argo Navis, rik på öppna stjärnhopar längs Vintergatan.",
+   "fun_fact": "Akterskeppet innehåller M47, en öppen stjärnhop synlig för blotta ögat som var \"förlorad\" i över 200 år på grund av ett katalogfel!",
+   "size": "673 kvadratgrader",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/pyxis": {
+   "description": "Pyxis (Kompassens låda) representerar ett sjömanskompas. Lacaille skapade det från stjärnor som en gång var en del av den gamla stjärnbilden Argo Navis (Skeppet).",
+   "fun_fact": "Pyxis innehåller T Pyxidis, en återkommande nova som har utbrutit minst sex gånger sedan 1890 — det's en av de bäst studerade novor på himlen!",
+   "size": "221 kvadratgrader",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/reticulum": {
+   "description": "Reticulum (Nätöga) skapades av Lacaille för att representera hårkorsögonpjäsen i hans teleskop, som användes under hans kartläggning av södra himlen.",
+   "fun_fact": "Reticulum är berömt inom UFO-legenderna — \"Zeta Reticuli-incidenten\" från 1961 hävdade att främmande besökare kom från ett stjärnsystem i denna konstellation!",
+   "size": "114 kvadratgrader",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/sagitta": {
+   "description": "Pilen är den tredje minsta stjärnbilden, som representerar olika mytologiska pilar från grekiska legender.",
+   "fun_fact": "Trots att den är liten innehåller Pilen M71, en klotformig hop som misstogs för en öppen hop i århundraden!",
+   "size": "80 kvadratgrader",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/sagittarius": {
+   "description": "Skytten pekar mot centrum av vår Vintergatan, vilket gör den rik på nebulosor och stjärnhopar.",
+   "fun_fact": "När du tittar på Skytten tittar du mot Sagittarius A*, det supermassiva svarta hålet i vår galaxs centrum!",
+   "size": "867 kvadratgrader",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/scorpius": {
+   "description": "Skorpionen är en framträdande zodiakstjärnbild med en distinkt böjd stjärt, dominerad av den röda superjätten Antares.",
+   "fun_fact": "I mytologin placerades Skorpionen på himlen mittemot Orion så att jägaren aldrig skulle bli stungen igen!",
+   "size": "497 kvadratgrader",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/sculptor": {
+   "description": "Sculptor (Skulptören) skapades av Lacaille och representerade ursprungligen en skulptörs studio. Den innehåller den södra galaktiska polen.",
+   "fun_fact": "Sculptor innehåller den södra galaktiska polen och Sculptor-dvärggalaxen, en av Vintergatans närmaste satellitgalaxer på bara 260 000 ljusår bort!",
+   "size": "475 kvadratgrader",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/scutum": {
+   "description": "Scutum (Skölden) skapades av Hevelius 1684 för att hedra kung John III Sobieski av Polen. Det är en av få stjärnbilder som är uppkallade efter en icke-mytologisk historisk person.",
+   "fun_fact": "Scutum innehåller Scutum Star Cloud, en av de ljusaste och tätaste fläckarna i Vintergatan som är synlig för blotta ögat — det är ett fönster in i vår galaxs inre spiralarm!",
+   "size": "109 kvadratgrader",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/serpens_caput": {
+   "description": "Serpens Caput (Ormen's huvud) är den västra delen av Serpens, den enda stjärnbilden som är uppdelad i två icke sammanhängande delar av Ophiuchus.",
+   "fun_fact": "Serpens Caput innehåller M5, ett av de äldsta och största klothopar som är kända — det är 13 miljarder år gammalt och innehåller över 100 000 stjärnor!",
+   "size": "428 kvadratgrader (båda delarna)",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/serpens_cauda": {
+   "description": "Serpens Cauda (Ormen's svans) är den östra halvan av Serpens, skild från huvudet av stjärnbilden Ophiuchus.",
+   "fun_fact": "Serpens Cauda innehåller Eagle Nebula (M16) och dess berömda \"Pillars of Creation\" — höga kolonner av gas och damm där nya stjärnor föds!",
+   "size": "428 kvadratgrader (båda delarna)",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/sextans": {
+   "description": "Sextans (Sekstanten) skapades av Hevelius för att hedra hans astronomiska sekstant, som förstördes i en brand 1679.",
+   "fun_fact": "Sextans innehåller galaxen Sextans A, en av de mest isolerade galaxerna i Lokala gruppen på 4,3 miljoner ljusår bort!",
+   "size": "314 kvadratgrader",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/taurus": {
+   "description": "Oxen är en zodiakstjärnbild som innehåller Plejaderna och Hyaderna stjärnhopar, samt den ljusa stjärnan Aldebaran.",
+   "fun_fact": "Krabbnebulan i Oxen är resten av en supernova som bevittnades och dokumenterades av kinesiska astronomer år 1054!",
+   "size": "797 kvadratgrader",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/telescopium": {
+   "description": "Telescopium (Teleskopet) skapades av Lacaille för att hedra uppfinningen av det brytande teleskopet. Det ligger söder om Sagittarius och Corona Australis.",
+   "fun_fact": "Telescopium var ursprungligen mycket större — när Lacaille först ritade det sträckte det sig in i vad som nu är delar av Sagittarius och Ophiuchus!",
+   "size": "252 kvadratgrader",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/triangulum": {
+   "description": "Triangeln är en liten nordlig stjärnbild som innehåller Triangelgalaxen (M33), den tredje största i Lokala gruppen.",
+   "fun_fact": "Triangelgalaxen är det mest avlägsna objektet som kan ses med blotta ögat under idealiska förhållanden!",
+   "size": "132 kvadratgrader",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/triangulum_australe": {
+   "description": "Triangulum Australe (den södra triangeln) är en liten men distinkt sydlig konstellation. Dess tre ljusaste stjärnor bildar en nästan liksidig triangel.",
+   "fun_fact": "Triangulum Australe innehåller NGC 6025, ett vackert öppet stjärnhop som är lätt synligt med kikare, och det förekommer på flaggorna för Brasilien och Papua Nya Guinea!",
+   "size": "110 kvadratgrader",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/tucana": {
+   "description": "Tucana (Tukanen) är en sydlig konstellation skapad av nederländska navigatörer, som föreställer den tropiska fågeln med sin enorma näbb.",
+   "fun_fact": "Tucana innehåller 47 Tucanae (NGC 104), det näst ljusaste klothopar i himlen, hem för miljoner stjärnor och flera millisekund-pulsarer!",
+   "size": "295 kvadratgrader",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/ursa_major": {
+   "description": "Stora björnen innehåller Karlavagnens asterism, ett av de mest igenkända stjärnmönstren på norra himlen.",
+   "fun_fact": "Fem av Karlavagnens stjärnor är fysiskt relaterade och rör sig tillsammans genom rymden som Stora björnens rörliga grupp!",
+   "size": "1 280 kvadratgrader",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/ursa_minor": {
+   "description": "Lilla björnen innehåller Lilla vagnen och Polaris, den nuvarande Polstjärnan som markerar jordens himmelska nordpol.",
+   "fun_fact": "På grund av precession kommer Polaris inte alltid att vara Polstjärnan - om 14 000 år kommer Vega att ta dess plats!",
+   "size": "256 kvadratgrader",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/vela": {
+   "description": "Seglen var en gång del av det stora skeppet Argo Navis, belägen i en rik region av Vintergatan.",
+   "fun_fact": "Velapulsaren är den ljusaste pulsaren på himlen och resten av en supernova som exploderade för 11 000 år sedan!",
+   "size": "500 kvadratgrader",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/virgo": {
+   "description": "Jungfrun är den näst största stjärnbilden och ett zodiaktecken, som innehåller Virgoklustret med över 2 000 galaxer.",
+   "fun_fact": "Virgoklustret är hjärtat av Virgosuperklustret, som innehåller vår egen Vintergatan!",
+   "size": "1 294 kvadratgrader",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/volans": {
+   "description": "Volans (den flygande fisken) är en svag sydlig konstellation som infördes av nederländska navigatörer och föreställer den tropiska fisk som kan hoppa ur vattnet och glida.",
+   "fun_fact": "Volans ligger nära Stora Magellanska Molnet och innehåller Lindsay-Shapley-ringen, en av de mest perfekta ringgalaxerna som någonsin observerats!",
+   "size": "141 kvadratgrader",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "constellation/vulpecula": {
+   "description": "Vulpecula (Lilla Räven) är en svag nordlig konstellation skapad av Hevelius 1687. Den ligger i hjärtat av Vintergatan mellan Cygnus och Sagitta.",
+   "fun_fact": "Vulpecula innehåller Hantelnebulosan (M27), den första planetariska nebulosan som någonsin upptäcktes (av Charles Messier 1764), och ett vackert kikare-mål!",
+   "size": "268 kvadratgrader",
+   "image_credit": "IAU/Sky & Telescope"
+  },
+  "dso/blue_snowball_nebula": {
+   "description": "Blue Snowball är en planetarisk nebulosa i Andromeda — det glödande gasmoln som en döende stjärna har stött ut. Med magnitud 8,3 är den en av de ljusaste och mest färgglada planetariska nebulosorna på himlen, och framträder som en levande blågröna skiva även i små teleskop. Dess symmetriska form och intensiva färg gör den till en favorit bland observatörer.",
+   "fun_fact": "Blue Snowballs slående färg kommer från dubbelt joniserad syre som lyser vid en specifik grön våglängd, kombinerat med väteemission — en färgpalett som mänskliga ögon uppfattar som blågrön. Den centrala vita dvärgen har en yttemperatur på omkring 100 000°C, tillräckligt het för att jonisera den omgivande gasen på detta avstånd.",
+   "distance": "~2 500 ljusår",
+   "size": "~0,8 ljusår diameter",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/centaurus_a": {
+   "description": "Centaurus A (NGC 5128) är den närmaste aktiva radiogalaxen till jorden, en jättelik elliptisk galax i stjärnbilden Centaurus vars slående mörka dammband avslöjar ett våldsamt förflutet — en spiralgalax som uppslukades för ungefär 200–700 miljoner år sedan. I dess hjärta lurerar ett supermassivt svart hål med 55 miljoner solmassor som driver relativistiska jetstrålar som sträcker sig mer än en miljon ljusår i radiofrekvenser. På ett avstånd av ungefär 12 miljoner ljusår är den en av de mest studerade galaxerna på himlen.",
+   "fun_fact": "Centaurus A är en av de kraftigaste naturliga radiosändarna på himlen — dess jetstrålar blåser plasma utåt med nästan ljusets hastighet, och dess radiologer sträcker sig över ett område motsvarande cirka 100 fullmånar placerade tätt efter varandra över himlen.",
+   "distance": "~12 miljoner ljusår",
+   "size": "~123 000 ljusår i diameter",
+   "image_credit": "ESO"
+  },
+  "dso/coathanger": {
+   "description": "Coathanger är en slående asterism av tio stjärnor i Vulpecula som bildar en omissbar form: sex stjärnor i en rät linje med fyra hängande nedan i en krok, vilket exakt liknar en upp-och-ned vänd klädkrok. Det är ett av de bästa kikareobserven på sommarhimlen och passar perfekt in i ett typiskt kikarfält.",
+   "fun_fact": "Trots att det ser ut som ett kluster är Klädklyftans stjärnor inte fysiskt relaterade – de ligger på mycket olika avstånd och är helt enkelt en slumpmässig linjekoincidens. Broccis kluster katalogiserades av Dalmiro Brocchi på 1920-talet, och det första rymdteleskopet som avbildade det var Hipparcos, vilket bekräftade att stjärnorna är orelaterade.",
+   "distance": "~420 ljusår (ljusaste stjärnan)",
+   "size": "~1° över",
+   "image_credit": "DSS/Giuseppe Donatiello"
+  },
+  "dso/coma_star_cluster": {
+   "description": "Coma Berenices stjärnhop är ett närliggande öppet stjärnhop med cirka 40 stjärnor utspridda löst över nästan 5° av himlen, lätt synligt för blotta ögat som en mjuk dis under mörka förhållanden. Det är det tredje närmaste öppna stjärnhopet till solsystemet och källan till stjärnbilden Coma Berenices.",
+   "fun_fact": "Antika observatörer såg denna stjärnhop som håret på drottning Berenice II av Egypten, som enligt legenden klippte av sitt gyllene hår som en gåva för att hennes makes säkra återkomst från krig. Ptolemaios III rapporterades officiellt ha döpt denna ovanliga konstellation till hennes ära omkring 245 f.Kr.",
+   "distance": "288 ljusår",
+   "size": "~5° över",
+   "image_credit": "Alberto Pisabarro/CC BY-SA 4.0"
+  },
+  "dso/cygnus_x_1": {
+   "description": "Cygnus X-1 är ett svart hål med stjärnmassa ungefär 7 200 ljusår bort i Cygnus och en av de starkaste röntgenkällorna på himlen. Det bildar ett dubbelstjärnssystem med den blå superjätten HDE 226868, som kretsar omkring varandra var 5,6:e dag. Det svarta hålet river gas från sin följeslagare och bildar en överhettad ackretionsskiva som lyser upp i röntgenstrålning.",
+   "fun_fact": "Cygnus X-1 var det första objektet som allmänt accepterades som ett svart hål. År 1975 gjorde Stephen Hawking ett berömt vetenskapligt vad med Kip Thorne om att det INTE var ett svart hål, ett vad som han senare medgav.",
+   "distance": "7 200 ljusår",
+   "size": "Svart håls massa: ~21 solmassor",
+   "image_credit": "NASA/CXC/M.Weiss"
+  },
+  "dso/double_cluster": {
+   "description": "Dubbelklustret (NGC 869 och NGC 884) är ett strålande par unga öppna stjärnhopar i Perseus, placerade sida vid sida på himlen bara drygt en grad från varandra. Båda är synliga för det blotta ögat som en dimmig fläck, men redan ett litet teleskop avslöjar hundratals glödande blåvita superjättar packade i två glittrande svärmor. På ungefär 7 500 ljusår avstånd ligger de inom Perseus-armen i vår galax och räknas bland de finaste kikare-objekten på norra himlen.",
+   "fun_fact": "Med endast 14 miljoner år är Dubbelklustret extraordinärt ungt — så nyligen fött att dess mest massiva stjärnor fortfarande är glödande blå superjättar, med ett fåtal redan utvecklade till sällsynta, eldiga röda superjättar.",
+   "distance": "~7 500 ljusår",
+   "size": "Varje kluster ~70 ljusår i diameter; paret separerat med ~1 000 ljusår",
+   "image_credit": "Genuson/CC BY-SA 3.0"
+  },
+  "dso/eta_carinae_nebula": {
+   "description": "Eta Carinae-nebulosan (NGC 3372) är en av de största och ljusaste nebulosorna på himlen och sträcker sig över 300 ljusår. I dess hjärta ligger Eta Carinae, en av de mest massiva och lysande stjärnorna som är kända, med en vikt på över 100 solmassor.",
+   "fun_fact": "År 1843 exploderade Eta Carinae och blev kortvarigt den näst ljusaste stjärnan på himlen, men på något sätt överlevde den — den kan vara på väg att bli en supernova!",
+   "distance": "7 500 ljusår",
+   "size": "300 ljusår i diameter"
+  },
+  "dso/exposed_cranium_nebula": {
+   "description": "Exposed Cranium Nebula (PMR 1) är en planetarisk nebulosa i Vela, cirka 5 000 ljusår bort. Dess märkliga namn kommer från ett mörkt gasband som löper vertikalt genom mitten och delar dess lysande lober i en form som eerie liknar en hjärna inuti en transparent skalle. I dess hjärta brinner en het Wolf-Rayet-stjärna som kastar av sig de yttre lager den byggde upp under sin livstid.",
+   "fun_fact": "År 2026 fångade James Webb-rymdteleskopet slående nya bilder av Exposed Cranium-nebulosan, vilket löste dess tvåskiktade struktur i aldrig tidigare skådad detalj — ett yttre skal rikt på väte och ett inre moln fyllt med tyngre element som skapades av den döende stjärnan.",
+   "distance": "~5 000 ljusår",
+   "size": "~2 ljusår i diameter",
+   "image_credit": "NASA, ESA, CSA, STScI/Joseph DePasquale"
+  },
+  "dso/ghost_of_jupiter": {
+   "description": "Ghost of Jupiter är en ljus planetarisk nebulosa i Hydra vars skenbara storlek liknar planeten Jupiter — därav dess namn. Med magnitud 8,6 är den en av de mest tillgängliga planetariska nebulosorna på himlen för små teleskop och visar en tydlig disk och en antydan av färg i måttliga öppningar.",
+   "fun_fact": "Jupiters spöke har ett inre ljust skal omgivet av en svagare yttre halo — en tvåskalsstruktur som tyder på att den döende stjärnan utslöppte gas i minst två separata episoder. Dess centrala stjärna är en av de hetaste kända vita dvärgarna, med en yttemperatur som uppskattas till omkring 75 000°C.",
+   "distance": "~1 400 ljusår",
+   "size": "~1 ljusår diameter",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/hdf": {
+   "description": "Hubble Deep Field är ett litet område på 2,6 bågminuter av till synes tom himmel i Stora Björnen, fotograferat av Hubble-rymdteleskopet under 10 på varandra följande dagar i december 1995. Det som såg ut som tomt utrymme visade sig innehålla ungefär 3 000 galaxer — som sträcker sig över miljarder år av kosmisk historia — och förändrade fundamentalt vår bild av universum.",
+   "fun_fact": "Himmelspetitionen valdes specifikt för att den var tom på ljusa stjärnor och närliggande galaxer. Ändå var den resulterande bilden fylld med ungefär 3 000 galaxer, vilket ledde till uppskattningen att hela himlen innehåller omkring 200 miljarder galaxer – nästan alla av dem osynliga för något teleskop före Hubble.",
+   "distance": "~13 miljarder ljusår (längst bort)",
+   "size": "2,6 bågminuter (synfält)",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/helix_nebula": {
+   "description": "Helix-nebulosan är den största planetariska nebulosan i apparent storlek på himlen — det expanderande gasmoln som kastats av en sollik stjärna vid slutet av sitt liv. Med en utbredning på cirka en halv grad är den synlig i kikare som en svag cirkulär glöd i Vattumannen och kallas Guds öga för sitt utseende på långexponeringsfoton.",
+   "fun_fact": "I hjärtat av Helix-nebulosan ligger en av de närmaste kända vita dvärgarna till jorden — en intensivt het stjärnrest ungefär jordens storlek men med solens massa. Detta är det öde som väntar vår egen sol om ungefär fem miljarder år.",
+   "distance": "650 ljusår",
+   "size": "~3 ljusår diameter",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/hyades": {
+   "description": "Hyades är det närmaste öppna stjärnhopen till solsystemet och en av de mest studerade inom astronomin. Den är synlig för blotta ögat som det V-formade mönstret av stjärnor som bildar ansiktet på Taurus och innehåller flera hundra stjärnor utspridda över cirka 5° på himlen.",
+   "fun_fact": "Den glödande orange stjärnan Aldebaran verkar sitta inom Hyader men är faktiskt ett föremål i förgrunden på halva avståndet — en slumpmässig överensstämmelse. Det verkliga klustret ligger cirka 153 ljusår bort och innehåller de första stjärnorna vars avstånd mättes genom parallax från Hipparcos-satelliten.",
+   "distance": "153 ljusår",
+   "size": "~5° över",
+   "image_credit": "NOIRLab/NSF/AURA"
+  },
+  "dso/jewel_box": {
+   "description": "Juvelklustret (NGC 4755) är ett ungt, glänstande öppet stjärnkluster i stjärnbilden Crux, lätt synligt för blotta ögat som en dimmig fjärdegradspatch precis sydöst om Mimosa. När det observeras genom ett teleskop, lyser dess stjärnor i levande kontrastfärger — djupa blå superjättar tillsammans med en slående röd superjätte — vilket gav det namnet som John Herschel gav det: en utmärkt bit smycken. Med endast 14–16 miljoner år är det ett av de yngsta och mest färgglada klustren på himlen.",
+   "fun_fact": "Klustrets framstående röda stjärna, κ Crucis, är en röd superjätte så lysande att den överglänser Solen mer än 100 000 gånger — en levande påminnelse om att stjärnkluster inte alla är samma färg.",
+   "distance": "~6 500 ljusår",
+   "size": "~19 ljusår i diameter",
+   "image_credit": "ESO/Y. Beletsky"
+  },
+  "dso/lmc": {
+   "description": "Stora Magellanska molnet är en oregelbunden satellitgalax till Vintergatan, synlig för blotta ögat som ett avskilt, lysande område på himlen. Det är en av våra närmaste galaktiska grannar och en av de mest aktiva stjärnbildande galaxerna i den lokala gruppen.",
+   "fun_fact": "År 1987 exploderade en stjärna i SMC som Supernova 1987A — den första supernovaexplosion synlig för blotta ögat sedan 1604. Neutriner från explosionen nådde jorden tre timmar före ljuset, vilket bekräftade våra modeller för kollaps av stjärnkärnor.",
+   "distance": "160 000 ljusår",
+   "size": "14 000 ljusår i diameter",
+   "image_credit": "ESO/C. Bardon"
+  },
+  "dso/m1": {
+   "description": "Krabbnebulan är en supernovarest i Oxen, resultatet av en stjärnexplosion som kinesiska astronomer dokumenterade år 1054.",
+   "fun_fact": "Krabbnebulan innehåller en pulsar som snurrar 30 gånger per sekund, den kollapsade kärnan av den exploderade stjärnan!",
+   "distance": "6 500 ljusår",
+   "size": "11 ljusår tvärsöver",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m10": {
+   "description": "M10 är en ljus klotformig stjärnhop i Ormbäraren, en av de närmare klothoparna till vårt solsystem.",
+   "fun_fact": "M10 närmar sig oss med över 70 km/s och har en ovanligt låg koncentration av stjärnor i sin kärna!",
+   "distance": "14 300 ljusår",
+   "size": "83 ljusår tvärsöver",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m100": {
+   "description": "Messier 100 är en storslagen spiralgalax i stjärnbilden Berenikes hår och en av de ljusaste i Virgohopen.",
+   "fun_fact": "Sju supernovor har observerats i M100, den senaste år 2020 – få galaxer har bjudit på en sådan show!",
+   "distance": "55 miljoner ljusår",
+   "size": "166 000 ljusår tvärs över"
+  },
+  "dso/m101": {
+   "description": "Solrosgalaxen är en spiralgalax sedd framifrån i Stora björnen, en av de största kända spiralgalaxerna.",
+   "fun_fact": "Solrosgalaxen innehåller över en biljon stjärnor och har asymmetriska spiralarmar på grund av tidigare galaxinteraktioner!",
+   "distance": "21 miljoner ljusår",
+   "size": "170 000 ljusår tvärsöver",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m102": {
+   "description": "Messier 102 är den stora olösta posten i Messiers katalog - ett objekt som noterades 1781 och som aldrig har identifierats med säkerhet.",
+   "fun_fact": "Messier publicerade inga koordinater för M102, och hans kollega Méchain drog senare tillbaka upptäckten helt och hållet med påståendet att det bara var M101 som råkat registreras två gånger! NASA identifierar den med Spindelgalaxen, NGC 5866."
+  },
+  "dso/m103": {
+   "description": "M103 är ett litet, kompakt öppet stjärnhop i Cassiopeja, innehållande omkring 40 stjärnor i en tätt grupp som lätt ses i kikare. En slående dubbelstjärna och en röd jätte nära centrum ger det ett färgglatt utseende i små teleskop, beläget inom de rika Vintergatan-stjärnfälten i Cassiopeja.",
+   "fun_fact": "M103 var det högsta numrerade objektet i Messiers ursprungliga katalog från 1781 — alla senare poster (M104–M110) lades till efter hans död av senare astronomer baserat på Messiers anteckningar och korrespondens. Pierre Méchain upptäckte M103 kort innan katalogen trycktes, och Messier inkluderade det baserat på Méchains rapport.",
+   "distance": "8 500 ljusår",
+   "size": "~15 ljusår i diameter"
+  },
+  "dso/m104": {
+   "description": "Sombrerogalaxen är en spiralgalax i Jungfrun, känd för sin ljusa kärna och stora centrala utbuktning med en mörk dammrand.",
+   "fun_fact": "Sombrerogalaxen har ett supermassivt svart hål i sitt centrum som uppskattas till 1 miljard solmassor!",
+   "distance": "31 miljoner ljusår",
+   "size": "50 000 ljusår tvärsöver",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m105": {
+   "description": "Messier 105 är en elliptisk galax i Lejonet, den största elliptiska galaxen i Messierkatalogens utkant utanför Virgohopen.",
+   "fun_fact": "M105 delar en kolossal ring av vätgas med sin granne NGC 3384, som spänner över cirka 650 000 ljusår!",
+   "distance": "37 miljoner ljusår",
+   "size": "67 000 ljusår tvärs över"
+  },
+  "dso/m106": {
+   "description": "M106 är en spiralgalax i Jakthundarna med avvikande spiralarmar orsakade av strålar från dess centrala svarta hål.",
+   "fun_fact": "M106 har vattenmasrar i sin kärna, vilket låter astronomer mäta dess avstånd exakt!",
+   "distance": "23,5 miljoner ljusår",
+   "size": "135 000 ljusår tvärsöver",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m107": {
+   "description": "M107 är en av de minst koncentrerade Messier-klothopar, med stjärnor utspridda i ett relativt öppet mönster omkring en blygsam kärna. Med magnitud 8,1 är det ett kikare-objekt från mörka himlar och löser sig delvis upp i små teleskop, vilket visar en kornig textur snarare än en skarp central kondensation.",
+   "fun_fact": "M107 var den sista posten som formellt lades till Messier-katalogen — den förekommer i Pierre Méchains korrespondens men inkluderades inte i originalutgåvan från 1781. Den lades officiellt till som M107 1947 av den kanadensiska astronomen Helen Sawyer Hogg, som kodifierade flera \"saknade\" objekt som Méchain hade observerat men som Messier aldrig formellt registrerade.",
+   "distance": "20 900 ljusår",
+   "size": "~61 ljusår i diameter"
+  },
+  "dso/m108": {
+   "description": "Messier 108 är en stavgalax i Stora björnen, med smeknamnet Surfbrädsgalaxen.",
+   "fun_fact": "M108 lutar nästan helt från sidan sett från oss, vilket har gett den smeknamnet Surfbrädan - och den rymmer omkring 290 klotformiga stjärnhopar!",
+   "distance": "46 miljoner ljusår"
+  },
+  "dso/m109": {
+   "description": "M109 är en spiralgalax med central stav i Stora björnen, den ljusaste medlemmen i en galaxgrupp som bär dess namn.",
+   "fun_fact": "M109 är belägen mycket nära stjärnan Phecda i Karlavagnen, vilket gör den lätt att lokalisera!",
+   "distance": "83 miljoner ljusår",
+   "size": "180 000 ljusår tvärsöver",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m11": {
+   "description": "Vildandshopen är en rik öppen stjärnhop i Skölden, en av de mest kompakta öppna hoparna som är kända.",
+   "fun_fact": "M11 innehåller nästan 3 000 stjärnor packade på ett litet område, vilket skapar en spektakulär vy genom teleskop!",
+   "distance": "6 200 ljusår",
+   "size": "20 ljusår tvärsöver",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m110": {
+   "description": "M110 är en dvärg elliptisk galax och satellit till Andromedagalaxen, det sista objektet som lades till Messierkatalogen.",
+   "fun_fact": "M110 observerades faktiskt av Messier 1773 men lades inte till hans katalog förrän 1966!",
+   "distance": "2,7 miljoner ljusår",
+   "size": "17 000 ljusår tvärsöver",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m12": {
+   "description": "M12 är en klotformig stjärnhop i Ormbäraren, känd för sin relativt lösa centrala koncentration.",
+   "fun_fact": "M12 har förlorat många av sina lågmassiva stjärnor på grund av Vintergatans gravitationella dragning under miljarder år!",
+   "distance": "15 700 ljusår",
+   "size": "75 ljusår tvärsöver",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m13": {
+   "description": "M13 är en spektakulär klotformig stjärnhop i Herkules som innehåller ungefär 300 000 stjärnor, en av de ljusaste på norra himlen.",
+   "fun_fact": "1974 sändes Arecibo-meddelandet mot M13 som ett försök att kontakta utomjordisk intelligens!",
+   "distance": "22 200 ljusår",
+   "size": "145 ljusår tvärsöver",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m14": {
+   "description": "M14 är en klotformig stjärnhop i Ormbäraren som innehåller flera hundra tusen stjärnor.",
+   "fun_fact": "1938 dök en nova upp i M14 men upptäcktes inte förrän 1964 när gamla fotografiska plåtar undersöktes!",
+   "distance": "30 300 ljusår",
+   "size": "100 ljusår tvärsöver",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m15": {
+   "description": "M15 är en tät klotformig stjärnhop i Pegasus, känd för att ha en planetarisk nebulosa i sin kärna - mycket sällsynt för klothopar.",
+   "fun_fact": "M15 kan innehålla ett centralt svart hål på ungefär 4 000 solmassor, även om detta fortfarande debatteras!",
+   "distance": "33 600 ljusår",
+   "size": "175 ljusår tvärsöver",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m16": {
+   "description": "Örnnebulosan är en stjärnbildande nebulosa i Ormen, känd för Skapelsens pelare som fotograferats av Hubble.",
+   "fun_fact": "Skapelsens pelare i M16 är ungefär 5 ljusår höga och eroderas långsamt av strålning från närliggande stjärnor!",
+   "distance": "7 000 ljusår",
+   "size": "70 ljusår tvärsöver",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m17": {
+   "description": "Omeganebulan (även Svannebulosan) är en stjärnbildande region i Skytten, en av de ljusaste emissionsnebulorna.",
+   "fun_fact": "Omeganebulan innehåller en öppen stjärnhop med ungefär 800 unga stjärnor dolda i dess gas och damm!",
+   "distance": "5 500 ljusår",
+   "size": "15 ljusår tvärsöver",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m18": {
+   "description": "Messier 18 är en liten öppen stjärnhop av unga stjärnor i Skytten, även känd som Svart svan-hopen.",
+   "fun_fact": "M18 är ett av väldigt få Messier-objekt som Rymdteleskopet Hubble aldrig har fotograferat!",
+   "distance": "4 200 ljusår",
+   "size": "26 ljusår tvärs över"
+  },
+  "dso/m19": {
+   "description": "M19 är ett kompakt, rikt klotformat stjärnhop i Ophiuchus — ett av de närmaste klotformade stjärnhopen till galaxens centrum. Dess mest karakteristiska egenskap är dess märkbart oblata form: M19 är det mest tillplattade klotformade stjärnhopen som är känt, med en synlig elliptisk kontur även i ett litet teleskop.",
+   "fun_fact": "M19:s uttalade oblathhet — dess längsta axel är cirka 10 % längre än dess kortaste — är unik bland kända klotformiga stjärnhopar och tros bero på tidvattenkrafter från Vintergatans gravitationsfält. Ju närmare en klotformig stjärnhop kretsar runt galaxens centrum, desto starkare deformeras den; M19 ligger endast cirka 5 200 ljusår från galaxens kärna.",
+   "distance": "28 700 ljusår",
+   "size": "~113 ljusår i diameter"
+  },
+  "dso/m2": {
+   "description": "M2 är en av de största och rikaste klotformiga stjärnhoparna som är kända, belägen i Vattumannen.",
+   "fun_fact": "M2 innehåller ungefär 150 000 stjärnor och har en diameter på 175 ljusår, vilket gör den till en av de största klothoparna!",
+   "distance": "37 500 ljusår",
+   "size": "175 ljusår tvärsöver",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m20": {
+   "description": "Trifidnebulosan är en kombination av emissions-, reflektions- och mörka nebulosor i Skytten, delad av mörka dammstråk.",
+   "fun_fact": "Trifidnebulosan visar tre distinkta typer av nebulosor i ett objekt: röd emission, blå reflektion och mörk absorption!",
+   "distance": "5 200 ljusår",
+   "size": "20 ljusår tvärsöver",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m21": {
+   "description": "M21 är ett kompakt öppet stjärnhop i Skytten som ligger drygt en halv grad norr om Trifidnebulosan (M20), vilket gör de två till ett slående kikarepar. Hopen innehåller omkring 57 stjärnor koncentrerade till ett mindre område än många Messier-hoper, med flera ljusa blåvita stjärnor som de dominerande medlemmarna.",
+   "fun_fact": "Trots att de är fysiskt orelaterade utgör M21 och M20 (Trifidnebulosan) ett av de mest attraktiva kikarepar på sommarhimlen — ett ljust stjärnhop bredvid en färgglad trelobad nebulosa. M21 ligger omkring 4 250 ljusår bort, medan M20 är något närmare på cirka 4 100 ljusår.",
+   "distance": "4 250 ljusår",
+   "size": "~16 ljusår i diameter"
+  },
+  "dso/m22": {
+   "description": "M22 är en av de närmaste och ljusaste klotformiga stjärnhoparna till jorden, belägen i Skytten nära galaxens centrum.",
+   "fun_fact": "M22 var en av de första klotformiga hoparna som upptäcktes, hittad av Abraham Ihle 1665!",
+   "distance": "10 600 ljusår",
+   "size": "70 ljusår tvärsöver",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m23": {
+   "description": "M23 är ett rikt öppet stjärnhop i Sagittarius, inbäddat i de täta stjärnfälten i sommarens Vintergatan. Ungefär 150 stjärnor är spridda över ett halvgradsområde i kikare, vilket gör det till ett generöst kikareföremål i samma himmelregion som många andra Messier-pärlor.",
+   "fun_fact": "M23 beräknas vara omkring 300 miljoner år gammal — mellanåldrig, med de flesta av dess massiva stjärnor redan utvecklade från huvudserien. Messier upptäckte den 1764 under en av sina produktiva observationskampanjer genom Sagittarius stjärnfält.",
+   "distance": "2 150 ljusår",
+   "size": "~17 ljusår i diameter"
+  },
+  "dso/m24": {
+   "description": "M24 är Sagittarius stjärnmoln — inte ett kluster eller nebulosa utan ett fönster genom ett gap i Vintergatans damm, som avslöjar ett strålande stjärnfält på 2° över. Det är den rikaste regionen synlig genom kikare någonstans på himlen, fylld med tusentals stjärnor som sträcker sig över många olika avstånd samtidigt.",
+   "fun_fact": "Stjärnorna i M24 befinner sig inte på samma avstånd — stjärnmolnet representerar ett tvärsnitt av galaxens disk sett genom en naturlig tunnel i det interstellära dammet, som sträcker sig över avstånd på 10 000 till 16 000 ljusår. Inbäddade i molnet finns mörka nebulor och små stjärnhopar som framträder som mörka fläckar mot den glittrande stjärnbakgrunden.",
+   "distance": "~10 000–16 000 ljusår (intervall)",
+   "size": "~600 ljusår djupt fönster"
+  },
+  "dso/m25": {
+   "description": "M25 är en ljus öppen stjärnhop som är synlig för blotta ögat i Skytten, belägen mot de täta stjärnfälten i sommarens Vintergata. Ungefär 600 stjärnor är spridda över ett halvgradsområde, vilket gör den till ett rikt objekt för kikare. Dess ljusaste medlemmar inkluderar flera blåvita superjättar och en av de mest studerade Cepheid-variablerna på himlen.",
+   "fun_fact": "M25 innehåller U Sagittarii, en klassisk Cepheid-variabel stjärna som blir ljusare och mörkare under en period på 6,7 dagar. Cepheidar är vitala \"standardljus\" för att mäta kosmiska avstånd eftersom deras pulsationsperiod direkt avslöjar deras sanna luminositet — astronomer använde dem för att först bestämma storleken på Vintergatan och sedan skalan på det observerbara universum.",
+   "distance": "2 000 ljusår",
+   "size": "~19 ljusår över"
+  },
+  "dso/m26": {
+   "description": "M26 är ett måttligt svagt öppet stjärnhop i Skölden, synligt i kikare och väl upplöst i små teleskop. Ungefär 90 stjärnor är spridda över ett kompakt område i den rika Sköldens stjärnmoln, även om hopen är placerad mot en så tät bakgrund att det krävs viss försiktighet för att identifiera dess medlemmar från det omgivande stjärnfältet.",
+   "fun_fact": "M26 ligger längs samma rika himmelsstrimma som M11 — Wild Duck Cluster, en av de finaste öppna stjärnhoparna på himlen. De två ligger bara cirka 3,5° från varandra och är synliga i samma kikares synfält, vilket gör Scutum till ett anmärkningsvärt mål för stjärnhopsobservatörer trots att det är en liten och ofta förbisedd konstellation.",
+   "distance": "5 000 ljusår",
+   "size": "~22 ljusår i diameter"
+  },
+  "dso/m27": {
+   "description": "Hantelnebulan är en planetarisk nebulosa i Räven, den första planetariska nebulosan som någonsin upptäcktes.",
+   "fun_fact": "Hantelnebulan upptäcktes av Charles Messier 1764, vilket gör den till den första planetariska nebulosan som någonsin upptäcktes!",
+   "distance": "1 360 ljusår",
+   "size": "2,5 ljusår tvärsöver",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m28": {
+   "description": "M28 är ett kompakt klotformat stjärnhop i Sagittarius, beläget nära den ljusa stjärnan Lambda Sagittarii i de rika sommarfälten. Med magnitud 6,9 är det ett givande kikare-objekt och är väl upplöst i små teleskop, vilket visar en ljus kondenserad kärna omgiven av en måttlig halo av stjärnor.",
+   "fun_fact": "År 1987 blev M28 det första klotformiga stjärnhopen där en millisekund-pulsar upptäcktes. Millisekund-pulsarer — neutronstjärnor som snurrar hundratals gånger per sekund — bildas när en neutronstjärna ackumulerar materia från en följesäljare och förekommer i mycket högre frekvens i klotformiga stjärnhopar än i galaxen i allmänhet, eftersom deras täta stellära miljöer producerar många fler nära binära möten.",
+   "distance": "18 300 ljusår",
+   "size": "~60 ljusår i diameter"
+  },
+  "dso/m29": {
+   "description": "M29 är ett litet, ungt öppet stjärnhop i Cygnus, beläget mot en av Vintergatans mest dammtäckta regioner. Fem glödande blå superjättar dominerar hopen, synliga i kikare som en tätt asterism av heta, lysande stjärnor. Utan det täta förgrundsdammet skulle M29 vara ett av himmelens mest spektakulära öppna stjärnhop.",
+   "fun_fact": "M29 beräknas vara endast omkring 10 miljoner år gammal — en stjärnbaby — och ligger inom Cygnus OB1-associationen, en omfattande grupp av massiva unga stjärnor. Tung interstellär damm dämpar klustret med cirka 3 magnituder; utan denna skymning skulle M29:s stjärnor lysa flera gånger ljusare än de faktiskt verkar göra.",
+   "distance": "4 000 ljusår",
+   "size": "~8 ljusår i diameter"
+  },
+  "dso/m3": {
+   "description": "M3 är en av de största och ljusaste klotformiga stjärnhoparna på himlen, belägen i Jakthundarna.",
+   "fun_fact": "M3 innehåller ungefär 500 000 stjärnor och uppskattas vara 11,4 miljarder år gammal!",
+   "distance": "33 900 ljusår",
+   "size": "180 ljusår tvärsöver",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m30": {
+   "description": "M30 är ett kompakt klotformat stjärnhop i Stenbocken — ett vackert objekt i små teleskop som visar en ljus, tät kärna och svaga yttre stjärnkedjor. Med magnitud 7,5 kräver det mörka himlar för kikare och belönar ett litet teleskop med sin delvis upplösta yttre halo.",
+   "fun_fact": "M30 har genomgått \"kärnkollaps\" — en process där den ömsesidiga gravitationella attraktionen mellan tätt packade stjärnor får klustrets centrum att dra ihop sig dramatiskt, vilket skapar en extrem koncentration av stjärnor i en liten volym. Ungefär en femtedel av alla klotformiga stjärnhopar har kollapsade kärnor, och M30 är bland de bäst studerade exemplen på detta fenomen.",
+   "distance": "27 100 ljusår",
+   "size": "~87 ljusår i diameter"
+  },
+  "dso/m31": {
+   "description": "Andromedagalaxen är den närmaste stora spiralgalaxen till Vintergatan och ett av de mest avlägsna objekten synliga för blotta ögat.",
+   "fun_fact": "Andromedagalaxen närmar sig oss med 110 km/s och kommer att kollidera med Vintergatan om ungefär 4,5 miljarder år!",
+   "distance": "2,5 miljoner ljusår",
+   "size": "220 000 ljusår tvärsöver",
+   "mass": "1,5 biljoner solmassor",
+   "image_credit": "Adam Kennett/Wikimedia Commons"
+  },
+  "dso/m32": {
+   "description": "M32 är en kompakt dvärg elliptisk galax och nära satellit till Andromedagalaxen.",
+   "fun_fact": "M32 var den första elliptiska galaxen som någonsin upptäcktes och kan en gång ha varit en större spiralgalax som berövats av Andromeda!",
+   "distance": "2,5 miljoner ljusår",
+   "size": "6 500 ljusår tvärsöver",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m33": {
+   "description": "Triangelgalaxen är den tredje största medlemmen i Lokala gruppen, en spiralgalax synlig i Triangelns stjärnbild.",
+   "fun_fact": "Triangelgalaxen kan vara gravitationellt bunden till Andromedagalaxen som en avlägsen satellit!",
+   "distance": "2,7 miljoner ljusår",
+   "size": "60 000 ljusår tvärsöver",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m34": {
+   "description": "M34 är ett ljust, utspritt öppet stjärnhop i Perseus, lätt att se i kikare som en rik skur av stjärnor mot vinterens Vintergatan. Dess ungefär 400 stjärnor täcker ett område nästan lika brett som fullmånen, med en handfull breda dubbelstjärnor synliga för noggranna kikareiakttagare.",
+   "fun_fact": "Med en ålder på cirka 200 miljoner år är M34 mellan ung och gammal — ung nog för att dess heta blå stjärnor fortfarande lyser, men gammal nog för att de mest massiva redan har exploderat som supernovor. Med ett avstånd på 1 500 ljusår är det en av de närmare Messier-klustren och förblir ett vackert objekt även från förortskyar.",
+   "distance": "1 500 ljusår",
+   "size": "~15 ljusår i diameter"
+  },
+  "dso/m35": {
+   "description": "M35 är en stor öppen stjärnhop i Tvillingarna, synlig för blotta ögat under goda förhållanden.",
+   "fun_fact": "M35 innehåller ungefär 200 stjärnor och syns nära en mycket äldre stjärnhop NGC 2158 i samma synfält!",
+   "distance": "2 800 ljusår",
+   "size": "24 ljusår tvärsöver",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m36": {
+   "description": "M36 är det minsta och yngsta av de tre öppna stjärnhoparna som Messier katalogiserade i Auriga. Dess ungefär 60 stjärnor är samlade i ett tätt, glitterande fält som är synligt i kikare och väl upplöst i enskilda stjärnor i ett litet teleskop, dominerat av heta blåvita stjärnor.",
+   "fun_fact": "M36 beräknas vara endast cirka 25 miljoner år gammal — en av de yngre Messier-klustren — vilket innebär att massiva blåvita stjärnor fortfarande dominerar och inga röda jättar har ännu uppträtt. Det delar Aurigas stjärnfält med M37 och M38, och alla tre klustren passar in i samma vidvinkelkikare.",
+   "distance": "4 100 ljusår",
+   "size": "~14 ljusår i diameter"
+  },
+  "dso/m37": {
+   "description": "M37 är den rikaste och ljusaste av de tre Messier-öppna stjärnhoparna i Auriga, innehållande cirka 500 stjärnor i ett kompakt område. Det är ett spektakulärt objekt för kikare och små teleskop, med ett spridda orange jättestjärnor som ger färgkontrast till den blåvit svärmen.",
+   "fun_fact": "M37 innehåller omkring ett dussin röda jättestjärnor — ett ovanligt högt antal som återspeglar dess relativt avancerade ålder på ungefär 300 miljoner år. Trots att det ligger omkring 4 500 ljusår bort — det mest avlägsna av de tre Auriga Messier-klustren — rankas det fortfarande bland himmelens finaste öppna kluster.",
+   "distance": "4 500 ljusår",
+   "size": "~31 ljusår i diameter"
+  },
+  "dso/m38": {
+   "description": "M38 är det största och mest utspritt av de tre öppna stjärnhoparna som Messier katalogiserade i Auriga. Dess ungefär 100 stjärnor är arrangerade i ett mönster som vissa observatörer liknar vid ett kors eller den grekiska bokstaven pi, synligt i kikare och väl upplöst i ett litet teleskop. Den mindre stjärnhopen NGC 1907 ligger nära intill söder om den.",
+   "fun_fact": "M38 är det äldsta av de tre Auriga Messier-klustren med en ålder på omkring 220 miljoner år, tillräckligt gammalt för att några av dess massiva stjärnor har utvecklats till gula och orange jättar. Det närliggande klustret NGC 1907 kan passa in i samma låg-förstoringssynfält, vilket gör dem till ett fint kikarepar — som M46 och M47 i Puppis.",
+   "distance": "4 200 ljusår",
+   "size": "~26 ljusår i diameter"
+  },
+  "dso/m39": {
+   "description": "M39 är ett stort, utspritt öppet stjärnhop i Cygnus, synligt för blotta ögat nära Deneb i den rika sommarens Vintergatan. Dess ungefär 30 ljusa stjärnor är löst grupperade över en grad på himlen, bäst uppskattade vid låg förstoring i kikare eller ett vidvinkelteleskop — högre förstoring löser det helt enkelt upp det till ett glest, ointressant stjärnfält.",
+   "fun_fact": "Med omkring 825 ljusår är M39 en av de närmaste öppna stjärnhoparna från jorden, och med ungefär 240 miljoner år är den en av de äldre nakna-ögat-hoparna — tillräckligt gammal för att dess mest massiva stjärnor redan har slutat sina liv. Messier registrerade den 1764 och den var bland de tidigaste tilläggen till hans katalog.",
+   "distance": "825 ljusår",
+   "size": "~8 ljusår över"
+  },
+  "dso/m4": {
+   "description": "M4 är en av de närmaste klotformiga stjärnhoparna till jorden och en av de lättaste att hitta, belägen nära Antares i Skorpionen.",
+   "fun_fact": "M4 innehåller en vit dvärg som uppskattas vara 13 miljarder år gammal - en av de äldsta kända stjärnorna i Vintergatan!",
+   "distance": "7 200 ljusår",
+   "size": "75 ljusår tvärsöver",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m40": {
+   "description": "M40 är unik i Messier-katalogen — det är inte en nebulosa, stjärnhop eller galax, utan en vid dubbelstjärna. Messier katalogiserade den 1764 medan han sökte efter en nebulosa rapporterad av Johann Hevelius i Stora björnen, fann endast detta stjärnpar och registrerade det så att framtida observatörer inte skulle förväxla det med något mer intressant.",
+   "fun_fact": "De två stjärnorna i M40 — kända som Winnecke 4 — är inte gravitationellt bundna; de ligger på olika avstånd och är helt enkelt en slumpmässig inriktning. Messier själv noterade att det inte fanns \"något anmärkningsvärt,\" men inkluderade det \"för att visa att denna nebulosa inte är densamma som de som jag har undersökt.\" Hans metodiska vana att dokumentera negativa fynd gav framtida observatörer en definitiv referens.",
+   "distance": "~500 ljusår",
+   "size": "~50 bågsekunder (separation)"
+  },
+  "dso/m41": {
+   "description": "M41 är ett vackert öppet stjärnhop i Stora Hunden, beläget bara 4° söder om Sirius — den ljusaste stjärnan på nattehimlen. Synligt för blotta ögat från mörka platser och spektakulärt i kikare, innehåller det cirka 100 stjärnor utspridda över ett stort område, med flera slående orange jättestjärnor bland svagare blåvita medlemmar.",
+   "fun_fact": "Aristoteles kan ha noterat M41 omkring 325 f.Kr. — möjligen den tidigaste registrerade observationen av något djupt himmelsobjekt. Han beskrev en \"molnig fläck\" söder om Sirius som motsvarar M41:s position. Om identifieringen är korrekt diskuterades M41 nästan två tusen år innan teleskopet uppfanns.",
+   "distance": "2 300 ljusår",
+   "size": "~25 ljusår över"
+  },
+  "dso/m42": {
+   "description": "Orionnebulosan är en diffus emissionsnebulosa synlig för blotta ögat, ett av de mest fotograferade objekten på natthimlen.",
+   "fun_fact": "Orionnebulosan är en stjärnkammare där nya stjärnor föds just nu. Över 700 stjärnor bildas inuti!",
+   "distance": "1 344 ljusår",
+   "size": "24 ljusår tvärsöver",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m43": {
+   "description": "De Mairans nebulosa är en avskild del av den stora Orionnebulosan, separerad från M42 av ett mörkt dammband men tillhörande samma enorma molekylmoln. Uppkallad efter den franske astronomen Jean-Jacques Dortous de Mairan, som noterade den 1731, är det en emissionsnebulosa joniserad av den het unga stjärnan NU Orionis inbäddad i dess centrum.",
+   "fun_fact": "Även om M43 verkar vara ett separat objekt från M42, är det mörka bandet som skiljer dem åt ett stoftmoln i förgrunden — en del av Orion Molecular Cloud — som helt enkelt blockerar vår vy av den fysiska kopplingen mellan de två lysande regionerna. Tillsammans är de bara den upplysta innerkanten av ett enormt mörkt moln som sträcker sig över mycket av Orion.",
+   "distance": "1 350 ljusår",
+   "size": "~8 ljusår i diameter"
+  },
+  "dso/m44": {
+   "description": "Bikupan (Praesepe) är en öppen stjärnhop i Kräftan, känd sedan antiken och synlig för blotta ögat.",
+   "fun_fact": "Forntida astronomer använde Bikupans synlighet för att förutsäga väder - om osynlig var regn på väg!",
+   "distance": "577 ljusår",
+   "size": "15 ljusår tvärsöver",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m45": {
+   "description": "Plejaderna är en öppen stjärnhop i Oxen, även känd som Sjustjärnorna, synlig för blotta ögat sedan antiken.",
+   "fun_fact": "Plejaderna är bland de närmaste stjärnhoparna till jorden och har erkänts av praktiskt taget varje forntida civilisation!",
+   "distance": "444 ljusår",
+   "size": "17 ljusår tvärsöver",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m46": {
+   "description": "M46 är ett rikt, tätt öppet stjärnhop i Puppis som innehåller omkring 500 stjärnor packade i ett brett synfält, slående i kikare och vackert i små teleskop. En anmärkningsvärd bonus flyter vid dess norra kant: NGC 2438, en liten planetarisk nebulosa som verkar vara inbäddad i hopen — en dramatisk synlinjesammanträffning.",
+   "fun_fact": "Planetariska nebulosan NGC 2438 verkar sitta inuti M46 men är faktiskt ett orelaterat förgrundsobjekt på mycket större avstånd — cirka 1 400 ljusår jämfört med M46's 5 400. Sammanträffandet av en döende stjärnas skal överlagrat på ett ungt stjärnkluster gör detta till ett av de mest fotografiska fälten i katalogen.",
+   "distance": "5 400 ljusår",
+   "size": "~42 ljusår i diameter"
+  },
+  "dso/m47": {
+   "description": "M47 är ett ljust, löst öppet stjärnhop i Puppis, lätt synligt för blotta ögat och iögonfallande i kikare. Ungefär 50 stjärnor är spridda över en halv grad himmel, med flera orange jättestjärnor som ger varm färg mot de svagare blåvita medlemmarna.",
+   "fun_fact": "M47 var ett av de \"förlorade\" Messier-objekten — ett skrivfel i Messiers ursprungliga koordinater placerade det på tom himmel, vilket gjorde att klustret förblev oidentifierat i nästan två århundraden. Dess sanna identitet som NGC 2422 bekräftades först 1959, när observatörer arbetade bakåt från Messiers beskrivning för att hitta felet.",
+   "distance": "1 600 ljusår",
+   "size": "~14 ljusår över"
+  },
+  "dso/m48": {
+   "description": "M48 är ett stort, ljust öppet stjärnhop i Hydra som sträcker sig över nästan en grad på himlen och är synligt för blotta ögat från mörka platser. Dess ungefär 80 stjärnor är utspridda löst över ett brett område som passar bäst för kikare, med ett spridande av orange och gula jättestjärnor bland de ljusare blåvita medlemmarna.",
+   "fun_fact": "M48 var ett av de \"förlorade\" Messier-objekten i nästan två århundraden eftersom Messiers registrerade position var cirka 5° från den verkliga platsen. Det förblev oidentifierat tills 1959, när det matchades med NGC 2548 och ett enkelt transkriptionsfel visades ha placerat det i tom himmel hela tiden.",
+   "distance": "1 500 ljusår",
+   "size": "~23 ljusår i diameter"
+  },
+  "dso/m49": {
+   "description": "M49 är en jätte elliptisk galax i Jungfrun, den ljusaste medlemmen i Virgoklustret.",
+   "fun_fact": "M49 var den första medlemmen av Virgoklustret som upptäcktes och innehåller ungefär 6 000 klotformiga stjärnhopar!",
+   "distance": "55 miljoner ljusår",
+   "size": "160 000 ljusår tvärsöver",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m5": {
+   "description": "M5 är en klotformig stjärnhop i Ormen, en av de äldsta klotformiga hoparna med ungefär 13 miljarder år.",
+   "fun_fact": "M5 innehåller över 100 000 stjärnor och har ett av de högsta antalen kända variabla stjärnor av någon klotformig hop!",
+   "distance": "24 500 ljusår",
+   "size": "165 ljusår tvärsöver",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m50": {
+   "description": "M50 är en ljus öppen stjärnhop i Enhörningen, innehållande omkring 200 stjärnor packade i ett slående kompakt fält för kikare och små teleskop. Den är lätt att hitta på en linje mellan Sirius och Procyon och innehåller en anmärkningsvärd röd jätte — en varm orange fyrbåk som sticker ut levande bland hopens blåvita stjärnor.",
+   "fun_fact": "M50 beräknas vara omkring 78 miljoner år gammal — en av de yngre Messier-öppna stjärnhoparna — vilket betyder att dess heta blå och vita stjärnor fortfarande utvecklas, med ett fåtal av de mer massiva medlemmarna som nyligen har svällt till jättar. Detta är typiskt för en hop i sin tidiga medelålder.",
+   "distance": "3 200 ljusår",
+   "size": "~15 ljusår i diameter"
+  },
+  "dso/m51": {
+   "description": "Virvelgalaxen är en storslagen spiralgalax i Jakthundarna, känd för sina slående spiralarmar och följegalax.",
+   "fun_fact": "Virvelgalaxen var den första galaxen som erkändes ha spiralstruktur, upptäckt av Lord Rosse 1845!",
+   "distance": "23 miljoner ljusår",
+   "size": "76 000 ljusår tvärsöver",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m52": {
+   "description": "M52 är ett rikt öppet stjärnhop i Cassiopeja, innehållande omkring 200 stjärnor packade i en kompakt region av den norra Vintergatan. Det är ett vackert kikarhop och visar ett vackert, tätt stjärnfält i små teleskop, med en märkbart ljusare orange stjärna som sticker ut nära hopets södra kant.",
+   "fun_fact": "M52:s avstånd är ovanligt osäkert — uppskattningar sträcker sig från 3 000 till 7 000 ljusår — eftersom tjock interstellär damm längs denna siktlinje gör det svårt att bestämma dess verkliga luminositet. Messier upptäckte den 1774, samma natt som han spårade en komet som ledde honom att registrera flera andra katalogposter.",
+   "distance": "~5 000 ljusår",
+   "size": "~25 ljusår i diameter"
+  },
+  "dso/m53": {
+   "description": "M53 är en klotformig stjärnhop i Berenikes hår, en av de mer avlägsna klothoparna i vår galax.",
+   "fun_fact": "M53 är en av de mest avlägsna klothoparna från galaxens centrum på 60 000 ljusårs avstånd från det!",
+   "distance": "58 000 ljusår",
+   "size": "220 ljusår tvärsöver",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m54": {
+   "description": "M54 är ett stort, rikt klotformat stjärnhop i Skytten och ett av de mest avlägsna objekten i hela Messier-katalogen. I århundraden trodde man att det var ett avlägset haloklot i Vintergatan, men det är nu känt att vara den täta kärnan i Sagittarius Dvärg-elliptiska galaxen — en satellitgalax som för närvarande absorberas av vår egen.",
+   "fun_fact": "Upptäckten 1994 att M54 tillhör Sagittarius Dvärggalax gjorde det till det första klothopar som var känt tillhöra en annan galax. Då Sagittarius Dvärg gradvis slits sönder och uppslukas av Vintergatan, kommer M54 så småningom att bli ett verkligt haloklothopar i vår egen galax — en intergalaktisk invandrare som anländer under miljarder år.",
+   "distance": "87 000 ljusår",
+   "size": "~230 ljusår i diameter"
+  },
+  "dso/m55": {
+   "description": "M55 är ett stort, löst klotformat stjärnhop i Skytten — ett av de mest utspridda och minst koncentrerade av alla Messier-klothop. Det löses lätt upp i enskilda stjärnor även vid låg förstoring, med en kornig textur synlig i kikare. Dess låga södra deklination begränsar synligheten från nordliga breddgrader men det är spektakulärt från södra halvklotet.",
+   "fun_fact": "M55:s ovanligt låga stjärnkoncentration gör att det ser nästan ut som ett rikt öppet stjärnhop snarare än ett typiskt klotformat stjärnhop. Dess stjärnor är utspridda över ett område som är nästan 100 ljusår brett, vilket tyder på att klustrets självgravitation är relativt svag jämfört med mer centralt kondenserade klotformade stjärnhop som M13 eller M3.",
+   "distance": "17 600 ljusår",
+   "size": "~100 ljusår i diameter"
+  },
+  "dso/m56": {
+   "description": "M56 är ett kompakt klotformat stjärnhop i Lyra, beläget mellan Ringnebulosan (M57) och den ljusa dubbelstjärnan Albireo i Cygnus. Med magnitud 8,3 är det ett binokulärt objekt från mörka himlar, och ett litet teleskop avslöjar en kornig, måttligt kondenserad sfär som endast är delvis upplöst även i medelstor bländare.",
+   "fun_fact": "M56 upptäcktes av Messier i januari 1779 under samma observationssäsong då han också fann Ringnebulosan (M57). Trots att M56 ligger i samma kikare-synfält som Vega — himmelens femte ljusstarkaste stjärna — och nära den berömda Ringnebulosan, förbises M56 ofta av observatörer som dras till dess mer kända grannar.",
+   "distance": "32 900 ljusår",
+   "size": "~68 ljusår i diameter"
+  },
+  "dso/m57": {
+   "description": "Ringnebulosan är en planetarisk nebulosa i Lyran, ett lysande skal av gas som stötts ut av en döende solliknande stjärna.",
+   "fun_fact": "Ringnebulosan expanderar med ungefär 20 km/s och kommer så småningom att skingras i rymden under de kommande 10 000 åren!",
+   "distance": "2 300 ljusår",
+   "size": "1,3 ljusår tvärsöver",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m58": {
+   "description": "Messier 58 är en stavgalax i Jungfrun och en av de ljusstarkaste medlemmarna i Virgohopen.",
+   "fun_fact": "Ett supermassivt svart hål på omkring 70 miljoner solmassor finns i M58:s kärna, omgivet av ett tätt band av nyfödda stjärnor!",
+   "distance": "68 miljoner ljusår",
+   "size": "133 000 ljusår tvärs över"
+  },
+  "dso/m59": {
+   "description": "Messier 59 är en elliptisk galax i Jungfrun, upptäckt 1779 under sökandet efter en förbipasserande komet.",
+   "fun_fact": "Kärnan i M59 roterar baklänges jämfört med resten av galaxen, och omkring 2 200 klotformiga stjärnhopar svärmar runt den!",
+   "distance": "50 miljoner ljusår",
+   "mass": "270 miljoner solmassor (centralt svart hål)"
+  },
+  "dso/m6": {
+   "description": "Fjärilshopen är en öppen stjärnhop i Skorpionen, uppkallad efter det fjärilsliknande arrangemanget av dess ljusaste stjärnor.",
+   "fun_fact": "M6 är ungefär 100 miljoner år gammal och innehåller över 300 stjärnor, inklusive den orange jätten BM Scorpii!",
+   "distance": "1 600 ljusår",
+   "size": "25 ljusår tvärsöver",
+   "image_credit": "NOAO/AURA/NSF"
+  },
+  "dso/m60": {
+   "description": "Messier 60 är en jätteelliptisk galax i stjärnbilden Jungfrun och den tredje ljusstarkaste jätteelliptiska galaxen i Virgohopen.",
+   "fun_fact": "M60:s centrala svarta hål väger ungefär 4,5 miljarder solar – ett av de största som någonsin hittats!",
+   "distance": "57 miljoner ljusår"
+  },
+  "dso/m61": {
+   "description": "Messier 61 är en stavgalax i stjärnbilden Jungfrun och en av de största galaxerna i Virgohopen.",
+   "fun_fact": "Åtta supernovor har upptäckts i M61 – vilket är en av de högsta noteringarna för någon galax! Messier själv misstog den först för en komet.",
+   "distance": "52 miljoner ljusår",
+   "size": "92 000 ljusår i diameter"
+  },
+  "dso/m62": {
+   "description": "M62 är ett rikt klotformat stjärnhop i Ormen — ett av de närmaste klothopen till galaxens centrum och märkbart asymmetriskt, med stjärnor packade tätare på södra sidan. Med magnitud 6,6 är det ett utmärkt kikareföremål, även om dess låga deklination gör det till ett kortsäsongobjekt för observatörer på norra halvklotet.",
+   "fun_fact": "M62:s excentriska kärna är en direkt följd av dess närhet till galaxens centrum — kraftfulla tidvattenskrafter från den centrala utbuktningen förvränger klustret och drar stjärnor mot galaxens plan. Det är också en av de mest dynamiskt utvecklade globulära klustren som är kända, med tecken på kärnkollaps och en ovanligt hög densitet av millisekundpulsarer.",
+   "distance": "22 500 ljusår",
+   "size": "~92 ljusår i diameter"
+  },
+  "dso/m63": {
+   "description": "Solrossgalaxen är en lysande spiral i Canes Venatici vars tätt lindade armar, spräckliga av stjärnbildningsregioner, ger den en karakteristisk blomliknande textur på långexponeringsfoton. Med magnitud 8,6 är den synlig i kikare från mörka himlar och visar sin långsträckta form och ljusa kärna lätt i små teleskop.",
+   "fun_fact": "M63 upptäcktes av Pierre Méchain 1779 — en av ett fåtal Messier-objekt som upptäcktes av Méchain snarare än av Messier själv. Det är medlem i M51-gruppen, fysiskt associerad med Virvelgalaxen (M51), och visar tecken på en tidigare växelverkan: en svag, gammal stjärnström lindas runt dess yttre skiva.",
+   "distance": "29 miljoner ljusår",
+   "size": "~100 000 ljusår över"
+  },
+  "dso/m64": {
+   "description": "Svartögagalaxen är en spiralgalax i Berenikes hår, känd för det mörka stråket av absorberande damm runt dess kärna.",
+   "fun_fact": "De yttre regionerna av M64 roterar i motsatt riktning från dess inre regioner, troligen från en tidigare galaxsammanslagning!",
+   "distance": "17 miljoner ljusår",
+   "size": "70 000 ljusår tvärsöver",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m65": {
+   "description": "M65 är en spiralgalax i Lejonet, del av den berömda Leotripletten tillsammans med M66 och NGC 3628.",
+   "fun_fact": "Leotriplettens galaxer interagerar gravitationellt, vilket orsakar tidvattenssvansar och förvrängda strukturer!",
+   "distance": "35 miljoner ljusår",
+   "size": "90 000 ljusår tvärsöver",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m66": {
+   "description": "M66 är den största medlemmen i Leotripletten, en spiralgalax med asymmetriska spiralarmar.",
+   "fun_fact": "M66:s asymmetriska utseende orsakas av gravitationella interaktioner med dess grannar M65 och NGC 3628!",
+   "distance": "36 miljoner ljusår",
+   "size": "95 000 ljusår tvärsöver",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m67": {
+   "description": "M67 är en vacker öppen stjärnhop i Kräftan och en av de äldsta väl studerade öppna stjärnhoparna på himlen. Med en ålder på ungefär 3,2–3,5 miljarder år innehåller den många stjärnor som liknar vår egen Sol i massa och ålder – vilket gör den till ett naturligt laboratorium för att studera hur solliknande stjärnor utvecklas över kosmisk tid.",
+   "fun_fact": "Flera stjärnor i M67 liknar Solen mycket när det gäller temperatur, massa och ålder — en sällsynt kombination som fick forskare att undra om Solen själv ursprungligen bildades i ett kluster som M67. Eftersom stjärnor föds i kluster som gradvis sprids, kommer Solen nästan säkert från en nu spridd systergrupp från för miljarder år sedan — även om vilket kluster aldrig har identifierats.",
+   "distance": "2 700 ljusår",
+   "size": "~24 ljusår i diameter"
+  },
+  "dso/m68": {
+   "description": "M68 är ett rikt klotformat stjärnhop i Hydra — ett sydligt objekt och ett av få klotformade stjärnhop som är bäst placerade på sen vinter och vår. Med magnitud 8,2 belönar det ett litet teleskop med en måttligt kondenserad kärna och en stor halo av lösta stjärnor mot Hydras relativt glesa stjärnfält.",
+   "fun_fact": "Trots sin relativt närhet — vilket gör att enskilda stjärnor är väl upplösta i amatörteleskop — förbises M68 ofta på grund av sin långt södra deklination. Från breddgrader över 50°N stiger den knappt över horisonten; från södra halvklotet däremot stiger den högt och är en utmärkt kulklunga.",
+   "distance": "33 600 ljusår",
+   "size": "~117 ljusår i diameter"
+  },
+  "dso/m69": {
+   "description": "M69 är ett måttligt rikt klotformat stjärnhop i Skytten, beläget nära galaxens centrum. Med magnitud 7,7 är det ett objekt för kikare från mörka himlar som belönar ett litet teleskop med en delvis upplöst stjärnboll och ett ljust, kornigt centrum.",
+   "fun_fact": "M69 kretsar ovanligt nära galaxens centrum — endast cirka 6 200 ljusår från Vintergatans kärna — och har därför en ovanligt hög koncentration av tyngre element för ett klotformat stjärnhop. Klotformade stjärnhop närmare galaxens centrum tenderar att vara kemiskt berikade av flera generationer av stjärnbildning i den omgivande bulgen.",
+   "distance": "29 700 ljusår",
+   "size": "~61 ljusår i diameter"
+  },
+  "dso/m7": {
+   "description": "Ptolemaiosklustret är en ljus öppen stjärnhop i Skorpionen, en av de mest framträdande hoparna synliga för blotta ögat.",
+   "fun_fact": "M7 dokumenterades först av Ptolemaios år 130 e.Kr. och har observerats i nästan 2 000 år!",
+   "distance": "980 ljusår",
+   "size": "25 ljusår tvärsöver",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m70": {
+   "description": "M70 är ett kompakt klotformat stjärnhop i Skytten, som påminner mycket om sitt närliggande motsvarighet M69 både i utseende och avstånd. Med magnitud 8,1 är det ett utmärkt objekt för små teleskop som visar en kompakt kärna och antydningar om upplösning i den yttre haloregionen. Det ligger bara 2° från M69 och båda kan observeras i samma kikares synfält.",
+   "fun_fact": "M70 fick kort uppmärksamhet 1995 som den ungefärliga platsen på himlen där Alan Hale och Thomas Bopp oberoende upptäckte Kometen Hale-Bopp — den ljusaste kometen från slutet av 1900-talet. Båda observatörerna svepte initialt förbi M70 medan de sökte efter andra mål och märkte kometen som ett oväntat luddet objekt i närheten.",
+   "distance": "29 400 ljusår",
+   "size": "~67 ljusår i diameter"
+  },
+  "dso/m71": {
+   "description": "M71 är en ovanlig klotformig stjärnhop i Pilen — debatterad av astronomer i årtionden som inte kunde besluta sig för om det var en mycket rik gammal öppen stjärnhop eller en mycket lös ung klotformig stjärnhop. Modern analys bekräftar att det är en äkta klotformig stjärnhop, men en exceptionellt låg-koncentrerad sådan med relativt få stjärnor och en mindre dominant kärna än typiska klotformiga stjärnhopar.",
+   "fun_fact": "M71:s lösa struktur höll det borta från många tidiga kataloger eftersom det liknade ett rikt stjärnfält snarare än ett verkligt kluster. Med endast 12 000 ljusår är det ett av de närmare Messier-globulärerna, och dess stjärnor är delvis lösta i ett litet teleskop under mörka himlar – vilket ger det utseendet av ett kompakt, något kondenserat rikt stjärnfält.",
+   "distance": "12 000 ljusår",
+   "size": "~25 ljusår i diameter"
+  },
+  "dso/m72": {
+   "description": "Messier 72 är en svag, avlägsen klotformig stjärnhop i Vattumannen, upptäckt av Pierre Méchain 1780.",
+   "fun_fact": "M72 rymmer stjärnor motsvarande ungefär 168 000 solar i ett klot som är cirka 9,5 miljarder år gammalt, inklusive 43 variabla stjärnor!",
+   "distance": "55 000 ljusår"
+  },
+  "dso/m73": {
+   "description": "Messier 73 är en liten grupp med fyra stjärnor i Vattumannen som bara ser ut som en stjärnhop.",
+   "fun_fact": "Astronomer bråkade i årtionden om huruvida M73 var en äkta stjärnhop – år 2002 fick man svaret: de fyra stjärnorna ligger på helt olika avstånd och bildar bara en slumpmässig rad!",
+   "distance": "1 000 till 2 300 ljusår (de enskilda stjärnorna)"
+  },
+  "dso/m74": {
+   "description": "Fantomgalaxen är en spiralgalax sedd framifrån i Fiskarna, känd för sin perfekta storslagna spiralstruktur.",
+   "fun_fact": "M74 kallas Fantomgalaxen på grund av sin mycket låga ytljusstyrka, vilket gör den utmanande att observera!",
+   "distance": "32 miljoner ljusår",
+   "size": "95 000 ljusår tvärsöver",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m75": {
+   "description": "Messier 75 är en avlägsen, mycket tät klotformig stjärnhop i Skytten.",
+   "fun_fact": "M75 är en av de tätast packade klotformiga stjärnhoparna som är kända, och tros vara resterna från en dvärggalax som Vintergatan slukade för länge sedan!",
+   "distance": "68 000 ljusår",
+   "size": "134 ljusår i diameter"
+  },
+  "dso/m76": {
+   "description": "Little Dumbbell är en planetarisk nebulosa i Perseus med en karakteristisk åttatalsform — en mindre kusin till M27, Dumbbell-nebulosan i Vulpecula. Även om den är den svagaste posten i Messier-katalogen, belönar den tålmodig observation med små teleskop och visar vacker struktur i större instrument, med två ljusare lober som flankerar en svagare midja.",
+   "fun_fact": "M76 katalogiserades ursprungligen som två separata objekt — NGC 650 och NGC 651 — eftersom tidiga observatörer beskrev de två ljusa loberna oberoende av varandra. Det är en bipolär planetarisk nebulosa som bildades när en döende stjärnas utflöde knäpptes vid ekvatorn, vilket skapade två expanderande lober längs polaraxeln medan gas också svällde ut vid midjan.",
+   "distance": "~2 500 ljusår",
+   "size": "~2 ljusår i diameter"
+  },
+  "dso/m77": {
+   "description": "M77 är en spiralgalax med central stav i Valfisken som innehåller en aktiv galaxkärna driven av ett supermassivt svart hål.",
+   "fun_fact": "M77 hyser en aktiv galaxkärna med ett svart hål som är 15 miljoner gånger solens massa!",
+   "distance": "47 miljoner ljusår",
+   "size": "120 000 ljusår tvärsöver",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m78": {
+   "description": "M78 är den ljusaste diffusa reflektionsnebulosan på himlen, belägen i Orion nära de berömda bältesstjärnorna.",
+   "fun_fact": "M78 innehåller ungefär 45 unga T Tauri-variabla stjärnor, mycket unga stjärnor som fortfarande drar ihop sig mot huvudserien!",
+   "distance": "1 600 ljusår",
+   "size": "4 ljusår tvärsöver",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m79": {
+   "description": "M79 är ett kompakt klotformat stjärnhop i Lepus — ett av de få Messier-klothopen som är bäst placerade på vinternattshimlen, när de flesta klothopen är under horisonten eller knappt uppgångna. Med magnitud 8,0 behövs ett teleskop för att avslöja dess kompakta kärna och svaga halo, som sticker ut mot de jämförelsevis glesa vinterstjärnfälten.",
+   "fun_fact": "M79 anses av vissa astronomer vara en inkräktare från Canis Major-dvärggalaxen — en störd satellitgalax som för närvarande absorberas av Vintergatan. Om så är fallet bildades M79 inte inom Vintergatans eget globulära system utan fångades från en infallande galax och förs nu långsamt in i vår galaxs halo.",
+   "distance": "41 000 ljusår",
+   "size": "~104 ljusår i diameter"
+  },
+  "dso/m8": {
+   "description": "Lagunnebulan är ett jättelikt interstellärt moln i Skytten, en av de finaste och ljusaste nebulorna på sommarhimlen.",
+   "fun_fact": "Lagunnebulan innehåller Herschel 36, en av de mest massiva och lysande stjärnorna som är kända!",
+   "distance": "4 100 ljusår",
+   "size": "55 ljusår tvärsöver",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m80": {
+   "description": "M80 är en av de tätast packade klothopar i Vintergatan, en kompakt, rik boll med flera hundratusen stjärnor i Skorpionen. Med magnitud 7,2 är det ett utmärkt kikare-mål och avslöjar en lysande, mycket koncentrerad kärna i små teleskop.",
+   "fun_fact": "År 1860 utbröt en nova inom M80 — betecknad T Scorpii — och blev kortvarigt lika ljus som själva klustret och synlig för blotta ögat. Det är en av endast två novor som någonsin observerats inom ett klotformat stjärnhop. Novor i klotformade stjärnhop uppstår från växelverkningar mellan dubbelstjärnor, som är mycket vanligare i den täta stjärnmiljön i ett klothops kärna.",
+   "distance": "32 600 ljusår",
+   "size": "~84 ljusår i diameter"
+  },
+  "dso/m81": {
+   "description": "M81 är en storslagen spiralgalax i Stora björnen, en av de ljusaste galaxerna synliga från jorden.",
+   "fun_fact": "M81 interagerar gravitationellt med grannegalaxen M82, vilket utlöser intensiv stjärnbildning i M82!",
+   "distance": "12 miljoner ljusår",
+   "size": "90 000 ljusår tvärsöver",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m82": {
+   "description": "Cigarrgalaxen är en starburst-galax i Stora björnen, känd för sin siluettorientering och intensiva stjärnbildning.",
+   "fun_fact": "M82 bildar stjärnor 10 gånger snabbare än vår Vintergatan på grund av gravitationell interaktion med grannegalaxen M81!",
+   "distance": "12 miljoner ljusår",
+   "size": "37 000 ljusår tvärsöver",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m83": {
+   "description": "Södra solrosgalaxen är en spiralgalax med central stav i Vattenormen, en av de närmaste och ljusaste stavspiralgalaxerna på vår himmel.",
+   "fun_fact": "M83 har producerat sex observerade supernovor, fler än någon annan galax - ett rekord för supernovaproduktion!",
+   "distance": "15 miljoner ljusår",
+   "size": "55 000 ljusår tvärsöver",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m84": {
+   "description": "Messier 84 är en jättestor elliptisk galax i Virgohopens täta mitt.",
+   "fun_fact": "M84 skjuter ut två strålar av materia från sitt kärnhus, som drivs av ett svart hål på cirka 1,5 miljarder solmassor!",
+   "distance": "55 miljoner ljusår"
+  },
+  "dso/m85": {
+   "description": "Messier 85 är en linsformad galax i utkanten av Virgohopen, i stjärnbilden Berenikes hår.",
+   "fun_fact": "Krusningar och skal i M85:s yttre regioner är resterna av en galaxkollision för 4 till 7 miljarder år sedan!",
+   "distance": "60 miljoner ljusår",
+   "size": "120 600 ljusår i diameter"
+  },
+  "dso/m86": {
+   "description": "Messier 86 är en stor elliptisk galax i Virgohopen som bildar ett slående par med närliggande M84.",
+   "fun_fact": "M86 rusar mot oss i 244 km/s – den snabbaste ankomsten av alla Messier-objekt! Dess färd genom hopar lämnar ett långt spår av avskalad het gas.",
+   "distance": "52 miljoner ljusår"
+  },
+  "dso/m87": {
+   "description": "M87 är en superjätte elliptisk galax i Jungfrun, en av de mest massiva galaxerna i det lokala universumet.",
+   "fun_fact": "M87:s centrala svarta hål var det första som någonsin fotograferades av Event Horizon Telescope 2019 - det har 6,5 miljarder solmassor!",
+   "distance": "53 miljoner ljusår",
+   "size": "240 000 ljusår tvärsöver",
+   "mass": "2,4 biljoner solmassor",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m88": {
+   "description": "Messier 88 är en elegant spiralgalax i Berenikes hår, ett av femton Messier-objekt i Virgohopen.",
+   "fun_fact": "M88 störtar mot centrum av Virgohopen och kommer fram om 200 till 300 miljoner år, varvid dess yttre gas slits bort under fallet!",
+   "distance": "59 miljoner ljusår",
+   "size": "131 000 ljusår i diameter"
+  },
+  "dso/m89": {
+   "description": "Messier 89 är en elliptisk galax i Jungfrun, upptäckt av Charles Messier 1781.",
+   "fun_fact": "M89 kan vara näst intill ett perfekt klot – ovanligt för en elliptisk galax, som i regel är märkbart hoptryckta!",
+   "distance": "50 miljoner ljusår"
+  },
+  "dso/m9": {
+   "description": "M9 är ett kompakt klotformat stjärnhop i Ormen — ett av Messiers klotformade stjärnhop som påverkas mest av interstellär dammabsorption. Det ligger mot den galaktiska bulgen, där tjockt damm gör det betydligt svagare. Utan denna dunklet skulle M9 verka nästan en magnitud ljusare och vara synligt för blotta ögat.",
+   "fun_fact": "M9 drabbas mer av interstellärt dammabsorption än nästan någon annan Messier-klothopar — ungefär 1,3 magnituder dimning jämfört med en klar siktlinje. Två mindre klothopor (NGC 6342 och NGC 6356) ligger inom cirka 1° från M9, vilket gör den till centrum för en anmärkningsvärd gruppering av tre klothopor på en liten del av himlen.",
+   "distance": "25 800 ljusår",
+   "size": "~70 ljusår i diameter"
+  },
+  "dso/m90": {
+   "description": "Messier 90 är en stor spiralgalax i Jungfrun och ett skolboksexempel på en ”anemisk” galax.",
+   "fun_fact": "M90 har fått sin stjärnbildande gas bortrövad genom sin färd genom Virgohopen, vilket lämnar efter sig svansar av glödande gas som är upp till 260 000 ljusår långa!",
+   "distance": "59 miljoner ljusår",
+   "size": "132 000 ljusår i diameter"
+  },
+  "dso/m91": {
+   "description": "Messier 91 är en stavgalax i Berenikes hår och det svagaste objektet i Messierkatalogen.",
+   "fun_fact": "M91 var försvunnen i nästan 200 år! Messier angav dess position med fel referensgalax, och den återidentifierades först 1969 av en amatörastronom.",
+   "distance": "63 miljoner ljusår",
+   "size": "105 500 ljusår i diameter"
+  },
+  "dso/m92": {
+   "description": "M92 är en ljus klotformig stjärnhop i Herkules, ofta förbisedd på grund av sin närhet till den mer berömda M13.",
+   "fun_fact": "M92 är en av de äldsta klothoparna med ungefär 14,2 miljarder år - nästan lika gammal som universum!",
+   "distance": "26 700 ljusår",
+   "size": "109 ljusår tvärsöver",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m93": {
+   "description": "M93 är ett ljust, kompakt öppet stjärnhop i Puppis, beläget i den rika södra Vintergatan och lätt att hitta med kikare. Dess ungefär 80 stjärnor är arrangerade i en slående kil- eller fjärilsform och innehåller flera heta blå superjättar, vilket gör det till ett av de mer attraktiva öppna stjärnhopen på vinterns himmel.",
+   "fun_fact": "M93 är relativt ung — omkring 100 miljoner år gammal — med dominerande blå och blåvita stjärnor som ännu inte har utvecklats till jättar. Det är ett av de mer sydliga Messier-klustren, och från breddgrader norr om cirka 50°N stiger det aldrig särskilt högt över horisonten.",
+   "distance": "3 600 ljusår",
+   "size": "~23 ljusår i diameter"
+  },
+  "dso/m94": {
+   "description": "M94 är en spiralgalax i Jakthundarna med en ljus inre ring där aktiv stjärnbildning sker.",
+   "fun_fact": "M94:s inre ring är en starburst-ring där nya stjärnor bildas i mycket hög takt!",
+   "distance": "16 miljoner ljusår",
+   "size": "50 000 ljusår tvärsöver",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/m95": {
+   "description": "Messier 95 är en stavgalax i Lejonet, och en del av M96-gruppen tillsammans med M96 och M105.",
+   "fun_fact": "En ring av intensiv stjärnbildning som är omkring 70 000 ljusår bred kretsar kring M95:s kärna, och en supernova flammade upp där 2012!",
+   "distance": "33 miljoner ljusår",
+   "size": "80 000 ljusår i diameter"
+  },
+  "dso/m96": {
+   "description": "Messier 96 är en spiralgalax i Lejonet, och den ljusstarkaste medlemmen i galaxgruppen M96.",
+   "fun_fact": "M96 är ungefär lika stor och har samma massa som vår egen Vintergata, men den är påfallande osymmetriska – dess stoft och gas är ojämnt utspridda i dess armar!",
+   "distance": "31 miljoner ljusår",
+   "size": "78 000 ljusår i diameter"
+  },
+  "dso/m97": {
+   "description": "Ugglenebulan är en planetarisk nebulosa i Stora björnen, uppkallad efter sitt uggleliknande utseende med två mörka fläckar.",
+   "fun_fact": "De mörka uggleögonen i M97 är tredimensionella hålrum i nebulosan, riktade mot vår synlinje!",
+   "distance": "2 030 ljusår",
+   "size": "2 ljusår tvärsöver",
+   "image_credit": "Gemini Observatory/NOIRLab/NSF/AURA"
+  },
+  "dso/m98": {
+   "description": "Messier 98 är en spiralgalax i Berenikes hår, som ses nästan rakt från sidan som en del av Virgohopen.",
+   "fun_fact": "M98 är en av de sällsynta galaxer som rör sig mot oss i stället för bort från oss, och närmar sig med cirka 140 km/s!",
+   "distance": "44 miljoner ljusår"
+  },
+  "dso/m99": {
+   "description": "Messier 99 är en storslagen spiralgalax i Berenikes hår med tydliga, svepande spiralarmar.",
+   "fun_fact": "M99 var ett av de allra första objekten som erkändes som spiralformade, skissat av Lord Rosse 1846 – och den bildar stjärnor tre gånger snabbare än liknande galaxer!",
+   "distance": "45 miljoner ljusår",
+   "size": "98 000 ljusår tvärsöver"
+  },
+  "dso/n47_tucanae": {
+   "description": "47 Tucanae (NGC 104) är den näst ljusstarkaste klothopar på himlen, en tät boll med ungefär en miljon gamla stjärnor som kretsar runt Vintergatan i stjärnbilden Tukan. På ett avstånd av cirka 14 500 ljusår framträder den för blotta ögat som en dimmig stjärna av fjärde magnituden, men ett teleskop löser upp dess komprimerade kärna till en extraordinär svärm av gyllene och blåvita solar. Dess stjärnor bildades för omkring 13 miljarder år sedan, vilket gör klothopen nästan lika gammal som universum själv.",
+   "fun_fact": "47 Tucanae är en kosmisk pulsarfabrik: astronomer har hittat minst 35 millisekundpulsarer som snurrar hundratals gånger per sekund inuti den — mer än i något annat känt klotformat stjärnhop — resultatet av nära stellära möten som återvinner gamla neutronstjärnor genom att snurra upp dem.",
+   "distance": "~14 500 ljusår",
+   "size": "~120 ljusår i diameter",
+   "image_credit": "ESO"
+  },
+  "dso/ngc_2903": {
+   "description": "NGC 2903 är en ljus spiralgalax med stjärnkors i Lejonet, ofta kallad \"det Messier-objekt som Messier missade\" — den är en av de mest framträdande galaxerna på himlen som inte ingår i hans berömda katalog. Med magnitud 8,9 är den lätt synlig i kikare och visar vacker spiralstruktur i måttliga teleskop.",
+   "fun_fact": "NGC 2903 har en av de högsta koncentrationerna av stjärnbildande \"hotspots\" kända i en galaxs centrala stång — täta kluster av unga massiva stjärnor upplysta av intensiv stjärnbildning. Den används som ett riktmärke för att studera starburst-aktivitet i spiralgalaxer med stång.",
+   "distance": "30 miljoner ljusår",
+   "size": "~80 000 ljusår över",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/ngc_6543": {
+   "description": "Kattögats nebulosa är en av de mest strukturellt komplexa planetariska nebulosorna som är kända — en döende stjärnas utslungad gas skulpterad i koncentriska skal, jetstrålar och ljusa knölar synliga i Hubble-bilder. I små teleskop framträder den som en levande blågröna skiva i Draco, ett av de mest färgglada objekten på höstens himmel.",
+   "fun_fact": "År 1864 riktade astronomen William Huggins en spektroskop mot Kattögats nebulosa och upptäckte att den bestod av lysande gas snarare än olösta stjärnor — första gången som arten av någon planetarisk nebulosa bekräftades. Denna upptäckt grundade området nebulär spektroskopi och omkullkastade den rådande uppfattningen att alla nebulosor var avlägsna stjärnhopar.",
+   "distance": "~3 300 ljusår",
+   "size": "~0,5 ljusår i diameter",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/north_america_nebula": {
+   "description": "Nordamerika-nebulosan (NGC 7000) är en stor emissionsnebulosa i Cygnus vars form anmärkningsvärt liknar kontinenten Nordamerika, komplett med en Mexikanska golfen-region. Den sträcker sig över cirka 120 bågminuter – ungefär fyra gånger fullmånens diameter – och ligger omkring 2 600 ljusår bort och är över 100 ljusår bred.",
+   "fun_fact": "Trots sin visuella magnitud på 4 är nebulosan för stor och diffus för att ses med blotta ögat under de flesta himlar — men den fotograferas vackert och avslöjar Cygnus Wall, en tät båge av intensiv stjärnbildning längs dess södra kant.",
+   "distance": "~2 590 ljusår",
+   "size": "~140 ljusår i diameter",
+   "image_credit": "Giuseppe Donatiello/CC0"
+  },
+  "dso/omega_centauri": {
+   "description": "Omega Centauri är den största och mest massiva klothopar som kretsar omkring Vintergatan och innehåller ungefär 10 miljoner stjärnor packade i en sfär cirka 150 ljusår i diameter. Det är lätt synligt för det blotta ögat som en suddig stjärna i Centaurus och löser sig upp till en andedräktande stjärnklunga genom kikare eller vilket teleskop som helst.",
+   "fun_fact": "Till skillnad från typiska klothopar innehåller Omega Centauri stjärnor av många olika åldrar och kemiska sammansättningar — ett tecken på att det kan vara den avslitna kärnan i en dvärggalax som slitits sönder och uppslukats av Vintergatan för miljarder år sedan. Det kan till och med hysa ett centralt svart hål av mellanliggande massa.",
+   "distance": "17 090 ljusår",
+   "size": "~150 ljusår diameter",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/saturn_nebula": {
+   "description": "Saturnus-nebulosan är en planetarisk nebulosa i Vattumannen uppkallad efter sin likhet med planeten Saturnus — förlängningar kallade ansae sticker ut från båda sidorna som ringhandtag, synliga i måttliga teleskop. Med magnitud 8,0 är den en av de ljusaste planetariska nebulosorna på himlen och visar komplex struktur i större instrument.",
+   "fun_fact": "William Herschel upptäckte Saturnusnebulosan 1782 och noterade dess saturnusliknande utseende. Moderna observationer avslöjar minst fyra distinkta gasklot som omger den centrala vita dvärgen, vilket återspeglar flera episoder av massförlust i stjärnans slutliga stadier.",
+   "distance": "~5 000 ljusår",
+   "size": "~1 ljusår över",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/sculptor_galaxy": {
+   "description": "Sculptor-galaxen är en av de ljusaste och vackraste kantställda spiralgalaxerna som är synliga från jorden och framträder som en långsträckt glöd i södra stjärnbilden Sculptor. Det är en av de närmaste starburst-galaxerna — en galax som genomgår en intensiv stjärnbildningsburst — synlig för amatörastronomer med kikare från mörka himlar.",
+   "fun_fact": "Sculptor-galaxen är en av de ljusaste medlemmarna i Sculptor-gruppen — galaxgruppen närmast vår egen Lokala gruppen. Dess centrala starburst-region producerar nya stjärnor i en takt flera gånger högre än Vintergatan, driven av tidigare växelverkningar med närliggande galaxer.",
+   "distance": "11,4 miljoner ljusår",
+   "size": "~90 000 ljusår över",
+   "image_credit": "ESO/VST"
+  },
+  "dso/sgr_a_star": {
+   "description": "Sagittarius A* (Sgr A*) är det supermassiva svarta hålet i centrum av Vintergatan, beläget 26 000 ljusår bort i riktningen mot Skytten. Med en massa på cirka 4 miljoner solmassor komprimerad till en region mindre än vårt solsystem är det så tätt att inte ens ljus kan undkomma dess händelsehorisont.",
+   "fun_fact": "År 2022 släppte Event Horizon Telescope-samarbetet den första direkta bilden av Sgr A*, som avslöjade en glödande ring av superuppvärmd gas omkring dess skugga — producerad genom att kombinera data från radioobservatorier spridda över hela planeten.",
+   "distance": "26 000 ljusår",
+   "size": "Händelsehorisonts diameter: ~24 miljoner km",
+   "image_credit": "EHT Collaboration"
+  },
+  "dso/smc": {
+   "description": "Små Magellanska molnet är en dvärg-oregelbunden satellitgalax till Vintergatan, parad med sin större syskon LMC. Tillsammans rivs de långsamt isär av Vintergatans gravitation och lämnar efter sig ett enormt gasflöde över himlen.",
+   "fun_fact": "Genom att studera Cepheid-variabler i SMC 1908–12 upptäckte Henrietta Swan Leavitt period-luminositetslagen — genombrotten som först gjorde det möjligt för astronomer att mäta avstånd över universum!",
+   "distance": "200 000 ljusår",
+   "size": "7 000 ljusår i diameter",
+   "image_credit": "ESO/VISTA VMC"
+  },
+  "dso/t_crb": {
+   "description": "T Coronae Borealis (T CrB) är en återkommande nova i Corona Borealis — ett binärt system bestående av en röd jätte och en vit dvärgstjärna. Den vita dvärgstjärnan ackumulerar periodvis tillräckligt mycket väte från sin följeslagare för att utlösa en termonukleär explosion.",
+   "fun_fact": "T CrB hade sitt senaste utbrott 1946, då det kortvarigt nådde magnitud 2,0 och blev synligt för blotta ögat. Astronomer förutspår att ett nytt utbrott är nära förestående — håll utkik!",
+   "distance": "3 000 ljusår",
+   "size": "0,2 AU omloppsavstånd"
+  },
+  "dso/tarantula_nebula": {
+   "description": "Tarantulanebulosans är den största och mest lysande stjärnbildningsregionen i Lokala Gruppen, en omfattande emissionsnebulosa inbäddad i Stora Magellanska Molnet som sträcker sig ungefär 600 ljusår. Trots att den ligger 163 000 ljusår bort är den tillräckligt ljus för att vara synlig för det blotta ögat.",
+   "fun_fact": "Om Tarantelnebulosan vore lika nära som Orionnebulosan skulle den vara tillräckligt ljus för att kasta skuggor på natten och skulle sträcka sig över halva den synliga himlen!",
+   "distance": "163 000 ljusår",
+   "size": "600 ljusår i diameter",
+   "image_credit": "ESO/R. Fosbury/ST-ECF"
+  },
+  "dso/v838_mon": {
+   "description": "V838 Monocerotis är en ovanlig variabel stjärna i Monoceros som genomgick ett spektakulärt utbrott 2002 och blev kortvarigt en av de ljusaste stjärnorna i Vintergatan. Även om den är alltför svag för visuella observatörer idag, producerade dess expanderande ljuseko — en ljusvåg som belyser gamla dammskalen — några av de mest dramatiska Hubble Space Telescope-bilderna som någonsin tagits.",
+   "fun_fact": "Karaktären på V838 Mons utbrott är fortfarande omtvistad. Den ledande teorin är en stjärnsammansmältning — två stjärnor som spiralerar in i varandra och kolliderar — snarare än en klassisk nova eller superjätteutbrott. Om det bekräftas var det den första realtidsglimten av en \"luminös röd nova\", en sällsynt explosionsklass orsakad av stjärnsammansmältningar, liknande händelser har sedan dess upptäckts i andra galaxer.",
+   "distance": "~20 000 ljusår",
+   "size": "~3 ljusår (ljusekos omfattning)",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "dso/willman_1": {
+   "description": "Willman 1 är en ultraschwach dwarf-satellitgalax i Vintergatan, upptäckt 2004 av Beth Willman i data från Sloan Digital Sky Survey. Det är en av de minst lysande galaxerna som är kända och ett av de mest extrema laboratorierna för mörk materia i universum.",
+   "fun_fact": "För varje enhet vanlig materia i Willman 1 finns det ungefär 660 enheter mörk materia — vilket gör den till ett av de mest mörk-materia-dominerade objekt som någonsin upptäcktes. Dess stjärnor visar också tecken på tidvattenskador när Vintergatan långsamt river isär den.",
+   "distance": "~130 000 ljusår",
+   "size": "~130 ljusår i diameter",
+   "image_credit": "Sky Map team (it's very faint)"
+  },
+  "moon/ariel": {
+   "description": "Ariel har den yngsta och ljusaste ytan bland Uranus fem stora månar. Dess landskap domineras av ett nätverk av djupa dalar och släta slätter som långt tidigare omformades av vätska – troligen vatten eller ammonia-vattenblandningar – som vällde upp från det inre och översvämnade forntida terräng.",
+   "fun_fact": "Ariels dalar kan nå 10 km djup — mycket djupare än Grand Canyon. Observationer från James Webb Space Telescope har sedan upptäckt koldioxidis på Ariels yta, vilket tyder på pågående ytkemin driven av laddade partiklar från Uranus magnetfält.",
+   "distance": "191 020 km från Uranus",
+   "size": "1 158 km diameter",
+   "image_credit": "NASA/JPL",
+   "search_subtext": "Måne till Uranus"
+  },
+  "moon/callisto": {
+   "description": "Callisto är den yttersta av Galileiska månar och en av de mest kraterkrävda kropparna i solsystemet, dess gamla yta bevarar ett register över tidiga solsystemets påverkan.",
+   "fun_fact": "Callisto kretsar bortom Jupiters huvudsakliga strålningsbälten, vilket gör den till den säkraste av Galileiska månar för framtida mänsklig utforskning — den kallas ibland 'gateway moon' (grindmånen).",
+   "distance": "1 882 700 km från Jupiter",
+   "size": "4 821 km diameter",
+   "image_credit": "NASA/JPL/DLR",
+   "search_subtext": "Måne till Jupiter"
+  },
+  "moon/deimos": {
+   "description": "Deimos är den mindre och yttre av Mars två månar, med en slät, dammtäckt yta som ger den ett rundare utseende än Phobos. Liksom sin följeslagare tros den vara en infångad asteroid från den yttre bältet.",
+   "fun_fact": "Deimos är så liten och långt bort att den från Marsytan ser ut som inte mycket mer än en ljus stjärna och tar ungefär 30 timmar att långsamt driva över nattehimlen.",
+   "distance": "23 460 km från Mars",
+   "size": "15 × 12 × 11 km",
+   "image_credit": "NASA/JPL-Caltech/University of Arizona",
+   "search_subtext": "Måne till Mars"
+  },
+  "moon/dione": {
+   "description": "Dione är en isig måne kring Saturnus med en kraftigt kraterad framvänd sida och en bakvänd hemisfär genomkorsad av ljusa isklipper — spricklinjer där gamla tektoniska krafter exponerade färsk is från djupet. Cassinis gravimetridata antyder ett underjordiskt flytande hav under skorpan.",
+   "fun_fact": "Dione delar sin bana med två små månar, Helene och Polydeuces, som är låsta 60° före och efter den vid gravitationsjämviktspunkter som kallas Lagrangepunkter. Helene kan särskilt ses åka med som en kosmisk liftare i Cassini-bilder.",
+   "distance": "377 396 km från Saturn",
+   "size": "1 122 km diameter",
+   "image_credit": "NASA/JPL-Caltech/SSI",
+   "search_subtext": "Måne till Saturnus"
+  },
+  "moon/europa": {
+   "description": "Europa är Jupiters andra galileisk måne och antas innehålla ett enormt flytande vattenhav under sin isiga skorpa, vilket gör den till en av de mest lovande platserna att söka efter liv.",
+   "fun_fact": "Europas underjordiska ocean kan innehålla två gånger så mycket flytande vatten som alla jordens hav tillsammans, hållet flytande genom tidvattenvärme från Jupiter.",
+   "distance": "671 100 km från Jupiter",
+   "size": "3 122 km diameter",
+   "image_credit": "NASA/JPL-Caltech/SETI Institute",
+   "search_subtext": "Måne till Jupiter"
+  },
+  "moon/ganymede": {
+   "description": "Ganymede är den största månen i solsystemet — ännu större än planeten Merkurius. Det är den enda månen som är känd för att generera sitt eget magnetfält.",
+   "fun_fact": "Ganymede är större än Merkurius till storleken, men bara ungefär hälften av dess massa. Dess interna magnetfält skapar sitt eget miniatyrmagnetosfer inom Jupiters mycket större magnetosfer.",
+   "distance": "1 070 400 km från Jupiter",
+   "size": "5 268 km diameter",
+   "image_credit": "NASA/JPL/DLR",
+   "search_subtext": "Måne till Jupiter"
+  },
+  "moon/iapetus": {
+   "description": "Iapetus är en av Saturnus mest karakteristiska månar: dess framåtriktade hemisfär är täckt av jetsvart material som är lika mörkt som kol, medan dess bakåtriktade hemisfär är ljusvit is. Detta extrema tvåfärgade utseende förbryllade Giovanni Cassini när han upptäckte månen 1671, och kontrasten är så stark att den är synlig i små teleskop.",
+   "fun_fact": "Iapetus har också en imponerande ekvatoriell bergskam som stiger 20 km högt — högre än något berg på jorden — som sträcker sig tusentals kilometer runt dess ekvator. Dess ursprung är okänt: det kan vara resten av en kollapsad ring eller forntida tektonisk veck, bildad när månen snurrade mycket snabbare för länge sedan.",
+   "distance": "3 560 820 km från Saturn",
+   "size": "1 469 km diameter",
+   "image_credit": "NASA/JPL-Caltech/SSI",
+   "search_subtext": "Måne till Saturnus"
+  },
+  "moon/io": {
+   "description": "Io är den innersta av Jupiters fyra stora galileiska månar och den mest vulkaniskt aktiva kroppen i solsystemet.",
+   "fun_fact": "Io har hundratals aktiva vulkaner, några som sprutar lavafonäner dussintals kilometer höga. Dess konstanta aktivitet drivs av tidvattenvärme från Jupiters enorma gravitation.",
+   "distance": "421 700 km från Jupiter",
+   "size": "3 643 km diameter",
+   "image_credit": "NASA/JPL/University of Arizona",
+   "search_subtext": "Måne till Jupiter"
+  },
+  "moon/oberon": {
+   "description": "Oberon är den yttersta av Uranus fem stora månar och en av de mest kraterkrävda, med en gammal yta som förändrats lite sedan början av solsystemet. Flera av dess stora nedslagskratrar har mörkt material på sina botten, möjligen organiska avlagringar som förts in av de påverkande kropparna.",
+   "fun_fact": "Oberon har ett berg som stiger cirka 6 km från de omgivande slätten — jämförbart med de högsta topparna på jorden. Till skillnad från jordens berg, som bildades genom plattektonik, kan denna formation vara den centrala toppen av en gammal nedslagskrater eller en rest från tidig vulkanisk aktivitet.",
+   "distance": "583 520 km från Uranus",
+   "size": "1 523 km diameter",
+   "image_credit": "NASA/JPL",
+   "search_subtext": "Måne till Uranus"
+  },
+  "moon/phobos": {
+   "description": "Phobos är den större och innersta av Mars två månar och kretsar närmare sin planet än någon annan måne i solsystemet. Det är en oregelbundet formad kropp med djupa spår och kratrar som antas vara en infångad asteroid.",
+   "fun_fact": "Phobos kretsar runt Mars så snabbt att det går upp i väster och går ned i öster — och det spiralerar långsamt inåt, destineradt att antingen krascha in i Mars eller splittras upp till en ring om cirka 50 miljoner år.",
+   "distance": "9 376 km från Mars",
+   "size": "27 × 22 × 18 km",
+   "image_credit": "NASA/JPL-Caltech/University of Arizona",
+   "search_subtext": "Måne till Mars"
+  },
+  "moon/rhea": {
+   "description": "Rhea är Saturnus andra största måne och en kraftigt kraterad värld av is och sten. Dess bleka, gamla yta bevarar några av solsystemets mest orörda nedslagskratrar, tillsammans med ljusa isklippor där jordskred har blottlagt färskt material från under ytan.",
+   "fun_fact": "År 2008 föreslog Cassini-data att Rhea kan ha en tunn ring av skräp som kretsar omkring den — vilket skulle göra den till första månen någonsin som upptäcktes med sitt eget ringsystem. Om det bekräftas skulle det vara en anmärkningsvärd upptäckt; bevisen är fortfarande ett aktivt forskningsområde.",
+   "distance": "527 108 km från Saturn",
+   "size": "1 527 km diameter",
+   "image_credit": "NASA/JPL-Caltech/SSI",
+   "search_subtext": "Måne till Saturnus"
+  },
+  "moon/tethys": {
+   "description": "Tethys är en isig måne kring Saturnus som domineras av två dramatiska drag: den enorma Odysseus-kratern, 400 km bred och täcker nästan en tredjedel av månens yta, och Ithaca Chasma, ett kanjonsystem som sträcker sig tre fjärdedelar runt jordklotet.",
+   "fun_fact": "Tethys är nästan rent vatten­is — den har en av de lägsta täthet­erna bland alla månar i solsystemet, bara tätare än fruset vatten. Ithaca Chasma kan ha bildats när det inre frös och expanderade, vilket sprack det överliggande skorpet från insidan.",
+   "distance": "294 619 km från Saturn",
+   "size": "1 062 km diameter",
+   "image_credit": "NASA/JPL-Caltech/SSI",
+   "search_subtext": "Måne till Saturnus"
+  },
+  "moon/titan": {
+   "description": "Titan är Saturnus största måne och den näst största månen i solsystemet. Det är den enda månen som är känd för att ha en tät atmosfär — ett tjockt kväveöverslag blandat med metan — och den enda världen bortom jorden som är känd för att ha stabila flytande hav på sin yta.",
+   "fun_fact": "Titans sjöar och hav är fyllda inte med vatten utan med flytande metan och etan vid en frusen −179°C. NASAs Dragonfly-rotorkraftsmission, som är planerad att anlända 2034, kommer att flyga mellan platser på Titans yta för att söka efter livets kemi.",
+   "distance": "1 221 870 km från Saturn",
+   "size": "5 151 km diameter",
+   "image_credit": "NASA/JPL-Caltech/SSI",
+   "search_subtext": "Måne till Saturnus"
+  },
+  "moon/titania": {
+   "description": "Titania är Uranus största måne och den åttonde största månen i solsystemet. Dess yta visar en blandning av gamla kraterklädd slätter och yngre branter och dalar, vilket tyder på en komplex geologisk historia som kan ha inkluderat tidigare tektonisk aktivitet som omformade den isiga skorpan.",
+   "fun_fact": "Alla Uranus' månar är uppkallade efter karaktärer från Shakespeare och Alexander Pope — Titania är älvornas drottning i En midsommarnattsdröm. Det är en av mycket få större planetmånar som inte är uppkallad efter en figur från grekisk eller romersk mytologi.",
+   "distance": "435 910 km från Uranus",
+   "size": "1 578 km diameter",
+   "image_credit": "NASA/JPL",
+   "search_subtext": "Måne till Uranus"
+  },
+  "moon/triton": {
+   "description": "Triton är Neptuns största måne och en av de mest extraordinära himlakropparna i solsystemet. Den kretsar omkring Neptunus bakåt — motsatt planetens egen rotation — ett starkt tecken på att den fångades från det yttre solsystemet, troligtvis från Kuiper-bältet, tidigt i Neptuns historia.",
+   "fun_fact": "Trots sin yttemperatur på −235°C — den kallaste temperaturen som uppmätts på någon himlakropp besökt av ett rymdskepp — upptäckte Voyager 2 aktiva kvävegejsrar på Triton 1989. Mörka strimmor på ytan markerar där gasplymer och mörkt material exploderade kilometer upp i den tunna atmosfären.",
+   "distance": "354 759 km från Neptunus",
+   "size": "2 707 km diameter",
+   "image_credit": "NASA/JPL",
+   "search_subtext": "Måne till Neptunus"
+  },
+  "moon/umbriel": {
+   "description": "Umbriel är den mörkaste av Uranus fem stora månar, med en enhetligt gammal och kraftigt kraterad yta som visar liten tecken på den geologiska omformningen som ses på dess grannar. Dess inre verkar ha förbllivit kallt och fruset sedan början av solsystemets historia.",
+   "fun_fact": "Den mest slående egenskapen på Umbriel är Wunda, en ljus ring omkring 140 km i diameter nära dess ekvator. Upptäckt av Voyager 2 1986 förblir Wundas exakta natur ett mysterium — det kan vara en kraterbotten täckt av koldioxid eller ammoniakfrost som avsattes långt efter den påverkan som bildade den.",
+   "distance": "266 300 km från Uranus",
+   "size": "1 170 km diameter",
+   "image_credit": "NASA/JPL",
+   "search_subtext": "Måne till Uranus"
+  },
+  "planet/jupiter": {
+   "description": "Jupiter är den största planeten i vårt solsystem. Det är en gasjätte med den berömda Stora Röda Fläcken.",
+   "fun_fact": "Jupiter har minst 95 kända månar! Dess största måne, Ganymedes, är större än planeten Merkurius.",
+   "distance": "778 miljoner km (genomsnitt)",
+   "size": "139 820 km diameter",
+   "mass": "1,898 × 10²⁷ kg",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "planet/mars": {
+   "description": "Mars är den fjärde planeten från solen, känd som den röda planeten på grund av järnoxid på dess yta.",
+   "fun_fact": "Mars har den största vulkanen i solsystemet: Olympus Mons, som är ungefär 2,5 gånger högre än Mount Everest!",
+   "distance": "228 miljoner km (genomsnitt)",
+   "size": "6 779 km diameter",
+   "mass": "6,39 × 10²³ kg",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "planet/mercury": {
+   "description": "Merkurius är den minsta planeten och närmast solen. Ett år på Merkurius varar bara 88 jorddagar.",
+   "fun_fact": "Trots att Merkurius är närmast solen är det inte den hetaste planeten. Venus är hetare på grund av sin täta atmosfär!",
+   "distance": "58 miljoner km (från solen)",
+   "size": "4 880 km diameter",
+   "mass": "3,3 × 10²³ kg",
+   "image_credit": "NASA/GSFC"
+  },
+  "planet/moon": {
+   "description": "Månen är jordens enda naturliga satellit. Den påverkar våra tidvatten och har besökts av 12 astronauter.",
+   "fun_fact": "Månen driver långsamt bort från jorden med cirka 3,8 cm per år. Den var mycket närmare för miljarder år sedan!",
+   "distance": "384 400 km",
+   "size": "3 474 km diameter",
+   "mass": "7,35 × 10²² kg",
+   "image_credit": "NASA/GSFC/ASU"
+  },
+  "planet/neptune": {
+   "description": "Neptunus är den mest avlägsna planeten i vårt solsystem. Den har de starkaste vindarna, som når 2 100 km/h.",
+   "fun_fact": "Neptunus upptäcktes genom matematik! Vetenskapsmän förutspådde dess position innan någon såg den genom ett teleskop.",
+   "distance": "4,5 miljarder km (genomsnitt)",
+   "size": "49 244 km diameter",
+   "mass": "1,024 × 10²⁶ kg",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "planet/pluto": {
+   "description": "Pluto är en dvärgplanet i Kuiperbältet. Den ansågs vara den nionde planeten fram till 2006.",
+   "fun_fact": "Pluto har en hjärtformad glaciär av kväveis, synlig på bilder från NASAs New Horizons-uppdrag!",
+   "distance": "5,9 miljarder km (genomsnitt)",
+   "size": "2 377 km diameter",
+   "mass": "1,3 × 10²² kg",
+   "image_credit": "NASA/JHUAPL/SwRI"
+  },
+  "planet/saturn": {
+   "description": "Saturnus är den sjätte planeten från solen, känd för sitt spektakulära ringsystem av is och sten.",
+   "fun_fact": "Saturnus är så lätt att den skulle flyta i vatten! Dess densitet är lägre än vatten, även om det inte finns något badkar stort nog att testa detta.",
+   "distance": "1,4 miljarder km (genomsnitt)",
+   "size": "116 460 km diameter",
+   "mass": "5,68 × 10²⁶ kg",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "planet/sun": {
+   "description": "Solen är stjärnan i centrum av vårt solsystem. Den ger ljus och värme som gör livet på jorden möjligt.",
+   "fun_fact": "Solen innehåller 99,86% av all massa i vårt solsystem. Ungefär 1,3 miljoner jordklot skulle få plats inuti den!",
+   "distance": "150 miljoner km",
+   "size": "1,4 miljoner km diameter",
+   "mass": "1,989 × 10³⁰ kg",
+   "spectral_class": "G2V",
+   "image_credit": "NASA/SDO"
+  },
+  "planet/uranus": {
+   "description": "Uranus är en isjätte som roterar på sidan. Det var den första planeten som upptäcktes med teleskop.",
+   "fun_fact": "Uranus roterar på sidan med 98 graders lutning, möjligen på grund av en kollision med ett jordstort objekt för länge sedan!",
+   "distance": "2,9 miljarder km (genomsnitt)",
+   "size": "50 724 km diameter",
+   "mass": "8,68 × 10²⁵ kg",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "planet/venus": {
+   "description": "Venus är den andra planeten från solen och den hetaste i vårt solsystem. Den kallas ofta jordens tvilling på grund av liknande storlek.",
+   "fun_fact": "En dag på Venus är längre än dess år! Det tar 243 jorddagar att rotera en gång, men bara 225 dagar att kretsa runt solen.",
+   "distance": "108 miljoner km (genomsnitt)",
+   "size": "12 104 km diameter",
+   "mass": "4,87 × 10²⁴ kg",
+   "image_credit": "NASA/JPL"
+  },
+  "shower/aquariids": {
+   "description": "Eta Aquariiderna är en av två årliga meteorskurar som produceras av debris från Halleys komet. Med en topp på upp till 70 meteorer per timme, favoriserar skuren starkt södra halvklotet, där radianten stiger högt före gryningen. Norr om ekvatorn kan observatörer fortfarande njuta av en respektabel hastighet på 30 eller fler per timme.",
+   "fun_fact": "Eta Aquariid-meteorer färdas med 66 km/s — snabbt nog för att den joniserade luft de skapar kan glöda i flera sekunder efter att meteoren är borta. Du kan se Halleys gamla damm brinna upp framför dina ögon, utkastat under en av kometens många besök för tusentals år sedan."
+  },
+  "shower/deltaaquariids": {
+   "description": "Southern Delta Aquariids når sin topp i slutet av juli och ses bäst från tropiska och södra breddgrader, där radianterna i Vattumannen stiger högt före gryningen. De producerar en jämn ström av meteorer med medelhög hastighet på upp till 16 per timme, med få ljusa eldklot.",
+   "fun_fact": "Den exakta moderhoppen för Delta Aquariiderna är fortfarande osäker. Den främsta kandidaten är Komet 96P/Machholz, en ovanlig kortperiodisk komet med en starkt lutad bana som svänger anmärkningsvärt nära Solen – närmare än planeten Merkurius."
+  },
+  "shower/geminids": {
+   "description": "Geminiderna anses allmänt vara årets finaste meteorskur — riklig (upp till 120 per timme), pålitlig och aktiv från tidig kväll snarare än endast efter midnatt. De utgår från stjärnbilden Gemini och producerar ett brett spektrum av meteorljusstyrkor, inklusive levande eldklot.",
+   "fun_fact": "Till skillnad från andra större meteorsvärmar kommer Geminiderna från en asteroid i stället för en komet: 3200 Phaethon, en \"stenkomet\" vars bana tar den närmare solen än någon annan namngiven asteroid. Den extrema värmen kan spricka dess steniga yta och driva bort dammet som producerar svärmen."
+  },
+  "shower/leonids": {
+   "description": "Leoniderna strålar från Leons skära och producerar vanligtvis omkring 20 meteorer per timme. De är berömda för spektakulära stormar som uppstår ungefär var 33:e år när jorden passerar genom ett tätt dammfilament som kastats av kometen 55P/Tempel-Tuttle. Dessa stormar kan producera tusentals meteorer per timme.",
+   "fun_fact": "Leonidstormen 1833 producerade uppskattningsvis 100 000 meteorer per timme och skrämde observatörer över Nordamerika som fruktade att himlen brann. Händelsen inledde den vetenskapliga studien av meteorskurar. Jämförbara stormar inträffade 1966 och 1999."
+  },
+  "shower/lyrids": {
+   "description": "Lyrider är en pålitlig vårregn som strålar från området nära den ljusa stjärnan Vega i Lyra. De producerar snabba, måttligt ljusa meteorer, med topp omkring 18 per timme, och genererar ibland eldklot som lämnar glödande rökspår.",
+   "fun_fact": "Lyrider är den äldsta pålitligt dokumenterade meteorskuren i historien. Kinesiska astronomer dokumenterade en storm av meteorer som \"föll som regn\" år 687 f.Kr. Skräpet kommer från kometen Thatcher, som tar 415 år att kretsa runt solen och besökte senast det inre solsystemet 1861."
+  },
+  "shower/orionids": {
+   "description": "Orioniderna är den andra meteorsvärmningen som produceras varje år av Halleys komet och strålar från området nära Orions upphöjda klubba. Med en topp på omkring 25 per timme är de kända för snabba, ofta ljusa meteorer som ofta lämnar glödande joniseringsspår som varar flera sekunder.",
+   "fun_fact": "Halleys komet är ansvarig för två årliga meteorskurar: Eta Aquariiderna i maj, när jorden korsar kometens utgående skräpspår, och Orioniderna i oktober, när jorden korsar det inkommande spåret. Tillsammans låter de oss sampla gammalt Halley-damm två gånger om året."
+  },
+  "shower/perseids": {
+   "description": "Perseiderna är årets mest populära meteorregn, som kulminerar på varma augustinätter med upp till 100 meteorer per timme. Skräp från kometen Swift-Tuttle brinner upp högt i jordens atmosfär och producerar snabba, ljusa meteorer – många lämnar bestående lysande spår – som strålar från stjärnbilden Perseus.",
+   "fun_fact": "Föräldern till Perseiderna, kometen Swift-Tuttle, har en kärna som är 26 km bred — större än objektet som tros ha orsakat den massutrotning som avslutade dinosauriernas tid. Kometen passerade senast genom det inre solsystemet 1992 och kommer inte att återvända förrän 2125."
+  },
+  "shower/puppidvelids": {
+   "description": "Puppid-Velids är ett komplext system av överlappande mindre meteorsvärmar som strålar från stjärnbilderna Puppis och Vela i den södra Vintergatan. Med en topp på omkring 10 meteorer per timme är de bäst att observera från södra halvklotet, där radianten stiger högt på decemberhimlen.",
+   "fun_fact": "Puppid-Velids anses vara debris från flera olika moderkometer snarare än en enda källa, inklusive Komet 26P/Grigg-Skjellerup. Deras södra radiant stiger aldrig över horisonten för observatörer på breddgrader norr om cirka 40°N, vilket gör dem till en meteorsvärm som större delen av världen sällan ser."
+  },
+  "shower/quadrantids": {
+   "description": "Quadrantiderna är en produktiv januarimeteorsvärm med en mycket skarp, kort topp som varar bara några timmar. Radianterna ligger i stjärnbilden Boötes, nära positionen för den nedlagda stjärnbilden Quadrans Muralis, efter vilken svärmen är namngiven. Under ideala förhållanden är upp till 120 meteorer per timme synliga.",
+   "fun_fact": "Till skillnad från de flesta större meteorsvärmar som härstammar från kometer är Quadrantidernas moderlegeme asteroiden 2003 EH1 — som antas vara den vilande kärnan av en komet som brann ut för århundraden sedan. Dess existens bekräftades först 2003."
+  },
+  "shower/ursids": {
+   "description": "Ursiderna är en mindre meteorsvärm som strålar från Ursa Minor, nära Polaris, vilket gör dem cirkumpolära för observatörer på norra halvklotet — synliga hela natten utan att gå ned. De kulminerar omkring vintersolståndet med cirka 10 meteorer per timme, och moderkometen är 8P/Tuttle.",
+   "fun_fact": "Ursiderna producerar ibland oväntade utbrott långt över sin typiska frekvens. År 1945 och igen 2006 registrerade observatörer 50 eller fler meteorer per timme — fem gånger den normala toppen. Dessa toppar uppstår när jorden passerar genom ett ovanligt tätt band av skräp som kastades ut under en nära passage av kometen Tuttle."
+  },
+  "star/achernar": {
+   "description": "Achernar är den ljusaste stjärnan i Eridanus (Floden) och den nionde ljusaste stjärnan på natthimlen.",
+   "fun_fact": "Achernar är den plattaste kända stjärnan! Den snurrar så snabbt att dess ekvatoriella diameter är 56% större än dess polära diameter.",
+   "distance": "139 ljusår",
+   "size": "7,3 solradier",
+   "mass": "6,7 solmassor",
+   "spectral_class": "B6 Vep",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/acrux": {
+   "description": "Acrux (Alfa Crucis) är den ljusaste stjärnan i Södra korset och den 13:e ljusaste stjärnan på himlen.",
+   "fun_fact": "Acrux syns på flaggorna för Australien, Nya Zeeland, Brasilien, Papua Nya Guinea och Samoa!",
+   "distance": "320 ljusår",
+   "size": "7,8 solradier",
+   "mass": "18 solmassor",
+   "spectral_class": "B0.5 IV",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/adhara": {
+   "description": "Adhara (Epsilon Canis Majoris) är den näst ljusaste stjärnan i Stora hunden, efter Sirius.",
+   "fun_fact": "För ungefär 4,7 miljoner år sedan var Adhara den ljusaste stjärnan på natthimlen, ännu ljusare än Sirius är idag!",
+   "distance": "430 ljusår",
+   "size": "14 solradier",
+   "mass": "12,6 solmassor",
+   "spectral_class": "B2 II",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/alcyone": {
+   "description": "Alcyone är den ljusaste stjärnan i Pleiaderna (M45) i stjärnbilden Oxen. Det är en blåvit jättestjärna.",
+   "fun_fact": "Alcyone är faktiskt ett multipelt stjärnsystem med minst tre följeslagare! Den snurrar också så fort att den har en gasring runt sin ekvator.",
+   "distance": "~440 ljusår",
+   "size": "~10 solradier",
+   "mass": "~6,0 solmassor",
+   "spectral_class": "B7IIIe",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/aldebaran": {
+   "description": "Aldebaran är en orange jättestjärna som representerar ögat på Oxen (Taurus). Dess namn betyder \"följaren\" på arabiska.",
+   "fun_fact": "Aldebaran verkar vara del av Hyadernas stjärnhop men är faktiskt bara halva avståndet till oss - en kosmisk optisk illusion!",
+   "distance": "65 ljusår",
+   "size": "44 solradier",
+   "mass": "1,2 solmassor",
+   "spectral_class": "K5+ III",
+   "image_credit": "ESO"
+  },
+  "star/alderamin": {
+   "description": "Alderamin är den ljusaste stjärnan i Cepheus (Kungen). Dess namn kommer från arabiska och betyder \"den högra armen.\"",
+   "fun_fact": "På grund av jordens axialprecessionen kommer Alderamin att bli Nordstjärnan omkring år 7500 e.Kr.!",
+   "distance": "49 ljusår",
+   "size": "2,5 solradier",
+   "mass": "1,9 solmassor",
+   "spectral_class": "A7V",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/algenib": {
+   "description": "Algenib markerar ett hörn av Pegasus stora kvadrat. Det är en het blå undergiant-stjärna och en Beta Cephei-variabel.",
+   "fun_fact": "Algenib pulserar och ändrar sin ljusstyrka något var 3,6:e timme! Det är också en av de mest avlägsna stjärnorna som bildar en framträdande asterism synlig för blotta ögat.",
+   "distance": "~390 ljusår",
+   "size": "4,8 solradier",
+   "mass": "~8,9 solmassor",
+   "spectral_class": "B2IV",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/algieba": {
+   "description": "Algieba är en vacker dubbelstjärna i Lejonet (Leo), som bildar lejonets man. Dess namn betyder \"pannan\" på arabiska.",
+   "fun_fact": "Genom ett teleskop delar sig Algieba upp i ett fantastiskt par av gyllene och gul-orange jättestjärnor — en av himmelens finaste dubbelstjärnor! En planet upptäcktes som kretsar runt primärstjärnan 2009.",
+   "distance": "~130 ljusår",
+   "size": "~23 solradier",
+   "mass": "~1,2 solmassor",
+   "spectral_class": "K1IIIbCN",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/algol": {
+   "description": "Algol är en berömd förmörkelsevariabel i Perseus, känd som \"Djävulsstjärnan\" sedan antiken.",
+   "fun_fact": "Vart 2,87:e dygn blir Algol märkbart svagare när dess svagare följeslagare passerar framför - forntida astronomer tyckte detta var kusligt!",
+   "distance": "90 ljusår",
+   "size": "2,7 solradier",
+   "mass": "3,2 solmassor",
+   "spectral_class": "B8 V",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/alhena": {
+   "description": "Alhena markerar foten på Pollux, en av tvillingarna i Gemini. Det är en ljus vit undergiant-stjärna och en av Geminis mest framträdande stjärnor.",
+   "fun_fact": "Alhenasnamn kommer från arabiska och betyder \"märket\" — gamla araber såg denna stjärna som ett märke på en kamels hals!",
+   "distance": "109 ljusår",
+   "size": "3,3 solradier",
+   "mass": "2,8 solmassor",
+   "spectral_class": "A1IV",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/alioth": {
+   "description": "Alioth är den ljusaste stjärnan i Stora björnen och den ljusaste stjärnan i Karlavagnens asterism.",
+   "fun_fact": "Alioth har ett speciellt magnetfält som gör att kemiska element koncentreras i fläckar på dess yta!",
+   "distance": "83 ljusår",
+   "size": "4,1 solradier",
+   "mass": "2,9 solmassor",
+   "spectral_class": "A1 III-IVp",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/alkaid": {
+   "description": "Alkaid är stjärnan vid spetsen av Stora björnens handtag i Ursa Major. Det är den tredje ljusaste stjärnan i Ursa Major.",
+   "fun_fact": "Till skillnad från de flesta stjärnor i Stora björnen är Alkaid inte en del av Ursa Major Moving Group — den färdas genom rymden i en annan riktning, så Stora björnens form kommer långsamt att förändras under tusentals år!",
+   "distance": "104 ljusår",
+   "size": "3,4 solradier",
+   "mass": "6,1 solmassor",
+   "spectral_class": "B3V",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/alnair": {
+   "description": "Alnair är den ljusaste stjärnan i Grus (Tranan). Dess namn betyder \"den ljusa\" på arabiska.",
+   "fun_fact": "Alnair snurrar extremt snabbt — minst 215 km/s vid sin ekvator — vilket är så snabbt att stjärnan är märkbart oblat, utbuktad i mitten!",
+   "distance": "101 ljusår",
+   "size": "3,4 solradier",
+   "mass": "4,0 solmassor",
+   "spectral_class": "B7IV",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/alnath": {
+   "description": "Alnath är den näst ljusaste stjärnan i Oxen och markerar spetsen på tjurens norra horn. Den ligger precis på gränsen mellan Oxen och Kusken.",
+   "fun_fact": "Alnath tillhörde en gång två stjärnbilder! Det betecknades både Beta Tauri och Gamma Aurigae innan IAU officiellt tilldelade det till Tjuren 1930.",
+   "distance": "134 ljusår",
+   "size": "4,2 solradier",
+   "mass": "5,0 solmassor",
+   "spectral_class": "B7III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/alnilam": {
+   "description": "Alnilam är den mellersta stjärnan i Orions bälte och en av de mest lysande stjärnorna kända i vår galax.",
+   "fun_fact": "Alnilam förlorar massa 20 miljoner gånger snabbare än vår sol genom sin kraftfulla stjärnvind!",
+   "distance": "~2 000 ljusår",
+   "size": "42 solradier",
+   "mass": "40 solmassor",
+   "spectral_class": "B0 Ia",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/alphard": {
+   "description": "Alphard är den ljusaste stjärnan i Vattenormen (Hydra), den största stjärnbilden på himlen.",
+   "fun_fact": "Alphard betyder \"den ensamma\" på arabiska eftersom den sitter ensam i en annars mörk del av himlen!",
+   "distance": "177 ljusår",
+   "size": "50 solradier",
+   "mass": "3 solmassor",
+   "spectral_class": "K3 II-III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/alphekka": {
+   "description": "Alphekka (även kallad Gemma) är den ljusaste stjärnan i Corona Borealis (Norra Kronan). Det är juvelsmycket i denna lilla stjärnkrans.",
+   "fun_fact": "Alphekka är en förmörkande dubbelstjärna — dess svaga följeslagare passerar framför den var 17,4:e dag, vilket orsakar en liten ljusminskning som är nästan omöjlig att se utan instrument!",
+   "distance": "75 ljusår",
+   "size": "2,9 solradier",
+   "mass": "2,6 solmassor",
+   "spectral_class": "A0V",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/alpheratz": {
+   "description": "Alpheratz är den ljusaste stjärnan i Andromeda, även om den en gång ansågs vara del av Pegasus.",
+   "fun_fact": "Alpheratz har en extremt ovanlig kemisk sammansättning med höga koncentrationer av kvicksilver och mangan i sin atmosfär!",
+   "distance": "97 ljusår",
+   "size": "2,7 solradier",
+   "mass": "3,6 solmassor",
+   "spectral_class": "B8 IVp",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/altair": {
+   "description": "Altair är den ljusaste stjärnan i Örnen (Aquila) och en av de närmaste stjärnorna synliga för blotta ögat.",
+   "fun_fact": "Altair roterar så snabbt (en gång var nionde timme) att den är märkbart tillplattad vid polerna - den är 14% bredare än den är hög!",
+   "distance": "17 ljusår",
+   "size": "1,8 solradier",
+   "mass": "1,8 solmassor",
+   "spectral_class": "A7 V",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/ankaa": {
+   "description": "Ankaa är den ljusaste stjärnan i Phoenix, en konstellation som ses bäst från södra halvklotet. Dess namn kommer från det arabiska ordet för \"fenixen\".",
+   "fun_fact": "Ankaa är en spektroskopisk dubbelstjärna, vilket betyder att dess följeslagare är så nära att de två endast kan upptäckas genom förskjutningar i deras ljusspektrum — de kretsar omkring varandra var 10,2:e år!",
+   "distance": "85 ljusår",
+   "size": "15 solradier",
+   "mass": "1,3 solmassor",
+   "spectral_class": "K0III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/antares": {
+   "description": "Antares är en röd superjättestjärna, hjärtat av Skorpionen (Scorpius). Dess namn betyder \"Mars rival\" på grund av dess röda färg.",
+   "fun_fact": "Antares är så stor att om den placerades i vårt solsystem skulle dess yta sträcka sig förbi Mars omloppsbana!",
+   "distance": "~550 ljusår",
+   "size": "~680 solradier",
+   "mass": "~12 solmassor",
+   "spectral_class": "M1.5 Iab",
+   "image_credit": "ESO/K. Ohnaka"
+  },
+  "star/arcturus": {
+   "description": "Arcturus är den ljusaste stjärnan på norra halvklotet, en orange jätte i stjärnbilden Björnvaktaren (Boötes).",
+   "fun_fact": "Arcturus färdas genom rymden med enorm hastighet och kommer att passera närmast vårt solsystem om ungefär 4 000 år!",
+   "distance": "37 ljusår",
+   "size": "26 solradier",
+   "mass": "1,1 solmassor",
+   "spectral_class": "K1.5 III",
+   "image_credit": "ESO"
+  },
+  "star/arneb": {
+   "description": "Arneb är den ljusaste stjärnan i Lepus (Haren), konstellation som skymtar under Orions fötter. Det är en sällsynt vit superjätte.",
+   "fun_fact": "Arneb är en döende stjärna som sannolikt redan har fusionerat allt sitt kärnväte. Den kan sluta sitt liv som en supernova inom de närmaste miljoner åren!",
+   "distance": "~2 200 ljusår",
+   "size": "~75 solradier",
+   "mass": "~14 solmassor",
+   "spectral_class": "F0Ib",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/betelgeuse": {
+   "description": "Betelgeuse är en röd superjätte som markerar Orions axel. Det är en av de största stjärnorna synliga för blotta ögat.",
+   "fun_fact": "Betelgeuse är så stor att om den placerades vid vår sols position skulle den svälja Merkurius, Venus, Jorden, Mars och möjligen Jupiter!",
+   "distance": "~700 ljusår",
+   "size": "~900 solradier",
+   "mass": "~12 solmassor",
+   "spectral_class": "M1-M2 Iab",
+   "image_credit": "ALMA (ESO/NAOJ/NRAO)/E. O'Gorman/P. Kervella"
+  },
+  "star/canopus": {
+   "description": "Canopus är den näst ljusaste stjärnan på natthimlen. Den syns huvudsakligen från södra halvklotet.",
+   "fun_fact": "Canopus används av rymdfarkoster för navigation eftersom den är mycket ljus och långt från ekliptikan!",
+   "distance": "310 ljusår",
+   "size": "72 solradier",
+   "mass": "8,0 solmassor",
+   "spectral_class": "A9 II",
+   "image_credit": "ESO"
+  },
+  "star/capella": {
+   "description": "Capella är den ljusaste stjärnan i Kusken och den sjätte ljusaste på natthimlen. Det är faktiskt ett system av fyra stjärnor.",
+   "fun_fact": "Capella betyder \"liten get\" på latin. Forntida kulturer såg den som en get som bärs på axeln av Kusken!",
+   "distance": "43 ljusår",
+   "size": "12 solradier",
+   "mass": "2,6 solmassor",
+   "spectral_class": "G3 III + G0 III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/caph": {
+   "description": "Caph är den näst ljusaste stjärnan i Cassiopeja och bildar den högra spetsen av den ikoniska W-formen. Dess namn betyder \"handflatan\" på arabiska.",
+   "fun_fact": "Caph är en Delta Scuti-variabel — den pulserar med flera frekvenser samtidigt och ändrar ljusstyrkan något var 2,5 timme!",
+   "distance": "54 ljusår",
+   "size": "3,5 solradier",
+   "mass": "1,9 solmassor",
+   "spectral_class": "F2III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/castor": {
+   "description": "Castor är en av tvillingstjärnorna i Tvillingarna. Även om den ser ut som en stjärna är det faktiskt ett system av sex stjärnor!",
+   "fun_fact": "Castor är ett sexfaldigt stjärnsystem - tre par av dubbelstjärnor som alla kretsar runt varandra. Det är ett av de mest komplexa stjärnsystemen nära jorden!",
+   "distance": "51 ljusår",
+   "size": "2,4 solradier",
+   "mass": "2,8 solmassor",
+   "spectral_class": "A1 V",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/deneb": {
+   "description": "Deneb markerar stjärten på Svanen (Cygnus). Den är del av Sommartriangelns asterism tillsammans med Vega och Altair.",
+   "fun_fact": "Deneb är en av de mest avlägsna stjärnorna synliga för blotta ögat, belägen ungefär 2 600 ljusår bort!",
+   "distance": "~2 600 ljusår",
+   "size": "~200 solradier",
+   "mass": "~19 solmassor",
+   "spectral_class": "A2 Ia",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/denebola": {
+   "description": "Denebola markerar stjärten på Lejonet (Leo). Dess namn betyder bokstavligen \"lejonets stjärt\" på arabiska.",
+   "fun_fact": "Denebola har en dammig skräpskiva som kan indikera att planeter bildas eller asteroider kolliderar runt den!",
+   "distance": "36 ljusår",
+   "size": "1,7 solradier",
+   "mass": "1,8 solmassor",
+   "spectral_class": "A3 V",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/diphda": {
+   "description": "Diphda (Beta Ceti) är den ljusaste stjärnan i Valfisken (Cetus) och en framträdande höststjärna.",
+   "fun_fact": "Diphda syns isolerad i en ganska ödslig del av himlen, vilket gör den användbar för navigatörer trots att den inte är extremt ljus!",
+   "distance": "96 ljusår",
+   "size": "18 solradier",
+   "mass": "2,8 solmassor",
+   "spectral_class": "K0 III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/dubhe": {
+   "description": "Dubhe är en av de två \"pekarstjärnorna\" i Karlavagnen som pekar mot Polaris, Polstjärnan.",
+   "fun_fact": "Till skillnad från de flesta stjärnorna i Karlavagnen rör sig Dubhe och Alkaid i motsatt riktning - asterismen kommer att se annorlunda ut om 50 000 år!",
+   "distance": "123 ljusår",
+   "size": "30 solradier",
+   "mass": "4,3 solmassor",
+   "spectral_class": "K0 III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/e_lyrae": {
+   "description": "Epsilon Lyrae är ett stjärnsystem med flera stjärnor i Lyra, känt bland observatörer som \"Double Double\".",
+   "fun_fact": "Med skarpa ögon kan du dela upp Epsilon Lyrae i två stjärnor – och med ett teleskop delas var och en av dem upp i två till! Den innehåller minst fem stjärnor totalt.",
+   "distance": "160 ljusår"
+  },
+  "star/enif": {
+   "description": "Enif är den ljusaste stjärnan i Pegasus och markerar nosen på den flygande hästen i stjärnbilden.",
+   "fun_fact": "1972 upplevde Enif ett dramatiskt utbrott som tillfälligt ökade dess ljusstyrka med en faktor fem!",
+   "distance": "670 ljusår",
+   "size": "185 solradier",
+   "mass": "10,7 solmassor",
+   "spectral_class": "K2 Ib",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/etamin": {
+   "description": "Etamin (även Eltanin) är den ljusaste stjärnan i Draco (Draken). Den representerar drakens huvud, och dess namn betyder \"den stora ormen\" på arabiska.",
+   "fun_fact": "Observationer av Etamin 1728 av James Bradley ledde till upptäckten av ljusets aberration — ett av de första direkta bevisen för att jorden rör sig genom rymden!",
+   "distance": "148 ljusår",
+   "size": "48 solradier",
+   "mass": "1.7 solmassor",
+   "spectral_class": "K5III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/fomalhaut": {
+   "description": "Fomalhaut är den ljusaste stjärnan i Södra fisken och en av de ljusaste stjärnorna på hösthimlen.",
+   "fun_fact": "Fomalhaut har en spektakulär skivskiva som var en av de första som fotograferades direkt runt en annan stjärna!",
+   "distance": "25 ljusår",
+   "size": "1,8 solradier",
+   "mass": "1,9 solmassor",
+   "spectral_class": "A3 V",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/hadar": {
+   "description": "Hadar (Beta Centauri) är den näst ljusaste stjärnan i Kentauren och den 11:e ljusaste på natthimlen.",
+   "fun_fact": "Hadar och Alfa Centauri är kända som \"Sydliga pekarna\" - de pekar mot Södra korsets stjärnbild!",
+   "distance": "390 ljusår",
+   "size": "9 solradier",
+   "mass": "12,8 solmassor",
+   "spectral_class": "B1 III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/hamal": {
+   "description": "Hamal är den ljusaste stjärnan i Väduren och användes en gång för att markera vårdagjämningen för ungefär 2 000 år sedan.",
+   "fun_fact": "En jätteexoplanet upptäcktes i omloppsbana runt Hamal 2011, minst 1,8 gånger Jupiters massa!",
+   "distance": "66 ljusår",
+   "size": "15 solradier",
+   "mass": "1,5 solmassor",
+   "spectral_class": "K2 III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/izar": {
+   "description": "Izar är en vacker dubbelstjärna i Boötes (Herdsman). Dess namn betyder \"bältet\" eller \"slöja\" på arabiska.",
+   "fun_fact": "Astronomen Friedrich Georg Wilhelm von Struve från 1800-talet kallade Izar \"Pulcherrima\" (latin för \"vackrast\") på grund av den fantastiska färgkontrasten mellan dess orange och blåvita komponenter!",
+   "distance": "202 ljusår",
+   "size": "33 solradier",
+   "mass": "~4.6 solmassor",
+   "spectral_class": "K0II-III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/j052512+062100": {
+   "description": "Bellatrix markerar Orions (jägarens) vänstra skuldra. Dess namn betyder \"kvinnlig krigare\" på latin.",
+   "fun_fact": "Bellatrix är bara omkring 28 miljoner år gammal och kommer att förbruka sitt väte på ytterligare 7 miljoner år – ett kort liv för en stjärna!",
+   "distance": "250 ljusår",
+   "size": "6,2 solradier",
+   "mass": "8,4 solmassor",
+   "spectral_class": "B2 III"
+  },
+  "star/j054048-015624": {
+   "description": "Alnitak är den östligaste stjärnan i Orions bälte, bredvid Flammiga nebulosan och Hästhuvudnebulosan.",
+   "fun_fact": "Alnitak är den klaraste O-stjärnan på hela natthimlen! Om ungefär en miljon år kommer den att svälla upp till att bli större än Jupiters bana och explodera som en supernova.",
+   "distance": "1 260 ljusår",
+   "size": "20 solradier",
+   "mass": "33 solmassor",
+   "spectral_class": "O9.5 Iab"
+  },
+  "star/j055924+445700": {
+   "description": "Menkalinan är den näst ljusstarkaste stjärnan i Kusken. Dess namn betyder \"tygelhållarens axel\" på arabiska.",
+   "fun_fact": "Menkalinan är i själva verket två nästan identiska stjärnor som förmörkar varandra var 47,5:e timme – och om ungefär en miljon år kommer den att bli den klaraste stjärnan på vår natthimmel!",
+   "distance": "79 ljusår",
+   "size": "2,8 solradier",
+   "mass": "2,4 solmassor",
+   "spectral_class": "A1m IV + A1m IV"
+  },
+  "star/j062248-175736": {
+   "description": "Mirzam (Beta Canis Majoris) går upp strax före Sirius, vilket har gett den ett namn som betyder \"Budbäraren\" på arabiska.",
+   "fun_fact": "För ungefär fyra miljoner år sedan var Mirzam den ljusaste stjärnan på himlen med en magnitud på -3,65 – mycket ljusstarkare än Sirius framstår i dag!",
+   "distance": "490 ljusår",
+   "size": "8,4 solradier",
+   "mass": "13 solmassor",
+   "spectral_class": "B1 II-III"
+  },
+  "star/j070824-262324": {
+   "description": "Wezen är en gulvit superjätte i Stora hunden (Canis Major). Dess namn kommer från det arabiska ordet för \"vikt\".",
+   "fun_fact": "Om Wezen befann sig lika nära oss som Sirius gör, skulle den lysa lika starkt som en halvfull måne!",
+   "distance": "1 600 ljusår",
+   "size": "188 solradier",
+   "mass": "14 solmassor",
+   "spectral_class": "F8 Ia"
+  },
+  "star/j082248-593036": {
+   "description": "Avior (Epsilon Carinae) är en ljusstark dubbelstjärna i Kölen och en av de fyra stjärnorna i Falska korset.",
+   "fun_fact": "Falska korset förväxlas så ofta med Södra korset att det har orsakat verkliga navigeringsfel! Aviors namn uppfanns av brittiska almanacksskapare på 1930-talet.",
+   "distance": "610 ljusår",
+   "size": "151 solradier",
+   "mass": "10,5 solmassor",
+   "spectral_class": "K3 III + B2 Vp"
+  },
+  "star/j091312-694312": {
+   "description": "Miaplacidus är den näst ljusstarkaste stjärnan i Kölen (Carina) och utgör ett av hörnen i asterismen Diamantkorset.",
+   "fun_fact": "Miaplacidus har vuxit till en jätte efter att ha förbrukat vätet i sin kärna, men den snurrar ändå i raska 146 km/s!",
+   "distance": "113 ljusår",
+   "size": "5,8 solradier",
+   "mass": "3,9 solmassor",
+   "spectral_class": "A1 III"
+  },
+  "star/j123112-570636": {
+   "description": "Gacrux (Gamma Crucis) är den översta stjärnan i Södra korset och den röda jättestjärna som ligger närmast jorden.",
+   "fun_fact": "Gacrux är den närmaste M-typ röda jätten till oss, och dess namn är helt enkelt en navigators sammandragning av \"Gamma Crucis\" som skapades på 1940-talet!",
+   "distance": "89 ljusår",
+   "size": "73 solradier",
+   "mass": "1,5 solmassor",
+   "spectral_class": "M3.5 III"
+  },
+  "star/j124800-594124": {
+   "description": "Mimosa (Beta Crucis) är den näst ljusstarkaste stjärnan i Södra korset och en av de varmaste stjärnorna som kan ses med blotta ögat.",
+   "fun_fact": "Mimosa är en pulserande Beta Cephei-variabel – den sväller och krymper i tre överlappande rytmer som var och en bara varar i ungefär fyra timmar!",
+   "distance": "280 ljusår",
+   "size": "8 solradier",
+   "mass": "14,5 solmassor",
+   "spectral_class": "B0.5 III"
+  },
+  "star/j143936-605024": {
+   "description": "Toliman (Alpha Centauri B) är den orangea följeslagaren i det stjärnsystem som ligger närmast solen, i omloppsbana kring den ljusstarkare Rigil Kentaurus.",
+   "fun_fact": "Toliman fick sitt officiella namn först 2018. Den är något mindre och svalare än solen, och utgör tillsammans med sina två syskon våra närmaste stjärngrannar!",
+   "distance": "4,34 ljusår",
+   "size": "0,86 solradier",
+   "mass": "0,91 solmassor",
+   "spectral_class": "K1 V"
+  },
+  "star/j164836-690148": {
+   "description": "Atria är den ljusaste stjärnan i Södra triangeln, en oranget jätte långt större än solen.",
+   "fun_fact": "Atria är 139 gånger så stor som solens diameter – placerad i solsystemets mitt skulle den nästan nå Venus omloppsbanan!",
+   "distance": "391 ljusår",
+   "size": "139 solradier",
+   "mass": "6,4 solmassor",
+   "spectral_class": "K2 Ib-IIa"
+  },
+  "star/j173712-430000": {
+   "description": "Sargas är en ljusstark jätte i Skorpionens (Scorpius) stjärt, och bär ett traditionellt namn av sumeriskt ursprung.",
+   "fun_fact": "Sargas roterar så snabbt att den buktar utåt - den är en tredjedel bredare vid ekvatorn än från pol till pol, och kan ha bildats när två stjärnor sammansmälte!",
+   "distance": "329 ljusår",
+   "size": "35 solradier",
+   "mass": "3,1 solmassor",
+   "spectral_class": "F1 III"
+  },
+  "star/j202548-564348": {
+   "description": "Peacock är den ljusstarkaste stjärnan i Pavo (Påfågeln), en het blåvit stjärna på det djupa södra stjärnhimlen.",
+   "fun_fact": "Peacock fick sitt namn på 1930-talet eftersom RAF krävde att varje stjärna i deras nya flygalmanacka skulle ha ett namn – och den här hade inget!",
+   "distance": "179 ljusår",
+   "size": "4,8 solradier",
+   "mass": "5,9 solmassor",
+   "spectral_class": "B3 V"
+  },
+  "star/kaus_australis": {
+   "description": "Kaus Australis är den ljusaste stjärnan i Skytten (Bågskytten). Dess namn betyder \"den södra bågen\" på en blandning av arabiska och latin.",
+   "fun_fact": "Kaus Australis ligger nära riktningen mot centrum av vår Vintergatan! När du tittar på denna stjärna, blickar du mot den tätaste delen av det galaktiska planet.",
+   "distance": "143 ljusår",
+   "size": "6.8 solradier",
+   "mass": "3.5 solmassor",
+   "spectral_class": "B9.5III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/kochab": {
+   "description": "Kochab är den näst ljusaste stjärnan i Lilla Björnen (Ursa Minor). Tillsammans med Pherkad bildar den \"Polens väktare.\"",
+   "fun_fact": "Omkring 1500 f.Kr. var Kochab den närmaste ljusa stjärnan till den norra himmelspolen, vilket gjorde den till \"Polstjärnan\" för gamla egyptier och feniciska sjöfarare!",
+   "distance": "131 ljusår",
+   "size": "42 solradier",
+   "mass": "1.3 solmassor",
+   "spectral_class": "K4III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/markab": {
+   "description": "Markab är en av de fyra stjärnorna som bildar Pegasusfyrkanten, en lättidentifierad asterism.",
+   "fun_fact": "Markab är en \"sen B-typ\" stjärna som just avslutar sitt liv på huvudserien och snart kommer att bli en röd jätte!",
+   "distance": "133 ljusår",
+   "size": "4,6 solradier",
+   "mass": "3,5 solmassor",
+   "spectral_class": "B9 III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/menkar": {
+   "description": "Menkar är en röd jättestjärna som markerar näsan på Cetus (Sjöodjuret). Dess namn betyder \"näsborrningen\" på arabiska.",
+   "fun_fact": "Menkar närmar sig slutet av sitt stellära liv. Denna åldrande röd jätte fusionerar helium i sin kärna och kommer så småningom att kasta av sina yttre lager för att bli en planetarisk nebulosa!",
+   "distance": "249 ljusår",
+   "size": "~89 solradier",
+   "mass": "~2,3 solmassor",
+   "spectral_class": "M1.5IIIa",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/merak": {
+   "description": "Merak är en av de två \"pekarstjärnorna\" i Stora björnen som pekar vägen till Polaris, Nordstjärnan. Den ligger i Stora björnen.",
+   "fun_fact": "Merak har ett infrarödt överskud som tyder på att den har en circumstellär skivdisk — möjligen en ring av damm och stenigt material som liknar vårt asteroidbälte!",
+   "distance": "80 ljusår",
+   "size": "3.0 solradier",
+   "mass": "2.7 solmassor",
+   "spectral_class": "A1V",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/mirach": {
+   "description": "Mirach är en röd jättestjärna i Andromeda, ofta använd som guide för att hitta Andromedagalaxen.",
+   "fun_fact": "Mirachs spöke är en liten galax (NGC 404) som syns mycket nära Mirach - den var gömd av stjärnans sken i århundraden!",
+   "distance": "197 ljusår",
+   "size": "100 solradier",
+   "mass": "3,5 solmassor",
+   "spectral_class": "M0 III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/mirphak": {
+   "description": "Mirphak (även Mirfak) är den ljusaste stjärnan i Perseus, en gul-vit superjätte i hjärtat av Alpha Persei-klustret.",
+   "fun_fact": "Mirphak är omgiven av en vacker öppen stjärnhop (Melotte 20) som ses bäst med kikare — en spridning av unga, blåvita stjärnor som rör sig tillsammans genom rymden!",
+   "distance": "~590 ljusår",
+   "size": "~68 solradier",
+   "mass": "~8,5 solmassor",
+   "spectral_class": "F5Ib",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/n25": {
+   "description": "R Coronae Borealis är en sällsynt gul superjätte i stjärnbilden Norra auran, och prototypen för den klass av variabla stjärnor som har fått sitt namn efter den.",
+   "fun_fact": "R Coronae Borealis kallas ibland för en \"omvänd nova\" – i stället för att flamma upp bleknar den oförutsägbart med upp till 9 magnituder när den blåser ut moln av kolstoft som döljer den från sikte!",
+   "distance": "4 560 ljusår",
+   "spectral_class": "G0Iep"
+  },
+  "star/nunki": {
+   "description": "Nunki är den näst ljusaste stjärnan i Skytten och det äldsta stjärnnamnet som fortfarande används.",
+   "fun_fact": "Namnet Nunki kommer från det antika Babylon där det representerade staden Eridu på himmelssfären!",
+   "distance": "228 ljusår",
+   "size": "4,5 solradier",
+   "mass": "7,8 solmassor",
+   "spectral_class": "B2.5 V",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/phad": {
+   "description": "Phad (även Phecda) är en av stjärnorna som bildar skålen i Stora björnen i Ursa Major. Dess namn betyder \"låret\" på arabiska.",
+   "fun_fact": "Phad är medlem i Ursa Major Moving Group — en grupp stjärnor som föddes tillsammans och reser genom rymden som ett löst kluster, inklusive de flesta stjärnorna i Stora björnen!",
+   "distance": "84 ljusår",
+   "size": "3,0 solradier",
+   "mass": "2,9 solmassor",
+   "spectral_class": "A0Ve",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/polaris": {
+   "description": "Polaris, Polstjärnan, verkar nästan orörlig på himlen medan andra stjärnor roterar runt den under natten.",
+   "fun_fact": "Polaris är faktiskt ett trippelstjärnsystem! Huvudstjärnan är en superjätte ungefär 2 500 gånger ljusare än vår sol.",
+   "distance": "~430 ljusår",
+   "size": "~44 solradier",
+   "mass": "~5,4 solmassor",
+   "spectral_class": "F7 Ib",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "star/pollux": {
+   "description": "Pollux är den ljusare av tvillingstjärnorna i Tvillingarna. Till skillnad från Castor är det en enda orange jättestjärna.",
+   "fun_fact": "Pollux har en bekräftad exoplanet! Pollux b är en gasjätte som är minst dubbelt så massiv som Jupiter.",
+   "distance": "34 ljusår",
+   "size": "9,1 solradier",
+   "mass": "1,9 solmassor",
+   "spectral_class": "K0 III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/procyon": {
+   "description": "Procyon är en ljus stjärna i stjärnbilden Lilla hunden (Canis Minor). Det är en av våra närmaste stjärngrannar.",
+   "fun_fact": "Procyon betyder \"före hunden\" på grekiska eftersom den stiger upp strax före Sirius, Hundstjärnan, på natthimlen!",
+   "distance": "11,4 ljusår",
+   "size": "2,0 solradier",
+   "mass": "1,5 solmassor",
+   "spectral_class": "F5 IV-V",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/rasalhague": {
+   "description": "Rasalhague är den ljusaste stjärnan i Ormbäraren (Ophiuchus), en stjärnbild förknippad med läkekonst.",
+   "fun_fact": "Rasalhague är en snabb rotator - den snurrar så snabbt att den är märkbart tillplattad och fullföljer en rotation på bara 18 timmar!",
+   "distance": "48,6 ljusår",
+   "size": "2,5 solradier",
+   "mass": "2,4 solmassor",
+   "spectral_class": "A5 III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/regulus": {
+   "description": "Regulus är den ljusaste stjärnan i Lejonet (Leo) och representerar lejonets hjärta. Det är ett flerstjärnsystem.",
+   "fun_fact": "Regulus snurrar så snabbt att den nästan sliter sig själv i stycken! Den fullföljer en rotation på bara 16 timmar.",
+   "distance": "79 ljusår",
+   "size": "4,4 solradier",
+   "mass": "3,8 solmassor",
+   "spectral_class": "B8 IVn",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/rigel": {
+   "description": "Rigel är en blå superjätte som markerar Orions fot. Trots att den är längre bort än Betelgeuse ser den lika ljus ut.",
+   "fun_fact": "Rigel lyser med ljuset av cirka 120 000 solar! Det är en av de mest lysande stjärnorna i vår del av Vintergatan.",
+   "distance": "~860 ljusår",
+   "size": "~79 solradier",
+   "mass": "~23 solmassor",
+   "spectral_class": "B8 Ia",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/rigil_kentaurus_a": {
+   "description": "Alfa Centauri är det närmaste stjärnsystemet till solen, bestående av tre stjärnor inklusive Proxima Centauri.",
+   "fun_fact": "Proxima Centauri, del av detta system, har en potentiellt beboelig planet! Proxima b är bara 4,2 ljusår bort.",
+   "distance": "4,37 ljusår",
+   "size": "1,2 solradier",
+   "mass": "1,1 solmassor",
+   "spectral_class": "G2 V + K1 V",
+   "image_credit": "ESO/Digitized Sky Survey 2/Davide De Martin"
+  },
+  "star/saiph": {
+   "description": "Saiph markerar Orions nedre högra knä. Trots att det verkar svagare än Rigel är det faktiskt en mycket het och lysande blå superjätte.",
+   "fun_fact": "Saiph verkar svagare än vad dess temperatur skulle föreslå eftersom det mesta av dess energi strålas ut som ultraviolett ljus, osynligt för våra ögon! Det är faktiskt en av de hetaste ljusa stjärnorna på himlen.",
+   "distance": "~650 ljusår",
+   "size": "~22 solradier",
+   "mass": "~15,5 solmassor",
+   "spectral_class": "B0.5Ia",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/scheat": {
+   "description": "Scheat är en röd jättestjärna i Pegasusfyrkanten, känd för sin djupt orange-röda färg.",
+   "fun_fact": "Scheat är en halvregelbunden variabel stjärna som ändrar ljusstyrka över perioder från veckor till månader!",
+   "distance": "196 ljusår",
+   "size": "110 solradier",
+   "mass": "2,1 solmassor",
+   "spectral_class": "M2 II-III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/shaula": {
+   "description": "Shaula är den näst ljusaste stjärnan i Skorpionen och markerar skorpionens gadd i stjärten.",
+   "fun_fact": "Shaula betyder \"den upplyftade stjärten\" på arabiska. Det är faktiskt ett trippelstjärnsystem med stjärnor väldigt nära varandra!",
+   "distance": "570 ljusår",
+   "size": "8,8 solradier",
+   "mass": "10,4 solmassor",
+   "spectral_class": "B2 IV",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/shedir": {
+   "description": "Shedir (även Schedar) är den ljusaste stjärnan i Cassiopeia, en orange jätte vid basen av det berömda W-mönstret. Dess namn betyder \"bröstet\" på arabiska.",
+   "fun_fact": "Shedir troddes en gång vara en variabel stjärna, men moderna mätningar visar att dess ljusstyrka är anmärkningsvärt stabil — tidigare rapporter om variabilitet berodde troligen på primitiv utrustning!",
+   "distance": "228 ljusår",
+   "size": "45 solradier",
+   "mass": "~4,0 solmassor",
+   "spectral_class": "K0IIIa",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/sirius": {
+   "description": "Sirius är den ljusaste stjärnan på natthimlen, belägen i stjärnbilden Stora hunden (Canis Major).",
+   "fun_fact": "Sirius är faktiskt ett dubbelstjärnsystem! Sirius B, dess följeslagare, är en vit dvärg ungefär lika stor som jorden men nästan lika massiv som solen.",
+   "distance": "8,6 ljusår",
+   "size": "1,7 solradier",
+   "mass": "2,1 solmassor",
+   "spectral_class": "A1V",
+   "image_credit": "NASA/ESA/Hubble"
+  },
+  "star/spica": {
+   "description": "Spica är den ljusaste stjärnan i Jungfrun och en av de 20 ljusaste stjärnorna på natthimlen. Det är ett dubbelstjärnsystem.",
+   "fun_fact": "Spica är så nära ekliptikan att den kan ockulteras av månen. Namnet betyder \"veteax\" på latin!",
+   "distance": "250 ljusår",
+   "size": "7,5 solradier",
+   "mass": "11 solmassor",
+   "spectral_class": "B1 III-IV",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/unukalhai": {
+   "description": "Unukalhai är den ljusaste stjärnan i Serpens Caput (Serpentens huvud). Dess namn betyder \"serpentens nacke\" på arabiska.",
+   "fun_fact": "Serpens är den enda stjärnbilden som är uppdelad i två separata delar — Serpens Caput (huvud) och Serpens Cauda (svans) — åtskilda av Ophiuchus, och Unukalhai är den ljusaste stjärnan i huvuddelen!",
+   "distance": "74 ljusår",
+   "size": "12 solradier",
+   "mass": "~2.1 solmassor",
+   "spectral_class": "K2III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  },
+  "star/vega": {
+   "description": "Vega är en av de ljusaste stjärnorna synliga från jorden, belägen i stjärnbilden Lyran.",
+   "fun_fact": "Vega var polstjärnan för ungefär 14 000 år sedan och kommer att vara det igen om ungefär 12 000 år på grund av jordens precession!",
+   "distance": "25 ljusår",
+   "size": "2,4 solradier",
+   "mass": "2,1 solmassor",
+   "spectral_class": "A0V",
+   "image_credit": "Stephen Rahn (CC0)"
+  },
+  "star/vindemiatrix": {
+   "description": "Vindemiatrix är den tredje ljusaste stjärnan i Jungfrun. Dess namn betyder \"druvinsamlaren\" på latin.",
+   "fun_fact": "Vindemiatrix fick sitt namn eftersom dess heliakisk uppgång (första framträdande vid gryning) en gång sammanföll med druvskördssäsongen i Medelhavet — det var vinarnas stjärna!",
+   "distance": "109 ljusår",
+   "size": "11 solradier",
+   "mass": "2.6 solmassor",
+   "spectral_class": "G8III",
+   "image_credit": "ESO/Digitized Sky Survey 2"
+  }
+ }
+}
