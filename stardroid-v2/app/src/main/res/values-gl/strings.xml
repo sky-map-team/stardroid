@@ -325,20 +325,7 @@
     <string name="settings_sky_gradient_summary" translation_description="Setting toggle summary for sky gradient: explains what the feature does">Sombrea o ceo de azul preto do Sol e escuro no lado oposto</string>
     <string name="settings_disable_gyro" translation_description="Preference title for switching from the gyroscope to the legacy compass + accelerometer sensor pipeline">Usar sensores herdados</string>
     <string name="settings_disable_gyro_summary" translation_description="Explanation of the legacy sensors preference and when to use it">Apunta o mapa usando a brúxula e o acelerómetro en lugar do xiroscopio. Proba isto se o mapa se desvía ou o xiroscopio do teu dispositivo funciona mal; os dispositivos sen xiroscopio usan estes sensores automaticamente.</string>
-    <string name="settings_sensor_damping" translation_description="Old, non gyro sensors only: the amount of smoothing applied to the sensor outputs">Amortecemento</string>
-    <string name="settings_sensor_damping_standard" translation_description="Low sensor damping factor - this will make the app jittery">Saltón</string>
-    <string name="settings_sensor_damping_high" translation_description="Medium sensor damping factor - this will make the app slightly jittery">Medio</string>
-    <string name="settings_sensor_damping_extra_high" translation_description="Extra high sensor damping factor">Xusto</string>
-    <string name="settings_sensor_damping_really_high" translation_description="Really high sensor damping factor - this will make the app sluggish">Lento</string>
     <string name="settings_classic_sensors_only" translation_description="Summary noting a sensor preference only applies to the legacy non-gyroscope sensor path">Só se aplica cando se usan sensores herdados</string>
-    <string name="settings_rotation_low_pass" translation_description="Preference title for low-pass filtering the gyroscope-based sensor path, to reduce jitter on some devices">Filtro de paso baixo para sensores</string>
-    <string name="settings_rotation_low_pass_summary" translation_description="Explanation of the sensor low-pass preference and its trade-off">Reduce as sacudidas en dispositivos cun sensor ruidoso combinando gradualmente as novas lecturas. Os axustes máis altos son máis estables pero tardan máis en responder ao movemento real.</string>
-    <string name="settings_rotation_deadband" translation_description="Preference title for ignoring tiny gyroscope-based sensor movements, to reduce jitter on some devices">Zona morta do sensor</string>
-    <string name="settings_rotation_deadband_summary" translation_description="Explanation of the sensor deadband preference and its trade-off">Ignora os movementos menores que un limiar. Os axustes máis altos ignoran movementos máis grandes, o que pode facer que os pequenos axustes deliberados respondan menos.</string>
-    <string name="settings_rotation_smoothing_off" translation_description="Sensor smoothing disabled">Desactivado</string>
-    <string name="settings_rotation_smoothing_low" translation_description="Low sensor smoothing strength">Baixo</string>
-    <string name="settings_rotation_smoothing_medium" translation_description="Medium sensor smoothing strength">Medio</string>
-    <string name="settings_rotation_smoothing_high" translation_description="High sensor smoothing strength">Alto</string>
     <string name="settings_reverse_magnetic_z" translation_description="Preference title for reversing the magnetometer Z axis, a workaround for devices with a mis-mounted compass sensor">Z magnética inversa</string>
     <string name="settings_magnetic_correction" translation_description="Preference label: apply magnetic declination correction so the compass points to true north instead of magnetic north">Usar corrección magnética</string>
     <string name="settings_magnetic_correction_summary" translation_description="Summary for the magnetic correction preference">Corrixe o compás pola diferenza entre o norte magnético e o norte verdadeiro</string>
