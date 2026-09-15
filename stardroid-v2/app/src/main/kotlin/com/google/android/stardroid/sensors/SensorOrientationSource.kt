@@ -17,8 +17,6 @@ import android.view.Surface
 import com.google.android.stardroid.astronomy.orientationFromSensors
 import com.google.android.stardroid.math.Matrix3
 import com.google.android.stardroid.math.Vector3
-import com.google.android.stardroid.settings.RotationSmoothingLevel
-import com.google.android.stardroid.settings.SensorDamping
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.Flow
@@ -35,11 +33,11 @@ import kotlinx.coroutines.flow.flowOf
  *
  * Prefers the fused rotation-vector sensor (unless [SensorConfig.disableGyro]); devices
  * without one fall back to v1's classic accelerometer+magnetometer path: the two raw streams
- * fused by the pure `orientationFromSensors` vector-rejection construction, and the resulting
- * orientation smoothed by a [QuaternionSlerpSmoother] at the configured damping — the same
- * smoother the fused path uses, applied post-fusion (issue #1007). v1 instead smoothed each
- * raw stream per-axis before fusing. A [config] change re-registers the listeners under the
- * new parameters — v1 applied its preferences on controller restart.
+ * fused by the pure `orientationFromSensors` vector-rejection construction. Either way the
+ * resulting orientation goes through one [OneEuroQuaternionSmoother] under the same parameters
+ * (issue #1007) — v1 instead smoothed each raw stream per-axis before fusing, and only on the
+ * legacy path. A [config] change re-registers the listeners under the new parameters — v1
+ * applied its preferences on controller restart.
  *
  * Sensors report in the device's *natural* frame; [displayRotation] (a [Surface] `ROTATION_*`
  * value, read per sample) remaps each matrix into the current display frame so `STANDARD`
@@ -61,85 +59,46 @@ class SensorOrientationSource(
     @OptIn(ExperimentalCoroutinesApi::class)
     override fun orientations(): Flow<Matrix3> =
         config.distinctUntilChanged { old, new ->
-            when {
-                old.disableGyro != new.disableGyro -> false
-                rotationSensor != null && !old.disableGyro ->
-                    // The settings screen hides speed/damping/reverseMagneticZ while the fused
-                    // path is active (they don't apply to it); rotationLowPass/rotationDeadband
-                    // are the settings shown here, so they're the only ones that can change.
-                    old.rotationLowPass == new.rotationLowPass &&
-                        old.rotationDeadband == new.rotationDeadband
-                else ->
-                    old.damping == new.damping &&
-                        old.reverseMagneticZ == new.reverseMagneticZ
-            }
+            // The smoothing parameters now drive both paths, so the only setting that doesn't
+            // always matter is the magnetic-Z reversal, which the fused path never reads.
+            old.disableGyro == new.disableGyro &&
+                old.smoothingEnabled == new.smoothingEnabled &&
+                old.steadiness == new.steadiness &&
+                old.easeOff == new.easeOff &&
+                (usesFusedPath(old) || old.reverseMagneticZ == new.reverseMagneticZ)
         }.flatMapLatest { current ->
             when {
                 sensorManager == null -> emptyFlow()
                 rotationSensor != null && !current.disableGyro ->
-                    rotationVectorOrientations(
-                        sensorManager,
-                        rotationSensor,
-                        current.rotationLowPass,
-                        current.rotationDeadband,
-                    )
+                    rotationVectorOrientations(sensorManager, rotationSensor, current)
                 accelerometer != null && magnetometer != null ->
                     legacyOrientations(sensorManager, accelerometer, magnetometer, current)
                 else -> emptyFlow()
             }
         }
 
+    /** Whether [config] selects the fused rotation-vector path over the legacy one. */
+    private fun usesFusedPath(config: SensorConfig) =
+        rotationSensor != null && !config.disableGyro
+
     private fun rotationVectorOrientations(
         manager: SensorManager,
         sensor: Sensor,
-        rotationLowPass: RotationSmoothingLevel,
-        rotationDeadband: RotationSmoothingLevel,
+        config: SensorConfig,
     ): Flow<Matrix3> =
         callbackFlow {
-            // Some devices (e.g. Galaxy S4) report more than four values; Android only needs four.
-            // Others report only three (no scalar component): passing a four-element array with a
-            // zeroed slot 3 makes getRotationMatrixFromVector treat q0 as 0 instead of deriving it,
-            // so keep a three-element buffer too and pass whichever matches the sample's arity.
-            val truncated3 = FloatArray(3)
-            val truncated4 = FloatArray(4)
+            // Some devices (e.g. Galaxy S4) report more than four values, others only three
+            // (no scalar component); toQuaternion normalizes both into this buffer, deriving
+            // the scalar where it's missing.
             val quaternion = FloatArray(4)
             val rotationMatrix = FloatArray(9)
             val remappedMatrix = FloatArray(9)
-            // Both off by default (see SensorConfig): only allocate/run the smoother when at
-            // least one is actually selected, so devices that leave both off pay no cost at all.
-            val smoother =
-                if (rotationLowPass == RotationSmoothingLevel.OFF &&
-                    rotationDeadband == RotationSmoothingLevel.OFF
-                ) {
-                    null
-                } else {
-                    QuaternionSlerpSmoother(
-                        alpha = QuaternionSlerpSmoother.alphaFor(rotationLowPass),
-                        deadbandRadians =
-                            QuaternionSlerpSmoother.deadbandRadiansFor(
-                                rotationDeadband,
-                            ),
-                    )
-                }
+            val smoother = smootherFor(config)
             val listener =
                 object : SensorEventListener {
                     override fun onSensorChanged(event: SensorEvent) {
-                        val vector =
-                            if (smoother != null) {
-                                smoother.update(toQuaternion(event.values, quaternion))
-                            } else if (event.values.size >= 4) {
-                                System.arraycopy(event.values, 0, truncated4, 0, 4)
-                                truncated4
-                            } else {
-                                System.arraycopy(
-                                    event.values,
-                                    0,
-                                    truncated3,
-                                    0,
-                                    minOf(event.values.size, 3),
-                                )
-                                truncated3
-                            }
+                        val raw = toQuaternion(event.values, quaternion)
+                        val vector = smoother?.update(raw, event.timestamp) ?: raw
                         SensorManager.getRotationMatrixFromVector(rotationMatrix, vector)
                         val remapped = remapToDisplayFrame(rotationMatrix, remappedMatrix)
                         trySend(remapped.toMatrix3())
@@ -179,16 +138,7 @@ class SensorOrientationSource(
         config: SensorConfig,
     ): Flow<Matrix3> =
         callbackFlow {
-            val damping = dampingSettingsFor(config.damping)
-            // No deadband: the exponent law is itself a soft one, and unlike the fused path
-            // (where deadband is a separate user setting) the legacy ladder has never had a
-            // hard cut-off to preserve.
-            val smoother =
-                QuaternionSlerpSmoother(
-                    alpha = damping.alpha,
-                    deadbandRadians = 0f,
-                    exponent = damping.exponent,
-                )
+            val smoother = smootherFor(config)
             var acceleration: Vector3? = null
             var magneticField: Vector3? = null
             val quaternion = FloatArray(4)
@@ -197,14 +147,21 @@ class SensorOrientationSource(
             val listener =
                 object : SensorEventListener {
                     override fun onSensorChanged(event: SensorEvent) {
-                        when (event.sensor.type) {
-                            Sensor.TYPE_ACCELEROMETER -> acceleration = event.values.toVector3()
-                            Sensor.TYPE_MAGNETIC_FIELD ->
-                                // v1 PlainSmootherModelAdaptor: the mis-mounted-magnetometer
-                                // workaround negates Z.
-                                magneticField =
-                                    event.values.toVector3(negateZ = config.reverseMagneticZ)
+                        if (event.sensor.type == Sensor.TYPE_MAGNETIC_FIELD) {
+                            // v1 PlainSmootherModelAdaptor: the mis-mounted-magnetometer
+                            // workaround negates Z.
+                            magneticField =
+                                event.values.toVector3(negateZ = config.reverseMagneticZ)
+                            // Cached, not acted on. Emitting an orientation from each stream
+                            // would interleave two sensors' hardware timestamps, which are
+                            // independent and step backwards against each other — and the
+                            // smoother reads elapsed time between samples. Driving everything
+                            // from the accelerometer keeps that clock monotonic and evenly
+                            // spaced, and stops each frame being computed twice, once from a
+                            // stale accelerometer and once from a stale magnetometer.
+                            return
                         }
+                        acceleration = event.values.toVector3()
                         val accel = acceleration ?: return
                         val mag = magneticField ?: return
                         val fused = orientationFromSensors(accel, mag) ?: return
@@ -218,8 +175,10 @@ class SensorOrientationSource(
                         // uniform lag. Smoothing before the display remap also keeps a screen
                         // rotation from being smoothed through as though it were movement.
                         val smoothed =
-                            smoother.update(fused.writeQuaternion(quaternion))
-                                .toRotationMatrix3()
+                            smoother
+                                ?.update(fused.writeQuaternion(quaternion), event.timestamp)
+                                ?.toRotationMatrix3()
+                                ?: fused
                         // ROTATION_0 needs no remap; skip the FloatArray round-trip (two
                         // allocations per event) on the hot path in that common case.
                         val remapped =
@@ -293,37 +252,21 @@ class SensorOrientationSource(
             this[6].toDouble(), this[7].toDouble(), this[8].toDouble(),
         )
 
-    /** One smoother's parameters: SLERP fraction `alpha · angle^(exponent - 1)`, clamped to 1. */
-    internal data class DampingSettings(val alpha: Float, val exponent: Int)
+    /**
+     * One [OneEuroQuaternionSmoother] under [config]'s parameters, for either path, or `null`
+     * when smoothing is off — in which case the sensor's orientation reaches the view untouched
+     * and no filter is allocated or run at all.
+     */
+    private fun smootherFor(config: SensorConfig) =
+        if (!config.smoothingEnabled) {
+            null
+        } else {
+            val legacyPath = !usesFusedPath(config)
+            OneEuroQuaternionSmoother(
+                minCutoff = OneEuroQuaternionSmoother.minCutoffFor(config.steadiness, legacyPath),
+                beta = OneEuroQuaternionSmoother.betaFor(config.easeOff, legacyPath),
+                speedFloor = OneEuroQuaternionSmoother.speedFloorFor(legacyPath),
+            )
+        }
 
-    companion object {
-        /**
-         * The legacy path's damping ladder, re-expressed for [QuaternionSlerpSmoother].
-         *
-         * v1's `ACC_DAMPING_SETTINGS`/`MAG_DAMPING_SETTINGS` constants can't be carried over
-         * numerically — they acted on raw sensor units (m/s², µT) where these act on radians of
-         * rotation — but the character they gave each rung is preserved: crush sub-degree
-         * jitter, pass real movement through almost unattenuated. At half a degree per sample
-         * the fractions here run 0.0009 / 0.0005 / 0.0002 / 0.00006; by ten degrees they are
-         * 0.37 / 0.18 / 0.09 / 0.02.
-         *
-         * Every rung shares the same exponent, so the ladder is strictly monotonic at every
-         * angle — a mixed-exponent ladder has rungs that overtake each other on fast movement,
-         * which is confusing to tune against.
-         *
-         * Field-tuned on a Pixel 9 Pro over two passes (issue #1007), each of which picked the
-         * heaviest rung on offer, so each shifted the whole ladder down: "About right" now
-         * carries what the first pass called "Laggy" twice over. "Laggy" is deliberately set
-         * heavier than anything yet judged, to bracket the top end rather than keep chasing
-         * it. Still one device's judgement, and worth re-checking on a genuinely gyro-less
-         * one.
-         */
-        internal fun dampingSettingsFor(damping: SensorDamping): DampingSettings =
-            when (damping) {
-                SensorDamping.STANDARD -> DampingSettings(12f, 3)
-                SensorDamping.HIGH -> DampingSettings(6f, 3)
-                SensorDamping.EXTRA_HIGH -> DampingSettings(3f, 3)
-                SensorDamping.REALLY_HIGH -> DampingSettings(0.8f, 3)
-            }
-    }
 }

@@ -17,8 +17,8 @@ import com.google.android.stardroid.analytics.NoOpAnalytics
 import com.google.android.stardroid.astronomy.ViewDirectionMode
 import com.google.android.stardroid.settings.AutoDimness
 import com.google.android.stardroid.settings.FontSize
-import com.google.android.stardroid.settings.RotationSmoothingLevel
-import com.google.android.stardroid.settings.SensorDamping
+import com.google.android.stardroid.settings.OneEuroEaseOff
+import com.google.android.stardroid.settings.OneEuroSteadiness
 import com.google.android.stardroid.settings.Settings
 import com.google.android.stardroid.startup.Experiment
 import com.google.android.stardroid.startup.ExperimentConfig
@@ -38,9 +38,9 @@ data class SettingsUiState(
     val autoDimness: AutoDimness = AutoDimness.SYSTEM,
     val showSkyGradient: Boolean = true,
     val disableGyro: Boolean = false,
-    val sensorDamping: SensorDamping = SensorDamping.EXTRA_HIGH,
-    val rotationLowPass: RotationSmoothingLevel = RotationSmoothingLevel.OFF,
-    val rotationDeadband: RotationSmoothingLevel = RotationSmoothingLevel.OFF,
+    val smoothingEnabled: Boolean = true,
+    val steadiness: OneEuroSteadiness = OneEuroSteadiness.HIGH,
+    val easeOff: OneEuroEaseOff = OneEuroEaseOff.MEDIUM,
     val reverseMagneticZ: Boolean = false,
     val useMagneticCorrection: Boolean = true,
     val viewDirectionMode: ViewDirectionMode = ViewDirectionMode.STANDARD,
@@ -68,10 +68,10 @@ private data class AppearancePrefs(
 
 private data class SensorPrefs(
     val disableGyro: Boolean,
-    val sensorDamping: SensorDamping,
     val reverseMagneticZ: Boolean,
-    val rotationLowPass: RotationSmoothingLevel,
-    val rotationDeadband: RotationSmoothingLevel,
+    val smoothingEnabled: Boolean,
+    val steadiness: OneEuroSteadiness,
+    val easeOff: OneEuroEaseOff,
 )
 
 private data class MagneticPrefs(
@@ -133,10 +133,10 @@ class SettingsViewModel(
             ),
             combine(
                 settings.disableGyro,
-                settings.sensorDamping,
                 settings.reverseMagneticZ,
-                settings.rotationLowPass,
-                settings.rotationDeadband,
+                settings.smoothingEnabled,
+                settings.steadiness,
+                settings.easeOff,
                 ::SensorPrefs,
             ),
             combine(settings.useMagneticCorrection, settings.viewDirectionMode, ::MagneticPrefs),
@@ -156,10 +156,11 @@ class SettingsViewModel(
                 autoDimness = appearance.autoDimness,
                 showSkyGradient = appearance.showSkyGradient,
                 disableGyro = sensors.disableGyro,
-                sensorDamping = sensors.sensorDamping,
+
                 reverseMagneticZ = sensors.reverseMagneticZ,
-                rotationLowPass = sensors.rotationLowPass,
-                rotationDeadband = sensors.rotationDeadband,
+                smoothingEnabled = sensors.smoothingEnabled,
+                steadiness = sensors.steadiness,
+                easeOff = sensors.easeOff,
                 useMagneticCorrection = magnetic.useMagneticCorrection,
                 viewDirectionMode = magnetic.viewDirectionMode,
                 enableAnalytics = other.enableAnalytics,
@@ -204,19 +205,19 @@ class SettingsViewModel(
         viewModelScope.launch { settings.setDisableGyro(enabled) }
     }
 
-    fun setSensorDamping(damping: SensorDamping) {
-        trackChange("sensor_damping", damping)
-        viewModelScope.launch { settings.setSensorDamping(damping) }
+    fun setSmoothingEnabled(enabled: Boolean) {
+        trackChange("sensor_smoothing_enabled", enabled)
+        viewModelScope.launch { settings.setSmoothingEnabled(enabled) }
     }
 
-    fun setRotationLowPass(level: RotationSmoothingLevel) {
-        trackChange("rotation_low_pass", level)
-        viewModelScope.launch { settings.setRotationLowPass(level) }
+    fun setSteadiness(level: OneEuroSteadiness) {
+        trackChange("sensor_steadiness", level)
+        viewModelScope.launch { settings.setSteadiness(level) }
     }
 
-    fun setRotationDeadband(level: RotationSmoothingLevel) {
-        trackChange("rotation_deadband", level)
-        viewModelScope.launch { settings.setRotationDeadband(level) }
+    fun setEaseOff(level: OneEuroEaseOff) {
+        trackChange("sensor_ease_off", level)
+        viewModelScope.launch { settings.setEaseOff(level) }
     }
 
     fun setReverseMagneticZ(enabled: Boolean) {

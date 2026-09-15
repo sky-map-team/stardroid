@@ -60,7 +60,7 @@ a bug.
 2. Move to open ground, away from vehicles, buildings, and metal structures
 3. Perform the figure-8 calibration gesture (wave the phone in a large, slow figure-8 shape)
 4. **v1 only:** if the phone has a consistent offset in all environments, use the manual compass
-   offset in Settings → Sensor Settings (Experts) — finding the right value may take some trial
+   offset in Settings → Sensor Settings (experts) — finding the right value may take some trial
    and error. This option isn't currently available in the v2 app — don't suggest it if the
    review is about v2.
 5. Check the Diagnostics page (overflow menu on v1, Settings on v2) — note that this shows
@@ -70,7 +70,7 @@ a bug.
 **Do NOT suggest:**
 - Reinstalling the app, clearing app data, or waiting for a Sky Map update — these will not fix a
   hardware compass issue
-- Toggling Magnetic Correction (Settings → Location on v1, Settings → Sensor Settings (Experts)
+- Toggling Magnetic Correction (Settings → Location on v1, Settings → Sensors
   on v2) — this only adjusts for the difference between magnetic and true north (a small fixed
   offset), not for general compass inaccuracy
 - Blaming an Android or firmware update — do not speculate about what changed on the user's device
@@ -171,14 +171,23 @@ swipes up from the bottom edge.
 
 **What users say:** "the map jumps around", "it's shaky", "very unstable"
 
-**Real cause:** The gyroscope smooths the map's motion, so jitter often means it's not being used —
-either the phone lacks a gyroscope, or the user has Disable Gyro switched on. Sensor settings may
-also need tuning.
+**Real cause:** v2 steadies the view with a 1€ filter (issue #1007), separate from the fused
+rotation-vector sensor. Two things can cause jitter:
+- **Use legacy sensors is switched on**, forcing the noisier legacy accelerometer+magnetometer
+  path when the phone actually has a fused sensor available.
+- **Steadiness** is set too low for the sensor path in use. **Smoothing** is a new beta feature
+  and is on by default for everyone while it's being tuned, so a report of jitter is worth asking
+  about even if the user hasn't touched sensor settings at all.
 
 **Steps to suggest:**
-1. Go to Settings → Sensor Settings (Experts) — if Disable Gyro is switched on, try switching it
-   off to re-enable the gyro's smoothing
-2. Adjust Sensor Speed and Sensor Damping in the same settings section
+1. Go to Settings → Sensors — if Use legacy sensors is switched on, try switching it off first
+2. Confirm **Smoothing** is on, then raise **Steadiness** (Low → Extreme) until the view settles
+   at rest
+3. If panning now feels laggy, raise **Ease off when moving** (None → High) until it keeps up
+
+Smoothing is new — feel free to ask what the user is seeing in more detail (steady-but-laggy vs.
+still jittery vs. something else) and mention it can be turned off in the same Sensors section if
+they'd rather not use it while we're refining it.
 
 ---
 
@@ -253,7 +262,7 @@ user the complete picture.
 - Keep responses concise. Offer the most relevant 2–3 steps, not all of them.
 - If steps were already tried and failed, acknowledge that and escalate to email support.
 - When referring users to Settings, "Settings" alone is sufficient — no need to spell out the
-  full path (e.g. "Settings → Sensor Settings (Experts)") in the reply itself.
+  full path (e.g. "Settings → Sensors") in the reply itself.
 
 ---
 

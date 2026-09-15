@@ -12,6 +12,8 @@ package com.google.android.stardroid.settings
 import com.google.android.stardroid.astronomy.ViewDirectionMode
 import com.google.android.stardroid.math.LatLong
 import com.google.android.stardroid.render.api.LayerId
+import com.google.android.stardroid.settings.OneEuroEaseOff
+import com.google.android.stardroid.settings.OneEuroSteadiness
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 
@@ -150,28 +152,28 @@ class FakeSettings : Settings {
         disableGyroState.value = enabled
     }
 
-    val sensorDampingState = MutableStateFlow(SensorDamping.EXTRA_HIGH)
+    val smoothingEnabledState = MutableStateFlow(false)
 
-    override val sensorDamping: Flow<SensorDamping> = sensorDampingState
+    override val smoothingEnabled: Flow<Boolean> = smoothingEnabledState
 
-    override suspend fun setSensorDamping(damping: SensorDamping) {
-        sensorDampingState.value = damping
+    override suspend fun setSmoothingEnabled(enabled: Boolean) {
+        smoothingEnabledState.value = enabled
     }
 
-    val rotationLowPassState = MutableStateFlow(RotationSmoothingLevel.OFF)
+    val steadinessState = MutableStateFlow(OneEuroSteadiness.MEDIUM)
 
-    override val rotationLowPass: Flow<RotationSmoothingLevel> = rotationLowPassState
+    override val steadiness: Flow<OneEuroSteadiness> = steadinessState
 
-    override suspend fun setRotationLowPass(level: RotationSmoothingLevel) {
-        rotationLowPassState.value = level
+    override suspend fun setSteadiness(level: OneEuroSteadiness) {
+        steadinessState.value = level
     }
 
-    val rotationDeadbandState = MutableStateFlow(RotationSmoothingLevel.OFF)
+    val easeOffState = MutableStateFlow(OneEuroEaseOff.MEDIUM)
 
-    override val rotationDeadband: Flow<RotationSmoothingLevel> = rotationDeadbandState
+    override val easeOff: Flow<OneEuroEaseOff> = easeOffState
 
-    override suspend fun setRotationDeadband(level: RotationSmoothingLevel) {
-        rotationDeadbandState.value = level
+    override suspend fun setEaseOff(level: OneEuroEaseOff) {
+        easeOffState.value = level
     }
 
     val reverseMagneticZState = MutableStateFlow(false)

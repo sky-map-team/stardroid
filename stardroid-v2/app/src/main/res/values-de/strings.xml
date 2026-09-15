@@ -338,24 +338,7 @@
     <string name="settings_disable_gyro_summary" translation_description="Explanation of the legacy sensors preference and when to use it">
     Richte die Karte mit Kompass und Beschleunigungssensor anstelle des Gyroskops aus. Probiere dies, wenn die Karte abdriftet oder der Gyro deines Handys nicht richtig funktioniert; Geräte ohne Gyro verwenden diese Sensoren automatisch.
     </string>
-    <string name="settings_sensor_damping">Dämpfung</string>
-    <string name="settings_sensor_damping_standard" translation_description="Low sensor damping factor - this will make the app jittery">Zittrig</string>
-    <string name="settings_sensor_damping_high" translation_description="Medium sensor damping factor - this will make the app slightly jittery">Mittel</string>
-    <string name="settings_sensor_damping_extra_high" translation_description="Extra high sensor damping factor">Ungefähr richtig</string>
-    <string name="settings_sensor_damping_really_high" translation_description="Really high sensor damping factor - this will make the app sluggish">Träge</string>
     <string name="settings_classic_sensors_only" translation_description="Summary noting a sensor preference only applies to the legacy non-gyroscope sensor path">Gilt nur, wenn ältere Sensoren verwendet werden</string>
-    <string name="settings_rotation_low_pass" translation_description="Preference title for low-pass filtering the gyroscope-based sensor path, to reduce jitter on some devices">Sensor-Tiefpassfilter</string>
-    <string name="settings_rotation_low_pass_summary" translation_description="Explanation of the sensor low-pass preference and its trade-off">
-    Reduziert das Zittern auf Geräten mit unruhigen Sensoren, indem neue Messwerte schrittweise eingemischt werden. Höhere Einstellungen sind stabiler, reagieren jedoch langsamer auf reale Bewegungen.
-    </string>
-    <string name="settings_rotation_deadband" translation_description="Preference title for ignoring tiny gyroscope-based sensor movements, to reduce jitter on some devices">Sensor-Toleranzschwelle</string>
-    <string name="settings_rotation_deadband_summary" translation_description="Explanation of the sensor deadband preference and its trade-off">
-    Ignoriert Bewegungen, die kleiner als ein Schwellenwert sind. Höhere Einstellungen ignorieren größere Bewegungen, wodurch kleine, bewusste Anpassungen weniger reaktionsfreudig sein können.
-    </string>
-    <string name="settings_rotation_smoothing_off" translation_description="Sensor smoothing disabled">Aus</string>
-    <string name="settings_rotation_smoothing_low" translation_description="Low sensor smoothing strength">Gering</string>
-    <string name="settings_rotation_smoothing_medium" translation_description="Medium sensor smoothing strength">Mittel</string>
-    <string name="settings_rotation_smoothing_high" translation_description="High sensor smoothing strength">Hoch</string>
     <string name="settings_reverse_magnetic_z">Magnetische Z-Achse invertieren</string>
     <string name="settings_magnetic_correction">Magnetische Korrektur verwenden</string>
     <string name="settings_magnetic_correction_summary" translation_description="Summary for the magnetic correction preference">

@@ -226,16 +226,16 @@ is no way any app can show you your direction.</p>
 • <b>Time:</b> Less common, but an incorrect time zone shifts the whole sky. Check the Diagnostics page (<b>Settings → Diagnostics</b>) to confirm your device\'s time and time zone are correct.</p>
 <h3>The map is jittery</h3>
 <p>
-• If your phone has no gyroscope, turn on <b>Use legacy sensors</b> in sensor settings<br/>
-• Adjust <b>Sensor Speed</b> and <b>Damping</b> under <b>Settings → Sensor Settings (experts)</b>
-(shown when <b>Use legacy sensors</b> is on)</p>
+• Check <b>Settings → Sensors</b> — if <b>Use legacy sensors</b> is on, try switching it off<br/>
+• <b>Smooth sensor movement</b> is new and on by default while we gather feedback; raise <b>Steadiness</b> until the view settles when the phone is held still, then raise <b>Ease off when moving</b> if panning starts to feel laggy<br/>
+• You can turn Smooth sensor movement back off in the same section if you\'d rather use the raw sensor while it\'s being tuned</p>
 <p>For full troubleshooting details see the online <a href="https://ts.stardroid.app">troubleshooting</a> guide.</p>
 <p>If you\'re still stuck, email us at <a href="mailto:skymapdevs@gmail.com">skymapdevs@gmail.com</a> — a screenshot of your Diagnostics page is very helpful.</p>
     ]]></string>
 
     <string name="help_pointer_mode" translation_description="Help section: pointer mode for telescope users. Please do not change the markup"><![CDATA[
 <h2>Telescope Users — Pointer Mode</h2>
-<p>Under <b>Settings → Sensor Settings</b>, change the <b>View Direction</b> to <b>Pointer Mode</b>. In this mode, Sky Map shows what the <i>long edge</i> of the phone is pointing at, rather than what the screen is facing.</p>
+<p>Under <b>Settings → Sensors</b>, change the <b>View Direction</b> to <b>Pointer Mode</b>. In this mode, Sky Map shows what the <i>long edge</i> of the phone is pointing at, rather than what the screen is facing.</p>
 <p>This lets you mount your phone along the side of a telescope tube so the screen is perpendicular to the tube while the map still tracks what the telescope is aimed at.</p>
     ]]></string>
 </resources>

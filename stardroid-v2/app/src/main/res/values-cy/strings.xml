@@ -329,24 +329,7 @@
     <string name="settings_sky_gradient_summary">Yn liwio\'r awyr yn las ger yr Haul ac yn dywyll ar yr ochr arall</string>
     <string name="settings_disable_gyro" translation_description="Preference title for switching from the gyroscope to the legacy compass + accelerometer sensor pipeline">Defnyddio hen synwyryddion</string>
     <string name="settings_disable_gyro_summary" translation_description="Explanation of the legacy sensors preference and when to use it">Cyfeiriwch y map gan ddefnyddio\'r cwmpawd a\'r cyflymromedr yn lle\'r gyrosgop. Rhowch gynnig ar hyn os yw\'r map yn drifftio neu os yw gyrosgop eich dyfais yn camweithio; mae dyfeisiau heb gyrosgop yn defnyddio\'r synwyryddion hyn yn awtomatig.</string>
-    <string name="settings_sensor_damping">Lliniaru</string>
-    <string name="settings_sensor_damping_standard" translation_description="Low sensor damping factor - this will make the app jittery">Neidiog</string>
-    <string name="settings_sensor_damping_high" translation_description="Medium sensor damping factor - this will make the app slightly jittery">Canolig</string>
-    <string name="settings_sensor_damping_extra_high" translation_description="Extra high sensor damping factor">Yn iawn</string>
-    <string name="settings_sensor_damping_really_high" translation_description="Really high sensor damping factor - this will make the app sluggish">Llusgiog</string>
     <string name="settings_classic_sensors_only" translation_description="Summary noting a sensor preference only applies to the legacy non-gyroscope sensor path">Dim ond yn berthnasol pan fydd hen synwyryddion yn cael eu defnyddio</string>
-    <string name="settings_rotation_low_pass" translation_description="Preference title for low-pass filtering the gyroscope-based sensor path, to reduce jitter on some devices">Sensit Isel-Bas</string>
-    <string name="settings_rotation_low_pass_summary" translation_description="Explanation of the sensor low-pass preference and its trade-off">
-    Lleihau cryndod ar ddyfeisiau sydd â synhwyrydd swnllyd drwy gymysgu darlleniadau newydd i mewn yn raddol. Mae gosodiadau uwch yn fwy sefydlog ond yn arafach i ymateb i symudiad go iawn.
-    </string>
-    <string name="settings_rotation_deadband" translation_description="Preference title for ignoring tiny gyroscope-based sensor movements, to reduce jitter on some devices">Parth Marw Sensit</string>
-    <string name="settings_rotation_deadband_summary" translation_description="Explanation of the sensor deadband preference and its trade-off">
-    Anwybyddu symudiadau sy\'n llai na throthwy. Mae gosodiadau uwch yn anwybyddu symudiadau mwy, a thebyg y bydd hyn yn gwneud mân ddiwygiadau bwriadol yn llai ymatebol.
-    </string>
-    <string name="settings_rotation_smoothing_off" translation_description="Sensor smoothing disabled">I ffwrdd</string>
-    <string name="settings_rotation_smoothing_low" translation_description="Low sensor smoothing strength">Isel</string>
-    <string name="settings_rotation_smoothing_medium" translation_description="Medium sensor smoothing strength">Canolig</string>
-    <string name="settings_rotation_smoothing_high" translation_description="High sensor smoothing strength">Uchel</string>
     <string name="settings_reverse_magnetic_z">Gwrthdroi Z Magnetig</string>
     <string name="settings_magnetic_correction">Defnyddio cywiriad magnetig</string>
     <string name="settings_magnetic_correction_summary" translation_description="Summary for the magnetic correction preference">Yn cywiro\'r cwmpawd am y gwahaniaeth rhwng gogledd magnetig a gwir</string>

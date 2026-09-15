@@ -334,24 +334,7 @@
     <string name="settings_disable_gyro_summary" translation_description="Explanation of the legacy sensors preference and when to use it">
     Στρέψτε τον χάρτη χρησιμοποιώντας την πυξίδα και το επιταχυνσιόμετρο αντί για το γυροσκόπιο. Δοκιμάστε το αν ο χάρτης παρασύρεται ή αν το γυροσκόπιο της συσκευής σας δυσλειτουργεί. Οι συσκευές χωρίς γυροσκόπιο χρησιμοποιούν αυτούς τους αισθητήρες αυτόματα.
     </string>
-    <string name="settings_sensor_damping">Απόσβεση</string>
-    <string name="settings_sensor_damping_standard" translation_description="Low sensor damping factor - this will make the app jittery">Ασταθές</string>
-    <string name="settings_sensor_damping_high" translation_description="Medium sensor damping factor - this will make the app slightly jittery">Μεσαίο</string>
-    <string name="settings_sensor_damping_extra_high" translation_description="Extra high sensor damping factor">Περίπου σωστό</string>
-    <string name="settings_sensor_damping_really_high" translation_description="Really high sensor damping factor - this will make the app sluggish">Καθυστερημένο</string>
     <string name="settings_classic_sensors_only" translation_description="Summary noting a sensor preference only applies to the legacy non-gyroscope sensor path">Εφαρμόζεται μόνο όταν χρησιμοποιούνται παλαιοί αισθητήρες</string>
-    <string name="settings_rotation_low_pass" translation_description="Preference title for low-pass filtering the gyroscope-based sensor path, to reduce jitter on some devices">Φίλτρο διέλευσης χαμηθών αισθητήρα</string>
-    <string name="settings_rotation_low_pass_summary" translation_description="Explanation of the sensor low-pass preference and its trade-off">
-    Μειώνει το τρέμουλο σε συσκευές με αισθητήρα υψηλού θορύβου, συνδυάζοντας σταδιακά τις νέες μετρήσεις. Οι υψηλότερες ρυθμίσεις είναι πιο σταθερές αλλά ανταποκρίνονται πιο αργά στην πραγματική κίνηση.
-    </string>
-    <string name="settings_rotation_deadband" translation_description="Preference title for ignoring tiny gyroscope-based sensor movements, to reduce jitter on some devices">Νεκρή ζώνη αισθητήρα</string>
-    <string name="settings_rotation_deadband_summary" translation_description="Explanation of the sensor deadband preference and its trade-off">
-    Αγνοεί κινήσεις μικρότερες από ένα κατώφλι. Οι υψηλότερες ρυθμίσεις αγνοούν μεγαλύτερες κινήσεις, γεγονός που μπορεί να κάνει τις μικρές, σκόπιμες ρυθμίσεις λιγότερο αποκs.
-    </string>
-    <string name="settings_rotation_smoothing_off" translation_description="Sensor smoothing disabled">Ανενεργό</string>
-    <string name="settings_rotation_smoothing_low" translation_description="Low sensor smoothing strength">Χαμηλή</string>
-    <string name="settings_rotation_smoothing_medium" translation_description="Medium sensor smoothing strength">Μεσαία</string>
-    <string name="settings_rotation_smoothing_high" translation_description="High sensor smoothing strength">Υψηλή</string>
     <string name="settings_reverse_magnetic_z">Αντιστροφή του μαγνητικού Ζ</string>
     <string name="settings_magnetic_correction">Χρήση μαγνητικής διόρθωσης</string>
     <string name="settings_magnetic_correction_summary" translation_description="Summary for the magnetic correction preference">Διορθώνει την πυξίδα για τη διαφορά μεταξύ μαγνητικού και αληθινού βορρά</string>

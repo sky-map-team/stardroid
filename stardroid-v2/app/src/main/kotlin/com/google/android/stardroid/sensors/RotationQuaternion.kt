@@ -14,7 +14,7 @@ import kotlin.math.sqrt
 
 /**
  * Converts an orthonormal, right-handed rotation matrix to a unit quaternion, written into
- * [out] as `(x, y, z, w)` — the form `TYPE_ROTATION_VECTOR` and [QuaternionSlerpSmoother] both
+ * [out] as `(x, y, z, w)` — the form `TYPE_ROTATION_VECTOR` and [OneEuroQuaternionSmoother] both
  * speak.
  *
  * This and [toRotationMatrix3] live here rather than in `core/math` because the `Float` array

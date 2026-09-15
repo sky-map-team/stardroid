@@ -330,24 +330,7 @@
     <string name="settings_disable_gyro_summary" translation_description="Explanation of the legacy sensors preference and when to use it">
     Ret kortet ved hjælp af kompasset og accelerometeret i stedet for gyroskopet. Prøv dette, hvis kortet driver, eller din enheds gyro driller; enheder uden en gyro bruger disse sensorer automatisk.
     </string>
-    <string name="settings_sensor_damping">Dæmpning</string>
-    <string name="settings_sensor_damping_standard" translation_description="Low sensor damping factor - this will make the app jittery">Urolig</string>
-    <string name="settings_sensor_damping_high" translation_description="Medium sensor damping factor - this will make the app slightly jittery">Mellem</string>
-    <string name="settings_sensor_damping_extra_high" translation_description="Extra high sensor damping factor">Passende</string>
-    <string name="settings_sensor_damping_really_high" translation_description="Really high sensor damping factor - this will make the app sluggish">Træg</string>
     <string name="settings_classic_sensors_only" translation_description="Summary noting a sensor preference only applies to the legacy non-gyroscope sensor path">Gælder kun når ældre sensorer er i brug</string>
-    <string name="settings_rotation_low_pass" translation_description="Preference title for low-pass filtering the gyroscope-based sensor path, to reduce jitter on some devices">Sensor-lavpasfilter</string>
-    <string name="settings_rotation_low_pass_summary" translation_description="Explanation of the sensor low-pass preference and its trade-off">
-    Reducer rystelser på enheder med en støjende sensor ved gradvist at indarbejde nye målinger. Højere indstillinger er mere stabile, men langsommere til at reagere på reel bevægelse.
-    </string>
-    <string name="settings_rotation_deadband" translation_description="Preference title for ignoring tiny gyroscope-based sensor movements, to reduce jitter on some devices">Sensor-dødzone</string>
-    <string name="settings_rotation_deadband_summary" translation_description="Explanation of the sensor deadband preference and its trade-off">
-    Ignorerer bevægelser, der er mindre end en tærskel. Højere indstillinger ignorerer større bevægelser, hvilket kan gøre små, tilsigtede justeringer mindre følsomme.
-    </string>
-    <string name="settings_rotation_smoothing_off" translation_description="Sensor smoothing disabled">Fra</string>
-    <string name="settings_rotation_smoothing_low" translation_description="Low sensor smoothing strength">Lav</string>
-    <!-- tm:omitted name="settings_rotation_smoothing_medium" reason="identical_to_source" -->
-    <string name="settings_rotation_smoothing_high" translation_description="High sensor smoothing strength">Høj</string>
     <string name="settings_reverse_magnetic_z">Omvendt magnetisk Z</string>
     <string name="settings_magnetic_correction">Brug magnetisk korrektion</string>
     <string name="settings_magnetic_correction_summary" translation_description="Summary for the magnetic correction preference">Korrigerer kompasset for forskellen mellem magnetisk og sand nord</string>

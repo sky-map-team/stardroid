@@ -332,24 +332,7 @@
     <string name="settings_disable_gyro_summary" translation_description="Explanation of the legacy sensors preference and when to use it">
     Наведіть карту за допомогою компаса й акселерометра замість гіроскопа. Спробуйте це, якщо карта дрейфує або гіроскоп вашого пристрою працює некоректно; пристрої без гіроскопа використовують ці датчики автоматично.
     </string>
-    <string name="settings_sensor_damping">Демпфування</string>
-    <string name="settings_sensor_damping_standard" translation_description="Low sensor damping factor - this will make the app jittery">Нестабільно</string>
-    <string name="settings_sensor_damping_high" translation_description="Medium sensor damping factor - this will make the app slightly jittery">Середньо</string>
-    <string name="settings_sensor_damping_extra_high" translation_description="Extra high sensor damping factor">Як треба</string>
-    <string name="settings_sensor_damping_really_high" translation_description="Really high sensor damping factor - this will make the app sluggish">Із затримкою</string>
     <string name="settings_classic_sensors_only" translation_description="Summary noting a sensor preference only applies to the legacy non-gyroscope sensor path">Застосовується лише під час використання застарілих датчиків</string>
-    <string name="settings_rotation_low_pass" translation_description="Preference title for low-pass filtering the gyroscope-based sensor path, to reduce jitter on some devices">Низкочастотний фільтр датчика</string>
-    <string name="settings_rotation_low_pass_summary" translation_description="Explanation of the sensor low-pass preference and its trade-off">
-    Зменшує тремтіння на пристроях із зашумленим датчиком завдяки поступовому змішуванню нових показників. Вищі значення забезпечують стабільніше зображення, але повільніше реагують на реальний рух.
-    </string>
-    <string name="settings_rotation_deadband" translation_description="Preference title for ignoring tiny gyroscope-based sensor movements, to reduce jitter on some devices">Мертва зона датчика</string>
-    <string name="settings_rotation_deadband_summary" translation_description="Explanation of the sensor deadband preference and its trade-off">
-    Ігнорує рухи, менші за поріг. Вищі значення ігнорують більші рухи, через що невеликі навмисні коригування можуть менш чутливо реагувати.
-    </string>
-    <string name="settings_rotation_smoothing_off" translation_description="Sensor smoothing disabled">Вимкнено</string>
-    <string name="settings_rotation_smoothing_low" translation_description="Low sensor smoothing strength">Низька</string>
-    <string name="settings_rotation_smoothing_medium" translation_description="Medium sensor smoothing strength">Середня</string>
-    <string name="settings_rotation_smoothing_high" translation_description="High sensor smoothing strength">Висока</string>
     <string name="settings_reverse_magnetic_z">Зворотне магнітне Z</string>
     <string name="settings_magnetic_correction">Викор. магнітну корекцію</string>
     <string name="settings_magnetic_correction_summary" translation_description="Summary for the magnetic correction preference">Коригує компас на різницю між магнітною та істинною півноччю</string>

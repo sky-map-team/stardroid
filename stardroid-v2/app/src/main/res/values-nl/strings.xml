@@ -330,24 +330,7 @@
     <string name="settings_disable_gyro_summary" translation_description="Explanation of the legacy sensors preference and when to use it">
     Richting geven aan de kaart met het kompas en de versnellingsmeter in plaats van de gyroscoop. Probeer dit als de kaart afdrijft of als de gyroscoop van je apparaat hapert; apparaten zonder gyroscoop gebruiken deze sensoren automatisch.
     </string>
-    <string name="settings_sensor_damping">Demping</string>
-    <string name="settings_sensor_damping_standard" translation_description="Low sensor damping factor - this will make the app jittery">Schokkerig</string>
-    <string name="settings_sensor_damping_high" translation_description="Medium sensor damping factor - this will make the app slightly jittery">Normaal</string>
-    <string name="settings_sensor_damping_extra_high" translation_description="Extra high sensor damping factor">Ongeveer goed</string>
-    <string name="settings_sensor_damping_really_high" translation_description="Really high sensor damping factor - this will make the app sluggish">Traag</string>
     <string name="settings_classic_sensors_only" translation_description="Summary noting a sensor preference only applies to the legacy non-gyroscope sensor path">Alleen van toepassing wanneer oudere sensoren in gebruik zijn</string>
-    <!-- tm:omitted name="settings_rotation_low_pass" reason="identical_to_source" -->
-    <string name="settings_rotation_low_pass_summary" translation_description="Explanation of the sensor low-pass preference and its trade-off">
-    Vermindert schokkerigheid op apparaten met een ruisende sensor door nieuwe metingen geleidelijk te verwerken. Hogere instellingen zijn stabieler, maar reageren trager op echte bewegingen.
-    </string>
-    <string name="settings_rotation_deadband" translation_description="Preference title for ignoring tiny gyroscope-based sensor movements, to reduce jitter on some devices">Sensor-dodezone</string>
-    <string name="settings_rotation_deadband_summary" translation_description="Explanation of the sensor deadband preference and its trade-off">
-    Negeert bewegingen die kleiner zijn dan een drempelwaarde. Hogere instellingen negeren grotere bewegingen, waardoor kleine, bewuste aanpassingen minder reageren.
-    </string>
-    <string name="settings_rotation_smoothing_off" translation_description="Sensor smoothing disabled">Uit</string>
-    <string name="settings_rotation_smoothing_low" translation_description="Low sensor smoothing strength">Laag</string>
-    <string name="settings_rotation_smoothing_medium" translation_description="Medium sensor smoothing strength">Gemiddeld</string>
-    <string name="settings_rotation_smoothing_high" translation_description="High sensor smoothing strength">Hoog</string>
     <string name="settings_reverse_magnetic_z">Magnetische Z omkeren</string>
     <string name="settings_magnetic_correction">Magnetische correctie gebruiken</string>
     <string name="settings_magnetic_correction_summary" translation_description="Summary for the magnetic correction preference">Corrigeert het kompas voor het verschil tussen magnetisch en geografisch noorden</string>

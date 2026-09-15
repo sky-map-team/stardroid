@@ -322,20 +322,7 @@
     <string name="settings_disable_gyro_summary" translation_description="Explanation of the legacy sensors preference and when to use it">
     ジャイロスコープではなく、コンパスと加速度計を使用して地図を向けます。地図がずれたり、お使いのデバイスのジャイロが正常に動作しない場合は、これを試してください。ジャイロのないデバイスは、これらのセンサーを自動的に使用します。
     </string>
-    <string name="settings_sensor_damping">ダンピング</string>
-    <string name="settings_sensor_damping_standard" translation_description="Low sensor damping factor - this will make the app jittery">動きが不安定</string>
-    <string name="settings_sensor_damping_high" translation_description="Medium sensor damping factor - this will make the app slightly jittery">中間</string>
-    <string name="settings_sensor_damping_extra_high" translation_description="Extra high sensor damping factor">ちょうど良い</string>
-    <string name="settings_sensor_damping_really_high" translation_description="Really high sensor damping factor - this will make the app sluggish">動きが遅い</string>
     <string name="settings_classic_sensors_only" translation_description="Summary noting a sensor preference only applies to the legacy non-gyroscope sensor path">レガシーセンサー使用時のみ適用されます</string>
-    <string name="settings_rotation_low_pass" translation_description="Preference title for low-pass filtering the gyroscope-based sensor path, to reduce jitter on some devices">センサーローパスフィルター</string>
-    <string name="settings_rotation_low_pass_summary" translation_description="Explanation of the sensor low-pass preference and its trade-off">センサーのノイズが多い端末で、新しい測定値を徐々に反映させることでブレを軽減します。設定を高くすると安定しますが、実際の動きへの反応が遅くなります。</string>
-    <string name="settings_rotation_deadband" translation_description="Preference title for ignoring tiny gyroscope-based sensor movements, to reduce jitter on some devices">センサー不感帯</string>
-    <string name="settings_rotation_deadband_summary" translation_description="Explanation of the sensor deadband preference and its trade-off">しきい値より小さい動きを無視します。設定を高くすると大きな動きも無視されるため、意図した微調整に対する反応が鈍くなることがあります。</string>
-    <string name="settings_rotation_smoothing_off" translation_description="Sensor smoothing disabled">オフ</string>
-    <string name="settings_rotation_smoothing_low" translation_description="Low sensor smoothing strength">低</string>
-    <string name="settings_rotation_smoothing_medium" translation_description="Medium sensor smoothing strength">中</string>
-    <string name="settings_rotation_smoothing_high" translation_description="High sensor smoothing strength">高</string>
     <string name="settings_reverse_magnetic_z">磁気センサーのZ軸を反転</string>
     <string name="settings_magnetic_correction">磁気補正機能を使用</string>
     <string name="settings_magnetic_correction_summary" translation_description="Summary for the magnetic correction preference">磁北と真北の差をコンパスで補正します</string>

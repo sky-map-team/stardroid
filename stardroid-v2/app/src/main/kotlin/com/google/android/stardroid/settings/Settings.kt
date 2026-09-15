@@ -38,26 +38,33 @@ enum class AutoDimness {
     CLASSIC,
 }
 
-/** Smoothing strength for the classic sensor path (v1 `sensor_damping`). */
-enum class SensorDamping {
-    STANDARD,
+/**
+ * How steady the view is held while the phone is still — the 1€ filter's cutoff frequency at
+ * rest, named in the direction the user cares about (steadier = lower cutoff). Higher settings
+ * shake less but take longer to settle.
+ *
+ * Exposed alongside [OneEuroEaseOff] rather than as one combined level because the two are
+ * meant to be tuned one at a time, in that order (issue #1007). Expect to collapse them into a
+ * single ladder once field data says where the useful range is. Whether smoothing runs at all
+ * is [Settings.smoothingEnabled], not a rung here — a strength ladder whose first rung is
+ * secretly a power switch is the thing that made the previous arrangement confusing.
+ */
+enum class OneEuroSteadiness {
+    LOW,
+    MEDIUM,
     HIGH,
-    EXTRA_HIGH,
-    REALLY_HIGH,
+    VERY_HIGH,
+    EXTREME,
 }
 
 /**
- * A strength level shared by the two fused-rotation-vector smoothing knobs below (issues #963 /
- * #1001) — unlike [SensorDamping], these act on the gyro path itself, since some
- * phones' fusion is noisy enough to jitter the view even held still. Both default to OFF: most
- * devices fuse cleanly already, and this must not regress them.
- *
- * Kept as two independent settings (low-pass and deadband) rather than one combined "smoothing"
- * level so their effects can be evaluated separately in the field — it's not yet known whether
- * jitter on a given device needs one, the other, or both.
+ * How much the steadying relaxes once the phone starts moving, so the view keeps up — the 1€
+ * filter's `beta`. `NONE` never relaxes, leaving a plain low-pass that lags movement as much as
+ * it lags jitter; it's where the paper's tuning procedure starts, with [OneEuroSteadiness]
+ * tuned first against it.
  */
-enum class RotationSmoothingLevel {
-    OFF,
+enum class OneEuroEaseOff {
+    NONE,
     LOW,
     MEDIUM,
     HIGH,
@@ -179,27 +186,24 @@ interface Settings {
 
     suspend fun setDisableGyro(enabled: Boolean)
 
-    /** Classic-path smoothing strength (v1's `sensor_damping`, `EXTRA HIGH` by default). */
-    val sensorDamping: Flow<SensorDamping>
-
-    suspend fun setSensorDamping(damping: SensorDamping)
-
     /**
-     * Low-pass (SLERP) strength on the fused rotation-vector quaternion (issues #963 / #1001).
-     * Off by default. See [RotationSmoothingLevel].
+     * Whether the view is smoothed at all, on either sensor path (issues #963 / #1001 /
+     * #1007). Off by default: most devices fuse cleanly already and 2.0.3 shipped smoothing
+     * off for that reason, and an honest A/B needs a real off switch.
      */
-    val rotationLowPass: Flow<RotationSmoothingLevel>
+    val smoothingEnabled: Flow<Boolean>
 
-    suspend fun setRotationLowPass(level: RotationSmoothingLevel)
+    suspend fun setSmoothingEnabled(enabled: Boolean)
 
-    /**
-     * Deadband strength on the fused rotation-vector quaternion: samples within the angular
-     * threshold of the current value are ignored outright (issues #963 / #1001). Off by
-     * default. See [RotationSmoothingLevel].
-     */
-    val rotationDeadband: Flow<RotationSmoothingLevel>
+    /** How steady the view is held while the phone is still. See [OneEuroSteadiness]. */
+    val steadiness: Flow<OneEuroSteadiness>
 
-    suspend fun setRotationDeadband(level: RotationSmoothingLevel)
+    suspend fun setSteadiness(level: OneEuroSteadiness)
+
+    /** How much that steadying relaxes when the phone moves. See [OneEuroEaseOff]. */
+    val easeOff: Flow<OneEuroEaseOff>
+
+    suspend fun setEaseOff(level: OneEuroEaseOff)
 
     /**
      * Negate the magnetometer's Z axis before fusion (v1's `reverse_magnetic_z`) — a

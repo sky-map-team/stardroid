@@ -62,8 +62,8 @@ import com.google.android.stardroid.analytics.AnalyticsEvents
 import com.google.android.stardroid.astronomy.ViewDirectionMode
 import com.google.android.stardroid.settings.AutoDimness
 import com.google.android.stardroid.settings.FontSize
-import com.google.android.stardroid.settings.RotationSmoothingLevel
-import com.google.android.stardroid.settings.SensorDamping
+import com.google.android.stardroid.settings.OneEuroEaseOff
+import com.google.android.stardroid.settings.OneEuroSteadiness
 import com.google.android.stardroid.ui.common.topBarWindowInsets
 
 /**
@@ -157,45 +157,46 @@ fun SettingsScreen(
                     checked = state.disableGyro,
                     onCheckedChange = viewModel::setDisableGyro,
                 )
-                // Speed/damping/reverse-Z only act on the legacy (non-gyro) sensor path, so
-                // they only show while that path is what's running — less noise for everyone
-                // else. Note that's not the same as `disableGyro`: a device with no
-                // rotation-vector sensor runs the legacy path with `disableGyro` false.
-                if (legacyPathActive) {
+                // One filter serves both sensor paths now (issue #1007), so these show
+                // whichever path is running. On by default for everyone while it's in beta, so
+                // it gets exposure on both paths — see AppModule.settings and the summary string
+                // below for the opt-out. Revisit the default once it's validated (issue #1001).
+                SwitchRow(
+                    title = stringResource(R.string.settings_smoothing),
+                    summary = stringResource(R.string.settings_smoothing_summary),
+                    checked = state.smoothingEnabled,
+                    onCheckedChange = viewModel::setSmoothingEnabled,
+                )
+                // Kept as two controls while their useful range is still being found. They are
+                // meant to be tuned in this order: steadiness first with ease-off at None,
+                // then ease-off raised until the view keeps up.
+                if (state.smoothingEnabled) {
                     ChoiceRow(
-                        title = stringResource(R.string.settings_sensor_damping),
-                        summary = stringResource(R.string.settings_classic_sensors_only),
-                        options = SensorDamping.entries,
-                        selected = state.sensorDamping,
-                        label = { sensorDampingLabel(it) },
-                        onSelect = viewModel::setSensorDamping,
+                        title = stringResource(R.string.settings_steadiness),
+                        summary = stringResource(R.string.settings_steadiness_summary),
+                        options = OneEuroSteadiness.entries,
+                        selected = state.steadiness,
+                        label = { steadinessLabel(it) },
+                        onSelect = viewModel::setSteadiness,
                     )
+                    ChoiceRow(
+                        title = stringResource(R.string.settings_ease_off),
+                        summary = stringResource(R.string.settings_ease_off_summary),
+                        options = OneEuroEaseOff.entries,
+                        selected = state.easeOff,
+                        label = { easeOffLabel(it) },
+                        onSelect = viewModel::setEaseOff,
+                    )
+                }
+                // Still legacy-path-only: the fused sensor never sees raw magnetometer data.
+                // Note the gate isn't `disableGyro` — a device with no rotation-vector sensor
+                // runs the legacy path with `disableGyro` false.
+                if (legacyPathActive) {
                     SwitchRow(
                         title = stringResource(R.string.settings_reverse_magnetic_z),
                         summary = stringResource(R.string.settings_classic_sensors_only),
                         checked = state.reverseMagneticZ,
                         onCheckedChange = viewModel::setReverseMagneticZ,
-                    )
-                } else {
-                    // The inverse of the block above: these only act on the fused path, so
-                    // they only show while that path is selected (issues #963 / #1001). Kept
-                    // as two independent controls rather than one combined level so their
-                    // effects can be evaluated separately in the field.
-                    ChoiceRow(
-                        title = stringResource(R.string.settings_rotation_low_pass),
-                        summary = stringResource(R.string.settings_rotation_low_pass_summary),
-                        options = RotationSmoothingLevel.entries,
-                        selected = state.rotationLowPass,
-                        label = { rotationSmoothingLevelLabel(it) },
-                        onSelect = viewModel::setRotationLowPass,
-                    )
-                    ChoiceRow(
-                        title = stringResource(R.string.settings_rotation_deadband),
-                        summary = stringResource(R.string.settings_rotation_deadband_summary),
-                        options = RotationSmoothingLevel.entries,
-                        selected = state.rotationDeadband,
-                        label = { rotationSmoothingLevelLabel(it) },
-                        onSelect = viewModel::setRotationDeadband,
                     )
                 }
                 SwitchRow(
@@ -506,26 +507,25 @@ private fun autoDimnessLabel(dimness: AutoDimness): String =
     )
 
 @Composable
-private fun sensorDampingLabel(damping: SensorDamping): String =
+private fun steadinessLabel(level: OneEuroSteadiness): String =
     stringResource(
-        when (damping) {
-            SensorDamping.STANDARD -> R.string.settings_sensor_damping_standard
-            SensorDamping.HIGH -> R.string.settings_sensor_damping_high
-            SensorDamping.EXTRA_HIGH -> R.string.settings_sensor_damping_extra_high
-            SensorDamping.REALLY_HIGH -> R.string.settings_sensor_damping_really_high
+        when (level) {
+            OneEuroSteadiness.LOW -> R.string.settings_steadiness_low
+            OneEuroSteadiness.MEDIUM -> R.string.settings_steadiness_medium
+            OneEuroSteadiness.HIGH -> R.string.settings_steadiness_high
+            OneEuroSteadiness.VERY_HIGH -> R.string.settings_steadiness_very_high
+            OneEuroSteadiness.EXTREME -> R.string.settings_steadiness_extreme
         },
     )
 
-// Shared by both the low-pass and deadband ChoiceRows — same four generic strength labels
-// regardless of which knob is being set.
 @Composable
-private fun rotationSmoothingLevelLabel(level: RotationSmoothingLevel): String =
+private fun easeOffLabel(level: OneEuroEaseOff): String =
     stringResource(
         when (level) {
-            RotationSmoothingLevel.OFF -> R.string.settings_rotation_smoothing_off
-            RotationSmoothingLevel.LOW -> R.string.settings_rotation_smoothing_low
-            RotationSmoothingLevel.MEDIUM -> R.string.settings_rotation_smoothing_medium
-            RotationSmoothingLevel.HIGH -> R.string.settings_rotation_smoothing_high
+            OneEuroEaseOff.NONE -> R.string.settings_ease_off_none
+            OneEuroEaseOff.LOW -> R.string.settings_ease_off_low
+            OneEuroEaseOff.MEDIUM -> R.string.settings_ease_off_medium
+            OneEuroEaseOff.HIGH -> R.string.settings_ease_off_high
         },
     )
 
