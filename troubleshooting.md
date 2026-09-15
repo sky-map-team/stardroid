@@ -50,9 +50,9 @@ sitting next to a source of interference — it just reports what it measures.
 3. **Remove your phone case.** Magnetic or RFID-blocking cases are a very common culprit. Try without it.
 4. **Toggle Magnetic Correction.** In some parts of the world, magnetic north and true north
    differ by 20° or more. Switching this on or off can sometimes dramatically improve alignment.
-   Find it in **Settings → Sensor Settings (Experts)**.
+   Find it in **Settings → Sensors** (v2) or **Settings → Sensor Settings (experts)** (v1).
 5. **Manual compass offset (v1 only).** On the legacy v1 app, phones with a consistent
-   directional error can use a manual offset in **Settings → Sensor Settings (Experts)**. This
+   directional error can use a manual offset in **Settings → Sensor Settings (experts)**. This
    option isn't currently available in the v2 app.
 
 > **If a recent phone update broke your compass:** this is unfortunately common. Android updates
@@ -161,9 +161,13 @@ close the card.
 
 ## The map is jittery
 
-- The gyroscope is what smooths the map's motion. Check **Settings → Sensor Settings (Experts)**
-  — if **Disable Gyro** is switched on, try switching it off to re-enable the gyro's smoothing.
-- Adjust **Sensor Speed** and **Sensor Damping** in the same section to tune the response.
+- Check **Settings → Sensors** — if **Use legacy sensors** is switched on, try switching it off;
+  that forces the noisier of the app's two sensor paths.
+- **Smoothing** is a new beta feature and is on by default — confirm it's still on, then raise
+  **Steadiness** until the view settles while the phone is held still.
+- If the view then feels laggy while panning, raise **Ease off when moving** until it keeps up.
+- Smoothing can be turned off in the same section if you'd rather use the raw sensor while it's
+  being tuned — feedback on how it's behaving is welcome either way.
 
 ---
 

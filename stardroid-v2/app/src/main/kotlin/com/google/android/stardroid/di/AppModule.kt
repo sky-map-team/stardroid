@@ -76,6 +76,11 @@ object AppModule {
             application.settingsDataStore,
             enableAnalyticsDefault = FlavorEdges.ENABLE_ANALYTICS_DEFAULT,
             satelliteDataDefault = FlavorEdges.SATELLITE_DATA_DEFAULT,
+            // On for everyone while the 1€ filter is in beta (issue #1007) so it gets field
+            // exposure on both sensor paths; the settings row explains how to turn it off. Once
+            // it's validated, revisit whether a clean-fusing device still wants it on by default
+            // (issue #1001).
+            smoothingEnabledDefault = true,
         )
 
     /**

@@ -28,6 +28,6 @@ data class SensorConfig(
     val disableGyro: Boolean = false,
     val reverseMagneticZ: Boolean = false,
     val smoothingEnabled: Boolean = false,
-    val steadiness: OneEuroSteadiness = OneEuroSteadiness.MEDIUM,
+    val steadiness: OneEuroSteadiness = OneEuroSteadiness.HIGH,
     val easeOff: OneEuroEaseOff = OneEuroEaseOff.MEDIUM,
 )

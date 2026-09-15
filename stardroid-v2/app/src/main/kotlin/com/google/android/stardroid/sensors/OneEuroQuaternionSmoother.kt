@@ -241,7 +241,6 @@ class OneEuroQuaternionSmoother(
                     OneEuroSteadiness.HIGH -> 0.1f
                     OneEuroSteadiness.VERY_HIGH -> 0.05f
                     OneEuroSteadiness.EXTREME -> 0.02f
-                    OneEuroSteadiness.MAXIMUM -> 0.005f
                 }
             } else {
                 when (level) {
@@ -250,7 +249,6 @@ class OneEuroQuaternionSmoother(
                     OneEuroSteadiness.HIGH -> 0.6f
                     OneEuroSteadiness.VERY_HIGH -> 0.3f
                     OneEuroSteadiness.EXTREME -> 0.05f
-                    OneEuroSteadiness.MAXIMUM -> 0.01f
                 }
             }
 
@@ -287,8 +285,8 @@ class OneEuroQuaternionSmoother(
                 when (level) {
                     OneEuroEaseOff.NONE -> 0f
                     OneEuroEaseOff.LOW -> 1f
-                    OneEuroEaseOff.MEDIUM -> 4f
-                    OneEuroEaseOff.HIGH -> 12f
+                    OneEuroEaseOff.MEDIUM -> 1.5f
+                    OneEuroEaseOff.HIGH -> 5f
                 }
             } else {
                 when (level) {

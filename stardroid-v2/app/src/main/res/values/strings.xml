@@ -303,7 +303,7 @@
     <string name="settings_cancel" translation_description="Cancel button in settings dialogs">Cancel</string>
     <string name="settings_section_controls" translation_description="Preferences category heading for touch control settings">Controls</string>
     <string name="settings_section_appearance" translation_description="Preferences title for section about app appearance">Appearance</string>
-    <string name="settings_section_sensors" translation_description="Preferences category heading for sensor settings, intended for advanced/expert users">Sensor Settings (experts)</string>
+    <string name="settings_section_sensors" translation_description="Preferences category heading for sensor settings">Sensors</string>
     <string name="settings_section_other" translation_description="Preferences category heading for miscellaneous settings such as the usage statistics opt-out">Other</string>
     <string name="enable_analytics" translation_description="Preference label to opt in to sending anonymous usage statistics">Send usage statistics</string>
     <string name="enable_analytics_desc" translation_description="Description/summary for the usage statistics preference">Make Sky Map better by sending anonymous data to Google Analytics</string>
@@ -333,7 +333,7 @@
     <string name="settings_disable_gyro_summary" translation_description="Explanation of the legacy sensors preference and when to use it">Point the map using the compass and accelerometer instead of the gyroscope. Try this if the map drifts or your device\'s gyro misbehaves; devices without a gyro use these sensors automatically.</string>
     <string name="settings_classic_sensors_only" translation_description="Summary noting a sensor preference only applies to the legacy non-gyroscope sensor path">Only applies when legacy sensors are in use</string>
     <string name="settings_smoothing" translation_description="Preference title for the switch that turns sensor smoothing on or off">Smooth sensor movement</string>
-    <string name="settings_smoothing_summary" translation_description="Explanation of the sensor smoothing switch, noting it is only needed on some devices">Steadies the sky view on devices whose sensors are noisy. Leave this off if the sky already looks steady when you hold the phone still.</string>
+    <string name="settings_smoothing_summary" translation_description="Explanation of the sensor smoothing switch: it steadies the sky view, is on by default during a beta trial, invites feedback, and explains how to turn it off">Steadies the sky view. This is new and on by default while we tune it — if you notice lag, jitter, or anything odd, we\'d love to hear about it. Turn it off here any time if you\'d rather use the raw sensor.</string>
     <string name="settings_steadiness" translation_description="Preference title for how much the sky view is steadied while the phone is held still">Steadiness</string>
     <string name="settings_steadiness_summary" translation_description="Explanation of the steadiness preference and its trade-off">How much the view is steadied while you hold the phone still. Higher settings shake less but take a moment longer to settle.</string>
     <string name="settings_steadiness_low" translation_description="Least steadying of the view when the phone is held still">Low</string>
@@ -341,7 +341,6 @@
     <string name="settings_steadiness_high" translation_description="Strong steadying of the view when the phone is held still">High</string>
     <string name="settings_steadiness_very_high" translation_description="Very strong steadying of the view when the phone is held still">Very high</string>
     <string name="settings_steadiness_extreme" translation_description="Extremely strong steadying of the view when the phone is held still, for devices with noisy sensors">Extreme</string>
-    <string name="settings_steadiness_maximum" translation_description="Strongest steadying of the view when the phone is held still">Maximum</string>
     <string name="settings_ease_off" translation_description="Preference title for how much the steadying relaxes once the phone starts moving">Ease off when moving</string>
     <string name="settings_ease_off_summary" translation_description="Explanation of the ease-off preference and its trade-off">How much the steadying relaxes once you start moving, so the view keeps up with you. Choose None to steady the view by the same amount whether it is still or moving.</string>
     <string name="settings_ease_off_none" translation_description="Steadying does not relax at all when the phone moves">None</string>

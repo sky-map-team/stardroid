@@ -32,6 +32,7 @@ class DataStoreSettings(
     private val dataStore: DataStore<Preferences>,
     enableAnalyticsDefault: Boolean = true,
     satelliteDataDefault: Boolean = true,
+    smoothingEnabledDefault: Boolean = false,
 ) : Settings {
     override fun layerEnabled(id: LayerId): Flow<Boolean> = boolean(layerKey(id), default = true)
 
@@ -145,14 +146,15 @@ class DataStoreSettings(
     // New keys rather than reusing rotation_low_pass/rotation_deadband/sensor_damping: those
     // held levels for filters that no longer exist, so an old value would be meaningless here
     // (issue #1007). Anyone who had tuned them starts from these defaults instead.
-    override val smoothingEnabled: Flow<Boolean> = boolean(SMOOTHING_ENABLED, default = false)
+    override val smoothingEnabled: Flow<Boolean> =
+        boolean(SMOOTHING_ENABLED, default = smoothingEnabledDefault)
 
     override suspend fun setSmoothingEnabled(enabled: Boolean) {
         dataStore.edit { it[SMOOTHING_ENABLED] = enabled }
     }
 
     override val steadiness: Flow<OneEuroSteadiness> =
-        enum(STEADINESS, OneEuroSteadiness.MEDIUM)
+        enum(STEADINESS, OneEuroSteadiness.HIGH)
 
     override suspend fun setSteadiness(level: OneEuroSteadiness) {
         dataStore.edit { it[STEADINESS] = level.name }

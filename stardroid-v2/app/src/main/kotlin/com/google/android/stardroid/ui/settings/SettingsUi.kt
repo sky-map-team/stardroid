@@ -158,8 +158,9 @@ fun SettingsScreen(
                     onCheckedChange = viewModel::setDisableGyro,
                 )
                 // One filter serves both sensor paths now (issue #1007), so these show
-                // whichever path is running. Off by default — most devices fuse cleanly and
-                // this must not regress them (issue #1001).
+                // whichever path is running. On by default for everyone while it's in beta, so
+                // it gets exposure on both paths — see AppModule.settings and the summary string
+                // below for the opt-out. Revisit the default once it's validated (issue #1001).
                 SwitchRow(
                     title = stringResource(R.string.settings_smoothing),
                     summary = stringResource(R.string.settings_smoothing_summary),
@@ -514,7 +515,6 @@ private fun steadinessLabel(level: OneEuroSteadiness): String =
             OneEuroSteadiness.HIGH -> R.string.settings_steadiness_high
             OneEuroSteadiness.VERY_HIGH -> R.string.settings_steadiness_very_high
             OneEuroSteadiness.EXTREME -> R.string.settings_steadiness_extreme
-            OneEuroSteadiness.MAXIMUM -> R.string.settings_steadiness_maximum
         },
     )
 

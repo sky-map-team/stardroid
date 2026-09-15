@@ -55,7 +55,6 @@ enum class OneEuroSteadiness {
     HIGH,
     VERY_HIGH,
     EXTREME,
-    MAXIMUM,
 }
 
 /**
