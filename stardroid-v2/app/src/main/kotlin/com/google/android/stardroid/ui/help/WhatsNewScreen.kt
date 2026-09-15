@@ -70,9 +70,11 @@ fun WhatsNewScreen(
         // The "New in version X" heading is dropped for the 2.0 launch copy, which opens with
         // its own splash line instead — restore it for later point releases once the launch
         // announcement has aged out.
+        // beta_user_help_text leads for the same reason as WhatsNewDialog: it shouldn't get
+        // buried below a long feature list.
         val html =
-            stringResource(R.string.whats_new_content) +
-                stringResource(R.string.beta_user_help_text) +
+            stringResource(R.string.beta_user_help_text) +
+                stringResource(R.string.whats_new_content) +
                 stringResource(R.string.whats_new_support) +
                 creditsText
         StyledHtml(
