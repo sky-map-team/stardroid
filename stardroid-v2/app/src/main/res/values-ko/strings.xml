@@ -341,7 +341,7 @@
     <string name="settings_steadiness_medium" translation_description="Moderate steadying of the view when the phone is held still">중간</string>
     <string name="settings_steadiness_high" translation_description="Strong steadying of the view when the phone is held still">높음</string>
     <string name="settings_steadiness_very_high" translation_description="Very strong steadying of the view when the phone is held still">매우 높음</string>
-    <string name="settings_steadiness_extreme" translation_description="Extremely strong steadying of the view when the phone is held still, for devices with noisy sensors">매우 높음(극한)</string>
+    <string name="settings_steadiness_extreme" translation_description="Extremely strong steadying of the view when the phone is held still, for devices with noisy sensors">극한</string>
     <string name="settings_ease_off" translation_description="Preference title for how much the steadying relaxes once the phone starts moving">움직일 때 완화</string>
     <string name="settings_ease_off_summary" translation_description="Explanation of the ease-off preference and its trade-off">
     움직이기 시작할 때 화면 보정 기능이 얼마나 완화되어 화면이 사용자의 움직임을 잘 따라가게 할지 설정합니다. 정지해 있거나 움직일 때 동일한 정도로 화면을 보정하려면 \'없음\'을 선택하세요.
