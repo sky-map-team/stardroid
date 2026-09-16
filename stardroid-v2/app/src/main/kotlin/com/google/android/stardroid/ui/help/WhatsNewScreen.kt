@@ -71,7 +71,10 @@ fun WhatsNewScreen(
         // its own splash line instead — restore it for later point releases once the launch
         // announcement has aged out.
         // beta_user_help_text leads for the same reason as WhatsNewDialog: it shouldn't get
-        // buried below a long feature list.
+        // buried below a long feature list. Unlike the dialog, whats_new_support stays after
+        // whats_new_content here rather than also leading — this screen scrolls freely (no
+        // fixed-height AlertDialog to hide behind), and the support pitch reads naturally next
+        // to the credits/sponsor list it's adjacent to.
         val html =
             stringResource(R.string.beta_user_help_text) +
                 stringResource(R.string.whats_new_content) +
