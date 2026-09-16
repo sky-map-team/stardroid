@@ -44,6 +44,14 @@ object AnalyticsEvents {
     const val SENSOR_PATH_ACCEL_MAG = "accel_mag"
     const val SENSOR_PATH_NONE = "none"
 
+    // Issue #1033: how many users are on legacy 3-button nav (relevant to whether we invest in
+    // porting v1's hide-nav-bar-on-tap behavior, and orthogonal to the nav-bar color fix).
+    const val START_EVENT_NAV_MODE = "navigation_mode"
+    const val NAV_MODE_THREE_BUTTON = "three_button"
+    const val NAV_MODE_TWO_BUTTON = "two_button"
+    const val NAV_MODE_GESTURE = "gesture"
+    const val NAV_MODE_UNKNOWN = "unknown"
+
     // Session length, bucketed on the map screen's foreground time.
     const val SESSION_LENGTH_EVENT = "session_length_ev"
     const val SESSION_LENGTH_TIME_VALUE = "session_length"

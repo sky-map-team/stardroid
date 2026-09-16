@@ -636,10 +636,25 @@ class MainActivity : ComponentActivity() {
                         calendar[Calendar.DAY_OF_WEEK] - 1,
                     AnalyticsEvents.START_EVENT_NIGHT_MODE to nightMode,
                     AnalyticsEvents.START_EVENT_SENSOR_PATH to sensorPath,
+                    AnalyticsEvents.START_EVENT_NAV_MODE to navigationMode(),
                 ),
             )
         }
     }
+
+    /**
+     * Issue #1033: legacy 3-button nav shows a bright, unthemed system nav bar on API <=34.
+     * `navigation_mode` is a hidden but permission-free `Settings.Secure` key (0 = 3-button,
+     * 1 = 2-button/pie, deprecated pre-Q, 2 = gesture) — reading it here sizes how many users
+     * are actually affected, since neither OS version nor OEM is a reliable proxy for nav mode.
+     */
+    private fun navigationMode(): String =
+        when (Settings.Secure.getInt(contentResolver, "navigation_mode", 0)) {
+            0 -> AnalyticsEvents.NAV_MODE_THREE_BUTTON
+            1 -> AnalyticsEvents.NAV_MODE_TWO_BUTTON
+            2 -> AnalyticsEvents.NAV_MODE_GESTURE
+            else -> AnalyticsEvents.NAV_MODE_UNKNOWN
+        }
 
     override fun onStart() {
         super.onStart()
