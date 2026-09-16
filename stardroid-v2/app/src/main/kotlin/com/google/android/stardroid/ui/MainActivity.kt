@@ -649,7 +649,7 @@ class MainActivity : ComponentActivity() {
      * are actually affected, since neither OS version nor OEM is a reliable proxy for nav mode.
      */
     private fun navigationMode(): String =
-        when (Settings.Secure.getInt(contentResolver, "navigation_mode", 0)) {
+        when (Settings.Secure.getInt(contentResolver, "navigation_mode", -1)) {
             0 -> AnalyticsEvents.NAV_MODE_THREE_BUTTON
             1 -> AnalyticsEvents.NAV_MODE_TWO_BUTTON
             2 -> AnalyticsEvents.NAV_MODE_GESTURE
