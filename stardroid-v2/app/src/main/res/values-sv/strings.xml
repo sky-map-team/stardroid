@@ -257,13 +257,19 @@
     <string name="location_manual_entry_title">Ange din plats</string>
     <string name="location_place_name_hint">Stad eller platsnamn</string>
     <string name="location_latitude_hint">Latitud (t.ex. 51,5)</string>
+    <string name="location_latitude_placeholder" translation_description="Example value shown in the latitude field before the user types anything; disappears once they start typing. The sign is set by a separate N/S toggle, so this is always a positive number.">51,5</string>
     <string name="location_longitude_hint">Longitud (t.ex. −0,1)</string>
+    <string name="location_longitude_placeholder" translation_description="Example value shown in the longitude field before the user types anything; disappears once they start typing. The sign is set by a separate E/W toggle, so this is always a positive number.">0,1</string>
     <string name="location_resolve_button">Lös upp</string>
     <string name="location_set_button">Ange plats</string>
     <string name="location_place_not_found">Plats hittades inte – försök med ett mer specifikt namn</string>
     <string name="location_geocoder_offline">Ingen internet – ange koordinater direkt</string>
     <string name="location_invalid_latitude">Latitud måste vara mellan −90 och 90</string>
     <string name="location_invalid_longitude">Longitud måste vara mellan −180 och 180</string>
+    <string name="location_hemisphere_north_description" translation_description="Accessibility label for the latitude hemisphere toggle button, selected for a positive value">Norra halvklotet (positiv latitud)</string>
+    <string name="location_hemisphere_south_description" translation_description="Accessibility label for the latitude hemisphere toggle button, selected for a negative value">Södra halvklotet (negativ latitud)</string>
+    <string name="location_hemisphere_east_description" translation_description="Accessibility label for the longitude hemisphere toggle button, selected for a positive value">Östra halvklotet (positiv longitud)</string>
+    <string name="location_hemisphere_west_description" translation_description="Accessibility label for the longitude hemisphere toggle button, selected for a negative value">Västra halvklotet (negativ longitud)</string>
     <!-- tm:omitted name="location_coordinate_format" reason="identical_to_source" -->
 
     <!-- Object info card -->
@@ -330,6 +336,27 @@
     Peka ut kartan med kompass och accelerometer i stället för gyroskop. Prova detta om kartan driver eller om enhetens gyroskop uppför sig felaktigt; enheter utan gyroskop använder dessa sensorer automatiskt.
     </string>
     <string name="settings_classic_sensors_only" translation_description="Summary noting a sensor preference only applies to the legacy non-gyroscope sensor path">Gäller endast när äldre sensorer används</string>
+    <string name="settings_smoothing" translation_description="Preference title for the switch that turns sensor smoothing on or off">Utjämna sensorrörelse</string>
+    <string name="settings_smoothing_summary" translation_description="Explanation of the sensor smoothing switch: it steadies the sky view, is on by default during a beta trial, invites feedback, and explains how to turn it off">
+    Gör himlavyn stadigare. Detta är en ny funktion som är aktiverad som standard medan vi finjusterar den – om du märker lagg, ryckigheter eller något annat konstnärligt vill vi gärna höra om det. Stäng av den här när som helst om du hellre vill använda råsensorerna.
+    </string>
+    <string name="settings_steadiness" translation_description="Preference title for how much the sky view is steadied while the phone is held still">Stadighet</string>
+    <string name="settings_steadiness_summary" translation_description="Explanation of the steadiness preference and its trade-off">
+    Hur mycket vyn stabiliseras medan du håller telefonen stilla. Högre inställningar skakar mindre men tar en stund längre på sig att stabiliseras.
+    </string>
+    <string name="settings_steadiness_low" translation_description="Least steadying of the view when the phone is held still">Låg</string>
+    <!-- tm:omitted name="settings_steadiness_medium" reason="identical_to_source" -->
+    <string name="settings_steadiness_high" translation_description="Strong steadying of the view when the phone is held still">Hög</string>
+    <string name="settings_steadiness_very_high" translation_description="Very strong steadying of the view when the phone is held still">Mycket hög</string>
+    <string name="settings_steadiness_extreme" translation_description="Extremely strong steadying of the view when the phone is held still, for devices with noisy sensors">Extrem</string>
+    <string name="settings_ease_off" translation_description="Preference title for how much the steadying relaxes once the phone starts moving">Minska vid rörelse</string>
+    <string name="settings_ease_off_summary" translation_description="Explanation of the ease-off preference and its trade-off">
+    Hur mycket stabiliseringen släpper efter när du börjar röra på dig, så att vyn hänger med. Välj Inget för att stabilisera vyn lika mycket oavsett om den står stilla eller rör sig.
+    </string>
+    <string name="settings_ease_off_none" translation_description="Steadying does not relax at all when the phone moves">Ingen</string>
+    <string name="settings_ease_off_low" translation_description="Steadying relaxes a little when the phone moves">Lite</string>
+    <string name="settings_ease_off_medium" translation_description="Steadying relaxes a moderate amount when the phone moves">Måttlig</string>
+    <string name="settings_ease_off_high" translation_description="Steadying relaxes a lot when the phone moves">Mycket</string>
     <string name="settings_reverse_magnetic_z">Vänd magnetisk Z</string>
     <string name="settings_magnetic_correction">Använd magnetisk korrektion</string>
     <string name="settings_magnetic_correction_summary" translation_description="Summary for the magnetic correction preference">Korrigerar kompassen för skillnaden mellan magnetisk och verklig norr</string>

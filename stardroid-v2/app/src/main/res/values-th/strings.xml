@@ -237,13 +237,19 @@
     <string name="location_manual_entry_title">ป้อนตำแหน่งของคุณ</string>
     <string name="location_place_name_hint">ชื่อเมืองหรือสถานที่</string>
     <string name="location_latitude_hint">ละติจูด (เช่น 51.5)</string>
+    <!-- tm:omitted name="location_latitude_placeholder" reason="identical_to_source" -->
     <string name="location_longitude_hint">ลองจิจูด (เช่น -0.1)</string>
+    <!-- tm:omitted name="location_longitude_placeholder" reason="identical_to_source" -->
     <string name="location_resolve_button">แก้ไข</string>
     <string name="location_set_button">ตั้งตำแหน่ง</string>
     <string name="location_place_not_found">ไม่พบสถานที่ — ลองใช้ชื่อที่เจาะจงมากขึ้น</string>
     <string name="location_geocoder_offline">ไม่มีอินเทอร์เน็ต — ป้อนพิกัดโดยตรง</string>
     <string name="location_invalid_latitude">ละติจูดต้องอยู่ระหว่าง −90 ถึง 90</string>
     <string name="location_invalid_longitude">ลองจิจูดต้องอยู่ระหว่าง −180 ถึง 180</string>
+    <string name="location_hemisphere_north_description" translation_description="Accessibility label for the latitude hemisphere toggle button, selected for a positive value">ซีกโลกเหนือ (ละติจูดบวก)</string>
+    <string name="location_hemisphere_south_description" translation_description="Accessibility label for the latitude hemisphere toggle button, selected for a negative value">ซีกโลกใต้ (ละติจูดลบ)</string>
+    <string name="location_hemisphere_east_description" translation_description="Accessibility label for the longitude hemisphere toggle button, selected for a positive value">ซีกโลกตะวันออก (ลองจิจูดบวก)</string>
+    <string name="location_hemisphere_west_description" translation_description="Accessibility label for the longitude hemisphere toggle button, selected for a negative value">ซีกโลกตะวันตก (ลองจิจูดลบ)</string>
     <!-- tm:omitted name="location_coordinate_format" reason="identical_to_source" -->
 
     <!-- Object info card -->
@@ -308,6 +314,27 @@
     ใช้เข็มทิศและมาตรความเร่งในการเล็งแผนที่แทนไจโรสโคป ลองใช้วิธีนี้หากแผนที่เกิดการเคลื่อนหรือไจโรสโคปของอุปกรณ์ทำงานผิดปกติ โดยอุปกรณ์ที่ไม่มีไจโรสโคปจะใช้เซ็นเซอร์เหล่านี้โดยอัตโนมัติ
     </string>
     <string name="settings_classic_sensors_only" translation_description="Summary noting a sensor preference only applies to the legacy non-gyroscope sensor path">ใช้ได้เฉพาะเมื่อใช้งานเซ็นเซอร์แบบเดิมเท่านั้น</string>
+    <string name="settings_smoothing" translation_description="Preference title for the switch that turns sensor smoothing on or off">ทำให้การเคลื่อนไหวของเซนเซอร์ราบรื่นขึ้น</string>
+    <string name="settings_smoothing_summary" translation_description="Explanation of the sensor smoothing switch: it steadies the sky view, is on by default during a beta trial, invites feedback, and explains how to turn it off">
+    ช่วยให้มุมมองท้องฟ้ามีความนิ่งขึ้น ฟีเจอร์นี้ใหม่และเปิดใช้งานเป็นค่าเริ่มต้นระหว่างที่เรากำลังปรับแต่งอยู่ หากคุณพบอาการแลค กระตุก หรือความผิดปกติใดๆ เรายินดีรับฟังความคิดเห็นของคุณ คุณสามารถปิดการใช้งานได้ที่นี่ตลอดเวลาหากต้องการใช้เซ็นเซอร์ดิบ
+    </string>
+    <string name="settings_steadiness" translation_description="Preference title for how much the sky view is steadied while the phone is held still">ความนิ่ง</string>
+    <string name="settings_steadiness_summary" translation_description="Explanation of the steadiness preference and its trade-off">
+    การทำให้มุมมองนิ่งแค่ไหนในขณะที่คุณถือโทรศัพท์ให้นิ่ง การตั้งค่าที่สูงขึ้นจะสั่นน้อยลงแต่ใช้เวลาในการตั้งค่านานขึ้นเล็กน้อย
+    </string>
+    <string name="settings_steadiness_low" translation_description="Least steadying of the view when the phone is held still">ต่ำ</string>
+    <string name="settings_steadiness_medium" translation_description="Moderate steadying of the view when the phone is held still">ปานกลาง</string>
+    <string name="settings_steadiness_high" translation_description="Strong steadying of the view when the phone is held still">สูง</string>
+    <string name="settings_steadiness_very_high" translation_description="Very strong steadying of the view when the phone is held still">สูงมาก</string>
+    <string name="settings_steadiness_extreme" translation_description="Extremely strong steadying of the view when the phone is held still, for devices with noisy sensors">สูงสุด</string>
+    <string name="settings_ease_off" translation_description="Preference title for how much the steadying relaxes once the phone starts moving">ผ่อนคลายความนิ่งเมื่อเคลื่อนไหว</string>
+    <string name="settings_ease_off_summary" translation_description="Explanation of the ease-off preference and its trade-off">
+    ระดับการลดความสั่นที่จะผ่อนคลายลงเมื่อคุณเริ่มเคลื่อนไหว เพื่อให้มุมมองตามคุณทัน เลือก "ไม่มี" หากต้องการรักษาความนิ่งของมุมมองให้คงที่เท่ากันไม่ว่าจะหยุดนิ่งหรือกำลังเคลื่อนไหว
+    </string>
+    <string name="settings_ease_off_none" translation_description="Steadying does not relax at all when the phone moves">ไม่มี</string>
+    <string name="settings_ease_off_low" translation_description="Steadying relaxes a little when the phone moves">เล็กน้อย</string>
+    <string name="settings_ease_off_medium" translation_description="Steadying relaxes a moderate amount when the phone moves">ปานกลาง</string>
+    <string name="settings_ease_off_high" translation_description="Steadying relaxes a lot when the phone moves">มาก</string>
     <string name="settings_reverse_magnetic_z">ย้อนกลับแกน Z แม่เหล็ก</string>
     <string name="settings_magnetic_correction">ใช้การแก้ไขแม่เหล็ก</string>
     <string name="settings_magnetic_correction_summary" translation_description="Summary for the magnetic correction preference">แก้ไขเข็มทิศสำหรับความแตกต่างระหว่างขั้วแม่เหล็กโลกและขั้วเหนือจริง</string>

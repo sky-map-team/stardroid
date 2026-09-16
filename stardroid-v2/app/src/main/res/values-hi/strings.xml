@@ -257,13 +257,19 @@
     <string name="location_manual_entry_title">अपना स्थान दर्ज करें</string>
     <string name="location_place_name_hint">शहर या स्थान का नाम</string>
     <string name="location_latitude_hint">अक्षांश (उदा. 51.5)</string>
+    <!-- tm:omitted name="location_latitude_placeholder" reason="identical_to_source" -->
     <string name="location_longitude_hint">देशांतर (उदा. -0.1)</string>
+    <!-- tm:omitted name="location_longitude_placeholder" reason="identical_to_source" -->
     <string name="location_resolve_button">हल करें</string>
     <string name="location_set_button">स्थान सेट करें</string>
     <string name="location_place_not_found">स्थान नहीं मिला — अधिक विशिष्ट नाम आजमाएं</string>
     <string name="location_geocoder_offline">कोई इंटरनेट नहीं — सीधे निर्देशांक दर्ज करें</string>
     <string name="location_invalid_latitude">अक्षांश −90 और 90 के बीच होना चाहिए</string>
     <string name="location_invalid_longitude">देशांतर −180 और 180 के बीच होना चाहिए</string>
+    <string name="location_hemisphere_north_description" translation_description="Accessibility label for the latitude hemisphere toggle button, selected for a positive value">उत्तरी गोलार्ध (धनात्मक अक्षांश)</string>
+    <string name="location_hemisphere_south_description" translation_description="Accessibility label for the latitude hemisphere toggle button, selected for a negative value">दक्षिणी गोलार्ध (ऋणात्मक अक्षांश)</string>
+    <string name="location_hemisphere_east_description" translation_description="Accessibility label for the longitude hemisphere toggle button, selected for a positive value">पूर्वी गोलार्ध (धनात्मक देशांतर)</string>
+    <string name="location_hemisphere_west_description" translation_description="Accessibility label for the longitude hemisphere toggle button, selected for a negative value">पश्चिमी गोलार्ध (ऋणात्मक देशांतर)</string>
     <!-- tm:omitted name="location_coordinate_format" reason="identical_to_source" -->
 
     <!-- Object info card -->
@@ -330,6 +336,27 @@
     मानचित्र को जाइरोस्कोप के बजाय कंपास और एक्सेलेरोमीटर का उपयोग करके इंगित करें। यदि मानचित्र भटकता है या आपके डिवाइस का जाइरो ठीक से काम नहीं करता है, तो इसे आज़माएँ; जाइरो के बिना वाले डिवाइस इन सेंसरों का स्वचालित रूप से उपयोग करते हैं।
     </string>
     <string name="settings_classic_sensors_only" translation_description="Summary noting a sensor preference only applies to the legacy non-gyroscope sensor path">केवल तभी लागू होता है जब पुराने सेंसर उपयोग में हों</string>
+    <string name="settings_smoothing" translation_description="Preference title for the switch that turns sensor smoothing on or off">सुगम सेंसर गति</string>
+    <string name="settings_smoothing_summary" translation_description="Explanation of the sensor smoothing switch: it steadies the sky view, is on by default during a beta trial, invites feedback, and explains how to turn it off">
+    आकाश के दृश्य को स्थिर करता है। यह नया है और जब तक हम इसे ठीक कर रहे हैं डिफ़ॉल्ट रूप से चालू है - यदि आपको कोई अंतराल, घबराहट या कुछ भी अजीब दिखाई देता है, तो हमें इसके बारे में सुनना अच्छा लगेगा। यदि आप इसके बजाय रॉ सेंसर का उपयोग करना चाहते हैं तो इसे किसी भी समय यहाँ बंद कर दें।
+    </string>
+    <string name="settings_steadiness" translation_description="Preference title for how much the sky view is steadied while the phone is held still">स्थिरता</string>
+    <string name="settings_steadiness_summary" translation_description="Explanation of the steadiness preference and its trade-off">
+    जब आप फोन को स्थिर रखते हैं तो दृश्य कितना स्थिर रहता है। उच्च सेटिंग्स में कंपन कम होता है लेकिन स्थिर होने में थोड़ा अधिक समय लगता है।
+    </string>
+    <string name="settings_steadiness_low" translation_description="Least steadying of the view when the phone is held still">कम</string>
+    <string name="settings_steadiness_medium" translation_description="Moderate steadying of the view when the phone is held still">मध्यम</string>
+    <string name="settings_steadiness_high" translation_description="Strong steadying of the view when the phone is held still">अधिक</string>
+    <string name="settings_steadiness_very_high" translation_description="Very strong steadying of the view when the phone is held still">बहुत अधिक</string>
+    <string name="settings_steadiness_extreme" translation_description="Extremely strong steadying of the view when the phone is held still, for devices with noisy sensors">अत्यधिक</string>
+    <string name="settings_ease_off" translation_description="Preference title for how much the steadying relaxes once the phone starts moving">हिलने पर आराम दें</string>
+    <string name="settings_ease_off_summary" translation_description="Explanation of the ease-off preference and its trade-off">
+    जब आप हिलना शुरू करते हैं तो स्थिरता कितनी कम हो जाती है, ताकि दृश्य आपके साथ बना रहे। जब दृश्य स्थिर हो या गति में हो, दोनों स्थितियों में समान रूप से स्थिर रखने के लिए \'कोई नहीं\' चुनें।
+    </string>
+    <string name="settings_ease_off_none" translation_description="Steadying does not relax at all when the phone moves">कोई नहीं</string>
+    <string name="settings_ease_off_low" translation_description="Steadying relaxes a little when the phone moves">थोड़ा</string>
+    <string name="settings_ease_off_medium" translation_description="Steadying relaxes a moderate amount when the phone moves">मध्यम</string>
+    <string name="settings_ease_off_high" translation_description="Steadying relaxes a lot when the phone moves">काफी</string>
     <string name="settings_reverse_magnetic_z">चुंबकीय Z को उलटें</string>
     <string name="settings_magnetic_correction">चुंबकीय सुधार का उपयोग करें</string>
     <string name="settings_magnetic_correction_summary" translation_description="Summary for the magnetic correction preference">चुंबकीय और वास्तविक उत्तर के बीच के अंतर के लिए कंपास को ठीक करता है</string>

@@ -240,13 +240,19 @@
     <string name="location_manual_entry_title">Wprowadź swoją lokalizację</string>
     <string name="location_place_name_hint">Miasto lub nazwa miejsca</string>
     <string name="location_latitude_hint">Szerokość geograficzna (np. 51.5)</string>
+    <string name="location_latitude_placeholder" translation_description="Example value shown in the latitude field before the user types anything; disappears once they start typing. The sign is set by a separate N/S toggle, so this is always a positive number.">51,5</string>
     <string name="location_longitude_hint">Długość geograficzna (np. -0.1)</string>
+    <string name="location_longitude_placeholder" translation_description="Example value shown in the longitude field before the user types anything; disappears once they start typing. The sign is set by a separate E/W toggle, so this is always a positive number.">0,1</string>
     <string name="location_resolve_button">Ustal</string>
     <string name="location_set_button">Ustaw lokalizację</string>
     <string name="location_place_not_found">Nie znaleziono miejsca — spróbuj bardziej szczegółowej nazwy</string>
     <string name="location_geocoder_offline">Brak Internetu — wprowadź współrzędne bezpośrednio</string>
     <string name="location_invalid_latitude">Szerokość geograficzna musi być między −90 a 90</string>
     <string name="location_invalid_longitude">Długość geograficzna musi być między −180 a 180</string>
+    <string name="location_hemisphere_north_description" translation_description="Accessibility label for the latitude hemisphere toggle button, selected for a positive value">Półkula północna (szerokość dodatnia)</string>
+    <string name="location_hemisphere_south_description" translation_description="Accessibility label for the latitude hemisphere toggle button, selected for a negative value">Półkula południowa (szerokość ujemna)</string>
+    <string name="location_hemisphere_east_description" translation_description="Accessibility label for the longitude hemisphere toggle button, selected for a positive value">Półkula wschodnia (długość dodatnia)</string>
+    <string name="location_hemisphere_west_description" translation_description="Accessibility label for the longitude hemisphere toggle button, selected for a negative value">Półkula zachodnia (długość ujemna)</string>
     <!-- tm:omitted name="location_coordinate_format" reason="identical_to_source" -->
 
     <!-- Object info card -->
@@ -315,6 +321,27 @@
     Orientuj mapę za pomocą kompasu i akcelerometru zamiast żyroskopu. Wypróbuj to, jeśli mapa dryfuje lub żyroskop Twojego urządzenia działa nieprawidłowo; urządzenia bez żyroskopu używają tych czujników automatycznie.
     </string>
     <string name="settings_classic_sensors_only" translation_description="Summary noting a sensor preference only applies to the legacy non-gyroscope sensor path">Dotyczy tylko, gdy używane są starsze czujniki</string>
+    <string name="settings_smoothing" translation_description="Preference title for the switch that turns sensor smoothing on or off">Wygładź ruch czujnika</string>
+    <string name="settings_smoothing_summary" translation_description="Explanation of the sensor smoothing switch: it steadies the sky view, is on by default during a beta trial, invites feedback, and explains how to turn it off">
+    Stabilizuje widok nieba. Ta funkcja jest nowa i domyślnie włączona podczas dostrajania – jeśli zauważysz opóźnienia, drgania lub cokolwiek innego, chętnie poznamy Twoją opinię. Możesz ją w każdej chwili wyłączyć tutaj, jeśli wolisz korzystać z surowego odczytu czujników.
+    </string>
+    <string name="settings_steadiness" translation_description="Preference title for how much the sky view is steadied while the phone is held still">Stabilność</string>
+    <string name="settings_steadiness_summary" translation_description="Explanation of the steadiness preference and its trade-off">
+    Stopień stabilizacji widoku podczas trzymania telefonu w bezruchu. Wyższe ustawienia mniej drgają, ale potrzebują chwili dłużej na ustabilizowanie się.
+    </string>
+    <string name="settings_steadiness_low" translation_description="Least steadying of the view when the phone is held still">Niska</string>
+    <string name="settings_steadiness_medium" translation_description="Moderate steadying of the view when the phone is held still">Średnia</string>
+    <string name="settings_steadiness_high" translation_description="Strong steadying of the view when the phone is held still">Wysoka</string>
+    <string name="settings_steadiness_very_high" translation_description="Very strong steadying of the view when the phone is held still">Bardzo wysoka</string>
+    <string name="settings_steadiness_extreme" translation_description="Extremely strong steadying of the view when the phone is held still, for devices with noisy sensors">Ekstremalna</string>
+    <string name="settings_ease_off" translation_description="Preference title for how much the steadying relaxes once the phone starts moving">Złagodź przy ruchu</string>
+    <string name="settings_ease_off_summary" translation_description="Explanation of the ease-off preference and its trade-off">
+    Jak mocno stabilizacja słabnie po rozpoczęciu ruchu, aby widok nadążał za Tobą. Wybierz opcję Brak, aby stabilizować widok w takim samym stopniu niezależnie od tego, czy jest on nieruchomy, czy się porusza.
+    </string>
+    <string name="settings_ease_off_none" translation_description="Steadying does not relax at all when the phone moves">Brak</string>
+    <string name="settings_ease_off_low" translation_description="Steadying relaxes a little when the phone moves">Trochę</string>
+    <string name="settings_ease_off_medium" translation_description="Steadying relaxes a moderate amount when the phone moves">Umiarkowanie</string>
+    <string name="settings_ease_off_high" translation_description="Steadying relaxes a lot when the phone moves">Dużo</string>
     <string name="settings_reverse_magnetic_z">Odwróć oś Z magnetometru</string>
     <string name="settings_magnetic_correction">Używaj poprawki magnetycznej</string>
     <string name="settings_magnetic_correction_summary" translation_description="Summary for the magnetic correction preference">Koryguje kompas o różnicę między północą magnetyczną a geograficzną</string>

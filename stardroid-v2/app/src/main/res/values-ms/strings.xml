@@ -257,13 +257,19 @@
     <string name="location_manual_entry_title">Masukkan Lokasi Anda</string>
     <string name="location_place_name_hint">Bandar atau nama tempat</string>
     <string name="location_latitude_hint">Latitud (cth. 51.5)</string>
+    <!-- tm:omitted name="location_latitude_placeholder" reason="identical_to_source" -->
     <string name="location_longitude_hint">Longitud (cth. -0.1)</string>
+    <!-- tm:omitted name="location_longitude_placeholder" reason="identical_to_source" -->
     <string name="location_resolve_button">Selesaikan</string>
     <string name="location_set_button">Tetapkan Lokasi</string>
     <string name="location_place_not_found">Tempat tidak ditemui — cuba nama yang lebih spesifik</string>
     <string name="location_geocoder_offline">Tiada internet — masukkan koordinat secara langsung</string>
     <string name="location_invalid_latitude">Latitud mesti antara −90 dan 90</string>
     <string name="location_invalid_longitude">Longitud mesti antara −180 dan 180</string>
+    <string name="location_hemisphere_north_description" translation_description="Accessibility label for the latitude hemisphere toggle button, selected for a positive value">Hemisfera utara (latitud positif)</string>
+    <string name="location_hemisphere_south_description" translation_description="Accessibility label for the latitude hemisphere toggle button, selected for a negative value">Hemisfera selatan (latitud negatif)</string>
+    <string name="location_hemisphere_east_description" translation_description="Accessibility label for the longitude hemisphere toggle button, selected for a positive value">Hemisfera timur (longitud positif)</string>
+    <string name="location_hemisphere_west_description" translation_description="Accessibility label for the longitude hemisphere toggle button, selected for a negative value">Hemisfera barat (longitud negatif)</string>
     <!-- tm:omitted name="location_coordinate_format" reason="identical_to_source" -->
 
     <!-- Object info card -->
@@ -330,6 +336,27 @@
     Arahkan peta menggunakan kompas dan pecutan dan bukannya giroskop. Cuba ini jika peta melayang atau giroskop peranti anda tidak berfungsi dengan baik; peranti tanpa giroskop menggunakan penderia ini secara automatik.
     </string>
     <string name="settings_classic_sensors_only" translation_description="Summary noting a sensor preference only applies to the legacy non-gyroscope sensor path">Hanya terpakai apabila penderia legasi digunakan</string>
+    <string name="settings_smoothing" translation_description="Preference title for the switch that turns sensor smoothing on or off">Licinkan pergerakan deria</string>
+    <string name="settings_smoothing_summary" translation_description="Explanation of the sensor smoothing switch: it steadies the sky view, is on by default during a beta trial, invites feedback, and explains how to turn it off">
+    Menstabilkan paparan langit. Ini adalah ciri baharu dan diaktifkan secara lalai semasa kami sedang menala ia — jika anda mengalami kelambatan, kegementaran, atau sebarang masalah pelik, kami amat mengalu-alukan maklum balas anda. Matikan ciri ini di sini pada bila-bila masa jika anda lebih suka menggunakan sensor mentah.
+    </string>
+    <string name="settings_steadiness" translation_description="Preference title for how much the sky view is steadied while the phone is held still">Kestabilan</string>
+    <string name="settings_steadiness_summary" translation_description="Explanation of the steadiness preference and its trade-off">
+    Berapa banyak paparan distabilkan semasa anda memegang telefon dengan tenang. Tetapan yang lebih tinggi mengurangkan gegaran tetapi mengambil sedikit masa lagi untuk stabil.
+    </string>
+    <string name="settings_steadiness_low" translation_description="Least steadying of the view when the phone is held still">Rendah</string>
+    <string name="settings_steadiness_medium" translation_description="Moderate steadying of the view when the phone is held still">Sederhana</string>
+    <string name="settings_steadiness_high" translation_description="Strong steadying of the view when the phone is held still">Tinggi</string>
+    <string name="settings_steadiness_very_high" translation_description="Very strong steadying of the view when the phone is held still">Sangat tinggi</string>
+    <string name="settings_steadiness_extreme" translation_description="Extremely strong steadying of the view when the phone is held still, for devices with noisy sensors">Ekstrem</string>
+    <string name="settings_ease_off" translation_description="Preference title for how much the steadying relaxes once the phone starts moving">Kurangkan semasa bergerak</string>
+    <string name="settings_ease_off_summary" translation_description="Explanation of the ease-off preference and its trade-off">
+    Berapa banyak penstabilan dilonggarkan sebaik sahaja anda mula bergerak, supaya paparan mengikut anda. Pilih Tiada untuk menstabilkan paparan pada tahap yang sama sama ada ia pegun atau bergerak.
+    </string>
+    <string name="settings_ease_off_none" translation_description="Steadying does not relax at all when the phone moves">Tiada</string>
+    <string name="settings_ease_off_low" translation_description="Steadying relaxes a little when the phone moves">Sedikit</string>
+    <string name="settings_ease_off_medium" translation_description="Steadying relaxes a moderate amount when the phone moves">Sederhana</string>
+    <string name="settings_ease_off_high" translation_description="Steadying relaxes a lot when the phone moves">Banyak</string>
     <string name="settings_reverse_magnetic_z">Balikkan Magnet Z</string>
     <string name="settings_magnetic_correction">Gunakan pembetulan magnetik</string>
     <string name="settings_magnetic_correction_summary" translation_description="Summary for the magnetic correction preference">Membetulkan kompas untuk perbezaan antara utara magnetik dan utara sebenar</string>

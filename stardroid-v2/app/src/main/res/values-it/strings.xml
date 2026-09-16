@@ -262,13 +262,19 @@
     <string name="location_manual_entry_title">Inserisci la tua posizione</string>
     <string name="location_place_name_hint">Città o nome del luogo</string>
     <string name="location_latitude_hint">Latitudine (es. 51,5)</string>
+    <!-- tm:omitted name="location_latitude_placeholder" reason="identical_to_source" -->
     <string name="location_longitude_hint">Longitudine (es. -0,1)</string>
+    <!-- tm:omitted name="location_longitude_placeholder" reason="identical_to_source" -->
     <string name="location_resolve_button">Risolvi</string>
     <string name="location_set_button">Imposta posizione</string>
     <string name="location_place_not_found">Luogo non trovato — prova un nome più specifico</string>
     <string name="location_geocoder_offline">Nessuna connessione internet — inserisci le coordinate direttamente</string>
     <string name="location_invalid_latitude">La latitudine deve essere tra −90 e 90</string>
     <string name="location_invalid_longitude">La longitudine deve essere tra −180 e 180</string>
+    <string name="location_hemisphere_north_description" translation_description="Accessibility label for the latitude hemisphere toggle button, selected for a positive value">Emisfero nord (latitudine positiva)</string>
+    <string name="location_hemisphere_south_description" translation_description="Accessibility label for the latitude hemisphere toggle button, selected for a negative value">Emisfero sud (latitudine negativa)</string>
+    <string name="location_hemisphere_east_description" translation_description="Accessibility label for the longitude hemisphere toggle button, selected for a positive value">Emisfero est (longitudine positiva)</string>
+    <string name="location_hemisphere_west_description" translation_description="Accessibility label for the longitude hemisphere toggle button, selected for a negative value">Emisfero ovest (longitudine negativa)</string>
     <!-- tm:omitted name="location_coordinate_format" reason="identical_to_source" -->
 
     <!-- Object info card -->
@@ -337,6 +343,27 @@
     Punta la mappa usando la bussola e l\'accelerometro invece del giroscopio. Prova questa opzione se la mappa si sposta o il giroscopio del tuo dispositivo funziona male; i dispositivi senza giroscopio usano questi sensori automaticamente.
     </string>
     <string name="settings_classic_sensors_only" translation_description="Summary noting a sensor preference only applies to the legacy non-gyroscope sensor path">Si applica solo quando sono in uso i sensori legacy</string>
+    <string name="settings_smoothing" translation_description="Preference title for the switch that turns sensor smoothing on or off">Movimento sensore fluido</string>
+    <string name="settings_smoothing_summary" translation_description="Explanation of the sensor smoothing switch: it steadies the sky view, is on by default during a beta trial, invites feedback, and explains how to turn it off">
+    Stabilizza la vista del cielo. Questa è una novità ed è attiva per impostazione predefinita mentre la perfezioniamo: se noti ritardi, sfarfallii o qualsiasi anomalia, ci farebbe molto piacere ricevere il tuo riscontro. Puoi disattivarla qui in qualsiasi momento se preferisci usare il sensore grezzo.
+    </string>
+    <string name="settings_steadiness" translation_description="Preference title for how much the sky view is steadied while the phone is held still">Stabilità</string>
+    <string name="settings_steadiness_summary" translation_description="Explanation of the steadiness preference and its trade-off">
+    Quanto la vista viene stabilizzata mentre tieni il telefono fermo. Impostazioni più elevate tremano meno ma impiegano un momento in più per stabilizzarsi.
+    </string>
+    <string name="settings_steadiness_low" translation_description="Least steadying of the view when the phone is held still">Bassa</string>
+    <string name="settings_steadiness_medium" translation_description="Moderate steadying of the view when the phone is held still">Media</string>
+    <string name="settings_steadiness_high" translation_description="Strong steadying of the view when the phone is held still">Alta</string>
+    <string name="settings_steadiness_very_high" translation_description="Very strong steadying of the view when the phone is held still">Molto alta</string>
+    <string name="settings_steadiness_extreme" translation_description="Extremely strong steadying of the view when the phone is held still, for devices with noisy sensors">Estrema</string>
+    <string name="settings_ease_off" translation_description="Preference title for how much the steadying relaxes once the phone starts moving">Riduci in movimento</string>
+    <string name="settings_ease_off_summary" translation_description="Explanation of the ease-off preference and its trade-off">
+    Di quanto si attenua la stabilizzazione quando inizi a muoverti, in modo che la visuale ti segua. Scegli Nessuna per stabilizzare la visuale nella stessa misura sia quando è ferma sia quando è in movimento.
+    </string>
+    <string name="settings_ease_off_none" translation_description="Steadying does not relax at all when the phone moves">Nessuna</string>
+    <string name="settings_ease_off_low" translation_description="Steadying relaxes a little when the phone moves">Poca</string>
+    <string name="settings_ease_off_medium" translation_description="Steadying relaxes a moderate amount when the phone moves">Moderata</string>
+    <string name="settings_ease_off_high" translation_description="Steadying relaxes a lot when the phone moves">Molta</string>
     <string name="settings_reverse_magnetic_z">Inverti asse Z magnetico</string>
     <string name="settings_magnetic_correction">Usa correzione magnetica</string>
     <string name="settings_magnetic_correction_summary" translation_description="Summary for the magnetic correction preference">Corregge la bussola per la differenza tra nord magnetico e nord vero</string>

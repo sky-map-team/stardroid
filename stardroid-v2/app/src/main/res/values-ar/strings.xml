@@ -256,13 +256,19 @@
     <string name="location_manual_entry_title">أدخل موقعك</string>
     <string name="location_place_name_hint">اسم المدينة أو المكان</string>
     <string name="location_latitude_hint">خط العرض (مثال: 51.5)</string>
+    <!-- tm:omitted name="location_latitude_placeholder" reason="identical_to_source" -->
     <string name="location_longitude_hint">خط الطول (مثال: -0.1)</string>
+    <!-- tm:omitted name="location_longitude_placeholder" reason="identical_to_source" -->
     <string name="location_resolve_button">حل</string>
     <string name="location_set_button">تعيين الموقع</string>
     <string name="location_place_not_found">لم يتم العثور على المكان — جرب اسمًا أكثر تحديدًا</string>
     <string name="location_geocoder_offline">لا توجد إنترنت — أدخل الإحداثيات مباشرة</string>
     <string name="location_invalid_latitude">يجب أن يكون خط العرض بين −90 و 90</string>
     <string name="location_invalid_longitude">يجب أن يكون خط الطول بين −180 و 180</string>
+    <string name="location_hemisphere_north_description" translation_description="Accessibility label for the latitude hemisphere toggle button, selected for a positive value">النصف الشمالي من الكرة الأرضية (خط عرض موجب)</string>
+    <string name="location_hemisphere_south_description" translation_description="Accessibility label for the latitude hemisphere toggle button, selected for a negative value">النصف الجنوبي من الكرة الأرضية (خط عرض سالب)</string>
+    <string name="location_hemisphere_east_description" translation_description="Accessibility label for the longitude hemisphere toggle button, selected for a positive value">النصف الشرقي من الكرة الأرضية (خط طول موجب)</string>
+    <string name="location_hemisphere_west_description" translation_description="Accessibility label for the longitude hemisphere toggle button, selected for a negative value">النصف الغربي من الكرة الأرضية (خط طول سالب)</string>
     <!-- tm:omitted name="location_coordinate_format" reason="identical_to_source" -->
 
     <!-- Object info card -->
@@ -329,6 +335,27 @@
     وجّه الخريطة باستخدام البوصلة ومقياس التسارع بدلاً من الجيروسكوب. جرّب هذا إذا كانت الخريطة تنحرف أو كان جيروسكوب جهازك لا يعمل بشكل صحيح؛ الأجهزة التي لا تحتوي على جيروسكوب تستخدم هذه المستشعرات تلقائيًا.
     </string>
     <string name="settings_classic_sensors_only" translation_description="Summary noting a sensor preference only applies to the legacy non-gyroscope sensor path">ينطبق فقط عند استخدام المستشعرات القديمة</string>
+    <string name="settings_smoothing" translation_description="Preference title for the switch that turns sensor smoothing on or off">تنعيم حركة المستشعر</string>
+    <string name="settings_smoothing_summary" translation_description="Explanation of the sensor smoothing switch: it steadies the sky view, is on by default during a beta trial, invites feedback, and explains how to turn it off">
+    يثبت عرض السماء. هذه ميزة جديدة ومفعلة افتراضياً بينما نعمل على ضبطها — إذا لاحظت أي تأخير أو اهتزاز أو أي شيء غير معتاد، فنحن نحب أن نسمع منك. يمكنك إيقاف تشغيلها هنا في أي وقت إذا كنت تفضل استخدام المستشعر الخام.
+    </string>
+    <string name="settings_steadiness" translation_description="Preference title for how much the sky view is steadied while the phone is held still">الثبات</string>
+    <string name="settings_steadiness_summary" translation_description="Explanation of the steadiness preference and its trade-off">
+    مدى ثبات العرض أثناء إمساكك بالهاتف ساكناً. الإعدادات الأعلى تهتز بشكل أقل لكنها تستغرق وقتاً أطول قليلاً لتستقر.
+    </string>
+    <string name="settings_steadiness_low" translation_description="Least steadying of the view when the phone is held still">منخفض</string>
+    <string name="settings_steadiness_medium" translation_description="Moderate steadying of the view when the phone is held still">متوسط</string>
+    <string name="settings_steadiness_high" translation_description="Strong steadying of the view when the phone is held still">عالي</string>
+    <string name="settings_steadiness_very_high" translation_description="Very strong steadying of the view when the phone is held still">عالي جداً</string>
+    <string name="settings_steadiness_extreme" translation_description="Extremely strong steadying of the view when the phone is held still, for devices with noisy sensors">أقصى</string>
+    <string name="settings_ease_off" translation_description="Preference title for how much the steadying relaxes once the phone starts moving">تخفيف الثبات عند الحركة</string>
+    <string name="settings_ease_off_summary" translation_description="Explanation of the ease-off preference and its trade-off">
+    مدى استرخاء التثبيت بمجرد أن تبدأ في التحرك، بحيث يواكب العرض حركتك. اختر "بلا" لتثبيت العرض بنفس المقدار سواء كان ثابتاً أو متحركاً.
+    </string>
+    <string name="settings_ease_off_none" translation_description="Steadying does not relax at all when the phone moves">بلا</string>
+    <string name="settings_ease_off_low" translation_description="Steadying relaxes a little when the phone moves">قليلاً</string>
+    <string name="settings_ease_off_medium" translation_description="Steadying relaxes a moderate amount when the phone moves">متوسط</string>
+    <string name="settings_ease_off_high" translation_description="Steadying relaxes a lot when the phone moves">كثيراً</string>
     <string name="settings_reverse_magnetic_z">عكس المحور المغناطيسي Z</string>
     <string name="settings_magnetic_correction">استخدام التصحيح المغناطيسي</string>
     <string name="settings_magnetic_correction_summary" translation_description="Summary for the magnetic correction preference">يصحح البوصلة للفرق بين الشمال المغناطيسي والشمال الحقيقي</string>

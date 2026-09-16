@@ -257,13 +257,19 @@
     <string name="location_manual_entry_title">Zadajte vašu polohu</string>
     <string name="location_place_name_hint">Mesto alebo názov miesta</string>
     <string name="location_latitude_hint">Zemepisná šírka (napr. 51,5)</string>
+    <!-- tm:omitted name="location_latitude_placeholder" reason="identical_to_source" -->
     <string name="location_longitude_hint">Zemepisná dĺžka (napr. -0,1)</string>
+    <!-- tm:omitted name="location_longitude_placeholder" reason="identical_to_source" -->
     <string name="location_resolve_button">Vyriešiť</string>
     <string name="location_set_button">Nastaviť polohu</string>
     <string name="location_place_not_found">Miesto sa nenašlo – skúste špecifickejší názov</string>
     <string name="location_geocoder_offline">Bez internetu – zadajte súradnice priamo</string>
     <string name="location_invalid_latitude">Zemepisná šírka musí byť medzi −90 a 90</string>
     <string name="location_invalid_longitude">Zemepisná dĺžka musí byť medzi −180 a 180</string>
+    <string name="location_hemisphere_north_description" translation_description="Accessibility label for the latitude hemisphere toggle button, selected for a positive value">Severná pologuľa (kladná zemepisná šírka)</string>
+    <string name="location_hemisphere_south_description" translation_description="Accessibility label for the latitude hemisphere toggle button, selected for a negative value">Južná pologuľa (záporná zemepisná šírka)</string>
+    <string name="location_hemisphere_east_description" translation_description="Accessibility label for the longitude hemisphere toggle button, selected for a positive value">Východná pologuľa (kladná zemepisná dĺžka)</string>
+    <string name="location_hemisphere_west_description" translation_description="Accessibility label for the longitude hemisphere toggle button, selected for a negative value">Západná pologuľa (záporná zemepisná dĺžka)</string>
     <!-- tm:omitted name="location_coordinate_format" reason="identical_to_source" -->
 
     <!-- Object info card -->
@@ -332,6 +338,27 @@
     Nasmerujte mapu pomocou kompasu a akcelerometra namiesto gyroskopu. Skúste to, ak sa mapa posúva alebo sa gyroskop vášho zariadenia správa nesprávne; zariadenia bez gyroskopu používajú tieto senzory automaticky.
     </string>
     <string name="settings_classic_sensors_only" translation_description="Summary noting a sensor preference only applies to the legacy non-gyroscope sensor path">Platí len pri použití starších senzorov</string>
+    <string name="settings_smoothing" translation_description="Preference title for the switch that turns sensor smoothing on or off">Uhladiť pohyb senzorov</string>
+    <string name="settings_smoothing_summary" translation_description="Explanation of the sensor smoothing switch: it steadies the sky view, is on by default during a beta trial, invites feedback, and explains how to turn it off">
+    Stabilizuje zobrazenie oblohy. Toto je nová funkcia a predbežne je zapnutá, kým ju ladiť – ak si všimnete oneskorenie, trhanie alebo čokoľvek neobvyklé, radi o tom budeme počuť. Kedykoľvek ju tu môžete vypnúť, ak radšej používate surové dáta zo senzorov.
+    </string>
+    <string name="settings_steadiness" translation_description="Preference title for how much the sky view is steadied while the phone is held still">Stabilita</string>
+    <string name="settings_steadiness_summary" translation_description="Explanation of the steadiness preference and its trade-off">
+    Do akej miery sa stabilizuje zobrazenie, keď držíte telefón v pokoji. Vyššie nastavenia menej trasú, ale chvíľu trvá, kým sa ustália.
+    </string>
+    <string name="settings_steadiness_low" translation_description="Least steadying of the view when the phone is held still">Nízka</string>
+    <string name="settings_steadiness_medium" translation_description="Moderate steadying of the view when the phone is held still">Stredná</string>
+    <string name="settings_steadiness_high" translation_description="Strong steadying of the view when the phone is held still">Vysoká</string>
+    <string name="settings_steadiness_very_high" translation_description="Very strong steadying of the view when the phone is held still">Veľmi vysoká</string>
+    <string name="settings_steadiness_extreme" translation_description="Extremely strong steadying of the view when the phone is held still, for devices with noisy sensors">Extrémna</string>
+    <string name="settings_ease_off" translation_description="Preference title for how much the steadying relaxes once the phone starts moving">Uvoľniť pri pohybe</string>
+    <string name="settings_ease_off_summary" translation_description="Explanation of the ease-off preference and its trade-off">
+    Do akej miery sa stabilizácia uvoľní, keď sa začnete hýbať, aby pohľad stíhal za vami. Vyberte možnosť Žiadna, ak chcete, aby sa pohľad stabilizoval rovnako, či už je nehybný, alebo sa pohybuje.
+    </string>
+    <string name="settings_ease_off_none" translation_description="Steadying does not relax at all when the phone moves">Žiadne</string>
+    <string name="settings_ease_off_low" translation_description="Steadying relaxes a little when the phone moves">Trochu</string>
+    <string name="settings_ease_off_medium" translation_description="Steadying relaxes a moderate amount when the phone moves">Stredne</string>
+    <string name="settings_ease_off_high" translation_description="Steadying relaxes a lot when the phone moves">Veľmi</string>
     <string name="settings_reverse_magnetic_z">Obrátiť magnetické pole v ose Z</string>
     <string name="settings_magnetic_correction">Použiť magnetickú korekciu</string>
     <string name="settings_magnetic_correction_summary" translation_description="Summary for the magnetic correction preference">Koriguje kompas pre rozdiel medzi magnetickým a skutočným severom</string>

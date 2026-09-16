@@ -257,13 +257,19 @@
     <string name="location_manual_entry_title">Vnesite svojo lokacijo</string>
     <string name="location_place_name_hint">Mesto ali ime kraja</string>
     <string name="location_latitude_hint">Geografska širina (npr. 51,5)</string>
+    <!-- tm:omitted name="location_latitude_placeholder" reason="identical_to_source" -->
     <string name="location_longitude_hint">Geografska dolžina (npr. −0,1)</string>
+    <!-- tm:omitted name="location_longitude_placeholder" reason="identical_to_source" -->
     <string name="location_resolve_button">Razreši</string>
     <string name="location_set_button">Nastavi lokacijo</string>
     <string name="location_place_not_found">Kraj ni najden – poskusite bolj specifično ime</string>
     <string name="location_geocoder_offline">Brez interneta – vnesite koordinate neposredno</string>
     <string name="location_invalid_latitude">Geografska širina mora biti med −90 in 90</string>
     <string name="location_invalid_longitude">Geografska dolžina mora biti med −180 in 180</string>
+    <string name="location_hemisphere_north_description" translation_description="Accessibility label for the latitude hemisphere toggle button, selected for a positive value">Severna polobla (pozitivna zemljepisna širina)</string>
+    <string name="location_hemisphere_south_description" translation_description="Accessibility label for the latitude hemisphere toggle button, selected for a negative value">Južna polobla (negativna zemljepisna širina)</string>
+    <string name="location_hemisphere_east_description" translation_description="Accessibility label for the longitude hemisphere toggle button, selected for a positive value">Vzhodna polobla (pozitivna zemljepisna dolžina)</string>
+    <string name="location_hemisphere_west_description" translation_description="Accessibility label for the longitude hemisphere toggle button, selected for a negative value">Zahodna polobla (negativna zemljepisna dolžina)</string>
     <!-- tm:omitted name="location_coordinate_format" reason="identical_to_source" -->
 
     <!-- Object info card -->
@@ -330,6 +336,27 @@
     Usmerite zemljevid s kompasom in merilnikom pospeška namesto žiroskopa. Poskusite to, če zemljevid drsi ali se žiroskop vaše naprave ne obnaša pravilno; naprave brez žiroskopa samodejno uporabljajo te senzorje.
     </string>
     <string name="settings_classic_sensors_only" translation_description="Summary noting a sensor preference only applies to the legacy non-gyroscope sensor path">Velja samo, ko so v uporabi starejši senzorji</string>
+    <string name="settings_smoothing" translation_description="Preference title for the switch that turns sensor smoothing on or off">Ublaži premikanje senzorja</string>
+    <string name="settings_smoothing_summary" translation_description="Explanation of the sensor smoothing switch: it steadies the sky view, is on by default during a beta trial, invites feedback, and explains how to turn it off">
+    Umirja pogled na nebo. To je nova funkcija, ki je privzeto vklopljena, med jo še prilagajamo – če opazite zaostajanje, tresenje ali karkoli nenavadnega, nam to sporočite. Kadar koli jo lahko izklopite tukaj, če raje uporabljate neobdelane podatke tipala.
+    </string>
+    <string name="settings_steadiness" translation_description="Preference title for how much the sky view is steadied while the phone is held still">Stabilnost</string>
+    <string name="settings_steadiness_summary" translation_description="Explanation of the steadiness preference and its trade-off">
+    Koliko se slika umirja, medtem ko telefon držite pri miru. Višje nastavitve manj tresejo, vendar potrebujejo trenutek dlje, da se umirijo.
+    </string>
+    <string name="settings_steadiness_low" translation_description="Least steadying of the view when the phone is held still">Nizka</string>
+    <string name="settings_steadiness_medium" translation_description="Moderate steadying of the view when the phone is held still">Srednja</string>
+    <string name="settings_steadiness_high" translation_description="Strong steadying of the view when the phone is held still">Visoka</string>
+    <string name="settings_steadiness_very_high" translation_description="Very strong steadying of the view when the phone is held still">Zelo visoka</string>
+    <string name="settings_steadiness_extreme" translation_description="Extremely strong steadying of the view when the phone is held still, for devices with noisy sensors">Ekstremna</string>
+    <string name="settings_ease_off" translation_description="Preference title for how much the steadying relaxes once the phone starts moving">Zmanjšaj stabilnost pri premikanju</string>
+    <string name="settings_ease_off_summary" translation_description="Explanation of the ease-off preference and its trade-off">
+    Koliko se umiritev sprosti, ko se začnete premikati, tako da pogled sledi vašemu gibanju. Izberite Brez, če želite, da je pogled enako umirjen, ne glede na to, ali miruje ali se premika.
+    </string>
+    <string name="settings_ease_off_none" translation_description="Steadying does not relax at all when the phone moves">Brez</string>
+    <string name="settings_ease_off_low" translation_description="Steadying relaxes a little when the phone moves">Nekoliko</string>
+    <string name="settings_ease_off_medium" translation_description="Steadying relaxes a moderate amount when the phone moves">Zmerno</string>
+    <string name="settings_ease_off_high" translation_description="Steadying relaxes a lot when the phone moves">Močno</string>
     <string name="settings_reverse_magnetic_z">Obrni magnetni Z</string>
     <string name="settings_magnetic_correction">Uporabi magnetno korekcijo</string>
     <string name="settings_magnetic_correction_summary" translation_description="Summary for the magnetic correction preference">Popravi kompas za razliko med magnetnim in pravim severom</string>

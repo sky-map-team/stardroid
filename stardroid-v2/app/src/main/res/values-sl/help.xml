@@ -169,21 +169,21 @@ nobena aplikacija ne more prikazati vaše smeri.</p>]]></string>
 <h3>Zemljevid se ne premika</h3>
 <p>• Preverite, ali ste v samodejnem načinu (in ne ročnem)<br/>
 • Preverite stran z diagnostiko (<b>Nastavitve → Diagnostika</b>), da potrdite, ali ima vaša naprava kompas in merilnik pospeška<br/>
-• Poskusite s kretnjo umerjanja v obliki številke 8: telefon počasi pomikajte v veliki, gladki obliki številke 8</p>
+• Preizkusite kretnjo umerjanja v obliki številke 8: telefon počasi pomikajte v velikem, enakomernem vzorcu osmic</p>
 <h3>Zemljevid kaže v napačno smer ali je nenatančen</h3>
-<p>Sky Map za prikaz pravilnega neba potrebuje tri stvari: smer, v katero je obrnjen vaš telefon, vašo lokacijo in trenutni čas. Če je videti, da je zemlja narobe, je ena od teh stvari verjetno napačna.</p>
-<p>• <b>Kompas (najpogostejši vzrok):</b> To je težava s strojno opremo vašega telefona in ne napaka v aplikaciji Sky Map. Kretnja umerjanja v obliki številke 8 zahteva, da telefon ponastavi tipalo kompasa v svoji notranjosti, vendar <i>umerjen kompas ni nujno tudi natančen</i>. Če ste v bližini kovinskega predmeta, avtomobilske armaturne plošče ali magnetnega ovitka za telefon, je lahko zemljevid še vedno napačen tudi po umerjanju. Premaknite se na odprto območje in ponovite kretnjo v obliki številke 8.<br/>
-• <b>Lokacija:</b> Dovoljenje za lokacijo dodelite prek <b>Nastavitve aplikacije → Dovoljenja</b>. Preverite stran z diagnostiko (<b>Nastavitve → Diagnostika</b>) za potrditev vaših koordinat. Značilen znak manjkajoče lokacije je Severnica (Polaris), ki je prikazana neposredno nad glavo.<br/>
-• <b>Čas:</b> Manj pogosto, vendar napačen časovni pas premakne celotno nebo. Preverite stran z diagnostiko (<b>Nastavitve → Diagnostika</b>), da potrdite pravilnost časa in časovnega pasu vaše naprave.</p>
+<p>Aplikacija Sky Map za prikaz pravilnega neba potrebuje tri stvari: smer, v katero je obrnjen vaš telefon, vašo lokacijo in trenutni čas. Če je videti, da je zemljevid napačen, je ena od teh stvari verjetno napačna.</p>
+<p>• <b>Kompas (najpogostejši vzrok):</b> To je težava s strojno opremo vašega telefona in ne hrošč v aplikaciji Sky Map. Kretnja umerjanja v obliki številke 8 zahteva, da telefon interno ponastavi tipalo kompasa, vendar <i>umerjen kompas ni nujno tudi natančen</i>. Če ste v bližini kovinskega predmeta, armaturne plošče avtomobila ali magnetnega ovitka za telefon, je lahko zemljevid napačen tudi po umerjanju. Premaknite se na odprto območje in ponovite kretnjo v obliki številke 8.<br/>
+• <b>Lokacija:</b> Dovoljenje za lokacijo dodelite prek možnosti <b>Nastavitve aplikacije → Dovoljenja</b>. Preverite stran z diagnostiko (<b>Nastavitve → Diagnostika</b>), da potrdite svoje koordinate. Značilen znak manjkajoče lokacije je, da je Severnica vidna neposredno nad glavo.<br/>
+• <b>Čas:</b> Manj pogosto, vendar napačen časovni pas premakne celotno nebo. Preverite stran z diagnostiko (<b>Nastavitve → Diagnostika</b>), da potrdite, ali sta čas in časovni pas vaše naprave pravilna.</p>
 <h3>Zemljevid trese</h3>
 <p>
-• Če vaš telefon nima žiroskopa, v nastavitvah tipal vklopite <b>Uporabi prejšnja tipala</b><br/>
-• Prilagodite <b>Hitrost tipal</b> in <b>Dušenje</b> pod <b>Nastavitve → Nastavitve tipal (za strokovnjake)</b>
-(prikazano, ko je vklopljena možnost <b>Uporabi prejšnja tipala</b>)</p>
-<p>Za popolne podrobnosti o odpravljanju težav si oglejte spletni vodnik za <a href="https://ts.stardroid.app">odpravljanje težav</a>.</p>
-<p>Če se še vedno zatikate, nam pišite na <a href="mailto:skymapdevs@gmail.com">skymapdevs@gmail.com</a> – posnetek zaslona vaše strani z diagnostiko je zelo v pomoč.</p>]]></string>
+• Preverite <b>Nastavitve → Tipala</b> – če je vklopljena možnost <b>Uporabi starejšo strojno opremo senzorjev</b>, jo poskusite izklopiti<br/>
+• <b>Gladko premikanje tipal</b> je nova možnost, ki je privzeto vklopljena, medtem ko zbiramo povratne informacije; povečajte <b>Stabilnost</b>, dokler se pogled ne ustavi, ko telefon mirno držite, nato pa povečajte <b>Hitrost izklopa pri premikanju</b>, če se premikanje zdi prepočasno<br/>
+• Gladko premikanje tipal lahko v istem razdelku ponovno izklopite, če raje uporabljate surovo tipalo, medtem ko poteka uglaševanje</p>
+<p>Za podrobnosti o odpravljanju težav si oglejte spletni vodnik za <a href="https://ts.stardroid.app">odpravljanje težav</a>.</p>
+<p>Če se še vedno zataknete, nam pišite na <a href="mailto:skymapdevs@gmail.com">skymapdevs@gmail.com</a> – posnetek zaslona vaše strani z diagnostiko je zelo v pomoč.</p>]]></string>
 
     <string name="help_pointer_mode" translation_description="Help section: pointer mode for telescope users. Please do not change the markup"><![CDATA[<h2>Uporabniki teleskopov – način kazalca</h2>
-<p>V meniju <b>Nastavitve → Nastavitve senzorjev</b> spremenite <b>Smer prikaza</b> v <b>Način kazalca</b>. V tem načinu Sky Map prikazuje, kam kaže <i>daljši rob</i> telefona, in ne tisto, kamor je usmerjen zaslon.</p>
+<p>V meniju <b>Nastavitve → Senzorji</b> spremenite <b>Smer prikaza</b> v <b>Način kazalca</b>. V tem načinu Sky Map prikazuje, kam kaže <i>dolgi rob</i> telefona, in ne tisto, kamor je usmerjen zaslon.</p>
 <p>To vam omogoča, da telefon namestite ob stran cevi teleskopa, tako da je zaslon pravokoten na cev, medtem ko zemljevid še vedno sledi temu, kam je usmerjen teleskop.</p>]]></string>
 </resources>
