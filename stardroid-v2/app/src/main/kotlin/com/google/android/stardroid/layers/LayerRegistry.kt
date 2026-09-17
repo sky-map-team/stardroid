@@ -30,9 +30,10 @@ class LayerRegistry(
 ) {
     companion object {
         /**
-         * The eight current layers in toggle-UI display order. Static so the toggle UI can
-         * enumerate ids before the catalog DB has opened; [create] builds the matching
-         * instances. Comets and the sky-gradient render state are later slices (D37).
+         * The current layers in toggle-UI display order (count deliberately not stated here —
+         * it drifted stale twice as layers were added; check `.size` if you need it). Static so
+         * the toggle UI can enumerate ids before the catalog DB has opened; [create] builds the
+         * matching instances. Comets and the sky-gradient render state are later slices (D37).
          */
         val TOGGLEABLE_IDS: List<LayerId> =
             listOf(
