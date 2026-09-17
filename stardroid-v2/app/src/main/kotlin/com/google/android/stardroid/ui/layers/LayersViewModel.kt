@@ -106,7 +106,11 @@ class LayersViewModel(
     val toggles: StateFlow<List<LayerToggle>> =
         combine(
             combine(
-                toggleableIds.map { id -> settings.layerEnabled(id).map { LayerToggle(id, it) } },
+                toggleableIds.map { id ->
+                    settings.layerEnabled(id, LayerRegistry.defaultEnabled(id)).map {
+                        LayerToggle(id, it)
+                    }
+                },
             ) { it.toList() },
             satelliteStatus,
         ) { rows, status ->
@@ -120,7 +124,7 @@ class LayersViewModel(
         }.stateIn(
             viewModelScope,
             SharingStarted.Eagerly,
-            toggleableIds.map { LayerToggle(it, enabled = true) },
+            toggleableIds.map { LayerToggle(it, enabled = LayerRegistry.defaultEnabled(it)) },
         )
 
     /**

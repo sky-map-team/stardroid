@@ -54,6 +54,7 @@ import com.google.android.stardroid.astronomy.MeeusEphemeris
 import com.google.android.stardroid.camera.SkyCameraPreview
 import com.google.android.stardroid.catalog.CelestialObjectId
 import com.google.android.stardroid.data.satellites.RefreshResult
+import com.google.android.stardroid.layers.LayerRegistry
 import com.google.android.stardroid.locale.LocaleSource
 import com.google.android.stardroid.location.AndroidGeocoding
 import com.google.android.stardroid.location.LocationController
@@ -440,7 +441,9 @@ class MainActivity : ComponentActivity() {
                     binder.bindCamera(this, mapViewModel.camera)
                     binder.bindRenderState(this, mapViewModel.renderState)
                     for (layer in layers) {
-                        binder.bindLayer(this, layer, settings::layerEnabled)
+                        binder.bindLayer(this, layer) {
+                            settings.layerEnabled(it, LayerRegistry.defaultEnabled(it))
+                        }
                     }
                 }
             } catch (e: Exception) {

@@ -35,9 +35,13 @@ import kotlin.math.sin
 
 /**
  * The local horizon, ported from v1's `HorizonLayer` (after upstream #924): the great circle
- * through the cardinal points, a soft additive glow just below it, plus zenith/nadir and
- * cardinal-direction labels, all derived from [SkyModel.localFrame] (true north — magnetic
- * declination plays no part here).
+ * through the cardinal points, a soft additive glow just below it, plus cardinal-direction
+ * labels, all derived from [SkyModel.localFrame] (true north — magnetic declination plays no
+ * part here).
+ *
+ * Zenith/nadir labels moved to [AltAzGridLayer] (#1022): they are that layer's coordinate-system
+ * poles, not part of the horizon itself, and only show when the (off-by-default) alt/az grid is
+ * enabled.
  *
  * The horizon drifts through celestial coordinates as the Earth turns (~0.25°/min), so the scene
  * recomputes on each [clock] emission — the caller picks the tick rate, and time travel
@@ -69,7 +73,6 @@ class HorizonLayer(
         val south = -frame.trueNorth
         val east = frame.trueEast
         val west = -frame.trueEast
-        val zenith = frame.up
         val nadir = -frame.up
 
         val horizon =
@@ -80,8 +83,6 @@ class HorizonLayer(
             )
         val labels =
             listOf(
-                label(zenith, strings.zenith),
-                label(nadir, strings.nadir),
                 label(north, strings.north),
                 label(south, strings.south),
                 label(east, strings.east),

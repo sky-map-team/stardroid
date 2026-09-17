@@ -44,8 +44,20 @@ class LayerRegistry(
                 GridLayer.LAYER_ID,
                 HorizonLayer.LAYER_ID,
                 EclipticLayer.LAYER_ID,
+                AltAzGridLayer.LAYER_ID,
                 SatelliteLayer.LAYER_ID,
             )
+
+        /**
+         * Layers that ship off until the user opts in, unlike every other layer's visible-by-
+         * default (#1022): the alt/az grid is a niche aid for naked-eye/manual-mount observers,
+         * not something to surface unasked. [Settings.layerEnabled]'s own default stays `true`;
+         * callers resolve a layer's actual default through [defaultEnabled].
+         */
+        private val DEFAULT_DISABLED_IDS: Set<LayerId> = setOf(AltAzGridLayer.LAYER_ID)
+
+        /** Whether [id] should be visible the first time a user ever sees it. */
+        fun defaultEnabled(id: LayerId): Boolean = id !in DEFAULT_DISABLED_IDS
 
         /**
          * The toggle rows to show, with satellites present only when [Experiment.SATELLITES] is on
@@ -71,7 +83,8 @@ class LayerRegistry(
          */
         val PARAMETERS: List<Pair<LayerId, LayerParameter>> =
             SolarSystemLayer.PARAMETERS.map { SolarSystemLayer.LAYER_ID to it } +
-                SatelliteLayer.PARAMETERS.map { SatelliteLayer.LAYER_ID to it }
+                SatelliteLayer.PARAMETERS.map { SatelliteLayer.LAYER_ID to it } +
+                AltAzGridLayer.PARAMETERS.map { AltAzGridLayer.LAYER_ID to it }
 
         /**
          * Wires every layer to its declared dependencies — no shared context bundle. [settings]
@@ -100,6 +113,7 @@ class LayerRegistry(
                         GridLayer(strings),
                         EclipticLayer(strings),
                         HorizonLayer(clock, location, strings),
+                        AltAzGridLayer.create(clock, location, strings, settings),
                         SolarSystemLayer.create(
                             ephemeris,
                             clock,

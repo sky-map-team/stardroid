@@ -21,9 +21,15 @@ import kotlinx.coroutines.flow.MutableStateFlow
 class FakeSettings : Settings {
     private val layers = mutableMapOf<LayerId, MutableStateFlow<Boolean>>()
 
-    private fun layerFlow(id: LayerId) = layers.getOrPut(id) { MutableStateFlow(true) }
+    private fun layerFlow(
+        id: LayerId,
+        default: Boolean = true,
+    ) = layers.getOrPut(id) { MutableStateFlow(default) }
 
-    override fun layerEnabled(id: LayerId): Flow<Boolean> = layerFlow(id)
+    override fun layerEnabled(
+        id: LayerId,
+        default: Boolean,
+    ): Flow<Boolean> = layerFlow(id, default)
 
     override suspend fun setLayerEnabled(
         id: LayerId,

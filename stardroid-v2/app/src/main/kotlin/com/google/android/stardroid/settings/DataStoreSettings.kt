@@ -34,7 +34,10 @@ class DataStoreSettings(
     satelliteDataDefault: Boolean = true,
     smoothingEnabledDefault: Boolean = false,
 ) : Settings {
-    override fun layerEnabled(id: LayerId): Flow<Boolean> = boolean(layerKey(id), default = true)
+    override fun layerEnabled(
+        id: LayerId,
+        default: Boolean,
+    ): Flow<Boolean> = boolean(layerKey(id), default)
 
     override suspend fun setLayerEnabled(
         id: LayerId,
