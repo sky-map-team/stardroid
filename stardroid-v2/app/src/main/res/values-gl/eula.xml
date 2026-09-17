@@ -29,10 +29,10 @@
     -->
     <string name="permissions_notice" translation_description="Legally-required disclosure of the device permissions the app requests, why it requests them, and the user\'s right to refuse the optional ones. Shown on the first-launch terms screen and in Help. Please do not change the markup"><![CDATA[
 <h2>Permisos</h2>
-<p><b>Cada permiso a continuación é opcional; podes rexeitar calquera deles e seguir usando a aplicación. Sky Map nunca solicita permisos ao iniciar: cada permiso só se solicita cando usas por primeira vez a función que o necesita e podes conceder ou revogar cada un individualmente en calquera momento en <b>Configuración → Aplicacións → Sky Map → Permisos</b> no teu dispositivo.</p>
+<p><b>Sky Map non ten ningún permiso obrigatorio.</b>Cada permiso a continuación é opcional; podes rexeitar calquera deles e seguir usando a aplicación. Sky Map nunca solicita permisos ao iniciar: cada permiso só se solicita cando usas por primeira vez a función que o necesita e podes conceder ou revogar cada un individualmente en calquera momento en <b>Configuración → Aplicacións → Sky Map → Permisos</b> no teu dispositivo.</p>
 <h3>Localización — opcional</h3>
 <p><b>A que se accede:</b> a túa localización aproximada.</p>
-<p><b>Why:</b> Por que as estrelas que hai enriba de ti dependen de onde te atopes, polo que Sky Map usa a túa localización aproximada para debuxar o ceo correcto.</p>
+<p><b>Por que:</b> Por que as estrelas que hai enriba de ti dependen de onde te atopes, polo que Sky Map usa a túa localización aproximada para debuxar o ceo correcto.</p>
 <p><b>Se o negas:</b> podes introducir un nome de lugar ou unhas coordenadas, e toda a aplicación seguirá funcionando.</p>
 <blockquote>A túa localización úsase no teu dispositivo para debuxar o ceo. Nunca se nos envía.</blockquote>
 <h3>Cámara — opcional</h3>
@@ -40,7 +40,7 @@
 <p><b>Por que:</b> o modo a través da cámara debuxa o ceo sobre a vista da cámara en directo, para que poidas comparar a mapa co que estás a ver realmente.</p>
 <p><b>Se se rexeita:</b> todos os demais modos funcionan con normalidade.</p>
 <blockquote>Sky Map nunca grava a vista da cámara nin nola envía. Debúxase na pantalla e logo descártase, a menos que compartas unha imaxe: ao escoller un deseño de realidade aumentada na folla de compartir, gárdase esa imaxe no teu dispositivo e envíase á aplicación que escolliches. Non se comparte nada ata que o solicites.</blockquote>
-<h3>Notificacións: — opcional</h3>
+<h3>Notificacións — opcional</h3>
 <p><b>A que se accede:</b> Permiso para mostrar notificacións.</p>
 <p><b>Por que:</b> Para informarte sobre os picos da chuvia de meteoros e o que paga a pena ver esta noite, se o solicitas.</p>
 <p><b>Se rexeitas:</b> Non cambia nada máis; estas notificacións permanecen desactivadas ata que as actives.</p>
