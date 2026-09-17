@@ -441,9 +441,7 @@ class MainActivity : ComponentActivity() {
                     binder.bindCamera(this, mapViewModel.camera)
                     binder.bindRenderState(this, mapViewModel.renderState)
                     for (layer in layers) {
-                        binder.bindLayer(this, layer) {
-                            settings.layerEnabled(it, LayerRegistry.defaultEnabled(it))
-                        }
+                        binder.bindLayer(this, layer) { LayerRegistry.layerEnabled(settings, it) }
                     }
                 }
             } catch (e: Exception) {

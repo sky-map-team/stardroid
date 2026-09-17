@@ -60,6 +60,17 @@ class LayerRegistry(
         fun defaultEnabled(id: LayerId): Boolean = id !in DEFAULT_DISABLED_IDS
 
         /**
+         * [Settings.layerEnabled] resolved with this layer's own default (#1038 review):
+         * centralizes the `settings.layerEnabled(id, defaultEnabled(id))` pairing so a caller
+         * can't forget the default and silently fall back to [Settings.layerEnabled]'s own
+         * (always-`true`) one.
+         */
+        fun layerEnabled(
+            settings: Settings,
+            id: LayerId,
+        ): Flow<Boolean> = settings.layerEnabled(id, defaultEnabled(id))
+
+        /**
          * The toggle rows to show, with satellites present only when [Experiment.SATELLITES] is on
          * (D92).
          *

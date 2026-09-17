@@ -91,7 +91,10 @@ class AltAzGridLayer(
             CIRCLE_VERTEX_COUNTS[density] ?: CIRCLE_VERTEX_COUNTS.getValue(DEFAULT_DENSITY)
         // Azimuth 0/90/180/270 always fall among the generated lines for every supported count
         // (each divides 360 into a multiple of 4), so skipping every azCount/4-th index skips
-        // exactly the cardinal directions.
+        // exactly the cardinal directions. Enforced rather than merely commented (#1038 review):
+        // a future density option that isn't a multiple of 4 would otherwise silently mislabel a
+        // non-cardinal direction instead of failing loudly.
+        require(azCount % 4 == 0) { "azCount must be a multiple of 4 to align with N/E/S/W" }
         val cardinalStride = azCount / 4
 
         val lines = ArrayList<LinePrimitive>(azCount + 2 * (altLineCount - 1))

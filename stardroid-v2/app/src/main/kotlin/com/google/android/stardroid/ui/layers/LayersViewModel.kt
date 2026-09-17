@@ -107,9 +107,7 @@ class LayersViewModel(
         combine(
             combine(
                 toggleableIds.map { id ->
-                    settings.layerEnabled(id, LayerRegistry.defaultEnabled(id)).map {
-                        LayerToggle(id, it)
-                    }
+                    LayerRegistry.layerEnabled(settings, id).map { LayerToggle(id, it) }
                 },
             ) { it.toList() },
             satelliteStatus,
