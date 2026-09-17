@@ -8,11 +8,12 @@ platform :android do
   # end-to-end via `bundle exec fastlane` against app/build.gradle.kts.
   GRADLE_FILE = "app/build.gradle.kts"
 
-  # v2 is minSdk 29, but the Play listing is shared with v1 (minSdk 26), so a v2 upload
-  # must keep the older v1 bundles active or devices that cannot install v2 are left with
-  # nothing. Play serves each device the highest version code it is eligible for, so these
-  # are what pre-29 devices receive:
-  #   1708 — v1 1.18.1:Eclipse, the last v1 release and the permanent build for API 26–28
+  # v2 is minSdk 28 (Android 9 is best-effort only — D9 — but still installable), while the
+  # Play listing is shared with v1 (minSdk 26), so a v2 upload must keep the older v1 bundles
+  # active or pre-28 devices that cannot install v2 are left with nothing. Play serves each
+  # device the highest version code it is eligible for, so these are what pre-28 devices
+  # receive:
+  #   1708 — v1 1.18.1:Eclipse, the last v1 release and the permanent build for API 26–27
   #   1115, 1202 — v1's own long-standing retention set for still older devices
   # Omitting these deactivates them; a v2 release must list every code it wants to survive.
   V1_VERSION_CODES_TO_RETAIN = [1115, 1202, 1708]

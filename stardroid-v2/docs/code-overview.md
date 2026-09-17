@@ -18,7 +18,8 @@ Sky Map v2 is a ground-up Kotlin rewrite of the v1 Java planetarium app: a full-
 sky map driven by device sensors, with catalog-backed and computed layers (stars, DSOs,
 constellations, solar system, meteor showers, grid/ecliptic/horizon), search, time travel,
 object info cards, a gallery, diagnostics, settings, onboarding, home-screen widgets, and
-notifications. Single-activity Jetpack Compose app, minSdk 29, targetSdk 36, two flavors
+notifications. Single-activity Jetpack Compose app, minSdk 28 (Android 9 best-effort only,
+see D9), targetSdk 36, two flavors
 (`gms` with Firebase/Play Services, `fdroid` fully FOSS).
 
 ### Where the moving parts are
@@ -86,7 +87,7 @@ Four plugins carry all shared build config (see build-and-tooling.md for rationa
 
 - `skymap.pure-kotlin` — `kotlin("jvm")` + ktlint + JUnit 5/Truth test stack, toolchain 17.
   Applying this plugin *is* the purity enforcement: no Android SDK on the classpath.
-- `skymap.android-library` / `skymap.android-app` — AGP config (compileSdk 36, minSdk 29),
+- `skymap.android-library` / `skymap.android-app` — AGP config (compileSdk 36, minSdk 28),
   the app variant adds Compose, KSP, Hilt (wired automatically), ktlint.
 - `skymap.android-room` — KSP + Room, checked-in schema JSON at `data/schemas/` (the exported
   schema's identity hash must match the generated DB for `createFromAsset` validation).

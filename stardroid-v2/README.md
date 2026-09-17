@@ -82,8 +82,9 @@ theme and the renderer at three dimming levels.
 
 ## Building
 
-JDK 17. Android SDK with compileSdk 36; **minSdk 29** — a deliberate raise over v1's 26, since
-sub-Android-10 devices are ~1.6% of installs and keep working v1 via in-place upgrade.
+JDK 17. Android SDK with compileSdk 36; **minSdk 28** (Android 9). Android 9 support is
+best-effort only and not officially supported — v1 remains the actively supported option for
+Android 9 and older; see D9 in [build-and-tooling.md](docs/design/build-and-tooling.md).
 
 Always specify a **flavor** — there is no plain `assembleDebug`:
 

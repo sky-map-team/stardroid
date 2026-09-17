@@ -155,7 +155,7 @@ fun CompassCalibrationScreen(
 }
 
 /**
- * v1 played `calib.gif` in a WebView to dodge pre-Pie animated-gif gaps; minSdk 29 lets
+ * v1 played `calib.gif` in a WebView to dodge pre-Pie animated-gif gaps; our minSdk (28) lets
  * [ImageDecoder] drive an [AnimatedImageDrawable] directly. Night mode red-multiplies the
  * frames like every other photograph (D46).
  */

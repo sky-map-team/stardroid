@@ -103,7 +103,8 @@ Atomic install sequence:
 1. Download the zip via `setDestinationInExternalFilesDir(context, null, "packs/<id>-<v>.zip")`
    (resumable; see Delivery), then move it into `cacheDir`. `DownloadManager` is a separate
    system process and writes to app-scoped *external* paths, not to internal `cacheDir`
-   directly; on minSdk 29 that path needs no storage permission, and the move is a rename
+   directly; app-scoped external storage has needed no storage permission since API 19, so
+   that path needs none at our minSdk either, and the move is a rename
    when both live on the same volume, a stream-copy otherwise. If external storage is
    unavailable (`getExternalFilesDir` returns null — removable media ejected), the install
    fails cleanly and is retried later rather than falling back to a permissioned path.

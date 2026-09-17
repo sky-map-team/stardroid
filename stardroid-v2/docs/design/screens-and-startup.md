@@ -81,7 +81,7 @@ correction, roadmap) will extend this screen — keep its ViewModel separate fro
 
 *Status (D72)*: implemented as a full-screen overlay; the monitor ported as a cold prompt
 flow the map collects, and the figure-eight gif plays via `ImageDecoder` instead of v1's
-WebView wrapper (minSdk 29).
+WebView wrapper (`ImageDecoder` shipped in API 28, within our minSdk).
 
 ## Gallery
 

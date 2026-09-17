@@ -10,7 +10,9 @@ plugins {
 extensions.configure<LibraryExtension> {
     compileSdk = 36
     defaultConfig {
-        minSdk = 29
+        // See skymap.android-app.gradle.kts: 28 is best-effort (D9, revised), not a supported
+        // floor. Code may assume API 29+ without guards.
+        minSdk = 28
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17

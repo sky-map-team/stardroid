@@ -153,7 +153,7 @@ object SkyShare {
     }
 
     /**
-     * The GL plane as a bitmap ([PixelCopy] — fine at minSdk 29), or null on failure,
+     * The GL plane as a bitmap ([PixelCopy] — available since API 24, fine at our minSdk), or null on failure,
      * downsampled to [MAX_SHARE_EDGE_PX].
      */
     suspend fun captureMap(view: GLSurfaceView): Bitmap? {
