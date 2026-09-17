@@ -318,7 +318,7 @@
     <string name="settings_font_size_extra_large" translation_description="Largest font size">Extra grande</string>
     <string name="settings_auto_dimness" translation_description="Preference title: mode for automatically dimming the screen when night mode is selected">Atenuación automática</string>
     <string name="settings_auto_dimness_summary" translation_description="Summary for the night-mode screen dimming preference">Canto atenúa a pantalla o modo nocturno</string>
-    <string name="settings_auto_dimness_system" translation_description="Screen dimming option: leave brightness on the system setting">Predeterminado do sistem</string>
+    <string name="settings_auto_dimness_system" translation_description="Screen dimming option: leave brightness on the system setting">Predeterminado do sistema</string>
     <string name="settings_auto_dimness_dim" translation_description="Screen dimming option: dimmest screen setting">Moi tenue</string>
     <string name="settings_auto_dimness_classic" translation_description="Screen dimming option: the hand-tuned brightness Sky Map used for its first 15 years">Clásico</string>
     <string name="settings_sky_gradient" translation_description="Setting toggle title: whether to show the blue sky gradient during the day">Amosar gradiente do ceo</string>
@@ -424,11 +424,11 @@ Móvete a unha área aberta lonxe de obxectos metálicos e téntao de novo.
     <string name="calibration_what_to_do_user"
         translation_description="Information for the user on how to calibrate the compass when they open the calibration screen. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[
 O teu teléfono está informando do seu estado de calibración do compás como se amosa arriba.<br/><br/>
-Se é necesario, realiza o movemento en forma de oito (<a href="%s">watch a demonstration</a>) para co soporte físico do teu teléfono recalibre o seu sensor de compás.<br/><br/>
+Se é necesario, realiza o movemento en forma de oito (<a href="%s">ver unha demostración</a>) para co soporte físico do teu teléfono recalibre o seu sensor de compás.<br/><br/>
 <blockquote><b>Importante:</b> a calibración axuda ao sensor a reiniciarse internamente. Non significa co compás sexa necesariamente preciso!<br/>A interferencia magnética local (obxectos metálicos, salpicadeiros de coches, fundas de teléfono) aínda pode facer co compás do teu teléfono envíe lecturas imprecisas a Sky Map.</blockquote>
 <b>Se o mapa non mostra as posicións correctamente, o problema é probablemente o teu teléfono, non Sky Map!</b>
     ]]></string>
-    <string name="calibration_low_accuracy_toast" translation_description="Brief toast shown when compass accuracy is low and the user has disabled the calibration screen">O compás do teu teléfono está reportando baixa precisióny</string>
+    <string name="calibration_low_accuracy_toast" translation_description="Brief toast shown when compass accuracy is low and the user has disabled the calibration screen">O compás do teu teléfono está reportando baixa precisión</string>
     <string name="calibration_complete_toast" translation_description="Toast shown when the compass reaches high accuracy and the auto-opened calibration screen closes itself">Sensores con alta precisión</string>
 
     <!-- Startup routing: EULA, warm welcome, What's New (slice 16) -->
