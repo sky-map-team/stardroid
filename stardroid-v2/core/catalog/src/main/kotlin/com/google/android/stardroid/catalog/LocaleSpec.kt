@@ -24,6 +24,14 @@ class LocaleSpec(requestedTag: String) {
      * English and the universal locale. Subtags are stripped from the right one at a time, so
      * multi-segment tags visit every parent: `"pt-BR"` → `["pt-br", "pt", "en", ""]`,
      * `"zh-Hans-CN"` → `["zh-hans-cn", "zh-hans", "zh", "en", ""]`.
+     *
+     * Chinese catalog data is split by script (`zh-hans` / `zh-hant`), not by region, but many
+     * devices report a region-only tag with no script subtag — `zh-TW`, `zh-CN` — where Android's
+     * own resource system infers the script from the region (via ICU's likely-subtags) but a
+     * plain right-to-left strip never would. So a `zh` tag without an explicit script gets the
+     * region's implied script (`tw`/`hk`/`mo` → `zh-hant`, anything else, including no region →
+     * `zh-hans`, CLDR's default) inserted just ahead of the bare `"zh"` fallback: `"zh-TW"` →
+     * `["zh-tw", "zh-hant", "zh", "en", ""]`.
      */
     val fallbackChain: List<String> =
         buildList {
@@ -34,7 +42,7 @@ class LocaleSpec(requestedTag: String) {
             }
             add("en")
             add("")
-        }.distinct()
+        }.withImpliedChineseScript(tag).distinct()
 
     override fun equals(other: Any?): Boolean = other is LocaleSpec && tag == other.tag
 
@@ -44,5 +52,26 @@ class LocaleSpec(requestedTag: String) {
 
     companion object {
         val ENGLISH = LocaleSpec("en")
+
+        /** Regions whose implied Han script is Traditional rather than the CLDR default. */
+        private val TRADITIONAL_REGIONS = setOf("tw", "hk", "mo")
+
+        /**
+         * The `zh-hant`/`zh-hans` [tag] implies, or `null` if it isn't Chinese or already names
+         * a script.
+         */
+        private fun impliedChineseScript(tag: String): String? {
+            if (tag != "zh" && !tag.startsWith("zh-")) return null
+            if (tag.contains("-hans") || tag.contains("-hant")) return null
+            val region = tag.removePrefix("zh").removePrefix("-").substringBefore('-')
+            return if (region in TRADITIONAL_REGIONS) "zh-hant" else "zh-hans"
+        }
+
+        /** Inserts the script [tag] implies just ahead of the bare `"zh"` entry, if present. */
+        private fun List<String>.withImpliedChineseScript(tag: String): List<String> {
+            val zhIndex = indexOf("zh")
+            val script = if (zhIndex >= 0) impliedChineseScript(tag) else null
+            return if (script == null) this else toMutableList().apply { add(zhIndex, script) }
+        }
     }
 }
