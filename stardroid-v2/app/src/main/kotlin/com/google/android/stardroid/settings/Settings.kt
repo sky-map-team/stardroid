@@ -76,8 +76,15 @@ enum class OneEuroEaseOff {
  * SharedPreferences are deliberately not migrated (D1).
  */
 interface Settings {
-    /** Whether [id]'s layer is drawn. Layers default to visible, as in v1. */
-    fun layerEnabled(id: LayerId): Flow<Boolean>
+    /**
+     * Whether [id]'s layer is drawn. Layers default to visible, as in v1, except where the
+     * caller passes [default] `false` for a layer that should start off (e.g.
+     * `LayerRegistry.defaultEnabled`, #1022).
+     */
+    fun layerEnabled(
+        id: LayerId,
+        default: Boolean = true,
+    ): Flow<Boolean>
 
     suspend fun setLayerEnabled(
         id: LayerId,

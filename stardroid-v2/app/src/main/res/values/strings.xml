@@ -63,6 +63,13 @@
     <string name="layer_param_pass_alerts_description" translation_description="Explains what the pass-alert setting does: a single notification before the best visible pass of the night.">Notify me before the best visible pass each night</string>
     <string name="layer_param_eclipse_alerts" translation_description="Label for the setting that turns on a notification before a lunar eclipse begins.">Eclipse alerts</string>
     <string name="layer_param_eclipse_alerts_description" translation_description="Explains what the eclipse-alert setting does: a single notification before a lunar eclipse starts.">Notify me before a lunar eclipse starts</string>
+    <string name="layer_param_altaz_grid_density" translation_description="Label for the alt/az grid's line-count setting.">Line count</string>
+    <string name="layer_param_altaz_grid_density_coarse" translation_description="Option label for the alt/az grid's sparsest setting: 8 azimuth lines, 45 degrees apart.">Coarse</string>
+    <string name="layer_param_altaz_grid_density_coarse_desc" translation_description="Explains the coarse alt/az grid density: 8 azimuth lines, matching the 8 compass points.">8 direction lines, matching the compass rose</string>
+    <string name="layer_param_altaz_grid_density_medium" translation_description="Option label for the alt/az grid's default setting: 12 azimuth lines, 30 degrees apart.">Medium</string>
+    <string name="layer_param_altaz_grid_density_medium_desc" translation_description="Explains the medium alt/az grid density: 12 azimuth lines, 30 degrees apart.">12 direction lines, 30° apart</string>
+    <string name="layer_param_altaz_grid_density_fine" translation_description="Option label for the alt/az grid's densest setting: 24 azimuth lines, 15 degrees apart.">Fine</string>
+    <string name="layer_param_altaz_grid_density_fine_desc" translation_description="Explains the fine alt/az grid density: 24 azimuth lines, matching the celestial grid's meridian count.">24 direction lines, matching the celestial grid</string>
     <string name="satellite_description" translation_description="Short description shown on the info card for an artificial satellite.">An artificial satellite in low Earth orbit, sunlit against a dark sky. It crosses from horizon to horizon in a few minutes, moving steadily and without blinking.</string>
     <string name="satellite_next_pass" translation_description="Heading above the next visible pass details on a satellite\'s info card.">Next visible pass</string>
     <string name="satellite_pass_when" translation_description="When and how high the next satellite pass will be. %1$s is a time, %2$s is a compass direction, %3$d is an angle in degrees.">%1$s, rising %2$s, reaching %3$d°</string>
@@ -86,6 +93,7 @@
     <string name="layer_grid" translation_description="Toggle label for the layer showing the right ascension / declination grid.">Celestial grid</string>
     <string name="layer_horizon" translation_description="Toggle label for the layer showing the horizon line and compass points.">Horizon</string>
     <string name="layer_ecliptic" translation_description="Toggle label for the layer showing the ecliptic line.">Ecliptic</string>
+    <string name="layer_altaz_grid" translation_description="Toggle label for the layer showing the altitude/azimuth (horizontal) coordinate grid, for naked-eye or manual alt-az mount observers.">Alt/Az grid</string>
     <string name="layer_sky_gradient" translation_description="Toggle label for the daytime sky-brightness gradient drawn behind the sky map.">Sky gradient</string>
 
     <!-- Map screen controls. -->

@@ -41,14 +41,16 @@ class LayersViewModelTest {
     }
 
     @Test
-    fun `all layers default to enabled in registry order`() =
+    fun `layers default to enabled in registry order, except those the registry defaults off`() =
         runTest(dispatcher.scheduler) {
             val vm = LayersViewModel(settings, satellitesEnabled = false)
             runCurrent()
             assertThat(vm.toggles.value.map { it.id })
                 .containsExactlyElementsIn(LayerRegistry.toggleableIds(satellitesEnabled = false))
                 .inOrder()
-            assertThat(vm.toggles.value.all { it.enabled }).isTrue()
+            for (toggle in vm.toggles.value) {
+                assertThat(toggle.enabled).isEqualTo(LayerRegistry.defaultEnabled(toggle.id))
+            }
         }
 
     @Test
@@ -60,7 +62,12 @@ class LayersViewModelTest {
             runCurrent()
             val stars = vm.toggles.value.single { it.id == CatalogLayers.STARS_LAYER_ID }
             assertThat(stars.enabled).isFalse()
-            assertThat(vm.toggles.value.count { !it.enabled }).isEqualTo(1)
+            // The explicit disable, plus every layer that defaults off on its own.
+            val expectedDisabled =
+                1 + LayerRegistry.toggleableIds(satellitesEnabled = false).count {
+                    !LayerRegistry.defaultEnabled(it)
+                }
+            assertThat(vm.toggles.value.count { !it.enabled }).isEqualTo(expectedDisabled)
         }
 
     @Test

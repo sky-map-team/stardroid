@@ -64,10 +64,9 @@ class HorizonLayerTest {
             assertThat(horizon.widthDp).isEqualTo(2.5)
 
             val byText = scene.labels.associateBy { it.text }
-            assertThat(byText.keys)
-                .containsExactly("ZENITH", "NADIR", "NORTH", "SOUTH", "EAST", "WEST")
-            assertThat(byText.getValue("ZENITH").pos).isEqualTo(frame.up)
-            assertThat(byText.getValue("NADIR").pos).isEqualTo(-frame.up)
+            // Zenith/nadir moved to AltAzGridLayer (#1022): this layer only labels the compass
+            // points now.
+            assertThat(byText.keys).containsExactly("NORTH", "SOUTH", "EAST", "WEST")
             assertThat(byText.getValue("NORTH").pos).isEqualTo(frame.trueNorth)
             assertThat(byText.getValue("NORTH").style.color).isEqualTo(SkyColors.HORIZON_LABEL)
         }

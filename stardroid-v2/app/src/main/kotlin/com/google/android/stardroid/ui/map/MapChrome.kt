@@ -108,6 +108,7 @@ import androidx.compose.ui.unit.dp
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.google.android.stardroid.R
+import com.google.android.stardroid.layers.AltAzGridLayer
 import com.google.android.stardroid.layers.CatalogLayers
 import com.google.android.stardroid.layers.EclipticLayer
 import com.google.android.stardroid.layers.GridLayer
@@ -954,6 +955,10 @@ fun LayersSheet(
                     label = layerName(toggle.id),
                     checked = toggle.enabled,
                     onCheckedChange = { layersViewModel.setEnabled(toggle.id, it) },
+                    parameters = parameters.filter { it.id == toggle.id },
+                    onParameterChange = { key, option ->
+                        layersViewModel.setParameter(toggle.id, key, option)
+                    },
                 )
             }
             LayerGroupHeader(R.string.layers_group_display)
@@ -1209,6 +1214,7 @@ private fun parameterLabel(key: String): Int =
         LayerParameter.DISC_SIZE -> R.string.layer_param_disc_size
         LayerParameter.PASS_ALERTS -> R.string.layer_param_pass_alerts
         LayerParameter.ECLIPSE_ALERTS -> R.string.layer_param_eclipse_alerts
+        LayerParameter.ALTAZ_GRID_DENSITY -> R.string.layer_param_altaz_grid_density
         else -> R.string.layer_param_disc_size
     }
 
@@ -1226,7 +1232,10 @@ private fun parameterOptionLabel(option: String): Int =
     when (option) {
         LayerParameter.DISC_SIZE_TRUE -> R.string.layer_param_disc_size_true
         LayerParameter.DISC_SIZE_GLYPHS -> R.string.layer_param_disc_size_glyphs
-        else -> R.string.layer_param_disc_size_auto
+        LayerParameter.DISC_SIZE_AUTO -> R.string.layer_param_disc_size_auto
+        LayerParameter.ALTAZ_GRID_DENSITY_COARSE -> R.string.layer_param_altaz_grid_density_coarse
+        LayerParameter.ALTAZ_GRID_DENSITY_MEDIUM -> R.string.layer_param_altaz_grid_density_medium
+        else -> R.string.layer_param_altaz_grid_density_fine
     }
 
 @StringRes
@@ -1234,7 +1243,12 @@ private fun parameterOptionDescription(option: String): Int =
     when (option) {
         LayerParameter.DISC_SIZE_TRUE -> R.string.layer_param_disc_size_true_desc
         LayerParameter.DISC_SIZE_GLYPHS -> R.string.layer_param_disc_size_glyphs_desc
-        else -> R.string.layer_param_disc_size_auto_desc
+        LayerParameter.DISC_SIZE_AUTO -> R.string.layer_param_disc_size_auto_desc
+        LayerParameter.ALTAZ_GRID_DENSITY_COARSE ->
+            R.string.layer_param_altaz_grid_density_coarse_desc
+        LayerParameter.ALTAZ_GRID_DENSITY_MEDIUM ->
+            R.string.layer_param_altaz_grid_density_medium_desc
+        else -> R.string.layer_param_altaz_grid_density_fine_desc
     }
 
 /** Core object layers — `always` in the rail (D56). */
@@ -1263,6 +1277,7 @@ private val REFERENCE_LAYER_IDS: Set<LayerId> =
         GridLayer.LAYER_ID,
         HorizonLayer.LAYER_ID,
         EclipticLayer.LAYER_ID,
+        AltAzGridLayer.LAYER_ID,
     )
 
 /** One rail slot: the 48 dp minimum touch target. */
@@ -1301,6 +1316,7 @@ private fun layerName(id: LayerId): Int =
         GridLayer.LAYER_ID -> R.string.layer_grid
         HorizonLayer.LAYER_ID -> R.string.layer_horizon
         EclipticLayer.LAYER_ID -> R.string.layer_ecliptic
+        AltAzGridLayer.LAYER_ID -> R.string.layer_altaz_grid
         else -> error("No display name for layer ${id.id}")
     }
 
@@ -1347,6 +1363,7 @@ private fun layerIcon(id: LayerId): Int =
         GridLayer.LAYER_ID -> R.drawable.ic_layer_grid
         HorizonLayer.LAYER_ID -> R.drawable.ic_layer_horizon
         EclipticLayer.LAYER_ID -> R.drawable.ic_layer_ecliptic
+        AltAzGridLayer.LAYER_ID -> R.drawable.ic_layer_altaz_grid
         else -> error("No icon for layer ${id.id}")
     }
 

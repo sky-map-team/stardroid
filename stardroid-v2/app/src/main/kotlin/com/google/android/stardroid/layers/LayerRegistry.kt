@@ -30,9 +30,10 @@ class LayerRegistry(
 ) {
     companion object {
         /**
-         * The eight current layers in toggle-UI display order. Static so the toggle UI can
-         * enumerate ids before the catalog DB has opened; [create] builds the matching
-         * instances. Comets and the sky-gradient render state are later slices (D37).
+         * The current layers in toggle-UI display order (count deliberately not stated here —
+         * it drifted stale twice as layers were added; check `.size` if you need it). Static so
+         * the toggle UI can enumerate ids before the catalog DB has opened; [create] builds the
+         * matching instances. Comets and the sky-gradient render state are later slices (D37).
          */
         val TOGGLEABLE_IDS: List<LayerId> =
             listOf(
@@ -44,8 +45,31 @@ class LayerRegistry(
                 GridLayer.LAYER_ID,
                 HorizonLayer.LAYER_ID,
                 EclipticLayer.LAYER_ID,
+                AltAzGridLayer.LAYER_ID,
                 SatelliteLayer.LAYER_ID,
             )
+
+        /**
+         * Layers that ship off until the user opts in, unlike every other layer's visible-by-
+         * default (#1022): the alt/az grid is a niche aid for naked-eye/manual-mount observers,
+         * not something to surface unasked. [Settings.layerEnabled]'s own default stays `true`;
+         * callers resolve a layer's actual default through [defaultEnabled].
+         */
+        private val DEFAULT_DISABLED_IDS: Set<LayerId> = setOf(AltAzGridLayer.LAYER_ID)
+
+        /** Whether [id] should be visible the first time a user ever sees it. */
+        fun defaultEnabled(id: LayerId): Boolean = id !in DEFAULT_DISABLED_IDS
+
+        /**
+         * [Settings.layerEnabled] resolved with this layer's own default (#1038 review):
+         * centralizes the `settings.layerEnabled(id, defaultEnabled(id))` pairing so a caller
+         * can't forget the default and silently fall back to [Settings.layerEnabled]'s own
+         * (always-`true`) one.
+         */
+        fun layerEnabled(
+            settings: Settings,
+            id: LayerId,
+        ): Flow<Boolean> = settings.layerEnabled(id, defaultEnabled(id))
 
         /**
          * The toggle rows to show, with satellites present only when [Experiment.SATELLITES] is on
@@ -71,7 +95,8 @@ class LayerRegistry(
          */
         val PARAMETERS: List<Pair<LayerId, LayerParameter>> =
             SolarSystemLayer.PARAMETERS.map { SolarSystemLayer.LAYER_ID to it } +
-                SatelliteLayer.PARAMETERS.map { SatelliteLayer.LAYER_ID to it }
+                SatelliteLayer.PARAMETERS.map { SatelliteLayer.LAYER_ID to it } +
+                AltAzGridLayer.PARAMETERS.map { AltAzGridLayer.LAYER_ID to it }
 
         /**
          * Wires every layer to its declared dependencies — no shared context bundle. [settings]
@@ -100,6 +125,7 @@ class LayerRegistry(
                         GridLayer(strings),
                         EclipticLayer(strings),
                         HorizonLayer(clock, location, strings),
+                        AltAzGridLayer.create(clock, location, strings, settings),
                         SolarSystemLayer.create(
                             ephemeris,
                             clock,

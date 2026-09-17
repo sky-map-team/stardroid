@@ -123,5 +123,29 @@ sealed interface LayerParameter {
                 defaultOn = false,
                 requiresNotificationPermission = true,
             )
+
+        /** The alt/az grid's line-count choice (#1022). */
+        const val ALTAZ_GRID_DENSITY = "altaz_grid_density"
+
+        /** 8 azimuth lines, 45° apart — the compass-rose spacing. */
+        const val ALTAZ_GRID_DENSITY_COARSE = "8"
+
+        /** 12 azimuth lines, 30° apart — the default. */
+        const val ALTAZ_GRID_DENSITY_MEDIUM = "12"
+
+        /** 24 azimuth lines, 15° apart — matching the RA/Dec grid's meridian count. */
+        const val ALTAZ_GRID_DENSITY_FINE = "24"
+
+        val ALTAZ_GRID_DENSITY_PARAMETER =
+            Choice(
+                key = ALTAZ_GRID_DENSITY,
+                options =
+                    listOf(
+                        ALTAZ_GRID_DENSITY_COARSE,
+                        ALTAZ_GRID_DENSITY_MEDIUM,
+                        ALTAZ_GRID_DENSITY_FINE,
+                    ),
+                defaultOption = ALTAZ_GRID_DENSITY_MEDIUM,
+            )
     }
 }

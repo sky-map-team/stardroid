@@ -85,4 +85,13 @@ object SkyColors {
 
     /** Constellation name labels: the line color at the opacity v1 rendered. */
     val CONSTELLATION_LABEL = Rgba(0xb2 / 255f, 0x7c / 255f, 0xc9 / 255f, 1f)
+
+    /**
+     * Alt/az graticule lines (#1022): a muted steel gray-blue, distinct from [GRID_LINE]'s cyan
+     * so the two grids read as separate elements on the rare occasion both are enabled at once.
+     */
+    val ALTAZ_GRID_LINE = Rgba(0x8f / 255f, 0xa0 / 255f, 0xb3 / 255f, 0x20 / 255f)
+
+    /** Alt/az grid azimuth/altitude labels: the grid color at full opacity. */
+    val ALTAZ_GRID_LABEL = Rgba(0x8f / 255f, 0xa0 / 255f, 0xb3 / 255f, 1f)
 }
