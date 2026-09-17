@@ -25,7 +25,7 @@
 
     <string name="help_navigating" translation_description="Help section: navigating the sky, automatic and manual modes. Please do not change the markup"><![CDATA[
 <h2>Navegación polo ceo</h2>
-Toca a pantalla para que aparezan os controis e a pantalla frontal (arriba á dereita)..
+Toca a pantalla para que aparezan os controis e a pantalla frontal (arriba á dereita).
 <h3>Modo automático</h3>
 <p>No modo automático (predeterminado), Sky Map usa os sensores de compás, acelerómetro e xiroscopio do teu teléfono para mostrar o que hai na dirección na que apunta o teu teléfono. Simplemente move o teléfono e o mapa seguirache.</p>
 <p>Usa o xesto de dous dedos para achegar ou afastar o zoom.</p>
@@ -76,7 +76,7 @@ Na práctica, os obxectos que están directamente enriba aínda poden estar escu
 <p>• Unha fotografía ou gráfico do obxecto<br/>
 • Unha breve descrición e un dato curioso<br/>
 • Datos científicos como a distancia, o tamaño e o tipo de obxecto</p>
-<p>TToca a imaxe dentro da tarxeta para vela en pantalla completa. Pecha a tarxeta tocando fóra dela ou premendo <b>Atrás</b>.</p>
+<p>Toca a imaxe dentro da tarxeta para vela en pantalla completa. Pecha a tarxeta tocando fóra dela ou premendo <b>Atrás</b>.</p>
 <blockquote>Non todos os obxectos teñen tarxetas de información, pero estamos engadindo máis constantemente.</blockquote>
     ]]></string>
 
@@ -99,9 +99,9 @@ Na práctica, os obxectos que están directamente enriba aínda poden estar escu
 <h2>Viaxe no tempo</h2>
 <p>A viaxe no tempo permíteche ver o ceo en calquera momento desde o ano 1600 ata o 3000. Toca o botón <b>reloxo</b> (abaixo).</p>
 <br/>
-<p>Escolle un evento popular (eclipses, picos de chuvia de meteoros, a próxima lúa chea ou nova, conxuncións planetarias, a aterraxe do Apollo 11 e moito máis) da lista de eventos, configura a túa propia hora usando os botóns <b>Difinir data</b>
+<p>Escolle un evento popular (eclipses, picos de chuvia de meteoros, a próxima lúa chea ou nova, conxuncións planetarias, a aterraxe do Apollo 11 e moito máis) da lista de eventos, configura a túa propia hora usando os botóns <b>Definir data</b>
 e <b>Definir hora</b> ou toca \"Comezar agora\" se simplemente queres avanzar ou retroceder desde a hora actual.</p>
-<p>Unha vez no modo de viaxe no tempo Viaxe no tempo: a data móstrase na pantalla e os controis de reprodución permítenche moverte por ela tempo:</p>
+<p>Unha vez no modo de viaxe no tempo: a data amósase na pantalla e os controis de reprodución permítenche desprazarte polo tempo:</p>
 <p>• Toca <b>▶▶</b> (máis rápido) ou <b>◀◀</b> (máis lento) para axustar a velocidade de reprodución cara adiante ou cara atrás no tempo<br/>
 • Toca <b>❚❚</b> para pausar<br/>
 • Toca <b>Agora</b> para volver ao presente</p>
@@ -137,9 +137,9 @@ Usa o botón <b>Buscar</b> para localizar ese obxecto no ceo.</p>
 <h2>Configura a túa localización</h2>
 <p>Sky map necesita a túa aproximación localización para debuxar o ceo correctamente. Por defecto, usa os servizos de localización do teu dispositivo (rede móbil ou GPS).</p>
 <br/>
-<p>Se o acceso á localización non está dispoñible ou prefires configuralo manualmente,toca o botón Introducir a localización manualmente </b> e introduce un <b>nome de lugar</b> ou unha <b>latitude e lonxitude</b> en graos.</p>
+<p>Se o acceso á localización non está dispoñible ou prefires configuralo manualmente, toca o botón <b>Introducir a localización manualmente</b> e introduce un <b>nome de lugar</b> ou unha <b>latitude e lonxitude</b> en graos.</p>
 <blockquote>É necesario acceso a Internet para descodificar os nomes dos lugares.</blockquote>
-<p>Se previamente denegaches o permiso de localización de Sky Map, pode que teñas que volvelo activar en <b>Configuración da aplicación → Permisos</b> no teu dispositivo.</b>.</p>
+<p>Se previamente denegaches o permiso de localización de Sky Map, pode que teñas que volvelo activar en <b>Configuración da aplicación → Permisos</b> no teu dispositivo.</p>
 <blockquote>Se non concedes acceso, Sky Map asumirá que estás en (0, 90): o Polo Norte!</blockquote>
     ]]></string>
 
@@ -189,14 +189,14 @@ Se o mapa do ceo ten un aspecto incorrecto, case sempre é un problema de hardwa
 <h3>O mapa apunta na dirección incorrecta ou é impreciso</h3>
 <p>Sky Map necesita tres cousas para mostrar o ceo correctamente: a dirección á que apunta o teléfono, a túa localización e a hora actual. Se o mapa parece incorrecto, é probable que un destes elementos sexa incorrecto.</p>
 <p>• <b>Compás (causa máis común):</b> Este é un problema de soporte físico do teu teléfono — non un erro do Sky Map. O xesto de calibración en forma de oito indica ao teu teléfono que restableza o sensor do compás internamente, pero <i>un compás calibrado non é necesariamente preciso</i>. Se estás preto dun obxecto metálico, do taboleiro dun coche ou dunha funda magnética para teléfono, o mapa pode ser incorrecto mesmo despois da calibración. Móvete a unha zona aberta e repite o xesto en forma de oito.<br/>
-• <b>Localización:</b> Concede permiso de localización a través da <b>Configuración da aplicación → Permisos</b>. onsulta a páxina de Diagnóstico (<b>Configuración → Diagnóstico</b>) para confirmar as túas coordenadas. Un sinal revelador dunha localización incorrecta é que Polaris apareza directamente enriba.<br/>
-• <b>Hora:</b> Menos común, pero un fuso horario incorrecto despraza todo o ceo. Consulta a páxina de Diagnóstico (<b>Settings → Diagnostics</b>) para confirmar que a hora e o fuso horario do teu dispositivo sexan correctos.</p>
+• <b>Localización:</b> Concede permiso de localización a través da <b>Configuración da aplicación → Permisos</b>. Consulta a páxina de Diagnóstico (<b>Configuración → Diagnóstico</b>) para confirmar as túas coordenadas. Un sinal revelador dunha localización incorrecta é que Polaris apareza directamente enriba.<br/>
+• <b>Hora:</b> Menos común, pero un fuso horario incorrecto despraza todo o ceo. Consulta a páxina de Diagnóstico (<b>SConfiguración → Diagnóstico</b>) para confirmar que a hora e o fuso horario do teu dispositivo sexan correctos.</p>
 <h3>O mapa treme</h3>
 <p>
-• e o teu teléfono non ten xiroscopio, activa <b>Usar sensores herdados</b> a configuración do sensor<br/>
+• Se o teu teléfono non ten xiroscopio, activa <b>Usar sensores herdados</b> na configuración do sensor<br/>
 • Axusta a <b>Velocidade do sensor</b> e o <b>Amortecemento</b> en <b>Configuración → Configuración do sensor (expertos)</b>
 (móstrase cando <b>Usar sensores herdados</b> está activado)</p>
-<p>Para obter detalles completos sobre a solución de problemas, consulta a guía en liña de <a href="https://ts.stardroid.app">troubleshooting</a> guide.</p>
+<p>Para obter detalles completos sobre a solución de problemas, consulta a guía en liña de <a href="https://ts.stardroid.app">troubleshooting</a>.</p>
 <p>Se aínda estás atascado, envíanos un correo electrónico a <a href="mailto:skymapdevs@gmail.com">skymapdevs@gmail.com</a> — Unha captura de pantalla da túa páxina de Diagnóstico é moi útil.</p>
     ]]></string>
 
