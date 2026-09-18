@@ -64,6 +64,13 @@
     <string name="layer_param_pass_alerts_description" translation_description="Explains what the pass-alert setting does: a single notification before the best visible pass of the night.">Notificar-me antes da melhor passagem visível a cada noite</string>
     <string name="layer_param_eclipse_alerts" translation_description="Label for the setting that turns on a notification before a lunar eclipse begins.">Alertas de eclipse</string>
     <string name="layer_param_eclipse_alerts_description" translation_description="Explains what the eclipse-alert setting does: a single notification before a lunar eclipse starts.">Notificar-me antes do início de um eclipse lunar</string>
+    <string name="layer_param_altaz_grid_density" translation_description="Label for the alt/az grid's line-count setting.">Número de linhas</string>
+    <string name="layer_param_altaz_grid_density_coarse" translation_description="Option label for the alt/az grid's sparsest setting: 8 azimuth lines, 45 degrees apart.">Esparsa</string>
+    <string name="layer_param_altaz_grid_density_coarse_desc" translation_description="Explains the coarse alt/az grid density: 8 azimuth lines, matching the 8 compass points.">8 linhas de direção, correspondentes à rosa dos ventos</string>
+    <string name="layer_param_altaz_grid_density_medium" translation_description="Option label for the alt/az grid's default setting: 12 azimuth lines, 30 degrees apart.">Média</string>
+    <string name="layer_param_altaz_grid_density_medium_desc" translation_description="Explains the medium alt/az grid density: 12 azimuth lines, 30 degrees apart.">12 linhas de direção, separadas por 30°</string>
+    <string name="layer_param_altaz_grid_density_fine" translation_description="Option label for the alt/az grid's densest setting: 24 azimuth lines, 15 degrees apart.">Fina</string>
+    <string name="layer_param_altaz_grid_density_fine_desc" translation_description="Explains the fine alt/az grid density: 24 azimuth lines, matching the celestial grid's meridian count.">24 linhas de direção, correspondentes à grade celeste</string>
     <string name="satellite_description" translation_description="Short description shown on the info card for an artificial satellite.">
     Um satélite artificial em órbita baixa da Terra, iluminado pelo sol contra um céu escuro. Ele cruza de horizonte a horizonte em poucos minutos, movendo-se constantemente e sem piscar.
     </string>
@@ -91,6 +98,7 @@
     <string name="layer_grid" translation_description="Toggle label for the layer showing the right ascension / declination grid.">Grade celeste</string>
     <string name="layer_horizon">Horizonte</string>
     <string name="layer_ecliptic">Eclíptica</string>
+    <string name="layer_altaz_grid" translation_description="Toggle label for the layer showing the altitude/azimuth (horizontal) coordinate grid, for naked-eye or manual alt-az mount observers.">Grade Alt/Az</string>
     <string name="layer_sky_gradient">Gradiente de céu</string>
 
     <!-- Map screen controls. -->
@@ -403,6 +411,24 @@
     <string name="diagnostics_rotation_matrix">Matriz Rot.</string>
     <string name="diagnostics_light_level">Nível da luz</string>
     <string name="diagnostics_sensor_absent">Ausente</string>
+    <string name="diagnostics_sensor_rate_format" translation_description="Suffix appended to a diagnostics sensor row showing how often it is delivering events and how long ago the last one arrived. %1$.1f is a rate in events per second (Hz), %2$.1f is a number of seconds. Note the leading parenthesis and \'Hz\' abbreviates Hertz.">(%1$.1f Hz, há %2$.1fs)</string>
+    <string name="diagnostics_section_orientation_settings" translation_description="Section heading in the diagnostics screen for the user-adjustable settings that shape the sensor readings shown above it">Configurações de orientação</string>
+    <string name="diagnostics_gyro_mode" translation_description="Row label in the diagnostics screen for which sensor path supplies device orientation">Giroscópio</string>
+    <string name="diagnostics_gyro_fused" translation_description="Value shown for the gyro row when the fused rotation-vector sensor is in use">Vetor de rotação combinado</string>
+    <string name="diagnostics_gyro_disabled" translation_description="Value shown for the gyro row when the rotation-vector sensor is skipped in favour of accelerometer plus compass">Acelerômetro + bússola</string>
+    <string name="diagnostics_smoothing" translation_description="Row label in the diagnostics screen for whether orientation smoothing is on">Suavização</string>
+    <string name="diagnostics_steadiness" translation_description="Row label in the diagnostics screen for the orientation smoothing filter's steadiness setting">Estabilidade</string>
+    <string name="diagnostics_ease_off" translation_description="Row label in the diagnostics screen for the orientation smoothing filter's ease-off setting">Atenuação</string>
+    <string name="diagnostics_reverse_magnetic_z" translation_description="Row label in the diagnostics screen for whether the magnetometer's Z axis is reversed">Inverter Z magnético</string>
+    <string name="diagnostics_use_magnetic_correction_setting" translation_description="Row label in the diagnostics screen for whether magnetic declination correction is applied">Correção magnética</string>
+    <string name="diagnostics_view_direction_mode" translation_description="Row label in the diagnostics screen for which phone axis is treated as pointing at the sky">Direção de visualização</string>
+    <string name="diagnostics_calibration_dialog" translation_description="Row label in the diagnostics screen for whether the automatic compass-calibration dialog is suppressed">Diálogo de calibração</string>
+    <string name="diagnostics_calibration_dialog_suppressed" translation_description="Value shown for the calibration dialog row when the automatic dialog is suppressed">Suprimido</string>
+    <string name="diagnostics_calibration_dialog_shown" translation_description="Value shown for the calibration dialog row when the automatic dialog is not suppressed">Exibido</string>
+    <string name="diagnostics_jitter_raw" translation_description="Row label in the diagnostics screen for how much the sensor-derived pointing wobbles before smoothing is applied">Instabilidade (bruta)</string>
+    <string name="diagnostics_jitter_smoothed" translation_description="Row label in the diagnostics screen for how much the sensor-derived pointing wobbles after smoothing is applied">Instabilidade (suavizada)</string>
+    <!-- tm:omitted name="diagnostics_jitter_format" reason="identical_to_source" -->
+    <string name="diagnostics_jitter_pending" translation_description="Value shown for the jitter rows before enough sensor samples have arrived to compute a standard deviation">Coletando…</string>
     <string name="diagnostics_section_location_time">Hora e local</string>
     <string name="diagnostics_location_permission">Permissão de Localização</string>
     <string name="diagnostics_permission_granted">Concedida</string>

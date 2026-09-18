@@ -28,7 +28,13 @@
 <p>Багато давно запитуваних функцій з\'являться дуже скоро.</p>]]></string>
     <string name="whats_new_support" translation_description="HTML paragraph inviting users to support the project, shown in the What's new dialog and the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h1>Підтримайте Sky Map</h1>
 <p>Sky Map — це безплатний додаток з відкритим кодом. Якщо він здається вам корисним, будь ласка, подумайте про підтримку розробки на нашій сторінці <a href="https://github.com/sky-map-team/stardroid/?tab=readme-ov-file#support-the-project">GitHub</a> або <a href="https://buymeacoffee.com/skymapdevs?utm_source=skymap&amp;utm_medium=app&amp;utm_campaign=whatsnew">пригостіть нас кавою</a>.</p>]]></string>
-    <string name="beta_user_help_text" translation_description="Usually-empty HTML content shown to beta testers asking for feedback, appended in the What's new dialog and the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h1>Спробуйте нове згладжування датчиків</h1>
-<p>Ми змінили спосіб, у який Sky Map стабілізує зображення, коли ви тримаєте телефон нерухомо — тепер воно має менше тремтіти та краще реагувати на рухи. Цю функцію ввімкнено за замовчуванням для бета-тестерів, щоб ми могли отримати відгуки з реальних пристроїв. Якщо ви помітите затримку, ривки чи будь-що дивне, будь ласка, повідомте нам на <a href="mailto:skymapdevs@gmail.com">skymapdevs@gmail.com</a>.</p>
-<p>Ви можете вимкнути її будь-коли в меню <b>Налаштування → Датчики → Згладжування руху датчиків</b>, якщо віддаєте перевагу незгладженим даним.</p>]]></string>
+    <string name="beta_user_help_text" translation_description="Usually-empty HTML content shown to beta testers asking for feedback, appended in the What's new dialog and the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[
+    ]]></string>
+    <string name="whats_new_supplement" translation_description="HTML content for a short supplementary section covering changes since the main whats_new_content was last written, shown between the beta feedback note and the main What's new content in the What's new dialog and the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h1>З часу останнього оновлення</h1>
+<h2>Більш плавне згладжування датчиків</h2>
+<p>Ми змінили спосіб, яким Sky Map стабілізує зображення, коли ви тримаєте телефон нерухомо — тепер воно має менше тремтіти і краще реагувати на рухи. Ви можете вимкнути це в будь-який момент у меню <b>Налаштування → Датчики → Згладжування руху датчиків</b>, якщо віддаєте перевагу «сирим» даним датчиків.</p>
+<h2>Нова сітка висоти/азимута</h2>
+<p>Тепер Sky Map може накладати на карту сітку ліній висоти та азимута на додачу до наявної небесної сітки. Вона вимкнена за замовчуванням — увімкніть її в меню шарів.</p>
+<h2>Розумніший пошук</h2>
+<p>Сонце, Місяць та планети тепер відображаються вище за зірки, якщо вони відповідають вашому пошуковому запиту, тож при введенні «Марс» спочатку знайдеться планета, а не зірка з подібною назвою.</p>]]></string>
 </resources>

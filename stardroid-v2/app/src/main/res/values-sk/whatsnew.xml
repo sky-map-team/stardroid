@@ -27,7 +27,13 @@ Je to úplne nová aplikácia pod kapotou — nový renderovací engine, nový a
 <h2>A toto je len začiatok...</h2>
 <p>Máme mnoho dlho žiadaných funkcií, ktoré prídu veľmi skoro.</p>]]></string>
     <string name="whats_new_support" translation_description="HTML paragraph inviting users to support the project, shown in the What's new dialog and the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h1>Podporte Sky Map</h1><p>Sky Map je bezplatná a s otvoreným zdrojovým kódom. Ak ju považujete za užitočnú, zvážte podporu vývoja na našej stránke <a href="https://github.com/sky-map-team/stardroid/?tab=readme-ov-file#support-the-project">GitHub</a> alebo <a href="https://buymeacoffee.com/skymapdevs?utm_source=skymap&amp;utm_medium=app&amp;utm_campaign=whatsnew">nám kúpte kávu</a>.</p>]]></string>
-    <string name="beta_user_help_text" translation_description="Usually-empty HTML content shown to beta testers asking for feedback, appended in the What's new dialog and the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h1>Vyskúšajte nové vyhladzovanie senzorov</h1>
-<p>Zmenili sme spôsob, akým Sky Map stabilizuje zobrazenie, keď držíte telefón v pokoji – obraz by sa mal menej chvieť a lepšie reagovať pri pohybe. Pre beta testerov je táto funkcia zapnutá predvolene, aby sme získali spätnú väzbu zo skutočných zariadení. Ak zaznamenáte oneskorenie, chvenie alebo čokoľvek nezvyčajné, dajte nám vedieť na adrese <a href="mailto:skymapdevs@gmail.com">skymapdevs@gmail.com</a>.</p>
-<p>Ak preferujete surové dáta zo senzorov, môžete túto funkciu kedykoľvek vypnúť v časti <b>Nastavenia → Senzory → Hladký pohyb senzorov</b>.</p>]]></string>
+    <string name="beta_user_help_text" translation_description="Usually-empty HTML content shown to beta testers asking for feedback, appended in the What's new dialog and the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[
+    ]]></string>
+    <string name="whats_new_supplement" translation_description="HTML content for a short supplementary section covering changes since the main whats_new_content was last written, shown between the beta feedback note and the main What's new content in the What's new dialog and the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h1>Od poslednej aktualizácie</h1>
+<h2>Stabilnejšie vyhladzovanie senzorov</h2>
+<p>Vylepšili sme spôsob, akým Sky Map stabilizuje zobrazenie, keď držíte telefón v pokoji – obraz by sa mal menej chvieť a lepšie reagovať pri pohybe. Kedykoľvek ho môžete vypnúť v časti <b>Nastavenia → Senzory → Plynulý pohyb senzorov</b>, ak preferujete surové údaje zo senzorov.</p>
+<h2>Nová alt/az mriežka</h2>
+<p>Sky Map teraz dokáže na mapu prekrývať mriežku výškových a azimutálnych čiar popri existujúcej nebeskej mriežke. Predvolene je vypnutá – zapnite si ju v ponuke vrstiev.</p>
+<h2>Inteligentnejšie vyhľadávanie</h2>
+<p>Slnko, Mesiac a planéty sa teraz pri zhode s vaším vyhľadávaním zobrazujú nad hviezdami, takže pri zadaní výrazu „Mars“ sa najskôr nájde planéta namiesto hviezdy s podobným názvom.</p>]]></string>
 </resources>

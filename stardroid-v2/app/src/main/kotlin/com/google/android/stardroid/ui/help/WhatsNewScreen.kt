@@ -77,6 +77,7 @@ fun WhatsNewScreen(
         // to the credits/sponsor list it's adjacent to.
         val html =
             stringResource(R.string.beta_user_help_text) +
+                stringResource(R.string.whats_new_supplement) +
                 stringResource(R.string.whats_new_content) +
                 stringResource(R.string.whats_new_support) +
                 creditsText

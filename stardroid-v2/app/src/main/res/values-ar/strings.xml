@@ -62,6 +62,13 @@
     <string name="layer_param_pass_alerts_description" translation_description="Explains what the pass-alert setting does: a single notification before the best visible pass of the night.">أبلغني قبل أفضل مرور مرئي كل ليلة</string>
     <string name="layer_param_eclipse_alerts" translation_description="Label for the setting that turns on a notification before a lunar eclipse begins.">تنبيهات الخسوف</string>
     <string name="layer_param_eclipse_alerts_description" translation_description="Explains what the eclipse-alert setting does: a single notification before a lunar eclipse starts.">أبلغني قبل بدء خسوف القمر</string>
+    <string name="layer_param_altaz_grid_density" translation_description="Label for the alt/az grid's line-count setting.">عدد الخطوط</string>
+    <string name="layer_param_altaz_grid_density_coarse" translation_description="Option label for the alt/az grid's sparsest setting: 8 azimuth lines, 45 degrees apart.">خشن</string>
+    <string name="layer_param_altaz_grid_density_coarse_desc" translation_description="Explains the coarse alt/az grid density: 8 azimuth lines, matching the 8 compass points.">8 خطوط اتجاه، تطابق وردة البوصلة</string>
+    <string name="layer_param_altaz_grid_density_medium" translation_description="Option label for the alt/az grid's default setting: 12 azimuth lines, 30 degrees apart.">متوسط</string>
+    <string name="layer_param_altaz_grid_density_medium_desc" translation_description="Explains the medium alt/az grid density: 12 azimuth lines, 30 degrees apart.">12 خط اتجاه، بفارق 30°</string>
+    <string name="layer_param_altaz_grid_density_fine" translation_description="Option label for the alt/az grid's densest setting: 24 azimuth lines, 15 degrees apart.">دقيق</string>
+    <string name="layer_param_altaz_grid_density_fine_desc" translation_description="Explains the fine alt/az grid density: 24 azimuth lines, matching the celestial grid's meridian count.">24 خط اتجاه، تطابق الشبكة السماوية</string>
     <string name="satellite_description" translation_description="Short description shown on the info card for an artificial satellite.">
     قمر صناعي في مدار أرضي منخفض، مضاء بالشمس في سماء مظلمة. يعبر من الأفق إلى الأفق في بضع دقائق، متحركًا بثبات ودون وميض.
     </string>
@@ -87,6 +94,7 @@
     <string name="layer_grid" translation_description="Toggle label for the layer showing the right ascension / declination grid.">الشبكة السماوية</string>
     <string name="layer_horizon">الأفق</string>
     <string name="layer_ecliptic">مسير الشمس</string>
+    <string name="layer_altaz_grid" translation_description="Toggle label for the layer showing the altitude/azimuth (horizontal) coordinate grid, for naked-eye or manual alt-az mount observers.">شبكة الارتفاع والسمت</string>
     <string name="layer_sky_gradient">تدرج السماء</string>
 
     <!-- Map screen controls. -->
@@ -395,6 +403,24 @@
     <string name="diagnostics_rotation_matrix">مصفوفة الدوران</string>
     <string name="diagnostics_light_level">مستوى الإضاءة</string>
     <string name="diagnostics_sensor_absent">غير موجود</string>
+    <string name="diagnostics_sensor_rate_format" translation_description="Suffix appended to a diagnostics sensor row showing how often it is delivering events and how long ago the last one arrived. %1$.1f is a rate in events per second (Hz), %2$.1f is a number of seconds. Note the leading parenthesis and \'Hz\' abbreviates Hertz.">(%1$.1f هرتز، منذ %2$.1fs)</string>
+    <string name="diagnostics_section_orientation_settings" translation_description="Section heading in the diagnostics screen for the user-adjustable settings that shape the sensor readings shown above it">إعدادات الاتجاه</string>
+    <string name="diagnostics_gyro_mode" translation_description="Row label in the diagnostics screen for which sensor path supplies device orientation">الجيروسكوب</string>
+    <string name="diagnostics_gyro_fused" translation_description="Value shown for the gyro row when the fused rotation-vector sensor is in use">متجه الدوران المدمج</string>
+    <string name="diagnostics_gyro_disabled" translation_description="Value shown for the gyro row when the rotation-vector sensor is skipped in favour of accelerometer plus compass">مقياس التسارع + البوصلة</string>
+    <string name="diagnostics_smoothing" translation_description="Row label in the diagnostics screen for whether orientation smoothing is on">التنعيم</string>
+    <string name="diagnostics_steadiness" translation_description="Row label in the diagnostics screen for the orientation smoothing filter's steadiness setting">الثبات</string>
+    <string name="diagnostics_ease_off" translation_description="Row label in the diagnostics screen for the orientation smoothing filter's ease-off setting">معدل التلاشي</string>
+    <string name="diagnostics_reverse_magnetic_z" translation_description="Row label in the diagnostics screen for whether the magnetometer's Z axis is reversed">عكس المحور المغناطيسي Z</string>
+    <string name="diagnostics_use_magnetic_correction_setting" translation_description="Row label in the diagnostics screen for whether magnetic declination correction is applied">التصحيح المغناطيسي</string>
+    <string name="diagnostics_view_direction_mode" translation_description="Row label in the diagnostics screen for which phone axis is treated as pointing at the sky">اتجاه العرض</string>
+    <string name="diagnostics_calibration_dialog" translation_description="Row label in the diagnostics screen for whether the automatic compass-calibration dialog is suppressed">نافذة المعايرة</string>
+    <string name="diagnostics_calibration_dialog_suppressed" translation_description="Value shown for the calibration dialog row when the automatic dialog is suppressed">مكتم</string>
+    <string name="diagnostics_calibration_dialog_shown" translation_description="Value shown for the calibration dialog row when the automatic dialog is not suppressed">معروضة</string>
+    <string name="diagnostics_jitter_raw" translation_description="Row label in the diagnostics screen for how much the sensor-derived pointing wobbles before smoothing is applied">الاهتزاز (خام)</string>
+    <string name="diagnostics_jitter_smoothed" translation_description="Row label in the diagnostics screen for how much the sensor-derived pointing wobbles after smoothing is applied">الاهتزاز (ممنّع)</string>
+    <string name="diagnostics_jitter_format" translation_description="Row value in the diagnostics screen showing the standard deviation of azimuth and altitude over a trailing window, in degrees. \'az\' abbreviates azimuth, \'alt\' abbreviates altitude, the sigma character denotes standard deviation. %1$.2f is the azimuth standard deviation in degrees, %2$.2f is the altitude standard deviation in degrees.">السمت σ%1$.2f°، الارتفاع σ%2$.2f°</string>
+    <string name="diagnostics_jitter_pending" translation_description="Value shown for the jitter rows before enough sensor samples have arrived to compute a standard deviation">جارٍ التجميع…</string>
     <string name="diagnostics_section_location_time">الموقع والوقت</string>
     <string name="diagnostics_location_permission">إذن الموقع</string>
     <string name="diagnostics_permission_granted">تم منحه</string>

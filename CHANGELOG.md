@@ -5,6 +5,31 @@ All notable changes to Sky Map are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [2.0.7:Apollo] (v2) - 2026-09-18
+
+<img src="stardroid-v2/assets/release-icons/2.0.3_apollo_icon.png" width="80" alt="Apollo" />
+
+### Added
+- New off-by-default alt/az grid layer, alongside the existing celestial grid. (#1022, #1038)
+- The diagnostics report sent from "Send to developers" now includes richer sensor and
+  pointing-jitter data. (#1043)
+- Galician (gl) translation added. (#1031)
+
+### Changed
+- Sensor smoothing now uses a 1€ filter instead of SLERP, tuned for both the gyro and
+  legacy sensor paths — steadier while still, more responsive while moving. (#1026)
+- Manual location entry now uses N/S/E/W hemisphere buttons instead of a sign toggle. (#1023,
+  #1025)
+- Search now ranks the Sun, Moon and planets above stars when they match. (#1042)
+- minSdk dropped to 28; Android 9 is now supported on a best-effort basis. (#1041)
+
+### Fixed
+- Region-only Chinese locale tags (e.g. zh-CN without a script subtag) now resolve to the
+  correct Han script in the catalog's locale fallback chain. (#1040)
+- Fixed a crash in the search dialog's focus handling. (#1020)
+
+---
+
 ## [2.0.5:Apollo] (v2) - 2026-09-11
 
 <img src="stardroid-v2/assets/release-icons/2.0.3_apollo_icon.png" width="80" alt="Apollo" />
