@@ -86,15 +86,17 @@ interface CatalogDao {
      * matches a large fraction of every name row in the catalog — all of which used to be
      * materialized, grouped and sorted in Kotlin only to be thrown away by the display limit
      * (audit-2026-08 M3). The ORDER BY is the head of `RoomCatalogRepository.searchByPrefix`'s
-     * own ranking — whole-name prefix, then primary name, then brightness — so truncation drops
-     * the rows that ranking would have dropped anyway. `substr` rather than `LIKE` because the
-     * prefix is user text and must not be read as a wildcard pattern.
+     * own ranking — whole-name prefix, then primary name, then unlayered objects (Sun, Moon,
+     * planets — searched far more than their often-missing magnitude would suggest), then
+     * brightness — so truncation drops the rows that ranking would have dropped anyway. `substr`
+     * rather than `LIKE` because the prefix is user text and must not be read as a wildcard
+     * pattern.
      */
     @Query(
         """
         SELECT n.object_id AS objectId, n.locale, n.name, n.name_normalized AS nameNormalized,
                n.is_primary AS isPrimary,
-               o.magnitude, o.ra, o.dec, o.search_fov AS searchFov,
+               o.magnitude, o.layer_kind AS layerKind, o.ra, o.dec, o.search_fov AS searchFov,
                p.ra AS parentRa, p.dec AS parentDec, p.search_fov AS parentSearchFov
         FROM object_name n
         JOIN celestial_object o ON o.id = n.object_id
@@ -103,6 +105,7 @@ interface CatalogDao {
           AND n.id IN (SELECT docid FROM object_name_fts WHERE object_name_fts MATCH :ftsQuery)
         ORDER BY substr(n.name_normalized, 1, length(:normalizedPrefix)) = :normalizedPrefix DESC,
                  n.is_primary DESC,
+                 o.layer_kind IS NULL DESC,
                  o.magnitude IS NULL, o.magnitude
         LIMIT :candidateLimit
         """,
@@ -220,6 +223,8 @@ data class SearchNameRow(
     val nameNormalized: String,
     val isPrimary: Boolean,
     val magnitude: Double?,
+    /** `null` = not rendered by any layer (Sun, Moon, planets and similar). */
+    val layerKind: String?,
     val ra: Double?,
     val dec: Double?,
     val searchFov: Double?,

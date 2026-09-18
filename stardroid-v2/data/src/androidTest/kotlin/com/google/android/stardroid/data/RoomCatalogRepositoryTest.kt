@@ -69,6 +69,7 @@ class RoomCatalogRepositoryTest {
                 "star/little-sirius",
                 "star/altair",
                 "star/alderamin",
+                "star/marsic",
                 // From the second installed pack — both packs feed the same layer.
                 "star/vega",
             )
@@ -186,6 +187,17 @@ class RoomCatalogRepositoryTest {
             assertThat(hits.map { it.name })
                 .containsExactly("Altair", "Alderamin")
                 .inOrder()
+        }
+
+    @Test
+    fun search_unlayeredObjectOutranksAnEquallyGoodMatchingStar() =
+        runTest {
+            val hits = repository.searchByPrefix("mars", english, limit = 10)
+
+            // Mars (planet, no fixed magnitude) must outrank Marsic (a magnitude-5.0 star)
+            // even though the magnitude-last tiebreak would otherwise put an unknown
+            // magnitude behind any star, however faint (#1016).
+            assertThat(hits.map { it.name }).containsExactly("Mars", "Marsic").inOrder()
         }
 
     @Test
