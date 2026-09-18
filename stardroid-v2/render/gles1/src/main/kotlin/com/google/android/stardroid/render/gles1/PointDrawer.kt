@@ -77,6 +77,9 @@ internal object PointDrawer {
         // TODO(device verification, D31): GLES1 permits GL_SMOOTH_POINT_SIZE_RANGE to be [1, 1],
         //   which would collapse every smoothed star to 1px on such hardware (the emulator won't
         //   show it). Query the range and skip GL_POINT_SMOOTH for runs above the supported max.
+        //   Field report 2026-09-18: a real Samsung device (One UI, non-emulator) showed stars
+        //   as hard-edged squares rather than smoothed dots, consistent with GL_POINT_SMOOTH
+        //   being ignored/unsupported on that driver.
         gl.glEnable(GL10.GL_POINT_SMOOTH)
         for (run in buffers.sizeRuns) {
             gl.glPointSize(run.sizePx)
