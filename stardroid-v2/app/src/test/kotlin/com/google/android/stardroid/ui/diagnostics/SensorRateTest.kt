@@ -56,11 +56,29 @@ class SensorRateTest {
     }
 
     @Test
-    fun `a sensor that has gone silent shows growing staleness, not a growing rate`() {
+    fun `a sensor that has gone silent shows growing staleness, not a frozen rate`() {
         val accumulator = SensorRateAccumulator(windowMillis = 3_000)
         accumulator.recordEvent(0)
         accumulator.recordEvent(20)
         val info = accumulator.snapshot(nowMillis = 10_000)
         assertThat(info.staleForMillis).isEqualTo(9_980)
+        // The window is long past by 10s; the last-known rate must decay to zero rather than
+        // recomputing forever from the two samples that arrived before the sensor went quiet.
+        assertThat(info.hz).isEqualTo(0.0)
+    }
+
+    @Test
+    fun `hz decays across repeated polls once events stop arriving`() {
+        val accumulator = SensorRateAccumulator(windowMillis = 3_000)
+        var timeMillis = 0L
+        repeat(20) {
+            accumulator.recordEvent(timeMillis)
+            timeMillis += 20 // 50 Hz
+        }
+        assertThat(accumulator.snapshot(nowMillis = timeMillis).hz).isGreaterThan(0.0)
+
+        // No further events; poll well past the window on its own clock.
+        val info = accumulator.snapshot(nowMillis = timeMillis + 5_000)
+        assertThat(info.hz).isEqualTo(0.0)
     }
 }
