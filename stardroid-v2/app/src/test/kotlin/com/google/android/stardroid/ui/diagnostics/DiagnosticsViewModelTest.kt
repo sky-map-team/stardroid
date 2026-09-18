@@ -241,6 +241,34 @@ class DiagnosticsViewModelTest {
         }
 
     @Test
+    fun `pointing jitter reacts to a live view-direction-mode change`() =
+        testScope.runTest {
+            val collector = launch { viewModel.pointingJitter.collect {} }
+            runCurrent()
+
+            // The same identity orientation, resolved under two different view directions —
+            // STANDARD and TELESCOPE point along different phone axes (SkyModel.kt), so the
+            // resolved azimuth/altitude must differ even though the raw matrix didn't change.
+            val identitySample =
+                OrientationSample(raw = Matrix3.IDENTITY, smoothed = Matrix3.IDENTITY)
+            orientationSamples.emit(identitySample)
+            runCurrent()
+
+            settings.viewDirectionModeState.value = ViewDirectionMode.TELESCOPE
+            orientationSamples.emit(identitySample)
+            runCurrent()
+
+            // A regression of a prior bug read viewDirectionMode off a StateFlow that was never
+            // actually collected, so its .value stayed pinned at STANDARD forever and this
+            // second sample would have resolved identically to the first — zero jitter.
+            val jitter = viewModel.pointingJitter.value
+            assertThat(jitter).isNotNull()
+            assertThat(jitter!!.raw.azimuthStdDevDeg + jitter.raw.altitudeStdDevDeg)
+                .isGreaterThan(0.0)
+            collector.cancel()
+        }
+
+    @Test
     fun `rotation matrix expands the quaternion - identity for the zero rotation`() {
         val identity =
             DiagnosticsViewModel.rotationMatrixFromVector(listOf(0f, 0f, 0f, 1f))

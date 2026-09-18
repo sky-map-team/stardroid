@@ -212,14 +212,6 @@ class DiagnosticsViewModel(
             )
         }
 
-    /** Latest [Settings.viewDirectionMode], read synchronously from [pointingJitter]'s hot loop. */
-    private val viewDirectionMode: StateFlow<ViewDirectionMode> =
-        settings.viewDirectionMode.stateIn(
-            viewModelScope,
-            SharingStarted.WhileSubscribed(5_000),
-            ViewDirectionMode.STANDARD,
-        )
-
     private val rawJitter = PointingJitterAccumulator(JITTER_WINDOW_MILLIS)
     private val smoothedJitter = PointingJitterAccumulator(JITTER_WINDOW_MILLIS)
 
@@ -234,9 +226,9 @@ class DiagnosticsViewModel(
     val pointingJitter: StateFlow<PointingJitterSnapshot?> =
         orientationSource
             .orientationSamples()
-            .map { sample ->
+            .combine(settings.viewDirectionMode) { sample, mode -> sample to mode }
+            .map { (sample, mode) ->
                 val frame = localFrame.value
-                val mode = viewDirectionMode.value
                 val rawAzAlt = frame.azAlt(SkyModel.pointing(frame, sample.raw, mode).lineOfSight)
                 val smoothedAzAlt =
                     frame.azAlt(SkyModel.pointing(frame, sample.smoothed, mode).lineOfSight)
