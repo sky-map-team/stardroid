@@ -86,6 +86,7 @@ fun DiagnosticsScreen(
     val context = LocalContext.current
     val colors = statusColors(nightMode)
     val snapshot by viewModel.snapshots.collectAsStateWithLifecycle()
+    val jitter by viewModel.pointingJitter.collectAsStateWithLifecycle()
     val scope = rememberCoroutineScope()
     var satelliteState by remember { mutableStateOf<SatelliteDiagnosticsState?>(null) }
     var forceFetchResult by remember { mutableStateOf<String?>(null) }
@@ -95,6 +96,7 @@ fun DiagnosticsScreen(
             add(generalSection())
             add(graphicsSection(snapshot.rendererInfo))
             add(sensorsSection(viewModel, colors))
+            add(orientationSettingsSection(snapshot, jitter))
             add(locationAndTimeSection(snapshot, colors))
             add(networkSection(snapshot))
             satelliteState?.let { add(satelliteSection(it)) }
@@ -271,12 +273,13 @@ private fun sensorsSection(
     colors: StatusColors,
 ): DiagnosticsSection {
     val rows = mutableListOf<DiagnosticsRow>()
+    val rates by viewModel.sensorRates.collectAsStateWithLifecycle()
     for (kind in SensorKind.entries) {
         val row by viewModel.sensors.getValue(kind).collectAsStateWithLifecycle()
         rows +=
             DiagnosticsRow(
                 label = stringResource(sensorName(kind)),
-                value = sensorText(row),
+                value = sensorText(row) + rateSuffix(row, rates[kind]),
                 valueColor = sensorColor(row, colors),
             )
     }
@@ -300,6 +303,96 @@ private fun sensorsSection(
     }
     return DiagnosticsSection(stringResource(R.string.diagnostics_section_sensors), rows)
 }
+
+/**
+ * The settings that shape the sensor rows above — reads directly off [DiagnosticsSnapshot]
+ * rather than [Settings] itself, so the report always matches what the screen is showing.
+ */
+@Composable
+private fun orientationSettingsSection(
+    snapshot: DiagnosticsSnapshot,
+    jitter: PointingJitterSnapshot?,
+): DiagnosticsSection =
+    DiagnosticsSection(
+        stringResource(R.string.diagnostics_section_orientation_settings),
+        listOf(
+            DiagnosticsRow(
+                stringResource(R.string.diagnostics_gyro_mode),
+                stringResource(
+                    if (snapshot.disableGyro) {
+                        R.string.diagnostics_gyro_disabled
+                    } else {
+                        R.string.diagnostics_gyro_fused
+                    },
+                ),
+            ),
+            DiagnosticsRow(
+                stringResource(R.string.diagnostics_smoothing),
+                onOffText(snapshot.smoothingEnabled),
+            ),
+            DiagnosticsRow(
+                stringResource(R.string.diagnostics_steadiness),
+                enumDisplayName(snapshot.steadiness),
+            ),
+            DiagnosticsRow(
+                stringResource(R.string.diagnostics_ease_off),
+                enumDisplayName(snapshot.easeOff),
+            ),
+            DiagnosticsRow(
+                stringResource(R.string.diagnostics_reverse_magnetic_z),
+                onOffText(snapshot.reverseMagneticZ),
+            ),
+            DiagnosticsRow(
+                stringResource(R.string.diagnostics_use_magnetic_correction_setting),
+                onOffText(snapshot.useMagneticCorrection),
+            ),
+            DiagnosticsRow(
+                stringResource(R.string.diagnostics_view_direction_mode),
+                enumDisplayName(snapshot.viewDirectionMode),
+            ),
+            DiagnosticsRow(
+                stringResource(R.string.diagnostics_calibration_dialog),
+                stringResource(
+                    if (snapshot.dontShowCalibrationDialog) {
+                        R.string.diagnostics_calibration_dialog_suppressed
+                    } else {
+                        R.string.diagnostics_calibration_dialog_shown
+                    },
+                ),
+            ),
+            DiagnosticsRow(
+                stringResource(R.string.diagnostics_jitter_raw),
+                jitterText(jitter?.raw),
+            ),
+            DiagnosticsRow(
+                stringResource(R.string.diagnostics_jitter_smoothed),
+                jitterText(jitter?.smoothed),
+            ),
+        ),
+    )
+
+@Composable
+private fun onOffText(enabled: Boolean): String =
+    stringResource(if (enabled) R.string.diagnostics_enabled else R.string.diagnostics_disabled)
+
+/** "az σ0.42°, alt σ0.18°" over the trailing window (D95), or a placeholder before it fills. */
+@Composable
+private fun jitterText(jitter: PointingJitter?): String =
+    if (jitter == null) {
+        stringResource(R.string.diagnostics_jitter_pending)
+    } else {
+        stringResource(
+            R.string.diagnostics_jitter_format,
+            jitter.azimuthStdDevDeg,
+            jitter.altitudeStdDevDeg,
+        )
+    }
+
+/** `VERY_HIGH` -> `Very High` — technical enum names are diagnostic values, not translated. */
+private fun enumDisplayName(value: Enum<*>): String =
+    value.name
+        .split("_")
+        .joinToString(" ") { it.lowercase(Locale.US).replaceFirstChar(Char::uppercase) }
 
 @Composable
 private fun locationAndTimeSection(
@@ -473,6 +566,25 @@ private fun sensorText(row: SensorRow): String =
         is SensorRow.Present ->
             row.reading?.values?.joinToString(",") { "%.2f".format(Locale.US, it) } ?: ""
     }
+
+/**
+ * " (52 Hz, 0.1s ago)" for a present, reporting sensor — nothing for an absent one or one that
+ * hasn't delivered a first event yet, since [sensorText] already says so.
+ */
+@Composable
+private fun rateSuffix(
+    row: SensorRow,
+    rate: SensorRateInfo?,
+): String {
+    if (row !is SensorRow.Present || rate == null) return ""
+    val staleForMillis = rate.staleForMillis ?: return ""
+    return " " +
+        stringResource(
+            R.string.diagnostics_sensor_rate_format,
+            rate.hz,
+            staleForMillis / 1000.0,
+        )
+}
 
 /** v1's decoder: absent grey; unreliable/no-contact red, low orange, medium yellow, high green. */
 private fun sensorColor(

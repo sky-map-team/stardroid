@@ -58,15 +58,7 @@ class SensorOrientationSource(
 
     @OptIn(ExperimentalCoroutinesApi::class)
     override fun orientations(): Flow<Matrix3> =
-        config.distinctUntilChanged { old, new ->
-            // The smoothing parameters now drive both paths, so the only setting that doesn't
-            // always matter is the magnetic-Z reversal, which the fused path never reads.
-            old.disableGyro == new.disableGyro &&
-                old.smoothingEnabled == new.smoothingEnabled &&
-                old.steadiness == new.steadiness &&
-                old.easeOff == new.easeOff &&
-                (usesFusedPath(old) || old.reverseMagneticZ == new.reverseMagneticZ)
-        }.flatMapLatest { current ->
+        configChanges().flatMapLatest { current ->
             when {
                 sensorManager == null -> emptyFlow()
                 rotationSensor != null && !current.disableGyro ->
@@ -75,6 +67,36 @@ class SensorOrientationSource(
                     legacyOrientations(sensorManager, accelerometer, magnetometer, current)
                 else -> emptyFlow()
             }
+        }
+
+    /**
+     * Same routing as [orientations], but each event computes both the raw and smoothed matrix
+     * (see [rotationVectorOrientationSamples]/[legacyOrientationSamples]) — kept as a separate
+     * implementation, not built on top of [orientations], so a collector that only wants the
+     * smoothed stream (the map, on every user's hot sensor path) never pays for the extra work.
+     */
+    @OptIn(ExperimentalCoroutinesApi::class)
+    override fun orientationSamples(): Flow<OrientationSample> =
+        configChanges().flatMapLatest { current ->
+            when {
+                sensorManager == null -> emptyFlow()
+                rotationSensor != null && !current.disableGyro ->
+                    rotationVectorOrientationSamples(sensorManager, rotationSensor, current)
+                accelerometer != null && magnetometer != null ->
+                    legacyOrientationSamples(sensorManager, accelerometer, magnetometer, current)
+                else -> emptyFlow()
+            }
+        }
+
+    private fun configChanges(): Flow<SensorConfig> =
+        config.distinctUntilChanged { old, new ->
+            // The smoothing parameters now drive both paths, so the only setting that doesn't
+            // always matter is the magnetic-Z reversal, which the fused path never reads.
+            old.disableGyro == new.disableGyro &&
+                old.smoothingEnabled == new.smoothingEnabled &&
+                old.steadiness == new.steadiness &&
+                old.easeOff == new.easeOff &&
+                (usesFusedPath(old) || old.reverseMagneticZ == new.reverseMagneticZ)
         }
 
     /** Whether [config] selects the fused rotation-vector path over the legacy one. */
@@ -102,6 +124,45 @@ class SensorOrientationSource(
                         SensorManager.getRotationMatrixFromVector(rotationMatrix, vector)
                         val remapped = remapToDisplayFrame(rotationMatrix, remappedMatrix)
                         trySend(remapped.toMatrix3())
+                    }
+
+                    override fun onAccuracyChanged(
+                        sensor: Sensor,
+                        accuracy: Int,
+                    ) = Unit
+                }
+            manager.registerListener(listener, sensor, SensorManager.SENSOR_DELAY_GAME)
+            awaitClose { manager.unregisterListener(listener) }
+        }.conflate()
+
+    /** [rotationVectorOrientations], but emitting the pre-smoothing matrix alongside it. */
+    private fun rotationVectorOrientationSamples(
+        manager: SensorManager,
+        sensor: Sensor,
+        config: SensorConfig,
+    ): Flow<OrientationSample> =
+        callbackFlow {
+            val quaternion = FloatArray(4)
+            val rawMatrix = FloatArray(9)
+            val rawRemapped = FloatArray(9)
+            val smoothedMatrix = FloatArray(9)
+            val smoothedRemapped = FloatArray(9)
+            val smoother = smootherFor(config)
+            val listener =
+                object : SensorEventListener {
+                    override fun onSensorChanged(event: SensorEvent) {
+                        val raw = toQuaternion(event.values, quaternion)
+                        SensorManager.getRotationMatrixFromVector(rawMatrix, raw)
+                        val rawResult = remapToDisplayFrame(rawMatrix, rawRemapped).toMatrix3()
+                        val smoothed = smoother?.update(raw, event.timestamp)
+                        val smoothedResult =
+                            if (smoothed == null) {
+                                rawResult
+                            } else {
+                                SensorManager.getRotationMatrixFromVector(smoothedMatrix, smoothed)
+                                remapToDisplayFrame(smoothedMatrix, smoothedRemapped).toMatrix3()
+                            }
+                        trySend(OrientationSample(rawResult, smoothedResult))
                     }
 
                     override fun onAccuracyChanged(
@@ -201,6 +262,66 @@ class SensorOrientationSource(
             // exposing both would mean twelve combinations of which only one is ever tuned.
             // SENSOR_DELAY_FASTEST also meant a 0-microsecond request, which Android 12 and up
             // reject outright unless the app declares HIGH_SAMPLING_RATE_SENSORS (issue #1007).
+            manager.registerListener(listener, accelerometer, SensorManager.SENSOR_DELAY_GAME)
+            manager.registerListener(listener, magnetometer, SensorManager.SENSOR_DELAY_GAME)
+            awaitClose { manager.unregisterListener(listener) }
+        }.conflate()
+
+    /** [legacyOrientations], but emitting the pre-smoothing fused matrix alongside it. */
+    private fun legacyOrientationSamples(
+        manager: SensorManager,
+        accelerometer: Sensor,
+        magnetometer: Sensor,
+        config: SensorConfig,
+    ): Flow<OrientationSample> =
+        callbackFlow {
+            val smoother = smootherFor(config)
+            var acceleration: Vector3? = null
+            var magneticField: Vector3? = null
+            val quaternion = FloatArray(4)
+            val naturalMatrix = FloatArray(9)
+            val remappedMatrix = FloatArray(9)
+            val listener =
+                object : SensorEventListener {
+                    override fun onSensorChanged(event: SensorEvent) {
+                        if (event.sensor.type == Sensor.TYPE_MAGNETIC_FIELD) {
+                            magneticField =
+                                event.values.toVector3(negateZ = config.reverseMagneticZ)
+                            return
+                        }
+                        acceleration = event.values.toVector3()
+                        val accel = acceleration ?: return
+                        val mag = magneticField ?: return
+                        val fused = orientationFromSensors(accel, mag) ?: return
+                        val smoothed =
+                            smoother
+                                ?.update(fused.writeQuaternion(quaternion), event.timestamp)
+                                ?.toRotationMatrix3()
+                                ?: fused
+                        val remappedFused =
+                            if (displayRotation() == Surface.ROTATION_0) {
+                                fused
+                            } else {
+                                fused.writeToFloatArray(naturalMatrix)
+                                remapToDisplayFrame(naturalMatrix, remappedMatrix).toMatrix3()
+                            }
+                        val remappedSmoothed =
+                            if (smoothed === fused) {
+                                remappedFused
+                            } else if (displayRotation() == Surface.ROTATION_0) {
+                                smoothed
+                            } else {
+                                smoothed.writeToFloatArray(naturalMatrix)
+                                remapToDisplayFrame(naturalMatrix, remappedMatrix).toMatrix3()
+                            }
+                        trySend(OrientationSample(remappedFused, remappedSmoothed))
+                    }
+
+                    override fun onAccuracyChanged(
+                        sensor: Sensor,
+                        accuracy: Int,
+                    ) = Unit
+                }
             manager.registerListener(listener, accelerometer, SensorManager.SENSOR_DELAY_GAME)
             manager.registerListener(listener, magnetometer, SensorManager.SENSOR_DELAY_GAME)
             awaitClose { manager.unregisterListener(listener) }

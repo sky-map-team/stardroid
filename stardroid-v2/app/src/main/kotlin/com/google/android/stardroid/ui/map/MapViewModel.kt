@@ -15,6 +15,7 @@ import com.google.android.stardroid.analytics.Analytics
 import com.google.android.stardroid.analytics.AnalyticsEvents
 import com.google.android.stardroid.analytics.NoOpAnalytics
 import com.google.android.stardroid.astronomy.Ephemeris
+import com.google.android.stardroid.astronomy.LocalFrame
 import com.google.android.stardroid.astronomy.SkyModel
 import com.google.android.stardroid.astronomy.SolarSystemBody
 import com.google.android.stardroid.astronomy.ViewDirectionMode
@@ -54,7 +55,6 @@ import kotlinx.coroutines.launch
 import kotlinx.datetime.Instant
 import kotlin.math.abs
 import kotlin.math.acos
-import kotlin.math.asin
 import kotlin.math.atan2
 import kotlin.math.exp
 
@@ -297,18 +297,14 @@ class MapViewModel(
             azimuthAdjustment,
             altitudeAdjustment,
         ) { cam, _, correctionAz, correctionAlt ->
-            val frame = localFrame
             val los = cam.lineOfSight
             val raDec = RaDec.fromGeocentricVector(los)
+            val azAlt = localFrame.value.azAlt(los)
             HudState(
                 raDeg = raDec.raDeg,
                 decDeg = raDec.decDeg,
-                altDeg = asin((los dot frame.up).coerceIn(-1.0, 1.0)) * RADIANS_TO_DEGREES,
-                azDeg =
-                    normalizeDegrees(
-                        atan2(los dot frame.trueEast, los dot frame.trueNorth) *
-                            RADIANS_TO_DEGREES,
-                    ),
+                altDeg = azAlt.altitudeDeg,
+                azDeg = azAlt.azimuthDeg,
                 fovDeg = cam.fovDeg,
                 fovLocked = _arMode.value && arSpecs.value?.shortSideFovDeg != null,
                 correctionAzDeg = correctionAz,
@@ -350,8 +346,11 @@ class MapViewModel(
     private var levelJob: Job? = null
     private var slewJob: Job? = null
 
-    @Volatile
-    private var localFrame = SkyModel.localFrame(now(), LocationController.DEFAULT_LOCATION)
+    private val _localFrame =
+        MutableStateFlow(SkyModel.localFrame(now(), LocationController.DEFAULT_LOCATION))
+
+    /** The frame the sensor and HUD pointing math is resolved against — exposed for diagnostics. */
+    val localFrame: StateFlow<LocalFrame> = _localFrame.asStateFlow()
 
     init {
         // Watch the camera rather than the pinch handler: `onStretch` is only one of several
@@ -821,7 +820,7 @@ class MapViewModel(
                     val dt = secondsSince(last, frame)
                     last = frame
                     val cam = _camera.value
-                    val zenith = localFrame.up
+                    val zenith = localFrame.value.up
                     val projected = zenith - cam.lineOfSight * (zenith dot cam.lineOfSight)
                     // Looking (nearly) straight up or down: no defined level, as in v1.
                     if (projected.length2 < LEVEL_DEGENERATE_TOL) break
@@ -887,7 +886,7 @@ class MapViewModel(
      * half lives in the local frame via [declinationFor].
      */
     private fun resolveSensorCamera(orientation: Matrix3) {
-        val pointing = SkyModel.pointing(localFrame, orientation, viewDirection)
+        val pointing = SkyModel.pointing(localFrame.value, orientation, viewDirection)
         var los = pointing.lineOfSight
         var up = pointing.perpendicular
         val altitudeDeg = altitudeAdjustment.value
@@ -915,7 +914,7 @@ class MapViewModel(
     // to the layers and dome under fast time travel.
     private fun refreshLocalFrame(time: Instant = now()) {
         val location = currentLocation
-        localFrame = SkyModel.localFrame(time, location, declinationFor(location, time))
+        _localFrame.value = SkyModel.localFrame(time, location, declinationFor(location, time))
     }
 
     private class DeclinationCache(

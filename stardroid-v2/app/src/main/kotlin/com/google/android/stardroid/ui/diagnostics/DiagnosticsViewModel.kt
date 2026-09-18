@@ -11,14 +11,20 @@ package com.google.android.stardroid.ui.diagnostics
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.google.android.stardroid.astronomy.LocalFrame
+import com.google.android.stardroid.astronomy.SkyModel
+import com.google.android.stardroid.astronomy.ViewDirectionMode
 import com.google.android.stardroid.location.LocationState
 import com.google.android.stardroid.math.RaDec
 import com.google.android.stardroid.render.api.RendererInfo
 import com.google.android.stardroid.render.api.SkyCamera
 import com.google.android.stardroid.sensors.MagneticDeclinationSource
+import com.google.android.stardroid.sensors.OrientationSource
 import com.google.android.stardroid.sensors.SensorKind
 import com.google.android.stardroid.sensors.SensorReading
 import com.google.android.stardroid.sensors.SensorStatusSource
+import com.google.android.stardroid.settings.OneEuroEaseOff
+import com.google.android.stardroid.settings.OneEuroSteadiness
 import com.google.android.stardroid.settings.Settings
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.FlowPreview
@@ -31,6 +37,7 @@ import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.flow.sample
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.datetime.Instant
@@ -76,6 +83,39 @@ data class DiagnosticsSnapshot(
     val network: NetworkStatus = NetworkStatus.DISCONNECTED,
     /** Null until the GL surface has been created at least once. */
     val rendererInfo: RendererInfo? = null,
+    /** The orientation-pipeline settings that shape what the sensor rows above are showing. */
+    val disableGyro: Boolean = false,
+    val smoothingEnabled: Boolean = false,
+    val steadiness: OneEuroSteadiness = OneEuroSteadiness.MEDIUM,
+    val easeOff: OneEuroEaseOff = OneEuroEaseOff.MEDIUM,
+    val reverseMagneticZ: Boolean = false,
+    val useMagneticCorrection: Boolean = true,
+    val viewDirectionMode: ViewDirectionMode = ViewDirectionMode.STANDARD,
+    val dontShowCalibrationDialog: Boolean = false,
+)
+
+/** [Settings.useMagneticCorrection] plus the rest of [Settings]'s orientation-pipeline knobs. */
+private data class SmoothingSettings(
+    val useMagneticCorrection: Boolean,
+    val disableGyro: Boolean,
+    val smoothingEnabled: Boolean,
+    val steadiness: OneEuroSteadiness,
+    val easeOff: OneEuroEaseOff,
+)
+
+/** The trailing-window pointing jitter (see [PointingJitterAccumulator]) for both pipeline stages. */
+data class PointingJitterSnapshot(val raw: PointingJitter, val smoothed: PointingJitter)
+
+/** Every [Settings] flow that shapes the sensor pipeline, bundled so it fits one combine slot. */
+private data class OrientationSettingsSnapshot(
+    val useMagneticCorrection: Boolean,
+    val disableGyro: Boolean,
+    val smoothingEnabled: Boolean,
+    val steadiness: OneEuroSteadiness,
+    val easeOff: OneEuroEaseOff,
+    val reverseMagneticZ: Boolean,
+    val viewDirectionMode: ViewDirectionMode,
+    val dontShowCalibrationDialog: Boolean,
 )
 
 /**
@@ -97,9 +137,19 @@ class DiagnosticsViewModel(
     private val isLocationPermissionGranted: () -> Boolean,
     private val gpsStatus: () -> GpsStatus,
     private val networkStatus: () -> NetworkStatus,
+    private val orientationSource: OrientationSource,
+    private val localFrame: StateFlow<LocalFrame>,
     private val rendererInfo: () -> RendererInfo? = { null },
     private val ioContext: CoroutineContext = Dispatchers.IO,
+    // Wall-clock, not [now] — [now] is celestial simulation time (time-travel-aware, per
+    // screens-and-startup.md), which can sit paused while real sensor events keep arriving.
+    // A jitter window keyed to a paused clock would never evict old samples.
+    private val wallClockMillis: () -> Long = System::currentTimeMillis,
 ) : ViewModel() {
+    /** One rate tracker per sensor kind — fed by the same collection [sensors] registers. */
+    private val sensorRateAccumulators: Map<SensorKind, SensorRateAccumulator> =
+        SensorKind.entries.associateWith { SensorRateAccumulator(SENSOR_RATE_WINDOW_MILLIS) }
+
     /** Sensor rows keyed in v1's display order. */
     val sensors: Map<SensorKind, StateFlow<SensorRow>> =
         SensorKind.entries.associateWith { kind ->
@@ -108,6 +158,10 @@ class DiagnosticsViewModel(
             } else {
                 sensorStatus
                     .readings(kind)
+                    // Runs on every raw event, ahead of the sample() below, so the rate
+                    // tracker sees the sensor's real arrival cadence rather than one sample
+                    // every UPDATE_PERIOD_MILLIS.
+                    .onEach { sensorRateAccumulators.getValue(kind).recordEvent(wallClockMillis()) }
                     // Sensors can report far faster than the eye can read; match the polled
                     // snapshot's cadence instead of recomposing on every raw sample.
                     .sample(UPDATE_PERIOD_MILLIS)
@@ -121,6 +175,28 @@ class DiagnosticsViewModel(
                     )
             }
         }
+
+    /**
+     * How often each sensor is actually delivering events, polled at [UPDATE_PERIOD_MILLIS] so a
+     * sensor that's gone silent shows growing staleness rather than a frozen last-good reading.
+     * Absent sensors always report zero rate / null staleness.
+     */
+    val sensorRates: StateFlow<Map<SensorKind, SensorRateInfo>> =
+        flow {
+            while (true) {
+                val now = wallClockMillis()
+                emit(
+                    SensorKind.entries.associateWith {
+                        sensorRateAccumulators.getValue(it).snapshot(now)
+                    },
+                )
+                delay(UPDATE_PERIOD_MILLIS)
+            }
+        }.stateIn(
+            viewModelScope,
+            SharingStarted.WhileSubscribed(5_000),
+            SensorKind.entries.associateWith { SensorRateInfo(0.0, null) },
+        )
 
     /**
      * The rotation-vector quaternion as a row-major rotation matrix — v1 showed
@@ -140,6 +216,65 @@ class DiagnosticsViewModel(
      * plus the raw alignment pair as its own read-only row. Reactive to settings changes
      * rather than only re-sampling them on the next 500 ms tick.
      */
+    /** Bundles every settings flow the sensor pipeline reads, one combine slot's worth. */
+    private val orientationSettings: Flow<OrientationSettingsSnapshot> =
+        combine(
+            combine(
+                settings.useMagneticCorrection,
+                settings.disableGyro,
+                settings.smoothingEnabled,
+                settings.steadiness,
+                settings.easeOff,
+                ::SmoothingSettings,
+            ),
+            settings.reverseMagneticZ,
+            settings.viewDirectionMode,
+            settings.dontShowCalibrationDialog,
+        ) { smoothing, reverseMagneticZ, viewDirectionMode, dontShowCalibrationDialog ->
+            OrientationSettingsSnapshot(
+                useMagneticCorrection = smoothing.useMagneticCorrection,
+                disableGyro = smoothing.disableGyro,
+                smoothingEnabled = smoothing.smoothingEnabled,
+                steadiness = smoothing.steadiness,
+                easeOff = smoothing.easeOff,
+                reverseMagneticZ = reverseMagneticZ,
+                viewDirectionMode = viewDirectionMode,
+                dontShowCalibrationDialog = dontShowCalibrationDialog,
+            )
+        }
+
+    private val rawJitter = PointingJitterAccumulator(JITTER_WINDOW_MILLIS)
+    private val smoothedJitter = PointingJitterAccumulator(JITTER_WINDOW_MILLIS)
+
+    /**
+     * How much the phone's resolved sky-pointing wobbles over the trailing
+     * [JITTER_WINDOW_MILLIS], before and after the 1€ filter — the number that answers whether
+     * [Settings.smoothingEnabled] and its steadiness/ease-off are actually doing anything.
+     * Collecting this registers its own sensor listeners via
+     * [OrientationSource.orientationSamples] independent of the map's; it only runs while the
+     * diagnostics screen is open.
+     */
+    val pointingJitter: StateFlow<PointingJitterSnapshot?> =
+        orientationSource
+            .orientationSamples()
+            .combine(settings.viewDirectionMode) { sample, mode -> sample to mode }
+            .map { (sample, mode) ->
+                val frame = localFrame.value
+                val rawAzAlt = frame.azAlt(SkyModel.pointing(frame, sample.raw, mode).lineOfSight)
+                val smoothedAzAlt =
+                    frame.azAlt(SkyModel.pointing(frame, sample.smoothed, mode).lineOfSight)
+                val timeMillis = wallClockMillis()
+                PointingJitterSnapshot(
+                    raw = rawJitter.add(timeMillis, rawAzAlt.azimuthDeg, rawAzAlt.altitudeDeg),
+                    smoothed =
+                        smoothedJitter.add(
+                            timeMillis,
+                            smoothedAzAlt.azimuthDeg,
+                            smoothedAzAlt.altitudeDeg,
+                        ),
+                )
+            }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), null)
+
     val snapshots: StateFlow<DiagnosticsSnapshot> =
         combine(
             flow {
@@ -149,13 +284,13 @@ class DiagnosticsViewModel(
                 }
             },
             locationStates,
-            settings.useMagneticCorrection,
+            orientationSettings,
             settings.sensorAzimuthAdjustmentDeg,
             settings.sensorAltitudeAdjustmentDeg,
-        ) { time, locationState, useMagneticCorrection, azimuthAdjustment, altitudeAdjustment ->
+        ) { time, locationState, orientation, azimuthAdjustment, altitudeAdjustment ->
             val location = (locationState as? LocationState.Confirmed)?.location
             val declination =
-                if (location != null && useMagneticCorrection) {
+                if (location != null && orientation.useMagneticCorrection) {
                     declinationSource.declinationDeg(location, time)
                 } else {
                     0.0
@@ -171,6 +306,14 @@ class DiagnosticsViewModel(
                 time = time,
                 network = networkStatus(),
                 rendererInfo = rendererInfo(),
+                disableGyro = orientation.disableGyro,
+                smoothingEnabled = orientation.smoothingEnabled,
+                steadiness = orientation.steadiness,
+                easeOff = orientation.easeOff,
+                reverseMagneticZ = orientation.reverseMagneticZ,
+                useMagneticCorrection = orientation.useMagneticCorrection,
+                viewDirectionMode = orientation.viewDirectionMode,
+                dontShowCalibrationDialog = orientation.dontShowCalibrationDialog,
             )
         }.flowOn(ioContext)
             // Matches the sensor flows' timeout: survives config-change recomposition without
@@ -180,6 +323,12 @@ class DiagnosticsViewModel(
     companion object {
         /** v1 `DiagnosticActivity.UPDATE_PERIOD_MILLIS`. */
         const val UPDATE_PERIOD_MILLIS = 500L
+
+        /** Trailing window for [pointingJitter] — long enough to settle, short enough to react. */
+        const val JITTER_WINDOW_MILLIS = 5_000L
+
+        /** Trailing window for [sensorRates]' Hz estimate. */
+        const val SENSOR_RATE_WINDOW_MILLIS = 3_000L
 
         /**
          * `SensorManager.getRotationMatrixFromVector` in pure Kotlin: the standard

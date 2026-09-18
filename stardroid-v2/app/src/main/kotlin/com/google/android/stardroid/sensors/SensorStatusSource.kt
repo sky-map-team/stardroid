@@ -113,10 +113,18 @@ class SensorManagerStatusSource(
             },
         )
 
-    /** v1 registered the light sensor at UI rate and the rest at NORMAL. */
+    /**
+     * Light stays at UI rate (v1 parity) — ambient brightness doesn't need fast sampling. The
+     * rest request GAME rate, matching what [SensorOrientationSource] already asks for from
+     * these same sensor types: NORMAL (~5 Hz) is only a hint, and Android delivers a physical
+     * sensor's stream to every listener at the fastest rate *any* registered listener asked
+     * for — so a NORMAL request here would silently ride whatever faster rate some other app
+     * or system component happens to be driving that sensor at, rather than reporting a rate
+     * this app actually asked for and can rely on for diagnosis.
+     */
     private fun delayFor(kind: SensorKind): Int =
         when (kind) {
             SensorKind.LIGHT -> SensorManager.SENSOR_DELAY_UI
-            else -> SensorManager.SENSOR_DELAY_NORMAL
+            else -> SensorManager.SENSOR_DELAY_GAME
         }
 }
