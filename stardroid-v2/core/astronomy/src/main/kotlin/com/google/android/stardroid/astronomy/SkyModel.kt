@@ -11,10 +11,14 @@ package com.google.android.stardroid.astronomy
 
 import com.google.android.stardroid.math.LatLong
 import com.google.android.stardroid.math.Matrix3
+import com.google.android.stardroid.math.RADIANS_TO_DEGREES
 import com.google.android.stardroid.math.RaDec
 import com.google.android.stardroid.math.Vector3
+import com.google.android.stardroid.math.normalizeDegrees
 import com.google.android.stardroid.math.rotationMatrix
 import kotlinx.datetime.Instant
+import kotlin.math.asin
+import kotlin.math.atan2
 
 /**
  * The observer's local reference directions expressed in celestial (geocentric equatorial)
@@ -34,7 +38,23 @@ data class LocalFrame(
     /** `[magneticNorth, up, magneticEast]` as column vectors — v1's `axesMagneticCelestialMatrix`. */
     val axesMagneticCelestial: Matrix3
         get() = Matrix3.fromVectors(magneticNorth, up, magneticEast)
+
+    /**
+     * [lineOfSight] as true azimuth/altitude in this frame, in degrees — azimuth 0–360°
+     * clockwise from true north, altitude -90–90° above the horizon.
+     */
+    fun azAlt(lineOfSight: Vector3): AzAlt {
+        val altDeg = asin((lineOfSight dot up).coerceIn(-1.0, 1.0)) * RADIANS_TO_DEGREES
+        val azDeg =
+            normalizeDegrees(
+                atan2(lineOfSight dot trueEast, lineOfSight dot trueNorth) * RADIANS_TO_DEGREES,
+            )
+        return AzAlt(azDeg, altDeg)
+    }
 }
+
+/** A phone-pointing direction as true azimuth/altitude in degrees — see [LocalFrame.azAlt]. */
+data class AzAlt(val azimuthDeg: Double, val altitudeDeg: Double)
 
 /**
  * Where the phone points on the celestial sphere: the direction into the screen ([lineOfSight])

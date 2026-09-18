@@ -86,6 +86,7 @@ fun DiagnosticsScreen(
     val context = LocalContext.current
     val colors = statusColors(nightMode)
     val snapshot by viewModel.snapshots.collectAsStateWithLifecycle()
+    val jitter by viewModel.pointingJitter.collectAsStateWithLifecycle()
     val scope = rememberCoroutineScope()
     var satelliteState by remember { mutableStateOf<SatelliteDiagnosticsState?>(null) }
     var forceFetchResult by remember { mutableStateOf<String?>(null) }
@@ -95,7 +96,7 @@ fun DiagnosticsScreen(
             add(generalSection())
             add(graphicsSection(snapshot.rendererInfo))
             add(sensorsSection(viewModel, colors))
-            add(orientationSettingsSection(snapshot))
+            add(orientationSettingsSection(snapshot, jitter))
             add(locationAndTimeSection(snapshot, colors))
             add(networkSection(snapshot))
             satelliteState?.let { add(satelliteSection(it)) }
@@ -307,7 +308,10 @@ private fun sensorsSection(
  * rather than [Settings] itself, so the report always matches what the screen is showing.
  */
 @Composable
-private fun orientationSettingsSection(snapshot: DiagnosticsSnapshot): DiagnosticsSection =
+private fun orientationSettingsSection(
+    snapshot: DiagnosticsSnapshot,
+    jitter: PointingJitterSnapshot?,
+): DiagnosticsSection =
     DiagnosticsSection(
         stringResource(R.string.diagnostics_section_orientation_settings),
         listOf(
@@ -355,12 +359,33 @@ private fun orientationSettingsSection(snapshot: DiagnosticsSnapshot): Diagnosti
                     },
                 ),
             ),
+            DiagnosticsRow(
+                stringResource(R.string.diagnostics_jitter_raw),
+                jitterText(jitter?.raw),
+            ),
+            DiagnosticsRow(
+                stringResource(R.string.diagnostics_jitter_smoothed),
+                jitterText(jitter?.smoothed),
+            ),
         ),
     )
 
 @Composable
 private fun onOffText(enabled: Boolean): String =
     stringResource(if (enabled) R.string.diagnostics_enabled else R.string.diagnostics_disabled)
+
+/** "az σ0.42°, alt σ0.18°" over the trailing window (D95), or a placeholder before it fills. */
+@Composable
+private fun jitterText(jitter: PointingJitter?): String =
+    if (jitter == null) {
+        stringResource(R.string.diagnostics_jitter_pending)
+    } else {
+        stringResource(
+            R.string.diagnostics_jitter_format,
+            jitter.azimuthStdDevDeg,
+            jitter.altitudeStdDevDeg,
+        )
+    }
 
 /** `VERY_HIGH` -> `Very High` — technical enum names are diagnostic values, not translated. */
 private fun enumDisplayName(value: Enum<*>): String =

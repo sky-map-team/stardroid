@@ -317,6 +317,8 @@ class MainActivity : ComponentActivity() {
                     },
                     gpsStatus = { gpsStatus(appContext) },
                     networkStatus = { networkStatus(appContext) },
+                    orientationSource = orientationSource,
+                    localFrame = mapViewModel.localFrame,
                     rendererInfo = rendererInfoStore::get,
                 )
             }

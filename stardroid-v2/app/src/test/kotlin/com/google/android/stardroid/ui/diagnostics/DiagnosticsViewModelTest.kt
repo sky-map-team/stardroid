@@ -9,14 +9,19 @@
 
 package com.google.android.stardroid.ui.diagnostics
 
+import com.google.android.stardroid.astronomy.LocalFrame
 import com.google.android.stardroid.astronomy.ViewDirectionMode
 import com.google.android.stardroid.location.LocationSource
 import com.google.android.stardroid.location.LocationState
 import com.google.android.stardroid.math.LatLong
+import com.google.android.stardroid.math.Matrix3
 import com.google.android.stardroid.math.Vector3
+import com.google.android.stardroid.math.rotationMatrix
 import com.google.android.stardroid.render.api.SkyCamera
 import com.google.android.stardroid.sensors.FakeSensorStatusSource
 import com.google.android.stardroid.sensors.MagneticDeclinationSource
+import com.google.android.stardroid.sensors.OrientationSample
+import com.google.android.stardroid.sensors.OrientationSource
 import com.google.android.stardroid.sensors.SensorAccuracy
 import com.google.android.stardroid.sensors.SensorKind
 import com.google.android.stardroid.sensors.SensorReading
@@ -26,6 +31,8 @@ import com.google.android.stardroid.settings.OneEuroSteadiness
 import com.google.common.truth.Truth.assertThat
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.test.StandardTestDispatcher
@@ -54,6 +61,21 @@ class DiagnosticsViewModelTest {
     private var gps = GpsStatus.ENABLED
     private var network = NetworkStatus.CONNECTED_WIFI
 
+    // A simple right-handed frame (east=x, north=y, up=z) — enough to exercise the pointing
+    // jitter math without needing a real observer/time-derived SkyModel.localFrame.
+    private val localFrame =
+        MutableStateFlow(
+            LocalFrame(
+                trueNorth = Vector3(0.0, 1.0, 0.0),
+                up = Vector3(0.0, 0.0, 1.0),
+                trueEast = Vector3(1.0, 0.0, 0.0),
+                magneticNorth = Vector3(0.0, 1.0, 0.0),
+                magneticEast = Vector3(1.0, 0.0, 0.0),
+            ),
+        )
+    private val orientationSamples = MutableSharedFlow<OrientationSample>(replay = 1)
+    private val orientationSource = FakeOrientationSource(orientationSamples)
+
     private val viewModel by lazy {
         DiagnosticsViewModel(
             sensorStatus = sensors,
@@ -71,8 +93,20 @@ class DiagnosticsViewModelTest {
             isLocationPermissionGranted = { permissionGranted },
             gpsStatus = { gps },
             networkStatus = { network },
+            orientationSource = orientationSource,
+            localFrame = localFrame,
             ioContext = dispatcher,
         )
+    }
+
+    private class FakeOrientationSource(
+        private val samples: Flow<OrientationSample>,
+    ) : OrientationSource {
+        override val available = true
+
+        override fun orientations(): Flow<Matrix3> = throw NotImplementedError("unused in tests")
+
+        override fun orientationSamples(): Flow<OrientationSample> = samples
     }
 
     @BeforeEach
@@ -173,6 +207,36 @@ class DiagnosticsViewModelTest {
             assertThat(snapshot.useMagneticCorrection).isTrue()
             assertThat(snapshot.viewDirectionMode).isEqualTo(ViewDirectionMode.TELESCOPE)
             assertThat(snapshot.dontShowCalibrationDialog).isTrue()
+            collector.cancel()
+        }
+
+    @Test
+    fun `pointing jitter shows the raw wobble the smoothed stream damps out`() =
+        testScope.runTest {
+            val collector = launch { viewModel.pointingJitter.collect {} }
+            runCurrent()
+            assertThat(viewModel.pointingJitter.value).isNull()
+
+            // A phone yawing back and forth by 2° on the raw path, held dead steady on the
+            // smoothed path — as if the filter were doing its job perfectly.
+            for (angleDeg in listOf(-2.0, 2.0, -2.0, 2.0, -2.0, 2.0)) {
+                orientationSamples.emit(
+                    OrientationSample(
+                        raw = rotationMatrix(angleDeg, Vector3.UNIT_X),
+                        smoothed = Matrix3.IDENTITY,
+                    ),
+                )
+                runCurrent()
+            }
+
+            val jitter = viewModel.pointingJitter.value
+            assertThat(jitter).isNotNull()
+            assertThat(jitter!!.smoothed.azimuthStdDevDeg).isWithin(1e-9).of(0.0)
+            assertThat(jitter.smoothed.altitudeStdDevDeg).isWithin(1e-9).of(0.0)
+            // The constant-orientation smoothed samples produce exactly zero jitter on both
+            // axes; the wobbling raw samples must show up on at least one.
+            assertThat(jitter.raw.azimuthStdDevDeg + jitter.raw.altitudeStdDevDeg)
+                .isGreaterThan(0.5)
             collector.cancel()
         }
 

@@ -28,6 +28,7 @@ import com.google.android.stardroid.math.Matrix3
 import com.google.android.stardroid.sensors.DisplayRotationBus
 import com.google.android.stardroid.sensors.GeomagneticDeclinationSource
 import com.google.android.stardroid.sensors.MagneticDeclinationSource
+import com.google.android.stardroid.sensors.OrientationSample
 import com.google.android.stardroid.sensors.OrientationSource
 import com.google.android.stardroid.sensors.SensorConfig
 import com.google.android.stardroid.sensors.SensorManagerStatusSource
@@ -217,6 +218,12 @@ object AppModule {
 
             override fun orientations(): Flow<Matrix3> =
                 delegate.orientations().flowWithLifecycle(
+                    ProcessLifecycleOwner.get().lifecycle,
+                    Lifecycle.State.STARTED,
+                )
+
+            override fun orientationSamples(): Flow<OrientationSample> =
+                delegate.orientationSamples().flowWithLifecycle(
                     ProcessLifecycleOwner.get().lifecycle,
                     Lifecycle.State.STARTED,
                 )

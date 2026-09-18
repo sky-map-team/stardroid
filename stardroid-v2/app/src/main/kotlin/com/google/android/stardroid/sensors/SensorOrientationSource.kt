@@ -26,6 +26,7 @@ import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.emptyFlow
 import kotlinx.coroutines.flow.flatMapLatest
 import kotlinx.coroutines.flow.flowOf
+import kotlinx.coroutines.flow.map
 
 /**
  * [OrientationSource] backed by [SensorManager] — the port of v1's
@@ -56,8 +57,10 @@ class SensorOrientationSource(
     override val available: Boolean
         get() = rotationSensor != null || (accelerometer != null && magnetometer != null)
 
+    override fun orientations(): Flow<Matrix3> = orientationSamples().map { it.smoothed }
+
     @OptIn(ExperimentalCoroutinesApi::class)
-    override fun orientations(): Flow<Matrix3> =
+    override fun orientationSamples(): Flow<OrientationSample> =
         config.distinctUntilChanged { old, new ->
             // The smoothing parameters now drive both paths, so the only setting that doesn't
             // always matter is the magnetic-Z reversal, which the fused path never reads.
@@ -85,23 +88,32 @@ class SensorOrientationSource(
         manager: SensorManager,
         sensor: Sensor,
         config: SensorConfig,
-    ): Flow<Matrix3> =
+    ): Flow<OrientationSample> =
         callbackFlow {
             // Some devices (e.g. Galaxy S4) report more than four values, others only three
             // (no scalar component); toQuaternion normalizes both into this buffer, deriving
             // the scalar where it's missing.
             val quaternion = FloatArray(4)
-            val rotationMatrix = FloatArray(9)
-            val remappedMatrix = FloatArray(9)
+            val rawMatrix = FloatArray(9)
+            val rawRemapped = FloatArray(9)
+            val smoothedMatrix = FloatArray(9)
+            val smoothedRemapped = FloatArray(9)
             val smoother = smootherFor(config)
             val listener =
                 object : SensorEventListener {
                     override fun onSensorChanged(event: SensorEvent) {
                         val raw = toQuaternion(event.values, quaternion)
-                        val vector = smoother?.update(raw, event.timestamp) ?: raw
-                        SensorManager.getRotationMatrixFromVector(rotationMatrix, vector)
-                        val remapped = remapToDisplayFrame(rotationMatrix, remappedMatrix)
-                        trySend(remapped.toMatrix3())
+                        SensorManager.getRotationMatrixFromVector(rawMatrix, raw)
+                        val rawResult = remapToDisplayFrame(rawMatrix, rawRemapped).toMatrix3()
+                        val smoothed = smoother?.update(raw, event.timestamp)
+                        val smoothedResult =
+                            if (smoothed == null) {
+                                rawResult
+                            } else {
+                                SensorManager.getRotationMatrixFromVector(smoothedMatrix, smoothed)
+                                remapToDisplayFrame(smoothedMatrix, smoothedRemapped).toMatrix3()
+                            }
+                        trySend(OrientationSample(rawResult, smoothedResult))
                     }
 
                     override fun onAccuracyChanged(
@@ -136,7 +148,7 @@ class SensorOrientationSource(
         accelerometer: Sensor,
         magnetometer: Sensor,
         config: SensorConfig,
-    ): Flow<Matrix3> =
+    ): Flow<OrientationSample> =
         callbackFlow {
             val smoother = smootherFor(config)
             var acceleration: Vector3? = null
@@ -181,14 +193,23 @@ class SensorOrientationSource(
                                 ?: fused
                         // ROTATION_0 needs no remap; skip the FloatArray round-trip (two
                         // allocations per event) on the hot path in that common case.
-                        val remapped =
+                        val remappedFused =
                             if (displayRotation() == Surface.ROTATION_0) {
+                                fused
+                            } else {
+                                fused.writeToFloatArray(naturalMatrix)
+                                remapToDisplayFrame(naturalMatrix, remappedMatrix).toMatrix3()
+                            }
+                        val remappedSmoothed =
+                            if (smoothed === fused) {
+                                remappedFused
+                            } else if (displayRotation() == Surface.ROTATION_0) {
                                 smoothed
                             } else {
                                 smoothed.writeToFloatArray(naturalMatrix)
                                 remapToDisplayFrame(naturalMatrix, remappedMatrix).toMatrix3()
                             }
-                        trySend(remapped)
+                        trySend(OrientationSample(remappedFused, remappedSmoothed))
                     }
 
                     override fun onAccuracyChanged(

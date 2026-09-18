@@ -11,12 +11,15 @@ package com.google.android.stardroid.ui.diagnostics
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.google.android.stardroid.astronomy.LocalFrame
+import com.google.android.stardroid.astronomy.SkyModel
 import com.google.android.stardroid.astronomy.ViewDirectionMode
 import com.google.android.stardroid.location.LocationState
 import com.google.android.stardroid.math.RaDec
 import com.google.android.stardroid.render.api.RendererInfo
 import com.google.android.stardroid.render.api.SkyCamera
 import com.google.android.stardroid.sensors.MagneticDeclinationSource
+import com.google.android.stardroid.sensors.OrientationSource
 import com.google.android.stardroid.sensors.SensorKind
 import com.google.android.stardroid.sensors.SensorReading
 import com.google.android.stardroid.sensors.SensorStatusSource
@@ -99,6 +102,9 @@ private data class SmoothingSettings(
     val easeOff: OneEuroEaseOff,
 )
 
+/** The trailing-window pointing jitter (see [PointingJitterAccumulator]) for both pipeline stages. */
+data class PointingJitterSnapshot(val raw: PointingJitter, val smoothed: PointingJitter)
+
 /** Every [Settings] flow that shapes the sensor pipeline, bundled so it fits one combine slot. */
 private data class OrientationSettingsSnapshot(
     val useMagneticCorrection: Boolean,
@@ -130,6 +136,8 @@ class DiagnosticsViewModel(
     private val isLocationPermissionGranted: () -> Boolean,
     private val gpsStatus: () -> GpsStatus,
     private val networkStatus: () -> NetworkStatus,
+    private val orientationSource: OrientationSource,
+    private val localFrame: StateFlow<LocalFrame>,
     private val rendererInfo: () -> RendererInfo? = { null },
     private val ioContext: CoroutineContext = Dispatchers.IO,
 ) : ViewModel() {
@@ -200,6 +208,46 @@ class DiagnosticsViewModel(
             )
         }
 
+    /** Latest [Settings.viewDirectionMode], read synchronously from [pointingJitter]'s hot loop. */
+    private val viewDirectionMode: StateFlow<ViewDirectionMode> =
+        settings.viewDirectionMode.stateIn(
+            viewModelScope,
+            SharingStarted.WhileSubscribed(5_000),
+            ViewDirectionMode.STANDARD,
+        )
+
+    private val rawJitter = PointingJitterAccumulator(JITTER_WINDOW_MILLIS)
+    private val smoothedJitter = PointingJitterAccumulator(JITTER_WINDOW_MILLIS)
+
+    /**
+     * How much the phone's resolved sky-pointing wobbles over the trailing
+     * [JITTER_WINDOW_MILLIS], before and after the 1€ filter — the number that answers whether
+     * [Settings.smoothingEnabled] and its steadiness/ease-off are actually doing anything.
+     * Collecting this registers its own sensor listeners via
+     * [OrientationSource.orientationSamples] independent of the map's; it only runs while the
+     * diagnostics screen is open.
+     */
+    val pointingJitter: StateFlow<PointingJitterSnapshot?> =
+        orientationSource
+            .orientationSamples()
+            .map { sample ->
+                val frame = localFrame.value
+                val mode = viewDirectionMode.value
+                val rawAzAlt = frame.azAlt(SkyModel.pointing(frame, sample.raw, mode).lineOfSight)
+                val smoothedAzAlt =
+                    frame.azAlt(SkyModel.pointing(frame, sample.smoothed, mode).lineOfSight)
+                val timeMillis = now().toEpochMilliseconds()
+                PointingJitterSnapshot(
+                    raw = rawJitter.add(timeMillis, rawAzAlt.azimuthDeg, rawAzAlt.altitudeDeg),
+                    smoothed =
+                        smoothedJitter.add(
+                            timeMillis,
+                            smoothedAzAlt.azimuthDeg,
+                            smoothedAzAlt.altitudeDeg,
+                        ),
+                )
+            }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), null)
+
     val snapshots: StateFlow<DiagnosticsSnapshot> =
         combine(
             flow {
@@ -248,6 +296,9 @@ class DiagnosticsViewModel(
     companion object {
         /** v1 `DiagnosticActivity.UPDATE_PERIOD_MILLIS`. */
         const val UPDATE_PERIOD_MILLIS = 500L
+
+        /** Trailing window for [pointingJitter] — long enough to settle, short enough to react. */
+        const val JITTER_WINDOW_MILLIS = 5_000L
 
         /**
          * `SensorManager.getRotationMatrixFromVector` in pure Kotlin: the standard
