@@ -273,12 +273,13 @@ private fun sensorsSection(
     colors: StatusColors,
 ): DiagnosticsSection {
     val rows = mutableListOf<DiagnosticsRow>()
+    val rates by viewModel.sensorRates.collectAsStateWithLifecycle()
     for (kind in SensorKind.entries) {
         val row by viewModel.sensors.getValue(kind).collectAsStateWithLifecycle()
         rows +=
             DiagnosticsRow(
                 label = stringResource(sensorName(kind)),
-                value = sensorText(row),
+                value = sensorText(row) + rateSuffix(row, rates[kind]),
                 valueColor = sensorColor(row, colors),
             )
     }
@@ -565,6 +566,25 @@ private fun sensorText(row: SensorRow): String =
         is SensorRow.Present ->
             row.reading?.values?.joinToString(",") { "%.2f".format(Locale.US, it) } ?: ""
     }
+
+/**
+ * " (52 Hz, 0.1s ago)" for a present, reporting sensor — nothing for an absent one or one that
+ * hasn't delivered a first event yet, since [sensorText] already says so.
+ */
+@Composable
+private fun rateSuffix(
+    row: SensorRow,
+    rate: SensorRateInfo?,
+): String {
+    if (row !is SensorRow.Present || rate == null) return ""
+    val staleForMillis = rate.staleForMillis ?: return ""
+    return " " +
+        stringResource(
+            R.string.diagnostics_sensor_rate_format,
+            rate.hz,
+            staleForMillis / 1000.0,
+        )
+}
 
 /** v1's decoder: absent grey; unreliable/no-contact red, low orange, medium yellow, high green. */
 private fun sensorColor(

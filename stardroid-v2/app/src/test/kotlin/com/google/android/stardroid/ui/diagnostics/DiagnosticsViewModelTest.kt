@@ -269,6 +269,33 @@ class DiagnosticsViewModelTest {
         }
 
     @Test
+    fun `sensor rates track events on a present sensor and stay null on an absent one`() =
+        testScope.runTest {
+            val magnetometer = viewModel.sensors.getValue(SensorKind.MAGNETOMETER)
+            val sensorCollector = launch { magnetometer.collect {} }
+            val ratesCollector = launch { viewModel.sensorRates.collect {} }
+            runCurrent()
+
+            // No event yet: fresh, not stale.
+            assertThat(viewModel.sensorRates.value.getValue(SensorKind.MAGNETOMETER).staleForMillis)
+                .isNull()
+            // Gyroscope isn't in this fixture's present set — always null, never "just quiet".
+            assertThat(viewModel.sensorRates.value.getValue(SensorKind.GYROSCOPE).staleForMillis)
+                .isNull()
+
+            sensors.emit(SensorKind.MAGNETOMETER, SensorReading(SensorAccuracy.HIGH, listOf(1f)))
+            // sensorRates ticks on its own UPDATE_PERIOD_MILLIS timer, independent of the
+            // event that just landed in the accumulator.
+            advanceTimeBy(DiagnosticsViewModel.UPDATE_PERIOD_MILLIS + 1)
+            runCurrent()
+
+            assertThat(viewModel.sensorRates.value.getValue(SensorKind.MAGNETOMETER).staleForMillis)
+                .isNotNull()
+            sensorCollector.cancel()
+            ratesCollector.cancel()
+        }
+
+    @Test
     fun `rotation matrix expands the quaternion - identity for the zero rotation`() {
         val identity =
             DiagnosticsViewModel.rotationMatrixFromVector(listOf(0f, 0f, 0f, 1f))

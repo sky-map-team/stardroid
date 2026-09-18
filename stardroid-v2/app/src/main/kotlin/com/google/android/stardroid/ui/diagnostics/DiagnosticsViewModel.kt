@@ -37,6 +37,7 @@ import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.flow.sample
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.datetime.Instant
@@ -145,6 +146,10 @@ class DiagnosticsViewModel(
     // A jitter window keyed to a paused clock would never evict old samples.
     private val wallClockMillis: () -> Long = System::currentTimeMillis,
 ) : ViewModel() {
+    /** One rate tracker per sensor kind — fed by the same collection [sensors] registers. */
+    private val sensorRateAccumulators: Map<SensorKind, SensorRateAccumulator> =
+        SensorKind.entries.associateWith { SensorRateAccumulator(SENSOR_RATE_WINDOW_MILLIS) }
+
     /** Sensor rows keyed in v1's display order. */
     val sensors: Map<SensorKind, StateFlow<SensorRow>> =
         SensorKind.entries.associateWith { kind ->
@@ -153,6 +158,10 @@ class DiagnosticsViewModel(
             } else {
                 sensorStatus
                     .readings(kind)
+                    // Runs on every raw event, ahead of the sample() below, so the rate
+                    // tracker sees the sensor's real arrival cadence rather than one sample
+                    // every UPDATE_PERIOD_MILLIS.
+                    .onEach { sensorRateAccumulators.getValue(kind).recordEvent(wallClockMillis()) }
                     // Sensors can report far faster than the eye can read; match the polled
                     // snapshot's cadence instead of recomposing on every raw sample.
                     .sample(UPDATE_PERIOD_MILLIS)
@@ -166,6 +175,28 @@ class DiagnosticsViewModel(
                     )
             }
         }
+
+    /**
+     * How often each sensor is actually delivering events, polled at [UPDATE_PERIOD_MILLIS] so a
+     * sensor that's gone silent shows growing staleness rather than a frozen last-good reading.
+     * Absent sensors always report zero rate / null staleness.
+     */
+    val sensorRates: StateFlow<Map<SensorKind, SensorRateInfo>> =
+        flow {
+            while (true) {
+                val now = wallClockMillis()
+                emit(
+                    SensorKind.entries.associateWith {
+                        sensorRateAccumulators.getValue(it).snapshot(now)
+                    },
+                )
+                delay(UPDATE_PERIOD_MILLIS)
+            }
+        }.stateIn(
+            viewModelScope,
+            SharingStarted.WhileSubscribed(5_000),
+            SensorKind.entries.associateWith { SensorRateInfo(0.0, null) },
+        )
 
     /**
      * The rotation-vector quaternion as a row-major rotation matrix — v1 showed
@@ -295,6 +326,9 @@ class DiagnosticsViewModel(
 
         /** Trailing window for [pointingJitter] — long enough to settle, short enough to react. */
         const val JITTER_WINDOW_MILLIS = 5_000L
+
+        /** Trailing window for [sensorRates]' Hz estimate. */
+        const val SENSOR_RATE_WINDOW_MILLIS = 3_000L
 
         /**
          * `SensorManager.getRotationMatrixFromVector` in pure Kotlin: the standard

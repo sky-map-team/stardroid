@@ -393,6 +393,7 @@
     <string name="diagnostics_rotation_matrix" translation_description="Row label in the diagnostics screen showing the raw device rotation matrix used for orientation">Rot Matrix</string>
     <string name="diagnostics_light_level" translation_description="Row label in the diagnostics screen for the ambient light sensor reading">Light level</string>
     <string name="diagnostics_sensor_absent" translation_description="Sensor status shown in diagnostics when the sensor is not present on the device">Absent</string>
+    <string name="diagnostics_sensor_rate_format" translation_description="Suffix appended to a diagnostics sensor row showing how often it is delivering events and how long ago the last one arrived. %1$.1f is a rate in events per second (Hz), %2$.1f is a number of seconds. Note the leading parenthesis and \'Hz\' abbreviates Hertz.">(%1$.1f Hz, %2$.1fs ago)</string>
     <string name="diagnostics_section_orientation_settings" translation_description="Section heading in the diagnostics screen for the user-adjustable settings that shape the sensor readings shown above it">Orientation Settings</string>
     <string name="diagnostics_gyro_mode" translation_description="Row label in the diagnostics screen for which sensor path supplies device orientation">Gyro</string>
     <string name="diagnostics_gyro_fused" translation_description="Value shown for the gyro row when the fused rotation-vector sensor is in use">Fused rotation vector</string>
