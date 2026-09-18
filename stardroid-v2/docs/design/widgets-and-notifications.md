@@ -132,7 +132,7 @@ surfaces):
 
 - Promo row at the bottom of the Moon's object-info UI (`ui/objectinfo/ObjectInfoUi.kt`):
   "Keep the moon on your home screen → Add widget" → `requestPinAppWidget` (one-tap
-  system dialog; minSdk 29 ≥ API 26 so it's always available, but
+  system dialog; minSdk 28 ≥ API 26 so it's always available, but
   `isRequestPinAppWidgetSupported` still guards launchers that opt out — fallback is a
   short instruction dialog). Dismissed once → never shown again (DataStore flag).
 - Settings → Widgets gallery row and the one-time what's-new card are phase-1-optional;

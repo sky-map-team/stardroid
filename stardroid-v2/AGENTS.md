@@ -4,8 +4,13 @@ Context for AI coding assistants working in `stardroid-v2/`, the active rewrite 
 GPLv3). See the repository root [AGENTS.md](../AGENTS.md) for branching, worktrees, and other
 cross-cutting conventions.
 
-v2 deliberately raises the floor to **minSdk 29** (compileSdk/targetSdk 36) — sub-Android-10
-devices are ~1.6% of installs. Do not "correct" v2's minSdk back to 26.
+v2's build floor is **minSdk 28** (compileSdk/targetSdk 36), but Android 9 (API 28) is
+best-effort only and not officially supported — v1 remains the supported Android 9 option.
+Write code assuming **API 29+ (Android 10+)** is available; do not add version guards or other
+compatibility work for API 28. The moment a change genuinely needs an API 29+ feature, raise
+`minSdk` back to 29 rather than working around it (see D9 in
+[`docs/design/build-and-tooling.md`](docs/design/build-and-tooling.md)). Do not "correct" v2's
+minSdk back to 26.
 
 ## Code Style
 

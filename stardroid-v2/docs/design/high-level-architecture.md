@@ -251,7 +251,7 @@ interface SkyLayer {
 | Async | Coroutines + Flow throughout | per brief |
 | Networking | None in initial port | ISS dropped; downloads come later (Ktor or OkHttp then) |
 | Analytics | Same gms/fdroid split as v1 | Firebase behind an interface, no-op for fdroid |
-| minSdk | 29 — **confirmed (D9)** | ~1.6% of installs below Android 10; they keep v1 |
+| minSdk | 28 — **revised (D9)** | Best-effort only, not supported — see build-and-tooling.md |
 
 ## Porting order (sketch, for after detailed design)
 

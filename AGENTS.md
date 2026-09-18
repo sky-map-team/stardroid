@@ -13,7 +13,8 @@ This repository holds two applications:
 - **`stardroid-v1/`** — the legacy app (Java, Apache-2.0, Android SDK 26–36). See
   [`stardroid-v1/AGENTS.md`](stardroid-v1/AGENTS.md) for its architecture, code style, and
   testing conventions.
-- **`stardroid-v2/`** — the current rewrite (Kotlin only, GPLv3, minSdk 29). See
+- **`stardroid-v2/`** — the current rewrite (Kotlin only, GPLv3, minSdk 28 — Android 9 is
+  best-effort only, not officially supported). See
   [`stardroid-v2/AGENTS.md`](stardroid-v2/AGENTS.md) for its architecture, code style,
   licensing, and testing conventions.
 

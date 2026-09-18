@@ -51,11 +51,33 @@ kotlinx-datetime/serialization/coroutines, Coil, Konsist, Truth, Turbine (Flow t
 (Robolectric and androidx-benchmark, listed in earlier drafts, are not in use — see the
 performance-gate note below.)
 
-**SDK levels.** v2 uses `minSdk 29`, `compileSdk 36`, `targetSdk 36`, set once in the
-`android-library` / `android-app` convention plugins. This is a deliberate raise over v1's
-`minSdk 26` (decision D9): sub-Android-10 devices are ~1.6% of installs and
-keep v1 via in-place upgrade. v1's "SDK 26–36" range does not apply to v2 — see the note in the
-repo-root `AGENTS.md`.
+**SDK levels.** v2 uses `minSdk 28`, `compileSdk 36`, `targetSdk 36`, set once in the
+`android-library` / `android-app` convention plugins. v1's "SDK 26–36" range does not apply to
+v2 — see the note in the repo-root `AGENTS.md`.
+
+D9 was originally decided as a deliberate raise to `minSdk 29` over v1's `minSdk 26`:
+sub-Android-10 devices are ~1.6% of installs, and letting them keep v1 via in-place upgrade
+looked like the cheaper way to avoid supporting an older API surface long-term (see #1033 for
+what that cost looks like in practice). Revisiting it (issue #1029) found nothing in v2 — no
+library in `gradle/libs.versions.toml` — actually *requires* API 29; the floor was a maintenance
+boundary, not a technical dependency. D9 is now: **`minSdk 28`, Android 9 support is
+best-effort and unsupported.**
+
+- No future code change needs to preserve API 28 compatibility. Write code assuming API 29+ is
+  available, exactly as before; don't add version guards or test against API 28 on its account.
+- The moment a change actually needs an API 29+ (Android 10+) feature, bump `minSdk` back to 29
+  (or whatever the floor is by then) rather than working around it — that was the whole point
+  of dropping the guarantee instead of the number staying frozen forever.
+- **One approved exception:** `MainActivity.kt`'s `window.isNavigationBarContrastEnforced = false`
+  already required API 29 and lint only caught it once the floor dropped below that. Rather than
+  raise `minSdk` back to 29 for one cosmetic nav-bar call, it's guarded with a `Build.VERSION_CODES.Q`
+  check — a maintainer-approved one-off, not a precedent. Do not add further `Build.VERSION_CODES`
+  forks for Android 9 on the strength of this exception; the default is still to bump `minSdk`
+  when a real API 29+ dependency shows up.
+- CI only builds/tests at the declared floor and up, so API 28 gets no dedicated test coverage;
+  it runs on a best-effort basis only, on whatever happens to still work.
+- If Android-9-specific bug reports start showing up, the fix is to raise `minSdk` back to 29,
+  not to patch around API 28 — v1 remains the only actively Android-9-supported version.
 
 ## Build flavors (D3)
 

@@ -45,8 +45,9 @@ Plus, we'll be able to review them faster.
 
 - Android Studio (latest stable recommended)
 - JDK 17
-- Android SDK with compileSdk 36; **minSdk 29** (a deliberate raise over v1's 26 — sub-Android-10
-  devices are ~1.6% of installs)
+- Android SDK with compileSdk 36; **minSdk 28** — Android 9 is best-effort only and not
+  officially supported (v1 remains the supported option for Android 9 and older); see D9 in
+  [`stardroid-v2/docs/design/build-and-tooling.md`](stardroid-v2/docs/design/build-and-tooling.md)
 - A `local.properties` file in the project root containing:
 
 ```

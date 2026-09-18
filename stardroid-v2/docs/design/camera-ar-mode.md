@@ -223,8 +223,8 @@ read-out is read-only.
 
 Deferred to its own design pass once Part 1 exists, but the exploration so far:
 
-- **Capture**: no capture code exists. `PixelCopy.request(glSurfaceView, …)` (fine at
-  minSdk 29) grabs the GL plane with alpha; the camera frame comes from CameraX
+- **Capture**: no capture code exists. `PixelCopy.request(glSurfaceView, …)` (available since
+  API 24, well below our minSdk) grabs the GL plane with alpha; the camera frame comes from CameraX
   `ImageCapture` (a real still — better quality than scraping the preview). Composite on a
   `Canvas`: overlay layout (camera still under GL bitmap — matches what the user sees) and
   side-by-side layout (camera | map, each captioned). Compose chrome is naturally excluded

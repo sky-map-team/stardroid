@@ -68,7 +68,7 @@ Everything below is core GL ES 3.0 — no extensions, no 3.1/3.2:
 
 ### Availability
 
-GL ES 3.0 shipped in Android 4.3 (API 18); v2's floor is already minSdk 29 (D9). Coverage is
+GL ES 3.0 shipped in Android 4.3 (API 18); v2's floor is already minSdk 28 (D9). Coverage is
 effectively universal but is **not** implied by the API level — a device advertises its
 capability separately. Before committing, read the actual number off the Play Console
 distribution dashboard for our own installed base, exactly as D9 was decided. The mechanism:

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  Pre-Android-12 fallback for data_extraction_rules.xml (minSdk 29; dataExtractionRules only
+  Pre-Android-12 fallback for data_extraction_rules.xml (minSdk 28; dataExtractionRules only
   applies from API 31). Same include-everything intent — see that file for why.
 -->
 <full-backup-content>
