@@ -131,6 +131,11 @@ class RoomCatalogRepository(
                 .thenBy { it.name }
         val rankedOrder =
             matchQuality
+                // Unlayered objects (Sun, Moon, planets, non-Earth moons and black holes — none
+                // rendered by any layer) outrank layered ones at equal match quality: they're
+                // searched far more often than stars, yet rarely carry a fixed magnitude to sort
+                // by (#1016).
+                .thenByDescending { it.layerKind == null }
                 // Brighter (smaller magnitude) first; unknown magnitude last.
                 .thenBy { it.magnitude ?: Double.MAX_VALUE }
                 .thenBy { it.name }

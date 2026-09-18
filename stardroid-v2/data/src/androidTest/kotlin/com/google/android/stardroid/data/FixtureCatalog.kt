@@ -77,6 +77,10 @@ object FixtureCatalog {
                     obj("star/little-sirius", "stars", "star", 90.0 to 10.0, magnitude = 5.0),
                     obj("star/altair", "stars", "star", 297.696 to 8.868, magnitude = 0.76),
                     obj("star/alderamin", "stars", "star", 319.645 to 62.585, magnitude = 2.51),
+                    // No magnitude, unlike every star above: exercises #1016 (a planet must
+                    // still outrank an equally-good-matching star, however faint).
+                    obj("planet/mars", layerKind = null, type = "planet", pos = 10.0 to 20.0),
+                    obj("star/marsic", "stars", "star", 11.0 to 21.0, magnitude = 5.0),
                     obj(
                         id = "dso/m31",
                         layerKind = "deep_sky",
@@ -127,6 +131,8 @@ object FixtureCatalog {
                     name("star/little-sirius", "en", "Little Sirius"),
                     name("star/altair", "en", "Altair"),
                     name("star/alderamin", "en", "Alderamin"),
+                    name("planet/mars", "en", "Mars"),
+                    name("star/marsic", "en", "Marsic"),
                     name("dso/m31", "en", "Andromeda Galaxy"),
                     name("dso/m31", "es", "Galaxia de Andrómeda"),
                     name("dso/m31", "", "M31", isPrimary = false),
