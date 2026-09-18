@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+      The help document is split one <string> per <h2> section (D72). HelpScreen concatenates
+      them in the order below, so the rendered document is unchanged. The split exists so a
+      copy edit to one section retranslates that section only, instead of the whole ~11 KB
+      document across every locale.
+
+      When adding a section: add the key here, and add it to HelpScreen's helpSections list.
+    -->
+
+    <string name="help_home_link" translation_description="Link to the Sky Map home page, shown at the top of the help document."><![CDATA[
+<p><a href="https://stardroid.app">https://stardroid.app</a></p>
+    ]]></string>
+
+    <string name="help_intro" translation_description="Help section: introduction and quick start. Please do not change the markup"><![CDATA[
+<h2>Introdución e guía de inicio rápido</h2>
+<p>Sostén o teléfono e mira a través del coma se fose unha xanela ao espazo. Sky Map usa os sensores do teléfono para rastrexar onde estás mirando e actualizar o mapa estelar en tempo real.</p>
+<blockquote>Non todos os teléfonos son capaces de executar Sky Map! Consulta a sección de requisitos de hardware a continuación.</blockquote>
+<h3>Se é a túa primeira vez:</h3>
+<p>1. Permitir o acceso á localización cando se lle solicite: Sky Map necesita a túa localización aproximada para debuxar o ceo correcto para a túa posición.<br/>
+2. Apunta o teléfono ao ceo en calquera dirección.<br/>
+3. O mapa moverase para coincidir coa dirección na que esteas mirando.</p>
+    ]]></string>
+
+    <string name="help_navigating" translation_description="Help section: navigating the sky, automatic and manual modes. Please do not change the markup"><![CDATA[
+<h2>Navegación polo ceo</h2>
+Toca a pantalla para que aparezan os controis e a pantalla frontal (arriba á dereita).
+<h3>Modo automático</h3>
+<p>No modo automático (predeterminado), Sky Map usa os sensores de compás, acelerómetro e xiroscopio do teu teléfono para mostrar o que hai na dirección na que apunta o teu teléfono. Simplemente move o teléfono e o mapa seguirache.</p>
+<p>Usa o xesto de dous dedos para achegar ou afastar o zoom.</p>
+<h3>Modo manual</h3>
+<p>Cos controis visibles, toca o botón <b>man</b> (abaixo á dereita) para cambiar ao modo manual. Neste modo podes:</p>
+<p>• Arrastrar o mapa cun dedo para desprazarte.<br/>
+• Axustar para achegar ou afastar o zoom.<br/>
+• Xirar con dous dedos para cambiar a orientación.<br/>
+• Tocar dúas veces a pantalla para alternar se o horizonte permanece horizontal mentres arrastras.</p>
+<p>Tocar o botón de <b>compás</b> (abaixo á dereita) para volver ao modo automático.</p>
+    ]]></string>
+
+    <!-- Symbol map will go here-->
+
+    <string name="help_layers" translation_description="Help section: the visible layers of the sky map. Please do not change the markup"><![CDATA[
+<h2>Capas</h2>
+<p>O mapa do ceo organiza o que mostra en capas, cada unha das cales se pode activar ou desactivar de forma independente usando os botóns de capa da esquerda. Mantén premido ou toca o botón <b>Capas</b> preto da parte inferior para mostrar os botóns para alternar entre máis capas.</p>
+<br/>
+<p>As capas actuais inclúen:<br/>
+• <b>Estrelas:</b> As estrelas máis brillantes, con etiquetas para as máis destacadas.<br/>
+• <b>Constelacións:</b> Contornos e nomes das constelacións.<br/>
+• <b>Obxectos do ceo profundo:</b> Galaxias, nebulosas, cúmulos estelares e outros obxectos notables.<br/>
+• <b>Sistema solar:</b> O Sol, a Lúa e os planetas, mostrados como imaxes.<br/>
+• <b>Choivas de meteoros:</b> Os puntos radiantes das choivas de meteoros anuais.<br/>
+• <b>Grade celeste:</b> A grade de coordenadas de ascensión recta/declinación.<br/>
+• <b>Eclíptica:</b> A traxectoria anual do Sol polo ceo, que a Lúa e os planetas seguen aproximadamente.<br/>
+• <b>Horizonte:</b> A liña do horizonte e as etiquetas da dirección cardinal (N, S, E, O)<br/>
+• <b>Gradiente do ceo:</b> O brillo do ceo diúrno e a cor do crepúsculo preto do horizonte</p>
+<blockquote>Os radiantes da choiva de meteoros só se amosan nas datas en que se producen.
+</blockquote>
+<br/>
+<p><b>Como se debuxan os planetas</b></p>
+<p>Toca a frecha xunto a <b>Sistema solar</b> na folla Capas para escoller o tamaño do Sol, a Lúa e os planetas:</p>
+<p>• <b>Glifos</b> (predeterminado): O suficientemente grandes como para ser vistos en calquera nivel de zoom e dimensionados segundo o tamaño real de cada corpo en lugar de como se ve desde aquí:un modelo do sistema solar en lugar dunha vista a través dun telescopio. Saturno e os seus aneis son os máis anchos de todos, despois o Sol, despois Xúpiter e ata Plutón. As diferenzas están comprimidas para axustarse á pantalla: o Sol en realidade ten 586 veces o ancho de Plutón, non sete. A Lúa é a excepción, debuxada do mesmo tamaño que o Sol, porque así é como se ven ambos desde aquí.<br/>
+• <b>Escala real:</b> Cada corpo móstrase no seu tamaño real no ceo. O Sol e a Lúa teñen aproximadamente medio grao de diámetro (aproximadamente unha goma de borrar co brazo estendido) e os planetas son manchas ata que se achega a imaxe. Se se achega a imaxe por completo, Xúpiter mostrará as súas bandas, os aneis de Saturno separaranse do planeta e unha eclipse aliñarase exactamente como o fai no ceo.<br/>
+• <b>Fixado:</b> mantén cada corpo nun tamaño fixo na pantalla mentres se achega, cambiándoo ao seu tamaño real unha vez que se achegue o suficiente para que sexa o máis grande dos dous.</p>
+<blockquote>Os dous modos indican cousas diferentes. Os <b>Glifos</b> indican que Xúpiter é xigante e Plutón é pequeno. A <b>Escala real</b> indica que o Sol e a Lúa parecen case exactamente do mesmo tamaño desde a Terra; por iso funciona unha eclipse solar total e podes vela ocorrer.</blockquote>
+<blockquote>O mapa do ceo mostra o horizonte xeométrico: unha vista perfectamente plana e sen obstáculos.
+Na práctica, os obxectos que están directamente enriba aínda poden estar escurecidos por edificios, outeiros ou árbores.</blockquote>
+    ]]></string>
+
+    <string name="help_info_cards" translation_description="Help section: the object info cards. Please do not change the markup"><![CDATA[
+<h2>Tarxetas de información</h2>
+<p>Toca un obxecto celeste etiquetado na carta estelar para abrir unha tarxeta de información: un panel cunha foto e detalles sobre ese obxecto.
+    Hai tarxetas de información dispoñibles para centos de obxectos, incluíndo estrelas, planetas, a Lúa, obxectos notables do ceo profundo e constelacións.</p>
+<br/>
+<p>Cada tarxeta amosa:</p>
+<p>• Unha fotografía ou gráfico do obxecto<br/>
+• Unha breve descrición e un dato curioso<br/>
+• Datos científicos como a distancia, o tamaño e o tipo de obxecto</p>
+<p>Toca a imaxe dentro da tarxeta para vela en pantalla completa. Pecha a tarxeta tocando fóra dela ou premendo <b>Atrás</b>.</p>
+<blockquote>Non todos os obxectos teñen tarxetas de información, pero estamos engadindo máis constantemente.</blockquote>
+    ]]></string>
+
+    <string name="help_search" translation_description="Help section: searching for objects in the sky. Please do not change the markup"><![CDATA[
+<h2>Buscar</h2>
+<p>Toca o botón <b>Lupa</b> (abaixo) para buscar calquera cousa no ceo.</p>
+<br/>
+<p>Podes buscar:</p>
+<p>• <b>Estrelas</b> — por nome, por exemplo, \"Sirio\", \"Betelgeuse\", \"Polaris\"<br/>
+• <b>Planetas</b> — por exemplo \"Marte\", \"Saturno\"<br/>
+• <b>Constelacións</b> — por exemplo \"Orion\", \"Casiopea\"<br/>
+• <b>Obxectos do ceo profundo</b> — por exemplo \"M31\", \"Galaxia de Andrómeda\", \"Pléiades\"<br/>
+• <b>Coordenadas</b> — ascensión recta e declinación, por exemplo, \"5h 55m, 7° 24\'\" (podes usar un \'o\'para o símbolo de grao)</p>
+<p><b>No modo automático:</b> Despois de seleccionar un resultado, o Mapa do ceo mostra un círculo de orientación e unha frecha direccional. Segue a frecha xirando o teléfono: o círculo cambia de cor a medida que o obxecto entra no teu campo de visión. Toca <b>Cancelar</b> (ou preme Atrás) para saír da busca.</p>
+<p><b>No modo manual:</b> o mapa simplemente salta para enfocar o obxecto.</p>
+<blockquote>Podes buscar obxectos que non mostra Sky Map, como Europa, unha das lúas de Xúpiter. Neste caso, a busca levarate ao obxecto principal (Xupiter).</blockquote>
+    ]]></string>
+
+    <string name="help_time_travel" translation_description="Help section: the time travel feature. Please do not change the markup"><![CDATA[
+<h2>Viaxe no tempo</h2>
+<p>A viaxe no tempo permíteche ver o ceo en calquera momento desde o ano 1600 ata o 3000. Toca o botón <b>reloxo</b> (abaixo).</p>
+<br/>
+<p>Escolle un evento popular (eclipses, picos de chuvia de meteoros, a próxima lúa chea ou nova, conxuncións planetarias, a aterraxe do Apollo 11 e moito máis) da lista de eventos, configura a túa propia hora usando os botóns <b>Definir data</b>
+e <b>Definir hora</b> ou toca \"Comezar agora\" se simplemente queres avanzar ou retroceder desde a hora actual.</p>
+<p>Unha vez no modo de viaxe no tempo: a data amósase na pantalla e os controis de reprodución permítenche desprazarte polo tempo:</p>
+<p>• Toca <b>▶▶</b> (máis rápido) ou <b>◀◀</b> (máis lento) para axustar a velocidade de reprodución cara adiante ou cara atrás no tempo<br/>
+• Toca <b>❚❚</b> para pausar<br/>
+• Toca <b>Agora</b> para volver ao presente</p>
+<p>Algunhas cousas para as que podes usalo:</p>
+<p>• <i>Que podo ver xusto despois do solpor esta noite?</i><br/>
+• <i>Cando é a próxima boa oportunidade para ver Mercurio?</i><br/>
+• <i>Como era o ceo a noite na que nacín?</i></p>
+<p>A precisión diminúe para datas lonxe do presente, principalmente debido á influencia gravitacional de Xúpiter.</p>
+    ]]></string>
+
+    <string name="help_night_vision" translation_description="Help section: night vision mode. Please do not change the markup"><![CDATA[
+<h2>Modo de visión nocturna</h2>
+<p>Se estás a observar de verdade, o modo de visión nocturna axuda a preservar a túa visión adaptada á escuridade. Actívao usando o botón <b>Modo nocturno</b> na parte inferior.</p>
+<br/>
+<p>No modo de visión nocturna, o mapa do ceo cambia a pantalla a tons vermellos escuros e a atenúa.
+A opción <b>Atenuación automática da pantalla</b> en <b>Configuración</b> ofréceche un control adicional sobre o escurecemento da pantalla.</p>
+    ]]></string>
+
+    <string name="help_other" translation_description="Help section: other options"><![CDATA[
+        <h1>Outras funcións</h1>
+        <p>Podes atopar outras funcións no menú adicional (…) na parte inferior dereita.</p>
+    ]]></string>
+
+    <string name="help_gallery" translation_description="Help section: the image gallery. Please do not change the markup"><![CDATA[
+<h2>Galería</h2>
+<p>A Galería contén unha colección coidadosamente seleccionada de fermosas imaxes do ceo nocturno, incluíndo algunhas do telescopio espacial Hubble.</p>
+ <br/>
+<p>Explora as miniaturas desprazándote e toca unha para ver os detalles.
+Usa o botón <b>Buscar</b> para localizar ese obxecto no ceo.</p>
+    ]]></string>
+
+    <string name="help_location" translation_description="Help section: setting your observing location. Please do not change the markup"><![CDATA[
+<h2>Configura a túa localización</h2>
+<p>Sky map necesita a túa aproximación localización para debuxar o ceo correctamente. Por defecto, usa os servizos de localización do teu dispositivo (rede móbil ou GPS).</p>
+<br/>
+<p>Se o acceso á localización non está dispoñible ou prefires configuralo manualmente, toca o botón <b>Introducir a localización manualmente</b> e introduce un <b>nome de lugar</b> ou unha <b>latitude e lonxitude</b> en graos.</p>
+<blockquote>É necesario acceso a Internet para descodificar os nomes dos lugares.</blockquote>
+<p>Se previamente denegaches o permiso de localización de Sky Map, pode que teñas que volvelo activar en <b>Configuración da aplicación → Permisos</b> no teu dispositivo.</p>
+<blockquote>Se non concedes acceso, Sky Map asumirá que estás en (0, 90): o Polo Norte!</blockquote>
+    ]]></string>
+
+    <string name="help_diagnostics" translation_description="Help section: the diagnostics page. Please do not change the markup"><![CDATA[
+    <h2>Diagnóstico</h2>
+    <p>Esta páxina enumera varios datos sobre o teu teléfono e Sky Map que poden ser útiles para a resolución de problemas. Atopao en <b>Configuración → Diagnóstico</b>.</p>
+    <br/>
+    <p>Ao informar dun problema, toca o botón de compartir na parte superior da páxina para enviarnos estes detalles por correo electrónico a <a href="mailto:skymapdevs@gmail.com">skymapdevs@gmail.com</a>. Podes ler e editar o informe antes de envialo.</p>
+    ]]></string>
+
+    <string name="help_calibrate" translation_description="Help section: the calibrate page. Please do not change the markup"><![CDATA[
+    <h2>Calibrar</h2>
+    De cando en vez, debes calibrar a brúxula do teu teléfono; esta páxina móstrache como. Sky Map tamén che notificará se a túa brúxula precisa calibración.
+    <blockquote><b>IMPORTANTE:</b> Un compás calibrado NON significa un compás <b>preciso</b>.
+    Todo o que fai a calibración é restablecer o compás internamente. Pode seguir sendo imprecisa debido a interferencias magnéticas próximas ou simplemente a soporte físico defectuoso. Case todos os problemas de precisión débense ao soporte físico do teléfono e <b>non teñen nada que ver con Sky Map</b>. Todo o que fai Sky Map é dicirche o que lle está a dicir o teu teléfono.</blockquote>
+    <br/>
+    <p>Consulta a sección de resolución de problemas a continuación para obter máis axuda.</p>
+    ]]></string>
+
+    <string name="help_misc" translation_description="Help section: miscellaneous"><![CDATA[
+        <h1>Miscelánea e resolución de problemas</h1>
+    ]]></string>
+
+    <string name="help_hardware" translation_description="Help section: hardware and sensor requirements. Please do not change the markup"><![CDATA[
+<h2>Requisitos de soporte físico</h2>
+<p>É posible que non todos os dispositivos sexan totalmente compatibles con Sky Map!</p>
+ <br/>
+ <p>Como mínimo, precisas un teléfono con:</p>
+<p>• Un sensor de campo magnético (tamén coñecido como compás): para saber a que dirección estás mirando<br/>
+• Un acelerómetro: para saber a que altura do ceo estás mirando</p>
+<p>Idealmente, tamén:</p>
+<p>• Un xiroscopio: isto suavizará o movemento e o fará menos brusco</p>
+<blockquote><b>Os compás dos teléfonos son notoriamente pouco fiables.</b>
+Se o mapa do ceo ten un aspecto incorrecto, case sempre é un problema de hardware co compás do teu teléfono, non un erro en Sky Map. Sky Map le exactamente o que informa o sensor do teu teléfono; non ten forma de corrixir automaticamente unha lectura incorrecta ou distorsionada. Consulta a solución de problemas a continuación.</blockquote>
+<h3>Como sei que sensores ten o meu teléfono?</h3>
+<p>Abrir <b>Configuración → Diagnóstico</b> — calquera sensor que o teu teléfono non teña marcarase como faltante. Tamén te informarían durante o titorial.</p>
+<h3>Que pasa se o meu dispositivo non ten os sensores precisos?</h3>
+<p>Sky Map volverá ao modo manual. Aínda podes explorar o ceo, pero sen os sensores, ningunha aplicación pode mostrarche a túa dirección.</p>
+    ]]></string>
+
+    <string name="help_troubleshooting" translation_description="Help section: troubleshooting a map that does not move or points the wrong way. Please do not change the markup"><![CDATA[
+<h2>Solución de problemas</h2>
+<h3>O mapa non se move</h3>
+<p>• Comproba que estás en modo automático (non manual)<br/>
+• Consulta a páxina de diagnóstico (<b>Configuración → Diagnóstico</b>) para confirmar que o teu dispositivo ten compás e acelerómetro<br/>
+• Proba o xesto de calibración en forma de oito: move lentamente o teléfono facendo un oito grande e suave</p>
+<h3>O mapa apunta na dirección incorrecta ou é impreciso</h3>
+<p>Sky Map necesita tres cousas para mostrar o ceo correctamente: a dirección á que apunta o teléfono, a túa localización e a hora actual. Se o mapa parece incorrecto, é probable que un destes elementos sexa incorrecto.</p>
+<p>• <b>Compás (causa máis común):</b> Este é un problema de soporte físico do teu teléfono — non un erro do Sky Map. O xesto de calibración en forma de oito indica ao teu teléfono que restableza o sensor do compás internamente, pero <i>un compás calibrado non é necesariamente preciso</i>. Se estás preto dun obxecto metálico, do taboleiro dun coche ou dunha funda magnética para teléfono, o mapa pode ser incorrecto mesmo despois da calibración. Móvete a unha zona aberta e repite o xesto en forma de oito.<br/>
+• <b>Localización:</b> Concede permiso de localización a través da <b>Configuración da aplicación → Permisos</b>. Consulta a páxina de Diagnóstico (<b>Configuración → Diagnóstico</b>) para confirmar as túas coordenadas. Un sinal revelador dunha localización incorrecta é que Polaris apareza directamente enriba.<br/>
+• <b>Hora:</b> Menos común, pero un fuso horario incorrecto despraza todo o ceo. Consulta a páxina de Diagnóstico (<b>SConfiguración → Diagnóstico</b>) para confirmar que a hora e o fuso horario do teu dispositivo sexan correctos.</p>
+<h3>O mapa treme</h3>
+<p>
+• Se o teu teléfono non ten xiroscopio, activa <b>Usar sensores herdados</b> na configuración do sensor<br/>
+• Axusta a <b>Velocidade do sensor</b> e o <b>Amortecemento</b> en <b>Configuración → Configuración do sensor (expertos)</b>
+(móstrase cando <b>Usar sensores herdados</b> está activado)</p>
+<p>Para obter detalles completos sobre a solución de problemas, consulta a guía en liña de <a href="https://ts.stardroid.app">troubleshooting</a>.</p>
+<p>Se aínda estás atascado, envíanos un correo electrónico a <a href="mailto:skymapdevs@gmail.com">skymapdevs@gmail.com</a> — Unha captura de pantalla da túa páxina de Diagnóstico é moi útil.</p>
+    ]]></string>
+
+    <string name="help_pointer_mode" translation_description="Help section: pointer mode for telescope users. Please do not change the markup"><![CDATA[
+<h2>Usuarios de telescopios — Modo de punteiro</h2>
+<p>en <b>Configuración → Configuración do sensor</b>, cambie a <b>Dirección de vista</b> a <b>Modo de punteiro</b>. Neste modo, o mapa do ceo mostra cara a onde apunta o <i>bordo longo</i> do seu teléfono, en lugar de cara a onde mira a pantalla.</p>
+<p>Isto permítelle montar o teléfono ao longo do tubo dun telescopio para que a pantalla sexa perpendicular ao tubo mentres que o mapa aínda mostra cara a onde apunta o telescopio.</p>
+    ]]></string>
+</resources>
