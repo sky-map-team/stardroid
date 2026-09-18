@@ -140,6 +140,10 @@ class DiagnosticsViewModel(
     private val localFrame: StateFlow<LocalFrame>,
     private val rendererInfo: () -> RendererInfo? = { null },
     private val ioContext: CoroutineContext = Dispatchers.IO,
+    // Wall-clock, not [now] — [now] is celestial simulation time (time-travel-aware, per
+    // screens-and-startup.md), which can sit paused while real sensor events keep arriving.
+    // A jitter window keyed to a paused clock would never evict old samples.
+    private val wallClockMillis: () -> Long = System::currentTimeMillis,
 ) : ViewModel() {
     /** Sensor rows keyed in v1's display order. */
     val sensors: Map<SensorKind, StateFlow<SensorRow>> =
@@ -236,7 +240,7 @@ class DiagnosticsViewModel(
                 val rawAzAlt = frame.azAlt(SkyModel.pointing(frame, sample.raw, mode).lineOfSight)
                 val smoothedAzAlt =
                     frame.azAlt(SkyModel.pointing(frame, sample.smoothed, mode).lineOfSight)
-                val timeMillis = now().toEpochMilliseconds()
+                val timeMillis = wallClockMillis()
                 PointingJitterSnapshot(
                     raw = rawJitter.add(timeMillis, rawAzAlt.azimuthDeg, rawAzAlt.altitudeDeg),
                     smoothed =

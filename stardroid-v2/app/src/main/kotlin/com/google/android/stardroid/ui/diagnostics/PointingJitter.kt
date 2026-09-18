@@ -45,33 +45,34 @@ class PointingJitterAccumulator(private val windowMillis: Long) {
         while (samples.size > 1 && timeMillis - samples.first().timeMillis > windowMillis) {
             samples.removeFirst()
         }
+        // Iterates samples directly rather than via two `.map { }` passes — this runs on every
+        // sensor event, and a jittery phone can mean hundreds of these a second.
         return PointingJitter(
-            azimuthStdDevDeg = circularStdDevDeg(samples.map { it.azimuthDeg }),
-            altitudeStdDevDeg = linearStdDevDeg(samples.map { it.altitudeDeg }),
+            azimuthStdDevDeg = circularStdDevDeg(),
+            altitudeStdDevDeg = linearStdDevDeg(),
         )
     }
 
-    private companion object {
-        fun circularStdDevDeg(anglesDeg: List<Double>): Double {
-            var sumCos = 0.0
-            var sumSin = 0.0
-            for (angleDeg in anglesDeg) {
-                val angleRad = angleDeg * DEGREES_TO_RADIANS
-                sumCos += cos(angleRad)
-                sumSin += sin(angleRad)
-            }
-            val n = anglesDeg.size
-            // The resultant length R is 1.0 for no spread at all and 0.0 once the samples are
-            // uniformly scattered around the circle; sqrt(-2 ln R) is the standard mapping from
-            // R back to an angular standard deviation (Mardia & Jupp, Directional Statistics).
-            val resultantLength = (sqrt(sumCos * sumCos + sumSin * sumSin) / n).coerceIn(1e-9, 1.0)
-            return sqrt(-2.0 * ln(resultantLength)) * RADIANS_TO_DEGREES
+    private fun circularStdDevDeg(): Double {
+        var sumCos = 0.0
+        var sumSin = 0.0
+        for (sample in samples) {
+            val angleRad = sample.azimuthDeg * DEGREES_TO_RADIANS
+            sumCos += cos(angleRad)
+            sumSin += sin(angleRad)
         }
+        val n = samples.size
+        // The resultant length R is 1.0 for no spread at all and 0.0 once the samples are
+        // uniformly scattered around the circle; sqrt(-2 ln R) is the standard mapping from
+        // R back to an angular standard deviation (Mardia & Jupp, Directional Statistics).
+        val resultantLength = (sqrt(sumCos * sumCos + sumSin * sumSin) / n).coerceIn(1e-9, 1.0)
+        return sqrt(-2.0 * ln(resultantLength)) * RADIANS_TO_DEGREES
+    }
 
-        fun linearStdDevDeg(valuesDeg: List<Double>): Double {
-            val mean = valuesDeg.average()
-            val variance = valuesDeg.sumOf { (it - mean) * (it - mean) } / valuesDeg.size
-            return sqrt(variance)
-        }
+    private fun linearStdDevDeg(): Double {
+        val mean = samples.sumOf { it.altitudeDeg } / samples.size
+        val variance =
+            samples.sumOf { (it.altitudeDeg - mean) * (it.altitudeDeg - mean) } / samples.size
+        return sqrt(variance)
     }
 }
