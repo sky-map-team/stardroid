@@ -62,9 +62,9 @@ class LocaleSpec(requestedTag: String) {
          */
         private fun impliedChineseScript(tag: String): String? {
             if (tag != "zh" && !tag.startsWith("zh-")) return null
-            if (tag.contains("-hans") || tag.contains("-hant")) return null
-            val region = tag.removePrefix("zh").removePrefix("-").substringBefore('-')
-            return if (region in TRADITIONAL_REGIONS) "zh-hant" else "zh-hans"
+            val subtags = tag.split('-')
+            if (subtags.any { it == "hans" || it == "hant" }) return null
+            return if (subtags.any { it in TRADITIONAL_REGIONS }) "zh-hant" else "zh-hans"
         }
 
         /** Inserts the script [tag] implies just ahead of the bare `"zh"` entry, if present. */

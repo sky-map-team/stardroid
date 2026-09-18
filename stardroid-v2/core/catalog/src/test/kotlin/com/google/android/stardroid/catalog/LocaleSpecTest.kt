@@ -53,6 +53,15 @@ class LocaleSpecTest {
     }
 
     @Test
+    fun `implied script survives an extlang subtag ahead of the region`() {
+        // "zh-yue-HK" (Cantonese via the "yue" extlang) must not read "yue" as the region and
+        // miss "hk" — the implied script has to come from any subtag, not just the first.
+        assertThat(LocaleSpec("zh-yue-HK").fallbackChain)
+            .containsExactly("zh-yue-hk", "zh-yue", "zh-hant", "zh", "en", "")
+            .inOrder()
+    }
+
+    @Test
     fun `bare Chinese tag defaults to the Simplified script`() {
         // CLDR's likely-subtags default for unqualified "zh" is "zh-Hans-CN".
         assertThat(LocaleSpec("zh").fallbackChain)
