@@ -30,9 +30,7 @@ class SensorRateAccumulator(private val windowMillis: Long) {
     fun recordEvent(nowMillis: Long) {
         lastEventMillis = nowMillis
         eventTimes.addLast(nowMillis)
-        while (eventTimes.size > 1 && nowMillis - eventTimes.first() > windowMillis) {
-            eventTimes.removeFirst()
-        }
+        pruneEventTimes(nowMillis)
     }
 
     fun snapshot(nowMillis: Long): SensorRateInfo {
@@ -40,9 +38,7 @@ class SensorRateAccumulator(private val windowMillis: Long) {
         // has gone silent would otherwise leave a stale window sitting here forever, computed
         // fresh into a plausible-looking Hz on every poll — exactly the frozen-reading problem
         // this feature exists to catch, just for the rate instead of the raw value.
-        while (eventTimes.size > 1 && nowMillis - eventTimes.first() > windowMillis) {
-            eventTimes.removeFirst()
-        }
+        pruneEventTimes(nowMillis)
         val hz =
             if (eventTimes.size < 2) {
                 0.0
@@ -51,5 +47,12 @@ class SensorRateAccumulator(private val windowMillis: Long) {
                 if (elapsedSeconds <= 0.0) 0.0 else (eventTimes.size - 1) / elapsedSeconds
             }
         return SensorRateInfo(hz, lastEventMillis?.let { nowMillis - it })
+    }
+
+    /** Drops entries older than [windowMillis] relative to [nowMillis], keeping at least one. */
+    private fun pruneEventTimes(nowMillis: Long) {
+        while (eventTimes.size > 1 && nowMillis - eventTimes.first() > windowMillis) {
+            eventTimes.removeFirst()
+        }
     }
 }
