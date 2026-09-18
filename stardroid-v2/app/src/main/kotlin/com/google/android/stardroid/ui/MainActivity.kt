@@ -398,7 +398,11 @@ class MainActivity : ComponentActivity() {
         // sky extends under both bars). This is what makes every navigationBarsPadding() call
         // in MapScreen/MapChrome mean something instead of resolving to ~0.
         WindowCompat.setDecorFitsSystemWindows(window, false)
-        window.isNavigationBarContrastEnforced = false
+        // API 29+ only; approved exception to the "no API 28 guards" policy (D9) rather than
+        // raising minSdk back to 29 for this one cosmetic call — see build-and-tooling.md.
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            window.isNavigationBarContrastEnforced = false
+        }
         displayRotation.rotation.value = currentDisplayRotation()
         // v1 StardroidApplication's per-process start snapshot; rotation recreates this
         // activity, so only the first creation logs.
