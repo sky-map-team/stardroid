@@ -393,6 +393,19 @@
     <string name="diagnostics_rotation_matrix" translation_description="Row label in the diagnostics screen showing the raw device rotation matrix used for orientation">Rot Matrix</string>
     <string name="diagnostics_light_level" translation_description="Row label in the diagnostics screen for the ambient light sensor reading">Light level</string>
     <string name="diagnostics_sensor_absent" translation_description="Sensor status shown in diagnostics when the sensor is not present on the device">Absent</string>
+    <string name="diagnostics_section_orientation_settings" translation_description="Section heading in the diagnostics screen for the user-adjustable settings that shape the sensor readings shown above it">Orientation Settings</string>
+    <string name="diagnostics_gyro_mode" translation_description="Row label in the diagnostics screen for which sensor path supplies device orientation">Gyro</string>
+    <string name="diagnostics_gyro_fused" translation_description="Value shown for the gyro row when the fused rotation-vector sensor is in use">Fused rotation vector</string>
+    <string name="diagnostics_gyro_disabled" translation_description="Value shown for the gyro row when the rotation-vector sensor is skipped in favour of accelerometer plus compass">Accelerometer + compass</string>
+    <string name="diagnostics_smoothing" translation_description="Row label in the diagnostics screen for whether orientation smoothing is on">Smoothing</string>
+    <string name="diagnostics_steadiness" translation_description="Row label in the diagnostics screen for the orientation smoothing filter's steadiness setting">Steadiness</string>
+    <string name="diagnostics_ease_off" translation_description="Row label in the diagnostics screen for the orientation smoothing filter's ease-off setting">Ease-off</string>
+    <string name="diagnostics_reverse_magnetic_z" translation_description="Row label in the diagnostics screen for whether the magnetometer's Z axis is reversed">Reverse magnetic Z</string>
+    <string name="diagnostics_use_magnetic_correction_setting" translation_description="Row label in the diagnostics screen for whether magnetic declination correction is applied">Magnetic correction</string>
+    <string name="diagnostics_view_direction_mode" translation_description="Row label in the diagnostics screen for which phone axis is treated as pointing at the sky">View direction</string>
+    <string name="diagnostics_calibration_dialog" translation_description="Row label in the diagnostics screen for whether the automatic compass-calibration dialog is suppressed">Calibration dialog</string>
+    <string name="diagnostics_calibration_dialog_suppressed" translation_description="Value shown for the calibration dialog row when the automatic dialog is suppressed">Suppressed</string>
+    <string name="diagnostics_calibration_dialog_shown" translation_description="Value shown for the calibration dialog row when the automatic dialog is not suppressed">Shown</string>
     <string name="diagnostics_section_location_time" translation_description="Section heading in the diagnostics screen for location and time information">Location and Time</string>
     <string name="diagnostics_location_permission" translation_description="Row label in the diagnostics screen showing whether location permission has been granted">Location Permission</string>
     <string name="diagnostics_permission_granted" translation_description="Status value shown when location permission has been granted">Granted</string>

@@ -9,6 +9,7 @@
 
 package com.google.android.stardroid.ui.diagnostics
 
+import com.google.android.stardroid.astronomy.ViewDirectionMode
 import com.google.android.stardroid.location.LocationSource
 import com.google.android.stardroid.location.LocationState
 import com.google.android.stardroid.math.LatLong
@@ -20,6 +21,8 @@ import com.google.android.stardroid.sensors.SensorAccuracy
 import com.google.android.stardroid.sensors.SensorKind
 import com.google.android.stardroid.sensors.SensorReading
 import com.google.android.stardroid.settings.FakeSettings
+import com.google.android.stardroid.settings.OneEuroEaseOff
+import com.google.android.stardroid.settings.OneEuroSteadiness
 import com.google.common.truth.Truth.assertThat
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -145,6 +148,31 @@ class DiagnosticsViewModelTest {
             advanceTimeBy(DiagnosticsViewModel.UPDATE_PERIOD_MILLIS + 1)
             runCurrent()
             assertThat(viewModel.snapshots.value.magneticCorrectionDeg).isEqualTo(2.5)
+            collector.cancel()
+        }
+
+    @Test
+    fun `snapshot surfaces the orientation settings driving the sensor pipeline`() =
+        testScope.runTest {
+            settings.disableGyroState.value = true
+            settings.smoothingEnabledState.value = true
+            settings.steadinessState.value = OneEuroSteadiness.HIGH
+            settings.easeOffState.value = OneEuroEaseOff.LOW
+            settings.reverseMagneticZState.value = true
+            settings.viewDirectionModeState.value = ViewDirectionMode.TELESCOPE
+            settings.dontShowCalibrationDialogState.value = true
+            val collector = launch { viewModel.snapshots.collect {} }
+            runCurrent()
+
+            val snapshot = viewModel.snapshots.value
+            assertThat(snapshot.disableGyro).isTrue()
+            assertThat(snapshot.smoothingEnabled).isTrue()
+            assertThat(snapshot.steadiness).isEqualTo(OneEuroSteadiness.HIGH)
+            assertThat(snapshot.easeOff).isEqualTo(OneEuroEaseOff.LOW)
+            assertThat(snapshot.reverseMagneticZ).isTrue()
+            assertThat(snapshot.useMagneticCorrection).isTrue()
+            assertThat(snapshot.viewDirectionMode).isEqualTo(ViewDirectionMode.TELESCOPE)
+            assertThat(snapshot.dontShowCalibrationDialog).isTrue()
             collector.cancel()
         }
 

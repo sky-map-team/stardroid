@@ -11,6 +11,7 @@ package com.google.android.stardroid.ui.diagnostics
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.google.android.stardroid.astronomy.ViewDirectionMode
 import com.google.android.stardroid.location.LocationState
 import com.google.android.stardroid.math.RaDec
 import com.google.android.stardroid.render.api.RendererInfo
@@ -19,6 +20,8 @@ import com.google.android.stardroid.sensors.MagneticDeclinationSource
 import com.google.android.stardroid.sensors.SensorKind
 import com.google.android.stardroid.sensors.SensorReading
 import com.google.android.stardroid.sensors.SensorStatusSource
+import com.google.android.stardroid.settings.OneEuroEaseOff
+import com.google.android.stardroid.settings.OneEuroSteadiness
 import com.google.android.stardroid.settings.Settings
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.FlowPreview
@@ -76,6 +79,36 @@ data class DiagnosticsSnapshot(
     val network: NetworkStatus = NetworkStatus.DISCONNECTED,
     /** Null until the GL surface has been created at least once. */
     val rendererInfo: RendererInfo? = null,
+    /** The orientation-pipeline settings that shape what the sensor rows above are showing. */
+    val disableGyro: Boolean = false,
+    val smoothingEnabled: Boolean = false,
+    val steadiness: OneEuroSteadiness = OneEuroSteadiness.MEDIUM,
+    val easeOff: OneEuroEaseOff = OneEuroEaseOff.MEDIUM,
+    val reverseMagneticZ: Boolean = false,
+    val useMagneticCorrection: Boolean = true,
+    val viewDirectionMode: ViewDirectionMode = ViewDirectionMode.STANDARD,
+    val dontShowCalibrationDialog: Boolean = false,
+)
+
+/** [Settings.useMagneticCorrection] plus the rest of [Settings]'s orientation-pipeline knobs. */
+private data class SmoothingSettings(
+    val useMagneticCorrection: Boolean,
+    val disableGyro: Boolean,
+    val smoothingEnabled: Boolean,
+    val steadiness: OneEuroSteadiness,
+    val easeOff: OneEuroEaseOff,
+)
+
+/** Every [Settings] flow that shapes the sensor pipeline, bundled so it fits one combine slot. */
+private data class OrientationSettingsSnapshot(
+    val useMagneticCorrection: Boolean,
+    val disableGyro: Boolean,
+    val smoothingEnabled: Boolean,
+    val steadiness: OneEuroSteadiness,
+    val easeOff: OneEuroEaseOff,
+    val reverseMagneticZ: Boolean,
+    val viewDirectionMode: ViewDirectionMode,
+    val dontShowCalibrationDialog: Boolean,
 )
 
 /**
@@ -140,6 +173,33 @@ class DiagnosticsViewModel(
      * plus the raw alignment pair as its own read-only row. Reactive to settings changes
      * rather than only re-sampling them on the next 500 ms tick.
      */
+    /** Bundles every settings flow the sensor pipeline reads, one combine slot's worth. */
+    private val orientationSettings: Flow<OrientationSettingsSnapshot> =
+        combine(
+            combine(
+                settings.useMagneticCorrection,
+                settings.disableGyro,
+                settings.smoothingEnabled,
+                settings.steadiness,
+                settings.easeOff,
+                ::SmoothingSettings,
+            ),
+            settings.reverseMagneticZ,
+            settings.viewDirectionMode,
+            settings.dontShowCalibrationDialog,
+        ) { smoothing, reverseMagneticZ, viewDirectionMode, dontShowCalibrationDialog ->
+            OrientationSettingsSnapshot(
+                useMagneticCorrection = smoothing.useMagneticCorrection,
+                disableGyro = smoothing.disableGyro,
+                smoothingEnabled = smoothing.smoothingEnabled,
+                steadiness = smoothing.steadiness,
+                easeOff = smoothing.easeOff,
+                reverseMagneticZ = reverseMagneticZ,
+                viewDirectionMode = viewDirectionMode,
+                dontShowCalibrationDialog = dontShowCalibrationDialog,
+            )
+        }
+
     val snapshots: StateFlow<DiagnosticsSnapshot> =
         combine(
             flow {
@@ -149,13 +209,13 @@ class DiagnosticsViewModel(
                 }
             },
             locationStates,
-            settings.useMagneticCorrection,
+            orientationSettings,
             settings.sensorAzimuthAdjustmentDeg,
             settings.sensorAltitudeAdjustmentDeg,
-        ) { time, locationState, useMagneticCorrection, azimuthAdjustment, altitudeAdjustment ->
+        ) { time, locationState, orientation, azimuthAdjustment, altitudeAdjustment ->
             val location = (locationState as? LocationState.Confirmed)?.location
             val declination =
-                if (location != null && useMagneticCorrection) {
+                if (location != null && orientation.useMagneticCorrection) {
                     declinationSource.declinationDeg(location, time)
                 } else {
                     0.0
@@ -171,6 +231,14 @@ class DiagnosticsViewModel(
                 time = time,
                 network = networkStatus(),
                 rendererInfo = rendererInfo(),
+                disableGyro = orientation.disableGyro,
+                smoothingEnabled = orientation.smoothingEnabled,
+                steadiness = orientation.steadiness,
+                easeOff = orientation.easeOff,
+                reverseMagneticZ = orientation.reverseMagneticZ,
+                useMagneticCorrection = orientation.useMagneticCorrection,
+                viewDirectionMode = orientation.viewDirectionMode,
+                dontShowCalibrationDialog = orientation.dontShowCalibrationDialog,
             )
         }.flowOn(ioContext)
             // Matches the sensor flows' timeout: survives config-change recomposition without

@@ -95,6 +95,7 @@ fun DiagnosticsScreen(
             add(generalSection())
             add(graphicsSection(snapshot.rendererInfo))
             add(sensorsSection(viewModel, colors))
+            add(orientationSettingsSection(snapshot))
             add(locationAndTimeSection(snapshot, colors))
             add(networkSection(snapshot))
             satelliteState?.let { add(satelliteSection(it)) }
@@ -300,6 +301,72 @@ private fun sensorsSection(
     }
     return DiagnosticsSection(stringResource(R.string.diagnostics_section_sensors), rows)
 }
+
+/**
+ * The settings that shape the sensor rows above — reads directly off [DiagnosticsSnapshot]
+ * rather than [Settings] itself, so the report always matches what the screen is showing.
+ */
+@Composable
+private fun orientationSettingsSection(snapshot: DiagnosticsSnapshot): DiagnosticsSection =
+    DiagnosticsSection(
+        stringResource(R.string.diagnostics_section_orientation_settings),
+        listOf(
+            DiagnosticsRow(
+                stringResource(R.string.diagnostics_gyro_mode),
+                stringResource(
+                    if (snapshot.disableGyro) {
+                        R.string.diagnostics_gyro_disabled
+                    } else {
+                        R.string.diagnostics_gyro_fused
+                    },
+                ),
+            ),
+            DiagnosticsRow(
+                stringResource(R.string.diagnostics_smoothing),
+                onOffText(snapshot.smoothingEnabled),
+            ),
+            DiagnosticsRow(
+                stringResource(R.string.diagnostics_steadiness),
+                enumDisplayName(snapshot.steadiness),
+            ),
+            DiagnosticsRow(
+                stringResource(R.string.diagnostics_ease_off),
+                enumDisplayName(snapshot.easeOff),
+            ),
+            DiagnosticsRow(
+                stringResource(R.string.diagnostics_reverse_magnetic_z),
+                onOffText(snapshot.reverseMagneticZ),
+            ),
+            DiagnosticsRow(
+                stringResource(R.string.diagnostics_use_magnetic_correction_setting),
+                onOffText(snapshot.useMagneticCorrection),
+            ),
+            DiagnosticsRow(
+                stringResource(R.string.diagnostics_view_direction_mode),
+                enumDisplayName(snapshot.viewDirectionMode),
+            ),
+            DiagnosticsRow(
+                stringResource(R.string.diagnostics_calibration_dialog),
+                stringResource(
+                    if (snapshot.dontShowCalibrationDialog) {
+                        R.string.diagnostics_calibration_dialog_suppressed
+                    } else {
+                        R.string.diagnostics_calibration_dialog_shown
+                    },
+                ),
+            ),
+        ),
+    )
+
+@Composable
+private fun onOffText(enabled: Boolean): String =
+    stringResource(if (enabled) R.string.diagnostics_enabled else R.string.diagnostics_disabled)
+
+/** `VERY_HIGH` -> `Very High` — technical enum names are diagnostic values, not translated. */
+private fun enumDisplayName(value: Enum<*>): String =
+    value.name
+        .split("_")
+        .joinToString(" ") { it.lowercase(Locale.US).replaceFirstChar(Char::uppercase) }
 
 @Composable
 private fun locationAndTimeSection(
