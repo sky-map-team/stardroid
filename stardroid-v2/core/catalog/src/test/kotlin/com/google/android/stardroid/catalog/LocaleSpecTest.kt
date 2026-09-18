@@ -36,6 +36,47 @@ class LocaleSpecTest {
     }
 
     @Test
+    fun `region-only Chinese tags infer the script devices leave out`() {
+        // Many devices report "zh-TW"/"zh-CN" with no script subtag, unlike the "zh-Hant-TW"
+        // case the test above covers. Android's own resource system infers the script from
+        // the region here; the catalog fallback chain must too, or catalog-sourced names (as
+        // opposed to string-resource ones) silently fall back to English. See issue #1039.
+        assertThat(LocaleSpec("zh-TW").fallbackChain)
+            .containsExactly("zh-tw", "zh-hant", "zh", "en", "")
+            .inOrder()
+        assertThat(LocaleSpec("zh-HK").fallbackChain)
+            .containsExactly("zh-hk", "zh-hant", "zh", "en", "")
+            .inOrder()
+        assertThat(LocaleSpec("zh-CN").fallbackChain)
+            .containsExactly("zh-cn", "zh-hans", "zh", "en", "")
+            .inOrder()
+    }
+
+    @Test
+    fun `implied script survives an extlang subtag ahead of the region`() {
+        // "zh-yue-HK" (Cantonese via the "yue" extlang) must not read "yue" as the region and
+        // miss "hk" — the implied script has to come from any subtag, not just the first.
+        assertThat(LocaleSpec("zh-yue-HK").fallbackChain)
+            .containsExactly("zh-yue-hk", "zh-yue", "zh-hant", "zh", "en", "")
+            .inOrder()
+    }
+
+    @Test
+    fun `bare Chinese tag defaults to the Simplified script`() {
+        // CLDR's likely-subtags default for unqualified "zh" is "zh-Hans-CN".
+        assertThat(LocaleSpec("zh").fallbackChain)
+            .containsExactly("zh-hans", "zh", "en", "")
+            .inOrder()
+    }
+
+    @Test
+    fun `Chinese tags that already name a script are left alone`() {
+        assertThat(LocaleSpec("zh-Hant-TW").fallbackChain)
+            .containsExactly("zh-hant-tw", "zh-hant", "zh", "en", "")
+            .inOrder()
+    }
+
+    @Test
     fun `bare language tag has no duplicate entry`() {
         assertThat(LocaleSpec("de").fallbackChain).containsExactly("de", "en", "").inOrder()
     }
