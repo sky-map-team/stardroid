@@ -66,6 +66,7 @@ private val helpSections2 =
         R.string.help_night_vision,
         R.string.help_other,
         R.string.help_gallery,
+        R.string.help_widgets,
         R.string.help_location,
         // Lives in eula.xml, not help.xml: the terms screen renders the same key, so the
         // permission disclosure is written and translated exactly once (see eula.xml).
