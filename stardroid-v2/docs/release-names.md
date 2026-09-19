@@ -29,7 +29,8 @@ history.
 
 Names already assigned to a release, most recently used first. A name covers every point release
 that shipped under it (`## [2.0.x:Name]` headings in `../../CHANGELOG.md`); "First released"
-is the date of that name's earliest release, not its most recent one.
+is the date of that name's earliest *public* release (stable, not alpha/beta), not its most
+recent one.
 
 ### v2
 
@@ -37,7 +38,7 @@ is the date of that name's earliest release, not its most recent one.
 
 | Icon | Name | First released | Mission |
 |---|---|---|---|
-| <img src="../assets/release-icons/2.0.3_apollo_icon.png" width="40" alt="Apollo" /> | **Apollo** | 2026-07-23 (2.0.0-alpha02) | [Apollo program](https://en.wikipedia.org/wiki/Apollo_program) — NASA's 1961–1972 program that landed the first crewed missions on the Moon. |
+| <img src="../assets/release-icons/2.0.3_apollo_icon.png" width="40" alt="Apollo" /> | **Apollo** | 2026-09-02 (2.0.0) | [Apollo program](https://en.wikipedia.org/wiki/Apollo_program) — NASA's 1961–1972 program that landed the first crewed missions on the Moon. |
 
 Hannah and Louise (the earliest 2.0.0 pre-release betas, before the mission-name convention was
 adopted) are omitted here — they were pre-release names, not a shipped release identity.
