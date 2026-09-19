@@ -407,7 +407,7 @@
     <string name="diagnostics_rotation_matrix">Матриця обертання</string>
     <string name="diagnostics_light_level">Рівень освітленості</string>
     <string name="diagnostics_sensor_absent">Відсутня</string>
-    <string name="diagnostics_sensor_rate_format" translation_description="Suffix appended to a diagnostics sensor row showing how often it is delivering events and how long ago the last one arrived. %1$.1f is a rate in events per second (Hz), %2$.1f is a number of seconds. Note the leading parenthesis and \'Hz\' abbreviates Hertz.">(%1$.1f Гц, %2$.1ф с тому)</string>
+    <string name="diagnostics_sensor_rate_format" translation_description="Suffix appended to a diagnostics sensor row showing how often it is delivering events and how long ago the last one arrived. %1$.1f is a rate in events per second (Hz), %2$.1f is a number of seconds. Note the leading parenthesis and \'Hz\' abbreviates Hertz.">(%1$.1f Гц, %2$.1f с тому)</string>
     <string name="diagnostics_section_orientation_settings" translation_description="Section heading in the diagnostics screen for the user-adjustable settings that shape the sensor readings shown above it">Налаштування орієнтації</string>
     <string name="diagnostics_gyro_mode" translation_description="Row label in the diagnostics screen for which sensor path supplies device orientation">Гіроскоп</string>
     <string name="diagnostics_gyro_fused" translation_description="Value shown for the gyro row when the fused rotation-vector sensor is in use">Об\'єднаний вектор обертання</string>
