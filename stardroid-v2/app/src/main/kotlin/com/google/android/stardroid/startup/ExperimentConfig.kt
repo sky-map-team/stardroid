@@ -50,8 +50,8 @@ fun interface ExperimentConfig {
         val Static: ExperimentConfig =
             ExperimentConfig {
                 when (it) {
-                    Experiment.MOON_WIDGET -> false
-                    Experiment.TONIGHT_WIDGET -> false
+                    Experiment.MOON_WIDGET -> true
+                    Experiment.TONIGHT_WIDGET -> true
                     Experiment.NOTIFICATIONS -> false
                     Experiment.CAMERA_AR -> false
                     Experiment.SHARE_SKY -> false
