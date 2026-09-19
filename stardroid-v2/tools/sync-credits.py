@@ -25,6 +25,7 @@ Usage:
 """
 
 import argparse
+import datetime
 import os
 import re
 import sys
@@ -35,6 +36,14 @@ REPO = "sky-map-team/stardroid"
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 OUTPUT_PATH = os.path.join(SCRIPT_DIR, "../app/src/main/res/values/contributors.xml")
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
+
+# Contributors are capped so the credits screen doesn't grow forever: keep anyone
+# who has committed in the last CONTRIBUTOR_WINDOW_DAYS, and if that's fewer than
+# CONTRIBUTOR_MIN_COUNT people, backfill with the next-most-recent older
+# contributors until the floor is met — so the list still reads as an active
+# project even in a quiet stretch, without silently erasing everyone's history.
+CONTRIBUTOR_WINDOW_DAYS = 365 * 3
+CONTRIBUTOR_MIN_COUNT = 30
 
 
 def escape_for_android(name):
@@ -63,10 +72,16 @@ def github_headers():
 
 
 def fetch_commits_ordered():
-    """Returns contributor logins in order of most recent commit (first appearance), bots excluded."""
+    """Returns (logins, last_commit_dates).
+
+    `logins` is ordered by most recent commit (first appearance), bots excluded.
+    `last_commit_dates` maps login -> ISO date string of that most-recent commit,
+    used to apply the recency window in `fetch_contributors`.
+    """
     url = f"https://api.github.com/repos/{REPO}/commits"
     seen = []
     seen_set = set()
+    last_commit_date = {}
     page = 1
     print("Fetching commits from GitHub...")
     while True:
@@ -88,10 +103,11 @@ def fetch_commits_ordered():
             if key not in seen_set:
                 seen.append(login)
                 seen_set.add(key)
+                last_commit_date[key] = commit["commit"]["author"]["date"]
         if "next" not in resp.links:
             break
         page += 1
-    return seen
+    return seen, last_commit_date
 
 
 def fetch_user_name(login):
@@ -108,12 +124,41 @@ def fetch_user_name(login):
         return None
 
 
+def cap_by_recency_with_floor(logins_ordered, last_commit_date):
+    """Keeps logins committed within CONTRIBUTOR_WINDOW_DAYS; backfills older ones
+    (in recency order) until CONTRIBUTOR_MIN_COUNT is met, if the window alone
+    falls short."""
+    cutoff = datetime.datetime.now(datetime.timezone.utc) - datetime.timedelta(
+        days=CONTRIBUTOR_WINDOW_DAYS
+    )
+    recent, older = [], []
+    for login in logins_ordered:
+        date = datetime.datetime.fromisoformat(
+            last_commit_date[login.lower()].replace("Z", "+00:00")
+        )
+        (recent if date >= cutoff else older).append(login)
+
+    if len(recent) >= CONTRIBUTOR_MIN_COUNT:
+        return recent
+
+    backfill = CONTRIBUTOR_MIN_COUNT - len(recent)
+    print(
+        f"Only {len(recent)} contributors in the last {CONTRIBUTOR_WINDOW_DAYS} days; "
+        f"backfilling {min(backfill, len(older))} older contributor(s) to reach the "
+        f"floor of {CONTRIBUTOR_MIN_COUNT}."
+    )
+    return recent + older[:backfill]
+
+
 def fetch_contributors():
     if not GITHUB_TOKEN:
         print("Warning: GITHUB_TOKEN not set — rate limit is 60 req/hr unauthenticated.")
 
-    logins_ordered = fetch_commits_ordered()
+    logins_ordered, last_commit_date = fetch_commits_ordered()
     print(f"Found {len(logins_ordered)} unique contributor logins.")
+
+    logins_ordered = cap_by_recency_with_floor(logins_ordered, last_commit_date)
+    print(f"Kept {len(logins_ordered)} contributor(s) after applying the recency cap/floor.")
 
     display_names = []
     seen_normalized = set()

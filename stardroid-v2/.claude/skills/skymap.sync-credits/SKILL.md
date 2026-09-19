@@ -27,6 +27,16 @@ picks up v1 contributors too), resolves each login to a display name, dedupes,
 and rewrites `contributors_text` in place. Review the diff — GitHub logins
 without a public display name fall back to the raw login string.
 
+**Capped by recency, with a floor.** The list would otherwise grow forever, so
+the script keeps anyone who committed in the last `CONTRIBUTOR_WINDOW_DAYS`
+(3 years) and, if that's fewer than `CONTRIBUTOR_MIN_COUNT` (30) people,
+backfills with the next-most-recent older contributors until the floor is
+met — both constants live at the top of `tools/sync-credits.py`. This means
+the list stays bounded without ever going so short it looks like the project
+died; as of 2026-09, 44 total contributors / 19 in the last 3 years means
+~11 older contributors get backfilled to reach 30. Changing either constant
+is a product decision — ask before adjusting them.
+
 ## Sponsors (Buy Me a Coffee) — requires the MCP server, not a script
 
 Buy Me a Coffee retired the personal-access-token REST API that v1's
@@ -53,13 +63,20 @@ ToolSearch("select:mcp__buymeacoffee__get-recent-supports,mcp__buymeacoffee__get
 
 ### Step 2 — Paginate every supporter source
 
-There are four sources, each needing full pagination (`limit=20`, increment
-`page` until a page returns fewer than 20 results):
+There are four sources. Results are newest-first (by ID descending), so you
+don't need each source's full history:
 
-- `get-recent-supports` with `support_type: "donation"`
-- `get-recent-supports` with `support_type: "shop"`
-- `get-recent-memberships` with `subscription_type: "membership"`
-- `get-recent-memberships` with `subscription_type: "monthly_supporter"`
+- `get-recent-supports` with `support_type: "donation"` — paginate
+  (`limit=20`, increment `page`) only until you pass entries older than
+  **3 months ago**; stop there.
+- `get-recent-supports` with `support_type: "shop"` — same, 3-month cutoff.
+- `get-recent-memberships` with `subscription_type: "membership"` — paginate
+  fully; keep only **currently active** (non-cancelled) members, regardless
+  of when they started.
+- `get-recent-memberships` with `subscription_type: "monthly_supporter"` —
+  same: paginate fully, keep only currently active subscribers regardless of
+  start date. (A loyal supporter who started 8 months ago and is still
+  paying shouldn't disappear just because they didn't *start* recently.)
 
 This is a lot of tool calls with output you don't need to keep around — run it
 as a **forked subagent** (`Agent` tool, `subagent_type: "fork"`) rather than
@@ -83,6 +100,9 @@ and reports only the final list.
 - Dedupe case-insensitively across all four sources combined, keeping the
   first (i.e. most recent, since results are newest-first) occurrence.
 - Escape for Android string resources: backslash-escape a leading `@` or `?`.
+- **Order the final list with active monthly/membership supporters first**
+  (they're the ongoing, recurring backers), **then** the last-3-months
+  donors/shop buyers. Within each group, keep newest-first.
 
 ### Step 4 — Flag anomalies before writing anything
 
