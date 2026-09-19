@@ -97,7 +97,7 @@ fun VersionBanner(
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
-        LogoDisc(releasePortraitAsset(versionName))
+        LogoDisc()
         Text(
             text = stringResource(R.string.app_name),
             color = TitleInk,
@@ -122,13 +122,14 @@ fun VersionBanner(
 }
 
 /**
- * The round "picture": the release's circular portrait when this release has one (v1's
- * per-release splash art, e.g. Apollo's Moon), else the nebula-gradient disc with the
- * launcher foreground art on top.
+ * The round "picture": the current release's circular portrait
+ * (`assets/splash/splash.png`, overwritten each release by the `skymap.release-splashscreen`
+ * skill), falling back to the nebula-gradient disc with the launcher foreground art on top if
+ * the asset is missing.
  */
 @Composable
-private fun LogoDisc(portraitAsset: String?) {
-    val portrait = portraitAsset?.let { rememberAssetBitmap(it) }
+private fun LogoDisc() {
+    val portrait = rememberAssetBitmap(SPLASH_PORTRAIT_ASSET)
     val nebula =
         remember {
             Brush.radialGradient(
@@ -159,18 +160,4 @@ private fun LogoDisc(portraitAsset: String?) {
     }
 }
 
-/**
- * The circular portrait for a release, keyed by the codename after the ':' in the version
- * name ("2.0.0-alpha03:Apollo" → "apollo"). Drawn from the public-domain celestial images
- * already shipped for info cards — never from `branding/` (scientific imagery is not
- * All-Rights-Reserved, see LICENSE rules). Releases without an entry fall back to the
- * launcher art.
- */
-internal fun releasePortraitAsset(versionName: String): String? =
-    RELEASE_PORTRAITS[versionName.substringAfter(':', "").trim().lowercase()]
-
-private val RELEASE_PORTRAITS =
-    mapOf(
-        // Apollo: NASA mission badge
-        "apollo" to "splash/apollo.png",
-    )
+private const val SPLASH_PORTRAIT_ASSET = "splash/splash.png"

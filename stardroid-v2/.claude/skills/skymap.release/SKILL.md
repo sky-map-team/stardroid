@@ -24,13 +24,13 @@ this gap has since been closed.
    ```
    This writes to `app/build.gradle.kts` (Kotlin DSL) — see `skymap.deploy-play-store` for the
    `fastlane-plugin-versioning_android` caveat.
-3. Ask the user for an appropriate portrait image for the release's changelog/GitHub-release icon
-   (mirroring v1's step). Use the `skymap.release-splashscreen` skill for this — note that unlike
-   v1, this only produces a small circular icon for `CHANGELOG.md`/the GitHub release; it does
-   **not** touch the app's actual splash screen. v2 uses the stock AndroidX SplashScreen API
-   (`installSplashScreen()` in `MainActivity.kt`) with a single static image not swapped per
-   release — don't fabricate an app-branding step that doesn't exist. If the user has no image
-   handy, it's fine to skip and publish without an icon.
+3. Ask the user for an appropriate portrait image for the release (mirroring v1's step). Use the
+   `skymap.release-splashscreen` skill for this — it produces the small circular icon for
+   `CHANGELOG.md`/the GitHub release *and* overwrites the app's in-app launch splash portrait
+   (`app/src/main/assets/splash/splash.png`, shown briefly in `VersionBanner.kt` on launch, distinct
+   from the OS-level `installSplashScreen()` splash in `MainActivity.kt`). If the user has no image
+   handy, it's fine to skip — the app just keeps showing the previous release's portrait, and the
+   changelog/GitHub release ships without an icon.
 
 ### Step 2. Bring the metadata up to date
 
