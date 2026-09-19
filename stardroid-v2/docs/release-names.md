@@ -33,6 +33,8 @@ is the date of that name's earliest release, not its most recent one.
 
 ### v2
 
+<img src="../fastlane/metadata/android/en-US/images/icon.png" width="60" alt="Sky Map v2 app icon" />
+
 | Icon | Name | First released | Mission |
 |---|---|---|---|
 | <img src="../assets/release-icons/2.0.3_apollo_icon.png" width="40" alt="Apollo" /> | **Apollo** | 2026-07-23 (2.0.0-alpha02) | [Apollo program](https://en.wikipedia.org/wiki/Apollo_program) — NASA's 1961–1972 program that landed the first crewed missions on the Moon. |
@@ -44,6 +46,8 @@ adopted) are omitted here — they were pre-release names, not a shipped release
 
 v1 predates the mission-name convention entirely — its names are mostly solar-system bodies
 (in outward order from the Sun) plus a couple of comets, not missions.
+
+<img src="../../stardroid-v1/assets/drawable/icon.png" width="60" alt="Sky Map v1 app icon" />
 
 | Icon | Name | First released | Subject |
 |---|---|---|---|
