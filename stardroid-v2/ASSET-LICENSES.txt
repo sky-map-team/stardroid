@@ -74,10 +74,10 @@ assets/calibration/calib.gif
 assets/celestial_images/**
 assets/planets/*.webp
 
-# Version-banner portrait: the current release's circular portrait, overwritten each release
-# by `skymap.release` from `assets/release-icons/` (repo root, not shipped). Always drawn from
-# the public-domain/CC-BY celestial imagery already used for info cards, per-release provenance
-# recorded in that release's CHANGELOG.md entry.
+# Version-banner portrait: the current release's circular portrait, overwritten each release by
+# `skymap.release-splashscreen`'s Step 4 from `assets/release-icons/` (at the stardroid-v2/
+# module root, not shipped). Must always be public-domain/CC-BY celestial imagery consistent
+# with the info-card imagery above — confirm the source before replacing this file.
 assets/splash/splash.png
 
 

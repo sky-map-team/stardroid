@@ -2,10 +2,11 @@
 """
 make_release_icon.py — Make a circular release-branding icon for the changelog/GitHub release.
 
-Unlike v1's make_release_splash.py, this does not touch any app splash-screen resource — v2 has
-no per-release branded app splash (see stardroid-v2/AGENTS.md). This only produces a small
-circular portrait PNG used to decorate a CHANGELOG.md entry / GitHub release, mirroring v1's
-`<version>_<name>_icon.png` convention.
+Unlike v1's make_release_splash.py, this does not touch any app splash-screen resource — this
+tool only produces a small circular portrait PNG used to decorate a CHANGELOG.md entry / GitHub
+release, mirroring v1's `<version>_<name>_icon.png` convention. The app's in-app launch splash
+portrait (`app/src/main/assets/splash/splash.png`) is a separate asset, updated by
+`skymap.release-splashscreen`'s Step 4, not by this tool.
 
 Usage:
     python3 tools/make_release_icon.py \

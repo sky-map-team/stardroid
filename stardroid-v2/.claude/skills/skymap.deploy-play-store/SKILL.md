@@ -47,8 +47,10 @@ Before deploying, confirm these are done:
 3. `./gradlew check` passes (unit tests, ktlint, Konsist gate)
 4. All changes committed and on `master`
 
-v1's splash-screen sync step has **no v2 equivalent yet** — v2 uses the AndroidX SplashScreen API
-(no per-release branded image). Don't invent that step for v2 releases.
+v2 *does* now mirror v1's splash-screen sync step: `skymap.release-splashscreen`'s Step 4
+overwrites the in-app launch splash portrait (`app/src/main/assets/splash/splash.png`) each
+release. This is separate from the OS-level `installSplashScreen()` API in `MainActivity.kt`,
+which has no per-release branded image and isn't touched by any release step.
 
 v2 *does* now mirror v1's Buy Me a Coffee supporters / GitHub contributors sync, though: the name
 lists live in `app/src/main/res/values/contributors.xml` (`sponsors_text`, `contributors_text`,
