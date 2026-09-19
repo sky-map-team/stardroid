@@ -74,8 +74,11 @@ assets/calibration/calib.gif
 assets/celestial_images/**
 assets/planets/*.webp
 
-# Version-banner portrait: derived from the LRO full-disc Moon mosaic (NASA/GSFC/ASU).
-assets/splash/apollo.png
+# Version-banner portrait: the current release's circular portrait, overwritten each release
+# by `skymap.release` from `assets/release-icons/` (repo root, not shipped). Always drawn from
+# the public-domain/CC-BY celestial imagery already used for info cards, per-release provenance
+# recorded in that release's CHANGELOG.md entry.
+assets/splash/splash.png
 
 
 # Provenance documentation shipped alongside the assets it describes.
