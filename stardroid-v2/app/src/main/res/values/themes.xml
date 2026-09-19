@@ -7,6 +7,15 @@
     <style name="Theme.SkyMap.Starting" parent="Theme.SplashScreen">
         <item name="windowSplashScreenBackground">@color/splash_navy</item>
         <item name="windowSplashScreenAnimatedIcon">@drawable/ic_launcher_foreground</item>
-        <item name="postSplashScreenTheme">@android:style/Theme.Material.NoActionBar.Fullscreen</item>
+        <item name="postSplashScreenTheme">@style/Theme.SkyMap</item>
+    </style>
+
+    <!-- Issue #1033: the bare platform theme left the nav bar's fill color to the OEM default
+         (a bright white/grey on some One UI devices), defeating night vision on API <=35 where
+         the OS still honors navigationBarColor. On API 35+, edge-to-edge is enforced and the
+         color is ignored, but MainActivity already draws content under the transparent bar
+         there (setDecorFitsSystemWindows(false)), so this is a no-op rather than a conflict. -->
+    <style name="Theme.SkyMap" parent="@android:style/Theme.Material.NoActionBar.Fullscreen">
+        <item name="android:navigationBarColor">@android:color/black</item>
     </style>
 </resources>
