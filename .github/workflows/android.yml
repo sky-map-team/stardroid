@@ -66,16 +66,12 @@ jobs:
       matrix:
         api-level: [ 34, 35 ] # 35 is the highest API with a google_atd image; 34 pre-dates edge to edge.
         target: [ google_atd ]
-        gradle-tasks: [ 'connectedFdroidDebugAndroidTest connectedDebugAndroidTest' ]
         include:
           # minSdk floor. google_atd images start at API 30, so API 29 uses the plain `default`
           # image. Stock Android 10's system SQLite lacks the unicode61 FTS tokenizer (#1003),
-          # a difference the API 34/35 images can't reveal. Limited to :data, which covers the
-          # SQLite-backed catalog, to keep wall time down on the hosted runner; widen to the
-          # full task list above if the runtime allows (#1015).
+          # a difference the API 34/35 images can't reveal.
           - api-level: 29
             target: default
-            gradle-tasks: ':data:connectedDebugAndroidTest'
 
     steps:
       - name: Checkout
@@ -169,7 +165,7 @@ jobs:
             # 100k-point continuous scene kills the hosted runner's emulator ~1s after
             # the activity resumes, which fails the whole run. Verified locally instead —
             # the test logs a loud banner when this flag disables it. See D95.
-            timeout 1200 ./gradlew ${{ matrix.gradle-tasks }} -PskipGlBenchmarks=true -x lint --stacktrace
+            timeout 1200 ./gradlew connectedFdroidDebugAndroidTest connectedDebugAndroidTest -PskipGlBenchmarks=true -x lint --stacktrace
             kill $LOGCAT_PID 2>/dev/null || true
             wait $LOGCAT_PID 2>/dev/null || true
       - name: Upload connected test results
