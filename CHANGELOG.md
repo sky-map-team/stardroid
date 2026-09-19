@@ -5,6 +5,21 @@ All notable changes to Sky Map are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [2.0.8:Apollo] (v2) - 2026-09-19
+
+<img src="stardroid-v2/assets/release-icons/2.0.3_apollo_icon.png" width="80" alt="Apollo" />
+
+### Changed
+- The system navigation bar is now filled with black instead of the OEM default (often white),
+  so it no longer ruins night vision. (#1036, closes #1033)
+
+### Fixed
+- Fixed a crash in the diagnostics sensor row on devices set to Persian (fa) or Ukrainian (uk),
+  caused by the translation pipeline corrupting the `%2$.1f` format specifier in those
+  locales. Shipped in 2.0.7. (#1048)
+
+---
+
 ## [2.0.7:Apollo] (v2) - 2026-09-18
 
 <img src="stardroid-v2/assets/release-icons/2.0.3_apollo_icon.png" width="80" alt="Apollo" />

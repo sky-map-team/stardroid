@@ -108,12 +108,14 @@ Step 1 (e.g. `2.0.0` and `Jupiter`).
    git push origin master
    ```
 
-3. Tag the commit — the established convention (already used for `v2.0.0`, `v2.0.1`, and
-   `v2.0.0-betaXX`) is `v2.<version>`, e.g. `v2.0.2`. Confirm with the user if a release ever
-   needs to deviate from this:
+3. Tag the commit — the established convention (already used for `v2.0.0`, `v2.0.7`, and
+   `v2.0.0-betaXX`) is `v<version>`, where `<version>` is the full version number *without*
+   the release name, e.g. `v2.0.8`. The `v2` is simply the leading digit of the version
+   (2.x.y), not a separate prefix — do **not** write `v2.<version>`, which would give
+   `v2.2.0.8`. Confirm with the user if a release ever needs to deviate from this:
    ```bash
-   git tag v2.<version>
-   git push origin v2.<version>
+   git tag v<version>
+   git push origin v<version>
    ```
 
 4. Build the signed release APK for direct download (the `internal` fastlane lane builds an AAB
