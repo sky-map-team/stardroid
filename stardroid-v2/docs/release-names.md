@@ -4,8 +4,8 @@ Proposed codenames for future v2 releases, grouped by starting letter. Names are
 real space missions/spacecraft. Used only as a candidate pool — the `skymap.release` skill still
 confirms the actual name with the maintainer at release time (see that skill's Step 1).
 
-Names already used: Hannah, Louise, Apollo (current, since 2.0.0 stable) — see `CHANGELOG.md`
-for the authoritative history.
+Names already used: see the "Used names" table below, or `CHANGELOG.md` for the authoritative
+history.
 
 - **A** — Apollo / Artemis
 - **B** — Beresheet / Buran
@@ -36,8 +36,9 @@ is the date of that name's earliest release, not its most recent one.
 | Icon | Name | First released | Mission |
 |---|---|---|---|
 | <img src="../assets/release-icons/2.0.3_apollo_icon.png" width="40" alt="Apollo" /> | **Apollo** | 2026-07-23 (2.0.0-alpha02) | [Apollo program](https://en.wikipedia.org/wiki/Apollo_program) — NASA's 1961–1972 program that landed the first crewed missions on the Moon. |
-| <img src="../assets/release-icons/2.0.0-beta07_louise_icon.png" width="40" alt="Louise" /> | **Louise** | 2026-08-29 (2.0.0-beta05) | Not a space mission — a placeholder/personal name used for this beta round before the mission-name convention (this doc's list above) was adopted. Origin not recorded; flagging rather than guessing. |
-| — | **Hannah** | 2026-08-16 (2.0.0-beta01) | Not a space mission — same placeholder situation as Louise, no icon was produced for this beta round. Origin not recorded. |
+
+Hannah and Louise (the earliest 2.0.0 pre-release betas, before the mission-name convention was
+adopted) are omitted here — they were pre-release names, not a shipped release identity.
 
 ### v1
 
@@ -57,6 +58,7 @@ v1 predates the mission-name convention entirely — its names are mostly solar-
 | — | **Mercury** | 2026-01-20 (1.10.10) | [Mercury](https://en.wikipedia.org/wiki/Mercury_(planet)) — the smallest planet in the Solar System and the closest to the Sun. |
 | — | **Comet Leonard** | 2021-12-21 (1.10.0) | [C/2021 A1 (Leonard)](https://en.wikipedia.org/wiki/C/2021_A1_(Leonard)) — a long-period comet discovered in January 2021, the brightest comet of that year. |
 | — | **Neowise** | 2020-07-17 (1.9.4) | [C/2020 F3 (NEOWISE)](https://en.wikipedia.org/wiki/C/2020_F3_(NEOWISE)) — a long-period comet discovered in March 2020 that became easily visible to the naked eye. |
+| <img src="../../stardroid-v1/assets/stardroid_logo_old.png" width="40" alt="Sky Map" /> | **1.0** | c. 2009-02 (best guess) | Original release, as **Google Sky Map** — this predates the app's git history (which starts 2012) and the naming convention entirely, so it has no mission name, just a version number. Date is a best guess based on Google Sky Map's public launch around the T-Mobile G1's UK debut in early 2009; not verified against a primary source. |
 
 Several early v1 releases (1.9.5–1.9.7, 1.10.4, 1.10.9) shipped without a release name at all —
 omitted from this table.
