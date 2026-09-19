@@ -44,6 +44,9 @@ It\'s an entirely new app under the hood — new rendering engine, new astronomy
 • Does it stay up to date after a day, after a restart, or after changing time zone?<br/>
 • Does tapping it open Sky Map?</p>
 <p>If anything looks wrong, email us at <a href="mailto:skymapdevs@gmail.com">skymapdevs@gmail.com</a> and tell us your phone model and launcher. A screenshot is very helpful.</p>
+<h1>Try the new sensor smoothing</h1>
+<p>We\'ve replaced how Sky Map steadies the view while you hold your phone still — it should shake less and keep up better when you move. It\'s on by default for beta testers so we can get feedback from real devices. If you notice lag, jitter, or anything that feels off, please let us know at <a href="mailto:skymapdevs@gmail.com">skymapdevs@gmail.com</a>.</p>
+<p>You can turn it off any time under <b>Settings → Sensors → Smooth sensor movement</b> if you\'d rather use the raw sensor.</p>
     ]]></string>
     <string name="whats_new_supplement" translation_description="HTML content for a short supplementary section covering changes since the main whats_new_content was last written, shown between the beta feedback note and the main What's new content in the What's new dialog and the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[
 <h1>Since the last update</h1>
