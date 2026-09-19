@@ -47,7 +47,7 @@ adopted) are omitted here — they were pre-release names, not a shipped release
 v1 predates the mission-name convention entirely — its names are mostly solar-system bodies
 (in outward order from the Sun) plus a couple of comets, not missions.
 
-<img src="../../stardroid-v1/assets/drawable/icon.png" width="60" alt="Sky Map v1 app icon" />
+<img src="../../stardroid-v1/fastlane/metadata/android/en-US/images/icon.png" width="60" alt="Sky Map v1 app icon" />
 
 | Icon | Name | First released | Subject |
 |---|---|---|---|
