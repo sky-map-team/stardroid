@@ -16,7 +16,7 @@ import com.google.android.stardroid.math.Vector3
  *
  * Three passes applied in order:
  * 1. **Frustum test** — labels whose world position is outside the view cone are discarded.
- * 2. **FOV-dependent magnitude threshold** — at large FOV only bright labels show; zooming in
+ * 2. **FOV-dependent magnitude threshold** — zooming out shows only brighter labels; zooming in
  *    (smaller FOV) reveals fainter ones. Labels without a magnitude always pass.
  * 3. **Greedy screen-space rejection** — candidates sorted by descending
  *    [Candidates.priority];
@@ -27,18 +27,24 @@ import com.google.android.stardroid.math.Vector3
 internal object LabelDeclutterer {
     private const val REFERENCE_FOV_DEG = 45.0
     private const val BASE_MAGNITUDE_LIMIT = 4.0
-    private const val MAGNITUDE_SCALE = 10.0
+    private const val ZOOM_IN_DEG_PER_MAGNITUDE = 10.0
+    private const val ZOOM_OUT_DEG_PER_MAGNITUDE = 45.0
 
     /**
      * Magnitude cutoff for the given [fovDeg]: smaller FOV (zoomed in) → higher cutoff → more
-     * labels visible. Clamped so the threshold never drops below [BASE_MAGNITUDE_LIMIT].
+     * labels visible; larger FOV (zoomed out) → lower cutoff → fewer. Zooming out sheds labels
+     * more gently than zooming in adds them, since the wide end only spans 45°–90°.
      *
      * At [REFERENCE_FOV_DEG] = 45°: threshold = 4.0.
      * At 25°: threshold = 6.0 (reveals mag-5 and mag-6 labels when zoomed in).
-     * At 90°: still 4.0 (wide-angle view shows only bright labels).
+     * At 90° (widest zoom): threshold = 3.0, so the sky isn't buried in star names.
      */
-    fun magnitudeThreshold(fovDeg: Double): Double =
-        BASE_MAGNITUDE_LIMIT + (REFERENCE_FOV_DEG - fovDeg).coerceAtLeast(0.0) / MAGNITUDE_SCALE
+    fun magnitudeThreshold(fovDeg: Double): Double {
+        val delta = REFERENCE_FOV_DEG - fovDeg
+        val degPerMagnitude =
+            if (delta >= 0.0) ZOOM_IN_DEG_PER_MAGNITUDE else ZOOM_OUT_DEG_PER_MAGNITUDE
+        return BASE_MAGNITUDE_LIMIT + delta / degPerMagnitude
+    }
 
     /**
      * Returns `true` if the label at [labelPos] passes the frustum and magnitude pre-filters.

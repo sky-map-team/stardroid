@@ -60,8 +60,8 @@ Every non-star category is fully covered. The entire remaining gap is stars.
 ### What a user actually hits
 
 The label declutterer only draws labels brighter than
-`LabelDeclutterer.magnitudeThreshold(fov)` — `4.0 + max(0, 45 - fov) / 10` with the
-constants as shipped — so the gap that matters depends on zoom:
+`LabelDeclutterer.magnitudeThreshold(fov)` — `4.0 + (45 - fov) / 10` when zoomed in past
+45°, `4.0 - (fov - 45) / 45` when zoomed out — so the gap that matters depends on zoom:
 
 | View | Label magnitude limit | Star labels shown | ...lacking cards |
 |---|---:|---:|---:|

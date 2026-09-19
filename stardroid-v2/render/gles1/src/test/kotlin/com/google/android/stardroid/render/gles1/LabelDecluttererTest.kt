@@ -28,9 +28,16 @@ class LabelDecluttererTest {
     }
 
     @Test
-    fun `threshold is clamped at base limit for FOV larger than reference`() {
-        assertThat(LabelDeclutterer.magnitudeThreshold(90.0)).isWithin(1e-9).of(4.0)
-        assertThat(LabelDeclutterer.magnitudeThreshold(60.0)).isWithin(1e-9).of(4.0)
+    fun `larger FOV yields lower threshold`() {
+        assertThat(LabelDeclutterer.magnitudeThreshold(90.0)).isWithin(1e-9).of(3.0)
+        assertThat(LabelDeclutterer.magnitudeThreshold(67.5)).isWithin(1e-9).of(3.5)
+    }
+
+    @Test
+    fun `threshold falls monotonically as FOV widens`() {
+        val fovs = listOf(0.5, 10.0, 25.0, 45.0, 60.0, 75.0, 90.0)
+        val thresholds = fovs.map { LabelDeclutterer.magnitudeThreshold(it) }
+        assertThat(thresholds).isInStrictOrder(Comparator.reverseOrder<Double>())
     }
 
     // ---- passesPreFilter ------------------------------------------------------------
