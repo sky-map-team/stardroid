@@ -27,13 +27,29 @@ Ini adalah aplikasi yang sepenuhnya baru dari dasarnya — mesin rendering baru,
 <h2>Dan ini hanyalah permulaan...</h2>
 <p>Kami memiliki banyak fitur yang telah lama diminta akan segera hadir.</p>]]></string>
     <string name="whats_new_support" translation_description="HTML paragraph inviting users to support the project, shown in the What's new dialog and the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h1>Dukung Sky Map</h1><p>Sky Map gratis dan sumber terbuka. Jika Anda merasa ini bermanfaat, mohon pertimbangkan untuk mendukung pengembangan di halaman <a href="https://github.com/sky-map-team/stardroid/?tab=readme-ov-file#support-the-project">GitHub</a> kami atau <a href="https://buymeacoffee.com/skymapdevs?utm_source=skymap&amp;utm_medium=app&amp;utm_campaign=whatsnew">membelikan kami kopi</a>.</p>]]></string>
-    <string name="beta_user_help_text" translation_description="Usually-empty HTML content shown to beta testers asking for feedback, appended in the What's new dialog and the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[
-    ]]></string>
+    <string name="beta_user_help_text" translation_description="Usually-empty HTML content shown to beta testers asking for feedback, appended in the What's new dialog and the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h1>Penguji beta: silakan coba widget</h1>
+<p>Terima kasih telah menguji Sky Map! Versi ini menambahkan tiga widget layar utama dan kami sangat mengharapkan bantuan Anda untuk memeriksanya di sebanyak mungkin ponsel dan peluncur:</p>
+<p>• <b>Fase bulan</b><br/>
+• <b>Langit malam ini</b><br/>
+• <b>Hitung mundur langit</b></p>
+<p>Untuk menambahkannya, sentuh dan tahan layar utama Anda, pilih <b>Widget</b>, lalu temukan <b>Sky Map</b> (atau ketuk <b>Tambah widget</b> pada kartu info Bulan). Kemudian, silakan periksa:</p>
+<p>• Apakah widget menampilkan informasi yang benar untuk lokasi Anda? Waktu terbit bulan, terbenam bulan, dan terbenam matahari harus sesuai dengan lokasi Anda.<br/>
+• Apakah tampilannya sudah pas di berbagai ukuran, serta dalam mode terang dan gelap?<br/>
+• Apakah widget tetap diperbarui setelah satu hari, setelah dimulai ulang, atau setelah mengubah zona waktu?<br/>
+• Apakah mengetuk widget akan membuka Sky Map?</p>
+<p>Jika ada yang terlihat tidak beres, kirim email kepada kami di <a href="mailto:skymapdevs@gmail.com">skymapdevs@gmail.com</a> dan beri tahu kami model ponsel serta peluncur yang Anda gunakan. Tangkapan layar sangat membantu.</p>
+<h1>Coba penghalus sensor baru</h1>
+<p>Kami telah mengganti cara Sky Map menstabilkan tampilan saat Anda memegang ponsel — tampilannya seharusnya tidak terlalu bergetar dan merespons lebih baik saat Anda bergerak. Fitur ini aktif secara default bagi penguji beta agar kami bisa mendapatkan masukan dari perangkat nyata. Jika Anda mengalami kelambatan, getaran, atau hal yang terasa tidak biasa, beri tahu kami di <a href="mailto:skymapdevs@gmail.com">skymapdevs@gmail.com</a>.</p>
+<p>Anda dapat mematikannya kapan saja melalui <b>Setelan → Sensor → Pergerakan sensor halus</b> jika Anda lebih suka menggunakan sensor mentah.</p>]]></string>
     <string name="whats_new_supplement" translation_description="HTML content for a short supplementary section covering changes since the main whats_new_content was last written, shown between the beta feedback note and the main What's new content in the What's new dialog and the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h1>Sejak pembaruan terakhir</h1>
 <h2>Penghalusan sensor yang lebih stabil</h2>
-<p>Kami telah mengganti cara Sky Map menstabilkan tampilan saat Anda memegang ponsel tetap diam — tampilannya kini seharusnya tidak terlalu bergetar dan merespons lebih baik saat Anda bergerak. Anda dapat mematikannya kapan saja di <b>Setelan → Sensor → Haluskan pergerakan sensor</b> jika Anda lebih suka menggunakan sensor mentah.</p>
-<h2>Grid alt/az baru</h2>
-<p>Sky Map sekarang dapat menampilkan grid garis ketinggian (altitude) dan azimut di atas peta, melengkapi grid benda langit yang sudah ada. Fitur ini nonaktif secara default — aktifkan melalui menu lapisan (layer).</p>
+<p>Kami telah mengganti cara Sky Map menstabilkan tampilan saat Anda memegang ponsel tetap diam — tampilannya seharusnya tidak terlalu bergetar dan merespons lebih baik saat Anda bergerak. Anda dapat mematikannya kapan saja di <b>Pengaturan → Sensor → Gerakan sensor halus</b> jika Anda lebih suka menggunakan sensor mentah.</p>
+<h2>Kisi alt/az baru</h2>
+<p>Sky Map sekarang dapat melapisi kisi garis ketinggian dan azimut pada peta, di samping kisi langit yang sudah ada. Fitur ini nonaktif secara default — aktifkan dari menu lapisan.</p>
 <h2>Pencarian yang lebih cerdas</h2>
-<p>Matahari, Bulan, dan planet-planet sekarang berada di peringkat teratas di atas bintang-bintang ketika cocok dengan pencarian Anda, sehingga mengetik "Mars" akan menemukan planet tersebut terlebih dahulu alih-alih bintang dengan nama yang mirip.</p>]]></string>
+<p>Matahari, Bulan, dan planet-planet sekarang berada di peringkat teratas di atas bintang-bintang ketika cocok dengan pencarian Anda, jadi mengetik "Mars" akan menemukan planet tersebut terlebih dahulu alih-alih bintang dengan nama yang mirip.</p>
+<h2>Widget layar beranda</h2>
+<p>Letakkan langit di layar beranda Anda dengan tiga widget baru: <b>Fase bulan</b> (fase, seberapa terang bagian yang disinari, serta waktu terbit dan terbenam bulan), <b>Langit malam ini</b> (matahari terbenam, waktu hari mulai gelap, dan pemandangan terbaik malam ini) dan <b>Hitung mundur langit</b> (jumlah hari hingga puncak hujan meteor atau peristiwa bulan berikutnya). Tambahkan dari pemilih widget peluncur Anda, atau ketuk <b>Tambah widget</b> pada kartu informasi Bulan.</p>
+<h2>Tampilan tidak terlalu padat saat diperkecil</h2>
+<p>Memperkecil tampilan kini mengurangi label bintang, sehingga tampilan langit yang luas lebih mudah dibaca.</p>]]></string>
 </resources>

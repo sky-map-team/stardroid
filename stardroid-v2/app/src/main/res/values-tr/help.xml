@@ -103,6 +103,16 @@ Bu durumda arama sizi ana nesneye (Jüpiter) yönlendirecektir.</blockquote>]]><
 <p>Küçük resimleri kaydırarak göz atın ve ayrıntıları görmek için birine dokunun.
 Gökyüzündeki o nesneyi bulmak için <b>Bul</b> düğmesini kullanın.</p>]]></string>
 
+    <string name="help_widgets" translation_description="Help section: the home-screen widgets. Please do not change the markup"><![CDATA[<h2>Ana Ekran Bileşenleri</h2>
+<p>Sky Map, gökyüzünü ana ekranınıza taşıyan ve günlük olarak güncellenen bileşenlere sahiptir:</p>
+<p>• <b>Ay evresi:</b> Ay\'ın mevcut evresi, ne kadarının aydınlık olduğu ve bugünkü ayın doğuş ve batış saatleri<br/>
+• <b>Bu geceki gökyüzü:</b> Gün batımı ve gökyüzünün tamamen karardığı saat ile birlikte, uygun konumdaki gezegenler, meteor yağmurları ve ay olayları gibi bu gecenin en iyi manzaraları<br/>
+• <b>Gökyüzü geri sayımı:</b> Bir sonraki meteor yağmuru zirvesine veya ay olayına kalan günler</p>
+<h3>Bileşen Ekleme</h3>
+<p>Ana ekranınızda boş bir alana dokunup basılı tutun, <b>Bileşenler</b> öğesini seçin ve ardından <b>Sky Map</b> uygulamasını bulun.
+Ayrıca Ay evresi bileşenini doğrudan eklemek için Ay\'ın bilgi kartındaki <b>Bileşen ekle</b> seçeneğine dokunabilirsiniz.</p>
+<p>Sky Map uygulamasını açmak için bir bileşene dokunun.</p>]]></string>
+
     <string name="help_location" translation_description="Help section: setting your observing location. Please do not change the markup"><![CDATA[<h2>Konumunuzu Ayarlama</h2>
 <p>Sky Map, doğru gökyüzünü çizebilmek için yaklaşık konumunuza ihtiyaç duyar. Varsayılan olarak cihazınızın konum servislerini (hücresel ağ veya GPS) kullanır.</p>
 <br/>

@@ -13,7 +13,7 @@
     <string name="help_info_cards" translation_description="Help section: the object info cards. Please do not change the markup"><![CDATA[<h2>정보 카드</h2><p>Sky Map에서 이름표가 붙은 천체를 탭하면 정보 카드가 나타납니다 — 해당 천체의 사진과 세부 정보가 담긴 패널입니다.
 정보 카드는 별, 행성, 달, 주목할 만한 심원천체, 그리고 별자리를 포함하여 수백 개의 천체에 대해 제공됩니다.</p><br/><p>각 카드에는 다음이 표시됩니다:</p><p>• 천체의 사진 또는 차트<br/>• 짧은 설명과 재미있는 사실<br/>• 거리, 크기, 천체 유형과 같은 과학적 데이터</p><p>카드 안의 이미지를 탭하면 전체 화면으로 볼 수 있습니다. 카드 바깥을 탭하거나 <b>뒤로</b> 버튼을 눌러 카드를 닫을 수 있습니다.</p><blockquote>모든 천체에 정보 카드가 있는 것은 아니지만, 저희는 항상 더 많은 정보를 추가하고 있습니다.</blockquote>]]></string>
 
-    <string name="help_search" translation_description="Help section: searching for objects in the sky. Please do not change the markup"><![CDATA[<h2>검색</h2><p>하단에 있는 <b>돋보기</b> 버튼을 탭하여 하늘에 있는 모든 것을 검색할 수 있습니다.</p><br/><p>다음 항목을 검색할 수 있습니다:</p><p>• <b>별</b> — 이름으로, 예: "시리우스", "베텔게우스", "북극성"<br/>• <b>행성</b> — 예: "화성", "토성"<br/>• <b>별자리</b> — 예: "오리온자리", "카시오페이아자리"<br/>• <b>심원천체</b> — 예: "M31", "안드로메다 은하", "플레이아데스 성단"<br/>• <b>좌표</b> — 적경 및 적위, 예: "5h 55m, 7° 24\'" (도 기호 대신 \'o\'를 사용할 수 있습니다)</p><p><b>자동 모드:</b> 결과를 선택하면 Sky Map에 조준 원과 방향 화살표가 표시됩니다. 휴대폰을 돌려 화살표를 따라가세요 — 개체가 시야에 들어오면 원의 색상이 바뀝니다. <b>취소</b>를 탭하거나 (뒤로 버튼을 눌러) 검색을 종료하세요.</p><p><b>수동 모드:</b> 지도가 해당 개체를 중심으로 이동합니다.</p><blockquote>Sky Map에 표시되지 않는 유로파(목성의 위성 중 하나)와 같은 개체도 검색할 수 있습니다.<br/>이 경우 검색하면 상위 개체(목성)로 이동합니다.</blockquote>]]></string>
+    <string name="help_search" translation_description="Help section: searching for objects in the sky. Please do not change the markup"><![CDATA[<h2>검색</h2><p>하단에 있는 <b>돋보기</b> 버튼을 탭하여 하늘에 있는 모든 것을 검색할 수 있습니다.</p><br/><p>다음 항목을 검색할 수 있습니다:</p><p>• <b>별</b> — 이름으로, 예: "시리우스", "베텔게우스", "북극성"<br/>• <b>행성</b> — 예: "화성", "토성"<br/>• <b>별자리</b> — 예: "오리온자리", "카시오페이아자리"<br/>• <b>심원천체</b> — 예: "M31", "안드로메다 은하", "플레이아데스 성단"<br/>• <b>좌표</b> — 적경 및 적위, 예: "5h 55m, 7° 24\'" (도 기호 대신 \'o\'를 사용할 수 있습니다)</p><p><b>자동 모드:</b> 결과를 선택하면 Sky Map에 조준 원과 방향 화살표가 표시됩니다. 휴대폰을 돌려 화살표를 따라가세요 — 개체가 시야에 들어오면 원의 색상이 바뀝니다. <b>취소</b>를 탭하거나 (뒤로 버튼을 눌러) 검색을 종료하세요.</p><p><b>수동 모드:</b> 지도가 해당 개체를 중심으로 이동합니다.</p><blockquote>Sky Map에 표시되지 않는 유로파(목성의 위성 중 하나)와 같은 개체도 검색할 수 있습니다. 이 경우 검색하면 상위 개체(목성)로 이동합니다.</blockquote>]]></string>
 
     <string name="help_time_travel" translation_description="Help section: the time travel feature. Please do not change the markup"><![CDATA[<h2>시간 여행</h2><p>시간 여행을 통해 1600년부터 3000년까지 어느 순간의 하늘도 볼 수 있습니다. 하단의 <b>시계</b> 버튼을 탭하세요.</p><br/><p>이벤트 목록에서 인기 있는 이벤트(일식, 유성우 극대기, 다음 보름달 또는 초승달, 행성 합, 아폴로 11호 착륙 등)를 선택하거나, <b>날짜 설정</b> 및 <b>시간 설정</b> 버튼으로 원하는 시간을 설정하거나, 현재 시간부터 단순히 앞뒤로 이동하려면 "지금부터 시작"을 탭하세요.</p><p>시간 여행 모드에서는 화면에 날짜가 표시되며 재생 컨트롤을 통해 시간을 이동할 수 있습니다:</p><p>• <b>▶▶</b> (더 빠르게) 또는 <b>◀◀</b> (더 느리게)를 탭하여 시간 재생 속도를 앞뒤로 조절합니다<br/>• <b>❚❚</b>를 탭하여 일시 정지합니다<br/>• <b>지금</b>을 탭하여 현재로 돌아갑니다</p><p>다음과 같은 용도로 사용할 수 있습니다:</p><p>• <i>오늘 밤 일몰 직후 무엇을 볼 수 있나요?</i><br/>• <i>수성을 볼 수 있는 다음 좋은 기회는 언제인가요?</i><br/>• <i>제가 태어난 밤하늘은 어땠을까요?</i></p><p>현재로부터 멀리 떨어진 날짜의 정확도는 주로 목성의 중력 영향으로 인해 감소합니다.</p>]]></string>
 
@@ -23,6 +23,16 @@
         <p>기타 기능은 오른쪽 하단의 오버플로 메뉴(…)에서 찾을 수 있습니다.</p>]]></string>
 
     <string name="help_gallery" translation_description="Help section: the image gallery. Please do not change the markup"><![CDATA[<h2>갤러리</h2><p>갤러리에는 허블 우주 망원경의 이미지 일부를 포함하여 밤하늘의 아름다운 이미지 모음이 있습니다.</p><br/><p>스크롤하여 미리보기를 탐색하고, 하나를 탭하여 세부 정보를 확인하세요. <b>찾기</b> 버튼을 사용하여 하늘에서 해당 개체를 찾을 수 있습니다.</p>]]></string>
+
+    <string name="help_widgets" translation_description="Help section: the home-screen widgets. Please do not change the markup"><![CDATA[<h2>홈 화면 위젯</h2>
+<p>Sky Map에는 매일 업데이트되며 홈 화면에서 밤하늘을 볼 수 있는 위젯이 있습니다.</p>
+<p>• <b>달의 위상:</b> 현재 달의 모양, 조명 비율, 오늘의 월출 및 월몰 시간<br/>
+• <b>오늘 밤의 밤하늘:</b> 일몰 및 하늘이 완전히 어두워지는 시간, 그리고 잘 보이는 행성, 유성우, 달 관련 이벤트 등 오늘 밤의 주요 볼거리<br/>
+• <b>우주 카운트다운:</b> 다음 유성우 극대기 또는 달 이벤트까지 남은 일수</p>
+<h3>위젯 추가하기</h3>
+<p>홈 화면의 빈 공간을 길게 터치한 후 <b>위젯</b>을 선택하고 <b>Sky Map</b>을 찾으세요.
+또한 달 정보 카드에서 <b>위젯 추가</b>를 탭하여 달의 위상 위젯을 직접 추가할 수도 있습니다.</p>
+<p>위젯을 탭하면 Sky Map이 열립니다.</p>]]></string>
 
     <string name="help_location" translation_description="Help section: setting your observing location. Please do not change the markup"><![CDATA[<h2>위치 설정</h2>
 <p>Sky Map은 정확한 하늘을 표시하기 위해 대략적인 위치가 필요합니다. 기본적으로 기기의 위치 서비스(모바일 네트워크 또는 GPS)를 사용합니다.</p>

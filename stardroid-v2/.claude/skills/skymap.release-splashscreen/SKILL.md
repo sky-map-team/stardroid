@@ -1,7 +1,6 @@
 ---
 name: skymap.release-splashscreen
 description: Generate the small circular release-branding icon for a Sky Map v2 release's CHANGELOG entry and GitHub release, and update the app's in-app launch splash portrait. Use when asked to "update splash for v2", "add release icon for X release", or "create v2 release branding". ARGUMENTS — "<ReleaseName> <path/to/source.png> [crop x1,y1,x2,y2]"
-disable-model-invocation: true
 ---
 
 # Sky Map v2 Release Icon

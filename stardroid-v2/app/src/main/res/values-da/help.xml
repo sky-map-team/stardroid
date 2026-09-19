@@ -35,6 +35,16 @@ I dette tilfælde vil søgningen føre dig til forældreobjektet (Jupiter).</blo
 
     <string name="help_gallery" translation_description="Help section: the image gallery. Please do not change the markup"><![CDATA[<h2>Galleri</h2><p>Galleriet indeholder en udvalgt samling af smukke billeder af nattehimlen, herunder nogle fra Hubble-rumteleskopet.</p><br/><p>Gennemse miniaturebilleder ved at rulle, og tryk på et for at se detaljer. Brug knappen <b>Find</b> til at finde objektet på himlen.</p>]]></string>
 
+    <string name="help_widgets" translation_description="Help section: the home-screen widgets. Please do not change the markup"><![CDATA[<h2>Startside-widgets</h2>
+<p>Sky Map har widgets, der viser stjernehimlen på din startskærm, opdateret dagligt:</p>
+<p>• <b>Månefase:</b> Månens aktuelle fase, hvor stor en del af den der er oplyst, samt dagens måneopgang og månenedgang<br/>
+• <b>Himlen i aften:</b> solnedgang og tidspunktet for, hvortil himlen er helt mørk, samt aftenens bedste seværdigheder såsom højtplacerede planeter, stjerneskudssværme og månebegivenheder<br/>
+• <b>Nedtælling til himlen:</b> antallet af dage indtil næste stjerneskudssværm eller månebegivenhed</p>
+<h3>Tilføjelse af en widget</h3>
+<p>Tryk og hold på et tomt felt på din startskærm, vælg <b>Widgets</b>, og find derefter <b>Sky Map</b>.
+Du kan også trykke på <b>Tilføj widget</b> på Månens infokort for at tilføje månefase-widgetten direkte.</p>
+<p>Tryk på en widget for at åbne Sky Map.</p>]]></string>
+
     <string name="help_location" translation_description="Help section: setting your observing location. Please do not change the markup"><![CDATA[<h2>Indstilling af din placering</h2><p>Sky Map skal bruge din omtrentlige placering for at tegne den korrekte himmel. Som standard bruger den din enheds placeringstjenester (mobilnetværk eller GPS).</p><br/><p>Hvis placeringstjenester er utilgængelige, eller du hellere vil indstille den manuelt, tryk på knappen <b>Indtast placering manuelt</b> og indtast et <b>stednavn</b> eller en <b>bredde- og længdegrad</b> i grader.</p><blockquote>Internet er påkrævet for at afkode stednavne.</blockquote><p>Hvis du tidligere har nægtet Sky Map placeringstilladelse, skal du muligvis genaktivere den i din enheds <b>App-indstillinger → Tilladelser</b>.</p><blockquote>Hvis du ikke giver adgang, vil Sky Map antage, at du er ved (0, 90) — Nordpolen!</blockquote>]]></string>
 
     <string name="help_diagnostics" translation_description="Help section: the diagnostics page. Please do not change the markup"><![CDATA[<h2>Diagnostik</h2><p>Denne side viser forskellige data om din telefon og Sky Map, som kan være nyttige til fejlfinding. Du finder den under <b>Indstillinger → Diagnostik</b>.</p><br/><p>Når du rapporterer et problem, skal du trykke på deleknappen øverst på siden for at sende disse detaljer til os på <a href="mailto:skymapdevs@gmail.com">skymapdevs@gmail.com</a>. Du kan læse og redigere rapporten, før du sender den.</p>]]></string>
@@ -56,10 +66,10 @@ Hvis himmelkortet ser forkert ud, er det næsten altid et hardwareproblem med di
 Sky Map aflæser præcis, hvad din telefons sensor rapporterer; den har ingen måde automatisk at korrigere en dårlig eller skæv aflæsning på.
 Se Fejlfinding nedenfor.</blockquote>
 <h3>Hvordan ved jeg, hvilke sensorer min telefon har?</h3>
-<p>Åbn <b>Indstillinger → Diagnostik</b> – alle sensorer din telefon ikke har, vil blive markeret som fraværende. Du vil også være blevet informeret<br/>
+<p>Åbn <b>Indstillinger → Diagnostik</b> – alle sensorer din telefon ikke har, vil blive markeret som fraværende. Du vil også være blevet informeret
 under vejledningen.</p>
 <h3>Hvad hvis min enhed mangler påkrævede sensorer?</h3>
-<p>Sky Map vil falde tilbage til manuel tilstand. Du kan stadig udforske himlen, men uden sensorerne er der<br/>
+<p>Sky Map vil falde tilbage til manuel tilstand. Du kan stadig udforske himlen, men uden sensorerne er der
 ingen måde, en app kan vise dig din retning på.</p>]]></string>
 
     <string name="help_troubleshooting" translation_description="Help section: troubleshooting a map that does not move or points the wrong way. Please do not change the markup"><![CDATA[<h2>Fejlfinding</h2>

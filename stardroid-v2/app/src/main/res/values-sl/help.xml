@@ -120,6 +120,16 @@ V tem primeru vas bo iskanje usmerilo na matični predmet (Jupiter).</blockquote
 <p>S pomikom brskajte po sličicah in tapnite eno, če si želite ogledati podrobnosti.
 Uporabite gumb <b>Najdi</b>, da poiščete tisti objekt na nebu.</p>]]></string>
 
+    <string name="help_widgets" translation_description="Help section: the home-screen widgets. Please do not change the markup"><![CDATA[<h2>Pripomočki za domači zaslon</h2>
+<p>Sky Map vključuje pripomočke, ki prikazujejo nebo na vašem domačem zaslonu in se dnevno posodabljajo:</p>
+<p>• <b>Lunina faza:</b> trenutna Lunina faza, osvetljenost ter današnji vzhod in zahod Lune<br/>
+• <b>Današnje nebo:</b> sončni zahod in trenutek, ko je nebo povsem temno, ter najboljši prizori nocoj, kot so dobro vidni planeti, meteorski utrinki in Lunini dogodki<br/>
+• <b>Odštevalnik neba:</b> število dni do naslednjega viška meteorskega dežja ali Luninega dogodka</p>
+<h3>Dodajanje pripomočka</h3>
+<p>Pridržite prazen prostor na domačem zaslonu, izberite <b>Pripomočki</b> in poiščite <b>Sky Map</b>.
+Lahko pa tapnete <b>Dodaj pripomoček</b> na informacijski kartici Lune, da neposredno dodate pripomoček za Lunino fazo.</p>
+<p>Tapnite pripomoček, da odprete Sky Map.</p>]]></string>
+
     <string name="help_location" translation_description="Help section: setting your observing location. Please do not change the markup"><![CDATA[<h2>Nastavitev lokacije</h2>
 <p>Sky Map potrebuje vašo približno lokacijo za prikaz pravilnega neba. Privzeto uporablja lokacijske storitve vaše naprave (mobilno omrežje ali GPS).</p>
 <br/>

@@ -28,6 +28,16 @@ De optie <b>Automatisch scherm dimmen</b> in <b>Instellingen</b> geeft je extra 
 
     <string name="help_gallery" translation_description="Help section: the image gallery. Please do not change the markup"><![CDATA[<h2>Galerij</h2><p>De Galerij bevat een samengestelde collectie prachtige afbeeldingen van de nachtelijke hemel, waaronder enkele van de Hubble-ruimtetelescoop.</p><br/><p>Blader door miniaturen door te scrollen en tik op een miniatuur om details te zien. Gebruik de knop <b>Zoeken</b> om dat object aan de hemel te vinden.</p>]]></string>
 
+    <string name="help_widgets" translation_description="Help section: the home-screen widgets. Please do not change the markup"><![CDATA[<h2>Widgets op het startscherm</h2>
+<p>Sky Map heeft widgets waarmee je de sterrenhemel dagelijks bijgewerkt op je startscherm zet:</p>
+<p>• <b>Maanfase:</b> de huidige fase van de maan, hoeveel ervan is verlicht, en de maanopkomst en maanondergang van vandaag<br/>
+• <b>De hemel vanavond:</b> zonsondergang en wanneer het volledig donker wordt, plus de beste bezienswaardigheden van vanavond, zoals gunstig geplaatste planeten, meteorenzwermen en maanverschijnselen<br/>
+• <b>Hemelaftelling:</b> de dagen tot het volgende maximum van een meteorenzwerm of een maanverschijnsel</p>
+<h3>Een widget toevoegen</h3>
+<p>Houd een lege plek op je startscherm aangeraakt, kies <b>Widgets</b> en zoek dan naar <b>Sky Map</b>.
+Je kunt ook tikken op <b>Widget toevoegen</b> op de informatiekaart van de maan om de maanfasewidget direct toe te voegen.</p>
+<p>Tik op een widget om Sky Map te openen.</p>]]></string>
+
     <string name="help_location" translation_description="Help section: setting your observing location. Please do not change the markup"><![CDATA[<h2>Je locatie instellen</h2><p>Sky Map heeft je geschatte locatie nodig om de juiste hemel te tekenen. Standaard gebruikt het de locatieservices van je apparaat (mobiel netwerk of GPS).</p><br/><p>Als locatietoegang niet beschikbaar is of je het liever handmatig instelt, tik je op de knop <b>Locatie handmatig invoeren</b> en voer je een <b>plaatsnaam</b> of een <b>breedte- en lengtegraad</b> in graden in.</p><blockquote>Internet is vereist om plaatsnamen te decoderen.</blockquote><p>Als je Sky Map eerder locatietoestemming hebt geweigerd, moet je deze mogelijk opnieuw inschakelen in de <b>App-instellingen → Machtigingen</b> van je apparaat.</p><blockquote>Als je geen toegang verleent, gaat Sky Map ervan uit dat je je op (0, 90) bevindt — de Noordpool!</blockquote>]]></string>
 
     <string name="help_diagnostics" translation_description="Help section: the diagnostics page. Please do not change the markup"><![CDATA[<h2>Diagnostiek</h2><p>Deze pagina toont verschillende gegevens over je telefoon en Sky Map die nuttig kunnen zijn voor het oplossen van problemen. Je vindt het onder <b>Instellingen → Diagnostiek</b>.</p><br/><p>Als je een probleem meldt, tik dan op de deelknop bovenaan de pagina om deze details naar ons te e-mailen via <a href="mailto:skymapdevs@gmail.com">skymapdevs@gmail.com</a>. Je kunt het rapport lezen en bewerken voordat je het verzendt.</p>]]></string>

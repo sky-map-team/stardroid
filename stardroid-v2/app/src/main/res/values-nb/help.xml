@@ -42,6 +42,16 @@ I dette tilfellet vil søket lede deg til foreldreobjektet (Jupiter).</blockquot
 
     <string name="help_gallery" translation_description="Help section: the image gallery. Please do not change the markup"><![CDATA[<h2>Galleri</h2><p>Galleriet inneholder en kuratert samling av vakre bilder av nattehimmelen, inkludert noen fra Hubble-romteleskopet.</p><br/><p>Bla gjennom miniatyrbilder ved å rulle, og trykk på ett for å se detaljer. Bruk <b>Finn</b>-knappen for å finne objektet på himmelen.</p>]]></string>
 
+    <string name="help_widgets" translation_description="Help section: the home-screen widgets. Please do not change the markup"><![CDATA[<h2>Startkjermwidgets</h2>
+<p>Sky Map har widgets som viser stjernehimmelen på startskjermen din, oppdatert daglig:</p>
+<p>• <b>Månefase:</b> Månens nåværende fase, hvor stor del av den som er opplyst, og dagens opp- og nedgangstider for månen<br/>
+• <b>Himmelen i kveld:</b> Solnedgang og når det blir helt mørkt, i tillegg til kveldens beste observasjoner, som godt plasserte planeter, meteorregn og månehendelser<br/>
+• <b>Himmelnedtelling:</b> Dager til neste toppunkt for meteorregn eller månehendelse</p>
+<h3>Legge til en widget</h3>
+<p>Trykk og hold på et tomt felt på startskjermen, velg <b>Widgets</b>, og finn deretter <b>Sky Map</b>.
+Du kan også trykke på <b>Legg til widget</b> på infokortet for Månen for å legge til månefase-widgeten direkte.</p>
+<p>Trykk på en widget for å åpne Sky Map.</p>]]></string>
+
     <string name="help_location" translation_description="Help section: setting your observing location. Please do not change the markup"><![CDATA[<h2>Angi posisjonen din</h2><p>Sky Map trenger din omtrentlige posisjon for å tegne riktig himmel. Som standard bruker den enhetens posisjonstjenester (mobilnettverk eller GPS).</p><br/><p>Hvis posisjonstilgang ikke er tilgjengelig, eller du heller vil angi den manuelt, trykk på knappen <b>Angi posisjon manuelt</b> og skriv inn et <b>stedsnavn</b> eller en <b>breddegrad og lengdegrad</b> i grader.</p><blockquote>Internett er nødvendig for å dekode stedsnavn.</blockquote><p>Hvis du tidligere har nektet Sky Map posisjonstillatelse, må du kanskje aktivere den på nytt i enhetens <b>Appinnstillinger → Tillatelser</b>.</p><blockquote>Hvis du ikke gir den tilgang, vil Sky Map anta at du er på (0, 90) – Nordpolen!</blockquote>]]></string>
 
     <string name="help_diagnostics" translation_description="Help section: the diagnostics page. Please do not change the markup"><![CDATA[<h2>Diagnostikk</h2><p>Denne siden viser ulike data om telefonen din og Sky Map som kan være nyttige for feilsøking. Du finner den under <b>Innstillinger → Diagnostikk</b>.</p><br/><p>Når du rapporterer et problem, trykk på deleknappen øverst på siden for å sende disse detaljene til oss på e-post til <a href="mailto:skymapdevs@gmail.com">skymapdevs@gmail.com</a>. Du kan lese og redigere rapporten før du sender den.</p>]]></string>

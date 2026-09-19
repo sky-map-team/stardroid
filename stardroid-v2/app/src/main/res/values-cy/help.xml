@@ -45,6 +45,16 @@ Mae\'r opsiwn <b>Pylu sgrin awtomatig</b> yn <b>Gosodiadau</b> yn rhoi rheolaeth
 <p>Porwch fawdluniau trwy sgrolio, a tapiwch un i weld manylion.
 Defnyddiwch y botwm <b>Canfod</b> i leoli\'r gwrthrych hwnnw yn yr awyr.</p>]]></string>
 
+    <string name="help_widgets" translation_description="Help section: the home-screen widgets. Please do not change the markup"><![CDATA[<h2>Teclynnau Sgrin Hafan</h2>
+<p>Mae gan Sky Map declynnau sy\'n rhoi\'r awyr ar eich sgrin gartref, wedi\'u diweddaru bob dydd:</p>
+<p>• <b>Cyfnod y Lleuad:</b> cyfnod cyfredol y Lleuad, faint ohono sydd wedi\'i oleuo, a amser codi a machlud lleuad heddiw<br/>
+• <b>Awyr heno:</b> machlud haul a phryd mae\'r awyr yn tywyllu\'n llwyr, ynghyd â golygfeydd gorau heno, megis planedau wedi\'u lleoli\'n dda, cawodydd meteor a digwyddiadau lleuad<br/>
+• <b>Cownt síos yr awyr:</b> y dyddiau hyd at gopa\'r gawod meteor nesaf neu ddigwyddiad lleuad</p>
+<h3>Ychwanegu teclyn</h3>
+<p>Cyffyrddwch a dal man gwag ar eich sgrin gartref, dewiswch <b>Teclynnau</b>, yna dewch o hyd i <b>Sky Map</b>.
+Gallwch hefyd dapio <b>Ychwanegu teclyn</b> ar gardd wybodaeth y Lleuad i ychwanegu teclyn cyfnod y Lleuad yn uniongyrchol.</p>
+<p>Tapiwch declyn i agor Sky Map.</p>]]></string>
+
     <string name="help_location" translation_description="Help section: setting your observing location. Please do not change the markup"><![CDATA[<h2>Gosod Eich Lleoliad</h2><p>Mae Sky Map angen eich lleoliad bras i dynnu\'r awyr gywir. Yn ddiofyn, mae\'n defnyddio gwasanaethau lleoliad eich dyfais (rhwydwaith symudol neu GPS).</p><br/><p>Os nad yw mynediad i leoliad ar gael neu os byddai\'n well gennych ei osod â llaw, tapiwch y botwm <b>Rhowch Leoliad â Llaw</b> a rhowch <b>enw lle</b> neu <b>lledred a hydred</b> mewn graddau.</p><blockquote>Mae angen y Rhyngrwyd i ddadgodio enwau lleoliadau.</blockquote><p>Os ydych wedi gwrthod caniatâd lleoliad Sky Map yn flaenorol, efallai y bydd angen i chi ei ail-alluogi yn <b>Gosodiadau Ap → Caniatadau</b> eich dyfais.</p><blockquote>Os na fyddwch yn rhoi mynediad iddo, bydd Sky Map yn tybio eich bod yn (0, 90) — Pegwn y Gogledd!</blockquote>]]></string>
 
     <string name="help_diagnostics" translation_description="Help section: the diagnostics page. Please do not change the markup"><![CDATA[<h2>Diagnosteg</h2><p>Mae\'r dudalen hon yn rhestru data amrywiol am eich ffôn a Sky Map a all fod yn ddefnyddiol ar gyfer dadfygio problemau. Fe\'i ceir o dan <b>Gosodiadau → Diagnosteg</b>.</p><br/><p>Wrth adrodd am broblem, tapiwch y botwm rhannu ar frig y dudalen i anfon y manylion hyn atom drwy e-bost at <a href="mailto:skymapdevs@gmail.com">skymapdevs@gmail.com</a>. Gallwch ddarllen a golygu\'r adroddiad cyn ei anfon.</p>]]></string>

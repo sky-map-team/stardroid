@@ -124,6 +124,16 @@ Alternativet <b>Automatiskt skärmljus</b> i <b>Inställningar</b> ger dig extra
 <p>Bläddra bland miniatyrer genom att rulla och tryck på en för att se detaljer.
 Använd knappen <b>Hitta</b> för att leta upp det objektet på himlen.</p>]]></string>
 
+    <string name="help_widgets" translation_description="Help section: the home-screen widgets. Please do not change the markup"><![CDATA[<h2>Startskärmswidgets</h2>
+<p>Sky Map har widgets som visar stjärnhimlen direkt på din startskärm, uppdaterade dagligen:</p>
+<p>• <b>Månfas:</b> månens aktuella fas, hur stor del som är upplyst samt dagens månens upp- och nedgång<br/>
+• <b>Kvällens himmel:</b> solnedgång och tidpunkt när det blir helt mörkt, plus kvällens bästa sevärdheter som välplacerade planeter, meteorskurar och månhändelser<br/>
+• <b>Himmelsnedräkning:</b> dagarna till nästa meteorskursmaximum eller månhändelse</p>
+<h3>Lägga till en widget</h3>
+<p>Tryck och håll kvar på ett tomt utrymme på din startskärm, välj <b>Widgets</b> och leta sedan reda på <b>Sky Map</b>.
+Du kan också trycka på <b>Lägg till widget</b> på månens informationskort för att lägga till månfaswidgeten direkt.</p>
+<p>Tryck på en widget för att öppna Sky Map.</p>]]></string>
+
     <string name="help_location" translation_description="Help section: setting your observing location. Please do not change the markup"><![CDATA[<h2>Ställ in din plats</h2>
 <p>Sky Map behöver din ungefärliga plats för att rita upp rätt stjärnhimmel. Som standard används enhetens platstjänster (mobilnät eller GPS).</p>
 <br/>

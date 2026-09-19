@@ -56,5 +56,9 @@ It\'s an entirely new app under the hood — new rendering engine, new astronomy
 <p>Sky Map can now overlay a grid of altitude and azimuth lines on the map, alongside the existing celestial grid. It\'s off by default — turn it on from the layers menu.</p>
 <h2>Smarter search</h2>
 <p>The Sun, Moon and planets now rank above stars when they match your search, so typing "Mars" finds the planet first instead of a star with a similar name.</p>
+<h2>Home-screen widgets</h2>
+<p>Put the sky on your home screen with three new widgets: <b>Moon phase</b> (the phase, how much is lit, and moonrise and moonset), <b>Tonight\'s sky</b> (sunset, when it gets dark, and the best sights tonight) and <b>Sky countdown</b> (days until the next meteor shower peak or moon event). Add one from your launcher\'s widget picker, or tap <b>Add widget</b> on the Moon\'s info card.</p>
+<h2>Less clutter when zoomed out</h2>
+<p>Zooming out now thins out the star labels, so a wide view of the sky is easier to read.</p>
     ]]></string>
 </resources>

@@ -32,6 +32,16 @@ do Telescópio Espacial Hubble.</p>
 <p>Navegue pelas miniaturas rolando e toque em uma para ver os detalhes.
 Use o botão <b>Encontrar</b> para localizar esse objeto no céu.</p>]]></string>
 
+    <string name="help_widgets" translation_description="Help section: the home-screen widgets. Please do not change the markup"><![CDATA[<h2>Widgets da tela inicial</h2>
+<p>O Sky Map possui widgets que colocam o céu na sua tela inicial, atualizados diariamente:</p>
+<p>• <b>Fase da Lua:</b> a fase atual da Lua, a porcentagem iluminada e os horários de nascer e pôr da lua de hoje<br/>
+• <b>Céu de hoje:</b> o pôr do sol e o momento em que o céu escurece completamente, além dos melhores alvos de hoje, como planetas bem posicionados, chuvas de meteoros e eventos lunares<br/>
+• <b>Contagem regressiva astronômica:</b> os dias até o pico da próxima chuva de meteoros ou evento lunar</p>
+<h3>Adicionando um widget</h3>
+<p>Toque e mantenha pressionado um espaço vazio na sua tela inicial, escolha <b>Widgets</b> e encontre o <b>Sky Map</b>.
+Você também pode tocar em <b>Adicionar widget</b> no cartão de informações da Lua para adicionar o widget de fase da Lua diretamente.</p>
+<p>Toque em um widget para abrir o Sky Map.</p>]]></string>
+
     <string name="help_location" translation_description="Help section: setting your observing location. Please do not change the markup"><![CDATA[<h2>Definir a Sua Localização</h2><p>Sky Map precisa da sua localização aproximada para desenhar o céu correto. Por predefinição, utiliza os serviços de localização do seu dispositivo (rede móvel ou GPS).</p><br/><p>Se o acesso à localização não estiver disponível ou preferir defini-la manualmente, toque no botão <b>Introduzir Localização Manualmente</b> e introduza um <b>nome de local</b> ou uma <b>latitude e longitude</b> em graus.</p><blockquote>É necessária ligação à Internet para descodificar nomes de locais.</blockquote><p>Se anteriormente negou a permissão de localização ao Sky Map, poderá ter de a reativar nas <b>Definições da Aplicação → Permissões</b> do seu dispositivo.</p><blockquote>Se não conceder acesso, o Sky Map assumirá que está em (0, 90) — o Polo Norte!</blockquote>]]></string>
 
     <string name="help_diagnostics" translation_description="Help section: the diagnostics page. Please do not change the markup"><![CDATA[<h2>Diagnóstico</h2><p>Esta página lista vários dados sobre o seu telefone e o Sky Map que podem ser úteis para depurar problemas. Encontre-o em <b>Configurações → Diagnóstico</b>.</p><br/><p>Ao relatar um problema, toque no botão de compartilhar no topo da página para nos enviar estes detalhes por e-mail para <a href="mailto:skymapdevs@gmail.com">skymapdevs@gmail.com</a>. Pode ler e editar o relatório antes de o enviar.</p>]]></string>

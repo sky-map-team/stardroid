@@ -61,6 +61,16 @@ z Hubbleova vesmírného dalekohledu.</p>
 <p>Procházejte miniatury posouváním a klepnutím na jednu zobrazíte podrobnosti.
 Pomocí tlačítka <b>Najít</b> vyhledejte tento objekt na obloze.</p>]]></string>
 
+    <string name="help_widgets" translation_description="Help section: the home-screen widgets. Please do not change the markup"><![CDATA[<h2>Widgety na domovskou obrazovku</h2>
+<p>Sky Map obsahuje widgety, které umístí oblohu na vaši domovskou obrazovku a denně ji aktualizují:</p>
+<p>• <b>Fáze Měsíce:</b> aktuální fáze Měsíce, kolik z něj je osvětleno a dnešní východ a západ Měsíce<br/>
+• <b>Dnešní obloha:</b> západ slunce a kdy se obloha zcela zatmí, plus nejlepší dnešní úkazy, jako jsou dobře viditelné planety, meteorické roje a měsíční úkazy<br/>
+• <b>Odpočítávání:</b> dny do dalšího vrcholu meteorického roje nebo měsíčního úkazu</p>
+<h3>Přidání widgetu</h3>
+<p>Stiskněte a podržte prázdné místo na domovské obrazovce, vyberte <b>Widgety</b> a poté vyhledejte <b>Sky Map</b>.
+Můžete také klepnout na <b>Přidat widget</b> na informační kartě Měsíce a přidat widget fáze Měsíce přímo.</p>
+<p>Klepnutím na widget otevřete Sky Map.</p>]]></string>
+
     <string name="help_location" translation_description="Help section: setting your observing location. Please do not change the markup"><![CDATA[<h2>Nastavení vaší polohy</h2><p>Sky Map potřebuje vaši přibližnou polohu, aby správně vykreslila oblohu. Ve výchozím nastavení používá lokalizační služby vašeho zařízení (mobilní síť nebo GPS).</p><br/><p>Pokud není přístup k poloze dostupný nebo ji raději nastavíte ručně, klepněte na tlačítko <b>Zadat polohu ručně</b> a zadejte <b>název místa</b> nebo <b>zeměpisnou šířku a délku</b> ve stupních.</p><blockquote>K dekódování názvů míst je vyžadován internet.</blockquote><p>Pokud jste dříve aplikaci Sky Map odepřeli oprávnění k poloze, možná jej budete muset znovu povolit v <b>Nastavení aplikací → Oprávnění</b> vašeho zařízení.</p><blockquote>Pokud jí neudělíte přístup, Sky Map bude předpokládat, že jste na (0, 90) – na severním pólu!</blockquote>]]></string>
 
     <string name="help_diagnostics" translation_description="Help section: the diagnostics page. Please do not change the markup"><![CDATA[<h2>Diagnostika</h2><p>Tato stránka uvádí různá data o vašem telefonu a Sky Map, která mohou být užitečná pro ladění problémů. Najdete ji pod <b>Nastavení → Diagnostika</b>.</p><br/><p>Při hlášení problému klepněte na tlačítko sdílení v horní části stránky a odešlete nám tyto podrobnosti e-mailem na <a href="mailto:skymapdevs@gmail.com">skymapdevs@gmail.com</a>. Zprávu si můžete přečíst a upravit před odesláním.</p>]]></string>

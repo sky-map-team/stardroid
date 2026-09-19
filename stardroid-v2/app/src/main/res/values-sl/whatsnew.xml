@@ -27,13 +27,29 @@
 <p>Kmalu prihaja veliko dolgo pričakovanih funkcij.</p>]]></string>
     <string name="whats_new_support" translation_description="HTML paragraph inviting users to support the project, shown in the What's new dialog and the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h1>Podprite Sky Map</h1>
 <p>Sky Map je brezplačna in odprtokodna programska oprema. Če se vam zdi uporabna, podprite razvoj na naši strani <a href="https://github.com/sky-map-team/stardroid/?tab=readme-ov-file#support-the-project">GitHub</a> ali nam <a href="https://buymeacoffee.com/skymapdevs?utm_source=skymap&amp;utm_medium=app&amp;utm_campaign=whatsnew">kupite kavo</a>.</p>]]></string>
-    <string name="beta_user_help_text" translation_description="Usually-empty HTML content shown to beta testers asking for feedback, appended in the What's new dialog and the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[
-    ]]></string>
+    <string name="beta_user_help_text" translation_description="Usually-empty HTML content shown to beta testers asking for feedback, appended in the What's new dialog and the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h1>Beta preizkuševalci: preizkusite gradnike</h1>
+<p>Hvala, ker preizkušate Sky Map! Ta različica dodaja tri gradnike za začetni zaslon in veseli bomo vaše pomoči pri preverjanju na čim več telefonih in zaganjalnikih:</p>
+<p>• <b>Lunina faza</b><br/>
+• <b>Nočno nebo</b><br/>
+• <b>Odštevalnik za Sky Map</b></p>
+<p>Če ga želite dodati, pridržite prst na začetnem zaslonu, izberite <b>Gradniki</b> in poiščite <b>Sky Map</b> (ali tapnite <b>Dodaj gradnik</b> na kartici s podatki o Luni). Nato preverite naslednje:</p>
+<p>• Ali prikazuje ustrezne podatke za vašo lokacijo? Časi vzhoda in zahoda Lune ter sončnega zahoda se morajo ujemati z vašo lokacijo.<br/>
+• Ali je videti pravilno pri različnih velikostih ter v svetlem in temnem načinu?<br/>
+• Ali ostaja posodobljen po enem dnevu, po ponovnem zagonu ali po spremembi časovnega pasu?<br/>
+• Ali se ob dotiku odpre Sky Map?</p>
+<p>Če opazite karkoli narobe, nam pišite na <a href="mailto:skymapdevs@gmail.com">skymapdevs@gmail.com</a> in nam sporočite model svojega telefona ter zaganjalnik. Zelo dobrodošel je tudi posnetek zaslona.</p>
+<h1>Preizkusite novo glajenje senzorjev</h1>
+<p>Zamenjali smo način, s katerim Sky Map umirja pogled, medtem ko držite telefon pri miru – slika bi se morala manj tresti in bolje slediti premikanju. Za beta preizkuševalce je privzeto vklopljeno, da lahko zberemo povratne informacije iz resničnih naprav. Če opazite zamik, zatikanje ali karkoli nenavadnega, nam to sporočite na <a href="mailto:skymapdevs@gmail.com">skymapdevs@gmail.com</a>.</p>
+<p>To lahko kadar koli izklopite v meniju <b>Nastavitve → Senzorji → Gladko gibanje senzorjev</b>, če raje uporabljate surove podatke senzorjev.</p>]]></string>
     <string name="whats_new_supplement" translation_description="HTML content for a short supplementary section covering changes since the main whats_new_content was last written, shown between the beta feedback note and the main What's new content in the What's new dialog and the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h1>Od zadnje posodobitve</h1>
 <h2>Mirnejše glajenje senzorjev</h2>
-<p>Zamenjali smo način, kako Sky Map umirja pogled, medtem ko držite telefon pri miru – slika bi morala manj trepetati in bolje slediti premikanju. To lahko kadar koli izklopite v meniju <b>Nastavitve → Senzorji → Zgladi gibanje senzorjev</b>, če raje uporabljate surove podatke senzorja.</p>
-<h2>Nova mreža višine in azimuta</h2>
-<p>Sky Map lahko sedaj poleg obstoječe nebesne mreže preko zemljevida prekrije tudi mrežo višinskih in azimutnih črt. Privzeto je izklopljena – vklopite jo lahko v meniju plasti.</p>
+<p>Zamenjali smo način, kako Sky Map umirja pogled, ko držite telefon pri miru – slika bi se morala manj tresti in se bolje odzivati pri premikanju. To lahko kadar koli izklopite v <b>Nastavitve → Senzorji → Gladko gibanje senzorjev</b>, če želite raje uporabljati surove podatke senzorja.</p>
+<h2>Nova mrežna črta višine/azimuta</h2>
+<p>Sky Map lahko sedaj poleg obstoječe nebesne mreže na zemljevid prekrije mrežo višinskih in azimutnih črt. Privzeto je izklopljena – vklopite jo lahko v meniju plasti.</p>
 <h2>Pametnejše iskanje</h2>
-<p>Sonce, Luna in planeti se pri ujemanju iskanja sedaj uvrščajo nad zvezde, tako da vnos "Mars" najprej najde planet in ne zvezde s podobnim imenom.</p>]]></string>
+<p>Sonce, Luna in planeti imajo sedaj pri ujemanju iskanja prednost pred zvezdami, zato vnos "Mars" najprej poišče planet in šele nato zvezdo s podobnim imenom.</p>
+<h2>Pripomočki za začetni zaslon</h2>
+<p>Postavite nebo na svoj začetni zaslon s tremi novimi pripomočki: <b>Lunina faza</b> (faza, osvetljenost ter vzhod in zahod lune), <b>Nebo nocoj</b> (sončni zahod, nastop teme in najboljši prizori nocoj) in <b>Odštevanje do nebesnih dogodkov</b> (dnevi do naslednjega vrhunca meteorskega dežja ali luninega dogodka). Dodajte ga iz izbirnika pripomočkov v svojem namizju ali tapnite <b>Dodaj pripomoček</b> na kartici s podatki o Luni.</p>
+<h2>Manj navlake pri oddaljenem pogledu</h2>
+<p>Oddaljevanje pogleda zdaj redči oznake zvezd, zato je širok pogled na nebo preglednejši.</p>]]></string>
 </resources>

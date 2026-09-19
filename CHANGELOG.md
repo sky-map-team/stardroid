@@ -5,6 +5,26 @@ All notable changes to Sky Map are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [2.1.0:Artemis] (v2) - 2026-09-19
+
+<img src="stardroid-v2/assets/release-icons/2.1.0_artemis_icon.png" width="80" alt="Artemis" />
+
+### Added
+- Home-screen widgets: **Moon phase** (phase, illumination, moonrise and moonset), **Tonight's sky**
+  (sunset, when the sky is fully dark, and tonight's well-placed planets, meteor showers and moon
+  events) and **Sky countdown** (days until the next meteor shower peak or moon event). They are
+  now on by default (`moon_widget_enabled` and `tonight_widget_enabled`, the latter also gating the
+  countdown); on Play Store builds a Remote Config value can still override this. Add them from the
+  launcher's widget picker, or with **Add widget** on the Moon's info card. A new Help section
+  describes them. (#1049)
+
+### Changed
+- Zooming out now sheds star labels: the label magnitude limit falls from 4.0 at 45° to 3.0 at
+  the widest 90° zoom, so a wide view is less cluttered. Deep-sky labels thin out at wide zoom too.
+  Partial fix for #1046. (#1050)
+
+---
+
 ## [2.0.8:Apollo] (v2) - 2026-09-19
 
 <img src="stardroid-v2/assets/release-icons/2.0.3_apollo_icon.png" width="80" alt="Apollo" />

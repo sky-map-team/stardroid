@@ -10,7 +10,7 @@
 
     <string name="help_layers" translation_description="Help section: the visible layers of the sky map. Please do not change the markup"><![CDATA[<h2>图层</h2><p>Sky Map 将其显示的内容组织成图层，每个图层都可以通过左侧的图层按钮独立开启或关闭。长按或点击底部附近的<b>图层</b>按钮，可以调出更多图层的开关。</p><br/><p>当前图层包括：<br/>• <b>恒星：</b>最亮的恒星，并标注了著名的恒星<br/>• <b>星座：</b>星座轮廓和名称<br/>• <b>深空天体：</b>星系、星云、星团及其他引人注目的天体<br/>• <b>太阳系：</b>以图像形式显示的太阳、月亮和行星<br/>• <b>流星雨：</b>年度流星雨的辐射点<br/>• <b>天球网格：</b>赤经/赤纬坐标网格<br/>• <b>黄道：</b>太阳在天空中每年运行的路径，月亮和行星大致沿此路径运行<br/>• <b>地平线：</b>地平线和基本方向标签（北、南、东、西）<br/>• <b>天空渐变：</b>白天的天空辉光和地平线附近的暮光色彩</p><blockquote>流星雨辐射点仅在流星雨发生期间显示。</blockquote><br/><p><b>行星的绘制大小</b></p><p>点击图层表单中<b>太阳系</b>旁边的箭头，选择太阳、月亮和行星的大小显示方式：</p><p>• <b>符号</b>（默认）：在任何缩放级别下都足够大以便看到，并根据每个天体实际<i>大小</i>而非从此处看的大小进行调整——这是一种太阳系模型，而非通过望远镜看到的景象。土星及其光环是所有天体中最宽的，其次是太阳，然后是木星，再到冥王星。为了适应屏幕，这些差异被压缩了：太阳的宽度实际上是冥王星的586倍，而不是七倍。月亮是例外，它被绘制成与太阳相同的大小，因为从地球上看，两者的大小就是如此。<br/>• <b>真实比例：</b>每个天体都以其在天空中的真实大小显示。太阳和月亮大约横跨半度——大约是伸直手臂拿着的铅笔橡皮擦的大小——而行星则只是小点，直到你放大才能看清。一直放大，木星会显示出它的条纹，土星的光环会与行星分离，日食或月食也会像在天空中一样精确对齐。<br/>• <b>稳定：</b>在您缩放时，将每个天体保持在屏幕上的固定大小，一旦您放大到足够大，使其真实大小大于固定大小时，则切换到真实大小。</p><blockquote>这两种模式告诉您不同的信息。<b>符号</b>模式表示木星是巨行星，冥王星很小。<b>真实比例</b>模式表示从地球上看，太阳和月亮的大小几乎完全相同——这就是为什么会发生日全食，并且您可以观看它发生的原因。</blockquote><blockquote>Sky Map 显示的是几何地平线——一个完全平坦、无遮挡的视野。实际上，地平线上方的物体仍可能被建筑物、山丘或树木遮挡。</blockquote>]]></string>
 
-    <string name="help_info_cards" translation_description="Help section: the object info cards. Please do not change the markup"><![CDATA[<h2>信息卡片</h2><p>轻触星图上带有标签的天体，即可调出信息卡片——一个包含该天体照片和详细信息的面板。<br/>信息卡片适用于数百个天体，包括恒星、行星、月球、著名的深空天体和星座。</p><br/><p>每张卡片显示：</p><p>• 天体的照片或图表<br/>• 简短描述和趣味知识<br/>• 科学数据，例如距离、大小和天体类型</p><p>轻触卡片内的图像可全屏查看。轻触卡片外部或按下<b>返回</b>键可关闭卡片。</p><blockquote>并非所有天体都有信息卡片，但我们一直在不断添加更多内容。</blockquote>]]></string>
+    <string name="help_info_cards" translation_description="Help section: the object info cards. Please do not change the markup"><![CDATA[<h2>信息卡片</h2><p>轻触星图上带有标签的天体，即可调出信息卡片——一个包含该天体照片和详细信息的面板。信息卡片适用于数百个天体，包括恒星、行星、月球、著名的深空天体和星座。</p><br/><p>每张卡片显示：</p><p>• 天体的照片或图表<br/>• 简短描述和趣味知识<br/>• 科学数据，例如距离、大小和天体类型</p><p>轻触卡片内的图像可全屏查看。轻触卡片外部或按下<b>返回</b>键可关闭卡片。</p><blockquote>并非所有天体都有信息卡片，但我们一直在不断添加更多内容。</blockquote>]]></string>
 
     <string name="help_search" translation_description="Help section: searching for objects in the sky. Please do not change the markup"><![CDATA[<h2>搜索</h2><p>点击<b>放大镜</b>按钮（底部）以搜索天空中的任何物体。</p><br/><p>您可以搜索：</p><p>• <b>恒星</b> — 按名称，例如“天狼星”、“参宿四”、“北极星”<br/>• <b>行星</b> — 例如“火星”、“土星”<br/>• <b>星座</b> — 例如“猎户座”、“仙后座”<br/>• <b>深空天体</b> — 例如“M31”、“仙女座星系”、“昴宿星团”<br/>• <b>坐标</b> — 赤经和赤纬，例如“5h 55m, 7° 24\'”（您可以使用一个\'o\'来表示度数符号）</p><p><b>在自动模式下：</b>选择结果后，Sky Map 会显示一个目标圆圈和方向箭头。通过旋转手机跟随箭头 — 当物体进入您的视野时，圆圈会改变颜色。点击<b>取消</b>（或按返回键）退出搜索。</p><p><b>在手动模式下：</b>地图会直接跳转并居中显示该物体。</p><blockquote>您可以搜索 Sky Map 不显示的物体，例如木星的卫星之一木卫二。在这种情况下，搜索将引导您找到其父物体（木星）。</blockquote>]]></string>
 
@@ -22,6 +22,16 @@
         <p>其他功能可以在右下角的溢出菜单（…）中找到。</p>]]></string>
 
     <string name="help_gallery" translation_description="Help section: the image gallery. Please do not change the markup"><![CDATA[<h2>图库</h2><p>图库精选了许多美丽的夜空图片，其中一些来自哈勃空间望远镜。</p><br/><p>滚动浏览缩略图，点击查看详情。使用<b>查找</b>按钮在天空中定位该天体。</p>]]></string>
+
+    <string name="help_widgets" translation_description="Help section: the home-screen widgets. Please do not change the markup"><![CDATA[<h2>主屏幕小部件</h2>
+<p>Sky Map 拥有可将星空直接呈现于主屏幕的小部件，并且每日更新：</p>
+<p>• <b>月相：</b>当前的月相、受光照的比例，以及今天的月出和月落时间<br/>
+• <b>今夜星空：</b>日落与夜空完全变黑的时间，以及今夜的最佳观测目标，例如位置合适的行星、流星雨和月食等天象<br/>
+• <b>星空倒计时：</b>距离下一次流星雨极大或重要月相还有多少天</p>
+<h3>添加小部件</h3>
+<p>在主屏幕的空白处长按，选择<b>小部件</b>，然后找到 <b>Sky Map</b>。
+您也可以在月亮信息卡片上点击<b>添加小部件</b>直接添加月相小部件。</p>
+<p>点击小部件即可打开 Sky Map。</p>]]></string>
 
     <string name="help_location" translation_description="Help section: setting your observing location. Please do not change the markup"><![CDATA[<h2>设置您的位置</h2><p>Sky Map 需要您的近似位置才能绘制正确的星空。默认情况下，它使用您设备的定位服务（移动网络或 GPS）。</p><br/><p>如果位置访问不可用，或者您希望手动设置，请点击<b>手动输入位置</b>按钮，并输入<b>地点名称</b>或以度为单位的<b>经纬度</b>。</p><blockquote>解码地点名称需要互联网连接。</blockquote><p>如果您之前拒绝了 Sky Map 的位置权限，您可能需要在设备的<b>应用设置 → 权限</b>中重新启用它。</p><blockquote>如果您不授予访问权限，Sky Map 将假定您位于 (0, 90) — 北极！</blockquote>]]></string>
 

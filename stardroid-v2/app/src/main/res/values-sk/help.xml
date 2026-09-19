@@ -55,6 +55,16 @@ Možnosť <b>Automatické stmievanie obrazovky</b> v <b>Nastaveniach</b> vám po
 
     <string name="help_gallery" translation_description="Help section: the image gallery. Please do not change the markup"><![CDATA[<h2>Galéria</h2><p>Galéria obsahuje vybranú kolekciu nádherných snímok nočnej oblohy, vrátane niektorých z Hubblovho vesmírneho ďalekohľadu.</p><br/><p>Prehliadajte miniatúry posúvaním a ťuknutím na jednu zobrazíte podrobnosti. Použite tlačidlo <b>Nájsť</b> na lokalizáciu objektu na oblohe.</p>]]></string>
 
+    <string name="help_widgets" translation_description="Help section: the home-screen widgets. Please do not change the markup"><![CDATA[<h2>Miniaplikácie na domovskej obrazovke</h2>
+<p>Sky Map obsahuje miniaplikácie, ktoré vám prinesú oblohu na domovskú obrazovku a denne sa aktualizujú:</p>
+<p>• <b>Fáza Mesiaca:</b> aktuálna fáza Mesiaca, miera jeho osvetlenia a dnešný východ a západ Mesiaca<br/>
+• <b>Dnešná obloha:</b> západ slnka a čas, kedy sa obloha úplne zatmie, plus najlepšie úkazy dnešnej noci, ako sú vhodne umiestnené planéty, meteorické roje a mesačné úkazy<br/>
+• <b>Odpočítavanie do úkazov:</b> počet dní do vrcholenia ďalšieho meteorického roja alebo mesačného úkazu</p>
+<h3>Pridanie miniaplikácie</h3>
+<p>Podržte prst na prázdnom mieste na domovskej obrazovke, vyberte položku <b>Miniaplikácie</b> a potom nájdite <b>Sky Map</b>.
+Môžete tiež klepnúť na položku <b>Pridať miniaplikáciu</b> na informačnej karte Mesiaca a pridať miniaplikáciu fázy Mesiaca priamo.</p>
+<p>Klepnutím na miniaplikáciu otvoríte Sky Map.</p>]]></string>
+
     <string name="help_location" translation_description="Help section: setting your observing location. Please do not change the markup"><![CDATA[<h2>Nastavenie vašej polohy</h2>
 <p>Sky Map potrebuje vašu približnú polohu na zobrazenie správnej oblohy. Predvolene používa lokalizačné služby vášho zariadenia (mobilná sieť alebo GPS).</p>
 <br/>
@@ -69,7 +79,7 @@ Možnosť <b>Automatické stmievanie obrazovky</b> v <b>Nastaveniach</b> vám po
 
     <string name="help_misc" translation_description="Help section: miscellaneous"><![CDATA[<h1>Rôzne a riešenie problémov</h1>]]></string>
 
-    <string name="help_hardware" translation_description="Help section: hardware and sensor requirements. Please do not change the markup"><![CDATA[<h2>Hardvérové požiadavky</h2><p>Nie všetky zariadenia dokážu plne podporovať Sky Map!</p><br/><p>Minimálne potrebujete telefón s:</p><p>• Senzor magnetického poľa (tiež známy ako kompas) – na určenie smeru, ktorým ste otočení<br/>• Akcelerometer – na určenie, ako vysoko na oblohu sa pozeráte</p><p>Ideálne tiež:</p><p>• Gyroskop – ten vyhladí pohyb a urobí ho menej trhavým</p><blockquote><b>Kompas v telefóne je notoricky nespoľahlivý.</b> Ak sa mapa oblohy zobrazuje nesprávne, takmer vždy ide o hardvérový problém s kompasom vášho telefónu – nie o chybu v aplikácii Sky Map. Sky Map číta presne to, čo hlási senzor vášho telefónu; nemá spôsob, ako automaticky opraviť zlé alebo skreslené údaje. Pozrite si Riešenie problémov nižšie.</blockquote><h3>Ako zistím, aké senzory má môj telefón?</h3><p>Otvorte <b>Nastavenia → Diagnostika</b> – všetky senzory, ktoré váš telefón nemá, budú označené ako chýbajúce. Budete tiež informovaní<br/>počas tutoriálu.</p><h3>Čo ak môjmu zariadeniu chýbajú požadované senzory?</h3><p>Sky Map prejde do manuálneho režimu. Stále môžete skúmať oblohu, ale bez senzorov<br/>žiadna aplikácia vám nemôže ukázať váš smer.</p>]]></string>
+    <string name="help_hardware" translation_description="Help section: hardware and sensor requirements. Please do not change the markup"><![CDATA[<h2>Hardvérové požiadavky</h2><p>Nie všetky zariadenia dokážu plne podporovať Sky Map!</p><br/><p>Minimálne potrebujete telefón s:</p><p>• Senzor magnetického poľa (tiež známy ako kompas) – na určenie smeru, ktorým ste otočení<br/>• Akcelerometer – na určenie, ako vysoko na oblohu sa pozeráte</p><p>Ideálne tiež:</p><p>• Gyroskop – ten vyhladí pohyb a urobí ho menej trhavým</p><blockquote><b>Kompas v telefóne je notoricky nespoľahlivý.</b> Ak sa mapa oblohy zobrazuje nesprávne, takmer vždy ide o hardvérový problém s kompasom vášho telefónu – nie o chybu v aplikácii Sky Map. Sky Map číta presne to, čo hlási senzor vášho telefónu; nemá spôsob, ako automaticky opraviť zlé alebo skreslené údaje. Pozrite si Riešenie problémov nižšie.</blockquote><h3>Ako zistím, aké senzory má môj telefón?</h3><p>Otvorte <b>Nastavenia → Diagnostika</b> – všetky senzory, ktoré váš telefón nemá, budú označené ako chýbajúce. Budete tiež informovaní počas tutoriálu.</p><h3>Čo ak môjmu zariadeniu chýbajú požadované senzory?</h3><p>Sky Map prejde do manuálneho režimu. Stále môžete skúmať oblohu, ale bez senzorov žiadna aplikácia vám nemôže ukázať váš smer.</p>]]></string>
 
     <string name="help_troubleshooting" translation_description="Help section: troubleshooting a map that does not move or points the wrong way. Please do not change the markup"><![CDATA[<h2>Riešenie problémov</h2>
 <h3>Mapa sa nepohybuje</h3>

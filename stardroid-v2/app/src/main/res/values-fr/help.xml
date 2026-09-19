@@ -56,6 +56,16 @@ Dans ce cas, la recherche vous mènera à l\'objet parent (Jupiter).</blockquote
 <p>Parcourez les miniatures en faisant défiler, et appuyez sur l\'une d\'elles pour voir les détails.
 Utilisez le bouton <b>Rechercher</b> pour localiser cet objet dans le ciel.</p>]]></string>
 
+    <string name="help_widgets" translation_description="Help section: the home-screen widgets. Please do not change the markup"><![CDATA[<h2>Widgets de l\'écran d\'accueil</h2>
+<p>Sky Map propose des widgets qui affichent le ciel sur votre écran d\'accueil, mis à jour quotidiennement :</p>
+<p>• <b>Phase lunaire :</b> la phase actuelle de la Lune, sa portion éclairée, ainsi que les heures de lever et de coucher de la Lune pour aujourd\'hui<br/>
+• <b>Le ciel de ce soir :</b> les heures de coucher du soleil et de l\'obscurité totale, ainsi que les meilleurs spectacles de la nuit, tels que les planètes bien positionnées, les pluies d\'étoiles filantes et les événements lunaires<br/>
+• <b>Compte à rebours astronomique :</b> le nombre de jours avant le prochain maximum d\'essaim météoritique ou événement lunaire</p>
+<h3>Ajouter un widget</h3>
+<p>Maintenez le doigt enfoncé sur un espace vide de votre écran d\'accueil, choisissez <b>Widgets</b>, puis recherchez <b>Sky Map</b>.
+Vous pouvez également toucher <b>Ajouter un widget</b> sur la carte d\'informations de la Lune pour ajouter directement le widget de phase lunaire.</p>
+<p>Touchez un widget pour ouvrir Sky Map.</p>]]></string>
+
     <string name="help_location" translation_description="Help section: setting your observing location. Please do not change the markup"><![CDATA[<h2>Définir votre position</h2><p>Sky Map a besoin de votre position approximative pour afficher le ciel correctement. Par défaut, l\'application utilise les services de localisation de votre appareil (réseau mobile ou GPS).</p><br/><p>Si l\'accès à la position n\'est pas disponible ou si vous préférez la définir manuellement, appuyez sur le bouton <b>Saisir la position manuellement</b> et saisissez un <b>nom de lieu</b> ou une <b>latitude et longitude</b> en degrés.</p><blockquote>Internet est nécessaire pour décoder les noms de lieux.</blockquote><p>Si vous avez précédemment refusé l\'autorisation de localisation à Sky Map, vous devrez peut-être la réactiver dans les <b>Paramètres de l\'application → Autorisations</b> de votre appareil.</p><blockquote>Si vous ne lui accordez pas l\'accès, Sky Map supposera que vous êtes à (0, 90) — le pôle Nord !</blockquote>]]></string>
 
     <string name="help_diagnostics" translation_description="Help section: the diagnostics page. Please do not change the markup"><![CDATA[<h2>Diagnostics</h2><p>Cette page répertorie diverses données concernant votre téléphone et Sky Map, qui peuvent être utiles pour le débogage des problèmes. Vous la trouverez sous <b>Paramètres → Diagnostics</b>.</p><br/><p>Lorsque vous signalez un problème, appuyez sur le bouton de partage en haut de la page pour nous envoyer ces détails par e-mail à <a href="mailto:skymapdevs@gmail.com">skymapdevs@gmail.com</a>. Vous pouvez lire et modifier le rapport avant de l\'envoyer.</p>]]></string>
