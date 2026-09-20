@@ -42,11 +42,8 @@ import androidx.glance.unit.ColorProvider
 import com.google.android.stardroid.R
 import com.google.android.stardroid.astronomy.SolarSystemBody
 import com.google.android.stardroid.events.CountdownTarget
-import com.google.android.stardroid.events.tonightSky
-import com.google.android.stardroid.startup.Experiment
 import com.google.android.stardroid.ui.MainActivity
 import com.google.android.stardroid.ui.search.SolarSystemIds
-import kotlinx.coroutines.flow.first
 import kotlinx.datetime.Clock
 import kotlinx.datetime.TimeZone
 import kotlinx.datetime.daysUntil
@@ -67,7 +64,12 @@ class CountdownWidget : GlanceAppWidget() {
             countdownFor(
                 entryPoint.experimentConfig(),
                 Clock.System.now(),
-                entryPoint.catalogAccess().repository().meteorShowers(entryPoint.localeSource().current),
+                {
+                    entryPoint
+                        .catalogAccess()
+                        .repository()
+                        .meteorShowers(entryPoint.localeSource().current)
+                },
             )
         provideContent {
             CountdownContent(countdown, context)

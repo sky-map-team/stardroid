@@ -38,9 +38,7 @@ import com.google.android.stardroid.R
 import com.google.android.stardroid.astronomy.LunarPhase
 import com.google.android.stardroid.astronomy.MoonWidgetModel
 import com.google.android.stardroid.astronomy.moonWidgetModel
-import com.google.android.stardroid.startup.Experiment
 import com.google.android.stardroid.ui.MainActivity
-import kotlinx.coroutines.flow.first
 import kotlinx.datetime.Clock
 import kotlinx.datetime.Instant
 import java.util.Date

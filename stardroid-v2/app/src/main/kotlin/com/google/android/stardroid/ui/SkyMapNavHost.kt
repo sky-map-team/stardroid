@@ -256,7 +256,11 @@ fun SkyMapNavHost(
                     onDismiss = { objectInfoViewModel.dismiss() },
                     promoRow =
                         if (moonWidgetPromo != MoonWidgetPromo.HIDDEN) {
-                            { MoonWidgetPromoRow(placed = moonWidgetPromo == MoonWidgetPromo.PLACED) }
+                            {
+                                MoonWidgetPromoRow(
+                                    placed = moonWidgetPromo == MoonWidgetPromo.PLACED,
+                                )
+                            }
                         } else {
                             null
                         },

@@ -44,9 +44,7 @@ import com.google.android.stardroid.events.SkyEvent
 import com.google.android.stardroid.events.TonightSky
 import com.google.android.stardroid.events.tonightSky
 import com.google.android.stardroid.satellites.tonightSatellitePasses
-import com.google.android.stardroid.startup.Experiment
 import com.google.android.stardroid.ui.MainActivity
-import kotlinx.coroutines.flow.first
 import kotlinx.datetime.Clock
 import kotlinx.datetime.TimeZone
 import kotlinx.datetime.daysUntil
@@ -71,7 +69,12 @@ class TonightWidget : GlanceAppWidget() {
                 entryPoint.experimentConfig(),
                 Clock.System.now(),
                 entryPoint.settings().savedLocation,
-                entryPoint.catalogAccess().repository().meteorShowers(entryPoint.localeSource().current),
+                {
+                    entryPoint
+                        .catalogAccess()
+                        .repository()
+                        .meteorShowers(entryPoint.localeSource().current)
+                },
             ) { location -> tonightSatellitePasses(context, location) }
         provideContent {
             TonightContent(sky, context)

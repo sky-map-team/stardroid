@@ -48,6 +48,9 @@ class WidgetSchedulerTest {
         workManager.pruneWork().result.get()
     }
 
+    private fun refreshOnceInfos() =
+        workManager.getWorkInfosForUniqueWork(WidgetScheduler.REFRESH_ONCE_WORK_NAME).get()
+
     private fun live(name: String) =
         workManager
             .getWorkInfosForUniqueWork(name)
@@ -82,15 +85,13 @@ class WidgetSchedulerTest {
     fun app_start_refreshes_when_a_widget_is_placed() {
         WidgetScheduler.refreshIfPlaced(context, anyPlaced = true)
 
-        assertThat(workManager.getWorkInfosForUniqueWork(WidgetScheduler.REFRESH_ONCE_WORK_NAME).get())
-            .isNotEmpty()
+        assertThat(refreshOnceInfos()).isNotEmpty()
     }
 
     @Test
     fun app_start_does_nothing_when_no_widget_is_placed() {
         WidgetScheduler.refreshIfPlaced(context, anyPlaced = false)
 
-        assertThat(workManager.getWorkInfosForUniqueWork(WidgetScheduler.REFRESH_ONCE_WORK_NAME).get())
-            .isEmpty()
+        assertThat(refreshOnceInfos()).isEmpty()
     }
 }

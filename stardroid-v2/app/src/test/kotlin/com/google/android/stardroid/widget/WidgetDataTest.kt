@@ -76,7 +76,7 @@ class WidgetDataTest {
                     ExperimentConfig.Static,
                     now,
                     MutableStateFlow(london),
-                    MutableStateFlow(emptyList<MeteorShower>()),
+                    { MutableStateFlow(emptyList<MeteorShower>()) },
                 ) { location ->
                     passesAskedAt = location
                     emptyList<SatellitePass>()
@@ -91,7 +91,12 @@ class WidgetDataTest {
     fun `tonight widget is null and reads nothing when its flag is off`() =
         runTest {
             val sky =
-                tonightSkyFor(onlyMoon, now, untouched(), untouched()) {
+                tonightSkyFor(
+                    onlyMoon,
+                    now,
+                    untouched(),
+                    { error("catalog must not be opened while disabled") },
+                ) {
                     error("satellite cache must not be read while disabled")
                 }
 
@@ -102,7 +107,7 @@ class WidgetDataTest {
     fun `countdown widget with the shipped flags always has a target ahead`() =
         runTest {
             val target =
-                countdownFor(ExperimentConfig.Static, now, MutableStateFlow(emptyList()))
+                countdownFor(ExperimentConfig.Static, now) { MutableStateFlow(emptyList()) }
 
             // No showers in the catalog still leaves the next moon extreme.
             assertThat(target).isNotNull()
@@ -112,7 +117,9 @@ class WidgetDataTest {
     @Test
     fun `countdown widget follows the tonight flag and reads nothing when it is off`() =
         runTest {
-            assertThat(countdownFor(onlyMoon, now, untouched())).isNull()
-            assertThat(countdownFor(onlyTonight, now, MutableStateFlow(emptyList()))).isNotNull()
+            val catalogOpened = { error("catalog must not be opened while disabled") }
+            assertThat(countdownFor(onlyMoon, now, catalogOpened)).isNull()
+            assertThat(countdownFor(onlyTonight, now) { MutableStateFlow(emptyList()) })
+                .isNotNull()
         }
 }

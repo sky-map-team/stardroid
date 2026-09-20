@@ -43,17 +43,21 @@ internal suspend fun moonWidgetModelFor(
     return moonWidgetModel(now, savedLocation.first())
 }
 
-/** The tonight widget's content, or null when [Experiment.TONIGHT_WIDGET] is off. */
+/**
+ * The tonight widget's content, or null when [Experiment.TONIGHT_WIDGET] is off. [showers] and
+ * [passes] are suspend lambdas, not values: the catalog lookup does real I/O, so it must not
+ * run before the flag check.
+ */
 internal suspend fun tonightSkyFor(
     experimentConfig: ExperimentConfig,
     now: Instant,
     savedLocation: Flow<LatLong?>,
-    showers: Flow<List<MeteorShower>>,
+    showers: suspend () -> Flow<List<MeteorShower>>,
     passes: suspend (LatLong?) -> List<SatellitePass>,
 ): TonightSky? {
     if (!experimentConfig.isEnabled(Experiment.TONIGHT_WIDGET)) return null
     val location = savedLocation.first()
-    return tonightSky(now, location, showers.first(), passes = passes(location))
+    return tonightSky(now, location, showers().first(), passes = passes(location))
 }
 
 /**
@@ -63,9 +67,9 @@ internal suspend fun tonightSkyFor(
 internal suspend fun countdownFor(
     experimentConfig: ExperimentConfig,
     now: Instant,
-    showers: Flow<List<MeteorShower>>,
+    showers: suspend () -> Flow<List<MeteorShower>>,
 ): CountdownTarget? {
     if (!experimentConfig.isEnabled(Experiment.TONIGHT_WIDGET)) return null
     // Location-free: the countdown is about dates, not local geometry.
-    return tonightSky(now, location = null, showers = showers.first()).countdown
+    return tonightSky(now, location = null, showers = showers().first()).countdown
 }

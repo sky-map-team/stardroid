@@ -147,7 +147,8 @@ class ObjectInfoViewModel(
                     card?.id != SolarSystemIds.idFor(SolarSystemBody.MOON) ->
                         MoonWidgetPromo.HIDDEN
                     !experimentConfig.isEnabled(Experiment.MOON_WIDGET) -> MoonWidgetPromo.HIDDEN
-                    moonWidgetPlaced() -> MoonWidgetPromo.PLACED
+                    // A Binder call to system_server: keep it off the main thread.
+                    withContext(computeContext) { moonWidgetPlaced() } -> MoonWidgetPromo.PLACED
                     else -> MoonWidgetPromo.OFFER
                 }
             }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), MoonWidgetPromo.HIDDEN)
