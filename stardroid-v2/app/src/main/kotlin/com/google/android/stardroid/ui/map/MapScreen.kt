@@ -101,6 +101,7 @@ import com.google.android.stardroid.ui.location.LocationViewModel
 import com.google.android.stardroid.ui.location.ManualLocationEntryDialog
 import com.google.android.stardroid.ui.objectinfo.EclipseRow
 import com.google.android.stardroid.ui.objectinfo.ImageExpandOverlay
+import com.google.android.stardroid.ui.objectinfo.MoonWidgetPromo
 import com.google.android.stardroid.ui.objectinfo.MoonWidgetPromoRow
 import com.google.android.stardroid.ui.objectinfo.ObjectInfoCard
 import com.google.android.stardroid.ui.objectinfo.ObjectInfoViewModel
@@ -828,8 +829,8 @@ fun MapScreen(
                 },
                 onDismiss = { objectInfoViewModel.dismiss() },
                 promoRow =
-                    if (moonWidgetPromo) {
-                        { MoonWidgetPromoRow(onDone = objectInfoViewModel::dismissMoonWidgetPromo) }
+                    if (moonWidgetPromo != MoonWidgetPromo.HIDDEN) {
+                        { MoonWidgetPromoRow(placed = moonWidgetPromo == MoonWidgetPromo.PLACED) }
                     } else {
                         null
                     },

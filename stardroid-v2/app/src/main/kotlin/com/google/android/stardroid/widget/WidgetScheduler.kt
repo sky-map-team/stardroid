@@ -40,8 +40,9 @@ import java.util.concurrent.TimeUnit
  * receivers; [WidgetGate] re-applies the experiment flags on app start.
  */
 object WidgetScheduler {
-    private const val PERIODIC_WORK_NAME = "widget_refresh"
-    private const val MIDNIGHT_WORK_NAME = "widget_midnight_refresh"
+    internal const val PERIODIC_WORK_NAME = "widget_refresh"
+    internal const val MIDNIGHT_WORK_NAME = "widget_midnight_refresh"
+    internal const val REFRESH_ONCE_WORK_NAME = "widget_refresh_once"
 
     /** All widget receivers, for instance counting; gating is per-flag in [SkyMapApplication]. */
     private val RECEIVERS =
@@ -80,8 +81,14 @@ object WidgetScheduler {
     }
 
     /** Keeps the jobs iff any widget instance is placed; receivers call this on removal. */
-    fun syncSchedule(context: Context) {
-        if (RECEIVERS.any { hasInstances(context, it) }) {
+    fun syncSchedule(context: Context) = syncSchedule(context, anyPlaced(context))
+
+    /** [syncSchedule] with placement supplied, so tests needn't place a real widget. */
+    internal fun syncSchedule(
+        context: Context,
+        anyPlaced: Boolean,
+    ) {
+        if (anyPlaced) {
             ensureScheduled(context)
         } else {
             WorkManager.getInstance(context).cancelUniqueWork(PERIODIC_WORK_NAME)
@@ -90,14 +97,22 @@ object WidgetScheduler {
     }
 
     /** One immediate refresh if anything is placed — app start's catch-up sweep. */
-    fun refreshIfPlaced(context: Context) {
-        if (RECEIVERS.any { hasInstances(context, it) }) refreshNow(context)
+    fun refreshIfPlaced(context: Context) = refreshIfPlaced(context, anyPlaced(context))
+
+    /** [refreshIfPlaced] with placement supplied, so tests needn't place a real widget. */
+    internal fun refreshIfPlaced(
+        context: Context,
+        anyPlaced: Boolean,
+    ) {
+        if (anyPlaced) refreshNow(context)
     }
+
+    private fun anyPlaced(context: Context) = RECEIVERS.any { hasInstances(context, it) }
 
     /** An immediate one-shot refresh, for clock/date/zone changes. */
     fun refreshNow(context: Context) {
         WorkManager.getInstance(context).enqueueUniqueWork(
-            "widget_refresh_once",
+            REFRESH_ONCE_WORK_NAME,
             ExistingWorkPolicy.REPLACE,
             OneTimeWorkRequestBuilder<WidgetRefreshWorker>().build(),
         )

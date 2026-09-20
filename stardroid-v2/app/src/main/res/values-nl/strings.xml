@@ -559,7 +559,6 @@
     <string name="moon_widget_promo_title" translation_description="Title of the row on the Moon\'s info card offering to add the moon-phase widget to the home screen">Houd de Maan op je startscherm</string>
     <string name="moon_widget_promo_subtitle" translation_description="Subtitle of the row offering the moon-phase widget, summarizing what the widget shows">Fase, verlichting en opkomsttijden, dagelijks bijgewerkt</string>
     <string name="moon_widget_promo_add" translation_description="Button that adds the moon-phase widget to the home screen via the system dialog">Widget toevoegen</string>
-    <string name="moon_widget_promo_dismiss" translation_description="Accessibility label for the button that permanently dismisses the widget offer row">Widgetsuggestie sluiten</string>
     <string name="moon_widget_pin_unsupported_title" translation_description="Title of the fallback dialog when the launcher cannot add widgets directly">Voeg de widget toe vanaf je startscherm</string>
     <string name="moon_widget_pin_unsupported_body" translation_description="Body of the fallback dialog explaining how to add the widget manually">
     Je launcher ondersteunt het toevoegen van widgets vanuit een app niet. Houd je startscherm ingedrukt, kies Widgets en zoek dan Sky Map.
