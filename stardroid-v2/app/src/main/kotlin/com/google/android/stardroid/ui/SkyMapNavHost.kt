@@ -44,6 +44,7 @@ import com.google.android.stardroid.ui.location.LocationViewModel
 import com.google.android.stardroid.ui.map.MapScreen
 import com.google.android.stardroid.ui.map.MapViewModel
 import com.google.android.stardroid.ui.objectinfo.ImageExpandOverlay
+import com.google.android.stardroid.ui.objectinfo.MoonWidgetPromo
 import com.google.android.stardroid.ui.objectinfo.MoonWidgetPromoRow
 import com.google.android.stardroid.ui.objectinfo.ObjectInfoCard
 import com.google.android.stardroid.ui.objectinfo.ObjectInfoViewModel
@@ -254,10 +255,10 @@ fun SkyMapNavHost(
                     },
                     onDismiss = { objectInfoViewModel.dismiss() },
                     promoRow =
-                        if (moonWidgetPromo) {
+                        if (moonWidgetPromo != MoonWidgetPromo.HIDDEN) {
                             {
                                 MoonWidgetPromoRow(
-                                    onDone = objectInfoViewModel::dismissMoonWidgetPromo,
+                                    placed = moonWidgetPromo == MoonWidgetPromo.PLACED,
                                 )
                             }
                         } else {
@@ -294,7 +295,11 @@ fun SkyMapNavHost(
         }
 
         composable(Routes.HELP) {
-            HelpScreen(nightMode = nightMode, onBack = { navController.popBackStack() })
+            HelpScreen(
+                nightMode = nightMode,
+                onBack = { navController.popBackStack() },
+                experimentConfig = experimentConfig,
+            )
         }
 
         composable(Routes.WHATS_NEW) {

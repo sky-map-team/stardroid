@@ -38,9 +38,7 @@ import com.google.android.stardroid.R
 import com.google.android.stardroid.astronomy.LunarPhase
 import com.google.android.stardroid.astronomy.MoonWidgetModel
 import com.google.android.stardroid.astronomy.moonWidgetModel
-import com.google.android.stardroid.startup.Experiment
 import com.google.android.stardroid.ui.MainActivity
-import kotlinx.coroutines.flow.first
 import kotlinx.datetime.Clock
 import kotlinx.datetime.Instant
 import java.util.Date
@@ -60,11 +58,12 @@ class MoonWidget : GlanceAppWidget() {
         val entryPoint = widgetEntryPoint(context)
         // Kill switch (D75): instances placed before a flag flip freeze as a quiet brand tile
         // rather than continuing to update; the component gate stops new placements.
-        val enabled = entryPoint.experimentConfig().isEnabled(Experiment.MOON_WIDGET)
-        // The last confirmed location from DataStore — never a live provider request; null
-        // (app never ran) degrades to the geometry-only model with no times row.
-        val location = if (enabled) entryPoint.settings().savedLocation.first() else null
-        val model = if (enabled) moonWidgetModel(Clock.System.now(), location) else null
+        val model =
+            moonWidgetModelFor(
+                entryPoint.experimentConfig(),
+                Clock.System.now(),
+                entryPoint.settings().savedLocation,
+            )
         provideContent {
             MoonWidgetContent(model, context)
         }

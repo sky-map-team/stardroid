@@ -277,14 +277,6 @@ interface Settings {
 
     suspend fun setLastCalibrationWarningMillis(timeMillis: Long)
 
-    /**
-     * Whether the Moon info card's add-a-widget row has been acted on — added or dismissed,
-     * either way it never shows again (D75: promo rows are offered exactly once).
-     */
-    val moonWidgetPromoDismissed: Flow<Boolean>
-
-    suspend fun setMoonWidgetPromoDismissed()
-
     /** Meteor-shower peak notifications (D77). Off until the user opts in — quiet by default. */
     val showerAlertsEnabled: Flow<Boolean>
 

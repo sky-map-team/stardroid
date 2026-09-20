@@ -533,7 +533,6 @@
     <string name="moon_widget_promo_title" translation_description="Title of the row on the Moon\'s info card offering to add the moon-phase widget to the home screen">เพิ่มวิดเจ็ตดวงจันทร์ไว้ที่หน้าจอหลัก</string>
     <string name="moon_widget_promo_subtitle" translation_description="Subtitle of the row offering the moon-phase widget, summarizing what the widget shows">ข้างขึ้นข้างแรม การส่องสว่าง และเวลาดวงจันทร์ขึ้น อัปเดตทุกวัน</string>
     <string name="moon_widget_promo_add" translation_description="Button that adds the moon-phase widget to the home screen via the system dialog">เพิ่มวิดเจ็ต</string>
-    <string name="moon_widget_promo_dismiss" translation_description="Accessibility label for the button that permanently dismisses the widget offer row">ปิดคำแนะนำวิดเจ็ต</string>
     <string name="moon_widget_pin_unsupported_title" translation_description="Title of the fallback dialog when the launcher cannot add widgets directly">เพิ่มวิดเจ็ตจากหน้าจอหลักของคุณ</string>
     <string name="moon_widget_pin_unsupported_body" translation_description="Body of the fallback dialog explaining how to add the widget manually">
     ตัวเรียกใช้งานแอปของคุณไม่รองรับการเพิ่มวิดเจ็ตจากแอป แตะหน้าจอหลักค้างไว้ เลือก วิดเจ็ต แล้วค้นหา Sky Map

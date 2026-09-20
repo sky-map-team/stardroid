@@ -9,43 +9,43 @@
 
 package com.google.android.stardroid.ui.objectinfo
 
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Close
-import androidx.compose.material3.AlertDialog
-import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.google.android.stardroid.R
-import com.google.android.stardroid.widget.requestPinMoonWidget
+import com.google.android.stardroid.ui.common.AddWidgetButton
+import com.google.android.stardroid.widget.MoonWidgetReceiver
 
 /**
- * The Moon card's add-a-widget offer (D75 discovery). "Add" launches the system one-tap pin
- * dialog ([requestPinMoonWidget]) — and never consumes the offer, so a cancelled or failed
- * pin keeps the row; it disappears on its own once a moon widget actually exists
- * (`ObjectInfoViewModel.moonWidgetPromo`). Only the explicit close button calls [onDone],
- * which persists the never-show-again bit.
+ * The Moon card's permanent add-a-widget row (D75 discovery). "Add" launches the system
+ * one-tap pin dialog and never consumes the offer, so a cancelled pin keeps the row.
+ *
+ * Nothing dismisses it. Instead it recedes on its own: the full title-and-subtitle pitch
+ * while no moon widget exists ([placed] false), then a single quiet "Add widget" line once
+ * one does — still there for a second widget, no longer selling the first.
  */
 @Composable
-fun MoonWidgetPromoRow(onDone: () -> Unit) {
-    val context = LocalContext.current
-    var showManualInstructions by remember { mutableStateOf(false) }
+fun MoonWidgetPromoRow(placed: Boolean) {
+    if (placed) {
+        Row(
+            horizontalArrangement = Arrangement.End,
+            verticalAlignment = Alignment.CenterVertically,
+            modifier = Modifier.fillMaxWidth(),
+        ) {
+            AddWidgetButton(MoonWidgetReceiver::class.java)
+        }
+        return
+    }
     Surface(
         color = MaterialTheme.colorScheme.surfaceVariant,
         shape = MaterialTheme.shapes.medium,
@@ -54,49 +54,17 @@ fun MoonWidgetPromoRow(onDone: () -> Unit) {
                 .fillMaxWidth()
                 .padding(top = 12.dp),
     ) {
-        Row(verticalAlignment = Alignment.CenterVertically) {
-            Column(
-                modifier =
-                    Modifier
-                        .weight(1f)
-                        .padding(start = 12.dp, top = 8.dp, bottom = 8.dp),
-            ) {
-                Text(
-                    stringResource(R.string.moon_widget_promo_title),
-                    style = MaterialTheme.typography.titleSmall,
-                )
-                Text(
-                    stringResource(R.string.moon_widget_promo_subtitle),
-                    style = MaterialTheme.typography.bodySmall,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant,
-                )
-                TextButton(
-                    onClick = {
-                        if (!requestPinMoonWidget(context)) showManualInstructions = true
-                    },
-                ) {
-                    Text(stringResource(R.string.moon_widget_promo_add))
-                }
-            }
-            IconButton(onClick = onDone) {
-                Icon(
-                    Icons.Default.Close,
-                    contentDescription = stringResource(R.string.moon_widget_promo_dismiss),
-                    tint = MaterialTheme.colorScheme.onSurfaceVariant,
-                )
-            }
+        Column(modifier = Modifier.padding(start = 12.dp, top = 8.dp, bottom = 8.dp)) {
+            Text(
+                stringResource(R.string.moon_widget_promo_title),
+                style = MaterialTheme.typography.titleSmall,
+            )
+            Text(
+                stringResource(R.string.moon_widget_promo_subtitle),
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+            )
+            AddWidgetButton(MoonWidgetReceiver::class.java)
         }
-    }
-    if (showManualInstructions) {
-        AlertDialog(
-            onDismissRequest = { showManualInstructions = false },
-            title = { Text(stringResource(R.string.moon_widget_pin_unsupported_title)) },
-            text = { Text(stringResource(R.string.moon_widget_pin_unsupported_body)) },
-            confirmButton = {
-                TextButton(onClick = { showManualInstructions = false }) {
-                    Text(stringResource(R.string.moon_widget_pin_unsupported_ok))
-                }
-            },
-        )
     }
 }
