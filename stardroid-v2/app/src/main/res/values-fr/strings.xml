@@ -576,7 +576,6 @@
     <string name="moon_widget_promo_title" translation_description="Title of the row on the Moon\'s info card offering to add the moon-phase widget to the home screen">Gardez la Lune sur votre écran d\'accueil</string>
     <string name="moon_widget_promo_subtitle" translation_description="Subtitle of the row offering the moon-phase widget, summarizing what the widget shows">Phase, illumination et heures de lever, mis à jour quotidiennement</string>
     <string name="moon_widget_promo_add" translation_description="Button that adds the moon-phase widget to the home screen via the system dialog">Ajouter le widget</string>
-    <string name="moon_widget_promo_dismiss" translation_description="Accessibility label for the button that permanently dismisses the widget offer row">Ignorer la suggestion de widget</string>
     <string name="moon_widget_pin_unsupported_title" translation_description="Title of the fallback dialog when the launcher cannot add widgets directly">Ajoutez le widget depuis votre écran d\'accueil</string>
     <string name="moon_widget_pin_unsupported_body" tm_human="true" translation_description="Body of the fallback dialog explaining how to add the widget manually">
     Votre lanceur ne prend pas en charge l\'ajout de widgets depuis une application. Appuyez longuement sur votre écran d\'accueil, choisissez Widgets, puis trouvez Sky Map.

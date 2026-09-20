@@ -230,13 +230,6 @@ class DataStoreSettings(
         dataStore.edit { it[LAST_CALIBRATION_WARNING] = timeMillis }
     }
 
-    override val moonWidgetPromoDismissed: Flow<Boolean> =
-        boolean(MOON_WIDGET_PROMO_DISMISSED, default = false)
-
-    override suspend fun setMoonWidgetPromoDismissed() {
-        dataStore.edit { it[MOON_WIDGET_PROMO_DISMISSED] = true }
-    }
-
     override val showerAlertsEnabled: Flow<Boolean> =
         boolean(SHOWER_ALERTS_ENABLED, default = false)
 
@@ -368,9 +361,6 @@ class DataStoreSettings(
         private val LAST_CALIBRATION_WARNING = longPreferencesKey("last_calibration_warning")
 
         private val ENABLE_ANALYTICS = booleanPreferencesKey("enable_analytics")
-
-        private val MOON_WIDGET_PROMO_DISMISSED =
-            booleanPreferencesKey("moon_widget_promo_dismissed")
 
         private val SHOWER_ALERTS_ENABLED = booleanPreferencesKey("shower_alerts_enabled")
         private val SATELLITE_DATA_ENABLED = booleanPreferencesKey("satellite_data_enabled")

@@ -540,7 +540,6 @@
     <string name="moon_widget_promo_title" translation_description="Title of the row on the Moon\'s info card offering to add the moon-phase widget to the home screen">홈 화면에 달을 유지하세요</string>
     <string name="moon_widget_promo_subtitle" translation_description="Subtitle of the row offering the moon-phase widget, summarizing what the widget shows">위상, 밝기, 뜨는 시간. 매일 업데이트됩니다</string>
     <string name="moon_widget_promo_add" translation_description="Button that adds the moon-phase widget to the home screen via the system dialog">위젯 추가</string>
-    <string name="moon_widget_promo_dismiss" translation_description="Accessibility label for the button that permanently dismisses the widget offer row">위젯 제안 닫기</string>
     <string name="moon_widget_pin_unsupported_title" translation_description="Title of the fallback dialog when the launcher cannot add widgets directly">홈 화면에서 위젯을 추가하세요</string>
     <string name="moon_widget_pin_unsupported_body" translation_description="Body of the fallback dialog explaining how to add the widget manually">런처에서 앱을 통해 위젯을 추가하는 것을 지원하지 않습니다. 홈 화면을 길게 터치하여 위젯을 선택한 다음, Sky Map을 찾으세요.</string>
     <string name="moon_widget_pin_unsupported_ok" translation_description="Confirmation button of the manual widget-adding instructions dialog">확인</string>

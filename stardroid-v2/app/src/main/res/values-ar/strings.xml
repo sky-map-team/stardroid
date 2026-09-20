@@ -554,7 +554,6 @@
     <string name="moon_widget_promo_title" translation_description="Title of the row on the Moon\'s info card offering to add the moon-phase widget to the home screen">احتفظ بالقمر على شاشتك الرئيسية</string>
     <string name="moon_widget_promo_subtitle" translation_description="Subtitle of the row offering the moon-phase widget, summarizing what the widget shows">الطور والإضاءة وأوقات الشروق، تُحدّث يوميًا</string>
     <string name="moon_widget_promo_add" translation_description="Button that adds the moon-phase widget to the home screen via the system dialog">إضافة أداة</string>
-    <string name="moon_widget_promo_dismiss" translation_description="Accessibility label for the button that permanently dismisses the widget offer row">تجاهل اقتراح الأداة</string>
     <string name="moon_widget_pin_unsupported_title" translation_description="Title of the fallback dialog when the launcher cannot add widgets directly">أضف الأداة من شاشتك الرئيسية</string>
     <string name="moon_widget_pin_unsupported_body" translation_description="Body of the fallback dialog explaining how to add the widget manually">
     لا يدعم المشغل الخاص بك إضافة الأدوات من تطبيق. المس الشاشة الرئيسية مع الاستمرار، اختر الأدوات، ثم ابحث عن Sky Map.

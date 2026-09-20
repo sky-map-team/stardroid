@@ -559,7 +559,6 @@
     <string name="moon_widget_promo_title" translation_description="Title of the row on the Moon\'s info card offering to add the moon-phase widget to the home screen">Cadwch y Lleuad ar eich sgrin gartref</string>
     <string name="moon_widget_promo_subtitle" translation_description="Subtitle of the row offering the moon-phase widget, summarizing what the widget shows">Cyfnod, goleuedd ac amserau codiad, wedi\'u diweddaru bob dydd</string>
     <string name="moon_widget_promo_add" translation_description="Button that adds the moon-phase widget to the home screen via the system dialog">Ychwanegu teclyn</string>
-    <string name="moon_widget_promo_dismiss" translation_description="Accessibility label for the button that permanently dismisses the widget offer row">Diystyru awgrym teclyn</string>
     <string name="moon_widget_pin_unsupported_title" translation_description="Title of the fallback dialog when the launcher cannot add widgets directly">Ychwanegwch y teclyn o\'ch sgrin gartref</string>
     <string name="moon_widget_pin_unsupported_body" translation_description="Body of the fallback dialog explaining how to add the widget manually">
     Nid yw eich lansiwr yn cefnogi ychwanegu teclynnau o ap. Cyffwrdd a dal eich sgrin gartref, dewis Teclynnau, yna dewch o hyd i Sky Map.

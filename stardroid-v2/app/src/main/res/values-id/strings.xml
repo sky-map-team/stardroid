@@ -561,7 +561,6 @@
     <string name="moon_widget_promo_title" translation_description="Title of the row on the Moon\'s info card offering to add the moon-phase widget to the home screen">Pertahankan Bulan di layar utama Anda</string>
     <string name="moon_widget_promo_subtitle" translation_description="Subtitle of the row offering the moon-phase widget, summarizing what the widget shows">Fase, iluminasi, dan waktu terbit, diperbarui setiap hari</string>
     <string name="moon_widget_promo_add" translation_description="Button that adds the moon-phase widget to the home screen via the system dialog">Tambahkan widget</string>
-    <string name="moon_widget_promo_dismiss" translation_description="Accessibility label for the button that permanently dismisses the widget offer row">Tutup saran widget</string>
     <string name="moon_widget_pin_unsupported_title" translation_description="Title of the fallback dialog when the launcher cannot add widgets directly">Tambahkan widget dari layar utama Anda</string>
     <string name="moon_widget_pin_unsupported_body" translation_description="Body of the fallback dialog explaining how to add the widget manually">
     Peluncur Anda tidak mendukung penambahan widget dari aplikasi. Sentuh dan tahan layar beranda Anda, pilih Widget, lalu temukan Sky Map.

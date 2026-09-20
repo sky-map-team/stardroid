@@ -66,25 +66,13 @@ class TonightWidget : GlanceAppWidget() {
         id: GlanceId,
     ) {
         val entryPoint = widgetEntryPoint(context)
-        val enabled = entryPoint.experimentConfig().isEnabled(Experiment.TONIGHT_WIDGET)
         val sky =
-            if (enabled) {
-                val location = entryPoint.settings().savedLocation.first()
-                val showers =
-                    entryPoint
-                        .catalogAccess()
-                        .repository()
-                        .meteorShowers(entryPoint.localeSource().current)
-                        .first()
-                tonightSky(
-                    Clock.System.now(),
-                    location,
-                    showers,
-                    passes = tonightSatellitePasses(context, location),
-                )
-            } else {
-                null
-            }
+            tonightSkyFor(
+                entryPoint.experimentConfig(),
+                Clock.System.now(),
+                entryPoint.settings().savedLocation,
+                entryPoint.catalogAccess().repository().meteorShowers(entryPoint.localeSource().current),
+            ) { location -> tonightSatellitePasses(context, location) }
         provideContent {
             TonightContent(sky, context)
         }

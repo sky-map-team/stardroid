@@ -557,7 +557,6 @@
     <string name="moon_widget_promo_title" translation_description="Title of the row on the Moon\'s info card offering to add the moon-phase widget to the home screen">चन्द्रमा को अपनी होम स्क्रीन पर रखें</string>
     <string name="moon_widget_promo_subtitle" translation_description="Subtitle of the row offering the moon-phase widget, summarizing what the widget shows">कला, प्रकाश और उदय का समय, रोज़ाना अपडेट किया जाता है</string>
     <string name="moon_widget_promo_add" translation_description="Button that adds the moon-phase widget to the home screen via the system dialog">विजेट जोड़ें</string>
-    <string name="moon_widget_promo_dismiss" translation_description="Accessibility label for the button that permanently dismisses the widget offer row">विजेट सुझाव खारिज करें</string>
     <string name="moon_widget_pin_unsupported_title" translation_description="Title of the fallback dialog when the launcher cannot add widgets directly">विजेट को अपनी होम स्क्रीन से जोड़ें</string>
     <string name="moon_widget_pin_unsupported_body" translation_description="Body of the fallback dialog explaining how to add the widget manually">
     आपका लॉन्चर किसी ऐप से विजेट जोड़ने का समर्थन नहीं करता है। अपनी होम स्क्रीन को स्पर्श करके रखें, विजेट चुनें, फिर Sky Map ढूंढें।

@@ -14,16 +14,15 @@ import android.content.ComponentName
 import android.content.Context
 
 /**
- * Launches the system one-tap pin dialog for the moon widget (D75 discovery). Returns false
- * when the launcher doesn't support pinning — the caller shows the manual-instructions
- * fallback instead.
+ * Launches the system one-tap pin dialog for the widget behind [receiver] (D75 discovery).
+ * Returns false when the launcher doesn't support pinning — the caller shows the
+ * manual-instructions fallback instead.
  */
-fun requestPinMoonWidget(context: Context): Boolean {
+fun requestPinWidget(
+    context: Context,
+    receiver: Class<*>,
+): Boolean {
     val manager = AppWidgetManager.getInstance(context)
     if (!manager.isRequestPinAppWidgetSupported) return false
-    return manager.requestPinAppWidget(
-        ComponentName(context, MoonWidgetReceiver::class.java),
-        null,
-        null,
-    )
+    return manager.requestPinAppWidget(ComponentName(context, receiver), null, null)
 }

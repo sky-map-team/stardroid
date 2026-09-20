@@ -568,7 +568,6 @@
     <string name="moon_widget_promo_title" translation_description="Title of the row on the Moon\'s info card offering to add the moon-phase widget to the home screen">Κρατήστε τη Σελήνη στην αρχική σας οθόνη</string>
     <string name="moon_widget_promo_subtitle" translation_description="Subtitle of the row offering the moon-phase widget, summarizing what the widget shows">Φάση, φωτισμός και ώρες ανατολής, ενημερώνονται καθημερινά</string>
     <string name="moon_widget_promo_add" translation_description="Button that adds the moon-phase widget to the home screen via the system dialog">Προσθήκη γραφικού στοιχείου</string>
-    <string name="moon_widget_promo_dismiss" translation_description="Accessibility label for the button that permanently dismisses the widget offer row">Απόρριψη πρότασης γραφικού στοιχείου</string>
     <string name="moon_widget_pin_unsupported_title" translation_description="Title of the fallback dialog when the launcher cannot add widgets directly">Προσθέστε το γραφικό στοιχείο από την αρχική σας οθόνη</string>
     <string name="moon_widget_pin_unsupported_body" translation_description="Body of the fallback dialog explaining how to add the widget manually">
     Ο εκκινητής σας δεν υποστηρίζει την προσθήκη γραφικών στοιχείων από μια εφαρμογή. Αγγίξτε παρατεταμένα την αρχική σας οθόνη, επιλέξτε Γραφικά στοιχεία, και μετά βρείτε το Sky Map.

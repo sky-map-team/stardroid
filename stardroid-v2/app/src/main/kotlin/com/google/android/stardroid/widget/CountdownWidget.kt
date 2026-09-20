@@ -63,20 +63,12 @@ class CountdownWidget : GlanceAppWidget() {
         id: GlanceId,
     ) {
         val entryPoint = widgetEntryPoint(context)
-        val enabled = entryPoint.experimentConfig().isEnabled(Experiment.TONIGHT_WIDGET)
         val countdown =
-            if (enabled) {
-                val showers =
-                    entryPoint
-                        .catalogAccess()
-                        .repository()
-                        .meteorShowers(entryPoint.localeSource().current)
-                        .first()
-                // Location-free: the countdown is about dates, not local geometry.
-                tonightSky(Clock.System.now(), location = null, showers = showers).countdown
-            } else {
-                null
-            }
+            countdownFor(
+                entryPoint.experimentConfig(),
+                Clock.System.now(),
+                entryPoint.catalogAccess().repository().meteorShowers(entryPoint.localeSource().current),
+            )
         provideContent {
             CountdownContent(countdown, context)
         }

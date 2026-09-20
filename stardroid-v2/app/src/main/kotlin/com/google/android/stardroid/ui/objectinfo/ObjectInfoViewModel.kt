@@ -54,7 +54,6 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
-import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.drop
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
@@ -78,6 +77,18 @@ sealed interface RiseSetState {
 
     /** Never clears the horizon at this location. */
     data object AlwaysBelow : RiseSetState
+}
+
+/** What the Moon card's add-a-widget row looks like; see [ObjectInfoViewModel.moonWidgetPromo]. */
+enum class MoonWidgetPromo {
+    /** Not on the Moon's card, or the widget experiment is off. */
+    HIDDEN,
+
+    /** No moon widget yet: the full pitch. */
+    OFFER,
+
+    /** A moon widget exists: just a quiet "Add widget" line, for a second one. */
+    PLACED,
 }
 
 /**
@@ -124,18 +135,22 @@ class ObjectInfoViewModel(
     val riseSet: StateFlow<RiseSetState?> = _riseSet.asStateFlow()
 
     /**
-     * Whether the Moon card shows its add-a-widget row (D75 discovery): only on the Moon,
-     * only while the experiment is on, gone on its own once a moon widget is placed, and
-     * never again after an explicit dismissal. A cancelled pin dialog changes nothing —
-     * the offer survives anything short of success or a deliberate no.
+     * How the Moon card shows its add-a-widget row (D75 discovery): only on the Moon and only
+     * while the experiment is on. The row is permanent — there is no dismissal — but it
+     * recedes to [MoonWidgetPromo.PLACED] once a moon widget exists, so it stops pitching
+     * to someone who already took the offer.
      */
-    val moonWidgetPromo: StateFlow<Boolean> =
-        combine(_card, settings.moonWidgetPromoDismissed) { card, dismissed ->
-            !dismissed &&
-                card?.id == SolarSystemIds.idFor(SolarSystemBody.MOON) &&
-                experimentConfig.isEnabled(Experiment.MOON_WIDGET) &&
-                !moonWidgetPlaced()
-        }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), false)
+    val moonWidgetPromo: StateFlow<MoonWidgetPromo> =
+        _card
+            .map { card ->
+                when {
+                    card?.id != SolarSystemIds.idFor(SolarSystemBody.MOON) ->
+                        MoonWidgetPromo.HIDDEN
+                    !experimentConfig.isEnabled(Experiment.MOON_WIDGET) -> MoonWidgetPromo.HIDDEN
+                    moonWidgetPlaced() -> MoonWidgetPromo.PLACED
+                    else -> MoonWidgetPromo.OFFER
+                }
+            }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), MoonWidgetPromo.HIDDEN)
 
     /**
      * The next visible pass for the shown satellite card, or null.
@@ -187,11 +202,6 @@ class ObjectInfoViewModel(
                     withContext(computeContext) { nextLunarEclipse(now(), MeeusEphemeris) }
                 }
             }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), null)
-
-    /** The explicit close button — the only path that permanently ends the offer. */
-    fun dismissMoonWidgetPromo() {
-        viewModelScope.launch { settings.setMoonWidgetPromoDismissed() }
-    }
 
     /** Opens [id]'s card — a see-also chip tap, v1's `onSeeAlsoClicked`. */
     fun show(id: CelestialObjectId) {

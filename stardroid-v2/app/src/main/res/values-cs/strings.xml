@@ -557,7 +557,6 @@
     <string name="moon_widget_promo_title" translation_description="Title of the row on the Moon\'s info card offering to add the moon-phase widget to the home screen">Měsíc na vaší domovské obrazovce</string>
     <string name="moon_widget_promo_subtitle" translation_description="Subtitle of the row offering the moon-phase widget, summarizing what the widget shows">Fáze, osvětlení a časy východu, aktualizováno denně</string>
     <string name="moon_widget_promo_add" translation_description="Button that adds the moon-phase widget to the home screen via the system dialog">Přidat widget</string>
-    <string name="moon_widget_promo_dismiss" translation_description="Accessibility label for the button that permanently dismisses the widget offer row">Zavřít návrh widgetu</string>
     <string name="moon_widget_pin_unsupported_title" translation_description="Title of the fallback dialog when the launcher cannot add widgets directly">Přidejte widget z domovské obrazovky</string>
     <string name="moon_widget_pin_unsupported_body" translation_description="Body of the fallback dialog explaining how to add the widget manually">
     Váš launcher nepodporuje přidávání widgetů z aplikace. Dotkněte se a podržte domovskou obrazovku, vyberte Widgety, a pak najděte Sky Map.

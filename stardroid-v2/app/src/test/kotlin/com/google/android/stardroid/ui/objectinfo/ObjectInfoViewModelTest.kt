@@ -32,6 +32,8 @@ import com.google.android.stardroid.math.RaDec
 import com.google.android.stardroid.math.Vector3
 import com.google.android.stardroid.render.api.SkyCamera
 import com.google.android.stardroid.settings.FakeSettings
+import com.google.android.stardroid.startup.Experiment
+import com.google.android.stardroid.startup.ExperimentConfig
 import com.google.common.truth.Truth.assertThat
 import kotlinx.coroutines.CompletableDeferred
 import kotlinx.coroutines.Dispatchers
@@ -40,6 +42,7 @@ import kotlinx.coroutines.cancel
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.emptyFlow
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.test.StandardTestDispatcher
 import kotlinx.coroutines.test.TestScope
 import kotlinx.coroutines.test.UnconfinedTestDispatcher
@@ -115,7 +118,10 @@ class ObjectInfoViewModelTest {
 
     private val locale = MutableStateFlow(LocaleSpec("en"))
 
-    private fun viewModel(): ObjectInfoViewModel =
+    private fun viewModel(
+        experimentConfig: ExperimentConfig = ExperimentConfig.Static,
+        moonWidgetPlaced: () -> Boolean = { false },
+    ): ObjectInfoViewModel =
         ObjectInfoViewModel(
             catalog = { repository },
             locale = locale,
@@ -124,6 +130,8 @@ class ObjectInfoViewModelTest {
             settings = settings,
             location = { LONDON },
             computeContext = UnconfinedTestDispatcher(dispatcher.scheduler),
+            experimentConfig = experimentConfig,
+            moonWidgetPlaced = moonWidgetPlaced,
         ).also { createdViewModels += it }
 
     @Test
@@ -562,6 +570,52 @@ class ObjectInfoViewModelTest {
             densityDpPerPx = DENSITY,
         )
 
+    @Test
+    fun `the moon card offers the widget until one is placed, then only quietly`() =
+        testScope.runCurrentTest {
+            repository.infos[MOON_ID] = objectInfo(MOON_ID, "Moon")
+            val noWidget = viewModel(moonWidgetPlaced = { false })
+            val hasWidget = viewModel(moonWidgetPlaced = { true })
+            backgroundScope.launch { noWidget.moonWidgetPromo.collect {} }
+            backgroundScope.launch { hasWidget.moonWidgetPromo.collect {} }
+
+            noWidget.show(MOON_ID)
+            hasWidget.show(MOON_ID)
+            runCurrent()
+
+            assertThat(noWidget.moonWidgetPromo.value).isEqualTo(MoonWidgetPromo.OFFER)
+            assertThat(hasWidget.moonWidgetPromo.value).isEqualTo(MoonWidgetPromo.PLACED)
+        }
+
+    @Test
+    fun `the widget row is hidden when no card is open`() =
+        testScope.runCurrentTest {
+            val vm = viewModel()
+            backgroundScope.launch { vm.moonWidgetPromo.collect {} }
+            runCurrent()
+
+            assertThat(vm.moonWidgetPromo.value).isEqualTo(MoonWidgetPromo.HIDDEN)
+        }
+
+    @Test
+    fun `other cards and a disabled experiment show no widget row`() =
+        testScope.runCurrentTest {
+            repository.infos[MOON_ID] = objectInfo(MOON_ID, "Moon")
+            repository.infos[SIRIUS_ID] = objectInfo(SIRIUS_ID, "Sirius")
+            val flagOff = ExperimentConfig { it != Experiment.MOON_WIDGET }
+            val onMoon = viewModel()
+            val moonFlagOff = viewModel(experimentConfig = flagOff)
+            backgroundScope.launch { onMoon.moonWidgetPromo.collect {} }
+            backgroundScope.launch { moonFlagOff.moonWidgetPromo.collect {} }
+
+            onMoon.show(SIRIUS_ID)
+            moonFlagOff.show(MOON_ID)
+            runCurrent()
+
+            assertThat(onMoon.moonWidgetPromo.value).isEqualTo(MoonWidgetPromo.HIDDEN)
+            assertThat(moonFlagOff.moonWidgetPromo.value).isEqualTo(MoonWidgetPromo.HIDDEN)
+        }
+
     private fun TestScope.runCurrentTest(body: suspend TestScope.() -> Unit) =
         runTest {
             try {
@@ -584,6 +638,7 @@ class ObjectInfoViewModelTest {
         const val LOOK_RA = 30.0
         const val LOOK_DEC = 10.0
 
+        val MOON_ID = CelestialObjectId("planet/moon")
         val SIRIUS_ID = CelestialObjectId("star/sirius")
         val SIRIUS_POSITION = RaDec(101.287, -16.716)
 

@@ -246,14 +246,6 @@ class FakeSettings : Settings {
         enableAnalyticsState.value = enabled
     }
 
-    val moonWidgetPromoDismissedState = MutableStateFlow(false)
-
-    override val moonWidgetPromoDismissed: Flow<Boolean> = moonWidgetPromoDismissedState
-
-    override suspend fun setMoonWidgetPromoDismissed() {
-        moonWidgetPromoDismissedState.value = true
-    }
-
     val showerAlertsEnabledState = MutableStateFlow(false)
 
     override val showerAlertsEnabled: Flow<Boolean> = showerAlertsEnabledState
