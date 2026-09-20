@@ -324,7 +324,14 @@ class MapViewModel(
             if (!on) return@flatMapLatest flowOf(null)
             timeFlow.map { time ->
                 SkyGradient(
-                    ephemeris.geocentricPosition(SolarSystemBody.SUN, time).toGeocentricVector(),
+                    sunDirection =
+                        ephemeris
+                            .geocentricPosition(SolarSystemBody.SUN, time)
+                            .toGeocentricVector(),
+                    // The observer's local up, which is what makes the horizon — and so the
+                    // twilight bands and the Belt of Venus — locatable by a backend that can
+                    // evaluate a scattering model. GLES1 ignores it.
+                    zenithDirection = localFrame.value.up,
                 )
             }
         }

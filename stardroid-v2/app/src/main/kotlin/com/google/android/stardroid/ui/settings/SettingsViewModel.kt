@@ -19,6 +19,7 @@ import com.google.android.stardroid.settings.AutoDimness
 import com.google.android.stardroid.settings.FontSize
 import com.google.android.stardroid.settings.OneEuroEaseOff
 import com.google.android.stardroid.settings.OneEuroSteadiness
+import com.google.android.stardroid.settings.RendererBackend
 import com.google.android.stardroid.settings.Settings
 import com.google.android.stardroid.startup.Experiment
 import com.google.android.stardroid.startup.ExperimentConfig
@@ -48,6 +49,7 @@ data class SettingsUiState(
     val showerAlerts: Boolean = false,
     val tonightDigest: Boolean = false,
     val satelliteData: Boolean = false,
+    val rendererBackend: RendererBackend = RendererBackend.GLES1,
 )
 
 // Grouped so `state` below combines at most 5 flows at a time, each into a small typed data
@@ -84,6 +86,7 @@ private data class OtherPrefs(
     val showerAlertsEnabled: Boolean,
     val tonightDigestEnabled: Boolean,
     val satelliteDataEnabled: Boolean,
+    val rendererBackend: RendererBackend,
 )
 
 /**
@@ -100,10 +103,20 @@ class SettingsViewModel(
     private val analytics: Analytics = NoOpAnalytics,
     experimentConfig: ExperimentConfig = ExperimentConfig.Static,
     private val fusedSensorAvailable: Boolean = true,
+    gles3Available: Boolean = false,
 ) : ViewModel() {
     /** Whether the notifications section shows at all (D77 experiment gate). */
     val notificationsAvailable: Boolean =
         experimentConfig.isEnabled(Experiment.NOTIFICATIONS)
+
+    /**
+     * Whether to offer a choice of rendering backend at all.
+     *
+     * False on a device that cannot do GL ES 3.0, where picking the second option would
+     * silently give you the first one back — a control that appears to do nothing is worse
+     * than an absent one.
+     */
+    val rendererChoiceAvailable: Boolean = gles3Available
 
     /**
      * Whether the classic accelerometer+magnetometer path is what's actually running, and so
@@ -145,6 +158,7 @@ class SettingsViewModel(
                 settings.showerAlertsEnabled,
                 settings.tonightDigestEnabled,
                 settings.satelliteDataEnabled,
+                settings.rendererBackend,
                 ::OtherPrefs,
             ),
         ) { controls, appearance, sensors, magnetic, other ->
@@ -167,6 +181,7 @@ class SettingsViewModel(
                 showerAlerts = other.showerAlertsEnabled,
                 tonightDigest = other.tonightDigestEnabled,
                 satelliteData = other.satelliteDataEnabled,
+                rendererBackend = other.rendererBackend,
             )
         }.stateIn(viewModelScope, SharingStarted.Eagerly, SettingsUiState())
 
@@ -198,6 +213,11 @@ class SettingsViewModel(
     fun setShowSkyGradient(enabled: Boolean) {
         trackChange("show_sky_gradient", enabled)
         viewModelScope.launch { settings.setShowSkyGradient(enabled) }
+    }
+
+    fun setRendererBackend(backend: RendererBackend) {
+        trackChange("renderer_backend", backend)
+        viewModelScope.launch { settings.setRendererBackend(backend) }
     }
 
     fun setDisableGyro(enabled: Boolean) {

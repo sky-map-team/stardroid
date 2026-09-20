@@ -120,6 +120,7 @@ fun SkyMapNavHost(
     onRequestLocationPermission: () -> Unit,
     onRequestAutoLocation: () -> Unit,
     onOpenAppSettings: () -> Unit,
+    onRestartForRenderer: () -> Unit = {},
     arCamera: SkyCameraPreview,
     hasCameraPermission: () -> Boolean,
     onRequestCameraPermission: () -> Unit,
@@ -211,6 +212,7 @@ fun SkyMapNavHost(
                 settingsViewModel,
                 onBack = { navController.popBackStack() },
                 onOpenDiagnostics = { navController.navigate(Routes.DIAGNOSTICS) },
+                onRestartForRenderer = onRestartForRenderer,
             )
         }
 

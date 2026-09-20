@@ -258,6 +258,13 @@ class DataStoreSettings(
         dataStore.edit { it[LABEL_SIZE_HINT_SHOWN] = true }
     }
 
+    override val rendererBackend: Flow<RendererBackend> =
+        enum(RENDERER_BACKEND, RendererBackend.GLES1)
+
+    override suspend fun setRendererBackend(backend: RendererBackend) {
+        dataStore.edit { it[RENDERER_BACKEND] = backend.name }
+    }
+
     override val railLabelReveals: Flow<Int> =
         safeData()
             .map { it[RAIL_LABEL_REVEALS] ?: 0 }
@@ -370,5 +377,6 @@ class DataStoreSettings(
         private val LABEL_SIZE_HINT_SHOWN = booleanPreferencesKey("label_size_hint_shown")
 
         private val RAIL_LABEL_REVEALS = intPreferencesKey("rail_label_reveals")
+        private val RENDERER_BACKEND = stringPreferencesKey("renderer_backend")
     }
 }

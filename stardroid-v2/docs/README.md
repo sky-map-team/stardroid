@@ -19,6 +19,7 @@ the two ever drift.
 | [design/build-and-tooling.md](design/build-and-tooling.md) | Module graph, convention plugins, CI architecture/perf/DB gates | slice 1, D20 |
 | [design/core-math-astronomy.md](design/core-math-astronomy.md) | `:core:math`, `:core:astronomy` | slices 2/5, D25–D27, D36 |
 | [design/render-api.md](design/render-api.md) | `:render:api` contract, `:render:gles1` port notes | slices 3a/3b, D28–D31 |
+| [design/render-gles3.md](design/render-gles3.md) | The GL ES 3.0 backend beside GLES1, selectable in settings; Part B still proposed | Part A built; §7.2–§8 design only |
 | [design/catalog-and-schema.md](design/catalog-and-schema.md) | `:core:catalog`, Room schema, build-time DB generation | slices 4a–4d, D32–D35 |
 | [design/layers-and-app.md](design/layers-and-app.md) | Layer system, ViewModel decomposition, app edges | slices 4d–23; **comets still to come** |
 | [design/screens-and-startup.md](design/screens-and-startup.md) | Supporting screens, startup routing, settings | slice 16, D48 |
@@ -38,7 +39,6 @@ the two ever drift.
 | [design/localization.md](design/localization.md) | String chunking, v1 translation reuse, and what the Room catalog changes about i18n | undecided; the groundwork half shipped as D78 |
 | [design/ephemeris-accuracy.md](design/ephemeris-accuracy.md) §3 | Replacing the hand-rolled ephemeris with Astronomy Engine | undecided (§1–2 are reference — see below) |
 | [design/satellite-tracking.md](design/satellite-tracking.md) | ISS/satellite tracking — CelesTrak TLEs, SGP4, visible-pass prediction | D92 accepted; phases 1–2 done (D94, D95), phase 3 nearly done (D96, D97). Phases 4–5 not started |
-| [design/render-gles3.md](design/render-gles3.md) | The GL ES 3.0 backend — parity port, then the sky/horizon/constellation-art/eclipse unlocks | proposed — design only |
 | [design/time-travel.md](design/time-travel.md) | Time-travel redesign — anchors (what stays still), the scrubber and fling-to-play, object trails as a standalone feature, the re-housed player and presets | proposed — D112, D113, D114 |
 
 ### Reference and living documents
@@ -220,9 +220,9 @@ The complete list of things these docs describe that do **not** exist in the cod
 - Full localization beyond the D78 groundwork ([design/localization.md](design/localization.md)).
 - An off-the-shelf ephemeris library ([design/ephemeris-accuracy.md](design/ephemeris-accuracy.md) §3).
 - Comet layers ([design/layers-and-app.md](design/layers-and-app.md)).
-- The GL ES 3.0 renderer backend and everything downstream of it — true sky gradient,
-  ground and horizon profile, constellation art, eclipses
-  ([design/render-gles3.md](design/render-gles3.md)).
+- The GL ES 3.0 backend's **Part B** — the ground and horizon profile, constellation art, and
+  the wider feature slate ([design/render-gles3.md](design/render-gles3.md) §7.2–§8). Part A
+  (the backend itself) and the true sky gradient are built.
 - Widgets & notifications phase 4 — conjunctions, moon phases, rise alerts
   ([design/widgets-and-notifications.md](design/widgets-and-notifications.md)).
 - The splash-to-sky cross-fade ([design/ux-polish.md](design/ux-polish.md) item 2, step 2).

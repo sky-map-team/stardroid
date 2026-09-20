@@ -316,6 +316,11 @@
     <string name="enable_analytics" translation_description="Preference label to opt in to sending anonymous usage statistics">Send usage statistics</string>
     <string name="enable_analytics_desc" translation_description="Description/summary for the usage statistics preference">Make Sky Map better by sending anonymous data to Google Analytics</string>
     <string name="settings_diagnostics_summary" translation_description="Summary for the settings row that opens the diagnostics screen, which shows technical sensor, location and performance readouts useful when reporting a problem">Sensor, location and performance details</string>
+    <string name="settings_section_advanced" translation_description="Preferences category heading for advanced or experimental settings that most people will not need to change">Advanced</string>
+    <string name="settings_renderer" translation_description="Preference title for choosing which graphics engine draws the sky map">Graphics engine</string>
+    <string name="settings_renderer_summary" translation_description="Summary explaining the graphics engine preference: the newer engine draws a more realistic sky and clearer labels, and the map restarts when the setting is changed">The newer engine draws a more realistic daytime and twilight sky, and clearer labels. The map restarts when you change this.</string>
+    <string name="settings_renderer_gles1" translation_description="Name of the original, long-standing graphics engine option, shown in a list of two choices">Classic</string>
+    <string name="settings_renderer_gles3" translation_description="Name of the newer graphics engine option, shown in a list of two choices">Enhanced</string>
     <string name="settings_tap_to_identify" translation_description="Preference title for showing info cards when tapping objects">Show info on tap</string>
     <string name="settings_tap_to_identify_summary" translation_description="Preference summary for the tap info feature">Tap celestial objects to learn about them</string>
     <string name="settings_tap_in_auto_mode" translation_description="Preference title for enabling info cards in auto/sensor mode">Info cards in auto mode</string>

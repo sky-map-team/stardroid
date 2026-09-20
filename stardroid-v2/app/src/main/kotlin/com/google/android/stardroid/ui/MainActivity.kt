@@ -64,7 +64,8 @@ import com.google.android.stardroid.render.AssetImageLoader
 import com.google.android.stardroid.render.RenderBinder
 import com.google.android.stardroid.render.RenderConnector
 import com.google.android.stardroid.render.RendererInfoStore
-import com.google.android.stardroid.render.gles1.GLSkyRenderer
+import com.google.android.stardroid.render.createRendererBackend
+import com.google.android.stardroid.render.supportsGles3
 import com.google.android.stardroid.satellites.nextVisiblePass
 import com.google.android.stardroid.satellites.satelliteEntryPoint
 import com.google.android.stardroid.satellites.satelliteUiStatusFlow
@@ -75,6 +76,7 @@ import com.google.android.stardroid.sensors.OrientationSource
 import com.google.android.stardroid.sensors.SensorKind
 import com.google.android.stardroid.sensors.SensorStatusSource
 import com.google.android.stardroid.settings.AutoDimness
+import com.google.android.stardroid.settings.Settings as SkyMapSettings
 import com.google.android.stardroid.startup.Experiment
 import com.google.android.stardroid.startup.ExperimentConfig
 import com.google.android.stardroid.startup.StartupRouter
@@ -102,15 +104,15 @@ import com.google.android.stardroid.widget.MoonWidget
 import com.google.android.stardroid.widget.MoonWidgetReceiver
 import com.google.android.stardroid.widget.WidgetScheduler
 import dagger.hilt.android.AndroidEntryPoint
+import java.util.Calendar
+import javax.inject.Inject
+import kotlin.time.Duration
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.withContext
-import java.util.Calendar
-import javax.inject.Inject
-import kotlin.time.Duration
-import com.google.android.stardroid.settings.Settings as SkyMapSettings
 
 /**
  * The single-activity Compose shell (layers-and-app.md): builds the GL surface, wires the
@@ -288,6 +290,7 @@ class MainActivity : ComponentActivity() {
                     fusedSensorAvailable =
                         getSystemService(SensorManager::class.java)
                             ?.getDefaultSensor(Sensor.TYPE_ROTATION_VECTOR) != null,
+                    gles3Available = supportsGles3(this@MainActivity),
                 )
             }
         }
@@ -420,17 +423,28 @@ class MainActivity : ComponentActivity() {
         }
 
         val imageLoader = AssetImageLoader(assets)
-        val glRenderer =
-            GLSkyRenderer(
-                resources.displayMetrics.density,
-                imageLoader::load,
-                rendererInfoStore::set,
+        // The EGL context version is fixed when the surface is created and cannot change
+        // afterwards, so the backend choice is read once, here, and a change to it takes effect
+        // on the next map launch (the settings row recreates the activity to make that prompt).
+        // One blocking read of one preference at startup; the alternative is deferring surface
+        // creation behind a coroutine, which buys nothing and costs a frame.
+        val chosenBackend = runBlocking { settings.rendererBackend.first() }
+        var requestRender: () -> Unit = {}
+        val backend =
+            createRendererBackend(
+                context = this,
+                assets = assets,
+                backend = chosenBackend,
+                density = resources.displayMetrics.density,
+                imageLoader = imageLoader::load,
+                onRendererInfo = rendererInfoStore::set,
+                requestRender = { requestRender() },
             )
         glSurfaceView =
             GLSurfaceView(this).apply {
-                setEGLContextClientVersion(1)
+                setEGLContextClientVersion(backend.eglContextClientVersion)
                 setEGLConfigChooser(8, 8, 8, 8, 16, 0)
-                setRenderer(glRenderer)
+                setRenderer(backend.surfaceRenderer)
                 renderMode = GLSurfaceView.RENDERMODE_WHEN_DIRTY
                 // Through-camera mode (camera-ar-mode.md/D64, Option A): the surface holds
                 // alpha and composites above the CameraX preview plane but below the window.
@@ -438,7 +452,10 @@ class MainActivity : ComponentActivity() {
                 holder.setFormat(PixelFormat.TRANSLUCENT)
                 setZOrderMediaOverlay(true)
             }
-        val connector = RenderConnector(glRenderer, glSurfaceView)
+        // Only the GLES3 backend uses this, and only while a label fade is in flight; the rest
+        // of the time RENDERMODE_WHEN_DIRTY still means a still device draws nothing (D23).
+        requestRender = glSurfaceView::requestRender
+        val connector = RenderConnector(backend.skyRenderer, glSurfaceView)
         val binder = RenderBinder(connector)
         lifecycleScope.launch {
             try {
@@ -508,6 +525,10 @@ class MainActivity : ComponentActivity() {
                     onRequestLocationPermission = ::requestLocationPermission,
                     onRequestAutoLocation = ::requestAutoLocation,
                     onOpenAppSettings = ::openAppSettings,
+                    // The EGL context version is fixed at surface creation, so a new backend
+                    // needs a new surface: recreate rather than leave the choice looking
+                    // like it did nothing.
+                    onRestartForRenderer = ::recreate,
                     arCamera = skyCameraPreview,
                     hasCameraPermission = {
                         checkSelfPermission(Manifest.permission.CAMERA) ==

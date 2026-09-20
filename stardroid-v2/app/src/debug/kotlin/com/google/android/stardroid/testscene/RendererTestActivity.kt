@@ -53,10 +53,20 @@ import com.google.android.stardroid.render.RenderConnector
 import com.google.android.stardroid.render.api.ImageRef
 import com.google.android.stardroid.render.api.RenderState
 import com.google.android.stardroid.render.api.SkyCamera
-import com.google.android.stardroid.render.gles1.GLSkyRenderer
+import com.google.android.stardroid.render.createRendererBackend
 import com.google.android.stardroid.sensors.GeomagneticDeclinationSource
 import com.google.android.stardroid.sensors.OrientationSource
 import com.google.android.stardroid.sensors.SensorOrientationSource
+import com.google.android.stardroid.settings.RendererBackend
+import java.util.Locale
+import java.util.concurrent.atomic.AtomicLong
+import javax.microedition.khronos.egl.EGLConfig
+import javax.microedition.khronos.opengles.GL10
+import kotlin.math.PI
+import kotlin.math.asin
+import kotlin.math.atan2
+import kotlin.math.cos
+import kotlin.math.sin
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -71,15 +81,6 @@ import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
 import kotlinx.datetime.Clock
 import kotlinx.datetime.Instant
-import java.util.Locale
-import java.util.concurrent.atomic.AtomicLong
-import javax.microedition.khronos.egl.EGLConfig
-import javax.microedition.khronos.opengles.GL10
-import kotlin.math.PI
-import kotlin.math.asin
-import kotlin.math.atan2
-import kotlin.math.cos
-import kotlin.math.sin
 
 /**
  * Development-only activity: drives [GLSkyRenderer] with the real bundled catalog (slice 4d) —
@@ -119,6 +120,15 @@ class RendererTestActivity : Activity() {
          * compositing path (camera-ar-mode.md/D64).
          */
         const val EXTRA_TRANSLUCENT = "translucent"
+
+        /**
+         * Which backend to run, as a [RendererBackend] name; defaults to
+         * [RendererBackend.GLES1]. An intent extra rather than the user's preference, because
+         * the D19 perf gate and the golden scenes need to target a *named* backend — the point
+         * of running both is to compare them, which means neither may depend on a setting the
+         * device happens to be carrying.
+         */
+        const val EXTRA_BACKEND = "backend"
 
         private const val LOCATION_PERMISSION_REQUEST = 1
 
@@ -171,10 +181,18 @@ class RendererTestActivity : Activity() {
         sensorMode = savedInstanceState?.getBoolean(KEY_SENSOR_MODE) ?: false
 
         val assetImageLoader = AssetImageLoader(assets)
-        val glRenderer =
-            GLSkyRenderer(
-                density,
+        // The same backend the map would use, so the D19 perf gate and the golden scenes
+        // exercise whichever one is selected rather than always the GLES1 one.
+        var requestRender: () -> Unit = {}
+        val backend =
+            createRendererBackend(
+                context = this,
+                assets = assets,
+                backend = requestedBackend(),
+                density = density,
                 imageLoader = { ref -> resolveImage(ref) ?: assetImageLoader.load(ref) },
+                onRendererInfo = {},
+                requestRender = { requestRender() },
             )
         val glRenderMode =
             if (benchmark) {
@@ -184,17 +202,18 @@ class RendererTestActivity : Activity() {
             }
         glSurfaceView =
             GLSurfaceView(this).apply {
-                setEGLContextClientVersion(1)
+                setEGLContextClientVersion(backend.eglContextClientVersion)
                 setEGLConfigChooser(8, 8, 8, 8, 16, 0)
-                setRenderer(FrameCountingRenderer(glRenderer))
+                setRenderer(FrameCountingRenderer(backend.surfaceRenderer))
                 renderMode = glRenderMode
                 if (translucentBackground) {
                     holder.setFormat(PixelFormat.TRANSLUCENT)
                     setZOrderMediaOverlay(true)
                 }
             }
+        requestRender = glSurfaceView::requestRender
 
-        connector = RenderConnector(glRenderer, glSurfaceView)
+        connector = RenderConnector(backend.skyRenderer, glSurfaceView)
         if (translucentBackground) submitRenderState()
         orientationSource =
             SensorOrientationSource(getSystemService(SensorManager::class.java)) {
@@ -597,8 +616,15 @@ class RendererTestActivity : Activity() {
             body.name.lowercase().replaceFirstChar { it.uppercase() }
     }
 
+    /** The backend named by [EXTRA_BACKEND], or the shipping default. */
+    private fun requestedBackend(): RendererBackend {
+        val name = intent.getStringExtra(EXTRA_BACKEND) ?: return RendererBackend.GLES1
+        return RendererBackend.entries.firstOrNull { it.name.equals(name, ignoreCase = true) }
+            ?: RendererBackend.GLES1
+    }
+
     private inner class FrameCountingRenderer(
-        private val delegate: GLSkyRenderer,
+        private val delegate: GLSurfaceView.Renderer,
     ) : GLSurfaceView.Renderer {
         override fun onSurfaceCreated(
             gl: GL10,
