@@ -49,6 +49,15 @@ Five reusable worktrees live under `.worktrees/` in the repo root:
 | stardroid-delta | `.worktrees/stardroid-delta` | `worktree/stardroid-delta` |
 | stardroid-epsilon | `.worktrees/stardroid-epsilon` | `worktree/stardroid-epsilon` |
 
+### Default to a worktree for new features
+
+Unless told otherwise, always build a new feature (or fix) in a **free Greek-letter worktree**,
+not in the main checkout. A worktree is free when its checked-out branch is still its
+`worktree/stardroid-*` placeholder (check with `git worktree list` and
+`git -C .worktrees/<name> status`). Claim one as described below and do all edits, builds and
+commits there. Only work in the main checkout when the user explicitly asks for that, or for
+documentation-only changes.
+
 ### Worktree lifecycle
 
 **1. Claim a worktree for a new task** — fetch latest master, then branch from it:
