@@ -30,6 +30,9 @@ interface LocationProvider {
     /** Stops location updates; idempotent. */
     fun stopUpdates()
 
-    /** Whether any location provider is enabled on this device. */
+    /**
+     * Whether this provider can produce a location right now. False means acquiring would
+     * only wait out the timeout, so the caller reports it at once.
+     */
     fun isAvailable(): Boolean
 }

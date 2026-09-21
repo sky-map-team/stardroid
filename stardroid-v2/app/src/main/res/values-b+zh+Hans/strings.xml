@@ -265,6 +265,7 @@
     <string name="location_set_button">设置位置</string>
     <string name="location_place_not_found">未找到地点 — 请尝试更具体的名称</string>
     <string name="location_geocoder_offline">无网络 — 请直接输入坐标</string>
+    <string name="location_geocoder_unavailable">此设备上没有地理编码服务 — 请直接输入坐标</string>
     <string name="location_invalid_latitude">纬度必须介于 −90 和 90 之间</string>
     <string name="location_invalid_longitude">经度必须介于 −180 和 180 之间</string>
     <string name="location_hemisphere_north_description" translation_description="Accessibility label for the latitude hemisphere toggle button, selected for a positive value">北半球（正纬度）</string>

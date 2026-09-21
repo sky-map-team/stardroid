@@ -271,6 +271,7 @@
     <string name="location_set_button">تعيين الموقع</string>
     <string name="location_place_not_found">لم يتم العثور على المكان — جرب اسمًا أكثر تحديدًا</string>
     <string name="location_geocoder_offline">لا توجد إنترنت — أدخل الإحداثيات مباشرة</string>
+    <string name="location_geocoder_unavailable">لا توجد خدمة تحديد الموقع الجغرافي على هذا الجهاز — أدخل الإحداثيات مباشرةً</string>
     <string name="location_invalid_latitude">يجب أن يكون خط العرض بين −90 و 90</string>
     <string name="location_invalid_longitude">يجب أن يكون خط الطول بين −180 و 180</string>
     <string name="location_hemisphere_north_description" translation_description="Accessibility label for the latitude hemisphere toggle button, selected for a positive value">النصف الشمالي من الكرة الأرضية (خط عرض موجب)</string>

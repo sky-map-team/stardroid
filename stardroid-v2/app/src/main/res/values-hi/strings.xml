@@ -272,6 +272,7 @@
     <string name="location_set_button">स्थान सेट करें</string>
     <string name="location_place_not_found">स्थान नहीं मिला — अधिक विशिष्ट नाम आजमाएं</string>
     <string name="location_geocoder_offline">कोई इंटरनेट नहीं — सीधे निर्देशांक दर्ज करें</string>
+    <string name="location_geocoder_unavailable">इस डिवाइस पर कोई जियोकोडिंग सेवा नहीं है — सीधे निर्देशांक दर्ज करें</string>
     <string name="location_invalid_latitude">अक्षांश −90 और 90 के बीच होना चाहिए</string>
     <string name="location_invalid_longitude">देशांतर −180 और 180 के बीच होना चाहिए</string>
     <string name="location_hemisphere_north_description" translation_description="Accessibility label for the latitude hemisphere toggle button, selected for a positive value">उत्तरी गोलार्ध (धनात्मक अक्षांश)</string>

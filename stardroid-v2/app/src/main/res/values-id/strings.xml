@@ -272,6 +272,7 @@
     <string name="location_set_button">Atur Lokasi</string>
     <string name="location_place_not_found">Tempat tidak ditemukan — coba nama yang lebih spesifik</string>
     <string name="location_geocoder_offline">Tidak ada internet — masukkan koordinat secara langsung</string>
+    <string name="location_geocoder_unavailable">Tidak ada layanan geocoding di perangkat ini — masukkan koordinat secara langsung</string>
     <string name="location_invalid_latitude">Lintang harus antara −90 dan 90</string>
     <string name="location_invalid_longitude">Bujur harus antara −180 dan 180</string>
     <string name="location_hemisphere_north_description" translation_description="Accessibility label for the latitude hemisphere toggle button, selected for a positive value">Belahan bumi utara (lintang positif)</string>

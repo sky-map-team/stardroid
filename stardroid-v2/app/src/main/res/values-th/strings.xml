@@ -252,6 +252,7 @@
     <string name="location_set_button">ตั้งตำแหน่ง</string>
     <string name="location_place_not_found">ไม่พบสถานที่ — ลองใช้ชื่อที่เจาะจงมากขึ้น</string>
     <string name="location_geocoder_offline">ไม่มีอินเทอร์เน็ต — ป้อนพิกัดโดยตรง</string>
+    <string name="location_geocoder_unavailable">ไม่มีบริการระบุพิกัดบนอุปกรณ์นี้ — โปรดป้อนพิกัดโดยตรง</string>
     <string name="location_invalid_latitude">ละติจูดต้องอยู่ระหว่าง −90 ถึง 90</string>
     <string name="location_invalid_longitude">ลองจิจูดต้องอยู่ระหว่าง −180 ถึง 180</string>
     <string name="location_hemisphere_north_description" translation_description="Accessibility label for the latitude hemisphere toggle button, selected for a positive value">ซีกโลกเหนือ (ละติจูดบวก)</string>

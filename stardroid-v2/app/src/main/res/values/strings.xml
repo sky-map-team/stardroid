@@ -272,6 +272,8 @@
     <string name="location_set_button" translation_description="Button that confirms and applies the manually entered location">Set Location</string>
     <string name="location_place_not_found" translation_description="Inline error shown when a place name search returns no results">Place not found — try a more specific name</string>
     <string name="location_geocoder_offline" translation_description="Inline message shown when geocoding fails because there is no internet connection">No internet — enter coordinates directly</string>
+    <string name="location_geocoder_unavailable" translation_description="Inline message shown when place name lookup is disabled because the device has no geocoding backend, typically due to missing Google Play Services">No geocoding service on this device — enter coordinates directly</string>
+    <string name="location_geocoder_failed" translation_description="Inline message shown when place name lookup fails for a reason other than being offline or the place not existing">Place lookup failed — enter coordinates directly</string>
     <string name="location_invalid_latitude" translation_description="Validation error for latitude values outside the valid range">Latitude must be between −90 and 90</string>
     <string name="location_invalid_longitude" translation_description="Validation error for longitude values outside the valid range">Longitude must be between −180 and 180</string>
     <string name="location_hemisphere_north_description" translation_description="Accessibility label for the latitude hemisphere toggle button, selected for a positive value">Northern hemisphere (positive latitude)</string>
@@ -424,7 +426,7 @@
     <string name="diagnostics_location_format" translation_description="Format for location in diagnostics: lat, lon (source). %1$.4f is lat, %2$.4f is lon, %3$s is source">%1$.4f°, %2$.4f° (%3$s)</string>
     <string name="diagnostics_location_unset" translation_description="Location status shown in diagnostics when no location has been set yet">Not set</string>
     <string name="diagnostics_location_acquiring" translation_description="Location status shown in diagnostics while the location is being acquired">Acquiring…</string>
-    <string name="diagnostics_location_hardware_unavailable" translation_description="Location status shown in diagnostics when no location hardware is available">No location hardware</string>
+    <string name="diagnostics_location_hardware_unavailable" translation_description="Location status shown in diagnostics when the device has no usable location provider, whether because it lacks location hardware or none is enabled">No usable location provider</string>
     <string name="diagnostics_pointing" translation_description="Row label in the diagnostics screen showing a snapshot of where the phone is currently pointing in the sky (Right Ascension and Declination)">Pointing snapshot</string>
     <string name="diagnostics_dec_format" translation_description="Format for Declination in degrees. %1$.2f is the value">%1$.2f°</string>
     <string name="diagnostics_magnetic_correction" translation_description="Row label in the diagnostics screen showing the applied magnetic declination correction">Mag correction</string>

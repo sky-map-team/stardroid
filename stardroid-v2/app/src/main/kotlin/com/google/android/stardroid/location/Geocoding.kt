@@ -15,6 +15,7 @@ import com.google.android.stardroid.math.LatLong
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import java.io.IOException
 import java.util.Locale
 
 /**
@@ -32,9 +33,24 @@ interface Geocoding {
         /** The geocoder answered, but knows no such place. */
         data object NotFound : PlaceResult
 
-        /** No geocoder on this device or no network; coordinates must be typed. */
-        data object Unavailable : PlaceResult
+        /**
+         * This device has no geocoder backend (typically no Google Play Services, e.g.
+         * de-Googled ROMs), so no lookup was attempted; coordinates must be typed.
+         */
+        data object NoBackend : PlaceResult
+
+        /** The backend couldn't reach its service, typically because the device is offline. */
+        data object NetworkError : PlaceResult
+
+        /** The backend failed in some way other than the network; coordinates must be typed. */
+        data object Failed : PlaceResult
     }
+
+    /**
+     * Whether place lookup can work at all on this device. False means there is no geocoder
+     * backend, independent of connectivity, so the UI can say so up front.
+     */
+    fun isPlaceLookupAvailable(): Boolean
 
     /** Looks up coordinates for a typed place name. */
     suspend fun resolvePlace(name: String): PlaceResult
@@ -50,8 +66,10 @@ interface Geocoding {
 class AndroidGeocoding(
     private val context: Context,
 ) : Geocoding {
+    override fun isPlaceLookupAvailable(): Boolean = Geocoder.isPresent()
+
     override suspend fun resolvePlace(name: String): Geocoding.PlaceResult {
-        if (!Geocoder.isPresent()) return Geocoding.PlaceResult.Unavailable
+        if (!isPlaceLookupAvailable()) return Geocoding.PlaceResult.NoBackend
         return withContext(Dispatchers.IO) {
             try {
                 @Suppress("DEPRECATION")
@@ -64,15 +82,18 @@ class AndroidGeocoding(
                 }
             } catch (e: CancellationException) {
                 throw e
+            } catch (_: IOException) {
+                Geocoding.PlaceResult.NetworkError
             } catch (_: Exception) {
-                // Broken geocoder services on some ROMs throw more than IOException.
-                Geocoding.PlaceResult.Unavailable
+                // Broken geocoder services on some ROMs throw more than IOException; that
+                // isn't evidence of a network problem, so don't blame the user's connection.
+                Geocoding.PlaceResult.Failed
             }
         }
     }
 
     override suspend fun reverseGeocode(location: LatLong): String? {
-        if (!Geocoder.isPresent()) return null
+        if (!isPlaceLookupAvailable()) return null
         return withContext(Dispatchers.IO) {
             try {
                 @Suppress("DEPRECATION")

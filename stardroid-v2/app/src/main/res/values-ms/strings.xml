@@ -272,6 +272,7 @@
     <string name="location_set_button">Tetapkan Lokasi</string>
     <string name="location_place_not_found">Tempat tidak ditemui — cuba nama yang lebih spesifik</string>
     <string name="location_geocoder_offline">Tiada internet — masukkan koordinat secara langsung</string>
+    <string name="location_geocoder_unavailable">Tiada perkhidmatan geokod pada peranti ini — masukkan koordinat secara terus</string>
     <string name="location_invalid_latitude">Latitud mesti antara −90 dan 90</string>
     <string name="location_invalid_longitude">Longitud mesti antara −180 dan 180</string>
     <string name="location_hemisphere_north_description" translation_description="Accessibility label for the latitude hemisphere toggle button, selected for a positive value">Hemisfera utara (latitud positif)</string>

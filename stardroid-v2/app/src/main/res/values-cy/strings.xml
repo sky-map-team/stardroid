@@ -272,6 +272,7 @@
     <string name="location_set_button">Gosod Lleoliad</string>
     <string name="location_place_not_found">Ni chanfuwyd y lle — ceisiwch enw mwy penodol</string>
     <string name="location_geocoder_offline">Dim rhyngrwyd — rhowch gyfesurynnau yn uniongyrchol</string>
+    <string name="location_geocoder_unavailable">Dim gwasanaeth geocodio ar y ddyfais hon — rhowch gyfesurynnau yn uniongyrchol</string>
     <string name="location_invalid_latitude">Rhaid i\'r lledred fod rhwng −90 a 90</string>
     <string name="location_invalid_longitude">Rhaid i\'r hydred fod rhwng −180 a 180</string>
     <string name="location_hemisphere_north_description" translation_description="Accessibility label for the latitude hemisphere toggle button, selected for a positive value">Hemisffer Gogleddol (lledred positif)</string>

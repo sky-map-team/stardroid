@@ -277,6 +277,7 @@
     <string name="location_set_button">تعیین موقعیت</string>
     <string name="location_place_not_found">مکان یافت نشد — نام دقیق‌تری را امتحان کنید</string>
     <string name="location_geocoder_offline">بدون اینترنت — مختصات را مستقیماً وارد کنید</string>
+    <string name="location_geocoder_unavailable">سرویس ژئوکدینگ در این دستگاه موجود نیست — مختصات را مستقیماً وارد کنید</string>
     <string name="location_invalid_latitude">عرض جغرافیایی باید بین −90 و 90 باشد</string>
     <string name="location_invalid_longitude">طول جغرافیایی باید بین −180 و 180 باشد</string>
     <string name="location_hemisphere_north_description" translation_description="Accessibility label for the latitude hemisphere toggle button, selected for a positive value">نیمکره شمالی (عرض جغرافیایی مثبت)</string>

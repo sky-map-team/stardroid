@@ -272,6 +272,7 @@
     <string name="location_set_button">Angi posisjon</string>
     <string name="location_place_not_found">Sted ikke funnet – prøv et mer spesifikt navn</string>
     <string name="location_geocoder_offline">Ingen internett – angi koordinater direkte</string>
+    <string name="location_geocoder_unavailable">Ingen geokodingstjeneste på denne enheten — skriv inn koordinater direkte</string>
     <string name="location_invalid_latitude">Breddegrad må være mellom −90 og 90</string>
     <string name="location_invalid_longitude">Lengdegrad må være mellom −180 og 180</string>
     <string name="location_hemisphere_north_description" translation_description="Accessibility label for the latitude hemisphere toggle button, selected for a positive value">Den nordlige halvkule (positiv breddegrad)</string>
