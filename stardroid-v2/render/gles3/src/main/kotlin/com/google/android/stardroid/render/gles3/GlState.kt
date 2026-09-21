@@ -23,9 +23,11 @@ import android.opengl.GLES30
  * remembered names then refer to objects that no longer exist.
  */
 class GlState {
-    private var program = 0
-    private var vertexArray = 0
-    private var texture2d = 0
+    // The bind-or-skip decisions live in BoundName so they can be unit-tested without a GL
+    // context; what stays here is the GL call each decision guards.
+    private val program = BoundName()
+    private val vertexArray = BoundName()
+    private val texture2d = BoundName()
     private var activeUnit = -1
     private var blendMode = BlendMode.NONE
 
@@ -41,15 +43,11 @@ class GlState {
     }
 
     fun useProgram(shader: ShaderProgram) {
-        if (program == shader.id) return
-        GLES30.glUseProgram(shader.id)
-        program = shader.id
+        if (program.needsBind(shader.id)) GLES30.glUseProgram(shader.id)
     }
 
     fun bindVertexArray(name: Int) {
-        if (vertexArray == name) return
-        GLES30.glBindVertexArray(name)
-        vertexArray = name
+        if (vertexArray.needsBind(name)) GLES30.glBindVertexArray(name)
     }
 
     fun bindTexture(
@@ -60,11 +58,9 @@ class GlState {
             GLES30.glActiveTexture(GLES30.GL_TEXTURE0 + unit)
             activeUnit = unit
             // A unit change invalidates what we believe is bound to the *new* unit.
-            texture2d = -1
+            texture2d.invalidate()
         }
-        if (texture2d == name) return
-        GLES30.glBindTexture(GLES30.GL_TEXTURE_2D, name)
-        texture2d = name
+        if (texture2d.needsBind(name)) GLES30.glBindTexture(GLES30.GL_TEXTURE_2D, name)
     }
 
     fun blend(mode: BlendMode) {
@@ -93,7 +89,7 @@ class GlState {
      * instead of the new mesh's. Setting the cache to 0 matches exactly what GL did.
      */
     fun onVertexArrayDeleted(name: Int) {
-        if (vertexArray == name) vertexArray = 0
+        vertexArray.onDeleted(name)
     }
 
     /**
@@ -101,14 +97,14 @@ class GlState {
      * of texture zero on the units it was bound to, which the cache must not miss.
      */
     fun onTexturesDeleted(names: IntArray) {
-        if (names.any { it == texture2d }) texture2d = 0
+        texture2d.onAnyDeleted(names)
     }
 
     /** Forgets everything. Call after EGL context loss, before the first draw of a new context. */
     fun invalidate() {
-        program = 0
-        vertexArray = 0
-        texture2d = 0
+        program.reset()
+        vertexArray.reset()
+        texture2d.reset()
         activeUnit = -1
         blendMode = BlendMode.NONE
     }
