@@ -77,7 +77,9 @@ class ShaderConformanceTest {
     @After
     fun tearDown() {
         if (fbo != 0) GLES30.glDeleteFramebuffers(1, intArrayOf(fbo), 0)
-        if (texture != 0) deleteTextures(intArrayOf(texture))
+        // A throwaway cache: this test never binds through GlState, so there is nothing for the
+        // delete notification to correct — it is here to satisfy the signature, not to track.
+        if (texture != 0) deleteTextures(GlState(), intArrayOf(texture))
         gl?.release()
         gl = null
     }
