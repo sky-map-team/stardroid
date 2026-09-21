@@ -275,6 +275,7 @@
     <string name="location_set_button">Konumu Ayarla</string>
     <string name="location_place_not_found">Yer bulunamadı — daha spesifik bir ad deneyin</string>
     <string name="location_geocoder_offline">İnternet yok — koordinatları doğrudan girin</string>
+    <string name="location_geocoder_unavailable">Bu cihazda coğrafi kodlama hizmeti yok — koordinatları doğrudan girin</string>
     <string name="location_invalid_latitude">Enlem −90 ile 90 arasında olmalıdır</string>
     <string name="location_invalid_longitude">Boylam −180 ile 180 arasında olmalıdır</string>
     <string name="location_hemisphere_north_description" translation_description="Accessibility label for the latitude hemisphere toggle button, selected for a positive value">Kuzey yarımküre (pozitif enlem)</string>

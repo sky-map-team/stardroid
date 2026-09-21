@@ -293,6 +293,8 @@ fun ManualLocationEntryDialog(
     val east = cardinalDirections[4]
     val south = cardinalDirections[8]
     val west = cardinalDirections[12]
+    // Read once: the dialog body recomposes on every keystroke, and this asks the platform.
+    val placeLookupAvailable = viewModel.placeLookupAvailable
     var placeText by rememberSaveable { mutableStateOf("") }
     // Prefill from the current location, as v1 did when coordinates were known.
     var latitudeText by rememberSaveable {
@@ -326,6 +328,8 @@ fun ManualLocationEntryDialog(
                     onValueChange = { placeText = it },
                     label = { Text(stringResource(R.string.location_place_name_hint)) },
                     singleLine = true,
+                    // No geocoder backend: the field can never work, so say so up front.
+                    enabled = placeLookupAvailable,
                     // trailingIcon (rather than a sibling Row) lets Material position this
                     // against the field's actual content box instead of its full bounds,
                     // which include the floating label — a sibling Row's shared vertical
@@ -334,7 +338,10 @@ fun ManualLocationEntryDialog(
                         if (entry.resolving) {
                             CircularProgressIndicator(Modifier.size(24.dp))
                         } else {
-                            IconButton(onClick = { viewModel.resolvePlace(placeText) }) {
+                            IconButton(
+                                onClick = { viewModel.resolvePlace(placeText) },
+                                enabled = placeLookupAvailable,
+                            ) {
                                 Icon(
                                     Icons.Default.Search,
                                     contentDescription =
@@ -345,14 +352,22 @@ fun ManualLocationEntryDialog(
                     },
                     modifier = Modifier.fillMaxWidth(),
                 )
-                entry.placeError?.let { error ->
+                val placeError =
+                    entry.placeError
+                        ?: LocationViewModel.PlaceError.NO_BACKEND
+                            .takeUnless { placeLookupAvailable }
+                placeError?.let { error ->
                     Text(
                         stringResource(
                             when (error) {
                                 LocationViewModel.PlaceError.NOT_FOUND ->
                                     R.string.location_place_not_found
-                                LocationViewModel.PlaceError.UNAVAILABLE ->
+                                LocationViewModel.PlaceError.NO_BACKEND ->
+                                    R.string.location_geocoder_unavailable
+                                LocationViewModel.PlaceError.NETWORK ->
                                     R.string.location_geocoder_offline
+                                LocationViewModel.PlaceError.FAILED ->
+                                    R.string.location_geocoder_failed
                             },
                         ),
                         color = MaterialTheme.colorScheme.error,

@@ -41,6 +41,9 @@ class LocationViewModelTest {
         var placeResult: Geocoding.PlaceResult = Geocoding.PlaceResult.NotFound
         var reverseName: String? = null
         var lastQuery: String? = null
+        var lookupAvailable = true
+
+        override fun isPlaceLookupAvailable(): Boolean = lookupAvailable
 
         override suspend fun resolvePlace(name: String): Geocoding.PlaceResult {
             lastQuery = name
@@ -186,21 +189,32 @@ class LocationViewModelTest {
         }
 
     @Test
-    fun `place lookup failures map onto the two error kinds`() =
+    fun `place lookup failures map onto distinct error kinds`() =
         runTest(dispatcher.scheduler) {
             val vm = LocationViewModel(controller(backgroundScope), geocoding)
+            val expected =
+                mapOf(
+                    Geocoding.PlaceResult.NotFound to LocationViewModel.PlaceError.NOT_FOUND,
+                    Geocoding.PlaceResult.NoBackend to LocationViewModel.PlaceError.NO_BACKEND,
+                    Geocoding.PlaceResult.NetworkError to LocationViewModel.PlaceError.NETWORK,
+                    Geocoding.PlaceResult.Failed to LocationViewModel.PlaceError.FAILED,
+                )
+            for ((result, error) in expected) {
+                geocoding.placeResult = result
+                vm.resolvePlace("Atlantis")
+                runCurrent()
+                assertThat(vm.manualEntry.value.placeError).isEqualTo(error)
+                assertThat(vm.manualEntry.value.resolving).isFalse()
+            }
+        }
 
-            geocoding.placeResult = Geocoding.PlaceResult.NotFound
-            vm.resolvePlace("Atlantis")
-            runCurrent()
-            assertThat(vm.manualEntry.value.placeError)
-                .isEqualTo(LocationViewModel.PlaceError.NOT_FOUND)
-
-            geocoding.placeResult = Geocoding.PlaceResult.Unavailable
-            vm.resolvePlace("Paris")
-            runCurrent()
-            assertThat(vm.manualEntry.value.placeError)
-                .isEqualTo(LocationViewModel.PlaceError.UNAVAILABLE)
+    @Test
+    fun `placeLookupAvailable reflects the geocoder backend`() =
+        runTest(dispatcher.scheduler) {
+            val vm = LocationViewModel(controller(backgroundScope), geocoding)
+            assertThat(vm.placeLookupAvailable).isTrue()
+            geocoding.lookupAvailable = false
+            assertThat(vm.placeLookupAvailable).isFalse()
         }
 
     @Test

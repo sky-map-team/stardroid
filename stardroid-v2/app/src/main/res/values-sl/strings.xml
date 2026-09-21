@@ -272,6 +272,7 @@
     <string name="location_set_button">Nastavi lokacijo</string>
     <string name="location_place_not_found">Kraj ni najden – poskusite bolj specifično ime</string>
     <string name="location_geocoder_offline">Brez interneta – vnesite koordinate neposredno</string>
+    <string name="location_geocoder_unavailable">Na tej napravi ni storitve geokodiranja — vnesite koordinate neposredno</string>
     <string name="location_invalid_latitude">Geografska širina mora biti med −90 in 90</string>
     <string name="location_invalid_longitude">Geografska dolžina mora biti med −180 in 180</string>
     <string name="location_hemisphere_north_description" translation_description="Accessibility label for the latitude hemisphere toggle button, selected for a positive value">Severna polobla (pozitivna zemljepisna širina)</string>

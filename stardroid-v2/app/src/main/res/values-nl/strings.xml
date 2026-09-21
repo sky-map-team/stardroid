@@ -271,6 +271,7 @@
     <string name="location_set_button">Locatie instellen</string>
     <string name="location_place_not_found">Plaats niet gevonden — probeer een specifiekere naam</string>
     <string name="location_geocoder_offline">Geen internet — voer coördinaten rechtstreeks in</string>
+    <string name="location_geocoder_unavailable">Geocodering service niet beschikbaar op dit apparaat — voer coördinaten direct in</string>
     <string name="location_invalid_latitude">Breedtegraad moet tussen −90 en 90 liggen</string>
     <string name="location_invalid_longitude">Lengtegraad moet tussen −180 en 180 liggen</string>
     <string name="location_hemisphere_north_description" translation_description="Accessibility label for the latitude hemisphere toggle button, selected for a positive value">Noordelijk halfrond (positieve breedtegraad)</string>

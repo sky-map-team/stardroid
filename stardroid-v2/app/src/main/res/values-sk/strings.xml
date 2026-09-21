@@ -272,6 +272,7 @@
     <string name="location_set_button">Nastaviť polohu</string>
     <string name="location_place_not_found">Miesto sa nenašlo – skúste špecifickejší názov</string>
     <string name="location_geocoder_offline">Bez internetu – zadajte súradnice priamo</string>
+    <string name="location_geocoder_unavailable">Na tomto zariadení nie je k dispozícii služba geokódovania — zadajte súradnice priamo</string>
     <string name="location_invalid_latitude">Zemepisná šírka musí byť medzi −90 a 90</string>
     <string name="location_invalid_longitude">Zemepisná dĺžka musí byť medzi −180 a 180</string>
     <string name="location_hemisphere_north_description" translation_description="Accessibility label for the latitude hemisphere toggle button, selected for a positive value">Severná pologuľa (kladná zemepisná šírka)</string>

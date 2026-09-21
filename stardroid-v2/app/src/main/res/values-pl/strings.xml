@@ -255,6 +255,7 @@
     <string name="location_set_button">Ustaw lokalizację</string>
     <string name="location_place_not_found">Nie znaleziono miejsca — spróbuj bardziej szczegółowej nazwy</string>
     <string name="location_geocoder_offline">Brak Internetu — wprowadź współrzędne bezpośrednio</string>
+    <string name="location_geocoder_unavailable">Brak usługi geokodowania na tym urządzeniu — wprowadź współrzędne bezpośrednio</string>
     <string name="location_invalid_latitude">Szerokość geograficzna musi być między −90 a 90</string>
     <string name="location_invalid_longitude">Długość geograficzna musi być między −180 a 180</string>
     <string name="location_hemisphere_north_description" translation_description="Accessibility label for the latitude hemisphere toggle button, selected for a positive value">Półkula północna (szerokość dodatnia)</string>

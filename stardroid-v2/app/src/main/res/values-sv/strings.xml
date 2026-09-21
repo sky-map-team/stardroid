@@ -272,6 +272,7 @@
     <string name="location_set_button">Ange plats</string>
     <string name="location_place_not_found">Plats hittades inte – försök med ett mer specifikt namn</string>
     <string name="location_geocoder_offline">Ingen internet – ange koordinater direkt</string>
+    <string name="location_geocoder_unavailable">Ingen geokodningstjänst på den här enheten – ange koordinater direkt</string>
     <string name="location_invalid_latitude">Latitud måste vara mellan −90 och 90</string>
     <string name="location_invalid_longitude">Longitud måste vara mellan −180 och 180</string>
     <string name="location_hemisphere_north_description" translation_description="Accessibility label for the latitude hemisphere toggle button, selected for a positive value">Norra halvklotet (positiv latitud)</string>

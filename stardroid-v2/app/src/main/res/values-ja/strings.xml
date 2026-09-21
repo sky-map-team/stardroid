@@ -267,6 +267,7 @@
     <string name="location_set_button">現在地を設定</string>
     <string name="location_place_not_found">場所が見つかりません。より詳しい名前を入力してください</string>
     <string name="location_geocoder_offline">インターネットがありません。座標を直接入力してください</string>
+    <string name="location_geocoder_unavailable">このデバイスにはジオコーディングサービスがありません — 座標を直接入力してください</string>
     <string name="location_invalid_latitude">緯度は−90～90の間である必要があります</string>
     <string name="location_invalid_longitude">経度は−180～180の間である必要があります</string>
     <string name="location_hemisphere_north_description" translation_description="Accessibility label for the latitude hemisphere toggle button, selected for a positive value">北半球（北緯）</string>

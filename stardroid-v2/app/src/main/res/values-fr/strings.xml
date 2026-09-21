@@ -281,6 +281,7 @@
     <string name="location_set_button">Définir la localisation</string>
     <string name="location_place_not_found">Lieu non trouvé — essayez un nom plus spécifique</string>
     <string name="location_geocoder_offline">Pas de connexion Internet — entrez les coordonnées directement</string>
+    <string name="location_geocoder_unavailable">Aucun service de géocodage sur cet appareil — saisissez les coordonnées directement</string>
     <string name="location_invalid_latitude">La latitude doit être entre −90 et 90</string>
     <string name="location_invalid_longitude">La longitude doit être entre −180 et 180</string>
     <string name="location_hemisphere_north_description" translation_description="Accessibility label for the latitude hemisphere toggle button, selected for a positive value">Hémisphère nord (latitude positive)</string>

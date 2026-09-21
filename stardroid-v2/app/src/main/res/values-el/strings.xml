@@ -273,6 +273,7 @@
     <string name="location_set_button">Ορισμός Τοποθεσίας</string>
     <string name="location_place_not_found">Η τοποθεσία δεν βρέθηκε — δοκιμάστε ένα πιο συγκεκριμένο όνομα</string>
     <string name="location_geocoder_offline">Χωρίς διαδίκτυο — εισάγετε τις συντεταγμένες απευθείας</string>
+    <string name="location_geocoder_unavailable">Δεν υπάρχει υπηρεσία γεωκωδικοποίησης σε αυτήν τη συσκευή — εισαγάγετε τις συντεταγμένες απευθείας</string>
     <string name="location_invalid_latitude">Το γεωγραφικό πλάτος πρέπει να είναι μεταξύ −90 και 90</string>
     <string name="location_invalid_longitude">Το γεωγραφικό μήκος πρέπει να είναι μεταξύ −180 και 180</string>
     <string name="location_hemisphere_north_description" translation_description="Accessibility label for the latitude hemisphere toggle button, selected for a positive value">Βόρειο ημισφαίριο (θετικό γεωγραφικό πλάτος)</string>

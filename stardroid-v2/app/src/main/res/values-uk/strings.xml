@@ -273,6 +273,7 @@
     <string name="location_set_button">Встановити місцезнаходження</string>
     <string name="location_place_not_found">Місце не знайдено — спробуйте більш конкретну назву</string>
     <string name="location_geocoder_offline">Немає інтернету — введіть координати вручну</string>
+    <string name="location_geocoder_unavailable">На цьому пристрої немає служби геокодування — введіть координати безпосередньо</string>
     <string name="location_invalid_latitude">Широта має бути від −90 до 90</string>
     <string name="location_invalid_longitude">Довгота має бути від −180 до 180</string>
     <string name="location_hemisphere_north_description" translation_description="Accessibility label for the latitude hemisphere toggle button, selected for a positive value">Північна півкуля (додатна широта)</string>
