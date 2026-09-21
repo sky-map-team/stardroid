@@ -99,12 +99,12 @@ class BoundNameTest {
     }
 
     @Test
-    fun `invalidate forces the next bind of any name, including zero`() {
+    fun `forget forces the next bind of any name, including zero`() {
         // "We don't know what's bound" is a different claim from "zero is bound" — after a
         // texture-unit switch the cache describes a unit we are no longer looking at.
         val bound = BoundName()
         bound.needsBind(0)
-        bound.invalidate()
+        bound.forget()
         assertThat(bound.needsBind(0)).isTrue()
     }
 

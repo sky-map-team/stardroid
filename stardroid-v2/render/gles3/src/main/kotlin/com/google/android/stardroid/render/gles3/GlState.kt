@@ -58,7 +58,7 @@ class GlState {
             GLES30.glActiveTexture(GLES30.GL_TEXTURE0 + unit)
             activeUnit = unit
             // A unit change invalidates what we believe is bound to the *new* unit.
-            texture2d.invalidate()
+            texture2d.forget()
         }
         if (texture2d.needsBind(name)) GLES30.glBindTexture(GLES30.GL_TEXTURE_2D, name)
     }

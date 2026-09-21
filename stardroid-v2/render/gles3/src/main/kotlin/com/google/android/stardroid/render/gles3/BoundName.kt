@@ -48,19 +48,24 @@ class BoundName {
         if (current == name) current = 0
     }
 
-    /** True if any of [names] is the cached binding. */
+    /** Forgets the cached binding if it is one of [names], for the same reason as [onDeleted]. */
     fun onAnyDeleted(names: IntArray) {
         if (names.any { it == current }) current = 0
     }
 
     /**
-     * Forgets the binding entirely, so the next [needsBind] always reports `true`.
+     * Forgets what is bound, so the next [needsBind] always reports `true`.
      *
      * Distinct from [onDeleted]'s zeroing: this means "we no longer know what is bound", which
      * is not the same claim as "zero is bound". Used when switching active texture unit, where
      * the cache describes a different unit than the one now selected.
+     *
+     * Deliberately *not* called `invalidate`, even though that is the obvious name: `GlState`
+     * already has an `invalidate()` that means reset-to-GL-defaults, and it delegates here to
+     * [reset], not to this. Two same-named methods one call apart meaning opposite things is a
+     * trap worth spending a less obvious name to avoid.
      */
-    fun invalidate() {
+    fun forget() {
         current = UNKNOWN
     }
 
