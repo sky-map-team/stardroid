@@ -139,6 +139,26 @@ app can compensate for a fundamentally poor sensor.
 
 ---
 
+## Eclipses and overlaps look too early, too late, or change with zoom
+
+By default (the **Glyphs** setting) Sky Map draws the Sun, Moon and planets at fixed sizes that are
+larger than life, so they're easy to see at any zoom. Those sizes scale with zoom rather than
+matching the real sky, so two bodies can appear to overlap earlier, later, or for longer than
+they really do — and whether they overlap can change as you zoom in and out. This is most
+noticeable during solar eclipses and when the Moon passes close to a planet.
+
+To see a truer picture, change the planets' **Disc size**:
+
+1. Tap the layers button, or long press the layers bar, to open the layers sheet.
+2. Expand the **Planets** layer's options and set **Disc size** to **True scale** (real size at
+   every zoom; planets are specks until you zoom right in). **Steady** is a middle ground — a
+   fixed on-screen size that switches to real size as you zoom in.
+
+If the location and time are correct and True scale still looks wrong, send us your Diagnostics
+page (see "Still stuck?" below).
+
+---
+
 ## The info card won't close
 
 Tap anywhere outside the card, or use the back gesture/button, to dismiss it.

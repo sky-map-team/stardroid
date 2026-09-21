@@ -149,6 +149,30 @@ a known side-effect. This is not a Sky Map change.
 
 ---
 
+### CAT-ECLIPSE · Eclipse/overlap looks mistimed, or depends on zoom (v2)
+
+**What users say:** "the eclipse starts an hour early", "is the Moon eclipsing X or not? it
+depends on the zoom level", "the Moon and Sun overlap too soon"
+
+**Real cause:** By default the planets layer's **Disc size** is **Glyphs**: the Sun, Moon and
+planets are drawn at fixed angular sizes, larger than life, so they stay visible at any zoom.
+Because those sizes scale with zoom rather than matching the real sky, apparent overlaps can
+start early, end late, or appear/disappear as the user zooms. This is a display choice, not a
+timing or location error.
+
+**Response framing:** Thank them / acknowledge the confusion, explain that bodies are drawn larger
+than life by default, and point to the real-size setting. Don't suggest their time or location is
+wrong unless there's other evidence.
+
+**Steps to suggest:**
+1. Tap the layers button (or long press the layers bar) to open the layers sheet
+2. Expand the Planets layer's options and set **Disc size** to **True scale** (real size at every
+   zoom; planets are specks until you zoom right in). **Steady** is a middle option — fixed
+   on-screen size that hands off to real size when zoomed in
+3. If it still looks wrong with correct location/time, ask for Diagnostics (see below)
+
+---
+
 ### CAT-INFO-CARD · Info card won't close
 
 **What users say:** "the pop-up card doesn't close", "can't dismiss the info card", "card stays
