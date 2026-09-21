@@ -331,7 +331,17 @@ class MapViewModel(
                     // The observer's local up, which is what makes the horizon — and so the
                     // twilight bands and the Belt of Venus — locatable by a backend that can
                     // evaluate a scattering model. GLES1 ignores it.
-                    zenithDirection = localFrame.value.up,
+                    //
+                    // Built from `time` here rather than read off `localFrame`, even though
+                    // that is refreshed from this same clock: it is refreshed by a *separate*
+                    // collector, and the order two collectors of one flow run in is not
+                    // defined, so the zenith could be a tick behind the sun. A tick is a
+                    // minute of sky at ordinary speeds and does not matter — but under fast
+                    // time travel it is however far the sky moved in that tick, which would
+                    // put the twilight bands visibly out of step with the horizon line the
+                    // horizon layer draws from the same instant. Same instant in, same
+                    // horizon out. (Magnetic declination is irrelevant to `up`.)
+                    zenithDirection = SkyModel.localFrame(time, currentLocation).up,
                 )
             }
         }
