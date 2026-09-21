@@ -114,16 +114,37 @@ object LabelDrawer {
     val HALO_COLOR = Rgba(0.02f, 0.02f, 0.04f, 0.85f)
 
     /**
-     * Thickness of the has-an-info-card underline, in dp, before the label scale is applied.
+     * Thickness of the has-an-info-card underline, as a fraction of the label's cell height.
      *
-     * A rule rather than a dot beside the text: a small filled disc next to a label is the same
-     * shape as a star, in the same colour, drawn by the same shader — in a star field it reads
-     * as one more star instead of as a mark on the label.
+     * Proportional to the text rather than to the screen, which is what keeps it a hairline:
+     * a dp thickness scaled by both the display density and the font-size preference came out
+     * at four or five pixels under ten-point text, which reads as a bar under every label
+     * rather than as a mark on a few of them. Deriving it from the glyph also means it tracks
+     * the accessibility font size for free.
      */
-    const val UNDERLINE_THICKNESS_DP = 1.0
+    const val UNDERLINE_THICKNESS_FRACTION = 1f / 16f
 
-    /** Gap between the bottom of the label's cell and the underline, in dp. */
-    const val UNDERLINE_GAP_DP = 1.0
+    /** Gap between the bottom of the label's cell and the underline, same units. */
+    const val UNDERLINE_GAP_FRACTION = 1f / 14f
+
+    /**
+     * How much of the label's width the rule spans, centred.
+     *
+     * Inset rather than full-bleed: most objects with names worth labelling *do* have a card —
+     * every constellation does — so in a typical view nearly every label is marked, and a rule
+     * running the full width of each one turns the sky into a list. Short and centred reads as
+     * a tick under the name.
+     */
+    const val UNDERLINE_WIDTH_FRACTION = 0.6f
+
+    /**
+     * Opacity of the rule relative to the label it marks.
+     *
+     * It is a hint, not a second piece of text. At full strength it competes with the name for
+     * attention, which is backwards — the name is the content and the rule only says the name
+     * leads somewhere.
+     */
+    const val UNDERLINE_ALPHA = 0.45f
 
     /**
      * Rasterizes label text into an R8 atlas and uploads it. Must be called on the GL thread.
@@ -271,15 +292,6 @@ object LabelDrawer {
         val dotThreshold = frustumDotThreshold(camera, viewport)
         val magLimit = LabelDeclutterer.magnitudeThreshold(camera.fovDeg)
         val pxPerDeg = pixelsPerDegree(camera, viewport)
-        // The rule tracks the label's size, so it stays a hairline under small text and does
-        // not turn into a stripe under the largest accessibility setting.
-        val scale = viewport.density * state.labelScaleFactor.toFloat()
-        val underlineThicknessPx =
-            max(1f, (UNDERLINE_THICKNESS_DP * scale).toFloat())
-        val underlineGapPx = (UNDERLINE_GAP_DP * viewport.density).toFloat()
-        // Vertical room the underline needs below the cell, which the declutterer has to keep
-        // clear or a label underneath could be drawn through it.
-        val underlineAllowancePx = underlineThicknessPx + underlineGapPx
 
         candidates.clear()
         for (glyphIndex in gpu.glyphs.indices) {
@@ -315,7 +327,7 @@ object LabelDrawer {
                 glX,
                 glY,
                 glyph.widthPx,
-                glyph.heightPx + if (glyph.hasDetail) underlineAllowancePx.toInt() else 0,
+                glyph.heightPx + if (glyph.hasDetail) underlineAllowance(glyph) else 0,
                 glyph.priority,
                 eligible = LabelDeclutterer.passesMagnitude(glyph.magnitude, magLimit),
             )
@@ -358,16 +370,17 @@ object LabelDrawer {
             if (glyph.hasDetail) {
                 // Under the cell, not through it: the cell's bottom edge already sits below the
                 // descender, so the rule clears the text without needing to know the baseline.
+                val thickness = underlineThickness(glyph)
+                val gap = underlineGap(glyph)
                 batch.add(
                     centerXPx = snappedX,
-                    centerYPx = snappedY - glyph.heightPx * 0.5f - underlineGapPx -
-                        underlineThicknessPx * 0.5f,
-                    widthPx = glyph.widthPx.toFloat(),
-                    heightPx = underlineThicknessPx,
+                    centerYPx = snappedY - glyph.heightPx * 0.5f - gap - thickness * 0.5f,
+                    widthPx = glyph.widthPx * UNDERLINE_WIDTH_FRACTION,
+                    heightPx = thickness,
                     uv0 = SpriteBatch.FULL_UV0,
                     uv1 = SpriteBatch.FULL_UV1,
                     tint = glyph.color,
-                    alpha = alpha,
+                    alpha = alpha * UNDERLINE_ALPHA,
                     mode = SpriteBatch.MODE_RULE,
                 )
             }
@@ -376,6 +389,19 @@ object LabelDrawer {
             flushPage(gl, batch, gpu, activePage, width, height, state.nightMode)
         }
     }
+
+    private fun underlineThickness(glyph: LabelGlyph): Float =
+        max(1f, glyph.heightPx * UNDERLINE_THICKNESS_FRACTION)
+
+    private fun underlineGap(glyph: LabelGlyph): Float =
+        max(1f, glyph.heightPx * UNDERLINE_GAP_FRACTION)
+
+    /**
+     * Vertical room the rule needs below the cell, which the declutterer has to keep clear or a
+     * label underneath could be drawn through it.
+     */
+    private fun underlineAllowance(glyph: LabelGlyph): Int =
+        (underlineThickness(glyph) + underlineGap(glyph)).toInt()
 
     private fun flushPage(
         gl: GlState,

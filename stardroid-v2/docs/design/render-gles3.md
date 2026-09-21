@@ -571,11 +571,21 @@ has to ask whether a difference is a bug.
    `EXISTS` on `info_card` in the layer query — draws carded labels at full alpha with a rule
    under the text and dims the rest to 70%.
 
-   The first attempt put a small filled dot beside the text, which failed on device for a
-   reason worth recording: a dot is the same shape, the same colour and the same shader path
-   as a star, so in a star field it reads as one more star rather than as a mark on the label.
-   Any marker for a label has to be something the sky does not already contain — a rule, a
-   glyph, a box — not a shape the renderer is already drawing thousands of.
+   Two things had to be got wrong first, both worth recording.
+
+   A small filled dot beside the text is the same shape, the same colour and the same shader
+   path as a star, so in a star field it reads as one more star rather than as a mark on the
+   label. **A marker for a label has to be something the sky does not already contain** — a
+   rule, a glyph, a box — not a shape the renderer is already drawing thousands of.
+
+   Then the rule itself was too heavy. Its thickness was a dp value scaled by *both* the
+   display density and the font-size preference, which is four or five pixels under ten-point
+   text on a modern phone — a bar, not a hairline. It is now derived from the label's own cell
+   height, inset to 60% of the label width and drawn at 45% alpha. **The density of the mark
+   matters more than its presence**, because nearly every label that is worth drawing has a
+   card — every constellation does — so a full-strength rule under each one turns the sky into
+   a list rather than marking the few that differ. The dimming carries the signal; the rule
+   only confirms it.
 4. **Labels fade in and out.** `LabelFader` (pure, in `:render:api`, unit-tested) turns
    `LabelDeclutterer`'s per-frame boolean into an eased alpha. Two choices worth knowing: a
    fading-out label does **not** reserve screen space, so arrivals cross-fade over departures
