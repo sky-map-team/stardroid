@@ -293,6 +293,8 @@ fun ManualLocationEntryDialog(
     val east = cardinalDirections[4]
     val south = cardinalDirections[8]
     val west = cardinalDirections[12]
+    // Read once: the dialog body recomposes on every keystroke, and this asks the platform.
+    val placeLookupAvailable = viewModel.placeLookupAvailable
     var placeText by rememberSaveable { mutableStateOf("") }
     // Prefill from the current location, as v1 did when coordinates were known.
     var latitudeText by rememberSaveable {
@@ -327,7 +329,7 @@ fun ManualLocationEntryDialog(
                     label = { Text(stringResource(R.string.location_place_name_hint)) },
                     singleLine = true,
                     // No geocoder backend: the field can never work, so say so up front.
-                    enabled = viewModel.placeLookupAvailable,
+                    enabled = placeLookupAvailable,
                     // trailingIcon (rather than a sibling Row) lets Material position this
                     // against the field's actual content box instead of its full bounds,
                     // which include the floating label — a sibling Row's shared vertical
@@ -338,7 +340,7 @@ fun ManualLocationEntryDialog(
                         } else {
                             IconButton(
                                 onClick = { viewModel.resolvePlace(placeText) },
-                                enabled = viewModel.placeLookupAvailable,
+                                enabled = placeLookupAvailable,
                             ) {
                                 Icon(
                                     Icons.Default.Search,
@@ -353,7 +355,7 @@ fun ManualLocationEntryDialog(
                 val placeError =
                     entry.placeError
                         ?: LocationViewModel.PlaceError.NO_BACKEND
-                            .takeUnless { viewModel.placeLookupAvailable }
+                            .takeUnless { placeLookupAvailable }
                 placeError?.let { error ->
                     Text(
                         stringResource(
