@@ -568,8 +568,14 @@ has to ask whether a difference is a bug.
 3. **Labels say whether tapping them will do anything.** Tap-to-identify only offers objects
    with an info card, so ~169 of the 245 star labels visible at the default FOV are untappable
    with no visual hint (`info-card-coverage.md`). `LabelPrimitive.hasDetail` — fed from an
-   `EXISTS` on `info_card` in the layer query — draws carded labels at full alpha with a small
-   dot beside them and dims the rest to 70%.
+   `EXISTS` on `info_card` in the layer query — draws carded labels at full alpha with a rule
+   under the text and dims the rest to 70%.
+
+   The first attempt put a small filled dot beside the text, which failed on device for a
+   reason worth recording: a dot is the same shape, the same colour and the same shader path
+   as a star, so in a star field it reads as one more star rather than as a mark on the label.
+   Any marker for a label has to be something the sky does not already contain — a rule, a
+   glyph, a box — not a shape the renderer is already drawing thousands of.
 4. **Labels fade in and out.** `LabelFader` (pure, in `:render:api`, unit-tested) turns
    `LabelDeclutterer`'s per-frame boolean into an eased alpha. Two choices worth knowing: a
    fading-out label does **not** reserve screen space, so arrivals cross-fade over departures

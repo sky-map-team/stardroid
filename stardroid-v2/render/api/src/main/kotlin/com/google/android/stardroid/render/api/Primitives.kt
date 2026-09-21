@@ -170,7 +170,7 @@ data class EclipseShadow(
  * [hasDetail] says the named thing has something to show if tapped — an info card. Tapping only
  * identifies objects that have one, so today most star labels are silently untappable (see
  * `docs/info-card-coverage.md`); a backend that can afford it draws carded labels at full
- * strength with a small marker and dims the rest, turning that invisible distinction into
+ * strength and underlines them, dimming the rest, which turns that invisible distinction into
  * something you can see before you tap. Backends that cannot ignore it — `:render:gles1` does —
  * so this is additive. Producers naming directions rather than objects (the grid, the horizon,
  * the ecliptic) leave it false.

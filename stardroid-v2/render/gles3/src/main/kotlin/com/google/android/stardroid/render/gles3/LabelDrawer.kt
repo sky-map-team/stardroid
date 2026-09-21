@@ -82,8 +82,8 @@ class LabelGpuData(
  *    means rasterizing and drawing a second, wider glyph per label, which is why it was not done.
  * 4. **Labels say whether tapping them will do anything.** A tap only identifies objects that
  *    have an info card, and most star labels do not have one — a distinction that is currently
- *    invisible until you tap and nothing happens. Carded labels draw at full strength with a
- *    small dot beside them; the rest are dimmed to [NO_DETAIL_ALPHA].
+ *    invisible until you tap and nothing happens. Carded labels draw at full strength and are
+ *    underlined; the rest are dimmed to [NO_DETAIL_ALPHA].
  *
  * And one thing that is the same by design: [LabelDeclutterer] still decides what is visible,
  * on the CPU, unit-tested. [LabelFader] only softens the transition.
@@ -113,11 +113,17 @@ object LabelDrawer {
      */
     val HALO_COLOR = Rgba(0.02f, 0.02f, 0.04f, 0.85f)
 
-    /** Diameter of the has-an-info-card marker, in dp. */
-    const val MARKER_SIZE_DP = 3.0
+    /**
+     * Thickness of the has-an-info-card underline, in dp, before the label scale is applied.
+     *
+     * A rule rather than a dot beside the text: a small filled disc next to a label is the same
+     * shape as a star, in the same colour, drawn by the same shader — in a star field it reads
+     * as one more star instead of as a mark on the label.
+     */
+    const val UNDERLINE_THICKNESS_DP = 1.0
 
-    /** Gap between the marker and the start of the text, in dp. */
-    const val MARKER_GAP_DP = 3.0
+    /** Gap between the bottom of the label's cell and the underline, in dp. */
+    const val UNDERLINE_GAP_DP = 1.0
 
     /**
      * Rasterizes label text into an R8 atlas and uploads it. Must be called on the GL thread.
@@ -265,8 +271,15 @@ object LabelDrawer {
         val dotThreshold = frustumDotThreshold(camera, viewport)
         val magLimit = LabelDeclutterer.magnitudeThreshold(camera.fovDeg)
         val pxPerDeg = pixelsPerDegree(camera, viewport)
-        val markerSizePx = (MARKER_SIZE_DP * viewport.density).toFloat()
-        val markerGapPx = (MARKER_GAP_DP * viewport.density).toFloat()
+        // The rule tracks the label's size, so it stays a hairline under small text and does
+        // not turn into a stripe under the largest accessibility setting.
+        val scale = viewport.density * state.labelScaleFactor.toFloat()
+        val underlineThicknessPx =
+            max(1f, (UNDERLINE_THICKNESS_DP * scale).toFloat())
+        val underlineGapPx = (UNDERLINE_GAP_DP * viewport.density).toFloat()
+        // Vertical room the underline needs below the cell, which the declutterer has to keep
+        // clear or a label underneath could be drawn through it.
+        val underlineAllowancePx = underlineThicknessPx + underlineGapPx
 
         candidates.clear()
         for (glyphIndex in gpu.glyphs.indices) {
@@ -295,19 +308,14 @@ object LabelDrawer {
                     glyph.offsetDp * viewport.density + glyph.heightPx * 0.5,
                     clearanceDeg * pxPerDeg,
                 )
-            // The marker rides to the left of the text, so the space it needs is part of what
-            // the declutterer has to keep clear — otherwise it would overlap a neighbour the
-            // declutterer believes it separated.
-            val markerAllowancePx =
-                if (glyph.hasDetail) markerSizePx + markerGapPx else 0f
             val glX = screen.xPx
             val glY = viewport.heightPx - (screen.yPx + offsetPx.toFloat())
             candidates.add(
                 glyphIndex,
                 glX,
                 glY,
-                glyph.widthPx + markerAllowancePx.toInt(),
-                glyph.heightPx,
+                glyph.widthPx,
+                glyph.heightPx + if (glyph.hasDetail) underlineAllowancePx.toInt() else 0,
                 glyph.priority,
                 eligible = LabelDeclutterer.passesMagnitude(glyph.magnitude, magLimit),
             )
@@ -332,17 +340,12 @@ object LabelDrawer {
                 activePage = glyph.page
             }
             val detailAlpha = if (glyph.hasDetail) 1f else NO_DETAIL_ALPHA
-            val markerAllowancePx =
-                if (glyph.hasDetail) markerSizePx + markerGapPx else 0f
             // Pixel-snap to reduce texture aliasing (v1's MAGIC_OFFSET). floor, not toInt():
             // truncation toward zero would snap negative edge coordinates upward.
             val snappedX = floor(candidates.screenX[i]) + IconDrawer.PIXEL_SNAP
             val snappedY = floor(candidates.screenY[i]) + IconDrawer.PIXEL_SNAP
-            // The text keeps its own width; the allowance shifts it right so the pair stays
-            // centred on the anchor.
-            val textCenterX = snappedX + markerAllowancePx * 0.5f
             batch.add(
-                centerXPx = textCenterX,
+                centerXPx = snappedX,
                 centerYPx = snappedY,
                 widthPx = glyph.widthPx.toFloat(),
                 heightPx = glyph.heightPx.toFloat(),
@@ -353,17 +356,19 @@ object LabelDrawer {
                 mode = SpriteBatch.MODE_GLYPH,
             )
             if (glyph.hasDetail) {
+                // Under the cell, not through it: the cell's bottom edge already sits below the
+                // descender, so the rule clears the text without needing to know the baseline.
                 batch.add(
-                    centerXPx = textCenterX - glyph.widthPx * 0.5f - markerGapPx -
-                        markerSizePx * 0.5f,
-                    centerYPx = snappedY,
-                    widthPx = markerSizePx,
-                    heightPx = markerSizePx,
+                    centerXPx = snappedX,
+                    centerYPx = snappedY - glyph.heightPx * 0.5f - underlineGapPx -
+                        underlineThicknessPx * 0.5f,
+                    widthPx = glyph.widthPx.toFloat(),
+                    heightPx = underlineThicknessPx,
                     uv0 = SpriteBatch.FULL_UV0,
                     uv1 = SpriteBatch.FULL_UV1,
                     tint = glyph.color,
                     alpha = alpha,
-                    mode = SpriteBatch.MODE_MARKER,
+                    mode = SpriteBatch.MODE_RULE,
                 )
             }
         }

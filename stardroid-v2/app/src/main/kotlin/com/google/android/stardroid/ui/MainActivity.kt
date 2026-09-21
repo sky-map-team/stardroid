@@ -76,6 +76,7 @@ import com.google.android.stardroid.sensors.OrientationSource
 import com.google.android.stardroid.sensors.SensorKind
 import com.google.android.stardroid.sensors.SensorStatusSource
 import com.google.android.stardroid.settings.AutoDimness
+import com.google.android.stardroid.settings.RendererBackend
 import com.google.android.stardroid.settings.Settings as SkyMapSettings
 import com.google.android.stardroid.startup.Experiment
 import com.google.android.stardroid.startup.ExperimentConfig
@@ -126,6 +127,13 @@ class MainActivity : ComponentActivity() {
 
     /** Filled in by the GL backend once its surface exists; read by the diagnostics screen. */
     private val rendererInfoStore = RendererInfoStore()
+
+    /**
+     * The backend this activity's surface was built for. The EGL context version is fixed when
+     * the surface is created, so a change to the preference means a new activity, not a new
+     * surface.
+     */
+    private var requestedBackend: RendererBackend? = null
 
     @Inject lateinit var settings: SkyMapSettings
 
@@ -429,6 +437,7 @@ class MainActivity : ComponentActivity() {
         // One blocking read of one preference at startup; the alternative is deferring surface
         // creation behind a coroutine, which buys nothing and costs a frame.
         val chosenBackend = runBlocking { settings.rendererBackend.first() }
+        requestedBackend = chosenBackend
         var requestRender: () -> Unit = {}
         val backend =
             createRendererBackend(
@@ -455,6 +464,22 @@ class MainActivity : ComponentActivity() {
         // Only the GLES3 backend uses this, and only while a label fade is in flight; the rest
         // of the time RENDERMODE_WHEN_DIRTY still means a still device draws nothing (D23).
         requestRender = glSurfaceView::requestRender
+
+        // Recreate when the backend preference stops matching what this activity asked for.
+        //
+        // Driving this from the preference rather than from the settings row's click is what
+        // makes it work: the row's write is a suspending DataStore edit, so recreating straight
+        // after the tap read the *old* value back and silently rebuilt the same backend, which
+        // is why the change appeared to need a manual app restart. Comparing against what was
+        // requested — not against the backend actually running — also means a device that
+        // cannot do GL ES 3.0, and so falls back, does not recreate itself forever.
+        lifecycleScope.launch {
+            repeatOnLifecycle(Lifecycle.State.STARTED) {
+                settings.rendererBackend.collect { backend ->
+                    if (backend != requestedBackend) recreate()
+                }
+            }
+        }
         val connector = RenderConnector(backend.skyRenderer, glSurfaceView)
         val binder = RenderBinder(connector)
         lifecycleScope.launch {
@@ -525,10 +550,6 @@ class MainActivity : ComponentActivity() {
                     onRequestLocationPermission = ::requestLocationPermission,
                     onRequestAutoLocation = ::requestAutoLocation,
                     onOpenAppSettings = ::openAppSettings,
-                    // The EGL context version is fixed at surface creation, so a new backend
-                    // needs a new surface: recreate rather than leave the choice looking
-                    // like it did nothing.
-                    onRestartForRenderer = ::recreate,
                     arCamera = skyCameraPreview,
                     hasCameraPermission = {
                         checkSelfPermission(Manifest.permission.CAMERA) ==

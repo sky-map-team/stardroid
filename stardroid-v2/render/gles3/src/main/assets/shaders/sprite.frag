@@ -20,7 +20,7 @@ out vec4 fragColor;
 
 const int MODE_ICON = 0;
 const int MODE_GLYPH = 1;
-const int MODE_MARKER = 2;
+const int MODE_RULE = 2;
 
 /** Peak coverage in a ring around vUv — the widened glyph the halo is drawn from. */
 float haloCoverage() {
@@ -43,16 +43,16 @@ float haloCoverage() {
 
 void main() {
     vec4 color;
-    if (vMode == MODE_MARKER) {
-        // A procedural filled dot: no texture, so it needs no atlas space and cannot collide
-        // with a glyph cell. It says "this one has an info card, tapping it will show you
-        // something" — a distinction that is currently invisible until you tap and nothing
-        // happens.
-        float d = length(vLocal - vec2(0.5)) * 2.0;
-        float aa = max(fwidth(d), 1e-4);
-        float coverage = 1.0 - smoothstep(1.0 - aa, 1.0, d);
-        if (coverage <= 0.0) discard;
-        color = vec4(vTint.rgb, vTint.a * coverage);
+    if (vMode == MODE_RULE) {
+        // A solid bar: the underline beneath a label whose object has an info card, saying
+        // that tapping it will actually show you something. A distinction that is otherwise
+        // invisible until you tap and nothing happens.
+        //
+        // Deliberately a rule and not a dot. The first attempt drew a small filled disc beside
+        // the text, which is the same shape, the same shader path and the same colour as a
+        // star — so in a star field it read as one more star rather than as a mark on the
+        // label. A horizontal bar under the text cannot be misread that way at any size.
+        color = vTint;
     } else if (vMode == MODE_GLYPH) {
         // An R8 coverage mask, not colour: a quarter of the ARGB_8888 atlas GLES1 uploads.
         float fill = texture(uTexture, vUv).r;

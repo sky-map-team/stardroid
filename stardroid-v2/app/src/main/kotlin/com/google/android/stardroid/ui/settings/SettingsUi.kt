@@ -78,7 +78,6 @@ fun SettingsScreen(
     viewModel: SettingsViewModel,
     onBack: () -> Unit,
     onOpenDiagnostics: () -> Unit,
-    onRestartForRenderer: () -> Unit = {},
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
     val legacyPathActive by viewModel.legacyPathActive.collectAsStateWithLifecycle()
@@ -252,12 +251,10 @@ fun SettingsScreen(
                         options = RendererBackend.entries,
                         selected = state.rendererBackend,
                         label = { rendererBackendLabel(it) },
-                        onSelect = { backend ->
-                            viewModel.setRendererBackend(backend)
-                            // The EGL context version is settled when the surface is created,
-                            // so the new backend only takes effect on a fresh activity.
-                            onRestartForRenderer()
-                        },
+                        // The map restarts itself: MainActivity watches this preference and
+                        // recreates when it stops matching the backend its surface was built
+                        // for. Recreating from here instead would race the DataStore write.
+                        onSelect = viewModel::setRendererBackend,
                     )
                 }
             }

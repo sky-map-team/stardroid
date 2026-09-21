@@ -55,7 +55,7 @@ class SpriteBatch(private val program: ShaderProgram) {
      * @param uv0 the texture coordinate at the quad's lower-left corner, [uv1] at its upper
      *   right. Label atlases are uploaded without a vertical flip, so callers pass the *larger*
      *   v in [uv0] — the same "negative crop height" convention `LabelDrawer` has always used.
-     * @param mode one of [MODE_ICON], [MODE_GLYPH] or [MODE_MARKER].
+     * @param mode one of [MODE_ICON], [MODE_GLYPH] or [MODE_RULE].
      */
     @Suppress("LongParameterList")
     fun add(
@@ -176,8 +176,8 @@ class SpriteBatch(private val program: ShaderProgram) {
         /** An R8 coverage mask: one label's glyph run, with a halo under it. */
         const val MODE_GLYPH = 1
 
-        /** A procedural filled dot: the "this object has an info card" marker. */
-        const val MODE_MARKER = 2
+        /** A solid bar: the underline marking a label whose object has an info card. */
+        const val MODE_RULE = 2
 
         /** Full-texture coordinates, in the atlas's unflipped convention. */
         val FULL_UV0 = floatArrayOf(0f, 1f)
