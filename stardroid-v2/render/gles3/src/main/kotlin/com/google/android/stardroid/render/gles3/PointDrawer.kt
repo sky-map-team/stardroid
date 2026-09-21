@@ -82,20 +82,32 @@ object PointDrawer {
         return PointBuffers(data, points.size)
     }
 
-    /** Uploads [buffers] into a VAO. Must be called on the GL thread. */
+    /**
+     * Uploads [buffers] into a VAO. Must be called on the GL thread.
+     *
+     * Binds through [gl] rather than raw `GLES30.glBindVertexArray` calls, even though this
+     * runs once per scene change rather than once per frame. [GlState] caches the last name it
+     * bound so [draw] can skip a redundant bind — but this method deletes the layer's previous
+     * VAO (via the caller's `Mesh.release()`) immediately before generating this one, and
+     * drivers commonly hand back a just-freed name. An unbind here that [gl] doesn't observe
+     * would leave its cache holding a name that now happens to match the new VAO, so the next
+     * [draw] call's bind-if-changed check would wrongly no-op against whatever is *actually*
+     * bound (0, from this method's own cleanup) instead of the mesh just uploaded.
+     */
     fun upload(
+        gl: GlState,
         buffers: PointBuffers,
         program: ShaderProgram,
     ): Mesh {
         val vao = Mesh.genVertexArray()
         val vbo = Mesh.genBuffers(1)
-        GLES30.glBindVertexArray(vao)
+        gl.bindVertexArray(vao)
         Mesh.uploadFloats(vbo[0], buffers.data, buffers.vertexCount * FLOATS_PER_VERTEX)
         Mesh.floatAttrib(program.attrib("aPos"), 3, FLOATS_PER_VERTEX, 0)
         Mesh.floatAttrib(program.attrib("aColor"), 4, FLOATS_PER_VERTEX, 3)
         Mesh.floatAttrib(program.attrib("aSizeDp"), 1, FLOATS_PER_VERTEX, 7)
         Mesh.floatAttrib(program.attrib("aMagnitude"), 1, FLOATS_PER_VERTEX, 8)
-        GLES30.glBindVertexArray(0)
+        gl.bindVertexArray(0)
         return Mesh(vao, vbo, buffers.vertexCount)
     }
 

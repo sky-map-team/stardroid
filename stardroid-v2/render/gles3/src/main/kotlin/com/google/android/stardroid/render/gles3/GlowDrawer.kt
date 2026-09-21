@@ -97,19 +97,23 @@ object GlowDrawer {
     private fun isDrawable(glow: GlowPrimitive): Boolean =
         glow.rings.size >= 2 && glow.rings[0].vertices.size >= 2
 
-    /** Must be called on the GL thread. */
+    /**
+     * Must be called on the GL thread. Binds through [gl] rather than raw GL calls — see
+     * [PointDrawer.upload]'s KDoc for why a freed-and-regenerated VAO id makes that matter here.
+     */
     fun upload(
+        gl: GlState,
         buffers: GlowBuffers,
         program: ShaderProgram,
     ): Mesh {
         val vao = Mesh.genVertexArray()
         val vbos = Mesh.genBuffers(2)
-        GLES30.glBindVertexArray(vao)
+        gl.bindVertexArray(vao)
         Mesh.uploadFloats(vbos[0], buffers.data, buffers.vertexCount * FLOATS_PER_VERTEX)
         Mesh.floatAttrib(program.attrib("aPos"), 3, FLOATS_PER_VERTEX, 0)
         Mesh.floatAttrib(program.attrib("aColor"), 4, FLOATS_PER_VERTEX, 3)
         Mesh.uploadIndices(vbos[1], buffers.indices, buffers.indexCount)
-        GLES30.glBindVertexArray(0)
+        gl.bindVertexArray(0)
         return Mesh(vao, vbos, buffers.indexCount)
     }
 

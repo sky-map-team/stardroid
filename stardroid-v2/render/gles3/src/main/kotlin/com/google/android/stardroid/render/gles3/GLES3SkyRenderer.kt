@@ -263,7 +263,7 @@ class GLES3SkyRenderer(
             if (scene.glows.isNotEmpty()) {
                 val mesh =
                     cachedMesh(glowCache, layerId, scene) {
-                        GlowDrawer.upload(GlowDrawer.build(scene.glows), program("glow"))
+                        GlowDrawer.upload(gl, GlowDrawer.build(scene.glows), program("glow"))
                     }
                 GlowDrawer.draw(gl, program("glow"), mesh, viewProj, state.nightMode)
             }
@@ -297,7 +297,7 @@ class GLES3SkyRenderer(
             // neither invalidates this buffer — they are uniforms.
             val points =
                 cachedMesh(pointCache, layerId, scene) {
-                    PointDrawer.upload(PointDrawer.build(scene.points), program("point"))
+                    PointDrawer.upload(gl, PointDrawer.build(scene.points), program("point"))
                 }
             PointDrawer.draw(
                 gl = gl,
@@ -394,7 +394,7 @@ class GLES3SkyRenderer(
             LineCache(
                 scene,
                 density,
-                LineDrawer.upload(buffers, program("line")),
+                LineDrawer.upload(gl, buffers, program("line")),
                 buffers.segments,
             )
         lineCache[layerId] = cache

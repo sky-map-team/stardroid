@@ -80,17 +80,21 @@ object LineDrawer {
         return LineBuffers(vertices, totalVertices, segments)
     }
 
-    /** Must be called on the GL thread. */
+    /**
+     * Must be called on the GL thread. Binds through [gl] rather than raw GL calls — see
+     * [PointDrawer.upload]'s KDoc for why a freed-and-regenerated VAO id makes that matter here.
+     */
     fun upload(
+        gl: GlState,
         buffers: LineBuffers,
         program: ShaderProgram,
     ): Mesh {
         val vao = Mesh.genVertexArray()
         val vbo = Mesh.genBuffers(1)
-        GLES30.glBindVertexArray(vao)
+        gl.bindVertexArray(vao)
         Mesh.uploadFloats(vbo[0], buffers.vertices, buffers.vertexCount * 3)
         Mesh.floatAttrib(program.attrib("aPos"), 3, 3, 0)
-        GLES30.glBindVertexArray(0)
+        gl.bindVertexArray(0)
         return Mesh(vao, vbo, buffers.vertexCount)
     }
 

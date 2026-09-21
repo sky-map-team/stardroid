@@ -110,7 +110,7 @@ class SpriteBatch(private val program: ShaderProgram) {
         haloTexels: Float,
     ) {
         if (size == 0) return
-        ensureVao()
+        ensureVao(gl)
         gl.useProgram(program)
         gl.blend(GlState.BlendMode.ALPHA)
         GLES30.glUniform2f(program.uniform("uViewportPx"), viewportWidthPx, viewportHeightPx)
@@ -142,11 +142,14 @@ class SpriteBatch(private val program: ShaderProgram) {
         clear()
     }
 
-    private fun ensureVao() {
+    // Binds through gl rather than raw GL calls — see PointDrawer.upload's KDoc for why a
+    // freed-and-regenerated VAO id makes that matter. The window here is narrower (this runs
+    // once ever, guarded by `vao != 0`, not once per scene change), but it is the same hazard.
+    private fun ensureVao(gl: GlState) {
         if (vao != 0) return
         vao = Mesh.genVertexArray()
         vbo = Mesh.genBuffers(1)[0]
-        GLES30.glBindVertexArray(vao)
+        gl.bindVertexArray(vao)
         GLES30.glBindBuffer(GLES30.GL_ARRAY_BUFFER, vbo)
         // Every attribute advances once per instance, not once per vertex: the four vertices of
         // the quad are gl_VertexID arithmetic and read no buffer at all.
@@ -156,7 +159,7 @@ class SpriteBatch(private val program: ShaderProgram) {
         Mesh.floatAttrib(program.attrib("aUv1"), 2, floatsPerInstance, 6, divisor = 1)
         Mesh.floatAttrib(program.attrib("aTint"), 4, floatsPerInstance, 8, divisor = 1)
         Mesh.floatAttrib(program.attrib("aMode"), 1, floatsPerInstance, 12, divisor = 1)
-        GLES30.glBindVertexArray(0)
+        gl.bindVertexArray(0)
     }
 
     /** Forgets the GL objects after EGL context loss; the CPU-side instance buffer is kept. */

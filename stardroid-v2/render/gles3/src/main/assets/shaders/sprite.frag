@@ -61,8 +61,17 @@ void main() {
         // fade and the has-an-info-card dimming).
         vec4 outline = vec4(uHaloColor.rgb, uHaloColor.a * halo);
         vec4 glyph = vec4(vTint.rgb, fill);
-        color.rgb = mix(outline.rgb, glyph.rgb, glyph.a);
-        color.a = max(outline.a, glyph.a) * vTint.a;
+        // Straight-alpha "glyph over outline" (Porter-Duff over), not a plain mix(): mix()
+        // interpolates rgb by glyph.a alone and ignores outline.a entirely, so at an
+        // anti-aliased glyph edge (glyph.a partway between 0 and 1) it blends toward
+        // uHaloColor even when the halo is fully off (uHaloTexels == 0, outline.a == 0) —
+        // the near-black outline colour bleeds into every soft edge regardless of whether it
+        // is actually visible. Compositing properly makes outline.a == 0 contribute nothing.
+        color.a = outline.a + glyph.a * (1.0 - outline.a);
+        color.rgb = color.a > 0.0
+            ? (glyph.rgb * glyph.a + outline.rgb * outline.a * (1.0 - glyph.a)) / color.a
+            : vec3(0.0);
+        color.a *= vTint.a;
         if (color.a <= 0.0) discard;
     } else {
         vec4 texel = texture(uTexture, vUv);
