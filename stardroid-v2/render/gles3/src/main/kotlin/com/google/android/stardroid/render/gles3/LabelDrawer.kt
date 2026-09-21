@@ -426,8 +426,11 @@ object LabelDrawer {
     }
 
     /** Deletes the atlas page textures. Must be called on the GL thread. */
-    fun release(gpu: LabelGpuData) {
-        deleteTextures(gpu.pageTextureIds)
+    fun release(
+        gl: GlState,
+        gpu: LabelGpuData,
+    ) {
+        deleteTextures(gl, gpu.pageTextureIds)
     }
 
     private fun labelSizeSp(size: LabelSize): Int =

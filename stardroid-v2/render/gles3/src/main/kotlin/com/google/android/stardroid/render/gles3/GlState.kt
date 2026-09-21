@@ -83,6 +83,27 @@ class GlState {
         blendMode = mode
     }
 
+    /**
+     * Tells the cache that [name] is about to be deleted, so it stops believing it is bound.
+     *
+     * GL reverts the binding to zero when the *currently bound* vertex array is deleted, and
+     * `glGenVertexArrays` commonly hands the freed name straight back — so a cache still
+     * holding it would skip the next bind of what is nominally "the same" name, and the
+     * attribute setup that followed would silently land in the default vertex array object
+     * instead of the new mesh's. Setting the cache to 0 matches exactly what GL did.
+     */
+    fun onVertexArrayDeleted(name: Int) {
+        if (vertexArray == name) vertexArray = 0
+    }
+
+    /**
+     * The texture equivalent of [onVertexArrayDeleted]: deleting a bound texture acts as a bind
+     * of texture zero on the units it was bound to, which the cache must not miss.
+     */
+    fun onTexturesDeleted(names: IntArray) {
+        if (names.any { it == texture2d }) texture2d = 0
+    }
+
     /** Forgets everything. Call after EGL context loss, before the first draw of a new context. */
     fun invalidate() {
         program = 0

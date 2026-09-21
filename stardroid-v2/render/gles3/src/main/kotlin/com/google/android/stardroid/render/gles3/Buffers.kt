@@ -48,7 +48,17 @@ class Mesh(
     /** Vertices for a non-indexed draw, or indices for an indexed one. */
     val count: Int,
 ) {
-    fun release() {
+    /**
+     * Deletes this mesh's GL objects, telling [gl] first so its bind cache cannot outlive them.
+     *
+     * The notification is the point: GL reverts the vertex-array binding to zero when the bound
+     * one is deleted, and the caller (`cachedMesh`) deletes the old mesh immediately before
+     * generating the replacement — which can be handed the same name back. Without telling
+     * [gl], its cache would still name the freed VAO, and the replacement's first bind would be
+     * skipped as redundant.
+     */
+    fun release(gl: GlState) {
+        gl.onVertexArrayDeleted(vao)
         GLES30.glDeleteVertexArrays(1, intArrayOf(vao), 0)
         GLES30.glDeleteBuffers(buffers.size, buffers, 0)
     }

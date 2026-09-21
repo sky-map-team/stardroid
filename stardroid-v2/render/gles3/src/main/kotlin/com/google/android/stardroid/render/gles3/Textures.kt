@@ -21,10 +21,19 @@ fun genTexture(): Int {
     return name[0]
 }
 
-/** Deletes [names], ignoring zeroes. Must be called on the GL thread. */
-fun deleteTextures(names: IntArray) {
+/**
+ * Deletes [names], ignoring zeroes, telling [gl] first so its bind cache cannot outlive them.
+ * Must be called on the GL thread. See [GlState.onTexturesDeleted] for why the notification
+ * matters.
+ */
+fun deleteTextures(
+    gl: GlState,
+    names: IntArray,
+) {
     val live = names.filter { it != 0 }.toIntArray()
-    if (live.isNotEmpty()) GLES30.glDeleteTextures(live.size, live, 0)
+    if (live.isEmpty()) return
+    gl.onTexturesDeleted(live)
+    GLES30.glDeleteTextures(live.size, live, 0)
 }
 
 /** Linear filtering, clamped at the edges — what a photograph or a planet disc wants. */

@@ -86,7 +86,7 @@ class GLES3SkyRenderer(
     private var drawOrder: List<Pair<LayerId, LayerScene>> = emptyList()
     private var drawOrderVersion = -1L
 
-    private val textureCache = TextureCache(imageLoader)
+    private val textureCache = TextureCache(imageLoader, gl)
 
     private val pointCache = HashMap<LayerId, MeshCache>()
     private val lineCache = HashMap<LayerId, LineCache>()
@@ -356,10 +356,10 @@ class GLES3SkyRenderer(
         if (version == drawOrderVersion) return
         pruneCache(imageCache) { ImageDrawer.release(textureCache, it.gpuData) }
         pruneCache(iconCache) { IconDrawer.release(textureCache, it.gpuData) }
-        pruneCache(labelCache) { LabelDrawer.release(it.gpuData) }
-        pruneCache(pointCache) { it.mesh.release() }
-        pruneCache(glowCache) { it.mesh.release() }
-        pruneCache(lineCache) { it.mesh.release() }
+        pruneCache(labelCache) { LabelDrawer.release(gl, it.gpuData) }
+        pruneCache(pointCache) { it.mesh.release(gl) }
+        pruneCache(glowCache) { it.mesh.release(gl) }
+        pruneCache(lineCache) { it.mesh.release(gl) }
         faders.keys.retainAll(scenes.keys)
         drawOrder = scenes.entries.sortedBy { it.value.depth }.map { it.key to it.value }
         drawOrderVersion = version
@@ -373,7 +373,7 @@ class GLES3SkyRenderer(
     ): Mesh {
         val existing = cache[layerId]
         if (existing != null && existing.scene === scene) return existing.mesh
-        existing?.mesh?.release()
+        existing?.mesh?.release(gl)
         val mesh = build()
         cache[layerId] = MeshCache(scene, mesh)
         return mesh
@@ -388,7 +388,7 @@ class GLES3SkyRenderer(
         if (existing != null && existing.scene === scene && existing.density == density) {
             return existing
         }
-        existing?.mesh?.release()
+        existing?.mesh?.release(gl)
         val buffers = LineDrawer.build(scene.lines, density)
         val cache =
             LineCache(
@@ -446,7 +446,7 @@ class GLES3SkyRenderer(
         ) {
             return existing.gpuData
         }
-        existing?.let { LabelDrawer.release(it.gpuData) }
+        existing?.let { LabelDrawer.release(gl, it.gpuData) }
         val gpu = LabelDrawer.build(scene.labels, state, density)
         labelCache[layerId] = LabelLayerCache(scene, state.labelScaleFactor, density, gpu)
         return gpu

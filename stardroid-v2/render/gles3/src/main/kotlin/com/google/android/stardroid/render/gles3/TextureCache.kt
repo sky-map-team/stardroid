@@ -36,6 +36,7 @@ import com.google.android.stardroid.render.api.ImageRef
  */
 class TextureCache(
     private val loader: (ImageRef) -> Bitmap?,
+    private val gl: GlState,
     private val byteBudget: Long = DEFAULT_BYTE_BUDGET,
 ) {
     private class Entry {
@@ -98,7 +99,7 @@ class TextureCache(
                 .sortedBy { it.value.lastReleasedAt }
         for (candidate in candidates) {
             if (totalBytes <= byteBudget) break
-            deleteTextures(intArrayOf(candidate.value.textureId))
+            deleteTextures(gl, intArrayOf(candidate.value.textureId))
             totalBytes -= candidate.value.bytes
             entries.remove(candidate.key)
         }
