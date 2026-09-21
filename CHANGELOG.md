@@ -5,6 +5,20 @@ All notable changes to Sky Map are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [2.1.1:Artemis] (v2) - 2026-09-21
+
+### Fixed
+- Location now works properly on devices without Google Play services (de-Googled ROMs such as
+  GrapheneOS, and F-Droid builds). Sky Map seeds its position from a location another app has
+  already obtained, so a fix can arrive immediately; a device with no usable location provider is
+  reported straight away instead of after a 30-second timeout; and the place search shows a
+  specific reason when it fails, or is disabled up front when there is no geocoder, instead of a
+  blanket "No internet". Refs #937. (#1062)
+- Fixed the Moon, Tonight's sky and Sky countdown widgets all re-rendering as the Moon widget after
+  an update in release builds, caused by R8 merging the three widget classes. (#1057)
+
+---
+
 ## [2.1.0:Artemis] (v2) - 2026-09-19
 
 <img src="stardroid-v2/assets/release-icons/2.1.0_artemis_icon.png" width="80" alt="Artemis" />
