@@ -77,9 +77,19 @@ vec3 xyYToLinearRgb(float x, float y, float bigY) {
     ) * vec3(capX, bigY, capZ);
 }
 
-/** Filmic-ish tone map, so a bright daytime sky saturates gracefully rather than clipping. */
+/**
+ * Compresses brightness while leaving colour alone.
+ *
+ * Applying `x / (1 + x)` per channel — the obvious form — desaturates as it compresses, because
+ * it pulls the brightest channel down hardest. A sky bright enough to need tone mapping is
+ * exactly a sky whose blue then drains out of it, which is what made midday come out
+ * grey. Scaling by a luminance ratio compresses the same amount and keeps the chromaticity the
+ * Preetham model went to the trouble of computing.
+ */
 vec3 toneMap(vec3 linear) {
-    return linear / (linear + vec3(1.0));
+    float luminance = dot(linear, vec3(0.2126, 0.7152, 0.0722));
+    if (luminance <= 0.0) return vec3(0.0);
+    return linear * ((luminance / (1.0 + luminance)) / luminance);
 }
 
 /**
@@ -164,7 +174,10 @@ void main() {
 
     // The warm band above where the sun went down, strongest just after sunset and hugging the
     // horizon.
-    float horizonBand = exp(-max(viewAltitudeDeg, 0.0) / 9.0);
+    // Peaks at the horizon and falls off in *both* directions. Measuring from
+    // `max(altitude, 0)` made every direction below the horizon score a full 1.0, so the warm
+    // band did not hug the horizon at all — it flooded the entire lower hemisphere.
+    float horizonBand = exp(-abs(viewAltitudeDeg) / 9.0);
     vec3 sunsetGlow = vec3(0.85, 0.36, 0.12)
         * horizonBand * pow(towardSun, 2.0) * twilightFactor;
 
@@ -189,6 +202,21 @@ void main() {
 
     vec3 linear = daylight * daylightFactor
         + sunsetGlow + earthShadow + beltOfVenus + twilightWash;
+
+    // Below the horizon, dim.
+    //
+    // v2 deliberately lets you look through the Earth at the sky beneath it, so there is no
+    // ground to draw — but the scattering model is only defined above the horizon, and
+    // clamping its input leaves the whole lower hemisphere painted flat at the horizon's
+    // brightness, which is the brightest part of the sky. The result was a large glowing wedge
+    // under the horizon line that dominated every daytime frame.
+    //
+    // Dimming it keeps the "look through the Earth" view while saying plainly which side of the
+    // horizon you are on. This is a placeholder for the shaded translucent ground in §7.2,
+    // which is the real answer.
+    const float BELOW_HORIZON_DIM = 0.14;
+    float below = smoothstep(0.0, -4.0, viewAltitudeDeg);
+    linear *= mix(1.0, BELOW_HORIZON_DIM, below);
 
     // Everything above is computed in linear space; tone map, convert to sRGB, and dither.
     vec3 srgb = pow(toneMap(linear), vec3(1.0 / 2.2)) + dither(gl_FragCoord.xy);
