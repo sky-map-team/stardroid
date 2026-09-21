@@ -48,6 +48,13 @@ data class RenderState(
  *   ignores it — but every real sky phenomenon is defined relative to the horizon: the brightening
  *   toward it, the twilight bands, the Belt of Venus and the Earth's shadow rising opposite the
  *   sun. A backend evaluating a scattering model needs the horizon, so the producer supplies it.
+ *
+ *   Deliberately has no default, unlike [turbidity]: "a clear day" is a fact about the air with
+ *   one sane fallback everywhere, but "which way is up" has none — a default here would be some
+ *   arbitrary direction wearing the shape of a real one, silently wrong for every caller that
+ *   forgot to set it rather than refusing to compile. `MapViewModel` is the only producer today
+ *   and always has an observer frame in hand ([SkyModel.localFrame]); a second producer without
+ *   one (a preview scene, a test) should decide its own placeholder rather than inherit ours.
  * @property turbidity atmospheric haze, the Preetham model's T: 2 is an exceptionally clear
  *   mountain sky, ~3 a clear day, 6+ hazy or urban. Higher values whiten the sky, widen the
  *   circumsolar aureole and lift the horizon glow. Backends that cannot evaluate a scattering

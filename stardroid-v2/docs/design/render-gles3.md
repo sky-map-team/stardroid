@@ -632,11 +632,12 @@ has to ask whether a difference is a bug.
   uniform read by every fragment shader rather than a per-primitive colour bake, which was the
   hard half. The remaining step is an off-screen pass, and that pass is also what bloom (§8.2)
   and star trails (§8.11) need — so the first of those three to be wanted pays for the others.
-- **Instanced sprites removed the batching TODO, and raised the declutter one.** Labels are one
-  draw call per atlas page now, so the draw side no longer cares how many there are. But
-  `LabelDeclutterer` is still O(n²) in both its sort and its overlap scan, and it is now the
-  only part of the label path that is. A grid or a sweep would be the next move if catalog
-  layers ever submit thousands.
+- **Instanced sprites removed the batching TODO and left the declutter one as the sole
+  bottleneck.** Labels are one draw call per atlas page now, so the draw side no longer cares
+  how many there are. `LabelDeclutterer`'s sort and overlap scan are unchanged by the port —
+  still O(n²), exactly as on GLES1 — but with the draw side no longer scaling badly either, it
+  is now the *only* part of the label path that does. A grid or a sweep would be the next move
+  if catalog layers ever submit thousands.
 - **`Terminator` is ready to become a sealed hierarchy** (§7.4). The shader takes the solar
   terminator and the Earth-shadow geometry as independent uniform blocks and composites them in
   order, so a third shadow source — a transit, a Jovian moon — is another block and another
