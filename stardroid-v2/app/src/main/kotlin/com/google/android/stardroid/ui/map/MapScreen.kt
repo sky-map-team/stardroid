@@ -92,6 +92,8 @@ import com.google.android.stardroid.startup.Experiment
 import com.google.android.stardroid.startup.ExperimentConfig
 import com.google.android.stardroid.time.TimeTravelState
 import com.google.android.stardroid.ui.calibration.CompassCalibrationViewModel
+import com.google.android.stardroid.ui.common.WidgetsSheet
+import com.google.android.stardroid.ui.common.widgetOffers
 import com.google.android.stardroid.ui.layers.LayersViewModel
 import com.google.android.stardroid.ui.location.AcquiringTimeoutDialog
 import com.google.android.stardroid.ui.location.LocationPermanentlyDeniedDialog
@@ -175,6 +177,11 @@ fun MapScreen(
     // flips off mid-flight: the entry points simply stop being offered.
     val cameraArEnabled = experimentConfig.isEnabled(Experiment.CAMERA_AR)
     val shareEnabled = experimentConfig.isEnabled(Experiment.SHARE_SKY)
+    // Not remember()-cached: RemoteConfigExperimentConfig is one long-lived instance
+    // whose isEnabled() answer changes asynchronously once fetchAndActivate() completes,
+    // so keying a cache on the instance itself would never invalidate. Read fresh every
+    // recomposition, like the sibling flags above.
+    val widgetsOnOffer = widgetOffers(experimentConfig)
     val referenceFrame by mapViewModel.referenceFrame.collectAsStateWithLifecycle()
     val nightMode by mapViewModel.nightMode.collectAsStateWithLifecycle()
     val timeTravelState by timeTravelViewModel.state.collectAsStateWithLifecycle()
@@ -194,6 +201,7 @@ fun MapScreen(
     var showTimeTravelDialog by rememberSaveable { mutableStateOf(false) }
     var showSearchDialog by rememberSaveable { mutableStateOf(false) }
     var showLocationSheet by rememberSaveable { mutableStateOf(false) }
+    var showWidgetsSheet by rememberSaveable { mutableStateOf(false) }
     var showManualLocationDialog by rememberSaveable { mutableStateOf(false) }
     // Saveable via its own imageRef/name/credit strings — ObjectInfo itself isn't parcelable
     // and the full card doesn't need to survive rotation, just what the overlay renders.
@@ -749,6 +757,12 @@ fun MapScreen(
                     mapViewModel.logMenuItem(AnalyticsEvents.GALLERY_OPENED_LABEL)
                     onOpenGallery()
                 },
+                onOpenWidgets = {
+                    showOverflowSheet = false
+                    mapViewModel.logMenuItem(AnalyticsEvents.WIDGETS_OPENED_LABEL)
+                    showWidgetsSheet = true
+                },
+                widgetsEnabled = widgetsOnOffer.isNotEmpty(),
                 onOpenLocation = {
                     showOverflowSheet = false
                     showLocationSheet = true
@@ -879,6 +893,10 @@ fun MapScreen(
                 },
                 onDismiss = { showLocationSheet = false },
             )
+        }
+
+        if (showWidgetsSheet) {
+            WidgetsSheet(widgetsOnOffer, onDismiss = { showWidgetsSheet = false })
         }
 
         if (showManualLocationDialog) {
