@@ -13,7 +13,6 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
@@ -39,18 +38,15 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.google.android.stardroid.R
 import com.google.android.stardroid.layers.SkyColors
-import com.google.android.stardroid.startup.Experiment
 import com.google.android.stardroid.startup.ExperimentConfig
-import com.google.android.stardroid.ui.common.AddWidgetButton
 import com.google.android.stardroid.ui.common.StyledHtml
+import com.google.android.stardroid.ui.common.WidgetOfferList
 import com.google.android.stardroid.ui.common.rememberAssetBitmap
 import com.google.android.stardroid.ui.common.topBarWindowInsets
+import com.google.android.stardroid.ui.common.widgetOffers
 import com.google.android.stardroid.ui.startup.appVersionName
 import com.google.android.stardroid.ui.theme.documentColors
 import com.google.android.stardroid.ui.theme.toComposeColor
-import com.google.android.stardroid.widget.CountdownWidgetReceiver
-import com.google.android.stardroid.widget.MoonWidgetReceiver
-import com.google.android.stardroid.widget.TonightWidgetReceiver
 
 /**
  * The help document, in render order. Each entry is one `<h2>` section (D78): the split keeps
@@ -76,7 +72,7 @@ private val helpSections2 =
     )
 
 /**
- * The widgets section closes with native Add-widget buttons ([WidgetAddButtons]), so the
+ * The widgets section closes with the native widget catalogue ([WidgetOfferList]), so the
  * document is split around it, like the symbol key splits the first half.
  */
 private val helpSections3 =
@@ -159,40 +155,8 @@ fun HelpScreen(
             SymbolKey(nightMode)
             StyledHtml(html2, nightMode = nightMode)
             StyledHtml(widgetsHtml, nightMode = nightMode)
-            WidgetAddButtons(experimentConfig)
+            WidgetOfferList(widgetOffers(experimentConfig), showDescriptions = false)
             StyledHtml(html3, nightMode = nightMode)
-        }
-    }
-}
-
-/**
- * One "Add widget" row per widget the experiment flags currently allow (D75). Gated like the
- * components themselves ([com.google.android.stardroid.widget.WidgetGate]): a disabled
- * receiver can't be pinned, so offering it would only lead to the manual-instructions dialog.
- */
-@Composable
-private fun WidgetAddButtons(experimentConfig: ExperimentConfig) {
-    val widgets =
-        buildList {
-            if (experimentConfig.isEnabled(Experiment.MOON_WIDGET)) {
-                add(R.string.moon_widget_label to MoonWidgetReceiver::class.java)
-            }
-            if (experimentConfig.isEnabled(Experiment.TONIGHT_WIDGET)) {
-                add(R.string.tonight_widget_label to TonightWidgetReceiver::class.java)
-                add(R.string.countdown_widget_label to CountdownWidgetReceiver::class.java)
-            }
-        }
-    for ((label, receiver) in widgets) {
-        Row(
-            verticalAlignment = Alignment.CenterVertically,
-            modifier = Modifier.fillMaxWidth(),
-        ) {
-            Text(
-                stringResource(label),
-                style = MaterialTheme.typography.bodyLarge,
-                modifier = Modifier.weight(1f),
-            )
-            AddWidgetButton(receiver)
         }
     }
 }

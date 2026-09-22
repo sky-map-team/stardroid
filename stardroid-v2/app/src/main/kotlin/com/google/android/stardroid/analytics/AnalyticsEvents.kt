@@ -70,6 +70,7 @@ object AnalyticsEvents {
     const val CALIBRATION_OPENED_LABEL = "calibration_opened"
     const val TIME_TRAVEL_OPENED_LABEL = "time_travel_opened"
     const val GALLERY_OPENED_LABEL = "gallery_opened"
+    const val WIDGETS_OPENED_LABEL = "widgets_opened"
     const val DIAGNOSTICS_OPENED_LABEL = "diagnostics_opened"
     const val MANUAL_MODE_TOGGLED_EVENT = "manual_mode_toggled_ev"
     const val MANUAL_MODE_ENABLED = "enabled"
