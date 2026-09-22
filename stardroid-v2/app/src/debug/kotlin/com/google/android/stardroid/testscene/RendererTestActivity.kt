@@ -68,6 +68,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.isActive
+import kotlinx.coroutines.job
 import kotlinx.coroutines.launch
 import kotlinx.datetime.Clock
 import kotlinx.datetime.Instant
@@ -135,7 +136,8 @@ class RendererTestActivity : Activity() {
     private lateinit var connector: RenderConnector
     private lateinit var fpsTv: TextView
     private val scope = CoroutineScope(SupervisorJob() + Dispatchers.Main)
-    private var database: SkyMapDatabase? = null
+    // Written on the main thread, read by the scope-completion handler in onDestroy.
+    @Volatile private var database: SkyMapDatabase? = null
 
     private var nightMode = false
     private var translucentBackground = false
@@ -325,7 +327,7 @@ class RendererTestActivity : Activity() {
     /**
      * Opens the bundled catalog DB (with D24/G11 recovery) and collects each catalog layer's
      * scene flow into the renderer. Collection lives in [scope]; onDestroy cancels it and
-     * closes the DB.
+     * closes the DB once cancellation has drained.
      */
     private fun startCatalogLayers() {
         scope.launch {
@@ -538,8 +540,12 @@ class RendererTestActivity : Activity() {
 
     override fun onDestroy() {
         super.onDestroy()
+        // Close the DB only once cancellation has drained: cancelling doesn't stop a Room
+        // query already dispatched to Room's executor, and closing the DB under it throws an
+        // IllegalStateException nothing catches, which killed the instrumentation process on
+        // slow CI runners. The scope's Job completes when the last child has finished.
+        scope.coroutineContext.job.invokeOnCompletion { database?.close() }
         scope.cancel()
-        database?.close()
     }
 
     // ---- FPS tracking (GL thread → UI thread) ----------------------------------------
