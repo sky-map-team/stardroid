@@ -150,6 +150,12 @@ Reused by EULA, What's New, Help, and the calibration screen. Help is now a full
 Navigation destination and the EULA a full-screen startup gate, both with a collapsing
 `LargeTopAppBar`; What's New stays a (now styled) dialog since it's short.
 
+**Later (#1032, #1064):** Help gained a search box and in-app deep links; the document is now
+a filterable list of sections rather than one string. See
+[screens-and-startup.md](screens-and-startup.md#help--credits--eula-content) for the mechanism
+— `StyledHtml` and `htmlWithLinks` grew a `highlight` and an `onInternalLink` parameter, both
+defaulted off, so EULA, What's New and calibration render exactly as they did.
+
 ## 4. Time travel state visibility — ✅ done (slice 21, D53)
 
 > Time travel has no visual indication of whether you are travelling in time and how fast

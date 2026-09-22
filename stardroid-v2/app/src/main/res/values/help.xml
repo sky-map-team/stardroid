@@ -6,7 +6,12 @@
       copy edit to one section retranslates that section only, instead of the whole ~11 KB
       document across every locale.
 
-      When adding a section: add the key here, and add it to HelpScreen's helpSections list.
+      When adding a section: add the key here, and add an entry to HELP_DOCUMENT
+      (HelpDocument.kt), which also names the anchor a skymap://help#... link can target.
+
+      Links of the form skymap://... are in-app navigation, not web URLs - see HelpLinks.kt
+      for the targets. Translations must keep the href value exactly and translate only the
+      text between the tags; HelpLinksTest enforces that across every locale.
     -->
 
     <string name="help_home_link" translation_description="Link to the Sky Map home page, shown at the top of the help document."><![CDATA[
@@ -138,7 +143,7 @@ from the current moment.</p>
 at the bottom.</p>
 <br/>
 <p>In Night Vision mode, Sky Map switches the display to deep red tones and dims the screen.
-The <b>Auto screen dimming</b> option in <b>Settings</b> gives you additional control over how dark the screen gets.</p>
+The <b>Auto screen dimming</b> option in <a href="skymap://settings"><b>Settings</b></a> gives you additional control over how dark the screen gets.</p>
     ]]></string>
 
     <string name="help_other" translation_description="Help section: other options"><![CDATA[
@@ -148,7 +153,7 @@ The <b>Auto screen dimming</b> option in <b>Settings</b> gives you additional co
 
     <string name="help_gallery" translation_description="Help section: the image gallery. Please do not change the markup"><![CDATA[
 <h2>Gallery</h2>
-<p>The Gallery contains a curated collection of beautiful images of the night sky, including some
+<p>The <a href="skymap://gallery">Gallery</a> contains a curated collection of beautiful images of the night sky, including some
  from the Hubble Space Telescope.</p>
  <br/>
 <p>Browse thumbnails by scrolling, and tap one to see details.
@@ -163,7 +168,7 @@ Use the <b>Find</b> button to locate that object in the sky.</p>
 • <b>Sky countdown:</b> the days until the next meteor shower peak or moon event</p>
 <p>Tap a widget to open Sky Map.</p>
 <h3>Adding a widget</h3>
-<p>Tap <b>Add widget</b> next to a widget below to put it on your home screen. Or touch and hold an empty space
+<p><a href="skymap://widgets">Browse the widgets</a> and tap <b>Add widget</b> next to the one you want. Or touch and hold an empty space
 on your home screen, choose <b>Widgets</b>, then find <b>Sky Map</b>.</p>
     ]]></string>
 
@@ -176,20 +181,20 @@ services (mobile network or GPS).</p>
 and enter a <b>place name</b> or a <b>latitude and longitude</b> in degrees.</p>
 <blockquote>Internet is required to decode location place names.</blockquote>
 <p>If you\'ve previously denied Sky Map location permission, you may need to re-enable it in your
-device\'s <b>App Settings → Permissions</b>.</p>
+device\'s <a href="skymap://app-settings"><b>App Settings → Permissions</b></a>.</p>
 <blockquote>If you don\'t grant it access, Sky Map will assume you are at (0, 90) — the North Pole!</blockquote>
     ]]></string>
 
     <string name="help_diagnostics" translation_description="Help section: the diagnostics page. Please do not change the markup"><![CDATA[
     <h2>Diagnostics</h2>
-    <p>This page lists various data about your phone and Sky Map that can be useful for debugging issues. Find it under <b>Settings → Diagnostics</b>.</p>
+    <p>This page lists various data about your phone and Sky Map that can be useful for debugging issues. Find it under <a href="skymap://diagnostics"><b>Settings → Diagnostics</b></a>.</p>
     <br/>
     <p>When reporting a problem, tap the share button at the top of the page to email these details to us at <a href="mailto:skymapdevs@gmail.com">skymapdevs@gmail.com</a>. You can read and edit the report before sending it.</p>
     ]]></string>
 
     <string name="help_calibrate" translation_description="Help section: the calibrate page. Please do not change the markup"><![CDATA[
     <h2>Calibrate</h2>
-    From time to time you should calibrate your phone\'s compass – this page shows you how. Sky Map will
+    From time to time you should calibrate your phone\'s compass – <a href="skymap://calibrate">this page</a> shows you how. Sky Map will
     also warn you if your compass requires calibration.
     <blockquote><b>IMPORTANT:</b> A calibrated compass does NOT mean an <b>accurate</b> compass.
     All calibration does is reset the compass internally. It can still be inaccurate due to nearby
@@ -197,7 +202,7 @@ device\'s <b>App Settings → Permissions</b>.</p>
     phone\'s hardware and are <b>nothing to do with Sky Map</b>. All Sky Map does is report to
     you what the phone is reporting to it.</blockquote>
     <br/>
-    <p>See the troubleshooting section below for more help.</p>
+    <p>See the <a href="skymap://help#troubleshooting">troubleshooting section</a> below for more help.</p>
     ]]></string>
 
     <string name="help_misc" translation_description="Help section: miscellaneous"><![CDATA[
@@ -218,8 +223,8 @@ If the sky map looks wrong, it is almost always a hardware issue with your phone
 Sky Map reads exactly what your phone\'s sensor reports; it has no way to automatically correct a bad or biased reading.
 See Troubleshooting below.</blockquote>
 <h3>How do I know which sensors my phone has?</h3>
-<p>Open <b>Settings → Diagnostics</b> — any sensors your phone doesn\'t have will be marked absent. You will also have been informed
-during the tutorial.</p>
+<p>Open <a href="skymap://diagnostics"><b>Settings → Diagnostics</b></a> — any sensors your phone doesn\'t have will be marked absent. You will also have been informed
+during <a href="skymap://tutorial">the tutorial</a>.</p>
 <h3>What if my device is missing required sensors?</h3>
 <p>Sky Map will fall back into manual mode. You can still explore the sky, but without the sensors there
 is no way any app can show you your direction.</p>
@@ -229,16 +234,16 @@ is no way any app can show you your direction.</p>
 <h2>Troubleshooting</h2>
 <h3>The map doesn\'t move</h3>
 <p>• Check you\'re in Auto Mode (not Manual)<br/>
-• Check the Diagnostics page (<b>Settings → Diagnostics</b>) to confirm your device has a compass and accelerometer<br/>
+• Check the <a href="skymap://diagnostics">Diagnostics page</a> to confirm your device has a compass and accelerometer<br/>
 • Try the figure-8 calibration gesture: wave your phone slowly in a large, smooth figure-8 shape</p>
 <h3>The map is pointing the wrong way or is inaccurate</h3>
 <p>Sky Map needs three things to show the correct sky: the direction your phone is facing, your location, and the current time. If the map looks wrong, one of these is likely off.</p>
 <p>• <b>Compass (most common cause):</b> This is a hardware issue with your phone — not a Sky Map bug. The figure-8 calibration gesture asks your phone to reset its compass sensor internally, but <i>a calibrated compass is not necessarily an accurate one</i>. If you\'re near a metal object, car dashboard, or magnetic phone case the map can still be off even after calibrating. Move to an open area and repeat the figure-8 gesture.<br/>
-• <b>Location:</b> Grant location permission via <b>App Settings → Permissions</b>. Check the Diagnostics page (<b>Settings → Diagnostics</b>) to confirm your coordinates. A telltale symptom of missing location is Polaris appearing directly overhead.<br/>
+• <b>Location:</b> Grant location permission via <a href="skymap://app-settings"><b>App Settings → Permissions</b></a>. Check the Diagnostics page (<b>Settings → Diagnostics</b>) to confirm your coordinates. A telltale symptom of missing location is Polaris appearing directly overhead.<br/>
 • <b>Time:</b> Less common, but an incorrect time zone shifts the whole sky. Check the Diagnostics page (<b>Settings → Diagnostics</b>) to confirm your device\'s time and time zone are correct.</p>
 <h3>The map is jittery</h3>
 <p>
-• Check <b>Settings → Sensors</b> — if <b>Use legacy sensors</b> is on, try switching it off<br/>
+• Check <a href="skymap://settings"><b>Settings → Sensors</b></a> — if <b>Use legacy sensors</b> is on, try switching it off<br/>
 • <b>Smooth sensor movement</b> is new and on by default while we gather feedback; raise <b>Steadiness</b> until the view settles when the phone is held still, then raise <b>Ease off when moving</b> if panning starts to feel laggy<br/>
 • You can turn Smooth sensor movement back off in the same section if you\'d rather use the raw sensor while it\'s being tuned</p>
 <p>For full troubleshooting details see the online <a href="https://ts.stardroid.app">troubleshooting</a> guide.</p>
@@ -247,7 +252,7 @@ is no way any app can show you your direction.</p>
 
     <string name="help_pointer_mode" translation_description="Help section: pointer mode for telescope users. Please do not change the markup"><![CDATA[
 <h2>Telescope Users — Pointer Mode</h2>
-<p>Under <b>Settings → Sensors</b>, change the <b>View Direction</b> to <b>Pointer Mode</b>. In this mode, Sky Map shows what the <i>long edge</i> of the phone is pointing at, rather than what the screen is facing.</p>
+<p>Under <a href="skymap://settings"><b>Settings → Sensors</b></a>, change the <b>View Direction</b> to <b>Pointer Mode</b>. In this mode, Sky Map shows what the <i>long edge</i> of the phone is pointing at, rather than what the screen is facing.</p>
 <p>This lets you mount your phone along the side of a telescope tube so the screen is perpendicular to the tube while the map still tracks what the telescope is aimed at.</p>
     ]]></string>
 </resources>

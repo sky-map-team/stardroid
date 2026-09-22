@@ -42,6 +42,12 @@ Each is a self-contained section of one manual — keep terminology consistent a
 them, and keep the HTML markup (<h2>, <h3>, <p>, <b>, <i>, <br/>) exactly as it \
 appears in the source.
 
+Some help links use the private scheme skymap:// — these are in-app navigation \
+targets, not web addresses or prose. Reproduce every href value byte for byte, \
+including anchors like skymap://help#troubleshooting: never translate, \
+transliterate, reorder or "correct" the part inside the quotes. Translate only \
+the visible text between <a> and </a>.
+
 The glossary's "Compass" entry names the constellation Circinus and applies only to \
 that constellation. It does not apply to the phone's magnetic/orientation sensor: \
 translate that sense of "compass" using each language's ordinary word for a \

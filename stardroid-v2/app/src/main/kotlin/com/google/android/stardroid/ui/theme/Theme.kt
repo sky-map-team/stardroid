@@ -97,6 +97,11 @@ data class DocumentColors(
      * `SkyColors` rather than from a chrome color that merely happens to agree.
      */
     val symbolTintOverride: Color?,
+    /**
+     * The fill behind a help-search match. A background wash rather than a foreground color so
+     * it cannot collide with the heading accents or the link styling it may land on top of.
+     */
+    val searchHighlight: Color,
 )
 
 fun documentColors(nightMode: Boolean): DocumentColors =
@@ -146,6 +151,9 @@ private val DayDocumentColors =
         calloutBackground = Color(0xFF1E3A4C),
         calloutAccent = Color(0xFF7EC8E3),
         symbolTintOverride = null,
+        // Star Gold at low alpha: the accent already means "look here" in this palette, and a
+        // wash keeps the text underneath at full contrast.
+        searchHighlight = Color(0x66FFC107),
     )
 
 /** The night palette's brightest red — `h1` accent and the night symbol-key tint. */
@@ -167,6 +175,9 @@ private val NightDocumentColors =
         // The map's markers are red-shifted by the renderer's night transform; the legend
         // follows with the brightest chrome red so it still reads as the same element.
         symbolTintOverride = NightAccentBright,
+        // Red-shifted and dimmer still — on the near-black night surface a light wash is both
+        // glaring and hostile to dark adaptation.
+        searchHighlight = Color(0x66C04848),
     )
 
 /**
