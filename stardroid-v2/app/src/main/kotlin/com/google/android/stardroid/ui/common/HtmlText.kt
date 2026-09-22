@@ -45,6 +45,10 @@ internal fun isAppLink(url: String): Boolean = url.startsWith(APP_LINK_SCHEME)
  * [highlight] wraps every occurrence of a search term in [highlightColor], for Help's filter
  * box. [onInternalLink] receives [APP_LINK_SCHEME] hrefs — the help document's deep links into
  * the app — and everything else keeps going to the platform URI handler.
+ *
+ * The parse and the highlight overlay are remembered separately: [highlight] is Help's live
+ * search query, so keying one `remember` on it would force the expensive `fromHtml` parse to
+ * redo on every keystroke instead of just recomputing the (cheap) highlight spans.
  */
 @Composable
 fun htmlWithLinks(
@@ -59,24 +63,24 @@ fun htmlWithLinks(
     val internalLink by rememberUpdatedState(onInternalLink)
     // Whether there is a listener at all changes the parse; which listener it is does not.
     val routesInternally = onInternalLink != null
-    return remember(html, linkColor, highlightColor, highlight, routesInternally) {
-        val listener =
-            if (routesInternally) {
-                // Supplying a listener *replaces* Compose's default URI opening, so the
-                // ordinary http and mailto links in the same document have to be handed to
-                // the URI handler by hand or they quietly stop working.
-                LinkInteractionListener { annotation ->
-                    val url = (annotation as? LinkAnnotation.Url)?.url
-                    when {
-                        url == null -> Unit
-                        isAppLink(url) -> internalLink?.invoke(url)
-                        else -> uriHandler.openUri(url)
+    val parsed =
+        remember(html, linkColor, routesInternally) {
+            val listener =
+                if (routesInternally) {
+                    // Supplying a listener *replaces* Compose's default URI opening, so the
+                    // ordinary http and mailto links in the same document have to be handed to
+                    // the URI handler by hand or they quietly stop working.
+                    LinkInteractionListener { annotation ->
+                        val url = (annotation as? LinkAnnotation.Url)?.url
+                        when {
+                            url == null -> Unit
+                            isAppLink(url) -> internalLink?.invoke(url)
+                            else -> uriHandler.openUri(url)
+                        }
                     }
+                } else {
+                    null
                 }
-            } else {
-                null
-            }
-        val parsed =
             AnnotatedString.fromHtml(
                 html,
                 linkStyles =
@@ -89,6 +93,8 @@ fun htmlWithLinks(
                     ),
                 linkInteractionListener = listener,
             )
+        }
+    return remember(parsed, highlight, highlightColor) {
         parsed.withHighlight(highlight, highlightColor)
     }
 }
