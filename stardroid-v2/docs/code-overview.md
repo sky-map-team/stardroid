@@ -59,8 +59,9 @@ no longer applies.
 
 ## 2. Module graph and build structure
 
-Ten Gradle modules (`settings.gradle.kts`), split hard into **pure Kotlin** (no Android SDK on
-the classpath — `import android.*` is a compile error) and **Android**:
+Twelve Gradle modules (`settings.gradle.kts`), split hard into **pure Kotlin** (no Android SDK
+on the classpath — `import android.*` is a compile error) and **Android**. The pure modules
+other than the JVM tools are Kotlin Multiplatform (JVM + iOS), shared with the iOS port:
 
 | Module | Type | Main / test LOC | Purpose |
 |---|---|---|---|
@@ -69,8 +70,10 @@ the classpath — `import android.*` is a compile error) and **Android**:
 | `:core:catalog` | pure | 592 / 245 | Celestial-object domain model, repository interfaces, locale fallback, name normalization |
 | `:core:events` | pure | 368 / 140 | The "tonight's sky" events engine behind widgets/notifications (D70) |
 | `:render:api` | pure | 614 / 509 | Renderer contract: primitives, camera, **the shared projection** |
+| `:core:testing` | pure (test support) | 371 / 157 | Truth-shaped assertions for the pure modules' multiplatform tests |
 | `:data:generator` | pure (build-time JVM tool) | 807 / 429 | Deterministic catalog-DB generator over `source-data/` |
 | `:render:gles1` | Android lib | 2,292 / 1,021 | OpenGL ES 1.0 backend implementing `:render:api` |
+| `:render:gles3` | Android lib | 2,837 / 458 | OpenGL ES 3.0 backend implementing `:render:api` (render-gles3.md) |
 | `:data` | Android lib | 1,058 / 1,035 | Room catalog store implementing `:core:catalog` |
 | `:app` | Android app | 19,572 / 6,583 | Compose UI, ViewModels, Hilt, sensors, location, widgets, notifications |
 | `:konsist` | test-only | — | Architecture gate (D20) |
@@ -78,15 +81,18 @@ the classpath — `import android.*` is a compile error) and **Android**:
 Dependency arrows point inward only: `:app → {:render:*, :data, :core:*}`,
 `:render:gles1 → :render:api → :core:math`, `:data → :core:*`. Pure modules use constructor
 injection only (no Hilt/Koin) so a KMP conversion is a build-file change — this was a stated
-design goal (high-level-architecture.md) and it has held: the only JVM-only import in any pure
-module's main sources is `java.text.Normalizer` in `core/catalog/.../NameNormalizer.kt`.
+design goal (high-level-architecture.md) and it held: the conversion (iOS port phase 0) needed
+one `expect`/`actual`, for `NameNormalizer`'s use of `java.text.Normalizer`.
 
 ### Convention plugins (`build-logic/`)
 
-Four plugins carry all shared build config (see build-and-tooling.md for rationale):
+Five plugins carry all shared build config (see build-and-tooling.md for rationale):
 
-- `skymap.pure-kotlin` — `kotlin("jvm")` + ktlint + JUnit 5/Truth test stack, toolchain 17.
-  Applying this plugin *is* the purity enforcement: no Android SDK on the classpath.
+- `skymap.pure-kmp` — `kotlin("multiplatform")` with `jvm` + iOS targets, ktlint, and a
+  `commonTest` stack of kotlin.test + `:core:testing`. Used by `:core:*` and `:render:api`.
+  Applying it *is* the purity enforcement: no Android SDK anywhere, no JDK in `commonMain`.
+- `skymap.pure-kotlin` — `kotlin("jvm")` + ktlint + JUnit 5/Truth test stack, toolchain 17, for
+  the JVM tools (`:data:generator`, `:konsist`). No Android SDK on the classpath.
 - `skymap.android-library` / `skymap.android-app` — AGP config (compileSdk 36, minSdk 28),
   the app variant adds Compose, KSP, Hilt (wired automatically), ktlint.
 - `skymap.android-room` — KSP + Room, checked-in schema JSON at `data/schemas/` (the exported
@@ -115,11 +121,12 @@ generator and app via `:core:catalog` so normalized names cannot drift (D33).
 
 ### Testing and CI
 
-- `./gradlew check` = unit tests (JUnit 5 + Truth), ktlint, and the Konsist gate. Must pass
-  before any commit.
+- `./gradlew check` = unit tests (JUnit 5 + Truth; the pure modules' kotlin.test suites run on
+  the JVM and, with Xcode installed, the iOS simulator), ktlint, and the Konsist gate. Must pass
+  before any commit. A macOS CI job runs the pure modules' suites on the iOS simulator.
 - **Konsist gate** (`konsist/src/test/kotlin/.../ArchitectureTest.kt`): non-vacuity guard, "no
-  Android imports in pure modules", and an inward-only-deps allow-list. *Known gap:* the path
-  regex and allow-list predate `:core:events`, so that pure module is currently unguarded.
+  Android imports in pure modules", an inward-only-deps allow-list, and "no JDK imports in the
+  shared modules' common code".
 - **Generator reproducibility gate** (`data/generator/src/test/.../CatalogDbGeneratorTest.kt`):
   runs against the real schema + source-data; asserts byte-identical output across runs,
   identity-hash match, FTS diacritic folding, plus content spot checks.

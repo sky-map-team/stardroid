@@ -1,25 +1,28 @@
 # Detailed Design: Build, Modules, and CI Tooling
 
 **Status: IMPLEMENTED** (slice 1, D20; this doc refreshed 2026-08-02 to match the as-built
-graph). Records the build scaffolding the other increments assume (G13) and the CI guardrails
-for the architecture (D20) and performance (D19).
+graph, and 2026-09-23 for the pure modules' move to Kotlin Multiplatform — iOS port phase 0).
+Records the build scaffolding the other increments assume (G13) and the CI guardrails for the
+architecture (D20) and performance (D19).
 
 ## Module graph
 
-Ten Gradle modules, following the dependency rule (arrows inward only; see
+Twelve Gradle modules, following the dependency rule (arrows inward only; see
 [high-level-architecture.md](high-level-architecture.md)):
 
 ```
-:app            android-app    → :render:api, :render:gles1, :data, :core:*
+:app            android-app    → :render:api, :render:gles1, :render:gles3, :data, :core:*
 :render:gles1   android-library→ :render:api
-:render:api     pure-kotlin    → :core:math
+:render:gles3   android-library→ :render:api
+:render:api     pure-kmp       → :core:math
 :data           android-library→ :core:catalog, :core:astronomy, :core:math
 :data:generator pure-kotlin    → :core:catalog (build-time JVM tool; sqlite-jdbc,
                                  kotlinx-serialization)
-:core:events    pure-kotlin    → :core:catalog, :core:astronomy, :core:math
-:core:catalog   pure-kotlin    → :core:astronomy, :core:math
-:core:astronomy pure-kotlin    → :core:math
-:core:math      pure-kotlin    → (nothing)
+:core:events    pure-kmp       → :core:catalog, :core:astronomy, :core:math
+:core:catalog   pure-kmp       → :core:astronomy, :core:math
+:core:astronomy pure-kmp       → :core:math
+:core:math      pure-kmp       → (nothing)
+:core:testing   pure-kmp       → (nothing; test support for the pure-kmp modules' tests)
 :konsist        pure-kotlin    → (nothing; test-only architecture gate)
 ```
 
@@ -30,20 +33,22 @@ generator originally sketched here as `:tools:catalog-gen` landed as `:data:gene
 
 ## Convention plugins (`build-logic/`)
 
-Four plugins keep module build scripts to a few lines and make module *kind* a declaration,
+Five plugins keep module build scripts to a few lines and make module *kind* a declaration,
 not a copy-paste of config. They are the structural half of D20.
 
 | Plugin | Applies | Used by |
 |---|---|---|
-| `skymap.pure-kotlin` | `kotlin("jvm")`, JUnit5/Truth, **no Android plugin** | `:core:*`, `:render:api`, `:data:generator`, `:konsist` |
+| `skymap.pure-kmp` | `kotlin("multiplatform")` — JVM + iOS targets, kotlin.test + `:core:testing`, **no Android plugin** | `:core:*`, `:render:api` |
+| `skymap.pure-kotlin` | `kotlin("jvm")`, JUnit5/Truth, **no Android plugin** | `:data:generator`, `:konsist` |
 | `skymap.android-library` | `com.android.library` + Kotlin, common Android config | `:render:gles1`, `:data` |
 | `skymap.android-app` | `com.android.application` + Kotlin + Compose + Hilt + flavors | `:app` |
 | `skymap.android-room` | KSP + Room, checked-in exported schema (`data/schemas/`) | `:data` |
 
-Because `skymap.pure-kotlin` never puts the Android SDK on the classpath, `import android.*` in
+Because neither pure plugin ever puts the Android SDK on the classpath, `import android.*` in
 a pure module is a **compile error** — the primary, structural guarantee that the pure/Android
 boundary holds (D20 layer 1). A pure module that needs Android has applied the wrong plugin,
-which is the visible mistake.
+which is the visible mistake. Under `skymap.pure-kmp` the same holds for the JDK: `commonMain`
+is also compiled for iOS, so `import java.*` there is a compile error too.
 
 Shared versions live in a Gradle **version catalog** (`gradle/libs.versions.toml`): Kotlin,
 AGP, Compose BOM, Hilt, Room, DataStore, Glance + WorkManager (widgets, D69),
@@ -79,6 +84,29 @@ best-effort and unsupported.**
 - If Android-9-specific bug reports start showing up, the fix is to raise `minSdk` back to 29,
   not to patch around API 28 — v1 remains the only actively Android-9-supported version.
 
+## Kotlin Multiplatform — the shared core (iOS port, phase 0)
+
+The pure modules other than the JVM tools are Kotlin Multiplatform, so the iOS app can share the
+math, astronomy, catalog, events and renderer-contract code rather than reimplement it. For
+Android nothing changes: the Android modules and `:data:generator` consume each module's `jvm`
+target exactly as they consumed the old `kotlin("jvm")` jar.
+
+- **Targets:** `jvm`; `iosArm64` (devices) and `iosSimulatorArm64` (Apple-silicon simulators,
+  including CI's); `iosX64` for simulators on Intel Macs, to be dropped when Kotlin retires the
+  x86_64 Apple targets.
+- **Layout:** `src/commonMain` (all production code), `src/commonTest` (all tests). Platform
+  code appears only as an `expect`/`actual` pair; today there is exactly one —
+  `NameNormalizer`'s canonical decomposition (`java.text.Normalizer` in `jvmMain`, Foundation's
+  `decomposedStringWithCanonicalMapping` in `appleMain`).
+- **Tests run on every target.** Truth is JVM-only, so `:core:testing` provides a
+  multiplatform stand-in with Truth's names and semantics for exactly the subset in use (a
+  suite moved over by changing its imports; its own tests pin that each assertion can fail).
+  Grow it when a test needs more; don't turn it into a general library.
+- **Xcode:** compiling iOS klibs needs only the Kotlin/Native toolchain, but linking and running
+  test binaries needs a full Xcode. On a Mac with only the Command Line Tools, `check` skips
+  the iOS link/test tasks with a warning rather than failing, so Android-only setups keep
+  working; the macOS CI job always runs them.
+
 ## Build flavors (D3)
 
 `:app` carries the `gms` / `fdroid` product flavors from v1. Flavor-specific source sets supply
@@ -99,17 +127,20 @@ compiler alone can't fully cover:
 - no type in a pure module imports `android.*` / `androidx.*` (plus a catch for
   `*.android.*` artifacts like coroutines-android);
 - the module dependency arrows point inward only, via an in-project import **allow-list**
-  (`math`/`astronomy`/`catalog`/`render.api`), because `:app`'s namespace is the package root
-  and a denylist would miss it.
+  (`math`/`astronomy`/`catalog`/`events`/`render.api`, plus `testing` for test sources),
+  because `:app`'s namespace is the package root and a denylist would miss it.
+- no common (non-`jvm*`) source set of a `pure-kmp` module imports `java.*` / `javax.*`.
 
-*Known gap (2026-08-02):* the path regex and allow-list predate `:core:events`, so that pure
-module is currently outside the gate; extend both when next touched. The `:konsist` build file
-registers every `**/*.kt` as a task input because Konsist scans the filesystem and would
-otherwise sit UP-TO-DATE and silently skip.
+The `:konsist` build file registers every `**/*.kt` as a task input because Konsist scans the
+filesystem and would otherwise sit UP-TO-DATE and silently skip. (The 2026-08-02 gap — the gate
+predating `:core:events` — was closed with the KMP conversion.)
 
-Layer 3 — a KMP-readiness denylist of JVM-only packages inside core logic (e.g. `java.nio.*`)
-— is **deferred** until KMP work begins; it is noise before then (D20). `java.nio.FloatBuffer`
-legitimately lives in `:data`/`:render:gles1` (the GL upload boundary), not in pure modules.
+Layer 3 — a KMP-readiness denylist of JVM-only packages inside core logic — was deferred until
+KMP work began (D20). It began, and the layer turned out to be structural rather than a list:
+`commonMain` compiles for iOS, so the compiler rejects JDK APIs there, and Konsist carries the
+import rule above as the executable spec. JVM-only code goes in `jvmMain` behind an
+`expect`/`actual`. `java.nio.FloatBuffer` legitimately lives in `:data` and the GL backends
+(the GL upload boundary), not in pure modules.
 
 ### Reproducible catalog DB (D3, [catalog-and-schema.md](catalog-and-schema.md))
 
@@ -141,13 +172,15 @@ backend region index before relying further on D13's no-point-culling stance.
 
 The workflow lives at the **monorepo root** (`.github/workflows/android.yml`, working
 directory `stardroid-v2/`): a `check` job (unit tests, ktlint, Konsist, generator gate) plus
-connected instrumented tests on API 34 and 35 emulators for every PR.
+connected instrumented tests on API 34 and 35 emulators for every PR, and a macOS job that runs
+the pure-kmp modules' tests on the iOS simulator (the Linux `check` job cannot build Apple
+targets, so it covers them on the JVM only).
 
 ## Testing toolchain (summary; per-area detail lives in each design doc)
 
 | Layer | Tools |
 |---|---|
-| Pure modules (`:core:*`, `:render:api`) | JUnit5, Truth, kotlin property tests; golden fixtures vs. v1 (D6) |
+| Pure modules (`:core:*`, `:render:api`) | kotlin.test + `:core:testing`'s Truth-shaped assertions in `commonTest`, run on the JVM (JUnit 5) and the iOS simulator; kotlin property tests; golden fixtures vs. v1 (D6) |
 | Flow behavior | Turbine |
 | `:data` (Room) | **instrumented** tests against real SQLite (FTS4 + Room invalidation need it) + fixture pack; generator golden test on the JVM |
 | `:app` ViewModels | pure JVM with fakes (the point of the decomposition) |
