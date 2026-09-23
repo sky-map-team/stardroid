@@ -19,10 +19,11 @@ import org.junit.jupiter.api.Test
  * `:render:gles3` sibling-backend boundary (render-gles3.md §2).
  *
  * The structural guarantee for the pure/Android checks is that pure modules apply
- * `skymap.pure-kotlin` (a `kotlin("jvm")` module with no Android SDK on the classpath), so
- * `import android.*` cannot even compile. Those tests are the belt-and-braces gate that also
- * catches a module accidentally switched to an Android plugin, and document the rule as an
- * executable spec. `:render:gles3` has no such structural backstop — both it and `:render:gles1`
+ * `skymap.pure-kmp` (Kotlin Multiplatform, whose commonMain sees neither the Android SDK nor the
+ * JDK) or, for the JVM build tools, `skymap.pure-kotlin` (a `kotlin("jvm")` module with no Android
+ * SDK on the classpath), so `import android.*` cannot even compile. Those tests are the
+ * belt-and-braces gate that also catches a module accidentally switched to an Android plugin, and
+ * document the rule as an executable spec. `:render:gles3` has no such structural backstop — both it and `:render:gles1`
  * are ordinary Android library modules, so nothing stops one importing the other's internals by
  * hand, and this gate is the only thing that would catch it.
  */
@@ -30,7 +31,10 @@ class ArchitectureTest {
     private val pureModuleSource =
         // Leading `(?:.*/)?` (not `.*/`) so the gate matches whether Konsist yields absolute or
         // repo-relative paths.
-        Regex("""(?:.*/)?(core/(math|astronomy|catalog)|render/api|data/generator)/src/.*\.kt$""")
+        Regex(
+            """(?:.*/)?(core/(math|astronomy|catalog|events|testing)|render/api|data/generator)""" +
+                """/src/.*\.kt$""",
+        )
 
     private fun pureModuleFiles() =
         Konsist.scopeFromProject().files
@@ -74,12 +78,41 @@ class ArchitectureTest {
                 "com.google.android.stardroid.math.",
                 "com.google.android.stardroid.astronomy.",
                 "com.google.android.stardroid.catalog.",
+                "com.google.android.stardroid.events.",
                 "com.google.android.stardroid.render.api.",
+                // :core:testing's assertions, for the pure modules' test sources.
+                "com.google.android.stardroid.testing.",
             )
         pureModuleFiles().assertFalse { file ->
             file.hasImport { import ->
                 import.name.startsWith("com.google.android.stardroid.") &&
                     allowedPureModulePackages.none { import.name.startsWith(it) }
+            }
+        }
+    }
+
+    // Every source set of the multiplatform modules except the JVM-only ones (jvmMain, jvmTest).
+    private val sharedModuleCommonSource =
+        Regex("""(?:.*/)?(core/[a-z]+|render/api)/src/(?!jvm)[A-Za-z]+/.*\.kt$""")
+
+    private fun sharedModuleCommonFiles() =
+        Konsist.scopeFromProject().files.filter {
+            sharedModuleCommonSource.matches(it.path.replace('\\', '/'))
+        }
+
+    @Test
+    fun `shared modules keep JVM-only APIs out of common code`() {
+        // The iOS targets compile these source sets, so the compiler already rejects a JDK import
+        // there; this documents the rule and catches a platform class sneaking into commonMain
+        // should a source set ever gain a JVM dependency. JDK code belongs in jvmMain, behind an
+        // expect/actual (as NameNormalizer's canonical decomposition is).
+        val files = sharedModuleCommonFiles()
+        assertTrue(files.isNotEmpty()) {
+            "Shared-module gate found no common sources to scan — check sharedModuleCommonSource."
+        }
+        files.assertFalse { file ->
+            file.hasImport { import ->
+                import.name.startsWith("java.") || import.name.startsWith("javax.")
             }
         }
     }
