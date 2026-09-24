@@ -273,15 +273,16 @@
     <string name="location_keep_waiting">Continuer l\'attente</string>
     <string name="location_manual_entry_title">Entrez votre localisation</string>
     <string name="location_place_name_hint">Ville ou nom du lieu</string>
-    <string name="location_latitude_hint">Latitude (ex. 51,5)</string>
+    <!-- tm:omitted name="location_latitude_hint" reason="identical_to_source" -->
     <!-- tm:omitted name="location_latitude_placeholder" reason="identical_to_source" -->
-    <string name="location_longitude_hint">Longitude (ex. -0,1)</string>
+    <!-- tm:omitted name="location_longitude_hint" reason="identical_to_source" -->
     <!-- tm:omitted name="location_longitude_placeholder" reason="identical_to_source" -->
     <string name="location_resolve_button">Résoudre</string>
     <string name="location_set_button">Définir la localisation</string>
     <string name="location_place_not_found">Lieu non trouvé — essayez un nom plus spécifique</string>
     <string name="location_geocoder_offline">Pas de connexion Internet — entrez les coordonnées directement</string>
     <string name="location_geocoder_unavailable">Aucun service de géocodage sur cet appareil — saisissez les coordonnées directement</string>
+    <string name="location_geocoder_failed" translation_description="Inline message shown when place name lookup fails for a reason other than being offline or the place not existing">Échec de la recherche de lieu — saisissez les coordonnées directement</string>
     <string name="location_invalid_latitude">La latitude doit être entre −90 et 90</string>
     <string name="location_invalid_longitude">La longitude doit être entre −180 et 180</string>
     <string name="location_hemisphere_north_description" translation_description="Accessibility label for the latitude hemisphere toggle button, selected for a positive value">Hémisphère nord (latitude positive)</string>
@@ -451,7 +452,7 @@
     <!-- tm:omitted name="diagnostics_location_format" reason="identical_to_source" -->
     <string name="diagnostics_location_unset" translation_description="Location status shown in diagnostics when no location has been set yet">Non défini</string>
     <string name="diagnostics_location_acquiring">Acquisition en cours…</string>
-    <string name="diagnostics_location_hardware_unavailable" translation_description="Location status shown in diagnostics when no location hardware is available">Pas de matériel de localisation</string>
+    <string name="diagnostics_location_hardware_unavailable" translation_description="Location status shown in diagnostics when the device has no usable location provider, whether because it lacks location hardware or none is enabled">Aucun fournisseur de localisation utilisable</string>
     <string name="diagnostics_pointing">Instantané de pointage</string>
     <!-- tm:omitted name="diagnostics_dec_format" reason="identical_to_source" -->
     <string name="diagnostics_magnetic_correction">Correction mag.</string>
@@ -542,6 +543,11 @@
     <string name="whats_new_button" translation_description="Map-screen menu item that opens the What's New and Credits screen">Nouveautés</string>
     <string name="whats_new_screen_title" translation_description="Title of the screen showing the release notes and the credits">Nouveautés &amp; Crédits</string>
 
+    <!-- The Help screen's search box, which filters the document to the matching sections. -->
+    <string name="help_search_hint" translation_description="Placeholder in the Help screen\'s search box, which filters the help document to the sections matching what is typed">Rechercher dans l\'aide</string>
+    <string name="help_search_clear" translation_description="Accessibility label for the button that clears the Help screen\'s search box">Effacer la recherche</string>
+    <string name="help_search_no_results" translation_description="Shown on the Help screen when nothing matches the search. %1$s is the text the user typed">Aucune section d\'aide ne correspond à ",%1$s".</string>
+
     <!-- The deep-sky symbol key at the foot of the Help screen. -->
     <string name="help_symbol_key_title" translation_description="Heading of the Help section explaining the map symbols used for deep-sky objects">Symboles de la carte</string>
     <string name="help_symbol_key_intro" translation_description="Introductory sentence for the map-symbol key in Help">
@@ -557,6 +563,12 @@
     <string name="symbol_key_other" translation_description="Symbol-key label: the marker used for deep-sky objects of any other type">Autre objet du ciel profond</string>
     <string name="symbol_key_meteor_radiant" translation_description="Symbol-key label: the marker for the point in the sky meteors of a shower appear to come from">Radiant de pluie de météores</string>
     <string name="symbol_key_meteor_radiant_peak" translation_description="Symbol-key label: the brighter marker used when a meteor shower is near its peak activity">Pluie de météores près de son pic</string>
+
+    <!-- tm:omitted name="widgets_button" reason="identical_to_source" -->
+    <string name="widgets_sheet_title" translation_description="Title of the sheet listing the home-screen widgets the app offers">Widgets de l\'écran d\'accueil</string>
+    <string name="widgets_sheet_subtitle" translation_description="Subtitle of the widgets sheet, explaining what the listed widgets are for">
+    Gardez le ciel de ce soir sur votre écran d\'accueil. Choisissez-en un à ajouter.
+    </string>
 
     <!-- Moon-phase home-screen widget (D69). -->
     <string name="moon_widget_label" translation_description="Name of the moon-phase home-screen widget, shown in the launcher\'s widget picker">Phase de la Lune</string>

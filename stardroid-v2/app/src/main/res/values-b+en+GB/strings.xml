@@ -232,12 +232,14 @@
     <!-- tm:omitted name="location_place_name_hint" reason="identical_to_source" -->
     <!-- tm:omitted name="location_latitude_hint" reason="identical_to_source" -->
     <!-- tm:omitted name="location_latitude_placeholder" reason="identical_to_source" -->
-    <string name="location_longitude_hint">Longitude (e.g. −0.1)</string>
+    <!-- tm:omitted name="location_longitude_hint" reason="identical_to_source" -->
     <!-- tm:omitted name="location_longitude_placeholder" reason="identical_to_source" -->
     <!-- tm:omitted name="location_resolve_button" reason="identical_to_source" -->
     <!-- tm:omitted name="location_set_button" reason="identical_to_source" -->
     <!-- tm:omitted name="location_place_not_found" reason="identical_to_source" -->
     <!-- tm:omitted name="location_geocoder_offline" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_geocoder_unavailable" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_geocoder_failed" reason="identical_to_source" -->
     <!-- tm:omitted name="location_invalid_latitude" reason="identical_to_source" -->
     <!-- tm:omitted name="location_invalid_longitude" reason="identical_to_source" -->
     <!-- tm:omitted name="location_hemisphere_north_description" reason="identical_to_source" -->
@@ -465,6 +467,10 @@
     <!-- tm:omitted name="whats_new_button" reason="identical_to_source" -->
     <!-- tm:omitted name="whats_new_screen_title" reason="identical_to_source" -->
 
+    <!-- tm:omitted name="help_search_hint" reason="identical_to_source" -->
+    <!-- tm:omitted name="help_search_clear" reason="identical_to_source" -->
+    <string name="help_search_no_results" translation_description="Shown on the Help screen when nothing matches the search. %1$s is the text the user typed">No help sections match ",%1$s,".</string>
+
     <!-- tm:omitted name="help_symbol_key_title" reason="identical_to_source" -->
     <!-- tm:omitted name="help_symbol_key_intro" reason="identical_to_source" -->
     <!-- tm:omitted name="symbol_key_galaxy" reason="identical_to_source" -->
@@ -477,6 +483,10 @@
     <!-- tm:omitted name="symbol_key_other" reason="identical_to_source" -->
     <!-- tm:omitted name="symbol_key_meteor_radiant" reason="identical_to_source" -->
     <!-- tm:omitted name="symbol_key_meteor_radiant_peak" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="widgets_button" reason="identical_to_source" -->
+    <!-- tm:omitted name="widgets_sheet_title" reason="identical_to_source" -->
+    <!-- tm:omitted name="widgets_sheet_subtitle" reason="identical_to_source" -->
 
     <!-- tm:omitted name="moon_widget_label" reason="identical_to_source" -->
     <!-- tm:omitted name="moon_widget_description" reason="identical_to_source" -->

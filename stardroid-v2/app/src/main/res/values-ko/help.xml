@@ -17,65 +17,26 @@
 
     <string name="help_time_travel" translation_description="Help section: the time travel feature. Please do not change the markup"><![CDATA[<h2>시간 여행</h2><p>시간 여행을 통해 1600년부터 3000년까지 어느 순간의 하늘도 볼 수 있습니다. 하단의 <b>시계</b> 버튼을 탭하세요.</p><br/><p>이벤트 목록에서 인기 있는 이벤트(일식, 유성우 극대기, 다음 보름달 또는 초승달, 행성 합, 아폴로 11호 착륙 등)를 선택하거나, <b>날짜 설정</b> 및 <b>시간 설정</b> 버튼으로 원하는 시간을 설정하거나, 현재 시간부터 단순히 앞뒤로 이동하려면 "지금부터 시작"을 탭하세요.</p><p>시간 여행 모드에서는 화면에 날짜가 표시되며 재생 컨트롤을 통해 시간을 이동할 수 있습니다:</p><p>• <b>▶▶</b> (더 빠르게) 또는 <b>◀◀</b> (더 느리게)를 탭하여 시간 재생 속도를 앞뒤로 조절합니다<br/>• <b>❚❚</b>를 탭하여 일시 정지합니다<br/>• <b>지금</b>을 탭하여 현재로 돌아갑니다</p><p>다음과 같은 용도로 사용할 수 있습니다:</p><p>• <i>오늘 밤 일몰 직후 무엇을 볼 수 있나요?</i><br/>• <i>수성을 볼 수 있는 다음 좋은 기회는 언제인가요?</i><br/>• <i>제가 태어난 밤하늘은 어땠을까요?</i></p><p>현재로부터 멀리 떨어진 날짜의 정확도는 주로 목성의 중력 영향으로 인해 감소합니다.</p>]]></string>
 
-    <string name="help_night_vision" translation_description="Help section: night vision mode. Please do not change the markup"><![CDATA[<h2>야간 모드</h2><p>야외에서 실제 관측을 할 때, 야간 모드는 어둠에 적응된 시력을 보호하는 데 도움이 됩니다. 하단의 <b>야간 모드</b> 버튼으로 전환할 수 있습니다.</p><br/><p>야간 모드에서는 Sky Map이 화면을 짙은 붉은색 톤으로 바꾸고 화면을 어둡게 합니다. <b>설정</b>의 <b>화면 자동 어둡게</b> 옵션에서 화면 밝기를 추가로 제어할 수 있습니다.</p>]]></string>
+    <string name="help_night_vision" translation_description="Help section: night vision mode. Please do not change the markup"><![CDATA[<h2>야간 모드</h2><p>야외에서 실제 관측을 할 때, 야간 모드는 어둠에 적응된 시력을 보호하는 데 도움이 됩니다. 하단의 <b>야간 모드</b> 버튼으로 전환하세요.</p><br/><p>야간 모드에서는 Sky Map이 화면을 짙은 붉은색 톤으로 바꾸고 화면을 어둡게 합니다. <a href="skymap://settings"><b>설정</b></a>의 <b>자동 화면 밝기 조절</b> 옵션은 화면이 얼마나 어두워지는지에 대한 추가적인 제어를 제공합니다.</p>]]></string>
 
     <string name="help_other" translation_description="Help section: other options"><![CDATA[<h1>기타 기능</h1>
         <p>기타 기능은 오른쪽 하단의 오버플로 메뉴(…)에서 찾을 수 있습니다.</p>]]></string>
 
-    <string name="help_gallery" translation_description="Help section: the image gallery. Please do not change the markup"><![CDATA[<h2>갤러리</h2><p>갤러리에는 허블 우주 망원경의 이미지 일부를 포함하여 밤하늘의 아름다운 이미지 모음이 있습니다.</p><br/><p>스크롤하여 미리보기를 탐색하고, 하나를 탭하여 세부 정보를 확인하세요. <b>찾기</b> 버튼을 사용하여 하늘에서 해당 개체를 찾을 수 있습니다.</p>]]></string>
+    <string name="help_gallery" translation_description="Help section: the image gallery. Please do not change the markup"><![CDATA[<h2>갤러리</h2><p><a href="skymap://gallery">갤러리</a>에는 허블 우주 망원경의 일부 이미지를 포함하여 밤하늘의 아름다운 이미지가 엄선되어 있습니다.</p><br/><p>스크롤하여 미리보기를 탐색하고, 하나를 탭하여 세부 정보를 확인하세요.<b>찾기</b> 버튼을 사용하여 하늘에서 해당 개체를 찾으세요.</p>]]></string>
 
-    <string name="help_widgets" translation_description="Help section: the home-screen widgets. Please do not change the markup"><![CDATA[<h2>홈 화면 위젯</h2>
-<p>Sky Map에는 매일 업데이트되며 홈 화면에서 밤하늘을 볼 수 있는 위젯이 있습니다.</p>
-<p>• <b>달의 위상:</b> 현재 달의 모양, 조명 비율, 오늘의 월출 및 월몰 시간<br/>
-• <b>오늘 밤의 밤하늘:</b> 일몰 및 하늘이 완전히 어두워지는 시간, 그리고 잘 보이는 행성, 유성우, 달 관련 이벤트 등 오늘 밤의 주요 볼거리<br/>
-• <b>우주 카운트다운:</b> 다음 유성우 극대기 또는 달 이벤트까지 남은 일수</p>
-<h3>위젯 추가하기</h3>
-<p>홈 화면의 빈 공간을 길게 터치한 후 <b>위젯</b>을 선택하고 <b>Sky Map</b>을 찾으세요.
-또한 달 정보 카드에서 <b>위젯 추가</b>를 탭하여 달의 위상 위젯을 직접 추가할 수도 있습니다.</p>
-<p>위젯을 탭하면 Sky Map이 열립니다.</p>]]></string>
+    <string name="help_widgets" translation_description="Help section: the home-screen widgets. Please do not change the markup"><![CDATA[<h2>홈 화면 위젯</h2><p>Sky Map에는 매일 업데이트되는 홈 화면 위젯이 있습니다:</p><p>• <b>달의 위상:</b> 달의 현재 위상, 밝기, 오늘의 월출 및 월몰 시간<br/>• <b>오늘 밤 하늘:</b> 일몰 시간과 하늘이 완전히 어두워지는 시간, 그리고 잘 보이는 행성, 유성우, 달 이벤트 등 오늘 밤 최고의 볼거리<br/>• <b>하늘 카운트다운:</b> 다음 유성우 극대기 또는 달 이벤트까지 남은 일수</p><p>위젯을 탭하여 Sky Map을 엽니다.</p><h3>위젯 추가</h3><p><a href="skymap://widgets">위젯 찾아보기</a>를 탭하고 원하는 위젯 옆의 <b>위젯 추가</b>를 탭하세요. 또는 홈 화면의 빈 공간을 길게 터치한 다음 <b>위젯</b>을 선택하고 <b>Sky Map</b>을 찾으세요.</p>]]></string>
 
-    <string name="help_location" translation_description="Help section: setting your observing location. Please do not change the markup"><![CDATA[<h2>위치 설정</h2>
-<p>Sky Map은 정확한 하늘을 표시하기 위해 대략적인 위치가 필요합니다. 기본적으로 기기의 위치 서비스(모바일 네트워크 또는 GPS)를 사용합니다.</p>
-<br/>
-<p>위치 접근이 불가능하거나 수동으로 설정하고 싶다면, <b>위치 수동 입력</b> 버튼을 누르고 <b>장소 이름</b> 또는 <b>위도 및 경도</b>를 도 단위로 입력하세요.</p>
-<blockquote>장소 이름을 해독하려면 인터넷 연결이 필요합니다.</blockquote>
-<p>이전에 Sky Map의 위치 권한을 거부했다면, 기기의 <b>앱 설정 → 권한</b>에서 다시 활성화해야 할 수 있습니다.</p>
-<blockquote>접근을 허용하지 않으면, Sky Map은 사용자가 (0, 90) — 북극에 있다고 가정합니다!</blockquote>]]></string>
+    <string name="help_location" translation_description="Help section: setting your observing location. Please do not change the markup"><![CDATA[<h2>위치 설정</h2><p>Sky Map은 정확한 하늘을 그리기 위해 대략적인 위치가 필요합니다. 기본적으로 기기의 위치 서비스(모바일 네트워크 또는 GPS)를 사용합니다.</p><br/><p>위치 접근이 불가능하거나 수동으로 설정하고 싶다면, <b>위치 수동 입력</b> 버튼을 누르고 <b>장소 이름</b> 또는 <b>위도와 경도</b>를 도 단위로 입력하세요.</p><blockquote>장소 이름을 해독하려면 인터넷 연결이 필요합니다.</blockquote><p>이전에 Sky Map의 위치 권한을 거부했다면, 기기의 <a href="skymap://app-settings"><b>앱 설정 → 권한</b></a>에서 다시 활성화해야 할 수 있습니다.</p><blockquote>접근을 허용하지 않으면, Sky Map은 사용자가 (0, 90) — 북극에 있다고 가정합니다!</blockquote>]]></string>
 
-    <string name="help_diagnostics" translation_description="Help section: the diagnostics page. Please do not change the markup"><![CDATA[<h2>진단</h2><p>이 페이지에는 휴대폰 및 Sky Map에 대한 다양한 데이터가 나열되어 있으며, 문제 디버깅에 유용할 수 있습니다. <b>설정 → 진단</b>에서 찾을 수 있습니다.</p><br/><p>문제를 보고할 때, 페이지 상단의 공유 버튼을 눌러 다음 세부 정보를 <a href="mailto:skymapdevs@gmail.com">skymapdevs@gmail.com</a>으로 이메일로 보낼 수 있습니다. 보내기 전에 보고서를 읽고 편집할 수 있습니다.</p>]]></string>
+    <string name="help_diagnostics" translation_description="Help section: the diagnostics page. Please do not change the markup"><![CDATA[<h2>진단</h2><p>이 페이지에는 문제 디버깅에 유용할 수 있는 휴대폰 및 Sky Map에 대한 다양한 데이터가 나열되어 있습니다. <a href="skymap://diagnostics"><b>설정 → 진단</b></a>에서 찾을 수 있습니다.</p><br/><p>문제를 보고할 때 페이지 상단의 공유 버튼을 탭하여 <a href="mailto:skymapdevs@gmail.com">skymapdevs@gmail.com</a>으로 세부 정보를 이메일로 보내주세요. 보고서를 보내기 전에 읽고 편집할 수 있습니다.</p>]]></string>
 
-    <string name="help_calibrate" translation_description="Help section: the calibrate page. Please do not change the markup"><![CDATA[<h2>보정</h2>때때로 휴대폰의 나침반을 보정해야 합니다. 이 페이지에서 방법을 알려드립니다. Sky Map은
-나침반 보정이 필요한 경우에도 경고합니다.
-<blockquote><b>중요:</b> 보정된 나침반이 <b>정확한</b> 나침반을 의미하는 것은 아닙니다.
-모든 보정은 나침반을 내부적으로 재설정하는 것입니다. 주변 자기 간섭이나 단순히 불량 하드웨어로 인해 여전히 부정확할 수 있습니다. 거의 모든 정확도 문제는
-휴대폰의 하드웨어 때문이며 <b>Sky Map과는 전혀 관련이 없습니다</b>. Sky Map은
-휴대폰이 보고하는 내용을 사용자에게 보고할 뿐입니다.</blockquote>
-<br/>
-<p>자세한 내용은 아래 문제 해결 섹션을 참조하십시오.</p>]]></string>
+    <string name="help_calibrate" translation_description="Help section: the calibrate page. Please do not change the markup"><![CDATA[<h2>보정</h2>휴대폰의 나침반을 주기적으로 보정해야 합니다. <a href="skymap://calibrate">이 페이지</a>에서 방법을 알려드립니다. Sky Map은 나침반 보정이 필요한 경우 경고를 표시합니다.<blockquote><b>중요:</b> 보정된 나침반이 <b>정확한</b> 나침반을 의미하는 것은 아닙니다. 보정은 나침반을 내부적으로 재설정하는 역할만 합니다. 주변 자기장 간섭이나 단순히 하드웨어 문제로 인해 여전히 부정확할 수 있습니다. 거의 모든 정확도 문제는 휴대폰\'s 하드웨어로 인한 것이며 <b>Sky Map과는 관련이 없습니다</b>. Sky Map은 휴대폰이 보고하는 내용을 사용자에게 보고할 뿐입니다.</blockquote><br/><p>자세한 내용은 아래 <a href="skymap://help#troubleshooting">문제 해결 섹션</a>을 참조하십시오.</p>]]></string>
 
     <string name="help_misc" translation_description="Help section: miscellaneous"><![CDATA[<h1>기타 및 문제 해결</h1>]]></string>
 
-    <string name="help_hardware" translation_description="Help section: hardware and sensor requirements. Please do not change the markup"><![CDATA[<h2>하드웨어 요구 사항</h2><p>모든 기기에서 Sky Map을 완벽하게 지원하는 것은 아닙니다!</p><br/><p>최소한 다음을 갖춘 휴대폰이 필요합니다:</p><p>• 자기장 센서 (나침반이라고도 함) — 사용자가 향하는 방향을 알려줍니다<br/>• 가속도계 — 사용자가 하늘의 어느 높이를 보고 있는지 알려줍니다</p><p>이상적으로는 다음도 필요합니다:</p><p>• 자이로스코프 — 움직임을 부드럽게 하여 덜 흔들리게 합니다</p><blockquote><b>휴대폰 나침반은 신뢰할 수 없는 것으로 악명이 높습니다.</b> 하늘 지도가 잘못된 것처럼 보인다면, 거의 항상 휴대폰 나침반의 하드웨어 문제이며 Sky Map의 버그가 아닙니다.Sky Map은 휴대폰 센서가 보고하는 내용을 정확히 읽습니다. 잘못되거나 편향된 판독값을 자동으로 수정할 방법이 없습니다.아래 문제 해결을 참조하십시오.</blockquote><h3>내 휴대폰에 어떤 센서가 있는지 어떻게 알 수 있나요?</h3><p><b>설정 → 진단</b>을 엽니다 — 휴대폰에 없는 센서는 부재로 표시됩니다. 튜토리얼 중에도 안내받았을 것입니다.</p><h3>내 기기에 필수 센서가 없으면 어떻게 되나요?</h3><p>Sky Map은 수동 모드로 전환됩니다. 여전히 하늘을 탐색할 수 있지만, 센서가 없으면 어떤 앱도 사용자의 방향을 보여줄 수 없습니다.</p>]]></string>
+    <string name="help_hardware" translation_description="Help section: hardware and sensor requirements. Please do not change the markup"><![CDATA[<h2>하드웨어 요구 사항</h2><p>모든 기기가 Sky Map을 완벽하게 지원하는 것은 아닙니다!</p><br/><p>최소한 다음을 갖춘 휴대폰이 필요합니다:</p><p>• 자기장 센서 (나침반이라고도 함) — 사용자가 향하는 방향을 알려줍니다<br/>• 가속도계 — 하늘에서 얼마나 높이 보고 있는지 알려줍니다</p><p>이상적으로는 다음도 필요합니다:</p><p>• 자이로스코프 — 움직임을 부드럽게 하고 덜 흔들리게 합니다</p><blockquote><b>휴대폰 나침반은 신뢰할 수 없기로 악명이 높습니다.</b>스카이 맵이 잘못된 것처럼 보인다면, 거의 항상 휴대폰 나침반의 하드웨어 문제이며 Sky Map의 버그가 아닙니다.Sky Map은 휴대폰 센서가 보고하는 내용을 정확히 읽습니다. 잘못되거나 편향된 판독값을 자동으로 수정할 방법이 없습니다.아래 문제 해결을 참조하십시오.</blockquote><h3>내 휴대폰에 어떤 센서가 있는지 어떻게 알 수 있나요?</h3><p><a href="skymap://diagnostics"><b>설정 → 진단</b></a>을 열면 휴대폰에 없는 센서는 부재로 표시됩니다. 또한 <a href="skymap://tutorial">튜토리얼</a> 중에 알 수 있습니다.</p><h3>내 기기에 필수 센서가 없으면 어떻게 되나요?</h3><p>Sky Map은 수동 모드로 전환됩니다. 센서가 없어도 하늘을 탐색할 수 있지만, 어떤 앱도 사용자의 방향을 보여줄 수 없습니다.</p>]]></string>
 
-    <string name="help_troubleshooting" translation_description="Help section: troubleshooting a map that does not move or points the wrong way. Please do not change the markup"><![CDATA[<h2>문제 해결</h2>
-<h3>지도가 움직이지 않아요</h3>
-<p>• 수동 모드가 아닌 자동 모드인지 확인하세요.<br/>
-• 진단 페이지(<b>설정 → 진단</b>)를 확인하여 기기에 나침반과 가속도계가 있는지 확인하세요.<br/>
-• 8자 교정 제스처를 시도해보세요. 휴대폰을 크고 부드러운 8자 모양으로 천천히 흔들어 보세요.</p>
-<h3>지도가 엉뚱한 방향을 가리키거나 정확하지 않아요</h3>
-<p>Sky Map이 올바른 밤하늘을 보여주려면 휴대전화가 향하는 방향, 위치, 현재 시각의 세 가지가 필요합니다. 지도가 잘못되어 보인다면 이 중 하나에 문제가 있을 가능성이 높습니다.</p>
-<p>• <b>나침반(가장 흔한 원인):</b> 이는 Sky Map의 버그가 아니라 휴대전화의 하드웨어 문제입니다. 8자 교정 제스처는 휴대전화가 내부적으로 나침반 센서를 재설정하도록 요청하지만, <i>교정된 나침반이 반드시 정확한 나침반을 의미하는 것은 아닙니다</i>. 금속 물체, 자동차 대시보드 또는 자석 폰 케이스 근처에 있으면 교정 후에도 지도가 어긋날 수 있습니다. 탁 트인 곳으로 이동하여 8자 제스처를 반복하세요.<br/>
-• <b>위치:</b> <b>앱 설정 → 권한</b>을 통해 위치 권한을 허용하세요. 진단 페이지(<b>설정 → 진단</b>)를 확인하여 좌표를 확인하세요. 위치를 알 수 없을 때 나타나는 대표적인 증상은 폴라리스(북극성)가 머리 바로 위에 나타나는 것입니다.<br/>
-• <b>시간:</b> 드문 경우지만 시간대가 잘못되면 전체 밤하늘이 틀어집니다. 진단 페이지(<b>설정 → 진단</b>)를 확인하여 기기의 시간과 시간대가 올바른지 확인하세요.</p>
-<h3>지도가 떨려요</h3>
-<p>
-• <b>설정 → 센서</b>를 확인하세요. <b>레거시 센서 사용</b>이 켜져 있다면 꺼보세요.<br/>
-• <b>센서 움직임 부드럽게 하기</b>는 피드백을 수집하는 동안 기본적으로 켜져 있는 새로운 기능입니다. 휴대폰을 가만히 들고 있을 때 화면이 안정될 때까지 <b>안정성</b>을 높이고, 화면 이동이 느려지면 <b>이동 시 부드럽게 멈춤</b>을 높이세요.<br/>
-• 센서가 조정되는 동안 원시 센서를 사용하려면 같은 메뉴에서 센서 움직임 부드럽게 하기를 다시 끌 수 있습니다.</p>
-<p>자세한 문제 해결 방법은 온라인 <a href="https://ts.stardroid.app">문제 해결</a> 가이드를 참조하세요.</p>
-<p>여전히 문제가 해결되지 않으면 <a href="mailto:skymapdevs@gmail.com">skymapdevs@gmail.com</a>으로 이메일을 보내주세요. 진단 페이지 스크린샷을 첨부해주시면 큰 도움이 됩니다.</p>]]></string>
+    <string name="help_troubleshooting" translation_description="Help section: troubleshooting a map that does not move or points the wrong way. Please do not change the markup"><![CDATA[<h2>문제 해결</h2><h3>지도가 움직이지 않습니다</h3><p>• 자동 모드(수동 모드 아님)인지 확인하세요<br/>• <a href="skymap://diagnostics">진단 페이지</a>에서 기기에 나침반과 가속도계가 있는지 확인하세요<br/>• 8자 모양 보정 동작을 시도해 보세요: 휴대폰을 크고 부드러운 8자 모양으로 천천히 흔드세요</p><h3>지도가 잘못된 방향을 가리키거나 정확하지 않습니다</h3><p>Sky Map은 올바른 하늘을 표시하기 위해 세 가지가 필요합니다: 휴대폰이 향하는 방향, 사용자의 위치, 현재 시간. 지도가 잘못된 것처럼 보인다면 이 중 하나가 잘못되었을 가능성이 높습니다.</p><p>• <b>나침반 (가장 흔한 원인):</b> 이것은 Sky Map 버그가 아니라 휴대폰의 하드웨어 문제입니다. 8자 모양 보정 동작은 휴대폰이 나침반 센서를 내부적으로 재설정하도록 요청하지만, <i>보정된 나침반이 반드시 정확한 것은 아닙니다</i>. 금속 물체, 자동차 대시보드 또는 자석 휴대폰 케이스 근처에 있다면 보정 후에도 지도가 여전히 잘못될 수 있습니다. 탁 트인 공간으로 이동하여 8자 모양 동작을 반복하세요.<br/>• <b>위치:</b> <a href="skymap://app-settings"><b>앱 설정 → 권한</b></a>을 통해 위치 권한을 부여하세요. 진단 페이지(<b>설정 → 진단</b>)를 확인하여 좌표가 올바른지 확인하세요. 위치 정보 누락의 명백한 증상은 북극성이 바로 머리 위에 나타나는 것입니다.<br/>• <b>시간:</b> 흔하지는 않지만, 잘못된 시간대는 전체 하늘을 이동시킵니다. 진단 페이지(<b>설정 → 진단</b>)를 확인하여 기기의 시간 및 시간대가 올바른지 확인하세요.</p><h3>지도가 흔들립니다</h3><p>• <a href="skymap://settings"><b>설정 → 센서</b></a>를 확인하세요 — <b>레거시 센서 사용</b>이 켜져 있다면 끄세요<br/>• <b>부드러운 센서 움직임</b>은 새로 추가되었으며 피드백을 수집하는 동안 기본적으로 켜져 있습니다. 휴대폰을 가만히 들고 있을 때 화면이 안정될 때까지 <b>안정성</b>을 높이고, 패닝이 느리게 느껴지기 시작하면 <b>움직일 때 완화</b>를 높이세요<br/>• 조정되는 동안 원시 센서를 사용하고 싶다면 같은 섹션에서 부드러운 센서 움직임을 다시 끌 수 있습니다</p><p>전체 문제 해결 세부 정보는 온라인 <a href="https://ts.stardroid.app">문제 해결</a> 가이드를 참조하세요.</p><p>여전히 문제가 있다면 <a href="mailto:skymapdevs@gmail.com">skymapdevs@gmail.com</a>으로 이메일을 보내주세요 — 진단 페이지 스크린샷은 매우 유용합니다.</p>]]></string>
 
-    <string name="help_pointer_mode" translation_description="Help section: pointer mode for telescope users. Please do not change the markup"><![CDATA[<h2>망원경 사용자 — 포인터 모드</h2>
-<p><b>설정 → 센서</b>로 이동하여 <b>보기 방향</b>을 <b>포인터 모드</b>로 변경하세요. 이 모드에서는 화면이 향하는 방향 대신 휴대폰의 <i>긴 모서리</i>가 가리키는 방향을 Sky Map에 표시합니다.</p>
-<p>이를 통해 휴대폰을 망원경 경통 측면에 장착하여 화면이 경통과 수직을 이루게 하면서도 지도가 망원경의 조준 방향을 계속 추적하도록 할 수 있습니다.</p>]]></string>
+    <string name="help_pointer_mode" translation_description="Help section: pointer mode for telescope users. Please do not change the markup"><![CDATA[<h2>망원경 사용자 — 포인터 모드</h2><p><a href="skymap://settings"><b>설정 → 센서</b></a>에서 <b>보기 방향</b>을 <b>포인터 모드</b>로 변경하세요. 이 모드에서는 Sky Map이 화면이 향하는 방향이 아니라 휴대폰의 <i>긴 가장자리</i>가 가리키는 것을 보여줍니다.</p><p>이렇게 하면 휴대폰을 망원경 경통 옆에 장착하여 화면이 경통에 수직이 되도록 할 수 있으며, 동시에 지도는 망원경이 가리키는 것을 계속 추적합니다.</p>]]></string>
 </resources>
