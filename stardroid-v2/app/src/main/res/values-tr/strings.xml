@@ -315,7 +315,7 @@
     <string name="settings_cancel">İptal</string>
     <string name="settings_section_controls">Kontroller</string>
     <string name="settings_section_appearance">Görünüm</string>
-    <string name="settings_section_sensors">Sensör Ayarları (Uzman)</string>
+    <string name="settings_section_sensors" translation_description="Preferences category heading for sensor settings">Sensörler</string>
     <string name="settings_section_other">Diğer</string>
     <string name="enable_analytics">Kullanım istatistikleri gönder</string>
     <string name="enable_analytics_desc">Google Analytics\'e anonim veri göndererek Sky Map\'i daha iyi hale getirin</string>

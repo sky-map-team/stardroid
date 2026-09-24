@@ -307,7 +307,7 @@
     <string name="settings_cancel">キャンセル</string>
     <string name="settings_section_controls">操作</string>
     <string name="settings_section_appearance">外観</string>
-    <string name="settings_section_sensors">センサー設定</string>
+    <string name="settings_section_sensors" translation_description="Preferences category heading for sensor settings">センサー</string>
     <string name="settings_section_other">その他</string>
     <string name="enable_analytics">利用統計の送信</string>
     <string name="enable_analytics_desc">Google Analyticsに匿名データを送信することでSkyマップの改良に協力する</string>

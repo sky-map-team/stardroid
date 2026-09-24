@@ -295,7 +295,7 @@
     <string name="settings_cancel">Anuluj</string>
     <string name="settings_section_controls">Panel sterowania</string>
     <string name="settings_section_appearance">Wygląd</string>
-    <string name="settings_section_sensors">Ustawienia czujnika (zaawansowane)</string>
+    <string name="settings_section_sensors" translation_description="Preferences category heading for sensor settings">Czujniki</string>
     <string name="settings_section_other">Inne</string>
     <string name="enable_analytics">Wysyłaj statystyki użytkowania</string>
     <string name="enable_analytics_desc">Ulepszaj Sky Map, wysyłając anonimowe dane do Google Analytics</string>

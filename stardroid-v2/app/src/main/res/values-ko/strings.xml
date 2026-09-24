@@ -306,7 +306,7 @@
     <string name="settings_cancel">취소</string>
     <string name="settings_section_controls" translation_description="Preferences category heading for touch control settings">컨트롤</string>
     <string name="settings_section_appearance" translation_description="Preferences title for section about app appearance">화면 표시</string>
-    <string name="settings_section_sensors">센서 설정</string>
+    <string name="settings_section_sensors" translation_description="Preferences category heading for sensor settings">센서</string>
     <string name="settings_section_other" translation_description="Preferences category heading for miscellaneous settings such as the usage statistics opt-out">기타</string>
     <string name="enable_analytics" translation_description="Preference label to opt in to sending anonymous usage statistics">사용 통계 보내기</string>
     <string name="enable_analytics_desc" translation_description="Description/summary for the usage statistics preference">Google Analytics에 익명 데이터를 보내 Sky Map을 개선하는 데 도움을 주세요</string>

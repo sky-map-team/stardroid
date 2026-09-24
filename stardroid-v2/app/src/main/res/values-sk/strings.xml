@@ -312,7 +312,7 @@
     <string name="settings_cancel">Zrušiť</string>
     <string name="settings_section_controls">Ovládanie</string>
     <string name="settings_section_appearance">Vzhľad</string>
-    <string name="settings_section_sensors">Nastavenie senzorov (pre expertov)</string>
+    <string name="settings_section_sensors" translation_description="Preferences category heading for sensor settings">Senzory</string>
     <string name="settings_section_other">Ostatné</string>
     <string name="enable_analytics">Posielať štatistiky používania</string>
     <string name="enable_analytics_desc">Vylepšite Sky Map odosielaním anonymných údajov do služby Google Analytics</string>

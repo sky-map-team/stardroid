@@ -312,7 +312,7 @@
     <string name="settings_cancel">रद्द करें</string>
     <string name="settings_section_controls">नियंत्रण</string>
     <string name="settings_section_appearance">दिखावट</string>
-    <string name="settings_section_sensors">सेंसर सेटिंग्स (विशेषज्ञ)</string>
+    <string name="settings_section_sensors" translation_description="Preferences category heading for sensor settings">सेंसर</string>
     <string name="settings_section_other">अन्य</string>
     <string name="enable_analytics">उपयोग आंकड़े भेजें</string>
     <string name="enable_analytics_desc">Google Analytics को अनाम डेटा भेजकर Sky Map को बेहतर बनाएं</string>

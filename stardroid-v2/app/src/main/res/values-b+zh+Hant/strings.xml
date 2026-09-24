@@ -305,7 +305,7 @@
     <string name="settings_cancel">取消</string>
     <string name="settings_section_controls">控制</string>
     <string name="settings_section_appearance">外觀</string>
-    <string name="settings_section_sensors">感應器設定</string>
+    <string name="settings_section_sensors" translation_description="Preferences category heading for sensor settings">傳感器</string>
     <string name="settings_section_other">其他</string>
     <string name="enable_analytics">傳送使用統計資料</string>
     <string name="enable_analytics_desc">傳送匿名資料給 Google Analytics 以改善星空圖</string>

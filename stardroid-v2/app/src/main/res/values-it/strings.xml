@@ -317,7 +317,7 @@
     <string name="settings_cancel">Annulla</string>
     <string name="settings_section_controls">Controlli</string>
     <string name="settings_section_appearance">Aspetto</string>
-    <string name="settings_section_sensors" tm_human="true">Impostazioni sensori (esperti)</string>
+    <string name="settings_section_sensors" translation_description="Preferences category heading for sensor settings">Sensori</string>
     <string name="settings_section_other">Altro</string>
     <string name="enable_analytics">Invia statistiche di utilizzo</string>
     <string name="enable_analytics_desc">Migliora Sky Map inviando dati anonimi a Google Analytics</string>
