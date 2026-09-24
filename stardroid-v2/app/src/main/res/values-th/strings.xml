@@ -339,7 +339,7 @@
     <string name="settings_steadiness_extreme" translation_description="Extremely strong steadying of the view when the phone is held still, for devices with noisy sensors">สูงสุด</string>
     <string name="settings_ease_off" translation_description="Preference title for how much the steadying relaxes once the phone starts moving">ผ่อนคลายความนิ่งเมื่อเคลื่อนไหว</string>
     <string name="settings_ease_off_summary" translation_description="Explanation of the ease-off preference and its trade-off">
-    ระดับการลดความสั่นที่จะผ่อนคลายลงเมื่อคุณเริ่มเคลื่อนไหว เพื่อให้มุมมองตามคุณทัน เลือก "ไม่มี" หากต้องการรักษาความนิ่งของมุมมองให้คงที่เท่ากันไม่ว่าจะหยุดนิ่งหรือกำลังเคลื่อนไหว
+    ระดับการลดความสั่นที่จะผ่อนคลายลงเมื่อคุณเริ่มเคลื่อนไหว เพื่อให้มุมมองตามคุณทัน เลือก “ไม่มี” หากต้องการรักษาความนิ่งของมุมมองให้คงที่เท่ากันไม่ว่าจะหยุดนิ่งหรือกำลังเคลื่อนไหว
     </string>
     <string name="settings_ease_off_none" translation_description="Steadying does not relax at all when the phone moves">ไม่มี</string>
     <string name="settings_ease_off_low" translation_description="Steadying relaxes a little when the phone moves">เล็กน้อย</string>
@@ -507,9 +507,7 @@
     <!-- The Help screen's search box, which filters the document to the matching sections. -->
     <string name="help_search_hint" translation_description="Placeholder in the Help screen\'s search box, which filters the help document to the sections matching what is typed">ค้นหาความช่วยเหลือ</string>
     <string name="help_search_clear" translation_description="Accessibility label for the button that clears the Help screen\'s search box">ล้างการค้นหา</string>
-    <string name="help_search_no_results" translation_description="Shown on the Help screen when nothing matches the search. %1$s is the text the user typed">ไม่มีส่วนช่วยเหลือใดตรงกับ ",
-"%1$s",
-".</string>
+    <string name="help_search_no_results" translation_description="Shown on the Help screen when nothing matches the search. %1$s is the text the user typed">ไม่พบส่วนช่วยเหลือที่ตรงกับ “%1$s”</string>
 
     <!-- The deep-sky symbol key at the foot of the Help screen. -->
     <string name="help_symbol_key_title" translation_description="Heading of the Help section explaining the map symbols used for deep-sky objects">สัญลักษณ์บนแผนที่</string>

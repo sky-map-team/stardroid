@@ -360,7 +360,7 @@
     <string name="settings_steadiness_extreme" translation_description="Extremely strong steadying of the view when the phone is held still, for devices with noisy sensors">أقصى</string>
     <string name="settings_ease_off" translation_description="Preference title for how much the steadying relaxes once the phone starts moving">تخفيف الثبات عند الحركة</string>
     <string name="settings_ease_off_summary" translation_description="Explanation of the ease-off preference and its trade-off">
-    مدى استرخاء التثبيت بمجرد أن تبدأ في التحرك، بحيث يواكب العرض حركتك. اختر "بلا" لتثبيت العرض بنفس المقدار سواء كان ثابتاً أو متحركاً.
+    مدى استرخاء التثبيت بمجرد أن تبدأ في التحرك، بحيث يواكب العرض حركتك. اختر «بلا» لتثبيت العرض بنفس المقدار سواء كان ثابتاً أو متحركاً.
     </string>
     <string name="settings_ease_off_none" translation_description="Steadying does not relax at all when the phone moves">بلا</string>
     <string name="settings_ease_off_low" translation_description="Steadying relaxes a little when the phone moves">قليلاً</string>
@@ -528,7 +528,7 @@
     <!-- The Help screen's search box, which filters the document to the matching sections. -->
     <string name="help_search_hint" translation_description="Placeholder in the Help screen\'s search box, which filters the help document to the sections matching what is typed">البحث في المساعدة</string>
     <string name="help_search_clear" translation_description="Accessibility label for the button that clears the Help screen\'s search box">مسح البحث</string>
-    <string name="help_search_no_results" translation_description="Shown on the Help screen when nothing matches the search. %1$s is the text the user typed">لا توجد أقسام مساعدة تطابق ",%1$s".</string>
+    <string name="help_search_no_results" translation_description="Shown on the Help screen when nothing matches the search. %1$s is the text the user typed">لا توجد أقسام مساعدة تطابق “%1$s”.</string>
 
     <!-- The deep-sky symbol key at the foot of the Help screen. -->
     <string name="help_symbol_key_title" translation_description="Heading of the Help section explaining the map symbols used for deep-sky objects">رموز الخريطة</string>

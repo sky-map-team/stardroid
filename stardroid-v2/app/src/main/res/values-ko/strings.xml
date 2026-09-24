@@ -514,7 +514,7 @@
     <!-- The Help screen's search box, which filters the document to the matching sections. -->
     <string name="help_search_hint" translation_description="Placeholder in the Help screen\'s search box, which filters the help document to the sections matching what is typed">도움말 검색</string>
     <string name="help_search_clear" translation_description="Accessibility label for the button that clears the Help screen\'s search box">검색 지우기</string>
-    <string name="help_search_no_results" translation_description="Shown on the Help screen when nothing matches the search. %1$s is the text the user typed">“%1$s”에 일치하는 도움말 섹션이 없습니다.</string>
+    <string name="help_search_no_results" translation_description="Shown on the Help screen when nothing matches the search. %1$s is the text the user typed">“%1$s”와(과) 일치하는 도움말 섹션이 없습니다.</string>
 
     <!-- The deep-sky symbol key at the foot of the Help screen. -->
     <string name="help_symbol_key_title" translation_description="Heading of the Help section explaining the map symbols used for deep-sky objects">지도 기호</string>

@@ -425,8 +425,8 @@
     <!-- tm:omitted name="calibration_accuracy_high" reason="identical_to_source" -->
     <!-- tm:omitted name="calibration_accuracy_no_contact" reason="identical_to_source" -->
     <!-- tm:omitted name="calibration_do_not_show_again" reason="identical_to_source" -->
-    <string name="calibration_what_to_do" translation_description="Information for the user on how to calibrate the compass when the screen auto-opens. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[Your phone\'s compass sensor is reporting poor calibration. The figure-8 motion (<a href="%s">watch a demonstration</a>) prompts your phone\'s hardware to reset its compass sensor — Sky Map has no control over this process.<br/><br/><blockquote><b>Calibrated does not mean accurate.</b> The figure-8 gesture helps reset the sensor, but it cannot remove interference from nearby metal objects, car dashboards, or phone cases. If the map is still off after calibrating, those external sources are the most likely cause — not Sky Map.</blockquote>Move to an open area away from metal and try again.]]></string>
-    <string name="calibration_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they open the calibration screen. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[Your phone is reporting its compass calibration status as shown above.<br/><br/>If necessary, perform the figure-8 motion (<a href="%s">watch a demonstration</a>) to prompt your phone\'s hardware to recalibrate its compass sensor.<br/><br/><blockquote><b>Important:</b> calibration helps the sensor reset itself internally. It does not mean the compass is necessarily accurate! Local magnetic interference (metal objects, car dashboards, phone cases) can still cause your phone\'s compass to send inaccurate readings to Sky Map.</blockquote><b>If the map isn\'t showing positions correctly the problem is likely your phone - not Sky Map!</b>]]></string>
+    <!-- tm:omitted name="calibration_what_to_do" reason="identical_to_source" -->
+    <!-- tm:omitted name="calibration_what_to_do_user" reason="identical_to_source" -->
     <!-- tm:omitted name="calibration_low_accuracy_toast" reason="identical_to_source" -->
     <!-- tm:omitted name="calibration_complete_toast" reason="identical_to_source" -->
 
@@ -469,7 +469,7 @@
 
     <!-- tm:omitted name="help_search_hint" reason="identical_to_source" -->
     <!-- tm:omitted name="help_search_clear" reason="identical_to_source" -->
-    <string name="help_search_no_results" translation_description="Shown on the Help screen when nothing matches the search. %1$s is the text the user typed">No help sections match ",%1$s,".</string>
+    <!-- tm:omitted name="help_search_no_results" reason="identical_to_source" -->
 
     <!-- tm:omitted name="help_symbol_key_title" reason="identical_to_source" -->
     <!-- tm:omitted name="help_symbol_key_intro" reason="identical_to_source" -->

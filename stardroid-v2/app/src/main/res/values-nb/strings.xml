@@ -531,7 +531,7 @@ Flytt deg til et åpent område vekk fra metall og prøv igjen.]]></string>
     <!-- The Help screen's search box, which filters the document to the matching sections. -->
     <string name="help_search_hint" translation_description="Placeholder in the Help screen\'s search box, which filters the help document to the sections matching what is typed">Søk i hjelp</string>
     <string name="help_search_clear" translation_description="Accessibility label for the button that clears the Help screen\'s search box">Tøm søk</string>
-    <string name="help_search_no_results" translation_description="Shown on the Help screen when nothing matches the search. %1$s is the text the user typed">Ingen hjelpeseksjoner samsvarer med ",%1$s".</string>
+    <string name="help_search_no_results" translation_description="Shown on the Help screen when nothing matches the search. %1$s is the text the user typed">Ingen hjelpeseksjoner samsvarer med «%1$s».</string>
 
     <!-- The deep-sky symbol key at the foot of the Help screen. -->
     <string name="help_symbol_key_title" translation_description="Heading of the Help section explaining the map symbols used for deep-sky objects">Kartsymboler</string>
