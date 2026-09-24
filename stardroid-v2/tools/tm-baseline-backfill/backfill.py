@@ -106,13 +106,21 @@ def load_segments(segments: list[list[str]], source_paths: list[str]) -> dict[st
         for line in out.splitlines():
             oid, *parents = line.split()
             segment[oid] = Commit(oid, repo, subdir, parents)
+        if not segment:
+            raise SystemExit(f"segment {repo_arg} {revs} does not touch the tm sources")
+        grafted = []
         for c in segment.values():
             inside = [p for p in c.parents if p in segment]
             if not inside and previous_tip:
                 inside = [previous_tip]
+                grafted.append(c.oid)
             c.parents = inside
-        if not segment:
-            raise SystemExit(f"segment {repo_arg} {revs} does not touch the tm sources")
+        if len(grafted) > 1:
+            # A segment should join the previous one at a single root. More than one
+            # means the rev range or path limiting cut history somewhere unexpected,
+            # and those commits' translations would be misattributed.
+            print(f"warning: {len(grafted)} commits in {revs} grafted onto the previous "
+                  f"segment: {', '.join(o[:8] for o in grafted)}", file=sys.stderr)
         commits.update(segment)
         # --topo-order --reverse lists the newest commit last.
         previous_tip = list(segment)[-1]
@@ -135,6 +143,9 @@ class Reader:
         self.sources = {s["name"]: s for s in self.config["sources"]}
         self.tmp = Path(tempfile.mkdtemp(prefix="tm-backfill-"))
         self.cache: dict[tuple, dict] = {}
+        # Worktree adapters and baseline units, for tm's own notion of equal values.
+        self.adapters: dict[str, object] = {}
+        self.units: dict[tuple[str, str], dict] = {}
 
     def at_commit(self, c: Commit) -> dict[str, dict]:
         paths = [f"{c.subdir}/{s['path']}" for s in self.sources.values()]
@@ -184,8 +195,12 @@ class Reader:
         only needed for the worktree.
         """
         (ctx,) = build_sources(Settings(project_root=root), source_filter=name)
+        if translated:
+            self.adapters[name] = ctx.adapter
         out = {}
         for doc in documents_for(ctx):
+            if translated:
+                self.units[(name, doc)] = {u.key: u for u in ctx.read_baseline(doc)}
             for loc in self.locales:
                 values = {
                     u.key: SAME if u.same_as_parent else u.value
@@ -245,6 +260,7 @@ def main() -> int:
     commits = load_segments(args.segment, [s["path"] for s in reader.sources.values()])
     tip = list(commits)[-1]
     commits[WORKTREE] = Commit(WORKTREE, project, "", [tip])
+    order = {oid: i for i, oid in enumerate(commits)}
     print(f"{len(commits) - 1} commits in history", file=sys.stderr)
 
     data = {oid: reader.at_commit(c) for oid, c in commits.items() if oid != WORKTREE}
@@ -261,23 +277,34 @@ def main() -> int:
     for source, per_doc in data[WORKTREE].items():
         for (doc, loc), (values, english, translated) in per_doc.items():
             recorded = state.snapshot(source, doc, loc)
+            adapter, units = reader.adapters[source], reader.units[(source, doc)]
             for key in sorted(translated):
                 if key in recorded and not args.verify:
                     continue
                 now = english[key]
-                intro = introducing_commits(
-                    commits, data, source, doc, loc, key, values.get(key)
+                unit = units.get(key)
+
+                def same(a, b):
+                    # tm's comparison, so reformatting-only English changes aren't drift.
+                    return a == b or (unit is not None and adapter.values_equal(a, b, unit))
+
+                intro = sorted(
+                    introducing_commits(commits, data, source, doc, loc, key, values.get(key)),
+                    key=order.get, reverse=True,
                 )
-                then = {data[o].get(source, {}).get((doc, loc), ({}, {}))[1].get(key)
-                        for o in intro}
+                then = [data[o].get(source, {}).get((doc, loc), ({}, {}))[1].get(key)
+                        for o in intro]
                 if None in then:
                     verdict, baseline = "unknown", None
-                elif then == {now}:
+                elif all(same(t, now) for t in then):
                     verdict, baseline = "current", now
                 else:
-                    verdict, baseline = "drifted", next(iter(then - {now}))
+                    # The newest introduction that differs — deterministic, and the
+                    # English the current value was most recently translated from.
+                    verdict = "drifted"
+                    baseline = next(t for t in then if not same(t, now))
                 if key in recorded:
-                    agree = (recorded[key] == now) == (verdict == "current")
+                    agree = same(recorded[key], now) == (verdict == "current")
                     verify["agree" if agree else "disagree"] += 1
                     if not agree:
                         disagreements.append((source, doc, loc, key, recorded[key], baseline, now))
