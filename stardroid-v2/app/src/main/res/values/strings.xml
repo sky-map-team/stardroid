@@ -522,6 +522,11 @@ readings to Sky Map.</blockquote>
     <string name="whats_new_button" translation_description="Map-screen menu item that opens the What's New and Credits screen">What\'s new</string>
     <string name="whats_new_screen_title" translation_description="Title of the screen showing the release notes and the credits">What\'s New &amp; Credits</string>
 
+    <!-- The Help screen's search box, which filters the document to the matching sections. -->
+    <string name="help_search_hint" translation_description="Placeholder in the Help screen\'s search box, which filters the help document to the sections matching what is typed">Search help</string>
+    <string name="help_search_clear" translation_description="Accessibility label for the button that clears the Help screen\'s search box">Clear search</string>
+    <string name="help_search_no_results" translation_description="Shown on the Help screen when nothing matches the search. %1$s is the text the user typed">No help sections match \u201C%1$s\u201D.</string>
+
     <!-- The deep-sky symbol key at the foot of the Help screen. -->
     <string name="help_symbol_key_title" translation_description="Heading of the Help section explaining the map symbols used for deep-sky objects">Map symbols</string>
     <string name="help_symbol_key_intro" translation_description="Introductory sentence for the map-symbol key in Help">Deep-sky objects and meteor showers are marked with a symbol showing their type:</string>

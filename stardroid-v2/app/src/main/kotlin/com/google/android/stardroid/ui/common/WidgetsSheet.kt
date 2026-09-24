@@ -78,18 +78,13 @@ fun widgetOffers(experimentConfig: ExperimentConfig): List<WidgetOffer> =
     }
 
 /**
- * The widget catalogue: one add-row per [WidgetOffer]. The single rendering of the list, shared
- * by [WidgetsSheet] and the Help document's widgets section, so a fourth widget is added in
- * [widgetOffers] alone.
- *
- * [showDescriptions] is off in Help, whose prose already describes each widget a paragraph
- * above — the sheet has no such prose and carries the blurbs itself.
+ * The widget catalogue: one add-row per [WidgetOffer]. The single rendering of the list, so a
+ * fourth widget is added in [widgetOffers] alone.
  */
 @Composable
 fun WidgetOfferList(
     offers: List<WidgetOffer>,
     modifier: Modifier = Modifier,
-    showDescriptions: Boolean = true,
 ) {
     Column(modifier) {
         for (offer in offers) {
@@ -105,13 +100,11 @@ fun WidgetOfferList(
                         stringResource(offer.label),
                         style = MaterialTheme.typography.titleSmall,
                     )
-                    if (showDescriptions) {
-                        Text(
-                            stringResource(offer.description),
-                            style = MaterialTheme.typography.bodySmall,
-                            color = MaterialTheme.colorScheme.onSurfaceVariant,
-                        )
-                    }
+                    Text(
+                        stringResource(offer.description),
+                        style = MaterialTheme.typography.bodySmall,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    )
                 }
                 AddWidgetButton(offer.receiver)
             }
@@ -123,7 +116,8 @@ fun WidgetOfferList(
  * Zone C's widgets sheet: the catalogue reached from the ⋮ menu, giving the Tonight and
  * Countdown widgets a discovery path of their own — the Moon's card promo row
  * ([com.google.android.stardroid.ui.objectinfo.MoonWidgetPromoRow]) only ever offered the Moon,
- * and only to someone already reading its info card.
+ * and only to someone already reading its info card. Help's widgets section links here too,
+ * via `skymap://widgets`, rather than repeating the list inline.
  *
  * Sibling of [com.google.android.stardroid.ui.map.OverflowSheet] rather than a destination:
  * adding a widget hands off to the system's own pin dialog, so there is nothing here to
