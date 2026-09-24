@@ -292,7 +292,7 @@
     <string name="settings_cancel">ยกเลิก</string>
     <string name="settings_section_controls">การควบคุม</string>
     <string name="settings_section_appearance">ลักษณะที่ปรากฏ</string>
-    <string name="settings_section_sensors">การตั้งค่าเซนเซอร์ (ผู้เชี่ยวชาญ)</string>
+    <string name="settings_section_sensors" translation_description="Preferences category heading for sensor settings">เซ็นเซอร์</string>
     <string name="settings_section_other">อื่นๆ</string>
     <string name="enable_analytics">ส่งสถิติการใช้งาน</string>
     <string name="enable_analytics_desc">ปรับปรุง Sky Map โดยการส่งข้อมูลที่ไม่ระบุตัวตนไปยัง Google Analytics</string>

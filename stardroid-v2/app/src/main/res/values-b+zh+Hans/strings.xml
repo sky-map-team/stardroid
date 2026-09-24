@@ -305,7 +305,7 @@
     <string name="settings_cancel">取消</string>
     <string name="settings_section_controls">控制</string>
     <string name="settings_section_appearance">外观</string>
-    <string name="settings_section_sensors">传感器设置</string>
+    <string name="settings_section_sensors" translation_description="Preferences category heading for sensor settings">传感器</string>
     <string name="settings_section_other">其他</string>
     <string name="enable_analytics">传送使用统计资料</string>
     <string name="enable_analytics_desc">传送匿名资料给Google Analytics 以改善天象图</string>

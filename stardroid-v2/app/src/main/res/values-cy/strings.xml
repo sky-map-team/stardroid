@@ -312,7 +312,7 @@
     <string name="settings_cancel">Diddymu</string>
     <string name="settings_section_controls">Rheolaeth</string>
     <string name="settings_section_appearance">Ymddangosiad</string>
-    <string name="settings_section_sensors">Gosodiadau Synhwyrydd (arbenigwyr)</string>
+    <string name="settings_section_sensors" translation_description="Preferences category heading for sensor settings">Synwyryddion</string>
     <string name="settings_section_other">Arall</string>
     <string name="enable_analytics">Anfon ystadegau defnydd</string>
     <string name="enable_analytics_desc">Helpa wella Sky Map wrth anfon data anhysbys</string>

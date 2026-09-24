@@ -311,7 +311,7 @@
     <string name="settings_cancel">إلغاء</string>
     <string name="settings_section_controls">التحكم</string>
     <string name="settings_section_appearance">المظهر</string>
-    <string name="settings_section_sensors">إعدادات المستشعر (للخبراء)</string>
+    <string name="settings_section_sensors" translation_description="Preferences category heading for sensor settings">المستشعرات</string>
     <string name="settings_section_other">أخرى</string>
     <string name="enable_analytics">أرسل احصائيات الإستخدام</string>
     <string name="enable_analytics_desc">حسّن خريطة السماء بإرسال بيانات مجهولة الهوية إلى Google Analytics</string>

@@ -312,7 +312,7 @@
     <string name="settings_cancel">Prekliči</string>
     <string name="settings_section_controls">Upravljanje</string>
     <string name="settings_section_appearance">Videz</string>
-    <string name="settings_section_sensors">Nastavitve senzorja (strokovnjaki)</string>
+    <string name="settings_section_sensors" translation_description="Preferences category heading for sensor settings">Senzorji</string>
     <string name="settings_section_other">Drugo</string>
     <string name="enable_analytics">Pošlji statistiko uporabe</string>
     <string name="enable_analytics_desc">Izboljšajte Sky Map z pošiljanjem anonimnih podatkov v Google Analytics</string>

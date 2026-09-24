@@ -313,7 +313,7 @@
     <string name="settings_cancel">Annuller</string>
     <string name="settings_section_controls">Kontrolelementer</string>
     <string name="settings_section_appearance">Udseende</string>
-    <string name="settings_section_sensors">Sensorindstillinger (eksperter)</string>
+    <string name="settings_section_sensors" translation_description="Preferences category heading for sensor settings">Sensorer</string>
     <string name="settings_section_other">Øvrigt</string>
     <string name="enable_analytics">Send brugsstatistik</string>
     <string name="enable_analytics_desc">Forbedre Sky Map ved at sende anonyme data til Google Analytics</string>

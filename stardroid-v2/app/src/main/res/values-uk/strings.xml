@@ -313,7 +313,7 @@
     <string name="settings_cancel">Відміна</string>
     <string name="settings_section_controls">Керування</string>
     <string name="settings_section_appearance">Зовнішній вигляд</string>
-    <string name="settings_section_sensors">Налаштування матриці</string>
+    <string name="settings_section_sensors" translation_description="Preferences category heading for sensor settings">Датчики</string>
     <string name="settings_section_other">Інше</string>
     <string name="enable_analytics">Надсилати статистику використання</string>
     <string name="enable_analytics_desc">Зробіть Sky Map кращою, відправивши анонімні дані в Google Analytics</string>

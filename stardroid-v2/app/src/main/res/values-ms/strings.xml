@@ -312,7 +312,7 @@
     <string name="settings_cancel">Batal</string>
     <string name="settings_section_controls">Kawalan</string>
     <string name="settings_section_appearance">Penampilan</string>
-    <string name="settings_section_sensors">Tetapan Sensor (pakar)</string>
+    <string name="settings_section_sensors" translation_description="Preferences category heading for sensor settings">Penderia</string>
     <string name="settings_section_other">Lain-lain</string>
     <string name="enable_analytics">Hantar statistik penggunaan</string>
     <string name="enable_analytics_desc">Tingkatkan Sky Map dengan menghantar data tanpa nama kepada Google Analytics</string>

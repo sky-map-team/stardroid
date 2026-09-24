@@ -311,7 +311,7 @@
     <string name="settings_cancel">Annuleren</string>
     <string name="settings_section_controls">Bediening</string>
     <string name="settings_section_appearance">Uiterlijk</string>
-    <string name="settings_section_sensors">Sensorinstellingen</string>
+    <string name="settings_section_sensors" translation_description="Preferences category heading for sensor settings">Sensoren</string>
     <string name="settings_section_other">Overig</string>
     <string name="enable_analytics">Gebruiksstatistieken verzenden</string>
     <string name="enable_analytics_desc">Verbeter Sky Map door anonieme gegevens naar Google Analytics te verzenden</string>

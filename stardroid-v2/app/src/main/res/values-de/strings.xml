@@ -317,7 +317,7 @@
     <string name="settings_cancel">Abbrechen</string>
     <string name="settings_section_controls">Steuerung</string>
     <string name="settings_section_appearance">Erscheinungsbild</string>
-    <string name="settings_section_sensors">Sensoreinstellungen</string>
+    <string name="settings_section_sensors" translation_description="Preferences category heading for sensor settings">Sensoren</string>
     <string name="settings_section_other">Sonstiges</string>
     <string name="enable_analytics">Nutzungsstatistiken senden</string>
     <string name="enable_analytics_desc">Sky Map durch das Übermitteln anonymer Daten an Google Analytics verbessern</string>

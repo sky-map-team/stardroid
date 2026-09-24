@@ -313,7 +313,7 @@
     <string name="settings_cancel">Ακύρωση</string>
     <string name="settings_section_controls">Χειριστήρια</string>
     <string name="settings_section_appearance">Εμφάνιση</string>
-    <string name="settings_section_sensors">Ρυθμίσεις αισθητήρα</string>
+    <string name="settings_section_sensors" translation_description="Preferences category heading for sensor settings">Αισθητήρες</string>
     <string name="settings_section_other">Άλλα</string>
     <string name="enable_analytics">Αποστολή στατιστικών χρήσης</string>
     <string name="enable_analytics_desc">Βελτιώστε το Sky Map στέλνοντας ανώνυμα δεδομένα στο Google Analytics</string>

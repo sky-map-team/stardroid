@@ -317,7 +317,7 @@
     <string name="settings_cancel">لغو</string>
     <string name="settings_section_controls">کنترل‌ها</string>
     <string name="settings_section_appearance">ظاهر</string>
-    <string name="settings_section_sensors">تنظیمات حسگرها (پیشرفته)</string>
+    <string name="settings_section_sensors" translation_description="Preferences category heading for sensor settings">حسگرها</string>
     <string name="settings_section_other">سایر</string>
     <string name="enable_analytics">ارسال آمار استفاده</string>
     <string name="enable_analytics_desc">بهبود برنامه با ارسال ناشناس آمار استفاده</string>

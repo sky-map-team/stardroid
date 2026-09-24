@@ -312,7 +312,7 @@
     <string name="settings_cancel">Storno</string>
     <string name="settings_section_controls">Ovládání</string>
     <string name="settings_section_appearance">Vzhled</string>
-    <string name="settings_section_sensors">Nastavení čidel</string>
+    <string name="settings_section_sensors" translation_description="Preferences category heading for sensor settings">Senzory</string>
     <string name="settings_section_other">Ostatní</string>
     <string name="enable_analytics">Odeslat statistiky o používání</string>
     <string name="enable_analytics_desc">Pomozte zlepšit Sky Map odesíláním anonimních dat do Google Analytics</string>
