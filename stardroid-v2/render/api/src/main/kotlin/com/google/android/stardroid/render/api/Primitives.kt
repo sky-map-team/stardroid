@@ -166,6 +166,14 @@ data class EclipseShadow(
  * entirely. It is deliberately *not* the object's true magnitude: producers bias it (deep-sky
  * objects subtract a bonus so famous-but-faint targets still label) or drop it altogether (the
  * planets, so Neptune and Pluto stay named), while [priority] keeps the honest brightness order.
+ *
+ * [hasDetail] says the named thing has something to show if tapped — an info card. Tapping only
+ * identifies objects that have one, so today most star labels are silently untappable (see
+ * `docs/info-card-coverage.md`); a backend that can afford it draws carded labels at full
+ * strength and underlines them, dimming the rest, which turns that invisible distinction into
+ * something you can see before you tap. Backends that cannot ignore it — `:render:gles1` does —
+ * so this is additive. Producers naming directions rather than objects (the grid, the horizon,
+ * the ecliptic) leave it false.
  */
 data class LabelPrimitive(
     val pos: Vector3,
@@ -173,6 +181,7 @@ data class LabelPrimitive(
     val style: LabelStyle,
     val priority: Int,
     val magnitudeForThresholding: Double? = null,
+    val hasDetail: Boolean = false,
 )
 
 /**

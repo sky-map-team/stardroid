@@ -32,6 +32,7 @@ include(":data:generator")
 
 // Android modules
 include(":render:gles1")
+include(":render:gles3")
 include(":data")
 include(":app")
 

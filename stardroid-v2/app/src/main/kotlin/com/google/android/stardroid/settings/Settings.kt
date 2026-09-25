@@ -71,6 +71,25 @@ enum class OneEuroEaseOff {
 }
 
 /**
+ * Which rendering backend draws the map.
+ *
+ * Two backends ship: the GL ES 1.x fixed-function one the app has always used, and a GL ES 3.0
+ * one (`docs/design/render-gles3.md`). They are near-identical by design, so that the places
+ * they deliberately differ — the sky gradient, label halos, the has-an-info-card marker, label
+ * fading — can be judged by flipping between them on real hardware rather than argued about.
+ *
+ * The EGL context version is fixed when the surface is created, so a change takes effect on the
+ * next map launch, not immediately.
+ */
+enum class RendererBackend {
+    /** The shipping default: fixed-function, supported everywhere. */
+    GLES1,
+
+    /** Programmable pipeline. Falls back to [GLES1] on a device without GL ES 3.0. */
+    GLES3,
+}
+
+/**
  * The app's persisted preferences, as flows so consumers react to changes from any writer
  * (map controls now, the settings screen later). Keys are new — v1's `source_provider.N`
  * SharedPreferences are deliberately not migrated (D1).
@@ -308,6 +327,14 @@ interface Settings {
     val labelSizeHintShown: Flow<Boolean>
 
     suspend fun setLabelSizeHintShown()
+
+    /**
+     * Which rendering backend draws the map. See [RendererBackend]; the default is
+     * [RendererBackend.GLES1], the backend the app has always shipped.
+     */
+    val rendererBackend: Flow<RendererBackend>
+
+    suspend fun setRendererBackend(backend: RendererBackend)
 
     /**
      * How many times the map chrome has been revealed with the rail's name labels attached.

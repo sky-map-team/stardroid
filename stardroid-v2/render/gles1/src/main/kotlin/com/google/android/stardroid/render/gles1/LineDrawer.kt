@@ -9,6 +9,7 @@
 
 package com.google.android.stardroid.render.gles1
 
+import com.google.android.stardroid.render.api.GreatCircleSubdivision
 import com.google.android.stardroid.render.api.LinePrimitive
 import com.google.android.stardroid.render.api.RenderState
 import com.google.android.stardroid.render.api.Rgba

@@ -278,6 +278,14 @@ class FakeSettings : Settings {
         labelSizeHintShownState.value = true
     }
 
+    val rendererBackendState = MutableStateFlow(RendererBackend.GLES1)
+
+    override val rendererBackend: Flow<RendererBackend> = rendererBackendState
+
+    override suspend fun setRendererBackend(backend: RendererBackend) {
+        rendererBackendState.value = backend
+    }
+
     val railLabelRevealsState = MutableStateFlow(0)
 
     override val railLabelReveals: Flow<Int> = railLabelRevealsState

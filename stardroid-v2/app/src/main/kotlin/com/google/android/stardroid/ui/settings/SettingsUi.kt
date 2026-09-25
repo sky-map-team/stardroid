@@ -64,6 +64,7 @@ import com.google.android.stardroid.settings.AutoDimness
 import com.google.android.stardroid.settings.FontSize
 import com.google.android.stardroid.settings.OneEuroEaseOff
 import com.google.android.stardroid.settings.OneEuroSteadiness
+import com.google.android.stardroid.settings.RendererBackend
 import com.google.android.stardroid.ui.common.topBarWindowInsets
 
 /**
@@ -237,6 +238,25 @@ fun SettingsScreen(
                         onOpenDiagnostics()
                     },
                 )
+
+                // Only on devices that can actually run the new backend: offering a choice
+                // whose second option silently falls back to the first is worse than not
+                // offering it. Shown on release builds too, not only debug ones, because the
+                // point is to compare the two on real hardware.
+                if (viewModel.rendererChoiceAvailable) {
+                    SectionHeader(R.string.settings_section_advanced)
+                    ChoiceRow(
+                        title = stringResource(R.string.settings_renderer),
+                        summary = stringResource(R.string.settings_renderer_summary),
+                        options = RendererBackend.entries,
+                        selected = state.rendererBackend,
+                        label = { rendererBackendLabel(it) },
+                        // The map restarts itself: MainActivity watches this preference and
+                        // recreates when it stops matching the backend its surface was built
+                        // for. Recreating from here instead would race the DataStore write.
+                        onSelect = viewModel::setRendererBackend,
+                    )
+                }
             }
         }
     }
@@ -484,6 +504,15 @@ private fun PreferenceLabels(
         )
     }
 }
+
+@Composable
+private fun rendererBackendLabel(backend: RendererBackend): String =
+    stringResource(
+        when (backend) {
+            RendererBackend.GLES1 -> R.string.settings_renderer_gles1
+            RendererBackend.GLES3 -> R.string.settings_renderer_gles3
+        },
+    )
 
 @Composable
 private fun fontSizeLabel(size: FontSize): String =

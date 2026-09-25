@@ -38,12 +38,35 @@ data class RenderState(
 )
 
 /**
- * Input to the backend's sky-gradient dome: where the sun is.
+ * Input to the backend's sky-gradient dome: where the sun is, and how hazy the air is.
  *
  * @property sunDirection the sun's geocentric direction as a **unit vector in celestial
  *   (equatorial) coordinates** — the same world frame every primitive and [SkyCamera] use, so the
  *   backend can orient the dome without knowing the observer's local frame.
+ * @property zenithDirection the observer's local up, in the same celestial frame. A sun-centred
+ *   ramp does not need this — `:render:gles1`'s dome is rotationally symmetric about the sun and
+ *   ignores it — but every real sky phenomenon is defined relative to the horizon: the brightening
+ *   toward it, the twilight bands, the Belt of Venus and the Earth's shadow rising opposite the
+ *   sun. A backend evaluating a scattering model needs the horizon, so the producer supplies it.
+ *
+ *   Deliberately has no default, unlike [turbidity]: "a clear day" is a fact about the air with
+ *   one sane fallback everywhere, but "which way is up" has none — a default here would be some
+ *   arbitrary direction wearing the shape of a real one, silently wrong for every caller that
+ *   forgot to set it rather than refusing to compile. `MapViewModel` is the only producer today
+ *   and always has an observer frame in hand ([SkyModel.localFrame]); a second producer without
+ *   one (a preview scene, a test) should decide its own placeholder rather than inherit ours.
+ * @property turbidity atmospheric haze, the Preetham model's T: 2 is an exceptionally clear
+ *   mountain sky, ~3 a clear day, 6+ hazy or urban. Higher values whiten the sky, widen the
+ *   circumsolar aureole and lift the horizon glow. Backends that cannot evaluate a scattering
+ *   model ignore it, so this is additive and changes nothing on GLES1.
  */
 data class SkyGradient(
     val sunDirection: Vector3,
-)
+    val zenithDirection: Vector3,
+    val turbidity: Double = DEFAULT_TURBIDITY,
+) {
+    companion object {
+        /** A clear but not pristine sky — the sensible default when nothing measures the air. */
+        const val DEFAULT_TURBIDITY = 2.5
+    }
+}

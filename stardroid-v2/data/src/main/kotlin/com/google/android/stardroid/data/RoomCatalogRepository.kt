@@ -270,6 +270,7 @@ class RoomCatalogRepository(
             name = nameRow?.name.orEmpty(),
             nameIsPrimary = nameRow?.isPrimary == true,
             searchFovDeg = row.searchFov,
+            hasInfoCard = row.hasInfoCard,
         )
     }
 

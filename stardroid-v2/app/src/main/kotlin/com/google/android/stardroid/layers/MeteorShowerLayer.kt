@@ -104,6 +104,8 @@ class MeteorShowerLayer(
                         ),
                     priority = CatalogLayers.labelPriority(null),
                     magnitudeForThresholding = null,
+                    // Every shipped shower has an info card, so every radiant is tappable.
+                    hasDetail = true,
                 )
             }
         return LayerScene(depth = depth, points = points, labels = labels)

@@ -64,7 +64,8 @@ import com.google.android.stardroid.render.AssetImageLoader
 import com.google.android.stardroid.render.RenderBinder
 import com.google.android.stardroid.render.RenderConnector
 import com.google.android.stardroid.render.RendererInfoStore
-import com.google.android.stardroid.render.gles1.GLSkyRenderer
+import com.google.android.stardroid.render.createRendererBackend
+import com.google.android.stardroid.render.supportsGles3
 import com.google.android.stardroid.satellites.nextVisiblePass
 import com.google.android.stardroid.satellites.satelliteEntryPoint
 import com.google.android.stardroid.satellites.satelliteUiStatusFlow
@@ -75,6 +76,8 @@ import com.google.android.stardroid.sensors.OrientationSource
 import com.google.android.stardroid.sensors.SensorKind
 import com.google.android.stardroid.sensors.SensorStatusSource
 import com.google.android.stardroid.settings.AutoDimness
+import com.google.android.stardroid.settings.RendererBackend
+import com.google.android.stardroid.settings.Settings as SkyMapSettings
 import com.google.android.stardroid.startup.Experiment
 import com.google.android.stardroid.startup.ExperimentConfig
 import com.google.android.stardroid.startup.StartupRouter
@@ -102,15 +105,15 @@ import com.google.android.stardroid.widget.MoonWidget
 import com.google.android.stardroid.widget.MoonWidgetReceiver
 import com.google.android.stardroid.widget.WidgetScheduler
 import dagger.hilt.android.AndroidEntryPoint
+import java.util.Calendar
+import javax.inject.Inject
+import kotlin.time.Duration
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.withContext
-import java.util.Calendar
-import javax.inject.Inject
-import kotlin.time.Duration
-import com.google.android.stardroid.settings.Settings as SkyMapSettings
 
 /**
  * The single-activity Compose shell (layers-and-app.md): builds the GL surface, wires the
@@ -124,6 +127,13 @@ class MainActivity : ComponentActivity() {
 
     /** Filled in by the GL backend once its surface exists; read by the diagnostics screen. */
     private val rendererInfoStore = RendererInfoStore()
+
+    /**
+     * The backend this activity's surface was built for. The EGL context version is fixed when
+     * the surface is created, so a change to the preference means a new activity, not a new
+     * surface.
+     */
+    private var requestedBackend: RendererBackend? = null
 
     @Inject lateinit var settings: SkyMapSettings
 
@@ -288,6 +298,7 @@ class MainActivity : ComponentActivity() {
                     fusedSensorAvailable =
                         getSystemService(SensorManager::class.java)
                             ?.getDefaultSensor(Sensor.TYPE_ROTATION_VECTOR) != null,
+                    gles3Available = supportsGles3(this@MainActivity),
                 )
             }
         }
@@ -420,17 +431,29 @@ class MainActivity : ComponentActivity() {
         }
 
         val imageLoader = AssetImageLoader(assets)
-        val glRenderer =
-            GLSkyRenderer(
-                resources.displayMetrics.density,
-                imageLoader::load,
-                rendererInfoStore::set,
+        // The EGL context version is fixed when the surface is created and cannot change
+        // afterwards, so the backend choice is read once, here, and a change to it takes effect
+        // on the next map launch (the settings row recreates the activity to make that prompt).
+        // One blocking read of one preference at startup; the alternative is deferring surface
+        // creation behind a coroutine, which buys nothing and costs a frame.
+        val chosenBackend = runBlocking { settings.rendererBackend.first() }
+        requestedBackend = chosenBackend
+        var requestRender: () -> Unit = {}
+        val backend =
+            createRendererBackend(
+                context = this,
+                assets = assets,
+                backend = chosenBackend,
+                density = resources.displayMetrics.density,
+                imageLoader = imageLoader::load,
+                onRendererInfo = rendererInfoStore::set,
+                requestRender = { requestRender() },
             )
         glSurfaceView =
             GLSurfaceView(this).apply {
-                setEGLContextClientVersion(1)
+                setEGLContextClientVersion(backend.eglContextClientVersion)
                 setEGLConfigChooser(8, 8, 8, 8, 16, 0)
-                setRenderer(glRenderer)
+                setRenderer(backend.surfaceRenderer)
                 renderMode = GLSurfaceView.RENDERMODE_WHEN_DIRTY
                 // Through-camera mode (camera-ar-mode.md/D64, Option A): the surface holds
                 // alpha and composites above the CameraX preview plane but below the window.
@@ -438,7 +461,26 @@ class MainActivity : ComponentActivity() {
                 holder.setFormat(PixelFormat.TRANSLUCENT)
                 setZOrderMediaOverlay(true)
             }
-        val connector = RenderConnector(glRenderer, glSurfaceView)
+        // Only the GLES3 backend uses this, and only while a label fade is in flight; the rest
+        // of the time RENDERMODE_WHEN_DIRTY still means a still device draws nothing (D23).
+        requestRender = glSurfaceView::requestRender
+
+        // Recreate when the backend preference stops matching what this activity asked for.
+        //
+        // Driving this from the preference rather than from the settings row's click is what
+        // makes it work: the row's write is a suspending DataStore edit, so recreating straight
+        // after the tap read the *old* value back and silently rebuilt the same backend, which
+        // is why the change appeared to need a manual app restart. Comparing against what was
+        // requested — not against the backend actually running — also means a device that
+        // cannot do GL ES 3.0, and so falls back, does not recreate itself forever.
+        lifecycleScope.launch {
+            repeatOnLifecycle(Lifecycle.State.STARTED) {
+                settings.rendererBackend.collect { backend ->
+                    if (backend != requestedBackend) recreate()
+                }
+            }
+        }
+        val connector = RenderConnector(backend.skyRenderer, glSurfaceView)
         val binder = RenderBinder(connector)
         lifecycleScope.launch {
             try {

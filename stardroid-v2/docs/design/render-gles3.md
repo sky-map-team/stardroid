@@ -1,8 +1,21 @@
 # Detailed Design: `:render:gles3` — the GL ES 3.0 backend
 
-**Status: PROPOSED** — design only, no code. Supersedes nothing yet; `:render:gles1`
-([render-api.md](render-api.md)) remains the shipping backend until phase 1 lands and is
-verified.
+**Status: PART A BUILT** — `:render:gles3` exists and draws the whole scene. Both backends
+ship: `:render:gles1` ([render-api.md](render-api.md)) remains the **default**, and a settings
+row (Advanced → Graphics engine) picks between them. Part B is still design only.
+
+**Two things below are now superseded by what shipped, and are kept for their reasoning:**
+
+- **§6 recommends retiring `:render:gles1` after one release. We are not doing that.** Keeping
+  both is what turns every visual difference into an A/B you can flip on real hardware instead
+  of an argument, which is exactly what §4 says the parity risk needs — and it means a device
+  without GL ES 3.0 is still *supported* rather than filtered out of the Play listing, so no
+  `<uses-feature glEsVersion>` entry was added. §6's cost analysis stands and is the reason to
+  revisit this once Part B starts growing `:render:api`; it is a deferral, not a reversal.
+- **§1's claim that parity means "no new pixels" held for everything except four deliberate
+  deviations**, listed in §10.1. Each one is something GLES1 structurally cannot do, each is
+  visible side by side, and each is written down so a reviewer never has to ask whether a
+  difference is a bug or a feature.
 
 This document plans the port of the renderer from the GL ES 1.x fixed-function pipeline to a
 programmable GL ES 3.0 pipeline. It is in two halves, deliberately:
@@ -526,3 +539,106 @@ commitment.
    contract revision? (§7.3)
 8. Should the sky model be Preetham (cheaper, well-trodden) or Hošek–Wilkie (better, especially at
    twilight)? A spike, not a debate. (§7.1)
+
+---
+
+# §10 — Noticed during the port
+
+Part A had to be boring, and was. But the port is the moment when it becomes obvious what the
+programmable pipeline *could* do, and that insight is worth nothing a week later — so it is
+written down here instead of built. **Nothing in this section is implemented.** Each entry says
+what the code does now, what GLES3 makes possible, and roughly what it would cost;
+cross-references point at §7/§8 where an idea is a concrete instance of one already listed.
+
+## 10.1 The four deliberate deviations that did ship
+
+Parity was the rule and these are the exceptions, each recorded so a side-by-side reviewer never
+has to ask whether a difference is a bug.
+
+1. **The sky gradient is an analytic model, not a ramp** (§7.1). `sky.frag` evaluates Preetham
+   per pixel with a turbidity parameter, plus a twilight regime v1 never attempted: the warm
+   band over the set sun, Earth's own shadow rising opposite it, and the Belt of Venus above
+   that. Evaluated in linear space, tone-mapped, dithered. `SkyGradient` grew `zenithDirection`
+   (every horizon-relative phenomenon needs it) and `turbidity`; both are additive and GLES1
+   ignores them.
+2. **Labels have a halo.** `sprite.frag` samples the `R8` coverage mask in a ring and composites
+   a near-black outline under the fill, in the same draw call. This is the real fix for issue
+   #1014; the sage-tint stopgap from PR #1018 stays in `SkyColors` because it is shared with
+   GLES1, and can be reverted if GLES1 is ever retired (§8.15).
+3. **Labels say whether tapping them will do anything.** Tap-to-identify only offers objects
+   with an info card, so ~169 of the 245 star labels visible at the default FOV are untappable
+   with no visual hint (`info-card-coverage.md`). `LabelPrimitive.hasDetail` — fed from an
+   `EXISTS` on `info_card` in the layer query — draws carded labels at full alpha with a rule
+   under the text and dims the rest to 70%.
+
+   Two things had to be got wrong first, both worth recording.
+
+   A small filled dot beside the text is the same shape, the same colour and the same shader
+   path as a star, so in a star field it reads as one more star rather than as a mark on the
+   label. **A marker for a label has to be something the sky does not already contain** — a
+   rule, a glyph, a box — not a shape the renderer is already drawing thousands of.
+
+   Then the rule itself was too heavy. Its thickness was a dp value scaled by *both* the
+   display density and the font-size preference, which is four or five pixels under ten-point
+   text on a modern phone — a bar, not a hairline. It is now derived from the label's own cell
+   height, inset to 60% of the label width and drawn at 45% alpha. **The density of the mark
+   matters more than its presence**, because nearly every label that is worth drawing has a
+   card — every constellation does — so a full-strength rule under each one turns the sky into
+   a list rather than marking the few that differ. The dimming carries the signal; the rule
+   only confirms it.
+4. **Labels fade in and out.** `LabelFader` (pure, in `:render:api`, unit-tested) turns
+   `LabelDeclutterer`'s per-frame boolean into an eased alpha. Two choices worth knowing: a
+   fading-out label does **not** reserve screen space, so arrivals cross-fade over departures
+   rather than waiting them out; and the frustum test stays a hard cull while the magnitude
+   test does not, because a label a zoom-out just made too faint is still on screen and should
+   be seen to leave. `RENDERMODE_WHEN_DIRTY` survives: the backend asks for another frame
+   through `onAnimating` only while a fade is actually in flight.
+
+## 10.2 Things the port made obvious
+
+- **The star field is ready for a real PSF** (§8.3). `point.frag` already computes coverage
+  analytically, so scintillation keyed to altitude, or an Airy/Gaussian profile instead of a
+  disc, is a few lines in a shader that already exists — not a new pipeline. The parity ramp in
+  `StellarRamps.sizeDp` is still the two-step one GLES1 needs; `gl_PointSize` is per-vertex now,
+  so a continuous magnitude→size curve costs nothing but a decision about how it should look.
+- **The point-smoothing hazard is real and was observable on the emulator.** D31 worried that
+  `GL_SMOOTH_POINT_SIZE_RANGE` may be `[1, 1]`; the side-by-side screenshots of the test scene
+  show GLES1 drawing hard-edged **squares** on an API 36 emulator, matching the 2026-09-18 field
+  report from a Samsung device. This is a live defect in the shipping backend, not a
+  hypothetical — worth its own fix on GLES1 if GLES1 is going to stay the default for long.
+- **The glow's eight rings are now pointless on one side.** `glow.frag` interpolates vertex
+  colour for parity, but an exponential falloff is one line there. The blocker is the
+  *producer*: `HorizonLayer.glowMesh` builds eight rings for both backends, so collapsing it to
+  two means changing what GLES1 receives. Cheap the day GLES1 goes (§7.2).
+- **A signed-distance-field atlas would pay for itself twice** (§8.15). `LabelDrawer` rasterizes
+  at the exact pixel size and rebuilds the whole atlas whenever `labelScaleFactor` changes — so
+  every step of the font-size preference is a full re-rasterize and re-upload. An SDF atlas
+  would make the halo one tap instead of eight *and* make the size preference free, at the cost
+  of a slightly softer glyph edge. Worth a spike before the catalog gets bigger.
+- **Below the horizon the sky shader is flat.** `cosTheta` is clamped at 0, so looking "through
+  the Earth" shows a uniform band at the horizon's brightness. Honest, but it reads oddly, and
+  it is exactly the region §7.2's semi-transparent ground would occupy. The ground is the fix;
+  until then this is the placeholder.
+- **The sky model's colour wants tuning against a real sky** (§7.1). The structure is right and
+  the transitions are smooth, but `EXPOSURE`, the tone-map and the daylight/twilight cross-fade
+  are hand-set constants, and a low sun is the hardest case: the warm horizon band and the
+  Preetham sky fight over the same few degrees. Judge it on a real device at a known place and
+  time before treating any of those numbers as settled.
+- **Driving `magnitudeLimit` from the computed sky brightness is now a small change** (§7.1).
+  The sky shader already knows how bright the sky is at a given sun altitude; the same function
+  evaluated once on the CPU would make stars fade in through twilight instead of hanging over a
+  blue daytime sky, which is the one obviously wrong thing left in a daytime view.
+- **Night mode as a post-process is closer than it looks** (§8.14). It is already a single
+  uniform read by every fragment shader rather than a per-primitive colour bake, which was the
+  hard half. The remaining step is an off-screen pass, and that pass is also what bloom (§8.2)
+  and star trails (§8.11) need — so the first of those three to be wanted pays for the others.
+- **Instanced sprites removed the batching TODO and left the declutter one as the sole
+  bottleneck.** Labels are one draw call per atlas page now, so the draw side no longer cares
+  how many there are. `LabelDeclutterer`'s sort and overlap scan are unchanged by the port —
+  still O(n²), exactly as on GLES1 — but with the draw side no longer scaling badly either, it
+  is now the *only* part of the label path that does. A grid or a sweep would be the next move
+  if catalog layers ever submit thousands.
+- **`Terminator` is ready to become a sealed hierarchy** (§7.4). The shader takes the solar
+  terminator and the Earth-shadow geometry as independent uniform blocks and composites them in
+  order, so a third shadow source — a transit, a Jovian moon — is another block and another
+  multiply, with no re-architecture.

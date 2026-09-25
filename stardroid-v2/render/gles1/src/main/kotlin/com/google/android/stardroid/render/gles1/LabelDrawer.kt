@@ -16,6 +16,8 @@ import android.graphics.Typeface
 import android.opengl.GLUtils
 import com.google.android.stardroid.math.DEGREES_TO_RADIANS
 import com.google.android.stardroid.math.Vector3
+import com.google.android.stardroid.render.api.LabelAtlasPacker
+import com.google.android.stardroid.render.api.LabelDeclutterer
 import com.google.android.stardroid.render.api.LabelPrimitive
 import com.google.android.stardroid.render.api.LabelSize
 import com.google.android.stardroid.render.api.RenderState
