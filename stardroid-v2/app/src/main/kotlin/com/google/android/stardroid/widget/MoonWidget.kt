@@ -180,25 +180,26 @@ private fun TimeRow(
         android.text.format.DateFormat
             .getTimeFormat(context)
             .format(Date(time.toEpochMilliseconds()))
-    val text = context.getString(labelRes, formatted) + dayOffsetSuffix(now, time, context)
+    val offset = dayOffset(now, time, TimeZone.currentSystemDefault())
+    val suffix =
+        if (offset > 0) context.getString(R.string.moon_widget_time_day_offset, offset) else ""
     Text(
-        text = text,
+        text = context.getString(labelRes, formatted) + suffix,
         style = TextStyle(color = ColorProvider(MUTED), fontSize = 12.sp),
         maxLines = 1,
         modifier = GlanceModifier.padding(top = topPadding),
     )
 }
 
-/** " +1" when [time]'s local calendar day is after [now]'s, else empty. */
-private fun dayOffsetSuffix(
+/** How many local calendar days after [now]'s day [time] falls on; negative if before. */
+internal fun dayOffset(
     now: Instant,
     time: Instant,
-    context: Context,
-): String {
-    val zone = TimeZone.currentSystemDefault()
-    val dayOffset =
-        time.toLocalDateTime(zone).date.toEpochDays() - now.toLocalDateTime(zone).date.toEpochDays()
-    return if (dayOffset > 0) context.getString(R.string.moon_widget_time_day_offset, dayOffset) else ""
+    zone: TimeZone,
+): Int {
+    val nowDay = now.toLocalDateTime(zone).date.toEpochDays()
+    val timeDay = time.toLocalDateTime(zone).date.toEpochDays()
+    return timeDay - nowDay
 }
 
 private fun phaseNameRes(phase: LunarPhase): Int =
