@@ -247,9 +247,9 @@
     <string name="snackbar_action_open" translation_description="Snackbar action button that opens the screen the snackbar refers to, e.g. the compass calibration screen">Öppna</string>
     <string name="label_size_hint_message" translation_description="Snackbar shown once, the first time the user zooms in a long way. Explains that the text labels naming stars and other objects stay the same size however far you zoom, and that their size is changed in the app\'s Settings screen instead. Shown with an action button that opens Settings.">Etikettstorleken ändras inte med zoom — ställ in den i Inställningar</string>
     <string name="label_size_hint_action" translation_description="Action button on the label size snackbar; opens the app\'s Settings screen, where the user can change how large the sky labels are">Inställningar</string>
-    <string name="location_permission_dialog_title">Plats krävs</string>
-    <string name="location_permission_dialog_message">
-    Sky Map behöver din ungefärliga plats för att visa rätt natthimmel. Du kan ge tillåtelse, ange din plats manuellt eller bestämma dig senare. Om du bestämmer dig senare kommer kartan inte att vara korrekt förrän din plats har ställts in.
+    <string name="location_permission_dialog_title" translation_description="Title of the dialog that requests location permission from the user. The permission is optional - the app works fully without it - and the title must not imply otherwise">Plats (Valfritt)</string>
+    <string name="location_permission_dialog_message" translation_description="Body text of the dialog requesting location permission, explaining why the app uses it, that it is optional, and what happens without it">
+    Sky Map använder din ungefärliga plats för att visa rätt natthimmel. Denna behörighet är valfri — du kan neka den och istället ange din plats manuellt, eller bestämma dig senare. Om du bestämmer dig senare kommer kartan inte att vara korrekt förrän din plats har ställts in.
     </string>
     <string name="location_permission_grant">Ge behörighet</string>
     <string name="location_permission_enter_manually">Ange manuellt</string>
@@ -264,15 +264,16 @@
     <string name="location_keep_waiting">Vänta vidare</string>
     <string name="location_manual_entry_title">Ange din plats</string>
     <string name="location_place_name_hint">Stad eller platsnamn</string>
-    <string name="location_latitude_hint">Latitud (t.ex. 51,5)</string>
+    <string name="location_latitude_hint" translation_description="Floating label above the latitude input field. Kept short so it doesn't wrap next to the N/S hemisphere toggle.">Latitud</string>
     <string name="location_latitude_placeholder" translation_description="Example value shown in the latitude field before the user types anything; disappears once they start typing. The sign is set by a separate N/S toggle, so this is always a positive number.">51,5</string>
-    <string name="location_longitude_hint">Longitud (t.ex. −0,1)</string>
+    <string name="location_longitude_hint" translation_description="Floating label above the longitude input field. Kept short so it doesn't wrap next to the E/W hemisphere toggle.">Longitud</string>
     <string name="location_longitude_placeholder" translation_description="Example value shown in the longitude field before the user types anything; disappears once they start typing. The sign is set by a separate E/W toggle, so this is always a positive number.">0,1</string>
     <string name="location_resolve_button">Lös upp</string>
     <string name="location_set_button">Ange plats</string>
     <string name="location_place_not_found">Plats hittades inte – försök med ett mer specifikt namn</string>
     <string name="location_geocoder_offline">Ingen internet – ange koordinater direkt</string>
     <string name="location_geocoder_unavailable">Ingen geokodningstjänst på den här enheten – ange koordinater direkt</string>
+    <string name="location_geocoder_failed" translation_description="Inline message shown when place name lookup fails for a reason other than being offline or the place not existing">Platssökning misslyckades — ange koordinater direkt</string>
     <string name="location_invalid_latitude">Latitud måste vara mellan −90 och 90</string>
     <string name="location_invalid_longitude">Longitud måste vara mellan −180 och 180</string>
     <string name="location_hemisphere_north_description" translation_description="Accessibility label for the latitude hemisphere toggle button, selected for a positive value">Norra halvklotet (positiv latitud)</string>
@@ -436,7 +437,7 @@
     <!-- tm:omitted name="diagnostics_location_format" reason="identical_to_source" -->
     <string name="diagnostics_location_unset" translation_description="Location status shown in diagnostics when no location has been set yet">Ej angett</string>
     <string name="diagnostics_location_acquiring">Hämtar…</string>
-    <string name="diagnostics_location_hardware_unavailable" translation_description="Location status shown in diagnostics when no location hardware is available">Ingen platshårdvara</string>
+    <string name="diagnostics_location_hardware_unavailable" translation_description="Location status shown in diagnostics when the device has no usable location provider, whether because it lacks location hardware or none is enabled">Ingen användbar platstjänst</string>
     <string name="diagnostics_pointing">Riktningsögonblicksbild</string>
     <!-- tm:omitted name="diagnostics_dec_format" reason="identical_to_source" -->
     <string name="diagnostics_magnetic_correction">Magnetisk korrektion</string>
@@ -527,6 +528,11 @@ Gå till en öppen plats utan metall och försök igen.]]></string>
     <string name="whats_new_button" translation_description="Map-screen menu item that opens the What's New and Credits screen">Nyheter</string>
     <string name="whats_new_screen_title" translation_description="Title of the screen showing the release notes and the credits">Nyheter &amp; Medverkande</string>
 
+    <!-- The Help screen's search box, which filters the document to the matching sections. -->
+    <string name="help_search_hint" translation_description="Placeholder in the Help screen\'s search box, which filters the help document to the sections matching what is typed">Sök hjälp</string>
+    <string name="help_search_clear" translation_description="Accessibility label for the button that clears the Help screen\'s search box">Rensa sökning</string>
+    <string name="help_search_no_results" translation_description="Shown on the Help screen when nothing matches the search. %1$s is the text the user typed">Inga hjälpsektioner matchar ”%1$s”.</string>
+
     <!-- The deep-sky symbol key at the foot of the Help screen. -->
     <string name="help_symbol_key_title" translation_description="Heading of the Help section explaining the map symbols used for deep-sky objects">Kartymboler</string>
     <string name="help_symbol_key_intro" translation_description="Introductory sentence for the map-symbol key in Help">Deep-sky-objekt och meteorskurar är markerade med en symbol som visar deras typ:</string>
@@ -540,6 +546,11 @@ Gå till en öppen plats utan metall och försök igen.]]></string>
     <string name="symbol_key_other" translation_description="Symbol-key label: the marker used for deep-sky objects of any other type">Annat deep-sky-objekt</string>
     <string name="symbol_key_meteor_radiant" translation_description="Symbol-key label: the marker for the point in the sky meteors of a shower appear to come from">Meteorskurssvärmpunkt (radiant)</string>
     <string name="symbol_key_meteor_radiant_peak" translation_description="Symbol-key label: the brighter marker used when a meteor shower is near its peak activity">Meteorskur nära sin höjdpunkt</string>
+
+    <!-- The widgets catalogue reached from the map\'s overflow menu. -->
+    <string name="widgets_button" translation_description="Map-screen menu item that opens the list of home-screen widgets the app offers">Widgetar</string>
+    <string name="widgets_sheet_title" translation_description="Title of the sheet listing the home-screen widgets the app offers">Widgetar för hemskärmen</string>
+    <string name="widgets_sheet_subtitle" translation_description="Subtitle of the widgets sheet, explaining what the listed widgets are for">Håll kvällens himmel på din hemskärm. Välj en att lägga till.</string>
 
     <!-- Moon-phase home-screen widget (D69). -->
     <string name="moon_widget_label" translation_description="Name of the moon-phase home-screen widget, shown in the launcher\'s widget picker">Månfas</string>

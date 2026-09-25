@@ -247,9 +247,9 @@
     <string name="snackbar_action_open" translation_description="Snackbar action button that opens the screen the snackbar refers to, e.g. the compass calibration screen">Buka</string>
     <string name="label_size_hint_message" translation_description="Snackbar shown once, the first time the user zooms in a long way. Explains that the text labels naming stars and other objects stay the same size however far you zoom, and that their size is changed in the app\'s Settings screen instead. Shown with an action button that opens Settings.">Saiz label tidak berubah dengan zum — tetapkan dalam Tetapan</string>
     <string name="label_size_hint_action" translation_description="Action button on the label size snackbar; opens the app\'s Settings screen, where the user can change how large the sky labels are">Tetapan</string>
-    <string name="location_permission_dialog_title">Lokasi Diperlukan</string>
-    <string name="location_permission_dialog_message">
-    Sky Map memerlukan lokasi anggaran Anda untuk menunjukkan langit malam yang betul. Anda dapat memberikan izin, memasukkan lokasi Anda secara manual, atau memutuskan nanti. Jika Anda memutuskan nanti, peta tidak akan tepat sehingga lokasi Anda telah ditetapkan.
+    <string name="location_permission_dialog_title" translation_description="Title of the dialog that requests location permission from the user. The permission is optional - the app works fully without it - and the title must not imply otherwise">Lokasi (Pilihan)</string>
+    <string name="location_permission_dialog_message" translation_description="Body text of the dialog requesting location permission, explaining why the app uses it, that it is optional, and what happens without it">
+    Sky Map menggunakan lokasi anggaran anda untuk menunjukkan langit malam yang betul. Kebenaran ini adalah pilihan — anda boleh menolaknya dan memasukkan lokasi anda secara manual, atau membuat keputusan kemudian. Jika anda membuat keputusan kemudian, peta tidak akan tepat sehingga lokasi anda ditetapkan.
     </string>
     <string name="location_permission_grant">Berikan Kebenaran</string>
     <string name="location_permission_enter_manually">Masukkan Secara Manual</string>
@@ -264,15 +264,16 @@
     <string name="location_keep_waiting">Terus Tunggu</string>
     <string name="location_manual_entry_title">Masukkan Lokasi Anda</string>
     <string name="location_place_name_hint">Bandar atau nama tempat</string>
-    <string name="location_latitude_hint">Latitud (cth. 51.5)</string>
+    <string name="location_latitude_hint" translation_description="Floating label above the latitude input field. Kept short so it doesn't wrap next to the N/S hemisphere toggle.">Latitud</string>
     <!-- tm:omitted name="location_latitude_placeholder" reason="identical_to_source" -->
-    <string name="location_longitude_hint">Longitud (cth. -0.1)</string>
+    <string name="location_longitude_hint" translation_description="Floating label above the longitude input field. Kept short so it doesn't wrap next to the E/W hemisphere toggle.">Longitud</string>
     <!-- tm:omitted name="location_longitude_placeholder" reason="identical_to_source" -->
     <string name="location_resolve_button">Selesaikan</string>
     <string name="location_set_button">Tetapkan Lokasi</string>
     <string name="location_place_not_found">Tempat tidak ditemui — cuba nama yang lebih spesifik</string>
     <string name="location_geocoder_offline">Tiada internet — masukkan koordinat secara langsung</string>
     <string name="location_geocoder_unavailable">Tiada perkhidmatan geokod pada peranti ini — masukkan koordinat secara terus</string>
+    <string name="location_geocoder_failed" translation_description="Inline message shown when place name lookup fails for a reason other than being offline or the place not existing">Carian tempat gagal — masukkan koordinat secara terus</string>
     <string name="location_invalid_latitude">Latitud mesti antara −90 dan 90</string>
     <string name="location_invalid_longitude">Longitud mesti antara −180 dan 180</string>
     <string name="location_hemisphere_north_description" translation_description="Accessibility label for the latitude hemisphere toggle button, selected for a positive value">Hemisfera utara (latitud positif)</string>
@@ -436,7 +437,7 @@
     <!-- tm:omitted name="diagnostics_location_format" reason="identical_to_source" -->
     <string name="diagnostics_location_unset" translation_description="Location status shown in diagnostics when no location has been set yet">Tidak ditetapkan</string>
     <string name="diagnostics_location_acquiring">Memperoleh…</string>
-    <string name="diagnostics_location_hardware_unavailable" translation_description="Location status shown in diagnostics when no location hardware is available">Tiada perkakasan lokasi</string>
+    <string name="diagnostics_location_hardware_unavailable" translation_description="Location status shown in diagnostics when the device has no usable location provider, whether because it lacks location hardware or none is enabled">Tiada pembekal lokasi yang boleh digunakan</string>
     <string name="diagnostics_pointing">Tangkapan arah</string>
     <!-- tm:omitted name="diagnostics_dec_format" reason="identical_to_source" -->
     <string name="diagnostics_magnetic_correction">Pembetulan mag</string>
@@ -527,6 +528,11 @@
     <string name="whats_new_button" translation_description="Map-screen menu item that opens the What's New and Credits screen">Apa yang baharu</string>
     <string name="whats_new_screen_title" translation_description="Title of the screen showing the release notes and the credits">Apa yang Baharu &amp; Kredit</string>
 
+    <!-- The Help screen's search box, which filters the document to the matching sections. -->
+    <string name="help_search_hint" translation_description="Placeholder in the Help screen\'s search box, which filters the help document to the sections matching what is typed">Cari bantuan</string>
+    <string name="help_search_clear" translation_description="Accessibility label for the button that clears the Help screen\'s search box">Kosongkan carian</string>
+    <string name="help_search_no_results" translation_description="Shown on the Help screen when nothing matches the search. %1$s is the text the user typed">Tiada bahagian bantuan yang sepadan dengan “%1$s”.</string>
+
     <!-- The deep-sky symbol key at the foot of the Help screen. -->
     <string name="help_symbol_key_title" translation_description="Heading of the Help section explaining the map symbols used for deep-sky objects">Simbol peta</string>
     <string name="help_symbol_key_intro" translation_description="Introductory sentence for the map-symbol key in Help">
@@ -542,6 +548,11 @@
     <string name="symbol_key_other" translation_description="Symbol-key label: the marker used for deep-sky objects of any other type">Objek langit dalam lain</string>
     <string name="symbol_key_meteor_radiant" translation_description="Symbol-key label: the marker for the point in the sky meteors of a shower appear to come from">Radiant hujan meteor</string>
     <string name="symbol_key_meteor_radiant_peak" translation_description="Symbol-key label: the brighter marker used when a meteor shower is near its peak activity">Hujan meteor hampir kemuncak</string>
+
+    <!-- The widgets catalogue reached from the map\'s overflow menu. -->
+    <string name="widgets_button" translation_description="Map-screen menu item that opens the list of home-screen widgets the app offers">Widget</string>
+    <string name="widgets_sheet_title" translation_description="Title of the sheet listing the home-screen widgets the app offers">Widget skrin utama</string>
+    <string name="widgets_sheet_subtitle" translation_description="Subtitle of the widgets sheet, explaining what the listed widgets are for">Kekalkan langit malam ini pada skrin utama anda. Pilih satu untuk ditambah.</string>
 
     <!-- Moon-phase home-screen widget (D69). -->
     <string name="moon_widget_label" translation_description="Name of the moon-phase home-screen widget, shown in the launcher\'s widget picker">Fasa Bulan</string>
@@ -628,7 +639,7 @@
     </string>
     <string name="notif_digest_title" translation_description="Title of the tonight\'s-sky digest notification">Berbaloi untuk dilihat malam ini</string>
     <string name="notif_action_mute_showers" translation_description="Notification action button that opens the system toggle for the meteor-shower channel">Senyapkan hujan meteor</string>
-    <string name="time_travel_stopped">Perjalanan masa beku</string>
+    <string name="time_travel_stopped">Perjalanan masa dijeda</string>
     <!-- Layers sheet: per-layer parameters (D87). -->
     <string name="layer_param_disc_size">Saiz cakera</string>
     <string name="layer_param_disc_size_true">Skala sebenar</string>

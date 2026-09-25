@@ -267,6 +267,8 @@
     <string name="location_set_button" translation_description="Button that confirms and applies the manually entered location">위치 설정</string>
     <string name="location_place_not_found" translation_description="Inline error shown when a place name search returns no results">장소를 찾을 수 없습니다. 더 구체적인 이름을 시도해 보세요.</string>
     <string name="location_geocoder_offline" translation_description="Inline message shown when geocoding fails because there is no internet connection">인터넷 연결 없음 — 좌표를 직접 입력하세요.</string>
+    <string name="location_geocoder_unavailable" translation_description="Inline message shown when place name lookup is disabled because the device has no geocoding backend, typically due to missing Google Play Services">이 기기에 지오코딩 서비스가 없습니다. 좌표를 직접 입력하세요.</string>
+    <string name="location_geocoder_failed" translation_description="Inline message shown when place name lookup fails for a reason other than being offline or the place not existing">장소 검색에 실패했습니다. 좌표를 직접 입력하세요.</string>
     <string name="location_invalid_latitude" translation_description="Validation error for latitude values outside the valid range">위도는 -90에서 90 사이여야 합니다.</string>
     <string name="location_invalid_longitude" translation_description="Validation error for longitude values outside the valid range">경도는 -180에서 180 사이여야 합니다.</string>
     <string name="location_hemisphere_north_description" translation_description="Accessibility label for the latitude hemisphere toggle button, selected for a positive value">북반구 (양수 위도)</string>
@@ -426,7 +428,7 @@
     <!-- tm:omitted name="diagnostics_location_format" reason="identical_to_source" -->
     <string name="diagnostics_location_unset" translation_description="Location status shown in diagnostics when no location has been set yet">설정되지 않음</string>
     <string name="diagnostics_location_acquiring" translation_description="Location status shown in diagnostics while the location is being acquired">가져오는 중…</string>
-    <string name="diagnostics_location_hardware_unavailable" translation_description="Location status shown in diagnostics when no location hardware is available">위치 하드웨어 없음</string>
+    <string name="diagnostics_location_hardware_unavailable" translation_description="Location status shown in diagnostics when the device has no usable location provider, whether because it lacks location hardware or none is enabled">사용할 수 있는 위치 제공자가 없습니다.</string>
     <string name="diagnostics_pointing" translation_description="Row label in the diagnostics screen showing a snapshot of where the phone is currently pointing in the sky (Right Ascension and Declination)">가리키는 위치 스냅샷</string>
     <!-- tm:omitted name="diagnostics_dec_format" reason="identical_to_source" -->
     <string name="diagnostics_magnetic_correction" translation_description="Row label in the diagnostics screen showing the applied magnetic declination correction">자기 보정</string>
@@ -509,6 +511,11 @@
     <string name="whats_new_button" translation_description="Map-screen menu item that opens the What's New and Credits screen">새로운 기능</string>
     <string name="whats_new_screen_title" translation_description="Title of the screen showing the release notes and the credits">새로운 기능 및 정보</string>
 
+    <!-- The Help screen's search box, which filters the document to the matching sections. -->
+    <string name="help_search_hint" translation_description="Placeholder in the Help screen\'s search box, which filters the help document to the sections matching what is typed">도움말 검색</string>
+    <string name="help_search_clear" translation_description="Accessibility label for the button that clears the Help screen\'s search box">검색 지우기</string>
+    <string name="help_search_no_results" translation_description="Shown on the Help screen when nothing matches the search. %1$s is the text the user typed">“%1$s”와(과) 일치하는 도움말 섹션이 없습니다.</string>
+
     <!-- The deep-sky symbol key at the foot of the Help screen. -->
     <string name="help_symbol_key_title" translation_description="Heading of the Help section explaining the map symbols used for deep-sky objects">지도 기호</string>
     <string name="help_symbol_key_intro" translation_description="Introductory sentence for the map-symbol key in Help">심원 천체 및 유성우는 유형을 나타내는 기호로 표시됩니다.</string>
@@ -522,6 +529,11 @@
     <string name="symbol_key_other" translation_description="Symbol-key label: the marker used for deep-sky objects of any other type">기타 심원천체</string>
     <string name="symbol_key_meteor_radiant" translation_description="Symbol-key label: the marker for the point in the sky meteors of a shower appear to come from">유성우 복사점</string>
     <string name="symbol_key_meteor_radiant_peak" translation_description="Symbol-key label: the brighter marker used when a meteor shower is near its peak activity">유성우 극대기 근접</string>
+
+    <!-- The widgets catalogue reached from the map\'s overflow menu. -->
+    <string name="widgets_button" translation_description="Map-screen menu item that opens the list of home-screen widgets the app offers">위젯</string>
+    <string name="widgets_sheet_title" translation_description="Title of the sheet listing the home-screen widgets the app offers">홈 화면 위젯</string>
+    <string name="widgets_sheet_subtitle" translation_description="Subtitle of the widgets sheet, explaining what the listed widgets are for">오늘 밤 하늘을 홈 화면에 유지하세요. 추가할 위젯을 선택하세요.</string>
 
     <!-- Moon-phase home-screen widget (D69). -->
     <string name="moon_widget_label" translation_description="Name of the moon-phase home-screen widget, shown in the launcher\'s widget picker">달의 위상</string>
@@ -596,7 +608,7 @@
     <string name="notif_shower_bright_moon" translation_description="Notification sentence when a bright moon will interfere with a meteor shower; %1$d is the moon illumination percentage, %2$d the meteors per hour under ideal skies">%1$d%% 밝기의 달이 희미한 유성을 가릴 것입니다 — 이상적인 하늘에서는 시간당 최대 %2$d개.</string>
     <string name="notif_digest_title" translation_description="Title of the tonight\'s-sky digest notification">오늘 밤 볼 가치가 있습니다</string>
     <string name="notif_action_mute_showers" translation_description="Notification action button that opens the system toggle for the meteor-shower channel">유성우 알림 끄기</string>
-    <string name="time_travel_stopped">시간 여행 고정</string>
+    <string name="time_travel_stopped">시간 여행 일시 중지됨</string>
     <!-- Layers sheet: per-layer parameters (D87). -->
     <string name="layer_param_disc_size">원반 크기</string>
     <string name="layer_param_disc_size_true">실제 크기</string>

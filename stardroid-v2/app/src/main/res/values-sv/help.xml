@@ -107,97 +107,26 @@ från den aktuella stunden.</p>
 • <i>Hur såg himlen ut natten jag föddes?</i></p>
 <p>Noggrannheten minskar för datum som ligger långt från nutiden, främst på grund av Jupiters gravitationsinflytande.</p>]]></string>
 
-    <string name="help_night_vision" translation_description="Help section: night vision mode. Please do not change the markup"><![CDATA[<h2>Mörkerseende</h2>
-<p>Om du är utomhus och tittar på stjärnorna hjälper mörkerseendeläget till att bevara ditt mörkerseende. Slå på eller av det med knappen <b>Nattläge</b>
-längst ner.</p>
-<br/>
-<p>I mörkerseendeläget växlar Sky Map till djupröda toner och dämpar skärmens ljusstyrka.
-Alternativet <b>Automatiskt skärmljus</b> i <b>Inställningar</b> ger dig extra kontroll över hur mörk skärmen blir.</p>]]></string>
+    <string name="help_night_vision" translation_description="Help section: night vision mode. Please do not change the markup"><![CDATA[<h2>Mörkerseendeläge</h2> <p>Om du är ute och observerar på riktigt hjälper mörkerseendeläget dig att bevara ditt mörkeranpassade synfält. Växla det med knappen <b>Nattläge</b> längst ner.</p> <br/> <p>I mörkerseendeläge växlar Sky Map skärmen till djupröda toner och dimmar ner den. Alternativet <b>Automatisk skärmnedtoning</b> i <a href="skymap://settings"><b>Inställningar</b></a> ger dig ytterligare kontroll över hur mörk skärmen blir.</p>]]></string>
 
     <string name="help_other" translation_description="Help section: other options"><![CDATA[<h1>Andra funktioner</h1>
         <p>Andra funktioner finns under spillmenyknappen (…) längst ned till höger.</p>]]></string>
 
-    <string name="help_gallery" translation_description="Help section: the image gallery. Please do not change the markup"><![CDATA[<h2>Galleri</h2>
-<p>Galleriet innehåller en samling vackra bilder av natthimlen, inklusive några
- från rymdteleskopet Hubble.</p>
- <br/>
-<p>Bläddra bland miniatyrer genom att rulla och tryck på en för att se detaljer.
-Använd knappen <b>Hitta</b> för att leta upp det objektet på himlen.</p>]]></string>
+    <string name="help_gallery" translation_description="Help section: the image gallery. Please do not change the markup"><![CDATA[<h2>Galleri</h2> <p><a href="skymap://gallery">Galleriet</a> innehåller en utvald samling vackra bilder av natthimlen, inklusive några från Hubble-rymdteleskopet.</p> <br/> <p>Bläddra bland miniatyrbilder genom att scrolla, och tryck på en för att se detaljer. Använd knappen <b>Hitta</b> för att lokalisera objektet på himlen.</p>]]></string>
 
-    <string name="help_widgets" translation_description="Help section: the home-screen widgets. Please do not change the markup"><![CDATA[<h2>Startskärmswidgets</h2>
-<p>Sky Map har widgets som visar stjärnhimlen direkt på din startskärm, uppdaterade dagligen:</p>
-<p>• <b>Månfas:</b> månens aktuella fas, hur stor del som är upplyst samt dagens månens upp- och nedgång<br/>
-• <b>Kvällens himmel:</b> solnedgång och tidpunkt när det blir helt mörkt, plus kvällens bästa sevärdheter som välplacerade planeter, meteorskurar och månhändelser<br/>
-• <b>Himmelsnedräkning:</b> dagarna till nästa meteorskursmaximum eller månhändelse</p>
-<h3>Lägga till en widget</h3>
-<p>Tryck och håll kvar på ett tomt utrymme på din startskärm, välj <b>Widgets</b> och leta sedan reda på <b>Sky Map</b>.
-Du kan också trycka på <b>Lägg till widget</b> på månens informationskort för att lägga till månfaswidgeten direkt.</p>
-<p>Tryck på en widget för att öppna Sky Map.</p>]]></string>
+    <string name="help_widgets" translation_description="Help section: the home-screen widgets. Please do not change the markup"><![CDATA[<h2>Widgetar på startskärmen</h2> <p>Sky Map har widgetar som visar himlen på din startskärm, uppdaterade dagligen:</p> <p>• <b>Månfas:</b> Månens nuvarande fas, hur mycket av den som är upplyst, samt dagens månens uppgång och nedgång<br/> • <b>Kvällens himmel:</b> solnedgång och när himlen blir helt mörk, plus kvällens bästa sevärdheter, såsom välplacerade planeter, meteorskurar och månhändelser<br/> • <b>Nedräkning till himmelshändelse:</b> dagar kvar till nästa meteorskurstopp eller månhändelse</p> <p>Tryck på en widget för att öppna Sky Map.</p> <h3>Lägga till en widget</h3> <p><a href="skymap://widgets">Bläddra bland widgetarna</a> och tryck på <b>Lägg till widget</b> bredvid den du vill ha. Eller tryck och håll på ett tomt utrymme på din startskärm, välj <b>Widgetar</b>, och hitta sedan <b>Sky Map</b>.</p>]]></string>
 
-    <string name="help_location" translation_description="Help section: setting your observing location. Please do not change the markup"><![CDATA[<h2>Ställ in din plats</h2>
-<p>Sky Map behöver din ungefärliga plats för att rita upp rätt stjärnhimmel. Som standard används enhetens platstjänster (mobilnät eller GPS).</p>
-<br/>
-<p>Om platstildelning inte är tillgänglig eller om du hellre vill ställa in den manuellt trycker du på knappen <b>Ange plats manuellt</b> och anger en <b>ort</b> eller <b>latitud och longitud</b> i grader.</p>
-<blockquote>Internet krävs för att avkoda ortnamn.</blockquote>
-<p>Om du tidigare har nekat Sky Map behörighet till din plats kan du behöva aktivera det igen under <b>Appinställningar → Behörigheter</b> på din enhet.</p>
-<blockquote>Om du inte ger appen tillgång kommer Sky Map att utgå från att du befinner dig vid (0, 90) – nordpolen!</blockquote>]]></string>
+    <string name="help_location" translation_description="Help section: setting your observing location. Please do not change the markup"><![CDATA[<h2>Ställa in din plats</h2> <p>Sky Map behöver din ungefärliga plats för att rita upp rätt himmel. Som standard använder den enhetens platstjänster (mobilnätverk eller GPS).</p> <br/> <p>Om platstillgång inte är tillgänglig eller om du hellre vill ställa in den manuellt, tryck på knappen <b>Ange plats manuellt</b> och ange ett <b>platsnamn</b> eller en <b>latitud och longitud</b> i grader.</p> <blockquote>Internet krävs för att avkoda platsnamn.</blockquote> <p>Om du tidigare har nekat Sky Map platstillstånd, kan du behöva återaktivera det i enhetens <a href="skymap://app-settings"><b>Appinställningar → Behörigheter</b></a>.</p> <blockquote>Om du inte ger den åtkomst, kommer Sky Map att anta att du befinner dig vid (0, 90) — Nordpolen!</blockquote>]]></string>
 
-    <string name="help_diagnostics" translation_description="Help section: the diagnostics page. Please do not change the markup"><![CDATA[<h2>Diagnostik</h2>
-    <p>Denna sida listar olika uppgifter om din telefon och Sky Map som kan vara användbara för att felsöka problem. Du hittar den under <b>Inställningar → Diagnostik</b>.</p>
-    <br/>
-    <p>När du rapporterar ett problem, tryck på delningsknappen längst upp på sidan för att skicka dessa uppgifter via e-post till oss på <a href="mailto:skymapdevs@gmail.com">skymapdevs@gmail.com</a>. Du kan läsa och redigera rapporten innan du skickar den.</p>]]></string>
+    <string name="help_diagnostics" translation_description="Help section: the diagnostics page. Please do not change the markup"><![CDATA[<h2>Diagnostik</h2> <p>Den här sidan listar olika data om din telefon och Sky Map som kan vara användbara för att felsöka problem. Du hittar den under <a href="skymap://diagnostics"><b>Inställningar → Diagnostik</b></a>.</p> <br/> <p>När du rapporterar ett problem, tryck på dela-knappen högst upp på sidan för att mejla dessa detaljer till oss på <a href="mailto:skymapdevs@gmail.com">skymapdevs@gmail.com</a>. Du kan läsa och redigera rapporten innan du skickar den.</p>]]></string>
 
-    <string name="help_calibrate" translation_description="Help section: the calibrate page. Please do not change the markup"><![CDATA[<h2>Kalibrera</h2>
-    Då och då bör du kalibrera telefonens kompass – den här sidan visar hur du gör. Sky Map kommer
-    också att varna dig om kompassen behöver kalibreras.
-    <blockquote><b>VIKTIGT:</b> En kalibrerad kompass betyder INTE en <b>exakt</b> kompass.
-    All kalibrering gör är att återställa kompassen internt. Den kan fortfarande visa fel på grund av
-    magnetisk störning i närheten eller helt enkelt dålig hårdvara. Nästan alla problem med noggrannheten beror på
-    telefonens hårdvara och har <b>ingenting att göra med Sky Map</b>. Det enda Sky Map gör är att visa
-    för dig vad telefonen rapporterar till den.</blockquote>
-    <br/>
-    <p>Se felsökningsavsnittet nedan för mer hjälp.</p>]]></string>
+    <string name="help_calibrate" translation_description="Help section: the calibrate page. Please do not change the markup"><![CDATA[<h2>Kalibrera</h2> Då och då bör du kalibrera din telefons kompass – <a href="skymap://calibrate">denna sida</a> visar dig hur. Sky Map kommer också att varna dig om din kompass behöver kalibreras. <blockquote><b>VIKTIGT:</b> En kalibrerad kompass betyder INTE en <b>noggrann</b> kompass. All kalibrering gör är att återställa kompassen internt. Den kan fortfarande vara felaktig på grund av närliggande magnetisk störning eller helt enkelt dålig hårdvara. Nästan alla noggrannhetsproblem beror på telefonens hårdvara och har <b>ingenting med Sky Map att göra</b>. Allt Sky Map gör är att rapportera till dig vad telefonen rapporterar till den.</blockquote> <br/> <p>Se <a href="skymap://help#troubleshooting">felsökningsavsnittet</a> nedan för mer hjälp.</p>]]></string>
 
     <string name="help_misc" translation_description="Help section: miscellaneous"><![CDATA[<h1>Diverse och felsökning</h1>]]></string>
 
-    <string name="help_hardware" translation_description="Help section: hardware and sensor requirements. Please do not change the markup"><![CDATA[<h2>Hårdvarukrav</h2>
-<p>Inte alla enheter har fullt stöd för Sky Map!</p>
- <br/>
- <p>Du behöver åtminstone en telefon med:</p>
-<p>• Ett magnetfältssensor (även känd som en kompass) – för att avgöra vilken riktning du tittar åt<br/>
-• En accelerometer – för att avgöra hur högt upp på himlen du tittar</p>
-<p>Helst också:</p>
-<p>• Ett gyroskop – detta gör rörelserna mjukare och mindre ryckiga</p>
-<blockquote><b>Telefonkompasser är ökända för att vara opålitliga.</b>
-Om stjärnkartan ser fel ut beror det nästan alltid på ett hårdvaruproblem med din telefons kompass – inte på en bugg i Sky Map.
-Sky Map läser av exakt det din telefons sensor rapporterar; appen har inget sätt att automatiskt korrigera en felaktig eller snedvriden avläsning.
-Se Felsökning nedan.</blockquote>
-<h3>Hur vet jag vilka sensorer min telefon har?</h3>
-<p>Öppna <b>Inställningar → Diagnostik</b> – alla sensorer som din telefon saknar kommer att markeras som frånvarande. Du kommer också att ha informerats
-under introduktionen.</p>
-<h3>Vad händer om min enhet saknar nödvändiga sensorer?</h3>
-<p>Sky Map växlar över till manuellt läge. Du kan fortfarande utforska himlen, men utan sensorerna finns det
-inget sätt för någon app att visa din riktning.</p>]]></string>
+    <string name="help_hardware" translation_description="Help section: hardware and sensor requirements. Please do not change the markup"><![CDATA[<h2>Maskinvarukrav</h2> <p>Alla enheter kan inte fullt ut stödja Sky Map!</p> <br/> <p>Du behöver åtminstone en telefon med:</p> <p>• En magnetfältsensor (även kallad kompass) — för att veta vilken riktning du tittar åt<br/> • En accelerometer — för att veta hur högt upp på himlen du tittar</p> <p>Helst också:</p> <p>• Ett gyroskop — detta kommer att jämna ut rörelsen och göra den mindre ryckig</p> <blockquote><b>Telefonkompasser är notoriskt opålitliga.</b> Om himmelskartan ser fel ut är det nästan alltid ett maskinvaruproblem med telefonens kompass — inte ett fel i Sky Map. Sky Map läser exakt vad telefonens sensor rapporterar; den har inget sätt att automatiskt korrigera en dålig eller felaktig avläsning. Se Felsökning nedan.</blockquote> <h3>Hur vet jag vilka sensorer min telefon har?</h3> <p>Öppna <a href="skymap://diagnostics"><b>Inställningar → Diagnostik</b></a> — alla sensorer som din telefon inte har kommer att markeras som frånvarande. Du kommer också att ha blivit informerad under <a href="skymap://tutorial">handledningen</a>.</p> <h3>Vad händer om min enhet saknar nödvändiga sensorer?</h3> <p>Sky Map kommer att falla tillbaka till manuellt läge. Du kan fortfarande utforska himlen, men utan sensorerna finns det inget sätt för någon app att visa dig din riktning.</p>]]></string>
 
-    <string name="help_troubleshooting" translation_description="Help section: troubleshooting a map that does not move or points the wrong way. Please do not change the markup"><![CDATA[<h2>Felsökning</h2>
-<h3>Kartan rör sig inte</h3>
-<p>• Kontrollera att du är i automatiskt läge (inte manuellt)<br/>
-• Kontrollera <b>diagnostiksidan (Inställningar → Diagnostik</b>) för att bekräfta att din enhet har en kompass och en accelerometer<br/>
-• Prova åttatalskalibreringen: vifta med telefonen långsamt i en stor, mjuk åttatorsform</p>
-<h3>Kartan pekar åt fel håll eller är felaktig</h3>
-<p>Sky Map behöver tre saker för att visa rätt stjärnhimmel: riktningen som din telefon är vänd åt, din plats och den aktuella tiden. Om kartan ser fel ut är sannolikt en av dessa fel.</p>
-<p>• <b>Kompass (vanligaste orsaken):</b> Det här är ett hårdvaruproblem med din telefon – inte en bugg i Sky Map. Åttatalskalibreringen ber telefonens kompassensor att återställa sig internt, men <i>en kalibrerad kompass är inte nödvändigtvis en exakt kompass</i>. Om du är nära ett metallföremål, en bilpanel eller ett magnetiskt telefonfodral kan kartan ändå visa fel efter kalibrering. Gå till en öppen yta och upprepa åttatalsrörelsen.<br/>
-• <b>Plats:</b> Ge platsbehörighet via <b>Appinställningar → Behörigheter</b>. Kontrollera diagnostiksidan (<b>Inställningar → Diagnostik</b>) för att bekräfta dina koordinater. Ett säkert tecken på att plats saknas är att Polaris visas rakt ovanför.<br/>
-• <b>Tid:</b> Mindre vanligt, men en felaktig tidszon förskjuter hela stjärnhimlen. Kontrollera diagnostiksidan (<b>Inställningar → Diagnostik</b>) för att bekräfta att enhetens tid och tidszon är korrekta.</p>
-<h3>Kartan hackar</h3>
-<p>
-• Kontrollera <b>Inställningar → Sensorer</b> – om <b>Använd äldre sensorer</b> är på, prova att stänga av det<br/>
-• <b>Mjuk sensorrörelse</b> är ny och på som standard medan vi samlar in feedback; öka <b>Stadighetsnivå</b> tills vyn stabiliseras när telefonen hålls stilla, och öka sedan <b>Släpp efter vid rörelse</b> om förflyttningen börjar kännas seg<br/>
-• Du kan stänga av Mjuk sensorrörelse igen under samma avsnitt om du hellre vill använda råsensorn medan den finjusteras</p>
-<p>För fullständiga felsökningsdetaljer, se onlineguiden för <a href="https://ts.stardroid.app">felsökning</a>.</p>
-<p>Om du fortfarande har problem, skicka e-post till oss på <a href="mailto:skymapdevs@gmail.com">skymapdevs@gmail.com</a> – en skärmdump av din diagnostiksida är till stor hjälp.</p>]]></string>
+    <string name="help_troubleshooting" translation_description="Help section: troubleshooting a map that does not move or points the wrong way. Please do not change the markup"><![CDATA[<h2>Felsökning</h2> <h3>Kartan rör sig inte</h3> <p>• Kontrollera att du är i autoläge (inte manuellt)<br/> • Kontrollera <a href="skymap://diagnostics">diagnostiksidan</a> för att bekräfta att din enhet har en kompass och accelerometer<br/> • Prova kalibreringsgesten i form av en åtta: vifta långsamt med telefonen i en stor, jämn åtta</p> <h3>Kartan pekar åt fel håll eller är felaktig</h3> <p>Sky Map behöver tre saker för att visa rätt himmel: riktningen din telefon pekar, din plats och aktuell tid. Om kartan ser fel ut är sannolikt en av dessa felaktig.</p> <p>• <b>Kompass (vanligaste orsaken):</b> Detta är ett hårdvaruproblem med din telefon – inte en Sky Map-bugg. Kalibreringsgesten i form av en åtta ber din telefon att internt återställa sin kompasssensor, men <i>en kalibrerad kompass är inte nödvändigtvis en exakt sådan</i>. Om du är nära ett metallföremål, en bilinstrumentbräda eller ett magnetiskt telefonfodral kan kartan fortfarande vara felaktig även efter kalibrering. Flytta till ett öppet område och upprepa åttagesten.<br/> • <b>Plats:</b> Ge platstillstånd via <a href="skymap://app-settings"><b>Appinställningar → Behörigheter</b></a>. Kontrollera diagnostiksidan (<b>Inställningar → Diagnostik</b>) för att bekräfta dina koordinater. Ett tydligt symptom på saknad plats är att Polstjärnan visas direkt ovanför dig.<br/> • <b>Tid:</b> Mindre vanligt, men en felaktig tidszon förskjuter hela himlen. Kontrollera diagnostiksidan (<b>Inställningar → Diagnostik</b>) för att bekräfta att din enhets tid och tidszon är korrekta.</p> <h3>Kartan är ryckig</h3> <p> • Kontrollera <a href="skymap://settings"><b>Inställningar → Sensorer</b></a> – om <b>Använd äldre sensorer</b> är på, prova att stänga av den<br/> • <b>Jämn sensorrörelse</b> är ny och på som standard medan vi samlar in feedback; höj <b>Stadighet</b> tills vyn stabiliseras när telefonen hålls stilla, höj sedan <b>Minska vid rörelse</b> om panoreringen börjar kännas seg<br/> • Du kan stänga av Jämn sensorrörelse igen i samma avsnitt om du hellre vill använda den råa sensorn medan den finjusteras</p> <p>För fullständiga felsökningsdetaljer, se den online <a href="https://ts.stardroid.app">felsökningsguiden</a>.</p> <p>Om du fortfarande har problem, mejla oss på <a href="mailto:skymapdevs@gmail.com">skymapdevs@gmail.com</a> – en skärmdump av din diagnostiksida är mycket hjälpsam.</p>]]></string>
 
-    <string name="help_pointer_mode" translation_description="Help section: pointer mode for telescope users. Please do not change the markup"><![CDATA[<h2>Teleskopanvändare – Pekarläge</h2>
-<p>Gå till <b>Inställningar → Sensorer</b> och ändra <b>Visningsriktning</b> till <b>Pekarläge</b>. I det här läget visar Sky Map vad telefonens <i>långsida</i> pekar mot, i stället för vad skärmen är vänd mot.</p>
-<p>På så sätt kan du montera telefonen längs sidan på ett teleskoprör så att skärmen är vinkelrät mot röret medan kartan fortfarande följer vad teleskopet är riktat mot.</p>]]></string>
+    <string name="help_pointer_mode" translation_description="Help section: pointer mode for telescope users. Please do not change the markup"><![CDATA[<h2>Teleskopanvändare — Pekarläge</h2> <p>Under <a href="skymap://settings"><b>Inställningar → Sensorer</b></a>, ändra <b>Visningsriktning</b> till <b>Pekarläge</b>. I det här läget visar Sky Map vad telefonens <i>långsida</i> pekar på, snarare än vad skärmen är vänd mot.</p> <p>Detta gör att du kan montera din telefon längs sidan av ett teleskoprör så att skärmen är vinkelrät mot röret medan kartan fortfarande spårar vad teleskopet är riktat mot.</p>]]></string>
 </resources>

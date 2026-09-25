@@ -269,15 +269,16 @@
     <string name="location_keep_waiting">Continua ad attendere</string>
     <string name="location_manual_entry_title">Inserisci la tua posizione</string>
     <string name="location_place_name_hint">Città o nome del luogo</string>
-    <string name="location_latitude_hint">Latitudine (es. 51,5)</string>
+    <string name="location_latitude_hint" translation_description="Floating label above the latitude input field. Kept short so it doesn't wrap next to the N/S hemisphere toggle.">Latitudine</string>
     <!-- tm:omitted name="location_latitude_placeholder" reason="identical_to_source" -->
-    <string name="location_longitude_hint">Longitudine (es. -0,1)</string>
+    <string name="location_longitude_hint" translation_description="Floating label above the longitude input field. Kept short so it doesn't wrap next to the E/W hemisphere toggle.">Longitudine</string>
     <!-- tm:omitted name="location_longitude_placeholder" reason="identical_to_source" -->
     <string name="location_resolve_button">Risolvi</string>
     <string name="location_set_button">Imposta posizione</string>
     <string name="location_place_not_found">Luogo non trovato — prova un nome più specifico</string>
     <string name="location_geocoder_offline">Nessuna connessione internet — inserisci le coordinate direttamente</string>
     <string name="location_geocoder_unavailable">Nessun servizio di geocodifica su questo dispositivo — inserisci le coordinate direttamente</string>
+    <string name="location_geocoder_failed" translation_description="Inline message shown when place name lookup fails for a reason other than being offline or the place not existing">Ricerca luogo non riuscita — inserisci le coordinate direttamente</string>
     <string name="location_invalid_latitude">La latitudine deve essere tra −90 e 90</string>
     <string name="location_invalid_longitude">La longitudine deve essere tra −180 e 180</string>
     <string name="location_hemisphere_north_description" translation_description="Accessibility label for the latitude hemisphere toggle button, selected for a positive value">Emisfero nord (latitudine positiva)</string>
@@ -443,7 +444,7 @@
     <!-- tm:omitted name="diagnostics_location_format" reason="identical_to_source" -->
     <string name="diagnostics_location_unset" translation_description="Location status shown in diagnostics when no location has been set yet">Non impostato</string>
     <string name="diagnostics_location_acquiring">Acquisizione in corso…</string>
-    <string name="diagnostics_location_hardware_unavailable" translation_description="Location status shown in diagnostics when no location hardware is available">Nessun hardware di localizzazione</string>
+    <string name="diagnostics_location_hardware_unavailable" translation_description="Location status shown in diagnostics when the device has no usable location provider, whether because it lacks location hardware or none is enabled">Nessun provider di posizione utilizzabile</string>
     <string name="diagnostics_pointing">Istantanea puntamento</string>
     <!-- tm:omitted name="diagnostics_dec_format" reason="identical_to_source" -->
     <string name="diagnostics_magnetic_correction">Correzione magnetica</string>
@@ -532,6 +533,11 @@
     <string name="whats_new_button" tm_human="true" translation_description="Map-screen menu item that opens the What's New and Credits screen">Novità</string>
     <string name="whats_new_screen_title" tm_human="true" translation_description="Title of the screen showing the release notes and the credits">Novità e crediti</string>
 
+    <!-- The Help screen's search box, which filters the document to the matching sections. -->
+    <string name="help_search_hint" translation_description="Placeholder in the Help screen\'s search box, which filters the help document to the sections matching what is typed">Cerca nella guida</string>
+    <string name="help_search_clear" translation_description="Accessibility label for the button that clears the Help screen\'s search box">Cancella ricerca</string>
+    <string name="help_search_no_results" translation_description="Shown on the Help screen when nothing matches the search. %1$s is the text the user typed">Nessuna sezione della guida corrisponde a “%1$s”.</string>
+
     <!-- The deep-sky symbol key at the foot of the Help screen. -->
     <string name="help_symbol_key_title" translation_description="Heading of the Help section explaining the map symbols used for deep-sky objects">Simboli della mappa</string>
     <string name="help_symbol_key_intro" translation_description="Introductory sentence for the map-symbol key in Help">
@@ -547,6 +553,13 @@
     <string name="symbol_key_other" tm_human="true" translation_description="Symbol-key label: the marker used for deep-sky objects of any other type">Altro oggetto del cielo profondo</string>
     <string name="symbol_key_meteor_radiant" translation_description="Symbol-key label: the marker for the point in the sky meteors of a shower appear to come from">Radiante di sciame meteorico</string>
     <string name="symbol_key_meteor_radiant_peak" translation_description="Symbol-key label: the brighter marker used when a meteor shower is near its peak activity">Sciame meteorico vicino al picco</string>
+
+    <!-- The widgets catalogue reached from the map\'s overflow menu. -->
+    <string name="widgets_button" translation_description="Map-screen menu item that opens the list of home-screen widgets the app offers">Widget</string>
+    <string name="widgets_sheet_title" translation_description="Title of the sheet listing the home-screen widgets the app offers">Widget schermata iniziale</string>
+    <string name="widgets_sheet_subtitle" translation_description="Subtitle of the widgets sheet, explaining what the listed widgets are for">
+    Mantieni il cielo di stasera sulla tua schermata iniziale. Scegline uno da aggiungere.
+    </string>
 
     <!-- Moon-phase home-screen widget (D69). -->
     <string name="moon_widget_label" translation_description="Name of the moon-phase home-screen widget, shown in the launcher\'s widget picker">Fase lunare</string>
