@@ -5,6 +5,15 @@ All notable changes to Sky Map are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [2.1.2:Artemis] (v2) - 2026-09-24
+
+### Added
+- Searchable Help page, with results that jump straight to the relevant part of the app. (#1068)
+- A **Widgets** menu item opening a shared add-widget sheet, so any of the three home-screen
+  widgets can be added from one place instead of only the Moon's info card. (#1065)
+
+---
+
 ## [2.1.1:Artemis] (v2) - 2026-09-21
 
 ### Fixed

@@ -33,20 +33,14 @@ It\'s an entirely new app under the hood — new rendering engine, new astronomy
 <p>Sky Map is free and open source. If you find it useful, please consider supporting development at our <a href="https://github.com/sky-map-team/stardroid/?tab=readme-ov-file#support-the-project">GitHub</a> page or <a href="https://buymeacoffee.com/skymapdevs?utm_source=skymap&amp;utm_medium=app&amp;utm_campaign=whatsnew">buying us a coffee</a>.</p>
     ]]></string>
     <string name="beta_user_help_text" translation_description="Usually-empty HTML content shown to beta testers asking for feedback, appended in the What's new dialog and the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[
-<h1>Beta testers: please try the widgets</h1>
-<p>Thank you for testing Sky Map! This build adds three home-screen widgets and we\'d love your help checking them on as many phones and launchers as possible:</p>
-<p>• <b>Moon phase</b><br/>
-• <b>Tonight\'s sky</b><br/>
-• <b>Sky countdown</b></p>
-<p>To add one, touch and hold your home screen, choose <b>Widgets</b>, then find <b>Sky Map</b> (or tap <b>Add widget</b> on the Moon\'s info card). Then please check:</p>
-<p>• Does it show the right thing for where you are? Moonrise, moonset and sunset times should match your location.<br/>
-• Does it look right at different sizes, and in light and dark mode?<br/>
-• Does it stay up to date after a day, after a restart, or after changing time zone?<br/>
-• Does tapping it open Sky Map?</p>
+<h1>Beta testers: please try the widgets, Help search, and sensor smoothing</h1>
+<p>Thank you for testing Sky Map! A few things we\'d love your eyes on this round:</p>
+<p>• The new <b>Widgets</b> menu item, which opens a sheet for adding any of the three home-screen widgets — check it finds the widgets you expect on your launcher.<br/>
+• The widgets themselves (<b>Moon phase</b>, <b>Tonight\'s sky</b>, <b>Sky countdown</b>) — do they show the right thing for your location, look right at different sizes and in light/dark mode, and stay up to date after a day, a restart, or a time zone change?<br/>
+• Searching the Help page — try a few queries and confirm the results jump you to the right place in the app.<br/>
+• The sensor smoothing that steadies the view while you hold your phone still — still keen to hear if you notice any lag or jitter.</p>
 <p>If anything looks wrong, email us at <a href="mailto:skymapdevs@gmail.com">skymapdevs@gmail.com</a> and tell us your phone model and launcher. A screenshot is very helpful.</p>
-<h1>Try the new sensor smoothing</h1>
-<p>We\'ve replaced how Sky Map steadies the view while you hold your phone still — it should shake less and keep up better when you move. It\'s on by default for beta testers so we can get feedback from real devices. If you notice lag, jitter, or anything that feels off, please let us know at <a href="mailto:skymapdevs@gmail.com">skymapdevs@gmail.com</a>.</p>
-<p>You can turn it off any time under <b>Settings → Sensors → Smooth sensor movement</b> if you\'d rather use the raw sensor.</p>
+<p>You can turn off sensor smoothing any time under <b>Settings → Sensors → Smooth sensor movement</b> if you\'d rather use the raw sensor.</p>
     ]]></string>
     <string name="whats_new_supplement" translation_description="HTML content for a short supplementary section covering changes since the main whats_new_content was last written, shown between the beta feedback note and the main What's new content in the What's new dialog and the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[
 <h1>Since the last update</h1>
@@ -60,5 +54,11 @@ It\'s an entirely new app under the hood — new rendering engine, new astronomy
 <p>Put the sky on your home screen with three new widgets: <b>Moon phase</b> (the phase, how much is lit, and moonrise and moonset), <b>Tonight\'s sky</b> (sunset, when it gets dark, and the best sights tonight) and <b>Sky countdown</b> (days until the next meteor shower peak or moon event). Add one from your launcher\'s widget picker, or tap <b>Add widget</b> on the Moon\'s info card.</p>
 <h2>Less clutter when zoomed out</h2>
 <p>Zooming out now thins out the star labels, so a wide view of the sky is easier to read.</p>
+<h2>More reliable location</h2>
+<p>Location now works properly on devices without Google Play services (de-Googled ROMs such as GrapheneOS, and F-Droid builds). Sky Map can seed its position from another app that already has a fix, tells you the specific reason when a location search fails, and no longer keeps you waiting on a blanket "No internet" message.</p>
+<h2>Widgets are easier to find</h2>
+<p>Add any of the three home-screen widgets from a new menu item, not just the Moon\'s info card.</p>
+<h2>Search the Help page</h2>
+<p>Help is now searchable, and results can jump straight to the relevant part of the app.</p>
     ]]></string>
 </resources>
