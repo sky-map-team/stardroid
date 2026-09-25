@@ -550,8 +550,9 @@ readings to Sky Map.</blockquote>
     <string name="moon_widget_label" translation_description="Name of the moon-phase home-screen widget, shown in the launcher\'s widget picker">Moon phase</string>
     <string name="moon_widget_description" translation_description="Description of the moon-phase widget, shown under its preview in the launcher\'s widget picker">The Moon\'s phase, illumination and rise and set times, updated daily.</string>
     <string name="moon_widget_illumination" translation_description="Widget line showing how much of the Moon\'s disc is lit; %1$d is a percentage number">%1$d%% illuminated</string>
-    <string name="moon_widget_rise_time" translation_description="Widget fragment showing today\'s moonrise time; %1$s is a clock time like 17:42">rises %1$s</string>
-    <string name="moon_widget_set_time" translation_description="Widget fragment showing today\'s moonset time; %1$s is a clock time like 03:12">sets %1$s</string>
+    <string name="moon_widget_rise_time" translation_description="Widget fragment showing the next moonrise time, which may be tomorrow\'s; %1$s is a clock time like 17:42">rises %1$s</string>
+    <string name="moon_widget_set_time" translation_description="Widget fragment showing the next moonset time, which may be tomorrow\'s; %1$s is a clock time like 03:12">sets %1$s</string>
+    <string name="moon_widget_time_day_offset" translation_description="Compact suffix appended after a widget rise/set time that falls on a later day than today, so a reader doesn\'t mistake it for today\'s crossing; %1$d is the number of days ahead (almost always 1). Keep it short — the widget is very narrow. Note the leading space.">" +%1$d"</string>
     <string name="moon_phase_new" translation_description="Name of the lunar phase when the Moon is fully dark">New Moon</string>
     <string name="moon_phase_waxing_crescent" translation_description="Name of the lunar phase between new moon and first quarter">Waxing Crescent</string>
     <string name="moon_phase_first_quarter" translation_description="Name of the lunar phase when half the disc is lit and growing">First Quarter</string>
