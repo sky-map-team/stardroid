@@ -236,6 +236,49 @@ with both defaults — neither is far enough north for Polaris to sit high in th
 
 ---
 
+### CAT-MOON · Sun/Moon looks wrongly placed, or an eclipse/conjunction looks mistimed
+
+**What users say:** "the Moon isn't in the right place", "eclipse started too early/late", "not
+accurately placed and timed"
+
+**Real cause:** Sky Map draws the Sun, Moon, and planets larger than true apparent size by
+default (v1 enlarges for visibility; v2's default "Glyphs" disc-size mode holds a fixed
+on-screen size at any zoom). This is a display choice, not a position error, but it makes close
+approaches (eclipses, conjunctions) look like they start/end earlier or later than the true
+contact time, since the enlarged disks visually overlap sooner than the real ones would.
+
+**Steps to suggest:**
+1. Switch to true size — **v1:** Settings → Show true-to-life sizes. **v2:** open the Solar
+   System layer's settings → Disc size → True scale
+2. If still off, double-check location and time zone in Diagnostics (see CAT-6 / Time)
+3. If it's still wrong after that, ask for a Diagnostics screenshot at skymapdevs@gmail.com
+
+---
+
+### CAT-ONBOARD · Yellow label/menu covering the sky view (v2)
+
+**What users say:** "huge yellow menu covering the screen", "yellow label won't go away", "why is
+there a banner over the sky", complaints about a new yellow UI element after updating to v2
+
+**Real cause:** Intentional onboarding — v2 shows short yellow coach-mark labels on a screen's
+first couple of visits, based on observing new users navigate the app. Each label is dismissed
+automatically after being seen twice and does not reappear after that.
+
+**Response framing:** Not a bug — explain it's a deliberate, temporary onboarding aid that clears
+itself. Reassure the user it should already be gone if they've opened that screen a couple of
+times. Mention v1 remains available for anyone who'd rather not have the new UI at all.
+
+**Steps to suggest:**
+1. Reassure the label disappears on its own after two views of that screen — no setting to
+   dismiss it manually
+2. If it's still showing after several visits, ask for a Diagnostics report (escalation)
+3. Mention v1 is still available/supported for users who prefer the older interface
+
+**Do NOT suggest:** framing this as a bug to be fixed, or apologizing as if Sky Map broke
+something — it's working as designed.
+
+---
+
 ### CAT-7 · "App is useless" / very negative (1–2 star, no specific technical complaint)
 
 **Response framing:** Express genuine regret. Ask what specifically went wrong so the team can

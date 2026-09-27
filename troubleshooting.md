@@ -92,6 +92,27 @@ are wrong, fix them in your device's system settings.
 
 ---
 
+## The Moon or Sun looks wrongly placed, or an eclipse looks mistimed
+
+By default, Sky Map draws the Sun, Moon, and planets larger than their true apparent size, so
+they're easy to see against the rest of the sky (v1 enlarges them for visibility; v2's default
+"Glyphs" disc-size mode holds a fixed on-screen size at any zoom). This is a display choice, not
+a position error — but it means a solar eclipse (or any close Sun/Moon approach) can look like it
+starts or ends noticeably earlier or later than the true first-contact time, since the two
+enlarged disks visually overlap well before or after they actually would at true size.
+
+If eclipse or conjunction timing looks off, switch the Sun/Moon/planets to their true size and
+check again:
+
+- **v1:** Settings → **Show true-to-life sizes**
+- **v2:** open the Solar System layer's settings (tap its layer icon) → **Disc size** → **True
+  scale**
+
+If it's still off after switching to true size, double-check location and time zone as described
+above, then send a screenshot via Diagnostics if the problem persists.
+
+---
+
 ## About phone compasses
 
 This section explains the physics behind why phone compasses fail, for users who want a deeper
@@ -188,6 +209,17 @@ close the card.
 - If the view then feels laggy while panning, raise **Ease off when moving** until it keeps up.
 - Smoothing can be turned off in the same section if you'd rather use the raw sensor while it's
   being tuned — feedback on how it's behaving is welcome either way.
+
+---
+
+## There's a yellow label/menu covering part of the sky
+
+v2 shows short yellow onboarding labels the first couple of times you open a screen, to help new
+users find key controls. They're not a permanent part of the UI — each label disappears on its
+own once you've seen it twice, and won't come back after that.
+
+If you'd rather not see the new v2 interface at all, the legacy v1 app remains available and is
+still actively supported.
 
 ---
 
