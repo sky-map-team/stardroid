@@ -252,18 +252,30 @@ class RendererPerfTest {
             assertThat(firstFrame).isGreaterThan(0L)
             Thread.sleep(WARMUP_MS)
 
-            scenario.onActivity { activity -> activity.frameCount.set(0L) }
+            scenario.onActivity { activity ->
+                activity.frameCount.set(0L)
+                activity.drawTimeNanos.reset()
+            }
             val startMs = SystemClock.elapsedRealtime()
             Thread.sleep(MEASUREMENT_MS)
 
             var measuredFrames = 0L
-            scenario.onActivity { activity -> measuredFrames = activity.frameCount.get() }
+            var drawTime: DrawTimeStats.Snapshot? = null
+            scenario.onActivity { activity ->
+                measuredFrames = activity.frameCount.get()
+                drawTime = activity.drawTimeNanos.snapshot()
+            }
             val windowMs = SystemClock.elapsedRealtime() - startMs
 
             val fps = measuredFrames * 1_000.0 / windowMs
             report(
                 "$label: $measuredFrames frames in ${windowMs}ms → %.1f fps".format(fps),
             )
+            // The number that can actually compare backends. Frames per second saturates at the
+            // panel's refresh rate — on a 120Hz device both backends report exactly 120.0 — so
+            // it measures the display rather than the renderer. Draw time is the submission
+            // cost the port set out to reduce, and it stays meaningful under a frame-rate cap.
+            report("$label: draw ${drawTime}")
 
             // Smoke gate: the renderer must draw at least a handful of frames — not hang or
             // crash. A software renderer can be slower than the window without being stuck, so

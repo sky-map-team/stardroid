@@ -141,6 +141,21 @@ class RendererTestActivity : Activity() {
     /** Total frames drawn on the GL thread. Readable from any thread for the perf gate test. */
     val frameCount = AtomicLong(0L)
 
+    /**
+     * CPU time spent inside the backend's `onDrawFrame`, for the D19 gate to read.
+     *
+     * Frames per second cannot compare the two backends on modern hardware: both saturate the
+     * panel's refresh rate with headroom to spare, so the counter reads the display, not the
+     * renderer (measured on a Pixel 9 Pro: GLES1 and GLES3 both exactly 120.0 fps). What GLES3
+     * actually changes is submission cost — fewer draw calls, no per-frame CPU quad rebuilds —
+     * and that is invisible while there is budget left to sleep in `eglSwapBuffers`.
+     *
+     * This times the draw call itself instead. It is a better instrument than the frame counter
+     * but not a clean one: a throttled driver back-pressures inside the GL calls, so the vsync
+     * wait lands here too (see [DrawTimeStats]). Read the tail, not the mean.
+     */
+    val drawTimeNanos = DrawTimeStats()
+
     private lateinit var glSurfaceView: GLSurfaceView
     private lateinit var connector: RenderConnector
     private lateinit var fpsTv: TextView
@@ -638,7 +653,9 @@ class RendererTestActivity : Activity() {
         ) = delegate.onSurfaceChanged(gl, width, height)
 
         override fun onDrawFrame(gl: GL10) {
+            val startNanos = System.nanoTime()
             delegate.onDrawFrame(gl)
+            drawTimeNanos.record(System.nanoTime() - startNanos)
             onFrameDrawn()
         }
     }
