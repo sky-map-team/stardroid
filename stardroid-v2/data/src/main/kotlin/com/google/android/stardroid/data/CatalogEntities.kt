@@ -132,6 +132,11 @@ data class ObjectNameEntity(
  * so any statement touching the table throws "unknown tokenizer" there. Matching stays case-
  * and accent-insensitive because the indexed text is already
  * [com.google.android.stardroid.catalog.NameNormalizer] output, and queries go through it too.
+ *
+ * Keep `simple` even once Android 10 is gone (D116). `unicode61` strips diacritics from Latin
+ * script only, so Greek, Cyrillic, Devanagari, Thai and other names (about 14% of the catalog)
+ * would lose accent-insensitive search. Folding in Kotlin also keeps it identical across SQLite
+ * builds and platforms, which `NameNormalizerCorpusTest` checks.
  */
 @Fts4(contentEntity = ObjectNameEntity::class, tokenizer = FtsOptions.TOKENIZER_SIMPLE)
 @Entity(tableName = "object_name_fts")
