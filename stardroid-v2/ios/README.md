@@ -50,8 +50,12 @@ When the module was set up on Linux (no Xcode), the RoboVM 2.3.26 compiler was r
 the app, with a fake `xcode-select` so it would accept an iOS target. It compiled all 3,830
 classes (every Sky Map class, the Kotlin stdlib, kotlinx-datetime and the UIKit bindings) to
 arm64 iOS object code. It then linked 5,198 classes / 70,489 methods into the image and
-stopped at the native link, which needs Xcode's `clang`/`ld64` and the iOS SDK. **The app has
-not yet been run on a simulator or a device.** That's the next step, and it needs a Mac.
+stopped at the native link, which needs Xcode's `clang`/`ld64` and the iOS SDK.
+
+On macOS (Xcode 26.3, Intel host), `./gradlew :ios:launchIPhoneSimulator` builds, links and
+runs the app in the iPhone SE (3rd generation) / iOS 17.5 simulator. It draws the stars,
+constellation figures, labels, horizon and cardinal points. **It has not yet been run on a
+physical device.**
 
 ## RoboVM compatibility: what it took
 

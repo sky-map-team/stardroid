@@ -78,6 +78,14 @@ val javaTimeJar =
         exclude("META-INF/*.SF", "META-INF/*.DSA", "META-INF/*.RSA", "META-INF/MANIFEST.MF")
     }
 
+// The Shadow plugin is here for javaTimeJar only. Its default fat-jar task, which `build` (and so
+// every RoboVM task) depends on, resolves the backport-transformed runtimeClasspath before the
+// project jars exist, failing the build with "Could not determine the dependencies of task".
+tasks.named<ShadowJar>("shadowJar") {
+    enabled = false
+    configurations.set(emptyList())
+}
+
 /**
  * Bundles the star catalog and the IAU constellation figures from `source-data/` as app
  * resources. The JSON figures are flattened to CSV here at build time, so the app needs no JSON
