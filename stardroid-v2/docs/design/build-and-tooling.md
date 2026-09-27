@@ -102,6 +102,14 @@ target exactly as they consumed the old `kotlin("jvm")` jar.
   multiplatform stand-in with Truth's names and semantics for exactly the subset in use (a
   suite moved over by changing its imports; its own tests pin that each assertion can fail).
   Grow it when a test needs more; don't turn it into a general library.
+- **Search agrees across platforms.** The catalog DB stores names normalized on the JVM at
+  generation time, but each platform normalizes search queries with its own Unicode tables.
+  `NameNormalizerCorpusTest` (`:core:catalog`) re-normalizes every catalog name on every
+  target and compares it with the JVM result. That result is exported by
+  `:data:generator:exportNameCorpus`, which the test tasks run first, passing the file's path
+  in `SKYMAP_NAME_CORPUS` (`SIMCTL_CHILD_SKYMAP_NAME_CORPUS` for the simulator, since
+  `simctl` forwards only prefixed variables). `:core:testing`'s `environmentVariable` /
+  `readTextFile` are the common-code half of that pattern.
 - **Xcode:** compiling iOS klibs needs only the Kotlin/Native toolchain, but linking and running
   test binaries needs a full Xcode. On a Mac with only the Command Line Tools, `check` skips
   the iOS link/test tasks with a warning rather than failing, so Android-only setups keep
