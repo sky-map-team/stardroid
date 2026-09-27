@@ -1,0 +1,15 @@
+# References checkRoboVmApi may report without failing the build: prefixes of the missing class
+# or member (`owner/Name.method(desc)`), one per line. Every entry needs a reason — a missing API
+# the app can actually call is a crash on the device, not something to allowlist.
+
+# kotlinx-datetime's @Serializable support. kotlinx-serialization is a compileOnly (optional)
+# dependency of kotlinx-datetime, reached only through `Instant.serializer()` & co., which nothing
+# in the app calls. The checker counts them reachable only because it treats every method of an
+# instantiated class (here Instant) as callable.
+kotlinx/serialization/
+
+# Regex named groups (`MatchResult.groups["name"]`), wired through Kotlin's JDK8 platform
+# implementation. Java 7's Matcher has no named-group accessors; the app uses no named groups.
+java/util/regex/Matcher.start(Ljava/lang/String;)I
+java/util/regex/Matcher.end(Ljava/lang/String;)I
+java/util/regex/Matcher.group(Ljava/lang/String;)Ljava/lang/String;
