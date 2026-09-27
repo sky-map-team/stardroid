@@ -31,6 +31,13 @@ class NameNormalizerTest {
     }
 
     @Test
+    fun `every kind of number is a word character`() {
+        // Nd, Nl (Roman numeral twelve) and No (superscript two) — all of Unicode category N,
+        // which the separator pattern spells out category by category.
+        assertThat(NameNormalizer.normalize("Ⅻ²-7")).isEqualTo("ⅻ² 7")
+    }
+
+    @Test
     fun `keeps spacing marks inside a word`() {
         // Devanagari "prithvi": the vowel signs and virama that are Mn are dropped, but the
         // spacing vowel sign (Mc) stays, so the word is not split.

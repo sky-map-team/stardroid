@@ -25,7 +25,9 @@ object NameNormalizer {
     private val combiningMarks = Regex("\\p{Mn}+")
 
     // Marks stay word characters: a spacing vowel sign (e.g. Devanagari) must not split a word.
-    private val separatorRuns = Regex("[^\\p{L}\\p{M}\\p{N}]+")
+    // Numbers are spelled out as Nd/Nl/No — exactly the Unicode category N — because
+    // Kotlin/Native's regex engine rejects `\p{N}` (though it accepts `\p{L}` and `\p{M}`).
+    private val separatorRuns = Regex("[^\\p{L}\\p{M}\\p{Nd}\\p{Nl}\\p{No}]+")
 
     fun normalize(name: String): String =
         decomposeCanonically(name)
