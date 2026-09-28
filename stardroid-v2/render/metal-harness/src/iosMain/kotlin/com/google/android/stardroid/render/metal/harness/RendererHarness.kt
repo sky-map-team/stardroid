@@ -58,8 +58,8 @@ import kotlin.math.sin
  * Metal backend drawing the shared seeded [TestScene] in an `MTKView`, with the same camera, so the
  * two platforms can be compared side by side.
  *
- * It draws the stars, grid and planet layers (labels arrive with slice 2d). Drag to look around,
- * pinch to zoom, tap to cycle the render state (night sky, daytime sky,
+ * It draws every test layer: stars, grid, planet and labels. Drag to look around, pinch to zoom,
+ * tap to cycle the render state (night sky, daytime sky,
  * twilight, night mode). Swift only has to host [viewController], and must keep this object alive
  * as long as it shows it: the view's delegate and the gesture targets are weak references, held
  * here.
@@ -98,6 +98,7 @@ class RendererHarness {
         renderer.submit(TestScene.STARS_LAYER, TestScene.buildStarsScene())
         renderer.submit(TestScene.GRID_LAYER, TestScene.buildGridScene())
         renderer.submit(TestScene.IMAGES_LAYER, TestScene.buildImagesScene())
+        renderer.submit(TestScene.LABELS_LAYER, TestScene.buildLabelsScene())
         publishCamera()
         publishMode()
     }

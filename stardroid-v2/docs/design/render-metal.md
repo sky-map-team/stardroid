@@ -1,8 +1,8 @@
 # Detailed Design: `:render:metal` — the Metal backend (iOS)
 
-**Status: IN PROGRESS** — slices 2a–2c built (stars, lines, glows, sky dome, camera scrim,
-images with phase and eclipse, offscreen render tests, and an iOS harness app); icons and labels
-to follow (§6). D117.
+**Status: IN PROGRESS** — slices 2a–2d built: everything `:render:gles3` draws (stars, lines,
+glows, sky dome, camera scrim, images with phase and eclipse, icons, labels), offscreen render
+tests, and an iOS harness app. The on-device perf gate remains (§6). D117.
 
 `:render:metal` is the iOS `SkyRenderer`: an iOS-only Kotlin Multiplatform module that calls
 Metal directly through Kotlin/Native. It is a sibling of `:render:gles1` and `:render:gles3`
@@ -31,10 +31,13 @@ counts), Xcode's build-time shader compilation, and contributors who know only S
 | `PointVertices`, `LineStrips`, `GlowMesh` — each primitive type's vertex data, pure and tested | `shaders/*.metal` — Metal Shading Language |
 | `ImageQuad` — an image's per-frame drawn size (FOV cull + `SizeFloor`), quad half-axes, and texture-space lit-limb and shadow vectors | `MetalTextures` — images decoded into staging buffers, copied into textures ahead of the frame's render pass |
 | `ImageCache` — reference-counted, byte-budgeted texture bookkeeping with the GPU calls passed in | `MetalInterop` — Kotlin arrays into Metal buffers |
-| `StellarRamps`, `GreatCircleSubdivision`, `SizeFloor`, and (for slice 2d) `LabelDeclutterer`, `LabelFader`, `LabelAtlasPacker` | |
+| `LabelAtlas` — measure, pack and rasterize a layer's labels into coverage pages; `LabelFrame` — per frame: cull, project, offset, declutter, fade, emit glyph and underline quads | `UIKitGlyphRasterizer` — the one label step that is platform code: UIKit string drawing into an alpha-only bitmap |
+| `IconSprites` — icon quads per frame, one run per image; `SpriteInstances` — the instance buffer, in runs; `ScreenSpace` — frustum and pixels-per-degree | `sprite.metal` — icons, glyphs with their halo, and underlines in one instanced shader |
+| `GlyphRasterizer` — the seam every backend implements; `StellarRamps`, `GreatCircleSubdivision`, `SizeFloor`, `LabelDeclutterer`, `LabelFader`, `LabelAtlasPacker` | |
 | `TestScene` (`:render:testscene`) — the seeded scene every backend's harness draws | |
 
-The vertex builders, `ImageQuad` and `ImageCache` are what "shared" means in practice. The point and glow builders use
+The vertex builders, `ImageQuad`, `ImageCache` and the label and icon pipeline are what
+"shared" means in practice: of labels, only turning text into pixels is platform code. The point and glow builders use
 the same interleaved layouts as `:render:gles3`'s drawers, but write plain `FloatArray`s rather
 than `java.nio` buffers, which iOS lacks. **Follow-up:** GLES3 moves onto them, as its own
 change with pixel-identical verification, since it touches Android.
@@ -110,9 +113,15 @@ device first.
   copy is encoded on the frame's own command buffer, before the render pass. The harness now
   draws the test scene's planet. Tests check drawn size, the size floor, the FOV cull, a missing
   image, the half phase, and the reddened umbra.
-- **2d:** icons and labels. Glyphs are rasterized by CoreText behind a `GlyphRasterizer` seam
-  (render-gles3.md §6.5), packed by the shared `LabelAtlasPacker`, and decluttered and faded by
-  the shared helpers.
+- **2d (built):** icons and labels. `GlyphRasterizer` (render-gles3.md §6.5) is the only
+  platform step; UIKit's string drawing implements it in the system sans-serif face. So iOS
+  labels are San Francisco where Android's are its own sans-serif, which is intended: each
+  platform's native face. Atlas building, per-frame layout, decluttering, fading, the halo and
+  the info-card underline are shared or transcribed. One instanced draw per atlas page or icon
+  image. The renderer takes `labelFadeMillis` (0 in tests, so one frame shows the declutter
+  decision) and an `onAnimating` callback for hosts that render on demand. Tests check the
+  rasterizer's cell clipping, the label's hang below its anchor, the underline, font scaling,
+  night mode, the halo against a bright sky, and icon size, tint and missing images.
 - **2e:** the D19 perf gate (100k points at 30+ fps) on the oldest supported iPhone.
 
 ## 7. Noticed during the port

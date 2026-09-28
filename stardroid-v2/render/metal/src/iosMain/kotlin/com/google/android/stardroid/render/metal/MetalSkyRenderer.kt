@@ -12,10 +12,15 @@ package com.google.android.stardroid.render.metal
 import com.google.android.stardroid.math.DEGREES_TO_RADIANS
 import com.google.android.stardroid.math.Vector3
 import com.google.android.stardroid.render.api.GlowMesh
+import com.google.android.stardroid.render.api.GlyphRasterizer
+import com.google.android.stardroid.render.api.IconSprites
 import com.google.android.stardroid.render.api.ImageCache
 import com.google.android.stardroid.render.api.ImagePrimitive
 import com.google.android.stardroid.render.api.ImageQuad
 import com.google.android.stardroid.render.api.ImageRef
+import com.google.android.stardroid.render.api.LabelAtlas
+import com.google.android.stardroid.render.api.LabelFader
+import com.google.android.stardroid.render.api.LabelFrame
 import com.google.android.stardroid.render.api.LayerId
 import com.google.android.stardroid.render.api.LayerScene
 import com.google.android.stardroid.render.api.LineStrips
@@ -25,8 +30,11 @@ import com.google.android.stardroid.render.api.SkyCamera
 import com.google.android.stardroid.render.api.SkyGradient
 import com.google.android.stardroid.render.api.SkyProjection
 import com.google.android.stardroid.render.api.SkyRenderer
+import com.google.android.stardroid.render.api.SpriteInstances
 import com.google.android.stardroid.render.api.Viewport
 import kotlinx.cinterop.ExperimentalForeignApi
+import kotlinx.cinterop.addressOf
+import kotlinx.cinterop.usePinned
 import platform.Foundation.NSProcessInfo
 import platform.Metal.MTLBufferProtocol
 import platform.Metal.MTLClearColorMake
@@ -42,6 +50,7 @@ import platform.Metal.MTLPrimitiveTypeTriangleStrip
 import platform.Metal.MTLRenderCommandEncoderProtocol
 import platform.Metal.MTLRenderPassDescriptor
 import platform.Metal.MTLRenderPipelineStateProtocol
+import platform.Metal.MTLResourceStorageModeShared
 import platform.Metal.MTLTextureProtocol
 import platform.UIKit.UIImage
 import kotlin.concurrent.Volatile
@@ -55,7 +64,7 @@ import kotlin.math.tan
  * `:render:gles3` draws with the same contract, thread model and draw order.
  *
  * - **Painter's algorithm, no depth buffer** (D18). Layers by [LayerScene.depth]; within a layer,
- *   glows → lines → images → points (icons and labels arrive in a later slice).
+ *   glows → lines → images → points → icons → labels.
  * - **Retained scenes, derived GPU data.** Producers publish immutable [LayerScene]s from any
  *   thread; [encode] builds a layer's buffers from the shared `:render:api` builders the first
  *   time it sees that scene instance, and reuses them until the layer is resubmitted.
@@ -70,12 +79,20 @@ import kotlin.math.tan
  * @param density the display density (dp → px) of the surface being drawn.
  * @param imageLoader resolves an [ImageRef] to an image, or null to skip it (D24). Called on the
  *   render thread, at most once per ref while its texture stays cached.
+ * @param glyphRasterizer turns label text into atlas coverage; UIKit's string drawing by default.
+ * @param labelFadeMillis how long a label takes to fade in or out; 0 makes the declutterer's
+ *   decisions instant, which is what a single-frame render test wants.
+ * @param onAnimating called at the end of a frame that left a label fade in flight, asking for
+ *   another. A host that renders on demand wires it to its redraw request.
  */
 @OptIn(ExperimentalForeignApi::class, ExperimentalAtomicApi::class)
 class MetalSkyRenderer(
     private val device: MTLDeviceProtocol,
     private val density: Float,
     imageLoader: (ImageRef) -> UIImage? = { null },
+    private val glyphRasterizer: GlyphRasterizer = UIKitGlyphRasterizer(),
+    private val labelFadeMillis: Long = LabelFader.DEFAULT_FADE_MILLIS,
+    private val onAnimating: () -> Unit = {},
     pixelFormat: MTLPixelFormat = MTLPixelFormatBGRA8Unorm,
 ) : SkyRenderer {
     @Volatile private var camera: SkyCamera? = null
@@ -95,18 +112,35 @@ class MetalSkyRenderer(
             bytes = { it.byteSize },
         )
     private val layers = HashMap<LayerId, LayerGpu>()
+    private val labels = HashMap<LayerId, LabelGpu>()
+    private val faders = HashMap<LayerId, LabelFader>()
+    private val labelFrame = LabelFrame()
+    private val sprites = SpriteInstances()
     private var drawOrderSource: Map<LayerId, LayerScene>? = null
     private var drawOrder: List<Pair<LayerId, LayerScene>> = emptyList()
 
     /**
-     * One layer's buffers, valid for exactly the [scene] instance they were built from, and its
-     * claims on the textures of the scene's images, which [release] gives back.
+     * One layer's buffers and icon layout, valid for exactly the [scene] instance they were built
+     * from, and its claims on the textures of the scene's images and icons, which [release]
+     * gives back.
      */
     private class LayerGpu(
         val scene: LayerScene,
         val points: Mesh?,
         val lines: Mesh?,
         val glows: Mesh?,
+        val icons: IconSprites,
+    )
+
+    /**
+     * One layer's label atlas and its page textures. Rebuilt when the scene or the font-size
+     * preference changes, since both change what is rasterized.
+     */
+    private class LabelGpu(
+        val scene: LayerScene,
+        val labelScaleFactor: Double,
+        val atlas: LabelAtlas,
+        val pages: List<MTLTextureProtocol?>,
     )
 
     /** Vertex data plus, for indexed geometry, its 32-bit index buffer. */
@@ -153,7 +187,11 @@ class MetalSkyRenderer(
         // Build what changed first: new layers stage their textures, and the copies into them
         // have to be encoded before the render pass that samples them.
         val order = refreshDrawOrder()
-        for ((layerId, scene) in order) layerGpu(layerId, scene)
+        val state = renderState
+        for ((layerId, scene) in order) {
+            layerGpu(layerId, scene)
+            labelGpu(layerId, scene, state.labelScaleFactor)
+        }
         if (textures.hasPending) {
             commandBuffer.blitCommandEncoder()?.let { blit ->
                 textures.flush(blit)
@@ -161,7 +199,6 @@ class MetalSkyRenderer(
             }
         }
 
-        val state = renderState
         val color = pass.colorAttachments.objectAtIndexedSubscript(0u)
         color.loadAction = MTLLoadActionClear
         val clearAlpha = if (state.transparentBackground) 0.0 else 1.0
@@ -200,6 +237,9 @@ class MetalSkyRenderer(
         }
 
         val frame = frameUniforms(camera, state, viewport)
+        val projection = SkyProjection(camera, viewport)
+        val nowMillis = (NSProcessInfo.processInfo.systemUptime * 1000.0).toLong()
+        var animating = false
         for ((layerId, scene) in order) {
             val gpu = layers[layerId] ?: continue
             gpu.glows?.let { drawIndexed(encoder, pipelines.glow, it, frame) }
@@ -211,6 +251,74 @@ class MetalSkyRenderer(
                 encoder.setVertexFloats(frame, 1)
                 encoder.drawPrimitives(MTLPrimitiveTypePoint, 0u, mesh.count.toULong())
             }
+
+            // Icons: one run per image, which the layer claimed when it was built.
+            sprites.clear()
+            gpu.icons.layout(camera, projection, viewport, sprites)
+            drawSprites(encoder, viewport, state, haloTexels = 0f) { ref ->
+                images[gpu.icons.refs[ref]]?.let { it to NO_TEXEL }
+            }
+
+            // Labels: laid out, decluttered and faded by the shared LabelFrame; one run per page.
+            val labelGpu = labels[layerId] ?: continue
+            val fader = faders.getOrPut(layerId) { LabelFader(labelFadeMillis) }
+            fader.beginFrame(nowMillis)
+            sprites.clear()
+            labelFrame.layout(labelGpu.atlas, fader, camera, projection, viewport, sprites)
+            fader.endFrame()
+            animating = animating || fader.animating
+            drawSprites(encoder, viewport, state, haloTexels = LabelFrame.HALO_TEXELS) { page ->
+                val texture = labelGpu.pages[page] ?: return@drawSprites null
+                val pageSize = labelGpu.atlas.pages[page]
+                texture to floatArrayOf(1f / pageSize.widthPx, 1f / pageSize.heightPx)
+            }
+        }
+        // The one place a still scene asks for another frame, and only while a fade is moving.
+        if (animating) onAnimating()
+    }
+
+    /**
+     * Draws the quads in [sprites], one instanced call per run. [textureFor] maps a run's texture
+     * index to its texture and texel size; a run whose texture is unavailable is skipped (D24).
+     */
+    private fun drawSprites(
+        encoder: MTLRenderCommandEncoderProtocol,
+        viewport: Viewport,
+        state: RenderState,
+        haloTexels: Float,
+        textureFor: (Int) -> Pair<MTLTextureProtocol, FloatArray>?,
+    ) {
+        if (sprites.size == 0) return
+        val bytes = sprites.size * INSTANCE_BYTES
+        val instances =
+            sprites.data.usePinned {
+                device.newBufferWithBytes(
+                    it.addressOf(0),
+                    bytes.toULong(),
+                    MTLResourceStorageModeShared,
+                )
+            } ?: return
+        encoder.setRenderPipelineState(pipelines.sprite)
+        val halo = LabelFrame.HALO_COLOR
+        for (run in 0 until sprites.runCount) {
+            val (texture, texel) = textureFor(sprites.runTexture[run]) ?: continue
+            val uniforms =
+                floatArrayOf(
+                    viewport.widthPx.toFloat(), viewport.heightPx.toFloat(), texel[0], texel[1],
+                    halo.r, halo.g, halo.b, halo.a,
+                    haloTexels, if (state.nightMode) 1f else 0f, 0f, 0f,
+                )
+            val offset = sprites.runFirst[run] * INSTANCE_BYTES
+            encoder.setVertexBuffer(instances, offset.toULong(), 0u)
+            encoder.setVertexFloats(uniforms, 1)
+            encoder.setFragmentFloats(uniforms, 1)
+            encoder.setFragmentTexture(texture, 0u)
+            encoder.drawPrimitives(
+                MTLPrimitiveTypeTriangleStrip,
+                0u,
+                4u,
+                sprites.runSize[run].toULong(),
+            )
         }
     }
 
@@ -266,6 +374,8 @@ class MetalSkyRenderer(
         if (current !== drawOrderSource) {
             val removed = layers.keys - current.keys
             for (layerId in removed) layers.remove(layerId)?.let(::release)
+            labels.keys.retainAll(current.keys)
+            faders.keys.retainAll(current.keys)
             drawOrder = current.entries.sortedBy { it.value.depth }.map { it.key to it.value }
             drawOrderSource = current
         }
@@ -282,6 +392,8 @@ class MetalSkyRenderer(
         // never drops to zero holders in between. Replacing buffers is safe mid-flight: a command
         // buffer retains every resource it references until the GPU is done with it.
         for (image in scene.images) images.retain(image.image)
+        val icons = IconSprites.build(scene.points, density)
+        for (ref in icons.refs) images.retain(ref)
         existing?.let(::release)
         val points = PointVertices.build(scene.points)
         val lines = LineStrips.build(scene.lines)
@@ -292,6 +404,7 @@ class MetalSkyRenderer(
                 points = device.bufferOf(points.data)?.let { Mesh(it, null, points.vertexCount) },
                 lines = indexedMesh(lines.vertices, lines.indices),
                 glows = indexedMesh(glows.vertices, glows.indices),
+                icons = icons,
             )
         layers[layerId] = gpu
         return gpu
@@ -299,6 +412,30 @@ class MetalSkyRenderer(
 
     private fun release(gpu: LayerGpu) {
         for (image in gpu.scene.images) images.release(image.image)
+        for (ref in gpu.icons.refs) images.release(ref)
+    }
+
+    private fun labelGpu(
+        layerId: LayerId,
+        scene: LayerScene,
+        labelScaleFactor: Double,
+    ) {
+        val existing = labels[layerId]
+        val current =
+            existing != null &&
+                existing.scene === scene &&
+                existing.labelScaleFactor == labelScaleFactor
+        if (current) return
+        val atlas =
+            LabelAtlas.build(
+                scene.labels,
+                labelScaleFactor,
+                density,
+                glyphRasterizer,
+                MAX_TEXTURE_SIZE_PX,
+            )
+        val pages = atlas.pages.map { textures.stageCoverage(it.coverage, it.widthPx, it.heightPx) }
+        labels[layerId] = LabelGpu(scene, labelScaleFactor, atlas, pages)
     }
 
     private fun indexedMesh(
@@ -400,5 +537,17 @@ class MetalSkyRenderer(
 
         /** Wraps the dither seed often enough to animate, slowly enough to stay float-precise. */
         const val DITHER_SEED_PERIOD_MS = 10_000.0
+
+        /**
+         * A texture size every GPU this app supports can hold (Apple GPU family 3+, the A9
+         * onward). The label atlas caps its pages at 1024 anyway; this only guards the cap.
+         */
+        const val MAX_TEXTURE_SIZE_PX = 16_384
+
+        /** One sprite instance's size in bytes. */
+        const val INSTANCE_BYTES = SpriteInstances.FLOATS_PER_INSTANCE * Float.SIZE_BYTES
+
+        /** Icons sample no halo, so their taps must not step anywhere. */
+        val NO_TEXEL = floatArrayOf(0f, 0f)
     }
 }

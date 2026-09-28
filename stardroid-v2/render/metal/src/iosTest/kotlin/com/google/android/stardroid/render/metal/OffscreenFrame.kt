@@ -71,6 +71,34 @@ internal class Frame(
         offset: Int,
     ): Int = bgra[(y * width + x) * 4 + offset].toInt() and 0xFF
 
+    /** The smallest box holding every pixel [predicate] accepts, or null if none does. */
+    data class Box(val left: Int, val top: Int, val right: Int, val bottom: Int) {
+        val width: Int get() = right - left + 1
+        val height: Int get() = bottom - top + 1
+    }
+
+    fun bounds(predicate: (r: Int, g: Int, b: Int) -> Boolean): Box? {
+        var box: Box? = null
+        for (y in 0 until height) {
+            for (x in 0 until width) {
+                if (!predicate(red(x, y), green(x, y), blue(x, y))) continue
+                val b = box
+                box =
+                    if (b == null) {
+                        Box(x, y, x, y)
+                    } else {
+                        Box(
+                            left = minOf(b.left, x),
+                            top = minOf(b.top, y),
+                            right = maxOf(b.right, x),
+                            bottom = maxOf(b.bottom, y),
+                        )
+                    }
+            }
+        }
+        return box
+    }
+
     /** Pixels for which [predicate] holds. */
     fun count(predicate: (r: Int, g: Int, b: Int) -> Boolean): Int {
         var n = 0

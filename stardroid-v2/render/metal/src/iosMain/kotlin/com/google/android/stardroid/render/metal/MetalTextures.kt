@@ -10,6 +10,8 @@
 package com.google.android.stardroid.render.metal
 
 import kotlinx.cinterop.ExperimentalForeignApi
+import kotlinx.cinterop.addressOf
+import kotlinx.cinterop.usePinned
 import platform.CoreGraphics.CGBitmapContextCreate
 import platform.CoreGraphics.CGColorSpaceCreateDeviceRGB
 import platform.CoreGraphics.CGColorSpaceRelease
@@ -24,6 +26,7 @@ import platform.Metal.MTLBlitCommandEncoderProtocol
 import platform.Metal.MTLBufferProtocol
 import platform.Metal.MTLDeviceProtocol
 import platform.Metal.MTLOriginMake
+import platform.Metal.MTLPixelFormatR8Unorm
 import platform.Metal.MTLPixelFormatRGBA8Unorm
 import platform.Metal.MTLResourceStorageModeShared
 import platform.Metal.MTLSizeMake
@@ -39,9 +42,10 @@ import platform.UIKit.UIImage
  * frame's command buffer, ahead of the render pass that samples it — so uploading needs no
  * command queue of its own, and a texture is never drawn before its pixels arrive.
  *
- * Textures are private storage (the simulator allows nothing else for textures) holding
+ * Textures are private storage (the simulator allows nothing else for textures). Images are
  * premultiplied RGBA — what CoreGraphics decodes to, and what Android's `GLUtils.texImage2D`
- * uploads for `:render:gles3`, so the two blend identically at a disc's anti-aliased edge.
+ * uploads for `:render:gles3`, so the two blend identically at a disc's anti-aliased edge. Label
+ * atlas pages are single-channel coverage ([stageCoverage]), as GLES3's `R8` pages are.
  */
 @OptIn(ExperimentalForeignApi::class)
 internal class MetalTextures(
@@ -52,6 +56,7 @@ internal class MetalTextures(
         val texture: MTLTextureProtocol,
         val width: Int,
         val height: Int,
+        val bytesPerPixel: Int,
     )
 
     private val pending = ArrayList<Pending>()
@@ -100,14 +105,46 @@ internal class MetalTextures(
         descriptor.usage = MTLTextureUsageShaderRead
         descriptor.storageMode = MTLStorageModePrivate
         val texture = device.newTextureWithDescriptor(descriptor) ?: return null
-        pending += Pending(staging, texture, width, height)
+        pending += Pending(staging, texture, width, height, bytesPerPixel = 4)
+        return texture
+    }
+
+    /**
+     * A single-channel texture that will hold [coverage] — one byte per pixel, top row first —
+     * once [flush] runs, or null if it cannot be allocated.
+     */
+    fun stageCoverage(
+        coverage: ByteArray,
+        width: Int,
+        height: Int,
+    ): MTLTextureProtocol? {
+        if (width == 0 || height == 0) return null
+        val staging =
+            coverage.usePinned {
+                device.newBufferWithBytes(
+                    it.addressOf(0),
+                    coverage.size.toULong(),
+                    MTLResourceStorageModeShared,
+                )
+            } ?: return null
+        val descriptor =
+            MTLTextureDescriptor.texture2DDescriptorWithPixelFormat(
+                MTLPixelFormatR8Unorm,
+                width.toULong(),
+                height.toULong(),
+                false,
+            )
+        descriptor.usage = MTLTextureUsageShaderRead
+        descriptor.storageMode = MTLStorageModePrivate
+        val texture = device.newTextureWithDescriptor(descriptor) ?: return null
+        pending += Pending(staging, texture, width, height, bytesPerPixel = 1)
         return texture
     }
 
     /** Encodes every staged upload into [blit]; call once per frame, before rendering. */
     fun flush(blit: MTLBlitCommandEncoderProtocol) {
         for (upload in pending) {
-            val bytesPerRow = upload.width * 4
+            val bytesPerRow = upload.width * upload.bytesPerPixel
             blit.copyFromBuffer(
                 sourceBuffer = upload.staging,
                 sourceOffset = 0u,

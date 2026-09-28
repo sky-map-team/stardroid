@@ -59,6 +59,9 @@ internal class MetalPipelines(
     /** Blended, not alpha-tested (D85): an alpha test would stair-step every disc's limb. */
     val image = pipeline(device, pixelFormat, "image", Blend.ALPHA)
 
+    /** Icons, label glyph runs and their underlines. */
+    val sprite = pipeline(device, pixelFormat, "sprite", Blend.ALPHA)
+
     private fun pipeline(
         device: MTLDeviceProtocol,
         pixelFormat: MTLPixelFormat,
