@@ -29,7 +29,11 @@ include(":core:catalog")
 include(":core:events")
 include(":core:testing")
 include(":render:api")
+include(":render:testscene")
 include(":data:generator")
+
+// iOS-only modules (D117)
+include(":render:metal")
 
 // Android modules
 include(":render:gles1")
