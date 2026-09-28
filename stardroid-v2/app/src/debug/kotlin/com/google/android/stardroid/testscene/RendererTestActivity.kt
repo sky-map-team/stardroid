@@ -204,6 +204,12 @@ class RendererTestActivity : Activity() {
                 context = this,
                 assets = assets,
                 backend = requestedBackend(),
+                // Deliberately not gated on Experiment.GLES3_RENDERER. This harness exists to
+                // exercise a *named* backend — the D19 perf gate runs each variant explicitly —
+                // so honouring the flag here would make the GLES3 tests silently measure GLES1,
+                // which is the exact failure RendererPerfTest.assumeBackendSupported guards
+                // against. The flag governs what users get, not what the gate can measure.
+                gles3Enabled = true,
                 density = density,
                 imageLoader = { ref -> resolveImage(ref) ?: assetImageLoader.load(ref) },
                 onRendererInfo = {},
