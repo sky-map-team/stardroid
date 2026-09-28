@@ -15,6 +15,7 @@ import com.google.android.stardroid.render.api.RenderState
 import com.google.android.stardroid.render.api.SkyCamera
 import com.google.android.stardroid.render.api.SkyGradient
 import com.google.android.stardroid.render.metal.MetalSkyRenderer
+import com.google.android.stardroid.testscene.TestImageRef
 import com.google.android.stardroid.testscene.TestScene
 import kotlinx.cinterop.BetaInteropApi
 import kotlinx.cinterop.CValue
@@ -22,15 +23,27 @@ import kotlinx.cinterop.ExperimentalForeignApi
 import kotlinx.cinterop.ObjCAction
 import kotlinx.cinterop.readValue
 import kotlinx.cinterop.useContents
+import platform.CoreGraphics.CGBitmapContextCreate
+import platform.CoreGraphics.CGBitmapContextCreateImage
+import platform.CoreGraphics.CGColorSpaceCreateDeviceRGB
+import platform.CoreGraphics.CGColorSpaceRelease
+import platform.CoreGraphics.CGContextFillEllipseInRect
+import platform.CoreGraphics.CGContextRelease
+import platform.CoreGraphics.CGContextSetRGBFillColor
+import platform.CoreGraphics.CGImageAlphaInfo
+import platform.CoreGraphics.CGImageRelease
 import platform.CoreGraphics.CGPointZero
+import platform.CoreGraphics.CGRectMake
 import platform.CoreGraphics.CGRectZero
 import platform.CoreGraphics.CGSize
+import platform.CoreGraphics.kCGBitmapByteOrder32Big
 import platform.Foundation.NSSelectorFromString
 import platform.Metal.MTLCommandQueueProtocol
 import platform.Metal.MTLCreateSystemDefaultDevice
 import platform.Metal.MTLPixelFormatBGRA8Unorm
 import platform.MetalKit.MTKView
 import platform.MetalKit.MTKViewDelegateProtocol
+import platform.UIKit.UIImage
 import platform.UIKit.UIPanGestureRecognizer
 import platform.UIKit.UIPinchGestureRecognizer
 import platform.UIKit.UIScreen
@@ -45,7 +58,8 @@ import kotlin.math.sin
  * Metal backend drawing the shared seeded [TestScene] in an `MTKView`, with the same camera, so the
  * two platforms can be compared side by side.
  *
- * Drag to look around, pinch to zoom, tap to cycle the render state (night sky, daytime sky,
+ * It draws the stars, grid and planet layers (labels arrive with slice 2d). Drag to look around,
+ * pinch to zoom, tap to cycle the render state (night sky, daytime sky,
  * twilight, night mode). Swift only has to host [viewController], and must keep this object alive
  * as long as it shows it: the view's delegate and the gesture targets are weak references, held
  * here.
@@ -53,7 +67,12 @@ import kotlin.math.sin
 @OptIn(ExperimentalForeignApi::class, BetaInteropApi::class)
 class RendererHarness {
     private val device = MTLCreateSystemDefaultDevice() ?: error("this device has no Metal GPU")
-    private val renderer = MetalSkyRenderer(device, density = UIScreen.mainScreen.scale.toFloat())
+    private val renderer =
+        MetalSkyRenderer(
+            device,
+            density = UIScreen.mainScreen.scale.toFloat(),
+            imageLoader = { ref -> if (ref == TestImageRef.PLANET) syntheticPlanet() else null },
+        )
     private val drawLoop = DrawLoop(renderer, device.newCommandQueue() ?: error("no command queue"))
     private val gestures = Gestures()
 
@@ -78,6 +97,7 @@ class RendererHarness {
 
         renderer.submit(TestScene.STARS_LAYER, TestScene.buildStarsScene())
         renderer.submit(TestScene.GRID_LAYER, TestScene.buildGridScene())
+        renderer.submit(TestScene.IMAGES_LAYER, TestScene.buildImagesScene())
         publishCamera()
         publishMode()
     }
@@ -160,6 +180,32 @@ class RendererHarness {
     }
 
     private companion object {
+        /** Android's harness planet, drawn the same way: a white disc filling a 64 px square. */
+        fun syntheticPlanet(): UIImage {
+            val px = 64
+            val colorSpace = CGColorSpaceCreateDeviceRGB()
+            val rgba =
+                CGImageAlphaInfo.kCGImageAlphaPremultipliedLast.value or kCGBitmapByteOrder32Big
+            val context =
+                CGBitmapContextCreate(
+                    null,
+                    px.toULong(),
+                    px.toULong(),
+                    8u,
+                    (px * 4).toULong(),
+                    colorSpace,
+                    rgba,
+                )
+            CGContextSetRGBFillColor(context, 1.0, 1.0, 1.0, 1.0)
+            CGContextFillEllipseInRect(context, CGRectMake(1.0, 1.0, px - 2.0, px - 2.0))
+            val cgImage = CGBitmapContextCreateImage(context)
+            val image = UIImage.imageWithCGImage(cgImage)
+            CGImageRelease(cgImage)
+            CGContextRelease(context)
+            CGColorSpaceRelease(colorSpace)
+            return image
+        }
+
         const val MIN_FOV_DEG = 1.0
         const val MAX_FOV_DEG = 120.0
         const val MODE_COUNT = 4

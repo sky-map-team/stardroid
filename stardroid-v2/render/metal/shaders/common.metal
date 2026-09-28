@@ -50,3 +50,31 @@ inline float2 unitQuadCorner(uint vertexId) {
 
 // MSL has no degrees()/radians().
 constant float RADIANS_TO_DEGREES = 57.29577951308232;
+
+// PhaseGeometry.litOffset, transcribed: how lit the point (x, y) on a unit disc is, in disc radii
+// from the terminator — positive lit, negative in shadow. The lit limb faces +x.
+inline float litOffset(float x, float y, float fraction) {
+    float s = 2.0 * clamp(fraction, 0.0, 1.0) - 1.0;
+    float yy = clamp(y, -1.0, 1.0);
+    return x + s * sqrt(max(0.0, 1.0 - yy * yy));
+}
+
+// EclipseGeometry.tint, transcribed: a per-channel multiplier at point p on the unit disc for a
+// shadow centred at `center` with the given umbra and penumbra radii, all in Moon radii. The
+// umbra darkens and reddens (Rayleigh-scattered light); the penumbra only dims.
+inline float3 eclipseTint(float2 p, float umbra, float penumbra, float2 center) {
+    const float3 umbraEdge = float3(0.55, 0.22, 0.16);
+    const float3 umbraCore = float3(0.30, 0.06, 0.04);
+    const float penumbraMaxDimming = 0.35;
+    float dist = distance(p, center);
+    if (dist <= umbra) {
+        float depth = umbra > 0.0 ? clamp(1.0 - dist / umbra, 0.0, 1.0) : 1.0;
+        return mix(umbraEdge, umbraCore, depth);
+    }
+    if (dist < penumbra) {
+        float span = penumbra - umbra;
+        float depth = span > 0.0 ? clamp((penumbra - dist) / span, 0.0, 1.0) : 1.0;
+        return float3(1.0 - penumbraMaxDimming * depth);
+    }
+    return float3(1.0);
+}

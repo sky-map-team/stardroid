@@ -56,6 +56,9 @@ internal class MetalPipelines(
     val sky = pipeline(device, pixelFormat, "sky", Blend.NONE)
     val scrim = pipeline(device, pixelFormat, "scrim", Blend.ALPHA)
 
+    /** Blended, not alpha-tested (D85): an alpha test would stair-step every disc's limb. */
+    val image = pipeline(device, pixelFormat, "image", Blend.ALPHA)
+
     private fun pipeline(
         device: MTLDeviceProtocol,
         pixelFormat: MTLPixelFormat,

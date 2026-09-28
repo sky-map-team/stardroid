@@ -10,7 +10,12 @@
 package com.google.android.stardroid.render.metal
 
 import com.google.android.stardroid.math.DEGREES_TO_RADIANS
+import com.google.android.stardroid.math.Vector3
 import com.google.android.stardroid.render.api.GlowMesh
+import com.google.android.stardroid.render.api.ImageCache
+import com.google.android.stardroid.render.api.ImagePrimitive
+import com.google.android.stardroid.render.api.ImageQuad
+import com.google.android.stardroid.render.api.ImageRef
 import com.google.android.stardroid.render.api.LayerId
 import com.google.android.stardroid.render.api.LayerScene
 import com.google.android.stardroid.render.api.LineStrips
@@ -37,6 +42,8 @@ import platform.Metal.MTLPrimitiveTypeTriangleStrip
 import platform.Metal.MTLRenderCommandEncoderProtocol
 import platform.Metal.MTLRenderPassDescriptor
 import platform.Metal.MTLRenderPipelineStateProtocol
+import platform.Metal.MTLTextureProtocol
+import platform.UIKit.UIImage
 import kotlin.concurrent.Volatile
 import kotlin.concurrent.atomics.AtomicReference
 import kotlin.concurrent.atomics.ExperimentalAtomicApi
@@ -48,11 +55,12 @@ import kotlin.math.tan
  * `:render:gles3` draws with the same contract, thread model and draw order.
  *
  * - **Painter's algorithm, no depth buffer** (D18). Layers by [LayerScene.depth]; within a layer,
- *   glows → lines → points (images, icons and labels arrive in later slices).
+ *   glows → lines → images → points (icons and labels arrive in a later slice).
  * - **Retained scenes, derived GPU data.** Producers publish immutable [LayerScene]s from any
  *   thread; [encode] builds a layer's buffers from the shared `:render:api` builders the first
  *   time it sees that scene instance, and reuses them until the layer is resubmitted.
- * - **Everything per-frame is a uniform**: camera, magnitude limit, night mode.
+ * - **Everything per-frame is a uniform**: camera, magnitude limit, night mode, and each image's
+ *   size and phase — so a pinch or a changing Moon never rebuilds a buffer.
  *
  * The host owns the drawable and the frame loop: an `MTKView` delegate calls [encode] with the
  * view's pass descriptor, and the offscreen tests call it with their own texture. [encode] must
@@ -60,11 +68,14 @@ import kotlin.math.tan
  * called from anywhere.
  *
  * @param density the display density (dp → px) of the surface being drawn.
+ * @param imageLoader resolves an [ImageRef] to an image, or null to skip it (D24). Called on the
+ *   render thread, at most once per ref while its texture stays cached.
  */
 @OptIn(ExperimentalForeignApi::class, ExperimentalAtomicApi::class)
 class MetalSkyRenderer(
     private val device: MTLDeviceProtocol,
     private val density: Float,
+    imageLoader: (ImageRef) -> UIImage? = { null },
     pixelFormat: MTLPixelFormat = MTLPixelFormatBGRA8Unorm,
 ) : SkyRenderer {
     @Volatile private var camera: SkyCamera? = null
@@ -77,11 +88,20 @@ class MetalSkyRenderer(
     // ---- render-thread-only state -----------------------------------------------------------
 
     private val pipelines = MetalPipelines(device, pixelFormat)
+    private val textures = MetalTextures(device)
+    private val images =
+        ImageCache<MTLTextureProtocol>(
+            load = { ref -> imageLoader(ref)?.let(textures::stage) },
+            bytes = { it.byteSize },
+        )
     private val layers = HashMap<LayerId, LayerGpu>()
     private var drawOrderSource: Map<LayerId, LayerScene>? = null
     private var drawOrder: List<Pair<LayerId, LayerScene>> = emptyList()
 
-    /** One layer's buffers, valid for exactly the [scene] instance they were built from. */
+    /**
+     * One layer's buffers, valid for exactly the [scene] instance they were built from, and its
+     * claims on the textures of the scene's images, which [release] gives back.
+     */
     private class LayerGpu(
         val scene: LayerScene,
         val points: Mesh?,
@@ -130,6 +150,17 @@ class MetalSkyRenderer(
         widthPx: Int,
         heightPx: Int,
     ) {
+        // Build what changed first: new layers stage their textures, and the copies into them
+        // have to be encoded before the render pass that samples them.
+        val order = refreshDrawOrder()
+        for ((layerId, scene) in order) layerGpu(layerId, scene)
+        if (textures.hasPending) {
+            commandBuffer.blitCommandEncoder()?.let { blit ->
+                textures.flush(blit)
+                blit.endEncoding()
+            }
+        }
+
         val state = renderState
         val color = pass.colorAttachments.objectAtIndexedSubscript(0u)
         color.loadAction = MTLLoadActionClear
@@ -139,7 +170,7 @@ class MetalSkyRenderer(
         try {
             val camera = camera
             if (camera != null && widthPx > 0 && heightPx > 0) {
-                draw(encoder, camera, state, Viewport(widthPx, heightPx, density))
+                draw(encoder, order, camera, state, Viewport(widthPx, heightPx, density))
             }
         } finally {
             encoder.endEncoding()
@@ -148,6 +179,7 @@ class MetalSkyRenderer(
 
     private fun draw(
         encoder: MTLRenderCommandEncoderProtocol,
+        order: List<Pair<LayerId, LayerScene>>,
         camera: SkyCamera,
         state: RenderState,
         viewport: Viewport,
@@ -168,10 +200,11 @@ class MetalSkyRenderer(
         }
 
         val frame = frameUniforms(camera, state, viewport)
-        for ((layerId, scene) in refreshDrawOrder()) {
-            val gpu = layerGpu(layerId, scene)
+        for ((layerId, scene) in order) {
+            val gpu = layers[layerId] ?: continue
             gpu.glows?.let { drawIndexed(encoder, pipelines.glow, it, frame) }
             gpu.lines?.let { drawIndexed(encoder, pipelines.line, it, frame) }
+            drawImages(encoder, scene.images, frame, camera, viewport)
             gpu.points?.let { mesh ->
                 encoder.setRenderPipelineState(pipelines.point)
                 encoder.setVertexBuffer(mesh.vertices, 0u, 0u)
@@ -200,11 +233,39 @@ class MetalSkyRenderer(
         )
     }
 
-    /** Re-sorts layers when the published set changed, and drops removed layers' buffers. */
+    /**
+     * Each image is a quad sized for this frame's field of view — its true size or its floor
+     * (SizeFloor, D86) — so the geometry is uniforms, not a buffer, and the list order the
+     * producer chose (farthest first, D18) is the draw order.
+     */
+    private fun drawImages(
+        encoder: MTLRenderCommandEncoderProtocol,
+        scene: List<ImagePrimitive>,
+        frame: FloatArray,
+        camera: SkyCamera,
+        viewport: Viewport,
+    ) {
+        if (scene.isEmpty()) return
+        encoder.setRenderPipelineState(pipelines.image)
+        encoder.setVertexFloats(frame, 1)
+        encoder.setFragmentFloats(frame, 1)
+        for (image in scene) {
+            val drawnDeg = ImageQuad.drawnDiameterDeg(image, camera, viewport) ?: continue
+            val texture = images[image.image] ?: continue
+            val uniforms = imageUniforms(image, drawnDeg)
+            encoder.setVertexFloats(uniforms, 2)
+            encoder.setFragmentFloats(uniforms, 2)
+            encoder.setFragmentTexture(texture, 0u)
+            encoder.drawPrimitives(MTLPrimitiveTypeTriangleStrip, 0u, 4u)
+        }
+    }
+
+    /** Re-sorts layers when the published set changed, and drops removed layers' resources. */
     private fun refreshDrawOrder(): List<Pair<LayerId, LayerScene>> {
         val current = scenes.load()
         if (current !== drawOrderSource) {
-            layers.keys.retainAll(current.keys)
+            val removed = layers.keys - current.keys
+            for (layerId in removed) layers.remove(layerId)?.let(::release)
             drawOrder = current.entries.sortedBy { it.value.depth }.map { it.key to it.value }
             drawOrderSource = current
         }
@@ -215,22 +276,29 @@ class MetalSkyRenderer(
         layerId: LayerId,
         scene: LayerScene,
     ): LayerGpu {
-        layers[layerId]?.let { if (it.scene === scene) return it }
-        // Replacing the old buffers is safe mid-flight: a command buffer retains every buffer
-        // it references until the GPU is done with it.
+        val existing = layers[layerId]
+        if (existing != null && existing.scene === scene) return existing
+        // Claim the new scene's images before letting go of the old one's, so an image both use
+        // never drops to zero holders in between. Replacing buffers is safe mid-flight: a command
+        // buffer retains every resource it references until the GPU is done with it.
+        for (image in scene.images) images.retain(image.image)
+        existing?.let(::release)
         val points = PointVertices.build(scene.points)
         val lines = LineStrips.build(scene.lines)
         val glows = GlowMesh.build(scene.glows)
         val gpu =
             LayerGpu(
                 scene = scene,
-                points =
-                    device.bufferOf(points.data)?.let { Mesh(it, null, points.vertexCount) },
+                points = device.bufferOf(points.data)?.let { Mesh(it, null, points.vertexCount) },
                 lines = indexedMesh(lines.vertices, lines.indices),
                 glows = indexedMesh(glows.vertices, glows.indices),
             )
         layers[layerId] = gpu
         return gpu
+    }
+
+    private fun release(gpu: LayerGpu) {
+        for (image in gpu.scene.images) images.release(image.image)
     }
 
     private fun indexedMesh(
@@ -242,7 +310,7 @@ class MetalSkyRenderer(
         return Mesh(vertexBuffer, indexBuffer, indices.size)
     }
 
-    // ---- uniforms (layouts match common.metal / sky.metal) ----------------------------------
+    // ---- uniforms (layouts match common.metal, sky.metal and image.metal) --------------------
 
     private fun frameUniforms(
         camera: SkyCamera,
@@ -257,6 +325,41 @@ class MetalSkyRenderer(
         out[19] = if (state.nightMode) 1f else 0f
         out[20] = state.magnitudeLimit?.toFloat() ?: PointVertices.NO_MAGNITUDE_LIMIT
         return out
+    }
+
+    /** One image's quad and shading inputs: ImageUniforms in image.metal. */
+    private fun imageUniforms(
+        image: ImagePrimitive,
+        drawnDeg: Double,
+    ): FloatArray {
+        val axes = ImageQuad.halfAxes(image, drawnDeg)
+        val out = FloatArray(IMAGE_UNIFORM_FLOATS)
+        out.putVector(0, image.center)
+        out.putVector(4, axes.u)
+        out.putVector(8, axes.v)
+        val terminator = image.terminator ?: return out
+        val lit = ImageQuad.litDirection(terminator)
+        out[12] = 1f
+        out[13] = terminator.illuminatedFraction.toFloat()
+        out[14] = lit.x.toFloat()
+        out[15] = lit.y.toFloat()
+        val eclipse = terminator.eclipse ?: return out
+        val shadow = ImageQuad.shadowCenter(eclipse)
+        out[16] = 1f
+        out[17] = eclipse.umbraRadius.toFloat()
+        out[18] = eclipse.penumbraRadius.toFloat()
+        out[20] = shadow.x.toFloat()
+        out[21] = shadow.y.toFloat()
+        return out
+    }
+
+    private fun FloatArray.putVector(
+        at: Int,
+        v: Vector3,
+    ) {
+        this[at] = v.x.toFloat()
+        this[at + 1] = v.y.toFloat()
+        this[at + 2] = v.z.toFloat()
     }
 
     /** The per-pixel sky's inputs, built exactly as GLES3's SkyGradientDrawer builds them. */
@@ -291,6 +394,9 @@ class MetalSkyRenderer(
     private companion object {
         /** float4x4 + float4 viewport + float4 params. */
         const val FRAME_UNIFORM_FLOATS = 24
+
+        /** Six float4s: centre, half-u, half-v, terminator, eclipse, shadow centre. */
+        const val IMAGE_UNIFORM_FLOATS = 24
 
         /** Wraps the dither seed often enough to animate, slowly enough to stay float-precise. */
         const val DITHER_SEED_PERIOD_MS = 10_000.0

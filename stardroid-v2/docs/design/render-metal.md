@@ -1,7 +1,8 @@
 # Detailed Design: `:render:metal` — the Metal backend (iOS)
 
-**Status: IN PROGRESS** — slices 2a–2b built (stars, lines, glows, sky dome, camera scrim,
-offscreen render tests, and an iOS harness app); images, icons and labels to follow (§6). D117.
+**Status: IN PROGRESS** — slices 2a–2c built (stars, lines, glows, sky dome, camera scrim,
+images with phase and eclipse, offscreen render tests, and an iOS harness app); icons and labels
+to follow (§6). D117.
 
 `:render:metal` is the iOS `SkyRenderer`: an iOS-only Kotlin Multiplatform module that calls
 Metal directly through Kotlin/Native. It is a sibling of `:render:gles1` and `:render:gles3`
@@ -28,10 +29,12 @@ counts), Xcode's build-time shader compilation, and contributors who know only S
 | `SkyRenderer`, `LayerScene`, primitives, `RenderState` | `MetalSkyRenderer` — publication, per-layer GPU cache, draw order, uniforms |
 | `SkyProjection` / `Matrix4` — the byte-identical view-projection matrix | `MetalPipelines` — the shader library and one pipeline state per program |
 | `PointVertices`, `LineStrips`, `GlowMesh` — each primitive type's vertex data, pure and tested | `shaders/*.metal` — Metal Shading Language |
-| `StellarRamps`, `GreatCircleSubdivision`, and (for later slices) `SizeFloor`, `LabelDeclutterer`, `LabelFader`, `LabelAtlasPacker` | `MetalInterop` — Kotlin arrays into Metal buffers |
+| `ImageQuad` — an image's per-frame drawn size (FOV cull + `SizeFloor`), quad half-axes, and texture-space lit-limb and shadow vectors | `MetalTextures` — images decoded into staging buffers, copied into textures ahead of the frame's render pass |
+| `ImageCache` — reference-counted, byte-budgeted texture bookkeeping with the GPU calls passed in | `MetalInterop` — Kotlin arrays into Metal buffers |
+| `StellarRamps`, `GreatCircleSubdivision`, `SizeFloor`, and (for slice 2d) `LabelDeclutterer`, `LabelFader`, `LabelAtlasPacker` | |
 | `TestScene` (`:render:testscene`) — the seeded scene every backend's harness draws | |
 
-The three vertex builders are what "shared" means in practice. The point and glow builders use
+The vertex builders, `ImageQuad` and `ImageCache` are what "shared" means in practice. The point and glow builders use
 the same interleaved layouts as `:render:gles3`'s drawers, but write plain `FloatArray`s rather
 than `java.nio` buffers, which iOS lacks. **Follow-up:** GLES3 moves onto them, as its own
 change with pixel-identical verification, since it touches Android.
@@ -69,7 +72,8 @@ arrays with no alignment rules to get wrong.
   edges. Reversed edges are undefined in both languages, and only GLSL drivers happen to accept
   them.
 
-Deliberately the same: blend modes (alpha and additive, same factors on colour and alpha), the
+Deliberately the same: images as premultiplied RGBA with linear filtering, clamped, and no
+mipmaps (as GLES3 uploads Android bitmaps, so disc edges blend identically), blend modes (alpha and additive, same factors on colour and alpha), the
 non-sRGB `bgra8Unorm` framebuffer, the night-mode transform, painter's order with no depth
 buffer, and the sky's skip rules (night mode, transparent background).
 
@@ -101,14 +105,24 @@ device first.
   framework. The app is a SwiftUI shell whose Xcode project XcodeGen generates from
   `project.yml`; a build phase runs Gradle's `embedAndSignAppleFrameworkForXcode`. See
   `ios/README.md`.
-- **2c:** images. This is `skyquad` with phase and eclipse shading: an `ImageRef` resolver
-  (UIImage) and per-frame `SizeFloor` sizing.
+- **2c (built):** images, from GLES3's `skyquad` with phase and eclipse shading per pixel. The
+  renderer takes an `ImageRef → UIImage` loader. Textures upload through a staging buffer whose
+  copy is encoded on the frame's own command buffer, before the render pass. The harness now
+  draws the test scene's planet. Tests check drawn size, the size floor, the FOV cull, a missing
+  image, the half phase, and the reddened umbra.
 - **2d:** icons and labels. Glyphs are rasterized by CoreText behind a `GlyphRasterizer` seam
   (render-gles3.md §6.5), packed by the shared `LabelAtlasPacker`, and decluttered and faded by
   the shared helpers.
 - **2e:** the D19 perf gate (100k points at 30+ fps) on the oldest supported iPhone.
 
 ## 7. Noticed during the port
+
+- **Removing from a map while holding its entries is JVM-only.** `ImageCache`'s eviction first
+  kept the map's own entry objects, then removed from the map while reading them. Kotlin/Native
+  throws `ConcurrentModificationException` for that; the JVM tolerates it. The iOS test run
+  caught it, and the shared version snapshots key/value pairs. `:render:gles3`'s `TextureCache`
+  has the same pattern, harmless only because it runs on the JVM, and it goes away when GLES3
+  adopts `ImageCache`.
 
 - **Overlapping stars punch holes.** Painter's order with alpha 1 means a faint star drawn after
   a bright one it overlaps covers the bright one's centre, leaving a bright ring around a grey
