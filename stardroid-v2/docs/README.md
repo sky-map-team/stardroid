@@ -20,6 +20,7 @@ the two ever drift.
 | [design/core-math-astronomy.md](design/core-math-astronomy.md) | `:core:math`, `:core:astronomy` | slices 2/5, D25–D27, D36 |
 | [design/render-api.md](design/render-api.md) | `:render:api` contract, `:render:gles1` port notes | slices 3a/3b, D28–D31 |
 | [design/render-gles3.md](design/render-gles3.md) | The GL ES 3.0 backend beside GLES1, selectable in settings; Part B still proposed | Part A built; §7.2–§8 design only |
+| [design/render-metal.md](design/render-metal.md) | `:render:metal`, the iOS Metal backend in Kotlin/Native, sharing vertex builders with the GL backends | D117; slice 2a built, 2b–2e to come |
 | [design/catalog-and-schema.md](design/catalog-and-schema.md) | `:core:catalog`, Room schema, build-time DB generation | slices 4a–4d, D32–D35 |
 | [design/layers-and-app.md](design/layers-and-app.md) | Layer system, ViewModel decomposition, app edges | slices 4d–23; **comets still to come** |
 | [design/screens-and-startup.md](design/screens-and-startup.md) | Supporting screens, startup routing, settings | slice 16, D48 |

@@ -59,7 +59,7 @@ no longer applies.
 
 ## 2. Module graph and build structure
 
-Twelve Gradle modules (`settings.gradle.kts`), split hard into **pure Kotlin** (no Android SDK
+Fourteen Gradle modules (`settings.gradle.kts`), split hard into **pure Kotlin** (no Android SDK
 on the classpath — `import android.*` is a compile error) and **Android**. The pure modules
 other than the JVM tools are Kotlin Multiplatform (JVM + iOS), shared with the iOS port:
 
@@ -74,6 +74,8 @@ other than the JVM tools are Kotlin Multiplatform (JVM + iOS), shared with the i
 | `:data:generator` | pure (build-time JVM tool) | 807 / 429 | Deterministic catalog-DB generator over `source-data/` |
 | `:render:gles1` | Android lib | 2,292 / 1,021 | OpenGL ES 1.0 backend implementing `:render:api` |
 | `:render:gles3` | Android lib | 2,837 / 458 | OpenGL ES 3.0 backend implementing `:render:api` (render-gles3.md) |
+| `:render:testscene` | pure | 195 / — | The seeded synthetic scene every renderer harness draws |
+| `:render:metal` | iOS lib | 467 + 427 MSL / 364 | Metal backend implementing `:render:api`, Kotlin/Native (render-metal.md, D117) |
 | `:data` | Android lib | 1,058 / 1,035 | Room catalog store implementing `:core:catalog` |
 | `:app` | Android app | 19,572 / 6,583 | Compose UI, ViewModels, Hilt, sensors, location, widgets, notifications |
 | `:konsist` | test-only | — | Architecture gate (D20) |
@@ -86,11 +88,14 @@ one `expect`/`actual`, for `NameNormalizer`'s use of `java.text.Normalizer`.
 
 ### Convention plugins (`build-logic/`)
 
-Five plugins carry all shared build config (see build-and-tooling.md for rationale):
+Seven plugins carry all shared build config (see build-and-tooling.md for rationale):
 
-- `skymap.pure-kmp` — `kotlin("multiplatform")` with `jvm` + iOS targets, ktlint, and a
-  `commonTest` stack of kotlin.test + `:core:testing`. Used by `:core:*` and `:render:api`.
+- `skymap.kmp-base` — `kotlin("multiplatform")` with the iOS targets, ktlint, a `commonTest`
+  stack of kotlin.test + `:core:testing`, and the no-Xcode rule. Applied by the next two only.
+- `skymap.pure-kmp` — `skymap.kmp-base` plus a `jvm` target. Used by `:core:*`, `:render:api`
+  and `:render:testscene`.
   Applying it *is* the purity enforcement: no Android SDK anywhere, no JDK in `commonMain`.
+- `skymap.ios-library` — `skymap.kmp-base` alone, for iOS-only platform code (`:render:metal`).
 - `skymap.pure-kotlin` — `kotlin("jvm")` + ktlint + JUnit 5/Truth test stack, toolchain 17, for
   the JVM tools (`:data:generator`, `:konsist`). No Android SDK on the classpath.
 - `skymap.android-library` / `skymap.android-app` — AGP config (compileSdk 36, minSdk 28),

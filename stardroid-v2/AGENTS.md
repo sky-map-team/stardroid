@@ -86,9 +86,10 @@ Do not add a third notice — per-directory notices are what let the old claim d
   `src/commonMain`, tests in `src/commonTest` using `kotlin.test` plus `:core:testing`'s
   Truth-shaped `assertThat` (Truth itself is JVM-only). JVM-only code needs an
   `expect`/`actual` with the JVM side in `src/jvmMain`.
-- `render/api` — pure renderer contract + shared projection; `render/gles1` — a GLES1
-  backend written to match v1's rendering behaviour (an independent implementation, not a
-  port; see `NOTICE.md`).
+- `render/api` — pure renderer contract + shared projection and vertex builders;
+  `render/gles1` — a GLES1 backend written to match v1's rendering behaviour (an independent
+  implementation, not a port; see `NOTICE.md`); `render/metal` — the iOS backend, Kotlin/Native
+  calling Metal, with its shaders in `render/metal/shaders/*.metal` (render-metal.md).
 - `app/` — the Android app shell (currently the dev test-scene activity and perf gate).
 - `konsist/` — architecture-gate tests enforcing the pure/Android module boundary (D20).
 - `build-logic/` — Gradle convention plugins (`skymap.pure-kotlin`, `skymap.android-*`).
