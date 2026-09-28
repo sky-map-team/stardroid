@@ -26,6 +26,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
 import com.google.android.stardroid.ui.theme.DocumentColors
@@ -37,6 +38,9 @@ import com.google.android.stardroid.ui.theme.documentColors
  * this splits the document on its block tags and renders each as its own composable —
  * headings with Material typography and v1's `help.css` accent colors, `<blockquote>` as a
  * highlighted callout. Body runs render through [htmlWithLinks], keeping D48's no-WebView rule.
+ *
+ * [highlight] and [onInternalLink] are Help's: the search term to wash in, and where an
+ * in-app `skymap://` link goes. The other documents pass neither and render exactly as before.
  */
 @Composable
 fun StyledHtml(
@@ -44,24 +48,31 @@ fun StyledHtml(
     nightMode: Boolean,
     modifier: Modifier = Modifier,
     bodyStyle: TextStyle = MaterialTheme.typography.bodyMedium,
+    highlight: String? = null,
+    onInternalLink: ((String) -> Unit)? = null,
 ) {
     val blocks = remember(html) { splitHtmlBlocks(html) }
     val colors = documentColors(nightMode)
+
+    @Composable
+    fun rendered(blockHtml: String) =
+        htmlWithLinks(blockHtml, highlight, colors.searchHighlight, onInternalLink)
     Column(modifier, verticalArrangement = Arrangement.spacedBy(4.dp)) {
         for (block in blocks) {
             when (block) {
                 is HtmlBlock.Body ->
-                    Text(htmlWithLinks(block.html), style = bodyStyle)
+                    Text(rendered(block.html), style = bodyStyle)
                 is HtmlBlock.Heading ->
                     Text(
-                        htmlWithLinks(block.html),
+                        rendered(block.html),
                         style = headingStyle(block.level),
                         color = colors.headings[block.level - 1],
                         // Breathing room above a heading, tighter to the text it titles —
                         // the spacing v1's help.css margins gave the WebView document.
                         modifier = Modifier.padding(top = 12.dp, bottom = 2.dp),
                     )
-                is HtmlBlock.Callout -> Callout(block.html, colors, bodyStyle)
+                is HtmlBlock.Callout ->
+                    Callout(rendered(block.html), colors, bodyStyle)
             }
         }
     }
@@ -74,7 +85,7 @@ fun StyledHtml(
  */
 @Composable
 private fun Callout(
-    html: String,
+    text: AnnotatedString,
     colors: DocumentColors,
     bodyStyle: TextStyle,
 ) {
@@ -95,7 +106,7 @@ private fun Callout(
                 .background(colors.calloutAccent),
         )
         Text(
-            htmlWithLinks(html),
+            text,
             style = bodyStyle,
             modifier = Modifier.padding(horizontal = 12.dp, vertical = 10.dp),
         )

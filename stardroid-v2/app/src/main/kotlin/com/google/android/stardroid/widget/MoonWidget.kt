@@ -41,6 +41,8 @@ import com.google.android.stardroid.astronomy.moonWidgetModel
 import com.google.android.stardroid.ui.MainActivity
 import kotlinx.datetime.Clock
 import kotlinx.datetime.Instant
+import kotlinx.datetime.TimeZone
+import kotlinx.datetime.toLocalDateTime
 import java.util.Date
 import kotlin.math.roundToInt
 
@@ -56,16 +58,17 @@ class MoonWidget : GlanceAppWidget() {
         id: GlanceId,
     ) {
         val entryPoint = widgetEntryPoint(context)
+        val now = Clock.System.now()
         // Kill switch (D75): instances placed before a flag flip freeze as a quiet brand tile
         // rather than continuing to update; the component gate stops new placements.
         val model =
             moonWidgetModelFor(
                 entryPoint.experimentConfig(),
-                Clock.System.now(),
+                now,
                 entryPoint.settings().savedLocation,
             )
         provideContent {
-            MoonWidgetContent(model, context)
+            MoonWidgetContent(model, now, context)
         }
     }
 
@@ -85,6 +88,7 @@ class MoonWidget : GlanceAppWidget() {
 @Composable
 private fun MoonWidgetContent(
     model: MoonWidgetModel?,
+    now: Instant,
     context: Context,
 ) {
     Column(
@@ -143,31 +147,59 @@ private fun MoonWidgetContent(
             maxLines = 1,
         )
         // One row per crossing (they don't fit side by side in 2 cells); either alone when
-        // only one converged (D51), neither without a location.
-        TimeRow(R.string.moon_widget_rise_time, model.riseTime, context, topPadding = 2.dp)
-        TimeRow(R.string.moon_widget_set_time, model.setTime, context)
+        // only one converged (D51), neither without a location. riseTime and setTime are each
+        // independently "next after now" (issue #1067), so whichever comes first chronologically
+        // — rise or set — must render first, or the pair reads as if it happened in the wrong
+        // order (e.g. "rises 6:36PM" above a "sets 5:56AM" that is actually earlier, tonight).
+        val rows =
+            listOfNotNull(
+                model.riseTime?.let { R.string.moon_widget_rise_time to it },
+                model.setTime?.let { R.string.moon_widget_set_time to it },
+            ).sortedBy { it.second }
+        rows.forEachIndexed { index, (labelRes, time) ->
+            TimeRow(labelRes, time, now, context, topPadding = if (index == 0) 2.dp else 0.dp)
+        }
     }
 }
 
-/** A "rises 17:42" / "sets 03:12" line in the device's 12/24-hour format; skipped when null. */
+/**
+ * A "rises 17:42" / "sets 03:12" line in the device's 12/24-hour format. When [time] falls on a
+ * different local day than [now] — the widget only refreshes every 12h and at local midnight
+ * (see [WidgetScheduler]), so a shown crossing is often tomorrow's — a compact "+1"-style suffix
+ * is appended rather than a full date, which wouldn't fit this widget's minimum 2x2 size.
+ */
 @Composable
 private fun TimeRow(
     labelRes: Int,
-    time: Instant?,
+    time: Instant,
+    now: Instant,
     context: Context,
     topPadding: Dp = 0.dp,
 ) {
-    if (time == null) return
     val formatted =
         android.text.format.DateFormat
             .getTimeFormat(context)
             .format(Date(time.toEpochMilliseconds()))
+    val offset = dayOffset(now, time, TimeZone.currentSystemDefault())
+    val suffix =
+        if (offset > 0) context.getString(R.string.moon_widget_time_day_offset, offset) else ""
     Text(
-        text = context.getString(labelRes, formatted),
+        text = context.getString(labelRes, formatted) + suffix,
         style = TextStyle(color = ColorProvider(MUTED), fontSize = 12.sp),
         maxLines = 1,
         modifier = GlanceModifier.padding(top = topPadding),
     )
+}
+
+/** How many local calendar days after [now]'s day [time] falls on; negative if before. */
+internal fun dayOffset(
+    now: Instant,
+    time: Instant,
+    zone: TimeZone,
+): Int {
+    val nowDay = now.toLocalDateTime(zone).date.toEpochDays()
+    val timeDay = time.toLocalDateTime(zone).date.toEpochDays()
+    return timeDay - nowDay
 }
 
 private fun phaseNameRes(phase: LunarPhase): Int =

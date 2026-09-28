@@ -826,6 +826,9 @@ fun OverflowSheet(
     // Sharing is behind the SHARE_SKY experiment; off, the row simply isn't offered.
     shareEnabled: Boolean = true,
     onOpenGallery: () -> Unit,
+    onOpenWidgets: () -> Unit,
+    // Hidden when no widget is offerable at all, rather than opening an empty sheet.
+    widgetsEnabled: Boolean = true,
     onOpenLocation: () -> Unit,
     onOpenCalibration: () -> Unit,
     onOpenTutorial: () -> Unit,
@@ -849,6 +852,9 @@ fun OverflowSheet(
             OverflowRow(R.drawable.ic_settings, R.string.settings_button, onOpenSettings)
             OverflowRow(R.drawable.ic_location, R.string.location_button, onOpenLocation)
             OverflowRow(R.drawable.ic_gallery, R.string.gallery_button, onOpenGallery)
+            if (widgetsEnabled) {
+                OverflowRow(R.drawable.ic_widgets, R.string.widgets_button, onOpenWidgets)
+            }
             if (shareEnabled) {
                 OverflowRow(R.drawable.ic_share, R.string.share_button, onShareSky)
             }

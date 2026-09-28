@@ -37,6 +37,7 @@ import com.google.android.stardroid.ui.diagnostics.DiagnosticsScreen
 import com.google.android.stardroid.ui.diagnostics.DiagnosticsViewModel
 import com.google.android.stardroid.ui.gallery.GalleryScreen
 import com.google.android.stardroid.ui.gallery.GalleryViewModel
+import com.google.android.stardroid.ui.help.HelpLink
 import com.google.android.stardroid.ui.help.HelpScreen
 import com.google.android.stardroid.ui.help.WhatsNewScreen
 import com.google.android.stardroid.ui.layers.LayersViewModel
@@ -298,6 +299,23 @@ fun SkyMapNavHost(
             HelpScreen(
                 nightMode = nightMode,
                 onBack = { navController.popBackStack() },
+                // The help document's `skymap://` links (#1064). These push above Help, so
+                // Back returns the reader to the paragraph they left — except the tutorial,
+                // whose replay pops back to the map and takes Help with it. Widgets and
+                // in-document anchors never reach here — HelpScreen handles those itself.
+                onNavigate = { destination ->
+                    when (destination) {
+                        HelpLink.Destination.SETTINGS -> navController.navigate(Routes.SETTINGS)
+                        HelpLink.Destination.DIAGNOSTICS ->
+                            navController.navigate(Routes.DIAGNOSTICS)
+                        HelpLink.Destination.CALIBRATE ->
+                            navController.navigate(Routes.calibration(true))
+                        HelpLink.Destination.GALLERY -> navController.navigate(Routes.GALLERY)
+                        HelpLink.Destination.TUTORIAL ->
+                            navController.navigate(Routes.welcomeReplay())
+                        HelpLink.Destination.APP_SETTINGS -> onOpenAppSettings()
+                    }
+                },
                 experimentConfig = experimentConfig,
             )
         }

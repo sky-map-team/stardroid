@@ -73,13 +73,25 @@ class LocationViewModel(
 
     // ---- Manual entry (v1 ManualLocationEntryDialogFragment) -----------------------------
 
+    /**
+     * Whether the place-name field can work at all. False when the device has no geocoder
+     * backend, which the dialog reports up front rather than after the user types a name.
+     */
+    val placeLookupAvailable: Boolean get() = geocoding.isPlaceLookupAvailable()
+
     /** Why a typed place name didn't resolve. */
     enum class PlaceError {
         /** The geocoder answered but found nothing. */
         NOT_FOUND,
 
-        /** No geocoder or no network. */
-        UNAVAILABLE,
+        /** The device has no geocoder backend. */
+        NO_BACKEND,
+
+        /** The geocoder couldn't reach its service, typically because the device is offline. */
+        NETWORK,
+
+        /** The geocoder failed for some other reason. */
+        FAILED,
     }
 
     data class ManualEntryUi(
@@ -128,22 +140,16 @@ class LocationViewModel(
                 }
                 result.location
             }
-            Geocoding.PlaceResult.NotFound -> {
-                _manualEntry.update {
-                    it.copy(
-                        resolving = false,
-                        placeError = PlaceError.NOT_FOUND,
-                    )
-                }
-                null
-            }
-            Geocoding.PlaceResult.Unavailable -> {
-                _manualEntry.update {
-                    it.copy(resolving = false, placeError = PlaceError.UNAVAILABLE)
-                }
-                null
-            }
+            Geocoding.PlaceResult.NotFound -> failResolve(PlaceError.NOT_FOUND)
+            Geocoding.PlaceResult.NoBackend -> failResolve(PlaceError.NO_BACKEND)
+            Geocoding.PlaceResult.NetworkError -> failResolve(PlaceError.NETWORK)
+            Geocoding.PlaceResult.Failed -> failResolve(PlaceError.FAILED)
         }
+    }
+
+    private fun failResolve(error: PlaceError): LatLong? {
+        _manualEntry.update { it.copy(resolving = false, placeError = error) }
+        return null
     }
 
     /**
