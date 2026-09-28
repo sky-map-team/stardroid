@@ -1,7 +1,7 @@
 # Detailed Design: `:render:metal` — the Metal backend (iOS)
 
-**Status: IN PROGRESS** — slice 2a built (stars, lines, glows, sky dome, camera scrim, offscreen
-render tests); images, icons, labels and the app harness to follow (§6). D117.
+**Status: IN PROGRESS** — slices 2a–2b built (stars, lines, glows, sky dome, camera scrim,
+offscreen render tests, and an iOS harness app); images, icons and labels to follow (§6). D117.
 
 `:render:metal` is the iOS `SkyRenderer`: an iOS-only Kotlin Multiplatform module that calls
 Metal directly through Kotlin/Native. It is a sibling of `:render:gles1` and `:render:gles3`
@@ -95,7 +95,12 @@ device first.
 ## 6. Slices
 
 - **2a (built):** pipelines, stars, lines, glows, sky dome, camera scrim, offscreen tests.
-- **2b:** an app harness, an `MTKView` host that shows the test scene on a simulator or device.
+- **2b (built):** `:render:metal-harness` plus `ios/RendererHarness`, the counterpart of
+  Android's `RendererTestActivity`. The `MTKView`, draw loop and gestures (drag, pinch, and tap to
+  cycle night, day, twilight and night mode) are Kotlin, packaged as the static `SkyMapHarness`
+  framework. The app is a SwiftUI shell whose Xcode project XcodeGen generates from
+  `project.yml`; a build phase runs Gradle's `embedAndSignAppleFrameworkForXcode`. See
+  `ios/README.md`.
 - **2c:** images. This is `skyquad` with phase and eclipse shading: an `ImageRef` resolver
   (UIImage) and per-frame `SizeFloor` sizing.
 - **2d:** icons and labels. Glyphs are rasterized by CoreText behind a `GlyphRasterizer` seam

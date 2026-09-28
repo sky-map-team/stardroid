@@ -180,12 +180,15 @@ class ArchitectureTest {
         }
     }
 
-    private val metalModuleSource = Regex("""(?:.*/)?render/metal/src/.*\.kt$""")
+    // :render:metal itself, and its harness — the one Gradle-side caller, as RendererTestActivity
+    // is for the GL backends.
+    private val metalModuleSource = Regex("""(?:.*/)?render/metal(-harness)?/src/.*\.kt$""")
 
     @Test
     fun `nothing in the Gradle tree depends on render metal`() {
-        // D117: :render:metal is the iOS backend, chosen by the iOS app shell alone, as :app alone
-        // chooses between the GL backends. No shared or Android module may reach into it.
+        // D117: :render:metal is the iOS backend, chosen by the iOS app alone (and exercised by
+        // its harness), as :app alone chooses between the GL backends. No shared or Android
+        // module may reach into it.
         val others =
             Konsist.scopeFromProject().files.filterNot {
                 metalModuleSource.matches(it.path.replace('\\', '/'))

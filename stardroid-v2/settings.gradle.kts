@@ -34,6 +34,7 @@ include(":data:generator")
 
 // iOS-only modules (D117)
 include(":render:metal")
+include(":render:metal-harness")
 
 // Android modules
 include(":render:gles1")

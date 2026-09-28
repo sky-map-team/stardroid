@@ -7,7 +7,7 @@ architecture (D20) and performance (D19).
 
 ## Module graph
 
-Fourteen Gradle modules, following the dependency rule (arrows inward only; see
+Fifteen Gradle modules, following the dependency rule (arrows inward only; see
 [high-level-architecture.md](high-level-architecture.md)):
 
 ```
@@ -17,6 +17,8 @@ Fourteen Gradle modules, following the dependency rule (arrows inward only; see
 :render:api     pure-kmp       → :core:math
 :render:testscene pure-kmp     → :render:api (the seeded scene every renderer harness draws)
 :render:metal   ios-library    → :render:api (the iOS Metal backend, D117; render-metal.md)
+:render:metal-harness ios-library → :render:metal, :render:testscene (the iOS harness's
+                                 framework; ios/RendererHarness hosts it)
 :data           android-library→ :core:catalog, :core:astronomy, :core:math
 :data:generator pure-kotlin    → :core:catalog (build-time JVM tool; sqlite-jdbc,
                                  kotlinx-serialization)
@@ -42,7 +44,7 @@ not a copy-paste of config. They are the structural half of D20.
 |---|---|---|
 | `skymap.kmp-base` | `kotlin("multiplatform")` — the iOS targets, kotlin.test + `:core:testing`, the no-Xcode rule; applied by the two below, never directly | — |
 | `skymap.pure-kmp` | `skymap.kmp-base` + a JVM target, **no Android plugin** | `:core:*`, `:render:api`, `:render:testscene` |
-| `skymap.ios-library` | `skymap.kmp-base` alone: iOS-only platform code | `:render:metal` |
+| `skymap.ios-library` | `skymap.kmp-base` alone: iOS-only platform code | `:render:metal`, `:render:metal-harness` |
 | `skymap.pure-kotlin` | `kotlin("jvm")`, JUnit5/Truth, **no Android plugin** | `:data:generator`, `:konsist` |
 | `skymap.android-library` | `com.android.library` + Kotlin, common Android config | `:render:gles1`, `:data` |
 | `skymap.android-app` | `com.android.application` + Kotlin + Compose + Hilt + flavors | `:app` |
