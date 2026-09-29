@@ -220,9 +220,12 @@ void main() {
     // Stars, grid lines and planets below the horizon still draw, against black — which is
     // already how they look at night, so it stays consistent. The shaded translucent ground in
     // section 7.2 is the real answer, and would make this cut invisible.
-    const float HORIZON_CUT_RAMP_DEG = 0.25;
-    float below = smoothstep(0.0, -HORIZON_CUT_RAMP_DEG, viewAltitudeDeg);
-    linear *= 1.0 - below;
+    // Exactly the ground's own coverage, complemented: the sky yields precisely where the ground
+    // takes over. Anything else leaves a seam or a doubled blend along the one line in the scene
+    // the eye is most likely to be resting on. The ramp is screen-space for the reason given in
+    // common.glsl -- at high zoom a fixed angular ramp became a visible band below the line.
+    float rampDeg = groundEdgeRampDeg(viewAltitudeDeg);
+    linear *= 1.0 - groundCoverage(viewAltitudeDeg, rampDeg);
 
     // Everything above is computed in linear space; tone map, convert to sRGB, and dither.
     vec3 srgb = pow(toneMap(linear), vec3(1.0 / 2.2)) + dither(gl_FragCoord.xy);

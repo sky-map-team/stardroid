@@ -36,10 +36,20 @@ import kotlin.math.exp
  */
 object GroundRamp {
     /**
-     * Where the ground stops, in degrees of view altitude. The cut lands on zero — the horizon —
-     * and this is only the width of the antialiasing ramp, not a fade: a wider ramp puts the
-     * boundary visibly *below* the horizon line, which reads as a second unexplained edge rather
-     * than as ground. That was learned the hard way with a four-degree fade on the sky dome.
+     * The widest the horizon's antialiasing ramp may get, as a half-width in degrees.
+     *
+     * The cut lands on zero — the horizon — and this is only smoothing, not a fade: a wider ramp
+     * puts the boundary visibly *below* the horizon line, which reads as a second unexplained edge
+     * rather than as ground. That was learned the hard way with a four-degree fade on the sky
+     * dome, and then again more subtly with this very constant.
+     *
+     * It is a **cap** rather than the working value, because the ramp has to be a fixed number of
+     * screen pixels rather than a fixed angle. A quarter of a degree is invisible at a normal
+     * field of view and becomes sixty pixels of sky dissolving into ground once you zoom in to a
+     * couple of degrees — the band starting at the horizon line and ending well below it, so the
+     * line stops looking like the boundary. `:render:gles3` derives the real value per pixel from
+     * `fwidth`; callers without screen derivatives, including `:render:gles1`'s ring mesh, pass
+     * this.
      */
     const val EDGE_RAMP_DEG = 0.25
 
@@ -71,10 +81,14 @@ object GroundRamp {
     const val DAY_SUN_ALTITUDE_DEG = 0.0
 
     /**
-     * Zero above the horizon, one below it, with [EDGE_RAMP_DEG] of smoothing so the boundary
-     * antialiases instead of stair-stepping along the pixel grid.
+     * Zero above the horizon, one below it, with a ramp of half-width [rampDeg] **straddling**
+     * altitude zero — so the horizon line, drawn at exactly zero, covers the blend rather than
+     * sitting at the top of it.
      */
-    fun coverage(viewAltitudeDeg: Double): Double = smoothstep(0.0, -EDGE_RAMP_DEG, viewAltitudeDeg)
+    fun coverage(
+        viewAltitudeDeg: Double,
+        rampDeg: Double = EDGE_RAMP_DEG,
+    ): Double = smoothstep(rampDeg, -rampDeg, viewAltitudeDeg)
 
     /**
      * The depth cue: 1 at the horizon, decaying to [NADIR_FRACTION] below it. Uses the absolute
@@ -101,11 +115,13 @@ object GroundRamp {
      *
      * @param viewAltitudeDeg the view direction's altitude above the horizon, degrees.
      * @param opacity [Ground.opacity].
+     * @param rampDeg half-width of the antialiasing ramp; see [EDGE_RAMP_DEG].
      */
     fun alpha(
         viewAltitudeDeg: Double,
         opacity: Double,
-    ): Double = opacity * coverage(viewAltitudeDeg) * depthProfile(viewAltitudeDeg)
+        rampDeg: Double = EDGE_RAMP_DEG,
+    ): Double = opacity * coverage(viewAltitudeDeg, rampDeg) * depthProfile(viewAltitudeDeg)
 
     /**
      * GLSL's `smoothstep`, which Kotlin has no equivalent of. Handles `edge0 > edge1` (the

@@ -116,6 +116,12 @@ class ShaderProgram private constructor(
                     appendLine("precision highp float;")
                     appendLine("precision highp int;")
                 }
+                // Lets the shared prelude gate anything that only exists in one stage. The
+                // screen-derivative builtins (fwidth, dFdx, dFdy) are the reason it exists:
+                // common.glsl is spliced into *every* program, so an unguarded call to one of
+                // them fails to compile every vertex shader in the app, which is a black screen
+                // on launch rather than a subtle bug.
+                if (fragment) appendLine("#define FRAGMENT_STAGE 1")
                 appendLine(common)
                 append(source)
             }

@@ -19,18 +19,43 @@ class GroundRampTest {
     fun `there is no ground above the horizon`() {
         assertThat(GroundRamp.coverage(45.0)).isEqualTo(0.0)
         assertThat(GroundRamp.coverage(1.0)).isEqualTo(0.0)
-        assertThat(GroundRamp.coverage(0.0)).isEqualTo(0.0)
     }
 
     @Test
-    fun `the ground fully covers just below the horizon`() {
+    fun `the ground fully covers below the horizon`() {
         assertThat(GroundRamp.coverage(-GroundRamp.EDGE_RAMP_DEG)).isEqualTo(1.0)
         assertThat(GroundRamp.coverage(-45.0)).isEqualTo(1.0)
         assertThat(GroundRamp.coverage(-90.0)).isEqualTo(1.0)
     }
 
     @Test
-    fun `the edge ramp is narrow enough to read as a cut at the horizon`() {
+    fun `the ramp straddles the horizon rather than hanging below it`() {
+        // The horizon line is drawn at exactly zero, so the blend has to be centred there for the
+        // line to cover it. Hanging the ramp below zero is what put a visible band under the line
+        // at high zoom -- the sky dissolving into ground over sixty pixels, starting at the line
+        // and finishing well beneath it.
+        assertThat(GroundRamp.coverage(0.0)).isWithin(1e-9).of(0.5)
+        assertThat(GroundRamp.coverage(GroundRamp.EDGE_RAMP_DEG)).isEqualTo(0.0)
+        assertThat(GroundRamp.coverage(-GroundRamp.EDGE_RAMP_DEG)).isEqualTo(1.0)
+    }
+
+    @Test
+    fun `a narrower ramp sharpens the edge without moving it`() {
+        // What the shader does per pixel: the half-width shrinks with the field of view so the
+        // edge stays about a pixel wide, and the midpoint must not drift while it does.
+        for (ramp in listOf(0.25, 0.05, 0.002)) {
+            assertThat(GroundRamp.coverage(0.0, ramp)).isWithin(1e-9).of(0.5)
+            assertThat(GroundRamp.coverage(-ramp, ramp)).isEqualTo(1.0)
+            assertThat(GroundRamp.coverage(ramp, ramp)).isEqualTo(0.0)
+        }
+        // Tighter ramp, sharper edge: at a fixed small angle below the horizon, a narrow ramp is
+        // already fully covering where a wide one is still blending.
+        assertThat(GroundRamp.coverage(-0.02, 0.01)).isEqualTo(1.0)
+        assertThat(GroundRamp.coverage(-0.02, 0.25)).isLessThan(1.0)
+    }
+
+    @Test
+    fun `the edge ramp cap is narrow enough to read as a cut at the horizon`() {
         // The ramp antialiases without moving the boundary away from the horizon line. Anything
         // wider is a fade, and a fade reads as a second edge adrift of the horizon.
         assertThat(GroundRamp.EDGE_RAMP_DEG).isLessThan(0.5)
@@ -80,13 +105,19 @@ class GroundRampTest {
     }
 
     @Test
-    fun `opacity does not depend on the sun at all`() {
+    fun `opacity is exactly the two view-dependent terms, with nothing else folded in`() {
         // The load-bearing property of the whole design: the Sun changes the ground's colour and
-        // nothing else. If alpha ever gains a solar term again, the ground stops being the same
-        // substance at every azimuth, and it was two attempts' worth of work to learn that.
-        assertThat(GroundRamp.alpha(-10.0, opacity)).isEqualTo(GroundRamp.alpha(-10.0, opacity))
-        val signature = GroundRamp::class.java.methods.single { it.name == "alpha" }
-        assertThat(signature.parameterCount).isEqualTo(2)
+        // nothing else. If a solar term is ever multiplied into alpha again, the ground stops
+        // being the same substance at every azimuth, and it took two attempts to learn that.
+        //
+        // Asserted as an identity rather than by inspecting the function signature. The signature
+        // version broke the moment `rampDeg` was added -- a correct, unrelated change -- which is
+        // the standing hazard with structural assertions.
+        for (altitude in listOf(-0.1, -1.0, -8.0, -35.0, -90.0)) {
+            val expected =
+                opacity * GroundRamp.coverage(altitude) * GroundRamp.depthProfile(altitude)
+            assertThat(GroundRamp.alpha(altitude, opacity)).isWithin(1e-12).of(expected)
+        }
     }
 
     @Test
@@ -129,9 +160,9 @@ class GroundRampTest {
     }
 
     @Test
-    fun `alpha is zero above the horizon`() {
+    fun `alpha is zero above the ramp`() {
         assertThat(GroundRamp.alpha(10.0, 1.0)).isEqualTo(0.0)
-        assertThat(GroundRamp.alpha(0.0, 1.0)).isEqualTo(0.0)
+        assertThat(GroundRamp.alpha(GroundRamp.EDGE_RAMP_DEG, 1.0)).isEqualTo(0.0)
     }
 
     @Test

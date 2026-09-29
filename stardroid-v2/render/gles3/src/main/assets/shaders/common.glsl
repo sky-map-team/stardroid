@@ -83,11 +83,30 @@ const float GROUND_NADIR_FRACTION = 0.4;
 const float GROUND_NIGHT_SUN_ALTITUDE_DEG = -18.0;
 const float GROUND_DAY_SUN_ALTITUDE_DEG = 0.0;
 
-// Zero above the horizon, one below it. Written as the complement of an ascending smoothstep
-// because GLSL leaves smoothstep undefined when edge0 > edge1, which the Kotlin original relies
-// on; the two forms are algebraically identical.
-float groundCoverage(float viewAltitudeDeg) {
-    return 1.0 - smoothstep(-GROUND_EDGE_RAMP_DEG, 0.0, viewAltitudeDeg);
+// Half-width of the horizon edge, in degrees, sized so the transition is a fixed number of
+// *pixels* rather than a fixed angle.
+//
+// Fragment stage only: fwidth is a screen-derivative builtin and does not exist in a vertex
+// shader. This file is spliced into every program, so leaving it unguarded failed to compile
+// every vertex shader in the app -- a crash on launch, found on device.
+//
+// A fixed angular ramp is invisible at a wide field of view and turns into a fat band when you
+// zoom: at a couple of degrees across the screen, a quarter-degree ramp is sixty pixels of sky
+// dissolving into ground, starting at the horizon line and finishing well below it, so the line
+// no longer sits on the boundary. Reported from the device exactly that way. fwidth gives degrees
+// per pixel, so scaling by it holds the edge at roughly one pixel however far in you go. The min
+// is a safety cap, not a working value -- it only binds at absurdly wide fields.
+#ifdef FRAGMENT_STAGE
+float groundEdgeRampDeg(float viewAltitudeDeg) {
+    return min(fwidth(viewAltitudeDeg), GROUND_EDGE_RAMP_DEG);
+}
+#endif
+
+// Zero above the horizon, one below it, with an antialiasing ramp of half-width `rampDeg`
+// straddling altitude zero -- so the horizon line, which is drawn at exactly zero, covers the
+// blend rather than sitting at the top of it.
+float groundCoverage(float viewAltitudeDeg, float rampDeg) {
+    return 1.0 - smoothstep(-rampDeg, rampDeg, viewAltitudeDeg);
 }
 
 // The depth cue: 1 at the horizon, decaying to GROUND_NADIR_FRACTION below it.
@@ -104,6 +123,6 @@ float groundDaylight(float sunAltitudeDeg) {
     );
 }
 
-float groundAlpha(float viewAltitudeDeg, float opacity) {
-    return opacity * groundCoverage(viewAltitudeDeg) * groundDepthProfile(viewAltitudeDeg);
+float groundAlpha(float viewAltitudeDeg, float opacity, float rampDeg) {
+    return opacity * groundCoverage(viewAltitudeDeg, rampDeg) * groundDepthProfile(viewAltitudeDeg);
 }

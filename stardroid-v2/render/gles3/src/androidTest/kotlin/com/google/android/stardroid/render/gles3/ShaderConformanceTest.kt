@@ -184,9 +184,14 @@ class ShaderConformanceTest {
         val min = -90.0
         val max = 2.0
         val opacity = 0.55
-        val actual = evaluate("vec3(groundAlpha(mix($min, $max, t), $opacity))")
+        // The ramp is passed explicitly: the shader normally derives it from `fwidth`, which has
+        // no meaning on a one-pixel-tall sweep and none at all in the Kotlin reference. Pinning it
+        // keeps the two comparable, at the cost of not covering the derivative itself -- that part
+        // is only testable by looking, and it was found by looking.
+        val ramp = GroundRamp.EDGE_RAMP_DEG
+        val actual = evaluate("vec3(groundAlpha(mix($min, $max, t), $opacity, $ramp))")
         for (i in 0 until SAMPLES) {
-            val expected = GroundRamp.alpha(inputAt(i, min, max), opacity)
+            val expected = GroundRamp.alpha(inputAt(i, min, max), opacity, ramp)
             assertThat(actual[i][0]).isWithin(TOLERANCE).of(expected.toFloat())
         }
     }

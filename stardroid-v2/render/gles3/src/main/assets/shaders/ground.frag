@@ -30,10 +30,12 @@ void main() {
     float viewAltitudeDeg = degrees(asin(clamp(dot(dir, uZenithDir), -1.0, 1.0)));
     float sunAltitudeDeg = degrees(asin(clamp(dot(uSunDir, uZenithDir), -1.0, 1.0)));
 
-    // Everything above the horizon is sky, and discarding rather than writing a zero-alpha pixel
-    // keeps the blend unit out of it for the majority of a typical frame.
-    if (viewAltitudeDeg > 0.0) discard;
+    // Everything well above the horizon is sky, and discarding rather than writing a zero-alpha
+    // pixel keeps the blend unit out of it for the majority of a typical frame. The edge ramp
+    // straddles zero, so the test has to clear it or the blend would be cut in half.
+    float rampDeg = groundEdgeRampDeg(viewAltitudeDeg);
+    if (viewAltitudeDeg > rampDeg) discard;
 
     vec3 color = mix(uGroundNightColor, uGroundDayColor, groundDaylight(sunAltitudeDeg));
-    fragColor = vec4(color, groundAlpha(viewAltitudeDeg, uGroundOpacity));
+    fragColor = vec4(color, groundAlpha(viewAltitudeDeg, uGroundOpacity, rampDeg));
 }
