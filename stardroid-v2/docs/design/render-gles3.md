@@ -687,6 +687,14 @@ backend that is being retired, and the fixed pipeline has no way to do it per pi
   trivial against a frame's other work and was left alone rather than half-fixed, but if the
   camera basis is ever needed a third time it should be computed once per frame and handed to the
   passes — the same argument that took the per-frame `Triple` out of GLES1's ground cache.
+- **A golden reference nobody compares against is just a comment.** The design doc called
+  `PhaseCompositor` the golden reference for the Moon's shading while its five tuning constants
+  sat `private` in `:render:gles1` and hand-copied into `:render:gles3`'s `skyquad.frag`, with
+  nothing checking the two agreed — and nothing could, since the Konsist gate forbids gles3
+  depending on gles1. They live in `:render:api` as `MoonShading` now, the same move already made
+  for the stellar ramps, which is what made them comparable at all. The general rule: if a
+  constant is transcribed into GLSL, its Kotlin original has to be somewhere both the shader's
+  module and the test can see, or the reference is aspirational.
 - **A hard edge is a measuring instrument.** The ground's boundary sits at altitude zero exactly,
   which made a long-latent flow bug visible the first time anyone looked: the sky gradient was
   recomputed from a mutable `currentLocation` field inside a time-only flow, so it lagged a

@@ -10,6 +10,7 @@
 package com.google.android.stardroid.render.gles3
 
 import com.google.android.stardroid.render.api.GroundRamp
+import com.google.android.stardroid.render.api.MoonShading
 import com.google.android.stardroid.render.api.StellarRamps
 import com.google.common.truth.Truth.assertThat
 import org.junit.jupiter.api.Test
@@ -32,15 +33,17 @@ class ShaderConstantParityTest {
         const val SHADER_DIR_PROPERTY = "skymap.shaderDir"
     }
 
-    private val source: String by lazy {
+    private fun source(fileName: String): String {
         // The directory comes from the build script, which also declares it as a task input, so
         // the path this reads and the path Gradle watches are one expression. Guessing working
         // directories instead would let the two drift silently apart.
         val dir =
             System.getProperty(SHADER_DIR_PROPERTY)
                 ?: error("$SHADER_DIR_PROPERTY is not set; see render/gles3/build.gradle.kts")
-        File(dir, "common.glsl").readText()
+        return File(dir, fileName).readText()
     }
+
+    private val common: String by lazy { source("common.glsl") }
 
     /**
      * The value of `const float <name> = <literal>;`, the only form this file uses.
@@ -49,10 +52,12 @@ class ShaderConstantParityTest {
      * function-local) so a commented-out or duplicated declaration cannot be matched in place of
      * the live one — `find` returns the first hit, and the first hit should be the real one.
      */
-    private fun glslConstant(name: String): Double {
+    private fun glslConstant(
+        name: String,
+        source: String = common,
+    ): Double {
         val pattern = Regex("(?m)^\\s*const\\s+float\\s+$name\\s*=\\s*([-+0-9.eE]+)\\s*;")
-        val match =
-            pattern.find(source) ?: error("No `const float $name` in common.glsl")
+        val match = pattern.find(source) ?: error("No `const float $name` in the shader source")
         return match.groupValues[1].toDouble()
     }
 
@@ -83,6 +88,26 @@ class ShaderConstantParityTest {
         assertThat(glslConstant("faintAlphaFloor"))
             .isWithin(1e-6)
             .of(StellarRamps.FAINT_ALPHA_FLOOR.toDouble())
+    }
+
+    @Test
+    fun `the moon shading constants match their Kotlin originals`() {
+        // These were private in :render:gles1's PhaseCompositor and hand-copied into
+        // skyquad.frag, with nothing comparing them -- parity held by convention while the design
+        // doc called the compositor a golden reference. They live in :render:api now, which is
+        // the only place both backends can read, since :render:gles3 may not depend on gles1.
+        val skyquad = source("skyquad.frag")
+        val expected =
+            mapOf(
+                "DARK_FLOOR" to MoonShading.DARK_FLOOR,
+                "EARTHSHINE" to MoonShading.EARTHSHINE,
+                "LIMB_RING" to MoonShading.LIMB_RING,
+                "LIMB_RING_WIDTH" to MoonShading.LIMB_RING_WIDTH,
+                "TERMINATOR_SOFTNESS" to MoonShading.TERMINATOR_SOFTNESS,
+            )
+        for ((name, kotlinValue) in expected) {
+            assertThat(glslConstant(name, skyquad)).isWithin(1e-12).of(kotlinValue)
+        }
     }
 
     @Test
