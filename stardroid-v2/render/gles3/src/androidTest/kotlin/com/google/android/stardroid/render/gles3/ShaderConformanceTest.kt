@@ -179,32 +179,27 @@ class ShaderConformanceTest {
 
     @Test
     fun groundAlphaMatchesGroundRamp() {
-        // Across the whole lower hemisphere and a little above the horizon, so the edge ramp and
-        // the discard boundary are both inside the sampled range.
+        // Across the whole lower hemisphere and a little above the horizon, so the edge ramp is
+        // inside the sampled range.
         val min = -90.0
         val max = 2.0
-        val sunAltitudeDeg = 12.0
         val opacity = 0.55
-        val actual =
-            evaluate(
-                "vec3(groundAlpha(mix($min, $max, t), $sunAltitudeDeg, $opacity))",
-            )
+        val actual = evaluate("vec3(groundAlpha(mix($min, $max, t), $opacity))")
         for (i in 0 until SAMPLES) {
-            val expected =
-                GroundRamp.alpha(inputAt(i, min, max), sunAltitudeDeg, opacity)
+            val expected = GroundRamp.alpha(inputAt(i, min, max), opacity)
             assertThat(actual[i][0]).isWithin(TOLERANCE).of(expected.toFloat())
         }
     }
 
     @Test
-    fun groundSolarScaleMatchesGroundRamp() {
-        // The day/night term is a function of the Sun alone, so it needs its own sweep: the
-        // alpha test above holds the Sun fixed and would not notice this curve being wrong.
+    fun groundDaylightMatchesGroundRamp() {
+        // The colour mix is a function of the Sun alone, so it needs its own sweep: the alpha
+        // test above has no solar input at all and could not notice this curve being wrong.
         val min = -30.0
         val max = 20.0
-        val actual = evaluate("vec3(groundSolarScale(mix($min, $max, t)))")
+        val actual = evaluate("vec3(groundDaylight(mix($min, $max, t)))")
         for (i in 0 until SAMPLES) {
-            val expected = GroundRamp.solarScale(inputAt(i, min, max))
+            val expected = GroundRamp.daylight(inputAt(i, min, max))
             assertThat(actual[i][0]).isWithin(TOLERANCE).of(expected.toFloat())
         }
     }

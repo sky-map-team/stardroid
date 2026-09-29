@@ -15,7 +15,8 @@ uniform vec2 uTanHalfFov;
 uniform vec3 uSunDir;
 uniform vec3 uZenithDir;
 
-uniform vec3 uGroundColor;
+uniform vec3 uGroundNightColor;
+uniform vec3 uGroundDayColor;
 uniform float uGroundOpacity;
 
 out vec4 fragColor;
@@ -33,7 +34,6 @@ void main() {
     // keeps the blend unit out of it for the majority of a typical frame.
     if (viewAltitudeDeg > 0.0) discard;
 
-    fragColor = vec4(
-        uGroundColor, groundAlpha(viewAltitudeDeg, sunAltitudeDeg, uGroundOpacity)
-    );
+    vec3 color = mix(uGroundNightColor, uGroundDayColor, groundDaylight(sunAltitudeDeg));
+    fragColor = vec4(color, groundAlpha(viewAltitudeDeg, uGroundOpacity));
 }

@@ -34,14 +34,24 @@ object SkyColors {
     val HORIZON_LINE = Rgba(0x59 / 255f, 0x7c / 255f, 0x4a / 255f, 0x78 / 255f)
 
     /**
-     * The ground below the horizon: [HORIZON_LINE]'s hue, opaque, so the horizon still reads as one
-     * green element (D40).
+     * The ground below the horizon at night: [HORIZON_LINE]'s hue, opaque, so the horizon still
+     * reads as one green element (D40).
      *
-     * Fully opaque here on purpose — the alpha that matters is `Ground.opacity` scaled by
+     * Fully opaque here on purpose — the alpha that matters is `Ground.opacity` shaped by
      * `GroundRamp`, and a translucent colour multiplied by a translucent ramp would make the
      * preference mean something different at every altitude.
      */
-    val GROUND = Rgba(0x59 / 255f, 0x7c / 255f, 0x4a / 255f, 1f)
+    val GROUND_NIGHT = Rgba(0x59 / 255f, 0x7c / 255f, 0x4a / 255f, 1f)
+
+    /**
+     * The ground in daylight: the same hue lightened toward a sunlit haze.
+     *
+     * The ground draws over black, so its brightness is capped by its colour — making it *lighter*
+     * is the only way to stop the lower hemisphere reading as a hole in a lit sky, and opacity
+     * cannot do it. Measured on device, the dark green at working opacity came out 2.8x darker
+     * than the sky it met.
+     */
+    val GROUND_DAY = Rgba(0x9c / 255f, 0xb4 / 255f, 0x8a / 255f, 1f)
 
     /**
      * Cardinal/zenith/nadir labels: a lighter, higher-luminance tint of the horizon line's green

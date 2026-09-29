@@ -100,18 +100,24 @@ data class SkyGradient(
  * the horizon-hugging term as the ring mesh it already had — see its `GroundDrawer`. So the two
  * backends differ here by more than tuning, which is deliberate.
  *
- * @property opacity how opaque the ground is where it meets the horizon, at full daylight, before
- *   [GroundRamp]'s depth and solar terms scale it down. This is a limit rather than an attained
- *   value — the antialiasing ramp means the realised peak is a fraction of a percent under it —
- *   and it is an upper bound everywhere else. Zero draws no ground at all, which is the off
- *   switch until this becomes a user preference.
- * @property color the ground's hue. Supplied by the producer because the palette lives in the app
- *   (`SkyColors`), as it does for every primitive's colour; the alpha channel is ignored in favour
- *   of [opacity].
+ * @property opacity how opaque the ground is where it meets the horizon, before
+ *   [GroundRamp.depthProfile] thins it with depth. This is a limit rather than an attained value —
+ *   the antialiasing ramp means the realised peak is a fraction of a percent under it — and it is
+ *   an upper bound everywhere else. Zero draws no ground at all, which is the off switch until
+ *   this becomes a user preference. It does **not** vary with the Sun; see [dayColor].
+ * @property nightColor the ground's colour once the Sun is well down.
+ * @property dayColor the ground's colour with the Sun up. Lighter than [nightColor], and this —
+ *   not opacity — is what keeps the lower hemisphere from reading as a hole punched in a lit
+ *   scene. The ground composites over black, so its brightness is capped at `opacity × colour`;
+ *   measured on device the single-colour version came out 2.8× darker than the sky it met, and no
+ *   opacity would have closed that gap. Both colours' alpha channels are ignored in favour of
+ *   [opacity]; they are supplied by the producer because the palette lives in the app
+ *   (`SkyColors`), as it does for every primitive's colour.
  */
 data class Ground(
     val opacity: Double = DEFAULT_OPACITY,
-    val color: Rgba = DEFAULT_COLOR,
+    val nightColor: Rgba = DEFAULT_NIGHT_COLOR,
+    val dayColor: Rgba = DEFAULT_DAY_COLOR,
 ) {
     init {
         require(opacity in 0.0..1.0) { "opacity must be in 0..1, was $opacity" }
@@ -126,7 +132,15 @@ data class Ground(
          */
         const val DEFAULT_OPACITY = 0.55
 
-        /** A desaturated green, matching `SkyColors.HORIZON_LINE`'s hue. */
-        val DEFAULT_COLOR = Rgba(0x59 / 255f, 0x7c / 255f, 0x4a / 255f, 1f)
+        /** A dark desaturated green, matching `SkyColors.HORIZON_LINE`'s hue. */
+        val DEFAULT_NIGHT_COLOR = Rgba(0x59 / 255f, 0x7c / 255f, 0x4a / 255f, 1f)
+
+        /**
+         * The same hue lightened and desaturated toward a sunlit haze. Its luminance is set so
+         * that at [DEFAULT_OPACITY] over black the ground lands near 70% of the daylight sky's
+         * measured luminance — dimmer than the sky, as ground should be, but close enough to read
+         * as lit rather than as a gap.
+         */
+        val DEFAULT_DAY_COLOR = Rgba(0x9c / 255f, 0xb4 / 255f, 0x8a / 255f, 1f)
     }
 }

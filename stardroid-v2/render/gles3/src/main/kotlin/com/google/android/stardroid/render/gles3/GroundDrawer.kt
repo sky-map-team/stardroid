@@ -68,10 +68,16 @@ object GroundDrawer {
 
         val ground = gradient.ground
         GLES30.glUniform3f(
-            program.uniform("uGroundColor"),
-            ground.color.r,
-            ground.color.g,
-            ground.color.b,
+            program.uniform("uGroundNightColor"),
+            ground.nightColor.r,
+            ground.nightColor.g,
+            ground.nightColor.b,
+        )
+        GLES30.glUniform3f(
+            program.uniform("uGroundDayColor"),
+            ground.dayColor.r,
+            ground.dayColor.g,
+            ground.dayColor.b,
         )
         GLES30.glUniform1f(program.uniform("uGroundOpacity"), ground.opacity.toFloat())
 

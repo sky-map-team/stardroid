@@ -47,6 +47,7 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.flatMapLatest
 import kotlinx.coroutines.flow.flowOf
@@ -330,7 +331,7 @@ class MapViewModel(
     private fun skyGradients(): Flow<SkyGradient?> =
         settings.showSkyGradient.flatMapLatest { on ->
             if (!on) return@flatMapLatest flowOf(null)
-            timeFlow.map { time ->
+            combine(timeFlow, locations) { time, location ->
                 SkyGradient(
                     sunDirection =
                         ephemeris
@@ -349,10 +350,25 @@ class MapViewModel(
                     // put the twilight bands visibly out of step with the horizon line the
                     // horizon layer draws from the same instant. Same instant in, same
                     // horizon out. (Magnetic declination is irrelevant to `up`.)
-                    zenithDirection = SkyModel.localFrame(time, currentLocation).up,
-                    ground = Ground(opacity = GROUND_OPACITY, color = SkyColors.GROUND),
+                    //
+                    // The *location* is combined in for the same reason, the hard way round:
+                    // reading the `currentLocation` field here instead left the gradient
+                    // recomputing only on a clock tick, while `HorizonLayer` combines the
+                    // location flow and moves at once. Startup goes default location then real
+                    // fix, so the horizon line jumped to the right place and the ground stayed
+                    // on the old zenith until the next tick — visibly two horizons, reported
+                    // from the device. It had been latent since the dome landed and nothing
+                    // could show it: GLES1's dome ignores the zenith entirely and GLES3's is
+                    // all soft gradients, whereas the ground has a hard edge at altitude zero.
+                    zenithDirection = SkyModel.localFrame(time, location).up,
+                    ground =
+                        Ground(
+                            opacity = GROUND_OPACITY,
+                            nightColor = SkyColors.GROUND_NIGHT,
+                            dayColor = SkyColors.GROUND_DAY,
+                        ),
                 )
-            }
+            }.distinctUntilChanged()
         }
 
     @Volatile

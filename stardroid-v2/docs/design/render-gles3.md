@@ -650,6 +650,16 @@ has to ask whether a difference is a bug.
   boundary exactly where a line is already drawn, and the eye merges them into one edge that
   means something. Both versions are equally smooth; only one is legible. Found by the maintainer
   looking at the screen — no test distinguishes them, and it is not clear what one would assert.
+- **A hard edge is a measuring instrument.** The ground's boundary sits at altitude zero exactly,
+  which made a long-latent flow bug visible the first time anyone looked: the sky gradient was
+  recomputed from a mutable `currentLocation` field inside a time-only flow, so it lagged a
+  location change until the next clock tick. Nothing before had an edge sharp enough to show it —
+  GLES1's dome ignores the zenith and GLES3's is entirely soft gradients. Worth remembering when
+  adding anything else with a crisp boundary: it will audit the state feeding it.
+- **Judge shading by measurement, not by adjective.** "Too faint", "flat", "looks like a hole" all
+  turned into specific numbers once screenshots were sampled — 0.19-vs-0.12 alpha for the flat
+  panel, 0.36 for the hole, 0.87 once fixed. Each time the number said which knob was wrong, and
+  twice it said the knob being turned could not have worked at all.
 - **Removing the cause can strand the fix.** Worth re-reading §7.2's reverted-glow note before
   adding any producer-side solar dependency: the question to ask is whether the thing being
   varied is a *surface whose appearance depends on how lit it is* (legitimate — the ground) or a
@@ -748,6 +758,31 @@ at fifteen ring altitudes spaced tightly near the horizon and loosely below it, 
 where the exponential actually moves. So this is not a GLES3-only feature — but the two will not
 match, and that is expected rather than a parity bug: fifteen Gouraud stops are not a per-pixel
 evaluation.
+
+**Shading is split by input, and that is the design.** Opacity is a function of view altitude
+alone — a mostly uniform wash that objects show through, denser near the horizon to suggest depth.
+Colour is a function of solar altitude alone — lighter by day, darker by night. Nothing depends on
+azimuth, and nothing reads what the sky shader computed.
+
+Two wrong turns got there, both worth keeping. The first varied *opacity* with the Sun, which
+cannot work: the ground composites over black, so its brightness is capped at `opacity × colour`,
+and it measured 2.8× darker than the sky it met near full opacity — the dial did not reach. The
+tempting fix was to let a dimmed sky show through so the ground inherits its light; the maintainer
+killed it in one line, because it would make the ground warm in the west and neutral in the east at
+sunset. **The ground is the same substance all the way round.** Making the day *colour* lighter is
+what actually worked: measured on device afterwards, sky 133 against ground 116 at the boundary, a
+ratio of 0.87 where it had been 0.36.
+
+A second wrong turn is recorded in `GroundRamp`: scaling the whole alpha by one night factor
+dimmed the depth gradient along with everything else, giving a 0.19-to-0.12 span across the entire
+lower hemisphere, which is invisible. It read as a flat panel, which is what it was.
+
+**It also surfaced a latent bug nothing else could show** (§10.2): `MapViewModel` read a
+`currentLocation` field inside a time-only flow, so the gradient re-emitted on clock ticks alone
+while `HorizonLayer` combines the location flow and moves at once. On a location change the horizon
+line jumped and the ground stayed put until the next tick — two horizons. Latent since the dome
+landed: GLES1's dome ignores the zenith entirely and GLES3's is all soft gradients, whereas the
+ground has a hard edge at altitude zero.
 
 **Still open.** `Ground.opacity` is a constant in `MapViewModel` (0.55), not a preference. §7.2
 wants it user-configurable and the value wants settling on a real screen first; zero is a complete

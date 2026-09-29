@@ -66,9 +66,9 @@ internal object GroundDrawer {
      * The altitudes, in degrees below the horizon, at which the ramp is sampled.
      *
      * Spaced tightly near the horizon and loosely below it because that is where
-     * [GroundRamp.depthProfile]'s exponential actually moves: with a seven-degree scale it has
-     * lost most of its range in the first fifteen degrees and is nearly flat by the nadir.
-     * Sampling uniformly instead would need four times the rings for the same fidelity.
+     * [GroundRamp.depthProfile]'s exponential actually moves: it has lost most of its range in
+     * the first twenty-odd degrees and is nearly flat by the nadir. Sampling uniformly instead
+     * would need several times the rings for the same fidelity.
      *
      * The first two entries deserve note: a ring exactly at the horizon has zero coverage and one
      * just below it has full coverage, so the pair reproduces the edge in a single narrow band.
@@ -123,6 +123,13 @@ internal object GroundDrawer {
         val sunAltitudeDeg =
             asin((sunDirection.normalized() dot up).coerceIn(-1.0, 1.0)) * RADIANS_TO_DEGREES
 
+        // The Sun sets the colour and nothing else: one mix for the whole shell, since it does
+        // not vary with view direction. Opacity is a function of altitude alone.
+        val daylight = GroundRamp.daylight(sunAltitudeDeg).toFloat()
+        val red = lerp(ground.nightColor.r, ground.dayColor.r, daylight)
+        val green = lerp(ground.nightColor.g, ground.dayColor.g, daylight)
+        val blue = lerp(ground.nightColor.b, ground.dayColor.b, daylight)
+
         val numRings = RING_ALTITUDES.size
         val ringLength = NUM_SEGMENTS + 1
         val numVertices = numRings * ringLength
@@ -137,10 +144,7 @@ internal object GroundDrawer {
             val tilt = -altitudeDeg * DEGREES_TO_RADIANS
             val cosTilt = cos(tilt)
             val sinTilt = sin(tilt)
-            val alpha =
-                GroundRamp
-                    .alpha(altitudeDeg, sunAltitudeDeg, ground.opacity)
-                    .toFloat()
+            val alpha = GroundRamp.alpha(altitudeDeg, ground.opacity).toFloat()
             for (i in 0..NUM_SEGMENTS) {
                 val fa = COS_ANGLES[i] * cosTilt
                 val fb = SIN_ANGLES[i] * cosTilt
@@ -148,11 +152,7 @@ internal object GroundDrawer {
                     .put((axisA.x * fa + axisB.x * fb + nadir.x * sinTilt).toFloat())
                     .put((axisA.y * fa + axisB.y * fb + nadir.y * sinTilt).toFloat())
                     .put((axisA.z * fa + axisB.z * fb + nadir.z * sinTilt).toFloat())
-                colorBuffer
-                    .put(ground.color.r)
-                    .put(ground.color.g)
-                    .put(ground.color.b)
-                    .put(alpha)
+                colorBuffer.put(red).put(green).put(blue).put(alpha)
             }
         }
 
@@ -178,6 +178,12 @@ internal object GroundDrawer {
         indexBuffer.rewind()
         return GroundBuffers(vertexBuffer, colorBuffer, indexBuffer, indexCount = numQuads * 6)
     }
+
+    private fun lerp(
+        from: Float,
+        to: Float,
+        t: Float,
+    ): Float = from + (to - from) * t
 
     /**
      * Any two orthonormal vectors perpendicular to [up]. The seed axis is chosen to be the one
