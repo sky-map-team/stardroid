@@ -203,20 +203,26 @@ void main() {
     vec3 linear = daylight * daylightFactor
         + sunsetGlow + earthShadow + beltOfVenus + twilightWash;
 
-    // Below the horizon, dim.
+    // Below the horizon, no sky at all.
     //
-    // v2 deliberately lets you look through the Earth at the sky beneath it, so there is no
-    // ground to draw — but the scattering model is only defined above the horizon, and
-    // clamping its input leaves the whole lower hemisphere painted flat at the horizon's
-    // brightness, which is the brightest part of the sky. The result was a large glowing wedge
-    // under the horizon line that dominated every daytime frame.
+    // v2 deliberately draws no ground, so you can look down through the Earth at the sky
+    // beneath it. But the scattering model is only defined above the horizon, and clamping its
+    // input leaves the whole lower hemisphere painted flat at the horizon's brightness, which
+    // is the brightest part of the sky — a large glowing wedge under the horizon line.
     //
-    // Dimming it keeps the "look through the Earth" view while saying plainly which side of the
-    // horizon you are on. This is a placeholder for the shaded translucent ground in §7.2,
-    // which is the real answer.
-    const float BELOW_HORIZON_DIM = 0.14;
-    float below = smoothstep(0.0, -4.0, viewAltitudeDeg);
-    linear *= mix(1.0, BELOW_HORIZON_DIM, below);
+    // So the sky ends at the horizon. The cut has to land on altitude zero exactly, because
+    // that is where the horizon line is already drawn: the two coincide and the eye reads one
+    // edge, the ground occluding the sky. An earlier version faded to a dim floor over four
+    // degrees instead, which put the sky's termination four degrees below the horizon line and
+    // read as a second, unexplained edge. The ramp here is a fraction of a degree, present only
+    // so the boundary antialiases instead of stair-stepping along the pixel grid.
+    //
+    // Stars, grid lines and planets below the horizon still draw, against black — which is
+    // already how they look at night, so it stays consistent. The shaded translucent ground in
+    // section 7.2 is the real answer, and would make this cut invisible.
+    const float HORIZON_CUT_RAMP_DEG = 0.25;
+    float below = smoothstep(0.0, -HORIZON_CUT_RAMP_DEG, viewAltitudeDeg);
+    linear *= 1.0 - below;
 
     // Everything above is computed in linear space; tone map, convert to sRGB, and dither.
     vec3 srgb = pow(toneMap(linear), vec3(1.0 / 2.2)) + dither(gl_FragCoord.xy);
