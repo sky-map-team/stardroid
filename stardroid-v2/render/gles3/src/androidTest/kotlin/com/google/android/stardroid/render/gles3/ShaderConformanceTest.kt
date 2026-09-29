@@ -14,6 +14,7 @@ import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
 import com.google.android.stardroid.render.api.EclipseGeometry
 import com.google.android.stardroid.render.api.EclipseShadow
+import com.google.android.stardroid.render.api.GroundRamp
 import com.google.android.stardroid.render.api.PhaseGeometry
 import com.google.android.stardroid.render.api.StellarRamps
 import com.google.common.truth.Truth.assertThat
@@ -173,6 +174,38 @@ class ShaderConformanceTest {
             val x = inputAt(i, -1.0, 1.0)
             val expected = PhaseGeometry.litOffset(x, y, fraction)
             assertThat((actual[i][0] - 0.5f) * 4f).isWithin(TOLERANCE * 4f).of(expected.toFloat())
+        }
+    }
+
+    @Test
+    fun groundAlphaMatchesGroundRamp() {
+        // Across the whole lower hemisphere and a little above the horizon, so the edge ramp and
+        // the discard boundary are both inside the sampled range.
+        val min = -90.0
+        val max = 2.0
+        val sunAltitudeDeg = 12.0
+        val opacity = 0.55
+        val actual =
+            evaluate(
+                "vec3(groundAlpha(mix($min, $max, t), $sunAltitudeDeg, $opacity))",
+            )
+        for (i in 0 until SAMPLES) {
+            val expected =
+                GroundRamp.alpha(inputAt(i, min, max), sunAltitudeDeg, opacity)
+            assertThat(actual[i][0]).isWithin(TOLERANCE).of(expected.toFloat())
+        }
+    }
+
+    @Test
+    fun groundSolarScaleMatchesGroundRamp() {
+        // The day/night term is a function of the Sun alone, so it needs its own sweep: the
+        // alpha test above holds the Sun fixed and would not notice this curve being wrong.
+        val min = -30.0
+        val max = 20.0
+        val actual = evaluate("vec3(groundSolarScale(mix($min, $max, t)))")
+        for (i in 0 until SAMPLES) {
+            val expected = GroundRamp.solarScale(inputAt(i, min, max))
+            assertThat(actual[i][0]).isWithin(TOLERANCE).of(expected.toFloat())
         }
     }
 

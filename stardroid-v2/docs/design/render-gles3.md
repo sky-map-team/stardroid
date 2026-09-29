@@ -381,12 +381,16 @@ purely to fake an exponential curve.
 observer-derived state like the sky dome, not scene content, so it belongs in `RenderState`
 alongside `SkyGradient` rather than as a layer.
 
-#### The shape the ground should take (maintainer, during the port)
+#### The shape the ground took (built — see §10.3)
 
 Arrived at on device, after the GLES3 dome was cut off at the horizon (§10.2). The cut works —
 it coincides with the horizon line, so it reads as occlusion — but it is a hole: the lower
 hemisphere is black, identical at noon and at midnight, and the hard edge is carried entirely
 by the line drawn on top of it. The ground is what turns the hole into a thing.
+
+**This shipped in this branch**, which §7.2 did not originally plan to. What follows is the
+design as specified; §10.3 records what building it actually changed, including the parts of the
+rest of §7.2 it made redundant.
 
 - **A solid translucent hemisphere, in the horizon's green**, rather than an absence. One
   primitive, no profile texture needed for a first cut.
@@ -697,3 +701,56 @@ has to ask whether a difference is a bug.
   terminator and the Earth-shadow geometry as independent uniform blocks and composites them in
   order, so a third shadow source — a transit, a Jovian moon — is another block and another
   multiply, with no re-architecture.
+
+## 10.3 The ground, and what it removed
+
+A fifth deviation, unplanned: §7.2 was a follow-up until cutting the sky dome at the horizon
+(§10.2) left a black hole below it that nothing else was going to fill. `Ground` is now a block
+inside `SkyGradient`, and each backend shades it for itself.
+
+**It is render state, not a layer, and the reason is worth pinning down** because the obvious
+criterion is wrong. "Layers are things at celestial positions" does not hold: the horizon and
+alt-az grid layers are both observer-relative, re-deriving their geometry from the local frame and
+resubmitting. The line that actually holds is **geometry versus per-pixel shading** — layers
+submit vertices, render state is a continuous function a shader evaluates. The horizon is a layer
+because it is a *line*. The ground is not, and the evidence is already in the tree: the two places
+this codebase faked a smooth gradient with geometry, v1's eight-band dome and the eight-ring
+horizon glow, both band visibly, and a vertex-coloured ground hemisphere would be a third.
+
+Nesting it inside `SkyGradient` rather than adding `RenderState.ground` does two things. It reuses
+`sunDirection` and `zenithDirection`, so the ground needed **no new producer plumbing at all** —
+the day/night term is derived in the shader from vectors that were already being uploaded. And it
+makes the product decision structural: one preference governs sky and ground together, and a null
+gradient cannot carry a ground, so no producer can get that wrong.
+
+**What it deleted.** Splitting the horizon's two jobs — reference geometry versus shading — turned
+out to be a net removal from the shared contract rather than an addition:
+
+- `GlowPrimitive`, `GlowRing`, and `LayerScene.glows` are gone. `HorizonLayer` was their only
+  producer anywhere in the codebase, so the whole primitive type and draw stage went with it.
+- Both backends' `GlowDrawer` and their tests are gone, replaced by a `GroundDrawer` each.
+- `GlState.BlendMode.ADDITIVE` is gone: the glow was its only consumer.
+- `HorizonLayer` lost its ring builder, its trig tables and six constants, and is now a line plus
+  four labels.
+- §7.2's "the glow, properly" bullet is subsumed rather than pending — the depth cue the glow was
+  really providing is now `GroundRamp.depthProfile`.
+
+**The draw-order change was nearly free**, by luck rather than design. Layers sort by depth and the
+horizon layer was already the deepest at 90, so a ground pass at `GROUND_DEPTH = 85` lands exactly
+where it needs to: after every object it should obscure, before the line and cardinal labels that
+must stay legible on top. That invariant — *the horizon layer must be the deepest layer* — was
+previously true only because 90 happened to be the largest number anyone picked, and a layer added
+deeper would have been silently washed over with no error anywhere. It is now a named constant with
+a test.
+
+**Deliberate asymmetry between the backends.** GLES1 gets a real ground too, sampling `GroundRamp`
+at fifteen ring altitudes spaced tightly near the horizon and loosely below it, because that is
+where the exponential actually moves. So this is not a GLES3-only feature — but the two will not
+match, and that is expected rather than a parity bug: fifteen Gouraud stops are not a per-pixel
+evaluation.
+
+**Still open.** `Ground.opacity` is a constant in `MapViewModel` (0.55), not a preference. §7.2
+wants it user-configurable and the value wants settling on a real screen first; zero is a complete
+off switch in the meantime. **Whether it should default on is undecided** and needs deciding before
+merge, because unlike the rest of this branch the ground is not behind the GLES3 experiment flag —
+it changes GLES1's appearance too.

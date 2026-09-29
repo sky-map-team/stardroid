@@ -68,7 +68,7 @@ class ShaderProgram private constructor(
         const val COMMON_ASSET = "shaders/common.glsl"
 
         /** Every program this backend compiles at surface creation. */
-        val PROGRAM_NAMES = listOf("point", "line", "sprite", "skyquad", "glow", "sky", "scrim")
+        val PROGRAM_NAMES = listOf("point", "line", "sprite", "skyquad", "ground", "sky", "scrim")
 
         /**
          * Compiles and links `shaders/[name].vert` and `shaders/[name].frag` from [assets].

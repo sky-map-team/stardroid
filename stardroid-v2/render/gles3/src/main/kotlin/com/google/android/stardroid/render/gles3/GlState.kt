@@ -37,9 +37,6 @@ class GlState {
 
         /** Ordinary translucency: `SRC_ALPHA, ONE_MINUS_SRC_ALPHA`. */
         ALPHA,
-
-        /** Adds light to whatever is behind (the horizon glow): `SRC_ALPHA, ONE`. */
-        ADDITIVE,
     }
 
     fun useProgram(shader: ShaderProgram) {
@@ -70,10 +67,6 @@ class GlState {
             BlendMode.ALPHA -> {
                 GLES30.glEnable(GLES30.GL_BLEND)
                 GLES30.glBlendFunc(GLES30.GL_SRC_ALPHA, GLES30.GL_ONE_MINUS_SRC_ALPHA)
-            }
-            BlendMode.ADDITIVE -> {
-                GLES30.glEnable(GLES30.GL_BLEND)
-                GLES30.glBlendFunc(GLES30.GL_SRC_ALPHA, GLES30.GL_ONE)
             }
         }
         blendMode = mode

@@ -11,12 +11,15 @@ package com.google.android.stardroid.render.gles1
 
 import android.graphics.Bitmap
 import android.opengl.GLSurfaceView
+import com.google.android.stardroid.math.Vector3
+import com.google.android.stardroid.render.api.Ground
 import com.google.android.stardroid.render.api.ImageRef
 import com.google.android.stardroid.render.api.LayerId
 import com.google.android.stardroid.render.api.LayerScene
 import com.google.android.stardroid.render.api.RenderState
 import com.google.android.stardroid.render.api.RendererInfo
 import com.google.android.stardroid.render.api.SkyCamera
+import com.google.android.stardroid.render.api.SkyGradient
 import com.google.android.stardroid.render.api.SkyProjection
 import com.google.android.stardroid.render.api.SkyRenderer
 import com.google.android.stardroid.render.api.Viewport
@@ -83,7 +86,10 @@ class GLSkyRenderer(
     // buffer — a 100k-vertex re-style and re-sort — when, say, only labelScaleFactor changed.
     private val pointCache = HashMap<LayerId, BuildCache<PointBuffers>>()
     private val lineCache = HashMap<LayerId, BuildCache<LineBuffers>>()
-    private val glowCache = HashMap<LayerId, BuildCache<GlowBuffers>>()
+    // The ground is one mesh for the whole frame rather than per layer, so it gets a plain field
+    // instead of a BuildCache keyed by LayerId.
+    private var groundBuffers: GroundBuffers? = null
+    private var groundKey: Triple<Ground, Vector3, Vector3>? = null
 
     // GL-thread-only: the sky-gradient dome, built on first use. Pure client-side buffers with
     // static geometry — the per-frame sun rotation happens on the modelview stack — so context
@@ -157,7 +163,8 @@ class GLSkyRenderer(
         textureCache.onContextLost()
         pointCache.clear()
         lineCache.clear()
-        glowCache.clear()
+        groundBuffers = null
+        groundKey = null
         imageCache.clear()
         iconCache.clear()
         labelCache.clear()
@@ -248,7 +255,7 @@ class GLSkyRenderer(
             SkyGradientDrawer.draw(gl, buffers, gradient.sunDirection)
         }
 
-        // Draw layers back-to-front; within each layer: glows → lines → images → points → labels
+        // Draw layers back-to-front; within each layer: lines → images → points → labels
         // (D18 painter's algorithm). Read the version before snapshotting the map: a submit that
         // races with the sort bumps the version again, so the next frame re-sorts.
         val version = scenesVersion.get()
@@ -261,24 +268,23 @@ class GLSkyRenderer(
             pruneGpuCache(labelCache) { LabelDrawer.release(gl, it.gpuData) }
             pointCache.keys.retainAll(scenes.keys)
             lineCache.keys.retainAll(scenes.keys)
-            glowCache.keys.retainAll(scenes.keys)
             drawOrder = scenes.entries.sortedBy { it.value.depth }.map { it.key to it.value }
             drawOrderVersion = version
         }
         if (state.nightMode != pointKey.first || state.magnitudeLimit != pointKey.second) {
             pointKey = Pair(state.nightMode, state.magnitudeLimit)
         }
+        // The ground is drawn part-way through the layer order rather than before or after it, so
+        // it washes over everything it should occlude while the horizon layer's line and cardinal
+        // labels stay crisp on top. `groundDrawn` exists because the horizon layer is
+        // user-disableable: with nothing deeper than the ground left to draw, the loop never
+        // crosses the threshold and the trailing call below has to do it.
+        var groundDrawn = false
         for (i in drawOrder.indices) {
             val (layerId, scene) = drawOrder[i]
-            // 0. Glows (the horizon's gradient mesh), behind the layer's own lines so the crisp
-            // horizon line draws on top. Day and night colors are both baked at build time and
-            // picked at draw time, so glow geometry depends on no RenderState field.
-            if (scene.glows.isNotEmpty()) {
-                val glowBuffers =
-                    cachedCpu(glowCache, layerId, scene, null, viewport.density) {
-                        GlowDrawer.build(scene.glows)
-                    }
-                GlowDrawer.draw(gl, glowBuffers, state.nightMode)
+            if (!groundDrawn && scene.depth >= LayerScene.GROUND_DEPTH) {
+                drawGround(gl, state, gradient)
+                groundDrawn = true
             }
 
             // 1. Lines. Night mode is applied per segment at draw time, so line geometry
@@ -318,6 +324,37 @@ class GLSkyRenderer(
             val labelGpu = cachedLabel(gl, layerId, scene, state, viewport.density)
             LabelDrawer.draw(gl, labelGpu, camera, projection, viewport, state)
         }
+        if (!groundDrawn) drawGround(gl, state, gradient)
+    }
+
+    /**
+     * Draws the ground shell, skipped under the same conditions as the sky dome above it.
+     *
+     * Night mode skips it because the sky it would sit against is already black, so the ground
+     * could only dim stars — and not dimming stars is the whole point of a view that looks through
+     * the Earth. Transparent-background (AR) mode skips it for the same reason the dome does: there
+     * is a camera image behind the surface, and the real ground is already in it.
+     *
+     * Rebuilt only when the Sun or the observer's zenith moves, which is roughly once a minute,
+     * not per frame.
+     */
+    private fun drawGround(
+        gl: GL10,
+        state: RenderState,
+        gradient: SkyGradient?,
+    ) {
+        if (gradient == null || state.nightMode || state.transparentBackground) return
+        val key = Triple(gradient.ground, gradient.sunDirection, gradient.zenithDirection)
+        if (key != groundKey) {
+            groundBuffers =
+                GroundDrawer.build(
+                    gradient.ground,
+                    gradient.sunDirection,
+                    gradient.zenithDirection,
+                )
+            groundKey = key
+        }
+        groundBuffers?.let { GroundDrawer.draw(gl, it) }
     }
 
     // ---- cache helpers (all GL-thread-only) -----------------------------------------

@@ -28,6 +28,8 @@ import com.google.android.stardroid.math.RaDec
 import com.google.android.stardroid.math.Vector3
 import com.google.android.stardroid.math.normalizeDegrees
 import com.google.android.stardroid.math.rotationMatrix
+import com.google.android.stardroid.layers.SkyColors
+import com.google.android.stardroid.render.api.Ground
 import com.google.android.stardroid.render.api.RenderState
 import com.google.android.stardroid.render.api.SkyCamera
 import com.google.android.stardroid.render.api.SkyGradient
@@ -317,6 +319,12 @@ class MapViewModel(
      * geocentric direction rides the shared clock bus (paying off the D41 debt): under time
      * travel the dome tracks the same accelerated instants the layers see, so it can never
      * disagree with `SolarSystemLayer`'s sun image.
+     *
+     * This also carries the [Ground], which is why `showSkyGradient` switches both: one preference
+     * means "draw the atmosphere", and turning it off gives the bare star-chart view with the
+     * ground transparent too — which is what someone looking through the Earth for the Sun wants.
+     * The horizon *line* and its cardinal labels are a separate layer with its own toggle, since
+     * they answer where you are pointing rather than what is below you.
      */
     @OptIn(ExperimentalCoroutinesApi::class)
     private fun skyGradients(): Flow<SkyGradient?> =
@@ -342,6 +350,7 @@ class MapViewModel(
                     // horizon layer draws from the same instant. Same instant in, same
                     // horizon out. (Magnetic declination is irrelevant to `up`.)
                     zenithDirection = SkyModel.localFrame(time, currentLocation).up,
+                    ground = Ground(opacity = GROUND_OPACITY, color = SkyColors.GROUND),
                 )
             }
         }
@@ -974,6 +983,15 @@ class MapViewModel(
     }
 
     companion object {
+
+        /**
+         * How opaque the ground is at the horizon in full daylight.
+         *
+         * A constant rather than a preference for now, deliberately: the value wants settling on a
+         * real screen before it is worth a settings row, and zero here is a complete off switch in
+         * the meantime. `Ground`'s own default documents the intent; this is the dial.
+         */
+        private const val GROUND_OPACITY = 0.55
         /**
          * v1's initial camera: due south-ish along the equator, celestial north up.
          *

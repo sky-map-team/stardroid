@@ -64,3 +64,46 @@ vec3 eclipseTint(vec2 p, float umbra, float penumbra, vec2 center) {
     }
     return vec3(1.0);
 }
+
+// GroundRamp, transcribed. The Kotlin is the golden reference; the conformance test renders these
+// through the shader and asserts they agree.
+//
+// Three independent terms multiply into the ground's alpha, each answering a different question:
+// where does the ground stop, how does it recede with depth, and how lit is it. GLES1 evaluates
+// the same functions on the CPU, once per ring of a shell mesh whose ring altitudes are picked to
+// trace these curves piecewise -- which is the whole difference between the two backends here.
+const float GROUND_EDGE_RAMP_DEG = 0.25;
+const float GROUND_DEPTH_SCALE_DEG = 7.0;
+const float GROUND_NADIR_FRACTION = 0.6;
+const float GROUND_NIGHT_SUN_ALTITUDE_DEG = -12.0;
+const float GROUND_DAY_SUN_ALTITUDE_DEG = 0.0;
+const float GROUND_NIGHT_FRACTION = 0.35;
+
+// Zero above the horizon, one below it. Written as the complement of an ascending smoothstep
+// because GLSL leaves smoothstep undefined when edge0 > edge1, which the Kotlin original relies
+// on; the two forms are algebraically identical.
+float groundCoverage(float viewAltitudeDeg) {
+    return 1.0 - smoothstep(-GROUND_EDGE_RAMP_DEG, 0.0, viewAltitudeDeg);
+}
+
+// The depth cue: 1 at the horizon, decaying to GROUND_NADIR_FRACTION far below it.
+float groundDepthProfile(float viewAltitudeDeg) {
+    return GROUND_NADIR_FRACTION
+        + (1.0 - GROUND_NADIR_FRACTION)
+            * exp(-abs(viewAltitudeDeg) / GROUND_DEPTH_SCALE_DEG);
+}
+
+// Full strength in daylight, easing to GROUND_NIGHT_FRACTION once the Sun is well down.
+float groundSolarScale(float sunAltitudeDeg) {
+    float day = smoothstep(
+        GROUND_NIGHT_SUN_ALTITUDE_DEG, GROUND_DAY_SUN_ALTITUDE_DEG, sunAltitudeDeg
+    );
+    return GROUND_NIGHT_FRACTION + (1.0 - GROUND_NIGHT_FRACTION) * day;
+}
+
+float groundAlpha(float viewAltitudeDeg, float sunAltitudeDeg, float opacity) {
+    return opacity
+        * groundCoverage(viewAltitudeDeg)
+        * groundDepthProfile(viewAltitudeDeg)
+        * groundSolarScale(sunAltitudeDeg);
+}

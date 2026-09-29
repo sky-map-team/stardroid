@@ -30,8 +30,18 @@ import com.google.android.stardroid.render.api.Rgba
  * The night-mode red transform stays the backend's (D12); these are day-mode colors.
  */
 object SkyColors {
-    /** Horizon circle and glow: a muted green (upstream `horizon_line` `#78597C4A`). */
+    /** Horizon circle: a muted green (upstream `horizon_line` `#78597C4A`). */
     val HORIZON_LINE = Rgba(0x59 / 255f, 0x7c / 255f, 0x4a / 255f, 0x78 / 255f)
+
+    /**
+     * The ground below the horizon: [HORIZON_LINE]'s hue, opaque, so the horizon still reads as one
+     * green element (D40).
+     *
+     * Fully opaque here on purpose — the alpha that matters is `Ground.opacity` scaled by
+     * `GroundRamp`, and a translucent colour multiplied by a translucent ramp would make the
+     * preference mean something different at every altitude.
+     */
+    val GROUND = Rgba(0x59 / 255f, 0x7c / 255f, 0x4a / 255f, 1f)
 
     /**
      * Cardinal/zenith/nadir labels: a lighter, higher-luminance tint of the horizon line's green
