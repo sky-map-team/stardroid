@@ -650,6 +650,22 @@ has to ask whether a difference is a bug.
   boundary exactly where a line is already drawn, and the eye merges them into one edge that
   means something. Both versions are equally smooth; only one is legible. Found by the maintainer
   looking at the screen — no test distinguishes them, and it is not clear what one would assert.
+- **Compiling an instrumented test is not running it.** `ShaderCompilationTest` links every
+  program on a real GL context precisely so a bad shader is a test failure rather than a black
+  screen, and it was defeated by being compiled and not executed — GLSL is compiled by the driver
+  at runtime, so `compileDebugAndroidTestKotlin` proves only that the Kotlin is well-formed. The
+  shader that crashed was `point.vert`, which nothing in the change had touched: a `fwidth` call
+  added to `common.glsl` broke every vertex shader in the app, because the shared prelude is
+  spliced into every program and screen-derivative builtins exist only in the fragment stage.
+  Run `connectedDebugAndroidTest` after touching any shader; the gate is worthless otherwise.
+- **A shared prelude is shared with both stages.** `compose()` now emits `#define FRAGMENT_STAGE`
+  so `common.glsl` can hold fragment-only code, which is the general form of the problem above.
+- **An angular constant is a pixel count that changes with zoom.** The horizon's antialiasing ramp
+  was a fixed 0.25°: invisible at a normal field of view, sixty pixels of sky dissolving into
+  ground at high zoom, with the horizon line stranded at the top of the band instead of sitting on
+  the boundary. Anything meant to read as *sharp* wants `fwidth`, not a constant. The same change
+  exposed a second-order version of the same error — the ramp hung below zero rather than
+  straddling it, so even at the right width the apparent edge was offset from the line.
 - **A hard edge is a measuring instrument.** The ground's boundary sits at altitude zero exactly,
   which made a long-latent flow bug visible the first time anyone looked: the sky gradient was
   recomputed from a mutable `currentLocation` field inside a time-only flow, so it lagged a
