@@ -42,14 +42,33 @@ import org.junit.runner.RunWith
  * Once CI migrates to a hardware-accelerated Pixel 3a AVD the threshold should be raised
  * to [MIN_FRAMES_FOR_PIXEL_3A] = 150 (30 fps × 5 s).
  *
- * **Both backends are gated.** Every benchmark runs once per [RendererBackend], because the
- * whole premise of the GLES3 port is that it should beat GLES1 (render-gles3.md §4: "Phase 1
- * should *beat* GLES1 comfortably; if it does not, something is wrong and we want to know
- * before Part B adds load"). A gate that only ever exercised the old backend would leave that
- * claim untested while still reporting green — which is exactly what it did until this was
- * parameterised. The two runs are reported side by side so the comparison is readable in the
- * output; they are deliberately *not* asserted against each other, since frame counts move with
- * thermal state and scheduling and a relative assertion would flake rather than inform.
+ * **Both backends are gated.** Every benchmark runs once per [RendererBackend], so a change that
+ * breaks one and not the other cannot report green — which is what happened until this was
+ * parameterised, when every variant silently measured GLES1.
+ *
+ * **What this gate is, and is not.** It is a *catastrophic-regression* detector: it catches a
+ * renderer that hangs, crashes, or collapses to single-digit frame rates. It is **not** a
+ * comparison between the backends, and by design no longer pretends to be — a decision taken
+ * deliberately rather than a limitation being tolerated.
+ *
+ * It cannot compare them for two independent reasons, and fixing either alone would not help.
+ * The measurement is pinned to the display: frames per second saturates at the panel's refresh
+ * rate, and [DrawTimeStats] does not escape it either, because a vsync-throttled driver
+ * back-pressures *inside* the GL calls, so the wait lands in the measured region. On a Pixel 9
+ * Pro both backends report a ~7.5 ms mean against an 8.33 ms budget, in both the opaque and
+ * translucent variants — four numbers within 0.1 ms across configurations doing materially
+ * different work.
+ *
+ * And the scene does not exercise what differs. The load is points, where `StellarRamps.sizeDp`
+ * yields two sizes, so GLES1 already batches 100k points into *two* draw calls and GLES3 makes
+ * it one — the "one draw call instead of dozens" premise does not apply here. The path where
+ * GLES3 genuinely wins is labels, one instanced draw per atlas page against a
+ * `glPushMatrix`/`glDrawArrays` per label, and the declutterer caps those at a few dozen.
+ *
+ * Making it a real comparison needs an offscreen render loop that never swaps (or GPU timer
+ * queries) *and* a benchmark-only path that loads the labels past the declutter cap. Deferred;
+ * see render-gles3.md §5. The two runs are still reported side by side so the numbers are
+ * readable, and are deliberately not asserted against each other.
  *
  * **Timing:** every measurement starts from the first frame the GL thread actually draws, never
  * from a fixed sleep. On SwiftShader the activity can take more than 6 s to reach `Displayed`

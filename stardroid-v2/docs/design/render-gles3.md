@@ -253,10 +253,9 @@ renderer got more complex. That trade must be paid for deliberately:
    draw call instead of dozens); if it does not, something is wrong and we want to know before
    Part B adds load.
 
-   **This expectation remains unverified, and the gate as written cannot verify it** — see
-   §10.2. Both backends come out vsync-bound on real hardware (four means within 0.1 ms of each
-   other against an 8.33 ms budget), so the gate measures the panel, not the renderer. Read the
-   sentence above as a prediction that still needs an experiment, not as a result.
+   **Superseded by the decision in §5.1.** That expectation was never verified, the gate as
+   written cannot verify it, and the gate's scope has been narrowed to catastrophic-regression
+   detection instead. Read the sentence above as a prediction that still needs an experiment.
 
 ---
 
@@ -278,6 +277,36 @@ rebuilds — but three specific things need watching:
   render mode — never a global change.
 
 ---
+
+### 5.1 The D19 gate is a smoke gate, deliberately (decided)
+
+The perf gate detects catastrophic regressions — a renderer that hangs, crashes or collapses to
+single-digit frame rates. It is **not** a comparison between the backends, and the attempt to make
+it one is deferred rather than pending.
+
+It cannot compare them for two independent reasons, which is why fixing either alone would not
+help:
+
+- **The measurement is pinned to the display.** Frames per second saturates at the panel's refresh
+  rate, and `DrawTimeStats` does not get underneath it either: a vsync-throttled driver
+  back-pressures *inside* the GL calls, so the wait lands in the measured region rather than in
+  `eglSwapBuffers`. Measured on a Pixel 9 Pro, both backends report a ~7.5 ms mean against an
+  8.33 ms budget, in both the opaque and translucent variants — four numbers within 0.1 ms across
+  configurations that do materially different work.
+- **The scene does not exercise what differs.** The load is points, and `StellarRamps.sizeDp`
+  yields two sizes, so GLES1 already batches 100k points into *two* draw calls where GLES3 makes
+  it one. §4's "one draw call instead of dozens" simply does not describe this scene. The path
+  where GLES3 genuinely wins is labels — one instanced draw per atlas page against a
+  `glPushMatrix`/`glDrawArrays` per label — and the declutterer caps those at a few dozen.
+
+**What a real comparison would take**, if it is ever wanted: an offscreen render loop that never
+swaps (no extension needed, and it removes the back-pressure that defeats `DrawTimeStats`), or GPU
+timer queries via `EXT_disjoint_timer_query`; *plus* a benchmark-only path that loads labels past
+the declutter cap. Roughly half a day for the first and an hour for the second.
+
+Worth being explicit about the cost of deferring: **there is currently no evidence that GLES3 is
+faster than GLES1**, only an argument that it should be. Nothing in this branch should be
+justified on performance grounds until that experiment is run.
 
 ## 6. Migration and the fate of `:render:gles1`
 
