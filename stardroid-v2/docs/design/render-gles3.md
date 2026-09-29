@@ -253,6 +253,11 @@ renderer got more complex. That trade must be paid for deliberately:
    draw call instead of dozens); if it does not, something is wrong and we want to know before
    Part B adds load.
 
+   **This expectation remains unverified, and the gate as written cannot verify it** — see
+   §10.2. Both backends come out vsync-bound on real hardware (four means within 0.1 ms of each
+   other against an 8.33 ms budget), so the gate measures the panel, not the renderer. Read the
+   sentence above as a prediction that still needs an experiment, not as a result.
+
 ---
 
 ## 5. Performance and power

@@ -36,8 +36,12 @@ tasks.withType<Test>().configureEach {
     // see. Without declaring them the task stays UP-TO-DATE when only a shader changes -- so the
     // one edit the guard exists to catch is exactly the edit that would not re-run it. Found by
     // changing a constant and watching the suite pass.
+    val shaderDir = layout.projectDirectory.dir("src/main/assets/shaders")
     inputs
-        .dir(layout.projectDirectory.dir("src/main/assets/shaders"))
+        .dir(shaderDir)
         .withPropertyName("shaderSources")
         .withPathSensitivity(PathSensitivity.RELATIVE)
+    // Handed to the test rather than letting it guess a working directory, so the path Gradle
+    // watches and the path the test reads are the same expression.
+    systemProperty("skymap.shaderDir", shaderDir.asFile.absolutePath)
 }

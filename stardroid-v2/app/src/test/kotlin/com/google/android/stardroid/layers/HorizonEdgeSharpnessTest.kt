@@ -35,6 +35,11 @@ class HorizonEdgeSharpnessTest {
      */
     private val widestShortSidePx = 1600
 
+    /**
+     * Conservative by construction: the shader uses `fwidth`, which is `|dFdx| + |dFdy|` and so up
+     * to about 1.4x the per-pixel angle on a diagonal horizon. Using the per-pixel angle
+     * understates the real derivative, erring toward the floor binding sooner than it will.
+     */
     private fun bandWidthPx(fovDeg: Double): Double {
         val perPixelDeg = fovDeg / widestShortSidePx
         val halfWidthDeg = perPixelDeg.coerceIn(GroundRamp.EDGE_RAMP_MIN_DEG, GroundRamp.EDGE_RAMP_DEG)
@@ -52,12 +57,17 @@ class HorizonEdgeSharpnessTest {
     }
 
     @Test
-    fun `the floor is still above fp32 noise, so it cannot collapse to zero`() {
+    fun `the floor cannot collapse toward zero, where smoothstep is undefined again`() {
         // The other side of the window, and the one a bare isGreaterThan(0.0) leaves open: a floor
         // of 1e-30 satisfies every upper bound while sitting below fp32 resolution and inside
         // denormal range, where GPUs flush to zero. That restores edge0 == edge1 -- the undefined
-        // smoothstep this constant exists to prevent. `asin(dot)` carries roughly 3e-6 degrees of
-        // noise near the horizon, so the floor must stay a few multiples above it.
+        // smoothstep this constant exists to prevent.
+        //
+        // Deliberately looser than the ~3e-6 degrees of fp32 noise `asin(dot)` carries near the
+        // horizon. Asserting that figure directly would put the bound at ~1e-5 -- the constant's
+        // current value -- leaving a window of [1e-5, 1.9e-5] with the constant sitting on its own
+        // lower edge, which fails the moment anyone nudges it in the safe direction. The noise
+        // figure is a design note on the constant; this is the assertion that catches the bug.
         assertThat(GroundRamp.EDGE_RAMP_MIN_DEG).isAtLeast(1e-6)
     }
 
@@ -67,5 +77,4 @@ class HorizonEdgeSharpnessTest {
             assertThat(bandWidthPx(fovDeg)).isAtMost(4.0)
         }
     }
-
 }

@@ -10,6 +10,7 @@
 package com.google.android.stardroid.render.gles3
 
 import com.google.android.stardroid.render.api.GroundRamp
+import com.google.android.stardroid.render.api.StellarRamps
 import com.google.common.truth.Truth.assertThat
 import org.junit.jupiter.api.Test
 import java.io.File
@@ -27,26 +28,31 @@ import java.io.File
  * device and fails in `./gradlew check` where it will actually be seen.
  */
 class ShaderConstantParityTest {
-    private val source: String by lazy {
-        val candidates =
-            listOf(
-                File("src/main/assets/shaders/common.glsl"),
-                File("render/gles3/src/main/assets/shaders/common.glsl"),
-                File("stardroid-v2/render/gles3/src/main/assets/shaders/common.glsl"),
-            )
-        val file =
-            candidates.firstOrNull { it.isFile }
-                ?: error(
-                    "common.glsl not found; looked in ${candidates.map { it.absolutePath }}",
-                )
-        file.readText()
+    private companion object {
+        const val SHADER_DIR_PROPERTY = "skymap.shaderDir"
     }
 
-    /** The value of `const float <name> = <literal>;`, which is the only form this file uses. */
+    private val source: String by lazy {
+        // The directory comes from the build script, which also declares it as a task input, so
+        // the path this reads and the path Gradle watches are one expression. Guessing working
+        // directories instead would let the two drift silently apart.
+        val dir =
+            System.getProperty(SHADER_DIR_PROPERTY)
+                ?: error("$SHADER_DIR_PROPERTY is not set; see render/gles3/build.gradle.kts")
+        File(dir, "common.glsl").readText()
+    }
+
+    /**
+     * The value of `const float <name> = <literal>;`, the only form this file uses.
+     *
+     * Anchored to the start of a line (allowing indentation, since some constants are
+     * function-local) so a commented-out or duplicated declaration cannot be matched in place of
+     * the live one — `find` returns the first hit, and the first hit should be the real one.
+     */
     private fun glslConstant(name: String): Double {
+        val pattern = Regex("(?m)^\\s*const\\s+float\\s+$name\\s*=\\s*([-+0-9.eE]+)\\s*;")
         val match =
-            Regex("""const\s+float\s+$name\s*=\s*([-+0-9.eE]+)\s*;""").find(source)
-                ?: error("No `const float $name` in common.glsl")
+            pattern.find(source) ?: error("No `const float $name` in common.glsl")
         return match.groupValues[1].toDouble()
     }
 
@@ -64,6 +70,19 @@ class ShaderConstantParityTest {
         for ((name, kotlinValue) in expected) {
             assertThat(glslConstant(name)).isWithin(1e-12).of(kotlinValue)
         }
+    }
+
+    @Test
+    fun `the magnitude fade constants match their Kotlin originals`() {
+        // Function-local in the GLSL rather than file-scope, and until now checked only by the
+        // conformance test — which needs a device, so it never runs in `check`. Same gap this
+        // test closed for the ground constants; the anchored regex reaches both scopes.
+        assertThat(glslConstant("fadeRange"))
+            .isWithin(1e-12)
+            .of(StellarRamps.FADE_RANGE_MAGNITUDES)
+        assertThat(glslConstant("faintAlphaFloor"))
+            .isWithin(1e-6)
+            .of(StellarRamps.FAINT_ALPHA_FLOOR.toDouble())
     }
 
     @Test
