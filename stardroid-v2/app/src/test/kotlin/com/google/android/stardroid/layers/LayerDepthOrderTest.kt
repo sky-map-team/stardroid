@@ -78,6 +78,17 @@ class LayerDepthOrderTest {
     }
 
     @Test
+    fun `every registered layer is also a toggleable id, so none escapes this test`() {
+        // The assertions above only constrain layers the registry actually builds. Nothing ties
+        // that set to TOGGLEABLE_IDS, so a layer registered under some future condition could be
+        // absent here and no test would notice -- which is what happened with SatelliteLayer
+        // while `satellitesEnabled` was false. Pinning the two lists equal makes adding a layer
+        // to one and not the other a build failure.
+        assertThat(registry.layers.map { it.id }.toSet())
+            .isEqualTo(LayerRegistry.TOGGLEABLE_IDS.toSet())
+    }
+
+    @Test
     fun `the ground sits strictly between the ordinary layers and the horizon`() {
         // Pins the constant itself rather than only its relationship to today's layers: if
         // GROUND_DEPTH were moved past the horizon, the tests above would still pass while the

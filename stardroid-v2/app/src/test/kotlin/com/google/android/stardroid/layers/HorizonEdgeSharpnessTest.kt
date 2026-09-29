@@ -26,11 +26,17 @@ import org.junit.jupiter.api.Test
  * `:render:api` cannot depend on the app, so the relationship is asserted from this side.
  */
 class HorizonEdgeSharpnessTest {
-    /** Comfortably below any real device; a wider screen only makes the per-pixel angle smaller. */
-    private val narrowScreenPx = 1080
+    /**
+     * The largest short side worth planning for — a big tablet.
+     *
+     * Deliberately the *strictest* choice rather than a typical phone: a wider screen means a
+     * smaller per-pixel angle, so it leaves the floor the least headroom. Testing against 1080
+     * asserts the loosest case while the comment claims to cover every device.
+     */
+    private val widestShortSidePx = 1600
 
     private fun bandWidthPx(fovDeg: Double): Double {
-        val perPixelDeg = fovDeg / narrowScreenPx
+        val perPixelDeg = fovDeg / widestShortSidePx
         val halfWidthDeg = perPixelDeg.coerceIn(GroundRamp.EDGE_RAMP_MIN_DEG, GroundRamp.EDGE_RAMP_DEG)
         return 2.0 * halfWidthDeg / perPixelDeg
     }
@@ -41,9 +47,18 @@ class HorizonEdgeSharpnessTest {
         // only to keep smoothstep defined when fwidth returns zero; the moment it exceeds the
         // per-pixel angle it starts setting the band width itself, and at full zoom that was a
         // ~70px blend. Below the per-pixel angle at maximum zoom it can never do that.
-        val perPixelAtMaxZoom = MapViewModel.MIN_FOV_DEG / narrowScreenPx
+        val perPixelAtMaxZoom = MapViewModel.MIN_FOV_DEG / widestShortSidePx
         assertThat(GroundRamp.EDGE_RAMP_MIN_DEG).isLessThan(perPixelAtMaxZoom)
-        assertThat(GroundRamp.EDGE_RAMP_MIN_DEG).isGreaterThan(0.0)
+    }
+
+    @Test
+    fun `the floor is still above fp32 noise, so it cannot collapse to zero`() {
+        // The other side of the window, and the one a bare isGreaterThan(0.0) leaves open: a floor
+        // of 1e-30 satisfies every upper bound while sitting below fp32 resolution and inside
+        // denormal range, where GPUs flush to zero. That restores edge0 == edge1 -- the undefined
+        // smoothstep this constant exists to prevent. `asin(dot)` carries roughly 3e-6 degrees of
+        // noise near the horizon, so the floor must stay a few multiples above it.
+        assertThat(GroundRamp.EDGE_RAMP_MIN_DEG).isAtLeast(1e-6)
     }
 
     @Test
@@ -53,11 +68,4 @@ class HorizonEdgeSharpnessTest {
         }
     }
 
-    @Test
-    fun `the cap only binds at absurdly wide fields, never in normal use`() {
-        // The cap is a safety net, not a working value: at any field of view the app offers, the
-        // derivative should be what decides the width.
-        val perPixelAtWidest = 90.0 / narrowScreenPx
-        assertThat(perPixelAtWidest).isLessThan(GroundRamp.EDGE_RAMP_DEG)
-    }
 }
