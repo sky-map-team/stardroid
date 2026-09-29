@@ -516,7 +516,7 @@ class RendererTestActivity : Activity() {
             listOf<SkyLayer>(
                 GridLayer(strings),
                 EclipticLayer(strings),
-                HorizonLayer(clock, location, strings, KeplerianEphemeris),
+                HorizonLayer(clock, location, strings),
                 SolarSystemLayer(
                     KeplerianEphemeris,
                     clock,
