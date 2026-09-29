@@ -47,7 +47,9 @@ class LayerDepthOrderTest {
             settings = FakeSettings(),
             satelliteElements =
                 flowOf(SatelliteElements(emptyList(), ElementFreshness.ABSENT, null, null)),
-            satellitesEnabled = false,
+            // On, so SatelliteLayer is actually enumerated: with it off the registry omits the
+            // layer entirely and its depth escapes every assertion below.
+            satellitesEnabled = true,
         )
 
     @Test
@@ -84,6 +86,6 @@ class LayerDepthOrderTest {
         val deepestOther =
             registry.layers.filter { it.id != HorizonLayer.LAYER_ID }.maxOf { it.depth }
         assertThat(LayerScene.GROUND_DEPTH).isGreaterThan(deepestOther)
-        assertThat(LayerScene.GROUND_DEPTH).isAtMost(horizon)
+        assertThat(LayerScene.GROUND_DEPTH).isLessThan(horizon)
     }
 }

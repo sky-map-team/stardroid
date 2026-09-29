@@ -633,6 +633,17 @@ has to ask whether a difference is a bug.
    be seen to leave. `RENDERMODE_WHEN_DIRTY` survives: the backend asks for another frame
    through `onAnimating` only while a fade is actually in flight.
 
+### 10.1.1 A parity difference that only shows at high zoom
+
+`:render:gles3` derives the horizon's blend width from `fwidth`, so the edge is a pixel or two at
+any zoom. `:render:gles1` cannot: its ground is a ring mesh, so the blend is fixed at
+`EDGE_RAMP_DEG` (0.25°) by construction. Below about a 1° field of view GLES1 therefore shows a
+widening band where GLES3 keeps a sharp line — tens of pixels at full zoom (0.03°).
+
+Accepted rather than fixed. Closing it means either a very dense ring mesh near the horizon or
+re-tessellating per frame against the current field of view, which is a lot of machinery for a
+backend that is being retired, and the fixed pipeline has no way to do it per pixel.
+
 ## 10.2 Things the port made obvious
 
 - **A model that is only defined over part of the sphere will quietly paint the rest.** Preetham

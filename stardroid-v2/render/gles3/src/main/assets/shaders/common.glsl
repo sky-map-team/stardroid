@@ -78,7 +78,10 @@ vec3 eclipseTint(vec2 p, float umbra, float penumbra, vec2 center) {
 // GLES1 evaluates these on the CPU, once per ring of a shell mesh whose ring altitudes trace the
 // depth curve piecewise, which is the whole difference between the two backends here.
 const float GROUND_EDGE_RAMP_DEG = 0.25;
-const float GROUND_EDGE_RAMP_MIN_DEG = 1e-3;
+// Must stay far below the per-pixel angle at the tightest field of view (0.03 deg, about
+// 2.8e-5 deg/px): a floor above that decides the width instead of the derivative and brings the
+// fat band back at high zoom. See GroundRamp.EDGE_RAMP_MIN_DEG.
+const float GROUND_EDGE_RAMP_MIN_DEG = 1e-5;
 const float GROUND_DEPTH_SCALE_DEG = 12.0;
 const float GROUND_NADIR_FRACTION = 0.4;
 const float GROUND_NIGHT_SUN_ALTITUDE_DEG = -18.0;

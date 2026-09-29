@@ -61,8 +61,18 @@ object GroundRamp {
      * here. `fwidth` really can return zero — adjacent fragments whose `dot(dir, zenith)` all
      * saturate the clamp at the nadir share an altitude — so the shader clamps to this and so
      * does anything else deriving a ramp.
+     *
+     * **It must stay far below the per-pixel angle at the tightest field of view the app allows**,
+     * currently 0.03° (`MapViewModel.MIN_FOV_DEG`), which is about 2.8e-5°/px on a 1080px screen.
+     * A floor of 1e-3 was tried first and is wrong for exactly the reason the ramp is derived from
+     * `fwidth` at all: below roughly a 1° field of view the floor rather than the derivative
+     * decides the width, and at full zoom it reproduces the seventy-pixel band this whole
+     * mechanism exists to prevent. The floor's only job is keeping `smoothstep` defined; any
+     * positive value does that, so it should be as small as fp32 allows. `asin(dot)` carries
+     * roughly 3e-6° of noise near the horizon, so this sits a few multiples above that and three
+     * orders of magnitude below a pixel at maximum zoom.
      */
-    const val EDGE_RAMP_MIN_DEG = 1e-3
+    const val EDGE_RAMP_MIN_DEG = 1e-5
 
     /**
      * How fast the density falls off with depth below the horizon, in degrees.
