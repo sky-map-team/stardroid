@@ -381,6 +381,41 @@ purely to fake an exponential curve.
 observer-derived state like the sky dome, not scene content, so it belongs in `RenderState`
 alongside `SkyGradient` rather than as a layer.
 
+#### The shape the ground should take (maintainer, during the port)
+
+Arrived at on device, after the GLES3 dome was cut off at the horizon (§10.2). The cut works —
+it coincides with the horizon line, so it reads as occlusion — but it is a hole: the lower
+hemisphere is black, identical at noon and at midnight, and the hard edge is carried entirely
+by the line drawn on top of it. The ground is what turns the hole into a thing.
+
+- **A solid translucent hemisphere, in the horizon's green**, rather than an absence. One
+  primitive, no profile texture needed for a first cut.
+- **Opacity tracks the sky's brightness.** In daylight it should be about as opaque as the sky
+  above it is bright, so the two read as comparable surfaces meeting at a line, and neither side
+  looks like a gap in the other. At night it backs off — a dark ground against a dark sky needs
+  far less to say "this is below you", and being aggressive there would fight the reason v2 lets
+  you look through the Earth in the first place.
+- **Denser toward the horizon, to impart depth.** This is the one thing the 8-ring glow was
+  genuinely achieving: the brightest ring sitting at the horizon line with an exponential falloff
+  away from it gave a sense of distance receding, which a flat wash does not. Whatever replaces
+  the glow has to keep that gradient, and in a shader it is one `exp()` rather than eight rings
+  of geometry.
+
+Read together, the second and third bullets say the ground is a two-parameter shader — overall
+opacity from solar altitude, plus a horizon-hugging density term — which subsumes "the glow,
+properly" above rather than sitting beside it. The additive glow mesh then has no remaining job,
+and `HorizonLayer`'s ring machinery can go once GLES1 does.
+
+Two things to settle before building it. Additive blending cannot darken, so a ground that dims
+what is behind it needs ordinary alpha blending, which means it must draw *after* the objects it
+occludes rather than in the glows slot at the front of the layer order — a real change to the
+draw sequence, not a new drawer dropped into the existing one. And an opacity that varies with
+solar altitude is the same producer-side solar dependency that was just reverted for the glow;
+here it is justified, because the ground is meant to be a surface whose appearance depends on
+how lit it is, but it should live in the `Ground` render-state block rather than being baked into
+a mesh's vertex colours.
+
+
 ### 7.3 Greek-myth constellation overlays
 
 The most valuable and the most expensive, and the expense is **not** the rendering.
@@ -595,6 +630,26 @@ has to ask whether a difference is a bug.
    through `onAnimating` only while a fade is actually in flight.
 
 ## 10.2 Things the port made obvious
+
+- **A model that is only defined over part of the sphere will quietly paint the rest.** Preetham
+  has nothing to say below the horizon, so the shader clamped its input — and a clamped input
+  returns the horizon's brightness, the brightest part of the sky, across the entire lower
+  hemisphere. The symptom looked like a blending bug in the additive horizon glow, which
+  saturated to cream-white against the wedge; a whole commit went into fading that glow by solar
+  altitude before the wedge behind it was identified as the cause, and was then reverted. The
+  lesson is about diagnosis order: the glow was the brightest thing on screen and therefore the
+  obvious suspect, but it was innocent, and toggling the *other* layer off was the cheap
+  experiment that would have found this first.
+- **Where a soft edge lands matters more than how soft it is.** The lower hemisphere was first
+  faded to a dim floor over four degrees. That reads as a second, unexplained edge, because it
+  terminates four degrees adrift of the horizon line. Cutting at altitude zero instead puts the
+  boundary exactly where a line is already drawn, and the eye merges them into one edge that
+  means something. Both versions are equally smooth; only one is legible. Found by the maintainer
+  looking at the screen — no test distinguishes them, and it is not clear what one would assert.
+- **Removing the cause can strand the fix.** Worth re-reading §7.2's reverted-glow note before
+  adding any producer-side solar dependency: the question to ask is whether the thing being
+  varied is a *surface whose appearance depends on how lit it is* (legitimate — the ground) or a
+  workaround for something drawn behind it (not — the glow).
 
 - **The star field is ready for a real PSF** (§8.3). `point.frag` already computes coverage
   analytically, so scintillation keyed to altitude, or an Airy/Gaussian profile instead of a
