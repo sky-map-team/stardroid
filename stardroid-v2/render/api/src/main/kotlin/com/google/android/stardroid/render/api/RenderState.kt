@@ -70,7 +70,7 @@ data class SkyGradient(
     val sunDirection: Vector3,
     val zenithDirection: Vector3,
     val turbidity: Double = DEFAULT_TURBIDITY,
-    val ground: Ground = Ground(),
+    val ground: Ground,
 ) {
     companion object {
         /** A clear but not pristine sky — the sensible default when nothing measures the air. */
@@ -111,13 +111,15 @@ data class SkyGradient(
  *   scene. The ground composites over black, so its brightness is capped at `opacity × colour`;
  *   measured on device the single-colour version came out 2.8× darker than the sky it met, and no
  *   opacity would have closed that gap. Both colours' alpha channels are ignored in favour of
- *   [opacity]; they are supplied by the producer because the palette lives in the app
- *   (`SkyColors`), as it does for every primitive's colour.
+ *   [opacity]. Both are **required**: the palette lives in the app (`SkyColors`, D40) and
+ *   defaults here would be a second copy of the same hex values, free to drift from the real ones
+ *   while looking authoritative. Same argument as [SkyGradient.zenithDirection] — a default that
+ *   is nobody's actual value is worse than a compile error.
  */
 data class Ground(
+    val nightColor: Rgba,
+    val dayColor: Rgba,
     val opacity: Double = DEFAULT_OPACITY,
-    val nightColor: Rgba = DEFAULT_NIGHT_COLOR,
-    val dayColor: Rgba = DEFAULT_DAY_COLOR,
 ) {
     init {
         require(opacity in 0.0..1.0) { "opacity must be in 0..1, was $opacity" }
@@ -131,16 +133,5 @@ data class Ground(
          * in the other.
          */
         const val DEFAULT_OPACITY = 0.55
-
-        /** A dark desaturated green, matching `SkyColors.HORIZON_LINE`'s hue. */
-        val DEFAULT_NIGHT_COLOR = Rgba(0x59 / 255f, 0x7c / 255f, 0x4a / 255f, 1f)
-
-        /**
-         * The same hue lightened and desaturated toward a sunlit haze. Its luminance is set so
-         * that at [DEFAULT_OPACITY] over black the ground lands near 70% of the daylight sky's
-         * measured luminance — dimmer than the sky, as ground should be, but close enough to read
-         * as lit rather than as a gap.
-         */
-        val DEFAULT_DAY_COLOR = Rgba(0x9c / 255f, 0xb4 / 255f, 0x8a / 255f, 1f)
     }
 }

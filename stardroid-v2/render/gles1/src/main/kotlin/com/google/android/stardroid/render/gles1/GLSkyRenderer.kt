@@ -88,8 +88,13 @@ class GLSkyRenderer(
     private val lineCache = HashMap<LayerId, BuildCache<LineBuffers>>()
     // The ground is one mesh for the whole frame rather than per layer, so it gets a plain field
     // instead of a BuildCache keyed by LayerId.
+    // Kept as three fields rather than a composite key: a Triple here would allocate on every
+    // frame purely to be compared and discarded, which is the exact per-frame garbage this
+    // branch took out of LabelFader.
     private var groundBuffers: GroundBuffers? = null
-    private var groundKey: Triple<Ground, Vector3, Vector3>? = null
+    private var groundGround: Ground? = null
+    private var groundSun: Vector3? = null
+    private var groundZenith: Vector3? = null
 
     // GL-thread-only: the sky-gradient dome, built on first use. Pure client-side buffers with
     // static geometry — the per-frame sun rotation happens on the modelview stack — so context
@@ -164,7 +169,9 @@ class GLSkyRenderer(
         pointCache.clear()
         lineCache.clear()
         groundBuffers = null
-        groundKey = null
+        groundGround = null
+        groundSun = null
+        groundZenith = null
         imageCache.clear()
         iconCache.clear()
         labelCache.clear()
@@ -344,15 +351,19 @@ class GLSkyRenderer(
         gradient: SkyGradient?,
     ) {
         if (gradient == null || state.nightMode || state.transparentBackground) return
-        val key = Triple(gradient.ground, gradient.sunDirection, gradient.zenithDirection)
-        if (key != groundKey) {
+        if (gradient.ground != groundGround ||
+            gradient.sunDirection != groundSun ||
+            gradient.zenithDirection != groundZenith
+        ) {
             groundBuffers =
                 GroundDrawer.build(
                     gradient.ground,
                     gradient.sunDirection,
                     gradient.zenithDirection,
                 )
-            groundKey = key
+            groundGround = gradient.ground
+            groundSun = gradient.sunDirection
+            groundZenith = gradient.zenithDirection
         }
         groundBuffers?.let { GroundDrawer.draw(gl, it) }
     }

@@ -197,6 +197,25 @@ class ShaderConformanceTest {
     }
 
     @Test
+    fun groundAlphaAtTheNarrowestRampIsWellDefined() {
+        // fwidth can return zero -- adjacent fragments whose dot(dir, zenith) saturate the clamp
+        // at the nadir share an altitude -- and a zero half-width makes smoothstep's edges equal,
+        // which GLSL leaves undefined. The shader clamps to EDGE_RAMP_MIN_DEG; this checks the
+        // clamped value still produces the analytic answer rather than a NaN or a hole.
+        val ramp = GroundRamp.EDGE_RAMP_MIN_DEG
+        val min = -90.0
+        val max = 2.0
+        val opacity = 0.55
+        val actual = evaluate("vec3(groundAlpha(mix($min, $max, t), $opacity, $ramp))")
+        for (i in 0 until SAMPLES) {
+            val altitude = inputAt(i, min, max)
+            val expected = GroundRamp.alpha(altitude, opacity, ramp)
+            assertThat(actual[i][0]).isWithin(TOLERANCE).of(expected.toFloat())
+            assertThat(actual[i][0].isNaN()).isFalse()
+        }
+    }
+
+    @Test
     fun groundDaylightMatchesGroundRamp() {
         // The colour mix is a function of the Sun alone, so it needs its own sweep: the alpha
         // test above has no solar input at all and could not notice this curve being wrong.

@@ -363,7 +363,6 @@ class MapViewModel(
                     zenithDirection = SkyModel.localFrame(time, location).up,
                     ground =
                         Ground(
-                            opacity = GROUND_OPACITY,
                             nightColor = SkyColors.GROUND_NIGHT,
                             dayColor = SkyColors.GROUND_DAY,
                         ),
@@ -1000,14 +999,6 @@ class MapViewModel(
 
     companion object {
 
-        /**
-         * How opaque the ground is at the horizon in full daylight.
-         *
-         * A constant rather than a preference for now, deliberately: the value wants settling on a
-         * real screen before it is worth a settings row, and zero here is a complete off switch in
-         * the meantime. `Ground`'s own default documents the intent; this is the dial.
-         */
-        private const val GROUND_OPACITY = 0.55
         /**
          * v1's initial camera: due south-ish along the equator, celestial north up.
          *

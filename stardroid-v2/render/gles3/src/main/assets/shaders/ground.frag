@@ -12,8 +12,13 @@ uniform vec3 uCamUp;
 uniform vec3 uCamForward;
 uniform vec2 uTanHalfFov;
 
-uniform vec3 uSunDir;
 uniform vec3 uZenithDir;
+
+// The Sun's altitude in degrees, not its direction: it is constant for the whole frame, so
+// deriving it here would be a dot and an asin per fragment to recompute the same number a few
+// million times. The shader still evaluates groundDaylight from it, which keeps that curve in
+// GLSL where the conformance test can reach it.
+uniform float uSunAltitudeDeg;
 
 uniform vec3 uGroundNightColor;
 uniform vec3 uGroundDayColor;
@@ -28,7 +33,6 @@ void main() {
         uCamForward + uCamRight * vNdc.x * uTanHalfFov.x + uCamUp * vNdc.y * uTanHalfFov.y
     );
     float viewAltitudeDeg = degrees(asin(clamp(dot(dir, uZenithDir), -1.0, 1.0)));
-    float sunAltitudeDeg = degrees(asin(clamp(dot(uSunDir, uZenithDir), -1.0, 1.0)));
 
     // Everything well above the horizon is sky, and discarding rather than writing a zero-alpha
     // pixel keeps the blend unit out of it for the majority of a typical frame. The edge ramp
@@ -36,6 +40,6 @@ void main() {
     float rampDeg = groundEdgeRampDeg(viewAltitudeDeg);
     if (viewAltitudeDeg > rampDeg) discard;
 
-    vec3 color = mix(uGroundNightColor, uGroundDayColor, groundDaylight(sunAltitudeDeg));
+    vec3 color = mix(uGroundNightColor, uGroundDayColor, groundDaylight(uSunAltitudeDeg));
     fragColor = vec4(color, groundAlpha(viewAltitudeDeg, uGroundOpacity, rampDeg));
 }

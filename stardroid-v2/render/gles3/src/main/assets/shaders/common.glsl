@@ -78,6 +78,7 @@ vec3 eclipseTint(vec2 p, float umbra, float penumbra, vec2 center) {
 // GLES1 evaluates these on the CPU, once per ring of a shell mesh whose ring altitudes trace the
 // depth curve piecewise, which is the whole difference between the two backends here.
 const float GROUND_EDGE_RAMP_DEG = 0.25;
+const float GROUND_EDGE_RAMP_MIN_DEG = 1e-3;
 const float GROUND_DEPTH_SCALE_DEG = 12.0;
 const float GROUND_NADIR_FRACTION = 0.4;
 const float GROUND_NIGHT_SUN_ALTITUDE_DEG = -18.0;
@@ -98,7 +99,12 @@ const float GROUND_DAY_SUN_ALTITUDE_DEG = 0.0;
 // is a safety cap, not a working value -- it only binds at absurdly wide fields.
 #ifdef FRAGMENT_STAGE
 float groundEdgeRampDeg(float viewAltitudeDeg) {
-    return min(fwidth(viewAltitudeDeg), GROUND_EDGE_RAMP_DEG);
+    // The floor matters more than the cap. fwidth can return exactly zero -- adjacent fragments
+    // whose dot(dir, zenith) all saturate the clamp at the nadir produce identical altitudes --
+    // and a zero half-width makes groundCoverage call smoothstep(-0.0, 0.0, x), which GLSL leaves
+    // undefined for edge0 >= edge1. That is a driver-dependent hole or flicker at exactly the
+    // point the ground should be densest. The Kotlin reference divides by zero on the same input.
+    return clamp(fwidth(viewAltitudeDeg), GROUND_EDGE_RAMP_MIN_DEG, GROUND_EDGE_RAMP_DEG);
 }
 #endif
 

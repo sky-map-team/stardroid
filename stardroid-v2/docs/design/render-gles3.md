@@ -666,6 +666,11 @@ has to ask whether a difference is a bug.
   the boundary. Anything meant to read as *sharp* wants `fwidth`, not a constant. The same change
   exposed a second-order version of the same error — the ramp hung below zero rather than
   straddling it, so even at the right width the apparent edge was offset from the line.
+- **Two full-screen passes now share a basis computation.** `ViewRayUniforms.set` allocates a few
+  `Vector3`s per call and runs twice a frame (sky, then ground), where it used to run once. It is
+  trivial against a frame's other work and was left alone rather than half-fixed, but if the
+  camera basis is ever needed a third time it should be computed once per frame and handed to the
+  passes — the same argument that took the per-frame `Triple` out of GLES1's ground cache.
 - **A hard edge is a measuring instrument.** The ground's boundary sits at altitude zero exactly,
   which made a long-latent flow bug visible the first time anyone looked: the sky gradient was
   recomputed from a mutable `currentLocation` field inside a time-only flow, so it lagged a
@@ -800,7 +805,7 @@ line jumped and the ground stayed put until the next tick — two horizons. Late
 landed: GLES1's dome ignores the zenith entirely and GLES3's is all soft gradients, whereas the
 ground has a hard edge at altitude zero.
 
-**Still open.** `Ground.opacity` is a constant in `MapViewModel` (0.55), not a preference. §7.2
+**Still open.** `Ground.opacity` defaults to `Ground.DEFAULT_OPACITY` (0.55) and is not a preference. §7.2
 wants it user-configurable and the value wants settling on a real screen first; zero is a complete
 off switch in the meantime. **Whether it should default on is undecided** and needs deciding before
 merge, because unlike the rest of this branch the ground is not behind the GLES3 experiment flag —

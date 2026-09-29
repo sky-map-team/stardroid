@@ -54,6 +54,17 @@ object GroundRamp {
     const val EDGE_RAMP_DEG = 0.25
 
     /**
+     * The narrowest the ramp may get.
+     *
+     * A zero half-width is not merely degenerate, it is undefined: [coverage] would call
+     * `smoothstep` with `edge0 == edge1`, which GLSL leaves unspecified and which divides by zero
+     * here. `fwidth` really can return zero — adjacent fragments whose `dot(dir, zenith)` all
+     * saturate the clamp at the nadir share an altitude — so the shader clamps to this and so
+     * does anything else deriving a ramp.
+     */
+    const val EDGE_RAMP_MIN_DEG = 1e-3
+
+    /**
      * How fast the density falls off with depth below the horizon, in degrees.
      *
      * This is the term that imparts distance. The eight-ring glow it replaces did the same thing
@@ -88,7 +99,12 @@ object GroundRamp {
     fun coverage(
         viewAltitudeDeg: Double,
         rampDeg: Double = EDGE_RAMP_DEG,
-    ): Double = smoothstep(rampDeg, -rampDeg, viewAltitudeDeg)
+    ): Double {
+        require(rampDeg >= EDGE_RAMP_MIN_DEG) {
+            "rampDeg must be at least $EDGE_RAMP_MIN_DEG, was $rampDeg"
+        }
+        return smoothstep(rampDeg, -rampDeg, viewAltitudeDeg)
+    }
 
     /**
      * The depth cue: 1 at the horizon, decaying to [NADIR_FRACTION] below it. Uses the absolute

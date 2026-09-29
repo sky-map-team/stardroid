@@ -46,6 +46,11 @@ class RendererBackendHandle(
  *   a device that previously selected GLES3 quietly returns to GLES1 on its next launch. That
  *   is the point of gating it remotely: a bad interaction with one vendor's driver can be
  *   turned off for everyone without shipping a release.
+ *
+ *   Read once, here, at construction. A fetch that resolves *after* the activity has built its
+ *   renderer therefore lands on the following launch — which is not a staleness bug to fix: the
+ *   EGL context version is fixed when the surface is created, so there is nothing this process
+ *   could do with a later answer short of recreating the activity underneath the user.
  * - **The device has no GL ES 3.0.** Real rather than defensive: GLES1 still ships, so such a
  *   device is supported rather than filtered out of the Play listing — the deliberate
  *   difference from `render-gles3.md` §6, which assumed GLES1 would be retired.

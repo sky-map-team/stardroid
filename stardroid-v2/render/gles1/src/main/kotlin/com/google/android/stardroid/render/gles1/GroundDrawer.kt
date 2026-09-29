@@ -70,13 +70,20 @@ internal object GroundDrawer {
      * the first twenty-odd degrees and is nearly flat by the nadir. Sampling uniformly instead
      * would need several times the rings for the same fidelity.
      *
-     * The first two entries deserve note: a ring exactly at the horizon has zero coverage and one
-     * just below it has full coverage, so the pair reproduces the edge in a single narrow band.
-     * That is as close to antialiasing as the fixed pipeline gets here, and it is why the boundary
-     * lands on the horizon line rather than adrift of it.
+     * The first three entries deserve note. [GroundRamp.coverage] straddles the horizon rather
+     * than hanging below it, so zero coverage is at `+EDGE_RAMP_DEG`, half at the horizon itself
+     * and full at `-EDGE_RAMP_DEG`. The mesh has to straddle it too or the edge becomes a hard
+     * step to half opacity at the horizon followed by a one-sided ramp — which is what this
+     * drawer did when the ramp was first made symmetric and these altitudes were not revisited.
+     * Three rings reproduce it symmetrically, and it is why the boundary lands on the horizon
+     * line rather than adrift of it.
+     *
+     * The first ring sits *above* the horizon, where coverage is zero, so it contributes nothing
+     * visible; it exists to give the Gouraud interpolation somewhere to ramp from.
      */
     val RING_ALTITUDES =
         doubleArrayOf(
+            GroundRamp.EDGE_RAMP_DEG,
             0.0,
             -GroundRamp.EDGE_RAMP_DEG,
             -1.0,

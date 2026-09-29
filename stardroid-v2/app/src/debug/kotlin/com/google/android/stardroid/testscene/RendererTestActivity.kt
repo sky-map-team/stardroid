@@ -157,6 +157,17 @@ class RendererTestActivity : Activity() {
      */
     val drawTimeNanos = DrawTimeStats()
 
+    /**
+     * The backend name the renderer actually reported, once it has created its surface, or null
+     * before that.
+     *
+     * Exists so the perf gate can assert it measured the backend it asked for. That gate already
+     * shipped once measuring GLES1 for every variant because `EXTRA_BACKEND` was never passed;
+     * capability fallback inside the factory could reintroduce the same silence, and a number
+     * from the wrong renderer is worse than no number.
+     */
+    val activeBackend = java.util.concurrent.atomic.AtomicReference<String?>(null)
+
     private lateinit var glSurfaceView: GLSurfaceView
     private lateinit var connector: RenderConnector
     private lateinit var fpsTv: TextView
@@ -214,7 +225,7 @@ class RendererTestActivity : Activity() {
                 gles3Enabled = true,
                 density = density,
                 imageLoader = { ref -> resolveImage(ref) ?: assetImageLoader.load(ref) },
-                onRendererInfo = {},
+                onRendererInfo = { info -> activeBackend.set(info.backend) },
                 requestRender = { requestRender() },
             )
         val glRenderMode =

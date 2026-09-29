@@ -18,7 +18,10 @@ import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
 import com.google.android.stardroid.render.supportsGles3
 import com.google.android.stardroid.settings.RendererBackend
+import com.google.android.stardroid.render.gles1.GLSkyRenderer
+import com.google.android.stardroid.render.gles3.GLES3SkyRenderer
 import com.google.common.truth.Truth.assertThat
+import com.google.common.truth.Truth.assertWithMessage
 import org.junit.Assume
 import org.junit.Before
 import org.junit.Test
@@ -208,6 +211,32 @@ class RendererPerfTest {
     }
 
     /**
+     * Asserts the renderer that drew the first frame is the one the test asked for.
+     *
+     * [assumeBackendSupported] checks the *device* can provide GLES3; this checks the app
+     * actually used it. Different failures, and only this one yields a plausible number
+     * attributed to the wrong renderer. The gate already shipped once in exactly that state —
+     * every variant measured GLES1, because `EXTRA_BACKEND` was never passed — and nothing
+     * failed to say so.
+     */
+    private fun assertMeasuringRequestedBackend(
+        scenario: ActivityScenario<RendererTestActivity>,
+        backend: RendererBackend,
+    ) {
+        var active: String? = null
+        scenario.onActivity { activity -> active = activity.activeBackend.get() }
+        val expected =
+            when (backend) {
+                RendererBackend.GLES1 -> GLSkyRenderer.BACKEND_NAME
+                RendererBackend.GLES3 -> GLES3SkyRenderer.BACKEND_NAME
+            }
+        assertWithMessage(
+            "Asked for ${backend.name} but the renderer reported '$active'. Any timing from " +
+                "this run describes the wrong backend.",
+        ).that(active).isEqualTo(expected)
+    }
+
+    /**
      * Skips a GLES3 variant, loudly, on a device that cannot provide a GL ES 3.0 context.
      *
      * Without this the backend factory silently falls back to GLES1 and the test would pass
@@ -250,6 +279,7 @@ class RendererPerfTest {
             // once a frame has been drawn.
             val firstFrame = scenario.awaitFrames(target = 1L, timeoutMs = FIRST_FRAME_TIMEOUT_MS)
             assertThat(firstFrame).isGreaterThan(0L)
+            assertMeasuringRequestedBackend(scenario, backend)
             Thread.sleep(WARMUP_MS)
 
             scenario.onActivity { activity ->

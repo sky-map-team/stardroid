@@ -10,11 +10,13 @@
 package com.google.android.stardroid.render.gles3
 
 import android.opengl.GLES30
+import com.google.android.stardroid.math.RADIANS_TO_DEGREES
 import com.google.android.stardroid.render.api.Ground
 import com.google.android.stardroid.render.api.GroundRamp
 import com.google.android.stardroid.render.api.SkyCamera
 import com.google.android.stardroid.render.api.SkyGradient
 import com.google.android.stardroid.render.api.Viewport
+import kotlin.math.asin
 
 /**
  * The translucent ground below the horizon, evaluated per pixel.
@@ -53,12 +55,10 @@ object GroundDrawer {
 
         val sun = gradient.sunDirection.normalized()
         val zenith = gradient.zenithDirection.normalized()
-        GLES30.glUniform3f(
-            program.uniform("uSunDir"),
-            sun.x.toFloat(),
-            sun.y.toFloat(),
-            sun.z.toFloat(),
-        )
+        // Frame-constant, so it is resolved here rather than per fragment.
+        val sunAltitudeDeg =
+            asin((sun dot zenith).coerceIn(-1.0, 1.0)) * RADIANS_TO_DEGREES
+        GLES30.glUniform1f(program.uniform("uSunAltitudeDeg"), sunAltitudeDeg.toFloat())
         GLES30.glUniform3f(
             program.uniform("uZenithDir"),
             zenith.x.toFloat(),
