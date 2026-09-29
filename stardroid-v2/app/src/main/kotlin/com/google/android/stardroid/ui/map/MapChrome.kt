@@ -1353,9 +1353,14 @@ fun chromeTourLabel(target: ChromeTourTarget): Int =
         ChromeTourTarget.Overflow -> R.string.more_button
     }
 
-/** Every-rail-layer-on toggle state for the warm-welcome tour's non-interactive chrome. */
-fun demoChromeToggles(): List<LayerToggle> =
-    (RAIL_ALWAYS_IDS + RAIL_IFROOM_IDS).map { LayerToggle(it, enabled = true) }
+/**
+ * Every-rail-layer-on toggle state for the warm-welcome tour's non-interactive chrome. Satellites
+ * are left out unless [satellitesEnabled], so the tour never shows a control the real rail hides.
+ */
+fun demoChromeToggles(satellitesEnabled: Boolean): List<LayerToggle> =
+    (RAIL_ALWAYS_IDS + RAIL_IFROOM_IDS)
+        .filter { satellitesEnabled || it != SatelliteLayer.LAYER_ID }
+        .map { LayerToggle(it, enabled = true) }
 
 @DrawableRes
 private fun layerIcon(id: LayerId): Int =

@@ -80,6 +80,7 @@ import java.util.Locale
 fun DiagnosticsScreen(
     viewModel: DiagnosticsViewModel,
     nightMode: Boolean,
+    satellitesEnabled: Boolean,
     onBack: () -> Unit,
 ) {
     BackHandler(onBack = onBack)
@@ -90,7 +91,9 @@ fun DiagnosticsScreen(
     val scope = rememberCoroutineScope()
     var satelliteState by remember { mutableStateOf<SatelliteDiagnosticsState?>(null) }
     var forceFetchResult by remember { mutableStateOf<String?>(null) }
-    LaunchedEffect(Unit) { satelliteState = readSatelliteDiagnostics(context) }
+    LaunchedEffect(satellitesEnabled) {
+        satelliteState = if (satellitesEnabled) readSatelliteDiagnostics(context) else null
+    }
     val sections =
         buildList {
             add(generalSection())
