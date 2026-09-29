@@ -9,9 +9,12 @@
 
 package com.google.android.stardroid.layers
 
+import com.google.android.stardroid.astronomy.Ephemeris
 import com.google.android.stardroid.astronomy.SkyModel
+import com.google.android.stardroid.astronomy.SolarSystemBody
 import com.google.android.stardroid.math.DEGREES_TO_RADIANS
 import com.google.android.stardroid.math.LatLong
+import com.google.android.stardroid.math.RADIANS_TO_DEGREES
 import com.google.android.stardroid.math.Vector3
 import com.google.android.stardroid.render.api.GlowPrimitive
 import com.google.android.stardroid.render.api.GlowRing
@@ -21,6 +24,11 @@ import com.google.android.stardroid.render.api.LabelStyle
 import com.google.android.stardroid.render.api.LayerId
 import com.google.android.stardroid.render.api.LayerScene
 import com.google.android.stardroid.render.api.LinePrimitive
+import kotlin.coroutines.CoroutineContext
+import kotlin.math.asin
+import kotlin.math.cos
+import kotlin.math.exp
+import kotlin.math.sin
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.combine
@@ -28,10 +36,6 @@ import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.map
 import kotlinx.datetime.Instant
-import kotlin.coroutines.CoroutineContext
-import kotlin.math.cos
-import kotlin.math.exp
-import kotlin.math.sin
 
 /**
  * The local horizon, ported from v1's `HorizonLayer` (after upstream #924): the great circle
@@ -52,6 +56,11 @@ class HorizonLayer(
     private val clock: Flow<Instant>,
     private val location: Flow<LatLong>,
     private val strings: Flow<LayerStrings>,
+    /**
+     * Used only to find the sun's altitude, which sets how much of the glow is drawn — see
+     * [daylightGlowScale].
+     */
+    private val ephemeris: Ephemeris,
     private val mapContext: CoroutineContext = Dispatchers.Default,
 ) : SkyLayer {
     override val id = LAYER_ID
@@ -88,11 +97,15 @@ class HorizonLayer(
                 label(east, strings.east),
                 label(west, strings.west),
             )
+        val sunDirection =
+            ephemeris.geocentricPosition(SolarSystemBody.SUN, time).toGeocentricVector()
+        val sunAltitudeDeg =
+            asin((sunDirection.normalized() dot frame.up).coerceIn(-1.0, 1.0)) * RADIANS_TO_DEGREES
         return LayerScene(
             depth = depth,
             lines = listOf(horizon),
             labels = labels,
-            glows = listOf(glowMesh(north, east, nadir)),
+            glows = listOf(glowMesh(north, east, nadir, daylightGlowScale(sunAltitudeDeg))),
         )
     }
 
@@ -119,6 +132,7 @@ class HorizonLayer(
         north: Vector3,
         east: Vector3,
         nadir: Vector3,
+        scale: Float,
     ): GlowPrimitive {
         val rings =
             (0..NUM_GLOW_RINGS).map { ringIdx ->
@@ -138,9 +152,32 @@ class HorizonLayer(
                             north.z * factorNorth + east.z * factorEast + nadir.z * sinTilt,
                         )
                     }
-                GlowRing(vertices, SkyColors.HORIZON_LINE.copy(a = ALPHAS[ringIdx]))
+                GlowRing(vertices, SkyColors.HORIZON_LINE.copy(a = ALPHAS[ringIdx] * scale))
             }
         return GlowPrimitive(rings)
+    }
+
+    /**
+     * How much of the glow to draw, from the sun's altitude in degrees.
+     *
+     * The glow is additive — it *adds* light to what is behind it. That is right against a night
+     * sky, which is what it was built for, but a lit sky has nothing to add to: over daylight or
+     * bright twilight the same mesh saturates to near-white and becomes the brightest thing on
+     * screen, sitting below the horizon where the scene should be darkest. GLES1 never showed
+     * this because its eight-band dome is too dim to saturate against; the analytic sky in
+     * `:render:gles3` is not, so the interaction only surfaced once that landed.
+     *
+     * Full strength once the sun is well down (astronomical twilight and darker), fading out as
+     * it rises to the horizon, where the real sky's own glow takes over the job. Scaling the
+     * producer's alpha rather than special-casing the blend in the backend keeps the two
+     * renderers drawing the same scene, and keeps "how bright should this be" a question about
+     * the sky rather than about GL.
+     */
+    internal fun daylightGlowScale(sunAltitudeDeg: Double): Float {
+        val t =
+            ((sunAltitudeDeg - GLOW_FADE_START_DEG) /
+                (GLOW_FADE_END_DEG - GLOW_FADE_START_DEG)).coerceIn(0.0, 1.0)
+        return (1.0 - t).toFloat()
     }
 
     private fun label(
@@ -180,6 +217,15 @@ class HorizonLayer(
          * Additive glow intensity at the horizon, with an exponential falloff (per ring index,
          * natural units) toward the deepest ring, which is forced fully transparent.
          */
+        /**
+         * Sun altitudes between which the glow fades out, in degrees. Full below
+         * [GLOW_FADE_START_DEG] (astronomical twilight, where the sky is dark enough for an
+         * additive glow to read as glow), gone by [GLOW_FADE_END_DEG], a little above the
+         * horizon, where the sky is bright enough to saturate.
+         */
+        private const val GLOW_FADE_START_DEG = -18.0
+        private const val GLOW_FADE_END_DEG = -2.0
+
         private const val GLOW_PEAK_ALPHA = 0.7
         private const val GLOW_ALPHA_DECAY = 0.55
 

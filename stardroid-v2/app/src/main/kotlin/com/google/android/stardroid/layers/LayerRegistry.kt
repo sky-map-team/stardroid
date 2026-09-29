@@ -124,7 +124,7 @@ class LayerRegistry(
                         MeteorShowerLayer(catalog, locale, clock),
                         GridLayer(strings),
                         EclipticLayer(strings),
-                        HorizonLayer(clock, location, strings),
+                        HorizonLayer(clock, location, strings, ephemeris),
                         AltAzGridLayer.create(clock, location, strings, settings),
                         SolarSystemLayer.create(
                             ephemeris,

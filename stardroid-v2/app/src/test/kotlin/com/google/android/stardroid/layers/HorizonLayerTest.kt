@@ -9,10 +9,13 @@
 
 package com.google.android.stardroid.layers
 
+import com.google.android.stardroid.astronomy.KeplerianEphemeris
 import com.google.android.stardroid.astronomy.SkyModel
 import com.google.android.stardroid.math.DEGREES_TO_RADIANS
 import com.google.android.stardroid.math.LatLong
 import com.google.common.truth.Truth.assertThat
+import kotlin.math.exp
+import kotlin.math.sin
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -22,7 +25,6 @@ import kotlinx.coroutines.test.UnconfinedTestDispatcher
 import kotlinx.coroutines.test.runTest
 import kotlinx.datetime.Instant
 import org.junit.jupiter.api.Test
-import kotlin.math.sin
 
 @OptIn(ExperimentalCoroutinesApi::class)
 class HorizonLayerTest {
@@ -38,6 +40,7 @@ class HorizonLayerTest {
             clock,
             location,
             strings,
+            KeplerianEphemeris,
             mapContext = UnconfinedTestDispatcher(testScheduler),
         )
 
@@ -97,12 +100,45 @@ class HorizonLayerTest {
 
             // Alpha decays exponentially from the peak and the deepest ring is transparent, so
             // the additive gradient fades out instead of ending in a hard edge.
+            //
+            // The peak is asserted as a *ratio* rather than the raw 0.7, because the whole ramp
+            // is now scaled by how far the sun is below the horizon. This fixture is Greenwich
+            // at 22:00 UTC in July — nautical twilight, sun near -8 degrees — so the glow is
+            // partly faded, and pinning an absolute value here would just re-encode the
+            // fixture's solar geometry. The exponential shape is the thing this test is about;
+            // the fade itself is covered by `the glow fades out as the sun rises`.
             val alphas = glow.rings.map { it.color.a }
-            assertThat(alphas.first()).isWithin(1e-6f).of(0.7f)
+            assertThat(alphas.first()).isGreaterThan(0f)
+            assertThat(alphas[1] / alphas[0]).isWithin(1e-5f).of(exp(-0.55f))
             assertThat(alphas.last()).isEqualTo(0f)
             for (i in 1 until alphas.size) {
                 assertThat(alphas[i]).isLessThan(alphas[i - 1])
             }
+        }
+
+    @Test
+    fun `the glow fades out as the sun rises, and is gone before daylight`() =
+        runTest {
+            // The glow is additive: it adds light to what is behind it. Over a lit sky there is
+            // nothing to add to, and the mesh saturates to near-white below the horizon — the
+            // brightest thing on screen, in the region that should be darkest. Observed on device
+            // once the analytic sky landed; GLES1's dimmer dome never showed it.
+            val horizon = layer()
+            // Night: full strength, which is what it was built for.
+            assertThat(horizon.daylightGlowScale(-40.0)).isEqualTo(1f)
+            assertThat(horizon.daylightGlowScale(-18.0)).isEqualTo(1f)
+            // Daylight and civil twilight: gone, so it cannot blow out against a bright sky.
+            assertThat(horizon.daylightGlowScale(-2.0)).isEqualTo(0f)
+            assertThat(horizon.daylightGlowScale(0.0)).isEqualTo(0f)
+            assertThat(horizon.daylightGlowScale(45.0)).isEqualTo(0f)
+            // Monotone in between, so there is no step as the sun crosses the fade window.
+            var previous = 1f
+            for (altitude in -18..-2) {
+                val scale = horizon.daylightGlowScale(altitude.toDouble())
+                assertThat(scale).isAtMost(previous)
+                previous = scale
+            }
+            assertThat(horizon.daylightGlowScale(-10.0)).isWithin(1e-5f).of(0.5f)
         }
 
     @Test
