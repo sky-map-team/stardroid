@@ -163,6 +163,40 @@ class LabelFaderTest {
     }
 
     @Test
+    fun `a steady set of labels stops allocating once they are known`() {
+        // The reason this class holds mutable Entry objects rather than a Map<String, Float>
+        // plus a Set: both of those allocate per label per frame, inside the draw loop, and the
+        // symptom is stutter while panning rather than a lower average frame rate. Counting
+        // live objects is not something a unit test can do portably, so this pins the
+        // observable consequence instead — steady state must not grow the fader's own state,
+        // which is what a per-frame allocation would show up as.
+        val fader = LabelFader(fadeMillis)
+        val clock = Clock(fader)
+        val labels = (1..50).map { "Star$it" to true }.toTypedArray()
+
+        clock.frames(20, *labels)
+        val afterWarmUp = fader.trackedLabelCount()
+        clock.frames(200, *labels)
+
+        assertThat(afterWarmUp).isEqualTo(50)
+        assertThat(fader.trackedLabelCount()).isEqualTo(50)
+        assertThat(fader.animating).isFalse()
+    }
+
+    @Test
+    fun `labels that stop being offered are dropped - not retained forever`() {
+        // Without pruning, a long pan across a catalog would accumulate an entry for every
+        // label ever seen — a slow leak in the render path.
+        val fader = LabelFader(fadeMillis)
+        val clock = Clock(fader)
+        clock.frames(5, "Vega" to true, "Deneb" to true, "Altair" to true)
+        assertThat(fader.trackedLabelCount()).isEqualTo(3)
+
+        clock.frames(5, "Vega" to true)
+        assertThat(fader.trackedLabelCount()).isEqualTo(1)
+    }
+
+    @Test
     fun `a zero fade duration is an immediate switch`() {
         val fader = LabelFader(fadeMillis = 0L)
         val clock = Clock(fader)

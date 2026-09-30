@@ -104,6 +104,13 @@ object LabelDrawer {
     /** Opacity of a label naming something with no info card behind it. */
     const val NO_DETAIL_ALPHA = 0.7f
 
+    /**
+     * Reused across frames so the per-page flush allocates nothing: it runs once per atlas page
+     * per frame, inside the draw loop. GL-thread-only, like the declutter buffer, and read by
+     * [SpriteBatch.flush] before the call returns, so one instance is safe to share.
+     */
+    private val texelScratch = FloatArray(2)
+
     /** Halo width in atlas texels — about one pixel of outline at the sizes labels are drawn. */
     const val HALO_TEXELS = 1.3f
 
@@ -413,12 +420,14 @@ object LabelDrawer {
         nightMode: Boolean,
     ) {
         val (pageWidth, pageHeight) = gpu.pageSizesPx[page]
+        texelScratch[0] = 1f / pageWidth
+        texelScratch[1] = 1f / pageHeight
         batch.flush(
             gl = gl,
             textureId = gpu.pageTextureIds[page],
             viewportWidthPx = widthPx,
             viewportHeightPx = heightPx,
-            texelSize = floatArrayOf(1f / pageWidth, 1f / pageHeight),
+            texelSize = texelScratch,
             nightMode = nightMode,
             haloColor = HALO_COLOR,
             haloTexels = HALO_TEXELS,

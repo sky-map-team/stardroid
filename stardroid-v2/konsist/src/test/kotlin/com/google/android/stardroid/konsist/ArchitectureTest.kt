@@ -118,6 +118,27 @@ class ArchitectureTest {
         }
     }
 
+    @Test
+    fun `shared code uses only names Kotlin Native accepts`() {
+        // Kotlin/Native rejects characters in backtick names that the JVM allows — so far a comma
+        // and parentheses have both come up — and Linux CI never compiles the iOS targets, so a
+        // test added from an Android-only workflow would otherwise fail only later, on macOS.
+        // Letters, digits, spaces, hyphens and apostrophes are known to be safe everywhere.
+        val backtickName = Regex("fun `([^`]*)`")
+        val rejected =
+            sharedModuleCommonFiles().flatMap { file ->
+                backtickName.findAll(file.text)
+                    .map { it.groupValues[1] }
+                    .filter { name -> name.any { !it.isLetterOrDigit() && it !in " -'" } }
+                    .map { "${file.name}: `$it`" }
+                    .toList()
+            }
+        assertTrue(rejected.isEmpty()) {
+            "Rename these for Kotlin/Native (a comma becomes \" - \"):\n" +
+                rejected.joinToString("\n")
+        }
+    }
+
     private val gles3ModuleSource =
         Regex("""(?:.*/)?render/gles3/src/.*\.kt$""")
 

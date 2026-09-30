@@ -149,6 +149,30 @@ a known side-effect. This is not a Sky Map change.
 
 ---
 
+### CAT-ECLIPSE · Eclipse/overlap looks mistimed, or depends on zoom (v2)
+
+**What users say:** "the eclipse starts an hour early", "is the Moon eclipsing X or not? it
+depends on the zoom level", "the Moon and Sun overlap too soon"
+
+**Real cause:** By default the planets layer's **Disc size** is **Glyphs**: the Sun, Moon and
+planets are drawn at fixed angular sizes, larger than life, so they stay visible at any zoom.
+Because those sizes scale with zoom rather than matching the real sky, apparent overlaps can
+start early, end late, or appear/disappear as the user zooms. This is a display choice, not a
+timing or location error.
+
+**Response framing:** Thank them / acknowledge the confusion, explain that bodies are drawn larger
+than life by default, and point to the real-size setting. Don't suggest their time or location is
+wrong unless there's other evidence.
+
+**Steps to suggest:**
+1. Tap the layers button (or long press the layers bar) to open the layers sheet
+2. Expand the Planets layer's options and set **Disc size** to **True scale** (real size at every
+   zoom; planets are specks until you zoom right in). **Steady** is a middle option — fixed
+   on-screen size that hands off to real size when zoomed in
+3. If it still looks wrong with correct location/time, ask for Diagnostics (see below)
+
+---
+
 ### CAT-INFO-CARD · Info card won't close
 
 **What users say:** "the pop-up card doesn't close", "can't dismiss the info card", "card stays
@@ -209,6 +233,49 @@ with both defaults — neither is far enough north for Polaris to sit high in th
    tap **Location** on the map screen.
 3. Open Diagnostics (overflow menu on v1, Settings on v2) and confirm the lat/lon shown there
    matches the user's actual location
+
+---
+
+### CAT-MOON · Sun/Moon looks wrongly placed, or an eclipse/conjunction looks mistimed
+
+**What users say:** "the Moon isn't in the right place", "eclipse started too early/late", "not
+accurately placed and timed"
+
+**Real cause:** Sky Map draws the Sun, Moon, and planets larger than true apparent size by
+default (v1 enlarges for visibility; v2's default "Glyphs" disc-size mode holds a fixed
+on-screen size at any zoom). This is a display choice, not a position error, but it makes close
+approaches (eclipses, conjunctions) look like they start/end earlier or later than the true
+contact time, since the enlarged disks visually overlap sooner than the real ones would.
+
+**Steps to suggest:**
+1. Switch to true size — **v1:** Settings → Show true-to-life sizes. **v2:** open the Solar
+   System layer's settings → Disc size → True scale
+2. If still off, double-check location and time zone in Diagnostics (see CAT-6 / Time)
+3. If it's still wrong after that, ask for a Diagnostics screenshot at skymapdevs@gmail.com
+
+---
+
+### CAT-ONBOARD · Yellow label/menu covering the sky view (v2)
+
+**What users say:** "huge yellow menu covering the screen", "yellow label won't go away", "why is
+there a banner over the sky", complaints about a new yellow UI element after updating to v2
+
+**Real cause:** Intentional onboarding — v2 shows short yellow coach-mark labels on a screen's
+first couple of visits, based on observing new users navigate the app. Each label is dismissed
+automatically after being seen twice and does not reappear after that.
+
+**Response framing:** Not a bug — explain it's a deliberate, temporary onboarding aid that clears
+itself. Reassure the user it should already be gone if they've opened that screen a couple of
+times. Mention v1 remains available for anyone who'd rather not have the new UI at all.
+
+**Steps to suggest:**
+1. Reassure the label disappears on its own after two views of that screen — no setting to
+   dismiss it manually
+2. If it's still showing after several visits, ask for a Diagnostics report (escalation)
+3. Mention v1 is still available/supported for users who prefer the older interface
+
+**Do NOT suggest:** framing this as a bug to be fixed, or apologizing as if Sky Map broke
+something — it's working as designed.
 
 ---
 

@@ -26,4 +26,8 @@
         <key>satellites_enabled</key>
         <value>false</value>
     </entry>
+    <entry>
+        <key>gles3_renderer_enabled</key>
+        <value>false</value>
+    </entry>
 </defaultsMap>

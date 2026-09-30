@@ -253,6 +253,10 @@ renderer got more complex. That trade must be paid for deliberately:
    draw call instead of dozens); if it does not, something is wrong and we want to know before
    Part B adds load.
 
+   **Superseded by the decision in §5.1.** That expectation was never verified, the gate as
+   written cannot verify it, and the gate's scope has been narrowed to catastrophic-regression
+   detection instead. Read the sentence above as a prediction that still needs an experiment.
+
 ---
 
 ## 5. Performance and power
@@ -273,6 +277,36 @@ rebuilds — but three specific things need watching:
   render mode — never a global change.
 
 ---
+
+### 5.1 The D19 gate is a smoke gate, deliberately (decided)
+
+The perf gate detects catastrophic regressions — a renderer that hangs, crashes or collapses to
+single-digit frame rates. It is **not** a comparison between the backends, and the attempt to make
+it one is deferred rather than pending.
+
+It cannot compare them for two independent reasons, which is why fixing either alone would not
+help:
+
+- **The measurement is pinned to the display.** Frames per second saturates at the panel's refresh
+  rate, and `DrawTimeStats` does not get underneath it either: a vsync-throttled driver
+  back-pressures *inside* the GL calls, so the wait lands in the measured region rather than in
+  `eglSwapBuffers`. Measured on a Pixel 9 Pro, both backends report a ~7.5 ms mean against an
+  8.33 ms budget, in both the opaque and translucent variants — four numbers within 0.1 ms across
+  configurations that do materially different work.
+- **The scene does not exercise what differs.** The load is points, and `StellarRamps.sizeDp`
+  yields two sizes, so GLES1 already batches 100k points into *two* draw calls where GLES3 makes
+  it one. §4's "one draw call instead of dozens" simply does not describe this scene. The path
+  where GLES3 genuinely wins is labels — one instanced draw per atlas page against a
+  `glPushMatrix`/`glDrawArrays` per label — and the declutterer caps those at a few dozen.
+
+**What a real comparison would take**, if it is ever wanted: an offscreen render loop that never
+swaps (no extension needed, and it removes the back-pressure that defeats `DrawTimeStats`), or GPU
+timer queries via `EXT_disjoint_timer_query`; *plus* a benchmark-only path that loads labels past
+the declutter cap. Roughly half a day for the first and an hour for the second.
+
+Worth being explicit about the cost of deferring: **there is currently no evidence that GLES3 is
+faster than GLES1**, only an argument that it should be. Nothing in this branch should be
+justified on performance grounds until that experiment is run.
 
 ## 6. Migration and the fate of `:render:gles1`
 
@@ -380,6 +414,45 @@ purely to fake an exponential curve.
 **API extension:** a `Ground` render-state block (opacity, profile id) — the ground is
 observer-derived state like the sky dome, not scene content, so it belongs in `RenderState`
 alongside `SkyGradient` rather than as a layer.
+
+#### The shape the ground took (built — see §10.3)
+
+Arrived at on device, after the GLES3 dome was cut off at the horizon (§10.2). The cut works —
+it coincides with the horizon line, so it reads as occlusion — but it is a hole: the lower
+hemisphere is black, identical at noon and at midnight, and the hard edge is carried entirely
+by the line drawn on top of it. The ground is what turns the hole into a thing.
+
+**This shipped in this branch**, which §7.2 did not originally plan to. What follows is the
+design as specified; §10.3 records what building it actually changed, including the parts of the
+rest of §7.2 it made redundant.
+
+- **A solid translucent hemisphere, in the horizon's green**, rather than an absence. One
+  primitive, no profile texture needed for a first cut.
+- **Opacity tracks the sky's brightness.** In daylight it should be about as opaque as the sky
+  above it is bright, so the two read as comparable surfaces meeting at a line, and neither side
+  looks like a gap in the other. At night it backs off — a dark ground against a dark sky needs
+  far less to say "this is below you", and being aggressive there would fight the reason v2 lets
+  you look through the Earth in the first place.
+- **Denser toward the horizon, to impart depth.** This is the one thing the 8-ring glow was
+  genuinely achieving: the brightest ring sitting at the horizon line with an exponential falloff
+  away from it gave a sense of distance receding, which a flat wash does not. Whatever replaces
+  the glow has to keep that gradient, and in a shader it is one `exp()` rather than eight rings
+  of geometry.
+
+Read together, the second and third bullets say the ground is a two-parameter shader — overall
+opacity from solar altitude, plus a horizon-hugging density term — which subsumes "the glow,
+properly" above rather than sitting beside it. The additive glow mesh then has no remaining job,
+and `HorizonLayer`'s ring machinery can go once GLES1 does.
+
+Two things to settle before building it. Additive blending cannot darken, so a ground that dims
+what is behind it needs ordinary alpha blending, which means it must draw *after* the objects it
+occludes rather than in the glows slot at the front of the layer order — a real change to the
+draw sequence, not a new drawer dropped into the existing one. And an opacity that varies with
+solar altitude is the same producer-side solar dependency that was just reverted for the glow;
+here it is justified, because the ground is meant to be a surface whose appearance depends on
+how lit it is, but it should live in the `Ground` render-state block rather than being baked into
+a mesh's vertex colours.
+
 
 ### 7.3 Greek-myth constellation overlays
 
@@ -594,7 +667,77 @@ has to ask whether a difference is a bug.
    be seen to leave. `RENDERMODE_WHEN_DIRTY` survives: the backend asks for another frame
    through `onAnimating` only while a fade is actually in flight.
 
+### 10.1.1 A parity difference that only shows at high zoom
+
+`:render:gles3` derives the horizon's blend width from `fwidth`, so the edge is a pixel or two at
+any zoom. `:render:gles1` cannot: its ground is a ring mesh, so the blend is fixed at
+`EDGE_RAMP_DEG` (0.25°) by construction. Below about a 1° field of view GLES1 therefore shows a
+widening band where GLES3 keeps a sharp line — tens of pixels at full zoom (0.03°).
+
+Accepted rather than fixed. Closing it means either a very dense ring mesh near the horizon or
+re-tessellating per frame against the current field of view, which is a lot of machinery for a
+backend that is being retired, and the fixed pipeline has no way to do it per pixel.
+
 ## 10.2 Things the port made obvious
+
+- **A model that is only defined over part of the sphere will quietly paint the rest.** Preetham
+  has nothing to say below the horizon, so the shader clamped its input — and a clamped input
+  returns the horizon's brightness, the brightest part of the sky, across the entire lower
+  hemisphere. The symptom looked like a blending bug in the additive horizon glow, which
+  saturated to cream-white against the wedge; a whole commit went into fading that glow by solar
+  altitude before the wedge behind it was identified as the cause, and was then reverted. The
+  lesson is about diagnosis order: the glow was the brightest thing on screen and therefore the
+  obvious suspect, but it was innocent, and toggling the *other* layer off was the cheap
+  experiment that would have found this first.
+- **Where a soft edge lands matters more than how soft it is.** The lower hemisphere was first
+  faded to a dim floor over four degrees. That reads as a second, unexplained edge, because it
+  terminates four degrees adrift of the horizon line. Cutting at altitude zero instead puts the
+  boundary exactly where a line is already drawn, and the eye merges them into one edge that
+  means something. Both versions are equally smooth; only one is legible. Found by the maintainer
+  looking at the screen — no test distinguishes them, and it is not clear what one would assert.
+- **Compiling an instrumented test is not running it.** `ShaderCompilationTest` links every
+  program on a real GL context precisely so a bad shader is a test failure rather than a black
+  screen, and it was defeated by being compiled and not executed — GLSL is compiled by the driver
+  at runtime, so `compileDebugAndroidTestKotlin` proves only that the Kotlin is well-formed. The
+  shader that crashed was `point.vert`, which nothing in the change had touched: a `fwidth` call
+  added to `common.glsl` broke every vertex shader in the app, because the shared prelude is
+  spliced into every program and screen-derivative builtins exist only in the fragment stage.
+  Run `connectedDebugAndroidTest` after touching any shader; the gate is worthless otherwise.
+- **A shared prelude is shared with both stages.** `compose()` now emits `#define FRAGMENT_STAGE`
+  so `common.glsl` can hold fragment-only code, which is the general form of the problem above.
+- **An angular constant is a pixel count that changes with zoom.** The horizon's antialiasing ramp
+  was a fixed 0.25°: invisible at a normal field of view, sixty pixels of sky dissolving into
+  ground at high zoom, with the horizon line stranded at the top of the band instead of sitting on
+  the boundary. Anything meant to read as *sharp* wants `fwidth`, not a constant. The same change
+  exposed a second-order version of the same error — the ramp hung below zero rather than
+  straddling it, so even at the right width the apparent edge was offset from the line.
+- **Two full-screen passes now share a basis computation.** `ViewRayUniforms.set` allocates a few
+  `Vector3`s per call and runs twice a frame (sky, then ground), where it used to run once. It is
+  trivial against a frame's other work and was left alone rather than half-fixed, but if the
+  camera basis is ever needed a third time it should be computed once per frame and handed to the
+  passes — the same argument that took the per-frame `Triple` out of GLES1's ground cache.
+- **A golden reference nobody compares against is just a comment.** The design doc called
+  `PhaseCompositor` the golden reference for the Moon's shading while its five tuning constants
+  sat `private` in `:render:gles1` and hand-copied into `:render:gles3`'s `skyquad.frag`, with
+  nothing checking the two agreed — and nothing could, since the Konsist gate forbids gles3
+  depending on gles1. They live in `:render:api` as `MoonShading` now, the same move already made
+  for the stellar ramps, which is what made them comparable at all. The general rule: if a
+  constant is transcribed into GLSL, its Kotlin original has to be somewhere both the shader's
+  module and the test can see, or the reference is aspirational.
+- **A hard edge is a measuring instrument.** The ground's boundary sits at altitude zero exactly,
+  which made a long-latent flow bug visible the first time anyone looked: the sky gradient was
+  recomputed from a mutable `currentLocation` field inside a time-only flow, so it lagged a
+  location change until the next clock tick. Nothing before had an edge sharp enough to show it —
+  GLES1's dome ignores the zenith and GLES3's is entirely soft gradients. Worth remembering when
+  adding anything else with a crisp boundary: it will audit the state feeding it.
+- **Judge shading by measurement, not by adjective.** "Too faint", "flat", "looks like a hole" all
+  turned into specific numbers once screenshots were sampled — 0.19-vs-0.12 alpha for the flat
+  panel, 0.36 for the hole, 0.87 once fixed. Each time the number said which knob was wrong, and
+  twice it said the knob being turned could not have worked at all.
+- **Removing the cause can strand the fix.** Worth re-reading §7.2's reverted-glow note before
+  adding any producer-side solar dependency: the question to ask is whether the thing being
+  varied is a *surface whose appearance depends on how lit it is* (legitimate — the ground) or a
+  workaround for something drawn behind it (not — the glow).
 
 - **The star field is ready for a real PSF** (§8.3). `point.frag` already computes coverage
   analytically, so scintillation keyed to altitude, or an Airy/Gaussian profile instead of a
@@ -642,3 +785,81 @@ has to ask whether a difference is a bug.
   terminator and the Earth-shadow geometry as independent uniform blocks and composites them in
   order, so a third shadow source — a transit, a Jovian moon — is another block and another
   multiply, with no re-architecture.
+
+## 10.3 The ground, and what it removed
+
+A fifth deviation, unplanned: §7.2 was a follow-up until cutting the sky dome at the horizon
+(§10.2) left a black hole below it that nothing else was going to fill. `Ground` is now a block
+inside `SkyGradient`, and each backend shades it for itself.
+
+**It is render state, not a layer, and the reason is worth pinning down** because the obvious
+criterion is wrong. "Layers are things at celestial positions" does not hold: the horizon and
+alt-az grid layers are both observer-relative, re-deriving their geometry from the local frame and
+resubmitting. The line that actually holds is **geometry versus per-pixel shading** — layers
+submit vertices, render state is a continuous function a shader evaluates. The horizon is a layer
+because it is a *line*. The ground is not, and the evidence is already in the tree: the two places
+this codebase faked a smooth gradient with geometry, v1's eight-band dome and the eight-ring
+horizon glow, both band visibly, and a vertex-coloured ground hemisphere would be a third.
+
+Nesting it inside `SkyGradient` rather than adding `RenderState.ground` does two things. It reuses
+`sunDirection` and `zenithDirection`, so the ground needed **no new producer plumbing at all** —
+the day/night term is derived in the shader from vectors that were already being uploaded. And it
+makes the product decision structural: one preference governs sky and ground together, and a null
+gradient cannot carry a ground, so no producer can get that wrong.
+
+**What it deleted.** Splitting the horizon's two jobs — reference geometry versus shading — turned
+out to be a net removal from the shared contract rather than an addition:
+
+- `GlowPrimitive`, `GlowRing`, and `LayerScene.glows` are gone. `HorizonLayer` was their only
+  producer anywhere in the codebase, so the whole primitive type and draw stage went with it.
+- Both backends' `GlowDrawer` and their tests are gone, replaced by a `GroundDrawer` each.
+- `GlState.BlendMode.ADDITIVE` is gone: the glow was its only consumer.
+- `HorizonLayer` lost its ring builder, its trig tables and six constants, and is now a line plus
+  four labels.
+- §7.2's "the glow, properly" bullet is subsumed rather than pending — the depth cue the glow was
+  really providing is now `GroundRamp.depthProfile`.
+
+**The draw-order change was nearly free**, by luck rather than design. Layers sort by depth and the
+horizon layer was already the deepest at 90, so a ground pass at `GROUND_DEPTH = 85` lands exactly
+where it needs to: after every object it should obscure, before the line and cardinal labels that
+must stay legible on top. That invariant — *the horizon layer must be the deepest layer* — was
+previously true only because 90 happened to be the largest number anyone picked, and a layer added
+deeper would have been silently washed over with no error anywhere. It is now a named constant with
+a test.
+
+**Deliberate asymmetry between the backends.** GLES1 gets a real ground too, sampling `GroundRamp`
+at fifteen ring altitudes spaced tightly near the horizon and loosely below it, because that is
+where the exponential actually moves. So this is not a GLES3-only feature — but the two will not
+match, and that is expected rather than a parity bug: fifteen Gouraud stops are not a per-pixel
+evaluation.
+
+**Shading is split by input, and that is the design.** Opacity is a function of view altitude
+alone — a mostly uniform wash that objects show through, denser near the horizon to suggest depth.
+Colour is a function of solar altitude alone — lighter by day, darker by night. Nothing depends on
+azimuth, and nothing reads what the sky shader computed.
+
+Two wrong turns got there, both worth keeping. The first varied *opacity* with the Sun, which
+cannot work: the ground composites over black, so its brightness is capped at `opacity × colour`,
+and it measured 2.8× darker than the sky it met near full opacity — the dial did not reach. The
+tempting fix was to let a dimmed sky show through so the ground inherits its light; the maintainer
+killed it in one line, because it would make the ground warm in the west and neutral in the east at
+sunset. **The ground is the same substance all the way round.** Making the day *colour* lighter is
+what actually worked: measured on device afterwards, sky 133 against ground 116 at the boundary, a
+ratio of 0.87 where it had been 0.36.
+
+A second wrong turn is recorded in `GroundRamp`: scaling the whole alpha by one night factor
+dimmed the depth gradient along with everything else, giving a 0.19-to-0.12 span across the entire
+lower hemisphere, which is invisible. It read as a flat panel, which is what it was.
+
+**It also surfaced a latent bug nothing else could show** (§10.2): `MapViewModel` read a
+`currentLocation` field inside a time-only flow, so the gradient re-emitted on clock ticks alone
+while `HorizonLayer` combines the location flow and moves at once. On a location change the horizon
+line jumped and the ground stayed put until the next tick — two horizons. Latent since the dome
+landed: GLES1's dome ignores the zenith entirely and GLES3's is all soft gradients, whereas the
+ground has a hard edge at altitude zero.
+
+**Still open.** `Ground.opacity` defaults to `Ground.DEFAULT_OPACITY` (0.55) and is not a preference. §7.2
+wants it user-configurable and the value wants settling on a real screen first; zero is a complete
+off switch in the meantime. **Whether it should default on is undecided** and needs deciding before
+merge, because unlike the rest of this branch the ground is not behind the GLES3 experiment flag —
+it changes GLES1's appearance too.

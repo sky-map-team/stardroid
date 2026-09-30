@@ -31,8 +31,29 @@ package com.google.android.stardroid.render.api
  * @param fadeMillis time for a full 0→1 or 1→0 transition.
  */
 class LabelFader(private val fadeMillis: Long = DEFAULT_FADE_MILLIS) {
-    private var alphas = HashMap<String, Float>()
-    private var seen = HashSet<String>()
+    /**
+     * One label's fade, mutable in place.
+     *
+     * A class rather than a `Float` in the map because `HashMap<String, Float>` boxes on every
+     * put — and this is written once per candidate label per frame, inside the draw loop. The
+     * first version did exactly that, alongside a `HashSet` rebuilt each frame to track which
+     * labels were still on screen, and the result was tens of thousands of short-lived
+     * allocations a second while panning. That is GC pressure in the render path, which shows
+     * up as frame-time spikes rather than a lower average — the artifact the D19 gate exists to
+     * catch, and the same defect audit-2026-08 M2 rewrote the declutterer to remove.
+     *
+     * [lastSeenFrame] replaces that set: a label still on screen is one whose entry was touched
+     * this frame, so presence is a field compare instead of a second hash structure.
+     */
+    private class Entry(
+        var alpha: Float,
+        var lastSeenFrame: Long,
+    )
+
+    private val entries = HashMap<String, Entry>()
+
+    /** Monotonic frame counter, used to tell "touched this frame" from "gone". */
+    private var frameId = 0L
 
     /** True if any label moved this frame — the caller must schedule another frame. */
     var animating: Boolean = false
@@ -52,7 +73,7 @@ class LabelFader(private val fadeMillis: Long = DEFAULT_FADE_MILLIS) {
             }
         lastFrameMillis = nowMillis
         animating = false
-        seen.clear()
+        frameId++
     }
 
     private var deltaMillis: Long = 0L
@@ -69,8 +90,14 @@ class LabelFader(private val fadeMillis: Long = DEFAULT_FADE_MILLIS) {
         key: String,
         visible: Boolean,
     ): Float {
-        seen.add(key)
-        val current = alphas[key] ?: 0f
+        // Allocates only the first time a label is ever seen, never per frame.
+        var entry = entries[key]
+        if (entry == null) {
+            entry = Entry(alpha = 0f, lastSeenFrame = frameId)
+            entries[key] = entry
+        }
+        entry.lastSeenFrame = frameId
+        val current = entry.alpha
         val target = if (visible) 1f else 0f
         if (current == target) return current
         val step = if (fadeMillis <= 0L) 1f else deltaMillis.toFloat() / fadeMillis
@@ -80,7 +107,7 @@ class LabelFader(private val fadeMillis: Long = DEFAULT_FADE_MILLIS) {
             } else {
                 (current - step).coerceAtLeast(0f)
             }
-        alphas[key] = next
+        entry.alpha = next
         if (next != target) animating = true
         return next
     }
@@ -91,13 +118,28 @@ class LabelFader(private val fadeMillis: Long = DEFAULT_FADE_MILLIS) {
      * keeping its alpha would make it fade *in* from half-way when you pan back to it.
      */
     fun endFrame() {
-        alphas.keys.retainAll(seen)
+        if (entries.isEmpty()) return
+        // One iterator per frame per layer, against hundreds of allocations for the set this
+        // replaced. Removal has to happen: a label that has left the frustum must be forgotten,
+        // or it would fade in from half-lit when panned back to.
+        val iterator = entries.values.iterator()
+        while (iterator.hasNext()) {
+            if (iterator.next().lastSeenFrame != frameId) iterator.remove()
+        }
     }
+
+    /**
+     * How many labels the fader is currently tracking.
+     *
+     * Exposed for tests: steady-state growth here is what a per-frame allocation in this class
+     * looks like from the outside, and a leak would mean a long pan accumulating an entry for
+     * every label ever seen.
+     */
+    fun trackedLabelCount(): Int = entries.size
 
     /** Drops every fade, so the next frame starts from nothing (scene or context replacement). */
     fun reset() {
-        alphas.clear()
-        seen.clear()
+        entries.clear()
         lastFrameMillis = Long.MIN_VALUE
         animating = false
     }

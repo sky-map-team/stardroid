@@ -118,6 +118,49 @@ benefit. Revisit only if night-mode theming of the WebView proves ugly.
 content ports as HTML string resources rendered with `AnnotatedString.fromHtml` (no
 WebView). Credits folds into the help document, as v1's `help_text` already embedded it.
 
+*Update (search and deep links)*: two complaints from #1030 — "the help page is very long and
+unsearchable", and that finding a feature in the text still left you to go find it in the app
+— closed #1032 and #1064 together.
+
+The document is no longer one concatenated string. `HelpDocument.kt` holds it as an ordered
+list of sections, each with a permanent anchor id, rendered into a `LazyColumn`. That buys
+three things a single string could not offer:
+
+- **Search.** A persistent box under the top bar filters the document to the sections matching
+  what is typed, with the term washed in `DocumentColors.searchHighlight`. Matching is
+  case- and diacritic-folded (`ui/common/TextSearch.kt`) because the document ships in 28
+  locales — a French reader typing "etoile" has to find "étoile". `<h1>` dividers drop out of
+  a filtered list, since a bare section title above filtered results titles nothing.
+- **Deep links.** `htmlWithLinks` now passes `AnnotatedString.fromHtml` the
+  `linkInteractionListener` it always accepted, so a private `skymap://` scheme in the help
+  strings routes into the app: Settings, Diagnostics, Calibrate, Gallery, the tutorial replay,
+  the system's per-app settings, the widget catalogue, and `skymap://help#<anchor>` for another
+  part of the same document. Still no WebView, so D48 holds.
+- **Anchors.** "See the troubleshooting section below" is now a link that scrolls there.
+
+Each destination pushes above Help, so Back returns the reader to the paragraph they left —
+with one exception, `skymap://tutorial`. The warm welcome's `leaveWelcome` pops back to the map
+(`popBackStack(MAP, inclusive = false)`), which drops Help from the stack on the way. That is
+the pre-existing replay behaviour and arguably right, since the tutorial points at the map's
+own controls, but it does mean the tutorial link is the one that does not come back.
+
+Two things worth knowing about the mechanism:
+
+- Supplying a link listener **replaces** Compose's default URI opening, so `htmlWithLinks` has
+  to hand the document's ordinary `https:`/`mailto:` hrefs to `LocalUriHandler` itself. Wiring
+  deep links without that branch silently breaks the four real links help.xml already had.
+- Help raises its **own** `WidgetsSheet` rather than navigating to the map's. A sheet is not a
+  destination — nothing outside `MapScreen`'s composition can flip its boolean — and routing
+  there would mean a pending-action channel from the nav host for one link, while costing the
+  reader the one-tap add they have today. The sheet is stateless and doesn't touch the map, so
+  two screens can each raise it. This is why `HelpScreen` keeps `experimentConfig`.
+
+The hrefs live in translatable strings, so `parseHelpLink` returns null for anything it does
+not recognise — a mistranslated target leaves the link inert rather than crashing the screen —
+and `HelpLinksTest` scans every locale's `help.xml` to assert no locale carries an app link
+English does not. That test is containment, not equality: a locale behind an English copy edit
+is merely stale, which `tm languages` reports.
+
 ## Location management
 
 The v1 screen (recent `002-modern-location` work) ports as a destination owned by

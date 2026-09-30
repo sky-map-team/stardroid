@@ -19,6 +19,7 @@ import com.google.android.stardroid.render.api.SkyRenderer
 import com.google.android.stardroid.render.gles1.GLSkyRenderer
 import com.google.android.stardroid.render.gles3.GLES3SkyRenderer
 import com.google.android.stardroid.settings.RendererBackend
+import com.google.android.stardroid.startup.Experiment
 
 /**
  * A constructed rendering backend: the same object in both of the roles it plays, plus the EGL
@@ -36,25 +37,43 @@ class RendererBackendHandle(
 )
 
 /**
- * Builds the backend [backend] asks for, falling back to GLES1 if the device cannot do GL ES 3.0.
+ * Builds the backend [backend] asks for, falling back to GLES1 when it cannot be honoured.
  *
- * The fallback is real rather than defensive: GLES1 is still the default and still ships, so a
- * device without GL ES 3.0 is supported rather than filtered out of the Play listing. That is
- * the deliberate difference from `render-gles3.md` §6, which assumed GLES1 would be retired.
+ * Two independent reasons to fall back, and this is deliberately the *only* place either is
+ * applied — a caller cannot end up with a GLES3 context by going round the side:
+ *
+ * - **[gles3Enabled] is false.** The [Experiment.GLES3_RENDERER] remote kill switch is off, so
+ *   a device that previously selected GLES3 quietly returns to GLES1 on its next launch. That
+ *   is the point of gating it remotely: a bad interaction with one vendor's driver can be
+ *   turned off for everyone without shipping a release.
+ *
+ *   Read once, here, at construction. A fetch that resolves *after* the activity has built its
+ *   renderer therefore lands on the following launch — which is not a staleness bug to fix: the
+ *   EGL context version is fixed when the surface is created, so there is nothing this process
+ *   could do with a later answer short of recreating the activity underneath the user.
+ * - **The device has no GL ES 3.0.** Real rather than defensive: GLES1 still ships, so such a
+ *   device is supported rather than filtered out of the Play listing — the deliberate
+ *   difference from `render-gles3.md` §6, which assumed GLES1 would be retired.
+ *
+ * Either way the fallback is silent by design. The caller records what was *asked for*, not what
+ * was built, so a fallback cannot drive a recreate loop; `RendererInfo.backend` reports what
+ * actually ran, and the diagnostics screen shows it.
  *
  * @param requestRender wired to the surface's `requestRender`, so the GLES3 backend can ask for
  *   the frames a label fade needs. See [GLES3SkyRenderer.onAnimating].
  */
+@Suppress("LongParameterList")
 fun createRendererBackend(
     context: Context,
     assets: AssetManager,
     backend: RendererBackend,
+    gles3Enabled: Boolean,
     density: Float,
     imageLoader: (ImageRef) -> android.graphics.Bitmap?,
     onRendererInfo: (RendererInfo) -> Unit,
     requestRender: () -> Unit,
 ): RendererBackendHandle =
-    if (backend == RendererBackend.GLES3 && supportsGles3(context)) {
+    if (backend == RendererBackend.GLES3 && gles3Enabled && supportsGles3(context)) {
         val renderer =
             GLES3SkyRenderer(
                 assets = assets,

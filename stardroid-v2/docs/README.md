@@ -86,8 +86,9 @@ Implementation underway, following the porting order in
   render state, and `ResourceLayerStrings` (D38).
 - **Upstream sync** — the post-fork upstream v1 visual changes ported to v2 (D40): the
   true-ARGB color scheme centralized in `SkyColors`, the graduated Star Gold ecliptic at
-  depth 5, the green horizon with its additive glow (`GlowPrimitive`/`GlowDrawer` — the render
-  API's first mesh), and Lens-Blue-tinted white DSO glyphs.
+  depth 5, the green horizon (originally with an additive glow via `GlowPrimitive`/`GlowDrawer`,
+  the render API's first mesh — both since replaced by the `Ground` render-state block), and
+  Lens-Blue-tinted white DSO glyphs.
 - **Slice 8** — the sky-gradient render state (porting-order step 5 continues):
   `RenderState.skyGradient` carrying the sun's celestial direction, the GLES1
   `SkyGradientDrawer` (v1 `SkyBox` dome behind all layers, skipped in night mode), the

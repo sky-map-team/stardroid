@@ -14,6 +14,7 @@ import com.google.android.stardroid.math.DEGREES_TO_RADIANS
 import com.google.android.stardroid.render.api.EclipseGeometry
 import com.google.android.stardroid.render.api.PhaseGeometry
 import com.google.android.stardroid.render.api.Terminator
+import com.google.android.stardroid.render.api.MoonShading
 import kotlin.math.cos
 import kotlin.math.hypot
 import kotlin.math.sin
@@ -36,29 +37,14 @@ internal object PhaseCompositor {
      */
     const val FULLY_LIT = 0.995
 
-    /**
-     * What the shadowed hemisphere keeps of its lit brightness. A true New Moon painted black is
-     * invisible against a black sky and reads as the Moon having vanished, so the dark side stays
-     * a dark grey sphere with its maria faintly legible (D88 §4.2).
-     */
-    private const val DARK_FLOOR = 0.10
-
-    /**
-     * Peak earthshine, added across the shadowed side and scaled by `1 − illuminatedFraction`.
-     * Physically real — sunlight off the Earth — and brightest exactly when it is needed most,
-     * at the thin crescent and New.
-     */
-    private const val EARTHSHINE = 0.13
-
-    /**
-     * Brightening applied in a thin ring around the whole limb, at every phase, so the disc's
-     * extent stays locatable even when almost all of it is in shadow.
-     */
-    private const val LIMB_RING = 0.22
-
-    /** Width of that ring, and of the terminator's softening, as a fraction of the radius. */
-    private const val LIMB_RING_WIDTH = 0.04
-    private const val TERMINATOR_SOFTNESS = 0.012
+    // The shading constants live in :render:api as MoonShading: both backends need them, neither
+    // may depend on the other, and they were previously private here and hand-copied into
+    // :render:gles3's skyquad.frag with nothing comparing the two.
+    private val DARK_FLOOR = MoonShading.DARK_FLOOR
+    private val EARTHSHINE = MoonShading.EARTHSHINE
+    private val LIMB_RING = MoonShading.LIMB_RING
+    private val LIMB_RING_WIDTH = MoonShading.LIMB_RING_WIDTH
+    private val TERMINATOR_SOFTNESS = MoonShading.TERMINATOR_SOFTNESS
 
     /**
      * Returns a new bitmap: [src] with [terminator] applied. [src] is left untouched, since the

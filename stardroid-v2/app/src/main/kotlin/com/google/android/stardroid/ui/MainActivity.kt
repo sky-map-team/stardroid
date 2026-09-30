@@ -298,7 +298,9 @@ class MainActivity : ComponentActivity() {
                     fusedSensorAvailable =
                         getSystemService(SensorManager::class.java)
                             ?.getDefaultSensor(Sensor.TYPE_ROTATION_VECTOR) != null,
-                    gles3Available = supportsGles3(this@MainActivity),
+                    gles3Available =
+                        supportsGles3(this@MainActivity) &&
+                            experimentConfig.isEnabled(Experiment.GLES3_RENDERER),
                 )
             }
         }
@@ -444,6 +446,7 @@ class MainActivity : ComponentActivity() {
                 context = this,
                 assets = assets,
                 backend = chosenBackend,
+                gles3Enabled = experimentConfig.isEnabled(Experiment.GLES3_RENDERER),
                 density = resources.displayMetrics.density,
                 imageLoader = imageLoader::load,
                 onRendererInfo = rendererInfoStore::set,

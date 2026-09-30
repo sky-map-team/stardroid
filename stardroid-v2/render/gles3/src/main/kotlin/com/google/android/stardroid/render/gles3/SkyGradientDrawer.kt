@@ -10,12 +10,9 @@
 package com.google.android.stardroid.render.gles3
 
 import android.opengl.GLES30
-import com.google.android.stardroid.math.DEGREES_TO_RADIANS
 import com.google.android.stardroid.render.api.SkyCamera
 import com.google.android.stardroid.render.api.SkyGradient
 import com.google.android.stardroid.render.api.Viewport
-import kotlin.math.min
-import kotlin.math.tan
 
 /**
  * The daytime and twilight sky, evaluated per pixel.
@@ -50,40 +47,7 @@ object SkyGradientDrawer {
         // The sky is the backdrop: it writes every pixel it covers, so it needs no blending.
         gl.blend(GlState.BlendMode.NONE)
 
-        // The camera basis, so each pixel can reconstruct its own view direction without a
-        // matrix inverse. This mirrors Matrix4.view's construction exactly: right = f × up,
-        // then up is re-orthogonalized as right × f.
-        val forward = camera.lineOfSight.normalized()
-        val right = (forward cross camera.up).normalized()
-        val up = right cross forward
-        GLES30.glUniform3f(
-            program.uniform("uCamForward"),
-            forward.x.toFloat(),
-            forward.y.toFloat(),
-            forward.z.toFloat(),
-        )
-        GLES30.glUniform3f(
-            program.uniform("uCamRight"),
-            right.x.toFloat(),
-            right.y.toFloat(),
-            right.z.toFloat(),
-        )
-        GLES30.glUniform3f(
-            program.uniform("uCamUp"),
-            up.x.toFloat(),
-            up.y.toFloat(),
-            up.z.toFloat(),
-        )
-
-        // fovDeg spans the short viewport side (Matrix4.perspective), so the long side's tangent
-        // is scaled up by the aspect ratio rather than the other way around.
-        val tanHalfFov = tan(camera.fovDeg * DEGREES_TO_RADIANS * 0.5)
-        val shortSidePx = min(viewport.widthPx, viewport.heightPx).coerceAtLeast(1)
-        GLES30.glUniform2f(
-            program.uniform("uTanHalfFov"),
-            (tanHalfFov * viewport.widthPx / shortSidePx).toFloat(),
-            (tanHalfFov * viewport.heightPx / shortSidePx).toFloat(),
-        )
+        ViewRayUniforms.set(program, camera, viewport)
 
         val sun = gradient.sunDirection.normalized()
         val zenith = gradient.zenithDirection.normalized()

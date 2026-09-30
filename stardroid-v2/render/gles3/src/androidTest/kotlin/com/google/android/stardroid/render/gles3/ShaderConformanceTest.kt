@@ -14,6 +14,7 @@ import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
 import com.google.android.stardroid.render.api.EclipseGeometry
 import com.google.android.stardroid.render.api.EclipseShadow
+import com.google.android.stardroid.render.api.GroundRamp
 import com.google.android.stardroid.render.api.PhaseGeometry
 import com.google.android.stardroid.render.api.StellarRamps
 import com.google.common.truth.Truth.assertThat
@@ -173,6 +174,57 @@ class ShaderConformanceTest {
             val x = inputAt(i, -1.0, 1.0)
             val expected = PhaseGeometry.litOffset(x, y, fraction)
             assertThat((actual[i][0] - 0.5f) * 4f).isWithin(TOLERANCE * 4f).of(expected.toFloat())
+        }
+    }
+
+    @Test
+    fun groundAlphaMatchesGroundRamp() {
+        // Across the whole lower hemisphere and a little above the horizon, so the edge ramp is
+        // inside the sampled range.
+        val min = -90.0
+        val max = 2.0
+        val opacity = 0.55
+        // The ramp is passed explicitly: the shader normally derives it from `fwidth`, which has
+        // no meaning on a one-pixel-tall sweep and none at all in the Kotlin reference. Pinning it
+        // keeps the two comparable, at the cost of not covering the derivative itself -- that part
+        // is only testable by looking, and it was found by looking.
+        val ramp = GroundRamp.EDGE_RAMP_DEG
+        val actual = evaluate("vec3(groundAlpha(mix($min, $max, t), $opacity, $ramp))")
+        for (i in 0 until SAMPLES) {
+            val expected = GroundRamp.alpha(inputAt(i, min, max), opacity, ramp)
+            assertThat(actual[i][0]).isWithin(TOLERANCE).of(expected.toFloat())
+        }
+    }
+
+    @Test
+    fun groundAlphaAtTheNarrowestRampIsWellDefined() {
+        // fwidth can return zero -- adjacent fragments whose dot(dir, zenith) saturate the clamp
+        // at the nadir share an altitude -- and a zero half-width makes smoothstep's edges equal,
+        // which GLSL leaves undefined. The shader clamps to EDGE_RAMP_MIN_DEG; this checks the
+        // clamped value still produces the analytic answer rather than a NaN or a hole.
+        val ramp = GroundRamp.EDGE_RAMP_MIN_DEG
+        val min = -90.0
+        val max = 2.0
+        val opacity = 0.55
+        val actual = evaluate("vec3(groundAlpha(mix($min, $max, t), $opacity, $ramp))")
+        for (i in 0 until SAMPLES) {
+            val altitude = inputAt(i, min, max)
+            val expected = GroundRamp.alpha(altitude, opacity, ramp)
+            assertThat(actual[i][0]).isWithin(TOLERANCE).of(expected.toFloat())
+            assertThat(actual[i][0].isNaN()).isFalse()
+        }
+    }
+
+    @Test
+    fun groundDaylightMatchesGroundRamp() {
+        // The colour mix is a function of the Sun alone, so it needs its own sweep: the alpha
+        // test above has no solar input at all and could not notice this curve being wrong.
+        val min = -30.0
+        val max = 20.0
+        val actual = evaluate("vec3(groundDaylight(mix($min, $max, t)))")
+        for (i in 0 until SAMPLES) {
+            val expected = GroundRamp.daylight(inputAt(i, min, max))
+            assertThat(actual[i][0]).isWithin(TOLERANCE).of(expected.toFloat())
         }
     }
 

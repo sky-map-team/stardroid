@@ -37,6 +37,22 @@ class SettingsViewModelTest {
     private val analytics = FakeAnalytics()
     private val viewModel by lazy { SettingsViewModel(settings, analytics) }
 
+    @Test
+    fun `the renderer choice is hidden unless the device and the flag both allow it`() {
+        // Both conditions are folded into gles3Available by MainActivity; this pins that the
+        // ViewModel does not quietly offer the row on its own. Hiding it matters because
+        // selecting GLES3 while either gate is shut silently returns GLES1 — a control that
+        // appears to do nothing.
+        assertThat(
+            SettingsViewModel(settings, analytics, gles3Available = false)
+                .rendererChoiceAvailable,
+        ).isFalse()
+        assertThat(
+            SettingsViewModel(settings, analytics, gles3Available = true)
+                .rendererChoiceAvailable,
+        ).isTrue()
+    }
+
     @BeforeEach
     fun setUp() {
         Dispatchers.setMain(dispatcher)
