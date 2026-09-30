@@ -94,7 +94,7 @@
     <string name="layer_horizon" translation_description="Toggle label for the layer showing the horizon line and compass points.">Horizon</string>
     <string name="layer_ecliptic" translation_description="Toggle label for the layer showing the ecliptic line.">Ecliptic</string>
     <string name="layer_altaz_grid" translation_description="Toggle label for the layer showing the altitude/azimuth (horizontal) coordinate grid, for naked-eye or manual alt-az mount observers.">Alt/Az grid</string>
-    <string name="layer_sky_gradient" translation_description="Toggle label for the daytime sky-brightness gradient drawn behind the sky map.">Sky coloring</string>
+    <string name="layer_sky_gradient" translation_description="Toggle label for the daytime sky-brightness gradient and the ground coloring.">Sky coloring</string>
 
     <!-- Map screen controls. -->
     <string name="layers_sheet_title" translation_description="Title of the bottom sheet listing sky map layers the user can show or hide.">Layers</string>
