@@ -84,13 +84,17 @@ class CountdownWidgetReceiver : GlanceAppWidgetReceiver() {
     override fun onEnabled(context: Context) {
         super.onEnabled(context)
         WidgetScheduler.ensureScheduled(context)
-        trackWidgetEvent(context, AnalyticsEvents.WIDGET_ADDED_EVENT, AnalyticsEvents.WIDGET_TYPE_COUNTDOWN)
+        trackWidgetEventAsync(
+            context,
+            AnalyticsEvents.WIDGET_ADDED_EVENT,
+            AnalyticsEvents.WIDGET_TYPE_COUNTDOWN,
+        )
     }
 
     override fun onDisabled(context: Context) {
         super.onDisabled(context)
         WidgetScheduler.syncSchedule(context)
-        trackWidgetEvent(
+        trackWidgetEventAsync(
             context,
             AnalyticsEvents.WIDGET_REMOVED_EVENT,
             AnalyticsEvents.WIDGET_TYPE_COUNTDOWN,

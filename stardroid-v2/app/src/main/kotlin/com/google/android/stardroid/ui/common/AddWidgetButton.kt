@@ -16,6 +16,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
@@ -25,6 +26,7 @@ import com.google.android.stardroid.analytics.AnalyticsEvents
 import com.google.android.stardroid.widget.requestPinWidget
 import com.google.android.stardroid.widget.trackWidgetEvent
 import com.google.android.stardroid.widget.widgetTypeOf
+import kotlinx.coroutines.launch
 
 /**
  * "Add widget": launches the system pin dialog for the widget behind [receiver], falling back
@@ -42,24 +44,28 @@ fun AddWidgetButton(
     modifier: Modifier = Modifier,
 ) {
     val context = LocalContext.current
+    val scope = rememberCoroutineScope()
     var showManualInstructions by remember { mutableStateOf(false) }
     TextButton(
         onClick = {
             val pinSupported = requestPinWidget(context, receiver)
-            trackWidgetEvent(
-                context,
-                AnalyticsEvents.WIDGET_PIN_REQUESTED_EVENT,
-                widgetTypeOf(receiver),
-                mapOf(
-                    AnalyticsEvents.WIDGET_PIN_SOURCE to source,
-                    AnalyticsEvents.WIDGET_PIN_OUTCOME to
-                        if (pinSupported) {
-                            AnalyticsEvents.WIDGET_PIN_DIALOG_SHOWN
-                        } else {
-                            AnalyticsEvents.WIDGET_PIN_UNSUPPORTED
-                        },
-                ),
-            )
+            val outcome =
+                if (pinSupported) {
+                    AnalyticsEvents.WIDGET_PIN_DIALOG_SHOWN
+                } else {
+                    AnalyticsEvents.WIDGET_PIN_UNSUPPORTED
+                }
+            scope.launch {
+                trackWidgetEvent(
+                    context,
+                    AnalyticsEvents.WIDGET_PIN_REQUESTED_EVENT,
+                    widgetTypeOf(receiver),
+                    mapOf(
+                        AnalyticsEvents.WIDGET_PIN_SOURCE to source,
+                        AnalyticsEvents.WIDGET_PIN_OUTCOME to outcome,
+                    ),
+                )
+            }
             if (!pinSupported) showManualInstructions = true
         },
         modifier = modifier,

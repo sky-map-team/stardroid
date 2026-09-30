@@ -25,13 +25,17 @@ class MoonWidgetReceiver : GlanceAppWidgetReceiver() {
     override fun onEnabled(context: Context) {
         super.onEnabled(context)
         WidgetScheduler.ensureScheduled(context)
-        trackWidgetEvent(context, AnalyticsEvents.WIDGET_ADDED_EVENT, AnalyticsEvents.WIDGET_TYPE_MOON)
+        trackWidgetEventAsync(
+            context,
+            AnalyticsEvents.WIDGET_ADDED_EVENT,
+            AnalyticsEvents.WIDGET_TYPE_MOON,
+        )
     }
 
     override fun onDisabled(context: Context) {
         super.onDisabled(context)
         WidgetScheduler.syncSchedule(context)
-        trackWidgetEvent(
+        trackWidgetEventAsync(
             context,
             AnalyticsEvents.WIDGET_REMOVED_EVENT,
             AnalyticsEvents.WIDGET_TYPE_MOON,

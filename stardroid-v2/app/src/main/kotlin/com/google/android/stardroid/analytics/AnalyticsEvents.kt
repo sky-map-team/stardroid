@@ -79,9 +79,12 @@ object AnalyticsEvents {
 
     // Home-screen widgets (D75). Added/removed fire from the receivers' onEnabled/onDisabled, so
     // they count the first instance of a type being placed and the last being removed — however
-    // it got there, including the launcher's own picker. Pin-requested fires from the in-app
-    // Add widget button and says nothing about whether the user confirmed the system dialog;
-    // compare it against widget_added to see how many requests turn into placements.
+    // it got there, including the launcher's own picker — not every instance. Pin-requested
+    // fires from the in-app Add widget button and says nothing about whether the user confirmed
+    // the system dialog. Comparing it against widget_added gives a request-to-placement rate
+    // that reads low for users who already have that widget, since their second instance
+    // never raises widget_added. The param is pin_source, not source, to stay clear of GA4's
+    // built-in traffic-source name.
     const val WIDGET_ADDED_EVENT = "widget_added_ev"
     const val WIDGET_REMOVED_EVENT = "widget_removed_ev"
     const val WIDGET_PIN_REQUESTED_EVENT = "widget_pin_requested_ev"
@@ -89,10 +92,11 @@ object AnalyticsEvents {
     const val WIDGET_TYPE_MOON = "moon"
     const val WIDGET_TYPE_TONIGHT = "tonight"
     const val WIDGET_TYPE_COUNTDOWN = "countdown"
-    const val WIDGET_PIN_SOURCE = "source"
+    const val WIDGET_TYPE_UNKNOWN = "unknown"
+    const val WIDGET_PIN_SOURCE = "pin_source"
     const val WIDGET_PIN_SOURCE_MOON_CARD = "moon_card"
     const val WIDGET_PIN_SOURCE_WIDGETS_SHEET = "widgets_sheet"
-    const val WIDGET_PIN_OUTCOME = "outcome"
+    const val WIDGET_PIN_OUTCOME = "pin_outcome"
     const val WIDGET_PIN_DIALOG_SHOWN = "dialog_shown"
     const val WIDGET_PIN_UNSUPPORTED = "unsupported"
 
