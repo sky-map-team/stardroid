@@ -11,6 +11,7 @@ package com.google.android.stardroid.render.metal
 
 import com.google.android.stardroid.math.Vector3
 import com.google.android.stardroid.render.api.AtlasCell
+import com.google.android.stardroid.render.api.Ground
 import com.google.android.stardroid.render.api.ImageRef
 import com.google.android.stardroid.render.api.LabelPrimitive
 import com.google.android.stardroid.render.api.LabelSize
@@ -155,7 +156,12 @@ class MetalLabelTest {
         // so the whole frame is bright daytime sky.
         val daySky =
             RenderState(
-                skyGradient = SkyGradient(Vector3(0.0, 1.0, 1.0).normalized(), Vector3.UNIT_Y),
+                skyGradient =
+                    SkyGradient(
+                        Vector3(0.0, 1.0, 1.0).normalized(),
+                        Vector3.UNIT_Y,
+                        ground = Ground(Rgba.BLACK, Rgba.BLACK, opacity = 0.0),
+                    ),
             )
         val without = render(LayerScene(0), daySky)
         val with = render(LayerScene(0, labels = listOf(label())), daySky)

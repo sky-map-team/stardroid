@@ -11,7 +11,9 @@ package com.google.android.stardroid.render.metal.harness
 
 import com.google.android.stardroid.math.DEGREES_TO_RADIANS
 import com.google.android.stardroid.math.Vector3
+import com.google.android.stardroid.render.api.Ground
 import com.google.android.stardroid.render.api.RenderState
+import com.google.android.stardroid.render.api.Rgba
 import com.google.android.stardroid.render.api.SkyCamera
 import com.google.android.stardroid.render.api.SkyGradient
 import com.google.android.stardroid.render.metal.MetalSkyRenderer
@@ -113,8 +115,8 @@ class RendererHarness {
         val zenith = Vector3.UNIT_Z
         renderer.setRenderState(
             when (mode) {
-                1 -> RenderState(skyGradient = SkyGradient(sunAhead(altitudeDeg = 30.0), zenith))
-                2 -> RenderState(skyGradient = SkyGradient(sunAhead(altitudeDeg = -4.0), zenith))
+                1 -> RenderState(skyGradient = SkyGradient(sunAhead(30.0), zenith, ground = GROUND))
+                2 -> RenderState(skyGradient = SkyGradient(sunAhead(-4.0), zenith, ground = GROUND))
                 3 -> RenderState(nightMode = true)
                 else -> RenderState()
             },
@@ -206,6 +208,16 @@ class RendererHarness {
             CGColorSpaceRelease(colorSpace)
             return image
         }
+
+        /**
+         * The app's ground palette (`SkyColors.GROUND_NIGHT`/`GROUND_DAY`), copied because the
+         * harness cannot depend on `:app`. Only the harness uses these values.
+         */
+        val GROUND =
+            Ground(
+                nightColor = Rgba(0x59 / 255f, 0x7c / 255f, 0x4a / 255f),
+                dayColor = Rgba(0x9c / 255f, 0xb4 / 255f, 0x8a / 255f),
+            )
 
         const val MIN_FOV_DEG = 1.0
         const val MAX_FOV_DEG = 120.0

@@ -78,3 +78,61 @@ inline float3 eclipseTint(float2 p, float umbra, float penumbra, float2 center) 
     }
     return float3(1.0);
 }
+
+// GroundRamp (:render:api), transcribed via GLES3's common.glsl; the Kotlin is the golden
+// reference and MetalShaderConstantParityTest compares the constants. Opacity depends on view
+// altitude alone, colour on solar altitude alone: the ground is the same substance all the way
+// round and must not turn warm in the west at sunset.
+constant float GROUND_EDGE_RAMP_DEG = 0.25;
+// Far below the per-pixel angle at the tightest field of view, or at high zoom the floor rather
+// than the derivative decides the edge and the fat band returns. See GroundRamp.EDGE_RAMP_MIN_DEG.
+constant float GROUND_EDGE_RAMP_MIN_DEG = 1e-5;
+constant float GROUND_DEPTH_SCALE_DEG = 12.0;
+constant float GROUND_NADIR_FRACTION = 0.4;
+constant float GROUND_NIGHT_SUN_ALTITUDE_DEG = -18.0;
+constant float GROUND_DAY_SUN_ALTITUDE_DEG = 0.0;
+
+// Half-width of the horizon edge in degrees, sized to about one pixel whatever the zoom.
+// Fragment functions only: fwidth is a screen derivative. (GLES3 has to fence this off from its
+// vertex shaders with a define; in MSL an inline helper only called from fragment functions is
+// fine as it is.) The floor keeps smoothstep defined where fwidth returns exactly zero.
+inline float groundEdgeRampDeg(float viewAltitudeDeg) {
+    return clamp(fwidth(viewAltitudeDeg), GROUND_EDGE_RAMP_MIN_DEG, GROUND_EDGE_RAMP_DEG);
+}
+
+// Zero above the horizon, one below, with the ramp straddling altitude zero so the horizon line
+// drawn at exactly zero covers the blend.
+inline float groundCoverage(float viewAltitudeDeg, float rampDeg) {
+    return 1.0 - smoothstep(-rampDeg, rampDeg, viewAltitudeDeg);
+}
+
+// The depth cue: 1 at the horizon, decaying to GROUND_NADIR_FRACTION below it.
+inline float groundDepthProfile(float viewAltitudeDeg) {
+    return GROUND_NADIR_FRACTION
+        + (1.0 - GROUND_NADIR_FRACTION) * exp(-abs(viewAltitudeDeg) / GROUND_DEPTH_SCALE_DEG);
+}
+
+// The only thing the Sun controls, and it controls only the colour.
+inline float groundDaylight(float sunAltitudeDeg) {
+    return smoothstep(GROUND_NIGHT_SUN_ALTITUDE_DEG, GROUND_DAY_SUN_ALTITUDE_DEG, sunAltitudeDeg);
+}
+
+inline float groundAlpha(float viewAltitudeDeg, float opacity, float rampDeg) {
+    return opacity * groundCoverage(viewAltitudeDeg, rampDeg) * groundDepthProfile(viewAltitudeDeg);
+}
+
+// The camera basis and half-FOV tangents that let a full-screen quad reconstruct each pixel's
+// view direction. The sky and the ground both read this one struct, as GLES3's two passes share
+// ViewRayUniforms: they meet along the horizon, and any difference would show there as a seam.
+struct ViewRay {
+    float4 right;   // xyz
+    float4 up;      // xyz
+    float4 forward; // xyz
+    float4 tanHalfFov; // xy
+};
+
+inline float3 viewDirection(constant ViewRay& ray, float2 ndc) {
+    return normalize(
+        ray.forward.xyz + ray.right.xyz * ndc.x * ray.tanHalfFov.x + ray.up.xyz * ndc.y * ray.tanHalfFov.y
+    );
+}

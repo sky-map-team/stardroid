@@ -11,8 +11,8 @@ package com.google.android.stardroid.render.metal
 
 import com.google.android.stardroid.math.DEGREES_TO_RADIANS
 import com.google.android.stardroid.math.Vector3
-import com.google.android.stardroid.render.api.GlowPrimitive
-import com.google.android.stardroid.render.api.GlowRing
+import com.google.android.stardroid.render.api.Ground
+import com.google.android.stardroid.render.api.GroundRamp
 import com.google.android.stardroid.render.api.LayerId
 import com.google.android.stardroid.render.api.LayerScene
 import com.google.android.stardroid.render.api.LinePrimitive
@@ -117,6 +117,7 @@ class MetalRenderTest {
                     SkyGradient(
                         sunDirection = Vector3(1.0, 0.0, 1.0).normalized(),
                         zenithDirection = Vector3.UNIT_Z,
+                        ground = testGround,
                     ),
             ),
         )
@@ -134,7 +135,11 @@ class MetalRenderTest {
         renderer.setRenderState(
             RenderState(
                 skyGradient =
-                    SkyGradient(sunDirection = altAz(-4.0), zenithDirection = Vector3.UNIT_Z),
+                    SkyGradient(
+                        sunDirection = altAz(-4.0),
+                        zenithDirection = Vector3.UNIT_Z,
+                        ground = testGround,
+                    ),
             ),
         )
         val frame = renderOffscreen(device, renderer, 640, 360)
@@ -144,25 +149,93 @@ class MetalRenderTest {
     }
 
     @Test
-    fun glowFillsTheBandBetweenItsRings() {
-        val renderer = MetalSkyRenderer(device, density = 1f)
-        renderer.setCamera(testCamera)
-        val green = Rgba(0f, 0.8f, 0f, 1f)
-        val glow = GlowPrimitive(listOf(GlowRing(ring(20.0), green), GlowRing(ring(5.0), green)))
-        renderer.submit(LayerId("glow"), LayerScene(0, glows = listOf(glow)))
-        val frame = renderOffscreen(device, renderer, 400, 400)
-        frame.savePng("glow-annulus")
-
-        // 12° right of centre is inside the band; the centre, inside the inner ring, is not.
-        val inBand =
-            200 +
-                (
-                    200 / kotlin.math.tan(22.5 * DEGREES_TO_RADIANS) *
-                        kotlin.math.tan(12.0 * DEGREES_TO_RADIANS)
-                ).toInt()
-        assertThat(frame.green(inBand, 200)).isGreaterThan(150)
-        assertThat(frame.green(200, 200)).isEqualTo(0)
+    fun theSkyEndsAtTheHorizon() {
+        // No ground (opacity 0), so below the horizon there is nothing but black.
+        val frame = renderDay(ground = testGround.copy(opacity = 0.0))
+        frame.savePng("sky-ends-at-horizon")
+        assertThat(frame.blue(320, 150)).isGreaterThan(100)
+        assertThat(frame.red(320, 220) + frame.green(320, 220) + frame.blue(320, 220)).isAtMost(3)
     }
+
+    @Test
+    fun theGroundMatchesItsKotlinRamp() {
+        // GroundRamp is the golden reference, as for GLES3's conformance test. Below the horizon
+        // the sky writes black, so a ground pixel is its day colour times GroundRamp.alpha.
+        val frame = renderDay(ground = testGround)
+        frame.savePng("ground-day")
+        val row = 235
+        // The pixel centre's altitude: the camera is level, and its FOV spans the 360 px height.
+        val ndcY = 1.0 - 2.0 * (row + 0.5) / 360.0
+        val altitudeDeg =
+            kotlin.math.atan(ndcY * kotlin.math.tan(30.0 * DEGREES_TO_RADIANS)) / DEGREES_TO_RADIANS
+        val alpha = GroundRamp.alpha(altitudeDeg, testGround.opacity)
+        assertThat(
+            frame.red(320, row).toDouble(),
+        ).isWithin(3.0).of(255 * testGround.dayColor.r * alpha)
+        assertThat(
+            frame.green(320, row).toDouble(),
+        ).isWithin(3.0).of(255 * testGround.dayColor.g * alpha)
+    }
+
+    @Test
+    fun theGroundCoversShallowLayersButNotTheHorizonLayer() {
+        // Two white lines 10° below the horizon: one in an ordinary layer, which the ground washes
+        // over, and one at GROUND_DEPTH, where the horizon layer lives, drawn on top of it.
+        val renderer = MetalSkyRenderer(device, density = 2f)
+        renderer.setCamera(SkyCamera(altAz(0.0), Vector3.UNIT_Z, fovDeg = 60.0))
+        renderer.setRenderState(RenderState(skyGradient = daySky(testGround)))
+        renderer.submit(LayerId("shallow"), LayerScene(10, lines = listOf(belowHorizonLine(-20.0))))
+        renderer.submit(
+            LayerId("horizon"),
+            LayerScene(LayerScene.GROUND_DEPTH, lines = listOf(belowHorizonLine(20.0))),
+        )
+        val frame = renderOffscreen(device, renderer, 640, 360)
+        frame.savePng("ground-depth-order")
+        // Looking along +X with +Z up, screen-right is -Y: the shallow line (azimuth -20°) sits
+        // right of centre, near x = 320 + 311.8 tan 20° ≈ 433, and the horizon-layer line left of
+        // it, near x ≈ 207.
+        val horizonColumn = 207
+        val shallowColumn = 433
+        assertThat(frame.red(horizonColumn, frame.brightestRow(horizonColumn))).isGreaterThan(250)
+        assertThat(frame.red(shallowColumn, frame.brightestRow(shallowColumn))).isLessThan(235)
+    }
+
+    /** The test ground: the app's own palette (SkyColors), at the default opacity. */
+    private val testGround =
+        Ground(
+            nightColor = Rgba(0x59 / 255f, 0x7c / 255f, 0x4a / 255f),
+            dayColor = Rgba(0x9c / 255f, 0xb4 / 255f, 0x8a / 255f),
+        )
+
+    private fun daySky(ground: Ground) =
+        SkyGradient(
+            sunDirection = Vector3(1.0, 0.0, 1.0).normalized(),
+            zenithDirection = Vector3.UNIT_Z,
+            ground = ground,
+        )
+
+    /** A level view toward +X with the Sun 45° up ahead of it. */
+    private fun renderDay(ground: Ground): Frame {
+        val renderer = MetalSkyRenderer(device, density = 2f)
+        renderer.setCamera(SkyCamera(altAz(0.0), Vector3.UNIT_Z, fovDeg = 60.0))
+        renderer.setRenderState(RenderState(skyGradient = daySky(ground)))
+        return renderOffscreen(device, renderer, 640, 360)
+    }
+
+    /** A short level line 10° below the horizon, centred [azimuthDeg] from +X toward +Y. */
+    private fun belowHorizonLine(azimuthDeg: Double): LinePrimitive {
+        val alt = -10.0 * DEGREES_TO_RADIANS
+        return LinePrimitive(
+            listOf(azimuthDeg - 3.0, azimuthDeg + 3.0).map { az ->
+                val a = az * DEGREES_TO_RADIANS
+                Vector3(cos(alt) * cos(a), cos(alt) * sin(a), sin(alt))
+            },
+            Rgba.WHITE,
+            widthDp = 3.0,
+        )
+    }
+
+    private fun Frame.brightestRow(column: Int): Int = (0 until height).maxBy { red(column, it) }
 
     /** The celestial equator, which the test camera (looking at RA 6h, Dec 0) sees edge-on. */
     private fun equator(widthDp: Double) =
@@ -174,15 +247,6 @@ class MetalRenderTest {
             Rgba.WHITE,
             widthDp,
         )
-
-    /** A circle of [radiusDeg] around the test camera's line of sight, in the plane facing it. */
-    private fun ring(radiusDeg: Double): List<Vector3> {
-        val r = radiusDeg * DEGREES_TO_RADIANS
-        return (0..36).map { i ->
-            val a = i * 10.0 * DEGREES_TO_RADIANS
-            Vector3(sin(r) * cos(a), cos(r), sin(r) * sin(a))
-        }
-    }
 
     /** The direction [altitudeDeg] above the horizon toward +X, for a zenith of +Z. */
     private fun altAz(altitudeDeg: Double): Vector3 {

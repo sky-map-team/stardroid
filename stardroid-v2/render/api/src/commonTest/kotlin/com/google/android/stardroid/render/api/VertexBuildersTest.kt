@@ -13,7 +13,7 @@ import com.google.android.stardroid.math.Vector3
 import com.google.android.stardroid.testing.assertThat
 import kotlin.test.Test
 
-/** [PointVertices], [GlowMesh] and [LineStrips]: the layouts the shaders read, pinned. */
+/** [PointVertices] and [LineStrips]: the layouts the shaders read, pinned. */
 class VertexBuildersTest {
     private val red = Rgba(1f, 0f, 0f, 0.5f)
 
@@ -43,24 +43,6 @@ class VertexBuildersTest {
         assertThat(fixed.toList())
             .containsExactly(0f, 0f, 1f, 1f, 0f, 0f, 0.5f, 4f, PointVertices.NO_MAGNITUDE)
             .inOrder()
-    }
-
-    @Test
-    fun glow_fillsTheBandsBetweenRings() {
-        val rings =
-            listOf(
-                GlowRing(listOf(Vector3.UNIT_X, Vector3.UNIT_Y, Vector3.UNIT_Z), red),
-                GlowRing(listOf(Vector3.UNIT_X, Vector3.UNIT_Y, Vector3.UNIT_Z), Rgba.WHITE),
-            )
-        val mesh = GlowMesh.build(listOf(GlowPrimitive(rings), GlowPrimitive(rings.take(1))))
-        // The single-ring glow is skipped; the other is 2 rings × 3 vertices, 2 quads.
-        assertThat(mesh.vertexCount).isEqualTo(6)
-        assertThat(mesh.indices.toList())
-            .containsExactly(0, 3, 4, 0, 4, 1, 1, 4, 5, 1, 5, 2)
-            .inOrder()
-        // Ring colour lands on each of the ring's vertices.
-        assertThat(mesh.vertices[3 * GlowMesh.FLOATS_PER_VERTEX + 3]).isEqualTo(1f)
-        assertThat(mesh.vertices[6]).isEqualTo(0.5f)
     }
 
     @Test

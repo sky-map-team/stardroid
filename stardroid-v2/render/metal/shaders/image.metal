@@ -35,7 +35,7 @@ vertex ImageOut image_vertex(
     return out;
 }
 
-// PhaseCompositor's constants, as in GLES3.
+// MoonShading (:render:api), transcribed; MetalShaderConstantParityTest compares them.
 constant float DARK_FLOOR = 0.10;
 constant float EARTHSHINE = 0.13;
 constant float LIMB_RING = 0.22;

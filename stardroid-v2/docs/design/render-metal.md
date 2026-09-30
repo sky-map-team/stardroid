@@ -1,7 +1,7 @@
 # Detailed Design: `:render:metal` — the Metal backend (iOS)
 
 **Status: IN PROGRESS** — slices 2a–2d built: everything `:render:gles3` draws (stars, lines,
-glows, sky dome, camera scrim, images with phase and eclipse, icons, labels), offscreen render
+the sky dome and the ground below the horizon, camera scrim, images with phase and eclipse, icons, labels), offscreen render
 tests, and an iOS harness app. The on-device perf gate remains (§6). D117.
 
 `:render:metal` is the iOS `SkyRenderer`: an iOS-only Kotlin Multiplatform module that calls
@@ -28,7 +28,7 @@ counts), Xcode's build-time shader compilation, and contributors who know only S
 |---|---|
 | `SkyRenderer`, `LayerScene`, primitives, `RenderState` | `MetalSkyRenderer` — publication, per-layer GPU cache, draw order, uniforms |
 | `SkyProjection` / `Matrix4` — the byte-identical view-projection matrix | `MetalPipelines` — the shader library and one pipeline state per program |
-| `PointVertices`, `LineStrips`, `GlowMesh` — each primitive type's vertex data, pure and tested | `shaders/*.metal` — Metal Shading Language |
+| `PointVertices`, `LineStrips` — each primitive type's vertex data, pure and tested; `GroundRamp`, `MoonShading` — the golden references the sky, ground and image shaders transcribe | `shaders/*.metal` — Metal Shading Language |
 | `ImageQuad` — an image's per-frame drawn size (FOV cull + `SizeFloor`), quad half-axes, and texture-space lit-limb and shadow vectors | `MetalTextures` — images decoded into staging buffers, copied into textures ahead of the frame's render pass |
 | `ImageCache` — reference-counted, byte-budgeted texture bookkeeping with the GPU calls passed in | `MetalInterop` — Kotlin arrays into Metal buffers |
 | `LabelAtlas` — measure, pack and rasterize a layer's labels into coverage pages; `LabelFrame` — per frame: cull, project, offset, declutter, fade, emit glyph and underline quads | `UIKitGlyphRasterizer` — the one label step that is platform code: UIKit string drawing into an alpha-only bitmap |
@@ -37,7 +37,7 @@ counts), Xcode's build-time shader compilation, and contributors who know only S
 | `TestScene` (`:render:testscene`) — the seeded scene every backend's harness draws | |
 
 The vertex builders, `ImageQuad`, `ImageCache` and the label and icon pipeline are what
-"shared" means in practice: of labels, only turning text into pixels is platform code. The point and glow builders use
+"shared" means in practice: of labels, only turning text into pixels is platform code. The point builder uses
 the same interleaved layouts as `:render:gles3`'s drawers, but write plain `FloatArray`s rather
 than `java.nio` buffers, which iOS lacks. **Follow-up:** GLES3 moves onto them, as its own
 change with pixel-identical verification, since it touches Android.
@@ -89,7 +89,10 @@ one thing the port could get wrong:
 - night mode leaves only red;
 - the magnitude limit hides faint stars;
 - the sky is blue overhead by day and warm toward a set sun;
-- a glow fills exactly the band between its rings.
+- the sky ends at the horizon, and the ground matches `GroundRamp` pixel for pixel, washing over
+  shallow layers while the horizon layer at `LayerScene.GROUND_DEPTH` draws on top of it;
+- every tuning constant in the Metal source matches its Kotlin original
+  (`MetalShaderConstantParityTest`, the counterpart of GLES3's `ShaderConstantParityTest`).
 
 Every frame is also written to `render/metal/build/reports/metal-renders/*.png` for a person to
 look at.
@@ -101,7 +104,9 @@ device first.
 
 ## 6. Slices
 
-- **2a (built):** pipelines, stars, lines, glows, sky dome, camera scrim, offscreen tests.
+- **2a (built):** pipelines, stars, lines, sky dome, camera scrim, offscreen tests. (It also drew
+  the horizon glow, until the GLES3 branch replaced that with the ground hemisphere; the Metal
+  backend followed, with a `ground.metal` transcribed from `ground.frag`.)
 - **2b (built):** `:render:metal-harness` plus `ios/RendererHarness`, the counterpart of
   Android's `RendererTestActivity`. The `MTKView`, draw loop and gestures (drag, pinch, and tap to
   cycle night, day, twilight and night mode) are Kotlin, packaged as the static `SkyMapHarness`

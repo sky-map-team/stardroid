@@ -3,13 +3,9 @@
 // every term; comments here only mark where MSL differs.
 
 struct SkyUniforms {
-    // Camera basis in celestial coordinates (xyz; w unused), mirroring Matrix4.view.
-    float4 camRight;
-    float4 camUp;
-    float4 camForward;
-    float4 sunDir;
-    float4 zenithDir;
-    // x, y: tangent of the half-FOV along each screen axis. z: turbidity. w: dither seed.
+    float4 sunDir;    // xyz
+    float4 zenithDir; // xyz
+    // x: turbidity. y: dither seed.
     float4 params;
 };
 
@@ -83,17 +79,14 @@ inline float dither(float2 pixel, float seed) {
     return (noise - 0.5) / 255.0;
 }
 
-fragment float4 sky_fragment(SkyOut in [[stage_in]], constant SkyUniforms& u [[buffer(0)]]) {
-    float3 camRight = u.camRight.xyz;
-    float3 camUp = u.camUp.xyz;
-    float3 camForward = u.camForward.xyz;
+fragment float4 sky_fragment(
+    SkyOut in [[stage_in]],
+    constant ViewRay& ray [[buffer(0)]],
+    constant SkyUniforms& u [[buffer(1)]]
+) {
     float3 sunDir = u.sunDir.xyz;
     float3 zenithDir = u.zenithDir.xyz;
-    float2 tanHalfFov = u.params.xy;
-
-    float3 dir = normalize(
-        camForward + camRight * in.ndc.x * tanHalfFov.x + camUp * in.ndc.y * tanHalfFov.y
-    );
+    float3 dir = viewDirection(ray, in.ndc);
 
     float cosTheta = dot(dir, zenithDir);
     float cosGamma = clamp(dot(dir, sunDir), -1.0, 1.0);
@@ -104,7 +97,7 @@ fragment float4 sky_fragment(SkyOut in [[stage_in]], constant SkyUniforms& u [[b
     float viewAltitudeDeg = asin(clamp(cosTheta, -1.0, 1.0)) * RADIANS_TO_DEGREES;
 
     // --- Daytime ---
-    float t = u.params.z;
+    float t = u.params.x;
     float clampedThetaSun = min(thetaSun, 89.0 / RADIANS_TO_DEGREES);
 
     PerezCoeffs coeffY = {
@@ -166,15 +159,14 @@ fragment float4 sky_fragment(SkyOut in [[stage_in]], constant SkyUniforms& u [[b
     float3 linear = daylight * daylightFactor
         + sunsetGlow + earthShadow + beltOfVenus + twilightWash;
 
-    // --- Below the horizon, dim ---
-    const float BELOW_HORIZON_DIM = 0.14;
-    // GLSL writes smoothstep(0.0, -4.0, altitude); reversed edges are undefined in MSL, so this is
-    // the identical value written with ordered edges (the Hermite curve has h(1 - s) = 1 - h(s)).
-    float below = 1.0 - smoothstep(-4.0, 0.0, viewAltitudeDeg);
-    linear *= mix(1.0, BELOW_HORIZON_DIM, below);
+    // --- The sky ends at the horizon ---
+    // Exactly the ground's own coverage, complemented, so the sky yields precisely where the
+    // ground takes over, with the edge about a pixel wide at any zoom. (Replaces an earlier dim
+    // below the horizon; GLES3's sky.frag explains why the cut must land on altitude zero.)
+    linear *= 1.0 - groundCoverage(viewAltitudeDeg, groundEdgeRampDeg(viewAltitudeDeg));
 
     // GLSL's gl_FragCoord.xy is [[position]].xy here. Its origin differs (top-left, not
     // bottom-left), which only moves the dither pattern.
-    float3 srgb = pow(toneMap(linear), float3(1.0 / 2.2)) + dither(in.position.xy, u.params.w);
+    float3 srgb = pow(toneMap(linear), float3(1.0 / 2.2)) + dither(in.position.xy, u.params.y);
     return float4(clamp(srgb, 0.0, 1.0), 1.0);
 }

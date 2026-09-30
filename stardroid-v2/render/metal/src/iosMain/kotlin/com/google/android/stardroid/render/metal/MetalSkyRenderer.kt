@@ -10,8 +10,8 @@
 package com.google.android.stardroid.render.metal
 
 import com.google.android.stardroid.math.DEGREES_TO_RADIANS
+import com.google.android.stardroid.math.RADIANS_TO_DEGREES
 import com.google.android.stardroid.math.Vector3
-import com.google.android.stardroid.render.api.GlowMesh
 import com.google.android.stardroid.render.api.GlyphRasterizer
 import com.google.android.stardroid.render.api.IconSprites
 import com.google.android.stardroid.render.api.ImageCache
@@ -56,6 +56,7 @@ import platform.UIKit.UIImage
 import kotlin.concurrent.Volatile
 import kotlin.concurrent.atomics.AtomicReference
 import kotlin.concurrent.atomics.ExperimentalAtomicApi
+import kotlin.math.asin
 import kotlin.math.min
 import kotlin.math.tan
 
@@ -64,7 +65,9 @@ import kotlin.math.tan
  * `:render:gles3` draws with the same contract, thread model and draw order.
  *
  * - **Painter's algorithm, no depth buffer** (D18). Layers by [LayerScene.depth]; within a layer,
- *   glows → lines → images → points → icons → labels.
+ *   lines → images → points → icons → labels. The ground draws between layers, at
+ *   [LayerScene.GROUND_DEPTH], so it washes over what it should occlude while the horizon layer
+ *   stays crisp on top.
  * - **Retained scenes, derived GPU data.** Producers publish immutable [LayerScene]s from any
  *   thread; [encode] builds a layer's buffers from the shared `:render:api` builders the first
  *   time it sees that scene instance, and reuses them until the layer is resubmitted.
@@ -128,7 +131,6 @@ class MetalSkyRenderer(
         val scene: LayerScene,
         val points: Mesh?,
         val lines: Mesh?,
-        val glows: Mesh?,
         val icons: IconSprites,
     )
 
@@ -230,9 +232,11 @@ class MetalSkyRenderer(
         // The sky behind everything, skipped in night mode and while the background is
         // transparent, where an opaque sky would wall off the camera — as in GLES3.
         val gradient = state.skyGradient
+        val viewRay = viewRay(camera, viewport)
         if (gradient != null && !state.nightMode && !state.transparentBackground) {
             encoder.setRenderPipelineState(pipelines.sky)
-            encoder.setFragmentFloats(skyUniforms(gradient, camera, viewport), 0)
+            encoder.setFragmentFloats(viewRay, 0)
+            encoder.setFragmentFloats(skyUniforms(gradient), 1)
             encoder.drawPrimitives(MTLPrimitiveTypeTriangleStrip, 0u, 4u)
         }
 
@@ -240,9 +244,16 @@ class MetalSkyRenderer(
         val projection = SkyProjection(camera, viewport)
         val nowMillis = (NSProcessInfo.processInfo.systemUptime * 1000.0).toLong()
         var animating = false
+        // The ground draws part-way through the layers, as in GLES3: after everything it should
+        // occlude, before the horizon layer's line and labels. `groundDrawn` covers a scene with
+        // nothing that deep.
+        var groundDrawn = false
         for ((layerId, scene) in order) {
+            if (!groundDrawn && scene.depth >= LayerScene.GROUND_DEPTH) {
+                drawGround(encoder, state, viewRay)
+                groundDrawn = true
+            }
             val gpu = layers[layerId] ?: continue
-            gpu.glows?.let { drawIndexed(encoder, pipelines.glow, it, frame) }
             gpu.lines?.let { drawIndexed(encoder, pipelines.line, it, frame) }
             drawImages(encoder, scene.images, frame, camera, viewport)
             gpu.points?.let { mesh ->
@@ -273,8 +284,26 @@ class MetalSkyRenderer(
                 texture to floatArrayOf(1f / pageSize.widthPx, 1f / pageSize.heightPx)
             }
         }
+        if (!groundDrawn) drawGround(encoder, state, viewRay)
         // The one place a still scene asks for another frame, and only while a fade is moving.
         if (animating) onAnimating()
+    }
+
+    /**
+     * The ground, skipped when the sky dome it meets is: in night mode (the sky behind is black,
+     * so a ground could only dim stars) and over the camera (the real ground is in the picture).
+     */
+    private fun drawGround(
+        encoder: MTLRenderCommandEncoderProtocol,
+        state: RenderState,
+        viewRay: FloatArray,
+    ) {
+        val gradient = state.skyGradient ?: return
+        if (state.nightMode || state.transparentBackground) return
+        encoder.setRenderPipelineState(pipelines.ground)
+        encoder.setFragmentFloats(viewRay, 0)
+        encoder.setFragmentFloats(groundUniforms(gradient), 1)
+        encoder.drawPrimitives(MTLPrimitiveTypeTriangleStrip, 0u, 4u)
     }
 
     /**
@@ -397,13 +426,11 @@ class MetalSkyRenderer(
         existing?.let(::release)
         val points = PointVertices.build(scene.points)
         val lines = LineStrips.build(scene.lines)
-        val glows = GlowMesh.build(scene.glows)
         val gpu =
             LayerGpu(
                 scene = scene,
                 points = device.bufferOf(points.data)?.let { Mesh(it, null, points.vertexCount) },
                 lines = indexedMesh(lines.vertices, lines.indices),
-                glows = indexedMesh(glows.vertices, glows.indices),
                 icons = icons,
             )
         layers[layerId] = gpu
@@ -499,9 +526,12 @@ class MetalSkyRenderer(
         this[at + 2] = v.z.toFloat()
     }
 
-    /** The per-pixel sky's inputs, built exactly as GLES3's SkyGradientDrawer builds them. */
-    private fun skyUniforms(
-        gradient: SkyGradient,
+    /**
+     * The camera basis and half-FOV tangents the sky and the ground both reconstruct view rays
+     * from — `ViewRay` in common.metal, built once per frame for both, as GLES3's ViewRayUniforms
+     * is, since the two meet along the horizon and must agree to the last bit.
+     */
+    private fun viewRay(
         camera: SkyCamera,
         viewport: Viewport,
     ): FloatArray {
@@ -509,22 +539,41 @@ class MetalSkyRenderer(
         val forward = camera.lineOfSight.normalized()
         val right = (forward cross camera.up).normalized()
         val up = right cross forward
-        val sun = gradient.sunDirection.normalized()
-        val zenith = gradient.zenithDirection.normalized()
         // fovDeg spans the short side (Matrix4.perspective), so the long side's tangent scales up.
         val tanHalfFov = tan(camera.fovDeg * DEGREES_TO_RADIANS * 0.5)
         val shortSide = min(viewport.widthPx, viewport.heightPx).toDouble()
-        val seed = (NSProcessInfo.processInfo.systemUptime * 1000.0) % DITHER_SEED_PERIOD_MS
+        val out = FloatArray(VIEW_RAY_FLOATS)
+        out.putVector(0, right)
+        out.putVector(4, up)
+        out.putVector(8, forward)
+        out[12] = (tanHalfFov * viewport.widthPx / shortSide).toFloat()
+        out[13] = (tanHalfFov * viewport.heightPx / shortSide).toFloat()
+        return out
+    }
+
+    /** SkyUniforms in sky.metal. */
+    private fun skyUniforms(gradient: SkyGradient): FloatArray {
+        val out = FloatArray(SKY_UNIFORM_FLOATS)
+        out.putVector(0, gradient.sunDirection.normalized())
+        out.putVector(4, gradient.zenithDirection.normalized())
+        out[8] = gradient.turbidity.toFloat()
+        val uptimeMs = NSProcessInfo.processInfo.systemUptime * 1000.0
+        out[9] = (uptimeMs % DITHER_SEED_PERIOD_MS).toFloat()
+        return out
+    }
+
+    /** GroundUniforms in ground.metal. */
+    private fun groundUniforms(gradient: SkyGradient): FloatArray {
+        val zenith = gradient.zenithDirection.normalized()
+        // Frame-constant, so resolved here rather than per fragment.
+        val sunDotZenith = (gradient.sunDirection.normalized() dot zenith).coerceIn(-1.0, 1.0)
+        val sunAltitudeDeg = asin(sunDotZenith) * RADIANS_TO_DEGREES
+        val ground = gradient.ground
         return floatArrayOf(
-            right.x.toFloat(), right.y.toFloat(), right.z.toFloat(), 0f,
-            up.x.toFloat(), up.y.toFloat(), up.z.toFloat(), 0f,
-            forward.x.toFloat(), forward.y.toFloat(), forward.z.toFloat(), 0f,
-            sun.x.toFloat(), sun.y.toFloat(), sun.z.toFloat(), 0f,
             zenith.x.toFloat(), zenith.y.toFloat(), zenith.z.toFloat(), 0f,
-            (tanHalfFov * viewport.widthPx / shortSide).toFloat(),
-            (tanHalfFov * viewport.heightPx / shortSide).toFloat(),
-            gradient.turbidity.toFloat(),
-            seed.toFloat(),
+            ground.nightColor.r, ground.nightColor.g, ground.nightColor.b, 0f,
+            ground.dayColor.r, ground.dayColor.g, ground.dayColor.b, 0f,
+            sunAltitudeDeg.toFloat(), ground.opacity.toFloat(), 0f, 0f,
         )
     }
 
@@ -534,6 +583,12 @@ class MetalSkyRenderer(
 
         /** Six float4s: centre, half-u, half-v, terminator, eclipse, shadow centre. */
         const val IMAGE_UNIFORM_FLOATS = 24
+
+        /** ViewRay: three float4 basis vectors and a float4 of tangents. */
+        const val VIEW_RAY_FLOATS = 16
+
+        /** SkyUniforms: sun, zenith, params. */
+        const val SKY_UNIFORM_FLOATS = 12
 
         /** Wraps the dither seed often enough to animate, slowly enough to stay float-precise. */
         const val DITHER_SEED_PERIOD_MS = 10_000.0

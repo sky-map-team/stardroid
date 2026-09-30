@@ -49,8 +49,8 @@ internal class MetalPipelines(
     val point = pipeline(device, pixelFormat, "point", Blend.ALPHA)
     val line = pipeline(device, pixelFormat, "line", Blend.ALPHA)
 
-    /** Additive, so the glow adds light to whatever is behind it instead of blending toward it. */
-    val glow = pipeline(device, pixelFormat, "glow", Blend.ADDITIVE)
+    /** The translucent ground, washed over everything below the horizon. */
+    val ground = pipeline(device, pixelFormat, "ground", Blend.ALPHA)
 
     /** The backdrop: it writes every pixel it covers, so it needs no blending. */
     val sky = pipeline(device, pixelFormat, "sky", Blend.NONE)
