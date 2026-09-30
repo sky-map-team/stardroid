@@ -28,6 +28,8 @@ import kotlinx.coroutines.withTimeoutOrNull
  */
 private const val OPT_OUT_LOOKUP_TIMEOUT_MS = 5_000L
 
+private val trackingScope = CoroutineScope(SupervisorJob() + Dispatchers.Default)
+
 /** The event params: [extras] plus the `widget` type, which an extra can never overwrite. */
 internal fun widgetEventParams(
     widget: String,
@@ -52,8 +54,8 @@ internal suspend fun logWidgetEvent(
     analytics.trackEvent(event, widgetEventParams(widget, extras))
 }
 
-/** [logWidgetEvent] through the app singletons, for callers that have a [Context] (D75). */
-internal suspend fun trackWidgetEvent(
+/** [logWidgetEvent] through the app singletons (D75). */
+private suspend fun trackWidgetEvent(
     context: Context,
     event: String,
     widget: String,
@@ -64,9 +66,31 @@ internal suspend fun trackWidgetEvent(
 }
 
 /**
+ * Logs a widget event on an application-wide scope, so the lookup outlives whatever composition
+ * or receiver call asked for it. [onDone] runs once the event is logged, dropped or has failed.
+ */
+internal fun trackWidgetEventInBackground(
+    context: Context,
+    event: String,
+    widget: String,
+    extras: Map<String, Any> = emptyMap(),
+    onDone: () -> Unit = {},
+) {
+    trackingScope.launch {
+        try {
+            withTimeoutOrNull(OPT_OUT_LOOKUP_TIMEOUT_MS) {
+                trackWidgetEvent(context, event, widget, extras)
+            }
+        } finally {
+            onDone()
+        }
+    }
+}
+
+/**
  * Logs a widget lifecycle event from a receiver callback. The opt-out lookup is asynchronous,
- * so this holds the broadcast open with `goAsync()` and finishes it once the event is logged or
- * dropped.
+ * so this holds the broadcast open with `goAsync()` until the event is logged or dropped.
+ * `goAsync()` returns null if it was already taken during this broadcast, hence the `?.`.
  */
 internal fun BroadcastReceiver.trackWidgetEventAsync(
     context: Context,
@@ -74,15 +98,7 @@ internal fun BroadcastReceiver.trackWidgetEventAsync(
     widget: String,
 ) {
     val pending = goAsync()
-    CoroutineScope(SupervisorJob() + Dispatchers.Default).launch {
-        try {
-            withTimeoutOrNull(OPT_OUT_LOOKUP_TIMEOUT_MS) {
-                trackWidgetEvent(context, event, widget)
-            }
-        } finally {
-            pending.finish()
-        }
-    }
+    trackWidgetEventInBackground(context, event, widget) { pending?.finish() }
 }
 
 /** The `AnalyticsEvents.WIDGET_TYPE_*` value for a widget's [receiver] class. */

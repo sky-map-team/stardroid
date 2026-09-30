@@ -16,7 +16,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
@@ -24,9 +23,8 @@ import androidx.compose.ui.res.stringResource
 import com.google.android.stardroid.R
 import com.google.android.stardroid.analytics.AnalyticsEvents
 import com.google.android.stardroid.widget.requestPinWidget
-import com.google.android.stardroid.widget.trackWidgetEvent
+import com.google.android.stardroid.widget.trackWidgetEventInBackground
 import com.google.android.stardroid.widget.widgetTypeOf
-import kotlinx.coroutines.launch
 
 /**
  * "Add widget": launches the system pin dialog for the widget behind [receiver], falling back
@@ -44,7 +42,6 @@ fun AddWidgetButton(
     modifier: Modifier = Modifier,
 ) {
     val context = LocalContext.current
-    val scope = rememberCoroutineScope()
     var showManualInstructions by remember { mutableStateOf(false) }
     TextButton(
         onClick = {
@@ -55,17 +52,15 @@ fun AddWidgetButton(
                 } else {
                     AnalyticsEvents.WIDGET_PIN_UNSUPPORTED
                 }
-            scope.launch {
-                trackWidgetEvent(
-                    context,
-                    AnalyticsEvents.WIDGET_PIN_REQUESTED_EVENT,
-                    widgetTypeOf(receiver),
-                    mapOf(
-                        AnalyticsEvents.WIDGET_PIN_SOURCE to source,
-                        AnalyticsEvents.WIDGET_PIN_OUTCOME to outcome,
-                    ),
-                )
-            }
+            trackWidgetEventInBackground(
+                context,
+                AnalyticsEvents.WIDGET_PIN_REQUESTED_EVENT,
+                widgetTypeOf(receiver),
+                mapOf(
+                    AnalyticsEvents.WIDGET_PIN_SOURCE to source,
+                    AnalyticsEvents.WIDGET_PIN_OUTCOME to outcome,
+                ),
+            )
             if (!pinSupported) showManualInstructions = true
         },
         modifier = modifier,
