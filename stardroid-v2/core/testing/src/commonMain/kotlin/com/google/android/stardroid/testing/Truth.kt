@@ -213,6 +213,12 @@ class IterableSubject internal constructor(
         }
     }
 
+    fun doesNotContain(element: Any?) {
+        if (nonNull().any { valuesEqual(it, element) }) {
+            failExpected("expected not to contain", element)
+        }
+    }
+
     /** Same elements with the same multiplicities, in any order unless [Ordered.inOrder]. */
     fun containsExactly(vararg expected: Any?): Ordered =
         containsExactlyElementsIn(expected.asList())

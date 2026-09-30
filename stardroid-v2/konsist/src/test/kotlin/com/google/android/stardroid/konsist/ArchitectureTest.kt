@@ -91,9 +91,14 @@ class ArchitectureTest {
         }
     }
 
-    // Every source set of the multiplatform modules except the JVM-only ones (jvmMain, jvmTest).
+    // Every source set of the multiplatform modules except the JVM-only ones: jvmMain and jvmTest
+    // in the pure modules, and the Android ones (androidMain, androidHostTest, androidDeviceTest)
+    // in :data.
     private val sharedModuleCommonSource =
-        Regex("""(?:.*/)?(core/[a-z]+|render/api)/src/(?!jvm)[A-Za-z]+/.*\.kt$""")
+        Regex(
+            """(?:.*/)?((core/[a-z]+|render/api)/src/(?!jvm)|data/src/(?!android))""" +
+                """[A-Za-z]+/.*\.kt$""",
+        )
 
     private fun sharedModuleCommonFiles() =
         Konsist.scopeFromProject().files.filter {

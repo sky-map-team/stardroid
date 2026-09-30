@@ -200,12 +200,14 @@ jobs:
             LOGCAT_PID=$!
             # :app is flavored (D49): its instrumented tests run as the fdroid variant
             # (no Play Services needed on the CI emulator); the library modules still
-            # answer to the unflavored task name.
+            # answer to the unflavored task name — except :data, which is multiplatform
+            # and names its device tests connectedAndroidDeviceTest. Without that name its
+            # catalog tests would be silently skipped.
             # The D19 GL benchmark gate (and its D67 AR variant) is skipped here: the
             # 100k-point continuous scene kills the hosted runner's emulator ~1s after
             # the activity resumes, which fails the whole run. Verified locally instead —
             # the test logs a loud banner when this flag disables it. See D95.
-            timeout 1200 ./gradlew connectedFdroidDebugAndroidTest connectedDebugAndroidTest -PskipGlBenchmarks=true -x lint --stacktrace
+            timeout 1200 ./gradlew connectedFdroidDebugAndroidTest connectedDebugAndroidTest connectedAndroidDeviceTest -PskipGlBenchmarks=true -x lint --stacktrace
             kill $LOGCAT_PID 2>/dev/null || true
             wait $LOGCAT_PID 2>/dev/null || true
       - name: Upload connected test results

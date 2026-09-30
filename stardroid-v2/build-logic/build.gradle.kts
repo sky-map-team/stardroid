@@ -16,4 +16,7 @@ dependencies {
     implementation(libs.compose.compiler.gradlePlugin)
     // Hilt's Gradle plugin, applied by bare id in `skymap.android-app` (D59).
     implementation(libs.hilt.gradlePlugin)
+    // Room's Gradle plugin (schema export for every KMP target), applied by bare id in
+    // `skymap.kmp-room`.
+    implementation(libs.room.gradlePlugin)
 }

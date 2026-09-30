@@ -9,49 +9,44 @@
 
 package com.google.android.stardroid.data
 
-import android.content.Context
-import androidx.test.core.app.ApplicationProvider
-import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.google.android.stardroid.catalog.CelestialObjectId
 import com.google.android.stardroid.catalog.LayerKind
 import com.google.android.stardroid.catalog.LocaleSpec
-import com.google.common.truth.Truth.assertThat
+import com.google.android.stardroid.testing.assertThat
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.test.runTest
-import org.junit.After
-import org.junit.Before
-import org.junit.Test
-import org.junit.runner.RunWith
+import kotlin.test.AfterTest
+import kotlin.test.BeforeTest
+import kotlin.test.Test
 
 /**
- * End-to-end proof of the 4c pipeline: the `skymap.db` asset produced by
- * `:data:generateCatalogDb` opens through [SkyMapDatabaseFactory]'s `createFromAsset` (which
- * makes Room validate the generator's schema and identity hash on a real device) and answers
- * repository queries with the harvested v1 content.
+ * End-to-end proof of the 4c pipeline: the `skymap.db` produced by `:data:generateCatalogDb`
+ * opens as each platform ships it (on Android through [SkyMapDatabaseFactory]'s
+ * `createFromAsset`, on iOS by the system SQLite), Room validates the generator's schema and
+ * identity hash, and the repository answers queries with the harvested v1 content. It runs on an
+ * Android device and on the iOS simulator, so both platforms' SQLite must agree on every answer
+ * — search included.
  */
-@RunWith(AndroidJUnit4::class)
 class BundledCatalogTest {
-    private val context = ApplicationProvider.getApplicationContext<Context>()
     private lateinit var database: SkyMapDatabase
     private lateinit var repository: RoomCatalogRepository
 
     private val english = LocaleSpec("en")
     private val french = LocaleSpec("fr")
 
-    @Before
+    @BeforeTest
     fun openBundledDatabase() {
-        context.deleteDatabase(SkyMapDatabaseFactory.DATABASE_NAME)
-        database = SkyMapDatabaseFactory.create(context)
+        database = openBundledCatalog()
         repository = RoomCatalogRepository(database)
     }
 
-    @After
+    @AfterTest
     fun cleanup() {
-        // Guarded so a failure in @Before surfaces itself, not an uninitialized-property error.
+        // Guarded so a failure in setup surfaces itself, not an uninitialized-property error.
         if (::database.isInitialized) {
             database.close()
         }
-        context.deleteDatabase(SkyMapDatabaseFactory.DATABASE_NAME)
+        deleteBundledCatalog()
     }
 
     @Test

@@ -9,14 +9,20 @@
 
 package com.google.android.stardroid.data
 
+import androidx.room.ConstructedBy
 import androidx.room.Database
 import androidx.room.RoomDatabase
+import androidx.room.RoomDatabaseConstructor
 
 /**
  * The catalog store (catalog-and-schema.md). Read-mostly and replaceable: user state never
  * lives here, so the bundled pack can be swapped wholesale on app update (D24/G11 recovery is
  * "delete and re-copy from the bundled asset"). Schema JSON is exported to `data/schemas/` —
  * the 4c build-time generator must match it, identity hash included, for `createFromAsset`.
+ *
+ * Declared in common code so iOS opens the same bundled catalog (phase 1 of the iOS port): Room
+ * generates each target's implementation, and [SkyMapDatabaseConstructor] is how a non-Android
+ * target finds it without reflection.
  */
 @Database(
     entities = [
@@ -35,8 +41,15 @@ import androidx.room.RoomDatabase
     version = 2,
     exportSchema = true,
 )
+@ConstructedBy(SkyMapDatabaseConstructor::class)
 abstract class SkyMapDatabase : RoomDatabase() {
     abstract fun catalogDao(): CatalogDao
 
     abstract fun packDao(): PackDao
+}
+
+/** Room generates the `actual` for every target; nothing is written by hand. */
+@Suppress("KotlinNoActualForExpect")
+expect object SkyMapDatabaseConstructor : RoomDatabaseConstructor<SkyMapDatabase> {
+    override fun initialize(): SkyMapDatabase
 }
