@@ -30,6 +30,7 @@ import androidx.navigation.navArgument
 import com.google.android.stardroid.R
 import com.google.android.stardroid.camera.SkyCameraPreview
 import com.google.android.stardroid.catalog.ObjectInfo
+import com.google.android.stardroid.startup.Experiment
 import com.google.android.stardroid.startup.ExperimentConfig
 import com.google.android.stardroid.ui.calibration.CompassCalibrationScreen
 import com.google.android.stardroid.ui.calibration.CompassCalibrationViewModel
@@ -194,6 +195,7 @@ fun SkyMapNavHost(
                 hasAccelerometer = sensorPresence.hasAccelerometer,
                 hasGyroscope = sensorPresence.hasGyroscope,
                 nightMode = nightMode,
+                satellitesEnabled = experimentConfig.isEnabled(Experiment.SATELLITES),
                 onFinished = {
                     if (!replay) onWelcomeFinished()
                     leaveWelcome()
@@ -328,6 +330,7 @@ fun SkyMapNavHost(
             DiagnosticsScreen(
                 diagnosticsViewModel,
                 nightMode = nightMode,
+                satellitesEnabled = experimentConfig.isEnabled(Experiment.SATELLITES),
                 onBack = { navController.popBackStack() },
             )
         }
