@@ -40,6 +40,7 @@ import androidx.glance.text.Text
 import androidx.glance.text.TextStyle
 import androidx.glance.unit.ColorProvider
 import com.google.android.stardroid.R
+import com.google.android.stardroid.analytics.AnalyticsEvents
 import com.google.android.stardroid.astronomy.SolarSystemBody
 import com.google.android.stardroid.events.CountdownTarget
 import com.google.android.stardroid.ui.MainActivity
@@ -83,11 +84,21 @@ class CountdownWidgetReceiver : GlanceAppWidgetReceiver() {
     override fun onEnabled(context: Context) {
         super.onEnabled(context)
         WidgetScheduler.ensureScheduled(context)
+        trackWidgetEventAsync(
+            context,
+            AnalyticsEvents.WIDGET_ADDED_EVENT,
+            AnalyticsEvents.WIDGET_TYPE_COUNTDOWN,
+        )
     }
 
     override fun onDisabled(context: Context) {
         super.onDisabled(context)
         WidgetScheduler.syncSchedule(context)
+        trackWidgetEventAsync(
+            context,
+            AnalyticsEvents.WIDGET_REMOVED_EVENT,
+            AnalyticsEvents.WIDGET_TYPE_COUNTDOWN,
+        )
     }
 }
 

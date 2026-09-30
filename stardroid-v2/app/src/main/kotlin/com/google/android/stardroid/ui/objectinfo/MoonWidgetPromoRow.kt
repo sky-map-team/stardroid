@@ -23,6 +23,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.google.android.stardroid.R
+import com.google.android.stardroid.analytics.AnalyticsEvents
 import com.google.android.stardroid.ui.common.AddWidgetButton
 import com.google.android.stardroid.widget.MoonWidgetReceiver
 
@@ -42,7 +43,10 @@ fun MoonWidgetPromoRow(placed: Boolean) {
             verticalAlignment = Alignment.CenterVertically,
             modifier = Modifier.fillMaxWidth(),
         ) {
-            AddWidgetButton(MoonWidgetReceiver::class.java)
+            AddWidgetButton(
+                MoonWidgetReceiver::class.java,
+                AnalyticsEvents.WIDGET_PIN_SOURCE_MOON_CARD,
+            )
         }
         return
     }
@@ -64,7 +68,10 @@ fun MoonWidgetPromoRow(placed: Boolean) {
                 style = MaterialTheme.typography.bodySmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
             )
-            AddWidgetButton(MoonWidgetReceiver::class.java)
+            AddWidgetButton(
+                MoonWidgetReceiver::class.java,
+                AnalyticsEvents.WIDGET_PIN_SOURCE_MOON_CARD,
+            )
         }
     }
 }
