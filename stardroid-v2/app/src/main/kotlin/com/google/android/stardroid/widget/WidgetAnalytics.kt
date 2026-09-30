@@ -11,9 +11,11 @@ package com.google.android.stardroid.widget
 
 import android.content.BroadcastReceiver
 import android.content.Context
+import android.util.Log
 import com.google.android.stardroid.analytics.Analytics
 import com.google.android.stardroid.analytics.AnalyticsEvents
 import com.google.android.stardroid.settings.Settings
+import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
@@ -22,13 +24,21 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withTimeoutOrNull
 
 /**
- * How long a receiver waits for the opt-out preference to load from DataStore. Well inside the
- * ~10s a `goAsync()` receiver gets; on a timeout the event is dropped rather than risk logging
- * for an opted-out user.
+ * How long a widget event waits for the opt-out preference to load from DataStore. Well inside
+ * the ~10s a `goAsync()` receiver gets; on a timeout the event is dropped rather than risk
+ * logging for an opted-out user.
  */
 private const val OPT_OUT_LOOKUP_TIMEOUT_MS = 5_000L
 
-private val trackingScope = CoroutineScope(SupervisorJob() + Dispatchers.Default)
+private const val TAG = "WidgetAnalytics"
+
+/** Analytics must never crash the app, least of all from a receiver with no UI: log and go on. */
+private val trackingScope =
+    CoroutineScope(
+        SupervisorJob() +
+            Dispatchers.Default +
+            CoroutineExceptionHandler { _, e -> Log.w(TAG, "Widget analytics event failed", e) },
+    )
 
 /** The event params: [extras] plus the `widget` type, which an extra can never overwrite. */
 internal fun widgetEventParams(
@@ -76,10 +86,12 @@ internal fun trackWidgetEventInBackground(
     extras: Map<String, Any> = emptyMap(),
     onDone: () -> Unit = {},
 ) {
+    // The coroutine can outlive the caller, so never hold an Activity's context.
+    val appContext = context.applicationContext
     trackingScope.launch {
         try {
             withTimeoutOrNull(OPT_OUT_LOOKUP_TIMEOUT_MS) {
-                trackWidgetEvent(context, event, widget, extras)
+                trackWidgetEvent(appContext, event, widget, extras)
             }
         } finally {
             onDone()
