@@ -38,7 +38,7 @@ import javax.microedition.khronos.opengles.GL10
  * thread model and the resource lifecycle are identical:
  *
  * - **Painter's algorithm, depth test off** (D18). Layer order by [LayerScene.depth]; within a
- *   layer, glows → lines → images → points → icons → labels. GL ES 3.0 makes a depth
+ *   layer, lines → images → points → icons → labels. GL ES 3.0 makes a depth
  *   buffer cheap and we still do not want one: the sky is a sphere at unit distance and the
  *   ordering is semantic, not geometric.
  * - **`RENDERMODE_WHEN_DIRTY`** (D23). A still device draws nothing. The one new exception is
@@ -90,7 +90,6 @@ class GLES3SkyRenderer(
 
     private val pointCache = HashMap<LayerId, MeshCache>()
     private val lineCache = HashMap<LayerId, LineCache>()
-    private val glowCache = HashMap<LayerId, MeshCache>()
     private val imageCache = HashMap<LayerId, ImageLayerCache>()
     private val iconCache = HashMap<LayerId, IconLayerCache>()
     private val labelCache = HashMap<LayerId, LabelLayerCache>()
@@ -162,7 +161,6 @@ class GLES3SkyRenderer(
         textureCache.onContextLost()
         pointCache.clear()
         lineCache.clear()
-        glowCache.clear()
         imageCache.clear()
         iconCache.clear()
         labelCache.clear()
@@ -256,16 +254,16 @@ class GLES3SkyRenderer(
 
         val nowMillis = SystemClock.uptimeMillis()
         var animating = false
+        // The ground draws part-way through the layer order, not around it: after everything it
+        // should occlude, but before the horizon layer's line and cardinal labels, which have to
+        // stay legible on top of it. `groundDrawn` covers the case where the horizon layer is
+        // switched off, leaving nothing deeper than the ground for the loop to trip over.
+        var groundDrawn = false
         for (i in drawOrder.indices) {
             val (layerId, scene) = drawOrder[i]
-
-            // 0. Glows, behind the layer's own lines so the crisp horizon line draws on top.
-            if (scene.glows.isNotEmpty()) {
-                val mesh =
-                    cachedMesh(glowCache, layerId, scene) {
-                        GlowDrawer.upload(gl, GlowDrawer.build(scene.glows), program("glow"))
-                    }
-                GlowDrawer.draw(gl, program("glow"), mesh, viewProj, state.nightMode)
+            if (!groundDrawn && scene.depth >= LayerScene.GROUND_DEPTH) {
+                drawGround(state, camera, viewport)
+                groundDrawn = true
             }
 
             // 1. Lines.
@@ -340,10 +338,36 @@ class GLES3SkyRenderer(
             fader.endFrame()
             animating = animating || fader.animating
         }
+        if (!groundDrawn) drawGround(state, camera, viewport)
 
         // The one place RENDERMODE_WHEN_DIRTY yields, and only for as long as something is
         // actually moving: a settled label set asks for nothing and the device goes quiet again.
         if (animating) onAnimating()
+    }
+
+    /**
+     * Draws the ground, skipped under the same conditions as the sky dome it meets at the horizon.
+     *
+     * Night mode skips it because the sky behind it is already black, so the ground could only dim
+     * stars — and not dimming stars is the point of a view that looks through the Earth. Transparent
+     * background (AR) skips it for the dome's reason: there is a camera image behind the surface and
+     * the real ground is already in it.
+     */
+    private fun drawGround(
+        state: RenderState,
+        camera: SkyCamera,
+        viewport: Viewport,
+    ) {
+        val gradient = state.skyGradient ?: return
+        if (state.nightMode || state.transparentBackground) return
+        GroundDrawer.draw(
+            gl = gl,
+            program = program("ground"),
+            gradient = gradient,
+            camera = camera,
+            viewport = viewport,
+            emptyVao = emptyVao,
+        )
     }
 
     // ---- cache helpers (all GL-thread-only) -------------------------------------------------
@@ -358,7 +382,6 @@ class GLES3SkyRenderer(
         pruneCache(iconCache) { IconDrawer.release(textureCache, it.gpuData) }
         pruneCache(labelCache) { LabelDrawer.release(gl, it.gpuData) }
         pruneCache(pointCache) { it.mesh.release(gl) }
-        pruneCache(glowCache) { it.mesh.release(gl) }
         pruneCache(lineCache) { it.mesh.release(gl) }
         faders.keys.retainAll(scenes.keys)
         drawOrder = scenes.entries.sortedBy { it.value.depth }.map { it.key to it.value }

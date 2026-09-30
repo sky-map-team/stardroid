@@ -78,6 +78,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.isActive
+import kotlinx.coroutines.job
 import kotlinx.coroutines.launch
 import kotlinx.datetime.Clock
 import kotlinx.datetime.Instant
@@ -141,11 +142,38 @@ class RendererTestActivity : Activity() {
     /** Total frames drawn on the GL thread. Readable from any thread for the perf gate test. */
     val frameCount = AtomicLong(0L)
 
+    /**
+     * CPU time spent inside the backend's `onDrawFrame`, for the D19 gate to read.
+     *
+     * Frames per second cannot compare the two backends on modern hardware: both saturate the
+     * panel's refresh rate with headroom to spare, so the counter reads the display, not the
+     * renderer (measured on a Pixel 9 Pro: GLES1 and GLES3 both exactly 120.0 fps). What GLES3
+     * actually changes is submission cost — fewer draw calls, no per-frame CPU quad rebuilds —
+     * and that is invisible while there is budget left to sleep in `eglSwapBuffers`.
+     *
+     * This times the draw call itself instead. It is a better instrument than the frame counter
+     * but not a clean one: a throttled driver back-pressures inside the GL calls, so the vsync
+     * wait lands here too (see [DrawTimeStats]). Read the tail, not the mean.
+     */
+    val drawTimeNanos = DrawTimeStats()
+
+    /**
+     * The backend name the renderer actually reported, once it has created its surface, or null
+     * before that.
+     *
+     * Exists so the perf gate can assert it measured the backend it asked for. That gate already
+     * shipped once measuring GLES1 for every variant because `EXTRA_BACKEND` was never passed;
+     * capability fallback inside the factory could reintroduce the same silence, and a number
+     * from the wrong renderer is worse than no number.
+     */
+    val activeBackend = java.util.concurrent.atomic.AtomicReference<String?>(null)
+
     private lateinit var glSurfaceView: GLSurfaceView
     private lateinit var connector: RenderConnector
     private lateinit var fpsTv: TextView
     private val scope = CoroutineScope(SupervisorJob() + Dispatchers.Main)
-    private var database: SkyMapDatabase? = null
+    // Written on the main thread, read by the scope-completion handler in onDestroy.
+    @Volatile private var database: SkyMapDatabase? = null
 
     private var nightMode = false
     private var translucentBackground = false
@@ -189,9 +217,15 @@ class RendererTestActivity : Activity() {
                 context = this,
                 assets = assets,
                 backend = requestedBackend(),
+                // Deliberately not gated on Experiment.GLES3_RENDERER. This harness exists to
+                // exercise a *named* backend — the D19 perf gate runs each variant explicitly —
+                // so honouring the flag here would make the GLES3 tests silently measure GLES1,
+                // which is the exact failure RendererPerfTest.assumeBackendSupported guards
+                // against. The flag governs what users get, not what the gate can measure.
+                gles3Enabled = true,
                 density = density,
                 imageLoader = { ref -> resolveImage(ref) ?: assetImageLoader.load(ref) },
-                onRendererInfo = {},
+                onRendererInfo = { info -> activeBackend.set(info.backend) },
                 requestRender = { requestRender() },
             )
         val glRenderMode =
@@ -344,7 +378,7 @@ class RendererTestActivity : Activity() {
     /**
      * Opens the bundled catalog DB (with D24/G11 recovery) and collects each catalog layer's
      * scene flow into the renderer. Collection lives in [scope]; onDestroy cancels it and
-     * closes the DB.
+     * closes the DB once cancellation has drained.
      */
     private fun startCatalogLayers() {
         scope.launch {
@@ -557,8 +591,12 @@ class RendererTestActivity : Activity() {
 
     override fun onDestroy() {
         super.onDestroy()
+        // Close the DB only once cancellation has drained: cancelling doesn't stop a Room
+        // query already dispatched to Room's executor, and closing the DB under it throws an
+        // IllegalStateException nothing catches, which killed the instrumentation process on
+        // slow CI runners. The scope's Job completes when the last child has finished.
+        scope.coroutineContext.job.invokeOnCompletion { database?.close() }
         scope.cancel()
-        database?.close()
     }
 
     // ---- FPS tracking (GL thread → UI thread) ----------------------------------------
@@ -638,7 +676,9 @@ class RendererTestActivity : Activity() {
         ) = delegate.onSurfaceChanged(gl, width, height)
 
         override fun onDrawFrame(gl: GL10) {
+            val startNanos = System.nanoTime()
             delegate.onDrawFrame(gl)
+            drawTimeNanos.record(System.nanoTime() - startNanos)
             onFrameDrawn()
         }
     }

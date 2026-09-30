@@ -68,7 +68,7 @@ class ShaderProgram private constructor(
         const val COMMON_ASSET = "shaders/common.glsl"
 
         /** Every program this backend compiles at surface creation. */
-        val PROGRAM_NAMES = listOf("point", "line", "sprite", "skyquad", "glow", "sky", "scrim")
+        val PROGRAM_NAMES = listOf("point", "line", "sprite", "skyquad", "ground", "sky", "scrim")
 
         /**
          * Compiles and links `shaders/[name].vert` and `shaders/[name].frag` from [assets].
@@ -116,6 +116,12 @@ class ShaderProgram private constructor(
                     appendLine("precision highp float;")
                     appendLine("precision highp int;")
                 }
+                // Lets the shared prelude gate anything that only exists in one stage. The
+                // screen-derivative builtins (fwidth, dFdx, dFdy) are the reason it exists:
+                // common.glsl is spliced into *every* program, so an unguarded call to one of
+                // them fails to compile every vertex shader in the app, which is a black screen
+                // on launch rather than a subtle bug.
+                if (fragment) appendLine("#define FRAGMENT_STAGE 1")
                 appendLine(common)
                 append(source)
             }

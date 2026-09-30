@@ -20,12 +20,17 @@ import com.google.android.stardroid.math.LatLong
 
 /**
  * [LocationProvider] over Play Services' fused provider — v1's gms `FusedLocationProvider`.
- * Interval 0 means "as fast as possible", tempered by the minimum-distance requirement.
+ * Interval 0 means "as fast as possible", tempered by the minimum-distance requirement. Each
+ * start also seeds from the provider's cached last location, so a fix another app already
+ * obtained arrives at once.
  */
 class FusedLocationProvider(
     private val client: FusedLocationProviderClient,
 ) : LocationProvider {
     private var callback: LocationCallback? = null
+
+    // The cached seed resolves asynchronously; once a live fix has arrived it is older news.
+    private var liveFixReceived = false
 
     @SuppressLint("MissingPermission")
     override fun startUpdates(
@@ -33,6 +38,7 @@ class FusedLocationProvider(
         onUpdate: (location: LatLong, accuracyM: Float?) -> Unit,
     ) {
         stopUpdates()
+        liveFixReceived = false
         val request =
             LocationRequest.Builder(Priority.PRIORITY_BALANCED_POWER_ACCURACY, 0L)
                 .setMinUpdateDistanceMeters(minDistanceMetres)
@@ -41,6 +47,7 @@ class FusedLocationProvider(
             object : LocationCallback() {
                 override fun onLocationResult(result: LocationResult) {
                     val location = result.lastLocation ?: return
+                    liveFixReceived = true
                     onUpdate(
                         LatLong(location.latitude, location.longitude),
                         if (location.hasAccuracy()) location.accuracy else null,
@@ -50,6 +57,14 @@ class FusedLocationProvider(
         callback = cb
         try {
             client.requestLocationUpdates(request, cb, Looper.getMainLooper())
+            client.lastLocation.addOnSuccessListener { location ->
+                if (location != null && callback === cb && !liveFixReceived) {
+                    onUpdate(
+                        LatLong(location.latitude, location.longitude),
+                        if (location.hasAccuracy()) location.accuracy else null,
+                    )
+                }
+            }
         } catch (_: SecurityException) {
             // The permission may have been revoked between the caller's check and this call.
         }

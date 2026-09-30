@@ -112,9 +112,10 @@ class SettingsViewModel(
     /**
      * Whether to offer a choice of rendering backend at all.
      *
-     * False on a device that cannot do GL ES 3.0, where picking the second option would
-     * silently give you the first one back — a control that appears to do nothing is worse
-     * than an absent one.
+     * The caller folds two conditions into [gles3Available]: the [Experiment.GLES3_RENDERER]
+     * flag, and whether the device can actually do GL ES 3.0. Either being false hides the row
+     * rather than showing a control that silently gives you the first option back — a setting
+     * that appears to do nothing is worse than an absent one.
      */
     val rendererChoiceAvailable: Boolean = gles3Available
 

@@ -64,3 +64,74 @@ vec3 eclipseTint(vec2 p, float umbra, float penumbra, vec2 center) {
     }
     return vec3(1.0);
 }
+
+// GroundRamp, transcribed. The Kotlin is the golden reference; the conformance test renders these
+// through the shader and asserts they agree.
+//
+// The split between the two inputs is the design. Opacity is a function of view altitude alone --
+// a mostly uniform wash that celestial objects show through, denser near the horizon to suggest
+// depth. Colour is a function of solar altitude alone -- lighter by day so the lower hemisphere
+// does not read as a hole in a lit scene, darker by night. Nothing depends on azimuth, and nothing
+// reads anything the sky shader computed: the ground is the same substance all the way round, and
+// must not turn warm in the west at sunset.
+//
+// GLES1 evaluates these on the CPU, once per ring of a shell mesh whose ring altitudes trace the
+// depth curve piecewise, which is the whole difference between the two backends here.
+const float GROUND_EDGE_RAMP_DEG = 0.25;
+// Must stay far below the per-pixel angle at the tightest field of view (0.03 deg, about
+// 2.8e-5 deg/px): a floor above that decides the width instead of the derivative and brings the
+// fat band back at high zoom. See GroundRamp.EDGE_RAMP_MIN_DEG.
+const float GROUND_EDGE_RAMP_MIN_DEG = 1e-5;
+const float GROUND_DEPTH_SCALE_DEG = 12.0;
+const float GROUND_NADIR_FRACTION = 0.4;
+const float GROUND_NIGHT_SUN_ALTITUDE_DEG = -18.0;
+const float GROUND_DAY_SUN_ALTITUDE_DEG = 0.0;
+
+// Half-width of the horizon edge, in degrees, sized so the transition is a fixed number of
+// *pixels* rather than a fixed angle.
+//
+// Fragment stage only: fwidth is a screen-derivative builtin and does not exist in a vertex
+// shader. This file is spliced into every program, so leaving it unguarded failed to compile
+// every vertex shader in the app -- a crash on launch, found on device.
+//
+// A fixed angular ramp is invisible at a wide field of view and turns into a fat band when you
+// zoom: at a couple of degrees across the screen, a quarter-degree ramp is sixty pixels of sky
+// dissolving into ground, starting at the horizon line and finishing well below it, so the line
+// no longer sits on the boundary. Reported from the device exactly that way. fwidth gives degrees
+// per pixel, so scaling by it holds the edge at roughly one pixel however far in you go. The min
+// is a safety cap, not a working value -- it only binds at absurdly wide fields.
+#ifdef FRAGMENT_STAGE
+float groundEdgeRampDeg(float viewAltitudeDeg) {
+    // The floor matters more than the cap. fwidth can return exactly zero -- adjacent fragments
+    // whose dot(dir, zenith) all saturate the clamp at the nadir produce identical altitudes --
+    // and a zero half-width makes groundCoverage call smoothstep(-0.0, 0.0, x), which GLSL leaves
+    // undefined for edge0 >= edge1. That is a driver-dependent hole or flicker at exactly the
+    // point the ground should be densest. The Kotlin reference divides by zero on the same input.
+    return clamp(fwidth(viewAltitudeDeg), GROUND_EDGE_RAMP_MIN_DEG, GROUND_EDGE_RAMP_DEG);
+}
+#endif
+
+// Zero above the horizon, one below it, with an antialiasing ramp of half-width `rampDeg`
+// straddling altitude zero -- so the horizon line, which is drawn at exactly zero, covers the
+// blend rather than sitting at the top of it.
+float groundCoverage(float viewAltitudeDeg, float rampDeg) {
+    return 1.0 - smoothstep(-rampDeg, rampDeg, viewAltitudeDeg);
+}
+
+// The depth cue: 1 at the horizon, decaying to GROUND_NADIR_FRACTION below it.
+float groundDepthProfile(float viewAltitudeDeg) {
+    return GROUND_NADIR_FRACTION
+        + (1.0 - GROUND_NADIR_FRACTION)
+            * exp(-abs(viewAltitudeDeg) / GROUND_DEPTH_SCALE_DEG);
+}
+
+// The only thing the Sun controls, and it controls only the colour.
+float groundDaylight(float sunAltitudeDeg) {
+    return smoothstep(
+        GROUND_NIGHT_SUN_ALTITUDE_DEG, GROUND_DAY_SUN_ALTITUDE_DEG, sunAltitudeDeg
+    );
+}
+
+float groundAlpha(float viewAltitudeDeg, float opacity, float rampDeg) {
+    return opacity * groundCoverage(viewAltitudeDeg, rampDeg) * groundDepthProfile(viewAltitudeDeg);
+}

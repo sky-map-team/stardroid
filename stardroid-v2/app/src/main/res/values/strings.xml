@@ -272,6 +272,8 @@
     <string name="location_set_button" translation_description="Button that confirms and applies the manually entered location">Set Location</string>
     <string name="location_place_not_found" translation_description="Inline error shown when a place name search returns no results">Place not found — try a more specific name</string>
     <string name="location_geocoder_offline" translation_description="Inline message shown when geocoding fails because there is no internet connection">No internet — enter coordinates directly</string>
+    <string name="location_geocoder_unavailable" translation_description="Inline message shown when place name lookup is disabled because the device has no geocoding backend, typically due to missing Google Play Services">No geocoding service on this device — enter coordinates directly</string>
+    <string name="location_geocoder_failed" translation_description="Inline message shown when place name lookup fails for a reason other than being offline or the place not existing">Place lookup failed — enter coordinates directly</string>
     <string name="location_invalid_latitude" translation_description="Validation error for latitude values outside the valid range">Latitude must be between −90 and 90</string>
     <string name="location_invalid_longitude" translation_description="Validation error for longitude values outside the valid range">Longitude must be between −180 and 180</string>
     <string name="location_hemisphere_north_description" translation_description="Accessibility label for the latitude hemisphere toggle button, selected for a positive value">Northern hemisphere (positive latitude)</string>
@@ -429,7 +431,7 @@
     <string name="diagnostics_location_format" translation_description="Format for location in diagnostics: lat, lon (source). %1$.4f is lat, %2$.4f is lon, %3$s is source">%1$.4f°, %2$.4f° (%3$s)</string>
     <string name="diagnostics_location_unset" translation_description="Location status shown in diagnostics when no location has been set yet">Not set</string>
     <string name="diagnostics_location_acquiring" translation_description="Location status shown in diagnostics while the location is being acquired">Acquiring…</string>
-    <string name="diagnostics_location_hardware_unavailable" translation_description="Location status shown in diagnostics when no location hardware is available">No location hardware</string>
+    <string name="diagnostics_location_hardware_unavailable" translation_description="Location status shown in diagnostics when the device has no usable location provider, whether because it lacks location hardware or none is enabled">No usable location provider</string>
     <string name="diagnostics_pointing" translation_description="Row label in the diagnostics screen showing a snapshot of where the phone is currently pointing in the sky (Right Ascension and Declination)">Pointing snapshot</string>
     <string name="diagnostics_dec_format" translation_description="Format for Declination in degrees. %1$.2f is the value">%1$.2f°</string>
     <string name="diagnostics_magnetic_correction" translation_description="Row label in the diagnostics screen showing the applied magnetic declination correction">Mag correction</string>
@@ -525,6 +527,11 @@ readings to Sky Map.</blockquote>
     <string name="whats_new_button" translation_description="Map-screen menu item that opens the What's New and Credits screen">What\'s new</string>
     <string name="whats_new_screen_title" translation_description="Title of the screen showing the release notes and the credits">What\'s New &amp; Credits</string>
 
+    <!-- The Help screen's search box, which filters the document to the matching sections. -->
+    <string name="help_search_hint" translation_description="Placeholder in the Help screen\'s search box, which filters the help document to the sections matching what is typed">Search help</string>
+    <string name="help_search_clear" translation_description="Accessibility label for the button that clears the Help screen\'s search box">Clear search</string>
+    <string name="help_search_no_results" translation_description="Shown on the Help screen when nothing matches the search. %1$s is the text the user typed">No help sections match \u201C%1$s\u201D.</string>
+
     <!-- The deep-sky symbol key at the foot of the Help screen. -->
     <string name="help_symbol_key_title" translation_description="Heading of the Help section explaining the map symbols used for deep-sky objects">Map symbols</string>
     <string name="help_symbol_key_intro" translation_description="Introductory sentence for the map-symbol key in Help">Deep-sky objects and meteor showers are marked with a symbol showing their type:</string>
@@ -539,12 +546,18 @@ readings to Sky Map.</blockquote>
     <string name="symbol_key_meteor_radiant" translation_description="Symbol-key label: the marker for the point in the sky meteors of a shower appear to come from">Meteor shower radiant</string>
     <string name="symbol_key_meteor_radiant_peak" translation_description="Symbol-key label: the brighter marker used when a meteor shower is near its peak activity">Meteor shower near its peak</string>
 
+    <!-- The widgets catalogue reached from the map\'s overflow menu. -->
+    <string name="widgets_button" translation_description="Map-screen menu item that opens the list of home-screen widgets the app offers">Widgets</string>
+    <string name="widgets_sheet_title" translation_description="Title of the sheet listing the home-screen widgets the app offers">Home screen widgets</string>
+    <string name="widgets_sheet_subtitle" translation_description="Subtitle of the widgets sheet, explaining what the listed widgets are for">Keep tonight\'s sky on your home screen. Choose one to add.</string>
+
     <!-- Moon-phase home-screen widget (D69). -->
     <string name="moon_widget_label" translation_description="Name of the moon-phase home-screen widget, shown in the launcher\'s widget picker">Moon phase</string>
     <string name="moon_widget_description" translation_description="Description of the moon-phase widget, shown under its preview in the launcher\'s widget picker">The Moon\'s phase, illumination and rise and set times, updated daily.</string>
     <string name="moon_widget_illumination" translation_description="Widget line showing how much of the Moon\'s disc is lit; %1$d is a percentage number">%1$d%% illuminated</string>
-    <string name="moon_widget_rise_time" translation_description="Widget fragment showing today\'s moonrise time; %1$s is a clock time like 17:42">rises %1$s</string>
-    <string name="moon_widget_set_time" translation_description="Widget fragment showing today\'s moonset time; %1$s is a clock time like 03:12">sets %1$s</string>
+    <string name="moon_widget_rise_time" translation_description="Widget fragment showing the next moonrise time, which may be tomorrow\'s; %1$s is a clock time like 17:42">rises %1$s</string>
+    <string name="moon_widget_set_time" translation_description="Widget fragment showing the next moonset time, which may be tomorrow\'s; %1$s is a clock time like 03:12">sets %1$s</string>
+    <string name="moon_widget_time_day_offset" translation_description="Compact suffix appended after a widget rise/set time that falls on a later day than today, so a reader doesn\'t mistake it for today\'s crossing; %1$d is the number of days ahead (almost always 1). Keep it short — the widget is very narrow. Note the leading space.">" +%1$d"</string>
     <string name="moon_phase_new" translation_description="Name of the lunar phase when the Moon is fully dark">New Moon</string>
     <string name="moon_phase_waxing_crescent" translation_description="Name of the lunar phase between new moon and first quarter">Waxing Crescent</string>
     <string name="moon_phase_first_quarter" translation_description="Name of the lunar phase when half the disc is lit and growing">First Quarter</string>

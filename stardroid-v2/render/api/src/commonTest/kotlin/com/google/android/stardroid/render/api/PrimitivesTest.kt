@@ -56,33 +56,6 @@ class PrimitivesTest {
         assertThat(scene.lines).isEmpty()
         assertThat(scene.images).isEmpty()
         assertThat(scene.labels).isEmpty()
-        assertThat(scene.glows).isEmpty()
-    }
-
-    @Test
-    fun glowPrimitive_acceptsEqualLengthRings() {
-        val glow =
-            GlowPrimitive(
-                listOf(
-                    GlowRing(listOf(Vector3.UNIT_X, Vector3.UNIT_Y), Rgba.WHITE),
-                    GlowRing(listOf(Vector3.UNIT_Y, Vector3.UNIT_Z), Rgba.TRANSPARENT),
-                ),
-            )
-        assertThat(glow.rings).hasSize(2)
-    }
-
-    @Test
-    fun glowPrimitive_rejectsRaggedRings() {
-        // The backend indexes every ring by ring 0's vertex count, so ragged input would corrupt
-        // the mesh; the primitive enforces the invariant at construction.
-        assertFailsWith<IllegalArgumentException> {
-            GlowPrimitive(
-                listOf(
-                    GlowRing(listOf(Vector3.UNIT_X, Vector3.UNIT_Y), Rgba.WHITE),
-                    GlowRing(listOf(Vector3.UNIT_Z), Rgba.TRANSPARENT),
-                ),
-            )
-        }
     }
 
     @Test

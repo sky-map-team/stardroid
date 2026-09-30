@@ -20,6 +20,7 @@ import com.google.android.stardroid.math.LatLong
 import com.google.android.stardroid.math.Matrix3
 import com.google.android.stardroid.math.RADIANS_TO_DEGREES
 import com.google.android.stardroid.math.Vector3
+import com.google.android.stardroid.render.api.RenderState
 import com.google.android.stardroid.sensors.MagneticDeclinationSource
 import com.google.android.stardroid.sensors.OrientationSource
 import com.google.android.stardroid.sensors.ZeroMagneticDeclinationSource
@@ -610,6 +611,33 @@ class MapViewModelTest {
                 )
             assertThat(vm.camera.value.lineOfSight.distanceTo(expected.lineOfSight))
                 .isLessThan(TOL)
+        }
+
+    @Test
+    fun `the gradient's zenith follows a location change without waiting for a clock tick`() =
+        testScope.runCurrentTest {
+            val vm = viewModel()
+            val states = mutableListOf<RenderState>()
+            // The subscription has to stay open across the location change. Reading the flow
+            // afresh afterwards re-runs the upstream and would pick the new location up whatever
+            // the wiring, which makes the bug invisible -- it is about whether an emission
+            // happens, not about what a fresh read computes.
+            backgroundScope.launch { vm.renderState.collect { states += it } }
+            runCurrent()
+
+            val moved = LatLong(-33.9, 18.4)
+            locations.value = moved
+            runCurrent()
+
+            // Reported from the device as two horizons: the ground's edge sat where the observer
+            // used to be while the horizon line had already moved, and only the next clock tick
+            // brought them together. The cause was reading a `currentLocation` field inside a
+            // time-only flow, so the gradient re-emitted on ticks alone while `HorizonLayer`
+            // combines the location flow and moves at once. No tick here on purpose, since a tick
+            // is exactly what used to paper over it.
+            val expected = SkyModel.localFrame(TIME, moved).up
+            val zenith = states.last().skyGradient!!.zenithDirection
+            assertThat(zenith.distanceTo(expected)).isLessThan(TOL)
         }
 
     @Test

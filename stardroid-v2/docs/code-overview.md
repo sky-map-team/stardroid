@@ -37,7 +37,7 @@ see D9), targetSdk 36, two flavors
 | Doc | Status |
 |---|---|
 | [design/high-level-architecture.md](design/high-level-architecture.md) | Current at the architecture level; still the best statement of intent |
-| [design/core-math-astronomy.md](design/core-math-astronomy.md), [design/render-api.md](design/render-api.md), [design/catalog-and-schema.md](design/catalog-and-schema.md), [design/data-layer.md](design/data-layer.md) | Current; post-doc additions (Icon primitive, Glow mesh, rise/set solver, lunar phase) are recorded in decisions D35/D40/D50/D51 |
+| [design/core-math-astronomy.md](design/core-math-astronomy.md), [design/render-api.md](design/render-api.md), [design/catalog-and-schema.md](design/catalog-and-schema.md), [design/data-layer.md](design/data-layer.md) | Current; post-doc additions (Icon primitive, Ground shading, rise/set solver, lunar phase) are recorded in decisions D35/D40/D50/D51 |
 | [design/screens-and-startup.md](design/screens-and-startup.md), [design/map-hud.md](design/map-hud.md), [design/ux-polish.md](design/ux-polish.md) | Current |
 | [design/camera-ar-mode.md](design/camera-ar-mode.md) | Current — shipped (D64 + AR-track D67–D71), now also gated by `CAMERA_AR`/`SHARE_SKY` (D80) |
 | [design/widgets-and-notifications.md](design/widgets-and-notifications.md) | Current — shipped (D75–D77), now default-off pending announcement (see §6) |
@@ -180,7 +180,7 @@ immutable `LayerScene`; null removes), `setCamera(camera)`, `setRenderState(stat
 the D13 "retained scenes + per-frame camera" model: producers publish complete scenes only when
 *their* content changes; the camera changes every frame. Five primitive kinds — points (with
 `Stellar(magnitude, colorIndex)` vs `Fixed` vs `Icon` appearance, D12), lines, world-anchored
-images, screen-space labels (with declutter priority), and glow meshes. Positions are unit
+images, and screen-space labels (with declutter priority). Positions are unit
 geocentric vectors, sizes are dp, colors abstract `Rgba`; night mode is the backend's job.
 
 The single most port-relevant decision (D21): **the view-projection pipeline lives in the pure
@@ -196,7 +196,7 @@ immutable snapshots swapped atomically, with per-primitive-family GPU caches key
 identity so unrelated state changes don't force rebuilds. Fixed-function GLES1 drawers:
 `PointDrawer` (native `glPointSize` — zoom-invariant for free), `LineDrawer` (+
 `GreatCircleSubdivision`), `ImageDrawer` (dual day/night textures), `IconDrawer`,
-`GlowDrawer` (additive Gouraud bands), `SkyGradientDrawer` (v1's SkyBox dome),
+`GroundDrawer` (the translucent ground), `SkyGradientDrawer` (v1's SkyBox dome),
 `CameraScrimDrawer` (AR video dimmer). Labels are text-to-texture: `android.graphics.Canvas`
 rasterizes white-on-transparent into atlas pages (`LabelAtlasPacker`), tinting happens at draw
 time via `glColor4f`, and `LabelDeclutterer` does per-frame priority decluttering. Notably,
