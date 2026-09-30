@@ -12,6 +12,7 @@ package com.google.android.stardroid.widget
 import android.content.Context
 import androidx.glance.appwidget.GlanceAppWidget
 import androidx.glance.appwidget.GlanceAppWidgetReceiver
+import com.google.android.stardroid.analytics.AnalyticsEvents
 
 /**
  * The moon widget's manifest entry point. The refresh schedule follows instance existence:
@@ -24,10 +25,16 @@ class MoonWidgetReceiver : GlanceAppWidgetReceiver() {
     override fun onEnabled(context: Context) {
         super.onEnabled(context)
         WidgetScheduler.ensureScheduled(context)
+        trackWidgetEvent(context, AnalyticsEvents.WIDGET_ADDED_EVENT, AnalyticsEvents.WIDGET_TYPE_MOON)
     }
 
     override fun onDisabled(context: Context) {
         super.onDisabled(context)
         WidgetScheduler.syncSchedule(context)
+        trackWidgetEvent(
+            context,
+            AnalyticsEvents.WIDGET_REMOVED_EVENT,
+            AnalyticsEvents.WIDGET_TYPE_MOON,
+        )
     }
 }

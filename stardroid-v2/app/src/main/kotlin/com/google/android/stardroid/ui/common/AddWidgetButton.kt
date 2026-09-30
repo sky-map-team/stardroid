@@ -21,24 +21,46 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import com.google.android.stardroid.R
+import com.google.android.stardroid.analytics.AnalyticsEvents
 import com.google.android.stardroid.widget.requestPinWidget
+import com.google.android.stardroid.widget.trackWidgetEvent
+import com.google.android.stardroid.widget.widgetTypeOf
 
 /**
  * "Add widget": launches the system pin dialog for the widget behind [receiver], falling back
  * to a how-to-add-it-by-hand dialog on launchers that can't pin (D75 discovery). Shared by the
  * Moon card's row and the Help screen so both offer exactly the same path. A cancelled pin
  * dialog is silent — the system owns that UI, and we only hear about a successful placement.
+ *
+ * Each tap logs `widget_pin_requested_ev`; [source] is an `AnalyticsEvents.WIDGET_PIN_SOURCE_*`
+ * value saying which surface offered the button.
  */
 @Composable
 fun AddWidgetButton(
     receiver: Class<*>,
+    source: String,
     modifier: Modifier = Modifier,
 ) {
     val context = LocalContext.current
     var showManualInstructions by remember { mutableStateOf(false) }
     TextButton(
         onClick = {
-            if (!requestPinWidget(context, receiver)) showManualInstructions = true
+            val pinSupported = requestPinWidget(context, receiver)
+            trackWidgetEvent(
+                context,
+                AnalyticsEvents.WIDGET_PIN_REQUESTED_EVENT,
+                widgetTypeOf(receiver),
+                mapOf(
+                    AnalyticsEvents.WIDGET_PIN_SOURCE to source,
+                    AnalyticsEvents.WIDGET_PIN_OUTCOME to
+                        if (pinSupported) {
+                            AnalyticsEvents.WIDGET_PIN_DIALOG_SHOWN
+                        } else {
+                            AnalyticsEvents.WIDGET_PIN_UNSUPPORTED
+                        },
+                ),
+            )
+            if (!pinSupported) showManualInstructions = true
         },
         modifier = modifier,
     ) {
