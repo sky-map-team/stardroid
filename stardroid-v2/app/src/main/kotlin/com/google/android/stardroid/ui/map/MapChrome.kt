@@ -1316,16 +1316,16 @@ private fun LayerHelpDialog(
         text = {
             Column(Modifier.verticalScroll(rememberScrollState())) {
                 Text(stringResource(help.description), style = MaterialTheme.typography.bodyMedium)
-                Text(
-                    stringResource(R.string.layer_help_customizable),
-                    style = MaterialTheme.typography.labelLarge,
-                    modifier = Modifier.padding(top = 16.dp, bottom = 4.dp),
-                )
-                Text(
-                    stringResource(help.options ?: R.string.layer_help_toggle_only),
-                    style = MaterialTheme.typography.bodyMedium,
-                )
                 if (help.options != null) {
+                    Text(
+                        stringResource(R.string.layer_help_customizable),
+                        style = MaterialTheme.typography.labelLarge,
+                        modifier = Modifier.padding(top = 16.dp, bottom = 4.dp),
+                    )
+                    Text(
+                        stringResource(help.options),
+                        style = MaterialTheme.typography.bodyMedium,
+                    )
                     Text(
                         stringResource(R.string.layer_help_expand_hint),
                         style = MaterialTheme.typography.bodySmall,
