@@ -16,7 +16,7 @@ import kotlin.test.Test
 import kotlin.test.fail
 
 /**
- * Every catalog name must normalize on this platform exactly as it did on the JVM (D115).
+ * Every catalog name must normalize on this platform exactly as it did on the JVM (D126).
  *
  * The bundled catalog DB stores names normalized by the JVM, at generation time; a search
  * normalizes the query with *this* platform's [NameNormalizer] and matches it against them. The

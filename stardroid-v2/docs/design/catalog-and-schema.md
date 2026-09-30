@@ -260,7 +260,7 @@ Notes:
 
 - **Search is word-prefix matching via SQLite FTS** (Room `@Fts4` over
   `object_name.name_normalized` with the `simple` tokenizer; case and diacritic folding for
-  every script happens in `NameNormalizer`, not SQLite — D116): the query "gal" matches
+  every script happens in `NameNormalizer`, not SQLite — D127): the query "gal" matches
   "Andromeda **Gal**axy",
   and multi-word queries ("andr gal" → `andr* gal*`) work for free. This is what users
   actually want from mid-name terms — arbitrary-substring `%term%` matching adds little
