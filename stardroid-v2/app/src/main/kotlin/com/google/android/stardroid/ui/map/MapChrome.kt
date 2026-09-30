@@ -49,13 +49,13 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.selection.toggleable
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.KeyboardArrowDown
 import androidx.compose.material.icons.filled.KeyboardArrowUp
+import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -946,6 +946,7 @@ fun LayersSheet(
                     onParameterChange = { key, option ->
                         layersViewModel.setParameter(toggle.id, key, option)
                     },
+                    help = layerHelp(toggle.id),
                 )
                 if (toggle.id == SatelliteLayer.LAYER_ID && satelliteDataMissing) {
                     SatelliteEmptyStateCard(
@@ -965,6 +966,7 @@ fun LayersSheet(
                     onParameterChange = { key, option ->
                         layersViewModel.setParameter(toggle.id, key, option)
                     },
+                    help = layerHelp(toggle.id),
                 )
             }
             LayerGroupHeader(R.string.layers_group_display)
@@ -973,12 +975,14 @@ fun LayersSheet(
                 label = R.string.layer_sky_gradient,
                 checked = skyGradientEnabled,
                 onCheckedChange = { layersViewModel.setSkyGradientEnabled(it) },
+                help = LayerHelp(R.string.layer_help_sky_gradient),
             )
             LayerRow(
                 icon = R.drawable.ic_layer_hud,
                 label = R.string.layer_hud,
                 checked = hudEnabled,
                 onCheckedChange = { layersViewModel.setHudEnabled(it) },
+                help = LayerHelp(R.string.layer_help_hud),
             )
             if (hasCamera) {
                 LayerRow(
@@ -989,6 +993,7 @@ fun LayersSheet(
                     enabled = sensorsAvailable,
                     subtitle =
                         if (sensorsAvailable) null else R.string.layer_camera_needs_sensors,
+                    help = LayerHelp(R.string.layer_help_camera),
                 )
             }
         }
@@ -1017,8 +1022,13 @@ private fun LayerRow(
     @StringRes subtitle: Int? = null,
     parameters: List<LayerParameterState> = emptyList(),
     onParameterChange: (String, String) -> Unit = { _, _ -> },
+    help: LayerHelp,
 ) {
     var expanded by rememberSaveable(label) { mutableStateOf(false) }
+    var showHelp by rememberSaveable(label) { mutableStateOf(false) }
+    if (showHelp) {
+        LayerHelpDialog(icon = icon, label = label, help = help, onDismiss = { showHelp = false })
+    }
     Column {
         LayerRowContent(
             icon = icon,
@@ -1030,6 +1040,7 @@ private fun LayerRow(
             expandable = parameters.isNotEmpty(),
             expanded = expanded,
             onExpandToggle = { expanded = !expanded },
+            onLongClick = { showHelp = true },
         )
         if (expanded) {
             for (state in parameters) {
@@ -1141,6 +1152,7 @@ private fun LayerParameterChooser(
     }
 }
 
+@OptIn(ExperimentalFoundationApi::class)
 @Composable
 private fun LayerRowContent(
     @DrawableRes icon: Int,
@@ -1152,6 +1164,7 @@ private fun LayerRowContent(
     expandable: Boolean,
     expanded: Boolean,
     onExpandToggle: () -> Unit,
+    onLongClick: () -> Unit,
 ) {
     val contentColor =
         if (enabled) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.outline
@@ -1161,11 +1174,15 @@ private fun LayerRowContent(
         modifier =
             Modifier
                 .fillMaxWidth()
-                .toggleable(
-                    value = checked,
+                // combinedClickable rather than toggleable, which has no long-press slot. The
+                // row must stay long-pressable when disabled (the camera row explains why it is
+                // unavailable), so the gestures are enabled regardless and only the tap is gated.
+                .semantics { toggleableState = ToggleableState(checked) }
+                .combinedClickable(
                     role = Role.Switch,
-                    enabled = enabled,
-                    onValueChange = onCheckedChange,
+                    onLongClickLabel = stringResource(R.string.layer_help_long_click_label),
+                    onLongClick = onLongClick,
+                    onClick = { if (enabled) onCheckedChange(!checked) },
                 )
                 .padding(vertical = 8.dp),
     ) {
@@ -1256,6 +1273,73 @@ private fun parameterOptionDescription(option: String): Int =
             R.string.layer_param_altaz_grid_density_medium_desc
         else -> R.string.layer_param_altaz_grid_density_fine_desc
     }
+
+/**
+ * What the long-press popup on a layer row says: what the layer draws, and (when it has any)
+ * what the user can change about it.
+ */
+private class LayerHelp(
+    @StringRes val description: Int,
+    @StringRes val options: Int? = null,
+)
+
+private fun layerHelp(id: LayerId): LayerHelp =
+    when (id) {
+        CatalogLayers.STARS_LAYER_ID -> LayerHelp(R.string.layer_help_stars)
+        CatalogLayers.CONSTELLATIONS_LAYER_ID -> LayerHelp(R.string.layer_help_constellations)
+        CatalogLayers.DEEP_SKY_LAYER_ID -> LayerHelp(R.string.layer_help_deep_sky)
+        SolarSystemLayer.LAYER_ID ->
+            LayerHelp(R.string.layer_help_solar_system, R.string.layer_help_options_solar_system)
+        MeteorShowerLayer.LAYER_ID -> LayerHelp(R.string.layer_help_meteor_showers)
+        SatelliteLayer.LAYER_ID ->
+            LayerHelp(R.string.layer_help_satellites, R.string.layer_help_options_satellites)
+        GridLayer.LAYER_ID -> LayerHelp(R.string.layer_help_grid)
+        HorizonLayer.LAYER_ID -> LayerHelp(R.string.layer_help_horizon)
+        EclipticLayer.LAYER_ID -> LayerHelp(R.string.layer_help_ecliptic)
+        AltAzGridLayer.LAYER_ID ->
+            LayerHelp(R.string.layer_help_altaz_grid, R.string.layer_help_options_altaz_grid)
+        else -> error("No help text for layer ${id.id}")
+    }
+
+/** The popup a long-press on a layer row opens. */
+@Composable
+private fun LayerHelpDialog(
+    @DrawableRes icon: Int,
+    @StringRes label: Int,
+    help: LayerHelp,
+    onDismiss: () -> Unit,
+) {
+    AlertDialog(
+        onDismissRequest = onDismiss,
+        icon = { Icon(painterResource(icon), contentDescription = null) },
+        title = { Text(stringResource(label)) },
+        text = {
+            Column(Modifier.verticalScroll(rememberScrollState())) {
+                Text(stringResource(help.description), style = MaterialTheme.typography.bodyMedium)
+                Text(
+                    stringResource(R.string.layer_help_customizable),
+                    style = MaterialTheme.typography.labelLarge,
+                    modifier = Modifier.padding(top = 16.dp, bottom = 4.dp),
+                )
+                Text(
+                    stringResource(help.options ?: R.string.layer_help_toggle_only),
+                    style = MaterialTheme.typography.bodyMedium,
+                )
+                if (help.options != null) {
+                    Text(
+                        stringResource(R.string.layer_help_expand_hint),
+                        style = MaterialTheme.typography.bodySmall,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                        modifier = Modifier.padding(top = 8.dp),
+                    )
+                }
+            }
+        },
+        confirmButton = {
+            TextButton(onClick = onDismiss) { Text(stringResource(R.string.layer_help_close)) }
+        },
+    )
+}
 
 /** Core object layers — `always` in the rail (D56). */
 private val RAIL_ALWAYS_IDS: List<LayerId> =
