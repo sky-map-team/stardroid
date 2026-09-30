@@ -12,7 +12,7 @@ package com.google.android.stardroid.render.api
 /**
  * The one platform-specific step in drawing labels: turning text into pixels. Everything around
  * it — measuring into an atlas, packing, decluttering, fading, placing — is shared
- * ([LabelAtlas], [LabelFrame]), so a backend implements only this (render-gles3.md §6.5, D117):
+ * ([LabelAtlas], [LabelFrame]), so a backend implements only this (render-gles3.md §6.5, D128):
  * Android's `Canvas` on one side, UIKit's string drawing on the other. It is also the seam a
  * signed-distance-field atlas would plug into.
  */

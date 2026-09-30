@@ -75,7 +75,7 @@ other than the JVM tools are Kotlin Multiplatform (JVM + iOS), shared with the i
 | `:render:gles1` | Android lib | 2,292 / 1,021 | OpenGL ES 1.0 backend implementing `:render:api` |
 | `:render:gles3` | Android lib | 2,837 / 458 | OpenGL ES 3.0 backend implementing `:render:api` (render-gles3.md) |
 | `:render:testscene` | pure | 195 / — | The seeded synthetic scene every renderer harness draws |
-| `:render:metal` | iOS lib | 467 + 427 MSL / 364 | Metal backend implementing `:render:api`, Kotlin/Native (render-metal.md, D117) |
+| `:render:metal` | iOS lib | 467 + 427 MSL / 364 | Metal backend implementing `:render:api`, Kotlin/Native (render-metal.md, D128) |
 | `:data` | Android lib | 1,058 / 1,035 | Room catalog store implementing `:core:catalog` |
 | `:app` | Android app | 19,572 / 6,583 | Compose UI, ViewModels, Hilt, sensors, location, widgets, notifications |
 | `:konsist` | test-only | — | Architecture gate (D20) |

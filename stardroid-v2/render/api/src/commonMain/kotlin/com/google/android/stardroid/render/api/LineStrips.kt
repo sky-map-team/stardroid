@@ -13,7 +13,7 @@ import com.google.android.stardroid.math.Vector3
 
 /**
  * One layer's [LinePrimitive]s as mitered triangle strips, for a backend with no line width to
- * set (Metal has none; D117). render-gles3.md §3.1 names this as the answer and rules out the
+ * set (Metal has none; D128). render-gles3.md §3.1 names this as the answer and rules out the
  * obvious alternative: our lines are translucent (the grid is 8% alpha), so independent
  * per-segment quads would double-blend at every joint and read as beaded.
  *

@@ -5,7 +5,7 @@ plugins {
     id("skymap.ios-library")
 }
 
-// The Metal SkyRenderer backend (D117): Kotlin/Native calling Metal directly. The shaders are
+// The Metal SkyRenderer backend (D128): Kotlin/Native calling Metal directly. The shaders are
 // real .metal files under shaders/, embedded as one Kotlin string and compiled at runtime by
 // MTLDevice.newLibraryWithSource — the way :render:gles3 compiles its GLSL — so nothing here
 // needs Xcode's offline Metal toolchain.

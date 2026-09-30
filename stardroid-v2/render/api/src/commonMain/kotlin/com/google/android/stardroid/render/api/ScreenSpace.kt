@@ -19,7 +19,7 @@ import kotlin.math.tan
 /**
  * Screen-space arithmetic for the drawers that project sky positions on the CPU — icons and
  * labels — rather than letting a vertex shader do it. Shared so the two cannot drift (a label is
- * placed relative to the thing it names), and so every backend agrees (D117). Transcribed from
+ * placed relative to the thing it names), and so every backend agrees (D128). Transcribed from
  * `:render:gles3`'s ScreenSpace.
  */
 object ScreenSpace {

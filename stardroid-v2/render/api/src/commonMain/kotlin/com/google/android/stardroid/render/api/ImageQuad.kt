@@ -17,7 +17,7 @@ import kotlin.math.sin
 
 /**
  * The per-frame geometry of an [ImagePrimitive] drawn as a world-anchored quad — the portable
- * half of a programmable backend's image drawer (D117). Everything here depends on the field of
+ * half of a programmable backend's image drawer (D128). Everything here depends on the field of
  * view, so it is evaluated at draw time: a producer's ~1 Hz resubmission cannot follow a pinch
  * (D86). The backend supplies only the texture and the draw call.
  */

@@ -12,7 +12,7 @@ package com.google.android.stardroid.render.api
 /**
  * A backend's resolved images — textures, in practice — held by reference count and kept under
  * a byte budget: the bookkeeping half of `:render:gles3`'s `TextureCache`, with the GPU calls
- * passed in, so every backend shares it (D117).
+ * passed in, so every backend shares it (D128).
  *
  * A layer [retain]s each [ImageRef] it draws and [release]s them when its scene is replaced, so
  * an image shared by consecutive scenes is never dropped in between. Released images stay cached

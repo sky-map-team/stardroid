@@ -2,14 +2,14 @@
 
 **Status: IN PROGRESS** — slices 2a–2d built: everything `:render:gles3` draws (stars, lines,
 the sky dome and the ground below the horizon, camera scrim, images with phase and eclipse, icons, labels), offscreen render
-tests, and an iOS harness app. The on-device perf gate remains (§6). D117.
+tests, and an iOS harness app. The on-device perf gate remains (§6). D128.
 
 `:render:metal` is the iOS `SkyRenderer`: an iOS-only Kotlin Multiplatform module that calls
 Metal directly through Kotlin/Native. It is a sibling of `:render:gles1` and `:render:gles3`
 behind the same contract, with the same thread model and the same draw order, and it draws what
 `:render:gles3` draws.
 
-## 1. Why Kotlin/Native and not Swift (D117)
+## 1. Why Kotlin/Native and not Swift (D128)
 
 Most of a backend is not API calls. Layer ordering, per-layer caches, per-frame image sizing,
 icon projection, and label declutter and fade are roughly 2,000 of `:render:gles3`'s 2,800

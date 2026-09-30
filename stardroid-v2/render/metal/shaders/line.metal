@@ -1,4 +1,4 @@
-// Lines as mitered triangle strips (D117). Metal has no line width, and render-gles3.md §3.1
+// Lines as mitered triangle strips (D128). Metal has no line width, and render-gles3.md §3.1
 // rules out independent per-segment quads: our lines are translucent, so quads would double-blend
 // at every joint. Instead each polyline vertex arrives twice (side -1 and +1) carrying its
 // neighbours, and is pushed out along the miter of the two screen-space directions, so adjacent

@@ -207,7 +207,7 @@ class ArchitectureTest {
 
     @Test
     fun `nothing in the Gradle tree depends on render metal`() {
-        // D117: :render:metal is the iOS backend, chosen by the iOS app alone (and exercised by
+        // D128: :render:metal is the iOS backend, chosen by the iOS app alone (and exercised by
         // its harness), as :app alone chooses between the GL backends. No shared or Android
         // module may reach into it.
         val others =

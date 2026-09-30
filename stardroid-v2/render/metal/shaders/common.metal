@@ -1,5 +1,5 @@
 // Shared by every program. The embed task concatenates this file first and the others after it
-// into one library source, compiled at runtime — as :render:gles3 compiles its GLSL (D117).
+// into one library source, compiled at runtime — as :render:gles3 compiles its GLSL (D128).
 //
 // Transcribed from :render:gles3's common.glsl; the Kotlin in :render:api is the golden reference
 // for the functions that have one (StellarRamps.magnitudeAlpha).

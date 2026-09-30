@@ -32,7 +32,7 @@ include(":render:api")
 include(":render:testscene")
 include(":data:generator")
 
-// iOS-only modules (D117)
+// iOS-only modules (D128)
 include(":render:metal")
 include(":render:metal-harness")
 

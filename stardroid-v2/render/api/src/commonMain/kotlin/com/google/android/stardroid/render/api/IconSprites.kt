@@ -15,7 +15,7 @@ import kotlin.math.floor
 /**
  * One layer's icon points — deep-sky type markers, meteor-shower radiants — as screen-space quads
  * anchored at sky positions and drawn at a fixed dp size, so they do not inflate with zoom (D12).
- * Shared by every backend (D117), transcribed from `:render:gles3`'s IconDrawer.
+ * Shared by every backend (D128), transcribed from `:render:gles3`'s IconDrawer.
  *
  * [build] resolves sizes and groups the icons by image; [layout] projects them each frame into
  * [SpriteInstances], one run per distinct image, whose texture index is a position in [refs].

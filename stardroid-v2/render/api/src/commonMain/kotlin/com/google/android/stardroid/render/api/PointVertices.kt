@@ -12,7 +12,7 @@ package com.google.android.stardroid.render.api
 /**
  * One layer's dot points (stars, fixed markers), interleaved as
  * `(x, y, z, r, g, b, a, sizeDp, magnitude)` per vertex — the portable `build` half of a
- * programmable backend's point drawer (render-gles3.md §6.5, D117).
+ * programmable backend's point drawer (render-gles3.md §6.5, D128).
  *
  * Colour tint, magnitude shade and size depend only on the scene, so they are baked. Alpha's
  * dependence on [RenderState.magnitudeLimit], and the night-mode transform, are *not*: the shader

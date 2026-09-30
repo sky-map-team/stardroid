@@ -14,7 +14,7 @@ import kotlin.math.max
 import kotlin.math.min
 
 /**
- * The per-frame half of a label drawer, shared by every backend (D117): cull, project, offset,
+ * The per-frame half of a label drawer, shared by every backend (D128): cull, project, offset,
  * declutter, fade, and emit the survivors as [SpriteInstances] — one run per [LabelAtlas] page,
  * each glyph followed by its has-an-info-card underline. Transcribed from `:render:gles3`'s
  * LabelDrawer.draw; the backend only uploads the instances and draws each run with its page.

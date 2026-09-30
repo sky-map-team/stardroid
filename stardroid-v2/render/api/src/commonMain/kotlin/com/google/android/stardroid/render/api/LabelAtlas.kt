@@ -13,7 +13,7 @@ import com.google.android.stardroid.math.Vector3
 
 /**
  * One layer's labels rasterized into coverage-mask atlas pages, plus each label's cell and
- * placement data: the `build` half of a label drawer, shared by every backend (D117). The
+ * placement data: the `build` half of a label drawer, shared by every backend (D128). The
  * backend uploads [pages] as single-channel textures and hands the glyphs to [LabelFrame] each
  * frame. Transcribed from `:render:gles3`'s LabelDrawer.build, with the text rasterizing behind
  * [GlyphRasterizer].

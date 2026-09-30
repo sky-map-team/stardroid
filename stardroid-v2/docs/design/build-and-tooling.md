@@ -16,7 +16,7 @@ Fifteen Gradle modules, following the dependency rule (arrows inward only; see
 :render:gles3   android-library→ :render:api
 :render:api     pure-kmp       → :core:math
 :render:testscene pure-kmp     → :render:api (the seeded scene every renderer harness draws)
-:render:metal   ios-library    → :render:api (the iOS Metal backend, D117; render-metal.md)
+:render:metal   ios-library    → :render:api (the iOS Metal backend, D128; render-metal.md)
 :render:metal-harness ios-library → :render:metal, :render:testscene (the iOS harness's
                                  framework; ios/RendererHarness hosts it)
 :data           android-library→ :core:catalog, :core:astronomy, :core:math

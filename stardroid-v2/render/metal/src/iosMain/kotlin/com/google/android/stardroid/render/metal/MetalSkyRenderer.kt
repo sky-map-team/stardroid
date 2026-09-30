@@ -61,7 +61,7 @@ import kotlin.math.min
 import kotlin.math.tan
 
 /**
- * The Metal [SkyRenderer] backend (D117): Kotlin/Native calling Metal, drawing what
+ * The Metal [SkyRenderer] backend (D128): Kotlin/Native calling Metal, drawing what
  * `:render:gles3` draws with the same contract, thread model and draw order.
  *
  * - **Painter's algorithm, no depth buffer** (D18). Layers by [LayerScene.depth]; within a layer,
