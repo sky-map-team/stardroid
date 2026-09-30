@@ -38,6 +38,7 @@ recent one.
 
 | Icon | Name | First released | Mission |
 |---|---|---|---|
+| <img src="../assets/release-icons/2.1.0_artemis_icon.png" width="40" alt="Artemis" /> | **Artemis** | 2026-09-30 (2.1.2) | [Artemis program](https://en.wikipedia.org/wiki/Artemis_program) — NASA's program to return humans to the Moon and establish a sustained lunar presence. |
 | <img src="../assets/release-icons/2.0.3_apollo_icon.png" width="40" alt="Apollo" /> | **Apollo** | 2026-09-02 (2.0.0) | [Apollo program](https://en.wikipedia.org/wiki/Apollo_program) — NASA's 1961–1972 program that landed the first crewed missions on the Moon. |
 
 Hannah and Louise (the earliest 2.0.0 pre-release betas, before the mission-name convention was
