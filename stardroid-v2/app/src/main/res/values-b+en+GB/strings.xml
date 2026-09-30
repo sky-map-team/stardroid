@@ -493,6 +493,7 @@
     <!-- tm:omitted name="moon_widget_illumination" reason="identical_to_source" -->
     <!-- tm:omitted name="moon_widget_rise_time" reason="identical_to_source" -->
     <!-- tm:omitted name="moon_widget_set_time" reason="identical_to_source" -->
+    <string name="moon_widget_time_day_offset" translation_description="Compact suffix appended after a widget rise/set time that falls on a later day than today, so a reader doesn\'t mistake it for today\'s crossing; %1$d is the number of days ahead (almost always 1). Keep it short — the widget is very narrow. Note the leading space.">+%1$d</string>
     <!-- tm:omitted name="moon_phase_new" reason="identical_to_source" -->
     <!-- tm:omitted name="moon_phase_waxing_crescent" reason="identical_to_source" -->
     <!-- tm:omitted name="moon_phase_first_quarter" reason="identical_to_source" -->

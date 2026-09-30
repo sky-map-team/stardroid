@@ -162,7 +162,6 @@ fun WhatsNewDialog(
             val html =
                 stringResource(R.string.whats_new_support) +
                     stringResource(R.string.beta_user_help_text) +
-                    stringResource(R.string.whats_new_supplement) +
                     stringResource(R.string.whats_new_content)
             StyledHtml(
                 html,
