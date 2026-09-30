@@ -29,7 +29,7 @@ tasks.withType<Test>().configureEach {
 
 // Every catalog name with its JVM-normalized form (NameCorpusExport), for :core:catalog's
 // cross-platform NameNormalizer agreement test, whose test tasks depend on this one by path and
-// read its output (D115).
+// read its output (D126).
 tasks.register<JavaExec>("exportNameCorpus") {
     // Locals, so the argument provider captures no script references (configuration cache).
     val sourceDir = sourceData

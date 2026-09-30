@@ -17,7 +17,7 @@ kotlin {
 }
 
 // NameNormalizerCorpusTest re-normalizes every catalog name on each target and compares the
-// result with the JVM's, exported from source-data/ by :data:generator (D115). Every test task
+// result with the JVM's, exported from source-data/ by :data:generator (D126). Every test task
 // runs the export first and gets the file's path in the environment.
 val nameCorpus =
     rootProject.layout.projectDirectory.file("data/generator/build/name-corpus/names.tsv")
