@@ -55,7 +55,7 @@ class LayersFreshnessTest {
         onRefresh: suspend () -> Duration = { Duration.ZERO },
     ) = LayersViewModel(
         settings,
-        satellitesEnabled = true,
+        satellitesEnabled = true, notificationsEnabled = true,
         satelliteStatus =
             MutableStateFlow(freshness?.let { SatelliteUiStatus(it, refreshAllowedIn) }),
         onRefreshSatellites = onRefresh,
@@ -124,7 +124,7 @@ class LayersFreshnessTest {
             val vm =
                 LayersViewModel(
                     settings,
-                    satellitesEnabled = false,
+                    satellitesEnabled = false, notificationsEnabled = true,
                     satelliteStatus =
                         MutableStateFlow(
                             SatelliteUiStatus(ElementFreshness.ABSENT, Duration.ZERO),
