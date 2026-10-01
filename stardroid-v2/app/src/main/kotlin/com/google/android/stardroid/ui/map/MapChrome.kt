@@ -175,10 +175,10 @@ fun MapChrome(
     onOpenSearch: () -> Unit,
     onOpenTimeTravel: () -> Unit,
     onOpenLayersSheet: () -> Unit,
-    onOpenOverflow: () -> Unit,
-    modifier: Modifier = Modifier,
     // The help popup's Customize button: the Layers sheet, opened on that layer's options.
     onCustomizeLayer: (LayerId) -> Unit,
+    onOpenOverflow: () -> Unit,
+    modifier: Modifier = Modifier,
     // Null hides the HUD — the warm-welcome tour renders this chrome with canned state and
     // no live pointing to show.
     hudState: HudState? = null,
