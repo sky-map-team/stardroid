@@ -172,8 +172,8 @@
     <string name="ar_shutter_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual shutter (exposure) time in through-camera mode.">Camera shutter time</string>
     <string name="share_button" translation_description="Overflow-menu row that captures the current sky view as an image and opens the system share sheet.">Share the sky</string>
     <string name="share_chooser_title" translation_description="Title of the system share sheet when sharing a captured sky image.">Share this sky</string>
-    <string name="share_invitation" translation_description="Short invitation stamped on the footer of shared sky images, above the store link.">See what you\'re looking at — get Sky Map free</string>
-    <string name="share_text" translation_description="Text accompanying a shared sky image in apps that accept both an image and text. %1$s is the app-store link.">See what you\'re looking at — get Sky Map free: %1$s</string>
+    <string name="share_invitation" translation_description="Short invitation stamped on the footer of shared sky images, above the store link.">The Universe in your pocket — get Sky Map free</string>
+    <string name="share_text" translation_description="Text accompanying a shared sky image in apps that accept both an image and text. %1$s is the app-store link.">The Universe in your pocket — get Sky Map free: %1$s</string>
     <!--
       Untranslatable: the link in the share text and stamped on shared images. The same for every
       flavor, because it addresses the *recipient*, whose platform and store we do not know — a
