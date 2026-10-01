@@ -97,6 +97,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.clearAndSetSemantics
 import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.disabled
 import androidx.compose.ui.semantics.role
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.semantics.toggleableState
@@ -177,7 +178,7 @@ fun MapChrome(
     onOpenOverflow: () -> Unit,
     modifier: Modifier = Modifier,
     // The help popup's Customize button: the Layers sheet, opened on that layer's options.
-    onCustomizeLayer: (LayerId) -> Unit = {},
+    onCustomizeLayer: (LayerId) -> Unit,
     // Null hides the HUD — the warm-welcome tour renders this chrome with canned state and
     // no live pointing to show.
     hudState: HudState? = null,
@@ -1203,7 +1204,12 @@ private fun LayerRowContent(
                 // combinedClickable rather than toggleable, which has no long-press slot. The
                 // row must stay long-pressable when disabled (the camera row explains why it is
                 // unavailable), so the gestures are enabled regardless and only the tap is gated.
-                .semantics { toggleableState = ToggleableState(checked) }
+                .semantics {
+                    toggleableState = ToggleableState(checked)
+                    // The gestures stay live so the row can still be long-pressed, which means
+                    // the row itself must say it is disabled; only the visual Switch did.
+                    if (!enabled) disabled()
+                }
                 .combinedClickable(
                     role = Role.Switch,
                     onLongClickLabel = stringResource(R.string.layer_help_long_click_label),
@@ -1237,7 +1243,7 @@ private fun LayerRowContent(
             }
         }
         if (expandable) {
-            // Its own click target inside the toggleable row: tapping the chevron opens the
+            // Its own click target inside the clickable row: tapping the chevron opens the
             // options, tapping anywhere else still toggles the layer.
             IconButton(onClick = onExpandToggle) {
                 Icon(
@@ -1370,7 +1376,11 @@ private fun LayerHelpDialog(
         },
         dismissButton =
             if (help.options != null && onCustomize != null) {
-                { TextButton(onClick = onCustomize) { Text(stringResource(R.string.layer_help_customize)) } }
+                {
+                    TextButton(onClick = onCustomize) {
+                        Text(stringResource(R.string.layer_help_customize))
+                    }
+                }
             } else {
                 null
             },

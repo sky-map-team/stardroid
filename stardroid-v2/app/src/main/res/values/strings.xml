@@ -96,9 +96,8 @@
     <string name="layer_altaz_grid" translation_description="Toggle label for the layer showing the altitude/azimuth (horizontal) coordinate grid, for naked-eye or manual alt-az mount observers.">Alt/Az grid</string>
     <string name="layer_sky_gradient" translation_description="Toggle label for the daytime sky-brightness gradient and the ground coloring.">Sky coloring</string>
 
-    <!-- Map screen controls. -->
     <!-- Long-press help for layers in the layer-visibility sheet. -->
-    <string name="layer_help_stars" translation_description="Long-press explanation of the stars layer.">The stars, sized by brightness and tinted by colour. Tap any star for details.</string>
+    <string name="layer_help_stars" translation_description="Long-press explanation of the stars layer.">The stars, sized by brightness and tinted by color. Tap any star for details.</string>
     <string name="layer_help_constellations" translation_description="Long-press explanation of the constellations layer.">The lines and names of the constellations, to help you find your way around the star patterns.</string>
     <string name="layer_help_deep_sky" translation_description="Long-press explanation of the deep-sky layer.">Galaxies, nebulae and star clusters: objects far beyond our solar system. Many need binoculars or a telescope to see for real.</string>
     <string name="layer_help_solar_system" translation_description="Long-press explanation of the solar system layer.">The Sun, the Moon (with its current phase) and the planets.</string>
@@ -108,7 +107,7 @@
     <string name="layer_help_horizon" translation_description="Long-press explanation of the horizon layer.">The horizon line and compass points, so you can tell which way is north and where the ground is.</string>
     <string name="layer_help_ecliptic" translation_description="Long-press explanation of the ecliptic layer.">The path the Sun follows across the sky over a year. The Moon and planets always stay close to it.</string>
     <string name="layer_help_altaz_grid" translation_description="Long-press explanation of the alt/az grid layer.">A grid of altitude (height above the horizon) and azimuth (compass direction). Unlike the celestial grid, it is fixed to your horizon, not the stars.</string>
-    <string name="layer_help_sky_gradient" translation_description="Long-press explanation of the sky coloring toggle.">Shades the sky to match the time of day, bright by day and dark at night, and colours the ground.</string>
+    <string name="layer_help_sky_gradient" translation_description="Long-press explanation of the sky coloring toggle.">Shades the sky to match the time of day, bright by day and dark at night, and colors the ground.</string>
     <string name="layer_help_hud" translation_description="Long-press explanation of the pointing readout toggle.">A readout of where your phone is pointing: its compass direction and altitude.</string>
     <string name="layer_help_camera" translation_description="Long-press explanation of the through-camera toggle.">Shows the live camera behind the sky map so the drawn sky overlays the real one. Needs motion sensors.</string>
     <string name="layer_help_options_solar_system" translation_description="Long-press note listing what can be customized on the solar system layer.">Disc size: how big the Sun, Moon and planets are drawn.\nEclipse alerts: a notification before a lunar eclipse.</string>
@@ -120,6 +119,7 @@
     <string name="layer_help_close" translation_description="Button that dismisses the layer help popup.">Got it</string>
     <string name="layer_help_long_click_label" translation_description="Accessibility label for the long-press action on a layer row, which shows an explanation of the layer.">Show what this does</string>
 
+    <!-- Map screen controls. -->
     <string name="layers_sheet_title" translation_description="Title of the bottom sheet listing sky map layers the user can show or hide.">Layers</string>
     <string name="layers_group_objects" translation_description="Layers-sheet group header for layers that draw sky objects (stars, planets, deep-sky objects).">Objects</string>
     <string name="layers_group_reference" translation_description="Layers-sheet group header for reference elements drawn over the sky (coordinate grid, horizon, ecliptic).">Reference</string>

@@ -132,6 +132,7 @@ internal fun ChromeTourDemo(
                 onOpenSearch = {},
                 onOpenTimeTravel = {},
                 onOpenLayersSheet = {},
+                onCustomizeLayer = {},
                 onOpenOverflow = {},
                 tourTargetModifier = { target ->
                     Modifier.onGloballyPositioned { targetCoordinates[target] = it }

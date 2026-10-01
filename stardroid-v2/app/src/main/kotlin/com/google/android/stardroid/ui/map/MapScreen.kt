@@ -81,12 +81,12 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.compose.LocalLifecycleOwner
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.flowWithLifecycle
-import com.google.android.stardroid.render.api.LayerId
 import com.google.android.stardroid.R
 import com.google.android.stardroid.analytics.AnalyticsEvents
 import com.google.android.stardroid.camera.SkyCameraPreview
 import com.google.android.stardroid.catalog.ObjectInfo
 import com.google.android.stardroid.location.LocationState
+import com.google.android.stardroid.render.api.LayerId
 import com.google.android.stardroid.sensors.CalibrationPrompt
 import com.google.android.stardroid.share.SkyShare
 import com.google.android.stardroid.startup.Experiment
@@ -686,7 +686,10 @@ fun MapScreen(
                     mapViewModel.logMenuItem(AnalyticsEvents.TIME_TRAVEL_OPENED_LABEL)
                     showTimeTravelDialog = true
                 },
-                onOpenLayersSheet = { showLayersSheet = true },
+                onOpenLayersSheet = {
+                    layersSheetFocus = null
+                    showLayersSheet = true
+                },
                 onCustomizeLayer = {
                     layersSheetFocus = it.id
                     showLayersSheet = true
