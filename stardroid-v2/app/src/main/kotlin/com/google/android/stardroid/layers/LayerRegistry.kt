@@ -96,6 +96,7 @@ class LayerRegistry(
         val PARAMETERS: List<Pair<LayerId, LayerParameter>> =
             SolarSystemLayer.PARAMETERS.map { SolarSystemLayer.LAYER_ID to it } +
                 SatelliteLayer.PARAMETERS.map { SatelliteLayer.LAYER_ID to it } +
+                GridLayer.PARAMETERS.map { GridLayer.LAYER_ID to it } +
                 AltAzGridLayer.PARAMETERS.map { AltAzGridLayer.LAYER_ID to it }
 
         /**
@@ -122,7 +123,7 @@ class LayerRegistry(
                         SatelliteLayer(satelliteElements, clock, location)
                             .takeIf { satellitesEnabled },
                         MeteorShowerLayer(catalog, locale, clock),
-                        GridLayer(strings),
+                        GridLayer.create(strings, settings),
                         EclipticLayer(strings),
                         HorizonLayer(clock, location, strings),
                         AltAzGridLayer.create(clock, location, strings, settings),

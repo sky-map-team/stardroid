@@ -1270,6 +1270,7 @@ private fun parameterLabel(key: String): Int =
         LayerParameter.PASS_ALERTS -> R.string.layer_param_pass_alerts
         LayerParameter.ECLIPSE_ALERTS -> R.string.layer_param_eclipse_alerts
         LayerParameter.ALTAZ_GRID_DENSITY -> R.string.layer_param_altaz_grid_density
+        LayerParameter.RADEC_GRID_DENSITY -> R.string.layer_param_radec_grid_density
         else -> R.string.layer_param_disc_size
     }
 
@@ -1288,8 +1289,12 @@ private fun parameterOptionLabel(option: String): Int =
         LayerParameter.DISC_SIZE_TRUE -> R.string.layer_param_disc_size_true
         LayerParameter.DISC_SIZE_GLYPHS -> R.string.layer_param_disc_size_glyphs
         LayerParameter.DISC_SIZE_AUTO -> R.string.layer_param_disc_size_auto
-        LayerParameter.ALTAZ_GRID_DENSITY_COARSE -> R.string.layer_param_altaz_grid_density_coarse
-        LayerParameter.ALTAZ_GRID_DENSITY_MEDIUM -> R.string.layer_param_altaz_grid_density_medium
+        LayerParameter.ALTAZ_GRID_DENSITY_COARSE,
+        LayerParameter.RADEC_GRID_DENSITY_COARSE,
+        -> R.string.layer_param_altaz_grid_density_coarse
+        LayerParameter.ALTAZ_GRID_DENSITY_MEDIUM,
+        LayerParameter.RADEC_GRID_DENSITY_MEDIUM,
+        -> R.string.layer_param_altaz_grid_density_medium
         else -> R.string.layer_param_altaz_grid_density_fine
     }
 
@@ -1303,6 +1308,11 @@ private fun parameterOptionDescription(option: String): Int =
             R.string.layer_param_altaz_grid_density_coarse_desc
         LayerParameter.ALTAZ_GRID_DENSITY_MEDIUM ->
             R.string.layer_param_altaz_grid_density_medium_desc
+        LayerParameter.RADEC_GRID_DENSITY_COARSE ->
+            R.string.layer_param_radec_grid_density_coarse_desc
+        LayerParameter.RADEC_GRID_DENSITY_MEDIUM ->
+            R.string.layer_param_radec_grid_density_medium_desc
+        LayerParameter.RADEC_GRID_DENSITY_FINE -> R.string.layer_param_radec_grid_density_fine_desc
         else -> R.string.layer_param_altaz_grid_density_fine_desc
     }
 
@@ -1325,7 +1335,8 @@ private fun layerHelp(id: LayerId): LayerHelp =
         MeteorShowerLayer.LAYER_ID -> LayerHelp(R.string.layer_help_meteor_showers)
         SatelliteLayer.LAYER_ID ->
             LayerHelp(R.string.layer_help_satellites, R.string.layer_help_options_satellites)
-        GridLayer.LAYER_ID -> LayerHelp(R.string.layer_help_grid)
+        GridLayer.LAYER_ID ->
+            LayerHelp(R.string.layer_help_grid, R.string.layer_help_options_grid)
         HorizonLayer.LAYER_ID -> LayerHelp(R.string.layer_help_horizon)
         EclipticLayer.LAYER_ID -> LayerHelp(R.string.layer_help_ecliptic)
         AltAzGridLayer.LAYER_ID ->
