@@ -81,6 +81,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.compose.LocalLifecycleOwner
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.flowWithLifecycle
+import com.google.android.stardroid.render.api.LayerId
 import com.google.android.stardroid.R
 import com.google.android.stardroid.analytics.AnalyticsEvents
 import com.google.android.stardroid.camera.SkyCameraPreview
@@ -197,6 +198,8 @@ fun MapScreen(
     // diagnostics, and calibration are no longer local booleans here — they're Navigation
     // destinations (D48), reached through the onOpenX callbacks below.
     var showLayersSheet by rememberSaveable { mutableStateOf(false) }
+    // The layer whose options the sheet opens expanded, from the rail's help popup.
+    var layersSheetFocus by rememberSaveable { mutableStateOf<String?>(null) }
     var showOverflowSheet by rememberSaveable { mutableStateOf(false) }
     var showTimeTravelDialog by rememberSaveable { mutableStateOf(false) }
     var showSearchDialog by rememberSaveable { mutableStateOf(false) }
@@ -684,6 +687,10 @@ fun MapScreen(
                     showTimeTravelDialog = true
                 },
                 onOpenLayersSheet = { showLayersSheet = true },
+                onCustomizeLayer = {
+                    layersSheetFocus = it.id
+                    showLayersSheet = true
+                },
                 onOpenOverflow = { showOverflowSheet = true },
             )
         }
@@ -722,7 +729,11 @@ fun MapScreen(
         if (showLayersSheet) {
             LayersSheet(
                 layersViewModel,
-                onDismiss = { showLayersSheet = false },
+                onDismiss = {
+                    showLayersSheet = false
+                    layersSheetFocus = null
+                },
+                expandLayer = layersSheetFocus?.let { LayerId(it) },
                 arModeOn = arModeOn,
                 hasCamera = arCamera.hasCamera && cameraArEnabled,
                 sensorsAvailable = mapViewModel.sensorsAvailable,

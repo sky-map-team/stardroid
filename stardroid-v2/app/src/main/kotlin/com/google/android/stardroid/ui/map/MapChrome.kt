@@ -176,6 +176,8 @@ fun MapChrome(
     onOpenLayersSheet: () -> Unit,
     onOpenOverflow: () -> Unit,
     modifier: Modifier = Modifier,
+    // The help popup's Customize button: the Layers sheet, opened on that layer's options.
+    onCustomizeLayer: (LayerId) -> Unit = {},
     // Null hides the HUD — the warm-welcome tour renders this chrome with canned state and
     // no live pointing to show.
     hudState: HudState? = null,
@@ -229,6 +231,7 @@ fun MapChrome(
                 nightMode = nightMode,
                 onToggleLayer = onToggleLayer,
                 onOpenLayersSheet = onOpenLayersSheet,
+                onCustomizeLayer = onCustomizeLayer,
                 tourTargetModifier = tourTargetModifier,
                 railLabels = railLabels,
                 modifier = Modifier.fillMaxHeight().padding(start = 8.dp),
@@ -349,8 +352,8 @@ internal const val CHROME_ZONE_EXIT_MS = 420
 /**
  * Zone A: a slim vertical column of layer toggles in a translucent pill where v1's sliding
  * sidebar sat. State is shown v1-style by tint (checked = primary + faint pill; unchecked =
- * outline grey), and the expand button at the foot opens the Layers sheet — long-press on
- * any item is the bonus gesture for the same thing.
+ * outline grey), and the expand button at the foot opens the Layers sheet. Long-press on a
+ * layer explains it (and what can be customized) rather than opening the sheet.
  *
  * Rail membership borrows the action-bar mechanism (D56): `always` items and the expand
  * button are unconditional; `ifroom` items drop from the end of the rail — never from the
@@ -363,10 +366,25 @@ private fun LayerRail(
     nightMode: Boolean,
     onToggleLayer: (LayerId, Boolean) -> Unit,
     onOpenLayersSheet: () -> Unit,
+    onCustomizeLayer: (LayerId) -> Unit,
     tourTargetModifier: (ChromeTourTarget) -> Modifier,
     railLabels: RailLabelState?,
     modifier: Modifier = Modifier,
 ) {
+    var helpFor by rememberSaveable { mutableStateOf<String?>(null) }
+    helpFor?.let { raw ->
+        val id = LayerId(raw)
+        LayerHelpDialog(
+            icon = layerIcon(id),
+            label = layerName(id),
+            help = layerHelp(id),
+            onDismiss = { helpFor = null },
+            onCustomize = {
+                helpFor = null
+                onCustomizeLayer(id)
+            },
+        )
+    }
     val byId = toggles.associateBy { it.id }
     val always = RAIL_ALWAYS_IDS.mapNotNull { byId[it] }
     val ifroom = RAIL_IFROOM_IDS.mapNotNull { byId[it] }
@@ -412,8 +430,7 @@ private fun LayerRail(
                         nightMode,
                         onToggleLayer,
                         tourTargetModifier,
-                        onOpenLayersSheet,
-                    )
+                    ) { helpFor = toggle.id.id }
                 }
                 if (shownIfroom.isNotEmpty()) {
                     RailDivider()
@@ -423,8 +440,7 @@ private fun LayerRail(
                             nightMode,
                             onToggleLayer,
                             tourTargetModifier,
-                            onOpenLayersSheet,
-                        )
+                        ) { helpFor = toggle.id.id }
                     }
                 }
                 RailDivider()
@@ -586,7 +602,7 @@ private fun RailDivider() {
 /**
  * One rail slot: the 48 dp minimum touch target (M3/accessibility baseline) around a ~36 dp
  * visual pill, so the rail still reads slim (D56). A hand-rolled `IconToggleButton`: the M3
- * component has no long-press slot, and long-press-to-open-the-Layers-sheet is part of the
+ * component has no long-press slot, and long-press-to-explain-the-layer is part of the
  * agreed design.
  *
  * [tint] overrides the checked/unchecked icon colour; the expand button uses it to sit outside
@@ -612,7 +628,12 @@ private fun RailItem(
             modifier
                 .size(48.dp)
                 .clip(CircleShape)
-                .combinedClickable(onClick = onClick, onLongClick = onLongClick)
+                .combinedClickable(
+                    onClick = onClick,
+                    onLongClickLabel =
+                        onLongClick?.let { stringResource(R.string.layer_help_long_click_label) },
+                    onLongClick = onLongClick,
+                )
                 .semantics {
                     if (checked != null) {
                         role = Role.Checkbox
@@ -909,6 +930,8 @@ fun LayersSheet(
     hasCamera: Boolean = false,
     sensorsAvailable: Boolean = false,
     onSetArMode: (Boolean) -> Unit = {},
+    // Opens with this layer's options already expanded (the rail's help popup → Customize).
+    expandLayer: LayerId? = null,
 ) {
     val toggles by layersViewModel.toggles.collectAsStateWithLifecycle()
     val parameters by layersViewModel.parameters.collectAsStateWithLifecycle()
@@ -947,6 +970,7 @@ fun LayersSheet(
                         layersViewModel.setParameter(toggle.id, key, option)
                     },
                     help = layerHelp(toggle.id),
+                    initiallyExpanded = toggle.id == expandLayer,
                 )
                 if (toggle.id == SatelliteLayer.LAYER_ID && satelliteDataMissing) {
                     SatelliteEmptyStateCard(
@@ -967,6 +991,7 @@ fun LayersSheet(
                         layersViewModel.setParameter(toggle.id, key, option)
                     },
                     help = layerHelp(toggle.id),
+                    initiallyExpanded = toggle.id == expandLayer,
                 )
             }
             LayerGroupHeader(R.string.layers_group_display)
@@ -1023,8 +1048,9 @@ private fun LayerRow(
     parameters: List<LayerParameterState> = emptyList(),
     onParameterChange: (String, String) -> Unit = { _, _ -> },
     help: LayerHelp,
+    initiallyExpanded: Boolean = false,
 ) {
-    var expanded by rememberSaveable(label) { mutableStateOf(false) }
+    var expanded by rememberSaveable(label) { mutableStateOf(initiallyExpanded) }
     var showHelp by rememberSaveable(label) { mutableStateOf(false) }
     if (showHelp) {
         LayerHelpDialog(icon = icon, label = label, help = help, onDismiss = { showHelp = false })
@@ -1308,6 +1334,8 @@ private fun LayerHelpDialog(
     @StringRes label: Int,
     help: LayerHelp,
     onDismiss: () -> Unit,
+    // Null inside the sheet itself, where the options are already a tap away.
+    onCustomize: (() -> Unit)? = null,
 ) {
     AlertDialog(
         onDismissRequest = onDismiss,
@@ -1326,18 +1354,26 @@ private fun LayerHelpDialog(
                         stringResource(help.options),
                         style = MaterialTheme.typography.bodyMedium,
                     )
-                    Text(
-                        stringResource(R.string.layer_help_expand_hint),
-                        style = MaterialTheme.typography.bodySmall,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant,
-                        modifier = Modifier.padding(top = 8.dp),
-                    )
+                    if (onCustomize == null) {
+                        Text(
+                            stringResource(R.string.layer_help_expand_hint),
+                            style = MaterialTheme.typography.bodySmall,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant,
+                            modifier = Modifier.padding(top = 8.dp),
+                        )
+                    }
                 }
             }
         },
         confirmButton = {
             TextButton(onClick = onDismiss) { Text(stringResource(R.string.layer_help_close)) }
         },
+        dismissButton =
+            if (help.options != null && onCustomize != null) {
+                { TextButton(onClick = onCustomize) { Text(stringResource(R.string.layer_help_customize)) } }
+            } else {
+                null
+            },
     )
 }
 
