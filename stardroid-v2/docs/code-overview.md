@@ -77,14 +77,14 @@ phase 3:
 | `:render:gles1` | Android lib | 2,292 / 1,021 | OpenGL ES 1.0 backend implementing `:render:api` |
 | `:render:gles3` | Android lib | 2,837 / 458 | OpenGL ES 3.0 backend implementing `:render:api` (render-gles3.md) |
 | `:data` | KMP (Android + iOS) | 1,943 / 1,936 | Room catalog store implementing `:core:catalog`, and the satellite elements fetcher; both shared with iOS (the iOS HTTP client is still to come) |
-| `:shared:settings` | pure | 349 / — | The `Settings` contract (interface + value types) every screen, layer and controller uses |
+| `:shared:model` | pure | 1,759 / 957 | The app's state contracts (`Settings`, `StartupState`, `ExperimentConfig`, `Analytics`, `LocationProvider`, `Geocoding`) and the controllers over them (`TimeController` + clocks, `LocationController`, `StartupRouter`) |
 | `:shared:layers` | KMP (Android + iOS) | 2,521 / 2,291 | The sky layers and `LayerRegistry`: catalog, ephemeris, clock and settings → `LayerScene`s (layers-and-app.md) |
-| `:shared:testing` | pure (test support) | 368 / — | Fakes of the shared interfaces (`FakeSettings`, `FakeCatalogRepository`) for `:shared` and `:app` tests |
-| `:app` | Android app | 24,041 / 8,169 | Compose UI, ViewModels, Hilt, sensors, location, widgets, notifications |
+| `:shared:testing` | pure (test support) | 508 / — | Fakes of the shared interfaces (`FakeSettings`, `FakeStartupState`, `FakeAnalytics`, `FakeLocationProvider`, `FakeCatalogRepository`) for `:shared` and `:app` tests |
+| `:app` | Android app | 22,712 / 7,072 | Compose UI, ViewModels, Hilt, sensors, location, widgets, notifications |
 | `:konsist` | test-only | — | Architecture gate (D20) |
 
 Dependency arrows point inward only: `:app → {:render:*, :data, :shared:*, :core:*}`,
-`:shared:layers → {:shared:settings, :data, :render:api, :core:*}`,
+`:shared:layers → {:shared:model, :data, :render:api, :core:*}`,
 `:render:gles1 → :render:api → :core:math`, `:data → :core:*`. Pure modules use constructor
 injection only (no Hilt/Koin) so a KMP conversion is a build-file change — this was a stated
 design goal (high-level-architecture.md) and it held: the conversion (iOS port phase 0) needed

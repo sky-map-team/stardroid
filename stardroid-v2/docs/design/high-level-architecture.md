@@ -25,8 +25,10 @@ one `expect`/`actual` — see
                       (port of the v1 renderer). Future :render:gles3 / :render:vulkan
                       slot in beside it.
 :shared:layers        KMP: Android + iOS. The sky layers and their registry (moved out
-                      of :app in iOS port phase 3, with :shared:settings, the Settings
-                      contract). More of the app's middle layer follows.
+                      of :app in iOS port phase 3). More of the app's middle layer follows.
+:shared:model         pure. The app's state contracts (Settings, StartupState,
+                      Analytics, the location edges) and the controllers over them
+                      (time, location, startup routing).
 :data                 KMP: Android + iOS (Room KMP). Room DB, prepackaged catalog,
                       repositories implementing :core:catalog interfaces.
 :core:catalog         pure. Domain model of celestial objects, catalog/search

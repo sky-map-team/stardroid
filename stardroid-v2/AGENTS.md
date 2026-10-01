@@ -92,8 +92,10 @@ Do not add a third notice — per-directory notices are what let the old claim d
   to `commonMain` — Android must keep the platform SQLite (D127). Catalog tests in
   `src/commonTest` run as Android instrumented tests and on the iOS simulator.
 - `shared/` — the app's middle layer, moving out of `app/` for the iOS port (phase 3):
-  `shared/settings` (the `Settings` contract), `shared/layers` (the sky layers, Android + iOS
-  like `data/`) and `shared/testing` (fakes for `:shared` and `:app` tests). The same rules as
+  `shared/model` (the app's state contracts — `Settings`, `StartupState`, `Analytics`, the
+  location edges — and the controllers over them: time, location, startup routing),
+  `shared/layers` (the sky layers, Android + iOS like `data/`) and `shared/testing` (fakes for
+  `:shared` and `:app` tests). The same rules as
   `core/*`: no Android SDK and no JDK in common code, tests in `commonTest`.
 - `render/api` — pure renderer contract + shared projection; `render/gles1` — a GLES1
   backend written to match v1's rendering behaviour (an independent implementation, not a

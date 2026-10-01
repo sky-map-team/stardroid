@@ -21,7 +21,7 @@ kotlin {
             api(project(":core:astronomy"))
             api(project(":core:catalog"))
             api(project(":render:api"))
-            api(project(":shared:settings"))
+            api(project(":shared:model"))
             // SatelliteLayer draws SatelliteElements.
             api(project(":data"))
             api(libs.kotlinx.coroutines.core)

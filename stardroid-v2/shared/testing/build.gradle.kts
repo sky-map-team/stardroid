@@ -8,7 +8,7 @@ plugins {
 kotlin {
     sourceSets {
         commonMain.dependencies {
-            api(project(":shared:settings"))
+            api(project(":shared:model"))
             api(project(":core:catalog"))
         }
     }

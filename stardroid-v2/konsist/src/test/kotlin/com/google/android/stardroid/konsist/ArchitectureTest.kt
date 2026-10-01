@@ -33,7 +33,7 @@ class ArchitectureTest {
         // repo-relative paths.
         Regex(
             """(?:.*/)?(core/(math|astronomy|catalog|events|testing)|render/api|data/generator|""" +
-                """shared/(settings|testing))/src/.*\.kt$""",
+                """shared/(model|testing))/src/.*\.kt$""",
         )
 
     private fun pureModuleFiles() =
@@ -80,8 +80,12 @@ class ArchitectureTest {
                 "com.google.android.stardroid.catalog.",
                 "com.google.android.stardroid.events.",
                 "com.google.android.stardroid.render.api.",
-                // :shared:settings, the settings contract shared with iOS.
+                // :shared:model, the app's state contracts and controllers shared with iOS.
                 "com.google.android.stardroid.settings.",
+                "com.google.android.stardroid.startup.",
+                "com.google.android.stardroid.time.",
+                "com.google.android.stardroid.location.",
+                "com.google.android.stardroid.analytics.",
                 // :core:testing's assertions, for the pure modules' test sources.
                 "com.google.android.stardroid.testing.",
             )

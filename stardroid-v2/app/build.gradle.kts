@@ -115,7 +115,7 @@ dependencies {
     implementation(project(":render:gles1"))
     implementation(project(":render:gles3"))
     implementation(project(":data"))
-    implementation(project(":shared:settings"))
+    implementation(project(":shared:model"))
     implementation(project(":shared:layers"))
     implementation(libs.kotlinx.coroutines.android)
     implementation(libs.androidx.core.ktx)
