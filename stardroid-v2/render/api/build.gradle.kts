@@ -1,7 +1,11 @@
 plugins {
-    id("skymap.pure-kotlin")
+    id("skymap.pure-kmp")
 }
 
-dependencies {
-    api(project(":core:math"))
+kotlin {
+    sourceSets {
+        commonMain.dependencies {
+            api(project(":core:math"))
+        }
+    }
 }

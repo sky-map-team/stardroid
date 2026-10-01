@@ -27,6 +27,7 @@ include(":core:math")
 include(":core:astronomy")
 include(":core:catalog")
 include(":core:events")
+include(":core:testing")
 include(":render:api")
 include(":data:generator")
 

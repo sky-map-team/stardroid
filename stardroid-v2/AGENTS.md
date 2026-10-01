@@ -81,7 +81,11 @@ Do not add a third notice — per-directory notices are what let the old claim d
 ## Key Files
 
 - `docs/design/` — per-area design docs; `docs/README.md` tracks implementation status.
-- `core/math`, `core/astronomy` — pure Kotlin modules (no Android SDK on the classpath).
+- `core/*`, `render/api` — pure Kotlin **Multiplatform** modules (JVM + iOS), shared with the
+  iOS port. No Android SDK anywhere, and no JDK in common code: production code goes in
+  `src/commonMain`, tests in `src/commonTest` using `kotlin.test` plus `:core:testing`'s
+  Truth-shaped `assertThat` (Truth itself is JVM-only). JVM-only code needs an
+  `expect`/`actual` with the JVM side in `src/jvmMain`.
 - `render/api` — pure renderer contract + shared projection; `render/gles1` — a GLES1
   backend written to match v1's rendering behaviour (an independent implementation, not a
   port; see `NOTICE.md`).
@@ -122,7 +126,9 @@ pipeline; that note was written before this was wired up.
 ## Testing
 
 `./gradlew check` from the module root runs unit tests (JUnit 5 + Truth), ktlint, and the
-Konsist architecture gate — it must pass before any commit. Instrumented tests
+Konsist architecture gate — it must pass before any commit. The shared modules' tests run on
+the JVM and, on a Mac with Xcode installed, on the iOS simulator too; without Xcode the iOS
+test tasks are skipped with a warning. Instrumented tests
 (`./gradlew connectedDebugAndroidTest`, including the D19 renderer perf smoke gate) need an
 emulator or device; CI runs both suites on every PR (`.github/workflows/android.yml`). Pure
 modules must stay testable without Android.
