@@ -230,7 +230,7 @@ class OneEuroQuaternionSmoother(
          * Provisional on both paths — these want field tuning, which is why steadiness stays
          * its own setting for now rather than folded in with [betaFor].
          */
-        internal fun minCutoffFor(
+        fun minCutoffFor(
             level: OneEuroSteadiness,
             legacyPath: Boolean,
         ): Float =
@@ -265,7 +265,7 @@ class OneEuroQuaternionSmoother(
          * still, so a slow deliberate pan gets no ease-off and lags badly. 0.12 rad/s is about
          * 7 degrees a second, under any pan someone means to make.
          */
-        internal fun speedFloorFor(legacyPath: Boolean): Float = if (legacyPath) 0.12f else 0.03f
+        fun speedFloorFor(legacyPath: Boolean): Float = if (legacyPath) 0.12f else 0.03f
 
         /**
          * Ease-off ladder, in Hz per radian/second: how fast the cutoff climbs as the phone
@@ -277,7 +277,7 @@ class OneEuroQuaternionSmoother(
          * resting value up to something responsive, and the legacy path rests one to two orders
          * of magnitude lower — so it has much further to climb in the same time.
          */
-        internal fun betaFor(
+        fun betaFor(
             level: OneEuroEaseOff,
             legacyPath: Boolean,
         ): Float =

@@ -9,12 +9,13 @@
 
 package com.google.android.stardroid.sensors
 
+import com.google.android.stardroid.math.DEGREES_TO_RADIANS
 import com.google.android.stardroid.math.Matrix3
 import com.google.android.stardroid.math.Vector3
-import com.google.common.truth.Truth.assertThat
-import org.junit.jupiter.api.Test
+import com.google.android.stardroid.testing.assertThat
 import kotlin.math.cos
 import kotlin.math.sin
+import kotlin.test.Test
 
 /**
  * The [Matrix3] ↔ quaternion conversions the legacy sensor path smooths through. Each of
@@ -41,7 +42,7 @@ class RotationQuaternionTest {
     @Test
     fun `quaternion of a known rotation matches the axis-angle form`() {
         val quaternion = rotationAboutZ(90.0).writeQuaternion(FloatArray(4))
-        val halfAngle = Math.toRadians(45.0)
+        val halfAngle = 45.0 * DEGREES_TO_RADIANS
         assertThat(quaternion[0].toDouble()).isWithin(TOLERANCE).of(0.0)
         assertThat(quaternion[1].toDouble()).isWithin(TOLERANCE).of(0.0)
         assertThat(quaternion[2].toDouble()).isWithin(TOLERANCE).of(sin(halfAngle))
@@ -86,8 +87,8 @@ class RotationQuaternionTest {
         }
 
         fun rotationAboutX(degrees: Double): Matrix3 {
-            val c = cos(Math.toRadians(degrees))
-            val s = sin(Math.toRadians(degrees))
+            val c = cos(degrees * DEGREES_TO_RADIANS)
+            val s = sin(degrees * DEGREES_TO_RADIANS)
             return Matrix3(
                 1.0, 0.0, 0.0,
                 0.0, c, -s,
@@ -96,8 +97,8 @@ class RotationQuaternionTest {
         }
 
         fun rotationAboutY(degrees: Double): Matrix3 {
-            val c = cos(Math.toRadians(degrees))
-            val s = sin(Math.toRadians(degrees))
+            val c = cos(degrees * DEGREES_TO_RADIANS)
+            val s = sin(degrees * DEGREES_TO_RADIANS)
             return Matrix3(
                 c, 0.0, s,
                 0.0, 1.0, 0.0,
@@ -106,8 +107,8 @@ class RotationQuaternionTest {
         }
 
         fun rotationAboutZ(degrees: Double): Matrix3 {
-            val c = cos(Math.toRadians(degrees))
-            val s = sin(Math.toRadians(degrees))
+            val c = cos(degrees * DEGREES_TO_RADIANS)
+            val s = sin(degrees * DEGREES_TO_RADIANS)
             return Matrix3(
                 c, -s, 0.0,
                 s, c, 0.0,

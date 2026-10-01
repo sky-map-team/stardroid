@@ -9,12 +9,14 @@
 
 package com.google.android.stardroid.sensors
 
+import com.google.android.stardroid.math.DEGREES_TO_RADIANS
+import com.google.android.stardroid.math.RADIANS_TO_DEGREES
 import com.google.android.stardroid.settings.OneEuroEaseOff
 import com.google.android.stardroid.settings.OneEuroSteadiness
-import com.google.common.truth.Truth.assertThat
-import org.junit.jupiter.api.Test
+import com.google.android.stardroid.testing.assertThat
 import kotlin.math.cos
 import kotlin.math.sin
+import kotlin.test.Test
 
 class OneEuroQuaternionSmootherTest {
     @Test
@@ -275,7 +277,7 @@ class OneEuroQuaternionSmootherTest {
             about: FloatArray,
             step: Int,
         ): FloatArray {
-            val half = Math.toRadians(2.0) / 2.0
+            val half = 2.0 * DEGREES_TO_RADIANS / 2.0
             val phase = step * 2.399963
             val axis =
                 doubleArrayOf(cos(phase), sin(phase), cos(phase * 0.5))
@@ -300,7 +302,7 @@ class OneEuroQuaternionSmootherTest {
         }
 
         fun rotationAboutZ(degrees: Double): FloatArray {
-            val halfAngle = Math.toRadians(degrees) / 2.0
+            val halfAngle = degrees * DEGREES_TO_RADIANS / 2.0
             return floatArrayOf(0f, 0f, sin(halfAngle).toFloat(), cos(halfAngle).toFloat())
         }
 
@@ -310,7 +312,7 @@ class OneEuroQuaternionSmootherTest {
         ): Double {
             val dot = a[0] * b[0] + a[1] * b[1] + a[2] * b[2] + a[3] * b[3]
             val clamped = kotlin.math.min(1f, kotlin.math.abs(dot))
-            return Math.toDegrees(2.0 * kotlin.math.acos(clamped.toDouble()))
+            return (2.0 * kotlin.math.acos(clamped.toDouble())) * RADIANS_TO_DEGREES
         }
     }
 }

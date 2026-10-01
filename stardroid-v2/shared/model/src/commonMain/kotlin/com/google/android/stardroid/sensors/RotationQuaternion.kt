@@ -27,7 +27,7 @@ import kotlin.math.sqrt
  * Uses Shepperd's method: pick whichever of the four components the trace shows to be largest
  * and derive the rest from it, so the square root is never taken of a near-zero quantity.
  */
-internal fun Matrix3.writeQuaternion(out: FloatArray): FloatArray {
+fun Matrix3.writeQuaternion(out: FloatArray): FloatArray {
     val trace = xx + yy + zz
     when {
         trace > 0 -> {
@@ -63,7 +63,7 @@ internal fun Matrix3.writeQuaternion(out: FloatArray): FloatArray {
 }
 
 /** Converts a unit quaternion `(x, y, z, w)` back to the equivalent rotation matrix. */
-internal fun FloatArray.toRotationMatrix3(): Matrix3 {
+fun FloatArray.toRotationMatrix3(): Matrix3 {
     val x = this[0].toDouble()
     val y = this[1].toDouble()
     val z = this[2].toDouble()

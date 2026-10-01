@@ -13,6 +13,7 @@ import com.google.android.stardroid.math.Vector3
 import com.google.android.stardroid.render.api.SkyCamera
 import com.google.android.stardroid.render.api.SkyProjection
 import com.google.android.stardroid.render.api.Viewport
+import kotlin.math.PI
 import kotlin.math.acos
 import kotlin.math.atan2
 import kotlin.math.min
@@ -51,7 +52,7 @@ object SearchGeometry {
         target: Vector3,
     ): Double =
         acos((camera.lineOfSight.normalized() dot target.normalized()).coerceIn(-1.0, 1.0)) /
-            Math.PI
+            PI
 
     /**
      * v1 `SearchHelper.targetInFocusRadiusImpl`: found when the target projects within half of

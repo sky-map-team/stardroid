@@ -9,8 +9,8 @@
 
 package com.google.android.stardroid.ui.map
 
-import com.google.common.truth.Truth.assertThat
-import org.junit.jupiter.api.Test
+import com.google.android.stardroid.testing.assertThat
+import kotlin.test.Test
 
 class HudFormatsTest {
     @Test
@@ -44,7 +44,7 @@ class HudFormatsTest {
     }
 
     @Test
-    fun `cardinal buckets are 22 point 5 degrees wide, centred on the points`() {
+    fun `cardinal buckets are 22 point 5 degrees wide - centred on the points`() {
         assertThat(HudFormats.cardinalIndex(0.0)).isEqualTo(0) // N
         assertThat(HudFormats.cardinalIndex(11.2)).isEqualTo(0) // still N
         assertThat(HudFormats.cardinalIndex(11.3)).isEqualTo(1) // NNE

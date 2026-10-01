@@ -77,11 +77,11 @@ phase 3:
 | `:render:gles1` | Android lib | 2,292 / 1,021 | OpenGL ES 1.0 backend implementing `:render:api` |
 | `:render:gles3` | Android lib | 2,837 / 458 | OpenGL ES 3.0 backend implementing `:render:api` (render-gles3.md) |
 | `:data` | KMP (Android + iOS) | 1,943 / 1,936 | Room catalog store implementing `:core:catalog`, and the satellite elements fetcher; both shared with iOS (the iOS HTTP client is still to come) |
-| `:shared:model` | pure | 1,994 / 1,068 | The app's state contracts (`Settings`, `StartupState`, `ExperimentConfig`, `Analytics`, `LocationProvider`, `Geocoding`) and the controllers over them (`TimeController` + clocks, `LocationController`, `StartupRouter`) |
+| `:shared:model` | pure | 2,410 / 1,505 | The app's state contracts (`Settings`, `StartupState`, `ExperimentConfig`, `Analytics`, `LocationProvider`, `Geocoding`, the sensor sources) and the controllers over them (`TimeController` + clocks, `LocationController`, `StartupRouter`), plus the orientation smoothing (1€ filter, quaternions) every sensor source shares |
 | `:shared:layers` | KMP (Android + iOS) | 2,521 / 2,291 | The sky layers and `LayerRegistry`: catalog, ephemeris, clock and settings → `LayerScene`s (layers-and-app.md) |
 | `:shared:testing` | pure (test support) | 541 / — | Fakes of the shared interfaces (`FakeSettings`, `FakeStartupState`, `FakeAnalytics`, `FakeLocationProvider`, `FakeSensorStatusSource`, `FakeCatalogRepository`) for `:shared` and `:app` tests |
-| `:shared:viewmodels` | KMP (Android + iOS) | 4,127 / 4,617 | The screens' ViewModels (map, search, time travel, layers, location, object info, settings, startup, calibration, diagnostics) on androidx.lifecycle's multiplatform `ViewModel`, with the state and geometry they compute |
-| `:app` | Android app | 18,495 / 2,321 | Compose UI, ViewModels, Hilt, sensors, location, widgets, notifications |
+| `:shared:viewmodels` | KMP (Android + iOS) | 4,208 / 4,820 | The screens' ViewModels (map, search, time travel, layers, location, object info, settings, startup, calibration, diagnostics) on androidx.lifecycle's multiplatform `ViewModel`, with the state and geometry they compute |
+| `:app` | Android app | 18,001 / 1,717 | The Compose UI over `:shared:viewmodels`, and the Android edges: Hilt wiring, sensors, location, DataStore, Firebase, widgets, notifications |
 | `:konsist` | test-only | — | Architecture gate (D20) |
 
 Dependency arrows point inward only: `:app → {:render:*, :data, :shared:*, :core:*}`,

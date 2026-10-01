@@ -13,10 +13,10 @@ import com.google.android.stardroid.math.Vector3
 import com.google.android.stardroid.render.api.SkyCamera
 import com.google.android.stardroid.render.api.SkyProjection
 import com.google.android.stardroid.render.api.Viewport
-import com.google.common.truth.Truth.assertThat
-import org.junit.jupiter.api.Test
+import com.google.android.stardroid.testing.assertThat
 import kotlin.math.PI
 import kotlin.math.atan2
+import kotlin.test.Test
 
 class SearchGeometryTest {
     // Looking down +x with celestial north up; screen-right is then -y (gluLookAt's s-axis).
