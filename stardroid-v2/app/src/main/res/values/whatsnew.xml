@@ -2,29 +2,25 @@
 <resources>
     <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[
 <h1>Say hello to the new Sky Map</h1>
-<h2>Sky Map has been completely rebuilt</h2>
-<p>This is the biggest update in Sky Map\'s history.<br/><br/>
-It\'s an entirely new app under the hood — new rendering engine, new astronomy engine, new interface — built from scratch to be faster, more accurate, and easier on the eyes. Here\'s what\'s better:</p>
-<h2>More accurate</h2>
-<p>The Moon is now placed exactly where <em>you</em> see it in the sky, not where it would appear from the center of the Earth — a correction of up to a full degree, two Moon-widths. Eclipses and conjunctions land at the right minute too: the Sun and Moon now come from full analytic calculations instead of classic Sky Map\'s rougher approximations, which could be off by half an hour.</p>
-<h2>A solar system that looks real</h2>
-<p>The Moon\'s phase is calculated from its true geometry, not chosen from eight stock pictures like before. The line between light and dark falls exactly where it should, every night, and the man in the moon no longer spins as the month goes by. Venus and Mercury now show phases too, swelling from a small full disc to a broad crescent as they near Earth, and Mars picks up its gibbous phase. Zoom in and watch them change. You have the option to show the planets as glyphs roughly ordered by their actual physical size, or switch to their <em>actual</em> sizes in the sky. The sun and the moon are about the size of your fingertip at arm\'s length, while the planets show only as specks until you zoom in.</p>
-<h2>Tap anything to learn about it</h2>
-<p>Tap-to-identify is on by default now — point your phone at the sky and tap any labelled object for its info card: photo, description, a fun fact, and the times it next rises and sets from where you\'re standing.</p>
-<h2>Find more, find it faster</h2>
-<p>268 newly-added IAU star names now label the map, and you can search stars by their Bayer or Flamsteed designation too — "Alpha Cygni", "α Cyg" and "50 Cyg" all find Deneb.</p>
-<h2>Buttery smooth, even on the newest phones</h2>
-<p>Flinging or dragging the sky on a high refresh-rate screen no longer stutters — panning, momentum and the search fly-to now track your display\'s real frame rate, up to 120 Hz, instead of a fixed 20 updates a second.</p>
-<h2>Know exactly where you\'re pointing</h2>
-<p>A new live readout shows right ascension and declination, altitude and azimuth with a compass point, and your current field of view — right on the map.</p>
-<h2>Lunar eclipses, rendered</h2>
-<p>The Moon now shows its real copper-red tint during a lunar eclipse on the map itself, and its info card, tonight\'s-sky summary, and countdown all know when one is coming.</p>
-<h2>A fresh coat of paint</h2>
-<p>A new "Deep Space / Star Gold" color scheme, sharper Sun/Moon/planet artwork smoothed and blended at every zoom level, a rebuilt first-run tour that walks you through the live app instead of static screenshots (replayable any time from the menu), and a refreshed welcome screen built from a new in-app sky capture.</p>
-<h2>Clearer about your privacy</h2>
-<p>The Terms screen and Help now spell out exactly what each device permission is used for, and the app no longer requests the advertising-ID permission it never needed.</p>
-<h2>¡Hola! Bonjour!你好!</h2>
-<p>Sky Map now speaks 28 languages, fully translated.</p>
+<p>Sky Map has been completely rebuilt from scratch — a new rendering engine, a new astronomy engine and a new interface, made to be faster, more accurate and easier on the eyes. Version 2.1 builds on that with some of the most-requested features:</p>
+<h2>Sky Map on your home screen</h2>
+<p>Three new widgets put the sky in your launcher: <b>Moon phase</b> (the phase, how much is lit, and moonrise and moonset), <b>Tonight\'s sky</b> (sunset, when it gets dark, and the best sights tonight) and <b>Sky countdown</b> (days until the next meteor shower peak or moon event). Add one from the new <b>Widgets</b> menu item, or from your launcher\'s widget picker.</p>
+<h2>Steadier view</h2>
+<p>We\'ve improved the way Sky Map steadies the picture while you hold your phone still — it shakes less and keeps up better when you move. You can turn it off any time under <b>Settings → Sensors → Smooth sensor movement</b> if you\'d rather use the raw sensor.</p>
+<h2>Search the Help</h2>
+<p>Help is now searchable, and results jump straight to the relevant part of the app.</p>
+<h2>A new alt/az grid</h2>
+<p>Sky Map can now overlay a grid of altitude and azimuth lines on the map, alongside the existing celestial grid. It\'s off by default — turn it on from the layers menu.</p>
+<h2>Also new in version 2</h2>
+<ul>
+<li><b>A fresh look:</b> the new Deep Space / Star Gold color scheme and sharper Sun, Moon and planet artwork.</li>
+<li><b>More accurate Sun and Moon:</b> the Moon sits where <em>you</em> see it, and eclipses and conjunctions land at the right minute.</li>
+<li><b>A more realistic solar system:</b> the Moon\'s phase is calculated from its true geometry, Venus, Mercury and Mars show phases, and you can view planets at their real size.</li>
+<li><b>Lunar eclipses:</b> the Moon turns its copper-red tint on the map.</li>
+<li><b>Find more stars:</b> 268 new IAU star names, and search by Bayer or Flamsteed designation — "α Cyg" finds Deneb.</li>
+<li><b>Live readout:</b> right ascension and declination, altitude and azimuth, and field of view, right on the map.</li>
+<li><b>28 languages,</b> fully translated.</li>
+</ul>
 <h2>And this is just the start...</h2>
 <p>We have many long asked-for features coming very soon.</p>
     ]]></string>
@@ -32,33 +28,5 @@ It\'s an entirely new app under the hood — new rendering engine, new astronomy
 <h1>Support Sky Map</h1>
 <p>Sky Map is free and open source. If you find it useful, please consider supporting development at our <a href="https://github.com/sky-map-team/stardroid/?tab=readme-ov-file#support-the-project">GitHub</a> page or <a href="https://buymeacoffee.com/skymapdevs?utm_source=skymap&amp;utm_medium=app&amp;utm_campaign=whatsnew">buying us a coffee</a>.</p>
     ]]></string>
-    <string name="beta_user_help_text" translation_description="Usually-empty HTML content shown to beta testers asking for feedback, appended in the What's new dialog and the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[
-<h1>Beta testers: please try the widgets, Help search, and sensor smoothing</h1>
-<p>Thank you for testing Sky Map! A few things we\'d love your eyes on this round:</p>
-<p>• The new <b>Widgets</b> menu item, which opens a sheet for adding any of the three home-screen widgets — check it finds the widgets you expect on your launcher.<br/>
-• The widgets themselves (<b>Moon phase</b>, <b>Tonight\'s sky</b>, <b>Sky countdown</b>) — do they show the right thing for your location, look right at different sizes and in light/dark mode, and stay up to date after a day, a restart, or a time zone change?<br/>
-• Searching the Help page — try a few queries and confirm the results jump you to the right place in the app.<br/>
-• The sensor smoothing that steadies the view while you hold your phone still — still keen to hear if you notice any lag or jitter.</p>
-<p>If anything looks wrong, email us at <a href="mailto:skymapdevs@gmail.com">skymapdevs@gmail.com</a> and tell us your phone model and launcher. A screenshot is very helpful.</p>
-<p>You can turn off sensor smoothing any time under <b>Settings → Sensors → Smooth sensor movement</b> if you\'d rather use the raw sensor.</p>
-    ]]></string>
-    <string name="whats_new_supplement" translation_description="HTML content for a short supplementary section covering changes since the main whats_new_content was last written, shown between the beta feedback note and the main What's new content in the What's new dialog and the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[
-<h1>Since the last update</h1>
-<h2>Steadier sensor smoothing</h2>
-<p>We\'ve replaced how Sky Map steadies the view while you hold your phone still — it should shake less and keep up better when you move. You can turn it off any time under <b>Settings → Sensors → Smooth sensor movement</b> if you\'d rather use the raw sensor.</p>
-<h2>A new alt/az grid</h2>
-<p>Sky Map can now overlay a grid of altitude and azimuth lines on the map, alongside the existing celestial grid. It\'s off by default — turn it on from the layers menu.</p>
-<h2>Smarter search</h2>
-<p>The Sun, Moon and planets now rank above stars when they match your search, so typing "Mars" finds the planet first instead of a star with a similar name.</p>
-<h2>Home-screen widgets</h2>
-<p>Put the sky on your home screen with three new widgets: <b>Moon phase</b> (the phase, how much is lit, and moonrise and moonset), <b>Tonight\'s sky</b> (sunset, when it gets dark, and the best sights tonight) and <b>Sky countdown</b> (days until the next meteor shower peak or moon event). Add one from your launcher\'s widget picker, or tap <b>Add widget</b> on the Moon\'s info card.</p>
-<h2>Less clutter when zoomed out</h2>
-<p>Zooming out now thins out the star labels, so a wide view of the sky is easier to read.</p>
-<h2>More reliable location</h2>
-<p>Location now works properly on devices without Google Play services (de-Googled ROMs such as GrapheneOS, and F-Droid builds). Sky Map can seed its position from another app that already has a fix, tells you the specific reason when a location search fails, and no longer keeps you waiting on a blanket "No internet" message.</p>
-<h2>Widgets are easier to find</h2>
-<p>Add any of the three home-screen widgets from a new menu item, not just the Moon\'s info card.</p>
-<h2>Search the Help page</h2>
-<p>Help is now searchable, and results can jump straight to the relevant part of the app.</p>
-    ]]></string>
+    <string name="beta_user_help_text" translation_description="Usually-empty HTML content shown to beta testers asking for feedback, appended in the What's new dialog and the Help screen. Please do not change the &lt; and &gt; markup."></string>
 </resources>
