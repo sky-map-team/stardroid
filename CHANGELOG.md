@@ -5,7 +5,11 @@ All notable changes to Sky Map are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
-## [2.1.2:Artemis] (v2) - 2026-09-24
+## [2.1.2:Artemis] (v2) - 2026-09-30
+
+<img src="stardroid-v2/assets/release-icons/2.1.0_artemis_icon.png" width="80" alt="Artemis" />
+
+This is the first stable release since 2.0.8 and includes everything from 2.1.0 and 2.1.1 below.
 
 ### Added
 - Searchable Help page, with results that jump straight to the relevant part of the app. (#1068)

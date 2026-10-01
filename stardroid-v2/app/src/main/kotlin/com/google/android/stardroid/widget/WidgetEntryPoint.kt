@@ -11,6 +11,7 @@ package com.google.android.stardroid.widget
 
 import android.content.Context
 import com.google.android.stardroid.CatalogAccess
+import com.google.android.stardroid.analytics.Analytics
 import com.google.android.stardroid.locale.LocaleSource
 import com.google.android.stardroid.settings.Settings
 import com.google.android.stardroid.startup.ExperimentConfig
@@ -33,6 +34,8 @@ interface WidgetEntryPoint {
     fun catalogAccess(): CatalogAccess
 
     fun localeSource(): LocaleSource
+
+    fun analytics(): Analytics
 }
 
 fun widgetEntryPoint(context: Context): WidgetEntryPoint =
