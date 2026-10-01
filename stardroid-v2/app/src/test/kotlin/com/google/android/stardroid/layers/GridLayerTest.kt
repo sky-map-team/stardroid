@@ -64,6 +64,51 @@ class GridLayerTest {
         }
 
     @Test
+    fun `density scales meridians, circles and label spacing together`() =
+        runTest {
+            val coarse =
+                layer().buildScene(FakeLayerStrings(), LayerParameter.RADEC_GRID_DENSITY_COARSE)
+            // 8 meridians + the equator + 2 circles each side (30° and 60°).
+            assertThat(coarse.lines).hasSize(8 + 1 + 4)
+            assertThat(coarse.labels.map { it.text })
+                .containsAtLeast("0", "3h", "21h", "30°", "-60°")
+            assertThat(coarse.labels.map { it.text }).doesNotContain("2h")
+
+            val medium =
+                layer().buildScene(FakeLayerStrings(), LayerParameter.RADEC_GRID_DENSITY_MEDIUM)
+            // 12 meridians + the equator + 5 circles each side (15° steps).
+            assertThat(medium.lines).hasSize(12 + 1 + 10)
+            assertThat(medium.labels.map { it.text }).containsAtLeast("2h", "22h", "15°", "-75°")
+        }
+
+    @Test
+    fun `an unknown density falls back to the default fine grid`() =
+        runTest {
+            val scene = layer().buildScene(FakeLayerStrings(), "bogus")
+
+            assertThat(scene.lines).hasSize(24 + 1 + 16)
+        }
+
+    @Test
+    fun `re-emits when density changes`() =
+        runTest {
+            val density = MutableStateFlow(LayerParameter.RADEC_GRID_DENSITY_FINE)
+            val scenes =
+                collectInBackground(
+                    GridLayer(
+                        strings,
+                        density,
+                        mapContext = UnconfinedTestDispatcher(testScheduler),
+                    ).scenes(),
+                )
+            assertThat(scenes).hasSize(1)
+
+            density.value = LayerParameter.RADEC_GRID_DENSITY_COARSE
+            assertThat(scenes).hasSize(2)
+            assertThat(scenes.last().lines).hasSize(8 + 1 + 4)
+        }
+
+    @Test
     fun `re-emits only on locale change`() =
         runTest {
             val scenes = collectInBackground(layer().scenes())
