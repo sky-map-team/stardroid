@@ -202,6 +202,9 @@ class SolarSystemLayer(
                     // still sets the decluttering priority above, so a planet label never wins
                     // a screen-space conflict against a brighter star.
                     magnitudeForThresholding = null,
+                    // Every solar-system body ships an info card, so every one of these
+                    // labels is tappable.
+                    hasDetail = true,
                 )
         }
         return LayerScene(depth = depth, points = points, images = imagePrimitives, labels = labels)

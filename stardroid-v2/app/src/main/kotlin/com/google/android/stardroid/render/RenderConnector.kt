@@ -15,22 +15,24 @@ import com.google.android.stardroid.render.api.LayerScene
 import com.google.android.stardroid.render.api.RenderState
 import com.google.android.stardroid.render.api.SkyCamera
 import com.google.android.stardroid.render.api.SkyRenderer
-import com.google.android.stardroid.render.gles1.GLSkyRenderer
 
 /**
- * Bridges [GLSkyRenderer] to a [GLSurfaceView] running in RENDERMODE_WHEN_DIRTY (D23).
+ * Bridges a rendering backend to a [GLSurfaceView] running in RENDERMODE_WHEN_DIRTY (D23).
  *
  * Every [submit] / [setCamera] / [setRenderState] delegates to the underlying renderer and then
- * calls [GLSurfaceView.requestRender] so the GL thread wakes and draws the updated state. When the
- * device is still (no camera, state, or scene changes), nothing redraws — battery-friendly.
+ * calls [GLSurfaceView.requestRender] so the GL thread wakes and draws the updated state. When
+ * the device is still (no camera, state, or scene changes), nothing redraws — battery-friendly.
  *
- * The future `:app` wiring: ViewModels collect each layer's `Flow<LayerScene>` into [submit] via
- * this connector, and [setCamera] is driven by the orientation sensor / sky-model flow. The
- * [GLSkyRenderer] and the [GLSurfaceView] are wired up in the Activity/Fragment; this class is
- * the only callsite that owns the `requestRender()` trigger.
+ * [renderer] is typed to the [SkyRenderer] contract rather than to a concrete backend, which is
+ * the whole of what makes the backend swappable: a backend also plays a second role, as the
+ * surface's [GLSurfaceView.Renderer], and both are settled at the one construction site in
+ * `MainActivity`. Everything downstream of here — `RenderBinder`, the ViewModels, the layers —
+ * never learns which backend it is talking to.
+ *
+ * This class is the only callsite that owns the `requestRender()` trigger.
  */
 class RenderConnector(
-    val renderer: GLSkyRenderer,
+    val renderer: SkyRenderer,
     private val surfaceView: GLSurfaceView,
 ) : SkyRenderer {
     override fun submit(

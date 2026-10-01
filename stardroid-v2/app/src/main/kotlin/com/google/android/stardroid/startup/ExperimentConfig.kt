@@ -35,6 +35,21 @@ enum class Experiment(val key: String) {
      * if our traffic ever looks wrong.
      */
     SATELLITES("satellites_enabled"),
+
+    /**
+     * The GL ES 3.0 rendering backend and the settings row that selects it
+     * (render-gles3.md, PR #1058).
+     *
+     * A kill switch as much as a rollout gate, and the reason it is a *remote* flag rather than
+     * a build-time one: a rendering backend is the component most likely to fail in ways we
+     * cannot reproduce — a driver that mis-compiles a shader or ignores a GL guarantee shows up
+     * as a black sky on one vendor's GPU and nowhere else. With this off, the backend cannot be
+     * selected and any device that already chose it falls back to GLES1 on the next launch,
+     * without shipping a release.
+     *
+     * Off by default: GLES1 remains the shipping renderer until this has had real-device time.
+     */
+    GLES3_RENDERER("gles3_renderer_enabled"),
 }
 
 /**
@@ -56,6 +71,7 @@ fun interface ExperimentConfig {
                     Experiment.CAMERA_AR -> false
                     Experiment.SHARE_SKY -> false
                     Experiment.SATELLITES -> false
+                    Experiment.GLES3_RENDERER -> false
                 }
             }
     }

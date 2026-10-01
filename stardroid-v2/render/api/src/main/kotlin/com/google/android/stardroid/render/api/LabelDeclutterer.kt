@@ -7,7 +7,7 @@
  * (at your option) any later version.
  */
 
-package com.google.android.stardroid.render.gles1
+package com.google.android.stardroid.render.api
 
 import com.google.android.stardroid.math.Vector3
 
@@ -24,7 +24,7 @@ import com.google.android.stardroid.math.Vector3
  *
  * Passes 1 and 2 are in [passesPreFilter]; pass 3 is in [declutter].
  */
-internal object LabelDeclutterer {
+object LabelDeclutterer {
     private const val REFERENCE_FOV_DEG = 45.0
     private const val BASE_MAGNITUDE_LIMIT = 4.0
     private const val ZOOM_IN_DEG_PER_MAGNITUDE = 10.0
@@ -61,11 +61,29 @@ internal object LabelDeclutterer {
         dotProductThreshold: Float,
         magnitude: Double?,
         magnitudeLimit: Double,
-    ): Boolean {
-        if ((labelPos dot lookDir).toFloat() < dotProductThreshold) return false
-        if (magnitude != null && magnitude > magnitudeLimit) return false
-        return true
-    }
+    ): Boolean =
+        passesFrustum(labelPos, lookDir, dotProductThreshold) &&
+            passesMagnitude(magnitude, magnitudeLimit)
+
+    /**
+     * Pass 1 alone: is this label anywhere near the screen?
+     *
+     * Separate from [passesMagnitude] because the two failures deserve different treatment from
+     * a backend that fades labels. Failing this one means the label is off screen, where there
+     * is nothing to fade and nothing to see; failing the magnitude test means it is right there
+     * and should be seen to leave.
+     */
+    fun passesFrustum(
+        labelPos: Vector3,
+        lookDir: Vector3,
+        dotProductThreshold: Float,
+    ): Boolean = (labelPos dot lookDir).toFloat() >= dotProductThreshold
+
+    /** Pass 2 alone: is this label bright enough to show at the current zoom? */
+    fun passesMagnitude(
+        magnitude: Double?,
+        magnitudeLimit: Double,
+    ): Boolean = magnitude == null || magnitude <= magnitudeLimit
 
     /**
      * One frame's declutter candidates, held as parallel primitive arrays and reused across
@@ -111,6 +129,17 @@ internal object LabelDeclutterer {
         var visible = BooleanArray(INITIAL_CAPACITY)
             private set
 
+        /**
+         * Whether a candidate is allowed to win screen space at all.
+         *
+         * An ineligible candidate is never kept and never reserves a rect — but it is still a
+         * candidate, so a caller that fades labels in and out can see that it *was* one last
+         * frame and is not one now, and fade it out instead of dropping it. The frustum test is
+         * a hard cull for the opposite reason: an off-screen label has nowhere to fade.
+         */
+        var eligible = BooleanArray(INITIAL_CAPACITY)
+            private set
+
         /** Scratch: candidate indices sorted by descending priority. */
         internal var order = IntArray(INITIAL_CAPACITY)
             private set
@@ -132,6 +161,7 @@ internal object LabelDeclutterer {
             widthPx: Int,
             heightPx: Int,
             priority: Int,
+            eligible: Boolean = true,
         ) {
             grow(size + 1)
             this.glyphIndex[size] = glyphIndex
@@ -140,6 +170,7 @@ internal object LabelDeclutterer {
             this.widthPx[size] = widthPx
             this.heightPx[size] = heightPx
             this.priority[size] = priority
+            this.eligible[size] = eligible
             size++
         }
 
@@ -153,6 +184,7 @@ internal object LabelDeclutterer {
             heightPx = heightPx.copyOf(capacity)
             priority = priority.copyOf(capacity)
             visible = visible.copyOf(capacity)
+            eligible = eligible.copyOf(capacity)
             order = order.copyOf(capacity)
             keptRects = keptRects.copyOf(capacity * FLOATS_PER_RECT)
         }
@@ -197,6 +229,7 @@ internal object LabelDeclutterer {
         var keptCount = 0
         for (position in 0 until count) {
             val i = order[position]
+            if (!candidates.eligible[i]) continue
             val halfWidth = candidates.widthPx[i] / 2f
             val halfHeight = candidates.heightPx[i] / 2f
             val left = candidates.screenX[i] - halfWidth

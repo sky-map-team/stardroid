@@ -7,9 +7,9 @@
  * (at your option) any later version.
  */
 
-package com.google.android.stardroid.render.gles1
+package com.google.android.stardroid.render.api
 
-import com.google.android.stardroid.render.gles1.LabelAtlasPacker.Size
+import com.google.android.stardroid.render.api.LabelAtlasPacker.Size
 import com.google.common.truth.Truth.assertThat
 import org.junit.jupiter.api.Test
 

@@ -31,6 +31,7 @@ interface CatalogDao {
         """
         SELECT o.id, o.type, o.ra, o.dec, o.magnitude, o.color_index AS colorIndex,
                o.search_fov AS searchFov,
+               EXISTS (SELECT 1 FROM info_card c WHERE c.object_id = o.id) AS hasInfoCard,
                n.locale AS nameLocale, n.name, n.is_primary AS isPrimary
         FROM celestial_object o
         LEFT JOIN object_name n ON n.object_id = o.id AND n.locale IN (:locales)
@@ -188,6 +189,12 @@ data class LayerObjectRow(
     val magnitude: Double?,
     val colorIndex: Double?,
     val searchFov: Double?,
+    /**
+     * Whether any locale has an info card for this object — the same `EXISTS` the tap-to-
+     * identify candidate set is built from, carried on the layer query so a label can say
+     * whether tapping it will show anything.
+     */
+    val hasInfoCard: Boolean,
     override val nameLocale: String?,
     override val name: String?,
     override val isPrimary: Boolean?,

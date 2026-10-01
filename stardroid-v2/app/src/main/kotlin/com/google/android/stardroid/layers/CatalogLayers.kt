@@ -228,6 +228,7 @@ object CatalogLayers {
             style = LabelStyle(size, color, offsetDp = offsetDp),
             priority = labelPriority(obj.magnitude),
             magnitudeForThresholding = obj.magnitude?.minus(magnitudeBonus),
+            hasDetail = obj.hasInfoCard,
         )
     }
 
