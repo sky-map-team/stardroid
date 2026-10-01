@@ -10,26 +10,21 @@
 package com.google.android.stardroid.data.satellites
 
 import kotlinx.datetime.Instant
-import java.io.File
-import java.io.IOException
 
 /**
  * On-disk home for the element sets and for the fetch state that guards them.
  *
- * **Under `filesDir`, never `cacheDir`.** The OS may evict `cacheDir` at any moment, and losing
- * the TLE silently kills the feature for anyone offline — the exact users who most need a cached
- * copy. This is small, durable, user-owned data.
+ * **Durable storage, never a cache directory** (`filesDir` on Android, not `cacheDir`). The OS may
+ * evict a cache at any moment, and losing the TLE silently kills the feature for anyone offline —
+ * the exact users who most need a cached copy. This is small, durable, user-owned data.
  *
  * The element sets are stored **as received, verbatim**. The two-line format is already compact
  * and line-oriented, so re-serialising to JSON or Room would gain nothing and would mean the
  * network and cache paths exercise two parsers instead of one.
  */
 class TleStore(
-    private val directory: File,
+    private val files: TextFiles,
 ) {
-    private val elementsFile get() = File(directory, ELEMENTS_FILE)
-    private val stateFile get() = File(directory, STATE_FILE)
-
     /**
      * The cached element-set text, or null if there is none **or it cannot be read**.
      *
@@ -38,32 +33,21 @@ class TleStore(
      * throw. The empty state already exists and says something honest; a crash while opening the
      * sky map would not be an improvement on it.
      */
-    fun readElements(): String? =
-        runCatching { elementsFile.takeIf { it.isFile }?.readText() }.getOrNull()
+    fun readElements(): String? = runCatching { files.read(ELEMENTS_FILE) }.getOrNull()
 
     /**
      * Replaces the cached element sets.
      *
-     * Written to a temporary file and renamed, so a kill mid-write cannot leave a truncated
-     * element set behind — half a TLE parses as garbage or, worse, as a plausible wrong orbit.
-     * A failed rename therefore leaves the *previous* good copy in place, which is the right
-     * outcome.
+     * Atomically ([TextFiles.replace]), so a kill mid-write cannot leave a truncated element set
+     * behind — half a TLE parses as garbage or, worse, as a plausible wrong orbit. A failed
+     * replace therefore leaves the *previous* good copy in place, which is the right outcome.
      *
-     * @throws IOException if the elements could not be persisted — a full or failing filesystem,
-     *   not a programming error, which is why this is an [IOException] rather than a `check`.
-     *   Callers run in a background worker and must handle it rather than let it escape; the
-     *   repository turns it into [FetchOutcome.StorageFailure].
+     * Throws if the elements could not be persisted — a full or failing filesystem, not a
+     * programming error (an `IOException` on Android). Callers run in a background worker and
+     * must handle it rather than let it escape; the repository turns it into
+     * [FetchOutcome.StorageFailure].
      */
-    @Throws(IOException::class)
-    fun writeElements(text: String) {
-        directory.mkdirs()
-        val temporary = File(directory, "$ELEMENTS_FILE.tmp")
-        temporary.writeText(text)
-        if (!temporary.renameTo(elementsFile)) {
-            temporary.delete()
-            throw IOException("Could not replace $elementsFile with the newly fetched element sets")
-        }
-    }
+    fun writeElements(text: String) = files.replace(ELEMENTS_FILE, text)
 
     /**
      * The persisted fetch state, or a fresh one if there is none or it cannot be read.
@@ -76,9 +60,8 @@ class TleStore(
     fun readState(): SatelliteFetchState =
         runCatching {
             val fields =
-                stateFile
-                    .takeIf { it.isFile }
-                    ?.readLines()
+                files.read(STATE_FILE)
+                    ?.lines()
                     ?.mapNotNull { line ->
                         line.split('=', limit = 2).takeIf { it.size == 2 }?.let { it[0] to it[1] }
                     }
@@ -105,7 +88,6 @@ class TleStore(
      * contains no newlines or `=`, so the format is unambiguous for every value stored here.
      */
     fun writeState(state: SatelliteFetchState) {
-        directory.mkdirs()
         val text =
             buildString {
                 appendLine("$KEY_FAILURES=${state.consecutiveFailures}")
@@ -116,12 +98,7 @@ class TleStore(
                 state.lastModified?.let { appendLine("$KEY_LAST_MODIFIED=$it") }
                 state.lastStatusCode?.let { appendLine("$KEY_LAST_STATUS=$it") }
             }
-        val temporary = File(directory, "$STATE_FILE.tmp")
-        temporary.writeText(text)
-        if (!temporary.renameTo(stateFile)) {
-            temporary.delete()
-            throw IOException("Could not replace $stateFile")
-        }
+        files.replace(STATE_FILE, text)
     }
 
     private fun String.toInstantOrNull(): Instant? = runCatching { Instant.parse(this) }.getOrNull()
@@ -138,4 +115,26 @@ class TleStore(
         const val KEY_LAST_MODIFIED = "lastModified"
         const val KEY_LAST_STATUS = "lastStatusCode"
     }
+}
+
+/**
+ * The few named text files [TleStore] keeps, on the platform's file system: a directory of them,
+ * in practice ([DirectoryTextFiles] on each platform).
+ */
+interface TextFiles {
+    /**
+     * The named file's text, or null if there is no such file. May throw if it exists but cannot
+     * be read; [TleStore] treats that as absent.
+     */
+    fun read(name: String): String?
+
+    /**
+     * Replaces the named file's text atomically: written beside it and moved into place, so a
+     * kill mid-write leaves the previous text rather than half of the new one. Throws if the text
+     * could not be persisted, leaving the previous text in place.
+     */
+    fun replace(
+        name: String,
+        text: String,
+    )
 }

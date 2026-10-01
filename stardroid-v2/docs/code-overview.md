@@ -74,7 +74,7 @@ other than the JVM tools are Kotlin Multiplatform (JVM + iOS), shared with the i
 | `:data:generator` | pure (build-time JVM tool) | 807 / 429 | Deterministic catalog-DB generator over `source-data/` |
 | `:render:gles1` | Android lib | 2,292 / 1,021 | OpenGL ES 1.0 backend implementing `:render:api` |
 | `:render:gles3` | Android lib | 2,837 / 458 | OpenGL ES 3.0 backend implementing `:render:api` (render-gles3.md) |
-| `:data` | KMP (Android + iOS) | 1,943 / 1,936 | Room catalog store implementing `:core:catalog`, shared with iOS; satellite elements fetcher (Android-only for now) |
+| `:data` | KMP (Android + iOS) | 1,943 / 1,936 | Room catalog store implementing `:core:catalog`, and the satellite elements fetcher; both shared with iOS (the iOS HTTP client is still to come) |
 | `:app` | Android app | 19,572 / 6,583 | Compose UI, ViewModels, Hilt, sensors, location, widgets, notifications |
 | `:konsist` | test-only | — | Architecture gate (D20) |
 

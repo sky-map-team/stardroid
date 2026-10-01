@@ -313,9 +313,12 @@ behaves identically because the folding is all in `NameNormalizer` and the token
   interrupted copy is never opened. Both run the same D24/G11 recovery: probe; on failure
   close, delete and re-copy once. Neither refreshes a copy whose *content* is stale after an
   app update — that is the core-pack refresh in data-packs.md.
-- **Android-only for now** (`androidMain`): the satellite fetcher (`HttpURLConnection`,
-  `java.io.File`). Its HTTP and file access move behind small interfaces, with no
-  multiplatform HTTP library on Android (D127).
+- **Satellite elements** (`data.satellites`): the fetch policy, repository and `TleStore` are
+  common code. The platform edges sit behind two small interfaces, with no multiplatform HTTP or
+  I/O library that Android would then carry (D127). `TextFiles` has a `DirectoryTextFiles` on
+  each platform. `CelesTrakClient` is `HttpURLConnection` on Android; the iOS URLSession client
+  waits for satellites to ship on iOS. The policy and repository tests stay JVM host tests,
+  which are fast and need no device. `TleStore`'s file behaviour is tested on both platforms.
 - **Tests.** Every catalog test is in `commonTest` and runs twice: as an Android instrumented
   test (`connectedAndroidDeviceTest`) and on the iOS simulator. So both platforms' SQLite must
   give the same answers to the repository, search, pack-replacement and bundled-catalog suites.

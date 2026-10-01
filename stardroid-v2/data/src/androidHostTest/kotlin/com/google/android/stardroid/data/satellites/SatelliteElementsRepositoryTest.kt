@@ -60,7 +60,12 @@ class SatelliteElementsRepositoryTest {
     private fun repository(
         client: FakeClient,
         clock: FakeClock,
-    ) = SatelliteElementsRepository(TleStore(tempDir), client, SatelliteGroup.STATIONS, clock)
+    ) = SatelliteElementsRepository(
+        TleStore(DirectoryTextFiles(tempDir)),
+        client,
+        SatelliteGroup.STATIONS,
+        clock,
+    )
 
     @Test
     fun `a successful fetch caches the elements and parses them back`() {
@@ -245,7 +250,7 @@ class SatelliteElementsRepositoryTest {
         // Writes go to a temp file and are renamed, so a kill mid-write leaves the previous good
         // copy in place rather than half a TLE - which would parse as garbage or, worse, as a
         // plausible wrong orbit.
-        val store = TleStore(tempDir)
+        val store = TleStore(DirectoryTextFiles(tempDir))
         store.writeElements(issElements)
         assertThat(File(tempDir, "elements.tle.tmp").exists()).isFalse()
         assertThat(store.readElements()).isEqualTo(issElements)
@@ -257,12 +262,14 @@ class SatelliteElementsRepositoryTest {
         // whereas an app that cannot start because its backoff bookkeeping is unparseable would
         // be worse than the problem it guards against.
         File(tempDir, "fetch-state.txt").writeText("this is not a state file ")
-        assertThat(TleStore(tempDir).readState()).isEqualTo(SatelliteFetchState())
+        assertThat(
+            TleStore(DirectoryTextFiles(tempDir)).readState(),
+        ).isEqualTo(SatelliteFetchState())
     }
 
     @Test
     fun `fetch state round-trips through disk`() {
-        val store = TleStore(tempDir)
+        val store = TleStore(DirectoryTextFiles(tempDir))
         val state =
             SatelliteFetchState(
                 consecutiveFailures = 2,
@@ -347,7 +354,7 @@ class SatelliteElementsRepositoryTest {
             }
         val repository =
             SatelliteElementsRepository(
-                TleStore(tempDir),
+                TleStore(DirectoryTextFiles(tempDir)),
                 exploding,
                 SatelliteGroup.STATIONS,
                 clock,
