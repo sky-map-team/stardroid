@@ -112,7 +112,11 @@ frame.
 ## `:app` decomposition
 
 v1's `DynamicStarMapActivity` mixes ~16 responsibilities. v2 is a single-activity Compose
-app; the map screen splits into focused ViewModels (Hilt-injected, no GL/sensor types):
+app; the map screen splits into focused ViewModels (constructed by hand, no GL/sensor types).
+Since iOS port phase 3 they live in `:shared:viewmodels` on androidx.lifecycle's multiplatform
+`ViewModel`, so the iOS app can hold the same classes; the platform edges they need arrive as
+constructor parameters (Android's `Choreographer` frame ticker, its `Log`), and the Compose
+screens stay in `:app`. `GalleryViewModel` stays in `:app` too: it holds Compose `ImageBitmap`s.
 
 | ViewModel | Owns | v1 origin |
 |---|---|---|

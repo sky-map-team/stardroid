@@ -147,6 +147,11 @@ class DoubleSubject internal constructor(
         }
     }
 
+    /** Not 0.0 or -0.0 (NaN passes), as in Truth. */
+    fun isNonZero() {
+        if (nonNull() == 0.0) failWith("expected not to be zero")
+    }
+
     fun interface TolerantComparison {
         fun of(expected: Double)
     }
@@ -325,6 +330,37 @@ class MapSubject internal constructor(
 
     fun doesNotContainKey(key: Any?) {
         if (nonNull().containsKey(key)) failExpected("expected not to contain key", key)
+    }
+
+    fun containsEntry(
+        key: Any?,
+        value: Any?,
+    ) {
+        val map = nonNull()
+        if (!map.containsKey(key) || !valuesEqual(map[key], value)) {
+            failExpected("expected to contain entry", "$key=$value")
+        }
+    }
+
+    /**
+     * Truth's alternating `containsExactly(k0, v0, k1, v1, …)`: exactly these entries, in any
+     * order unless [IterableSubject.Ordered.inOrder] (iteration order, for an ordered map).
+     */
+    fun containsExactly(vararg keysAndValues: Any?): IterableSubject.Ordered {
+        require(keysAndValues.size % 2 == 0) { "containsExactly takes alternating keys and values" }
+        val expected = keysAndValues.toList().chunked(2) { (k, v) -> k to v }
+        val actualEntries = nonNull().entries.map { it.key to it.value }
+        val unmatched: MutableList<Any?> = actualEntries.toMutableList()
+        val missing = expected.filter { e -> !unmatched.removeFirstMatch(e) }
+        if (missing.isNotEmpty() || unmatched.isNotEmpty()) {
+            failWith(
+                "expected exactly: ${show(expected)}\nmissing: ${show(missing)}" +
+                    "\nunexpected: ${show(unmatched)}",
+            )
+        }
+        return IterableSubject.Ordered {
+            if (actualEntries != expected) failWith("expected in order: ${show(expected)}")
+        }
     }
 
     private fun nonNull(): Map<*, *> = actual ?: failWith("expected a non-null map")

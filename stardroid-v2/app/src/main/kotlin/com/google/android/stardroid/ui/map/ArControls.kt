@@ -78,14 +78,18 @@ fun ArControls(
         )
         // Temporary dev controls (exposure lever 4) while the night behavior is tuned:
         // manual ISO and shutter, log-scaled, far left = auto.
-        if (state.manualExposureSupported && specs?.isoRange != null) {
+        // Read once: ArCameraSpecs is in :shared:viewmodels, and Kotlin will not smart-cast
+        // another module's properties.
+        val isoRange = specs?.isoRange
+        val exposureTimeRangeNs = specs?.exposureTimeRangeNs
+        if (state.manualExposureSupported && isoRange != null) {
             ManualExposureRow(
                 label = stringResource(R.string.ar_iso_slider_label),
                 description = stringResource(R.string.ar_iso_slider),
                 fraction = state.isoFraction,
                 valueText =
                     if (state.isoFraction > 0.0) {
-                        ArExposureMath.isoForFraction(specs.isoRange, state.isoFraction)
+                        ArExposureMath.isoForFraction(isoRange, state.isoFraction)
                             .toString()
                     } else {
                         stringResource(R.string.ar_exposure_auto)
@@ -93,16 +97,16 @@ fun ArControls(
                 onChange = onIsoFractionChange,
             )
         }
-        if (state.manualExposureSupported && specs?.exposureTimeRangeNs != null) {
+        if (state.manualExposureSupported && exposureTimeRangeNs != null) {
             ManualExposureRow(
                 label = stringResource(R.string.ar_shutter_slider_label),
                 description = stringResource(R.string.ar_shutter_slider),
                 fraction = state.shutterFraction,
                 valueText =
                     if (state.shutterFraction > 0.0) {
-                        ArExposureMath.formatExposureTime(
+                        formatExposureTime(
                             ArExposureMath.exposureTimeForFraction(
-                                specs.exposureTimeRangeNs,
+                                exposureTimeRangeNs,
                                 state.shutterFraction,
                             ),
                         )

@@ -209,7 +209,7 @@ fun TimeTravelDialog(
                     selectedEvent = selectedEvent,
                     pastAt = viewModel.wallTime(),
                     onSelect = { event ->
-                        val resolved = viewModel.resolve(event)
+                        val resolved = viewModel.resolve(event.type, event.timestamp)
                         if (resolved != null) {
                             selectedEvent = event
                             target = resolved

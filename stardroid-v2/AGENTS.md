@@ -94,8 +94,9 @@ Do not add a third notice — per-directory notices are what let the old claim d
 - `shared/` — the app's middle layer, moving out of `app/` for the iOS port (phase 3):
   `shared/model` (the app's state contracts — `Settings`, `StartupState`, `Analytics`, the
   location edges — and the controllers over them: time, location, startup routing),
-  `shared/layers` (the sky layers, Android + iOS like `data/`) and `shared/testing` (fakes for
-  `:shared` and `:app` tests). The same rules as
+  `shared/layers` (the sky layers, Android + iOS like `data/`), `shared/viewmodels` (the
+  screens' ViewModels — androidx.lifecycle's multiplatform `ViewModel` — with the Compose screens
+  left in `app/`) and `shared/testing` (fakes for `:shared` and `:app` tests). The same rules as
   `core/*`: no Android SDK and no JDK in common code, tests in `commonTest`.
 - `render/api` — pure renderer contract + shared projection; `render/gles1` — a GLES1
   backend written to match v1's rendering behaviour (an independent implementation, not a

@@ -17,7 +17,7 @@ import kotlinx.datetime.Instant
 /**
  * A named destination in the time-travel picker (v1 `TimeTravelEvent`).
  *
- * @param timestamp the target for [Type.FIXED] events; null for computed types.
+ * @param timestamp the target for [TimeTravelEventType.FIXED] events; null for computed types.
  * @param searchTarget the object the map aims at once travel completes (v1's
  *   `searchTargetRes`, by stable catalog id instead of localized name); null does nothing.
  *   Meteor showers target their radiant, which unlike in v1 is a catalog object in its own
@@ -25,14 +25,12 @@ import kotlinx.datetime.Instant
  */
 data class TimeTravelEvent(
     @StringRes val displayNameRes: Int,
-    val type: Type,
+    val type: TimeTravelEventType,
     val timestamp: Instant? = null,
     val searchTarget: CelestialObjectId? = null,
 ) {
-    enum class Type { NOW, NEXT_SUNRISE, NEXT_SUNSET, NEXT_FULL_MOON, NEXT_NEW_MOON, FIXED }
-
     /** A fixed event already in the past is shown greyed (but stays selectable), as in v1. */
-    fun isPastAt(now: Instant): Boolean = type == Type.FIXED && timestamp != null && timestamp < now
+    fun isPastAt(now: Instant): Boolean = type == TimeTravelEventType.FIXED && timestamp != null && timestamp < now
 }
 
 /**
@@ -50,32 +48,32 @@ object TimeTravelEvents {
         searchTarget: CelestialObjectId? = null,
     ) = TimeTravelEvent(
         displayNameRes,
-        TimeTravelEvent.Type.FIXED,
+        TimeTravelEventType.FIXED,
         Instant.fromEpochMilliseconds(epochMillis),
         searchTarget,
     )
 
     val ALL: List<TimeTravelEvent> =
         listOf(
-            TimeTravelEvent(R.string.time_travel_now, TimeTravelEvent.Type.NOW),
+            TimeTravelEvent(R.string.time_travel_now, TimeTravelEventType.NOW),
             TimeTravelEvent(
                 R.string.time_travel_next_sunset,
-                TimeTravelEvent.Type.NEXT_SUNSET,
+                TimeTravelEventType.NEXT_SUNSET,
                 searchTarget = SUN,
             ),
             TimeTravelEvent(
                 R.string.time_travel_next_sunrise,
-                TimeTravelEvent.Type.NEXT_SUNRISE,
+                TimeTravelEventType.NEXT_SUNRISE,
                 searchTarget = SUN,
             ),
             TimeTravelEvent(
                 R.string.time_travel_next_full_moon,
-                TimeTravelEvent.Type.NEXT_FULL_MOON,
+                TimeTravelEventType.NEXT_FULL_MOON,
                 searchTarget = MOON,
             ),
             TimeTravelEvent(
                 R.string.time_travel_next_new_moon,
-                TimeTravelEvent.Type.NEXT_NEW_MOON,
+                TimeTravelEventType.NEXT_NEW_MOON,
                 searchTarget = MOON,
             ),
             // 2026 events (chronological).

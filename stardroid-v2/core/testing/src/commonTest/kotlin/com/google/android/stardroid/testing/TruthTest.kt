@@ -171,4 +171,24 @@ class TruthTest {
         assertThat(0.0).isIn(0.0..<360.0)
         fails { assertThat(360.0).isIn(0.0..<360.0) }
     }
+
+    @Test
+    fun mapEntries_checkKeysAndValues() {
+        val map = linkedMapOf("a" to 1, "b" to 2)
+        assertThat(map).containsEntry("a", 1)
+        fails { assertThat(map).containsEntry("a", 2) }
+        fails { assertThat(map).containsEntry("c", 1) }
+        assertThat(map).containsExactly("b", 2, "a", 1)
+        assertThat(map).containsExactly("a", 1, "b", 2).inOrder()
+        fails { assertThat(map).containsExactly("b", 2, "a", 1).inOrder() }
+        fails { assertThat(map).containsExactly("a", 1) }
+    }
+
+    @Test
+    fun isNonZero_rejectsBothZeros() {
+        assertThat(0.5).isNonZero()
+        assertThat(Double.NaN).isNonZero()
+        fails { assertThat(0.0).isNonZero() }
+        fails { assertThat(-0.0).isNonZero() }
+    }
 }

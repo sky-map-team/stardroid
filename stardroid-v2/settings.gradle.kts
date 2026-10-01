@@ -35,6 +35,7 @@ include(":data:generator")
 // no Android SDK in common code. :shared:layers has an Android target rather than JVM, for :data.
 include(":shared:model")
 include(":shared:layers")
+include(":shared:viewmodels")
 include(":shared:testing")
 
 // Android modules (:data is Android + iOS)

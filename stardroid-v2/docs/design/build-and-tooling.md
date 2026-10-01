@@ -7,12 +7,14 @@ architecture (D20) and performance (D19).
 
 ## Module graph
 
-Fifteen Gradle modules, following the dependency rule (arrows inward only; see
+Sixteen Gradle modules, following the dependency rule (arrows inward only; see
 [high-level-architecture.md](high-level-architecture.md)):
 
 ```
 :app            android-app    → :render:api, :render:gles1, :render:gles3, :data, :shared:*,
                                  :core:*
+:shared:viewmodels kmp-android-library → :shared:layers, :shared:model, :data
+                                 (+ androidx.lifecycle's multiplatform ViewModel)
 :shared:layers  kmp-android-library → :shared:model, :data, :render:api, :core:*
 :shared:model   pure-kmp       → :render:api, :core:astronomy, :core:math
 :shared:testing pure-kmp       → :shared:model, :core:catalog (test support: fakes of the
@@ -46,7 +48,7 @@ without Xcode), which no module applies directly.
 | Plugin | Applies | Used by |
 |---|---|---|
 | `skymap.pure-kmp` | `kotlin("multiplatform")` — JVM + iOS targets, kotlin.test + `:core:testing`, **no Android plugin** | `:core:*`, `:render:api`, `:shared:model`, `:shared:testing` |
-| `skymap.kmp-android-library` | `kotlin("multiplatform")` — AGP's multiplatform Android target (`com.android.kotlin.multiplatform.library`) + iOS targets | `:data`, `:shared:layers` |
+| `skymap.kmp-android-library` | `kotlin("multiplatform")` — AGP's multiplatform Android target (`com.android.kotlin.multiplatform.library`) + iOS targets | `:data`, `:shared:layers`, `:shared:viewmodels` |
 | `skymap.pure-kotlin` | `kotlin("jvm")`, JUnit5/Truth, **no Android plugin** | `:data:generator`, `:konsist` |
 | `skymap.android-library` | `com.android.library` + Kotlin, common Android config | `:render:gles1`, `:render:gles3` |
 | `skymap.android-app` | `com.android.application` + Kotlin + Compose + Hilt + flavors | `:app` |

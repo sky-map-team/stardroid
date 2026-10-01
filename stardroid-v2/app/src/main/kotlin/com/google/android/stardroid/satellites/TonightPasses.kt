@@ -79,13 +79,6 @@ suspend fun tonightSatellitePasses(
  */
 val TONIGHT_HORIZON: Duration = 16.hours
 
-/** A satellite currently drawn: its synthesized card and where it is right now. */
-data class TrackedSatellite(
-    val tle: Tle,
-    val info: ObjectInfo,
-    val position: RaDec,
-)
-
 /**
  * The satellites the map is drawing, as tap targets with cards attached.
  *

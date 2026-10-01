@@ -24,8 +24,11 @@ one `expect`/`actual` — see
 :render:gles1         Android. OpenGL ES 1.0 backend implementing :render:api
                       (port of the v1 renderer). Future :render:gles3 / :render:vulkan
                       slot in beside it.
+:shared:viewmodels    KMP: Android + iOS. The screens' ViewModels (androidx.lifecycle's
+                      multiplatform ViewModel), moved out of :app in iOS port phase 3;
+                      the Compose screens that render them stay in :app.
 :shared:layers        KMP: Android + iOS. The sky layers and their registry (moved out
-                      of :app in iOS port phase 3). More of the app's middle layer follows.
+                      of :app in iOS port phase 3).
 :shared:model         pure. The app's state contracts (Settings, StartupState,
                       Analytics, the location edges) and the controllers over them
                       (time, location, startup routing).
