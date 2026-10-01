@@ -44,6 +44,7 @@ kotlin {
         // instrumented tests, androidDeviceTest) and iOS's (on the simulator).
         commonTest.dependencies {
             implementation(libs.kotlinx.coroutines.test)
+            implementation(libs.turbine)
         }
         // The satellite fetch policy, cache and repository are plain JVM logic - no Room, no
         // SQLite - so they are unit-testable without a device, unlike the catalog below.
@@ -52,14 +53,13 @@ kotlin {
             implementation(libs.truth)
             runtimeOnly(libs.junit.platform.launcher)
         }
-        // Repository tests need a real SQLite (FTS4, Room invalidation), so on Android they are
-        // instrumented rather than JVM unit tests — catalog-and-schema.md.
+        // The catalog tests need a real SQLite (FTS4, Room invalidation), so on Android they run
+        // as instrumented tests rather than JVM unit tests — catalog-and-schema.md. All of them
+        // are in commonTest; this source set holds only the Android way to open a database.
         getByName("androidDeviceTest").dependencies {
             implementation(kotlin("test-junit"))
             implementation(libs.androidx.test.runner)
             implementation(libs.androidx.test.ext.junit)
-            implementation(libs.truth)
-            implementation(libs.turbine)
         }
     }
 }

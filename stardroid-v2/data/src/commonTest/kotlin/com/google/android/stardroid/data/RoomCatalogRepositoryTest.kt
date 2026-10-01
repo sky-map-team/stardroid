@@ -9,28 +9,23 @@
 
 package com.google.android.stardroid.data
 
-import androidx.room.Room
-import androidx.test.core.app.ApplicationProvider
-import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.google.android.stardroid.catalog.CelestialObjectId
 import com.google.android.stardroid.catalog.LayerKind
 import com.google.android.stardroid.catalog.LocaleSpec
 import com.google.android.stardroid.catalog.MonthDay
 import com.google.android.stardroid.math.RaDec
-import com.google.common.truth.Truth.assertThat
+import com.google.android.stardroid.testing.assertThat
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.test.runTest
-import org.junit.After
-import org.junit.Before
-import org.junit.Test
-import org.junit.runner.RunWith
+import kotlin.test.AfterTest
+import kotlin.test.BeforeTest
+import kotlin.test.Test
 
 /**
  * Repository behavior against an in-memory DB seeded with [FixtureCatalog] — locale fallback,
  * FTS prefix search and ranking, position resolution, and figure grouping
  * (catalog-and-schema.md test plan).
  */
-@RunWith(AndroidJUnit4::class)
 class RoomCatalogRepositoryTest {
     private lateinit var database: SkyMapDatabase
     private lateinit var repository: RoomCatalogRepository
@@ -38,20 +33,16 @@ class RoomCatalogRepositoryTest {
     private val english = LocaleSpec("en")
     private val spanish = LocaleSpec("es")
 
-    @Before
+    @BeforeTest
     fun createDb() =
         runTest {
-            database =
-                Room.inMemoryDatabaseBuilder(
-                    ApplicationProvider.getApplicationContext(),
-                    SkyMapDatabase::class.java,
-                ).build()
+            database = inMemoryCatalog()
             database.packDao().applyPack(FixtureCatalog.corePack(), FixtureCatalog.coreContents())
             database.packDao().applyPack(FixtureCatalog.extraPack(), FixtureCatalog.extraContents())
             repository = RoomCatalogRepository(database)
         }
 
-    @After
+    @AfterTest
     fun closeDb() {
         database.close()
     }

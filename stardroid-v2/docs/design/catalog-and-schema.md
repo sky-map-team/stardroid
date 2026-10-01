@@ -311,11 +311,11 @@ behaves identically because the folding is all in `NameNormalizer` and the token
   needs a factory that copies the bundled file out of the app bundle and recovers the same
   way. The satellite fetcher's HTTP and file access move behind small interfaces, with no
   multiplatform HTTP library on Android (D127).
-- **Tests.** Suites in `commonTest` run as Android instrumented tests
-  (`connectedAndroidDeviceTest`) *and* on the iOS simulator, so both platforms' SQLite must give
-  the same answers. `BundledCatalogTest` is there now. The fixture-pack repository and
-  pack-replacement tests are still Android-only (`androidDeviceTest`). Host (JVM) tests are a
-  separate tree, since a JVM unit test has no SQLite.
+- **Tests.** Every catalog test is in `commonTest` and runs twice: as an Android instrumented
+  test (`connectedAndroidDeviceTest`) and on the iOS simulator. So both platforms' SQLite must
+  give the same answers to the repository, search, pack-replacement and bundled-catalog suites.
+  `androidDeviceTest` and `iosTest` only say how to open a database (`TestCatalogs`). Host
+  (JVM) tests are a separate tree, since a JVM unit test has no SQLite.
 
 ## Build-time generation (replaces v1 `tools/`)
 

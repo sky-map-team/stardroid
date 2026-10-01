@@ -46,3 +46,9 @@ internal actual fun openBundledCatalog(): SkyMapDatabase {
 internal actual fun deleteBundledCatalog() {
     NSFileManager.defaultManager.removeItemAtPath(copyDirectory, null)
 }
+
+internal actual fun inMemoryCatalog(): SkyMapDatabase =
+    Room.inMemoryDatabaseBuilder<SkyMapDatabase>()
+        .setDriver(BundledSQLiteDriver())
+        .setQueryCoroutineContext(Dispatchers.IO)
+        .build()

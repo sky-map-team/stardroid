@@ -9,48 +9,40 @@
 
 package com.google.android.stardroid.data
 
-import android.database.sqlite.SQLiteConstraintException
-import androidx.room.Room
-import androidx.test.core.app.ApplicationProvider
-import androidx.test.ext.junit.runners.AndroidJUnit4
+import androidx.sqlite.SQLiteException
 import app.cash.turbine.test
 import com.google.android.stardroid.catalog.CelestialObjectId
 import com.google.android.stardroid.catalog.LayerKind
 import com.google.android.stardroid.catalog.LocaleSpec
-import com.google.common.truth.Truth.assertThat
+import com.google.android.stardroid.testing.assertThat
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.test.runTest
-import org.junit.After
-import org.junit.Before
-import org.junit.Test
-import org.junit.runner.RunWith
+import kotlin.test.AfterTest
+import kotlin.test.BeforeTest
+import kotlin.test.Test
+import kotlin.test.assertFailsWith
 
 /**
  * Pack lifecycle guarantees (catalog-and-schema.md): application is transactional per pack,
  * replacing one pack never touches another's rows, cross-pack references dangle gracefully,
  * and running layer flows pick up catalog changes via Room invalidation.
  */
-@RunWith(AndroidJUnit4::class)
 class PackReplacementTest {
     private lateinit var database: SkyMapDatabase
     private lateinit var repository: RoomCatalogRepository
 
     private val english = LocaleSpec("en")
 
-    @Before
+    @BeforeTest
     fun createDb() =
         runTest {
-            database =
-                Room.inMemoryDatabaseBuilder(
-                    ApplicationProvider.getApplicationContext(),
-                    SkyMapDatabase::class.java,
-                ).build()
+            database = inMemoryCatalog()
             database.packDao().applyPack(FixtureCatalog.corePack(), FixtureCatalog.coreContents())
             database.packDao().applyPack(FixtureCatalog.extraPack(), FixtureCatalog.extraContents())
             repository = RoomCatalogRepository(database)
         }
 
-    @After
+    @AfterTest
     fun closeDb() {
         database.close()
     }
@@ -108,12 +100,15 @@ class PackReplacementTest {
                     contents.copy(objects = contents.objects + contents.objects)
                 }
 
-            try {
-                database.packDao().applyPack(FixtureCatalog.extraPack(version = 2), duplicateIds)
-                throw AssertionError("applyPack should have failed on a duplicate object id")
-            } catch (expected: SQLiteConstraintException) {
-                // The whole transaction must roll back, insertions and deletions alike.
-            }
+            // SQLiteException is android.database.SQLException on Android (whose framework
+            // SQLite throws its SQLiteConstraintException subclass) and Room's own on iOS.
+            val failure =
+                assertFailsWith<SQLiteException>("a duplicate object id must fail applyPack") {
+                    database.packDao()
+                        .applyPack(FixtureCatalog.extraPack(version = 2), duplicateIds)
+                }
+            assertThat(failure.message.orEmpty().lowercase()).contains("constraint")
+            // The whole transaction must roll back, insertions and deletions alike.
 
             assertThat(repository.searchByPrefix("vega", english, 10)).isNotEmpty()
             assertThat(database.packDao().packs().single { it.id == "extra" }.version)

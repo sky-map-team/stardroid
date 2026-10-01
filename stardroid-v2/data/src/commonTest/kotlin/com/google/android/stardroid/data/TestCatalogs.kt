@@ -17,3 +17,6 @@ internal expect fun openBundledCatalog(): SkyMapDatabase
 
 /** Deletes the copy [openBundledCatalog] made. Close the database first. */
 internal expect fun deleteBundledCatalog()
+
+/** An empty in-memory catalog, for tests that apply the fixture packs themselves. */
+internal expect fun inMemoryCatalog(): SkyMapDatabase

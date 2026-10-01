@@ -10,6 +10,7 @@
 package com.google.android.stardroid.data
 
 import android.content.Context
+import androidx.room.Room
 import androidx.test.core.app.ApplicationProvider
 
 private val context: Context
@@ -24,3 +25,6 @@ internal actual fun openBundledCatalog(): SkyMapDatabase {
 internal actual fun deleteBundledCatalog() {
     context.deleteDatabase(SkyMapDatabaseFactory.DATABASE_NAME)
 }
+
+internal actual fun inMemoryCatalog(): SkyMapDatabase =
+    Room.inMemoryDatabaseBuilder(context, SkyMapDatabase::class.java).build()
