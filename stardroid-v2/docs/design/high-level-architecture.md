@@ -13,7 +13,9 @@ camera mode, downloads, notifications, many more layer kinds).
 
 Gradle multi-module project. Modules marked **pure** contain no Android dependencies (and no
 Koin/Hilt — constructor injection only) so a later KMP conversion is a build-file change, not
-a refactor.
+a refactor. (It was: the pure modules became Kotlin Multiplatform, JVM + iOS, in 2026-09 with
+one `expect`/`actual` — see
+[build-and-tooling.md](build-and-tooling.md#kotlin-multiplatform--the-shared-core-ios-port-phase-0).)
 
 ```
 :app                  Android. Compose UI, ViewModels, Hilt, sensors, location,
@@ -22,7 +24,7 @@ a refactor.
 :render:gles1         Android. OpenGL ES 1.0 backend implementing :render:api
                       (port of the v1 renderer). Future :render:gles3 / :render:vulkan
                       slot in beside it.
-:data                 Android (KMP-able via Room KMP). Room DB, prepackaged catalog,
+:data                 KMP: Android + iOS (Room KMP). Room DB, prepackaged catalog,
                       repositories implementing :core:catalog interfaces.
 :core:catalog         pure. Domain model of celestial objects, catalog/search
                       repository interfaces, layer content definitions.

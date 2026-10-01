@@ -10,8 +10,8 @@
 package com.google.android.stardroid.layers
 
 import com.google.android.stardroid.astronomy.SkyModel
-import com.google.android.stardroid.math.DEGREES_TO_RADIANS
 import com.google.android.stardroid.math.LatLong
+import com.google.android.stardroid.render.api.LayerScene
 import com.google.common.truth.Truth.assertThat
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.Flow
@@ -22,7 +22,6 @@ import kotlinx.coroutines.test.UnconfinedTestDispatcher
 import kotlinx.coroutines.test.runTest
 import kotlinx.datetime.Instant
 import org.junit.jupiter.api.Test
-import kotlin.math.sin
 
 @OptIn(ExperimentalCoroutinesApi::class)
 class HorizonLayerTest {
@@ -59,7 +58,7 @@ class HorizonLayerTest {
                     frame.trueNorth,
                 )
                 .inOrder()
-            // The horizon reads as one green element (D40): line, glow, and labels.
+            // The horizon reads as one green element (D40): line and labels.
             assertThat(horizon.color).isEqualTo(SkyColors.HORIZON_LINE)
             assertThat(horizon.widthDp).isEqualTo(2.5)
 
@@ -72,37 +71,27 @@ class HorizonLayerTest {
         }
 
     @Test
-    fun `glow mesh hangs below the horizon with an exponentially fading alpha`() =
+    fun `the layer submits reference geometry only, with no shading of its own`() =
         runTest {
+            // The glow that used to hang below the line is now `Ground`, a render-state block the
+            // backends shade for themselves. What is left here is the horizon's *position*: a line
+            // and four letters. If a gradient ever reappears in this layer, something has gone
+            // back to faking shading with geometry.
             val scene = layer().buildScene(time, greenwich, FakeLayerStrings())
-            val frame = SkyModel.localFrame(time, greenwich)
-            val nadir = -frame.up
+            assertThat(scene.lines).hasSize(1)
+            assertThat(scene.labels).hasSize(4)
+            assertThat(scene.points).isEmpty()
+            assertThat(scene.images).isEmpty()
+        }
 
-            val glow = scene.glows.single()
-            // 9 rings of 181 vertices: ring 0 on the horizon, 8 more tilted toward the nadir.
-            assertThat(glow.rings).hasSize(9)
-            for (ring in glow.rings) {
-                assertThat(ring.vertices).hasSize(181)
-                // Closed loop.
-                assertThat(ring.vertices.first()).isEqualTo(ring.vertices.last())
-            }
-
-            // Ring 0 starts exactly at the horizon (its first vertex is true north)...
-            assertThat(glow.rings[0].vertices[0]).isEqualTo(frame.trueNorth)
-            // ...and each further ring dips 1° deeper toward the nadir.
-            for ((i, ring) in glow.rings.withIndex()) {
-                val towardNadir = ring.vertices[0] dot nadir
-                assertThat(towardNadir).isWithin(1e-9).of(sin(i * 1.0 * DEGREES_TO_RADIANS))
-            }
-
-            // Alpha decays exponentially from the peak and the deepest ring is transparent, so
-            // the additive gradient fades out instead of ending in a hard edge.
-            val alphas = glow.rings.map { it.color.a }
-            assertThat(alphas.first()).isWithin(1e-6f).of(0.7f)
-            assertThat(alphas.last()).isEqualTo(0f)
-            for (i in 1 until alphas.size) {
-                assertThat(alphas[i]).isLessThan(alphas[i - 1])
-            }
+    @Test
+    fun `the horizon draws in front of the ground, so its line stays legible on top of it`() =
+        runTest {
+            // The ground is a translucent wash drawn at GROUND_DEPTH, which only works if the
+            // horizon furniture comes after it. Nothing about either integer says so on its own,
+            // and a layer added deeper than the ground would silently be washed over with no error
+            // anywhere, so the invariant is asserted rather than commented.
+            assertThat(layer().depth).isGreaterThan(LayerScene.GROUND_DEPTH)
         }
 
     @Test

@@ -27,11 +27,13 @@ include(":core:math")
 include(":core:astronomy")
 include(":core:catalog")
 include(":core:events")
+include(":core:testing")
 include(":render:api")
 include(":data:generator")
 
 // Android modules
 include(":render:gles1")
+include(":render:gles3")
 include(":data")
 include(":app")
 

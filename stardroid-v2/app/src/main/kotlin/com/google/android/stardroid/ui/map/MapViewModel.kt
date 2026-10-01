@@ -28,6 +28,8 @@ import com.google.android.stardroid.math.RaDec
 import com.google.android.stardroid.math.Vector3
 import com.google.android.stardroid.math.normalizeDegrees
 import com.google.android.stardroid.math.rotationMatrix
+import com.google.android.stardroid.layers.SkyColors
+import com.google.android.stardroid.render.api.Ground
 import com.google.android.stardroid.render.api.RenderState
 import com.google.android.stardroid.render.api.SkyCamera
 import com.google.android.stardroid.render.api.SkyGradient
@@ -45,6 +47,7 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.flatMapLatest
 import kotlinx.coroutines.flow.flowOf
@@ -317,16 +320,54 @@ class MapViewModel(
      * geocentric direction rides the shared clock bus (paying off the D41 debt): under time
      * travel the dome tracks the same accelerated instants the layers see, so it can never
      * disagree with `SolarSystemLayer`'s sun image.
+     *
+     * This also carries the [Ground], which is why `showSkyGradient` switches both: one preference
+     * means "draw the atmosphere", and turning it off gives the bare star-chart view with the
+     * ground transparent too — which is what someone looking through the Earth for the Sun wants.
+     * The horizon *line* and its cardinal labels are a separate layer with its own toggle, since
+     * they answer where you are pointing rather than what is below you.
      */
     @OptIn(ExperimentalCoroutinesApi::class)
     private fun skyGradients(): Flow<SkyGradient?> =
         settings.showSkyGradient.flatMapLatest { on ->
             if (!on) return@flatMapLatest flowOf(null)
-            timeFlow.map { time ->
+            combine(timeFlow, locations) { time, location ->
                 SkyGradient(
-                    ephemeris.geocentricPosition(SolarSystemBody.SUN, time).toGeocentricVector(),
+                    sunDirection =
+                        ephemeris
+                            .geocentricPosition(SolarSystemBody.SUN, time)
+                            .toGeocentricVector(),
+                    // The observer's local up, which is what makes the horizon — and so the
+                    // twilight bands and the Belt of Venus — locatable by a backend that can
+                    // evaluate a scattering model. GLES1 ignores it.
+                    //
+                    // Built from `time` here rather than read off `localFrame`, even though
+                    // that is refreshed from this same clock: it is refreshed by a *separate*
+                    // collector, and the order two collectors of one flow run in is not
+                    // defined, so the zenith could be a tick behind the sun. A tick is a
+                    // minute of sky at ordinary speeds and does not matter — but under fast
+                    // time travel it is however far the sky moved in that tick, which would
+                    // put the twilight bands visibly out of step with the horizon line the
+                    // horizon layer draws from the same instant. Same instant in, same
+                    // horizon out. (Magnetic declination is irrelevant to `up`.)
+                    //
+                    // The *location* is combined in for the same reason, the hard way round:
+                    // reading the `currentLocation` field here instead left the gradient
+                    // recomputing only on a clock tick, while `HorizonLayer` combines the
+                    // location flow and moves at once. Startup goes default location then real
+                    // fix, so the horizon line jumped to the right place and the ground stayed
+                    // on the old zenith until the next tick — visibly two horizons, reported
+                    // from the device. It had been latent since the dome landed and nothing
+                    // could show it: GLES1's dome ignores the zenith entirely and GLES3's is
+                    // all soft gradients, whereas the ground has a hard edge at altitude zero.
+                    zenithDirection = SkyModel.localFrame(time, location).up,
+                    ground =
+                        Ground(
+                            nightColor = SkyColors.GROUND_NIGHT,
+                            dayColor = SkyColors.GROUND_DAY,
+                        ),
                 )
-            }
+            }.distinctUntilChanged()
         }
 
     @Volatile
@@ -957,6 +998,7 @@ class MapViewModel(
     }
 
     companion object {
+
         /**
          * v1's initial camera: due south-ish along the equator, celestial north up.
          *

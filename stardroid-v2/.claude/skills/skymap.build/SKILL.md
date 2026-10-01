@@ -65,6 +65,8 @@ enforces the pure/Android module boundary). **This must pass before any commit**
 # Instrumented tests (requires connected device/emulator) — includes the D19 renderer perf
 # smoke gate; pure modules (core/math, core/astronomy) don't need Android at all.
 ./gradlew connectedDebugAndroidTest
+# :data is multiplatform, so its instrumented tests have their own task name
+./gradlew connectedAndroidDeviceTest
 
 # Auto-fix ktlint violations (100-char line limit, Google Kotlin style)
 ./gradlew ktlintFormat

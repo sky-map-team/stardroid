@@ -20,6 +20,7 @@ import androidx.lifecycle.ProcessLifecycleOwner
 import androidx.lifecycle.flowWithLifecycle
 import com.google.android.stardroid.FlavorEdges
 import com.google.android.stardroid.analytics.Analytics
+import com.google.android.stardroid.data.satellites.DirectoryTextFiles
 import com.google.android.stardroid.data.satellites.HttpUrlConnectionCelesTrakClient
 import com.google.android.stardroid.data.satellites.SatelliteElementsRepository
 import com.google.android.stardroid.data.satellites.TleStore
@@ -93,7 +94,7 @@ object AppModule {
     @Singleton
     fun satelliteElementsRepository(application: Application): SatelliteElementsRepository =
         SatelliteElementsRepository(
-            store = TleStore(File(application.filesDir, "satellites")),
+            store = TleStore(DirectoryTextFiles(File(application.filesDir, "satellites"))),
             client = HttpUrlConnectionCelesTrakClient(),
         )
 

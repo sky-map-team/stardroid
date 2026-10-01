@@ -26,3 +26,20 @@ tasks.withType<Test>().configureEach {
     inputs.dir(sourceData).withPropertyName("sourceData")
         .withPathSensitivity(PathSensitivity.RELATIVE)
 }
+
+// Every catalog name with its JVM-normalized form (NameCorpusExport), for :core:catalog's
+// cross-platform NameNormalizer agreement test, whose test tasks depend on this one by path and
+// read its output (D126).
+tasks.register<JavaExec>("exportNameCorpus") {
+    // Locals, so the argument provider captures no script references (configuration cache).
+    val sourceDir = sourceData
+    val corpus = layout.buildDirectory.file("name-corpus/names.tsv")
+    classpath = sourceSets["main"].runtimeClasspath
+    mainClass.set("com.google.android.stardroid.data.generator.NameCorpusExport")
+    inputs.dir(sourceDir).withPropertyName("sourceData")
+        .withPathSensitivity(PathSensitivity.RELATIVE)
+    outputs.file(corpus).withPropertyName("corpus")
+    argumentProviders.add(
+        CommandLineArgumentProvider { listOf(sourceDir, corpus.get().asFile.absolutePath) },
+    )
+}

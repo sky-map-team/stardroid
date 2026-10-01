@@ -1,4 +1,4 @@
 plugins {
-    id("skymap.pure-kotlin")
+    id("skymap.pure-kmp")
 }
-// Test stack (JUnit5, Truth) comes from the skymap.pure-kotlin convention plugin.
+// Targets and the JVM test stack (JUnit5, Truth) come from the skymap.pure-kmp convention plugin.
