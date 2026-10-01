@@ -7,7 +7,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinNativeLink
 // (shared code whose Android side needs the Android SDK).
 plugins {
     id("org.jetbrains.kotlin.multiplatform")
-    id("org.jlleitschuh.gradle.ktlint")
+    id("skymap.ktlint")
 }
 
 kotlin {

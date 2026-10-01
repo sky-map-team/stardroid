@@ -155,7 +155,7 @@ class ShaderConformanceTest {
         val max = 2.0
         val limit = 1.0
         val actual =
-            evaluate("vec3(magnitudeAlpha(mix(${min}, ${max}, t), ${limit}))")
+            evaluate("vec3(magnitudeAlpha(mix($min, $max, t), $limit))")
         for (i in 0 until SAMPLES) {
             val expected = StellarRamps.magnitudeAlpha(inputAt(i, min, max), limit)
             assertThat(actual[i][0]).isWithin(TOLERANCE).of(expected)
@@ -169,7 +169,7 @@ class ShaderConformanceTest {
         val fraction = 0.72
         val y = 0.3
         val actual =
-            evaluate("vec3(litOffset(mix(-1.0, 1.0, t), ${y}, ${fraction}) * 0.25 + 0.5)")
+            evaluate("vec3(litOffset(mix(-1.0, 1.0, t), $y, $fraction) * 0.25 + 0.5)")
         for (i in 0 until SAMPLES) {
             val x = inputAt(i, -1.0, 1.0)
             val expected = PhaseGeometry.litOffset(x, y, fraction)

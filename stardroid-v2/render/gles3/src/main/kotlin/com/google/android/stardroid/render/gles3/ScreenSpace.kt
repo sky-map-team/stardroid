@@ -18,13 +18,11 @@ import kotlin.math.max
 import kotlin.math.min
 import kotlin.math.tan
 
-/**
- * Shared screen-space arithmetic for the drawers that project sky positions themselves — icons
- * and labels — rather than letting the vertex shader do it.
- *
- * Lifted out of both so the two cannot drift: they must agree about what is on screen, since a
- * label is positioned relative to the icon or point it names.
- */
+// Shared screen-space arithmetic for the drawers that project sky positions themselves — icons
+// and labels — rather than letting the vertex shader do it.
+//
+// Lifted out of both so the two cannot drift: they must agree about what is on screen, since a
+// label is positioned relative to the icon or point it names.
 
 /**
  * The minimum `pos · lineOfSight` for a sky position to be worth projecting.

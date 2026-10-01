@@ -16,10 +16,10 @@ import android.util.Log
 import androidx.test.core.app.ActivityScenario
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
-import com.google.android.stardroid.render.supportsGles3
-import com.google.android.stardroid.settings.RendererBackend
 import com.google.android.stardroid.render.gles1.GLSkyRenderer
 import com.google.android.stardroid.render.gles3.GLES3SkyRenderer
+import com.google.android.stardroid.render.supportsGles3
+import com.google.android.stardroid.settings.RendererBackend
 import com.google.common.truth.Truth.assertThat
 import com.google.common.truth.Truth.assertWithMessage
 import org.junit.Assume
@@ -324,7 +324,7 @@ class RendererPerfTest {
             // panel's refresh rate — on a 120Hz device both backends report exactly 120.0 — so
             // it measures the display rather than the renderer. Draw time is the submission
             // cost the port set out to reduce, and it stays meaningful under a frame-rate cap.
-            report("$label: draw ${drawTime}")
+            report("$label: draw $drawTime")
 
             // Smoke gate: the renderer must draw at least a handful of frames — not hang or
             // crash. A software renderer can be slower than the window without being stuck, so

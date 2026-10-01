@@ -42,7 +42,11 @@ class HorizonEdgeSharpnessTest {
      */
     private fun bandWidthPx(fovDeg: Double): Double {
         val perPixelDeg = fovDeg / widestShortSidePx
-        val halfWidthDeg = perPixelDeg.coerceIn(GroundRamp.EDGE_RAMP_MIN_DEG, GroundRamp.EDGE_RAMP_DEG)
+        val halfWidthDeg =
+            perPixelDeg.coerceIn(
+                GroundRamp.EDGE_RAMP_MIN_DEG,
+                GroundRamp.EDGE_RAMP_DEG,
+            )
         return 2.0 * halfWidthDeg / perPixelDeg
     }
 

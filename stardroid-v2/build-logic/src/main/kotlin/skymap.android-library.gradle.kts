@@ -4,7 +4,7 @@ import com.android.build.api.dsl.LibraryExtension
 // org.jetbrains.kotlin.android plugin application - see skymap.android-app for why.
 plugins {
     id("com.android.library")
-    id("org.jlleitschuh.gradle.ktlint")
+    id("skymap.ktlint")
 }
 
 extensions.configure<LibraryExtension> {

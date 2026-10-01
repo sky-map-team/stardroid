@@ -100,8 +100,7 @@ class SensorOrientationSource(
         }
 
     /** Whether [config] selects the fused rotation-vector path over the legacy one. */
-    private fun usesFusedPath(config: SensorConfig) =
-        rotationSensor != null && !config.disableGyro
+    private fun usesFusedPath(config: SensorConfig) = rotationSensor != null && !config.disableGyro
 
     private fun rotationVectorOrientations(
         manager: SensorManager,
@@ -389,5 +388,4 @@ class SensorOrientationSource(
                 speedFloor = OneEuroQuaternionSmoother.speedFloorFor(legacyPath),
             )
         }
-
 }

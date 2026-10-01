@@ -11,8 +11,8 @@ package com.google.android.stardroid.time
 
 import com.google.android.stardroid.R
 import com.google.common.truth.Truth.assertThat
-import org.junit.jupiter.api.Test
 import kotlinx.datetime.Instant
+import org.junit.jupiter.api.Test
 import kotlin.time.Duration.Companion.days
 
 class TimeTravelEventsTest {

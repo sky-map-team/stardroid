@@ -1,7 +1,7 @@
 [versions]
 agp = "9.0.1"
 kotlin = "2.2.10"
-ktlint-gradle = "12.1.2"
+ktlint-gradle = "14.2.0"
 junit5 = "5.11.0"
 junitPlatform = "1.11.0"
 truth = "1.4.4"

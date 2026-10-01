@@ -23,9 +23,9 @@ import android.net.Uri
 import android.opengl.GLSurfaceView
 import android.os.Build
 import android.os.Bundle
-import android.util.Log
 import android.os.SystemClock
 import android.provider.Settings
+import android.util.Log
 import android.view.Surface
 import android.view.WindowManager
 import androidx.activity.ComponentActivity
@@ -78,7 +78,6 @@ import com.google.android.stardroid.sensors.SensorKind
 import com.google.android.stardroid.sensors.SensorStatusSource
 import com.google.android.stardroid.settings.AutoDimness
 import com.google.android.stardroid.settings.RendererBackend
-import com.google.android.stardroid.settings.Settings as SkyMapSettings
 import com.google.android.stardroid.startup.Experiment
 import com.google.android.stardroid.startup.ExperimentConfig
 import com.google.android.stardroid.startup.StartupRouter
@@ -107,15 +106,16 @@ import com.google.android.stardroid.widget.MoonWidget
 import com.google.android.stardroid.widget.MoonWidgetReceiver
 import com.google.android.stardroid.widget.WidgetScheduler
 import dagger.hilt.android.AndroidEntryPoint
-import java.util.Calendar
-import javax.inject.Inject
-import kotlin.time.Duration
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.withContext
+import java.util.Calendar
+import javax.inject.Inject
+import kotlin.time.Duration
+import com.google.android.stardroid.settings.Settings as SkyMapSettings
 
 /**
  * The single-activity Compose shell (layers-and-app.md): builds the GL surface, wires the

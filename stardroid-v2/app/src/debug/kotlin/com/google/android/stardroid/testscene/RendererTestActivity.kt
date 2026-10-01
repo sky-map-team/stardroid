@@ -58,15 +58,6 @@ import com.google.android.stardroid.sensors.GeomagneticDeclinationSource
 import com.google.android.stardroid.sensors.OrientationSource
 import com.google.android.stardroid.sensors.SensorOrientationSource
 import com.google.android.stardroid.settings.RendererBackend
-import java.util.Locale
-import java.util.concurrent.atomic.AtomicLong
-import javax.microedition.khronos.egl.EGLConfig
-import javax.microedition.khronos.opengles.GL10
-import kotlin.math.PI
-import kotlin.math.asin
-import kotlin.math.atan2
-import kotlin.math.cos
-import kotlin.math.sin
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -82,6 +73,15 @@ import kotlinx.coroutines.job
 import kotlinx.coroutines.launch
 import kotlinx.datetime.Clock
 import kotlinx.datetime.Instant
+import java.util.Locale
+import java.util.concurrent.atomic.AtomicLong
+import javax.microedition.khronos.egl.EGLConfig
+import javax.microedition.khronos.opengles.GL10
+import kotlin.math.PI
+import kotlin.math.asin
+import kotlin.math.atan2
+import kotlin.math.cos
+import kotlin.math.sin
 
 /**
  * Development-only activity: drives [GLSkyRenderer] with the real bundled catalog (slice 4d) —
@@ -172,6 +172,7 @@ class RendererTestActivity : Activity() {
     private lateinit var connector: RenderConnector
     private lateinit var fpsTv: TextView
     private val scope = CoroutineScope(SupervisorJob() + Dispatchers.Main)
+
     // Written on the main thread, read by the scope-completion handler in onDestroy.
     @Volatile private var database: SkyMapDatabase? = null
 

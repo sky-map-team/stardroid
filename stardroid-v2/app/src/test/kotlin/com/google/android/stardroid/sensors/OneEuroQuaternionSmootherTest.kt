@@ -39,7 +39,9 @@ class OneEuroQuaternionSmootherTest {
         smoother.update(IDENTITY, t(0))
         // A half-degree wobble alternating either side of centre, as a shaky hand produces.
         var last = IDENTITY
-        repeat(20) { last = smoother.update(rotationAboutZ(if (it % 2 == 0) 0.5 else -0.5), t(it + 1)) }
+        repeat(
+            20,
+        ) { last = smoother.update(rotationAboutZ(if (it % 2 == 0) 0.5 else -0.5), t(it + 1)) }
         assertThat(angleBetweenDegrees(last, IDENTITY)).isLessThan(0.2)
     }
 
@@ -55,7 +57,11 @@ class OneEuroQuaternionSmootherTest {
         fun worstDeviation(easeOff: OneEuroEaseOff): Double {
             val smoother =
                 OneEuroQuaternionSmoother(
-                    minCutoff = OneEuroQuaternionSmoother.minCutoffFor(OneEuroSteadiness.MEDIUM, legacyPath = false),
+                    minCutoff =
+                        OneEuroQuaternionSmoother.minCutoffFor(
+                            OneEuroSteadiness.MEDIUM,
+                            legacyPath = false,
+                        ),
                     beta = OneEuroQuaternionSmoother.betaFor(easeOff, legacyPath = false),
                 )
             smoother.update(IDENTITY, t(0))
@@ -92,7 +98,11 @@ class OneEuroQuaternionSmootherTest {
         fun lagAfterSweep(beta: OneEuroEaseOff): Double {
             val smoother =
                 OneEuroQuaternionSmoother(
-                    minCutoff = OneEuroQuaternionSmoother.minCutoffFor(OneEuroSteadiness.MEDIUM, legacyPath = false),
+                    minCutoff =
+                        OneEuroQuaternionSmoother.minCutoffFor(
+                            OneEuroSteadiness.MEDIUM,
+                            legacyPath = false,
+                        ),
                     beta = OneEuroQuaternionSmoother.betaFor(beta, legacyPath = false),
                 )
             smoother.update(IDENTITY, t(0))
@@ -218,11 +228,22 @@ class OneEuroQuaternionSmootherTest {
 
     @Test
     fun `ladders are ordered and beta starts at zero`() {
-        assertThat(OneEuroQuaternionSmoother.betaFor(OneEuroEaseOff.NONE, legacyPath = false)).isEqualTo(0f)
-        val betas = OneEuroEaseOff.entries.map { OneEuroQuaternionSmoother.betaFor(it, legacyPath = false) }
+        assertThat(
+            OneEuroQuaternionSmoother.betaFor(OneEuroEaseOff.NONE, legacyPath = false),
+        ).isEqualTo(0f)
+        val betas =
+            OneEuroEaseOff.entries.map {
+                OneEuroQuaternionSmoother.betaFor(
+                    it,
+                    legacyPath = false,
+                )
+            }
         betas.zipWithNext { lower, higher -> assertThat(lower).isLessThan(higher) }
         // Steadier means a lower cutoff, so this ladder descends as the rungs climb.
-        val cutoffs = OneEuroSteadiness.entries.map { OneEuroQuaternionSmoother.minCutoffFor(it, legacyPath = false) }
+        val cutoffs =
+            OneEuroSteadiness.entries.map {
+                OneEuroQuaternionSmoother.minCutoffFor(it, legacyPath = false)
+            }
         cutoffs.zipWithNext { looser, steadier -> assertThat(looser).isGreaterThan(steadier) }
     }
 
@@ -231,8 +252,16 @@ class OneEuroQuaternionSmootherTest {
 
         fun smoother() =
             OneEuroQuaternionSmoother(
-                minCutoff = OneEuroQuaternionSmoother.minCutoffFor(OneEuroSteadiness.MEDIUM, legacyPath = false),
-                beta = OneEuroQuaternionSmoother.betaFor(OneEuroEaseOff.MEDIUM, legacyPath = false),
+                minCutoff =
+                    OneEuroQuaternionSmoother.minCutoffFor(
+                        OneEuroSteadiness.MEDIUM,
+                        legacyPath = false,
+                    ),
+                beta =
+                    OneEuroQuaternionSmoother.betaFor(
+                        OneEuroEaseOff.MEDIUM,
+                        legacyPath = false,
+                    ),
             )
 
         /** Timestamp for sample [index] at the 50 Hz the sensors are registered at, in nanos. */

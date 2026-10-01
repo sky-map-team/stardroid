@@ -15,7 +15,7 @@ plugins {
     id("org.jetbrains.kotlin.plugin.compose")
     id("com.google.devtools.ksp")
     id("dagger.hilt.android.plugin")
-    id("org.jlleitschuh.gradle.ktlint")
+    id("skymap.ktlint")
 }
 
 val libs = extensions.getByType<VersionCatalogsExtension>().named("libs")

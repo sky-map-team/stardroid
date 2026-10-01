@@ -30,7 +30,8 @@ data class TimeTravelEvent(
     val searchTarget: CelestialObjectId? = null,
 ) {
     /** A fixed event already in the past is shown greyed (but stays selectable), as in v1. */
-    fun isPastAt(now: Instant): Boolean = type == TimeTravelEventType.FIXED && timestamp != null && timestamp < now
+    fun isPastAt(now: Instant): Boolean =
+        type == TimeTravelEventType.FIXED && timestamp != null && timestamp < now
 }
 
 /**

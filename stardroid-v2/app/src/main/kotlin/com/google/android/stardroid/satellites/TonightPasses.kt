@@ -14,12 +14,9 @@ import com.google.android.stardroid.astronomy.PassSearch
 import com.google.android.stardroid.astronomy.SatelliteEphemeris
 import com.google.android.stardroid.astronomy.SatellitePass
 import com.google.android.stardroid.astronomy.Sgp4
-import com.google.android.stardroid.astronomy.Tle
-import com.google.android.stardroid.catalog.ObjectInfo
 import com.google.android.stardroid.data.satellites.ElementFreshness
 import com.google.android.stardroid.layers.SatelliteLayer
 import com.google.android.stardroid.math.LatLong
-import com.google.android.stardroid.math.RaDec
 import com.google.android.stardroid.startup.Experiment
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.first

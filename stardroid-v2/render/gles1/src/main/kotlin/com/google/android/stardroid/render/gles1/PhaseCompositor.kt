@@ -12,9 +12,9 @@ package com.google.android.stardroid.render.gles1
 import android.graphics.Bitmap
 import com.google.android.stardroid.math.DEGREES_TO_RADIANS
 import com.google.android.stardroid.render.api.EclipseGeometry
+import com.google.android.stardroid.render.api.MoonShading
 import com.google.android.stardroid.render.api.PhaseGeometry
 import com.google.android.stardroid.render.api.Terminator
-import com.google.android.stardroid.render.api.MoonShading
 import kotlin.math.cos
 import kotlin.math.hypot
 import kotlin.math.sin
