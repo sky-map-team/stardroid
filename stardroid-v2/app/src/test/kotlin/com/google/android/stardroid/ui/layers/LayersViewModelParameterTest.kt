@@ -41,12 +41,13 @@ class LayersViewModelParameterTest {
         Dispatchers.resetMain()
     }
 
-    private fun viewModel() = LayersViewModel(
+    private fun viewModel() =
+        LayersViewModel(
             settings,
             analytics,
             satellitesEnabled = false,
             notificationsEnabled = true,
-    )
+        )
 
     @Test
     fun `notification opt-ins are not offered while the notifications experiment is off`() =

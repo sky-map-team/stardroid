@@ -43,11 +43,12 @@ class LayersViewModelTest {
     @Test
     fun `layers default to enabled in registry order, except those the registry defaults off`() =
         runTest(dispatcher.scheduler) {
-            val vm = LayersViewModel(
+            val vm =
+                LayersViewModel(
                     settings,
                     satellitesEnabled = false,
                     notificationsEnabled = true,
-            )
+                )
             runCurrent()
             assertThat(vm.toggles.value.map { it.id })
                 .containsExactlyElementsIn(LayerRegistry.toggleableIds(satellitesEnabled = false))
@@ -60,11 +61,12 @@ class LayersViewModelTest {
     @Test
     fun `setEnabled writes through settings and updates the toggle state`() =
         runTest(dispatcher.scheduler) {
-            val vm = LayersViewModel(
+            val vm =
+                LayersViewModel(
                     settings,
                     satellitesEnabled = false,
                     notificationsEnabled = true,
-            )
+                )
             runCurrent()
             vm.setEnabled(CatalogLayers.STARS_LAYER_ID, false)
             runCurrent()
@@ -81,11 +83,12 @@ class LayersViewModelTest {
     @Test
     fun `sky gradient toggle defaults on and writes through settings`() =
         runTest(dispatcher.scheduler) {
-            val vm = LayersViewModel(
+            val vm =
+                LayersViewModel(
                     settings,
                     satellitesEnabled = false,
                     notificationsEnabled = true,
-            )
+                )
             runCurrent()
             assertThat(vm.skyGradientEnabled.value).isTrue()
             vm.setSkyGradientEnabled(false)
@@ -96,11 +99,12 @@ class LayersViewModelTest {
     @Test
     fun `hud toggle defaults on and writes through settings`() =
         runTest(dispatcher.scheduler) {
-            val vm = LayersViewModel(
+            val vm =
+                LayersViewModel(
                     settings,
                     satellitesEnabled = false,
                     notificationsEnabled = true,
-            )
+                )
             runCurrent()
             assertThat(vm.hudEnabled.value).isTrue()
             vm.setHudEnabled(false)
@@ -118,19 +122,21 @@ class LayersViewModelTest {
             // while every test passed.
             val settings = FakeSettings()
 
-            val off = LayersViewModel(
+            val off =
+                LayersViewModel(
                     settings,
                     satellitesEnabled = false,
                     notificationsEnabled = true,
-            )
+                )
             assertThat(off.toggles.value.map { it.id })
                 .doesNotContain(SatelliteLayer.LAYER_ID)
 
-            val on = LayersViewModel(
+            val on =
+                LayersViewModel(
                     settings,
                     satellitesEnabled = true,
                     notificationsEnabled = true,
-            )
+                )
             assertThat(on.toggles.value.map { it.id }).contains(SatelliteLayer.LAYER_ID)
         }
 }
