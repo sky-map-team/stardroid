@@ -178,6 +178,8 @@ class MainActivity : ComponentActivity() {
                     settings,
                     analytics,
                     satellitesEnabled = experimentConfig.isEnabled(Experiment.SATELLITES),
+                    notificationsEnabled =
+                        experimentConfig.isEnabled(Experiment.NOTIFICATIONS),
                     satelliteStatus =
                         satelliteUiStatusFlow(
                             satelliteEntryPoint(this@MainActivity)
