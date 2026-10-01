@@ -185,16 +185,17 @@ class LayersViewModel(
         viewModelScope.launch { settings.setShowHud(enabled) }
     }
 
-    /**
-     * The parameters every layer declares, with their current selections — one entry per
-     * (layer, parameter). Empty for every layer but the solar system so far.
-     */
+    // Registry parameters minus notification opt-ins while the experiment is off.
     private val offeredParameters =
         LayerRegistry.PARAMETERS.filter { (_, parameter) ->
             notificationsEnabled ||
                 !(parameter is LayerParameter.Toggle && parameter.requiresNotificationPermission)
         }
 
+    /**
+     * The parameters every layer declares, with their current selections — one entry per
+     * (layer, parameter). Empty for every layer but the solar system so far.
+     */
     val parameters: StateFlow<List<LayerParameterState>> =
         if (offeredParameters.isEmpty()) {
             MutableStateFlow(emptyList<LayerParameterState>()).asStateFlow()
