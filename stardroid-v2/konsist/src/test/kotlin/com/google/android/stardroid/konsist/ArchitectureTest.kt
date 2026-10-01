@@ -32,8 +32,8 @@ class ArchitectureTest {
         // Leading `(?:.*/)?` (not `.*/`) so the gate matches whether Konsist yields absolute or
         // repo-relative paths.
         Regex(
-            """(?:.*/)?(core/(math|astronomy|catalog|events|testing)|render/api|data/generator)""" +
-                """/src/.*\.kt$""",
+            """(?:.*/)?(core/(math|astronomy|catalog|events|testing)|render/api|data/generator|""" +
+                """shared/(settings|testing))/src/.*\.kt$""",
         )
 
     private fun pureModuleFiles() =
@@ -80,6 +80,8 @@ class ArchitectureTest {
                 "com.google.android.stardroid.catalog.",
                 "com.google.android.stardroid.events.",
                 "com.google.android.stardroid.render.api.",
+                // :shared:settings, the settings contract shared with iOS.
+                "com.google.android.stardroid.settings.",
                 // :core:testing's assertions, for the pure modules' test sources.
                 "com.google.android.stardroid.testing.",
             )
@@ -93,11 +95,11 @@ class ArchitectureTest {
 
     // Every source set of the multiplatform modules except the JVM-only ones: jvmMain and jvmTest
     // in the pure modules, and the Android ones (androidMain, androidHostTest, androidDeviceTest)
-    // in :data.
+    // in :data and the :shared modules with an Android target.
     private val sharedModuleCommonSource =
         Regex(
-            """(?:.*/)?((core/[a-z]+|render/api)/src/(?!jvm)|data/src/(?!android))""" +
-                """[A-Za-z]+/.*\.kt$""",
+            """(?:.*/)?((core/[a-z]+|render/api)/src/(?!jvm)|data/src/(?!android)|""" +
+                """shared/[a-z]+/src/(?!jvm|android))[A-Za-z]+/.*\.kt$""",
         )
 
     private fun sharedModuleCommonFiles() =

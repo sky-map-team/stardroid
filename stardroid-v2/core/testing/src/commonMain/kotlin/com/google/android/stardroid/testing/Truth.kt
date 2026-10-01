@@ -119,6 +119,16 @@ open class ComparableSubject<T : Comparable<T>> internal constructor(
         if (nonNull() < other) failExpected("expected to be at least", other)
     }
 
+    /** Truth's `isIn(Range)`, over Kotlin's closed range: `0.0..1.0`. */
+    fun isIn(range: ClosedRange<T>) {
+        if (nonNull() !in range) failExpected("expected to be in range", range)
+    }
+
+    /** Truth's `isIn(Range.closedOpen(…))`, over Kotlin's open-ended range: `0.0..<360.0`. */
+    fun isIn(range: OpenEndRange<T>) {
+        if (nonNull() !in range) failExpected("expected to be in range", range)
+    }
+
     protected fun nonNull(): T = actual ?: failWith("expected a non-null value")
 }
 
@@ -189,6 +199,14 @@ class StringSubject internal constructor(
     fun contains(sequence: CharSequence) {
         if (!nonNull().contains(sequence)) failExpected("expected to contain", sequence)
     }
+
+    fun startsWith(prefix: String) {
+        if (!nonNull().startsWith(prefix)) failExpected("expected to start with", prefix)
+    }
+
+    fun endsWith(suffix: String) {
+        if (!nonNull().endsWith(suffix)) failExpected("expected to end with", suffix)
+    }
 }
 
 class IterableSubject internal constructor(
@@ -216,6 +234,21 @@ class IterableSubject internal constructor(
     fun doesNotContain(element: Any?) {
         if (nonNull().any { valuesEqual(it, element) }) {
             failExpected("expected not to contain", element)
+        }
+    }
+
+    /** Every one of [expected], in any order, among possibly others (multiplicities count). */
+    fun containsAtLeast(vararg expected: Any?) = containsAtLeastElementsIn(expected.asList())
+
+    fun containsAtLeastElementsIn(expected: Iterable<*>) {
+        val unmatched = nonNull().toMutableList()
+        val missing = expected.filter { e -> !unmatched.removeFirstMatch(e) }
+        if (missing.isNotEmpty()) {
+            failWith(
+                "expected to contain at least: ${show(
+                    expected.toList(),
+                )}\nmissing: ${show(missing)}",
+            )
         }
     }
 

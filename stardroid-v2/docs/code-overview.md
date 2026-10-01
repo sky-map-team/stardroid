@@ -59,9 +59,11 @@ no longer applies.
 
 ## 2. Module graph and build structure
 
-Twelve Gradle modules (`settings.gradle.kts`), split hard into **pure Kotlin** (no Android SDK
+Fifteen Gradle modules (`settings.gradle.kts`), split hard into **pure Kotlin** (no Android SDK
 on the classpath — `import android.*` is a compile error) and **Android**. The pure modules
-other than the JVM tools are Kotlin Multiplatform (JVM + iOS), shared with the iOS port:
+other than the JVM tools are Kotlin Multiplatform (JVM + iOS), shared with the iOS port, as are
+`:data` and the `:shared:*` modules — the app's middle layer, moving out of `:app` in iOS port
+phase 3:
 
 | Module | Type | Main / test LOC | Purpose |
 |---|---|---|---|
@@ -75,10 +77,14 @@ other than the JVM tools are Kotlin Multiplatform (JVM + iOS), shared with the i
 | `:render:gles1` | Android lib | 2,292 / 1,021 | OpenGL ES 1.0 backend implementing `:render:api` |
 | `:render:gles3` | Android lib | 2,837 / 458 | OpenGL ES 3.0 backend implementing `:render:api` (render-gles3.md) |
 | `:data` | KMP (Android + iOS) | 1,943 / 1,936 | Room catalog store implementing `:core:catalog`, and the satellite elements fetcher; both shared with iOS (the iOS HTTP client is still to come) |
-| `:app` | Android app | 19,572 / 6,583 | Compose UI, ViewModels, Hilt, sensors, location, widgets, notifications |
+| `:shared:settings` | pure | 349 / — | The `Settings` contract (interface + value types) every screen, layer and controller uses |
+| `:shared:layers` | KMP (Android + iOS) | 2,521 / 2,291 | The sky layers and `LayerRegistry`: catalog, ephemeris, clock and settings → `LayerScene`s (layers-and-app.md) |
+| `:shared:testing` | pure (test support) | 368 / — | Fakes of the shared interfaces (`FakeSettings`, `FakeCatalogRepository`) for `:shared` and `:app` tests |
+| `:app` | Android app | 24,041 / 8,169 | Compose UI, ViewModels, Hilt, sensors, location, widgets, notifications |
 | `:konsist` | test-only | — | Architecture gate (D20) |
 
-Dependency arrows point inward only: `:app → {:render:*, :data, :core:*}`,
+Dependency arrows point inward only: `:app → {:render:*, :data, :shared:*, :core:*}`,
+`:shared:layers → {:shared:settings, :data, :render:api, :core:*}`,
 `:render:gles1 → :render:api → :core:math`, `:data → :core:*`. Pure modules use constructor
 injection only (no Hilt/Koin) so a KMP conversion is a build-file change — this was a stated
 design goal (high-level-architecture.md) and it held: the conversion (iOS port phase 0) needed

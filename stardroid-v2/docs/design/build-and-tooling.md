@@ -7,11 +7,16 @@ architecture (D20) and performance (D19).
 
 ## Module graph
 
-Twelve Gradle modules, following the dependency rule (arrows inward only; see
+Fifteen Gradle modules, following the dependency rule (arrows inward only; see
 [high-level-architecture.md](high-level-architecture.md)):
 
 ```
-:app            android-app    → :render:api, :render:gles1, :render:gles3, :data, :core:*
+:app            android-app    → :render:api, :render:gles1, :render:gles3, :data, :shared:*,
+                                 :core:*
+:shared:layers  kmp-android-library → :shared:settings, :data, :render:api, :core:*
+:shared:settings pure-kmp      → :render:api, :core:astronomy, :core:math
+:shared:testing pure-kmp       → :shared:settings, :core:catalog (test support: fakes of the
+                                 shared interfaces, for :shared and :app tests)
 :render:gles1   android-library→ :render:api
 :render:gles3   android-library→ :render:api
 :render:api     pure-kmp       → :core:math
@@ -40,8 +45,8 @@ without Xcode), which no module applies directly.
 
 | Plugin | Applies | Used by |
 |---|---|---|
-| `skymap.pure-kmp` | `kotlin("multiplatform")` — JVM + iOS targets, kotlin.test + `:core:testing`, **no Android plugin** | `:core:*`, `:render:api` |
-| `skymap.kmp-android-library` | `kotlin("multiplatform")` — AGP's multiplatform Android target (`com.android.kotlin.multiplatform.library`) + iOS targets | `:data` |
+| `skymap.pure-kmp` | `kotlin("multiplatform")` — JVM + iOS targets, kotlin.test + `:core:testing`, **no Android plugin** | `:core:*`, `:render:api`, `:shared:settings`, `:shared:testing` |
+| `skymap.kmp-android-library` | `kotlin("multiplatform")` — AGP's multiplatform Android target (`com.android.kotlin.multiplatform.library`) + iOS targets | `:data`, `:shared:layers` |
 | `skymap.pure-kotlin` | `kotlin("jvm")`, JUnit5/Truth, **no Android plugin** | `:data:generator`, `:konsist` |
 | `skymap.android-library` | `com.android.library` + Kotlin, common Android config | `:render:gles1`, `:render:gles3` |
 | `skymap.android-app` | `com.android.application` + Kotlin + Compose + Hilt + flavors | `:app` |

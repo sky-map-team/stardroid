@@ -115,6 +115,8 @@ dependencies {
     implementation(project(":render:gles1"))
     implementation(project(":render:gles3"))
     implementation(project(":data"))
+    implementation(project(":shared:settings"))
+    implementation(project(":shared:layers"))
     implementation(libs.kotlinx.coroutines.android)
     implementation(libs.androidx.core.ktx)
 
@@ -150,6 +152,7 @@ dependencies {
     testImplementation(libs.junit.jupiter)
     testImplementation(libs.truth)
     testImplementation(libs.kotlinx.coroutines.test)
+    testImplementation(project(":shared:testing"))
     testRuntimeOnly(libs.junit.platform.launcher)
 
     androidTestImplementation(libs.androidx.test.runner)
