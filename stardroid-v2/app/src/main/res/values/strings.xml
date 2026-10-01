@@ -96,6 +96,29 @@
     <string name="layer_altaz_grid" translation_description="Toggle label for the layer showing the altitude/azimuth (horizontal) coordinate grid, for naked-eye or manual alt-az mount observers.">Alt/Az grid</string>
     <string name="layer_sky_gradient" translation_description="Toggle label for the daytime sky-brightness gradient and the ground coloring.">Sky coloring</string>
 
+    <!-- Long-press help for layers in the layer-visibility sheet. -->
+    <string name="layer_help_stars" translation_description="Long-press explanation of the stars layer.">The stars, sized by brightness and tinted by color. Tap any star for details.</string>
+    <string name="layer_help_constellations" translation_description="Long-press explanation of the constellations layer.">The lines and names of the constellations, to help you find your way around the star patterns.</string>
+    <string name="layer_help_deep_sky" translation_description="Long-press explanation of the deep-sky layer.">Galaxies, nebulae and star clusters: objects far beyond our solar system. Many need binoculars or a telescope to see for real.</string>
+    <string name="layer_help_solar_system" translation_description="Long-press explanation of the solar system layer.">The Sun, the Moon (with its current phase) and the planets.</string>
+    <string name="layer_help_meteor_showers" translation_description="Long-press explanation of the meteor showers layer.">The radiant of each annual meteor shower: the point in the sky the meteors appear to stream from.</string>
+    <string name="layer_help_satellites" translation_description="Long-press explanation of the satellites layer.">Satellites such as the Space Station and Tiangong, shown where they are right now. Needs recently downloaded orbit data.</string>
+    <string name="layer_help_grid" translation_description="Long-press explanation of the celestial grid layer.">The celestial coordinate grid of right ascension and declination: the sky\'s equivalent of latitude and longitude. It is fixed to the stars.</string>
+    <string name="layer_help_horizon" translation_description="Long-press explanation of the horizon layer.">The horizon line and compass points, so you can tell which way is north and where the ground is.</string>
+    <string name="layer_help_ecliptic" translation_description="Long-press explanation of the ecliptic layer.">The path the Sun follows across the sky over a year. The Moon and planets always stay close to it.</string>
+    <string name="layer_help_altaz_grid" translation_description="Long-press explanation of the alt/az grid layer.">A grid of altitude (height above the horizon) and azimuth (compass direction). Unlike the celestial grid, it is fixed to your horizon, not the stars.</string>
+    <string name="layer_help_sky_gradient" translation_description="Long-press explanation of the sky coloring toggle.">Shades the sky to match the time of day, bright by day and dark at night, and colors the ground.</string>
+    <string name="layer_help_hud" translation_description="Long-press explanation of the pointing readout toggle.">A readout of where your phone is pointing: its compass direction and altitude.</string>
+    <string name="layer_help_camera" translation_description="Long-press explanation of the through-camera toggle.">Shows the live camera behind the sky map so the drawn sky overlays the real one. Needs motion sensors.</string>
+    <string name="layer_help_options_solar_system" translation_description="Long-press note listing what can be customized on the solar system layer.">Disc size: how big the Sun, Moon and planets are drawn.\nEclipse alerts: a notification before a lunar eclipse.</string>
+    <string name="layer_help_options_satellites" translation_description="Long-press note listing what can be customized on the satellites layer.">Pass alerts: a notification before the best visible pass each night.</string>
+    <string name="layer_help_options_altaz_grid" translation_description="Long-press note listing what can be customized on the alt/az grid layer.">Line count: 8, 12 or 24 direction lines.</string>
+    <string name="layer_help_customizable" translation_description="Heading in the layer help popup above the list of customizable options.">What you can customize</string>
+    <string name="layer_help_expand_hint" translation_description="Hint in the layer help popup for layers with options, pointing to the arrow button on the row.">Tap the arrow on the row to change these.</string>
+    <string name="layer_help_customize" translation_description="Button in the layer help popup that opens the Layers sheet on that layer's options.">Customize</string>
+    <string name="layer_help_close" translation_description="Button that dismisses the layer help popup.">Got it</string>
+    <string name="layer_help_long_click_label" translation_description="Accessibility label for the long-press action on a layer row, which shows an explanation of the layer.">Show what this does</string>
+
     <!-- Map screen controls. -->
     <string name="layers_sheet_title" translation_description="Title of the bottom sheet listing sky map layers the user can show or hide.">Layers</string>
     <string name="layers_group_objects" translation_description="Layers-sheet group header for layers that draw sky objects (stars, planets, deep-sky objects).">Objects</string>
