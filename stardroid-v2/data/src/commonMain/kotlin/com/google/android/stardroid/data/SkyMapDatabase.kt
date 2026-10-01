@@ -15,6 +15,12 @@ import androidx.room.RoomDatabase
 import androidx.room.RoomDatabaseConstructor
 
 /**
+ * The catalog's Room schema version. iOS checks an on-device copy against it, since Room's
+ * prepackaged-database support (which does that check on Android) is Android-only.
+ */
+internal const val CATALOG_SCHEMA_VERSION = 2
+
+/**
  * The catalog store (catalog-and-schema.md). Read-mostly and replaceable: user state never
  * lives here, so the bundled pack can be swapped wholesale on app update (D24/G11 recovery is
  * "delete and re-copy from the bundled asset"). Schema JSON is exported to `data/schemas/` —
@@ -38,7 +44,7 @@ import androidx.room.RoomDatabaseConstructor
         FigureEntity::class,
         FigureVertexEntity::class,
     ],
-    version = 2,
+    version = CATALOG_SCHEMA_VERSION,
     exportSchema = true,
 )
 @ConstructedBy(SkyMapDatabaseConstructor::class)

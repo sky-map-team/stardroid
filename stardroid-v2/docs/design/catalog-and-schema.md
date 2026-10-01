@@ -306,10 +306,15 @@ behaves identically because the folding is all in `NameNormalizer` and the token
   extension loading, which iOS's SQLite is built without, and the open fails with
   `SQLITE_MISUSE`. 2.7 fixes this but drops `iosX64`, the simulator an Intel Mac runs. Switch
   when that target goes.
-- **Android-only for now** (`androidMain`): `SkyMapDatabaseFactory` (`createFromAsset` + the
-  D24 recovery) and the satellite fetcher (`HttpURLConnection`, `java.io.File`). iOS still
-  needs a factory that copies the bundled file out of the app bundle and recovers the same
-  way. The satellite fetcher's HTTP and file access move behind small interfaces, with no
+- **Opening the bundled copy.** Each platform has its own `SkyMapDatabaseFactory`. On Android,
+  `createFromAsset` copies the asset. On iOS (`iosMain`) the factory copies the bundle's file
+  itself, by Room's rule: when there is no copy, or the copy's `user_version` is not
+  `CATALOG_SCHEMA_VERSION`. It writes beside the target and moves into place, so an
+  interrupted copy is never opened. Both run the same D24/G11 recovery: probe; on failure
+  close, delete and re-copy once. Neither refreshes a copy whose *content* is stale after an
+  app update — that is the core-pack refresh in data-packs.md.
+- **Android-only for now** (`androidMain`): the satellite fetcher (`HttpURLConnection`,
+  `java.io.File`). Its HTTP and file access move behind small interfaces, with no
   multiplatform HTTP library on Android (D127).
 - **Tests.** Every catalog test is in `commonTest` and runs twice: as an Android instrumented
   test (`connectedAndroidDeviceTest`) and on the iOS simulator. So both platforms' SQLite must

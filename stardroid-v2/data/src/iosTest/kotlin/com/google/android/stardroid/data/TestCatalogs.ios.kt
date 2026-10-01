@@ -18,33 +18,30 @@ import kotlinx.coroutines.IO
 import platform.Foundation.NSFileManager
 import platform.Foundation.NSTemporaryDirectory
 
-private val copyDirectory = NSTemporaryDirectory() + "skymap-catalog-test"
+/** Where the iOS tests keep their on-device copies of the catalog. */
+internal val testCatalogDirectory = NSTemporaryDirectory() + "skymap-catalog-test"
+
+internal val testCatalogPath = "$testCatalogDirectory/${SkyMapDatabaseFactory.DATABASE_NAME}"
 
 /**
- * Copies the generated catalog (its path comes from the Gradle test task) and opens the copy,
- * as the iOS app will open the copy it makes from its bundle. The build
- * output itself is never opened: SQLite would write its journal files beside it.
+ * The generated catalog, standing in for the app bundle's copy. Its path comes from the Gradle
+ * test task; the tests never open it in place, since SQLite would write its journal beside it.
  */
-@OptIn(ExperimentalForeignApi::class)
-internal actual fun openBundledCatalog(): SkyMapDatabase {
-    deleteBundledCatalog()
-    val bundled =
+internal val bundledCatalogPath: String
+    get() =
         checkNotNull(environmentVariable("SKYMAP_CATALOG_DB")) {
             "SKYMAP_CATALOG_DB is unset — run this through the Gradle test task."
         }
-    val files = NSFileManager.defaultManager
-    check(files.createDirectoryAtPath(copyDirectory, true, null, null))
-    val copy = "$copyDirectory/skymap.db"
-    check(files.copyItemAtPath(bundled, copy, null)) { "Could not copy $bundled" }
-    return Room.databaseBuilder<SkyMapDatabase>(name = copy)
-        .setDriver(BundledSQLiteDriver())
-        .setQueryCoroutineContext(Dispatchers.IO)
-        .build()
+
+/** Through the app's own factory, so the copy is made as it is in production. */
+internal actual fun openBundledCatalog(): SkyMapDatabase {
+    deleteBundledCatalog()
+    return SkyMapDatabaseFactory.create(bundledCatalogPath, testCatalogPath)
 }
 
 @OptIn(ExperimentalForeignApi::class)
 internal actual fun deleteBundledCatalog() {
-    NSFileManager.defaultManager.removeItemAtPath(copyDirectory, null)
+    NSFileManager.defaultManager.removeItemAtPath(testCatalogDirectory, null)
 }
 
 internal actual fun inMemoryCatalog(): SkyMapDatabase =
