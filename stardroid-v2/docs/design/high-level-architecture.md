@@ -24,7 +24,7 @@ one `expect`/`actual` — see
 :render:gles1         Android. OpenGL ES 1.0 backend implementing :render:api
                       (port of the v1 renderer). Future :render:gles3 / :render:vulkan
                       slot in beside it.
-:data                 Android (KMP-able via Room KMP). Room DB, prepackaged catalog,
+:data                 KMP: Android + iOS (Room KMP). Room DB, prepackaged catalog,
                       repositories implementing :core:catalog interfaces.
 :core:catalog         pure. Domain model of celestial objects, catalog/search
                       repository interfaces, layer content definitions.

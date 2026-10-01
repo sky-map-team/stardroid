@@ -26,7 +26,7 @@ delivery, and the clone-moat strategy below.
 | Localized text | A `translations` table keyed by (object, locale) with fallback chain | Parallel string tables per locale, hand-rolled |
 | Relational data (object ↔ names ↔ images ↔ info cards) | Native | Hand-rolled |
 | Prepackaged shipping | `createFromAsset()` is a first-class Room feature | Bundle files in assets |
-| KMP portability | Room is KMP-capable since 2.7; SQLDelight is an alternative if Room KMP disappoints | FlatBuffers has multi-language support but the surrounding logic is all custom |
+| KMP portability | Room is KMP-capable since 2.7 — and now used that way: `:data` is multiplatform and iOS opens the same catalog ([catalog-and-schema.md](catalog-and-schema.md#on-ios-ios-port-phase-1)). SQLDelight was the fallback, not needed | FlatBuffers has multi-language support but the surrounding logic is all custom |
 | Tooling/debuggability | Database Inspector, plain SQLite tools | Custom dump tools (v1's situation again) |
 
 **Recommendation: Room.** FlatBuffers optimizes a problem we don't have (zero-copy load of
@@ -120,7 +120,7 @@ text, images, and search live behind queries and are never resident wholesale.
 
 **Pure vs. Android array types (G3/G12):** the snapshot types exposed by the pure `:core:catalog`
 interfaces use only `DoubleArray`/`FloatArray` — KMP-safe, no `java.nio`. `FloatBuffer` (and any
-other `java.nio`) is confined to the Android `:data`/`:render` modules at the GL upload boundary.
+other `java.nio`) is confined to the Android `:render` backends at the GL upload boundary.
 For the faithful port the stars layer maps these arrays into `List<PointPrimitive>` (D22); the
 columnar `StellarPointBatch` render path is a deferred, additive optimization for the bulk
 catalog, at which point the repository's columnar arrays feed the batch array-to-array.

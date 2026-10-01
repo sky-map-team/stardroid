@@ -290,6 +290,33 @@ Notes:
   [data-layer.md](data-layer.md)). A texture/image decode failure skips that image and renders
   the rest of the scene.
 
+### On iOS (iOS port phase 1)
+
+`:data` is Kotlin Multiplatform. The entities, DAOs, `SkyMapDatabase` and
+`RoomCatalogRepository` are common code, and Room generates each target's implementation
+(`@ConstructedBy(SkyMapDatabaseConstructor::class)`, so iOS finds it without reflection). iOS
+opens the same generated `skymap.db` and validates the same schema identity hash. Search
+behaves identically because the folding is all in `NameNormalizer` and the tokenizer is
+`simple` (D127).
+
+- **Driver.** Android sets none, so Room keeps the platform SQLite (`sqlite-framework`) and the
+  APK is unchanged. iOS uses `BundledSQLiteDriver` from the iOS source set — never
+  `commonMain`, or Android would ship a native SQLite. D127 prefers iOS's system SQLite, but
+  androidx.sqlite 2.6's `NativeSQLiteDriver` cannot open a database on it. Each open enables
+  extension loading, which iOS's SQLite is built without, and the open fails with
+  `SQLITE_MISUSE`. 2.7 fixes this but drops `iosX64`, the simulator an Intel Mac runs. Switch
+  when that target goes.
+- **Android-only for now** (`androidMain`): `SkyMapDatabaseFactory` (`createFromAsset` + the
+  D24 recovery) and the satellite fetcher (`HttpURLConnection`, `java.io.File`). iOS still
+  needs a factory that copies the bundled file out of the app bundle and recovers the same
+  way. The satellite fetcher's HTTP and file access move behind small interfaces, with no
+  multiplatform HTTP library on Android (D127).
+- **Tests.** Suites in `commonTest` run as Android instrumented tests
+  (`connectedAndroidDeviceTest`) *and* on the iOS simulator, so both platforms' SQLite must give
+  the same answers. `BundledCatalogTest` is there now. The fixture-pack repository and
+  pack-replacement tests are still Android-only (`androidDeviceTest`). Host (JVM) tests are a
+  separate tree, since a JVM unit test has no SQLite.
+
 ## Build-time generation (replaces v1 `tools/`)
 
 A Gradle task (JVM, plain JDBC-SQLite) in the v2 repo:

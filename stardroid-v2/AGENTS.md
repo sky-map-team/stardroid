@@ -86,12 +86,18 @@ Do not add a third notice — per-directory notices are what let the old claim d
   `src/commonMain`, tests in `src/commonTest` using `kotlin.test` plus `:core:testing`'s
   Truth-shaped `assertThat` (Truth itself is JVM-only). JVM-only code needs an
   `expect`/`actual` with the JVM side in `src/jvmMain`.
+- `data/` — the Room catalog store, also **Multiplatform** (Android + iOS) but not pure: the
+  database, DAOs and repository are in `src/commonMain`, and Android-only code (building the DB
+  from the APK asset, the satellite fetcher) is in `src/androidMain`. Never add a SQLite driver
+  to `commonMain` — Android must keep the platform SQLite (D127). Catalog tests in
+  `src/commonTest` run as Android instrumented tests and on the iOS simulator.
 - `render/api` — pure renderer contract + shared projection; `render/gles1` — a GLES1
   backend written to match v1's rendering behaviour (an independent implementation, not a
   port; see `NOTICE.md`).
 - `app/` — the Android app shell (currently the dev test-scene activity and perf gate).
 - `konsist/` — architecture-gate tests enforcing the pure/Android module boundary (D20).
-- `build-logic/` — Gradle convention plugins (`skymap.pure-kotlin`, `skymap.android-*`).
+- `build-logic/` — Gradle convention plugins (`skymap.pure-kmp`, `skymap.pure-kotlin`,
+  `skymap.kmp-android-library`, `skymap.kmp-room`, `skymap.android-*`).
 
 ## Translations
 
@@ -129,6 +135,7 @@ pipeline; that note was written before this was wired up.
 Konsist architecture gate — it must pass before any commit. The shared modules' tests run on
 the JVM and, on a Mac with Xcode installed, on the iOS simulator too; without Xcode the iOS
 test tasks are skipped with a warning. Instrumented tests
-(`./gradlew connectedDebugAndroidTest`, including the D19 renderer perf smoke gate) need an
-emulator or device; CI runs both suites on every PR (`.github/workflows/android.yml`). Pure
+(`./gradlew connectedDebugAndroidTest connectedAndroidDeviceTest`, including the D19 renderer
+perf smoke gate; the second name is `:data`'s, as a multiplatform module) need an emulator or
+device; CI runs both suites on every PR (`.github/workflows/android.yml`). Pure
 modules must stay testable without Android.
