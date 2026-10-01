@@ -58,6 +58,7 @@ class GridLayer(
     ): LayerScene {
         val numRaLines = RA_LINE_COUNTS[density] ?: RA_LINE_COUNTS.getValue(DEFAULT_DENSITY)
         val numDecLines = DEC_LINE_COUNTS[density] ?: DEC_LINE_COUNTS.getValue(DEFAULT_DENSITY)
+        // Exact only while every meridian count divides 24, so each label lands on a meridian.
         val hourLabelStride = 24 / numRaLines.coerceAtMost(HOUR_LABEL_MAX_COUNT)
         val lines = ArrayList<LinePrimitive>(numRaLines + 2 * (numDecLines - 1) + 1)
         for (i in 0 until numRaLines) {

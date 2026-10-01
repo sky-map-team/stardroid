@@ -79,6 +79,19 @@ class GridLayerTest {
             // 12 meridians + the equator + 5 circles each side (15° steps).
             assertThat(medium.lines).hasSize(12 + 1 + 10)
             assertThat(medium.labels.map { it.text }).containsAtLeast("2h", "22h", "15°", "-75°")
+            assertThat(medium.labels.map { it.text }).doesNotContain("3h")
+        }
+
+    @Test
+    fun `every density option builds a scene with its own geometry`() =
+        runTest {
+            val lineCounts =
+                LayerParameter.RADEC_GRID_DENSITY_PARAMETER.options.map {
+                    layer().buildScene(FakeLayerStrings(), it).lines.size
+                }
+
+            // A missing map entry would fall back to fine and repeat its count.
+            assertThat(lineCounts.toSet()).hasSize(lineCounts.size)
         }
 
     @Test

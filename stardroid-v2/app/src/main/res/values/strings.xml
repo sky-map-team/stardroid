@@ -116,7 +116,7 @@
     <string name="layer_help_camera" translation_description="Long-press explanation of the through-camera toggle.">Shows the live camera behind the sky map so the drawn sky overlays the real one. Needs motion sensors.</string>
     <string name="layer_help_options_solar_system" translation_description="Long-press note listing what can be customized on the solar system layer.">Disc size: how big the Sun, Moon and planets are drawn.\nEclipse alerts: a notification before a lunar eclipse.</string>
     <string name="layer_help_options_satellites" translation_description="Long-press note listing what can be customized on the satellites layer.">Pass alerts: a notification before the best visible pass each night.</string>
-    <string name="layer_help_options_grid" translation_description="Long-press note listing what can be customized on the celestial grid layer.">Line count: how many lines the grid draws, from coarse to fine.</string>
+    <string name="layer_help_options_grid" translation_description="Long-press note listing what can be customized on the celestial grid layer.">Line count: a line every 3, 2 or 1 hours and every 30°, 15° or 10°.</string>
     <string name="layer_help_options_altaz_grid" translation_description="Long-press note listing what can be customized on the alt/az grid layer.">Line count: 8, 12 or 24 direction lines.</string>
     <string name="layer_help_customizable" translation_description="Heading in the layer help popup above the list of customizable options.">What you can customize</string>
     <string name="layer_help_expand_hint" translation_description="Hint in the layer help popup for layers with options, pointing to the arrow button on the row.">Tap the arrow on the row to change these.</string>
