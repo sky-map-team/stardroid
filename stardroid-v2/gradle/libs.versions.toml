@@ -31,6 +31,11 @@ glance = "1.1.1"
 workManager = "2.10.0"
 camerax = "1.4.1"
 
+# Compose Multiplatform: the iOS app's UI layer (D134). 1.9.x is the last line built with a Kotlin
+# compiler this build can read (2.1.21; 1.10 needs Kotlin 2.2.20).
+composeMultiplatform = "1.9.3"
+composeMultiplatformMaterial3 = "1.9.0"
+
 kotlinxDatetime = "0.6.1"
 kotlinxSerialization = "1.7.3"
 hilt = "2.60.1"
@@ -56,6 +61,12 @@ room-compiler = { group = "androidx.room", name = "room-compiler", version.ref =
 androidx-sqlite-bundled = { group = "androidx.sqlite", name = "sqlite-bundled", version.ref = "androidxSqlite" }
 hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
 hilt-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt" }
+
+# Compose Multiplatform (the iOS app's UI)
+cmp-runtime = { group = "org.jetbrains.compose.runtime", name = "runtime", version.ref = "composeMultiplatform" }
+cmp-foundation = { group = "org.jetbrains.compose.foundation", name = "foundation", version.ref = "composeMultiplatform" }
+cmp-ui = { group = "org.jetbrains.compose.ui", name = "ui", version.ref = "composeMultiplatform" }
+cmp-material3 = { group = "org.jetbrains.compose.material3", name = "material3", version.ref = "composeMultiplatformMaterial3" }
 
 # Compose + app UI (versions beyond the BOM's control are pinned above)
 androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }

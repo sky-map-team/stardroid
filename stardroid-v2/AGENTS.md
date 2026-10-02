@@ -98,6 +98,9 @@ Do not add a third notice — per-directory notices are what let the old claim d
   screens' ViewModels — androidx.lifecycle's multiplatform `ViewModel` — with the Compose screens
   left in `app/`) and `shared/testing` (fakes for `:shared` and `:app` tests). The same rules as
   `core/*`: no Android SDK and no JDK in common code, tests in `commonTest`.
+- `app-ios/` + `ios/SkyMap/` — the iOS app (phase 4 of the port): its Kotlin side (the
+  `SkyMapKit` framework, Compose Multiplatform per D134) and the XcodeGen Swift shell that hosts
+  it. See `ios/README.md` to build and run it.
 - `render/api` — pure renderer contract + shared projection and vertex builders;
   `render/gles1` — a GLES1 backend written to match v1's rendering behaviour (an independent
   implementation, not a port; see `NOTICE.md`); `render/metal` — the iOS backend, Kotlin/Native
