@@ -467,6 +467,7 @@
     <string name="diagnostics_utc_datetime" translation_description="Row label in the diagnostics screen for the UTC/universal date and time">Universal datetime</string>
     <string name="diagnostics_section_network" translation_description="Section heading in the diagnostics screen for network connectivity information">Network</string>
     <string name="diagnostics_connection" translation_description="Row label in the diagnostics screen for the current network connection status">Connection</string>
+    <string name="diagnostics_section_experiments" translation_description="Section heading in the diagnostics screen listing the current feature-flag (experiment) values">Experiment flags</string>
     <string name="diagnostics_section_satellites" translation_description="Section heading in the diagnostics screen for satellite orbital-data status">Satellites</string>
     <string name="diagnostics_satellite_data" translation_description="Row label in the diagnostics screen for the age and count of cached satellite orbital data">Orbit data</string>
     <string name="diagnostics_satellite_data_none" translation_description="Row value in the diagnostics screen when no satellite orbital data has been downloaded yet">Not downloaded</string>
