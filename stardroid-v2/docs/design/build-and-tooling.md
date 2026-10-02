@@ -7,7 +7,7 @@ architecture (D20) and performance (D19).
 
 ## Module graph
 
-Sixteen Gradle modules, following the dependency rule (arrows inward only; see
+Nineteen Gradle modules, following the dependency rule (arrows inward only; see
 [high-level-architecture.md](high-level-architecture.md)):
 
 ```
@@ -22,6 +22,10 @@ Sixteen Gradle modules, following the dependency rule (arrows inward only; see
 :render:gles1   android-library→ :render:api
 :render:gles3   android-library→ :render:api
 :render:api     pure-kmp       → :core:math
+:render:testscene pure-kmp     → :render:api (the seeded scene every renderer harness draws)
+:render:metal   ios-library    → :render:api (the iOS Metal backend, D128; render-metal.md)
+:render:metal-harness ios-library → :render:metal, :render:testscene (the iOS harness's
+                                 framework; ios/RendererHarness hosts it)
 :data           kmp-android-library → :core:catalog, :core:astronomy, :core:math
 :data:generator pure-kotlin    → :core:catalog (build-time JVM tool; sqlite-jdbc,
                                  kotlinx-serialization)
@@ -40,15 +44,16 @@ generator originally sketched here as `:tools:catalog-gen` landed as `:data:gene
 
 ## Convention plugins (`build-logic/`)
 
-Six plugins keep module build scripts to a few lines and make module *kind* a declaration,
-not a copy-paste of config. They are the structural half of D20. The two multiplatform ones
+Seven plugins keep module build scripts to a few lines and make module *kind* a declaration,
+not a copy-paste of config. They are the structural half of D20. The three multiplatform ones
 share `skymap.kmp-base` (the iOS targets, the `commonTest` stack, and the skip rule for Macs
-without Xcode), which no module applies directly.
+without Xcode), which no module applies directly; every plugin lints through `skymap.ktlint`.
 
 | Plugin | Applies | Used by |
 |---|---|---|
-| `skymap.pure-kmp` | `kotlin("multiplatform")` — JVM + iOS targets, kotlin.test + `:core:testing`, **no Android plugin** | `:core:*`, `:render:api`, `:shared:model`, `:shared:testing` |
+| `skymap.pure-kmp` | `kotlin("multiplatform")` — JVM + iOS targets, kotlin.test + `:core:testing`, **no Android plugin** | `:core:*`, `:render:api`, `:render:testscene`, `:shared:model`, `:shared:testing` |
 | `skymap.kmp-android-library` | `kotlin("multiplatform")` — AGP's multiplatform Android target (`com.android.kotlin.multiplatform.library`) + iOS targets | `:data`, `:shared:layers`, `:shared:viewmodels` |
+| `skymap.ios-library` | `skymap.kmp-base` alone: iOS-only platform code | `:render:metal`, `:render:metal-harness` |
 | `skymap.pure-kotlin` | `kotlin("jvm")`, JUnit5/Truth, **no Android plugin** | `:data:generator`, `:konsist` |
 | `skymap.android-library` | `com.android.library` + Kotlin, common Android config | `:render:gles1`, `:render:gles3` |
 | `skymap.android-app` | `com.android.application` + Kotlin + Compose + Hilt + flavors | `:app` |
