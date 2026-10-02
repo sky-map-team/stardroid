@@ -25,13 +25,16 @@ import com.google.android.stardroid.settings.DataStoreSettings
 import com.google.android.stardroid.settings.Settings
 import com.google.android.stardroid.settings.settingsDataStore
 import com.google.android.stardroid.startup.DataStoreStartupState
+import com.google.android.stardroid.startup.StartupRouter
 import com.google.android.stardroid.startup.StartupState
 import com.google.android.stardroid.time.TimeController
 import com.google.android.stardroid.ui.map.MapViewModel
+import com.google.android.stardroid.ui.startup.StartupViewModel
 import kotlinx.cinterop.ExperimentalForeignApi
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.emptyFlow
 import kotlinx.coroutines.flow.first
@@ -51,8 +54,8 @@ import platform.Foundation.preferredLanguages
  * hand. Everything here is shared code; only the platform edges are iOS's.
  *
  * The app's foreground drives location the way Android's activity `onStart`/`onStop` do. With no
- * screens yet, the system location prompt shows at first launch, in place of Android's rationale
- * sheet (phase 5 brings the location screens).
+ * screens yet, the system location prompt shows once the EULA is accepted, in place of Android's
+ * rationale sheet (phase 5 brings the location screens).
  */
 @OptIn(ExperimentalForeignApi::class)
 class IosAppGraph {
@@ -72,6 +75,22 @@ class IosAppGraph {
     val timeController = TimeController()
 
     private val foreground = AppForeground()
+
+    /** The bundle's build number, which the startup gates compare as Android's versionCode. */
+    private val appVersion: Long =
+        (NSBundle.mainBundle.objectForInfoDictionaryKey("CFBundleVersion") as? String)
+            ?.toLongOrNull() ?: 0L
+
+    private val startupRouter = StartupRouter(startupState, appVersion)
+
+    /** Dims the screen in night mode, as the auto-dimness preference says. */
+    private val screenDimming =
+        ScreenDimming(
+            settings.nightMode,
+            settings.autoDimness,
+            foreground.isForeground,
+            MainScope(),
+        )
 
     private val coreLocation = CoreLocationProvider()
 
@@ -144,7 +163,10 @@ class IosAppGraph {
 
     init {
         MainScope().launch {
-            foreground.isForeground.collect { if (it) onStart() else locationController.stop() }
+            // Latest: going to the background cancels a start still waiting on the EULA.
+            foreground.isForeground.collectLatest {
+                if (it) onStart() else locationController.stop()
+            }
         }
     }
 
@@ -159,6 +181,9 @@ class IosAppGraph {
             locationController.onPermissionRevoked()
         }
         locationController.start()
+        // The terms carry the permissions notice, which must come before any permission prompt
+        // (Korean Network Act art. 22-2; see eula.xml), as it does on Android.
+        startupRouter.needsEula.first { !it }
         if (coreLocation.canRequestAuthorization && !settings.noAutoLocate.first()) {
             if (coreLocation.requestAuthorization()) {
                 locationController.switchToAuto()
@@ -168,6 +193,9 @@ class IosAppGraph {
             }
         }
     }
+
+    /** The EULA gate; the warm welcome and What's New wait for their screens (phase 5). */
+    fun startupViewModel(): StartupViewModel = StartupViewModel(startupRouter, startupState)
 
     fun mapViewModel(): MapViewModel =
         MapViewModel(

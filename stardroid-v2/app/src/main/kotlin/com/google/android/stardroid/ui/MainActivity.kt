@@ -29,6 +29,7 @@ import android.util.Log
 import android.view.Surface
 import android.view.WindowManager
 import androidx.activity.ComponentActivity
+import androidx.activity.compose.BackHandler
 import androidx.activity.compose.setContent
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
@@ -576,13 +577,16 @@ class MainActivity : ComponentActivity() {
                 // as an overlay ahead of the still-pending tour underneath
                 // (needsWhatsNewDuringWarmWelcome).
                 if (gates.needsEula) {
+                    val declineEula = {
+                        startupViewModel.rejectEula()
+                        finish()
+                    }
+                    // BACK declines, as v1 routed cancel to reject.
+                    BackHandler(onBack = declineEula)
                     EulaScreen(
                         nightMode = nightMode,
                         onAccept = startupViewModel::acceptEula,
-                        onDecline = {
-                            startupViewModel.rejectEula()
-                            finish()
-                        },
+                        onDecline = declineEula,
                     )
                 } else if (gates.needsWhatsNew &&
                     (!gates.needsWarmWelcome || gates.needsWhatsNewDuringWarmWelcome)

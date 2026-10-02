@@ -22,8 +22,17 @@ import androidx.compose.ui.text.LinkInteractionListener
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.TextLinkStyles
 import androidx.compose.ui.text.buildAnnotatedString
-import androidx.compose.ui.text.fromHtml
 import androidx.compose.ui.text.style.TextDecoration
+
+/**
+ * `AnnotatedString.fromHtml` where Compose has it (Android, unchanged), and
+ * [simpleHtmlToAnnotatedString] where Compose Multiplatform 1.9 does not (iOS).
+ */
+internal expect fun annotatedStringFromHtml(
+    html: String,
+    linkStyles: TextLinkStyles?,
+    linkInteractionListener: LinkInteractionListener?,
+): AnnotatedString
 
 /** The private scheme the help document uses for links that go somewhere inside the app. */
 const val APP_LINK_SCHEME = "skymap://"
@@ -33,10 +42,10 @@ const val APP_LINK_SCHEME = "skymap://"
  * documents carry — has to reach the platform URI handler, so this is the fork that keeps them
  * working once a link listener is installed.
  */
-internal fun isAppLink(url: String): Boolean = url.startsWith(APP_LINK_SCHEME)
+fun isAppLink(url: String): Boolean = url.startsWith(APP_LINK_SCHEME)
 
 /**
- * [AnnotatedString.fromHtml] with the theme's link styling: without an explicit
+ * [annotatedStringFromHtml] with the theme's link styling: without an explicit
  * [TextLinkStyles], Compose renders `<a href>` runs indistinguishable from plain text even
  * though they respond to taps. Every HTML-driven dialog (EULA, What's New, Help, calibration)
  * renders through this so links look like links. The parse is remembered — these documents
@@ -81,7 +90,7 @@ fun htmlWithLinks(
                 } else {
                     null
                 }
-            AnnotatedString.fromHtml(
+            annotatedStringFromHtml(
                 html,
                 linkStyles =
                     TextLinkStyles(

@@ -17,6 +17,7 @@ kotlin {
     sourceSets {
         iosMain.dependencies {
             implementation(project(":shared:viewmodels"))
+            implementation(project(":shared:ui"))
             implementation(project(":shared:layers"))
             implementation(project(":shared:model"))
             implementation(project(":data"))
@@ -33,8 +34,9 @@ kotlin {
 // kotlin.time and the kotlinx.datetime classes the shared modules are compiled against (0.6.1)
 // no longer exist, so the framework link fails ("IrClassSymbolImpl is unbound ... Instant").
 // 0.7.1-0.6.x-compat is the 0.7 API with those classes kept, published for exactly this. It is
-// pinned here only: Android does not use Compose Multiplatform and stays on 0.6.1. Moving the
-// whole build to 0.7 (kotlin.time.Instant) is its own change.
+// pinned here only: Android stays on 0.6.1, because the shared UI's Android side is androidx
+// Compose, which does not depend on kotlinx-datetime. Moving the whole build to 0.7
+// (kotlin.time.Instant) is its own change.
 configurations.configureEach {
     resolutionStrategy.eachDependency {
         if (requested.group == "org.jetbrains.kotlinx" &&

@@ -484,9 +484,6 @@ Metalden uzak, açık bir alana geçin ve tekrar deneyin.]]></string>
     <string name="calibration_complete_toast" translation_description="Toast shown when the compass reaches high accuracy and the auto-opened calibration screen closes itself">Sensörler yüksek doğruluğa sahip</string>
 
     <!-- Startup routing: EULA, warm welcome, What's New (slice 16) -->
-    <string name="eula_title">Kullanım Şartları</string>
-    <string name="dialog_accept">Kabul et</string>
-    <string name="dialog_decline">Hayır, teşekkürler</string>
     <string name="dialog_ok_button">Tamam</string>
 
     <string name="whats_new_dialog_title">Yenilikler</string>

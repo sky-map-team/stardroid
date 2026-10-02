@@ -488,9 +488,6 @@
     <string name="calibration_complete_toast" translation_description="Toast shown when the compass reaches high accuracy and the auto-opened calibration screen closes itself">حسگرها دقت بالایی دارند</string>
 
     <!-- Startup routing: EULA, warm welcome, What's New (slice 16) -->
-    <string name="eula_title">شرایط استفاده</string>
-    <string name="dialog_accept">قبول</string>
-    <string name="dialog_decline">خیر. متشکرم</string>
     <string name="dialog_ok_button">باشه</string>
 
     <string name="whats_new_dialog_title">تغییرات جدید برنامه</string>
