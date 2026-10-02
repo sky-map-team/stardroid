@@ -30,7 +30,13 @@ def token():
 
 
 def call(method, body=None, etag=None):
-    headers = {"Authorization": f"Bearer {token()}", "Accept-Encoding": "identity"}
+    # User credentials need an explicit quota project, or the API answers 403 ("API not enabled"
+    # / "no quota project"). Needs serviceusage.services.use on the project.
+    headers = {
+        "Authorization": f"Bearer {token()}",
+        "Accept-Encoding": "identity",
+        "x-goog-user-project": PROJECT,
+    }
     data = None
     if body is not None:
         data = json.dumps(body).encode()
