@@ -12,4 +12,9 @@ plugins {
 
 extensions.configure<KtlintExtension> {
     version.set("1.0.1")
+    // Code generators register their output as source directories, where ktlint would lint it:
+    // Room's (KSP) and Compose resources' accessors. That code is not ours to format.
+    filter {
+        exclude { it.file.invariantSeparatorsPath.contains("/build/generated/") }
+    }
 }

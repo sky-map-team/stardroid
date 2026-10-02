@@ -10,7 +10,13 @@
 package com.google.android.stardroid.ui.help
 
 import androidx.annotation.StringRes
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.res.stringResource
 import com.google.android.stardroid.R
+import com.google.android.stardroid.ui.resources.Res
+import com.google.android.stardroid.ui.resources.permissions_notice
+import org.jetbrains.compose.resources.StringResource
+import org.jetbrains.compose.resources.stringResource as sharedStringResource
 
 /**
  * One entry of the help document, in render order.
@@ -30,14 +36,21 @@ internal sealed interface HelpItem {
      */
     data class Prose(
         override val anchor: String,
-        @StringRes val html: Int,
+        val html: HelpHtml,
         /**
          * An `<h1>` divider carrying no prose of its own. Hidden while a search is active: a
          * bare "Miscellaneous and Troubleshooting" heading above a filtered list titles
          * nothing.
          */
         val divider: Boolean = false,
-    ) : HelpItem
+    ) : HelpItem {
+        constructor(
+            anchor: String,
+            @StringRes html: Int,
+            divider: Boolean = false,
+        ) :
+            this(anchor, HelpHtml.Android(html), divider)
+    }
 
     /**
      * The deep-sky symbol legend, which is drawn natively from the catalog icons rather than
@@ -47,6 +60,27 @@ internal sealed interface HelpItem {
         override val anchor = "symbols"
     }
 }
+
+/**
+ * Where a section's HTML lives: :app's resources, or :shared:ui's for the permissions notice,
+ * which the shared terms screen renders too (D134).
+ */
+internal sealed interface HelpHtml {
+    data class Android(
+        @StringRes val id: Int,
+    ) : HelpHtml
+
+    data class Shared(
+        val resource: StringResource,
+    ) : HelpHtml
+}
+
+@Composable
+internal fun HelpHtml.text(): String =
+    when (this) {
+        is HelpHtml.Android -> stringResource(id)
+        is HelpHtml.Shared -> sharedStringResource(resource)
+    }
 
 /**
  * The help document. Adding a section means adding its key to `help.xml` *and* an entry here;
@@ -67,9 +101,9 @@ internal val HELP_DOCUMENT =
         HelpItem.Prose("gallery", R.string.help_gallery),
         HelpItem.Prose("widgets", R.string.help_widgets),
         HelpItem.Prose("location", R.string.help_location),
-        // Lives in eula.xml, not help.xml: the terms screen renders the same key, so the
-        // permission disclosure is written and translated exactly once (see eula.xml).
-        HelpItem.Prose("permissions", R.string.permissions_notice),
+        // Lives in :shared:ui's eula.xml, not help.xml: the terms screen renders the same key,
+        // so the permission disclosure is written and translated exactly once (see eula.xml).
+        HelpItem.Prose("permissions", HelpHtml.Shared(Res.string.permissions_notice)),
         HelpItem.Prose("diagnostics", R.string.help_diagnostics),
         HelpItem.Prose("calibrate", R.string.help_calibrate),
         HelpItem.Prose("misc", R.string.help_misc, divider = true),

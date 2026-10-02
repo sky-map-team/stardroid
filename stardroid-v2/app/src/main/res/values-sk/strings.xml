@@ -483,9 +483,6 @@
     <string name="calibration_complete_toast" translation_description="Toast shown when the compass reaches high accuracy and the auto-opened calibration screen closes itself">Senzory majú vysokú presnosť</string>
 
     <!-- Startup routing: EULA, warm welcome, What's New (slice 16) -->
-    <string name="eula_title">Podmienky služby</string>
-    <string name="dialog_accept">Prijať</string>
-    <string name="dialog_decline">Odmietnuť</string>
     <!-- tm:omitted name="dialog_ok_button" reason="identical_to_source" -->
 
     <string name="whats_new_dialog_title">Čo je nové</string>

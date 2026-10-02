@@ -9,15 +9,16 @@
 
 package com.google.android.stardroid.ui.common
 
-import com.google.common.truth.Truth.assertThat
-import org.junit.jupiter.api.Test
+import kotlin.test.Test
+import kotlin.test.assertEquals
+import kotlin.test.assertIs
 
 class StyledHtmlTest {
     @Test
     fun `document without headings is a single body block`() {
         val blocks = splitHtmlBlocks("<p>Just a paragraph.</p>")
 
-        assertThat(blocks).containsExactly(HtmlBlock.Body("<p>Just a paragraph.</p>"))
+        assertEquals(listOf(HtmlBlock.Body("<p>Just a paragraph.</p>")), blocks)
     }
 
     @Test
@@ -27,36 +28,36 @@ class StyledHtmlTest {
                 "<h1>Title</h1><p>Intro</p><h2>Section</h2><p>Body</p>",
             )
 
-        assertThat(blocks)
-            .containsExactly(
+        assertEquals(
+            listOf(
                 HtmlBlock.Heading(1, "Title"),
                 HtmlBlock.Body("<p>Intro</p>"),
                 HtmlBlock.Heading(2, "Section"),
                 HtmlBlock.Body("<p>Body</p>"),
-            ).inOrder()
+            ),
+            blocks,
+        )
     }
 
     @Test
     fun `all three heading levels are recognized`() {
         val blocks = splitHtmlBlocks("<h1>A</h1><h2>B</h2><h3>C</h3>")
 
-        assertThat(blocks.filterIsInstance<HtmlBlock.Heading>().map { it.level })
-            .containsExactly(1, 2, 3)
-            .inOrder()
+        assertEquals(listOf(1, 2, 3), blocks.filterIsInstance<HtmlBlock.Heading>().map { it.level })
     }
 
     @Test
     fun `whitespace between headings is dropped`() {
         val blocks = splitHtmlBlocks("<h1>A</h1>\n\n  <h2>B</h2>")
 
-        assertThat(blocks).hasSize(2)
+        assertEquals(2, blocks.size)
     }
 
     @Test
     fun `heading markup and entities stay inside the heading block`() {
         val blocks = splitHtmlBlocks("<h2>Safety &amp; Liability</h2>")
 
-        assertThat(blocks).containsExactly(HtmlBlock.Heading(2, "Safety &amp; Liability"))
+        assertEquals(listOf(HtmlBlock.Heading(2, "Safety &amp; Liability")), blocks)
     }
 
     @Test
@@ -64,42 +65,42 @@ class StyledHtmlTest {
         // An <h1> closed by </h2> is malformed; it must not swallow the document.
         val blocks = splitHtmlBlocks("<h1>A</h2><p>text</p>")
 
-        assertThat(blocks.single()).isInstanceOf(HtmlBlock.Body::class.java)
+        assertIs<HtmlBlock.Body>(blocks.single())
     }
 
     @Test
     fun `case-insensitive tags and attributes are matched`() {
         val blocks = splitHtmlBlocks("<H1 class=\"x\">Title</H1>rest")
 
-        assertThat(blocks)
-            .containsExactly(HtmlBlock.Heading(1, "Title"), HtmlBlock.Body("rest"))
-            .inOrder()
+        assertEquals(listOf(HtmlBlock.Heading(1, "Title"), HtmlBlock.Body("rest")), blocks)
     }
 
     @Test
     fun `multiline heading content is captured`() {
         val blocks = splitHtmlBlocks("<h2>Two\nlines</h2>")
 
-        assertThat(blocks).containsExactly(HtmlBlock.Heading(2, "Two\nlines"))
+        assertEquals(listOf(HtmlBlock.Heading(2, "Two\nlines")), blocks)
     }
 
     @Test
     fun `blockquote becomes a callout block`() {
         val blocks = splitHtmlBlocks("<blockquote><b>Note:</b> read this.</blockquote>")
 
-        assertThat(blocks).containsExactly(HtmlBlock.Callout("<b>Note:</b> read this."))
+        assertEquals(listOf(HtmlBlock.Callout("<b>Note:</b> read this.")), blocks)
     }
 
     @Test
-    fun `callout splits the body run it sits in, keeping order`() {
+    fun `callout splits the body run it sits in - keeping order`() {
         val blocks = splitHtmlBlocks("Before<blockquote>Note</blockquote>After")
 
-        assertThat(blocks)
-            .containsExactly(
+        assertEquals(
+            listOf(
                 HtmlBlock.Body("Before"),
                 HtmlBlock.Callout("Note"),
                 HtmlBlock.Body("After"),
-            ).inOrder()
+            ),
+            blocks,
+        )
     }
 
     @Test
@@ -108,21 +109,21 @@ class StyledHtmlTest {
         // dangling on the body runs either side of the callout.
         val blocks = splitHtmlBlocks("Before<br/><br/><blockquote>Note</blockquote><br/><br/>After")
 
-        assertThat(blocks)
-            .containsExactly(
+        assertEquals(
+            listOf(
                 HtmlBlock.Body("Before"),
                 HtmlBlock.Callout("Note"),
                 HtmlBlock.Body("After"),
-            ).inOrder()
+            ),
+            blocks,
+        )
     }
 
     @Test
     fun `a body run of only breaks is dropped entirely`() {
         val blocks = splitHtmlBlocks("<h2>A</h2><br/><br/><blockquote>Note</blockquote>")
 
-        assertThat(blocks)
-            .containsExactly(HtmlBlock.Heading(2, "A"), HtmlBlock.Callout("Note"))
-            .inOrder()
+        assertEquals(listOf(HtmlBlock.Heading(2, "A"), HtmlBlock.Callout("Note")), blocks)
     }
 
     @Test
@@ -130,14 +131,16 @@ class StyledHtmlTest {
         val blocks =
             splitHtmlBlocks("<h1>T</h1>intro<blockquote>N</blockquote><h2>S</h2>body")
 
-        assertThat(blocks)
-            .containsExactly(
+        assertEquals(
+            listOf(
                 HtmlBlock.Heading(1, "T"),
                 HtmlBlock.Body("intro"),
                 HtmlBlock.Callout("N"),
                 HtmlBlock.Heading(2, "S"),
                 HtmlBlock.Body("body"),
-            ).inOrder()
+            ),
+            blocks,
+        )
     }
 
     @Test
@@ -145,7 +148,6 @@ class StyledHtmlTest {
         val blocks =
             splitHtmlBlocks("<blockquote>See <a href=\"http://x.test\">this</a>.</blockquote>")
 
-        assertThat(blocks)
-            .containsExactly(HtmlBlock.Callout("See <a href=\"http://x.test\">this</a>."))
+        assertEquals(listOf(HtmlBlock.Callout("See <a href=\"http://x.test\">this</a>.")), blocks)
     }
 }

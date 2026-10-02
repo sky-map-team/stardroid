@@ -14,5 +14,5 @@ import platform.Foundation.decomposedStringWithCanonicalMapping
 
 // Foundation's NFD. Kotlin/Native bridges String to NSString, so the cast is a view, not a copy.
 @Suppress("CAST_NEVER_SUCCEEDS")
-internal actual fun decomposeCanonically(text: String): String =
+actual fun decomposeCanonically(text: String): String =
     (text as NSString).decomposedStringWithCanonicalMapping

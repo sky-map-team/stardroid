@@ -87,9 +87,18 @@ en-GB = "The asterism within Ursa Major that American English calls \"The Big Di
 type = "android"
 name = "app"
 path = "app/src/main/res"
-files = ["strings.xml", "credits.xml", "help.xml", "whatsnew.xml", "eula.xml"]
+files = ["strings.xml", "credits.xml", "help.xml", "whatsnew.xml"]
 skip = ["colors.xml", "themes.xml", "contributors.xml"]
 resource_qualifier_excludes = ["w820dp", "night", "land", "nodpi", "anydpi-v26"]
+
+# The screens shared with the iOS app (:shared:ui, D134): Android-format resources like the app's
+# above, turned into Compose Multiplatform resources at build time. Strings move here from "app"
+# as their screens do; translate them as part of the same app.
+[[sources]]
+type = "android"
+name = "shared-ui"
+path = "shared/ui/src/commonMain/res"
+files = ["strings.xml", "eula.xml"]
 
 # Localized celestial object names: sparse per-object overrides.
 # universal.csv is the language-neutral pseudo-locale of catalog

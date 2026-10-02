@@ -9,7 +9,7 @@
 
 package com.google.android.stardroid.ui.common
 
-import java.text.Normalizer
+import com.google.android.stardroid.catalog.decomposeCanonically
 
 /**
  * A searchable projection of some prose: lower-cased and stripped of diacritics, keeping a map
@@ -20,7 +20,7 @@ import java.text.Normalizer
  * changes the length of the string — "é" folds to one character, "ﬁ" would not fold at all — so
  * the offsets cannot simply be reused, hence [origin].
  */
-internal class FoldedText private constructor(
+class FoldedText private constructor(
     val text: String,
     /** For each character of [text], the index in the source string it came from. */
     private val origin: IntArray,
@@ -44,7 +44,7 @@ internal class FoldedText private constructor(
                     if (char.code < 0x80) {
                         char.toString()
                     } else {
-                        Normalizer.normalize(char.toString(), Normalizer.Form.NFD)
+                        decomposeCanonically(char.toString())
                     }
                 for (decomposedChar in decomposed) {
                     if (decomposedChar.isCombiningMark()) continue
@@ -66,7 +66,7 @@ internal class FoldedText private constructor(
             val folded = StringBuilder(source.length)
             val origin = ArrayList<Int>(source.length)
             for (index in source.indices) {
-                val decomposed = Normalizer.normalize(source[index].toString(), Normalizer.Form.NFD)
+                val decomposed = decomposeCanonically(source[index].toString())
                 for (decomposedChar in decomposed) {
                     if (decomposedChar.isCombiningMark()) continue
                     folded.append(decomposedChar.lowercaseChar())
@@ -92,18 +92,17 @@ internal class FoldedText private constructor(
  * widget" finds the paragraph mentioning both in either order; a language without word spacing
  * simply yields one term, which plain substring matching handles correctly.
  */
-internal fun searchTerms(query: String): List<String> =
+fun searchTerms(query: String): List<String> =
     FoldedText.of(query).text.split(' ', '\t', '\n').filter { it.isNotEmpty() }
 
 /** True when every term of [query] appears somewhere in the folded text. A blank query matches. */
-internal fun FoldedText.matches(query: String): Boolean =
-    searchTerms(query).all { text.contains(it) }
+fun FoldedText.matches(query: String): Boolean = searchTerms(query).all { text.contains(it) }
 
 /**
  * Every occurrence of every term of [query], as inclusive ranges of the *source* string, in
  * ascending order. Overlapping ranges are merged so a highlight span is never applied twice.
  */
-internal fun FoldedText.matchRanges(query: String): List<IntRange> {
+fun FoldedText.matchRanges(query: String): List<IntRange> {
     val terms = searchTerms(query)
     if (terms.isEmpty()) return emptyList()
     val found = mutableListOf<IntRange>()
@@ -128,7 +127,7 @@ internal fun FoldedText.matchRanges(query: String): List<IntRange> {
 }
 
 /** Convenience for callers with no folded text to reuse. */
-internal fun matchesQuery(
+fun matchesQuery(
     text: String,
     query: String,
 ): Boolean = FoldedText.of(text).matches(query)

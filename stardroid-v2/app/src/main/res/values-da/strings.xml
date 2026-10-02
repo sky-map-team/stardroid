@@ -482,9 +482,6 @@
     <string name="calibration_complete_toast" translation_description="Toast shown when the compass reaches high accuracy and the auto-opened calibration screen closes itself">Sensorer har høj nøjagtighed</string>
 
     <!-- Startup routing: EULA, warm welcome, What's New (slice 16) -->
-    <string name="eula_title">Vilkår for brug</string>
-    <string name="dialog_accept">Accepter</string>
-    <string name="dialog_decline">Nej tak</string>
     <!-- tm:omitted name="dialog_ok_button" reason="identical_to_source" -->
 
     <string name="whats_new_dialog_title">Hvad er nyt</string>

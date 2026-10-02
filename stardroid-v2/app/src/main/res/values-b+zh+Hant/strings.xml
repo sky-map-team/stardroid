@@ -464,9 +464,6 @@
     <string name="calibration_complete_toast" translation_description="Toast shown when the compass reaches high accuracy and the auto-opened calibration screen closes itself">感測器精準度高</string>
 
     <!-- Startup routing: EULA, warm welcome, What's New (slice 16) -->
-    <string name="eula_title">服務條款</string>
-    <string name="dialog_accept">接受</string>
-    <string name="dialog_decline">不，謝謝</string>
     <string name="dialog_ok_button">確定</string>
 
     <string name="whats_new_dialog_title">最新消息</string>

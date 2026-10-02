@@ -118,6 +118,7 @@ dependencies {
     implementation(project(":shared:model"))
     implementation(project(":shared:layers"))
     implementation(project(":shared:viewmodels"))
+    implementation(project(":shared:ui"))
     implementation(libs.kotlinx.coroutines.android)
     implementation(libs.androidx.core.ktx)
 

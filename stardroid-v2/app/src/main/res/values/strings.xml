@@ -518,9 +518,6 @@ readings to Sky Map.</blockquote>
     <string name="calibration_complete_toast" translation_description="Toast shown when the compass reaches high accuracy and the auto-opened calibration screen closes itself">Sensors have high accuracy</string>
 
     <!-- Startup routing: EULA, warm welcome, What's New (slice 16) -->
-    <string name="eula_title" translation_description="Title of the terms-of-service dialog shown on first launch">Terms of Service</string>
-    <string name="dialog_accept" translation_description="Button accepting the licence agreement">Accept</string>
-    <string name="dialog_decline" translation_description="Button declining the licence agreement">No Thanks</string>
     <string name="dialog_ok_button" translation_description="Generic OK/confirm button label for dialogs">OK</string>
 
     <string name="whats_new_dialog_title" translation_description="Title of the dialog shown on first launch after an update, listing new features">What\'s new</string>

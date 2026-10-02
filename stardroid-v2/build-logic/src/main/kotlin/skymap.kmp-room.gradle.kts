@@ -2,7 +2,6 @@ import androidx.room.gradle.RoomExtension
 import com.google.devtools.ksp.gradle.KspExtension
 import org.gradle.api.artifacts.VersionCatalogsExtension
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
-import org.jlleitschuh.gradle.ktlint.KtlintExtension
 
 // Room + KSP for a multiplatform module (Room is multiplatform since 2.7). Apply *after* the
 // module's KMP convention (skymap.kmp-android-library) in the same plugins block: the per-target
@@ -48,12 +47,4 @@ extensions.configure<RoomExtension> {
 
 extensions.configure<KspExtension> {
     arg("room.generateKotlin", "true")
-}
-
-// KSP registers its output as a source directory of each target's source set, where ktlint would
-// lint Room's generated code; that code is not ours to format.
-extensions.configure<KtlintExtension> {
-    filter {
-        exclude { it.file.invariantSeparatorsPath.contains("/build/generated/") }
-    }
 }

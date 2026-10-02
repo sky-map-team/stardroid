@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- The terms screen (EulaScreen), shared with the iOS app. -->
+    <string name="eula_title" translation_description="Title of the terms-of-service dialog shown on first launch">Terms of Service</string>
+    <string name="dialog_accept" translation_description="Button accepting the licence agreement">Accept</string>
+    <string name="dialog_decline" translation_description="Button declining the licence agreement">No Thanks</string>
+</resources>
