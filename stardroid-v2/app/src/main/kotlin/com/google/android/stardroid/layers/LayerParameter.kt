@@ -147,5 +147,29 @@ sealed interface LayerParameter {
                     ),
                 defaultOption = ALTAZ_GRID_DENSITY_MEDIUM,
             )
+
+        /** The RA/Dec grid's line-count choice. */
+        const val RADEC_GRID_DENSITY = "radec_grid_density"
+
+        /** A meridian every 3 hours, a declination circle every 30°. */
+        const val RADEC_GRID_DENSITY_COARSE = "coarse"
+
+        /** A meridian every 2 hours, a declination circle every 15°. */
+        const val RADEC_GRID_DENSITY_MEDIUM = "medium"
+
+        /** A meridian every hour, a circle every 10°: v1's grid, and the default. */
+        const val RADEC_GRID_DENSITY_FINE = "fine"
+
+        val RADEC_GRID_DENSITY_PARAMETER =
+            Choice(
+                key = RADEC_GRID_DENSITY,
+                options =
+                    listOf(
+                        RADEC_GRID_DENSITY_COARSE,
+                        RADEC_GRID_DENSITY_MEDIUM,
+                        RADEC_GRID_DENSITY_FINE,
+                    ),
+                defaultOption = RADEC_GRID_DENSITY_FINE,
+            )
     }
 }

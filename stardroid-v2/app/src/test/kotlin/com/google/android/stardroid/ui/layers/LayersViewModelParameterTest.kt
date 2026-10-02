@@ -41,7 +41,45 @@ class LayersViewModelParameterTest {
         Dispatchers.resetMain()
     }
 
-    private fun viewModel() = LayersViewModel(settings, analytics, satellitesEnabled = false)
+    private fun viewModel() =
+        LayersViewModel(
+            settings,
+            analytics,
+            satellitesEnabled = false,
+            notificationsEnabled = true,
+        )
+
+    @Test
+    fun `notification opt-ins are not offered while the notifications experiment is off`() =
+        runTest {
+            // Satellites on, so the pass-alerts opt-in is registered and has to be filtered too.
+            val vm =
+                LayersViewModel(
+                    settings,
+                    analytics,
+                    satellitesEnabled = true,
+                    notificationsEnabled = false,
+                )
+            val keys = vm.parameters.first().map { it.parameter.key }
+            assertThat(keys).doesNotContain(LayerParameter.ECLIPSE_ALERTS)
+            assertThat(keys).doesNotContain(LayerParameter.PASS_ALERTS)
+            assertThat(keys).contains(LayerParameter.DISC_SIZE)
+        }
+
+    @Test
+    fun `notification opt-ins are offered once the experiment is on`() =
+        runTest {
+            val vm =
+                LayersViewModel(
+                    settings,
+                    analytics,
+                    satellitesEnabled = true,
+                    notificationsEnabled = true,
+                )
+            val keys = vm.parameters.first().map { it.parameter.key }
+            assertThat(keys)
+                .containsAtLeast(LayerParameter.ECLIPSE_ALERTS, LayerParameter.PASS_ALERTS)
+        }
 
     @Test
     fun `the sheet is offered the declared parameter at its default`() =

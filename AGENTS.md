@@ -39,7 +39,7 @@ Only commit to `master` when explicitly instructed to do so.
 
 ## Git Worktrees
 
-Five reusable worktrees live under `.worktrees/` in the repo root:
+Seven reusable worktrees live under `.worktrees/` in the repo root:
 
 | Worktree | Path | Placeholder branch |
 |---|---|---|
@@ -48,6 +48,8 @@ Five reusable worktrees live under `.worktrees/` in the repo root:
 | stardroid-gamma | `.worktrees/stardroid-gamma` | `worktree/stardroid-gamma` |
 | stardroid-delta | `.worktrees/stardroid-delta` | `worktree/stardroid-delta` |
 | stardroid-epsilon | `.worktrees/stardroid-epsilon` | `worktree/stardroid-epsilon` |
+| stardroid-kappa | `.worktrees/stardroid-kappa` | `worktree/stardroid-kappa` |
+| stardroid-lambda | `.worktrees/stardroid-lambda` | `worktree/stardroid-lambda` |
 
 ### Default to a worktree for new features
 
