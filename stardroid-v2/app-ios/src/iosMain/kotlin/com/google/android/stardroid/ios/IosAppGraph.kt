@@ -16,10 +16,10 @@ import com.google.android.stardroid.data.RoomCatalogRepository
 import com.google.android.stardroid.data.SkyMapDatabaseFactory
 import com.google.android.stardroid.layers.LayerRegistry
 import com.google.android.stardroid.location.LocationController
-import com.google.android.stardroid.location.LocationProvider
-import com.google.android.stardroid.math.LatLong
-import com.google.android.stardroid.math.Matrix3
+import com.google.android.stardroid.location.LocationSource
+import com.google.android.stardroid.location.LocationState
 import com.google.android.stardroid.sensors.OrientationSource
+import com.google.android.stardroid.sensors.SensorConfig
 import com.google.android.stardroid.sensors.ZeroMagneticDeclinationSource
 import com.google.android.stardroid.settings.DataStoreSettings
 import com.google.android.stardroid.settings.Settings
@@ -29,11 +29,14 @@ import com.google.android.stardroid.startup.StartupState
 import com.google.android.stardroid.time.TimeController
 import com.google.android.stardroid.ui.map.MapViewModel
 import kotlinx.cinterop.ExperimentalForeignApi
-import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.emptyFlow
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.flowOf
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
 import platform.Foundation.NSApplicationSupportDirectory
@@ -47,8 +50,9 @@ import platform.Foundation.preferredLanguages
  * The iOS app's object graph: what Android's Hilt modules and `CatalogAccess` provide, built by
  * hand. Everything here is shared code; only the platform edges are iOS's.
  *
- * Phase 4b runs without sensors or location — the map starts in manual mode at the default
- * location (or the saved one). Core Motion and Core Location replace the two stubs in 4c.
+ * The app's foreground drives location the way Android's activity `onStart`/`onStop` do. With no
+ * screens yet, the system location prompt shows at first launch, in place of Android's rationale
+ * sheet (phase 5 brings the location screens).
  */
 @OptIn(ExperimentalForeignApi::class)
 class IosAppGraph {
@@ -67,11 +71,31 @@ class IosAppGraph {
 
     val timeController = TimeController()
 
+    private val foreground = AppForeground()
+
+    private val coreLocation = CoreLocationProvider()
+
     val locationController =
         LocationController(
-            provider = NoLocationProvider,
+            provider = coreLocation,
             settings = settings,
-            hasLocationPermission = { false },
+            hasLocationPermission = { coreLocation.isAuthorized },
+        )
+
+    private val orientationSource: OrientationSource =
+        CoreMotionOrientationSource(
+            config =
+                combine(
+                    settings.disableGyro,
+                    settings.reverseMagneticZ,
+                    settings.smoothingEnabled,
+                    settings.steadiness,
+                    settings.easeOff,
+                    ::SensorConfig,
+                ),
+            // Core Motion corrects to true north only with the location it may then use.
+            trueNorthAllowed = coreLocation.authorized,
+            active = foreground.isForeground,
         )
 
     /** The app's language, as the catalog reads it; iOS restarts an app whose language changes. */
@@ -118,9 +142,38 @@ class IosAppGraph {
         }
     }
 
+    init {
+        MainScope().launch {
+            foreground.isForeground.collect { if (it) onStart() else locationController.stop() }
+        }
+    }
+
+    /** Android's `MainActivity.onStart` location handling, plus the first-launch prompt. */
+    private suspend fun onStart() {
+        // The user can revoke the permission in Settings while the app is backgrounded.
+        val state = locationController.state.value
+        if (state is LocationState.Confirmed &&
+            state.source == LocationSource.AUTO &&
+            !coreLocation.isAuthorized
+        ) {
+            locationController.onPermissionRevoked()
+        }
+        locationController.start()
+        if (coreLocation.canRequestAuthorization && !settings.noAutoLocate.first()) {
+            if (coreLocation.requestAuthorization()) {
+                locationController.switchToAuto()
+            } else {
+                // iOS never shows the prompt twice: only Settings can grant it now.
+                locationController.onPermissionDenied(canAsk = false)
+            }
+        }
+    }
+
     fun mapViewModel(): MapViewModel =
         MapViewModel(
-            orientationSource = NoOrientationSource,
+            orientationSource = orientationSource,
+            // Core Motion turns to true north itself once location is allowed; until then the
+            // map is uncorrected magnetic north (see CoreMotionOrientationSource).
             declinationSource = ZeroMagneticDeclinationSource,
             locations = locationController.locations,
             settings = settings,
@@ -129,23 +182,4 @@ class IosAppGraph {
             now = timeController::now,
             frameTicker = DisplayLinkFrameTicker(),
         )
-}
-
-/** Phase 4b's stand-in until Core Motion: no sensors, so the map starts in manual mode. */
-private object NoOrientationSource : OrientationSource {
-    override val available = false
-
-    override fun orientations(): Flow<Matrix3> = emptyFlow()
-}
-
-/** Phase 4b's stand-in until Core Location: never available, so the saved or default location. */
-private object NoLocationProvider : LocationProvider {
-    override fun startUpdates(
-        minDistanceMetres: Float,
-        onUpdate: (location: LatLong, accuracyM: Float?) -> Unit,
-    ) = Unit
-
-    override fun stopUpdates() = Unit
-
-    override fun isAvailable() = false
 }

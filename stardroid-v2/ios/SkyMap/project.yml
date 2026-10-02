@@ -31,6 +31,9 @@ targets:
         # A night sky: light status bar text everywhere.
         UIStatusBarStyle: UIStatusBarStyleLightContent
         UIViewControllerBasedStatusBarAppearance: false
+        # The system location prompt's text. Localized with the app's strings in phase 5.
+        NSLocationWhenInUseUsageDescription: >-
+          Sky Map uses your location to show the sky as it looks from where you are.
     preBuildScripts:
       - name: Build SkyMapKit and the catalog (Kotlin)
         basedOnDependencyAnalysis: false

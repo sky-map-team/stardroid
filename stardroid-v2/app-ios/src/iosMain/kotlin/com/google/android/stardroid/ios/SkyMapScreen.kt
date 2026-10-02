@@ -28,7 +28,6 @@ import platform.UIKit.UIViewController
 fun skyMapViewController(): UIViewController {
     val graph = IosAppGraph()
     val map = MapViewController(graph, graph.mapViewModel())
-    graph.locationController.start()
     return ComposeUIViewController { SkyMapScreen(map) }
 }
 

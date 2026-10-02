@@ -31,12 +31,15 @@ import kotlinx.coroutines.launch
 import platform.CoreGraphics.CGPointZero
 import platform.CoreGraphics.CGRectZero
 import platform.CoreGraphics.CGSize
+import platform.Foundation.NSRunLoop
+import platform.Foundation.NSRunLoopCommonModes
 import platform.Foundation.NSSelectorFromString
 import platform.Metal.MTLCommandQueueProtocol
 import platform.Metal.MTLCreateSystemDefaultDevice
 import platform.Metal.MTLPixelFormatBGRA8Unorm
 import platform.MetalKit.MTKView
 import platform.MetalKit.MTKViewDelegateProtocol
+import platform.QuartzCore.CADisplayLink
 import platform.UIKit.UIGestureRecognizer
 import platform.UIKit.UIGestureRecognizerDelegateProtocol
 import platform.UIKit.UIGestureRecognizerStateBegan
@@ -58,7 +61,7 @@ import kotlin.math.min
  *
  * It draws on demand, as Android's surface does (RENDERMODE_WHEN_DIRTY, D23): the view is paused,
  * and redraws only when a scene, the camera or the render state changes, or while a label is still
- * fading. A still sky costs nothing.
+ * fading — at most once per display refresh. A still sky costs nothing.
  */
 @OptIn(ExperimentalForeignApi::class, BetaInteropApi::class)
 class MapViewController(
@@ -72,10 +75,11 @@ class MapViewController(
             device,
             density = UIScreen.mainScreen.scale.toFloat(),
             imageLoader = BundleImageLoader::load,
-            onAnimating = { view.setNeedsDisplay() },
+            onAnimating = { requestFrame() },
         )
     private val drawLoop = DrawLoop(renderer, device.newCommandQueue() ?: error("no command queue"))
     private val gestures = Gestures()
+    private val frames = FrameRequests()
     private val scope = CoroutineScope(SupervisorJob() + Dispatchers.Main)
 
     val viewController: UIViewController = UIViewController()
@@ -83,7 +87,7 @@ class MapViewController(
     init {
         view.colorPixelFormat = MTLPixelFormatBGRA8Unorm
         view.paused = true
-        view.enableSetNeedsDisplay = true
+        view.enableSetNeedsDisplay = false
         view.delegate = drawLoop
         listOf(
             UIPanGestureRecognizer(gestures, NSSelectorFromString("pan:")),
@@ -108,6 +112,39 @@ class MapViewController(
     /** The view's shorter side, which the camera's field of view spans. */
     private fun shortSide(): Int = view.bounds.useContents { min(size.width, size.height).toInt() }
 
+    /** Asks for one frame, drawn at the display's next refresh however many ask before then. */
+    private fun requestFrame() = frames.request()
+
+    /**
+     * Draws a requested frame at the next refresh, once, as Android's GL thread does for
+     * `requestRender`. Drawing at once instead (`setNeedsDisplay`, on the next run-loop turn)
+     * lets a label fade request frames faster than the display shows them, and each extra frame
+     * then blocks the main thread waiting for a free drawable — starving the sensors' updates.
+     */
+    private inner class FrameRequests : NSObject() {
+        private var requested = false
+        private val link =
+            CADisplayLink.displayLinkWithTarget(this, NSSelectorFromString("tick:")).also {
+                it.paused = true
+                it.addToRunLoop(NSRunLoop.mainRunLoop, NSRunLoopCommonModes)
+            }
+
+        fun request() {
+            requested = true
+            link.paused = false
+        }
+
+        @ObjCAction
+        fun tick(displayLink: CADisplayLink) {
+            if (!requested) {
+                link.paused = true
+                return
+            }
+            requested = false
+            view.draw()
+        }
+    }
+
     /** Every change asks the paused view for one frame — iOS's `RenderConnector`. */
     private inner class Redrawing(
         private val renderer: SkyRenderer,
@@ -117,17 +154,17 @@ class MapViewController(
             scene: LayerScene?,
         ) {
             renderer.submit(layerId, scene)
-            view.setNeedsDisplay()
+            requestFrame()
         }
 
         override fun setCamera(camera: SkyCamera) {
             renderer.setCamera(camera)
-            view.setNeedsDisplay()
+            requestFrame()
         }
 
         override fun setRenderState(state: RenderState) {
             renderer.setRenderState(state)
-            view.setNeedsDisplay()
+            requestFrame()
         }
     }
 
