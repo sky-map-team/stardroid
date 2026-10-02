@@ -38,6 +38,7 @@ the two ever drift.
 | [design/localization.md](design/localization.md) | String chunking, v1 translation reuse, and what the Room catalog changes about i18n | undecided; the groundwork half shipped as D78 |
 | [design/ephemeris-accuracy.md](design/ephemeris-accuracy.md) §3 | Replacing the hand-rolled ephemeris with Astronomy Engine | undecided (§1–2 are reference — see below) |
 | [design/satellite-tracking.md](design/satellite-tracking.md) | ISS/satellite tracking — CelesTrak TLEs, SGP4, visible-pass prediction | D92 accepted; phases 1–2 done (D94, D95), phase 3 nearly done (D96, D97). Phases 4–5 not started |
+| [../ios/README.md](../ios/README.md) | Experimental iOS shell — pure modules AOT-compiled with MobiVM/RoboVM, CoreGraphics renderer, `checkRoboVmApi` gate | experiment; runs in the iOS simulator, not yet run on a device |
 | [design/render-gles3.md](design/render-gles3.md) | The GL ES 3.0 backend — parity port, then the sky/horizon/constellation-art/eclipse unlocks | proposed — design only |
 | [design/time-travel.md](design/time-travel.md) | Time-travel redesign — anchors (what stays still), the scrubber and fling-to-play, object trails as a standalone feature, the re-housed player and presets | proposed — D112, D113, D114 |
 

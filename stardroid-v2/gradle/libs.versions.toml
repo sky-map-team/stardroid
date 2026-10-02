@@ -30,6 +30,12 @@ workManager = "2.10.0"
 camerax = "1.4.1"
 
 kotlinxDatetime = "0.6.1"
+
+# iOS shell (:ios) — MobiVM (the maintained RoboVM fork, as used by libGDX)
+robovm = "2.3.26"
+threetenbp = "1.7.4"
+shadow = "9.2.2"
+asm = "9.10.1"
 kotlinxSerialization = "1.7.3"
 hilt = "2.60.1"
 
@@ -53,6 +59,14 @@ room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
 room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
 hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
 hilt-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt" }
+
+# iOS shell (:ios). RoboVM's runtime lacks java.time, which kotlinx-datetime's JVM artifact is
+# built on; ThreeTen-BP relocated to java.time stands in for it on the RoboVM bootclasspath.
+robovm-rt = { group = "com.mobidevelop.robovm", name = "robovm-rt", version.ref = "robovm" }
+robovm-cocoatouch = { group = "com.mobidevelop.robovm", name = "robovm-cocoatouch", version.ref = "robovm" }
+threetenbp = { group = "org.threeten", name = "threetenbp", version.ref = "threetenbp" }
+asm = { group = "org.ow2.asm", name = "asm", version.ref = "asm" }
+asm-tree = { group = "org.ow2.asm", name = "asm-tree", version.ref = "asm" }
 
 # Compose + app UI (versions beyond the BOM's control are pinned above)
 androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
@@ -96,3 +110,5 @@ turbine = { group = "app.cash.turbine", name = "turbine", version.ref = "turbine
 android-application = { id = "com.android.application", version.ref = "agp" }
 android-library = { id = "com.android.library", version.ref = "agp" }
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+robovm = { id = "com.mobidevelop.robovm", version.ref = "robovm" }
+shadow = { id = "com.gradleup.shadow", version.ref = "shadow" }

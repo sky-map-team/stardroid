@@ -13,6 +13,12 @@ val libs = extensions.getByType<VersionCatalogsExtension>().named("libs")
 
 kotlin {
     jvmToolchain(17)
+    compilerOptions {
+        // Pure modules are also AOT-compiled for iOS by RoboVM (:ios), whose runtime has no
+        // java.lang.invoke.StringConcatFactory. Plain StringBuilder concatenation keeps the
+        // bytecode portable; Android's D8 would desugar the indy form anyway, so it costs nothing.
+        freeCompilerArgs.add("-Xstring-concat=inline")
+    }
 }
 
 // Pure-module test stack lives here so every module gets it consistently with no per-module
