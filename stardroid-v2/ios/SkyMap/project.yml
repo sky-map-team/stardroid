@@ -1,0 +1,77 @@
+# XcodeGen spec for the iOS app (iOS port phase 4). The .xcodeproj is generated, not checked in:
+#   (cd ios/SkyMap && xcodegen)
+# Everything but this shell is Kotlin: the app-ios framework (SkyMapKit) and the shared modules.
+name: SkyMap
+options:
+  bundleIdPrefix: com.penterakt.skymap
+  deploymentTarget:
+    iOS: "16.0"
+targets:
+  SkyMap:
+    type: application
+    platform: iOS
+    sources:
+      - Sources
+      # The renderer's images, copied as Android packages them so the keys map to the same paths.
+      - path: ../../app/src/main/assets/planets
+        type: folder
+        buildPhase: resources
+      - path: ../../app/src/main/assets/catalog
+        type: folder
+        buildPhase: resources
+      # The catalog, generated from source-data/ by the pre-build step (never checked in).
+      - path: ../../data/build/generated/assets/generateCatalogDb/skymap.db
+        buildPhase: resources
+        optional: true
+    info:
+      path: Info.plist
+      properties:
+        # Compose Multiplatform refuses to start without it (it needs 120 Hz on ProMotion).
+        CADisableMinimumFrameDurationOnPhone: true
+        # A night sky: light status bar text everywhere.
+        UIStatusBarStyle: UIStatusBarStyleLightContent
+        UIViewControllerBasedStatusBarAppearance: false
+    preBuildScripts:
+      - name: Build SkyMapKit and the catalog (Kotlin)
+        basedOnDependencyAnalysis: false
+        script: |
+          cd "$SRCROOT/../.."
+          export JAVA_HOME="${JAVA_HOME:-$(/usr/libexec/java_home -v 17)}"
+          ./gradlew :data:generateCatalogDb :app-ios:embedAndSignAppleFrameworkForXcode
+    settings:
+      base:
+        # .dev: development builds register their bundle ID to the signing team, and bundle IDs
+        # are unique across Apple, so a dev build must never claim the App Store app's ID.
+        PRODUCT_BUNDLE_IDENTIFIER: com.penterakt.skymap.dev
+        MARKETING_VERSION: "0.1"
+        CURRENT_PROJECT_VERSION: "1"
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_KEY_CFBundleDisplayName: Sky Map
+        INFOPLIST_KEY_UILaunchScreen_Generation: YES
+        INFOPLIST_KEY_UIApplicationSceneManifest_Generation: YES
+        INFOPLIST_KEY_UISupportedInterfaceOrientations: UIInterfaceOrientationPortrait
+        FRAMEWORK_SEARCH_PATHS: $(SRCROOT)/../../app-ios/build/xcode-frameworks/$(CONFIGURATION)/$(SDK_NAME)
+        OTHER_LDFLAGS: -framework SkyMapKit -framework Metal -framework MetalKit
+        ENABLE_USER_SCRIPT_SANDBOXING: NO
+        SWIFT_VERSION: "5.0"
+  SkyMapUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - UITests
+    dependencies:
+      - target: SkyMap
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
+        PRODUCT_BUNDLE_IDENTIFIER: com.penterakt.skymap.dev.uitests
+        SWIFT_VERSION: "5.0"
+schemes:
+  SkyMap:
+    build:
+      targets:
+        SkyMap: all
+        SkyMapUITests: [test]
+    test:
+      targets:
+        - SkyMapUITests

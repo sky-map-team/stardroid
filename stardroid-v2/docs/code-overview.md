@@ -59,7 +59,7 @@ no longer applies.
 
 ## 2. Module graph and build structure
 
-Nineteen Gradle modules (`settings.gradle.kts`), split hard into **pure Kotlin** (no Android SDK
+Twenty Gradle modules (`settings.gradle.kts`), split hard into **pure Kotlin** (no Android SDK
 on the classpath — `import android.*` is a compile error) and **Android**. The pure modules
 other than the JVM tools are Kotlin Multiplatform (JVM + iOS), shared with the iOS port, as are
 `:data` and the `:shared:*` modules — the app's middle layer, moving out of `:app` in iOS port
@@ -83,6 +83,7 @@ phase 3:
 | `:shared:layers` | KMP (Android + iOS) | 2,521 / 2,291 | The sky layers and `LayerRegistry`: catalog, ephemeris, clock and settings → `LayerScene`s (layers-and-app.md); `RenderBinder` feeds them, the camera and the render state into a `SkyRenderer` |
 | `:shared:testing` | pure (test support) | 541 / — | Fakes of the shared interfaces (`FakeSettings`, `FakeStartupState`, `FakeAnalytics`, `FakeLocationProvider`, `FakeSensorStatusSource`, `FakeCatalogRepository`) for `:shared` and `:app` tests |
 | `:shared:viewmodels` | KMP (Android + iOS) | 4,208 / 4,820 | The screens' ViewModels (map, search, time travel, layers, location, object info, settings, startup, calibration, diagnostics) on androidx.lifecycle's multiplatform `ViewModel`, with the state and geometry they compute |
+| `:app-ios` | iOS app (Compose Multiplatform) | 556 / — | The iOS app's Kotlin: the app graph, the iOS edges (bundle, display link, later Core Motion/Location) and the UI root, as the `SkyMapKit` framework `ios/SkyMap` hosts |
 | `:app` | Android app | 18,001 / 1,717 | The Compose UI over `:shared:viewmodels`, and the Android edges: Hilt wiring, sensors, location, DataStore, Firebase, widgets, notifications |
 | `:konsist` | test-only | — | Architecture gate (D20) |
 
