@@ -101,12 +101,8 @@ class SkyMapApplication : Application(), ImageLoaderFactory {
         // moves on rather than set once and forgotten. Cancelling when the opt-in goes off is
         // what stops an already-armed alarm interrupting someone who just said no.
         CoroutineScope(SupervisorJob() + Dispatchers.Default).launch {
-            settings
-                .layerParameter(
-                    SatelliteLayer.LAYER_ID,
-                    LayerParameter.PASS_ALERTS,
-                    false.toString(),
-                ).map { it.toBoolean() }
+            // Includes the Satellites layer being on, so switching the layer off cancels the alarm.
+            settings.passAlertsEnabled
                 .distinctUntilChanged()
                 .collect { wanted ->
                     if (!wanted || !experimentConfig.isEnabled(Experiment.NOTIFICATIONS)) {
