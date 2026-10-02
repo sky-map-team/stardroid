@@ -17,7 +17,7 @@ turbine = "1.1.0"
 androidxTestRunner = "1.6.2"
 androidxTestExtJunit = "1.2.1"
 
-composeBom = "2024.09.03"
+composeBom = "2025.10.01"
 firebaseBom = "33.7.0"
 playServicesLocation = "21.3.0"
 activityCompose = "1.9.2"
@@ -71,6 +71,8 @@ cmp-material3 = { group = "org.jetbrains.compose.material3", name = "material3",
 # Compose + app UI (versions beyond the BOM's control are pinned above)
 androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
 androidx-compose-material3 = { group = "androidx.compose.material3", name = "material3" }
+# Material3 stopped depending on the icons in 1.4; the app uses only the core set.
+androidx-compose-material-icons-core = { group = "androidx.compose.material", name = "material-icons-core" }
 androidx-compose-ui = { group = "androidx.compose.ui", name = "ui" }
 androidx-compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
 androidx-compose-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
