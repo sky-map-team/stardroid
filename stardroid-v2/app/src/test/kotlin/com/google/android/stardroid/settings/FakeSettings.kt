@@ -255,6 +255,14 @@ class FakeSettings : Settings {
         tonightDigestEnabledState.value = enabled
     }
 
+    val announcementsEnabledState = MutableStateFlow(true)
+
+    override val announcementsEnabled: Flow<Boolean> = announcementsEnabledState
+
+    override suspend fun setAnnouncementsEnabled(enabled: Boolean) {
+        announcementsEnabledState.value = enabled
+    }
+
     val satelliteDataEnabledState = MutableStateFlow(false)
 
     override val satelliteDataEnabled: Flow<Boolean> = satelliteDataEnabledState

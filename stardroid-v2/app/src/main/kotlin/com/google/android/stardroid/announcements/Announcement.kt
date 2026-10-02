@@ -34,6 +34,11 @@ sealed interface AnnouncementAction {
 
     /** Open the map on the named object's info card. */
     data class Search(val query: String) : AnnouncementAction
+
+    companion object {
+        /** Intent extra carrying a [Search] query from a notification or widget tap to the map. */
+        const val EXTRA_SEARCH_QUERY = "com.google.android.stardroid.EXTRA_ANNOUNCEMENT_SEARCH"
+    }
 }
 
 data class AnnouncementText(val title: String, val body: String)

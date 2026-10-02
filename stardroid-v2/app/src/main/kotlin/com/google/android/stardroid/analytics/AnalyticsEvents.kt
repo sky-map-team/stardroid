@@ -89,6 +89,12 @@ object AnalyticsEvents {
     const val WIDGET_REMOVED_EVENT = "widget_removed_ev"
     const val WIDGET_PIN_REQUESTED_EVENT = "widget_pin_requested_ev"
     const val WIDGET_TYPE = "widget"
+
+    // Remote announcements: shown fires once per message per interruptive surface.
+    const val ANNOUNCEMENT_SHOWN_EVENT = "announcement_shown_ev"
+    const val ANNOUNCEMENT_DISMISSED_EVENT = "announcement_dismissed_ev"
+    const val ANNOUNCEMENT_ID = "announcement_id"
+    const val ANNOUNCEMENT_SURFACE = "announcement_surface"
     const val WIDGET_TYPE_MOON = "moon"
     const val WIDGET_TYPE_TONIGHT = "tonight"
     const val WIDGET_TYPE_COUNTDOWN = "countdown"

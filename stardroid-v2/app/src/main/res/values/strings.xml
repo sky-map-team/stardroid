@@ -640,6 +640,12 @@ readings to Sky Map.</blockquote>
     <string name="settings_eclipse_alerts_summary" translation_description="Explanation of the lunar-eclipse notification preference">A single alert before a lunar eclipse begins</string>
     <string name="settings_pass_alerts" translation_description="Preference title: notify shortly before a satellite passes overhead">Satellite passes</string>
     <string name="settings_pass_alerts_summary" translation_description="Explanation of the satellite-pass notification preference">A single alert before the best visible pass of the night</string>
+    <string name="settings_announcements" translation_description="Preference title: occasional messages from the Sky Map team about rare sky events, shown as a notification, in the widget and when the app opens">Messages from Sky Map</string>
+    <string name="settings_announcements_summary" translation_description="Explanation of the announcements preference">Rare heads-ups such as a strong aurora or a bright planet. Shown as a notification, in the Sky Tonight widget, or when you open the app.</string>
+    <string name="channel_announcements_name" translation_description="Notification channel name for occasional messages from the Sky Map team">Messages from Sky Map</string>
+    <string name="channel_announcements_description" translation_description="Notification channel description for occasional messages from the Sky Map team">Rare heads-ups about notable sky events</string>
+    <string name="announcement_dialog_dismiss" translation_description="Button that closes an announcement dialog and hides that message everywhere">Dismiss</string>
+    <string name="announcement_dialog_open" translation_description="Button on an announcement dialog that opens the sky map">Take a look</string>
     <string name="settings_tonight_digest" translation_description="Preference title: a single evening notification summarizing what\'s visible tonight">Tonight\'s sky digest</string>
     <string name="settings_tonight_digest_summary" translation_description="Explanation of the tonight-digest notification preference">One summary after sunset, skipped on quiet nights</string>
     <string name="settings_notifications_blocked" translation_description="Warning row shown when the user enabled notifications in the app but blocked them at the system level">Notifications are blocked for Sky Map</string>
