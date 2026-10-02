@@ -54,6 +54,8 @@ import com.google.android.stardroid.satellites.forceSatelliteFetchForDebugging
 import com.google.android.stardroid.satellites.readSatelliteDiagnostics
 import com.google.android.stardroid.sensors.SensorAccuracy
 import com.google.android.stardroid.sensors.SensorKind
+import com.google.android.stardroid.startup.Experiment
+import com.google.android.stardroid.startup.ExperimentConfig
 import com.google.android.stardroid.ui.common.topBarWindowInsets
 import com.google.android.stardroid.ui.theme.StatusColors
 import com.google.android.stardroid.ui.theme.statusColors
@@ -81,6 +83,7 @@ fun DiagnosticsScreen(
     viewModel: DiagnosticsViewModel,
     nightMode: Boolean,
     satellitesEnabled: Boolean,
+    experimentConfig: ExperimentConfig,
     onBack: () -> Unit,
 ) {
     BackHandler(onBack = onBack)
@@ -103,6 +106,7 @@ fun DiagnosticsScreen(
             add(locationAndTimeSection(snapshot, colors))
             add(networkSection(snapshot))
             satelliteState?.let { add(satelliteSection(it)) }
+            add(experimentsSection(experimentConfig))
         }
     val reportHeader = stringResource(R.string.diagnostics_report_header)
     val reportSubject = stringResource(R.string.diagnostics_share_subject)
@@ -524,6 +528,18 @@ private fun satelliteSection(state: SatelliteDiagnosticsState): DiagnosticsSecti
     }
     return DiagnosticsSection(stringResource(R.string.diagnostics_section_satellites), rows)
 }
+
+/**
+ * The current value of every [Experiment] flag as the app is reading it — Remote Config on gms,
+ * the shipped defaults on fdroid. Read once per composition: the values only change when a
+ * fetch is activated, which is not worth polling for.
+ */
+@Composable
+private fun experimentsSection(config: ExperimentConfig): DiagnosticsSection =
+    DiagnosticsSection(
+        stringResource(R.string.diagnostics_section_experiments),
+        Experiment.entries.map { DiagnosticsRow(it.key, config.isEnabled(it).toString()) },
+    )
 
 @Composable
 private fun SectionHeader(title: String) {
