@@ -19,10 +19,6 @@ import androidx.datastore.preferences.core.intPreferencesKey
 import androidx.datastore.preferences.core.longPreferencesKey
 import androidx.datastore.preferences.core.stringPreferencesKey
 import com.google.android.stardroid.astronomy.ViewDirectionMode
-import com.google.android.stardroid.layers.LayerParameter
-import com.google.android.stardroid.layers.MeteorShowerLayer
-import com.google.android.stardroid.layers.SatelliteLayer
-import com.google.android.stardroid.layers.SolarSystemLayer
 import com.google.android.stardroid.math.LatLong
 import com.google.android.stardroid.render.api.LayerId
 import kotlinx.coroutines.flow.Flow
@@ -232,53 +228,6 @@ class DataStoreSettings(
 
     override suspend fun setLastCalibrationWarningMillis(timeMillis: Long) {
         dataStore.edit { it[LAST_CALIBRATION_WARNING] = timeMillis }
-    }
-
-    // The Meteor showers layer's alert toggle is the single source of truth, so the Layers
-    // sheet and Settings → Notifications can never disagree.
-    override val showerAlertsEnabled: Flow<Boolean> =
-        layerParameter(
-            MeteorShowerLayer.LAYER_ID,
-            LayerParameter.SHOWER_ALERTS,
-            LayerParameter.SHOWER_ALERTS_PARAMETER.defaultValue,
-        ).map { it.toBoolean() }
-
-    override suspend fun setShowerAlertsEnabled(enabled: Boolean) {
-        setLayerParameter(
-            MeteorShowerLayer.LAYER_ID,
-            LayerParameter.SHOWER_ALERTS,
-            enabled.toString(),
-        )
-    }
-
-    override val passAlertsEnabled: Flow<Boolean> =
-        layerParameter(
-            SatelliteLayer.LAYER_ID,
-            LayerParameter.PASS_ALERTS,
-            LayerParameter.PASS_ALERTS_PARAMETER.defaultValue,
-        ).map { it.toBoolean() }
-
-    override suspend fun setPassAlertsEnabled(enabled: Boolean) {
-        setLayerParameter(
-            SatelliteLayer.LAYER_ID,
-            LayerParameter.PASS_ALERTS,
-            enabled.toString(),
-        )
-    }
-
-    override val eclipseAlertsEnabled: Flow<Boolean> =
-        layerParameter(
-            SolarSystemLayer.LAYER_ID,
-            LayerParameter.ECLIPSE_ALERTS,
-            LayerParameter.ECLIPSE_ALERTS_PARAMETER.defaultValue,
-        ).map { it.toBoolean() }
-
-    override suspend fun setEclipseAlertsEnabled(enabled: Boolean) {
-        setLayerParameter(
-            SolarSystemLayer.LAYER_ID,
-            LayerParameter.ECLIPSE_ALERTS,
-            enabled.toString(),
-        )
     }
 
     override val satelliteDataEnabled: Flow<Boolean> =

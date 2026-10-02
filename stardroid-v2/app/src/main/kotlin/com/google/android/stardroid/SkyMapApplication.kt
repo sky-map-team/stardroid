@@ -109,7 +109,7 @@ class SkyMapApplication : Application(), ImageLoaderFactory {
                 ).map { it.toBoolean() }
                 .distinctUntilChanged()
                 .collect { wanted ->
-                    if (!wanted) {
+                    if (!wanted || !experimentConfig.isEnabled(Experiment.NOTIFICATIONS)) {
                         PassAlerts.cancel(this@SkyMapApplication)
                         return@collect
                     }

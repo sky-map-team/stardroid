@@ -10,10 +10,6 @@
 package com.google.android.stardroid.settings
 
 import com.google.android.stardroid.astronomy.ViewDirectionMode
-import com.google.android.stardroid.layers.LayerParameter
-import com.google.android.stardroid.layers.MeteorShowerLayer
-import com.google.android.stardroid.layers.SatelliteLayer
-import com.google.android.stardroid.layers.SolarSystemLayer
 import com.google.android.stardroid.math.LatLong
 import com.google.android.stardroid.render.api.LayerId
 import com.google.android.stardroid.settings.OneEuroEaseOff
@@ -249,51 +245,6 @@ class FakeSettings : Settings {
 
     override suspend fun setEnableAnalytics(enabled: Boolean) {
         enableAnalyticsState.value = enabled
-    }
-
-    override val showerAlertsEnabled: Flow<Boolean> =
-        layerParameter(
-            MeteorShowerLayer.LAYER_ID,
-            LayerParameter.SHOWER_ALERTS,
-            LayerParameter.SHOWER_ALERTS_PARAMETER.defaultValue,
-        ).map { it.toBoolean() }
-
-    override suspend fun setShowerAlertsEnabled(enabled: Boolean) {
-        setLayerParameter(
-            MeteorShowerLayer.LAYER_ID,
-            LayerParameter.SHOWER_ALERTS,
-            enabled.toString(),
-        )
-    }
-
-    override val passAlertsEnabled: Flow<Boolean> =
-        layerParameter(
-            SatelliteLayer.LAYER_ID,
-            LayerParameter.PASS_ALERTS,
-            LayerParameter.PASS_ALERTS_PARAMETER.defaultValue,
-        ).map { it.toBoolean() }
-
-    override suspend fun setPassAlertsEnabled(enabled: Boolean) {
-        setLayerParameter(
-            SatelliteLayer.LAYER_ID,
-            LayerParameter.PASS_ALERTS,
-            enabled.toString(),
-        )
-    }
-
-    override val eclipseAlertsEnabled: Flow<Boolean> =
-        layerParameter(
-            SolarSystemLayer.LAYER_ID,
-            LayerParameter.ECLIPSE_ALERTS,
-            LayerParameter.ECLIPSE_ALERTS_PARAMETER.defaultValue,
-        ).map { it.toBoolean() }
-
-    override suspend fun setEclipseAlertsEnabled(enabled: Boolean) {
-        setLayerParameter(
-            SolarSystemLayer.LAYER_ID,
-            LayerParameter.ECLIPSE_ALERTS,
-            enabled.toString(),
-        )
     }
 
     val tonightDigestEnabledState = MutableStateFlow(false)

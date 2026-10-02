@@ -277,6 +277,8 @@ private fun NotificationsSection(
         }
     }
 
+    val anyAlertOn =
+        state.showerAlerts || state.eclipseAlerts || state.passAlerts || state.tonightDigest
     SectionHeader(R.string.settings_section_notifications)
     Text(
         stringResource(R.string.settings_notifications_intro),
@@ -310,12 +312,7 @@ private fun NotificationsSection(
         checked = state.tonightDigest,
         onCheckedChange = { toggle(viewModel::setTonightDigest, it) },
     )
-    if ((
-            state.showerAlerts ||
-                state.eclipseAlerts ||
-                state.passAlerts ||
-                state.tonightDigest
-        ) &&
+    if (anyAlertOn &&
         !NotificationManagerCompat.from(context).areNotificationsEnabled()
     ) {
         Row(
