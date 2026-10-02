@@ -351,6 +351,14 @@ interface Settings {
     suspend fun setTonightDigestEnabled(enabled: Boolean)
 
     /**
+     * Messages from the Sky Map team (remote announcements) on every surface — notification,
+     * widget banner and launch dialog. On by default, since they are rare; this is the opt-out.
+     */
+    val announcementsEnabled: Flow<Boolean>
+
+    suspend fun setAnnouncementsEnabled(enabled: Boolean)
+
+    /**
      * Consent to fetch satellite element sets from CelesTrak (D92).
      *
      * Not the same act as wanting to *see* the satellite layer — a user can have the feature and

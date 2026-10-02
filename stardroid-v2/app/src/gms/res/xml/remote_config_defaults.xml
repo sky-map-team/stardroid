@@ -26,4 +26,10 @@
         <key>satellites_enabled</key>
         <value>false</value>
     </entry>
+    <entry>
+        <key>announcements_enabled</key>
+        <value>false</value>
+    </entry>
+    <!-- The "announcements" JSON parameter deliberately has no default: it is not an
+         Experiment, and an absent key reads as the empty string, i.e. no messages. -->
 </defaultsMap>

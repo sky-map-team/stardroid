@@ -35,6 +35,12 @@ enum class Experiment(val key: String) {
      * if our traffic ever looks wrong.
      */
     SATELLITES("satellites_enabled"),
+
+    /**
+     * Remotely authored announcements on the notification, widget and interstitial surfaces
+     * (docs/design/remote-announcements.md). The kill switch for the whole feature.
+     */
+    ANNOUNCEMENTS("announcements_enabled"),
 }
 
 /**
@@ -56,6 +62,7 @@ fun interface ExperimentConfig {
                     Experiment.CAMERA_AR -> false
                     Experiment.SHARE_SKY -> false
                     Experiment.SATELLITES -> false
+                    Experiment.ANNOUNCEMENTS -> false
                 }
             }
     }
