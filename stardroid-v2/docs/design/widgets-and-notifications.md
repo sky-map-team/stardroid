@@ -143,6 +143,16 @@ surfaces):
 Material You dynamic color, night-mode red-shifting, widget resizing, the events engine,
 any notification code. All recorded as open questions in the mockup.
 
+## Shower alerts in the Layers sheet
+
+The shower-peak alert is also a `LayerParameter.Toggle` ("Peak alerts") on the Meteor showers
+layer, like satellite pass alerts and eclipse alerts. The layer parameter is the single source
+of truth: `Settings.showerAlertsEnabled` reads and writes it, so Settings → Notifications and
+the Layers sheet always agree. The old `shower_alerts_enabled` DataStore key was dropped
+(nothing had shipped with it). Help gains a Notifications section, hidden while the
+`NOTIFICATIONS` experiment is off (`helpDocument(experimentConfig)`), with a
+`skymap://settings` deep link.
+
 ## Open questions
 
 Carried in the mockup's "Open questions for the decision log" section; none block

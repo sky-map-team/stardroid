@@ -10,9 +10,15 @@
 package com.google.android.stardroid.settings
 
 import com.google.android.stardroid.astronomy.ViewDirectionMode
+import com.google.android.stardroid.layers.LayerParameter
+import com.google.android.stardroid.layers.MeteorShowerLayer
+import com.google.android.stardroid.layers.SatelliteLayer
+import com.google.android.stardroid.layers.SolarSystemLayer
 import com.google.android.stardroid.math.LatLong
 import com.google.android.stardroid.render.api.LayerId
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.map
 
 /**
  * Sky-label size (v1's `font_size`); [scale] feeds `RenderState.labelScaleFactor` (D18).
@@ -279,8 +285,65 @@ interface Settings {
 
     /** Meteor-shower peak notifications (D77). Off until the user opts in — quiet by default. */
     val showerAlertsEnabled: Flow<Boolean>
+        get() =
+            layerParameter(
+                MeteorShowerLayer.LAYER_ID,
+                LayerParameter.SHOWER_ALERTS,
+                LayerParameter.SHOWER_ALERTS_PARAMETER.defaultValue,
+            ).map { it.toBoolean() }
 
-    suspend fun setShowerAlertsEnabled(enabled: Boolean)
+    suspend fun setShowerAlertsEnabled(enabled: Boolean) =
+        setLayerParameter(
+            MeteorShowerLayer.LAYER_ID,
+            LayerParameter.SHOWER_ALERTS,
+            enabled.toString(),
+        )
+
+    /**
+     * The lunar-eclipse reminder (D106), backed by the Solar System layer's alert toggle so the
+     * Layers sheet and Settings agree. Off until the user opts in.
+     */
+    val eclipseAlertsEnabled: Flow<Boolean>
+        get() =
+            layerParameter(
+                SolarSystemLayer.LAYER_ID,
+                LayerParameter.ECLIPSE_ALERTS,
+                LayerParameter.ECLIPSE_ALERTS_PARAMETER.defaultValue,
+            ).map { it.toBoolean() }
+
+    suspend fun setEclipseAlertsEnabled(enabled: Boolean) =
+        setLayerParameter(
+            SolarSystemLayer.LAYER_ID,
+            LayerParameter.ECLIPSE_ALERTS,
+            enabled.toString(),
+        )
+
+    /**
+     * Satellite pass alerts (D92), backed by the Satellites layer's alert toggle so the Layers
+     * sheet and Settings agree. Off until the user opts in.
+     */
+    val passAlertsEnabled: Flow<Boolean>
+        get() =
+            // Mirrors the runtime gate (`passAlertsEnabled(context)`): with the Satellites layer
+            // off no alert fires, so the row must not claim it is on.
+            combine(
+                layerEnabled(SatelliteLayer.LAYER_ID),
+                layerParameter(
+                    SatelliteLayer.LAYER_ID,
+                    LayerParameter.PASS_ALERTS,
+                    LayerParameter.PASS_ALERTS_PARAMETER.defaultValue,
+                ).map { it.toBoolean() },
+            ) { layerOn, alerts -> layerOn && alerts }
+
+    /** Turning alerts on also turns the Satellites layer on, since nothing fires without it. */
+    suspend fun setPassAlertsEnabled(enabled: Boolean) {
+        if (enabled) setLayerEnabled(SatelliteLayer.LAYER_ID, true)
+        setLayerParameter(
+            SatelliteLayer.LAYER_ID,
+            LayerParameter.PASS_ALERTS,
+            enabled.toString(),
+        )
+    }
 
     /** The tonight's-sky digest notification (D77). Off until the user opts in. */
     val tonightDigestEnabled: Flow<Boolean>

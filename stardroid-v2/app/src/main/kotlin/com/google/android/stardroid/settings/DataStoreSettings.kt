@@ -230,13 +230,6 @@ class DataStoreSettings(
         dataStore.edit { it[LAST_CALIBRATION_WARNING] = timeMillis }
     }
 
-    override val showerAlertsEnabled: Flow<Boolean> =
-        boolean(SHOWER_ALERTS_ENABLED, default = false)
-
-    override suspend fun setShowerAlertsEnabled(enabled: Boolean) {
-        dataStore.edit { it[SHOWER_ALERTS_ENABLED] = enabled }
-    }
-
     override val satelliteDataEnabled: Flow<Boolean> =
         boolean(SATELLITE_DATA_ENABLED, default = satelliteDataDefault)
 
@@ -362,7 +355,6 @@ class DataStoreSettings(
 
         private val ENABLE_ANALYTICS = booleanPreferencesKey("enable_analytics")
 
-        private val SHOWER_ALERTS_ENABLED = booleanPreferencesKey("shower_alerts_enabled")
         private val SATELLITE_DATA_ENABLED = booleanPreferencesKey("satellite_data_enabled")
 
         private val TONIGHT_DIGEST_ENABLED = booleanPreferencesKey("tonight_digest_enabled")
