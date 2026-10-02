@@ -143,12 +143,6 @@ fun SettingsScreen(
                     label = { autoDimnessLabel(it) },
                     onSelect = viewModel::setAutoDimness,
                 )
-                SwitchRow(
-                    title = stringResource(R.string.settings_sky_gradient),
-                    summary = stringResource(R.string.settings_sky_gradient_summary),
-                    checked = state.showSkyGradient,
-                    onCheckedChange = viewModel::setShowSkyGradient,
-                )
 
                 SectionHeader(R.string.settings_section_sensors)
                 SwitchRow(

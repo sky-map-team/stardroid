@@ -332,8 +332,6 @@
     <string name="settings_auto_dimness_system" translation_description="Screen dimming option: leave brightness on the system setting">系统默认</string>
     <string name="settings_auto_dimness_dim" translation_description="Screen dimming option: dimmest screen setting">最暗</string>
     <string name="settings_auto_dimness_classic" translation_description="Screen dimming option: the hand-tuned brightness Sky Map used for its first 15 years">经典</string>
-    <string name="settings_sky_gradient">显示天空渐变</string>
-    <string name="settings_sky_gradient_summary">在太阳附近将天空着色为蓝色，在相反方向着色为深色</string>
     <string name="settings_disable_gyro" translation_description="Preference title for switching from the gyroscope to the legacy compass + accelerometer sensor pipeline">使用旧版传感器</string>
     <string name="settings_disable_gyro_summary" translation_description="Explanation of the legacy sensors preference and when to use it">使用指南针和加速计（而非陀螺仪）来指向地图。如果地图漂移或您设备的陀螺仪出现异常，请尝试此选项；没有陀螺仪的设备会自动使用这些传感器。</string>
     <string name="settings_classic_sensors_only" translation_description="Summary noting a sensor preference only applies to the legacy non-gyroscope sensor path">仅在使用旧版传感器时适用</string>

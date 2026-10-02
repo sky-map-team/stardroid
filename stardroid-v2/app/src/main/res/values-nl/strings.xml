@@ -338,10 +338,6 @@
     <string name="settings_auto_dimness_system" translation_description="Screen dimming option: leave brightness on the system setting">Systeemstandaard</string>
     <string name="settings_auto_dimness_dim" translation_description="Screen dimming option: dimmest screen setting">Zeer gedimd</string>
     <string name="settings_auto_dimness_classic" translation_description="Screen dimming option: the hand-tuned brightness Sky Map used for its first 15 years">Klassiek</string>
-    <string name="settings_sky_gradient">Luchtverloop weergeven</string>
-    <string name="settings_sky_gradient_summary">
-    Geeft de lucht een blauwe tint nabij de zon en donker aan de tegenovergestelde zijde
-    </string>
     <string name="settings_disable_gyro" translation_description="Preference title for switching from the gyroscope to the legacy compass + accelerometer sensor pipeline">Gebruik oudere sensoren</string>
     <string name="settings_disable_gyro_summary" translation_description="Explanation of the legacy sensors preference and when to use it">
     Richting geven aan de kaart met het kompas en de versnellingsmeter in plaats van de gyroscoop. Probeer dit als de kaart afdrijft of als de gyroscoop van je apparaat hapert; apparaten zonder gyroscoop gebruiken deze sensoren automatisch.

@@ -347,8 +347,6 @@ cael ei osod.
     <string name="settings_auto_dimness_system" translation_description="Screen dimming option: leave brightness on the system setting">Rhagosodiad System</string>
     <string name="settings_auto_dimness_dim" translation_description="Screen dimming option: dimmest screen setting">Pylu Iawn</string>
     <string name="settings_auto_dimness_classic" translation_description="Screen dimming option: the hand-tuned brightness Sky Map used for its first 15 years">Clasurol</string>
-    <string name="settings_sky_gradient">Dangos graddiant yr awyr</string>
-    <string name="settings_sky_gradient_summary">Yn liwio\'r awyr yn las ger yr Haul ac yn dywyll ar yr ochr arall</string>
     <string name="settings_disable_gyro" translation_description="Preference title for switching from the gyroscope to the legacy compass + accelerometer sensor pipeline">Defnyddio hen synwyryddion</string>
     <string name="settings_disable_gyro_summary" translation_description="Explanation of the legacy sensors preference and when to use it">Cyfeiriwch y map gan ddefnyddio\'r cwmpawd a\'r cyflymromedr yn lle\'r gyrosgop. Rhowch gynnig ar hyn os yw\'r map yn drifftio neu os yw gyrosgop eich dyfais yn camweithio; mae dyfeisiau heb gyrosgop yn defnyddio\'r synwyryddion hyn yn awtomatig.</string>
     <string name="settings_classic_sensors_only" translation_description="Summary noting a sensor preference only applies to the legacy non-gyroscope sensor path">Dim ond yn berthnasol pan fydd hen synwyryddion yn cael eu defnyddio</string>

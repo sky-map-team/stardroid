@@ -36,7 +36,6 @@ data class SettingsUiState(
     val autoLevelHorizon: Boolean = true,
     val fontSize: FontSize = FontSize.MEDIUM,
     val autoDimness: AutoDimness = AutoDimness.SYSTEM,
-    val showSkyGradient: Boolean = true,
     val disableGyro: Boolean = false,
     val smoothingEnabled: Boolean = true,
     val steadiness: OneEuroSteadiness = OneEuroSteadiness.HIGH,
@@ -65,7 +64,6 @@ private data class ControlsPrefs(
 private data class AppearancePrefs(
     val fontSize: FontSize,
     val autoDimness: AutoDimness,
-    val showSkyGradient: Boolean,
 )
 
 private data class SensorPrefs(
@@ -143,7 +141,6 @@ class SettingsViewModel(
             combine(
                 settings.fontSize,
                 settings.autoDimness,
-                settings.showSkyGradient,
                 ::AppearancePrefs,
             ),
             combine(
@@ -174,7 +171,6 @@ class SettingsViewModel(
                 autoLevelHorizon = controls.autoLevelHorizon,
                 fontSize = appearance.fontSize,
                 autoDimness = appearance.autoDimness,
-                showSkyGradient = appearance.showSkyGradient,
                 disableGyro = sensors.disableGyro,
 
                 reverseMagneticZ = sensors.reverseMagneticZ,
@@ -215,11 +211,6 @@ class SettingsViewModel(
     fun setAutoDimness(dimness: AutoDimness) {
         trackChange("auto_dimness", dimness)
         viewModelScope.launch { settings.setAutoDimness(dimness) }
-    }
-
-    fun setShowSkyGradient(enabled: Boolean) {
-        trackChange("show_sky_gradient", enabled)
-        viewModelScope.launch { settings.setShowSkyGradient(enabled) }
     }
 
     fun setDisableGyro(enabled: Boolean) {

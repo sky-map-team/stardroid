@@ -342,8 +342,6 @@
     <string name="settings_auto_dimness_system" translation_description="Screen dimming option: leave brightness on the system setting">پیش‌فرض سیستم</string>
     <string name="settings_auto_dimness_dim" translation_description="Screen dimming option: dimmest screen setting">بسیار کم‌نور</string>
     <string name="settings_auto_dimness_classic" translation_description="Screen dimming option: the hand-tuned brightness Sky Map used for its first 15 years">کلاسیک</string>
-    <string name="settings_sky_gradient">نمایش گرادیان آسمان</string>
-    <string name="settings_sky_gradient_summary">آسمان را نزدیک خورشید آبی و در طرف مقابل تیره رنگ می‌کند</string>
     <string name="settings_disable_gyro" translation_description="Preference title for switching from the gyroscope to the legacy compass + accelerometer sensor pipeline">استفاده از حسگرهای قدیمی</string>
     <string name="settings_disable_gyro_summary" translation_description="Explanation of the legacy sensors preference and when to use it">
     نقشه را با استفاده از قطب‌نما و شتاب‌سنج به جای ژیروسکوپ جهت‌دهی کنید. اگر نقشه منحرف می‌شود یا ژیروسکوپ دستگاه شما درست کار نمی‌کند، این گزینه را امتحان کنید؛ دستگاه‌هایی که ژیروسکوپ ندارند به طور خودکار از این حسگرها استفاده می‌کنند.
