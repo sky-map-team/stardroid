@@ -16,13 +16,13 @@ import com.google.android.stardroid.render.api.LayerScene
 import com.google.android.stardroid.render.api.RenderState
 import com.google.android.stardroid.render.api.SkyCamera
 import com.google.android.stardroid.render.api.SkyRenderer
-import com.google.common.truth.Truth.assertThat
+import com.google.android.stardroid.testing.assertThat
 import kotlinx.coroutines.cancelChildren
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.test.runTest
-import org.junit.jupiter.api.Test
+import kotlin.test.Test
 
 class RenderBinderTest {
     private class RecordingRenderer : SkyRenderer {
@@ -75,7 +75,7 @@ class RenderBinderTest {
         }
 
     @Test
-    fun `disabling submits null and stops collection, re-enabling restarts the flow`() =
+    fun `disabling submits null and stops collection - re-enabling restarts the flow`() =
         runTest {
             val enabled = MutableStateFlow(true)
             binder.bindLayer(backgroundScope, layer) { enabled }
@@ -97,7 +97,7 @@ class RenderBinderTest {
         }
 
     @Test
-    fun `layer disabled from the start submits null, never subscribes`() =
+    fun `layer disabled from the start submits null - never subscribes`() =
         runTest {
             val enabled = MutableStateFlow(false)
             binder.bindLayer(backgroundScope, layer) { enabled }

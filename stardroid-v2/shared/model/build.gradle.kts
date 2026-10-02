@@ -19,6 +19,9 @@ kotlin {
             api(project(":core:math"))
             api(project(":render:api"))
             api(libs.kotlinx.coroutines.core)
+            // DataStoreSettings and DataStoreStartupState. Multiplatform since DataStore 1.1, and
+            // already what Android ships (under datastore-preferences), so no new library there.
+            api(libs.androidx.datastore.preferences.core)
         }
         commonTest.dependencies {
             implementation(project(":shared:testing"))
