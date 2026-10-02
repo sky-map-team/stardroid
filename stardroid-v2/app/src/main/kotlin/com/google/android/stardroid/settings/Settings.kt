@@ -282,6 +282,22 @@ interface Settings {
 
     suspend fun setShowerAlertsEnabled(enabled: Boolean)
 
+    /**
+     * The lunar-eclipse reminder (D106), backed by the Solar System layer's alert toggle so the
+     * Layers sheet and Settings agree. Off until the user opts in.
+     */
+    val eclipseAlertsEnabled: Flow<Boolean>
+
+    suspend fun setEclipseAlertsEnabled(enabled: Boolean)
+
+    /**
+     * Satellite pass alerts (D92), backed by the Satellites layer's alert toggle so the Layers
+     * sheet and Settings agree. Off until the user opts in.
+     */
+    val passAlertsEnabled: Flow<Boolean>
+
+    suspend fun setPassAlertsEnabled(enabled: Boolean)
+
     /** The tonight's-sky digest notification (D77). Off until the user opts in. */
     val tonightDigestEnabled: Flow<Boolean>
 

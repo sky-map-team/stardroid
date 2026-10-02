@@ -96,6 +96,7 @@ class LayerRegistry(
         val PARAMETERS: List<Pair<LayerId, LayerParameter>> =
             SolarSystemLayer.PARAMETERS.map { SolarSystemLayer.LAYER_ID to it } +
                 SatelliteLayer.PARAMETERS.map { SatelliteLayer.LAYER_ID to it } +
+                MeteorShowerLayer.PARAMETERS.map { MeteorShowerLayer.LAYER_ID to it } +
                 GridLayer.PARAMETERS.map { GridLayer.LAYER_ID to it } +
                 AltAzGridLayer.PARAMETERS.map { AltAzGridLayer.LAYER_ID to it }
 

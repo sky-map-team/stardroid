@@ -291,12 +291,31 @@ private fun NotificationsSection(
         onCheckedChange = { toggle(viewModel::setShowerAlerts, it) },
     )
     SwitchRow(
+        title = stringResource(R.string.settings_eclipse_alerts),
+        summary = stringResource(R.string.settings_eclipse_alerts_summary),
+        checked = state.eclipseAlerts,
+        onCheckedChange = { toggle(viewModel::setEclipseAlerts, it) },
+    )
+    if (viewModel.satelliteAlertsAvailable) {
+        SwitchRow(
+            title = stringResource(R.string.settings_pass_alerts),
+            summary = stringResource(R.string.settings_pass_alerts_summary),
+            checked = state.passAlerts,
+            onCheckedChange = { toggle(viewModel::setPassAlerts, it) },
+        )
+    }
+    SwitchRow(
         title = stringResource(R.string.settings_tonight_digest),
         summary = stringResource(R.string.settings_tonight_digest_summary),
         checked = state.tonightDigest,
         onCheckedChange = { toggle(viewModel::setTonightDigest, it) },
     )
-    if ((state.showerAlerts || state.tonightDigest) &&
+    if ((
+            state.showerAlerts ||
+                state.eclipseAlerts ||
+                state.passAlerts ||
+                state.tonightDigest
+        ) &&
         !NotificationManagerCompat.from(context).areNotificationsEnabled()
     ) {
         Row(

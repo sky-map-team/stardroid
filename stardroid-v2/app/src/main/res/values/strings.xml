@@ -59,6 +59,8 @@
     <string name="notif_eclipse_text" translation_description="Body of the lunar eclipse notification, telling the user when it begins. %1$s is a time.">Begins around %1$s — worth stepping outside for</string>
     <string name="satellite_name_iss" translation_description="Display name for the International Space Station.">The Space Station</string>
     <string name="satellite_name_tiangong" translation_description="Display name for the Chinese space station Tiangong.">Tiangong</string>
+    <string name="layer_param_shower_alerts" translation_description="Label for the setting that turns on a notification on the evening a meteor shower peaks.">Peak alerts</string>
+    <string name="layer_param_shower_alerts_description" translation_description="Explains what the meteor-shower alert setting does: a notification on the evening a shower reaches its annual peak.">Notify me on the evening a shower peaks</string>
     <string name="layer_param_pass_alerts" translation_description="Label for the setting that turns on a notification shortly before a satellite passes overhead.">Pass alerts</string>
     <string name="layer_param_pass_alerts_description" translation_description="Explains what the pass-alert setting does: a single notification before the best visible pass of the night.">Notify me before the best visible pass each night</string>
     <string name="layer_param_eclipse_alerts" translation_description="Label for the setting that turns on a notification before a lunar eclipse begins.">Eclipse alerts</string>
@@ -116,6 +118,7 @@
     <string name="layer_help_camera" translation_description="Long-press explanation of the through-camera toggle.">Shows the live camera behind the sky map so the drawn sky overlays the real one. Needs motion sensors.</string>
     <string name="layer_help_options_solar_system" translation_description="Long-press note listing what can be customized on the solar system layer.">Disc size: how big the Sun, Moon and planets are drawn.\nEclipse alerts: a notification before a lunar eclipse.</string>
     <string name="layer_help_options_satellites" translation_description="Long-press note listing what can be customized on the satellites layer.">Pass alerts: a notification before the best visible pass each night.</string>
+    <string name="layer_help_options_meteor_showers" translation_description="Long-press note listing what can be customized on the meteor showers layer.">Peak alerts: a notification on the evening a shower reaches its annual peak.</string>
     <string name="layer_help_options_grid" translation_description="Long-press note listing what can be customized on the celestial grid layer.">Line count: a line every 3, 2 or 1 hours and every 30°, 15° or 10°.</string>
     <string name="layer_help_options_altaz_grid" translation_description="Long-press note listing what can be customized on the alt/az grid layer.">Line count: 8, 12 or 24 direction lines.</string>
     <string name="layer_help_customizable" translation_description="Heading in the layer help popup above the list of customizable options.">What you can customize</string>
@@ -634,6 +637,10 @@ readings to Sky Map.</blockquote>
     <string name="settings_notifications_intro" translation_description="Introduction under the notifications settings header, stating how rarely the app notifies">Sky Map only notifies about rare sky events, at most once a day. Everything is off until you turn it on.</string>
     <string name="settings_shower_alerts" translation_description="Preference title: notify on the evening a meteor shower reaches its annual peak">Meteor shower peaks</string>
     <string name="settings_shower_alerts_summary" translation_description="Explanation of the meteor-shower notification preference">About a dozen a year, on the evening of the peak</string>
+    <string name="settings_eclipse_alerts" translation_description="Preference title: notify shortly before a lunar eclipse begins">Lunar eclipses</string>
+    <string name="settings_eclipse_alerts_summary" translation_description="Explanation of the lunar-eclipse notification preference">A single alert before a lunar eclipse begins</string>
+    <string name="settings_pass_alerts" translation_description="Preference title: notify shortly before a satellite passes overhead">Satellite passes</string>
+    <string name="settings_pass_alerts_summary" translation_description="Explanation of the satellite-pass notification preference">A single alert before the best visible pass of the night</string>
     <string name="settings_tonight_digest" translation_description="Preference title: a single evening notification summarizing what\'s visible tonight">Tonight\'s sky digest</string>
     <string name="settings_tonight_digest_summary" translation_description="Explanation of the tonight-digest notification preference">One summary after sunset, skipped on quiet nights</string>
     <string name="settings_notifications_blocked" translation_description="Warning row shown when the user enabled notifications in the app but blocked them at the system level">Notifications are blocked for Sky Map</string>
