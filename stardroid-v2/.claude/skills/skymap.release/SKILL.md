@@ -32,6 +32,13 @@ this gap has since been closed.
    handy, it's fine to skip — the app just keeps showing the previous release's portrait, and the
    changelog/GitHub release ships without an icon.
 
+**Beta-only builds (`:Beta` suffix).** A build that turns on features not yet launched (e.g. 2.2.0
+Buran's satellites) is named `<version>:<ReleaseName>:Beta`, e.g. `2.2.0:Buran:Beta`. The gms
+Remote Config rules match on `Version contains :Beta` to enable those experiments; the launch
+build drops the suffix (`2.2.0:Buran`) so the flags fall back to their off defaults. Never promote a
+`:Beta` build to production, and fill `beta_user_help_text` (`whatsnew.xml`) only in Beta builds —
+clear it for launch. Tag Beta builds `v<version>-betaN` so they never clash with the launch tag.
+
 ### Step 2. Bring the metadata up to date
 
 Regenerate the What's New text (`skymap.whatsnew` skill) for the app (`whats_new_content` string
