@@ -104,4 +104,13 @@
     <string name="layer_param_disc_size_auto">固定</string>
     <string name="layer_param_disc_size_auto_desc">ズームしても画面上で固定サイズを維持し、その後実寸大に切り替わります。</string>
     <string name="layer_param_expand">%1$sのオプションを表示</string>
+    <string name="search_label">天体を検索</string>
+    <string name="search_hint" translation_description="Placeholder text in the search field showing example search targets.">例: 火星 または M31</string>
+    <string name="search_coordinates_hint" translation_description="Helper text under the search field showing that celestial coordinates (right ascension and declination) can be typed directly, with two example formats.">または座標を入力: 12h 30m, +45° または 187.5 -45.2</string>
+    <string name="search_go" translation_description="Button that starts navigating the sky map toward the typed search target.">移動</string>
+    <string name="search_cancel">キャンセル</string>
+    <string name="search_no_results">検索結果が見つかりません。おそらくそれは現在見えないのでしょう。</string>
+    <string name="search_target_looking_message" translation_description="Status shown while the user is being guided toward a search target. %1$s is the object name.">検索中: %1$s</string>
+    <string name="search_target_found_message" translation_description="Status shown when the search target has been found and is centered on screen. %1$s is the object name.">見つかりました: %1$s</string>
+    <string name="search_overlay_prompt">携帯を矢印の方に向けます</string>
 </resources>

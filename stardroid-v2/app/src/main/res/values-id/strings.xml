@@ -30,15 +30,6 @@
     <!-- tm:omitted name="pluto" reason="identical_to_source" -->
 
     <!-- Search (map-screen search dialog and overlay). -->
-    <string name="search_label">Cari Langit</string>
-    <string name="search_hint" translation_description="Placeholder text in the search field showing example search targets.">misalnya Mars atau M31</string>
-    <string name="search_coordinates_hint" translation_description="Helper text under the search field showing that celestial coordinates (right ascension and declination) can be typed directly, with two example formats.">Atau masukkan koordinat: 12j 30m, +45° atau 187.5 -45.2</string>
-    <string name="search_go" translation_description="Button that starts navigating the sky map toward the typed search target.">Cari</string>
-    <string name="search_cancel">Batal</string>
-    <string name="search_no_results">Tidak ada hasil yang ditemukan. Mungkin objek tidak terlihat pada saat ini.</string>
-    <string name="search_target_looking_message" translation_description="Status shown while the user is being guided toward a search target. %1$s is the object name.">Mencari: %1$s</string>
-    <string name="search_target_found_message" translation_description="Status shown when the search target has been found and is centered on screen. %1$s is the object name.">Ditemukan: %1$s</string>
-    <string name="search_overlay_prompt">Arahkan ponsel Anda ke arah panah</string>
 
     <!-- Layer names in the layer-visibility sheet. -->
     <string name="channel_passes_name" translation_description="Name of the notification channel for alerts shortly before a satellite passes overhead.">Lintasan satelit</string>

@@ -87,4 +87,13 @@
     <!-- tm:omitted name="layer_param_disc_size_auto" reason="identical_to_source" -->
     <!-- tm:omitted name="layer_param_disc_size_auto_desc" reason="identical_to_source" -->
     <!-- tm:omitted name="layer_param_expand" reason="identical_to_source" -->
+    <!-- tm:omitted name="search_label" reason="identical_to_source" -->
+    <!-- tm:omitted name="search_hint" reason="identical_to_source" -->
+    <!-- tm:omitted name="search_coordinates_hint" reason="identical_to_source" -->
+    <!-- tm:omitted name="search_go" reason="identical_to_source" -->
+    <!-- tm:omitted name="search_cancel" reason="identical_to_source" -->
+    <!-- tm:omitted name="search_no_results" reason="identical_to_source" -->
+    <!-- tm:omitted name="search_target_looking_message" reason="identical_to_source" -->
+    <!-- tm:omitted name="search_target_found_message" reason="identical_to_source" -->
+    <string name="search_overlay_prompt">Point your phone towards the arrow</string>
 </resources>

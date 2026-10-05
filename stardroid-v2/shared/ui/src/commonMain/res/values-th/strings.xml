@@ -91,4 +91,13 @@
     <string name="layer_param_disc_size_auto">คงที่</string>
     <string name="layer_param_disc_size_auto_desc">รักษากลุ่มขนาดคงพิกัดบนหน้าจอขณะซูม แล้วจึงเปลี่ยนเป็นขนาดจริง</string>
     <string name="layer_param_expand">แสดงตัวเลือกสำหรับ %1$s</string>
+    <string name="search_label">ค้นหาท้องฟ้า</string>
+    <string name="search_hint" translation_description="Placeholder text in the search field showing example search targets.">เช่น ดาวอังคาร หรือ M31</string>
+    <string name="search_coordinates_hint" translation_description="Helper text under the search field showing that celestial coordinates (right ascension and declination) can be typed directly, with two example formats.">หรือป้อนพิกัด: 12h 30m, +45° หรือ 187.5 -45.2</string>
+    <string name="search_go" translation_description="Button that starts navigating the sky map toward the typed search target.">ไป</string>
+    <string name="search_cancel">ยกเลิก</string>
+    <string name="search_no_results">ไม่พบผลลัพธ์ บางทีวัตถุอาจไม่มองเห็นได้ในขณะนี้</string>
+    <string name="search_target_looking_message" translation_description="Status shown while the user is being guided toward a search target. %1$s is the object name.">กำลังค้นหา: %1$s</string>
+    <string name="search_target_found_message" translation_description="Status shown when the search target has been found and is centered on screen. %1$s is the object name.">พบแล้ว: %1$s</string>
+    <string name="search_overlay_prompt">ชี้โทรศัพท์ของคุณไปยังลูกศร</string>
 </resources>

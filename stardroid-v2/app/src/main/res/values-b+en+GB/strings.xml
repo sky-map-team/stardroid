@@ -27,15 +27,6 @@
     <!-- tm:omitted name="neptune" reason="identical_to_source" -->
     <!-- tm:omitted name="pluto" reason="identical_to_source" -->
 
-    <!-- tm:omitted name="search_label" reason="identical_to_source" -->
-    <!-- tm:omitted name="search_hint" reason="identical_to_source" -->
-    <!-- tm:omitted name="search_coordinates_hint" reason="identical_to_source" -->
-    <!-- tm:omitted name="search_go" reason="identical_to_source" -->
-    <!-- tm:omitted name="search_cancel" reason="identical_to_source" -->
-    <!-- tm:omitted name="search_no_results" reason="identical_to_source" -->
-    <!-- tm:omitted name="search_target_looking_message" reason="identical_to_source" -->
-    <!-- tm:omitted name="search_target_found_message" reason="identical_to_source" -->
-    <string name="search_overlay_prompt">Point your phone towards the arrow</string>
 
     <!-- tm:omitted name="channel_passes_name" reason="identical_to_source" -->
     <!-- tm:omitted name="channel_passes_description" reason="identical_to_source" -->

@@ -110,4 +110,13 @@
     Håller en fast storlek på skärmen när du zoomar, och växlar sedan till verklig storlek.
     </string>
     <string name="layer_param_expand">Visa alternativ för %1$s</string>
+    <string name="search_label">Sök på himlen</string>
+    <string name="search_hint" translation_description="Placeholder text in the search field showing example search targets.">t.ex. Mars eller M31</string>
+    <string name="search_coordinates_hint" translation_description="Helper text under the search field showing that celestial coordinates (right ascension and declination) can be typed directly, with two example formats.">Eller ange koordinater: 12h 30m, +45° eller 187.5 -45.2</string>
+    <string name="search_go" translation_description="Button that starts navigating the sky map toward the typed search target.">Gå</string>
+    <string name="search_cancel">Avbryt</string>
+    <string name="search_no_results">Inga resultat hittades. Kanske är objektet inte synligt just nu.</string>
+    <string name="search_target_looking_message" translation_description="Status shown while the user is being guided toward a search target. %1$s is the object name.">Letar efter: %1$s</string>
+    <string name="search_target_found_message" translation_description="Status shown when the search target has been found and is centered on screen. %1$s is the object name.">Hittad: %1$s</string>
+    <string name="search_overlay_prompt">Peka din telefon mot pilen</string>
 </resources>

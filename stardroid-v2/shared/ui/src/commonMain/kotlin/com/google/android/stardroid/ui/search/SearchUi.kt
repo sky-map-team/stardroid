@@ -47,16 +47,27 @@ import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.graphics.drawscope.rotate
 import androidx.compose.ui.layout.onGloballyPositioned
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.google.android.stardroid.R
 import com.google.android.stardroid.catalog.SearchHit
 import com.google.android.stardroid.math.RADIANS_TO_DEGREES
 import com.google.android.stardroid.render.api.SkyCamera
 import com.google.android.stardroid.render.api.SkyProjection
 import com.google.android.stardroid.render.api.Viewport
+import com.google.android.stardroid.ui.common.formattedStringResource
+import com.google.android.stardroid.ui.resources.Res
+import com.google.android.stardroid.ui.resources.search_cancel
+import com.google.android.stardroid.ui.resources.search_coordinates_hint
+import com.google.android.stardroid.ui.resources.search_go
+import com.google.android.stardroid.ui.resources.search_hint
+import com.google.android.stardroid.ui.resources.search_label
+import com.google.android.stardroid.ui.resources.search_no_results
+import com.google.android.stardroid.ui.resources.search_overlay_prompt
+import com.google.android.stardroid.ui.resources.search_target_found_message
+import com.google.android.stardroid.ui.resources.search_target_looking_message
+import org.jetbrains.compose.resources.stringResource
+import kotlin.math.PI
 import kotlin.math.min
 import kotlin.math.roundToInt
 import kotlin.math.sin
@@ -110,7 +121,7 @@ fun SearchOverlay(
         val focusRadius = min(size.width, size.height) - SearchGeometry.FOCUS_RADIUS_INSET_PX
 
         projection.worldToScreen(target.direction)?.let { point ->
-            val intensity = 0.7f + 0.3f * sin(2f * Math.PI.toFloat() * pulsePhase)
+            val intensity = 0.7f + 0.3f * sin(2f * PI.toFloat() * pulsePhase)
             val color =
                 if (nightMode) {
                     Color(intensity, 0f, 0f, CROSSHAIR_ALPHA)
@@ -205,11 +216,11 @@ fun SearchControlBar(
             modifier = Modifier.padding(8.dp),
         ) {
             Text(
-                stringResource(
+                formattedStringResource(
                     if (found) {
-                        R.string.search_target_found_message
+                        Res.string.search_target_found_message
                     } else {
-                        R.string.search_target_looking_message
+                        Res.string.search_target_looking_message
                     },
                     targetName,
                 ),
@@ -217,12 +228,12 @@ fun SearchControlBar(
             )
             if (!found) {
                 Text(
-                    stringResource(R.string.search_overlay_prompt),
+                    stringResource(Res.string.search_overlay_prompt),
                     style = MaterialTheme.typography.bodySmall,
                 )
             }
             TextButton(onClick = onCancel) {
-                Text(stringResource(R.string.search_cancel))
+                Text(stringResource(Res.string.search_cancel))
             }
         }
     }
@@ -250,16 +261,16 @@ fun SearchDialog(
 
     AlertDialog(
         onDismissRequest = onDismiss,
-        title = { Text(stringResource(R.string.search_label)) },
+        title = { Text(stringResource(Res.string.search_label)) },
         text = {
             Column {
                 OutlinedTextField(
                     value = query,
                     onValueChange = viewModel::setQuery,
-                    placeholder = { Text(stringResource(R.string.search_hint)) },
+                    placeholder = { Text(stringResource(Res.string.search_hint)) },
                     // RA/Dec entry was invisible before: show the formats under the field.
                     supportingText = {
-                        Text(stringResource(R.string.search_coordinates_hint))
+                        Text(stringResource(Res.string.search_coordinates_hint))
                     },
                     singleLine = true,
                     keyboardOptions = KeyboardOptions(imeAction = ImeAction.Search),
@@ -277,7 +288,7 @@ fun SearchDialog(
                 )
                 if (noResults) {
                     Text(
-                        stringResource(R.string.search_no_results),
+                        stringResource(Res.string.search_no_results),
                         style = MaterialTheme.typography.bodySmall,
                         modifier = Modifier.padding(top = 8.dp),
                     )
@@ -291,12 +302,12 @@ fun SearchDialog(
         },
         confirmButton = {
             TextButton(onClick = { viewModel.submit() }) {
-                Text(stringResource(R.string.search_go))
+                Text(stringResource(Res.string.search_go))
             }
         },
         dismissButton = {
             TextButton(onClick = onDismiss) {
-                Text(stringResource(R.string.search_cancel))
+                Text(stringResource(Res.string.search_cancel))
             }
         },
     )

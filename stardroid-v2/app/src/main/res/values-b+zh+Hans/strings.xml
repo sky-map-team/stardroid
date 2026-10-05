@@ -30,15 +30,6 @@
     <string name="pluto">冥王星</string>
 
     <!-- Search (map-screen search dialog and overlay). -->
-    <string name="search_label">搜索星空</string>
-    <string name="search_hint" translation_description="Placeholder text in the search field showing example search targets.">例如火星或M31</string>
-    <string name="search_coordinates_hint" translation_description="Helper text under the search field showing that celestial coordinates (right ascension and declination) can be typed directly, with two example formats.">或输入坐标：12h 30m, +45° 或 187.5 -45.2</string>
-    <string name="search_go" translation_description="Button that starts navigating the sky map toward the typed search target.">前往</string>
-    <string name="search_cancel">取消</string>
-    <string name="search_no_results">未找到结果。该天体可能在此时不可见。</string>
-    <string name="search_target_looking_message" translation_description="Status shown while the user is being guided toward a search target. %1$s is the object name.">正在寻找：%1$s</string>
-    <string name="search_target_found_message" translation_description="Status shown when the search target has been found and is centered on screen. %1$s is the object name.">已找到：%1$s</string>
-    <string name="search_overlay_prompt">将手机朝向箭头所指的方向</string>
 
     <!-- Layer names in the layer-visibility sheet. -->
     <string name="channel_passes_name" translation_description="Name of the notification channel for alerts shortly before a satellite passes overhead.">卫星过境</string>
