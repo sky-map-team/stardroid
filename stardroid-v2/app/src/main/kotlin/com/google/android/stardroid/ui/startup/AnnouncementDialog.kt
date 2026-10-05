@@ -15,6 +15,7 @@ import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.stringResource
 import com.google.android.stardroid.R
+import com.google.android.stardroid.announcements.AnnouncementAction
 
 /**
  * The launch interstitial for a remote announcement. [onOpen] runs the message's action (if it
@@ -31,7 +32,14 @@ fun AnnouncementDialog(
         title = { Text(announcement.text.title) },
         text = { if (announcement.text.body.isNotBlank()) Text(announcement.text.body) },
         confirmButton = {
-            TextButton(onClick = onOpen) { Text(stringResource(R.string.announcement_dialog_open)) }
+            // "Take a look" promises a destination; a plain open-sky message has none.
+            val label =
+                if (announcement.action is AnnouncementAction.Search) {
+                    R.string.announcement_dialog_open
+                } else {
+                    R.string.announcement_dialog_continue
+                }
+            TextButton(onClick = onOpen) { Text(stringResource(label)) }
         },
         dismissButton = {
             TextButton(onClick = onDismiss) {

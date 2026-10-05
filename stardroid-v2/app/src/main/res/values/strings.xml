@@ -648,7 +648,8 @@ readings to Sky Map.</blockquote>
     <string name="channel_announcements_name" translation_description="Notification channel name for occasional messages from the Sky Map team">Messages from Sky Map</string>
     <string name="channel_announcements_description" translation_description="Notification channel description for occasional messages from the Sky Map team">Rare heads-ups about notable sky events</string>
     <string name="announcement_dialog_dismiss" translation_description="Button that closes an announcement dialog and hides that message everywhere">Dismiss</string>
-    <string name="announcement_dialog_open" translation_description="Button on an announcement dialog that opens the sky map">Take a look</string>
+    <string name="announcement_dialog_open" translation_description="Button on an announcement dialog that jumps to the sky object the message is about">Take a look</string>
+    <string name="announcement_dialog_continue" translation_description="Button on an announcement dialog that closes it and continues to the sky map">Continue</string>
     <string name="settings_tonight_digest" translation_description="Preference title: a single evening notification summarizing what\'s visible tonight">Tonight\'s sky digest</string>
     <string name="settings_tonight_digest_summary" translation_description="Explanation of the tonight-digest notification preference">One summary after sunset, skipped on quiet nights</string>
     <string name="settings_notifications_blocked" translation_description="Warning row shown when the user enabled notifications in the app but blocked them at the system level">Notifications are blocked for Sky Map</string>
