@@ -13,6 +13,8 @@ import androidx.annotation.StringRes
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.stringResource
 import com.google.android.stardroid.R
+import com.google.android.stardroid.startup.Experiment
+import com.google.android.stardroid.startup.ExperimentConfig
 import com.google.android.stardroid.ui.resources.Res
 import com.google.android.stardroid.ui.resources.permissions_notice
 import org.jetbrains.compose.resources.StringResource
@@ -43,13 +45,18 @@ internal sealed interface HelpItem {
          * nothing.
          */
         val divider: Boolean = false,
+        /**
+         * The experiment that gates this section, or null when it is always shown. A section
+         * for a feature that is flagged off would document something the user cannot find.
+         */
+        val experiment: Experiment? = null,
     ) : HelpItem {
         constructor(
             anchor: String,
             @StringRes html: Int,
             divider: Boolean = false,
-        ) :
-            this(anchor, HelpHtml.Android(html), divider)
+            experiment: Experiment? = null,
+        ) : this(anchor, HelpHtml.Android(html), divider, experiment)
     }
 
     /**
@@ -100,6 +107,11 @@ internal val HELP_DOCUMENT =
         HelpItem.Prose("other", R.string.help_other, divider = true),
         HelpItem.Prose("gallery", R.string.help_gallery),
         HelpItem.Prose("widgets", R.string.help_widgets),
+        HelpItem.Prose(
+            "notifications",
+            R.string.help_notifications,
+            experiment = Experiment.NOTIFICATIONS,
+        ),
         HelpItem.Prose("location", R.string.help_location),
         // Lives in :shared:ui's eula.xml, not help.xml: the terms screen renders the same key,
         // so the permission disclosure is written and translated exactly once (see eula.xml).
@@ -114,3 +126,14 @@ internal val HELP_DOCUMENT =
 
 /** The anchors [HELP_DOCUMENT] defines — the set `skymap://help#…` links may name. */
 internal val HELP_ANCHORS: Set<String> = HELP_DOCUMENT.mapTo(mutableSetOf()) { it.anchor }
+
+/**
+ * [HELP_DOCUMENT] minus the sections whose experiment is off. [HELP_ANCHORS] deliberately stays
+ * the full set: a link to a hidden section parses fine and then simply finds nothing to scroll to.
+ */
+internal fun helpDocument(experimentConfig: ExperimentConfig): List<HelpItem> =
+    HELP_DOCUMENT.filter { item ->
+        item !is HelpItem.Prose ||
+            item.experiment == null ||
+            experimentConfig.isEnabled(item.experiment)
+    }

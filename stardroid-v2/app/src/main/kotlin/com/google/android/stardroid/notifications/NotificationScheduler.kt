@@ -20,6 +20,7 @@ import androidx.work.WorkManager
 import androidx.work.WorkerParameters
 import com.google.android.stardroid.events.tonightSky
 import com.google.android.stardroid.satellites.tonightSatellitePasses
+import com.google.android.stardroid.settings.showerAlertsEnabled
 import com.google.android.stardroid.startup.Experiment
 import com.google.android.stardroid.widget.widgetEntryPoint
 import kotlinx.coroutines.flow.first

@@ -59,6 +59,8 @@
     <string name="notif_eclipse_text" translation_description="Body of the lunar eclipse notification, telling the user when it begins. %1$s is a time.">Begins around %1$s — worth stepping outside for</string>
     <string name="satellite_name_iss" translation_description="Display name for the International Space Station.">The Space Station</string>
     <string name="satellite_name_tiangong" translation_description="Display name for the Chinese space station Tiangong.">Tiangong</string>
+    <string name="layer_param_shower_alerts" translation_description="Label for the setting that turns on a notification on the evening a meteor shower peaks.">Peak alerts</string>
+    <string name="layer_param_shower_alerts_description" translation_description="Explains what the meteor-shower alert setting does: a notification on the evening a shower reaches its annual peak.">Notify me on the evening a shower peaks</string>
     <string name="layer_param_pass_alerts" translation_description="Label for the setting that turns on a notification shortly before a satellite passes overhead.">Pass alerts</string>
     <string name="layer_param_pass_alerts_description" translation_description="Explains what the pass-alert setting does: a single notification before the best visible pass of the night.">Notify me before the best visible pass each night</string>
     <string name="layer_param_eclipse_alerts" translation_description="Label for the setting that turns on a notification before a lunar eclipse begins.">Eclipse alerts</string>
@@ -116,6 +118,7 @@
     <string name="layer_help_camera" translation_description="Long-press explanation of the through-camera toggle.">Shows the live camera behind the sky map so the drawn sky overlays the real one. Needs motion sensors.</string>
     <string name="layer_help_options_solar_system" translation_description="Long-press note listing what can be customized on the solar system layer.">Disc size: how big the Sun, Moon and planets are drawn.\nEclipse alerts: a notification before a lunar eclipse.</string>
     <string name="layer_help_options_satellites" translation_description="Long-press note listing what can be customized on the satellites layer.">Pass alerts: a notification before the best visible pass each night.</string>
+    <string name="layer_help_options_meteor_showers" translation_description="Long-press note listing what can be customized on the meteor showers layer.">Peak alerts: a notification on the evening a shower reaches its annual peak.</string>
     <string name="layer_help_options_grid" translation_description="Long-press note listing what can be customized on the celestial grid layer.">Line count: a line every 3, 2 or 1 hours and every 30°, 15° or 10°.</string>
     <string name="layer_help_options_altaz_grid" translation_description="Long-press note listing what can be customized on the alt/az grid layer.">Line count: 8, 12 or 24 direction lines.</string>
     <string name="layer_help_customizable" translation_description="Heading in the layer help popup above the list of customizable options.">What you can customize</string>
@@ -370,8 +373,6 @@
     <string name="settings_auto_dimness_system" translation_description="Screen dimming option: leave brightness on the system setting">System Default</string>
     <string name="settings_auto_dimness_dim" translation_description="Screen dimming option: dimmest screen setting">Very Dim</string>
     <string name="settings_auto_dimness_classic" translation_description="Screen dimming option: the hand-tuned brightness Sky Map used for its first 15 years">Classic</string>
-    <string name="settings_sky_gradient" translation_description="Setting toggle title: whether to show the blue sky coloring during the day">Show sky coloring</string>
-    <string name="settings_sky_gradient_summary" translation_description="Setting toggle summary for sky coloring: explains what the feature does">Shades the sky blue near the Sun and dark on the opposite side</string>
     <string name="settings_disable_gyro" translation_description="Preference title for switching from the gyroscope to the legacy compass + accelerometer sensor pipeline">Use legacy sensors</string>
     <string name="settings_disable_gyro_summary" translation_description="Explanation of the legacy sensors preference and when to use it">Point the map using the compass and accelerometer instead of the gyroscope. Try this if the map drifts or your device\'s gyro misbehaves; devices without a gyro use these sensors automatically.</string>
     <string name="settings_classic_sensors_only" translation_description="Summary noting a sensor preference only applies to the legacy non-gyroscope sensor path">Only applies when legacy sensors are in use</string>
@@ -472,6 +473,7 @@
     <string name="diagnostics_utc_datetime" translation_description="Row label in the diagnostics screen for the UTC/universal date and time">Universal datetime</string>
     <string name="diagnostics_section_network" translation_description="Section heading in the diagnostics screen for network connectivity information">Network</string>
     <string name="diagnostics_connection" translation_description="Row label in the diagnostics screen for the current network connection status">Connection</string>
+    <string name="diagnostics_section_experiments" translation_description="Section heading in the diagnostics screen listing the current feature-flag (experiment) values">Experiment flags</string>
     <string name="diagnostics_section_satellites" translation_description="Section heading in the diagnostics screen for satellite orbital-data status">Satellites</string>
     <string name="diagnostics_satellite_data" translation_description="Row label in the diagnostics screen for the age and count of cached satellite orbital data">Orbit data</string>
     <string name="diagnostics_satellite_data_none" translation_description="Row value in the diagnostics screen when no satellite orbital data has been downloaded yet">Not downloaded</string>
@@ -480,6 +482,9 @@
     <string name="diagnostics_satellite_never_fetched" translation_description="Row value in the diagnostics screen when satellite orbital data has never been downloaded">Never</string>
     <string name="diagnostics_satellite_circuit_open" translation_description="Row label in the diagnostics screen for when satellite downloads are paused after repeated server errors">Downloads paused</string>
     <string name="diagnostics_satellite_circuit_open_format" translation_description="Row value in the diagnostics screen showing when paused satellite downloads will resume and how many failures caused the pause. %1$s is a date and time, %2$d is a count">Until %1$s (%2$d failures)</string>
+    <string name="diagnostics_experiments_last_fetched" translation_description="Row label in the diagnostics experiment flags section: when the feature-flag config was last downloaded from the server">Last fetched</string>
+    <string name="diagnostics_experiments_never_fetched" translation_description="Row value in the diagnostics experiment flags section when the feature-flag config has never been downloaded">Never</string>
+    <string name="diagnostics_experiments_fetch_now" translation_description="Label on a button in the diagnostics screen that downloads the feature-flag config from the server immediately">Fetch experiment flags now</string>
     <string name="diagnostics_satellite_force_fetch" translation_description="Label on a debug-only button in the diagnostics screen that downloads satellite orbital data immediately">Fetch satellite data now (debug)</string>
     <string name="diagnostics_connected" translation_description="Network status value shown when the device has an active network connection">Connected</string>
     <string name="diagnostics_disconnected" translation_description="Network status value shown when the device has no network connection">Disconnected</string>
@@ -636,6 +641,17 @@ readings to Sky Map.</blockquote>
     <string name="settings_notifications_intro" translation_description="Introduction under the notifications settings header, stating how rarely the app notifies">Sky Map only notifies about rare sky events, at most once a day. Everything is off until you turn it on.</string>
     <string name="settings_shower_alerts" translation_description="Preference title: notify on the evening a meteor shower reaches its annual peak">Meteor shower peaks</string>
     <string name="settings_shower_alerts_summary" translation_description="Explanation of the meteor-shower notification preference">About a dozen a year, on the evening of the peak</string>
+    <string name="settings_eclipse_alerts" translation_description="Preference title: notify shortly before a lunar eclipse begins">Lunar eclipses</string>
+    <string name="settings_eclipse_alerts_summary" translation_description="Explanation of the lunar-eclipse notification preference">A single alert before a lunar eclipse begins</string>
+    <string name="settings_pass_alerts" translation_description="Preference title: notify shortly before a satellite passes overhead">Satellite passes</string>
+    <string name="settings_pass_alerts_summary" translation_description="Explanation of the satellite-pass notification preference">A single alert before the best visible pass of the night</string>
+    <string name="settings_announcements" translation_description="Preference title: occasional messages from the Sky Map team about rare sky events, shown as a notification, in the widget and when the app opens">Messages from Sky Map</string>
+    <string name="settings_announcements_summary" translation_description="Explanation of the announcements preference">Rare heads-ups such as a strong aurora or a bright planet. Shown as a notification, in the Sky Tonight widget, or when you open the app.</string>
+    <string name="channel_announcements_name" translation_description="Notification channel name for occasional messages from the Sky Map team">Messages from Sky Map</string>
+    <string name="channel_announcements_description" translation_description="Notification channel description for occasional messages from the Sky Map team">Rare heads-ups about notable sky events</string>
+    <string name="announcement_dialog_dismiss" translation_description="Button that closes an announcement dialog and hides that message everywhere">Dismiss</string>
+    <string name="announcement_dialog_open" translation_description="Button on an announcement dialog that jumps to the sky object the message is about">Take a look</string>
+    <string name="announcement_dialog_continue" translation_description="Button on an announcement dialog that closes it and continues to the sky map">Continue</string>
     <string name="settings_tonight_digest" translation_description="Preference title: a single evening notification summarizing what\'s visible tonight">Tonight\'s sky digest</string>
     <string name="settings_tonight_digest_summary" translation_description="Explanation of the tonight-digest notification preference">One summary after sunset, skipped on quiet nights</string>
     <string name="settings_notifications_blocked" translation_description="Warning row shown when the user enabled notifications in the app but blocked them at the system level">Notifications are blocked for Sky Map</string>

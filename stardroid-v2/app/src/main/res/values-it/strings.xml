@@ -346,8 +346,6 @@
     <string name="settings_auto_dimness_system" translation_description="Screen dimming option: leave brightness on the system setting">Predefinito di sistema</string>
     <string name="settings_auto_dimness_dim" tm_human="true" translation_description="Screen dimming option: dimmest screen setting">Molto scuro</string>
     <string name="settings_auto_dimness_classic" translation_description="Screen dimming option: the hand-tuned brightness Sky Map used for its first 15 years">Classico</string>
-    <string name="settings_sky_gradient">Mostra gradiente del cielo</string>
-    <string name="settings_sky_gradient_summary">Sfuma il cielo di blu vicino al Sole e scuro dal lato opposto</string>
     <string name="settings_disable_gyro" translation_description="Preference title for switching from the gyroscope to the legacy compass + accelerometer sensor pipeline">Usa sensori legacy</string>
     <string name="settings_disable_gyro_summary" translation_description="Explanation of the legacy sensors preference and when to use it">
     Punta la mappa usando la bussola e l\'accelerometro invece del giroscopio. Prova questa opzione se la mappa si sposta o il giroscopio del tuo dispositivo funziona male; i dispositivi senza giroscopio usano questi sensori automaticamente.

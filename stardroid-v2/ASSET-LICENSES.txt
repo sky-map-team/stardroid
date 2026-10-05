@@ -76,8 +76,10 @@ assets/planets/*.webp
 
 # Version-banner portrait: the current release's circular portrait, overwritten each release by
 # `skymap.release-splashscreen`'s Step 4 from `assets/release-icons/` (at the stardroid-v2/
-# module root, not shipped). Must always be public-domain/CC-BY celestial imagery consistent
-# with the info-card imagery above — confirm the source before replacing this file.
+# module root, not shipped). Must always be public-domain/CC-BY imagery — usually celestial,
+# consistent with the info-card imagery above — confirm the source before replacing this file.
+# 2.2.0 Buran: US DoD photo (M.Sgt Dave Casey, Le Bourget 1989, public domain as a work of a
+# US federal employee) — Commons File:Buran_on_An-225_(Le_Bourget_1989)_1.JPEG.
 assets/splash/splash.png
 
 

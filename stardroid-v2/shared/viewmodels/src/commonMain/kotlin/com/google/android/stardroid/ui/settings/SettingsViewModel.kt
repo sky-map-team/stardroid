@@ -21,6 +21,12 @@ import com.google.android.stardroid.settings.OneEuroEaseOff
 import com.google.android.stardroid.settings.OneEuroSteadiness
 import com.google.android.stardroid.settings.RendererBackend
 import com.google.android.stardroid.settings.Settings
+import com.google.android.stardroid.settings.eclipseAlertsEnabled
+import com.google.android.stardroid.settings.passAlertsEnabled
+import com.google.android.stardroid.settings.setEclipseAlertsEnabled
+import com.google.android.stardroid.settings.setPassAlertsEnabled
+import com.google.android.stardroid.settings.setShowerAlertsEnabled
+import com.google.android.stardroid.settings.showerAlertsEnabled
 import com.google.android.stardroid.startup.Experiment
 import com.google.android.stardroid.startup.ExperimentConfig
 import kotlinx.coroutines.flow.SharingStarted
@@ -37,7 +43,6 @@ data class SettingsUiState(
     val autoLevelHorizon: Boolean = true,
     val fontSize: FontSize = FontSize.MEDIUM,
     val autoDimness: AutoDimness = AutoDimness.SYSTEM,
-    val showSkyGradient: Boolean = true,
     val disableGyro: Boolean = false,
     val smoothingEnabled: Boolean = true,
     val steadiness: OneEuroSteadiness = OneEuroSteadiness.HIGH,
@@ -47,9 +52,12 @@ data class SettingsUiState(
     val viewDirectionMode: ViewDirectionMode = ViewDirectionMode.STANDARD,
     val enableAnalytics: Boolean = true,
     val showerAlerts: Boolean = false,
+    val eclipseAlerts: Boolean = false,
+    val passAlerts: Boolean = false,
     val tonightDigest: Boolean = false,
     val satelliteData: Boolean = false,
     val rendererBackend: RendererBackend = RendererBackend.GLES1,
+    val announcements: Boolean = true,
 )
 
 // Grouped so `state` below combines at most 5 flows at a time, each into a small typed data
@@ -65,7 +73,6 @@ private data class ControlsPrefs(
 private data class AppearancePrefs(
     val fontSize: FontSize,
     val autoDimness: AutoDimness,
-    val showSkyGradient: Boolean,
 )
 
 private data class SensorPrefs(
@@ -81,12 +88,19 @@ private data class MagneticPrefs(
     val viewDirectionMode: ViewDirectionMode,
 )
 
+private data class NotificationPrefs(
+    val showerAlertsEnabled: Boolean,
+    val eclipseAlertsEnabled: Boolean,
+    val passAlertsEnabled: Boolean,
+    val tonightDigestEnabled: Boolean,
+)
+
 private data class OtherPrefs(
     val enableAnalytics: Boolean,
-    val showerAlertsEnabled: Boolean,
-    val tonightDigestEnabled: Boolean,
+    val notifications: NotificationPrefs,
     val satelliteDataEnabled: Boolean,
     val rendererBackend: RendererBackend,
+    val announcementsEnabled: Boolean,
 )
 
 /**
@@ -108,6 +122,17 @@ class SettingsViewModel(
     /** Whether the notifications section shows at all (D77 experiment gate). */
     val notificationsAvailable: Boolean =
         experimentConfig.isEnabled(Experiment.NOTIFICATIONS)
+
+    /** Whether the "messages from Sky Map" row shows (remote announcements experiment gate). */
+    val announcementsAvailable: Boolean =
+        experimentConfig.isEnabled(Experiment.ANNOUNCEMENTS)
+
+    /**
+     * Whether the satellite pass-alert row shows: it needs the notifications section *and* the
+     * satellites experiment, since a pass alert for a feature nobody can reach is a dead switch.
+     */
+    val satelliteAlertsAvailable: Boolean =
+        notificationsAvailable && experimentConfig.isEnabled(Experiment.SATELLITES)
 
     /**
      * Whether to offer a choice of rendering backend at all.
@@ -142,7 +167,6 @@ class SettingsViewModel(
             combine(
                 settings.fontSize,
                 settings.autoDimness,
-                settings.showSkyGradient,
                 ::AppearancePrefs,
             ),
             combine(
@@ -156,10 +180,16 @@ class SettingsViewModel(
             combine(settings.useMagneticCorrection, settings.viewDirectionMode, ::MagneticPrefs),
             combine(
                 settings.enableAnalytics,
-                settings.showerAlertsEnabled,
-                settings.tonightDigestEnabled,
+                combine(
+                    settings.showerAlertsEnabled,
+                    settings.eclipseAlertsEnabled,
+                    settings.passAlertsEnabled,
+                    settings.tonightDigestEnabled,
+                    ::NotificationPrefs,
+                ),
                 settings.satelliteDataEnabled,
                 settings.rendererBackend,
+                settings.announcementsEnabled,
                 ::OtherPrefs,
             ),
         ) { controls, appearance, sensors, magnetic, other ->
@@ -169,7 +199,6 @@ class SettingsViewModel(
                 autoLevelHorizon = controls.autoLevelHorizon,
                 fontSize = appearance.fontSize,
                 autoDimness = appearance.autoDimness,
-                showSkyGradient = appearance.showSkyGradient,
                 disableGyro = sensors.disableGyro,
                 reverseMagneticZ = sensors.reverseMagneticZ,
                 smoothingEnabled = sensors.smoothingEnabled,
@@ -178,10 +207,13 @@ class SettingsViewModel(
                 useMagneticCorrection = magnetic.useMagneticCorrection,
                 viewDirectionMode = magnetic.viewDirectionMode,
                 enableAnalytics = other.enableAnalytics,
-                showerAlerts = other.showerAlertsEnabled,
-                tonightDigest = other.tonightDigestEnabled,
+                showerAlerts = other.notifications.showerAlertsEnabled,
+                eclipseAlerts = other.notifications.eclipseAlertsEnabled,
+                passAlerts = other.notifications.passAlertsEnabled,
+                tonightDigest = other.notifications.tonightDigestEnabled,
                 satelliteData = other.satelliteDataEnabled,
                 rendererBackend = other.rendererBackend,
+                announcements = other.announcementsEnabled,
             )
         }.stateIn(viewModelScope, SharingStarted.Eagerly, SettingsUiState())
 
@@ -208,11 +240,6 @@ class SettingsViewModel(
     fun setAutoDimness(dimness: AutoDimness) {
         trackChange("auto_dimness", dimness)
         viewModelScope.launch { settings.setAutoDimness(dimness) }
-    }
-
-    fun setShowSkyGradient(enabled: Boolean) {
-        trackChange("show_sky_gradient", enabled)
-        viewModelScope.launch { settings.setShowSkyGradient(enabled) }
     }
 
     fun setRendererBackend(backend: RendererBackend) {
@@ -267,6 +294,21 @@ class SettingsViewModel(
     fun setShowerAlerts(enabled: Boolean) {
         trackChange("shower_alerts_enabled", enabled)
         viewModelScope.launch { settings.setShowerAlertsEnabled(enabled) }
+    }
+
+    fun setEclipseAlerts(enabled: Boolean) {
+        trackChange("eclipse_alerts_enabled", enabled)
+        viewModelScope.launch { settings.setEclipseAlertsEnabled(enabled) }
+    }
+
+    fun setPassAlerts(enabled: Boolean) {
+        trackChange("pass_alerts_enabled", enabled)
+        viewModelScope.launch { settings.setPassAlertsEnabled(enabled) }
+    }
+
+    fun setAnnouncements(enabled: Boolean) {
+        trackChange("announcements_enabled", enabled)
+        viewModelScope.launch { settings.setAnnouncementsEnabled(enabled) }
     }
 
     fun setTonightDigest(enabled: Boolean) {

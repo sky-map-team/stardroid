@@ -19,8 +19,8 @@ android {
     namespace = "com.google.android.stardroid"
     defaultConfig {
         applicationId = "com.google.android.stardroid"
-        versionCode = 1752
-        versionName = "2.1.2:Artemis"
+        versionCode = 1753
+        versionName = "2.2.0:Buran:Beta"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         // D95: CI passes -PskipGlBenchmarks=true, which the D19 perf gate reads to skip
         // itself. Set through the DSL rather than
@@ -120,6 +120,8 @@ dependencies {
     implementation(project(":shared:viewmodels"))
     implementation(project(":shared:ui"))
     implementation(libs.kotlinx.coroutines.android)
+    // Parses the Remote Config announcements payload (JsonElement API only; no plugin).
+    implementation(libs.kotlinx.serialization.json)
     implementation(libs.androidx.core.ktx)
 
     implementation(platform(libs.androidx.compose.bom))

@@ -332,8 +332,6 @@
     <string name="settings_auto_dimness_system" translation_description="Screen dimming option: leave brightness on the system setting">시스템 기본값</string>
     <string name="settings_auto_dimness_dim" translation_description="Screen dimming option: dimmest screen setting">매우 어둡게</string>
     <string name="settings_auto_dimness_classic" translation_description="Screen dimming option: the hand-tuned brightness Sky Map used for its first 15 years">클래식</string>
-    <string name="settings_sky_gradient" translation_description="Setting toggle title: whether to show the blue sky gradient during the day">하늘 그라데이션 표시</string>
-    <string name="settings_sky_gradient_summary" translation_description="Setting toggle summary for sky gradient: explains what the feature does">태양 근처는 하늘을 파랗게, 반대편은 어둡게 음영 처리합니다</string>
     <string name="settings_disable_gyro" translation_description="Preference title for switching from the gyroscope to the legacy compass + accelerometer sensor pipeline">레거시 센서 사용</string>
     <string name="settings_disable_gyro_summary" translation_description="Explanation of the legacy sensors preference and when to use it">
     지도를 자이로스코프 대신 나침반과 가속도계를 사용하여 가리킵니다. 지도가 흔들리거나 기기의 자이로 센서가 오작동할 때 시도해 보세요. 자이로 센서가 없는 기기는 이 센서들을 자동으로 사용합니다.

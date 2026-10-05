@@ -101,7 +101,7 @@ fun HelpScreen(
     // An empty offer list means the widget components are gated off entirely, so the link has
     // nothing to show; leave it inert rather than open an empty sheet.
     val offers = widgetOffers(experimentConfig)
-    val sections = rememberHelpSections()
+    val sections = rememberHelpSections(experimentConfig)
     val rows = remember(sections, query) { helpRows(sections, query) }
 
     val onLink: (String) -> Unit = { url ->
@@ -301,10 +301,11 @@ private fun HelpItem.isDivider(): Boolean = this is HelpItem.Prose && divider
  * folds its heading and the labels beside each glyph.
  */
 @Composable
-private fun rememberHelpSections(): List<HelpSection> {
-    val strings = HELP_DOCUMENT.map { item -> searchableTextOf(item) }
+private fun rememberHelpSections(experimentConfig: ExperimentConfig): List<HelpSection> {
+    val document = remember(experimentConfig) { helpDocument(experimentConfig) }
+    val strings = document.map { item -> searchableTextOf(item) }
     return remember(strings) {
-        HELP_DOCUMENT.mapIndexed { index, item -> HelpSection(item, FoldedText.of(strings[index])) }
+        document.mapIndexed { index, item -> HelpSection(item, FoldedText.of(strings[index])) }
     }
 }
 
