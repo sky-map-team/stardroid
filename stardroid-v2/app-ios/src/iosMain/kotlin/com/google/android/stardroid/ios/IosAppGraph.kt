@@ -30,6 +30,8 @@ import com.google.android.stardroid.startup.StartupState
 import com.google.android.stardroid.time.TimeController
 import com.google.android.stardroid.ui.layers.LayersViewModel
 import com.google.android.stardroid.ui.map.MapViewModel
+import com.google.android.stardroid.ui.map.ReferenceFrame
+import com.google.android.stardroid.ui.search.SearchViewModel
 import com.google.android.stardroid.ui.startup.StartupViewModel
 import kotlinx.cinterop.ExperimentalForeignApi
 import kotlinx.coroutines.MainScope
@@ -204,6 +206,20 @@ class IosAppGraph {
      */
     fun layersViewModel(): LayersViewModel =
         LayersViewModel(settings, satellitesEnabled = false, notificationsEnabled = false)
+
+    /** Search over the catalog, aimed as Android's is: [map] answers whether it is in manual mode. */
+    fun searchViewModel(map: MapViewModel): SearchViewModel =
+        SearchViewModel(
+            catalog = ::catalog,
+            locale = locale,
+            ephemeris = MeeusEphemeris,
+            now = timeController::now,
+            settings = settings,
+            // Android's Log.e; stdout reaches the device console (devicectl --console).
+            logError = { message, cause -> println("SearchViewModel: $message: $cause") },
+            isManualMode = { map.referenceFrame.value == ReferenceFrame.MANUAL },
+            location = { locationController.locations.value },
+        )
 
     fun mapViewModel(): MapViewModel =
         MapViewModel(

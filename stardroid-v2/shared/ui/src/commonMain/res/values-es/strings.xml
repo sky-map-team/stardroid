@@ -108,4 +108,13 @@
     <string name="layer_param_disc_size_auto">Fijo</string>
     <string name="layer_param_disc_size_auto_desc">Mantiene un tamaño fijo en pantalla al hacer zoom, luego cambia al tamaño real.</string>
     <string name="layer_param_expand">Mostrar opciones para %1$s</string>
+    <string name="search_label">Buscar</string>
+    <string name="search_hint" translation_description="Placeholder text in the search field showing example search targets.">p. ej. Marte o M31</string>
+    <string name="search_coordinates_hint" translation_description="Helper text under the search field showing that celestial coordinates (right ascension and declination) can be typed directly, with two example formats.">O introduce coordenadas: 12h 30m, +45° o 187.5 -45.2</string>
+    <string name="search_go" translation_description="Button that starts navigating the sky map toward the typed search target.">Ir</string>
+    <string name="search_cancel">Cancelar</string>
+    <string name="search_no_results">No hubo resultados. Quizás el objeto no es visible en este momento.</string>
+    <string name="search_target_looking_message" translation_description="Status shown while the user is being guided toward a search target. %1$s is the object name.">Buscando: %1$s</string>
+    <string name="search_target_found_message" translation_description="Status shown when the search target has been found and is centered on screen. %1$s is the object name.">Encontrado: %1$s</string>
+    <string name="search_overlay_prompt">Apunta tu teléfono hacia la flecha</string>
 </resources>

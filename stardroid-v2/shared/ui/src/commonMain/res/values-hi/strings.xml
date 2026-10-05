@@ -110,4 +110,13 @@
     ज़ूम करते समय स्क्रीन पर एक निश्चित आकार रखता है, फिर वास्तविक आकार में बदल जाता है।
     </string>
     <string name="layer_param_expand">%1$s के लिए विकल्प दिखाएँ</string>
+    <string name="search_label">आकाश खोजें</string>
+    <string name="search_hint" translation_description="Placeholder text in the search field showing example search targets.">उदा. मंगल या M31</string>
+    <string name="search_coordinates_hint" translation_description="Helper text under the search field showing that celestial coordinates (right ascension and declination) can be typed directly, with two example formats.">या निर्देशांक दर्ज करें: 12h 30m, +45° या 187.5 -45.2</string>
+    <string name="search_go" translation_description="Button that starts navigating the sky map toward the typed search target.">जाएँ</string>
+    <string name="search_cancel">रद्द करें</string>
+    <string name="search_no_results">कोई परिणाम नहीं मिले। संभवतः यह वस्तु इस समय दृश्यमान नहीं है।</string>
+    <string name="search_target_looking_message" translation_description="Status shown while the user is being guided toward a search target. %1$s is the object name.">खोज रहे हैं: %1$s</string>
+    <string name="search_target_found_message" translation_description="Status shown when the search target has been found and is centered on screen. %1$s is the object name.">मिला: %1$s</string>
+    <string name="search_overlay_prompt">अपने फोन को तीर की ओर इशारा करें</string>
 </resources>

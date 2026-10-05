@@ -95,4 +95,13 @@
     <string name="layer_param_disc_size_auto">Fixo</string>
     <string name="layer_param_disc_size_auto_desc">Mantén un tamaño fixo en pantalla ao facer zoom, logo cambia ao tamaño real.</string>
     <string name="layer_param_expand">Amosar opcións para %1$s</string>
+    <string name="search_label" translation_description="Title of the sky search dialog.">Buscar</string>
+    <string name="search_hint" translation_description="Placeholder text in the search field showing example search targets.">p. ex. Marte ou M31</string>
+    <string name="search_coordinates_hint" translation_description="Helper text under the search field showing that celestial coordinates (right ascension and declination) can be typed directly, with two example formats.">Ou introduce coordenadas: 12h 30m, +45° ou 187.5 -45.2</string>
+    <string name="search_go" translation_description="Button that starts navigating the sky map toward the typed search target.">Ir</string>
+    <string name="search_cancel" translation_description="Button that dismisses the search dialog or ends the current search.">Cancelar</string>
+    <string name="search_no_results" translation_description="Message shown when a sky search returns no results, suggesting the object may not currently be visible.">Non houbo resultados. Quizais o obxecto non é visible neste momento.</string>
+    <string name="search_target_looking_message" translation_description="Status shown while the user is being guided toward a search target. %1$s is the object name.">Buscando: %1$s</string>
+    <string name="search_target_found_message" translation_description="Status shown when the search target has been found and is centered on screen. %1$s is the object name.">Atopado: %1$s</string>
+    <string name="search_overlay_prompt" translation_description="Instruction telling the user to physically point their phone in the direction of the on-screen arrow to find the search target.">Apunta o teu teléfono cara á frecha</string>
 </resources>

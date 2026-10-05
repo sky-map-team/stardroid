@@ -246,4 +246,55 @@ class ArchitectureTest {
             }
         }
     }
+
+    // Every source set of the shared UI module.
+    private val sharedUiSource = Regex("""(?:.*/)?shared/ui/src/[A-Za-z]+/.*\.kt$""")
+
+    @Test
+    fun `shared UI formats strings as Android does`() {
+        // Compose resources' stringResource(resource, *args) replaces only %1$s and %1$d, and the
+        // strings also use %.1f, %+.1f, %02d and %%, which it would leave in the text. Shared
+        // screens format through formattedStringResource (D137); this catches a call that a
+        // screen's move left behind — a rewrite by pattern misses the ones that pick their
+        // resource with an expression.
+        val files =
+            Konsist.scopeFromProject().files.filter {
+                sharedUiSource.matches(it.path.replace('\\', '/'))
+            }
+        assertTrue(files.isNotEmpty()) { "Shared UI gate found no files - check sharedUiSource." }
+        val offenders =
+            files.flatMap { file ->
+                stringResourceCallsWithArguments(file.text).map { "${file.name}: $it" }
+            }
+        assertTrue(offenders.isEmpty()) {
+            "Format these through formattedStringResource:\n" + offenders.joinToString("\n")
+        }
+    }
+
+    /** The `stringResource(...)` calls in [source] that pass anything after the resource. */
+    private fun stringResourceCallsWithArguments(source: String): List<String> {
+        // Comments name the call too; whole-line ones only, so "skymap://" in a string survives.
+        val text =
+            source
+                .replace(Regex("""/\*.*?\*/""", RegexOption.DOT_MATCHES_ALL), "")
+                .replace(Regex("""(?m)^\s*//.*$"""), "")
+        val call = Regex("""(?<![A-Za-z0-9_.])stringResource\(""")
+        return call.findAll(text).mapNotNull { match ->
+            val open = match.range.last
+            var depth = 0
+            var topLevelComma = -1
+            var index = open
+            while (index < text.length) {
+                when (text[index]) {
+                    '(', '[', '{' -> depth++
+                    ')', ']', '}' -> if (--depth == 0) break
+                    ',' -> if (depth == 1 && topLevelComma < 0) topLevelComma = index
+                    '"' -> index = text.indexOf('"', index + 1).coerceAtLeast(index)
+                }
+                index++
+            }
+            val rest = if (topLevelComma < 0) "" else text.substring(topLevelComma + 1, index)
+            if (rest.isBlank()) null else text.substring(match.range.first, index + 1).take(80)
+        }.toList()
+    }
 }
