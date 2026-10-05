@@ -31,6 +31,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
+import androidx.glance.appwidget.updateAll
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -106,6 +107,7 @@ import com.google.android.stardroid.ui.theme.SkyMapTheme
 import com.google.android.stardroid.ui.timetravel.TimeTravelViewModel
 import com.google.android.stardroid.widget.MoonWidget
 import com.google.android.stardroid.widget.MoonWidgetReceiver
+import com.google.android.stardroid.widget.TonightWidget
 import com.google.android.stardroid.widget.WidgetScheduler
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
@@ -371,6 +373,7 @@ class MainActivity : ComponentActivity() {
                     appVersion =
                         packageManager.getPackageInfo(packageName, 0).longVersionCode,
                     analytics = analytics,
+                    onDismissed = { TonightWidget().updateAll(applicationContext) },
                 )
             }
         }
@@ -448,6 +451,7 @@ class MainActivity : ComponentActivity() {
             // An announcement notification or widget banner whose action is a search.
             intent.getStringExtra(AnnouncementAction.EXTRA_SEARCH_QUERY)?.let {
                 runSearch(it)
+                intent.removeExtra(AnnouncementAction.EXTRA_SEARCH_QUERY)
             }
         } else {
             sessionStartTimeMillis = savedInstanceState.getLong(SAVED_SESSION_START_TIME_KEY, 0L)

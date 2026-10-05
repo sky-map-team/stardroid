@@ -51,6 +51,9 @@ class AnnouncementViewModel(
     private val locale: () -> LocaleSpec,
     private val appVersion: Long,
     private val analytics: Analytics,
+    // Runs once the dismissal is persisted, so surfaces that render from state (the widget
+    // banner) can repaint without it.
+    private val onDismissed: suspend () -> Unit = {},
 ) : ViewModel() {
     private val _pending = MutableStateFlow<PendingAnnouncement?>(null)
     val pending: StateFlow<PendingAnnouncement?> = _pending.asStateFlow()
@@ -98,6 +101,9 @@ class AnnouncementViewModel(
             AnalyticsEvents.ANNOUNCEMENT_DISMISSED_EVENT,
             mapOf(AnalyticsEvents.ANNOUNCEMENT_ID to current.id),
         )
-        viewModelScope.launch { state.dismiss(current.id, Clock.System.now()) }
+        viewModelScope.launch {
+            state.dismiss(current.id, Clock.System.now())
+            onDismissed()
+        }
     }
 }
