@@ -49,6 +49,7 @@ data class SettingsUiState(
     val passAlerts: Boolean = false,
     val tonightDigest: Boolean = false,
     val satelliteData: Boolean = false,
+    val announcements: Boolean = true,
 )
 
 // Grouped so `state` below combines at most 5 flows at a time, each into a small typed data
@@ -90,6 +91,7 @@ private data class OtherPrefs(
     val enableAnalytics: Boolean,
     val notifications: NotificationPrefs,
     val satelliteDataEnabled: Boolean,
+    val announcementsEnabled: Boolean,
 )
 
 /**
@@ -110,6 +112,10 @@ class SettingsViewModel(
     /** Whether the notifications section shows at all (D77 experiment gate). */
     val notificationsAvailable: Boolean =
         experimentConfig.isEnabled(Experiment.NOTIFICATIONS)
+
+    /** Whether the "messages from Sky Map" row shows (remote announcements experiment gate). */
+    val announcementsAvailable: Boolean =
+        experimentConfig.isEnabled(Experiment.ANNOUNCEMENTS)
 
     /**
      * Whether the satellite pass-alert row shows: it needs the notifications section *and* the
@@ -162,6 +168,7 @@ class SettingsViewModel(
                     ::NotificationPrefs,
                 ),
                 settings.satelliteDataEnabled,
+                settings.announcementsEnabled,
                 ::OtherPrefs,
             ),
         ) { controls, appearance, sensors, magnetic, other ->
@@ -185,6 +192,7 @@ class SettingsViewModel(
                 passAlerts = other.notifications.passAlertsEnabled,
                 tonightDigest = other.notifications.tonightDigestEnabled,
                 satelliteData = other.satelliteDataEnabled,
+                announcements = other.announcementsEnabled,
             )
         }.stateIn(viewModelScope, SharingStarted.Eagerly, SettingsUiState())
 
@@ -270,6 +278,11 @@ class SettingsViewModel(
     fun setPassAlerts(enabled: Boolean) {
         trackChange("pass_alerts_enabled", enabled)
         viewModelScope.launch { settings.setPassAlertsEnabled(enabled) }
+    }
+
+    fun setAnnouncements(enabled: Boolean) {
+        trackChange("announcements_enabled", enabled)
+        viewModelScope.launch { settings.setAnnouncementsEnabled(enabled) }
     }
 
     fun setTonightDigest(enabled: Boolean) {

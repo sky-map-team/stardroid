@@ -35,6 +35,23 @@ enum class Experiment(val key: String) {
      * if our traffic ever looks wrong.
      */
     SATELLITES("satellites_enabled"),
+
+    /**
+     * Remotely authored announcements on the notification, widget and interstitial surfaces
+     * (docs/design/remote-announcements.md). The kill switch for the whole feature.
+     */
+    ANNOUNCEMENTS("announcements_enabled"),
+}
+
+/** The outcome of [ExperimentConfig.fetchNow]. */
+sealed interface FetchResult {
+    /** This config has no server to fetch from. */
+    data object Unsupported : FetchResult
+
+    /** Fetched and activated; [updated] is true when the activated values changed. */
+    data class Success(val updated: Boolean) : FetchResult
+
+    data class Failure(val message: String) : FetchResult
 }
 
 /**
@@ -44,6 +61,21 @@ enum class Experiment(val key: String) {
  */
 fun interface ExperimentConfig {
     fun isEnabled(experiment: Experiment): Boolean
+
+    /**
+     * Epoch millis of the last successful fetch from the server, or null if there has been none
+     * (or this config never fetches, as on fdroid).
+     */
+    val lastFetchTimeMillis: Long? get() = null
+
+    /** Whether [fetchNow] does anything — false for configs with no server. */
+    val canFetch: Boolean get() = false
+
+    /**
+     * Fetches and activates the server config now, ignoring the usual 12-hour throttle — a
+     * testing aid for Diagnostics. Only meaningful when [canFetch] is true.
+     */
+    suspend fun fetchNow(): FetchResult = FetchResult.Unsupported
 
     companion object {
         /** The shipped defaults, kept in sync with `remote_config_defaults.xml`. */
@@ -56,6 +88,7 @@ fun interface ExperimentConfig {
                     Experiment.CAMERA_AR -> false
                     Experiment.SHARE_SKY -> false
                     Experiment.SATELLITES -> false
+                    Experiment.ANNOUNCEMENTS -> false
                 }
             }
     }

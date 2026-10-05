@@ -20,6 +20,9 @@ import androidx.lifecycle.ProcessLifecycleOwner
 import androidx.lifecycle.flowWithLifecycle
 import com.google.android.stardroid.FlavorEdges
 import com.google.android.stardroid.analytics.Analytics
+import com.google.android.stardroid.announcements.AnnouncementSource
+import com.google.android.stardroid.announcements.AnnouncementState
+import com.google.android.stardroid.announcements.DataStoreAnnouncementState
 import com.google.android.stardroid.data.satellites.HttpUrlConnectionCelesTrakClient
 import com.google.android.stardroid.data.satellites.SatelliteElementsRepository
 import com.google.android.stardroid.data.satellites.TleStore
@@ -108,6 +111,18 @@ object AppModule {
     @Singleton
     fun experimentConfig(application: Application): ExperimentConfig =
         FlavorEdges.experimentConfig(application)
+
+    /** Remote announcements: Remote Config on gms, nothing on fdroid. */
+    @Provides
+    @Singleton
+    fun announcementSource(application: Application): AnnouncementSource =
+        FlavorEdges.announcementSource(application)
+
+    /** Per-message seen/dismissed bookkeeping, in the shared settings DataStore. */
+    @Provides
+    @Singleton
+    fun announcementState(application: Application): AnnouncementState =
+        DataStoreAnnouncementState(application.settingsDataStore)
 
     /**
      * The usage-analytics edge — Firebase on gms, a no-op on fdroid (D49). The

@@ -244,6 +244,13 @@ class DataStoreSettings(
         dataStore.edit { it[TONIGHT_DIGEST_ENABLED] = enabled }
     }
 
+    override val announcementsEnabled: Flow<Boolean> =
+        boolean(ANNOUNCEMENTS_ENABLED, default = true)
+
+    override suspend fun setAnnouncementsEnabled(enabled: Boolean) {
+        dataStore.edit { it[ANNOUNCEMENTS_ENABLED] = enabled }
+    }
+
     override val labelSizeHintShown: Flow<Boolean> =
         boolean(LABEL_SIZE_HINT_SHOWN, default = false)
 
@@ -358,6 +365,8 @@ class DataStoreSettings(
         private val SATELLITE_DATA_ENABLED = booleanPreferencesKey("satellite_data_enabled")
 
         private val TONIGHT_DIGEST_ENABLED = booleanPreferencesKey("tonight_digest_enabled")
+
+        private val ANNOUNCEMENTS_ENABLED = booleanPreferencesKey("announcements_enabled")
 
         private val LABEL_SIZE_HINT_SHOWN = booleanPreferencesKey("label_size_hint_shown")
 

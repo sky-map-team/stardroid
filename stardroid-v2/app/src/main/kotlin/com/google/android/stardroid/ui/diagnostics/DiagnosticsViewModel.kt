@@ -11,6 +11,9 @@ package com.google.android.stardroid.ui.diagnostics
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.google.android.stardroid.analytics.Analytics
+import com.google.android.stardroid.analytics.AnalyticsEvents
+import com.google.android.stardroid.analytics.NoOpAnalytics
 import com.google.android.stardroid.astronomy.LocalFrame
 import com.google.android.stardroid.astronomy.SkyModel
 import com.google.android.stardroid.astronomy.ViewDirectionMode
@@ -21,6 +24,8 @@ import com.google.android.stardroid.render.api.SkyCamera
 import com.google.android.stardroid.sensors.MagneticDeclinationSource
 import com.google.android.stardroid.sensors.OrientationSource
 import com.google.android.stardroid.sensors.SensorKind
+import com.google.android.stardroid.startup.ExperimentConfig
+import com.google.android.stardroid.startup.FetchResult
 import com.google.android.stardroid.sensors.SensorReading
 import com.google.android.stardroid.sensors.SensorStatusSource
 import com.google.android.stardroid.settings.OneEuroEaseOff
@@ -145,7 +150,31 @@ class DiagnosticsViewModel(
     // screens-and-startup.md), which can sit paused while real sensor events keep arriving.
     // A jitter window keyed to a paused clock would never evict old samples.
     private val wallClockMillis: () -> Long = System::currentTimeMillis,
+    private val analytics: Analytics = NoOpAnalytics,
 ) : ViewModel() {
+    /** The "Fetch experiment flags now" button: forces a fetch and records that it was used. */
+    suspend fun fetchExperiments(config: ExperimentConfig): FetchResult {
+        val result = config.fetchNow()
+        val outcome =
+            when (result) {
+                FetchResult.Unsupported -> null
+                is FetchResult.Success ->
+                    if (result.updated) {
+                        AnalyticsEvents.EXPERIMENT_FETCH_OUTCOME_UPDATED
+                    } else {
+                        AnalyticsEvents.EXPERIMENT_FETCH_OUTCOME_UNCHANGED
+                    }
+                is FetchResult.Failure -> AnalyticsEvents.EXPERIMENT_FETCH_OUTCOME_FAILED
+            }
+        if (outcome != null) {
+            analytics.trackEvent(
+                AnalyticsEvents.EXPERIMENT_FETCH_REQUESTED_EVENT,
+                mapOf(AnalyticsEvents.EXPERIMENT_FETCH_OUTCOME to outcome),
+            )
+        }
+        return result
+    }
+
     /** One rate tracker per sensor kind — fed by the same collection [sensors] registers. */
     private val sensorRateAccumulators: Map<SensorKind, SensorRateAccumulator> =
         SensorKind.entries.associateWith { SensorRateAccumulator(SENSOR_RATE_WINDOW_MILLIS) }

@@ -477,6 +477,9 @@
     <string name="diagnostics_satellite_never_fetched" translation_description="Row value in the diagnostics screen when satellite orbital data has never been downloaded">Never</string>
     <string name="diagnostics_satellite_circuit_open" translation_description="Row label in the diagnostics screen for when satellite downloads are paused after repeated server errors">Downloads paused</string>
     <string name="diagnostics_satellite_circuit_open_format" translation_description="Row value in the diagnostics screen showing when paused satellite downloads will resume and how many failures caused the pause. %1$s is a date and time, %2$d is a count">Until %1$s (%2$d failures)</string>
+    <string name="diagnostics_experiments_last_fetched" translation_description="Row label in the diagnostics experiment flags section: when the feature-flag config was last downloaded from the server">Last fetched</string>
+    <string name="diagnostics_experiments_never_fetched" translation_description="Row value in the diagnostics experiment flags section when the feature-flag config has never been downloaded">Never</string>
+    <string name="diagnostics_experiments_fetch_now" translation_description="Label on a button in the diagnostics screen that downloads the feature-flag config from the server immediately">Fetch experiment flags now</string>
     <string name="diagnostics_satellite_force_fetch" translation_description="Label on a debug-only button in the diagnostics screen that downloads satellite orbital data immediately">Fetch satellite data now (debug)</string>
     <string name="diagnostics_connected" translation_description="Network status value shown when the device has an active network connection">Connected</string>
     <string name="diagnostics_disconnected" translation_description="Network status value shown when the device has no network connection">Disconnected</string>
@@ -640,6 +643,13 @@ readings to Sky Map.</blockquote>
     <string name="settings_eclipse_alerts_summary" translation_description="Explanation of the lunar-eclipse notification preference">A single alert before a lunar eclipse begins</string>
     <string name="settings_pass_alerts" translation_description="Preference title: notify shortly before a satellite passes overhead">Satellite passes</string>
     <string name="settings_pass_alerts_summary" translation_description="Explanation of the satellite-pass notification preference">A single alert before the best visible pass of the night</string>
+    <string name="settings_announcements" translation_description="Preference title: occasional messages from the Sky Map team about rare sky events, shown as a notification, in the widget and when the app opens">Messages from Sky Map</string>
+    <string name="settings_announcements_summary" translation_description="Explanation of the announcements preference">Rare heads-ups such as a strong aurora or a bright planet. Shown as a notification, in the Sky Tonight widget, or when you open the app.</string>
+    <string name="channel_announcements_name" translation_description="Notification channel name for occasional messages from the Sky Map team">Messages from Sky Map</string>
+    <string name="channel_announcements_description" translation_description="Notification channel description for occasional messages from the Sky Map team">Rare heads-ups about notable sky events</string>
+    <string name="announcement_dialog_dismiss" translation_description="Button that closes an announcement dialog and hides that message everywhere">Dismiss</string>
+    <string name="announcement_dialog_open" translation_description="Button on an announcement dialog that jumps to the sky object the message is about">Take a look</string>
+    <string name="announcement_dialog_continue" translation_description="Button on an announcement dialog that closes it and continues to the sky map">Continue</string>
     <string name="settings_tonight_digest" translation_description="Preference title: a single evening notification summarizing what\'s visible tonight">Tonight\'s sky digest</string>
     <string name="settings_tonight_digest_summary" translation_description="Explanation of the tonight-digest notification preference">One summary after sunset, skipped on quiet nights</string>
     <string name="settings_notifications_blocked" translation_description="Warning row shown when the user enabled notifications in the app but blocked them at the system level">Notifications are blocked for Sky Map</string>

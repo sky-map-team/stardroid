@@ -219,6 +219,14 @@ fun SettingsScreen(
                     checked = state.enableAnalytics,
                     onCheckedChange = viewModel::setEnableAnalytics,
                 )
+                if (viewModel.announcementsAvailable) {
+                    SwitchRow(
+                        title = stringResource(R.string.settings_announcements),
+                        summary = stringResource(R.string.settings_announcements_summary),
+                        checked = state.announcements,
+                        onCheckedChange = viewModel::setAnnouncements,
+                    )
+                }
                 // Relocated from the ⋮ overflow sheet: a sensor/location readout is a
                 // support tool, not something most people need most of the time, and it
                 // was crowding out Help there (Hannah's feedback, 2026-08). "Settings →
