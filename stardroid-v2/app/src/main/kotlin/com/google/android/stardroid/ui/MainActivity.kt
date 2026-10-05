@@ -332,6 +332,7 @@ class MainActivity : ComponentActivity() {
                     orientationSource = orientationSource,
                     localFrame = mapViewModel.localFrame,
                     rendererInfo = rendererInfoStore::get,
+                    analytics = analytics,
                 )
             }
         }

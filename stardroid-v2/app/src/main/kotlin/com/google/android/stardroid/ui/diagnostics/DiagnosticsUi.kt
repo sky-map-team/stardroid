@@ -180,7 +180,7 @@ fun DiagnosticsScreen(
                         onClick = {
                             scope.launch {
                                 experimentFetchResult =
-                                    when (val result = experimentConfig.fetchNow()) {
+                                    when (val result = viewModel.fetchExperiments(experimentConfig)) {
                                         FetchResult.Unsupported -> "Not supported in this build"
                                         is FetchResult.Success ->
                                             if (result.updated) {
