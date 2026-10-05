@@ -321,8 +321,6 @@
     <string name="settings_auto_dimness_system" translation_description="Screen dimming option: leave brightness on the system setting">Predeterminado do sistema</string>
     <string name="settings_auto_dimness_dim" translation_description="Screen dimming option: dimmest screen setting">Moi tenue</string>
     <string name="settings_auto_dimness_classic" translation_description="Screen dimming option: the hand-tuned brightness Sky Map used for its first 15 years">Clásico</string>
-    <string name="settings_sky_gradient" translation_description="Setting toggle title: whether to show the blue sky gradient during the day">Amosar gradiente do ceo</string>
-    <string name="settings_sky_gradient_summary" translation_description="Setting toggle summary for sky gradient: explains what the feature does">Sombrea o ceo de azul preto do Sol e escuro no lado oposto</string>
     <string name="settings_disable_gyro" translation_description="Preference title for switching from the gyroscope to the legacy compass + accelerometer sensor pipeline">Usar sensores herdados</string>
     <string name="settings_disable_gyro_summary" translation_description="Explanation of the legacy sensors preference and when to use it">Apunta o mapa usando a brúxula e o acelerómetro en lugar do xiroscopio. Proba isto se o mapa se desvía ou o xiroscopio do teu dispositivo funciona mal; os dispositivos sen xiroscopio usan estes sensores automaticamente.</string>
     <string name="settings_classic_sensors_only" translation_description="Summary noting a sensor preference only applies to the legacy non-gyroscope sensor path">Só se aplica cando se usan sensores herdados</string>

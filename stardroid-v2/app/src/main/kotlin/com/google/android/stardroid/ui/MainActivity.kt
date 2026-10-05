@@ -33,6 +33,7 @@ import androidx.activity.compose.BackHandler
 import androidx.activity.compose.setContent
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -40,6 +41,7 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.WindowCompat
+import androidx.glance.appwidget.updateAll
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.lifecycleScope
@@ -52,6 +54,9 @@ import com.google.android.stardroid.R
 import com.google.android.stardroid.analytics.Analytics
 import com.google.android.stardroid.analytics.AnalyticsEvents
 import com.google.android.stardroid.analytics.SessionBucket
+import com.google.android.stardroid.announcements.AnnouncementAction
+import com.google.android.stardroid.announcements.AnnouncementSource
+import com.google.android.stardroid.announcements.AnnouncementState
 import com.google.android.stardroid.astronomy.MeeusEphemeris
 import com.google.android.stardroid.camera.SkyCameraPreview
 import com.google.android.stardroid.catalog.CelestialObjectId
@@ -97,6 +102,8 @@ import com.google.android.stardroid.ui.map.ReferenceFrame
 import com.google.android.stardroid.ui.objectinfo.ObjectInfoViewModel
 import com.google.android.stardroid.ui.search.SearchViewModel
 import com.google.android.stardroid.ui.settings.SettingsViewModel
+import com.google.android.stardroid.ui.startup.AnnouncementDialog
+import com.google.android.stardroid.ui.startup.AnnouncementViewModel
 import com.google.android.stardroid.ui.startup.EulaScreen
 import com.google.android.stardroid.ui.startup.StartupViewModel
 import com.google.android.stardroid.ui.startup.VersionBanner
@@ -105,6 +112,7 @@ import com.google.android.stardroid.ui.theme.SkyMapTheme
 import com.google.android.stardroid.ui.timetravel.TimeTravelViewModel
 import com.google.android.stardroid.widget.MoonWidget
 import com.google.android.stardroid.widget.MoonWidgetReceiver
+import com.google.android.stardroid.widget.TonightWidget
 import com.google.android.stardroid.widget.WidgetScheduler
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
@@ -161,6 +169,10 @@ class MainActivity : ComponentActivity() {
     @Inject lateinit var localeSource: LocaleSource
 
     @Inject lateinit var displayRotation: DisplayRotationBus
+
+    @Inject lateinit var announcementSource: AnnouncementSource
+
+    @Inject lateinit var announcementState: AnnouncementState
 
     @Inject lateinit var catalogAccess: CatalogAccess
 
@@ -340,6 +352,7 @@ class MainActivity : ComponentActivity() {
                     orientationSource = orientationSource,
                     localFrame = mapViewModel.localFrame,
                     rendererInfo = rendererInfoStore::get,
+                    analytics = analytics,
                 )
             }
         }
@@ -362,6 +375,24 @@ class MainActivity : ComponentActivity() {
         viewModelFactory {
             initializer {
                 StartupViewModel(startupRouter, startupState, analytics)
+            }
+        }
+    }
+
+    private val announcementViewModel: AnnouncementViewModel by viewModels {
+        viewModelFactory {
+            initializer {
+                AnnouncementViewModel(
+                    source = announcementSource,
+                    state = announcementState,
+                    settings = settings,
+                    experimentConfig = experimentConfig,
+                    locale = { localeSource.current },
+                    appVersion =
+                        packageManager.getPackageInfo(packageName, 0).longVersionCode,
+                    analytics = analytics,
+                    onDismissed = { runCatching { TonightWidget().updateAll(applicationContext) } },
+                )
             }
         }
     }
@@ -434,6 +465,11 @@ class MainActivity : ComponentActivity() {
             // the card state waits out any startup gates in ObjectInfoViewModel.
             intent.getStringExtra(MoonWidget.EXTRA_SHOW_OBJECT_ID)?.let {
                 objectInfoViewModel.show(CelestialObjectId(it))
+            }
+            // An announcement notification or widget banner whose action is a search.
+            intent.getStringExtra(AnnouncementAction.EXTRA_SEARCH_QUERY)?.let {
+                runSearch(it)
+                intent.removeExtra(AnnouncementAction.EXTRA_SEARCH_QUERY)
             }
         } else {
             sessionStartTimeMillis = savedInstanceState.getLong(SAVED_SESSION_START_TIME_KEY, 0L)
@@ -596,6 +632,27 @@ class MainActivity : ComponentActivity() {
                         onDismiss = startupViewModel::dismissWhatsNew,
                     )
                 }
+                // Remote announcement interstitial: only once every startup gate has cleared,
+                // so it never stacks on the EULA, the tour or What's New.
+                val gatesClear = !gates.needsEula && !gates.needsWarmWelcome && !gates.needsWhatsNew
+                LaunchedEffect(gatesClear) {
+                    if (gatesClear) announcementViewModel.loadIfNeeded()
+                }
+                val announcement by announcementViewModel.pending.collectAsStateWithLifecycle()
+                announcement?.let { pending ->
+                    AnnouncementDialog(
+                        announcement = pending,
+                        onOpen = {
+                            (pending.action as? AnnouncementAction.Search)?.let {
+                                runSearch(
+                                    it.query,
+                                )
+                            }
+                            announcementViewModel.close()
+                        },
+                        onDismiss = announcementViewModel::dismiss,
+                    )
+                }
                 // The branded version banner: shown once per cold start, covering the app while
                 // it loads, then faded out to reveal the map (survives rotation via
                 // rememberSaveable, so it plays once).
@@ -608,6 +665,11 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
+    }
+
+    private fun runSearch(query: String) {
+        searchViewModel.setQuery(query)
+        searchViewModel.submit()
     }
 
     private fun sensorPresence(): SensorPresence {

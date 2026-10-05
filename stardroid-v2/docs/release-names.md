@@ -8,7 +8,7 @@ Names already used: see the "Used names" table below, or `CHANGELOG.md` for the 
 history.
 
 - **A** — Apollo / Artemis
-- **B** — Beresheet / Buran
+- **B** — Buran
 - **C** — Cassini / Curiosity
 - **D** — Dawn / Discovery
 - **E** — Explorer / Euclid

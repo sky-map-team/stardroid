@@ -342,8 +342,6 @@
     <string name="settings_auto_dimness_system" translation_description="Screen dimming option: leave brightness on the system setting">Системний за замовчуванням</string>
     <string name="settings_auto_dimness_dim" translation_description="Screen dimming option: dimmest screen setting">Дуже темний</string>
     <string name="settings_auto_dimness_classic" translation_description="Screen dimming option: the hand-tuned brightness Sky Map used for its first 15 years">Класичний</string>
-    <string name="settings_sky_gradient">Показувати градієнт неба</string>
-    <string name="settings_sky_gradient_summary">Затінює небо синім біля Сонця та темним на протилежній стороні</string>
     <string name="settings_disable_gyro" translation_description="Preference title for switching from the gyroscope to the legacy compass + accelerometer sensor pipeline">Використовувати застарілі датчики</string>
     <string name="settings_disable_gyro_summary" translation_description="Explanation of the legacy sensors preference and when to use it">
     Наведіть карту за допомогою компаса й акселерометра замість гіроскопа. Спробуйте це, якщо карта дрейфує або гіроскоп вашого пристрою працює некоректно; пристрої без гіроскопа використовують ці датчики автоматично.

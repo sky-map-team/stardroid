@@ -9,6 +9,8 @@
 
 package com.google.android.stardroid.ui.diagnostics
 
+import com.google.android.stardroid.analytics.AnalyticsEvents
+import com.google.android.stardroid.analytics.FakeAnalytics
 import com.google.android.stardroid.astronomy.LocalFrame
 import com.google.android.stardroid.astronomy.ViewDirectionMode
 import com.google.android.stardroid.location.LocationSource
@@ -28,6 +30,9 @@ import com.google.android.stardroid.sensors.SensorReading
 import com.google.android.stardroid.settings.FakeSettings
 import com.google.android.stardroid.settings.OneEuroEaseOff
 import com.google.android.stardroid.settings.OneEuroSteadiness
+import com.google.android.stardroid.startup.Experiment
+import com.google.android.stardroid.startup.ExperimentConfig
+import com.google.android.stardroid.startup.FetchResult
 import com.google.android.stardroid.testing.assertThat
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -96,8 +101,11 @@ class DiagnosticsViewModelTest {
             orientationSource = orientationSource,
             localFrame = localFrame,
             ioContext = dispatcher,
+            analytics = analytics,
         )
     }
+
+    private val analytics = FakeAnalytics()
 
     private class FakeOrientationSource(
         private val samples: Flow<OrientationSample>,
@@ -312,4 +320,36 @@ class DiagnosticsViewModelTest {
         assertThat(quarterTurn[3]).isWithin(1e-6f).of(1f)
         assertThat(quarterTurn[4]).isWithin(1e-6f).of(0f)
     }
+
+    @Test
+    fun `forcing an experiment fetch records the outcome`() =
+        testScope.runTest {
+            val config =
+                object : ExperimentConfig {
+                    override fun isEnabled(experiment: Experiment) = true
+
+                    override suspend fun fetchNow(): FetchResult =
+                        FetchResult.Success(
+                            updated = true,
+                        )
+                }
+
+            viewModel.fetchExperiments(config)
+
+            assertThat(analytics.events.map { it.name })
+                .containsExactly(AnalyticsEvents.EXPERIMENT_FETCH_REQUESTED_EVENT)
+            assertThat(analytics.events.single().params)
+                .containsEntry(
+                    AnalyticsEvents.EXPERIMENT_FETCH_OUTCOME,
+                    AnalyticsEvents.EXPERIMENT_FETCH_OUTCOME_UPDATED,
+                )
+        }
+
+    @Test
+    fun `an unsupported experiment fetch records nothing`() =
+        testScope.runTest {
+            viewModel.fetchExperiments(ExperimentConfig.Static)
+
+            assertThat(analytics.events).isEmpty()
+        }
 }

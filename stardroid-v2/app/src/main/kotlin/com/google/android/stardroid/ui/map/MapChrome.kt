@@ -1271,6 +1271,7 @@ private fun parameterLabel(key: String): Int =
         LayerParameter.DISC_SIZE -> R.string.layer_param_disc_size
         LayerParameter.PASS_ALERTS -> R.string.layer_param_pass_alerts
         LayerParameter.ECLIPSE_ALERTS -> R.string.layer_param_eclipse_alerts
+        LayerParameter.SHOWER_ALERTS -> R.string.layer_param_shower_alerts
         LayerParameter.ALTAZ_GRID_DENSITY -> R.string.layer_param_altaz_grid_density
         LayerParameter.RADEC_GRID_DENSITY -> R.string.layer_param_radec_grid_density
         else -> R.string.layer_param_disc_size
@@ -1282,6 +1283,7 @@ private fun parameterDescription(key: String): Int =
     when (key) {
         LayerParameter.PASS_ALERTS -> R.string.layer_param_pass_alerts_description
         LayerParameter.ECLIPSE_ALERTS -> R.string.layer_param_eclipse_alerts_description
+        LayerParameter.SHOWER_ALERTS -> R.string.layer_param_shower_alerts_description
         else -> R.string.layer_param_pass_alerts_description
     }
 
@@ -1334,7 +1336,11 @@ private fun layerHelp(id: LayerId): LayerHelp =
         CatalogLayers.DEEP_SKY_LAYER_ID -> LayerHelp(R.string.layer_help_deep_sky)
         SolarSystemLayer.LAYER_ID ->
             LayerHelp(R.string.layer_help_solar_system, R.string.layer_help_options_solar_system)
-        MeteorShowerLayer.LAYER_ID -> LayerHelp(R.string.layer_help_meteor_showers)
+        MeteorShowerLayer.LAYER_ID ->
+            LayerHelp(
+                R.string.layer_help_meteor_showers,
+                R.string.layer_help_options_meteor_showers,
+            )
         SatelliteLayer.LAYER_ID ->
             LayerHelp(R.string.layer_help_satellites, R.string.layer_help_options_satellites)
         GridLayer.LAYER_ID ->

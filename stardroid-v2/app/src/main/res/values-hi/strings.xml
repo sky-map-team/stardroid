@@ -339,8 +339,6 @@
     <string name="settings_auto_dimness_system" translation_description="Screen dimming option: leave brightness on the system setting">सिस्टम डिफ़ॉल्ट</string>
     <string name="settings_auto_dimness_dim" translation_description="Screen dimming option: dimmest screen setting">बहुत मंद</string>
     <string name="settings_auto_dimness_classic" translation_description="Screen dimming option: the hand-tuned brightness Sky Map used for its first 15 years">क्लासिक</string>
-    <string name="settings_sky_gradient">आकाश ग्रेडिएंट दिखाएं</string>
-    <string name="settings_sky_gradient_summary">सूर्य के पास आकाश को नीला और विपरीत ओर गहरा करता है</string>
     <string name="settings_disable_gyro" translation_description="Preference title for switching from the gyroscope to the legacy compass + accelerometer sensor pipeline">पुराने सेंसर का उपयोग करें</string>
     <string name="settings_disable_gyro_summary" translation_description="Explanation of the legacy sensors preference and when to use it">
     मानचित्र को जाइरोस्कोप के बजाय कंपास और एक्सेलेरोमीटर का उपयोग करके इंगित करें। यदि मानचित्र भटकता है या आपके डिवाइस का जाइरो ठीक से काम नहीं करता है, तो इसे आज़माएँ; जाइरो के बिना वाले डिवाइस इन सेंसरों का स्वचालित रूप से उपयोग करते हैं।

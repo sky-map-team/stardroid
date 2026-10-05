@@ -332,8 +332,6 @@
     <string name="settings_auto_dimness_system" translation_description="Screen dimming option: leave brightness on the system setting">システムのデフォルト</string>
     <string name="settings_auto_dimness_dim" translation_description="Screen dimming option: dimmest screen setting">非常に暗い</string>
     <string name="settings_auto_dimness_classic" translation_description="Screen dimming option: the hand-tuned brightness Sky Map used for its first 15 years">クラシック</string>
-    <string name="settings_sky_gradient">空のグラデーションを表示</string>
-    <string name="settings_sky_gradient_summary">太陽の近くは空を青くし、反対側は暗くします</string>
     <string name="settings_disable_gyro" translation_description="Preference title for switching from the gyroscope to the legacy compass + accelerometer sensor pipeline">レガシーセンサーを使用</string>
     <string name="settings_disable_gyro_summary" translation_description="Explanation of the legacy sensors preference and when to use it">
     ジャイロスコープではなく、コンパスと加速度計を使用して地図を向けます。地図がずれたり、お使いのデバイスのジャイロが正常に動作しない場合は、これを試してください。ジャイロのないデバイスは、これらのセンサーを自動的に使用します。

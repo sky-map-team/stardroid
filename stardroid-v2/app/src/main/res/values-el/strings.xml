@@ -344,8 +344,6 @@
     <string name="settings_auto_dimness_system" translation_description="Screen dimming option: leave brightness on the system setting">Προεπιλογή Συστήματος</string>
     <string name="settings_auto_dimness_dim" translation_description="Screen dimming option: dimmest screen setting">Πολύ Χαμηλή</string>
     <string name="settings_auto_dimness_classic" translation_description="Screen dimming option: the hand-tuned brightness Sky Map used for its first 15 years">Κλασικό</string>
-    <string name="settings_sky_gradient">Εμφάνιση κλίσης ουρανού</string>
-    <string name="settings_sky_gradient_summary">Σκιάζει τον ουρανό μπλε κοντά στον Ήλιο και σκοτεινό στην αντίθετη πλευρά</string>
     <string name="settings_disable_gyro" translation_description="Preference title for switching from the gyroscope to the legacy compass + accelerometer sensor pipeline">Χρήση παλαιών αισθητήρων</string>
     <string name="settings_disable_gyro_summary" translation_description="Explanation of the legacy sensors preference and when to use it">
     Στρέψτε τον χάρτη χρησιμοποιώντας την πυξίδα και το επιταχυνσιόμετρο αντί για το γυροσκόπιο. Δοκιμάστε το αν ο χάρτης παρασύρεται ή αν το γυροσκόπιο της συσκευής σας δυσλειτουργεί. Οι συσκευές χωρίς γυροσκόπιο χρησιμοποιούν αυτούς τους αισθητήρες αυτόματα.
