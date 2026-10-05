@@ -31,7 +31,6 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
-import androidx.glance.appwidget.updateAll
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -40,6 +39,7 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.WindowCompat
+import androidx.glance.appwidget.updateAll
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.lifecycleScope
@@ -373,7 +373,7 @@ class MainActivity : ComponentActivity() {
                     appVersion =
                         packageManager.getPackageInfo(packageName, 0).longVersionCode,
                     analytics = analytics,
-                    onDismissed = { TonightWidget().updateAll(applicationContext) },
+                    onDismissed = { runCatching { TonightWidget().updateAll(applicationContext) } },
                 )
             }
         }
