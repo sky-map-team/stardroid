@@ -109,22 +109,7 @@
     <string name="no_sensor_warning_dismiss" translation_description="Button that dismisses the missing-sensors warning dialog.">확인</string>
 
     <!-- The map HUD (map-hud.md, D65): the top-right pointing readout shown with the chrome. -->
-    <string name="hud_ra_label" translation_description="Map-HUD row label: right ascension of the point at the centre of the screen. Standard astronomy abbreviation; keep short.">적경</string>
-    <string name="hud_dec_label" translation_description="Map-HUD row label: declination of the point at the centre of the screen. Standard astronomy abbreviation; keep short.">적위</string>
-    <string name="hud_alt_label" translation_description="Map-HUD row label: altitude (angle above the horizon) of the point at the centre of the screen. Keep short.">고도</string>
-    <string name="hud_az_label" translation_description="Map-HUD row label: azimuth (compass bearing) of the point at the centre of the screen. Keep short.">방위</string>
-    <string name="hud_fov_label" translation_description="Map-HUD row label: the field of view (how many degrees of sky the screen spans). Keep short.">시야</string>
-    <string name="hud_correction_label" translation_description="Map-HUD row label for the manual sensor-alignment correction the user set by dragging. Keep very short.">조정</string>
-    <string name="hud_ra_value" translation_description="Right ascension in the conventional hours-and-minutes notation, e.g. \'18h 38m\'. %1$d is hours (0-23), %2$02d is minutes (00-59).">%1$d시 %2$02d분</string>
-    <!-- tm:omitted name="hud_signed_degrees_value" reason="identical_to_source" -->
-    <!-- tm:omitted name="hud_azimuth_value" reason="identical_to_source" -->
-    <!-- tm:omitted name="hud_fov_value" reason="identical_to_source" -->
-    <!-- tm:omitted name="hud_fov_value_fine" reason="identical_to_source" -->
-    <!-- tm:omitted name="hud_fov_value_finest" reason="identical_to_source" -->
-    <!-- tm:omitted name="hud_correction_value" reason="identical_to_source" -->
-    <string name="hud_correction_reset" translation_description="Accessibility label for the small button that clears the manual sensor-alignment correction back to zero.">정렬 보정 초기화</string>
     <string name="hud_alignment_reset_message" translation_description="Snackbar confirming the sensor-alignment correction was cleared; shown with an Undo action.">정렬 보정 초기화됨</string>
-    <string name="hud_fov_locked" translation_description="Accessibility label for the small lock icon shown next to the field-of-view readout while the camera controls the zoom in through-camera mode.">카메라에 줌 고정됨</string>
 
     <string name="layer_hud" translation_description="Layers-sheet Display toggle that shows the heads-up readout of where the phone is pointing (compass direction and altitude) over the star map.">가리키는 정보 표시</string>
 
@@ -151,24 +136,6 @@
     <string name="share_shutter_button" translation_description="Accessibility label for the round shutter button that captures and shares the current through-camera view.">이 화면 공유</string>
     <string name="share_failed_message" translation_description="Snackbar shown when capturing the sky image for sharing failed.">하늘을 캡처할 수 없습니다 — 다시 시도하세요</string>
     <string name="ar_exposure_auto" translation_description="Readout shown when a manual camera exposure slider sits at its automatic position.">자동</string>
-    <string-array name="hud_cardinal_directions" translation_description="The sixteen compass-point abbreviations, clockwise from north, used as the azimuth suffix in the map HUD (e.g. N, NNE, NE...). Translate to the locale\'s conventional compass abbreviations.">
-        <item>북</item>
-        <item>북북동</item>
-        <item>북동</item>
-        <item>동북동</item>
-        <item>동</item>
-        <item>동남동</item>
-        <item>남동</item>
-        <item>남남동</item>
-        <item>남</item>
-        <item>남남서</item>
-        <item>남서</item>
-        <item>서남서</item>
-        <item>서</item>
-        <item>서북서</item>
-        <item>북서</item>
-        <item>북북서</item>
-    </string-array>
 
     <!-- Time travel: entry button, dialog, and the player bar shown while travelling. -->
     <string name="time_travel_button">시간 여행</string>

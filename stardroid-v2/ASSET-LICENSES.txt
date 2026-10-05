@@ -13,7 +13,8 @@
 #
 # FORMAT
 #   [section]     one of: arr, gpl, apache-v1, third-party
-#   one glob per line, relative to app/src/main/
+#   one glob per line, relative to app/src/main/ — or, for the shared UI's resources (D136),
+#   to stardroid-v2/ (shared/ui/src/commonMain/res/...)
 #   '#' starts a comment; blank lines ignored
 #   First matching rule wins, so order matters within and between sections.
 #
@@ -56,6 +57,7 @@ assets/catalog/icons/*.webp
 res/drawable/ic_*.xml
 res/drawable/widget_*.xml
 res/drawable/moon_widget_preview_disc.xml
+shared/ui/src/commonMain/res/drawable/ic_*.xml
 
 
 [apache-v1]

@@ -9,7 +9,6 @@
 
 package com.google.android.stardroid.ui.map
 
-import androidx.annotation.StringRes
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Column
@@ -30,11 +29,31 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.res.stringArrayResource
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.google.android.stardroid.R
+import com.google.android.stardroid.ui.common.formattedStringResource
+import com.google.android.stardroid.ui.resources.Res
+import com.google.android.stardroid.ui.resources.hud_alt_label
+import com.google.android.stardroid.ui.resources.hud_az_label
+import com.google.android.stardroid.ui.resources.hud_azimuth_value
+import com.google.android.stardroid.ui.resources.hud_cardinal_directions
+import com.google.android.stardroid.ui.resources.hud_correction_label
+import com.google.android.stardroid.ui.resources.hud_correction_reset
+import com.google.android.stardroid.ui.resources.hud_correction_value
+import com.google.android.stardroid.ui.resources.hud_dec_label
+import com.google.android.stardroid.ui.resources.hud_fov_label
+import com.google.android.stardroid.ui.resources.hud_fov_locked
+import com.google.android.stardroid.ui.resources.hud_fov_value
+import com.google.android.stardroid.ui.resources.hud_fov_value_fine
+import com.google.android.stardroid.ui.resources.hud_fov_value_finest
+import com.google.android.stardroid.ui.resources.hud_ra_label
+import com.google.android.stardroid.ui.resources.hud_ra_value
+import com.google.android.stardroid.ui.resources.hud_signed_degrees_value
+import com.google.android.stardroid.ui.resources.ic_hud_lock
+import com.google.android.stardroid.ui.resources.ic_hud_reset
+import org.jetbrains.compose.resources.StringResource
+import org.jetbrains.compose.resources.painterResource
+import org.jetbrains.compose.resources.stringArrayResource
+import org.jetbrains.compose.resources.stringResource
 import kotlin.math.roundToInt
 
 /**
@@ -42,7 +61,7 @@ import kotlin.math.roundToInt
  * FOV, and the drag-to-align correction with its reset. Information chrome: it renders
  * inside the same show/hide container as the rest of the chrome and re-tints through the
  * theme in night mode. Values arrive pre-throttled ([MapViewModel.hudState]); tabular
- * figures keep them from jittering as they tick.
+ * figures keep them from jittering as they tick. Shared by both apps (D134).
  */
 @Composable
 fun MapHud(
@@ -61,30 +80,33 @@ fun MapHud(
                 .padding(horizontal = 12.dp, vertical = 8.dp),
     ) {
         val (raHours, raMinutes) = HudFormats.raHoursMinutes(state.raDeg)
-        HudRow(R.string.hud_ra_label, stringResource(R.string.hud_ra_value, raHours, raMinutes))
         HudRow(
-            R.string.hud_dec_label,
-            stringResource(R.string.hud_signed_degrees_value, state.decDeg),
+            Res.string.hud_ra_label,
+            formattedStringResource(Res.string.hud_ra_value, raHours, raMinutes),
         )
         HudRow(
-            R.string.hud_alt_label,
-            stringResource(R.string.hud_signed_degrees_value, state.altDeg),
+            Res.string.hud_dec_label,
+            formattedStringResource(Res.string.hud_signed_degrees_value, state.decDeg),
         )
-        val cardinals = stringArrayResource(R.array.hud_cardinal_directions)
         HudRow(
-            R.string.hud_az_label,
-            stringResource(
-                R.string.hud_azimuth_value,
+            Res.string.hud_alt_label,
+            formattedStringResource(Res.string.hud_signed_degrees_value, state.altDeg),
+        )
+        val cardinals = stringArrayResource(Res.array.hud_cardinal_directions)
+        HudRow(
+            Res.string.hud_az_label,
+            formattedStringResource(
+                Res.string.hud_azimuth_value,
                 HudFormats.azimuthWholeDegrees(state.azDeg),
                 cardinals[HudFormats.cardinalIndex(state.azDeg)],
             ),
         )
         HudRow(
-            R.string.hud_fov_label,
+            Res.string.hud_fov_label,
             when (HudFormats.fovDecimals(state.fovDeg)) {
-                0 -> stringResource(R.string.hud_fov_value, state.fovDeg.roundToInt())
-                1 -> stringResource(R.string.hud_fov_value_fine, state.fovDeg)
-                else -> stringResource(R.string.hud_fov_value_finest, state.fovDeg)
+                0 -> formattedStringResource(Res.string.hud_fov_value, state.fovDeg.roundToInt())
+                1 -> formattedStringResource(Res.string.hud_fov_value_fine, state.fovDeg)
+                else -> formattedStringResource(Res.string.hud_fov_value_finest, state.fovDeg)
             },
             locked = state.fovLocked,
         )
@@ -100,7 +122,7 @@ fun MapHud(
  */
 @Composable
 private fun HudRow(
-    @StringRes label: Int,
+    label: StringResource,
     value: String,
     locked: Boolean = false,
 ) {
@@ -116,8 +138,8 @@ private fun HudRow(
         Spacer(Modifier.weight(1f))
         if (locked) {
             Icon(
-                painterResource(R.drawable.ic_hud_lock),
-                contentDescription = stringResource(R.string.hud_fov_locked),
+                painterResource(Res.drawable.ic_hud_lock),
+                contentDescription = stringResource(Res.string.hud_fov_locked),
                 tint = MaterialTheme.colorScheme.onSurfaceVariant,
                 modifier = Modifier.padding(start = 12.dp).size(11.dp),
             )
@@ -150,14 +172,14 @@ private fun CorrectionRow(
         modifier = Modifier.fillMaxWidth(),
     ) {
         Text(
-            stringResource(R.string.hud_correction_label),
+            stringResource(Res.string.hud_correction_label),
             style = MaterialTheme.typography.labelSmall,
             color = MaterialTheme.colorScheme.primary,
         )
         Spacer(Modifier.weight(1f))
         Text(
-            stringResource(
-                R.string.hud_correction_value,
+            formattedStringResource(
+                Res.string.hud_correction_value,
                 state.correctionAzDeg,
                 state.correctionAltDeg,
             ),
@@ -169,8 +191,8 @@ private fun CorrectionRow(
         // (D56) — this is the HUD's only interactive element, so the row pays the height.
         IconButton(onClick = onResetAlignment) {
             Icon(
-                painterResource(R.drawable.ic_hud_reset),
-                contentDescription = stringResource(R.string.hud_correction_reset),
+                painterResource(Res.drawable.ic_hud_reset),
+                contentDescription = stringResource(Res.string.hud_correction_reset),
                 tint = MaterialTheme.colorScheme.primary,
                 modifier = Modifier.size(18.dp),
             )

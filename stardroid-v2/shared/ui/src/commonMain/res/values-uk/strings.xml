@@ -3,4 +3,37 @@
     <string name="eula_title">Умови надання послуг</string>
     <string name="dialog_accept">Прийняти</string>
     <string name="dialog_decline">Ні, дякую</string>
+    <string name="hud_ra_label" translation_description="Map-HUD row label: right ascension of the point at the centre of the screen. Standard astronomy abbreviation; keep short.">ПС</string>
+    <string name="hud_dec_label" translation_description="Map-HUD row label: declination of the point at the centre of the screen. Standard astronomy abbreviation; keep short.">Сх</string>
+    <string name="hud_alt_label" translation_description="Map-HUD row label: altitude (angle above the horizon) of the point at the centre of the screen. Keep short.">Вис</string>
+    <string name="hud_az_label" translation_description="Map-HUD row label: azimuth (compass bearing) of the point at the centre of the screen. Keep short.">Аз</string>
+    <string name="hud_fov_label" translation_description="Map-HUD row label: the field of view (how many degrees of sky the screen spans). Keep short.">ОЗ</string>
+    <string name="hud_correction_label" translation_description="Map-HUD row label for the manual sensor-alignment correction the user set by dragging. Keep very short.">Кор</string>
+    <!-- tm:omitted name="hud_ra_value" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_signed_degrees_value" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_azimuth_value" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_fov_value" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_fov_value_fine" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_fov_value_finest" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_correction_value" reason="identical_to_source" -->
+    <string name="hud_correction_reset" translation_description="Accessibility label for the small button that clears the manual sensor-alignment correction back to zero.">Скинути корекцію вирівнювання</string>
+    <string name="hud_fov_locked" translation_description="Accessibility label for the small lock icon shown next to the field-of-view readout while the camera controls the zoom in through-camera mode.">Масштабування заблоковано за камерою</string>
+    <string-array name="hud_cardinal_directions" translation_description="The sixteen compass-point abbreviations, clockwise from north, used as the azimuth suffix in the map HUD (e.g. N, NNE, NE...). Translate to the locale\'s conventional compass abbreviations.">
+        <item>Пн</item>
+        <item>Пн-ПнС</item>
+        <item>ПнС</item>
+        <item>С-ПнС</item>
+        <item>С</item>
+        <item>С-ПдС</item>
+        <item>ПдС</item>
+        <item>Пд-ПдС</item>
+        <item>Пд</item>
+        <item>Пд-ПдЗ</item>
+        <item>ПдЗ</item>
+        <item>З-ПдЗ</item>
+        <item>З</item>
+        <item>З-ПнЗ</item>
+        <item>ПнЗ</item>
+        <item>Пн-ПнЗ</item>
+    </string-array>
 </resources>

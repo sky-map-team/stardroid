@@ -113,22 +113,7 @@
     <string name="no_sensor_warning_dismiss">حسناً</string>
 
     <!-- The map HUD (map-hud.md, D65): the top-right pointing readout shown with the chrome. -->
-    <string name="hud_ra_label" translation_description="Map-HUD row label: right ascension of the point at the centre of the screen. Standard astronomy abbreviation; keep short.">م.م.</string>
-    <string name="hud_dec_label" translation_description="Map-HUD row label: declination of the point at the centre of the screen. Standard astronomy abbreviation; keep short.">م.</string>
-    <string name="hud_alt_label" translation_description="Map-HUD row label: altitude (angle above the horizon) of the point at the centre of the screen. Keep short.">ا.</string>
-    <string name="hud_az_label" translation_description="Map-HUD row label: azimuth (compass bearing) of the point at the centre of the screen. Keep short.">س.</string>
-    <string name="hud_fov_label" translation_description="Map-HUD row label: the field of view (how many degrees of sky the screen spans). Keep short.">م.ر.</string>
-    <string name="hud_correction_label" translation_description="Map-HUD row label for the manual sensor-alignment correction the user set by dragging. Keep very short.">ت.</string>
-    <string name="hud_ra_value" translation_description="Right ascension in the conventional hours-and-minutes notation, e.g. \'18h 38m\'. %1$d is hours (0-23), %2$02d is minutes (00-59).">%1$dس %2$02dد</string>
-    <!-- tm:omitted name="hud_signed_degrees_value" reason="identical_to_source" -->
-    <!-- tm:omitted name="hud_azimuth_value" reason="identical_to_source" -->
-    <!-- tm:omitted name="hud_fov_value" reason="identical_to_source" -->
-    <!-- tm:omitted name="hud_fov_value_fine" reason="identical_to_source" -->
-    <!-- tm:omitted name="hud_fov_value_finest" reason="identical_to_source" -->
-    <!-- tm:omitted name="hud_correction_value" reason="identical_to_source" -->
-    <string name="hud_correction_reset" translation_description="Accessibility label for the small button that clears the manual sensor-alignment correction back to zero.">إعادة ضبط تصحيح المحاذاة</string>
     <string name="hud_alignment_reset_message" translation_description="Snackbar confirming the sensor-alignment correction was cleared; shown with an Undo action.">تم إعادة ضبط تصحيح المحاذاة</string>
-    <string name="hud_fov_locked" translation_description="Accessibility label for the small lock icon shown next to the field-of-view readout while the camera controls the zoom in through-camera mode.">التكبير مقفل بالكاميرا</string>
 
     <string name="layer_hud" translation_description="Layers-sheet Display toggle that shows the heads-up readout of where the phone is pointing (compass direction and altitude) over the star map.">قراءة التوجيه</string>
 
@@ -155,24 +140,6 @@
     <string name="share_shutter_button" translation_description="Accessibility label for the round shutter button that captures and shares the current through-camera view.">شارك هذا المنظر</string>
     <string name="share_failed_message" translation_description="Snackbar shown when capturing the sky image for sharing failed.">تعذر التقاط السماء — حاول مرة أخرى</string>
     <string name="ar_exposure_auto" translation_description="Readout shown when a manual camera exposure slider sits at its automatic position.">تلقائي</string>
-    <string-array name="hud_cardinal_directions" translation_description="The sixteen compass-point abbreviations, clockwise from north, used as the azimuth suffix in the map HUD (e.g. N, NNE, NE...). Translate to the locale\'s conventional compass abbreviations.">
-        <item>ش</item>
-        <item>ش ش ش</item>
-        <item>ش ش</item>
-        <item>ش ق ش</item>
-        <item>ق</item>
-        <item>ق ج ق</item>
-        <item>ق ج</item>
-        <item>ج ج ش</item>
-        <item>ج</item>
-        <item>ج ج غ</item>
-        <item>ج غ</item>
-        <item>غ ج غ</item>
-        <item>غ</item>
-        <item>غ ش غ</item>
-        <item>ش غ</item>
-        <item>ش ش غ</item>
-    </string-array>
 
     <!-- Time travel: entry button, dialog, and the player bar shown while travelling. -->
     <string name="time_travel_button">السفر عبر الزمن</string>

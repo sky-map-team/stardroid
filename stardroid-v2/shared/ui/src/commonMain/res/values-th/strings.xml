@@ -3,4 +3,20 @@
     <string name="eula_title">เงื่อนไขการให้บริการ</string>
     <string name="dialog_accept">ยอมรับ</string>
     <string name="dialog_decline">ไม่ขอบคุณ</string>
+    <!-- tm:omitted name="hud_ra_label" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_dec_label" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_alt_label" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_az_label" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_fov_label" reason="identical_to_source" -->
+    <string name="hud_correction_label" translation_description="Map-HUD row label for the manual sensor-alignment correction the user set by dragging. Keep very short.">ปรับ</string>
+    <!-- tm:omitted name="hud_ra_value" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_signed_degrees_value" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_azimuth_value" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_fov_value" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_fov_value_fine" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_fov_value_finest" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_correction_value" reason="identical_to_source" -->
+    <string name="hud_correction_reset" translation_description="Accessibility label for the small button that clears the manual sensor-alignment correction back to zero.">รีเซ็ตการปรับแนว</string>
+    <string name="hud_fov_locked" translation_description="Accessibility label for the small lock icon shown next to the field-of-view readout while the camera controls the zoom in through-camera mode.">ล็อคการซูมไว้ที่กล้อง</string>
+    <!-- tm:omitted name="hud_cardinal_directions" reason="all_items_identical_to_source" -->
 </resources>

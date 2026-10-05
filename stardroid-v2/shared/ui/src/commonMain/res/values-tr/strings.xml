@@ -3,4 +3,37 @@
     <string name="eula_title">Kullanım Şartları</string>
     <string name="dialog_accept">Kabul et</string>
     <string name="dialog_decline">Hayır, teşekkürler</string>
+    <string name="hud_ra_label" translation_description="Map-HUD row label: right ascension of the point at the centre of the screen. Standard astronomy abbreviation; keep short.">SA</string>
+    <string name="hud_dec_label" translation_description="Map-HUD row label: declination of the point at the centre of the screen. Standard astronomy abbreviation; keep short.">Açıklık</string>
+    <string name="hud_alt_label" translation_description="Map-HUD row label: altitude (angle above the horizon) of the point at the centre of the screen. Keep short.">Yük</string>
+    <!-- tm:omitted name="hud_az_label" reason="identical_to_source" -->
+    <string name="hud_fov_label" translation_description="Map-HUD row label: the field of view (how many degrees of sky the screen spans). Keep short.">GKA</string>
+    <string name="hud_correction_label" translation_description="Map-HUD row label for the manual sensor-alignment correction the user set by dragging. Keep very short.">Ayar</string>
+    <string name="hud_ra_value" translation_description="Right ascension in the conventional hours-and-minutes notation, e.g. \'18h 38m\'. %1$d is hours (0-23), %2$02d is minutes (00-59).">%1$ds %2$02dd</string>
+    <!-- tm:omitted name="hud_signed_degrees_value" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_azimuth_value" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_fov_value" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_fov_value_fine" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_fov_value_finest" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_correction_value" reason="identical_to_source" -->
+    <string name="hud_correction_reset" translation_description="Accessibility label for the small button that clears the manual sensor-alignment correction back to zero.">Hizalama düzeltmesini sıfırla</string>
+    <string name="hud_fov_locked" translation_description="Accessibility label for the small lock icon shown next to the field-of-view readout while the camera controls the zoom in through-camera mode.">Yakınlaştırma kameraya kilitlendi</string>
+    <string-array name="hud_cardinal_directions" translation_description="The sixteen compass-point abbreviations, clockwise from north, used as the azimuth suffix in the map HUD (e.g. N, NNE, NE...). Translate to the locale\'s conventional compass abbreviations.">
+        <item>K</item>
+        <item>KKD</item>
+        <item>KD</item>
+        <item>DKD</item>
+        <item>D</item>
+        <item>ÖDÖ</item>
+        <item>GD</item>
+        <item>GGD</item>
+        <item>G</item>
+        <item>GBB</item>
+        <item>GB</item>
+        <item>BGB</item>
+        <item>B</item>
+        <item>KBK</item>
+        <item>KB</item>
+        <item>KKB</item>
+    </string-array>
 </resources>

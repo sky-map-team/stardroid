@@ -22,6 +22,9 @@ from pathlib import Path
 MODULE_ROOT = Path(__file__).resolve().parent.parent
 MANIFEST = MODULE_ROOT / "ASSET-LICENSES.txt"
 ASSET_ROOT = MODULE_ROOT / "app" / "src" / "main"
+# The shared UI's resources (D136), in the Android layout too. Scanned with the same prefixes,
+# but listed by their path from stardroid-v2/ so their rules cannot be mistaken for the app's.
+SHARED_RES_ROOT = MODULE_ROOT / "shared" / "ui" / "src" / "commonMain" / "res"
 
 # Directories holding licensable artwork. Selected by directory rather than by file
 # extension because the launcher icon and every UI glyph are `.xml` vector drawables — an
@@ -84,6 +87,19 @@ def discover_assets(root: Path) -> list[str]:
     return sorted(found)
 
 
+def discover_shared_assets(root: Path) -> list[str]:
+    """Every licensable asset of the shared UI, as posix paths relative to stardroid-v2/."""
+    found: list[str] = []
+    if not root.exists():
+        return found
+    for p in root.rglob("*"):
+        if not p.is_file() or p.name in IGNORED_NAMES:
+            continue
+        if ("res/" + p.relative_to(root).as_posix()).startswith(SCANNED_PREFIXES):
+            found.append(p.relative_to(MODULE_ROOT).as_posix())
+    return sorted(found)
+
+
 def classify(asset: str, rules: list[tuple[str, str]]) -> tuple[str, int] | None:
     """First matching rule wins. Returns (section, rule index), or None if unclassified."""
     for i, (section, pattern) in enumerate(rules):
@@ -121,7 +137,7 @@ def find_dead_rules(
 
 def main() -> int:
     rules = load_rules(MANIFEST)
-    assets = discover_assets(ASSET_ROOT)
+    assets = discover_assets(ASSET_ROOT) + discover_shared_assets(SHARED_RES_ROOT)
 
     if not assets:
         print(f"error: no assets discovered under {ASSET_ROOT}", file=sys.stderr)

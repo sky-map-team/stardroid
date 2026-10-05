@@ -15,25 +15,19 @@ final class MapGestureTests: XCTestCase {
     func testDragFlingAndPinch() {
         let app = XCUIApplication()
         app.launch()
+        passStartup(app)
         sleep(6)
-        capture("1-launch")
+        capture(self, "1-launch")
 
         let window = app.windows.firstMatch
         let from = window.coordinate(withNormalizedOffset: CGVector(dx: 0.7, dy: 0.5))
         let to = window.coordinate(withNormalizedOffset: CGVector(dx: 0.3, dy: 0.5))
         from.press(forDuration: 0.05, thenDragTo: to, withVelocity: .fast, thenHoldForDuration: 0)
         sleep(2)
-        capture("2-after-drag-and-fling")
+        capture(self, "2-after-drag-and-fling")
 
         window.pinch(withScale: 2.5, velocity: 2.0)
         sleep(2)
-        capture("3-after-pinch")
-    }
-
-    private func capture(_ name: String) {
-        let shot = XCTAttachment(screenshot: XCUIScreen.main.screenshot())
-        shot.name = name
-        shot.lifetime = .keepAlways
-        add(shot)
+        capture(self, "3-after-pinch")
     }
 }

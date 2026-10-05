@@ -1,0 +1,53 @@
+/*
+ * Copyright (c) 2026 Penterakt LLC.
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ */
+
+import XCTest
+
+/// The first-launch path, captured as test attachments: the EULA, the location prompt it
+/// holds back until accepted, and the map with the HUD, in day and night mode.
+final class StartupTests: XCTestCase {
+    func testEulaThenMap() {
+        let app = XCUIApplication()
+        app.launch()
+        sleep(4)
+        capture(self, "1-launch")
+        passStartup(app)
+        sleep(4)
+        capture(self, "2-map")
+
+        let night = app.buttons["nightModeToggle"]
+        if night.waitForExistence(timeout: 5) {
+            night.tap()
+            sleep(2)
+            capture(self, "3-night")
+            night.tap()
+        }
+    }
+}
+
+/// Accepts the EULA and allows location, if this launch still asks for them.
+func passStartup(_ app: XCUIApplication) {
+    let accept = app.buttons["Accept"]
+    if accept.waitForExistence(timeout: 5) {
+        accept.tap()
+    }
+    let springboard = XCUIApplication(bundleIdentifier: "com.apple.springboard")
+    let allow = springboard.alerts.buttons["Allow While Using App"]
+    if allow.waitForExistence(timeout: 5) {
+        allow.tap()
+    }
+}
+
+/// Keeps a screenshot of the whole screen as a test attachment.
+func capture(_ test: XCTestCase, _ name: String) {
+    let shot = XCTAttachment(screenshot: XCUIScreen.main.screenshot())
+    shot.name = name
+    shot.lifetime = .keepAlways
+    test.add(shot)
+}
