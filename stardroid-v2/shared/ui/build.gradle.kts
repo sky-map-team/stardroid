@@ -19,6 +19,13 @@ kotlin {
             api(project(":shared:viewmodels"))
             // NFD for the help search's accent folding (the catalog's name search uses it too).
             implementation(project(":core:catalog"))
+            implementation(libs.cmp.lifecycle.runtime.compose)
+            implementation(libs.cmp.material.icons.core)
+        }
+        androidMain.dependencies {
+            // The notification-permission ask (rememberNotificationPermissionRequest).
+            implementation(libs.androidx.activity.compose)
+            implementation(libs.androidx.core.ktx)
         }
         commonTest.dependencies {
             implementation(kotlin("test"))

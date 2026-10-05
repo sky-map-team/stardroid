@@ -30,7 +30,6 @@
     <string name="pluto">명왕성</string>
 
     <!-- Search (map-screen search dialog and overlay). -->
-    <string name="search_button">검색</string>
     <string name="search_label">스카이 검색</string>
     <string name="search_hint" translation_description="Placeholder text in the search field showing example search targets.">예: 화성 또는 M31</string>
     <string name="search_coordinates_hint" translation_description="Helper text under the search field showing that celestial coordinates (right ascension and declination) can be typed directly, with two example formats.">또는 좌표 입력: 12h 30m, +45° 또는 187.5 -45.2</string>
@@ -42,12 +41,6 @@
     <string name="search_overlay_prompt">휴대전화로 화살표 방향 가리키기</string>
 
     <!-- Layer names in the layer-visibility sheet. -->
-    <string name="layer_stars">별</string>
-    <string name="layer_constellations">별자리</string>
-    <string name="layer_deep_sky" translation_description="Toggle label for the layer showing deep-sky objects such as galaxies and nebulae.">심원 천체</string>
-    <string name="layer_solar_system">행성</string>
-    <string name="layer_meteor_showers" translation_description="Toggle label for the layer showing the radiant points of annual meteor showers.">유성우</string>
-    <string name="layer_satellites" translation_description="Toggle label for the layer showing artificial satellites such as the International Space Station.">위성</string>
     <string name="channel_passes_name" translation_description="Name of the notification channel for alerts shortly before a satellite passes overhead.">위성 통과</string>
     <string name="channel_passes_description" translation_description="Description of the satellite-pass notification channel.">밤에 가장 잘 보이는 위성 통과 직전 한 번 알림</string>
     <string name="notif_pass_title" translation_description="Title of the notification sent shortly before a satellite passes overhead. %1$s is the satellite name.">%1$s이(가) 곧 머리 위를 통과합니다</string>
@@ -58,17 +51,6 @@
     <string name="notif_eclipse_text" translation_description="Body of the lunar eclipse notification, telling the user when it begins. %1$s is a time.">약 %1$s에 시작됩니다 — 밖에 나가 볼 가치가 있습니다</string>
     <string name="satellite_name_iss" translation_description="Display name for the International Space Station.">국제 우주 정거장</string>
     <string name="satellite_name_tiangong" translation_description="Display name for the Chinese space station Tiangong.">톈궁</string>
-    <string name="layer_param_pass_alerts" translation_description="Label for the setting that turns on a notification shortly before a satellite passes overhead.">통과 알림</string>
-    <string name="layer_param_pass_alerts_description" translation_description="Explains what the pass-alert setting does: a single notification before the best visible pass of the night.">매일 밤 가장 잘 보이는 통과 전에 알림</string>
-    <string name="layer_param_eclipse_alerts" translation_description="Label for the setting that turns on a notification before a lunar eclipse begins.">월식 알림</string>
-    <string name="layer_param_eclipse_alerts_description" translation_description="Explains what the eclipse-alert setting does: a single notification before a lunar eclipse starts.">월식 시작 전에 알림</string>
-    <string name="layer_param_altaz_grid_density" translation_description="Label for the alt/az grid's line-count setting.">선 개수</string>
-    <string name="layer_param_altaz_grid_density_coarse" translation_description="Option label for the alt/az grid's sparsest setting: 8 azimuth lines, 45 degrees apart.">성김</string>
-    <string name="layer_param_altaz_grid_density_coarse_desc" translation_description="Explains the coarse alt/az grid density: 8 azimuth lines, matching the 8 compass points.">나침반 방향에 맞춘 8개의 방향선</string>
-    <string name="layer_param_altaz_grid_density_medium" translation_description="Option label for the alt/az grid's default setting: 12 azimuth lines, 30 degrees apart.">중간</string>
-    <string name="layer_param_altaz_grid_density_medium_desc" translation_description="Explains the medium alt/az grid density: 12 azimuth lines, 30 degrees apart.">30° 간격의 12개 방향선</string>
-    <string name="layer_param_altaz_grid_density_fine" translation_description="Option label for the alt/az grid's densest setting: 24 azimuth lines, 15 degrees apart.">조밀함</string>
-    <string name="layer_param_altaz_grid_density_fine_desc" translation_description="Explains the fine alt/az grid density: 24 azimuth lines, matching the celestial grid's meridian count.">천구 격자에 맞춘 24개의 방향선</string>
     <string name="satellite_description" translation_description="Short description shown on the info card for an artificial satellite.">저궤도 인공위성으로, 어두운 하늘에서 햇빛을 받아 빛납니다. 몇 분 안에 지평선에서 지평선까지 꾸준히 깜빡임 없이 이동합니다.</string>
     <string name="satellite_next_pass" translation_description="Heading above the next visible pass details on a satellite\'s info card.">다음 가시 통과</string>
     <string name="satellite_pass_when" translation_description="When and how high the next satellite pass will be. %1$s is a time, %2$s is a compass direction, %3$d is an angle in degrees.">%1$s, %2$s에서 떠올라 %3$d°에 도달</string>
@@ -82,63 +64,29 @@
     <string name="object_info_eclipse_totality" translation_description="The start and end time of totality during a total lunar eclipse. %1$s and %2$s are times.">개기식 %1$s – %2$s</string>
     <string name="tonight_satellite_pass" translation_description="Tonight-widget row announcing a visible satellite pass. %1$s is the satellite name, %2$s is a time of day.">%1$s이(가) %2$s에 통과합니다</string>
     <string name="tonight_trailing_pass" translation_description="Small trailing note on a satellite pass row. %1$s is a compass direction, %2$d is an angle in degrees, %3$.1f is a brightness magnitude.">%1$s에서 떠올라, %2$d°, 밝기 %3$.1f등급</string>
-    <string name="satellites_no_data" translation_description="Explanation shown when satellite orbital data has not been downloaded yet and so no satellites can be drawn.">위성 위치를 업데이트하려면 인터넷 연결이 필요합니다.</string>
-    <string name="satellites_refresh" translation_description="Button that tries to download satellite orbital data now.">새로고침</string>
-    <string name="satellites_retry_soon" translation_description="Shown instead of a Refresh button when satellite data was just requested and cannot be requested again for a few minutes.">몇 분 후에 다시 시도</string>
-    <string name="satellites_retry_within_hour" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for up to an hour.">한 시간 내 다시 시도</string>
-    <string name="satellites_retry_hours" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for several hours.">몇 시간 후 다시 시도</string>
-    <string name="satellites_retry_tomorrow" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again until the next day.">내일 다시 시도</string>
-    <string name="satellites_retry_days" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for several days.">며칠 후 다시 시도</string>
-    <string name="layer_grid" translation_description="Toggle label for the layer showing the right ascension / declination grid.">천체 그리드</string>
-    <string name="layer_horizon">지평선</string>
-    <string name="layer_ecliptic">단주기 혜성</string>
-    <string name="layer_altaz_grid" translation_description="Toggle label for the layer showing the altitude/azimuth (horizontal) coordinate grid, for naked-eye or manual alt-az mount observers.">고도/방위각 격자</string>
-    <string name="layer_sky_gradient">스카이 그라데이션</string>
 
     <!-- Map screen controls. -->
-    <string name="layers_sheet_title" translation_description="Title of the bottom sheet listing sky map layers the user can show or hide.">레이어</string>
-    <string name="layers_group_objects" translation_description="Layers-sheet group header for layers that draw sky objects (stars, planets, deep-sky objects).">천체</string>
-    <string name="layers_group_reference" translation_description="Layers-sheet group header for reference elements drawn over the sky (coordinate grid, horizon, ecliptic).">참조</string>
-    <string name="layers_group_display" translation_description="Layers-sheet group header for display settings that change how the sky is rendered rather than what is drawn.">표시</string>
-    <string name="show_layers" translation_description="Accessibility description and label for the button opening the layer-visibility sheet, which holds the layers that do not fit on the rail plus display options.">더 많은 레이어 및 옵션</string>
-    <string name="more_button" translation_description="Accessibility label and tooltip for the map-screen button (three vertical dots) opening the overflow menu of further destinations such as Gallery and Settings.">더 많은 옵션</string>
-    <string name="night_mode" translation_description="Label for the toggle switching the display to a dim red night-vision-preserving mode.">야간 모드</string>
-    <string name="switch_to_manual" translation_description="Tooltip and accessibility label for the button that switches the map from auto (sensor-driven) mode to manual (drag) mode.">수동 모드로 전환</string>
-    <string name="switch_to_auto" translation_description="Tooltip and accessibility label for the button that switches the map from manual (drag) mode to auto (sensor-driven) mode.">자동 모드로 전환</string>
     <string name="no_sensor_warning" translation_description="Warning shown when the device lacks the motion sensors needed to point the map at the sky automatically.">이 기기에는 나침반이나 모션 센서가 없으므로 Sky Map이 가리키는 방향을 따라갈 수 없습니다. 대신 지도를 직접 드래그하세요.</string>
     <string name="no_sensor_warning_dismiss" translation_description="Button that dismisses the missing-sensors warning dialog.">확인</string>
 
     <!-- The map HUD (map-hud.md, D65): the top-right pointing readout shown with the chrome. -->
     <string name="hud_alignment_reset_message" translation_description="Snackbar confirming the sensor-alignment correction was cleared; shown with an Undo action.">정렬 보정 초기화됨</string>
 
-    <string name="layer_hud" translation_description="Layers-sheet Display toggle that shows the heads-up readout of where the phone is pointing (compass direction and altitude) over the star map.">가리키는 정보 표시</string>
 
     <!-- Through-camera (AR) mode (camera-ar-mode.md, D64). -->
-    <string name="layer_camera" translation_description="Layers-sheet Display toggle that shows the live rear-camera image behind the star map, so the drawn sky overlays the real one.">카메라 투과 모드</string>
-    <string name="layer_camera_needs_sensors" translation_description="Subtitle explaining why the through-camera toggle is disabled: the device has no usable motion sensors, and the mode needs the map to follow where the phone points.">이 기기에는 없는 모션 센서가 필요합니다</string>
     <string name="ar_auto_mode_snackbar" translation_description="Snackbar shown when turning on through-camera mode switched the map from manual dragging back to automatic sensor pointing.">카메라 보기에서 자동 모드 켜짐</string>
     <string name="ar_permission_denied" translation_description="Snackbar shown when the user declined the camera permission that through-camera mode needs.">카메라 투과 모드에는 카메라 권한이 필요합니다</string>
     <string name="ar_permission_settings_action">설정</string>
-    <string name="ar_exposure_slider" translation_description="Accessibility label for the slider adjusting the camera\'s exposure compensation while through-camera mode is on.">카메라 노출</string>
     <string name="ar_alignment_adjusted_message" translation_description="Snackbar shown after the user drags the star map to align it with the camera image; shown with an Undo action that reverts the whole drag.">지도 정렬 조정됨</string>
-    <string name="ar_dimmer_slider" translation_description="Accessibility label for the slider dimming the camera image behind the star map while through-camera mode is on.">카메라 밝기 조절</string>
-    <!-- tm:omitted name="ar_iso_slider_label" reason="identical_to_source" -->
-    <string name="ar_iso_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual ISO sensitivity in through-camera mode.">카메라 ISO</string>
-    <string name="ar_shutter_slider_label" translation_description="Very short label for the temporary developer slider setting the camera\'s manual shutter (exposure) time in through-camera mode.">셔터</string>
-    <string name="ar_shutter_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual shutter (exposure) time in through-camera mode.">카메라 셔터 시간</string>
-    <string name="share_button" translation_description="Overflow-menu row that captures the current sky view as an image and opens the system share sheet.">하늘 공유</string>
     <string name="share_chooser_title" translation_description="Title of the system share sheet when sharing a captured sky image.">이 하늘 공유</string>
     <string name="share_invitation" translation_description="Short invitation stamped on the footer of shared sky images, above the store link.">보고 있는 것을 확인하세요 — Sky Map을 무료로 받으세요</string>
     <string name="share_text" translation_description="Text accompanying a shared sky image in apps that accept both an image and text. %1$s is the app-store link.">보고 있는 것을 확인하세요 — Sky Map을 무료로 받으세요: %1$s</string>
     <!-- tm:omitted name="share_store_link" reason="identical_to_source" -->
     <string name="share_layout_overlay" translation_description="Caption of the share-layout choice that draws the star map over the camera photo, as seen on screen.">오버레이</string>
     <string name="share_layout_side_by_side" translation_description="Caption of the share-layout choice that puts the camera photo and the star map next to each other.">나란히</string>
-    <string name="share_shutter_button" translation_description="Accessibility label for the round shutter button that captures and shares the current through-camera view.">이 화면 공유</string>
     <string name="share_failed_message" translation_description="Snackbar shown when capturing the sky image for sharing failed.">하늘을 캡처할 수 없습니다 — 다시 시도하세요</string>
-    <string name="ar_exposure_auto" translation_description="Readout shown when a manual camera exposure slider sits at its automatic position.">자동</string>
 
     <!-- Time travel: entry button, dialog, and the player bar shown while travelling. -->
-    <string name="time_travel_button">시간 여행</string>
     <string name="time_travel_title">시간 여행</string>
     <string name="time_travel_visiting" translation_description="Readout in the time travel dialog showing the currently chosen destination date and time. %1$s is the formatted date and time.">방문 중: %1$s</string>
     <string name="time_travel_pick_date" translation_description="Button in the time travel dialog that opens a date picker.">날짜 설정</string>
@@ -193,7 +141,6 @@
     <string name="time_travel_close_message">현재로 돌아오기...</string>
 
     <!-- Location management. -->
-    <string name="location_button" translation_description="Button on the map screen that opens the location management sheet">위치</string>
     <string name="location_management_title" translation_description="Title of the location management sheet">내 위치</string>
     <string name="location_source_auto" translation_description="Label shown when the device is determining location automatically">자동</string>
     <string name="location_source_manual" translation_description="Label shown when the user has manually entered their location">수동</string>
@@ -263,12 +210,10 @@
     <string name="object_info_tap_to_close" translation_description="Hint shown on the expanded full-screen image telling the user a tap closes it">탭하여 닫기</string>
 
     <!-- Image gallery -->
-    <string name="gallery_button" translation_description="Map-screen menu item that opens a gallery of photographs of celestial objects. Not the user\'s own photos - these are catalog images from sources such as NASA and ESA.">하늘 갤러리</string>
     <string name="gallery_title" translation_description="Title of the screen showing a gallery of photographs of celestial objects. Not the user\'s own photos - these are catalog images from sources such as NASA and ESA.">하늘 갤러리</string>
     <string name="gallery_back" translation_description="Content description for the back arrow leaving the gallery screen">뒤로</string>
 
     <!-- Settings screen (v1 wording where a v1 string existed) -->
-    <string name="settings_button">설정</string>
     <string name="settings_title">설정</string>
     <string name="settings_back" translation_description="Content description for the back arrow leaving the settings screen">뒤로</string>
     <string name="settings_ok" translation_description="Confirm button in settings dialogs">확인</string>
@@ -421,7 +366,6 @@
     <string name="diagnostics_cell" translation_description="Network type suffix appended to the connection status (e.g. \'Connected (cell)\'). Note the leading space.">" (셀룰러)"</string>
 
     <!-- Compass calibration screen (slice 15) -->
-    <string name="calibration_button" translation_description="Map-screen button that opens the compass calibration screen">보정</string>
     <string name="calibration_heading_user" translation_description="Heading shown in the compass calibration screen when the user opens it themselves">휴대전화의 나침반</string>
     <string name="calibration_heading_warning" translation_description="Heading shown in the compass calibration screen when it opens automatically due to low accuracy">휴대전화의 나침반 주의 필요</string>
     <string name="calibration_accuracy_unknown" translation_description="Sensor calibration level shown in the calibration screen">보정: 알 수 없음</string>
@@ -466,11 +410,8 @@
     <string name="warm_welcome_sensor_missing" translation_description="Status shown next to a sensor name when the sensor is missing">누락됨</string>
 
     <!-- Help dialog (slice 16) -->
-    <string name="help_button">도움말</string>
-    <string name="tutorial_button" translation_description="Map-screen menu item that replays the warm welcome tutorial">튜토리얼</string>
     <string name="help_dialog_title">도움말</string>
     <string name="help_version" translation_description="Version line at the top of the Help screen. %1$s is the app version name">버전 %1$s</string>
-    <string name="whats_new_button" translation_description="Map-screen menu item that opens the What's New and Credits screen">새로운 기능</string>
     <string name="whats_new_screen_title" translation_description="Title of the screen showing the release notes and the credits">새로운 기능 및 정보</string>
 
     <!-- The Help screen's search box, which filters the document to the matching sections. -->
@@ -493,7 +434,6 @@
     <string name="symbol_key_meteor_radiant_peak" translation_description="Symbol-key label: the brighter marker used when a meteor shower is near its peak activity">유성우 극대기 근접</string>
 
     <!-- The widgets catalogue reached from the map\'s overflow menu. -->
-    <string name="widgets_button" translation_description="Map-screen menu item that opens the list of home-screen widgets the app offers">위젯</string>
     <string name="widgets_sheet_title" translation_description="Title of the sheet listing the home-screen widgets the app offers">홈 화면 위젯</string>
     <string name="widgets_sheet_subtitle" translation_description="Subtitle of the widgets sheet, explaining what the listed widgets are for">오늘 밤 하늘을 홈 화면에 유지하세요. 추가할 위젯을 선택하세요.</string>
 
@@ -573,12 +513,4 @@
     <string name="notif_action_mute_showers" translation_description="Notification action button that opens the system toggle for the meteor-shower channel">유성우 알림 끄기</string>
     <string name="time_travel_stopped">시간 여행 일시 중지됨</string>
     <!-- Layers sheet: per-layer parameters (D87). -->
-    <string name="layer_param_disc_size">원반 크기</string>
-    <string name="layer_param_disc_size_true">실제 크기</string>
-    <string name="layer_param_disc_size_true_desc">모든 확대/축소에서 하늘의 실제 크기. 행성은 확대하기 전까지는 점으로 보입니다.</string>
-    <string name="layer_param_disc_size_glyphs">글리프</string>
-    <string name="layer_param_disc_size_glyphs_desc">각 천체의 실제 크기에 따라 표시되며, 보이는 크기가 아닙니다. 어떤 확대/축소에서도 쉽게 볼 수 있습니다.</string>
-    <string name="layer_param_disc_size_auto">고정</string>
-    <string name="layer_param_disc_size_auto_desc">확대/축소 시 화면에서 고정된 크기를 유지하다가 실제 크기로 전환됩니다.</string>
-    <string name="layer_param_expand">%1$s에 대한 옵션 표시</string>
 </resources>

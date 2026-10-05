@@ -29,7 +29,6 @@
     <!-- tm:omitted name="pluto" reason="identical_to_source" -->
 
     <!-- Search (map-screen search dialog and overlay). -->
-    <string name="search_button">Søg</string>
     <string name="search_label">Søg på himlen</string>
     <string name="search_hint" translation_description="Placeholder text in the search field showing example search targets.">f.eks. Mars eller M31</string>
     <string name="search_coordinates_hint" translation_description="Helper text under the search field showing that celestial coordinates (right ascension and declination) can be typed directly, with two example formats.">Eller indtast koordinater: 12t 30m, +45° eller 187.5 -45.2</string>
@@ -43,12 +42,6 @@
     <string name="search_overlay_prompt">Peg din telefon mod pilen</string>
 
     <!-- Layer names in the layer-visibility sheet. -->
-    <string name="layer_stars">Stjerner</string>
-    <string name="layer_constellations">Stjernebilleder</string>
-    <string name="layer_deep_sky" translation_description="Toggle label for the layer showing deep-sky objects such as galaxies and nebulae.">Dybhimmelobjekter</string>
-    <string name="layer_solar_system">Solsystemet</string>
-    <string name="layer_meteor_showers">Meteorregn</string>
-    <string name="layer_satellites" translation_description="Toggle label for the layer showing artificial satellites such as the International Space Station.">Satellitter</string>
     <string name="channel_passes_name" translation_description="Name of the notification channel for alerts shortly before a satellite passes overhead.">Satellitpassager</string>
     <string name="channel_passes_description" translation_description="Description of the satellite-pass notification channel.">En enkelt advarsel kort før nattens bedste synlige passage</string>
     <string name="notif_pass_title" translation_description="Title of the notification sent shortly before a satellite passes overhead. %1$s is the satellite name.">%1$s passerer snart over dig</string>
@@ -59,17 +52,6 @@
     <string name="notif_eclipse_text" translation_description="Body of the lunar eclipse notification, telling the user when it begins. %1$s is a time.">Begynder omkring %1$s — værd at gå ud for</string>
     <string name="satellite_name_iss" translation_description="Display name for the International Space Station.">Rumstationen</string>
     <!-- tm:omitted name="satellite_name_tiangong" reason="identical_to_source" -->
-    <string name="layer_param_pass_alerts" translation_description="Label for the setting that turns on a notification shortly before a satellite passes overhead.">Passageadvarsler</string>
-    <string name="layer_param_pass_alerts_description" translation_description="Explains what the pass-alert setting does: a single notification before the best visible pass of the night.">Giv mig besked før den bedste synlige passage hver nat</string>
-    <string name="layer_param_eclipse_alerts" translation_description="Label for the setting that turns on a notification before a lunar eclipse begins.">Formørkelsesadvarsler</string>
-    <string name="layer_param_eclipse_alerts_description" translation_description="Explains what the eclipse-alert setting does: a single notification before a lunar eclipse starts.">Giv mig besked før en måneformørkelse starter</string>
-    <string name="layer_param_altaz_grid_density" translation_description="Label for the alt/az grid's line-count setting.">Linjeantal</string>
-    <string name="layer_param_altaz_grid_density_coarse" translation_description="Option label for the alt/az grid's sparsest setting: 8 azimuth lines, 45 degrees apart.">Grov</string>
-    <string name="layer_param_altaz_grid_density_coarse_desc" translation_description="Explains the coarse alt/az grid density: 8 azimuth lines, matching the 8 compass points.">8 retningslinjer, svarer til kompasrosen</string>
-    <!-- tm:omitted name="layer_param_altaz_grid_density_medium" reason="identical_to_source" -->
-    <string name="layer_param_altaz_grid_density_medium_desc" translation_description="Explains the medium alt/az grid density: 12 azimuth lines, 30 degrees apart.">12 retningslinjer, 30° mellemrum</string>
-    <string name="layer_param_altaz_grid_density_fine" translation_description="Option label for the alt/az grid's densest setting: 24 azimuth lines, 15 degrees apart.">Fin</string>
-    <string name="layer_param_altaz_grid_density_fine_desc" translation_description="Explains the fine alt/az grid density: 24 azimuth lines, matching the celestial grid's meridian count.">24 retningslinjer, svarer til himmelnettet</string>
     <string name="satellite_description" translation_description="Short description shown on the info card for an artificial satellite.">
     En kunstig satellit i lav jordbane, solbelyst mod en mørk himmel. Den krydser fra horisont til horisont på få minutter, bevæger sig jævnt og uden at blinke.
     </string>
@@ -85,29 +67,8 @@
     <string name="object_info_eclipse_totality" translation_description="The start and end time of totality during a total lunar eclipse. %1$s and %2$s are times.">Totalitet %1$s – %2$s</string>
     <string name="tonight_satellite_pass" translation_description="Tonight-widget row announcing a visible satellite pass. %1$s is the satellite name, %2$s is a time of day.">%1$s passerer over kl. %2$s</string>
     <string name="tonight_trailing_pass" translation_description="Small trailing note on a satellite pass row. %1$s is a compass direction, %2$d is an angle in degrees, %3$.1f is a brightness magnitude.">Stiger %1$s, %2$d°, mag %3$.1f</string>
-    <string name="satellites_no_data" translation_description="Explanation shown when satellite orbital data has not been downloaded yet and so no satellites can be drawn.">Satellitpositioner kræver en internetforbindelse for at opdatere.</string>
-    <string name="satellites_refresh" translation_description="Button that tries to download satellite orbital data now.">Opdater</string>
-    <string name="satellites_retry_soon" translation_description="Shown instead of a Refresh button when satellite data was just requested and cannot be requested again for a few minutes.">Prøv igen om et par minutter</string>
-    <string name="satellites_retry_within_hour" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for up to an hour.">Prøv igen inden for en time</string>
-    <string name="satellites_retry_hours" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for several hours.">Prøv igen om et par timer</string>
-    <string name="satellites_retry_tomorrow" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again until the next day.">Prøv igen i morgen</string>
-    <string name="satellites_retry_days" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for several days.">Prøv igen om et par dage</string>
-    <string name="layer_grid" translation_description="Toggle label for the layer showing the right ascension / declination grid.">Himmelgitter</string>
-    <string name="layer_horizon">Horisont</string>
-    <string name="layer_ecliptic">Ekliptika</string>
-    <string name="layer_altaz_grid" translation_description="Toggle label for the layer showing the altitude/azimuth (horizontal) coordinate grid, for naked-eye or manual alt-az mount observers.">Højde/azimut-gitter</string>
-    <string name="layer_sky_gradient">Himmelgradient</string>
 
     <!-- Map screen controls. -->
-    <string name="layers_sheet_title" translation_description="Title of the bottom sheet listing sky map layers the user can show or hide.">Lag</string>
-    <string name="layers_group_objects" translation_description="Layers-sheet group header for layers that draw sky objects (stars, planets, deep-sky objects).">Objekter</string>
-    <!-- tm:omitted name="layers_group_reference" reason="identical_to_source" -->
-    <string name="layers_group_display" translation_description="Layers-sheet group header for display settings that change how the sky is rendered rather than what is drawn.">Visning</string>
-    <string name="show_layers" translation_description="Accessibility description and label for the button opening the layer-visibility sheet, which holds the layers that do not fit on the rail plus display options.">Flere lag og indstillinger</string>
-    <string name="more_button" translation_description="Accessibility label and tooltip for the map-screen button (three vertical dots) opening the overflow menu of further destinations such as Gallery and Settings.">Flere indstillinger</string>
-    <string name="night_mode">Nattilstand</string>
-    <string name="switch_to_manual" translation_description="Tooltip and accessibility label for the button that switches the map from auto (sensor-driven) mode to manual (drag) mode.">Skift til manuel tilstand</string>
-    <string name="switch_to_auto" translation_description="Tooltip and accessibility label for the button that switches the map from manual (drag) mode to auto (sensor-driven) mode.">Skift til automatisk tilstand</string>
     <string name="no_sensor_warning" translation_description="Warning shown when the device lacks the motion sensors needed to point the map at the sky automatically.">
     Denne enhed har intet kompas eller bevægelsessensorer, så Sky Map kan ikke følge, hvor du peger den hen. Træk kortet manuelt i stedet.
     </string>
@@ -115,34 +76,21 @@
 
     <string name="hud_alignment_reset_message" translation_description="Snackbar confirming the sensor-alignment correction was cleared; shown with an Undo action.">Justering af retning nulstillet</string>
 
-    <string name="layer_hud" translation_description="Layers-sheet Display toggle that shows the heads-up readout of where the phone is pointing (compass direction and altitude) over the star map.">Retningsvisning</string>
 
     <!-- Through-camera (AR) mode (camera-ar-mode.md, D64). -->
-    <string name="layer_camera" translation_description="Layers-sheet Display toggle that shows the live rear-camera image behind the star map, so the drawn sky overlays the real one.">Gennem-kamera-tilstand</string>
-    <string name="layer_camera_needs_sensors" translation_description="Subtitle explaining why the through-camera toggle is disabled: the device has no usable motion sensors, and the mode needs the map to follow where the phone points.">Kræver bevægelsessensorer, som denne enhed ikke har</string>
     <string name="ar_auto_mode_snackbar" translation_description="Snackbar shown when turning on through-camera mode switched the map from manual dragging back to automatic sensor pointing.">Automatisk tilstand slået til for kameravisningen</string>
     <string name="ar_permission_denied" translation_description="Snackbar shown when the user declined the camera permission that through-camera mode needs.">Gennem-kamera-tilstand kræver kameratilladelse</string>
     <string name="ar_permission_settings_action">Indstillinger</string>
-    <string name="ar_exposure_slider" translation_description="Accessibility label for the slider adjusting the camera\'s exposure compensation while through-camera mode is on.">Kameraeksponering</string>
     <string name="ar_alignment_adjusted_message" translation_description="Snackbar shown after the user drags the star map to align it with the camera image; shown with an Undo action that reverts the whole drag.">Kortjustering tilpasset</string>
-    <string name="ar_dimmer_slider" translation_description="Accessibility label for the slider dimming the camera image behind the star map while through-camera mode is on.">Kameradæmper</string>
-    <!-- tm:omitted name="ar_iso_slider_label" reason="identical_to_source" -->
-    <string name="ar_iso_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual ISO sensitivity in through-camera mode.">Kamera-ISO</string>
-    <!-- tm:omitted name="ar_shutter_slider_label" reason="identical_to_source" -->
-    <string name="ar_shutter_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual shutter (exposure) time in through-camera mode.">Kameraets lukkertid</string>
-    <string name="share_button" translation_description="Overflow-menu row that captures the current sky view as an image and opens the system share sheet.">Del himlen</string>
     <string name="share_chooser_title" translation_description="Title of the system share sheet when sharing a captured sky image.">Del denne himmel</string>
     <string name="share_invitation" translation_description="Short invitation stamped on the footer of shared sky images, above the store link.">Se, hvad du kigger på — få Sky Map gratis</string>
     <string name="share_text" translation_description="Text accompanying a shared sky image in apps that accept both an image and text. %1$s is the app-store link.">Se, hvad du kigger på — få Sky Map gratis: %1$s</string>
     <!-- tm:omitted name="share_store_link" reason="identical_to_source" -->
     <string name="share_layout_overlay" translation_description="Caption of the share-layout choice that draws the star map over the camera photo, as seen on screen.">Overlejring</string>
     <string name="share_layout_side_by_side" translation_description="Caption of the share-layout choice that puts the camera photo and the star map next to each other.">Side om side</string>
-    <string name="share_shutter_button" translation_description="Accessibility label for the round shutter button that captures and shares the current through-camera view.">Del denne visning</string>
     <string name="share_failed_message" translation_description="Snackbar shown when capturing the sky image for sharing failed.">Kunne ikke fange himlen — prøv igen</string>
-    <!-- tm:omitted name="ar_exposure_auto" reason="identical_to_source" -->
 
     <!-- Time travel: entry button, dialog, and the player bar shown while travelling. -->
-    <string name="time_travel_button">Tidsrejse</string>
     <string name="time_travel_title">Tidsrejse</string>
     <string name="time_travel_visiting" translation_description="Readout in the time travel dialog showing the currently chosen destination date and time. %1$s is the formatted date and time.">Besøger: %1$s</string>
     <string name="time_travel_pick_date" translation_description="Button in the time travel dialog that opens a date picker.">Indstil dato</string>
@@ -197,7 +145,6 @@
     <string name="time_travel_close_message">Tilbage til nutiden ...</string>
 
     <!-- Location management. -->
-    <string name="location_button" translation_description="Button on the map screen that opens the location management sheet">Sted</string>
     <string name="location_management_title">Din placering</string>
     <string name="location_source_auto">Automatisk</string>
     <string name="location_source_manual">Manuel</string>
@@ -269,12 +216,10 @@
     <string name="object_info_tap_to_close">Tryk for at lukke</string>
 
     <!-- Image gallery -->
-    <string name="gallery_button" translation_description="Map-screen menu item that opens a gallery of photographs of celestial objects. Not the user\'s own photos - these are catalog images from sources such as NASA and ESA.">Himmelgalleri</string>
     <string name="gallery_title" translation_description="Title of the screen showing a gallery of photographs of celestial objects. Not the user\'s own photos - these are catalog images from sources such as NASA and ESA.">Himmelgalleri</string>
     <string name="gallery_back" translation_description="Content description for the back arrow leaving the gallery screen">Tilbage</string>
 
     <!-- Settings screen (v1 wording where a v1 string existed) -->
-    <string name="settings_button">Indstillinger</string>
     <string name="settings_title">Indstillinger</string>
     <string name="settings_back" translation_description="Content description for the back arrow leaving the settings screen">Tilbage</string>
     <!-- tm:omitted name="settings_ok" reason="identical_to_source" -->
@@ -431,7 +376,6 @@
     <string name="diagnostics_cell">(mobil)</string>
 
     <!-- Compass calibration screen (slice 15) -->
-    <string name="calibration_button">Kalibrering</string>
     <string name="calibration_heading_user">Din telefons kompas</string>
     <string name="calibration_heading_warning">Din telefons kompas kræver opmærksomhed</string>
     <string name="calibration_accuracy_unknown">Kalibrering: Ukendt</string>
@@ -482,11 +426,8 @@
     <string name="warm_welcome_sensor_missing">Mangler</string>
 
     <!-- Help dialog (slice 16) -->
-    <string name="help_button">Hjælp</string>
-    <string name="tutorial_button">Vejledning</string>
     <string name="help_dialog_title">Hjælp</string>
     <!-- tm:omitted name="help_version" reason="identical_to_source" -->
-    <string name="whats_new_button" translation_description="Map-screen menu item that opens the What's New and Credits screen">Nyheder</string>
     <string name="whats_new_screen_title" translation_description="Title of the screen showing the release notes and the credits">Nyheder og kredits</string>
 
     <!-- The Help screen's search box, which filters the document to the matching sections. -->
@@ -510,7 +451,6 @@
     <string name="symbol_key_meteor_radiant" translation_description="Symbol-key label: the marker for the point in the sky meteors of a shower appear to come from">Meteorsværmradiant</string>
     <string name="symbol_key_meteor_radiant_peak" translation_description="Symbol-key label: the brighter marker used when a meteor shower is near its peak activity">Meteorsværm nær sit højdepunkt</string>
 
-    <!-- tm:omitted name="widgets_button" reason="identical_to_source" -->
     <string name="widgets_sheet_title" translation_description="Title of the sheet listing the home-screen widgets the app offers">Widgets til startskærmen</string>
     <string name="widgets_sheet_subtitle" translation_description="Subtitle of the widgets sheet, explaining what the listed widgets are for">Behold aftenens himmel på din startskærm. Vælg en for at tilføje.</string>
 
@@ -598,18 +538,4 @@
     <string name="notif_action_mute_showers" translation_description="Notification action button that opens the system toggle for the meteor-shower channel">Slå stjerneskud fra</string>
     <string name="time_travel_stopped">Tidsrejse sat på pause</string>
     <!-- Layers sheet: per-layer parameters (D87). -->
-    <string name="layer_param_disc_size">Skivestørrelse</string>
-    <string name="layer_param_disc_size_true">Sand skala</string>
-    <string name="layer_param_disc_size_true_desc">
-    Virkelig størrelse på himlen ved enhver zoom. Planeter er pletter, indtil du zoomer helt ind.
-    </string>
-    <string name="layer_param_disc_size_glyphs">Glyffer</string>
-    <string name="layer_param_disc_size_glyphs_desc">
-    Størrelse efter hvor stor hvert legeme virkelig er, ikke hvor stort det ser ud. Let at se ved enhver zoom.
-    </string>
-    <string name="layer_param_disc_size_auto">Stabil</string>
-    <string name="layer_param_disc_size_auto_desc">
-    Holder en fast størrelse på skærmen, når du zoomer, og skifter derefter til virkelig størrelse.
-    </string>
-    <string name="layer_param_expand">Vis indstillinger for %1$s</string>
 </resources>

@@ -36,4 +36,72 @@
         <item>북서</item>
         <item>북북서</item>
     </string-array>
+    <string name="search_button">검색</string>
+    <string name="layer_stars">별</string>
+    <string name="layer_constellations">별자리</string>
+    <string name="layer_deep_sky" translation_description="Toggle label for the layer showing deep-sky objects such as galaxies and nebulae.">심원 천체</string>
+    <string name="layer_solar_system">행성</string>
+    <string name="layer_meteor_showers" translation_description="Toggle label for the layer showing the radiant points of annual meteor showers.">유성우</string>
+    <string name="layer_satellites" translation_description="Toggle label for the layer showing artificial satellites such as the International Space Station.">위성</string>
+    <string name="layer_param_pass_alerts" translation_description="Label for the setting that turns on a notification shortly before a satellite passes overhead.">통과 알림</string>
+    <string name="layer_param_pass_alerts_description" translation_description="Explains what the pass-alert setting does: a single notification before the best visible pass of the night.">매일 밤 가장 잘 보이는 통과 전에 알림</string>
+    <string name="layer_param_eclipse_alerts" translation_description="Label for the setting that turns on a notification before a lunar eclipse begins.">월식 알림</string>
+    <string name="layer_param_eclipse_alerts_description" translation_description="Explains what the eclipse-alert setting does: a single notification before a lunar eclipse starts.">월식 시작 전에 알림</string>
+    <string name="layer_param_altaz_grid_density" translation_description="Label for the alt/az grid's line-count setting.">선 개수</string>
+    <string name="layer_param_altaz_grid_density_coarse" translation_description="Option label for the alt/az grid's sparsest setting: 8 azimuth lines, 45 degrees apart.">성김</string>
+    <string name="layer_param_altaz_grid_density_coarse_desc" translation_description="Explains the coarse alt/az grid density: 8 azimuth lines, matching the 8 compass points.">나침반 방향에 맞춘 8개의 방향선</string>
+    <string name="layer_param_altaz_grid_density_medium" translation_description="Option label for the alt/az grid's default setting: 12 azimuth lines, 30 degrees apart.">중간</string>
+    <string name="layer_param_altaz_grid_density_medium_desc" translation_description="Explains the medium alt/az grid density: 12 azimuth lines, 30 degrees apart.">30° 간격의 12개 방향선</string>
+    <string name="layer_param_altaz_grid_density_fine" translation_description="Option label for the alt/az grid's densest setting: 24 azimuth lines, 15 degrees apart.">조밀함</string>
+    <string name="layer_param_altaz_grid_density_fine_desc" translation_description="Explains the fine alt/az grid density: 24 azimuth lines, matching the celestial grid's meridian count.">천구 격자에 맞춘 24개의 방향선</string>
+    <string name="satellites_no_data" translation_description="Explanation shown when satellite orbital data has not been downloaded yet and so no satellites can be drawn.">위성 위치를 업데이트하려면 인터넷 연결이 필요합니다.</string>
+    <string name="satellites_refresh" translation_description="Button that tries to download satellite orbital data now.">새로고침</string>
+    <string name="satellites_retry_soon" translation_description="Shown instead of a Refresh button when satellite data was just requested and cannot be requested again for a few minutes.">몇 분 후에 다시 시도</string>
+    <string name="satellites_retry_within_hour" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for up to an hour.">한 시간 내 다시 시도</string>
+    <string name="satellites_retry_hours" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for several hours.">몇 시간 후 다시 시도</string>
+    <string name="satellites_retry_tomorrow" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again until the next day.">내일 다시 시도</string>
+    <string name="satellites_retry_days" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for several days.">며칠 후 다시 시도</string>
+    <string name="layer_grid" translation_description="Toggle label for the layer showing the right ascension / declination grid.">천체 그리드</string>
+    <string name="layer_horizon">지평선</string>
+    <string name="layer_ecliptic">단주기 혜성</string>
+    <string name="layer_altaz_grid" translation_description="Toggle label for the layer showing the altitude/azimuth (horizontal) coordinate grid, for naked-eye or manual alt-az mount observers.">고도/방위각 격자</string>
+    <string name="layer_sky_gradient">스카이 그라데이션</string>
+    <string name="layers_sheet_title" translation_description="Title of the bottom sheet listing sky map layers the user can show or hide.">레이어</string>
+    <string name="layers_group_objects" translation_description="Layers-sheet group header for layers that draw sky objects (stars, planets, deep-sky objects).">천체</string>
+    <string name="layers_group_reference" translation_description="Layers-sheet group header for reference elements drawn over the sky (coordinate grid, horizon, ecliptic).">참조</string>
+    <string name="layers_group_display" translation_description="Layers-sheet group header for display settings that change how the sky is rendered rather than what is drawn.">표시</string>
+    <string name="show_layers" translation_description="Accessibility description and label for the button opening the layer-visibility sheet, which holds the layers that do not fit on the rail plus display options.">더 많은 레이어 및 옵션</string>
+    <string name="more_button" translation_description="Accessibility label and tooltip for the map-screen button (three vertical dots) opening the overflow menu of further destinations such as Gallery and Settings.">더 많은 옵션</string>
+    <string name="night_mode" translation_description="Label for the toggle switching the display to a dim red night-vision-preserving mode.">야간 모드</string>
+    <string name="switch_to_manual" translation_description="Tooltip and accessibility label for the button that switches the map from auto (sensor-driven) mode to manual (drag) mode.">수동 모드로 전환</string>
+    <string name="switch_to_auto" translation_description="Tooltip and accessibility label for the button that switches the map from manual (drag) mode to auto (sensor-driven) mode.">자동 모드로 전환</string>
+    <string name="layer_hud" translation_description="Layers-sheet Display toggle that shows the heads-up readout of where the phone is pointing (compass direction and altitude) over the star map.">가리키는 정보 표시</string>
+    <string name="layer_camera" translation_description="Layers-sheet Display toggle that shows the live rear-camera image behind the star map, so the drawn sky overlays the real one.">카메라 투과 모드</string>
+    <string name="layer_camera_needs_sensors" translation_description="Subtitle explaining why the through-camera toggle is disabled: the device has no usable motion sensors, and the mode needs the map to follow where the phone points.">이 기기에는 없는 모션 센서가 필요합니다</string>
+    <string name="ar_exposure_slider" translation_description="Accessibility label for the slider adjusting the camera\'s exposure compensation while through-camera mode is on.">카메라 노출</string>
+    <string name="ar_dimmer_slider" translation_description="Accessibility label for the slider dimming the camera image behind the star map while through-camera mode is on.">카메라 밝기 조절</string>
+    <!-- tm:omitted name="ar_iso_slider_label" reason="identical_to_source" -->
+    <string name="ar_iso_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual ISO sensitivity in through-camera mode.">카메라 ISO</string>
+    <string name="ar_shutter_slider_label" translation_description="Very short label for the temporary developer slider setting the camera\'s manual shutter (exposure) time in through-camera mode.">셔터</string>
+    <string name="ar_shutter_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual shutter (exposure) time in through-camera mode.">카메라 셔터 시간</string>
+    <string name="share_button" translation_description="Overflow-menu row that captures the current sky view as an image and opens the system share sheet.">하늘 공유</string>
+    <string name="share_shutter_button" translation_description="Accessibility label for the round shutter button that captures and shares the current through-camera view.">이 화면 공유</string>
+    <string name="ar_exposure_auto" translation_description="Readout shown when a manual camera exposure slider sits at its automatic position.">자동</string>
+    <string name="time_travel_button">시간 여행</string>
+    <string name="location_button" translation_description="Button on the map screen that opens the location management sheet">위치</string>
+    <string name="gallery_button" translation_description="Map-screen menu item that opens a gallery of photographs of celestial objects. Not the user\'s own photos - these are catalog images from sources such as NASA and ESA.">하늘 갤러리</string>
+    <string name="settings_button">설정</string>
+    <string name="calibration_button" translation_description="Map-screen button that opens the compass calibration screen">보정</string>
+    <string name="help_button">도움말</string>
+    <string name="tutorial_button" translation_description="Map-screen menu item that replays the warm welcome tutorial">튜토리얼</string>
+    <string name="whats_new_button" translation_description="Map-screen menu item that opens the What's New and Credits screen">새로운 기능</string>
+    <string name="widgets_button" translation_description="Map-screen menu item that opens the list of home-screen widgets the app offers">위젯</string>
+    <string name="layer_param_disc_size">원반 크기</string>
+    <string name="layer_param_disc_size_true">실제 크기</string>
+    <string name="layer_param_disc_size_true_desc">모든 확대/축소에서 하늘의 실제 크기. 행성은 확대하기 전까지는 점으로 보입니다.</string>
+    <string name="layer_param_disc_size_glyphs">글리프</string>
+    <string name="layer_param_disc_size_glyphs_desc">각 천체의 실제 크기에 따라 표시되며, 보이는 크기가 아닙니다. 어떤 확대/축소에서도 쉽게 볼 수 있습니다.</string>
+    <string name="layer_param_disc_size_auto">고정</string>
+    <string name="layer_param_disc_size_auto_desc">확대/축소 시 화면에서 고정된 크기를 유지하다가 실제 크기로 전환됩니다.</string>
+    <string name="layer_param_expand">%1$s에 대한 옵션 표시</string>
 </resources>

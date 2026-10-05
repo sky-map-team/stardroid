@@ -36,7 +36,6 @@ import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.layout.LayoutCoordinates
 import androidx.compose.ui.layout.onGloballyPositioned
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.clearAndSetSemantics
 import androidx.compose.ui.text.TextMeasurer
 import androidx.compose.ui.text.TextStyle
@@ -55,6 +54,7 @@ import com.google.android.stardroid.ui.map.demoChromeToggles
 import com.google.android.stardroid.ui.theme.TourColors
 import com.google.android.stardroid.ui.theme.tourColors
 import kotlinx.coroutines.delay
+import org.jetbrains.compose.resources.stringResource
 import kotlin.math.abs
 import kotlin.math.max
 import kotlin.math.sqrt

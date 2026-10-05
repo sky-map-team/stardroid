@@ -36,4 +36,78 @@
         <item>NV</item>
         <item>NNV</item>
     </string-array>
+    <string name="search_button">Søk</string>
+    <string name="layer_stars">Stjerner</string>
+    <string name="layer_constellations">Stjernebilder</string>
+    <string name="layer_deep_sky" translation_description="Toggle label for the layer showing deep-sky objects such as galaxies and nebulae.">Dypromsobjekter</string>
+    <string name="layer_solar_system">Solsystem</string>
+    <string name="layer_meteor_showers">Meteorsvermer</string>
+    <string name="layer_satellites" translation_description="Toggle label for the layer showing artificial satellites such as the International Space Station.">Satellitter</string>
+    <string name="layer_param_pass_alerts" translation_description="Label for the setting that turns on a notification shortly before a satellite passes overhead.">Passeringsvarsler</string>
+    <string name="layer_param_pass_alerts_description" translation_description="Explains what the pass-alert setting does: a single notification before the best visible pass of the night.">Varsle meg før nattens beste synlige passering</string>
+    <string name="layer_param_eclipse_alerts" translation_description="Label for the setting that turns on a notification before a lunar eclipse begins.">Formørkelsesvarsler</string>
+    <string name="layer_param_eclipse_alerts_description" translation_description="Explains what the eclipse-alert setting does: a single notification before a lunar eclipse starts.">Varsle meg før en måneformørkelse starter</string>
+    <string name="layer_param_altaz_grid_density" translation_description="Label for the alt/az grid's line-count setting.">Linjeantall</string>
+    <string name="layer_param_altaz_grid_density_coarse" translation_description="Option label for the alt/az grid's sparsest setting: 8 azimuth lines, 45 degrees apart.">Grov</string>
+    <string name="layer_param_altaz_grid_density_coarse_desc" translation_description="Explains the coarse alt/az grid density: 8 azimuth lines, matching the 8 compass points.">8 retningslinjer, samsvarer med kompassrosen</string>
+    <string name="layer_param_altaz_grid_density_medium" translation_description="Option label for the alt/az grid's default setting: 12 azimuth lines, 30 degrees apart.">Middels</string>
+    <string name="layer_param_altaz_grid_density_medium_desc" translation_description="Explains the medium alt/az grid density: 12 azimuth lines, 30 degrees apart.">12 retningslinjer, 30° fra hverandre</string>
+    <string name="layer_param_altaz_grid_density_fine" translation_description="Option label for the alt/az grid's densest setting: 24 azimuth lines, 15 degrees apart.">Fin</string>
+    <string name="layer_param_altaz_grid_density_fine_desc" translation_description="Explains the fine alt/az grid density: 24 azimuth lines, matching the celestial grid's meridian count.">24 retningslinjer, samsvarer med himmelnettet</string>
+    <string name="satellites_no_data" translation_description="Explanation shown when satellite orbital data has not been downloaded yet and so no satellites can be drawn.">Satellittposisjoner krever en internettilkobling for å oppdateres.</string>
+    <string name="satellites_refresh" translation_description="Button that tries to download satellite orbital data now.">Oppdater</string>
+    <string name="satellites_retry_soon" translation_description="Shown instead of a Refresh button when satellite data was just requested and cannot be requested again for a few minutes.">Prøv igjen om noen minutter</string>
+    <string name="satellites_retry_within_hour" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for up to an hour.">Prøv igjen innen timen</string>
+    <string name="satellites_retry_hours" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for several hours.">Prøv igjen om noen timer</string>
+    <string name="satellites_retry_tomorrow" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again until the next day.">Prøv igjen i morgen</string>
+    <string name="satellites_retry_days" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for several days.">Prøv igjen om noen dager</string>
+    <string name="layer_grid" translation_description="Toggle label for the layer showing the right ascension / declination grid.">Himmelgitter</string>
+    <string name="layer_horizon">Horisont</string>
+    <string name="layer_ecliptic">Ekliptikken</string>
+    <string name="layer_altaz_grid" translation_description="Toggle label for the layer showing the altitude/azimuth (horizontal) coordinate grid, for naked-eye or manual alt-az mount observers.">Høyde-/asimut-rutenett</string>
+    <string name="layer_sky_gradient">Himmelgradient</string>
+    <string name="layers_sheet_title" translation_description="Title of the bottom sheet listing sky map layers the user can show or hide.">Lag</string>
+    <string name="layers_group_objects" translation_description="Layers-sheet group header for layers that draw sky objects (stars, planets, deep-sky objects).">Objekter</string>
+    <string name="layers_group_reference" translation_description="Layers-sheet group header for reference elements drawn over the sky (coordinate grid, horizon, ecliptic).">Referanse</string>
+    <string name="layers_group_display" translation_description="Layers-sheet group header for display settings that change how the sky is rendered rather than what is drawn.">Visning</string>
+    <string name="show_layers" translation_description="Accessibility description and label for the button opening the layer-visibility sheet, which holds the layers that do not fit on the rail plus display options.">Flere lag og alternativer</string>
+    <string name="more_button" translation_description="Accessibility label and tooltip for the map-screen button (three vertical dots) opening the overflow menu of further destinations such as Gallery and Settings.">Flere alternativer</string>
+    <string name="night_mode">Nattmodus</string>
+    <string name="switch_to_manual" translation_description="Tooltip and accessibility label for the button that switches the map from auto (sensor-driven) mode to manual (drag) mode.">Bytt til manuell modus</string>
+    <string name="switch_to_auto" translation_description="Tooltip and accessibility label for the button that switches the map from manual (drag) mode to auto (sensor-driven) mode.">Bytt til automatisk modus</string>
+    <string name="layer_hud" translation_description="Layers-sheet Display toggle that shows the heads-up readout of where the phone is pointing (compass direction and altitude) over the star map.">Peileavlesning</string>
+    <string name="layer_camera" translation_description="Layers-sheet Display toggle that shows the live rear-camera image behind the star map, so the drawn sky overlays the real one.">Gjennom-kamera-modus</string>
+    <string name="layer_camera_needs_sensors" translation_description="Subtitle explaining why the through-camera toggle is disabled: the device has no usable motion sensors, and the mode needs the map to follow where the phone points.">Krever bevegelsessensorer som denne enheten ikke har</string>
+    <string name="ar_exposure_slider" translation_description="Accessibility label for the slider adjusting the camera\'s exposure compensation while through-camera mode is on.">Kameraeksponering</string>
+    <string name="ar_dimmer_slider" translation_description="Accessibility label for the slider dimming the camera image behind the star map while through-camera mode is on.">Kamerademper</string>
+    <!-- tm:omitted name="ar_iso_slider_label" reason="identical_to_source" -->
+    <string name="ar_iso_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual ISO sensitivity in through-camera mode.">Kamera-ISO</string>
+    <!-- tm:omitted name="ar_shutter_slider_label" reason="identical_to_source" -->
+    <string name="ar_shutter_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual shutter (exposure) time in through-camera mode.">Kamerautløsertid</string>
+    <string name="share_button" translation_description="Overflow-menu row that captures the current sky view as an image and opens the system share sheet.">Del himmelen</string>
+    <string name="share_shutter_button" translation_description="Accessibility label for the round shutter button that captures and shares the current through-camera view.">Del denne visningen</string>
+    <!-- tm:omitted name="ar_exposure_auto" reason="identical_to_source" -->
+    <string name="time_travel_button">Tidsreise</string>
+    <string name="location_button" translation_description="Button on the map screen that opens the location management sheet">Sted</string>
+    <string name="gallery_button" translation_description="Map-screen menu item that opens a gallery of photographs of celestial objects. Not the user\'s own photos - these are catalog images from sources such as NASA and ESA.">Himmelgalleri</string>
+    <string name="settings_button">Innstillinger</string>
+    <string name="calibration_button">Kalibrer</string>
+    <string name="help_button">Hjelp</string>
+    <string name="tutorial_button">Veiledning</string>
+    <string name="whats_new_button" translation_description="Map-screen menu item that opens the What's New and Credits screen">Hva er nytt</string>
+    <string name="widgets_button" translation_description="Map-screen menu item that opens the list of home-screen widgets the app offers">Widgeter</string>
+    <string name="layer_param_disc_size">Skivestørrelse</string>
+    <string name="layer_param_disc_size_true">Sann skala</string>
+    <string name="layer_param_disc_size_true_desc">
+    Real størrelse på himmelen ved alle zoomnivåer. Planeter er prikker til du zoomer helt inn.
+    </string>
+    <string name="layer_param_disc_size_glyphs">Glyfer</string>
+    <string name="layer_param_disc_size_glyphs_desc">
+    Størrelse basert på hvor stor hver kropp faktisk er, ikke hvor stor den ser ut. Lett å se ved alle zoomnivåer.
+    </string>
+    <string name="layer_param_disc_size_auto">Jevn</string>
+    <string name="layer_param_disc_size_auto_desc">
+    Holder en fast størrelse på skjermen når du zoomer, bytter deretter til real størrelse.
+    </string>
+    <string name="layer_param_expand">Vis alternativer for %1$s</string>
 </resources>

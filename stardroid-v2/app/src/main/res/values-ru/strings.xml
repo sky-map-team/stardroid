@@ -26,19 +26,10 @@
     <string name="uranus">Уран</string>
     <string name="neptune">Нептун</string>
     <string name="pluto">Плутон</string>
-    <string name="search_button">Поиск</string>
     <string name="search_label">Поиск на небе</string>
     <string name="search_cancel">Отмена</string>
     <string name="search_overlay_prompt">Поверните телефон в направлении стрелки</string>
-    <string name="layer_stars">Звезды</string>
-    <string name="layer_constellations">Созвездия</string>
-    <string name="layer_solar_system">Планеты</string>
-    <string name="layer_meteor_showers">Метеоритные дожди</string>
-    <string name="layer_horizon">Горизонт</string>
-    <string name="layer_ecliptic">эклиптика</string>
-    <string name="layer_sky_gradient">Градиент неба</string>
     <string name="ar_permission_settings_action">Настройки</string>
-    <string name="time_travel_button">Путешествие во времени</string>
     <string name="time_travel_title">Путешествие во времени</string>
     <string name="time_travel_cancel">Отмена</string>
     <string name="time_travel_stopped">Путешествие во времени остановлено</string>
@@ -64,7 +55,6 @@
     <string name="sun_wont_set_message">В течение ближайших 24 часов захода Солнца в вашем местоположении не будет.</string>
     <string name="time_travel_close_message">Назад в настоящее...</string>
     <string name="object_info_find_in_sky">Найти в небе</string>
-    <string name="settings_button">Настройки</string>
     <string name="settings_title">Настройки</string>
     <string name="settings_cancel">Отмена</string>
     <string name="settings_section_sensors">Настройки матрицы</string>
@@ -106,7 +96,6 @@
     <string name="diagnostics_connected">Соединено</string>
     <string name="diagnostics_disconnected">Не соединено</string>
     <string name="diagnostics_cell">" (мобильный)"</string>
-    <string name="calibration_button">Калибровка</string>
     <string name="calibration_heading_warning">Ваш компас должен быть откалиброван</string>
     <string name="calibration_accuracy_unknown">Калибровка: неизвестна</string>
     <string name="calibration_accuracy_unreliable">Калибровка: не откалибровано</string>
@@ -117,6 +106,5 @@
     <string name="calibration_do_not_show_again">Не показывать это снова</string>
     <string name="whats_new_dialog_title">Что нового</string>
     <string name="warm_welcome_card_name">Крабовидная туманность</string>
-    <string name="help_button">Справка</string>
     <string name="help_dialog_title">Справка</string>
 </resources>

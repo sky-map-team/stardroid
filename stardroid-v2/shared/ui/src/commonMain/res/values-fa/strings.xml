@@ -37,4 +37,81 @@
         <item>ش‌غ</item>
         <item>ش‌ش‌غ</item>
     </string-array>
+    <string name="search_button">جستجو</string>
+    <string name="layer_stars">ستاره‌ها</string>
+    <string name="layer_constellations">صورت‌های فلکی</string>
+    <string name="layer_deep_sky" translation_description="Toggle label for the layer showing deep-sky objects such as galaxies and nebulae.">اجرام اعماق آسمان</string>
+    <string name="layer_solar_system">منظومه شمسی</string>
+    <string name="layer_meteor_showers">بارش شهابی</string>
+    <string name="layer_satellites" translation_description="Toggle label for the layer showing artificial satellites such as the International Space Station.">ماهواره‌ها</string>
+    <string name="layer_param_pass_alerts" translation_description="Label for the setting that turns on a notification shortly before a satellite passes overhead.">هشدارهای گذر</string>
+    <string name="layer_param_pass_alerts_description" translation_description="Explains what the pass-alert setting does: a single notification before the best visible pass of the night.">قبل از بهترین گذر قابل مشاهده هر شب به من اطلاع بده</string>
+    <string name="layer_param_eclipse_alerts" translation_description="Label for the setting that turns on a notification before a lunar eclipse begins.">هشدارهای خسوف</string>
+    <string name="layer_param_eclipse_alerts_description" translation_description="Explains what the eclipse-alert setting does: a single notification before a lunar eclipse starts.">قبل از شروع خسوف به من اطلاع بده</string>
+    <string name="layer_param_altaz_grid_density" translation_description="Label for the alt/az grid's line-count setting.">تعداد خطوط</string>
+    <string name="layer_param_altaz_grid_density_coarse" translation_description="Option label for the alt/az grid's sparsest setting: 8 azimuth lines, 45 degrees apart.">درشت</string>
+    <string name="layer_param_altaz_grid_density_coarse_desc" translation_description="Explains the coarse alt/az grid density: 8 azimuth lines, matching the 8 compass points.">۸ خط جهت، مطابق با گل قطب‌نما</string>
+    <string name="layer_param_altaz_grid_density_medium" translation_description="Option label for the alt/az grid's default setting: 12 azimuth lines, 30 degrees apart.">متوسط</string>
+    <string name="layer_param_altaz_grid_density_medium_desc" translation_description="Explains the medium alt/az grid density: 12 azimuth lines, 30 degrees apart.">۱۲ خط جهت، با فاصله ۳۰ درجه</string>
+    <string name="layer_param_altaz_grid_density_fine" translation_description="Option label for the alt/az grid's densest setting: 24 azimuth lines, 15 degrees apart.">ظریف</string>
+    <string name="layer_param_altaz_grid_density_fine_desc" translation_description="Explains the fine alt/az grid density: 24 azimuth lines, matching the celestial grid's meridian count.">۲۴ خط جهت، مطابق با شبکه آسمانی</string>
+    <string name="satellites_no_data" translation_description="Explanation shown when satellite orbital data has not been downloaded yet and so no satellites can be drawn.">موقعیت‌های ماهواره برای به‌روزرسانی نیاز به اتصال اینترنت دارند.</string>
+    <string name="satellites_refresh" translation_description="Button that tries to download satellite orbital data now.">تازه‌سازی</string>
+    <string name="satellites_retry_soon" translation_description="Shown instead of a Refresh button when satellite data was just requested and cannot be requested again for a few minutes.">چند دقیقه دیگر دوباره امتحان کنید</string>
+    <string name="satellites_retry_within_hour" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for up to an hour.">تا یک ساعت دیگر دوباره امتحان کنید</string>
+    <string name="satellites_retry_hours" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for several hours.">چند ساعت دیگر دوباره امتحان کنید</string>
+    <string name="satellites_retry_tomorrow" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again until the next day.">فردا دوباره امتحان کنید</string>
+    <string name="satellites_retry_days" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for several days.">چند روز دیگر دوباره امتحان کنید</string>
+    <string name="layer_grid" translation_description="Toggle label for the layer showing the right ascension / declination grid.">شبکه سماوی</string>
+    <string name="layer_horizon">افق</string>
+    <string name="layer_ecliptic">دایرة البروج</string>
+    <string name="layer_altaz_grid" translation_description="Toggle label for the layer showing the altitude/azimuth (horizontal) coordinate grid, for naked-eye or manual alt-az mount observers.">شبکه ارتفاع/سمت</string>
+    <string name="layer_sky_gradient">گرادیان آسمان</string>
+    <string name="layers_sheet_title" translation_description="Title of the bottom sheet listing sky map layers the user can show or hide.">لایه‌ها</string>
+    <string name="layers_group_objects" translation_description="Layers-sheet group header for layers that draw sky objects (stars, planets, deep-sky objects).">اجرام</string>
+    <string name="layers_group_reference" translation_description="Layers-sheet group header for reference elements drawn over the sky (coordinate grid, horizon, ecliptic).">مرجع</string>
+    <string name="layers_group_display" translation_description="Layers-sheet group header for display settings that change how the sky is rendered rather than what is drawn.">نمایش</string>
+    <string name="show_layers" translation_description="Accessibility description and label for the button opening the layer-visibility sheet, which holds the layers that do not fit on the rail plus display options.">لایه‌ها و گزینه‌های بیشتر</string>
+    <string name="more_button" translation_description="Accessibility label and tooltip for the map-screen button (three vertical dots) opening the overflow menu of further destinations such as Gallery and Settings.">گزینه‌های بیشتر</string>
+    <string name="night_mode">حالت شب</string>
+    <string name="switch_to_manual" translation_description="Tooltip and accessibility label for the button that switches the map from auto (sensor-driven) mode to manual (drag) mode.">تغییر به حالت دستی</string>
+    <string name="switch_to_auto" translation_description="Tooltip and accessibility label for the button that switches the map from manual (drag) mode to auto (sensor-driven) mode.">تغییر به حالت خودکار</string>
+    <string name="layer_hud" translation_description="Layers-sheet Display toggle that shows the heads-up readout of where the phone is pointing (compass direction and altitude) over the star map.">نمایشگر جهت
+گیری</string>
+    <string name="layer_camera" translation_description="Layers-sheet Display toggle that shows the live rear-camera image behind the star map, so the drawn sky overlays the real one.">حالت از طریق دوربین</string>
+    <string name="layer_camera_needs_sensors" translation_description="Subtitle explaining why the through-camera toggle is disabled: the device has no usable motion sensors, and the mode needs the map to follow where the phone points.">نیاز به حسگرهای حرکتی دارد که این دستگاه ندارد</string>
+    <string name="ar_exposure_slider" translation_description="Accessibility label for the slider adjusting the camera\'s exposure compensation while through-camera mode is on.">نوردهی دوربین</string>
+    <string name="ar_dimmer_slider" translation_description="Accessibility label for the slider dimming the camera image behind the star map while through-camera mode is on.">کم
+نورکننده دوربین</string>
+    <!-- tm:omitted name="ar_iso_slider_label" reason="identical_to_source" -->
+    <string name="ar_iso_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual ISO sensitivity in through-camera mode.">ISO دوربین</string>
+    <string name="ar_shutter_slider_label" translation_description="Very short label for the temporary developer slider setting the camera\'s manual shutter (exposure) time in through-camera mode.">شاتر</string>
+    <string name="ar_shutter_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual shutter (exposure) time in through-camera mode.">زمان شاتر دوربین</string>
+    <string name="share_button" translation_description="Overflow-menu row that captures the current sky view as an image and opens the system share sheet.">اشتراک
+گذاری آسمان</string>
+    <string name="share_shutter_button" translation_description="Accessibility label for the round shutter button that captures and shares the current through-camera view.">اشتراک‌گذاری این نما</string>
+    <string name="ar_exposure_auto" translation_description="Readout shown when a manual camera exposure slider sits at its automatic position.">خودکار</string>
+    <string name="time_travel_button">سفر زمانی</string>
+    <string name="location_button" translation_description="Button on the map screen that opens the location management sheet">مکان</string>
+    <string name="gallery_button" translation_description="Map-screen menu item that opens a gallery of photographs of celestial objects. Not the user\'s own photos - these are catalog images from sources such as NASA and ESA.">گالری آسمان</string>
+    <string name="settings_button">تنظیمات</string>
+    <string name="calibration_button">کالیبره</string>
+    <string name="help_button">راهنما</string>
+    <string name="tutorial_button">آموزش</string>
+    <string name="whats_new_button" translation_description="Map-screen menu item that opens the What's New and Credits screen">چه خبر است</string>
+    <string name="widgets_button" translation_description="Map-screen menu item that opens the list of home-screen widgets the app offers">ویجت‌ها</string>
+    <string name="layer_param_disc_size">اندازه دیسک</string>
+    <string name="layer_param_disc_size_true">مقیاس واقعی</string>
+    <string name="layer_param_disc_size_true_desc">
+    اندازه واقعی در آسمان در هر بزرگ‌نمایی. سیارات تا زمانی که کاملاً بزرگ‌نمایی کنید، نقاط کوچکی هستند.
+    </string>
+    <string name="layer_param_disc_size_glyphs">نمادها</string>
+    <string name="layer_param_disc_size_glyphs_desc">
+    اندازه بر اساس بزرگی واقعی هر جرم، نه آن‌طور که به نظر می‌رسد. در هر بزرگ‌نمایی به راحتی قابل مشاهده است.
+    </string>
+    <string name="layer_param_disc_size_auto">ثابت</string>
+    <string name="layer_param_disc_size_auto_desc">
+    با بزرگ‌نمایی، اندازه ثابتی روی صفحه نگه می‌دارد، سپس به اندازه واقعی تغییر می‌کند.
+    </string>
+    <string name="layer_param_expand">نمایش گزینه‌ها برای %1$s</string>
 </resources>

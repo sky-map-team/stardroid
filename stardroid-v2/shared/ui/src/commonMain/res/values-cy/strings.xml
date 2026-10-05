@@ -36,4 +36,78 @@
         <item>Gogledd-orllewin</item>
         <item>Gogledd-gogledd-orllewin</item>
     </string-array>
+    <string name="search_button">Chwilio</string>
+    <string name="layer_stars">Sêr</string>
+    <string name="layer_constellations">Cytser</string>
+    <string name="layer_deep_sky" translation_description="Toggle label for the layer showing deep-sky objects such as galaxies and nebulae.">Gwrthrychau awyr ddwfn</string>
+    <string name="layer_solar_system">Cysawd yr Haul</string>
+    <string name="layer_meteor_showers">Sêr gwib</string>
+    <string name="layer_satellites" translation_description="Toggle label for the layer showing artificial satellites such as the International Space Station.">Lloerennau</string>
+    <string name="layer_param_pass_alerts" translation_description="Label for the setting that turns on a notification shortly before a satellite passes overhead.">Rhybuddion tramwy</string>
+    <string name="layer_param_pass_alerts_description" translation_description="Explains what the pass-alert setting does: a single notification before the best visible pass of the night.">Rhowch wybod i mi cyn y tramwyfa weladwy gorau bob nos</string>
+    <string name="layer_param_eclipse_alerts" translation_description="Label for the setting that turns on a notification before a lunar eclipse begins.">Rhybuddion diffyg</string>
+    <string name="layer_param_eclipse_alerts_description" translation_description="Explains what the eclipse-alert setting does: a single notification before a lunar eclipse starts.">Rhowch wybod i mi cyn i ddiffyg lleuad ddechrau</string>
+    <string name="layer_param_altaz_grid_density" translation_description="Label for the alt/az grid's line-count setting.">Cyfrif llinellau</string>
+    <string name="layer_param_altaz_grid_density_coarse" translation_description="Option label for the alt/az grid's sparsest setting: 8 azimuth lines, 45 degrees apart.">Bras</string>
+    <string name="layer_param_altaz_grid_density_coarse_desc" translation_description="Explains the coarse alt/az grid density: 8 azimuth lines, matching the 8 compass points.">8 llinell gyfeiriad, yn cyfateb i\'r rhosyn cwmpas</string>
+    <string name="layer_param_altaz_grid_density_medium" translation_description="Option label for the alt/az grid's default setting: 12 azimuth lines, 30 degrees apart.">Canolig</string>
+    <string name="layer_param_altaz_grid_density_medium_desc" translation_description="Explains the medium alt/az grid density: 12 azimuth lines, 30 degrees apart.">12 llinell gyfeiriad, 30° ar wahân</string>
+    <string name="layer_param_altaz_grid_density_fine" translation_description="Option label for the alt/az grid's densest setting: 24 azimuth lines, 15 degrees apart.">Manwl</string>
+    <string name="layer_param_altaz_grid_density_fine_desc" translation_description="Explains the fine alt/az grid density: 24 azimuth lines, matching the celestial grid's meridian count.">24 llinell gyfeiriad, yn cyfateb i\'r grid nefol</string>
+    <string name="satellites_no_data" translation_description="Explanation shown when satellite orbital data has not been downloaded yet and so no satellites can be drawn.">Mae angen cysylltiad rhyngrwyd ar safleoedd lloeren i ddiweddaru.</string>
+    <string name="satellites_refresh" translation_description="Button that tries to download satellite orbital data now.">Adnewyddu</string>
+    <string name="satellites_retry_soon" translation_description="Shown instead of a Refresh button when satellite data was just requested and cannot be requested again for a few minutes.">Rhowch gynnig arall mewn ychydig funudau</string>
+    <string name="satellites_retry_within_hour" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for up to an hour.">Rhowch gynnig arall o fewn yr awr</string>
+    <string name="satellites_retry_hours" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for several hours.">Ceisiwch eto mewn ychydig oriau</string>
+    <string name="satellites_retry_tomorrow" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again until the next day.">Ceisiwch eto yfory</string>
+    <string name="satellites_retry_days" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for several days.">Ceisiwch eto mewn ychydig ddyddiau</string>
+    <string name="layer_grid" translation_description="Toggle label for the layer showing the right ascension / declination grid.">Grid nefol</string>
+    <string name="layer_horizon">Gorwel</string>
+    <string name="layer_ecliptic">Ecliptig</string>
+    <string name="layer_altaz_grid" translation_description="Toggle label for the layer showing the altitude/azimuth (horizontal) coordinate grid, for naked-eye or manual alt-az mount observers.">Grid Alt/Az</string>
+    <string name="layer_sky_gradient">Graddfa Awyr</string>
+    <string name="layers_sheet_title" translation_description="Title of the bottom sheet listing sky map layers the user can show or hide.">Haenau</string>
+    <string name="layers_group_objects" translation_description="Layers-sheet group header for layers that draw sky objects (stars, planets, deep-sky objects).">Gwrthrychau</string>
+    <string name="layers_group_reference" translation_description="Layers-sheet group header for reference elements drawn over the sky (coordinate grid, horizon, ecliptic).">Cyfeirnod</string>
+    <string name="layers_group_display" translation_description="Layers-sheet group header for display settings that change how the sky is rendered rather than what is drawn.">Arddangos</string>
+    <string name="show_layers" translation_description="Accessibility description and label for the button opening the layer-visibility sheet, which holds the layers that do not fit on the rail plus display options.">Mwy o haenau ac opsiynau</string>
+    <string name="more_button" translation_description="Accessibility label and tooltip for the map-screen button (three vertical dots) opening the overflow menu of further destinations such as Gallery and Settings.">Mwy o opsiynau</string>
+    <string name="night_mode">Modd Nos</string>
+    <string name="switch_to_manual" translation_description="Tooltip and accessibility label for the button that switches the map from auto (sensor-driven) mode to manual (drag) mode.">Newid i fodd llaw</string>
+    <string name="switch_to_auto" translation_description="Tooltip and accessibility label for the button that switches the map from manual (drag) mode to auto (sensor-driven) mode.">Newid i fodd awtomatig</string>
+    <string name="layer_hud" translation_description="Layers-sheet Display toggle that shows the heads-up readout of where the phone is pointing (compass direction and altitude) over the star map.">Darlleniad cyfeiriad</string>
+    <string name="layer_camera" translation_description="Layers-sheet Display toggle that shows the live rear-camera image behind the star map, so the drawn sky overlays the real one.">Modd drwy\'r camera</string>
+    <string name="layer_camera_needs_sensors" translation_description="Subtitle explaining why the through-camera toggle is disabled: the device has no usable motion sensors, and the mode needs the map to follow where the phone points.">Angen synwyryddion symud nad oes gan y ddyfais hon</string>
+    <string name="ar_exposure_slider" translation_description="Accessibility label for the slider adjusting the camera\'s exposure compensation while through-camera mode is on.">Amlygiad camera</string>
+    <string name="ar_dimmer_slider" translation_description="Accessibility label for the slider dimming the camera image behind the star map while through-camera mode is on.">Pylu camera</string>
+    <!-- tm:omitted name="ar_iso_slider_label" reason="identical_to_source" -->
+    <string name="ar_iso_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual ISO sensitivity in through-camera mode.">ISO camera</string>
+    <!-- tm:omitted name="ar_shutter_slider_label" reason="identical_to_source" -->
+    <string name="ar_shutter_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual shutter (exposure) time in through-camera mode.">Amser caead camera</string>
+    <string name="share_button" translation_description="Overflow-menu row that captures the current sky view as an image and opens the system share sheet.">Rhannu\'r awyr</string>
+    <string name="share_shutter_button" translation_description="Accessibility label for the round shutter button that captures and shares the current through-camera view.">Rhannu\'r olygfa hon</string>
+    <!-- tm:omitted name="ar_exposure_auto" reason="identical_to_source" -->
+    <string name="time_travel_button">Teithio mewn Amser</string>
+    <string name="location_button" translation_description="Button on the map screen that opens the location management sheet">Lleoliad</string>
+    <string name="gallery_button" translation_description="Map-screen menu item that opens a gallery of photographs of celestial objects. Not the user\'s own photos - these are catalog images from sources such as NASA and ESA.">Oriel yr awyr</string>
+    <string name="settings_button">Gosodiadau</string>
+    <string name="calibration_button">Calibro</string>
+    <string name="help_button">Cymorth</string>
+    <string name="tutorial_button">Tiwtorial</string>
+    <string name="whats_new_button" translation_description="Map-screen menu item that opens the What's New and Credits screen">Beth sy\'n newydd</string>
+    <string name="widgets_button" translation_description="Map-screen menu item that opens the list of home-screen widgets the app offers">Teclynnau</string>
+    <string name="layer_param_disc_size">Maint disg</string>
+    <string name="layer_param_disc_size_true">Graddfa wirioneddol</string>
+    <string name="layer_param_disc_size_true_desc">
+    Maint go iawn yn yr awyr ar bob chwyddo. Mae planedau\u0027n smotiau nes i chi chwyddo i mewn yn iawn.
+    </string>
+    <string name="layer_param_disc_size_glyphs">Glyffau</string>
+    <string name="layer_param_disc_size_glyphs_desc">
+    Maint yn ôl pa mor fawr yw pob corff mewn gwirionedd, nid pa mor fawr y mae\u0027n edrych. Hawdd ei weld ar unrhyw chwyddo.
+    </string>
+    <string name="layer_param_disc_size_auto">Cyson</string>
+    <string name="layer_param_disc_size_auto_desc">
+    Yn dal maint sefydlog ar y sgrin wrth i chi chwyddo, yna\u0027n newid i faint go iawn.
+    </string>
+    <string name="layer_param_expand">Dangos opsiynau ar gyfer %1$s</string>
 </resources>

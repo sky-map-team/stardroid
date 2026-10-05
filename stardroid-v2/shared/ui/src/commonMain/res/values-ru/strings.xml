@@ -3,4 +3,16 @@
     <string name="eula_title">Условия предоставления услуг</string>
     <string name="dialog_accept">Принять</string>
     <string name="dialog_decline">Нет, спасибо</string>
+    <string name="search_button">Поиск</string>
+    <string name="layer_stars">Звезды</string>
+    <string name="layer_constellations">Созвездия</string>
+    <string name="layer_solar_system">Планеты</string>
+    <string name="layer_meteor_showers">Метеоритные дожди</string>
+    <string name="layer_horizon">Горизонт</string>
+    <string name="layer_ecliptic">эклиптика</string>
+    <string name="layer_sky_gradient">Градиент неба</string>
+    <string name="time_travel_button">Путешествие во времени</string>
+    <string name="settings_button">Настройки</string>
+    <string name="calibration_button">Калибровка</string>
+    <string name="help_button">Справка</string>
 </resources>
