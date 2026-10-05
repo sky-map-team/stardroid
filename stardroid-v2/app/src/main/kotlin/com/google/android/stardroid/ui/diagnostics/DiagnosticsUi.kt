@@ -33,6 +33,7 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
@@ -56,6 +57,7 @@ import com.google.android.stardroid.sensors.SensorAccuracy
 import com.google.android.stardroid.sensors.SensorKind
 import com.google.android.stardroid.startup.Experiment
 import com.google.android.stardroid.startup.ExperimentConfig
+import com.google.android.stardroid.startup.FetchResult
 import com.google.android.stardroid.ui.common.topBarWindowInsets
 import com.google.android.stardroid.ui.theme.StatusColors
 import com.google.android.stardroid.ui.theme.statusColors
@@ -94,6 +96,9 @@ fun DiagnosticsScreen(
     val scope = rememberCoroutineScope()
     var satelliteState by remember { mutableStateOf<SatelliteDiagnosticsState?>(null) }
     var forceFetchResult by remember { mutableStateOf<String?>(null) }
+    // Bumped after a forced experiment fetch so the section is rebuilt with the new values.
+    var experimentsRefresh by remember { mutableIntStateOf(0) }
+    var experimentFetchResult by remember { mutableStateOf<String?>(null) }
     LaunchedEffect(satellitesEnabled) {
         satelliteState = if (satellitesEnabled) readSatelliteDiagnostics(context) else null
     }
@@ -106,7 +111,7 @@ fun DiagnosticsScreen(
             add(locationAndTimeSection(snapshot, colors))
             add(networkSection(snapshot))
             satelliteState?.let { add(satelliteSection(it)) }
-            add(experimentsSection(experimentConfig))
+            add(experimentsSection(experimentConfig, experimentsRefresh))
         }
     val reportHeader = stringResource(R.string.diagnostics_report_header)
     val reportSubject = stringResource(R.string.diagnostics_share_subject)
@@ -169,6 +174,30 @@ fun DiagnosticsScreen(
                     for (row in section.rows) {
                         DiagnosticRow(row.label, row.value, row.valueColor)
                     }
+                }
+                if (experimentConfig.canFetch) {
+                    Button(
+                        onClick = {
+                            scope.launch {
+                                experimentFetchResult =
+                                    when (val result = experimentConfig.fetchNow()) {
+                                        FetchResult.Unsupported -> "Not supported in this build"
+                                        is FetchResult.Success ->
+                                            if (result.updated) {
+                                                "Fetched; values changed"
+                                            } else {
+                                                "Fetched; no change"
+                                            }
+                                        is FetchResult.Failure -> "Failed: ${result.message}"
+                                    }
+                                experimentsRefresh++
+                            }
+                        },
+                        modifier = Modifier.padding(vertical = 8.dp),
+                    ) {
+                        Text(stringResource(R.string.diagnostics_experiments_fetch_now))
+                    }
+                    experimentFetchResult?.let { DiagnosticRow("Result", it) }
                 }
                 // Debug builds only. A discoverable "fetch now" in release is the retry storm
                 // the circuit breaker exists to prevent, so the gate is the build type — the
@@ -535,11 +564,23 @@ private fun satelliteSection(state: SatelliteDiagnosticsState): DiagnosticsSecti
  * fetch that activates while the screen is open shows up with the next recomposition.
  */
 @Composable
-private fun experimentsSection(config: ExperimentConfig): DiagnosticsSection =
-    DiagnosticsSection(
-        stringResource(R.string.diagnostics_section_experiments),
-        Experiment.entries.map { DiagnosticsRow(it.key, config.isEnabled(it).toString()) },
-    )
+private fun experimentsSection(
+    config: ExperimentConfig,
+    @Suppress("UNUSED_PARAMETER") refresh: Int,
+): DiagnosticsSection {
+    val lastFetched =
+        config.lastFetchTimeMillis?.let {
+            formatTime(Instant.fromEpochMilliseconds(it), ZoneId.systemDefault())
+        } ?: stringResource(R.string.diagnostics_experiments_never_fetched)
+    val rows =
+        buildList {
+            if (config.canFetch) {
+                add(DiagnosticsRow(stringResource(R.string.diagnostics_experiments_last_fetched), lastFetched))
+            }
+            Experiment.entries.forEach { add(DiagnosticsRow(it.key, config.isEnabled(it).toString())) }
+        }
+    return DiagnosticsSection(stringResource(R.string.diagnostics_section_experiments), rows)
+}
 
 @Composable
 private fun SectionHeader(title: String) {
