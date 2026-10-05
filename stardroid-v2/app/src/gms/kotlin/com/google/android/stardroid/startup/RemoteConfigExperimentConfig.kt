@@ -56,11 +56,9 @@ class RemoteConfigExperimentConfig : ExperimentConfig {
     override val lastFetchTimeMillis: Long?
         get() {
             val info = remoteConfig.info
-            return if (info.lastFetchStatus == FirebaseRemoteConfig.LAST_FETCH_STATUS_NO_FETCH_YET) {
-                null
-            } else {
-                info.fetchTimeMillis
-            }
+            val neverFetched =
+                info.lastFetchStatus == FirebaseRemoteConfig.LAST_FETCH_STATUS_NO_FETCH_YET
+            return if (neverFetched) null else info.fetchTimeMillis
         }
 
     /** `fetch(0)` bypasses the 12-hour client throttle; the server may still throttle. */

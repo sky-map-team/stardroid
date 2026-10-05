@@ -95,7 +95,8 @@ class DataStoreAnnouncementState(
         now: Instant,
     ) = update { entries ->
         val old = entries[id]
-        entries + (id to Entry((old?.record ?: SeenRecord()).copy(dismissed = true), old?.firstSeen ?: now))
+        val dismissed = (old?.record ?: SeenRecord()).copy(dismissed = true)
+        entries + (id to Entry(dismissed, old?.firstSeen ?: now))
     }
 
     override suspend fun prune(
