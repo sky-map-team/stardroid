@@ -50,7 +50,7 @@ class AndroidStringTextTest {
 
     @Test
     fun `unicode escapes decode`() {
-        assertThat(AndroidStringText.process("""été""")).isEqualTo("été")
+        assertThat(AndroidStringText.process("""\u00e9t\u00E9""")).isEqualTo("été")
     }
 
     @Test
