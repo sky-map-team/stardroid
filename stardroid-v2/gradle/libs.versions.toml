@@ -35,6 +35,9 @@ camerax = "1.4.1"
 # compiler this build can read (2.1.21; 1.10 needs Kotlin 2.2.20).
 composeMultiplatform = "1.9.3"
 composeMultiplatformMaterial3 = "1.9.0"
+# The lifecycle and icons Compose Multiplatform 1.9 builds on, for the shared UI.
+cmpLifecycle = "2.9.6"
+cmpMaterialIcons = "1.7.3"
 
 kotlinxDatetime = "0.6.1"
 kotlinxSerialization = "1.7.3"
@@ -68,6 +71,8 @@ cmp-runtime = { group = "org.jetbrains.compose.runtime", name = "runtime", versi
 cmp-foundation = { group = "org.jetbrains.compose.foundation", name = "foundation", version.ref = "composeMultiplatform" }
 cmp-ui = { group = "org.jetbrains.compose.ui", name = "ui", version.ref = "composeMultiplatform" }
 cmp-material3 = { group = "org.jetbrains.compose.material3", name = "material3", version.ref = "composeMultiplatformMaterial3" }
+cmp-lifecycle-runtime-compose = { group = "org.jetbrains.androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "cmpLifecycle" }
+cmp-material-icons-core = { group = "org.jetbrains.compose.material", name = "material-icons-core", version.ref = "cmpMaterialIcons" }
 cmp-components-resources = { group = "org.jetbrains.compose.components", name = "components-resources", version.ref = "composeMultiplatform" }
 
 # Compose + app UI (versions beyond the BOM's control are pinned above)

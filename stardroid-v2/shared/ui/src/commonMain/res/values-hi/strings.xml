@@ -36,4 +36,78 @@
         <item>उ-प</item>
         <item>उ-उ-प</item>
     </string-array>
+    <string name="search_button">खोज</string>
+    <string name="layer_stars">तारे</string>
+    <string name="layer_constellations">नक्षत्र</string>
+    <string name="layer_deep_sky" translation_description="Toggle label for the layer showing deep-sky objects such as galaxies and nebulae.">गहरे आकाश की वस्तुएँ</string>
+    <string name="layer_solar_system">सौर मंडल</string>
+    <string name="layer_meteor_showers">उल्का वर्षा</string>
+    <string name="layer_satellites" translation_description="Toggle label for the layer showing artificial satellites such as the International Space Station.">उपग्रह</string>
+    <string name="layer_param_pass_alerts" translation_description="Label for the setting that turns on a notification shortly before a satellite passes overhead.">पारगमन अलर्ट</string>
+    <string name="layer_param_pass_alerts_description" translation_description="Explains what the pass-alert setting does: a single notification before the best visible pass of the night.">हर रात सबसे अच्छे दृश्यमान पारगमन से पहले मुझे सूचित करें</string>
+    <string name="layer_param_eclipse_alerts" translation_description="Label for the setting that turns on a notification before a lunar eclipse begins.">ग्रहण अलर्ट</string>
+    <string name="layer_param_eclipse_alerts_description" translation_description="Explains what the eclipse-alert setting does: a single notification before a lunar eclipse starts.">चंद्र ग्रहण शुरू होने से पहले मुझे सूचित करें</string>
+    <string name="layer_param_altaz_grid_density" translation_description="Label for the alt/az grid's line-count setting.">लाइन की संख्या</string>
+    <string name="layer_param_altaz_grid_density_coarse" translation_description="Option label for the alt/az grid's sparsest setting: 8 azimuth lines, 45 degrees apart.">मोटा</string>
+    <string name="layer_param_altaz_grid_density_coarse_desc" translation_description="Explains the coarse alt/az grid density: 8 azimuth lines, matching the 8 compass points.">दिशा सूचक के अनुरूप 8 दिशा लाइनें</string>
+    <string name="layer_param_altaz_grid_density_medium" translation_description="Option label for the alt/az grid's default setting: 12 azimuth lines, 30 degrees apart.">मध्यम</string>
+    <string name="layer_param_altaz_grid_density_medium_desc" translation_description="Explains the medium alt/az grid density: 12 azimuth lines, 30 degrees apart.">12 दिशा लाइनें, 30° की दूरी पर</string>
+    <string name="layer_param_altaz_grid_density_fine" translation_description="Option label for the alt/az grid's densest setting: 24 azimuth lines, 15 degrees apart.">बारीक</string>
+    <string name="layer_param_altaz_grid_density_fine_desc" translation_description="Explains the fine alt/az grid density: 24 azimuth lines, matching the celestial grid's meridian count.">खगोलीय ग्रिड के अनुरूप 24 दिशा लाइनें</string>
+    <string name="satellites_no_data" translation_description="Explanation shown when satellite orbital data has not been downloaded yet and so no satellites can be drawn.">उपग्रह की स्थिति अपडेट करने के लिए इंटरनेट कनेक्शन की आवश्यकता है।</string>
+    <string name="satellites_refresh" translation_description="Button that tries to download satellite orbital data now.">ताज़ा करें</string>
+    <string name="satellites_retry_soon" translation_description="Shown instead of a Refresh button when satellite data was just requested and cannot be requested again for a few minutes.">कुछ मिनटों में फिर से प्रयास करें</string>
+    <string name="satellites_retry_within_hour" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for up to an hour.">एक घंटे के भीतर फिर से प्रयास करें</string>
+    <string name="satellites_retry_hours" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for several hours.">कुछ घंटों में फिर से प्रयास करें</string>
+    <string name="satellites_retry_tomorrow" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again until the next day.">कल फिर कोशिश करें</string>
+    <string name="satellites_retry_days" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for several days.">कुछ दिनों में फिर कोशिश करें</string>
+    <string name="layer_grid" translation_description="Toggle label for the layer showing the right ascension / declination grid.">खगोलीय ग्रिड</string>
+    <string name="layer_horizon">क्षितिज</string>
+    <string name="layer_ecliptic">क्रांतिवृत्त</string>
+    <string name="layer_altaz_grid" translation_description="Toggle label for the layer showing the altitude/azimuth (horizontal) coordinate grid, for naked-eye or manual alt-az mount observers.">Alt/Az ग्रिड</string>
+    <string name="layer_sky_gradient">आकाश ग्रेडिएंट</string>
+    <string name="layers_sheet_title" translation_description="Title of the bottom sheet listing sky map layers the user can show or hide.">परतें</string>
+    <string name="layers_group_objects" translation_description="Layers-sheet group header for layers that draw sky objects (stars, planets, deep-sky objects).">वस्तुएँ</string>
+    <string name="layers_group_reference" translation_description="Layers-sheet group header for reference elements drawn over the sky (coordinate grid, horizon, ecliptic).">संदर्भ</string>
+    <string name="layers_group_display" translation_description="Layers-sheet group header for display settings that change how the sky is rendered rather than what is drawn.">प्रदर्शन</string>
+    <string name="show_layers" translation_description="Accessibility description and label for the button opening the layer-visibility sheet, which holds the layers that do not fit on the rail plus display options.">अधिक परतें और विकल्प</string>
+    <string name="more_button" translation_description="Accessibility label and tooltip for the map-screen button (three vertical dots) opening the overflow menu of further destinations such as Gallery and Settings.">अधिक विकल्प</string>
+    <string name="night_mode">रात्रि मोड</string>
+    <string name="switch_to_manual" translation_description="Tooltip and accessibility label for the button that switches the map from auto (sensor-driven) mode to manual (drag) mode.">मैन्युअल मोड पर स्विच करें</string>
+    <string name="switch_to_auto" translation_description="Tooltip and accessibility label for the button that switches the map from manual (drag) mode to auto (sensor-driven) mode.">ऑटो मोड पर स्विच करें</string>
+    <string name="layer_hud" translation_description="Layers-sheet Display toggle that shows the heads-up readout of where the phone is pointing (compass direction and altitude) over the star map.">इंगित रीडिंग</string>
+    <string name="layer_camera" translation_description="Layers-sheet Display toggle that shows the live rear-camera image behind the star map, so the drawn sky overlays the real one.">थ्रू-कैमरा मोड</string>
+    <string name="layer_camera_needs_sensors" translation_description="Subtitle explaining why the through-camera toggle is disabled: the device has no usable motion sensors, and the mode needs the map to follow where the phone points.">इस डिवाइस में मोशन सेंसर नहीं हैं जिनकी आवश्यकता है</string>
+    <string name="ar_exposure_slider" translation_description="Accessibility label for the slider adjusting the camera\'s exposure compensation while through-camera mode is on.">कैमरा एक्सपोज़र</string>
+    <string name="ar_dimmer_slider" translation_description="Accessibility label for the slider dimming the camera image behind the star map while through-camera mode is on.">कैमरा डिमर</string>
+    <!-- tm:omitted name="ar_iso_slider_label" reason="identical_to_source" -->
+    <string name="ar_iso_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual ISO sensitivity in through-camera mode.">कैमरा ISO</string>
+    <!-- tm:omitted name="ar_shutter_slider_label" reason="identical_to_source" -->
+    <string name="ar_shutter_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual shutter (exposure) time in through-camera mode.">कैमरा शटर समय</string>
+    <string name="share_button" translation_description="Overflow-menu row that captures the current sky view as an image and opens the system share sheet.">आकाश साझा करें</string>
+    <string name="share_shutter_button" translation_description="Accessibility label for the round shutter button that captures and shares the current through-camera view.">यह दृश्य साझा करें</string>
+    <string name="ar_exposure_auto" translation_description="Readout shown when a manual camera exposure slider sits at its automatic position.">ऑटो</string>
+    <string name="time_travel_button">समय यात्रा</string>
+    <string name="location_button" translation_description="Button on the map screen that opens the location management sheet">स्थान</string>
+    <string name="gallery_button" translation_description="Map-screen menu item that opens a gallery of photographs of celestial objects. Not the user\'s own photos - these are catalog images from sources such as NASA and ESA.">आकाश गैलरी</string>
+    <string name="settings_button">सेटिंग्स</string>
+    <string name="calibration_button">कैलिब्रेट करें</string>
+    <string name="help_button">सहायता</string>
+    <string name="tutorial_button">ट्यूटोरियल</string>
+    <string name="whats_new_button" translation_description="Map-screen menu item that opens the What's New and Credits screen">नया क्या है</string>
+    <string name="widgets_button" translation_description="Map-screen menu item that opens the list of home-screen widgets the app offers">विजेट</string>
+    <string name="layer_param_disc_size">डिस्क का आकार</string>
+    <string name="layer_param_disc_size_true">वास्तविक पैमाना</string>
+    <string name="layer_param_disc_size_true_desc">
+    हर ज़ूम पर आकाश में वास्तविक आकार। ग्रह तब तक धब्बे होते हैं जब तक आप ठीक से ज़ूम नहीं करते।
+    </string>
+    <string name="layer_param_disc_size_glyphs">ग्लिफ़</string>
+    <string name="layer_param_disc_size_glyphs_desc">
+    प्रत्येक पिंड वास्तव में कितना बड़ा है, उसके अनुसार आकार दिया गया है, न कि वह कैसा दिखता है। किसी भी ज़ूम पर देखना आसान है।
+    </string>
+    <string name="layer_param_disc_size_auto">स्थिर</string>
+    <string name="layer_param_disc_size_auto_desc">
+    ज़ूम करते समय स्क्रीन पर एक निश्चित आकार रखता है, फिर वास्तविक आकार में बदल जाता है।
+    </string>
+    <string name="layer_param_expand">%1$s के लिए विकल्प दिखाएँ</string>
 </resources>

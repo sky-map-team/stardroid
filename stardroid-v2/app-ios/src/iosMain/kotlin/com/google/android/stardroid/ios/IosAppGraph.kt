@@ -28,6 +28,7 @@ import com.google.android.stardroid.startup.DataStoreStartupState
 import com.google.android.stardroid.startup.StartupRouter
 import com.google.android.stardroid.startup.StartupState
 import com.google.android.stardroid.time.TimeController
+import com.google.android.stardroid.ui.layers.LayersViewModel
 import com.google.android.stardroid.ui.map.MapViewModel
 import com.google.android.stardroid.ui.startup.StartupViewModel
 import kotlinx.cinterop.ExperimentalForeignApi
@@ -196,6 +197,13 @@ class IosAppGraph {
 
     /** The EULA gate; the warm welcome and What's New wait for their screens (phase 5). */
     fun startupViewModel(): StartupViewModel = StartupViewModel(startupRouter, startupState)
+
+    /**
+     * The layer rail and sheet. iOS has no satellite data and no notifications yet, so their
+     * layer and alert rows stay hidden, as Android hides them with the experiments off.
+     */
+    fun layersViewModel(): LayersViewModel =
+        LayersViewModel(settings, satellitesEnabled = false, notificationsEnabled = false)
 
     fun mapViewModel(): MapViewModel =
         MapViewModel(

@@ -31,7 +31,6 @@
     <string name="pluto" translation_description="Name of the dwarf planet Pluto, drawn as a label on the sky map.">Plutón</string>
 
     <!-- Search (map-screen search dialog and overlay). -->
-    <string name="search_button" translation_description="Button on the map screen that opens the sky search dialog.">Buscar</string>
     <string name="search_label" translation_description="Title of the sky search dialog.">Buscar</string>
     <string name="search_hint" translation_description="Placeholder text in the search field showing example search targets.">p. ex. Marte ou M31</string>
     <string name="search_coordinates_hint" translation_description="Helper text under the search field showing that celestial coordinates (right ascension and declination) can be typed directly, with two example formats.">Ou introduce coordenadas: 12h 30m, +45° ou 187.5 -45.2</string>
@@ -43,12 +42,6 @@
     <string name="search_overlay_prompt" translation_description="Instruction telling the user to physically point their phone in the direction of the on-screen arrow to find the search target.">Apunta o teu teléfono cara á frecha</string>
 
     <!-- Layer names in the layer-visibility sheet. -->
-    <string name="layer_stars" translation_description="Toggle label for the layer showing stars.">Estrelas</string>
-    <string name="layer_constellations" translation_description="Toggle label for the layer showing constellation figures and names.">Constelacións</string>
-    <string name="layer_deep_sky" translation_description="Toggle label for the layer showing deep-sky objects such as galaxies and nebulae.">Obxectos de ceo profundo</string>
-    <string name="layer_solar_system" translation_description="Toggle label for the layer showing the Sun, Moon, and planets.">Sistema Solar</string>
-    <string name="layer_meteor_showers" translation_description="Toggle label for the layer showing the radiant points of annual meteor showers.">Choivas de meteoros</string>
-    <string name="layer_satellites" translation_description="Toggle label for the layer showing artificial satellites such as the International Space Station.">Satélites</string>
     <string name="channel_passes_name" translation_description="Name of the notification channel for alerts shortly before a satellite passes overhead.">Pasos de satélites</string>
     <string name="channel_passes_description" translation_description="Description of the satellite-pass notification channel.">Unha única alerta pouco antes do mellor paso visible da noite</string>
     <string name="notif_pass_title" translation_description="Title of the notification sent shortly before a satellite passes overhead. %1$s is the satellite name.">%1$s pasa por riba pronto</string>
@@ -59,10 +52,6 @@
     <string name="notif_eclipse_text" translation_description="Body of the lunar eclipse notification, telling the user when it begins. %1$s is a time.">Comeza arredor das %1$s — paga a pena saír a velo</string>
     <string name="satellite_name_iss" translation_description="Display name for the International Space Station.">A Estación Espacial</string>
     <string name="satellite_name_tiangong" translation_description="Display name for the Chinese space station Tiangong.">Tiangong</string>
-    <string name="layer_param_pass_alerts" translation_description="Label for the setting that turns on a notification shortly before a satellite passes overhead.">Alertas de paso</string>
-    <string name="layer_param_pass_alerts_description" translation_description="Explains what the pass-alert setting does: a single notification before the best visible pass of the night.">Notificarme antes do mellor paso visible cada noite</string>
-    <string name="layer_param_eclipse_alerts" translation_description="Label for the setting that turns on a notification before a lunar eclipse begins.">Alertas de eclipse</string>
-    <string name="layer_param_eclipse_alerts_description" translation_description="Explains what the eclipse-alert setting does: a single notification before a lunar eclipse starts.">Notificarme antes de que comece un eclipse lunar</string>
     <string name="satellite_description" translation_description="Short description shown on the info card for an artificial satellite.">Un satélite artificial en órbita terrestre baixa, iluminado polo sol contra un ceo escuro. Cruza de horizonte a horizonte en poucos minutos, movéndose de forma constante e sen pestanexar.</string>
     <string name="satellite_next_pass" translation_description="Heading above the next visible pass details on a satellite\'s info card.">Seguinte paso visible</string>
     <string name="satellite_pass_when" translation_description="When and how high the next satellite pass will be. %1$s is a time, %2$s is a compass direction, %3$d is an angle in degrees.">%1$s, saíndo %2$s, acadando %3$d°</string>
@@ -76,50 +65,20 @@
     <string name="object_info_eclipse_totality" translation_description="The start and end time of totality during a total lunar eclipse. %1$s and %2$s are times.">Totalidade %1$s – %2$s</string>
     <string name="tonight_satellite_pass" translation_description="Tonight-widget row announcing a visible satellite pass. %1$s is the satellite name, %2$s is a time of day.">%1$s pasa por riba ás %2$s</string>
     <string name="tonight_trailing_pass" translation_description="Small trailing note on a satellite pass row. %1$s is a compass direction, %2$d is an angle in degrees, %3$.1f is a brightness magnitude.">Saíndo %1$s, %2$d°, mag %3$.1f</string>
-    <string name="satellites_no_data" translation_description="Explanation shown when satellite orbital data has not been downloaded yet and so no satellites can be drawn.">As posicións dos satélites precisan conexión a internet para actualizarse.</string>
-    <string name="satellites_refresh" translation_description="Button that tries to download satellite orbital data now.">Actualizar</string>
-    <string name="satellites_retry_soon" translation_description="Shown instead of a Refresh button when satellite data was just requested and cannot be requested again for a few minutes.">Téntao de novo en uns minutos</string>
-    <string name="satellites_retry_within_hour" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for up to an hour.">Téntao de novo nunha hora</string>
-    <string name="satellites_retry_hours" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for several hours.">Téntao de novo en unhas horas</string>
-    <string name="satellites_retry_tomorrow" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again until the next day.">Téntao de novo mañá</string>
-    <string name="satellites_retry_days" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for several days.">Téntao de novo en uns días</string>
-    <string name="layer_grid" translation_description="Toggle label for the layer showing the right ascension / declination grid.">Grella celeste</string>
-    <string name="layer_horizon" translation_description="Toggle label for the layer showing the horizon line and compass points.">Horizonte</string>
-    <string name="layer_ecliptic" translation_description="Toggle label for the layer showing the ecliptic line.">Eclíptica</string>
-    <string name="layer_sky_gradient" translation_description="Toggle label for the daytime sky-brightness gradient drawn behind the sky map.">Gradiente do ceo</string>
 
     <!-- Map screen controls. -->
-    <string name="layers_sheet_title" translation_description="Title of the bottom sheet listing sky map layers the user can show or hide.">Capas</string>
-    <string name="layers_group_objects" translation_description="Layers-sheet group header for layers that draw sky objects (stars, planets, deep-sky objects).">Obxectos</string>
-    <string name="layers_group_reference" translation_description="Layers-sheet group header for reference elements drawn over the sky (coordinate grid, horizon, ecliptic).">Referencia</string>
-    <string name="layers_group_display" translation_description="Layers-sheet group header for display settings that change how the sky is rendered rather than what is drawn.">Pantalla</string>
-    <string name="show_layers" translation_description="Accessibility description and label for the button opening the layer-visibility sheet, which holds the layers that do not fit on the rail plus display options.">Máis capas e opcións</string>
-    <string name="more_button" translation_description="Accessibility label and tooltip for the map-screen button (three vertical dots) opening the overflow menu of further destinations such as Gallery and Settings.">Máis opcións</string>
-    <string name="night_mode" translation_description="Label for the toggle switching the display to a dim red night-vision-preserving mode.">Modo Nocturno</string>
-    <string name="switch_to_manual" translation_description="Tooltip and accessibility label for the button that switches the map from auto (sensor-driven) mode to manual (drag) mode.">Cambiar a modo manual</string>
-    <string name="switch_to_auto" translation_description="Tooltip and accessibility label for the button that switches the map from manual (drag) mode to auto (sensor-driven) mode.">Cambiar a modo automático</string>
     <string name="no_sensor_warning" translation_description="Warning shown when the device lacks the motion sensors needed to point the map at the sky automatically.">Este dispositivo non ten compás nin sensores de movemento, polo que Sky Map non pode seguir cara onde o apuntas. Arrastra o mapa á man no seu lugar.</string>
     <string name="no_sensor_warning_dismiss" translation_description="Button that dismisses the missing-sensors warning dialog.">Aceptar</string>
 
     <!-- The map HUD (map-hud.md, D65): the top-right pointing readout shown with the chrome. -->
     <string name="hud_alignment_reset_message" translation_description="Snackbar confirming the sensor-alignment correction was cleared; shown with an Undo action.">Corrección de aliñamento restabelecida</string>
 
-    <string name="layer_hud" translation_description="Layers-sheet Display toggle that shows the heads-up readout of where the phone is pointing (compass direction and altitude) over the star map.">Lectura de orientación</string>
 
     <!-- Through-camera (AR) mode (camera-ar-mode.md, D64). -->
-    <string name="layer_camera" translation_description="Layers-sheet Display toggle that shows the live rear-camera image behind the star map, so the drawn sky overlays the real one.">Modo a través da cámara</string>
-    <string name="layer_camera_needs_sensors" translation_description="Subtitle explaining why the through-camera toggle is disabled: the device has no usable motion sensors, and the mode needs the map to follow where the phone points.">Precisa sensores de movemento que este dispositivo non ten</string>
     <string name="ar_auto_mode_snackbar" translation_description="Snackbar shown when turning on through-camera mode switched the map from manual dragging back to automatic sensor pointing.">Modo automático activado para a vista de cámara</string>
     <string name="ar_permission_denied" translation_description="Snackbar shown when the user declined the camera permission that through-camera mode needs.">O modo a través da cámara precisa o permiso da cámara</string>
     <string name="ar_permission_settings_action" translation_description="Snackbar action opening the app\'s system settings page so the user can grant the camera permission after permanently denying it.">Axustes</string>
-    <string name="ar_exposure_slider" translation_description="Accessibility label for the slider adjusting the camera\'s exposure compensation while through-camera mode is on.">Exposición da cámara</string>
     <string name="ar_alignment_adjusted_message" translation_description="Snackbar shown after the user drags the star map to align it with the camera image; shown with an Undo action that reverts the whole drag.">Aliñamento do mapa axustado</string>
-    <string name="ar_dimmer_slider" translation_description="Accessibility label for the slider dimming the camera image behind the star map while through-camera mode is on.">Atenuador de cámara</string>
-    <string name="ar_iso_slider_label" translation_description="Very short label for the temporary developer slider setting the camera\'s manual ISO sensitivity in through-camera mode. Standard photography abbreviation; keep as-is.">ISO</string>
-    <string name="ar_iso_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual ISO sensitivity in through-camera mode.">ISO da cámara</string>
-    <string name="ar_shutter_slider_label" translation_description="Very short label for the temporary developer slider setting the camera\'s manual shutter (exposure) time in through-camera mode.">Obtur.</string>
-    <string name="ar_shutter_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual shutter (exposure) time in through-camera mode.">Tempo de obturación da cámara</string>
-    <string name="share_button" translation_description="Overflow-menu row that captures the current sky view as an image and opens the system share sheet.">Compartir o ceo</string>
     <string name="share_chooser_title" translation_description="Title of the system share sheet when sharing a captured sky image.">Compartir este ceo</string>
     <string name="share_invitation" translation_description="Short invitation stamped on the footer of shared sky images, above the store link.">Mira o que estás vendo — consegue Sky Map de balde</string>
     <string name="share_text" translation_description="Text accompanying a shared sky image in apps that accept both an image and text. %1$s is the app-store link.">Mira o que estás vendo — consegue Sky Map de balde: %1$s</string>
@@ -132,12 +91,9 @@
     <string name="share_store_link" translatable="false">https://getskymap.app</string>
     <string name="share_layout_overlay" translation_description="Caption of the share-layout choice that draws the star map over the camera photo, as seen on screen.">Superposición</string>
     <string name="share_layout_side_by_side" translation_description="Caption of the share-layout choice that puts the camera photo and the star map next to each other.">Lado a lado</string>
-    <string name="share_shutter_button" translation_description="Accessibility label for the round shutter button that captures and shares the current through-camera view.">Compartir esta vista</string>
     <string name="share_failed_message" translation_description="Snackbar shown when capturing the sky image for sharing failed.">Non se puido capturar o ceo — téntao de novo</string>
-    <string name="ar_exposure_auto" translation_description="Readout shown when a manual camera exposure slider sits at its automatic position.">Automático</string>
 
     <!-- Time travel: entry button, dialog, and the player bar shown while travelling. -->
-    <string name="time_travel_button" translation_description="Label for the button opening the time travel dialog, which shows the sky at another date.">Viaxe no tempo</string>
     <string name="time_travel_title" translation_description="Title of the time travel dialog.">Viaxe no tempo</string>
     <string name="time_travel_visiting" translation_description="Readout in the time travel dialog showing the currently chosen destination date and time. %1$s is the formatted date and time.">Visitando: %1$s</string>
     <string name="time_travel_pick_date" translation_description="Button in the time travel dialog that opens a date picker.">Establecer data</string>
@@ -192,7 +148,6 @@
     <string name="time_travel_close_message" translation_description="Toast message shown when the user exits time travel and returns to the present.">Volver ao presente...</string>
 
     <!-- Location management. -->
-    <string name="location_button" translation_description="Button on the map screen that opens the location management sheet">Localización</string>
     <string name="location_management_title" translation_description="Title of the location management sheet">A túa localización</string>
     <string name="location_source_auto" translation_description="Label shown when the device is determining location automatically">Automática</string>
     <string name="location_source_manual" translation_description="Label shown when the user has manually entered their location">Manual</string>
@@ -252,12 +207,10 @@
     <string name="object_info_tap_to_close" translation_description="Hint shown on the expanded full-screen image telling the user a tap closes it">Toca para pechar</string>
 
     <!-- Image gallery -->
-    <string name="gallery_button" translation_description="Map-screen menu item that opens a gallery of photographs of celestial objects. Not the user\'s own photos - these are catalog images from sources such as NASA and ESA.">Galería do ceo</string>
     <string name="gallery_title" translation_description="Title of the screen showing a gallery of photographs of celestial objects. Not the user\'s own photos - these are catalog images from sources such as NASA and ESA.">Galería do ceo</string>
     <string name="gallery_back" translation_description="Content description for the back arrow leaving the gallery screen">Atrás</string>
 
     <!-- Settings screen (v1 wording where a v1 string existed) -->
-    <string name="settings_button" translation_description="Map-screen button that opens the settings screen">Axustes</string>
     <string name="settings_title" translation_description="Title of the settings screen">Axustes</string>
     <string name="settings_back" translation_description="Content description for the back arrow leaving the settings screen">Atrás</string>
     <string name="settings_ok" translation_description="Confirm button in settings dialogs">Aceptar</string>
@@ -370,7 +323,6 @@
     <string name="diagnostics_cell" translation_description="Network type suffix appended to the connection status (e.g. \'Connected (cell)\'). Note the leading space.">" (móbil)"</string>
 
     <!-- Compass calibration screen (slice 15) -->
-    <string name="calibration_button" translation_description="Map-screen button that opens the compass calibration screen">Calibrar</string>
     <string name="calibration_heading_user" translation_description="Heading shown in the compass calibration screen when the user opens it themselves">O compás do teu teléfono</string>
     <string name="calibration_heading_warning" translation_description="Heading shown in the compass calibration screen when it opens automatically due to low accuracy">O compás do teu teléfono precisa atención</string>
     <string name="calibration_accuracy_unknown" translation_description="Sensor calibration level shown in the calibration screen">Calibración: descoñecida</string>
@@ -424,11 +376,8 @@ Se é necesario, realiza o movemento en forma de oito (<a href="%s">ver unha dem
     <string name="warm_welcome_sensor_missing" translation_description="Status shown next to a sensor name when the sensor is missing">Ausente</string>
 
     <!-- Help dialog (slice 16) -->
-    <string name="help_button" translation_description="Map-screen button that opens the help dialog">Axuda</string>
-    <string name="tutorial_button" translation_description="Map-screen menu item that replays the warm welcome tutorial">Titorial</string>
     <string name="help_dialog_title" translation_description="Title of the help dialog">Axuda</string>
     <string name="help_version" translation_description="Version line at the top of the Help screen. %1$s is the app version name">Versión %1$s</string>
-    <string name="whats_new_button" translation_description="Map-screen menu item that opens the What's New and Credits screen">Novidades</string>
     <string name="whats_new_screen_title" translation_description="Title of the screen showing the release notes and the credits">Novidades &amp; Créditos</string>
 
     <!-- The deep-sky symbol key at the foot of the Help screen. -->
@@ -520,12 +469,4 @@ Se é necesario, realiza o movemento en forma de oito (<a href="%s">ver unha dem
     <string name="notif_action_mute_showers" translation_description="Notification action button that opens the system toggle for the meteor-shower channel">Acalar choivas</string>
     <string name="time_travel_stopped">Viaxe no tempo pausada</string>
     <!-- Layers sheet: per-layer parameters (D87). -->
-    <string name="layer_param_disc_size">Tamaño do disco</string>
-    <string name="layer_param_disc_size_true">Escala real</string>
-    <string name="layer_param_disc_size_true_desc">Tamaño real no ceo con cada zoom. Os planetas son pingas ata que achegas a vista.</string>
-    <string name="layer_param_disc_size_glyphs">Glifos</string>
-    <string name="layer_param_disc_size_glyphs_desc">Dimensionados polo tamaño real de cada corpo, non por como se ve. Fáciles de ver con calquera zoom.</string>
-    <string name="layer_param_disc_size_auto">Fixo</string>
-    <string name="layer_param_disc_size_auto_desc">Mantén un tamaño fixo en pantalla ao facer zoom, logo cambia ao tamaño real.</string>
-    <string name="layer_param_expand">Amosar opcións para %1$s</string>
 </resources>

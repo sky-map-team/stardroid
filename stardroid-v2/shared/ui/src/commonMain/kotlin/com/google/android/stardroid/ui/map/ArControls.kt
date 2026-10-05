@@ -9,7 +9,6 @@
 
 package com.google.android.stardroid.ui.map
 
-import androidx.annotation.DrawableRes
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Column
@@ -26,12 +25,22 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
-import com.google.android.stardroid.R
+import com.google.android.stardroid.ui.resources.Res
+import com.google.android.stardroid.ui.resources.ar_dimmer_slider
+import com.google.android.stardroid.ui.resources.ar_exposure_auto
+import com.google.android.stardroid.ui.resources.ar_exposure_slider
+import com.google.android.stardroid.ui.resources.ar_iso_slider
+import com.google.android.stardroid.ui.resources.ar_iso_slider_label
+import com.google.android.stardroid.ui.resources.ar_shutter_slider
+import com.google.android.stardroid.ui.resources.ar_shutter_slider_label
+import com.google.android.stardroid.ui.resources.ic_ar_dimmer
+import com.google.android.stardroid.ui.resources.ic_sun
+import org.jetbrains.compose.resources.DrawableResource
+import org.jetbrains.compose.resources.painterResource
+import org.jetbrains.compose.resources.stringResource
 import kotlin.math.roundToInt
 
 /**
@@ -62,16 +71,16 @@ fun ArControls(
     ) {
         if (state.exposureSupported) {
             ArSliderRow(
-                icon = R.drawable.ic_sun,
-                description = stringResource(R.string.ar_exposure_slider),
+                icon = Res.drawable.ic_sun,
+                description = stringResource(Res.string.ar_exposure_slider),
                 value = state.exposureIndex.toFloat(),
                 range = state.exposureMin.toFloat()..state.exposureMax.toFloat(),
                 onChange = { onExposureChange(it.roundToInt()) },
             )
         }
         ArSliderRow(
-            icon = R.drawable.ic_ar_dimmer,
-            description = stringResource(R.string.ar_dimmer_slider),
+            icon = Res.drawable.ic_ar_dimmer,
+            description = stringResource(Res.string.ar_dimmer_slider),
             value = state.scrim.toFloat(),
             range = 0f..MapViewModel.MAX_AR_SCRIM.toFloat(),
             onChange = { onScrimChange(it.toDouble()) },
@@ -84,23 +93,23 @@ fun ArControls(
         val exposureTimeRangeNs = specs?.exposureTimeRangeNs
         if (state.manualExposureSupported && isoRange != null) {
             ManualExposureRow(
-                label = stringResource(R.string.ar_iso_slider_label),
-                description = stringResource(R.string.ar_iso_slider),
+                label = stringResource(Res.string.ar_iso_slider_label),
+                description = stringResource(Res.string.ar_iso_slider),
                 fraction = state.isoFraction,
                 valueText =
                     if (state.isoFraction > 0.0) {
                         ArExposureMath.isoForFraction(isoRange, state.isoFraction)
                             .toString()
                     } else {
-                        stringResource(R.string.ar_exposure_auto)
+                        stringResource(Res.string.ar_exposure_auto)
                     },
                 onChange = onIsoFractionChange,
             )
         }
         if (state.manualExposureSupported && exposureTimeRangeNs != null) {
             ManualExposureRow(
-                label = stringResource(R.string.ar_shutter_slider_label),
-                description = stringResource(R.string.ar_shutter_slider),
+                label = stringResource(Res.string.ar_shutter_slider_label),
+                description = stringResource(Res.string.ar_shutter_slider),
                 fraction = state.shutterFraction,
                 valueText =
                     if (state.shutterFraction > 0.0) {
@@ -111,7 +120,7 @@ fun ArControls(
                             ),
                         )
                     } else {
-                        stringResource(R.string.ar_exposure_auto)
+                        stringResource(Res.string.ar_exposure_auto)
                     },
                 onChange = onShutterFractionChange,
             )
@@ -155,7 +164,7 @@ private fun ManualExposureRow(
 
 @Composable
 private fun ArSliderRow(
-    @DrawableRes icon: Int,
+    icon: DrawableResource,
     description: String,
     value: Float,
     range: ClosedFloatingPointRange<Float>,

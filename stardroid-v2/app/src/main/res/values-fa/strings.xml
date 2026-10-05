@@ -30,7 +30,6 @@
     <string name="pluto">پلوتون</string>
 
     <!-- Search (map-screen search dialog and overlay). -->
-    <string name="search_button">جستجو</string>
     <string name="search_label">جستجو در آسمان</string>
     <string name="search_hint" translation_description="Placeholder text in the search field showing example search targets.">مثلاً مریخ یا M31</string>
     <string name="search_coordinates_hint" translation_description="Helper text under the search field showing that celestial coordinates (right ascension and declination) can be typed directly, with two example formats.">یا مختصات را وارد کنید: 12h 30m, +45° یا 187.5 -45.2</string>
@@ -42,12 +41,6 @@
     <string name="search_overlay_prompt">تلفن خود را به سمت فلش قرار دهید</string>
 
     <!-- Layer names in the layer-visibility sheet. -->
-    <string name="layer_stars">ستاره‌ها</string>
-    <string name="layer_constellations">صورت‌های فلکی</string>
-    <string name="layer_deep_sky" translation_description="Toggle label for the layer showing deep-sky objects such as galaxies and nebulae.">اجرام اعماق آسمان</string>
-    <string name="layer_solar_system">منظومه شمسی</string>
-    <string name="layer_meteor_showers">بارش شهابی</string>
-    <string name="layer_satellites" translation_description="Toggle label for the layer showing artificial satellites such as the International Space Station.">ماهواره‌ها</string>
     <string name="channel_passes_name" translation_description="Name of the notification channel for alerts shortly before a satellite passes overhead.">گذر ماهواره‌ها</string>
     <string name="channel_passes_description" translation_description="Description of the satellite-pass notification channel.">یک هشدار واحد کمی قبل از بهترین گذر قابل مشاهده شب</string>
     <string name="notif_pass_title" translation_description="Title of the notification sent shortly before a satellite passes overhead. %1$s is the satellite name.">%1$s به زودی از بالای سر عبور می‌کند</string>
@@ -58,17 +51,6 @@
     <string name="notif_eclipse_text" translation_description="Body of the lunar eclipse notification, telling the user when it begins. %1$s is a time.">حدود %1$s شروع می‌شود — ارزش بیرون رفتن را دارد</string>
     <string name="satellite_name_iss" translation_description="Display name for the International Space Station.">ایستگاه فضایی</string>
     <string name="satellite_name_tiangong" translation_description="Display name for the Chinese space station Tiangong.">تیانگونگ</string>
-    <string name="layer_param_pass_alerts" translation_description="Label for the setting that turns on a notification shortly before a satellite passes overhead.">هشدارهای گذر</string>
-    <string name="layer_param_pass_alerts_description" translation_description="Explains what the pass-alert setting does: a single notification before the best visible pass of the night.">قبل از بهترین گذر قابل مشاهده هر شب به من اطلاع بده</string>
-    <string name="layer_param_eclipse_alerts" translation_description="Label for the setting that turns on a notification before a lunar eclipse begins.">هشدارهای خسوف</string>
-    <string name="layer_param_eclipse_alerts_description" translation_description="Explains what the eclipse-alert setting does: a single notification before a lunar eclipse starts.">قبل از شروع خسوف به من اطلاع بده</string>
-    <string name="layer_param_altaz_grid_density" translation_description="Label for the alt/az grid's line-count setting.">تعداد خطوط</string>
-    <string name="layer_param_altaz_grid_density_coarse" translation_description="Option label for the alt/az grid's sparsest setting: 8 azimuth lines, 45 degrees apart.">درشت</string>
-    <string name="layer_param_altaz_grid_density_coarse_desc" translation_description="Explains the coarse alt/az grid density: 8 azimuth lines, matching the 8 compass points.">۸ خط جهت، مطابق با گل قطب‌نما</string>
-    <string name="layer_param_altaz_grid_density_medium" translation_description="Option label for the alt/az grid's default setting: 12 azimuth lines, 30 degrees apart.">متوسط</string>
-    <string name="layer_param_altaz_grid_density_medium_desc" translation_description="Explains the medium alt/az grid density: 12 azimuth lines, 30 degrees apart.">۱۲ خط جهت، با فاصله ۳۰ درجه</string>
-    <string name="layer_param_altaz_grid_density_fine" translation_description="Option label for the alt/az grid's densest setting: 24 azimuth lines, 15 degrees apart.">ظریف</string>
-    <string name="layer_param_altaz_grid_density_fine_desc" translation_description="Explains the fine alt/az grid density: 24 azimuth lines, matching the celestial grid's meridian count.">۲۴ خط جهت، مطابق با شبکه آسمانی</string>
     <string name="satellite_description" translation_description="Short description shown on the info card for an artificial satellite.">
     یک ماهواره مصنوعی در مدار نزدیک زمین، درخشان در برابر آسمان تاریک. این ماهواره در عرض چند دقیقه از افق تا افق عبور می‌کند و به طور پیوسته و بدون سوسو زدن حرکت می‌کند.
     </string>
@@ -84,29 +66,8 @@
     <string name="object_info_eclipse_totality" translation_description="The start and end time of totality during a total lunar eclipse. %1$s and %2$s are times.">کلیت %1$s – %2$s</string>
     <string name="tonight_satellite_pass" translation_description="Tonight-widget row announcing a visible satellite pass. %1$s is the satellite name, %2$s is a time of day.">%1$s در ساعت %2$s عبور می‌کند</string>
     <string name="tonight_trailing_pass" translation_description="Small trailing note on a satellite pass row. %1$s is a compass direction, %2$d is an angle in degrees, %3$.1f is a brightness magnitude.">طلوع از %1$s، %2$d°، قدر %3$.1f</string>
-    <string name="satellites_no_data" translation_description="Explanation shown when satellite orbital data has not been downloaded yet and so no satellites can be drawn.">موقعیت‌های ماهواره برای به‌روزرسانی نیاز به اتصال اینترنت دارند.</string>
-    <string name="satellites_refresh" translation_description="Button that tries to download satellite orbital data now.">تازه‌سازی</string>
-    <string name="satellites_retry_soon" translation_description="Shown instead of a Refresh button when satellite data was just requested and cannot be requested again for a few minutes.">چند دقیقه دیگر دوباره امتحان کنید</string>
-    <string name="satellites_retry_within_hour" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for up to an hour.">تا یک ساعت دیگر دوباره امتحان کنید</string>
-    <string name="satellites_retry_hours" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for several hours.">چند ساعت دیگر دوباره امتحان کنید</string>
-    <string name="satellites_retry_tomorrow" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again until the next day.">فردا دوباره امتحان کنید</string>
-    <string name="satellites_retry_days" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for several days.">چند روز دیگر دوباره امتحان کنید</string>
-    <string name="layer_grid" translation_description="Toggle label for the layer showing the right ascension / declination grid.">شبکه سماوی</string>
-    <string name="layer_horizon">افق</string>
-    <string name="layer_ecliptic">دایرة البروج</string>
-    <string name="layer_altaz_grid" translation_description="Toggle label for the layer showing the altitude/azimuth (horizontal) coordinate grid, for naked-eye or manual alt-az mount observers.">شبکه ارتفاع/سمت</string>
-    <string name="layer_sky_gradient">گرادیان آسمان</string>
 
     <!-- Map screen controls. -->
-    <string name="layers_sheet_title" translation_description="Title of the bottom sheet listing sky map layers the user can show or hide.">لایه‌ها</string>
-    <string name="layers_group_objects" translation_description="Layers-sheet group header for layers that draw sky objects (stars, planets, deep-sky objects).">اجرام</string>
-    <string name="layers_group_reference" translation_description="Layers-sheet group header for reference elements drawn over the sky (coordinate grid, horizon, ecliptic).">مرجع</string>
-    <string name="layers_group_display" translation_description="Layers-sheet group header for display settings that change how the sky is rendered rather than what is drawn.">نمایش</string>
-    <string name="show_layers" translation_description="Accessibility description and label for the button opening the layer-visibility sheet, which holds the layers that do not fit on the rail plus display options.">لایه‌ها و گزینه‌های بیشتر</string>
-    <string name="more_button" translation_description="Accessibility label and tooltip for the map-screen button (three vertical dots) opening the overflow menu of further destinations such as Gallery and Settings.">گزینه‌های بیشتر</string>
-    <string name="night_mode">حالت شب</string>
-    <string name="switch_to_manual" translation_description="Tooltip and accessibility label for the button that switches the map from auto (sensor-driven) mode to manual (drag) mode.">تغییر به حالت دستی</string>
-    <string name="switch_to_auto" translation_description="Tooltip and accessibility label for the button that switches the map from manual (drag) mode to auto (sensor-driven) mode.">تغییر به حالت خودکار</string>
     <string name="no_sensor_warning" translation_description="Warning shown when the device lacks the motion sensors needed to point the map at the sky automatically.">
     این دستگاه قطب‌نما یا حسگر حرکتی ندارد، بنابراین Sky Map نمی‌تواند جهتی را که به آن اشاره می‌کنید دنبال کند. به جای آن، نقشه را به صورت دستی بکشید.
     </string>
@@ -115,37 +76,21 @@
     <!-- The map HUD (map-hud.md, D65): the top-right pointing readout shown with the chrome. -->
     <string name="hud_alignment_reset_message" translation_description="Snackbar confirming the sensor-alignment correction was cleared; shown with an Undo action.">تصحیح تراز بازنشانی شد</string>
 
-    <string name="layer_hud" translation_description="Layers-sheet Display toggle that shows the heads-up readout of where the phone is pointing (compass direction and altitude) over the star map.">نمایشگر جهت
-گیری</string>
 
     <!-- Through-camera (AR) mode (camera-ar-mode.md, D64). -->
-    <string name="layer_camera" translation_description="Layers-sheet Display toggle that shows the live rear-camera image behind the star map, so the drawn sky overlays the real one.">حالت از طریق دوربین</string>
-    <string name="layer_camera_needs_sensors" translation_description="Subtitle explaining why the through-camera toggle is disabled: the device has no usable motion sensors, and the mode needs the map to follow where the phone points.">نیاز به حسگرهای حرکتی دارد که این دستگاه ندارد</string>
     <string name="ar_auto_mode_snackbar" translation_description="Snackbar shown when turning on through-camera mode switched the map from manual dragging back to automatic sensor pointing.">حالت خودکار برای نمای دوربین روشن شد</string>
     <string name="ar_permission_denied" translation_description="Snackbar shown when the user declined the camera permission that through-camera mode needs.">حالت از طریق دوربین به مجوز دوربین نیاز دارد</string>
     <string name="ar_permission_settings_action">تنظیمات</string>
-    <string name="ar_exposure_slider" translation_description="Accessibility label for the slider adjusting the camera\'s exposure compensation while through-camera mode is on.">نوردهی دوربین</string>
     <string name="ar_alignment_adjusted_message" translation_description="Snackbar shown after the user drags the star map to align it with the camera image; shown with an Undo action that reverts the whole drag.">تراز نقشه تنظیم شد</string>
-    <string name="ar_dimmer_slider" translation_description="Accessibility label for the slider dimming the camera image behind the star map while through-camera mode is on.">کم
-نورکننده دوربین</string>
-    <!-- tm:omitted name="ar_iso_slider_label" reason="identical_to_source" -->
-    <string name="ar_iso_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual ISO sensitivity in through-camera mode.">ISO دوربین</string>
-    <string name="ar_shutter_slider_label" translation_description="Very short label for the temporary developer slider setting the camera\'s manual shutter (exposure) time in through-camera mode.">شاتر</string>
-    <string name="ar_shutter_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual shutter (exposure) time in through-camera mode.">زمان شاتر دوربین</string>
-    <string name="share_button" translation_description="Overflow-menu row that captures the current sky view as an image and opens the system share sheet.">اشتراک
-گذاری آسمان</string>
     <string name="share_chooser_title" translation_description="Title of the system share sheet when sharing a captured sky image.">اشتراک‌گذاری این آسمان</string>
     <string name="share_invitation" translation_description="Short invitation stamped on the footer of shared sky images, above the store link.">ببینید به چه چیزی نگاه می‌کنید — Sky Map را رایگان دریافت کنید</string>
     <string name="share_text" translation_description="Text accompanying a shared sky image in apps that accept both an image and text. %1$s is the app-store link.">ببینید به چه چیزی نگاه می‌کنید — Sky Map را رایگان دریافت کنید: %1$s</string>
     <!-- tm:omitted name="share_store_link" reason="identical_to_source" -->
     <string name="share_layout_overlay" translation_description="Caption of the share-layout choice that draws the star map over the camera photo, as seen on screen.">هم‌پوشانی</string>
     <string name="share_layout_side_by_side" translation_description="Caption of the share-layout choice that puts the camera photo and the star map next to each other.">کنار هم</string>
-    <string name="share_shutter_button" translation_description="Accessibility label for the round shutter button that captures and shares the current through-camera view.">اشتراک‌گذاری این نما</string>
     <string name="share_failed_message" translation_description="Snackbar shown when capturing the sky image for sharing failed.">امکان ثبت آسمان وجود نداشت — دوباره تلاش کنید</string>
-    <string name="ar_exposure_auto" translation_description="Readout shown when a manual camera exposure slider sits at its automatic position.">خودکار</string>
 
     <!-- Time travel: entry button, dialog, and the player bar shown while travelling. -->
-    <string name="time_travel_button">سفر زمانی</string>
     <string name="time_travel_title">سفر زمانی</string>
     <string name="time_travel_visiting" translation_description="Readout in the time travel dialog showing the currently chosen destination date and time. %1$s is the formatted date and time.">در حال بازدید: %1$s</string>
     <string name="time_travel_pick_date" translation_description="Button in the time travel dialog that opens a date picker.">تنظیم تاریخ</string>
@@ -200,7 +145,6 @@
     <string name="time_travel_close_message">بازگشت به زمان حال...</string>
 
     <!-- Location management. -->
-    <string name="location_button" translation_description="Button on the map screen that opens the location management sheet">مکان</string>
     <string name="location_management_title">موقعیت شما</string>
     <string name="location_source_auto">خودکار</string>
     <string name="location_source_manual">دستی</string>
@@ -272,12 +216,10 @@
     <string name="object_info_tap_to_close">برای بستن ضربه بزنید</string>
 
     <!-- Image gallery -->
-    <string name="gallery_button" translation_description="Map-screen menu item that opens a gallery of photographs of celestial objects. Not the user\'s own photos - these are catalog images from sources such as NASA and ESA.">گالری آسمان</string>
     <string name="gallery_title" translation_description="Title of the screen showing a gallery of photographs of celestial objects. Not the user\'s own photos - these are catalog images from sources such as NASA and ESA.">گالری آسمان</string>
     <string name="gallery_back" translation_description="Content description for the back arrow leaving the gallery screen">بازگشت</string>
 
     <!-- Settings screen (v1 wording where a v1 string existed) -->
-    <string name="settings_button">تنظیمات</string>
     <string name="settings_title">تنظیمات</string>
     <string name="settings_back" translation_description="Content description for the back arrow leaving the settings screen">بازگشت</string>
     <string name="settings_ok">باشه</string>
@@ -436,7 +378,6 @@
     <string name="diagnostics_cell">" (دیتا)"</string>
 
     <!-- Compass calibration screen (slice 15) -->
-    <string name="calibration_button">کالیبره</string>
     <string name="calibration_heading_user">قطب‌نمای تلفن شما</string>
     <string name="calibration_heading_warning">قطب‌نمای تلفن شما نیاز به توجه دارد</string>
     <string name="calibration_accuracy_unknown">کالیبراسیون: نامعلوم</string>
@@ -487,11 +428,8 @@
     <string name="warm_welcome_sensor_missing">گمشده</string>
 
     <!-- Help dialog (slice 16) -->
-    <string name="help_button">راهنما</string>
-    <string name="tutorial_button">آموزش</string>
     <string name="help_dialog_title">راهنما</string>
     <string name="help_version" translation_description="Version line at the top of the Help screen. %1$s is the app version name">نسخه %1$s</string>
-    <string name="whats_new_button" translation_description="Map-screen menu item that opens the What's New and Credits screen">چه خبر است</string>
     <string name="whats_new_screen_title" translation_description="Title of the screen showing the release notes and the credits">چه خبر است و اعتبارات</string>
 
     <!-- The Help screen's search box, which filters the document to the matching sections. -->
@@ -522,7 +460,6 @@
     <string name="symbol_key_meteor_radiant_peak" translation_description="Symbol-key label: the brighter marker used when a meteor shower is near its peak activity">بارش شهابی نزدیک به اوج خود</string>
 
     <!-- The widgets catalogue reached from the map\'s overflow menu. -->
-    <string name="widgets_button" translation_description="Map-screen menu item that opens the list of home-screen widgets the app offers">ویجت‌ها</string>
     <string name="widgets_sheet_title" translation_description="Title of the sheet listing the home-screen widgets the app offers">ویجت‌های صفحه اصلی</string>
     <string name="widgets_sheet_subtitle" translation_description="Subtitle of the widgets sheet, explaining what the listed widgets are for">آسمان امشب را در صفحه اصلی خود نگه دارید. یکی را برای افزودن انتخاب کنید.</string>
 
@@ -614,18 +551,4 @@
     <string name="notif_action_mute_showers" translation_description="Notification action button that opens the system toggle for the meteor-shower channel">بی‌صدا کردن بارش‌ها</string>
     <string name="time_travel_stopped">سفر در زمان متوقف شد</string>
     <!-- Layers sheet: per-layer parameters (D87). -->
-    <string name="layer_param_disc_size">اندازه دیسک</string>
-    <string name="layer_param_disc_size_true">مقیاس واقعی</string>
-    <string name="layer_param_disc_size_true_desc">
-    اندازه واقعی در آسمان در هر بزرگ‌نمایی. سیارات تا زمانی که کاملاً بزرگ‌نمایی کنید، نقاط کوچکی هستند.
-    </string>
-    <string name="layer_param_disc_size_glyphs">نمادها</string>
-    <string name="layer_param_disc_size_glyphs_desc">
-    اندازه بر اساس بزرگی واقعی هر جرم، نه آن‌طور که به نظر می‌رسد. در هر بزرگ‌نمایی به راحتی قابل مشاهده است.
-    </string>
-    <string name="layer_param_disc_size_auto">ثابت</string>
-    <string name="layer_param_disc_size_auto_desc">
-    با بزرگ‌نمایی، اندازه ثابتی روی صفحه نگه می‌دارد، سپس به اندازه واقعی تغییر می‌کند.
-    </string>
-    <string name="layer_param_expand">نمایش گزینه‌ها برای %1$s</string>
 </resources>

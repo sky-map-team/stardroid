@@ -9,14 +9,6 @@
 
 package com.google.android.stardroid.ui.map
 
-import android.Manifest
-import android.content.pm.PackageManager
-import android.content.res.Configuration
-import android.os.Build
-import androidx.activity.compose.rememberLauncherForActivityResult
-import androidx.activity.result.contract.ActivityResultContracts
-import androidx.annotation.DrawableRes
-import androidx.annotation.StringRes
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.tween
@@ -90,11 +82,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
-import androidx.compose.ui.platform.LocalConfiguration
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalLayoutDirection
-import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.platform.LocalWindowInfo
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.clearAndSetSemantics
 import androidx.compose.ui.semantics.contentDescription
@@ -107,9 +96,7 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
-import androidx.core.content.ContextCompat
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.google.android.stardroid.R
 import com.google.android.stardroid.layers.AltAzGridLayer
 import com.google.android.stardroid.layers.CatalogLayers
 import com.google.android.stardroid.layers.EclipticLayer
@@ -120,11 +107,138 @@ import com.google.android.stardroid.layers.MeteorShowerLayer
 import com.google.android.stardroid.layers.SatelliteLayer
 import com.google.android.stardroid.layers.SolarSystemLayer
 import com.google.android.stardroid.render.api.LayerId
+import com.google.android.stardroid.ui.common.formattedStringResource
+import com.google.android.stardroid.ui.common.rememberNotificationPermissionRequest
 import com.google.android.stardroid.ui.layers.LayerDataStatus
 import com.google.android.stardroid.ui.layers.LayerParameterState
 import com.google.android.stardroid.ui.layers.LayerToggle
 import com.google.android.stardroid.ui.layers.LayersViewModel
+import com.google.android.stardroid.ui.resources.Res
+import com.google.android.stardroid.ui.resources.calibration_button
+import com.google.android.stardroid.ui.resources.gallery_button
+import com.google.android.stardroid.ui.resources.help_button
+import com.google.android.stardroid.ui.resources.ic_calibrate
+import com.google.android.stardroid.ui.resources.ic_compass
+import com.google.android.stardroid.ui.resources.ic_gallery
+import com.google.android.stardroid.ui.resources.ic_hand
+import com.google.android.stardroid.ui.resources.ic_help
+import com.google.android.stardroid.ui.resources.ic_layer_altaz_grid
+import com.google.android.stardroid.ui.resources.ic_layer_camera
+import com.google.android.stardroid.ui.resources.ic_layer_constellations
+import com.google.android.stardroid.ui.resources.ic_layer_deep_sky
+import com.google.android.stardroid.ui.resources.ic_layer_ecliptic
+import com.google.android.stardroid.ui.resources.ic_layer_grid
+import com.google.android.stardroid.ui.resources.ic_layer_horizon
+import com.google.android.stardroid.ui.resources.ic_layer_hud
+import com.google.android.stardroid.ui.resources.ic_layer_meteor_showers
+import com.google.android.stardroid.ui.resources.ic_layer_satellites
+import com.google.android.stardroid.ui.resources.ic_layer_sky_gradient
+import com.google.android.stardroid.ui.resources.ic_layer_solar_system
+import com.google.android.stardroid.ui.resources.ic_layer_stars
+import com.google.android.stardroid.ui.resources.ic_layers
+import com.google.android.stardroid.ui.resources.ic_location
+import com.google.android.stardroid.ui.resources.ic_moon
+import com.google.android.stardroid.ui.resources.ic_more_vert
+import com.google.android.stardroid.ui.resources.ic_search
+import com.google.android.stardroid.ui.resources.ic_settings
+import com.google.android.stardroid.ui.resources.ic_share
+import com.google.android.stardroid.ui.resources.ic_sun
+import com.google.android.stardroid.ui.resources.ic_time_travel
+import com.google.android.stardroid.ui.resources.ic_tutorial
+import com.google.android.stardroid.ui.resources.ic_whats_new
+import com.google.android.stardroid.ui.resources.ic_widgets
+import com.google.android.stardroid.ui.resources.layer_altaz_grid
+import com.google.android.stardroid.ui.resources.layer_camera
+import com.google.android.stardroid.ui.resources.layer_camera_needs_sensors
+import com.google.android.stardroid.ui.resources.layer_constellations
+import com.google.android.stardroid.ui.resources.layer_deep_sky
+import com.google.android.stardroid.ui.resources.layer_ecliptic
+import com.google.android.stardroid.ui.resources.layer_grid
+import com.google.android.stardroid.ui.resources.layer_help_altaz_grid
+import com.google.android.stardroid.ui.resources.layer_help_camera
+import com.google.android.stardroid.ui.resources.layer_help_close
+import com.google.android.stardroid.ui.resources.layer_help_constellations
+import com.google.android.stardroid.ui.resources.layer_help_customizable
+import com.google.android.stardroid.ui.resources.layer_help_customize
+import com.google.android.stardroid.ui.resources.layer_help_deep_sky
+import com.google.android.stardroid.ui.resources.layer_help_ecliptic
+import com.google.android.stardroid.ui.resources.layer_help_expand_hint
+import com.google.android.stardroid.ui.resources.layer_help_grid
+import com.google.android.stardroid.ui.resources.layer_help_horizon
+import com.google.android.stardroid.ui.resources.layer_help_hud
+import com.google.android.stardroid.ui.resources.layer_help_long_click_label
+import com.google.android.stardroid.ui.resources.layer_help_meteor_showers
+import com.google.android.stardroid.ui.resources.layer_help_options_altaz_grid
+import com.google.android.stardroid.ui.resources.layer_help_options_grid
+import com.google.android.stardroid.ui.resources.layer_help_options_meteor_showers
+import com.google.android.stardroid.ui.resources.layer_help_options_satellites
+import com.google.android.stardroid.ui.resources.layer_help_options_solar_system
+import com.google.android.stardroid.ui.resources.layer_help_satellites
+import com.google.android.stardroid.ui.resources.layer_help_sky_gradient
+import com.google.android.stardroid.ui.resources.layer_help_solar_system
+import com.google.android.stardroid.ui.resources.layer_help_stars
+import com.google.android.stardroid.ui.resources.layer_horizon
+import com.google.android.stardroid.ui.resources.layer_hud
+import com.google.android.stardroid.ui.resources.layer_meteor_showers
+import com.google.android.stardroid.ui.resources.layer_param_altaz_grid_density
+import com.google.android.stardroid.ui.resources.layer_param_altaz_grid_density_coarse
+import com.google.android.stardroid.ui.resources.layer_param_altaz_grid_density_coarse_desc
+import com.google.android.stardroid.ui.resources.layer_param_altaz_grid_density_fine
+import com.google.android.stardroid.ui.resources.layer_param_altaz_grid_density_fine_desc
+import com.google.android.stardroid.ui.resources.layer_param_altaz_grid_density_medium
+import com.google.android.stardroid.ui.resources.layer_param_altaz_grid_density_medium_desc
+import com.google.android.stardroid.ui.resources.layer_param_disc_size
+import com.google.android.stardroid.ui.resources.layer_param_disc_size_auto
+import com.google.android.stardroid.ui.resources.layer_param_disc_size_auto_desc
+import com.google.android.stardroid.ui.resources.layer_param_disc_size_glyphs
+import com.google.android.stardroid.ui.resources.layer_param_disc_size_glyphs_desc
+import com.google.android.stardroid.ui.resources.layer_param_disc_size_true
+import com.google.android.stardroid.ui.resources.layer_param_disc_size_true_desc
+import com.google.android.stardroid.ui.resources.layer_param_eclipse_alerts
+import com.google.android.stardroid.ui.resources.layer_param_eclipse_alerts_description
+import com.google.android.stardroid.ui.resources.layer_param_expand
+import com.google.android.stardroid.ui.resources.layer_param_pass_alerts
+import com.google.android.stardroid.ui.resources.layer_param_pass_alerts_description
+import com.google.android.stardroid.ui.resources.layer_param_radec_grid_density
+import com.google.android.stardroid.ui.resources.layer_param_radec_grid_density_coarse_desc
+import com.google.android.stardroid.ui.resources.layer_param_radec_grid_density_fine_desc
+import com.google.android.stardroid.ui.resources.layer_param_radec_grid_density_medium_desc
+import com.google.android.stardroid.ui.resources.layer_param_shower_alerts
+import com.google.android.stardroid.ui.resources.layer_param_shower_alerts_description
+import com.google.android.stardroid.ui.resources.layer_satellites
+import com.google.android.stardroid.ui.resources.layer_sky_gradient
+import com.google.android.stardroid.ui.resources.layer_solar_system
+import com.google.android.stardroid.ui.resources.layer_stars
+import com.google.android.stardroid.ui.resources.layers_group_display
+import com.google.android.stardroid.ui.resources.layers_group_objects
+import com.google.android.stardroid.ui.resources.layers_group_reference
+import com.google.android.stardroid.ui.resources.layers_sheet_title
+import com.google.android.stardroid.ui.resources.location_button
+import com.google.android.stardroid.ui.resources.more_button
+import com.google.android.stardroid.ui.resources.night_mode
+import com.google.android.stardroid.ui.resources.satellites_no_data
+import com.google.android.stardroid.ui.resources.satellites_refresh
+import com.google.android.stardroid.ui.resources.satellites_retry_days
+import com.google.android.stardroid.ui.resources.satellites_retry_hours
+import com.google.android.stardroid.ui.resources.satellites_retry_soon
+import com.google.android.stardroid.ui.resources.satellites_retry_tomorrow
+import com.google.android.stardroid.ui.resources.satellites_retry_within_hour
+import com.google.android.stardroid.ui.resources.search_button
+import com.google.android.stardroid.ui.resources.settings_button
+import com.google.android.stardroid.ui.resources.share_button
+import com.google.android.stardroid.ui.resources.share_shutter_button
+import com.google.android.stardroid.ui.resources.show_layers
+import com.google.android.stardroid.ui.resources.switch_to_auto
+import com.google.android.stardroid.ui.resources.switch_to_manual
+import com.google.android.stardroid.ui.resources.time_travel_button
+import com.google.android.stardroid.ui.resources.tutorial_button
+import com.google.android.stardroid.ui.resources.whats_new_button
+import com.google.android.stardroid.ui.resources.widgets_button
 import com.google.android.stardroid.ui.theme.statusColors
+import org.jetbrains.compose.resources.DrawableResource
+import org.jetbrains.compose.resources.StringResource
+import org.jetbrains.compose.resources.painterResource
+import org.jetbrains.compose.resources.stringResource
 import kotlin.time.Duration
 import kotlin.time.Duration.Companion.hours
 import kotlin.time.Duration.Companion.minutes
@@ -205,8 +319,8 @@ fun MapChrome(
     railLabels: RailLabelState? = null,
     visible: Boolean = true,
 ) {
-    val landscape =
-        LocalConfiguration.current.orientation == Configuration.ORIENTATION_LANDSCAPE
+    // Android's ORIENTATION_LANDSCAPE, for a window that fills the screen: wider than tall.
+    val landscape = LocalWindowInfo.current.containerSize.let { it.width > it.height }
     Box(
         modifier
             .fillMaxSize()
@@ -349,7 +463,7 @@ private const val CHROME_ENTER_MS = 220
  * chrome in composition for exactly this long so the slide-out can finish before the content
  * is dropped, hence internal rather than private.
  */
-internal const val CHROME_ZONE_EXIT_MS = 420
+const val CHROME_ZONE_EXIT_MS = 420
 
 /**
  * Zone A: a slim vertical column of layer toggles in a translucent pill where v1's sliding
@@ -447,8 +561,8 @@ private fun LayerRail(
                 }
                 RailDivider()
                 RailItem(
-                    icon = R.drawable.ic_layers,
-                    contentDescription = stringResource(R.string.show_layers),
+                    icon = Res.drawable.ic_layers,
+                    contentDescription = stringResource(Res.string.show_layers),
                     checked = null,
                     onClick = onOpenLayersSheet,
                     onLongClick = null,
@@ -508,7 +622,7 @@ private fun RailLabels(
         // Matching its icon (D90) — and, unlike the grey it used to wear, above the AA
         // contrast threshold, which `outline` is deliberately below.
         RailLabel(
-            R.string.show_layers,
+            Res.string.show_layers,
             enabled = true,
             tint = MaterialTheme.colorScheme.onSecondaryContainer,
         )
@@ -550,7 +664,7 @@ private fun teachingFade(fadingOut: Boolean): Float {
  */
 @Composable
 private fun RailLabel(
-    @StringRes label: Int,
+    label: StringResource,
     enabled: Boolean,
     tint: Color? = null,
 ) {
@@ -613,7 +727,7 @@ private fun RailDivider() {
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 private fun RailItem(
-    @DrawableRes icon: Int,
+    icon: DrawableResource,
     contentDescription: String,
     checked: Boolean?,
     onClick: () -> Unit,
@@ -633,7 +747,7 @@ private fun RailItem(
                 .combinedClickable(
                     onClick = onClick,
                     onLongClickLabel =
-                        onLongClick?.let { stringResource(R.string.layer_help_long_click_label) },
+                        onLongClick?.let { stringResource(Res.string.layer_help_long_click_label) },
                     onLongClick = onLongClick,
                 )
                 .semantics {
@@ -716,29 +830,29 @@ private fun ActionCluster(
     modifier: Modifier = Modifier,
 ) {
     val buttons: @Composable () -> Unit = {
-        ActionTooltip(stringResource(R.string.search_button)) { description ->
+        ActionTooltip(stringResource(Res.string.search_button)) { description ->
             FilledIconButton(
                 onClick = onOpenSearch,
                 modifier = tourTargetModifier(ChromeTourTarget.Search),
             ) {
-                Icon(painterResource(R.drawable.ic_search), description)
+                Icon(painterResource(Res.drawable.ic_search), description)
             }
         }
-        ActionTooltip(stringResource(R.string.time_travel_button)) { description ->
+        ActionTooltip(stringResource(Res.string.time_travel_button)) { description ->
             FilledTonalIconButton(
                 onClick = onOpenTimeTravel,
                 modifier = tourTargetModifier(ChromeTourTarget.TimeTravel),
             ) {
-                Icon(painterResource(R.drawable.ic_time_travel), description)
+                Icon(painterResource(Res.drawable.ic_time_travel), description)
             }
         }
-        ActionTooltip(stringResource(R.string.night_mode)) { description ->
+        ActionTooltip(stringResource(Res.string.night_mode)) { description ->
             FilledTonalIconButton(
                 onClick = onToggleNightMode,
                 modifier = tourTargetModifier(ChromeTourTarget.NightMode),
             ) {
                 Icon(
-                    painterResource(if (nightMode) R.drawable.ic_sun else R.drawable.ic_moon),
+                    painterResource(if (nightMode) Res.drawable.ic_sun else Res.drawable.ic_moon),
                     description,
                 )
             }
@@ -749,8 +863,8 @@ private fun ActionCluster(
             val label =
                 stringResource(
                     when (referenceFrame) {
-                        ReferenceFrame.SENSOR -> R.string.switch_to_manual
-                        ReferenceFrame.MANUAL -> R.string.switch_to_auto
+                        ReferenceFrame.SENSOR -> Res.string.switch_to_manual
+                        ReferenceFrame.MANUAL -> Res.string.switch_to_auto
                     },
                 )
             ActionTooltip(label) { description ->
@@ -761,8 +875,8 @@ private fun ActionCluster(
                     Icon(
                         painterResource(
                             when (referenceFrame) {
-                                ReferenceFrame.SENSOR -> R.drawable.ic_hand
-                                ReferenceFrame.MANUAL -> R.drawable.ic_compass
+                                ReferenceFrame.SENSOR -> Res.drawable.ic_hand
+                                ReferenceFrame.MANUAL -> Res.drawable.ic_compass
                             },
                         ),
                         description,
@@ -774,12 +888,12 @@ private fun ActionCluster(
         // destinations, and as an unfilled glyph on the starfield it read as decoration and
         // went unfound (Hannah's feedback, 2026-08). Search keeps the sole filled-primary
         // slot, so promoting this to match its three neighbours costs no hierarchy.
-        ActionTooltip(stringResource(R.string.more_button)) { description ->
+        ActionTooltip(stringResource(Res.string.more_button)) { description ->
             FilledTonalIconButton(
                 onClick = onOpenOverflow,
                 modifier = tourTargetModifier(ChromeTourTarget.Overflow),
             ) {
-                Icon(painterResource(R.drawable.ic_more_vert), description)
+                Icon(painterResource(Res.drawable.ic_more_vert), description)
             }
         }
     }
@@ -805,7 +919,7 @@ private fun ShareShutter(
     modifier: Modifier = Modifier,
 ) {
     val ring = MaterialTheme.colorScheme.onSurface
-    val shutterDescription = stringResource(R.string.share_shutter_button)
+    val shutterDescription = stringResource(Res.string.share_shutter_button)
     Box(
         modifier =
             modifier
@@ -871,27 +985,27 @@ fun OverflowSheet(
             // Tutorial were 7th and 6th of nine and fell below the fold on a short phone,
             // which is precisely where a lost newcomer stops scrolling (Hannah's feedback,
             // 2026-08). Diagnostics has left for Settings → Advanced entirely.
-            OverflowRow(R.drawable.ic_help, R.string.help_button, onOpenHelp)
-            OverflowRow(R.drawable.ic_tutorial, R.string.tutorial_button, onOpenTutorial)
-            OverflowRow(R.drawable.ic_settings, R.string.settings_button, onOpenSettings)
-            OverflowRow(R.drawable.ic_location, R.string.location_button, onOpenLocation)
-            OverflowRow(R.drawable.ic_gallery, R.string.gallery_button, onOpenGallery)
+            OverflowRow(Res.drawable.ic_help, Res.string.help_button, onOpenHelp)
+            OverflowRow(Res.drawable.ic_tutorial, Res.string.tutorial_button, onOpenTutorial)
+            OverflowRow(Res.drawable.ic_settings, Res.string.settings_button, onOpenSettings)
+            OverflowRow(Res.drawable.ic_location, Res.string.location_button, onOpenLocation)
+            OverflowRow(Res.drawable.ic_gallery, Res.string.gallery_button, onOpenGallery)
             if (widgetsEnabled) {
-                OverflowRow(R.drawable.ic_widgets, R.string.widgets_button, onOpenWidgets)
+                OverflowRow(Res.drawable.ic_widgets, Res.string.widgets_button, onOpenWidgets)
             }
             if (shareEnabled) {
-                OverflowRow(R.drawable.ic_share, R.string.share_button, onShareSky)
+                OverflowRow(Res.drawable.ic_share, Res.string.share_button, onShareSky)
             }
-            OverflowRow(R.drawable.ic_whats_new, R.string.whats_new_button, onOpenWhatsNew)
-            OverflowRow(R.drawable.ic_calibrate, R.string.calibration_button, onOpenCalibration)
+            OverflowRow(Res.drawable.ic_whats_new, Res.string.whats_new_button, onOpenWhatsNew)
+            OverflowRow(Res.drawable.ic_calibrate, Res.string.calibration_button, onOpenCalibration)
         }
     }
 }
 
 @Composable
 private fun OverflowRow(
-    @DrawableRes icon: Int,
-    @StringRes label: Int,
+    icon: DrawableResource,
+    label: StringResource,
     onClick: () -> Unit,
 ) {
     Row(
@@ -955,11 +1069,11 @@ fun LayersSheet(
                 .padding(horizontal = 24.dp, vertical = 8.dp),
         ) {
             Text(
-                stringResource(R.string.layers_sheet_title),
+                stringResource(Res.string.layers_sheet_title),
                 style = MaterialTheme.typography.titleMedium,
                 modifier = Modifier.padding(bottom = 4.dp),
             )
-            LayerGroupHeader(R.string.layers_group_objects)
+            LayerGroupHeader(Res.string.layers_group_objects)
             for (toggle in objects) {
                 LayerRow(
                     icon = layerIcon(toggle.id),
@@ -982,7 +1096,7 @@ fun LayersSheet(
                     )
                 }
             }
-            LayerGroupHeader(R.string.layers_group_reference)
+            LayerGroupHeader(Res.string.layers_group_reference)
             for (toggle in reference) {
                 LayerRow(
                     icon = layerIcon(toggle.id),
@@ -997,31 +1111,31 @@ fun LayersSheet(
                     initiallyExpanded = toggle.id == expandLayer,
                 )
             }
-            LayerGroupHeader(R.string.layers_group_display)
+            LayerGroupHeader(Res.string.layers_group_display)
             LayerRow(
-                icon = R.drawable.ic_layer_sky_gradient,
-                label = R.string.layer_sky_gradient,
+                icon = Res.drawable.ic_layer_sky_gradient,
+                label = Res.string.layer_sky_gradient,
                 checked = skyGradientEnabled,
                 onCheckedChange = { layersViewModel.setSkyGradientEnabled(it) },
-                help = LayerHelp(R.string.layer_help_sky_gradient),
+                help = LayerHelp(Res.string.layer_help_sky_gradient),
             )
             LayerRow(
-                icon = R.drawable.ic_layer_hud,
-                label = R.string.layer_hud,
+                icon = Res.drawable.ic_layer_hud,
+                label = Res.string.layer_hud,
                 checked = hudEnabled,
                 onCheckedChange = { layersViewModel.setHudEnabled(it) },
-                help = LayerHelp(R.string.layer_help_hud),
+                help = LayerHelp(Res.string.layer_help_hud),
             )
             if (hasCamera) {
                 LayerRow(
-                    icon = R.drawable.ic_layer_camera,
-                    label = R.string.layer_camera,
+                    icon = Res.drawable.ic_layer_camera,
+                    label = Res.string.layer_camera,
                     checked = arModeOn && sensorsAvailable,
                     onCheckedChange = onSetArMode,
                     enabled = sensorsAvailable,
                     subtitle =
-                        if (sensorsAvailable) null else R.string.layer_camera_needs_sensors,
-                    help = LayerHelp(R.string.layer_help_camera),
+                        if (sensorsAvailable) null else Res.string.layer_camera_needs_sensors,
+                    help = LayerHelp(Res.string.layer_help_camera),
                 )
             }
         }
@@ -1029,9 +1143,7 @@ fun LayersSheet(
 }
 
 @Composable
-private fun LayerGroupHeader(
-    @StringRes label: Int,
-) {
+private fun LayerGroupHeader(label: StringResource) {
     Text(
         stringResource(label),
         style = MaterialTheme.typography.titleSmall,
@@ -1042,12 +1154,12 @@ private fun LayerGroupHeader(
 
 @Composable
 private fun LayerRow(
-    @DrawableRes icon: Int,
-    @StringRes label: Int,
+    icon: DrawableResource,
+    label: StringResource,
     checked: Boolean,
     onCheckedChange: (Boolean) -> Unit,
     enabled: Boolean = true,
-    @StringRes subtitle: Int? = null,
+    subtitle: StringResource? = null,
     parameters: List<LayerParameterState> = emptyList(),
     onParameterChange: (String, String) -> Unit = { _, _ -> },
     help: LayerHelp,
@@ -1126,17 +1238,10 @@ private fun LayerParameterChooser(
             // A switch, not a two-option segmented row: a boolean rendered as a radio pair reads
             // as a choice between two things rather than as something you turn on.
             is LayerParameter.Toggle -> {
-                val context = LocalContext.current
-                var pendingRevert by remember { mutableStateOf(false) }
-                val permissionLauncher =
-                    rememberLauncherForActivityResult(
-                        ActivityResultContracts.RequestPermission(),
-                    ) { granted ->
-                        // A denial flips the switch back rather than leaving it on and silently
-                        // never notifying — the same contract the Settings notification rows use.
-                        if (!granted && pendingRevert) onSelect(false.toString())
-                        pendingRevert = false
-                    }
+                // A denial flips the switch back rather than leaving it on and silently never
+                // notifying — the same contract the Settings notification rows use.
+                val requestNotifications =
+                    rememberNotificationPermissionRequest(onDenied = { onSelect(false.toString()) })
 
                 Row(
                     verticalAlignment = Alignment.CenterVertically,
@@ -1159,19 +1264,10 @@ private fun LayerParameterChooser(
                             onSelect(enabled.toString())
                             // Any toggle that leads to a notification has to ask, and this one is
                             // the first outside Settings → Notifications. Without it the switch
-                            // reads as on while POST_NOTIFICATIONS is ungranted and the alert
-                            // never arrives — a silent failure with no way for the user to
-                            // diagnose it.
-                            if (enabled &&
-                                parameter.requiresNotificationPermission &&
-                                Build.VERSION.SDK_INT >= 33 &&
-                                ContextCompat.checkSelfPermission(
-                                    context,
-                                    Manifest.permission.POST_NOTIFICATIONS,
-                                ) != PackageManager.PERMISSION_GRANTED
-                            ) {
-                                pendingRevert = true
-                                permissionLauncher.launch(Manifest.permission.POST_NOTIFICATIONS)
+                            // reads as on while the permission is ungranted and the alert never
+                            // arrives — a silent failure with no way for the user to diagnose it.
+                            if (enabled && parameter.requiresNotificationPermission) {
+                                requestNotifications()
                             }
                         },
                     )
@@ -1184,12 +1280,12 @@ private fun LayerParameterChooser(
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 private fun LayerRowContent(
-    @DrawableRes icon: Int,
-    @StringRes label: Int,
+    icon: DrawableResource,
+    label: StringResource,
     checked: Boolean,
     onCheckedChange: (Boolean) -> Unit,
     enabled: Boolean,
-    @StringRes subtitle: Int?,
+    subtitle: StringResource?,
     expandable: Boolean,
     expanded: Boolean,
     onExpandToggle: () -> Unit,
@@ -1214,7 +1310,7 @@ private fun LayerRowContent(
                 }
                 .combinedClickable(
                     role = Role.Switch,
-                    onLongClickLabel = stringResource(R.string.layer_help_long_click_label),
+                    onLongClickLabel = stringResource(Res.string.layer_help_long_click_label),
                     onLongClick = onLongClick,
                     onClick = { if (enabled) onCheckedChange(!checked) },
                 )
@@ -1255,7 +1351,7 @@ private fun LayerRowContent(
                         } else {
                             Icons.Filled.KeyboardArrowDown
                         },
-                    contentDescription = stringResource(R.string.layer_param_expand, ""),
+                    contentDescription = formattedStringResource(Res.string.layer_param_expand, ""),
                     tint = MaterialTheme.colorScheme.onSurfaceVariant,
                 )
             }
@@ -1265,59 +1361,56 @@ private fun LayerRowContent(
 }
 
 /** Layer-parameter keys → their sheet labels; the same split as [layerName]. */
-@StringRes
-private fun parameterLabel(key: String): Int =
+private fun parameterLabel(key: String): StringResource =
     when (key) {
-        LayerParameter.DISC_SIZE -> R.string.layer_param_disc_size
-        LayerParameter.PASS_ALERTS -> R.string.layer_param_pass_alerts
-        LayerParameter.ECLIPSE_ALERTS -> R.string.layer_param_eclipse_alerts
-        LayerParameter.SHOWER_ALERTS -> R.string.layer_param_shower_alerts
-        LayerParameter.ALTAZ_GRID_DENSITY -> R.string.layer_param_altaz_grid_density
-        LayerParameter.RADEC_GRID_DENSITY -> R.string.layer_param_radec_grid_density
-        else -> R.string.layer_param_disc_size
+        LayerParameter.DISC_SIZE -> Res.string.layer_param_disc_size
+        LayerParameter.PASS_ALERTS -> Res.string.layer_param_pass_alerts
+        LayerParameter.ECLIPSE_ALERTS -> Res.string.layer_param_eclipse_alerts
+        LayerParameter.SHOWER_ALERTS -> Res.string.layer_param_shower_alerts
+        LayerParameter.ALTAZ_GRID_DENSITY -> Res.string.layer_param_altaz_grid_density
+        LayerParameter.RADEC_GRID_DENSITY -> Res.string.layer_param_radec_grid_density
+        else -> Res.string.layer_param_disc_size
     }
 
 /** The one-line explanation under a [LayerParameter.Toggle]'s switch. */
-@StringRes
-private fun parameterDescription(key: String): Int =
+private fun parameterDescription(key: String): StringResource =
     when (key) {
-        LayerParameter.PASS_ALERTS -> R.string.layer_param_pass_alerts_description
-        LayerParameter.ECLIPSE_ALERTS -> R.string.layer_param_eclipse_alerts_description
-        LayerParameter.SHOWER_ALERTS -> R.string.layer_param_shower_alerts_description
-        else -> R.string.layer_param_pass_alerts_description
+        LayerParameter.PASS_ALERTS -> Res.string.layer_param_pass_alerts_description
+        LayerParameter.ECLIPSE_ALERTS -> Res.string.layer_param_eclipse_alerts_description
+        LayerParameter.SHOWER_ALERTS -> Res.string.layer_param_shower_alerts_description
+        else -> Res.string.layer_param_pass_alerts_description
     }
 
-@StringRes
-private fun parameterOptionLabel(option: String): Int =
+private fun parameterOptionLabel(option: String): StringResource =
     when (option) {
-        LayerParameter.DISC_SIZE_TRUE -> R.string.layer_param_disc_size_true
-        LayerParameter.DISC_SIZE_GLYPHS -> R.string.layer_param_disc_size_glyphs
-        LayerParameter.DISC_SIZE_AUTO -> R.string.layer_param_disc_size_auto
+        LayerParameter.DISC_SIZE_TRUE -> Res.string.layer_param_disc_size_true
+        LayerParameter.DISC_SIZE_GLYPHS -> Res.string.layer_param_disc_size_glyphs
+        LayerParameter.DISC_SIZE_AUTO -> Res.string.layer_param_disc_size_auto
         LayerParameter.ALTAZ_GRID_DENSITY_COARSE,
         LayerParameter.RADEC_GRID_DENSITY_COARSE,
-        -> R.string.layer_param_altaz_grid_density_coarse
+        -> Res.string.layer_param_altaz_grid_density_coarse
         LayerParameter.ALTAZ_GRID_DENSITY_MEDIUM,
         LayerParameter.RADEC_GRID_DENSITY_MEDIUM,
-        -> R.string.layer_param_altaz_grid_density_medium
-        else -> R.string.layer_param_altaz_grid_density_fine
+        -> Res.string.layer_param_altaz_grid_density_medium
+        else -> Res.string.layer_param_altaz_grid_density_fine
     }
 
-@StringRes
-private fun parameterOptionDescription(option: String): Int =
+private fun parameterOptionDescription(option: String): StringResource =
     when (option) {
-        LayerParameter.DISC_SIZE_TRUE -> R.string.layer_param_disc_size_true_desc
-        LayerParameter.DISC_SIZE_GLYPHS -> R.string.layer_param_disc_size_glyphs_desc
-        LayerParameter.DISC_SIZE_AUTO -> R.string.layer_param_disc_size_auto_desc
+        LayerParameter.DISC_SIZE_TRUE -> Res.string.layer_param_disc_size_true_desc
+        LayerParameter.DISC_SIZE_GLYPHS -> Res.string.layer_param_disc_size_glyphs_desc
+        LayerParameter.DISC_SIZE_AUTO -> Res.string.layer_param_disc_size_auto_desc
         LayerParameter.ALTAZ_GRID_DENSITY_COARSE ->
-            R.string.layer_param_altaz_grid_density_coarse_desc
+            Res.string.layer_param_altaz_grid_density_coarse_desc
         LayerParameter.ALTAZ_GRID_DENSITY_MEDIUM ->
-            R.string.layer_param_altaz_grid_density_medium_desc
+            Res.string.layer_param_altaz_grid_density_medium_desc
         LayerParameter.RADEC_GRID_DENSITY_COARSE ->
-            R.string.layer_param_radec_grid_density_coarse_desc
+            Res.string.layer_param_radec_grid_density_coarse_desc
         LayerParameter.RADEC_GRID_DENSITY_MEDIUM ->
-            R.string.layer_param_radec_grid_density_medium_desc
-        LayerParameter.RADEC_GRID_DENSITY_FINE -> R.string.layer_param_radec_grid_density_fine_desc
-        else -> R.string.layer_param_altaz_grid_density_fine_desc
+            Res.string.layer_param_radec_grid_density_medium_desc
+        LayerParameter.RADEC_GRID_DENSITY_FINE ->
+            Res.string.layer_param_radec_grid_density_fine_desc
+        else -> Res.string.layer_param_altaz_grid_density_fine_desc
     }
 
 /**
@@ -1325,38 +1418,41 @@ private fun parameterOptionDescription(option: String): Int =
  * what the user can change about it.
  */
 private class LayerHelp(
-    @StringRes val description: Int,
-    @StringRes val options: Int? = null,
+    val description: StringResource,
+    val options: StringResource? = null,
 )
 
 private fun layerHelp(id: LayerId): LayerHelp =
     when (id) {
-        CatalogLayers.STARS_LAYER_ID -> LayerHelp(R.string.layer_help_stars)
-        CatalogLayers.CONSTELLATIONS_LAYER_ID -> LayerHelp(R.string.layer_help_constellations)
-        CatalogLayers.DEEP_SKY_LAYER_ID -> LayerHelp(R.string.layer_help_deep_sky)
+        CatalogLayers.STARS_LAYER_ID -> LayerHelp(Res.string.layer_help_stars)
+        CatalogLayers.CONSTELLATIONS_LAYER_ID -> LayerHelp(Res.string.layer_help_constellations)
+        CatalogLayers.DEEP_SKY_LAYER_ID -> LayerHelp(Res.string.layer_help_deep_sky)
         SolarSystemLayer.LAYER_ID ->
-            LayerHelp(R.string.layer_help_solar_system, R.string.layer_help_options_solar_system)
+            LayerHelp(
+                Res.string.layer_help_solar_system,
+                Res.string.layer_help_options_solar_system,
+            )
         MeteorShowerLayer.LAYER_ID ->
             LayerHelp(
-                R.string.layer_help_meteor_showers,
-                R.string.layer_help_options_meteor_showers,
+                Res.string.layer_help_meteor_showers,
+                Res.string.layer_help_options_meteor_showers,
             )
         SatelliteLayer.LAYER_ID ->
-            LayerHelp(R.string.layer_help_satellites, R.string.layer_help_options_satellites)
+            LayerHelp(Res.string.layer_help_satellites, Res.string.layer_help_options_satellites)
         GridLayer.LAYER_ID ->
-            LayerHelp(R.string.layer_help_grid, R.string.layer_help_options_grid)
-        HorizonLayer.LAYER_ID -> LayerHelp(R.string.layer_help_horizon)
-        EclipticLayer.LAYER_ID -> LayerHelp(R.string.layer_help_ecliptic)
+            LayerHelp(Res.string.layer_help_grid, Res.string.layer_help_options_grid)
+        HorizonLayer.LAYER_ID -> LayerHelp(Res.string.layer_help_horizon)
+        EclipticLayer.LAYER_ID -> LayerHelp(Res.string.layer_help_ecliptic)
         AltAzGridLayer.LAYER_ID ->
-            LayerHelp(R.string.layer_help_altaz_grid, R.string.layer_help_options_altaz_grid)
+            LayerHelp(Res.string.layer_help_altaz_grid, Res.string.layer_help_options_altaz_grid)
         else -> error("No help text for layer ${id.id}")
     }
 
 /** The popup a long-press on a layer row opens. */
 @Composable
 private fun LayerHelpDialog(
-    @DrawableRes icon: Int,
-    @StringRes label: Int,
+    icon: DrawableResource,
+    label: StringResource,
     help: LayerHelp,
     onDismiss: () -> Unit,
     // Null inside the sheet itself, where the options are already a tap away.
@@ -1371,7 +1467,7 @@ private fun LayerHelpDialog(
                 Text(stringResource(help.description), style = MaterialTheme.typography.bodyMedium)
                 if (help.options != null) {
                     Text(
-                        stringResource(R.string.layer_help_customizable),
+                        stringResource(Res.string.layer_help_customizable),
                         style = MaterialTheme.typography.labelLarge,
                         modifier = Modifier.padding(top = 16.dp, bottom = 4.dp),
                     )
@@ -1381,7 +1477,7 @@ private fun LayerHelpDialog(
                     )
                     if (onCustomize == null) {
                         Text(
-                            stringResource(R.string.layer_help_expand_hint),
+                            stringResource(Res.string.layer_help_expand_hint),
                             style = MaterialTheme.typography.bodySmall,
                             color = MaterialTheme.colorScheme.onSurfaceVariant,
                             modifier = Modifier.padding(top = 8.dp),
@@ -1391,13 +1487,13 @@ private fun LayerHelpDialog(
             }
         },
         confirmButton = {
-            TextButton(onClick = onDismiss) { Text(stringResource(R.string.layer_help_close)) }
+            TextButton(onClick = onDismiss) { Text(stringResource(Res.string.layer_help_close)) }
         },
         dismissButton =
             if (help.options != null && onCustomize != null) {
                 {
                     TextButton(onClick = onCustomize) {
-                        Text(stringResource(R.string.layer_help_customize))
+                        Text(stringResource(Res.string.layer_help_customize))
                     }
                 }
             } else {
@@ -1459,19 +1555,18 @@ private val RailLabelShape = RoundedCornerShape(6.dp)
  */
 private const val RAIL_LABEL_FADE_MS = 3000
 
-@StringRes
-private fun layerName(id: LayerId): Int =
+private fun layerName(id: LayerId): StringResource =
     when (id) {
-        CatalogLayers.STARS_LAYER_ID -> R.string.layer_stars
-        CatalogLayers.CONSTELLATIONS_LAYER_ID -> R.string.layer_constellations
-        CatalogLayers.DEEP_SKY_LAYER_ID -> R.string.layer_deep_sky
-        SolarSystemLayer.LAYER_ID -> R.string.layer_solar_system
-        MeteorShowerLayer.LAYER_ID -> R.string.layer_meteor_showers
-        SatelliteLayer.LAYER_ID -> R.string.layer_satellites
-        GridLayer.LAYER_ID -> R.string.layer_grid
-        HorizonLayer.LAYER_ID -> R.string.layer_horizon
-        EclipticLayer.LAYER_ID -> R.string.layer_ecliptic
-        AltAzGridLayer.LAYER_ID -> R.string.layer_altaz_grid
+        CatalogLayers.STARS_LAYER_ID -> Res.string.layer_stars
+        CatalogLayers.CONSTELLATIONS_LAYER_ID -> Res.string.layer_constellations
+        CatalogLayers.DEEP_SKY_LAYER_ID -> Res.string.layer_deep_sky
+        SolarSystemLayer.LAYER_ID -> Res.string.layer_solar_system
+        MeteorShowerLayer.LAYER_ID -> Res.string.layer_meteor_showers
+        SatelliteLayer.LAYER_ID -> Res.string.layer_satellites
+        GridLayer.LAYER_ID -> Res.string.layer_grid
+        HorizonLayer.LAYER_ID -> Res.string.layer_horizon
+        EclipticLayer.LAYER_ID -> Res.string.layer_ecliptic
+        AltAzGridLayer.LAYER_ID -> Res.string.layer_altaz_grid
         else -> error("No display name for layer ${id.id}")
     }
 
@@ -1489,17 +1584,16 @@ val CHROME_TOUR_STOPS: List<ChromeTourTarget> by lazy {
 }
 
 /** The label the warm-welcome tour shows while spotlighting [target]. */
-@StringRes
-fun chromeTourLabel(target: ChromeTourTarget): Int =
+fun chromeTourLabel(target: ChromeTourTarget): StringResource =
     when (target) {
         is ChromeTourTarget.Layer -> layerName(target.id)
-        ChromeTourTarget.LayersExpand -> R.string.show_layers
-        ChromeTourTarget.Search -> R.string.search_button
-        ChromeTourTarget.TimeTravel -> R.string.time_travel_button
-        ChromeTourTarget.NightMode -> R.string.night_mode
+        ChromeTourTarget.LayersExpand -> Res.string.show_layers
+        ChromeTourTarget.Search -> Res.string.search_button
+        ChromeTourTarget.TimeTravel -> Res.string.time_travel_button
+        ChromeTourTarget.NightMode -> Res.string.night_mode
         // The tour's canned chrome is in the sensor frame, so the button shows the hand.
-        ChromeTourTarget.AutoManual -> R.string.switch_to_manual
-        ChromeTourTarget.Overflow -> R.string.more_button
+        ChromeTourTarget.AutoManual -> Res.string.switch_to_manual
+        ChromeTourTarget.Overflow -> Res.string.more_button
     }
 
 /**
@@ -1511,19 +1605,18 @@ fun demoChromeToggles(satellitesEnabled: Boolean): List<LayerToggle> =
         .filter { satellitesEnabled || it != SatelliteLayer.LAYER_ID }
         .map { LayerToggle(it, enabled = true) }
 
-@DrawableRes
-private fun layerIcon(id: LayerId): Int =
+private fun layerIcon(id: LayerId): DrawableResource =
     when (id) {
-        CatalogLayers.STARS_LAYER_ID -> R.drawable.ic_layer_stars
-        CatalogLayers.CONSTELLATIONS_LAYER_ID -> R.drawable.ic_layer_constellations
-        CatalogLayers.DEEP_SKY_LAYER_ID -> R.drawable.ic_layer_deep_sky
-        SolarSystemLayer.LAYER_ID -> R.drawable.ic_layer_solar_system
-        MeteorShowerLayer.LAYER_ID -> R.drawable.ic_layer_meteor_showers
-        SatelliteLayer.LAYER_ID -> R.drawable.ic_layer_satellites
-        GridLayer.LAYER_ID -> R.drawable.ic_layer_grid
-        HorizonLayer.LAYER_ID -> R.drawable.ic_layer_horizon
-        EclipticLayer.LAYER_ID -> R.drawable.ic_layer_ecliptic
-        AltAzGridLayer.LAYER_ID -> R.drawable.ic_layer_altaz_grid
+        CatalogLayers.STARS_LAYER_ID -> Res.drawable.ic_layer_stars
+        CatalogLayers.CONSTELLATIONS_LAYER_ID -> Res.drawable.ic_layer_constellations
+        CatalogLayers.DEEP_SKY_LAYER_ID -> Res.drawable.ic_layer_deep_sky
+        SolarSystemLayer.LAYER_ID -> Res.drawable.ic_layer_solar_system
+        MeteorShowerLayer.LAYER_ID -> Res.drawable.ic_layer_meteor_showers
+        SatelliteLayer.LAYER_ID -> Res.drawable.ic_layer_satellites
+        GridLayer.LAYER_ID -> Res.drawable.ic_layer_grid
+        HorizonLayer.LAYER_ID -> Res.drawable.ic_layer_horizon
+        EclipticLayer.LAYER_ID -> Res.drawable.ic_layer_ecliptic
+        AltAzGridLayer.LAYER_ID -> Res.drawable.ic_layer_altaz_grid
         else -> error("No icon for layer ${id.id}")
     }
 
@@ -1559,7 +1652,7 @@ private fun SatelliteEmptyStateCard(
     ) {
         Column(Modifier.padding(12.dp)) {
             Text(
-                stringResource(R.string.satellites_no_data),
+                stringResource(Res.string.satellites_no_data),
                 style = MaterialTheme.typography.bodySmall,
             )
             if (refreshWait == Duration.ZERO) {
@@ -1567,7 +1660,7 @@ private fun SatelliteEmptyStateCard(
                     onClick = onRefresh,
                     modifier = Modifier.align(Alignment.End),
                 ) {
-                    Text(stringResource(R.string.satellites_refresh))
+                    Text(stringResource(Res.string.satellites_refresh))
                 }
             } else {
                 Text(
@@ -1587,12 +1680,11 @@ private fun SatelliteEmptyStateCard(
  * The bands line up with the two things that actually cause a wait: CelesTrak's two-hour minimum
  * query interval, and the circuit breaker's 24 h / 48 h / 7 day ladder.
  */
-@StringRes
-private fun retryWaitText(wait: Duration): Int =
+private fun retryWaitText(wait: Duration): StringResource =
     when {
-        wait <= 5.minutes -> R.string.satellites_retry_soon
-        wait <= 90.minutes -> R.string.satellites_retry_within_hour
-        wait <= 20.hours -> R.string.satellites_retry_hours
-        wait <= 36.hours -> R.string.satellites_retry_tomorrow
-        else -> R.string.satellites_retry_days
+        wait <= 5.minutes -> Res.string.satellites_retry_soon
+        wait <= 90.minutes -> Res.string.satellites_retry_within_hour
+        wait <= 20.hours -> Res.string.satellites_retry_hours
+        wait <= 36.hours -> Res.string.satellites_retry_tomorrow
+        else -> Res.string.satellites_retry_days
     }

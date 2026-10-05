@@ -30,7 +30,6 @@
     <string name="pluto">冥王星</string>
 
     <!-- Search (map-screen search dialog and overlay). -->
-    <string name="search_button">搜尋</string>
     <string name="search_label">搜尋星空</string>
     <string name="search_hint" translation_description="Placeholder text in the search field showing example search targets.">例如：火星或M31</string>
     <string name="search_coordinates_hint" translation_description="Helper text under the search field showing that celestial coordinates (right ascension and declination) can be typed directly, with two example formats.">或輸入座標：12時30分, +45° 或 187.5 -45.2</string>
@@ -42,12 +41,6 @@
     <string name="search_overlay_prompt">將手機指向箭頭方向</string>
 
     <!-- Layer names in the layer-visibility sheet. -->
-    <string name="layer_stars">星體</string>
-    <string name="layer_constellations">星座</string>
-    <string name="layer_deep_sky" translation_description="Toggle label for the layer showing deep-sky objects such as galaxies and nebulae.">深空天體</string>
-    <string name="layer_solar_system">行星</string>
-    <string name="layer_meteor_showers">流星雨</string>
-    <string name="layer_satellites" translation_description="Toggle label for the layer showing artificial satellites such as the International Space Station.">衛星</string>
     <string name="channel_passes_name" translation_description="Name of the notification channel for alerts shortly before a satellite passes overhead.">衛星凌空</string>
     <string name="channel_passes_description" translation_description="Description of the satellite-pass notification channel.">在當晚最佳可見凌空之前不久發出單次提醒</string>
     <string name="notif_pass_title" translation_description="Title of the notification sent shortly before a satellite passes overhead. %1$s is the satellite name.">%1$s 即將凌空</string>
@@ -58,17 +51,6 @@
     <string name="notif_eclipse_text" translation_description="Body of the lunar eclipse notification, telling the user when it begins. %1$s is a time.">大約在 %1$s 開始 — 值得出門觀看</string>
     <string name="satellite_name_iss" translation_description="Display name for the International Space Station.">國際太空站</string>
     <string name="satellite_name_tiangong" translation_description="Display name for the Chinese space station Tiangong.">天宮</string>
-    <string name="layer_param_pass_alerts" translation_description="Label for the setting that turns on a notification shortly before a satellite passes overhead.">凌空提醒</string>
-    <string name="layer_param_pass_alerts_description" translation_description="Explains what the pass-alert setting does: a single notification before the best visible pass of the night.">在每晚最佳可見凌空之前通知我</string>
-    <string name="layer_param_eclipse_alerts" translation_description="Label for the setting that turns on a notification before a lunar eclipse begins.">月食提醒</string>
-    <string name="layer_param_eclipse_alerts_description" translation_description="Explains what the eclipse-alert setting does: a single notification before a lunar eclipse starts.">在月食開始之前通知我</string>
-    <string name="layer_param_altaz_grid_density" translation_description="Label for the alt/az grid's line-count setting.">線條數量</string>
-    <string name="layer_param_altaz_grid_density_coarse" translation_description="Option label for the alt/az grid's sparsest setting: 8 azimuth lines, 45 degrees apart.">粗略</string>
-    <string name="layer_param_altaz_grid_density_coarse_desc" translation_description="Explains the coarse alt/az grid density: 8 azimuth lines, matching the 8 compass points.">8 條方向線，對應羅盤方位</string>
-    <string name="layer_param_altaz_grid_density_medium" translation_description="Option label for the alt/az grid's default setting: 12 azimuth lines, 30 degrees apart.">中等</string>
-    <string name="layer_param_altaz_grid_density_medium_desc" translation_description="Explains the medium alt/az grid density: 12 azimuth lines, 30 degrees apart.">12 條方向線，每 30° 一條</string>
-    <string name="layer_param_altaz_grid_density_fine" translation_description="Option label for the alt/az grid's densest setting: 24 azimuth lines, 15 degrees apart.">精細</string>
-    <string name="layer_param_altaz_grid_density_fine_desc" translation_description="Explains the fine alt/az grid density: 24 azimuth lines, matching the celestial grid's meridian count.">24 條方向線，對應天球網格</string>
     <string name="satellite_description" translation_description="Short description shown on the info card for an artificial satellite.">一顆位於低地球軌道的人造衛星，在漆黑天空中被陽光照亮。它在幾分鐘內穩定地橫越地平線，且不會閃爍。</string>
     <string name="satellite_next_pass" translation_description="Heading above the next visible pass details on a satellite\'s info card.">下次可見凌空</string>
     <string name="satellite_pass_when" translation_description="When and how high the next satellite pass will be. %1$s is a time, %2$s is a compass direction, %3$d is an angle in degrees.">%1$s，從 %2$s 方向升起，達到 %3$d° 高度</string>
@@ -82,63 +64,29 @@
     <string name="object_info_eclipse_totality" translation_description="The start and end time of totality during a total lunar eclipse. %1$s and %2$s are times.">食既至生光 %1$s – %2$s</string>
     <string name="tonight_satellite_pass" translation_description="Tonight-widget row announcing a visible satellite pass. %1$s is the satellite name, %2$s is a time of day.">%1$s 在 %2$s 凌空</string>
     <string name="tonight_trailing_pass" translation_description="Small trailing note on a satellite pass row. %1$s is a compass direction, %2$d is an angle in degrees, %3$.1f is a brightness magnitude.">從 %1$s 方向升起，%2$d°，亮度 %3$.1f</string>
-    <string name="satellites_no_data" translation_description="Explanation shown when satellite orbital data has not been downloaded yet and so no satellites can be drawn.">衛星位置需要網路連線才能更新。</string>
-    <string name="satellites_refresh" translation_description="Button that tries to download satellite orbital data now.">重新整理</string>
-    <string name="satellites_retry_soon" translation_description="Shown instead of a Refresh button when satellite data was just requested and cannot be requested again for a few minutes.">請在幾分鐘後再試一次</string>
-    <string name="satellites_retry_within_hour" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for up to an hour.">請在一小時內再試一次</string>
-    <string name="satellites_retry_hours" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for several hours.">請在幾小時後再試一次</string>
-    <string name="satellites_retry_tomorrow" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again until the next day.">明天再試</string>
-    <string name="satellites_retry_days" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for several days.">幾天後再試</string>
-    <string name="layer_grid" translation_description="Toggle label for the layer showing the right ascension / declination grid.">天球網格</string>
-    <string name="layer_horizon">地平線</string>
-    <string name="layer_ecliptic">黃道</string>
-    <string name="layer_altaz_grid" translation_description="Toggle label for the layer showing the altitude/azimuth (horizontal) coordinate grid, for naked-eye or manual alt-az mount observers.">地平座標網格</string>
-    <string name="layer_sky_gradient">星空漸層色</string>
 
     <!-- Map screen controls. -->
-    <string name="layers_sheet_title" translation_description="Title of the bottom sheet listing sky map layers the user can show or hide.">圖層</string>
-    <string name="layers_group_objects" translation_description="Layers-sheet group header for layers that draw sky objects (stars, planets, deep-sky objects).">物體</string>
-    <string name="layers_group_reference" translation_description="Layers-sheet group header for reference elements drawn over the sky (coordinate grid, horizon, ecliptic).">參考</string>
-    <string name="layers_group_display" translation_description="Layers-sheet group header for display settings that change how the sky is rendered rather than what is drawn.">顯示</string>
-    <string name="show_layers" translation_description="Accessibility description and label for the button opening the layer-visibility sheet, which holds the layers that do not fit on the rail plus display options.">更多圖層與選項</string>
-    <string name="more_button" translation_description="Accessibility label and tooltip for the map-screen button (three vertical dots) opening the overflow menu of further destinations such as Gallery and Settings.">更多選項</string>
-    <string name="night_mode">夜間模式</string>
-    <string name="switch_to_manual" translation_description="Tooltip and accessibility label for the button that switches the map from auto (sensor-driven) mode to manual (drag) mode.">切換至手動模式</string>
-    <string name="switch_to_auto" translation_description="Tooltip and accessibility label for the button that switches the map from manual (drag) mode to auto (sensor-driven) mode.">切換至自動模式</string>
     <string name="no_sensor_warning" translation_description="Warning shown when the device lacks the motion sensors needed to point the map at the sky automatically.">這個裝置沒有指南針或動作感應器，所以 Sky Map 無法跟隨您指向的方向。請改為手動拖曳地圖。</string>
     <string name="no_sensor_warning_dismiss">確定</string>
 
     <!-- The map HUD (map-hud.md, D65): the top-right pointing readout shown with the chrome. -->
     <string name="hud_alignment_reset_message" translation_description="Snackbar confirming the sensor-alignment correction was cleared; shown with an Undo action.">校準修正已重設</string>
 
-    <string name="layer_hud" translation_description="Layers-sheet Display toggle that shows the heads-up readout of where the phone is pointing (compass direction and altitude) over the star map.">指向讀數</string>
 
     <!-- Through-camera (AR) mode (camera-ar-mode.md, D64). -->
-    <string name="layer_camera" translation_description="Layers-sheet Display toggle that shows the live rear-camera image behind the star map, so the drawn sky overlays the real one.">穿透相機模式</string>
-    <string name="layer_camera_needs_sensors" translation_description="Subtitle explaining why the through-camera toggle is disabled: the device has no usable motion sensors, and the mode needs the map to follow where the phone points.">需要此裝置沒有的動作感應器</string>
     <string name="ar_auto_mode_snackbar" translation_description="Snackbar shown when turning on through-camera mode switched the map from manual dragging back to automatic sensor pointing.">相機檢視已開啟自動模式</string>
     <string name="ar_permission_denied" translation_description="Snackbar shown when the user declined the camera permission that through-camera mode needs.">穿透相機模式需要相機權限</string>
     <string name="ar_permission_settings_action">設定</string>
-    <string name="ar_exposure_slider" translation_description="Accessibility label for the slider adjusting the camera\'s exposure compensation while through-camera mode is on.">相機曝光</string>
     <string name="ar_alignment_adjusted_message" translation_description="Snackbar shown after the user drags the star map to align it with the camera image; shown with an Undo action that reverts the whole drag.">地圖校準已調整</string>
-    <string name="ar_dimmer_slider" translation_description="Accessibility label for the slider dimming the camera image behind the star map while through-camera mode is on.">相機調光器</string>
-    <!-- tm:omitted name="ar_iso_slider_label" reason="identical_to_source" -->
-    <string name="ar_iso_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual ISO sensitivity in through-camera mode.">相機 ISO</string>
-    <string name="ar_shutter_slider_label" translation_description="Very short label for the temporary developer slider setting the camera\'s manual shutter (exposure) time in through-camera mode.">快門</string>
-    <string name="ar_shutter_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual shutter (exposure) time in through-camera mode.">相機快門時間</string>
-    <string name="share_button" translation_description="Overflow-menu row that captures the current sky view as an image and opens the system share sheet.">分享星空</string>
     <string name="share_chooser_title" translation_description="Title of the system share sheet when sharing a captured sky image.">分享這個天空</string>
     <string name="share_invitation" translation_description="Short invitation stamped on the footer of shared sky images, above the store link.">看看你正在看什麼 — 免費取得 Sky Map</string>
     <string name="share_text" translation_description="Text accompanying a shared sky image in apps that accept both an image and text. %1$s is the app-store link.">看看你正在看什麼 — 免費取得 Sky Map：%1$s</string>
     <!-- tm:omitted name="share_store_link" reason="identical_to_source" -->
     <string name="share_layout_overlay" translation_description="Caption of the share-layout choice that draws the star map over the camera photo, as seen on screen.">疊加</string>
     <string name="share_layout_side_by_side" translation_description="Caption of the share-layout choice that puts the camera photo and the star map next to each other.">並排</string>
-    <string name="share_shutter_button" translation_description="Accessibility label for the round shutter button that captures and shares the current through-camera view.">分享此畫面</string>
     <string name="share_failed_message" translation_description="Snackbar shown when capturing the sky image for sharing failed.">無法捕捉天空 — 請再試一次</string>
-    <string name="ar_exposure_auto" translation_description="Readout shown when a manual camera exposure slider sits at its automatic position.">自動</string>
 
     <!-- Time travel: entry button, dialog, and the player bar shown while travelling. -->
-    <string name="time_travel_button">時光旅行</string>
     <string name="time_travel_title">時光旅行</string>
     <string name="time_travel_visiting" translation_description="Readout in the time travel dialog showing the currently chosen destination date and time. %1$s is the formatted date and time.">正在造訪：%1$s</string>
     <string name="time_travel_pick_date" translation_description="Button in the time travel dialog that opens a date picker.">設定日期</string>
@@ -193,7 +141,6 @@
     <string name="time_travel_close_message">回到現在...</string>
 
     <!-- Location management. -->
-    <string name="location_button" translation_description="Button on the map screen that opens the location management sheet">位置</string>
     <string name="location_management_title">您的位置</string>
     <string name="location_source_auto">自動</string>
     <string name="location_source_manual">手動</string>
@@ -263,12 +210,10 @@
     <string name="object_info_tap_to_close">點擊以關閉</string>
 
     <!-- Image gallery -->
-    <string name="gallery_button" translation_description="Map-screen menu item that opens a gallery of photographs of celestial objects. Not the user\'s own photos - these are catalog images from sources such as NASA and ESA.">星空圖庫</string>
     <string name="gallery_title" translation_description="Title of the screen showing a gallery of photographs of celestial objects. Not the user\'s own photos - these are catalog images from sources such as NASA and ESA.">星空圖庫</string>
     <string name="gallery_back" translation_description="Content description for the back arrow leaving the gallery screen">返回</string>
 
     <!-- Settings screen (v1 wording where a v1 string existed) -->
-    <string name="settings_button">設定</string>
     <string name="settings_title">設定</string>
     <string name="settings_back" translation_description="Content description for the back arrow leaving the settings screen">返回</string>
     <string name="settings_ok">確定</string>
@@ -413,7 +358,6 @@
     <string name="diagnostics_cell">" (電信網路)"</string>
 
     <!-- Compass calibration screen (slice 15) -->
-    <string name="calibration_button">校正</string>
     <string name="calibration_heading_user">手機指南針</string>
     <string name="calibration_heading_warning">手機指南針需要注意</string>
     <string name="calibration_accuracy_unknown">校準：未知</string>
@@ -456,11 +400,8 @@
     <string name="warm_welcome_sensor_missing">缺失</string>
 
     <!-- Help dialog (slice 16) -->
-    <string name="help_button">說明</string>
-    <string name="tutorial_button">教學</string>
     <string name="help_dialog_title">說明</string>
     <string name="help_version" translation_description="Version line at the top of the Help screen. %1$s is the app version name">版本 %1$s</string>
-    <string name="whats_new_button" translation_description="Map-screen menu item that opens the What's New and Credits screen">最新消息</string>
     <string name="whats_new_screen_title" translation_description="Title of the screen showing the release notes and the credits">最新消息與鳴謝</string>
 
     <!-- The Help screen's search box, which filters the document to the matching sections. -->
@@ -483,7 +424,6 @@
     <string name="symbol_key_meteor_radiant_peak" translation_description="Symbol-key label: the brighter marker used when a meteor shower is near its peak activity">流星雨接近高峰期</string>
 
     <!-- The widgets catalogue reached from the map\'s overflow menu. -->
-    <string name="widgets_button" translation_description="Map-screen menu item that opens the list of home-screen widgets the app offers">小工具</string>
     <string name="widgets_sheet_title" translation_description="Title of the sheet listing the home-screen widgets the app offers">主畫面小工具</string>
     <string name="widgets_sheet_subtitle" translation_description="Subtitle of the widgets sheet, explaining what the listed widgets are for">將今晚的星空保留在您的主畫面。選擇一個來新增。</string>
 
@@ -563,12 +503,4 @@
     <string name="notif_action_mute_showers" translation_description="Notification action button that opens the system toggle for the meteor-shower channel">靜音流星雨</string>
     <string name="time_travel_stopped">時間旅行已暫停</string>
     <!-- Layers sheet: per-layer parameters (D87). -->
-    <string name="layer_param_disc_size">盤面大小</string>
-    <string name="layer_param_disc_size_true">真實比例</string>
-    <string name="layer_param_disc_size_true_desc">在任何縮放比例下，天體在天空中的真實大小。行星在放大前都只是小點。</string>
-    <string name="layer_param_disc_size_glyphs">符號</string>
-    <string name="layer_param_disc_size_glyphs_desc">依據每個天體的實際大小而非視覺大小來調整。在任何縮放比例下都易於查看。</string>
-    <string name="layer_param_disc_size_auto">穩定</string>
-    <string name="layer_param_disc_size_auto_desc">在縮放時保持螢幕上的固定大小，然後切換到真實大小。</string>
-    <string name="layer_param_expand">顯示 %1$s 的選項</string>
 </resources>

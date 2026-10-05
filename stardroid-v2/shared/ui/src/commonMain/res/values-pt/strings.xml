@@ -36,4 +36,80 @@
         <item>NO</item>
         <item>NNO</item>
     </string-array>
+    <string name="search_button">Pesquisar</string>
+    <string name="layer_stars">Estrelas</string>
+    <string name="layer_constellations">Constelações</string>
+    <string name="layer_deep_sky" translation_description="Toggle label for the layer showing deep-sky objects such as galaxies and nebulae.">Objetos de céu profundo</string>
+    <string name="layer_solar_system">Planetas</string>
+    <string name="layer_meteor_showers">Chuvas de Meteoro</string>
+    <string name="layer_satellites" translation_description="Toggle label for the layer showing artificial satellites such as the International Space Station.">Satélites</string>
+    <string name="layer_param_pass_alerts" translation_description="Label for the setting that turns on a notification shortly before a satellite passes overhead.">Alertas de passagem</string>
+    <string name="layer_param_pass_alerts_description" translation_description="Explains what the pass-alert setting does: a single notification before the best visible pass of the night.">Notificar-me antes da melhor passagem visível a cada noite</string>
+    <string name="layer_param_eclipse_alerts" translation_description="Label for the setting that turns on a notification before a lunar eclipse begins.">Alertas de eclipse</string>
+    <string name="layer_param_eclipse_alerts_description" translation_description="Explains what the eclipse-alert setting does: a single notification before a lunar eclipse starts.">Notificar-me antes do início de um eclipse lunar</string>
+    <string name="layer_param_altaz_grid_density" translation_description="Label for the alt/az grid's line-count setting.">Número de linhas</string>
+    <string name="layer_param_altaz_grid_density_coarse" translation_description="Option label for the alt/az grid's sparsest setting: 8 azimuth lines, 45 degrees apart.">Esparsa</string>
+    <string name="layer_param_altaz_grid_density_coarse_desc" translation_description="Explains the coarse alt/az grid density: 8 azimuth lines, matching the 8 compass points.">8 linhas de direção, correspondentes à rosa dos ventos</string>
+    <string name="layer_param_altaz_grid_density_medium" translation_description="Option label for the alt/az grid's default setting: 12 azimuth lines, 30 degrees apart.">Média</string>
+    <string name="layer_param_altaz_grid_density_medium_desc" translation_description="Explains the medium alt/az grid density: 12 azimuth lines, 30 degrees apart.">12 linhas de direção, separadas por 30°</string>
+    <string name="layer_param_altaz_grid_density_fine" translation_description="Option label for the alt/az grid's densest setting: 24 azimuth lines, 15 degrees apart.">Fina</string>
+    <string name="layer_param_altaz_grid_density_fine_desc" translation_description="Explains the fine alt/az grid density: 24 azimuth lines, matching the celestial grid's meridian count.">24 linhas de direção, correspondentes à grade celeste</string>
+    <string name="satellites_no_data" translation_description="Explanation shown when satellite orbital data has not been downloaded yet and so no satellites can be drawn.">
+    As posições dos satélites precisam de uma conexão com a internet para serem atualizadas.
+    </string>
+    <string name="satellites_refresh" translation_description="Button that tries to download satellite orbital data now.">Atualizar</string>
+    <string name="satellites_retry_soon" translation_description="Shown instead of a Refresh button when satellite data was just requested and cannot be requested again for a few minutes.">Tente novamente em alguns minutos</string>
+    <string name="satellites_retry_within_hour" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for up to an hour.">Tentar novamente em uma hora</string>
+    <string name="satellites_retry_hours" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for several hours.">Tentar novamente em algumas horas</string>
+    <string name="satellites_retry_tomorrow" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again until the next day.">Tentar novamente amanhã</string>
+    <string name="satellites_retry_days" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for several days.">Tentar novamente em alguns dias</string>
+    <string name="layer_grid" translation_description="Toggle label for the layer showing the right ascension / declination grid.">Grade celeste</string>
+    <string name="layer_horizon">Horizonte</string>
+    <string name="layer_ecliptic">Eclíptica</string>
+    <string name="layer_altaz_grid" translation_description="Toggle label for the layer showing the altitude/azimuth (horizontal) coordinate grid, for naked-eye or manual alt-az mount observers.">Grade Alt/Az</string>
+    <string name="layer_sky_gradient">Gradiente de céu</string>
+    <string name="layers_sheet_title" translation_description="Title of the bottom sheet listing sky map layers the user can show or hide.">Camadas</string>
+    <string name="layers_group_objects" translation_description="Layers-sheet group header for layers that draw sky objects (stars, planets, deep-sky objects).">Objetos</string>
+    <string name="layers_group_reference" translation_description="Layers-sheet group header for reference elements drawn over the sky (coordinate grid, horizon, ecliptic).">Referência</string>
+    <string name="layers_group_display" translation_description="Layers-sheet group header for display settings that change how the sky is rendered rather than what is drawn.">Exibição</string>
+    <string name="show_layers" translation_description="Accessibility description and label for the button opening the layer-visibility sheet, which holds the layers that do not fit on the rail plus display options.">Mais camadas e opções</string>
+    <string name="more_button" translation_description="Accessibility label and tooltip for the map-screen button (three vertical dots) opening the overflow menu of further destinations such as Gallery and Settings.">Mais opções</string>
+    <string name="night_mode">Modo Noturno</string>
+    <string name="switch_to_manual" translation_description="Tooltip and accessibility label for the button that switches the map from auto (sensor-driven) mode to manual (drag) mode.">Mudar para o modo manual</string>
+    <string name="switch_to_auto" translation_description="Tooltip and accessibility label for the button that switches the map from manual (drag) mode to auto (sensor-driven) mode.">Mudar para o modo automático</string>
+    <string name="layer_hud" translation_description="Layers-sheet Display toggle that shows the heads-up readout of where the phone is pointing (compass direction and altitude) over the star map.">Leitura de apontamento</string>
+    <string name="layer_camera" translation_description="Layers-sheet Display toggle that shows the live rear-camera image behind the star map, so the drawn sky overlays the real one.">Modo com câmera</string>
+    <string name="layer_camera_needs_sensors" translation_description="Subtitle explaining why the through-camera toggle is disabled: the device has no usable motion sensors, and the mode needs the map to follow where the phone points.">Precisa de sensores de movimento que este dispositivo não possui</string>
+    <string name="ar_exposure_slider" translation_description="Accessibility label for the slider adjusting the camera\'s exposure compensation while through-camera mode is on.">Exposição da câmera</string>
+    <string name="ar_dimmer_slider" translation_description="Accessibility label for the slider dimming the camera image behind the star map while through-camera mode is on.">Atenuador da câmera</string>
+    <!-- tm:omitted name="ar_iso_slider_label" reason="identical_to_source" -->
+    <string name="ar_iso_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual ISO sensitivity in through-camera mode.">ISO da câmera</string>
+    <string name="ar_shutter_slider_label" translation_description="Very short label for the temporary developer slider setting the camera\'s manual shutter (exposure) time in through-camera mode.">Obtur.</string>
+    <string name="ar_shutter_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual shutter (exposure) time in through-camera mode.">Tempo do obturador da câmera</string>
+    <string name="share_button" translation_description="Overflow-menu row that captures the current sky view as an image and opens the system share sheet.">Compartilhar o céu</string>
+    <string name="share_shutter_button" translation_description="Accessibility label for the round shutter button that captures and shares the current through-camera view.">Compartilhar esta vista</string>
+    <!-- tm:omitted name="ar_exposure_auto" reason="identical_to_source" -->
+    <string name="time_travel_button">Viagem no tempo</string>
+    <string name="location_button" translation_description="Button on the map screen that opens the location management sheet">Localização</string>
+    <string name="gallery_button" translation_description="Map-screen menu item that opens a gallery of photographs of celestial objects. Not the user\'s own photos - these are catalog images from sources such as NASA and ESA.">Galeria do céu</string>
+    <string name="settings_button">Configurações</string>
+    <string name="calibration_button">Calibrar</string>
+    <string name="help_button">Ajuda</string>
+    <!-- tm:omitted name="tutorial_button" reason="identical_to_source" -->
+    <string name="whats_new_button" translation_description="Map-screen menu item that opens the What's New and Credits screen">Novidades</string>
+    <!-- tm:omitted name="widgets_button" reason="identical_to_source" -->
+    <string name="layer_param_disc_size">Tamanho do disco</string>
+    <string name="layer_param_disc_size_true">Escala real</string>
+    <string name="layer_param_disc_size_true_desc">
+    Tamanho real no céu em cada zoom. Os planetas são pontos até você dar zoom bem de perto.
+    </string>
+    <string name="layer_param_disc_size_glyphs">Glifos</string>
+    <string name="layer_param_disc_size_glyphs_desc">
+    Dimensionado pelo tamanho real de cada corpo, não pelo que parece. Fácil de ver em qualquer zoom.
+    </string>
+    <string name="layer_param_disc_size_auto">Fixo</string>
+    <string name="layer_param_disc_size_auto_desc">
+    Mantém um tamanho fixo na tela ao aplicar zoom e depois muda para o tamanho real.
+    </string>
+    <string name="layer_param_expand">Mostrar opções para %1$s</string>
 </resources>

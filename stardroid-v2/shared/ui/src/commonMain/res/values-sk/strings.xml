@@ -36,4 +36,78 @@
         <item>SZ</item>
         <item>SSZ</item>
     </string-array>
+    <string name="search_button">Hľadať</string>
+    <string name="layer_stars">Hviezdy</string>
+    <string name="layer_constellations">Súhvezdia</string>
+    <string name="layer_deep_sky" translation_description="Toggle label for the layer showing deep-sky objects such as galaxies and nebulae.">Objekty hlbokého vesmíru</string>
+    <string name="layer_solar_system">Planéty</string>
+    <string name="layer_meteor_showers">Meteorické roje</string>
+    <string name="layer_satellites" translation_description="Toggle label for the layer showing artificial satellites such as the International Space Station.">Satelity</string>
+    <string name="layer_param_pass_alerts" translation_description="Label for the setting that turns on a notification shortly before a satellite passes overhead.">Upozornenia na prelety</string>
+    <string name="layer_param_pass_alerts_description" translation_description="Explains what the pass-alert setting does: a single notification before the best visible pass of the night.">Upozorniť ma pred najlepším viditeľným preletom každú noc</string>
+    <string name="layer_param_eclipse_alerts" translation_description="Label for the setting that turns on a notification before a lunar eclipse begins.">Upozornenia na zatmenia</string>
+    <string name="layer_param_eclipse_alerts_description" translation_description="Explains what the eclipse-alert setting does: a single notification before a lunar eclipse starts.">Upozorniť ma pred začiatkom zatmenia Mesiaca</string>
+    <string name="layer_param_altaz_grid_density" translation_description="Label for the alt/az grid's line-count setting.">Počet čiar</string>
+    <string name="layer_param_altaz_grid_density_coarse" translation_description="Option label for the alt/az grid's sparsest setting: 8 azimuth lines, 45 degrees apart.">Hrubá</string>
+    <string name="layer_param_altaz_grid_density_coarse_desc" translation_description="Explains the coarse alt/az grid density: 8 azimuth lines, matching the 8 compass points.">8 smerových čiar zodpovedajúcich ružici kompasu</string>
+    <string name="layer_param_altaz_grid_density_medium" translation_description="Option label for the alt/az grid's default setting: 12 azimuth lines, 30 degrees apart.">Stredná</string>
+    <string name="layer_param_altaz_grid_density_medium_desc" translation_description="Explains the medium alt/az grid density: 12 azimuth lines, 30 degrees apart.">12 smerových čiar, každých 30°</string>
+    <string name="layer_param_altaz_grid_density_fine" translation_description="Option label for the alt/az grid's densest setting: 24 azimuth lines, 15 degrees apart.">Jemná</string>
+    <string name="layer_param_altaz_grid_density_fine_desc" translation_description="Explains the fine alt/az grid density: 24 azimuth lines, matching the celestial grid's meridian count.">24 smerových čiar zodpovedajúcich nebeskej sieti</string>
+    <string name="satellites_no_data" translation_description="Explanation shown when satellite orbital data has not been downloaded yet and so no satellites can be drawn.">Polohy satelitov vyžadujú na aktualizáciu internetové pripojenie.</string>
+    <string name="satellites_refresh" translation_description="Button that tries to download satellite orbital data now.">Obnoviť</string>
+    <string name="satellites_retry_soon" translation_description="Shown instead of a Refresh button when satellite data was just requested and cannot be requested again for a few minutes.">Skúste to znova o pár minút</string>
+    <string name="satellites_retry_within_hour" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for up to an hour.">Skúste to znova do hodiny</string>
+    <string name="satellites_retry_hours" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for several hours.">Skúste to znova o pár hodín</string>
+    <string name="satellites_retry_tomorrow" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again until the next day.">Skúste to znova zajtra</string>
+    <string name="satellites_retry_days" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for several days.">Skúste to znova o pár dní</string>
+    <string name="layer_grid" translation_description="Toggle label for the layer showing the right ascension / declination grid.">Nebeská mriežka</string>
+    <string name="layer_horizon">Horizont</string>
+    <string name="layer_ecliptic">Ekliptika</string>
+    <string name="layer_altaz_grid" translation_description="Toggle label for the layer showing the altitude/azimuth (horizontal) coordinate grid, for naked-eye or manual alt-az mount observers.">Mriežka Alt/Az</string>
+    <string name="layer_sky_gradient">Gradient oblohy</string>
+    <string name="layers_sheet_title" translation_description="Title of the bottom sheet listing sky map layers the user can show or hide.">Vrstvy</string>
+    <string name="layers_group_objects" translation_description="Layers-sheet group header for layers that draw sky objects (stars, planets, deep-sky objects).">Objekty</string>
+    <string name="layers_group_reference" translation_description="Layers-sheet group header for reference elements drawn over the sky (coordinate grid, horizon, ecliptic).">Referencia</string>
+    <string name="layers_group_display" translation_description="Layers-sheet group header for display settings that change how the sky is rendered rather than what is drawn.">Zobrazenie</string>
+    <string name="show_layers" translation_description="Accessibility description and label for the button opening the layer-visibility sheet, which holds the layers that do not fit on the rail plus display options.">Ďalšie vrstvy a možnosti</string>
+    <string name="more_button" translation_description="Accessibility label and tooltip for the map-screen button (three vertical dots) opening the overflow menu of further destinations such as Gallery and Settings.">Ďalšie možnosti</string>
+    <string name="night_mode">Nočný režim</string>
+    <string name="switch_to_manual" translation_description="Tooltip and accessibility label for the button that switches the map from auto (sensor-driven) mode to manual (drag) mode.">Prepnúť do manuálneho režimu</string>
+    <string name="switch_to_auto" translation_description="Tooltip and accessibility label for the button that switches the map from manual (drag) mode to auto (sensor-driven) mode.">Prepnúť do automatického režimu</string>
+    <string name="layer_hud" translation_description="Layers-sheet Display toggle that shows the heads-up readout of where the phone is pointing (compass direction and altitude) over the star map.">Ukazovateľ smeru</string>
+    <string name="layer_camera" translation_description="Layers-sheet Display toggle that shows the live rear-camera image behind the star map, so the drawn sky overlays the real one.">Režim cez kameru</string>
+    <string name="layer_camera_needs_sensors" translation_description="Subtitle explaining why the through-camera toggle is disabled: the device has no usable motion sensors, and the mode needs the map to follow where the phone points.">Vyžaduje pohybové senzory, ktoré toto zariadenie nemá</string>
+    <string name="ar_exposure_slider" translation_description="Accessibility label for the slider adjusting the camera\'s exposure compensation while through-camera mode is on.">Expozícia kamery</string>
+    <string name="ar_dimmer_slider" translation_description="Accessibility label for the slider dimming the camera image behind the star map while through-camera mode is on.">Stmievač fotoaparátu</string>
+    <!-- tm:omitted name="ar_iso_slider_label" reason="identical_to_source" -->
+    <string name="ar_iso_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual ISO sensitivity in through-camera mode.">ISO fotoaparátu</string>
+    <!-- tm:omitted name="ar_shutter_slider_label" reason="identical_to_source" -->
+    <string name="ar_shutter_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual shutter (exposure) time in through-camera mode.">Čas uzávierky fotoaparátu</string>
+    <string name="share_button" translation_description="Overflow-menu row that captures the current sky view as an image and opens the system share sheet.">Zdieľať oblohu</string>
+    <string name="share_shutter_button" translation_description="Accessibility label for the round shutter button that captures and shares the current through-camera view.">Zdieľať tento pohľad</string>
+    <!-- tm:omitted name="ar_exposure_auto" reason="identical_to_source" -->
+    <string name="time_travel_button">Cestovanie v čase</string>
+    <string name="location_button" translation_description="Button on the map screen that opens the location management sheet">Poloha</string>
+    <string name="gallery_button" translation_description="Map-screen menu item that opens a gallery of photographs of celestial objects. Not the user\'s own photos - these are catalog images from sources such as NASA and ESA.">Galéria oblohy</string>
+    <string name="settings_button">Nastavenia</string>
+    <string name="calibration_button">Kalibrovať</string>
+    <string name="help_button">Pomoc</string>
+    <string name="tutorial_button">Návod</string>
+    <string name="whats_new_button" translation_description="Map-screen menu item that opens the What's New and Credits screen">Čo je nové</string>
+    <string name="widgets_button" translation_description="Map-screen menu item that opens the list of home-screen widgets the app offers">Miniaplikácie</string>
+    <string name="layer_param_disc_size">Veľkosť disku</string>
+    <string name="layer_param_disc_size_true">Skutočná mierka</string>
+    <string name="layer_param_disc_size_true_desc">
+    Skutočná veľkosť na oblohe pri každom priblížení. Planéty sú bodky, kým nepriblížite úplne.
+    </string>
+    <string name="layer_param_disc_size_glyphs">Glyfy</string>
+    <string name="layer_param_disc_size_glyphs_desc">
+    Veľkosťou podľa skutočnej veľkosti každého telesa, nie podľa toho, ako vyzerá. Ľahko viditeľné pri akomkoľvek priblížení.
+    </string>
+    <string name="layer_param_disc_size_auto">Konštantné</string>
+    <string name="layer_param_disc_size_auto_desc">
+    Zachováva si pevnú veľkosť na obrazovke pri priblížení, potom sa prepne na skutočnú veľkosť.
+    </string>
+    <string name="layer_param_expand">Zobraziť možnosti pre %1$s</string>
 </resources>

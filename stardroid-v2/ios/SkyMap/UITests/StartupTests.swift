@@ -10,7 +10,8 @@
 import XCTest
 
 /// The first-launch path, captured as test attachments: the EULA, the location prompt it
-/// holds back until accepted, and the map with the HUD, in day and night mode.
+/// holds back until accepted, then the map with the shared chrome, in day and night mode, and
+/// the Layers sheet.
 final class StartupTests: XCTestCase {
     func testEulaThenMap() {
         let app = XCUIApplication()
@@ -21,12 +22,19 @@ final class StartupTests: XCTestCase {
         sleep(4)
         capture(self, "2-map")
 
-        let night = app.buttons["nightModeToggle"]
+        // The shared map chrome's own controls, found by their accessibility labels.
+        let night = app.buttons["Night mode"]
         if night.waitForExistence(timeout: 5) {
             night.tap()
             sleep(2)
             capture(self, "3-night")
             night.tap()
+        }
+        let layers = app.buttons["More layers and options"]
+        if layers.waitForExistence(timeout: 5) {
+            layers.tap()
+            sleep(2)
+            capture(self, "4-layers-sheet")
         }
     }
 }

@@ -30,7 +30,6 @@
     <string name="pluto">冥王星</string>
 
     <!-- Search (map-screen search dialog and overlay). -->
-    <string name="search_button">検索</string>
     <string name="search_label">天体を検索</string>
     <string name="search_hint" translation_description="Placeholder text in the search field showing example search targets.">例: 火星 または M31</string>
     <string name="search_coordinates_hint" translation_description="Helper text under the search field showing that celestial coordinates (right ascension and declination) can be typed directly, with two example formats.">または座標を入力: 12h 30m, +45° または 187.5 -45.2</string>
@@ -42,12 +41,6 @@
     <string name="search_overlay_prompt">携帯を矢印の方に向けます</string>
 
     <!-- Layer names in the layer-visibility sheet. -->
-    <string name="layer_stars">恒星</string>
-    <string name="layer_constellations">星座</string>
-    <string name="layer_deep_sky" translation_description="Toggle label for the layer showing deep-sky objects such as galaxies and nebulae.">深空天体</string>
-    <string name="layer_solar_system">惑星</string>
-    <string name="layer_meteor_showers">流星群</string>
-    <string name="layer_satellites" translation_description="Toggle label for the layer showing artificial satellites such as the International Space Station.">人工衛星</string>
     <string name="channel_passes_name" translation_description="Name of the notification channel for alerts shortly before a satellite passes overhead.">衛星通過</string>
     <string name="channel_passes_description" translation_description="Description of the satellite-pass notification channel.">夜間の最もよく見える通過の直前に一度だけ通知</string>
     <string name="notif_pass_title" translation_description="Title of the notification sent shortly before a satellite passes overhead. %1$s is the satellite name.">%1$s がまもなく頭上を通過します</string>
@@ -58,17 +51,6 @@
     <string name="notif_eclipse_text" translation_description="Body of the lunar eclipse notification, telling the user when it begins. %1$s is a time.">約%1$s頃に始まります — 外に出て見る価値があります</string>
     <string name="satellite_name_iss" translation_description="Display name for the International Space Station.">宇宙ステーション</string>
     <string name="satellite_name_tiangong" translation_description="Display name for the Chinese space station Tiangong.">天宮</string>
-    <string name="layer_param_pass_alerts" translation_description="Label for the setting that turns on a notification shortly before a satellite passes overhead.">通過通知</string>
-    <string name="layer_param_pass_alerts_description" translation_description="Explains what the pass-alert setting does: a single notification before the best visible pass of the night.">毎晩の最もよく見える通過の前に通知する</string>
-    <string name="layer_param_eclipse_alerts" translation_description="Label for the setting that turns on a notification before a lunar eclipse begins.">月食通知</string>
-    <string name="layer_param_eclipse_alerts_description" translation_description="Explains what the eclipse-alert setting does: a single notification before a lunar eclipse starts.">月食が始まる前に通知する</string>
-    <string name="layer_param_altaz_grid_density" translation_description="Label for the alt/az grid's line-count setting.">線の数</string>
-    <string name="layer_param_altaz_grid_density_coarse" translation_description="Option label for the alt/az grid's sparsest setting: 8 azimuth lines, 45 degrees apart.">粗い</string>
-    <string name="layer_param_altaz_grid_density_coarse_desc" translation_description="Explains the coarse alt/az grid density: 8 azimuth lines, matching the 8 compass points.">方位配分に合わせた8方向線</string>
-    <string name="layer_param_altaz_grid_density_medium" translation_description="Option label for the alt/az grid's default setting: 12 azimuth lines, 30 degrees apart.">中</string>
-    <string name="layer_param_altaz_grid_density_medium_desc" translation_description="Explains the medium alt/az grid density: 12 azimuth lines, 30 degrees apart.">30°間隔の12方向線</string>
-    <string name="layer_param_altaz_grid_density_fine" translation_description="Option label for the alt/az grid's densest setting: 24 azimuth lines, 15 degrees apart.">細かい</string>
-    <string name="layer_param_altaz_grid_density_fine_desc" translation_description="Explains the fine alt/az grid density: 24 azimuth lines, matching the celestial grid's meridian count.">天球グリッドに合わせた24方向線</string>
     <string name="satellite_description" translation_description="Short description shown on the info card for an artificial satellite.">地球低軌道にある人工衛星で、暗い空に太陽光を浴びて輝いています。数分で地平線から地平線までを、安定して点滅することなく横切ります。</string>
     <string name="satellite_next_pass" translation_description="Heading above the next visible pass details on a satellite\'s info card.">次の見える通過</string>
     <string name="satellite_pass_when" translation_description="When and how high the next satellite pass will be. %1$s is a time, %2$s is a compass direction, %3$d is an angle in degrees.">%1$s、%2$sに昇り、%3$d°に達します</string>
@@ -82,63 +64,29 @@
     <string name="object_info_eclipse_totality" translation_description="The start and end time of totality during a total lunar eclipse. %1$s and %2$s are times.">皆既 %1$s – %2$s</string>
     <string name="tonight_satellite_pass" translation_description="Tonight-widget row announcing a visible satellite pass. %1$s is the satellite name, %2$s is a time of day.">%1$s が%2$sに通過します</string>
     <string name="tonight_trailing_pass" translation_description="Small trailing note on a satellite pass row. %1$s is a compass direction, %2$d is an angle in degrees, %3$.1f is a brightness magnitude.">昇り %1$s、%2$d°、等級 %3$.1f</string>
-    <string name="satellites_no_data" translation_description="Explanation shown when satellite orbital data has not been downloaded yet and so no satellites can be drawn.">人工衛星の位置を更新するにはインターネット接続が必要です。</string>
-    <string name="satellites_refresh" translation_description="Button that tries to download satellite orbital data now.">更新</string>
-    <string name="satellites_retry_soon" translation_description="Shown instead of a Refresh button when satellite data was just requested and cannot be requested again for a few minutes.">数分後にもう一度お試しください</string>
-    <string name="satellites_retry_within_hour" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for up to an hour.">1時間以内にもう一度お試しください</string>
-    <string name="satellites_retry_hours" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for several hours.">数時間後にもう一度お試しください</string>
-    <string name="satellites_retry_tomorrow" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again until the next day.">明日もう一度お試しください</string>
-    <string name="satellites_retry_days" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for several days.">数日後にもう一度お試しください</string>
-    <string name="layer_grid" translation_description="Toggle label for the layer showing the right ascension / declination grid.">天球グリッド</string>
-    <string name="layer_horizon">地平線</string>
-    <string name="layer_ecliptic">黄道</string>
-    <string name="layer_altaz_grid" translation_description="Toggle label for the layer showing the altitude/azimuth (horizontal) coordinate grid, for naked-eye or manual alt-az mount observers.">高度/方位グリッド</string>
-    <string name="layer_sky_gradient">空のグラデーション</string>
 
     <!-- Map screen controls. -->
-    <string name="layers_sheet_title" translation_description="Title of the bottom sheet listing sky map layers the user can show or hide.">レイヤー</string>
-    <string name="layers_group_objects" translation_description="Layers-sheet group header for layers that draw sky objects (stars, planets, deep-sky objects).">天体</string>
-    <string name="layers_group_reference" translation_description="Layers-sheet group header for reference elements drawn over the sky (coordinate grid, horizon, ecliptic).">基準</string>
-    <string name="layers_group_display" translation_description="Layers-sheet group header for display settings that change how the sky is rendered rather than what is drawn.">表示</string>
-    <string name="show_layers" translation_description="Accessibility description and label for the button opening the layer-visibility sheet, which holds the layers that do not fit on the rail plus display options.">その他のレイヤーとオプション</string>
-    <string name="more_button" translation_description="Accessibility label and tooltip for the map-screen button (three vertical dots) opening the overflow menu of further destinations such as Gallery and Settings.">その他のオプション</string>
-    <string name="night_mode">ナイトモード</string>
-    <string name="switch_to_manual" translation_description="Tooltip and accessibility label for the button that switches the map from auto (sensor-driven) mode to manual (drag) mode.">マニュアルモードに切り替える</string>
-    <string name="switch_to_auto" translation_description="Tooltip and accessibility label for the button that switches the map from manual (drag) mode to auto (sensor-driven) mode.">自動モードに切り替える</string>
     <string name="no_sensor_warning" translation_description="Warning shown when the device lacks the motion sensors needed to point the map at the sky automatically.">このデバイスにはコンパスまたはモーションセンサーがないため、Sky Mapはデバイスを向けた方向に追従できません。代わりに、手動でマップをドラッグしてください。</string>
     <!-- tm:omitted name="no_sensor_warning_dismiss" reason="identical_to_source" -->
 
     <!-- The map HUD (map-hud.md, D65): the top-right pointing readout shown with the chrome. -->
     <string name="hud_alignment_reset_message" translation_description="Snackbar confirming the sensor-alignment correction was cleared; shown with an Undo action.">調整補正をリセットしました</string>
 
-    <string name="layer_hud" translation_description="Layers-sheet Display toggle that shows the heads-up readout of where the phone is pointing (compass direction and altitude) over the star map.">ポインティング表示</string>
 
     <!-- Through-camera (AR) mode (camera-ar-mode.md, D64). -->
-    <string name="layer_camera" translation_description="Layers-sheet Display toggle that shows the live rear-camera image behind the star map, so the drawn sky overlays the real one.">カメラ透過モード</string>
-    <string name="layer_camera_needs_sensors" translation_description="Subtitle explaining why the through-camera toggle is disabled: the device has no usable motion sensors, and the mode needs the map to follow where the phone points.">このデバイスには必要なモーションセンサーがありません</string>
     <string name="ar_auto_mode_snackbar" translation_description="Snackbar shown when turning on through-camera mode switched the map from manual dragging back to automatic sensor pointing.">カメラビューで自動モードがオンになりました</string>
     <string name="ar_permission_denied" translation_description="Snackbar shown when the user declined the camera permission that through-camera mode needs.">カメラ透過モードにはカメラの権限が必要です</string>
     <string name="ar_permission_settings_action">設定</string>
-    <string name="ar_exposure_slider" translation_description="Accessibility label for the slider adjusting the camera\'s exposure compensation while through-camera mode is on.">カメラ露出</string>
     <string name="ar_alignment_adjusted_message" translation_description="Snackbar shown after the user drags the star map to align it with the camera image; shown with an Undo action that reverts the whole drag.">マップの調整をしました</string>
-    <string name="ar_dimmer_slider" translation_description="Accessibility label for the slider dimming the camera image behind the star map while through-camera mode is on.">カメラ減光</string>
-    <!-- tm:omitted name="ar_iso_slider_label" reason="identical_to_source" -->
-    <string name="ar_iso_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual ISO sensitivity in through-camera mode.">カメラISO</string>
-    <string name="ar_shutter_slider_label" translation_description="Very short label for the temporary developer slider setting the camera\'s manual shutter (exposure) time in through-camera mode.">シャッター</string>
-    <string name="ar_shutter_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual shutter (exposure) time in through-camera mode.">カメラシャッター時間</string>
-    <string name="share_button" translation_description="Overflow-menu row that captures the current sky view as an image and opens the system share sheet.">空を共有</string>
     <string name="share_chooser_title" translation_description="Title of the system share sheet when sharing a captured sky image.">この空を共有</string>
     <string name="share_invitation" translation_description="Short invitation stamped on the footer of shared sky images, above the store link.">見ているものを確認 — Sky Mapを無料で入手</string>
     <string name="share_text" translation_description="Text accompanying a shared sky image in apps that accept both an image and text. %1$s is the app-store link.">見ているものを確認 — Sky Mapを無料で入手: %1$s</string>
     <!-- tm:omitted name="share_store_link" reason="identical_to_source" -->
     <string name="share_layout_overlay" translation_description="Caption of the share-layout choice that draws the star map over the camera photo, as seen on screen.">オーバーレイ</string>
     <string name="share_layout_side_by_side" translation_description="Caption of the share-layout choice that puts the camera photo and the star map next to each other.">並べて表示</string>
-    <string name="share_shutter_button" translation_description="Accessibility label for the round shutter button that captures and shares the current through-camera view.">このビューを共有</string>
     <string name="share_failed_message" translation_description="Snackbar shown when capturing the sky image for sharing failed.">空をキャプチャできませんでした — もう一度お試しください</string>
-    <string name="ar_exposure_auto" translation_description="Readout shown when a manual camera exposure slider sits at its automatic position.">自動</string>
 
     <!-- Time travel: entry button, dialog, and the player bar shown while travelling. -->
-    <string name="time_travel_button">タイムトラベル</string>
     <string name="time_travel_title">タイムトラベル</string>
     <string name="time_travel_visiting" translation_description="Readout in the time travel dialog showing the currently chosen destination date and time. %1$s is the formatted date and time.">訪問中: %1$s</string>
     <string name="time_travel_pick_date" translation_description="Button in the time travel dialog that opens a date picker.">日付を設定</string>
@@ -193,7 +141,6 @@
     <string name="time_travel_close_message">現在へ...</string>
 
     <!-- Location management. -->
-    <string name="location_button" translation_description="Button on the map screen that opens the location management sheet">位置情報</string>
     <string name="location_management_title">現在地</string>
     <string name="location_source_auto">自動</string>
     <string name="location_source_manual">手動</string>
@@ -263,12 +210,10 @@
     <string name="object_info_tap_to_close">タップして閉じる</string>
 
     <!-- Image gallery -->
-    <string name="gallery_button" translation_description="Map-screen menu item that opens a gallery of photographs of celestial objects. Not the user\'s own photos - these are catalog images from sources such as NASA and ESA.">天体ギャラリー</string>
     <string name="gallery_title" translation_description="Title of the screen showing a gallery of photographs of celestial objects. Not the user\'s own photos - these are catalog images from sources such as NASA and ESA.">天体ギャラリー</string>
     <string name="gallery_back" translation_description="Content description for the back arrow leaving the gallery screen">戻る</string>
 
     <!-- Settings screen (v1 wording where a v1 string existed) -->
-    <string name="settings_button">設定</string>
     <string name="settings_title">設定</string>
     <string name="settings_back" translation_description="Content description for the back arrow leaving the settings screen">戻る</string>
     <!-- tm:omitted name="settings_ok" reason="identical_to_source" -->
@@ -419,7 +364,6 @@
     <string name="diagnostics_cell">" (モバイル)"</string>
 
     <!-- Compass calibration screen (slice 15) -->
-    <string name="calibration_button">キャリブレーション</string>
     <string name="calibration_heading_user">スマートフォンのコンパス</string>
     <string name="calibration_heading_warning">スマートフォンのコンパスの調整が必要です</string>
     <string name="calibration_accuracy_unknown">キャリブレーション: 不明</string>
@@ -467,11 +411,8 @@
     <string name="warm_welcome_sensor_missing">なし</string>
 
     <!-- Help dialog (slice 16) -->
-    <string name="help_button">ヘルプ</string>
-    <string name="tutorial_button">チュートリアル</string>
     <string name="help_dialog_title">ヘルプ</string>
     <string name="help_version" translation_description="Version line at the top of the Help screen. %1$s is the app version name">バージョン%1$s</string>
-    <string name="whats_new_button" translation_description="Map-screen menu item that opens the What's New and Credits screen">新機能</string>
     <string name="whats_new_screen_title" translation_description="Title of the screen showing the release notes and the credits">新機能とクレジット</string>
 
     <!-- The Help screen's search box, which filters the document to the matching sections. -->
@@ -494,7 +435,6 @@
     <string name="symbol_key_meteor_radiant_peak" translation_description="Symbol-key label: the brighter marker used when a meteor shower is near its peak activity">ピークに近い流星群</string>
 
     <!-- The widgets catalogue reached from the map\'s overflow menu. -->
-    <string name="widgets_button" translation_description="Map-screen menu item that opens the list of home-screen widgets the app offers">ウィジェット</string>
     <string name="widgets_sheet_title" translation_description="Title of the sheet listing the home-screen widgets the app offers">ホーム画面ウィジェット</string>
     <string name="widgets_sheet_subtitle" translation_description="Subtitle of the widgets sheet, explaining what the listed widgets are for">今夜の空をホーム画面に表示しましょう。追加するウィジェットを選択してください。</string>
 
@@ -574,12 +514,4 @@
     <string name="notif_action_mute_showers" translation_description="Notification action button that opens the system toggle for the meteor-shower channel">流星群の通知をオフにする</string>
     <string name="time_travel_stopped">タイムトラベル一時停止</string>
     <!-- Layers sheet: per-layer parameters (D87). -->
-    <string name="layer_param_disc_size">ディスクサイズ</string>
-    <string name="layer_param_disc_size_true">実寸大</string>
-    <string name="layer_param_disc_size_true_desc">どのズームレベルでも空での実際のサイズ。惑星はズームインするまで点として表示されます。</string>
-    <string name="layer_param_disc_size_glyphs">グリフ</string>
-    <string name="layer_param_disc_size_glyphs_desc">各天体の実際の大きさに基づいてサイズが決定され、見た目の大きさではありません。どのズームレベルでも見やすいです。</string>
-    <string name="layer_param_disc_size_auto">固定</string>
-    <string name="layer_param_disc_size_auto_desc">ズームしても画面上で固定サイズを維持し、その後実寸大に切り替わります。</string>
-    <string name="layer_param_expand">%1$sのオプションを表示</string>
 </resources>

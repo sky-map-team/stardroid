@@ -1,6 +1,7 @@
 import org.gradle.api.artifacts.VersionCatalogsExtension
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 import skymap.strings.ConvertAndroidStrings
+import skymap.useDatetimeCompat
 
 // Shared Compose Multiplatform UI (D134): screens both apps draw, written once in commonMain with
 // their strings as Compose resources. skymap.kmp-android-library plus the Compose compiler and
@@ -38,3 +39,6 @@ val convertAndroidStrings =
 compose.resources {
     customDirectory("commonMain", convertAndroidStrings.flatMap { it.composeResources })
 }
+
+// The iOS configurations only (see skymap.DatetimeCompat): Android stays on kotlinx-datetime 0.6.1.
+useDatetimeCompat { it.name.contains("ios", ignoreCase = true) }
