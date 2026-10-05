@@ -83,9 +83,10 @@ three surfaces go quiet. Withdrawing a single message uses `remove`.
   access on `sky-map-1286` (check `gcloud auth list`; `skymapdevs@gmail.com` normally has it).
   If a call returns 401/403, tell the user to run `! gcloud auth login` and retry.
 - The script reads the live template, edits only the `announcements` (and, for
-  `enable`/`disable`, `announcements_enabled`) parameters, and PUTs it back with the `If-Match`
-  ETag, so other parameters are untouched and a concurrent console edit makes the publish fail
-  rather than get overwritten.
+  `enable`/`disable`, `announcements_enabled`) parameters, and PUTs the rest back unchanged.
+  The API returns no ETag, so the PUT is unconditional; immediately before it the script
+  re-reads the template and aborts if the version number moved (someone published in between).
+  That narrows, but doesn't eliminate, the window for overwriting a concurrent console edit.
 - It never publishes without `--publish`, and refuses any message the app's parser would
   drop (bad dates, no `en`, unknown surfaces, duplicate id).
 - Remote Config keeps template version history, so a bad publish can be rolled back in the

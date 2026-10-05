@@ -193,6 +193,15 @@ def main():
     if not args.publish:
         print("\nDRY RUN — nothing was published. Re-run with --publish to apply.")
         return
+    # Remote Config's GET does not return an ETag here, so If-Match can't guard the write.
+    # Re-read and compare the template version instead: if someone (e.g. the console) published
+    # since we read it, abort rather than overwrite their change. Small race window remains.
+    current, _ = call("GET")
+    if current.get("version", {}).get("versionNumber") != template.get("version", {}).get(
+        "versionNumber"
+    ):
+        sys.exit("Remote Config changed while preparing this publish. Re-run to start from the "
+                 "latest version.")
     call("PUT", template, etag)
     print("\nPublished. Devices pick it up on their next Remote Config fetch (up to ~12 h).")
 
