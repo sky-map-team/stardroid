@@ -3,4 +3,37 @@
     <string name="eula_title">服務條款</string>
     <string name="dialog_accept">接受</string>
     <string name="dialog_decline">不，謝謝</string>
+    <string name="hud_ra_label" translation_description="Map-HUD row label: right ascension of the point at the centre of the screen. Standard astronomy abbreviation; keep short.">赤經</string>
+    <string name="hud_dec_label" translation_description="Map-HUD row label: declination of the point at the centre of the screen. Standard astronomy abbreviation; keep short.">赤緯</string>
+    <string name="hud_alt_label" translation_description="Map-HUD row label: altitude (angle above the horizon) of the point at the centre of the screen. Keep short.">高度</string>
+    <string name="hud_az_label" translation_description="Map-HUD row label: azimuth (compass bearing) of the point at the centre of the screen. Keep short.">方位</string>
+    <string name="hud_fov_label" translation_description="Map-HUD row label: the field of view (how many degrees of sky the screen spans). Keep short.">視野</string>
+    <string name="hud_correction_label" translation_description="Map-HUD row label for the manual sensor-alignment correction the user set by dragging. Keep very short.">調整</string>
+    <string name="hud_ra_value" translation_description="Right ascension in the conventional hours-and-minutes notation, e.g. \'18h 38m\'. %1$d is hours (0-23), %2$02d is minutes (00-59).">%1$d時 %2$02d分</string>
+    <!-- tm:omitted name="hud_signed_degrees_value" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_azimuth_value" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_fov_value" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_fov_value_fine" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_fov_value_finest" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_correction_value" reason="identical_to_source" -->
+    <string name="hud_correction_reset" translation_description="Accessibility label for the small button that clears the manual sensor-alignment correction back to zero.">重設校準修正</string>
+    <string name="hud_fov_locked" translation_description="Accessibility label for the small lock icon shown next to the field-of-view readout while the camera controls the zoom in through-camera mode.">縮放已鎖定至相機</string>
+    <string-array name="hud_cardinal_directions" translation_description="The sixteen compass-point abbreviations, clockwise from north, used as the azimuth suffix in the map HUD (e.g. N, NNE, NE...). Translate to the locale\'s conventional compass abbreviations.">
+        <item>北</item>
+        <item>北北東</item>
+        <item>東北</item>
+        <item>東北東</item>
+        <item>東</item>
+        <item>東南東</item>
+        <item>東南</item>
+        <item>南南東</item>
+        <item>南</item>
+        <item>南南西</item>
+        <item>西南</item>
+        <item>西南西</item>
+        <item>西</item>
+        <item>西北西</item>
+        <item>西北</item>
+        <item>北北西</item>
+    </string-array>
 </resources>

@@ -3,4 +3,38 @@
     <string name="eula_title">شرایط استفاده</string>
     <string name="dialog_accept">قبول</string>
     <string name="dialog_decline">خیر. متشکرم</string>
+    <string name="hud_ra_label" translation_description="Map-HUD row label: right ascension of the point at the centre of the screen. Standard astronomy abbreviation; keep short.">بعد</string>
+    <string name="hud_dec_label" translation_description="Map-HUD row label: declination of the point at the centre of the screen. Standard astronomy abbreviation; keep short.">میل</string>
+    <string name="hud_alt_label" translation_description="Map-HUD row label: altitude (angle above the horizon) of the point at the centre of the screen. Keep short.">ارتفاع</string>
+    <string name="hud_az_label" translation_description="Map-HUD row label: azimuth (compass bearing) of the point at the centre of the screen. Keep short.">سمت</string>
+    <string name="hud_fov_label" translation_description="Map-HUD row label: the field of view (how many degrees of sky the screen spans). Keep short.">میدان دید</string>
+    <string name="hud_correction_label" translation_description="Map-HUD row label for the manual sensor-alignment correction the user set by dragging. Keep very short.">تنظیم</string>
+    <string name="hud_ra_value" translation_description="Right ascension in the conventional hours-and-minutes notation, e.g. \'18h 38m\'. %1$d is hours (0-23), %2$02d is minutes (00-59).">%1$d ساعت %2$02d دقیقه</string>
+    <!-- tm:omitted name="hud_signed_degrees_value" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_azimuth_value" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_fov_value" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_fov_value_fine" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_fov_value_finest" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_correction_value" reason="identical_to_source" -->
+    <string name="hud_correction_reset" translation_description="Accessibility label for the small button that clears the manual sensor-alignment correction back to zero.">بازنشانی تصحیح تراز</string>
+    <string name="hud_fov_locked" translation_description="Accessibility label for the small lock icon shown next to the field-of-view readout while the camera controls the zoom in through-camera mode.">بزرگ
+نمایی قفل شده به دوربین</string>
+    <string-array name="hud_cardinal_directions" translation_description="The sixteen compass-point abbreviations, clockwise from north, used as the azimuth suffix in the map HUD (e.g. N, NNE, NE...). Translate to the locale\'s conventional compass abbreviations.">
+        <item>شمال</item>
+        <item>شمال-شمال‌شرقی</item>
+        <item>شمال‌شرقی</item>
+        <item>شرق-شمال‌شرقی</item>
+        <item>شرق</item>
+        <item>شرق-جنوب‌شرقی</item>
+        <item>جنوب‌شرقی</item>
+        <item>ج‌ج‌ش</item>
+        <item>جنوب</item>
+        <item>ج‌ج‌غ</item>
+        <item>ج‌غ</item>
+        <item>غ‌ج‌غ</item>
+        <item>غرب</item>
+        <item>غ‌ش‌غ</item>
+        <item>ش‌غ</item>
+        <item>ش‌ش‌غ</item>
+    </string-array>
 </resources>

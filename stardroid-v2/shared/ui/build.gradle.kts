@@ -15,6 +15,8 @@ kotlin {
     sourceSets {
         commonMain.dependencies {
             api(project(":render:api"))
+            // The ViewModels' state types the screens draw (D133).
+            api(project(":shared:viewmodels"))
             // NFD for the help search's accent folding (the catalog's name search uses it too).
             implementation(project(":core:catalog"))
         }

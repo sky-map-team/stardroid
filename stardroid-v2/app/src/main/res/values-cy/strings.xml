@@ -112,22 +112,7 @@
     </string>
     <string name="no_sensor_warning_dismiss">Iawn</string>
 
-    <!-- tm:omitted name="hud_ra_label" reason="identical_to_source" -->
-    <!-- tm:omitted name="hud_dec_label" reason="identical_to_source" -->
-    <!-- tm:omitted name="hud_alt_label" reason="identical_to_source" -->
-    <!-- tm:omitted name="hud_az_label" reason="identical_to_source" -->
-    <!-- tm:omitted name="hud_fov_label" reason="identical_to_source" -->
-    <!-- tm:omitted name="hud_correction_label" reason="identical_to_source" -->
-    <!-- tm:omitted name="hud_ra_value" reason="identical_to_source" -->
-    <!-- tm:omitted name="hud_signed_degrees_value" reason="identical_to_source" -->
-    <!-- tm:omitted name="hud_azimuth_value" reason="identical_to_source" -->
-    <!-- tm:omitted name="hud_fov_value" reason="identical_to_source" -->
-    <!-- tm:omitted name="hud_fov_value_fine" reason="identical_to_source" -->
-    <!-- tm:omitted name="hud_fov_value_finest" reason="identical_to_source" -->
-    <!-- tm:omitted name="hud_correction_value" reason="identical_to_source" -->
-    <string name="hud_correction_reset" translation_description="Accessibility label for the small button that clears the manual sensor-alignment correction back to zero.">Ailosod cywiriad aliniad</string>
     <string name="hud_alignment_reset_message" translation_description="Snackbar confirming the sensor-alignment correction was cleared; shown with an Undo action.">Cywiriad aliniad wedi\'i ailosod</string>
-    <string name="hud_fov_locked" translation_description="Accessibility label for the small lock icon shown next to the field-of-view readout while the camera controls the zoom in through-camera mode.">Chwyddo wedi\'i gloi i\'r camera</string>
 
     <string name="layer_hud" translation_description="Layers-sheet Display toggle that shows the heads-up readout of where the phone is pointing (compass direction and altitude) over the star map.">Darlleniad cyfeiriad</string>
 
@@ -154,24 +139,6 @@
     <string name="share_shutter_button" translation_description="Accessibility label for the round shutter button that captures and shares the current through-camera view.">Rhannu\'r olygfa hon</string>
     <string name="share_failed_message" translation_description="Snackbar shown when capturing the sky image for sharing failed.">Ni allai ddal yr awyr — ceisiwch eto</string>
     <!-- tm:omitted name="ar_exposure_auto" reason="identical_to_source" -->
-    <string-array name="hud_cardinal_directions" translation_description="The sixteen compass-point abbreviations, clockwise from north, used as the azimuth suffix in the map HUD (e.g. N, NNE, NE...). Translate to the locale\'s conventional compass abbreviations.">
-        <item>G</item>
-        <item>GGD</item>
-        <item>GD</item>
-        <item>DDG</item>
-        <item>D</item>
-        <item>Dwyrain-dde-ddwyrain</item>
-        <item>De-ddwyrain</item>
-        <item>De-dde-ddwyrain</item>
-        <item>De</item>
-        <item>De-dde-orllewin</item>
-        <item>De-orllewin</item>
-        <item>Gorllewin-dde-orllewin</item>
-        <item>Gorllewin</item>
-        <item>Gorllewin-gogledd-orllewin</item>
-        <item>Gogledd-orllewin</item>
-        <item>Gogledd-gogledd-orllewin</item>
-    </string-array>
 
     <!-- Time travel: entry button, dialog, and the player bar shown while travelling. -->
     <string name="time_travel_button">Teithio mewn Amser</string>

@@ -112,22 +112,7 @@
     </string>
     <string name="no_sensor_warning_dismiss">ठीक है</string>
 
-    <!-- tm:omitted name="hud_ra_label" reason="identical_to_source" -->
-    <!-- tm:omitted name="hud_dec_label" reason="identical_to_source" -->
-    <!-- tm:omitted name="hud_alt_label" reason="identical_to_source" -->
-    <!-- tm:omitted name="hud_az_label" reason="identical_to_source" -->
-    <!-- tm:omitted name="hud_fov_label" reason="identical_to_source" -->
-    <!-- tm:omitted name="hud_correction_label" reason="identical_to_source" -->
-    <string name="hud_ra_value" translation_description="Right ascension in the conventional hours-and-minutes notation, e.g. \'18h 38m\'. %1$d is hours (0-23), %2$02d is minutes (00-59).">%1$dघं %2$02dमि</string>
-    <!-- tm:omitted name="hud_signed_degrees_value" reason="identical_to_source" -->
-    <!-- tm:omitted name="hud_azimuth_value" reason="identical_to_source" -->
-    <!-- tm:omitted name="hud_fov_value" reason="identical_to_source" -->
-    <!-- tm:omitted name="hud_fov_value_fine" reason="identical_to_source" -->
-    <!-- tm:omitted name="hud_fov_value_finest" reason="identical_to_source" -->
-    <!-- tm:omitted name="hud_correction_value" reason="identical_to_source" -->
-    <string name="hud_correction_reset" translation_description="Accessibility label for the small button that clears the manual sensor-alignment correction back to zero.">संरेखण सुधार रीसेट करें</string>
     <string name="hud_alignment_reset_message" translation_description="Snackbar confirming the sensor-alignment correction was cleared; shown with an Undo action.">संरेखण सुधार रीसेट किया गया</string>
-    <string name="hud_fov_locked" translation_description="Accessibility label for the small lock icon shown next to the field-of-view readout while the camera controls the zoom in through-camera mode.">ज़ूम कैमरे पर लॉक है</string>
 
     <string name="layer_hud" translation_description="Layers-sheet Display toggle that shows the heads-up readout of where the phone is pointing (compass direction and altitude) over the star map.">इंगित रीडिंग</string>
 
@@ -154,24 +139,6 @@
     <string name="share_shutter_button" translation_description="Accessibility label for the round shutter button that captures and shares the current through-camera view.">यह दृश्य साझा करें</string>
     <string name="share_failed_message" translation_description="Snackbar shown when capturing the sky image for sharing failed.">आकाश को कैप्चर नहीं कर सका — फिर से प्रयास करें</string>
     <string name="ar_exposure_auto" translation_description="Readout shown when a manual camera exposure slider sits at its automatic position.">ऑटो</string>
-    <string-array name="hud_cardinal_directions" translation_description="The sixteen compass-point abbreviations, clockwise from north, used as the azimuth suffix in the map HUD (e.g. N, NNE, NE...). Translate to the locale\'s conventional compass abbreviations.">
-        <item>उ</item>
-        <item>उउपू</item>
-        <item>उपू</item>
-        <item>पूउपू</item>
-        <item>पू</item>
-        <item>पू-द-पू</item>
-        <item>द-पू</item>
-        <item>द-द-पू</item>
-        <item>द</item>
-        <item>द-द-प</item>
-        <item>द-प</item>
-        <item>प-द-प</item>
-        <item>प</item>
-        <item>प-उ-प</item>
-        <item>उ-प</item>
-        <item>उ-उ-प</item>
-    </string-array>
 
     <!-- Time travel: entry button, dialog, and the player bar shown while travelling. -->
     <string name="time_travel_button">समय यात्रा</string>

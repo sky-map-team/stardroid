@@ -3,4 +3,37 @@
     <string name="eula_title">Όροι χρήσης</string>
     <string name="dialog_accept">Αποδοχή</string>
     <string name="dialog_decline">Όχι, ευχαριστώ</string>
+    <string name="hud_ra_label" translation_description="Map-HUD row label: right ascension of the point at the centre of the screen. Standard astronomy abbreviation; keep short.">ΟΑ</string>
+    <string name="hud_dec_label" translation_description="Map-HUD row label: declination of the point at the centre of the screen. Standard astronomy abbreviation; keep short.">Απόκλ.</string>
+    <string name="hud_alt_label" translation_description="Map-HUD row label: altitude (angle above the horizon) of the point at the centre of the screen. Keep short.">Υψ.</string>
+    <string name="hud_az_label" translation_description="Map-HUD row label: azimuth (compass bearing) of the point at the centre of the screen. Keep short.">Αζ.</string>
+    <string name="hud_fov_label" translation_description="Map-HUD row label: the field of view (how many degrees of sky the screen spans). Keep short.">ΟΠ</string>
+    <string name="hud_correction_label" translation_description="Map-HUD row label for the manual sensor-alignment correction the user set by dragging. Keep very short.">Ρύθμ.</string>
+    <string name="hud_ra_value" translation_description="Right ascension in the conventional hours-and-minutes notation, e.g. \'18h 38m\'. %1$d is hours (0-23), %2$02d is minutes (00-59).">%1$dω %2$02dλ</string>
+    <!-- tm:omitted name="hud_signed_degrees_value" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_azimuth_value" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_fov_value" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_fov_value_fine" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_fov_value_finest" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_correction_value" reason="identical_to_source" -->
+    <string name="hud_correction_reset" translation_description="Accessibility label for the small button that clears the manual sensor-alignment correction back to zero.">Επαναφορά διόρθωσης ευθυγράμμισης</string>
+    <string name="hud_fov_locked" translation_description="Accessibility label for the small lock icon shown next to the field-of-view readout while the camera controls the zoom in through-camera mode.">Το ζουμ είναι κλειδωμένο στην κάμερα</string>
+    <string-array name="hud_cardinal_directions" translation_description="The sixteen compass-point abbreviations, clockwise from north, used as the azimuth suffix in the map HUD (e.g. N, NNE, NE...). Translate to the locale\'s conventional compass abbreviations.">
+        <item>Β</item>
+        <item>ΒΒΑ</item>
+        <item>ΒΑ</item>
+        <item>ΑΒΑ</item>
+        <item>Α</item>
+        <item>ΑΝΑ</item>
+        <item>ΝΑ</item>
+        <item>ΝΝΑ</item>
+        <item>Ν</item>
+        <item>ΝΝΔ</item>
+        <item>ΝΔ</item>
+        <item>ΔΝΔ</item>
+        <item>Δ</item>
+        <item>ΔΒΔ</item>
+        <item>ΒΔ</item>
+        <item>ΒΒΔ</item>
+    </string-array>
 </resources>

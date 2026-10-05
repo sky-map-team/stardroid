@@ -4,4 +4,37 @@
     <string name="eula_title" translation_description="Title of the terms-of-service dialog shown on first launch">Terms of Service</string>
     <string name="dialog_accept" translation_description="Button accepting the licence agreement">Accept</string>
     <string name="dialog_decline" translation_description="Button declining the licence agreement">No Thanks</string>
+    <string name="hud_ra_label" translation_description="Map-HUD row label: right ascension of the point at the centre of the screen. Standard astronomy abbreviation; keep short.">RA</string>
+    <string name="hud_dec_label" translation_description="Map-HUD row label: declination of the point at the centre of the screen. Standard astronomy abbreviation; keep short.">Dec</string>
+    <string name="hud_alt_label" translation_description="Map-HUD row label: altitude (angle above the horizon) of the point at the centre of the screen. Keep short.">Alt</string>
+    <string name="hud_az_label" translation_description="Map-HUD row label: azimuth (compass bearing) of the point at the centre of the screen. Keep short.">Az</string>
+    <string name="hud_fov_label" translation_description="Map-HUD row label: the field of view (how many degrees of sky the screen spans). Keep short.">FOV</string>
+    <string name="hud_correction_label" translation_description="Map-HUD row label for the manual sensor-alignment correction the user set by dragging. Keep very short.">Adj</string>
+    <string name="hud_ra_value" translation_description="Right ascension in the conventional hours-and-minutes notation, e.g. \'18h 38m\'. %1$d is hours (0-23), %2$02d is minutes (00-59).">%1$dh %2$02dm</string>
+    <string name="hud_signed_degrees_value" translation_description="An angle in degrees with an explicit sign and one decimal, e.g. \'+38.8°\'. %1$+.1f is the angle.">%1$+.1f°</string>
+    <string name="hud_azimuth_value" translation_description="A compass bearing with its cardinal-direction abbreviation, e.g. \'312° NW\'. %1$d is whole degrees (0-359), %2$s is the abbreviation.">%1$d° %2$s</string>
+    <string name="hud_fov_value" translation_description="Field of view in whole degrees, e.g. \'45°\'. %1$d is the number of degrees.">%1$d°</string>
+    <string name="hud_fov_value_fine" translation_description="Field of view between one and ten degrees, with one decimal, e.g. \'5.5°\'. %1$.1f is the number of degrees.">%1$.1f°</string>
+    <string name="hud_fov_value_finest" translation_description="Field of view under one degree, with two decimals, e.g. \'0.25°\'. %1$.2f is the number of degrees.">%1$.2f°</string>
+    <string name="hud_correction_value" translation_description="The sensor-alignment correction pair: azimuth then altitude offset, each signed with one decimal, e.g. \'+4.5° −1.2°\'.">%1$+.1f° %2$+.1f°</string>
+    <string name="hud_correction_reset" translation_description="Accessibility label for the small button that clears the manual sensor-alignment correction back to zero.">Reset alignment correction</string>
+    <string name="hud_fov_locked" translation_description="Accessibility label for the small lock icon shown next to the field-of-view readout while the camera controls the zoom in through-camera mode.">Zoom locked to the camera</string>
+    <string-array name="hud_cardinal_directions" translation_description="The sixteen compass-point abbreviations, clockwise from north, used as the azimuth suffix in the map HUD (e.g. N, NNE, NE...). Translate to the locale\'s conventional compass abbreviations.">
+        <item>N</item>
+        <item>NNE</item>
+        <item>NE</item>
+        <item>ENE</item>
+        <item>E</item>
+        <item>ESE</item>
+        <item>SE</item>
+        <item>SSE</item>
+        <item>S</item>
+        <item>SSW</item>
+        <item>SW</item>
+        <item>WSW</item>
+        <item>W</item>
+        <item>WNW</item>
+        <item>NW</item>
+        <item>NNW</item>
+    </string-array>
 </resources>

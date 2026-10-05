@@ -112,22 +112,7 @@
     </string>
     <!-- tm:omitted name="no_sensor_warning_dismiss" reason="identical_to_source" -->
 
-    <!-- tm:omitted name="hud_ra_label" reason="identical_to_source" -->
-    <string name="hud_dec_label" translation_description="Map-HUD row label: declination of the point at the centre of the screen. Standard astronomy abbreviation; keep short.">Dek</string>
-    <!-- tm:omitted name="hud_alt_label" reason="identical_to_source" -->
-    <!-- tm:omitted name="hud_az_label" reason="identical_to_source" -->
-    <!-- tm:omitted name="hud_fov_label" reason="identical_to_source" -->
-    <string name="hud_correction_label" translation_description="Map-HUD row label for the manual sensor-alignment correction the user set by dragging. Keep very short.">Lar.</string>
-    <string name="hud_ra_value" translation_description="Right ascension in the conventional hours-and-minutes notation, e.g. \'18h 38m\'. %1$d is hours (0-23), %2$02d is minutes (00-59).">%1$dj %2$02dm</string>
-    <!-- tm:omitted name="hud_signed_degrees_value" reason="identical_to_source" -->
-    <!-- tm:omitted name="hud_azimuth_value" reason="identical_to_source" -->
-    <!-- tm:omitted name="hud_fov_value" reason="identical_to_source" -->
-    <!-- tm:omitted name="hud_fov_value_fine" reason="identical_to_source" -->
-    <!-- tm:omitted name="hud_fov_value_finest" reason="identical_to_source" -->
-    <!-- tm:omitted name="hud_correction_value" reason="identical_to_source" -->
-    <string name="hud_correction_reset" translation_description="Accessibility label for the small button that clears the manual sensor-alignment correction back to zero.">Set semula pembetulan penjajaran</string>
     <string name="hud_alignment_reset_message" translation_description="Snackbar confirming the sensor-alignment correction was cleared; shown with an Undo action.">Pembetulan penjajaran diset semula</string>
-    <string name="hud_fov_locked" translation_description="Accessibility label for the small lock icon shown next to the field-of-view readout while the camera controls the zoom in through-camera mode.">Zum dikunci pada kamera</string>
 
     <string name="layer_hud" translation_description="Layers-sheet Display toggle that shows the heads-up readout of where the phone is pointing (compass direction and altitude) over the star map.">Bacaan penunjuk</string>
 
@@ -154,24 +139,6 @@
     <string name="share_shutter_button" translation_description="Accessibility label for the round shutter button that captures and shares the current through-camera view.">Kongsi paparan ini</string>
     <string name="share_failed_message" translation_description="Snackbar shown when capturing the sky image for sharing failed.">Tidak dapat menangkap langit — cuba lagi</string>
     <!-- tm:omitted name="ar_exposure_auto" reason="identical_to_source" -->
-    <string-array name="hud_cardinal_directions" translation_description="The sixteen compass-point abbreviations, clockwise from north, used as the azimuth suffix in the map HUD (e.g. N, NNE, NE...). Translate to the locale\'s conventional compass abbreviations.">
-        <item>U</item>
-        <item>UTL</item>
-        <item>TL</item>
-        <item>TTL</item>
-        <item>T</item>
-        <item>TTG</item>
-        <item>TG</item>
-        <item>STG</item>
-        <item>S</item>
-        <item>STB</item>
-        <item>TB</item>
-        <item>BTB</item>
-        <item>B</item>
-        <item>BTU</item>
-        <item>TU</item>
-        <item>UTU</item>
-    </string-array>
 
     <!-- Time travel: entry button, dialog, and the player bar shown while travelling. -->
     <string name="time_travel_button">Perjalanan Masa</string>

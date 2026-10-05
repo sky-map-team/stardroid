@@ -17,6 +17,11 @@ val secrets =
 
 android {
     namespace = "com.google.android.stardroid"
+
+    // The shared screens' strings (D136) are Android resources too, so Android-only code — the
+    // widgets, notifications — reads the ones it shares with them through R, from the one copy.
+    // A name defined in both places fails the resource merge, which keeps that copy single.
+    sourceSets.getByName("main").res.directories.add("../shared/ui/src/commonMain/res")
     defaultConfig {
         applicationId = "com.google.android.stardroid"
         versionCode = 1753

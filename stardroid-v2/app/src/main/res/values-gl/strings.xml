@@ -102,22 +102,7 @@
     <string name="no_sensor_warning_dismiss" translation_description="Button that dismisses the missing-sensors warning dialog.">Aceptar</string>
 
     <!-- The map HUD (map-hud.md, D65): the top-right pointing readout shown with the chrome. -->
-    <string name="hud_ra_label" translation_description="Map-HUD row label: right ascension of the point at the centre of the screen. Standard astronomy abbreviation; keep short.">AR</string>
-    <string name="hud_dec_label" translation_description="Map-HUD row label: declination of the point at the centre of the screen. Standard astronomy abbreviation; keep short.">Dec</string>
-    <string name="hud_alt_label" translation_description="Map-HUD row label: altitude (angle above the horizon) of the point at the centre of the screen. Keep short.">Alt</string>
-    <string name="hud_az_label" translation_description="Map-HUD row label: azimuth (compass bearing) of the point at the centre of the screen. Keep short.">Az</string>
-    <string name="hud_fov_label" translation_description="Map-HUD row label: the field of view (how many degrees of sky the screen spans). Keep short.">FOV</string>
-    <string name="hud_correction_label" translation_description="Map-HUD row label for the manual sensor-alignment correction the user set by dragging. Keep very short.">Axt</string>
-    <string name="hud_ra_value" translation_description="Right ascension in the conventional hours-and-minutes notation, e.g. \'18h 38m\'. %1$d is hours (0-23), %2$02d is minutes (00-59).">%1$dh %2$02dm</string>
-    <string name="hud_signed_degrees_value" translation_description="An angle in degrees with an explicit sign and one decimal, e.g. \'+38.8°\'. %1$+.1f is the angle.">%1$+.1f°</string>
-    <string name="hud_azimuth_value" translation_description="A compass bearing with its cardinal-direction abbreviation, e.g. \'312° NW\'. %1$d is whole degrees (0-359), %2$s is the abbreviation.">%1$d° %2$s</string>
-    <string name="hud_fov_value" translation_description="Field of view in whole degrees, e.g. \'45°\'. %1$d is the number of degrees.">%1$d°</string>
-    <string name="hud_fov_value_fine" translation_description="Field of view between one and ten degrees, with one decimal, e.g. \'5.5°\'. %1$.1f is the number of degrees.">%1$.1f°</string>
-    <string name="hud_fov_value_finest" translation_description="Field of view under one degree, with two decimals, e.g. \'0.25°\'. %1$.2f is the number of degrees.">%1$.2f°</string>
-    <string name="hud_correction_value" translation_description="The sensor-alignment correction pair: azimuth then altitude offset, each signed with one decimal, e.g. \'+4.5° −1.2°\'.">%1$+.1f° %2$+.1f°</string>
-    <string name="hud_correction_reset" translation_description="Accessibility label for the small button that clears the manual sensor-alignment correction back to zero.">Restabelecer corrección de aliñamento</string>
     <string name="hud_alignment_reset_message" translation_description="Snackbar confirming the sensor-alignment correction was cleared; shown with an Undo action.">Corrección de aliñamento restabelecida</string>
-    <string name="hud_fov_locked" translation_description="Accessibility label for the small lock icon shown next to the field-of-view readout while the camera controls the zoom in through-camera mode.">Zoom bloqueado á cámara</string>
 
     <string name="layer_hud" translation_description="Layers-sheet Display toggle that shows the heads-up readout of where the phone is pointing (compass direction and altitude) over the star map.">Lectura de orientación</string>
 
@@ -150,24 +135,6 @@
     <string name="share_shutter_button" translation_description="Accessibility label for the round shutter button that captures and shares the current through-camera view.">Compartir esta vista</string>
     <string name="share_failed_message" translation_description="Snackbar shown when capturing the sky image for sharing failed.">Non se puido capturar o ceo — téntao de novo</string>
     <string name="ar_exposure_auto" translation_description="Readout shown when a manual camera exposure slider sits at its automatic position.">Automático</string>
-    <string-array name="hud_cardinal_directions" translation_description="The sixteen compass-point abbreviations, clockwise from north, used as the azimuth suffix in the map HUD (e.g. N, NNE, NE...). Translate to the locale\'s conventional compass abbreviations.">
-        <item>N</item>
-        <item>NNE</item>
-        <item>NE</item>
-        <item>ENE</item>
-        <item>E</item>
-        <item>ESE</item>
-        <item>SE</item>
-        <item>SSE</item>
-        <item>S</item>
-        <item>SSW</item>
-        <item>SW</item>
-        <item>WSW</item>
-        <item>W</item>
-        <item>WNW</item>
-        <item>NW</item>
-        <item>NNW</item>
-    </string-array>
 
     <!-- Time travel: entry button, dialog, and the player bar shown while travelling. -->
     <string name="time_travel_button" translation_description="Label for the button opening the time travel dialog, which shows the sky at another date.">Viaxe no tempo</string>
