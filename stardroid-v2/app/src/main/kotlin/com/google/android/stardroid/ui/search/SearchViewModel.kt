@@ -161,7 +161,7 @@ class SearchViewModel(
             // may be stale by now: take a fresh one.
             val hit =
                 if (SatelliteIds.noradIdFor(picked.id) != null) {
-                    satellites().firstOrNull { it.info.id == picked.id }
+                    satellitesSafely().firstOrNull { it.info.id == picked.id }
                         ?.let { picked.copy(position = it.position) } ?: picked
                 } else {
                     picked
@@ -271,7 +271,7 @@ class SearchViewModel(
     private suspend fun satelliteHits(query: String): List<SearchHit> {
         val q = query.trim()
         if (q.isEmpty()) return emptyList()
-        return satellites()
+        return satellitesSafely()
             .filter { sat ->
                 (listOf(sat.info.name) + SATELLITE_ALIASES[sat.tle.noradId].orEmpty()).any {
                     matchesWordPrefix(it, q)
@@ -286,6 +286,20 @@ class SearchViewModel(
                 )
             }
     }
+
+    /**
+     * Satellites are an optional extra: a failed lookup (entry point, repository I/O, SGP4)
+     * must not blank the catalog results or crash [select], so it degrades to "none".
+     */
+    private suspend fun satellitesSafely(): List<TrackedSatellite> =
+        try {
+            satellites()
+        } catch (e: CancellationException) {
+            throw e
+        } catch (e: Exception) {
+            Log.w(TAG, "Satellite lookup failed", e)
+            emptyList()
+        }
 
     private fun searchFailed(term: String) {
         analytics.trackEvent(
@@ -345,13 +359,22 @@ class SearchViewModel(
                 SatelliteLayer.TIANGONG_NORAD_ID to listOf("Tiangong Space Station", "CSS"),
             )
 
-        /** True when [name], or any word in it, starts with [q] ("zarya" finds "ISS (ZARYA)"). */
+        private fun words(text: String): List<String> =
+            text.split(' ', '(', ')', '-').filter { it.isNotEmpty() }
+
+        /**
+         * True when every word of [q] is the start of some word of [name] ("zarya" finds
+         * "ISS (ZARYA)", "space station" finds "International Space Station").
+         */
         internal fun matchesWordPrefix(
             name: String,
             q: String,
-        ): Boolean =
-            name.startsWith(q, ignoreCase = true) ||
-                name.split(' ', '(', ')', '-').any { it.startsWith(q, ignoreCase = true) }
+        ): Boolean {
+            val nameWords = words(name)
+            return words(q).all { token ->
+                nameWords.any { it.startsWith(token, ignoreCase = true) }
+            }
+        }
 
         /** Ranked-list length; v1's suggestion cursor was unbounded, the FTS query is not. */
         private const val SUGGESTION_LIMIT = 20

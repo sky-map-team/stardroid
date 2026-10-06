@@ -125,6 +125,8 @@ class SearchViewModelTest {
 
     private var trackedSatellites = listOf<TrackedSatellite>()
 
+    private var satelliteFailure: (() -> Throwable)? = null
+
     private val locale = MutableStateFlow(LocaleSpec("en"))
 
     private fun viewModel(): SearchViewModel =
@@ -136,7 +138,10 @@ class SearchViewModelTest {
             settings = settings,
             analytics = analytics,
             isManualMode = { manualMode },
-            satellites = { trackedSatellites },
+            satellites = {
+                satelliteFailure?.let { throw it() }
+                trackedSatellites
+            },
         ).also { createdViewModels += it }
 
     @Test
@@ -227,7 +232,7 @@ class SearchViewModelTest {
             backgroundScope.launch { vm.suggestions.collect {} }
             runCurrent()
 
-            for (query in listOf("iss", "ISS (Z", "zarya", "international sp")) {
+            for (query in listOf("iss", "ISS (Z", "zarya", "international sp", "space stat")) {
                 vm.setQuery(query)
                 advanceTimeBy(debounceSettle)
                 runCurrent()
@@ -256,6 +261,50 @@ class SearchViewModelTest {
                 target.direction.distanceTo(ISS_POSITION.toGeocentricVector()),
             ).isLessThan(TOL)
             assertThat(settings.layerEnabled(SatelliteLayer.LAYER_ID).first()).isTrue()
+        }
+
+    @Test
+    fun `selecting a satellite that is no longer tracked falls back to the hit position`() =
+        testScope.runCurrentTest {
+            val vm = viewModel()
+            vm.select(ISS_HIT)
+            runCurrent()
+
+            val target = vm.target.value!!
+            assertThat(
+                target.direction.distanceTo(ISS_POSITION.toGeocentricVector()),
+            ).isLessThan(TOL)
+        }
+
+    @Test
+    fun `a failing satellite lookup does not blank catalog results or crash select`() =
+        testScope.runCurrentTest {
+            repository.hits = listOf(ISS_LIKE_HIT)
+            val vm = viewModel()
+            backgroundScope.launch { vm.suggestions.collect {} }
+            runCurrent()
+            satelliteFailure = { IllegalStateException("boom") }
+
+            vm.setQuery("iss")
+            advanceTimeBy(debounceSettle)
+            runCurrent()
+            assertThat(vm.suggestions.value).containsExactly(ISS_LIKE_HIT)
+
+            vm.select(ISS_HIT)
+            runCurrent()
+            assertThat(vm.target.value).isNotNull()
+        }
+
+    @Test
+    fun `submitting a satellite name selects the sole hit`() =
+        testScope.runCurrentTest {
+            trackedSatellites = listOf(ISS)
+            val vm = viewModel()
+            vm.setQuery("iss")
+            vm.submit()
+            runCurrent()
+
+            assertThat(vm.target.value?.name).isEqualTo("ISS (ZARYA)")
         }
 
     @Test
@@ -567,6 +616,8 @@ class SearchViewModelTest {
             )
         val ISS_HIT =
             SearchHit(SatelliteIds.idFor(25544), "ISS (ZARYA)", null, ISS_POSITION, null)
+        val ISS_LIKE_HIT =
+            SearchHit(CelestialObjectId("star/issa"), "Issa", "Star", SIRIUS_POSITION, 20.0)
         val IO_HIT = SearchHit(CelestialObjectId("moon/io"), "Io", "Orbits Jupiter", null, null)
 
         fun objectInfo(
