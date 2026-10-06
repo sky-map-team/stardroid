@@ -289,6 +289,33 @@ Offer the email address for direct support with the Diagnostics report (see belo
 
 ---
 
+## Permissions (all optional)
+
+Use this when a user asks why Sky Map wants a permission, is worried about privacy, or reports
+that a feature doesn't work after they declined a prompt. Full user-facing version:
+troubleshooting.md → "Permissions".
+
+Core facts:
+- Every permission is **optional** and asked **in context** (when the user first uses the feature),
+  never all at launch. The app works without any of them.
+- Sky Map never asks for contacts, photos, microphone, files or precise GPS location.
+
+| Permission | Asked when | Purpose | If not granted |
+|---|---|---|---|
+| Location (approximate) | First use of automatic location (welcome tour / Location screen) | Draw the sky for the user's position | Default location used (v2 Greenwich, v1 0°/0°) → sky looks wrong (see CAT-6). User can enter location manually instead |
+| Camera (v2 only) | First time the camera/AR overlay is turned on | Live camera picture behind the sky | Overlay stays off; normal sky map unaffected |
+| Notifications (v2, Android 13+) | First time an alert is switched on (showers, eclipses, satellite passes, tonight digest) | Post alerts | Toggle flips back off; no alerts. Rest of app unaffected. Alerts are off by default |
+
+Other manifest entries (vibrate, network state, internet, boot-completed) are install-time and show
+no prompt: haptics in the sensor check, connectivity row/map image, and re-arming pass alerts after
+reboot.
+
+If the user denied twice, Android stops prompting — they must enable it in **Settings → Apps →
+Sky Map → Permissions**. If a review says "it wants my location/camera", reassure: optional, only
+used for the feature, and the app works without it.
+
+---
+
 ## Asking for Diagnostics (escalation / unknown issues)
 
 When a complaint doesn't match a category above, or the documented steps have already failed,
