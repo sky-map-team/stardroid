@@ -119,4 +119,53 @@
     <string name="search_target_looking_message" translation_description="Status shown while the user is being guided toward a search target. %1$s is the object name.">Hľadám: %1$s</string>
     <string name="search_target_found_message" translation_description="Status shown when the search target has been found and is centered on screen. %1$s is the object name.">Nájdené: %1$s</string>
     <string name="search_overlay_prompt">Nasmerujte telefón podľa šípky</string>
+    <string name="time_travel_title">Cestovanie v čase</string>
+    <string name="time_travel_visiting" translation_description="Readout in the time travel dialog showing the currently chosen destination date and time. %1$s is the formatted date and time.">Navštevujem: %1$s</string>
+    <string name="time_travel_pick_date" translation_description="Button in the time travel dialog that opens a date picker.">Nastaviť dátum</string>
+    <string name="time_travel_pick_time" translation_description="Button in the time travel dialog that opens a time picker.">Nastaviť čas</string>
+    <string name="time_travel_select_event" translation_description="Placeholder hint for the dropdown list of popular astronomical events in the time travel dialog.">Vybrať populárnu udalosť…</string>
+    <string name="time_travel_go" translation_description="Button that starts time travel to the chosen date.">Prejsť</string>
+    <string name="time_travel_from_now">Spustiť od teraz</string>
+    <!-- tm:omitted name="time_travel_ok" reason="identical_to_source" -->
+    <string name="time_travel_cancel">Zrušiť</string>
+    <!-- tm:omitted name="time_travel_slower" reason="identical_to_source" -->
+    <!-- tm:omitted name="time_travel_pause" reason="identical_to_source" -->
+    <!-- tm:omitted name="time_travel_faster" reason="identical_to_source" -->
+    <string name="time_travel_return" translation_description="Player button that ends time travel and returns the map to the present.">Teraz</string>
+    <string name="time_travel_second_speed">Rýchlosť cestovania &gt; 1 s/s</string>
+    <string name="time_travel_minute_speed">Rýchlosť cestovania &gt; 1 min/s</string>
+    <string name="time_travel_10minute_speed">Rýchlosť cestovania &gt; 10 min/s</string>
+    <string name="time_travel_hour_speed">Rýchlosť cestovania &gt; 1 hod/s</string>
+    <string name="time_travel_day_speed">Rýchlosť cestovania &gt; 1 deň/s</string>
+    <string name="time_travel_week_speed">Rýchlosť cestovania &gt; 1 týždeň/s</string>
+    <string name="time_travel_second_speed_back">Rýchlosť cestovania &lt; 1 s/s</string>
+    <string name="time_travel_minute_speed_back">Rýchlosť cestovania &lt; 1 min/s</string>
+    <string name="time_travel_10minute_speed_back">Rýchlosť cestovania &lt; 10 min/s</string>
+    <string name="time_travel_hour_speed_back">Rýchlosť cestovania &lt; 1 hod/s</string>
+    <string name="time_travel_day_speed_back">Rýchlosť cestovania &lt; 1 deň/s</string>
+    <string name="time_travel_week_speed_back">Rýchlosť cestovania &lt; 1 týždeň/s</string>
+    <string name="time_travel_now" translation_description="Time travel picker entry that resets the destination to the present moment.">Teraz</string>
+    <string name="time_travel_next_sunset">Ďalší západ Slnka</string>
+    <string name="time_travel_next_sunrise">Ďalší východ Slnka</string>
+    <string name="time_travel_next_full_moon">Ďalší spln</string>
+    <string name="time_travel_next_new_moon">Ďalší nový mesiac</string>
+    <string name="time_travel_six_planet_parade_2026">Paráda šiestich planét, 28. február 2026</string>
+    <string name="time_travel_lunar_eclipse_2026">Úplné mesačné zatmenie, 3. marec 2026</string>
+    <string name="time_travel_lyrids_2026">Meteorický roj Lyridy, 22. apríl 2026</string>
+    <string name="time_travel_venus_jupiter_2026">Konjunkcia Venuše a Jupitera, 9. jún 2026</string>
+    <string name="time_travel_mars_uranus_2026">Blízke priblíženie Marsu a Uránu, 4. júl 2026</string>
+    <string name="time_travel_solar_eclipse_2026">Úplné slnečné zatmenie, 12. august 2026</string>
+    <string name="time_travel_perseids_2026">Meteorický roj Perseid, 12.-13. august 2026</string>
+    <string name="time_travel_lunar_eclipse_aug_2026" translation_description="Name of an astronomical event in the time travel picker. Keep the date format suitable for your locale.">Čiastočné zatmenie Mesiaca, 28. augusta 2026</string>
+    <string name="time_travel_jupiter_occultation_2026">Mesačná okulácia Jupitera, 6. október 2026</string>
+    <string name="time_travel_geminids_2026">Geminidy - meteorický dážď, 13.-14. dec. 2026</string>
+    <string name="time_travel_supermoon_2026">Vianočný supermesiac, 24. dec. 2026</string>
+    <string name="time_travel_mercury_transit_2016">Prechod Merkúru 9. mája 2016</string>
+    <string name="time_travel_solar_eclipse_2024">Zatmenie Slnka 8. apríla 2024</string>
+    <string name="time_travel_apollo_11">Pristátie lode Apollo 11 na Mesiaci</string>
+    <string name="time_travel_jupiter_saturn_2020">Konjunkcia Jupiter - Saturn v roku 2020</string>
+    <string name="time_travel_stopped">Cestovanie časom pozastavené</string>
+    <string name="sun_wont_set_message">Na vašej aktuálnej polohe nezapadne Slnko počas nasledujúcich 24 hodín.</string>
+    <string name="time_travel_start_message" translation_description="Toast message when time travel starts toward a chosen destination. %1$s is the formatted destination date and time.">Cestovanie časom do %1$s ...</string>
+    <string name="time_travel_close_message">Späť do súčasnosti...</string>
 </resources>

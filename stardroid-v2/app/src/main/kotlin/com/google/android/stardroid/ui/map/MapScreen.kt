@@ -16,12 +16,8 @@ import androidx.camera.view.PreviewView
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.EnterExitState
 import androidx.compose.animation.EnterTransition
-import androidx.compose.animation.core.Animatable
-import androidx.compose.animation.core.LinearEasing
 import androidx.compose.animation.core.snap
-import androidx.compose.animation.core.tween
 import androidx.compose.animation.fadeOut
-import androidx.compose.foundation.background
 import androidx.compose.foundation.gestures.awaitEachGesture
 import androidx.compose.foundation.gestures.awaitFirstDown
 import androidx.compose.foundation.gestures.calculatePan
@@ -63,8 +59,6 @@ import androidx.compose.runtime.snapshotFlow
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.input.pointer.PointerInputChange
 import androidx.compose.ui.input.pointer.PointerInputScope
 import androidx.compose.ui.input.pointer.pointerInput
@@ -115,17 +109,13 @@ import com.google.android.stardroid.ui.search.SearchGeometry
 import com.google.android.stardroid.ui.search.SearchOverlay
 import com.google.android.stardroid.ui.search.SearchViewModel
 import com.google.android.stardroid.ui.timetravel.TimeTravelDialog
+import com.google.android.stardroid.ui.timetravel.TimeTravelFlash
 import com.google.android.stardroid.ui.timetravel.TimeTravelPlayer
 import com.google.android.stardroid.ui.timetravel.TimeTravelViewModel
-import com.google.android.stardroid.ui.timetravel.TravelEffect
-import kotlinx.coroutines.Job
-import kotlinx.coroutines.cancelAndJoin
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.filterNotNull
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
-import java.text.DateFormat
-import java.util.Date
 import kotlin.math.max
 import kotlin.math.min
 
@@ -286,56 +276,10 @@ fun MapScreen(
         }
     }
 
-    // v1's time-travel theatrics: the translucent purple flash (`view_mask` +
-    // `timetravelflash`, a 0 → 0.7 → 0 alpha pulse over 2 s) and the travel/return notices
-    // (v1 toasted; snackbars follow the theme and red-shift in night mode) — then the
-    // per-event search target, aimed once the clock has arrived.
-    val flashAlpha = remember { Animatable(0f) }
-    // Composition sees only this boolean (two recompositions per flash); the per-frame alpha
-    // is read in the draw phase below.
-    var flashVisible by remember { mutableStateOf(false) }
+    // The per-event search target, aimed once time travel's clock has arrived. The travel
+    // flash and notices are TimeTravelFlash's, over the sky below.
     LaunchedEffect(Unit) {
-        launch {
-            val formatter = DateFormat.getDateTimeInstance(DateFormat.MEDIUM, DateFormat.SHORT)
-            var flashJob: Job? = null
-            timeTravelViewModel.effects.collect { effect ->
-                val message =
-                    when (effect) {
-                        is TravelEffect.Travel ->
-                            context.getString(
-                                R.string.time_travel_start_message,
-                                formatter.format(
-                                    Date(effect.destination.toEpochMilliseconds()),
-                                ),
-                            )
-                        TravelEffect.Return ->
-                            context.getString(R.string.time_travel_close_message)
-                    }
-                // A child launch: showSnackbar suspends for the snackbar's lifetime, and
-                // a back-to-back travel must still restart the flash below immediately.
-                launch { snackbarHostState.showSnackbar(message) }
-                // Restart the pulse from scratch on back-to-back travels: joining the old
-                // job first keeps its finally from hiding the overlay under the new pulse.
-                flashJob?.cancelAndJoin()
-                flashJob =
-                    launch {
-                        flashVisible = true
-                        try {
-                            flashAlpha.snapTo(0f)
-                            flashAlpha.animateTo(
-                                FLASH_PEAK_ALPHA,
-                                tween(FLASH_RAMP_MS, easing = LinearEasing),
-                            )
-                            flashAlpha.animateTo(0f, tween(FLASH_RAMP_MS, easing = LinearEasing))
-                        } finally {
-                            flashVisible = false
-                        }
-                    }
-            }
-        }
-        launch {
-            timeTravelViewModel.searchTargets.collect { searchViewModel.selectById(it) }
-        }
+        timeTravelViewModel.searchTargets.collect { searchViewModel.selectById(it) }
     }
 
     // v1's "Location set to X" toast, shown on every fresh fix or manual entry — now a
@@ -538,16 +482,12 @@ fun MapScreen(
         )
 
         // The time-travel flash over the sky, under the controls, exactly where v1's
-        // `view_mask` sat in the layout. Never composed while idle; the alpha is read in the
-        // draw phase (graphicsLayer) so the ramp redraws without recomposing the screen.
-        if (flashVisible) {
-            Box(
-                Modifier
-                    .matchParentSize()
-                    .graphicsLayer { alpha = flashAlpha.value }
-                    .background(FLASH_COLOR),
-            )
-        }
+        // `view_mask` sat in the layout; its notices are snackbars.
+        TimeTravelFlash(
+            effects = timeTravelViewModel.effects,
+            onNotice = { snackbarHostState.showSnackbar(it) },
+            modifier = Modifier.matchParentSize(),
+        )
 
         // The search overlay draws above the sky but never intercepts touch: the sky stays
         // draggable mid-search, as in v1 (only BACK or the cancel button end search mode).
@@ -1135,14 +1075,6 @@ private fun NoSensorWarning(
         )
     }
 }
-
-// v1's time-travel flash (`timetravelflash.xml`): pulsed to 0.7 alpha and back, one second each
-// way. v1's `view_mask` magenta (#990099) is re-hued to the launcher icon's indigo for D73 —
-// it keeps the "something just happened" jolt while staying in the navy family, where gold at
-// this alpha would wash the sky out and read as a rendering fault.
-private val FLASH_COLOR = Color(0xFF3D2F74)
-private const val FLASH_PEAK_ALPHA = 0.7f
-private const val FLASH_RAMP_MS = 1000
 
 /** How long the auto-shown chrome lingers on entry (v1 flashed its controls similarly). */
 private const val INITIAL_CHROME_FLASH_MS = 3000L

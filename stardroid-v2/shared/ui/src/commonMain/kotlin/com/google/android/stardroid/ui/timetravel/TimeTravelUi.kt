@@ -9,7 +9,6 @@
 
 package com.google.android.stardroid.ui.timetravel
 
-import androidx.annotation.StringRes
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.core.tween
 import androidx.compose.animation.fadeIn
@@ -52,16 +51,42 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalConfiguration
-import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.google.android.stardroid.R
 import com.google.android.stardroid.time.TimeTravelClock
 import com.google.android.stardroid.time.TimeTravelEvent
 import com.google.android.stardroid.time.TimeTravelEvents
+import com.google.android.stardroid.ui.common.formattedStringResource
+import com.google.android.stardroid.ui.common.rememberDateTimeFormatter
+import com.google.android.stardroid.ui.common.rememberIs24HourClock
+import com.google.android.stardroid.ui.resources.Res
+import com.google.android.stardroid.ui.resources.time_travel_10minute_speed
+import com.google.android.stardroid.ui.resources.time_travel_10minute_speed_back
+import com.google.android.stardroid.ui.resources.time_travel_cancel
+import com.google.android.stardroid.ui.resources.time_travel_day_speed
+import com.google.android.stardroid.ui.resources.time_travel_day_speed_back
+import com.google.android.stardroid.ui.resources.time_travel_faster
+import com.google.android.stardroid.ui.resources.time_travel_from_now
+import com.google.android.stardroid.ui.resources.time_travel_go
+import com.google.android.stardroid.ui.resources.time_travel_hour_speed
+import com.google.android.stardroid.ui.resources.time_travel_hour_speed_back
+import com.google.android.stardroid.ui.resources.time_travel_minute_speed
+import com.google.android.stardroid.ui.resources.time_travel_minute_speed_back
+import com.google.android.stardroid.ui.resources.time_travel_ok
+import com.google.android.stardroid.ui.resources.time_travel_pause
+import com.google.android.stardroid.ui.resources.time_travel_pick_date
+import com.google.android.stardroid.ui.resources.time_travel_pick_time
+import com.google.android.stardroid.ui.resources.time_travel_return
+import com.google.android.stardroid.ui.resources.time_travel_second_speed
+import com.google.android.stardroid.ui.resources.time_travel_second_speed_back
+import com.google.android.stardroid.ui.resources.time_travel_select_event
+import com.google.android.stardroid.ui.resources.time_travel_slower
+import com.google.android.stardroid.ui.resources.time_travel_stopped
+import com.google.android.stardroid.ui.resources.time_travel_title
+import com.google.android.stardroid.ui.resources.time_travel_visiting
+import com.google.android.stardroid.ui.resources.time_travel_week_speed
+import com.google.android.stardroid.ui.resources.time_travel_week_speed_back
 import kotlinx.datetime.Instant
 import kotlinx.datetime.LocalDateTime
 import kotlinx.datetime.LocalTime
@@ -69,8 +94,9 @@ import kotlinx.datetime.TimeZone
 import kotlinx.datetime.atStartOfDayIn
 import kotlinx.datetime.toInstant
 import kotlinx.datetime.toLocalDateTime
-import java.text.DateFormat
-import java.util.Date
+import org.jetbrains.compose.resources.StringResource
+import org.jetbrains.compose.resources.stringResource
+import kotlin.time.ExperimentalTime
 
 /**
  * The time-player bar shown while time travel is engaged (v1 `time_player_view`): the
@@ -107,7 +133,7 @@ fun TimeTravelPlayer(viewModel: TimeTravelViewModel) {
             // The readout slides in per tick while sweeping so the motion itself is
             // visible; frozen time produces one stable string and therefore no animation.
             AnimatedContent(
-                targetState = formatter.formatInstant(currentTime),
+                targetState = formatter(currentTime),
                 transitionSpec = {
                     (
                         slideInVertically(tween(DATE_TICK_MS)) { it / 2 } +
@@ -139,19 +165,19 @@ fun TimeTravelPlayer(viewModel: TimeTravelViewModel) {
                 FilledTonalButton(
                     onClick = { viewModel.decelerate() },
                     modifier = Modifier.padding(horizontal = 4.dp),
-                ) { Text(stringResource(R.string.time_travel_slower)) }
+                ) { Text(stringResource(Res.string.time_travel_slower)) }
                 FilledTonalButton(
                     onClick = { viewModel.pauseTime() },
                     modifier = Modifier.padding(horizontal = 4.dp),
-                ) { Text(stringResource(R.string.time_travel_pause)) }
+                ) { Text(stringResource(Res.string.time_travel_pause)) }
                 FilledTonalButton(
                     onClick = { viewModel.accelerate() },
                     modifier = Modifier.padding(horizontal = 4.dp),
-                ) { Text(stringResource(R.string.time_travel_faster)) }
+                ) { Text(stringResource(Res.string.time_travel_faster)) }
                 FilledTonalButton(
                     onClick = { viewModel.returnToRealTime() },
                     modifier = Modifier.padding(horizontal = 4.dp),
-                ) { Text(stringResource(R.string.time_travel_return)) }
+                ) { Text(stringResource(Res.string.time_travel_return)) }
             }
         }
     }
@@ -160,8 +186,11 @@ fun TimeTravelPlayer(viewModel: TimeTravelViewModel) {
 /**
  * v1's time-travel dialog in Compose: pick a date, a time, or a popular event, then Go —
  * or just "Start from now" if nothing was touched (v1's two-mode Go button).
+ *
+ * ExperimentalTime: `atStartOfDayIn` returns kotlin.time.Instant under the iOS compat build of
+ * kotlinx-datetime (skymap.DatetimeCompat).
  */
-@OptIn(ExperimentalMaterial3Api::class, ExperimentalLayoutApi::class)
+@OptIn(ExperimentalMaterial3Api::class, ExperimentalLayoutApi::class, ExperimentalTime::class)
 @Composable
 fun TimeTravelDialog(
     viewModel: TimeTravelViewModel,
@@ -169,7 +198,6 @@ fun TimeTravelDialog(
     onDismiss: () -> Unit,
 ) {
     val zone = remember { TimeZone.currentSystemDefault() }
-    val context = LocalContext.current
     val formatter = rememberDateTimeFormatter()
     // Saved across configuration changes: rotating the device mustn't discard the date the user
     // has been dialing in. Instant/event ride as their primitive forms (epoch millis, list index).
@@ -183,11 +211,11 @@ fun TimeTravelDialog(
 
     AlertDialog(
         onDismissRequest = onDismiss,
-        title = { Text(stringResource(R.string.time_travel_title)) },
+        title = { Text(stringResource(Res.string.time_travel_title)) },
         text = {
             Column {
                 Text(
-                    stringResource(R.string.time_travel_visiting, formatter.formatInstant(target)),
+                    formattedStringResource(Res.string.time_travel_visiting, formatter(target)),
                     modifier = Modifier.padding(bottom = 12.dp),
                 )
                 // FlowRow rather than Row: long translations (e.g. Greek) can outgrow the
@@ -200,10 +228,10 @@ fun TimeTravelDialog(
                 ) {
                     FilledTonalButton(
                         onClick = { showDatePicker = true },
-                    ) { Text(stringResource(R.string.time_travel_pick_date)) }
+                    ) { Text(stringResource(Res.string.time_travel_pick_date)) }
                     FilledTonalButton(
                         onClick = { showTimePicker = true },
-                    ) { Text(stringResource(R.string.time_travel_pick_time)) }
+                    ) { Text(stringResource(Res.string.time_travel_pick_time)) }
                 }
                 EventPicker(
                     selectedEvent = selectedEvent,
@@ -233,7 +261,7 @@ fun TimeTravelDialog(
                             target,
                             eventKey =
                                 selectedEvent?.let {
-                                    context.resources.getResourceEntryName(it.displayNameRes)
+                                    it.displayNameRes.key
                                 },
                             searchTarget = selectedEvent?.searchTarget,
                         )
@@ -244,13 +272,13 @@ fun TimeTravelDialog(
                 },
             ) {
                 val label =
-                    if (userModified) R.string.time_travel_go else R.string.time_travel_from_now
+                    if (userModified) Res.string.time_travel_go else Res.string.time_travel_from_now
                 Text(stringResource(label))
             }
         },
         dismissButton = {
             TextButton(onClick = onDismiss) {
-                Text(stringResource(R.string.time_travel_cancel))
+                Text(stringResource(Res.string.time_travel_cancel))
             }
         },
     )
@@ -285,17 +313,17 @@ fun TimeTravelDialog(
                                     .toLocalDateTime(TimeZone.UTC)
                                     .date
                             val time = target.toLocalDateTime(zone).time
-                            target = LocalDateTime(date, time).toInstant(zone)
+                            target = LocalDateTime(date, time).toTravelInstant(zone)
                             selectedEvent = null
                             userModified = true
                         }
                         showDatePicker = false
                     },
-                ) { Text(stringResource(R.string.time_travel_ok)) }
+                ) { Text(stringResource(Res.string.time_travel_ok)) }
             },
             dismissButton = {
                 TextButton(onClick = { showDatePicker = false }) {
-                    Text(stringResource(R.string.time_travel_cancel))
+                    Text(stringResource(Res.string.time_travel_cancel))
                 }
             },
         ) {
@@ -305,9 +333,7 @@ fun TimeTravelDialog(
 
     if (showTimePicker) {
         val local = target.toLocalDateTime(zone)
-        val context = LocalContext.current
-        val is24Hour =
-            remember(context) { android.text.format.DateFormat.is24HourFormat(context) }
+        val is24Hour = rememberIs24HourClock()
         val pickerState =
             rememberTimePickerState(
                 initialHour = local.hour,
@@ -326,16 +352,16 @@ fun TimeTravelDialog(
                             LocalDateTime(
                                 local.date,
                                 LocalTime(pickerState.hour, pickerState.minute),
-                            ).toInstant(zone)
+                            ).toTravelInstant(zone)
                         selectedEvent = null
                         userModified = true
                         showTimePicker = false
                     },
-                ) { Text(stringResource(R.string.time_travel_ok)) }
+                ) { Text(stringResource(Res.string.time_travel_ok)) }
             },
             dismissButton = {
                 TextButton(onClick = { showTimePicker = false }) {
-                    Text(stringResource(R.string.time_travel_cancel))
+                    Text(stringResource(Res.string.time_travel_cancel))
                 }
             },
         )
@@ -355,7 +381,7 @@ private fun EventPicker(
         OutlinedTextField(
             value =
                 selectedEvent?.let { stringResource(it.displayNameRes) }
-                    ?: stringResource(R.string.time_travel_select_event),
+                    ?: stringResource(Res.string.time_travel_select_event),
             onValueChange = {},
             readOnly = true,
             trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(expanded = expanded) },
@@ -423,38 +449,28 @@ private val eventSaver =
     )
 
 /**
- * A remembered locale formatter (medium date, short time; v1 used an explicit pattern). Held
- * across recompositions so the 30 Hz player readout doesn't reallocate a [DateFormat] per frame.
+ * [LocalDateTime.toInstant] as the kotlinx.datetime.Instant the time-travel API takes, on
+ * kotlinx-datetime 0.6 (Android) and the 0.7 compat build (iOS, skymap.DatetimeCompat), whose
+ * toInstant returns kotlin.time.Instant. The pickers carry minutes, so milliseconds lose nothing.
  */
-@Composable
-private fun rememberDateTimeFormatter(): DateFormat {
-    // Key on the configuration so a runtime locale change re-creates the formatter under the
-    // new locale (a bare remember would keep the stale one if the activity isn't recreated).
-    val configuration = LocalConfiguration.current
-    return remember(configuration) {
-        DateFormat.getDateTimeInstance(DateFormat.MEDIUM, DateFormat.SHORT)
-    }
-}
-
-/** Locale-formatted date + time using an existing formatter. */
-private fun DateFormat.formatInstant(instant: Instant): String =
-    format(Date(instant.toEpochMilliseconds()))
+@OptIn(ExperimentalTime::class)
+private fun LocalDateTime.toTravelInstant(zone: TimeZone): Instant =
+    Instant.fromEpochMilliseconds(toInstant(zone).toEpochMilliseconds())
 
 /** The v1 speed-label ladder, keyed by the exact rate constants in [TimeTravelClock]. */
-@StringRes
-private fun rateLabel(rateSecondsPerSecond: Double): Int =
+private fun rateLabel(rateSecondsPerSecond: Double): StringResource =
     when (rateSecondsPerSecond) {
-        -TimeTravelClock.SECONDS_PER_WEEK -> R.string.time_travel_week_speed_back
-        -TimeTravelClock.SECONDS_PER_DAY -> R.string.time_travel_day_speed_back
-        -TimeTravelClock.SECONDS_PER_HOUR -> R.string.time_travel_hour_speed_back
-        -TimeTravelClock.SECONDS_PER_10_MINUTES -> R.string.time_travel_10minute_speed_back
-        -TimeTravelClock.SECONDS_PER_MINUTE -> R.string.time_travel_minute_speed_back
-        -1.0 -> R.string.time_travel_second_speed_back
-        1.0 -> R.string.time_travel_second_speed
-        TimeTravelClock.SECONDS_PER_MINUTE -> R.string.time_travel_minute_speed
-        TimeTravelClock.SECONDS_PER_10_MINUTES -> R.string.time_travel_10minute_speed
-        TimeTravelClock.SECONDS_PER_HOUR -> R.string.time_travel_hour_speed
-        TimeTravelClock.SECONDS_PER_DAY -> R.string.time_travel_day_speed
-        TimeTravelClock.SECONDS_PER_WEEK -> R.string.time_travel_week_speed
-        else -> R.string.time_travel_stopped
+        -TimeTravelClock.SECONDS_PER_WEEK -> Res.string.time_travel_week_speed_back
+        -TimeTravelClock.SECONDS_PER_DAY -> Res.string.time_travel_day_speed_back
+        -TimeTravelClock.SECONDS_PER_HOUR -> Res.string.time_travel_hour_speed_back
+        -TimeTravelClock.SECONDS_PER_10_MINUTES -> Res.string.time_travel_10minute_speed_back
+        -TimeTravelClock.SECONDS_PER_MINUTE -> Res.string.time_travel_minute_speed_back
+        -1.0 -> Res.string.time_travel_second_speed_back
+        1.0 -> Res.string.time_travel_second_speed
+        TimeTravelClock.SECONDS_PER_MINUTE -> Res.string.time_travel_minute_speed
+        TimeTravelClock.SECONDS_PER_10_MINUTES -> Res.string.time_travel_10minute_speed
+        TimeTravelClock.SECONDS_PER_HOUR -> Res.string.time_travel_hour_speed
+        TimeTravelClock.SECONDS_PER_DAY -> Res.string.time_travel_day_speed
+        TimeTravelClock.SECONDS_PER_WEEK -> Res.string.time_travel_week_speed
+        else -> Res.string.time_travel_stopped
     }

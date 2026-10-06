@@ -14,18 +14,23 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.safeDrawingPadding
+import androidx.compose.material3.SnackbarHost
+import androidx.compose.material3.SnackbarHostState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.onSizeChanged
+import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.IntSize
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.UIKitInteropInteractionMode
@@ -33,10 +38,13 @@ import androidx.compose.ui.viewinterop.UIKitInteropProperties
 import androidx.compose.ui.viewinterop.UIKitViewController
 import androidx.compose.ui.window.ComposeUIViewController
 import com.google.android.stardroid.render.api.LayerId
+import com.google.android.stardroid.time.TimeTravelState
 import com.google.android.stardroid.ui.layers.LayersViewModel
 import com.google.android.stardroid.ui.map.LayersSheet
 import com.google.android.stardroid.ui.map.MapChrome
 import com.google.android.stardroid.ui.map.MapViewModel
+import com.google.android.stardroid.ui.resources.Res
+import com.google.android.stardroid.ui.resources.sun_wont_set_message
 import com.google.android.stardroid.ui.search.SearchControlBar
 import com.google.android.stardroid.ui.search.SearchDialog
 import com.google.android.stardroid.ui.search.SearchGeometry
@@ -45,15 +53,21 @@ import com.google.android.stardroid.ui.search.SearchViewModel
 import com.google.android.stardroid.ui.startup.EulaScreen
 import com.google.android.stardroid.ui.startup.StartupViewModel
 import com.google.android.stardroid.ui.theme.SkyMapTheme
+import com.google.android.stardroid.ui.timetravel.TimeTravelDialog
+import com.google.android.stardroid.ui.timetravel.TimeTravelFlash
+import com.google.android.stardroid.ui.timetravel.TimeTravelPlayer
+import com.google.android.stardroid.ui.timetravel.TimeTravelViewModel
+import kotlinx.coroutines.launch
+import org.jetbrains.compose.resources.stringResource
 import platform.UIKit.UIViewController
 
 /**
  * The iOS app's root, for Swift to host: the Compose Multiplatform UI (D134) over the Metal map.
  *
  * The map carries the shared chrome (MapChrome: the layer rail, the action cluster, the HUD) and
- * the shared Layers sheet and search. This is a stand-in for Android's MapScreen, which composes
+ * the shared Layers sheet, search and time travel. This is a stand-in for Android's MapScreen, which composes
  * every other screen and so moves last (D137); until then the actions whose screens iOS lacks —
- * time travel, the overflow menu — do nothing.
+ * the overflow menu — do nothing. Time travel and search are wired as Android wires them.
  *
  * Android's startup gating, as far as iOS has screens for it: the EULA blocks everything until
  * accepted. The warm welcome and What's New follow later in phase 5.
@@ -65,7 +79,10 @@ fun skyMapViewController(): UIViewController {
     val startup = graph.startupViewModel()
     val layers = graph.layersViewModel()
     val search = graph.searchViewModel(mapViewModel)
-    return ComposeUIViewController { SkyMapScreen(map, mapViewModel, layers, search, startup) }
+    val timeTravel = graph.timeTravelViewModel()
+    return ComposeUIViewController {
+        SkyMapScreen(map, mapViewModel, layers, search, timeTravel, startup)
+    }
 }
 
 @OptIn(ExperimentalComposeUiApi::class)
@@ -75,6 +92,7 @@ private fun SkyMapScreen(
     mapViewModel: MapViewModel,
     layersViewModel: LayersViewModel,
     searchViewModel: SearchViewModel,
+    timeTravelViewModel: TimeTravelViewModel,
     startup: StartupViewModel,
 ) {
     val nightMode by mapViewModel.nightMode.collectAsState()
@@ -89,6 +107,15 @@ private fun SkyMapScreen(
     val searchTarget by searchViewModel.target.collectAsState()
     var showSearchDialog by remember { mutableStateOf(false) }
     var screenSize by remember { mutableStateOf(IntSize.Zero) }
+    val timeTravelState by timeTravelViewModel.state.collectAsState()
+    var showTimeTravelDialog by remember { mutableStateOf(false) }
+    var timeTravelPlayerHeightPx by remember { mutableStateOf(0) }
+    val snackbarHostState = remember { SnackbarHostState() }
+    val scope = rememberCoroutineScope()
+    // The per-event search target, aimed once time travel's clock has arrived.
+    LaunchedEffect(Unit) {
+        timeTravelViewModel.searchTargets.collect { searchViewModel.selectById(it) }
+    }
     // Choosing a result closes the dialog and, in manual mode, turns the sky to it (v1).
     LaunchedEffect(searchTarget) {
         searchTarget?.let { target ->
@@ -107,6 +134,12 @@ private fun SkyMapScreen(
                     UIKitInteropProperties(
                         interactionMode = UIKitInteropInteractionMode.NonCooperative,
                     ),
+            )
+            // Over the sky and under the controls, as on Android.
+            TimeTravelFlash(
+                effects = timeTravelViewModel.effects,
+                onNotice = { snackbarHostState.showSnackbar(it) },
+                modifier = Modifier.matchParentSize(),
             )
             // As on Android: the overlay points the way to the target without taking touches, the
             // bar owns the bottom edge, and the chrome steps aside until the search ends.
@@ -148,7 +181,7 @@ private fun SkyMapScreen(
                     onToggleReferenceFrame = mapViewModel::toggleReferenceFrame,
                     onToggleNightMode = { mapViewModel.setNightMode(!nightMode) },
                     onOpenSearch = { showSearchDialog = true },
-                    onOpenTimeTravel = {},
+                    onOpenTimeTravel = { showTimeTravelDialog = true },
                     onOpenLayersSheet = {
                         expandLayer = null
                         showLayersSheet = true
@@ -161,10 +194,42 @@ private fun SkyMapScreen(
                     // Reset has no undo snackbar yet; the correction it clears only arises in AR
                     // mode, which iOS does not have.
                     hudState = hudState.takeIf { hudEnabled },
+                    // The player spans the top in portrait (the app's only orientation), so the HUD
+                    // steps down below it while travel is engaged.
+                    hudTopClearance =
+                        if (timeTravelState != TimeTravelState.REAL_TIME) {
+                            with(LocalDensity.current) { timeTravelPlayerHeightPx.toDp() } + 8.dp
+                        } else {
+                            0.dp
+                        },
                     onResetAlignment = mapViewModel::resetAlignment,
                     shareEnabled = false,
                 )
             }
+            // The player shows from the moment travel engages and hides when the user heads home.
+            if (timeTravelState != TimeTravelState.REAL_TIME) {
+                Box(
+                    Modifier
+                        .align(Alignment.TopCenter)
+                        .safeDrawingPadding()
+                        .padding(8.dp)
+                        .onSizeChanged { timeTravelPlayerHeightPx = it.height },
+                ) {
+                    TimeTravelPlayer(timeTravelViewModel)
+                }
+            }
+            if (showTimeTravelDialog) {
+                val sunWontSet = stringResource(Res.string.sun_wont_set_message)
+                TimeTravelDialog(
+                    timeTravelViewModel,
+                    onSunWontSet = { scope.launch { snackbarHostState.showSnackbar(sunWontSet) } },
+                    onDismiss = { showTimeTravelDialog = false },
+                )
+            }
+            SnackbarHost(
+                snackbarHostState,
+                Modifier.align(Alignment.BottomCenter).navigationBarsPadding(),
+            )
             if (showSearchDialog) {
                 SearchDialog(
                     searchViewModel,

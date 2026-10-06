@@ -78,58 +78,10 @@
     <string name="share_failed_message" translation_description="Snackbar shown when capturing the sky image for sharing failed.">空をキャプチャできませんでした — もう一度お試しください</string>
 
     <!-- Time travel: entry button, dialog, and the player bar shown while travelling. -->
-    <string name="time_travel_title">タイムトラベル</string>
-    <string name="time_travel_visiting" translation_description="Readout in the time travel dialog showing the currently chosen destination date and time. %1$s is the formatted date and time.">訪問中: %1$s</string>
-    <string name="time_travel_pick_date" translation_description="Button in the time travel dialog that opens a date picker.">日付を設定</string>
-    <string name="time_travel_pick_time" translation_description="Button in the time travel dialog that opens a time picker.">時刻を設定</string>
-    <string name="time_travel_select_event" translation_description="Placeholder hint for the dropdown list of popular astronomical events in the time travel dialog.">人気のイベントを選択…</string>
-    <string name="time_travel_go" translation_description="Button that starts time travel to the chosen date.">移動</string>
-    <string name="time_travel_from_now">現在から開始</string>
-    <!-- tm:omitted name="time_travel_ok" reason="identical_to_source" -->
-    <string name="time_travel_cancel">キャンセル</string>
-    <!-- tm:omitted name="time_travel_slower" reason="identical_to_source" -->
-    <!-- tm:omitted name="time_travel_pause" reason="identical_to_source" -->
-    <!-- tm:omitted name="time_travel_faster" reason="identical_to_source" -->
-    <string name="time_travel_return" translation_description="Player button that ends time travel and returns the map to the present.">現在</string>
 
     <!-- Time travel playback-rate labels (v1 wording). -->
-    <string name="time_travel_second_speed">1秒/秒で時間進行中</string>
-    <string name="time_travel_minute_speed">1分/秒で時間進行中</string>
-    <string name="time_travel_10minute_speed">10分/秒で時間進行中</string>
-    <string name="time_travel_hour_speed">1時間/秒で時間進行中</string>
-    <string name="time_travel_day_speed">1日/秒で時間進行中</string>
-    <string name="time_travel_week_speed">1週/秒で時間進行中</string>
-    <string name="time_travel_second_speed_back">1秒/秒で時間逆行中</string>
-    <string name="time_travel_minute_speed_back">1分/秒で時間逆行中</string>
-    <string name="time_travel_10minute_speed_back">10分/秒で時間逆行中</string>
-    <string name="time_travel_hour_speed_back">1時間/秒で時間逆行中</string>
-    <string name="time_travel_day_speed_back">1日/秒で時間逆行中</string>
-    <string name="time_travel_week_speed_back">1週/秒で時間逆行中</string>
 
     <!-- Popular events in the time travel dialog (timestamps live in TimeTravelEvents.kt). -->
-    <string name="time_travel_now" translation_description="Time travel picker entry that resets the destination to the present moment.">現在</string>
-    <string name="time_travel_next_sunset">次の日没</string>
-    <string name="time_travel_next_sunrise">次の日の出</string>
-    <string name="time_travel_next_full_moon">次の満月</string>
-    <string name="time_travel_next_new_moon">次の新月</string>
-    <string name="time_travel_six_planet_parade_2026">6惑星パレード、2026年2月28日</string>
-    <string name="time_travel_lunar_eclipse_2026">皆既月食、2026年3月3日</string>
-    <string name="time_travel_lyrids_2026">リリッド流星群、2026年4月22日</string>
-    <string name="time_travel_venus_jupiter_2026">金星・木星接近、2026年6月9日</string>
-    <string name="time_travel_mars_uranus_2026">火星・天王星接近、2026年7月4日</string>
-    <string name="time_travel_solar_eclipse_2026">皆既日食、2026年8月12日</string>
-    <string name="time_travel_perseids_2026">ペルセウス座流星群、2026年8月12～13日</string>
-    <string name="time_travel_lunar_eclipse_aug_2026" translation_description="Name of an astronomical event in the time travel picker. Keep the date format suitable for your locale.">部分月食、2026年8月28日</string>
-    <string name="time_travel_jupiter_occultation_2026">月による木星の掩蔽、2026年10月6日</string>
-    <string name="time_travel_geminids_2026">ふたご座流星群、2026年12月13～14日</string>
-    <string name="time_travel_supermoon_2026">クリスマスイブのスーパームーン、2026年12月24日</string>
-    <string name="time_travel_mercury_transit_2016">2016年5月9日の水星太陽面通過</string>
-    <string name="time_travel_solar_eclipse_2024">2024年4月8日の日食</string>
-    <string name="time_travel_apollo_11">アポロ11号の月面着陸</string>
-    <string name="time_travel_jupiter_saturn_2020">木星と土星の結合</string>
-    <string name="sun_wont_set_message">この場所では今後24時間以内に太陽が沈むことはありません。</string>
-    <string name="time_travel_start_message" translation_description="Toast message when time travel starts toward a chosen destination. %1$s is the formatted destination date and time.">%1$sへタイムトラベル中...</string>
-    <string name="time_travel_close_message">現在へ...</string>
 
     <!-- Location management. -->
     <string name="location_management_title">現在地</string>
@@ -503,6 +455,5 @@
     <string name="notif_shower_bright_moon" translation_description="Notification sentence when a bright moon will interfere with a meteor shower; %1$d is the moon illumination percentage, %2$d the meteors per hour under ideal skies">月の光が%1$d%%の明るさで、かすかな流星は見えにくくなります — 理想的な空の下では1時間あたり最大%2$d個の流星が見られます。</string>
     <string name="notif_digest_title" translation_description="Title of the tonight\'s-sky digest notification">今夜は一見の価値あり</string>
     <string name="notif_action_mute_showers" translation_description="Notification action button that opens the system toggle for the meteor-shower channel">流星群の通知をオフにする</string>
-    <string name="time_travel_stopped">タイムトラベル一時停止</string>
     <!-- Layers sheet: per-layer parameters (D87). -->
 </resources>

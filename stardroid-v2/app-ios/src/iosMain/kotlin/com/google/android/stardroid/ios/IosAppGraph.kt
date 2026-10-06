@@ -33,6 +33,7 @@ import com.google.android.stardroid.ui.map.MapViewModel
 import com.google.android.stardroid.ui.map.ReferenceFrame
 import com.google.android.stardroid.ui.search.SearchViewModel
 import com.google.android.stardroid.ui.startup.StartupViewModel
+import com.google.android.stardroid.ui.timetravel.TimeTravelViewModel
 import kotlinx.cinterop.ExperimentalForeignApi
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -222,6 +223,14 @@ class IosAppGraph {
             // Android's Log.e; stdout reaches the device console (devicectl --console).
             logError = { message, cause -> println("SearchViewModel: $message: $cause") },
             isManualMode = { map.referenceFrame.value == ReferenceFrame.MANUAL },
+            location = { locationController.locations.value },
+        )
+
+    /** Time travel over the app's one clock; computed events (sunset...) use the map's place. */
+    fun timeTravelViewModel(): TimeTravelViewModel =
+        TimeTravelViewModel(
+            timeController,
+            MeeusEphemeris,
             location = { locationController.locations.value },
         )
 

@@ -81,58 +81,10 @@
     <string name="share_failed_message" translation_description="Snackbar shown when capturing the sky image for sharing failed.">Ni allai ddal yr awyr — ceisiwch eto</string>
 
     <!-- Time travel: entry button, dialog, and the player bar shown while travelling. -->
-    <string name="time_travel_title">Teithio mewn Amser</string>
-    <string name="time_travel_visiting" translation_description="Readout in the time travel dialog showing the currently chosen destination date and time. %1$s is the formatted date and time.">Yn ymweld â: %1$s</string>
-    <string name="time_travel_pick_date" translation_description="Button in the time travel dialog that opens a date picker.">Gosod dyddiad</string>
-    <string name="time_travel_pick_time" translation_description="Button in the time travel dialog that opens a time picker.">Gosod amser</string>
-    <string name="time_travel_select_event" translation_description="Placeholder hint for the dropdown list of popular astronomical events in the time travel dialog.">Dewiswch ddigwyddiad poblogaidd…</string>
-    <string name="time_travel_go" translation_description="Button that starts time travel to the chosen date.">Ewch</string>
-    <string name="time_travel_from_now">Dechrau o Nawr</string>
-    <string name="time_travel_ok">Iawn</string>
-    <string name="time_travel_cancel">Diddymu</string>
-    <!-- tm:omitted name="time_travel_slower" reason="identical_to_source" -->
-    <!-- tm:omitted name="time_travel_pause" reason="identical_to_source" -->
-    <!-- tm:omitted name="time_travel_faster" reason="identical_to_source" -->
-    <string name="time_travel_return" translation_description="Player button that ends time travel and returns the map to the present.">Nawr</string>
 
     <!-- Time travel playback-rate labels (v1 wording). -->
-    <string name="time_travel_second_speed">Yn teithio &gt; 1 eil/eil</string>
-    <string name="time_travel_minute_speed">Yn teithio &gt; 1 mun/eil</string>
-    <string name="time_travel_10minute_speed">Yn teithio &gt; 10 mun/eil</string>
-    <string name="time_travel_hour_speed">Yn teithio &gt; 1 awr/eil</string>
-    <string name="time_travel_day_speed">Yn teithio &gt; 1 diwrnod/eil</string>
-    <string name="time_travel_week_speed">Yn teithio &gt; 1 wythnos/eil</string>
-    <string name="time_travel_second_speed_back">Yn teithio &lt; 1 eil/eil</string>
-    <string name="time_travel_minute_speed_back">Yn teithio &lt; 1 mun/eil</string>
-    <string name="time_travel_10minute_speed_back">Yn teithio &lt; 10 mun/eil</string>
-    <string name="time_travel_hour_speed_back">Yn teithio &lt; 1 awr/eil</string>
-    <string name="time_travel_day_speed_back">Yn teithio &lt; 1 diwrnod/eil</string>
-    <string name="time_travel_week_speed_back">Yn teithio &lt; 1 wythnos/eil</string>
 
     <!-- Popular events in the time travel dialog (timestamps live in TimeTravelEvents.kt). -->
-    <string name="time_travel_now" translation_description="Time travel picker entry that resets the destination to the present moment.">Nawr</string>
-    <string name="time_travel_next_sunset">Machlud haul y noswaith nesaf</string>
-    <string name="time_travel_next_sunrise">Gwawr y bore nesaf</string>
-    <string name="time_travel_next_full_moon">Lleuad llawn nesaf</string>
-    <string name="time_travel_next_new_moon">Tŷ newydd nesaf</string>
-    <string name="time_travel_six_planet_parade_2026">Paréd Chwe Phlaned, Chwef 28, 2026</string>
-    <string name="time_travel_lunar_eclipse_2026">Eclips Lleuad Gyflawn, Maw 3, 2026</string>
-    <string name="time_travel_lyrids_2026">Cawod Meteorau Lyrids, Ebr 22, 2026</string>
-    <string name="time_travel_venus_jupiter_2026">Cydgyfeiriad Gwener-Iau, Meh 9, 2026</string>
-    <string name="time_travel_mars_uranus_2026">Agosrwydd Agos Mawrth-Wranws, Gor 4, 2026</string>
-    <string name="time_travel_solar_eclipse_2026">Eclips Haul Gyflawn, Awst 12, 2026</string>
-    <string name="time_travel_perseids_2026">Cawod Meteorau Perseids, Awst 12-13, 2026</string>
-    <string name="time_travel_lunar_eclipse_aug_2026" translation_description="Name of an astronomical event in the time travel picker. Keep the date format suitable for your locale.">Diffyg Lleuad Rhannol, Awst 28, 2026</string>
-    <string name="time_travel_jupiter_occultation_2026">Cuddiad Lleuad o Iau, Hyd 6, 2026</string>
-    <string name="time_travel_geminids_2026">Cawod Meteorau Geminids, Rhag 13-14, 2026</string>
-    <string name="time_travel_supermoon_2026">Superlloer Noswyl Nadolig, Rhag 24, 2026</string>
-    <string name="time_travel_mercury_transit_2016">Croesiad Mercher 9 Mai 2016</string>
-    <string name="time_travel_solar_eclipse_2024">Diffyg ar yr haul 8 Ebrill 2024</string>
-    <string name="time_travel_apollo_11">Glanio Apollo 11 ar y lleuad</string>
-    <string name="time_travel_jupiter_saturn_2020">Cysylltiad Iau-Saturnau 2020</string>
-    <string name="sun_wont_set_message">Dyw\'r haul ddim yn machlud o fewn y 24 awr nesaf yn dy leoliad cyfredol.</string>
-    <string name="time_travel_start_message" translation_description="Toast message when time travel starts toward a chosen destination. %1$s is the formatted destination date and time.">Teithio drwy amser i %1$s ...</string>
-    <string name="time_travel_close_message">Nôl i\'r presennol ...</string>
 
     <!-- Location management. -->
     <string name="location_management_title">Eich Lleoliad</string>
@@ -537,6 +489,5 @@ cael ei osod.
     </string>
     <string name="notif_digest_title" translation_description="Title of the tonight\'s-sky digest notification">Werth edrych heno</string>
     <string name="notif_action_mute_showers" translation_description="Notification action button that opens the system toggle for the meteor-shower channel">Tawelu cawodydd</string>
-    <string name="time_travel_stopped">Teithio amser wedi\'i oedi</string>
     <!-- Layers sheet: per-layer parameters (D87). -->
 </resources>

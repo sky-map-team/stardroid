@@ -81,58 +81,10 @@
     <string name="share_failed_message" translation_description="Snackbar shown when capturing the sky image for sharing failed.">Nie udało się uchwycić nieba — spróbuj ponownie</string>
 
     <!-- Time travel: entry button, dialog, and the player bar shown while travelling. -->
-    <string name="time_travel_title">Podróż w czasie</string>
-    <string name="time_travel_visiting" translation_description="Readout in the time travel dialog showing the currently chosen destination date and time. %1$s is the formatted date and time.">Odwiedzasz: %1$s</string>
-    <string name="time_travel_pick_date" translation_description="Button in the time travel dialog that opens a date picker.">Ustaw datę</string>
-    <string name="time_travel_pick_time" translation_description="Button in the time travel dialog that opens a time picker.">Ustaw godzinę</string>
-    <string name="time_travel_select_event" translation_description="Placeholder hint for the dropdown list of popular astronomical events in the time travel dialog.">Wybierz popularne wydarzenie…</string>
-    <string name="time_travel_go" translation_description="Button that starts time travel to the chosen date.">Idź</string>
-    <string name="time_travel_from_now">Rozpocznij od teraz</string>
-    <!-- tm:omitted name="time_travel_ok" reason="identical_to_source" -->
-    <string name="time_travel_cancel">Anuluj</string>
-    <!-- tm:omitted name="time_travel_slower" reason="identical_to_source" -->
-    <!-- tm:omitted name="time_travel_pause" reason="identical_to_source" -->
-    <!-- tm:omitted name="time_travel_faster" reason="identical_to_source" -->
-    <string name="time_travel_return" translation_description="Player button that ends time travel and returns the map to the present.">Teraz</string>
 
     <!-- Time travel playback-rate labels (v1 wording). -->
-    <string name="time_travel_second_speed">Podróżowanie &gt; 1 sek./sek.</string>
-    <string name="time_travel_minute_speed">Podróżowanie &gt; 1 min./sek.</string>
-    <string name="time_travel_10minute_speed">Podróżowanie &gt; 10 min./sek.</string>
-    <string name="time_travel_hour_speed">Podróżowanie &gt; 1 godz./sek.</string>
-    <string name="time_travel_day_speed">Podróżowanie &gt; 1 dzień/sek.</string>
-    <string name="time_travel_week_speed">Podróżowanie &gt; 1 tydz./sek.</string>
-    <string name="time_travel_second_speed_back">Podróżowanie &lt; 1 sek./sek.</string>
-    <string name="time_travel_minute_speed_back">Podróżowanie &lt; 1 min./sek.</string>
-    <string name="time_travel_10minute_speed_back">Podróżowanie &lt; 10 min./sek.</string>
-    <string name="time_travel_hour_speed_back">Podróżowanie &lt; 1 godz./sek.</string>
-    <string name="time_travel_day_speed_back">Podróżowanie &lt; 1 dzień/sek.</string>
-    <string name="time_travel_week_speed_back">Podróżowanie &lt; 1 tydz./sek.</string>
 
     <!-- Popular events in the time travel dialog (timestamps live in TimeTravelEvents.kt). -->
-    <string name="time_travel_now" translation_description="Time travel picker entry that resets the destination to the present moment.">Teraz</string>
-    <string name="time_travel_next_sunset">Zachód Słońca następnego wieczoru</string>
-    <string name="time_travel_next_sunrise">Wschód Słońca następnego poranka</string>
-    <string name="time_travel_next_full_moon">Następna pełnia</string>
-    <string name="time_travel_next_new_moon">Następny nów</string>
-    <string name="time_travel_six_planet_parade_2026">Parada sześciu planet z 28 lutego 2026 r.</string>
-    <string name="time_travel_lunar_eclipse_2026">Całkowite zaćmienie Księżyca z 3 marca 2026 r.</string>
-    <string name="time_travel_lyrids_2026">Deszcz meteorów Lirydów z 22 kwietnia 2026 r.</string>
-    <string name="time_travel_venus_jupiter_2026">Koniunkcja Wenus i Jowisza z 9 czerwca 2026 r.</string>
-    <string name="time_travel_mars_uranus_2026">Zbliżenie Marsa i Uranu z 4 lipca 2026 r.</string>
-    <string name="time_travel_solar_eclipse_2026">Całkowite zaćmienie Słońca z 12 sierpnia 2026 r.</string>
-    <string name="time_travel_perseids_2026">Deszcz meteorów Perseidów z 12-13 sierpnia 2026 r.</string>
-    <string name="time_travel_lunar_eclipse_aug_2026" translation_description="Name of an astronomical event in the time travel picker. Keep the date format suitable for your locale.">Częściowe zaćmienie Księżyca, 28 sierpnia 2026</string>
-    <string name="time_travel_jupiter_occultation_2026">Zaćmienie Jowisza przez Księżyc z 6 października 2026 r.</string>
-    <string name="time_travel_geminids_2026">Deszcz meteorów Geminidów z 13-14 grudnia 2026 r.</string>
-    <string name="time_travel_supermoon_2026">Superksiężyc w Wigilię z 24 grudnia 2026 r.</string>
-    <string name="time_travel_mercury_transit_2016">Tranzyt Merkurego z 9 maja 2016 r.</string>
-    <string name="time_travel_solar_eclipse_2024">Zaćmienie Słońca w Ameryce Północnej z 8 kwietnia 2024 r.</string>
-    <string name="time_travel_apollo_11">Lądowanie Apollo 11 na Księżycu</string>
-    <string name="time_travel_jupiter_saturn_2020">Koniunkcja Jowisza i Saturna z 2020 r.</string>
-    <string name="sun_wont_set_message">W Twojej bieżącej lokalizacji Słońce nie zejdzie w ciągu następnych 24 godzin.</string>
-    <string name="time_travel_start_message" translation_description="Toast message when time travel starts toward a chosen destination. %1$s is the formatted destination date and time.">Podróż w czasie do %1$s ...</string>
-    <string name="time_travel_close_message">Powrót do teraźniejszości...</string>
 
     <!-- Location management. -->
     <string name="location_management_title">Twoja lokalizacja</string>
@@ -533,6 +485,5 @@
     </string>
     <string name="notif_digest_title" translation_description="Title of the tonight\'s-sky digest notification">Warto zobaczyć dziś wieczorem</string>
     <string name="notif_action_mute_showers" translation_description="Notification action button that opens the system toggle for the meteor-shower channel">Wycisz roje</string>
-    <string name="time_travel_stopped">Podróż w czasie wstrzymana</string>
     <!-- Layers sheet: per-layer parameters (D87). -->
 </resources>

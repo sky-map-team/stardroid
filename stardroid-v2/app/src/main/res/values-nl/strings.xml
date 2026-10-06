@@ -80,58 +80,10 @@
     <string name="share_failed_message" translation_description="Snackbar shown when capturing the sky image for sharing failed.">Kon de hemel niet vastleggen — probeer opnieuw</string>
 
     <!-- Time travel: entry button, dialog, and the player bar shown while travelling. -->
-    <string name="time_travel_title">Tijdreizen</string>
-    <string name="time_travel_visiting" translation_description="Readout in the time travel dialog showing the currently chosen destination date and time. %1$s is the formatted date and time.">Bezoekt: %1$s</string>
-    <string name="time_travel_pick_date" translation_description="Button in the time travel dialog that opens a date picker.">Datum instellen</string>
-    <string name="time_travel_pick_time" translation_description="Button in the time travel dialog that opens a time picker.">Tijd instellen</string>
-    <string name="time_travel_select_event" translation_description="Placeholder hint for the dropdown list of popular astronomical events in the time travel dialog.">Selecteer een populair evenement…</string>
-    <string name="time_travel_go" translation_description="Button that starts time travel to the chosen date.">Ga</string>
-    <string name="time_travel_from_now">Nu starten</string>
-    <!-- tm:omitted name="time_travel_ok" reason="identical_to_source" -->
-    <string name="time_travel_cancel">Annuleren</string>
-    <!-- tm:omitted name="time_travel_slower" reason="identical_to_source" -->
-    <!-- tm:omitted name="time_travel_pause" reason="identical_to_source" -->
-    <!-- tm:omitted name="time_travel_faster" reason="identical_to_source" -->
-    <string name="time_travel_return" translation_description="Player button that ends time travel and returns the map to the present.">Nu</string>
 
     <!-- Time travel playback-rate labels (v1 wording). -->
-    <string name="time_travel_second_speed">Beweegt &gt; @ 1 sec/sec</string>
-    <string name="time_travel_minute_speed">Beweegt &gt; @ 1 min/sec</string>
-    <string name="time_travel_10minute_speed">Beweegt &gt; @ 10 min/sec</string>
-    <string name="time_travel_hour_speed">Beweegt &gt; @ 1 uur/sec</string>
-    <string name="time_travel_day_speed">Beweegt &gt; @ 1 dag/sec</string>
-    <string name="time_travel_week_speed">Beweegt &gt; @ 1 week/sec</string>
-    <string name="time_travel_second_speed_back">Beweegt &lt; @ 1 sec/sec</string>
-    <string name="time_travel_minute_speed_back">Beweegt &lt; @ 1 min/sec</string>
-    <string name="time_travel_10minute_speed_back">Beweegt &lt; @ 10 min/sec</string>
-    <string name="time_travel_hour_speed_back">Beweegt &lt; @ 1 uur/sec</string>
-    <string name="time_travel_day_speed_back">Beweegt &lt; @ 1 dag/sec</string>
-    <string name="time_travel_week_speed_back">Beweegt &lt; @ 1 week/sec</string>
 
     <!-- Popular events in the time travel dialog (timestamps live in TimeTravelEvents.kt). -->
-    <string name="time_travel_now" translation_description="Time travel picker entry that resets the destination to the present moment.">Nu</string>
-    <string name="time_travel_next_sunset">Volgende zonsondergang</string>
-    <string name="time_travel_next_sunrise">Volgende zonsopgang</string>
-    <string name="time_travel_next_full_moon">Volgende volle maan</string>
-    <string name="time_travel_next_new_moon">Volgende nieuwe maan</string>
-    <string name="time_travel_six_planet_parade_2026">Zes-planetenparade, 28 februari 2026</string>
-    <string name="time_travel_lunar_eclipse_2026">Totale maansverduistering, 3 maart 2026</string>
-    <string name="time_travel_lyrids_2026">Lyriden-meteorenregen, 22 april 2026</string>
-    <string name="time_travel_venus_jupiter_2026">Venus-Jupiterconjunctie, 9 juni 2026</string>
-    <string name="time_travel_mars_uranus_2026">Mars-Uranusnadering, 4 juli 2026</string>
-    <string name="time_travel_solar_eclipse_2026">Totale zonsverduistering, 12 augustus 2026</string>
-    <string name="time_travel_perseids_2026">Perseïden-meteorenregen, 12-13 augustus 2026</string>
-    <string name="time_travel_lunar_eclipse_aug_2026" translation_description="Name of an astronomical event in the time travel picker. Keep the date format suitable for your locale.">Gedeeltelijke maansverduistering, 28 aug 2026</string>
-    <string name="time_travel_jupiter_occultation_2026">Maanbedekking van Jupiter, 6 oktober 2026</string>
-    <string name="time_travel_geminids_2026">Geminiden-meteorenregen, 13-14 december 2026</string>
-    <string name="time_travel_supermoon_2026">Kerstmis-supermaan, 24 december 2026</string>
-    <string name="time_travel_mercury_transit_2016">Mercuriusovergang van 9 mei 2016</string>
-    <string name="time_travel_solar_eclipse_2024">Zonsverduistering van 8 april 2024</string>
-    <string name="time_travel_apollo_11">Maanlanding van de Apollo 11</string>
-    <string name="time_travel_jupiter_saturn_2020">Conjunctie Jupiter-Saturnus</string>
-    <string name="sun_wont_set_message">De zon gaat op uw huidige locatie niet onder in de komende 24 uur.</string>
-    <string name="time_travel_start_message" translation_description="Toast message when time travel starts toward a chosen destination. %1$s is the formatted destination date and time.">Reist door de tijd naar %1$s ...</string>
-    <string name="time_travel_close_message">Terug naar het heden ...</string>
 
     <!-- Location management. -->
     <string name="location_management_title">Je locatie</string>
@@ -528,6 +480,5 @@
     </string>
     <string name="notif_digest_title" translation_description="Title of the tonight\'s-sky digest notification">Vanavond de moeite waard</string>
     <string name="notif_action_mute_showers" translation_description="Notification action button that opens the system toggle for the meteor-shower channel">Meteorenregens dempen</string>
-    <string name="time_travel_stopped">Tijdreizen gepauzeerd</string>
     <!-- Layers sheet: per-layer parameters (D87). -->
 </resources>

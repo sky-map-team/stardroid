@@ -120,4 +120,53 @@
     <string name="search_target_looking_message" translation_description="Status shown while the user is being guided toward a search target. %1$s is the object name.">Søker etter: %1$s</string>
     <string name="search_target_found_message" translation_description="Status shown when the search target has been found and is centered on screen. %1$s is the object name.">Funnet: %1$s</string>
     <string name="search_overlay_prompt">Beveg telefonen din i pilretning</string>
+    <string name="time_travel_title">Tidsreise</string>
+    <string name="time_travel_visiting" translation_description="Readout in the time travel dialog showing the currently chosen destination date and time. %1$s is the formatted date and time.">Besøker: %1$s</string>
+    <string name="time_travel_pick_date" translation_description="Button in the time travel dialog that opens a date picker.">Angi dato</string>
+    <string name="time_travel_pick_time" translation_description="Button in the time travel dialog that opens a time picker.">Angi tid</string>
+    <string name="time_travel_select_event" translation_description="Placeholder hint for the dropdown list of popular astronomical events in the time travel dialog.">Velg en populær hendelse…</string>
+    <string name="time_travel_go" translation_description="Button that starts time travel to the chosen date.">Gå</string>
+    <string name="time_travel_from_now">Start fra nå</string>
+    <!-- tm:omitted name="time_travel_ok" reason="identical_to_source" -->
+    <string name="time_travel_cancel">Avbryt</string>
+    <!-- tm:omitted name="time_travel_slower" reason="identical_to_source" -->
+    <!-- tm:omitted name="time_travel_pause" reason="identical_to_source" -->
+    <!-- tm:omitted name="time_travel_faster" reason="identical_to_source" -->
+    <string name="time_travel_return" translation_description="Player button that ends time travel and returns the map to the present.">Nå</string>
+    <string name="time_travel_second_speed">Reiser &gt; @ 1 sek/sek</string>
+    <string name="time_travel_minute_speed">Reiser &gt; @ 1 min/sek</string>
+    <string name="time_travel_10minute_speed">Reiser &gt; @ 10 min/sek</string>
+    <string name="time_travel_hour_speed">Reiser &gt; @ 1 time/sek</string>
+    <string name="time_travel_day_speed">Reiser &gt; @ 1 døgn/sek</string>
+    <string name="time_travel_week_speed">Reiser &gt; @ 1 uke/sek</string>
+    <string name="time_travel_second_speed_back">Reiser &lt; @ 1 sek/sek</string>
+    <string name="time_travel_minute_speed_back">Reiser &lt; @ 1 min/sek</string>
+    <string name="time_travel_10minute_speed_back">Reiser &lt; @ 10 min/sek</string>
+    <string name="time_travel_hour_speed_back">Reiser &lt; @ 1 time/sek</string>
+    <string name="time_travel_day_speed_back">Reiser &lt; @ 1 døgn/sek</string>
+    <string name="time_travel_week_speed_back">Reiser &lt; @ 1 uke/sek</string>
+    <string name="time_travel_now" translation_description="Time travel picker entry that resets the destination to the present moment.">Nå</string>
+    <string name="time_travel_next_sunset">Neste solnedgang</string>
+    <string name="time_travel_next_sunrise">Neste soloppgang</string>
+    <string name="time_travel_next_full_moon">Neste fullmåne</string>
+    <string name="time_travel_next_new_moon">Neste nymåne</string>
+    <string name="time_travel_six_planet_parade_2026">Seks-planetparade, 28. februar 2026</string>
+    <string name="time_travel_lunar_eclipse_2026">Total måneforkjølelse, 3. mars 2026</string>
+    <string name="time_travel_lyrids_2026">Lyrider-meteorsverm, 22. april 2026</string>
+    <string name="time_travel_venus_jupiter_2026">Venus-Jupiter-konjunksjon, 9. juni 2026</string>
+    <string name="time_travel_mars_uranus_2026">Mars-Uranus nærmeste tilnærming, 4. juli 2026</string>
+    <string name="time_travel_solar_eclipse_2026">Total solformørkelse, 12. august 2026</string>
+    <string name="time_travel_perseids_2026">Perseidene meteorsverm, 12.-13. august 2026</string>
+    <string name="time_travel_lunar_eclipse_aug_2026" translation_description="Name of an astronomical event in the time travel picker. Keep the date format suitable for your locale.">Delvis måneformørkelse, 28. aug. 2026</string>
+    <string name="time_travel_jupiter_occultation_2026">Månens okkultasjon av Jupiter, 6. oktober 2026</string>
+    <string name="time_travel_geminids_2026">Geminidene meteorsverm, 13.-14. desember 2026</string>
+    <string name="time_travel_supermoon_2026">Julaftens supermåne, 24. desember 2026</string>
+    <string name="time_travel_mercury_transit_2016">Merkurpassasje 9. mai 2016</string>
+    <string name="time_travel_solar_eclipse_2024">Nord-Amerikansk solformørkelse 8. apr 2024</string>
+    <string name="time_travel_apollo_11">Apollo 11 månelanding</string>
+    <string name="time_travel_jupiter_saturn_2020">Jupiter-Saturn-konjunksjon i 2020</string>
+    <string name="time_travel_stopped">Tidsreise satt på pause</string>
+    <string name="sun_wont_set_message">Solen går ikke ned i løpet av de neste 24 timene på ditt nåværende sted.</string>
+    <string name="time_travel_start_message" translation_description="Toast message when time travel starts toward a chosen destination. %1$s is the formatted destination date and time.">Reiser gjennom tid til %1$s ...</string>
+    <string name="time_travel_close_message">Tilbake til nåtiden...</string>
 </resources>
