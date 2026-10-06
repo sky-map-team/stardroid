@@ -82,58 +82,10 @@
     <string name="share_failed_message" translation_description="Snackbar shown when capturing the sky image for sharing failed.">No se pudo capturar el cielo — int\'entalo de nuevo</string>
 
     <!-- Time travel: entry button, dialog, and the player bar shown while travelling. -->
-    <string name="time_travel_title">Viaje en el tiempo</string>
-    <string name="time_travel_visiting" translation_description="Readout in the time travel dialog showing the currently chosen destination date and time. %1$s is the formatted date and time.">Visitando: %1$s</string>
-    <string name="time_travel_pick_date" translation_description="Button in the time travel dialog that opens a date picker.">Establecer fecha</string>
-    <string name="time_travel_pick_time" translation_description="Button in the time travel dialog that opens a time picker.">Establecer hora</string>
-    <string name="time_travel_select_event" translation_description="Placeholder hint for the dropdown list of popular astronomical events in the time travel dialog.">Seleccionar un evento popular…</string>
-    <string name="time_travel_go" translation_description="Button that starts time travel to the chosen date.">Ir</string>
-    <string name="time_travel_from_now">Empezar desde ahora</string>
-    <string name="time_travel_ok">Aceptar</string>
-    <string name="time_travel_cancel">Cancelar</string>
-    <!-- tm:omitted name="time_travel_slower" reason="identical_to_source" -->
-    <!-- tm:omitted name="time_travel_pause" reason="identical_to_source" -->
-    <!-- tm:omitted name="time_travel_faster" reason="identical_to_source" -->
-    <string name="time_travel_return" translation_description="Player button that ends time travel and returns the map to the present.">Ahora</string>
 
     <!-- Time travel playback-rate labels (v1 wording). -->
-    <string name="time_travel_second_speed">Viajando a &gt; @ 1 seg/seg</string>
-    <string name="time_travel_minute_speed">Viajando a &gt; @ 1 min/seg</string>
-    <string name="time_travel_10minute_speed">Viajando a &gt; @ 10 min/seg</string>
-    <string name="time_travel_hour_speed">Viajando a &gt; @ 1 hora/seg</string>
-    <string name="time_travel_day_speed">Viajando a &gt; @ 1 día/seg</string>
-    <string name="time_travel_week_speed">Viajando a &gt; @ 1 semana/seg</string>
-    <string name="time_travel_second_speed_back">Viajando a &lt; @ 1 seg/seg</string>
-    <string name="time_travel_minute_speed_back">Viajando a &lt; @ 1 min/seg</string>
-    <string name="time_travel_10minute_speed_back">Viajando a &lt; @ 10 min/seg</string>
-    <string name="time_travel_hour_speed_back">Viajando a &lt; @ 1 hora/seg</string>
-    <string name="time_travel_day_speed_back">Viajando a &lt; @ 1 día/seg</string>
-    <string name="time_travel_week_speed_back">Viajando a &lt; @ 1 semana/seg</string>
 
     <!-- Popular events in the time travel dialog (timestamps live in TimeTravelEvents.kt). -->
-    <string name="time_travel_now" translation_description="Time travel picker entry that resets the destination to the present moment.">Ahora</string>
-    <string name="time_travel_next_sunset">Próximo atardecer</string>
-    <string name="time_travel_next_sunrise">Próximo amanecer</string>
-    <string name="time_travel_next_full_moon">Próxima luna llena</string>
-    <string name="time_travel_next_new_moon">Próxima luna nueva</string>
-    <string name="time_travel_six_planet_parade_2026">Desfile planetario, 28 de febrero de 2026</string>
-    <string name="time_travel_lunar_eclipse_2026">Eclipse lunar total, 3 de marzo de 2026</string>
-    <string name="time_travel_lyrids_2026">Lluvia de meteoros Líridas del 22 de abril de 2026</string>
-    <string name="time_travel_venus_jupiter_2026">Conjunción Venus-Júpiter del 9 de junio de 2026</string>
-    <string name="time_travel_mars_uranus_2026">Aproximación Marte-Urano del 4 de julio de 2026</string>
-    <string name="time_travel_solar_eclipse_2026">Eclipse solar total del 12 de agosto de 2026</string>
-    <string name="time_travel_perseids_2026">Lluvia de meteoros Perseidas del 12-13 de agosto de 2026</string>
-    <string name="time_travel_lunar_eclipse_aug_2026" translation_description="Name of an astronomical event in the time travel picker. Keep the date format suitable for your locale.">Eclipse Lunar Parcial, 28 de agosto de 2026</string>
-    <string name="time_travel_jupiter_occultation_2026">Ocultación lunar de Júpiter del 6 de octubre de 2026</string>
-    <string name="time_travel_geminids_2026">Lluvia de meteoros Gemínidas del 13-14 de diciembre de 2026</string>
-    <string name="time_travel_supermoon_2026">Superluna de Nochebuena del 24 de diciembre de 2026</string>
-    <string name="time_travel_mercury_transit_2016">Tránsito de Mercurio del 9 de mayo de 2016</string>
-    <string name="time_travel_solar_eclipse_2024">Eclipse solar de Norteamérica del 8 de abril de 2024</string>
-    <string name="time_travel_apollo_11">Alunizaje del Apolo 11</string>
-    <string name="time_travel_jupiter_saturn_2020">Conjunción de Júpiter-Saturno de 2020</string>
-    <string name="sun_wont_set_message">El Sol no se pondrá durante las próximas 24 horas en tu ubicación actual.</string>
-    <string name="time_travel_start_message" translation_description="Toast message when time travel starts toward a chosen destination. %1$s is the formatted destination date and time.">Viajando en el tiempo a %1$s ...</string>
-    <string name="time_travel_close_message">Volver al presente...</string>
 
     <!-- Location management. -->
     <string name="location_management_title">Tu ubicación</string>
@@ -537,6 +489,5 @@
     </string>
     <string name="notif_digest_title" translation_description="Title of the tonight\'s-sky digest notification">Merece la pena echar un vistazo esta noche</string>
     <string name="notif_action_mute_showers" translation_description="Notification action button that opens the system toggle for the meteor-shower channel">Silenciar lluvias</string>
-    <string name="time_travel_stopped">Viaje en el tiempo pausado</string>
     <!-- Layers sheet: per-layer parameters (D87). -->
 </resources>

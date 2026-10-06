@@ -143,4 +143,53 @@
     <string name="search_target_looking_message" translation_description="Status shown while the user is being guided toward a search target. %1$s is the object name.">Looking for: %1$s</string>
     <string name="search_target_found_message" translation_description="Status shown when the search target has been found and is centered on screen. %1$s is the object name.">Found: %1$s</string>
     <string name="search_overlay_prompt" translation_description="Instruction telling the user to physically point their phone in the direction of the on-screen arrow to find the search target.">Point your phone toward the arrow</string>
+    <string name="time_travel_title" translation_description="Title of the time travel dialog.">Time travel</string>
+    <string name="time_travel_visiting" translation_description="Readout in the time travel dialog showing the currently chosen destination date and time. %1$s is the formatted date and time.">Visiting: %1$s</string>
+    <string name="time_travel_pick_date" translation_description="Button in the time travel dialog that opens a date picker.">Set date</string>
+    <string name="time_travel_pick_time" translation_description="Button in the time travel dialog that opens a time picker.">Set time</string>
+    <string name="time_travel_select_event" translation_description="Placeholder hint for the dropdown list of popular astronomical events in the time travel dialog.">Select a popular event…</string>
+    <string name="time_travel_go" translation_description="Button that starts time travel to the chosen date.">Go</string>
+    <string name="time_travel_from_now" translation_description="Button that starts time travel from the present moment, letting the user play time forward or backward from now.">Start from now</string>
+    <string name="time_travel_ok" translation_description="Confirmation button in the date and time pickers.">OK</string>
+    <string name="time_travel_cancel" translation_description="Button that closes a time travel dialog without doing anything.">Cancel</string>
+    <string name="time_travel_slower" translation_description="Player button that steps the time travel playback rate one step backward (slower forward, or faster backward). Rendered as a double left-pointing symbol.">◀◀</string>
+    <string name="time_travel_pause" translation_description="Player button that freezes time travel playback. Rendered as a pause symbol.">❚❚</string>
+    <string name="time_travel_faster" translation_description="Player button that steps the time travel playback rate one step forward (faster forward, or slower backward). Rendered as a double right-pointing symbol.">▶▶</string>
+    <string name="time_travel_return" translation_description="Player button that ends time travel and returns the map to the present.">Now</string>
+    <string name="time_travel_second_speed" translation_description="Label showing rate of travel through time. The symbol means forward.">Traveling &gt; @ 1 sec/sec</string>
+    <string name="time_travel_minute_speed" translation_description="Label showing rate of travel through time. The symbol means forward.">Traveling &gt; @ 1 min/sec</string>
+    <string name="time_travel_10minute_speed" translation_description="Label showing rate of travel through time. The symbol means forward.">Traveling &gt; @ 10 min/sec</string>
+    <string name="time_travel_hour_speed" translation_description="Label showing rate of travel through time. The symbol means forward.">Traveling &gt; @ 1 hour/sec</string>
+    <string name="time_travel_day_speed" translation_description="Label showing rate of travel through time. The symbol means forward.">Traveling &gt; @ 1 day/sec</string>
+    <string name="time_travel_week_speed" translation_description="Label showing rate of travel through time. The symbol means forward.">Traveling &gt; @ 1 week/sec</string>
+    <string name="time_travel_second_speed_back" translation_description="Label showing rate of travel through time. The symbol means backward.">Traveling &lt; @ 1 sec/sec</string>
+    <string name="time_travel_minute_speed_back" translation_description="Label showing rate of travel through time. The symbol means backward.">Traveling &lt; @ 1 min/sec</string>
+    <string name="time_travel_10minute_speed_back" translation_description="Label showing rate of travel through time. The symbol means backward.">Traveling &lt; @ 10 min/sec</string>
+    <string name="time_travel_hour_speed_back" translation_description="Label showing rate of travel through time. The symbol means backward.">Traveling &lt; @ 1 hour/sec</string>
+    <string name="time_travel_day_speed_back" translation_description="Label showing rate of travel through time. The symbol means backward.">Traveling &lt; @ 1 day/sec</string>
+    <string name="time_travel_week_speed_back" translation_description="Label showing rate of travel through time. The symbol means backward.">Traveling &lt; @ 1 week/sec</string>
+    <string name="time_travel_now" translation_description="Time travel picker entry that resets the destination to the present moment.">Now</string>
+    <string name="time_travel_next_sunset" translation_description="Name of a popular astronomical event in the time travel picker.">Next evening sunset</string>
+    <string name="time_travel_next_sunrise" translation_description="Name of a popular astronomical event in the time travel picker.">Next morning sunrise</string>
+    <string name="time_travel_next_full_moon" translation_description="Name of a popular astronomical event in the time travel picker.">Next full moon</string>
+    <string name="time_travel_next_new_moon" translation_description="Name of a popular astronomical event in the time travel picker.">Next new moon</string>
+    <string name="time_travel_six_planet_parade_2026" translation_description="Name of an astronomical event in the time travel picker. A planet parade is when several planets are visible at once. Keep the date format suitable for your locale.">Six-Planet Parade, Feb 28, 2026</string>
+    <string name="time_travel_lunar_eclipse_2026" translation_description="Name of an astronomical event in the time travel picker. Keep the date format suitable for your locale.">Total Lunar Eclipse, Mar 3, 2026</string>
+    <string name="time_travel_lyrids_2026" translation_description="Name of an astronomical event in the time travel picker. The Lyrids are an annual meteor shower. Keep the date format suitable for your locale.">Lyrids Meteor Shower, Apr 22, 2026</string>
+    <string name="time_travel_venus_jupiter_2026" translation_description="Name of an astronomical event in the time travel picker. A conjunction is when two planets appear very close together in the sky. Keep the date format suitable for your locale.">Venus-Jupiter Conjunction, Jun 9, 2026</string>
+    <string name="time_travel_mars_uranus_2026" translation_description="Name of an astronomical event in the time travel picker. A close approach is when two objects appear near each other in the sky. Keep the date format suitable for your locale.">Mars-Uranus Close Approach, Jul 4, 2026</string>
+    <string name="time_travel_solar_eclipse_2026" translation_description="Name of an astronomical event in the time travel picker. Keep the date format suitable for your locale.">Total Solar Eclipse, Aug 12, 2026</string>
+    <string name="time_travel_perseids_2026" translation_description="Name of an astronomical event in the time travel picker. The Perseids are an annual meteor shower. Keep the date format suitable for your locale.">Perseids Meteor Shower, Aug 12-13, 2026</string>
+    <string name="time_travel_lunar_eclipse_aug_2026" translation_description="Name of an astronomical event in the time travel picker. Keep the date format suitable for your locale.">Partial Lunar Eclipse, Aug 28, 2026</string>
+    <string name="time_travel_jupiter_occultation_2026" translation_description="Name of an astronomical event in the time travel picker. A lunar occultation is when the Moon passes in front of a planet, briefly hiding it. Keep the date format suitable for your locale.">Lunar Occultation of Jupiter, Oct 6, 2026</string>
+    <string name="time_travel_geminids_2026" translation_description="Name of an astronomical event in the time travel picker. The Geminids are an annual meteor shower. Keep the date format suitable for your locale.">Geminids Meteor Shower, Dec 13-14, 2026</string>
+    <string name="time_travel_supermoon_2026" translation_description="Name of an astronomical event in the time travel picker. A supermoon is a full moon that occurs near the Moon\'s closest approach to Earth. Keep the date format suitable for your locale.">Christmas Eve Supermoon, Dec 24, 2026</string>
+    <string name="time_travel_mercury_transit_2016" translation_description="Name of an astronomical event in the time travel picker. A Mercury transit is when Mercury passes across the face of the Sun as seen from Earth. Keep the date format suitable for your locale.">Mercury transit of May 09, 2016</string>
+    <string name="time_travel_solar_eclipse_2024" translation_description="Name of an astronomical event in the time travel picker. Keep the date format suitable for your locale.">North American Solar Eclipse of Apr 8, 2024</string>
+    <string name="time_travel_apollo_11" translation_description="Name of an astronomical event in the time travel picker: the first crewed Moon landing in 1969.">Apollo 11 Moon Landing</string>
+    <string name="time_travel_jupiter_saturn_2020" translation_description="Name of an astronomical event in the time travel picker. A conjunction is when two planets appear very close together in the sky.">Jupiter-Saturn Conjunction of 2020</string>
+    <string name="time_travel_stopped">Time travel paused</string>
+    <string name="sun_wont_set_message" translation_description="Message shown when the sun will not set (or rise) during the next 24 hours at the user\'s location (polar day or polar night).">The sun will not set during the next 24 hours at your current location.</string>
+    <string name="time_travel_start_message" translation_description="Toast message when time travel starts toward a chosen destination. %1$s is the formatted destination date and time.">Traveling through time to %1$s ...</string>
+    <string name="time_travel_close_message" translation_description="Toast message shown when the user exits time travel and returns to the present.">Back to the present ...</string>
 </resources>

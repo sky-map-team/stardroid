@@ -119,4 +119,53 @@
     <string name="search_target_looking_message" translation_description="Status shown while the user is being guided toward a search target. %1$s is the object name.">Mencari: %1$s</string>
     <string name="search_target_found_message" translation_description="Status shown when the search target has been found and is centered on screen. %1$s is the object name.">Ditemukan: %1$s</string>
     <string name="search_overlay_prompt">Arahkan ponsel Anda ke arah panah</string>
+    <string name="time_travel_title">Perjalanan Waktu</string>
+    <string name="time_travel_visiting" translation_description="Readout in the time travel dialog showing the currently chosen destination date and time. %1$s is the formatted date and time.">Mengunjungi: %1$s</string>
+    <string name="time_travel_pick_date" translation_description="Button in the time travel dialog that opens a date picker.">Atur tanggal</string>
+    <string name="time_travel_pick_time" translation_description="Button in the time travel dialog that opens a time picker.">Atur waktu</string>
+    <string name="time_travel_select_event" translation_description="Placeholder hint for the dropdown list of popular astronomical events in the time travel dialog.">Pilih acara populer…</string>
+    <string name="time_travel_go" translation_description="Button that starts time travel to the chosen date.">Mulai</string>
+    <string name="time_travel_from_now">Mulai dari Sekarang</string>
+    <string name="time_travel_ok" translation_description="Confirmation button in the date and time pickers.">OKE</string>
+    <string name="time_travel_cancel">Batal</string>
+    <!-- tm:omitted name="time_travel_slower" reason="identical_to_source" -->
+    <!-- tm:omitted name="time_travel_pause" reason="identical_to_source" -->
+    <!-- tm:omitted name="time_travel_faster" reason="identical_to_source" -->
+    <string name="time_travel_return" translation_description="Player button that ends time travel and returns the map to the present.">Sekarang</string>
+    <string name="time_travel_second_speed">Bepergian &gt; @ 1 det/det</string>
+    <string name="time_travel_minute_speed">Bepergian &gt; @ 1 menit/det</string>
+    <string name="time_travel_10minute_speed">Bepergian &gt; @ 10 menit/det</string>
+    <string name="time_travel_hour_speed">Bepergian &gt; @ 1 jam/det</string>
+    <string name="time_travel_day_speed">Bepergian &gt; @ 1 hari/det</string>
+    <string name="time_travel_week_speed">Bepergian &gt; @ 1 minggu/det</string>
+    <string name="time_travel_second_speed_back">Bepergian &lt; @ 1 det/det</string>
+    <string name="time_travel_minute_speed_back">Bepergian &lt; @ 1 menit/det</string>
+    <string name="time_travel_10minute_speed_back">Bepergian &lt; @ 10 menit/det</string>
+    <string name="time_travel_hour_speed_back">Bepergian &lt; @ 1 jam/det</string>
+    <string name="time_travel_day_speed_back">Bepergian &lt; @ 1 hari/det</string>
+    <string name="time_travel_week_speed_back">Bepergian &lt; @ 1 minggu/det</string>
+    <string name="time_travel_now" translation_description="Time travel picker entry that resets the destination to the present moment.">Sekarang</string>
+    <string name="time_travel_next_sunset">Matahari terbenam sore berikutnya</string>
+    <string name="time_travel_next_sunrise">Matahari terbit pagi berikutnya</string>
+    <string name="time_travel_next_full_moon">Bulan purnama berikutnya</string>
+    <string name="time_travel_next_new_moon">Bulan baru berikutnya</string>
+    <string name="time_travel_six_planet_parade_2026">Parade Enam Planet, 28 Feb 2026</string>
+    <string name="time_travel_lunar_eclipse_2026">Gerhana Bulan Total, 3 Mar 2026</string>
+    <string name="time_travel_lyrids_2026">Hujan Meteor Lyrids, 22 Apr 2026</string>
+    <string name="time_travel_venus_jupiter_2026">Konjungsi Venus-Jupiter, 9 Jun 2026</string>
+    <string name="time_travel_mars_uranus_2026">Pendekatan Dekat Mars-Uranus, 4 Jul 2026</string>
+    <string name="time_travel_solar_eclipse_2026">Gerhana Matahari Total, 12 Agu 2026</string>
+    <string name="time_travel_perseids_2026">Hujan Meteor Perseids, 12-13 Agu 2026</string>
+    <string name="time_travel_lunar_eclipse_aug_2026" translation_description="Name of an astronomical event in the time travel picker. Keep the date format suitable for your locale.">Gerhana Bulan Sebagian, 28 Agu 2026</string>
+    <string name="time_travel_jupiter_occultation_2026">Okultasi Bulan Jupiter, 6 Okt 2026</string>
+    <string name="time_travel_geminids_2026">Hujan Meteor Geminids, 13-14 Des 2026</string>
+    <string name="time_travel_supermoon_2026">Supermoon Malam Natal, 24 Des 2026</string>
+    <string name="time_travel_mercury_transit_2016">Transit Merkurius 09 Mei 2016</string>
+    <string name="time_travel_solar_eclipse_2024">Gerhana Matahari Amerika Utara 8 April 2024</string>
+    <string name="time_travel_apollo_11">Pendaratan Bulan Apollo 11</string>
+    <string name="time_travel_jupiter_saturn_2020">Konjungsi Jupiter-Saturnus 2020</string>
+    <string name="time_travel_stopped">Perjalanan waktu dijeda</string>
+    <string name="sun_wont_set_message">Matahari tidak akan terbenam selama 24 jam ke depan di lokasi Anda saat ini.</string>
+    <string name="time_travel_start_message" translation_description="Toast message when time travel starts toward a chosen destination. %1$s is the formatted destination date and time.">Melakukan perjalanan waktu ke %1$s ...</string>
+    <string name="time_travel_close_message">Kembali ke masa kini ...</string>
 </resources>

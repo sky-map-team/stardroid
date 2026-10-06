@@ -84,58 +84,10 @@
     <string name="share_failed_message" translation_description="Snackbar shown when capturing the sky image for sharing failed.">Gökyüzü yakalanamadı — tekrar deneyin</string>
 
     <!-- Time travel: entry button, dialog, and the player bar shown while travelling. -->
-    <string name="time_travel_title">Zaman Yolculuğu</string>
-    <string name="time_travel_visiting" translation_description="Readout in the time travel dialog showing the currently chosen destination date and time. %1$s is the formatted date and time.">Ziyaret edilen: %1$s</string>
-    <string name="time_travel_pick_date" translation_description="Button in the time travel dialog that opens a date picker.">Tarih ayarla</string>
-    <string name="time_travel_pick_time" translation_description="Button in the time travel dialog that opens a time picker.">Saat ayarla</string>
-    <string name="time_travel_select_event" translation_description="Placeholder hint for the dropdown list of popular astronomical events in the time travel dialog.">Popüler bir etkinlik seçin…</string>
-    <string name="time_travel_go" translation_description="Button that starts time travel to the chosen date.">Git</string>
-    <string name="time_travel_from_now">Şimdi Başla</string>
-    <string name="time_travel_ok">Tamam</string>
-    <string name="time_travel_cancel">İptal</string>
-    <!-- tm:omitted name="time_travel_slower" reason="identical_to_source" -->
-    <!-- tm:omitted name="time_travel_pause" reason="identical_to_source" -->
-    <!-- tm:omitted name="time_travel_faster" reason="identical_to_source" -->
-    <string name="time_travel_return" translation_description="Player button that ends time travel and returns the map to the present.">Şimdi</string>
 
     <!-- Time travel playback-rate labels (v1 wording). -->
-    <string name="time_travel_second_speed">Yolculuk &gt; @ 1 sn/sn</string>
-    <string name="time_travel_minute_speed">Yolculuk &gt; @ 1 dak/sn</string>
-    <string name="time_travel_10minute_speed">Yolculuk &gt; @ 10 dak/sn</string>
-    <string name="time_travel_hour_speed">Yolculuk &gt; @ 1 saat/sn</string>
-    <string name="time_travel_day_speed">Yolculuk &gt; @ 1 gün/sn</string>
-    <string name="time_travel_week_speed">Yolculuk &gt; @ 1 hafta/sn</string>
-    <string name="time_travel_second_speed_back">Yolculuk &lt; @ 1 sn/sn</string>
-    <string name="time_travel_minute_speed_back">Yolculuk &lt; @ 1 dak/sn</string>
-    <string name="time_travel_10minute_speed_back">Yolculuk &lt; @ 10 dak/sn</string>
-    <string name="time_travel_hour_speed_back">Yolculuk &lt; @ 1 saat/sn</string>
-    <string name="time_travel_day_speed_back">Yolculuk &lt; @ 1 gün/sn</string>
-    <string name="time_travel_week_speed_back">Yolculuk &lt; @ 1 hafta/sn</string>
 
     <!-- Popular events in the time travel dialog (timestamps live in TimeTravelEvents.kt). -->
-    <string name="time_travel_now" translation_description="Time travel picker entry that resets the destination to the present moment.">Şimdi</string>
-    <string name="time_travel_next_sunset">Sonraki akşam günbatımı</string>
-    <string name="time_travel_next_sunrise">Sonraki sabah gün doğumu</string>
-    <string name="time_travel_next_full_moon">Sonraki dolunay</string>
-    <string name="time_travel_next_new_moon">Sonraki yeni ay</string>
-    <string name="time_travel_six_planet_parade_2026">Altı Gezegen Geçidi, 28 Şub 2026</string>
-    <string name="time_travel_lunar_eclipse_2026">Toplam Ay Tutulması, 3 Mar 2026</string>
-    <string name="time_travel_lyrids_2026">Lyrids Meteor Yağmuru, 22 Nis 2026</string>
-    <string name="time_travel_venus_jupiter_2026">Venüs-Jüpiter Birleşimi, 9 Haz 2026</string>
-    <string name="time_travel_mars_uranus_2026">Mars-Uranüs Yakın Yaklaşması, 4 Tem 2026</string>
-    <string name="time_travel_solar_eclipse_2026">Toplam Güneş Tutulması, 12 Ağu 2026</string>
-    <string name="time_travel_perseids_2026">Perseid Meteor Yağmuru, 12-13 Ağustos 2026</string>
-    <string name="time_travel_lunar_eclipse_aug_2026" translation_description="Name of an astronomical event in the time travel picker. Keep the date format suitable for your locale.">Parçalı Ay Tutulması, 28 Ağu 2026</string>
-    <string name="time_travel_jupiter_occultation_2026">Jüpiter\'in Ay Tarafından Örtülmesi, 6 Ekim 2026</string>
-    <string name="time_travel_geminids_2026">Geminid Meteor Shower, 13-14 Aralık 2026</string>
-    <string name="time_travel_supermoon_2026">Noel Arifesi Süper Ay, 24 Aralık 2026</string>
-    <string name="time_travel_mercury_transit_2016">09 Mayıs 2016 Merkür Geçişi</string>
-    <string name="time_travel_solar_eclipse_2024">8 Nisan 2024 Güneş Tutulması</string>
-    <string name="time_travel_apollo_11">Apollo 11 Ay İnişi</string>
-    <string name="time_travel_jupiter_saturn_2020">2020 Jüpiter-Satürn Kavuşumu</string>
-    <string name="sun_wont_set_message">24 saat boyunca güneş, mevcut konumunuzda batmayacak.</string>
-    <string name="time_travel_start_message" translation_description="Toast message when time travel starts toward a chosen destination. %1$s is the formatted destination date and time.">%1$s tarihine zaman yolculuğu yapılıyor ...</string>
-    <string name="time_travel_close_message">Şimdiye geri dönülüyor…</string>
 
     <!-- Location management. -->
     <string name="location_management_title">Konumunuz</string>
@@ -534,6 +486,5 @@ Metalden uzak, açık bir alana geçin ve tekrar deneyin.]]></string>
     </string>
     <string name="notif_digest_title" translation_description="Title of the tonight\'s-sky digest notification">Bu gece bakmaya değer</string>
     <string name="notif_action_mute_showers" translation_description="Notification action button that opens the system toggle for the meteor-shower channel">Yağmurları sessize al</string>
-    <string name="time_travel_stopped">Zaman yolculuğu duraklatıldı</string>
     <!-- Layers sheet: per-layer parameters (D87). -->
 </resources>

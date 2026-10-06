@@ -85,58 +85,10 @@
     <string name="share_failed_message" translation_description="Snackbar shown when capturing the sky image for sharing failed.">Non se puido capturar o ceo — téntao de novo</string>
 
     <!-- Time travel: entry button, dialog, and the player bar shown while travelling. -->
-    <string name="time_travel_title" translation_description="Title of the time travel dialog.">Viaxe no tempo</string>
-    <string name="time_travel_visiting" translation_description="Readout in the time travel dialog showing the currently chosen destination date and time. %1$s is the formatted date and time.">Visitando: %1$s</string>
-    <string name="time_travel_pick_date" translation_description="Button in the time travel dialog that opens a date picker.">Establecer data</string>
-    <string name="time_travel_pick_time" translation_description="Button in the time travel dialog that opens a time picker.">Establecer hora</string>
-    <string name="time_travel_select_event" translation_description="Placeholder hint for the dropdown list of popular astronomical events in the time travel dialog.">Seleccionar un evento popular…</string>
-    <string name="time_travel_go" translation_description="Button that starts time travel to the chosen date.">Ir</string>
-    <string name="time_travel_from_now" translation_description="Button that starts time travel from the present moment, letting the user play time forward or backward from now.">Comezar dende agora</string>
-    <string name="time_travel_ok" translation_description="Confirmation button in the date and time pickers.">Aceptar</string>
-    <string name="time_travel_cancel" translation_description="Button that closes a time travel dialog without doing anything.">Cancelar</string>
-    <string name="time_travel_slower" translation_description="Player button that steps the time travel playback rate one step backward (slower forward, or faster backward). Rendered as a double left-pointing symbol.">◀◀</string>
-    <string name="time_travel_pause" translation_description="Player button that freezes time travel playback. Rendered as a pause symbol.">❚❚</string>
-    <string name="time_travel_faster" translation_description="Player button that steps the time travel playback rate one step forward (faster forward, or slower backward). Rendered as a double right-pointing symbol.">▶▶</string>
-    <string name="time_travel_return" translation_description="Player button that ends time travel and returns the map to the present.">Agora</string>
 
     <!-- Time travel playback-rate labels (v1 wording). -->
-    <string name="time_travel_second_speed" translation_description="Label showing rate of travel through time. The symbol means forward.">Viaxando a &gt; @ 1 seg/seg</string>
-    <string name="time_travel_minute_speed" translation_description="Label showing rate of travel through time. The symbol means forward.">Viaxando a &gt; @ 1 min/seg</string>
-    <string name="time_travel_10minute_speed" translation_description="Label showing rate of travel through time. The symbol means forward.">Viaxando a &gt; @ 10 min/seg</string>
-    <string name="time_travel_hour_speed" translation_description="Label showing rate of travel through time. The symbol means forward.">Viaxando a &gt; @ 1 hora/seg</string>
-    <string name="time_travel_day_speed" translation_description="Label showing rate of travel through time. The symbol means forward.">Viaxando a &gt; @ 1 día/seg</string>
-    <string name="time_travel_week_speed" translation_description="Label showing rate of travel through time. The symbol means forward.">Viaxando a &gt; @ 1 semana/seg</string>
-    <string name="time_travel_second_speed_back" translation_description="Label showing rate of travel through time. The symbol means backward.">Viaxando a &lt; @ 1 seg/seg</string>
-    <string name="time_travel_minute_speed_back" translation_description="Label showing rate of travel through time. The symbol means backward.">Viaxando a &lt; @ 1 min/seg</string>
-    <string name="time_travel_10minute_speed_back" translation_description="Label showing rate of travel through time. The symbol means backward.">Viaxando a &lt; @ 10 min/seg</string>
-    <string name="time_travel_hour_speed_back" translation_description="Label showing rate of travel through time. The symbol means backward.">Viaxando a &lt; @ 1 hora/seg</string>
-    <string name="time_travel_day_speed_back" translation_description="Label showing rate of travel through time. The symbol means backward.">Viaxando a &lt; @ 1 día/seg</string>
-    <string name="time_travel_week_speed_back" translation_description="Label showing rate of travel through time. The symbol means backward.">Viaxando a &lt; @ 1 semana/seg</string>
 
     <!-- Popular events in the time travel dialog (timestamps live in TimeTravelEvents.kt). -->
-    <string name="time_travel_now" translation_description="Time travel picker entry that resets the destination to the present moment.">Agora</string>
-    <string name="time_travel_next_sunset" translation_description="Name of a popular astronomical event in the time travel picker.">Vindeira posta de sol</string>
-    <string name="time_travel_next_sunrise" translation_description="Name of a popular astronomical event in the time travel picker.">Vindeiro amencer</string>
-    <string name="time_travel_next_full_moon" translation_description="Name of a popular astronomical event in the time travel picker.">Vindeira lúa chea</string>
-    <string name="time_travel_next_new_moon" translation_description="Name of a popular astronomical event in the time travel picker.">Vindeira lúa nova</string>
-    <string name="time_travel_six_planet_parade_2026" translation_description="Name of an astronomical event in the time travel picker. A planet parade is when several planets are visible at once. Keep the date format suitable for your locale.">Desfile planetario, 28 de febreiro de 2026</string>
-    <string name="time_travel_lunar_eclipse_2026" translation_description="Name of an astronomical event in the time travel picker. Keep the date format suitable for your locale.">Eclipse lunar total, 3 de marzo de 2026</string>
-    <string name="time_travel_lyrids_2026" translation_description="Name of an astronomical event in the time travel picker. The Lyrids are an annual meteor shower. Keep the date format suitable for your locale.">Choiva de meteoros Líridas do 22 de abril de 2026</string>
-    <string name="time_travel_venus_jupiter_2026" translation_description="Name of an astronomical event in the time travel picker. A conjunction is when two planets appear very close together in the sky. Keep the date format suitable for your locale.">Conxunción Venus-Xúpiter do 9 de xuño de 2026</string>
-    <string name="time_travel_mars_uranus_2026" translation_description="Name of an astronomical event in the time travel picker. A close approach is when two objects appear near each other in the sky. Keep the date format suitable for your locale.">Aproximación Marte-Urano do 4 de xullo de 2026</string>
-    <string name="time_travel_solar_eclipse_2026" translation_description="Name of an astronomical event in the time travel picker. Keep the date format suitable for your locale.">Eclipse solar total do 12 de agosto de 2026</string>
-    <string name="time_travel_perseids_2026" translation_description="Name of an astronomical event in the time travel picker. The Perseids are an annual meteor shower. Keep the date format suitable for your locale.">Choiva de meteoros Perseidas do 12-13 de agosto de 2026</string>
-    <string name="time_travel_lunar_eclipse_aug_2026" translation_description="Name of an astronomical event in the time travel picker. Keep the date format suitable for your locale.">Eclipse Lunar Parcial, 28 de agosto de 2026</string>
-    <string name="time_travel_jupiter_occultation_2026" translation_description="Name of an astronomical event in the time travel picker. A lunar occultation is when the Moon passes in front of a planet, briefly hiding it. Keep the date format suitable for your locale.">Ocultación lunar de Xúpiter do 6 de outubro de 2026</string>
-    <string name="time_travel_geminids_2026" translation_description="Name of an astronomical event in the time travel picker. The Geminids are an annual meteor shower. Keep the date format suitable for your locale.">Choiva de meteoros Xemínidas do 13-14 de decembro de 2026</string>
-    <string name="time_travel_supermoon_2026" translation_description="Name of an astronomical event in the time travel picker. A supermoon is a full moon that occurs near the Moon\'s closest approach to Earth. Keep the date format suitable for your locale.">Superlúa de Noiteboa do 24 de decembro de 2026</string>
-    <string name="time_travel_mercury_transit_2016" translation_description="Name of an astronomical event in the time travel picker. A Mercury transit is when Mercury passes across the face of the Sun as seen from Earth. Keep the date format suitable for your locale.">Tránsito de Mercurio do 9 de maio de 2016</string>
-    <string name="time_travel_solar_eclipse_2024" translation_description="Name of an astronomical event in the time travel picker. Keep the date format suitable for your locale.">Eclipse solar de Norteamérica do 8 de abril de 2024</string>
-    <string name="time_travel_apollo_11" translation_description="Name of an astronomical event in the time travel picker: the first crewed Moon landing in 1969.">Alunizaxe do Apolo 11</string>
-    <string name="time_travel_jupiter_saturn_2020" translation_description="Name of an astronomical event in the time travel picker. A conjunction is when two planets appear very close together in the sky.">Conxunción de Xúpiter-Saturno de 2020</string>
-    <string name="sun_wont_set_message" translation_description="Message shown when the sun will not set (or rise) during the next 24 hours at the user\'s location (polar day or polar night).">O Sol non se porá durante as próximas 24 horas na túa localización actual.</string>
-    <string name="time_travel_start_message" translation_description="Toast message when time travel starts toward a chosen destination. %1$s is the formatted destination date and time.">Viaxando no tempo a %1$s ...</string>
-    <string name="time_travel_close_message" translation_description="Toast message shown when the user exits time travel and returns to the present.">Volver ao presente...</string>
 
     <!-- Location management. -->
     <string name="location_management_title" translation_description="Title of the location management sheet">A túa localización</string>
@@ -458,6 +410,5 @@ Se é necesario, realiza o movemento en forma de oito (<a href="%s">ver unha dem
     <string name="notif_shower_bright_moon" translation_description="Notification sentence when a bright moon will interfere with a meteor shower; %1$d is the moon illumination percentage, %2$d the meteors per hour under ideal skies">A lúa iluminada ao %1$d%% ocultará os meteoros máis débiles — ata %2$d por hora baixo ceos ideais.</string>
     <string name="notif_digest_title" translation_description="Title of the tonight\'s-sky digest notification">Paga a pena botar unha ollada esta noite</string>
     <string name="notif_action_mute_showers" translation_description="Notification action button that opens the system toggle for the meteor-shower channel">Acalar choivas</string>
-    <string name="time_travel_stopped">Viaxe no tempo pausada</string>
     <!-- Layers sheet: per-layer parameters (D87). -->
 </resources>

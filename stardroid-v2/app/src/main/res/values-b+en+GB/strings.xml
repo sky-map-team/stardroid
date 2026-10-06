@@ -70,57 +70,9 @@
     <!-- tm:omitted name="share_layout_side_by_side" reason="identical_to_source" -->
     <!-- tm:omitted name="share_failed_message" reason="identical_to_source" -->
 
-    <!-- tm:omitted name="time_travel_title" reason="identical_to_source" -->
-    <!-- tm:omitted name="time_travel_visiting" reason="identical_to_source" -->
-    <!-- tm:omitted name="time_travel_pick_date" reason="identical_to_source" -->
-    <!-- tm:omitted name="time_travel_pick_time" reason="identical_to_source" -->
-    <!-- tm:omitted name="time_travel_select_event" reason="identical_to_source" -->
-    <!-- tm:omitted name="time_travel_go" reason="identical_to_source" -->
-    <!-- tm:omitted name="time_travel_from_now" reason="identical_to_source" -->
-    <!-- tm:omitted name="time_travel_ok" reason="identical_to_source" -->
-    <!-- tm:omitted name="time_travel_cancel" reason="identical_to_source" -->
-    <!-- tm:omitted name="time_travel_slower" reason="identical_to_source" -->
-    <!-- tm:omitted name="time_travel_pause" reason="identical_to_source" -->
-    <!-- tm:omitted name="time_travel_faster" reason="identical_to_source" -->
-    <!-- tm:omitted name="time_travel_return" reason="identical_to_source" -->
 
     <!-- Time travel playback-rate labels (v1 wording). -->
-    <string name="time_travel_second_speed">Travelling &gt; @ 1 sec/sec</string>
-    <string name="time_travel_minute_speed">Travelling &gt; @ 1 min/sec</string>
-    <string name="time_travel_10minute_speed">Travelling &gt; @ 10 min/sec</string>
-    <string name="time_travel_hour_speed">Travelling &gt; @ 1 hour/sec</string>
-    <string name="time_travel_day_speed">Travelling &gt; @ 1 day/sec</string>
-    <string name="time_travel_week_speed">Travelling &gt; @ 1 week/sec</string>
-    <string name="time_travel_second_speed_back">Travelling &lt; @ 1 sec/sec</string>
-    <string name="time_travel_minute_speed_back">Travelling &lt; @ 1 min/sec</string>
-    <string name="time_travel_10minute_speed_back">Travelling &lt; @ 10 min/sec</string>
-    <string name="time_travel_hour_speed_back">Travelling &lt; @ 1 hour/sec</string>
-    <string name="time_travel_day_speed_back">Travelling &lt; @ 1 day/sec</string>
-    <string name="time_travel_week_speed_back">Travelling &lt; @ 1 week/sec</string>
 
-    <!-- tm:omitted name="time_travel_now" reason="identical_to_source" -->
-    <!-- tm:omitted name="time_travel_next_sunset" reason="identical_to_source" -->
-    <!-- tm:omitted name="time_travel_next_sunrise" reason="identical_to_source" -->
-    <!-- tm:omitted name="time_travel_next_full_moon" reason="identical_to_source" -->
-    <!-- tm:omitted name="time_travel_next_new_moon" reason="identical_to_source" -->
-    <string name="time_travel_six_planet_parade_2026">Six-Planet Parade, 28 Feb 2026</string>
-    <string name="time_travel_lunar_eclipse_2026">Total Lunar Eclipse, 3 Mar 2026</string>
-    <string name="time_travel_lyrids_2026">Lyrids Meteor Shower, 22 Apr 2026</string>
-    <string name="time_travel_venus_jupiter_2026">Venus-Jupiter Conjunction, 9 Jun 2026</string>
-    <string name="time_travel_mars_uranus_2026">Mars-Uranus Close Approach, 4 Jul 2026</string>
-    <string name="time_travel_solar_eclipse_2026">Total Solar Eclipse, 12 Aug 2026</string>
-    <string name="time_travel_perseids_2026">Perseids Meteor Shower, 12-13 Aug 2026</string>
-    <!-- tm:omitted name="time_travel_lunar_eclipse_aug_2026" reason="identical_to_source" -->
-    <string name="time_travel_jupiter_occultation_2026">Lunar Occultation of Jupiter, 6 Oct 2026</string>
-    <string name="time_travel_geminids_2026">Geminids Meteor Shower, 13-14 Dec 2026</string>
-    <string name="time_travel_supermoon_2026">Christmas Eve Supermoon, 24 Dec 2026</string>
-    <string name="time_travel_mercury_transit_2016">Mercury transit of 9 May 2016</string>
-    <string name="time_travel_solar_eclipse_2024">North American Solar Eclipse of 8 Apr 2024</string>
-    <!-- tm:omitted name="time_travel_apollo_11" reason="identical_to_source" -->
-    <!-- tm:omitted name="time_travel_jupiter_saturn_2020" reason="identical_to_source" -->
-    <!-- tm:omitted name="sun_wont_set_message" reason="identical_to_source" -->
-    <string name="time_travel_start_message" translation_description="Toast message when time travel starts toward a chosen destination. %1$s is the formatted destination date and time.">Travelling through time to %1$s ...</string>
-    <!-- tm:omitted name="time_travel_close_message" reason="identical_to_source" -->
 
     <!-- tm:omitted name="location_management_title" reason="identical_to_source" -->
     <!-- tm:omitted name="location_source_auto" reason="identical_to_source" -->
@@ -469,5 +421,4 @@
     <!-- tm:omitted name="notif_shower_bright_moon" reason="identical_to_source" -->
     <!-- tm:omitted name="notif_digest_title" reason="identical_to_source" -->
     <!-- tm:omitted name="notif_action_mute_showers" reason="identical_to_source" -->
-    <!-- tm:omitted name="time_travel_stopped" reason="identical_to_source" -->
 </resources>

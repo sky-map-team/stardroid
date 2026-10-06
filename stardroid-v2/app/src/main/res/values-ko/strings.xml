@@ -78,58 +78,10 @@
     <string name="share_failed_message" translation_description="Snackbar shown when capturing the sky image for sharing failed.">하늘을 캡처할 수 없습니다 — 다시 시도하세요</string>
 
     <!-- Time travel: entry button, dialog, and the player bar shown while travelling. -->
-    <string name="time_travel_title">시간 여행</string>
-    <string name="time_travel_visiting" translation_description="Readout in the time travel dialog showing the currently chosen destination date and time. %1$s is the formatted date and time.">방문 중: %1$s</string>
-    <string name="time_travel_pick_date" translation_description="Button in the time travel dialog that opens a date picker.">날짜 설정</string>
-    <string name="time_travel_pick_time" translation_description="Button in the time travel dialog that opens a time picker.">시간 설정</string>
-    <string name="time_travel_select_event" translation_description="Placeholder hint for the dropdown list of popular astronomical events in the time travel dialog.">인기 이벤트 선택…</string>
-    <string name="time_travel_go" translation_description="Button that starts time travel to the chosen date.">이동</string>
-    <string name="time_travel_from_now" translation_description="Button that starts time travel from the present moment, letting the user play time forward or backward from now.">지금부터 시작</string>
-    <string name="time_travel_ok" translation_description="Confirmation button in the date and time pickers.">확인</string>
-    <string name="time_travel_cancel">취소</string>
-    <!-- tm:omitted name="time_travel_slower" reason="identical_to_source" -->
-    <!-- tm:omitted name="time_travel_pause" reason="identical_to_source" -->
-    <!-- tm:omitted name="time_travel_faster" reason="identical_to_source" -->
-    <string name="time_travel_return" translation_description="Player button that ends time travel and returns the map to the present.">현재</string>
 
     <!-- Time travel playback-rate labels (v1 wording). -->
-    <string name="time_travel_second_speed">여행 &gt; @ 1 초/초</string>
-    <string name="time_travel_minute_speed">여행 &gt; @ 1 분/초</string>
-    <string name="time_travel_10minute_speed">여행 &gt; @ 10분/초</string>
-    <string name="time_travel_hour_speed">여행 &gt; @ 1시간/초</string>
-    <string name="time_travel_day_speed">여행 &gt; @ 1일/초</string>
-    <string name="time_travel_week_speed">여행 &gt; @ 1주/초</string>
-    <string name="time_travel_second_speed_back">여행 &lt; @ 1초/초</string>
-    <string name="time_travel_minute_speed_back">여행 &lt; @ 1분/초</string>
-    <string name="time_travel_10minute_speed_back">여행 &lt; @10분/초</string>
-    <string name="time_travel_hour_speed_back">여행 &lt; @ 1시간/초</string>
-    <string name="time_travel_day_speed_back">여행 &lt; @ 1일/초</string>
-    <string name="time_travel_week_speed_back">여행 &lt; @ 1주/초</string>
 
     <!-- Popular events in the time travel dialog (timestamps live in TimeTravelEvents.kt). -->
-    <string name="time_travel_now" translation_description="Time travel picker entry that resets the destination to the present moment.">현재</string>
-    <string name="time_travel_next_sunset">다음 일몰</string>
-    <string name="time_travel_next_sunrise">다음 일출</string>
-    <string name="time_travel_next_full_moon">다음 보름</string>
-    <string name="time_travel_next_new_moon" translation_description="Name of a popular astronomical event in the time travel picker.">다음 신월</string>
-    <string name="time_travel_six_planet_parade_2026" translation_description="Name of an astronomical event in the time travel picker. A planet parade is when several planets are visible at once. Keep the date format suitable for your locale.">6행성 정렬, 2026년 2월 28일</string>
-    <string name="time_travel_lunar_eclipse_2026" translation_description="Name of an astronomical event in the time travel picker. Keep the date format suitable for your locale.">개기월식, 2026년 3월 3일</string>
-    <string name="time_travel_lyrids_2026" translation_description="Name of an astronomical event in the time travel picker. The Lyrids are an annual meteor shower. Keep the date format suitable for your locale.">거문고자리 유성우, 2026년 4월 22일</string>
-    <string name="time_travel_venus_jupiter_2026" translation_description="Name of an astronomical event in the time travel picker. A conjunction is when two planets appear very close together in the sky. Keep the date format suitable for your locale.">금성-목성 합, 2026년 6월 9일</string>
-    <string name="time_travel_mars_uranus_2026" translation_description="Name of an astronomical event in the time travel picker. A close approach is when two objects appear near each other in the sky. Keep the date format suitable for your locale.">화성-천왕성 근접, 2026년 7월 4일</string>
-    <string name="time_travel_solar_eclipse_2026" translation_description="Name of an astronomical event in the time travel picker. Keep the date format suitable for your locale.">개기일식, 2026년 8월 12일</string>
-    <string name="time_travel_perseids_2026" translation_description="Name of an astronomical event in the time travel picker. The Perseids are an annual meteor shower. Keep the date format suitable for your locale.">페르세우스자리 유성우, 2026년 8월 12-13일</string>
-    <string name="time_travel_lunar_eclipse_aug_2026" translation_description="Name of an astronomical event in the time travel picker. Keep the date format suitable for your locale.">부분월식, 2026년 8월 28일</string>
-    <string name="time_travel_jupiter_occultation_2026" translation_description="Name of an astronomical event in the time travel picker. A lunar occultation is when the Moon passes in front of a planet, briefly hiding it. Keep the date format suitable for your locale.">목성 엄폐, 2026년 10월 6일</string>
-    <string name="time_travel_geminids_2026" translation_description="Name of an astronomical event in the time travel picker. The Geminids are an annual meteor shower. Keep the date format suitable for your locale.">쌍둥이자리 유성우, 2026년 12월 13-14일</string>
-    <string name="time_travel_supermoon_2026" translation_description="Name of an astronomical event in the time travel picker. A supermoon is a full moon that occurs near the Moon\'s closest approach to Earth. Keep the date format suitable for your locale.">크리스마스 이브 슈퍼문, 2026년 12월 24일</string>
-    <string name="time_travel_mercury_transit_2016">2016년 5월 9일 수성 태양면 통과</string>
-    <string name="time_travel_solar_eclipse_2024">2024 4월 8일 일식</string>
-    <string name="time_travel_apollo_11">아폴로 11호 달 착륙</string>
-    <string name="time_travel_jupiter_saturn_2020">목성-토성 결합</string>
-    <string name="sun_wont_set_message">현재 위치에서 다음 24시간 동안 태양이 지지 않습니다.</string>
-    <string name="time_travel_start_message" translation_description="Toast message when time travel starts toward a chosen destination. %1$s is the formatted destination date and time.">%1$s(으)로 시간 여행 중...</string>
-    <string name="time_travel_close_message">현재로 돌아오기...</string>
 
     <!-- Location management. -->
     <string name="location_management_title" translation_description="Title of the location management sheet">내 위치</string>
@@ -502,6 +454,5 @@
     <string name="notif_shower_bright_moon" translation_description="Notification sentence when a bright moon will interfere with a meteor shower; %1$d is the moon illumination percentage, %2$d the meteors per hour under ideal skies">%1$d%% 밝기의 달이 희미한 유성을 가릴 것입니다 — 이상적인 하늘에서는 시간당 최대 %2$d개.</string>
     <string name="notif_digest_title" translation_description="Title of the tonight\'s-sky digest notification">오늘 밤 볼 가치가 있습니다</string>
     <string name="notif_action_mute_showers" translation_description="Notification action button that opens the system toggle for the meteor-shower channel">유성우 알림 끄기</string>
-    <string name="time_travel_stopped">시간 여행 일시 중지됨</string>
     <!-- Layers sheet: per-layer parameters (D87). -->
 </resources>

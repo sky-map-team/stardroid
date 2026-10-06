@@ -78,58 +78,10 @@
     <string name="share_failed_message" translation_description="Snackbar shown when capturing the sky image for sharing failed.">無法捕捉天空 — 請再試一次</string>
 
     <!-- Time travel: entry button, dialog, and the player bar shown while travelling. -->
-    <string name="time_travel_title">時光旅行</string>
-    <string name="time_travel_visiting" translation_description="Readout in the time travel dialog showing the currently chosen destination date and time. %1$s is the formatted date and time.">正在造訪：%1$s</string>
-    <string name="time_travel_pick_date" translation_description="Button in the time travel dialog that opens a date picker.">設定日期</string>
-    <string name="time_travel_pick_time" translation_description="Button in the time travel dialog that opens a time picker.">設定時間</string>
-    <string name="time_travel_select_event" translation_description="Placeholder hint for the dropdown list of popular astronomical events in the time travel dialog.">選擇一個熱門事件…</string>
-    <string name="time_travel_go" translation_description="Button that starts time travel to the chosen date.">前往</string>
-    <string name="time_travel_from_now">從現在開始</string>
-    <string name="time_travel_ok">確定</string>
-    <string name="time_travel_cancel">取消</string>
-    <!-- tm:omitted name="time_travel_slower" reason="identical_to_source" -->
-    <!-- tm:omitted name="time_travel_pause" reason="identical_to_source" -->
-    <!-- tm:omitted name="time_travel_faster" reason="identical_to_source" -->
-    <string name="time_travel_return" translation_description="Player button that ends time travel and returns the map to the present.">現在</string>
 
     <!-- Time travel playback-rate labels (v1 wording). -->
-    <string name="time_travel_second_speed">時光快轉，速度：1 秒/秒</string>
-    <string name="time_travel_minute_speed">時光快轉，速度：1 分鐘/秒</string>
-    <string name="time_travel_10minute_speed">時光快轉，速度：10 分鐘/秒</string>
-    <string name="time_travel_hour_speed">時光快轉，速度：1 小時/秒</string>
-    <string name="time_travel_day_speed">時光快轉，速度：1 天/秒</string>
-    <string name="time_travel_week_speed">時光快轉，速度：1 週/秒</string>
-    <string name="time_travel_second_speed_back">時光倒轉，速度：1 秒/秒</string>
-    <string name="time_travel_minute_speed_back">時光倒轉，速度：1 分鐘/秒</string>
-    <string name="time_travel_10minute_speed_back">時光倒轉，速度：10 分鐘/秒</string>
-    <string name="time_travel_hour_speed_back">時光倒轉，速度：1 小時/秒</string>
-    <string name="time_travel_day_speed_back">時光倒轉，速度：1 天/秒</string>
-    <string name="time_travel_week_speed_back">時光倒轉，速度：1 週/秒</string>
 
     <!-- Popular events in the time travel dialog (timestamps live in TimeTravelEvents.kt). -->
-    <string name="time_travel_now" translation_description="Time travel picker entry that resets the destination to the present moment.">現在</string>
-    <string name="time_travel_next_sunset">下次傍晚日落</string>
-    <string name="time_travel_next_sunrise">次日日出</string>
-    <string name="time_travel_next_full_moon">下次月圓</string>
-    <string name="time_travel_next_new_moon">下一個新月</string>
-    <string name="time_travel_six_planet_parade_2026">六星連珠，2026年2月28日</string>
-    <string name="time_travel_lunar_eclipse_2026">月全食，2026年3月3日</string>
-    <string name="time_travel_lyrids_2026">天琴座流星雨，2026年4月22日</string>
-    <string name="time_travel_venus_jupiter_2026">金星-木星合相，2026年6月9日</string>
-    <string name="time_travel_mars_uranus_2026">火星-天王星接近, 2026年7月4日</string>
-    <string name="time_travel_solar_eclipse_2026">日全食, 2026年8月12日</string>
-    <string name="time_travel_perseids_2026">英仙座流星雨, 2026年8月12-13日</string>
-    <string name="time_travel_lunar_eclipse_aug_2026" translation_description="Name of an astronomical event in the time travel picker. Keep the date format suitable for your locale.">月偏食，2026年8月28日</string>
-    <string name="time_travel_jupiter_occultation_2026">月球掩木星, 2026年10月6日</string>
-    <string name="time_travel_geminids_2026">雙子座流星雨, 2026年12月13-14日</string>
-    <string name="time_travel_supermoon_2026">聖誕夜超級月亮, 2026年12月24日</string>
-    <string name="time_travel_mercury_transit_2016">2016 年 5 月 9 日的水星凌日</string>
-    <string name="time_travel_solar_eclipse_2024">2024 年 4 月 8 日的日食</string>
-    <string name="time_travel_apollo_11">阿波羅 11 號登月</string>
-    <string name="time_travel_jupiter_saturn_2020">2020 年木星土星合</string>
-    <string name="sun_wont_set_message">您目前的位置未來 24 小時之內看不到日落。</string>
-    <string name="time_travel_start_message" translation_description="Toast message when time travel starts toward a chosen destination. %1$s is the formatted destination date and time.">正在時光旅行至 %1$s ...</string>
-    <string name="time_travel_close_message">回到現在...</string>
 
     <!-- Location management. -->
     <string name="location_management_title">您的位置</string>
@@ -492,6 +444,5 @@
     <string name="notif_shower_bright_moon" translation_description="Notification sentence when a bright moon will interfere with a meteor shower; %1$d is the moon illumination percentage, %2$d the meteors per hour under ideal skies">%1$d%% 月光會沖淡較暗的流星 — 在理想天空下，每小時最多可見 %2$d 顆。</string>
     <string name="notif_digest_title" translation_description="Title of the tonight\'s-sky digest notification">今晚值得一看</string>
     <string name="notif_action_mute_showers" translation_description="Notification action button that opens the system toggle for the meteor-shower channel">靜音流星雨</string>
-    <string name="time_travel_stopped">時間旅行已暫停</string>
     <!-- Layers sheet: per-layer parameters (D87). -->
 </resources>

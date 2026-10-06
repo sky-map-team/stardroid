@@ -80,58 +80,10 @@
     <string name="share_failed_message" translation_description="Snackbar shown when capturing the sky image for sharing failed.">ไม่สามารถบันทึกภาพท้องฟ้าได้ — ลองใหม่อีกครั้ง</string>
 
     <!-- Time travel: entry button, dialog, and the player bar shown while travelling. -->
-    <string name="time_travel_title">การเดินทางข้ามเวลา</string>
-    <string name="time_travel_visiting" translation_description="Readout in the time travel dialog showing the currently chosen destination date and time. %1$s is the formatted date and time.">กำลังเยี่ยมชม: %1$s</string>
-    <string name="time_travel_pick_date" translation_description="Button in the time travel dialog that opens a date picker.">ตั้งค่าวันที่</string>
-    <string name="time_travel_pick_time" translation_description="Button in the time travel dialog that opens a time picker.">ตั้งค่าเวลา</string>
-    <string name="time_travel_select_event" translation_description="Placeholder hint for the dropdown list of popular astronomical events in the time travel dialog.">เลือกเหตุการณ์ยอดนิยม…</string>
-    <string name="time_travel_go" translation_description="Button that starts time travel to the chosen date.">ไป</string>
-    <string name="time_travel_from_now">เริ่มจากตอนนี้</string>
-    <string name="time_travel_ok">ตกลง</string>
-    <string name="time_travel_cancel">ยกเลิก</string>
-    <!-- tm:omitted name="time_travel_slower" reason="identical_to_source" -->
-    <!-- tm:omitted name="time_travel_pause" reason="identical_to_source" -->
-    <!-- tm:omitted name="time_travel_faster" reason="identical_to_source" -->
-    <string name="time_travel_return" translation_description="Player button that ends time travel and returns the map to the present.">ปัจจุบัน</string>
 
     <!-- Time travel playback-rate labels (v1 wording). -->
-    <string name="time_travel_second_speed">กำลังเดินทาง &gt; @ 1 วินาที/วินาที</string>
-    <string name="time_travel_minute_speed">กำลังเดินทาง &gt; @ 1 นาที/วินาที</string>
-    <string name="time_travel_10minute_speed">กำลังเดินทาง &gt; @ 10 นาที/วินาที</string>
-    <string name="time_travel_hour_speed">กำลังเดินทาง &gt; @ 1 ชั่วโมง/วินาที</string>
-    <string name="time_travel_day_speed">กำลังเดินทาง &gt; @ 1 วัน/วินาที</string>
-    <string name="time_travel_week_speed">เดินทางด้วยความเร็ว &gt; @ 1 สัปดาห์/วินาที</string>
-    <string name="time_travel_second_speed_back">เดินทางด้วยความเร็ว &lt; @ 1 วินาที/วินาที</string>
-    <string name="time_travel_minute_speed_back">เดินทางด้วยความเร็ว &lt; @ 1 นาที/วินาที</string>
-    <string name="time_travel_10minute_speed_back">เดินทางด้วยความเร็ว &lt; @ 10 นาที/วินาที</string>
-    <string name="time_travel_hour_speed_back">เดินทางด้วยความเร็ว &lt; @ 1 ชั่วโมง/วินาที</string>
-    <string name="time_travel_day_speed_back">เดินทางด้วยความเร็ว &lt; @ 1 วัน/วินาที</string>
-    <string name="time_travel_week_speed_back">เดินทางด้วยความเร็ว &lt; @ 1 สัปดาห์/วินาที</string>
 
     <!-- Popular events in the time travel dialog (timestamps live in TimeTravelEvents.kt). -->
-    <string name="time_travel_now" translation_description="Time travel picker entry that resets the destination to the present moment.">ปัจจุบัน</string>
-    <string name="time_travel_next_sunset">พระอาทิตย์ตกในเย็นวันถัดไป</string>
-    <string name="time_travel_next_sunrise">พระอาทิตย์ขึ้นในเช้าวันถัดไป</string>
-    <string name="time_travel_next_full_moon">พระจันทร์เต็มดวงครั้งถัดไป</string>
-    <string name="time_travel_next_new_moon">พระจันทร์ค่ำครั้งถัดไป</string>
-    <string name="time_travel_six_planet_parade_2026">ดาวหกดวงเรียงแถว 28 กุมภาพันธ์ 2026</string>
-    <string name="time_travel_lunar_eclipse_2026">สุริยุปราคาเต็มดวง 3 มีนาคม 2026</string>
-    <string name="time_travel_lyrids_2026">ฝนดาวแสดรรค์ 22 เมษายน 2026</string>
-    <string name="time_travel_venus_jupiter_2026">ความสัมพันธ์ระหว่างดาวศุกร์และดาวพฤหัสบดี 9 มิถุนายน 2026</string>
-    <string name="time_travel_mars_uranus_2026">การเข้าใกล้ระหว่างดาวอังคารและดาวยูเรนัส 4 กรกฎาคม 2026</string>
-    <string name="time_travel_solar_eclipse_2026">สุริยุปราคาเต็มดวง 12 สิงหาคม 2026</string>
-    <string name="time_travel_perseids_2026">ฝนดาวแสดรรค์เพอร์เซอิด 12-13 สิงหาคม 2026</string>
-    <string name="time_travel_lunar_eclipse_aug_2026" translation_description="Name of an astronomical event in the time travel picker. Keep the date format suitable for your locale.">จันทรุปราคาบางส่วน, 28 สิงหาคม 2026</string>
-    <string name="time_travel_jupiter_occultation_2026">ดวงจันทร์บดบังดาวพฤหัสบดี 6 ตุลาคม 2026</string>
-    <string name="time_travel_geminids_2026">ฝนดาวแสดรรค์เจมินิด 13-14 ธันวาคม 2026</string>
-    <string name="time_travel_supermoon_2026">ดวงจันทร์เต็มดวงวันคริสต์มาส 24 ธันวาคม 2026</string>
-    <string name="time_travel_mercury_transit_2016">ดาวพุธผ่านหน้าดวงอาทิตย์ 9 พฤษภาคม 2016</string>
-    <string name="time_travel_solar_eclipse_2024">สุริยุปราคาเหนือทวีปอเมริกาเหนือ 8 เมษายน 2024</string>
-    <string name="time_travel_apollo_11">การลงจอดบนดวงจันทร์ของอพอลโล 11</string>
-    <string name="time_travel_jupiter_saturn_2020">ความสัมพันธ์ระหว่างดาวพฤหัสบดีและดาวเสาร์ ค.ศ. 2020</string>
-    <string name="sun_wont_set_message">ดวงอาทิตย์จะไม่ตกในช่วง 24 ชั่วโมงถัดไปที่ตำแหน่งปัจจุบันของคุณ</string>
-    <string name="time_travel_start_message" translation_description="Toast message when time travel starts toward a chosen destination. %1$s is the formatted destination date and time.">กำลังเดินทางข้ามเวลาไปยัง %1$s ...</string>
-    <string name="time_travel_close_message">กลับไปยังปัจจุบัน ...</string>
 
     <!-- Location management. -->
     <string name="location_management_title">ตำแหน่งของคุณ</string>
@@ -522,6 +474,5 @@
     </string>
     <string name="notif_digest_title" translation_description="Title of the tonight\'s-sky digest notification">น่าดูในคืนนี้</string>
     <string name="notif_action_mute_showers" translation_description="Notification action button that opens the system toggle for the meteor-shower channel">ปิดเสียงฝนดาวตก</string>
-    <string name="time_travel_stopped">การเดินทางข้ามเวลาหยุดชั่วคราว</string>
     <!-- Layers sheet: per-layer parameters (D87). -->
 </resources>

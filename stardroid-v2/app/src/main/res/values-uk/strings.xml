@@ -82,58 +82,10 @@
     <string name="share_failed_message" translation_description="Snackbar shown when capturing the sky image for sharing failed.">Не вдалося зняти небо — спробуйте ще раз</string>
 
     <!-- Time travel: entry button, dialog, and the player bar shown while travelling. -->
-    <string name="time_travel_title">Подорож у часі</string>
-    <string name="time_travel_visiting" translation_description="Readout in the time travel dialog showing the currently chosen destination date and time. %1$s is the formatted date and time.">Відвідування: %1$s</string>
-    <string name="time_travel_pick_date" translation_description="Button in the time travel dialog that opens a date picker.">Встановити дату</string>
-    <string name="time_travel_pick_time" translation_description="Button in the time travel dialog that opens a time picker.">Встановити час</string>
-    <string name="time_travel_select_event" translation_description="Placeholder hint for the dropdown list of popular astronomical events in the time travel dialog.">Виберіть популярну подію…</string>
-    <string name="time_travel_go" translation_description="Button that starts time travel to the chosen date.">Перейти</string>
-    <string name="time_travel_from_now">Почати з тепер</string>
-    <!-- tm:omitted name="time_travel_ok" reason="identical_to_source" -->
-    <string name="time_travel_cancel">Відміна</string>
-    <!-- tm:omitted name="time_travel_slower" reason="identical_to_source" -->
-    <!-- tm:omitted name="time_travel_pause" reason="identical_to_source" -->
-    <!-- tm:omitted name="time_travel_faster" reason="identical_to_source" -->
-    <string name="time_travel_return" translation_description="Player button that ends time travel and returns the map to the present.">Зараз</string>
 
     <!-- Time travel playback-rate labels (v1 wording). -->
-    <string name="time_travel_second_speed">Подорож зі швидкістю &gt; @ 1 с/с</string>
-    <string name="time_travel_minute_speed">Подорож зі швидкістю &gt; @ 1 хв/с</string>
-    <string name="time_travel_10minute_speed">Подорож зі швидкістю &gt; @ 10 хв/с</string>
-    <string name="time_travel_hour_speed">Подорож зі швидкістю &gt; @ 1 год/с</string>
-    <string name="time_travel_day_speed">Подорож зі швидкістю &gt; @ 1 дн/с</string>
-    <string name="time_travel_week_speed">Подорож зі швидкістю &gt; @ 1 тжд/с</string>
-    <string name="time_travel_second_speed_back">Подорож зі швидкістю &lt; @ 1 с/с</string>
-    <string name="time_travel_minute_speed_back">Подорож зі швидкістю &lt; @ 1 хв/с</string>
-    <string name="time_travel_10minute_speed_back">Подорож зі швидкістю &lt; @ 10 хв/с</string>
-    <string name="time_travel_hour_speed_back">Подорож зі швидкістю &lt; @ 1 год/с</string>
-    <string name="time_travel_day_speed_back">Подорож зі швидкістю &lt; @ 1 дн/с</string>
-    <string name="time_travel_week_speed_back">Подорож зі швидкістю &lt; @ 1 тжд/с</string>
 
     <!-- Popular events in the time travel dialog (timestamps live in TimeTravelEvents.kt). -->
-    <string name="time_travel_now" translation_description="Time travel picker entry that resets the destination to the present moment.">Зараз</string>
-    <string name="time_travel_next_sunset">Наступний захід Сонця</string>
-    <string name="time_travel_next_sunrise">Наступний схід Сонця</string>
-    <string name="time_travel_next_full_moon">Наступний повний місяць</string>
-    <string name="time_travel_next_new_moon">Наступний новий місяць</string>
-    <string name="time_travel_six_planet_parade_2026">Парад шести планет, 28 лютого 2026 р.</string>
-    <string name="time_travel_lunar_eclipse_2026">Повне місячне затемнення, 3 бер. 2026</string>
-    <string name="time_travel_lyrids_2026">Метеорний потік Ліриди, 22 квіт. 2026</string>
-    <string name="time_travel_venus_jupiter_2026">Сполучення Венери та Юпітера, 9 черв. 2026</string>
-    <string name="time_travel_mars_uranus_2026">Близьке зближення Марса та Урана, 4 липня 2026</string>
-    <string name="time_travel_solar_eclipse_2026">Повне сонячне затемнення, 12 серп. 2026</string>
-    <string name="time_travel_perseids_2026">Метеорний потік Персеїди, 12-13 серп. 2026</string>
-    <string name="time_travel_lunar_eclipse_aug_2026" translation_description="Name of an astronomical event in the time travel picker. Keep the date format suitable for your locale.">Часткове місячне затемнення, 28 серпня 2026 р.</string>
-    <string name="time_travel_jupiter_occultation_2026">Покриття Юпітера Місяцем, 6 жовт. 2026</string>
-    <string name="time_travel_geminids_2026">Метеорний потік Близнюки, 13-14 груд. 2026</string>
-    <string name="time_travel_supermoon_2026">Супермісяць у Святвечір, 24 груд. 2026</string>
-    <string name="time_travel_mercury_transit_2016">Транзит Меркурія 9 травня 2016 р.</string>
-    <string name="time_travel_solar_eclipse_2024">Сонячне затемнення 8 квітень 2024 р.</string>
-    <string name="time_travel_apollo_11">Посадка на Місяць Аполлона 11</string>
-    <string name="time_travel_jupiter_saturn_2020">З\'єднання Юпітер-Сатурн</string>
-    <string name="sun_wont_set_message">Протягом найближчих 24 годин заходу Сонця в вашому місці розташування не буде.</string>
-    <string name="time_travel_start_message" translation_description="Toast message when time travel starts toward a chosen destination. %1$s is the formatted destination date and time.">Подорож у часі до %1$s ...</string>
-    <string name="time_travel_close_message">Назад в сьогодення...</string>
 
     <!-- Location management. -->
     <string name="location_management_title">Ваше місцезнаходження</string>
@@ -532,6 +484,5 @@
     </string>
     <string name="notif_digest_title" translation_description="Title of the tonight\'s-sky digest notification">Варто поглянути сьогодні ввечері</string>
     <string name="notif_action_mute_showers" translation_description="Notification action button that opens the system toggle for the meteor-shower channel">Вимкнути зорепади</string>
-    <string name="time_travel_stopped">Подорож у часі призупинено</string>
     <!-- Layers sheet: per-layer parameters (D87). -->
 </resources>
