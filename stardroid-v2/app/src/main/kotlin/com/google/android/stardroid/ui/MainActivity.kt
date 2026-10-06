@@ -242,6 +242,15 @@ class MainActivity : ComponentActivity() {
                         mapViewModel.referenceFrame.value == ReferenceFrame.MANUAL
                     },
                     location = { locationController.locations.value },
+                    satellites = {
+                        trackedSatellites(
+                            this@MainActivity,
+                            locationController.locations.value,
+                            getString(R.string.satellite_description),
+                            timeController.now(),
+                            requireLayerEnabled = false,
+                        )
+                    },
                 )
             }
         }
