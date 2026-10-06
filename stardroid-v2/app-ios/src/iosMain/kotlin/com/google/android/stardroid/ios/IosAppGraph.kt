@@ -69,6 +69,10 @@ class IosAppGraph {
                 ?.path,
         ) { "no Application Support directory" }
 
+    init {
+        recordUncaughtExceptions(supportDirectory)
+    }
+
     private val settingsStore = settingsDataStore("$supportDirectory/settings.preferences_pb")
 
     val settings: Settings = DataStoreSettings(settingsStore)
