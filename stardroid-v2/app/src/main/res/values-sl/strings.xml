@@ -45,16 +45,6 @@
     <string name="satellite_description" translation_description="Short description shown on the info card for an artificial satellite.">
     Umetni satelit v nizki zemeljski orbiti, osvetljen s soncem na temnem nebu. Prečka nebo od obzorja do obzorja v nekaj minutah, premika se enakomerno in brez utripanja.
     </string>
-    <string name="satellite_next_pass" translation_description="Heading above the next visible pass details on a satellite\'s info card.">Naslednji vidni prelet</string>
-    <string name="satellite_pass_when" translation_description="When and how high the next satellite pass will be. %1$s is a time, %2$s is a compass direction, %3$d is an angle in degrees.">%1$s, vzhaja %2$s, doseže %3$d°</string>
-    <string name="satellite_pass_magnitude" translation_description="How bright the satellite will be at its peak. %1$.1f is a brightness magnitude.">Magnituda %1$.1f ob najsvetlejši točki</string>
-    <string name="satellite_pass_shadow" translation_description="Tells the user the satellite will fade out mid-pass when it enters the Earth\'s shadow. %1$s is a time.">Zbledi v Zemljino senco ob %1$s</string>
-    <string name="satellite_no_pass" translation_description="Shown on a satellite info card when no visible pass is coming up in the next two days.">V naslednjih nekaj dneh ni vidnih preletov</string>
-    <string name="satellite_pass_unknown" translation_description="Shown on a satellite info card when the downloaded orbit data is too old to predict pass times reliably.">Podatki o orbiti so prestari za napovedovanje preletov</string>
-    <string name="object_info_eclipse_title" translation_description="Heading above the next lunar eclipse details on the Moon\'s info card.">Lunin mrk</string>
-    <string name="object_info_no_eclipse" translation_description="Shown on the Moon\'s info card when no lunar eclipse is coming up in the searched time range.">Kmalu ni pričakovanega luninega mrka</string>
-    <string name="object_info_eclipse_greatest" translation_description="The next lunar eclipse\'s type and greatest-eclipse date/time. %1$s is a localized eclipse type like \'Total lunar eclipse\', %2$s a date, %3$s a time.">%1$s — največji mrk %2$s ob %3$s</string>
-    <string name="object_info_eclipse_totality" translation_description="The start and end time of totality during a total lunar eclipse. %1$s and %2$s are times.">Popolnost %1$s – %2$s</string>
     <string name="tonight_satellite_pass" translation_description="Tonight-widget row announcing a visible satellite pass. %1$s is the satellite name, %2$s is a time of day.">%1$s preleti ob %2$s</string>
     <string name="tonight_trailing_pass" translation_description="Small trailing note on a satellite pass row. %1$s is a compass direction, %2$d is an angle in degrees, %3$.1f is a brightness magnitude.">Vzhaja %1$s, %2$d°, mag %3$.1f</string>
 
@@ -140,22 +130,6 @@
     <!-- tm:omitted name="location_coordinate_format" reason="identical_to_source" -->
 
     <!-- Object info card -->
-    <string name="object_info_image_credit" translation_description="Attribution line under the object\'s photo; %1$s is the credited source, e.g. NASA/ESA">Slika: %1$s</string>
-    <string name="object_info_fun_fact" translation_description="An interesting trivia line on the object info card; %1$s is the fact text">Zanimivost: %1$s</string>
-    <string name="object_info_distance">Razdalja:</string>
-    <string name="object_info_size">Velikost:</string>
-    <string name="object_info_mass">Masa:</string>
-    <string name="object_info_spectral_class" translation_description="Label for a star\'s spectral classification (e.g. G2V) on the info card">Spektralni razred:</string>
-    <string name="object_info_magnitude">Magnituda:</string>
-    <string name="object_info_rises" translation_description="Label on the info card for the time the object next rises above the horizon at the user\'s location">Vzhaja:</string>
-    <string name="object_info_sets" translation_description="Label on the info card for the time the object next sets below the horizon at the user\'s location">Zahaja:</string>
-    <string name="object_info_always_above_horizon" translation_description="Info-card line shown for a circumpolar object that never sets at the user\'s location">Vedno nad obzorjem na vaši lokaciji</string>
-    <string name="object_info_always_below_horizon" translation_description="Info-card line shown for an object that never rises at the user\'s location">Vedno pod obzorjem na vaši lokaciji</string>
-    <string name="object_info_also_known_as" translation_description="Label on the info card above the object\'s alternative names (aliases and catalog designations), e.g. M31 and NGC 224">Tudi znano kot:</string>
-    <string name="object_info_see_also" translation_description="Heading above links to related celestial objects on the info card">Glej tudi</string>
-    <string name="object_info_find_in_sky">Poišči na nebu</string>
-    <string name="object_info_close" translation_description="Button that closes the object info card">Zapri</string>
-    <string name="object_info_tap_to_close">Tapnite za zaprtje</string>
 
     <!-- Image gallery -->
     <string name="gallery_title" translation_description="Title of the screen showing a gallery of photographs of celestial objects. Not the user\'s own photos - these are catalog images from sources such as NASA and ESA.">Galerija neba</string>
@@ -439,9 +413,6 @@
     <string name="tonight_new_moon" translation_description="Tonight-widget row shown at new moon">Mlaj — najtemnejše nebo v mesecu</string>
     <string name="tonight_full_moon" translation_description="Tonight-widget row shown at full moon">Ščip nocoj</string>
     <string name="tonight_bright_moon" translation_description="Tonight-widget row warning that a bright moon washes out faint objects">Svetla luna zasenči šibke objekte</string>
-    <string name="tonight_lunar_eclipse_total" translation_description="Tonight-widget row: a total lunar eclipse is starting soon or under way">Popolni lunin mrk</string>
-    <string name="tonight_lunar_eclipse_partial" translation_description="Tonight-widget row: a partial lunar eclipse is starting soon or under way">Delni lunin mrk</string>
-    <string name="tonight_lunar_eclipse_penumbral" translation_description="Tonight-widget row: a penumbral lunar eclipse is starting soon or under way">Penumbralni lunin mrk</string>
     <string name="tonight_quiet" translation_description="Tonight-widget line shown when nothing notable is visible tonight">Mirno nebo nocoj</string>
     <string name="tonight_quiet_next" translation_description="Tonight-widget line under the quiet-night message; %1$s is an event name, %2$d the days until it">Naslednje: %1$s čez %2$d dni</string>
     <string name="countdown_widget_label" translation_description="Name of the countdown home-screen widget, shown in the launcher\'s widget picker">Odštevanje neba</string>

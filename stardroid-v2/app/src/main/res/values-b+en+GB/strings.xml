@@ -39,16 +39,6 @@
     <!-- tm:omitted name="satellite_name_iss" reason="identical_to_source" -->
     <!-- tm:omitted name="satellite_name_tiangong" reason="identical_to_source" -->
     <!-- tm:omitted name="satellite_description" reason="identical_to_source" -->
-    <!-- tm:omitted name="satellite_next_pass" reason="identical_to_source" -->
-    <!-- tm:omitted name="satellite_pass_when" reason="identical_to_source" -->
-    <!-- tm:omitted name="satellite_pass_magnitude" reason="identical_to_source" -->
-    <!-- tm:omitted name="satellite_pass_shadow" reason="identical_to_source" -->
-    <!-- tm:omitted name="satellite_no_pass" reason="identical_to_source" -->
-    <!-- tm:omitted name="satellite_pass_unknown" reason="identical_to_source" -->
-    <!-- tm:omitted name="object_info_eclipse_title" reason="identical_to_source" -->
-    <!-- tm:omitted name="object_info_no_eclipse" reason="identical_to_source" -->
-    <!-- tm:omitted name="object_info_eclipse_greatest" reason="identical_to_source" -->
-    <!-- tm:omitted name="object_info_eclipse_totality" reason="identical_to_source" -->
     <!-- tm:omitted name="tonight_satellite_pass" reason="identical_to_source" -->
     <!-- tm:omitted name="tonight_trailing_pass" reason="identical_to_source" -->
 
@@ -122,22 +112,6 @@
     <!-- tm:omitted name="location_hemisphere_west_description" reason="identical_to_source" -->
     <!-- tm:omitted name="location_coordinate_format" reason="identical_to_source" -->
 
-    <!-- tm:omitted name="object_info_image_credit" reason="identical_to_source" -->
-    <!-- tm:omitted name="object_info_fun_fact" reason="identical_to_source" -->
-    <!-- tm:omitted name="object_info_distance" reason="identical_to_source" -->
-    <!-- tm:omitted name="object_info_size" reason="identical_to_source" -->
-    <!-- tm:omitted name="object_info_mass" reason="identical_to_source" -->
-    <!-- tm:omitted name="object_info_spectral_class" reason="identical_to_source" -->
-    <!-- tm:omitted name="object_info_magnitude" reason="identical_to_source" -->
-    <!-- tm:omitted name="object_info_rises" reason="identical_to_source" -->
-    <!-- tm:omitted name="object_info_sets" reason="identical_to_source" -->
-    <!-- tm:omitted name="object_info_always_above_horizon" reason="identical_to_source" -->
-    <!-- tm:omitted name="object_info_always_below_horizon" reason="identical_to_source" -->
-    <!-- tm:omitted name="object_info_also_known_as" reason="identical_to_source" -->
-    <!-- tm:omitted name="object_info_see_also" reason="identical_to_source" -->
-    <!-- tm:omitted name="object_info_find_in_sky" reason="identical_to_source" -->
-    <!-- tm:omitted name="object_info_close" reason="identical_to_source" -->
-    <!-- tm:omitted name="object_info_tap_to_close" reason="identical_to_source" -->
 
     <!-- tm:omitted name="gallery_title" reason="identical_to_source" -->
     <!-- tm:omitted name="gallery_back" reason="identical_to_source" -->
@@ -386,9 +360,6 @@
     <!-- tm:omitted name="tonight_new_moon" reason="identical_to_source" -->
     <!-- tm:omitted name="tonight_full_moon" reason="identical_to_source" -->
     <!-- tm:omitted name="tonight_bright_moon" reason="identical_to_source" -->
-    <!-- tm:omitted name="tonight_lunar_eclipse_total" reason="identical_to_source" -->
-    <!-- tm:omitted name="tonight_lunar_eclipse_partial" reason="identical_to_source" -->
-    <!-- tm:omitted name="tonight_lunar_eclipse_penumbral" reason="identical_to_source" -->
     <!-- tm:omitted name="tonight_quiet" reason="identical_to_source" -->
     <!-- tm:omitted name="tonight_quiet_next" reason="identical_to_source" -->
     <!-- tm:omitted name="countdown_widget_label" reason="identical_to_source" -->

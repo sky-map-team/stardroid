@@ -23,3 +23,11 @@ internal expect fun rememberDateTimeFormatter(): (Instant) -> String
 /** Whether the user's clock is 24-hour, for the time picker. */
 @Composable
 internal expect fun rememberIs24HourClock(): Boolean
+
+/** A time of day as the user's clock shows it (12- or 24-hour), as Android's getTimeFormat. */
+@Composable
+internal expect fun rememberTimeFormatter(): (Instant) -> String
+
+/** A medium date ("Oct 5, 2026"), for events weeks away, where a bare time isn't enough. */
+@Composable
+internal expect fun rememberDateFormatter(): (Instant) -> String

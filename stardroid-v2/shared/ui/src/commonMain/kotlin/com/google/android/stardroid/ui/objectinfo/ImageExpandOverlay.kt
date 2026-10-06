@@ -9,7 +9,6 @@
 
 package com.google.android.stardroid.ui.objectinfo
 
-import android.graphics.BitmapFactory
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.tween
 import androidx.compose.animation.fadeOut
@@ -31,7 +30,6 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableFloatStateOf
 import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.produceState
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.runtime.setValue
@@ -41,27 +39,25 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.BlendMode
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
-import androidx.compose.ui.graphics.ImageBitmap
-import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.input.pointer.PointerInputChange
 import androidx.compose.ui.input.pointer.changedToUp
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.layout.onSizeChanged
-import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.IntSize
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
-import androidx.compose.ui.window.DialogProperties
-import com.google.android.stardroid.R
+import com.google.android.stardroid.ui.common.formattedStringResource
+import com.google.android.stardroid.ui.common.fullScreenDialogProperties
+import com.google.android.stardroid.ui.common.rememberCelestialImage
+import com.google.android.stardroid.ui.resources.Res
+import com.google.android.stardroid.ui.resources.object_info_image_credit
+import com.google.android.stardroid.ui.resources.object_info_tap_to_close
 import com.google.android.stardroid.ui.theme.NightPhotoTint
-import kotlinx.coroutines.CancellationException
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
-import kotlinx.coroutines.withContext
+import org.jetbrains.compose.resources.stringResource
 
 /**
  * v1's `ImageExpandDialogFragment` as a Compose dialog: the full-resolution photo on black,
@@ -80,27 +76,9 @@ fun ImageExpandOverlay(
     Dialog(
         onDismissRequest = onDismiss,
         properties =
-            DialogProperties(
-                usePlatformDefaultWidth = false,
-                decorFitsSystemWindows = false,
-            ),
+            fullScreenDialogProperties(),
     ) {
-        val assets = LocalContext.current.assets
-        val bitmap by produceState<ImageBitmap?>(initialValue = null, imageRef) {
-            value = null
-            value =
-                withContext(Dispatchers.IO) {
-                    try {
-                        assets.open("celestial_images/$imageRef").use { stream ->
-                            BitmapFactory.decodeStream(stream)?.asImageBitmap()
-                        }
-                    } catch (e: CancellationException) {
-                        throw e
-                    } catch (e: Exception) {
-                        null
-                    }
-                }
-        }
+        val bitmap = rememberCelestialImage(imageRef)
         var scale by remember(imageRef) { mutableFloatStateOf(1f) }
         var offset by remember(imageRef) { mutableStateOf(Offset.Zero) }
         var containerSize by remember { mutableStateOf(IntSize.Zero) }
@@ -206,7 +184,7 @@ fun ImageExpandOverlay(
                 val textColor = if (nightMode) NightPhotoTint else Color.White
                 credit?.let {
                     Text(
-                        stringResource(R.string.object_info_image_credit, it),
+                        formattedStringResource(Res.string.object_info_image_credit, it),
                         color = textColor,
                         textAlign = TextAlign.Center,
                         modifier = Modifier.fillMaxWidth().padding(bottom = 4.dp),
@@ -214,7 +192,7 @@ fun ImageExpandOverlay(
                 }
                 AnimatedVisibility(hintVisible, exit = fadeOut(tween(500))) {
                     Text(
-                        stringResource(R.string.object_info_tap_to_close),
+                        stringResource(Res.string.object_info_tap_to_close),
                         color = textColor,
                         textAlign = TextAlign.Center,
                         modifier = Modifier.fillMaxWidth(),

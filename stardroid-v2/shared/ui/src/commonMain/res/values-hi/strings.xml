@@ -168,4 +168,33 @@
     <string name="sun_wont_set_message">आपके वर्तमान स्थान पर अगले 24 घंटों में सूर्य अस्त नहीं होगा।</string>
     <string name="time_travel_start_message" translation_description="Toast message when time travel starts toward a chosen destination. %1$s is the formatted destination date and time.">समय में %1$s तक यात्रा कर रहे हैं ...</string>
     <string name="time_travel_close_message">वर्तमान में वापस ...</string>
+    <string name="satellite_next_pass" translation_description="Heading above the next visible pass details on a satellite\'s info card.">अगला दृश्यमान पारगमन</string>
+    <string name="satellite_pass_when" translation_description="When and how high the next satellite pass will be. %1$s is a time, %2$s is a compass direction, %3$d is an angle in degrees.">%1$s, %2$s से उदय, %3$d° तक पहुँचेगा</string>
+    <string name="satellite_pass_magnitude" translation_description="How bright the satellite will be at its peak. %1$.1f is a brightness magnitude.">सबसे चमकीला होने पर परिमाण %1$.1f</string>
+    <string name="satellite_pass_shadow" translation_description="Tells the user the satellite will fade out mid-pass when it enters the Earth\'s shadow. %1$s is a time.">पृथ्वी की छाया में %1$s पर फीका पड़ जाएगा</string>
+    <string name="satellite_no_pass" translation_description="Shown on a satellite info card when no visible pass is coming up in the next two days.">अगले कुछ दिनों में कोई दृश्यमान पारगमन नहीं</string>
+    <string name="satellite_pass_unknown" translation_description="Shown on a satellite info card when the downloaded orbit data is too old to predict pass times reliably.">पारगमन की भविष्यवाणी करने के लिए कक्षा का डेटा बहुत पुराना है</string>
+    <string name="object_info_eclipse_title" translation_description="Heading above the next lunar eclipse details on the Moon\'s info card.">चंद्र ग्रहण</string>
+    <string name="object_info_no_eclipse" translation_description="Shown on the Moon\'s info card when no lunar eclipse is coming up in the searched time range.">जल्द ही कोई चंद्र ग्रहण अपेक्षित नहीं है</string>
+    <string name="object_info_eclipse_greatest" translation_description="The next lunar eclipse\'s type and greatest-eclipse date/time. %1$s is a localized eclipse type like \'Total lunar eclipse\', %2$s a date, %3$s a time.">%1$s — सबसे बड़ा ग्रहण %2$s को %3$s बजे</string>
+    <string name="object_info_eclipse_totality" translation_description="The start and end time of totality during a total lunar eclipse. %1$s and %2$s are times.">पूर्णता %1$s – %2$s</string>
+    <string name="object_info_image_credit" translation_description="Attribution line under the object\'s photo; %1$s is the credited source, e.g. NASA/ESA">छवि: %1$s</string>
+    <string name="object_info_fun_fact" translation_description="An interesting trivia line on the object info card; %1$s is the fact text">मज़ेदार तथ्य: %1$s</string>
+    <string name="object_info_distance">दूरी:</string>
+    <string name="object_info_size">आकार:</string>
+    <string name="object_info_mass">द्रव्यमान:</string>
+    <string name="object_info_spectral_class" translation_description="Label for a star\'s spectral classification (e.g. G2V) on the info card">स्पेक्ट्रल वर्ग:</string>
+    <string name="object_info_magnitude">कांतिमान:</string>
+    <string name="object_info_rises" translation_description="Label on the info card for the time the object next rises above the horizon at the user\'s location">उदय:</string>
+    <string name="object_info_sets" translation_description="Label on the info card for the time the object next sets below the horizon at the user\'s location">अस्त:</string>
+    <string name="object_info_always_above_horizon" translation_description="Info-card line shown for a circumpolar object that never sets at the user\'s location">आपके स्थान पर हमेशा क्षितिज के ऊपर</string>
+    <string name="object_info_always_below_horizon" translation_description="Info-card line shown for an object that never rises at the user\'s location">आपके स्थान पर हमेशा क्षितिज के नीचे</string>
+    <string name="object_info_also_known_as" translation_description="Label on the info card above the object\'s alternative names (aliases and catalog designations), e.g. M31 and NGC 224">इसे इस नाम से भी जाना जाता है:</string>
+    <string name="object_info_see_also" translation_description="Heading above links to related celestial objects on the info card">यह भी देखें</string>
+    <string name="object_info_find_in_sky">आकाश में खोजें</string>
+    <string name="object_info_close" translation_description="Button that closes the object info card">बंद करें</string>
+    <string name="object_info_tap_to_close">बंद करने के लिए टैप करें</string>
+    <string name="tonight_lunar_eclipse_total" translation_description="Tonight-widget row: a total lunar eclipse is starting soon or under way">पूर्ण चन्द्र ग्रहण</string>
+    <string name="tonight_lunar_eclipse_partial" translation_description="Tonight-widget row: a partial lunar eclipse is starting soon or under way">आंशिक चन्द्र ग्रहण</string>
+    <string name="tonight_lunar_eclipse_penumbral" translation_description="Tonight-widget row: a penumbral lunar eclipse is starting soon or under way">उपच्छाया चन्द्र ग्रहण</string>
 </resources>

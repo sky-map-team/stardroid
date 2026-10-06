@@ -145,4 +145,33 @@
     <!-- tm:omitted name="sun_wont_set_message" reason="identical_to_source" -->
     <string name="time_travel_start_message" translation_description="Toast message when time travel starts toward a chosen destination. %1$s is the formatted destination date and time.">Travelling through time to %1$s ...</string>
     <!-- tm:omitted name="time_travel_close_message" reason="identical_to_source" -->
+    <!-- tm:omitted name="satellite_next_pass" reason="identical_to_source" -->
+    <!-- tm:omitted name="satellite_pass_when" reason="identical_to_source" -->
+    <!-- tm:omitted name="satellite_pass_magnitude" reason="identical_to_source" -->
+    <!-- tm:omitted name="satellite_pass_shadow" reason="identical_to_source" -->
+    <!-- tm:omitted name="satellite_no_pass" reason="identical_to_source" -->
+    <!-- tm:omitted name="satellite_pass_unknown" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_eclipse_title" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_no_eclipse" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_eclipse_greatest" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_eclipse_totality" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_image_credit" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_fun_fact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_size" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_mass" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_spectral_class" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_magnitude" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_rises" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_sets" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_always_above_horizon" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_always_below_horizon" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_also_known_as" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_see_also" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_find_in_sky" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_close" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_tap_to_close" reason="identical_to_source" -->
+    <!-- tm:omitted name="tonight_lunar_eclipse_total" reason="identical_to_source" -->
+    <!-- tm:omitted name="tonight_lunar_eclipse_partial" reason="identical_to_source" -->
+    <!-- tm:omitted name="tonight_lunar_eclipse_penumbral" reason="identical_to_source" -->
 </resources>

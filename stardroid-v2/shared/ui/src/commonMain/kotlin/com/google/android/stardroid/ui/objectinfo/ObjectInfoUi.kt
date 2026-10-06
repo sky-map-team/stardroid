@@ -9,7 +9,6 @@
 
 package com.google.android.stardroid.ui.objectinfo
 
-import android.graphics.BitmapFactory
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
@@ -29,34 +28,58 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.produceState
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.BlendMode
 import androidx.compose.ui.graphics.ColorFilter
-import androidx.compose.ui.graphics.ImageBitmap
-import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.platform.LocalConfiguration
-import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.unit.dp
-import com.google.android.stardroid.R
 import com.google.android.stardroid.astronomy.LunarEclipseCircumstances
 import com.google.android.stardroid.astronomy.LunarEclipseType
 import com.google.android.stardroid.astronomy.SatellitePass
 import com.google.android.stardroid.catalog.ObjectInfo
 import com.google.android.stardroid.catalog.SearchHit
+import com.google.android.stardroid.ui.common.formatForLocale
+import com.google.android.stardroid.ui.common.formattedStringResource
+import com.google.android.stardroid.ui.common.rememberCelestialImage
+import com.google.android.stardroid.ui.common.rememberDateFormatter
+import com.google.android.stardroid.ui.common.rememberTimeFormatter
+import com.google.android.stardroid.ui.map.HudFormats
+import com.google.android.stardroid.ui.resources.Res
+import com.google.android.stardroid.ui.resources.hud_cardinal_directions
+import com.google.android.stardroid.ui.resources.object_info_also_known_as
+import com.google.android.stardroid.ui.resources.object_info_always_above_horizon
+import com.google.android.stardroid.ui.resources.object_info_always_below_horizon
+import com.google.android.stardroid.ui.resources.object_info_close
+import com.google.android.stardroid.ui.resources.object_info_distance
+import com.google.android.stardroid.ui.resources.object_info_eclipse_greatest
+import com.google.android.stardroid.ui.resources.object_info_eclipse_title
+import com.google.android.stardroid.ui.resources.object_info_eclipse_totality
+import com.google.android.stardroid.ui.resources.object_info_find_in_sky
+import com.google.android.stardroid.ui.resources.object_info_fun_fact
+import com.google.android.stardroid.ui.resources.object_info_image_credit
+import com.google.android.stardroid.ui.resources.object_info_magnitude
+import com.google.android.stardroid.ui.resources.object_info_mass
+import com.google.android.stardroid.ui.resources.object_info_no_eclipse
+import com.google.android.stardroid.ui.resources.object_info_rises
+import com.google.android.stardroid.ui.resources.object_info_see_also
+import com.google.android.stardroid.ui.resources.object_info_sets
+import com.google.android.stardroid.ui.resources.object_info_size
+import com.google.android.stardroid.ui.resources.object_info_spectral_class
+import com.google.android.stardroid.ui.resources.satellite_next_pass
+import com.google.android.stardroid.ui.resources.satellite_no_pass
+import com.google.android.stardroid.ui.resources.satellite_pass_magnitude
+import com.google.android.stardroid.ui.resources.satellite_pass_shadow
+import com.google.android.stardroid.ui.resources.satellite_pass_unknown
+import com.google.android.stardroid.ui.resources.satellite_pass_when
+import com.google.android.stardroid.ui.resources.tonight_lunar_eclipse_partial
+import com.google.android.stardroid.ui.resources.tonight_lunar_eclipse_penumbral
+import com.google.android.stardroid.ui.resources.tonight_lunar_eclipse_total
 import com.google.android.stardroid.ui.theme.NightPhotoTint
-import com.google.android.stardroid.widget.cardinal
-import kotlinx.coroutines.CancellationException
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.withContext
-import java.text.DateFormat
-import java.util.Date
-import java.util.Locale
+import org.jetbrains.compose.resources.StringResource
+import org.jetbrains.compose.resources.stringArrayResource
+import org.jetbrains.compose.resources.stringResource
 import kotlin.math.roundToInt
 
 /**
@@ -100,7 +123,11 @@ fun ObjectInfoCard(
         },
         confirmButton = {
             val label =
-                if (onFind != null) R.string.object_info_find_in_sky else R.string.object_info_close
+                if (onFind != null) {
+                    Res.string.object_info_find_in_sky
+                } else {
+                    Res.string.object_info_close
+                }
             TextButton(onClick = { if (onFind != null) onFind(info) else onDismiss() }) {
                 Text(stringResource(label))
             }
@@ -109,7 +136,7 @@ fun ObjectInfoCard(
             if (onFind != null) {
                 {
                     TextButton(onClick = onDismiss) {
-                        Text(stringResource(R.string.object_info_close))
+                        Text(stringResource(Res.string.object_info_close))
                     }
                 }
             } else {
@@ -167,7 +194,7 @@ fun ObjectInfoBody(
         }
         info.funFact?.let {
             Text(
-                stringResource(R.string.object_info_fun_fact, it),
+                formattedStringResource(Res.string.object_info_fun_fact, it),
                 style = MaterialTheme.typography.bodyMedium,
                 fontStyle = FontStyle.Italic,
                 modifier = Modifier.padding(top = 8.dp),
@@ -180,7 +207,7 @@ fun ObjectInfoBody(
         promoRow?.invoke()
         if (info.links.isNotEmpty()) {
             Text(
-                stringResource(R.string.object_info_see_also),
+                stringResource(Res.string.object_info_see_also),
                 style = MaterialTheme.typography.titleSmall,
                 modifier = Modifier.padding(top = 12.dp),
             )
@@ -208,7 +235,7 @@ private fun OtherNames(info: ObjectInfo) {
     if (info.otherNames.isEmpty()) return
     Column(Modifier.padding(top = 8.dp)) {
         Text(
-            stringResource(R.string.object_info_also_known_as),
+            stringResource(Res.string.object_info_also_known_as),
             style = MaterialTheme.typography.bodySmall,
             color = MaterialTheme.colorScheme.onSurfaceVariant,
         )
@@ -226,13 +253,13 @@ private fun DataRows(
     riseSet: RiseSetState?,
 ) {
     Column(Modifier.padding(top = 8.dp)) {
-        DataRow(R.string.object_info_distance, info.distance)
-        DataRow(R.string.object_info_size, info.size)
-        DataRow(R.string.object_info_mass, info.mass)
-        DataRow(R.string.object_info_spectral_class, info.spectralClass)
+        DataRow(Res.string.object_info_distance, info.distance)
+        DataRow(Res.string.object_info_size, info.size)
+        DataRow(Res.string.object_info_mass, info.mass)
+        DataRow(Res.string.object_info_spectral_class, info.spectralClass)
         DataRow(
-            R.string.object_info_magnitude,
-            info.magnitude?.let { String.format(Locale.getDefault(), "%.1f", it) },
+            Res.string.object_info_magnitude,
+            info.magnitude?.let { formatForLocale("%.1f", arrayOf(it)) },
         )
         RiseSetRows(riseSet)
     }
@@ -250,53 +277,30 @@ private fun RiseSetRows(riseSet: RiseSetState?) {
         is RiseSetState.Times -> {
             val formatter = rememberTimeFormatter()
             DataRow(
-                R.string.object_info_rises,
-                riseSet.rise?.let { formatter.format(Date(it.toEpochMilliseconds())) },
+                Res.string.object_info_rises,
+                riseSet.rise?.let { formatter(it) },
             )
             DataRow(
-                R.string.object_info_sets,
-                riseSet.set?.let { formatter.format(Date(it.toEpochMilliseconds())) },
+                Res.string.object_info_sets,
+                riseSet.set?.let { formatter(it) },
             )
         }
         RiseSetState.AlwaysAbove ->
             Text(
-                stringResource(R.string.object_info_always_above_horizon),
+                stringResource(Res.string.object_info_always_above_horizon),
                 style = MaterialTheme.typography.bodySmall,
             )
         RiseSetState.AlwaysBelow ->
             Text(
-                stringResource(R.string.object_info_always_below_horizon),
+                stringResource(Res.string.object_info_always_below_horizon),
                 style = MaterialTheme.typography.bodySmall,
             )
     }
 }
 
-/**
- * A remembered time formatter honoring the device's 12/24-hour system setting, keyed on the
- * configuration so a runtime locale or format change re-creates it (the TimeTravelUi idiom).
- */
-@Composable
-private fun rememberTimeFormatter(): DateFormat {
-    val context = LocalContext.current
-    val configuration = LocalConfiguration.current
-    return remember(configuration) { android.text.format.DateFormat.getTimeFormat(context) }
-}
-
-/**
- * A remembered locale-short date formatter, for events (like a lunar eclipse) that can be weeks
- * away rather than the same day — unlike [rememberTimeFormatter]'s callers, a bare time isn't
- * enough here.
- */
-@Composable
-private fun rememberDateFormatter(): DateFormat {
-    val context = LocalContext.current
-    val configuration = LocalConfiguration.current
-    return remember(configuration) { android.text.format.DateFormat.getMediumDateFormat(context) }
-}
-
 @Composable
 private fun DataRow(
-    label: Int,
+    label: StringResource,
     value: String?,
 ) {
     if (value == null) return
@@ -325,22 +329,7 @@ private fun CelestialImage(
     nightMode: Boolean,
     onTap: () -> Unit,
 ) {
-    val assets = LocalContext.current.assets
-    val bitmap by produceState<ImageBitmap?>(initialValue = null, imageRef) {
-        value = null
-        value =
-            withContext(Dispatchers.IO) {
-                try {
-                    assets.open("celestial_images/$imageRef").use { stream ->
-                        BitmapFactory.decodeStream(stream)?.asImageBitmap()
-                    }
-                } catch (e: CancellationException) {
-                    throw e
-                } catch (e: Exception) {
-                    null
-                }
-            }
-    }
+    val bitmap = rememberCelestialImage(imageRef)
     bitmap?.let { image ->
         // v1's layout: 180 dp tall, centerCrop, rounded corners.
         Image(
@@ -362,7 +351,7 @@ private fun CelestialImage(
         )
         credit?.let {
             Text(
-                stringResource(R.string.object_info_image_credit, it),
+                formattedStringResource(Res.string.object_info_image_credit, it),
                 style = MaterialTheme.typography.labelSmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                 modifier = Modifier.padding(top = 2.dp),
@@ -390,43 +379,44 @@ fun SatellitePassRow(
 ) {
     val formatter = rememberTimeFormatter()
     Text(
-        stringResource(R.string.satellite_next_pass),
+        stringResource(Res.string.satellite_next_pass),
         style = MaterialTheme.typography.titleSmall,
         modifier = Modifier.padding(top = 12.dp),
     )
     when {
         !passTimesReliable ->
             Text(
-                stringResource(R.string.satellite_pass_unknown),
+                stringResource(Res.string.satellite_pass_unknown),
                 style = MaterialTheme.typography.bodySmall,
             )
         pass == null ->
             Text(
-                stringResource(R.string.satellite_no_pass),
+                stringResource(Res.string.satellite_no_pass),
                 style = MaterialTheme.typography.bodySmall,
             )
         else -> {
+            val cardinals = stringArrayResource(Res.array.hud_cardinal_directions)
             Text(
-                stringResource(
-                    R.string.satellite_pass_when,
-                    formatter.format(Date(pass.start.toEpochMilliseconds())),
-                    cardinal(LocalContext.current, pass.startAzimuthDeg),
+                formattedStringResource(
+                    Res.string.satellite_pass_when,
+                    formatter(pass.start),
+                    cardinals[HudFormats.cardinalIndex(pass.startAzimuthDeg)],
                     pass.maxAltitudeDeg.roundToInt(),
                 ),
                 style = MaterialTheme.typography.bodyMedium,
             )
             Text(
                 // One decimal and no more: the model is only good to about half a magnitude.
-                stringResource(R.string.satellite_pass_magnitude, pass.peakMagnitude),
+                formattedStringResource(Res.string.satellite_pass_magnitude, pass.peakMagnitude),
                 style = MaterialTheme.typography.bodySmall,
             )
             pass.shadowEntry?.let { shadow ->
                 // The most memorable thing the app can say: a satellite that fades out mid-sky is
                 // the single most-asked question after someone watches it happen.
                 Text(
-                    stringResource(
-                        R.string.satellite_pass_shadow,
-                        formatter.format(Date(shadow.toEpochMilliseconds())),
+                    formattedStringResource(
+                        Res.string.satellite_pass_shadow,
+                        formatter(shadow),
                     ),
                     style = MaterialTheme.typography.bodySmall,
                 )
@@ -444,34 +434,34 @@ fun SatellitePassRow(
 @Composable
 fun EclipseRow(circumstances: LunarEclipseCircumstances?) {
     Text(
-        stringResource(R.string.object_info_eclipse_title),
+        stringResource(Res.string.object_info_eclipse_title),
         style = MaterialTheme.typography.titleSmall,
         modifier = Modifier.padding(top = 12.dp),
     )
     if (circumstances == null) {
         Text(
-            stringResource(R.string.object_info_no_eclipse),
+            stringResource(Res.string.object_info_no_eclipse),
             style = MaterialTheme.typography.bodySmall,
         )
         return
     }
     val typeRes =
         when (circumstances.type) {
-            LunarEclipseType.TOTAL -> R.string.tonight_lunar_eclipse_total
-            LunarEclipseType.PARTIAL -> R.string.tonight_lunar_eclipse_partial
-            LunarEclipseType.PENUMBRAL -> R.string.tonight_lunar_eclipse_penumbral
+            LunarEclipseType.TOTAL -> Res.string.tonight_lunar_eclipse_total
+            LunarEclipseType.PARTIAL -> Res.string.tonight_lunar_eclipse_partial
+            LunarEclipseType.PENUMBRAL -> Res.string.tonight_lunar_eclipse_penumbral
             // nextLunarEclipse never returns a NONE-type result; nothing to render for one.
             LunarEclipseType.NONE -> return
         }
     val dateFormatter = rememberDateFormatter()
     val timeFormatter = rememberTimeFormatter()
-    val greatest = Date(circumstances.greatestEclipse.toEpochMilliseconds())
+    val greatest = circumstances.greatestEclipse
     Text(
-        stringResource(
-            R.string.object_info_eclipse_greatest,
+        formattedStringResource(
+            Res.string.object_info_eclipse_greatest,
             stringResource(typeRes),
-            dateFormatter.format(greatest),
-            timeFormatter.format(greatest),
+            dateFormatter(greatest),
+            timeFormatter(greatest),
         ),
         style = MaterialTheme.typography.bodyMedium,
     )
@@ -479,10 +469,10 @@ fun EclipseRow(circumstances: LunarEclipseCircumstances?) {
     val totalityEnd = circumstances.totalityEnd
     if (totalityBegin != null && totalityEnd != null) {
         Text(
-            stringResource(
-                R.string.object_info_eclipse_totality,
-                timeFormatter.format(Date(totalityBegin.toEpochMilliseconds())),
-                timeFormatter.format(Date(totalityEnd.toEpochMilliseconds())),
+            formattedStringResource(
+                Res.string.object_info_eclipse_totality,
+                timeFormatter(totalityBegin),
+                timeFormatter(totalityEnd),
             ),
             style = MaterialTheme.typography.bodySmall,
         )
