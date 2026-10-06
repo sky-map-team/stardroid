@@ -26,44 +26,7 @@ Tryck på skärmen för att visa kontrollerna och head-up-displayen (uppe till h
 
     <!-- Symbol map will go here-->
 
-    <string name="help_layers" translation_description="Help section: the visible layers of the sky map. Please do not change the markup"><![CDATA[<h2>Lager</h2>
-<p>Sky Map organiserar det som visas i lager, som vardera kan slås på eller av oberoende av varandra
-via lagerknapparna till vänster. Håll intryckt, eller tryck på knappen <b>Lager</b> nära
-botten, för att få fram reglage för fler lager.</p>
-<br/>
-<p>Nuvarande lager inkluderar:<br/>
-• <b>Stjärnor:</b> De ljusstarkaste stjärnorna, med etiketter för anmärkningsvärda sådana<br/>
-• <b>Stjärnbilder:</b> Stjärnbildernas linjer och namn<br/>
-• <b>Deep sky-objekt:</b> Galaxer, nebulosor, stjärnhopar och andra märkvärdiga objekt<br/>
-• <b>Solsystemet:</b> Solen, månen och planeterna, som visas som bilder<br/>
-• <b>Meteorvärmar:</b> Strålningspunkterna för de årliga meteorvärmarna<br/>
-• <b>Himmelsrutnät:</b> Koordinatrutnätet för rektascension och deklination<br/>
-• <b>Ekliptikan:</b> Solens årliga bana över himlen, som månen och planeterna ungefär följer<br/>
-• <b>Horisont:</b> Horisontlinjen och väderstrecksetiketter (N, S, Ö, V)<br/>
-• <b>Himmelsgradient:</b> Dagshimlens sken och skymningsfärger nära horisonten</p>
-<blockquote>Meteorvärmarnas radianter visas bara de datum då meteorvärmarna inträffar.
-</blockquote>
-<br/>
-<p><b>Hur stora planeterna ritas ut</b></p>
-<p>Tryck på pilen bredvid <b>Solsystemet</b> i lagervyn för att välja hur solen, månen och
-planeterna ska storleksanpassas:</p>
-<p>• <b>Ikoner</b> (standard): tillräckligt stora för att synas vid alla zoomnivåer, och storleksanpassade efter hur stor varje kropp
-faktiskt <i>är</i> snarare än hur stor den ser ut härifrån — en modell av solsystemet snarare
-än en vy genom ett teleskop. Saturnus och dess ringar är det bredaste av allt, sedan solen,
-sedan Jupiter, ända ner till Pluto. Skillnaderna är hoptryckta för att få plats på skärmen: solen är egentligen 586
-gånger Plutos bredd, inte sju. Månen är ett undantag, ritad i samma storlek som solen,
-eftersom det är så de båda ser ut härifrån.<br/>
-• <b>Sann skala:</b> varje kropp i sin verkliga storlek på himlen. Solen och månen är ungefär en halv
-grad breda — ungefär ett suddgummi hållet på armlängds avstånd — och planeterna är prickar tills
-du zoomar in ordentligt. Zoomar du in hela vägen visar Jupiter sina molnband, Saturnus ringar skiljer sig från
-planeten, och en solformörkelse stämmer exakt överens med hur den gör på himlen.<br/>
-• <b>Stadig:</b> håller varje kropp i en fast storlek på skärmen när du zoomar, och växlar till den verkliga
-storleken när du har zoomat in tillräckligt långt för att den ska vara den största av de två.</p>
-<blockquote>De två lägena berättar olika saker. <b>Ikoner</b> säger att Jupiter är en jätte och
-Pluto är liten. <b>Sann skala</b> säger att solen och månen ser nästan exakt lika stora ut från
-jorden — vilket är varför en total solformörkelse överhuvudtaget fungerar, och du kan titta på när den händer.</blockquote>
-<blockquote>Sky Map visar den geometriska horisonten — en helt platt, obehindrad vy.
-Objekt som befinner sig precis ovanför den kan i praktiken fortfarande vara dolda av byggnader, kullar eller träd.</blockquote>]]></string>
+    <string name="help_layers" translation_description="Help section: the visible layers of the sky map. Please do not change the markup"><![CDATA[<h2>Lager</h2> <p>Sky Map organiserar det som visas i lager, som var för sig kan slås på eller av oberoende av varandra med lagerknapparna till vänster. Långtryck, eller tryck på knappen <b>Lager</b> nära botten, för att få fram reglage för fler lager.</p> <br/> <p>Aktuella lager inkluderar:<br/> • <b>Stjärnor:</b> De ljusstarkaste stjärnorna, med etiketter för anmärkningsvärda sådana<br/> • <b>Stjärnbilder:</b> Stjärnbildslinjer och namn<br/> • <b>Deep-sky-objekt:</b> Galaxer, nebulosor, stjärnhopar och andra märkningsvärda objekt<br/> • <b>Solsystemet:</b> Solen, månen och planeterna, som visas som bilder<br/> • <b>Meteorvärmar:</b> Radiantpunkterna för de årliga meteorvärmarna<br/> • <b>Himmelsrutnät:</b> Rektascension-/deklinationskoordinatnätet<br/> • <b>Ekliptikan:</b> Solens årliga bana över himlen, som månen och planeterna ungefär följer<br/> • <b>Horisont:</b> Horisontlinjen och väderstrecksetiketter (N, S, Ö, V)<br/> • <b>Himmelsfärg:</b> Dagsljusets himmelsglöd och skymningsfärger nära horisonten</p> <blockquote>Meteorvärmarnas radianta punkter visas bara på de datum då meteorvärmarna inträffar. </blockquote> <br/> <p><b>Hur stora planeterna ritas</b></p> <p>Tryck på pilen bredvid <b>Solsystemet</b> i lagerpanelen för att välja hur solen, månen och planeterna ska storleksanpassas:</p> <p>• <b>Ikoner</b> (standard): tillräckligt stora för att synas vid vilken zoom som helst, och storleksanpassade efter hur stora kropparna faktiskt <i>är</i> snarare än hur stora de ser ut härifrån – en modell av solsystemet snarare än en vy genom ett teleskop. Saturnus med sina ringar är det bredaste av allt, sedan solen, sedan Jupiter, ner till Pluto. Skillnaderna är komprimerade för att få plats på skärmen: solen är egentligen 586 gånger bredare än Pluto, inte sju. Månen är ett undantag, ritad i samma storlek som solen, eftersom det är så de två ser ut härifrån.<br/> • <b>Skalenligt:</b> varje kropp i sin verkliga storlek på himlen. Solen och månen är ungefär en halv grad breda – ungefär ett blyertssuddgummi hållet på armlängds avstånd – och planeterna är prickar tills du zoomar in ordentligt. Zooma in hela vägen och Jupiter visar sina band, Saturnus ringar skiljer sig från planeten, och en solförmörkelse linjerar upp exakt som den gör på himlen.<br/> • <b>Fast:</b> håller varje kropp i en fast storlek på skärmen när du zoomar, och växlar till den verkliga storleken när du har zoomat in tillräckligt långt för att den ska vara den största av de två.</p> <blockquote>De två lägena berättar olika saker. <b>Ikoner</b> säger att Jupiter är en jätte och Pluto är liten. <b>Skalenligt</b> säger att solen och månen ser nästan exakt lika stora ut från jorden – vilket är anledningen till att en total solförmörkelse fungerar överhuvudtaget, och du kan se den hända.</blockquote> <blockquote>Sky Map visar den geometriska horisonten – en helt platt, obehindrad vy. Objekt som befinner sig precis ovanför den kan i praktiken fortfarande vara dolda av byggnader, kullar eller träd.</blockquote>]]></string>
 
     <string name="help_info_cards" translation_description="Help section: the object info cards. Please do not change the markup"><![CDATA[<h2>Infoartiklar</h2>
 <p>Tryck på ett utmärkt himmelsobjekt på stjärnkartan för att öppna en infoartikel — en panel med ett foto och information om objektet.
@@ -115,6 +78,8 @@ från den aktuella stunden.</p>
     <string name="help_gallery" translation_description="Help section: the image gallery. Please do not change the markup"><![CDATA[<h2>Galleri</h2> <p><a href="skymap://gallery">Galleriet</a> innehåller en utvald samling vackra bilder av natthimlen, inklusive några från Hubble-rymdteleskopet.</p> <br/> <p>Bläddra bland miniatyrbilder genom att scrolla, och tryck på en för att se detaljer. Använd knappen <b>Hitta</b> för att lokalisera objektet på himlen.</p>]]></string>
 
     <string name="help_widgets" translation_description="Help section: the home-screen widgets. Please do not change the markup"><![CDATA[<h2>Widgetar på startskärmen</h2> <p>Sky Map har widgetar som visar himlen på din startskärm, uppdaterade dagligen:</p> <p>• <b>Månfas:</b> Månens nuvarande fas, hur mycket av den som är upplyst, samt dagens månens uppgång och nedgång<br/> • <b>Kvällens himmel:</b> solnedgång och när himlen blir helt mörk, plus kvällens bästa sevärdheter, såsom välplacerade planeter, meteorskurar och månhändelser<br/> • <b>Nedräkning till himmelshändelse:</b> dagar kvar till nästa meteorskurstopp eller månhändelse</p> <p>Tryck på en widget för att öppna Sky Map.</p> <h3>Lägga till en widget</h3> <p><a href="skymap://widgets">Bläddra bland widgetarna</a> och tryck på <b>Lägg till widget</b> bredvid den du vill ha. Eller tryck och håll på ett tomt utrymme på din startskärm, välj <b>Widgetar</b>, och hitta sedan <b>Sky Map</b>.</p>]]></string>
+
+    <string name="help_notifications" translation_description="Help section: the optional sky-event notifications. Please do not change the markup"><![CDATA[<h2>Aviseringar</h2> <p>Sky Map kan meddela dig om sällsynta händelser på himlen – högst en gång om dagen och aldrig om du inte slår på det:</p> <p>• <b>Meteorvärmars toppar:</b> en kvällsvarning när ett meteorregn når sin årliga topp, med information om var du ska titta och hur mycket månen kommer att störa<br/> • <b>Kvällens himmelsöversikt:</b> en sammanfattning efter solnedgången, som hoppas över under lugna nätter<br/> • <b>Månförmörkelser:</b> en varning innan en förmörkelse börjar</p> <p>Öppna <a href="skymap://settings"><b>Inställningar</b></a> för att slå på eller av dessa varningar. Varningarna för meteorregn och förmörkelser kan också aktiveras från respektive lageralternativ i lagerpanelen.</p> <p>Om du har slagit på en varning men inget dyker upp kan du kontrollera att aviseringar är tillåtna för Sky Map i dina <a href="skymap://app-settings">systeminställningar</a>.</p>]]></string>
 
     <string name="help_location" translation_description="Help section: setting your observing location. Please do not change the markup"><![CDATA[<h2>Ställa in din plats</h2> <p>Sky Map behöver din ungefärliga plats för att rita upp rätt himmel. Som standard använder den enhetens platstjänster (mobilnätverk eller GPS).</p> <br/> <p>Om platstillgång inte är tillgänglig eller om du hellre vill ställa in den manuellt, tryck på knappen <b>Ange plats manuellt</b> och ange ett <b>platsnamn</b> eller en <b>latitud och longitud</b> i grader.</p> <blockquote>Internet krävs för att avkoda platsnamn.</blockquote> <p>Om du tidigare har nekat Sky Map platstillstånd, kan du behöva återaktivera det i enhetens <a href="skymap://app-settings"><b>Appinställningar → Behörigheter</b></a>.</p> <blockquote>Om du inte ger den åtkomst, kommer Sky Map att anta att du befinner dig vid (0, 90) — Nordpolen!</blockquote>]]></string>
 

@@ -60,6 +60,8 @@
     <string name="notif_eclipse_text" translation_description="Body of the lunar eclipse notification, telling the user when it begins. %1$s is a time.">Saat %1$s civarında başlıyor — dışarı çıkmaya değer</string>
     <string name="satellite_name_iss" translation_description="Display name for the International Space Station.">Uluslararası Uzay İstasyonu</string>
     <!-- tm:omitted name="satellite_name_tiangong" reason="identical_to_source" -->
+    <string name="layer_param_shower_alerts" translation_description="Label for the setting that turns on a notification on the evening a meteor shower peaks.">Zirve uyarıları</string>
+    <string name="layer_param_shower_alerts_description" translation_description="Explains what the meteor-shower alert setting does: a notification on the evening a shower reaches its annual peak.">Gök taşı yağmuru zirve akşamı bana bildir</string>
     <string name="layer_param_pass_alerts" translation_description="Label for the setting that turns on a notification shortly before a satellite passes overhead.">Geçiş uyarıları</string>
     <string name="layer_param_pass_alerts_description" translation_description="Explains what the pass-alert setting does: a single notification before the best visible pass of the night.">Her gece en iyi görünür geçişten önce beni bilgilendir</string>
     <string name="layer_param_eclipse_alerts" translation_description="Label for the setting that turns on a notification before a lunar eclipse begins.">Tutulma uyarıları</string>
@@ -71,6 +73,10 @@
     <string name="layer_param_altaz_grid_density_medium_desc" translation_description="Explains the medium alt/az grid density: 12 azimuth lines, 30 degrees apart.">30° arayla 12 yön çizgisi</string>
     <string name="layer_param_altaz_grid_density_fine" translation_description="Option label for the alt/az grid's densest setting: 24 azimuth lines, 15 degrees apart.">İnce</string>
     <string name="layer_param_altaz_grid_density_fine_desc" translation_description="Explains the fine alt/az grid density: 24 azimuth lines, matching the celestial grid's meridian count.">Göksel ızgarayla eşleşen 24 yön çizgisi</string>
+    <string name="layer_param_radec_grid_density" translation_description="Label for the celestial (RA/Dec) grid's line-count setting.">Çizgi sayısı</string>
+    <string name="layer_param_radec_grid_density_coarse_desc" translation_description="Explains the coarse celestial grid density: a meridian every 3 hours of right ascension and a circle every 30 degrees of declination.">Her 3 saatte meridyenler, her 30°\'-de daireler</string>
+    <string name="layer_param_radec_grid_density_medium_desc" translation_description="Explains the medium celestial grid density: a meridian every 2 hours of right ascension and a circle every 15 degrees of declination.">Her 2 saatte meridyenler, her 15°\'-de daireler</string>
+    <string name="layer_param_radec_grid_density_fine_desc" translation_description="Explains the fine celestial grid density: a meridian every hour of right ascension and a circle every 10 degrees of declination.">Her saat başı meridyenler, her 10°\'-de daireler</string>
     <string name="satellite_description" translation_description="Short description shown on the info card for an artificial satellite.">
     Karanlık gökyüzünde güneş ışığı alan, alçak Dünya yörüngesindeki yapay bir uydu. Yanıp sönmeden, istikrarlı bir şekilde hareket ederek ufuktan ufuka birkaç dakikada geçer.
     </string>
@@ -97,7 +103,59 @@
     <string name="layer_horizon">Ufuk</string>
     <string name="layer_ecliptic">Ekliptik</string>
     <string name="layer_altaz_grid" translation_description="Toggle label for the layer showing the altitude/azimuth (horizontal) coordinate grid, for naked-eye or manual alt-az mount observers.">Yükseklik/Azimut ızgarası</string>
-    <string name="layer_sky_gradient">Gökyüzü Gradyanı</string>
+    <string name="layer_sky_gradient" translation_description="Toggle label for the daytime sky-brightness gradient and the ground coloring.">Gökyüzü renklendirmesi</string>
+
+    <!-- Long-press help for layers in the layer-visibility sheet. -->
+    <string name="layer_help_stars" translation_description="Long-press explanation of the stars layer.">
+    Parlaklıklarına göre boyutlandırılmış ve renkleriyle renklendirilmiş yıldızlar. Ayrıntılar için herhangi bir yıldızca dokunun.
+    </string>
+    <string name="layer_help_constellations" translation_description="Long-press explanation of the constellations layer.">
+    Yıldız desenleri arasında yolunuzu bulmanıza yardımcı olacak takımyıldız çizgileri ve adları.
+    </string>
+    <string name="layer_help_deep_sky" translation_description="Long-press explanation of the deep-sky layer.">
+    Galaksiler, nebulalar ve yıldız kümeleri: Güneş sistemimizin çok ötesindeki nesneler. Birçoğunu gerçekte görmek için dürbün veya teleskop gerekir.
+    </string>
+    <string name="layer_help_solar_system" translation_description="Long-press explanation of the solar system layer.">Güneş, Ay (güncel evresiyle birlikte) ve gezegenler.</string>
+    <string name="layer_help_meteor_showers" translation_description="Long-press explanation of the meteor showers layer.">
+    Her yıllık gök taşı yağmurunun yayıldığı nokta: gök taşlarının akıyor gibi göründüğü gökyüzündeki nokta.
+    </string>
+    <string name="layer_help_satellites" translation_description="Long-press explanation of the satellites layer.">
+    Uluslararası Uzay İstasyonu ve Tiangong gibi uydular, şu an bulundukları yerde gösterilir. Son zamanlarda indirilmiş yörünge verileri gerektirir.
+    </string>
+    <string name="layer_help_grid" translation_description="Long-press explanation of the celestial grid layer.">
+    Gökyüzünün boylam ve enlem sisteminin karşılığı olan sağ açıklık ve dik açıklık göksel koordinat ızgarası. Yıldızlara göre sabittir.
+    </string>
+    <string name="layer_help_horizon" translation_description="Long-press explanation of the horizon layer.">
+    Kuzeyin nerede olduğunu ve yerin nerede bulunduğunu anlayabilmeniz için ufuk çizgisi ve pusula yönleri.
+    </string>
+    <string name="layer_help_ecliptic" translation_description="Long-press explanation of the ecliptic layer.">
+    Güneş\'-in bir yıl boyunca gökyüzünde izlediği yol. Ay ve gezegenler her zaman buna yakın kalır.
+    </string>
+    <string name="layer_help_altaz_grid" translation_description="Long-press explanation of the alt/az grid layer.">
+    İrtifa (ufuktan yükseklik) ve azimut (pusula yönü) ızgarası. Gök küresi ızgarasından farklı olarak yıldızlara değil, ufkunuza sabittir.
+    </string>
+    <string name="layer_help_sky_gradient" translation_description="Long-press explanation of the sky coloring toggle.">
+    Günün saatine uyum sağlaması için gökyüzünü gölgelendirir (gündüz parlak, gece karanlık) ve zemini renklendirir.
+    </string>
+    <string name="layer_help_hud" translation_description="Long-press explanation of the pointing readout toggle.">Telefonunuzun işaret ettiği yönün dökümü: pusula yönü ve yüksekliği.</string>
+    <string name="layer_help_camera" translation_description="Long-press explanation of the through-camera toggle.">
+    Gökyüzü haritasının arkasında canlı kamerayı gösterir, böylece çizilen gökyüzü gerçeğinin üzerine biner. Hareket sensörleri gerektirir.
+    </string>
+    <string name="layer_help_options_solar_system" translation_description="Long-press note listing what can be customized on the solar system layer.">
+    Disk boyutu: Güneş, Ay ve gezegenlerin ne kadar büyük çizileceği.
+Tutulma uyarıları: Ay tutulmasından önce bir bildirim.
+    </string>
+    <string name="layer_help_options_satellites" translation_description="Long-press note listing what can be customized on the satellites layer.">Geçiş uyarıları: Her gece en iyi görünen geçişten önce gelen bir bildirim.</string>
+    <string name="layer_help_options_meteor_showers" translation_description="Long-press note listing what can be customized on the meteor showers layer.">
+    Zirve uyarıları: Gök taşı yağmurunun yıllık zirvesine ulaştığı akşam gönderilen bir bildirim.
+    </string>
+    <string name="layer_help_options_grid" translation_description="Long-press note listing what can be customized on the celestial grid layer.">Çizgi sayısı: Her 3, 2 veya 1 saatte ve her 30°, 15° veya 10°\'-de bir çizgi.</string>
+    <string name="layer_help_options_altaz_grid" translation_description="Long-press note listing what can be customized on the alt/az grid layer.">Çizgi sayısı: 8, 12 veya 24 yön çizgisi.</string>
+    <string name="layer_help_customizable" translation_description="Heading in the layer help popup above the list of customizable options.">Özelleştirebilecekleriniz</string>
+    <string name="layer_help_expand_hint" translation_description="Hint in the layer help popup for layers with options, pointing to the arrow button on the row.">Bunları değiştirmek için satırdaki ok simgesine dokunun.</string>
+    <string name="layer_help_customize" translation_description="Button in the layer help popup that opens the Layers sheet on that layer's options.">Özelleştir</string>
+    <string name="layer_help_close" translation_description="Button that dismisses the layer help popup.">Anladım</string>
+    <string name="layer_help_long_click_label" translation_description="Accessibility label for the long-press action on a layer row, which shows an explanation of the layer.">Bunun ne işe yaradığını göster</string>
 
     <!-- Map screen controls. -->
     <string name="layers_sheet_title" translation_description="Title of the bottom sheet listing sky map layers the user can show or hide.">Katmanlar</string>
@@ -149,8 +207,8 @@
     <string name="ar_shutter_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual shutter (exposure) time in through-camera mode.">Kamera deklanşör süresi</string>
     <string name="share_button" translation_description="Overflow-menu row that captures the current sky view as an image and opens the system share sheet.">Gökyüzünü paylaş</string>
     <string name="share_chooser_title" translation_description="Title of the system share sheet when sharing a captured sky image.">Bu gökyüzünü paylaş</string>
-    <string name="share_invitation" translation_description="Short invitation stamped on the footer of shared sky images, above the store link.">Ne baktığını görün — Sky Map uygulamasını ücretsiz edinin</string>
-    <string name="share_text" translation_description="Text accompanying a shared sky image in apps that accept both an image and text. %1$s is the app-store link.">Ne baktığını görün — Sky Map uygulamasını ücretsiz edinin: %1$s</string>
+    <string name="share_invitation" translation_description="Short invitation stamped on the footer of shared sky images, above the store link.">Evren cebinizde — Sky Map\'i ücretsiz edinin</string>
+    <string name="share_text" translation_description="Text accompanying a shared sky image in apps that accept both an image and text. %1$s is the app-store link.">Evren cebinizde — Sky Map\'i ücretsiz edinin: %1$s</string>
     <!-- tm:omitted name="share_store_link" reason="identical_to_source" -->
     <string name="share_layout_overlay" translation_description="Caption of the share-layout choice that draws the star map over the camera photo, as seen on screen.">Bindir</string>
     <string name="share_layout_side_by_side" translation_description="Caption of the share-layout choice that puts the camera photo and the star map next to each other.">Yan yana</string>
@@ -449,6 +507,7 @@
     <string name="diagnostics_utc_datetime">Evrensel saat</string>
     <string name="diagnostics_section_network">Ağ</string>
     <string name="diagnostics_connection">Bağlantı</string>
+    <string name="diagnostics_section_experiments" translation_description="Section heading in the diagnostics screen listing the current feature-flag (experiment) values">Deney bayrakları</string>
     <string name="diagnostics_section_satellites" translation_description="Section heading in the diagnostics screen for satellite orbital-data status">Uydular</string>
     <string name="diagnostics_satellite_data" translation_description="Row label in the diagnostics screen for the age and count of cached satellite orbital data">Yörünge verisi</string>
     <string name="diagnostics_satellite_data_none" translation_description="Row value in the diagnostics screen when no satellite orbital data has been downloaded yet">İndirilmedi</string>
@@ -457,6 +516,9 @@
     <string name="diagnostics_satellite_never_fetched" translation_description="Row value in the diagnostics screen when satellite orbital data has never been downloaded">Asla</string>
     <string name="diagnostics_satellite_circuit_open" translation_description="Row label in the diagnostics screen for when satellite downloads are paused after repeated server errors">İndirmeler duraklatıldı</string>
     <string name="diagnostics_satellite_circuit_open_format" translation_description="Row value in the diagnostics screen showing when paused satellite downloads will resume and how many failures caused the pause. %1$s is a date and time, %2$d is a count">%1$s tarihine kadar (%2$d hata)</string>
+    <string name="diagnostics_experiments_last_fetched" translation_description="Row label in the diagnostics experiment flags section: when the feature-flag config was last downloaded from the server">Son getirilme</string>
+    <string name="diagnostics_experiments_never_fetched" translation_description="Row value in the diagnostics experiment flags section when the feature-flag config has never been downloaded">Asla</string>
+    <string name="diagnostics_experiments_fetch_now" translation_description="Label on a button in the diagnostics screen that downloads the feature-flag config from the server immediately">Deney bayraklarını şimdi getir</string>
     <string name="diagnostics_satellite_force_fetch" translation_description="Label on a debug-only button in the diagnostics screen that downloads satellite orbital data immediately">Uydu verilerini şimdi getir (hata ayıklama)</string>
     <string name="diagnostics_connected">Bağlı</string>
     <string name="diagnostics_disconnected">Bağlantı Kesildi</string>
@@ -621,6 +683,19 @@ Metalden uzak, açık bir alana geçin ve tekrar deneyin.]]></string>
     </string>
     <string name="settings_shower_alerts" translation_description="Preference title: notify on the evening a meteor shower reaches its annual peak">Meteor yağmuru zirveleri</string>
     <string name="settings_shower_alerts_summary" translation_description="Explanation of the meteor-shower notification preference">Yılda yaklaşık bir düzine, zirve akşamında</string>
+    <string name="settings_eclipse_alerts" translation_description="Preference title: notify shortly before a lunar eclipse begins">Ay tutulmaları</string>
+    <string name="settings_eclipse_alerts_summary" translation_description="Explanation of the lunar-eclipse notification preference">Ay tutulması başlamadan önce tek bir uyarı</string>
+    <string name="settings_pass_alerts" translation_description="Preference title: notify shortly before a satellite passes overhead">Uydu geçişleri</string>
+    <string name="settings_pass_alerts_summary" translation_description="Explanation of the satellite-pass notification preference">Gecenin en iyi görünen geçişinden önce tek bir uyarı</string>
+    <string name="settings_announcements" translation_description="Preference title: occasional messages from the Sky Map team about rare sky events, shown as a notification, in the widget and when the app opens">Sky Map Ekibinden Mesajlar</string>
+    <string name="settings_announcements_summary" translation_description="Explanation of the announcements preference">
+    Güçlü bir kutup ışığı veya parlak bir gezegen gibi nadir durum bildirimleri. Bildirim olarak, Sky Tonight bileşeninde veya uygulamayı açtığınızda gösterilir.
+    </string>
+    <string name="channel_announcements_name" translation_description="Notification channel name for occasional messages from the Sky Map team">Sky Map Ekibinden Mesajlar</string>
+    <string name="channel_announcements_description" translation_description="Notification channel description for occasional messages from the Sky Map team">Önemli gök olayları hakkında nadir uyarılar</string>
+    <string name="announcement_dialog_dismiss" translation_description="Button that closes an announcement dialog and hides that message everywhere">Kapat</string>
+    <string name="announcement_dialog_open" translation_description="Button on an announcement dialog that jumps to the sky object the message is about">Göz at</string>
+    <string name="announcement_dialog_continue" translation_description="Button on an announcement dialog that closes it and continues to the sky map">Devam et</string>
     <string name="settings_tonight_digest" translation_description="Preference title: a single evening notification summarizing what\'s visible tonight">Bu akşamki gökyüzü özeti</string>
     <string name="settings_tonight_digest_summary" translation_description="Explanation of the tonight-digest notification preference">Gün batımından sonra tek bir özet, sakin gecelerde atlanır</string>
     <string name="settings_notifications_blocked" translation_description="Warning row shown when the user enabled notifications in the app but blocked them at the system level">Sky Map için bildirimler engellendi</string>

@@ -28,44 +28,7 @@ smeri, v katero kaže vaš telefon. Preprosto premikajte telefon in zemljevid sl
 
     <!-- Symbol map will go here-->
 
-    <string name="help_layers" translation_description="Help section: the visible layers of the sky map. Please do not change the markup"><![CDATA[<h2>Plasti</h2>
-<p>Sky Map prikazuje nebo v plasteh, ki jih je mogoče neodvisno vklopiti ali izklopiti
-z gumbi za plasti na levi strani. Pritisnite in držite ali tapnite gumb <b>Plasti</b> na
-dnu, da odprete stikala za dodatne plasti.</p>
-<br/>
-<p>Trenutne plasti vključujejo:<br/>
-• <b>Zvezde:</b> Najsvetlejše zvezde z oznakami za pomembnejše<br/>
-• <b>Ozvezdja:</b> Obrisi in imena ozvezdij<br/>
-• <b>Objekti globokega neba:</b> Galaksije, meglice, zvezdne kopice in drugi izjemni objekti<br/>
-• <b>Sončni sistem:</b> Sonce, Luna in planeti, prikazani kot slike<br/>
-• <b>Meteorski roji:</b> Radiantne točke letnih meteorskih rojev<br/>
-• <b>Nebesna mreža:</b> Koordinatna mreža rektascenzije in deklinacije<br/>
-• <b>Ekliptika:</b> Letna pot Sonca po nebu, ki ji Luna in planeti približno sledijo<br/>
-• <b>Obzorje:</b> Črta obzorja in oznake strani neba (S, J, V, Z)<br/>
-• <b>Gradient neba:</b> Sij dnevnega neba in barve mraka blizu obzorja</p>
-<blockquote>Radianti meteorskih rojev so prikazani samo na datume, ko meteorski roji dejansko potekajo.
-</blockquote>
-<br/>
-<p><b>Kako veliki so narisani planeti</b></p>
-<p>Tapnite puščico ob možnosti <b>Sončni sistem</b> na listu Plasti, da izberete velikost Sonca, Lune in
-planetov:</p>
-<p>• <b>Glifi</b> (privzeto): dovolj veliki, da jih vidite pri vsaki povečavi, velikost pa je določena s tem,
-kako veliko vsako telo dejansko <i>je</i>, in ne s tem, kako veliko je videti od tod — to je model
-Sončnega sistema in ne pogled skozi teleskop. Saturn s svojimi obroči je najširši, nato Sonce,
-nato Jupiter, vse do Plutona. Razlike so stisnjene, da se prilegajo zaslonu: Sonce je v resnici 586-krat
-širše od Plutona, in ne sedemkrat. Luna je izjema, narisana je enako veliko kot Sonce,
-ker sta od tod videti prav takšna.<br/>
-• <b>Prava velikost:</b> vsako telo v svoji resnični velikosti na nebu. Sonce in Luna merita približno pol
-stopinje — približno toliko kot radirka na svinčniku, ki ga držite v iztegnjeni roki — planeti pa so
-pikice, dokler ne povečate do konca. Če povečate do konca, Jupiter pokaže svoje pasove, Saturnovi obroči
-se ločijo od planeta, mrk pa se poravna natanko tako, kot se poravna na nebu.<br/>
-• <b>Nespremenljivo:</b> ohranja vsako telo v nespremenjeni velikosti na zaslonu med povečevanjem, nato pa
-preklopi na pravo velikost, ko dovolj povečate, da je ta večja od obeh.</p>
-<blockquote>Načina povesta različni stvari. <b>Glifi</b> povedo, da je Jupiter velikan in
-Pluton majhen. <b>Prava velikost</b> pokaže, da sta Sonce in Luna z Zemlje videti skoraj
-popolnoma enako velika — zato popolni sončni mrk sploh deluje in ga lahko opazujete.</blockquote>
-<blockquote>Sky Map prikazuje geometrijsko obzorje — popolnoma ravno in neovirano.
-Objekti tik nad njim so v praksi lahko še vedno skriti za stavbami, hribi ali drevesi.</blockquote>]]></string>
+    <string name="help_layers" translation_description="Help section: the visible layers of the sky map. Please do not change the markup"><![CDATA[<h2>Plasti</h2> <p>Sky Map razvršča to, kar prikazuje, v plasti, pri čemer lahko vsako posamezno vklopite ali izklopite neodvisno z gumbi za plasti na levi strani. Dolg pritisk ali tapnutje gumba <b>Plasti</b> spodaj odpre stikala za dodatne plasti.</p> <br/> <p>Trenutne plasti vključujejo:<br/> • <b>Zvezde:</b> Najsvetlejše zvezde z oznakami za pomembnejše<br/> • <b>Ozvezdja:</b> Obrisi in imena ozvezdij<br/> • <b>Objekti globokega neba:</b> Galaksije, meglice, zvezdne kopice in drugi izjemni objekti<br/> • <b>Osončje:</b> Sonce, Luna in planeti, prikazani kot slike<br/> • <b>Meteorski rojevi:</b> Radiantne točke letnih meteorskih rojev<br/> • <b>Nebeljska mreža:</b> Koordinatna mreža rektascenzije in deklinacije<br/> • <b>Ekliptika:</b> Letna pot Sonca po nebu, ki ji v grobem sledita tudi Luna in planeti<br/> • <b>Obzorje:</b> Linija obzorja in oznake smeri neba (S, J, V, Z)<br/> • <b>Barva neba:</b> Sij dnevnega neba in barve somraka blizu obzorja</p> <blockquote>Radianti meteorskih rojev se prikažejo samo na datume, ko so meteorski rojevi aktivni. </blockquote> <br/> <p><b>Kako veliki so narisani planeti</b></p> <p>Tapnite puščico poleg možnosti <b>Osončje</b> v meniju plasti, da izberete velikost Sonca, Lune in planetov:</p> <p>• <b>Simboli</b> (privzeto): dovolj veliki za ogled pri kateri koli povečavi in nastavljeni glede na dejansko velikost telesa <i>in ne</i> glede na to, kako veliko je videti od tod — model Osončja namesto pogleda skozi teleskop. Saturn z obroči je najširši, sledijo Sonce, Jupiter in vse do Plutona. Razlike so stisnjene, da ustrezajo zaslonu: Sonce je v resnici 586-krat širše od Plutona, ne sedemkrat. Izjema je Luna, ki je narisana v enaki velikosti kot Sonce, saj sta videti enako velika od tod.<br/> • <b>Prava merila:</b> vsako telo v pravi velikosti na nebu. Sonce in Luna sta široka približno pol stopinje — približno toliko kot radirka na svinčniku, ki jo držite na dolžino iztegnjene roke —, planeti pa so le pikice, dokler ne povečate pogleda. Če povečate do konca, Jupiter prikaže svoje pasove, Saturnovi obroči se ločijo od planeta, mrk pa se poravna natanko tako kot na nebu.<br/> • <b>Stabilno:</b> ohranja vsako telo pri fiksni velikosti na zaslonu med povečevanjem ter preklopi na pravo velikost, ko povečate dovolj, da postane večje od obeh.</p> <blockquote>Obe načini vam povesta različne stvari. <b>Simboli</b> pravijo, da je Jupiter velikan, Pluton pa majhen. <b>Prava merila</b> pravijo, da sta Sonce in Luna z Zemlje videti skoraj povsem enake velikosti — zato sploh deluje popolni sončni mrk in ga lahko opazujete.</blockquote> <blockquote>Sky Map prikazuje geometrijsko obzorje — popolnoma raven in neoviran pogled. Predmeti tik nad njim so v praksi morda še vedno skriti za zgradbami, hribi ali drevesi.</blockquote>]]></string>
 
     <string name="help_info_cards" translation_description="Help section: the object info cards. Please do not change the markup"><![CDATA[<h2>Informacijske kartice</h2>
 <p>Tapnite označen nebesni objekt na zvezdnem karti, da se prikaže informacijska kartica – plošča s fotografijo in podrobnostmi o tem objektu.
@@ -114,6 +77,8 @@ V tem primeru vas bo iskanje usmerilo na matični predmet (Jupiter).</blockquote
     <string name="help_gallery" translation_description="Help section: the image gallery. Please do not change the markup"><![CDATA[<h2>Galerija</h2> <p>Galerija <a href="skymap://gallery">Galerija</a> vsebuje izbrano zbirko čudovitih slik nočnega neba, vključno z nekaterimi iz vesoljskega teleskopa Hubble.</p> <br/> <p>Brskajte po sličicah s pomikanjem in tapnite eno, da si ogledate podrobnosti. Uporabite gumb <b>Najdi</b>, da poiščete ta objekt na nebu.</p>]]></string>
 
     <string name="help_widgets" translation_description="Help section: the home-screen widgets. Please do not change the markup"><![CDATA[<h2>Pripomočki za začetni zaslon</h2> <p>Sky Map ima pripomočke, ki prikažejo nebo na vašem začetnem zaslonu, posodobljene dnevno:</p> <p>• <b>Lunina faza:</b> trenutna lunina faza, koliko je osvetljena ter današnji vzhod in zahod lune<br/> • <b>Nebo nocoj:</b> sončni zahod in kdaj se nebo popolnoma stemni, ter najboljše znamenitosti nocoj, kot so dobro postavljeni planeti, meteorski roji in lunarni dogodki<br/> • <b>Odštevanje do nebesnih dogodkov:</b> število dni do naslednjega vrhunca meteorskega roja ali luninega dogodka</p> <p>Dotaknite se pripomočka, da odprete Sky Map.</p> <h3>Dodajanje pripomočka</h3> <p><a href="skymap://widgets">Prebrskajte pripomočke</a> in se dotaknite <b>Dodaj pripomoček</b> poleg tistega, ki ga želite. Ali pa se dotaknite in pridržite prazno mesto na začetnem zaslonu, izberite <b>Pripomočki</b>, nato poiščite <b>Sky Map</b>.</p>]]></string>
+
+    <string name="help_notifications" translation_description="Help section: the optional sky-event notifications. Please do not change the markup"><![CDATA[<h2>Obvestila</h2> <p>Sky Map vas lahko obvešča o redkih nebesnih dogodkih – največ enkrat na dan in nikoli, razen če to sami vklopite:</p> <p>• <b>Vrhunci meteorskih deževjev:</b> večerno opozorilo, ko roj doseže svoj letni vrhunec, s podatki o tem, kje gledati in kako bo motila Luna<br/> • <b>Pregled nočnega neba:</b> povzetek po sončnem zahodu, ki se ob mirnih večerih izpusti<br/> • <b>Lunini mrki:</b> opozorilo pred začetkom mrka</p> <p>Odprite <a href="skymap://settings"><b>Nastavitve</b></a>, da vklopite ali izklopite ta opozorila. Opozorila o meteorskih deževjih in mrkih lahko vklopite tudi v nastavitvah njihove plasti v meniju Plasti.</p> <p>Če ste vklopili opozorilo, pa ne prejmete ničesar, preverite, ali so v <a href="skymap://app-settings">sistemskih nastavitvah</a> dovoljena obvestila za aplikacijo Sky Map.</p>]]></string>
 
     <string name="help_location" translation_description="Help section: setting your observing location. Please do not change the markup"><![CDATA[<h2>Nastavitev vaše lokacije</h2> <p>Sky Map potrebuje vašo približno lokacijo za prikaz pravilnega neba. Privzeto uporablja lokacijske storitve vaše naprave (mobilno omrežje ali GPS).</p> <br/> <p>Če dostop do lokacije ni na voljo ali bi jo raje nastavili ročno, tapnite gumb <b>Ročni vnos lokacije</b> in vnesite <b>ime kraja</b> ali <b>zemljepisno širino in dolžino</b> v stopinjah.</p> <blockquote>Za dekodiranje imen krajev lokacije je potreben internet.</blockquote> <p>Če ste predhodno zavrnili dovoljenje za lokacijo aplikaciji Sky Map, jo boste morda morali znova omogočiti v nastavitvah vaše naprave <a href="skymap://app-settings"><b>Nastavitve aplikacije → Dovoljenja</b></a>.</p> <blockquote>Če ne odobrite dostopa, bo Sky Map predpostavil, da ste na (0, 90) — Severni pol!</blockquote>]]></string>
 

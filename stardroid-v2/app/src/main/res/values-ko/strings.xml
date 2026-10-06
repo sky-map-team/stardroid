@@ -58,6 +58,8 @@
     <string name="notif_eclipse_text" translation_description="Body of the lunar eclipse notification, telling the user when it begins. %1$s is a time.">약 %1$s에 시작됩니다 — 밖에 나가 볼 가치가 있습니다</string>
     <string name="satellite_name_iss" translation_description="Display name for the International Space Station.">국제 우주 정거장</string>
     <string name="satellite_name_tiangong" translation_description="Display name for the Chinese space station Tiangong.">톈궁</string>
+    <string name="layer_param_shower_alerts" translation_description="Label for the setting that turns on a notification on the evening a meteor shower peaks.">극대기 알림</string>
+    <string name="layer_param_shower_alerts_description" translation_description="Explains what the meteor-shower alert setting does: a notification on the evening a shower reaches its annual peak.">유성우 극대기 저녁에 알림 받기</string>
     <string name="layer_param_pass_alerts" translation_description="Label for the setting that turns on a notification shortly before a satellite passes overhead.">통과 알림</string>
     <string name="layer_param_pass_alerts_description" translation_description="Explains what the pass-alert setting does: a single notification before the best visible pass of the night.">매일 밤 가장 잘 보이는 통과 전에 알림</string>
     <string name="layer_param_eclipse_alerts" translation_description="Label for the setting that turns on a notification before a lunar eclipse begins.">월식 알림</string>
@@ -69,6 +71,10 @@
     <string name="layer_param_altaz_grid_density_medium_desc" translation_description="Explains the medium alt/az grid density: 12 azimuth lines, 30 degrees apart.">30° 간격의 12개 방향선</string>
     <string name="layer_param_altaz_grid_density_fine" translation_description="Option label for the alt/az grid's densest setting: 24 azimuth lines, 15 degrees apart.">조밀함</string>
     <string name="layer_param_altaz_grid_density_fine_desc" translation_description="Explains the fine alt/az grid density: 24 azimuth lines, matching the celestial grid's meridian count.">천구 격자에 맞춘 24개의 방향선</string>
+    <string name="layer_param_radec_grid_density" translation_description="Label for the celestial (RA/Dec) grid's line-count setting.">선 개수</string>
+    <string name="layer_param_radec_grid_density_coarse_desc" translation_description="Explains the coarse celestial grid density: a meridian every 3 hours of right ascension and a circle every 30 degrees of declination.">적경 3시간마다 자오선, 30°마다 원</string>
+    <string name="layer_param_radec_grid_density_medium_desc" translation_description="Explains the medium celestial grid density: a meridian every 2 hours of right ascension and a circle every 15 degrees of declination.">적경 2시간마다 자오선, 15°마다 원</string>
+    <string name="layer_param_radec_grid_density_fine_desc" translation_description="Explains the fine celestial grid density: a meridian every hour of right ascension and a circle every 10 degrees of declination.">적경 1시간마다 자오선, 10°마다 원</string>
     <string name="satellite_description" translation_description="Short description shown on the info card for an artificial satellite.">저궤도 인공위성으로, 어두운 하늘에서 햇빛을 받아 빛납니다. 몇 분 안에 지평선에서 지평선까지 꾸준히 깜빡임 없이 이동합니다.</string>
     <string name="satellite_next_pass" translation_description="Heading above the next visible pass details on a satellite\'s info card.">다음 가시 통과</string>
     <string name="satellite_pass_when" translation_description="When and how high the next satellite pass will be. %1$s is a time, %2$s is a compass direction, %3$d is an angle in degrees.">%1$s, %2$s에서 떠올라 %3$d°에 도달</string>
@@ -93,7 +99,33 @@
     <string name="layer_horizon">지평선</string>
     <string name="layer_ecliptic">단주기 혜성</string>
     <string name="layer_altaz_grid" translation_description="Toggle label for the layer showing the altitude/azimuth (horizontal) coordinate grid, for naked-eye or manual alt-az mount observers.">고도/방위각 격자</string>
-    <string name="layer_sky_gradient">스카이 그라데이션</string>
+    <string name="layer_sky_gradient" translation_description="Toggle label for the daytime sky-brightness gradient and the ground coloring.">하늘 채색</string>
+
+    <!-- Long-press help for layers in the layer-visibility sheet. -->
+    <string name="layer_help_stars" translation_description="Long-press explanation of the stars layer.">밝기에 따라 크기가 조절되고 색상이 입혀진 별들입니다. 자세히 보려면 아무 별이나 누르세요.</string>
+    <string name="layer_help_constellations" translation_description="Long-press explanation of the constellations layer.">별자리의 선과 이름으로 별들의 배치를 쉽게 파악할 수 있습니다.</string>
+    <string name="layer_help_deep_sky" translation_description="Long-press explanation of the deep-sky layer.">은하, 성운 및 성단: 태양계 저 너머에 있는 천체들입니다. 실제로 보려면 쌍안경이나 망원경이 필요한 경우가 많습니다.</string>
+    <string name="layer_help_solar_system" translation_description="Long-press explanation of the solar system layer.">태양, (현재 위상 표시가 포함된) 달, 그리고 행성들입니다.</string>
+    <string name="layer_help_meteor_showers" translation_description="Long-press explanation of the meteor showers layer.">매년 찾아오는 유성우의 복사점, 즉 유성이 뿜어져 나오는 것처럼 보이는 하늘의 지점입니다.</string>
+    <string name="layer_help_satellites" translation_description="Long-press explanation of the satellites layer.">우주정거장이나 톈궁 같은 인공위성이 현재 있는 위치에 표시됩니다. 최근에 다운로드한 궤도 데이터가 필요합니다.</string>
+    <string name="layer_help_grid" translation_description="Long-press explanation of the celestial grid layer.">적경과 적위로 이루어진 천구 좌표 격자: 지구의 위도와 경도에 해당하는 천구의 좌표계입니다. 별들에 고정되어 있습니다.</string>
+    <string name="layer_help_horizon" translation_description="Long-press explanation of the horizon layer.">지평선과 방위 지점을 표시하여 북쪽이 어디인지, 지면이 어디에 있는지 알 수 있습니다.</string>
+    <string name="layer_help_ecliptic" translation_description="Long-press explanation of the ecliptic layer.">일 년 동안 태양이 하늘을 가로지르는 경로입니다. 달과 행성은 항상 이 경로에 가깝게 위치합니다.</string>
+    <string name="layer_help_altaz_grid" translation_description="Long-press explanation of the alt/az grid layer.">고도(수평선 위의 높이)와 방위각(나침반 방향) 격자입니다. 천구 격자와 달리 별이 아니라 사용자의 수평선에 고정되어 있습니다.</string>
+    <string name="layer_help_sky_gradient" translation_description="Long-press explanation of the sky coloring toggle.">시간대에 맞추어 낮에는 밝고 밤에는 어둡게 하늘을 채색하고 지면의 색상을 표시합니다.</string>
+    <string name="layer_help_hud" translation_description="Long-press explanation of the pointing readout toggle.">휴대전화가 향하고 있는 방향을 알려주는 나침반 방향 및 고도 표시기입니다.</string>
+    <string name="layer_help_camera" translation_description="Long-press explanation of the through-camera toggle.">스카이 맵 뒤에 실제 카메라 화면을 표시하여 그려진 밤하늘이 실제 하늘 위에 겹쳐 보이도록 합니다. 모션 센서가 필요합니다.</string>
+    <string name="layer_help_options_solar_system" translation_description="Long-press note listing what can be customized on the solar system layer.">원반 크기: 태양, 달, 행성이 그려지는 크기입니다.
+일식/월식 알림: 월식 전 알림을 받습니다.</string>
+    <string name="layer_help_options_satellites" translation_description="Long-press note listing what can be customized on the satellites layer.">통과 알림: 매일 밤 가장 잘 보이는 통과 시각 전에 알림을 보냅니다.</string>
+    <string name="layer_help_options_meteor_showers" translation_description="Long-press note listing what can be customized on the meteor showers layer.">극대기 알림: 유성우가 연중 최고조에 달하는 저녁에 알림을 보냅니다.</string>
+    <string name="layer_help_options_grid" translation_description="Long-press note listing what can be customized on the celestial grid layer.">선 개수: 3시간, 2시간 또는 1시간마다, 그리고 30°, 15° 또는 10°마다 선을 표시합니다.</string>
+    <string name="layer_help_options_altaz_grid" translation_description="Long-press note listing what can be customized on the alt/az grid layer.">선 개수: 8개, 12개 또는 24개의 방향 선을 표시합니다.</string>
+    <string name="layer_help_customizable" translation_description="Heading in the layer help popup above the list of customizable options.">사용자 지정 가능 항목</string>
+    <string name="layer_help_expand_hint" translation_description="Hint in the layer help popup for layers with options, pointing to the arrow button on the row.">이 설정을 변경하려면 행의 화살표를 누르세요.</string>
+    <string name="layer_help_customize" translation_description="Button in the layer help popup that opens the Layers sheet on that layer's options.">사용자 지정</string>
+    <string name="layer_help_close" translation_description="Button that dismisses the layer help popup.">확인</string>
+    <string name="layer_help_long_click_label" translation_description="Accessibility label for the long-press action on a layer row, which shows an explanation of the layer.">이 기능이 하는 일 표시</string>
 
     <!-- Map screen controls. -->
     <string name="layers_sheet_title" translation_description="Title of the bottom sheet listing sky map layers the user can show or hide.">레이어</string>
@@ -143,8 +175,8 @@
     <string name="ar_shutter_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual shutter (exposure) time in through-camera mode.">카메라 셔터 시간</string>
     <string name="share_button" translation_description="Overflow-menu row that captures the current sky view as an image and opens the system share sheet.">하늘 공유</string>
     <string name="share_chooser_title" translation_description="Title of the system share sheet when sharing a captured sky image.">이 하늘 공유</string>
-    <string name="share_invitation" translation_description="Short invitation stamped on the footer of shared sky images, above the store link.">보고 있는 것을 확인하세요 — Sky Map을 무료로 받으세요</string>
-    <string name="share_text" translation_description="Text accompanying a shared sky image in apps that accept both an image and text. %1$s is the app-store link.">보고 있는 것을 확인하세요 — Sky Map을 무료로 받으세요: %1$s</string>
+    <string name="share_invitation" translation_description="Short invitation stamped on the footer of shared sky images, above the store link.">주머니 속의 우주 — 무료 Sky Map 받기</string>
+    <string name="share_text" translation_description="Text accompanying a shared sky image in apps that accept both an image and text. %1$s is the app-store link.">주머니 속의 우주 — 무료 Sky Map 받기: %1$s</string>
     <!-- tm:omitted name="share_store_link" reason="identical_to_source" -->
     <string name="share_layout_overlay" translation_description="Caption of the share-layout choice that draws the star map over the camera photo, as seen on screen.">오버레이</string>
     <string name="share_layout_side_by_side" translation_description="Caption of the share-layout choice that puts the camera photo and the star map next to each other.">나란히</string>
@@ -439,6 +471,7 @@
     <string name="diagnostics_utc_datetime" translation_description="Row label in the diagnostics screen for the UTC/universal date and time">세계 표준시 날짜 및 시간</string>
     <string name="diagnostics_section_network" translation_description="Section heading in the diagnostics screen for network connectivity information">네트워크</string>
     <string name="diagnostics_connection" translation_description="Row label in the diagnostics screen for the current network connection status">연결</string>
+    <string name="diagnostics_section_experiments" translation_description="Section heading in the diagnostics screen listing the current feature-flag (experiment) values">실험 플래그</string>
     <string name="diagnostics_section_satellites" translation_description="Section heading in the diagnostics screen for satellite orbital-data status">위성</string>
     <string name="diagnostics_satellite_data" translation_description="Row label in the diagnostics screen for the age and count of cached satellite orbital data">궤도 데이터</string>
     <string name="diagnostics_satellite_data_none" translation_description="Row value in the diagnostics screen when no satellite orbital data has been downloaded yet">다운로드되지 않음</string>
@@ -447,6 +480,9 @@
     <string name="diagnostics_satellite_never_fetched" translation_description="Row value in the diagnostics screen when satellite orbital data has never been downloaded">없음</string>
     <string name="diagnostics_satellite_circuit_open" translation_description="Row label in the diagnostics screen for when satellite downloads are paused after repeated server errors">다운로드 일시 중지됨</string>
     <string name="diagnostics_satellite_circuit_open_format" translation_description="Row value in the diagnostics screen showing when paused satellite downloads will resume and how many failures caused the pause. %1$s is a date and time, %2$d is a count">%1$s까지 (%2$d회 실패)</string>
+    <string name="diagnostics_experiments_last_fetched" translation_description="Row label in the diagnostics experiment flags section: when the feature-flag config was last downloaded from the server">마지막 가져온 시간</string>
+    <string name="diagnostics_experiments_never_fetched" translation_description="Row value in the diagnostics experiment flags section when the feature-flag config has never been downloaded">없음</string>
+    <string name="diagnostics_experiments_fetch_now" translation_description="Label on a button in the diagnostics screen that downloads the feature-flag config from the server immediately">지금 실험 플래그 가져오기</string>
     <string name="diagnostics_satellite_force_fetch" translation_description="Label on a debug-only button in the diagnostics screen that downloads satellite orbital data immediately">위성 데이터 지금 가져오기 (디버그)</string>
     <string name="diagnostics_connected" translation_description="Network status value shown when the device has an active network connection">연결됨</string>
     <string name="diagnostics_disconnected" translation_description="Network status value shown when the device has no network connection">연결 끊김</string>
@@ -593,6 +629,17 @@
     <string name="settings_notifications_intro" translation_description="Introduction under the notifications settings header, stating how rarely the app notifies">Sky Map은 희귀한 천문 현상에 대해서만 알림을 보내며, 하루에 최대 한 번입니다. 모든 알림은 사용자가 켜기 전까지 꺼져 있습니다.</string>
     <string name="settings_shower_alerts" translation_description="Preference title: notify on the evening a meteor shower reaches its annual peak">유성우 극대기</string>
     <string name="settings_shower_alerts_summary" translation_description="Explanation of the meteor-shower notification preference">매년 약 12회, 극대기 저녁에 알림</string>
+    <string name="settings_eclipse_alerts" translation_description="Preference title: notify shortly before a lunar eclipse begins">월식</string>
+    <string name="settings_eclipse_alerts_summary" translation_description="Explanation of the lunar-eclipse notification preference">월식 시작 직전 단일 알림</string>
+    <string name="settings_pass_alerts" translation_description="Preference title: notify shortly before a satellite passes overhead">인공위성 통과</string>
+    <string name="settings_pass_alerts_summary" translation_description="Explanation of the satellite-pass notification preference">오늘 밤 가장 잘 보이는 통과 직전 단일 알림</string>
+    <string name="settings_announcements" translation_description="Preference title: occasional messages from the Sky Map team about rare sky events, shown as a notification, in the widget and when the app opens">Sky Map 팀의 메시지</string>
+    <string name="settings_announcements_summary" translation_description="Explanation of the announcements preference">강력한 오로라나 밝은 행성과 같은 드문 천체 소식입니다. 알림, Sky Tonight 위젯 또는 앱을 열 때 표시됩니다.</string>
+    <string name="channel_announcements_name" translation_description="Notification channel name for occasional messages from the Sky Map team">Sky Map 팀의 메시지</string>
+    <string name="channel_announcements_description" translation_description="Notification channel description for occasional messages from the Sky Map team">주요 천문 현상에 대한 사전 안내</string>
+    <string name="announcement_dialog_dismiss" translation_description="Button that closes an announcement dialog and hides that message everywhere">닫기</string>
+    <string name="announcement_dialog_open" translation_description="Button on an announcement dialog that jumps to the sky object the message is about">살펴보기</string>
+    <string name="announcement_dialog_continue" translation_description="Button on an announcement dialog that closes it and continues to the sky map">계속</string>
     <string name="settings_tonight_digest" translation_description="Preference title: a single evening notification summarizing what\'s visible tonight">오늘 밤 하늘 요약</string>
     <string name="settings_tonight_digest_summary" translation_description="Explanation of the tonight-digest notification preference">일몰 후 한 번 요약, 조용한 밤에는 건너뜀</string>
     <string name="settings_notifications_blocked" translation_description="Warning row shown when the user enabled notifications in the app but blocked them at the system level">Sky Map의 알림이 차단되었습니다</string>

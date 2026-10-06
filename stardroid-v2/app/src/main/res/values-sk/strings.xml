@@ -58,6 +58,8 @@
     <string name="notif_eclipse_text" translation_description="Body of the lunar eclipse notification, telling the user when it begins. %1$s is a time.">Začína sa okolo %1$s – oplatí sa vyjsť von</string>
     <string name="satellite_name_iss" translation_description="Display name for the International Space Station.">Medzinárodná vesmírna stanica</string>
     <!-- tm:omitted name="satellite_name_tiangong" reason="identical_to_source" -->
+    <string name="layer_param_shower_alerts" translation_description="Label for the setting that turns on a notification on the evening a meteor shower peaks.">Upozornenia na maximum</string>
+    <string name="layer_param_shower_alerts_description" translation_description="Explains what the meteor-shower alert setting does: a notification on the evening a shower reaches its annual peak.">Upozorniť ma večer v deň maxima meteorického roja</string>
     <string name="layer_param_pass_alerts" translation_description="Label for the setting that turns on a notification shortly before a satellite passes overhead.">Upozornenia na prelety</string>
     <string name="layer_param_pass_alerts_description" translation_description="Explains what the pass-alert setting does: a single notification before the best visible pass of the night.">Upozorniť ma pred najlepším viditeľným preletom každú noc</string>
     <string name="layer_param_eclipse_alerts" translation_description="Label for the setting that turns on a notification before a lunar eclipse begins.">Upozornenia na zatmenia</string>
@@ -69,6 +71,10 @@
     <string name="layer_param_altaz_grid_density_medium_desc" translation_description="Explains the medium alt/az grid density: 12 azimuth lines, 30 degrees apart.">12 smerových čiar, každých 30°</string>
     <string name="layer_param_altaz_grid_density_fine" translation_description="Option label for the alt/az grid's densest setting: 24 azimuth lines, 15 degrees apart.">Jemná</string>
     <string name="layer_param_altaz_grid_density_fine_desc" translation_description="Explains the fine alt/az grid density: 24 azimuth lines, matching the celestial grid's meridian count.">24 smerových čiar zodpovedajúcich nebeskej sieti</string>
+    <string name="layer_param_radec_grid_density" translation_description="Label for the celestial (RA/Dec) grid's line-count setting.">Počet čiar</string>
+    <string name="layer_param_radec_grid_density_coarse_desc" translation_description="Explains the coarse celestial grid density: a meridian every 3 hours of right ascension and a circle every 30 degrees of declination.">Meridiány každé 3 hodiny, kružnice každých 30°</string>
+    <string name="layer_param_radec_grid_density_medium_desc" translation_description="Explains the medium celestial grid density: a meridian every 2 hours of right ascension and a circle every 15 degrees of declination.">Meridiány každé 2 hodiny, kružnice každých 15°</string>
+    <string name="layer_param_radec_grid_density_fine_desc" translation_description="Explains the fine celestial grid density: a meridian every hour of right ascension and a circle every 10 degrees of declination.">Meridiány každú hodinu, kružnice každých 10°</string>
     <string name="satellite_description" translation_description="Short description shown on the info card for an artificial satellite.">
     Umelá družica na nízkej obežnej dráhe Zeme, osvetlená Slnkom na tmavom nebi. Prechádza od obzoru k obzoru za niekoľko minút, pohybuje sa plynule a bez blikania.
     </string>
@@ -95,7 +101,56 @@
     <string name="layer_horizon">Horizont</string>
     <string name="layer_ecliptic">Ekliptika</string>
     <string name="layer_altaz_grid" translation_description="Toggle label for the layer showing the altitude/azimuth (horizontal) coordinate grid, for naked-eye or manual alt-az mount observers.">Mriežka Alt/Az</string>
-    <string name="layer_sky_gradient">Gradient oblohy</string>
+    <string name="layer_sky_gradient" translation_description="Toggle label for the daytime sky-brightness gradient and the ground coloring.">Farba oblohy</string>
+
+    <!-- Long-press help for layers in the layer-visibility sheet. -->
+    <string name="layer_help_stars" translation_description="Long-press explanation of the stars layer.">
+    Hviezdy s veľkosťou podľa jasnosti a zafarbením podľa farby. Klepnutím na ľubovoľnú hviezdu zistíte podrobnosti.
+    </string>
+    <string name="layer_help_constellations" translation_description="Long-press explanation of the constellations layer.">Čiary a názvy súhvezdí, ktoré vám pomôžu orientovať sa v hviezdnych vzoroch.</string>
+    <string name="layer_help_deep_sky" translation_description="Long-press explanation of the deep-sky layer.">
+    Galaxie, hmloviny a hviezdokopy: objekty ďaleko za našou slnečnou sústavou. Na ich skutočné videnie je často potrebný ďalekohľad alebo teleskop.
+    </string>
+    <string name="layer_help_solar_system" translation_description="Long-press explanation of the solar system layer.">Slnko, Mesiac (s aktuálnou fázou) a planéty.</string>
+    <string name="layer_help_meteor_showers" translation_description="Long-press explanation of the meteor showers layer.">
+    Radiant každoročného meteorického roja: bod na oblohe, z ktorého sa zdá, že meteory prilietajú.
+    </string>
+    <string name="layer_help_satellites" translation_description="Long-press explanation of the satellites layer.">
+    Satelity, ako napríklad Vesmírna stanica a Tchien-kung, zobrazené tam, kde sa práve nachádzajú. Vyžaduje nedávno prevzaté údaje o obežnej dráhe.
+    </string>
+    <string name="layer_help_grid" translation_description="Long-press explanation of the celestial grid layer.">
+    Nebeská súradnicová sieť rektascenzie a deklinácie: obdoba zemepisnej šírky a dĺžky na oblohe. Je pevne spojená s hviezdami.
+    </string>
+    <string name="layer_help_horizon" translation_description="Long-press explanation of the horizon layer.">Čiara obzoru a svetové strany, aby ste vedeli, kde je sever a kde je zem.</string>
+    <string name="layer_help_ecliptic" translation_description="Long-press explanation of the ecliptic layer.">
+    Dráha, ktorú Slnko prechádza po oblohe počas roka. Mesiac a planéty sa zdržiavajú vždy v jeho blízkosti.
+    </string>
+    <string name="layer_help_altaz_grid" translation_description="Long-press explanation of the alt/az grid layer.">
+    Mriežka výšky (výška nad obzorom) a azimutu (kompasový smer). Na rozdiel od nebeskej mriežky je pevne spojená s vaším obzorom, nie s hviezdami.
+    </string>
+    <string name="layer_help_sky_gradient" translation_description="Long-press explanation of the sky coloring toggle.">
+    Zafarbí oblohu podľa dennej doby – cez deň svetlá a v noci tmavá – a zafarbí zem.
+    </string>
+    <string name="layer_help_hud" translation_description="Long-press explanation of the pointing readout toggle.">Údaj o tom, kam smeruje váš telefón: smer kompasu a nadmorská výška.</string>
+    <string name="layer_help_camera" translation_description="Long-press explanation of the through-camera toggle.">
+    Zobrazuje živý obraz z kamery pod mapou oblohy, takže nakreslená obloha sa prekrýva so skutočnou. Vyžaduje pohybové senzory.
+    </string>
+    <string name="layer_help_options_solar_system" translation_description="Long-press note listing what can be customized on the solar system layer.">
+    Veľkosť disku: ako veľké sa kreslia Slnko, Mesiac a planéty.\nUpozornenia na zatmenie: upozornenie pred zatmením Mesiaca.
+    </string>
+    <string name="layer_help_options_satellites" translation_description="Long-press note listing what can be customized on the satellites layer.">
+    Upozornenia na prelety: upozornenie pred najlepším viditeľným preletom každú noc.
+    </string>
+    <string name="layer_help_options_meteor_showers" translation_description="Long-press note listing what can be customized on the meteor showers layer.">
+    Upozornenia na maximum: upozornenie večer v deň, keď roj dosiahne svoje ročné maximum.
+    </string>
+    <string name="layer_help_options_grid" translation_description="Long-press note listing what can be customized on the celestial grid layer.">Počet čiar: čiara každé 3, 2 alebo 1 hodinu a každých 30°, 15° alebo 10°.</string>
+    <string name="layer_help_options_altaz_grid" translation_description="Long-press note listing what can be customized on the alt/az grid layer.">Počet čiar: 8, 12 alebo 24 smerových čiar.</string>
+    <string name="layer_help_customizable" translation_description="Heading in the layer help popup above the list of customizable options.">Čo si môžete prispôsobiť</string>
+    <string name="layer_help_expand_hint" translation_description="Hint in the layer help popup for layers with options, pointing to the arrow button on the row.">Tieto nastavenia zmeníte klepnutím na šípku na riadku.</string>
+    <string name="layer_help_customize" translation_description="Button in the layer help popup that opens the Layers sheet on that layer's options.">Prispôsobiť</string>
+    <string name="layer_help_close" translation_description="Button that dismisses the layer help popup.">Rozumiem</string>
+    <string name="layer_help_long_click_label" translation_description="Accessibility label for the long-press action on a layer row, which shows an explanation of the layer.">Zobraziť, čo to robí</string>
 
     <!-- Map screen controls. -->
     <string name="layers_sheet_title" translation_description="Title of the bottom sheet listing sky map layers the user can show or hide.">Vrstvy</string>
@@ -146,8 +201,8 @@
     <string name="ar_shutter_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual shutter (exposure) time in through-camera mode.">Čas uzávierky fotoaparátu</string>
     <string name="share_button" translation_description="Overflow-menu row that captures the current sky view as an image and opens the system share sheet.">Zdieľať oblohu</string>
     <string name="share_chooser_title" translation_description="Title of the system share sheet when sharing a captured sky image.">Zdieľať túto oblohu</string>
-    <string name="share_invitation" translation_description="Short invitation stamped on the footer of shared sky images, above the store link.">Pozrite sa, na čo sa pozeráte — získajte Sky Map zadarmo</string>
-    <string name="share_text" translation_description="Text accompanying a shared sky image in apps that accept both an image and text. %1$s is the app-store link.">Pozrite sa, na čo sa pozeráte — získajte Sky Map zadarmo: %1$s</string>
+    <string name="share_invitation" translation_description="Short invitation stamped on the footer of shared sky images, above the store link.">Vesmír vo vrecku — získajte Sky Map zadarmo</string>
+    <string name="share_text" translation_description="Text accompanying a shared sky image in apps that accept both an image and text. %1$s is the app-store link.">Vesmír vo vrecku — získajte Sky Map zadarmo: %1$s</string>
     <!-- tm:omitted name="share_store_link" reason="identical_to_source" -->
     <string name="share_layout_overlay" translation_description="Caption of the share-layout choice that draws the star map over the camera photo, as seen on screen.">Prekrytie</string>
     <string name="share_layout_side_by_side" translation_description="Caption of the share-layout choice that puts the camera photo and the star map next to each other.">Vedľa seba</string>
@@ -450,6 +505,7 @@
     <string name="diagnostics_utc_datetime">Univerzálny čas</string>
     <string name="diagnostics_section_network">Sieť</string>
     <string name="diagnostics_connection">Pripojenie</string>
+    <string name="diagnostics_section_experiments" translation_description="Section heading in the diagnostics screen listing the current feature-flag (experiment) values">Príznaky experimentov</string>
     <string name="diagnostics_section_satellites" translation_description="Section heading in the diagnostics screen for satellite orbital-data status">Satelity</string>
     <string name="diagnostics_satellite_data" translation_description="Row label in the diagnostics screen for the age and count of cached satellite orbital data">Údaje o obežnej dráhe</string>
     <string name="diagnostics_satellite_data_none" translation_description="Row value in the diagnostics screen when no satellite orbital data has been downloaded yet">Nestiahnuté</string>
@@ -458,6 +514,9 @@
     <string name="diagnostics_satellite_never_fetched" translation_description="Row value in the diagnostics screen when satellite orbital data has never been downloaded">Nikdy</string>
     <string name="diagnostics_satellite_circuit_open" translation_description="Row label in the diagnostics screen for when satellite downloads are paused after repeated server errors">Sťahovanie pozastavené</string>
     <string name="diagnostics_satellite_circuit_open_format" translation_description="Row value in the diagnostics screen showing when paused satellite downloads will resume and how many failures caused the pause. %1$s is a date and time, %2$d is a count">Do %1$s (%2$d zlyhaní)</string>
+    <string name="diagnostics_experiments_last_fetched" translation_description="Row label in the diagnostics experiment flags section: when the feature-flag config was last downloaded from the server">Naposledy prevzaté</string>
+    <string name="diagnostics_experiments_never_fetched" translation_description="Row value in the diagnostics experiment flags section when the feature-flag config has never been downloaded">Nikdy</string>
+    <string name="diagnostics_experiments_fetch_now" translation_description="Label on a button in the diagnostics screen that downloads the feature-flag config from the server immediately">Prevziať príznaky experimentov teraz</string>
     <string name="diagnostics_satellite_force_fetch" translation_description="Label on a debug-only button in the diagnostics screen that downloads satellite orbital data immediately">Stiahnuť satelitné dáta teraz (ladenie)</string>
     <string name="diagnostics_connected">Pripojené</string>
     <string name="diagnostics_disconnected">Odpojené</string>
@@ -618,6 +677,19 @@
     </string>
     <string name="settings_shower_alerts" translation_description="Preference title: notify on the evening a meteor shower reaches its annual peak">Vrcholy meteorických rojov</string>
     <string name="settings_shower_alerts_summary" translation_description="Explanation of the meteor-shower notification preference">Približne tucet ročne, večer v deň vrcholu</string>
+    <string name="settings_eclipse_alerts" translation_description="Preference title: notify shortly before a lunar eclipse begins">Zatmenia Mesiaca</string>
+    <string name="settings_eclipse_alerts_summary" translation_description="Explanation of the lunar-eclipse notification preference">Jedno upozornenie pred začiatkom zatmenia Mesiaca</string>
+    <string name="settings_pass_alerts" translation_description="Preference title: notify shortly before a satellite passes overhead">Prelety satelitov</string>
+    <string name="settings_pass_alerts_summary" translation_description="Explanation of the satellite-pass notification preference">Jedno upozornenie pred najlepším viditeľným preletom v noci</string>
+    <string name="settings_announcements" translation_description="Preference title: occasional messages from the Sky Map team about rare sky events, shown as a notification, in the widget and when the app opens">Správy od tímu Sky Map</string>
+    <string name="settings_announcements_summary" translation_description="Explanation of the announcements preference">
+    Zriedkavé upozornenia, napríklad na silnú polárnu zá2ru alebo jasnú planétu. Zobrazujú sa ako upozornenie, vo widgete Obloha dnes alebo po otvorení aplikácie.
+    </string>
+    <string name="channel_announcements_name" translation_description="Notification channel name for occasional messages from the Sky Map team">Správy od tímu Sky Map</string>
+    <string name="channel_announcements_description" translation_description="Notification channel description for occasional messages from the Sky Map team">Včasné upozornenia na významné úkazy na oblohe</string>
+    <string name="announcement_dialog_dismiss" translation_description="Button that closes an announcement dialog and hides that message everywhere">Zavrieť</string>
+    <string name="announcement_dialog_open" translation_description="Button on an announcement dialog that jumps to the sky object the message is about">Pozrieť sa</string>
+    <string name="announcement_dialog_continue" translation_description="Button on an announcement dialog that closes it and continues to the sky map">Pokračovať</string>
     <string name="settings_tonight_digest" translation_description="Preference title: a single evening notification summarizing what\'s visible tonight">Prehľad dnešnej oblohy</string>
     <string name="settings_tonight_digest_summary" translation_description="Explanation of the tonight-digest notification preference">Jeden súhrn po západe slnka, vynechaný počas pokojných nocí</string>
     <string name="settings_notifications_blocked" translation_description="Warning row shown when the user enabled notifications in the app but blocked them at the system level">Upozornenia sú zablokované pre Sky Map</string>

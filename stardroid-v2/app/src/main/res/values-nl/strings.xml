@@ -57,6 +57,8 @@
     <string name="notif_eclipse_text" translation_description="Body of the lunar eclipse notification, telling the user when it begins. %1$s is a time.">Begint rond %1$s — de moeite waard om even naar buiten te gaan</string>
     <string name="satellite_name_iss" translation_description="Display name for the International Space Station.">Het Ruimtestation</string>
     <!-- tm:omitted name="satellite_name_tiangong" reason="identical_to_source" -->
+    <string name="layer_param_shower_alerts" translation_description="Label for the setting that turns on a notification on the evening a meteor shower peaks.">Piekwaarschuwingen</string>
+    <string name="layer_param_shower_alerts_description" translation_description="Explains what the meteor-shower alert setting does: a notification on the evening a shower reaches its annual peak.">Geef me een melding op de avond dat een zwerm zijn piek bereikt</string>
     <string name="layer_param_pass_alerts" translation_description="Label for the setting that turns on a notification shortly before a satellite passes overhead.">Overgangsmeldingen</string>
     <string name="layer_param_pass_alerts_description" translation_description="Explains what the pass-alert setting does: a single notification before the best visible pass of the night.">Meld me voor de best zichtbare overgang elke nacht</string>
     <string name="layer_param_eclipse_alerts" translation_description="Label for the setting that turns on a notification before a lunar eclipse begins.">Verduisteringsmeldingen</string>
@@ -68,6 +70,10 @@
     <string name="layer_param_altaz_grid_density_medium_desc" translation_description="Explains the medium alt/az grid density: 12 azimuth lines, 30 degrees apart.">12 richtinglijnen, 30° uit elkaar</string>
     <string name="layer_param_altaz_grid_density_fine" translation_description="Option label for the alt/az grid's densest setting: 24 azimuth lines, 15 degrees apart.">Fijn</string>
     <string name="layer_param_altaz_grid_density_fine_desc" translation_description="Explains the fine alt/az grid density: 24 azimuth lines, matching the celestial grid's meridian count.">24 richtinglijnen, overeenkomend met het hemelraster</string>
+    <string name="layer_param_radec_grid_density" translation_description="Label for the celestial (RA/Dec) grid's line-count setting.">Aantal lijnen</string>
+    <string name="layer_param_radec_grid_density_coarse_desc" translation_description="Explains the coarse celestial grid density: a meridian every 3 hours of right ascension and a circle every 30 degrees of declination.">Meridianen elke 3 uur, cirkels elke 30°</string>
+    <string name="layer_param_radec_grid_density_medium_desc" translation_description="Explains the medium celestial grid density: a meridian every 2 hours of right ascension and a circle every 15 degrees of declination.">Meridianen elke 2 uur, cirkels elke 15°</string>
+    <string name="layer_param_radec_grid_density_fine_desc" translation_description="Explains the fine celestial grid density: a meridian every hour of right ascension and a circle every 10 degrees of declination.">Meridianen elk uur, cirkels elke 10°</string>
     <string name="satellite_description" translation_description="Short description shown on the info card for an artificial satellite.">
     Een kunstmatige satelliet in een lage baan om de aarde, verlicht door de zon tegen een donkere hemel. Hij beweegt in een paar minuten van horizon naar horizon, gestaag en zonder te knipperen.
     </string>
@@ -94,7 +100,61 @@
     <!-- tm:omitted name="layer_horizon" reason="identical_to_source" -->
     <string name="layer_ecliptic">Ecliptica</string>
     <string name="layer_altaz_grid" translation_description="Toggle label for the layer showing the altitude/azimuth (horizontal) coordinate grid, for naked-eye or manual alt-az mount observers.">Alt/Az-raster</string>
-    <string name="layer_sky_gradient">Hemelgradiënt</string>
+    <string name="layer_sky_gradient" translation_description="Toggle label for the daytime sky-brightness gradient and the ground coloring.">Hemelkleuring</string>
+
+    <!-- Long-press help for layers in the layer-visibility sheet. -->
+    <string name="layer_help_stars" translation_description="Long-press explanation of the stars layer.">De sterren, geschaald op helderheid en gekleurd. Tik op een ster voor details.</string>
+    <string name="layer_help_constellations" translation_description="Long-press explanation of the constellations layer.">
+    De lijnen en namen van de sterrenbeelden, om je te helpen je weg te vinden langs de sterrenpatronen.
+    </string>
+    <string name="layer_help_deep_sky" translation_description="Long-press explanation of the deep-sky layer.">
+    Sterrenstelsels, nevels en sterrenhopen: objecten ver buiten ons zonnestelsel. Voor vele heb je een verrekijker of telescoop nodig om ze in het echt te zien.
+    </string>
+    <string name="layer_help_solar_system" translation_description="Long-press explanation of the solar system layer.">De Zon, de Maan (met de huidige fase) en de planeten.</string>
+    <string name="layer_help_meteor_showers" translation_description="Long-press explanation of the meteor showers layer.">
+    Het radiant van elke jaarlijkse meteorenzwerm: het punt aan de hemel waar de meteoren lijken te ontspringen.
+    </string>
+    <string name="layer_help_satellites" translation_description="Long-press explanation of the satellites layer.">
+    Satellieten zoals het ruimtestation en Tiangong, getoond waar ze zich op dit moment bevinden. Vereist recent gedownloade baangegevens.
+    </string>
+    <string name="layer_help_grid" translation_description="Long-press explanation of the celestial grid layer.">
+    Het hemelse coördinatengrid van rechte klimming en declinatie: het hemelse equivalent van breedte- en lengtegraad. Het is vast ten opzichte van de sterren.
+    </string>
+    <string name="layer_help_horizon" translation_description="Long-press explanation of the horizon layer.">
+    De horizonlijn en windstreken, zodat je weet waar het noorden is en waar de grond is.
+    </string>
+    <string name="layer_help_ecliptic" translation_description="Long-press explanation of the ecliptic layer.">
+    Het pad dat de Zon in een jaar langs de hemel volgt. De Maan en planeten blijven hier altijd dicht bij in de buurt.
+    </string>
+    <string name="layer_help_altaz_grid" translation_description="Long-press explanation of the alt/az grid layer.">
+    Een raster van hoogte (hoogte boven de horizon) en azimuth (kompasrichting). In tegenstelling tot het hemelraster is dit vast aan je horizon, niet aan de sterren.
+    </string>
+    <string name="layer_help_sky_gradient" translation_description="Long-press explanation of the sky coloring toggle.">
+    Past de hemelkleur aan op het tijdstip van de dag (helder overdag en donker \'s nachts) en kleurt de grond.
+    </string>
+    <string name="layer_help_hud" translation_description="Long-press explanation of the pointing readout toggle.">
+    Een weergave van waar je telefoon naar wijst: de richting volgens het kompas en de hoogte.
+    </string>
+    <string name="layer_help_camera" translation_description="Long-press explanation of the through-camera toggle.">
+    Toont de live camera achter de sky map zodat de getekende sterrenhemel over de echte wordt gelegd. Vereist bewegingssensoren.
+    </string>
+    <string name="layer_help_options_solar_system" translation_description="Long-press note listing what can be customized on the solar system layer.">
+    Schijfgrootte: hoe groot de Zon, Maan en planeten worden getekend.
+Verduisteringsmeldingen: een melding voorafgaand aan een maansverduistering.
+    </string>
+    <string name="layer_help_options_satellites" translation_description="Long-press note listing what can be customized on the satellites layer.">
+    Overvluchtwarschuwingen: een melding voorafgaand aan de best zichtbare overvlucht van elke nacht.
+    </string>
+    <string name="layer_help_options_meteor_showers" translation_description="Long-press note listing what can be customized on the meteor showers layer.">
+    Piekwaarschuwingen: een melding op de avond dat een zwerm zijn jaarlijkse piek bereikt.
+    </string>
+    <string name="layer_help_options_grid" translation_description="Long-press note listing what can be customized on the celestial grid layer.">Aantal lijnen: een lijn elke 3, 2 of 1 uur en elke 30°, 15° of 10°.</string>
+    <string name="layer_help_options_altaz_grid" translation_description="Long-press note listing what can be customized on the alt/az grid layer.">Aantal lijnen: 8, 12 of 24 richtingslijnen.</string>
+    <string name="layer_help_customizable" translation_description="Heading in the layer help popup above the list of customizable options.">Wat je kunt aanpassen</string>
+    <string name="layer_help_expand_hint" translation_description="Hint in the layer help popup for layers with options, pointing to the arrow button on the row.">Tik op de pijl in de rij om dit te wijzigen.</string>
+    <string name="layer_help_customize" translation_description="Button in the layer help popup that opens the Layers sheet on that layer's options.">Aanpassen</string>
+    <string name="layer_help_close" translation_description="Button that dismisses the layer help popup.">Begrepen</string>
+    <string name="layer_help_long_click_label" translation_description="Accessibility label for the long-press action on a layer row, which shows an explanation of the layer.">Uitleggen wat dit doet</string>
 
     <!-- Map screen controls. -->
     <string name="layers_sheet_title" translation_description="Title of the bottom sheet listing sky map layers the user can show or hide.">Lagen</string>
@@ -145,8 +205,8 @@
     <string name="ar_shutter_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual shutter (exposure) time in through-camera mode.">Sluitertijd camera</string>
     <string name="share_button" translation_description="Overflow-menu row that captures the current sky view as an image and opens the system share sheet.">Deel de hemel</string>
     <string name="share_chooser_title" translation_description="Title of the system share sheet when sharing a captured sky image.">Deel deze hemel</string>
-    <string name="share_invitation" translation_description="Short invitation stamped on the footer of shared sky images, above the store link.">Zie waar je naar kijkt — download Sky Map gratis</string>
-    <string name="share_text" translation_description="Text accompanying a shared sky image in apps that accept both an image and text. %1$s is the app-store link.">Zie waar je naar kijkt — download Sky Map gratis: %1$s</string>
+    <string name="share_invitation" translation_description="Short invitation stamped on the footer of shared sky images, above the store link.">Het heelal in je zak — download Sky Map gratis</string>
+    <string name="share_text" translation_description="Text accompanying a shared sky image in apps that accept both an image and text. %1$s is the app-store link.">Het heelal in je zak — download Sky Map gratis: %1$s</string>
     <!-- tm:omitted name="share_store_link" reason="identical_to_source" -->
     <!-- tm:omitted name="share_layout_overlay" reason="identical_to_source" -->
     <string name="share_layout_side_by_side" translation_description="Caption of the share-layout choice that puts the camera photo and the star map next to each other.">Naast elkaar</string>
@@ -447,6 +507,7 @@
     <string name="diagnostics_utc_datetime">Universele datum/tijd</string>
     <string name="diagnostics_section_network">Netwerk</string>
     <string name="diagnostics_connection">Verbinding</string>
+    <string name="diagnostics_section_experiments" translation_description="Section heading in the diagnostics screen listing the current feature-flag (experiment) values">Experimentvlaggen</string>
     <string name="diagnostics_section_satellites" translation_description="Section heading in the diagnostics screen for satellite orbital-data status">Satellieten</string>
     <string name="diagnostics_satellite_data" translation_description="Row label in the diagnostics screen for the age and count of cached satellite orbital data">Baan gegevens</string>
     <string name="diagnostics_satellite_data_none" translation_description="Row value in the diagnostics screen when no satellite orbital data has been downloaded yet">Niet gedownload</string>
@@ -455,6 +516,9 @@
     <string name="diagnostics_satellite_never_fetched" translation_description="Row value in the diagnostics screen when satellite orbital data has never been downloaded">Nooit</string>
     <string name="diagnostics_satellite_circuit_open" translation_description="Row label in the diagnostics screen for when satellite downloads are paused after repeated server errors">Downloads gepauzeerd</string>
     <string name="diagnostics_satellite_circuit_open_format" translation_description="Row value in the diagnostics screen showing when paused satellite downloads will resume and how many failures caused the pause. %1$s is a date and time, %2$d is a count">Tot %1$s (%2$d fouten)</string>
+    <string name="diagnostics_experiments_last_fetched" translation_description="Row label in the diagnostics experiment flags section: when the feature-flag config was last downloaded from the server">Laatst opgehaald</string>
+    <string name="diagnostics_experiments_never_fetched" translation_description="Row value in the diagnostics experiment flags section when the feature-flag config has never been downloaded">Nooit</string>
+    <string name="diagnostics_experiments_fetch_now" translation_description="Label on a button in the diagnostics screen that downloads the feature-flag config from the server immediately">Experimentvlaggen nu ophalen</string>
     <string name="diagnostics_satellite_force_fetch" translation_description="Label on a debug-only button in the diagnostics screen that downloads satellite orbital data immediately">Satellietgegevens nu ophalen (debug)</string>
     <string name="diagnostics_connected">Verbonden</string>
     <string name="diagnostics_disconnected">Verbroken</string>
@@ -615,6 +679,19 @@
     </string>
     <string name="settings_shower_alerts" translation_description="Preference title: notify on the evening a meteor shower reaches its annual peak">Meteorenzwermpieken</string>
     <string name="settings_shower_alerts_summary" translation_description="Explanation of the meteor-shower notification preference">Ongeveer een dozijn per jaar, op de avond van de piek</string>
+    <string name="settings_eclipse_alerts" translation_description="Preference title: notify shortly before a lunar eclipse begins">Maanverduisteringen</string>
+    <string name="settings_eclipse_alerts_summary" translation_description="Explanation of the lunar-eclipse notification preference">Een enkele waarschuwing voordat een maanverduistering begint</string>
+    <string name="settings_pass_alerts" translation_description="Preference title: notify shortly before a satellite passes overhead">Satellietpassages</string>
+    <string name="settings_pass_alerts_summary" translation_description="Explanation of the satellite-pass notification preference">Een enkele waarschuwing vóór de best zichtbare passage van de nacht</string>
+    <string name="settings_announcements" translation_description="Preference title: occasional messages from the Sky Map team about rare sky events, shown as a notification, in the widget and when the app opens">Berichten van Sky Map</string>
+    <string name="settings_announcements_summary" translation_description="Explanation of the announcements preference">
+    Zeldzame meldingen zoals een sterk noorderlicht of een heldere planeet. Worden weergegeven als melding, in de Sky Tonight-widget of wanneer je de app opent.
+    </string>
+    <string name="channel_announcements_name" translation_description="Notification channel name for occasional messages from the Sky Map team">Berichten van Sky Map</string>
+    <string name="channel_announcements_description" translation_description="Notification channel description for occasional messages from the Sky Map team">Zeldzame meldingen over opmerkelijke gebeurtenissen aan de hemel</string>
+    <string name="announcement_dialog_dismiss" translation_description="Button that closes an announcement dialog and hides that message everywhere">Sluiten</string>
+    <string name="announcement_dialog_open" translation_description="Button on an announcement dialog that jumps to the sky object the message is about">Bekijken</string>
+    <string name="announcement_dialog_continue" translation_description="Button on an announcement dialog that closes it and continues to the sky map">Doorgaan</string>
     <string name="settings_tonight_digest" translation_description="Preference title: a single evening notification summarizing what\'s visible tonight">Hemeloverzicht vanavond</string>
     <string name="settings_tonight_digest_summary" translation_description="Explanation of the tonight-digest notification preference">Eén samenvatting na zonsondergang, overgeslagen op rustige nachten</string>
     <string name="settings_notifications_blocked" translation_description="Warning row shown when the user enabled notifications in the app but blocked them at the system level">Meldingen zijn geblokkeerd voor Sky Map</string>

@@ -58,6 +58,8 @@
     <string name="notif_eclipse_text" translation_description="Body of the lunar eclipse notification, telling the user when it begins. %1$s is a time.">Yn dechrau tua %1$s — werth camu allan amdano</string>
     <string name="satellite_name_iss" translation_description="Display name for the International Space Station.">Yr Orsaf Ofod</string>
     <!-- tm:omitted name="satellite_name_tiangong" reason="identical_to_source" -->
+    <string name="layer_param_shower_alerts" translation_description="Label for the setting that turns on a notification on the evening a meteor shower peaks.">Rhybuddion copa</string>
+    <string name="layer_param_shower_alerts_description" translation_description="Explains what the meteor-shower alert setting does: a notification on the evening a shower reaches its annual peak.">Rhybuddio fi ar noson copaon cawod</string>
     <string name="layer_param_pass_alerts" translation_description="Label for the setting that turns on a notification shortly before a satellite passes overhead.">Rhybuddion tramwy</string>
     <string name="layer_param_pass_alerts_description" translation_description="Explains what the pass-alert setting does: a single notification before the best visible pass of the night.">Rhowch wybod i mi cyn y tramwyfa weladwy gorau bob nos</string>
     <string name="layer_param_eclipse_alerts" translation_description="Label for the setting that turns on a notification before a lunar eclipse begins.">Rhybuddion diffyg</string>
@@ -69,6 +71,10 @@
     <string name="layer_param_altaz_grid_density_medium_desc" translation_description="Explains the medium alt/az grid density: 12 azimuth lines, 30 degrees apart.">12 llinell gyfeiriad, 30° ar wahân</string>
     <string name="layer_param_altaz_grid_density_fine" translation_description="Option label for the alt/az grid's densest setting: 24 azimuth lines, 15 degrees apart.">Manwl</string>
     <string name="layer_param_altaz_grid_density_fine_desc" translation_description="Explains the fine alt/az grid density: 24 azimuth lines, matching the celestial grid's meridian count.">24 llinell gyfeiriad, yn cyfateb i\'r grid nefol</string>
+    <string name="layer_param_radec_grid_density" translation_description="Label for the celestial (RA/Dec) grid's line-count setting.">Cyfrif llinellau</string>
+    <string name="layer_param_radec_grid_density_coarse_desc" translation_description="Explains the coarse celestial grid density: a meridian every 3 hours of right ascension and a circle every 30 degrees of declination.">Meridianau bob 3 awr, cylchoedd bob 30°</string>
+    <string name="layer_param_radec_grid_density_medium_desc" translation_description="Explains the medium celestial grid density: a meridian every 2 hours of right ascension and a circle every 15 degrees of declination.">Meridianau bob 2 awr, cylchoedd bob 15°</string>
+    <string name="layer_param_radec_grid_density_fine_desc" translation_description="Explains the fine celestial grid density: a meridian every hour of right ascension and a circle every 10 degrees of declination.">Meridianau bob awr, cylchoedd bob 10°</string>
     <string name="satellite_description" translation_description="Short description shown on the info card for an artificial satellite.">
     Lloeren artiffisial mewn orbit daear isel, wedi\'i goleuo gan yr haul yn erbyn awyr dywyll. Mae\'n croesi o orwel i orwel mewn ychydig funudau, gan symud yn gyson a heb amrantu.
     </string>
@@ -95,7 +101,55 @@
     <string name="layer_horizon">Gorwel</string>
     <string name="layer_ecliptic">Ecliptig</string>
     <string name="layer_altaz_grid" translation_description="Toggle label for the layer showing the altitude/azimuth (horizontal) coordinate grid, for naked-eye or manual alt-az mount observers.">Grid Alt/Az</string>
-    <string name="layer_sky_gradient">Graddfa Awyr</string>
+    <string name="layer_sky_gradient" translation_description="Toggle label for the daytime sky-brightness gradient and the ground coloring.">Lliwio\'r awyr</string>
+
+    <!-- Long-press help for layers in the layer-visibility sheet. -->
+    <string name="layer_help_stars" translation_description="Long-press explanation of the stars layer.">
+    Y sêr, wedi"u maint yn ôl disgleirdeb a"u lliwio yn ôl lliw. Tapiwch unrhyw seren am fanylion.
+    </string>
+    <string name="layer_help_constellations" translation_description="Long-press explanation of the constellations layer.">
+    Llinellau ac enwau\'r cytserau, i\'ch helpu i ddod o hyd i\'ch ffordd o amgylch y patrymau sêr.
+    </string>
+    <!-- tm:omitted name="layer_help_deep_sky" reason="identical_to_source" -->
+    <string name="layer_help_solar_system" translation_description="Long-press explanation of the solar system layer.">Yr Haul, y Lleuad (gyda\'i chyfnod presennol) a\'r planedau.</string>
+    <string name="layer_help_meteor_showers" translation_description="Long-press explanation of the meteor showers layer.">
+    Rhywle o darddiad pob cawod sêr inion flynyddol: y pwynt yn y awyr y mae\'r sêr gwib yn ymddangos yn ffrydio ohono.
+    </string>
+    <string name="layer_help_satellites" translation_description="Long-press explanation of the satellites layer.">
+    Serenau artiffisial fel yr Orsaf Fodolaidd a Tiangong, a ddangosir lle maent yn union nawr. Angen data orbit a dlawrlwythwyd yn ddiweddar.
+    </string>
+    <string name="layer_help_grid" translation_description="Long-press explanation of the celestial grid layer.">
+    Grid cydosodol y wybren o ddyrchiad a chyhydred: cyfateb y wybren i lledred a hydred. Mae wedi\'i osod ar y sêr.
+    </string>
+    <string name="layer_help_horizon" translation_description="Long-press explanation of the horizon layer.">
+    Y llinell derfyn a phwyntiau cwmpawd, fel y gallwch wybod pa ffordd yw gogledd a lle mae\'r ddaear.
+    </string>
+    <string name="layer_help_ecliptic" translation_description="Long-press explanation of the ecliptic layer.">
+    Y llwybr y mae\'r Haul yn ei ddilyn dros yr awyr dros flwyddyn. Mae\'r Lleuad a\'r planedau bob amser yn aros yn agos ato.
+    </string>
+    <string name="layer_help_altaz_grid" translation_description="Long-press explanation of the alt/az grid layer.">
+    Grid o uchafbwynt (uchder uwchben the lloriau) a chyfeiriad y cwmpawd (azimuth). Yn wahanol i\'r grid nefol, mae wedi\'i osod i\'ch lloriau, nid i\'r sêr.
+    </string>
+    <string name="layer_help_sky_gradient" translation_description="Long-press explanation of the sky coloring toggle.">
+    Yn lliwio\'r awyr i gyd-fynd ag amser y dydd, yn llachar yn y dydd ac yn dywyll yn y nos, ac yn lliwio\'r ddaear.
+    </string>
+    <string name="layer_help_hud" translation_description="Long-press explanation of the pointing readout toggle.">Darlleniad o ble mae eich ffôn yn pwyntio: cyfeiriad ei gwmpawd a\'i uchder.</string>
+    <string name="layer_help_camera" translation_description="Long-press explanation of the through-camera toggle.">
+    Dangos y camera fyw y tu ôl i Sky Map fel bod y wybren wedi\'i llunio yn gorgyffru\'r un go iawn. Mae angen synwyryddion symudiad.
+    </string>
+    <string name="layer_help_options_solar_system" translation_description="Long-press note listing what can be customized on the solar system layer.">
+    Maint y ddisg: pa mor fawr y llunnir yr Haul, y Lleuad a\'r planedau.
+Rhybuddion eclips: hysbysiad cyn eclips lleuad.
+    </string>
+    <string name="layer_help_options_satellites" translation_description="Long-press note listing what can be customized on the satellites layer.">Rhybuddion pasio: hysbysiad cyn y pas gorau y gellir ei weld bob nos.</string>
+    <string name="layer_help_options_meteor_showers" translation_description="Long-press note listing what can be customized on the meteor showers layer.">Rhybuddion copa: hysbysiad ar noson y cyrhaeddai cawod ei chopa blynyddol.</string>
+    <string name="layer_help_options_grid" translation_description="Long-press note listing what can be customized on the celestial grid layer.">Cyfrif llinellau: llinell bob 3, 2 neu 1 awr a bob 30°, 15° neu 10°.</string>
+    <string name="layer_help_options_altaz_grid" translation_description="Long-press note listing what can be customized on the alt/az grid layer.">Cyfrif llinellau: 8, 12 neu 24 llinell gyfeiriad.</string>
+    <string name="layer_help_customizable" translation_description="Heading in the layer help popup above the list of customizable options.">Yr hyn y gallwch ei addasu</string>
+    <string name="layer_help_expand_hint" translation_description="Hint in the layer help popup for layers with options, pointing to the arrow button on the row.">Tapiwch y saeth ar y rhes i newid y rhain.</string>
+    <string name="layer_help_customize" translation_description="Button in the layer help popup that opens the Layers sheet on that layer's options.">Addasu</string>
+    <string name="layer_help_close" translation_description="Button that dismisses the layer help popup.">Deall</string>
+    <string name="layer_help_long_click_label" translation_description="Accessibility label for the long-press action on a layer row, which shows an explanation of the layer.">Dangos beth mae hwn yn ei wneud</string>
 
     <!-- Map screen controls. -->
     <string name="layers_sheet_title" translation_description="Title of the bottom sheet listing sky map layers the user can show or hide.">Haenau</string>
@@ -146,8 +200,8 @@
     <string name="ar_shutter_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual shutter (exposure) time in through-camera mode.">Amser caead camera</string>
     <string name="share_button" translation_description="Overflow-menu row that captures the current sky view as an image and opens the system share sheet.">Rhannu\'r awyr</string>
     <string name="share_chooser_title" translation_description="Title of the system share sheet when sharing a captured sky image.">Rhannu\'r awyr hon</string>
-    <string name="share_invitation" translation_description="Short invitation stamped on the footer of shared sky images, above the store link.">Gweler yr hyn rydych chi\'n edrych arno — cael Sky Map am ddim</string>
-    <string name="share_text" translation_description="Text accompanying a shared sky image in apps that accept both an image and text. %1$s is the app-store link.">Gweler yr hyn rydych chi\'n edrych arno — cael Sky Map am ddim: %1$s</string>
+    <string name="share_invitation" translation_description="Short invitation stamped on the footer of shared sky images, above the store link.">Y Bydysawd yn eich poced — cael Sky Map am ddim</string>
+    <string name="share_text" translation_description="Text accompanying a shared sky image in apps that accept both an image and text. %1$s is the app-store link.">Y Bydysawd yn eich poced — cael Sky Map am ddim: %1$s</string>
     <!-- tm:omitted name="share_store_link" reason="identical_to_source" -->
     <string name="share_layout_overlay" translation_description="Caption of the share-layout choice that draws the star map over the camera photo, as seen on screen.">Gorgyffwrdd</string>
     <string name="share_layout_side_by_side" translation_description="Caption of the share-layout choice that puts the camera photo and the star map next to each other.">Ochr yn ochr</string>
@@ -454,6 +508,7 @@ cael ei osod.
     <string name="diagnostics_utc_datetime">Amser Cyffredinol</string>
     <string name="diagnostics_section_network">Rhwydwaith</string>
     <string name="diagnostics_connection">Cysylltiad</string>
+    <string name="diagnostics_section_experiments" translation_description="Section heading in the diagnostics screen listing the current feature-flag (experiment) values">Baneri arbrawf</string>
     <string name="diagnostics_section_satellites" translation_description="Section heading in the diagnostics screen for satellite orbital-data status">Lloerennau</string>
     <string name="diagnostics_satellite_data" translation_description="Row label in the diagnostics screen for the age and count of cached satellite orbital data">Data orbit</string>
     <string name="diagnostics_satellite_data_none" translation_description="Row value in the diagnostics screen when no satellite orbital data has been downloaded yet">Heb ei lawrlwytho</string>
@@ -462,6 +517,9 @@ cael ei osod.
     <string name="diagnostics_satellite_never_fetched" translation_description="Row value in the diagnostics screen when satellite orbital data has never been downloaded">Byth</string>
     <string name="diagnostics_satellite_circuit_open" translation_description="Row label in the diagnostics screen for when satellite downloads are paused after repeated server errors">Lawrlwythiadau wedi\'u oedi</string>
     <string name="diagnostics_satellite_circuit_open_format" translation_description="Row value in the diagnostics screen showing when paused satellite downloads will resume and how many failures caused the pause. %1$s is a date and time, %2$d is a count">Tan %1$s (%2$d methiannau)</string>
+    <string name="diagnostics_experiments_last_fetched" translation_description="Row label in the diagnostics experiment flags section: when the feature-flag config was last downloaded from the server">Diweddarafwyd ddiwethaf</string>
+    <string name="diagnostics_experiments_never_fetched" translation_description="Row value in the diagnostics experiment flags section when the feature-flag config has never been downloaded">Byth</string>
+    <string name="diagnostics_experiments_fetch_now" translation_description="Label on a button in the diagnostics screen that downloads the feature-flag config from the server immediately">Cael baneri arbrawf nawr</string>
     <string name="diagnostics_satellite_force_fetch" translation_description="Label on a debug-only button in the diagnostics screen that downloads satellite orbital data immediately">Nôl data lloeren nawr (dadfygio)</string>
     <string name="diagnostics_connected">Wedi cysylltu</string>
     <string name="diagnostics_disconnected">Heb gysylltu</string>
@@ -624,6 +682,19 @@ cael ei osod.
     </string>
     <string name="settings_shower_alerts" translation_description="Preference title: notify on the evening a meteor shower reaches its annual peak">Uchafbwyntiau cawodydd meteorig</string>
     <string name="settings_shower_alerts_summary" translation_description="Explanation of the meteor-shower notification preference">Tua dwsin y flwyddyn, ar noson yr uchafbwynt</string>
+    <string name="settings_eclipse_alerts" translation_description="Preference title: notify shortly before a lunar eclipse begins">Eclipsau lleuad</string>
+    <string name="settings_eclipse_alerts_summary" translation_description="Explanation of the lunar-eclipse notification preference">Un rhybudd sengl cyn i eclips lleuad ddechrau</string>
+    <string name="settings_pass_alerts" translation_description="Preference title: notify shortly before a satellite passes overhead">Pasiau lloerennau</string>
+    <string name="settings_pass_alerts_summary" translation_description="Explanation of the satellite-pass notification preference">Un rhybudd sengl cyn y pas gorau y gellir ei weld o\'r noson</string>
+    <string name="settings_announcements" translation_description="Preference title: occasional messages from the Sky Map team about rare sky events, shown as a notification, in the widget and when the app opens">Negeseuon o Sky Map</string>
+    <string name="settings_announcements_summary" translation_description="Explanation of the announcements preference">
+    Rhybuddion prin megis awrora gref neu blaned ddisglair. Dangosir fel hysbysiad, yn y teclyn Sky Tonight, neu pan fyddwch yn agor y ap.
+    </string>
+    <string name="channel_announcements_name" translation_description="Notification channel name for occasional messages from the Sky Map team">Negeseuon o Sky Map</string>
+    <string name="channel_announcements_description" translation_description="Notification channel description for occasional messages from the Sky Map team">Rhybuddion prin am ddigwyddiadau awyr nodedig</string>
+    <string name="announcement_dialog_dismiss" translation_description="Button that closes an announcement dialog and hides that message everywhere">Gwrthod</string>
+    <string name="announcement_dialog_open" translation_description="Button on an announcement dialog that jumps to the sky object the message is about">Cael golwg</string>
+    <string name="announcement_dialog_continue" translation_description="Button on an announcement dialog that closes it and continues to the sky map">Parhau</string>
     <string name="settings_tonight_digest" translation_description="Preference title: a single evening notification summarizing what\'s visible tonight">Crynodeb awyr heno</string>
     <string name="settings_tonight_digest_summary" translation_description="Explanation of the tonight-digest notification preference">Un crynodeb ar ôl machlud haul, wedi\u0027i hepgor ar nosweithiau tawel</string>
     <string name="settings_notifications_blocked" translation_description="Warning row shown when the user enabled notifications in the app but blocked them at the system level">Mae hysbysiadau wedi\u0027u blocio ar gyfer Sky Map</string>

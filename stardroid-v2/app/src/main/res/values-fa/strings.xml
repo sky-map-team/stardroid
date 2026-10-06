@@ -58,6 +58,8 @@
     <string name="notif_eclipse_text" translation_description="Body of the lunar eclipse notification, telling the user when it begins. %1$s is a time.">حدود %1$s شروع می‌شود — ارزش بیرون رفتن را دارد</string>
     <string name="satellite_name_iss" translation_description="Display name for the International Space Station.">ایستگاه فضایی</string>
     <string name="satellite_name_tiangong" translation_description="Display name for the Chinese space station Tiangong.">تیانگونگ</string>
+    <string name="layer_param_shower_alerts" translation_description="Label for the setting that turns on a notification on the evening a meteor shower peaks.">هشدار اوج بارش</string>
+    <string name="layer_param_shower_alerts_description" translation_description="Explains what the meteor-shower alert setting does: a notification on the evening a shower reaches its annual peak.">ارسال اعلان در شب اوج بارش شهابی</string>
     <string name="layer_param_pass_alerts" translation_description="Label for the setting that turns on a notification shortly before a satellite passes overhead.">هشدارهای گذر</string>
     <string name="layer_param_pass_alerts_description" translation_description="Explains what the pass-alert setting does: a single notification before the best visible pass of the night.">قبل از بهترین گذر قابل مشاهده هر شب به من اطلاع بده</string>
     <string name="layer_param_eclipse_alerts" translation_description="Label for the setting that turns on a notification before a lunar eclipse begins.">هشدارهای خسوف</string>
@@ -69,6 +71,10 @@
     <string name="layer_param_altaz_grid_density_medium_desc" translation_description="Explains the medium alt/az grid density: 12 azimuth lines, 30 degrees apart.">۱۲ خط جهت، با فاصله ۳۰ درجه</string>
     <string name="layer_param_altaz_grid_density_fine" translation_description="Option label for the alt/az grid's densest setting: 24 azimuth lines, 15 degrees apart.">ظریف</string>
     <string name="layer_param_altaz_grid_density_fine_desc" translation_description="Explains the fine alt/az grid density: 24 azimuth lines, matching the celestial grid's meridian count.">۲۴ خط جهت، مطابق با شبکه آسمانی</string>
+    <string name="layer_param_radec_grid_density" translation_description="Label for the celestial (RA/Dec) grid's line-count setting.">تعداد خطوط</string>
+    <string name="layer_param_radec_grid_density_coarse_desc" translation_description="Explains the coarse celestial grid density: a meridian every 3 hours of right ascension and a circle every 30 degrees of declination.">نصف‌النهارها هر ۳ ساعت، دایره‌ها هر ۳۰ درجه</string>
+    <string name="layer_param_radec_grid_density_medium_desc" translation_description="Explains the medium celestial grid density: a meridian every 2 hours of right ascension and a circle every 15 degrees of declination.">نصف‌النهارها هر ۲ ساعت، دایره‌ها هر ۱۵ درجه</string>
+    <string name="layer_param_radec_grid_density_fine_desc" translation_description="Explains the fine celestial grid density: a meridian every hour of right ascension and a circle every 10 degrees of declination.">نصف‌النهارها هر ساعت، دایره‌ها هر ۱۰ درجه</string>
     <string name="satellite_description" translation_description="Short description shown on the info card for an artificial satellite.">
     یک ماهواره مصنوعی در مدار نزدیک زمین، درخشان در برابر آسمان تاریک. این ماهواره در عرض چند دقیقه از افق تا افق عبور می‌کند و به طور پیوسته و بدون سوسو زدن حرکت می‌کند.
     </string>
@@ -95,7 +101,52 @@
     <string name="layer_horizon">افق</string>
     <string name="layer_ecliptic">دایرة البروج</string>
     <string name="layer_altaz_grid" translation_description="Toggle label for the layer showing the altitude/azimuth (horizontal) coordinate grid, for naked-eye or manual alt-az mount observers.">شبکه ارتفاع/سمت</string>
-    <string name="layer_sky_gradient">گرادیان آسمان</string>
+    <string name="layer_sky_gradient" translation_description="Toggle label for the daytime sky-brightness gradient and the ground coloring.">رنگ‌آمیزی آسمان</string>
+
+    <!-- Long-press help for layers in the layer-visibility sheet. -->
+    <string name="layer_help_stars" translation_description="Long-press explanation of the stars layer.">
+    ستاره‌ها بر اساس روشنایی اندازه‌گذاری و با رنگ رنگ‌آمیزی شده‌اند. برای جزئیات روی هر ستاره ضربه بزنید.
+    </string>
+    <string name="layer_help_constellations" translation_description="Long-press explanation of the constellations layer.">خطوط و نام‌های صورت‌های فلکی برای کمک به یافتن مسیر در میان الگوهای ستاره‌ای.</string>
+    <string name="layer_help_deep_sky" translation_description="Long-press explanation of the deep-sky layer.">
+    کهکشان‌ها، سحابی‌ها و خوشه‌های ستاره‌ای: اجرام بسیار دورتر از منظومه شمسی ما. بسیاری از آن‌ها برای دیدن واقعی به دوربین دوچشمی یا تلسکوپ نیاز دارند.
+    </string>
+    <string name="layer_help_solar_system" translation_description="Long-press explanation of the solar system layer.">خورشید، ماه (همراه با فاز فعلی‌اش) و سیارات.</string>
+    <string name="layer_help_meteor_showers" translation_description="Long-press explanation of the meteor showers layer.">
+    کانون هر بارش شهابی سالانه: نقطه‌ای در آسمان که به نظر می‌رسد شهاب‌ها از آنجا ساطع می‌شوند.
+    </string>
+    <string name="layer_help_satellites" translation_description="Long-press explanation of the satellites layer.">
+    ماهواره‌هایی مانند ایستگاه فضایی و تیانگونگ، در موقعیت فعلی‌شان نشان داده می‌شوند. نیاز به اطلاعات مداری به‌تازگی دانلودشده دارد.
+    </string>
+    <string name="layer_help_grid" translation_description="Long-press explanation of the celestial grid layer.">
+    سیستم مختصات سماوی بعد و میل: معادل عرض و طول جغرافیایی در آسمان. این سیستم به ستاره‌ها ثابت است.
+    </string>
+    <string name="layer_help_horizon" translation_description="Long-press explanation of the horizon layer.">خط افق و جهات قطب‌نما تا بدانید کدام سمت شمال است و زمین کجاست.</string>
+    <string name="layer_help_ecliptic" translation_description="Long-press explanation of the ecliptic layer.">
+    مسیری که خورشید در طول یک سال در آسمان طی می‌کند. ماه و سیارات همیشه به آن نزدیک می‌مانند.
+    </string>
+    <string name="layer_help_altaz_grid" translation_description="Long-press explanation of the alt/az grid layer.">
+    یک شبکه از ارتفاع (ارتفاع از افق) و سمت (جهت قطب‌نما). برخلاف شبکه سماوی، این شبکه به افق شما ثابت است، نه به ستارگان.
+    </string>
+    <string name="layer_help_sky_gradient" translation_description="Long-press explanation of the sky coloring toggle.">
+    آسمان را متناسب با زمان روز رنگ‌آمیزی می‌کند (روز روشن و شب تاریک) و زمین را رنگ می‌دهد.
+    </string>
+    <string name="layer_help_hud" translation_description="Long-press explanation of the pointing readout toggle.">نمایشگر موقعیت اشاره گوشی شما: جهت قطب‌نما و ارتفاع آن.</string>
+    <string name="layer_help_camera" translation_description="Long-press explanation of the through-camera toggle.">
+    نمایش تصویر زنده دوربین در پشت نقشه آسمان به طوری که آسمان ترسیم‌شده روی آسمان واقعی منطبق شود. نیاز به حسگرهای حرکتی دارد.
+    </string>
+    <string name="layer_help_options_solar_system" translation_description="Long-press note listing what can be customized on the solar system layer.">
+    اندازه قرص: اندازه رسم خورشید، ماه و سیارات.\nهشدارهای خورشیدگرفتگی/ماه‌گرفتگی: یک اعلان قبل از ماه‌گرفتگی.
+    </string>
+    <string name="layer_help_options_satellites" translation_description="Long-press note listing what can be customized on the satellites layer.">هشدارهای گذر: یک اعلان پیش از بهترین گذر قابل‌مشاهده در هر شب.</string>
+    <string name="layer_help_options_meteor_showers" translation_description="Long-press note listing what can be customized on the meteor showers layer.">هشدارهای اوج: یک اعلان در شب رسیدن بارش به اوج سالانه خود.</string>
+    <string name="layer_help_options_grid" translation_description="Long-press note listing what can be customized on the celestial grid layer.">تعداد خطوط: یک خط هر ۳، ۲ یا ۱ ساعت و هر ۳۰، ۱۵ یا ۱۰ درجه.</string>
+    <string name="layer_help_options_altaz_grid" translation_description="Long-press note listing what can be customized on the alt/az grid layer.">تعداد خطوط: ۸، ۱۲ یا ۲۴ خط جهت‌دهی.</string>
+    <string name="layer_help_customizable" translation_description="Heading in the layer help popup above the list of customizable options.">موارد قابل سفارشی‌سازی</string>
+    <string name="layer_help_expand_hint" translation_description="Hint in the layer help popup for layers with options, pointing to the arrow button on the row.">برای تغییر این موارد روی فلش روی سطر ضربه بزنید.</string>
+    <string name="layer_help_customize" translation_description="Button in the layer help popup that opens the Layers sheet on that layer's options.">سفارشی‌سازی</string>
+    <string name="layer_help_close" translation_description="Button that dismisses the layer help popup.">متوجه شدم</string>
+    <string name="layer_help_long_click_label" translation_description="Accessibility label for the long-press action on a layer row, which shows an explanation of the layer.">نمایش عملکرد این مورد</string>
 
     <!-- Map screen controls. -->
     <string name="layers_sheet_title" translation_description="Title of the bottom sheet listing sky map layers the user can show or hide.">لایه‌ها</string>
@@ -151,8 +202,8 @@
     <string name="share_button" translation_description="Overflow-menu row that captures the current sky view as an image and opens the system share sheet.">اشتراک
 گذاری آسمان</string>
     <string name="share_chooser_title" translation_description="Title of the system share sheet when sharing a captured sky image.">اشتراک‌گذاری این آسمان</string>
-    <string name="share_invitation" translation_description="Short invitation stamped on the footer of shared sky images, above the store link.">ببینید به چه چیزی نگاه می‌کنید — Sky Map را رایگان دریافت کنید</string>
-    <string name="share_text" translation_description="Text accompanying a shared sky image in apps that accept both an image and text. %1$s is the app-store link.">ببینید به چه چیزی نگاه می‌کنید — Sky Map را رایگان دریافت کنید: %1$s</string>
+    <string name="share_invitation" translation_description="Short invitation stamped on the footer of shared sky images, above the store link.">جهان در جیب شما — Sky Map را رایگان دریافت کنید</string>
+    <string name="share_text" translation_description="Text accompanying a shared sky image in apps that accept both an image and text. %1$s is the app-store link.">جهان در جیب شما — Sky Map را رایگان دریافت کنید: %1$s</string>
     <!-- tm:omitted name="share_store_link" reason="identical_to_source" -->
     <string name="share_layout_overlay" translation_description="Caption of the share-layout choice that draws the star map over the camera photo, as seen on screen.">هم‌پوشانی</string>
     <string name="share_layout_side_by_side" translation_description="Caption of the share-layout choice that puts the camera photo and the star map next to each other.">کنار هم</string>
@@ -451,6 +502,7 @@
     <string name="diagnostics_utc_datetime">زمان جهانی</string>
     <string name="diagnostics_section_network">شبکه</string>
     <string name="diagnostics_connection">اتصال</string>
+    <string name="diagnostics_section_experiments" translation_description="Section heading in the diagnostics screen listing the current feature-flag (experiment) values">پرچم‌های آزمایشی</string>
     <string name="diagnostics_section_satellites" translation_description="Section heading in the diagnostics screen for satellite orbital-data status">ماهواره
 ها</string>
     <string name="diagnostics_satellite_data" translation_description="Row label in the diagnostics screen for the age and count of cached satellite orbital data">داده
@@ -461,6 +513,9 @@
     <string name="diagnostics_satellite_never_fetched" translation_description="Row value in the diagnostics screen when satellite orbital data has never been downloaded">هرگز</string>
     <string name="diagnostics_satellite_circuit_open" translation_description="Row label in the diagnostics screen for when satellite downloads are paused after repeated server errors">دانلودها متوقف شد</string>
     <string name="diagnostics_satellite_circuit_open_format" translation_description="Row value in the diagnostics screen showing when paused satellite downloads will resume and how many failures caused the pause. %1$s is a date and time, %2$d is a count">تا %1$s (%2$d خطا)</string>
+    <string name="diagnostics_experiments_last_fetched" translation_description="Row label in the diagnostics experiment flags section: when the feature-flag config was last downloaded from the server">آخرین دریافت</string>
+    <string name="diagnostics_experiments_never_fetched" translation_description="Row value in the diagnostics experiment flags section when the feature-flag config has never been downloaded">هرگز</string>
+    <string name="diagnostics_experiments_fetch_now" translation_description="Label on a button in the diagnostics screen that downloads the feature-flag config from the server immediately">دریافت پرچم‌های آزمایشی هم‌اکنون</string>
     <string name="diagnostics_satellite_force_fetch" translation_description="Label on a debug-only button in the diagnostics screen that downloads satellite orbital data immediately">اکنون داده
 های ماهواره را دریافت کن (اشکال
 زدایی)</string>
@@ -631,6 +686,19 @@
     </string>
     <string name="settings_shower_alerts" translation_description="Preference title: notify on the evening a meteor shower reaches its annual peak">اوج بارش‌های شهابی</string>
     <string name="settings_shower_alerts_summary" translation_description="Explanation of the meteor-shower notification preference">حدود دوازده مورد در سال، در غروب روز اوج</string>
+    <string name="settings_eclipse_alerts" translation_description="Preference title: notify shortly before a lunar eclipse begins">ماه‌گرفتگی‌ها</string>
+    <string name="settings_eclipse_alerts_summary" translation_description="Explanation of the lunar-eclipse notification preference">یک هشدار واحد پیش از شروع ماه‌گرفتگی</string>
+    <string name="settings_pass_alerts" translation_description="Preference title: notify shortly before a satellite passes overhead">گذرهای ماهواره‌ای</string>
+    <string name="settings_pass_alerts_summary" translation_description="Explanation of the satellite-pass notification preference">یک هشدار واحد پیش از بهترین گذر قابل‌مشاهده در شب</string>
+    <string name="settings_announcements" translation_description="Preference title: occasional messages from the Sky Map team about rare sky events, shown as a notification, in the widget and when the app opens">پیام‌هایی از Sky Map</string>
+    <string name="settings_announcements_summary" translation_description="Explanation of the announcements preference">
+    هشدارهای نادر مانند شفق قطبی قوی یا یک سیاره پرنور. به صورت اعلان، در ویجت آسمان امشب، یا هنگام باز کردن برنامه نمایش داده می‌شود.
+    </string>
+    <string name="channel_announcements_name" translation_description="Notification channel name for occasional messages from the Sky Map team">پیام‌هایی از Sky Map</string>
+    <string name="channel_announcements_description" translation_description="Notification channel description for occasional messages from the Sky Map team">اطلاع‌رسانی‌های نادر درباره رویدادهای مهم آسمانی</string>
+    <string name="announcement_dialog_dismiss" translation_description="Button that closes an announcement dialog and hides that message everywhere">بستن</string>
+    <string name="announcement_dialog_open" translation_description="Button on an announcement dialog that jumps to the sky object the message is about">نگاهی بیندازید</string>
+    <string name="announcement_dialog_continue" translation_description="Button on an announcement dialog that closes it and continues to the sky map">ادامه</string>
     <string name="settings_tonight_digest" translation_description="Preference title: a single evening notification summarizing what\'s visible tonight">خلاصه آسمان امشب</string>
     <string name="settings_tonight_digest_summary" translation_description="Explanation of the tonight-digest notification preference">یک خلاصه پس از غروب آفتاب، در شب‌های آرام نادیده گرفته می‌شود</string>
     <string name="settings_notifications_blocked" translation_description="Warning row shown when the user enabled notifications in the app but blocked them at the system level">اعلان‌ها برای Sky Map مسدود شده‌اند</string>

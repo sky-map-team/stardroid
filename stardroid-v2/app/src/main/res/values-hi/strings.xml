@@ -58,6 +58,8 @@
     <string name="notif_eclipse_text" translation_description="Body of the lunar eclipse notification, telling the user when it begins. %1$s is a time.">लगभग %1$s के आसपास शुरू होगा — बाहर निकलने लायक है</string>
     <string name="satellite_name_iss" translation_description="Display name for the International Space Station.">अंतरिक्ष स्टेशन</string>
     <string name="satellite_name_tiangong" translation_description="Display name for the Chinese space station Tiangong.">तियांगोंग</string>
+    <string name="layer_param_shower_alerts" translation_description="Label for the setting that turns on a notification on the evening a meteor shower peaks.">शीर्षक चेतावनी</string>
+    <string name="layer_param_shower_alerts_description" translation_description="Explains what the meteor-shower alert setting does: a notification on the evening a shower reaches its annual peak.">उल्का बौछार के चरम पर होने की शाम को मुझे सूचित करें</string>
     <string name="layer_param_pass_alerts" translation_description="Label for the setting that turns on a notification shortly before a satellite passes overhead.">पारगमन अलर्ट</string>
     <string name="layer_param_pass_alerts_description" translation_description="Explains what the pass-alert setting does: a single notification before the best visible pass of the night.">हर रात सबसे अच्छे दृश्यमान पारगमन से पहले मुझे सूचित करें</string>
     <string name="layer_param_eclipse_alerts" translation_description="Label for the setting that turns on a notification before a lunar eclipse begins.">ग्रहण अलर्ट</string>
@@ -69,6 +71,10 @@
     <string name="layer_param_altaz_grid_density_medium_desc" translation_description="Explains the medium alt/az grid density: 12 azimuth lines, 30 degrees apart.">12 दिशा लाइनें, 30° की दूरी पर</string>
     <string name="layer_param_altaz_grid_density_fine" translation_description="Option label for the alt/az grid's densest setting: 24 azimuth lines, 15 degrees apart.">बारीक</string>
     <string name="layer_param_altaz_grid_density_fine_desc" translation_description="Explains the fine alt/az grid density: 24 azimuth lines, matching the celestial grid's meridian count.">खगोलीय ग्रिड के अनुरूप 24 दिशा लाइनें</string>
+    <string name="layer_param_radec_grid_density" translation_description="Label for the celestial (RA/Dec) grid's line-count setting.">लाइन की संख्या</string>
+    <string name="layer_param_radec_grid_density_coarse_desc" translation_description="Explains the coarse celestial grid density: a meridian every 3 hours of right ascension and a circle every 30 degrees of declination.">हर 3 घंटे में मध्याह्न रेखाएं, हर 30° पर वृत्त</string>
+    <string name="layer_param_radec_grid_density_medium_desc" translation_description="Explains the medium celestial grid density: a meridian every 2 hours of right ascension and a circle every 15 degrees of declination.">हर 2 घंटे में मध्याह्न रेखाएं, हर 15° पर वृत्त</string>
+    <string name="layer_param_radec_grid_density_fine_desc" translation_description="Explains the fine celestial grid density: a meridian every hour of right ascension and a circle every 10 degrees of declination.">हर घंटे मध्याह्न रेखाएं, हर 10° पर वृत्त</string>
     <string name="satellite_description" translation_description="Short description shown on the info card for an artificial satellite.">
     निचली पृथ्वी कक्षा में एक कृत्रिम उपग्रह, जो अँधेरे आकाश में सूर्य के प्रकाश से जगमगा रहा है। यह कुछ ही मिनटों में क्षितिज से क्षितिज तक लगातार और बिना टिमटिमाए गति करता हुआ पार करता है।
     </string>
@@ -95,7 +101,55 @@
     <string name="layer_horizon">क्षितिज</string>
     <string name="layer_ecliptic">क्रांतिवृत्त</string>
     <string name="layer_altaz_grid" translation_description="Toggle label for the layer showing the altitude/azimuth (horizontal) coordinate grid, for naked-eye or manual alt-az mount observers.">Alt/Az ग्रिड</string>
-    <string name="layer_sky_gradient">आकाश ग्रेडिएंट</string>
+    <string name="layer_sky_gradient" translation_description="Toggle label for the daytime sky-brightness gradient and the ground coloring.">आकाश का रंग</string>
+
+    <!-- Long-press help for layers in the layer-visibility sheet. -->
+    <string name="layer_help_stars" translation_description="Long-press explanation of the stars layer.">
+    तारे, चमक के अनुसार आकार और रंग से रंगे हुए। विवरण के लिए किसी भी तारा पर टैप करें।
+    </string>
+    <string name="layer_help_constellations" translation_description="Long-press explanation of the constellations layer.">तारामंडल की रेखाएं और नाम, तारा पैटर्न को समझने में आपकी मदद करने के लिए।</string>
+    <string name="layer_help_deep_sky" translation_description="Long-press explanation of the deep-sky layer.">
+    मंदाकिनी, नीहारिका और तारा क्लस्टर: हमारे सौर मंडल से बहुत दूर स्थित वस्तुएँ। इनमें से कई को वास्तविक रूप से देखने के लिए दूरबीन या टेलीस्कोप की आवश्यकता होती है।
+    </string>
+    <string name="layer_help_solar_system" translation_description="Long-press explanation of the solar system layer.">सूर्य, चन्द्रमा (अपनी वर्तमान कला के साथ) और ग्रह।</string>
+    <string name="layer_help_meteor_showers" translation_description="Long-press explanation of the meteor showers layer.">
+    प्रत्येक वार्षिक उल्का बौछार का उद्गम बिंदु: आकाश में वह बिंदु जिससे उल्काएं निकलती हुई प्रतीत होती हैं।
+    </string>
+    <string name="layer_help_satellites" translation_description="Long-press explanation of the satellites layer.">
+    अंतरिक्ष स्टेशन और तियांगोंग जैसे उपग्रह, जो दिखाए जाते हैं कि वे अभी कहाँ हैं। इसके लिए हाल ही में डाउनलोड किए गए ऑर्बिट डेटा की आवश्यकता होती है।
+    </string>
+    <string name="layer_help_grid" translation_description="Long-press explanation of the celestial grid layer.">
+    दाहिने आरोहण और झुकाव का खगोलीय निर्देशांक ग्रिड: आकाश का अक्षांश और देशांतर के बराबर। यह तारों पर तय किया गया है।
+    </string>
+    <string name="layer_help_horizon" translation_description="Long-press explanation of the horizon layer.">
+    क्षितिज रेखा और दिशा-सूचक बिंदु, ताकि आप जान सकें कि उत्तर किधर है और ज़मीन कहाँ है।
+    </string>
+    <string name="layer_help_ecliptic" translation_description="Long-press explanation of the ecliptic layer.">
+    वह पथ जो सूर्य एक वर्ष में आकाश में तय करता है। चन्द्रमा और ग्रह हमेशा इसके करीब रहते हैं।
+    </string>
+    <string name="layer_help_altaz_grid" translation_description="Long-press explanation of the alt/az grid layer.">
+    ऊंचाई (क्षितिज से ऊपर की ऊंचाई) और आज़िमथ (दिशासूचक दिशा) का एक ग्रिड। खगोलीय ग्रिड के विपरीत, यह तारों से नहीं, बल्कि आपके क्षितिज से जुड़ा होता है।
+    </string>
+    <string name="layer_help_sky_gradient" translation_description="Long-press explanation of the sky coloring toggle.">
+    दिन के समय के अनुसार आकाश को छाया देता है, दिन में उज्ज्वल और रात में अंधेरा, और ज़मीन को रंग देता है।
+    </string>
+    <string name="layer_help_hud" translation_description="Long-press explanation of the pointing readout toggle.">आपका फोन कहाँ इशारा कर रहा है इसका विवरण: इसकी कम्पास दिशा और ऊंचाई।</string>
+    <string name="layer_help_camera" translation_description="Long-press explanation of the through-camera toggle.">
+    स्काई मैप के पीछे लाइव कैमरा दिखाता है ताकि खींचा गया आकाश असली आकाश पर ओवरले हो सके। गति संवेदकों की आवश्यकता है।
+    </string>
+    <string name="layer_help_options_solar_system" translation_description="Long-press note listing what can be customized on the solar system layer.">
+    बिंब आकार: सूर्य, चन्द्रमा और ग्रहों को कितना बड़ा दिखाया गया है।
+ग्रहण चेतावनियाँ: चंद्र ग्रहण से पहले एक सूचना।
+    </string>
+    <string name="layer_help_options_satellites" translation_description="Long-press note listing what can be customized on the satellites layer.">गुज़रने की चेतावनी: हर रात सबसे अच्छे दिखने वाले गुज़रने से पहले एक सूचना।</string>
+    <string name="layer_help_options_meteor_showers" translation_description="Long-press note listing what can be customized on the meteor showers layer.">शीर्षक चेतावनी: बौछार के अपने वार्षिक चरम पर पहुँचने की शाम को एक सूचना।</string>
+    <string name="layer_help_options_grid" translation_description="Long-press note listing what can be customized on the celestial grid layer.">लाइन की संख्या: हर 3, 2 या 1 घंटे और हर 30°, 15° या 10° पर एक लाइन।</string>
+    <string name="layer_help_options_altaz_grid" translation_description="Long-press note listing what can be customized on the alt/az grid layer.">लाइन की संख्या: 8, 12 या 24 दिशा रेखाएं।</string>
+    <string name="layer_help_customizable" translation_description="Heading in the layer help popup above the list of customizable options.">जिसे आप कस्टमाइज़ कर सकते हैं</string>
+    <string name="layer_help_expand_hint" translation_description="Hint in the layer help popup for layers with options, pointing to the arrow button on the row.">इन्हें बदलने के लिए पंक्ति पर तीर पर टैप करें।</string>
+    <string name="layer_help_customize" translation_description="Button in the layer help popup that opens the Layers sheet on that layer's options.">कस्टमाइज़ करें</string>
+    <string name="layer_help_close" translation_description="Button that dismisses the layer help popup.">समझ गए</string>
+    <string name="layer_help_long_click_label" translation_description="Accessibility label for the long-press action on a layer row, which shows an explanation of the layer.">यह क्या करता है दिखाएं</string>
 
     <!-- Map screen controls. -->
     <string name="layers_sheet_title" translation_description="Title of the bottom sheet listing sky map layers the user can show or hide.">परतें</string>
@@ -146,8 +200,8 @@
     <string name="ar_shutter_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual shutter (exposure) time in through-camera mode.">कैमरा शटर समय</string>
     <string name="share_button" translation_description="Overflow-menu row that captures the current sky view as an image and opens the system share sheet.">आकाश साझा करें</string>
     <string name="share_chooser_title" translation_description="Title of the system share sheet when sharing a captured sky image.">इस आकाश को साझा करें</string>
-    <string name="share_invitation" translation_description="Short invitation stamped on the footer of shared sky images, above the store link.">आप क्या देख रहे हैं, उसे देखें — Sky Map मुफ़्त में प्राप्त करें</string>
-    <string name="share_text" translation_description="Text accompanying a shared sky image in apps that accept both an image and text. %1$s is the app-store link.">आप क्या देख रहे हैं, उसे देखें — Sky Map मुफ़्त में प्राप्त करें: %1$s</string>
+    <string name="share_invitation" translation_description="Short invitation stamped on the footer of shared sky images, above the store link.">ब्रह्मांड आपकी जेब में — Sky Map मुफ्त में प्राप्त करें</string>
+    <string name="share_text" translation_description="Text accompanying a shared sky image in apps that accept both an image and text. %1$s is the app-store link.">ब्रह्मांड आपकी जेब में — Sky Map मुफ्त में प्राप्त करें: %1$s</string>
     <!-- tm:omitted name="share_store_link" reason="identical_to_source" -->
     <string name="share_layout_overlay" translation_description="Caption of the share-layout choice that draws the star map over the camera photo, as seen on screen.">ओवरले</string>
     <string name="share_layout_side_by_side" translation_description="Caption of the share-layout choice that puts the camera photo and the star map next to each other.">साथ-साथ</string>
@@ -448,6 +502,7 @@
     <string name="diagnostics_utc_datetime">सार्वभौमिक दिनांक समय</string>
     <string name="diagnostics_section_network">नेटवर्क</string>
     <string name="diagnostics_connection">कनेक्शन</string>
+    <string name="diagnostics_section_experiments" translation_description="Section heading in the diagnostics screen listing the current feature-flag (experiment) values">प्रयोग फ्लैग</string>
     <string name="diagnostics_section_satellites" translation_description="Section heading in the diagnostics screen for satellite orbital-data status">उपग्रह</string>
     <string name="diagnostics_satellite_data" translation_description="Row label in the diagnostics screen for the age and count of cached satellite orbital data">कक्षा डेटा</string>
     <string name="diagnostics_satellite_data_none" translation_description="Row value in the diagnostics screen when no satellite orbital data has been downloaded yet">डाउनलोड नहीं किया गया</string>
@@ -456,6 +511,9 @@
     <string name="diagnostics_satellite_never_fetched" translation_description="Row value in the diagnostics screen when satellite orbital data has never been downloaded">कभी नहीं</string>
     <string name="diagnostics_satellite_circuit_open" translation_description="Row label in the diagnostics screen for when satellite downloads are paused after repeated server errors">डाउनलोड रोके गए</string>
     <string name="diagnostics_satellite_circuit_open_format" translation_description="Row value in the diagnostics screen showing when paused satellite downloads will resume and how many failures caused the pause. %1$s is a date and time, %2$d is a count">%1$s तक (%2$d विफलताएँ)</string>
+    <string name="diagnostics_experiments_last_fetched" translation_description="Row label in the diagnostics experiment flags section: when the feature-flag config was last downloaded from the server">अंतिम बार प्राप्त किया गया</string>
+    <string name="diagnostics_experiments_never_fetched" translation_description="Row value in the diagnostics experiment flags section when the feature-flag config has never been downloaded">कभी नहीं</string>
+    <string name="diagnostics_experiments_fetch_now" translation_description="Label on a button in the diagnostics screen that downloads the feature-flag config from the server immediately">प्रयोग फ्लैग अभी प्राप्त करें</string>
     <string name="diagnostics_satellite_force_fetch" translation_description="Label on a debug-only button in the diagnostics screen that downloads satellite orbital data immediately">उपग्रह डेटा अभी प्राप्त करें (डीबग)</string>
     <string name="diagnostics_connected">कनेक्ट किया गया</string>
     <string name="diagnostics_disconnected">डिस्कनेक्ट किया गया</string>
@@ -616,6 +674,19 @@
     </string>
     <string name="settings_shower_alerts" translation_description="Preference title: notify on the evening a meteor shower reaches its annual peak">उल्का वर्षा का चरम</string>
     <string name="settings_shower_alerts_summary" translation_description="Explanation of the meteor-shower notification preference">साल में लगभग एक दर्जन, चरम की शाम को</string>
+    <string name="settings_eclipse_alerts" translation_description="Preference title: notify shortly before a lunar eclipse begins">चन्द्र ग्रहण</string>
+    <string name="settings_eclipse_alerts_summary" translation_description="Explanation of the lunar-eclipse notification preference">चन्द्र ग्रहण शुरू होने से पहले एक एकल चेतावनी</string>
+    <string name="settings_pass_alerts" translation_description="Preference title: notify shortly before a satellite passes overhead">उपग्रह का गुजरना</string>
+    <string name="settings_pass_alerts_summary" translation_description="Explanation of the satellite-pass notification preference">रात के सबसे अच्छे दिखने वाले गुजरने से पहले एक एकल चेतावनी</string>
+    <string name="settings_announcements" translation_description="Preference title: occasional messages from the Sky Map team about rare sky events, shown as a notification, in the widget and when the app opens">Sky Map से संदेश</string>
+    <string name="settings_announcements_summary" translation_description="Explanation of the announcements preference">
+    दुर्लभ सूचनाएं जैसे प्रबल ध्रुवीय ज्योति या कोई चमकीला ग्रह। यह सूचना, स्काई टूनाइट विजेट या ऐप खोलने पर दिखाई देती है।
+    </string>
+    <string name="channel_announcements_name" translation_description="Notification channel name for occasional messages from the Sky Map team">Sky Map से संदेश</string>
+    <string name="channel_announcements_description" translation_description="Notification channel description for occasional messages from the Sky Map team">उल्लेखनीय खगोलीय घटनाओं के बारे में दुर्लभ जानकारी</string>
+    <string name="announcement_dialog_dismiss" translation_description="Button that closes an announcement dialog and hides that message everywhere">खारिज करें</string>
+    <string name="announcement_dialog_open" translation_description="Button on an announcement dialog that jumps to the sky object the message is about">एक नज़र डालें</string>
+    <string name="announcement_dialog_continue" translation_description="Button on an announcement dialog that closes it and continues to the sky map">जारी रखें</string>
     <string name="settings_tonight_digest" translation_description="Preference title: a single evening notification summarizing what\'s visible tonight">आज रात के आकाश का सार</string>
     <string name="settings_tonight_digest_summary" translation_description="Explanation of the tonight-digest notification preference">सूर्यास्त के बाद एक सारांश, शांत रातों में छोड़ा गया</string>
     <string name="settings_notifications_blocked" translation_description="Warning row shown when the user enabled notifications in the app but blocked them at the system level">Sky Map के लिए सूचनाएँ अवरुद्ध हैं</string>

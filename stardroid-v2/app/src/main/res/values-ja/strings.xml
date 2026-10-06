@@ -58,6 +58,8 @@
     <string name="notif_eclipse_text" translation_description="Body of the lunar eclipse notification, telling the user when it begins. %1$s is a time.">約%1$s頃に始まります — 外に出て見る価値があります</string>
     <string name="satellite_name_iss" translation_description="Display name for the International Space Station.">宇宙ステーション</string>
     <string name="satellite_name_tiangong" translation_description="Display name for the Chinese space station Tiangong.">天宮</string>
+    <string name="layer_param_shower_alerts" translation_description="Label for the setting that turns on a notification on the evening a meteor shower peaks.">極大日通知</string>
+    <string name="layer_param_shower_alerts_description" translation_description="Explains what the meteor-shower alert setting does: a notification on the evening a shower reaches its annual peak.">流星群の極大日の夕方に通知する</string>
     <string name="layer_param_pass_alerts" translation_description="Label for the setting that turns on a notification shortly before a satellite passes overhead.">通過通知</string>
     <string name="layer_param_pass_alerts_description" translation_description="Explains what the pass-alert setting does: a single notification before the best visible pass of the night.">毎晩の最もよく見える通過の前に通知する</string>
     <string name="layer_param_eclipse_alerts" translation_description="Label for the setting that turns on a notification before a lunar eclipse begins.">月食通知</string>
@@ -69,6 +71,10 @@
     <string name="layer_param_altaz_grid_density_medium_desc" translation_description="Explains the medium alt/az grid density: 12 azimuth lines, 30 degrees apart.">30°間隔の12方向線</string>
     <string name="layer_param_altaz_grid_density_fine" translation_description="Option label for the alt/az grid's densest setting: 24 azimuth lines, 15 degrees apart.">細かい</string>
     <string name="layer_param_altaz_grid_density_fine_desc" translation_description="Explains the fine alt/az grid density: 24 azimuth lines, matching the celestial grid's meridian count.">天球グリッドに合わせた24方向線</string>
+    <string name="layer_param_radec_grid_density" translation_description="Label for the celestial (RA/Dec) grid's line-count setting.">線の本数</string>
+    <string name="layer_param_radec_grid_density_coarse_desc" translation_description="Explains the coarse celestial grid density: a meridian every 3 hours of right ascension and a circle every 30 degrees of declination.">赤経3時間おき、赤緯30°おきの経緯線</string>
+    <string name="layer_param_radec_grid_density_medium_desc" translation_description="Explains the medium celestial grid density: a meridian every 2 hours of right ascension and a circle every 15 degrees of declination.">赤経2時間おき、赤緯15°おきの経緯線</string>
+    <string name="layer_param_radec_grid_density_fine_desc" translation_description="Explains the fine celestial grid density: a meridian every hour of right ascension and a circle every 10 degrees of declination.">赤経1時間おき、赤緯10°おきの経緯線</string>
     <string name="satellite_description" translation_description="Short description shown on the info card for an artificial satellite.">地球低軌道にある人工衛星で、暗い空に太陽光を浴びて輝いています。数分で地平線から地平線までを、安定して点滅することなく横切ります。</string>
     <string name="satellite_next_pass" translation_description="Heading above the next visible pass details on a satellite\'s info card.">次の見える通過</string>
     <string name="satellite_pass_when" translation_description="When and how high the next satellite pass will be. %1$s is a time, %2$s is a compass direction, %3$d is an angle in degrees.">%1$s、%2$sに昇り、%3$d°に達します</string>
@@ -93,7 +99,33 @@
     <string name="layer_horizon">地平線</string>
     <string name="layer_ecliptic">黄道</string>
     <string name="layer_altaz_grid" translation_description="Toggle label for the layer showing the altitude/azimuth (horizontal) coordinate grid, for naked-eye or manual alt-az mount observers.">高度/方位グリッド</string>
-    <string name="layer_sky_gradient">空のグラデーション</string>
+    <string name="layer_sky_gradient" translation_description="Toggle label for the daytime sky-brightness gradient and the ground coloring.">空の色づけ</string>
+
+    <!-- Long-press help for layers in the layer-visibility sheet. -->
+    <string name="layer_help_stars" translation_description="Long-press explanation of the stars layer.">明るさに応じたサイズと色で表示される恒星です。星をタップすると詳細が表示されます。</string>
+    <string name="layer_help_constellations" translation_description="Long-press explanation of the constellations layer.">星座の線と名前です。星の並びを探す際の目安になります。</string>
+    <string name="layer_help_deep_sky" translation_description="Long-press explanation of the deep-sky layer.">銀河、星雲、星団：太陽系をはるかに超えた天体。肉眼で見つけるには双眼鏡や望遠鏡が必要なものが多くあります。</string>
+    <string name="layer_help_solar_system" translation_description="Long-press explanation of the solar system layer.">太陽、月（現在の満ち欠けの状態）、および惑星です。</string>
+    <string name="layer_help_meteor_showers" translation_description="Long-press explanation of the meteor showers layer.">各年の流星群の輻射点です。流星が放射状に飛び出してくるように見える天球上の点を示します。</string>
+    <string name="layer_help_satellites" translation_description="Long-press explanation of the satellites layer.">国際宇宙ステーション（ISS）や天宮などの衛星を、現在の位置に表示します。最近ダウンロードされた軌道データが必要です。</string>
+    <string name="layer_help_grid" translation_description="Long-press explanation of the celestial grid layer.">赤経と赤緯による天球座標グリッド。地球上の緯度と経度に相当するもので、星々に固定されています。</string>
+    <string name="layer_help_horizon" translation_description="Long-press explanation of the horizon layer.">地平線と方角です。北の方角や地表の位置を確認できます。</string>
+    <string name="layer_help_ecliptic" translation_description="Long-press explanation of the ecliptic layer.">1年かけて太陽が空を移動する経路（黄道）です。月や惑星は常にこの近くを移動します。</string>
+    <string name="layer_help_altaz_grid" translation_description="Long-press explanation of the alt/az grid layer.">高度（地平線からの高さ）と方位（方角）のグリッドです。天球グリッドとは異なり、星ではなく地平線に固定されています。</string>
+    <string name="layer_help_sky_gradient" translation_description="Long-press explanation of the sky coloring toggle.">時刻に合わせて空の色を変化させ（昼は明るく、夜は暗く）、地面の色も表示します。</string>
+    <string name="layer_help_hud" translation_description="Long-press explanation of the pointing readout toggle.">お使いの端末が向いている方角と高度の読み取り値です。</string>
+    <string name="layer_help_camera" translation_description="Long-press explanation of the through-camera toggle.">スカイマップの背景にライブカメラ映像を表示し、描画された星空を実際の空に重ね合わせます。モーションセンサーが必要です。</string>
+    <string name="layer_help_options_solar_system" translation_description="Long-press note listing what can be customized on the solar system layer.">円盤のサイズ：太陽、月、惑星を描画する大きさ。
+日食アラート：月食の発生前にお知らせする通知。</string>
+    <string name="layer_help_options_satellites" translation_description="Long-press note listing what can be customized on the satellites layer.">通過アラート：毎晩最も条件の良い通過の前に通知します。</string>
+    <string name="layer_help_options_meteor_showers" translation_description="Long-press note listing what can be customized on the meteor showers layer.">極大日通知：流星群が年間を通じて極大を迎える夕方に通知します。</string>
+    <string name="layer_help_options_grid" translation_description="Long-press note listing what can be customized on the celestial grid layer.">線の本数：3時間、2時間、または1時間おき、および30°、15°、または10°おきの線を表示します。</string>
+    <string name="layer_help_options_altaz_grid" translation_description="Long-press note listing what can be customized on the alt/az grid layer.">線の本数：8、12、または24本の方位線を表示します。</string>
+    <string name="layer_help_customizable" translation_description="Heading in the layer help popup above the list of customizable options.">カスタマイズ可能な項目</string>
+    <string name="layer_help_expand_hint" translation_description="Hint in the layer help popup for layers with options, pointing to the arrow button on the row.">変更するには、行の右側にある矢印をタップしてください。</string>
+    <string name="layer_help_customize" translation_description="Button in the layer help popup that opens the Layers sheet on that layer's options.">カスタマイズ</string>
+    <string name="layer_help_close" translation_description="Button that dismisses the layer help popup.">了解</string>
+    <string name="layer_help_long_click_label" translation_description="Accessibility label for the long-press action on a layer row, which shows an explanation of the layer.">機能の説明を表示</string>
 
     <!-- Map screen controls. -->
     <string name="layers_sheet_title" translation_description="Title of the bottom sheet listing sky map layers the user can show or hide.">レイヤー</string>
@@ -143,8 +175,8 @@
     <string name="ar_shutter_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual shutter (exposure) time in through-camera mode.">カメラシャッター時間</string>
     <string name="share_button" translation_description="Overflow-menu row that captures the current sky view as an image and opens the system share sheet.">空を共有</string>
     <string name="share_chooser_title" translation_description="Title of the system share sheet when sharing a captured sky image.">この空を共有</string>
-    <string name="share_invitation" translation_description="Short invitation stamped on the footer of shared sky images, above the store link.">見ているものを確認 — Sky Mapを無料で入手</string>
-    <string name="share_text" translation_description="Text accompanying a shared sky image in apps that accept both an image and text. %1$s is the app-store link.">見ているものを確認 — Sky Mapを無料で入手: %1$s</string>
+    <string name="share_invitation" translation_description="Short invitation stamped on the footer of shared sky images, above the store link.">ポケットの中の宇宙 — Sky Map を無料でダウンロード</string>
+    <string name="share_text" translation_description="Text accompanying a shared sky image in apps that accept both an image and text. %1$s is the app-store link.">ポケットの中の宇宙 — Sky Map を無料でダウンロード: %1$s</string>
     <!-- tm:omitted name="share_store_link" reason="identical_to_source" -->
     <string name="share_layout_overlay" translation_description="Caption of the share-layout choice that draws the star map over the camera photo, as seen on screen.">オーバーレイ</string>
     <string name="share_layout_side_by_side" translation_description="Caption of the share-layout choice that puts the camera photo and the star map next to each other.">並べて表示</string>
@@ -437,6 +469,7 @@
     <string name="diagnostics_utc_datetime">世界時</string>
     <string name="diagnostics_section_network">ネットワーク</string>
     <string name="diagnostics_connection">接続</string>
+    <string name="diagnostics_section_experiments" translation_description="Section heading in the diagnostics screen listing the current feature-flag (experiment) values">実験的機能フラグ</string>
     <string name="diagnostics_section_satellites" translation_description="Section heading in the diagnostics screen for satellite orbital-data status">衛星</string>
     <string name="diagnostics_satellite_data" translation_description="Row label in the diagnostics screen for the age and count of cached satellite orbital data">軌道データ</string>
     <string name="diagnostics_satellite_data_none" translation_description="Row value in the diagnostics screen when no satellite orbital data has been downloaded yet">未ダウンロード</string>
@@ -445,6 +478,9 @@
     <string name="diagnostics_satellite_never_fetched" translation_description="Row value in the diagnostics screen when satellite orbital data has never been downloaded">なし</string>
     <string name="diagnostics_satellite_circuit_open" translation_description="Row label in the diagnostics screen for when satellite downloads are paused after repeated server errors">ダウンロード一時停止中</string>
     <string name="diagnostics_satellite_circuit_open_format" translation_description="Row value in the diagnostics screen showing when paused satellite downloads will resume and how many failures caused the pause. %1$s is a date and time, %2$d is a count">%1$sまで (%2$d回の失敗)</string>
+    <string name="diagnostics_experiments_last_fetched" translation_description="Row label in the diagnostics experiment flags section: when the feature-flag config was last downloaded from the server">最終取得日時</string>
+    <string name="diagnostics_experiments_never_fetched" translation_description="Row value in the diagnostics experiment flags section when the feature-flag config has never been downloaded">未取得</string>
+    <string name="diagnostics_experiments_fetch_now" translation_description="Label on a button in the diagnostics screen that downloads the feature-flag config from the server immediately">今すぐ実験的機能フラグを取得</string>
     <string name="diagnostics_satellite_force_fetch" translation_description="Label on a debug-only button in the diagnostics screen that downloads satellite orbital data immediately">衛星データを今すぐ取得 (デバッグ)</string>
     <string name="diagnostics_connected">接続中</string>
     <string name="diagnostics_disconnected">切断中</string>
@@ -594,6 +630,17 @@
     <string name="settings_notifications_intro" translation_description="Introduction under the notifications settings header, stating how rarely the app notifies">Sky Map は、1日に多くても1回、珍しい天文現象についてのみ通知します。すべての通知は、ユーザーがオンにするまでオフになっています。</string>
     <string name="settings_shower_alerts" translation_description="Preference title: notify on the evening a meteor shower reaches its annual peak">流星群のピーク</string>
     <string name="settings_shower_alerts_summary" translation_description="Explanation of the meteor-shower notification preference">年に約12回、ピークの夜に通知</string>
+    <string name="settings_eclipse_alerts" translation_description="Preference title: notify shortly before a lunar eclipse begins">月食</string>
+    <string name="settings_eclipse_alerts_summary" translation_description="Explanation of the lunar-eclipse notification preference">月食が始まる直前に1回通知します</string>
+    <string name="settings_pass_alerts" translation_description="Preference title: notify shortly before a satellite passes overhead">人工衛星の通過</string>
+    <string name="settings_pass_alerts_summary" translation_description="Explanation of the satellite-pass notification preference">その夜に最も条件良く通過する直前に1回通知します</string>
+    <string name="settings_announcements" translation_description="Preference title: occasional messages from the Sky Map team about rare sky events, shown as a notification, in the widget and when the app opens">Sky Map チームからのメッセージ</string>
+    <string name="settings_announcements_summary" translation_description="Explanation of the announcements preference">強力なオーロラや明るい惑星などのめったにないお知らせ。通知、「今夜の空」ウィジェット、またはアプリを開いたときに表示されます。</string>
+    <string name="channel_announcements_name" translation_description="Notification channel name for occasional messages from the Sky Map team">Sky Map チームからのメッセージ</string>
+    <string name="channel_announcements_description" translation_description="Notification channel description for occasional messages from the Sky Map team">注目すべき天文現象に関するお知らせ</string>
+    <string name="announcement_dialog_dismiss" translation_description="Button that closes an announcement dialog and hides that message everywhere">閉じる</string>
+    <string name="announcement_dialog_open" translation_description="Button on an announcement dialog that jumps to the sky object the message is about">詳細を見る</string>
+    <string name="announcement_dialog_continue" translation_description="Button on an announcement dialog that closes it and continues to the sky map">続ける</string>
     <string name="settings_tonight_digest" translation_description="Preference title: a single evening notification summarizing what\'s visible tonight">今夜の空の概要</string>
     <string name="settings_tonight_digest_summary" translation_description="Explanation of the tonight-digest notification preference">日没後に1回概要を通知、静かな夜はスキップ</string>
     <string name="settings_notifications_blocked" translation_description="Warning row shown when the user enabled notifications in the app but blocked them at the system level">Sky Mapの通知がブロックされています</string>

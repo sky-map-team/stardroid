@@ -58,6 +58,8 @@
     <string name="notif_eclipse_text" translation_description="Body of the lunar eclipse notification, telling the user when it begins. %1$s is a time.">大约在%1$s开始 — 值得出门观看</string>
     <string name="satellite_name_iss" translation_description="Display name for the International Space Station.">国际空间站</string>
     <string name="satellite_name_tiangong" translation_description="Display name for the Chinese space station Tiangong.">天宫</string>
+    <string name="layer_param_shower_alerts" translation_description="Label for the setting that turns on a notification on the evening a meteor shower peaks.">极大期提醒</string>
+    <string name="layer_param_shower_alerts_description" translation_description="Explains what the meteor-shower alert setting does: a notification on the evening a shower reaches its annual peak.">在流星雨极大期当晚发送通知</string>
     <string name="layer_param_pass_alerts" translation_description="Label for the setting that turns on a notification shortly before a satellite passes overhead.">过境提醒</string>
     <string name="layer_param_pass_alerts_description" translation_description="Explains what the pass-alert setting does: a single notification before the best visible pass of the night.">在每晚最佳可见过境前提醒我</string>
     <string name="layer_param_eclipse_alerts" translation_description="Label for the setting that turns on a notification before a lunar eclipse begins.">月食提醒</string>
@@ -69,6 +71,10 @@
     <string name="layer_param_altaz_grid_density_medium_desc" translation_description="Explains the medium alt/az grid density: 12 azimuth lines, 30 degrees apart.">12条方向线，间隔30°</string>
     <string name="layer_param_altaz_grid_density_fine" translation_description="Option label for the alt/az grid's densest setting: 24 azimuth lines, 15 degrees apart.">细</string>
     <string name="layer_param_altaz_grid_density_fine_desc" translation_description="Explains the fine alt/az grid density: 24 azimuth lines, matching the celestial grid's meridian count.">24条方向线，匹配天球网格</string>
+    <string name="layer_param_radec_grid_density" translation_description="Label for the celestial (RA/Dec) grid's line-count setting.">线条密度</string>
+    <string name="layer_param_radec_grid_density_coarse_desc" translation_description="Explains the coarse celestial grid density: a meridian every 3 hours of right ascension and a circle every 30 degrees of declination.">赤经每3小时一根经线，赤纬每30°一个圆圈</string>
+    <string name="layer_param_radec_grid_density_medium_desc" translation_description="Explains the medium celestial grid density: a meridian every 2 hours of right ascension and a circle every 15 degrees of declination.">赤经每2小时一根经线，赤纬每15°一个圆圈</string>
+    <string name="layer_param_radec_grid_density_fine_desc" translation_description="Explains the fine celestial grid density: a meridian every hour of right ascension and a circle every 10 degrees of declination.">赤经每1小时一根经线，赤纬每10°一个圆圈</string>
     <string name="satellite_description" translation_description="Short description shown on the info card for an artificial satellite.">一颗处于低地球轨道的人造卫星，在黑暗天空中被阳光照亮。它在几分钟内划过整个地平线，稳定移动且不闪烁。</string>
     <string name="satellite_next_pass" translation_description="Heading above the next visible pass details on a satellite\'s info card.">下次可见过境</string>
     <string name="satellite_pass_when" translation_description="When and how high the next satellite pass will be. %1$s is a time, %2$s is a compass direction, %3$d is an angle in degrees.">%1$s，升起于%2$s，达到%3$d°</string>
@@ -93,7 +99,33 @@
     <string name="layer_horizon">水平线</string>
     <string name="layer_ecliptic">黄道</string>
     <string name="layer_altaz_grid" translation_description="Toggle label for the layer showing the altitude/azimuth (horizontal) coordinate grid, for naked-eye or manual alt-az mount observers.">地平坐标网格</string>
-    <string name="layer_sky_gradient">天空梯度</string>
+    <string name="layer_sky_gradient" translation_description="Toggle label for the daytime sky-brightness gradient and the ground coloring.">天空颜色</string>
+
+    <!-- Long-press help for layers in the layer-visibility sheet. -->
+    <string name="layer_help_stars" translation_description="Long-press explanation of the stars layer.">星星，按亮度调整大小，按颜色着色。点击任意星星查看详情。</string>
+    <string name="layer_help_constellations" translation_description="Long-press explanation of the constellations layer.">星座的线条和名称，帮助您辨认星图。</string>
+    <string name="layer_help_deep_sky" translation_description="Long-press explanation of the deep-sky layer.">星系、星云和星团：太阳系之外的深空天体。其中许多天体需要使用双筒望远镜或天文望远镜才能观测到。</string>
+    <string name="layer_help_solar_system" translation_description="Long-press explanation of the solar system layer.">太阳、月亮（带当前月相）以及各大行星。</string>
+    <string name="layer_help_meteor_showers" translation_description="Long-press explanation of the meteor showers layer.">每年流星雨的辐射点：流星看起来从空中发出的起点。</string>
+    <string name="layer_help_satellites" translation_description="Long-press explanation of the satellites layer.">显示空间站和天宫等卫星的当前位置。需要最近下载的轨道数据。</string>
+    <string name="layer_help_grid" translation_description="Long-press explanation of the celestial grid layer.">赤经与赤纬的天球坐标网：天空中的经纬度。它固定在恒星上。</string>
+    <string name="layer_help_horizon" translation_description="Long-press explanation of the horizon layer.">地平线和罗盘方位，让您辨别北方以及地面的位置。</string>
+    <string name="layer_help_ecliptic" translation_description="Long-press explanation of the ecliptic layer.">太阳一年内在天空中运行的轨迹。月亮和行星始终在其附近。</string>
+    <string name="layer_help_altaz_grid" translation_description="Long-press explanation of the alt/az grid layer.">高度（地平线以上的高度）和方位角（指南针方向）网格。与天球网格不同，它固定在您的地平线上，而不是恒星上。</string>
+    <string name="layer_help_sky_gradient" translation_description="Long-press explanation of the sky coloring toggle.">根据时间渲染天空颜色（白天明亮，夜晚黑暗）并为地面着色。</string>
+    <string name="layer_help_hud" translation_description="Long-press explanation of the pointing readout toggle.">显示手机指向的读数：罗盘方位和高度角。</string>
+    <string name="layer_help_camera" translation_description="Long-press explanation of the through-camera toggle.">在星空图后方显示实时相机画面，让绘制的星空与真实星空重叠。需要运动传感器。</string>
+    <string name="layer_help_options_solar_system" translation_description="Long-press note listing what can be customized on the solar system layer.">圆盘大小：太阳、月亮和行星的绘制大小。
+月食提醒：月食发生前的通知。</string>
+    <string name="layer_help_options_satellites" translation_description="Long-press note listing what can be customized on the satellites layer.">过境提醒：每晚最佳可见过境前发送通知。</string>
+    <string name="layer_help_options_meteor_showers" translation_description="Long-press note listing what can be customized on the meteor showers layer.">极大期提醒：在流星雨达到年度极大期的当晚发送通知。</string>
+    <string name="layer_help_options_grid" translation_description="Long-press note listing what can be customized on the celestial grid layer.">线条密度：每 3、2 或 1 小时以及每 30°、15° 或 10° 一根线。</string>
+    <string name="layer_help_options_altaz_grid" translation_description="Long-press note listing what can be customized on the alt/az grid layer.">线条密度：8、12 或 24 条方向线。</string>
+    <string name="layer_help_customizable" translation_description="Heading in the layer help popup above the list of customizable options.">您可以自定义的内容</string>
+    <string name="layer_help_expand_hint" translation_description="Hint in the layer help popup for layers with options, pointing to the arrow button on the row.">点击行右侧的箭头可进行更改。</string>
+    <string name="layer_help_customize" translation_description="Button in the layer help popup that opens the Layers sheet on that layer's options.">自定义</string>
+    <string name="layer_help_close" translation_description="Button that dismisses the layer help popup.">知道了</string>
+    <string name="layer_help_long_click_label" translation_description="Accessibility label for the long-press action on a layer row, which shows an explanation of the layer.">显示其作用</string>
 
     <!-- Map screen controls. -->
     <string name="layers_sheet_title" translation_description="Title of the bottom sheet listing sky map layers the user can show or hide.">图层</string>
@@ -143,8 +175,8 @@
     <string name="ar_shutter_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual shutter (exposure) time in through-camera mode.">相机快门时间</string>
     <string name="share_button" translation_description="Overflow-menu row that captures the current sky view as an image and opens the system share sheet.">分享星空</string>
     <string name="share_chooser_title" translation_description="Title of the system share sheet when sharing a captured sky image.">分享星空</string>
-    <string name="share_invitation" translation_description="Short invitation stamped on the footer of shared sky images, above the store link.">看看你正在看什么 — 免费获取 Sky Map</string>
-    <string name="share_text" translation_description="Text accompanying a shared sky image in apps that accept both an image and text. %1$s is the app-store link.">看看你正在看什么 — 免费获取 Sky Map：%1$s</string>
+    <string name="share_invitation" translation_description="Short invitation stamped on the footer of shared sky images, above the store link.">将宇宙装进口袋 — 免费获取 Sky Map</string>
+    <string name="share_text" translation_description="Text accompanying a shared sky image in apps that accept both an image and text. %1$s is the app-store link.">将宇宙装进口袋 — 免费获取 Sky Map：%1$s</string>
     <!-- tm:omitted name="share_store_link" reason="identical_to_source" -->
     <string name="share_layout_overlay" translation_description="Caption of the share-layout choice that draws the star map over the camera photo, as seen on screen.">叠加</string>
     <string name="share_layout_side_by_side" translation_description="Caption of the share-layout choice that puts the camera photo and the star map next to each other.">并排</string>
@@ -431,6 +463,7 @@
     <string name="diagnostics_utc_datetime">世界协调时日期时间</string>
     <string name="diagnostics_section_network">网络</string>
     <string name="diagnostics_connection">连接</string>
+    <string name="diagnostics_section_experiments" translation_description="Section heading in the diagnostics screen listing the current feature-flag (experiment) values">实验性标志</string>
     <string name="diagnostics_section_satellites" translation_description="Section heading in the diagnostics screen for satellite orbital-data status">卫星</string>
     <string name="diagnostics_satellite_data" translation_description="Row label in the diagnostics screen for the age and count of cached satellite orbital data">轨道数据</string>
     <string name="diagnostics_satellite_data_none" translation_description="Row value in the diagnostics screen when no satellite orbital data has been downloaded yet">未下载</string>
@@ -439,6 +472,9 @@
     <string name="diagnostics_satellite_never_fetched" translation_description="Row value in the diagnostics screen when satellite orbital data has never been downloaded">从未</string>
     <string name="diagnostics_satellite_circuit_open" translation_description="Row label in the diagnostics screen for when satellite downloads are paused after repeated server errors">下载已暂停</string>
     <string name="diagnostics_satellite_circuit_open_format" translation_description="Row value in the diagnostics screen showing when paused satellite downloads will resume and how many failures caused the pause. %1$s is a date and time, %2$d is a count">直到 %1$s (%2$d 次失败)</string>
+    <string name="diagnostics_experiments_last_fetched" translation_description="Row label in the diagnostics experiment flags section: when the feature-flag config was last downloaded from the server">上次获取时间</string>
+    <string name="diagnostics_experiments_never_fetched" translation_description="Row value in the diagnostics experiment flags section when the feature-flag config has never been downloaded">从未</string>
+    <string name="diagnostics_experiments_fetch_now" translation_description="Label on a button in the diagnostics screen that downloads the feature-flag config from the server immediately">立即获取实验性标志</string>
     <string name="diagnostics_satellite_force_fetch" translation_description="Label on a debug-only button in the diagnostics screen that downloads satellite orbital data immediately">立即获取卫星数据 (调试)</string>
     <string name="diagnostics_connected">已连接</string>
     <string name="diagnostics_disconnected">已断开连接</string>
@@ -583,6 +619,17 @@
     <string name="settings_notifications_intro" translation_description="Introduction under the notifications settings header, stating how rarely the app notifies">Sky Map 仅在罕见的天文事件发生时发送通知，每天最多一次。所有通知默认关闭，直到您手动开启。</string>
     <string name="settings_shower_alerts" translation_description="Preference title: notify on the evening a meteor shower reaches its annual peak">流星雨极大</string>
     <string name="settings_shower_alerts_summary" translation_description="Explanation of the meteor-shower notification preference">每年约十几次，在极大之夜通知</string>
+    <string name="settings_eclipse_alerts" translation_description="Preference title: notify shortly before a lunar eclipse begins">月食</string>
+    <string name="settings_eclipse_alerts_summary" translation_description="Explanation of the lunar-eclipse notification preference">在月食开始前发送单次提醒</string>
+    <string name="settings_pass_alerts" translation_description="Preference title: notify shortly before a satellite passes overhead">卫星过境</string>
+    <string name="settings_pass_alerts_summary" translation_description="Explanation of the satellite-pass notification preference">在每晚最佳可见过境前发送单次提醒</string>
+    <string name="settings_announcements" translation_description="Preference title: occasional messages from the Sky Map team about rare sky events, shown as a notification, in the widget and when the app opens">来自 Sky Map 的消息</string>
+    <string name="settings_announcements_summary" translation_description="Explanation of the announcements preference">罕见的天文动态提醒，例如强极光或明亮的行星。以通知形式、在“今夜星空”小组件中或打开应用时显示。</string>
+    <string name="channel_announcements_name" translation_description="Notification channel name for occasional messages from the Sky Map team">来自 Sky Map 的消息</string>
+    <string name="channel_announcements_description" translation_description="Notification channel description for occasional messages from the Sky Map team">关于重要天象的罕见预告</string>
+    <string name="announcement_dialog_dismiss" translation_description="Button that closes an announcement dialog and hides that message everywhere">忽略</string>
+    <string name="announcement_dialog_open" translation_description="Button on an announcement dialog that jumps to the sky object the message is about">去看看</string>
+    <string name="announcement_dialog_continue" translation_description="Button on an announcement dialog that closes it and continues to the sky map">继续</string>
     <string name="settings_tonight_digest" translation_description="Preference title: a single evening notification summarizing what\'s visible tonight">今晚星空摘要</string>
     <string name="settings_tonight_digest_summary" translation_description="Explanation of the tonight-digest notification preference">日落后一份摘要，平静的夜晚跳过</string>
     <string name="settings_notifications_blocked" translation_description="Warning row shown when the user enabled notifications in the app but blocked them at the system level">Sky Map 的通知已被阻止</string>

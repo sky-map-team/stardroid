@@ -59,6 +59,8 @@
     <string name="notif_eclipse_text" translation_description="Body of the lunar eclipse notification, telling the user when it begins. %1$s is a time.">Begynder omkring %1$s — værd at gå ud for</string>
     <string name="satellite_name_iss" translation_description="Display name for the International Space Station.">Rumstationen</string>
     <!-- tm:omitted name="satellite_name_tiangong" reason="identical_to_source" -->
+    <string name="layer_param_shower_alerts" translation_description="Label for the setting that turns on a notification on the evening a meteor shower peaks.">Maksimumsvarsler</string>
+    <string name="layer_param_shower_alerts_description" translation_description="Explains what the meteor-shower alert setting does: a notification on the evening a shower reaches its annual peak.">Giv mig besked om aftenen, hvor en sværm når sit maksimum</string>
     <string name="layer_param_pass_alerts" translation_description="Label for the setting that turns on a notification shortly before a satellite passes overhead.">Passageadvarsler</string>
     <string name="layer_param_pass_alerts_description" translation_description="Explains what the pass-alert setting does: a single notification before the best visible pass of the night.">Giv mig besked før den bedste synlige passage hver nat</string>
     <string name="layer_param_eclipse_alerts" translation_description="Label for the setting that turns on a notification before a lunar eclipse begins.">Formørkelsesadvarsler</string>
@@ -70,6 +72,10 @@
     <string name="layer_param_altaz_grid_density_medium_desc" translation_description="Explains the medium alt/az grid density: 12 azimuth lines, 30 degrees apart.">12 retningslinjer, 30° mellemrum</string>
     <string name="layer_param_altaz_grid_density_fine" translation_description="Option label for the alt/az grid's densest setting: 24 azimuth lines, 15 degrees apart.">Fin</string>
     <string name="layer_param_altaz_grid_density_fine_desc" translation_description="Explains the fine alt/az grid density: 24 azimuth lines, matching the celestial grid's meridian count.">24 retningslinjer, svarer til himmelnettet</string>
+    <string name="layer_param_radec_grid_density" translation_description="Label for the celestial (RA/Dec) grid's line-count setting.">Linjeantal</string>
+    <string name="layer_param_radec_grid_density_coarse_desc" translation_description="Explains the coarse celestial grid density: a meridian every 3 hours of right ascension and a circle every 30 degrees of declination.">Meridianer hver 3. time, cirkler hver 30°</string>
+    <string name="layer_param_radec_grid_density_medium_desc" translation_description="Explains the medium celestial grid density: a meridian every 2 hours of right ascension and a circle every 15 degrees of declination.">Meridianer hver 2. time, cirkler hver 15°</string>
+    <string name="layer_param_radec_grid_density_fine_desc" translation_description="Explains the fine celestial grid density: a meridian every hour of right ascension and a circle every 10 degrees of declination.">Meridianer hver time, cirkler hver 10°</string>
     <string name="satellite_description" translation_description="Short description shown on the info card for an artificial satellite.">
     En kunstig satellit i lav jordbane, solbelyst mod en mørk himmel. Den krydser fra horisont til horisont på få minutter, bevæger sig jævnt og uden at blinke.
     </string>
@@ -96,7 +102,59 @@
     <string name="layer_horizon">Horisont</string>
     <string name="layer_ecliptic">Ekliptika</string>
     <string name="layer_altaz_grid" translation_description="Toggle label for the layer showing the altitude/azimuth (horizontal) coordinate grid, for naked-eye or manual alt-az mount observers.">Højde/azimut-gitter</string>
-    <string name="layer_sky_gradient">Himmelgradient</string>
+    <string name="layer_sky_gradient" translation_description="Toggle label for the daytime sky-brightness gradient and the ground coloring.">Himmelfarve</string>
+
+    <!-- Long-press help for layers in the layer-visibility sheet. -->
+    <string name="layer_help_stars" translation_description="Long-press explanation of the stars layer.">
+    Stjernerne, skaleret efter lysstyrke og farvetone. Tryk på en stjerne for at få flere oplysninger.
+    </string>
+    <string name="layer_help_constellations" translation_description="Long-press explanation of the constellations layer.">
+    Konstellationernes linjer og navne, som hjælper dig med at finde rundt i stjernemønstrene.
+    </string>
+    <string name="layer_help_deep_sky" translation_description="Long-press explanation of the deep-sky layer.">
+    Galakser, tåger og stjernehobe: objekter langt uden for vores solsystem. Mange kræver en kikkert eller et teleskop for at blive set i virkeligheden.
+    </string>
+    <string name="layer_help_solar_system" translation_description="Long-press explanation of the solar system layer.">Solen, Månen (med dens aktuelle fase) og planeterne.</string>
+    <string name="layer_help_meteor_showers" translation_description="Long-press explanation of the meteor showers layer.">
+    Radianten for hver årlig stjerneskudssværm: det punkt på himlen, som meteorerne ser ud til at strømme ud fra.
+    </string>
+    <string name="layer_help_satellites" translation_description="Long-press explanation of the satellites layer.">
+    Satellites som Rummets Station og Tiangong, vist hvor de er lige nu. Kræver nyligt downloadede omløbsdata.
+    </string>
+    <string name="layer_help_grid" translation_description="Long-press explanation of the celestial grid layer.">
+    Himlens koordinatnet af rektascension og deklination: himlens modstykke til bredde- og længdegrad. Det er fastgjort til stjernerne.
+    </string>
+    <string name="layer_help_horizon" translation_description="Long-press explanation of the horizon layer.">
+    Horisontlinjen og kompasretningerne, så du kan se, hvad der er nord, og hvor jorden er.
+    </string>
+    <string name="layer_help_ecliptic" translation_description="Long-press explanation of the ecliptic layer.">
+    Den bane, Solen følger hen over himlen i løbet af et år. Månen og planeterne holder sig altid tæt på den.
+    </string>
+    <string name="layer_help_altaz_grid" translation_description="Long-press explanation of the alt/az grid layer.">
+    Et net af højde (højde over horisonten) og azimut (kompasretning). I modsætning til det himmelske net er det fastgjort til din horisont og ikke stjernerne.
+    </string>
+    <string name="layer_help_sky_gradient" translation_description="Long-press explanation of the sky coloring toggle.">
+    Farver himlen, så den passer til tidspunktet på dagen – lyst om dagen og mørkt om natten – og farvelægger jorden.
+    </string>
+    <string name="layer_help_hud" translation_description="Long-press explanation of the pointing readout toggle.">En visning af, hvor din telefon peger hen: dens kompasretning og højde.</string>
+    <string name="layer_help_camera" translation_description="Long-press explanation of the through-camera toggle.">
+    Viser det live kamera bag stjernekortet, så det tegnede himmelrum lægges oven på det virkelige. Kræver bevægelsessensorer.
+    </string>
+    <string name="layer_help_options_solar_system" translation_description="Long-press note listing what can be customized on the solar system layer.">
+    Skivestørrelse: hvor store Solen, Månen og planeterne tegnes.
+Formørkelsesvarsler: en meddelelse før en måneformørkelse.
+    </string>
+    <string name="layer_help_options_satellites" translation_description="Long-press note listing what can be customized on the satellites layer.">Passagevarsler: en meddelelse før den bedst synlige passage hver nat.</string>
+    <string name="layer_help_options_meteor_showers" translation_description="Long-press note listing what can be customized on the meteor showers layer.">
+    Maksimumsvarsler: en meddelelse om aftenen, hvor en sværm når sit årlige maksimum.
+    </string>
+    <string name="layer_help_options_grid" translation_description="Long-press note listing what can be customized on the celestial grid layer.">Linjeantal: en linje for hver 3., 2. eller 1. time og hver 30°, 15° eller 10°.</string>
+    <string name="layer_help_options_altaz_grid" translation_description="Long-press note listing what can be customized on the alt/az grid layer.">Linjeantal: 8, 12 eller 24 retningslinjer.</string>
+    <string name="layer_help_customizable" translation_description="Heading in the layer help popup above the list of customizable options.">Hvad du kan tilpasse</string>
+    <string name="layer_help_expand_hint" translation_description="Hint in the layer help popup for layers with options, pointing to the arrow button on the row.">Tryk på pilen på rækken for at ændre disse.</string>
+    <string name="layer_help_customize" translation_description="Button in the layer help popup that opens the Layers sheet on that layer's options.">Tilpas</string>
+    <string name="layer_help_close" translation_description="Button that dismisses the layer help popup.">Forstået</string>
+    <string name="layer_help_long_click_label" translation_description="Accessibility label for the long-press action on a layer row, which shows an explanation of the layer.">Vis hvad dette gør</string>
 
     <!-- Map screen controls. -->
     <string name="layers_sheet_title" translation_description="Title of the bottom sheet listing sky map layers the user can show or hide.">Lag</string>
@@ -147,8 +205,8 @@
     <string name="ar_shutter_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual shutter (exposure) time in through-camera mode.">Kameraets lukkertid</string>
     <string name="share_button" translation_description="Overflow-menu row that captures the current sky view as an image and opens the system share sheet.">Del himlen</string>
     <string name="share_chooser_title" translation_description="Title of the system share sheet when sharing a captured sky image.">Del denne himmel</string>
-    <string name="share_invitation" translation_description="Short invitation stamped on the footer of shared sky images, above the store link.">Se, hvad du kigger på — få Sky Map gratis</string>
-    <string name="share_text" translation_description="Text accompanying a shared sky image in apps that accept both an image and text. %1$s is the app-store link.">Se, hvad du kigger på — få Sky Map gratis: %1$s</string>
+    <string name="share_invitation" translation_description="Short invitation stamped on the footer of shared sky images, above the store link.">Universet i din lomme – få Sky Map gratis</string>
+    <string name="share_text" translation_description="Text accompanying a shared sky image in apps that accept both an image and text. %1$s is the app-store link.">Universet i din lomme – få Sky Map gratis: %1$s</string>
     <!-- tm:omitted name="share_store_link" reason="identical_to_source" -->
     <string name="share_layout_overlay" translation_description="Caption of the share-layout choice that draws the star map over the camera photo, as seen on screen.">Overlejring</string>
     <string name="share_layout_side_by_side" translation_description="Caption of the share-layout choice that puts the camera photo and the star map next to each other.">Side om side</string>
@@ -449,6 +507,7 @@
     <string name="diagnostics_utc_datetime">Universel dato og tid</string>
     <string name="diagnostics_section_network">Netværk</string>
     <string name="diagnostics_connection">Forbindelse</string>
+    <string name="diagnostics_section_experiments" translation_description="Section heading in the diagnostics screen listing the current feature-flag (experiment) values">Eksperimentelle flag</string>
     <string name="diagnostics_section_satellites" translation_description="Section heading in the diagnostics screen for satellite orbital-data status">Satellitter</string>
     <string name="diagnostics_satellite_data" translation_description="Row label in the diagnostics screen for the age and count of cached satellite orbital data">Omløbsdata</string>
     <string name="diagnostics_satellite_data_none" translation_description="Row value in the diagnostics screen when no satellite orbital data has been downloaded yet">Ikke downloadet</string>
@@ -457,6 +516,9 @@
     <string name="diagnostics_satellite_never_fetched" translation_description="Row value in the diagnostics screen when satellite orbital data has never been downloaded">Aldrig</string>
     <string name="diagnostics_satellite_circuit_open" translation_description="Row label in the diagnostics screen for when satellite downloads are paused after repeated server errors">Downloads sat på pause</string>
     <string name="diagnostics_satellite_circuit_open_format" translation_description="Row value in the diagnostics screen showing when paused satellite downloads will resume and how many failures caused the pause. %1$s is a date and time, %2$d is a count">Indtil %1$s (%2$d fejl)</string>
+    <string name="diagnostics_experiments_last_fetched" translation_description="Row label in the diagnostics experiment flags section: when the feature-flag config was last downloaded from the server">Senest hentet</string>
+    <string name="diagnostics_experiments_never_fetched" translation_description="Row value in the diagnostics experiment flags section when the feature-flag config has never been downloaded">Aldrig</string>
+    <string name="diagnostics_experiments_fetch_now" translation_description="Label on a button in the diagnostics screen that downloads the feature-flag config from the server immediately">Hent eksperimentelle flag nu</string>
     <string name="diagnostics_satellite_force_fetch" translation_description="Label on a debug-only button in the diagnostics screen that downloads satellite orbital data immediately">Hent satellitdata nu (debug)</string>
     <string name="diagnostics_connected">Forbundet</string>
     <string name="diagnostics_disconnected">Afbrudt</string>
@@ -616,6 +678,19 @@
     </string>
     <string name="settings_shower_alerts" translation_description="Preference title: notify on the evening a meteor shower reaches its annual peak">Meteorsværmtoppe</string>
     <string name="settings_shower_alerts_summary" translation_description="Explanation of the meteor-shower notification preference">Omkring et dusin om året, om aftenen for toppen</string>
+    <string name="settings_eclipse_alerts" translation_description="Preference title: notify shortly before a lunar eclipse begins">Måneformørkelser</string>
+    <string name="settings_eclipse_alerts_summary" translation_description="Explanation of the lunar-eclipse notification preference">En enkelt advarsel, før en måneformørkelse begynder</string>
+    <string name="settings_pass_alerts" translation_description="Preference title: notify shortly before a satellite passes overhead">Satellitpassager</string>
+    <string name="settings_pass_alerts_summary" translation_description="Explanation of the satellite-pass notification preference">En enkelt advarsel før nattens bedst synlige passage</string>
+    <string name="settings_announcements" translation_description="Preference title: occasional messages from the Sky Map team about rare sky events, shown as a notification, in the widget and when the app opens">Beskeder fra Sky Map</string>
+    <string name="settings_announcements_summary" translation_description="Explanation of the announcements preference">
+    Sjældne varsler som en kraftig nordlys eller en klar planet. Vises som en notifikation, i Sky Tonight-widgets eller når du åbner appen.
+    </string>
+    <string name="channel_announcements_name" translation_description="Notification channel name for occasional messages from the Sky Map team">Beskeder fra Sky Map</string>
+    <string name="channel_announcements_description" translation_description="Notification channel description for occasional messages from the Sky Map team">Sjældne advarsler om bemærkelsesværdige begivenheder på himlen</string>
+    <string name="announcement_dialog_dismiss" translation_description="Button that closes an announcement dialog and hides that message everywhere">Luk</string>
+    <string name="announcement_dialog_open" translation_description="Button on an announcement dialog that jumps to the sky object the message is about">Tag et kig</string>
+    <string name="announcement_dialog_continue" translation_description="Button on an announcement dialog that closes it and continues to the sky map">Fortsæt</string>
     <string name="settings_tonight_digest" translation_description="Preference title: a single evening notification summarizing what\'s visible tonight">Aftenens himmel-oversigt</string>
     <string name="settings_tonight_digest_summary" translation_description="Explanation of the tonight-digest notification preference">Én oversigt efter solnedgang, springes over på stille aftener</string>
     <string name="settings_notifications_blocked" translation_description="Warning row shown when the user enabled notifications in the app but blocked them at the system level">Notifikationer er blokeret for Sky Map</string>
