@@ -251,10 +251,17 @@ Approximate location is plenty for a planetarium.
 
 ## Do I need an internet connection?
 
-No. Sky Map works fully offline. An internet connection is only needed to:
+No. The sky, star catalogue, planets, constellations, Hubble Gallery images and object
+descriptions are all built into the app, so Sky Map works fully offline. An internet connection is
+only used for a few extras (v2):
 
-- Look up a location by place name (you can enter lat/long directly instead)
-- Load Hubble Gallery images (previously cached images may still be available offline)
+- **Satellite tracking** — orbit data is downloaded from CelesTrak and kept on your device. Without
+  a connection, satellites are shown from the last data downloaded (or not at all if none has been
+  yet). On the F-Droid build, satellite downloads are off until you turn them on.
+- **Looking up a place by name** on the Location screen (you can enter latitude/longitude directly
+  instead). Automatic location uses GPS/network location and doesn't need Sky Map to be online.
+- **The small map picture** on the Location screen.
+- **Announcements** and anonymous usage statistics (Google Play build only).
 
 ---
 
