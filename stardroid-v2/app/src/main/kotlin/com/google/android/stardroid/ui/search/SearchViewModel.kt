@@ -370,8 +370,11 @@ class SearchViewModel(
             name: String,
             q: String,
         ): Boolean {
+            val tokens = words(q)
+            // A separator-only query ("(", "-") has no tokens; `all` would match everything.
+            if (tokens.isEmpty()) return false
             val nameWords = words(name)
-            return words(q).all { token ->
+            return tokens.all { token ->
                 nameWords.any { it.startsWith(token, ignoreCase = true) }
             }
         }

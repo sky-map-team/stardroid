@@ -308,6 +308,13 @@ class SearchViewModelTest {
         }
 
     @Test
+    fun `a separator-only query matches no satellite`() {
+        for (q in listOf("(", ")", "-", "( )")) {
+            assertThat(SearchViewModel.matchesWordPrefix("ISS (ZARYA)", q)).isFalse()
+        }
+    }
+
+    @Test
     fun `an engaged search logs the query and the lock with the frame mode`() =
         testScope.runCurrentTest {
             repository.hits = listOf(SIRIUS_HIT)
