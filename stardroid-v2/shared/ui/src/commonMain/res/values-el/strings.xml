@@ -168,4 +168,33 @@
     <string name="sun_wont_set_message">Ο ήλιος δε θα δύσει μέσα στις επόμενες 24 ώρες στην τρέχουσα τοποθεσία σας.</string>
     <string name="time_travel_start_message" translation_description="Toast message when time travel starts toward a chosen destination. %1$s is the formatted destination date and time.">Ταξιδεύοντας στον χρόνο έως %1$s ...</string>
     <string name="time_travel_close_message">Πίσω στο παρόν ...</string>
+    <string name="satellite_next_pass" translation_description="Heading above the next visible pass details on a satellite\'s info card.">Επόμενη ορατή διέλευση</string>
+    <string name="satellite_pass_when" translation_description="When and how high the next satellite pass will be. %1$s is a time, %2$s is a compass direction, %3$d is an angle in degrees.">%1$s, ανατέλλει %2$s, φτάνοντας %3$d°</string>
+    <string name="satellite_pass_magnitude" translation_description="How bright the satellite will be at its peak. %1$.1f is a brightness magnitude.">Μέγεθος %1$.1f στο λαμπρότερο σημείο του</string>
+    <string name="satellite_pass_shadow" translation_description="Tells the user the satellite will fade out mid-pass when it enters the Earth\'s shadow. %1$s is a time.">Εξασθενεί στη σκιά της Γης στις %1$s</string>
+    <string name="satellite_no_pass" translation_description="Shown on a satellite info card when no visible pass is coming up in the next two days.">Καμία ορατή διέλευση τις επόμενες δύο ημέρες</string>
+    <string name="satellite_pass_unknown" translation_description="Shown on a satellite info card when the downloaded orbit data is too old to predict pass times reliably.">Τα δεδομένα τροχιάς είναι πολύ παλιά για να προβλεφθούν διελεύσεις</string>
+    <string name="object_info_eclipse_title" translation_description="Heading above the next lunar eclipse details on the Moon\'s info card.">Σεληνιακή έκλειψη</string>
+    <string name="object_info_no_eclipse" translation_description="Shown on the Moon\'s info card when no lunar eclipse is coming up in the searched time range.">Δεν αναμένεται σεληνιακή έκλειψη σύντομα</string>
+    <string name="object_info_eclipse_greatest" translation_description="The next lunar eclipse\'s type and greatest-eclipse date/time. %1$s is a localized eclipse type like \'Total lunar eclipse\', %2$s a date, %3$s a time.">%1$s — μέγιστη έκλειψη %2$s στις %3$s</string>
+    <string name="object_info_eclipse_totality" translation_description="The start and end time of totality during a total lunar eclipse. %1$s and %2$s are times.">Ολικότητα %1$s – %2$s</string>
+    <string name="object_info_image_credit" translation_description="Attribution line under the object\'s photo; %1$s is the credited source, e.g. NASA/ESA">Εικόνα: %1$s</string>
+    <string name="object_info_fun_fact" translation_description="An interesting trivia line on the object info card; %1$s is the fact text">Ενδιαφέρον γεγονός: %1$s</string>
+    <string name="object_info_distance">Απόσταση:</string>
+    <string name="object_info_size">Μέγεθος:</string>
+    <string name="object_info_mass">Μάζα:</string>
+    <string name="object_info_spectral_class" translation_description="Label for a star\'s spectral classification (e.g. G2V) on the info card">Φασματική κλάση:</string>
+    <string name="object_info_magnitude">Φαινόμενο μέγεθος:</string>
+    <string name="object_info_rises" translation_description="Label on the info card for the time the object next rises above the horizon at the user\'s location">Ανατέλλει:</string>
+    <string name="object_info_sets" translation_description="Label on the info card for the time the object next sets below the horizon at the user\'s location">Δύει:</string>
+    <string name="object_info_always_above_horizon" translation_description="Info-card line shown for a circumpolar object that never sets at the user\'s location">Πάντα πάνω από τον ορίζοντα στην τοποθεσία σας</string>
+    <string name="object_info_always_below_horizon" translation_description="Info-card line shown for an object that never rises at the user\'s location">Πάντα κάτω από τον ορίζοντα στην τοποθεσία σας</string>
+    <string name="object_info_also_known_as" translation_description="Label on the info card above the object\'s alternative names (aliases and catalog designations), e.g. M31 and NGC 224">Επίσης γνωστό ως:</string>
+    <string name="object_info_see_also" translation_description="Heading above links to related celestial objects on the info card">Δείτε επίσης</string>
+    <string name="object_info_find_in_sky">Εντοπισμός στον ουρανό</string>
+    <string name="object_info_close" translation_description="Button that closes the object info card">Κλείσιμο</string>
+    <string name="object_info_tap_to_close">Πατήστε για κλείσιμο</string>
+    <string name="tonight_lunar_eclipse_total" translation_description="Tonight-widget row: a total lunar eclipse is starting soon or under way">Ολική έκλειψη Σελήνης</string>
+    <string name="tonight_lunar_eclipse_partial" translation_description="Tonight-widget row: a partial lunar eclipse is starting soon or under way">Μερική έκλειψη Σελήνης</string>
+    <string name="tonight_lunar_eclipse_penumbral" translation_description="Tonight-widget row: a penumbral lunar eclipse is starting soon or under way">Παρασκιακή έκλειψη Σελήνης</string>
 </resources>

@@ -18,6 +18,7 @@ import androidx.compose.foundation.layout.safeDrawingPadding
 import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -37,12 +38,18 @@ import androidx.compose.ui.viewinterop.UIKitInteropInteractionMode
 import androidx.compose.ui.viewinterop.UIKitInteropProperties
 import androidx.compose.ui.viewinterop.UIKitViewController
 import androidx.compose.ui.window.ComposeUIViewController
+import com.google.android.stardroid.catalog.ObjectInfo
 import com.google.android.stardroid.render.api.LayerId
 import com.google.android.stardroid.time.TimeTravelState
 import com.google.android.stardroid.ui.layers.LayersViewModel
 import com.google.android.stardroid.ui.map.LayersSheet
 import com.google.android.stardroid.ui.map.MapChrome
 import com.google.android.stardroid.ui.map.MapViewModel
+import com.google.android.stardroid.ui.map.ReferenceFrame
+import com.google.android.stardroid.ui.objectinfo.EclipseRow
+import com.google.android.stardroid.ui.objectinfo.ImageExpandOverlay
+import com.google.android.stardroid.ui.objectinfo.ObjectInfoCard
+import com.google.android.stardroid.ui.objectinfo.ObjectInfoViewModel
 import com.google.android.stardroid.ui.resources.Res
 import com.google.android.stardroid.ui.resources.sun_wont_set_message
 import com.google.android.stardroid.ui.search.SearchControlBar
@@ -65,7 +72,7 @@ import platform.UIKit.UIViewController
  * The iOS app's root, for Swift to host: the Compose Multiplatform UI (D134) over the Metal map.
  *
  * The map carries the shared chrome (MapChrome: the layer rail, the action cluster, the HUD) and
- * the shared Layers sheet, search and time travel. This is a stand-in for Android's MapScreen, which composes
+ * the shared Layers sheet, search, time travel and object info (tap the sky). This is a stand-in for Android's MapScreen, which composes
  * every other screen and so moves last (D137); until then the actions whose screens iOS lacks —
  * the overflow menu — do nothing. Time travel and search are wired as Android wires them.
  *
@@ -80,8 +87,9 @@ fun skyMapViewController(): UIViewController {
     val layers = graph.layersViewModel()
     val search = graph.searchViewModel(mapViewModel)
     val timeTravel = graph.timeTravelViewModel()
+    val objectInfo = graph.objectInfoViewModel()
     return ComposeUIViewController {
-        SkyMapScreen(map, mapViewModel, layers, search, timeTravel, startup)
+        SkyMapScreen(map, mapViewModel, layers, search, timeTravel, objectInfo, startup)
     }
 }
 
@@ -93,6 +101,7 @@ private fun SkyMapScreen(
     layersViewModel: LayersViewModel,
     searchViewModel: SearchViewModel,
     timeTravelViewModel: TimeTravelViewModel,
+    objectInfoViewModel: ObjectInfoViewModel,
     startup: StartupViewModel,
 ) {
     val nightMode by mapViewModel.nightMode.collectAsState()
@@ -111,6 +120,29 @@ private fun SkyMapScreen(
     var showTimeTravelDialog by remember { mutableStateOf(false) }
     var timeTravelPlayerHeightPx by remember { mutableStateOf(0) }
     val snackbarHostState = remember { SnackbarHostState() }
+    val objectInfoCard by objectInfoViewModel.card.collectAsState()
+    val objectRiseSet by objectInfoViewModel.riseSet.collectAsState()
+    val showingMoon by objectInfoViewModel.showingMoon.collectAsState()
+    val lunarEclipse by objectInfoViewModel.lunarEclipse.collectAsState()
+    var expandedImage by remember { mutableStateOf<ObjectInfo?>(null) }
+    // A still tap on the sky identifies what is there, as on Android. UIKit reports points;
+    // Compose pixels are points at the screen's scale, which is its density here.
+    val density = LocalDensity.current.density
+    // The lambda reads the camera, frame and size states when the tap arrives, so it is set once.
+    DisposableEffect(map) {
+        map.onTap = { xPoints, yPoints ->
+            objectInfoViewModel.onSkyTap(
+                xPx = (xPoints * density).toFloat(),
+                yPx = (yPoints * density).toFloat(),
+                widthPx = screenSize.width,
+                heightPx = screenSize.height,
+                camera = camera,
+                sensorFrame = referenceFrame == ReferenceFrame.SENSOR,
+                densityDpPerPx = density,
+            )
+        }
+        onDispose { map.onTap = null }
+    }
     val scope = rememberCoroutineScope()
     // The per-event search target, aimed once time travel's clock has arrived.
     LaunchedEffect(Unit) {
@@ -224,6 +256,33 @@ private fun SkyMapScreen(
                     timeTravelViewModel,
                     onSunWontSet = { scope.launch { snackbarHostState.showSnackbar(sunWontSet) } },
                     onDismiss = { showTimeTravelDialog = false },
+                )
+            }
+            objectInfoCard?.let { info ->
+                ObjectInfoCard(
+                    info = info,
+                    riseSet = objectRiseSet,
+                    nightMode = nightMode,
+                    onSeeAlso = { link -> objectInfoViewModel.show(link.id) },
+                    // No Find: a card opened by tapping the sky is an object already found.
+                    onFind = null,
+                    onImageTap = { tapped -> if (tapped.imageRef != null) expandedImage = tapped },
+                    onDismiss = { objectInfoViewModel.dismiss() },
+                    eclipseRow =
+                        if (showingMoon) {
+                            { EclipseRow(circumstances = lunarEclipse) }
+                        } else {
+                            null
+                        },
+                )
+            }
+            expandedImage?.let { image ->
+                ImageExpandOverlay(
+                    imageRef = checkNotNull(image.imageRef),
+                    name = image.name,
+                    credit = image.imageCredit,
+                    nightMode = nightMode,
+                    onDismiss = { expandedImage = null },
                 )
             }
             SnackbarHost(

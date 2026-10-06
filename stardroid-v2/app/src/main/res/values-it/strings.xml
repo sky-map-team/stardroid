@@ -45,16 +45,6 @@
     <string name="satellite_description" translation_description="Short description shown on the info card for an artificial satellite.">
     Un satellite artificiale in orbita terrestre bassa, illuminato dal sole contro un cielo scuro. Attraversa il cielo da orizzonte a orizzonte in pochi minuti, muovendosi costantemente e senza lampeggiare.
     </string>
-    <string name="satellite_next_pass" translation_description="Heading above the next visible pass details on a satellite\'s info card.">Prossimo passaggio visibile</string>
-    <string name="satellite_pass_when" translation_description="When and how high the next satellite pass will be. %1$s is a time, %2$s is a compass direction, %3$d is an angle in degrees.">%1$s, che sorge a %2$s, raggiungendo %3$d°</string>
-    <string name="satellite_pass_magnitude" translation_description="How bright the satellite will be at its peak. %1$.1f is a brightness magnitude.">Magnitudine %1$.1f al suo massimo splendore</string>
-    <string name="satellite_pass_shadow" translation_description="Tells the user the satellite will fade out mid-pass when it enters the Earth\'s shadow. %1$s is a time.">Svanisce nell\'ombra della Terra alle %1$s</string>
-    <string name="satellite_no_pass" translation_description="Shown on a satellite info card when no visible pass is coming up in the next two days.">Nessun passaggio visibile nei prossimi due giorni</string>
-    <string name="satellite_pass_unknown" translation_description="Shown on a satellite info card when the downloaded orbit data is too old to predict pass times reliably.">I dati orbitali sono troppo vecchi per prevedere i passaggi</string>
-    <string name="object_info_eclipse_title" translation_description="Heading above the next lunar eclipse details on the Moon\'s info card.">Eclissi lunare</string>
-    <string name="object_info_no_eclipse" translation_description="Shown on the Moon\'s info card when no lunar eclipse is coming up in the searched time range.">Nessuna eclissi lunare prevista a breve</string>
-    <string name="object_info_eclipse_greatest" translation_description="The next lunar eclipse\'s type and greatest-eclipse date/time. %1$s is a localized eclipse type like \'Total lunar eclipse\', %2$s a date, %3$s a time.">%1$s — massimo dell\'eclissi %2$s alle %3$s</string>
-    <string name="object_info_eclipse_totality" translation_description="The start and end time of totality during a total lunar eclipse. %1$s and %2$s are times.">Totalità %1$s – %2$s</string>
     <string name="tonight_satellite_pass" translation_description="Tonight-widget row announcing a visible satellite pass. %1$s is the satellite name, %2$s is a time of day.">%1$s passa sopra alle %2$s</string>
     <string name="tonight_trailing_pass" translation_description="Small trailing note on a satellite pass row. %1$s is a compass direction, %2$d is an angle in degrees, %3$.1f is a brightness magnitude.">Sorge a %1$s, %2$d°, mag %3$.1f</string>
 
@@ -143,22 +133,6 @@
     <!-- tm:omitted name="location_coordinate_format" reason="identical_to_source" -->
 
     <!-- Object info card -->
-    <string name="object_info_image_credit" translation_description="Attribution line under the object\'s photo; %1$s is the credited source, e.g. NASA/ESA">Immagine: %1$s</string>
-    <string name="object_info_fun_fact" translation_description="An interesting trivia line on the object info card; %1$s is the fact text">Curiosità: %1$s</string>
-    <string name="object_info_distance">Distanza:</string>
-    <string name="object_info_size">Dimensione:</string>
-    <string name="object_info_mass">Massa:</string>
-    <string name="object_info_spectral_class" translation_description="Label for a star\'s spectral classification (e.g. G2V) on the info card">Classe spettrale:</string>
-    <string name="object_info_magnitude">Magnitudine:</string>
-    <string name="object_info_rises" translation_description="Label on the info card for the time the object next rises above the horizon at the user\'s location">Sorge:</string>
-    <string name="object_info_sets" translation_description="Label on the info card for the time the object next sets below the horizon at the user\'s location">Tramonta:</string>
-    <string name="object_info_always_above_horizon" translation_description="Info-card line shown for a circumpolar object that never sets at the user\'s location">Sempre sopra l\'orizzonte nella tua posizione</string>
-    <string name="object_info_always_below_horizon" translation_description="Info-card line shown for an object that never rises at the user\'s location">Sempre sotto l\'orizzonte nella tua posizione</string>
-    <string name="object_info_also_known_as" translation_description="Label on the info card above the object\'s alternative names (aliases and catalog designations), e.g. M31 and NGC 224">Conosciuto anche come:</string>
-    <string name="object_info_see_also" translation_description="Heading above links to related celestial objects on the info card">Vedi anche</string>
-    <string name="object_info_find_in_sky">Trova nel cielo</string>
-    <string name="object_info_close" translation_description="Button that closes the object info card">Chiudi</string>
-    <string name="object_info_tap_to_close">Tocca per chiudere</string>
 
     <!-- Image gallery -->
     <string name="gallery_title" translation_description="Title of the screen showing a gallery of photographs of celestial objects. Not the user\'s own photos - these are catalog images from sources such as NASA and ESA.">Galleria del cielo</string>
@@ -448,9 +422,6 @@
     <string name="tonight_new_moon" translation_description="Tonight-widget row shown at new moon">Luna Nuova — cieli più bui del mese</string>
     <string name="tonight_full_moon" translation_description="Tonight-widget row shown at full moon">Luna Piena stasera</string>
     <string name="tonight_bright_moon" translation_description="Tonight-widget row warning that a bright moon washes out faint objects">La luna luminosa copre gli oggetti deboli</string>
-    <string name="tonight_lunar_eclipse_total" translation_description="Tonight-widget row: a total lunar eclipse is starting soon or under way">Eclissi lunare totale</string>
-    <string name="tonight_lunar_eclipse_partial" translation_description="Tonight-widget row: a partial lunar eclipse is starting soon or under way">Eclissi lunare parziale</string>
-    <string name="tonight_lunar_eclipse_penumbral" translation_description="Tonight-widget row: a penumbral lunar eclipse is starting soon or under way">Eclissi lunare penombrale</string>
     <string name="tonight_quiet" translation_description="Tonight-widget line shown when nothing notable is visible tonight">Cielo tranquillo stanotte</string>
     <string name="tonight_quiet_next" translation_description="Tonight-widget line under the quiet-night message; %1$s is an event name, %2$d the days until it">Prossimo: %1$s tra %2$d giorni</string>
     <string name="countdown_widget_label" translation_description="Name of the countdown home-screen widget, shown in the launcher\'s widget picker">Conto alla rovescia celeste</string>

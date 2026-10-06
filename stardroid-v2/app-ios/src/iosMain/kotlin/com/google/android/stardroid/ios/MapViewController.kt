@@ -49,6 +49,7 @@ import platform.UIKit.UIPanGestureRecognizer
 import platform.UIKit.UIPinchGestureRecognizer
 import platform.UIKit.UIRotationGestureRecognizer
 import platform.UIKit.UIScreen
+import platform.UIKit.UITapGestureRecognizer
 import platform.UIKit.UIViewController
 import platform.darwin.NSObject
 import kotlin.math.PI
@@ -84,6 +85,12 @@ class MapViewController(
 
     val viewController: UIViewController = UIViewController()
 
+    /**
+     * A still tap on the sky, in points from the view's top-left — Android's onSingleTapUp,
+     * which identifies what is there (object info).
+     */
+    var onTap: ((xPoints: Double, yPoints: Double) -> Unit)? = null
+
     init {
         view.colorPixelFormat = MTLPixelFormatBGRA8Unorm
         view.paused = true
@@ -93,6 +100,7 @@ class MapViewController(
             UIPanGestureRecognizer(gestures, NSSelectorFromString("pan:")),
             UIPinchGestureRecognizer(gestures, NSSelectorFromString("pinch:")),
             UIRotationGestureRecognizer(gestures, NSSelectorFromString("rotate:")),
+            UITapGestureRecognizer(gestures, NSSelectorFromString("tap:")),
         ).forEach {
             it.delegate = gestures
             view.addGestureRecognizer(it)
@@ -235,6 +243,13 @@ class MapViewController(
             mapViewModel.onRotate((recognizer.rotation * 180.0 / PI).toFloat())
             recognizer.rotation = 0.0
             if (recognizer.state == UIGestureRecognizerStateEnded) mapViewModel.onGestureEnd()
+        }
+
+        @ObjCAction
+        fun tap(recognizer: UITapGestureRecognizer) {
+            if (recognizer.state != UIGestureRecognizerStateEnded) return
+            val (x, y) = recognizer.locationInView(view).useContents { x to y }
+            onTap?.invoke(x, y)
         }
 
         override fun gestureRecognizer(

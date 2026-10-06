@@ -19,6 +19,10 @@ targets:
       - path: ../../app/src/main/assets/catalog
         type: folder
         buildPhase: resources
+      # The object cards' photos, read by name (rememberCelestialImage).
+      - path: ../../app/src/main/assets/celestial_images
+        type: folder
+        buildPhase: resources
       # The catalog, generated from source-data/ by the pre-build step (never checked in).
       - path: ../../data/build/generated/assets/generateCatalogDb/skymap.db
         buildPhase: resources

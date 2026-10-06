@@ -34,3 +34,26 @@ internal actual fun rememberIs24HourClock(): Boolean {
     val context = LocalContext.current
     return remember(context) { android.text.format.DateFormat.is24HourFormat(context) }
 }
+
+// Keyed on the configuration so a runtime locale or format change re-creates them.
+@Composable
+internal actual fun rememberTimeFormatter(): (Instant) -> String {
+    val context = LocalContext.current
+    val configuration = LocalConfiguration.current
+    return remember(configuration) {
+        val format = android.text.format.DateFormat.getTimeFormat(context)
+        val formatter: (Instant) -> String = { format.format(Date(it.toEpochMilliseconds())) }
+        formatter
+    }
+}
+
+@Composable
+internal actual fun rememberDateFormatter(): (Instant) -> String {
+    val context = LocalContext.current
+    val configuration = LocalConfiguration.current
+    return remember(configuration) {
+        val format = android.text.format.DateFormat.getMediumDateFormat(context)
+        val formatter: (Instant) -> String = { format.format(Date(it.toEpochMilliseconds())) }
+        formatter
+    }
+}

@@ -31,6 +31,7 @@ import com.google.android.stardroid.time.TimeController
 import com.google.android.stardroid.ui.layers.LayersViewModel
 import com.google.android.stardroid.ui.map.MapViewModel
 import com.google.android.stardroid.ui.map.ReferenceFrame
+import com.google.android.stardroid.ui.objectinfo.ObjectInfoViewModel
 import com.google.android.stardroid.ui.search.SearchViewModel
 import com.google.android.stardroid.ui.startup.StartupViewModel
 import com.google.android.stardroid.ui.timetravel.TimeTravelViewModel
@@ -231,6 +232,17 @@ class IosAppGraph {
         TimeTravelViewModel(
             timeController,
             MeeusEphemeris,
+            location = { locationController.locations.value },
+        )
+
+    /** The card for a tapped object; satellites and the Moon-widget promo are Android's only. */
+    fun objectInfoViewModel(): ObjectInfoViewModel =
+        ObjectInfoViewModel(
+            catalog = ::catalog,
+            locale = locale,
+            ephemeris = MeeusEphemeris,
+            now = timeController::now,
+            settings = settings,
             location = { locationController.locations.value },
         )
 
