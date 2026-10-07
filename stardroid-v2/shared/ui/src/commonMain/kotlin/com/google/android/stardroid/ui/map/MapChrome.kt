@@ -956,23 +956,26 @@ private fun ActionTooltip(
  * Zone C: the ⋮ overflow sheet — destinations and one-shot actions, not sky-drawing
  * controls, so they don't earn permanent pixels. Sibling of [LayersSheet]: this sheet
  * navigates away from the map; the Layers sheet configures what it draws.
+ *
+ * A null action leaves its row out: iOS offers only the destinations it has screens for so
+ * far (D137), and Android has every one.
  */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun OverflowSheet(
-    onShareSky: () -> Unit,
+    onShareSky: (() -> Unit)?,
     // Sharing is behind the SHARE_SKY experiment; off, the row simply isn't offered.
     shareEnabled: Boolean = true,
-    onOpenGallery: () -> Unit,
-    onOpenWidgets: () -> Unit,
+    onOpenGallery: (() -> Unit)?,
+    onOpenWidgets: (() -> Unit)?,
     // Hidden when no widget is offerable at all, rather than opening an empty sheet.
     widgetsEnabled: Boolean = true,
-    onOpenLocation: () -> Unit,
-    onOpenCalibration: () -> Unit,
-    onOpenTutorial: () -> Unit,
-    onOpenHelp: () -> Unit,
-    onOpenWhatsNew: () -> Unit,
-    onOpenSettings: () -> Unit,
+    onOpenLocation: (() -> Unit)?,
+    onOpenCalibration: (() -> Unit)?,
+    onOpenTutorial: (() -> Unit)?,
+    onOpenHelp: (() -> Unit)?,
+    onOpenWhatsNew: (() -> Unit)?,
+    onOpenSettings: (() -> Unit)?,
     onDismiss: () -> Unit,
 ) {
     ModalBottomSheet(onDismissRequest = onDismiss) {
@@ -1006,8 +1009,9 @@ fun OverflowSheet(
 private fun OverflowRow(
     icon: DrawableResource,
     label: StringResource,
-    onClick: () -> Unit,
+    onClick: (() -> Unit)?,
 ) {
+    if (onClick == null) return
     Row(
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.spacedBy(16.dp),

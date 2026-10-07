@@ -42,9 +42,15 @@ import com.google.android.stardroid.catalog.ObjectInfo
 import com.google.android.stardroid.render.api.LayerId
 import com.google.android.stardroid.time.TimeTravelState
 import com.google.android.stardroid.ui.layers.LayersViewModel
+import com.google.android.stardroid.ui.location.LocationSheet
+import com.google.android.stardroid.ui.location.LocationStateDialogs
+import com.google.android.stardroid.ui.location.LocationViewModel
+import com.google.android.stardroid.ui.location.ManualLocationEntryDialog
+import com.google.android.stardroid.ui.location.rememberLocationSetMessage
 import com.google.android.stardroid.ui.map.LayersSheet
 import com.google.android.stardroid.ui.map.MapChrome
 import com.google.android.stardroid.ui.map.MapViewModel
+import com.google.android.stardroid.ui.map.OverflowSheet
 import com.google.android.stardroid.ui.map.ReferenceFrame
 import com.google.android.stardroid.ui.objectinfo.EclipseRow
 import com.google.android.stardroid.ui.objectinfo.ImageExpandOverlay
@@ -72,9 +78,10 @@ import platform.UIKit.UIViewController
  * The iOS app's root, for Swift to host: the Compose Multiplatform UI (D134) over the Metal map.
  *
  * The map carries the shared chrome (MapChrome: the layer rail, the action cluster, the HUD) and
- * the shared Layers sheet, search, time travel and object info (tap the sky). This is a stand-in for Android's MapScreen, which composes
- * every other screen and so moves last (D137); until then the actions whose screens iOS lacks —
- * the overflow menu — do nothing. Time travel and search are wired as Android wires them.
+ * the shared Layers sheet, search, time travel, object info (tap the sky) and location. This is a
+ * stand-in for Android's MapScreen, which composes every other screen and so moves last (D137);
+ * until then the overflow menu offers only the destinations iOS has screens for. Everything here
+ * is wired as Android wires it.
  *
  * Android's startup gating, as far as iOS has screens for it: the EULA blocks everything until
  * accepted. The warm welcome and What's New follow later in phase 5.
@@ -88,8 +95,20 @@ fun skyMapViewController(): UIViewController {
     val search = graph.searchViewModel(mapViewModel)
     val timeTravel = graph.timeTravelViewModel()
     val objectInfo = graph.objectInfoViewModel()
+    val location = graph.locationViewModel()
     return ComposeUIViewController {
-        SkyMapScreen(map, mapViewModel, layers, search, timeTravel, objectInfo, startup)
+        SkyMapScreen(
+            map,
+            mapViewModel,
+            layers,
+            search,
+            timeTravel,
+            objectInfo,
+            location,
+            startup,
+            onRequestAutoLocation = graph::requestAutoLocation,
+            onOpenAppSettings = graph::openAppSettings,
+        )
     }
 }
 
@@ -102,7 +121,10 @@ private fun SkyMapScreen(
     searchViewModel: SearchViewModel,
     timeTravelViewModel: TimeTravelViewModel,
     objectInfoViewModel: ObjectInfoViewModel,
+    locationViewModel: LocationViewModel,
     startup: StartupViewModel,
+    onRequestAutoLocation: () -> Unit,
+    onOpenAppSettings: () -> Unit,
 ) {
     val nightMode by mapViewModel.nightMode.collectAsState()
     val gates by startup.state.collectAsState()
@@ -125,6 +147,11 @@ private fun SkyMapScreen(
     val showingMoon by objectInfoViewModel.showingMoon.collectAsState()
     val lunarEclipse by objectInfoViewModel.lunarEclipse.collectAsState()
     var expandedImage by remember { mutableStateOf<ObjectInfo?>(null) }
+    val locationState by locationViewModel.state.collectAsState()
+    val manualLocationMode by locationViewModel.manualMode.collectAsState()
+    var showOverflowSheet by remember { mutableStateOf(false) }
+    var showLocationSheet by remember { mutableStateOf(false) }
+    var showManualLocationDialog by remember { mutableStateOf(false) }
     // A still tap on the sky identifies what is there, as on Android. UIKit reports points;
     // Compose pixels are points at the screen's scale, which is its density here.
     val density = LocalDensity.current.density
@@ -147,6 +174,13 @@ private fun SkyMapScreen(
     // The per-event search target, aimed once time travel's clock has arrived.
     LaunchedEffect(Unit) {
         timeTravelViewModel.searchTargets.collect { searchViewModel.selectById(it) }
+    }
+    // v1's "Location set to X" toast, as a snackbar, on every fresh fix or manual entry.
+    val locationSetMessage = rememberLocationSetMessage()
+    LaunchedEffect(Unit) {
+        locationViewModel.toasts.collect { toast ->
+            launch { snackbarHostState.showSnackbar(locationSetMessage(toast)) }
+        }
     }
     // Choosing a result closes the dialog and, in manual mode, turns the sky to it (v1).
     LaunchedEffect(searchTarget) {
@@ -222,7 +256,7 @@ private fun SkyMapScreen(
                         expandLayer = id
                         showLayersSheet = true
                     },
-                    onOpenOverflow = {},
+                    onOpenOverflow = { showOverflowSheet = true },
                     // Reset has no undo snackbar yet; the correction it clears only arises in AR
                     // mode, which iOS does not have.
                     hudState = hudState.takeIf { hudEnabled },
@@ -285,9 +319,13 @@ private fun SkyMapScreen(
                     onDismiss = { expandedImage = null },
                 )
             }
+            // Above the chrome row, as on Android, so a snackbar never covers the action buttons.
             SnackbarHost(
                 snackbarHostState,
-                Modifier.align(Alignment.BottomCenter).navigationBarsPadding(),
+                Modifier
+                    .align(Alignment.BottomCenter)
+                    .navigationBarsPadding()
+                    .padding(bottom = 56.dp),
             )
             if (showSearchDialog) {
                 SearchDialog(
@@ -307,7 +345,60 @@ private fun SkyMapScreen(
                     expandLayer = expandLayer,
                 )
             }
+            if (showOverflowSheet) {
+                OverflowSheet(
+                    onShareSky = null,
+                    shareEnabled = false,
+                    onOpenGallery = null,
+                    onOpenWidgets = null,
+                    widgetsEnabled = false,
+                    onOpenLocation = {
+                        showOverflowSheet = false
+                        showLocationSheet = true
+                    },
+                    onOpenCalibration = null,
+                    onOpenTutorial = null,
+                    onOpenHelp = null,
+                    onOpenWhatsNew = null,
+                    onOpenSettings = null,
+                    onDismiss = { showOverflowSheet = false },
+                )
+            }
+            if (showLocationSheet) {
+                LocationSheet(
+                    locationViewModel,
+                    nightMode = nightMode,
+                    mapApiKey = GEOAPIFY_MAPS_API_KEY.takeUnless { it == "unset" || it.isEmpty() },
+                    onRequestAutoLocation = onRequestAutoLocation,
+                    onEnterManually = {
+                        locationViewModel.resetManualEntry()
+                        showManualLocationDialog = true
+                        showLocationSheet = false
+                    },
+                    onDismiss = { showLocationSheet = false },
+                )
+            }
+            if (showManualLocationDialog) {
+                ManualLocationEntryDialog(
+                    locationViewModel,
+                    onDismiss = { showManualLocationDialog = false },
+                )
+            }
             val current = gates
+            if (current?.needsEula == false) {
+                LocationStateDialogs(
+                    locationState = locationState,
+                    manualLocationMode = manualLocationMode,
+                    locationViewModel = locationViewModel,
+                    // The system prompt, shown after the EULA, is iOS's rationale.
+                    onRequestLocationPermission = null,
+                    onOpenAppSettings = onOpenAppSettings,
+                    onEnterManually = {
+                        locationViewModel.resetManualEntry()
+                        showManualLocationDialog = true
+                    },
+                )
+            }
             when {
                 // Android holds its splash for these first values; black, until the EULA or
                 // the map can show.

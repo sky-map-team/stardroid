@@ -26,6 +26,8 @@ kotlin {
             // The notification-permission ask (rememberNotificationPermissionRequest).
             implementation(libs.androidx.activity.compose)
             implementation(libs.androidx.core.ktx)
+            // The location sheet's map (RemoteImage), through the app's ImageLoader.
+            implementation(libs.coil.compose)
         }
         commonTest.dependencies {
             implementation(kotlin("test"))

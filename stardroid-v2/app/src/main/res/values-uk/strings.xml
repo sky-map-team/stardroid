@@ -78,57 +78,10 @@
     <!-- Popular events in the time travel dialog (timestamps live in TimeTravelEvents.kt). -->
 
     <!-- Location management. -->
-    <string name="location_management_title">Ваше місцезнаходження</string>
-    <string name="location_source_auto">Автоматично</string>
-    <string name="location_source_manual">Вручну</string>
-    <string name="location_source_acquiring">Отримання…</string>
-    <string name="location_source_unset">Місцезнаходження не встановлено</string>
-    <string name="location_source_hardware_unavailable">Місцезнаходження недоступне на цьому пристрої</string>
-    <string name="location_switch_to_auto">Використовувати автоматичне визначення місцезнаходження</string>
-    <string name="location_switch_to_manual">Введіть місцезнаходження вручну</string>
-    <string name="location_change">Змінити місцезнаходження</string>
-    <string name="location_set_toast">Місцезнаходження встановлено на %1$s</string>
-    <string name="location_long_lat" translation_description="Formatted display of longitude and latitude. %1$.2f is longitude, %2$.2f is latitude">Довгота: %1$.2f, Широта: %2$.2f</string>
-    <string name="location_map_unavailable">Карта недоступна</string>
-    <string name="location_map_content_description" translation_description="Accessibility description of the static map image showing the current location of the user">Карта вашого поточного місця розташування</string>
     <string name="snackbar_action_undo" translation_description="Snackbar action button that reverses the change the snackbar reports, e.g. re-enabling horizon auto-leveling">Скасувати</string>
     <string name="snackbar_action_open" translation_description="Snackbar action button that opens the screen the snackbar refers to, e.g. the compass calibration screen">Відкрити</string>
     <string name="label_size_hint_message" translation_description="Snackbar shown once, the first time the user zooms in a long way. Explains that the text labels naming stars and other objects stay the same size however far you zoom, and that their size is changed in the app\'s Settings screen instead. Shown with an action button that opens Settings.">Розмір міток не змінюється при масштабуванні — налаштуйте його в Налаштуваннях</string>
     <string name="label_size_hint_action" translation_description="Action button on the label size snackbar; opens the app\'s Settings screen, where the user can change how large the sky labels are">Налаштування</string>
-    <string name="location_permission_dialog_title" translation_description="Title of the dialog that requests location permission from the user. The permission is optional - the app works fully without it - and the title must not imply otherwise">Місцезнаходження (Необов\'язково)</string>
-    <string name="location_permission_dialog_message" translation_description="Body text of the dialog requesting location permission, explaining why the app uses it, that it is optional, and what happens without it">
-    Sky Map використовує ваше приблизне місцезнаходження, щоб показати правильне нічне небо. Цей дозвіл є необов\'язковим — ви можете відмовитися від нього та ввести своє місцезнаходження вручну, або вирішити пізніше. Якщо ви вирішите пізніше, карта не буде точною, доки ваше місцезнаходження не буде встановлено.
-    </string>
-    <string name="location_permission_grant">Надати дозвіл</string>
-    <string name="location_permission_enter_manually">Ввести вручну</string>
-    <string name="location_permission_later">Пізніше</string>
-    <string name="location_permanently_denied_title">Потрібен дозвіл</string>
-    <string name="location_permanently_denied_message">
-    Дозвіл на доступ до місцезнаходження було постійно заборонено. Відкрийте параметри програми, щоб увімкнути його знову.
-    </string>
-    <string name="location_open_settings">Відкрити параметри програми</string>
-    <string name="location_acquiring_title">Пошук вашого місцезнаходження…</string>
-    <string name="location_acquiring_message">Все ще намагаємося знайти ваше місцезнаходження…</string>
-    <string name="location_keep_waiting">Продовжити очікування</string>
-    <string name="location_manual_entry_title">Введіть своє місцезнаходження</string>
-    <string name="location_place_name_hint">Місто або назва місця</string>
-    <string name="location_latitude_hint" translation_description="Floating label above the latitude input field. Kept short so it doesn't wrap next to the N/S hemisphere toggle.">Широта</string>
-    <!-- tm:omitted name="location_latitude_placeholder" reason="identical_to_source" -->
-    <string name="location_longitude_hint" translation_description="Floating label above the longitude input field. Kept short so it doesn't wrap next to the E/W hemisphere toggle.">Довгота</string>
-    <!-- tm:omitted name="location_longitude_placeholder" reason="identical_to_source" -->
-    <string name="location_resolve_button">Визначити</string>
-    <string name="location_set_button">Встановити місцезнаходження</string>
-    <string name="location_place_not_found">Місце не знайдено — спробуйте більш конкретну назву</string>
-    <string name="location_geocoder_offline">Немає інтернету — введіть координати вручну</string>
-    <string name="location_geocoder_unavailable">На цьому пристрої немає служби геокодування — введіть координати безпосередньо</string>
-    <string name="location_geocoder_failed" translation_description="Inline message shown when place name lookup fails for a reason other than being offline or the place not existing">Пошук місця не вдався — введіть координати безпосередньо</string>
-    <string name="location_invalid_latitude">Широта має бути від −90 до 90</string>
-    <string name="location_invalid_longitude">Довгота має бути від −180 до 180</string>
-    <string name="location_hemisphere_north_description" translation_description="Accessibility label for the latitude hemisphere toggle button, selected for a positive value">Північна півкуля (додатна широта)</string>
-    <string name="location_hemisphere_south_description" translation_description="Accessibility label for the latitude hemisphere toggle button, selected for a negative value">Південна півкуля (від\'ємна широта)</string>
-    <string name="location_hemisphere_east_description" translation_description="Accessibility label for the longitude hemisphere toggle button, selected for a positive value">Східна півкуля (додатна довгота)</string>
-    <string name="location_hemisphere_west_description" translation_description="Accessibility label for the longitude hemisphere toggle button, selected for a negative value">Західна півкуля (від\'ємна довгота)</string>
-    <!-- tm:omitted name="location_coordinate_format" reason="identical_to_source" -->
 
     <!-- Object info card -->
 

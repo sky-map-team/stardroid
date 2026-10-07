@@ -29,6 +29,7 @@ import com.google.android.stardroid.startup.StartupRouter
 import com.google.android.stardroid.startup.StartupState
 import com.google.android.stardroid.time.TimeController
 import com.google.android.stardroid.ui.layers.LayersViewModel
+import com.google.android.stardroid.ui.location.LocationViewModel
 import com.google.android.stardroid.ui.map.MapViewModel
 import com.google.android.stardroid.ui.map.ReferenceFrame
 import com.google.android.stardroid.ui.objectinfo.ObjectInfoViewModel
@@ -51,16 +52,19 @@ import platform.Foundation.NSApplicationSupportDirectory
 import platform.Foundation.NSBundle
 import platform.Foundation.NSFileManager
 import platform.Foundation.NSLocale
+import platform.Foundation.NSURL
 import platform.Foundation.NSUserDomainMask
 import platform.Foundation.preferredLanguages
+import platform.UIKit.UIApplication
+import platform.UIKit.UIApplicationOpenSettingsURLString
 
 /**
  * The iOS app's object graph: what Android's Hilt modules and `CatalogAccess` provide, built by
  * hand. Everything here is shared code; only the platform edges are iOS's.
  *
- * The app's foreground drives location the way Android's activity `onStart`/`onStop` do. With no
- * screens yet, the system location prompt shows once the EULA is accepted, in place of Android's
- * rationale sheet (phase 5 brings the location screens).
+ * The app's foreground drives location the way Android's activity `onStart`/`onStop` do. The
+ * system location prompt shows once the EULA is accepted, in place of Android's rationale dialog;
+ * a refusal brings the shared permanently-denied dialog, as on Android.
  */
 @OptIn(ExperimentalForeignApi::class)
 class IosAppGraph {
@@ -74,6 +78,8 @@ class IosAppGraph {
     init {
         recordUncaughtExceptions(supportDirectory)
     }
+
+    private val scope = MainScope()
 
     private val settingsStore = settingsDataStore("$supportDirectory/settings.preferences_pb")
 
@@ -179,7 +185,10 @@ class IosAppGraph {
         }
     }
 
-    /** Android's `MainActivity.onStart` location handling, plus the first-launch prompt. */
+    /**
+     * Android's `MainActivity.onStart` location handling, with iOS's prompt in place of the
+     * rationale dialog Android shows for a missing permission: once per foreground, as that is.
+     */
     private suspend fun onStart() {
         // The user can revoke the permission in Settings while the app is backgrounded.
         val state = locationController.state.value
@@ -193,14 +202,33 @@ class IosAppGraph {
         // The terms carry the permissions notice, which must come before any permission prompt
         // (Korean Network Act art. 22-2; see eula.xml), as it does on Android.
         startupRouter.needsEula.first { !it }
-        if (coreLocation.canRequestAuthorization && !settings.noAutoLocate.first()) {
-            if (coreLocation.requestAuthorization()) {
-                locationController.switchToAuto()
-            } else {
-                // iOS never shows the prompt twice: only Settings can grant it now.
-                locationController.onPermissionDenied(canAsk = false)
-            }
+        if (!coreLocation.isAuthorized && !settings.noAutoLocate.first()) askForAutoLocation()
+    }
+
+    /**
+     * Auto location as far as the user allows it: the system prompt if they have not been asked
+     * (iOS asks only once), and otherwise, refused, the permanently-denied dialog's Settings or
+     * manual-entry exits.
+     */
+    private suspend fun askForAutoLocation() {
+        if (coreLocation.isAuthorized ||
+            (coreLocation.canRequestAuthorization && coreLocation.requestAuthorization())
+        ) {
+            locationController.switchToAuto()
+        } else {
+            locationController.onPermissionDenied(canAsk = false)
         }
+    }
+
+    /** The location sheet's "Use Automatic Location" (Android's `requestAutoLocation`). */
+    fun requestAutoLocation() {
+        scope.launch { askForAutoLocation() }
+    }
+
+    /** The permanently-denied dialog's exit: the app's page in Settings. */
+    fun openAppSettings() {
+        val url = NSURL.URLWithString(UIApplicationOpenSettingsURLString) ?: return
+        UIApplication.sharedApplication.openURL(url, emptyMap<Any?, Any>(), null)
     }
 
     /** The EULA gate; the warm welcome and What's New wait for their screens (phase 5). */
@@ -244,6 +272,13 @@ class IosAppGraph {
             now = timeController::now,
             settings = settings,
             location = { locationController.locations.value },
+        )
+
+    /** The location sheet and its dialogs, with Apple's geocoder behind manual entry. */
+    fun locationViewModel(): LocationViewModel =
+        LocationViewModel(
+            locationController,
+            IosGeocoding(),
         )
 
     fun mapViewModel(): MapViewModel =
