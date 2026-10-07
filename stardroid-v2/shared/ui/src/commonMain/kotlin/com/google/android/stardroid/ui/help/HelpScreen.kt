@@ -51,25 +51,42 @@ import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
-import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.AnnotatedString
-import androidx.compose.ui.text.fromHtml
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.unit.dp
-import com.google.android.stardroid.R
 import com.google.android.stardroid.layers.SkyColors
 import com.google.android.stardroid.startup.ExperimentConfig
 import com.google.android.stardroid.ui.common.FoldedText
 import com.google.android.stardroid.ui.common.StyledHtml
-import com.google.android.stardroid.ui.common.WidgetsSheet
+import com.google.android.stardroid.ui.common.annotatedStringFromHtml
+import com.google.android.stardroid.ui.common.formattedStringResource
 import com.google.android.stardroid.ui.common.matches
 import com.google.android.stardroid.ui.common.rememberAssetBitmap
 import com.google.android.stardroid.ui.common.topBarWindowInsets
-import com.google.android.stardroid.ui.common.widgetOffers
+import com.google.android.stardroid.ui.resources.Res
+import com.google.android.stardroid.ui.resources.help_dialog_title
+import com.google.android.stardroid.ui.resources.help_search_clear
+import com.google.android.stardroid.ui.resources.help_search_hint
+import com.google.android.stardroid.ui.resources.help_search_no_results
+import com.google.android.stardroid.ui.resources.help_symbol_key_intro
+import com.google.android.stardroid.ui.resources.help_symbol_key_title
+import com.google.android.stardroid.ui.resources.help_version
+import com.google.android.stardroid.ui.resources.settings_back
+import com.google.android.stardroid.ui.resources.symbol_key_asterism
+import com.google.android.stardroid.ui.resources.symbol_key_diffuse_nebula
+import com.google.android.stardroid.ui.resources.symbol_key_galaxy
+import com.google.android.stardroid.ui.resources.symbol_key_globular_cluster
+import com.google.android.stardroid.ui.resources.symbol_key_meteor_radiant
+import com.google.android.stardroid.ui.resources.symbol_key_meteor_radiant_peak
+import com.google.android.stardroid.ui.resources.symbol_key_open_cluster
+import com.google.android.stardroid.ui.resources.symbol_key_other
+import com.google.android.stardroid.ui.resources.symbol_key_planetary_nebula
+import com.google.android.stardroid.ui.resources.symbol_key_supernova_remnant
 import com.google.android.stardroid.ui.startup.appVersionName
 import com.google.android.stardroid.ui.theme.documentColors
 import com.google.android.stardroid.ui.theme.toComposeColor
 import kotlinx.coroutines.launch
+import org.jetbrains.compose.resources.StringResource
+import org.jetbrains.compose.resources.stringResource
 
 /**
  * v1 `HelpDialogFragment`, grown up into a full-screen destination: the help document rendered
@@ -82,7 +99,11 @@ import kotlinx.coroutines.launch
  * link into the app, so it needs both a search box and named anchors to scroll to.
  *
  * [onNavigate] handles the links that leave Help. The two that don't — the widget catalogue
- * and in-document anchors — are handled here.
+ * and in-document anchors — are handled here. [widgetsSheet] is the catalogue, which only
+ * Android has: null (iOS, or Android with the widgets gated off) leaves its links inert rather
+ * than opening an empty sheet.
+ *
+ * Shared by both apps (D134).
  */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -91,6 +112,7 @@ fun HelpScreen(
     onBack: () -> Unit,
     onNavigate: (HelpLink.Destination) -> Unit,
     experimentConfig: ExperimentConfig = ExperimentConfig.Static,
+    widgetsSheet: (@Composable (onDismiss: () -> Unit) -> Unit)? = null,
 ) {
     val scrollBehavior = TopAppBarDefaults.exitUntilCollapsedScrollBehavior()
     var query by rememberSaveable { mutableStateOf("") }
@@ -98,9 +120,6 @@ fun HelpScreen(
     val listState = rememberLazyListState()
     val scope = rememberCoroutineScope()
 
-    // An empty offer list means the widget components are gated off entirely, so the link has
-    // nothing to show; leave it inert rather than open an empty sheet.
-    val offers = widgetOffers(experimentConfig)
     val sections = rememberHelpSections(experimentConfig)
     val rows = remember(sections, query) { helpRows(sections, query) }
 
@@ -108,7 +127,7 @@ fun HelpScreen(
         when (val link = parseHelpLink(url)) {
             // An unrecognised target is inert rather than fatal — see parseHelpLink.
             null -> Unit
-            is HelpLink.Widgets -> if (offers.isNotEmpty()) showWidgetsSheet = true
+            is HelpLink.Widgets -> if (widgetsSheet != null) showWidgetsSheet = true
             is HelpLink.Anchor -> {
                 // Anchored prose is only reachable in the unfiltered document, so clear the
                 // filter and look the target up in the rows that clearing it produces — the
@@ -126,13 +145,13 @@ fun HelpScreen(
         modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
         topBar = {
             LargeTopAppBar(
-                title = { Text(stringResource(R.string.help_dialog_title)) },
-                windowInsets = topBarWindowInsets(stringResource(R.string.help_dialog_title)),
+                title = { Text(stringResource(Res.string.help_dialog_title)) },
+                windowInsets = topBarWindowInsets(stringResource(Res.string.help_dialog_title)),
                 navigationIcon = {
                     IconButton(onClick = onBack) {
                         Icon(
                             Icons.AutoMirrored.Filled.ArrowBack,
-                            contentDescription = stringResource(R.string.settings_back),
+                            contentDescription = stringResource(Res.string.settings_back),
                         )
                     }
                 },
@@ -160,13 +179,13 @@ fun HelpScreen(
                     when (row) {
                         is HelpRow.Version ->
                             Text(
-                                stringResource(R.string.help_version, appVersionName()),
+                                formattedStringResource(Res.string.help_version, appVersionName()),
                                 style = MaterialTheme.typography.bodyMedium,
                                 modifier = Modifier.padding(vertical = 8.dp),
                             )
                         is HelpRow.NoResults ->
                             Text(
-                                stringResource(R.string.help_search_no_results, query),
+                                formattedStringResource(Res.string.help_search_no_results, query),
                                 style = MaterialTheme.typography.bodyMedium,
                                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                                 modifier = Modifier.padding(vertical = 24.dp),
@@ -177,7 +196,7 @@ fun HelpScreen(
                                     SymbolKeySection(nightMode, query, onLink)
                                 is HelpItem.Prose ->
                                     StyledHtml(
-                                        row.section.item.html.text(),
+                                        stringResource(row.section.item.html),
                                         nightMode = nightMode,
                                         highlight = query,
                                         onInternalLink = onLink,
@@ -191,7 +210,7 @@ fun HelpScreen(
     }
 
     if (showWidgetsSheet) {
-        WidgetsSheet(offers, onDismiss = { showWidgetsSheet = false })
+        widgetsSheet?.invoke { showWidgetsSheet = false }
     }
 }
 
@@ -207,14 +226,14 @@ private fun SearchField(
     OutlinedTextField(
         value = query,
         onValueChange = onQueryChange,
-        placeholder = { Text(stringResource(R.string.help_search_hint)) },
+        placeholder = { Text(stringResource(Res.string.help_search_hint)) },
         leadingIcon = { Icon(Icons.Filled.Search, contentDescription = null) },
         trailingIcon = {
             if (query.isNotEmpty()) {
                 IconButton(onClick = { onQueryChange("") }) {
                     Icon(
                         Icons.Filled.Close,
-                        contentDescription = stringResource(R.string.help_search_clear),
+                        contentDescription = stringResource(Res.string.help_search_clear),
                     )
                 }
             }
@@ -312,11 +331,11 @@ private fun rememberHelpSections(experimentConfig: ExperimentConfig): List<HelpS
 @Composable
 private fun searchableTextOf(item: HelpItem): String =
     when (item) {
-        is HelpItem.Prose -> AnnotatedString.fromHtml(item.html.text()).text
+        is HelpItem.Prose -> annotatedStringFromHtml(stringResource(item.html), null, null).text
         is HelpItem.SymbolKey ->
             buildString {
-                appendLine(stringResource(R.string.help_symbol_key_title))
-                appendLine(stringResource(R.string.help_symbol_key_intro))
+                appendLine(stringResource(Res.string.help_symbol_key_title))
+                appendLine(stringResource(Res.string.help_symbol_key_intro))
                 for (entry in SYMBOL_KEY_ENTRIES) appendLine(stringResource(entry.label))
             }
     }
@@ -332,8 +351,8 @@ private fun SymbolKeySection(
     query: String,
     onLink: (String) -> Unit,
 ) {
-    val heading = stringResource(R.string.help_symbol_key_title)
-    val intro = stringResource(R.string.help_symbol_key_intro)
+    val heading = stringResource(Res.string.help_symbol_key_title)
+    val intro = stringResource(Res.string.help_symbol_key_intro)
     Column {
         StyledHtml(
             "<h2>$heading</h2><p>$intro</p>",
@@ -395,25 +414,25 @@ private fun SymbolRow(
 
 private data class SymbolKeyEntry(
     val asset: String,
-    val label: Int,
+    val label: StringResource,
     val dso: Boolean = true,
 )
 
 /** Mirror of `CatalogLayers.DSO_ICONS_BY_TYPE` plus the meteor-shower radiant markers. */
 private val SYMBOL_KEY_ENTRIES =
     listOf(
-        SymbolKeyEntry("galaxy", R.string.symbol_key_galaxy),
-        SymbolKeyEntry("open_cluster", R.string.symbol_key_open_cluster),
-        SymbolKeyEntry("globular_cluster", R.string.symbol_key_globular_cluster),
-        SymbolKeyEntry("diffuse_nebula", R.string.symbol_key_diffuse_nebula),
-        SymbolKeyEntry("planetary_nebula", R.string.symbol_key_planetary_nebula),
-        SymbolKeyEntry("supernova_remnant", R.string.symbol_key_supernova_remnant),
-        SymbolKeyEntry("asterism", R.string.symbol_key_asterism),
-        SymbolKeyEntry("other", R.string.symbol_key_other),
-        SymbolKeyEntry("meteor_radiant", R.string.symbol_key_meteor_radiant, dso = false),
+        SymbolKeyEntry("galaxy", Res.string.symbol_key_galaxy),
+        SymbolKeyEntry("open_cluster", Res.string.symbol_key_open_cluster),
+        SymbolKeyEntry("globular_cluster", Res.string.symbol_key_globular_cluster),
+        SymbolKeyEntry("diffuse_nebula", Res.string.symbol_key_diffuse_nebula),
+        SymbolKeyEntry("planetary_nebula", Res.string.symbol_key_planetary_nebula),
+        SymbolKeyEntry("supernova_remnant", Res.string.symbol_key_supernova_remnant),
+        SymbolKeyEntry("asterism", Res.string.symbol_key_asterism),
+        SymbolKeyEntry("other", Res.string.symbol_key_other),
+        SymbolKeyEntry("meteor_radiant", Res.string.symbol_key_meteor_radiant, dso = false),
         SymbolKeyEntry(
             "meteor_radiant_peak",
-            R.string.symbol_key_meteor_radiant_peak,
+            Res.string.symbol_key_meteor_radiant_peak,
             dso = false,
         ),
     )

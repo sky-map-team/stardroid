@@ -244,4 +244,27 @@
     <string name="location_hemisphere_east_description" translation_description="Accessibility label for the longitude hemisphere toggle button, selected for a positive value">पूर्वी गोलार्ध (धनात्मक देशांतर)</string>
     <string name="location_hemisphere_west_description" translation_description="Accessibility label for the longitude hemisphere toggle button, selected for a negative value">पश्चिमी गोलार्ध (ऋणात्मक देशांतर)</string>
     <!-- tm:omitted name="location_coordinate_format" reason="identical_to_source" -->
+    <string name="settings_back" translation_description="Content description for the back arrow leaving the settings screen">वापस</string>
+    <string name="dialog_ok_button">ठीक है</string>
+    <string name="whats_new_dialog_title">क्या नया है</string>
+    <string name="help_dialog_title">सहायता</string>
+    <string name="help_version" translation_description="Version line at the top of the Help screen. %1$s is the app version name">संस्करण %1$s</string>
+    <string name="whats_new_screen_title" translation_description="Title of the screen showing the release notes and the credits">नया क्या है और श्रेय</string>
+    <string name="help_search_hint" translation_description="Placeholder in the Help screen\'s search box, which filters the help document to the sections matching what is typed">सहायता खोजें</string>
+    <string name="help_search_clear" translation_description="Accessibility label for the button that clears the Help screen\'s search box">खोज साफ़ करें</string>
+    <string name="help_search_no_results" translation_description="Shown on the Help screen when nothing matches the search. %1$s is the text the user typed">कोई सहायता अनुभाग “%1$s” से मेल नहीं खाते।</string>
+    <string name="help_symbol_key_title" translation_description="Heading of the Help section explaining the map symbols used for deep-sky objects">मानचित्र प्रतीक</string>
+    <string name="help_symbol_key_intro" translation_description="Introductory sentence for the map-symbol key in Help">
+    गहरे-आकाश की वस्तुएँ और उल्का वर्षाएँ उनके प्रकार को दर्शाने वाले प्रतीक से चिह्नित की जाती हैं:
+    </string>
+    <string name="symbol_key_galaxy" translation_description="Symbol-key label: the marker used for galaxies">आकाशगंगा</string>
+    <string name="symbol_key_open_cluster" translation_description="Symbol-key label: the marker used for open star clusters">खुला तारा समूह</string>
+    <string name="symbol_key_globular_cluster" translation_description="Symbol-key label: the marker used for globular star clusters">गोलाकार तारा समूह</string>
+    <string name="symbol_key_diffuse_nebula" translation_description="Symbol-key label: the marker used for diffuse nebulae">विसरित नीहारिका</string>
+    <string name="symbol_key_planetary_nebula" translation_description="Symbol-key label: the marker used for planetary nebulae">ग्रहीय नीहारिका</string>
+    <string name="symbol_key_supernova_remnant" translation_description="Symbol-key label: the marker used for supernova remnants">सुपरनोवा अवशेष</string>
+    <string name="symbol_key_asterism" translation_description="Symbol-key label: the marker used for asterisms and star clouds">तारामंडल या तारा बादल</string>
+    <string name="symbol_key_other" translation_description="Symbol-key label: the marker used for deep-sky objects of any other type">अन्य गहरे-आकाश की वस्तु</string>
+    <string name="symbol_key_meteor_radiant" translation_description="Symbol-key label: the marker for the point in the sky meteors of a shower appear to come from">उल्का वर्षा का दीप्तिमान बिंदु</string>
+    <string name="symbol_key_meteor_radiant_peak" translation_description="Symbol-key label: the brighter marker used when a meteor shower is near its peak activity">उल्का वर्षा अपने चरम के करीब</string>
 </resources>

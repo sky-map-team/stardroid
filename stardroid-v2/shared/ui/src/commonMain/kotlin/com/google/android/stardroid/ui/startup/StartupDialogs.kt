@@ -17,23 +17,25 @@ import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalConfiguration
-import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.platform.LocalWindowInfo
 import androidx.compose.ui.unit.dp
-import com.google.android.stardroid.R
 import com.google.android.stardroid.ui.common.StyledHtml
+import com.google.android.stardroid.ui.resources.Res
+import com.google.android.stardroid.ui.resources.beta_user_help_text
+import com.google.android.stardroid.ui.resources.dialog_ok_button
+import com.google.android.stardroid.ui.resources.whats_new_content
+import com.google.android.stardroid.ui.resources.whats_new_dialog_title
+import com.google.android.stardroid.ui.resources.whats_new_support
+import org.jetbrains.compose.resources.stringResource
 
-/** The manifest version name, for the What's New and Help headings (v1 `getVersionName`). */
+/**
+ * The app's version name, for the What's New and Help headings (v1 `getVersionName`): the
+ * manifest's on Android, the bundle's short version on iOS.
+ */
 @Composable
-fun appVersionName(): String {
-    val context = LocalContext.current
-    return remember {
-        context.packageManager.getPackageInfo(context.packageName, 0).versionName.orEmpty()
-    }
-}
+expect fun appVersionName(): String
 
 /**
  * v1 `WhatsNewDialogFragment`: the support ask and beta-feedback note lead, ahead of the
@@ -49,18 +51,19 @@ fun WhatsNewDialog(
     // The default AlertDialog wraps its content width, so a release with a lot of text ends up
     // tall and narrow. Pin a fixed width and cap the height to a fraction of the screen so the
     // dialog keeps a pleasing aspect ratio and scrolls internally instead of stretching.
-    val screenHeight = LocalConfiguration.current.screenHeightDp.dp
+    val screenHeight =
+        with(LocalDensity.current) { LocalWindowInfo.current.containerSize.height.toDp() }
     AlertDialog(
         onDismissRequest = onDismiss,
-        title = { Text(stringResource(R.string.whats_new_dialog_title)) },
+        title = { Text(stringResource(Res.string.whats_new_dialog_title)) },
         text = {
             // The "New in version X" heading is dropped for the 2.0 launch copy, which opens
             // with its own splash line instead — restore it for later point releases once the
             // launch announcement has aged out.
             val html =
-                stringResource(R.string.whats_new_support) +
-                    stringResource(R.string.beta_user_help_text) +
-                    stringResource(R.string.whats_new_content)
+                stringResource(Res.string.whats_new_support) +
+                    stringResource(Res.string.beta_user_help_text) +
+                    stringResource(Res.string.whats_new_content)
             StyledHtml(
                 html,
                 nightMode = nightMode,
@@ -73,7 +76,7 @@ fun WhatsNewDialog(
         },
         confirmButton = {
             TextButton(onClick = onDismiss) {
-                Text(stringResource(R.string.dialog_ok_button))
+                Text(stringResource(Res.string.dialog_ok_button))
             }
         },
     )

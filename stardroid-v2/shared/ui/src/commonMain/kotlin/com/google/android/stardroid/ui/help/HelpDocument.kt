@@ -9,16 +9,30 @@
 
 package com.google.android.stardroid.ui.help
 
-import androidx.annotation.StringRes
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.res.stringResource
-import com.google.android.stardroid.R
 import com.google.android.stardroid.startup.Experiment
 import com.google.android.stardroid.startup.ExperimentConfig
 import com.google.android.stardroid.ui.resources.Res
+import com.google.android.stardroid.ui.resources.help_calibrate
+import com.google.android.stardroid.ui.resources.help_diagnostics
+import com.google.android.stardroid.ui.resources.help_gallery
+import com.google.android.stardroid.ui.resources.help_hardware
+import com.google.android.stardroid.ui.resources.help_home_link
+import com.google.android.stardroid.ui.resources.help_info_cards
+import com.google.android.stardroid.ui.resources.help_intro
+import com.google.android.stardroid.ui.resources.help_layers
+import com.google.android.stardroid.ui.resources.help_location
+import com.google.android.stardroid.ui.resources.help_misc
+import com.google.android.stardroid.ui.resources.help_navigating
+import com.google.android.stardroid.ui.resources.help_night_vision
+import com.google.android.stardroid.ui.resources.help_notifications
+import com.google.android.stardroid.ui.resources.help_other
+import com.google.android.stardroid.ui.resources.help_pointer_mode
+import com.google.android.stardroid.ui.resources.help_search
+import com.google.android.stardroid.ui.resources.help_time_travel
+import com.google.android.stardroid.ui.resources.help_troubleshooting
+import com.google.android.stardroid.ui.resources.help_widgets
 import com.google.android.stardroid.ui.resources.permissions_notice
 import org.jetbrains.compose.resources.StringResource
-import org.jetbrains.compose.resources.stringResource as sharedStringResource
 
 /**
  * One entry of the help document, in render order.
@@ -38,7 +52,7 @@ internal sealed interface HelpItem {
      */
     data class Prose(
         override val anchor: String,
-        val html: HelpHtml,
+        val html: StringResource,
         /**
          * An `<h1>` divider carrying no prose of its own. Hidden while a search is active: a
          * bare "Miscellaneous and Troubleshooting" heading above a filtered list titles
@@ -50,14 +64,7 @@ internal sealed interface HelpItem {
          * for a feature that is flagged off would document something the user cannot find.
          */
         val experiment: Experiment? = null,
-    ) : HelpItem {
-        constructor(
-            anchor: String,
-            @StringRes html: Int,
-            divider: Boolean = false,
-            experiment: Experiment? = null,
-        ) : this(anchor, HelpHtml.Android(html), divider, experiment)
-    }
+    ) : HelpItem
 
     /**
      * The deep-sky symbol legend, which is drawn natively from the catalog icons rather than
@@ -69,59 +76,38 @@ internal sealed interface HelpItem {
 }
 
 /**
- * Where a section's HTML lives: :app's resources, or :shared:ui's for the permissions notice,
- * which the shared terms screen renders too (D134).
- */
-internal sealed interface HelpHtml {
-    data class Android(
-        @StringRes val id: Int,
-    ) : HelpHtml
-
-    data class Shared(
-        val resource: StringResource,
-    ) : HelpHtml
-}
-
-@Composable
-internal fun HelpHtml.text(): String =
-    when (this) {
-        is HelpHtml.Android -> stringResource(id)
-        is HelpHtml.Shared -> sharedStringResource(resource)
-    }
-
-/**
  * The help document. Adding a section means adding its key to `help.xml` *and* an entry here;
  * the anchor is a permanent name, since translated copy may link to it.
  */
 internal val HELP_DOCUMENT =
     listOf(
-        HelpItem.Prose("home", R.string.help_home_link),
-        HelpItem.Prose("intro", R.string.help_intro),
-        HelpItem.Prose("navigating", R.string.help_navigating),
+        HelpItem.Prose("home", Res.string.help_home_link),
+        HelpItem.Prose("intro", Res.string.help_intro),
+        HelpItem.Prose("navigating", Res.string.help_navigating),
         HelpItem.SymbolKey,
-        HelpItem.Prose("layers", R.string.help_layers),
-        HelpItem.Prose("info_cards", R.string.help_info_cards),
-        HelpItem.Prose("search", R.string.help_search),
-        HelpItem.Prose("time_travel", R.string.help_time_travel),
-        HelpItem.Prose("night_vision", R.string.help_night_vision),
-        HelpItem.Prose("other", R.string.help_other, divider = true),
-        HelpItem.Prose("gallery", R.string.help_gallery),
-        HelpItem.Prose("widgets", R.string.help_widgets),
+        HelpItem.Prose("layers", Res.string.help_layers),
+        HelpItem.Prose("info_cards", Res.string.help_info_cards),
+        HelpItem.Prose("search", Res.string.help_search),
+        HelpItem.Prose("time_travel", Res.string.help_time_travel),
+        HelpItem.Prose("night_vision", Res.string.help_night_vision),
+        HelpItem.Prose("other", Res.string.help_other, divider = true),
+        HelpItem.Prose("gallery", Res.string.help_gallery),
+        HelpItem.Prose("widgets", Res.string.help_widgets),
         HelpItem.Prose(
             "notifications",
-            R.string.help_notifications,
+            Res.string.help_notifications,
             experiment = Experiment.NOTIFICATIONS,
         ),
-        HelpItem.Prose("location", R.string.help_location),
-        // Lives in :shared:ui's eula.xml, not help.xml: the terms screen renders the same key,
-        // so the permission disclosure is written and translated exactly once (see eula.xml).
-        HelpItem.Prose("permissions", HelpHtml.Shared(Res.string.permissions_notice)),
-        HelpItem.Prose("diagnostics", R.string.help_diagnostics),
-        HelpItem.Prose("calibrate", R.string.help_calibrate),
-        HelpItem.Prose("misc", R.string.help_misc, divider = true),
-        HelpItem.Prose("hardware", R.string.help_hardware),
-        HelpItem.Prose("troubleshooting", R.string.help_troubleshooting),
-        HelpItem.Prose("pointer_mode", R.string.help_pointer_mode),
+        HelpItem.Prose("location", Res.string.help_location),
+        // Lives in eula.xml, not help.xml: the terms screen renders the same key, so the
+        // permission disclosure is written and translated exactly once (see eula.xml).
+        HelpItem.Prose("permissions", Res.string.permissions_notice),
+        HelpItem.Prose("diagnostics", Res.string.help_diagnostics),
+        HelpItem.Prose("calibrate", Res.string.help_calibrate),
+        HelpItem.Prose("misc", Res.string.help_misc, divider = true),
+        HelpItem.Prose("hardware", Res.string.help_hardware),
+        HelpItem.Prose("troubleshooting", Res.string.help_troubleshooting),
+        HelpItem.Prose("pointer_mode", Res.string.help_pointer_mode),
     )
 
 /** The anchors [HELP_DOCUMENT] defines — the set `skymap://help#…` links may name. */

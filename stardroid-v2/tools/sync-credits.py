@@ -1,6 +1,6 @@
 """
 Syncs the sponsors_text and contributors_text strings in
-app/src/main/res/values/contributors.xml, mirroring stardroid-v1's
+shared/ui/src/commonMain/res/values/contributors.xml, mirroring stardroid-v1's
 tools/sync-sponsors.py and tools/sync-contributors.py.
 
 Unlike v1 (which writes two separate notranslate-*.xml files), v2 keeps both
@@ -34,7 +34,7 @@ import requests
 
 REPO = "sky-map-team/stardroid"
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-OUTPUT_PATH = os.path.join(SCRIPT_DIR, "../app/src/main/res/values/contributors.xml")
+OUTPUT_PATH = os.path.join(SCRIPT_DIR, "../shared/ui/src/commonMain/res/values/contributors.xml")
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
 
 # Contributors are capped so the credits screen doesn't grow forever: keep anyone

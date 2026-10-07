@@ -6,12 +6,12 @@ description: Sync the Buy Me a Coffee sponsor list and GitHub contributor list i
 # Sky Map v2 Credits Sync
 
 Updates `sponsors_text` and `contributors_text` in
-`app/src/main/res/values/contributors.xml`, mirroring stardroid-v1's
+`shared/ui/src/commonMain/res/values/contributors.xml`, mirroring stardroid-v1's
 `skymap.sponsors` / `skymap.contributors` skills but adapted for v2's merged
 file and the current (MCP-based) Buy Me a Coffee integration.
 
 Both strings are `translatable="false"` and are spliced into `credits_text`
-(`app/src/main/res/values/credits.xml`) via `stringResource` format args in
+(`shared/ui/src/commonMain/res/values/credits.xml`) via `stringResource` format args in
 `HelpScreen.kt` — see `AGENTS.md`.
 
 ## Contributors (GitHub) — fully scriptable
@@ -125,7 +125,7 @@ python3 tools/sync-credits.py sponsors --sponsors-file /path/to/names.txt
 ```
 
 This escapes each name and rewrites `sponsors_text` in
-`app/src/main/res/values/contributors.xml`, leaving `contributors_text`
+`shared/ui/src/commonMain/res/values/contributors.xml`, leaving `contributors_text`
 untouched.
 
 ## When run as part of skymap.release

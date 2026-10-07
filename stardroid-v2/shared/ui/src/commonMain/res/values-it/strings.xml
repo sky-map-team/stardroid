@@ -246,4 +246,27 @@
     <string name="location_hemisphere_east_description" translation_description="Accessibility label for the longitude hemisphere toggle button, selected for a positive value">Emisfero est (longitudine positiva)</string>
     <string name="location_hemisphere_west_description" translation_description="Accessibility label for the longitude hemisphere toggle button, selected for a negative value">Emisfero ovest (longitudine negativa)</string>
     <!-- tm:omitted name="location_coordinate_format" reason="identical_to_source" -->
+    <string name="settings_back" translation_description="Content description for the back arrow leaving the settings screen">Indietro</string>
+    <!-- tm:omitted name="dialog_ok_button" reason="identical_to_source" -->
+    <string name="whats_new_dialog_title">Novità</string>
+    <string name="help_dialog_title">Guida</string>
+    <string name="help_version" translation_description="Version line at the top of the Help screen. %1$s is the app version name">Versione %1$s</string>
+    <string name="whats_new_screen_title" tm_human="true" translation_description="Title of the screen showing the release notes and the credits">Novità e crediti</string>
+    <string name="help_search_hint" translation_description="Placeholder in the Help screen\'s search box, which filters the help document to the sections matching what is typed">Cerca nella guida</string>
+    <string name="help_search_clear" translation_description="Accessibility label for the button that clears the Help screen\'s search box">Cancella ricerca</string>
+    <string name="help_search_no_results" translation_description="Shown on the Help screen when nothing matches the search. %1$s is the text the user typed">Nessuna sezione della guida corrisponde a “%1$s”.</string>
+    <string name="help_symbol_key_title" translation_description="Heading of the Help section explaining the map symbols used for deep-sky objects">Simboli della mappa</string>
+    <string name="help_symbol_key_intro" translation_description="Introductory sentence for the map-symbol key in Help">
+    Gli oggetti del cielo profondo e gli sciami meteorici sono contrassegnati da un simbolo che ne indica il tipo:
+    </string>
+    <string name="symbol_key_galaxy" translation_description="Symbol-key label: the marker used for galaxies">Galassia</string>
+    <string name="symbol_key_open_cluster" translation_description="Symbol-key label: the marker used for open star clusters">Ammasso aperto</string>
+    <string name="symbol_key_globular_cluster" translation_description="Symbol-key label: the marker used for globular star clusters">Ammasso globulare</string>
+    <string name="symbol_key_diffuse_nebula" translation_description="Symbol-key label: the marker used for diffuse nebulae">Nebulosa diffusa</string>
+    <string name="symbol_key_planetary_nebula" translation_description="Symbol-key label: the marker used for planetary nebulae">Nebulosa planetaria</string>
+    <string name="symbol_key_supernova_remnant" translation_description="Symbol-key label: the marker used for supernova remnants">Resto di supernova</string>
+    <string name="symbol_key_asterism" translation_description="Symbol-key label: the marker used for asterisms and star clouds">Asterismo o nube stellare</string>
+    <string name="symbol_key_other" tm_human="true" translation_description="Symbol-key label: the marker used for deep-sky objects of any other type">Altro oggetto del cielo profondo</string>
+    <string name="symbol_key_meteor_radiant" translation_description="Symbol-key label: the marker for the point in the sky meteors of a shower appear to come from">Radiante di sciame meteorico</string>
+    <string name="symbol_key_meteor_radiant_peak" translation_description="Symbol-key label: the brighter marker used when a meteor shower is near its peak activity">Sciame meteorico vicino al picco</string>
 </resources>

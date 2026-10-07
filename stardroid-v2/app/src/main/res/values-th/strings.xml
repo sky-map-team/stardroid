@@ -89,7 +89,6 @@
 
     <!-- Settings screen (v1 wording where a v1 string existed) -->
     <string name="settings_title">การตั้งค่า</string>
-    <string name="settings_back" translation_description="Content description for the back arrow leaving the settings screen">ย้อนกลับ</string>
     <string name="settings_ok">ตกลง</string>
     <string name="settings_cancel">ยกเลิก</string>
     <string name="settings_section_controls">การควบคุม</string>
@@ -257,9 +256,7 @@
     <string name="calibration_complete_toast" translation_description="Toast shown when the compass reaches high accuracy and the auto-opened calibration screen closes itself">เซ็นเซอร์มีความแม่นยำสูง</string>
 
     <!-- Startup routing: EULA, warm welcome, What's New (slice 16) -->
-    <string name="dialog_ok_button">ตกลง</string>
 
-    <string name="whats_new_dialog_title">มีอะไรใหม่</string>
     <string name="whats_new_version_heading" translation_description="Heading above the list of new features. %1$s is the app version name">มีอะไรใหม่ในเวอร์ชัน %1$s</string>
 
     <!-- Warm welcome (onboarding pager, slice 16) -->
@@ -292,28 +289,10 @@
     <string name="warm_welcome_sensor_missing">ขาดหายไป</string>
 
     <!-- Help dialog (slice 16) -->
-    <string name="help_dialog_title">ความช่วยเหลือ</string>
-    <string name="help_version" translation_description="Version line at the top of the Help screen. %1$s is the app version name">เวอร์ชัน %1$s</string>
-    <string name="whats_new_screen_title" translation_description="Title of the screen showing the release notes and the credits">มีอะไรใหม่และเครดิต</string>
 
     <!-- The Help screen's search box, which filters the document to the matching sections. -->
-    <string name="help_search_hint" translation_description="Placeholder in the Help screen\'s search box, which filters the help document to the sections matching what is typed">ค้นหาความช่วยเหลือ</string>
-    <string name="help_search_clear" translation_description="Accessibility label for the button that clears the Help screen\'s search box">ล้างการค้นหา</string>
-    <string name="help_search_no_results" translation_description="Shown on the Help screen when nothing matches the search. %1$s is the text the user typed">ไม่พบส่วนช่วยเหลือที่ตรงกับ “%1$s”</string>
 
     <!-- The deep-sky symbol key at the foot of the Help screen. -->
-    <string name="help_symbol_key_title" translation_description="Heading of the Help section explaining the map symbols used for deep-sky objects">สัญลักษณ์บนแผนที่</string>
-    <string name="help_symbol_key_intro" translation_description="Introductory sentence for the map-symbol key in Help">วัตถุท้องฟ้าลึกและฝนดาวตกจะมีสัญลักษณ์แสดงประเภทของวัตถุดังนี้:</string>
-    <string name="symbol_key_galaxy" translation_description="Symbol-key label: the marker used for galaxies">กาแล็กซี</string>
-    <string name="symbol_key_open_cluster" translation_description="Symbol-key label: the marker used for open star clusters">กระจุกดาวเปิด</string>
-    <string name="symbol_key_globular_cluster" translation_description="Symbol-key label: the marker used for globular star clusters">กระจุกดาวทรงกลม</string>
-    <string name="symbol_key_diffuse_nebula" translation_description="Symbol-key label: the marker used for diffuse nebulae">เนบิวลากระจาย</string>
-    <string name="symbol_key_planetary_nebula" translation_description="Symbol-key label: the marker used for planetary nebulae">เนบิวลาดาวเคราะห์</string>
-    <string name="symbol_key_supernova_remnant" translation_description="Symbol-key label: the marker used for supernova remnants">ซากซูเปอร์โนวา</string>
-    <string name="symbol_key_asterism" translation_description="Symbol-key label: the marker used for asterisms and star clouds">กลุ่มดาวฤกษ์หรือเมฆดาว</string>
-    <string name="symbol_key_other" translation_description="Symbol-key label: the marker used for deep-sky objects of any other type">วัตถุท้องฟ้าลึกอื่น ๆ</string>
-    <string name="symbol_key_meteor_radiant" translation_description="Symbol-key label: the marker for the point in the sky meteors of a shower appear to come from">จุดศูนย์กลางฝนดาวตก</string>
-    <string name="symbol_key_meteor_radiant_peak" translation_description="Symbol-key label: the brighter marker used when a meteor shower is near its peak activity">ฝนดาวตกใกล้ถึงช่วงสูงสุด</string>
 
     <!-- The widgets catalogue reached from the map\'s overflow menu. -->
     <string name="widgets_sheet_title" translation_description="Title of the sheet listing the home-screen widgets the app offers">วิดเจ็ตหน้าจอหลัก</string>

@@ -13,19 +13,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.produceState
 import androidx.compose.ui.graphics.ImageBitmap
-import androidx.compose.ui.graphics.toComposeImageBitmap
 import androidx.compose.ui.window.DialogProperties
 import kotlinx.cinterop.ExperimentalForeignApi
 import kotlinx.cinterop.addressOf
 import kotlinx.cinterop.usePinned
-import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.IO
 import kotlinx.coroutines.withContext
-import org.jetbrains.skia.Image
-import platform.Foundation.NSBundle
 import platform.Foundation.NSData
-import platform.Foundation.dataWithContentsOfFile
 import platform.posix.memcpy
 
 // The photos ship in the app bundle as the celestial_images folder (ios/SkyMap/project.yml).
@@ -34,18 +29,7 @@ internal actual fun rememberCelestialImage(imageRef: String): ImageBitmap? {
     val bitmap by produceState<ImageBitmap?>(initialValue = null, imageRef) {
         value = null
         value =
-            withContext(Dispatchers.IO) {
-                try {
-                    val path = "${NSBundle.mainBundle.resourcePath}/celestial_images/$imageRef"
-                    NSData.dataWithContentsOfFile(path)?.let {
-                        Image.makeFromEncoded(it.toByteArray()).toComposeImageBitmap()
-                    }
-                } catch (e: CancellationException) {
-                    throw e
-                } catch (e: Exception) {
-                    null
-                }
-            }
+            withContext(Dispatchers.IO) { decodeBundleImage("celestial_images/$imageRef") }
     }
     return bitmap
 }

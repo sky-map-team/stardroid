@@ -244,4 +244,27 @@
     <string name="location_hemisphere_east_description" translation_description="Accessibility label for the longitude hemisphere toggle button, selected for a positive value">Східна півкуля (додатна довгота)</string>
     <string name="location_hemisphere_west_description" translation_description="Accessibility label for the longitude hemisphere toggle button, selected for a negative value">Західна півкуля (від\'ємна довгота)</string>
     <!-- tm:omitted name="location_coordinate_format" reason="identical_to_source" -->
+    <string name="settings_back" translation_description="Content description for the back arrow leaving the settings screen">Назад</string>
+    <!-- tm:omitted name="dialog_ok_button" reason="identical_to_source" -->
+    <string name="whats_new_dialog_title">Що нового</string>
+    <string name="help_dialog_title">Довідка</string>
+    <string name="help_version" translation_description="Version line at the top of the Help screen. %1$s is the app version name">Версія %1$s</string>
+    <string name="whats_new_screen_title" translation_description="Title of the screen showing the release notes and the credits">Що нового й подяки</string>
+    <string name="help_search_hint" translation_description="Placeholder in the Help screen\'s search box, which filters the help document to the sections matching what is typed">Пошук довідки</string>
+    <string name="help_search_clear" translation_description="Accessibility label for the button that clears the Help screen\'s search box">Очистити пошук</string>
+    <string name="help_search_no_results" translation_description="Shown on the Help screen when nothing matches the search. %1$s is the text the user typed">Жоден розділ довідки не відповідає «%1$s».</string>
+    <string name="help_symbol_key_title" translation_description="Heading of the Help section explaining the map symbols used for deep-sky objects">Позначки на карті</string>
+    <string name="help_symbol_key_intro" translation_description="Introductory sentence for the map-symbol key in Help">
+    Об\'єкти далекого космосу та метеорні потоки позначено символами, що вказують їхній тип:
+    </string>
+    <string name="symbol_key_galaxy" translation_description="Symbol-key label: the marker used for galaxies">Галактика</string>
+    <string name="symbol_key_open_cluster" translation_description="Symbol-key label: the marker used for open star clusters">Розсіяне скупчення</string>
+    <string name="symbol_key_globular_cluster" translation_description="Symbol-key label: the marker used for globular star clusters">Кулясте скупчення</string>
+    <string name="symbol_key_diffuse_nebula" translation_description="Symbol-key label: the marker used for diffuse nebulae">Дифузна туманність</string>
+    <string name="symbol_key_planetary_nebula" translation_description="Symbol-key label: the marker used for planetary nebulae">Планетарна туманність</string>
+    <string name="symbol_key_supernova_remnant" translation_description="Symbol-key label: the marker used for supernova remnants">Залишок сверхнової</string>
+    <string name="symbol_key_asterism" translation_description="Symbol-key label: the marker used for asterisms and star clouds">Астеризм або зоряна хмара</string>
+    <string name="symbol_key_other" translation_description="Symbol-key label: the marker used for deep-sky objects of any other type">Інший об\'єкт далекого космосу</string>
+    <string name="symbol_key_meteor_radiant" translation_description="Symbol-key label: the marker for the point in the sky meteors of a shower appear to come from">Радіант метеорного потоку</string>
+    <string name="symbol_key_meteor_radiant_peak" translation_description="Symbol-key label: the brighter marker used when a meteor shower is near its peak activity">Метеорний потік поблизу піку</string>
 </resources>

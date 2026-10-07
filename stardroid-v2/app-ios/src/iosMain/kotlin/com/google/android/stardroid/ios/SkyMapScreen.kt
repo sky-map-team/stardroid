@@ -41,6 +41,9 @@ import androidx.compose.ui.window.ComposeUIViewController
 import com.google.android.stardroid.catalog.ObjectInfo
 import com.google.android.stardroid.render.api.LayerId
 import com.google.android.stardroid.time.TimeTravelState
+import com.google.android.stardroid.ui.help.HelpLink
+import com.google.android.stardroid.ui.help.HelpScreen
+import com.google.android.stardroid.ui.help.WhatsNewScreen
 import com.google.android.stardroid.ui.layers.LayersViewModel
 import com.google.android.stardroid.ui.location.LocationSheet
 import com.google.android.stardroid.ui.location.LocationStateDialogs
@@ -65,6 +68,7 @@ import com.google.android.stardroid.ui.search.SearchOverlay
 import com.google.android.stardroid.ui.search.SearchViewModel
 import com.google.android.stardroid.ui.startup.EulaScreen
 import com.google.android.stardroid.ui.startup.StartupViewModel
+import com.google.android.stardroid.ui.startup.WhatsNewDialog
 import com.google.android.stardroid.ui.theme.SkyMapTheme
 import com.google.android.stardroid.ui.timetravel.TimeTravelDialog
 import com.google.android.stardroid.ui.timetravel.TimeTravelFlash
@@ -84,7 +88,7 @@ import platform.UIKit.UIViewController
  * is wired as Android wires it.
  *
  * Android's startup gating, as far as iOS has screens for it: the EULA blocks everything until
- * accepted. The warm welcome and What's New follow later in phase 5.
+ * accepted, and What's New shows on upgrades. The warm welcome follows later in phase 5.
  */
 fun skyMapViewController(): UIViewController {
     val graph = IosAppGraph()
@@ -152,6 +156,8 @@ private fun SkyMapScreen(
     var showOverflowSheet by remember { mutableStateOf(false) }
     var showLocationSheet by remember { mutableStateOf(false) }
     var showManualLocationDialog by remember { mutableStateOf(false) }
+    // The full-screen pages over the map, standing in for Android's navigation routes.
+    var page by remember { mutableStateOf<Page?>(null) }
     // A still tap on the sky identifies what is there, as on Android. UIKit reports points;
     // Compose pixels are points at the screen's scale, which is its density here.
     val density = LocalDensity.current.density
@@ -358,8 +364,14 @@ private fun SkyMapScreen(
                     },
                     onOpenCalibration = null,
                     onOpenTutorial = null,
-                    onOpenHelp = null,
-                    onOpenWhatsNew = null,
+                    onOpenHelp = {
+                        showOverflowSheet = false
+                        page = Page.HELP
+                    },
+                    onOpenWhatsNew = {
+                        showOverflowSheet = false
+                        page = Page.WHATS_NEW
+                    },
                     onOpenSettings = null,
                     onDismiss = { showOverflowSheet = false },
                 )
@@ -383,6 +395,21 @@ private fun SkyMapScreen(
                     locationViewModel,
                     onDismiss = { showManualLocationDialog = false },
                 )
+            }
+            when (page) {
+                Page.HELP ->
+                    HelpScreen(
+                        nightMode = nightMode,
+                        onBack = { page = null },
+                        // Links to screens iOS doesn't have yet stay inert until they arrive.
+                        onNavigate = { destination ->
+                            if (destination == HelpLink.Destination.APP_SETTINGS) {
+                                onOpenAppSettings()
+                            }
+                        },
+                    )
+                Page.WHATS_NEW -> WhatsNewScreen(nightMode = nightMode, onBack = { page = null })
+                null -> Unit
             }
             val current = gates
             if (current?.needsEula == false) {
@@ -410,7 +437,17 @@ private fun SkyMapScreen(
                         // iOS apps don't quit themselves: Accept is the only way on.
                         onDecline = null,
                     )
+                // Upgrades only, and ahead of a still-pending tour, as on Android.
+                current.needsWhatsNew &&
+                    (!current.needsWarmWelcome || current.needsWhatsNewDuringWarmWelcome) ->
+                    WhatsNewDialog(nightMode = nightMode, onDismiss = startup::dismissWhatsNew)
             }
         }
     }
+}
+
+/** The full-screen pages the iOS host shows over the map (Android's navigation routes). */
+private enum class Page {
+    HELP,
+    WHATS_NEW,
 }

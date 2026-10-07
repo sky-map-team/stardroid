@@ -89,7 +89,6 @@
 
     <!-- Settings screen (v1 wording where a v1 string existed) -->
     <string name="settings_title">Instellingen</string>
-    <string name="settings_back" translation_description="Content description for the back arrow leaving the settings screen">Terug</string>
     <!-- tm:omitted name="settings_ok" reason="identical_to_source" -->
     <string name="settings_cancel">Annuleren</string>
     <string name="settings_section_controls">Bediening</string>
@@ -259,9 +258,7 @@
     <string name="calibration_complete_toast" translation_description="Toast shown when the compass reaches high accuracy and the auto-opened calibration screen closes itself">Sensoren hebben hoge nauwkeurigheid</string>
 
     <!-- Startup routing: EULA, warm welcome, What's New (slice 16) -->
-    <!-- tm:omitted name="dialog_ok_button" reason="identical_to_source" -->
 
-    <string name="whats_new_dialog_title">Wat is er nieuw</string>
     <string name="whats_new_version_heading" translation_description="Heading above the list of new features. %1$s is the app version name">Nieuw in versie %1$s</string>
 
     <!-- Warm welcome (onboarding pager, slice 16) -->
@@ -293,30 +290,10 @@
     <string name="warm_welcome_sensor_ok">Werkt</string>
     <string name="warm_welcome_sensor_missing">Ontbreekt</string>
 
-    <!-- tm:omitted name="help_dialog_title" reason="identical_to_source" -->
-    <string name="help_version" translation_description="Version line at the top of the Help screen. %1$s is the app version name">Versie %1$s</string>
-    <string name="whats_new_screen_title" translation_description="Title of the screen showing the release notes and the credits">Wat is nieuw &amp; Credits</string>
 
     <!-- The Help screen's search box, which filters the document to the matching sections. -->
-    <string name="help_search_hint" translation_description="Placeholder in the Help screen\'s search box, which filters the help document to the sections matching what is typed">Help zoeken</string>
-    <string name="help_search_clear" translation_description="Accessibility label for the button that clears the Help screen\'s search box">Zoekopdracht wissen</string>
-    <string name="help_search_no_results" translation_description="Shown on the Help screen when nothing matches the search. %1$s is the text the user typed">Geen helpsecties komen overeen met “%1$s”.</string>
 
     <!-- The deep-sky symbol key at the foot of the Help screen. -->
-    <string name="help_symbol_key_title" translation_description="Heading of the Help section explaining the map symbols used for deep-sky objects">Kaartsymbolen</string>
-    <string name="help_symbol_key_intro" translation_description="Introductory sentence for the map-symbol key in Help">
-    Deep-sky objecten en meteorenzwermen worden gemarkeerd met een symbool dat hun type aangeeft:
-    </string>
-    <string name="symbol_key_galaxy" translation_description="Symbol-key label: the marker used for galaxies">Sterrenstelsel</string>
-    <!-- tm:omitted name="symbol_key_open_cluster" reason="identical_to_source" -->
-    <string name="symbol_key_globular_cluster" translation_description="Symbol-key label: the marker used for globular star clusters">Bolvormige cluster</string>
-    <string name="symbol_key_diffuse_nebula" translation_description="Symbol-key label: the marker used for diffuse nebulae">Diffuse nevel</string>
-    <string name="symbol_key_planetary_nebula" translation_description="Symbol-key label: the marker used for planetary nebulae">Planetaire nevel</string>
-    <string name="symbol_key_supernova_remnant" translation_description="Symbol-key label: the marker used for supernova remnants">Supernovarest</string>
-    <string name="symbol_key_asterism" translation_description="Symbol-key label: the marker used for asterisms and star clouds">Asterisme of sterrenwolk</string>
-    <string name="symbol_key_other" translation_description="Symbol-key label: the marker used for deep-sky objects of any other type">Ander deep-sky object</string>
-    <string name="symbol_key_meteor_radiant" translation_description="Symbol-key label: the marker for the point in the sky meteors of a shower appear to come from">Radiant van meteorenzwerm</string>
-    <string name="symbol_key_meteor_radiant_peak" translation_description="Symbol-key label: the brighter marker used when a meteor shower is near its peak activity">Meteorenzwerm nabij hoogtepunt</string>
 
     <string name="widgets_sheet_title" translation_description="Title of the sheet listing the home-screen widgets the app offers">Startschermwidgets</string>
     <string name="widgets_sheet_subtitle" translation_description="Subtitle of the widgets sheet, explaining what the listed widgets are for">Houd de hemel van vanavond op je startscherm. Kies er een om toe te voegen.</string>

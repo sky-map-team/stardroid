@@ -248,4 +248,27 @@
     <string name="location_hemisphere_east_description" translation_description="Accessibility label for the longitude hemisphere toggle button, selected for a positive value">Östliche Hemisphäre (positive Länge)</string>
     <string name="location_hemisphere_west_description" translation_description="Accessibility label for the longitude hemisphere toggle button, selected for a negative value">Westliche Hemisphäre (negative Länge)</string>
     <!-- tm:omitted name="location_coordinate_format" reason="identical_to_source" -->
+    <string name="settings_back" translation_description="Content description for the back arrow leaving the settings screen">Zurück</string>
+    <!-- tm:omitted name="dialog_ok_button" reason="identical_to_source" -->
+    <string name="whats_new_dialog_title">Neuerungen</string>
+    <string name="help_dialog_title">Hilfe</string>
+    <!-- tm:omitted name="help_version" reason="identical_to_source" -->
+    <string name="whats_new_screen_title" translation_description="Title of the screen showing the release notes and the credits">Was ist neu &amp; Mitwirkende</string>
+    <string name="help_search_hint" translation_description="Placeholder in the Help screen\'s search box, which filters the help document to the sections matching what is typed">Hilfe durchsuchen</string>
+    <string name="help_search_clear" translation_description="Accessibility label for the button that clears the Help screen\'s search box">Suche löschen</string>
+    <string name="help_search_no_results" translation_description="Shown on the Help screen when nothing matches the search. %1$s is the text the user typed">Keine Hilfethemen passen zu „%1$s“.</string>
+    <string name="help_symbol_key_title" translation_description="Heading of the Help section explaining the map symbols used for deep-sky objects">Kartensymbole</string>
+    <string name="help_symbol_key_intro" translation_description="Introductory sentence for the map-symbol key in Help">
+    Deep-Sky-Objekte und Meteorschauer sind mit einem Symbol gekennzeichnet, das ihren Typ anzeigt:
+    </string>
+    <string name="symbol_key_galaxy" translation_description="Symbol-key label: the marker used for galaxies">Galaxie</string>
+    <string name="symbol_key_open_cluster" translation_description="Symbol-key label: the marker used for open star clusters">Offener Sternhaufen</string>
+    <string name="symbol_key_globular_cluster" translation_description="Symbol-key label: the marker used for globular star clusters">Kugelsternhaufen</string>
+    <string name="symbol_key_diffuse_nebula" translation_description="Symbol-key label: the marker used for diffuse nebulae">Diffuser Nebel</string>
+    <string name="symbol_key_planetary_nebula" translation_description="Symbol-key label: the marker used for planetary nebulae">Planetarischer Nebel</string>
+    <string name="symbol_key_supernova_remnant" translation_description="Symbol-key label: the marker used for supernova remnants">Supernova-Überrest</string>
+    <string name="symbol_key_asterism" translation_description="Symbol-key label: the marker used for asterisms and star clouds">Asterismus oder Sternwolke</string>
+    <string name="symbol_key_other" translation_description="Symbol-key label: the marker used for deep-sky objects of any other type">Anderes Deep-Sky-Objekt</string>
+    <string name="symbol_key_meteor_radiant" translation_description="Symbol-key label: the marker for the point in the sky meteors of a shower appear to come from">Meteorschauer-Radiant</string>
+    <string name="symbol_key_meteor_radiant_peak" translation_description="Symbol-key label: the brighter marker used when a meteor shower is near its peak activity">Meteorschauer nahe seinem Höhepunkt</string>
 </resources>

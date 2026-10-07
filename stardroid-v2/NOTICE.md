@@ -45,7 +45,7 @@ strings that survive from the 2012 Google release, the remainder are isolated si
 `Sonne`, `Mond`, `NORDEN`, `ZENIT` — which are dictionary terms rather than copyrightable
 expression, and for which only one correct translation exists. Everything else post-dates 2012 and
 is the work of Sky Map's community translators, credited in
-`app/src/main/res/values/contributors.xml`. v1's string resources carry no copyright notice, so
+`shared/ui/src/commonMain/res/values/contributors.xml`. v1's string resources carry no copyright notice, so
 §4(c) has none to retain.
 
 ---
@@ -56,7 +56,7 @@ Star catalogs, ephemeris data and celestial imagery are governed by their own te
 uniform: some are public domain (NASA, ESA, JPL, USNO), others are CC BY 4.0 (ESO, the IAU,
 IAU/Sky & Telescope, the EHT Collaboration). CC BY 4.0 is not public domain and carries ongoing
 attribution obligations. Full attribution is in the app's credits screen,
-`app/src/main/res/values/credits.xml`, and in `app/src/main/assets/planets/SOURCES.md`.
+`shared/ui/src/commonMain/res/values/credits.xml`, and in `app/src/main/assets/planets/SOURCES.md`.
 
 Classification of every shipped asset is in [`ASSET-LICENSES.txt`](ASSET-LICENSES.txt).
 
