@@ -53,7 +53,7 @@ internal actual fun rememberCelestialImage(imageRef: String): ImageBitmap? {
 internal actual fun fullScreenDialogProperties() = DialogProperties(usePlatformDefaultWidth = false)
 
 @OptIn(ExperimentalForeignApi::class)
-private fun NSData.toByteArray(): ByteArray =
+internal fun NSData.toByteArray(): ByteArray =
     ByteArray(length.toInt()).also { bytes ->
         if (bytes.isNotEmpty()) bytes.usePinned { memcpy(it.addressOf(0), this.bytes, length) }
     }

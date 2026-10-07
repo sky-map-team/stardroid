@@ -197,4 +197,57 @@
     <string name="tonight_lunar_eclipse_total" translation_description="Tonight-widget row: a total lunar eclipse is starting soon or under way">Diffyg lleuad llawn</string>
     <string name="tonight_lunar_eclipse_partial" translation_description="Tonight-widget row: a partial lunar eclipse is starting soon or under way">Diffyg lleuad rhannol</string>
     <string name="tonight_lunar_eclipse_penumbral" translation_description="Tonight-widget row: a penumbral lunar eclipse is starting soon or under way">Diffyg lleuad penwmbraidd</string>
+    <string name="location_management_title">Eich Lleoliad</string>
+    <string name="location_source_auto">Awtomatig</string>
+    <string name="location_source_manual">Llaw</string>
+    <string name="location_source_acquiring">Yn caffael…</string>
+    <string name="location_source_unset">Dim lleoliad wedi\'i osod</string>
+    <string name="location_source_hardware_unavailable">Lleoliad ddim ar gael ar y ddyfais hon</string>
+    <string name="location_switch_to_auto">Defnyddio Lleoliad Awtomatig</string>
+    <string name="location_switch_to_manual">Rhowch Lleoliad â Llaw</string>
+    <string name="location_change">Newid Lleoliad</string>
+    <string name="location_set_toast">Lleoliad wedi\'i osod i %1$s</string>
+    <string name="location_long_lat">Hydred:%1$.2f, Ledred:%2$.2f</string>
+    <string name="location_map_unavailable">Map Ddim ar Gael</string>
+    <string name="location_map_content_description" translation_description="Accessibility description of the static map image showing the current location of the user">Map o\'ch lleoliad presennol</string>
+    <string name="location_permission_dialog_title" translation_description="Title of the dialog that requests location permission from the user. The permission is optional - the app works fully without it - and the title must not imply otherwise">Lleoliad (Dewisol)</string>
+    <string name="location_permission_dialog_message" translation_description="Body text of the dialog requesting location permission, explaining why the app uses it, that it is optional, and what happens without it">
+    Mae Sky Map yn defnyddio eich lleoliad bras i ddangos yr awyr nos gywir. Mae&#13;
+&#13;
+yr hawl hon yn ddewisol — gallwch ei gwrthod a nodi eich lleoliad â llaw yn lle hynny, neu benderfynu&#13;
+&#13;
+nes ymlaen. Os penderfynwch nes ymlaen, ni fydd y map yn gywir nes bod eich lleoliad wedi&#13;
+&#13;
+cael ei osod.
+    </string>
+    <string name="location_permission_grant">Caniatáu Caniatad</string>
+    <string name="location_permission_enter_manually">Nodi\'n Llaw</string>
+    <string name="location_permission_later">Yn Ddiweddarach</string>
+    <string name="location_permanently_denied_title">Caniatâd Angenrheidiol</string>
+    <string name="location_permanently_denied_message">
+    Gwrthodwyd caniatâd lleoliad yn barhaol. Agorwch Gosodiadau\'r Ap i\'w alluogi eto.
+    </string>
+    <string name="location_open_settings">Agor Gosodiadau\'r Ap</string>
+    <string name="location_acquiring_title">Yn canfod eich lleoliad…</string>
+    <string name="location_acquiring_message">Yn dal i geisio canfod eich lleoliad…</string>
+    <string name="location_keep_waiting">Parhau i Aros</string>
+    <string name="location_manual_entry_title">Rhowch Eich Lleoliad</string>
+    <string name="location_place_name_hint">Dinas neu enw lle</string>
+    <string name="location_latitude_hint" translation_description="Floating label above the latitude input field. Kept short so it doesn't wrap next to the N/S hemisphere toggle.">Lledred</string>
+    <!-- tm:omitted name="location_latitude_placeholder" reason="identical_to_source" -->
+    <string name="location_longitude_hint" translation_description="Floating label above the longitude input field. Kept short so it doesn't wrap next to the E/W hemisphere toggle.">Hydred</string>
+    <!-- tm:omitted name="location_longitude_placeholder" reason="identical_to_source" -->
+    <string name="location_resolve_button">Datrys</string>
+    <string name="location_set_button">Gosod Lleoliad</string>
+    <string name="location_place_not_found">Ni chanfuwyd y lle — ceisiwch enw mwy penodol</string>
+    <string name="location_geocoder_offline">Dim rhyngrwyd — rhowch gyfesurynnau yn uniongyrchol</string>
+    <string name="location_geocoder_unavailable">Dim gwasanaeth geocodio ar y ddyfais hon — rhowch gyfesurynnau yn uniongyrchol</string>
+    <string name="location_geocoder_failed" translation_description="Inline message shown when place name lookup fails for a reason other than being offline or the place not existing">Method chwilio lleoliad wedi methu — rhowch gyfesurynnau\'n uniongyrchol</string>
+    <string name="location_invalid_latitude">Rhaid i\'r lledred fod rhwng −90 a 90</string>
+    <string name="location_invalid_longitude">Rhaid i\'r hydred fod rhwng −180 a 180</string>
+    <string name="location_hemisphere_north_description" translation_description="Accessibility label for the latitude hemisphere toggle button, selected for a positive value">Hemisffer Gogleddol (lledred positif)</string>
+    <string name="location_hemisphere_south_description" translation_description="Accessibility label for the latitude hemisphere toggle button, selected for a negative value">Hemisffer Deheuol (lledred negyddol)</string>
+    <string name="location_hemisphere_east_description" translation_description="Accessibility label for the longitude hemisphere toggle button, selected for a positive value">Hemisffer Dwyreiniol (hydred positif)</string>
+    <string name="location_hemisphere_west_description" translation_description="Accessibility label for the longitude hemisphere toggle button, selected for a negative value">Hemisffer Gorllewinol (hydred negyddol)</string>
+    <!-- tm:omitted name="location_coordinate_format" reason="identical_to_source" -->
 </resources>

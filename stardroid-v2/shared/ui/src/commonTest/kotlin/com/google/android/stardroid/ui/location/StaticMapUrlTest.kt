@@ -9,35 +9,31 @@
 
 package com.google.android.stardroid.ui.location
 
-import com.google.common.truth.Truth.assertThat
-import org.junit.jupiter.api.Test
-import java.util.Locale
+import kotlin.test.Test
+import kotlin.test.assertContains
+import kotlin.test.assertEquals
 
 class StaticMapUrlTest {
     @Test
     fun `coordinates are rounded to three decimals`() {
         val url = staticMapUrl(latitudeDeg = 51.5072111, longitudeDeg = -0.1276555, apiKey = "k")
-        assertThat(url).contains("center=lonlat:-0.128,51.507")
-        assertThat(url).contains("marker=lonlat:-0.128,51.507;color:red")
+        assertContains(url, "center=lonlat:-0.128,51.507")
+        assertContains(url, "marker=lonlat:-0.128,51.507;color:red")
     }
 
     @Test
     fun `gps jitter maps to the same url so the disk cache is hit`() {
         val a = staticMapUrl(latitudeDeg = 51.50702, longitudeDeg = -0.12758, apiKey = "k")
         val b = staticMapUrl(latitudeDeg = 51.50698, longitudeDeg = -0.12762, apiKey = "k")
-        assertThat(a).isEqualTo(b)
+        assertEquals(a, b)
     }
 
+    // The URL no longer goes through the platform's locale at all (formatAndroidStyle's
+    // defaults are ASCII digits and a '.' separator), so a German or Arabic device can't
+    // corrupt the query; the formatter's own tests cover locales.
     @Test
-    fun `formatting is locale-independent`() {
-        val original = Locale.getDefault()
-        try {
-            // Germany formats decimals with a comma, which would corrupt the query string.
-            Locale.setDefault(Locale.GERMANY)
-            val url = staticMapUrl(latitudeDeg = 51.5072, longitudeDeg = -0.1277, apiKey = "k")
-            assertThat(url).contains("center=lonlat:-0.128,51.507")
-        } finally {
-            Locale.setDefault(original)
-        }
+    fun `small and negative coordinates keep their sign and leading zero`() {
+        val url = staticMapUrl(latitudeDeg = -33.86882, longitudeDeg = 0.05, apiKey = "k")
+        assertContains(url, "center=lonlat:0.050,-33.869")
     }
 }

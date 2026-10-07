@@ -41,6 +41,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
@@ -50,33 +51,83 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.BlendMode
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.res.stringArrayResource
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import coil.compose.SubcomposeAsyncImage
-import com.google.android.stardroid.R
 import com.google.android.stardroid.location.LocationSource
 import com.google.android.stardroid.location.LocationState
 import com.google.android.stardroid.math.LatLong
+import com.google.android.stardroid.ui.common.RemoteImage
+import com.google.android.stardroid.ui.common.formatAndroidStyle
+import com.google.android.stardroid.ui.common.formatForLocale
+import com.google.android.stardroid.ui.common.formattedStringResource
+import com.google.android.stardroid.ui.resources.Res
+import com.google.android.stardroid.ui.resources.hud_cardinal_directions
+import com.google.android.stardroid.ui.resources.location_acquiring_message
+import com.google.android.stardroid.ui.resources.location_acquiring_title
+import com.google.android.stardroid.ui.resources.location_change
+import com.google.android.stardroid.ui.resources.location_coordinate_format
+import com.google.android.stardroid.ui.resources.location_geocoder_failed
+import com.google.android.stardroid.ui.resources.location_geocoder_offline
+import com.google.android.stardroid.ui.resources.location_geocoder_unavailable
+import com.google.android.stardroid.ui.resources.location_hemisphere_east_description
+import com.google.android.stardroid.ui.resources.location_hemisphere_north_description
+import com.google.android.stardroid.ui.resources.location_hemisphere_south_description
+import com.google.android.stardroid.ui.resources.location_hemisphere_west_description
+import com.google.android.stardroid.ui.resources.location_invalid_latitude
+import com.google.android.stardroid.ui.resources.location_invalid_longitude
+import com.google.android.stardroid.ui.resources.location_keep_waiting
+import com.google.android.stardroid.ui.resources.location_latitude_hint
+import com.google.android.stardroid.ui.resources.location_latitude_placeholder
+import com.google.android.stardroid.ui.resources.location_long_lat
+import com.google.android.stardroid.ui.resources.location_longitude_hint
+import com.google.android.stardroid.ui.resources.location_longitude_placeholder
+import com.google.android.stardroid.ui.resources.location_management_title
+import com.google.android.stardroid.ui.resources.location_manual_entry_title
+import com.google.android.stardroid.ui.resources.location_map_content_description
+import com.google.android.stardroid.ui.resources.location_map_unavailable
+import com.google.android.stardroid.ui.resources.location_open_settings
+import com.google.android.stardroid.ui.resources.location_permanently_denied_message
+import com.google.android.stardroid.ui.resources.location_permanently_denied_title
+import com.google.android.stardroid.ui.resources.location_permission_dialog_message
+import com.google.android.stardroid.ui.resources.location_permission_dialog_title
+import com.google.android.stardroid.ui.resources.location_permission_enter_manually
+import com.google.android.stardroid.ui.resources.location_permission_grant
+import com.google.android.stardroid.ui.resources.location_permission_later
+import com.google.android.stardroid.ui.resources.location_place_name_hint
+import com.google.android.stardroid.ui.resources.location_place_not_found
+import com.google.android.stardroid.ui.resources.location_resolve_button
+import com.google.android.stardroid.ui.resources.location_set_button
+import com.google.android.stardroid.ui.resources.location_set_toast
+import com.google.android.stardroid.ui.resources.location_source_acquiring
+import com.google.android.stardroid.ui.resources.location_source_auto
+import com.google.android.stardroid.ui.resources.location_source_hardware_unavailable
+import com.google.android.stardroid.ui.resources.location_source_manual
+import com.google.android.stardroid.ui.resources.location_source_unset
+import com.google.android.stardroid.ui.resources.location_switch_to_auto
+import com.google.android.stardroid.ui.resources.location_switch_to_manual
 import com.google.android.stardroid.ui.theme.NightPhotoTint
 import kotlinx.coroutines.launch
-import java.util.Locale
+import org.jetbrains.compose.resources.stringArrayResource
+import org.jetbrains.compose.resources.stringResource
 
 /**
  * The location management surface (v1 `LocationManagementActivity`, as a sheet until the
  * Navigation graph lands with the screens slice — D44): the static map centered on the
  * current fix (v1's Geoapify image, red-tinted in night mode), current source and
  * coordinates, the auto/manual mode toggle, and the entry point to manual entry.
+ *
+ * Shared by both apps (D134). [mapApiKey] is the build's Geoapify key, a secret each platform
+ * injects at build time; null (a build without one) leaves the map out.
  */
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalLayoutApi::class)
 @Composable
 fun LocationSheet(
     viewModel: LocationViewModel,
     nightMode: Boolean,
+    mapApiKey: String?,
     onRequestAutoLocation: () -> Unit,
     onEnterManually: () -> Unit,
     onDismiss: () -> Unit,
@@ -89,15 +140,15 @@ fun LocationSheet(
             verticalArrangement = Arrangement.spacedBy(8.dp),
         ) {
             Text(
-                stringResource(R.string.location_management_title),
+                stringResource(Res.string.location_management_title),
                 style = MaterialTheme.typography.titleMedium,
             )
             Text(sourceLabel(state), style = MaterialTheme.typography.bodyMedium)
             (state as? LocationState.Confirmed)?.let { confirmed ->
-                LocationMap(confirmed.location, nightMode)
+                mapApiKey?.let { LocationMap(confirmed.location, nightMode, it) }
                 Text(
-                    stringResource(
-                        R.string.location_long_lat,
+                    formattedStringResource(
+                        Res.string.location_long_lat,
                         confirmed.location.longitudeDeg,
                         confirmed.location.latitudeDeg,
                     ),
@@ -113,10 +164,10 @@ fun LocationSheet(
             ) {
                 if (manualMode) {
                     FilledTonalButton(onClick = onRequestAutoLocation) {
-                        Text(stringResource(R.string.location_switch_to_auto))
+                        Text(stringResource(Res.string.location_switch_to_auto))
                     }
                     FilledTonalButton(onClick = onEnterManually) {
-                        Text(stringResource(R.string.location_change))
+                        Text(stringResource(Res.string.location_change))
                     }
                 } else {
                     FilledTonalButton(
@@ -125,7 +176,7 @@ fun LocationSheet(
                             onEnterManually()
                         },
                     ) {
-                        Text(stringResource(R.string.location_switch_to_manual))
+                        Text(stringResource(Res.string.location_switch_to_manual))
                     }
                 }
             }
@@ -136,24 +187,22 @@ fun LocationSheet(
 /**
  * v1 `LocationManagementActivity`'s map: a static Geoapify image centered on the fix
  * (`GeoapifyMapsAdapter` — plain HTTP, so it works in both flavors), night-mode red-tinted
- * like every other photograph. Key-less builds skip the map entirely and a failed load shows
- * v1's `map_unavailable_label` fallback.
+ * like every other photograph. A failed load shows v1's `map_unavailable_label` fallback.
  */
 @Composable
 private fun LocationMap(
     location: LatLong,
     nightMode: Boolean,
+    apiKey: String,
 ) {
-    val apiKey = stringResource(R.string.geoapify_maps_api_key)
-    if (apiKey == "unset" || apiKey.isEmpty()) return
-    SubcomposeAsyncImage(
-        model =
+    RemoteImage(
+        url =
             staticMapUrl(
                 latitudeDeg = location.latitudeDeg,
                 longitudeDeg = location.longitudeDeg,
                 apiKey = apiKey,
             ),
-        contentDescription = stringResource(R.string.location_map_content_description),
+        contentDescription = stringResource(Res.string.location_map_content_description),
         contentScale = ContentScale.Crop,
         colorFilter =
             if (nightMode) {
@@ -169,7 +218,7 @@ private fun LocationMap(
         error = {
             Box(contentAlignment = Alignment.Center, modifier = Modifier.fillMaxSize()) {
                 Text(
-                    stringResource(R.string.location_map_unavailable),
+                    stringResource(Res.string.location_map_unavailable),
                     style = MaterialTheme.typography.bodyMedium,
                 )
             }
@@ -186,16 +235,17 @@ private fun LocationMap(
  * v1 `GeoapifyMapsAdapter`'s request, at a fixed cache-friendly size instead of the view's
  * pixel dimensions (Compose lays the image out independently of the fetched bitmap).
  * Coordinates are rounded to three decimals (~110 m, invisible at zoom 11) so GPS jitter
- * doesn't mint a fresh URL — the URL is Coil's disk-cache key, and every distinct URL is
- * another hit on the Geoapify server. Locale-pinned: some default locales format doubles
- * with a ',' decimal separator, which would corrupt the query.
+ * doesn't mint a fresh URL — the URL is the image cache's key (Coil's disk cache on Android,
+ * the URL cache on iOS), and every distinct URL is
+ * another hit on the Geoapify server. Locale-free: some locales format doubles with a ','
+ * decimal separator or their own digits, either of which would corrupt the query.
  */
 internal fun staticMapUrl(
     latitudeDeg: Double,
     longitudeDeg: Double,
     apiKey: String,
 ): String {
-    val lonLat = "%.3f,%.3f".format(Locale.US, longitudeDeg, latitudeDeg)
+    val lonLat = formatAndroidStyle("%.3f,%.3f", arrayOf(longitudeDeg, latitudeDeg))
     return "https://maps.geoapify.com/v1/staticmap?" +
         "style=osm-bright" +
         "&width=$MAP_IMAGE_WIDTH_PX" +
@@ -217,17 +267,17 @@ private fun sourceLabel(state: LocationState): String =
         when (state) {
             is LocationState.Confirmed ->
                 when (state.source) {
-                    LocationSource.AUTO -> R.string.location_source_auto
-                    LocationSource.MANUAL -> R.string.location_source_manual
+                    LocationSource.AUTO -> Res.string.location_source_auto
+                    LocationSource.MANUAL -> Res.string.location_source_manual
                 }
             LocationState.Acquiring,
             LocationState.AcquiringTimeout,
-            -> R.string.location_source_acquiring
-            LocationState.HardwareUnavailable -> R.string.location_source_hardware_unavailable
+            -> Res.string.location_source_acquiring
+            LocationState.HardwareUnavailable -> Res.string.location_source_hardware_unavailable
             LocationState.Unset,
             LocationState.PermissionDenied,
             LocationState.PermissionPermanentlyDenied,
-            -> R.string.location_source_unset
+            -> Res.string.location_source_unset
         },
     )
 
@@ -284,10 +334,11 @@ fun ManualLocationEntryDialog(
 ) {
     val entry by viewModel.manualEntry.collectAsStateWithLifecycle()
     val state by viewModel.state.collectAsStateWithLifecycle()
-    val coordinateFormat = stringResource(R.string.location_coordinate_format)
+    val coordinateFormat = stringResource(Res.string.location_coordinate_format)
+    val coordinateText = { degrees: Double -> formatForLocale(coordinateFormat, arrayOf(degrees)) }
     // Reuse the map HUD's 16-point compass abbreviations rather than defining new ones:
     // N/E/S/W sit at indices 0/4/8/12 of the clockwise-from-north array.
-    val cardinalDirections = stringArrayResource(R.array.hud_cardinal_directions)
+    val cardinalDirections = stringArrayResource(Res.array.hud_cardinal_directions)
     val north = cardinalDirections[0]
     val east = cardinalDirections[4]
     val south = cardinalDirections[8]
@@ -299,33 +350,33 @@ fun ManualLocationEntryDialog(
     var latitudeText by rememberSaveable {
         mutableStateOf(
             (state as? LocationState.Confirmed)
-                ?.let { coordinateFormat.format(it.location.latitudeDeg) } ?: "",
+                ?.let { coordinateText(it.location.latitudeDeg) } ?: "",
         )
     }
     var longitudeText by rememberSaveable {
         mutableStateOf(
             (state as? LocationState.Confirmed)
-                ?.let { coordinateFormat.format(it.location.longitudeDeg) } ?: "",
+                ?.let { coordinateText(it.location.longitudeDeg) } ?: "",
         )
     }
 
     // A successful place resolution overwrites the coordinate fields (v1's Resolve).
     LaunchedEffect(entry.resolved) {
         entry.resolved?.let {
-            latitudeText = coordinateFormat.format(it.latitudeDeg)
-            longitudeText = coordinateFormat.format(it.longitudeDeg)
+            latitudeText = coordinateText(it.latitudeDeg)
+            longitudeText = coordinateText(it.longitudeDeg)
         }
     }
 
     AlertDialog(
         onDismissRequest = onDismiss,
-        title = { Text(stringResource(R.string.location_manual_entry_title)) },
+        title = { Text(stringResource(Res.string.location_manual_entry_title)) },
         text = {
             Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
                 OutlinedTextField(
                     value = placeText,
                     onValueChange = { placeText = it },
-                    label = { Text(stringResource(R.string.location_place_name_hint)) },
+                    label = { Text(stringResource(Res.string.location_place_name_hint)) },
                     singleLine = true,
                     // No geocoder backend: the field can never work, so say so up front.
                     enabled = placeLookupAvailable,
@@ -344,7 +395,7 @@ fun ManualLocationEntryDialog(
                                 Icon(
                                     Icons.Default.Search,
                                     contentDescription =
-                                        stringResource(R.string.location_resolve_button),
+                                        stringResource(Res.string.location_resolve_button),
                                 )
                             }
                         }
@@ -360,13 +411,13 @@ fun ManualLocationEntryDialog(
                         stringResource(
                             when (error) {
                                 LocationViewModel.PlaceError.NOT_FOUND ->
-                                    R.string.location_place_not_found
+                                    Res.string.location_place_not_found
                                 LocationViewModel.PlaceError.NO_BACKEND ->
-                                    R.string.location_geocoder_unavailable
+                                    Res.string.location_geocoder_unavailable
                                 LocationViewModel.PlaceError.NETWORK ->
-                                    R.string.location_geocoder_offline
+                                    Res.string.location_geocoder_offline
                                 LocationViewModel.PlaceError.FAILED ->
-                                    R.string.location_geocoder_failed
+                                    Res.string.location_geocoder_failed
                             },
                         ),
                         color = MaterialTheme.colorScheme.error,
@@ -376,15 +427,15 @@ fun ManualLocationEntryDialog(
                 OutlinedTextField(
                     value = latitudeText,
                     onValueChange = { latitudeText = it },
-                    label = { Text(stringResource(R.string.location_latitude_hint)) },
+                    label = { Text(stringResource(Res.string.location_latitude_hint)) },
                     placeholder = {
-                        Text(stringResource(R.string.location_latitude_placeholder))
+                        Text(stringResource(Res.string.location_latitude_placeholder))
                     },
                     singleLine = true,
                     isError = entry.latitudeInvalid,
                     supportingText =
                         if (entry.latitudeInvalid) {
-                            { Text(stringResource(R.string.location_invalid_latitude)) }
+                            { Text(stringResource(Res.string.location_invalid_latitude)) }
                         } else {
                             null
                         },
@@ -398,9 +449,9 @@ fun ManualLocationEntryDialog(
                             positiveLabel = north,
                             negativeLabel = south,
                             positiveDescription =
-                                stringResource(R.string.location_hemisphere_north_description),
+                                stringResource(Res.string.location_hemisphere_north_description),
                             negativeDescription =
-                                stringResource(R.string.location_hemisphere_south_description),
+                                stringResource(Res.string.location_hemisphere_south_description),
                             onChange = { latitudeText = it },
                         )
                     },
@@ -410,15 +461,15 @@ fun ManualLocationEntryDialog(
                 OutlinedTextField(
                     value = longitudeText,
                     onValueChange = { longitudeText = it },
-                    label = { Text(stringResource(R.string.location_longitude_hint)) },
+                    label = { Text(stringResource(Res.string.location_longitude_hint)) },
                     placeholder = {
-                        Text(stringResource(R.string.location_longitude_placeholder))
+                        Text(stringResource(Res.string.location_longitude_placeholder))
                     },
                     singleLine = true,
                     isError = entry.longitudeInvalid,
                     supportingText =
                         if (entry.longitudeInvalid) {
-                            { Text(stringResource(R.string.location_invalid_longitude)) }
+                            { Text(stringResource(Res.string.location_invalid_longitude)) }
                         } else {
                             null
                         },
@@ -428,9 +479,9 @@ fun ManualLocationEntryDialog(
                             positiveLabel = east,
                             negativeLabel = west,
                             positiveDescription =
-                                stringResource(R.string.location_hemisphere_east_description),
+                                stringResource(Res.string.location_hemisphere_east_description),
                             negativeDescription =
-                                stringResource(R.string.location_hemisphere_west_description),
+                                stringResource(Res.string.location_hemisphere_west_description),
                             onChange = { longitudeText = it },
                         )
                     },
@@ -459,7 +510,7 @@ fun ManualLocationEntryDialog(
                     }
                 },
             ) {
-                Text(stringResource(R.string.location_set_button))
+                Text(stringResource(Res.string.location_set_button))
             }
         },
     )
@@ -477,19 +528,19 @@ fun LocationRationaleDialog(
 ) {
     AlertDialog(
         onDismissRequest = onLater,
-        title = { Text(stringResource(R.string.location_permission_dialog_title)) },
-        text = { Text(stringResource(R.string.location_permission_dialog_message)) },
+        title = { Text(stringResource(Res.string.location_permission_dialog_title)) },
+        text = { Text(stringResource(Res.string.location_permission_dialog_message)) },
         confirmButton = {
             Button(onClick = onGrant) {
-                Text(stringResource(R.string.location_permission_grant))
+                Text(stringResource(Res.string.location_permission_grant))
             }
         },
         dismissButton = {
             TextButton(onClick = onEnterManually) {
-                Text(stringResource(R.string.location_permission_enter_manually))
+                Text(stringResource(Res.string.location_permission_enter_manually))
             }
             TextButton(onClick = onLater) {
-                Text(stringResource(R.string.location_permission_later))
+                Text(stringResource(Res.string.location_permission_later))
             }
         },
     )
@@ -504,16 +555,16 @@ fun LocationPermanentlyDeniedDialog(
 ) {
     AlertDialog(
         onDismissRequest = onDismiss,
-        title = { Text(stringResource(R.string.location_permanently_denied_title)) },
-        text = { Text(stringResource(R.string.location_permanently_denied_message)) },
+        title = { Text(stringResource(Res.string.location_permanently_denied_title)) },
+        text = { Text(stringResource(Res.string.location_permanently_denied_message)) },
         confirmButton = {
             Button(onClick = onOpenSettings) {
-                Text(stringResource(R.string.location_open_settings))
+                Text(stringResource(Res.string.location_open_settings))
             }
         },
         dismissButton = {
             TextButton(onClick = onEnterManually) {
-                Text(stringResource(R.string.location_permission_enter_manually))
+                Text(stringResource(Res.string.location_permission_enter_manually))
             }
         },
     )
@@ -528,17 +579,114 @@ fun AcquiringTimeoutDialog(
 ) {
     AlertDialog(
         onDismissRequest = onDismiss,
-        title = { Text(stringResource(R.string.location_acquiring_title)) },
-        text = { Text(stringResource(R.string.location_acquiring_message)) },
+        title = { Text(stringResource(Res.string.location_acquiring_title)) },
+        text = { Text(stringResource(Res.string.location_acquiring_message)) },
         confirmButton = {
             Button(onClick = onKeepWaiting) {
-                Text(stringResource(R.string.location_keep_waiting))
+                Text(stringResource(Res.string.location_keep_waiting))
             }
         },
         dismissButton = {
             TextButton(onClick = onEnterManually) {
-                Text(stringResource(R.string.location_permission_enter_manually))
+                Text(stringResource(Res.string.location_permission_enter_manually))
             }
         },
     )
+}
+
+/**
+ * v1's `wireLocationController` state listener, state-driven: the rationale prompt when no
+ * location is set and auto-locate is welcome (`maybeShowLocationWarning` → `startLocationFlow`),
+ * the permanently-denied path, and the acquiring timeout. Each dismissal is remembered for the
+ * session so a lingering state doesn't immediately re-open the dialog; the timeout re-arms
+ * whenever acquisition restarts.
+ *
+ * A null [onRequestLocationPermission] means the platform asks without a rationale of its own:
+ * iOS shows its system prompt once the EULA is accepted (its purpose string is the rationale),
+ * so the rationale dialog never shows there.
+ */
+@Composable
+fun LocationStateDialogs(
+    locationState: LocationState,
+    manualLocationMode: Boolean,
+    locationViewModel: LocationViewModel,
+    onRequestLocationPermission: (() -> Unit)?,
+    onOpenAppSettings: () -> Unit,
+    onEnterManually: () -> Unit,
+) {
+    var rationaleDismissed by rememberSaveable { mutableStateOf(false) }
+    var permanentlyDeniedDismissed by rememberSaveable { mutableStateOf(false) }
+    var timeoutDismissed by rememberSaveable { mutableStateOf(false) }
+    LaunchedEffect(locationState) {
+        if (locationState is LocationState.Acquiring) timeoutDismissed = false
+    }
+
+    val needsLocation =
+        locationState is LocationState.Unset || locationState is LocationState.PermissionDenied
+    if (onRequestLocationPermission != null &&
+        needsLocation &&
+        !manualLocationMode &&
+        !rationaleDismissed
+    ) {
+        LocationRationaleDialog(
+            onGrant = {
+                rationaleDismissed = true
+                onRequestLocationPermission()
+            },
+            onEnterManually = {
+                rationaleDismissed = true
+                onEnterManually()
+            },
+            onLater = { rationaleDismissed = true },
+        )
+    }
+
+    if (locationState is LocationState.PermissionPermanentlyDenied &&
+        !permanentlyDeniedDismissed
+    ) {
+        LocationPermanentlyDeniedDialog(
+            onOpenSettings = {
+                permanentlyDeniedDismissed = true
+                onOpenAppSettings()
+            },
+            onEnterManually = {
+                permanentlyDeniedDismissed = true
+                onEnterManually()
+            },
+            onDismiss = { permanentlyDeniedDismissed = true },
+        )
+    }
+
+    if (locationState is LocationState.AcquiringTimeout && !timeoutDismissed) {
+        AcquiringTimeoutDialog(
+            onKeepWaiting = { locationViewModel.keepWaiting() },
+            onEnterManually = {
+                timeoutDismissed = true
+                onEnterManually()
+            },
+            onDismiss = { timeoutDismissed = true },
+        )
+    }
+}
+
+/**
+ * v1's "Location set to X" toast text, for the map's snackbar: the place's name, or its
+ * coordinates when the reverse geocode found none. The strings are read here, in composition,
+ * so they follow the app's language as every other string on screen does.
+ */
+@Composable
+fun rememberLocationSetMessage(): (LocationViewModel.LocationToast) -> String {
+    val longLat = stringResource(Res.string.location_long_lat)
+    val setTo = stringResource(Res.string.location_set_toast)
+    return remember(longLat, setTo) {
+        { toast ->
+            val name =
+                toast.placeName
+                    ?: formatForLocale(
+                        longLat,
+                        arrayOf(toast.location.longitudeDeg, toast.location.latitudeDeg),
+                    )
+            formatForLocale(setTo, arrayOf(name))
+        }
+    }
 }

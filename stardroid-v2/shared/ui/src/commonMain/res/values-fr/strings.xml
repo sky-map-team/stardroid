@@ -203,4 +203,51 @@
     <string name="tonight_lunar_eclipse_total" translation_description="Tonight-widget row: a total lunar eclipse is starting soon or under way">Éclipse lunaire totale</string>
     <string name="tonight_lunar_eclipse_partial" translation_description="Tonight-widget row: a partial lunar eclipse is starting soon or under way">Éclipse lunaire partielle</string>
     <string name="tonight_lunar_eclipse_penumbral" translation_description="Tonight-widget row: a penumbral lunar eclipse is starting soon or under way">Éclipse lunaire pénombrale</string>
+    <string name="location_management_title">Votre localisation</string>
+    <string name="location_source_auto">Automatique</string>
+    <string name="location_source_manual">Manuel</string>
+    <string name="location_source_acquiring">Acquisition en cours…</string>
+    <string name="location_source_unset">Aucune localisation définie</string>
+    <string name="location_source_hardware_unavailable">Localisation indisponible sur cet appareil</string>
+    <string name="location_switch_to_auto">Utiliser la localisation automatique</string>
+    <string name="location_switch_to_manual">Entrer la localisation manuellement</string>
+    <string name="location_change">Modifier la localisation</string>
+    <string name="location_set_toast">Localisation définie sur %1$s</string>
+    <string name="location_long_lat">Longitude: %1$.2f, latitude: %2$.2f</string>
+    <string name="location_map_unavailable">Carte indisponible</string>
+    <string name="location_map_content_description" translation_description="Accessibility description of the static map image showing the current location of the user">Carte de votre position actuelle</string>
+    <string name="location_permission_dialog_title" tm_human="true">Localisation (facultative)</string>
+    <string name="location_permission_dialog_message" tm_human="true">
+    Sky Map a besoin de votre position approximative pour afficher le ciel nocturne correct. Cette autorisation est facultative : vous pouvez la refuser et saisir votre position manuellement, ou décider plus tard. Si vous décidez plus tard, la carte ne correspondra pas au ciel au-dessus de vous tant que votre position n\'aura pas été définie.
+    </string>
+    <string name="location_permission_grant">Accorder l\'autorisation</string>
+    <string name="location_permission_enter_manually">Saisir manuellement</string>
+    <string name="location_permission_later">Plus tard</string>
+    <string name="location_permanently_denied_title">Permission requise</string>
+    <string name="location_permanently_denied_message">
+    La permission de localisation a été refusée définitivement. Ouvrez les paramètres de l\'application pour la réactiver.
+    </string>
+    <string name="location_open_settings">Ouvrir les paramètres</string>
+    <string name="location_acquiring_title">Localisation en cours…</string>
+    <string name="location_acquiring_message">Tentative de localisation en cours…</string>
+    <string name="location_keep_waiting">Continuer l\'attente</string>
+    <string name="location_manual_entry_title">Entrez votre localisation</string>
+    <string name="location_place_name_hint">Ville ou nom du lieu</string>
+    <!-- tm:omitted name="location_latitude_hint" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_latitude_placeholder" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_longitude_hint" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_longitude_placeholder" reason="identical_to_source" -->
+    <string name="location_resolve_button">Résoudre</string>
+    <string name="location_set_button">Définir la localisation</string>
+    <string name="location_place_not_found">Lieu non trouvé — essayez un nom plus spécifique</string>
+    <string name="location_geocoder_offline">Pas de connexion Internet — entrez les coordonnées directement</string>
+    <string name="location_geocoder_unavailable">Aucun service de géocodage sur cet appareil — saisissez les coordonnées directement</string>
+    <string name="location_geocoder_failed" translation_description="Inline message shown when place name lookup fails for a reason other than being offline or the place not existing">Échec de la recherche de lieu — saisissez les coordonnées directement</string>
+    <string name="location_invalid_latitude">La latitude doit être entre −90 et 90</string>
+    <string name="location_invalid_longitude">La longitude doit être entre −180 et 180</string>
+    <string name="location_hemisphere_north_description" translation_description="Accessibility label for the latitude hemisphere toggle button, selected for a positive value">Hémisphère nord (latitude positive)</string>
+    <string name="location_hemisphere_south_description" translation_description="Accessibility label for the latitude hemisphere toggle button, selected for a negative value">Hémisphère sud (latitude négative)</string>
+    <string name="location_hemisphere_east_description" translation_description="Accessibility label for the longitude hemisphere toggle button, selected for a positive value">Hémisphère est (longitude positive)</string>
+    <string name="location_hemisphere_west_description" translation_description="Accessibility label for the longitude hemisphere toggle button, selected for a negative value">Hémisphère ouest (longitude négative)</string>
+    <!-- tm:omitted name="location_coordinate_format" reason="identical_to_source" -->
 </resources>

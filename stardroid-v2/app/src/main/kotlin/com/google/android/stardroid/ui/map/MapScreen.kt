@@ -79,7 +79,6 @@ import com.google.android.stardroid.R
 import com.google.android.stardroid.analytics.AnalyticsEvents
 import com.google.android.stardroid.camera.SkyCameraPreview
 import com.google.android.stardroid.catalog.ObjectInfo
-import com.google.android.stardroid.location.LocationState
 import com.google.android.stardroid.render.api.LayerId
 import com.google.android.stardroid.sensors.CalibrationPrompt
 import com.google.android.stardroid.share.SkyShare
@@ -90,12 +89,11 @@ import com.google.android.stardroid.ui.calibration.CompassCalibrationViewModel
 import com.google.android.stardroid.ui.common.WidgetsSheet
 import com.google.android.stardroid.ui.common.widgetOffers
 import com.google.android.stardroid.ui.layers.LayersViewModel
-import com.google.android.stardroid.ui.location.AcquiringTimeoutDialog
-import com.google.android.stardroid.ui.location.LocationPermanentlyDeniedDialog
-import com.google.android.stardroid.ui.location.LocationRationaleDialog
 import com.google.android.stardroid.ui.location.LocationSheet
+import com.google.android.stardroid.ui.location.LocationStateDialogs
 import com.google.android.stardroid.ui.location.LocationViewModel
 import com.google.android.stardroid.ui.location.ManualLocationEntryDialog
+import com.google.android.stardroid.ui.location.rememberLocationSetMessage
 import com.google.android.stardroid.ui.objectinfo.EclipseRow
 import com.google.android.stardroid.ui.objectinfo.ImageExpandOverlay
 import com.google.android.stardroid.ui.objectinfo.MoonWidgetPromo
@@ -284,22 +282,12 @@ fun MapScreen(
 
     // v1's "Location set to X" toast, shown on every fresh fix or manual entry — now a
     // snackbar so night mode can tint it.
+    val locationSetMessage = rememberLocationSetMessage()
     LaunchedEffect(locationViewModel, lifecycleOwner) {
         locationViewModel.toasts
             .flowWithLifecycle(lifecycleOwner.lifecycle, Lifecycle.State.STARTED)
             .collect { toast ->
-                val name =
-                    toast.placeName
-                        ?: context.getString(
-                            R.string.location_long_lat,
-                            toast.location.longitudeDeg,
-                            toast.location.latitudeDeg,
-                        )
-                launch {
-                    snackbarHostState.showSnackbar(
-                        context.getString(R.string.location_set_toast, name),
-                    )
-                }
+                launch { snackbarHostState.showSnackbar(locationSetMessage(toast)) }
             }
     }
 
@@ -839,6 +827,9 @@ fun MapScreen(
             LocationSheet(
                 locationViewModel,
                 nightMode = nightMode,
+                mapApiKey =
+                    stringResource(R.string.geoapify_maps_api_key)
+                        .takeUnless { it == "unset" || it.isEmpty() },
                 onRequestAutoLocation = onRequestAutoLocation,
                 onEnterManually = {
                     locationViewModel.resetManualEntry()
@@ -887,73 +878,6 @@ fun MapScreen(
                     .align(Alignment.BottomCenter)
                     .navigationBarsPadding()
                     .padding(bottom = 56.dp),
-        )
-    }
-}
-
-/**
- * v1's `wireLocationController` state listener, state-driven: the rationale prompt when no
- * location is set and auto-locate is welcome (`maybeShowLocationWarning` → `startLocationFlow`),
- * the permanently-denied path, and the acquiring timeout. Each dismissal is remembered for the
- * session so a lingering state doesn't immediately re-open the dialog; the timeout re-arms
- * whenever acquisition restarts.
- */
-@Composable
-private fun LocationStateDialogs(
-    locationState: LocationState,
-    manualLocationMode: Boolean,
-    locationViewModel: LocationViewModel,
-    onRequestLocationPermission: () -> Unit,
-    onOpenAppSettings: () -> Unit,
-    onEnterManually: () -> Unit,
-) {
-    var rationaleDismissed by rememberSaveable { mutableStateOf(false) }
-    var permanentlyDeniedDismissed by rememberSaveable { mutableStateOf(false) }
-    var timeoutDismissed by rememberSaveable { mutableStateOf(false) }
-    LaunchedEffect(locationState) {
-        if (locationState is LocationState.Acquiring) timeoutDismissed = false
-    }
-
-    val needsLocation =
-        locationState is LocationState.Unset || locationState is LocationState.PermissionDenied
-    if (needsLocation && !manualLocationMode && !rationaleDismissed) {
-        LocationRationaleDialog(
-            onGrant = {
-                rationaleDismissed = true
-                onRequestLocationPermission()
-            },
-            onEnterManually = {
-                rationaleDismissed = true
-                onEnterManually()
-            },
-            onLater = { rationaleDismissed = true },
-        )
-    }
-
-    if (locationState is LocationState.PermissionPermanentlyDenied &&
-        !permanentlyDeniedDismissed
-    ) {
-        LocationPermanentlyDeniedDialog(
-            onOpenSettings = {
-                permanentlyDeniedDismissed = true
-                onOpenAppSettings()
-            },
-            onEnterManually = {
-                permanentlyDeniedDismissed = true
-                onEnterManually()
-            },
-            onDismiss = { permanentlyDeniedDismissed = true },
-        )
-    }
-
-    if (locationState is LocationState.AcquiringTimeout && !timeoutDismissed) {
-        AcquiringTimeoutDialog(
-            onKeepWaiting = { locationViewModel.keepWaiting() },
-            onEnterManually = {
-                timeoutDismissed = true
-                onEnterManually()
-            },
-            onDismiss = { timeoutDismissed = true },
         )
     }
 }
