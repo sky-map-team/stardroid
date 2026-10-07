@@ -33,7 +33,6 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.BlendMode
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.unit.dp
 import com.google.android.stardroid.astronomy.LunarEclipseCircumstances
 import com.google.android.stardroid.astronomy.LunarEclipseType
@@ -193,10 +192,13 @@ fun ObjectInfoBody(
             )
         }
         info.funFact?.let {
+            // Set apart by lower emphasis, not italics: iOS's text renderer slants italics more
+            // steeply than Android's, which read as too much on the card. The dialog's body text
+            // is already the secondary colour, so the fun fact takes it at reduced opacity.
             Text(
                 formattedStringResource(Res.string.object_info_fun_fact, it),
                 style = MaterialTheme.typography.bodyMedium,
-                fontStyle = FontStyle.Italic,
+                color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = FUN_FACT_ALPHA),
                 modifier = Modifier.padding(top = 8.dp),
             )
         }
@@ -478,3 +480,6 @@ fun EclipseRow(circumstances: LunarEclipseCircumstances?) {
         )
     }
 }
+
+/** The fun fact's emphasis against the description above it (Material's medium emphasis). */
+private const val FUN_FACT_ALPHA = 0.74f
