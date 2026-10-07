@@ -42,20 +42,20 @@ clear it for launch. Tag Beta builds `v<version>-betaN` so they never clash with
 ### Step 2. Bring the metadata up to date
 
 Regenerate the What's New text (`skymap.whatsnew` skill) for the app (`whats_new_content` string
-in `app/src/main/res/values/whatsnew.xml`), the fastlane changelog, and the GitHub changelog.
+in `shared/ui/src/commonMain/res/values/whatsnew.xml`), the fastlane changelog, and the GitHub changelog.
 
 v1's release process also syncs sponsors and contributors here (`skymap.sponsors`,
 `skymap.contributors` skills). v2 now mirrors this too: the Buy Me a Coffee supporter list and
-GitHub contributor list live in `app/src/main/res/values/contributors.xml` (`sponsors_text`,
+GitHub contributor list live in `shared/ui/src/commonMain/res/values/contributors.xml` (`sponsors_text`,
 `contributors_text`, both `translatable="false"`), spliced into `credits_text`
-(`app/src/main/res/values/credits.xml`) via `stringResource` format args in `HelpScreen.kt`. Ask
+(`shared/ui/src/commonMain/res/values/credits.xml`) via `stringResource` format args in `HelpScreen.kt`. Ask
 the user whether they want sponsors and/or contributors refreshed for this release, then use the
 `skymap.sync-credits` skill to do it — v2 has its own sync process (`tools/sync-credits.py` plus
 the `buymeacoffee` MCP server for sponsor data), separate from v1's token-based scripts.
 
 ### Step 3. Remove unneeded text
 
-v2 has a `beta_user_help_text` string (`app/src/main/res/values/whatsnew.xml`), mirroring v1's
+v2 has a `beta_user_help_text` string (`shared/ui/src/commonMain/res/values/whatsnew.xml`), mirroring v1's
 usually-empty beta-instructions string shown in the What's New dialog and Help screen. Check its
 current content and ask the user whether it should be updated or cleared for this release, same
 as v1's equivalent step.

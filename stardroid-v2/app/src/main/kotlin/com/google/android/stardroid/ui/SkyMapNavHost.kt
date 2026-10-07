@@ -34,6 +34,8 @@ import com.google.android.stardroid.startup.Experiment
 import com.google.android.stardroid.startup.ExperimentConfig
 import com.google.android.stardroid.ui.calibration.CompassCalibrationScreen
 import com.google.android.stardroid.ui.calibration.CompassCalibrationViewModel
+import com.google.android.stardroid.ui.common.WidgetsSheet
+import com.google.android.stardroid.ui.common.widgetOffers
 import com.google.android.stardroid.ui.diagnostics.DiagnosticsScreen
 import com.google.android.stardroid.ui.diagnostics.DiagnosticsViewModel
 import com.google.android.stardroid.ui.gallery.GalleryScreen
@@ -319,6 +321,11 @@ fun SkyMapNavHost(
                     }
                 },
                 experimentConfig = experimentConfig,
+                // No offers means the widgets are gated off: Help leaves its links inert.
+                widgetsSheet =
+                    widgetOffers(experimentConfig)
+                        .takeIf { it.isNotEmpty() }
+                        ?.let { offers -> { onDismiss -> WidgetsSheet(offers, onDismiss) } },
             )
         }
 

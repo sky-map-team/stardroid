@@ -217,4 +217,22 @@
     <string name="location_invalid_latitude" translation_description="Validation error for latitude values outside the valid range">A latitude debe estar entre −90 e 90</string>
     <string name="location_invalid_longitude" translation_description="Validation error for longitude values outside the valid range">A lonxitude debe estar entre −180 e 180</string>
     <string name="location_coordinate_format" translatable="false">%.6f</string>
+    <string name="settings_back" translation_description="Content description for the back arrow leaving the settings screen">Atrás</string>
+    <string name="dialog_ok_button" translation_description="Generic OK/confirm button label for dialogs">Aceptar</string>
+    <string name="whats_new_dialog_title" translation_description="Title of the dialog shown on first launch after an update, listing new features">Novidades</string>
+    <string name="help_dialog_title" translation_description="Title of the help dialog">Axuda</string>
+    <string name="help_version" translation_description="Version line at the top of the Help screen. %1$s is the app version name">Versión %1$s</string>
+    <string name="whats_new_screen_title" translation_description="Title of the screen showing the release notes and the credits">Novidades &amp; Créditos</string>
+    <string name="help_symbol_key_title" translation_description="Heading of the Help section explaining the map symbols used for deep-sky objects">Símbolos do mapa</string>
+    <string name="help_symbol_key_intro" translation_description="Introductory sentence for the map-symbol key in Help">Os obxectos de ceo profundo e as choivas de meteoros márcanse cun símbolo que indica o seu tipo:</string>
+    <string name="symbol_key_galaxy" translation_description="Symbol-key label: the marker used for galaxies">Galaxia</string>
+    <string name="symbol_key_open_cluster" translation_description="Symbol-key label: the marker used for open star clusters">Cúmulo aberto</string>
+    <string name="symbol_key_globular_cluster" translation_description="Symbol-key label: the marker used for globular star clusters">Cúmulo globular</string>
+    <string name="symbol_key_diffuse_nebula" translation_description="Symbol-key label: the marker used for diffuse nebulae">Nebulosa difusa</string>
+    <string name="symbol_key_planetary_nebula" translation_description="Symbol-key label: the marker used for planetary nebulae">Nebulosa planetaria</string>
+    <string name="symbol_key_supernova_remnant" translation_description="Symbol-key label: the marker used for supernova remnants">Remanente de supernova</string>
+    <string name="symbol_key_asterism" translation_description="Symbol-key label: the marker used for asterisms and star clouds">Asterismo ou nube estelar</string>
+    <string name="symbol_key_other" translation_description="Symbol-key label: the marker used for deep-sky objects of any other type">Outro obxecto de ceo profundo</string>
+    <string name="symbol_key_meteor_radiant" translation_description="Symbol-key label: the marker for the point in the sky meteors of a shower appear to come from">Radiante de choiva de meteoros</string>
+    <string name="symbol_key_meteor_radiant_peak" translation_description="Symbol-key label: the brighter marker used when a meteor shower is near its peak activity">Choiva de meteoros preto do seu pico</string>
 </resources>

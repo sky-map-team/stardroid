@@ -87,7 +87,6 @@
 
     <!-- Settings screen (v1 wording where a v1 string existed) -->
     <string name="settings_title">设置</string>
-    <string name="settings_back" translation_description="Content description for the back arrow leaving the settings screen">返回</string>
     <string name="settings_ok">确定</string>
     <string name="settings_cancel">取消</string>
     <string name="settings_section_controls">控制</string>
@@ -245,9 +244,7 @@
     <string name="calibration_complete_toast" translation_description="Toast shown when the compass reaches high accuracy and the auto-opened calibration screen closes itself">传感器精度高</string>
 
     <!-- Startup routing: EULA, warm welcome, What's New (slice 16) -->
-    <string name="dialog_ok_button">确定</string>
 
-    <string name="whats_new_dialog_title">有什么新功能</string>
     <string name="whats_new_version_heading" translation_description="Heading above the list of new features. %1$s is the app version name">%1$s 版本新增功能</string>
 
     <!-- Warm welcome (onboarding pager, slice 16) -->
@@ -272,28 +269,10 @@
     <string name="warm_welcome_sensor_missing">缺失</string>
 
     <!-- Help dialog (slice 16) -->
-    <string name="help_dialog_title">帮助</string>
-    <string name="help_version" translation_description="Version line at the top of the Help screen. %1$s is the app version name">版本 %1$s</string>
-    <string name="whats_new_screen_title" translation_description="Title of the screen showing the release notes and the credits">新功能与鸣谢</string>
 
     <!-- The Help screen's search box, which filters the document to the matching sections. -->
-    <string name="help_search_hint" translation_description="Placeholder in the Help screen\'s search box, which filters the help document to the sections matching what is typed">搜索帮助</string>
-    <string name="help_search_clear" translation_description="Accessibility label for the button that clears the Help screen\'s search box">清除搜索</string>
-    <string name="help_search_no_results" translation_description="Shown on the Help screen when nothing matches the search. %1$s is the text the user typed">没有与“%1$s”匹配的帮助部分。</string>
 
     <!-- The deep-sky symbol key at the foot of the Help screen. -->
-    <string name="help_symbol_key_title" translation_description="Heading of the Help section explaining the map symbols used for deep-sky objects">地图符号</string>
-    <string name="help_symbol_key_intro" translation_description="Introductory sentence for the map-symbol key in Help">深空天体和流星雨用符号标记，显示其类型：</string>
-    <string name="symbol_key_galaxy" translation_description="Symbol-key label: the marker used for galaxies">星系</string>
-    <string name="symbol_key_open_cluster" translation_description="Symbol-key label: the marker used for open star clusters">疏散星团</string>
-    <string name="symbol_key_globular_cluster" translation_description="Symbol-key label: the marker used for globular star clusters">球状星团</string>
-    <string name="symbol_key_diffuse_nebula" translation_description="Symbol-key label: the marker used for diffuse nebulae">弥散星云</string>
-    <string name="symbol_key_planetary_nebula" translation_description="Symbol-key label: the marker used for planetary nebulae">行星状星云</string>
-    <string name="symbol_key_supernova_remnant" translation_description="Symbol-key label: the marker used for supernova remnants">超新星遗迹</string>
-    <string name="symbol_key_asterism" translation_description="Symbol-key label: the marker used for asterisms and star clouds">星群或星云</string>
-    <string name="symbol_key_other" translation_description="Symbol-key label: the marker used for deep-sky objects of any other type">其他深空天体</string>
-    <string name="symbol_key_meteor_radiant" translation_description="Symbol-key label: the marker for the point in the sky meteors of a shower appear to come from">流星雨辐射点</string>
-    <string name="symbol_key_meteor_radiant_peak" translation_description="Symbol-key label: the brighter marker used when a meteor shower is near its peak activity">流星雨接近高峰期</string>
 
     <!-- The widgets catalogue reached from the map\'s overflow menu. -->
     <string name="widgets_sheet_title" translation_description="Title of the sheet listing the home-screen widgets the app offers">主屏幕小组件</string>

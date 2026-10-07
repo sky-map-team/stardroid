@@ -23,26 +23,22 @@ import androidx.compose.ui.text.rememberTextMeasurer
 import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
 
-/**
- * Window insets for the top app bar of an opaque full-screen destination (Gallery, Help,
- * Settings, Diagnostics, compass calibration).
- *
+/*
  * The app runs under a fullscreen theme that hides the status bar, so Material 3's default top
  * bar insets (`systemBars`) collapse to ~0 and — crucially — never account for the display
  * cutout. On a notched phone that slides the screen's title under the camera cutout. Using
  * `safeDrawing` keeps the cutout inset (plus the top/side system-bar space when it exists), so
  * titles clear the notch in both portrait and landscape.
  *
- * Passing [title] — for bars whose only top-band content is the nav icon and the title —
+ * Passing a title — for bars whose only top-band content is the nav icon and the title —
  * enables a refinement: when no cutout horizontally overlaps the bar's leading band (nav icon
  * plus the measured collapsed title), the top inset is dropped and the title rides high beside
  * the cutout instead of always ducking below it. The check is inherently language-specific: a
  * short English title can clear a right-shifted punch hole that its longer German translation
- * would hit, which is why the title is measured rather than assumed. Bars with trailing action
- * icons should pass no title — the band check ignores the trailing edge.
+ * would hit, which is why the title is measured rather than assumed.
  */
 @Composable
-fun topBarWindowInsets(title: String? = null): WindowInsets {
+actual fun topBarWindowInsets(title: String?): WindowInsets {
     val full =
         WindowInsets.safeDrawing.only(WindowInsetsSides.Horizontal + WindowInsetsSides.Top)
     if (title == null) return full

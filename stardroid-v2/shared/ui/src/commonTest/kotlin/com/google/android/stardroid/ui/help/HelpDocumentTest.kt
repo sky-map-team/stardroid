@@ -11,24 +11,26 @@ package com.google.android.stardroid.ui.help
 
 import com.google.android.stardroid.startup.Experiment
 import com.google.android.stardroid.startup.ExperimentConfig
-import com.google.common.truth.Truth.assertThat
-import org.junit.jupiter.api.Test
+import kotlin.test.Test
+import kotlin.test.assertContains
+import kotlin.test.assertEquals
+import kotlin.test.assertFalse
 
 class HelpDocumentTest {
     private fun anchors(config: ExperimentConfig) = helpDocument(config).map { it.anchor }
 
     @Test
     fun `notifications section is hidden while the experiment is off`() {
-        assertThat(anchors { false }).doesNotContain("notifications")
+        assertFalse("notifications" in anchors { false })
     }
 
     @Test
     fun `notifications section is shown when the experiment is on`() {
-        assertThat(anchors { it == Experiment.NOTIFICATIONS }).contains("notifications")
+        assertContains(anchors { it == Experiment.NOTIFICATIONS }, "notifications")
     }
 
     @Test
     fun `ungated sections are unaffected by the flag`() {
-        assertThat(anchors { true }.minus("notifications")).isEqualTo(anchors { false })
+        assertEquals(anchors { false }, anchors { true }.minus("notifications"))
     }
 }

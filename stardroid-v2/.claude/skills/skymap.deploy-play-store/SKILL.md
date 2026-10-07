@@ -40,7 +40,7 @@ Internal → Alpha (Closed Testing) → Beta (Open Testing, 10%) → Production 
 Before deploying, confirm these are done:
 
 1. **Changelog** written (`skymap.whatsnew` skill) — v2 keeps What's New content in
-   `app/src/main/res/values/whatsnew.xml` (`whats_new_content` string), not a separate
+   `shared/ui/src/commonMain/res/values/whatsnew.xml` (`whats_new_content` string), not a separate
    `whatsnew_content.xml` file like v1. Also update
    `fastlane/metadata/android/en-US/changelogs/default.txt`.
 2. **Version name** bumped if needed (see Version Management below)
@@ -53,11 +53,11 @@ release. This is separate from the OS-level `installSplashScreen()` API in `Main
 which has no per-release branded image and isn't touched by any release step.
 
 v2 *does* now mirror v1's Buy Me a Coffee supporters / GitHub contributors sync, though: the name
-lists live in `app/src/main/res/values/contributors.xml` (`sponsors_text`, `contributors_text`,
+lists live in `shared/ui/src/commonMain/res/values/contributors.xml` (`sponsors_text`, `contributors_text`,
 both `translatable="false"`) and are spliced into `credits_text`
-(`app/src/main/res/values/credits.xml`) via `stringResource` format args in `HelpScreen.kt`. If
+(`shared/ui/src/commonMain/res/values/credits.xml`) via `stringResource` format args in `HelpScreen.kt`. If
 v1's sync step for those lists runs as part of this release, update `contributors.xml` too — check
-whether `beta_user_help_text` (`app/src/main/res/values/whatsnew.xml`) also needs updating or
+whether `beta_user_help_text` (`shared/ui/src/commonMain/res/values/whatsnew.xml`) also needs updating or
 clearing for this release, same as v1's `beta_user_help_text`.
 
 ### Step 1 — Deploy to Internal Testing

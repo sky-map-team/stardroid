@@ -250,4 +250,27 @@ cael ei osod.
     <string name="location_hemisphere_east_description" translation_description="Accessibility label for the longitude hemisphere toggle button, selected for a positive value">Hemisffer Dwyreiniol (hydred positif)</string>
     <string name="location_hemisphere_west_description" translation_description="Accessibility label for the longitude hemisphere toggle button, selected for a negative value">Hemisffer Gorllewinol (hydred negyddol)</string>
     <!-- tm:omitted name="location_coordinate_format" reason="identical_to_source" -->
+    <string name="settings_back" translation_description="Content description for the back arrow leaving the settings screen">Yn ôl</string>
+    <string name="dialog_ok_button">Iawn</string>
+    <string name="whats_new_dialog_title">Yn newydd</string>
+    <string name="help_dialog_title">Cymorth</string>
+    <string name="help_version" translation_description="Version line at the top of the Help screen. %1$s is the app version name">Fersiwn %1$s</string>
+    <string name="whats_new_screen_title" translation_description="Title of the screen showing the release notes and the credits">Beth sy\'n Newydd &amp; Credydau</string>
+    <string name="help_search_hint" translation_description="Placeholder in the Help screen\'s search box, which filters the help document to the sections matching what is typed">Chwilio am gymorth</string>
+    <string name="help_search_clear" translation_description="Accessibility label for the button that clears the Help screen\'s search box">Clirio\'r chwiliad</string>
+    <string name="help_search_no_results" translation_description="Shown on the Help screen when nothing matches the search. %1$s is the text the user typed">Nid oes unrhyw adrannau cymorth yn cyfateb i “%1$s”.</string>
+    <string name="help_symbol_key_title" translation_description="Heading of the Help section explaining the map symbols used for deep-sky objects">Symbolau map</string>
+    <string name="help_symbol_key_intro" translation_description="Introductory sentence for the map-symbol key in Help">
+    Mae gwrthrychau awyr ddwfn a chawodydd meteor yn cael eu marcio â symbol sy\'n dangos eu math:
+    </string>
+    <string name="symbol_key_galaxy" translation_description="Symbol-key label: the marker used for galaxies">Galaeth</string>
+    <string name="symbol_key_open_cluster" translation_description="Symbol-key label: the marker used for open star clusters">Clwstwr agored</string>
+    <string name="symbol_key_globular_cluster" translation_description="Symbol-key label: the marker used for globular star clusters">Clwstwr globwlaidd</string>
+    <string name="symbol_key_diffuse_nebula" translation_description="Symbol-key label: the marker used for diffuse nebulae">Niwl gwasgaredig</string>
+    <string name="symbol_key_planetary_nebula" translation_description="Symbol-key label: the marker used for planetary nebulae">Niwl planedol</string>
+    <string name="symbol_key_supernova_remnant" translation_description="Symbol-key label: the marker used for supernova remnants">Gweddill gor-nofa</string>
+    <string name="symbol_key_asterism" translation_description="Symbol-key label: the marker used for asterisms and star clouds">Asterism neu gwmwl sêr</string>
+    <string name="symbol_key_other" translation_description="Symbol-key label: the marker used for deep-sky objects of any other type">Gwrthrych awyr ddwfn arall</string>
+    <string name="symbol_key_meteor_radiant" translation_description="Symbol-key label: the marker for the point in the sky meteors of a shower appear to come from">Pelydriad cawod meteor</string>
+    <string name="symbol_key_meteor_radiant_peak" translation_description="Symbol-key label: the brighter marker used when a meteor shower is near its peak activity">Cawod meteor yn agos at ei hanterth</string>
 </resources>

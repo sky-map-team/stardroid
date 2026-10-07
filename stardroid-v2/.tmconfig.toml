@@ -87,8 +87,8 @@ en-GB = "The asterism within Ursa Major that American English calls \"The Big Di
 type = "android"
 name = "app"
 path = "app/src/main/res"
-files = ["strings.xml", "credits.xml", "help.xml", "whatsnew.xml"]
-skip = ["colors.xml", "themes.xml", "contributors.xml"]
+files = ["strings.xml"]
+skip = ["colors.xml", "themes.xml"]
 resource_qualifier_excludes = ["w820dp", "night", "land", "nodpi", "anydpi-v26"]
 
 # The screens shared with the iOS app (:shared:ui, D134): Android-format resources like the app's
@@ -98,7 +98,8 @@ resource_qualifier_excludes = ["w820dp", "night", "land", "nodpi", "anydpi-v26"]
 type = "android"
 name = "shared-ui"
 path = "shared/ui/src/commonMain/res"
-files = ["strings.xml", "eula.xml"]
+files = ["strings.xml", "eula.xml", "credits.xml", "help.xml", "whatsnew.xml"]
+skip = ["contributors.xml"]
 
 # Localized celestial object names: sparse per-object overrides.
 # universal.csv is the language-neutral pseudo-locale of catalog

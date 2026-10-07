@@ -20,14 +20,8 @@ import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
-/**
- * Decodes a bundled asset into an [ImageBitmap] off the main thread (the info card's
- * `CelestialImage` pattern: v1's Coil `file:///android_asset/` load without the dependency).
- * Returns null while decoding and stays null for a missing or corrupt asset — callers simply
- * compose nothing.
- */
 @Composable
-fun rememberAssetBitmap(path: String): ImageBitmap? {
+actual fun rememberAssetBitmap(path: String): ImageBitmap? {
     val assets = LocalContext.current.assets
     val bitmap by produceState<ImageBitmap?>(initialValue = null, path) {
         value =
