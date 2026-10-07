@@ -40,6 +40,8 @@ class IosGeocoding : Geocoding {
                 ?.useContents { Geocoding.PlaceResult.Found(LatLong(latitude, longitude)) }
                 ?: Geocoding.PlaceResult.NotFound
         } catch (e: GeocodeError) {
+            // Android's Log.e; stdout reaches the device console (devicectl --console).
+            println("IosGeocoding: resolvePlace failed: ${e.message}")
             when (e.code) {
                 kCLErrorGeocodeFoundNoResult -> Geocoding.PlaceResult.NotFound
                 kCLErrorNetwork -> Geocoding.PlaceResult.NetworkError
@@ -56,6 +58,7 @@ class IosGeocoding : Geocoding {
                     it.locality ?: it.subAdministrativeArea ?: it.administrativeArea ?: it.country
                 }
         } catch (e: GeocodeError) {
+            println("IosGeocoding: reverseGeocode failed: ${e.message}")
             null
         }
 
@@ -69,7 +72,12 @@ class IosGeocoding : Geocoding {
             geocoder.request { placemarks, error ->
                 // A cancelled continuation ignores the cancelled request's answer.
                 if (error != null) {
-                    continuation.resumeWithException(GeocodeError(error.code))
+                    continuation.resumeWithException(
+                        GeocodeError(
+                            error.code,
+                            "${error.domain} ${error.code}: ${error.localizedDescription}",
+                        ),
+                    )
                 } else {
                     continuation.resume(placemarks.orEmpty().filterIsInstance<CLPlacemark>())
                 }
@@ -78,5 +86,6 @@ class IosGeocoding : Geocoding {
 
     private class GeocodeError(
         val code: Long,
-    ) : Exception("CLGeocoder error $code")
+        message: String,
+    ) : Exception(message)
 }

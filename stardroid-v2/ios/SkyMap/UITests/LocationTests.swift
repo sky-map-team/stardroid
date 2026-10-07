@@ -32,6 +32,11 @@ final class LocationTests: XCTestCase {
         place.tap()
         place.typeText("Paris")
         capture(self, "2-entry")
+        // The magnifier resolves the name into the coordinate fields without applying it. Compose
+        // doesn't expose a field's text to accessibility, so the fields are checked by eye.
+        app.buttons["Resolve"].tap()
+        sleep(3)
+        capture(self, "2b-resolved")
         app.buttons["Set Location"].tap()
         let toast = app.staticTexts["Location set to Paris"]
         XCTAssertTrue(toast.waitForExistence(timeout: 15), "the geocoded place is announced")

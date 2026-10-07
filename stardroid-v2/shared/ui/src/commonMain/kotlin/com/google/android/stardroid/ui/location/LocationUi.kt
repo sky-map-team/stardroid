@@ -599,7 +599,9 @@ fun AcquiringTimeoutDialog(
  * location is set and auto-locate is welcome (`maybeShowLocationWarning` → `startLocationFlow`),
  * the permanently-denied path, and the acquiring timeout. Each dismissal is remembered for the
  * session so a lingering state doesn't immediately re-open the dialog; the timeout re-arms
- * whenever acquisition restarts.
+ * whenever acquisition restarts, and the permanently-denied dialog whenever a fresh refusal
+ * arrives — each one answers the user asking for automatic location, so it must not go
+ * unanswered because an earlier dialog was dismissed.
  *
  * A null [onRequestLocationPermission] means the platform asks without a rationale of its own:
  * iOS shows its system prompt once the EULA is accepted (its purpose string is the rationale),
@@ -617,8 +619,17 @@ fun LocationStateDialogs(
     var rationaleDismissed by rememberSaveable { mutableStateOf(false) }
     var permanentlyDeniedDismissed by rememberSaveable { mutableStateOf(false) }
     var timeoutDismissed by rememberSaveable { mutableStateOf(false) }
+    // The state this composition last saw, so only a change *into* a refusal re-arms its dialog:
+    // a new composition (a rotation, say) starts from the current state and re-arms nothing.
+    var previousState by remember { mutableStateOf(locationState) }
     LaunchedEffect(locationState) {
         if (locationState is LocationState.Acquiring) timeoutDismissed = false
+        if (locationState is LocationState.PermissionPermanentlyDenied &&
+            previousState !is LocationState.PermissionPermanentlyDenied
+        ) {
+            permanentlyDeniedDismissed = false
+        }
+        previousState = locationState
     }
 
     val needsLocation =
