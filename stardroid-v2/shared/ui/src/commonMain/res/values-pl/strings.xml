@@ -250,4 +250,34 @@
     <string name="symbol_key_other" translation_description="Symbol-key label: the marker used for deep-sky objects of any other type">Inny obiekt głębokiego nieba</string>
     <string name="symbol_key_meteor_radiant" translation_description="Symbol-key label: the marker for the point in the sky meteors of a shower appear to come from">Radiant roju meteorów</string>
     <string name="symbol_key_meteor_radiant_peak" translation_description="Symbol-key label: the brighter marker used when a meteor shower is near its peak activity">Rój meteorów blisko maksimum</string>
+    <string name="diagnostics_accelerometer">Akcelerometr</string>
+    <string name="diagnostics_compass">Kompas</string>
+    <string name="diagnostics_gyroscope">Żyroskop</string>
+    <string name="warm_welcome_slide1_title">Eksploruj kosmos</string>
+    <string name="warm_welcome_slide1_desc" translation_description="Description for the first slide of the Warm Welcome onboarding, shown under a guided tour of the map controls">
+    Użyj warstw po lewej stronie, aby filtrować gwiazdy, gwiazdozbiory, planety i inne. Przyciski w prawym dolnym rogu wyszukują na niebie, przenoszą w czasie i zmieniają tryby wyświetlania. Dotknij nieba w dowolnym momencie, aby ukryć lub pokazać elementy sterujące.
+    </string>
+    <string name="warm_welcome_slide2_title">Nawiguj po niebie</string>
+    <string name="warm_welcome_slide2_desc" translation_description="Description for the second slide of the Warm Welcome onboarding. Please do not change the &lt; and &gt; markup"><![CDATA[Skieruj telefon, aby rozejrzeć się w <b>Trybie automatycznym</b>, lub dotknij, aby przełączyć na <b>Tryb ręczny</b> i eksploruj, przesuwając i szczypiąc.]]></string>
+    <string name="warm_welcome_slide2_info_desc" translation_description="Description about info cards on the second slide of the Warm Welcome onboarding">
+    Dotknij dowolny oznaczony obiekt, aby otworzyć kartę informacyjną taką jak ta, ze zdjęciem, ciekawostkami i szczegółami astronomicznymi.
+    </string>
+    <string name="warm_welcome_card_name">Mgławica Kraba</string>
+    <string name="warm_welcome_card_description" translation_description="Description of the Crab Nebula on the sample info card on the second Warm Welcome slide">
+    Mgławica Kraba jest pozostałością po supernowej w gwiazdozbiorze Byka, wynikiem eksplozji gwiazdy zarejestrowanej przez chińskich astronomów w 1054 roku n.e.
+    </string>
+    <string name="warm_welcome_card_fun_fact" translation_description="Fun fact about the Crab Nebula on the sample info card on the second Warm Welcome slide">
+    Mgławica Kraba zawiera pulsar obracający się 30 razy na sekundę, zapadnięte jądro eksplodowanej gwiazdy!
+    </string>
+    <string name="warm_welcome_card_distance" translation_description="Distance to the Crab Nebula on the sample info card on the second Warm Welcome slide">6500 lat świetlnych</string>
+    <string name="warm_welcome_card_size" translation_description="Size of the Crab Nebula on the sample info card on the second Warm Welcome slide">11 lat świetlnych średnicy</string>
+    <string name="warm_welcome_slide3_title">Czujniki i kalibracja</string>
+    <string name="warm_welcome_slide3_desc">Sky Map używa czujników Twojego telefonu, aby ustalać położenie gwiazd.</string>
+    <string name="warm_welcome_slide3_no_sensors"><![CDATA[Twoje urządzenie wydaje się nie posiadać wymaganych czujników potrzebnych do automatycznego śledzenia. Nie martw się — możesz nadal eksplorować cały kosmos w <b>trybie ręcznym</b>!]]></string>
+    <string name="warm_welcome_slide3_compass_calib"><![CDATA[Aby zapewnić dokładność, wykonaj szybki ruch telefonem na <b>kształt ósemki</b> raz na jakiś czas.]]></string>
+    <string name="warm_welcome_skip">Pomiń</string>
+    <string name="warm_welcome_next">Dalej</string>
+    <string name="warm_welcome_finish">Zacznij!</string>
+    <string name="warm_welcome_sensor_ok">Działający</string>
+    <string name="warm_welcome_sensor_missing">Brakujący</string>
 </resources>

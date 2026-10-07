@@ -177,9 +177,6 @@
     <string name="diagnostics_gl_limits_format" translation_description="Format for the GL limits row: maximum texture size in pixels, then the supported line width and point size ranges. \'tex\' abbreviates texture. %1$d is texture size, %2$s is the line width range, %3$s is the point size range.">tex %1$d, lijn %2$s, punt %3$s</string>
     <string name="diagnostics_gl_unavailable" translation_description="Value shown in the diagnostics Graphics rows before the sky map has drawn, when the graphics details are not known yet">Nog niet beschikbaar</string>
     <string name="diagnostics_section_sensors">Sensoren</string>
-    <string name="diagnostics_accelerometer">Versnellingsmeter</string>
-    <string name="diagnostics_compass">Kompas</string>
-    <string name="diagnostics_gyroscope">Gyroscoop</string>
     <string name="diagnostics_rotation">Rotatie</string>
     <string name="diagnostics_rotation_matrix">Rotatiematrix</string>
     <string name="diagnostics_light_level">Lichtniveau</string>
@@ -262,33 +259,6 @@
     <string name="whats_new_version_heading" translation_description="Heading above the list of new features. %1$s is the app version name">Nieuw in versie %1$s</string>
 
     <!-- Warm welcome (onboarding pager, slice 16) -->
-    <string name="warm_welcome_slide1_title">Verken het heelal</string>
-    <string name="warm_welcome_slide1_desc" translation_description="Description for the first slide of the Warm Welcome onboarding, shown under a guided tour of the map controls">
-    Gebruik de lagen aan de linkerkant om sterren, sterrenbeelden, planeten en meer te filteren. De knoppen rechtsonder zoeken de hemel af, reizen door de tijd en wisselen weergavemodi. Tik op elk moment op de hemel om de bedieningselementen te verbergen of weer te geven.
-    </string>
-    <string name="warm_welcome_slide2_title">Navigeer door de hemel</string>
-    <string name="warm_welcome_slide2_desc" translation_description="Description for the second slide of the Warm Welcome onboarding. Please do not change the &lt; and &gt; markup"><![CDATA[Richt je telefoon om rond te kijken in <b>Automodus</b>, of tik om over te schakelen naar <b>Handmatig</b> en verken door te vegen en te knijpen.]]></string>
-    <string name="warm_welcome_slide2_info_desc" translation_description="Description about info cards on the second slide of the Warm Welcome onboarding">
-    Tik op een gelabeld object om een infokaart zoals deze te openen, met een foto, leuke weetjes en hemelse details.
-    </string>
-    <string name="warm_welcome_card_name">Krabnevel</string>
-    <string name="warm_welcome_card_description" translation_description="Description of the Crab Nebula on the sample info card on the second Warm Welcome slide">
-    De Krabnevel is een supernovarestant in Stier, het resultaat van een stellaire explosie die in 1054 n.Chr. door Chinese astronomen werd vastgelegd.
-    </string>
-    <string name="warm_welcome_card_fun_fact" translation_description="Fun fact about the Crab Nebula on the sample info card on the second Warm Welcome slide">
-    De Kreeftsnevel bevat een pulsar die 30 keer per seconde draait, de ingestorte kern van de geëxplodeerde ster!
-    </string>
-    <string name="warm_welcome_card_distance" translation_description="Distance to the Crab Nebula on the sample info card on the second Warm Welcome slide">6.500 lichtjaar</string>
-    <string name="warm_welcome_card_size" translation_description="Size of the Crab Nebula on the sample info card on the second Warm Welcome slide">11 lichtjaar breed</string>
-    <string name="warm_welcome_slide3_title">Sensoren en kalibratie</string>
-    <string name="warm_welcome_slide3_desc">Sky Map gebruikt de sensoren van je telefoon om uit te lijnen met de sterren.</string>
-    <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message on the third Warm Welcome slide when sensors are missing. Please do not change the &lt; and &gt; markup"><![CDATA[Je apparaat lijkt de benodigde sensoren voor automatische tracking te missen. Maak je geen zorgen—je kunt nog steeds de hele kosmos verkennen in <b>Handmatige Modus</b>!]]></string>
-    <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration advice on the third Warm Welcome slide. Please do not change the &lt; and &gt; markup"><![CDATA[Om nauwkeurig te blijven, beweeg je je telefoon af en toe snel in een <b>achtje</b>.]]></string>
-    <string name="warm_welcome_skip">Overslaan</string>
-    <string name="warm_welcome_next">Volgende</string>
-    <string name="warm_welcome_finish">Start!</string>
-    <string name="warm_welcome_sensor_ok">Werkt</string>
-    <string name="warm_welcome_sensor_missing">Ontbreekt</string>
 
 
     <!-- The Help screen's search box, which filters the document to the matching sections. -->

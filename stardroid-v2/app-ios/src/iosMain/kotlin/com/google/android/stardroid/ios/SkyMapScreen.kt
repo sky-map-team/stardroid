@@ -59,6 +59,7 @@ import com.google.android.stardroid.ui.objectinfo.EclipseRow
 import com.google.android.stardroid.ui.objectinfo.ImageExpandOverlay
 import com.google.android.stardroid.ui.objectinfo.ObjectInfoCard
 import com.google.android.stardroid.ui.objectinfo.ObjectInfoViewModel
+import com.google.android.stardroid.ui.onboarding.WelcomeScreen
 import com.google.android.stardroid.ui.resources.Res
 import com.google.android.stardroid.ui.resources.sun_wont_set_message
 import com.google.android.stardroid.ui.search.SearchControlBar
@@ -87,8 +88,8 @@ import platform.UIKit.UIViewController
  * until then the overflow menu offers only the destinations iOS has screens for. Everything here
  * is wired as Android wires it.
  *
- * Android's startup gating, as far as iOS has screens for it: the EULA blocks everything until
- * accepted, and What's New shows on upgrades. The warm welcome follows later in phase 5.
+ * Android's startup gating: the EULA blocks everything until accepted, then the warm welcome on
+ * a first run, and What's New on upgrades.
  */
 fun skyMapViewController(): UIViewController {
     val graph = IosAppGraph()
@@ -112,6 +113,8 @@ fun skyMapViewController(): UIViewController {
             startup,
             onRequestAutoLocation = graph::requestAutoLocation,
             onOpenAppSettings = graph::openAppSettings,
+            motionHardware =
+                MotionHardware(graph.hasCompass, graph.hasAccelerometer, graph.hasGyroscope),
         )
     }
 }
@@ -129,6 +132,7 @@ private fun SkyMapScreen(
     startup: StartupViewModel,
     onRequestAutoLocation: () -> Unit,
     onOpenAppSettings: () -> Unit,
+    motionHardware: MotionHardware,
 ) {
     val nightMode by mapViewModel.nightMode.collectAsState()
     val gates by startup.state.collectAsState()
@@ -363,7 +367,10 @@ private fun SkyMapScreen(
                         showLocationSheet = true
                     },
                     onOpenCalibration = null,
-                    onOpenTutorial = null,
+                    onOpenTutorial = {
+                        showOverflowSheet = false
+                        page = Page.TUTORIAL
+                    },
                     onOpenHelp = {
                         showOverflowSheet = false
                         page = Page.HELP
@@ -403,16 +410,32 @@ private fun SkyMapScreen(
                         onBack = { page = null },
                         // Links to screens iOS doesn't have yet stay inert until they arrive.
                         onNavigate = { destination ->
-                            if (destination == HelpLink.Destination.APP_SETTINGS) {
-                                onOpenAppSettings()
+                            when (destination) {
+                                HelpLink.Destination.APP_SETTINGS -> onOpenAppSettings()
+                                HelpLink.Destination.TUTORIAL -> page = Page.TUTORIAL
+                                else -> Unit
                             }
                         },
                     )
                 Page.WHATS_NEW -> WhatsNewScreen(nightMode = nightMode, onBack = { page = null })
+                // A replay: no analytics funnel, and nothing re-marked as seen (as on Android).
+                Page.TUTORIAL ->
+                    WelcomeScreen(
+                        hasCompass = motionHardware.hasCompass,
+                        hasAccelerometer = motionHardware.hasAccelerometer,
+                        hasGyroscope = motionHardware.hasGyroscope,
+                        nightMode = nightMode,
+                        satellitesEnabled = false,
+                        onFinished = { page = null },
+                    )
                 null -> Unit
             }
             val current = gates
-            if (current?.needsEula == false) {
+            // The location dialogs belong to the map, which the startup screens and the pages
+            // cover (on Android they are separate destinations, where the map isn't composed).
+            val onMap =
+                current != null && !current.needsEula && !current.needsWarmWelcome && page == null
+            if (onMap) {
                 LocationStateDialogs(
                     locationState = locationState,
                     manualLocationMode = manualLocationMode,
@@ -437,10 +460,27 @@ private fun SkyMapScreen(
                         // iOS apps don't quit themselves: Accept is the only way on.
                         onDecline = null,
                     )
-                // Upgrades only, and ahead of a still-pending tour, as on Android.
-                current.needsWhatsNew &&
-                    (!current.needsWarmWelcome || current.needsWhatsNewDuringWarmWelcome) ->
-                    WhatsNewDialog(nightMode = nightMode, onDismiss = startup::dismissWhatsNew)
+                else -> {
+                    if (current.needsWarmWelcome) {
+                        WelcomeScreen(
+                            hasCompass = motionHardware.hasCompass,
+                            hasAccelerometer = motionHardware.hasAccelerometer,
+                            hasGyroscope = motionHardware.hasGyroscope,
+                            nightMode = nightMode,
+                            satellitesEnabled = false,
+                            onFinished = startup::completeWarmWelcome,
+                            onSkip = startup::skipWarmWelcome,
+                            onStarted = startup::warmWelcomeStarted,
+                            onSlideViewed = startup::warmWelcomeSlideViewed,
+                        )
+                    }
+                    // Upgrades only, and ahead of a still-pending tour, as on Android.
+                    if (current.needsWhatsNew &&
+                        (!current.needsWarmWelcome || current.needsWhatsNewDuringWarmWelcome)
+                    ) {
+                        WhatsNewDialog(nightMode = nightMode, onDismiss = startup::dismissWhatsNew)
+                    }
+                }
             }
         }
     }
@@ -450,4 +490,14 @@ private fun SkyMapScreen(
 private enum class Page {
     HELP,
     WHATS_NEW,
+
+    /** The warm welcome, replayed from the overflow sheet or Help. */
+    TUTORIAL,
 }
+
+/** What the welcome's sensor check reports, from Core Motion. */
+private data class MotionHardware(
+    val hasCompass: Boolean,
+    val hasAccelerometer: Boolean,
+    val hasGyroscope: Boolean,
+)

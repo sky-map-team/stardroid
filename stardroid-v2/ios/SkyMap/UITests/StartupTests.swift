@@ -39,11 +39,34 @@ final class StartupTests: XCTestCase {
     }
 }
 
-/// Accepts the EULA and allows location, if this launch still asks for them.
+/// Accepts the EULA, skips the warm welcome and allows location, if this launch still asks.
 func passStartup(_ app: XCUIApplication) {
     let accept = app.buttons["Accept"]
     if accept.waitForExistence(timeout: 5) {
         accept.tap()
+    }
+    // The welcome shows on a first run only, so wait for whichever comes up: its Skip, or the
+    // map's controls. Those exist underneath the welcome, and look hittable for a moment while
+    // the startup state loads, so the map only counts once it has stayed up with no welcome.
+    let skip = app.buttons["Skip"].firstMatch
+    let more = app.buttons["More options"]
+    let deadline = Date().addingTimeInterval(20)
+    var mapSince: Date?
+    while Date() < deadline {
+        if skip.exists {
+            skip.tap()
+            break
+        }
+        if more.exists && more.isHittable {
+            let since = mapSince ?? Date()
+            mapSince = since
+            if Date().timeIntervalSince(since) > 3 {
+                break
+            }
+        } else {
+            mapSince = nil
+        }
+        usleep(250_000)
     }
     let springboard = XCUIApplication(bundleIdentifier: "com.apple.springboard")
     let allow = springboard.alerts.buttons["Allow While Using App"]

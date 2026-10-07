@@ -156,9 +156,6 @@
     <string name="diagnostics_gl_limits_format" translation_description="Format for the GL limits row: maximum texture size in pixels, then the supported line width and point size ranges. \'tex\' abbreviates texture. %1$d is texture size, %2$s is the line width range, %3$s is the point size range.">tex %1$d, liña %2$s, punto %3$s</string>
     <string name="diagnostics_gl_unavailable" translation_description="Value shown in the diagnostics Graphics rows before the sky map has drawn, when the graphics details are not known yet">Non dispoñible aínda</string>
     <string name="diagnostics_section_sensors" translation_description="Section heading in the diagnostics screen for sensor readings">Sensores</string>
-    <string name="diagnostics_accelerometer" translation_description="Row label in the diagnostics screen for the accelerometer sensor">Acelerómetro</string>
-    <string name="diagnostics_compass" translation_description="Row label in the diagnostics screen for the compass (magnetic field) sensor">Compás</string>
-    <string name="diagnostics_gyroscope" translation_description="Row label in the diagnostics screen for the gyroscope sensor">Xiroscopio</string>
     <string name="diagnostics_rotation" translation_description="Row label in the diagnostics screen for the rotation vector (combined orientation) sensor">Rotación</string>
     <string name="diagnostics_rotation_matrix" translation_description="Row label in the diagnostics screen showing the raw device rotation matrix used for orientation">Matriz de rotación</string>
     <string name="diagnostics_light_level" translation_description="Row label in the diagnostics screen for the ambient light sensor reading">Nivel de luz</string>
@@ -234,25 +231,6 @@ Se é necesario, realiza o movemento en forma de oito (<a href="%s">ver unha dem
     <string name="whats_new_version_heading" translation_description="Heading above the list of new features. %1$s is the app version name">Novidades na versión %1$s</string>
 
     <!-- Warm welcome (onboarding pager, slice 16) -->
-    <string name="warm_welcome_slide1_title" translation_description="Title for the first slide of the Warm Welcome onboarding">Explora o cosmos</string>
-    <string name="warm_welcome_slide1_desc" translation_description="Description for the first slide of the Warm Welcome onboarding, shown under a guided tour of the map controls">Usa as capas da esquerda para filtrar estrelas, constelacións, planetas e máis. Os botóns da parte inferior dereita buscan no ceo, viaxan no tempo e cambian os modos de visualización. Toca o ceo en calquera momento para ocultar ou mostrar os controis.</string>
-    <string name="warm_welcome_slide2_title" translation_description="Title for the second slide of the Warm Welcome onboarding">Navega o ceo</string>
-    <string name="warm_welcome_slide2_desc" translation_description="Description for the second slide of the Warm Welcome onboarding. Please do not change the &lt; and &gt; markup"><![CDATA[Apunta o teu teléfono para mirar arredor en <b>Modo Automático</b>, ou toca para cambiar a <b>Manual</b> e explora deslizando e pinzando.]]></string>
-    <string name="warm_welcome_slide2_info_desc" translation_description="Description about info cards on the second slide of the Warm Welcome onboarding">Toca calquera obxecto etiquetado para abrir unha Tarxeta de Información como esta, cunha foto, datos curiosos e detalles celestes.</string>
-    <string name="warm_welcome_card_name" translation_description="Name of the Crab Nebula, shown on the sample info card on the second Warm Welcome slide">Nebulosa do Cangrexo</string>
-    <string name="warm_welcome_card_description" translation_description="Description of the Crab Nebula on the sample info card on the second Warm Welcome slide">A Nebulosa do Cangrexo é un remanente de supernova en Touro, o resultado dunha explosión estelar rexistrada por astrónomos chineses no ano 1054 d.C.</string>
-    <string name="warm_welcome_card_fun_fact" translation_description="Fun fact about the Crab Nebula on the sample info card on the second Warm Welcome slide">A Nebulosa do Cangrexo contén un púlsar que xira 30 veces por segundo, o núcleo colapsado da estrela que explotou!</string>
-    <string name="warm_welcome_card_distance" translation_description="Distance to the Crab Nebula on the sample info card on the second Warm Welcome slide">6.500 anos luz</string>
-    <string name="warm_welcome_card_size" translation_description="Size of the Crab Nebula on the sample info card on the second Warm Welcome slide">11 anos luz de diámetro</string>
-    <string name="warm_welcome_slide3_title" translation_description="Title for the third slide of the Warm Welcome onboarding">Sensores &amp; calibración</string>
-    <string name="warm_welcome_slide3_desc" translation_description="Description for the third slide of the Warm Welcome onboarding">Sky Map utiliza os sensores do teu teléfono para aliñarse coas estrelas.</string>
-    <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message on the third Warm Welcome slide when sensors are missing. Please do not change the &lt; and &gt; markup"><![CDATA[O teu dispositivo parece carecer dos sensores necesarios para o seguimento automático. Non te preocupes—aínda podes explorar todo o cosmos en <b>Modo Manual</b>!]]></string>
-    <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration advice on the third Warm Welcome slide. Please do not change the &lt; and &gt; markup"><![CDATA[Para maior precisión, axita o teu teléfono en <b>forma de oito</b> de cando en vez.]]></string>
-    <string name="warm_welcome_skip" translation_description="Button to skip the Warm Welcome onboarding">Omitir</string>
-    <string name="warm_welcome_next" translation_description="Button to go to the next Warm Welcome slide">Seguinte</string>
-    <string name="warm_welcome_finish" translation_description="Button to finish the Warm Welcome onboarding and start exploring. Needs to be short - the width of 9 letter Ms maximum.">Comezar!</string>
-    <string name="warm_welcome_sensor_ok" translation_description="Status shown next to a sensor name when the sensor is working">Funcionando</string>
-    <string name="warm_welcome_sensor_missing" translation_description="Status shown next to a sensor name when the sensor is missing">Ausente</string>
 
     <!-- Help dialog (slice 16) -->
 

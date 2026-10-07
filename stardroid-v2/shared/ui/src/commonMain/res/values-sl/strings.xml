@@ -267,4 +267,34 @@
     <string name="symbol_key_other" translation_description="Symbol-key label: the marker used for deep-sky objects of any other type">Drugi objekt globokega neba</string>
     <string name="symbol_key_meteor_radiant" translation_description="Symbol-key label: the marker for the point in the sky meteors of a shower appear to come from">Radiant meteornega roja</string>
     <string name="symbol_key_meteor_radiant_peak" translation_description="Symbol-key label: the brighter marker used when a meteor shower is near its peak activity">Meteorski roj blizu vrhunca</string>
+    <string name="diagnostics_accelerometer">Pospeškometer</string>
+    <string name="diagnostics_compass">Kompas</string>
+    <string name="diagnostics_gyroscope">Žiroskop</string>
+    <string name="warm_welcome_slide1_title">Raziščite vesolje</string>
+    <string name="warm_welcome_slide1_desc" translation_description="Description for the first slide of the Warm Welcome onboarding, shown under a guided tour of the map controls">
+    Uporabite sloje na levi za filtriranje zvezd, ozvezij, planetov in drugega. Gumbi spodaj desno omogočajo iskanje po nebu, potovanje skozi čas in preklapljanje načinov prikaza. Kadar koli tapnite nebo, da skrijete ali prikažete kontrolnike.
+    </string>
+    <string name="warm_welcome_slide2_title">Navigirajte po nebu</string>
+    <string name="warm_welcome_slide2_desc" translation_description="Description for the second slide of the Warm Welcome onboarding. Please do not change the &lt; and &gt; markup"><![CDATA[Usmerite telefon in si oglejte nebo v <b>samodejnem načinu</b> ali tapnite za preklop v <b>ročni način</b> ter raziskujte z drsenjem in prsti.]]></string>
+    <string name="warm_welcome_slide2_info_desc" translation_description="Description about info cards on the second slide of the Warm Welcome onboarding">
+    Dotaknite se kateregakoli označenega predmeta, da odprete informativno kartico, kot je ta, s fotografijo, zanimivostmi in podatki o vesolju.
+    </string>
+    <string name="warm_welcome_card_name">Rakovska meglica</string>
+    <string name="warm_welcome_card_description" translation_description="Description of the Crab Nebula on the sample info card on the second Warm Welcome slide">
+    Rakova nebula je ostanek supernove v biku, ki je posledica zvezdne eksplozije, ki so jo kitajski astronomi zabeležili leta 1054 n. št.
+    </string>
+    <string name="warm_welcome_card_fun_fact" translation_description="Fun fact about the Crab Nebula on the sample info card on the second Warm Welcome slide">
+    Rakova meglica vsebuje pulsar, ki se zavrti 30-krat na sekundo, kar je sesedeno jedro eksplodirane zvezde!
+    </string>
+    <string name="warm_welcome_card_distance" translation_description="Distance to the Crab Nebula on the sample info card on the second Warm Welcome slide">6.500 svetlobnih let</string>
+    <string name="warm_welcome_card_size" translation_description="Size of the Crab Nebula on the sample info card on the second Warm Welcome slide">11 svetlobnih let v premeru</string>
+    <string name="warm_welcome_slide3_title">Senzorji in umerjanje</string>
+    <string name="warm_welcome_slide3_desc">Sky Map uporablja senzorje vašega telefona za poravnavo s zvezd.</string>
+    <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message on the third Warm Welcome slide when sensors are missing. Please do not change the &lt; and &gt; markup"><![CDATA[Vaši napravi očitno manjkajo senzorji, potrebni za samodejno sledenje. Brez skrbi – celotno vesolje lahko še vedno raziskujete v <b>Ročnem načinu</b>!]]></string>
+    <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration advice on the third Warm Welcome slide. Please do not change the &lt; and &gt; markup"><![CDATA[Za ohranjenje natančnosti občasno hitro zamahnite s telefonom v obliki <b>številke 8</b>.]]></string>
+    <string name="warm_welcome_skip">Preskoči</string>
+    <string name="warm_welcome_next">Naprej</string>
+    <string name="warm_welcome_finish">Zaženi!</string>
+    <string name="warm_welcome_sensor_ok">Deluje</string>
+    <string name="warm_welcome_sensor_missing">Manjka</string>
 </resources>

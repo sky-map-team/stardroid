@@ -285,4 +285,26 @@
     <string name="symbol_key_other" translation_description="Symbol-key label: the marker used for deep-sky objects of any other type">Other deep-sky object</string>
     <string name="symbol_key_meteor_radiant" translation_description="Symbol-key label: the marker for the point in the sky meteors of a shower appear to come from">Meteor shower radiant</string>
     <string name="symbol_key_meteor_radiant_peak" translation_description="Symbol-key label: the brighter marker used when a meteor shower is near its peak activity">Meteor shower near its peak</string>
+    <string name="diagnostics_accelerometer" translation_description="Row label in the diagnostics screen for the accelerometer sensor">Accelerometer</string>
+    <string name="diagnostics_compass" translation_description="Row label in the diagnostics screen for the compass (magnetic field) sensor">Compass</string>
+    <string name="diagnostics_gyroscope" translation_description="Row label in the diagnostics screen for the gyroscope sensor">Gyroscope</string>
+    <string name="warm_welcome_slide1_title" translation_description="Title for the first slide of the Warm Welcome onboarding">Explore the Cosmos</string>
+    <string name="warm_welcome_slide1_desc" translation_description="Description for the first slide of the Warm Welcome onboarding, shown under a guided tour of the map controls">Use the layers on the left to filter stars, constellations, planets, and more. The buttons at the bottom right search the sky, travel through time, and switch display modes. Tap the sky at any time to hide or show the controls.</string>
+    <string name="warm_welcome_slide2_title" translation_description="Title for the second slide of the Warm Welcome onboarding">Navigate the Sky</string>
+    <string name="warm_welcome_slide2_desc" translation_description="Description for the second slide of the Warm Welcome onboarding. Please do not change the &lt; and &gt; markup"><![CDATA[Point your phone to look around in <b>Auto Mode</b>, or tap to switch to <b>Manual</b> and explore by swiping and pinching.]]></string>
+    <string name="warm_welcome_slide2_info_desc" translation_description="Description about info cards on the second slide of the Warm Welcome onboarding">Tap any labeled object to open an Info Card like this one, with a photo, fun facts, and celestial details.</string>
+    <string name="warm_welcome_card_name" translation_description="Name of the Crab Nebula, shown on the sample info card on the second Warm Welcome slide">Crab Nebula</string>
+    <string name="warm_welcome_card_description" translation_description="Description of the Crab Nebula on the sample info card on the second Warm Welcome slide">The Crab Nebula is a supernova remnant in Taurus, the result of a stellar explosion recorded by Chinese astronomers in 1054 AD.</string>
+    <string name="warm_welcome_card_fun_fact" translation_description="Fun fact about the Crab Nebula on the sample info card on the second Warm Welcome slide">The Crab Nebula contains a pulsar spinning 30 times per second, the collapsed core of the exploded star!</string>
+    <string name="warm_welcome_card_distance" translation_description="Distance to the Crab Nebula on the sample info card on the second Warm Welcome slide">6,500 light-years</string>
+    <string name="warm_welcome_card_size" translation_description="Size of the Crab Nebula on the sample info card on the second Warm Welcome slide">11 light-years across</string>
+    <string name="warm_welcome_slide3_title" translation_description="Title for the third slide of the Warm Welcome onboarding">Sensors &amp; Calibration</string>
+    <string name="warm_welcome_slide3_desc" translation_description="Description for the third slide of the Warm Welcome onboarding">Sky Map uses your phone\'s sensors to align with the stars.</string>
+    <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message on the third Warm Welcome slide when sensors are missing. Please do not change the &lt; and &gt; markup"><![CDATA[Your device seems to be missing the required sensors needed for automatic tracking. Don\'t worry—you can still explore the entire cosmos in <b>Manual Mode</b>!]]></string>
+    <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration advice on the third Warm Welcome slide. Please do not change the &lt; and &gt; markup"><![CDATA[To keep things accurate, give your phone a quick <b>figure-8</b> wave every once in a while.]]></string>
+    <string name="warm_welcome_skip" translation_description="Button to skip the Warm Welcome onboarding">Skip</string>
+    <string name="warm_welcome_next" translation_description="Button to go to the next Warm Welcome slide">Next</string>
+    <string name="warm_welcome_finish" translation_description="Button to finish the Warm Welcome onboarding and start exploring. Needs to be short - the width of 9 letter Ms maximum.">Launch!</string>
+    <string name="warm_welcome_sensor_ok" translation_description="Status shown next to a sensor name when the sensor is working">Working</string>
+    <string name="warm_welcome_sensor_missing" translation_description="Status shown next to a sensor name when the sensor is missing">Missing</string>
 </resources>

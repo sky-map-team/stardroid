@@ -9,8 +9,6 @@
 
 package com.google.android.stardroid.ui.onboarding
 
-import android.content.res.Configuration
-import android.graphics.BitmapFactory
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -27,6 +25,7 @@ import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.pager.HorizontalPager
@@ -45,7 +44,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
-import androidx.compose.runtime.produceState
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
@@ -54,29 +52,53 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.BlendMode
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
-import androidx.compose.ui.graphics.ImageBitmap
-import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.platform.LocalConfiguration
-import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.AnnotatedString
-import androidx.compose.ui.text.fromHtml
+import androidx.compose.ui.platform.LocalWindowInfo
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.google.android.stardroid.R
 import com.google.android.stardroid.catalog.CelestialObjectId
 import com.google.android.stardroid.catalog.ObjectInfo
 import com.google.android.stardroid.catalog.TypeCode
+import com.google.android.stardroid.ui.common.annotatedStringFromHtml
+import com.google.android.stardroid.ui.common.rememberAssetBitmap
 import com.google.android.stardroid.ui.objectinfo.ObjectInfoBody
+import com.google.android.stardroid.ui.resources.Res
+import com.google.android.stardroid.ui.resources.diagnostics_accelerometer
+import com.google.android.stardroid.ui.resources.diagnostics_compass
+import com.google.android.stardroid.ui.resources.diagnostics_gyroscope
+import com.google.android.stardroid.ui.resources.ic_accelerometer
+import com.google.android.stardroid.ui.resources.ic_check_circle
+import com.google.android.stardroid.ui.resources.ic_compass
+import com.google.android.stardroid.ui.resources.ic_gyroscope
+import com.google.android.stardroid.ui.resources.ic_warning
+import com.google.android.stardroid.ui.resources.ic_welcome_indicator
+import com.google.android.stardroid.ui.resources.warm_welcome_card_description
+import com.google.android.stardroid.ui.resources.warm_welcome_card_distance
+import com.google.android.stardroid.ui.resources.warm_welcome_card_fun_fact
+import com.google.android.stardroid.ui.resources.warm_welcome_card_name
+import com.google.android.stardroid.ui.resources.warm_welcome_card_size
+import com.google.android.stardroid.ui.resources.warm_welcome_finish
+import com.google.android.stardroid.ui.resources.warm_welcome_next
+import com.google.android.stardroid.ui.resources.warm_welcome_sensor_missing
+import com.google.android.stardroid.ui.resources.warm_welcome_sensor_ok
+import com.google.android.stardroid.ui.resources.warm_welcome_skip
+import com.google.android.stardroid.ui.resources.warm_welcome_slide1_desc
+import com.google.android.stardroid.ui.resources.warm_welcome_slide1_title
+import com.google.android.stardroid.ui.resources.warm_welcome_slide2_desc
+import com.google.android.stardroid.ui.resources.warm_welcome_slide2_info_desc
+import com.google.android.stardroid.ui.resources.warm_welcome_slide2_title
+import com.google.android.stardroid.ui.resources.warm_welcome_slide3_compass_calib
+import com.google.android.stardroid.ui.resources.warm_welcome_slide3_desc
+import com.google.android.stardroid.ui.resources.warm_welcome_slide3_no_sensors
+import com.google.android.stardroid.ui.resources.warm_welcome_slide3_title
 import com.google.android.stardroid.ui.theme.NightPhotoTint
 import com.google.android.stardroid.ui.theme.statusColors
-import kotlinx.coroutines.CancellationException
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
+import org.jetbrains.compose.resources.DrawableResource
+import org.jetbrains.compose.resources.StringResource
+import org.jetbrains.compose.resources.painterResource
+import org.jetbrains.compose.resources.stringResource
 
 private const val SLIDE_COUNT = 3
 
@@ -119,6 +141,9 @@ private val PhotoScrim = Color(0x55000000)
  * and Launch! both complete the welcome — v1 marked it seen either way; [onSkip] vs
  * [onFinished] only distinguishes the analytics funnel (D49), and [onStarted]/[onSlideViewed]
  * feed the same.
+ *
+ * Shared by both apps (D134). The sensor check reports what the host found (Android's sensor
+ * manager, iOS's Core Motion) and buzzes through each platform's haptics.
  */
 @Composable
 fun WelcomeScreen(
@@ -198,7 +223,7 @@ private fun BottomBar(
         verticalAlignment = Alignment.CenterVertically,
     ) {
         TextButton(onClick = onSkip) {
-            Text(stringResource(R.string.warm_welcome_skip))
+            Text(stringResource(Res.string.warm_welcome_skip))
         }
         Spacer(Modifier.weight(1f))
         PageStars(currentPage)
@@ -208,9 +233,9 @@ private fun BottomBar(
             Text(
                 stringResource(
                     if (lastPage) {
-                        R.string.warm_welcome_finish
+                        Res.string.warm_welcome_finish
                     } else {
-                        R.string.warm_welcome_next
+                        Res.string.warm_welcome_next
                     },
                 ),
             )
@@ -243,9 +268,11 @@ private fun SlideLayout(
 ) {
     BoxWithConstraints(Modifier.fillMaxSize()) {
         backdrop()
+        // The backdrop is full bleed; the content keeps clear of the status bar, which iOS
+        // shows (Android's fullscreen theme hides it, so the inset is zero there).
         if (isLandscape()) {
             val panelWidth = minOf(PANEL_MAX_WIDTH, maxWidth * PANEL_MAX_FRACTION)
-            Row(Modifier.fillMaxSize()) {
+            Row(Modifier.fillMaxSize().statusBarsPadding()) {
                 illustration(
                     Modifier
                         .weight(1f)
@@ -261,7 +288,7 @@ private fun SlideLayout(
             // Portrait keeps v1's stack, panel capped at half the slide so a large font
             // scale scrolls the text instead of squeezing the illustration to nothing.
             val panelMaxHeight = maxHeight / 2
-            Column(Modifier.fillMaxSize()) {
+            Column(Modifier.fillMaxSize().statusBarsPadding()) {
                 illustration(
                     Modifier
                         .weight(1f)
@@ -275,7 +302,9 @@ private fun SlideLayout(
 
 @Composable
 private fun isLandscape(): Boolean =
-    LocalConfiguration.current.orientation == Configuration.ORIENTATION_LANDSCAPE
+    LocalWindowInfo.current.containerSize.let {
+        it.width > it.height
+    }
 
 /** Slide 1: the guided tour of the real map chrome over a real v2 sky capture. */
 @Composable
@@ -285,15 +314,7 @@ private fun ChromeTourSlide(
     satellitesEnabled: Boolean,
 ) {
     SlideLayout(
-        backdrop = {
-            Image(
-                painterResource(R.drawable.welcome_sky_bg),
-                contentDescription = null,
-                contentScale = ContentScale.Crop,
-                colorFilter = nightPhotoFilter(nightMode),
-                modifier = Modifier.fillMaxSize(),
-            )
-        },
+        backdrop = { AssetBackdrop("welcome/welcome_sky_bg.webp", nightMode, scrim = false) },
         illustration = { modifier ->
             ChromeTourDemo(
                 active = active,
@@ -304,8 +325,8 @@ private fun ChromeTourSlide(
         },
         panel = { modifier ->
             TextPanel(
-                R.string.warm_welcome_slide1_title,
-                R.string.warm_welcome_slide1_desc,
+                Res.string.warm_welcome_slide1_title,
+                Res.string.warm_welcome_slide1_desc,
                 modifier = modifier,
             )
         },
@@ -329,9 +350,9 @@ private fun InfoCardSlide(nightMode: Boolean) {
         },
         panel = { modifier ->
             TextPanel(
-                R.string.warm_welcome_slide2_title,
-                R.string.warm_welcome_slide2_desc,
-                R.string.warm_welcome_slide2_info_desc,
+                Res.string.warm_welcome_slide2_title,
+                Res.string.warm_welcome_slide2_desc,
+                Res.string.warm_welcome_slide2_info_desc,
                 modifier = modifier,
             )
         },
@@ -348,15 +369,15 @@ private fun SampleInfoCard(nightMode: Boolean) {
     val info =
         ObjectInfo(
             id = CelestialObjectId("dso/m1"),
-            name = stringResource(R.string.warm_welcome_card_name),
+            name = stringResource(Res.string.warm_welcome_card_name),
             type = TypeCode("nebula"),
             position = null,
             parent = null,
             magnitude = 8.4,
-            description = stringResource(R.string.warm_welcome_card_description),
-            funFact = stringResource(R.string.warm_welcome_card_fun_fact),
-            distance = stringResource(R.string.warm_welcome_card_distance),
-            size = stringResource(R.string.warm_welcome_card_size),
+            description = stringResource(Res.string.warm_welcome_card_description),
+            funFact = stringResource(Res.string.warm_welcome_card_fun_fact),
+            distance = stringResource(Res.string.warm_welcome_card_distance),
+            size = stringResource(Res.string.warm_welcome_card_size),
             mass = null,
             spectralClass = null,
             imageRef = "deep_sky_objects/hubble_m1.jpg",
@@ -396,15 +417,19 @@ private fun SensorSlide(
 ) {
     val sensors =
         listOf(
-            SensorCheckRow(R.string.diagnostics_compass, R.drawable.ic_compass, hasCompass),
+            SensorCheckRow(Res.string.diagnostics_compass, Res.drawable.ic_compass, hasCompass),
             SensorCheckRow(
-                R.string.diagnostics_accelerometer,
-                R.drawable.ic_accelerometer,
+                Res.string.diagnostics_accelerometer,
+                Res.drawable.ic_accelerometer,
                 hasAccelerometer,
             ),
-            SensorCheckRow(R.string.diagnostics_gyroscope, R.drawable.ic_gyroscope, hasGyroscope),
+            SensorCheckRow(
+                Res.string.diagnostics_gyroscope,
+                Res.drawable.ic_gyroscope,
+                hasGyroscope,
+            ),
         )
-    val context = LocalContext.current
+    val buzz = rememberSensorCheckBuzz()
     // How many sensors have finished "checking" and revealed their status. All spin at first;
     // the check ticks them up one at a time (v1 revealed compass/accel/gyro at 0.8/1.6/2.4 s
     // with a per-sensor buzz — a happy tap when present, a double-buzz when missing).
@@ -418,7 +443,7 @@ private fun SensorSlide(
         for ((index, sensor) in sensors.withIndex()) {
             delay(SENSOR_CHECK_STEP_MS)
             revealed = index + 1
-            context.sensorCheckBuzz(present = sensor.present)
+            buzz(sensor.present)
         }
     }
 
@@ -438,12 +463,13 @@ private fun SensorSlide(
                     },
                 )
                 .align(Alignment.Center)
+                .statusBarsPadding()
                 .verticalScroll(rememberScrollState())
                 .padding(24.dp),
             verticalArrangement = Arrangement.Center,
         ) {
-            SlideTitle(R.string.warm_welcome_slide3_title)
-            SlideBody(R.string.warm_welcome_slide3_desc)
+            SlideTitle(Res.string.warm_welcome_slide3_title)
+            SlideBody(Res.string.warm_welcome_slide3_desc)
             Spacer(Modifier.height(8.dp))
             sensors.forEachIndexed { index, sensor ->
                 SensorRow(sensor, checking = index >= revealed, nightMode = nightMode)
@@ -455,9 +481,9 @@ private fun SensorSlide(
             if (revealed >= sensors.size) {
                 SlideBody(
                     if (hasCompass && hasAccelerometer) {
-                        R.string.warm_welcome_slide3_compass_calib
+                        Res.string.warm_welcome_slide3_compass_calib
                     } else {
-                        R.string.warm_welcome_slide3_no_sensors
+                        Res.string.warm_welcome_slide3_no_sensors
                     },
                 )
             }
@@ -466,37 +492,23 @@ private fun SensorSlide(
 }
 
 private data class SensorCheckRow(
-    val labelRes: Int,
-    val iconRes: Int,
+    val labelRes: StringResource,
+    val iconRes: DrawableResource,
     val present: Boolean,
 )
 
 /**
- * A full-bleed background photo from the bundled `celestial_images/` assets (the same tree
- * the info cards use), dimmed for text legibility and red-tinted in night mode like every
- * photo (D46).
+ * A full-bleed background image from the bundled assets (the photos share the info cards'
+ * `celestial_images/` tree), red-tinted in night mode like every photo (D46) and, by default,
+ * dimmed for text legibility.
  */
 @Composable
 private fun AssetBackdrop(
     assetPath: String,
     nightMode: Boolean,
+    scrim: Boolean = true,
 ) {
-    val assets = LocalContext.current.assets
-    val bitmap by produceState<ImageBitmap?>(initialValue = null, assetPath) {
-        value =
-            withContext(Dispatchers.IO) {
-                try {
-                    assets.open(assetPath).use { stream ->
-                        BitmapFactory.decodeStream(stream)?.asImageBitmap()
-                    }
-                } catch (e: CancellationException) {
-                    throw e
-                } catch (e: Exception) {
-                    null
-                }
-            }
-    }
-    bitmap?.let {
+    rememberAssetBitmap(assetPath)?.let {
         Image(
             bitmap = it,
             contentDescription = null,
@@ -505,11 +517,13 @@ private fun AssetBackdrop(
             modifier = Modifier.fillMaxSize(),
         )
     }
-    Box(
-        Modifier
-            .fillMaxSize()
-            .background(PhotoScrim),
-    )
+    if (scrim) {
+        Box(
+            Modifier
+                .fillMaxSize()
+                .background(PhotoScrim),
+        )
+    }
 }
 
 private fun nightPhotoFilter(nightMode: Boolean): ColorFilter? =
@@ -522,7 +536,7 @@ private fun nightPhotoFilter(nightMode: Boolean): ColorFilter? =
  */
 @Composable
 private fun TextPanel(
-    vararg textRes: Int,
+    vararg textRes: StringResource,
     modifier: Modifier = Modifier,
 ) {
     Column(
@@ -540,7 +554,7 @@ private fun TextPanel(
 }
 
 @Composable
-private fun SlideTitle(resId: Int) {
+private fun SlideTitle(resId: StringResource) {
     Text(
         stringResource(resId),
         style = MaterialTheme.typography.headlineMedium,
@@ -549,9 +563,9 @@ private fun SlideTitle(resId: Int) {
 }
 
 @Composable
-private fun SlideBody(resId: Int) {
+private fun SlideBody(resId: StringResource) {
     Text(
-        AnnotatedString.fromHtml(stringResource(resId)),
+        annotatedStringFromHtml(stringResource(resId), null, null),
         style = MaterialTheme.typography.bodyLarge,
         modifier = Modifier.padding(bottom = 8.dp),
     )
@@ -583,15 +597,15 @@ private fun SensorRow(
         } else if (sensor.present) {
             // v1's green check / warning triangle, described for TalkBack by the old text.
             Icon(
-                painterResource(R.drawable.ic_check_circle),
-                contentDescription = stringResource(R.string.warm_welcome_sensor_ok),
+                painterResource(Res.drawable.ic_check_circle),
+                contentDescription = stringResource(Res.string.warm_welcome_sensor_ok),
                 tint = colors.good,
                 modifier = Modifier.size(24.dp),
             )
         } else {
             Icon(
-                painterResource(R.drawable.ic_warning),
-                contentDescription = stringResource(R.string.warm_welcome_sensor_missing),
+                painterResource(Res.drawable.ic_warning),
+                contentDescription = stringResource(Res.string.warm_welcome_sensor_missing),
                 tint = colors.bad,
                 modifier = Modifier.size(24.dp),
             )
@@ -605,7 +619,7 @@ private fun PageStars(currentPage: Int) {
     Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
         repeat(SLIDE_COUNT) { page ->
             Icon(
-                painterResource(R.drawable.ic_welcome_indicator),
+                painterResource(Res.drawable.ic_welcome_indicator),
                 contentDescription = null,
                 tint =
                     if (page == currentPage) {

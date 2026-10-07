@@ -48,6 +48,7 @@ import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
+import platform.CoreMotion.CMMotionManager
 import platform.Foundation.NSApplicationSupportDirectory
 import platform.Foundation.NSBundle
 import platform.Foundation.NSFileManager
@@ -63,8 +64,8 @@ import platform.UIKit.UIApplicationOpenSettingsURLString
  * hand. Everything here is shared code; only the platform edges are iOS's.
  *
  * The app's foreground drives location the way Android's activity `onStart`/`onStop` do. The
- * system location prompt shows once the EULA is accepted, in place of Android's rationale dialog;
- * a refusal brings the shared permanently-denied dialog, as on Android.
+ * system location prompt shows once the EULA and the warm welcome are done, in place of Android's
+ * rationale dialog; a refusal brings the shared permanently-denied dialog, as on Android.
  */
 @OptIn(ExperimentalForeignApi::class)
 class IosAppGraph {
@@ -91,12 +92,22 @@ class IosAppGraph {
 
     private val foreground = AppForeground()
 
-    /** The bundle's build number, which the startup gates compare as Android's versionCode. */
+    /**
+     * The bundle's build number, which the startup gates compare as Android's versionCode. At
+     * least 1, the warm-welcome floor below: a tour seen at this build must clear it.
+     */
     private val appVersion: Long =
-        (NSBundle.mainBundle.objectForInfoDictionaryKey("CFBundleVersion") as? String)
-            ?.toLongOrNull() ?: 0L
+        (
+            (NSBundle.mainBundle.objectForInfoDictionaryKey("CFBundleVersion") as? String)
+                ?.toLongOrNull() ?: 1L
+        ).coerceAtLeast(1L)
 
-    private val startupRouter = StartupRouter(startupState, appVersion)
+    // Android's warm-welcome reset floor is one of its own versionCodes (the 2.0 beta), which
+    // re-showed the tour to v1-era testers. iOS has no history before its first build, and its
+    // build numbers are its own: against Android's floor, a tour seen at build 1 would count as
+    // never seen, and show at every launch. A floor of 1 shows it once.
+    private val startupRouter =
+        StartupRouter(startupState, appVersion, warmWelcomeResetVersionCode = 1L)
 
     /** Dims the screen in night mode, as the auto-dimness preference says. */
     private val screenDimming =
@@ -108,6 +119,15 @@ class IosAppGraph {
         )
 
     private val coreLocation = CoreLocationProvider()
+
+    /** The motion hardware, for the welcome's sensor check (Android asks its SensorManager). */
+    private val motionHardware = CMMotionManager()
+
+    val hasCompass: Boolean get() = motionHardware.magnetometerAvailable
+
+    val hasAccelerometer: Boolean get() = motionHardware.accelerometerAvailable
+
+    val hasGyroscope: Boolean get() = motionHardware.gyroAvailable
 
     val locationController =
         LocationController(
@@ -200,8 +220,11 @@ class IosAppGraph {
         }
         locationController.start()
         // The terms carry the permissions notice, which must come before any permission prompt
-        // (Korean Network Act art. 22-2; see eula.xml), as it does on Android.
-        startupRouter.needsEula.first { !it }
+        // (Korean Network Act art. 22-2; see eula.xml). The prompt then waits out the warm
+        // welcome too, as Android's rationale waits for the map: it would cover the tour.
+        combine(startupRouter.needsEula, startupRouter.needsWarmWelcome) { eula, welcome ->
+            eula || welcome
+        }.first { !it }
         if (!coreLocation.isAuthorized && !settings.noAutoLocate.first()) askForAutoLocation()
     }
 
@@ -231,7 +254,7 @@ class IosAppGraph {
         UIApplication.sharedApplication.openURL(url, emptyMap<Any?, Any>(), null)
     }
 
-    /** The EULA gate; the warm welcome and What's New wait for their screens (phase 5). */
+    /** The startup gates: the EULA, the warm welcome and What's New. */
     fun startupViewModel(): StartupViewModel = StartupViewModel(startupRouter, startupState)
 
     /**

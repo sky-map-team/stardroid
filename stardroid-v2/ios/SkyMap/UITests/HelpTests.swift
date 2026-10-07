@@ -34,7 +34,13 @@ final class HelpTests: XCTestCase {
         sleep(1)
         capture(self, "3-whats-new")
         app.buttons["Back"].firstMatch.tap()
-        XCTAssertTrue(app.buttons["More options"].waitForExistence(timeout: 5))
+        // Back on the map. Not "its controls are reachable": a location dialog may be up there
+        // (a simulator has no fix), which hides them from accessibility.
+        expectation(
+            for: NSPredicate(format: "exists == false"),
+            evaluatedWith: app.staticTexts["What's New & Credits"],
+        )
+        waitForExpectations(timeout: 5)
     }
 
     private func openFromMenu(_ app: XCUIApplication, _ row: String) {

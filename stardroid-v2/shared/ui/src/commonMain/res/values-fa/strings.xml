@@ -277,4 +277,34 @@
     <string name="symbol_key_other" translation_description="Symbol-key label: the marker used for deep-sky objects of any other type">سایر اجرام اعماق آسمان</string>
     <string name="symbol_key_meteor_radiant" translation_description="Symbol-key label: the marker for the point in the sky meteors of a shower appear to come from">کانون بارش شهابی</string>
     <string name="symbol_key_meteor_radiant_peak" translation_description="Symbol-key label: the brighter marker used when a meteor shower is near its peak activity">بارش شهابی نزدیک به اوج خود</string>
+    <string name="diagnostics_accelerometer">شتاب‌سنج</string>
+    <string name="diagnostics_compass">قطب‌نما</string>
+    <string name="diagnostics_gyroscope">ژیروسکوپ</string>
+    <string name="warm_welcome_slide1_title">کاوش در کیهان</string>
+    <string name="warm_welcome_slide1_desc" translation_description="Description for the first slide of the Warm Welcome onboarding, shown under a guided tour of the map controls">
+    از لایه‌های سمت چپ برای فیلتر کردن ستاره‌ها، صورت‌های فلکی، سیاره‌ها و موارد دیگر استفاده کنید. دکمه‌های پایین سمت راست، آسمان را جستجو می‌کنند، در زمان سفر می‌کنند و حالت‌های نمایش را تغییر می‌دهند. در هر زمان روی آسمان ضربه بزنید تا کنترل‌ها پنهان یا نمایش داده شوند.
+    </string>
+    <string name="warm_welcome_slide2_title">ناوبری در آسمان</string>
+    <string name="warm_welcome_slide2_desc" translation_description="Description for the second slide of the Warm Welcome onboarding. Please do not change the &lt; and &gt; markup"><![CDATA[گوشی خود را بگیرید تا در <b>حالت خودکار</b> به اطراف نگاه کنید، یا برای تغییر به <b>حالت دستی</b> ضربه بزنید و با کشیدن و نیشگون گرفتن (زوم) کاوش کنید.]]></string>
+    <string name="warm_welcome_slide2_info_desc" translation_description="Description about info cards on the second slide of the Warm Welcome onboarding">
+    روی هر شیء برچسب‌دار ضربه بزنید تا یک کارت اطلاعاتی مانند این را باز کنید، با یک عکس، حقایق جالب و جزئیات آسمانی.
+    </string>
+    <string name="warm_welcome_card_name">سحابی خرچنگ</string>
+    <string name="warm_welcome_card_description" translation_description="Description of the Crab Nebula on the sample info card on the second Warm Welcome slide">
+    سحابی خرچنگ بقایای یک ابرنواختر در صورت فلکی گاو است که نتیجه انفجار ستاره‌ای است که توسط اخترشناسان چینی در سال ۱۰۵۴ میلادی ثبت شد.
+    </string>
+    <string name="warm_welcome_card_fun_fact" translation_description="Fun fact about the Crab Nebula on the sample info card on the second Warm Welcome slide">
+    سحابی خرچنگ حاوی یک تپ‌اختر است که ۳۰ بار در ثانیه می‌چرخد، هسته فروپاشیده ستاره منفجر شده!
+    </string>
+    <string name="warm_welcome_card_distance" translation_description="Distance to the Crab Nebula on the sample info card on the second Warm Welcome slide">۶,۵۰۰ سال نوری</string>
+    <string name="warm_welcome_card_size" translation_description="Size of the Crab Nebula on the sample info card on the second Warm Welcome slide">۱۱ سال نوری عرض</string>
+    <string name="warm_welcome_slide3_title">حسگرها و کالیبراسیون</string>
+    <string name="warm_welcome_slide3_desc">Sky Map از حسگرهای گوشی شما برای تراز کردن با ستارگان استفاده می‌کند.</string>
+    <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message on the third Warm Welcome slide when sensors are missing. Please do not change the &lt; and &gt; markup"><![CDATA[به نظر می‌رسد دستگاه شما حسگرهای لازم برای ردیابی خودکار را ندارد. نگران نباشید—شما همچنان می‌توانید کل کیهان را در <b>حالت دستی</b> کاوش کنید!]]></string>
+    <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration advice on the third Warm Welcome slide. Please do not change the &lt; and &gt; markup"><![CDATA[برای حفظ دقت، هر از گاهی گوشی خود را یک تکان سریع <b>به شکل ۸</b> بدهید.]]></string>
+    <string name="warm_welcome_skip">رد کردن</string>
+    <string name="warm_welcome_next">بعدی</string>
+    <string name="warm_welcome_finish">شروع!</string>
+    <string name="warm_welcome_sensor_ok">در حال کار</string>
+    <string name="warm_welcome_sensor_missing">گمشده</string>
 </resources>

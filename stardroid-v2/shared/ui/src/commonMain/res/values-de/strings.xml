@@ -271,4 +271,34 @@
     <string name="symbol_key_other" translation_description="Symbol-key label: the marker used for deep-sky objects of any other type">Anderes Deep-Sky-Objekt</string>
     <string name="symbol_key_meteor_radiant" translation_description="Symbol-key label: the marker for the point in the sky meteors of a shower appear to come from">Meteorschauer-Radiant</string>
     <string name="symbol_key_meteor_radiant_peak" translation_description="Symbol-key label: the brighter marker used when a meteor shower is near its peak activity">Meteorschauer nahe seinem Höhepunkt</string>
+    <string name="diagnostics_accelerometer">Beschleunigungssensor</string>
+    <string name="diagnostics_compass">Kompass</string>
+    <string name="diagnostics_gyroscope">Gyroskop</string>
+    <string name="warm_welcome_slide1_title">Erkunden Sie das Universum</string>
+    <string name="warm_welcome_slide1_desc" translation_description="Description for the first slide of the Warm Welcome onboarding, shown under a guided tour of the map controls">
+    Nutze die Ebenen links, um Sterne, Sternbilder, Planeten und mehr zu filtern. Die Schaltflächen unten rechts durchsuchen den Himmel, reisen durch die Zeit und wechseln die Anzeigemodi. Tippe jederzeit auf den Himmel, um die Steuerelemente aus- oder einzublenden.
+    </string>
+    <string name="warm_welcome_slide2_title">Navigieren Sie durch den Himmel</string>
+    <string name="warm_welcome_slide2_desc" translation_description="Description for the second slide of the Warm Welcome onboarding. Please do not change the &lt; and &gt; markup"><![CDATA[Richte dein Handy, um dich im <b>Auto-Modus</b> umzusehen, oder tippe, um zu <b>Manuell</b> zu wechseln und erkunde durch Wischen und Zoomen.]]></string>
+    <string name="warm_welcome_slide2_info_desc" translation_description="Description about info cards on the second slide of the Warm Welcome onboarding">
+    Tippe auf ein beliebiges beschriftetes Objekt, um eine Infokarte wie diese zu öffnen, mit einem Foto, interessanten Fakten und Himmelsdetails.
+    </string>
+    <string name="warm_welcome_card_name">Krebsnebel</string>
+    <string name="warm_welcome_card_description" translation_description="Description of the Crab Nebula on the sample info card on the second Warm Welcome slide">
+    Der Krebsnebel ist ein Supernovaüberrest im Stier, das Ergebnis einer Sternexplosion, die von chinesischen Astronomen im Jahr 1054 n. Chr. aufgezeichnet wurde.
+    </string>
+    <string name="warm_welcome_card_fun_fact" translation_description="Fun fact about the Crab Nebula on the sample info card on the second Warm Welcome slide">
+    Der Krebsnebel enthält einen Pulsar, der sich 30 Mal pro Sekunde dreht, den kollabierten Kern des explodierten Sterns!
+    </string>
+    <string name="warm_welcome_card_distance" translation_description="Distance to the Crab Nebula on the sample info card on the second Warm Welcome slide">6.500 Lichtjahre</string>
+    <string name="warm_welcome_card_size" translation_description="Size of the Crab Nebula on the sample info card on the second Warm Welcome slide">11 Lichtjahre im Durchmesser</string>
+    <string name="warm_welcome_slide3_title">Sensoren &amp; Kalibrierung</string>
+    <string name="warm_welcome_slide3_desc">Sky Map nutzt die Sensoren deines Telefons, um sich an den Sternen auszurichten.</string>
+    <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message on the third Warm Welcome slide when sensors are missing. Please do not change the &lt; and &gt; markup"><![CDATA[Dein Handy scheint die benötigten Sensoren für die automatische Nachführung zu vermissen. Keine Sorge – du kannst den gesamten Kosmos trotzdem im <b>manuellen Modus</b> erkunden!]]></string>
+    <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration advice on the third Warm Welcome slide. Please do not change the &lt; and &gt; markup"><![CDATA[Damit es genau bleibt, bewege dein Handy ab und zu kurz in einer <b>Achter</b>-Form.]]></string>
+    <string name="warm_welcome_skip">Überspringen</string>
+    <string name="warm_welcome_next">Weiter</string>
+    <string name="warm_welcome_finish">Start!</string>
+    <string name="warm_welcome_sensor_ok">Funktioniert</string>
+    <string name="warm_welcome_sensor_missing">Fehlt</string>
 </resources>

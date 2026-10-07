@@ -16,16 +16,22 @@ import android.os.VibrationAttributes
 import android.os.VibrationEffect
 import android.os.Vibrator
 import android.os.VibratorManager
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
+import androidx.compose.ui.platform.LocalContext
+
+@Composable
+internal actual fun rememberSensorCheckBuzz(): (present: Boolean) -> Unit {
+    val context = LocalContext.current
+    return remember(context) { { present -> context.sensorCheckBuzz(present) } }
+}
 
 /**
- * v1 `WarmWelcomeActivity.buzz()`: as the welcome's sensor check reveals each sensor, fire a
- * short confident tap when the sensor is [present] and a heavier double-buzz when it is missing.
  * Predefined effects on API 30+ (falling back to hand-rolled waveforms where unsupported), with
- * the notification usage hint so it isn't suppressed like a touch tick.
- *
- * No-ops silently when the device has no vibrator. Requires the `VIBRATE` permission.
+ * the notification usage hint so it isn't suppressed like a touch tick. No-ops silently when the
+ * device has no vibrator. Requires the `VIBRATE` permission, which the app declares.
  */
-internal fun Context.sensorCheckBuzz(present: Boolean) {
+private fun Context.sensorCheckBuzz(present: Boolean) {
     val vibrator = sensorCheckVibrator() ?: return
     if (!vibrator.hasVibrator()) return
     val effect = predefinedOrFallback(vibrator, present)
