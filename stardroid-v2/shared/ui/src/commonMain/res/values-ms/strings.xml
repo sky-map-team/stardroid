@@ -267,4 +267,36 @@
     <string name="symbol_key_other" translation_description="Symbol-key label: the marker used for deep-sky objects of any other type">Objek langit dalam lain</string>
     <string name="symbol_key_meteor_radiant" translation_description="Symbol-key label: the marker for the point in the sky meteors of a shower appear to come from">Radiant hujan meteor</string>
     <string name="symbol_key_meteor_radiant_peak" translation_description="Symbol-key label: the brighter marker used when a meteor shower is near its peak activity">Hujan meteor hampir kemuncak</string>
+    <string name="diagnostics_accelerometer" translation_description="Row label in the diagnostics screen for the accelerometer sensor">Akselerometer</string>
+    <string name="diagnostics_compass">Kompas</string>
+    <string name="diagnostics_gyroscope">Giroskop</string>
+    <string name="warm_welcome_slide1_title">Jelajahi Kosmos</string>
+    <string name="warm_welcome_slide1_desc" translation_description="Description for the first slide of the Warm Welcome onboarding, shown under a guided tour of the map controls">
+    Gunakan lapisan di sebelah kiri untuk menapis bintang, buruj, planet, dan lain-lain. Butang di kanan bawah membolehkan anda mencari langit, mengembara melalui masa, dan menukar mod paparan. Ketik langit pada bila-bila masa untuk menyembunyikan atau menunjukkan kawalan.
+    </string>
+    <string name="warm_welcome_slide2_title">Navigasi Langit</string>
+    <string name="warm_welcome_slide2_desc" translation_description="Description for the second slide of the Warm Welcome onboarding. Please do not change the &lt; and &gt; markup"><![CDATA[Halakan telefon anda untuk melihat sekeliling dalam <b>Mod Auto</b>, atau ketik untuk bertukar ke <b>Manual</b> dan teroka dengan meleret dan mencubit.]]></string>
+    <string name="warm_welcome_slide2_info_desc" translation_description="Description about info cards on the second slide of the Warm Welcome onboarding">
+    Ketik mana-mana objek berlabel untuk membuka Kad Maklumat seperti ini, dengan foto, fakta menarik, dan butiran cakerawala.
+    </string>
+    <string name="warm_welcome_card_name">Nebula Kepiting</string>
+    <string name="warm_welcome_card_description" translation_description="Description of the Crab Nebula on the sample info card on the second Warm Welcome slide">
+    Nebula Ketam ialah sisa supernova di Taurus, hasil letupan bintang yang direkodkan oleh ahli astronomi Cina pada tahun 1054 Masihi.
+    </string>
+    <string name="warm_welcome_card_fun_fact" translation_description="Fun fact about the Crab Nebula on the sample info card on the second Warm Welcome slide">
+    Nebula Ketam mengandungi pulsar yang berputar 30 kali sesaat, iaitu teras runtuh bintang yang meletup!
+    </string>
+    <string name="warm_welcome_card_distance" translation_description="Distance to the Crab Nebula on the sample info card on the second Warm Welcome slide">6,500 tahun cahaya</string>
+    <string name="warm_welcome_card_size" translation_description="Size of the Crab Nebula on the sample info card on the second Warm Welcome slide">11 tahun cahaya merentasi</string>
+    <string name="warm_welcome_slide3_title">Sensor &amp; Penentukuran</string>
+    <string name="warm_welcome_slide3_desc">
+    Sky Map menggunakan sensor telefon anda untuk menyelaraskan dengan bintang-bintang.
+    </string>
+    <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message on the third Warm Welcome slide when sensors are missing. Please do not change the &lt; and &gt; markup"><![CDATA[Peranti anda nampaknya tiada penderia yang diperlukan untuk penjejakan automatik. Jangan risau—anda masih boleh meneroka seluruh kosmos dalam <b>Mod Manual</b>!]]></string>
+    <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration advice on the third Warm Welcome slide. Please do not change the &lt; and &gt; markup"><![CDATA[Untuk memastikan ketepatan, goyangkan telefon anda dalam bentuk <b>angka 8</b> sekali-sekala.]]></string>
+    <string name="warm_welcome_skip">Langkau</string>
+    <string name="warm_welcome_next">Seterusnya</string>
+    <string name="warm_welcome_finish">Lancar!</string>
+    <string name="warm_welcome_sensor_ok">Berfungsi</string>
+    <string name="warm_welcome_sensor_missing">Hilang</string>
 </resources>

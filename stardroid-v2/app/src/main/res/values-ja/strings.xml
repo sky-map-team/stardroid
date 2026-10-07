@@ -169,9 +169,6 @@
     <string name="diagnostics_gl_limits_format" translation_description="Format for the GL limits row: maximum texture size in pixels, then the supported line width and point size ranges. \'tex\' abbreviates texture. %1$d is texture size, %2$s is the line width range, %3$s is the point size range.">テクスチャ %1$d、ライン %2$s、ポイント %3$s</string>
     <string name="diagnostics_gl_unavailable" translation_description="Value shown in the diagnostics Graphics rows before the sky map has drawn, when the graphics details are not known yet">まだ利用できません</string>
     <string name="diagnostics_section_sensors">センサー</string>
-    <string name="diagnostics_accelerometer">加速度計</string>
-    <string name="diagnostics_compass">コンパス</string>
-    <string name="diagnostics_gyroscope">ジャイロスコープ</string>
     <string name="diagnostics_rotation">回転</string>
     <string name="diagnostics_rotation_matrix">回転マトリックス</string>
     <string name="diagnostics_light_level">明るさレベル</string>
@@ -257,27 +254,6 @@
     <string name="whats_new_version_heading" translation_description="Heading above the list of new features. %1$s is the app version name">バージョン%1$sの新機能</string>
 
     <!-- Warm welcome (onboarding pager, slice 16) -->
-    <string name="warm_welcome_slide1_title">宇宙を探索する</string>
-    <string name="warm_welcome_slide1_desc" translation_description="Description for the first slide of the Warm Welcome onboarding, shown under a guided tour of the map controls">
-    左側のレイヤーで、星、星座、惑星などを絞り込めます。右下のボタンで、空を検索したり、時間を移動したり、表示モードを切り替えたりできます。いつでも空をタップすると、コントロールの表示/非表示を切り替えられます。
-    </string>
-    <string name="warm_welcome_slide2_title">空をナビゲートする</string>
-    <string name="warm_welcome_slide2_desc" translation_description="Description for the second slide of the Warm Welcome onboarding. Please do not change the &lt; and &gt; markup"><![CDATA[スマートフォンを向けて<b>自動モード</b>で周囲を見回すか、タップして<b>手動</b>に切り替えて、スワイプやピンチで探索します。]]></string>
-    <string name="warm_welcome_slide2_info_desc" translation_description="Description about info cards on the second slide of the Warm Welcome onboarding">ラベル付きのオブジェクトをタップすると、写真、楽しい事実、天体の詳細が記載された、このような情報カードが開きます。</string>
-    <string name="warm_welcome_card_name">カニ星雲</string>
-    <string name="warm_welcome_card_description" translation_description="Description of the Crab Nebula on the sample info card on the second Warm Welcome slide">かに星雲は、西暦1054年に中国の天文学者によって記録された恒星爆発の結果である、おうし座の超新星残骸です。</string>
-    <string name="warm_welcome_card_fun_fact" translation_description="Fun fact about the Crab Nebula on the sample info card on the second Warm Welcome slide">かに星雲には、1秒間に30回自転するパルサー（爆発した星の崩壊した中心核）が含まれています！</string>
-    <string name="warm_welcome_card_distance" translation_description="Distance to the Crab Nebula on the sample info card on the second Warm Welcome slide">6,500光年</string>
-    <string name="warm_welcome_card_size" translation_description="Size of the Crab Nebula on the sample info card on the second Warm Welcome slide">直径11光年</string>
-    <string name="warm_welcome_slide3_title">センサーとキャリブレーション</string>
-    <string name="warm_welcome_slide3_desc">Sky Mapはお使いのスマートフォンのセンサーを使って星と位置を合わせます。</string>
-    <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message on the third Warm Welcome slide when sensors are missing. Please do not change the &lt; and &gt; markup"><![CDATA[お使いのデバイスには、自動追跡に必要なセンサーが搭載されていないようです。ご心配なく。<b>手動モード</b>で宇宙全体を探索できます！]]></string>
-    <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration advice on the third Warm Welcome slide. Please do not change the &lt; and &gt; markup"><![CDATA[精度を保つために、時々スマートフォンを素早く<b>8の字</b>に振ってください。]]></string>
-    <string name="warm_welcome_skip">スキップ</string>
-    <string name="warm_welcome_next">次へ</string>
-    <string name="warm_welcome_finish">開始！</string>
-    <string name="warm_welcome_sensor_ok">動作中</string>
-    <string name="warm_welcome_sensor_missing">なし</string>
 
     <!-- Help dialog (slice 16) -->
 

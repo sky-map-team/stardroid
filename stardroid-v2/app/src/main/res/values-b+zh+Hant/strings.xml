@@ -163,9 +163,6 @@
     <string name="diagnostics_gl_limits_format" translation_description="Format for the GL limits row: maximum texture size in pixels, then the supported line width and point size ranges. \'tex\' abbreviates texture. %1$d is texture size, %2$s is the line width range, %3$s is the point size range.">紋理 %1$d，線 %2$s，點 %3$s</string>
     <string name="diagnostics_gl_unavailable" translation_description="Value shown in the diagnostics Graphics rows before the sky map has drawn, when the graphics details are not known yet">尚未可用</string>
     <string name="diagnostics_section_sensors">感應器</string>
-    <string name="diagnostics_accelerometer">加速計</string>
-    <string name="diagnostics_compass">羅盤</string>
-    <string name="diagnostics_gyroscope">陀螺儀</string>
     <string name="diagnostics_rotation">旋轉</string>
     <string name="diagnostics_rotation_matrix">旋轉矩陣</string>
     <string name="diagnostics_light_level">光度</string>
@@ -248,25 +245,6 @@
     <string name="whats_new_version_heading" translation_description="Heading above the list of new features. %1$s is the app version name">%1$s 版新功能</string>
 
     <!-- Warm welcome (onboarding pager, slice 16) -->
-    <string name="warm_welcome_slide1_title">探索宇宙</string>
-    <string name="warm_welcome_slide1_desc" translation_description="Description for the first slide of the Warm Welcome onboarding, shown under a guided tour of the map controls">使用左側圖層篩選恆星、星座、行星等。右下角的按鈕可搜尋天空、時間旅行及切換顯示模式。隨時點擊天空可隱藏或顯示控制項。</string>
-    <string name="warm_welcome_slide2_title">導航天空</string>
-    <string name="warm_welcome_slide2_desc" translation_description="Description for the second slide of the Warm Welcome onboarding. Please do not change the &lt; and &gt; markup"><![CDATA[將手機指向周圍，在<b>自動模式</b>下環顧四周，或輕觸切換到<b>手動模式</b>，透過滑動和雙指縮放來探索。]]></string>
-    <string name="warm_welcome_slide2_info_desc" translation_description="Description about info cards on the second slide of the Warm Welcome onboarding">輕觸任何標示的物件，即可開啟像這樣的一個資訊卡，內含照片、趣味知識和天體細節。</string>
-    <string name="warm_welcome_card_name">蟹狀星雲</string>
-    <string name="warm_welcome_card_description" translation_description="Description of the Crab Nebula on the sample info card on the second Warm Welcome slide">蟹狀星雲是金牛座中的一個超新星殘骸，是公元1054年中國天文學家記錄的恆星爆炸所形成的結果。</string>
-    <string name="warm_welcome_card_fun_fact" translation_description="Fun fact about the Crab Nebula on the sample info card on the second Warm Welcome slide">蟹狀星雲包含一顆每秒旋轉30次的脈衝星，它是爆炸恆星的塌縮核心！</string>
-    <string name="warm_welcome_card_distance" translation_description="Distance to the Crab Nebula on the sample info card on the second Warm Welcome slide">6,500 光年</string>
-    <string name="warm_welcome_card_size" translation_description="Size of the Crab Nebula on the sample info card on the second Warm Welcome slide">11 光年寬</string>
-    <string name="warm_welcome_slide3_title">感應器與校準</string>
-    <string name="warm_welcome_slide3_desc">Sky Map 使用您手機的感測器來與星星對齊。</string>
-    <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message on the third Warm Welcome slide when sensors are missing. Please do not change the &lt; and &gt; markup"><![CDATA[您的裝置似乎缺少自動追蹤所需的感應器。別擔心—您仍然可以在<b>手動模式</b>中探索整個宇宙！]]></string>
-    <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration advice on the third Warm Welcome slide. Please do not change the &lt; and &gt; markup"><![CDATA[為了保持準確，請偶爾將手機快速地畫個<b>8字形</b>。]]></string>
-    <string name="warm_welcome_skip">略過</string>
-    <string name="warm_welcome_next">下一步</string>
-    <string name="warm_welcome_finish">開始！</string>
-    <string name="warm_welcome_sensor_ok">正常運作</string>
-    <string name="warm_welcome_sensor_missing">缺失</string>
 
     <!-- Help dialog (slice 16) -->
 

@@ -238,4 +238,28 @@
     <!-- tm:omitted name="symbol_key_other" reason="identical_to_source" -->
     <!-- tm:omitted name="symbol_key_meteor_radiant" reason="identical_to_source" -->
     <!-- tm:omitted name="symbol_key_meteor_radiant_peak" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_accelerometer" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_compass" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_gyroscope" reason="identical_to_source" -->
+    <!-- tm:omitted name="warm_welcome_slide1_title" reason="identical_to_source" -->
+    <!-- tm:omitted name="warm_welcome_slide1_desc" reason="identical_to_source" -->
+    <!-- tm:omitted name="warm_welcome_slide2_title" reason="identical_to_source" -->
+    <!-- tm:omitted name="warm_welcome_slide2_desc" reason="identical_to_source" -->
+    <string name="warm_welcome_slide2_info_desc" translation_description="Description about info cards on the second slide of the Warm Welcome onboarding">
+    Tap any labelled object to open an Info Card like this one, with a photo, fun facts, and celestial details.
+    </string>
+    <!-- tm:omitted name="warm_welcome_card_name" reason="identical_to_source" -->
+    <!-- tm:omitted name="warm_welcome_card_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="warm_welcome_card_fun_fact" reason="identical_to_source" -->
+    <!-- tm:omitted name="warm_welcome_card_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="warm_welcome_card_size" reason="identical_to_source" -->
+    <!-- tm:omitted name="warm_welcome_slide3_title" reason="identical_to_source" -->
+    <!-- tm:omitted name="warm_welcome_slide3_desc" reason="identical_to_source" -->
+    <!-- tm:omitted name="warm_welcome_slide3_no_sensors" reason="identical_to_source" -->
+    <!-- tm:omitted name="warm_welcome_slide3_compass_calib" reason="identical_to_source" -->
+    <!-- tm:omitted name="warm_welcome_skip" reason="identical_to_source" -->
+    <!-- tm:omitted name="warm_welcome_next" reason="identical_to_source" -->
+    <!-- tm:omitted name="warm_welcome_finish" reason="identical_to_source" -->
+    <!-- tm:omitted name="warm_welcome_sensor_ok" reason="identical_to_source" -->
+    <!-- tm:omitted name="warm_welcome_sensor_missing" reason="identical_to_source" -->
 </resources>

@@ -178,9 +178,6 @@
     <string name="diagnostics_gl_limits_format" translation_description="Format for the GL limits row: maximum texture size in pixels, then the supported line width and point size ranges. \'tex\' abbreviates texture. %1$d is texture size, %2$s is the line width range, %3$s is the point size range.">tex %1$d, čára %2$s, bod %3$s</string>
     <string name="diagnostics_gl_unavailable" translation_description="Value shown in the diagnostics Graphics rows before the sky map has drawn, when the graphics details are not known yet">Zatím nedostupné</string>
     <string name="diagnostics_section_sensors">Senzory</string>
-    <string name="diagnostics_accelerometer">Akcelerometer</string>
-    <string name="diagnostics_compass">Kompas</string>
-    <string name="diagnostics_gyroscope">Gyroskop</string>
     <string name="diagnostics_rotation">Rotace</string>
     <string name="diagnostics_rotation_matrix">Rotační matrice</string>
     <string name="diagnostics_light_level">Úroveň světla</string>
@@ -263,33 +260,6 @@
     <string name="whats_new_version_heading" translation_description="Heading above the list of new features. %1$s is the app version name">Novinky ve verzi %1$s</string>
 
     <!-- Warm welcome (onboarding pager, slice 16) -->
-    <string name="warm_welcome_slide1_title">Prozkoumejte vesmír</string>
-    <string name="warm_welcome_slide1_desc" translation_description="Description for the first slide of the Warm Welcome onboarding, shown under a guided tour of the map controls">
-    Použijte vrstvy vlevo k filtrování hvězd, souhvězdí, planet a dalších. Tlačítka vpravo dole prohledávají oblohu, cestují časem a přepínají režimy zobrazení. Klepnutím na oblohu kdykoli skryjete nebo zobrazíte ovládací prvky.
-    </string>
-    <string name="warm_welcome_slide2_title">Navigace po obloze</string>
-    <string name="warm_welcome_slide2_desc" translation_description="Description for the second slide of the Warm Welcome onboarding. Please do not change the &lt; and &gt; markup"><![CDATA[Namiřte telefon, abyste se rozhlédli v <b>automatickém režimu</b>, nebo klepněte pro přepnutí na <b>Ruční</b> a prozkoumávejte přejetím a stažením prstů.]]></string>
-    <string name="warm_welcome_slide2_info_desc" translation_description="Description about info cards on the second slide of the Warm Welcome onboarding">
-    Klepněte na libovolný označený objekt pro otevření informační karty, jako je tato, s fotografií, zajímavostmi a nebeskými detaily.
-    </string>
-    <string name="warm_welcome_card_name">Krabí mlhovina</string>
-    <string name="warm_welcome_card_description" translation_description="Description of the Crab Nebula on the sample info card on the second Warm Welcome slide">
-    Krabí mlhovina je zbytek supernovy v souhvězdí Býka, výsledek hvězdné exploze zaznamenané čínskými astronomy v roce 1054 n. l.
-    </string>
-    <string name="warm_welcome_card_fun_fact" translation_description="Fun fact about the Crab Nebula on the sample info card on the second Warm Welcome slide">
-    Krabí mlhovina obsahuje pulsar rotující 30krát za sekundu, zhroucené jádro vybuchlé hvězdy!
-    </string>
-    <string name="warm_welcome_card_distance" translation_description="Distance to the Crab Nebula on the sample info card on the second Warm Welcome slide">6 500 světelných let</string>
-    <string name="warm_welcome_card_size" translation_description="Size of the Crab Nebula on the sample info card on the second Warm Welcome slide">11 světelných let v průměru</string>
-    <string name="warm_welcome_slide3_title">Senzory a kalibrace</string>
-    <string name="warm_welcome_slide3_desc">Sky Map používá senzory vašeho telefonu k zarovnání s hvězdami.</string>
-    <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message on the third Warm Welcome slide when sensors are missing. Please do not change the &lt; and &gt; markup"><![CDATA[Zdá se, že vašemu zařízení chybí potřebné senzory pro automatické sledování. Nemusíte se bát—stále můžete prozkoumat celý vesmír v <b>manuálním režimu</b>!]]></string>
-    <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration advice on the third Warm Welcome slide. Please do not change the &lt; and &gt; markup"><![CDATA[Pro zachování přesnosti, občas rychle zamávejte telefonem ve tvaru <b>osmičky</b>.]]></string>
-    <string name="warm_welcome_skip">Přeskočit</string>
-    <string name="warm_welcome_next">Další</string>
-    <string name="warm_welcome_finish">Spustit!</string>
-    <string name="warm_welcome_sensor_ok">Funguje</string>
-    <string name="warm_welcome_sensor_missing">Chybí</string>
 
     <!-- Help dialog (slice 16) -->
 

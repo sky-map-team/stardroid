@@ -187,9 +187,6 @@
     <string name="diagnostics_gl_limits_format" translation_description="Format for the GL limits row: maximum texture size in pixels, then the supported line width and point size ranges. \'tex\' abbreviates texture. %1$d is texture size, %2$s is the line width range, %3$s is the point size range.">tex %1$d, ligne %2$s, point %3$s</string>
     <string name="diagnostics_gl_unavailable" translation_description="Value shown in the diagnostics Graphics rows before the sky map has drawn, when the graphics details are not known yet">Pas encore disponible</string>
     <string name="diagnostics_section_sensors">Capteurs</string>
-    <string name="diagnostics_accelerometer">Accéléromètre</string>
-    <string name="diagnostics_compass" translation_description="Row label in the diagnostics screen for the compass (magnetic field) sensor">Boussole</string>
-    <!-- tm:omitted name="diagnostics_gyroscope" reason="identical_to_source" -->
     <!-- tm:omitted name="diagnostics_rotation" reason="identical_to_source" -->
     <string name="diagnostics_rotation_matrix">Matrice de rotation</string>
     <string name="diagnostics_light_level">Niveau de lumière</string>
@@ -272,35 +269,6 @@
     <string name="whats_new_version_heading" translation_description="Heading above the list of new features. %1$s is the app version name">Nouveautés de la version %1$s</string>
 
     <!-- Warm welcome (onboarding pager, slice 16) -->
-    <string name="warm_welcome_slide1_title">Explorez le cosmos</string>
-    <string name="warm_welcome_slide1_desc" translation_description="Description for the first slide of the Warm Welcome onboarding, shown under a guided tour of the map controls">
-    Utilisez les calques à gauche pour filtrer les étoiles, constellations, planètes et plus encore. Les boutons en bas à droite recherchent le ciel, voyagent dans le temps et changent les modes d\'affichage. Touchez le ciel à tout moment pour masquer ou afficher les commandes.
-    </string>
-    <string name="warm_welcome_slide2_title">Naviguez dans le ciel</string>
-    <string name="warm_welcome_slide2_desc" translation_description="Description for the second slide of the Warm Welcome onboarding. Please do not change the &lt; and &gt; markup"><![CDATA[Pointez votre téléphone pour regarder autour de vous en <b>Mode Auto</b>, ou appuyez pour passer en <b>Manuel</b> et explorez en balayant et en pinçant.]]></string>
-    <string name="warm_welcome_slide2_info_desc" translation_description="Description about info cards on the second slide of the Warm Welcome onboarding">
-    Touchez n\'importe quel objet étiqueté pour ouvrir une Fiche d\'info comme celle-ci, avec une photo, des faits amusants et des détails célestes.
-    </string>
-    <string name="warm_welcome_card_name">Nébuleuse du Crabe</string>
-    <string name="warm_welcome_card_description" translation_description="Description of the Crab Nebula on the sample info card on the second Warm Welcome slide">
-    La Nébuleuse du Crabe est un rémanent de supernova dans le Taureau, le résultat d\'une explosion stellaire enregistrée par des astronomes chinois en 1054 apr. J.-C.
-    </string>
-    <string name="warm_welcome_card_fun_fact" tm_human="true" translation_description="Fun fact about the Crab Nebula on the sample info card on the second Warm Welcome slide">
-    La Nébuleuse du Crabe contient un pulsar tournant 30 fois par seconde, le cœur effondré de l\'étoile qui a explosé !
-    </string>
-    <string name="warm_welcome_card_distance" translation_description="Distance to the Crab Nebula on the sample info card on the second Warm Welcome slide">6 500 années-lumière</string>
-    <string name="warm_welcome_card_size" translation_description="Size of the Crab Nebula on the sample info card on the second Warm Welcome slide">11 années-lumière de diamètre</string>
-    <string name="warm_welcome_slide3_title">Capteurs et étalonnage</string>
-    <string name="warm_welcome_slide3_desc">
-    Sky Map utilise les capteurs de votre téléphone pour s\'aligner avec les étoiles.
-    </string>
-    <string name="warm_welcome_slide3_no_sensors" tm_human="true" translation_description="Fallback message on the third Warm Welcome slide when sensors are missing. Please do not change the &lt; and &gt; markup"><![CDATA[Votre appareil semble manquer des capteurs nécessaires pour le suivi automatique. Ne vous inquiétez pas, vous pouvez toujours explorer l\'intégralité du cosmos en <b>Mode Manuel</b> !]]></string>
-    <string name="warm_welcome_slide3_compass_calib" tm_human="true" translation_description="Compass calibration advice on the third Warm Welcome slide. Please do not change the &lt; and &gt; markup"><![CDATA[Pour maintenir la précision, faites un bref mouvement en forme de <b>8</b> avec votre téléphone de temps en temps.]]></string>
-    <string name="warm_welcome_skip">Ignorer</string>
-    <string name="warm_welcome_next">Suivant</string>
-    <string name="warm_welcome_finish">Lancer !</string>
-    <string name="warm_welcome_sensor_ok">Fonctionnel</string>
-    <string name="warm_welcome_sensor_missing">Manquant</string>
 
     <!-- Help dialog (slice 16) -->
 

@@ -42,7 +42,7 @@ res/mipmap-anydpi-v26/ic_launcher_round.xml
 res/drawable/ic_stat_skymap.xml
 
 # The welcome/onboarding backdrop: original composed artwork, not a sky photograph.
-res/drawable-nodpi/welcome_sky_bg.webp
+assets/welcome/welcome_sky_bg.webp
 
 # Sky-marker icon set (D62). Original artwork generated from tools/icons/, replacing the
 # Apache-2.0 glyphs carried over from v1. Generated from tools/icons/generate_icons.py;

@@ -265,4 +265,34 @@
     <string name="symbol_key_other" translation_description="Symbol-key label: the marker used for deep-sky objects of any other type">Diğer derin uzay nesnesi</string>
     <string name="symbol_key_meteor_radiant" translation_description="Symbol-key label: the marker for the point in the sky meteors of a shower appear to come from">Gök taşı yağmuru yayan nokta</string>
     <string name="symbol_key_meteor_radiant_peak" translation_description="Symbol-key label: the brighter marker used when a meteor shower is near its peak activity">Zirve noktasına yakın meteor yağmuru</string>
+    <string name="diagnostics_accelerometer">İvmeölçer</string>
+    <string name="diagnostics_compass">Pusula</string>
+    <string name="diagnostics_gyroscope">Jiroskop</string>
+    <string name="warm_welcome_slide1_title">Evreni Keşfedin</string>
+    <string name="warm_welcome_slide1_desc" translation_description="Description for the first slide of the Warm Welcome onboarding, shown under a guided tour of the map controls">
+    Yıldızları, takımyıldızlarını, gezegenleri ve daha fazlasını filtrelemek için soldaki katmanları kullanın. Sağ alttaki düğmeler gökyüzünde arama yapar, zaman içinde yolculuk yapar ve ekran modlarını değiştirir. Kontrolleri gizlemek veya göstermek için istediğiniz zaman gökyüzüne dokunun.
+    </string>
+    <string name="warm_welcome_slide2_title">Gökyüzünde Gezinin</string>
+    <string name="warm_welcome_slide2_desc" translation_description="Description for the second slide of the Warm Welcome onboarding. Please do not change the &lt; and &gt; markup"><![CDATA[Telefonunuzu çevrenize doğrultarak <b>Otomatik Mod</b>\'u kullanın veya dokunarak <b>Manuel</b> moda geçin, parmağınızı kaydırıp kıstırarak keşfedin.]]></string>
+    <string name="warm_welcome_slide2_info_desc" translation_description="Description about info cards on the second slide of the Warm Welcome onboarding">
+    Fotoğraf, eğlenceli gerçekler ve göksel ayrıntılar içeren bunun gibi bir Bilgi Kartı açmak için etiketlenmiş herhangi bir nesneye dokunun.
+    </string>
+    <string name="warm_welcome_card_name">Yengeç Bulutsusu</string>
+    <string name="warm_welcome_card_description" translation_description="Description of the Crab Nebula on the sample info card on the second Warm Welcome slide">
+    Yengeç Bulutsusu, Boğa takımyıldızında yer alan bir süpernova kalıntısı olup, MS 1054 yılında Çinli gökbilimciler tarafından kaydedilen bir yıldız patlamasının sonucudur.
+    </string>
+    <string name="warm_welcome_card_fun_fact" translation_description="Fun fact about the Crab Nebula on the sample info card on the second Warm Welcome slide">
+    Yengeç Bulutsusu, patlayan yıldızın çökmüş çekirdeği olan ve saniyede 30 kez dönen bir atarcalı yıldız (pulsar) içerir!
+    </string>
+    <string name="warm_welcome_card_distance" translation_description="Distance to the Crab Nebula on the sample info card on the second Warm Welcome slide">6.500 ışık yılı</string>
+    <string name="warm_welcome_card_size" translation_description="Size of the Crab Nebula on the sample info card on the second Warm Welcome slide">11 ışık yılı genişliğinde</string>
+    <string name="warm_welcome_slide3_title">Sensörler ve Kalibrasyon</string>
+    <string name="warm_welcome_slide3_desc">Sky Map, yıldızlarla hizalamak için telefonunuzun sensörlerini kullanır.</string>
+    <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message on the third Warm Welcome slide when sensors are missing. Please do not change the &lt; and &gt; markup"><![CDATA[Cihazınızda otomatik takip için gereken sensörler bulunmuyor gibi görünüyor. Endişelenmeyin, <b>Manuel Mod</b> ile tüm evreni keşfetmeye devam edebilirsiniz!]]></string>
+    <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration advice on the third Warm Welcome slide. Please do not change the &lt; and &gt; markup"><![CDATA[Konumun doğru kalması için telefonunuzu arada bir hızlıca <b>8 şekli</b> çizecek şekilde sallayın.]]></string>
+    <string name="warm_welcome_skip">Atla</string>
+    <string name="warm_welcome_next">İleri</string>
+    <string name="warm_welcome_finish">Başlat!</string>
+    <string name="warm_welcome_sensor_ok">Çalışıyor</string>
+    <string name="warm_welcome_sensor_missing">Eksik</string>
 </resources>

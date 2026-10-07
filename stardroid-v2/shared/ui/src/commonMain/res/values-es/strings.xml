@@ -265,4 +265,34 @@
     <string name="symbol_key_other" translation_description="Symbol-key label: the marker used for deep-sky objects of any other type">Otro objeto de cielo profundo</string>
     <string name="symbol_key_meteor_radiant" translation_description="Symbol-key label: the marker for the point in the sky meteors of a shower appear to come from">Radiante de lluvia de meteoros</string>
     <string name="symbol_key_meteor_radiant_peak" translation_description="Symbol-key label: the brighter marker used when a meteor shower is near its peak activity">Lluvia de meteoros cerca de su pico</string>
+    <string name="diagnostics_accelerometer">Acelerómetro</string>
+    <string name="diagnostics_compass">Brújula</string>
+    <string name="diagnostics_gyroscope">Giroscopio</string>
+    <string name="warm_welcome_slide1_title">Explora el cosmos</string>
+    <string name="warm_welcome_slide1_desc" translation_description="Description for the first slide of the Warm Welcome onboarding, shown under a guided tour of the map controls">
+    Usa las capas de la izquierda para filtrar estrellas, constelaciones, planetas y más. Los botones de la parte inferior derecha buscan en el cielo, viajan en el tiempo y cambian los modos de visualización. Toca el cielo en cualquier momento para ocultar o mostrar los controles.
+    </string>
+    <string name="warm_welcome_slide2_title">Navega el cielo</string>
+    <string name="warm_welcome_slide2_desc" translation_description="Description for the second slide of the Warm Welcome onboarding. Please do not change the &lt; and &gt; markup"><![CDATA[Apunta tu teléfono para mirar alrededor en <b>Modo Automático</b>, o toca para cambiar a <b>Manual</b> y explora deslizando y pellizcando.]]></string>
+    <string name="warm_welcome_slide2_info_desc" translation_description="Description about info cards on the second slide of the Warm Welcome onboarding">
+    Toca cualquier objeto etiquetado para abrir una Tarjeta de Información como esta, con una foto, datos curiosos y detalles celestes.
+    </string>
+    <string name="warm_welcome_card_name">Nebulosa del Cangrejo</string>
+    <string name="warm_welcome_card_description" translation_description="Description of the Crab Nebula on the sample info card on the second Warm Welcome slide">
+    La Nebulosa del Cangrejo es un remanente de supernova en Tauro, el resultado de una explosión estelar registrada por astrónomos chinos en el año 1054 d.C.
+    </string>
+    <string name="warm_welcome_card_fun_fact" translation_description="Fun fact about the Crab Nebula on the sample info card on the second Warm Welcome slide">
+    La Nebulosa del Cangrejo contiene un púlsar que gira 30 veces por segundo, ¡el núcleo colapsado de la estrella que explotó!
+    </string>
+    <string name="warm_welcome_card_distance" translation_description="Distance to the Crab Nebula on the sample info card on the second Warm Welcome slide">6.500 años luz</string>
+    <string name="warm_welcome_card_size" translation_description="Size of the Crab Nebula on the sample info card on the second Warm Welcome slide">11 años luz de diámetro</string>
+    <string name="warm_welcome_slide3_title">Sensores y calibración</string>
+    <string name="warm_welcome_slide3_desc">Sky Map utiliza los sensores de tu teléfono para alinearse con las estrellas.</string>
+    <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message on the third Warm Welcome slide when sensors are missing. Please do not change the &lt; and &gt; markup"><![CDATA[Tu dispositivo parece carecer de los sensores necesarios para el seguimiento automático. No te preocupes—aún puedes explorar todo el cosmos en <b>Modo Manual</b>!]]></string>
+    <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration advice on the third Warm Welcome slide. Please do not change the &lt; and &gt; markup"><![CDATA[Para mayor precisión, agita tu teléfono en <b>forma de ocho</b> de vez en cuando.]]></string>
+    <string name="warm_welcome_skip">Omitir</string>
+    <string name="warm_welcome_next">Siguiente</string>
+    <string name="warm_welcome_finish">¡Comenzar!</string>
+    <string name="warm_welcome_sensor_ok">Funcionando</string>
+    <string name="warm_welcome_sensor_missing">Faltante</string>
 </resources>

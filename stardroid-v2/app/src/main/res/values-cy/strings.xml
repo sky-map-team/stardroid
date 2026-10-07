@@ -178,9 +178,6 @@
     <string name="diagnostics_gl_limits_format" translation_description="Format for the GL limits row: maximum texture size in pixels, then the supported line width and point size ranges. \'tex\' abbreviates texture. %1$d is texture size, %2$s is the line width range, %3$s is the point size range.">gwead %1$d, llinell %2$s, pwynt %3$s</string>
     <string name="diagnostics_gl_unavailable" translation_description="Value shown in the diagnostics Graphics rows before the sky map has drawn, when the graphics details are not known yet">Heb fod ar gael eto</string>
     <string name="diagnostics_section_sensors">Synwyryddion</string>
-    <string name="diagnostics_accelerometer">Mesurydd Cyflymiad</string>
-    <string name="diagnostics_compass">Cwmpawd</string>
-    <string name="diagnostics_gyroscope">Geirosgop</string>
     <string name="diagnostics_rotation">Cylchdro</string>
     <string name="diagnostics_rotation_matrix">Matrics Cylchdro</string>
     <string name="diagnostics_light_level">Lefel golau</string>
@@ -263,33 +260,6 @@
     <string name="whats_new_version_heading" translation_description="Heading above the list of new features. %1$s is the app version name">Newydd yn fersiwn %1$s</string>
 
     <!-- Warm welcome (onboarding pager, slice 16) -->
-    <string name="warm_welcome_slide1_title">Archwilio\'r Gofod</string>
-    <string name="warm_welcome_slide1_desc" translation_description="Description for the first slide of the Warm Welcome onboarding, shown under a guided tour of the map controls">
-    Defnyddiwch yr haenau ar y chwith i hidlo sêr, cytserau, planedau, a mwy. Mae\'r botymau ar y dde isaf yn chwilio\'r awyr, yn teithio drwy amser, ac yn newid moddau arddangos. Tapiwch yr awyr unrhyw bryd i guddio neu ddangos y rheolyddion.
-    </string>
-    <string name="warm_welcome_slide2_title">Llywio\'r Awyr</string>
-    <string name="warm_welcome_slide2_desc" translation_description="Description for the second slide of the Warm Welcome onboarding. Please do not change the &lt; and &gt; markup"><![CDATA[Cyfeiriwch eich ffôn i edrych o gwmpas yn <b>Modd Awtomatig</b>, neu tapiwch i newid i <b>Llawlyfr</b> ac archwilio trwy ysgubo a phinsio.]]></string>
-    <string name="warm_welcome_slide2_info_desc" translation_description="Description about info cards on the second slide of the Warm Welcome onboarding">
-    Tapiwch unrhyw wrthrych wedi\'i labelu i agor Cerdyn Gwybodaeth fel yr un hwn, gyda llun, ffeithiau hwyl, a manylion nefol.
-    </string>
-    <string name="warm_welcome_card_name">Nifwl Cranc</string>
-    <string name="warm_welcome_card_description" translation_description="Description of the Crab Nebula on the sample info card on the second Warm Welcome slide">
-    Niwl y Cranc yw gweddill uwchnofa yn Taurus, canlyniad ffrwydrad seren a gofnodwyd gan seryddwyr Tsieineaidd yn 1054 OC.
-    </string>
-    <string name="warm_welcome_card_fun_fact" translation_description="Fun fact about the Crab Nebula on the sample info card on the second Warm Welcome slide">
-    Mae Niwl y Cranc yn cynnwys pwlsar sy\'n troelli 30 gwaith yr eiliad, craidd cwympedig y seren ffrwydredig!
-    </string>
-    <string name="warm_welcome_card_distance" translation_description="Distance to the Crab Nebula on the sample info card on the second Warm Welcome slide">6,500 blynyddoedd golau</string>
-    <string name="warm_welcome_card_size" translation_description="Size of the Crab Nebula on the sample info card on the second Warm Welcome slide">11 blynyddoedd golau ar draws</string>
-    <string name="warm_welcome_slide3_title">Synwyryddion &amp; Calibriad</string>
-    <string name="warm_welcome_slide3_desc">Mae Sky Map yn defnyddio synwyryddion eich ffôn i alinio gyda\'r sêr.</string>
-    <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message on the third Warm Welcome slide when sensors are missing. Please do not change the &lt; and &gt; markup"><![CDATA[Mae\'n ymddangos bod eich dyfais yn colli\'r synwyryddion angenrheidiol sydd eu hangen ar gyfer olrhain awtomatig. Peidiwch â phoeni—gallwch chi ddal i archwilio\'r holl gosmws yn <b>Modd Llaw</b>!]]></string>
-    <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration advice on the third Warm Welcome slide. Please do not change the &lt; and &gt; markup"><![CDATA[I gadw pethau\'n gywir, chwifioch eich ffôn yn gyflym mewn <b>ffigur-8</b> bob hyn a hyn.]]></string>
-    <string name="warm_welcome_skip">Hepgor</string>
-    <string name="warm_welcome_next">Nesaf</string>
-    <string name="warm_welcome_finish">Cychwyn!</string>
-    <string name="warm_welcome_sensor_ok">Gweithio</string>
-    <string name="warm_welcome_sensor_missing">Ar Goll</string>
 
     <!-- Help dialog (slice 16) -->
 

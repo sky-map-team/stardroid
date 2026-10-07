@@ -269,4 +269,34 @@
     <string name="symbol_key_other" translation_description="Symbol-key label: the marker used for deep-sky objects of any other type">Andet dybhimleobjekt</string>
     <string name="symbol_key_meteor_radiant" translation_description="Symbol-key label: the marker for the point in the sky meteors of a shower appear to come from">Meteorsværmradiant</string>
     <string name="symbol_key_meteor_radiant_peak" translation_description="Symbol-key label: the brighter marker used when a meteor shower is near its peak activity">Meteorsværm nær sit højdepunkt</string>
+    <!-- tm:omitted name="diagnostics_accelerometer" reason="identical_to_source" -->
+    <string name="diagnostics_compass">Kompas</string>
+    <string name="diagnostics_gyroscope">Gyroskop</string>
+    <string name="warm_welcome_slide1_title">Udforsk universet</string>
+    <string name="warm_welcome_slide1_desc" translation_description="Description for the first slide of the Warm Welcome onboarding, shown under a guided tour of the map controls">
+    Brug lagene til venstre til at filtrere stjerner, stjernebilleder, planeter og mere. Knapperne nederst til højre søger på himlen, rejser gennem tiden og skifter visningstilstande. Tryk på himlen når som helst for at skjule eller vise kontrollerne.
+    </string>
+    <string name="warm_welcome_slide2_title">Naviger på himlen</string>
+    <string name="warm_welcome_slide2_desc" translation_description="Description for the second slide of the Warm Welcome onboarding. Please do not change the &lt; and &gt; markup"><![CDATA[Ret din telefon for at se dig omkring i <b>Automatisk tilstand</b>, eller tryk for at skifte til <b>Manuel</b> og udforsk ved at stryge og knibe.]]></string>
+    <string name="warm_welcome_slide2_info_desc" translation_description="Description about info cards on the second slide of the Warm Welcome onboarding">
+    Tryk på et hvilket som helst navngivet objekt for at åbne et infokort som dette, med et foto, sjove fakta og himmelske detaljer.
+    </string>
+    <string name="warm_welcome_card_name">Krebsnebulosa</string>
+    <string name="warm_welcome_card_description" translation_description="Description of the Crab Nebula on the sample info card on the second Warm Welcome slide">
+    Krabbetågen er en supernovarest i Tyren, resultatet af en stjerneeksplosion registreret af kinesiske astronomer i 1054 e.Kr.
+    </string>
+    <string name="warm_welcome_card_fun_fact" translation_description="Fun fact about the Crab Nebula on the sample info card on the second Warm Welcome slide">
+    Krabbetågen indeholder en pulsar, der roterer 30 gange i sekundet, den kollapsede kerne af den eksploderede stjerne!
+    </string>
+    <string name="warm_welcome_card_distance" translation_description="Distance to the Crab Nebula on the sample info card on the second Warm Welcome slide">6.500 lysår</string>
+    <string name="warm_welcome_card_size" translation_description="Size of the Crab Nebula on the sample info card on the second Warm Welcome slide">11 lysår i diameter</string>
+    <string name="warm_welcome_slide3_title">Sensorer og kalibrering</string>
+    <string name="warm_welcome_slide3_desc">Sky Map bruger din telefons sensorer til at justere efter stjernerne.</string>
+    <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message on the third Warm Welcome slide when sensors are missing. Please do not change the &lt; and &gt; markup"><![CDATA[Din enhed ser ud til at mangle de nødvendige sensorer til automatisk sporing. Bare rolig – du kan stadig udforske hele kosmos i <b>Manuel tilstand</b>!]]></string>
+    <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration advice on the third Warm Welcome slide. Please do not change the &lt; and &gt; markup"><![CDATA[For at holde tingene nøjagtige, ryst din telefon i et <b>otte-tal</b> en gang imellem.]]></string>
+    <string name="warm_welcome_skip">Spring over</string>
+    <string name="warm_welcome_next">Næste</string>
+    <string name="warm_welcome_finish">Start!</string>
+    <string name="warm_welcome_sensor_ok">Fungerer</string>
+    <string name="warm_welcome_sensor_missing">Mangler</string>
 </resources>

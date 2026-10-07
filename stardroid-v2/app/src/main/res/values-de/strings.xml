@@ -183,9 +183,6 @@
     <string name="diagnostics_gl_limits_format" translation_description="Format for the GL limits row: maximum texture size in pixels, then the supported line width and point size ranges. \'tex\' abbreviates texture. %1$d is texture size, %2$s is the line width range, %3$s is the point size range.">Textur %1$d, Linie %2$s, Punkt %3$s</string>
     <string name="diagnostics_gl_unavailable" translation_description="Value shown in the diagnostics Graphics rows before the sky map has drawn, when the graphics details are not known yet">Noch nicht verfügbar</string>
     <string name="diagnostics_section_sensors">Sensoren</string>
-    <string name="diagnostics_accelerometer">Beschleunigungssensor</string>
-    <string name="diagnostics_compass">Kompass</string>
-    <string name="diagnostics_gyroscope">Gyroskop</string>
     <!-- tm:omitted name="diagnostics_rotation" reason="identical_to_source" -->
     <string name="diagnostics_rotation_matrix">Rotationsmatrix</string>
     <string name="diagnostics_light_level">Helligkeit</string>
@@ -268,33 +265,6 @@
     <string name="whats_new_version_heading" translation_description="Heading above the list of new features. %1$s is the app version name">Neu in Version %1$s</string>
 
     <!-- Warm welcome (onboarding pager, slice 16) -->
-    <string name="warm_welcome_slide1_title">Erkunden Sie das Universum</string>
-    <string name="warm_welcome_slide1_desc" translation_description="Description for the first slide of the Warm Welcome onboarding, shown under a guided tour of the map controls">
-    Nutze die Ebenen links, um Sterne, Sternbilder, Planeten und mehr zu filtern. Die Schaltflächen unten rechts durchsuchen den Himmel, reisen durch die Zeit und wechseln die Anzeigemodi. Tippe jederzeit auf den Himmel, um die Steuerelemente aus- oder einzublenden.
-    </string>
-    <string name="warm_welcome_slide2_title">Navigieren Sie durch den Himmel</string>
-    <string name="warm_welcome_slide2_desc" translation_description="Description for the second slide of the Warm Welcome onboarding. Please do not change the &lt; and &gt; markup"><![CDATA[Richte dein Handy, um dich im <b>Auto-Modus</b> umzusehen, oder tippe, um zu <b>Manuell</b> zu wechseln und erkunde durch Wischen und Zoomen.]]></string>
-    <string name="warm_welcome_slide2_info_desc" translation_description="Description about info cards on the second slide of the Warm Welcome onboarding">
-    Tippe auf ein beliebiges beschriftetes Objekt, um eine Infokarte wie diese zu öffnen, mit einem Foto, interessanten Fakten und Himmelsdetails.
-    </string>
-    <string name="warm_welcome_card_name">Krebsnebel</string>
-    <string name="warm_welcome_card_description" translation_description="Description of the Crab Nebula on the sample info card on the second Warm Welcome slide">
-    Der Krebsnebel ist ein Supernovaüberrest im Stier, das Ergebnis einer Sternexplosion, die von chinesischen Astronomen im Jahr 1054 n. Chr. aufgezeichnet wurde.
-    </string>
-    <string name="warm_welcome_card_fun_fact" translation_description="Fun fact about the Crab Nebula on the sample info card on the second Warm Welcome slide">
-    Der Krebsnebel enthält einen Pulsar, der sich 30 Mal pro Sekunde dreht, den kollabierten Kern des explodierten Sterns!
-    </string>
-    <string name="warm_welcome_card_distance" translation_description="Distance to the Crab Nebula on the sample info card on the second Warm Welcome slide">6.500 Lichtjahre</string>
-    <string name="warm_welcome_card_size" translation_description="Size of the Crab Nebula on the sample info card on the second Warm Welcome slide">11 Lichtjahre im Durchmesser</string>
-    <string name="warm_welcome_slide3_title">Sensoren &amp; Kalibrierung</string>
-    <string name="warm_welcome_slide3_desc">Sky Map nutzt die Sensoren deines Telefons, um sich an den Sternen auszurichten.</string>
-    <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message on the third Warm Welcome slide when sensors are missing. Please do not change the &lt; and &gt; markup"><![CDATA[Dein Handy scheint die benötigten Sensoren für die automatische Nachführung zu vermissen. Keine Sorge – du kannst den gesamten Kosmos trotzdem im <b>manuellen Modus</b> erkunden!]]></string>
-    <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration advice on the third Warm Welcome slide. Please do not change the &lt; and &gt; markup"><![CDATA[Damit es genau bleibt, bewege dein Handy ab und zu kurz in einer <b>Achter</b>-Form.]]></string>
-    <string name="warm_welcome_skip">Überspringen</string>
-    <string name="warm_welcome_next">Weiter</string>
-    <string name="warm_welcome_finish">Start!</string>
-    <string name="warm_welcome_sensor_ok">Funktioniert</string>
-    <string name="warm_welcome_sensor_missing">Fehlt</string>
 
     <!-- Help dialog (slice 16) -->
 

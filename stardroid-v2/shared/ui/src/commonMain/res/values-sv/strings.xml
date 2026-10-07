@@ -265,4 +265,34 @@
     <string name="symbol_key_other" translation_description="Symbol-key label: the marker used for deep-sky objects of any other type">Annat deep-sky-objekt</string>
     <string name="symbol_key_meteor_radiant" translation_description="Symbol-key label: the marker for the point in the sky meteors of a shower appear to come from">Meteorskurssvärmpunkt (radiant)</string>
     <string name="symbol_key_meteor_radiant_peak" translation_description="Symbol-key label: the brighter marker used when a meteor shower is near its peak activity">Meteorskur nära sin höjdpunkt</string>
+    <!-- tm:omitted name="diagnostics_accelerometer" reason="identical_to_source" -->
+    <string name="diagnostics_compass">Kompass</string>
+    <string name="diagnostics_gyroscope">Gyroskop</string>
+    <string name="warm_welcome_slide1_title">Utforska kosmos</string>
+    <string name="warm_welcome_slide1_desc" translation_description="Description for the first slide of the Warm Welcome onboarding, shown under a guided tour of the map controls">
+    Använd lagren till vänster för att filtrera stjärnor, stjärnbilder, planeter med mera. Knapparna längst ner till höger söker av himlen, reser i tiden och växlar visningsläge. Tryck på himlen när som helst för att dölja eller visa kontrollerna.
+    </string>
+    <string name="warm_welcome_slide2_title">Navigera himlen</string>
+    <string name="warm_welcome_slide2_desc" translation_description="Description for the second slide of the Warm Welcome onboarding. Please do not change the &lt; and &gt; markup"><![CDATA[Rikta telefonen för att titta dig omkring i <b>automatiskt läge</b>, eller tryck för att växla till <b>manuellt</b> och utforska genom att svepa och knipa.]]></string>
+    <string name="warm_welcome_slide2_info_desc" translation_description="Description about info cards on the second slide of the Warm Welcome onboarding">
+    Tryck på valfritt märkt objekt för att öppna ett informationskort som det här, med ett foto, roliga fakta och astronomiska detaljer.
+    </string>
+    <string name="warm_welcome_card_name">Krabbnebulosan</string>
+    <string name="warm_welcome_card_description" translation_description="Description of the Crab Nebula on the sample info card on the second Warm Welcome slide">
+    Krabbnebulosan är en supernovarest i Oxen, resultatet av en stjärnexplosion som observerades av kinesiska astronomer år 1054 e.Kr.
+    </string>
+    <string name="warm_welcome_card_fun_fact" translation_description="Fun fact about the Crab Nebula on the sample info card on the second Warm Welcome slide">
+    Krabbnebulosan innehåller en pulsar som snurrar 30 gånger per sekund, den kollapsade kärnan av den exploderade stjärnan!
+    </string>
+    <string name="warm_welcome_card_distance" translation_description="Distance to the Crab Nebula on the sample info card on the second Warm Welcome slide">6 500 ljusår</string>
+    <string name="warm_welcome_card_size" translation_description="Size of the Crab Nebula on the sample info card on the second Warm Welcome slide">11 ljusår i diameter</string>
+    <string name="warm_welcome_slide3_title">Sensorer och kalibrering</string>
+    <string name="warm_welcome_slide3_desc">Sky Map använder telefonens sensorer för att rikta in sig mot stjärnorna.</string>
+    <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message on the third Warm Welcome slide when sensors are missing. Please do not change the &lt; and &gt; markup"><![CDATA[Din enhet verkar sakna de sensorer som krävs för automatisk spårning. Ingen fara – du kan fortfarande utforska hela kosmos i <b>manuellt läge</b>!]]></string>
+    <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration advice on the third Warm Welcome slide. Please do not change the &lt; and &gt; markup"><![CDATA[För att hålla allt exakt kan du vifta lite snabbt med telefonen i en <b>åtta</b> då och då.]]></string>
+    <string name="warm_welcome_skip">Hoppa över</string>
+    <string name="warm_welcome_next">Nästa</string>
+    <string name="warm_welcome_finish">Starta!</string>
+    <string name="warm_welcome_sensor_ok">Fungerar</string>
+    <string name="warm_welcome_sensor_missing">Saknas</string>
 </resources>

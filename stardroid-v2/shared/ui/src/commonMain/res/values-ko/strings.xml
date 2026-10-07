@@ -257,4 +257,28 @@
     <string name="symbol_key_other" translation_description="Symbol-key label: the marker used for deep-sky objects of any other type">기타 심원천체</string>
     <string name="symbol_key_meteor_radiant" translation_description="Symbol-key label: the marker for the point in the sky meteors of a shower appear to come from">유성우 복사점</string>
     <string name="symbol_key_meteor_radiant_peak" translation_description="Symbol-key label: the brighter marker used when a meteor shower is near its peak activity">유성우 극대기 근접</string>
+    <string name="diagnostics_accelerometer" translation_description="Row label in the diagnostics screen for the accelerometer sensor">가속도계</string>
+    <string name="diagnostics_compass" translation_description="Row label in the diagnostics screen for the compass (magnetic field) sensor">나침반</string>
+    <string name="diagnostics_gyroscope" translation_description="Row label in the diagnostics screen for the gyroscope sensor">자이로스코프</string>
+    <string name="warm_welcome_slide1_title" translation_description="Title for the first slide of the Warm Welcome onboarding">우주 탐험하기</string>
+    <string name="warm_welcome_slide1_desc" translation_description="Description for the first slide of the Warm Welcome onboarding, shown under a guided tour of the map controls">
+    왼쪽의 레이어를 사용하여 별, 별자리, 행성 등을 필터링할 수 있습니다. 오른쪽 하단의 버튼으로 하늘을 검색하고, 시간을 이동하며, 표시 모드를 전환할 수 있습니다. 언제든지 하늘을 탭하여 컨트롤을 숨기거나 표시할 수 있습니다.
+    </string>
+    <string name="warm_welcome_slide2_title" translation_description="Title for the second slide of the Warm Welcome onboarding">하늘 탐색하기</string>
+    <string name="warm_welcome_slide2_desc" translation_description="Description for the second slide of the Warm Welcome onboarding. Please do not change the &lt; and &gt; markup"><![CDATA[휴대폰을 가리켜 <b>자동 모드</b>로 주변을 둘러보세요. 또는 탭하여 <b>수동 모드</b>로 전환하고 스와이프 및 핀치로 탐색하세요.]]></string>
+    <string name="warm_welcome_slide2_info_desc" translation_description="Description about info cards on the second slide of the Warm Welcome onboarding">레이블이 지정된 개체를 탭하면 사진, 재미있는 사실, 천체 세부 정보가 포함된 이와 같은 정보 카드가 열립니다.</string>
+    <string name="warm_welcome_card_name">게 성운</string>
+    <string name="warm_welcome_card_description" translation_description="Description of the Crab Nebula on the sample info card on the second Warm Welcome slide">게 성운은 황소자리에 위치한 초신성 잔해로, 서기 1054년 중국 천문학자들이 기록한 별의 폭발 결과입니다.</string>
+    <string name="warm_welcome_card_fun_fact" translation_description="Fun fact about the Crab Nebula on the sample info card on the second Warm Welcome slide">게 성운에는 초당 30회 회전하는 펄서가 있는데, 이는 폭발한 별의 붕괴된 핵입니다!</string>
+    <string name="warm_welcome_card_distance" translation_description="Distance to the Crab Nebula on the sample info card on the second Warm Welcome slide">6,500광년</string>
+    <string name="warm_welcome_card_size" translation_description="Size of the Crab Nebula on the sample info card on the second Warm Welcome slide">11광년 너비</string>
+    <string name="warm_welcome_slide3_title" translation_description="Title for the third slide of the Warm Welcome onboarding">센서 및 보정</string>
+    <string name="warm_welcome_slide3_desc" translation_description="Description for the third slide of the Warm Welcome onboarding">Sky Map은 휴대전화 센서를 사용하여 별과 정렬합니다.</string>
+    <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message on the third Warm Welcome slide when sensors are missing. Please do not change the &lt; and &gt; markup"><![CDATA[기기에 자동 추적에 필요한 센서가 없는 것 같습니다. 걱정하지 마세요. <b>수동 모드</b>에서 여전히 전체 우주를 탐험할 수 있습니다!]]></string>
+    <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration advice on the third Warm Welcome slide. Please do not change the &lt; and &gt; markup"><![CDATA[정확도를 유지하려면, 가끔 휴대폰을 빠르게 <b>8자</b> 모양으로 흔들어 주세요.]]></string>
+    <string name="warm_welcome_skip" translation_description="Button to skip the Warm Welcome onboarding">건너뛰기</string>
+    <string name="warm_welcome_next" translation_description="Button to go to the next Warm Welcome slide">다음</string>
+    <string name="warm_welcome_finish" translation_description="Button to finish the Warm Welcome onboarding and start exploring. Needs to be short - the width of 9 letter Ms maximum.">시작!</string>
+    <string name="warm_welcome_sensor_ok" translation_description="Status shown next to a sensor name when the sensor is working">작동 중</string>
+    <string name="warm_welcome_sensor_missing" translation_description="Status shown next to a sensor name when the sensor is missing">누락됨</string>
 </resources>

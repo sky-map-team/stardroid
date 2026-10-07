@@ -178,9 +178,6 @@
     <string name="diagnostics_gl_limits_format" translation_description="Format for the GL limits row: maximum texture size in pixels, then the supported line width and point size ranges. \'tex\' abbreviates texture. %1$d is texture size, %2$s is the line width range, %3$s is the point size range.">tekstur %1$d, garis %2$s, titik %3$s</string>
     <string name="diagnostics_gl_unavailable" translation_description="Value shown in the diagnostics Graphics rows before the sky map has drawn, when the graphics details are not known yet">Belum tersedia</string>
     <string name="diagnostics_section_sensors">Sensor</string>
-    <string name="diagnostics_accelerometer">Akselerometer</string>
-    <string name="diagnostics_compass">Kompas</string>
-    <string name="diagnostics_gyroscope">Giroskop</string>
     <string name="diagnostics_rotation">Rotasi</string>
     <string name="diagnostics_rotation_matrix">Matriks Rotasi</string>
     <string name="diagnostics_light_level">Tingkat cahaya</string>
@@ -263,35 +260,6 @@
     <string name="whats_new_version_heading" translation_description="Heading above the list of new features. %1$s is the app version name">Baru di versi %1$s</string>
 
     <!-- Warm welcome (onboarding pager, slice 16) -->
-    <string name="warm_welcome_slide1_title">Jelajahi Kosmos</string>
-    <string name="warm_welcome_slide1_desc" translation_description="Description for the first slide of the Warm Welcome onboarding, shown under a guided tour of the map controls">
-    Gunakan lapisan di kiri untuk menyaring bintang, rasi bintang, planet, dan lainnya. Tombol di kanan bawah mencari di langit, menjelajahi waktu, dan mengganti mode tampilan. Ketuk langit kapan saja untuk menyembunyikan atau menampilkan kontrol.
-    </string>
-    <string name="warm_welcome_slide2_title">Navigasi Langit</string>
-    <string name="warm_welcome_slide2_desc" translation_description="Description for the second slide of the Warm Welcome onboarding. Please do not change the &lt; and &gt; markup"><![CDATA[Arahkan ponsel Anda untuk melihat-lihat dalam <b>Mode Otomatis</b>, atau ketuk untuk beralih ke <b>Mode Manual</b> dan jelajahi dengan menggeser dan mencubit.]]></string>
-    <string name="warm_welcome_slide2_info_desc" translation_description="Description about info cards on the second slide of the Warm Welcome onboarding">
-    Ketuk objek berlabel apa pun untuk membuka Kartu Info seperti ini, dengan foto, fakta menarik, dan detail benda langit.
-    </string>
-    <string name="warm_welcome_card_name">Nebula Kepiting</string>
-    <string name="warm_welcome_card_description" translation_description="Description of the Crab Nebula on the sample info card on the second Warm Welcome slide">
-    Nebula Kepiting adalah sisa-sisa supernova di Taurus, hasil dari ledakan bintang yang dicatat oleh astronom Tiongkok pada tahun 1054 Masehi.
-    </string>
-    <string name="warm_welcome_card_fun_fact" translation_description="Fun fact about the Crab Nebula on the sample info card on the second Warm Welcome slide">
-    Nebula Kepiting berisi pulsar yang berputar 30 kali per detik, inti yang runtuh dari bintang yang meledak!
-    </string>
-    <string name="warm_welcome_card_distance" translation_description="Distance to the Crab Nebula on the sample info card on the second Warm Welcome slide">6.500 tahun cahaya</string>
-    <string name="warm_welcome_card_size" translation_description="Size of the Crab Nebula on the sample info card on the second Warm Welcome slide">Lebar 11 tahun cahaya</string>
-    <string name="warm_welcome_slide3_title">Sensor &amp; Kalibrasi</string>
-    <string name="warm_welcome_slide3_desc">
-    Sky Map menggunakan sensor ponsel Anda untuk menyelaraskan dengan bintang-bintang.
-    </string>
-    <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message on the third Warm Welcome slide when sensors are missing. Please do not change the &lt; and &gt; markup"><![CDATA[Perangkat Anda tampaknya tidak memiliki sensor yang diperlukan untuk pelacakan otomatis. Jangan khawatir—Anda masih bisa menjelajahi seluruh kosmos dalam <b>Mode Manual</b>!]]></string>
-    <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration advice on the third Warm Welcome slide. Please do not change the &lt; and &gt; markup"><![CDATA[Agar tetap akurat, goyangkan ponsel Anda dengan cepat membentuk <b>angka 8</b> sesekali.]]></string>
-    <string name="warm_welcome_skip">Lewati</string>
-    <string name="warm_welcome_next">Berikutnya</string>
-    <string name="warm_welcome_finish">Mulai!</string>
-    <string name="warm_welcome_sensor_ok">Berfungsi</string>
-    <string name="warm_welcome_sensor_missing">Hilang</string>
 
     <!-- Help dialog (slice 16) -->
 
