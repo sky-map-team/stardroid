@@ -307,4 +307,76 @@
     <string name="warm_welcome_finish" translation_description="Button to finish the Warm Welcome onboarding and start exploring. Needs to be short - the width of 9 letter Ms maximum.">Launch!</string>
     <string name="warm_welcome_sensor_ok" translation_description="Status shown next to a sensor name when the sensor is working">Working</string>
     <string name="warm_welcome_sensor_missing" translation_description="Status shown next to a sensor name when the sensor is missing">Missing</string>
+    <string name="settings_title" translation_description="Title of the settings screen">Settings</string>
+    <string name="settings_cancel" translation_description="Cancel button in settings dialogs">Cancel</string>
+    <string name="settings_section_controls" translation_description="Preferences category heading for touch control settings">Controls</string>
+    <string name="settings_section_appearance" translation_description="Preferences title for section about app appearance">Appearance</string>
+    <string name="settings_section_sensors" translation_description="Preferences category heading for sensor settings">Sensors</string>
+    <string name="settings_section_other" translation_description="Preferences category heading for miscellaneous settings such as the usage statistics opt-out">Other</string>
+    <string name="enable_analytics" translation_description="Preference label to opt in to sending anonymous usage statistics">Send usage statistics</string>
+    <string name="enable_analytics_desc" translation_description="Description/summary for the usage statistics preference">Make Sky Map better by sending anonymous data to Google Analytics</string>
+    <string name="settings_diagnostics_summary" translation_description="Summary for the settings row that opens the diagnostics screen, which shows technical sensor, location and performance readouts useful when reporting a problem">Sensor, location and performance details</string>
+    <string name="settings_section_advanced" translation_description="Preferences category heading for advanced or experimental settings that most people will not need to change">Advanced</string>
+    <string name="settings_renderer" translation_description="Preference title for choosing which graphics engine draws the sky map">Graphics engine</string>
+    <string name="settings_renderer_summary" translation_description="Summary explaining the graphics engine preference: the newer engine draws a more realistic sky and clearer labels, and the map restarts when the setting is changed">The newer engine draws a more realistic daytime and twilight sky, and clearer labels. The map restarts when you change this.</string>
+    <string name="settings_renderer_gles1" translation_description="Name of the original, long-standing graphics engine option, shown in a list of two choices">Classic</string>
+    <string name="settings_renderer_gles3" translation_description="Name of the newer graphics engine option, shown in a list of two choices">Enhanced</string>
+    <string name="settings_tap_to_identify" translation_description="Preference title for showing info cards when tapping objects">Show info on tap</string>
+    <string name="settings_tap_to_identify_summary" translation_description="Preference summary for the tap info feature">Tap celestial objects to learn about them</string>
+    <string name="settings_tap_in_auto_mode" translation_description="Preference title for enabling info cards in auto/sensor mode">Info cards in auto mode</string>
+    <string name="settings_tap_in_auto_mode_summary" translation_description="Preference summary for auto mode info cards">Also show info cards when tapping objects in automatic (sensor) mode</string>
+    <string name="settings_auto_level_horizon" translation_description="Preference title for the auto-level horizon feature in manual mode">Auto-level horizon</string>
+    <string name="settings_auto_level_horizon_summary" translation_description="Summary for the auto-level horizon preference">In manual mode, the horizon gradually returns to horizontal after you lift your fingers</string>
+    <string name="settings_font_size" translation_description="Preference title: change the size of the text labels naming stars and other objects drawn on the sky">Sky label size</string>
+    <string name="settings_font_size_summary" translation_description="Help to go along with the sky label size preference. Explains that this size is fixed and does not change as the user zooms the map in or out.">Label text stays this size at any zoom</string>
+    <string name="settings_font_size_small" translation_description="Smallest font size">Small</string>
+    <string name="settings_font_size_medium" translation_description="Normal font size">Medium</string>
+    <string name="settings_font_size_large" translation_description="Large font size">Large</string>
+    <string name="settings_font_size_extra_large" translation_description="Largest font size">Extra Large</string>
+    <string name="settings_auto_dimness" translation_description="Preference title: mode for automatically dimming the screen when night mode is selected">Auto screen dimming</string>
+    <string name="settings_auto_dimness_summary" translation_description="Summary for the night-mode screen dimming preference">How much night mode dims the screen</string>
+    <string name="settings_auto_dimness_system" translation_description="Screen dimming option: leave brightness on the system setting">System Default</string>
+    <string name="settings_auto_dimness_dim" translation_description="Screen dimming option: dimmest screen setting">Very Dim</string>
+    <string name="settings_auto_dimness_classic" translation_description="Screen dimming option: the hand-tuned brightness Sky Map used for its first 15 years">Classic</string>
+    <string name="settings_disable_gyro" translation_description="Preference title for switching from the gyroscope to the legacy compass + accelerometer sensor pipeline">Use legacy sensors</string>
+    <string name="settings_disable_gyro_summary" translation_description="Explanation of the legacy sensors preference and when to use it">Point the map using the compass and accelerometer instead of the gyroscope. Try this if the map drifts or your device\'s gyro misbehaves; devices without a gyro use these sensors automatically.</string>
+    <string name="settings_classic_sensors_only" translation_description="Summary noting a sensor preference only applies to the legacy non-gyroscope sensor path">Only applies when legacy sensors are in use</string>
+    <string name="settings_smoothing" translation_description="Preference title for the switch that turns sensor smoothing on or off">Smooth sensor movement</string>
+    <string name="settings_smoothing_summary" translation_description="Explanation of the sensor smoothing switch: it steadies the sky view, is on by default during a beta trial, invites feedback, and explains how to turn it off">Steadies the sky view. This is new and on by default while we tune it — if you notice lag, jitter, or anything odd, we\'d love to hear about it. Turn it off here any time if you\'d rather use the raw sensor.</string>
+    <string name="settings_steadiness" translation_description="Preference title for how much the sky view is steadied while the phone is held still">Steadiness</string>
+    <string name="settings_steadiness_summary" translation_description="Explanation of the steadiness preference and its trade-off">How much the view is steadied while you hold the phone still. Higher settings shake less but take a moment longer to settle.</string>
+    <string name="settings_steadiness_low" translation_description="Least steadying of the view when the phone is held still">Low</string>
+    <string name="settings_steadiness_medium" translation_description="Moderate steadying of the view when the phone is held still">Medium</string>
+    <string name="settings_steadiness_high" translation_description="Strong steadying of the view when the phone is held still">High</string>
+    <string name="settings_steadiness_very_high" translation_description="Very strong steadying of the view when the phone is held still">Very high</string>
+    <string name="settings_steadiness_extreme" translation_description="Extremely strong steadying of the view when the phone is held still, for devices with noisy sensors">Extreme</string>
+    <string name="settings_ease_off" translation_description="Preference title for how much the steadying relaxes once the phone starts moving">Ease off when moving</string>
+    <string name="settings_ease_off_summary" translation_description="Explanation of the ease-off preference and its trade-off">How much the steadying relaxes once you start moving, so the view keeps up with you. Choose None to steady the view by the same amount whether it is still or moving.</string>
+    <string name="settings_ease_off_none" translation_description="Steadying does not relax at all when the phone moves">None</string>
+    <string name="settings_ease_off_low" translation_description="Steadying relaxes a little when the phone moves">A little</string>
+    <string name="settings_ease_off_medium" translation_description="Steadying relaxes a moderate amount when the phone moves">Moderate</string>
+    <string name="settings_ease_off_high" translation_description="Steadying relaxes a lot when the phone moves">A lot</string>
+    <string name="settings_reverse_magnetic_z" translation_description="Preference title for reversing the magnetometer Z axis, a workaround for devices with a mis-mounted compass sensor">Reverse magnetic Z</string>
+    <string name="settings_magnetic_correction" translation_description="Preference label: apply magnetic declination correction so the compass points to true north instead of magnetic north">Use magnetic correction</string>
+    <string name="settings_magnetic_correction_summary" translation_description="Summary for the magnetic correction preference">Corrects the compass for the difference between magnetic and true north</string>
+    <string name="settings_view_direction" translation_description="Preference title for choosing the view/pointing direction mode">View direction</string>
+    <string name="settings_view_direction_summary" translation_description="Explanation of the view direction preference, covering both landscape rotation and pointer modes">Rotate horizon by 90 degrees (for devices with forced landscape) or use pointer mode for the screen to show what the top of the phone is pointing at</string>
+    <string name="settings_view_direction_standard" translation_description="Normal viewing direction">Normal</string>
+    <string name="settings_view_direction_rotate90" translation_description="View direction option that rotates the screen by 90 degrees">Rotated horizon</string>
+    <string name="settings_view_direction_telescope" translation_description="View direction option that shows the sky as pointed at by the long edge of the phone">Pointer mode</string>
+    <string name="diagnostics_button" translation_description="Map-screen button that opens the diagnostics screen">Diagnostics</string>
+    <string name="settings_section_notifications" translation_description="Settings section header for notification preferences">Notifications</string>
+    <string name="settings_notifications_intro" translation_description="Introduction under the notifications settings header, stating how rarely the app notifies">Sky Map only notifies about rare sky events, at most once a day. Everything is off until you turn it on.</string>
+    <string name="settings_shower_alerts" translation_description="Preference title: notify on the evening a meteor shower reaches its annual peak">Meteor shower peaks</string>
+    <string name="settings_shower_alerts_summary" translation_description="Explanation of the meteor-shower notification preference">About a dozen a year, on the evening of the peak</string>
+    <string name="settings_eclipse_alerts" translation_description="Preference title: notify shortly before a lunar eclipse begins">Lunar eclipses</string>
+    <string name="settings_eclipse_alerts_summary" translation_description="Explanation of the lunar-eclipse notification preference">A single alert before a lunar eclipse begins</string>
+    <string name="settings_pass_alerts" translation_description="Preference title: notify shortly before a satellite passes overhead">Satellite passes</string>
+    <string name="settings_pass_alerts_summary" translation_description="Explanation of the satellite-pass notification preference">A single alert before the best visible pass of the night</string>
+    <string name="settings_announcements" translation_description="Preference title: occasional messages from the Sky Map team about rare sky events, shown as a notification, in the widget and when the app opens">Messages from Sky Map</string>
+    <string name="settings_announcements_summary" translation_description="Explanation of the announcements preference">Rare heads-ups such as a strong aurora or a bright planet. Shown as a notification, in the Sky Tonight widget, or when you open the app.</string>
+    <string name="settings_tonight_digest" translation_description="Preference title: a single evening notification summarizing what\'s visible tonight">Tonight\'s sky digest</string>
+    <string name="settings_tonight_digest_summary" translation_description="Explanation of the tonight-digest notification preference">One summary after sunset, skipped on quiet nights</string>
+    <string name="settings_notifications_blocked" translation_description="Warning row shown when the user enabled notifications in the app but blocked them at the system level">Notifications are blocked for Sky Map</string>
+    <string name="settings_notifications_blocked_action" translation_description="Hint under the blocked-notifications warning; tapping opens the system settings page">Tap to allow them in system settings</string>
 </resources>

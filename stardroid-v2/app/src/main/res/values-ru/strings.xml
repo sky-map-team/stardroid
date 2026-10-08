@@ -27,19 +27,6 @@
     <string name="neptune">Нептун</string>
     <string name="pluto">Плутон</string>
     <string name="ar_permission_settings_action">Настройки</string>
-    <string name="settings_title">Настройки</string>
-    <string name="settings_cancel">Отмена</string>
-    <string name="settings_section_sensors">Настройки матрицы</string>
-    <string name="enable_analytics">Отправить статистику использования</string>
-    <string name="enable_analytics_desc">Сделайте Sky Map лучше, отправив анонимные данные в Google Analytics</string>
-    <string name="settings_tap_in_auto_mode">Карточки в автоматическом режиме</string>
-    <string name="settings_tap_in_auto_mode_summary">
-    Показывать информационные карточки при нажатии на объекты в автоматическом (сенсорном) режиме
-    </string>
-    <string name="settings_reverse_magnetic_z">Обратный магнитный Z</string>
-    <string name="settings_magnetic_correction">Исп. поправку на магн. склон.</string>
-    <string name="settings_view_direction">Повернуть горизонтально</string>
-    <string name="diagnostics_button">Диагностика</string>
     <string name="diagnostics_title">Диагностика</string>
     <string name="diagnostics_section_general">Общие</string>
     <string name="diagnostics_device">Устройство</string>

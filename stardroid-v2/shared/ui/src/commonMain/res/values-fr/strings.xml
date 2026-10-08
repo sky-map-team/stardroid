@@ -305,4 +305,83 @@
     <string name="warm_welcome_finish">Lancer !</string>
     <string name="warm_welcome_sensor_ok">Fonctionnel</string>
     <string name="warm_welcome_sensor_missing">Manquant</string>
+    <string name="settings_title">Paramètres</string>
+    <string name="settings_cancel">Annuler</string>
+    <string name="settings_section_controls">Commandes</string>
+    <string name="settings_section_appearance">Apparence</string>
+    <string name="settings_section_sensors">Capteurs</string>
+    <string name="settings_section_other">Autres</string>
+    <string name="enable_analytics">Envoyer des statistiques d\'utilisation</string>
+    <string name="enable_analytics_desc">Améliorer Sky Map en envoyant des données anonymes à Google Analytics</string>
+    <string name="settings_diagnostics_summary" translation_description="Summary for the settings row that opens the diagnostics screen, which shows technical sensor, location and performance readouts useful when reporting a problem">Détails du capteur, de la position et des performances</string>
+    <string name="settings_tap_to_identify">Afficher les infos au toucher</string>
+    <string name="settings_tap_to_identify_summary">Touchez les objets célestes pour en savoir plus</string>
+    <string name="settings_tap_in_auto_mode">Fiches info en mode automatique</string>
+    <string name="settings_tap_in_auto_mode_summary">
+    Afficher aussi les fiches info en touchant les objets en mode automatique (capteurs)
+    </string>
+    <string name="settings_auto_level_horizon">Horizon à niveau automatique</string>
+    <string name="settings_auto_level_horizon_summary">
+    En mode manuel, l\'horizon revient progressivement à l\'horizontale après avoir levé les doigts
+    </string>
+    <string name="settings_font_size" translation_description="Preference title: change the size of the text labels naming stars and other objects drawn on the sky">Taille des étiquettes du ciel</string>
+    <string name="settings_font_size_summary" translation_description="Help to go along with the sky label size preference. Explains that this size is fixed and does not change as the user zooms the map in or out.">Le texte des étiquettes garde cette taille à n\'importe quel zoom</string>
+    <string name="settings_font_size_small" translation_description="Smallest font size">Petit</string>
+    <string name="settings_font_size_medium" translation_description="Normal font size">Moyen</string>
+    <string name="settings_font_size_large" translation_description="Large font size">Grand</string>
+    <string name="settings_font_size_extra_large" translation_description="Largest font size">Très grand</string>
+    <string name="settings_auto_dimness">Atténuation automatique de l\'écran</string>
+    <string name="settings_auto_dimness_summary" translation_description="Summary for the night-mode screen dimming preference">Degré de diminution de l\'écran en mode nuit</string>
+    <string name="settings_auto_dimness_system" translation_description="Screen dimming option: leave brightness on the system setting">Par défaut du système</string>
+    <string name="settings_auto_dimness_dim" tm_human="true" translation_description="Screen dimming option: dimmest screen setting">Très sombre</string>
+    <string name="settings_auto_dimness_classic" translation_description="Screen dimming option: the hand-tuned brightness Sky Map used for its first 15 years">Classique</string>
+    <string name="settings_disable_gyro" translation_description="Preference title for switching from the gyroscope to the legacy compass + accelerometer sensor pipeline">Utiliser les capteurs hérités</string>
+    <string name="settings_disable_gyro_summary" translation_description="Explanation of the legacy sensors preference and when to use it">
+    Orienter la carte à l\'aide de la boussole et de l\'accéléromètre au lieu du gyroscope. Essayez ceci si la carte dérive ou si le gyroscope de votre appareil se comporte mal ; les appareils sans gyroscope utilisent ces capteurs automatiquement.
+    </string>
+    <string name="settings_classic_sensors_only" translation_description="Summary noting a sensor preference only applies to the legacy non-gyroscope sensor path">S\'applique uniquement lorsque les capteurs hérités sont utilisés</string>
+    <string name="settings_smoothing" translation_description="Preference title for the switch that turns sensor smoothing on or off">Lisser les mouvements des capteurs</string>
+    <string name="settings_smoothing_summary" translation_description="Explanation of the sensor smoothing switch: it steadies the sky view, is on by default during a beta trial, invites feedback, and explains how to turn it off">
+    Stabilise la vue du ciel. C\'est une nouveauté activée par défaut pendant que nous l\'affinons. Si vous remarquez des saccades, des tremblements ou un comportement anormal, n\'hésitez pas à nous en faire part. Vous pouvez la désactiver ici à tout moment si vous préférez utiliser les données brutes des capteurs.
+    </string>
+    <string name="settings_steadiness" translation_description="Preference title for how much the sky view is steadied while the phone is held still">Stabilité</string>
+    <string name="settings_steadiness_summary" translation_description="Explanation of the steadiness preference and its trade-off">
+    Indique à quel point la vue est stabilisée lorsque vous tenez le téléphone immobile. Des valeurs plus élevées réduisent les vibrations, mais mettent un peu plus de temps à se stabiliser.
+    </string>
+    <string name="settings_steadiness_low" translation_description="Least steadying of the view when the phone is held still">Faible</string>
+    <string name="settings_steadiness_medium" translation_description="Moderate steadying of the view when the phone is held still">Moyenne</string>
+    <string name="settings_steadiness_high" translation_description="Strong steadying of the view when the phone is held still">Élevée</string>
+    <string name="settings_steadiness_very_high" translation_description="Very strong steadying of the view when the phone is held still">Très élevée</string>
+    <string name="settings_steadiness_extreme" translation_description="Extremely strong steadying of the view when the phone is held still, for devices with noisy sensors">Extrême</string>
+    <string name="settings_ease_off" translation_description="Preference title for how much the steadying relaxes once the phone starts moving">Réduire lors des mouvements</string>
+    <string name="settings_ease_off_summary" translation_description="Explanation of the ease-off preference and its trade-off">
+    Indique à quel point la stabilisation s\'atténue lorsque vous commencez à bouger, afin que la vue suive vos mouvements. Choisissez Aucune pour stabiliser la vue de la même manière qu\'elle soit fixe ou en mouvement.
+    </string>
+    <string name="settings_ease_off_none" translation_description="Steadying does not relax at all when the phone moves">Aucune</string>
+    <string name="settings_ease_off_low" translation_description="Steadying relaxes a little when the phone moves">Un peu</string>
+    <string name="settings_ease_off_medium" translation_description="Steadying relaxes a moderate amount when the phone moves">Modérée</string>
+    <string name="settings_ease_off_high" translation_description="Steadying relaxes a lot when the phone moves">Beaucoup</string>
+    <string name="settings_reverse_magnetic_z">Inverser l\'axe Z magnétique</string>
+    <string name="settings_magnetic_correction">Correction magnétique</string>
+    <string name="settings_magnetic_correction_summary" translation_description="Summary for the magnetic correction preference">
+    Corrige la boussole pour la différence entre le nord magnétique et le nord géographique
+    </string>
+    <string name="settings_view_direction">Direction de la vue</string>
+    <string name="settings_view_direction_summary" translation_description="Explanation of the view direction preference, covering both landscape rotation and pointer modes">
+    Faire pivoter l\'horizon de 90 degrés (pour les appareils avec mode paysage forcé) ou utiliser le mode pointeur pour que l\'écran affiche ce que le haut du téléphone pointe
+    </string>
+    <!-- tm:omitted name="settings_view_direction_standard" reason="identical_to_source" -->
+    <string name="settings_view_direction_rotate90" translation_description="View direction option that rotates the screen by 90 degrees">Horizon pivoté</string>
+    <string name="settings_view_direction_telescope" translation_description="View direction option that shows the sky as pointed at by the long edge of the phone">Mode pointeur</string>
+    <!-- tm:omitted name="diagnostics_button" reason="identical_to_source" -->
+    <!-- tm:omitted name="settings_section_notifications" reason="identical_to_source" -->
+    <string name="settings_notifications_intro" translation_description="Introduction under the notifications settings header, stating how rarely the app notifies">
+    Sky Map ne notifie que les événements célestes rares, au maximum une fois par jour. Tout est désactivé jusqu\'à ce que vous l\'activiez.
+    </string>
+    <string name="settings_shower_alerts" translation_description="Preference title: notify on the evening a meteor shower reaches its annual peak">Pics de pluies de météores</string>
+    <string name="settings_shower_alerts_summary" translation_description="Explanation of the meteor-shower notification preference">Environ une douzaine par an, le soir du pic</string>
+    <string name="settings_tonight_digest" translation_description="Preference title: a single evening notification summarizing what\'s visible tonight">Résumé du ciel de ce soir</string>
+    <string name="settings_tonight_digest_summary" translation_description="Explanation of the tonight-digest notification preference">Un résumé après le coucher du soleil, ignoré les nuits calmes</string>
+    <string name="settings_notifications_blocked" translation_description="Warning row shown when the user enabled notifications in the app but blocked them at the system level">Les notifications sont bloquées pour Sky Map</string>
+    <string name="settings_notifications_blocked_action" translation_description="Hint under the blocked-notifications warning; tapping opens the system settings page">Appuyez pour les autoriser dans les paramètres système</string>
 </resources>

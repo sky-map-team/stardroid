@@ -86,70 +86,11 @@
     <string name="gallery_back" translation_description="Content description for the back arrow leaving the gallery screen">戻る</string>
 
     <!-- Settings screen (v1 wording where a v1 string existed) -->
-    <string name="settings_title">設定</string>
     <!-- tm:omitted name="settings_ok" reason="identical_to_source" -->
-    <string name="settings_cancel">キャンセル</string>
-    <string name="settings_section_controls">操作</string>
-    <string name="settings_section_appearance">外観</string>
-    <string name="settings_section_sensors" translation_description="Preferences category heading for sensor settings">センサー</string>
-    <string name="settings_section_other">その他</string>
-    <string name="enable_analytics">利用統計の送信</string>
-    <string name="enable_analytics_desc">Google Analyticsに匿名データを送信することでSkyマップの改良に協力する</string>
-    <string name="settings_diagnostics_summary" translation_description="Summary for the settings row that opens the diagnostics screen, which shows technical sensor, location and performance readouts useful when reporting a problem">センサー、位置情報、パフォーマンスの詳細</string>
-    <string name="settings_tap_to_identify">タップで情報を表示</string>
-    <string name="settings_tap_to_identify_summary">天体をタップして詳細を確認</string>
-    <string name="settings_tap_in_auto_mode">自動モードでの情報カード</string>
-    <string name="settings_tap_in_auto_mode_summary">自動（センサー）モードでもオブジェクトをタップして情報カードを表示</string>
-    <string name="settings_auto_level_horizon">地平線の自動水平化</string>
     <string name="auto_level_on_toast" translation_description="Brief confirmation shown when a double tap turns horizon auto-leveling on in manual mode">水平自動調整オン</string>
     <string name="auto_level_off_toast" translation_description="Brief confirmation shown when a double tap turns horizon auto-leveling off in manual mode">水平自動調整オフ</string>
-    <string name="settings_auto_level_horizon_summary">手動モードでは、指を離すと地平線が徐々に水平に戻ります</string>
-    <string name="settings_font_size" translation_description="Preference title: change the size of the text labels naming stars and other objects drawn on the sky">天体ラベルのサイズ</string>
-    <string name="settings_font_size_summary" translation_description="Help to go along with the sky label size preference. Explains that this size is fixed and does not change as the user zooms the map in or out.">ラベルの文字はズームに関わらずこのサイズを維持します</string>
-    <string name="settings_font_size_small" translation_description="Smallest font size">小</string>
-    <string name="settings_font_size_medium" translation_description="Normal font size">中</string>
-    <string name="settings_font_size_large" translation_description="Large font size">大</string>
-    <string name="settings_font_size_extra_large" translation_description="Largest font size">特大</string>
-    <string name="settings_auto_dimness">自動画面調光</string>
-    <string name="settings_auto_dimness_summary" translation_description="Summary for the night-mode screen dimming preference">ナイトモードでの画面の暗さ</string>
-    <string name="settings_auto_dimness_system" translation_description="Screen dimming option: leave brightness on the system setting">システムのデフォルト</string>
-    <string name="settings_auto_dimness_dim" translation_description="Screen dimming option: dimmest screen setting">非常に暗い</string>
-    <string name="settings_auto_dimness_classic" translation_description="Screen dimming option: the hand-tuned brightness Sky Map used for its first 15 years">クラシック</string>
-    <string name="settings_disable_gyro" translation_description="Preference title for switching from the gyroscope to the legacy compass + accelerometer sensor pipeline">レガシーセンサーを使用</string>
-    <string name="settings_disable_gyro_summary" translation_description="Explanation of the legacy sensors preference and when to use it">
-    ジャイロスコープではなく、コンパスと加速度計を使用して地図を向けます。地図がずれたり、お使いのデバイスのジャイロが正常に動作しない場合は、これを試してください。ジャイロのないデバイスは、これらのセンサーを自動的に使用します。
-    </string>
-    <string name="settings_classic_sensors_only" translation_description="Summary noting a sensor preference only applies to the legacy non-gyroscope sensor path">レガシーセンサー使用時のみ適用されます</string>
-    <string name="settings_smoothing" translation_description="Preference title for the switch that turns sensor smoothing on or off">センサーの動きをスムーズにする</string>
-    <string name="settings_smoothing_summary" translation_description="Explanation of the sensor smoothing switch: it steadies the sky view, is on by default during a beta trial, invites feedback, and explains how to turn it off">
-    星空の表示を安定させます。これは新機能であり、調整中のためデフォルトでオンになっています。遅延、ちらつき、その他の異常にお気づきの際は、ぜひフィードバックをお寄せください。生のセンサーを使用したい場合は、いつでもここでオフにできます。
-    </string>
-    <string name="settings_steadiness" translation_description="Preference title for how much the sky view is steadied while the phone is held still">安定性</string>
-    <string name="settings_steadiness_summary" translation_description="Explanation of the steadiness preference and its trade-off">スマートフォンを静止させているときの表示の安定度。設定を高くすると揺れが少なくなる一方で、安定するまでに少し時間がかかります。</string>
-    <string name="settings_steadiness_low" translation_description="Least steadying of the view when the phone is held still">低</string>
-    <string name="settings_steadiness_medium" translation_description="Moderate steadying of the view when the phone is held still">中</string>
-    <string name="settings_steadiness_high" translation_description="Strong steadying of the view when the phone is held still">高</string>
-    <string name="settings_steadiness_very_high" translation_description="Very strong steadying of the view when the phone is held still">かなり高</string>
-    <string name="settings_steadiness_extreme" translation_description="Extremely strong steadying of the view when the phone is held still, for devices with noisy sensors">最高</string>
-    <string name="settings_ease_off" translation_description="Preference title for how much the steadying relaxes once the phone starts moving">移動時に緩める</string>
-    <string name="settings_ease_off_summary" translation_description="Explanation of the ease-off preference and its trade-off">
-    動き始めたときに画面ブレ補正がどの程度緩和され、視点が動きについていくようにするかを設定します。静止時と移動時で同じ強さの補正を維持するには「なし」を選択してください。
-    </string>
-    <string name="settings_ease_off_none" translation_description="Steadying does not relax at all when the phone moves">なし</string>
-    <string name="settings_ease_off_low" translation_description="Steadying relaxes a little when the phone moves">少し</string>
-    <string name="settings_ease_off_medium" translation_description="Steadying relaxes a moderate amount when the phone moves">中程度</string>
-    <string name="settings_ease_off_high" translation_description="Steadying relaxes a lot when the phone moves">多く</string>
-    <string name="settings_reverse_magnetic_z">磁気センサーのZ軸を反転</string>
-    <string name="settings_magnetic_correction">磁気補正機能を使用</string>
-    <string name="settings_magnetic_correction_summary" translation_description="Summary for the magnetic correction preference">磁北と真北の差をコンパスで補正します</string>
-    <string name="settings_view_direction">方向を見る</string>
-    <string name="settings_view_direction_summary" translation_description="Explanation of the view direction preference, covering both landscape rotation and pointer modes">地平線を90度回転させる（強制的に横向き表示される端末の場合）、またはポインターモードを使用して、スマートフォンの上部が指す方向を画面に表示します</string>
-    <string name="settings_view_direction_standard" translation_description="Normal viewing direction">通常</string>
-    <string name="settings_view_direction_rotate90" translation_description="View direction option that rotates the screen by 90 degrees">回転した水平線</string>
-    <string name="settings_view_direction_telescope" translation_description="View direction option that shows the sky as pointed at by the long edge of the phone">ポインターモード</string>
 
     <!-- tm:omitted name="support_email" reason="identical_to_source" -->
-    <string name="diagnostics_button">診断</string>
     <string name="diagnostics_title">診断</string>
     <string name="diagnostics_share" translation_description="Accessibility label for the diagnostics screen button that emails these details to the developers">開発者に送信</string>
     <string name="diagnostics_share_subject" translation_description="Subject line of the email a user sends from the diagnostics screen">Sky Map 診断レポート</string>
@@ -318,14 +259,6 @@
     <string name="countdown_widget_preview_name" translation_description="Representative event name shown in the widget picker\'s preview of the countdown widget">ペルセウス座流星群のピーク</string>
 
     <!-- Sky-event notifications (D77). -->
-    <string name="settings_section_notifications" translation_description="Settings section header for notification preferences">通知</string>
-    <string name="settings_notifications_intro" translation_description="Introduction under the notifications settings header, stating how rarely the app notifies">Sky Map は、1日に多くても1回、珍しい天文現象についてのみ通知します。すべての通知は、ユーザーがオンにするまでオフになっています。</string>
-    <string name="settings_shower_alerts" translation_description="Preference title: notify on the evening a meteor shower reaches its annual peak">流星群のピーク</string>
-    <string name="settings_shower_alerts_summary" translation_description="Explanation of the meteor-shower notification preference">年に約12回、ピークの夜に通知</string>
-    <string name="settings_tonight_digest" translation_description="Preference title: a single evening notification summarizing what\'s visible tonight">今夜の空の概要</string>
-    <string name="settings_tonight_digest_summary" translation_description="Explanation of the tonight-digest notification preference">日没後に1回概要を通知、静かな夜はスキップ</string>
-    <string name="settings_notifications_blocked" translation_description="Warning row shown when the user enabled notifications in the app but blocked them at the system level">Sky Mapの通知がブロックされています</string>
-    <string name="settings_notifications_blocked_action" translation_description="Hint under the blocked-notifications warning; tapping opens the system settings page">タップしてシステム設定で許可してください</string>
     <string name="channel_showers_name" translation_description="Name of the meteor-shower notification channel, shown in the system\'s notification settings">流星群のピーク</string>
     <string name="channel_showers_description" translation_description="Description of the meteor-shower notification channel in the system\'s notification settings">年に約12回、ピークの夜に通知</string>
     <string name="channel_digest_name" translation_description="Name of the tonight-digest notification channel, shown in the system\'s notification settings">今夜の空の概要</string>

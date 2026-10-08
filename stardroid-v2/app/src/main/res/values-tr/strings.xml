@@ -92,74 +92,11 @@
     <string name="gallery_back" translation_description="Content description for the back arrow leaving the gallery screen">Geri</string>
 
     <!-- Settings screen (v1 wording where a v1 string existed) -->
-    <string name="settings_title">Ayarlar</string>
     <string name="settings_ok">Tamam</string>
-    <string name="settings_cancel">İptal</string>
-    <string name="settings_section_controls">Kontroller</string>
-    <string name="settings_section_appearance">Görünüm</string>
-    <string name="settings_section_sensors" translation_description="Preferences category heading for sensor settings">Sensörler</string>
-    <string name="settings_section_other">Diğer</string>
-    <string name="enable_analytics">Kullanım istatistikleri gönder</string>
-    <string name="enable_analytics_desc">Google Analytics\'e anonim veri göndererek Sky Map\'i daha iyi hale getirin</string>
-    <string name="settings_diagnostics_summary" translation_description="Summary for the settings row that opens the diagnostics screen, which shows technical sensor, location and performance readouts useful when reporting a problem">Sensör, konum ve performans ayrıntıları</string>
-    <string name="settings_tap_to_identify">Dokunduğunda bilgi göster</string>
-    <string name="settings_tap_to_identify_summary">Gök cisimlerine dokunarak onlar hakkında bilgi edinin</string>
-    <string name="settings_tap_in_auto_mode">Otomatik modda bilgi kartları</string>
-    <string name="settings_tap_in_auto_mode_summary">Otomatik (sensör) modda nesnelere dokunurken de bilgi kartlarını göster</string>
-    <string name="settings_auto_level_horizon">Ufku otomatik olarak düzelt</string>
     <string name="auto_level_on_toast" translation_description="Brief confirmation shown when a double tap turns horizon auto-leveling on in manual mode">Ufuk otomatik hizalama açık</string>
     <string name="auto_level_off_toast" translation_description="Brief confirmation shown when a double tap turns horizon auto-leveling off in manual mode">Ufuk otomatik hizalama kapalı</string>
-    <string name="settings_auto_level_horizon_summary">Manuel modda, parmağınızı kaldırdıktan sonra ufuk yavaş yavaş yatay konuma döner</string>
-    <string name="settings_font_size" translation_description="Preference title: change the size of the text labels naming stars and other objects drawn on the sky">Gökyüzü etiketi boyutu</string>
-    <string name="settings_font_size_summary" translation_description="Help to go along with the sky label size preference. Explains that this size is fixed and does not change as the user zooms the map in or out.">Etiket metni her yakınlaştırmada bu boyutta kalır</string>
-    <string name="settings_font_size_small" translation_description="Smallest font size">Küçük</string>
-    <string name="settings_font_size_medium" translation_description="Normal font size">Orta</string>
-    <string name="settings_font_size_large" translation_description="Large font size">Büyük</string>
-    <string name="settings_font_size_extra_large" translation_description="Largest font size">Çok Büyük</string>
-    <string name="settings_auto_dimness">Otomatik ekran kararması</string>
-    <string name="settings_auto_dimness_summary" translation_description="Summary for the night-mode screen dimming preference">Gece modunun ekranı karartma derecesi</string>
-    <string name="settings_auto_dimness_system" translation_description="Screen dimming option: leave brightness on the system setting">Sistem Varsayılanı</string>
-    <string name="settings_auto_dimness_dim" translation_description="Screen dimming option: dimmest screen setting">Çok Karanlık</string>
-    <string name="settings_auto_dimness_classic" translation_description="Screen dimming option: the hand-tuned brightness Sky Map used for its first 15 years">Klasik</string>
-    <string name="settings_disable_gyro" translation_description="Preference title for switching from the gyroscope to the legacy compass + accelerometer sensor pipeline">Eski sensörleri kullan</string>
-    <string name="settings_disable_gyro_summary" translation_description="Explanation of the legacy sensors preference and when to use it">
-    Pusula ve ivmeölçeri jiroskop yerine haritayı yönlendirmek için kullanın. Harita kayıyorsa veya cihazınızın jiroskopu düzgün çalışmıyorsa bunu deneyin; jiroskopu olmayan cihazlar bu sensörleri otomatik olarak kullanır.
-    </string>
-    <string name="settings_classic_sensors_only" translation_description="Summary noting a sensor preference only applies to the legacy non-gyroscope sensor path">Yalnızca eski sensörler kullanımda olduğunda geçerlidir</string>
-    <string name="settings_smoothing" translation_description="Preference title for the switch that turns sensor smoothing on or off">Sensör hareketini yumuşat</string>
-    <string name="settings_smoothing_summary" translation_description="Explanation of the sensor smoothing switch: it steadies the sky view, is on by default during a beta trial, invites feedback, and explains how to turn it off">
-    Gökyüzü görünümünü sabitler. Bu yenidir ve ayar yaparken varsayılan olarak açıktır; gecikme, titreme veya garip bir durum fark ederseniz geri bildirimde bulunmanızı çok isteriz. Ham sensörü kullanmayı tercih ederseniz istediğiniz zaman buradan kapatabilirsiniz.
-    </string>
-    <string name="settings_steadiness" translation_description="Preference title for how much the sky view is steadied while the phone is held still">Kararlılık</string>
-    <string name="settings_steadiness_summary" translation_description="Explanation of the steadiness preference and its trade-off">
-    Telefonu sabit tuttuğunuzda görünümün ne kadar dengeleneceği. Daha yüksek ayarlar daha az sarsıntı yapar ancak sabitlenmesi biraz daha uzun sürer.
-    </string>
-    <string name="settings_steadiness_low" translation_description="Least steadying of the view when the phone is held still">Düşük</string>
-    <string name="settings_steadiness_medium" translation_description="Moderate steadying of the view when the phone is held still">Orta</string>
-    <string name="settings_steadiness_high" translation_description="Strong steadying of the view when the phone is held still">Yüksek</string>
-    <string name="settings_steadiness_very_high" translation_description="Very strong steadying of the view when the phone is held still">Çok yüksek</string>
-    <string name="settings_steadiness_extreme" translation_description="Extremely strong steadying of the view when the phone is held still, for devices with noisy sensors">Aşırı</string>
-    <string name="settings_ease_off" translation_description="Preference title for how much the steadying relaxes once the phone starts moving">Hareket ederken yumuşatmayı azalt</string>
-    <string name="settings_ease_off_summary" translation_description="Explanation of the ease-off preference and its trade-off">
-    Hareket etmeye başladığınızda sabitlemenin ne ölçüde gevşeyeceği, böylece görünümün size ayak uydurması. Görünümün sabit veya hareketli olmasına bakılmaksızın aynı miktarda sabitlenmesi için Hiçbiri seçeneğini belirleyin.
-    </string>
-    <string name="settings_ease_off_none" translation_description="Steadying does not relax at all when the phone moves">Hiçbiri</string>
-    <string name="settings_ease_off_low" translation_description="Steadying relaxes a little when the phone moves">Az</string>
-    <string name="settings_ease_off_medium" translation_description="Steadying relaxes a moderate amount when the phone moves">Orta</string>
-    <string name="settings_ease_off_high" translation_description="Steadying relaxes a lot when the phone moves">Çok</string>
-    <string name="settings_reverse_magnetic_z">Manyetik Z Tersi</string>
-    <string name="settings_magnetic_correction">Manyetik düzeltmeyi uygulayın</string>
-    <string name="settings_magnetic_correction_summary" translation_description="Summary for the magnetic correction preference">Pusulayı manyetik ve coğrafi kuzey arasındaki farka göre düzeltir</string>
-    <string name="settings_view_direction">Görünüm Yönü</string>
-    <string name="settings_view_direction_summary" translation_description="Explanation of the view direction preference, covering both landscape rotation and pointer modes">
-    Ufku 90 derece döndür (zorunlu yatay konuma sahip cihazlar için) veya ekranın telefonun üst kısmının işaret ettiği yeri göstermesi için işaretçi modunu kullan
-    </string>
-    <!-- tm:omitted name="settings_view_direction_standard" reason="identical_to_source" -->
-    <string name="settings_view_direction_rotate90" translation_description="View direction option that rotates the screen by 90 degrees">Döndürülmüş ufuk</string>
-    <string name="settings_view_direction_telescope" translation_description="View direction option that shows the sky as pointed at by the long edge of the phone">İşaretçi modu</string>
 
     <!-- tm:omitted name="support_email" reason="identical_to_source" -->
-    <string name="diagnostics_button">Kontrol</string>
     <string name="diagnostics_title">Kontrol</string>
     <string name="diagnostics_share" translation_description="Accessibility label for the diagnostics screen button that emails these details to the developers">Geliştiricilere gönder</string>
     <string name="diagnostics_share_subject" translation_description="Subject line of the email a user sends from the diagnostics screen">Sky Map tanılama raporu</string>
@@ -333,16 +270,6 @@ Metalden uzak, açık bir alana geçin ve tekrar deneyin.]]></string>
     <string name="countdown_widget_preview_name" translation_description="Representative event name shown in the widget picker\'s preview of the countdown widget">Perseid zirvesi</string>
 
     <!-- Sky-event notifications (D77). -->
-    <string name="settings_section_notifications" translation_description="Settings section header for notification preferences">Bildirimler</string>
-    <string name="settings_notifications_intro" translation_description="Introduction under the notifications settings header, stating how rarely the app notifies">
-    Sky Map yalnızca nadir gökyüzü olayları hakkında, günde en fazla bir kez bildirim gönderir. Siz açana kadar her şey kapalıdır.
-    </string>
-    <string name="settings_shower_alerts" translation_description="Preference title: notify on the evening a meteor shower reaches its annual peak">Meteor yağmuru zirveleri</string>
-    <string name="settings_shower_alerts_summary" translation_description="Explanation of the meteor-shower notification preference">Yılda yaklaşık bir düzine, zirve akşamında</string>
-    <string name="settings_tonight_digest" translation_description="Preference title: a single evening notification summarizing what\'s visible tonight">Bu akşamki gökyüzü özeti</string>
-    <string name="settings_tonight_digest_summary" translation_description="Explanation of the tonight-digest notification preference">Gün batımından sonra tek bir özet, sakin gecelerde atlanır</string>
-    <string name="settings_notifications_blocked" translation_description="Warning row shown when the user enabled notifications in the app but blocked them at the system level">Sky Map için bildirimler engellendi</string>
-    <string name="settings_notifications_blocked_action" translation_description="Hint under the blocked-notifications warning; tapping opens the system settings page">Sistem ayarlarından izin vermek için dokunun</string>
     <string name="channel_showers_name" translation_description="Name of the meteor-shower notification channel, shown in the system\'s notification settings">Meteor yağmuru zirveleri</string>
     <string name="channel_showers_description" translation_description="Description of the meteor-shower notification channel in the system\'s notification settings">Yılda yaklaşık bir düzine, zirve akşamında</string>
     <string name="channel_digest_name" translation_description="Name of the tonight-digest notification channel, shown in the system\'s notification settings">Bu akşamki gökyüzü özeti</string>

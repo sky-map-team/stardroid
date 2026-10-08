@@ -93,50 +93,12 @@
     <string name="gallery_back" translation_description="Content description for the back arrow leaving the gallery screen">Atrás</string>
 
     <!-- Settings screen (v1 wording where a v1 string existed) -->
-    <string name="settings_title" translation_description="Title of the settings screen">Axustes</string>
     <string name="settings_ok" translation_description="Confirm button in settings dialogs">Aceptar</string>
-    <string name="settings_cancel" translation_description="Cancel button in settings dialogs">Cancelar</string>
-    <string name="settings_section_controls" translation_description="Preferences category heading for touch control settings">Controis</string>
-    <string name="settings_section_appearance" translation_description="Preferences title for section about app appearance">Aparencia</string>
-    <string name="settings_section_sensors" translation_description="Preferences category heading for sensor settings, intended for advanced/expert users">Axustes do sensor (expertos)</string>
-    <string name="settings_section_other" translation_description="Preferences category heading for miscellaneous settings such as the usage statistics opt-out">Outros</string>
-    <string name="enable_analytics" translation_description="Preference label to opt in to sending anonymous usage statistics">Enviar estatísticas de uso</string>
-    <string name="enable_analytics_desc" translation_description="Description/summary for the usage statistics preference">Mellora Sky Map enviando datos anónimos a Google Analytics</string>
-    <string name="settings_diagnostics_summary" translation_description="Summary for the settings row that opens the diagnostics screen, which shows technical sensor, location and performance readouts useful when reporting a problem">Detalles de sensor, localización e rendemento</string>
-    <string name="settings_tap_to_identify" translation_description="Preference title for showing info cards when tapping objects">Amosar info ao tocar</string>
-    <string name="settings_tap_to_identify_summary" translation_description="Preference summary for the tap info feature">Toca obxectos celestes para aprender sobre eles</string>
-    <string name="settings_tap_in_auto_mode" translation_description="Preference title for enabling info cards in auto/sensor mode">Tarxetas informativas en modo automático</string>
-    <string name="settings_tap_in_auto_mode_summary" translation_description="Preference summary for auto mode info cards">Tamén mostra tarxetas informativas ao tocar obxectos en modo automático (sensor)</string>
-    <string name="settings_auto_level_horizon" translation_description="Preference title for the auto-level horizon feature in manual mode">Horizonte automático</string>
     <string name="auto_level_on_toast" translation_description="Brief confirmation shown when a double tap turns horizon auto-leveling on in manual mode">Nivelación automática do horizonte activada</string>
     <string name="auto_level_off_toast" translation_description="Brief confirmation shown when a double tap turns horizon auto-leveling off in manual mode">Nivelación automática do horizonte desactivada</string>
-    <string name="settings_auto_level_horizon_summary" translation_description="Summary for the auto-level horizon preference">No modo manual, o horizonte volve gradualmente á horizontal despois de levantar os dedos</string>
-    <string name="settings_font_size" translation_description="Preference title: change the size of the text labels naming stars and other objects drawn on the sky">Tamaño de etiquetas do ceo</string>
-    <string name="settings_font_size_summary" translation_description="Help to go along with the sky label size preference. Explains that this size is fixed and does not change as the user zooms the map in or out.">O texto das etiquetas mantén este tamaño con calquera zoom</string>
-    <string name="settings_font_size_small" translation_description="Smallest font size">Pequeno</string>
-    <string name="settings_font_size_medium" translation_description="Normal font size">Mediano</string>
-    <string name="settings_font_size_large" translation_description="Large font size">Grande</string>
-    <string name="settings_font_size_extra_large" translation_description="Largest font size">Extra grande</string>
-    <string name="settings_auto_dimness" translation_description="Preference title: mode for automatically dimming the screen when night mode is selected">Atenuación automática</string>
-    <string name="settings_auto_dimness_summary" translation_description="Summary for the night-mode screen dimming preference">Canto atenúa a pantalla o modo nocturno</string>
-    <string name="settings_auto_dimness_system" translation_description="Screen dimming option: leave brightness on the system setting">Predeterminado do sistema</string>
-    <string name="settings_auto_dimness_dim" translation_description="Screen dimming option: dimmest screen setting">Moi tenue</string>
-    <string name="settings_auto_dimness_classic" translation_description="Screen dimming option: the hand-tuned brightness Sky Map used for its first 15 years">Clásico</string>
-    <string name="settings_disable_gyro" translation_description="Preference title for switching from the gyroscope to the legacy compass + accelerometer sensor pipeline">Usar sensores herdados</string>
-    <string name="settings_disable_gyro_summary" translation_description="Explanation of the legacy sensors preference and when to use it">Apunta o mapa usando a brúxula e o acelerómetro en lugar do xiroscopio. Proba isto se o mapa se desvía ou o xiroscopio do teu dispositivo funciona mal; os dispositivos sen xiroscopio usan estes sensores automaticamente.</string>
-    <string name="settings_classic_sensors_only" translation_description="Summary noting a sensor preference only applies to the legacy non-gyroscope sensor path">Só se aplica cando se usan sensores herdados</string>
-    <string name="settings_reverse_magnetic_z" translation_description="Preference title for reversing the magnetometer Z axis, a workaround for devices with a mis-mounted compass sensor">Z magnética inversa</string>
-    <string name="settings_magnetic_correction" translation_description="Preference label: apply magnetic declination correction so the compass points to true north instead of magnetic north">Usar corrección magnética</string>
-    <string name="settings_magnetic_correction_summary" translation_description="Summary for the magnetic correction preference">Corrixe o compás pola diferenza entre o norte magnético e o norte verdadeiro</string>
-    <string name="settings_view_direction" translation_description="Preference title for choosing the view/pointing direction mode">Dirección da vista</string>
-    <string name="settings_view_direction_summary" translation_description="Explanation of the view direction preference, covering both landscape rotation and pointer modes">Rotar o horizonte 90 graos (para dispositivos con orientación horizontal forzada) ou usar o modo punteiro para que a pantalla mostre cara onde apunta a parte superior do teléfono</string>
-    <string name="settings_view_direction_standard" translation_description="Normal viewing direction">Normal</string>
-    <string name="settings_view_direction_rotate90" translation_description="View direction option that rotates the screen by 90 degrees">Horizonte rotado</string>
-    <string name="settings_view_direction_telescope" translation_description="View direction option that shows the sky as pointed at by the long edge of the phone">Modo punteiro</string>
 
     <!-- Diagnostics screen (slice 15) -->
     <string name="support_email" translation_description="The developers\' contact email address" translatable="false">skymapdevs@gmail.com</string>
-    <string name="diagnostics_button" translation_description="Map-screen button that opens the diagnostics screen">Diagnósticos</string>
     <string name="diagnostics_title" translation_description="Title bar text for the diagnostics screen">Diagnósticos</string>
     <string name="diagnostics_share" translation_description="Accessibility label for the diagnostics screen button that emails these details to the developers">Enviar aos desenvolvedores</string>
     <string name="diagnostics_share_subject" translation_description="Subject line of the email a user sends from the diagnostics screen">Informe de diagnóstico de Sky Map</string>
@@ -288,14 +250,6 @@ Se é necesario, realiza o movemento en forma de oito (<a href="%s">ver unha dem
     <string name="countdown_widget_preview_name" translation_description="Representative event name shown in the widget picker\'s preview of the countdown widget">Pico das Perseidas</string>
 
     <!-- Sky-event notifications (D77). -->
-    <string name="settings_section_notifications" translation_description="Settings section header for notification preferences">Notificacións</string>
-    <string name="settings_notifications_intro" translation_description="Introduction under the notifications settings header, stating how rarely the app notifies">Sky Map só notifica sobre eventos celestes raros, como máximo unha vez ao día. Todo está desactivado ata que o actives.</string>
-    <string name="settings_shower_alerts" translation_description="Preference title: notify on the evening a meteor shower reaches its annual peak">Picos de choiva de meteoros</string>
-    <string name="settings_shower_alerts_summary" translation_description="Explanation of the meteor-shower notification preference">Aproximadamente unha ducia ao ano, na noite do pico</string>
-    <string name="settings_tonight_digest" translation_description="Preference title: a single evening notification summarizing what\'s visible tonight">Resumo do ceo desta noite</string>
-    <string name="settings_tonight_digest_summary" translation_description="Explanation of the tonight-digest notification preference">Un resumo vesperal, omitido en noites tranquilas</string>
-    <string name="settings_notifications_blocked" translation_description="Warning row shown when the user enabled notifications in the app but blocked them at the system level">As notificacións están bloqueadas para Sky Map</string>
-    <string name="settings_notifications_blocked_action" translation_description="Hint under the blocked-notifications warning; tapping opens the system settings page">Toca para permitilos na configuración do sistema</string>
     <string name="channel_showers_name" translation_description="Name of the meteor-shower notification channel, shown in the system\'s notification settings">Pico de choiva de meteoros</string>
     <string name="channel_showers_description" translation_description="Description of the meteor-shower notification channel in the system\'s notification settings">Ao redor dunha ducia ao ano, na noite do pico de actividade</string>
     <string name="channel_digest_name" translation_description="Name of the tonight-digest notification channel, shown in the system\'s notification settings">Resumo do ceo desta noite</string>

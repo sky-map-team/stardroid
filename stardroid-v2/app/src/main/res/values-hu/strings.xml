@@ -5,8 +5,4 @@
   everything else is translated by `tm`. Safe to hand-edit thereafter.
 -->
 <resources>
-    <string name="settings_tap_in_auto_mode">Infókártyák automatikus módban</string>
-    <string name="settings_tap_in_auto_mode_summary">
-    Infókártyák megjelenítése automatikus (szenzor) módban is az objektumok megérintésekor
-    </string>
 </resources>

@@ -90,74 +90,11 @@
     <string name="gallery_back" translation_description="Content description for the back arrow leaving the gallery screen">بازگشت</string>
 
     <!-- Settings screen (v1 wording where a v1 string existed) -->
-    <string name="settings_title">تنظیمات</string>
     <string name="settings_ok">باشه</string>
-    <string name="settings_cancel">لغو</string>
-    <string name="settings_section_controls">کنترل‌ها</string>
-    <string name="settings_section_appearance">ظاهر</string>
-    <string name="settings_section_sensors" translation_description="Preferences category heading for sensor settings">حسگرها</string>
-    <string name="settings_section_other">سایر</string>
-    <string name="enable_analytics">ارسال آمار استفاده</string>
-    <string name="enable_analytics_desc">بهبود برنامه با ارسال ناشناس آمار استفاده</string>
-    <string name="settings_diagnostics_summary" translation_description="Summary for the settings row that opens the diagnostics screen, which shows technical sensor, location and performance readouts useful when reporting a problem">جزئیات حسگر، موقعیت و عملکرد</string>
-    <string name="settings_tap_to_identify">نمایش اطلاعات با ضربه</string>
-    <string name="settings_tap_to_identify_summary">برای یادگیری درباره اجرام آسمانی، بر روی آنها ضربه بزنید</string>
-    <string name="settings_tap_in_auto_mode">کارت‌های اطلاعاتی در حالت خودکار</string>
-    <string name="settings_tap_in_auto_mode_summary">نمایش کارت‌های اطلاعاتی هنگام لمس اجرام در حالت خودکار (حسگرها)</string>
-    <string name="settings_auto_level_horizon">افق خودکار</string>
     <string name="auto_level_on_toast" translation_description="Brief confirmation shown when a double tap turns horizon auto-leveling on in manual mode">تراز خودکار افق روشن شد</string>
     <string name="auto_level_off_toast" translation_description="Brief confirmation shown when a double tap turns horizon auto-leveling off in manual mode">تراز خودکار افق خاموش شد</string>
-    <string name="settings_auto_level_horizon_summary">در حالت دستی، افق به تدریج پس از برداشتن انگشتان به حالت افقی بازمی‌گردد</string>
-    <string name="settings_font_size" translation_description="Preference title: change the size of the text labels naming stars and other objects drawn on the sky">اندازه برچسب‌های آسمان</string>
-    <string name="settings_font_size_summary" translation_description="Help to go along with the sky label size preference. Explains that this size is fixed and does not change as the user zooms the map in or out.">متن برچسب در هر بزرگنمایی به همین اندازه می‌ماند</string>
-    <string name="settings_font_size_small" translation_description="Smallest font size">کوچک</string>
-    <string name="settings_font_size_medium" translation_description="Normal font size">متوسط</string>
-    <string name="settings_font_size_large" translation_description="Large font size">بزرگ</string>
-    <string name="settings_font_size_extra_large" translation_description="Largest font size">خیلی بزرگ</string>
-    <string name="settings_auto_dimness">کاهش روشنایی خودکار صفحه</string>
-    <string name="settings_auto_dimness_summary" translation_description="Summary for the night-mode screen dimming preference">میزان کم‌نور شدن صفحه در حالت شب</string>
-    <string name="settings_auto_dimness_system" translation_description="Screen dimming option: leave brightness on the system setting">پیش‌فرض سیستم</string>
-    <string name="settings_auto_dimness_dim" translation_description="Screen dimming option: dimmest screen setting">بسیار کم‌نور</string>
-    <string name="settings_auto_dimness_classic" translation_description="Screen dimming option: the hand-tuned brightness Sky Map used for its first 15 years">کلاسیک</string>
-    <string name="settings_disable_gyro" translation_description="Preference title for switching from the gyroscope to the legacy compass + accelerometer sensor pipeline">استفاده از حسگرهای قدیمی</string>
-    <string name="settings_disable_gyro_summary" translation_description="Explanation of the legacy sensors preference and when to use it">
-    نقشه را با استفاده از قطب‌نما و شتاب‌سنج به جای ژیروسکوپ جهت‌دهی کنید. اگر نقشه منحرف می‌شود یا ژیروسکوپ دستگاه شما درست کار نمی‌کند، این گزینه را امتحان کنید؛ دستگاه‌هایی که ژیروسکوپ ندارند به طور خودکار از این حسگرها استفاده می‌کنند.
-    </string>
-    <string name="settings_classic_sensors_only" translation_description="Summary noting a sensor preference only applies to the legacy non-gyroscope sensor path">فقط هنگام استفاده از حسگرهای قدیمی اعمال می‌شود</string>
-    <string name="settings_smoothing" translation_description="Preference title for the switch that turns sensor smoothing on or off">حسگر حرکتی روان</string>
-    <string name="settings_smoothing_summary" translation_description="Explanation of the sensor smoothing switch: it steadies the sky view, is on by default during a beta trial, invites feedback, and explains how to turn it off">
-    نمای آسمان را ثابت می‌کند. این ویژگی جدید است و برای تنظیم دقیق آن به طور پیش‌فرض فعال است. اگر متوجه تاخیر، لرزش یا مورد عجیبی شدید، خوشحال می‌شویم نظرات خود را با ما در میان بگذارید. اگر ترجیح می‌دهید از حسگر خام استفاده کنید، می‌توانید هر زمان آن را از اینجا خاموش کنید.
-    </string>
-    <string name="settings_steadiness" translation_description="Preference title for how much the sky view is steadied while the phone is held still">ثبات</string>
-    <string name="settings_steadiness_summary" translation_description="Explanation of the steadiness preference and its trade-off">
-    میزان پایداری تصویر هنگامی که گوشی را ثابت نگه می‌دارید. مقادیر بالاتر لرزش کمتری دارند اما تثبیت آن‌ها لحظه‌ای بیشتر طول می‌کشد.
-    </string>
-    <string name="settings_steadiness_low" translation_description="Least steadying of the view when the phone is held still">کم</string>
-    <string name="settings_steadiness_medium" translation_description="Moderate steadying of the view when the phone is held still">متوسط</string>
-    <string name="settings_steadiness_high" translation_description="Strong steadying of the view when the phone is held still">زیاد</string>
-    <string name="settings_steadiness_very_high" translation_description="Very strong steadying of the view when the phone is held still">بسیار زیاد</string>
-    <string name="settings_steadiness_extreme" translation_description="Extremely strong steadying of the view when the phone is held still, for devices with noisy sensors">شدید</string>
-    <string name="settings_ease_off" translation_description="Preference title for how much the steadying relaxes once the phone starts moving">کاهش ثبات هنگام حرکت</string>
-    <string name="settings_ease_off_summary" translation_description="Explanation of the ease-off preference and its trade-off">
-    میزان کاهش پایداری هنگام شروع حرکت، به‌طوری که نما بتواند با شما همراه شود. برای حفظ پایداری یکسان در حالت ثابت یا متحرک، گزینه «هیچ» را انتخاب کنید.
-    </string>
-    <string name="settings_ease_off_none" translation_description="Steadying does not relax at all when the phone moves">هیچ‌کدام</string>
-    <string name="settings_ease_off_low" translation_description="Steadying relaxes a little when the phone moves">کمی</string>
-    <string name="settings_ease_off_medium" translation_description="Steadying relaxes a moderate amount when the phone moves">متوسط</string>
-    <string name="settings_ease_off_high" translation_description="Steadying relaxes a lot when the phone moves">زیاد</string>
-    <string name="settings_reverse_magnetic_z">معکوس کردن حسگر مغناطیسی</string>
-    <string name="settings_magnetic_correction">اصلاح با جهت‌نمای مغناطیسی</string>
-    <string name="settings_magnetic_correction_summary" translation_description="Summary for the magnetic correction preference">قطب‌نما را برای تفاوت بین شمال مغناطیسی و شمال واقعی تصحیح می‌کند</string>
-    <string name="settings_view_direction">چرخش افق</string>
-    <string name="settings_view_direction_summary" translation_description="Explanation of the view direction preference, covering both landscape rotation and pointer modes">
-    افق را ۹۰ درجه بچرخانید (برای دستگاه‌هایی با حالت افقی اجباری) یا از حالت اشاره‌گر استفاده کنید تا صفحه نمایش آنچه را که بالای گوشی به آن اشاره می‌کند، نشان دهد
-    </string>
-    <string name="settings_view_direction_standard" translation_description="Normal viewing direction">عادی</string>
-    <string name="settings_view_direction_rotate90" translation_description="View direction option that rotates the screen by 90 degrees">افق چرخانده شده</string>
-    <string name="settings_view_direction_telescope" translation_description="View direction option that shows the sky as pointed at by the long edge of the phone">حالت اشاره‌گر</string>
 
     <!-- tm:omitted name="support_email" reason="identical_to_source" -->
-    <string name="diagnostics_button">عیب یابی</string>
     <string name="diagnostics_title">عیب یابی</string>
     <string name="diagnostics_share" translation_description="Accessibility label for the diagnostics screen button that emails these details to the developers">ارسال به توسعه‌دهندگان</string>
     <string name="diagnostics_share_subject" translation_description="Subject line of the email a user sends from the diagnostics screen">گزارش عیب‌یابی Sky Map</string>
@@ -333,16 +270,6 @@
     <string name="countdown_widget_preview_name" translation_description="Representative event name shown in the widget picker\'s preview of the countdown widget">اوج برساوشی</string>
 
     <!-- Sky-event notifications (D77). -->
-    <string name="settings_section_notifications" translation_description="Settings section header for notification preferences">اعلان‌ها</string>
-    <string name="settings_notifications_intro" translation_description="Introduction under the notifications settings header, stating how rarely the app notifies">
-    Sky Map فقط رویدادهای نادر آسمانی را اطلاع‌رسانی می‌کند، حداکثر یک بار در روز. همه چیز خاموش است تا زمانی که شما آن را روشن کنید.
-    </string>
-    <string name="settings_shower_alerts" translation_description="Preference title: notify on the evening a meteor shower reaches its annual peak">اوج بارش‌های شهابی</string>
-    <string name="settings_shower_alerts_summary" translation_description="Explanation of the meteor-shower notification preference">حدود دوازده مورد در سال، در غروب روز اوج</string>
-    <string name="settings_tonight_digest" translation_description="Preference title: a single evening notification summarizing what\'s visible tonight">خلاصه آسمان امشب</string>
-    <string name="settings_tonight_digest_summary" translation_description="Explanation of the tonight-digest notification preference">یک خلاصه پس از غروب آفتاب، در شب‌های آرام نادیده گرفته می‌شود</string>
-    <string name="settings_notifications_blocked" translation_description="Warning row shown when the user enabled notifications in the app but blocked them at the system level">اعلان‌ها برای Sky Map مسدود شده‌اند</string>
-    <string name="settings_notifications_blocked_action" translation_description="Hint under the blocked-notifications warning; tapping opens the system settings page">برای فعال کردن آن‌ها در تنظیمات سیستم ضربه بزنید</string>
     <string name="channel_showers_name" translation_description="Name of the meteor-shower notification channel, shown in the system\'s notification settings">اوج بارش‌های شهابی</string>
     <string name="channel_showers_description" translation_description="Description of the meteor-shower notification channel in the system\'s notification settings">حدود دوازده مورد در سال، در غروب روز اوج</string>
     <string name="channel_digest_name" translation_description="Name of the tonight-digest notification channel, shown in the system\'s notification settings">خلاصه آسمان امشب</string>
