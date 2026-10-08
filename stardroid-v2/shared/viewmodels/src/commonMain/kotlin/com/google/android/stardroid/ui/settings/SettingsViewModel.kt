@@ -118,7 +118,22 @@ class SettingsViewModel(
     experimentConfig: ExperimentConfig = ExperimentConfig.Static,
     private val fusedSensorAvailable: Boolean = true,
     gles3Available: Boolean = false,
+    private val classicSensorsAvailable: Boolean = true,
+    analyticsAvailable: Boolean = true,
 ) : ViewModel() {
+    /**
+     * Whether the "disable gyro" switch shows: it picks Android's classic accelerometer and
+     * magnetometer path, and a platform without one (iOS, where Core Motion's fused attitude is
+     * the only path) would show a switch that does nothing.
+     */
+    val classicSensorChoiceAvailable: Boolean = classicSensorsAvailable
+
+    /**
+     * Whether the analytics opt-out shows: a build that collects nothing (iOS, so far) has
+     * nothing to opt out of.
+     */
+    val analyticsChoiceAvailable: Boolean = analyticsAvailable
+
     /** Whether the notifications section shows at all (D77 experiment gate). */
     val notificationsAvailable: Boolean =
         experimentConfig.isEnabled(Experiment.NOTIFICATIONS)
@@ -149,12 +164,17 @@ class SettingsViewModel(
      * whether its settings are the ones worth showing. `disableGyro` alone isn't enough:
      * `SensorOrientationSource` also falls back to that path on a device with no
      * `TYPE_ROTATION_VECTOR` sensor at all, where `disableGyro` stays false and the user would
-     * otherwise be shown only the fused-path controls, which do nothing for them.
+     * otherwise be shown only the fused-path controls, which do nothing for them. Never, on a
+     * platform without that path.
      */
     val legacyPathActive: StateFlow<Boolean> =
         settings.disableGyro
-            .map { it || !fusedSensorAvailable }
-            .stateIn(viewModelScope, SharingStarted.Eagerly, !fusedSensorAvailable)
+            .map { classicSensorsAvailable && (it || !fusedSensorAvailable) }
+            .stateIn(
+                viewModelScope,
+                SharingStarted.Eagerly,
+                classicSensorsAvailable && !fusedSensorAvailable,
+            )
 
     val state: StateFlow<SettingsUiState> =
         combine(

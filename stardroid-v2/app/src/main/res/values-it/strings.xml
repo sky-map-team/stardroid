@@ -92,78 +92,11 @@
     <string name="gallery_back" translation_description="Content description for the back arrow leaving the gallery screen">Indietro</string>
 
     <!-- Settings screen (v1 wording where a v1 string existed) -->
-    <string name="settings_title">Impostazioni</string>
     <!-- tm:omitted name="settings_ok" reason="identical_to_source" -->
-    <string name="settings_cancel">Annulla</string>
-    <string name="settings_section_controls">Controlli</string>
-    <string name="settings_section_appearance">Aspetto</string>
-    <string name="settings_section_sensors" translation_description="Preferences category heading for sensor settings">Sensori</string>
-    <string name="settings_section_other">Altro</string>
-    <string name="enable_analytics">Invia statistiche di utilizzo</string>
-    <string name="enable_analytics_desc">Migliora Sky Map inviando dati anonimi a Google Analytics</string>
-    <string name="settings_diagnostics_summary" translation_description="Summary for the settings row that opens the diagnostics screen, which shows technical sensor, location and performance readouts useful when reporting a problem">Dettagli sensore, posizione e prestazioni</string>
-    <string name="settings_tap_to_identify">Mostra info al tocco</string>
-    <string name="settings_tap_to_identify_summary">Tocca gli oggetti celesti per saperne di più</string>
-    <string name="settings_tap_in_auto_mode">Schede info in modalità automatica</string>
-    <string name="settings_tap_in_auto_mode_summary">
-    Mostra le schede info anche toccando gli oggetti in modalità automatica (sensori)
-    </string>
-    <string name="settings_auto_level_horizon">Orizzonte auto-livellato</string>
     <string name="auto_level_on_toast" tm_human="true" translation_description="Brief confirmation shown when a double tap turns horizon auto-leveling on in manual mode">Livellamento automatico orizzonte attivato</string>
     <string name="auto_level_off_toast" tm_human="true" translation_description="Brief confirmation shown when a double tap turns horizon auto-leveling off in manual mode">Livellamento automatico orizzonte disattivato</string>
-    <string name="settings_auto_level_horizon_summary">
-    In modalità manuale, l\'orizzonte ritorna gradualmente all\'orizzontale dopo aver sollevato le dita
-    </string>
-    <string name="settings_font_size" translation_description="Preference title: change the size of the text labels naming stars and other objects drawn on the sky">Dimensione etichette cielo</string>
-    <string name="settings_font_size_summary" translation_description="Help to go along with the sky label size preference. Explains that this size is fixed and does not change as the user zooms the map in or out.">Il testo delle etichette mantiene questa dimensione a qualsiasi zoom</string>
-    <string name="settings_font_size_small" translation_description="Smallest font size">Piccolo</string>
-    <string name="settings_font_size_medium" translation_description="Normal font size">Medio</string>
-    <string name="settings_font_size_large" translation_description="Large font size">Grande</string>
-    <string name="settings_font_size_extra_large" translation_description="Largest font size">Molto grande</string>
-    <string name="settings_auto_dimness">Oscuramento automatico dello schermo</string>
-    <string name="settings_auto_dimness_summary" tm_human="true" translation_description="Summary for the night-mode screen dimming preference">Di quanto la modalità notte attenua lo schermo</string>
-    <string name="settings_auto_dimness_system" translation_description="Screen dimming option: leave brightness on the system setting">Predefinito di sistema</string>
-    <string name="settings_auto_dimness_dim" tm_human="true" translation_description="Screen dimming option: dimmest screen setting">Molto scuro</string>
-    <string name="settings_auto_dimness_classic" translation_description="Screen dimming option: the hand-tuned brightness Sky Map used for its first 15 years">Classico</string>
-    <string name="settings_disable_gyro" translation_description="Preference title for switching from the gyroscope to the legacy compass + accelerometer sensor pipeline">Usa sensori legacy</string>
-    <string name="settings_disable_gyro_summary" translation_description="Explanation of the legacy sensors preference and when to use it">
-    Punta la mappa usando la bussola e l\'accelerometro invece del giroscopio. Prova questa opzione se la mappa si sposta o il giroscopio del tuo dispositivo funziona male; i dispositivi senza giroscopio usano questi sensori automaticamente.
-    </string>
-    <string name="settings_classic_sensors_only" translation_description="Summary noting a sensor preference only applies to the legacy non-gyroscope sensor path">Si applica solo quando sono in uso i sensori legacy</string>
-    <string name="settings_smoothing" translation_description="Preference title for the switch that turns sensor smoothing on or off">Movimento sensore fluido</string>
-    <string name="settings_smoothing_summary" translation_description="Explanation of the sensor smoothing switch: it steadies the sky view, is on by default during a beta trial, invites feedback, and explains how to turn it off">
-    Stabilizza la vista del cielo. Questa è una novità ed è attiva per impostazione predefinita mentre la perfezioniamo: se noti ritardi, sfarfallii o qualsiasi anomalia, ci farebbe molto piacere ricevere il tuo riscontro. Puoi disattivarla qui in qualsiasi momento se preferisci usare il sensore grezzo.
-    </string>
-    <string name="settings_steadiness" translation_description="Preference title for how much the sky view is steadied while the phone is held still">Stabilità</string>
-    <string name="settings_steadiness_summary" translation_description="Explanation of the steadiness preference and its trade-off">
-    Quanto la vista viene stabilizzata mentre tieni il telefono fermo. Impostazioni più elevate tremano meno ma impiegano un momento in più per stabilizzarsi.
-    </string>
-    <string name="settings_steadiness_low" translation_description="Least steadying of the view when the phone is held still">Bassa</string>
-    <string name="settings_steadiness_medium" translation_description="Moderate steadying of the view when the phone is held still">Media</string>
-    <string name="settings_steadiness_high" translation_description="Strong steadying of the view when the phone is held still">Alta</string>
-    <string name="settings_steadiness_very_high" translation_description="Very strong steadying of the view when the phone is held still">Molto alta</string>
-    <string name="settings_steadiness_extreme" translation_description="Extremely strong steadying of the view when the phone is held still, for devices with noisy sensors">Estrema</string>
-    <string name="settings_ease_off" translation_description="Preference title for how much the steadying relaxes once the phone starts moving">Riduci in movimento</string>
-    <string name="settings_ease_off_summary" translation_description="Explanation of the ease-off preference and its trade-off">
-    Di quanto si attenua la stabilizzazione quando inizi a muoverti, in modo che la visuale ti segua. Scegli Nessuna per stabilizzare la visuale nella stessa misura sia quando è ferma sia quando è in movimento.
-    </string>
-    <string name="settings_ease_off_none" translation_description="Steadying does not relax at all when the phone moves">Nessuna</string>
-    <string name="settings_ease_off_low" translation_description="Steadying relaxes a little when the phone moves">Poca</string>
-    <string name="settings_ease_off_medium" translation_description="Steadying relaxes a moderate amount when the phone moves">Moderata</string>
-    <string name="settings_ease_off_high" translation_description="Steadying relaxes a lot when the phone moves">Molta</string>
-    <string name="settings_reverse_magnetic_z">Inverti asse Z magnetico</string>
-    <string name="settings_magnetic_correction">Usa correzione magnetica</string>
-    <string name="settings_magnetic_correction_summary" translation_description="Summary for the magnetic correction preference">Corregge la bussola per la differenza tra nord magnetico e nord vero</string>
-    <string name="settings_view_direction">Direzione di visualizzazione</string>
-    <string name="settings_view_direction_summary" translation_description="Explanation of the view direction preference, covering both landscape rotation and pointer modes">
-    Ruota l\'orizzonte di 90 gradi (per dispositivi con orientamento orizzontale forzato) o usa la modalità puntatore per mostrare sullo schermo ciò che la parte superiore del telefono sta puntando
-    </string>
-    <string name="settings_view_direction_standard" translation_description="Normal viewing direction">Normale</string>
-    <string name="settings_view_direction_rotate90" translation_description="View direction option that rotates the screen by 90 degrees">Orizzonte ruotato</string>
-    <string name="settings_view_direction_telescope" translation_description="View direction option that shows the sky as pointed at by the long edge of the phone">Modalità puntatore</string>
 
     <!-- tm:omitted name="support_email" reason="identical_to_source" -->
-    <string name="diagnostics_button">Diagnostica</string>
     <string name="diagnostics_title">Diagnostica</string>
     <string name="diagnostics_share" translation_description="Accessibility label for the diagnostics screen button that emails these details to the developers">Invia agli sviluppatori</string>
     <string name="diagnostics_share_subject" translation_description="Subject line of the email a user sends from the diagnostics screen">Report diagnostico Sky Map</string>
@@ -337,16 +270,6 @@
     <string name="countdown_widget_preview_name" translation_description="Representative event name shown in the widget picker\'s preview of the countdown widget">Picco delle Perseidi</string>
 
     <!-- Sky-event notifications (D77). -->
-    <string name="settings_section_notifications" translation_description="Settings section header for notification preferences">Notifiche</string>
-    <string name="settings_notifications_intro" translation_description="Introduction under the notifications settings header, stating how rarely the app notifies">
-    Sky Map notifica solo eventi celesti rari, al massimo una volta al giorno. Tutto è disattivato finché non lo attivi.
-    </string>
-    <string name="settings_shower_alerts" translation_description="Preference title: notify on the evening a meteor shower reaches its annual peak">Picchi di sciami meteorici</string>
-    <string name="settings_shower_alerts_summary" translation_description="Explanation of the meteor-shower notification preference">Circa una dozzina all\'anno, la sera del picco</string>
-    <string name="settings_tonight_digest" translation_description="Preference title: a single evening notification summarizing what\'s visible tonight">Riepilogo del cielo di stanotte</string>
-    <string name="settings_tonight_digest_summary" translation_description="Explanation of the tonight-digest notification preference">Un riepilogo dopo il tramonto, saltato nelle notti tranquille</string>
-    <string name="settings_notifications_blocked" translation_description="Warning row shown when the user enabled notifications in the app but blocked them at the system level">Le notifiche sono bloccate per Sky Map</string>
-    <string name="settings_notifications_blocked_action" translation_description="Hint under the blocked-notifications warning; tapping opens the system settings page">Tocca per consentirle nelle impostazioni di sistema</string>
     <string name="channel_showers_name" translation_description="Name of the meteor-shower notification channel, shown in the system\'s notification settings">Picchi di sciami meteorici</string>
     <string name="channel_showers_description" translation_description="Description of the meteor-shower notification channel in the system\'s notification settings">Circa una dozzina all\'anno, la sera del picco</string>
     <string name="channel_digest_name" translation_description="Name of the tonight-digest notification channel, shown in the system\'s notification settings">Riepilogo del cielo di stanotte</string>

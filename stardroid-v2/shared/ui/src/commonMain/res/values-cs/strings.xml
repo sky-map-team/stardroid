@@ -297,4 +297,79 @@
     <string name="warm_welcome_finish">Spustit!</string>
     <string name="warm_welcome_sensor_ok">Funguje</string>
     <string name="warm_welcome_sensor_missing">Chybí</string>
+    <string name="settings_title">Nastavení</string>
+    <string name="settings_cancel">Storno</string>
+    <string name="settings_section_controls">Ovládání</string>
+    <string name="settings_section_appearance">Vzhled</string>
+    <string name="settings_section_sensors" translation_description="Preferences category heading for sensor settings">Senzory</string>
+    <string name="settings_section_other">Ostatní</string>
+    <string name="enable_analytics">Odeslat statistiky o používání</string>
+    <string name="enable_analytics_desc">Pomozte zlepšit Sky Map odesíláním anonimních dat do Google Analytics</string>
+    <string name="settings_diagnostics_summary" translation_description="Summary for the settings row that opens the diagnostics screen, which shows technical sensor, location and performance readouts useful when reporting a problem">Podrobnosti o senzoru, poloze a výkonu</string>
+    <string name="settings_tap_to_identify">Zobrazit informace při klepnutí</string>
+    <string name="settings_tap_to_identify_summary">Klepněte na nebeské objekty a dozvíte se o nich více</string>
+    <string name="settings_tap_in_auto_mode">Info karty v automatickém režimu</string>
+    <string name="settings_tap_in_auto_mode_summary">Zobrazit info karty i při klepnutí na objekty v automatickém (senzorový) režimu</string>
+    <string name="settings_auto_level_horizon">Automatické vyrovnání horizontu</string>
+    <string name="settings_auto_level_horizon_summary">
+    V manuálním režimu se horizont postupně vrátí do vodorovné polohy poté, co zvedete prsty
+    </string>
+    <string name="settings_font_size" translation_description="Preference title: change the size of the text labels naming stars and other objects drawn on the sky">Velikost popisků oblohy</string>
+    <string name="settings_font_size_summary" translation_description="Help to go along with the sky label size preference. Explains that this size is fixed and does not change as the user zooms the map in or out.">Text popisku zůstává v této velikosti při jakémkoli přiblížení</string>
+    <string name="settings_font_size_small" translation_description="Smallest font size">Malá</string>
+    <string name="settings_font_size_medium" translation_description="Normal font size">Střední</string>
+    <string name="settings_font_size_large" translation_description="Large font size">Velká</string>
+    <string name="settings_font_size_extra_large" translation_description="Largest font size">Extra velká</string>
+    <string name="settings_auto_dimness">Automatické ztmavení obrazovky</string>
+    <string name="settings_auto_dimness_summary" translation_description="Summary for the night-mode screen dimming preference">Jak moc noční režim ztlumí obrazovku</string>
+    <string name="settings_auto_dimness_system" translation_description="Screen dimming option: leave brightness on the system setting">Výchozí systémové</string>
+    <string name="settings_auto_dimness_dim" translation_description="Screen dimming option: dimmest screen setting">Velmi tlumené</string>
+    <string name="settings_auto_dimness_classic" translation_description="Screen dimming option: the hand-tuned brightness Sky Map used for its first 15 years">Klasické</string>
+    <string name="settings_disable_gyro" translation_description="Preference title for switching from the gyroscope to the legacy compass + accelerometer sensor pipeline">Použít starší senzory</string>
+    <string name="settings_disable_gyro_summary" translation_description="Explanation of the legacy sensors preference and when to use it">
+    Namiřte mapu pomocí kompasu a akcelerometru namísto gyroskopu. Vyzkoušejte to, pokud se mapa posouvá nebo se gyroskop vašeho zařízení chová nestandardně; zařízení bez gyroskopu používají tyto senzory automaticky.
+    </string>
+    <string name="settings_classic_sensors_only" translation_description="Summary noting a sensor preference only applies to the legacy non-gyroscope sensor path">Platí pouze při použití starších senzorů</string>
+    <string name="settings_smoothing" translation_description="Preference title for the switch that turns sensor smoothing on or off">Vyhladit pohyb senzorů</string>
+    <string name="settings_smoothing_summary" translation_description="Explanation of the sensor smoothing switch: it steadies the sky view, is on by default during a beta trial, invites feedback, and explains how to turn it off">
+    Zklidňuje pohled na oblohu. Je to novinka a ve výchozím nastavení je zapnutá, zatímco jilaďte — pokud si všimnete zpoždění, chvění nebo čehokoli neobvyklého, budeme rádi, když nám dáte vědět. Kdykoli ji můžete vypnout zde, pokud dáváte přednost surovému snímači.
+    </string>
+    <string name="settings_steadiness" translation_description="Preference title for how much the sky view is steadied while the phone is held still">Stabilita</string>
+    <string name="settings_steadiness_summary" translation_description="Explanation of the steadiness preference and its trade-off">
+    Míra ustálení zobrazení při držení telefonu v klidu. Vyšší hodnoty méně třesou, ale trvá o chvíli déle, než se stabilizují.
+    </string>
+    <string name="settings_steadiness_low" translation_description="Least steadying of the view when the phone is held still">Nízká</string>
+    <string name="settings_steadiness_medium" translation_description="Moderate steadying of the view when the phone is held still">Střední</string>
+    <string name="settings_steadiness_high" translation_description="Strong steadying of the view when the phone is held still">Vysoká</string>
+    <string name="settings_steadiness_very_high" translation_description="Very strong steadying of the view when the phone is held still">Velmi vysoká</string>
+    <string name="settings_steadiness_extreme" translation_description="Extremely strong steadying of the view when the phone is held still, for devices with noisy sensors">Extrémní</string>
+    <string name="settings_ease_off" translation_description="Preference title for how much the steadying relaxes once the phone starts moving">Zvolnit při pohybu</string>
+    <string name="settings_ease_off_summary" translation_description="Explanation of the ease-off preference and its trade-off">
+    Jak moc se stabilizace uvolní, jakmile se začnete pohybovat, aby obraz stíhal vaše pohyby. Zvolte Žádné pro zachování stejné míry stabilizace v klidu i při pohybu.
+    </string>
+    <string name="settings_ease_off_none" translation_description="Steadying does not relax at all when the phone moves">Žádné</string>
+    <string name="settings_ease_off_low" translation_description="Steadying relaxes a little when the phone moves">Trochu</string>
+    <string name="settings_ease_off_medium" translation_description="Steadying relaxes a moderate amount when the phone moves">Středně</string>
+    <string name="settings_ease_off_high" translation_description="Steadying relaxes a lot when the phone moves">Hodně</string>
+    <string name="settings_reverse_magnetic_z">Obrátit magnetické pole v ose Z</string>
+    <string name="settings_magnetic_correction">Použít magnetickou korekci</string>
+    <string name="settings_magnetic_correction_summary" translation_description="Summary for the magnetic correction preference">Koriguje kompas pro rozdíl mezi magnetickým a skutečným severem</string>
+    <string name="settings_view_direction">Otočit horizont</string>
+    <string name="settings_view_direction_summary" translation_description="Explanation of the view direction preference, covering both landscape rotation and pointer modes">
+    Otočit horizont o 90 stupňů (pro zařízení s vynucenou orientací na šířku) nebo použít režim ukazatele, aby obrazovka ukazovala, na co míří horní část telefonu
+    </string>
+    <string name="settings_view_direction_standard" translation_description="Normal viewing direction">Normální</string>
+    <string name="settings_view_direction_rotate90" translation_description="View direction option that rotates the screen by 90 degrees">Otočený horizont</string>
+    <string name="settings_view_direction_telescope" translation_description="View direction option that shows the sky as pointed at by the long edge of the phone">Režim ukazatele</string>
+    <string name="diagnostics_button">Diagnostika</string>
+    <string name="settings_section_notifications" translation_description="Settings section header for notification preferences">Oznámení</string>
+    <string name="settings_notifications_intro" translation_description="Introduction under the notifications settings header, stating how rarely the app notifies">
+    Sky Map upozorňuje pouze na vzácné nebeské události, maximálně jednou denně. Vše je vypnuto, dokud to nezapnete.
+    </string>
+    <string name="settings_shower_alerts" translation_description="Preference title: notify on the evening a meteor shower reaches its annual peak">Vrcholy meteorických rojů</string>
+    <string name="settings_shower_alerts_summary" translation_description="Explanation of the meteor-shower notification preference">Asi tucet ročně, večer v den vrcholu</string>
+    <string name="settings_tonight_digest" translation_description="Preference title: a single evening notification summarizing what\'s visible tonight">Souhrn dnešní oblohy</string>
+    <string name="settings_tonight_digest_summary" translation_description="Explanation of the tonight-digest notification preference">Jeden souhrn po západu slunce, přeskočeno v klidných nocích</string>
+    <string name="settings_notifications_blocked" translation_description="Warning row shown when the user enabled notifications in the app but blocked them at the system level">Oznámení jsou blokována pro Sky Map</string>
+    <string name="settings_notifications_blocked_action" translation_description="Hint under the blocked-notifications warning; tapping opens the system settings page">Klepnutím je povolíte v nastavení systému</string>
 </resources>

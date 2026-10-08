@@ -10,8 +10,10 @@
 package com.google.android.stardroid.ui.common
 
 import android.Manifest
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build
+import android.provider.Settings
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.runtime.Composable
@@ -19,6 +21,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.ui.platform.LocalContext
+import androidx.core.app.NotificationManagerCompat
 import androidx.core.content.ContextCompat
 
 // POST_NOTIFICATIONS is a runtime permission from Android 13 (API 33); before that, posting
@@ -41,6 +44,23 @@ internal actual fun rememberNotificationPermissionRequest(onDenied: () -> Unit):
             ) {
                 launcher.launch(Manifest.permission.POST_NOTIFICATIONS)
             }
+        }
+    }
+}
+
+@Composable
+internal actual fun notificationsBlocked(): Boolean =
+    !NotificationManagerCompat.from(LocalContext.current).areNotificationsEnabled()
+
+@Composable
+internal actual fun rememberOpenNotificationSettings(): () -> Unit {
+    val context = LocalContext.current
+    return remember(context) {
+        {
+            context.startActivity(
+                Intent(Settings.ACTION_APP_NOTIFICATION_SETTINGS)
+                    .putExtra(Settings.EXTRA_APP_PACKAGE, context.packageName),
+            )
         }
     }
 }

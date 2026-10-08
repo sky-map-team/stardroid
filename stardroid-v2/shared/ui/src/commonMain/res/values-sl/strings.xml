@@ -297,4 +297,79 @@
     <string name="warm_welcome_finish">Zaženi!</string>
     <string name="warm_welcome_sensor_ok">Deluje</string>
     <string name="warm_welcome_sensor_missing">Manjka</string>
+    <string name="settings_title">Nastavitve</string>
+    <string name="settings_cancel">Prekliči</string>
+    <string name="settings_section_controls">Upravljanje</string>
+    <string name="settings_section_appearance">Videz</string>
+    <string name="settings_section_sensors" translation_description="Preferences category heading for sensor settings">Senzorji</string>
+    <string name="settings_section_other">Drugo</string>
+    <string name="enable_analytics">Pošlji statistiko uporabe</string>
+    <string name="enable_analytics_desc">Izboljšajte Sky Map z pošiljanjem anonimnih podatkov v Google Analytics</string>
+    <string name="settings_diagnostics_summary" translation_description="Summary for the settings row that opens the diagnostics screen, which shows technical sensor, location and performance readouts useful when reporting a problem">Podrobnosti o senzorju, lokaciji in zmogljivosti</string>
+    <string name="settings_tap_to_identify">Prikaži podatke ob dotiku</string>
+    <string name="settings_tap_to_identify_summary">Dotaknite se nebesnih objektov, da se o njih naučite</string>
+    <string name="settings_tap_in_auto_mode">Informacijske kartice v samodejnem načinu</string>
+    <string name="settings_tap_in_auto_mode_summary">
+    Prikaži tudi informacijske kartice ob dotiku objektov v samodejnem (senzorskem) načinu
+    </string>
+    <string name="settings_auto_level_horizon">Samodejno poravnavanje obzorja</string>
+    <string name="settings_auto_level_horizon_summary">V ročnem načinu se obzorje postopoma vrne v vodoravno lego, ko dvignete prste</string>
+    <string name="settings_font_size" translation_description="Preference title: change the size of the text labels naming stars and other objects drawn on the sky">Velikost oznak na nebu</string>
+    <string name="settings_font_size_summary" translation_description="Help to go along with the sky label size preference. Explains that this size is fixed and does not change as the user zooms the map in or out.">Besedilo oznake ostane te velikosti pri vsaki povečavi</string>
+    <string name="settings_font_size_small" translation_description="Smallest font size">Majhna</string>
+    <string name="settings_font_size_medium" translation_description="Normal font size">Srednja</string>
+    <string name="settings_font_size_large" translation_description="Large font size">Velika</string>
+    <string name="settings_font_size_extra_large" translation_description="Largest font size">Zelo velika</string>
+    <string name="settings_auto_dimness">Samodejno zatemnjevanje zaslona</string>
+    <string name="settings_auto_dimness_summary" translation_description="Summary for the night-mode screen dimming preference">Koliko nočni način zatemni zaslon</string>
+    <string name="settings_auto_dimness_system" translation_description="Screen dimming option: leave brightness on the system setting">Sistemska privzeta</string>
+    <string name="settings_auto_dimness_dim" translation_description="Screen dimming option: dimmest screen setting">Zelo zatemnjeno</string>
+    <string name="settings_auto_dimness_classic" translation_description="Screen dimming option: the hand-tuned brightness Sky Map used for its first 15 years">Klasično</string>
+    <string name="settings_disable_gyro" translation_description="Preference title for switching from the gyroscope to the legacy compass + accelerometer sensor pipeline">Uporabi starejše senzorje</string>
+    <string name="settings_disable_gyro_summary" translation_description="Explanation of the legacy sensors preference and when to use it">
+    Usmerite zemljevid s kompasom in merilnikom pospeška namesto žiroskopa. Poskusite to, če zemljevid drsi ali se žiroskop vaše naprave ne obnaša pravilno; naprave brez žiroskopa samodejno uporabljajo te senzorje.
+    </string>
+    <string name="settings_classic_sensors_only" translation_description="Summary noting a sensor preference only applies to the legacy non-gyroscope sensor path">Velja samo, ko so v uporabi starejši senzorji</string>
+    <string name="settings_smoothing" translation_description="Preference title for the switch that turns sensor smoothing on or off">Ublaži premikanje senzorja</string>
+    <string name="settings_smoothing_summary" translation_description="Explanation of the sensor smoothing switch: it steadies the sky view, is on by default during a beta trial, invites feedback, and explains how to turn it off">
+    Umirja pogled na nebo. To je nova funkcija, ki je privzeto vklopljena, med jo še prilagajamo – če opazite zaostajanje, tresenje ali karkoli nenavadnega, nam to sporočite. Kadar koli jo lahko izklopite tukaj, če raje uporabljate neobdelane podatke tipala.
+    </string>
+    <string name="settings_steadiness" translation_description="Preference title for how much the sky view is steadied while the phone is held still">Stabilnost</string>
+    <string name="settings_steadiness_summary" translation_description="Explanation of the steadiness preference and its trade-off">
+    Koliko se slika umirja, medtem ko telefon držite pri miru. Višje nastavitve manj tresejo, vendar potrebujejo trenutek dlje, da se umirijo.
+    </string>
+    <string name="settings_steadiness_low" translation_description="Least steadying of the view when the phone is held still">Nizka</string>
+    <string name="settings_steadiness_medium" translation_description="Moderate steadying of the view when the phone is held still">Srednja</string>
+    <string name="settings_steadiness_high" translation_description="Strong steadying of the view when the phone is held still">Visoka</string>
+    <string name="settings_steadiness_very_high" translation_description="Very strong steadying of the view when the phone is held still">Zelo visoka</string>
+    <string name="settings_steadiness_extreme" translation_description="Extremely strong steadying of the view when the phone is held still, for devices with noisy sensors">Ekstremna</string>
+    <string name="settings_ease_off" translation_description="Preference title for how much the steadying relaxes once the phone starts moving">Zmanjšaj stabilnost pri premikanju</string>
+    <string name="settings_ease_off_summary" translation_description="Explanation of the ease-off preference and its trade-off">
+    Koliko se umiritev sprosti, ko se začnete premikati, tako da pogled sledi vašemu gibanju. Izberite Brez, če želite, da je pogled enako umirjen, ne glede na to, ali miruje ali se premika.
+    </string>
+    <string name="settings_ease_off_none" translation_description="Steadying does not relax at all when the phone moves">Brez</string>
+    <string name="settings_ease_off_low" translation_description="Steadying relaxes a little when the phone moves">Nekoliko</string>
+    <string name="settings_ease_off_medium" translation_description="Steadying relaxes a moderate amount when the phone moves">Zmerno</string>
+    <string name="settings_ease_off_high" translation_description="Steadying relaxes a lot when the phone moves">Močno</string>
+    <string name="settings_reverse_magnetic_z">Obrni magnetni Z</string>
+    <string name="settings_magnetic_correction">Uporabi magnetno korekcijo</string>
+    <string name="settings_magnetic_correction_summary" translation_description="Summary for the magnetic correction preference">Popravi kompas za razliko med magnetnim in pravim severom</string>
+    <string name="settings_view_direction">Smer pogleda</string>
+    <string name="settings_view_direction_summary" translation_description="Explanation of the view direction preference, covering both landscape rotation and pointer modes">
+    Zavrti obzorje za 90 stopinj (za naprave s prisilno ležečo usmeritvijo) ali uporabi način kazalca, da zaslon prikazuje, kam kaže vrh telefona
+    </string>
+    <string name="settings_view_direction_standard" translation_description="Normal viewing direction">Običajno</string>
+    <string name="settings_view_direction_rotate90" translation_description="View direction option that rotates the screen by 90 degrees">Zasukano obzorje</string>
+    <string name="settings_view_direction_telescope" translation_description="View direction option that shows the sky as pointed at by the long edge of the phone">Način kazalca</string>
+    <string name="diagnostics_button">Diagnostika</string>
+    <string name="settings_section_notifications" translation_description="Settings section header for notification preferences">Obvestila</string>
+    <string name="settings_notifications_intro" translation_description="Introduction under the notifications settings header, stating how rarely the app notifies">
+    Sky Map obvešča samo o redkih vesoljskih dogodkih, največ enkrat na dan. Vse je izklopljeno, dokler tega ne vklopite.
+    </string>
+    <string name="settings_shower_alerts" translation_description="Preference title: notify on the evening a meteor shower reaches its annual peak">Vrhunci meteorskih rojev</string>
+    <string name="settings_shower_alerts_summary" translation_description="Explanation of the meteor-shower notification preference">Približno ducat na leto, na večer vrhunca</string>
+    <string name="settings_tonight_digest" translation_description="Preference title: a single evening notification summarizing what\'s visible tonight">Povzetek današnjega neba</string>
+    <string name="settings_tonight_digest_summary" translation_description="Explanation of the tonight-digest notification preference">En povzetek po sončnem zahodu, preskočen ob mirnih nočeh</string>
+    <string name="settings_notifications_blocked" translation_description="Warning row shown when the user enabled notifications in the app but blocked them at the system level">Obvestila so blokirana za Sky Map</string>
+    <string name="settings_notifications_blocked_action" translation_description="Hint under the blocked-notifications warning; tapping opens the system settings page">Dotaknite se za dovoljenje v sistemskih nastavitvah</string>
 </resources>

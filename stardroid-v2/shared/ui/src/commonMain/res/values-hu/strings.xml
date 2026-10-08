@@ -4,4 +4,8 @@
     <string name="object_info_size">Méret:</string>
     <string name="object_info_mass">Tömeg:</string>
     <string name="object_info_magnitude">Magnitúdó:</string>
+    <string name="settings_tap_in_auto_mode">Infókártyák automatikus módban</string>
+    <string name="settings_tap_in_auto_mode_summary">
+    Infókártyák megjelenítése automatikus (szenzor) módban is az objektumok megérintésekor
+    </string>
 </resources>

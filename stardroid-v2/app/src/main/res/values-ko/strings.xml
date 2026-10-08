@@ -86,72 +86,11 @@
     <string name="gallery_back" translation_description="Content description for the back arrow leaving the gallery screen">뒤로</string>
 
     <!-- Settings screen (v1 wording where a v1 string existed) -->
-    <string name="settings_title">설정</string>
     <string name="settings_ok" translation_description="Confirm button in settings dialogs">확인</string>
-    <string name="settings_cancel">취소</string>
-    <string name="settings_section_controls" translation_description="Preferences category heading for touch control settings">컨트롤</string>
-    <string name="settings_section_appearance" translation_description="Preferences title for section about app appearance">화면 표시</string>
-    <string name="settings_section_sensors" translation_description="Preferences category heading for sensor settings">센서</string>
-    <string name="settings_section_other" translation_description="Preferences category heading for miscellaneous settings such as the usage statistics opt-out">기타</string>
-    <string name="enable_analytics" translation_description="Preference label to opt in to sending anonymous usage statistics">사용 통계 보내기</string>
-    <string name="enable_analytics_desc" translation_description="Description/summary for the usage statistics preference">Google Analytics에 익명 데이터를 보내 Sky Map을 개선하는 데 도움을 주세요</string>
-    <string name="settings_diagnostics_summary" translation_description="Summary for the settings row that opens the diagnostics screen, which shows technical sensor, location and performance readouts useful when reporting a problem">센서, 위치 및 성능 세부 정보</string>
-    <string name="settings_tap_to_identify" translation_description="Preference title for showing info cards when tapping objects">탭하여 정보 표시</string>
-    <string name="settings_tap_to_identify_summary" translation_description="Preference summary for the tap info feature">천체를 탭하여 자세히 알아보세요</string>
-    <string name="settings_tap_in_auto_mode" translation_description="Preference title for enabling info cards in auto/sensor mode">자동 모드에서 정보 카드 표시</string>
-    <string name="settings_tap_in_auto_mode_summary" translation_description="Preference summary for auto mode info cards">자동(센서) 모드에서 개체를 탭할 때도 정보 카드 표시</string>
-    <string name="settings_auto_level_horizon" translation_description="Preference title for the auto-level horizon feature in manual mode">지평선 자동 수평 맞춤</string>
     <string name="auto_level_on_toast" translation_description="Brief confirmation shown when a double tap turns horizon auto-leveling on in manual mode">지평선 자동 수평 맞춤 켜짐</string>
     <string name="auto_level_off_toast" translation_description="Brief confirmation shown when a double tap turns horizon auto-leveling off in manual mode">지평선 자동 수평 맞춤 꺼짐</string>
-    <string name="settings_auto_level_horizon_summary" translation_description="Summary for the auto-level horizon preference">수동 모드에서 손가락을 떼면 지평선이 점차 수평으로 돌아옵니다</string>
-    <string name="settings_font_size" translation_description="Preference title: change the size of the text labels naming stars and other objects drawn on the sky">하늘 라벨 크기</string>
-    <string name="settings_font_size_summary" translation_description="Help to go along with the sky label size preference. Explains that this size is fixed and does not change as the user zooms the map in or out.">라벨 텍스트는 확대/축소와 관계없이 이 크기를 유지합니다</string>
-    <string name="settings_font_size_small" translation_description="Smallest font size">작게</string>
-    <string name="settings_font_size_medium" translation_description="Normal font size">보통</string>
-    <string name="settings_font_size_large" translation_description="Large font size">크게</string>
-    <string name="settings_font_size_extra_large" translation_description="Largest font size">아주 크게</string>
-    <string name="settings_auto_dimness" translation_description="Preference title: mode for automatically dimming the screen when night mode is selected">화면 자동 어둡게 하기</string>
-    <string name="settings_auto_dimness_summary" translation_description="Summary for the night-mode screen dimming preference">야간 모드에서 화면을 어둡게 하는 정도</string>
-    <string name="settings_auto_dimness_system" translation_description="Screen dimming option: leave brightness on the system setting">시스템 기본값</string>
-    <string name="settings_auto_dimness_dim" translation_description="Screen dimming option: dimmest screen setting">매우 어둡게</string>
-    <string name="settings_auto_dimness_classic" translation_description="Screen dimming option: the hand-tuned brightness Sky Map used for its first 15 years">클래식</string>
-    <string name="settings_disable_gyro" translation_description="Preference title for switching from the gyroscope to the legacy compass + accelerometer sensor pipeline">레거시 센서 사용</string>
-    <string name="settings_disable_gyro_summary" translation_description="Explanation of the legacy sensors preference and when to use it">
-    지도를 자이로스코프 대신 나침반과 가속도계를 사용하여 가리킵니다. 지도가 흔들리거나 기기의 자이로 센서가 오작동할 때 시도해 보세요. 자이로 센서가 없는 기기는 이 센서들을 자동으로 사용합니다.
-    </string>
-    <string name="settings_classic_sensors_only" translation_description="Summary noting a sensor preference only applies to the legacy non-gyroscope sensor path">레거시 센서 사용 시에만 적용됩니다</string>
-    <string name="settings_smoothing" translation_description="Preference title for the switch that turns sensor smoothing on or off">센서 움직임 부드럽게 하기</string>
-    <string name="settings_smoothing_summary" translation_description="Explanation of the sensor smoothing switch: it steadies the sky view, is on by default during a beta trial, invites feedback, and explains how to turn it off">
-    밤하늘 화면을 안정화합니다. 이 기능은 새로 추가되었으며 조정하는 동안 기본적으로 켜져 있습니다. 지연, 떨림 또는 이상한 점이 있으면 피드백을 보내주세요. 원본 센서를 사용하려면 언제든지 여기에서 끌 수 있습니다.
-    </string>
-    <string name="settings_steadiness" translation_description="Preference title for how much the sky view is steadied while the phone is held still">안정감</string>
-    <string name="settings_steadiness_summary" translation_description="Explanation of the steadiness preference and its trade-off">
-    휴대폰을 가만히 들고 있을 때 화면이 흔들리지 않도록 보정하는 정도입니다. 설정이 높을수록 흔들림이 적어지지만 화면이 안정되는 데 시간이 조금 더 걸립니다.
-    </string>
-    <string name="settings_steadiness_low" translation_description="Least steadying of the view when the phone is held still">낮음</string>
-    <string name="settings_steadiness_medium" translation_description="Moderate steadying of the view when the phone is held still">중간</string>
-    <string name="settings_steadiness_high" translation_description="Strong steadying of the view when the phone is held still">높음</string>
-    <string name="settings_steadiness_very_high" translation_description="Very strong steadying of the view when the phone is held still">매우 높음</string>
-    <string name="settings_steadiness_extreme" translation_description="Extremely strong steadying of the view when the phone is held still, for devices with noisy sensors">극한</string>
-    <string name="settings_ease_off" translation_description="Preference title for how much the steadying relaxes once the phone starts moving">움직일 때 완화</string>
-    <string name="settings_ease_off_summary" translation_description="Explanation of the ease-off preference and its trade-off">
-    움직이기 시작할 때 화면 보정 기능이 얼마나 완화되어 화면이 사용자의 움직임을 잘 따라가게 할지 설정합니다. 정지해 있거나 움직일 때 동일한 정도로 화면을 보정하려면 \'없음\'을 선택하세요.
-    </string>
-    <string name="settings_ease_off_none" translation_description="Steadying does not relax at all when the phone moves">없음</string>
-    <string name="settings_ease_off_low" translation_description="Steadying relaxes a little when the phone moves">조금</string>
-    <string name="settings_ease_off_medium" translation_description="Steadying relaxes a moderate amount when the phone moves">보통</string>
-    <string name="settings_ease_off_high" translation_description="Steadying relaxes a lot when the phone moves">많이</string>
-    <string name="settings_reverse_magnetic_z" translation_description="Preference title for reversing the magnetometer Z axis, a workaround for devices with a mis-mounted compass sensor">자기 Z축 반전</string>
-    <string name="settings_magnetic_correction">자기 수정 사용</string>
-    <string name="settings_magnetic_correction_summary" translation_description="Summary for the magnetic correction preference">나침반을 자기 북극과 진북의 차이에 맞게 보정합니다</string>
-    <string name="settings_view_direction" translation_description="Preference title for choosing the view/pointing direction mode">보기 방향</string>
-    <string name="settings_view_direction_summary" translation_description="Explanation of the view direction preference, covering both landscape rotation and pointer modes">지평선을 90도 회전 (강제 가로 모드 기기용) 또는 포인터 모드를 사용하여 휴대폰 상단이 가리키는 방향을 화면에 표시</string>
-    <string name="settings_view_direction_standard" translation_description="Normal viewing direction">일반</string>
-    <string name="settings_view_direction_rotate90" translation_description="View direction option that rotates the screen by 90 degrees">회전된 지평선</string>
-    <string name="settings_view_direction_telescope" translation_description="View direction option that shows the sky as pointed at by the long edge of the phone">포인터 모드</string>
 
     <!-- tm:omitted name="support_email" reason="identical_to_source" -->
-    <string name="diagnostics_button" translation_description="Map-screen button that opens the diagnostics screen">진단</string>
     <string name="diagnostics_title" translation_description="Title bar text for the diagnostics screen">진단</string>
     <string name="diagnostics_share" translation_description="Accessibility label for the diagnostics screen button that emails these details to the developers">개발자에게 보내기</string>
     <string name="diagnostics_share_subject" translation_description="Subject line of the email a user sends from the diagnostics screen">Sky Map 진단 보고서</string>
@@ -317,14 +256,6 @@
     <string name="countdown_widget_preview_name" translation_description="Representative event name shown in the widget picker\'s preview of the countdown widget">페르세우스자리 유성우 극대기</string>
 
     <!-- Sky-event notifications (D77). -->
-    <string name="settings_section_notifications" translation_description="Settings section header for notification preferences">알림</string>
-    <string name="settings_notifications_intro" translation_description="Introduction under the notifications settings header, stating how rarely the app notifies">Sky Map은 희귀한 천문 현상에 대해서만 알림을 보내며, 하루에 최대 한 번입니다. 모든 알림은 사용자가 켜기 전까지 꺼져 있습니다.</string>
-    <string name="settings_shower_alerts" translation_description="Preference title: notify on the evening a meteor shower reaches its annual peak">유성우 극대기</string>
-    <string name="settings_shower_alerts_summary" translation_description="Explanation of the meteor-shower notification preference">매년 약 12회, 극대기 저녁에 알림</string>
-    <string name="settings_tonight_digest" translation_description="Preference title: a single evening notification summarizing what\'s visible tonight">오늘 밤 하늘 요약</string>
-    <string name="settings_tonight_digest_summary" translation_description="Explanation of the tonight-digest notification preference">일몰 후 한 번 요약, 조용한 밤에는 건너뜀</string>
-    <string name="settings_notifications_blocked" translation_description="Warning row shown when the user enabled notifications in the app but blocked them at the system level">Sky Map의 알림이 차단되었습니다</string>
-    <string name="settings_notifications_blocked_action" translation_description="Hint under the blocked-notifications warning; tapping opens the system settings page">시스템 설정에서 허용하려면 탭하세요</string>
     <string name="channel_showers_name" translation_description="Name of the meteor-shower notification channel, shown in the system\'s notification settings">유성우 극대기</string>
     <string name="channel_showers_description" translation_description="Description of the meteor-shower notification channel in the system\'s notification settings">매년 약 12회, 극대기 저녁에 알림</string>
     <string name="channel_digest_name" translation_description="Name of the tonight-digest notification channel, shown in the system\'s notification settings">오늘 밤 하늘 요약</string>

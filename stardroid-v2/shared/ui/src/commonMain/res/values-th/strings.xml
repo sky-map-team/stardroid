@@ -274,4 +274,77 @@
     <string name="warm_welcome_finish">เริ่ม!</string>
     <string name="warm_welcome_sensor_ok">ทำงานอยู่</string>
     <string name="warm_welcome_sensor_missing">ขาดหายไป</string>
+    <string name="settings_title">การตั้งค่า</string>
+    <string name="settings_cancel">ยกเลิก</string>
+    <string name="settings_section_controls">การควบคุม</string>
+    <string name="settings_section_appearance">ลักษณะที่ปรากฏ</string>
+    <string name="settings_section_sensors" translation_description="Preferences category heading for sensor settings">เซ็นเซอร์</string>
+    <string name="settings_section_other">อื่นๆ</string>
+    <string name="enable_analytics">ส่งสถิติการใช้งาน</string>
+    <string name="enable_analytics_desc">ปรับปรุง Sky Map โดยการส่งข้อมูลที่ไม่ระบุตัวตนไปยัง Google Analytics</string>
+    <string name="settings_diagnostics_summary" translation_description="Summary for the settings row that opens the diagnostics screen, which shows technical sensor, location and performance readouts useful when reporting a problem">รายละเอียดเซ็นเซอร์ ตำแหน่ง และประสิทธิภาพ</string>
+    <string name="settings_tap_to_identify">แสดงข้อมูลเมื่อแตะ</string>
+    <string name="settings_tap_to_identify_summary">แตะวัตถุท้องฟ้าเพื่อเรียนรู้เกี่ยวกับพวกมัน</string>
+    <string name="settings_tap_in_auto_mode">การ์ดข้อมูลในโหมดอัตโนมัติ</string>
+    <string name="settings_tap_in_auto_mode_summary">แสดงการ์ดข้อมูลเมื่อแตะวัตถุในโหมดอัตโนมัติ (เซ็นเซอร์) ด้วย</string>
+    <string name="settings_auto_level_horizon">ขอบฟ้าอัตโนมัติ</string>
+    <string name="settings_auto_level_horizon_summary">ในโหมดแมนนวล ขอบฟ้าจะค่อยๆ กลับไปอยู่ในแนวนอนหลังจากที่คุณยกนิ้วของคุณขึ้น</string>
+    <string name="settings_font_size" translation_description="Preference title: change the size of the text labels naming stars and other objects drawn on the sky">ขนาดป้ายชื่อบนท้องฟ้า</string>
+    <string name="settings_font_size_summary" translation_description="Help to go along with the sky label size preference. Explains that this size is fixed and does not change as the user zooms the map in or out.">ข้อความป้ายชื่อจะมีขนาดเท่านี้เสมอในทุกระดับการซูม</string>
+    <string name="settings_font_size_small" translation_description="Smallest font size">เล็ก</string>
+    <string name="settings_font_size_medium" translation_description="Normal font size">ปานกลาง</string>
+    <string name="settings_font_size_large" translation_description="Large font size">ใหญ่</string>
+    <string name="settings_font_size_extra_large" translation_description="Largest font size">ใหญ่มาก</string>
+    <string name="settings_auto_dimness">ลดความสว่างของหน้าจออัตโนมัติ</string>
+    <string name="settings_auto_dimness_summary" translation_description="Summary for the night-mode screen dimming preference">ระดับความมืดของหน้าจอในโหมดกลางคืน</string>
+    <string name="settings_auto_dimness_system" translation_description="Screen dimming option: leave brightness on the system setting">ค่าเริ่มต้นของระบบ</string>
+    <string name="settings_auto_dimness_dim" translation_description="Screen dimming option: dimmest screen setting">มืดมาก</string>
+    <string name="settings_auto_dimness_classic" translation_description="Screen dimming option: the hand-tuned brightness Sky Map used for its first 15 years">คลาสสิก</string>
+    <string name="settings_disable_gyro" translation_description="Preference title for switching from the gyroscope to the legacy compass + accelerometer sensor pipeline">ใช้เซ็นเซอร์แบบเดิม</string>
+    <string name="settings_disable_gyro_summary" translation_description="Explanation of the legacy sensors preference and when to use it">
+    ใช้เข็มทิศและมาตรความเร่งในการเล็งแผนที่แทนไจโรสโคป ลองใช้วิธีนี้หากแผนที่เกิดการเคลื่อนหรือไจโรสโคปของอุปกรณ์ทำงานผิดปกติ โดยอุปกรณ์ที่ไม่มีไจโรสโคปจะใช้เซ็นเซอร์เหล่านี้โดยอัตโนมัติ
+    </string>
+    <string name="settings_classic_sensors_only" translation_description="Summary noting a sensor preference only applies to the legacy non-gyroscope sensor path">ใช้ได้เฉพาะเมื่อใช้งานเซ็นเซอร์แบบเดิมเท่านั้น</string>
+    <string name="settings_smoothing" translation_description="Preference title for the switch that turns sensor smoothing on or off">ทำให้การเคลื่อนไหวของเซนเซอร์ราบรื่นขึ้น</string>
+    <string name="settings_smoothing_summary" translation_description="Explanation of the sensor smoothing switch: it steadies the sky view, is on by default during a beta trial, invites feedback, and explains how to turn it off">
+    ช่วยให้มุมมองท้องฟ้ามีความนิ่งขึ้น ฟีเจอร์นี้ใหม่และเปิดใช้งานเป็นค่าเริ่มต้นระหว่างที่เรากำลังปรับแต่งอยู่ หากคุณพบอาการแลค กระตุก หรือความผิดปกติใดๆ เรายินดีรับฟังความคิดเห็นของคุณ คุณสามารถปิดการใช้งานได้ที่นี่ตลอดเวลาหากต้องการใช้เซ็นเซอร์ดิบ
+    </string>
+    <string name="settings_steadiness" translation_description="Preference title for how much the sky view is steadied while the phone is held still">ความนิ่ง</string>
+    <string name="settings_steadiness_summary" translation_description="Explanation of the steadiness preference and its trade-off">
+    การทำให้มุมมองนิ่งแค่ไหนในขณะที่คุณถือโทรศัพท์ให้นิ่ง การตั้งค่าที่สูงขึ้นจะสั่นน้อยลงแต่ใช้เวลาในการตั้งค่านานขึ้นเล็กน้อย
+    </string>
+    <string name="settings_steadiness_low" translation_description="Least steadying of the view when the phone is held still">ต่ำ</string>
+    <string name="settings_steadiness_medium" translation_description="Moderate steadying of the view when the phone is held still">ปานกลาง</string>
+    <string name="settings_steadiness_high" translation_description="Strong steadying of the view when the phone is held still">สูง</string>
+    <string name="settings_steadiness_very_high" translation_description="Very strong steadying of the view when the phone is held still">สูงมาก</string>
+    <string name="settings_steadiness_extreme" translation_description="Extremely strong steadying of the view when the phone is held still, for devices with noisy sensors">สูงสุด</string>
+    <string name="settings_ease_off" translation_description="Preference title for how much the steadying relaxes once the phone starts moving">ผ่อนคลายความนิ่งเมื่อเคลื่อนไหว</string>
+    <string name="settings_ease_off_summary" translation_description="Explanation of the ease-off preference and its trade-off">
+    ระดับการลดความสั่นที่จะผ่อนคลายลงเมื่อคุณเริ่มเคลื่อนไหว เพื่อให้มุมมองตามคุณทัน เลือก “ไม่มี” หากต้องการรักษาความนิ่งของมุมมองให้คงที่เท่ากันไม่ว่าจะหยุดนิ่งหรือกำลังเคลื่อนไหว
+    </string>
+    <string name="settings_ease_off_none" translation_description="Steadying does not relax at all when the phone moves">ไม่มี</string>
+    <string name="settings_ease_off_low" translation_description="Steadying relaxes a little when the phone moves">เล็กน้อย</string>
+    <string name="settings_ease_off_medium" translation_description="Steadying relaxes a moderate amount when the phone moves">ปานกลาง</string>
+    <string name="settings_ease_off_high" translation_description="Steadying relaxes a lot when the phone moves">มาก</string>
+    <string name="settings_reverse_magnetic_z">ย้อนกลับแกน Z แม่เหล็ก</string>
+    <string name="settings_magnetic_correction">ใช้การแก้ไขแม่เหล็ก</string>
+    <string name="settings_magnetic_correction_summary" translation_description="Summary for the magnetic correction preference">แก้ไขเข็มทิศสำหรับความแตกต่างระหว่างขั้วแม่เหล็กโลกและขั้วเหนือจริง</string>
+    <string name="settings_view_direction">ทิศทางการมอง</string>
+    <string name="settings_view_direction_summary" translation_description="Explanation of the view direction preference, covering both landscape rotation and pointer modes">
+    หมุนขอบฟ้าไป 90 องศา (สำหรับอุปกรณ์ที่บังคับแสดงผลแนวนอน) หรือใช้โหมดตัวชี้เพื่อให้หน้าจอแสดงสิ่งที่ส่วนบนของโทรศัพท์กำลังชี้ไป
+    </string>
+    <string name="settings_view_direction_standard" translation_description="Normal viewing direction">ปกติ</string>
+    <string name="settings_view_direction_rotate90" translation_description="View direction option that rotates the screen by 90 degrees">หมุนขอบฟ้า</string>
+    <string name="settings_view_direction_telescope" translation_description="View direction option that shows the sky as pointed at by the long edge of the phone">โหมดตัวชี้</string>
+    <string name="diagnostics_button">การวินิจฉัย</string>
+    <string name="settings_section_notifications" translation_description="Settings section header for notification preferences">การแจ้งเตือน</string>
+    <string name="settings_notifications_intro" translation_description="Introduction under the notifications settings header, stating how rarely the app notifies">
+    Sky Map จะแจ้งเตือนเฉพาะเหตุการณ์บนท้องฟ้าที่เกิดขึ้นได้ยาก สูงสุดวันละครั้งเท่านั้น ทุกอย่างจะถูกปิดไว้จนกว่าคุณจะเปิดใช้งาน
+    </string>
+    <string name="settings_shower_alerts" translation_description="Preference title: notify on the evening a meteor shower reaches its annual peak">จุดสูงสุดของฝนดาวตก</string>
+    <string name="settings_shower_alerts_summary" translation_description="Explanation of the meteor-shower notification preference">ประมาณโหลครั้งต่อปี ในเย็นวันที่ถึงจุดสูงสุด</string>
+    <string name="settings_tonight_digest" translation_description="Preference title: a single evening notification summarizing what\'s visible tonight">สรุปท้องฟ้าคืนนี้</string>
+    <string name="settings_tonight_digest_summary" translation_description="Explanation of the tonight-digest notification preference">สรุปหนึ่งครั้งหลังพระอาทิตย์ตกดิน ข้ามไปในคืนที่ไม่มีเหตุการณ์</string>
+    <string name="settings_notifications_blocked" translation_description="Warning row shown when the user enabled notifications in the app but blocked them at the system level">การแจ้งเตือนถูกบล็อกสำหรับ Sky Map</string>
+    <string name="settings_notifications_blocked_action" translation_description="Hint under the blocked-notifications warning; tapping opens the system settings page">แตะเพื่ออนุญาตในการตั้งค่าระบบ</string>
 </resources>

@@ -18,3 +18,14 @@ import androidx.compose.runtime.Composable
  */
 @Composable
 internal expect fun rememberNotificationPermissionRequest(onDenied: () -> Unit): () -> Unit
+
+/**
+ * Whether the system blocks the app's notifications outright, whatever the app's own toggles
+ * say, so an alert switched on here would never arrive.
+ */
+@Composable
+internal expect fun notificationsBlocked(): Boolean
+
+/** Opens the system's notification settings for the app, where that block is lifted. */
+@Composable
+internal expect fun rememberOpenNotificationSettings(): () -> Unit

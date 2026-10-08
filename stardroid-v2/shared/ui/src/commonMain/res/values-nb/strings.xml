@@ -296,4 +296,79 @@
     <string name="warm_welcome_finish">Start!</string>
     <string name="warm_welcome_sensor_ok">Fungerer</string>
     <string name="warm_welcome_sensor_missing">Mangler</string>
+    <string name="settings_title">Innstillinger</string>
+    <string name="settings_cancel">Avbryt</string>
+    <string name="settings_section_controls">Kontroller</string>
+    <string name="settings_section_appearance">Utseende</string>
+    <string name="settings_section_sensors" translation_description="Preferences category heading for sensor settings">Sensorer</string>
+    <string name="settings_section_other">Annet</string>
+    <string name="enable_analytics">Send bruksstatistikk</string>
+    <string name="enable_analytics_desc">Gjør Sky Map bedre ved å sende anonyme data til Google Analytics</string>
+    <string name="settings_diagnostics_summary" translation_description="Summary for the settings row that opens the diagnostics screen, which shows technical sensor, location and performance readouts useful when reporting a problem">Sensor-, posisjons- og ytelsesdetaljer</string>
+    <string name="settings_tap_to_identify">Vis info ved trykk</string>
+    <string name="settings_tap_to_identify_summary">Trykk på himmelobjekter for å lære om dem</string>
+    <string name="settings_tap_in_auto_mode">Infokort i automatisk modus</string>
+    <string name="settings_tap_in_auto_mode_summary">Vis også infokort når du trykker på objekter i automatisk (sensor) modus</string>
+    <string name="settings_auto_level_horizon">Autonivelering av horisont</string>
+    <string name="settings_auto_level_horizon_summary">
+    I manuell modus returnerer horisonten gradvis til horisontalt etter at du løfter fingrene
+    </string>
+    <string name="settings_font_size" translation_description="Preference title: change the size of the text labels naming stars and other objects drawn on the sky">Størrelse på himmelmerker</string>
+    <string name="settings_font_size_summary" translation_description="Help to go along with the sky label size preference. Explains that this size is fixed and does not change as the user zooms the map in or out.">Merketekst beholder denne størrelsen uansett zoom</string>
+    <string name="settings_font_size_small" translation_description="Smallest font size">Liten</string>
+    <string name="settings_font_size_medium" translation_description="Normal font size">Middels</string>
+    <string name="settings_font_size_large" translation_description="Large font size">Stor</string>
+    <string name="settings_font_size_extra_large" translation_description="Largest font size">Ekstra stor</string>
+    <string name="settings_auto_dimness">Automatisk skjermdemping</string>
+    <string name="settings_auto_dimness_summary" translation_description="Summary for the night-mode screen dimming preference">Hvor mye nattmodus dimmer skjermen</string>
+    <string name="settings_auto_dimness_system" translation_description="Screen dimming option: leave brightness on the system setting">Systemstandard</string>
+    <string name="settings_auto_dimness_dim" translation_description="Screen dimming option: dimmest screen setting">Veldig svak</string>
+    <string name="settings_auto_dimness_classic" translation_description="Screen dimming option: the hand-tuned brightness Sky Map used for its first 15 years">Klassisk</string>
+    <string name="settings_disable_gyro" translation_description="Preference title for switching from the gyroscope to the legacy compass + accelerometer sensor pipeline">Bruk eldre sensorer</string>
+    <string name="settings_disable_gyro_summary" translation_description="Explanation of the legacy sensors preference and when to use it">
+    Pek kartet ved hjelp av kompasset og akselerometeret i stedet for gyroskopet. Prøv dette hvis kartet driver eller enhetens gyroskop oppfører seg feil; enheter uten gyroskop bruker disse sensorene automatisk.
+    </string>
+    <string name="settings_classic_sensors_only" translation_description="Summary noting a sensor preference only applies to the legacy non-gyroscope sensor path">Gjelder kun når eldre sensorer er i bruk</string>
+    <string name="settings_smoothing" translation_description="Preference title for the switch that turns sensor smoothing on or off">Jevn sensubevegelse</string>
+    <string name="settings_smoothing_summary" translation_description="Explanation of the sensor smoothing switch: it steadies the sky view, is on by default during a beta trial, invites feedback, and explains how to turn it off">
+    Gjør himmelvisningen roligere. Denne funksjonen er ny og slått på som standard mens vi finjusterer den – hvis du merker forsinkelser, hakking eller noe rart, hører vi gjerne fra deg. Du kan slå den av her når som helst hvis du heller vil bruke rådataene fra sensoren.
+    </string>
+    <string name="settings_steadiness" translation_description="Preference title for how much the sky view is steadied while the phone is held still">Stødighet</string>
+    <string name="settings_steadiness_summary" translation_description="Explanation of the steadiness preference and its trade-off">
+    Hvor mye bildet stabiliseres mens du holder telefonen i ro. Høyere innstillinger rister mindre, men bruker et lite øyeblikk lenger på å roe seg ned.
+    </string>
+    <string name="settings_steadiness_low" translation_description="Least steadying of the view when the phone is held still">Lav</string>
+    <string name="settings_steadiness_medium" translation_description="Moderate steadying of the view when the phone is held still">Middels</string>
+    <string name="settings_steadiness_high" translation_description="Strong steadying of the view when the phone is held still">Høy</string>
+    <string name="settings_steadiness_very_high" translation_description="Very strong steadying of the view when the phone is held still">Svært høy</string>
+    <string name="settings_steadiness_extreme" translation_description="Extremely strong steadying of the view when the phone is held still, for devices with noisy sensors">Ekstrem</string>
+    <string name="settings_ease_off" translation_description="Preference title for how much the steadying relaxes once the phone starts moving">Gi seg ved bevegelse</string>
+    <string name="settings_ease_off_summary" translation_description="Explanation of the ease-off preference and its trade-off">
+    Hvor mye stabiliseringen slapper av når du begynner å bevege deg, slik at visningen henger med deg. Velg Ingen for å stabilisere visningen like mye enten den står stille eller beveger seg.
+    </string>
+    <string name="settings_ease_off_none" translation_description="Steadying does not relax at all when the phone moves">Ingen</string>
+    <string name="settings_ease_off_low" translation_description="Steadying relaxes a little when the phone moves">Litt</string>
+    <string name="settings_ease_off_medium" translation_description="Steadying relaxes a moderate amount when the phone moves">Moderat</string>
+    <string name="settings_ease_off_high" translation_description="Steadying relaxes a lot when the phone moves">Mye</string>
+    <string name="settings_reverse_magnetic_z">Reverser Magnetisk Z</string>
+    <string name="settings_magnetic_correction">Bruk magnetisk korrigering</string>
+    <string name="settings_magnetic_correction_summary" translation_description="Summary for the magnetic correction preference">Korrigering av kompasset for forskjellen mellom magnetisk og sann nord</string>
+    <string name="settings_view_direction">Visningsretning</string>
+    <string name="settings_view_direction_summary" translation_description="Explanation of the view direction preference, covering both landscape rotation and pointer modes">
+    Roter horisonten 90 grader (for enheter med tvungen liggende visning) eller bruk pekemodus for at skjermen skal vise hva toppen av telefonen peker på
+    </string>
+    <!-- tm:omitted name="settings_view_direction_standard" reason="identical_to_source" -->
+    <string name="settings_view_direction_rotate90" translation_description="View direction option that rotates the screen by 90 degrees">Rotert horisont</string>
+    <string name="settings_view_direction_telescope" translation_description="View direction option that shows the sky as pointed at by the long edge of the phone">Pekermodus</string>
+    <string name="diagnostics_button">Diagnostikk</string>
+    <string name="settings_section_notifications" translation_description="Settings section header for notification preferences">Varsler</string>
+    <string name="settings_notifications_intro" translation_description="Introduction under the notifications settings header, stating how rarely the app notifies">
+    Sky Map varsler bare om sjeldne himmelhendelser, maksimalt én gang om dagen. Alt er slått av til du slår det på.
+    </string>
+    <string name="settings_shower_alerts" translation_description="Preference title: notify on the evening a meteor shower reaches its annual peak">Meteorsverm-topper</string>
+    <string name="settings_shower_alerts_summary" translation_description="Explanation of the meteor-shower notification preference">Rundt et dusin i året, på kvelden for toppen</string>
+    <string name="settings_tonight_digest" translation_description="Preference title: a single evening notification summarizing what\'s visible tonight">Kveldens himmel-oversikt</string>
+    <string name="settings_tonight_digest_summary" translation_description="Explanation of the tonight-digest notification preference">Ett sammendrag etter solnedgang, hoppes over på rolige netter</string>
+    <string name="settings_notifications_blocked" translation_description="Warning row shown when the user enabled notifications in the app but blocked them at the system level">Varsler er blokkert for Sky Map</string>
+    <string name="settings_notifications_blocked_action" translation_description="Hint under the blocked-notifications warning; tapping opens the system settings page">Trykk for å tillate dem i systeminnstillingene</string>
 </resources>

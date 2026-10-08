@@ -53,6 +53,37 @@ class SettingsViewModelTest {
         ).isTrue()
     }
 
+    @Test
+    fun `the classic sensor controls follow the path that is running`() =
+        testScope.runTest {
+            settings.disableGyroState.value = true
+            val android = SettingsViewModel(settings, analytics)
+            runCurrent()
+            assertThat(android.classicSensorChoiceAvailable).isTrue()
+            assertThat(android.legacyPathActive.value).isTrue()
+        }
+
+    @Test
+    fun `without a classic sensor path its controls never show`() =
+        testScope.runTest {
+            // iOS: Core Motion's fused attitude is the only path, whatever the stored setting
+            // says, so neither the gyro switch nor the classic-path controls would do anything.
+            settings.disableGyroState.value = true
+            val ios = SettingsViewModel(settings, analytics, classicSensorsAvailable = false)
+            runCurrent()
+            assertThat(ios.classicSensorChoiceAvailable).isFalse()
+            assertThat(ios.legacyPathActive.value).isFalse()
+        }
+
+    @Test
+    fun `the analytics opt-out is hidden where nothing is collected`() {
+        assertThat(SettingsViewModel(settings, analytics).analyticsChoiceAvailable).isTrue()
+        assertThat(
+            SettingsViewModel(settings, analytics, analyticsAvailable = false)
+                .analyticsChoiceAvailable,
+        ).isFalse()
+    }
+
     @BeforeTest
     fun setUp() {
         Dispatchers.setMain(dispatcher)

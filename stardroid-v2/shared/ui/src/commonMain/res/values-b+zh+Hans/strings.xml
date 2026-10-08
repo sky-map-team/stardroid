@@ -279,4 +279,65 @@
     <string name="warm_welcome_finish">启动！</string>
     <string name="warm_welcome_sensor_ok">正常</string>
     <string name="warm_welcome_sensor_missing">缺失</string>
+    <string name="settings_title">设置</string>
+    <string name="settings_cancel">取消</string>
+    <string name="settings_section_controls">控制</string>
+    <string name="settings_section_appearance">外观</string>
+    <string name="settings_section_sensors" translation_description="Preferences category heading for sensor settings">传感器</string>
+    <string name="settings_section_other">其他</string>
+    <string name="enable_analytics">传送使用统计资料</string>
+    <string name="enable_analytics_desc">传送匿名资料给Google Analytics 以改善天象图</string>
+    <string name="settings_diagnostics_summary" translation_description="Summary for the settings row that opens the diagnostics screen, which shows technical sensor, location and performance readouts useful when reporting a problem">传感器、位置和性能详情</string>
+    <string name="settings_tap_to_identify">点击时显示信息</string>
+    <string name="settings_tap_to_identify_summary">点击天体对象以了解它们</string>
+    <string name="settings_tap_in_auto_mode">自动模式下的信息卡</string>
+    <string name="settings_tap_in_auto_mode_summary">在自动（传感器）模式下点击天体时也显示信息卡</string>
+    <string name="settings_auto_level_horizon">自动水平地平线</string>
+    <string name="settings_auto_level_horizon_summary">在手动模式下，抬起手指后地平线会逐渐恢复水平</string>
+    <string name="settings_font_size" translation_description="Preference title: change the size of the text labels naming stars and other objects drawn on the sky">天空标签大小</string>
+    <string name="settings_font_size_summary" translation_description="Help to go along with the sky label size preference. Explains that this size is fixed and does not change as the user zooms the map in or out.">标签文本在任何缩放级别下都保持此大小</string>
+    <string name="settings_font_size_small" translation_description="Smallest font size">小</string>
+    <string name="settings_font_size_medium" translation_description="Normal font size">中</string>
+    <string name="settings_font_size_large" translation_description="Large font size">大</string>
+    <string name="settings_font_size_extra_large" translation_description="Largest font size">超大</string>
+    <string name="settings_auto_dimness">自动屏幕变暗</string>
+    <string name="settings_auto_dimness_summary" translation_description="Summary for the night-mode screen dimming preference">夜间模式屏幕调暗程度</string>
+    <string name="settings_auto_dimness_system" translation_description="Screen dimming option: leave brightness on the system setting">系统默认</string>
+    <string name="settings_auto_dimness_dim" translation_description="Screen dimming option: dimmest screen setting">最暗</string>
+    <string name="settings_auto_dimness_classic" translation_description="Screen dimming option: the hand-tuned brightness Sky Map used for its first 15 years">经典</string>
+    <string name="settings_disable_gyro" translation_description="Preference title for switching from the gyroscope to the legacy compass + accelerometer sensor pipeline">使用旧版传感器</string>
+    <string name="settings_disable_gyro_summary" translation_description="Explanation of the legacy sensors preference and when to use it">使用指南针和加速计（而非陀螺仪）来指向地图。如果地图漂移或您设备的陀螺仪出现异常，请尝试此选项；没有陀螺仪的设备会自动使用这些传感器。</string>
+    <string name="settings_classic_sensors_only" translation_description="Summary noting a sensor preference only applies to the legacy non-gyroscope sensor path">仅在使用旧版传感器时适用</string>
+    <string name="settings_smoothing" translation_description="Preference title for the switch that turns sensor smoothing on or off">平滑传感器移动</string>
+    <string name="settings_smoothing_summary" translation_description="Explanation of the sensor smoothing switch: it steadies the sky view, is on by default during a beta trial, invites feedback, and explains how to turn it off">平滑星空视图。这是一个新功能，在我们进行调整期间默认开启——如果您发现延迟、抖动或任何异常，欢迎随时反馈。如果您更喜欢原始传感器，可以随时在此处将其关闭。</string>
+    <string name="settings_steadiness" translation_description="Preference title for how much the sky view is steadied while the phone is held still">稳定性</string>
+    <string name="settings_steadiness_summary" translation_description="Explanation of the steadiness preference and its trade-off">当你拿稳手机时视图稳定程度。较高的设置晃动较小，但需要片刻才能稳定下来。</string>
+    <string name="settings_steadiness_low" translation_description="Least steadying of the view when the phone is held still">低</string>
+    <string name="settings_steadiness_medium" translation_description="Moderate steadying of the view when the phone is held still">中</string>
+    <string name="settings_steadiness_high" translation_description="Strong steadying of the view when the phone is held still">高</string>
+    <string name="settings_steadiness_very_high" translation_description="Very strong steadying of the view when the phone is held still">很高</string>
+    <string name="settings_steadiness_extreme" translation_description="Extremely strong steadying of the view when the phone is held still, for devices with noisy sensors">极高</string>
+    <string name="settings_ease_off" translation_description="Preference title for how much the steadying relaxes once the phone starts moving">移动时减弱</string>
+    <string name="settings_ease_off_summary" translation_description="Explanation of the ease-off preference and its trade-off">当你开始移动时，防抖效果减弱的程度，以便视野能跟上你的动作。选择“无”可在静止或移动时保持相同的防抖力度。</string>
+    <string name="settings_ease_off_none" translation_description="Steadying does not relax at all when the phone moves">无</string>
+    <string name="settings_ease_off_low" translation_description="Steadying relaxes a little when the phone moves">轻微</string>
+    <string name="settings_ease_off_medium" translation_description="Steadying relaxes a moderate amount when the phone moves">适中</string>
+    <string name="settings_ease_off_high" translation_description="Steadying relaxes a lot when the phone moves">大量</string>
+    <string name="settings_reverse_magnetic_z">反向磁Z轴</string>
+    <string name="settings_magnetic_correction">使用磁力修正</string>
+    <string name="settings_magnetic_correction_summary" translation_description="Summary for the magnetic correction preference">校正指南针以消除磁北和真北之间的差异</string>
+    <string name="settings_view_direction">视图方向</string>
+    <string name="settings_view_direction_summary" translation_description="Explanation of the view direction preference, covering both landscape rotation and pointer modes">将地平线旋转90度（适用于强制横屏的设备），或使用指针模式让屏幕显示手机顶部所指的方向</string>
+    <string name="settings_view_direction_standard" translation_description="Normal viewing direction">普通</string>
+    <string name="settings_view_direction_rotate90" translation_description="View direction option that rotates the screen by 90 degrees">旋转地平线</string>
+    <string name="settings_view_direction_telescope" translation_description="View direction option that shows the sky as pointed at by the long edge of the phone">指针模式</string>
+    <string name="diagnostics_button">诊断</string>
+    <string name="settings_section_notifications" translation_description="Settings section header for notification preferences">通知</string>
+    <string name="settings_notifications_intro" translation_description="Introduction under the notifications settings header, stating how rarely the app notifies">Sky Map 仅在罕见的天文事件发生时发送通知，每天最多一次。所有通知默认关闭，直到您手动开启。</string>
+    <string name="settings_shower_alerts" translation_description="Preference title: notify on the evening a meteor shower reaches its annual peak">流星雨极大</string>
+    <string name="settings_shower_alerts_summary" translation_description="Explanation of the meteor-shower notification preference">每年约十几次，在极大之夜通知</string>
+    <string name="settings_tonight_digest" translation_description="Preference title: a single evening notification summarizing what\'s visible tonight">今晚星空摘要</string>
+    <string name="settings_tonight_digest_summary" translation_description="Explanation of the tonight-digest notification preference">日落后一份摘要，平静的夜晚跳过</string>
+    <string name="settings_notifications_blocked" translation_description="Warning row shown when the user enabled notifications in the app but blocked them at the system level">Sky Map 的通知已被阻止</string>
+    <string name="settings_notifications_blocked_action" translation_description="Hint under the blocked-notifications warning; tapping opens the system settings page">轻触以在系统设置中允许</string>
 </resources>

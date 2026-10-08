@@ -90,78 +90,11 @@
     <string name="gallery_back" translation_description="Content description for the back arrow leaving the gallery screen">Назад</string>
 
     <!-- Settings screen (v1 wording where a v1 string existed) -->
-    <string name="settings_title">Налаштування</string>
     <!-- tm:omitted name="settings_ok" reason="identical_to_source" -->
-    <string name="settings_cancel">Відміна</string>
-    <string name="settings_section_controls">Керування</string>
-    <string name="settings_section_appearance">Зовнішній вигляд</string>
-    <string name="settings_section_sensors" translation_description="Preferences category heading for sensor settings">Датчики</string>
-    <string name="settings_section_other">Інше</string>
-    <string name="enable_analytics">Надсилати статистику використання</string>
-    <string name="enable_analytics_desc">Зробіть Sky Map кращою, відправивши анонімні дані в Google Analytics</string>
-    <string name="settings_diagnostics_summary" translation_description="Summary for the settings row that opens the diagnostics screen, which shows technical sensor, location and performance readouts useful when reporting a problem">Дані про датчики, місцезнаходження та продуктивність</string>
-    <string name="settings_tap_to_identify">Показувати інформацію при дотику</string>
-    <string name="settings_tap_to_identify_summary">Дотикніться до небесних об\'єктів, щоб дізнатися про них</string>
-    <string name="settings_tap_in_auto_mode">Картки інформації в автоматичному режимі</string>
-    <string name="settings_tap_in_auto_mode_summary">
-    Також показувати картки інформації при натисканні на об\'єкти в автоматичному (сенсорному) режимі
-    </string>
-    <string name="settings_auto_level_horizon">Автоматичне вирівнювання горизонту</string>
     <string name="auto_level_on_toast" translation_description="Brief confirmation shown when a double tap turns horizon auto-leveling on in manual mode">Автовирівнювання горизонту ввімкнено</string>
     <string name="auto_level_off_toast" translation_description="Brief confirmation shown when a double tap turns horizon auto-leveling off in manual mode">Автовирівнювання горизонту вимкнено</string>
-    <string name="settings_auto_level_horizon_summary">
-    У ручному режимі горизонт поступово повертається в горизонтальне положення після того, як ви відпустите пальці
-    </string>
-    <string name="settings_font_size" translation_description="Preference title: change the size of the text labels naming stars and other objects drawn on the sky">Розмір підписів неба</string>
-    <string name="settings_font_size_summary" translation_description="Help to go along with the sky label size preference. Explains that this size is fixed and does not change as the user zooms the map in or out.">Текст міток зберігає цей розмір при будь-якому масштабуванні</string>
-    <string name="settings_font_size_small" translation_description="Smallest font size">Малий</string>
-    <string name="settings_font_size_medium" translation_description="Normal font size">Середній</string>
-    <string name="settings_font_size_large" translation_description="Large font size">Великий</string>
-    <string name="settings_font_size_extra_large" translation_description="Largest font size">Дуже великий</string>
-    <string name="settings_auto_dimness">Автоматичне затемнення екрана</string>
-    <string name="settings_auto_dimness_summary" translation_description="Summary for the night-mode screen dimming preference">Рівень затемнення екрана в нічному режимі</string>
-    <string name="settings_auto_dimness_system" translation_description="Screen dimming option: leave brightness on the system setting">Системний за замовчуванням</string>
-    <string name="settings_auto_dimness_dim" translation_description="Screen dimming option: dimmest screen setting">Дуже темний</string>
-    <string name="settings_auto_dimness_classic" translation_description="Screen dimming option: the hand-tuned brightness Sky Map used for its first 15 years">Класичний</string>
-    <string name="settings_disable_gyro" translation_description="Preference title for switching from the gyroscope to the legacy compass + accelerometer sensor pipeline">Використовувати застарілі датчики</string>
-    <string name="settings_disable_gyro_summary" translation_description="Explanation of the legacy sensors preference and when to use it">
-    Наведіть карту за допомогою компаса й акселерометра замість гіроскопа. Спробуйте це, якщо карта дрейфує або гіроскоп вашого пристрою працює некоректно; пристрої без гіроскопа використовують ці датчики автоматично.
-    </string>
-    <string name="settings_classic_sensors_only" translation_description="Summary noting a sensor preference only applies to the legacy non-gyroscope sensor path">Застосовується лише під час використання застарілих датчиків</string>
-    <string name="settings_smoothing" translation_description="Preference title for the switch that turns sensor smoothing on or off">Згладжування руху датчиків</string>
-    <string name="settings_smoothing_summary" translation_description="Explanation of the sensor smoothing switch: it steadies the sky view, is on by default during a beta trial, invites feedback, and explains how to turn it off">
-    Стабілізує зображення неба. Це нова функція, яка за замовчуванням увімкнена на етапі налаштування — якщо ви помітите затримки, тремтіння чи будь-які аномалії, будь ласка, повідомте нам. Ви можете вимкнути її тут у будь-який момент, якщо віддаєте перевагу використанню необроблених даних датчиків.
-    </string>
-    <string name="settings_steadiness" translation_description="Preference title for how much the sky view is steadied while the phone is held still">Стабільність</string>
-    <string name="settings_steadiness_summary" translation_description="Explanation of the steadiness preference and its trade-off">
-    Наскільки стабілізується огляд, коли ви тримаєте телефон нерухомо. Вищі значення зменшують тремтіння, але потребують трохи більше часу для стабілізації.
-    </string>
-    <string name="settings_steadiness_low" translation_description="Least steadying of the view when the phone is held still">Низька</string>
-    <string name="settings_steadiness_medium" translation_description="Moderate steadying of the view when the phone is held still">Середня</string>
-    <string name="settings_steadiness_high" translation_description="Strong steadying of the view when the phone is held still">Висока</string>
-    <string name="settings_steadiness_very_high" translation_description="Very strong steadying of the view when the phone is held still">Дуже висока</string>
-    <string name="settings_steadiness_extreme" translation_description="Extremely strong steadying of the view when the phone is held still, for devices with noisy sensors">Екстремальна</string>
-    <string name="settings_ease_off" translation_description="Preference title for how much the steadying relaxes once the phone starts moving">Послаблювати під час руху</string>
-    <string name="settings_ease_off_summary" translation_description="Explanation of the ease-off preference and its trade-off">
-    Наскільки стабілізація послаблюється під час руху, щоб огляд встигав за вами. Виберіть «Нічого», щоб стабілізація працювала однаково незалежно від того, стоїте ви чи рухаєтеся.
-    </string>
-    <string name="settings_ease_off_none" translation_description="Steadying does not relax at all when the phone moves">Неслабко</string>
-    <string name="settings_ease_off_low" translation_description="Steadying relaxes a little when the phone moves">Трохи</string>
-    <string name="settings_ease_off_medium" translation_description="Steadying relaxes a moderate amount when the phone moves">Помірно</string>
-    <string name="settings_ease_off_high" translation_description="Steadying relaxes a lot when the phone moves">Значно</string>
-    <string name="settings_reverse_magnetic_z">Зворотне магнітне Z</string>
-    <string name="settings_magnetic_correction">Викор. магнітну корекцію</string>
-    <string name="settings_magnetic_correction_summary" translation_description="Summary for the magnetic correction preference">Коригує компас на різницю між магнітною та істинною півноччю</string>
-    <string name="settings_view_direction">Обертати по горизонту</string>
-    <string name="settings_view_direction_summary" translation_description="Explanation of the view direction preference, covering both landscape rotation and pointer modes">
-    Повернути горизонт на 90 градусів (для пристроїв із примусовим ландшафтним режимом) або використовувати режим покажчика, щоб на екрані відображалося те, на що вказує верхня частина телефона
-    </string>
-    <string name="settings_view_direction_standard" translation_description="Normal viewing direction">Звичайний</string>
-    <string name="settings_view_direction_rotate90" translation_description="View direction option that rotates the screen by 90 degrees">Повернений горизонт</string>
-    <string name="settings_view_direction_telescope" translation_description="View direction option that shows the sky as pointed at by the long edge of the phone">Режим вказівника</string>
 
     <!-- tm:omitted name="support_email" reason="identical_to_source" -->
-    <string name="diagnostics_button">Діагностика</string>
     <string name="diagnostics_title">Діагностика</string>
     <string name="diagnostics_share" translation_description="Accessibility label for the diagnostics screen button that emails these details to the developers">Надіслати розробникам</string>
     <string name="diagnostics_share_subject" translation_description="Subject line of the email a user sends from the diagnostics screen">Звіт про діагностику Sky Map</string>
@@ -331,16 +264,6 @@
     <string name="countdown_widget_preview_name" translation_description="Representative event name shown in the widget picker\'s preview of the countdown widget">Пік Персеїд</string>
 
     <!-- Sky-event notifications (D77). -->
-    <string name="settings_section_notifications" translation_description="Settings section header for notification preferences">Сповіщення</string>
-    <string name="settings_notifications_intro" translation_description="Introduction under the notifications settings header, stating how rarely the app notifies">
-    Sky Map надсилає сповіщення лише про рідкісні астрономічні події, не частіше ніж раз на день. Усі сповіщення вимкнено, доки ви їх не ввімкнете.
-    </string>
-    <string name="settings_shower_alerts" translation_description="Preference title: notify on the evening a meteor shower reaches its annual peak">Піки метеорних потоків</string>
-    <string name="settings_shower_alerts_summary" translation_description="Explanation of the meteor-shower notification preference">Близько десятка на рік, увечері в день піку</string>
-    <string name="settings_tonight_digest" translation_description="Preference title: a single evening notification summarizing what\'s visible tonight">Зведення про нічне небо</string>
-    <string name="settings_tonight_digest_summary" translation_description="Explanation of the tonight-digest notification preference">Одне зведення після заходу сонця, пропускається у спокійні ночі</string>
-    <string name="settings_notifications_blocked" translation_description="Warning row shown when the user enabled notifications in the app but blocked them at the system level">Сповіщення для Sky Map заблоковано</string>
-    <string name="settings_notifications_blocked_action" translation_description="Hint under the blocked-notifications warning; tapping opens the system settings page">Торкніться, щоб дозволити їх у системних налаштуваннях</string>
     <string name="channel_showers_name" translation_description="Name of the meteor-shower notification channel, shown in the system\'s notification settings">Піки метеорних потоків</string>
     <string name="channel_showers_description" translation_description="Description of the meteor-shower notification channel in the system\'s notification settings">Близько десятка на рік, увечері в день піку</string>
     <string name="channel_digest_name" translation_description="Name of the tonight-digest notification channel, shown in the system\'s notification settings">Зведення про нічне небо</string>

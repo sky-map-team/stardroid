@@ -68,6 +68,8 @@ import com.google.android.stardroid.ui.search.SearchDialog
 import com.google.android.stardroid.ui.search.SearchGeometry
 import com.google.android.stardroid.ui.search.SearchOverlay
 import com.google.android.stardroid.ui.search.SearchViewModel
+import com.google.android.stardroid.ui.settings.SettingsScreen
+import com.google.android.stardroid.ui.settings.SettingsViewModel
 import com.google.android.stardroid.ui.startup.EulaScreen
 import com.google.android.stardroid.ui.startup.StartupViewModel
 import com.google.android.stardroid.ui.startup.WhatsNewDialog
@@ -102,6 +104,7 @@ fun skyMapViewController(): UIViewController {
     val timeTravel = graph.timeTravelViewModel()
     val objectInfo = graph.objectInfoViewModel()
     val location = graph.locationViewModel()
+    val settings = graph.settingsViewModel()
     return ComposeUIViewController {
         SkyMapScreen(
             map,
@@ -111,6 +114,7 @@ fun skyMapViewController(): UIViewController {
             timeTravel,
             objectInfo,
             location,
+            settings,
             startup,
             onRequestAutoLocation = graph::requestAutoLocation,
             onOpenAppSettings = graph::openAppSettings,
@@ -130,6 +134,7 @@ private fun SkyMapScreen(
     timeTravelViewModel: TimeTravelViewModel,
     objectInfoViewModel: ObjectInfoViewModel,
     locationViewModel: LocationViewModel,
+    settingsViewModel: SettingsViewModel,
     startup: StartupViewModel,
     onRequestAutoLocation: () -> Unit,
     onOpenAppSettings: () -> Unit,
@@ -380,7 +385,10 @@ private fun SkyMapScreen(
                         showOverflowSheet = false
                         page = Page.WHATS_NEW
                     },
-                    onOpenSettings = null,
+                    onOpenSettings = {
+                        showOverflowSheet = false
+                        page = Page.SETTINGS
+                    },
                     onDismiss = { showOverflowSheet = false },
                 )
             }
@@ -414,6 +422,7 @@ private fun SkyMapScreen(
                         // Links to screens iOS doesn't have yet stay inert until they arrive.
                         onNavigate = { destination ->
                             when (destination) {
+                                HelpLink.Destination.SETTINGS -> page = Page.SETTINGS
                                 HelpLink.Destination.APP_SETTINGS -> onOpenAppSettings()
                                 HelpLink.Destination.TUTORIAL -> page = Page.TUTORIAL
                                 else -> Unit
@@ -421,6 +430,13 @@ private fun SkyMapScreen(
                         },
                     )
                 Page.WHATS_NEW -> WhatsNewScreen(nightMode = nightMode, onBack = { page = null })
+                // Diagnostics hasn't moved yet, so its row stays hidden.
+                Page.SETTINGS ->
+                    SettingsScreen(
+                        settingsViewModel,
+                        onBack = { page = null },
+                        onOpenDiagnostics = null,
+                    )
                 // A replay: no analytics funnel, and nothing re-marked as seen (as on Android).
                 Page.TUTORIAL ->
                     WelcomeScreen(
@@ -493,6 +509,7 @@ private fun SkyMapScreen(
 private enum class Page {
     HELP,
     WHATS_NEW,
+    SETTINGS,
 
     /** The warm welcome, replayed from the overflow sheet or Help. */
     TUTORIAL,

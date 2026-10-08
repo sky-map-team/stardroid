@@ -34,6 +34,7 @@ import com.google.android.stardroid.ui.map.MapViewModel
 import com.google.android.stardroid.ui.map.ReferenceFrame
 import com.google.android.stardroid.ui.objectinfo.ObjectInfoViewModel
 import com.google.android.stardroid.ui.search.SearchViewModel
+import com.google.android.stardroid.ui.settings.SettingsViewModel
 import com.google.android.stardroid.ui.startup.StartupViewModel
 import com.google.android.stardroid.ui.timetravel.TimeTravelViewModel
 import kotlinx.cinterop.ExperimentalForeignApi
@@ -84,7 +85,9 @@ class IosAppGraph {
 
     private val settingsStore = settingsDataStore("$supportDirectory/settings.preferences_pb")
 
-    val settings: Settings = DataStoreSettings(settingsStore)
+    // Smoothing defaults on, as on Android while the 1€ filter is in beta (issue #1007): the
+    // settings row says so, and Core Motion goes through the same filter.
+    val settings: Settings = DataStoreSettings(settingsStore, smoothingEnabledDefault = true)
 
     val startupState: StartupState = DataStoreStartupState(settingsStore)
 
@@ -147,8 +150,12 @@ class IosAppGraph {
                     settings.easeOff,
                     ::SensorConfig,
                 ),
-            // Core Motion corrects to true north only with the location it may then use.
-            trueNorthAllowed = coreLocation.authorized,
+            // Core Motion corrects to true north only with the location it may then use. The
+            // correction setting turns it off, as zeroing the declination does on Android.
+            trueNorthAllowed =
+                combine(coreLocation.authorized, settings.useMagneticCorrection) { allowed, use ->
+                    allowed && use
+                },
             active = foreground.isForeground,
         )
 
@@ -295,6 +302,17 @@ class IosAppGraph {
             now = timeController::now,
             settings = settings,
             location = { locationController.locations.value },
+        )
+
+    /**
+     * The settings screen. Core Motion's fused attitude is iOS's only sensor path, so the classic
+     * path's switches stay hidden, and so does the analytics opt-out, as iOS collects nothing.
+     */
+    fun settingsViewModel(): SettingsViewModel =
+        SettingsViewModel(
+            settings,
+            classicSensorsAvailable = false,
+            analyticsAvailable = false,
         )
 
     /** The location sheet and its dialogs, with Apple's geocoder behind manual entry. */
