@@ -9,8 +9,6 @@
 
 package com.google.android.stardroid.ui.diagnostics
 
-import android.os.Build
-import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
@@ -31,7 +29,6 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
@@ -40,35 +37,131 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.intl.Locale
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.google.android.stardroid.BuildConfig
-import com.google.android.stardroid.FlavorEdges
-import com.google.android.stardroid.R
-import com.google.android.stardroid.data.satellites.ElementFreshness
 import com.google.android.stardroid.location.LocationState
 import com.google.android.stardroid.render.api.RendererInfo
-import com.google.android.stardroid.satellites.SatelliteDiagnosticsState
-import com.google.android.stardroid.satellites.forceSatelliteFetchForDebugging
-import com.google.android.stardroid.satellites.readSatelliteDiagnostics
 import com.google.android.stardroid.sensors.SensorAccuracy
 import com.google.android.stardroid.sensors.SensorKind
 import com.google.android.stardroid.startup.Experiment
 import com.google.android.stardroid.startup.ExperimentConfig
 import com.google.android.stardroid.startup.FetchResult
+import com.google.android.stardroid.ui.common.formatAndroidStyle
+import com.google.android.stardroid.ui.common.formattedStringResource
 import com.google.android.stardroid.ui.common.topBarWindowInsets
+import com.google.android.stardroid.ui.resources.Res
+import com.google.android.stardroid.ui.resources.diagnostics_accelerometer
+import com.google.android.stardroid.ui.resources.diagnostics_alignment_adjustment
+import com.google.android.stardroid.ui.resources.diagnostics_alignment_format
+import com.google.android.stardroid.ui.resources.diagnostics_calibration_dialog
+import com.google.android.stardroid.ui.resources.diagnostics_calibration_dialog_shown
+import com.google.android.stardroid.ui.resources.diagnostics_calibration_dialog_suppressed
+import com.google.android.stardroid.ui.resources.diagnostics_cell
+import com.google.android.stardroid.ui.resources.diagnostics_compass
+import com.google.android.stardroid.ui.resources.diagnostics_connected
+import com.google.android.stardroid.ui.resources.diagnostics_connection
+import com.google.android.stardroid.ui.resources.diagnostics_dec_format
+import com.google.android.stardroid.ui.resources.diagnostics_device
+import com.google.android.stardroid.ui.resources.diagnostics_disabled
+import com.google.android.stardroid.ui.resources.diagnostics_disconnected
+import com.google.android.stardroid.ui.resources.diagnostics_ease_off
+import com.google.android.stardroid.ui.resources.diagnostics_east
+import com.google.android.stardroid.ui.resources.diagnostics_enabled
+import com.google.android.stardroid.ui.resources.diagnostics_experiments_fetch_now
+import com.google.android.stardroid.ui.resources.diagnostics_experiments_last_fetched
+import com.google.android.stardroid.ui.resources.diagnostics_experiments_never_fetched
+import com.google.android.stardroid.ui.resources.diagnostics_gl_limits_format
+import com.google.android.stardroid.ui.resources.diagnostics_gl_renderer
+import com.google.android.stardroid.ui.resources.diagnostics_gl_unavailable
+import com.google.android.stardroid.ui.resources.diagnostics_gl_version_format
+import com.google.android.stardroid.ui.resources.diagnostics_gps
+import com.google.android.stardroid.ui.resources.diagnostics_gyro_disabled
+import com.google.android.stardroid.ui.resources.diagnostics_gyro_fused
+import com.google.android.stardroid.ui.resources.diagnostics_gyro_mode
+import com.google.android.stardroid.ui.resources.diagnostics_gyroscope
+import com.google.android.stardroid.ui.resources.diagnostics_jitter_format
+import com.google.android.stardroid.ui.resources.diagnostics_jitter_pending
+import com.google.android.stardroid.ui.resources.diagnostics_jitter_raw
+import com.google.android.stardroid.ui.resources.diagnostics_jitter_smoothed
+import com.google.android.stardroid.ui.resources.diagnostics_light_level
+import com.google.android.stardroid.ui.resources.diagnostics_local_datetime
+import com.google.android.stardroid.ui.resources.diagnostics_location
+import com.google.android.stardroid.ui.resources.diagnostics_location_acquiring
+import com.google.android.stardroid.ui.resources.diagnostics_location_format
+import com.google.android.stardroid.ui.resources.diagnostics_location_hardware_unavailable
+import com.google.android.stardroid.ui.resources.diagnostics_location_permission
+import com.google.android.stardroid.ui.resources.diagnostics_location_unset
+import com.google.android.stardroid.ui.resources.diagnostics_magnetic_correction
+import com.google.android.stardroid.ui.resources.diagnostics_magnetic_correction_format
+import com.google.android.stardroid.ui.resources.diagnostics_no_gps
+import com.google.android.stardroid.ui.resources.diagnostics_permission_denied
+import com.google.android.stardroid.ui.resources.diagnostics_permission_disabled
+import com.google.android.stardroid.ui.resources.diagnostics_permission_granted
+import com.google.android.stardroid.ui.resources.diagnostics_phone_format
+import com.google.android.stardroid.ui.resources.diagnostics_pointing
+import com.google.android.stardroid.ui.resources.diagnostics_report_header
+import com.google.android.stardroid.ui.resources.diagnostics_reverse_magnetic_z
+import com.google.android.stardroid.ui.resources.diagnostics_rotation
+import com.google.android.stardroid.ui.resources.diagnostics_rotation_matrix
+import com.google.android.stardroid.ui.resources.diagnostics_satellite_force_fetch
+import com.google.android.stardroid.ui.resources.diagnostics_section_experiments
+import com.google.android.stardroid.ui.resources.diagnostics_section_general
+import com.google.android.stardroid.ui.resources.diagnostics_section_graphics
+import com.google.android.stardroid.ui.resources.diagnostics_section_location_time
+import com.google.android.stardroid.ui.resources.diagnostics_section_network
+import com.google.android.stardroid.ui.resources.diagnostics_section_orientation_settings
+import com.google.android.stardroid.ui.resources.diagnostics_section_recent_log
+import com.google.android.stardroid.ui.resources.diagnostics_section_sensors
+import com.google.android.stardroid.ui.resources.diagnostics_sensor_absent
+import com.google.android.stardroid.ui.resources.diagnostics_sensor_rate_format
+import com.google.android.stardroid.ui.resources.diagnostics_share
+import com.google.android.stardroid.ui.resources.diagnostics_share_subject
+import com.google.android.stardroid.ui.resources.diagnostics_sky_map_version
+import com.google.android.stardroid.ui.resources.diagnostics_sky_map_version_format
+import com.google.android.stardroid.ui.resources.diagnostics_smoothing
+import com.google.android.stardroid.ui.resources.diagnostics_steadiness
+import com.google.android.stardroid.ui.resources.diagnostics_title
+import com.google.android.stardroid.ui.resources.diagnostics_use_magnetic_correction_setting
+import com.google.android.stardroid.ui.resources.diagnostics_utc_datetime
+import com.google.android.stardroid.ui.resources.diagnostics_view_direction_mode
+import com.google.android.stardroid.ui.resources.diagnostics_west
+import com.google.android.stardroid.ui.resources.diagnostics_wifi
+import com.google.android.stardroid.ui.resources.settings_back
 import com.google.android.stardroid.ui.theme.StatusColors
 import com.google.android.stardroid.ui.theme.statusColors
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import kotlinx.datetime.Instant
-import java.time.ZoneId
-import java.time.ZoneOffset
-import java.time.format.DateTimeFormatter
-import java.util.Locale
+import kotlinx.datetime.LocalDateTime
+import kotlinx.datetime.TimeZone
+import kotlinx.datetime.format.MonthNames
+import kotlinx.datetime.format.char
+import kotlinx.datetime.toLocalDateTime
+import org.jetbrains.compose.resources.StringResource
+import org.jetbrains.compose.resources.stringResource
+import kotlin.math.abs
+
+/**
+ * What only the platform knows: the General section's facts about the device and the build, and
+ * the names of its OS and graphics API for the row labels.
+ *
+ * @property model the device's marketing model, e.g. "Pixel 9 Pro" or "iPhone".
+ * @property hardware the board or machine identifier, e.g. "caiman" or "iPhone14,5".
+ * @property osVersionLabel the row label naming the OS, e.g. "Android version".
+ * @property graphicsVersionLabel the Graphics row label for the driver, e.g. "OpenGL".
+ * @property graphicsLimitsLabel the Graphics row label for the limits, e.g. "GL limits".
+ */
+data class DiagnosticsPlatform(
+    val model: String,
+    val hardware: String,
+    val osVersionLabel: StringResource,
+    val osVersion: String,
+    val appVersionName: String,
+    val appVersionCode: Long,
+    val buildLabel: String,
+    val graphicsVersionLabel: StringResource,
+    val graphicsLimitsLabel: StringResource,
+)
 
 /**
  * The diagnostics screen — v1's `DiagnosticActivity` as a full-screen Compose overlay: general
@@ -78,54 +171,56 @@ import java.util.Locale
  * Each section is built as [DiagnosticsSection] data and then both drawn and — when the user
  * taps Send — formatted into the text report by [DiagnosticsReport]. One source of truth, so the
  * report a user mails us is exactly the screen they were looking at.
+ *
+ * The host supplies what only its platform has: the [platform] facts, the way the report leaves
+ * ([onSendReport]), the app's own recent log, and Android's satellite data status (with a
+ * debug-only fetch, [onForceSatelliteFetch]); null or empty hides each. Back belongs to the host.
  */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun DiagnosticsScreen(
     viewModel: DiagnosticsViewModel,
     nightMode: Boolean,
-    satellitesEnabled: Boolean,
     experimentConfig: ExperimentConfig,
+    platform: DiagnosticsPlatform,
     onBack: () -> Unit,
+    onSendReport: (subject: String, body: String) -> Unit,
+    recentLogLines: suspend () -> List<String> = { emptyList() },
+    satelliteSection: DiagnosticsSection? = null,
+    onForceSatelliteFetch: (suspend () -> String)? = null,
 ) {
-    BackHandler(onBack = onBack)
-    val context = LocalContext.current
     val colors = statusColors(nightMode)
     val snapshot by viewModel.snapshots.collectAsStateWithLifecycle()
     val jitter by viewModel.pointingJitter.collectAsStateWithLifecycle()
     val scope = rememberCoroutineScope()
-    var satelliteState by remember { mutableStateOf<SatelliteDiagnosticsState?>(null) }
     var forceFetchResult by remember { mutableStateOf<String?>(null) }
     // Bumped after a forced experiment fetch so the section is rebuilt with the new values.
     var experimentsRefresh by remember { mutableIntStateOf(0) }
     var experimentFetchResult by remember { mutableStateOf<String?>(null) }
-    LaunchedEffect(satellitesEnabled) {
-        satelliteState = if (satellitesEnabled) readSatelliteDiagnostics(context) else null
-    }
     val sections =
         buildList {
-            add(generalSection())
-            add(graphicsSection(snapshot.rendererInfo))
+            add(generalSection(platform))
+            add(graphicsSection(platform, snapshot.rendererInfo))
             add(sensorsSection(viewModel, colors))
             add(orientationSettingsSection(snapshot, jitter))
             add(locationAndTimeSection(snapshot, colors))
             add(networkSection(snapshot))
-            satelliteState?.let { add(satelliteSection(it)) }
+            satelliteSection?.let { add(it) }
             add(experimentsSection(experimentConfig, experimentsRefresh))
         }
-    val reportHeader = stringResource(R.string.diagnostics_report_header)
-    val reportSubject = stringResource(R.string.diagnostics_share_subject)
-    val recentLogTitle = stringResource(R.string.diagnostics_section_recent_log)
+    val reportHeader = stringResource(Res.string.diagnostics_report_header)
+    val reportSubject = stringResource(Res.string.diagnostics_share_subject)
+    val recentLogTitle = stringResource(Res.string.diagnostics_section_recent_log)
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text(stringResource(R.string.diagnostics_title)) },
-                windowInsets = topBarWindowInsets(stringResource(R.string.diagnostics_title)),
+                title = { Text(stringResource(Res.string.diagnostics_title)) },
+                windowInsets = topBarWindowInsets(stringResource(Res.string.diagnostics_title)),
                 navigationIcon = {
                     IconButton(onClick = onBack) {
                         Icon(
                             Icons.AutoMirrored.Filled.ArrowBack,
-                            contentDescription = stringResource(R.string.settings_back),
+                            contentDescription = stringResource(Res.string.settings_back),
                         )
                     }
                 },
@@ -133,8 +228,7 @@ fun DiagnosticsScreen(
                     IconButton(
                         onClick = {
                             scope.launch {
-                                val logLines =
-                                    withContext(Dispatchers.IO) { DiagnosticsLog.recentLines() }
+                                val logLines = recentLogLines()
                                 val reportSections =
                                     if (logLines.isEmpty()) {
                                         sections
@@ -145,8 +239,7 @@ fun DiagnosticsScreen(
                                                 logLines.map { DiagnosticsRow("", it) },
                                             )
                                     }
-                                DiagnosticsShare.send(
-                                    context,
+                                onSendReport(
                                     reportSubject,
                                     DiagnosticsReport.format(reportHeader, reportSections),
                                 )
@@ -155,7 +248,7 @@ fun DiagnosticsScreen(
                     ) {
                         Icon(
                             Icons.Filled.Share,
-                            contentDescription = stringResource(R.string.diagnostics_share),
+                            contentDescription = stringResource(Res.string.diagnostics_share),
                         )
                     }
                 },
@@ -196,24 +289,19 @@ fun DiagnosticsScreen(
                         },
                         modifier = Modifier.padding(vertical = 8.dp),
                     ) {
-                        Text(stringResource(R.string.diagnostics_experiments_fetch_now))
+                        Text(stringResource(Res.string.diagnostics_experiments_fetch_now))
                     }
                     experimentFetchResult?.let { DiagnosticRow("Result", it) }
                 }
-                // Debug builds only. A discoverable "fetch now" in release is the retry storm
-                // the circuit breaker exists to prevent, so the gate is the build type — the
-                // one gate an ordinary user cannot reach.
-                if (BuildConfig.DEBUG && satelliteState != null) {
+                // Debug builds only, which the host decides. A discoverable "fetch now" in
+                // release is the retry storm the circuit breaker exists to prevent, so the gate
+                // is the build type — the one gate an ordinary user cannot reach.
+                if (onForceSatelliteFetch != null) {
                     Button(
-                        onClick = {
-                            scope.launch {
-                                forceFetchResult = forceSatelliteFetchForDebugging(context)
-                                satelliteState = readSatelliteDiagnostics(context)
-                            }
-                        },
+                        onClick = { scope.launch { forceFetchResult = onForceSatelliteFetch() } },
                         modifier = Modifier.padding(vertical = 8.dp),
                     ) {
-                        Text(stringResource(R.string.diagnostics_satellite_force_fetch))
+                        Text(stringResource(Res.string.diagnostics_satellite_force_fetch))
                     }
                     forceFetchResult?.let { DiagnosticRow("Result", it) }
                 }
@@ -223,41 +311,31 @@ fun DiagnosticsScreen(
 }
 
 @Composable
-private fun generalSection(): DiagnosticsSection {
-    val context = LocalContext.current
-    val appVersion =
-        remember(context) {
-            val info = context.packageManager.getPackageInfo(context.packageName, 0)
-            Pair(info.versionName.orEmpty(), info.longVersionCode)
-        }
-    return DiagnosticsSection(
-        stringResource(R.string.diagnostics_section_general),
+private fun generalSection(platform: DiagnosticsPlatform): DiagnosticsSection =
+    DiagnosticsSection(
+        stringResource(Res.string.diagnostics_section_general),
         listOf(
             DiagnosticsRow(
-                stringResource(R.string.diagnostics_device),
-                stringResource(
-                    R.string.diagnostics_phone_format,
-                    Build.MODEL,
-                    Build.HARDWARE,
-                    Locale.getDefault().language,
+                stringResource(Res.string.diagnostics_device),
+                formattedStringResource(
+                    Res.string.diagnostics_phone_format,
+                    platform.model,
+                    platform.hardware,
+                    Locale.current.language,
                 ),
             ),
+            DiagnosticsRow(stringResource(platform.osVersionLabel), platform.osVersion),
             DiagnosticsRow(
-                stringResource(R.string.diagnostics_android_version),
-                "${Build.VERSION.RELEASE} (${Build.VERSION.SDK_INT})",
-            ),
-            DiagnosticsRow(
-                stringResource(R.string.diagnostics_sky_map_version),
-                stringResource(
-                    R.string.diagnostics_sky_map_version_format,
-                    appVersion.first,
-                    appVersion.second,
-                    FlavorEdges.FLAVOR_LABEL,
+                stringResource(Res.string.diagnostics_sky_map_version),
+                formattedStringResource(
+                    Res.string.diagnostics_sky_map_version_format,
+                    platform.appVersionName,
+                    platform.appVersionCode,
+                    platform.buildLabel,
                 ),
             ),
         ),
     )
-}
 
 /**
  * What GPU and driver the sky is actually being drawn by — the fact most worth having in a
@@ -266,34 +344,37 @@ private fun generalSection(): DiagnosticsSection {
  * (see [RendererInfo]).
  */
 @Composable
-private fun graphicsSection(info: RendererInfo?): DiagnosticsSection {
-    val unavailable = stringResource(R.string.diagnostics_gl_unavailable)
+private fun graphicsSection(
+    platform: DiagnosticsPlatform,
+    info: RendererInfo?,
+): DiagnosticsSection {
+    val unavailable = stringResource(Res.string.diagnostics_gl_unavailable)
     return DiagnosticsSection(
-        stringResource(R.string.diagnostics_section_graphics),
+        stringResource(Res.string.diagnostics_section_graphics),
         listOf(
             DiagnosticsRow(
-                stringResource(R.string.diagnostics_gl_renderer),
+                stringResource(Res.string.diagnostics_gl_renderer),
                 info?.renderer?.ifBlank { unavailable } ?: unavailable,
             ),
             DiagnosticsRow(
-                stringResource(R.string.diagnostics_gl_version),
+                stringResource(platform.graphicsVersionLabel),
                 if (info == null) {
                     unavailable
                 } else {
-                    stringResource(
-                        R.string.diagnostics_gl_version_format,
+                    formattedStringResource(
+                        Res.string.diagnostics_gl_version_format,
                         info.version,
                         info.backend,
                     )
                 },
             ),
             DiagnosticsRow(
-                stringResource(R.string.diagnostics_gl_limits),
+                stringResource(platform.graphicsLimitsLabel),
                 if (info == null) {
                     unavailable
                 } else {
-                    stringResource(
-                        R.string.diagnostics_gl_limits_format,
+                    formattedStringResource(
+                        Res.string.diagnostics_gl_limits_format,
                         info.maxTextureSizePx,
                         rangeText(info.lineWidthRange, unavailable),
                         rangeText(info.pointSizeRange, unavailable),
@@ -327,18 +408,18 @@ private fun sensorsSection(
                 DiagnosticsRow(
                     label =
                         if (rowIndex == 0) {
-                            stringResource(R.string.diagnostics_rotation_matrix)
+                            stringResource(Res.string.diagnostics_rotation_matrix)
                         } else {
                             ""
                         },
                     value =
                         values
                             .subList(rowIndex * 3, rowIndex * 3 + 3)
-                            .joinToString(",") { "%.2f".format(Locale.US, it) },
+                            .joinToString(",") { twoPlaces(it) },
                 )
         }
     }
-    return DiagnosticsSection(stringResource(R.string.diagnostics_section_sensors), rows)
+    return DiagnosticsSection(stringResource(Res.string.diagnostics_section_sensors), rows)
 }
 
 /**
@@ -351,58 +432,58 @@ private fun orientationSettingsSection(
     jitter: PointingJitterSnapshot?,
 ): DiagnosticsSection =
     DiagnosticsSection(
-        stringResource(R.string.diagnostics_section_orientation_settings),
+        stringResource(Res.string.diagnostics_section_orientation_settings),
         listOf(
             DiagnosticsRow(
-                stringResource(R.string.diagnostics_gyro_mode),
+                stringResource(Res.string.diagnostics_gyro_mode),
                 stringResource(
                     if (snapshot.disableGyro) {
-                        R.string.diagnostics_gyro_disabled
+                        Res.string.diagnostics_gyro_disabled
                     } else {
-                        R.string.diagnostics_gyro_fused
+                        Res.string.diagnostics_gyro_fused
                     },
                 ),
             ),
             DiagnosticsRow(
-                stringResource(R.string.diagnostics_smoothing),
+                stringResource(Res.string.diagnostics_smoothing),
                 onOffText(snapshot.smoothingEnabled),
             ),
             DiagnosticsRow(
-                stringResource(R.string.diagnostics_steadiness),
+                stringResource(Res.string.diagnostics_steadiness),
                 enumDisplayName(snapshot.steadiness),
             ),
             DiagnosticsRow(
-                stringResource(R.string.diagnostics_ease_off),
+                stringResource(Res.string.diagnostics_ease_off),
                 enumDisplayName(snapshot.easeOff),
             ),
             DiagnosticsRow(
-                stringResource(R.string.diagnostics_reverse_magnetic_z),
+                stringResource(Res.string.diagnostics_reverse_magnetic_z),
                 onOffText(snapshot.reverseMagneticZ),
             ),
             DiagnosticsRow(
-                stringResource(R.string.diagnostics_use_magnetic_correction_setting),
+                stringResource(Res.string.diagnostics_use_magnetic_correction_setting),
                 onOffText(snapshot.useMagneticCorrection),
             ),
             DiagnosticsRow(
-                stringResource(R.string.diagnostics_view_direction_mode),
+                stringResource(Res.string.diagnostics_view_direction_mode),
                 enumDisplayName(snapshot.viewDirectionMode),
             ),
             DiagnosticsRow(
-                stringResource(R.string.diagnostics_calibration_dialog),
+                stringResource(Res.string.diagnostics_calibration_dialog),
                 stringResource(
                     if (snapshot.dontShowCalibrationDialog) {
-                        R.string.diagnostics_calibration_dialog_suppressed
+                        Res.string.diagnostics_calibration_dialog_suppressed
                     } else {
-                        R.string.diagnostics_calibration_dialog_shown
+                        Res.string.diagnostics_calibration_dialog_shown
                     },
                 ),
             ),
             DiagnosticsRow(
-                stringResource(R.string.diagnostics_jitter_raw),
+                stringResource(Res.string.diagnostics_jitter_raw),
                 jitterText(jitter?.raw),
             ),
             DiagnosticsRow(
-                stringResource(R.string.diagnostics_jitter_smoothed),
+                stringResource(Res.string.diagnostics_jitter_smoothed),
                 jitterText(jitter?.smoothed),
             ),
         ),
@@ -410,16 +491,18 @@ private fun orientationSettingsSection(
 
 @Composable
 private fun onOffText(enabled: Boolean): String =
-    stringResource(if (enabled) R.string.diagnostics_enabled else R.string.diagnostics_disabled)
+    stringResource(
+        if (enabled) Res.string.diagnostics_enabled else Res.string.diagnostics_disabled,
+    )
 
 /** "az σ0.42°, alt σ0.18°" over the trailing window (D95), or a placeholder before it fills. */
 @Composable
 private fun jitterText(jitter: PointingJitter?): String =
     if (jitter == null) {
-        stringResource(R.string.diagnostics_jitter_pending)
+        stringResource(Res.string.diagnostics_jitter_pending)
     } else {
-        stringResource(
-            R.string.diagnostics_jitter_format,
+        formattedStringResource(
+            Res.string.diagnostics_jitter_format,
             jitter.azimuthStdDevDeg,
             jitter.altitudeStdDevDeg,
         )
@@ -429,7 +512,7 @@ private fun jitterText(jitter: PointingJitter?): String =
 private fun enumDisplayName(value: Enum<*>): String =
     value.name
         .split("_")
-        .joinToString(" ") { it.lowercase(Locale.US).replaceFirstChar(Char::uppercase) }
+        .joinToString(" ") { it.lowercase().replaceFirstChar(Char::uppercase) }
 
 @Composable
 private fun locationAndTimeSection(
@@ -437,61 +520,63 @@ private fun locationAndTimeSection(
     colors: StatusColors,
 ): DiagnosticsSection =
     DiagnosticsSection(
-        stringResource(R.string.diagnostics_section_location_time),
+        stringResource(Res.string.diagnostics_section_location_time),
         listOf(
             DiagnosticsRow(
-                label = stringResource(R.string.diagnostics_location_permission),
+                label = stringResource(Res.string.diagnostics_location_permission),
                 value =
                     stringResource(
                         if (snapshot.locationPermissionGranted) {
-                            R.string.diagnostics_permission_granted
+                            Res.string.diagnostics_permission_granted
                         } else {
-                            R.string.diagnostics_permission_denied
+                            Res.string.diagnostics_permission_denied
                         },
                     ),
                 valueColor = if (snapshot.locationPermissionGranted) colors.good else colors.bad,
             ),
             DiagnosticsRow(
-                stringResource(R.string.diagnostics_gps),
+                stringResource(Res.string.diagnostics_gps),
                 stringResource(
                     when (snapshot.gpsStatus) {
-                        GpsStatus.NO_GPS -> R.string.diagnostics_no_gps
-                        GpsStatus.ENABLED -> R.string.diagnostics_enabled
-                        GpsStatus.DISABLED -> R.string.diagnostics_disabled
-                        GpsStatus.PERMISSION_DISABLED -> R.string.diagnostics_permission_disabled
+                        GpsStatus.NO_GPS -> Res.string.diagnostics_no_gps
+                        GpsStatus.ENABLED -> Res.string.diagnostics_enabled
+                        GpsStatus.DISABLED -> Res.string.diagnostics_disabled
+                        GpsStatus.PERMISSION_DISABLED -> Res.string.diagnostics_permission_disabled
                     },
                 ),
             ),
             DiagnosticsRow(
-                stringResource(R.string.diagnostics_location),
+                stringResource(Res.string.diagnostics_location),
                 locationText(snapshot.locationState),
             ),
             DiagnosticsRow(
-                stringResource(R.string.diagnostics_pointing),
+                stringResource(Res.string.diagnostics_pointing),
                 snapshot.pointing?.let { pointing ->
                     "${raText(pointing.raDeg)}, " +
-                        stringResource(R.string.diagnostics_dec_format, pointing.decDeg)
+                        formattedStringResource(Res.string.diagnostics_dec_format, pointing.decDeg)
                 } ?: "",
             ),
             DiagnosticsRow(
-                stringResource(R.string.diagnostics_magnetic_correction),
+                stringResource(Res.string.diagnostics_magnetic_correction),
                 magneticCorrectionText(snapshot.magneticCorrectionDeg),
             ),
             DiagnosticsRow(
-                stringResource(R.string.diagnostics_alignment_adjustment),
-                stringResource(
-                    R.string.diagnostics_alignment_format,
+                stringResource(Res.string.diagnostics_alignment_adjustment),
+                formattedStringResource(
+                    Res.string.diagnostics_alignment_format,
                     snapshot.alignmentAzimuthDeg,
                     snapshot.alignmentAltitudeDeg,
                 ),
             ),
             DiagnosticsRow(
-                stringResource(R.string.diagnostics_local_datetime),
-                remember(snapshot.time) { formatTime(snapshot.time, ZoneId.systemDefault()) },
+                stringResource(Res.string.diagnostics_local_datetime),
+                remember(snapshot.time) {
+                    formatTime(snapshot.time, TimeZone.currentSystemDefault())
+                },
             ),
             DiagnosticsRow(
-                stringResource(R.string.diagnostics_utc_datetime),
-                remember(snapshot.time) { formatTime(snapshot.time, ZoneOffset.UTC) },
+                stringResource(Res.string.diagnostics_utc_datetime),
+                remember(snapshot.time) { formatTime(snapshot.time, TimeZone.UTC) },
             ),
         ),
     )
@@ -499,70 +584,30 @@ private fun locationAndTimeSection(
 @Composable
 private fun networkSection(snapshot: DiagnosticsSnapshot): DiagnosticsSection =
     DiagnosticsSection(
-        stringResource(R.string.diagnostics_section_network),
+        stringResource(Res.string.diagnostics_section_network),
         listOf(
             DiagnosticsRow(
-                stringResource(R.string.diagnostics_connection),
+                stringResource(Res.string.diagnostics_connection),
                 when (snapshot.network) {
-                    NetworkStatus.DISCONNECTED -> stringResource(R.string.diagnostics_disconnected)
-                    NetworkStatus.CONNECTED -> stringResource(R.string.diagnostics_connected)
+                    NetworkStatus.DISCONNECTED ->
+                        stringResource(Res.string.diagnostics_disconnected)
+                    NetworkStatus.CONNECTED -> stringResource(Res.string.diagnostics_connected)
                     NetworkStatus.CONNECTED_WIFI ->
-                        stringResource(R.string.diagnostics_connected) +
-                            stringResource(R.string.diagnostics_wifi)
+                        stringResource(Res.string.diagnostics_connected) +
+                            stringResource(Res.string.diagnostics_wifi)
                     NetworkStatus.CONNECTED_CELL ->
-                        stringResource(R.string.diagnostics_connected) +
-                            stringResource(R.string.diagnostics_cell)
+                        stringResource(Res.string.diagnostics_connected) +
+                            stringResource(Res.string.diagnostics_cell)
                 },
             ),
         ),
     )
 
 /**
- * Satellite orbital-data status — the read-only half of the reporting CelesTrak's usage policy
- * requires of us: someone who reports "satellites aren't updating" can read the status code and
- * the pause state straight off this screen (and off the shared report built from it).
- */
-@Composable
-private fun satelliteSection(state: SatelliteDiagnosticsState): DiagnosticsSection {
-    val rows = mutableListOf<DiagnosticsRow>()
-    rows +=
-        DiagnosticsRow(
-            stringResource(R.string.diagnostics_satellite_data),
-            if (state.freshness == ElementFreshness.ABSENT || state.ageDays == null) {
-                stringResource(R.string.diagnostics_satellite_data_none)
-            } else {
-                stringResource(
-                    R.string.diagnostics_satellite_data_format,
-                    state.satelliteCount,
-                    state.ageDays,
-                )
-            },
-        )
-    rows +=
-        DiagnosticsRow(
-            stringResource(R.string.diagnostics_satellite_last_fetch),
-            state.lastStatusCode?.let { code ->
-                state.lastSuccess?.let { "$code at $it" } ?: "$code"
-            } ?: stringResource(R.string.diagnostics_satellite_never_fetched),
-        )
-    state.circuitOpenUntil?.let { until ->
-        rows +=
-            DiagnosticsRow(
-                stringResource(R.string.diagnostics_satellite_circuit_open),
-                stringResource(
-                    R.string.diagnostics_satellite_circuit_open_format,
-                    until.toString(),
-                    state.consecutiveFailures,
-                ),
-            )
-    }
-    return DiagnosticsSection(stringResource(R.string.diagnostics_section_satellites), rows)
-}
-
-/**
  * The current value of every [Experiment] flag as the app is reading it — Remote Config on gms,
- * the shipped defaults on fdroid. Re-read on every recomposition — cheap in-memory lookups — so a
- * fetch that activates while the screen is open shows up with the next recomposition.
+ * the shipped defaults on fdroid and iOS. Re-read on every recomposition — cheap in-memory
+ * lookups — so a fetch that activates while the screen is open shows up with the next
+ * recomposition.
  */
 @Composable
 private fun experimentsSection(
@@ -571,14 +616,14 @@ private fun experimentsSection(
 ): DiagnosticsSection {
     val lastFetched =
         config.lastFetchTimeMillis?.let {
-            formatTime(Instant.fromEpochMilliseconds(it), ZoneId.systemDefault())
-        } ?: stringResource(R.string.diagnostics_experiments_never_fetched)
+            formatTime(Instant.fromEpochMilliseconds(it), TimeZone.currentSystemDefault())
+        } ?: stringResource(Res.string.diagnostics_experiments_never_fetched)
     val rows =
         buildList {
             if (config.canFetch) {
                 add(
                     DiagnosticsRow(
-                        stringResource(R.string.diagnostics_experiments_last_fetched),
+                        stringResource(Res.string.diagnostics_experiments_last_fetched),
                         lastFetched,
                     ),
                 )
@@ -589,7 +634,7 @@ private fun experimentsSection(
                 )
             }
         }
-    return DiagnosticsSection(stringResource(R.string.diagnostics_section_experiments), rows)
+    return DiagnosticsSection(stringResource(Res.string.diagnostics_section_experiments), rows)
 }
 
 @Composable
@@ -623,18 +668,20 @@ private fun DiagnosticRow(
     }
 }
 
+/** A raw value at two places, the same in every locale: the report is read by developers. */
+private fun twoPlaces(value: Float): String = formatAndroidStyle("%.2f", arrayOf(value))
+
 /** A GL capability range as `min–max`, or [absent] when the driver declined to report one. */
 private fun rangeText(
     range: RendererInfo.Range?,
     absent: String,
-): String = range?.let { "%.1f–%.1f".format(Locale.US, it.min, it.max) } ?: absent
+): String = range?.let { formatAndroidStyle("%.1f–%.1f", arrayOf(it.min, it.max)) } ?: absent
 
 @Composable
 private fun sensorText(row: SensorRow): String =
     when (row) {
-        is SensorRow.Absent -> stringResource(R.string.diagnostics_sensor_absent)
-        is SensorRow.Present ->
-            row.reading?.values?.joinToString(",") { "%.2f".format(Locale.US, it) } ?: ""
+        is SensorRow.Absent -> stringResource(Res.string.diagnostics_sensor_absent)
+        is SensorRow.Present -> row.reading?.values?.joinToString(",") { twoPlaces(it) } ?: ""
     }
 
 /**
@@ -649,8 +696,8 @@ private fun rateSuffix(
     if (row !is SensorRow.Present || rate == null) return ""
     val staleForMillis = rate.staleForMillis ?: return ""
     return " " +
-        stringResource(
-            R.string.diagnostics_sensor_rate_format,
+        formattedStringResource(
+            Res.string.diagnostics_sensor_rate_format,
             rate.hz,
             staleForMillis / 1000.0,
         )
@@ -677,27 +724,29 @@ private fun sensorColor(
 private fun locationText(state: LocationState): String =
     when (state) {
         is LocationState.Confirmed ->
-            stringResource(
-                R.string.diagnostics_location_format,
+            formattedStringResource(
+                Res.string.diagnostics_location_format,
                 state.location.latitudeDeg,
                 state.location.longitudeDeg,
                 state.source.name.lowercase(),
             )
-        is LocationState.Unset -> stringResource(R.string.diagnostics_location_unset)
+        is LocationState.Unset -> stringResource(Res.string.diagnostics_location_unset)
         is LocationState.Acquiring, is LocationState.AcquiringTimeout ->
-            stringResource(R.string.diagnostics_location_acquiring)
+            stringResource(Res.string.diagnostics_location_acquiring)
         is LocationState.HardwareUnavailable ->
-            stringResource(R.string.diagnostics_location_hardware_unavailable)
+            stringResource(Res.string.diagnostics_location_hardware_unavailable)
         is LocationState.PermissionDenied, is LocationState.PermissionPermanentlyDenied ->
-            stringResource(R.string.diagnostics_permission_denied)
+            stringResource(Res.string.diagnostics_permission_denied)
     }
 
 @Composable
 private fun magneticCorrectionText(degrees: Double): String =
-    stringResource(
-        R.string.diagnostics_magnetic_correction_format,
-        kotlin.math.abs(degrees),
-        stringResource(if (degrees >= 0) R.string.diagnostics_east else R.string.diagnostics_west),
+    formattedStringResource(
+        Res.string.diagnostics_magnetic_correction_format,
+        abs(degrees),
+        stringResource(
+            if (degrees >= 0) Res.string.diagnostics_east else Res.string.diagnostics_west,
+        ),
     )
 
 /** v1's `getDegreeInHour`: RA degrees as truncated h/m/s. */
@@ -709,23 +758,35 @@ private fun raText(raDeg: Double): String {
     return "${h}h ${m}m ${s}s"
 }
 
-private val diagnosticsTimeFormatter: DateTimeFormatter =
-    DateTimeFormatter.ofPattern("yyyy-MMM-dd HH:mm:ss")
+/**
+ * "2026-Oct-08 11:32:05". The month is English everywhere, where Android's `DateTimeFormatter`
+ * used to name it in the device's language: the report is read by developers.
+ */
+private val diagnosticsTimeFormat =
+    LocalDateTime.Format {
+        year()
+        char('-')
+        monthName(MonthNames.ENGLISH_ABBREVIATED)
+        char('-')
+        dayOfMonth()
+        char(' ')
+        hour()
+        char(':')
+        minute()
+        char(':')
+        second()
+    }
 
 private fun formatTime(
     time: Instant,
-    zone: ZoneId,
-): String =
-    diagnosticsTimeFormatter
-        .withZone(zone)
-        .format(java.time.Instant.ofEpochMilli(time.toEpochMilliseconds()))
+    zone: TimeZone,
+): String = diagnosticsTimeFormat.format(time.toLocalDateTime(zone))
 
-@androidx.annotation.StringRes
-private fun sensorName(kind: SensorKind): Int =
+private fun sensorName(kind: SensorKind): StringResource =
     when (kind) {
-        SensorKind.ACCELEROMETER -> R.string.diagnostics_accelerometer
-        SensorKind.MAGNETOMETER -> R.string.diagnostics_compass
-        SensorKind.GYROSCOPE -> R.string.diagnostics_gyroscope
-        SensorKind.ROTATION_VECTOR -> R.string.diagnostics_rotation
-        SensorKind.LIGHT -> R.string.diagnostics_light_level
+        SensorKind.ACCELEROMETER -> Res.string.diagnostics_accelerometer
+        SensorKind.MAGNETOMETER -> Res.string.diagnostics_compass
+        SensorKind.GYROSCOPE -> Res.string.diagnostics_gyroscope
+        SensorKind.ROTATION_VECTOR -> Res.string.diagnostics_rotation
+        SensorKind.LIGHT -> Res.string.diagnostics_light_level
     }

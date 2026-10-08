@@ -41,7 +41,10 @@ import androidx.compose.ui.viewinterop.UIKitViewController
 import androidx.compose.ui.window.ComposeUIViewController
 import com.google.android.stardroid.catalog.ObjectInfo
 import com.google.android.stardroid.render.api.LayerId
+import com.google.android.stardroid.startup.ExperimentConfig
 import com.google.android.stardroid.time.TimeTravelState
+import com.google.android.stardroid.ui.diagnostics.DiagnosticsScreen
+import com.google.android.stardroid.ui.diagnostics.DiagnosticsViewModel
 import com.google.android.stardroid.ui.help.HelpLink
 import com.google.android.stardroid.ui.help.HelpScreen
 import com.google.android.stardroid.ui.help.WhatsNewScreen
@@ -63,6 +66,7 @@ import com.google.android.stardroid.ui.objectinfo.ObjectInfoViewModel
 import com.google.android.stardroid.ui.onboarding.WelcomeScreen
 import com.google.android.stardroid.ui.resources.Res
 import com.google.android.stardroid.ui.resources.sun_wont_set_message
+import com.google.android.stardroid.ui.resources.support_email
 import com.google.android.stardroid.ui.search.SearchControlBar
 import com.google.android.stardroid.ui.search.SearchDialog
 import com.google.android.stardroid.ui.search.SearchGeometry
@@ -105,6 +109,7 @@ fun skyMapViewController(): UIViewController {
     val objectInfo = graph.objectInfoViewModel()
     val location = graph.locationViewModel()
     val settings = graph.settingsViewModel()
+    val diagnostics = graph.diagnosticsViewModel(mapViewModel, map.rendererInfo)
     return ComposeUIViewController {
         SkyMapScreen(
             map,
@@ -115,6 +120,7 @@ fun skyMapViewController(): UIViewController {
             objectInfo,
             location,
             settings,
+            diagnostics,
             startup,
             onRequestAutoLocation = graph::requestAutoLocation,
             onOpenAppSettings = graph::openAppSettings,
@@ -135,6 +141,7 @@ private fun SkyMapScreen(
     objectInfoViewModel: ObjectInfoViewModel,
     locationViewModel: LocationViewModel,
     settingsViewModel: SettingsViewModel,
+    diagnosticsViewModel: DiagnosticsViewModel,
     startup: StartupViewModel,
     onRequestAutoLocation: () -> Unit,
     onOpenAppSettings: () -> Unit,
@@ -166,8 +173,20 @@ private fun SkyMapScreen(
     var showOverflowSheet by remember { mutableStateOf(false) }
     var showLocationSheet by remember { mutableStateOf(false) }
     var showManualLocationDialog by remember { mutableStateOf(false) }
-    // The full-screen pages over the map, standing in for Android's navigation routes.
-    var page by remember { mutableStateOf<Page?>(null) }
+    // The full-screen pages over the map, standing in for Android's navigation routes: a stack,
+    // so back from a page opened from another (Settings from Help) returns there, as Android pops.
+    var pages by remember { mutableStateOf(listOf<Page>()) }
+    val page = pages.lastOrNull()
+
+    fun open(next: Page) {
+        pages = pages + next
+    }
+
+    fun back() {
+        pages = pages.dropLast(1)
+    }
+    val diagnosticsPlatform = remember { iosDiagnosticsPlatform() }
+    val supportEmail = stringResource(Res.string.support_email)
     // A still tap on the sky identifies what is there, as on Android. UIKit reports points;
     // Compose pixels are points at the screen's scale, which is its density here.
     val density = LocalDensity.current.density
@@ -375,19 +394,19 @@ private fun SkyMapScreen(
                     onOpenCalibration = null,
                     onOpenTutorial = {
                         showOverflowSheet = false
-                        page = Page.TUTORIAL
+                        open(Page.TUTORIAL)
                     },
                     onOpenHelp = {
                         showOverflowSheet = false
-                        page = Page.HELP
+                        open(Page.HELP)
                     },
                     onOpenWhatsNew = {
                         showOverflowSheet = false
-                        page = Page.WHATS_NEW
+                        open(Page.WHATS_NEW)
                     },
                     onOpenSettings = {
                         showOverflowSheet = false
-                        page = Page.SETTINGS
+                        open(Page.SETTINGS)
                     },
                     onDismiss = { showOverflowSheet = false },
                 )
@@ -413,29 +432,39 @@ private fun SkyMapScreen(
                 )
             }
             // The edge swipe closes a page, as Android's system back pops its destination.
-            BackHandler(enabled = page != null) { page = null }
+            BackHandler(enabled = page != null) { back() }
             when (page) {
                 Page.HELP ->
                     HelpScreen(
                         nightMode = nightMode,
-                        onBack = { page = null },
+                        onBack = ::back,
                         // Links to screens iOS doesn't have yet stay inert until they arrive.
                         onNavigate = { destination ->
                             when (destination) {
-                                HelpLink.Destination.SETTINGS -> page = Page.SETTINGS
+                                HelpLink.Destination.SETTINGS -> open(Page.SETTINGS)
                                 HelpLink.Destination.APP_SETTINGS -> onOpenAppSettings()
-                                HelpLink.Destination.TUTORIAL -> page = Page.TUTORIAL
+                                HelpLink.Destination.TUTORIAL -> open(Page.TUTORIAL)
                                 else -> Unit
                             }
                         },
                     )
-                Page.WHATS_NEW -> WhatsNewScreen(nightMode = nightMode, onBack = { page = null })
-                // Diagnostics hasn't moved yet, so its row stays hidden.
+                Page.WHATS_NEW -> WhatsNewScreen(nightMode = nightMode, onBack = ::back)
                 Page.SETTINGS ->
                     SettingsScreen(
                         settingsViewModel,
-                        onBack = { page = null },
-                        onOpenDiagnostics = null,
+                        onBack = ::back,
+                        onOpenDiagnostics = { open(Page.DIAGNOSTICS) },
+                    )
+                Page.DIAGNOSTICS ->
+                    DiagnosticsScreen(
+                        diagnosticsViewModel,
+                        nightMode = nightMode,
+                        experimentConfig = ExperimentConfig.Static,
+                        platform = diagnosticsPlatform,
+                        onBack = ::back,
+                        onSendReport = { subject, body ->
+                            sendDiagnosticsReport(supportEmail, subject, body)
+                        },
                     )
                 // A replay: no analytics funnel, and nothing re-marked as seen (as on Android).
                 Page.TUTORIAL ->
@@ -445,7 +474,7 @@ private fun SkyMapScreen(
                         hasGyroscope = motionHardware.hasGyroscope,
                         nightMode = nightMode,
                         satellitesEnabled = false,
-                        onFinished = { page = null },
+                        onFinished = ::back,
                     )
                 null -> Unit
             }
@@ -510,6 +539,9 @@ private enum class Page {
     HELP,
     WHATS_NEW,
     SETTINGS,
+
+    /** Reached from Settings, as on Android. */
+    DIAGNOSTICS,
 
     /** The warm welcome, replayed from the overflow sheet or Help. */
     TUTORIAL,

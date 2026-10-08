@@ -9,8 +9,8 @@
 
 import XCTest
 
-/// Settings through the overflow menu: the rows iOS acts on (and none of Android's classic-sensor,
-/// analytics or diagnostics rows), a choice that sticks, and the edge swipe back to the map.
+/// Settings through the overflow menu: the rows iOS acts on (and neither Android's classic-sensor
+/// switch nor its analytics opt-out), a choice that sticks, and the edge swipe back to the map.
 final class SettingsTests: XCTestCase {
     func testSettingsRowsChoiceAndSwipeBack() {
         let app = XCUIApplication()
@@ -23,14 +23,13 @@ final class SettingsTests: XCTestCase {
         XCTAssertFalse(app.staticTexts["Use legacy sensors"].exists)
         capture(self, "1-settings")
         // Compose exposes only the rows on screen, so the end of the list is checked from there:
-        // its last row is View direction, with no Other section after it.
+        // Other holds Diagnostics alone.
         app.swipeUp()
         app.swipeUp()
-        XCTAssertTrue(app.staticTexts["View direction"].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.staticTexts["Diagnostics"].waitForExistence(timeout: 5))
         XCTAssertTrue(app.staticTexts["Use magnetic correction"].exists)
+        XCTAssertTrue(app.staticTexts["Other"].exists)
         XCTAssertFalse(app.staticTexts["Send usage statistics"].exists)
-        XCTAssertFalse(app.staticTexts["Diagnostics"].exists)
-        XCTAssertFalse(app.staticTexts["Other"].exists)
         capture(self, "1b-settings-end")
         app.swipeDown()
         app.swipeDown()

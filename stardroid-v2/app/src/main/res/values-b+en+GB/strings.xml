@@ -77,74 +77,6 @@
     <!-- tm:omitted name="auto_level_on_toast" reason="identical_to_source" -->
     <!-- tm:omitted name="auto_level_off_toast" reason="identical_to_source" -->
 
-    <!-- tm:omitted name="support_email" reason="identical_to_source" -->
-    <!-- tm:omitted name="diagnostics_title" reason="identical_to_source" -->
-    <!-- tm:omitted name="diagnostics_share" reason="identical_to_source" -->
-    <!-- tm:omitted name="diagnostics_share_subject" reason="identical_to_source" -->
-    <!-- tm:omitted name="diagnostics_report_header" reason="identical_to_source" -->
-    <!-- tm:omitted name="diagnostics_section_recent_log" reason="identical_to_source" -->
-    <!-- tm:omitted name="diagnostics_section_general" reason="identical_to_source" -->
-    <!-- tm:omitted name="diagnostics_device" reason="identical_to_source" -->
-    <!-- tm:omitted name="diagnostics_phone_format" reason="identical_to_source" -->
-    <!-- tm:omitted name="diagnostics_android_version" reason="identical_to_source" -->
-    <!-- tm:omitted name="diagnostics_sky_map_version" reason="identical_to_source" -->
-    <!-- tm:omitted name="diagnostics_sky_map_version_format" reason="identical_to_source" -->
-    <!-- tm:omitted name="diagnostics_section_graphics" reason="identical_to_source" -->
-    <!-- tm:omitted name="diagnostics_gl_renderer" reason="identical_to_source" -->
-    <!-- tm:omitted name="diagnostics_gl_version" reason="identical_to_source" -->
-    <!-- tm:omitted name="diagnostics_gl_version_format" reason="identical_to_source" -->
-    <!-- tm:omitted name="diagnostics_gl_limits" reason="identical_to_source" -->
-    <!-- tm:omitted name="diagnostics_gl_limits_format" reason="identical_to_source" -->
-    <!-- tm:omitted name="diagnostics_gl_unavailable" reason="identical_to_source" -->
-    <!-- tm:omitted name="diagnostics_section_sensors" reason="identical_to_source" -->
-    <!-- tm:omitted name="diagnostics_rotation" reason="identical_to_source" -->
-    <!-- tm:omitted name="diagnostics_rotation_matrix" reason="identical_to_source" -->
-    <!-- tm:omitted name="diagnostics_light_level" reason="identical_to_source" -->
-    <!-- tm:omitted name="diagnostics_sensor_absent" reason="identical_to_source" -->
-    <!-- tm:omitted name="diagnostics_sensor_rate_format" reason="identical_to_source" -->
-    <!-- tm:omitted name="diagnostics_section_orientation_settings" reason="identical_to_source" -->
-    <!-- tm:omitted name="diagnostics_gyro_mode" reason="identical_to_source" -->
-    <!-- tm:omitted name="diagnostics_gyro_fused" reason="identical_to_source" -->
-    <!-- tm:omitted name="diagnostics_gyro_disabled" reason="identical_to_source" -->
-    <!-- tm:omitted name="diagnostics_smoothing" reason="identical_to_source" -->
-    <!-- tm:omitted name="diagnostics_steadiness" reason="identical_to_source" -->
-    <!-- tm:omitted name="diagnostics_ease_off" reason="identical_to_source" -->
-    <!-- tm:omitted name="diagnostics_reverse_magnetic_z" reason="identical_to_source" -->
-    <!-- tm:omitted name="diagnostics_use_magnetic_correction_setting" reason="identical_to_source" -->
-    <!-- tm:omitted name="diagnostics_view_direction_mode" reason="identical_to_source" -->
-    <!-- tm:omitted name="diagnostics_calibration_dialog" reason="identical_to_source" -->
-    <!-- tm:omitted name="diagnostics_calibration_dialog_suppressed" reason="identical_to_source" -->
-    <!-- tm:omitted name="diagnostics_calibration_dialog_shown" reason="identical_to_source" -->
-    <!-- tm:omitted name="diagnostics_jitter_raw" reason="identical_to_source" -->
-    <!-- tm:omitted name="diagnostics_jitter_smoothed" reason="identical_to_source" -->
-    <!-- tm:omitted name="diagnostics_jitter_format" reason="identical_to_source" -->
-    <!-- tm:omitted name="diagnostics_jitter_pending" reason="identical_to_source" -->
-    <!-- tm:omitted name="diagnostics_section_location_time" reason="identical_to_source" -->
-    <!-- tm:omitted name="diagnostics_location_permission" reason="identical_to_source" -->
-    <!-- tm:omitted name="diagnostics_permission_granted" reason="identical_to_source" -->
-    <!-- tm:omitted name="diagnostics_permission_denied" reason="identical_to_source" -->
-    <!-- tm:omitted name="diagnostics_gps" reason="identical_to_source" -->
-    <!-- tm:omitted name="diagnostics_no_gps" reason="identical_to_source" -->
-    <!-- tm:omitted name="diagnostics_enabled" reason="identical_to_source" -->
-    <!-- tm:omitted name="diagnostics_disabled" reason="identical_to_source" -->
-    <!-- tm:omitted name="diagnostics_permission_disabled" reason="identical_to_source" -->
-    <!-- tm:omitted name="diagnostics_location" reason="identical_to_source" -->
-    <!-- tm:omitted name="diagnostics_location_format" reason="identical_to_source" -->
-    <!-- tm:omitted name="diagnostics_location_unset" reason="identical_to_source" -->
-    <!-- tm:omitted name="diagnostics_location_acquiring" reason="identical_to_source" -->
-    <!-- tm:omitted name="diagnostics_location_hardware_unavailable" reason="identical_to_source" -->
-    <!-- tm:omitted name="diagnostics_pointing" reason="identical_to_source" -->
-    <!-- tm:omitted name="diagnostics_dec_format" reason="identical_to_source" -->
-    <!-- tm:omitted name="diagnostics_magnetic_correction" reason="identical_to_source" -->
-    <!-- tm:omitted name="diagnostics_alignment_adjustment" reason="identical_to_source" -->
-    <!-- tm:omitted name="diagnostics_alignment_format" reason="identical_to_source" -->
-    <!-- tm:omitted name="diagnostics_magnetic_correction_format" reason="identical_to_source" -->
-    <!-- tm:omitted name="diagnostics_east" reason="identical_to_source" -->
-    <!-- tm:omitted name="diagnostics_west" reason="identical_to_source" -->
-    <!-- tm:omitted name="diagnostics_local_datetime" reason="identical_to_source" -->
-    <!-- tm:omitted name="diagnostics_utc_datetime" reason="identical_to_source" -->
-    <!-- tm:omitted name="diagnostics_section_network" reason="identical_to_source" -->
-    <!-- tm:omitted name="diagnostics_connection" reason="identical_to_source" -->
     <!-- tm:omitted name="diagnostics_section_satellites" reason="identical_to_source" -->
     <!-- tm:omitted name="diagnostics_satellite_data" reason="identical_to_source" -->
     <!-- tm:omitted name="diagnostics_satellite_data_none" reason="identical_to_source" -->
@@ -153,11 +85,6 @@
     <!-- tm:omitted name="diagnostics_satellite_never_fetched" reason="identical_to_source" -->
     <!-- tm:omitted name="diagnostics_satellite_circuit_open" reason="identical_to_source" -->
     <!-- tm:omitted name="diagnostics_satellite_circuit_open_format" reason="identical_to_source" -->
-    <!-- tm:omitted name="diagnostics_satellite_force_fetch" reason="identical_to_source" -->
-    <!-- tm:omitted name="diagnostics_connected" reason="identical_to_source" -->
-    <!-- tm:omitted name="diagnostics_disconnected" reason="identical_to_source" -->
-    <string name="diagnostics_wifi" translation_description="Network type suffix appended to the connection status (e.g. \'Connected (wifi)\'). Note the leading space.">(wifi)</string>
-    <string name="diagnostics_cell" translation_description="Network type suffix appended to the connection status (e.g. \'Connected (cell)\'). Note the leading space.">(cell)</string>
 
     <!-- tm:omitted name="calibration_heading_user" reason="identical_to_source" -->
     <!-- tm:omitted name="calibration_heading_warning" reason="identical_to_source" -->

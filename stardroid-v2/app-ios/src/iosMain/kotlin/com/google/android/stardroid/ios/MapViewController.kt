@@ -14,6 +14,7 @@ import com.google.android.stardroid.render.RenderBinder
 import com.google.android.stardroid.render.api.LayerId
 import com.google.android.stardroid.render.api.LayerScene
 import com.google.android.stardroid.render.api.RenderState
+import com.google.android.stardroid.render.api.RendererInfo
 import com.google.android.stardroid.render.api.SkyCamera
 import com.google.android.stardroid.render.api.SkyRenderer
 import com.google.android.stardroid.render.metal.MetalSkyRenderer
@@ -36,6 +37,12 @@ import platform.Foundation.NSRunLoopCommonModes
 import platform.Foundation.NSSelectorFromString
 import platform.Metal.MTLCommandQueueProtocol
 import platform.Metal.MTLCreateSystemDefaultDevice
+import platform.Metal.MTLGPUFamilyApple4
+import platform.Metal.MTLGPUFamilyApple5
+import platform.Metal.MTLGPUFamilyApple6
+import platform.Metal.MTLGPUFamilyApple7
+import platform.Metal.MTLGPUFamilyApple8
+import platform.Metal.MTLGPUFamilyApple9
 import platform.Metal.MTLPixelFormatBGRA8Unorm
 import platform.MetalKit.MTKView
 import platform.MetalKit.MTKViewDelegateProtocol
@@ -84,6 +91,34 @@ class MapViewController(
     private val scope = CoroutineScope(SupervisorJob() + Dispatchers.Main)
 
     val viewController: UIViewController = UIViewController()
+
+    /**
+     * The GPU drawing the sky, for the diagnostics screen's Graphics rows (Android reads its own
+     * from GL once its surface exists). The limits are Metal's, the same on every GPU iOS 16 runs
+     * on (A11 and later): 16384 px textures and 511 px points. Lines are triangles here, so there
+     * is no line width cap to report.
+     */
+    val rendererInfo: RendererInfo =
+        RendererInfo(
+            backend = "metal",
+            vendor = "Apple",
+            renderer = device.name,
+            version = gpuFamily(),
+            maxTextureSizePx = 16384,
+            lineWidthRange = null,
+            pointSizeRange = RendererInfo.Range(1f, 511f),
+        )
+
+    /** The newest Apple GPU family the device supports, e.g. "Apple8" for an A15. */
+    private fun gpuFamily(): String =
+        listOf(
+            MTLGPUFamilyApple9 to "Apple9",
+            MTLGPUFamilyApple8 to "Apple8",
+            MTLGPUFamilyApple7 to "Apple7",
+            MTLGPUFamilyApple6 to "Apple6",
+            MTLGPUFamilyApple5 to "Apple5",
+            MTLGPUFamilyApple4 to "Apple4",
+        ).firstOrNull { (family, _) -> device.supportsFamily(family) }?.second ?: "Apple"
 
     /**
      * A still tap on the sky, in points from the view's top-left — Android's onSingleTapUp,

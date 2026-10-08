@@ -92,74 +92,6 @@
     <string name="auto_level_on_toast" translation_description="Brief confirmation shown when a double tap turns horizon auto-leveling on in manual mode">Horisont automatisk nivåjustering på</string>
     <string name="auto_level_off_toast" translation_description="Brief confirmation shown when a double tap turns horizon auto-leveling off in manual mode">Horisont automatisk nivåjustering av</string>
 
-    <!-- tm:omitted name="support_email" reason="identical_to_source" -->
-    <string name="diagnostics_title">Diagnostikk</string>
-    <string name="diagnostics_share" translation_description="Accessibility label for the diagnostics screen button that emails these details to the developers">Send til utviklere</string>
-    <string name="diagnostics_share_subject" translation_description="Subject line of the email a user sends from the diagnostics screen">Sky Map-diagnoserapport</string>
-    <string name="diagnostics_report_header" translation_description="First line of the emailed diagnostics report, telling the user where to type their problem description. Keep it on one line.">--- Sky Map-diagnose. Beskriv problemet over denne linjen. ---</string>
-    <string name="diagnostics_section_recent_log" translation_description="Section heading, in the emailed diagnostics report only (not shown on screen), for the app's own recent log lines">Nylig logg</string>
-    <string name="diagnostics_section_general">Generelt</string>
-    <string name="diagnostics_device">Enhet</string>
-    <!-- tm:omitted name="diagnostics_phone_format" reason="identical_to_source" -->
-    <string name="diagnostics_android_version">Android-versjon</string>
-    <string name="diagnostics_sky_map_version">Sky Map-versjon</string>
-    <!-- tm:omitted name="diagnostics_sky_map_version_format" reason="identical_to_source" -->
-    <string name="diagnostics_section_graphics" translation_description="Section heading in the diagnostics screen for graphics/GPU information">Grafikk</string>
-    <string name="diagnostics_gl_renderer" translation_description="Row label in the diagnostics screen for the name of the graphics processor (GPU) drawing the sky">Gjengiver</string>
-    <!-- tm:omitted name="diagnostics_gl_version" reason="identical_to_source" -->
-    <!-- tm:omitted name="diagnostics_gl_version_format" reason="identical_to_source" -->
-    <string name="diagnostics_gl_limits" translation_description="Row label in the diagnostics screen for graphics hardware limits (maximum texture size, supported line widths and point sizes)">GL-grenser</string>
-    <string name="diagnostics_gl_limits_format" translation_description="Format for the GL limits row: maximum texture size in pixels, then the supported line width and point size ranges. \'tex\' abbreviates texture. %1$d is texture size, %2$s is the line width range, %3$s is the point size range.">tekstur %1$d, linje %2$s, punkt %3$s</string>
-    <string name="diagnostics_gl_unavailable" translation_description="Value shown in the diagnostics Graphics rows before the sky map has drawn, when the graphics details are not known yet">Ikke tilgjengelig ennå</string>
-    <string name="diagnostics_section_sensors">Sensorer</string>
-    <string name="diagnostics_rotation">Rotasjon</string>
-    <string name="diagnostics_rotation_matrix">Rotasjonsmatrise</string>
-    <string name="diagnostics_light_level">Lysnivå</string>
-    <string name="diagnostics_sensor_absent">Fraværende</string>
-    <string name="diagnostics_sensor_rate_format" translation_description="Suffix appended to a diagnostics sensor row showing how often it is delivering events and how long ago the last one arrived. %1$.1f is a rate in events per second (Hz), %2$.1f is a number of seconds. Note the leading parenthesis and \'Hz\' abbreviates Hertz.">(%1$.1f Hz, for %2$.1fs siden)</string>
-    <string name="diagnostics_section_orientation_settings" translation_description="Section heading in the diagnostics screen for the user-adjustable settings that shape the sensor readings shown above it">Orienteringsinnstillinger</string>
-    <string name="diagnostics_gyro_mode" translation_description="Row label in the diagnostics screen for which sensor path supplies device orientation">Gyroskop</string>
-    <string name="diagnostics_gyro_fused" translation_description="Value shown for the gyro row when the fused rotation-vector sensor is in use">Kombinert rotasjonsvektor</string>
-    <string name="diagnostics_gyro_disabled" translation_description="Value shown for the gyro row when the rotation-vector sensor is skipped in favour of accelerometer plus compass">Akselerometer + kompass</string>
-    <string name="diagnostics_smoothing" translation_description="Row label in the diagnostics screen for whether orientation smoothing is on">Utjevning</string>
-    <string name="diagnostics_steadiness" translation_description="Row label in the diagnostics screen for the orientation smoothing filter's steadiness setting">Stabilitet</string>
-    <string name="diagnostics_ease_off" translation_description="Row label in the diagnostics screen for the orientation smoothing filter's ease-off setting">Avvikling</string>
-    <string name="diagnostics_reverse_magnetic_z" translation_description="Row label in the diagnostics screen for whether the magnetometer's Z axis is reversed">Omvendt magnetisk Z</string>
-    <string name="diagnostics_use_magnetic_correction_setting" translation_description="Row label in the diagnostics screen for whether magnetic declination correction is applied">Magnetisk korreksjon</string>
-    <string name="diagnostics_view_direction_mode" translation_description="Row label in the diagnostics screen for which phone axis is treated as pointing at the sky">Visningsretning</string>
-    <string name="diagnostics_calibration_dialog" translation_description="Row label in the diagnostics screen for whether the automatic compass-calibration dialog is suppressed">Kalibreringsdialog</string>
-    <string name="diagnostics_calibration_dialog_suppressed" translation_description="Value shown for the calibration dialog row when the automatic dialog is suppressed">Undertrykt</string>
-    <string name="diagnostics_calibration_dialog_shown" translation_description="Value shown for the calibration dialog row when the automatic dialog is not suppressed">Vist</string>
-    <string name="diagnostics_jitter_raw" translation_description="Row label in the diagnostics screen for how much the sensor-derived pointing wobbles before smoothing is applied">Risting (rå)</string>
-    <string name="diagnostics_jitter_smoothed" translation_description="Row label in the diagnostics screen for how much the sensor-derived pointing wobbles after smoothing is applied">Risting (utjevnet)</string>
-    <string name="diagnostics_jitter_format" translation_description="Row value in the diagnostics screen showing the standard deviation of azimuth and altitude over a trailing window, in degrees. \'az\' abbreviates azimuth, \'alt\' abbreviates altitude, the sigma character denotes standard deviation. %1$.2f is the azimuth standard deviation in degrees, %2$.2f is the altitude standard deviation in degrees.">as σ%1$.2f°, høyde σ%2$.2f°</string>
-    <string name="diagnostics_jitter_pending" translation_description="Value shown for the jitter rows before enough sensor samples have arrived to compute a standard deviation">Samler inn…</string>
-    <string name="diagnostics_section_location_time">Sted og tid</string>
-    <string name="diagnostics_location_permission">Posisjonstillatelse</string>
-    <string name="diagnostics_permission_granted">Gitt</string>
-    <string name="diagnostics_permission_denied">Nektet</string>
-    <!-- tm:omitted name="diagnostics_gps" reason="identical_to_source" -->
-    <string name="diagnostics_no_gps">Ingen GPS</string>
-    <string name="diagnostics_enabled">Aktivert</string>
-    <string name="diagnostics_disabled">Deaktivert</string>
-    <string name="diagnostics_permission_disabled">Tillatelse deaktivert</string>
-    <string name="diagnostics_location">Posisjon (br., le.)</string>
-    <!-- tm:omitted name="diagnostics_location_format" reason="identical_to_source" -->
-    <string name="diagnostics_location_unset" translation_description="Location status shown in diagnostics when no location has been set yet">Ikke angitt</string>
-    <string name="diagnostics_location_acquiring">Henter…</string>
-    <string name="diagnostics_location_hardware_unavailable" translation_description="Location status shown in diagnostics when the device has no usable location provider, whether because it lacks location hardware or none is enabled">Ingen brukbar stedstjeneste</string>
-    <string name="diagnostics_pointing">Peke-øyeblikksbilde</string>
-    <!-- tm:omitted name="diagnostics_dec_format" reason="identical_to_source" -->
-    <string name="diagnostics_magnetic_correction">Magnetisk korreksjon</string>
-    <string name="diagnostics_alignment_adjustment" translation_description="Diagnostics row label for the manual sky-alignment correction the user set by dragging in through-camera mode.">Innrettingsjustering</string>
-    <!-- tm:omitted name="diagnostics_alignment_format" reason="identical_to_source" -->
-    <!-- tm:omitted name="diagnostics_magnetic_correction_format" reason="identical_to_source" -->
-    <string name="diagnostics_east" translation_description="Compass direction shown for an eastward magnetic correction">Øst</string>
-    <string name="diagnostics_west" translation_description="Compass direction shown for a westward magnetic correction">Vest</string>
-    <string name="diagnostics_local_datetime">Lokal dato-tid</string>
-    <string name="diagnostics_utc_datetime">Universell dato-tid</string>
-    <string name="diagnostics_section_network">Nettverk</string>
-    <string name="diagnostics_connection">Forbindelse</string>
     <string name="diagnostics_section_satellites" translation_description="Section heading in the diagnostics screen for satellite orbital-data status">Satellitter</string>
     <string name="diagnostics_satellite_data" translation_description="Row label in the diagnostics screen for the age and count of cached satellite orbital data">Banedata</string>
     <string name="diagnostics_satellite_data_none" translation_description="Row value in the diagnostics screen when no satellite orbital data has been downloaded yet">Ikke lastet ned</string>
@@ -168,11 +100,6 @@
     <string name="diagnostics_satellite_never_fetched" translation_description="Row value in the diagnostics screen when satellite orbital data has never been downloaded">Aldri</string>
     <string name="diagnostics_satellite_circuit_open" translation_description="Row label in the diagnostics screen for when satellite downloads are paused after repeated server errors">Nedlastinger satt på pause</string>
     <string name="diagnostics_satellite_circuit_open_format" translation_description="Row value in the diagnostics screen showing when paused satellite downloads will resume and how many failures caused the pause. %1$s is a date and time, %2$d is a count">Til %1$s (%2$d feil)</string>
-    <string name="diagnostics_satellite_force_fetch" translation_description="Label on a debug-only button in the diagnostics screen that downloads satellite orbital data immediately">Hent satellittdata nå (feilsøking)</string>
-    <string name="diagnostics_connected">Tilkoblet</string>
-    <string name="diagnostics_disconnected">Frakoblet</string>
-    <string name="diagnostics_wifi">(wifi)</string>
-    <string name="diagnostics_cell">" (mobilnett)"</string>
 
     <!-- Compass calibration screen (slice 15) -->
     <string name="calibration_heading_user">Telefonens kompass</string>

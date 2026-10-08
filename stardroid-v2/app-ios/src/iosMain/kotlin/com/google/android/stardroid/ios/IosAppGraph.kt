@@ -18,6 +18,7 @@ import com.google.android.stardroid.layers.LayerRegistry
 import com.google.android.stardroid.location.LocationController
 import com.google.android.stardroid.location.LocationSource
 import com.google.android.stardroid.location.LocationState
+import com.google.android.stardroid.render.api.RendererInfo
 import com.google.android.stardroid.sensors.OrientationSource
 import com.google.android.stardroid.sensors.SensorConfig
 import com.google.android.stardroid.sensors.ZeroMagneticDeclinationSource
@@ -28,6 +29,7 @@ import com.google.android.stardroid.startup.DataStoreStartupState
 import com.google.android.stardroid.startup.StartupRouter
 import com.google.android.stardroid.startup.StartupState
 import com.google.android.stardroid.time.TimeController
+import com.google.android.stardroid.ui.diagnostics.DiagnosticsViewModel
 import com.google.android.stardroid.ui.layers.LayersViewModel
 import com.google.android.stardroid.ui.location.LocationViewModel
 import com.google.android.stardroid.ui.map.MapViewModel
@@ -313,6 +315,32 @@ class IosAppGraph {
             settings,
             classicSensorsAvailable = false,
             analyticsAvailable = false,
+        )
+
+    private val networkMonitor by lazy { NetworkMonitor() }
+
+    /**
+     * The diagnostics screen, over Core Motion's raw sensors and the [map]'s camera and frame.
+     * Its magnetic correction row reads zero: Core Motion turns to true north itself, so the map
+     * applies no declination of its own (see [CoreMotionOrientationSource]).
+     */
+    fun diagnosticsViewModel(
+        map: MapViewModel,
+        rendererInfo: RendererInfo,
+    ): DiagnosticsViewModel =
+        DiagnosticsViewModel(
+            sensorStatus = CoreMotionStatusSource(),
+            locationStates = locationController.state,
+            camera = map.camera,
+            settings = settings,
+            declinationSource = ZeroMagneticDeclinationSource,
+            now = timeController::now,
+            isLocationPermissionGranted = { coreLocation.isAuthorized },
+            gpsStatus = ::iosGpsStatus,
+            networkStatus = { networkMonitor.status },
+            orientationSource = orientationSource,
+            localFrame = map.localFrame,
+            rendererInfo = { rendererInfo },
         )
 
     /** The location sheet and its dialogs, with Apple's geocoder behind manual entry. */

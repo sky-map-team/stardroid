@@ -151,14 +151,6 @@ class CoreMotionOrientationSource(
 
         const val NANOS_PER_SECOND = 1e9
 
-        /** Rows East, North, Up: the reference frame's −Y, X and Z columns. */
-        fun CMRotationMatrix.toPhoneToWorld() =
-            Matrix3(
-                -m12, -m22, -m32,
-                m11, m21, m31,
-                m13, m23, m33,
-            )
-
         /**
          * Android's fused-path tuning, as Core Motion's attitude is gyro-fused like a rotation
          * vector; `null` when smoothing is off.
@@ -183,3 +175,14 @@ class CoreMotionOrientationSource(
             }
     }
 }
+
+/**
+ * Core Motion's attitude as Android's phone→world matrix, rows East, North, Up: the reference
+ * frame's −Y, X and Z columns.
+ */
+internal fun CMRotationMatrix.toPhoneToWorld() =
+    Matrix3(
+        -m12, -m22, -m32,
+        m11, m21, m31,
+        m13, m23, m33,
+    )
