@@ -134,7 +134,6 @@ import kotlinx.coroutines.launch
 import kotlinx.datetime.Instant
 import kotlinx.datetime.LocalDateTime
 import kotlinx.datetime.TimeZone
-import kotlinx.datetime.format.MonthNames
 import kotlinx.datetime.format.char
 import kotlinx.datetime.toLocalDateTime
 import org.jetbrains.compose.resources.StringResource
@@ -759,14 +758,14 @@ private fun raText(raDeg: Double): String {
 }
 
 /**
- * "2026-Oct-08 11:32:05". The month is English everywhere, where Android's `DateTimeFormatter`
- * used to name it in the device's language: the report is read by developers.
+ * "2026-10-08 11:32:05": all numbers, so it reads the same in every language and on both
+ * platforms, which name months differently (the report is read by developers).
  */
 private val diagnosticsTimeFormat =
     LocalDateTime.Format {
         year()
         char('-')
-        monthName(MonthNames.ENGLISH_ABBREVIATED)
+        monthNumber()
         char('-')
         dayOfMonth()
         char(' ')

@@ -467,6 +467,8 @@ private fun SkyMapScreen(
                         },
                     )
                 // A replay: no analytics funnel, and nothing re-marked as seen (as on Android).
+                // Finishing or skipping lands on the map, taking Help with it if Help opened
+                // it, as Android's replay pops to the map; back still returns to Help.
                 Page.TUTORIAL ->
                     WelcomeScreen(
                         hasCompass = motionHardware.hasCompass,
@@ -474,7 +476,7 @@ private fun SkyMapScreen(
                         hasGyroscope = motionHardware.hasGyroscope,
                         nightMode = nightMode,
                         satellitesEnabled = false,
-                        onFinished = ::back,
+                        onFinished = { pages = emptyList() },
                     )
                 null -> Unit
             }
