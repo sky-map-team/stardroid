@@ -27,6 +27,10 @@ targets:
       - path: ../../app/src/main/assets/welcome
         type: folder
         buildPhase: resources
+      # The version banner's release portrait (rememberAssetBitmap).
+      - path: ../../app/src/main/assets/splash
+        type: folder
+        buildPhase: resources
       # The catalog, generated from source-data/ by the pre-build step (never checked in).
       - path: ../../data/build/generated/assets/generateCatalogDb/skymap.db
         buildPhase: resources
@@ -39,6 +43,9 @@ targets:
         # A night sky: light status bar text everywhere.
         UIStatusBarStyle: UIStatusBarStyleLightContent
         UIViewControllerBasedStatusBarAppearance: false
+        # Android's navy OS splash, which the version banner continues from without a seam.
+        UILaunchScreen:
+          UIColorName: LaunchNavy
         # The system location prompt's text. Localized with the app's strings in phase 5.
         NSLocationWhenInUseUsageDescription: >-
           Sky Map uses your location to show the sky as it looks from where you are.
@@ -58,8 +65,9 @@ targets:
         CURRENT_PROJECT_VERSION: "1"
         GENERATE_INFOPLIST_FILE: YES
         INFOPLIST_KEY_CFBundleDisplayName: Sky Map
-        INFOPLIST_KEY_UILaunchScreen_Generation: YES
         INFOPLIST_KEY_UIApplicationSceneManifest_Generation: YES
+        # The asset catalog holds only the launch screen's colour; there is no app icon set yet.
+        ASSETCATALOG_COMPILER_APPICON_NAME: ""
         INFOPLIST_KEY_UISupportedInterfaceOrientations: UIInterfaceOrientationPortrait
         FRAMEWORK_SEARCH_PATHS: $(SRCROOT)/../../app-ios/build/xcode-frameworks/$(CONFIGURATION)/$(SDK_NAME)
         OTHER_LDFLAGS: -framework SkyMapKit -framework Metal -framework MetalKit

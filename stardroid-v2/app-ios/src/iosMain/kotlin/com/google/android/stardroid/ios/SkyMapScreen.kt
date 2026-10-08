@@ -78,7 +78,9 @@ import com.google.android.stardroid.ui.settings.SettingsScreen
 import com.google.android.stardroid.ui.settings.SettingsViewModel
 import com.google.android.stardroid.ui.startup.EulaScreen
 import com.google.android.stardroid.ui.startup.StartupViewModel
+import com.google.android.stardroid.ui.startup.VersionBanner
 import com.google.android.stardroid.ui.startup.WhatsNewDialog
+import com.google.android.stardroid.ui.startup.appVersionName
 import com.google.android.stardroid.ui.theme.SkyMapTheme
 import com.google.android.stardroid.ui.timetravel.TimeTravelDialog
 import com.google.android.stardroid.ui.timetravel.TimeTravelFlash
@@ -180,6 +182,7 @@ private fun SkyMapScreen(
     var showManualLocationDialog by remember { mutableStateOf(false) }
     // The full-screen pages over the map, standing in for Android's navigation routes: a stack,
     // so back from a page opened from another (Settings from Help) returns there, as Android pops.
+    var showBanner by remember { mutableStateOf(true) }
     var pages by remember { mutableStateOf(listOf<Page>()) }
     val page = pages.lastOrNull()
 
@@ -564,6 +567,11 @@ private fun SkyMapScreen(
                         WhatsNewDialog(nightMode = nightMode, onDismiss = startup::dismissWhatsNew)
                     }
                 }
+            }
+            // The branded version banner, once per launch, over everything while the app loads,
+            // as on Android; the launch screen is the same navy, so the banner continues it.
+            if (showBanner) {
+                VersionBanner(versionName = appVersionName(), onFinished = { showBanner = false })
             }
         }
     }

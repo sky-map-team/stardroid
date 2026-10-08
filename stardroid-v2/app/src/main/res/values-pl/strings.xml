@@ -1,9 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-    <!-- tm:omitted name="app_name" reason="identical_to_source" -->
 
-    <!-- tm:omitted name="splash_version" reason="identical_to_source" -->
-    <string name="splash_dismiss" translation_description="Accessibility label for the action that dismisses the launch splash when it is tapped">Odrzuć</string>
 
     <!-- Sky-map labels drawn by the computed layers (LayerStrings). -->
     <string name="north_pole">N</string>

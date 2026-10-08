@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name" translation_description="The application name, shown under the launcher icon and in the app switcher.">Sky Map</string>
 
     <!-- Launch splash banner. -->
-    <string name="splash_version" translation_description="Version line under the app name on the launch splash. %1$s is the app version name, e.g. 1.2.3">v%1$s</string>
-    <string name="splash_dismiss" translation_description="Accessibility label for the action that dismisses the launch splash when it is tapped">Dismiss</string>
 
     <!-- Sky-map labels drawn by the computed layers (LayerStrings). -->
     <string name="north_pole" translation_description="Short abbreviation for the North Celestial Pole, displayed as a label on the sky map grid. Translators: use the standard abbreviation in your language (e.g. NP in English, PN in French).">NP</string>

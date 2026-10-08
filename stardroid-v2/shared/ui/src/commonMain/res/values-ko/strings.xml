@@ -425,4 +425,7 @@
     <!-- tm:omitted name="support_email" reason="identical_to_source" -->
     <string name="gallery_title" translation_description="Title of the screen showing a gallery of photographs of celestial objects. Not the user\'s own photos - these are catalog images from sources such as NASA and ESA.">하늘 갤러리</string>
     <string name="gallery_back" translation_description="Content description for the back arrow leaving the gallery screen">뒤로</string>
+    <string name="app_name">별지도</string>
+    <!-- tm:omitted name="splash_version" reason="identical_to_source" -->
+    <string name="splash_dismiss" translation_description="Accessibility label for the action that dismisses the launch splash when it is tapped">닫기</string>
 </resources>

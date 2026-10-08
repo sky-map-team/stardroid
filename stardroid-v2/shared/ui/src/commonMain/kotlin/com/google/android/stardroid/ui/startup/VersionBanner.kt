@@ -34,15 +34,18 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.google.android.stardroid.R
+import com.google.android.stardroid.ui.common.formattedStringResource
 import com.google.android.stardroid.ui.common.rememberAssetBitmap
+import com.google.android.stardroid.ui.resources.Res
+import com.google.android.stardroid.ui.resources.app_name
+import com.google.android.stardroid.ui.resources.splash_dismiss
+import com.google.android.stardroid.ui.resources.splash_version
 import kotlinx.coroutines.delay
+import org.jetbrains.compose.resources.stringResource
 
 // Long enough to register as a brand beat, short enough not to slow the launch. The banner
 // continues straight from the navy OS splash, so there is no fade-in — only a brief opaque hold
@@ -62,11 +65,14 @@ private val TitleInk = Color(0xFFEEF2FF)
  *
  * @param onFinished called once the fade completes (or on tap), so the host can drop it from
  *   composition.
+ * @param fallbackLogo drawn on the disc if the release portrait is missing: Android's launcher
+ *   art. Without it the disc is the nebula gradient alone.
  */
 @Composable
 fun VersionBanner(
     versionName: String,
     onFinished: () -> Unit,
+    fallbackLogo: (@Composable () -> Unit)? = null,
 ) {
     // The host passes a fresh lambda each recomposition, so track the latest rather than
     // keying the effect on it and restarting the animation.
@@ -91,15 +97,15 @@ fun VersionBanner(
                 .clickable(
                     interactionSource = remember { MutableInteractionSource() },
                     indication = null,
-                    onClickLabel = stringResource(R.string.splash_dismiss),
+                    onClickLabel = stringResource(Res.string.splash_dismiss),
                     onClick = currentOnFinished,
                 ),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
-        LogoDisc()
+        LogoDisc(fallbackLogo)
         Text(
-            text = stringResource(R.string.app_name),
+            text = stringResource(Res.string.app_name),
             color = TitleInk,
             fontSize = 26.sp,
             fontWeight = FontWeight.SemiBold,
@@ -110,7 +116,7 @@ fun VersionBanner(
         // drop the line rather than show a bare "v".
         if (versionName.isNotEmpty()) {
             Text(
-                text = stringResource(R.string.splash_version, versionName),
+                text = formattedStringResource(Res.string.splash_version, versionName),
                 color = StarGold,
                 fontSize = 15.sp,
                 fontWeight = FontWeight.Medium,
@@ -124,11 +130,11 @@ fun VersionBanner(
 /**
  * The round "picture": the current release's circular portrait
  * (`assets/splash/splash.png`, overwritten each release by the `skymap.release-splashscreen`
- * skill), falling back to the nebula-gradient disc with the launcher foreground art on top if
- * the asset is missing.
+ * skill), falling back to the nebula-gradient disc with [fallback] on top if the asset is
+ * missing.
  */
 @Composable
-private fun LogoDisc() {
+private fun LogoDisc(fallback: (@Composable () -> Unit)?) {
     val portrait = rememberAssetBitmap(SPLASH_PORTRAIT_ASSET)
     val nebula =
         remember {
@@ -151,11 +157,7 @@ private fun LogoDisc() {
                 modifier = Modifier.fillMaxSize(),
             )
         } else {
-            Image(
-                painter = painterResource(R.drawable.ic_launcher_foreground),
-                contentDescription = null,
-                modifier = Modifier.fillMaxSize(),
-            )
+            fallback?.invoke()
         }
     }
 }

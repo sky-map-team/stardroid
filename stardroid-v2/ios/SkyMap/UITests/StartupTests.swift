@@ -16,6 +16,8 @@ final class StartupTests: XCTestCase {
     func testEulaThenMap() {
         let app = XCUIApplication()
         app.launch()
+        usleep(500_000)
+        capture(self, "0-banner")
         sleep(4)
         capture(self, "1-launch")
         passStartup(app)
@@ -41,6 +43,12 @@ final class StartupTests: XCTestCase {
 
 /// Accepts the EULA, skips the warm welcome and allows location, if this launch still asks.
 func passStartup(_ app: XCUIApplication) {
+    // The version banner covers the first few seconds of every launch; a tap dismisses it, and
+    // would otherwise land on it rather than on Accept.
+    let banner = app.staticTexts["Sky Map"]
+    if banner.waitForExistence(timeout: 5) {
+        banner.tap()
+    }
     let accept = app.buttons["Accept"]
     if accept.waitForExistence(timeout: 5) {
         accept.tap()

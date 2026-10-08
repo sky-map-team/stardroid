@@ -461,4 +461,7 @@
     <!-- tm:omitted name="support_email" reason="identical_to_source" -->
     <string name="gallery_title" translation_description="Title of the screen showing a gallery of photographs of celestial objects. Not the user\'s own photos - these are catalog images from sources such as NASA and ESA.">Galerie du ciel</string>
     <string name="gallery_back" translation_description="Content description for the back arrow leaving the gallery screen">Retour</string>
+    <!-- tm:omitted name="app_name" reason="identical_to_source" -->
+    <!-- tm:omitted name="splash_version" reason="identical_to_source" -->
+    <string name="splash_dismiss" translation_description="Accessibility label for the action that dismisses the launch splash when it is tapped">Ignorer</string>
 </resources>

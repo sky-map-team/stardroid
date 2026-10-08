@@ -1,9 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-    <string name="app_name">星空地图</string>
 
-    <!-- tm:omitted name="splash_version" reason="identical_to_source" -->
-    <string name="splash_dismiss" translation_description="Accessibility label for the action that dismisses the launch splash when it is tapped">关闭</string>
 
     <!-- Sky-map labels drawn by the computed layers (LayerStrings). -->
     <string name="north_pole">北极</string>
