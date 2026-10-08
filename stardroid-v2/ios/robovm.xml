@@ -1,0 +1,28 @@
+<config>
+  <executableName>${app.executable}</executableName>
+  <mainClass>${app.mainclass}</mainClass>
+  <os>ios</os>
+  <target>ios</target>
+  <iosInfoPList>Info.plist.xml</iosInfoPList>
+  <bootclasspath>
+    <!-- java.time for kotlinx-datetime: ThreeTen-BP relocated by the javaTimeJar task. -->
+    <classpathentry>build/robovm-boot/java-time-backport.jar</classpathentry>
+  </bootclasspath>
+  <resources>
+    <resource>
+      <directory>build/generated/ios-resources</directory>
+    </resource>
+  </resources>
+  <forceLinkClasses>
+    <!-- ThreeTen-BP finds its zone-rules provider reflectively. -->
+    <pattern>java.time.zone.**</pattern>
+  </forceLinkClasses>
+  <libs>
+    <lib>z</lib>
+  </libs>
+  <frameworks>
+    <framework>UIKit</framework>
+    <framework>CoreGraphics</framework>
+    <framework>Foundation</framework>
+  </frameworks>
+</config>

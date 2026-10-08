@@ -81,6 +81,10 @@ Do not add a third notice — per-directory notices are what let the old claim d
   backend written to match v1's rendering behaviour (an independent implementation, not a
   port; see `NOTICE.md`).
 - `app/` — the Android app shell (currently the dev test-scene activity and perf gate).
+- `ios/` — **experimental** iOS shell: the pure modules AOT-compiled by MobiVM/RoboVM, plus a
+  small UIKit/CoreGraphics front end. RoboVM's class library is Java-7-era, so Java 8+ APIs
+  in pure modules break iOS; `./gradlew check` runs `:ios:checkRoboVmApi` to catch them on
+  any OS. See [`ios/README.md`](ios/README.md).
 - `konsist/` — architecture-gate tests enforcing the pure/Android module boundary (D20).
 - `build-logic/` — Gradle convention plugins (`skymap.pure-kotlin`, `skymap.android-*`).
 

@@ -5,6 +5,15 @@ pluginManagement {
         google()
         mavenCentral()
     }
+    resolutionStrategy {
+        eachPlugin {
+            // MobiVM publishes its Gradle plugin to Maven Central only, without the plugin
+            // marker artifact, so map the id to the implementation module by hand (:ios).
+            if (requested.id.id == "com.mobidevelop.robovm") {
+                useModule("com.mobidevelop.robovm:robovm-gradle-plugin:${requested.version}")
+            }
+        }
+    }
 }
 
 plugins {
@@ -34,6 +43,9 @@ include(":data:generator")
 include(":render:gles1")
 include(":data")
 include(":app")
+
+// iOS shell (experimental) — the pure modules AOT-compiled with MobiVM/RoboVM. See ios/README.md.
+include(":ios")
 
 // Architecture-enforcement test module (D20)
 include(":konsist")
