@@ -374,4 +374,79 @@
     <string name="settings_tonight_digest_summary" translation_description="Explanation of the tonight-digest notification preference">Un resumen después del atardecer, omitido en noches tranquilas</string>
     <string name="settings_notifications_blocked" translation_description="Warning row shown when the user enabled notifications in the app but blocked them at the system level">Las notificaciones están bloqueadas para Sky Map</string>
     <string name="settings_notifications_blocked_action" translation_description="Hint under the blocked-notifications warning; tapping opens the system settings page">Toca para permitirlas en la configuración del sistema</string>
+    <string name="diagnostics_title">Diagnósticos</string>
+    <string name="diagnostics_share" translation_description="Accessibility label for the diagnostics screen button that emails these details to the developers">Enviar a los desarrolladores</string>
+    <string name="diagnostics_share_subject" translation_description="Subject line of the email a user sends from the diagnostics screen">Informe de diagnóstico de Sky Map</string>
+    <string name="diagnostics_report_header" translation_description="First line of the emailed diagnostics report, telling the user where to type their problem description. Keep it on one line.">
+    --- Diagnóstico de Sky Map. Por favor, describa el problema encima de esta línea. ---
+    </string>
+    <string name="diagnostics_section_recent_log" translation_description="Section heading, in the emailed diagnostics report only (not shown on screen), for the app's own recent log lines">Registro reciente</string>
+    <!-- tm:omitted name="diagnostics_section_general" reason="identical_to_source" -->
+    <string name="diagnostics_device">Dispositivo</string>
+    <!-- tm:omitted name="diagnostics_phone_format" reason="identical_to_source" -->
+    <string name="diagnostics_android_version">Versión de Android</string>
+    <string name="diagnostics_sky_map_version">Versión de Sky Map</string>
+    <!-- tm:omitted name="diagnostics_sky_map_version_format" reason="identical_to_source" -->
+    <string name="diagnostics_section_graphics" translation_description="Section heading in the diagnostics screen for graphics/GPU information">Gráficos</string>
+    <string name="diagnostics_gl_renderer" translation_description="Row label in the diagnostics screen for the name of the graphics processor (GPU) drawing the sky">Renderizador</string>
+    <!-- tm:omitted name="diagnostics_gl_version" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_gl_version_format" reason="identical_to_source" -->
+    <string name="diagnostics_gl_limits" translation_description="Row label in the diagnostics screen for graphics hardware limits (maximum texture size, supported line widths and point sizes)">Límites GL</string>
+    <string name="diagnostics_gl_limits_format" translation_description="Format for the GL limits row: maximum texture size in pixels, then the supported line width and point size ranges. \'tex\' abbreviates texture. %1$d is texture size, %2$s is the line width range, %3$s is the point size range.">tex %1$d, línea %2$s, punto %3$s</string>
+    <string name="diagnostics_gl_unavailable" translation_description="Value shown in the diagnostics Graphics rows before the sky map has drawn, when the graphics details are not known yet">No disponible aún</string>
+    <string name="diagnostics_section_sensors">Sensores</string>
+    <string name="diagnostics_rotation">Rotación</string>
+    <string name="diagnostics_rotation_matrix">Matriz de rotación</string>
+    <string name="diagnostics_light_level">Nivel de luz</string>
+    <string name="diagnostics_sensor_absent">Ausente</string>
+    <string name="diagnostics_sensor_rate_format" translation_description="Suffix appended to a diagnostics sensor row showing how often it is delivering events and how long ago the last one arrived. %1$.1f is a rate in events per second (Hz), %2$.1f is a number of seconds. Note the leading parenthesis and \'Hz\' abbreviates Hertz.">(%1$.1f Hz, hace %2$.1fs)</string>
+    <string name="diagnostics_section_orientation_settings" translation_description="Section heading in the diagnostics screen for the user-adjustable settings that shape the sensor readings shown above it">Ajustes de orientación</string>
+    <string name="diagnostics_gyro_mode" translation_description="Row label in the diagnostics screen for which sensor path supplies device orientation">Giroscopio</string>
+    <string name="diagnostics_gyro_fused" translation_description="Value shown for the gyro row when the fused rotation-vector sensor is in use">Vector de rotación fusionado</string>
+    <string name="diagnostics_gyro_disabled" translation_description="Value shown for the gyro row when the rotation-vector sensor is skipped in favour of accelerometer plus compass">Acelerómetro + brújula</string>
+    <string name="diagnostics_smoothing" translation_description="Row label in the diagnostics screen for whether orientation smoothing is on">Suavizado</string>
+    <string name="diagnostics_steadiness" translation_description="Row label in the diagnostics screen for the orientation smoothing filter's steadiness setting">Estabilidad</string>
+    <string name="diagnostics_ease_off" translation_description="Row label in the diagnostics screen for the orientation smoothing filter's ease-off setting">Atenuación</string>
+    <string name="diagnostics_reverse_magnetic_z" translation_description="Row label in the diagnostics screen for whether the magnetometer's Z axis is reversed">Invertir Z magnético</string>
+    <string name="diagnostics_use_magnetic_correction_setting" translation_description="Row label in the diagnostics screen for whether magnetic declination correction is applied">Corrección magnética</string>
+    <string name="diagnostics_view_direction_mode" translation_description="Row label in the diagnostics screen for which phone axis is treated as pointing at the sky">Dirección de vista</string>
+    <string name="diagnostics_calibration_dialog" translation_description="Row label in the diagnostics screen for whether the automatic compass-calibration dialog is suppressed">Diálogo de calibración</string>
+    <string name="diagnostics_calibration_dialog_suppressed" translation_description="Value shown for the calibration dialog row when the automatic dialog is suppressed">Oculto</string>
+    <string name="diagnostics_calibration_dialog_shown" translation_description="Value shown for the calibration dialog row when the automatic dialog is not suppressed">Mostrado</string>
+    <string name="diagnostics_jitter_raw" translation_description="Row label in the diagnostics screen for how much the sensor-derived pointing wobbles before smoothing is applied">Temblor (en bruto)</string>
+    <string name="diagnostics_jitter_smoothed" translation_description="Row label in the diagnostics screen for how much the sensor-derived pointing wobbles after smoothing is applied">Temblor (suavizado)</string>
+    <!-- tm:omitted name="diagnostics_jitter_format" reason="identical_to_source" -->
+    <string name="diagnostics_jitter_pending" translation_description="Value shown for the jitter rows before enough sensor samples have arrived to compute a standard deviation">Recopilando…</string>
+    <string name="diagnostics_section_location_time">Ubicación y hora</string>
+    <string name="diagnostics_location_permission">Permiso de ubicación</string>
+    <string name="diagnostics_permission_granted">Otorgado</string>
+    <string name="diagnostics_permission_denied">Denegado</string>
+    <!-- tm:omitted name="diagnostics_gps" reason="identical_to_source" -->
+    <string name="diagnostics_no_gps">Sin GPS</string>
+    <string name="diagnostics_enabled">Activado</string>
+    <string name="diagnostics_disabled">Desactivado</string>
+    <string name="diagnostics_permission_disabled">Permiso desactivado</string>
+    <string name="diagnostics_location">Ubicación (lat, long)</string>
+    <!-- tm:omitted name="diagnostics_location_format" reason="identical_to_source" -->
+    <string name="diagnostics_location_unset" translation_description="Location status shown in diagnostics when no location has been set yet">No establecido</string>
+    <string name="diagnostics_location_acquiring">Adquiriendo…</string>
+    <string name="diagnostics_location_hardware_unavailable" translation_description="Location status shown in diagnostics when the device has no usable location provider, whether because it lacks location hardware or none is enabled">No hay proveedor de ubicación utilizable</string>
+    <string name="diagnostics_pointing">Apunte instantáneo</string>
+    <!-- tm:omitted name="diagnostics_dec_format" reason="identical_to_source" -->
+    <string name="diagnostics_magnetic_correction">Corrección magnética</string>
+    <string name="diagnostics_alignment_adjustment" translation_description="Diagnostics row label for the manual sky-alignment correction the user set by dragging in through-camera mode.">Ajuste de alineación</string>
+    <!-- tm:omitted name="diagnostics_alignment_format" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_magnetic_correction_format" reason="identical_to_source" -->
+    <string name="diagnostics_east" translation_description="Compass direction shown for an eastward magnetic correction">Este</string>
+    <string name="diagnostics_west" translation_description="Compass direction shown for a westward magnetic correction">Oeste</string>
+    <string name="diagnostics_local_datetime">Fecha local</string>
+    <string name="diagnostics_utc_datetime">Fecha universal</string>
+    <string name="diagnostics_section_network">Red</string>
+    <string name="diagnostics_connection">Conexión</string>
+    <string name="diagnostics_satellite_force_fetch" translation_description="Label on a debug-only button in the diagnostics screen that downloads satellite orbital data immediately">Descargar datos de satélite ahora (depuración)</string>
+    <string name="diagnostics_connected">Conectado</string>
+    <string name="diagnostics_disconnected">Desconectado</string>
+    <string name="diagnostics_wifi">" (Wi-Fi)"</string>
+    <string name="diagnostics_cell">" (móvil)"</string>
+    <!-- tm:omitted name="support_email" reason="identical_to_source" -->
 </resources>

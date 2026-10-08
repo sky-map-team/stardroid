@@ -36,7 +36,7 @@ import com.google.android.stardroid.ui.calibration.CompassCalibrationScreen
 import com.google.android.stardroid.ui.calibration.CompassCalibrationViewModel
 import com.google.android.stardroid.ui.common.WidgetsSheet
 import com.google.android.stardroid.ui.common.widgetOffers
-import com.google.android.stardroid.ui.diagnostics.DiagnosticsScreen
+import com.google.android.stardroid.ui.diagnostics.DiagnosticsRoute
 import com.google.android.stardroid.ui.diagnostics.DiagnosticsViewModel
 import com.google.android.stardroid.ui.gallery.GalleryScreen
 import com.google.android.stardroid.ui.gallery.GalleryViewModel
@@ -334,7 +334,7 @@ fun SkyMapNavHost(
         }
 
         composable(Routes.DIAGNOSTICS) {
-            DiagnosticsScreen(
+            DiagnosticsRoute(
                 diagnosticsViewModel,
                 nightMode = nightMode,
                 satellitesEnabled = experimentConfig.isEnabled(Experiment.SATELLITES),

@@ -93,74 +93,6 @@
     <string name="auto_level_on_toast" translation_description="Brief confirmation shown when a double tap turns horizon auto-leveling on in manual mode">क्षितिज स्वतः-स्तर चालू</string>
     <string name="auto_level_off_toast" translation_description="Brief confirmation shown when a double tap turns horizon auto-leveling off in manual mode">क्षितिज स्वतः-स्तर बंद</string>
 
-    <!-- tm:omitted name="support_email" reason="identical_to_source" -->
-    <string name="diagnostics_title">डायग्नोस्टिक्स</string>
-    <string name="diagnostics_share" translation_description="Accessibility label for the diagnostics screen button that emails these details to the developers">डेवलपर्स को भेजें</string>
-    <string name="diagnostics_share_subject" translation_description="Subject line of the email a user sends from the diagnostics screen">Sky Map डायग्नोस्टिक्स रिपोर्ट</string>
-    <string name="diagnostics_report_header" translation_description="First line of the emailed diagnostics report, telling the user where to type their problem description. Keep it on one line.">--- Sky Map डायग्नोस्टिक्स। कृपया इस लाइन के ऊपर समस्या का वर्णन करें। ---</string>
-    <string name="diagnostics_section_recent_log" translation_description="Section heading, in the emailed diagnostics report only (not shown on screen), for the app's own recent log lines">हाल का लॉग</string>
-    <string name="diagnostics_section_general">सामान्य</string>
-    <string name="diagnostics_device">डिवाइस</string>
-    <!-- tm:omitted name="diagnostics_phone_format" reason="identical_to_source" -->
-    <string name="diagnostics_android_version">Android संस्करण</string>
-    <string name="diagnostics_sky_map_version">Sky Map संस्करण</string>
-    <!-- tm:omitted name="diagnostics_sky_map_version_format" reason="identical_to_source" -->
-    <string name="diagnostics_section_graphics" translation_description="Section heading in the diagnostics screen for graphics/GPU information">ग्राफिक्स</string>
-    <string name="diagnostics_gl_renderer" translation_description="Row label in the diagnostics screen for the name of the graphics processor (GPU) drawing the sky">रेंडरर</string>
-    <!-- tm:omitted name="diagnostics_gl_version" reason="identical_to_source" -->
-    <!-- tm:omitted name="diagnostics_gl_version_format" reason="identical_to_source" -->
-    <string name="diagnostics_gl_limits" translation_description="Row label in the diagnostics screen for graphics hardware limits (maximum texture size, supported line widths and point sizes)">GL सीमाएँ</string>
-    <string name="diagnostics_gl_limits_format" translation_description="Format for the GL limits row: maximum texture size in pixels, then the supported line width and point size ranges. \'tex\' abbreviates texture. %1$d is texture size, %2$s is the line width range, %3$s is the point size range.">टेक्स %1$d, लाइन %2$s, पॉइंट %3$s</string>
-    <string name="diagnostics_gl_unavailable" translation_description="Value shown in the diagnostics Graphics rows before the sky map has drawn, when the graphics details are not known yet">अभी उपलब्ध नहीं है</string>
-    <string name="diagnostics_section_sensors">सेंसर</string>
-    <string name="diagnostics_rotation">घूर्णन</string>
-    <string name="diagnostics_rotation_matrix">रोट मैट्रिक्स</string>
-    <string name="diagnostics_light_level">प्रकाश स्तर</string>
-    <string name="diagnostics_sensor_absent">अनुपस्थित</string>
-    <string name="diagnostics_sensor_rate_format" translation_description="Suffix appended to a diagnostics sensor row showing how often it is delivering events and how long ago the last one arrived. %1$.1f is a rate in events per second (Hz), %2$.1f is a number of seconds. Note the leading parenthesis and \'Hz\' abbreviates Hertz.">(%1$.1f Hz, %2$.1fs पहले)</string>
-    <string name="diagnostics_section_orientation_settings" translation_description="Section heading in the diagnostics screen for the user-adjustable settings that shape the sensor readings shown above it">दिशा-विन्यास सेटिंग</string>
-    <string name="diagnostics_gyro_mode" translation_description="Row label in the diagnostics screen for which sensor path supplies device orientation">जायरो</string>
-    <string name="diagnostics_gyro_fused" translation_description="Value shown for the gyro row when the fused rotation-vector sensor is in use">फ़्यूज़्ड रोटेशन वेक्टर</string>
-    <string name="diagnostics_gyro_disabled" translation_description="Value shown for the gyro row when the rotation-vector sensor is skipped in favour of accelerometer plus compass">एक्सीलेरोमीटर + कम्पास</string>
-    <string name="diagnostics_smoothing" translation_description="Row label in the diagnostics screen for whether orientation smoothing is on">स्मूदिंग</string>
-    <string name="diagnostics_steadiness" translation_description="Row label in the diagnostics screen for the orientation smoothing filter's steadiness setting">स्थिरता</string>
-    <!-- tm:omitted name="diagnostics_ease_off" reason="identical_to_source" -->
-    <string name="diagnostics_reverse_magnetic_z" translation_description="Row label in the diagnostics screen for whether the magnetometer's Z axis is reversed">चुंबकीय Z उलटा करें</string>
-    <string name="diagnostics_use_magnetic_correction_setting" translation_description="Row label in the diagnostics screen for whether magnetic declination correction is applied">चुंबकीय सुधार</string>
-    <string name="diagnostics_view_direction_mode" translation_description="Row label in the diagnostics screen for which phone axis is treated as pointing at the sky">देखने की दिशा</string>
-    <string name="diagnostics_calibration_dialog" translation_description="Row label in the diagnostics screen for whether the automatic compass-calibration dialog is suppressed">कैलिब्रेशन संवाद</string>
-    <string name="diagnostics_calibration_dialog_suppressed" translation_description="Value shown for the calibration dialog row when the automatic dialog is suppressed">छिपा हुआ</string>
-    <string name="diagnostics_calibration_dialog_shown" translation_description="Value shown for the calibration dialog row when the automatic dialog is not suppressed">दिखाया गया</string>
-    <string name="diagnostics_jitter_raw" translation_description="Row label in the diagnostics screen for how much the sensor-derived pointing wobbles before smoothing is applied">जि़टर (रॉ)</string>
-    <string name="diagnostics_jitter_smoothed" translation_description="Row label in the diagnostics screen for how much the sensor-derived pointing wobbles after smoothing is applied">जि़टर (स्मूद किया गया)</string>
-    <!-- tm:omitted name="diagnostics_jitter_format" reason="identical_to_source" -->
-    <string name="diagnostics_jitter_pending" translation_description="Value shown for the jitter rows before enough sensor samples have arrived to compute a standard deviation">संग्रह किया जा रहा है…</string>
-    <string name="diagnostics_section_location_time">स्थान और समय</string>
-    <string name="diagnostics_location_permission">स्थान अनुमति</string>
-    <string name="diagnostics_permission_granted">दी गई</string>
-    <string name="diagnostics_permission_denied">अस्वीकृत</string>
-    <string name="diagnostics_gps" translation_description="Row label in the diagnostics screen for the GPS provider status">जीपीएस</string>
-    <string name="diagnostics_no_gps">कोई GPS नहीं</string>
-    <string name="diagnostics_enabled">सक्षम</string>
-    <string name="diagnostics_disabled">अक्षम</string>
-    <string name="diagnostics_permission_disabled">अनुमति अक्षम</string>
-    <string name="diagnostics_location">स्थान (अक्षांश, देशांतर)</string>
-    <!-- tm:omitted name="diagnostics_location_format" reason="identical_to_source" -->
-    <string name="diagnostics_location_unset" translation_description="Location status shown in diagnostics when no location has been set yet">सेट नहीं किया गया</string>
-    <string name="diagnostics_location_acquiring">प्राप्त कर रहे हैं…</string>
-    <string name="diagnostics_location_hardware_unavailable" translation_description="Location status shown in diagnostics when the device has no usable location provider, whether because it lacks location hardware or none is enabled">कोई उपयोगी स्थान प्रदाता नहीं</string>
-    <string name="diagnostics_pointing">दिशा स्नैपशॉट</string>
-    <!-- tm:omitted name="diagnostics_dec_format" reason="identical_to_source" -->
-    <string name="diagnostics_magnetic_correction">चुंबकीय सुधार</string>
-    <string name="diagnostics_alignment_adjustment" translation_description="Diagnostics row label for the manual sky-alignment correction the user set by dragging in through-camera mode.">संरेखण समायोजन</string>
-    <string name="diagnostics_alignment_format" translation_description="Value of the sky-alignment correction: azimuth then altitude offset in degrees, each signed with one decimal. \'az\' and \'alt\' abbreviate azimuth and altitude.">%1$+.1f° अज़ी, %2$+.1f° ऑल्ट</string>
-    <!-- tm:omitted name="diagnostics_magnetic_correction_format" reason="identical_to_source" -->
-    <string name="diagnostics_east" translation_description="Compass direction shown for an eastward magnetic correction">पूर्व</string>
-    <string name="diagnostics_west" translation_description="Compass direction shown for a westward magnetic correction">पश्चिम</string>
-    <string name="diagnostics_local_datetime">स्थानीय दिनांक समय</string>
-    <string name="diagnostics_utc_datetime">सार्वभौमिक दिनांक समय</string>
-    <string name="diagnostics_section_network">नेटवर्क</string>
-    <string name="diagnostics_connection">कनेक्शन</string>
     <string name="diagnostics_section_satellites" translation_description="Section heading in the diagnostics screen for satellite orbital-data status">उपग्रह</string>
     <string name="diagnostics_satellite_data" translation_description="Row label in the diagnostics screen for the age and count of cached satellite orbital data">कक्षा डेटा</string>
     <string name="diagnostics_satellite_data_none" translation_description="Row value in the diagnostics screen when no satellite orbital data has been downloaded yet">डाउनलोड नहीं किया गया</string>
@@ -169,11 +101,6 @@
     <string name="diagnostics_satellite_never_fetched" translation_description="Row value in the diagnostics screen when satellite orbital data has never been downloaded">कभी नहीं</string>
     <string name="diagnostics_satellite_circuit_open" translation_description="Row label in the diagnostics screen for when satellite downloads are paused after repeated server errors">डाउनलोड रोके गए</string>
     <string name="diagnostics_satellite_circuit_open_format" translation_description="Row value in the diagnostics screen showing when paused satellite downloads will resume and how many failures caused the pause. %1$s is a date and time, %2$d is a count">%1$s तक (%2$d विफलताएँ)</string>
-    <string name="diagnostics_satellite_force_fetch" translation_description="Label on a debug-only button in the diagnostics screen that downloads satellite orbital data immediately">उपग्रह डेटा अभी प्राप्त करें (डीबग)</string>
-    <string name="diagnostics_connected">कनेक्ट किया गया</string>
-    <string name="diagnostics_disconnected">डिस्कनेक्ट किया गया</string>
-    <string name="diagnostics_wifi">(wifi)</string>
-    <string name="diagnostics_cell">(सेलुलर)</string>
 
     <!-- Compass calibration screen (slice 15) -->
     <string name="calibration_heading_user">आपके फ़ोन का कंपास</string>
