@@ -1,9 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-    <string name="app_name">स्काई मैप</string>
 
-    <!-- tm:omitted name="splash_version" reason="identical_to_source" -->
-    <string name="splash_dismiss" translation_description="Accessibility label for the action that dismisses the launch splash when it is tapped">खारिज करें</string>
 
     <!-- Sky-map labels drawn by the computed layers (LayerStrings). -->
     <string name="north_pole">उ.ध्रुव</string>

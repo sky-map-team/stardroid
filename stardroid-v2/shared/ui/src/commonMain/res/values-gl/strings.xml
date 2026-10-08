@@ -360,4 +360,7 @@
     <string name="support_email" translation_description="The developers\' contact email address" translatable="false">skymapdevs@gmail.com</string>
     <string name="gallery_title" translation_description="Title of the screen showing a gallery of photographs of celestial objects. Not the user\'s own photos - these are catalog images from sources such as NASA and ESA.">Galería do ceo</string>
     <string name="gallery_back" translation_description="Content description for the back arrow leaving the gallery screen">Atrás</string>
+    <string name="app_name" translation_description="The application name, shown under the launcher icon and in the app switcher.">Sky Map</string>
+    <string name="splash_version" translation_description="Version line under the app name on the launch splash. %1$s is the app version name, e.g. 1.2.3">v%1$s</string>
+    <string name="splash_dismiss" translation_description="Accessibility label for the action that dismisses the launch splash when it is tapped">Descartar</string>
 </resources>

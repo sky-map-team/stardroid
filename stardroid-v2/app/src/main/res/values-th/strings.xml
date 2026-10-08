@@ -1,9 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-    <!-- tm:omitted name="app_name" reason="identical_to_source" -->
 
-    <!-- tm:omitted name="splash_version" reason="identical_to_source" -->
-    <string name="splash_dismiss" translation_description="Accessibility label for the action that dismisses the launch splash when it is tapped">ปิด</string>
 
     <!-- tm:omitted name="north_pole" reason="identical_to_source" -->
     <!-- tm:omitted name="south_pole" reason="identical_to_source" -->
