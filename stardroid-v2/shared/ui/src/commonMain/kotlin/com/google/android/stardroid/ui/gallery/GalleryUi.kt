@@ -9,9 +9,6 @@
 
 package com.google.android.stardroid.ui.gallery
 
-import android.content.res.AssetManager
-import android.graphics.BitmapFactory
-import androidx.activity.compose.BackHandler
 import androidx.collection.LruCache
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
@@ -46,27 +43,28 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.BlendMode
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.graphics.ImageBitmap
-import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.google.android.stardroid.R
 import com.google.android.stardroid.catalog.GalleryItem
+import com.google.android.stardroid.ui.common.rememberCelestialThumbnailDecoder
 import com.google.android.stardroid.ui.common.topBarWindowInsets
+import com.google.android.stardroid.ui.resources.Res
+import com.google.android.stardroid.ui.resources.gallery_back
+import com.google.android.stardroid.ui.resources.gallery_title
 import com.google.android.stardroid.ui.theme.NightPhotoTint
-import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.IO
 import kotlinx.coroutines.withContext
+import org.jetbrains.compose.resources.stringResource
 
 /**
  * The image gallery — v1's `ImageGalleryActivity` grid as a full-screen Compose overlay:
  * three columns of celestial photos with their names, red-tinted in night mode. Tapping a
  * tile opens the object's info card (v1's `ObjectInfoDialogFragment` wiring), whose Find
- * button routes into the search flow.
+ * button routes into the search flow. Back belongs to the host.
  */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -77,18 +75,17 @@ fun GalleryScreen(
     onBack: () -> Unit,
 ) {
     val items by viewModel.items.collectAsStateWithLifecycle()
-    val cache = viewModel.thumbnailCache
-    BackHandler(onBack = onBack)
+    val decode = rememberCelestialThumbnailDecoder(TARGET_THUMBNAIL_PX)
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text(stringResource(R.string.gallery_title)) },
-                windowInsets = topBarWindowInsets(stringResource(R.string.gallery_title)),
+                title = { Text(stringResource(Res.string.gallery_title)) },
+                windowInsets = topBarWindowInsets(stringResource(Res.string.gallery_title)),
                 navigationIcon = {
                     IconButton(onClick = onBack) {
                         Icon(
                             Icons.AutoMirrored.Filled.ArrowBack,
-                            contentDescription = stringResource(R.string.gallery_back),
+                            contentDescription = stringResource(Res.string.gallery_back),
                         )
                     }
                 },
@@ -102,7 +99,7 @@ fun GalleryScreen(
                 contentPadding = PaddingValues(4.dp),
             ) {
                 items(items, key = { it.id.value }) { item ->
-                    GalleryTile(item, nightMode, cache, onClick = { onItemClick(item) })
+                    GalleryTile(item, nightMode, decode, onClick = { onItemClick(item) })
                 }
             }
         }
@@ -113,7 +110,7 @@ fun GalleryScreen(
 private fun GalleryTile(
     item: GalleryItem,
     nightMode: Boolean,
-    cache: LruCache<String, ImageBitmap>,
+    decode: (imageRef: String) -> ImageBitmap?,
     onClick: () -> Unit,
 ) {
     Column(
@@ -121,18 +118,15 @@ private fun GalleryTile(
             .padding(4.dp)
             .clickable(onClick = onClick),
     ) {
-        val assets = LocalContext.current.assets
         // remember(item.imageRef), not produceState: a recycled tile must show the cached
         // bitmap (or nothing) the instant its key changes, not one frame later once the
         // LaunchedEffect coroutine below gets to run.
-        val bitmapState = remember(item.imageRef) { mutableStateOf(cache.get(item.imageRef)) }
+        val bitmapState = remember(item.imageRef) { mutableStateOf(thumbnails[item.imageRef]) }
         LaunchedEffect(item.imageRef) {
             if (bitmapState.value == null) {
                 bitmapState.value =
                     withContext(Dispatchers.IO) {
-                        decodeThumbnail(assets, item.imageRef)?.also {
-                            cache.put(item.imageRef, it)
-                        }
+                        decode(item.imageRef)?.also { thumbnails.put(item.imageRef, it) }
                     }
             }
         }
@@ -173,32 +167,11 @@ private fun GalleryTile(
 }
 
 /**
- * Grid-thumbnail decode: power-of-two downsample toward [TARGET_THUMBNAIL_PX] on the short
- * side, so a 3-across grid never holds full-resolution bitmaps (v1 delegated this to Coil).
- * A missing or corrupt asset is an empty tile; the name below is the content of record.
+ * Warm thumbnails, kept for the app's life so rotation doesn't discard them; Android's
+ * activity-scoped view model held them for as long before the screen was shared. Those a
+ * screenful either side of the viewport stay warm; the rest re-decode on scroll-back.
+ * ~48 tiles × ~256 KB ≈ 12 MB ceiling.
  */
-private fun decodeThumbnail(
-    assets: AssetManager,
-    imageRef: String,
-): ImageBitmap? =
-    try {
-        val path = "celestial_images/$imageRef"
-        val bounds = BitmapFactory.Options().apply { inJustDecodeBounds = true }
-        assets.open(path).use { BitmapFactory.decodeStream(it, null, bounds) }
-        var sampleSize = 1
-        while (bounds.outWidth / (sampleSize * 2) >= TARGET_THUMBNAIL_PX &&
-            bounds.outHeight / (sampleSize * 2) >= TARGET_THUMBNAIL_PX
-        ) {
-            sampleSize *= 2
-        }
-        val options = BitmapFactory.Options().apply { inSampleSize = sampleSize }
-        assets.open(path).use {
-            BitmapFactory.decodeStream(it, null, options)?.asImageBitmap()
-        }
-    } catch (e: CancellationException) {
-        throw e
-    } catch (e: Exception) {
-        null
-    }
+private val thumbnails = LruCache<String, ImageBitmap>(48)
 
 private const val TARGET_THUMBNAIL_PX = 256

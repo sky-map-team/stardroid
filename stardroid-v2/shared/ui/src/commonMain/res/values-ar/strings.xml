@@ -439,4 +439,6 @@
     <string name="diagnostics_wifi">(واي فاي)</string>
     <string name="diagnostics_cell">(شبكة محمولة)</string>
     <!-- tm:omitted name="support_email" reason="identical_to_source" -->
+    <string name="gallery_title" translation_description="Title of the screen showing a gallery of photographs of celestial objects. Not the user\'s own photos - these are catalog images from sources such as NASA and ESA.">معرض السماء</string>
+    <string name="gallery_back" translation_description="Content description for the back arrow leaving the gallery screen">رجوع</string>
 </resources>

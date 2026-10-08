@@ -85,8 +85,6 @@
     <!-- Object info card -->
 
     <!-- Image gallery -->
-    <string name="gallery_title" translation_description="Title of the screen showing a gallery of photographs of celestial objects. Not the user\'s own photos - these are catalog images from sources such as NASA and ESA.">Galéria oblohy</string>
-    <string name="gallery_back" translation_description="Content description for the back arrow leaving the gallery screen">Späť</string>
 
     <!-- Settings screen (v1 wording where a v1 string existed) -->
     <!-- tm:omitted name="settings_ok" reason="identical_to_source" -->

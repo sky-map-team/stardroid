@@ -358,4 +358,6 @@
     <string name="diagnostics_wifi" translation_description="Network type suffix appended to the connection status (e.g. \'Connected (wifi)\'). Note the leading space.">" (wifi)"</string>
     <string name="diagnostics_cell" translation_description="Network type suffix appended to the connection status (e.g. \'Connected (cell)\'). Note the leading space.">" (móbil)"</string>
     <string name="support_email" translation_description="The developers\' contact email address" translatable="false">skymapdevs@gmail.com</string>
+    <string name="gallery_title" translation_description="Title of the screen showing a gallery of photographs of celestial objects. Not the user\'s own photos - these are catalog images from sources such as NASA and ESA.">Galería do ceo</string>
+    <string name="gallery_back" translation_description="Content description for the back arrow leaving the gallery screen">Atrás</string>
 </resources>

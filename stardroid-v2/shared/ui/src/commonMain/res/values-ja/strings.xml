@@ -421,4 +421,6 @@
     <string name="diagnostics_wifi">" (WiFi)"</string>
     <string name="diagnostics_cell">" (モバイル)"</string>
     <!-- tm:omitted name="support_email" reason="identical_to_source" -->
+    <string name="gallery_title" translation_description="Title of the screen showing a gallery of photographs of celestial objects. Not the user\'s own photos - these are catalog images from sources such as NASA and ESA.">天体ギャラリー</string>
+    <string name="gallery_back" translation_description="Content description for the back arrow leaving the gallery screen">戻る</string>
 </resources>

@@ -12,6 +12,7 @@ package com.google.android.stardroid.ui.common
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.produceState
+import androidx.compose.runtime.remember
 import androidx.compose.ui.graphics.ImageBitmap
 import androidx.compose.ui.window.DialogProperties
 import kotlinx.cinterop.ExperimentalForeignApi
@@ -33,6 +34,14 @@ internal actual fun rememberCelestialImage(imageRef: String): ImageBitmap? {
     }
     return bitmap
 }
+
+@Composable
+internal actual fun rememberCelestialThumbnailDecoder(
+    targetPx: Int,
+): (imageRef: String) -> ImageBitmap? =
+    remember(targetPx) {
+        { imageRef -> decodeBundleImage("celestial_images/$imageRef", maxShortSidePx = targetPx) }
+    }
 
 internal actual fun fullScreenDialogProperties() = DialogProperties(usePlatformDefaultWidth = false)
 
