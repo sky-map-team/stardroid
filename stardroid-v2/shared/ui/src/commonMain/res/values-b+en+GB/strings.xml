@@ -396,4 +396,6 @@
     <string name="diagnostics_wifi" translation_description="Network type suffix appended to the connection status (e.g. \'Connected (wifi)\'). Note the leading space.">(wifi)</string>
     <string name="diagnostics_cell" translation_description="Network type suffix appended to the connection status (e.g. \'Connected (cell)\'). Note the leading space.">(cell)</string>
     <!-- tm:omitted name="support_email" reason="identical_to_source" -->
+    <!-- tm:omitted name="gallery_title" reason="identical_to_source" -->
+    <!-- tm:omitted name="gallery_back" reason="identical_to_source" -->
 </resources>

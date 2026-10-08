@@ -14,7 +14,7 @@ import com.google.android.stardroid.catalog.CelestialObjectId
 import com.google.android.stardroid.catalog.GalleryItem
 import com.google.android.stardroid.catalog.LocaleSpec
 import com.google.android.stardroid.layers.FakeCatalogRepository
-import com.google.common.truth.Truth.assertThat
+import com.google.android.stardroid.testing.assertThat
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -23,20 +23,20 @@ import kotlinx.coroutines.test.resetMain
 import kotlinx.coroutines.test.runCurrent
 import kotlinx.coroutines.test.runTest
 import kotlinx.coroutines.test.setMain
-import org.junit.jupiter.api.AfterEach
-import org.junit.jupiter.api.BeforeEach
-import org.junit.jupiter.api.Test
+import kotlin.test.AfterTest
+import kotlin.test.BeforeTest
+import kotlin.test.Test
 
 @OptIn(ExperimentalCoroutinesApi::class)
 class GalleryViewModelTest {
     private val dispatcher = StandardTestDispatcher()
 
-    @BeforeEach
+    @BeforeTest
     fun setUp() {
         Dispatchers.setMain(dispatcher)
     }
 
-    @AfterEach
+    @AfterTest
     fun tearDown() {
         Dispatchers.resetMain()
     }

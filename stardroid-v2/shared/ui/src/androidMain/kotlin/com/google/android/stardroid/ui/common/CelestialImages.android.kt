@@ -9,10 +9,12 @@
 
 package com.google.android.stardroid.ui.common
 
+import android.content.res.AssetManager
 import android.graphics.BitmapFactory
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.produceState
+import androidx.compose.runtime.remember
 import androidx.compose.ui.graphics.ImageBitmap
 import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.platform.LocalContext
@@ -41,6 +43,48 @@ internal actual fun rememberCelestialImage(imageRef: String): ImageBitmap? {
     }
     return bitmap
 }
+
+@Composable
+internal actual fun rememberCelestialThumbnailDecoder(
+    targetPx: Int,
+): (imageRef: String) -> ImageBitmap? {
+    val assets = LocalContext.current.assets
+    return remember(assets, targetPx) {
+        {
+                imageRef ->
+            decodeThumbnail(assets, imageRef, targetPx)
+        }
+    }
+}
+
+/**
+ * Power-of-two downsample toward [targetPx] on the short side (v1 delegated this to Coil). A
+ * missing or corrupt asset is an empty tile; the name below it is the content of record.
+ */
+private fun decodeThumbnail(
+    assets: AssetManager,
+    imageRef: String,
+    targetPx: Int,
+): ImageBitmap? =
+    try {
+        val path = "celestial_images/$imageRef"
+        val bounds = BitmapFactory.Options().apply { inJustDecodeBounds = true }
+        assets.open(path).use { BitmapFactory.decodeStream(it, null, bounds) }
+        var sampleSize = 1
+        while (bounds.outWidth / (sampleSize * 2) >= targetPx &&
+            bounds.outHeight / (sampleSize * 2) >= targetPx
+        ) {
+            sampleSize *= 2
+        }
+        val options = BitmapFactory.Options().apply { inSampleSize = sampleSize }
+        assets.open(path).use {
+            BitmapFactory.decodeStream(it, null, options)?.asImageBitmap()
+        }
+    } catch (e: CancellationException) {
+        throw e
+    } catch (e: Exception) {
+        null
+    }
 
 internal actual fun fullScreenDialogProperties() =
     DialogProperties(usePlatformDefaultWidth = false, decorFitsSystemWindows = false)

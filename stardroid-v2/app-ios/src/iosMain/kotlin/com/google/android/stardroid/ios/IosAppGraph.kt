@@ -30,6 +30,7 @@ import com.google.android.stardroid.startup.StartupRouter
 import com.google.android.stardroid.startup.StartupState
 import com.google.android.stardroid.time.TimeController
 import com.google.android.stardroid.ui.diagnostics.DiagnosticsViewModel
+import com.google.android.stardroid.ui.gallery.GalleryViewModel
 import com.google.android.stardroid.ui.layers.LayersViewModel
 import com.google.android.stardroid.ui.location.LocationViewModel
 import com.google.android.stardroid.ui.map.MapViewModel
@@ -342,6 +343,9 @@ class IosAppGraph {
             localFrame = map.localFrame,
             rendererInfo = { rendererInfo },
         )
+
+    /** The photo grid over the catalog, in the app's language. */
+    fun galleryViewModel(): GalleryViewModel = GalleryViewModel(::catalog, locale)
 
     /** The location sheet and its dialogs, with Apple's geocoder behind manual entry. */
     fun locationViewModel(): LocationViewModel =

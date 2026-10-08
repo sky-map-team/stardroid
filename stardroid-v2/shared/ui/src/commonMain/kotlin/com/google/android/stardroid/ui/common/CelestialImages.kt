@@ -20,5 +20,15 @@ import androidx.compose.ui.window.DialogProperties
 @Composable
 internal expect fun rememberCelestialImage(imageRef: String): ImageBitmap?
 
+/**
+ * Decodes catalog photos for a grid: each scaled down toward [targetPx] on its short side, so a
+ * screenful of tiles never holds full-size photos; null if one cannot be read. Blocking: call
+ * the decoder off the main thread.
+ */
+@Composable
+internal expect fun rememberCelestialThumbnailDecoder(
+    targetPx: Int,
+): (imageRef: String) -> ImageBitmap?
+
 /** A dialog that may cover the whole screen, edge to edge (the expanded photo). */
 internal expect fun fullScreenDialogProperties(): DialogProperties

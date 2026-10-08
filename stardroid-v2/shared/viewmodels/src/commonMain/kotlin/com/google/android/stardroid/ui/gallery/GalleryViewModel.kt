@@ -9,8 +9,6 @@
 
 package com.google.android.stardroid.ui.gallery
 
-import androidx.collection.LruCache
-import androidx.compose.ui.graphics.ImageBitmap
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.google.android.stardroid.catalog.CatalogRepository
@@ -34,11 +32,6 @@ class GalleryViewModel(
 ) : ViewModel() {
     private val _items = MutableStateFlow<List<GalleryItem>>(emptyList())
     val items: StateFlow<List<GalleryItem>> = _items.asStateFlow()
-
-    // Owned by the ViewModel, not the composable, so rotation doesn't discard warm thumbnails.
-    // Thumbnails a screenful either side of the viewport stay warm; the rest re-decode on
-    // scroll-back. ~48 tiles × ~256 KB ≈ 12 MB ceiling.
-    val thumbnailCache = LruCache<String, ImageBitmap>(48)
 
     // Re-listed on a language change: the view model outlives the activity recreation the
     // switch triggers, so a once-only load would keep showing the old language's names.

@@ -45,6 +45,8 @@ import com.google.android.stardroid.startup.ExperimentConfig
 import com.google.android.stardroid.time.TimeTravelState
 import com.google.android.stardroid.ui.diagnostics.DiagnosticsScreen
 import com.google.android.stardroid.ui.diagnostics.DiagnosticsViewModel
+import com.google.android.stardroid.ui.gallery.GalleryScreen
+import com.google.android.stardroid.ui.gallery.GalleryViewModel
 import com.google.android.stardroid.ui.help.HelpLink
 import com.google.android.stardroid.ui.help.HelpScreen
 import com.google.android.stardroid.ui.help.WhatsNewScreen
@@ -110,6 +112,7 @@ fun skyMapViewController(): UIViewController {
     val location = graph.locationViewModel()
     val settings = graph.settingsViewModel()
     val diagnostics = graph.diagnosticsViewModel(mapViewModel, map.rendererInfo)
+    val gallery = graph.galleryViewModel()
     return ComposeUIViewController {
         SkyMapScreen(
             map,
@@ -121,6 +124,7 @@ fun skyMapViewController(): UIViewController {
             location,
             settings,
             diagnostics,
+            gallery,
             startup,
             onRequestAutoLocation = graph::requestAutoLocation,
             onOpenAppSettings = graph::openAppSettings,
@@ -142,6 +146,7 @@ private fun SkyMapScreen(
     locationViewModel: LocationViewModel,
     settingsViewModel: SettingsViewModel,
     diagnosticsViewModel: DiagnosticsViewModel,
+    galleryViewModel: GalleryViewModel,
     startup: StartupViewModel,
     onRequestAutoLocation: () -> Unit,
     onOpenAppSettings: () -> Unit,
@@ -328,17 +333,31 @@ private fun SkyMapScreen(
                 )
             }
             objectInfoCard?.let { info ->
+                // The card floats over the gallery's grid too, as Android's does.
+                val fromGallery = page == Page.GALLERY
                 ObjectInfoCard(
                     info = info,
                     riseSet = objectRiseSet,
                     nightMode = nightMode,
                     onSeeAlso = { link -> objectInfoViewModel.show(link.id) },
-                    // No Find: a card opened by tapping the sky is an object already found.
-                    onFind = null,
+                    // No Find on the map: a card opened by tapping the sky is an object already
+                    // found. The gallery's card keeps it, and lands on the map with the object
+                    // found (Android's gallery→search route, D46).
+                    onFind =
+                        if (fromGallery && objectInfoViewModel.isFindable(info)) {
+                            {
+                                objectInfoViewModel.dismiss()
+                                pages = emptyList()
+                                searchViewModel.select(objectInfoViewModel.asSearchHit(it))
+                            }
+                        } else {
+                            null
+                        },
                     onImageTap = { tapped -> if (tapped.imageRef != null) expandedImage = tapped },
                     onDismiss = { objectInfoViewModel.dismiss() },
+                    // The map's card only, as on Android.
                     eclipseRow =
-                        if (showingMoon) {
+                        if (showingMoon && !fromGallery) {
                             { EclipseRow(circumstances = lunarEclipse) }
                         } else {
                             null
@@ -384,7 +403,10 @@ private fun SkyMapScreen(
                 OverflowSheet(
                     onShareSky = null,
                     shareEnabled = false,
-                    onOpenGallery = null,
+                    onOpenGallery = {
+                        showOverflowSheet = false
+                        open(Page.GALLERY)
+                    },
                     onOpenWidgets = null,
                     widgetsEnabled = false,
                     onOpenLocation = {
@@ -442,6 +464,7 @@ private fun SkyMapScreen(
                         onNavigate = { destination ->
                             when (destination) {
                                 HelpLink.Destination.SETTINGS -> open(Page.SETTINGS)
+                                HelpLink.Destination.GALLERY -> open(Page.GALLERY)
                                 HelpLink.Destination.APP_SETTINGS -> onOpenAppSettings()
                                 HelpLink.Destination.TUTORIAL -> open(Page.TUTORIAL)
                                 else -> Unit
@@ -455,6 +478,16 @@ private fun SkyMapScreen(
                         onBack = ::back,
                         onOpenDiagnostics = { open(Page.DIAGNOSTICS) },
                     )
+                Page.GALLERY -> {
+                    GalleryScreen(
+                        galleryViewModel,
+                        nightMode = nightMode,
+                        onItemClick = { objectInfoViewModel.show(it.id) },
+                        onBack = ::back,
+                    )
+                    // A card left open belongs to the gallery; don't let it linger over the map.
+                    DisposableEffect(Unit) { onDispose { objectInfoViewModel.dismiss() } }
+                }
                 Page.DIAGNOSTICS ->
                     DiagnosticsScreen(
                         diagnosticsViewModel,
@@ -544,6 +577,7 @@ private enum class Page {
 
     /** Reached from Settings, as on Android. */
     DIAGNOSTICS,
+    GALLERY,
 
     /** The warm welcome, replayed from the overflow sheet or Help. */
     TUTORIAL,
