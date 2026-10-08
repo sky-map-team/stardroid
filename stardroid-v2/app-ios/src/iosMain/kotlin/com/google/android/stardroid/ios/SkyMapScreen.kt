@@ -29,6 +29,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.backhandler.BackHandler
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.onSizeChanged
 import androidx.compose.ui.platform.LocalDensity
@@ -403,6 +404,8 @@ private fun SkyMapScreen(
                     onDismiss = { showManualLocationDialog = false },
                 )
             }
+            // The edge swipe closes a page, as Android's system back pops its destination.
+            BackHandler(enabled = page != null) { page = null }
             when (page) {
                 Page.HELP ->
                     HelpScreen(

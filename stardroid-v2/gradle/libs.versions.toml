@@ -70,6 +70,7 @@ hilt-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", v
 cmp-runtime = { group = "org.jetbrains.compose.runtime", name = "runtime", version.ref = "composeMultiplatform" }
 cmp-foundation = { group = "org.jetbrains.compose.foundation", name = "foundation", version.ref = "composeMultiplatform" }
 cmp-ui = { group = "org.jetbrains.compose.ui", name = "ui", version.ref = "composeMultiplatform" }
+cmp-ui-backhandler = { group = "org.jetbrains.compose.ui", name = "ui-backhandler", version.ref = "composeMultiplatform" }
 cmp-material3 = { group = "org.jetbrains.compose.material3", name = "material3", version.ref = "composeMultiplatformMaterial3" }
 cmp-lifecycle-runtime-compose = { group = "org.jetbrains.androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "cmpLifecycle" }
 cmp-material-icons-core = { group = "org.jetbrains.compose.material", name = "material-icons-core", version.ref = "cmpMaterialIcons" }

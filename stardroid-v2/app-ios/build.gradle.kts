@@ -64,6 +64,8 @@ kotlin {
             implementation(libs.cmp.runtime)
             implementation(libs.cmp.foundation)
             implementation(libs.cmp.ui)
+            // iOS's edge swipe as back, for the full-screen pages (Android's system back).
+            implementation(libs.cmp.ui.backhandler)
             implementation(libs.cmp.material3)
         }
     }
