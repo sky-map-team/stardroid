@@ -416,4 +416,16 @@
     <!-- tm:omitted name="calibration_what_to_do_user" reason="identical_to_source" -->
     <!-- tm:omitted name="calibration_low_accuracy_toast" reason="identical_to_source" -->
     <!-- tm:omitted name="calibration_complete_toast" reason="identical_to_source" -->
+    <!-- tm:omitted name="no_sensor_warning" reason="identical_to_source" -->
+    <!-- tm:omitted name="no_sensor_warning_dismiss" reason="identical_to_source" -->
+    <!-- tm:omitted name="hud_alignment_reset_message" reason="identical_to_source" -->
+    <!-- tm:omitted name="ar_auto_mode_snackbar" reason="identical_to_source" -->
+    <!-- tm:omitted name="ar_permission_denied" reason="identical_to_source" -->
+    <!-- tm:omitted name="ar_permission_settings_action" reason="identical_to_source" -->
+    <!-- tm:omitted name="ar_alignment_adjusted_message" reason="identical_to_source" -->
+    <!-- tm:omitted name="snackbar_action_undo" reason="identical_to_source" -->
+    <!-- tm:omitted name="label_size_hint_message" reason="identical_to_source" -->
+    <!-- tm:omitted name="label_size_hint_action" reason="identical_to_source" -->
+    <!-- tm:omitted name="auto_level_on_toast" reason="identical_to_source" -->
+    <!-- tm:omitted name="auto_level_off_toast" reason="identical_to_source" -->
 </resources>

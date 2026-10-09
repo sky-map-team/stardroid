@@ -44,18 +44,11 @@
     <string name="tonight_trailing_pass" translation_description="Small trailing note on a satellite pass row. %1$s is a compass direction, %2$d is an angle in degrees, %3$.1f is a brightness magnitude.">%1$s에서 떠올라, %2$d°, 밝기 %3$.1f등급</string>
 
     <!-- Map screen controls. -->
-    <string name="no_sensor_warning" translation_description="Warning shown when the device lacks the motion sensors needed to point the map at the sky automatically.">이 기기에는 나침반이나 모션 센서가 없으므로 Sky Map이 가리키는 방향을 따라갈 수 없습니다. 대신 지도를 직접 드래그하세요.</string>
-    <string name="no_sensor_warning_dismiss" translation_description="Button that dismisses the missing-sensors warning dialog.">확인</string>
 
     <!-- The map HUD (map-hud.md, D65): the top-right pointing readout shown with the chrome. -->
-    <string name="hud_alignment_reset_message" translation_description="Snackbar confirming the sensor-alignment correction was cleared; shown with an Undo action.">정렬 보정 초기화됨</string>
 
 
     <!-- Through-camera (AR) mode (camera-ar-mode.md, D64). -->
-    <string name="ar_auto_mode_snackbar" translation_description="Snackbar shown when turning on through-camera mode switched the map from manual dragging back to automatic sensor pointing.">카메라 보기에서 자동 모드 켜짐</string>
-    <string name="ar_permission_denied" translation_description="Snackbar shown when the user declined the camera permission that through-camera mode needs.">카메라 투과 모드에는 카메라 권한이 필요합니다</string>
-    <string name="ar_permission_settings_action">설정</string>
-    <string name="ar_alignment_adjusted_message" translation_description="Snackbar shown after the user drags the star map to align it with the camera image; shown with an Undo action that reverts the whole drag.">지도 정렬 조정됨</string>
     <string name="share_chooser_title" translation_description="Title of the system share sheet when sharing a captured sky image.">이 하늘 공유</string>
     <string name="share_invitation" translation_description="Short invitation stamped on the footer of shared sky images, above the store link.">보고 있는 것을 확인하세요 — Sky Map을 무료로 받으세요</string>
     <string name="share_text" translation_description="Text accompanying a shared sky image in apps that accept both an image and text. %1$s is the app-store link.">보고 있는 것을 확인하세요 — Sky Map을 무료로 받으세요: %1$s</string>
@@ -71,17 +64,12 @@
     <!-- Popular events in the time travel dialog (timestamps live in TimeTravelEvents.kt). -->
 
     <!-- Location management. -->
-    <string name="snackbar_action_undo" translation_description="Snackbar action button that reverses the change the snackbar reports, e.g. re-enabling horizon auto-leveling">실행 취소</string>
-    <string name="label_size_hint_message" translation_description="Snackbar shown once, the first time the user zooms in a long way. Explains that the text labels naming stars and other objects stay the same size however far you zoom, and that their size is changed in the app\'s Settings screen instead. Shown with an action button that opens Settings.">라벨 크기는 확대/축소에 따라 변경되지 않습니다. 설정에서 지정하세요.</string>
-    <string name="label_size_hint_action" translation_description="Action button on the label size snackbar; opens the app\'s Settings screen, where the user can change how large the sky labels are">설정</string>
 
     <!-- Object info card -->
 
     <!-- Image gallery -->
 
     <!-- Settings screen (v1 wording where a v1 string existed) -->
-    <string name="auto_level_on_toast" translation_description="Brief confirmation shown when a double tap turns horizon auto-leveling on in manual mode">지평선 자동 수평 맞춤 켜짐</string>
-    <string name="auto_level_off_toast" translation_description="Brief confirmation shown when a double tap turns horizon auto-leveling off in manual mode">지평선 자동 수평 맞춤 꺼짐</string>
 
     <string name="diagnostics_section_satellites" translation_description="Section heading in the diagnostics screen for satellite orbital-data status">위성</string>
     <string name="diagnostics_satellite_data" translation_description="Row label in the diagnostics screen for the age and count of cached satellite orbital data">궤도 데이터</string>

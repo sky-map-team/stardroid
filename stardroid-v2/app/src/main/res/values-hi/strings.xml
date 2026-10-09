@@ -46,19 +46,10 @@
     <string name="tonight_trailing_pass" translation_description="Small trailing note on a satellite pass row. %1$s is a compass direction, %2$d is an angle in degrees, %3$.1f is a brightness magnitude.">उदय %1$s, %2$d°, परिमाण %3$.1f</string>
 
     <!-- Map screen controls. -->
-    <string name="no_sensor_warning" translation_description="Warning shown when the device lacks the motion sensors needed to point the map at the sky automatically.">
-    इस डिवाइस में कंपास या मोशन सेंसर नहीं हैं, इसलिए Sky Map यह ट्रैक नहीं कर सकता कि आप इसे कहाँ इंगित करते हैं। इसके बजाय, मैप को हाथ से खींचें।
-    </string>
-    <string name="no_sensor_warning_dismiss">ठीक है</string>
 
-    <string name="hud_alignment_reset_message" translation_description="Snackbar confirming the sensor-alignment correction was cleared; shown with an Undo action.">संरेखण सुधार रीसेट किया गया</string>
 
 
     <!-- Through-camera (AR) mode (camera-ar-mode.md, D64). -->
-    <string name="ar_auto_mode_snackbar" translation_description="Snackbar shown when turning on through-camera mode switched the map from manual dragging back to automatic sensor pointing.">कैमरा दृश्य के लिए ऑटो मोड चालू किया गया</string>
-    <string name="ar_permission_denied" translation_description="Snackbar shown when the user declined the camera permission that through-camera mode needs.">थ्रू-कैमरा मोड के लिए कैमरा अनुमति चाहिए</string>
-    <string name="ar_permission_settings_action">सेटिंग्स</string>
-    <string name="ar_alignment_adjusted_message" translation_description="Snackbar shown after the user drags the star map to align it with the camera image; shown with an Undo action that reverts the whole drag.">मानचित्र संरेखण समायोजित किया गया</string>
     <string name="share_chooser_title" translation_description="Title of the system share sheet when sharing a captured sky image.">इस आकाश को साझा करें</string>
     <string name="share_invitation" translation_description="Short invitation stamped on the footer of shared sky images, above the store link.">आप क्या देख रहे हैं, उसे देखें — Sky Map मुफ़्त में प्राप्त करें</string>
     <string name="share_text" translation_description="Text accompanying a shared sky image in apps that accept both an image and text. %1$s is the app-store link.">आप क्या देख रहे हैं, उसे देखें — Sky Map मुफ़्त में प्राप्त करें: %1$s</string>
@@ -74,17 +65,12 @@
     <!-- Popular events in the time travel dialog (timestamps live in TimeTravelEvents.kt). -->
 
     <!-- Location management. -->
-    <string name="snackbar_action_undo" translation_description="Snackbar action button that reverses the change the snackbar reports, e.g. re-enabling horizon auto-leveling">पूर्ववत करें</string>
-    <string name="label_size_hint_message" translation_description="Snackbar shown once, the first time the user zooms in a long way. Explains that the text labels naming stars and other objects stay the same size however far you zoom, and that their size is changed in the app\'s Settings screen instead. Shown with an action button that opens Settings.">लेबल का आकार ज़ूम के साथ नहीं बदलता — इसे सेटिंग्स में सेट करें</string>
-    <string name="label_size_hint_action" translation_description="Action button on the label size snackbar; opens the app\'s Settings screen, where the user can change how large the sky labels are">सेटिंग्स</string>
 
     <!-- Object info card -->
 
     <!-- Image gallery -->
 
     <!-- Settings screen (v1 wording where a v1 string existed) -->
-    <string name="auto_level_on_toast" translation_description="Brief confirmation shown when a double tap turns horizon auto-leveling on in manual mode">क्षितिज स्वतः-स्तर चालू</string>
-    <string name="auto_level_off_toast" translation_description="Brief confirmation shown when a double tap turns horizon auto-leveling off in manual mode">क्षितिज स्वतः-स्तर बंद</string>
 
     <string name="diagnostics_section_satellites" translation_description="Section heading in the diagnostics screen for satellite orbital-data status">उपग्रह</string>
     <string name="diagnostics_satellite_data" translation_description="Row label in the diagnostics screen for the age and count of cached satellite orbital data">कक्षा डेटा</string>

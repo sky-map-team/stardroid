@@ -39,16 +39,9 @@
     <!-- tm:omitted name="tonight_satellite_pass" reason="identical_to_source" -->
     <!-- tm:omitted name="tonight_trailing_pass" reason="identical_to_source" -->
 
-    <!-- tm:omitted name="no_sensor_warning" reason="identical_to_source" -->
-    <!-- tm:omitted name="no_sensor_warning_dismiss" reason="identical_to_source" -->
-
-    <!-- tm:omitted name="hud_alignment_reset_message" reason="identical_to_source" -->
 
 
-    <!-- tm:omitted name="ar_auto_mode_snackbar" reason="identical_to_source" -->
-    <!-- tm:omitted name="ar_permission_denied" reason="identical_to_source" -->
-    <!-- tm:omitted name="ar_permission_settings_action" reason="identical_to_source" -->
-    <!-- tm:omitted name="ar_alignment_adjusted_message" reason="identical_to_source" -->
+
     <!-- tm:omitted name="share_chooser_title" reason="identical_to_source" -->
     <!-- tm:omitted name="share_invitation" reason="identical_to_source" -->
     <!-- tm:omitted name="share_text" reason="identical_to_source" -->
@@ -61,14 +54,9 @@
     <!-- Time travel playback-rate labels (v1 wording). -->
 
 
-    <!-- tm:omitted name="snackbar_action_undo" reason="identical_to_source" -->
-    <!-- tm:omitted name="label_size_hint_message" reason="identical_to_source" -->
-    <!-- tm:omitted name="label_size_hint_action" reason="identical_to_source" -->
 
 
 
-    <!-- tm:omitted name="auto_level_on_toast" reason="identical_to_source" -->
-    <!-- tm:omitted name="auto_level_off_toast" reason="identical_to_source" -->
 
     <!-- tm:omitted name="diagnostics_section_satellites" reason="identical_to_source" -->
     <!-- tm:omitted name="diagnostics_satellite_data" reason="identical_to_source" -->

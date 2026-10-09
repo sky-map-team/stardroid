@@ -46,19 +46,10 @@
     <string name="tonight_trailing_pass" translation_description="Small trailing note on a satellite pass row. %1$s is a compass direction, %2$d is an angle in degrees, %3$.1f is a brightness magnitude.">Vzhaja %1$s, %2$d°, mag %3$.1f</string>
 
     <!-- Map screen controls. -->
-    <string name="no_sensor_warning" translation_description="Warning shown when the device lacks the motion sensors needed to point the map at the sky automatically.">
-    Ta naprava nima kompasa ali senzorjev gibanja, zato Sky Map ne more slediti, kam jo usmerite. Namesto tega povlecite zemljevid ročno.
-    </string>
-    <string name="no_sensor_warning_dismiss">V redu</string>
 
-    <string name="hud_alignment_reset_message" translation_description="Snackbar confirming the sensor-alignment correction was cleared; shown with an Undo action.">Popravek poravnave ponastavljen</string>
 
 
     <!-- Through-camera (AR) mode (camera-ar-mode.md, D64). -->
-    <string name="ar_auto_mode_snackbar" translation_description="Snackbar shown when turning on through-camera mode switched the map from manual dragging back to automatic sensor pointing.">Samodejni način vklopljen za pogled kamere</string>
-    <string name="ar_permission_denied" translation_description="Snackbar shown when the user declined the camera permission that through-camera mode needs.">Način skozi kamero potrebuje dovoljenje za kamero</string>
-    <string name="ar_permission_settings_action">Nastavitve</string>
-    <string name="ar_alignment_adjusted_message" translation_description="Snackbar shown after the user drags the star map to align it with the camera image; shown with an Undo action that reverts the whole drag.">Poravnava zemljevida prilagojena</string>
     <string name="share_chooser_title" translation_description="Title of the system share sheet when sharing a captured sky image.">Deli to nebo</string>
     <string name="share_invitation" translation_description="Short invitation stamped on the footer of shared sky images, above the store link.">Poglejte, kaj gledate – brezplačno prenesite Sky Map</string>
     <string name="share_text" translation_description="Text accompanying a shared sky image in apps that accept both an image and text. %1$s is the app-store link.">Poglejte, kaj gledate – brezplačno prenesite Sky Map: %1$s</string>
@@ -74,17 +65,12 @@
     <!-- Popular events in the time travel dialog (timestamps live in TimeTravelEvents.kt). -->
 
     <!-- Location management. -->
-    <string name="snackbar_action_undo" translation_description="Snackbar action button that reverses the change the snackbar reports, e.g. re-enabling horizon auto-leveling">Razveljavi</string>
-    <string name="label_size_hint_message" translation_description="Snackbar shown once, the first time the user zooms in a long way. Explains that the text labels naming stars and other objects stay the same size however far you zoom, and that their size is changed in the app\'s Settings screen instead. Shown with an action button that opens Settings.">Velikost oznak se ne spreminja s povečavo – nastavite jo v Nastavitvah</string>
-    <string name="label_size_hint_action" translation_description="Action button on the label size snackbar; opens the app\'s Settings screen, where the user can change how large the sky labels are">Nastavitve</string>
 
     <!-- Object info card -->
 
     <!-- Image gallery -->
 
     <!-- Settings screen (v1 wording where a v1 string existed) -->
-    <string name="auto_level_on_toast" translation_description="Brief confirmation shown when a double tap turns horizon auto-leveling on in manual mode">Samodejno izravnavanje obzorja vklopljeno</string>
-    <string name="auto_level_off_toast" translation_description="Brief confirmation shown when a double tap turns horizon auto-leveling off in manual mode">Samodejno izravnavanje obzorja izklopljeno</string>
 
     <string name="diagnostics_section_satellites" translation_description="Section heading in the diagnostics screen for satellite orbital-data status">Sateliti</string>
     <string name="diagnostics_satellite_data" translation_description="Row label in the diagnostics screen for the age and count of cached satellite orbital data">Podatki o orbiti</string>

@@ -444,4 +444,16 @@
 <b>地図が正しく位置を表示しない場合、問題はお使いのスマートフォンにある可能性が高く、Sky Mapではありません！</b>]]></string>
     <string name="calibration_low_accuracy_toast">スマートフォンのコンパスの精度が低下しています</string>
     <string name="calibration_complete_toast" translation_description="Toast shown when the compass reaches high accuracy and the auto-opened calibration screen closes itself">センサーの精度が高いです</string>
+    <string name="no_sensor_warning" translation_description="Warning shown when the device lacks the motion sensors needed to point the map at the sky automatically.">このデバイスにはコンパスまたはモーションセンサーがないため、Sky Mapはデバイスを向けた方向に追従できません。代わりに、手動でマップをドラッグしてください。</string>
+    <!-- tm:omitted name="no_sensor_warning_dismiss" reason="identical_to_source" -->
+    <string name="hud_alignment_reset_message" translation_description="Snackbar confirming the sensor-alignment correction was cleared; shown with an Undo action.">調整補正をリセットしました</string>
+    <string name="ar_auto_mode_snackbar" translation_description="Snackbar shown when turning on through-camera mode switched the map from manual dragging back to automatic sensor pointing.">カメラビューで自動モードがオンになりました</string>
+    <string name="ar_permission_denied" translation_description="Snackbar shown when the user declined the camera permission that through-camera mode needs.">カメラ透過モードにはカメラの権限が必要です</string>
+    <string name="ar_permission_settings_action">設定</string>
+    <string name="ar_alignment_adjusted_message" translation_description="Snackbar shown after the user drags the star map to align it with the camera image; shown with an Undo action that reverts the whole drag.">マップの調整をしました</string>
+    <string name="snackbar_action_undo" translation_description="Snackbar action button that reverses the change the snackbar reports, e.g. re-enabling horizon auto-leveling">元に戻す</string>
+    <string name="label_size_hint_message" translation_description="Snackbar shown once, the first time the user zooms in a long way. Explains that the text labels naming stars and other objects stay the same size however far you zoom, and that their size is changed in the app\'s Settings screen instead. Shown with an action button that opens Settings.">ラベルサイズはズームで変更されません — 設定で変更してください</string>
+    <string name="label_size_hint_action" translation_description="Action button on the label size snackbar; opens the app\'s Settings screen, where the user can change how large the sky labels are">設定</string>
+    <string name="auto_level_on_toast" translation_description="Brief confirmation shown when a double tap turns horizon auto-leveling on in manual mode">水平自動調整オン</string>
+    <string name="auto_level_off_toast" translation_description="Brief confirmation shown when a double tap turns horizon auto-leveling off in manual mode">水平自動調整オフ</string>
 </resources>
