@@ -458,4 +458,19 @@
     <!-- tm:omitted name="app_name" reason="identical_to_source" -->
     <!-- tm:omitted name="splash_version" reason="identical_to_source" -->
     <string name="splash_dismiss" translation_description="Accessibility label for the action that dismisses the launch splash when it is tapped">Schließen</string>
+    <string name="snackbar_action_open" translation_description="Snackbar action button that opens the screen the snackbar refers to, e.g. the compass calibration screen">Öffnen</string>
+    <!-- tm:omitted name="settings_ok" reason="identical_to_source" -->
+    <string name="calibration_heading_user">Der Kompass Ihres Telefons</string>
+    <string name="calibration_heading_warning">Der Kompass Ihres Telefons benötigt Aufmerksamkeit</string>
+    <string name="calibration_accuracy_unknown">Kalibrierung: Unbekannt</string>
+    <string name="calibration_accuracy_unreliable">Kalibrierung: Nicht kalibriert</string>
+    <string name="calibration_accuracy_low">Kalibrierung: Schlecht</string>
+    <string name="calibration_accuracy_medium">Kalibrierung: OK</string>
+    <string name="calibration_accuracy_high">Kalibrierung: Gut</string>
+    <string name="calibration_accuracy_no_contact">Kalibrierung: Kein Kontakt</string>
+    <string name="calibration_do_not_show_again">Diese Meldung nicht mehr anzeigen</string>
+    <string name="calibration_what_to_do" translation_description="Information for the user on how to calibrate the compass when the screen auto-opens. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[Der Kompasssensor deines Handys meldet eine schlechte Kalibrierung. Die Acht-Bewegung (<a href="%s">siehe Demonstration</a>) veranlasst die Hardware deines Handys, den Kompasssensor zurückzusetzen – Sky Map hat keine Kontrolle über diesen Vorgang.<br/><br/><blockquote><b>Kalibriert bedeutet nicht genau.</b> Die Acht-Geste hilft, den Sensor zurückzusetzen, kann aber Störungen durch nahegelegene Metallobjekte, Autoarmaturenbretter oder Handyhüllen nicht beseitigen. Wenn die Karte nach der Kalibrierung immer noch ungenau ist, sind diese externen Quellen die wahrscheinlichste Ursache – nicht Sky Map.</blockquote>Begib dich in einen offenen Bereich abseits von Metall und versuche es erneut.]]></string>
+    <string name="calibration_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they open the calibration screen. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[Dein Handy meldet den oben angezeigten Kompass-Kalibrierungsstatus.<br/><br/>Führe bei Bedarf die Acht-Bewegung aus (<a href="%s">siehe Demonstration</a>), um die Hardware deines Handys zur Neukalibrierung des Kompasssensors aufzufordern.<br/><br/><blockquote><b>Wichtig:</b> Die Kalibrierung hilft dem Sensor, sich intern zurückzusetzen. Das bedeutet nicht, dass der Kompass unbedingt genau ist! Lokale magnetische Interferenzen (Metallobjekte, Autoarmaturenbretter, Handyhüllen) können weiterhin dazu führen, dass der Kompass deines Handys ungenaue Messwerte an Sky Map sendet.</blockquote><b>Wenn die Karte die Positionen nicht korrekt anzeigt, liegt das Problem wahrscheinlich bei deinem Handy – nicht bei Sky Map!</b>]]></string>
+    <string name="calibration_low_accuracy_toast">Der Kompass Ihres Telefons meldet geringe Genauigkeit</string>
+    <string name="calibration_complete_toast" translation_description="Toast shown when the compass reaches high accuracy and the auto-opened calibration screen closes itself">Sensoren haben hohe Genauigkeit</string>
 </resources>

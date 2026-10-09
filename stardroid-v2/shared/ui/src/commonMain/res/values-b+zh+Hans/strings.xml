@@ -418,4 +418,19 @@
     <string name="app_name">星空地图</string>
     <!-- tm:omitted name="splash_version" reason="identical_to_source" -->
     <string name="splash_dismiss" translation_description="Accessibility label for the action that dismisses the launch splash when it is tapped">关闭</string>
+    <string name="snackbar_action_open" translation_description="Snackbar action button that opens the screen the snackbar refers to, e.g. the compass calibration screen">打开</string>
+    <string name="settings_ok">确定</string>
+    <string name="calibration_heading_user">改进您的对齐</string>
+    <string name="calibration_heading_warning">需要硬件校准</string>
+    <string name="calibration_accuracy_unknown">校准：未知</string>
+    <string name="calibration_accuracy_unreliable">校准：未校准</string>
+    <string name="calibration_accuracy_low">校准：差</string>
+    <string name="calibration_accuracy_medium">校准：一般</string>
+    <string name="calibration_accuracy_high">校准：良好</string>
+    <string name="calibration_accuracy_no_contact">校准：无接触</string>
+    <string name="calibration_do_not_show_again">不再显示</string>
+    <string name="calibration_what_to_do" translation_description="Information for the user on how to calibrate the compass when the screen auto-opens. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[您的手机指南针传感器报告校准不佳。画8字形运动（<a href="%s">观看演示</a>）会提示您手机的硬件重置其指南针传感器 — Sky Map 无法控制此过程。<br/><br/><blockquote><b>已校准不代表准确。</b>画8字形手势有助于重置传感器，但它无法消除附近金属物体、汽车仪表盘或手机壳的干扰。如果校准后地图仍然不准确，最可能的原因是这些外部来源 — 而非 Sky Map。</blockquote>请移至远离金属的开阔区域，然后重试。]]></string>
+    <string name="calibration_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they open the calibration screen. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[您的手机正在报告其指南针校准状态，如上所示。<br/><br/>如果需要，请执行“8字形”动作（<a href="%s">观看演示</a>），以促使您手机的硬件重新校准其指南针传感器。<br/><br/><blockquote><b>重要提示：</b>校准有助于传感器内部重置。这并不意味着指南针一定准确！局部磁场干扰（金属物体、汽车仪表盘、手机壳）仍然可能导致您手机的指南针向 Sky Map 发送不准确的读数。</blockquote><b>如果地图未正确显示位置，问题很可能出在您的手机上——而不是 Sky Map！</b>]]></string>
+    <string name="calibration_low_accuracy_toast">您手机的指南针精度较低</string>
+    <string name="calibration_complete_toast" translation_description="Toast shown when the compass reaches high accuracy and the auto-opened calibration screen closes itself">传感器精度高</string>
 </resources>

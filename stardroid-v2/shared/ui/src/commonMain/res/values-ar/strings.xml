@@ -444,4 +444,19 @@
     <string name="app_name">خريطة السماء</string>
     <!-- tm:omitted name="splash_version" reason="identical_to_source" -->
     <string name="splash_dismiss" translation_description="Accessibility label for the action that dismisses the launch splash when it is tapped">تجاهل</string>
+    <string name="snackbar_action_open" translation_description="Snackbar action button that opens the screen the snackbar refers to, e.g. the compass calibration screen">فتح</string>
+    <string name="settings_ok">حسناً</string>
+    <string name="calibration_heading_user">بوصلة هاتفك</string>
+    <string name="calibration_heading_warning">بوصلة هاتفك تحتاج إلى اهتمام</string>
+    <string name="calibration_accuracy_unknown">المعايرة: غير معروفة</string>
+    <string name="calibration_accuracy_unreliable">المعايرة: غير معايَرة</string>
+    <string name="calibration_accuracy_low">المعايرة: سيئة</string>
+    <string name="calibration_accuracy_medium">المعايرة: مقبولة</string>
+    <string name="calibration_accuracy_high">المعايرة: جيدة</string>
+    <string name="calibration_accuracy_no_contact">المعايرة: لا يوجد اتصال</string>
+    <string name="calibration_do_not_show_again">عدم إظهار هذا مرة أخرى</string>
+    <string name="calibration_what_to_do" translation_description="Information for the user on how to calibrate the compass when the screen auto-opens. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[يُبلغ مستشعر البوصلة بهاتفك عن معايرة ضعيفة. تدفع حركة الرقم 8 (<a href="%s">شاهد عرضًا توضيحيًا</a>) أجهزة هاتفك لإعادة ضبط مستشعر البوصلة الخاص به — لا تتحكم Sky Map في هذه العملية.<br/><br/><blockquote><b>المعايرة لا تعني الدقة.</b> تساعد إيماءة الرقم 8 في إعادة ضبط المستشعر، لكنها لا تستطيع إزالة التداخل من الأجسام المعدنية القريبة، أو لوحات قيادة السيارات، أو حافظات الهاتف. إذا كانت الخريطة لا تزال غير دقيقة بعد المعايرة، فإن هذه المصادر الخارجية هي السبب الأكثر احتمالاً — وليس Sky Map.</blockquote>انتقل إلى منطقة مفتوحة بعيدًا عن المعدن وحاول مرة أخرى.]]></string>
+    <string name="calibration_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they open the calibration screen. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[يُبلغ هاتفك عن حالة معايرة البوصلة كما هو موضح أعلاه.<br/><br/>إذا لزم الأمر، قم بإجراء حركة الرقم 8 (<a href="%s">شاهد عرضًا توضيحيًا</a>) لتحفيز أجهزة هاتفك على إعادة معايرة مستشعر البوصلة الخاص به.<br/><br/><blockquote><b>هام:</b> تساعد المعايرة المستشعر على إعادة ضبط نفسه داخليًا. هذا لا يعني أن البوصلة دقيقة بالضرورة! التداخل المغناطيسي المحلي (الأجسام المعدنية، لوحات قيادة السيارات، حافظات الهاتف) لا يزال بإمكانه أن يتسبب في إرسال بوصلة هاتفك قراءات غير دقيقة إلى Sky Map.</blockquote><b>إذا كانت الخريطة لا تعرض المواقع بشكل صحيح فالمشكلة على الأرجح في هاتفك - وليس في Sky Map!</b>]]></string>
+    <string name="calibration_low_accuracy_toast">بوصلة هاتفك دقتها منخفضة</string>
+    <string name="calibration_complete_toast" translation_description="Toast shown when the compass reaches high accuracy and the auto-opened calibration screen closes itself">المستشعرات تتمتع بدقة عالية</string>
 </resources>

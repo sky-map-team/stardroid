@@ -450,4 +450,19 @@
     <!-- tm:omitted name="app_name" reason="identical_to_source" -->
     <!-- tm:omitted name="splash_version" reason="identical_to_source" -->
     <string name="splash_dismiss" translation_description="Accessibility label for the action that dismisses the launch splash when it is tapped">Sluiten</string>
+    <string name="snackbar_action_open" translation_description="Snackbar action button that opens the screen the snackbar refers to, e.g. the compass calibration screen">Openen</string>
+    <!-- tm:omitted name="settings_ok" reason="identical_to_source" -->
+    <string name="calibration_heading_user">Het kompas van je telefoon</string>
+    <string name="calibration_heading_warning">Het kompas van je telefoon heeft aandacht nodig</string>
+    <string name="calibration_accuracy_unknown">Kalibratie: Onbekend</string>
+    <string name="calibration_accuracy_unreliable">Kalibratie: Niet gekalibreerd</string>
+    <string name="calibration_accuracy_low">Kalibratie: Slecht</string>
+    <string name="calibration_accuracy_medium">Kalibratie: OK</string>
+    <string name="calibration_accuracy_high">Kalibratie: Goed</string>
+    <string name="calibration_accuracy_no_contact">Kalibratie: Geen contact</string>
+    <string name="calibration_do_not_show_again">Niet meer weergeven</string>
+    <string name="calibration_what_to_do" translation_description="Information for the user on how to calibrate the compass when the screen auto-opens. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[De kompassensor van je telefoon meldt een slechte kalibratie. De \'acht\'-beweging (<a href="%s">bekijk een demonstratie</a>) zorgt ervoor dat de hardware van je telefoon de kompassensor reset — Sky Map heeft geen controle over dit proces.<br/><br/><blockquote><b>Gekalibreerd betekent niet nauwkeurig.</b> Het \'acht\'-gebaar helpt de sensor te resetten, maar het kan geen storingen verwijderen van nabijgelegen metalen voorwerpen, autodashboards of telefoonhoesjes. Als de kaart na kalibratie nog steeds afwijkt, zijn die externe bronnen de meest waarschijnlijke oorzaak — niet Sky Map.</blockquote>Ga naar een open ruimte weg van metaal en probeer het opnieuw.]]></string>
+    <string name="calibration_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they open the calibration screen. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[Je telefoon rapporteert de kalibratiestatus van het kompas zoals hierboven weergegeven.<br/><br/>Voer indien nodig de \'acht\'-beweging uit (<a href="%s">bekijk een demonstratie</a>) om de hardware van je telefoon te vragen de kompassensor opnieuw te kalibreren.<br/><br/><blockquote><b>Belangrijk:</b> kalibratie helpt de sensor zichzelf intern te resetten. Het betekent niet dat het kompas noodzakelijkerwijs nauwkeurig is!Lokale magnetische interferentie (metalen voorwerpen, autodashboards, telefoonhoesjes) kan er nog steeds voor zorgen dat het kompas van je telefoon onnauwkeurige metingen naar Sky Map stuurt.</blockquote><b>Als de kaart de posities niet correct weergeeft, ligt het probleem waarschijnlijk bij je telefoon - niet bij Sky Map!</b>]]></string>
+    <string name="calibration_low_accuracy_toast">Het kompas van je telefoon meldt een lage nauwkeurigheid</string>
+    <string name="calibration_complete_toast" translation_description="Toast shown when the compass reaches high accuracy and the auto-opened calibration screen closes itself">Sensoren hebben hoge nauwkeurigheid</string>
 </resources>

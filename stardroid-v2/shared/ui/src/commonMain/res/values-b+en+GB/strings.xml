@@ -401,4 +401,19 @@
     <!-- tm:omitted name="app_name" reason="identical_to_source" -->
     <!-- tm:omitted name="splash_version" reason="identical_to_source" -->
     <!-- tm:omitted name="splash_dismiss" reason="identical_to_source" -->
+    <!-- tm:omitted name="snackbar_action_open" reason="identical_to_source" -->
+    <!-- tm:omitted name="settings_ok" reason="identical_to_source" -->
+    <!-- tm:omitted name="calibration_heading_user" reason="identical_to_source" -->
+    <!-- tm:omitted name="calibration_heading_warning" reason="identical_to_source" -->
+    <!-- tm:omitted name="calibration_accuracy_unknown" reason="identical_to_source" -->
+    <!-- tm:omitted name="calibration_accuracy_unreliable" reason="identical_to_source" -->
+    <!-- tm:omitted name="calibration_accuracy_low" reason="identical_to_source" -->
+    <!-- tm:omitted name="calibration_accuracy_medium" reason="identical_to_source" -->
+    <!-- tm:omitted name="calibration_accuracy_high" reason="identical_to_source" -->
+    <!-- tm:omitted name="calibration_accuracy_no_contact" reason="identical_to_source" -->
+    <!-- tm:omitted name="calibration_do_not_show_again" reason="identical_to_source" -->
+    <!-- tm:omitted name="calibration_what_to_do" reason="identical_to_source" -->
+    <!-- tm:omitted name="calibration_what_to_do_user" reason="identical_to_source" -->
+    <!-- tm:omitted name="calibration_low_accuracy_toast" reason="identical_to_source" -->
+    <!-- tm:omitted name="calibration_complete_toast" reason="identical_to_source" -->
 </resources>

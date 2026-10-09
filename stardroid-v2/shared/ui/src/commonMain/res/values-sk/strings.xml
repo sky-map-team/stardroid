@@ -452,4 +452,19 @@
     <!-- tm:omitted name="app_name" reason="identical_to_source" -->
     <!-- tm:omitted name="splash_version" reason="identical_to_source" -->
     <string name="splash_dismiss" translation_description="Accessibility label for the action that dismisses the launch splash when it is tapped">Zavrieť</string>
+    <string name="snackbar_action_open" translation_description="Snackbar action button that opens the screen the snackbar refers to, e.g. the compass calibration screen">Otvoriť</string>
+    <!-- tm:omitted name="settings_ok" reason="identical_to_source" -->
+    <string name="calibration_heading_user">Kompas vášho telefónu</string>
+    <string name="calibration_heading_warning">Kompas vášho telefónu potrebuje pozornosť</string>
+    <string name="calibration_accuracy_unknown">Kalibrácia: Neznáma</string>
+    <string name="calibration_accuracy_unreliable">Kalibrácia: Nezkalibrovaná</string>
+    <string name="calibration_accuracy_low">Kalibrácia: Zlá</string>
+    <string name="calibration_accuracy_medium">Kalibrácia: OK</string>
+    <string name="calibration_accuracy_high">Kalibrácia: Dobrá</string>
+    <string name="calibration_accuracy_no_contact">Kalibrácia: Bez kontaktu</string>
+    <string name="calibration_do_not_show_again">Toto znovu nezobrazovať</string>
+    <string name="calibration_what_to_do" translation_description="Information for the user on how to calibrate the compass when the screen auto-opens. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[Senzor kompasu vášho telefónu hlási zlú kalibráciu. Pohyb v tvare osmičky (<a href="%s">pozrite si ukážku</a>) vyzve hardvér vášho telefónu, aby resetoval senzor kompasu — Sky Map nemá nad týmto procesom žiadnu kontrolu.<br/><br/><blockquote><b>Kalibrované neznamená presné.</b> Gesto v tvare osmičky pomáha resetovať senzor, ale nedokáže odstrániť rušenie z blízkych kovových predmetov, palubných dosiek áut alebo puzdier na telefón. Ak je mapa po kalibrácii stále nepresná, najpravdepodobnejšou príčinou sú tieto externé zdroje — nie Sky Map.</blockquote>Presuňte sa na otvorené priestranstvo mimo kovových predmetov a skúste to znova.]]></string>
+    <string name="calibration_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they open the calibration screen. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[Váš telefón hlási stav kalibrácie kompasu, ako je uvedené vyššie.<br/><br/>V prípade potreby vykonajte pohyb v tvare osmičky (<a href="%s">pozrite si ukážku</a>), aby ste vyzvali hardvér telefónu na rekalibráciu snímača kompasu.<br/><br/><blockquote><b>Dôležité:</b> kalibrácia pomáha snímaču interne sa resetovať. Neznamená to, že kompas je nevyhnutne presný! Miestne magnetické rušenie (kovové predmety, palubné dosky áut, puzdrá na telefóny) môže stále spôsobovať, že kompas vášho telefónu posiela nepresné údaje do Sky Map.</blockquote><b>Ak mapa nezobrazuje polohy správne, problém je pravdepodobne vo vašom telefóne – nie v Sky Map!</b>]]></string>
+    <string name="calibration_low_accuracy_toast">Kompas vášho telefónu hlási nízku presnosť</string>
+    <string name="calibration_complete_toast" translation_description="Toast shown when the compass reaches high accuracy and the auto-opened calibration screen closes itself">Senzory majú vysokú presnosť</string>
 </resources>

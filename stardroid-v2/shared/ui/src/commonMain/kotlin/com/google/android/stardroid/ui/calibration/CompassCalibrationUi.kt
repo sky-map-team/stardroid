@@ -9,12 +9,6 @@
 
 package com.google.android.stardroid.ui.calibration
 
-import android.graphics.ImageDecoder
-import android.graphics.PorterDuff
-import android.graphics.PorterDuffColorFilter
-import android.graphics.drawable.AnimatedImageDrawable
-import android.widget.ImageView
-import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
@@ -38,30 +32,39 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.produceState
 import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.toArgb
-import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.viewinterop.AndroidView
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.google.android.stardroid.R
 import com.google.android.stardroid.sensors.SensorAccuracy
 import com.google.android.stardroid.ui.common.StyledHtml
+import com.google.android.stardroid.ui.common.formattedStringResource
 import com.google.android.stardroid.ui.common.topBarWindowInsets
-import com.google.android.stardroid.ui.theme.NightPhotoTint
+import com.google.android.stardroid.ui.resources.Res
+import com.google.android.stardroid.ui.resources.calibration_accuracy_high
+import com.google.android.stardroid.ui.resources.calibration_accuracy_low
+import com.google.android.stardroid.ui.resources.calibration_accuracy_medium
+import com.google.android.stardroid.ui.resources.calibration_accuracy_no_contact
+import com.google.android.stardroid.ui.resources.calibration_accuracy_unknown
+import com.google.android.stardroid.ui.resources.calibration_accuracy_unreliable
+import com.google.android.stardroid.ui.resources.calibration_do_not_show_again
+import com.google.android.stardroid.ui.resources.calibration_heading_user
+import com.google.android.stardroid.ui.resources.calibration_heading_warning
+import com.google.android.stardroid.ui.resources.calibration_what_to_do
+import com.google.android.stardroid.ui.resources.calibration_what_to_do_user
+import com.google.android.stardroid.ui.resources.diagnostics_sensor_absent
+import com.google.android.stardroid.ui.resources.settings_back
+import com.google.android.stardroid.ui.resources.settings_ok
 import com.google.android.stardroid.ui.theme.statusColors
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.withContext
+import org.jetbrains.compose.resources.stringResource
 
 /**
  * The compass-calibration screen — v1's `CompassCalibrationActivity` as a full-screen Compose
  * overlay: the figure-eight animation, the live calibration readout, and (when the low-accuracy
  * monitor opened it) the "don't show again" opt-out. In that auto-opened form it dismisses
- * itself the moment the compass reads HIGH ([onCalibrated]; v1's `AUTO_DISMISSABLE`).
+ * itself the moment the compass reads HIGH ([onCalibrated]; v1's `AUTO_DISMISSABLE`). Back
+ * belongs to the host.
  */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -72,7 +75,6 @@ fun CompassCalibrationScreen(
     onCalibrated: () -> Unit,
     onBack: () -> Unit,
 ) {
-    BackHandler(onBack = onBack)
     val accuracy by viewModel.accuracy.collectAsStateWithLifecycle()
     val dontShowAgain by viewModel.dontShowAgain.collectAsStateWithLifecycle()
 
@@ -86,9 +88,9 @@ fun CompassCalibrationScreen(
     val barTitle =
         stringResource(
             if (userInitiated) {
-                R.string.calibration_heading_user
+                Res.string.calibration_heading_user
             } else {
-                R.string.calibration_heading_warning
+                Res.string.calibration_heading_warning
             },
         )
     Scaffold(
@@ -100,7 +102,7 @@ fun CompassCalibrationScreen(
                     IconButton(onClick = onBack) {
                         Icon(
                             Icons.AutoMirrored.Filled.ArrowBack,
-                            contentDescription = stringResource(R.string.settings_back),
+                            contentDescription = stringResource(Res.string.settings_back),
                         )
                     }
                 },
@@ -114,14 +116,19 @@ fun CompassCalibrationScreen(
                     .verticalScroll(rememberScrollState())
                     .padding(horizontal = 16.dp, vertical = 8.dp),
             ) {
-                FigureEightAnimation(nightMode)
+                FigureEightAnimation(
+                    nightMode,
+                    Modifier
+                        .fillMaxWidth()
+                        .height(180.dp),
+                )
                 AccuracyReadout(viewModel.hasMagnetometer, accuracy, nightMode)
                 StyledHtml(
-                    stringResource(
+                    formattedStringResource(
                         if (userInitiated) {
-                            R.string.calibration_what_to_do_user
+                            Res.string.calibration_what_to_do_user
                         } else {
-                            R.string.calibration_what_to_do
+                            Res.string.calibration_what_to_do
                         },
                         CALIBRATION_VIDEO_URL,
                     ),
@@ -137,7 +144,7 @@ fun CompassCalibrationScreen(
                             checked = dontShowAgain,
                             onCheckedChange = viewModel::setDontShowAgain,
                         )
-                        Text(stringResource(R.string.calibration_do_not_show_again))
+                        Text(stringResource(Res.string.calibration_do_not_show_again))
                     }
                 }
                 Button(
@@ -147,7 +154,7 @@ fun CompassCalibrationScreen(
                             .align(Alignment.CenterHorizontally)
                             .padding(vertical = 8.dp),
                 ) {
-                    Text(stringResource(R.string.settings_ok))
+                    Text(stringResource(Res.string.settings_ok))
                 }
             }
         }
@@ -155,39 +162,17 @@ fun CompassCalibrationScreen(
 }
 
 /**
- * v1 played `calib.gif` in a WebView to dodge pre-Pie animated-gif gaps; our minSdk (28) lets
- * [ImageDecoder] drive an [AnimatedImageDrawable] directly. Night mode red-multiplies the
- * frames like every other photograph (D46).
+ * v1's figure-eight animation ([FIGURE_EIGHT_PATH]), fitted to [modifier]'s bounds and
+ * red-multiplied in night mode like every other photograph (D46).
  */
 @Composable
-private fun FigureEightAnimation(nightMode: Boolean) {
-    val context = LocalContext.current
-    val drawable by
-        produceState<AnimatedImageDrawable?>(initialValue = null, context) {
-            value =
-                withContext(Dispatchers.IO) {
-                    val source = ImageDecoder.createSource(context.assets, "calibration/calib.gif")
-                    ImageDecoder.decodeDrawable(source) as? AnimatedImageDrawable
-                }
-            value?.start()
-        }
-    AndroidView(
-        factory = { ImageView(it).apply { scaleType = ImageView.ScaleType.FIT_CENTER } },
-        update = { view ->
-            view.setImageDrawable(drawable)
-            view.colorFilter =
-                if (nightMode) {
-                    PorterDuffColorFilter(NightPhotoTint.toArgb(), PorterDuff.Mode.MULTIPLY)
-                } else {
-                    null
-                }
-        },
-        modifier =
-            Modifier
-                .fillMaxWidth()
-                .height(180.dp),
-    )
-}
+internal expect fun FigureEightAnimation(
+    nightMode: Boolean,
+    modifier: Modifier,
+)
+
+/** The animation among the app's assets (Android) or bundle resources (iOS). */
+internal const val FIGURE_EIGHT_PATH = "calibration/calib.gif"
 
 @Composable
 private fun AccuracyReadout(
@@ -199,18 +184,18 @@ private fun AccuracyReadout(
     val text: String
     val color =
         if (!hasMagnetometer) {
-            text = stringResource(R.string.diagnostics_sensor_absent)
+            text = stringResource(Res.string.diagnostics_sensor_absent)
             colors.absent
         } else {
             text =
                 stringResource(
                     when (accuracy) {
-                        SensorAccuracy.HIGH -> R.string.calibration_accuracy_high
-                        SensorAccuracy.MEDIUM -> R.string.calibration_accuracy_medium
-                        SensorAccuracy.LOW -> R.string.calibration_accuracy_low
-                        SensorAccuracy.UNRELIABLE -> R.string.calibration_accuracy_unreliable
-                        SensorAccuracy.NO_CONTACT -> R.string.calibration_accuracy_no_contact
-                        null -> R.string.calibration_accuracy_unknown
+                        SensorAccuracy.HIGH -> Res.string.calibration_accuracy_high
+                        SensorAccuracy.MEDIUM -> Res.string.calibration_accuracy_medium
+                        SensorAccuracy.LOW -> Res.string.calibration_accuracy_low
+                        SensorAccuracy.UNRELIABLE -> Res.string.calibration_accuracy_unreliable
+                        SensorAccuracy.NO_CONTACT -> Res.string.calibration_accuracy_no_contact
+                        null -> Res.string.calibration_accuracy_unknown
                     },
                 )
             when (accuracy) {

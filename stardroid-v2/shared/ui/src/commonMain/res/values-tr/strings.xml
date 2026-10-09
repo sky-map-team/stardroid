@@ -446,4 +446,21 @@
     <!-- tm:omitted name="app_name" reason="identical_to_source" -->
     <!-- tm:omitted name="splash_version" reason="identical_to_source" -->
     <string name="splash_dismiss" translation_description="Accessibility label for the action that dismisses the launch splash when it is tapped">Kapat</string>
+    <string name="snackbar_action_open" translation_description="Snackbar action button that opens the screen the snackbar refers to, e.g. the compass calibration screen">Aç</string>
+    <string name="settings_ok">Tamam</string>
+    <string name="calibration_heading_user">Telefonunuzun Pusulası</string>
+    <string name="calibration_heading_warning">Telefonunuzun Pusulası Dikkat Gerektiriyor</string>
+    <string name="calibration_accuracy_unknown">Kalibrasyon: Bilinmiyor</string>
+    <string name="calibration_accuracy_unreliable">Kalibrasyon: Kalibre edilmemiş</string>
+    <string name="calibration_accuracy_low">Kalibrasyon: Kötü</string>
+    <string name="calibration_accuracy_medium">Kalibrasyon: Tamam</string>
+    <string name="calibration_accuracy_high">Kalibrasyon: İyi</string>
+    <string name="calibration_accuracy_no_contact">Kalibrasyon: Temas yok</string>
+    <string name="calibration_do_not_show_again">Bu mesajı tekrar gösterme</string>
+    <string name="calibration_what_to_do" translation_description="Information for the user on how to calibrate the compass when the screen auto-opens. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[Telefonunuzun pusula sensörünün kalibrasyonu zayıf görünüyor. 8 çizme hareketi (<a href="%s">gösteriyi izleyin</a>) telefonunuzun donanımının pusula sensörünü sıfırlamasını sağlar — Sky Map bu süreç üzerinde kontrol sahibi değildir.<br/><br/>
+<blockquote><b>Kalibre edilmiş olmak doğru olduğu anlamına gelmez.</b> 8 işareti hareketi sensörün sıfırlanmasına yardımcı olur, ancak yakındaki metal nesnelerden, araç torpidolarından veya telefon kılıflarından kaynaklanan paraziti gideremez. Kalibrasyon sonrasında harita hâlâ yanlış gösteriyorsa, en olası neden Sky Map değil, bu dış kaynaklardır.</blockquote>
+Metalden uzak, açık bir alana geçin ve tekrar deneyin.]]></string>
+    <string name="calibration_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they open the calibration screen. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[Telefonunuz pusula kalibrasyon durumunu yukarıda gösterildiği gibi bildiriyor.<br/><br/>Gerekirse, telefonunuzun donanımını pusula sensörünü yeniden kalibre etmeye teşvik etmek için 8 figürü hareketini yapın (<a href="%s">gösteriyi izleyin</a>).<br/><br/><blockquote><b>Önemli:</b> kalibrasyon, sensörün dahili olarak sıfırlanmasına yardımcı olur. Bu, pusulanın mutlaka doğru çalıştığı anlamına gelmez! Yerel manyetik parazitler (metal nesneler, araba torpidoları, telefon kılıfları) telefonunuzun pusulasının Sky Map uygulamasına yanlış okumalar göndermesine neden olabilir.</blockquote><b>Harita konumları doğru göstermiyorsa, sorun muhtemelen Sky Map değil, telefonunuzdur!</b>]]></string>
+    <string name="calibration_low_accuracy_toast">Telefonunuzun pusulası düşük doğruluk bildiriyor</string>
+    <string name="calibration_complete_toast" translation_description="Toast shown when the compass reaches high accuracy and the auto-opened calibration screen closes itself">Sensörler yüksek doğruluğa sahip</string>
 </resources>

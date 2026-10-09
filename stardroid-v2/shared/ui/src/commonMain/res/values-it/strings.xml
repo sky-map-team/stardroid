@@ -454,4 +454,19 @@
     <!-- tm:omitted name="app_name" reason="identical_to_source" -->
     <!-- tm:omitted name="splash_version" reason="identical_to_source" -->
     <string name="splash_dismiss" translation_description="Accessibility label for the action that dismisses the launch splash when it is tapped">Ignora</string>
+    <string name="snackbar_action_open" translation_description="Snackbar action button that opens the screen the snackbar refers to, e.g. the compass calibration screen">Apri</string>
+    <!-- tm:omitted name="settings_ok" reason="identical_to_source" -->
+    <string name="calibration_heading_user">La bussola del tuo telefono</string>
+    <string name="calibration_heading_warning" tm_human="true">La bussola del tuo telefono richiede la tua attenzione!</string>
+    <string name="calibration_accuracy_unknown">Calibrazione: Sconosciuta</string>
+    <string name="calibration_accuracy_unreliable">Calibrazione: Non calibrata</string>
+    <string name="calibration_accuracy_low">Calibrazione: Scarsa</string>
+    <string name="calibration_accuracy_medium">Calibrazione: OK</string>
+    <string name="calibration_accuracy_high">Calibrazione: Buona</string>
+    <string name="calibration_accuracy_no_contact">Calibrazione: Nessun contatto</string>
+    <string name="calibration_do_not_show_again">Non mostrare più</string>
+    <string name="calibration_what_to_do" translation_description="Information for the user on how to calibrate the compass when the screen auto-opens. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[Il sensore bussola del tuo telefono sta segnalando una calibrazione scarsa. Il movimento a forma di otto (<a href="%s">guarda una dimostrazione</a>) spinge l\'hardware del tuo telefono a ripristinare il sensore bussola — Sky Map non ha alcun controllo su questo processo.<br/><br/><blockquote><b>Calibrato non significa preciso.</b> Il gesto a forma di otto aiuta a ripristinare il sensore, ma non può rimuovere le interferenze da oggetti metallici vicini, cruscotti di auto o custodie del telefono. Se la mappa è ancora imprecisa dopo la calibrazione, le cause più probabili sono quelle esterne — non Sky Map.</blockquote>Spostati in un\'area aperta lontano da metalli e riprova.]]></string>
+    <string name="calibration_what_to_do_user" tm_human="true" translation_description="Information for the user on how to calibrate the compass when they open the calibration screen. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[Il tuo telefono sta segnalando lo stato di calibrazione della bussola come mostrato sopra.<br/><br/>Se necessario, esegui un movimento a forma di 8 (<a href="%s">guarda una dimostrazione</a>) per indurre l\'hardware del telefono a ricalibrare il sensore della bussola.<br/><br/><blockquote><b>Importante:</b> la calibrazione aiuta il sensore a resettarsi internamente. Non significa che la bussola sia necessariamente precisa! L\'interferenza magnetica locale (oggetti metallici, cruscotti di auto, custodie per telefono) può comunque indurre la bussola del telefono a inviare dati imprecisi a Sky Map.</blockquote><b>Se la mappa non sta mostrando le posizioni correttamente, il problema è probabilmente il tuo telefono, non Sky Map!</b>]]></string>
+    <string name="calibration_low_accuracy_toast">La bussola del tuo telefono segnala bassa precisione</string>
+    <string name="calibration_complete_toast" translation_description="Toast shown when the compass reaches high accuracy and the auto-opened calibration screen closes itself">Sensori ad alta precisione</string>
 </resources>

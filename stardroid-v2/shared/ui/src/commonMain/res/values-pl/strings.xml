@@ -435,4 +435,19 @@
     <!-- tm:omitted name="app_name" reason="identical_to_source" -->
     <!-- tm:omitted name="splash_version" reason="identical_to_source" -->
     <string name="splash_dismiss" translation_description="Accessibility label for the action that dismisses the launch splash when it is tapped">Odrzuć</string>
+    <string name="snackbar_action_open" translation_description="Snackbar action button that opens the screen the snackbar refers to, e.g. the compass calibration screen">Otwórz</string>
+    <!-- tm:omitted name="settings_ok" reason="identical_to_source" -->
+    <string name="calibration_heading_user">Popraw swoje ustawienie</string>
+    <string name="calibration_heading_warning">Wymagana kalibracja sprzętu</string>
+    <string name="calibration_accuracy_unknown">Kalibracja: nieznana</string>
+    <string name="calibration_accuracy_unreliable">Kalibracja: nieskalibrowana</string>
+    <string name="calibration_accuracy_low">Kalibracja: słaba</string>
+    <string name="calibration_accuracy_medium">Kalibracja: OK</string>
+    <string name="calibration_accuracy_high">Kalibracja: dobra</string>
+    <string name="calibration_accuracy_no_contact">Kalibracja: brak połączenia</string>
+    <string name="calibration_do_not_show_again">Nie pokazuj tego ponownie</string>
+    <string name="calibration_what_to_do" translation_description="Information for the user on how to calibrate the compass when the screen auto-opens. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[Czujnik kompasu w Twoim telefonie zgłasza słabą kalibrację. Ruch w kształcie ósemki (<a href="%s">obejrzyj demonstrację</a>) powoduje, że sprzęt Twojego telefonu resetuje czujnik kompasu — Sky Map nie ma kontroli nad tym procesem.<br/><br/><blockquote><b>Skalibrowany nie oznacza dokładny.</b> Gest ósemki pomaga zresetować czujnik, ale nie może usunąć zakłóceń pochodzących od pobliskich metalowych przedmiotów, desek rozdzielczych samochodów ani etui na telefon. Jeśli mapa nadal jest niedokładna po kalibracji, najbardziej prawdopodobną przyczyną są te zewnętrzne źródła — a nie Sky Map.</blockquote>Przejdź na otwartą przestrzeń z dala od metalu i spróbuj ponownie.]]></string>
+    <string name="calibration_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they open the calibration screen. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[Twój telefon zgłasza status kalibracji kompasu, jak pokazano powyżej.<br/><br/>W razie potrzeby wykonaj ruch w kształcie ósemki (<a href="%s">obejrzyj demonstrację</a>), aby skłonić sprzęt telefonu do ponownej kalibracji czujnika kompasu.<br/><br/><blockquote><b>Ważne:</b> kalibracja pomaga czujnikowi wewnętrznie się zresetować. Nie oznacza to, że kompas jest koniecznie dokładny!Lokalne zakłócenia magnetyczne (metalowe przedmioty, deski rozdzielcze samochodów, etui na telefon) nadal mogą powodować, że kompas telefonu wysyła niedokładneodczyty do Sky Map.</blockquote><b>Jeśli mapa nie pokazuje prawidłowo pozycji, problemem jest prawdopodobnie Twój telefon – a nie Sky Map!</b>]]></string>
+    <string name="calibration_low_accuracy_toast">Kompas w Twoim telefonie zgłasza niską dokładność</string>
+    <string name="calibration_complete_toast" translation_description="Toast shown when the compass reaches high accuracy and the auto-opened calibration screen closes itself">Czujniki mają wysoką dokładność</string>
 </resources>

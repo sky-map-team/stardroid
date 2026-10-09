@@ -363,4 +363,30 @@
     <string name="app_name" translation_description="The application name, shown under the launcher icon and in the app switcher.">Sky Map</string>
     <string name="splash_version" translation_description="Version line under the app name on the launch splash. %1$s is the app version name, e.g. 1.2.3">v%1$s</string>
     <string name="splash_dismiss" translation_description="Accessibility label for the action that dismisses the launch splash when it is tapped">Descartar</string>
+    <string name="snackbar_action_open" translation_description="Snackbar action button that opens the screen the snackbar refers to, e.g. the compass calibration screen">Abrir</string>
+    <string name="settings_ok" translation_description="Confirm button in settings dialogs">Aceptar</string>
+    <string name="calibration_heading_user" translation_description="Heading shown in the compass calibration screen when the user opens it themselves">O compás do teu teléfono</string>
+    <string name="calibration_heading_warning" translation_description="Heading shown in the compass calibration screen when it opens automatically due to low accuracy">O compás do teu teléfono precisa atención</string>
+    <string name="calibration_accuracy_unknown" translation_description="Sensor calibration level shown in the calibration screen">Calibración: descoñecida</string>
+    <string name="calibration_accuracy_unreliable" translation_description="Sensor calibration level shown in the calibration screen">Calibración: sen calibrar</string>
+    <string name="calibration_accuracy_low" translation_description="Sensor calibration level shown in the calibration screen">Calibración: mala</string>
+    <string name="calibration_accuracy_medium" translation_description="Sensor calibration level shown in the calibration screen">Calibración: ben</string>
+    <string name="calibration_accuracy_high" translation_description="Sensor calibration level shown in the calibration screen">Calibración: boa</string>
+    <string name="calibration_accuracy_no_contact" translation_description="Sensor calibration level shown when the sensor has no contact - unlikely to appear in Sky Map but included for completeness">Calibración: sen contacto</string>
+    <string name="calibration_do_not_show_again" translation_description="Checkbox label in the compass calibration screen to suppress future automatic appearances">Non volver amosar</string>
+    <string name="calibration_what_to_do"
+        translation_description="Information for the user on how to calibrate the compass when the screen auto-opens. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[
+O sensor de compás do teu teléfono está informando dunha calibración deficiente. O movemento en forma de oito (<a href="%s">ver unha demostración</a>) solicita ao soporte físico do teu teléfono que reinicie o seu sensor de compás — Sky Map non ten control sobre este proceso.<br/><br/>
+<blockquote><b>Calibrado non significa preciso.</b> O xesto en forma de oito axuda a reiniciar o sensor, pero non pode eliminar a interferencia de obxectos metálicos próximos, taboleiros de automóbiles ou fundas de teléfono. Se o mapa segue desorientado despois de calibrar, esas fontes externas son a causa máis probable — non Sky Map.</blockquote>
+Móvete a unha área aberta lonxe de obxectos metálicos e téntao de novo.
+    ]]></string>
+    <string name="calibration_what_to_do_user"
+        translation_description="Information for the user on how to calibrate the compass when they open the calibration screen. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[
+O teu teléfono está informando do seu estado de calibración do compás como se amosa arriba.<br/><br/>
+Se é necesario, realiza o movemento en forma de oito (<a href="%s">ver unha demostración</a>) para co soporte físico do teu teléfono recalibre o seu sensor de compás.<br/><br/>
+<blockquote><b>Importante:</b> a calibración axuda ao sensor a reiniciarse internamente. Non significa co compás sexa necesariamente preciso!<br/>A interferencia magnética local (obxectos metálicos, salpicadeiros de coches, fundas de teléfono) aínda pode facer co compás do teu teléfono envíe lecturas imprecisas a Sky Map.</blockquote>
+<b>Se o mapa non mostra as posicións correctamente, o problema é probablemente o teu teléfono, non Sky Map!</b>
+    ]]></string>
+    <string name="calibration_low_accuracy_toast" translation_description="Brief toast shown when compass accuracy is low and the user has disabled the calibration screen">O compás do teu teléfono está reportando baixa precisión</string>
+    <string name="calibration_complete_toast" translation_description="Toast shown when the compass reaches high accuracy and the auto-opened calibration screen closes itself">Sensores con alta precisión</string>
 </resources>
