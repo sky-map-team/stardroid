@@ -51,6 +51,7 @@ import com.google.android.stardroid.ui.common.formatAndroidStyle
 import com.google.android.stardroid.ui.common.formattedStringResource
 import com.google.android.stardroid.ui.common.topBarWindowInsets
 import com.google.android.stardroid.ui.resources.Res
+import com.google.android.stardroid.ui.resources.calibration_button
 import com.google.android.stardroid.ui.resources.diagnostics_accelerometer
 import com.google.android.stardroid.ui.resources.diagnostics_alignment_adjustment
 import com.google.android.stardroid.ui.resources.diagnostics_alignment_format
@@ -172,8 +173,10 @@ data class DiagnosticsPlatform(
  * report a user mails us is exactly the screen they were looking at.
  *
  * The host supplies what only its platform has: the [platform] facts, the way the report leaves
- * ([onSendReport]), the app's own recent log, and Android's satellite data status (with a
- * debug-only fetch, [onForceSatelliteFetch]); null or empty hides each. Back belongs to the host.
+ * ([onSendReport]), the app's own recent log, Android's satellite data status (with a
+ * debug-only fetch, [onForceSatelliteFetch]), and a way into compass calibration under the
+ * sensors ([onOpenCalibration], for a host whose menu doesn't offer it); null or empty hides
+ * each. Back belongs to the host.
  */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -187,6 +190,7 @@ fun DiagnosticsScreen(
     recentLogLines: suspend () -> List<String> = { emptyList() },
     satelliteSection: DiagnosticsSection? = null,
     onForceSatelliteFetch: (suspend () -> String)? = null,
+    onOpenCalibration: (() -> Unit)? = null,
 ) {
     val colors = statusColors(nightMode)
     val snapshot by viewModel.snapshots.collectAsStateWithLifecycle()
@@ -196,11 +200,12 @@ fun DiagnosticsScreen(
     // Bumped after a forced experiment fetch so the section is rebuilt with the new values.
     var experimentsRefresh by remember { mutableIntStateOf(0) }
     var experimentFetchResult by remember { mutableStateOf<String?>(null) }
+    val sensors = sensorsSection(viewModel, colors)
     val sections =
         buildList {
             add(generalSection(platform))
             add(graphicsSection(platform, snapshot.rendererInfo))
-            add(sensorsSection(viewModel, colors))
+            add(sensors)
             add(orientationSettingsSection(snapshot, jitter))
             add(locationAndTimeSection(snapshot, colors))
             add(networkSection(snapshot))
@@ -265,6 +270,14 @@ fun DiagnosticsScreen(
                     SectionHeader(section.title)
                     for (row in section.rows) {
                         DiagnosticRow(row.label, row.value, row.valueColor)
+                    }
+                    if (section === sensors && onOpenCalibration != null) {
+                        Button(
+                            onClick = onOpenCalibration,
+                            modifier = Modifier.padding(vertical = 8.dp),
+                        ) {
+                            Text(stringResource(Res.string.calibration_button))
+                        }
                     }
                 }
                 if (experimentConfig.canFetch) {

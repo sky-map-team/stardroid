@@ -63,8 +63,9 @@ import org.jetbrains.compose.resources.stringResource
  * The compass-calibration screen — v1's `CompassCalibrationActivity` as a full-screen Compose
  * overlay: the figure-eight animation, the live calibration readout, and (when the low-accuracy
  * monitor opened it) the "don't show again" opt-out. In that auto-opened form it dismisses
- * itself the moment the compass reads HIGH ([onCalibrated]; v1's `AUTO_DISMISSABLE`). Back
- * belongs to the host.
+ * itself the moment the compass reads HIGH ([onCalibrated]; v1's `AUTO_DISMISSABLE`). The
+ * host supplies the figure-eight video the text links to ([demoVideoUrl]), as each platform's
+ * users are shown their own phones. Back belongs to the host.
  */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -72,6 +73,7 @@ fun CompassCalibrationScreen(
     viewModel: CompassCalibrationViewModel,
     nightMode: Boolean,
     userInitiated: Boolean,
+    demoVideoUrl: String,
     onCalibrated: () -> Unit,
     onBack: () -> Unit,
 ) {
@@ -130,7 +132,7 @@ fun CompassCalibrationScreen(
                         } else {
                             Res.string.calibration_what_to_do
                         },
-                        CALIBRATION_VIDEO_URL,
+                        demoVideoUrl,
                     ),
                     nightMode = nightMode,
                     modifier = Modifier.padding(vertical = 12.dp),
@@ -213,6 +215,3 @@ private fun AccuracyReadout(
         modifier = Modifier.padding(top = 8.dp),
     )
 }
-
-/** v1's linked demonstration video. */
-private const val CALIBRATION_VIDEO_URL = "https://www.youtube.com/watch?v=-Uq7AmSAjt8"
