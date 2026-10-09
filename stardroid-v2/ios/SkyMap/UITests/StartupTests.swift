@@ -49,7 +49,8 @@ final class StartupTests: XCTestCase {
     }
 }
 
-/// Accepts the EULA, skips the warm welcome and allows location, if this launch still asks.
+/// Accepts the EULA, skips the warm welcome and allows location, if this launch still asks, and
+/// leaves the map with its controls showing.
 func passStartup(_ app: XCUIApplication) {
     // The version banner covers the first few seconds of every launch; a tap dismisses it, and
     // would otherwise land on it rather than on Accept.
@@ -57,37 +58,36 @@ func passStartup(_ app: XCUIApplication) {
     if banner.waitForExistence(timeout: 5) {
         banner.tap()
     }
+    // The EULA, the welcome and the location prompt each show only until answered, so take
+    // whichever come up, and count the map as reached once none has for a few seconds. The map's
+    // controls can't say so: they exist underneath the welcome, and may have hidden themselves.
+    // Quick matters: a simulator has no fix, so the location timeout's dialog comes up 30 s after
+    // launch and hides the map's controls from accessibility; the tests must be done by then.
     let accept = app.buttons["Accept"]
-    if accept.waitForExistence(timeout: 5) {
-        accept.tap()
-    }
-    // The welcome shows on a first run only, so wait for whichever comes up: its Skip, or the
-    // map's controls. Those exist underneath the welcome, and look hittable for a moment while
-    // the startup state loads, so the map only counts once it has stayed up with no welcome.
     let skip = app.buttons["Skip"].firstMatch
-    let more = app.buttons["More options"]
+    let springboard = XCUIApplication(bundleIdentifier: "com.apple.springboard")
+    let allow = springboard.alerts.buttons["Allow While Using App"]
     let deadline = Date().addingTimeInterval(20)
-    var mapSince: Date?
-    while Date() < deadline {
-        if skip.exists {
-            skip.tap()
-            break
-        }
-        if more.exists && more.isHittable {
-            let since = mapSince ?? Date()
-            mapSince = since
-            if Date().timeIntervalSince(since) > 3 {
-                break
-            }
-        } else {
-            mapSince = nil
+    var quietSince = Date()
+    while Date() < deadline && Date().timeIntervalSince(quietSince) < 3 {
+        for step in [accept, skip, allow] where step.exists {
+            step.tap()
+            quietSince = Date()
         }
         usleep(250_000)
     }
-    let springboard = XCUIApplication(bundleIdentifier: "com.apple.springboard")
-    let allow = springboard.alerts.buttons["Allow While Using App"]
-    if allow.waitForExistence(timeout: 5) {
-        allow.tap()
+    // The map's controls flash for a few seconds, then hide, once anyone has ever toggled them
+    // with a tap on the sky (an earlier test's tap counts). Wait the flash out; if they went, a
+    // tap on the sky brings them back, and a toggle by hand stops the auto-hide for this run.
+    // The tap also identifies whatever is there, so close any card it opens.
+    sleep(1)
+    let more = app.buttons["More options"]
+    if !(more.exists && more.isHittable) {
+        app.windows.firstMatch.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.4)).tap()
+        let close = app.buttons["Close"]
+        if close.waitForExistence(timeout: 2) {
+            close.tap()
+        }
     }
 }
 

@@ -433,4 +433,16 @@
     <string name="calibration_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they open the calibration screen. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[您的手機正在回報其指南針校準狀態，如上方所示。<br/><br/>如有必要，請執行「8字形」動作（<a href="%s">觀看示範</a>），以提示您手機的硬體重新校準其指南針感測器。<br/><br/><blockquote><b>重要提示：</b>校準有助於感測器內部重置。這並不表示指南針一定準確！局部磁場干擾（金屬物體、汽車儀表板、手機殼）仍然可能導致您手機的指南針向 Sky Map 發送不準確的讀數。</blockquote><b>如果地圖未正確顯示位置，問題很可能出在您的手機上，而不是 Sky Map！</b>]]></string>
     <string name="calibration_low_accuracy_toast">手機指南針精準度過低</string>
     <string name="calibration_complete_toast" translation_description="Toast shown when the compass reaches high accuracy and the auto-opened calibration screen closes itself">感測器精準度高</string>
+    <string name="no_sensor_warning" translation_description="Warning shown when the device lacks the motion sensors needed to point the map at the sky automatically.">這個裝置沒有指南針或動作感應器，所以 Sky Map 無法跟隨您指向的方向。請改為手動拖曳地圖。</string>
+    <string name="no_sensor_warning_dismiss">確定</string>
+    <string name="hud_alignment_reset_message" translation_description="Snackbar confirming the sensor-alignment correction was cleared; shown with an Undo action.">校準修正已重設</string>
+    <string name="ar_auto_mode_snackbar" translation_description="Snackbar shown when turning on through-camera mode switched the map from manual dragging back to automatic sensor pointing.">相機檢視已開啟自動模式</string>
+    <string name="ar_permission_denied" translation_description="Snackbar shown when the user declined the camera permission that through-camera mode needs.">穿透相機模式需要相機權限</string>
+    <string name="ar_permission_settings_action">設定</string>
+    <string name="ar_alignment_adjusted_message" translation_description="Snackbar shown after the user drags the star map to align it with the camera image; shown with an Undo action that reverts the whole drag.">地圖校準已調整</string>
+    <string name="snackbar_action_undo" translation_description="Snackbar action button that reverses the change the snackbar reports, e.g. re-enabling horizon auto-leveling">復原</string>
+    <string name="label_size_hint_message" translation_description="Snackbar shown once, the first time the user zooms in a long way. Explains that the text labels naming stars and other objects stay the same size however far you zoom, and that their size is changed in the app\'s Settings screen instead. Shown with an action button that opens Settings.">標籤大小不會隨縮放而改變 — 請在設定中調整</string>
+    <string name="label_size_hint_action" translation_description="Action button on the label size snackbar; opens the app\'s Settings screen, where the user can change how large the sky labels are">設定</string>
+    <string name="auto_level_on_toast" translation_description="Brief confirmation shown when a double tap turns horizon auto-leveling on in manual mode">地平線自動校準已開啟</string>
+    <string name="auto_level_off_toast" translation_description="Brief confirmation shown when a double tap turns horizon auto-leveling off in manual mode">地平線自動校準已關閉</string>
 </resources>

@@ -45,7 +45,7 @@ import com.google.android.stardroid.ui.help.HelpScreen
 import com.google.android.stardroid.ui.help.WhatsNewScreen
 import com.google.android.stardroid.ui.layers.LayersViewModel
 import com.google.android.stardroid.ui.location.LocationViewModel
-import com.google.android.stardroid.ui.map.MapScreen
+import com.google.android.stardroid.ui.map.MapRoute
 import com.google.android.stardroid.ui.map.MapViewModel
 import com.google.android.stardroid.ui.objectinfo.ImageExpandOverlay
 import com.google.android.stardroid.ui.objectinfo.MoonWidgetPromo
@@ -139,7 +139,7 @@ fun SkyMapNavHost(
         startDestination = if (startOnWelcome) Routes.WELCOME else Routes.MAP,
     ) {
         composable(Routes.MAP) {
-            MapScreen(
+            MapRoute(
                 glSurfaceView,
                 snackbarHostState,
                 mapViewModel,

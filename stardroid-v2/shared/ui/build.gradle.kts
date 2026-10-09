@@ -23,11 +23,16 @@ kotlin {
             implementation(libs.cmp.material.icons.core)
         }
         androidMain.dependencies {
-            // The notification-permission ask (rememberNotificationPermissionRequest).
+            // The notification-permission ask (rememberNotificationPermissionRequest) and system
+            // back (SystemBackHandler).
             implementation(libs.androidx.activity.compose)
             implementation(libs.androidx.core.ktx)
             // The location sheet's map (RemoteImage), through the app's ImageLoader.
             implementation(libs.coil.compose)
+        }
+        iosMain.dependencies {
+            // iOS's edge swipe as back (SystemBackHandler), as Android's system back.
+            implementation(libs.cmp.ui.backhandler)
         }
         commonTest.dependencies {
             implementation(kotlin("test"))

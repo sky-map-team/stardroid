@@ -46,20 +46,11 @@
     <string name="tonight_trailing_pass" translation_description="Small trailing note on a satellite pass row. %1$s is a compass direction, %2$d is an angle in degrees, %3$.1f is a brightness magnitude.">يرتفع %1$s، %2$d°، قدر %3$.1f</string>
 
     <!-- Map screen controls. -->
-    <string name="no_sensor_warning" translation_description="Warning shown when the device lacks the motion sensors needed to point the map at the sky automatically.">
-    هذا الجهاز لا يحتوي على بوصلة أو مستشعرات حركة، لذلك لا يمكن لـ Sky Map تتبع المكان الذي تشير إليه. اسحب الخريطة يدويًا بدلاً من ذلك.
-    </string>
-    <string name="no_sensor_warning_dismiss">حسناً</string>
 
     <!-- The map HUD (map-hud.md, D65): the top-right pointing readout shown with the chrome. -->
-    <string name="hud_alignment_reset_message" translation_description="Snackbar confirming the sensor-alignment correction was cleared; shown with an Undo action.">تم إعادة ضبط تصحيح المحاذاة</string>
 
 
     <!-- Through-camera (AR) mode (camera-ar-mode.md, D64). -->
-    <string name="ar_auto_mode_snackbar" translation_description="Snackbar shown when turning on through-camera mode switched the map from manual dragging back to automatic sensor pointing.">تم تشغيل الوضع التلقائي لعرض الكاميرا</string>
-    <string name="ar_permission_denied" translation_description="Snackbar shown when the user declined the camera permission that through-camera mode needs.">وضع الكاميرا المباشرة يتطلب إذن الكاميرا</string>
-    <string name="ar_permission_settings_action">الإعدادات</string>
-    <string name="ar_alignment_adjusted_message" translation_description="Snackbar shown after the user drags the star map to align it with the camera image; shown with an Undo action that reverts the whole drag.">تم تعديل محاذاة الخريطة</string>
     <string name="share_chooser_title" translation_description="Title of the system share sheet when sharing a captured sky image.">شارك هذه السماء</string>
     <string name="share_invitation" translation_description="Short invitation stamped on the footer of shared sky images, above the store link.">انظر إلى ما تنظر إليه — احصل على Sky Map مجانًا</string>
     <string name="share_text" translation_description="Text accompanying a shared sky image in apps that accept both an image and text. %1$s is the app-store link.">انظر إلى ما تنظر إليه — احصل على Sky Map مجانًا: %1$s</string>
@@ -75,17 +66,12 @@
     <!-- Popular events in the time travel dialog (timestamps live in TimeTravelEvents.kt). -->
 
     <!-- Location management. -->
-    <string name="snackbar_action_undo" translation_description="Snackbar action button that reverses the change the snackbar reports, e.g. re-enabling horizon auto-leveling">تراجع</string>
-    <string name="label_size_hint_message" translation_description="Snackbar shown once, the first time the user zooms in a long way. Explains that the text labels naming stars and other objects stay the same size however far you zoom, and that their size is changed in the app\'s Settings screen instead. Shown with an action button that opens Settings.">حجم التسمية لا يتغير مع التكبير — اضبطه في الإعدادات</string>
-    <string name="label_size_hint_action" translation_description="Action button on the label size snackbar; opens the app\'s Settings screen, where the user can change how large the sky labels are">الإعدادات</string>
 
     <!-- Object info card -->
 
     <!-- Image gallery -->
 
     <!-- Settings screen (v1 wording where a v1 string existed) -->
-    <string name="auto_level_on_toast" translation_description="Brief confirmation shown when a double tap turns horizon auto-leveling on in manual mode">الموازنة التلقائية للأفق قيد التشغيل</string>
-    <string name="auto_level_off_toast" translation_description="Brief confirmation shown when a double tap turns horizon auto-leveling off in manual mode">الموازنة التلقائية للأفق متوقفة</string>
 
     <string name="diagnostics_section_satellites" translation_description="Section heading in the diagnostics screen for satellite orbital-data status">الأقمار الصناعية</string>
     <string name="diagnostics_satellite_data" translation_description="Row label in the diagnostics screen for the age and count of cached satellite orbital data">بيانات المدار</string>

@@ -32,6 +32,7 @@ import kotlinx.coroutines.launch
 import platform.CoreGraphics.CGPointZero
 import platform.CoreGraphics.CGRectZero
 import platform.CoreGraphics.CGSize
+import platform.Foundation.NSProcessInfo
 import platform.Foundation.NSRunLoop
 import platform.Foundation.NSRunLoopCommonModes
 import platform.Foundation.NSSelectorFromString
@@ -60,6 +61,7 @@ import platform.UIKit.UITapGestureRecognizer
 import platform.UIKit.UIViewController
 import platform.darwin.NSObject
 import kotlin.math.PI
+import kotlin.math.hypot
 import kotlin.math.min
 
 /**
@@ -125,6 +127,9 @@ class MapViewController(
      * which identifies what is there (object info).
      */
     var onTap: ((xPoints: Double, yPoints: Double) -> Unit)? = null
+
+    /** A double tap on the sky, which flips horizon auto-leveling in manual mode (Android's). */
+    var onDoubleTap: (() -> Unit)? = null
 
     init {
         view.colorPixelFormat = MTLPixelFormatBGRA8Unorm
@@ -280,11 +285,32 @@ class MapViewController(
             if (recognizer.state == UIGestureRecognizerStateEnded) mapViewModel.onGestureEnd()
         }
 
+        // The last single tap, for spotting a double: the tap recognizer fires on every tap, so
+        // the second of a quick pair is caught here, as Android's detector catches it. The first
+        // still fires at once (the chrome and identify don't wait for a second tap), and the
+        // pair is consumed, so a triple tap is a double plus a fresh single.
+        private var lastTapSeconds = 0.0
+        private var lastTapX = 0.0
+        private var lastTapY = 0.0
+
         @ObjCAction
         fun tap(recognizer: UITapGestureRecognizer) {
             if (recognizer.state != UIGestureRecognizerStateEnded) return
             val (x, y) = recognizer.locationInView(view).useContents { x to y }
-            onTap?.invoke(x, y)
+            val now = NSProcessInfo.processInfo.systemUptime
+            val isDoubleTap =
+                lastTapSeconds != 0.0 &&
+                    now - lastTapSeconds <= DOUBLE_TAP_TIMEOUT_SECONDS &&
+                    hypot(x - lastTapX, y - lastTapY) <= DOUBLE_TAP_SLOP_POINTS
+            if (isDoubleTap) {
+                lastTapSeconds = 0.0
+                onDoubleTap?.invoke()
+            } else {
+                lastTapSeconds = now
+                lastTapX = x
+                lastTapY = y
+                onTap?.invoke(x, y)
+            }
         }
 
         override fun gestureRecognizer(
@@ -293,3 +319,9 @@ class MapViewController(
         ): Boolean = true
     }
 }
+
+/** Android's double-tap timeout (ViewConfiguration's 300 ms). */
+private const val DOUBLE_TAP_TIMEOUT_SECONDS = 0.3
+
+/** How far apart two taps may land and still be a double tap, as Android's 32 dp. */
+private const val DOUBLE_TAP_SLOP_POINTS = 32.0

@@ -48,7 +48,7 @@ import kotlin.coroutines.resume
  * - **A private intermediate is recycled by whoever consumes it.** Every bitmap created
  *   inside this file is consumed exactly once and freed at that point.
  * - **A bitmap passed in from outside is never recycled here.** The caller owns it and
- *   frees it when its own use is done — see the `map`/`still` handling in `MapScreen`.
+ *   frees it when its own use is done — see the `map`/`still` handling in `MapRoute`.
  *
  * Captures are also downsampled to [MAX_SHARE_EDGE_PX] before compositing, which is the
  * larger win: it scales every bitmap in the pipeline down at once, and the share target

@@ -11,41 +11,31 @@ package com.google.android.stardroid.ios
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.BoxScope
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.navigationBarsPadding
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.safeDrawingPadding
-import androidx.compose.material3.SnackbarDuration
-import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
-import androidx.compose.material3.SnackbarResult
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.runtime.setValue
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.backhandler.BackHandler
+import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.layout.onSizeChanged
 import androidx.compose.ui.platform.LocalDensity
-import androidx.compose.ui.unit.IntSize
-import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.UIKitInteropInteractionMode
 import androidx.compose.ui.viewinterop.UIKitInteropProperties
 import androidx.compose.ui.viewinterop.UIKitViewController
 import androidx.compose.ui.window.ComposeUIViewController
 import com.google.android.stardroid.catalog.ObjectInfo
-import com.google.android.stardroid.render.api.LayerId
-import com.google.android.stardroid.sensors.CalibrationPrompt
+import com.google.android.stardroid.catalog.SearchHit
 import com.google.android.stardroid.startup.ExperimentConfig
-import com.google.android.stardroid.time.TimeTravelState
 import com.google.android.stardroid.ui.calibration.CompassCalibrationScreen
 import com.google.android.stardroid.ui.calibration.CompassCalibrationViewModel
 import com.google.android.stardroid.ui.diagnostics.DiagnosticsScreen
@@ -56,31 +46,16 @@ import com.google.android.stardroid.ui.help.HelpLink
 import com.google.android.stardroid.ui.help.HelpScreen
 import com.google.android.stardroid.ui.help.WhatsNewScreen
 import com.google.android.stardroid.ui.layers.LayersViewModel
-import com.google.android.stardroid.ui.location.LocationSheet
-import com.google.android.stardroid.ui.location.LocationStateDialogs
 import com.google.android.stardroid.ui.location.LocationViewModel
-import com.google.android.stardroid.ui.location.ManualLocationEntryDialog
-import com.google.android.stardroid.ui.location.rememberLocationSetMessage
-import com.google.android.stardroid.ui.map.LayersSheet
-import com.google.android.stardroid.ui.map.MapChrome
+import com.google.android.stardroid.ui.map.MapScreen
 import com.google.android.stardroid.ui.map.MapViewModel
-import com.google.android.stardroid.ui.map.OverflowSheet
-import com.google.android.stardroid.ui.map.ReferenceFrame
-import com.google.android.stardroid.ui.objectinfo.EclipseRow
 import com.google.android.stardroid.ui.objectinfo.ImageExpandOverlay
 import com.google.android.stardroid.ui.objectinfo.ObjectInfoCard
 import com.google.android.stardroid.ui.objectinfo.ObjectInfoViewModel
 import com.google.android.stardroid.ui.onboarding.WelcomeScreen
 import com.google.android.stardroid.ui.resources.Res
 import com.google.android.stardroid.ui.resources.calibration_complete_toast
-import com.google.android.stardroid.ui.resources.calibration_low_accuracy_toast
-import com.google.android.stardroid.ui.resources.snackbar_action_open
-import com.google.android.stardroid.ui.resources.sun_wont_set_message
 import com.google.android.stardroid.ui.resources.support_email
-import com.google.android.stardroid.ui.search.SearchControlBar
-import com.google.android.stardroid.ui.search.SearchDialog
-import com.google.android.stardroid.ui.search.SearchGeometry
-import com.google.android.stardroid.ui.search.SearchOverlay
 import com.google.android.stardroid.ui.search.SearchViewModel
 import com.google.android.stardroid.ui.settings.SettingsScreen
 import com.google.android.stardroid.ui.settings.SettingsViewModel
@@ -90,11 +65,7 @@ import com.google.android.stardroid.ui.startup.VersionBanner
 import com.google.android.stardroid.ui.startup.WhatsNewDialog
 import com.google.android.stardroid.ui.startup.appVersionName
 import com.google.android.stardroid.ui.theme.SkyMapTheme
-import com.google.android.stardroid.ui.timetravel.TimeTravelDialog
-import com.google.android.stardroid.ui.timetravel.TimeTravelFlash
-import com.google.android.stardroid.ui.timetravel.TimeTravelPlayer
 import com.google.android.stardroid.ui.timetravel.TimeTravelViewModel
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import org.jetbrains.compose.resources.stringResource
 import platform.UIKit.UIViewController
@@ -102,14 +73,11 @@ import platform.UIKit.UIViewController
 /**
  * The iOS app's root, for Swift to host: the Compose Multiplatform UI (D134) over the Metal map.
  *
- * The map carries the shared chrome (MapChrome: the layer rail, the action cluster, the HUD) and
- * the shared Layers sheet, search, time travel, object info (tap the sky) and location. This is a
- * stand-in for Android's MapScreen, which composes every other screen and so moves last (D137);
- * until then the overflow menu offers only the destinations iOS has screens for. Everything here
- * is wired as Android wires it, the compass-calibration prompts included.
- *
- * Android's startup gating: the EULA blocks everything until accepted, then the warm welcome on
- * a first run, and What's New on upgrades.
+ * The map is the shared MapScreen (D137) over the Metal sky, whose UIKit recognizers report taps
+ * back to it. Around it, this host does what Android's MainActivity and nav host do: the startup
+ * gating (the EULA blocks everything until accepted, then the warm welcome on a first run, and
+ * What's New on upgrades) and the full-screen pages, which stand in for Android's navigation
+ * destinations.
  */
 fun skyMapViewController(): UIViewController {
     val graph = IosAppGraph()
@@ -168,30 +136,10 @@ private fun SkyMapScreen(
 ) {
     val nightMode by mapViewModel.nightMode.collectAsState()
     val gates by startup.state.collectAsState()
-    val hudState by mapViewModel.hudState.collectAsState()
-    val hudEnabled by layersViewModel.hudEnabled.collectAsState()
-    val toggles by layersViewModel.toggles.collectAsState()
-    val referenceFrame by mapViewModel.referenceFrame.collectAsState()
-    var showLayersSheet by remember { mutableStateOf(false) }
-    var expandLayer by remember { mutableStateOf<LayerId?>(null) }
-    val camera by mapViewModel.camera.collectAsState()
-    val searchTarget by searchViewModel.target.collectAsState()
-    var showSearchDialog by remember { mutableStateOf(false) }
-    var screenSize by remember { mutableStateOf(IntSize.Zero) }
-    val timeTravelState by timeTravelViewModel.state.collectAsState()
-    var showTimeTravelDialog by remember { mutableStateOf(false) }
-    var timeTravelPlayerHeightPx by remember { mutableStateOf(0) }
+    val sensorWarningSuppressed by startup.suppressMissingSensorWarning.collectAsState()
+    // Owned here and shown by the map, so a page that closes back to the map (calibration's
+    // calibrated notice) can leave a snackbar there, as Android's nav host does.
     val snackbarHostState = remember { SnackbarHostState() }
-    val objectInfoCard by objectInfoViewModel.card.collectAsState()
-    val objectRiseSet by objectInfoViewModel.riseSet.collectAsState()
-    val showingMoon by objectInfoViewModel.showingMoon.collectAsState()
-    val lunarEclipse by objectInfoViewModel.lunarEclipse.collectAsState()
-    var expandedImage by remember { mutableStateOf<ObjectInfo?>(null) }
-    val locationState by locationViewModel.state.collectAsState()
-    val manualLocationMode by locationViewModel.manualMode.collectAsState()
-    var showOverflowSheet by remember { mutableStateOf(false) }
-    var showLocationSheet by remember { mutableStateOf(false) }
-    var showManualLocationDialog by remember { mutableStateOf(false) }
     // The full-screen pages over the map, standing in for Android's navigation routes: a stack,
     // so back from a page opened from another (Settings from Help) returns there, as Android pops.
     var showBanner by remember { mutableStateOf(true) }
@@ -207,268 +155,42 @@ private fun SkyMapScreen(
     }
     val diagnosticsPlatform = remember { iosDiagnosticsPlatform() }
     val supportEmail = stringResource(Res.string.support_email)
-    // A still tap on the sky identifies what is there, as on Android. UIKit reports points;
-    // Compose pixels are points at the screen's scale, which is its density here.
-    val density = LocalDensity.current.density
-    // The lambda reads the camera, frame and size states when the tap arrives, so it is set once.
-    DisposableEffect(map) {
-        map.onTap = { xPoints, yPoints ->
-            objectInfoViewModel.onSkyTap(
-                xPx = (xPoints * density).toFloat(),
-                yPx = (yPoints * density).toFloat(),
-                widthPx = screenSize.width,
-                heightPx = screenSize.height,
-                camera = camera,
-                sensorFrame = referenceFrame == ReferenceFrame.SENSOR,
-                densityDpPerPx = density,
-            )
-        }
-        onDispose { map.onTap = null }
-    }
     val scope = rememberCoroutineScope()
-    // The per-event search target, aimed once time travel's clock has arrived.
-    LaunchedEffect(Unit) {
-        timeTravelViewModel.searchTargets.collect { searchViewModel.selectById(it) }
-    }
-    // v1's "Location set to X" toast, as a snackbar, on every fresh fix or manual entry.
-    val locationSetMessage = rememberLocationSetMessage()
-    LaunchedEffect(Unit) {
-        locationViewModel.toasts.collect { toast ->
-            launch { snackbarHostState.showSnackbar(locationSetMessage(toast)) }
-        }
-    }
-    // Choosing a result closes the dialog and, in manual mode, turns the sky to it (v1).
-    LaunchedEffect(searchTarget) {
-        searchTarget?.let { target ->
-            showSearchDialog = false
-            mapViewModel.aimAt(target.direction, target.fovDeg)
-        }
-    }
     SkyMapTheme(nightMode) {
-        Box(Modifier.fillMaxSize().onSizeChanged { screenSize = it }) {
-            // NonCooperative: the map's own recognizers get every touch at once, without
-            // Compose's ~150 ms cooperative hold (D134's spike).
-            UIKitViewController(
-                factory = { map.viewController },
-                modifier = Modifier.fillMaxSize(),
-                properties =
-                    UIKitInteropProperties(
-                        interactionMode = UIKitInteropInteractionMode.NonCooperative,
-                    ),
-            )
-            // Over the sky and under the controls, as on Android.
-            TimeTravelFlash(
-                effects = timeTravelViewModel.effects,
-                onNotice = { snackbarHostState.showSnackbar(it) },
-                modifier = Modifier.matchParentSize(),
-            )
-            // As on Android: the overlay points the way to the target without taking touches, the
-            // bar owns the bottom edge, and the chrome steps aside until the search ends.
-            searchTarget?.let { target ->
-                val found =
-                    SearchGeometry.isTargetFound(
-                        camera,
-                        screenSize.width,
-                        screenSize.height,
-                        target.direction,
-                    )
-                SearchOverlay(
-                    camera = camera,
-                    target = target,
-                    nightMode = nightMode,
-                    found = found,
-                    modifier = Modifier.matchParentSize(),
-                )
-                Box(
-                    Modifier
-                        .align(Alignment.BottomCenter)
-                        .navigationBarsPadding()
-                        .padding(bottom = 16.dp),
-                ) {
-                    SearchControlBar(
-                        targetName = target.name,
-                        found = found,
-                        onCancel = searchViewModel::cancelSearch,
-                    )
-                }
-            }
-            if (searchTarget == null) {
-                MapChrome(
-                    toggles = toggles,
-                    nightMode = nightMode,
-                    referenceFrame = referenceFrame,
-                    sensorsAvailable = mapViewModel.sensorsAvailable,
-                    onToggleLayer = { id, enabled -> layersViewModel.setEnabled(id, enabled) },
-                    onToggleReferenceFrame = mapViewModel::toggleReferenceFrame,
-                    onToggleNightMode = { mapViewModel.setNightMode(!nightMode) },
-                    onOpenSearch = { showSearchDialog = true },
-                    onOpenTimeTravel = { showTimeTravelDialog = true },
-                    onOpenLayersSheet = {
-                        expandLayer = null
-                        showLayersSheet = true
-                    },
-                    onCustomizeLayer = { id ->
-                        expandLayer = id
-                        showLayersSheet = true
-                    },
-                    onOpenOverflow = { showOverflowSheet = true },
-                    // Reset has no undo snackbar yet; the correction it clears only arises in AR
-                    // mode, which iOS does not have.
-                    hudState = hudState.takeIf { hudEnabled },
-                    // The player spans the top in portrait (the app's only orientation), so the HUD
-                    // steps down below it while travel is engaged.
-                    hudTopClearance =
-                        if (timeTravelState != TimeTravelState.REAL_TIME) {
-                            with(LocalDensity.current) { timeTravelPlayerHeightPx.toDp() } + 8.dp
-                        } else {
-                            0.dp
-                        },
-                    onResetAlignment = mapViewModel::resetAlignment,
-                    shareEnabled = false,
-                )
-            }
-            // The player shows from the moment travel engages and hides when the user heads home.
-            if (timeTravelState != TimeTravelState.REAL_TIME) {
-                Box(
-                    Modifier
-                        .align(Alignment.TopCenter)
-                        .safeDrawingPadding()
-                        .padding(8.dp)
-                        .onSizeChanged { timeTravelPlayerHeightPx = it.height },
-                ) {
-                    TimeTravelPlayer(timeTravelViewModel)
-                }
-            }
-            if (showTimeTravelDialog) {
-                val sunWontSet = stringResource(Res.string.sun_wont_set_message)
-                TimeTravelDialog(
-                    timeTravelViewModel,
-                    onSunWontSet = { scope.launch { snackbarHostState.showSnackbar(sunWontSet) } },
-                    onDismiss = { showTimeTravelDialog = false },
-                )
-            }
-            objectInfoCard?.let { info ->
-                // The card floats over the gallery's grid too, as Android's does.
-                val fromGallery = page == Page.GALLERY
-                ObjectInfoCard(
-                    info = info,
-                    riseSet = objectRiseSet,
-                    nightMode = nightMode,
-                    onSeeAlso = { link -> objectInfoViewModel.show(link.id) },
-                    // No Find on the map: a card opened by tapping the sky is an object already
-                    // found. The gallery's card keeps it, and lands on the map with the object
-                    // found (Android's gallery→search route, D46).
-                    onFind =
-                        if (fromGallery && objectInfoViewModel.isFindable(info)) {
-                            {
-                                objectInfoViewModel.dismiss()
-                                pages = emptyList()
-                                searchViewModel.select(objectInfoViewModel.asSearchHit(it))
-                            }
-                        } else {
-                            null
-                        },
-                    onImageTap = { tapped -> if (tapped.imageRef != null) expandedImage = tapped },
-                    onDismiss = { objectInfoViewModel.dismiss() },
-                    // The map's card only, as on Android.
-                    eclipseRow =
-                        if (showingMoon && !fromGallery) {
-                            { EclipseRow(circumstances = lunarEclipse) }
-                        } else {
-                            null
-                        },
-                )
-            }
-            expandedImage?.let { image ->
-                ImageExpandOverlay(
-                    imageRef = checkNotNull(image.imageRef),
-                    name = image.name,
-                    credit = image.imageCredit,
-                    nightMode = nightMode,
-                    onDismiss = { expandedImage = null },
-                )
-            }
-            // Above the chrome row, as on Android, so a snackbar never covers the action buttons.
-            SnackbarHost(
+        Box(Modifier.fillMaxSize()) {
+            val current = gates
+            // The startup screens and the pages cover the map, and its own dialogs wait for them
+            // (on Android the pages are separate destinations, where the map isn't composed).
+            val covered =
+                current == null || current.needsEula || current.needsWarmWelcome || page != null
+            MapScreen(
                 snackbarHostState,
-                Modifier
-                    .align(Alignment.BottomCenter)
-                    .navigationBarsPadding()
-                    .padding(bottom = 56.dp),
-            )
-            if (showSearchDialog) {
-                SearchDialog(
-                    searchViewModel,
-                    onDismiss = {
-                        showSearchDialog = false
-                        // A dismissed dialog abandons the session; reopening starts clean.
-                        searchViewModel.setQuery("")
-                    },
-                )
-            }
-            if (showLayersSheet) {
-                LayersSheet(
-                    layersViewModel = layersViewModel,
-                    onDismiss = { showLayersSheet = false },
-                    sensorsAvailable = mapViewModel.sensorsAvailable,
-                    expandLayer = expandLayer,
-                )
-            }
-            if (showOverflowSheet) {
-                OverflowSheet(
-                    onShareSky = null,
-                    shareEnabled = false,
-                    onOpenGallery = {
-                        showOverflowSheet = false
-                        open(Page.GALLERY)
-                    },
-                    onOpenWidgets = null,
-                    widgetsEnabled = false,
-                    onOpenLocation = {
-                        showOverflowSheet = false
-                        showLocationSheet = true
-                    },
-                    // Not worth a menu item on an iPhone, whose compass stays calibrated; it lives
-                    // in Diagnostics instead (and Help still links to it).
-                    onOpenCalibration = null,
-                    onOpenTutorial = {
-                        showOverflowSheet = false
-                        open(Page.TUTORIAL)
-                    },
-                    onOpenHelp = {
-                        showOverflowSheet = false
-                        open(Page.HELP)
-                    },
-                    onOpenWhatsNew = {
-                        showOverflowSheet = false
-                        open(Page.WHATS_NEW)
-                    },
-                    onOpenSettings = {
-                        showOverflowSheet = false
-                        open(Page.SETTINGS)
-                    },
-                    onDismiss = { showOverflowSheet = false },
-                )
-            }
-            if (showLocationSheet) {
-                LocationSheet(
-                    locationViewModel,
-                    nightMode = nightMode,
-                    mapApiKey = GEOAPIFY_MAPS_API_KEY.takeUnless { it == "unset" || it.isEmpty() },
-                    onRequestAutoLocation = onRequestAutoLocation,
-                    onEnterManually = {
-                        locationViewModel.resetManualEntry()
-                        showManualLocationDialog = true
-                        showLocationSheet = false
-                    },
-                    onDismiss = { showLocationSheet = false },
-                )
-            }
-            if (showManualLocationDialog) {
-                ManualLocationEntryDialog(
-                    locationViewModel,
-                    onDismiss = { showManualLocationDialog = false },
-                )
+                mapViewModel,
+                layersViewModel,
+                timeTravelViewModel,
+                searchViewModel,
+                objectInfoViewModel,
+                locationViewModel,
+                calibrationViewModel,
+                sensorWarningSuppressed = sensorWarningSuppressed,
+                onOpenSettings = { open(Page.SETTINGS) },
+                onOpenGallery = { open(Page.GALLERY) },
+                onOpenTutorial = { open(Page.TUTORIAL) },
+                onOpenHelp = { open(Page.HELP) },
+                onOpenWhatsNew = { open(Page.WHATS_NEW) },
+                onOpenCalibration = { userInitiated ->
+                    open(if (userInitiated) Page.CALIBRATION else Page.CALIBRATION_PROMPT)
+                },
+                // The system prompt, shown after the EULA, is iOS's rationale.
+                onRequestLocationPermission = null,
+                onRequestAutoLocation = onRequestAutoLocation,
+                onOpenAppSettings = onOpenAppSettings,
+                covered = covered,
+                // Calibrate lives in Diagnostics (and Help links to it).
+                calibrationInMenu = false,
+                mapApiKey = GEOAPIFY_MAPS_API_KEY.takeUnless { it == "unset" || it.isEmpty() },
+            ) { onTap, onDoubleTap ->
+                MetalSky(map, onTap, onDoubleTap)
             }
             // The edge swipe closes a page, as Android's system back pops its destination.
             BackHandler(enabled = page != null) { back() }
@@ -495,16 +217,17 @@ private fun SkyMapScreen(
                         onBack = ::back,
                         onOpenDiagnostics = { open(Page.DIAGNOSTICS) },
                     )
-                Page.GALLERY -> {
-                    GalleryScreen(
+                Page.GALLERY ->
+                    GalleryPage(
                         galleryViewModel,
+                        objectInfoViewModel,
                         nightMode = nightMode,
-                        onItemClick = { objectInfoViewModel.show(it.id) },
+                        onFind = { hit ->
+                            pages = emptyList()
+                            searchViewModel.select(hit)
+                        },
                         onBack = ::back,
                     )
-                    // A card left open belongs to the gallery; don't let it linger over the map.
-                    DisposableEffect(Unit) { onDispose { objectInfoViewModel.dismiss() } }
-                }
                 Page.DIAGNOSTICS ->
                     DiagnosticsScreen(
                         diagnosticsViewModel,
@@ -545,60 +268,6 @@ private fun SkyMapScreen(
                         onFinished = { pages = emptyList() },
                     )
                 null -> Unit
-            }
-            val current = gates
-            // The location dialogs belong to the map, which the startup screens and the pages
-            // cover (on Android they are separate destinations, where the map isn't composed).
-            val onMap =
-                current != null && !current.needsEula && !current.needsWarmWelcome && page == null
-            if (onMap) {
-                LocationStateDialogs(
-                    locationState = locationState,
-                    manualLocationMode = manualLocationMode,
-                    locationViewModel = locationViewModel,
-                    // The system prompt, shown after the EULA, is iOS's rationale.
-                    onRequestLocationPermission = null,
-                    onOpenAppSettings = onOpenAppSettings,
-                    onEnterManually = {
-                        locationViewModel.resetManualEntry()
-                        showManualLocationDialog = true
-                    },
-                )
-            }
-            // Android's low-accuracy monitor runs while the map shows: a badly calibrated compass
-            // opens the calibration prompt, or, once the user has opted out of that, offers it
-            // in a snackbar. Only over the bare map, so the prompt never opens under a dialog or
-            // sheet, and not in the first seconds after launch, as on Android.
-            val mapIdle =
-                onMap && !showSearchDialog && !showTimeTravelDialog && !showLayersSheet &&
-                    !showOverflowSheet && !showLocationSheet && !showManualLocationDialog &&
-                    objectInfoCard == null && expandedImage == null
-            var gracePeriodPassed by remember { mutableStateOf(false) }
-            LaunchedEffect(Unit) {
-                delay(CALIBRATION_STARTUP_GRACE_MS)
-                gracePeriodPassed = true
-            }
-            val lowAccuracy = stringResource(Res.string.calibration_low_accuracy_toast)
-            val openAction = stringResource(Res.string.snackbar_action_open)
-            LaunchedEffect(mapIdle && gracePeriodPassed) {
-                if (!mapIdle || !gracePeriodPassed) return@LaunchedEffect
-                calibrationViewModel.prompts.collect { prompt ->
-                    when (prompt) {
-                        CalibrationPrompt.SCREEN -> open(Page.CALIBRATION_PROMPT)
-                        CalibrationPrompt.TOAST ->
-                            launch {
-                                val result =
-                                    snackbarHostState.showSnackbar(
-                                        lowAccuracy,
-                                        actionLabel = openAction,
-                                        duration = SnackbarDuration.Long,
-                                    )
-                                if (result == SnackbarResult.ActionPerformed) {
-                                    open(Page.CALIBRATION_PROMPT)
-                                }
-                            }
-                    }
-                }
             }
             when {
                 // Android holds its splash for these first values; black, until the EULA or
@@ -642,6 +311,98 @@ private fun SkyMapScreen(
     }
 }
 
+/**
+ * The Metal sky, for MapScreen's sky slot. Its own UIKit recognizers take every gesture and drive
+ * the ViewModel directly; a still tap and a double tap come back to the map screen.
+ */
+@Composable
+private fun BoxScope.MetalSky(
+    map: MapViewController,
+    onTap: (Offset) -> Unit,
+    onDoubleTap: () -> Unit,
+) {
+    // UIKit reports points; Compose pixels are points at the screen's scale, which is its
+    // density here.
+    val density = LocalDensity.current.density
+    val currentOnTap by rememberUpdatedState(onTap)
+    val currentOnDoubleTap by rememberUpdatedState(onDoubleTap)
+    DisposableEffect(map) {
+        map.onTap = { xPoints, yPoints ->
+            currentOnTap(Offset((xPoints * density).toFloat(), (yPoints * density).toFloat()))
+        }
+        map.onDoubleTap = { currentOnDoubleTap() }
+        onDispose {
+            map.onTap = null
+            map.onDoubleTap = null
+        }
+    }
+    // NonCooperative: the map's own recognizers get every touch at once, without Compose's
+    // ~150 ms cooperative hold (D134's spike).
+    UIKitViewController(
+        factory = { map.viewController },
+        modifier = Modifier.matchParentSize(),
+        properties =
+            UIKitInteropProperties(
+                interactionMode = UIKitInteropInteractionMode.NonCooperative,
+            ),
+    )
+}
+
+/**
+ * The gallery page, with its own object card over the grid, as Android's gallery destination
+ * has; the map's card waits while a page covers it. Find lands on the map with the object found
+ * (Android's gallery→search route, D46).
+ */
+@Composable
+private fun GalleryPage(
+    galleryViewModel: GalleryViewModel,
+    objectInfoViewModel: ObjectInfoViewModel,
+    nightMode: Boolean,
+    onFind: (SearchHit) -> Unit,
+    onBack: () -> Unit,
+) {
+    GalleryScreen(
+        galleryViewModel,
+        nightMode = nightMode,
+        onItemClick = { objectInfoViewModel.show(it.id) },
+        onBack = onBack,
+    )
+    val card by objectInfoViewModel.card.collectAsState()
+    val riseSet by objectInfoViewModel.riseSet.collectAsState()
+    var expandedImage by remember { mutableStateOf<ObjectInfo?>(null) }
+    card?.let { info ->
+        ObjectInfoCard(
+            info = info,
+            riseSet = riseSet,
+            nightMode = nightMode,
+            onSeeAlso = { link -> objectInfoViewModel.show(link.id) },
+            onFind =
+                if (objectInfoViewModel.isFindable(info)) {
+                    {
+                        val hit = objectInfoViewModel.asSearchHit(it)
+                        objectInfoViewModel.dismiss()
+                        onFind(hit)
+                    }
+                } else {
+                    null
+                },
+            onImageTap = { tapped -> if (tapped.imageRef != null) expandedImage = tapped },
+            onDismiss = { objectInfoViewModel.dismiss() },
+        )
+    }
+    expandedImage?.let { image ->
+        ImageExpandOverlay(
+            imageRef = checkNotNull(image.imageRef),
+            name = image.name,
+            credit = image.imageCredit,
+            nightMode = nightMode,
+            onDismiss = { expandedImage = null },
+        )
+    }
+    // A card left open belongs to the gallery; don't let it linger over the map.
+    DisposableEffect(Unit) { onDispose { objectInfoViewModel.dismiss() } }
+}
+
 /** The full-screen pages the iOS host shows over the map (Android's navigation routes). */
 private enum class Page {
     HELP,
@@ -667,9 +428,6 @@ private enum class Page {
 
 /** Android's figure-eight video for now; an iPhone one is to replace it. */
 private const val CALIBRATION_VIDEO_URL = "https://www.youtube.com/watch?v=-Uq7AmSAjt8"
-
-/** The grace before the low-accuracy prompt may fire, as on Android (user feedback there). */
-private const val CALIBRATION_STARTUP_GRACE_MS = 10_000L
 
 /** What the welcome's sensor check reports, from Core Motion. */
 private data class MotionHardware(
