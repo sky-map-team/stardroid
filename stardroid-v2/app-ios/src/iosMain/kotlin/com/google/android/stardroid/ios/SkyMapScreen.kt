@@ -467,6 +467,7 @@ private fun SkyMapScreen(
                         onNavigate = { destination ->
                             when (destination) {
                                 HelpLink.Destination.SETTINGS -> open(Page.SETTINGS)
+                                HelpLink.Destination.DIAGNOSTICS -> open(Page.DIAGNOSTICS)
                                 HelpLink.Destination.GALLERY -> open(Page.GALLERY)
                                 HelpLink.Destination.APP_SETTINGS -> onOpenAppSettings()
                                 HelpLink.Destination.TUTORIAL -> open(Page.TUTORIAL)
