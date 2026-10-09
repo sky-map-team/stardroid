@@ -448,4 +448,21 @@
     <!-- tm:omitted name="app_name" reason="identical_to_source" -->
     <!-- tm:omitted name="splash_version" reason="identical_to_source" -->
     <string name="splash_dismiss" translation_description="Accessibility label for the action that dismisses the launch splash when it is tapped">Stäng</string>
+    <string name="snackbar_action_open" translation_description="Snackbar action button that opens the screen the snackbar refers to, e.g. the compass calibration screen">Öppna</string>
+    <!-- tm:omitted name="settings_ok" reason="identical_to_source" -->
+    <string name="calibration_heading_user">Telefonens kompass</string>
+    <string name="calibration_heading_warning">Telefonens kompass behöver uppmärksamhet</string>
+    <string name="calibration_accuracy_unknown">Kalibrering: Okänd</string>
+    <string name="calibration_accuracy_unreliable">Kalibrering: Okalibrerad</string>
+    <string name="calibration_accuracy_low">Kalibrering: Dålig</string>
+    <string name="calibration_accuracy_medium">Kalibrering: OK</string>
+    <string name="calibration_accuracy_high">Kalibrering: Bra</string>
+    <string name="calibration_accuracy_no_contact">Kalibrering: Ingen kontakt</string>
+    <string name="calibration_do_not_show_again">Visa inte detta igen</string>
+    <string name="calibration_what_to_do" translation_description="Information for the user on how to calibrate the compass when the screen auto-opens. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[Din telefons kompassensor rapporterar dålig kalibrering. Åtthottsrörelsen (<a href="%s">se en demonstration</a>) gör att telefonens hårdvara återställer sin kompassensor – Sky Map kan inte påverka denna process.<br/><br/>
+<blockquote><b>Kalibrerad betyder inte exakt.</b> Åtthottsrörelsen hjälper till att återställa sensorn, men den kan inte ta bort störningar från metallföremål i närheten, bilens instrumentbräda eller telefonfodral. Om kartan fortfarande inte stämmer efter kalibrering är dessa externa källor den troligaste orsaken – inte Sky Map.</blockquote>
+Gå till en öppen plats utan metall och försök igen.]]></string>
+    <string name="calibration_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they open the calibration screen. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[Telefonen rapporterar sin kompasskalibrering enligt ovan.<br/><br/>Utför vid behov en åtta-rörelse (<a href="%s">titta på en demonstration</a>) för att få telefonens hårdvara att kalibrera om sin kompassensor.<br/><br/><blockquote><b>Viktigt:</b> Kalibrering hjälper sensorn att återställa sig själv internt. Det betyder inte att kompassen nödvändigtvis är exakt! Lokala magnetiska störningar (metallföremål, bilars instrumentbrädor, telefonfodral) kan ändå göra att telefonens kompass skickar felaktiga mätvärden till Sky Map.</blockquote><b>Om kartan inte visar positionerna korrekt beror problemet troligen på din telefon - inte på Sky Map!</b>]]></string>
+    <string name="calibration_low_accuracy_toast">Telefonens kompass rapporterar låg noggrannhet</string>
+    <string name="calibration_complete_toast" translation_description="Toast shown when the compass reaches high accuracy and the auto-opened calibration screen closes itself">Sensorerna har hög noggrannhet</string>
 </resources>

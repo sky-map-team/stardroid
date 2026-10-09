@@ -81,7 +81,6 @@
 
     <!-- Location management. -->
     <string name="snackbar_action_undo" translation_description="Snackbar action button that reverses the change the snackbar reports, e.g. re-enabling horizon auto-leveling">Undo</string>
-    <string name="snackbar_action_open" translation_description="Snackbar action button that opens the screen the snackbar refers to, e.g. the compass calibration screen">Open</string>
     <string name="label_size_hint_message" translation_description="Snackbar shown once, the first time the user zooms in a long way. Explains that the text labels naming stars and other objects stay the same size however far you zoom, and that their size is changed in the app\'s Settings screen instead. Shown with an action button that opens Settings.">Label size doesn\'t change with zoom — set it in Settings</string>
     <string name="label_size_hint_action" translation_description="Action button on the label size snackbar; opens the app\'s Settings screen, where the user can change how large the sky labels are">Settings</string>
 
@@ -90,7 +89,6 @@
     <!-- Image gallery -->
 
     <!-- Settings screen (v1 wording where a v1 string existed) -->
-    <string name="settings_ok" translation_description="Confirm button in settings dialogs">OK</string>
     <string name="auto_level_on_toast" translation_description="Brief confirmation shown when a double tap turns horizon auto-leveling on in manual mode">Horizon auto-leveling on</string>
     <string name="auto_level_off_toast" translation_description="Brief confirmation shown when a double tap turns horizon auto-leveling off in manual mode">Horizon auto-leveling off</string>
 
@@ -105,34 +103,6 @@
     <string name="diagnostics_satellite_circuit_open_format" translation_description="Row value in the diagnostics screen showing when paused satellite downloads will resume and how many failures caused the pause. %1$s is a date and time, %2$d is a count">Until %1$s (%2$d failures)</string>
 
     <!-- Compass calibration screen (slice 15) -->
-    <string name="calibration_heading_user" translation_description="Heading shown in the compass calibration screen when the user opens it themselves">Your Phone\'s Compass</string>
-    <string name="calibration_heading_warning" translation_description="Heading shown in the compass calibration screen when it opens automatically due to low accuracy">Your Phone\'s Compass Needs Attention</string>
-    <string name="calibration_accuracy_unknown" translation_description="Sensor calibration level shown in the calibration screen">Calibration: Unknown</string>
-    <string name="calibration_accuracy_unreliable" translation_description="Sensor calibration level shown in the calibration screen">Calibration: Uncalibrated</string>
-    <string name="calibration_accuracy_low" translation_description="Sensor calibration level shown in the calibration screen">Calibration: Poor</string>
-    <string name="calibration_accuracy_medium" translation_description="Sensor calibration level shown in the calibration screen">Calibration: OK</string>
-    <string name="calibration_accuracy_high" translation_description="Sensor calibration level shown in the calibration screen">Calibration: Good</string>
-    <string name="calibration_accuracy_no_contact" translation_description="Sensor calibration level shown when the sensor has no contact - unlikely to appear in Sky Map but included for completeness">Calibration: No contact</string>
-    <string name="calibration_do_not_show_again" translation_description="Checkbox label in the compass calibration screen to suppress future automatic appearances">Do not show this again</string>
-    <string name="calibration_what_to_do"
-        translation_description="Information for the user on how to calibrate the compass when the screen auto-opens. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[
-Your phone\'s compass sensor is reporting poor calibration. The figure-8 motion (<a href="%s">watch a demonstration</a>) prompts your phone\'s
- hardware to reset its compass sensor — Sky Map has no control over this process.<br/><br/>
-<blockquote><b>Calibrated does not mean accurate.</b> The figure-8 gesture helps reset the sensor, but it cannot remove interference from nearby metal objects,
-car dashboards, or phone cases. If the map is still off after calibrating, those external sources are the most likely cause — not Sky Map.</blockquote>
-Move to an open area away from metal and try again.
-    ]]></string>
-    <string name="calibration_what_to_do_user"
-        translation_description="Information for the user on how to calibrate the compass when they open the calibration screen. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[
-Your phone is reporting its compass calibration status as shown above.<br/><br/>
-If necessary, perform the figure-8 motion (<a href="%s">watch a demonstration</a>) to prompt your phone\'s hardware to recalibrate its compass sensor.<br/><br/>
-<blockquote><b>Important:</b> calibration helps the sensor reset itself internally. It does not mean the compass is necessarily accurate!
-Local magnetic interference (metal objects, car dashboards, phone cases) can still cause your phone\'s compass to send inaccurate
-readings to Sky Map.</blockquote>
-<b>If the map isn\'t showing positions correctly the problem is likely your phone - not Sky Map!</b>
-    ]]></string>
-    <string name="calibration_low_accuracy_toast" translation_description="Brief toast shown when compass accuracy is low and the user has disabled the calibration screen">Your phone\'s compass is reporting low accuracy</string>
-    <string name="calibration_complete_toast" translation_description="Toast shown when the compass reaches high accuracy and the auto-opened calibration screen closes itself">Sensors have high accuracy</string>
 
     <!-- Startup routing: EULA, warm welcome, What's New (slice 16) -->
 

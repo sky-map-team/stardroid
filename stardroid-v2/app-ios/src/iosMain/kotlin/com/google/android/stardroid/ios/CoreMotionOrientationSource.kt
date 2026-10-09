@@ -13,7 +13,9 @@ import com.google.android.stardroid.math.Matrix3
 import com.google.android.stardroid.sensors.OneEuroQuaternionSmoother
 import com.google.android.stardroid.sensors.OrientationSample
 import com.google.android.stardroid.sensors.OrientationSource
+import com.google.android.stardroid.sensors.SensorAccuracy
 import com.google.android.stardroid.sensors.SensorConfig
+import com.google.android.stardroid.sensors.SensorReading
 import com.google.android.stardroid.sensors.toRotationMatrix3
 import com.google.android.stardroid.sensors.writeQuaternion
 import kotlinx.cinterop.ExperimentalForeignApi
@@ -35,6 +37,11 @@ import kotlinx.coroutines.flow.shareIn
 import platform.CoreMotion.CMAttitudeReferenceFrame
 import platform.CoreMotion.CMAttitudeReferenceFrameXMagneticNorthZVertical
 import platform.CoreMotion.CMAttitudeReferenceFrameXTrueNorthZVertical
+import platform.CoreMotion.CMMagneticFieldCalibrationAccuracy
+import platform.CoreMotion.CMMagneticFieldCalibrationAccuracyHigh
+import platform.CoreMotion.CMMagneticFieldCalibrationAccuracyLow
+import platform.CoreMotion.CMMagneticFieldCalibrationAccuracyMedium
+import platform.CoreMotion.CMMagneticFieldCalibrationAccuracyUncalibrated
 import platform.CoreMotion.CMMotionManager
 import platform.CoreMotion.CMRotationMatrix
 import platform.Foundation.NSOperationQueue
@@ -57,21 +64,24 @@ import platform.Foundation.NSOperationQueue
  * Android instead computes the declination itself, at the map's location, which is the wrong
  * place for the compass when that location was entered by hand.
  *
- * One [CMMotionManager] serves every collector (Apple asks for one per app). Updates run only
- * while [active], the way Android gates its listeners to the process's STARTED state.
+ * Apple asks for one [CMMotionManager] per app, and a manager runs one device-motion handler, so
+ * this source owns the app's device-motion stream: [deviceMotion] serves every collector, the
+ * status source's too. Updates run only while [active], the way Android gates its listeners to
+ * the process's STARTED state.
  */
 @OptIn(ExperimentalForeignApi::class, ExperimentalCoroutinesApi::class)
 class CoreMotionOrientationSource(
+    private val motionManager: CMMotionManager,
     private val config: Flow<SensorConfig>,
     trueNorthAllowed: Flow<Boolean>,
     active: Flow<Boolean>,
 ) : OrientationSource {
-    private val motionManager =
-        CMMotionManager().apply {
-            deviceMotionUpdateInterval = UPDATE_INTERVAL_SECONDS
-            // Lets iOS show its own calibration prompt when the compass needs a figure-eight.
-            showsDeviceMovementDisplay = true
-        }
+    init {
+        motionManager.deviceMotionUpdateInterval = UPDATE_INTERVAL_SECONDS
+        // The app's own calibration screen prompts instead, as on Android, so iOS's would only
+        // ever double it.
+        motionManager.showsDeviceMovementDisplay = false
+    }
 
     // Off the main thread, where a busy frame would otherwise queue samples up behind it; the
     // conflated channel hands the main thread only the newest.
@@ -80,11 +90,12 @@ class CoreMotionOrientationSource(
     override val available: Boolean
         get() = motionManager.deviceMotionAvailable
 
-    private val attitudes: Flow<Attitude> =
+    /** The shared device-motion stream, in the map's reference frame. */
+    internal val deviceMotion: Flow<CoreMotionSample> =
         combine(active, trueNorthAllowed) { isActive, trueNorth ->
             if (isActive) referenceFrame(trueNorth) else null
         }.distinctUntilChanged()
-            .flatMapLatest { frame -> if (frame == null) emptyFlow() else deviceMotion(frame) }
+            .flatMapLatest { frame -> if (frame == null) emptyFlow() else deviceMotionIn(frame) }
             .shareIn(MainScope(), SharingStarted.WhileSubscribed())
 
     override fun orientations(): Flow<Matrix3> = orientationSamples().map { it.smoothed }
@@ -102,11 +113,11 @@ class CoreMotionOrientationSource(
                 flow {
                     val smoother = smootherFor(current)
                     val quaternion = FloatArray(4)
-                    attitudes.collect { attitude ->
-                        val raw = attitude.matrix
+                    deviceMotion.collect { sample ->
+                        val raw = sample.matrix
                         val smoothed =
                             smoother
-                                ?.update(raw.writeQuaternion(quaternion), attitude.nanos)
+                                ?.update(raw.writeQuaternion(quaternion), sample.nanos)
                                 ?.toRotationMatrix3()
                                 ?: raw
                         emit(OrientationSample(raw, smoothed))
@@ -124,7 +135,7 @@ class CoreMotionOrientationSource(
         }
     }
 
-    private fun deviceMotion(frame: CMAttitudeReferenceFrame): Flow<Attitude> =
+    private fun deviceMotionIn(frame: CMAttitudeReferenceFrame): Flow<CoreMotionSample> =
         callbackFlow {
             motionManager.startDeviceMotionUpdatesUsingReferenceFrame(
                 frame,
@@ -132,14 +143,19 @@ class CoreMotionOrientationSource(
             ) { motion, _ ->
                 if (motion != null) {
                     val matrix = motion.attitude.rotationMatrix.useContents { toPhoneToWorld() }
-                    trySend(Attitude(matrix, (motion.timestamp * NANOS_PER_SECOND).toLong()))
+                    val field =
+                        motion.magneticField.useContents {
+                            SensorReading(
+                                accuracy = calibration(accuracy),
+                                values = listOf(field.x, field.y, field.z).map { it.toFloat() },
+                            )
+                        }
+                    val nanos = (motion.timestamp * NANOS_PER_SECOND).toLong()
+                    trySend(CoreMotionSample(matrix, nanos, field))
                 }
             }
             awaitClose { motionManager.stopDeviceMotionUpdates() }
         }.conflate()
-
-    /** One attitude sample: Android's phone→world matrix and Core Motion's timestamp. */
-    private class Attitude(val matrix: Matrix3, val nanos: Long)
 
     private companion object {
         /**
@@ -150,6 +166,16 @@ class CoreMotionOrientationSource(
         const val UPDATE_INTERVAL_SECONDS = 1.0 / 100
 
         const val NANOS_PER_SECOND = 1e9
+
+        /** Core Motion's compass calibration on Android's accuracy ladder. */
+        fun calibration(accuracy: CMMagneticFieldCalibrationAccuracy): SensorAccuracy =
+            when (accuracy) {
+                CMMagneticFieldCalibrationAccuracyHigh -> SensorAccuracy.HIGH
+                CMMagneticFieldCalibrationAccuracyMedium -> SensorAccuracy.MEDIUM
+                CMMagneticFieldCalibrationAccuracyLow -> SensorAccuracy.LOW
+                CMMagneticFieldCalibrationAccuracyUncalibrated -> SensorAccuracy.UNRELIABLE
+                else -> SensorAccuracy.UNRELIABLE
+            }
 
         /**
          * Android's fused-path tuning, as Core Motion's attitude is gyro-fused like a rotation
@@ -175,6 +201,12 @@ class CoreMotionOrientationSource(
             }
     }
 }
+
+/**
+ * One device-motion sample: Android's phone→world [matrix], Core Motion's timestamp, and the
+ * calibrated magnetic [field] in µT with its calibration level.
+ */
+internal class CoreMotionSample(val matrix: Matrix3, val nanos: Long, val field: SensorReading)
 
 /**
  * Core Motion's attitude as Android's phone→world matrix, rows East, North, Up: the reference

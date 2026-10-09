@@ -19,7 +19,6 @@ import com.google.android.stardroid.location.LocationController
 import com.google.android.stardroid.location.LocationSource
 import com.google.android.stardroid.location.LocationState
 import com.google.android.stardroid.render.api.RendererInfo
-import com.google.android.stardroid.sensors.OrientationSource
 import com.google.android.stardroid.sensors.SensorConfig
 import com.google.android.stardroid.sensors.ZeroMagneticDeclinationSource
 import com.google.android.stardroid.settings.DataStoreSettings
@@ -29,6 +28,7 @@ import com.google.android.stardroid.startup.DataStoreStartupState
 import com.google.android.stardroid.startup.StartupRouter
 import com.google.android.stardroid.startup.StartupState
 import com.google.android.stardroid.time.TimeController
+import com.google.android.stardroid.ui.calibration.CompassCalibrationViewModel
 import com.google.android.stardroid.ui.diagnostics.DiagnosticsViewModel
 import com.google.android.stardroid.ui.gallery.GalleryViewModel
 import com.google.android.stardroid.ui.layers.LayersViewModel
@@ -55,11 +55,13 @@ import kotlinx.coroutines.sync.withLock
 import platform.CoreMotion.CMMotionManager
 import platform.Foundation.NSApplicationSupportDirectory
 import platform.Foundation.NSBundle
+import platform.Foundation.NSDate
 import platform.Foundation.NSFileManager
 import platform.Foundation.NSLocale
 import platform.Foundation.NSURL
 import platform.Foundation.NSUserDomainMask
 import platform.Foundation.preferredLanguages
+import platform.Foundation.timeIntervalSince1970
 import platform.UIKit.UIApplication
 import platform.UIKit.UIApplicationOpenSettingsURLString
 
@@ -126,14 +128,18 @@ class IosAppGraph {
 
     private val coreLocation = CoreLocationProvider()
 
-    /** The motion hardware, for the welcome's sensor check (Android asks its SensorManager). */
-    private val motionHardware = CMMotionManager()
+    /**
+     * The app's one motion manager, as Apple asks: the map's attitude, the diagnostics and
+     * calibration screens' sensors, and the welcome's sensor check (Android asks its
+     * SensorManager).
+     */
+    private val motionManager = CMMotionManager()
 
-    val hasCompass: Boolean get() = motionHardware.magnetometerAvailable
+    val hasCompass: Boolean get() = motionManager.magnetometerAvailable
 
-    val hasAccelerometer: Boolean get() = motionHardware.accelerometerAvailable
+    val hasAccelerometer: Boolean get() = motionManager.accelerometerAvailable
 
-    val hasGyroscope: Boolean get() = motionHardware.gyroAvailable
+    val hasGyroscope: Boolean get() = motionManager.gyroAvailable
 
     val locationController =
         LocationController(
@@ -142,8 +148,9 @@ class IosAppGraph {
             hasLocationPermission = { coreLocation.isAuthorized },
         )
 
-    private val orientationSource: OrientationSource =
+    private val orientationSource =
         CoreMotionOrientationSource(
+            motionManager = motionManager,
             config =
                 combine(
                     settings.disableGyro,
@@ -320,6 +327,10 @@ class IosAppGraph {
 
     private val networkMonitor by lazy { NetworkMonitor() }
 
+    private val sensorStatus by lazy {
+        CoreMotionStatusSource(motionManager, orientationSource.deviceMotion)
+    }
+
     /**
      * The diagnostics screen, over Core Motion's raw sensors and the [map]'s camera and frame.
      * Its magnetic correction row reads zero: Core Motion turns to true north itself, so the map
@@ -330,7 +341,7 @@ class IosAppGraph {
         rendererInfo: RendererInfo,
     ): DiagnosticsViewModel =
         DiagnosticsViewModel(
-            sensorStatus = CoreMotionStatusSource(),
+            sensorStatus = sensorStatus,
             locationStates = locationController.state,
             camera = map.camera,
             settings = settings,
@@ -342,6 +353,18 @@ class IosAppGraph {
             orientationSource = orientationSource,
             localFrame = map.localFrame,
             rendererInfo = { rendererInfo },
+        )
+
+    /**
+     * The compass-calibration screen and the map's low-accuracy prompts, from Core Motion's
+     * calibration level. On an iPhone 13 it stayed High even with a magnet held to the phone,
+     * whose heading Core Motion kept steady regardless, so the prompts should be rare.
+     */
+    fun calibrationViewModel(): CompassCalibrationViewModel =
+        CompassCalibrationViewModel(
+            sensorStatus = sensorStatus,
+            settings = settings,
+            nowMillis = { (NSDate().timeIntervalSince1970 * MILLIS_PER_SECOND).toLong() },
         )
 
     /** The photo grid over the catalog, in the app's language. */
@@ -368,3 +391,5 @@ class IosAppGraph {
             frameTicker = DisplayLinkFrameTicker(),
         )
 }
+
+private const val MILLIS_PER_SECOND = 1000

@@ -26,12 +26,4 @@
     <string name="neptune">Нептун</string>
     <string name="pluto">Плутон</string>
     <string name="ar_permission_settings_action">Настройки</string>
-    <string name="calibration_heading_warning">Ваш компас должен быть откалиброван</string>
-    <string name="calibration_accuracy_unknown">Калибровка: неизвестна</string>
-    <string name="calibration_accuracy_unreliable">Калибровка: не откалибровано</string>
-    <string name="calibration_accuracy_low">Калибровка: плохая</string>
-    <string name="calibration_accuracy_medium">Калибровка: нормально</string>
-    <string name="calibration_accuracy_high">Калибровка: хорошая</string>
-    <string name="calibration_accuracy_no_contact">Калибровка: нет данных</string>
-    <string name="calibration_do_not_show_again">Не показывать это снова</string>
 </resources>

@@ -72,7 +72,6 @@
 
     <!-- Location management. -->
     <string name="snackbar_action_undo" translation_description="Snackbar action button that reverses the change the snackbar reports, e.g. re-enabling horizon auto-leveling">復原</string>
-    <string name="snackbar_action_open" translation_description="Snackbar action button that opens the screen the snackbar refers to, e.g. the compass calibration screen">開啟</string>
     <string name="label_size_hint_message" translation_description="Snackbar shown once, the first time the user zooms in a long way. Explains that the text labels naming stars and other objects stay the same size however far you zoom, and that their size is changed in the app\'s Settings screen instead. Shown with an action button that opens Settings.">標籤大小不會隨縮放而改變 — 請在設定中調整</string>
     <string name="label_size_hint_action" translation_description="Action button on the label size snackbar; opens the app\'s Settings screen, where the user can change how large the sky labels are">設定</string>
 
@@ -81,7 +80,6 @@
     <!-- Image gallery -->
 
     <!-- Settings screen (v1 wording where a v1 string existed) -->
-    <string name="settings_ok">確定</string>
     <string name="auto_level_on_toast" translation_description="Brief confirmation shown when a double tap turns horizon auto-leveling on in manual mode">地平線自動校準已開啟</string>
     <string name="auto_level_off_toast" translation_description="Brief confirmation shown when a double tap turns horizon auto-leveling off in manual mode">地平線自動校準已關閉</string>
 
@@ -95,19 +93,6 @@
     <string name="diagnostics_satellite_circuit_open_format" translation_description="Row value in the diagnostics screen showing when paused satellite downloads will resume and how many failures caused the pause. %1$s is a date and time, %2$d is a count">直到 %1$s (%2$d 次失敗)</string>
 
     <!-- Compass calibration screen (slice 15) -->
-    <string name="calibration_heading_user">手機指南針</string>
-    <string name="calibration_heading_warning">手機指南針需要注意</string>
-    <string name="calibration_accuracy_unknown">校準：未知</string>
-    <string name="calibration_accuracy_unreliable">校準：未校準</string>
-    <string name="calibration_accuracy_low">校準：差</string>
-    <string name="calibration_accuracy_medium">校準：一般</string>
-    <string name="calibration_accuracy_high">校準：良好</string>
-    <string name="calibration_accuracy_no_contact">校準：未接觸</string>
-    <string name="calibration_do_not_show_again">不要再顯示這個訊息</string>
-    <string name="calibration_what_to_do" translation_description="Information for the user on how to calibrate the compass when the screen auto-opens. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[您的手機指南針感測器回報校準不良。畫8字形動作 (<a href="%s">觀看示範</a>) 會提示您手機的硬體重設其指南針感測器 — Sky Map 無法控制此程序。<br/><br/><blockquote><b>已校準不代表準確。</b>畫8字形手勢有助於重設感測器，但無法消除附近金屬物體、汽車儀表板或手機殼的干擾。如果校準後地圖仍然不準確，最可能的原因是這些外部來源 — 而非 Sky Map。</blockquote>請移至遠離金屬的開放區域，然後再試一次。]]></string>
-    <string name="calibration_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they open the calibration screen. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[您的手機正在回報其指南針校準狀態，如上方所示。<br/><br/>如有必要，請執行「8字形」動作（<a href="%s">觀看示範</a>），以提示您手機的硬體重新校準其指南針感測器。<br/><br/><blockquote><b>重要提示：</b>校準有助於感測器內部重置。這並不表示指南針一定準確！局部磁場干擾（金屬物體、汽車儀表板、手機殼）仍然可能導致您手機的指南針向 Sky Map 發送不準確的讀數。</blockquote><b>如果地圖未正確顯示位置，問題很可能出在您的手機上，而不是 Sky Map！</b>]]></string>
-    <string name="calibration_low_accuracy_toast">手機指南針精準度過低</string>
-    <string name="calibration_complete_toast" translation_description="Toast shown when the compass reaches high accuracy and the auto-opened calibration screen closes itself">感測器精準度高</string>
 
     <!-- Startup routing: EULA, warm welcome, What's New (slice 16) -->
 

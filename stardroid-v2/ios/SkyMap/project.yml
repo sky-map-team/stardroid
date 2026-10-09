@@ -31,6 +31,10 @@ targets:
       - path: ../../app/src/main/assets/splash
         type: folder
         buildPhase: resources
+      # The calibration screen's figure-eight animation (FigureEightAnimation).
+      - path: ../../app/src/main/assets/calibration
+        type: folder
+        buildPhase: resources
       # The catalog, generated from source-data/ by the pre-build step (never checked in).
       - path: ../../data/build/generated/assets/generateCatalogDb/skymap.db
         buildPhase: resources

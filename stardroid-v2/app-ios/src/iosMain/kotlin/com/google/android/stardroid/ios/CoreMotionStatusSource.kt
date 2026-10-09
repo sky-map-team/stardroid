@@ -9,28 +9,18 @@
 
 package com.google.android.stardroid.ios
 
-import com.google.android.stardroid.sensors.SensorAccuracy
 import com.google.android.stardroid.sensors.SensorKind
 import com.google.android.stardroid.sensors.SensorReading
 import com.google.android.stardroid.sensors.SensorStatusSource
 import com.google.android.stardroid.sensors.writeQuaternion
 import kotlinx.cinterop.ExperimentalForeignApi
 import kotlinx.cinterop.useContents
-import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.callbackFlow
 import kotlinx.coroutines.flow.conflate
 import kotlinx.coroutines.flow.emptyFlow
 import kotlinx.coroutines.flow.map
-import kotlinx.coroutines.flow.shareIn
-import platform.CoreMotion.CMAttitudeReferenceFrameXMagneticNorthZVertical
-import platform.CoreMotion.CMMagneticFieldCalibrationAccuracy
-import platform.CoreMotion.CMMagneticFieldCalibrationAccuracyHigh
-import platform.CoreMotion.CMMagneticFieldCalibrationAccuracyLow
-import platform.CoreMotion.CMMagneticFieldCalibrationAccuracyMedium
-import platform.CoreMotion.CMMagneticFieldCalibrationAccuracyUncalibrated
 import platform.CoreMotion.CMMotionManager
 import platform.Foundation.NSOperationQueue
 
@@ -43,22 +33,25 @@ import platform.Foundation.NSOperationQueue
  * - Magnetometer: device motion's calibrated field in µT, as Android's `TYPE_MAGNETIC_FIELD` is
  *   bias-corrected, with Core Motion's calibration level as the accuracy.
  * - Gyroscope: rad/s, the same right-hand sign as Android's.
- * - Rotation vector: the fused attitude against magnetic north, as Android's (x, y, z, w)
- *   quaternion of the phone→world (East, North, Up) rotation.
+ * - Rotation vector: the map's fused attitude, as Android's (x, y, z, w) quaternion of the
+ *   phone→world (East, North, Up) rotation.
  * - Light: iOS offers apps no ambient light sensor.
  *
  * The accelerometer and gyroscope have no calibration level on iOS, so their accuracy is null.
- * Updates run only while collected, at ~50 Hz (Android's GAME rate), on a manager of their own:
- * the map's [CoreMotionOrientationSource] keeps its device-motion handler.
+ * They run only while collected, at ~50 Hz (Android's GAME rate). The magnetometer and rotation
+ * vector come from the map's device-motion stream ([deviceMotion]), at its rate and only while
+ * the app is in the foreground: [manager] is the app's one manager, and it runs one
+ * device-motion handler.
  */
 @OptIn(ExperimentalForeignApi::class)
-class CoreMotionStatusSource : SensorStatusSource {
-    private val manager =
-        CMMotionManager().apply {
-            accelerometerUpdateInterval = UPDATE_INTERVAL_SECONDS
-            gyroUpdateInterval = UPDATE_INTERVAL_SECONDS
-            deviceMotionUpdateInterval = UPDATE_INTERVAL_SECONDS
-        }
+internal class CoreMotionStatusSource(
+    private val manager: CMMotionManager,
+    private val deviceMotion: Flow<CoreMotionSample>,
+) : SensorStatusSource {
+    init {
+        manager.accelerometerUpdateInterval = UPDATE_INTERVAL_SECONDS
+        manager.gyroUpdateInterval = UPDATE_INTERVAL_SECONDS
+    }
 
     private val queue = NSOperationQueue().apply { maxConcurrentOperationCount = 1 }
 
@@ -76,8 +69,14 @@ class CoreMotionStatusSource : SensorStatusSource {
         return when (kind) {
             SensorKind.ACCELEROMETER -> accelerometer()
             SensorKind.GYROSCOPE -> gyroscope()
-            SensorKind.MAGNETOMETER -> deviceMotion.map { it.magneticField }
-            SensorKind.ROTATION_VECTOR -> deviceMotion.map { it.rotationVector }
+            SensorKind.MAGNETOMETER -> deviceMotion.map { it.field }
+            SensorKind.ROTATION_VECTOR ->
+                deviceMotion.map {
+                    SensorReading(
+                        accuracy = null,
+                        values = it.matrix.writeQuaternion(FloatArray(4)).toList(),
+                    )
+                }
             SensorKind.LIGHT -> emptyFlow()
         }.conflate()
     }
@@ -112,46 +111,11 @@ class CoreMotionStatusSource : SensorStatusSource {
             awaitClose { manager.stopGyroUpdates() }
         }
 
-    /** One device-motion stream (a manager runs one handler) for the two kinds that need it. */
-    private val deviceMotion: Flow<Motion> =
-        callbackFlow {
-            val quaternion = FloatArray(4)
-            manager.startDeviceMotionUpdatesUsingReferenceFrame(
-                CMAttitudeReferenceFrameXMagneticNorthZVertical,
-                queue,
-            ) { motion, _ ->
-                if (motion == null) return@startDeviceMotionUpdatesUsingReferenceFrame
-                val field =
-                    motion.magneticField.useContents {
-                        SensorReading(
-                            accuracy = calibration(accuracy),
-                            values = listOf(field.x, field.y, field.z).map { it.toFloat() },
-                        )
-                    }
-                motion.attitude.rotationMatrix.useContents { toPhoneToWorld() }
-                    .writeQuaternion(quaternion)
-                trySend(Motion(field, SensorReading(accuracy = null, quaternion.toList())))
-            }
-            awaitClose { manager.stopDeviceMotionUpdates() }
-        }.shareIn(MainScope(), SharingStarted.WhileSubscribed())
-
-    private class Motion(val magneticField: SensorReading, val rotationVector: SensorReading)
-
     private companion object {
         /** 50 Hz, near Android's `SENSOR_DELAY_GAME`, which its status source asks for. */
         const val UPDATE_INTERVAL_SECONDS = 1.0 / 50
 
         /** Android's `SensorManager.STANDARD_GRAVITY`, in m/s². */
         const val STANDARD_GRAVITY = 9.80665
-
-        /** Core Motion's compass calibration on Android's accuracy ladder. */
-        fun calibration(accuracy: CMMagneticFieldCalibrationAccuracy): SensorAccuracy =
-            when (accuracy) {
-                CMMagneticFieldCalibrationAccuracyHigh -> SensorAccuracy.HIGH
-                CMMagneticFieldCalibrationAccuracyMedium -> SensorAccuracy.MEDIUM
-                CMMagneticFieldCalibrationAccuracyLow -> SensorAccuracy.LOW
-                CMMagneticFieldCalibrationAccuracyUncalibrated -> SensorAccuracy.UNRELIABLE
-                else -> SensorAccuracy.UNRELIABLE
-            }
     }
 }

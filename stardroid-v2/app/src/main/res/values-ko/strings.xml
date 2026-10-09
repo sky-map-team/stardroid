@@ -72,7 +72,6 @@
 
     <!-- Location management. -->
     <string name="snackbar_action_undo" translation_description="Snackbar action button that reverses the change the snackbar reports, e.g. re-enabling horizon auto-leveling">실행 취소</string>
-    <string name="snackbar_action_open" translation_description="Snackbar action button that opens the screen the snackbar refers to, e.g. the compass calibration screen">열기</string>
     <string name="label_size_hint_message" translation_description="Snackbar shown once, the first time the user zooms in a long way. Explains that the text labels naming stars and other objects stay the same size however far you zoom, and that their size is changed in the app\'s Settings screen instead. Shown with an action button that opens Settings.">라벨 크기는 확대/축소에 따라 변경되지 않습니다. 설정에서 지정하세요.</string>
     <string name="label_size_hint_action" translation_description="Action button on the label size snackbar; opens the app\'s Settings screen, where the user can change how large the sky labels are">설정</string>
 
@@ -81,7 +80,6 @@
     <!-- Image gallery -->
 
     <!-- Settings screen (v1 wording where a v1 string existed) -->
-    <string name="settings_ok" translation_description="Confirm button in settings dialogs">확인</string>
     <string name="auto_level_on_toast" translation_description="Brief confirmation shown when a double tap turns horizon auto-leveling on in manual mode">지평선 자동 수평 맞춤 켜짐</string>
     <string name="auto_level_off_toast" translation_description="Brief confirmation shown when a double tap turns horizon auto-leveling off in manual mode">지평선 자동 수평 맞춤 꺼짐</string>
 
@@ -95,19 +93,6 @@
     <string name="diagnostics_satellite_circuit_open_format" translation_description="Row value in the diagnostics screen showing when paused satellite downloads will resume and how many failures caused the pause. %1$s is a date and time, %2$d is a count">%1$s까지 (%2$d회 실패)</string>
 
     <!-- Compass calibration screen (slice 15) -->
-    <string name="calibration_heading_user" translation_description="Heading shown in the compass calibration screen when the user opens it themselves">휴대전화의 나침반</string>
-    <string name="calibration_heading_warning" translation_description="Heading shown in the compass calibration screen when it opens automatically due to low accuracy">휴대전화의 나침반 주의 필요</string>
-    <string name="calibration_accuracy_unknown" translation_description="Sensor calibration level shown in the calibration screen">보정: 알 수 없음</string>
-    <string name="calibration_accuracy_unreliable" translation_description="Sensor calibration level shown in the calibration screen">보정: 보정되지 않음</string>
-    <string name="calibration_accuracy_low" translation_description="Sensor calibration level shown in the calibration screen">보정: 나쁨</string>
-    <string name="calibration_accuracy_medium" translation_description="Sensor calibration level shown in the calibration screen">보정: 양호</string>
-    <string name="calibration_accuracy_high" translation_description="Sensor calibration level shown in the calibration screen">보정: 좋음</string>
-    <string name="calibration_accuracy_no_contact" translation_description="Sensor calibration level shown when the sensor has no contact - unlikely to appear in Sky Map but included for completeness">보정: 연결 없음</string>
-    <string name="calibration_do_not_show_again" translation_description="Checkbox label in the compass calibration screen to suppress future automatic appearances">다시 표시 안 함</string>
-    <string name="calibration_what_to_do" translation_description="Information for the user on how to calibrate the compass when the screen auto-opens. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[휴대폰의 나침반 센서가 보정 상태가 좋지 않다고 보고하고 있습니다. 숫자 8자 모양으로 움직이는 동작(<a href="%s">시연 보기</a>)은 휴대폰 하드웨어의 나침반 센서를 재설정하도록 유도합니다. Sky Map은 이 과정에 대해 제어할 수 없습니다.<br/><br/><blockquote><b>보정되었다고 정확하다는 의미는 아닙니다.</b> 숫자 8자 제스처는 센서를 재설정하는 데 도움이 되지만, 주변 금속 물체, 자동차 대시보드 또는 휴대폰 케이스로 인한 간섭을 제거할 수는 없습니다. 보정 후에도 지도가 여전히 정확하지 않다면, Sky Map이 아닌 이러한 외부 요인이 가장 큰 원인일 가능성이 높습니다.</blockquote>금속이 없는 개방된 공간으로 이동하여 다시 시도해 보세요.]]></string>
-    <string name="calibration_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they open the calibration screen. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[휴대전화에서 나침반 보정 상태를 위와 같이 보고하고 있습니다.<br/><br/>필요한 경우, 8자 모양으로 움직여 (<a href="%s">시연 영상 보기</a>) 휴대전화 하드웨어에서 나침반 센서를 다시 보정하도록 유도하세요.<br/><br/><blockquote><b>중요:</b> 보정은 센서가 내부적으로 자체 재설정하는 데 도움이 됩니다. 그렇다고 나침반이 반드시 정확하다는 의미는 아닙니다! 국부적인 자기 간섭(금속 물체, 자동차 대시보드, 휴대전화 케이스)으로 인해 휴대전화의 나침반이 Sky Map에 부정확한 판독값을 보낼 수 있습니다.</blockquote><b>지도가 위치를 올바르게 표시하지 않는다면 문제는 Sky Map이 아니라 휴대전화일 가능성이 높습니다!</b>]]></string>
-    <string name="calibration_low_accuracy_toast" translation_description="Brief toast shown when compass accuracy is low and the user has disabled the calibration screen">휴대전화 나침반의 정확도가 낮습니다</string>
-    <string name="calibration_complete_toast" translation_description="Toast shown when the compass reaches high accuracy and the auto-opened calibration screen closes itself">센서 정확도가 높습니다</string>
 
     <!-- Startup routing: EULA, warm welcome, What's New (slice 16) -->
 

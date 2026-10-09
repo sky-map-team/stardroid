@@ -24,6 +24,14 @@ final class StartupTests: XCTestCase {
         sleep(4)
         capture(self, "2-map")
 
+        // A simulator has no fix, so the location timeout's dialog comes up 30 s after launch and
+        // hides the map's controls from accessibility, mid-test. Keep Waiting rearms the timeout,
+        // leaving a clear 30 s for the controls.
+        let keepWaiting = app.buttons["Keep Waiting"]
+        if keepWaiting.waitForExistence(timeout: 35) {
+            keepWaiting.tap()
+        }
+
         // The shared map chrome's own controls, found by their accessibility labels.
         let night = app.buttons["Night mode"]
         if night.waitForExistence(timeout: 5) {

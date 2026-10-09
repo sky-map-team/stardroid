@@ -426,4 +426,22 @@
     <string name="app_name">Skyマップ</string>
     <!-- tm:omitted name="splash_version" reason="identical_to_source" -->
     <string name="splash_dismiss" translation_description="Accessibility label for the action that dismisses the launch splash when it is tapped">閉じる</string>
+    <string name="snackbar_action_open" translation_description="Snackbar action button that opens the screen the snackbar refers to, e.g. the compass calibration screen">開く</string>
+    <!-- tm:omitted name="settings_ok" reason="identical_to_source" -->
+    <string name="calibration_heading_user">スマートフォンのコンパス</string>
+    <string name="calibration_heading_warning">スマートフォンのコンパスの調整が必要です</string>
+    <string name="calibration_accuracy_unknown">キャリブレーション: 不明</string>
+    <string name="calibration_accuracy_unreliable">キャリブレーション: 未校正</string>
+    <string name="calibration_accuracy_low">キャリブレーション: 不良</string>
+    <string name="calibration_accuracy_medium">キャリブレーション: 普通</string>
+    <string name="calibration_accuracy_high">キャリブレーション: 良好</string>
+    <string name="calibration_accuracy_no_contact">キャリブレーション: 接触なし</string>
+    <string name="calibration_do_not_show_again">これを再び表示しない</string>
+    <string name="calibration_what_to_do" translation_description="Information for the user on how to calibrate the compass when the screen auto-opens. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[お使いのスマートフォンのコンパスセンサーは、キャリブレーションが不十分であると報告しています。8の字を描く動き（<a href="%s">デモンストレーションを見る</a>）は、スマートフォンのハードウェアにコンパスセンサーをリセットするよう促します。Sky Mapはこのプロセスを制御できません。<br/><br/><blockquote><b>キャリブレーション済み＝正確ではありません。</b>8の字ジェスチャーはセンサーのリセットに役立ちますが、近くの金属物、車のダッシュボード、またはスマートフォンのケースからの干渉を取り除くことはできません。キャリブレーション後もマップがずれている場合、Sky Mapではなく、これらの外部要因が最も可能性の高い原因です。</blockquote>金属から離れた開けた場所に移動して、もう一度お試しください。]]></string>
+    <string name="calibration_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they open the calibration screen. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[お使いのスマートフォンのコンパスのキャリブレーション状態は、上記のとおり報告されています。<br/><br/>
+必要に応じて、8の字を描くように動かして（<a href="%s">デモンストレーションを見る</a>）、スマートフォンのハードウェアにコンパスセンサーの再キャリブレーションを促してください。<br/><br/>
+<blockquote><b>重要:</b> キャリブレーションは、センサーが内部的にリセットされるのを助けます。これは、コンパスが必ずしも正確であることを意味するものではありません！局所的な磁気干渉（金属製の物体、車のダッシュボード、スマートフォンのケースなど）により、スマートフォンのコンパスがSky Mapに不正確な測定値を送信する可能性があります。</blockquote>
+<b>地図が正しく位置を表示しない場合、問題はお使いのスマートフォンにある可能性が高く、Sky Mapではありません！</b>]]></string>
+    <string name="calibration_low_accuracy_toast">スマートフォンのコンパスの精度が低下しています</string>
+    <string name="calibration_complete_toast" translation_description="Toast shown when the compass reaches high accuracy and the auto-opened calibration screen closes itself">センサーの精度が高いです</string>
 </resources>

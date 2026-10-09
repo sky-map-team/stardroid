@@ -15,8 +15,10 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.safeDrawingPadding
+import androidx.compose.material3.SnackbarDuration
 import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
+import androidx.compose.material3.SnackbarResult
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
@@ -41,8 +43,11 @@ import androidx.compose.ui.viewinterop.UIKitViewController
 import androidx.compose.ui.window.ComposeUIViewController
 import com.google.android.stardroid.catalog.ObjectInfo
 import com.google.android.stardroid.render.api.LayerId
+import com.google.android.stardroid.sensors.CalibrationPrompt
 import com.google.android.stardroid.startup.ExperimentConfig
 import com.google.android.stardroid.time.TimeTravelState
+import com.google.android.stardroid.ui.calibration.CompassCalibrationScreen
+import com.google.android.stardroid.ui.calibration.CompassCalibrationViewModel
 import com.google.android.stardroid.ui.diagnostics.DiagnosticsScreen
 import com.google.android.stardroid.ui.diagnostics.DiagnosticsViewModel
 import com.google.android.stardroid.ui.gallery.GalleryScreen
@@ -67,6 +72,9 @@ import com.google.android.stardroid.ui.objectinfo.ObjectInfoCard
 import com.google.android.stardroid.ui.objectinfo.ObjectInfoViewModel
 import com.google.android.stardroid.ui.onboarding.WelcomeScreen
 import com.google.android.stardroid.ui.resources.Res
+import com.google.android.stardroid.ui.resources.calibration_complete_toast
+import com.google.android.stardroid.ui.resources.calibration_low_accuracy_toast
+import com.google.android.stardroid.ui.resources.snackbar_action_open
 import com.google.android.stardroid.ui.resources.sun_wont_set_message
 import com.google.android.stardroid.ui.resources.support_email
 import com.google.android.stardroid.ui.search.SearchControlBar
@@ -86,6 +94,7 @@ import com.google.android.stardroid.ui.timetravel.TimeTravelDialog
 import com.google.android.stardroid.ui.timetravel.TimeTravelFlash
 import com.google.android.stardroid.ui.timetravel.TimeTravelPlayer
 import com.google.android.stardroid.ui.timetravel.TimeTravelViewModel
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import org.jetbrains.compose.resources.stringResource
 import platform.UIKit.UIViewController
@@ -97,7 +106,7 @@ import platform.UIKit.UIViewController
  * the shared Layers sheet, search, time travel, object info (tap the sky) and location. This is a
  * stand-in for Android's MapScreen, which composes every other screen and so moves last (D137);
  * until then the overflow menu offers only the destinations iOS has screens for. Everything here
- * is wired as Android wires it.
+ * is wired as Android wires it, the compass-calibration prompts included.
  *
  * Android's startup gating: the EULA blocks everything until accepted, then the warm welcome on
  * a first run, and What's New on upgrades.
@@ -115,6 +124,7 @@ fun skyMapViewController(): UIViewController {
     val settings = graph.settingsViewModel()
     val diagnostics = graph.diagnosticsViewModel(mapViewModel, map.rendererInfo)
     val gallery = graph.galleryViewModel()
+    val calibration = graph.calibrationViewModel()
     return ComposeUIViewController {
         SkyMapScreen(
             map,
@@ -127,6 +137,7 @@ fun skyMapViewController(): UIViewController {
             settings,
             diagnostics,
             gallery,
+            calibration,
             startup,
             onRequestAutoLocation = graph::requestAutoLocation,
             onOpenAppSettings = graph::openAppSettings,
@@ -149,6 +160,7 @@ private fun SkyMapScreen(
     settingsViewModel: SettingsViewModel,
     diagnosticsViewModel: DiagnosticsViewModel,
     galleryViewModel: GalleryViewModel,
+    calibrationViewModel: CompassCalibrationViewModel,
     startup: StartupViewModel,
     onRequestAutoLocation: () -> Unit,
     onOpenAppSettings: () -> Unit,
@@ -416,7 +428,10 @@ private fun SkyMapScreen(
                         showOverflowSheet = false
                         showLocationSheet = true
                     },
-                    onOpenCalibration = null,
+                    onOpenCalibration = {
+                        showOverflowSheet = false
+                        open(Page.CALIBRATION)
+                    },
                     onOpenTutorial = {
                         showOverflowSheet = false
                         open(Page.TUTORIAL)
@@ -463,15 +478,14 @@ private fun SkyMapScreen(
                     HelpScreen(
                         nightMode = nightMode,
                         onBack = ::back,
-                        // Links to screens iOS doesn't have yet stay inert until they arrive.
                         onNavigate = { destination ->
                             when (destination) {
                                 HelpLink.Destination.SETTINGS -> open(Page.SETTINGS)
                                 HelpLink.Destination.DIAGNOSTICS -> open(Page.DIAGNOSTICS)
+                                HelpLink.Destination.CALIBRATE -> open(Page.CALIBRATION)
                                 HelpLink.Destination.GALLERY -> open(Page.GALLERY)
                                 HelpLink.Destination.APP_SETTINGS -> onOpenAppSettings()
                                 HelpLink.Destination.TUTORIAL -> open(Page.TUTORIAL)
-                                else -> Unit
                             }
                         },
                     )
@@ -503,6 +517,20 @@ private fun SkyMapScreen(
                             sendDiagnosticsReport(supportEmail, subject, body)
                         },
                     )
+                Page.CALIBRATION, Page.CALIBRATION_PROMPT -> {
+                    val calibrated = stringResource(Res.string.calibration_complete_toast)
+                    CompassCalibrationScreen(
+                        calibrationViewModel,
+                        nightMode = nightMode,
+                        userInitiated = page == Page.CALIBRATION,
+                        // The prompt closes itself once the compass reads High, as on Android.
+                        onCalibrated = {
+                            scope.launch { snackbarHostState.showSnackbar(calibrated) }
+                            back()
+                        },
+                        onBack = ::back,
+                    )
+                }
                 // A replay: no analytics funnel, and nothing re-marked as seen (as on Android).
                 // Finishing or skipping lands on the map, taking Help with it if Help opened
                 // it, as Android's replay pops to the map; back still returns to Help.
@@ -535,6 +563,41 @@ private fun SkyMapScreen(
                         showManualLocationDialog = true
                     },
                 )
+            }
+            // Android's low-accuracy monitor runs while the map shows: a badly calibrated compass
+            // opens the calibration prompt, or, once the user has opted out of that, offers it
+            // in a snackbar. Only over the bare map, so the prompt never opens under a dialog or
+            // sheet, and not in the first seconds after launch, as on Android.
+            val mapIdle =
+                onMap && !showSearchDialog && !showTimeTravelDialog && !showLayersSheet &&
+                    !showOverflowSheet && !showLocationSheet && !showManualLocationDialog &&
+                    objectInfoCard == null && expandedImage == null
+            var gracePeriodPassed by remember { mutableStateOf(false) }
+            LaunchedEffect(Unit) {
+                delay(CALIBRATION_STARTUP_GRACE_MS)
+                gracePeriodPassed = true
+            }
+            val lowAccuracy = stringResource(Res.string.calibration_low_accuracy_toast)
+            val openAction = stringResource(Res.string.snackbar_action_open)
+            LaunchedEffect(mapIdle && gracePeriodPassed) {
+                if (!mapIdle || !gracePeriodPassed) return@LaunchedEffect
+                calibrationViewModel.prompts.collect { prompt ->
+                    when (prompt) {
+                        CalibrationPrompt.SCREEN -> open(Page.CALIBRATION_PROMPT)
+                        CalibrationPrompt.TOAST ->
+                            launch {
+                                val result =
+                                    snackbarHostState.showSnackbar(
+                                        lowAccuracy,
+                                        actionLabel = openAction,
+                                        duration = SnackbarDuration.Long,
+                                    )
+                                if (result == SnackbarResult.ActionPerformed) {
+                                    open(Page.CALIBRATION_PROMPT)
+                                }
+                            }
+                    }
+                }
             }
             when {
                 // Android holds its splash for these first values; black, until the EULA or
@@ -590,7 +653,19 @@ private enum class Page {
 
     /** The warm welcome, replayed from the overflow sheet or Help. */
     TUTORIAL,
+
+    /** Compass calibration, opened from the overflow sheet or Help. */
+    CALIBRATION,
+
+    /**
+     * Compass calibration, opened by the low-accuracy monitor: it offers the opt-out, and closes
+     * itself once the compass reads High.
+     */
+    CALIBRATION_PROMPT,
 }
+
+/** The grace before the low-accuracy prompt may fire, as on Android (user feedback there). */
+private const val CALIBRATION_STARTUP_GRACE_MS = 10_000L
 
 /** What the welcome's sensor check reports, from Core Motion. */
 private data class MotionHardware(
