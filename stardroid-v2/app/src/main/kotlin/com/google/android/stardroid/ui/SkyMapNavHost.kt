@@ -356,6 +356,7 @@ fun SkyMapNavHost(
                 calibrationViewModel,
                 nightMode = nightMode,
                 userInitiated = userInitiated,
+                demoVideoUrl = CALIBRATION_VIDEO_URL,
                 onCalibrated = {
                     // v1 AUTO_DISMISSABLE: a compass back at HIGH closes the nudge itself;
                     // the notice queues on the shared host and shows once the map is back.
@@ -371,3 +372,6 @@ fun SkyMapNavHost(
         }
     }
 }
+
+/** v1's linked figure-eight demonstration video. */
+private const val CALIBRATION_VIDEO_URL = "https://www.youtube.com/watch?v=-Uq7AmSAjt8"

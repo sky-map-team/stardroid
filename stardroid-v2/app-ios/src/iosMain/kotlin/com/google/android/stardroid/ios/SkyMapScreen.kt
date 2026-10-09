@@ -428,10 +428,9 @@ private fun SkyMapScreen(
                         showOverflowSheet = false
                         showLocationSheet = true
                     },
-                    onOpenCalibration = {
-                        showOverflowSheet = false
-                        open(Page.CALIBRATION)
-                    },
+                    // Not worth a menu item on an iPhone, whose compass stays calibrated; it lives
+                    // in Diagnostics instead (and Help still links to it).
+                    onOpenCalibration = null,
                     onOpenTutorial = {
                         showOverflowSheet = false
                         open(Page.TUTORIAL)
@@ -516,6 +515,7 @@ private fun SkyMapScreen(
                         onSendReport = { subject, body ->
                             sendDiagnosticsReport(supportEmail, subject, body)
                         },
+                        onOpenCalibration = { open(Page.CALIBRATION) },
                     )
                 Page.CALIBRATION, Page.CALIBRATION_PROMPT -> {
                     val calibrated = stringResource(Res.string.calibration_complete_toast)
@@ -523,6 +523,7 @@ private fun SkyMapScreen(
                         calibrationViewModel,
                         nightMode = nightMode,
                         userInitiated = page == Page.CALIBRATION,
+                        demoVideoUrl = CALIBRATION_VIDEO_URL,
                         // The prompt closes itself once the compass reads High, as on Android.
                         onCalibrated = {
                             scope.launch { snackbarHostState.showSnackbar(calibrated) }
@@ -654,7 +655,7 @@ private enum class Page {
     /** The warm welcome, replayed from the overflow sheet or Help. */
     TUTORIAL,
 
-    /** Compass calibration, opened from the overflow sheet or Help. */
+    /** Compass calibration, opened from Diagnostics or Help. */
     CALIBRATION,
 
     /**
@@ -663,6 +664,9 @@ private enum class Page {
      */
     CALIBRATION_PROMPT,
 }
+
+/** Android's figure-eight video for now; an iPhone one is to replace it. */
+private const val CALIBRATION_VIDEO_URL = "https://www.youtube.com/watch?v=-Uq7AmSAjt8"
 
 /** The grace before the low-accuracy prompt may fire, as on Android (user feedback there). */
 private const val CALIBRATION_STARTUP_GRACE_MS = 10_000L
