@@ -95,6 +95,14 @@ Both modules share the same flavor scheme:
 Always specify the flavor: use `assembleGmsDebug`, not `assembleDebug`. See the `/build` skill for
 all build, test, deploy, and data-generation commands.
 
+## Comments
+
+Keep comments short and only where they add something the code can't say: the *why*, a
+non-obvious constraint, a units/coordinate-frame convention, or a pointer to the design doc. Don't
+narrate what the code does, restate a name or signature, or leave multi-paragraph KDoc/Javadoc on
+self-explanatory members. If a comment is needed to explain confusing code, prefer renaming or
+simplifying the code first. Delete comments that have gone stale.
+
 ## Strings
 
 Remember to properly escape any text added as Android resource strings (e.g. ' must be escaped
