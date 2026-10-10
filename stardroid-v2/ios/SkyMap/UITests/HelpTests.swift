@@ -23,7 +23,7 @@ final class HelpTests: XCTestCase {
         XCTAssertTrue(search.waitForExistence(timeout: 5))
         capture(self, "1-help")
         search.tap()
-        search.typeText("symbols")
+        typeSlowly(search, "symbols")
         XCTAssertTrue(app.staticTexts["Map symbols"].waitForExistence(timeout: 5))
         sleep(1)
         capture(self, "2-search")

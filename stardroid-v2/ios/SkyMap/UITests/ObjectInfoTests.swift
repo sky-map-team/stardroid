@@ -16,13 +16,19 @@ final class ObjectInfoTests: XCTestCase {
         let app = XCUIApplication()
         app.launch()
         passStartup(app)
+        // A phone starts in auto mode, where search only points the way; in manual mode it
+        // centres Mars, as on the simulator.
+        let manual = app.buttons["Switch to manual mode"]
+        if manual.exists {
+            manual.tap()
+        }
 
         let search = app.buttons["Search"]
         XCTAssertTrue(search.waitForExistence(timeout: 10))
         search.tap()
         let field = app.textViews.firstMatch
         XCTAssertTrue(field.waitForExistence(timeout: 5))
-        field.typeText("Mars")
+        typeSlowly(field, "Mars")
         sleep(1)
         app.buttons["Go"].tap()
         sleep(3)

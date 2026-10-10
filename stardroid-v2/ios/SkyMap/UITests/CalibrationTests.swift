@@ -51,7 +51,10 @@ final class CalibrationTests: XCTestCase {
 
         let heading = app.staticTexts["Your Phone's Compass"]
         XCTAssertTrue(heading.waitForExistence(timeout: 5))
+        // A simulator has no compass; a phone shows its own calibration level.
+        #if targetEnvironment(simulator)
         XCTAssertTrue(app.staticTexts["Absent"].exists)
+        #endif
         XCTAssertFalse(app.staticTexts["Do not show this again"].exists)
         // Two moments of the figure-eight, to see it move.
         sleep(1)

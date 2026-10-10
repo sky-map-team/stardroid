@@ -23,7 +23,7 @@ final class SearchTests: XCTestCase {
         // Compose Multiplatform's text field reaches accessibility as a text view, focused.
         let field = app.textViews.firstMatch
         XCTAssertTrue(field.waitForExistence(timeout: 5))
-        field.typeText("Mars")
+        typeSlowly(field, "Mars")
         sleep(2)
         capture(self, "1-search-dialog")
 

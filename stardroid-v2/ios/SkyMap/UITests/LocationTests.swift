@@ -30,7 +30,7 @@ final class LocationTests: XCTestCase {
             .firstMatch
         XCTAssertTrue(place.waitForExistence(timeout: 5))
         place.tap()
-        place.typeText("Paris")
+        typeSlowly(place, "Paris")
         capture(self, "2-entry")
         // The magnifier resolves the name into the coordinate fields without applying it. Compose
         // doesn't expose a field's text to accessibility, so the fields are checked by eye.

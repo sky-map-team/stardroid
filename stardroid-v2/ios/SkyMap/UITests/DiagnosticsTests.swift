@@ -43,6 +43,10 @@ final class DiagnosticsTests: XCTestCase {
         sleep(1)
         capture(self, "3-location-network")
 
+        // A phone with Mail set up sends the report there, leaving the app (one without opens
+        // Mail's account setup). A simulator has no Mail, so the report goes to the share sheet,
+        // which the test can close.
+        #if targetEnvironment(simulator)
         app.buttons["Send to developers"].tap()
         let copy = app.descendants(matching: .any)["Copy"].firstMatch
         XCTAssertTrue(copy.waitForExistence(timeout: 10))
@@ -50,6 +54,7 @@ final class DiagnosticsTests: XCTestCase {
         app.swipeDown(velocity: .fast)
         expectation(for: NSPredicate(format: "exists == false"), evaluatedWith: copy)
         waitForExpectations(timeout: 10)
+        #endif
 
         // Back returns to Settings, which opened it, and from there to the map.
         app.buttons["Back"].firstMatch.tap()
