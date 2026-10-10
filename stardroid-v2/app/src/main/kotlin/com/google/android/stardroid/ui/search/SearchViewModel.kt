@@ -92,6 +92,12 @@ class SearchViewModel(
      * them; they are matched here instead. Empty when the feature is off or nothing is cached.
      */
     private val satellites: suspend () -> List<TrackedSatellite> = { emptyList() },
+    /**
+     * Localized names to search a satellite by, beyond its element-set name (`ISS (ZARYA)`).
+     * A function rather than a map because the view model outlives a language switch: it is
+     * read on every search, so the names follow the current locale.
+     */
+    private val satelliteAliases: (noradId: Int) -> List<String> = { emptyList() },
 ) : ViewModel() {
     private val _query = MutableStateFlow("")
     val query: StateFlow<String> = _query.asStateFlow()
@@ -273,7 +279,7 @@ class SearchViewModel(
         if (q.isEmpty()) return emptyList()
         return satellitesSafely()
             .filter { sat ->
-                (listOf(sat.info.name) + SATELLITE_ALIASES[sat.tle.noradId].orEmpty()).any {
+                (listOf(sat.info.name) + satelliteAliases(sat.tle.noradId)).any {
                     matchesWordPrefix(it, q)
                 }
             }.map { sat ->
@@ -351,13 +357,6 @@ class SearchViewModel(
 
     companion object {
         private const val TAG = "SearchViewModel"
-
-        /** Names people search by that the element set's own name (`ISS (ZARYA)`) lacks. */
-        private val SATELLITE_ALIASES: Map<Int, List<String>> =
-            mapOf(
-                SatelliteLayer.ISS_NORAD_ID to listOf("International Space Station"),
-                SatelliteLayer.TIANGONG_NORAD_ID to listOf("Tiangong Space Station", "CSS"),
-            )
 
         private fun words(text: String): List<String> =
             text.split(' ', '(', ')', '-').filter { it.isNotEmpty() }

@@ -125,6 +125,8 @@ class SearchViewModelTest {
 
     private var trackedSatellites = listOf<TrackedSatellite>()
 
+    private var aliases = mapOf(25544 to listOf("International Space Station"))
+
     private var satelliteFailure: (() -> Throwable)? = null
 
     private val locale = MutableStateFlow(LocaleSpec("en"))
@@ -138,6 +140,7 @@ class SearchViewModelTest {
             settings = settings,
             analytics = analytics,
             isManualMode = { manualMode },
+            satelliteAliases = { aliases[it].orEmpty() },
             satellites = {
                 satelliteFailure?.let { throw it() }
                 trackedSatellites
@@ -305,6 +308,26 @@ class SearchViewModelTest {
             runCurrent()
 
             assertThat(vm.target.value?.name).isEqualTo("ISS (ZARYA)")
+        }
+
+    @Test
+    fun `satellite aliases come from the injected, localized provider`() =
+        testScope.runCurrentTest {
+            trackedSatellites = listOf(ISS)
+            aliases = mapOf(25544 to listOf("Estación Espacial Internacional"))
+            val vm = viewModel()
+            backgroundScope.launch { vm.suggestions.collect {} }
+            runCurrent()
+
+            vm.setQuery("estación esp")
+            advanceTimeBy(debounceSettle)
+            runCurrent()
+            assertThat(vm.suggestions.value.map { it.name }).containsExactly("ISS (ZARYA)")
+
+            vm.setQuery("international")
+            advanceTimeBy(debounceSettle)
+            runCurrent()
+            assertThat(vm.suggestions.value).isEmpty()
         }
 
     @Test

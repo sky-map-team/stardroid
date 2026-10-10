@@ -59,6 +59,7 @@ import com.google.android.stardroid.astronomy.MeeusEphemeris
 import com.google.android.stardroid.camera.SkyCameraPreview
 import com.google.android.stardroid.catalog.CelestialObjectId
 import com.google.android.stardroid.data.satellites.RefreshResult
+import com.google.android.stardroid.layers.SatelliteLayer
 import com.google.android.stardroid.layers.LayerRegistry
 import com.google.android.stardroid.locale.LocaleSource
 import com.google.android.stardroid.location.AndroidGeocoding
@@ -250,6 +251,15 @@ class MainActivity : ComponentActivity() {
                             timeController.now(),
                             requireLayerEnabled = false,
                         )
+                    },
+                    satelliteAliases = { norad ->
+                        when (norad) {
+                            SatelliteLayer.ISS_NORAD_ID ->
+                                listOf(getString(R.string.satellite_search_name_iss))
+                            SatelliteLayer.TIANGONG_NORAD_ID ->
+                                listOf(getString(R.string.satellite_search_name_tiangong), "CSS")
+                            else -> emptyList()
+                        }
                     },
                 )
             }
