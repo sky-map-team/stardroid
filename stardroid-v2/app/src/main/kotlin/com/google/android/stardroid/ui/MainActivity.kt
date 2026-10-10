@@ -59,8 +59,8 @@ import com.google.android.stardroid.astronomy.MeeusEphemeris
 import com.google.android.stardroid.camera.SkyCameraPreview
 import com.google.android.stardroid.catalog.CelestialObjectId
 import com.google.android.stardroid.data.satellites.RefreshResult
-import com.google.android.stardroid.layers.SatelliteLayer
 import com.google.android.stardroid.layers.LayerRegistry
+import com.google.android.stardroid.layers.SatelliteLayer
 import com.google.android.stardroid.locale.LocaleSource
 import com.google.android.stardroid.location.AndroidGeocoding
 import com.google.android.stardroid.location.LocationController
@@ -247,17 +247,20 @@ class MainActivity : ComponentActivity() {
                         trackedSatellites(
                             this@MainActivity,
                             locationController.locations.value,
-                            getString(R.string.satellite_description),
+                            applicationContext.getString(R.string.satellite_description),
                             timeController.now(),
                             requireLayerEnabled = false,
                         )
                     },
+                    // Application resources follow the live locale; this activity's would be
+                    // frozen at the language it was created in, and the view model outlives it.
                     satelliteAliases = { norad ->
+                        val app = applicationContext
                         when (norad) {
                             SatelliteLayer.ISS_NORAD_ID ->
-                                listOf(getString(R.string.satellite_search_name_iss))
+                                listOf(app.getString(R.string.satellite_search_name_iss))
                             SatelliteLayer.TIANGONG_NORAD_ID ->
-                                listOf(getString(R.string.satellite_search_name_tiangong), "CSS")
+                                listOf(app.getString(R.string.satellite_search_name_tiangong), "CSS")
                             else -> emptyList()
                         }
                     },
