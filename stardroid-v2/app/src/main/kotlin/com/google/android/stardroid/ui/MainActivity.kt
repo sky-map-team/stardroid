@@ -41,6 +41,7 @@ import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.WindowCompat
 import androidx.glance.appwidget.updateAll
 import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.ProcessLifecycleOwner
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
@@ -365,6 +366,11 @@ class MainActivity : ComponentActivity() {
                     localFrame = mapViewModel.localFrame,
                     rendererInfo = rendererInfoStore::get,
                     analytics = analytics,
+                    mapReferenceFrame = { mapViewModel.referenceFrame.value },
+                    lastMapOrientationAtMillis = { mapViewModel.lastOrientationAtMillis },
+                    processLifecycleState = {
+                        ProcessLifecycleOwner.get().lifecycle.currentState
+                    },
                 )
             }
         }

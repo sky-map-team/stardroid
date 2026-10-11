@@ -93,6 +93,8 @@ class MapViewModel(
     private val now: () -> Instant,
     private val analytics: Analytics = NoOpAnalytics,
     private val frameTicker: FrameTicker = ChoreographerFrameTicker,
+    // Wall-clock, not [now], which time travel can pause.
+    private val wallClockMillis: () -> Long = System::currentTimeMillis,
 ) : ViewModel() {
     val sensorsAvailable: Boolean = orientationSource.available
 
@@ -873,12 +875,22 @@ class MapViewModel(
     private suspend fun collectSensors() {
         orientationSource.orientations().collect { orientation ->
             lastOrientation = orientation
+            lastOrientationAtMillis = wallClockMillis()
             resolveSensorCamera(orientation)
         }
     }
 
     @Volatile
     private var lastOrientation: Matrix3? = null
+
+    /**
+     * When the map last took a sensor orientation, or null if it never has. Diagnostics shows
+     * its age: a stale value in sensor mode separates a dead sensor pipeline from a map that is
+     * receiving orientations but not drawing them (issue #1109).
+     */
+    @Volatile
+    var lastOrientationAtMillis: Long? = null
+        private set
 
     /**
      * Resolves [orientation] to the camera, applying the drag-to-align altitude correction
