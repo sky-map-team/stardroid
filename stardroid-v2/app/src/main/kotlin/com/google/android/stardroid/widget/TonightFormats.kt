@@ -17,7 +17,7 @@ import com.google.android.stardroid.events.CountdownTarget
 import com.google.android.stardroid.events.DARK_MOON_FRACTION
 import com.google.android.stardroid.events.SkyEvent
 import com.google.android.stardroid.layers.ResourceLayerStrings
-import com.google.android.stardroid.layers.SatelliteLayer
+import com.google.android.stardroid.satellites.SatelliteIds
 import com.google.android.stardroid.ui.map.HudFormats
 import com.google.android.stardroid.ui.search.SolarSystemIds
 import kotlinx.datetime.Instant
@@ -70,7 +70,7 @@ internal fun highlightLine(
                     event.pass.maxAltitudeDeg.roundToInt(),
                     event.pass.peakMagnitude,
                 ),
-                SatelliteLayer.LAYER_ID.id,
+                SatelliteIds.idFor(event.pass.noradId).value,
             )
         is SkyEvent.ShowerPeak ->
             HighlightLine(

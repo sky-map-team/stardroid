@@ -264,7 +264,7 @@ class ObjectInfoViewModel(
                         .minByOrNull { (_, separation) -> separation }
                         ?.first
                 } ?: return@launch
-            catalog().objectInfo(hit.id, locale.value)?.let { openCard(it) }
+            cardFor(hit.id)?.let { openCard(it) }
         }
     }
 
@@ -288,6 +288,9 @@ class ObjectInfoViewModel(
      * neither event converges, the current altitude tells circumpolar from never-up.
      */
     private fun riseSetFor(info: ObjectInfo): RiseSetState? {
+        // A satellite's position is a snapshot, not fixed: it crosses the sky in minutes, so
+        // solving rise/set from it is meaningless. The pass row says when to look instead.
+        if (SatelliteIds.noradIdFor(info.id) != null) return null
         val after = now()
         val observer = location()
         val body =

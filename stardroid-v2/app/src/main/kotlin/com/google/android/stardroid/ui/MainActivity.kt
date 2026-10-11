@@ -46,6 +46,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
+import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.google.android.stardroid.CatalogAccess
 import com.google.android.stardroid.R
@@ -112,7 +113,9 @@ import com.google.android.stardroid.widget.TonightWidget
 import com.google.android.stardroid.widget.WidgetScheduler
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.filterNotNull
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -166,6 +169,9 @@ class MainActivity : ComponentActivity() {
 
     /** v1's session anchor: foreground time between onStart and onStop. */
     private var sessionStartTimeMillis = 0L
+
+    /** A launch or [onNewIntent] intent, held until the nav graph exists to act on it. */
+    private val pendingDeepLink = MutableStateFlow<Intent?>(null)
 
     private val mapViewModel: MapViewModel by viewModels {
         viewModelFactory {
@@ -291,7 +297,9 @@ class MainActivity : ComponentActivity() {
                         trackedSatellites(
                             this@MainActivity,
                             locationController.locations.value,
-                            getString(R.string.satellite_description),
+                            // Not this activity's resources: those stay in the language it was
+                            // created in, and this view model outlives it (as for search).
+                            applicationContext.getString(R.string.satellite_description),
                             timeController.now(),
                         )
                     },
@@ -465,16 +473,7 @@ class MainActivity : ComponentActivity() {
         // activity, so only the first creation logs.
         if (savedInstanceState == null) {
             logStartupSnapshot()
-            // A widget tap (D75) lands on the tapped object's info card once the map is up;
-            // the card state waits out any startup gates in ObjectInfoViewModel.
-            intent.getStringExtra(MoonWidget.EXTRA_SHOW_OBJECT_ID)?.let {
-                objectInfoViewModel.show(CelestialObjectId(it))
-            }
-            // An announcement notification or widget banner whose action is a search.
-            intent.getStringExtra(AnnouncementAction.EXTRA_SEARCH_QUERY)?.let {
-                runSearch(it)
-                intent.removeExtra(AnnouncementAction.EXTRA_SEARCH_QUERY)
-            }
+            pendingDeepLink.value = intent
         } else {
             sessionStartTimeMillis = savedInstanceState.getLong(SAVED_SESSION_START_TIME_KEY, 0L)
         }
@@ -545,8 +544,9 @@ class MainActivity : ComponentActivity() {
                 // The start destination is decided once; the gates keep flowing after.
                 val startOnWelcome = remember { gates.needsWarmWelcome }
                 val sensorPresence = remember { sensorPresence() }
+                val navController = rememberNavController()
                 SkyMapNavHost(
-                    navController = rememberNavController(),
+                    navController = navController,
                     startOnWelcome = startOnWelcome,
                     glSurfaceView = glSurfaceView,
                     mapViewModel = mapViewModel,
@@ -578,6 +578,16 @@ class MainActivity : ComponentActivity() {
                     },
                     experimentConfig = experimentConfig,
                 )
+                // The info card is a dialog window and would float above the EULA, so links
+                // wait for acceptance; the pending intent is kept until then.
+                if (!gates.needsEula) {
+                    LaunchedEffect(navController) {
+                        pendingDeepLink.filterNotNull().collect {
+                            pendingDeepLink.value = null
+                            handleDeepLink(it, navController)
+                        }
+                    }
+                }
                 // v1 SplashScreenActivity's gating order: the EULA blocks everything until
                 // accepted (declining exits); What's New then shows on upgrades only. A true
                 // fresh install never gets it (nothing to report); anyone with real
@@ -629,6 +639,37 @@ class MainActivity : ComponentActivity() {
                     )
                 }
             }
+        }
+    }
+
+    // singleTop: a widget or notification tap while the app is open arrives here instead of
+    // stacking a fresh copy of the app on top of the running one (#1105).
+    override fun onNewIntent(intent: Intent) {
+        super.onNewIntent(intent)
+        setIntent(intent)
+        pendingDeepLink.value = intent
+    }
+
+    private fun handleDeepLink(
+        intent: Intent,
+        navController: NavController,
+    ) {
+        // A widget tap (D75) lands on the tapped object's info card. Cards show on the map and
+        // over the gallery, and leaving the gallery dismisses its card, so only other screens
+        // return to the map. During the first-run tour there is no map yet; the card appears
+        // when the tour ends and the map is composed.
+        intent.getStringExtra(MoonWidget.EXTRA_SHOW_OBJECT_ID)?.let {
+            if (navController.currentDestination?.route != Routes.GALLERY) {
+                navController.popBackStack(Routes.MAP, inclusive = false)
+            }
+            objectInfoViewModel.show(CelestialObjectId(it))
+            intent.removeExtra(MoonWidget.EXTRA_SHOW_OBJECT_ID)
+        }
+        // An announcement notification or widget banner whose action is a search.
+        intent.getStringExtra(AnnouncementAction.EXTRA_SEARCH_QUERY)?.let {
+            navController.popBackStack(Routes.MAP, inclusive = false)
+            runSearch(it)
+            intent.removeExtra(AnnouncementAction.EXTRA_SEARCH_QUERY)
         }
     }
 
