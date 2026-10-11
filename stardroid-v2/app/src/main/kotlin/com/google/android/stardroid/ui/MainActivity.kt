@@ -656,7 +656,8 @@ class MainActivity : ComponentActivity() {
     ) {
         // A widget tap (D75) lands on the tapped object's info card. Cards show on the map and
         // over the gallery, and leaving the gallery dismisses its card, so only other screens
-        // return to the map.
+        // return to the map. During the first-run tour there is no map yet; the card appears
+        // when the tour ends and the map is composed.
         intent.getStringExtra(MoonWidget.EXTRA_SHOW_OBJECT_ID)?.let {
             if (navController.currentDestination?.route != Routes.GALLERY) {
                 navController.popBackStack(Routes.MAP, inclusive = false)
