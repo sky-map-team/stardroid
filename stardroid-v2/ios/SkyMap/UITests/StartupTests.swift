@@ -93,9 +93,7 @@ func passStartup(_ app: XCUIApplication) {
 
 /// Types into the focused Compose text field a key at a time, through the app rather than the
 /// field: the field's own `typeText` taps it first (Compose doesn't report it as focused), which
-/// moves the cursor and scrambled the text on the phone. Typing still scrambles now and then
-/// ("Mars" as "Masr"), on the phone and the simulator, so the tests that type can fail
-/// intermittently; see #1104.
+/// moves the cursor and scrambled the text on the phone.
 func typeSlowly(_ element: XCUIElement, _ text: String) {
     XCTAssertTrue(element.exists)
     let app = XCUIApplication()
