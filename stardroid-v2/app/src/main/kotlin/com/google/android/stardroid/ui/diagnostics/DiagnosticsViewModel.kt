@@ -9,6 +9,7 @@
 
 package com.google.android.stardroid.ui.diagnostics
 
+import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.google.android.stardroid.astronomy.LocalFrame
@@ -26,6 +27,7 @@ import com.google.android.stardroid.sensors.SensorStatusSource
 import com.google.android.stardroid.settings.OneEuroEaseOff
 import com.google.android.stardroid.settings.OneEuroSteadiness
 import com.google.android.stardroid.settings.Settings
+import com.google.android.stardroid.ui.map.ReferenceFrame
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.delay
@@ -62,6 +64,16 @@ enum class NetworkStatus {
     CONNECTED_CELL,
 }
 
+/**
+ * Which sensors actually drive orientation. The Gyro setting alone can't say: with no fused
+ * sensor on the device, the legacy path runs whatever the setting is.
+ */
+enum class SensorPath {
+    FUSED,
+    ACCELEROMETER_COMPASS,
+    NONE,
+}
+
 /** One sensor's diagnostics row: absent, or present with its latest reading (if any). */
 sealed class SensorRow {
     data object Absent : SensorRow()
@@ -92,6 +104,14 @@ data class DiagnosticsSnapshot(
     val useMagneticCorrection: Boolean = true,
     val viewDirectionMode: ViewDirectionMode = ViewDirectionMode.STANDARD,
     val dontShowCalibrationDialog: Boolean = false,
+    val sensorPath: SensorPath = SensorPath.FUSED,
+    /** The map's own view of its sensor pipeline (issue #1109), next to the settings above. */
+    val mapReferenceFrame: ReferenceFrame = ReferenceFrame.SENSOR,
+    /** Seconds since the map last took a sensor orientation; null if it never has. */
+    val mapOrientationAgeSeconds: Double? = null,
+    val rejectedSensorSamples: Int = 0,
+    /** Gates the map's sensor listeners: anything below STARTED unregisters them. */
+    val processLifecycleState: Lifecycle.State? = null,
 )
 
 /** [Settings.useMagneticCorrection] plus the rest of [Settings]'s orientation-pipeline knobs. */
@@ -145,7 +165,12 @@ class DiagnosticsViewModel(
     // screens-and-startup.md), which can sit paused while real sensor events keep arriving.
     // A jitter window keyed to a paused clock would never evict old samples.
     private val wallClockMillis: () -> Long = System::currentTimeMillis,
+    private val mapReferenceFrame: () -> ReferenceFrame = { ReferenceFrame.SENSOR },
+    private val lastMapOrientationAtMillis: () -> Long? = { null },
+    private val processLifecycleState: () -> Lifecycle.State? = { null },
 ) : ViewModel() {
+    private val hasRotationVector = sensorStatus.hasSensor(SensorKind.ROTATION_VECTOR)
+
     /** One rate tracker per sensor kind — fed by the same collection [sensors] registers. */
     private val sensorRateAccumulators: Map<SensorKind, SensorRateAccumulator> =
         SensorKind.entries.associateWith { SensorRateAccumulator(SENSOR_RATE_WINDOW_MILLIS) }
@@ -314,6 +339,17 @@ class DiagnosticsViewModel(
                 useMagneticCorrection = orientation.useMagneticCorrection,
                 viewDirectionMode = orientation.viewDirectionMode,
                 dontShowCalibrationDialog = orientation.dontShowCalibrationDialog,
+                sensorPath =
+                    when {
+                        !orientationSource.available -> SensorPath.NONE
+                        hasRotationVector && !orientation.disableGyro -> SensorPath.FUSED
+                        else -> SensorPath.ACCELEROMETER_COMPASS
+                    },
+                mapReferenceFrame = mapReferenceFrame(),
+                mapOrientationAgeSeconds =
+                    lastMapOrientationAtMillis()?.let { (wallClockMillis() - it) / 1000.0 },
+                rejectedSensorSamples = orientationSource.rejectedSampleCount,
+                processLifecycleState = processLifecycleState(),
             )
         }.flowOn(ioContext)
             // Matches the sensor flows' timeout: survives config-change recomposition without

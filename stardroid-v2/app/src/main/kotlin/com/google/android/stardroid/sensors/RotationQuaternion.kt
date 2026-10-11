@@ -74,3 +74,17 @@ internal fun FloatArray.toRotationMatrix3(): Matrix3 {
         2 * (x * z - y * w), 2 * (y * z + x * w), 1 - 2 * (x * x + y * y),
     )
 }
+
+/**
+ * Whether this `(x, y, z, w)` sample is close enough to unit length to be a rotation. Rejects
+ * NaN, infinities and the all-zero sample some sensor stacks emit before they have a fix — any
+ * of which, let through, would leave the map pointing nowhere (issue #1109).
+ */
+internal fun FloatArray.isUsableQuaternion(): Boolean {
+    val norm2 = this[0] * this[0] + this[1] * this[1] + this[2] * this[2] + this[3] * this[3]
+    // A NaN norm fails both comparisons, so this one range check also covers non-finite input.
+    return norm2 in MIN_USABLE_NORM2..MAX_USABLE_NORM2
+}
+
+private const val MIN_USABLE_NORM2 = 0.5f
+private const val MAX_USABLE_NORM2 = 1.5f

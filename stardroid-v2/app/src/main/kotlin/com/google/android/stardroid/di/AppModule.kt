@@ -216,6 +216,9 @@ object AppModule {
         return object : OrientationSource {
             override val available = delegate.available
 
+            override val rejectedSampleCount: Int
+                get() = delegate.rejectedSampleCount
+
             override fun orientations(): Flow<Matrix3> =
                 delegate.orientations().flowWithLifecycle(
                     ProcessLifecycleOwner.get().lifecycle,

@@ -26,6 +26,7 @@ import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.emptyFlow
 import kotlinx.coroutines.flow.flatMapLatest
 import kotlinx.coroutines.flow.flowOf
+import java.util.concurrent.atomic.AtomicInteger
 
 /**
  * [OrientationSource] backed by [SensorManager] — the port of v1's
@@ -55,6 +56,15 @@ class SensorOrientationSource(
 
     override val available: Boolean
         get() = rotationSensor != null || (accelerometer != null && magnetometer != null)
+
+    private val rejectedSamples = AtomicInteger()
+
+    override val rejectedSampleCount: Int
+        get() = rejectedSamples.get()
+
+    /** Whether [quaternion] is fit to emit; a sample that isn't is dropped and counted. */
+    private fun accept(quaternion: FloatArray): Boolean =
+        quaternion.isUsableQuaternion().also { if (!it) rejectedSamples.incrementAndGet() }
 
     @OptIn(ExperimentalCoroutinesApi::class)
     override fun orientations(): Flow<Matrix3> =
@@ -120,6 +130,7 @@ class SensorOrientationSource(
                 object : SensorEventListener {
                     override fun onSensorChanged(event: SensorEvent) {
                         val raw = toQuaternion(event.values, quaternion)
+                        if (!accept(raw)) return
                         val vector = smoother?.update(raw, event.timestamp) ?: raw
                         SensorManager.getRotationMatrixFromVector(rotationMatrix, vector)
                         val remapped = remapToDisplayFrame(rotationMatrix, remappedMatrix)
@@ -152,6 +163,7 @@ class SensorOrientationSource(
                 object : SensorEventListener {
                     override fun onSensorChanged(event: SensorEvent) {
                         val raw = toQuaternion(event.values, quaternion)
+                        if (!accept(raw)) return
                         SensorManager.getRotationMatrixFromVector(rawMatrix, raw)
                         val rawResult = remapToDisplayFrame(rawMatrix, rawRemapped).toMatrix3()
                         val smoothed = smoother?.update(raw, event.timestamp)
@@ -226,6 +238,8 @@ class SensorOrientationSource(
                         val accel = acceleration ?: return
                         val mag = magneticField ?: return
                         val fused = orientationFromSensors(accel, mag) ?: return
+                        val fusedQuaternion = fused.writeQuaternion(quaternion)
+                        if (!accept(fusedQuaternion)) return
                         // Smoothing happens here, on the fused orientation in the natural
                         // frame, rather than on the two raw vectors feeding
                         // orientationFromSensors. v1's per-axis smoothers ran the
@@ -237,7 +251,7 @@ class SensorOrientationSource(
                         // rotation from being smoothed through as though it were movement.
                         val smoothed =
                             smoother
-                                ?.update(fused.writeQuaternion(quaternion), event.timestamp)
+                                ?.update(fusedQuaternion, event.timestamp)
                                 ?.toRotationMatrix3()
                                 ?: fused
                         // ROTATION_0 needs no remap; skip the FloatArray round-trip (two
@@ -293,9 +307,11 @@ class SensorOrientationSource(
                         val accel = acceleration ?: return
                         val mag = magneticField ?: return
                         val fused = orientationFromSensors(accel, mag) ?: return
+                        val fusedQuaternion = fused.writeQuaternion(quaternion)
+                        if (!accept(fusedQuaternion)) return
                         val smoothed =
                             smoother
-                                ?.update(fused.writeQuaternion(quaternion), event.timestamp)
+                                ?.update(fusedQuaternion, event.timestamp)
                                 ?.toRotationMatrix3()
                                 ?: fused
                         val remappedFused =

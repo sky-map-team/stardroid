@@ -65,8 +65,9 @@ class OneEuroQuaternionSmoother(
     private var lastDtSeconds = 0f
 
     /**
-     * Feeds one sample. [raw] is a unit quaternion as `(x, y, z, w)`; [timestampNanos] is the
-     * sensor event's own timestamp. Returns the smoothed quaternion, same form.
+     * Feeds one sample. [raw] is a unit quaternion as `(x, y, z, w)` — callers drop samples that
+     * fail [isUsableQuaternion] — and [timestampNanos] is the sensor event's own timestamp.
+     * Returns the smoothed quaternion, same form.
      */
     fun update(
         raw: FloatArray,
@@ -84,14 +85,7 @@ class OneEuroQuaternionSmoother(
         // backgrounded — resuming from a stale orientation there would drag the view across
         // the sky, where starting fresh costs one frame of smoothing.
         if (prev == null || dtSeconds <= 0f || elapsed > MAX_GAP_SECONDS) {
-            current = raw.copyOf()
-            previousRaw = raw.copyOf()
-            lastTimestampNanos = timestampNanos
-            lastDtSeconds = 0f
-            smoothedVelocity.fill(0f)
-            // Safe to hand back the caller's own array only because it's consumed synchronously
-            // before the next event can overwrite the shared scratch buffer behind it.
-            return raw
+            return restart(raw, timestampNanos)
         }
         lastTimestampNanos = timestampNanos
         lastDtSeconds = dtSeconds
@@ -127,8 +121,25 @@ class OneEuroQuaternionSmoother(
         // opens the cutoff on the very first sample, with no averaging delay.
         val cutoff = minCutoff + beta * max(0f, speed - speedFloor)
         val smoothed = slerp(prev, target, smoothingFactor(cutoff, dtSeconds))
+        // NaN is absorbing: once it reaches the state, every later output is NaN too and the
+        // map stays frozen until the listener is re-registered (issue #1109). Discard the state.
+        if (!smoothed.isUsableQuaternion()) return restart(raw, timestampNanos)
         current = smoothed
         return smoothed
+    }
+
+    private fun restart(
+        raw: FloatArray,
+        timestampNanos: Long,
+    ): FloatArray {
+        current = raw.copyOf()
+        previousRaw = raw.copyOf()
+        lastTimestampNanos = timestampNanos
+        lastDtSeconds = 0f
+        smoothedVelocity.fill(0f)
+        // Safe to hand back the caller's own array only because it's consumed synchronously
+        // before the next event can overwrite the shared scratch buffer behind it.
+        return raw
     }
 
     private val velocityScratch = FloatArray(3)

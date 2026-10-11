@@ -35,6 +35,12 @@ interface OrientationSource {
     val available: Boolean
 
     /**
+     * Sensor samples dropped since startup for not being a rotation at all (NaN, all zeros) —
+     * shown in diagnostics, since a source that only ever produces these looks like a frozen map.
+     */
+    val rejectedSampleCount: Int get() = 0
+
+    /**
      * Orientation samples while collected; registers the underlying sensor listeners on
      * collection and unregisters them on cancellation. Emits nothing when [available] is false.
      */
