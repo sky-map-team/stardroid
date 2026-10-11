@@ -369,6 +369,7 @@ class MainActivity : ComponentActivity() {
                     mapReferenceFrame = { mapViewModel.referenceFrame.value },
                     lastMapOrientationAtMillis = { mapViewModel.lastOrientationAtMillis },
                     processLifecycleState = {
+                        // Runs off the main thread; currentState's getter doesn't check.
                         ProcessLifecycleOwner.get().lifecycle.currentState
                     },
                 )

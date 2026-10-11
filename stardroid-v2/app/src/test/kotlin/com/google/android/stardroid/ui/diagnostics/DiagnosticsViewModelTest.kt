@@ -25,6 +25,7 @@ import com.google.android.stardroid.sensors.OrientationSample
 import com.google.android.stardroid.sensors.OrientationSource
 import com.google.android.stardroid.sensors.SensorAccuracy
 import com.google.android.stardroid.sensors.SensorKind
+import com.google.android.stardroid.sensors.SensorPath
 import com.google.android.stardroid.sensors.SensorReading
 import com.google.android.stardroid.settings.FakeSettings
 import com.google.android.stardroid.settings.OneEuroEaseOff
@@ -120,6 +121,9 @@ class DiagnosticsViewModelTest {
         override val available = true
 
         override var rejectedSampleCount = 0
+
+        // No fused sensor, so the Gyro setting can't select that path.
+        override fun sensorPath(disableGyro: Boolean) = SensorPath.ACCELEROMETER_COMPASS
 
         override fun orientations(): Flow<Matrix3> = throw NotImplementedError("unused in tests")
 
@@ -258,6 +262,16 @@ class DiagnosticsViewModelTest {
             assertThat(viewModel.snapshots.value.mapReferenceFrame).isEqualTo(ReferenceFrame.MANUAL)
             assertThat(viewModel.snapshots.value.mapOrientationAgeSeconds).isWithin(1.0).of(3.0)
             assertThat(viewModel.snapshots.value.rejectedSensorSamples).isEqualTo(4)
+            collector.cancel()
+        }
+
+    @Test
+    fun `orientation age never goes negative when the wall clock steps back`() =
+        testScope.runTest {
+            lastMapOrientationAtMillis = System.currentTimeMillis() + 60_000
+            val collector = launch { viewModel.snapshots.collect {} }
+            runCurrent()
+            assertThat(viewModel.snapshots.value.mapOrientationAgeSeconds).isEqualTo(0.0)
             collector.cancel()
         }
 

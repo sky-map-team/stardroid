@@ -55,6 +55,7 @@ import com.google.android.stardroid.satellites.forceSatelliteFetchForDebugging
 import com.google.android.stardroid.satellites.readSatelliteDiagnostics
 import com.google.android.stardroid.sensors.SensorAccuracy
 import com.google.android.stardroid.sensors.SensorKind
+import com.google.android.stardroid.sensors.SensorPath
 import com.google.android.stardroid.startup.Experiment
 import com.google.android.stardroid.startup.ExperimentConfig
 import com.google.android.stardroid.startup.FetchResult

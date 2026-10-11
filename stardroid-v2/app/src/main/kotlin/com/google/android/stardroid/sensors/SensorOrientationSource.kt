@@ -113,6 +113,15 @@ class SensorOrientationSource(
     private fun usesFusedPath(config: SensorConfig) =
         rotationSensor != null && !config.disableGyro
 
+    // Must match the routing in orientations() and orientationSamples().
+    override fun sensorPath(disableGyro: Boolean): SensorPath =
+        when {
+            sensorManager == null -> SensorPath.NONE
+            rotationSensor != null && !disableGyro -> SensorPath.FUSED
+            accelerometer != null && magnetometer != null -> SensorPath.ACCELEROMETER_COMPASS
+            else -> SensorPath.NONE
+        }
+
     private fun rotationVectorOrientations(
         manager: SensorManager,
         sensor: Sensor,
