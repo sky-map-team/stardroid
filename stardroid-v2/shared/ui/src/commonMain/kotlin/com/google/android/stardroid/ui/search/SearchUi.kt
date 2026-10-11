@@ -21,10 +21,10 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
@@ -33,6 +33,7 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.key
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
@@ -249,7 +250,10 @@ fun SearchDialog(
     viewModel: SearchViewModel,
     onDismiss: () -> Unit,
 ) {
-    val query by viewModel.query.collectAsStateWithLifecycle()
+    // The field keeps its own text rather than showing the view model's: that StateFlow lags a
+    // frame behind the keyboard, and a recomposition in the gap put the cursor back to the start,
+    // so on iOS "Mars" could come out as "arsM" (#1104).
+    var text by remember { mutableStateOf(viewModel.query.value) }
     val suggestions by viewModel.suggestions.collectAsStateWithLifecycle()
     val noResults by viewModel.noResults.collectAsStateWithLifecycle()
     val focusRequester = remember { FocusRequester() }
@@ -265,15 +269,20 @@ fun SearchDialog(
         text = {
             Column {
                 OutlinedTextField(
-                    value = query,
-                    onValueChange = viewModel::setQuery,
+                    value = text,
+                    onValueChange = {
+                        text = it
+                        viewModel.setQuery(it)
+                    },
                     placeholder = { Text(stringResource(Res.string.search_hint)) },
                     // RA/Dec entry was invisible before: show the formats under the field.
                     supportingText = {
                         Text(stringResource(Res.string.search_coordinates_hint))
                     },
                     singleLine = true,
-                    keyboardOptions = KeyboardOptions(imeAction = ImeAction.Search),
+                    // Names aren't words: autocorrect would "fix" them as they're typed.
+                    keyboardOptions =
+                        KeyboardOptions(autoCorrectEnabled = false, imeAction = ImeAction.Search),
                     keyboardActions = KeyboardActions(onSearch = { viewModel.submit() }),
                     modifier =
                         Modifier
@@ -293,9 +302,13 @@ fun SearchDialog(
                         modifier = Modifier.padding(top = 8.dp),
                     )
                 }
-                LazyColumn(Modifier.heightIn(max = 240.dp)) {
-                    items(suggestions, key = { it.id.value }) { hit ->
-                        SuggestionRow(hit, onClick = { viewModel.select(hit) })
+                // Not a LazyColumn: on iOS, a lazy list in a dialog crashed Compose as the
+                // suggestions changed (#1104). There are at most 20, so laziness buys nothing.
+                Column(Modifier.heightIn(max = 240.dp).verticalScroll(rememberScrollState())) {
+                    suggestions.forEach { hit ->
+                        key(hit.id.value) {
+                            SuggestionRow(hit, onClick = { viewModel.select(hit) })
+                        }
                     }
                 }
             }
