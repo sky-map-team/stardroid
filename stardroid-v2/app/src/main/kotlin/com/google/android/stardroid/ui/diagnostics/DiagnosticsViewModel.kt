@@ -22,6 +22,7 @@ import com.google.android.stardroid.render.api.SkyCamera
 import com.google.android.stardroid.sensors.MagneticDeclinationSource
 import com.google.android.stardroid.sensors.OrientationSource
 import com.google.android.stardroid.sensors.SensorKind
+import com.google.android.stardroid.sensors.SensorPath
 import com.google.android.stardroid.sensors.SensorReading
 import com.google.android.stardroid.sensors.SensorStatusSource
 import com.google.android.stardroid.settings.OneEuroEaseOff
@@ -62,16 +63,6 @@ enum class NetworkStatus {
     CONNECTED,
     CONNECTED_WIFI,
     CONNECTED_CELL,
-}
-
-/**
- * Which sensors actually drive orientation. The Gyro setting alone can't say: with no fused
- * sensor on the device, the legacy path runs whatever the setting is.
- */
-enum class SensorPath {
-    FUSED,
-    ACCELEROMETER_COMPASS,
-    NONE,
 }
 
 /** One sensor's diagnostics row: absent, or present with its latest reading (if any). */
@@ -169,8 +160,6 @@ class DiagnosticsViewModel(
     private val lastMapOrientationAtMillis: () -> Long? = { null },
     private val processLifecycleState: () -> Lifecycle.State? = { null },
 ) : ViewModel() {
-    private val hasRotationVector = sensorStatus.hasSensor(SensorKind.ROTATION_VECTOR)
-
     /** One rate tracker per sensor kind — fed by the same collection [sensors] registers. */
     private val sensorRateAccumulators: Map<SensorKind, SensorRateAccumulator> =
         SensorKind.entries.associateWith { SensorRateAccumulator(SENSOR_RATE_WINDOW_MILLIS) }
@@ -339,15 +328,13 @@ class DiagnosticsViewModel(
                 useMagneticCorrection = orientation.useMagneticCorrection,
                 viewDirectionMode = orientation.viewDirectionMode,
                 dontShowCalibrationDialog = orientation.dontShowCalibrationDialog,
-                sensorPath =
-                    when {
-                        !orientationSource.available -> SensorPath.NONE
-                        hasRotationVector && !orientation.disableGyro -> SensorPath.FUSED
-                        else -> SensorPath.ACCELEROMETER_COMPASS
-                    },
+                sensorPath = orientationSource.sensorPath(orientation.disableGyro),
                 mapReferenceFrame = mapReferenceFrame(),
                 mapOrientationAgeSeconds =
-                    lastMapOrientationAtMillis()?.let { (wallClockMillis() - it) / 1000.0 },
+                    lastMapOrientationAtMillis()?.let {
+                        // The wall clock can step backwards (NTP, a manual change).
+                        ((wallClockMillis() - it) / 1000.0).coerceAtLeast(0.0)
+                    },
                 rejectedSensorSamples = orientationSource.rejectedSampleCount,
                 processLifecycleState = processLifecycleState(),
             )

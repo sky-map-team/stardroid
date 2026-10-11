@@ -54,6 +54,7 @@ import com.google.android.stardroid.satellites.forceSatelliteFetchForDebugging
 import com.google.android.stardroid.satellites.readSatelliteDiagnostics
 import com.google.android.stardroid.sensors.SensorAccuracy
 import com.google.android.stardroid.sensors.SensorKind
+import com.google.android.stardroid.sensors.SensorPath
 import com.google.android.stardroid.ui.common.topBarWindowInsets
 import com.google.android.stardroid.ui.map.ReferenceFrame
 import com.google.android.stardroid.ui.theme.StatusColors

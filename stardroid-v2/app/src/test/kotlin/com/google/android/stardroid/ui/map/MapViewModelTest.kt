@@ -22,6 +22,7 @@ import com.google.android.stardroid.math.RADIANS_TO_DEGREES
 import com.google.android.stardroid.math.Vector3
 import com.google.android.stardroid.sensors.MagneticDeclinationSource
 import com.google.android.stardroid.sensors.OrientationSource
+import com.google.android.stardroid.sensors.SensorPath
 import com.google.android.stardroid.sensors.ZeroMagneticDeclinationSource
 import com.google.android.stardroid.settings.FakeSettings
 import com.google.android.stardroid.settings.FontSize
@@ -84,6 +85,8 @@ class MapViewModelTest {
         private val flow: Flow<Matrix3>,
     ) : OrientationSource {
         override fun orientations(): Flow<Matrix3> = flow
+
+        override fun sensorPath(disableGyro: Boolean) = SensorPath.FUSED
     }
 
     @BeforeEach
