@@ -76,6 +76,8 @@
     <string name="layer_param_radec_grid_density_medium_desc" translation_description="Explains the medium celestial grid density: a meridian every 2 hours of right ascension and a circle every 15 degrees of declination.">적경 2시간마다 자오선, 15°마다 원</string>
     <string name="layer_param_radec_grid_density_fine_desc" translation_description="Explains the fine celestial grid density: a meridian every hour of right ascension and a circle every 10 degrees of declination.">적경 1시간마다 자오선, 10°마다 원</string>
     <string name="satellite_description" translation_description="Short description shown on the info card for an artificial satellite.">저궤도 인공위성으로, 어두운 하늘에서 햇빛을 받아 빛납니다. 몇 분 안에 지평선에서 지평선까지 꾸준히 깜빡임 없이 이동합니다.</string>
+    <string name="satellite_search_name_iss" translation_description="Common name of the International Space Station, matched when the user types it in search. Use the name people in this language actually type.">국제 우주 정거장</string>
+    <string name="satellite_search_name_tiangong" translation_description="Common name of the Chinese Tiangong space station, matched when the user types it in search. Use the name people in this language actually type.">톈궁 우주 정거장</string>
     <string name="satellite_next_pass" translation_description="Heading above the next visible pass details on a satellite\'s info card.">다음 가시 통과</string>
     <string name="satellite_pass_when" translation_description="When and how high the next satellite pass will be. %1$s is a time, %2$s is a compass direction, %3$d is an angle in degrees.">%1$s, %2$s에서 떠올라 %3$d°에 도달</string>
     <string name="satellite_pass_magnitude" translation_description="How bright the satellite will be at its peak. %1$.1f is a brightness magnitude.">가장 밝을 때 밝기 %1$.1f등급</string>
@@ -432,6 +434,7 @@
     <string name="diagnostics_gyro_mode" translation_description="Row label in the diagnostics screen for which sensor path supplies device orientation">자이로</string>
     <string name="diagnostics_gyro_fused" translation_description="Value shown for the gyro row when the fused rotation-vector sensor is in use">융합 회전 벡터</string>
     <string name="diagnostics_gyro_disabled" translation_description="Value shown for the gyro row when the rotation-vector sensor is skipped in favour of accelerometer plus compass">가속도계 + 나침반</string>
+    <string name="diagnostics_gyro_none" translation_description="Value shown for the gyro row when the device has no sensors that can supply orientation">없음</string>
     <string name="diagnostics_smoothing" translation_description="Row label in the diagnostics screen for whether orientation smoothing is on">부드럽게 하기</string>
     <string name="diagnostics_steadiness" translation_description="Row label in the diagnostics screen for the orientation smoothing filter's steadiness setting">안정성</string>
     <string name="diagnostics_ease_off" translation_description="Row label in the diagnostics screen for the orientation smoothing filter's ease-off setting">완화</string>
@@ -445,6 +448,15 @@
     <string name="diagnostics_jitter_smoothed" translation_description="Row label in the diagnostics screen for how much the sensor-derived pointing wobbles after smoothing is applied">떨림 (보정됨)</string>
     <!-- tm:omitted name="diagnostics_jitter_format" reason="identical_to_source" -->
     <string name="diagnostics_jitter_pending" translation_description="Value shown for the jitter rows before enough sensor samples have arrived to compute a standard deviation">수집 중…</string>
+    <string name="diagnostics_section_map" translation_description="Section heading in the diagnostics screen for what the sky map itself is doing with the sensor readings">지도</string>
+    <string name="diagnostics_map_mode" translation_description="Row label in the diagnostics screen for whether the map follows the phone\'s sensors or is moved by dragging">모드</string>
+    <string name="diagnostics_map_mode_auto" translation_description="Value shown for the map mode row when the map follows the phone\'s sensors (the app calls this auto mode)">자동 (센서)</string>
+    <string name="diagnostics_map_mode_manual" translation_description="Value shown for the map mode row when the map is moved by dragging (the app calls this manual mode)">수동</string>
+    <string name="diagnostics_map_orientation" translation_description="Row label in the diagnostics screen for how long ago the map last received the phone\'s orientation from its sensors">마지막 방향 업데이트</string>
+    <string name="diagnostics_map_orientation_format" translation_description="Row value in the diagnostics screen giving how long ago the map last received the phone\'s orientation. %1$.1f is a number of seconds.">%1$.1f초 전</string>
+    <string name="diagnostics_map_orientation_none" translation_description="Value shown for the last orientation update row when the map has not received any orientation from the sensors">수신 없음</string>
+    <string name="diagnostics_rejected_samples" translation_description="Row label in the diagnostics screen for how many sensor readings have been thrown away as invalid since the app started">거부된 센서 샘플 (시작 이후)</string>
+    <string name="diagnostics_app_lifecycle" translation_description="Row label in the diagnostics screen for the app\'s technical lifecycle state (for example Started or Resumed), which controls whether sensors are listened to">앱 수명 주기</string>
     <string name="diagnostics_section_location_time" translation_description="Section heading in the diagnostics screen for location and time information">위치 및 시간</string>
     <string name="diagnostics_location_permission" translation_description="Row label in the diagnostics screen showing whether location permission has been granted">위치 권한</string>
     <string name="diagnostics_permission_granted" translation_description="Status value shown when location permission has been granted">허용됨</string>

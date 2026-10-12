@@ -80,6 +80,8 @@
     <string name="satellite_description" translation_description="Short description shown on the info card for an artificial satellite.">
     Karanlık gökyüzünde güneş ışığı alan, alçak Dünya yörüngesindeki yapay bir uydu. Yanıp sönmeden, istikrarlı bir şekilde hareket ederek ufuktan ufuka birkaç dakikada geçer.
     </string>
+    <string name="satellite_search_name_iss" translation_description="Common name of the International Space Station, matched when the user types it in search. Use the name people in this language actually type.">Uluslararası Uzay İstasyonu</string>
+    <string name="satellite_search_name_tiangong" translation_description="Common name of the Chinese Tiangong space station, matched when the user types it in search. Use the name people in this language actually type.">Tiangong Uzay İstasyonu</string>
     <string name="satellite_next_pass" translation_description="Heading above the next visible pass details on a satellite\'s info card.">Sonraki görünür geçiş</string>
     <string name="satellite_pass_when" translation_description="When and how high the next satellite pass will be. %1$s is a time, %2$s is a compass direction, %3$d is an angle in degrees.">%1$s, %2$s yönünden yükseliyor, %3$d° yüksekliğe ulaşıyor</string>
     <string name="satellite_pass_magnitude" translation_description="How bright the satellite will be at its peak. %1$.1f is a brightness magnitude.">En parlak anında %1$.1f kadir</string>
@@ -468,6 +470,7 @@ Tutulma uyarıları: Ay tutulmasından önce bir bildirim.
     <string name="diagnostics_gyro_mode" translation_description="Row label in the diagnostics screen for which sensor path supplies device orientation">Jiroskop</string>
     <string name="diagnostics_gyro_fused" translation_description="Value shown for the gyro row when the fused rotation-vector sensor is in use">Birleştirilmiş dönme vektörü</string>
     <string name="diagnostics_gyro_disabled" translation_description="Value shown for the gyro row when the rotation-vector sensor is skipped in favour of accelerometer plus compass">İvmeölçer + pusula</string>
+    <string name="diagnostics_gyro_none" translation_description="Value shown for the gyro row when the device has no sensors that can supply orientation">Yok</string>
     <string name="diagnostics_smoothing" translation_description="Row label in the diagnostics screen for whether orientation smoothing is on">Yumuşatma</string>
     <string name="diagnostics_steadiness" translation_description="Row label in the diagnostics screen for the orientation smoothing filter's steadiness setting">Kararlılık</string>
     <string name="diagnostics_ease_off" translation_description="Row label in the diagnostics screen for the orientation smoothing filter's ease-off setting">Yavaşlama</string>
@@ -481,6 +484,15 @@ Tutulma uyarıları: Ay tutulmasından önce bir bildirim.
     <string name="diagnostics_jitter_smoothed" translation_description="Row label in the diagnostics screen for how much the sensor-derived pointing wobbles after smoothing is applied">Titreme (yumuşatılmış)</string>
     <!-- tm:omitted name="diagnostics_jitter_format" reason="identical_to_source" -->
     <string name="diagnostics_jitter_pending" translation_description="Value shown for the jitter rows before enough sensor samples have arrived to compute a standard deviation">Toplanıyor…</string>
+    <string name="diagnostics_section_map" translation_description="Section heading in the diagnostics screen for what the sky map itself is doing with the sensor readings">Harita</string>
+    <string name="diagnostics_map_mode" translation_description="Row label in the diagnostics screen for whether the map follows the phone\'s sensors or is moved by dragging">Mod</string>
+    <string name="diagnostics_map_mode_auto" translation_description="Value shown for the map mode row when the map follows the phone\'s sensors (the app calls this auto mode)">Otomatik (sensörler)</string>
+    <string name="diagnostics_map_mode_manual" translation_description="Value shown for the map mode row when the map is moved by dragging (the app calls this manual mode)">Manuel</string>
+    <string name="diagnostics_map_orientation" translation_description="Row label in the diagnostics screen for how long ago the map last received the phone\'s orientation from its sensors">Son yönlendirme güncellemesi</string>
+    <string name="diagnostics_map_orientation_format" translation_description="Row value in the diagnostics screen giving how long ago the map last received the phone\'s orientation. %1$.1f is a number of seconds.">%1$.1fs önce</string>
+    <string name="diagnostics_map_orientation_none" translation_description="Value shown for the last orientation update row when the map has not received any orientation from the sensors">Hiç alınmadı</string>
+    <string name="diagnostics_rejected_samples" translation_description="Row label in the diagnostics screen for how many sensor readings have been thrown away as invalid since the app started">Reddedilen sensör örnekleri (başlangıçtan beri)</string>
+    <string name="diagnostics_app_lifecycle" translation_description="Row label in the diagnostics screen for the app\'s technical lifecycle state (for example Started or Resumed), which controls whether sensors are listened to">Uygulama yaşam döngüsü</string>
     <string name="diagnostics_section_location_time">Konum ve Zaman</string>
     <string name="diagnostics_location_permission">Konum İzni</string>
     <string name="diagnostics_permission_granted">Verildi</string>
