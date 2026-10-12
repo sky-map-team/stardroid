@@ -63,6 +63,11 @@ class SatelliteElementsFlowTest {
                         .collect { seen += it.freshness }
                 }
 
+            // Let the collector read the empty cache first. With a one-hour poll, only the fetch
+            // announcement can produce the second emission.
+            withTimeout(5_000) { while (seen.isEmpty()) delay(20) }
+            assertThat(seen.first()).isEqualTo(ElementFreshness.ABSENT)
+
             repository.refresh()
 
             withTimeout(5_000) { while (ElementFreshness.FRESH !in seen) delay(20) }
@@ -80,6 +85,9 @@ class SatelliteElementsFlowTest {
                     satelliteElementsFlow(repository, pollInterval = 1.hours)
                         .collect { seen += it.tles.map { tle -> tle.noradId } }
                 }
+
+            withTimeout(5_000) { while (seen.isEmpty()) delay(20) }
+            assertThat(seen.first()).isEmpty()
 
             repository.refresh()
 
