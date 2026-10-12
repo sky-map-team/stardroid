@@ -78,6 +78,8 @@
     <string name="satellite_description" translation_description="Short description shown on the info card for an artificial satellite.">
     निचली पृथ्वी कक्षा में एक कृत्रिम उपग्रह, जो अँधेरे आकाश में सूर्य के प्रकाश से जगमगा रहा है। यह कुछ ही मिनटों में क्षितिज से क्षितिज तक लगातार और बिना टिमटिमाए गति करता हुआ पार करता है।
     </string>
+    <string name="satellite_search_name_iss" translation_description="Common name of the International Space Station, matched when the user types it in search. Use the name people in this language actually type.">अंतर्राष्ट्रीय अंतरिक्ष स्टेशन</string>
+    <string name="satellite_search_name_tiangong" translation_description="Common name of the Chinese Tiangong space station, matched when the user types it in search. Use the name people in this language actually type.">तियांगोंग अंतरिक्ष स्टेशन</string>
     <string name="satellite_next_pass" translation_description="Heading above the next visible pass details on a satellite\'s info card.">अगला दृश्यमान पारगमन</string>
     <string name="satellite_pass_when" translation_description="When and how high the next satellite pass will be. %1$s is a time, %2$s is a compass direction, %3$d is an angle in degrees.">%1$s, %2$s से उदय, %3$d° तक पहुँचेगा</string>
     <string name="satellite_pass_magnitude" translation_description="How bright the satellite will be at its peak. %1$.1f is a brightness magnitude.">सबसे चमकीला होने पर परिमाण %1$.1f</string>
@@ -463,6 +465,7 @@
     <string name="diagnostics_gyro_mode" translation_description="Row label in the diagnostics screen for which sensor path supplies device orientation">जायरो</string>
     <string name="diagnostics_gyro_fused" translation_description="Value shown for the gyro row when the fused rotation-vector sensor is in use">फ़्यूज़्ड रोटेशन वेक्टर</string>
     <string name="diagnostics_gyro_disabled" translation_description="Value shown for the gyro row when the rotation-vector sensor is skipped in favour of accelerometer plus compass">एक्सीलेरोमीटर + कम्पास</string>
+    <string name="diagnostics_gyro_none" translation_description="Value shown for the gyro row when the device has no sensors that can supply orientation">कोई नहीं</string>
     <string name="diagnostics_smoothing" translation_description="Row label in the diagnostics screen for whether orientation smoothing is on">स्मूदिंग</string>
     <string name="diagnostics_steadiness" translation_description="Row label in the diagnostics screen for the orientation smoothing filter's steadiness setting">स्थिरता</string>
     <!-- tm:omitted name="diagnostics_ease_off" reason="identical_to_source" -->
@@ -476,6 +479,15 @@
     <string name="diagnostics_jitter_smoothed" translation_description="Row label in the diagnostics screen for how much the sensor-derived pointing wobbles after smoothing is applied">जि़टर (स्मूद किया गया)</string>
     <!-- tm:omitted name="diagnostics_jitter_format" reason="identical_to_source" -->
     <string name="diagnostics_jitter_pending" translation_description="Value shown for the jitter rows before enough sensor samples have arrived to compute a standard deviation">संग्रह किया जा रहा है…</string>
+    <string name="diagnostics_section_map" translation_description="Section heading in the diagnostics screen for what the sky map itself is doing with the sensor readings">मानचित्र</string>
+    <string name="diagnostics_map_mode" translation_description="Row label in the diagnostics screen for whether the map follows the phone\'s sensors or is moved by dragging">मोड</string>
+    <string name="diagnostics_map_mode_auto" translation_description="Value shown for the map mode row when the map follows the phone\'s sensors (the app calls this auto mode)">स्वचालित (सेंसर)</string>
+    <string name="diagnostics_map_mode_manual" translation_description="Value shown for the map mode row when the map is moved by dragging (the app calls this manual mode)">मैन्युअल</string>
+    <string name="diagnostics_map_orientation" translation_description="Row label in the diagnostics screen for how long ago the map last received the phone\'s orientation from its sensors">अंतिम अभिविन्यास अपडेट</string>
+    <string name="diagnostics_map_orientation_format" translation_description="Row value in the diagnostics screen giving how long ago the map last received the phone\'s orientation. %1$.1f is a number of seconds.">%1$.1f सेकंड पहले</string>
+    <string name="diagnostics_map_orientation_none" translation_description="Value shown for the last orientation update row when the map has not received any orientation from the sensors">कोई प्राप्त नहीं हुआ</string>
+    <string name="diagnostics_rejected_samples" translation_description="Row label in the diagnostics screen for how many sensor readings have been thrown away as invalid since the app started">अस्वीकृत सेंसर नमूने (शुरुआत से)</string>
+    <string name="diagnostics_app_lifecycle" translation_description="Row label in the diagnostics screen for the app\'s technical lifecycle state (for example Started or Resumed), which controls whether sensors are listened to">ऐप जीवनचक्र</string>
     <string name="diagnostics_section_location_time">स्थान और समय</string>
     <string name="diagnostics_location_permission">स्थान अनुमति</string>
     <string name="diagnostics_permission_granted">दी गई</string>

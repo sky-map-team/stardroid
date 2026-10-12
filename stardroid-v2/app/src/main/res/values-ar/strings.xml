@@ -78,6 +78,8 @@
     <string name="satellite_description" translation_description="Short description shown on the info card for an artificial satellite.">
     قمر صناعي في مدار أرضي منخفض، مضاء بالشمس في سماء مظلمة. يعبر من الأفق إلى الأفق في بضع دقائق، متحركًا بثبات ودون وميض.
     </string>
+    <string name="satellite_search_name_iss" translation_description="Common name of the International Space Station, matched when the user types it in search. Use the name people in this language actually type.">محطة الفضاء الدولية</string>
+    <string name="satellite_search_name_tiangong" translation_description="Common name of the Chinese Tiangong space station, matched when the user types it in search. Use the name people in this language actually type.">محطة تيانقونغ الفضائية</string>
     <string name="satellite_next_pass" translation_description="Heading above the next visible pass details on a satellite\'s info card.">المرور المرئي التالي</string>
     <string name="satellite_pass_when" translation_description="When and how high the next satellite pass will be. %1$s is a time, %2$s is a compass direction, %3$d is an angle in degrees.">%1$s، يرتفع %2$s، يصل إلى %3$d°</string>
     <string name="satellite_pass_magnitude" translation_description="How bright the satellite will be at its peak. %1$.1f is a brightness magnitude.">القدر %1$.1f في أقصى سطوع له</string>
@@ -456,6 +458,7 @@
     <string name="diagnostics_gyro_mode" translation_description="Row label in the diagnostics screen for which sensor path supplies device orientation">الجيروسكوب</string>
     <string name="diagnostics_gyro_fused" translation_description="Value shown for the gyro row when the fused rotation-vector sensor is in use">متجه الدوران المدمج</string>
     <string name="diagnostics_gyro_disabled" translation_description="Value shown for the gyro row when the rotation-vector sensor is skipped in favour of accelerometer plus compass">مقياس التسارع + البوصلة</string>
+    <string name="diagnostics_gyro_none" translation_description="Value shown for the gyro row when the device has no sensors that can supply orientation">لا شيء</string>
     <string name="diagnostics_smoothing" translation_description="Row label in the diagnostics screen for whether orientation smoothing is on">التنعيم</string>
     <string name="diagnostics_steadiness" translation_description="Row label in the diagnostics screen for the orientation smoothing filter's steadiness setting">الثبات</string>
     <string name="diagnostics_ease_off" translation_description="Row label in the diagnostics screen for the orientation smoothing filter's ease-off setting">معدل التلاشي</string>
@@ -469,6 +472,15 @@
     <string name="diagnostics_jitter_smoothed" translation_description="Row label in the diagnostics screen for how much the sensor-derived pointing wobbles after smoothing is applied">الاهتزاز (ممنّع)</string>
     <string name="diagnostics_jitter_format" translation_description="Row value in the diagnostics screen showing the standard deviation of azimuth and altitude over a trailing window, in degrees. \'az\' abbreviates azimuth, \'alt\' abbreviates altitude, the sigma character denotes standard deviation. %1$.2f is the azimuth standard deviation in degrees, %2$.2f is the altitude standard deviation in degrees.">السمت σ%1$.2f°، الارتفاع σ%2$.2f°</string>
     <string name="diagnostics_jitter_pending" translation_description="Value shown for the jitter rows before enough sensor samples have arrived to compute a standard deviation">جارٍ التجميع…</string>
+    <string name="diagnostics_section_map" translation_description="Section heading in the diagnostics screen for what the sky map itself is doing with the sensor readings">الخريطة</string>
+    <string name="diagnostics_map_mode" translation_description="Row label in the diagnostics screen for whether the map follows the phone\'s sensors or is moved by dragging">الوضع</string>
+    <string name="diagnostics_map_mode_auto" translation_description="Value shown for the map mode row when the map follows the phone\'s sensors (the app calls this auto mode)">تلقائي (مستشعرات)</string>
+    <string name="diagnostics_map_mode_manual" translation_description="Value shown for the map mode row when the map is moved by dragging (the app calls this manual mode)">يدوي</string>
+    <string name="diagnostics_map_orientation" translation_description="Row label in the diagnostics screen for how long ago the map last received the phone\'s orientation from its sensors">آخر تحديث للاتجاه</string>
+    <string name="diagnostics_map_orientation_format" translation_description="Row value in the diagnostics screen giving how long ago the map last received the phone\'s orientation. %1$.1f is a number of seconds.">قبل %1$.1f ثانية</string>
+    <string name="diagnostics_map_orientation_none" translation_description="Value shown for the last orientation update row when the map has not received any orientation from the sensors">لم يتم استلام أي شيء</string>
+    <string name="diagnostics_rejected_samples" translation_description="Row label in the diagnostics screen for how many sensor readings have been thrown away as invalid since the app started">عينات المستشعر المرفوضة (منذ البدء)</string>
+    <string name="diagnostics_app_lifecycle" translation_description="Row label in the diagnostics screen for the app\'s technical lifecycle state (for example Started or Resumed), which controls whether sensors are listened to">دورة حياة التطبيق</string>
     <string name="diagnostics_section_location_time">الموقع والوقت</string>
     <string name="diagnostics_location_permission">إذن الموقع</string>
     <string name="diagnostics_permission_granted">تم منحه</string>
