@@ -22,12 +22,19 @@ android {
         versionCode = 1755
         versionName = "2.2.0:Buran:Beta"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        // D95: CI passes -PskipGlBenchmarks=true, which the D19 perf gate reads to skip
+        // D105: CI passes -PskipGlBenchmarks=true, which the D19 perf gate reads to skip
         // itself. Set through the DSL rather than
         // -Pandroid.testInstrumentationRunnerArguments.*, which AGP warns is incompatible
         // with configuration caching.
         providers.gradleProperty("skipGlBenchmarks").orNull?.let {
             testInstrumentationRunnerArguments["skipGlBenchmarks"] = it
+        }
+        // D140: CI runs RendererPerfTest in a pass of its own, selected the same way.
+        providers.gradleProperty("testClass").orNull?.let {
+            testInstrumentationRunnerArguments["class"] = it
+        }
+        providers.gradleProperty("testNotClass").orNull?.let {
+            testInstrumentationRunnerArguments["notClass"] = it
         }
         resValue(
             "string",
