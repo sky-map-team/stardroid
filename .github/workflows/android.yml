@@ -222,6 +222,8 @@ jobs:
           echo "::warning::Attempt 2 ended without a test failure ($outcome), so retrying on a fresh emulator in 240s."
           sleep 240
 
+      # No status function in `if`: the implicit success() is what skips this after the gate
+      # above exits 1 on a test failure. Don't add always() here.
       - name: Retry connected tests again
         if: steps.attempt2.outcome == 'failure'
         uses: reactivecircus/android-emulator-runner@v2
