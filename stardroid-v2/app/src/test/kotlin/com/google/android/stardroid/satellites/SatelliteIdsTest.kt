@@ -98,6 +98,8 @@ class SatelliteIdsTest {
         assertThat(card.description).isEqualTo("The station")
         assertThat(card.funFact).isEqualTo("A fact")
         assertThat(card.distance).isEqualTo("About 400 km")
+        assertThat(card.size).isEqualTo("109 m")
+        assertThat(card.mass).isEqualTo("420 t")
         assertThat(card.imageRef).isEqualTo("spacecraft/nasa_iss.webp")
         assertThat(card.imageCredit).isEqualTo("NASA")
     }
@@ -107,5 +109,16 @@ class SatelliteIdsTest {
         val live = SatelliteIds.cardFor(issTle, RaDec(1.0, 2.0), description = "generic")
 
         assertThat(SatelliteIds.withCatalogContent(live, null)).isEqualTo(live)
+    }
+
+    @Test
+    fun `a catalog row with no prose falls back to the live card's`() {
+        val live = SatelliteIds.cardFor(issTle, RaDec(1.0, 2.0), description = "generic")
+        val imageOnly = live.copy(description = null, funFact = null, imageRef = "a/b.webp")
+
+        val card = SatelliteIds.withCatalogContent(live, imageOnly)
+
+        assertThat(card.description).isEqualTo("generic")
+        assertThat(card.imageRef).isEqualTo("a/b.webp")
     }
 }

@@ -448,6 +448,36 @@ class ObjectInfoViewModelTest {
         }
 
     @Test
+    fun `a satellite card takes its prose and image from its catalog row`() =
+        testScope.runCurrentTest {
+            repository.infos[ISS_ID] =
+                objectInfo(ISS_ID, "").copy(
+                    description = "The station",
+                    imageRef = "spacecraft/nasa_iss.webp",
+                )
+            val vm = viewModel(satellites = listOf(issAt(RaDec(LOOK_RA, LOOK_DEC))))
+
+            vm.show(ISS_ID)
+            runCurrent()
+
+            assertThat(vm.card.value?.name).isEqualTo("ISS (ZARYA)")
+            assertThat(vm.card.value?.description).isEqualTo("The station")
+            assertThat(vm.card.value?.imageRef).isEqualTo("spacecraft/nasa_iss.webp")
+        }
+
+    @Test
+    fun `a satellite that is not currently tracked has no card despite its catalog row`() =
+        testScope.runCurrentTest {
+            repository.infos[ISS_ID] = objectInfo(ISS_ID, "")
+            val vm = viewModel()
+
+            vm.show(ISS_ID)
+            runCurrent()
+
+            assertThat(vm.card.value).isNull()
+        }
+
+    @Test
     fun `show opens a satellite card by its id, as a widget pass row does`() =
         testScope.runCurrentTest {
             val vm = viewModel(satellites = listOf(issAt(RaDec(LOOK_RA, LOOK_DEC))))

@@ -268,6 +268,19 @@ class CatalogDbGeneratorTest {
     }
 
     @Test
+    fun `satellite cards carry an image but no names, so catalog search never finds them`() {
+        assertThat(
+            queryStrings(
+                "SELECT id FROM celestial_object WHERE type='satellite' " +
+                    "AND image_ref IS NOT NULL ORDER BY id",
+            ),
+        ).containsExactly("satellite/25544", "satellite/48274").inOrder()
+        assertThat(
+            queryInt("SELECT COUNT(*) FROM object_name WHERE object_id LIKE 'satellite/%'"),
+        ).isEqualTo(0)
+    }
+
+    @Test
     fun `every object type is in the shared vocabulary`() {
         assertThat(
             queryStrings(

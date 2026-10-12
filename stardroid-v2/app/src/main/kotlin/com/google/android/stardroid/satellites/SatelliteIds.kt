@@ -48,11 +48,11 @@ object SatelliteIds {
             live.copy(
                 description = catalog.description ?: live.description,
                 funFact = catalog.funFact ?: live.funFact,
-                distance = catalog.distance,
-                size = catalog.size,
-                mass = catalog.mass,
-                imageRef = catalog.imageRef,
-                imageCredit = catalog.imageCredit,
+                distance = catalog.distance ?: live.distance,
+                size = catalog.size ?: live.size,
+                mass = catalog.mass ?: live.mass,
+                imageRef = catalog.imageRef ?: live.imageRef,
+                imageCredit = catalog.imageCredit ?: live.imageCredit,
             )
         }
 

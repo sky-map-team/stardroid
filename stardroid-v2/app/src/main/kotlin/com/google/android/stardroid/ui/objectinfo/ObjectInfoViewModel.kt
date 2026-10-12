@@ -412,10 +412,9 @@ class ObjectInfoViewModel(
      * element set, with any catalog row for it supplying the prose and image. See [SatelliteIds].
      */
     private suspend fun cardFor(id: CelestialObjectId): ObjectInfo? {
-        val catalogCard = catalog().objectInfo(id, locale.value)
-        if (SatelliteIds.noradIdFor(id) == null) return catalogCard
+        if (SatelliteIds.noradIdFor(id) == null) return catalog().objectInfo(id, locale.value)
         val live = satellites().firstOrNull { it.info.id == id }?.info ?: return null
-        return SatelliteIds.withCatalogContent(live, catalogCard)
+        return SatelliteIds.withCatalogContent(live, catalog().objectInfo(id, locale.value))
     }
 
     // A language switch recreates the activity but not this view model, so a card left open
