@@ -73,4 +73,39 @@ class SatelliteIdsTest {
         // no catalog row at all, so claiming one would be a lie the card UI might act on.
         assertThat(SatelliteIds.cardFor(issTle, null, null).layerKind).isNull()
     }
+
+    @Test
+    fun `catalog content is overlaid on the live card without moving it`() {
+        val position = RaDec(123.4, -12.3)
+        val live = SatelliteIds.cardFor(issTle, position, description = "generic")
+        val catalogRow =
+            live.copy(
+                name = "",
+                position = null,
+                description = "The station",
+                funFact = "A fact",
+                distance = "About 400 km",
+                size = "109 m",
+                mass = "420 t",
+                imageRef = "spacecraft/nasa_iss.webp",
+                imageCredit = "NASA",
+            )
+
+        val card = SatelliteIds.withCatalogContent(live, catalogRow)
+
+        assertThat(card.name).isEqualTo("ISS (ZARYA)")
+        assertThat(card.position).isEqualTo(position)
+        assertThat(card.description).isEqualTo("The station")
+        assertThat(card.funFact).isEqualTo("A fact")
+        assertThat(card.distance).isEqualTo("About 400 km")
+        assertThat(card.imageRef).isEqualTo("spacecraft/nasa_iss.webp")
+        assertThat(card.imageCredit).isEqualTo("NASA")
+    }
+
+    @Test
+    fun `a satellite with no catalog row keeps its generic card`() {
+        val live = SatelliteIds.cardFor(issTle, RaDec(1.0, 2.0), description = "generic")
+
+        assertThat(SatelliteIds.withCatalogContent(live, null)).isEqualTo(live)
+    }
 }

@@ -35,14 +35,14 @@ If `$ARGUMENTS` is empty, ask the user:
 
 1. **Source image** — local path or URL
 2. **Output path** — `<category>/<filename>` without extension.
-   Valid categories: `constellations`, `stars`, `deep_sky_objects`, `planets`.
+   Valid categories: `constellations`, `stars`, `deep_sky_objects`, `planets`, `spacecraft`.
    Suggest a name based on the subject (e.g. `deep_sky_objects/hubble_m42`).
 3. **Crop** (optional) — `x1,y1,x2,y2` to extract a sub-region before resizing.
    Skip if the subject is already well-centred and the image is in portrait or square orientation.
 
 **Validate before proceeding — reject and ask again if any check fails:**
 
-- **Category**: must be exactly one of `constellations`, `stars`, `deep_sky_objects`, `planets`.
+- **Category**: must be exactly one of `constellations`, `stars`, `deep_sky_objects`, `planets`, `spacecraft`.
 - **Name** (filename part): must match `[a-z0-9_]+` only.
 - **Crop**: if provided, must be exactly four tokens that are each non-negative integers.
 - **URLs**: must begin with `https://`. Reject `http://`, `file://`, and all other schemes.
@@ -247,7 +247,7 @@ category = cfg['category']
 name     = cfg['name']
 out      = cfg['out_path']
 
-VALID_CATEGORIES = {'constellations', 'stars', 'deep_sky_objects', 'planets'}
+VALID_CATEGORIES = {'constellations', 'stars', 'deep_sky_objects', 'planets', 'spacecraft'}
 if category not in VALID_CATEGORIES:
     raise SystemExit(f'invalid category: {category!r}')
 if not re.fullmatch(r'[a-z0-9_]+', name):
@@ -301,6 +301,7 @@ All-Rights-Reserved branding license — celestial imagery here follows its sour
 | `stars/` | `eso_alioth`, `eso_sirius` |
 | `constellations/` | `iau_andromeda`, `iau_orion` |
 | `planets/` | `galileo_io`, `cassini_titan`, `voyager_ariel`, `nasa_deimos` |
+| `spacecraft/` | `nasa_iss`, `cmseo_tiangong` |
 
 Use `<source_agency_or_mission>_<subject>` in lowercase with underscores.
 

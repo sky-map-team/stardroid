@@ -261,7 +261,7 @@ class CatalogDbGeneratorTest {
     fun `info cards cover english plus translations`() {
         assertThat(
             queryInt("SELECT COUNT(*) FROM info_card WHERE locale='en'"),
-        ).isEqualTo(339)
+        ).isEqualTo(341)
         assertThat(
             queryInt("SELECT COUNT(DISTINCT locale) FROM info_card"),
         ).isAtLeast(25)
