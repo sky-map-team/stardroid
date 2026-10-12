@@ -389,6 +389,7 @@
     <string name="diagnostics_gyro_mode" translation_description="Row label in the diagnostics screen for which sensor path supplies device orientation">ไจโรสโคป</string>
     <string name="diagnostics_gyro_fused" translation_description="Value shown for the gyro row when the fused rotation-vector sensor is in use">เวกเตอร์การหมุนแบบผสาน</string>
     <string name="diagnostics_gyro_disabled" translation_description="Value shown for the gyro row when the rotation-vector sensor is skipped in favour of accelerometer plus compass">มาตรความเร่ง + เข็มทิศ</string>
+    <string name="diagnostics_gyro_none" translation_description="Value shown for the gyro row when the device has no sensors that can supply orientation">ไม่มี</string>
     <string name="diagnostics_smoothing" translation_description="Row label in the diagnostics screen for whether orientation smoothing is on">การทำให้ราบรื่น</string>
     <string name="diagnostics_steadiness" translation_description="Row label in the diagnostics screen for the orientation smoothing filter's steadiness setting">ความนิ่ง</string>
     <string name="diagnostics_ease_off" translation_description="Row label in the diagnostics screen for the orientation smoothing filter's ease-off setting">ความเร็วในการคลาย</string>
@@ -402,6 +403,15 @@
     <string name="diagnostics_jitter_smoothed" translation_description="Row label in the diagnostics screen for how much the sensor-derived pointing wobbles after smoothing is applied">ความสั่น (ทำให้ราบรื่นแล้ว)</string>
     <!-- tm:omitted name="diagnostics_jitter_format" reason="identical_to_source" -->
     <string name="diagnostics_jitter_pending" translation_description="Value shown for the jitter rows before enough sensor samples have arrived to compute a standard deviation">กำลังรวบรวม…</string>
+    <string name="diagnostics_section_map" translation_description="Section heading in the diagnostics screen for what the sky map itself is doing with the sensor readings">แผนที่</string>
+    <string name="diagnostics_map_mode" translation_description="Row label in the diagnostics screen for whether the map follows the phone\'s sensors or is moved by dragging">โหมด</string>
+    <string name="diagnostics_map_mode_auto" translation_description="Value shown for the map mode row when the map follows the phone\'s sensors (the app calls this auto mode)">อัตโนมัติ (เซ็นเซอร์)</string>
+    <string name="diagnostics_map_mode_manual" translation_description="Value shown for the map mode row when the map is moved by dragging (the app calls this manual mode)">กำหนดเอง</string>
+    <string name="diagnostics_map_orientation" translation_description="Row label in the diagnostics screen for how long ago the map last received the phone\'s orientation from its sensors">อัปเดตการวางแนวล่าสุด</string>
+    <string name="diagnostics_map_orientation_format" translation_description="Row value in the diagnostics screen giving how long ago the map last received the phone\'s orientation. %1$.1f is a number of seconds.">เมื่อ %1$.1f วินาทีที่แล้ว</string>
+    <string name="diagnostics_map_orientation_none" translation_description="Value shown for the last orientation update row when the map has not received any orientation from the sensors">ไม่ได้รับ</string>
+    <string name="diagnostics_rejected_samples" translation_description="Row label in the diagnostics screen for how many sensor readings have been thrown away as invalid since the app started">ตัวอย่างเซ็นเซอร์ที่ถูกปฏิเสธ (ตั้งแต่เริ่มต้น)</string>
+    <string name="diagnostics_app_lifecycle" translation_description="Row label in the diagnostics screen for the app\'s technical lifecycle state (for example Started or Resumed), which controls whether sensors are listened to">วงจรชีวิตของแอป</string>
     <string name="diagnostics_section_location_time">ตำแหน่งและเวลา</string>
     <string name="diagnostics_location_permission">สิทธิ์การเข้าถึงตำแหน่ง</string>
     <string name="diagnostics_permission_granted">อนุญาต</string>

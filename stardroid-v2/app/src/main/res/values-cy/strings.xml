@@ -417,6 +417,7 @@ cael ei osod.
     <!-- tm:omitted name="diagnostics_gyro_mode" reason="identical_to_source" -->
     <string name="diagnostics_gyro_fused" translation_description="Value shown for the gyro row when the fused rotation-vector sensor is in use">Fector cylchdro cyfun</string>
     <string name="diagnostics_gyro_disabled" translation_description="Value shown for the gyro row when the rotation-vector sensor is skipped in favour of accelerometer plus compass">Mesurydd cyflymiad + cwmpas</string>
+    <string name="diagnostics_gyro_none" translation_description="Value shown for the gyro row when the device has no sensors that can supply orientation">Dim</string>
     <string name="diagnostics_smoothing" translation_description="Row label in the diagnostics screen for whether orientation smoothing is on">Llyfnu</string>
     <string name="diagnostics_steadiness" translation_description="Row label in the diagnostics screen for the orientation smoothing filter's steadiness setting">Cadernid</string>
     <string name="diagnostics_ease_off" translation_description="Row label in the diagnostics screen for the orientation smoothing filter's ease-off setting">Lleddfu</string>
@@ -430,6 +431,15 @@ cael ei osod.
     <string name="diagnostics_jitter_smoothed" translation_description="Row label in the diagnostics screen for how much the sensor-derived pointing wobbles after smoothing is applied">Siglen (wedi\'i lyfnu)</string>
     <!-- tm:omitted name="diagnostics_jitter_format" reason="identical_to_source" -->
     <string name="diagnostics_jitter_pending" translation_description="Value shown for the jitter rows before enough sensor samples have arrived to compute a standard deviation">Yn casglu…</string>
+    <!-- tm:omitted name="diagnostics_section_map" reason="identical_to_source" -->
+    <string name="diagnostics_map_mode" translation_description="Row label in the diagnostics screen for whether the map follows the phone\'s sensors or is moved by dragging">Modd</string>
+    <string name="diagnostics_map_mode_auto" translation_description="Value shown for the map mode row when the map follows the phone\'s sensors (the app calls this auto mode)">Awtomatig (synwyryddion)</string>
+    <string name="diagnostics_map_mode_manual" translation_description="Value shown for the map mode row when the map is moved by dragging (the app calls this manual mode)">Llaw</string>
+    <string name="diagnostics_map_orientation" translation_description="Row label in the diagnostics screen for how long ago the map last received the phone\'s orientation from its sensors">Diweddariad cyfeiriadedd diwethaf</string>
+    <string name="diagnostics_map_orientation_format" translation_description="Row value in the diagnostics screen giving how long ago the map last received the phone\'s orientation. %1$.1f is a number of seconds.">%1$.1fs yn ôl</string>
+    <string name="diagnostics_map_orientation_none" translation_description="Value shown for the last orientation update row when the map has not received any orientation from the sensors">Dim wedi\'i dderbyn</string>
+    <string name="diagnostics_rejected_samples" translation_description="Row label in the diagnostics screen for how many sensor readings have been thrown away as invalid since the app started">Samplau synhwyrydd a wrthodwyd (ers y dechrau)</string>
+    <string name="diagnostics_app_lifecycle" translation_description="Row label in the diagnostics screen for the app\'s technical lifecycle state (for example Started or Resumed), which controls whether sensors are listened to">Cylch bywyd ap</string>
     <string name="diagnostics_section_location_time">Lleoliad ac amser</string>
     <string name="diagnostics_location_permission">Caniatâd Lleoliad</string>
     <string name="diagnostics_permission_granted">Caniatawyd</string>

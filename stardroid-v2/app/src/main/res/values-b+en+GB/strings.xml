@@ -362,6 +362,7 @@
     <!-- tm:omitted name="diagnostics_gyro_mode" reason="identical_to_source" -->
     <!-- tm:omitted name="diagnostics_gyro_fused" reason="identical_to_source" -->
     <!-- tm:omitted name="diagnostics_gyro_disabled" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_gyro_none" reason="identical_to_source" -->
     <!-- tm:omitted name="diagnostics_smoothing" reason="identical_to_source" -->
     <!-- tm:omitted name="diagnostics_steadiness" reason="identical_to_source" -->
     <!-- tm:omitted name="diagnostics_ease_off" reason="identical_to_source" -->
@@ -375,6 +376,15 @@
     <!-- tm:omitted name="diagnostics_jitter_smoothed" reason="identical_to_source" -->
     <!-- tm:omitted name="diagnostics_jitter_format" reason="identical_to_source" -->
     <!-- tm:omitted name="diagnostics_jitter_pending" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_section_map" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_map_mode" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_map_mode_auto" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_map_mode_manual" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_map_orientation" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_map_orientation_format" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_map_orientation_none" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_rejected_samples" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_app_lifecycle" reason="identical_to_source" -->
     <!-- tm:omitted name="diagnostics_section_location_time" reason="identical_to_source" -->
     <!-- tm:omitted name="diagnostics_location_permission" reason="identical_to_source" -->
     <!-- tm:omitted name="diagnostics_permission_granted" reason="identical_to_source" -->
