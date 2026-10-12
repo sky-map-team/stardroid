@@ -301,7 +301,7 @@ All-Rights-Reserved branding license — celestial imagery here follows its sour
 | `stars/` | `eso_alioth`, `eso_sirius` |
 | `constellations/` | `iau_andromeda`, `iau_orion` |
 | `planets/` | `galileo_io`, `cassini_titan`, `voyager_ariel`, `nasa_deimos` |
-| `spacecraft/` | `nasa_iss`, `cmseo_tiangong` |
+| `spacecraft/` | `nasa_iss`, `wikimedia_tiangong` |
 
 Use `<source_agency_or_mission>_<subject>` in lowercase with underscores.
 
