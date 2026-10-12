@@ -10,12 +10,6 @@
 package com.google.android.stardroid.data.satellites
 
 import com.google.common.truth.Truth.assertThat
-import kotlinx.coroutines.CoroutineStart
-import kotlinx.coroutines.async
-import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.runBlocking
-import kotlinx.coroutines.withTimeout
-import kotlinx.coroutines.withTimeoutOrNull
 import kotlinx.datetime.Clock
 import kotlinx.datetime.Instant
 import org.junit.jupiter.api.Test
@@ -83,37 +77,27 @@ class SatelliteElementsRepositoryTest {
     }
 
     @Test
-    fun `a completed fetch is announced on updates so observers need not wait for a poll`() =
-        runBlocking {
-            val clock = FakeClock(Instant.parse("2026-08-15T12:00:00Z"))
-            val client = FakeClient(FetchOutcome.Success(issElements, null))
-            val repository = repository(client, clock)
+    fun `a completed fetch is counted so observers need not wait for a poll`() {
+        val clock = FakeClock(Instant.parse("2026-08-15T12:00:00Z"))
+        val repository = repository(FakeClient(FetchOutcome.Success(issElements, null)), clock)
+        assertThat(repository.fetchCount.value).isEqualTo(0)
 
-            val announced =
-                async(start = CoroutineStart.UNDISPATCHED) {
-                    withTimeout(5_000) { repository.updates.first() }
-                }
-            repository.refresh()
+        repository.refresh()
 
-            assertThat(announced.await()).isEqualTo(Unit)
-        }
+        assertThat(repository.fetchCount.value).isEqualTo(1)
+    }
 
     @Test
-    fun `a refresh the policy skips announces nothing`() =
-        runBlocking {
-            val clock = FakeClock(Instant.parse("2026-08-15T12:00:00Z"))
-            val repository = repository(FakeClient(FetchOutcome.Success(issElements, null)), clock)
-            repository.refresh()
+    fun `a refresh the policy skips is not counted`() {
+        val clock = FakeClock(Instant.parse("2026-08-15T12:00:00Z"))
+        val repository = repository(FakeClient(FetchOutcome.Success(issElements, null)), clock)
+        repository.refresh()
 
-            val announced =
-                async(start = CoroutineStart.UNDISPATCHED) {
-                    withTimeoutOrNull(200) { repository.updates.first() }
-                }
-            // Inside the two-hour minimum interval, so this is skipped rather than fetched.
-            assertThat(repository.refresh()).isInstanceOf(RefreshResult.Skipped::class.java)
+        // Inside the two-hour minimum interval, so this is skipped rather than fetched.
+        assertThat(repository.refresh()).isInstanceOf(RefreshResult.Skipped::class.java)
 
-            assertThat(announced.await()).isNull()
-        }
+        assertThat(repository.fetchCount.value).isEqualTo(1)
+    }
 
     @Test
     fun `nothing cached reports an absent state rather than an empty success`() {

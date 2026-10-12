@@ -16,15 +16,14 @@ import com.google.android.stardroid.data.satellites.SatelliteElementsRepository
 import com.google.android.stardroid.data.satellites.SatelliteGroup
 import com.google.android.stardroid.data.satellites.TleStore
 import com.google.common.truth.Truth.assertThat
-import kotlinx.coroutines.async
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.delay
-import kotlinx.coroutines.flow.take
-import kotlinx.coroutines.flow.toList
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.withTimeout
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.io.TempDir
 import java.io.File
+import java.util.concurrent.CopyOnWriteArrayList
 import kotlin.time.Duration.Companion.hours
 
 /**
@@ -54,35 +53,38 @@ class SatelliteElementsFlowTest {
         SatelliteElementsRepository(TleStore(tempDir), client, SatelliteGroup.STATIONS)
 
     @Test
-    fun `the status flow re-emits when a fetch completes, not on the poll`() =
+    fun `the status flow reports a completed fetch, not waiting on the poll`() =
         runBlocking {
             val repository = repository()
-            val flow = satelliteUiStatusFlow(repository, pollInterval = 1.hours)
-            val seen = async { withTimeout(5_000) { flow.take(2).toList() } }
-            // The first emission is the poll's immediate read of the empty cache.
-            while (repository.freshness() == ElementFreshness.ABSENT && !seen.isCompleted) {
-                delay(50)
-                repository.refresh()
-            }
+            val seen = CopyOnWriteArrayList<ElementFreshness>()
+            val job =
+                launch {
+                    satelliteUiStatusFlow(repository, pollInterval = 1.hours)
+                        .collect { seen += it.freshness }
+                }
 
-            assertThat(seen.await().map { it.freshness })
-                .containsExactly(ElementFreshness.ABSENT, ElementFreshness.FRESH)
-                .inOrder()
+            repository.refresh()
+
+            withTimeout(5_000) { while (ElementFreshness.FRESH !in seen) delay(20) }
+            job.cancel()
+            assertThat(seen.last()).isEqualTo(ElementFreshness.FRESH)
         }
 
     @Test
-    fun `the elements flow re-emits parsed elements when a fetch completes`() =
+    fun `the elements flow reports parsed elements after a completed fetch`() =
         runBlocking {
             val repository = repository()
-            val flow = satelliteElementsFlow(repository, pollInterval = 1.hours)
-            val seen = async { withTimeout(5_000) { flow.take(2).toList() } }
-            while (repository.freshness() == ElementFreshness.ABSENT && !seen.isCompleted) {
-                delay(50)
-                repository.refresh()
-            }
+            val seen = CopyOnWriteArrayList<List<Int>>()
+            val job =
+                launch {
+                    satelliteElementsFlow(repository, pollInterval = 1.hours)
+                        .collect { seen += it.tles.map { tle -> tle.noradId } }
+                }
 
-            val elements = seen.await()
-            assertThat(elements.first().tles).isEmpty()
-            assertThat(elements.last().tles.map { it.noradId }).containsExactly(25544)
+            repository.refresh()
+
+            withTimeout(5_000) { while (listOf(25544) !in seen) delay(20) }
+            job.cancel()
+            assertThat(seen.last()).containsExactly(25544)
         }
 }

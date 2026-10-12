@@ -29,7 +29,7 @@ import kotlin.time.Duration.Companion.minutes
  * Polling rather than observing the file because the thing being watched changes at most twice a
  * day: the fetch job runs on a 12-hour period, so a five-minute poll is already far finer-grained
  * than the data it is watching, and a `FileObserver` would be machinery earning nothing. The
- * repository's `updates` covers the one case the poll is too slow for: the first fetch landing,
+ * repository's `fetchCount` covers the one case the poll is too slow for: the first fetch landing,
  * or a manual refresh, while the app is open.
  *
  * Deliberately **not** driven by the map clock. The clock ticks for every frame of satellite
@@ -57,7 +57,7 @@ private fun refreshTriggers(
                 delay(pollInterval)
             }
         },
-        repository.updates,
+        repository.fetchCount.map { },
     )
 
 private val POLL_INTERVAL = 5.minutes

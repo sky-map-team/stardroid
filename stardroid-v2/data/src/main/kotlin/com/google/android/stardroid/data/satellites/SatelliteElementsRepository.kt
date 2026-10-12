@@ -10,10 +10,10 @@
 package com.google.android.stardroid.data.satellites
 
 import com.google.android.stardroid.astronomy.Tle
-import kotlinx.coroutines.channels.BufferOverflow
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.MutableSharedFlow
-import kotlinx.coroutines.flow.asSharedFlow
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.update
 import kotlinx.datetime.Clock
 import kotlinx.datetime.Instant
 import kotlin.time.Duration
@@ -71,14 +71,15 @@ class SatelliteElementsRepository(
     private val group: SatelliteGroup = SatelliteGroup.STATIONS,
     private val clock: Clock = Clock.System,
 ) {
-    private val fetchCompletions =
-        MutableSharedFlow<Unit>(extraBufferCapacity = 1, onBufferOverflow = BufferOverflow.DROP_OLDEST)
+    private val completedFetches = MutableStateFlow(0)
 
     /**
-     * Emits after every fetch that was actually attempted (not one the policy skipped), so observers re-read at once instead of
-     * waiting for their poll. A trigger only: collectors read [current] / [freshness] themselves.
+     * Counts fetches actually attempted (not ones the policy skipped), so observers re-read at
+     * once instead of waiting for a poll. A StateFlow rather than an event stream: a collector
+     * that subscribes late still sees the latest count, so a completion can never fall in the
+     * gap before it starts listening. Read [current] / [freshness] for the data itself.
      */
-    val updates: Flow<Unit> = fetchCompletions.asSharedFlow()
+    val fetchCount: StateFlow<Int> = completedFetches.asStateFlow()
 
     /**
      * The cached elements, parsed, with their freshness. Never hits the network, so it is safe on
@@ -223,7 +224,7 @@ class SatelliteElementsRepository(
 
         val updated = SatelliteFetchPolicy.afterOutcome(state, outcome, now)
         runCatching { store.writeState(updated) }
-        fetchCompletions.tryEmit(Unit)
+        completedFetches.update { it + 1 }
         return RefreshResult.Completed(outcome, updated, previousState = state)
     }
 
