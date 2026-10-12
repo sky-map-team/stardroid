@@ -169,6 +169,7 @@ jobs:
         if: steps.avd1.outcome == 'failure'
         uses: ./.github/actions/emulator-run
         with:
+          force-avd-creation: 'true'
           api-level: ${{ matrix.api-level }}
           target: ${{ matrix.target }}
           emulator-build: ${{ env.EMULATOR_BUILD }}
