@@ -69,7 +69,7 @@ class RendererPerfTest {
 
         /**
          * Instrumentation argument that disables the D19 GL benchmark gate. Set by
-         * `android.yml` for the CI emulator only — see [assumeGlBenchmarksSupported].
+         * `tools/run_connected_tests.sh` on CI only — see [assumeGlBenchmarksSupported].
          */
         private const val ARG_SKIP_GL_BENCHMARKS = "skipGlBenchmarks"
 
@@ -211,7 +211,9 @@ class RendererPerfTest {
      * that inspects the live GL context comes far too late to help. It is the 100k-point scene
      * under RENDERMODE_CONTINUOUSLY that does it, not the translucent surface: with the AR
      * variant skipped, the opaque one died in exactly the same way. WHEN_DIRTY rendering of the
-     * real catalog ([firstFrameRenderedAfterSceneSubmission]) is unaffected and still runs on CI.
+     * real catalog ([firstFrameRenderedAfterSceneSubmission]) still runs on CI but is not immune:
+     * the emulator sometimes dies as that test tears its surface down, so CI runs this class in
+     * a pass of its own and retries a lost emulator once (D140).
      *
      * Not software rendering as such — a local `-gpu swiftshader_indirect` AVD runs both
      * variants to completion.
