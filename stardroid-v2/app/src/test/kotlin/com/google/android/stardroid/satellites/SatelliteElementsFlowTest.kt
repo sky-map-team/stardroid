@@ -63,16 +63,19 @@ class SatelliteElementsFlowTest {
                         .collect { seen += it.freshness }
                 }
 
-            // Let the collector read the empty cache first. With a one-hour poll, only the fetch
-            // announcement can produce the second emission.
-            withTimeout(5_000) { while (seen.isEmpty()) delay(20) }
-            assertThat(seen.first()).isEqualTo(ElementFreshness.ABSENT)
+            try {
+                // Let the collector read the empty cache first. With a one-hour poll, only the fetch
+                // announcement can produce the second emission.
+                withTimeout(5_000) { while (seen.isEmpty()) delay(20) }
+                assertThat(seen.first()).isEqualTo(ElementFreshness.ABSENT)
 
-            repository.refresh()
+                repository.refresh()
 
-            withTimeout(5_000) { while (ElementFreshness.FRESH !in seen) delay(20) }
-            job.cancel()
-            assertThat(seen.last()).isEqualTo(ElementFreshness.FRESH)
+                withTimeout(5_000) { while (ElementFreshness.FRESH !in seen) delay(20) }
+                assertThat(seen.last()).isEqualTo(ElementFreshness.FRESH)
+            } finally {
+                job.cancel()
+            }
         }
 
     @Test
@@ -86,13 +89,16 @@ class SatelliteElementsFlowTest {
                         .collect { seen += it.tles.map { tle -> tle.noradId } }
                 }
 
-            withTimeout(5_000) { while (seen.isEmpty()) delay(20) }
-            assertThat(seen.first()).isEmpty()
+            try {
+                withTimeout(5_000) { while (seen.isEmpty()) delay(20) }
+                assertThat(seen.first()).isEmpty()
 
-            repository.refresh()
+                repository.refresh()
 
-            withTimeout(5_000) { while (listOf(25544) !in seen) delay(20) }
-            job.cancel()
-            assertThat(seen.last()).containsExactly(25544)
+                withTimeout(5_000) { while (listOf(25544) !in seen) delay(20) }
+                assertThat(seen.last()).containsExactly(25544)
+            } finally {
+                job.cancel()
+            }
         }
 }
