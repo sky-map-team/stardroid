@@ -58,7 +58,7 @@ jobs:
   connected_test:
     needs: build_and_unit_test
     runs-on: ubuntu-latest
-    timeout-minutes: 50
+    timeout-minutes: 70
     defaults:
       run:
         working-directory: ./stardroid-v2
@@ -143,42 +143,58 @@ jobs:
             ~/.android/adb*
           key: avd-${{ matrix.api-level }}-${{ matrix.target }}-x86_64-emu${{ env.EMULATOR_BUILD }}-${{ env.EMULATOR_GPU }}
 
+      # Like the test attempts below, one retry after a pause: the action's SDK download is
+      # what dies when dl.google.com has a bad spell. The cache is only saved on success.
       - name: Create AVD and generate snapshot for caching
+        id: avd1
         if: steps.avd-cache.outputs.cache-hit != 'true'
-        uses: reactivecircus/android-emulator-runner@v2
+        continue-on-error: true
+        uses: ./.github/actions/emulator-run
         with:
           api-level: ${{ matrix.api-level }}
           target: ${{ matrix.target }}
-          arch: x86_64
-          force-avd-creation: false
-          emulator-boot-timeout: 1200
           emulator-build: ${{ env.EMULATOR_BUILD }}
-          emulator-options: -no-window -gpu ${{ env.EMULATOR_GPU }} -noaudio -no-boot-anim -camera-back none -memory 2048 -partition-size 512
-          disable-animations: false
-          profile: Nexus 6
-          working-directory: ./stardroid-v2
+          gpu: ${{ env.EMULATOR_GPU }}
+          save-snapshot: 'true'
+          disable-animations: 'false'
           script: echo "Generated AVD snapshot for caching."
 
-      # A lost emulator gets one retry on a fresh one; a test failure doesn't.
+      - name: Pause before retrying the AVD snapshot
+        if: steps.avd1.outcome == 'failure'
+        run: |
+          echo "::warning::Creating the AVD snapshot failed, so retrying on a fresh emulator in 90s."
+          sleep 90
+
+      - name: Create AVD and generate snapshot for caching (retry)
+        if: steps.avd1.outcome == 'failure'
+        uses: ./.github/actions/emulator-run
+        with:
+          force-avd-creation: 'true'
+          api-level: ${{ matrix.api-level }}
+          target: ${{ matrix.target }}
+          emulator-build: ${{ env.EMULATOR_BUILD }}
+          gpu: ${{ env.EMULATOR_GPU }}
+          save-snapshot: 'true'
+          disable-animations: 'false'
+          script: echo "Generated AVD snapshot for caching."
+
+      # A lost emulator gets up to two retries on a fresh one; a test failure doesn't.
       # run_connected_tests.sh records which it was (D140).
       - name: Run connected tests
         id: attempt1
         continue-on-error: true
-        uses: reactivecircus/android-emulator-runner@v2
+        uses: ./.github/actions/emulator-run
         with:
           api-level: ${{ matrix.api-level }}
           target: ${{ matrix.target }}
-          arch: x86_64
-          force-avd-creation: false
-          emulator-boot-timeout: 1200
           emulator-build: ${{ env.EMULATOR_BUILD }}
-          emulator-options: -no-snapshot-save -no-window -gpu ${{ env.EMULATOR_GPU }} -noaudio -no-boot-anim -camera-back none -memory 2048 -partition-size 512
-          disable-animations: true
-          profile: Nexus 6
-          working-directory: ./stardroid-v2
+          gpu: ${{ env.EMULATOR_GPU }}
           script: bash tools/run_connected_tests.sh 1
 
-      # No outcome file means the emulator never came up, which is worth a retry too.
+      # No outcome file means the emulator never came up (or the SDK download died, as it
+      # does when dl.google.com has a bad spell), which is worth a retry too. The pause gives
+      # such an outage time to pass; the action re-downloads the SDK on every invocation, so
+      # caching it wouldn't help.
       - name: Fail on test failures, retry on a lost emulator
         if: steps.attempt1.outcome == 'failure'
         run: |
@@ -187,23 +203,43 @@ jobs:
             echo "::error::Connected tests failed; not retrying."
             exit 1
           fi
-          echo "::warning::Attempt 1 ended without a test failure ($outcome), so retrying on a fresh emulator."
+          echo "::warning::Attempt 1 ended without a test failure ($outcome), so retrying on a fresh emulator in 90s."
+          sleep 90
 
       - name: Retry connected tests
+        id: attempt2
         if: steps.attempt1.outcome == 'failure'
-        uses: reactivecircus/android-emulator-runner@v2
+        continue-on-error: true
+        uses: ./.github/actions/emulator-run
         with:
           api-level: ${{ matrix.api-level }}
           target: ${{ matrix.target }}
-          arch: x86_64
-          force-avd-creation: false
-          emulator-boot-timeout: 1200
           emulator-build: ${{ env.EMULATOR_BUILD }}
-          emulator-options: -no-snapshot-save -no-window -gpu ${{ env.EMULATOR_GPU }} -noaudio -no-boot-anim -camera-back none -memory 2048 -partition-size 512
-          disable-animations: true
-          profile: Nexus 6
-          working-directory: ./stardroid-v2
+          gpu: ${{ env.EMULATOR_GPU }}
           script: bash tools/run_connected_tests.sh 2
+
+      - name: Fail on test failures, retry once more on a lost emulator
+        if: steps.attempt2.outcome == 'failure'
+        run: |
+          outcome=$(cat build/ci/attempt-2/outcome 2>/dev/null || echo emulator-lost)
+          if [ "$outcome" = tests-failed ]; then
+            echo "::error::Connected tests failed; not retrying."
+            exit 1
+          fi
+          echo "::warning::Attempt 2 ended without a test failure ($outcome), so retrying on a fresh emulator in 240s."
+          sleep 240
+
+      # No status function in `if`: the implicit success() is what skips this after the gate
+      # above exits 1 on a test failure. Don't add always() here.
+      - name: Retry connected tests again
+        if: steps.attempt2.outcome == 'failure'
+        uses: ./.github/actions/emulator-run
+        with:
+          api-level: ${{ matrix.api-level }}
+          target: ${{ matrix.target }}
+          emulator-build: ${{ env.EMULATOR_BUILD }}
+          gpu: ${{ env.EMULATOR_GPU }}
+          script: bash tools/run_connected_tests.sh 3
 
       - name: Upload connected test results
         if: always()
