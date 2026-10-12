@@ -75,7 +75,7 @@ class SatelliteElementsRepository(
         MutableSharedFlow<Unit>(extraBufferCapacity = 1, onBufferOverflow = BufferOverflow.DROP_OLDEST)
 
     /**
-     * Emits after every fetch attempt that wrote state, so observers re-read at once instead of
+     * Emits after every fetch that was actually attempted (not one the policy skipped), so observers re-read at once instead of
      * waiting for their poll. A trigger only: collectors read [current] / [freshness] themselves.
      */
     val updates: Flow<Unit> = fetchCompletions.asSharedFlow()

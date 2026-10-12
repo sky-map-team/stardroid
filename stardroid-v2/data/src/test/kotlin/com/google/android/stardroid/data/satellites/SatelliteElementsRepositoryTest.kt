@@ -15,6 +15,7 @@ import kotlinx.coroutines.async
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.withTimeout
+import kotlinx.coroutines.withTimeoutOrNull
 import kotlinx.datetime.Clock
 import kotlinx.datetime.Instant
 import org.junit.jupiter.api.Test
@@ -95,6 +96,23 @@ class SatelliteElementsRepositoryTest {
             repository.refresh()
 
             assertThat(announced.await()).isEqualTo(Unit)
+        }
+
+    @Test
+    fun `a refresh the policy skips announces nothing`() =
+        runBlocking {
+            val clock = FakeClock(Instant.parse("2026-08-15T12:00:00Z"))
+            val repository = repository(FakeClient(FetchOutcome.Success(issElements, null)), clock)
+            repository.refresh()
+
+            val announced =
+                async(start = CoroutineStart.UNDISPATCHED) {
+                    withTimeoutOrNull(200) { repository.updates.first() }
+                }
+            // Inside the two-hour minimum interval, so this is skipped rather than fetched.
+            assertThat(repository.refresh()).isInstanceOf(RefreshResult.Skipped::class.java)
+
+            assertThat(announced.await()).isNull()
         }
 
     @Test
