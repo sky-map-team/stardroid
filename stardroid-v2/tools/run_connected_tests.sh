@@ -5,7 +5,8 @@
 # RendererPerfTest runs last, in a pass of its own: the hosted runner's emulator sometimes dies
 # while that class tears down a GL surface (D140), and a lost emulator must not take the rest of
 # the suite with it. Each pass ends as pass, tests-failed or emulator-lost. android.yml retries
-# an emulator-lost attempt once on a fresh emulator, re-running only the passes that didn't pass.
+# an emulator-lost attempt (up to attempt 3) on a fresh emulator, re-running only the passes that
+# didn't pass on any earlier attempt.
 #
 # Writes build/ci/attempt-<attempt>/: each pass's Gradle log, reports and result, the logcat,
 # and the attempt's overall `outcome`.
@@ -14,8 +15,16 @@ set -uo pipefail
 
 attempt=${1:?usage: run_connected_tests.sh <attempt>}
 out=build/ci/attempt-$attempt
-prev=build/ci/attempt-$((attempt - 1))
 renderer_test=com.google.android.stardroid.testscene.RendererPerfTest
+
+# An attempt that died while installing the SDK leaves no results, so look at every earlier one.
+passed_earlier() {
+  local i
+  for ((i = attempt - 1; i >= 1; i--)); do
+    [[ $(cat "build/ci/attempt-$i/$1.result" 2>/dev/null) == pass ]] && return 0
+  done
+  return 1
+}
 
 emulator_alive() { timeout 30 adb shell true >/dev/null 2>&1; }
 
@@ -27,8 +36,8 @@ report_dirs() {
 run_pass() {
   local name=$1
   shift
-  if [[ $(cat "$prev/$name.result" 2>/dev/null) == pass ]]; then
-    echo "== $name: passed on attempt $((attempt - 1)), not re-running"
+  if passed_earlier "$name"; then
+    echo "== $name: passed on an earlier attempt, not re-running"
     echo pass >"$out/$name.result"
     return
   fi
