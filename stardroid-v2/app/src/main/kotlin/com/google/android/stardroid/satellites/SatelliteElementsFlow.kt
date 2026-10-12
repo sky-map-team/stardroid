@@ -18,15 +18,19 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
+import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.merge
 import kotlin.time.Duration
 import kotlin.time.Duration.Companion.minutes
 
 /**
- * The cached element sets, re-read from disk on a slow tick.
+ * The cached element sets, re-read from disk on a slow tick and whenever a fetch completes.
  *
  * Polling rather than observing the file because the thing being watched changes at most twice a
  * day: the fetch job runs on a 12-hour period, so a five-minute poll is already far finer-grained
- * than the data it is watching, and a `FileObserver` would be machinery earning nothing.
+ * than the data it is watching, and a `FileObserver` would be machinery earning nothing. The
+ * repository's `updates` covers the one case the poll is too slow for: the first fetch landing,
+ * or a manual refresh, while the app is open.
  *
  * Deliberately **not** driven by the map clock. The clock ticks for every frame of satellite
  * motion, and re-reading and re-parsing the cache at that rate would turn a once-a-day change into
@@ -36,12 +40,25 @@ fun satelliteElementsFlow(
     repository: SatelliteElementsRepository,
     pollInterval: Duration = POLL_INTERVAL,
 ): Flow<SatelliteElements> =
-    flow {
-        while (true) {
-            emit(repository.current())
-            delay(pollInterval)
-        }
-    }.distinctUntilChanged().flowOn(Dispatchers.IO)
+    refreshTriggers(repository, pollInterval)
+        .map { repository.current() }
+        .distinctUntilChanged()
+        .flowOn(Dispatchers.IO)
+
+/** Emits at once, then on every poll tick and every completed fetch. */
+private fun refreshTriggers(
+    repository: SatelliteElementsRepository,
+    pollInterval: Duration,
+): Flow<Unit> =
+    merge(
+        flow {
+            while (true) {
+                emit(Unit)
+                delay(pollInterval)
+            }
+        },
+        repository.updates,
+    )
 
 private val POLL_INTERVAL = 5.minutes
 
@@ -68,14 +85,11 @@ fun satelliteUiStatusFlow(
     repository: SatelliteElementsRepository,
     pollInterval: Duration = POLL_INTERVAL,
 ): Flow<SatelliteUiStatus> =
-    flow {
-        while (true) {
-            emit(
-                SatelliteUiStatus(
-                    freshness = repository.freshness(),
-                    refreshAllowedIn = repository.refreshAllowedIn(),
-                ),
+    refreshTriggers(repository, pollInterval)
+        .map {
+            SatelliteUiStatus(
+                freshness = repository.freshness(),
+                refreshAllowedIn = repository.refreshAllowedIn(),
             )
-            delay(pollInterval)
-        }
-    }.distinctUntilChanged().flowOn(Dispatchers.IO)
+        }.distinctUntilChanged()
+        .flowOn(Dispatchers.IO)

@@ -10,6 +10,11 @@
 package com.google.android.stardroid.data.satellites
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.CoroutineStart
+import kotlinx.coroutines.async
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.withTimeout
 import kotlinx.datetime.Clock
 import kotlinx.datetime.Instant
 import org.junit.jupiter.api.Test
@@ -75,6 +80,22 @@ class SatelliteElementsRepositoryTest {
         assertThat(elements.tles.single().name).isEqualTo("ISS (ZARYA)")
         assertThat(elements.freshness).isEqualTo(ElementFreshness.FRESH)
     }
+
+    @Test
+    fun `a completed fetch is announced on updates so observers need not wait for a poll`() =
+        runBlocking {
+            val clock = FakeClock(Instant.parse("2026-08-15T12:00:00Z"))
+            val client = FakeClient(FetchOutcome.Success(issElements, null))
+            val repository = repository(client, clock)
+
+            val announced =
+                async(start = CoroutineStart.UNDISPATCHED) {
+                    withTimeout(5_000) { repository.updates.first() }
+                }
+            repository.refresh()
+
+            assertThat(announced.await()).isEqualTo(Unit)
+        }
 
     @Test
     fun `nothing cached reports an absent state rather than an empty success`() {

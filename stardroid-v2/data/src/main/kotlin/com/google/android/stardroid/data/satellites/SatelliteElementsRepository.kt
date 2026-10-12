@@ -10,6 +10,10 @@
 package com.google.android.stardroid.data.satellites
 
 import com.google.android.stardroid.astronomy.Tle
+import kotlinx.coroutines.channels.BufferOverflow
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.MutableSharedFlow
+import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.datetime.Clock
 import kotlinx.datetime.Instant
 import kotlin.time.Duration
@@ -67,6 +71,15 @@ class SatelliteElementsRepository(
     private val group: SatelliteGroup = SatelliteGroup.STATIONS,
     private val clock: Clock = Clock.System,
 ) {
+    private val fetchCompletions =
+        MutableSharedFlow<Unit>(extraBufferCapacity = 1, onBufferOverflow = BufferOverflow.DROP_OLDEST)
+
+    /**
+     * Emits after every fetch attempt that wrote state, so observers re-read at once instead of
+     * waiting for their poll. A trigger only: collectors read [current] / [freshness] themselves.
+     */
+    val updates: Flow<Unit> = fetchCompletions.asSharedFlow()
+
     /**
      * The cached elements, parsed, with their freshness. Never hits the network, so it is safe on
      * any thread and at any time — including app open, which must *never* trigger a fetch (user
@@ -210,6 +223,7 @@ class SatelliteElementsRepository(
 
         val updated = SatelliteFetchPolicy.afterOutcome(state, outcome, now)
         runCatching { store.writeState(updated) }
+        fetchCompletions.tryEmit(Unit)
         return RefreshResult.Completed(outcome, updated, previousState = state)
     }
 
