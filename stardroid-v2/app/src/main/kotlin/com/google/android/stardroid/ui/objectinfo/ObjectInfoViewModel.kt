@@ -408,14 +408,14 @@ class ObjectInfoViewModel(
         }
 
     /**
-     * [id]'s card content in the current locale. Satellites are not in the bundled catalog —
-     * they arrive from the network — so their card is synthesized rather than looked up. See
-     * [SatelliteIds].
+     * [id]'s card content in the current locale. A satellite's card is synthesized from its live
+     * element set, with any catalog row for it supplying the prose and image. See [SatelliteIds].
      */
-    private suspend fun cardFor(id: CelestialObjectId): ObjectInfo? =
-        SatelliteIds.noradIdFor(id)?.let { norad ->
-            satellites().firstOrNull { it.info.id == id }?.info
-        } ?: catalog().objectInfo(id, locale.value)
+    private suspend fun cardFor(id: CelestialObjectId): ObjectInfo? {
+        if (SatelliteIds.noradIdFor(id) == null) return catalog().objectInfo(id, locale.value)
+        val live = satellites().firstOrNull { it.info.id == id }?.info ?: return null
+        return SatelliteIds.withCatalogContent(live, catalog().objectInfo(id, locale.value))
+    }
 
     // A language switch recreates the activity but not this view model, so a card left open
     // across one would keep the language it was opened in: look it up again in the new locale.
