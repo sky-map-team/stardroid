@@ -980,9 +980,12 @@ fun LayersSheet(
             }
         }
     ModalBottomSheet(onDismissRequest = onDismiss, sheetState = sheetState) {
-        // Scrollable: in landscape the rows are taller than the sheet.
+        // Scrollable: in landscape the rows are taller than the sheet. Always full height, so
+        // opening a section never resizes the sheet — a resize makes Material drop an expanded
+        // sheet back to half height (#1122), and the restore below shows as a visible dip.
         Column(
             Modifier
+                .fillMaxHeight()
                 .verticalScroll(rememberScrollState())
                 .padding(horizontal = 24.dp, vertical = 8.dp),
         ) {
@@ -1139,11 +1142,16 @@ private fun LayerParameterChooser(
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                     modifier = Modifier.padding(bottom = 6.dp),
                 )
-                SingleChoiceSegmentedButtonRow(Modifier.fillMaxWidth()) {
+                // Equal-height segments: a label that wraps at a large font scale must not make
+                // its segment taller than its neighbours.
+                SingleChoiceSegmentedButtonRow(
+                    Modifier.fillMaxWidth().height(IntrinsicSize.Min),
+                ) {
                     parameter.options.forEachIndexed { index, option ->
                         SegmentedButton(
                             selected = option == state.selected,
                             onClick = { onSelect(option) },
+                            modifier = Modifier.fillMaxHeight(),
                             shape =
                                 SegmentedButtonDefaults.itemShape(
                                     index = index,
