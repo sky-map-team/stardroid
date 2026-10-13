@@ -20,6 +20,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
@@ -27,12 +28,17 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringArrayResource
+import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.rememberTextMeasurer
+import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.google.android.stardroid.R
 import kotlin.math.roundToInt
@@ -60,17 +66,24 @@ fun MapHud(
                 .border(1.dp, MaterialTheme.colorScheme.outline.copy(alpha = 0.3f), shape)
                 .padding(horizontal = 12.dp, vertical = 8.dp),
     ) {
+        val cardinals = stringArrayResource(R.array.hud_cardinal_directions)
+        val valueWidth = hudValueWidth(cardinals)
         val (raHours, raMinutes) = HudFormats.raHoursMinutes(state.raDeg)
-        HudRow(R.string.hud_ra_label, stringResource(R.string.hud_ra_value, raHours, raMinutes))
+        HudRow(
+            R.string.hud_ra_label,
+            stringResource(R.string.hud_ra_value, raHours, raMinutes),
+            valueWidth,
+        )
         HudRow(
             R.string.hud_dec_label,
             stringResource(R.string.hud_signed_degrees_value, state.decDeg),
+            valueWidth,
         )
         HudRow(
             R.string.hud_alt_label,
             stringResource(R.string.hud_signed_degrees_value, state.altDeg),
+            valueWidth,
         )
-        val cardinals = stringArrayResource(R.array.hud_cardinal_directions)
         HudRow(
             R.string.hud_az_label,
             stringResource(
@@ -78,6 +91,7 @@ fun MapHud(
                 HudFormats.azimuthWholeDegrees(state.azDeg),
                 cardinals[HudFormats.cardinalIndex(state.azDeg)],
             ),
+            valueWidth,
         )
         HudRow(
             R.string.hud_fov_label,
@@ -86,6 +100,7 @@ fun MapHud(
                 1 -> stringResource(R.string.hud_fov_value_fine, state.fovDeg)
                 else -> stringResource(R.string.hud_fov_value_finest, state.fovDeg)
             },
+            valueWidth,
             locked = state.fovLocked,
         )
         if (HudFormats.correctionActive(state.correctionAzDeg, state.correctionAltDeg)) {
@@ -102,6 +117,7 @@ fun MapHud(
 private fun HudRow(
     @StringRes label: Int,
     value: String,
+    valueWidth: Dp,
     locked: Boolean = false,
 ) {
     Row(
@@ -126,7 +142,11 @@ private fun HudRow(
             value,
             style = hudValueStyle(),
             color = MaterialTheme.colorScheme.onSurface,
-            modifier = Modifier.padding(start = if (locked) 4.dp else 12.dp),
+            textAlign = TextAlign.End,
+            modifier =
+                Modifier
+                    .padding(start = if (locked) 4.dp else 12.dp)
+                    .widthIn(min = valueWidth),
         )
     }
 }
@@ -182,3 +202,25 @@ private fun CorrectionRow(
 @Composable
 private fun hudValueStyle() =
     MaterialTheme.typography.labelMedium.copy(fontFeatureSettings = "tnum")
+
+/**
+ * The width of the widest value any row can show, so the HUD box stays one size as values
+ * tick (digits are tabular, so only the sign and the cardinal's letters vary).
+ */
+@Composable
+private fun hudValueWidth(cardinals: Array<String>): Dp {
+    val measurer = rememberTextMeasurer()
+    val style = hudValueStyle()
+    val density = LocalDensity.current
+    val samples =
+        listOf(
+            stringResource(R.string.hud_ra_value, 23, 59),
+            stringResource(R.string.hud_signed_degrees_value, -88.8),
+            stringResource(R.string.hud_signed_degrees_value, 88.8),
+            stringResource(R.string.hud_fov_value, 88),
+        ) + cardinals.map { stringResource(R.string.hud_azimuth_value, 888, it) }
+    return remember(samples, style, density) {
+        val widestPx = samples.maxOf { measurer.measure(it, style).size.width }
+        with(density) { widestPx.toDp() }
+    }
+}
