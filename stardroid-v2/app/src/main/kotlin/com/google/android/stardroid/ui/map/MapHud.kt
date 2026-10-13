@@ -32,9 +32,11 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.platform.LocalConfiguration
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringArrayResource
-import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.rememberTextMeasurer
 import androidx.compose.ui.text.style.TextAlign
@@ -67,7 +69,7 @@ fun MapHud(
                 .padding(horizontal = 12.dp, vertical = 8.dp),
     ) {
         val cardinals = stringArrayResource(R.array.hud_cardinal_directions)
-        val valueWidth = hudValueWidth(cardinals)
+        val valueWidth = hudValueWidth()
         val (raHours, raMinutes) = HudFormats.raHoursMinutes(state.raDeg)
         HudRow(
             R.string.hud_ra_label,
@@ -205,21 +207,29 @@ private fun hudValueStyle() =
 
 /**
  * The width of the widest value any row can show, so the HUD box stays one size as values
- * tick (digits are tabular, so only the sign and the cardinal's letters vary).
+ * tick (digits are tabular, so only the sign and the cardinal's letters vary). The finer FOV
+ * formats ("5.5°", "0.25°") are never wider than the azimuth sample, so they aren't measured.
+ * Resolved once per configuration rather than per recomposition, as the HUD ticks constantly.
  */
 @Composable
-private fun hudValueWidth(cardinals: Array<String>): Dp {
+private fun hudValueWidth(): Dp {
     val measurer = rememberTextMeasurer()
     val style = hudValueStyle()
     val density = LocalDensity.current
-    val samples =
-        listOf(
-            stringResource(R.string.hud_ra_value, 23, 59),
-            stringResource(R.string.hud_signed_degrees_value, -88.8),
-            stringResource(R.string.hud_signed_degrees_value, 88.8),
-            stringResource(R.string.hud_fov_value, 88),
-        ) + cardinals.map { stringResource(R.string.hud_azimuth_value, 888, it) }
-    return remember(samples, style, density) {
+    val context = LocalContext.current
+    val configuration = LocalConfiguration.current
+    return remember(configuration, style, density) {
+        val res = context.resources
+        val samples =
+            listOf(
+                res.getString(R.string.hud_ra_value, 23, 59),
+                res.getString(R.string.hud_signed_degrees_value, -88.8),
+                res.getString(R.string.hud_signed_degrees_value, 88.8),
+                res.getString(R.string.hud_fov_value, 88),
+            ) +
+                res.getStringArray(R.array.hud_cardinal_directions).map {
+                    res.getString(R.string.hud_azimuth_value, 888, it)
+                }
         val widestPx = samples.maxOf { measurer.measure(it, style).size.width }
         with(density) { widestPx.toDp() }
     }

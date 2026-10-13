@@ -230,7 +230,7 @@ fun MapChrome(
                     modifier =
                         Modifier.padding(
                             top = 8.dp + hudTopClearance,
-                            end = if (landscape) 64.dp else 8.dp,
+                            end = if (landscape) ACTION_COLUMN_CLEARANCE else 8.dp,
                         ),
                 )
             }
@@ -1594,3 +1594,6 @@ private fun retryWaitText(wait: Duration): Int =
         wait <= 36.hours -> R.string.satellites_retry_tomorrow
         else -> R.string.satellites_retry_days
     }
+
+/** Landscape right inset that clears the action column: 8 dp edge + 48 dp button + 8 dp gap. */
+private val ACTION_COLUMN_CLEARANCE: Dp = 64.dp

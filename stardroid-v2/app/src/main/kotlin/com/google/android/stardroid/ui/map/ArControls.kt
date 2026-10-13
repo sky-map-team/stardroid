@@ -18,6 +18,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
@@ -31,6 +32,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.google.android.stardroid.R
 import kotlin.math.roundToInt
@@ -58,6 +60,7 @@ fun ArControls(
     Column(
         modifier =
             modifier
+                .widthIn(min = AR_PANEL_MIN_WIDTH)
                 .width(IntrinsicSize.Max)
                 .clip(shape)
                 .background(MaterialTheme.colorScheme.surface.copy(alpha = 0.62f))
@@ -187,3 +190,6 @@ private fun ArSliderRow(
         )
     }
 }
+
+/** Wide enough for the correction row, so the panel doesn't resize when it appears. */
+private val AR_PANEL_MIN_WIDTH: Dp = 208.dp
