@@ -135,9 +135,6 @@ import com.google.android.stardroid.settings.Settings as SkyMapSettings
 class MainActivity : ComponentActivity() {
     private lateinit var glSurfaceView: GLSurfaceView
 
-    /** Filled in by the GL backend once its surface exists; read by the diagnostics screen. */
-    private val rendererInfoStore = RendererInfoStore()
-
     @Inject lateinit var settings: SkyMapSettings
 
     @Inject lateinit var analytics: Analytics
@@ -167,6 +164,9 @@ class MainActivity : ComponentActivity() {
     @Inject lateinit var announcementState: AnnouncementState
 
     @Inject lateinit var catalogAccess: CatalogAccess
+
+    /** Filled in by the GL backend once its surface exists; read by the diagnostics screen. */
+    @Inject lateinit var rendererInfoStore: RendererInfoStore
 
     /** v1's session anchor: foreground time between onStart and onStop. */
     private var sessionStartTimeMillis = 0L
@@ -227,11 +227,12 @@ class MainActivity : ComponentActivity() {
     private val timeTravelViewModel: TimeTravelViewModel by viewModels {
         viewModelFactory {
             initializer {
+                val locations = locationController.locations
                 TimeTravelViewModel(
                     timeController = timeController,
                     ephemeris = MeeusEphemeris,
                     analytics = analytics,
-                    location = { locationController.locations.value },
+                    location = { locations.value },
                 )
             }
         }
@@ -241,6 +242,9 @@ class MainActivity : ComponentActivity() {
         viewModelFactory {
             initializer {
                 val appContext = applicationContext
+                val locations = locationController.locations
+                val time = timeController
+                val map = mapViewModel
                 SearchViewModel(
                     catalog = catalogAccess::repository,
                     locale = localeSource.specs,
@@ -248,16 +252,14 @@ class MainActivity : ComponentActivity() {
                     now = timeController::now,
                     settings = settings,
                     analytics = analytics,
-                    isManualMode = {
-                        mapViewModel.referenceFrame.value == ReferenceFrame.MANUAL
-                    },
-                    location = { locationController.locations.value },
+                    isManualMode = { map.referenceFrame.value == ReferenceFrame.MANUAL },
+                    location = { locations.value },
                     satellites = {
                         trackedSatellites(
                             appContext,
-                            locationController.locations.value,
+                            locations.value,
                             appContext.getString(R.string.satellite_description),
-                            timeController.now(),
+                            time.now(),
                             requireLayerEnabled = false,
                         )
                     },
@@ -284,6 +286,8 @@ class MainActivity : ComponentActivity() {
         viewModelFactory {
             initializer {
                 val appContext = applicationContext
+                val locations = locationController.locations
+                val time = timeController
                 ObjectInfoViewModel(
                     catalog = catalogAccess::repository,
                     locale = localeSource.specs,
@@ -291,7 +295,7 @@ class MainActivity : ComponentActivity() {
                     now = timeController::now,
                     settings = settings,
                     analytics = analytics,
-                    location = { locationController.locations.value },
+                    location = { locations.value },
                     experimentConfig = experimentConfig,
                     moonWidgetPlaced = {
                         WidgetScheduler.hasInstances(
@@ -302,9 +306,9 @@ class MainActivity : ComponentActivity() {
                     satellites = {
                         trackedSatellites(
                             appContext,
-                            locationController.locations.value,
+                            locations.value,
                             appContext.getString(R.string.satellite_description),
-                            timeController.now(),
+                            time.now(),
                         )
                     },
                     passTimesReliable = {
@@ -317,8 +321,8 @@ class MainActivity : ComponentActivity() {
                         nextVisiblePass(
                             appContext,
                             norad,
-                            locationController.locations.value,
-                            timeController.now(),
+                            locations.value,
+                            time.now(),
                         )
                     },
                 )
@@ -351,10 +355,11 @@ class MainActivity : ComponentActivity() {
         viewModelFactory {
             initializer {
                 val appContext = applicationContext
+                val map = mapViewModel
                 DiagnosticsViewModel(
                     sensorStatus = sensorStatusSource,
                     locationStates = locationController.state,
-                    camera = mapViewModel.camera,
+                    camera = map.camera,
                     settings = settings,
                     declinationSource = declinationSource,
                     now = timeController::now,
@@ -366,11 +371,11 @@ class MainActivity : ComponentActivity() {
                     gpsStatus = { gpsStatus(appContext) },
                     networkStatus = { networkStatus(appContext) },
                     orientationSource = orientationSource,
-                    localFrame = mapViewModel.localFrame,
+                    localFrame = map.localFrame,
                     rendererInfo = rendererInfoStore::get,
                     analytics = analytics,
-                    mapReferenceFrame = { mapViewModel.referenceFrame.value },
-                    lastMapOrientationAtMillis = { mapViewModel.lastOrientationAtMillis },
+                    mapReferenceFrame = { map.referenceFrame.value },
+                    lastMapOrientationAtMillis = { map.lastOrientationAtMillis },
                     processLifecycleState = {
                         // Runs off the main thread; currentState's getter doesn't check.
                         ProcessLifecycleOwner.get().lifecycle.currentState
@@ -404,16 +409,18 @@ class MainActivity : ComponentActivity() {
     private val announcementViewModel: AnnouncementViewModel by viewModels {
         viewModelFactory {
             initializer {
+                val appContext = applicationContext
+                val locales = localeSource
                 AnnouncementViewModel(
                     source = announcementSource,
                     state = announcementState,
                     settings = settings,
                     experimentConfig = experimentConfig,
-                    locale = { localeSource.current },
+                    locale = { locales.current },
                     appVersion =
                         packageManager.getPackageInfo(packageName, 0).longVersionCode,
                     analytics = analytics,
-                    onDismissed = { runCatching { TonightWidget().updateAll(applicationContext) } },
+                    onDismissed = { runCatching { TonightWidget().updateAll(appContext) } },
                 )
             }
         }
