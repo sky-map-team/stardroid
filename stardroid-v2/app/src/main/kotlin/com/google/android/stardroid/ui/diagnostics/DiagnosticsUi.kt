@@ -669,7 +669,7 @@ private fun DiagnosticRow(
         Text(
             label,
             style = MaterialTheme.typography.bodyMedium,
-            modifier = Modifier.weight(0.4f),
+            modifier = Modifier.weight(0.4f).padding(end = 12.dp),
         )
         Text(
             value,
@@ -695,8 +695,9 @@ private fun sensorText(row: SensorRow): String =
     }
 
 /**
- * " (52 Hz, 0.1s ago)" for a present, reporting sensor — nothing for an absent one or one that
- * hasn't delivered a first event yet, since [sensorText] already says so.
+ * "\n(52 Hz, 0.1s ago)" for a present, reporting sensor — nothing for an absent one or one that
+ * hasn't delivered a first event yet, since [sensorText] already says so. Always on its own
+ * line so the row height doesn't change with the width of the values.
  */
 @Composable
 private fun rateSuffix(
@@ -705,7 +706,7 @@ private fun rateSuffix(
 ): String {
     if (row !is SensorRow.Present || rate == null) return ""
     val staleForMillis = rate.staleForMillis ?: return ""
-    return " " +
+    return "\n" +
         stringResource(
             R.string.diagnostics_sensor_rate_format,
             rate.hz,
