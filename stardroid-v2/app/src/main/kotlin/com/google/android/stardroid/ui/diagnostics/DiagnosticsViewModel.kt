@@ -106,6 +106,7 @@ data class DiagnosticsSnapshot(
     /** Seconds since the map last took a sensor orientation; null if it never has. */
     val mapOrientationAgeSeconds: Double? = null,
     val rejectedSensorSamples: Int = 0,
+    val smootherHeals: Int = 0,
     /** Gates the map's sensor listeners: anything below STARTED unregisters them. */
     val processLifecycleState: Lifecycle.State? = null,
 )
@@ -365,6 +366,7 @@ class DiagnosticsViewModel(
                         ((wallClockMillis() - it) / 1000.0).coerceAtLeast(0.0)
                     },
                 rejectedSensorSamples = orientationSource.rejectedSampleCount,
+                smootherHeals = orientationSource.smootherHealCount,
                 processLifecycleState = processLifecycleState(),
             )
         }.flowOn(ioContext)

@@ -66,6 +66,8 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.ModalBottomSheet
+import androidx.compose.material3.SheetValue
+import androidx.compose.material3.rememberModalBottomSheetState
 import androidx.compose.material3.PlainTooltip
 import androidx.compose.material3.SegmentedButton
 import androidx.compose.material3.SegmentedButtonDefaults
@@ -81,6 +83,8 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.snapshotFlow
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.runtime.withFrameNanos
@@ -124,6 +128,9 @@ import com.google.android.stardroid.ui.layers.LayerParameterState
 import com.google.android.stardroid.ui.layers.LayerToggle
 import com.google.android.stardroid.ui.layers.LayersViewModel
 import com.google.android.stardroid.ui.theme.statusColors
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withTimeoutOrNull
 import kotlin.time.Duration
 import kotlin.time.Duration.Companion.hours
 import kotlin.time.Duration.Companion.minutes
@@ -345,6 +352,9 @@ private fun ChromeZone(
 
 /** Quick enough to feel like a direct response to the tap that asked for the chrome. */
 private const val CHROME_ENTER_MS = 220
+
+/** How long after a row toggle to watch for the layers sheet retreating from full height. */
+private const val SHEET_RETREAT_WINDOW_MS = 500L
 
 /**
  * Slow enough that the eye can follow each zone to the edge it parks at. `MapScreen` holds the
@@ -948,10 +958,34 @@ fun LayersSheet(
     // Reference elements are a fixed set; anything else (all object layers, and whatever
     // future layers land) stays in the object group in registry order.
     val (reference, objects) = toggles.partition { it.id in REFERENCE_LAYER_IDS }
-    ModalBottomSheet(onDismissRequest = onDismiss) {
-        // Scrollable: in landscape the rows are taller than the sheet.
+    val sheetState = rememberModalBottomSheetState()
+    val scope = rememberCoroutineScope()
+    // Material re-targets a fully expanded sheet to half height whenever its content resizes,
+    // so opening a section would undo the user's drag to full screen (#1122). Put it back.
+    val keepExpanded: () -> Unit =
+        remember(sheetState, scope) {
+            {
+                if (sheetState.targetValue == SheetValue.Expanded) {
+                    scope.launch {
+                        val retreated =
+                            withTimeoutOrNull(SHEET_RETREAT_WINDOW_MS) {
+                                snapshotFlow { sheetState.targetValue }
+                                    .first { it != SheetValue.Expanded }
+                            }
+                        if (retreated != null && retreated != SheetValue.Hidden) {
+                            sheetState.expand()
+                        }
+                    }
+                }
+            }
+        }
+    ModalBottomSheet(onDismissRequest = onDismiss, sheetState = sheetState) {
+        // Scrollable: in landscape the rows are taller than the sheet. Always full height, so
+        // opening a section never resizes the sheet — a resize makes Material drop an expanded
+        // sheet back to half height (#1122), and the restore below shows as a visible dip.
         Column(
             Modifier
+                .fillMaxHeight()
                 .verticalScroll(rememberScrollState())
                 .padding(horizontal = 24.dp, vertical = 8.dp),
         ) {
@@ -975,6 +1009,7 @@ fun LayersSheet(
                     },
                     help = layerHelp(toggle.id),
                     initiallyExpanded = toggle.id == expandLayer,
+                    onExpandToggled = keepExpanded,
                 )
                 if (toggle.id == SatelliteLayer.LAYER_ID && satelliteDataMissing) {
                     SatelliteEmptyStateCard(
@@ -996,6 +1031,7 @@ fun LayersSheet(
                     },
                     help = layerHelp(toggle.id),
                     initiallyExpanded = toggle.id == expandLayer,
+                    onExpandToggled = keepExpanded,
                 )
             }
             LayerGroupHeader(R.string.layers_group_display)
@@ -1053,6 +1089,7 @@ private fun LayerRow(
     onParameterChange: (String, String) -> Unit = { _, _ -> },
     help: LayerHelp,
     initiallyExpanded: Boolean = false,
+    onExpandToggled: () -> Unit = {},
 ) {
     var expanded by rememberSaveable(label) { mutableStateOf(initiallyExpanded) }
     var showHelp by rememberSaveable(label) { mutableStateOf(false) }
@@ -1069,7 +1106,10 @@ private fun LayerRow(
             subtitle = subtitle,
             expandable = parameters.isNotEmpty(),
             expanded = expanded,
-            onExpandToggle = { expanded = !expanded },
+            onExpandToggle = {
+                onExpandToggled()
+                expanded = !expanded
+            },
             onLongClick = { showHelp = true },
         )
         if (expanded) {
@@ -1102,11 +1142,16 @@ private fun LayerParameterChooser(
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                     modifier = Modifier.padding(bottom = 6.dp),
                 )
-                SingleChoiceSegmentedButtonRow(Modifier.fillMaxWidth()) {
+                // Equal-height segments: a label that wraps at a large font scale must not make
+                // its segment taller than its neighbours.
+                SingleChoiceSegmentedButtonRow(
+                    Modifier.fillMaxWidth().height(IntrinsicSize.Min),
+                ) {
                     parameter.options.forEachIndexed { index, option ->
                         SegmentedButton(
                             selected = option == state.selected,
                             onClick = { onSelect(option) },
+                            modifier = Modifier.fillMaxHeight(),
                             shape =
                                 SegmentedButtonDefaults.itemShape(
                                     index = index,

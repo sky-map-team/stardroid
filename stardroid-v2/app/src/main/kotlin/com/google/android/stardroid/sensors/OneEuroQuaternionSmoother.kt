@@ -48,6 +48,7 @@ class OneEuroQuaternionSmoother(
     private val minCutoff: Float,
     private val beta: Float,
     private val speedFloor: Float = 0f,
+    private val onHeal: () -> Unit = {},
 ) {
     private var current: FloatArray? = null
     private var previousRaw: FloatArray? = null
@@ -123,7 +124,10 @@ class OneEuroQuaternionSmoother(
         val smoothed = slerp(prev, target, smoothingFactor(cutoff, dtSeconds))
         // NaN is absorbing: once it reaches the state, every later output is NaN too and the
         // map stays frozen until the listener is re-registered (issue #1109). Discard the state.
-        if (!smoothed.isUsableQuaternion()) return restart(raw, timestampNanos)
+        if (!smoothed.isUsableQuaternion()) {
+            onHeal()
+            return restart(raw, timestampNanos)
+        }
         current = smoothed
         return smoothed
     }

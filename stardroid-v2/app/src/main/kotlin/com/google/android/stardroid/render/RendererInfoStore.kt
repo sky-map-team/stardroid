@@ -10,6 +10,8 @@
 package com.google.android.stardroid.render
 
 import com.google.android.stardroid.render.api.RendererInfo
+import javax.inject.Inject
+import javax.inject.Singleton
 
 /**
  * Carries [RendererInfo] from the GL thread, which is the only place it can be read, to the
@@ -20,7 +22,8 @@ import com.google.android.stardroid.render.api.RendererInfo
  * observe and no lifecycle to manage. It stays null until the map has drawn once, which in
  * practice is always true by the time diagnostics can be opened.
  */
-class RendererInfoStore {
+@Singleton
+class RendererInfoStore @Inject constructor() {
     @Volatile
     private var info: RendererInfo? = null
 

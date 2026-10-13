@@ -391,13 +391,7 @@ private fun orientationSettingsSection(
             ),
             DiagnosticsRow(
                 stringResource(R.string.diagnostics_calibration_dialog),
-                stringResource(
-                    if (snapshot.dontShowCalibrationDialog) {
-                        R.string.diagnostics_calibration_dialog_suppressed
-                    } else {
-                        R.string.diagnostics_calibration_dialog_shown
-                    },
-                ),
+                onOffText(!snapshot.dontShowCalibrationDialog),
             ),
             DiagnosticsRow(
                 stringResource(R.string.diagnostics_jitter_raw),
@@ -457,6 +451,13 @@ private fun mapSection(
                     value = snapshot.rejectedSensorSamples.toString(),
                     valueColor =
                         if (snapshot.rejectedSensorSamples > 0) colors.bad else Color.Unspecified,
+                ),
+            )
+            add(
+                DiagnosticsRow(
+                    label = stringResource(R.string.diagnostics_smoother_heals),
+                    value = snapshot.smootherHeals.toString(),
+                    valueColor = if (snapshot.smootherHeals > 0) colors.bad else Color.Unspecified,
                 ),
             )
             snapshot.processLifecycleState?.let {

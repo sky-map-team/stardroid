@@ -76,6 +76,41 @@ class RotationQuaternionTest {
         assertMatrixRoundTrips(Matrix3.fromVectors(east, north, up, columnVectors = false))
     }
 
+    @Test
+    fun `a rotation-vector sample with a scalar passes through`() {
+        val out = FloatArray(4)
+        val q = rotationVectorQuaternion(floatArrayOf(0f, 0f, 0f, 1f, 0.5f), out)
+        assertThat(q).isNotNull()
+        assertThat(q!!.toList()).isEqualTo(listOf(0f, 0f, 0f, 1f))
+    }
+
+    @Test
+    fun `a three-value rotation-vector sample derives its scalar`() {
+        val out = FloatArray(4)
+        val q = rotationVectorQuaternion(floatArrayOf(0.6f, 0f, 0f), out)
+        assertThat(q).isNotNull()
+        assertThat(q!![3]).isWithin(1e-6f).of(0.8f)
+    }
+
+    @Test
+    fun `rotation-vector samples that are not rotations are rejected`() {
+        val out = FloatArray(4)
+        assertThat(rotationVectorQuaternion(floatArrayOf(Float.NaN, 0f, 0f, 1f), out)).isNull()
+        assertThat(rotationVectorQuaternion(floatArrayOf(0f, 0f, 0f, 0f), out)).isNull()
+        assertThat(rotationVectorQuaternion(floatArrayOf(0f, 0f, 0f), out)).isNotNull()
+    }
+
+    @Test
+    fun `accelerometer and magnetometer readings fuse, degenerate ones are rejected`() {
+        val out = FloatArray(4)
+        val up = Vector3(0.0, 0.0, 9.81)
+        assertThat(accelMagOrientation(up, Vector3(0.0, 20.0, -40.0), out)).isNotNull()
+        assertThat(out.isUsableQuaternion()).isTrue()
+        assertThat(accelMagOrientation(up, Vector3(0.0, 0.0, 40.0), out)).isNull()
+        assertThat(accelMagOrientation(Vector3(0.0, 0.0, 0.0), Vector3(0.0, 20.0, 0.0), out))
+            .isNull()
+    }
+
     private companion object {
         const val TOLERANCE = 1e-5
 

@@ -23,14 +23,14 @@ jobs:
         working-directory: ./stardroid-v2
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: Set up JDK
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v6
         with:
           distribution: 'zulu'
           java-version: '17'
       - name: Gradle cache
-        uses: gradle/actions/setup-gradle@v4
+        uses: gradle/actions/setup-gradle@v6
         continue-on-error: true
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
@@ -47,7 +47,7 @@ jobs:
           ORG_GRADLE_PROJECT_org_gradle_java_home: ${{ env.JAVA_HOME }}
       - name: Upload test results
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: unit-test-results
           path: 'stardroid-v2/**/build/reports/tests/'
@@ -63,12 +63,11 @@ jobs:
       run:
         working-directory: ./stardroid-v2
     env:
-      # Emulator 37.2.12, pinned rather than "latest": a new release under a cached AVD snapshot
-      # forced a cold boot ("incompatible snapshot version"). Part of the AVD cache key.
+      # Emulator 37.2.12, pinned rather than "latest", so a new release can't change results
+      # between runs.
       EMULATOR_BUILD: '16428233'
       # ANGLE over SwiftShader. On Linux, swiftshader_indirect gets the legacy SwiftShader GLES
       # translator, and the emulator died tearing down RendererPerfTest's GL surface (D140).
-      # Also part of the AVD cache key: a snapshot holds GPU state for one mode.
       EMULATOR_GPU: swangle
     strategy:
       # One API level losing its emulator shouldn't cancel the others.
@@ -85,7 +84,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       # Hosted runners mix CPU models. Annotated so emulator losses can be checked against the
       # hardware they ran on (D140).
@@ -100,7 +99,7 @@ jobs:
       # The emulator refuses to start with `FATAL | Your device does not have enough
       # disk space to run avd: `test`` when the runner is tight, and the action then
       # polls a device that never appears until the step times out. Reclaiming the
-      # toolchains this job never uses keeps the AVD build (and its snapshot) in space.
+      # toolchains this job never uses keeps the AVD build in space.
       # Runs before Setup Java, which installs into the hosted tool cache.
       - name: Free disk space
         working-directory: ./ # Not repo-specific
@@ -125,58 +124,14 @@ jobs:
           sudo udevadm trigger --name-match=kvm
 
       - name: Setup Java
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v6
         with:
           distribution: 'zulu'
           java-version: '17'
 
       - name: Gradle cache
-        uses: gradle/actions/setup-gradle@v4
+        uses: gradle/actions/setup-gradle@v6
         continue-on-error: true
-
-      - name: AVD cache
-        uses: actions/cache@v4
-        id: avd-cache
-        with:
-          path: |
-            ~/.android/avd/*
-            ~/.android/adb*
-          key: avd-${{ matrix.api-level }}-${{ matrix.target }}-x86_64-emu${{ env.EMULATOR_BUILD }}-${{ env.EMULATOR_GPU }}
-
-      # Like the test attempts below, one retry after a pause: the action's SDK download is
-      # what dies when dl.google.com has a bad spell. The cache is only saved on success.
-      - name: Create AVD and generate snapshot for caching
-        id: avd1
-        if: steps.avd-cache.outputs.cache-hit != 'true'
-        continue-on-error: true
-        uses: ./.github/actions/emulator-run
-        with:
-          api-level: ${{ matrix.api-level }}
-          target: ${{ matrix.target }}
-          emulator-build: ${{ env.EMULATOR_BUILD }}
-          gpu: ${{ env.EMULATOR_GPU }}
-          save-snapshot: 'true'
-          disable-animations: 'false'
-          script: echo "Generated AVD snapshot for caching."
-
-      - name: Pause before retrying the AVD snapshot
-        if: steps.avd1.outcome == 'failure'
-        run: |
-          echo "::warning::Creating the AVD snapshot failed, so retrying on a fresh emulator in 90s."
-          sleep 90
-
-      - name: Create AVD and generate snapshot for caching (retry)
-        if: steps.avd1.outcome == 'failure'
-        uses: ./.github/actions/emulator-run
-        with:
-          force-avd-creation: 'true'
-          api-level: ${{ matrix.api-level }}
-          target: ${{ matrix.target }}
-          emulator-build: ${{ env.EMULATOR_BUILD }}
-          gpu: ${{ env.EMULATOR_GPU }}
-          save-snapshot: 'true'
-          disable-animations: 'false'
-          script: echo "Generated AVD snapshot for caching."
 
       # A lost emulator gets up to two retries on a fresh one; a test failure doesn't.
       # run_connected_tests.sh records which it was (D140).
@@ -243,7 +198,7 @@ jobs:
 
       - name: Upload connected test results
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: connected-test-results-${{ matrix.api-level }}
           path: stardroid-v2/build/ci/
