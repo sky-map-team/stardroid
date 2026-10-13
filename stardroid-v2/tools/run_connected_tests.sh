@@ -78,7 +78,8 @@ trap 'kill "$logcat_pid" 2>/dev/null' EXIT
 run_pass main connectedFdroidDebugAndroidTest connectedDebugAndroidTest \
   -PtestNotClass="$renderer_test"
 # skipGlBenchmarks skips the D19 GL benchmark gate and its D67 AR variant: the hosted emulator
-# can't survive the 100k-point continuous scene, so they're verified locally instead (D105).
+# couldn't survive the 100k-point continuous scene on the legacy SwiftShader translator, and
+# they haven't been retried on swangle yet (#1112), so they're verified locally instead (D105).
 # The test logs a loud banner when this flag disables it.
 run_pass renderer :app:connectedFdroidDebugAndroidTest \
   -PtestClass="$renderer_test" -PskipGlBenchmarks=true

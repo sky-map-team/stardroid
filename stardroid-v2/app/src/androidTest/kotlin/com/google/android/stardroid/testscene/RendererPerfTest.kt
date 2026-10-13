@@ -206,17 +206,17 @@ class RendererPerfTest {
      * Aborts a benchmark variant as *skipped* when the runner cannot survive it.
      *
      * This has to be decided **before** the activity is launched. On GitHub-hosted runners the
-     * emulator *process* dies within a second of `RendererTestActivity` resuming with the
+     * emulator *process* died within a second of `RendererTestActivity` resuming with the
      * benchmark scene — logcat stops mid-stream and UTP reports a short test count — so anything
-     * that inspects the live GL context comes far too late to help. It is the 100k-point scene
-     * under RENDERMODE_CONTINUOUSLY that does it, not the translucent surface: with the AR
-     * variant skipped, the opaque one died in exactly the same way. WHEN_DIRTY rendering of the
-     * real catalog ([firstFrameRenderedAfterSceneSubmission]) still runs on CI but is not immune:
-     * the emulator sometimes dies as that test tears its surface down, so CI runs this class in
-     * a pass of its own and retries a lost emulator once (D140).
+     * that inspects the live GL context comes far too late to help. It was the 100k-point scene
+     * under RENDERMODE_CONTINUOUSLY that did it, not the translucent surface: with the AR
+     * variant skipped, the opaque one died in exactly the same way.
      *
-     * Not software rendering as such — a local `-gpu swiftshader_indirect` AVD runs both
-     * variants to completion.
+     * That was the legacy SwiftShader GLES translator, which is what `-gpu swiftshader_indirect`
+     * selects on Linux; the same flag on macOS selects ANGLE, which is why local runs never saw
+     * it. CI now runs the emulator with `-gpu swangle` (ANGLE over SwiftShader) and has stopped
+     * losing emulators in [firstFrameRenderedAfterSceneSubmission] (D140), but the benchmarks
+     * have not been tried on it yet, so they stay skipped (#1112).
      *
      * The skip is deliberately loud. A quietly skipped gate is worse than no gate, because it
      * still looks green.
@@ -233,9 +233,10 @@ class RendererPerfTest {
                     "SKIPPED: $label\n" +
                     "The D19 GL benchmark gate is DISABLED on this run because\n" +
                     "-PskipGlBenchmarks=true was passed.\n" +
-                    "The 100k-point continuous benchmark kills the GitHub-hosted\n" +
-                    "runner's emulator process ~1s after the activity resumes,\n" +
-                    "taking the whole test run with it. This covers BOTH the\n" +
+                    "The 100k-point continuous benchmark killed the GitHub-hosted\n" +
+                    "runner's emulator process ~1s after the activity resumed, on\n" +
+                    "the legacy SwiftShader translator; it has not been retried on\n" +
+                    "the swangle GPU mode CI now uses. This covers BOTH the\n" +
                     "opaque (D19) and translucent AR (D67) variants.\n" +
                     "Neither is covered by this CI run. Verify locally, where\n" +
                     "both pass:\n" +
