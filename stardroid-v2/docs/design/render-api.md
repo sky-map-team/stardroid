@@ -55,13 +55,14 @@ class LayerScene(
     val lines: List<LinePrimitive>,
     val images: List<ImagePrimitive>,
     val labels: List<LabelPrimitive>,
-    val glows: List<GlowPrimitive>,        // additive gradient meshes (horizon glow, D38)
 )
 ```
 
 **Within-scene ordering is part of the contract:** primitives of each type draw in list order
-(painter's algorithm), and the types draw in the order glows → lines → images → points →
-labels (glows first since D38, so the crisp horizon line draws over its glow's top edge).
+(painter's algorithm), and the types draw in the order lines → images → points → labels.
+The `Ground` render-state block draws *between* layers rather than within one, at
+`LayerScene.GROUND_DEPTH`, so it washes over everything it should obscure while the horizon
+layer's line and cardinal labels stay crisp on top of it.
 This is what makes solar-system occlusion correct: the solar-system layer sorts its images by
 descending Earth-distance at every submission (it already has the heliocentric coordinates,
 and it re-submits as time advances), so Mercury renders behind the Sun at superior conjunction
@@ -139,13 +140,6 @@ sealed interface PointAppearance {
 data class LinePrimitive(val vertices: List<Vector3>, val color: Rgba, val widthDp: Double)
 // Polyline on the celestial sphere; backend subdivides long arcs into great-circle segments
 // (v1 did this at line construction — it moves into the backend, where projection lives).
-
-data class GlowPrimitive(val rings: List<GlowRing>)   // concentric loops, outermost first;
-data class GlowRing(val vertices: List<Vector3>, val color: Rgba)   // all the same length
-// Additively-blended gradient mesh (D38, ports v1's upstream HorizonGlowPrimitive): the
-// backend fills the bands between consecutive rings, Gouraud-interpolating each ring's color
-// (alpha included) across the band, and draws with GL_SRC_ALPHA/GL_ONE so the glow adds light
-// to whatever is behind it. Ring vertices are used as given — no great-circle subdivision.
 
 data class ImagePrimitive(
     val center: Vector3,
@@ -229,7 +223,7 @@ implies; see D29 for the 3b-i (points/lines, **built**) vs. 3b-ii (images/labels
 |---|---|
 | `RendererController` + update queue + `UpdateType.{Reset,UpdatePositions,UpdateImages}` | Gone — replaced by whole-scene swap on submit |
 | `PointObjectManager` / `PolyLineObjectManager` / `ImageObjectManager` / `LabelObjectManager` | Become internal per-primitive drawers, fed from `LayerScene` instead of `Renderable` objects |
-| `HorizonGlowObjectManager` (upstream #924) | `GlowDrawer` (D38): same band-quad indexing and additive blend, with day+night per-vertex color buffers baked at build time |
+| `HorizonGlowObjectManager` (upstream #924) | Gone. It became the `Ground` render-state block, which each backend shades for itself: `:render:gles1`'s `GroundDrawer` keeps the ring-mesh technique (ring altitudes now chosen to trace `GroundRamp`), and `:render:gles3` evaluates `GroundRamp` per pixel. `GlowPrimitive`, `GlowRing` and the `glows` slot were removed — the horizon layer was their only producer |
 | `SkyRenderer` (GLSurfaceView.Renderer) | `GLSkyRenderer`, same role; consumes published camera instead of being poked |
 | Label texture atlas (Canvas rasterization) | Kept as-is internally (3b-ii) |
 | `SearchArrow`, `CrosshairOverlay`, `SkyBox` special cases | Deleted from the backend; produced as ordinary scenes by their features |

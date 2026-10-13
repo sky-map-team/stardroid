@@ -4,7 +4,7 @@
 design increment 3. `SkyLayer` + `CatalogLayer` (three instances) are implemented per D35; the
 grid, ecliptic, horizon, and solar-system layers per D37 (with `LayerStrings` where this doc
 sketched a `nameRes`/`strings` dependency), restyled per D40 (upstream color scheme, graduated
-ecliptic, horizon glow via the new `GlowPrimitive`; colors centralized in `SkyColors`); the
+ecliptic; colors centralized in `SkyColors`); the
 Compose map screen, `MapViewModel` + `LayersViewModel`, `LayerRegistry`/DataStore toggles, and
 the `RenderBinder` (this doc's "RenderConnector" role) per D38, with the singleton graph on
 Hilt since D59; the sky-gradient render state per D41; time travel and the shared clock bus per
@@ -61,7 +61,7 @@ designed so a future downloaded pack can contribute catalog-backed layers as dat
 | Meteor Showers | `MeteorShowerLayer`: radiant icon points, active-window logic on the clock (date-dependent, not per-frame). Radiant data moves to the DB as catalog objects with an `active_from/to` sidecar table — it's static annual data, no reason to stay code. |
 | Comets | `CometsLayer`: v1's time-interpolated entries, ported as-is with its hardcoded data (transient-object downloads are the future replacement; not worth a schema detour now). |
 | Grid | `GridLayer`: computed RA/Dec graticule lines + coordinate labels; depends only on locale (label text); static otherwise. The equator label at RA 0h reads "0" — it doubles as the ecliptic's vernal-equinox degree label (D38). |
-| Horizon | `HorizonLayer`: horizon great circle + cardinal labels from `SkyModel.localFrame`, plus the additive glow mesh just below the horizon (a `GlowPrimitive`, D38); line, glow, and labels share one green. Re-submits on location change and a slow clock tick (the horizon drifts ~0.25°/min in celestial coords; time travel accelerates the tick like everything else). Zenith/nadir labels moved to `AltAzGridLayer` (#1022). |
+| Horizon | `HorizonLayer`: horizon great circle + cardinal labels from `SkyModel.localFrame`, sharing one green. Reference geometry only — the glow that used to hang below the line became the `Ground` render-state block, so this layer's toggle governs "where am I pointing" while the sky-gradient preference governs "draw the atmosphere". Re-submits on location change and a slow clock tick (the horizon drifts ~0.25°/min in celestial coords; time travel accelerates the tick like everything else). Zenith/nadir labels moved to `AltAzGridLayer` (#1022). |
 | Ecliptic | `EclipticLayer`: static graduated Star Gold line — opaque, ticked every 10° with degree labels at the 30° zodiac boundaries — at depth 5 so it stays behind the catalog layers (D38). |
 | — (new in v2) | `AltAzGridLayer` (#1022): the horizontal graticule — azimuth meridians through the zenith and nadir plus altitude circles, for naked-eye/manual alt-az-mount observers. Off by default (`LayerRegistry.defaultEnabled`); azimuth line count is a D87 `Choice` parameter (8/12/24), altitude circles fixed every 10°. Owns the zenith/nadir labels (moved here from `HorizonLayer`), the same relationship `GridLayer` has with the celestial poles; azimuth labels skip the four cardinal directions, which `HorizonLayer` already labels. Recomputes on clock/location change like `HorizonLayer`. |
 | Sky Gradient | **Not a layer.** See below. |
@@ -71,8 +71,9 @@ designed so a future downloaded pack can contribute catalog-backed layers as dat
 v1's `SkyGradientLayer` draws a sun-altitude-dependent gradient dome. When this section was
 first written the primitive set (points/lines/images/labels) had no mesh primitive, and
 inventing one for a single internal use would have been API surface without a producer. D38
-has since added `GlowPrimitive` (concentric-ring gradient meshes, additive blending) for the
-horizon glow — but the sky gradient remains a render-state, not a scene: it is a whole-sky
+once carried a `GlowPrimitive` for the horizon glow, since removed in favour of the `Ground`
+render-state block — and the sky gradient likewise remains a render-state, not a scene: it is a
+whole-sky
 dome keyed to the sun's *horizontal* position, camera-independent per frame, and alpha-blended
 rather than additive, so the backend still owns its geometry exactly as v1's renderer did.
 

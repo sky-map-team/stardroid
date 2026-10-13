@@ -16,7 +16,12 @@ import android.util.Log
 import androidx.test.core.app.ActivityScenario
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
+import com.google.android.stardroid.render.supportsGles3
+import com.google.android.stardroid.settings.RendererBackend
+import com.google.android.stardroid.render.gles1.GLSkyRenderer
+import com.google.android.stardroid.render.gles3.GLES3SkyRenderer
 import com.google.common.truth.Truth.assertThat
+import com.google.common.truth.Truth.assertWithMessage
 import org.junit.Assume
 import org.junit.Before
 import org.junit.Test
@@ -36,6 +41,34 @@ import org.junit.runner.RunWith
  *
  * Once CI migrates to a hardware-accelerated Pixel 3a AVD the threshold should be raised
  * to [MIN_FRAMES_FOR_PIXEL_3A] = 150 (30 fps × 5 s).
+ *
+ * **Both backends are gated.** Every benchmark runs once per [RendererBackend], so a change that
+ * breaks one and not the other cannot report green — which is what happened until this was
+ * parameterised, when every variant silently measured GLES1.
+ *
+ * **What this gate is, and is not.** It is a *catastrophic-regression* detector: it catches a
+ * renderer that hangs, crashes, or collapses to single-digit frame rates. It is **not** a
+ * comparison between the backends, and by design no longer pretends to be — a decision taken
+ * deliberately rather than a limitation being tolerated.
+ *
+ * It cannot compare them for two independent reasons, and fixing either alone would not help.
+ * The measurement is pinned to the display: frames per second saturates at the panel's refresh
+ * rate, and [DrawTimeStats] does not escape it either, because a vsync-throttled driver
+ * back-pressures *inside* the GL calls, so the wait lands in the measured region. On a Pixel 9
+ * Pro both backends report a ~7.5 ms mean against an 8.33 ms budget, in both the opaque and
+ * translucent variants — four numbers within 0.1 ms across configurations doing materially
+ * different work.
+ *
+ * And the scene does not exercise what differs. The load is points, where `StellarRamps.sizeDp`
+ * yields two sizes, so GLES1 already batches 100k points into *two* draw calls and GLES3 makes
+ * it one — the "one draw call instead of dozens" premise does not apply here. The path where
+ * GLES3 genuinely wins is labels, one instanced draw per atlas page against a
+ * `glPushMatrix`/`glDrawArrays` per label, and the declutterer caps those at a few dozen.
+ *
+ * Making it a real comparison needs an offscreen render loop that never swaps (or GPU timer
+ * queries) *and* a benchmark-only path that loads the labels past the declutter cap. Deferred;
+ * see render-gles3.md §5. The two runs are still reported side by side so the numbers are
+ * readable, and are deliberately not asserted against each other.
  *
  * **Timing:** every measurement starts from the first frame the GL thread actually draws, never
  * from a fixed sleep. On SwiftShader the activity can take more than 6 s to reach `Displayed`
@@ -102,18 +135,13 @@ class RendererPerfTest {
     }
 
     @Test
-    fun rendererDrawsFramesContinuouslyWith100kPoints() {
-        val measured = runBenchmark(translucent = false, label = "RendererPerfTest")
+    fun rendererDrawsFramesContinuouslyWith100kPointsOnGles1() {
+        benchmarkAndReport(RendererBackend.GLES1, translucent = false)
+    }
 
-        println(
-            "RendererPerfTest: D19 Pixel 3a target is $MIN_FRAMES_FOR_PIXEL_3A frames (30 fps)",
-        )
-        if (measured < MIN_FRAMES_FOR_PIXEL_3A) {
-            println(
-                "RendererPerfTest: WARN: below D19 30-fps target " +
-                    "(expected on CI SwiftShader; verify on Pixel 3a hardware)",
-            )
-        }
+    @Test
+    fun rendererDrawsFramesContinuouslyWith100kPointsOnGles3() {
+        benchmarkAndReport(RendererBackend.GLES3, translucent = false)
     }
 
     /**
@@ -123,16 +151,67 @@ class RendererPerfTest {
      * draw path, not an absolute fps.
      */
     @Test
-    fun rendererStillDrawsWithTranslucentSurface() {
-        runBenchmark(translucent = true, label = "RendererPerfTest (translucent)")
+    fun rendererStillDrawsWithTranslucentSurfaceOnGles1() {
+        benchmarkAndReport(RendererBackend.GLES1, translucent = true)
     }
 
     @Test
-    fun firstFrameRenderedAfterSceneSubmission() {
+    fun rendererStillDrawsWithTranslucentSurfaceOnGles3() {
+        benchmarkAndReport(RendererBackend.GLES3, translucent = true)
+    }
+
+    @Test
+    fun firstFrameRenderedAfterSceneSubmissionOnGles1() {
+        assertFirstFrameArrives(RendererBackend.GLES1)
+    }
+
+    @Test
+    fun firstFrameRenderedAfterSceneSubmissionOnGles3() {
+        assertFirstFrameArrives(RendererBackend.GLES3)
+    }
+
+    /**
+     * Reports a measurement to both stdout and logcat.
+     *
+     * `println` alone is not enough: the instrumentation runner swallows it, so the numbers this
+     * gate exists to produce could not be read back off a run. Logcat survives, which is what
+     * makes `adb logcat -s RendererPerfTest` a usable way to get the comparison.
+     */
+    private fun report(message: String) {
+        println(message)
+        Log.i(TAG, message)
+    }
+
+    /** Runs a benchmark variant and reports it against the D19 target. */
+    private fun benchmarkAndReport(
+        backend: RendererBackend,
+        translucent: Boolean,
+    ) {
+        val label =
+            buildString {
+                append("RendererPerfTest [")
+                append(backend.name)
+                append(']')
+                if (translucent) append(" (translucent)")
+            }
+        val measured = runBenchmark(backend, translucent, label)
+
+        report("$label: D19 Pixel 3a target is $MIN_FRAMES_FOR_PIXEL_3A frames (30 fps)")
+        if (measured < MIN_FRAMES_FOR_PIXEL_3A) {
+            report(
+                "$label: WARN: below D19 30-fps target " +
+                    "(expected on CI SwiftShader; verify on Pixel 3a hardware)",
+            )
+        }
+    }
+
+    private fun assertFirstFrameArrives(backend: RendererBackend) {
+        assumeBackendSupported(backend)
         val context = InstrumentationRegistry.getInstrumentation().targetContext
         val intent =
             Intent(context, RendererTestActivity::class.java).apply {
                 putExtra(RendererTestActivity.EXTRA_BENCHMARK, false) // WHEN_DIRTY mode
+                putExtra(RendererTestActivity.EXTRA_BACKEND, backend.name)
             }
 
         val startMs = SystemClock.elapsedRealtime()
@@ -141,10 +220,57 @@ class RendererPerfTest {
             // requestRender.
             val frames = scenario.awaitFrames(target = 1L, timeoutMs = FIRST_FRAME_TIMEOUT_MS)
             val elapsedMs = SystemClock.elapsedRealtime() - startMs
-            println("RendererPerfTest: first frame after ${elapsedMs}ms (D19 p90 target ≤ 2500ms)")
+            report(
+                "RendererPerfTest [${backend.name}]: first frame after ${elapsedMs}ms " +
+                    "(D19 p90 target ≤ 2500ms)",
+            )
 
             assertThat(frames).isGreaterThan(0L)
         }
+    }
+
+    /**
+     * Asserts the renderer that drew the first frame is the one the test asked for.
+     *
+     * [assumeBackendSupported] checks the *device* can provide GLES3; this checks the app
+     * actually used it. Different failures, and only this one yields a plausible number
+     * attributed to the wrong renderer. The gate already shipped once in exactly that state —
+     * every variant measured GLES1, because `EXTRA_BACKEND` was never passed — and nothing
+     * failed to say so.
+     */
+    private fun assertMeasuringRequestedBackend(
+        scenario: ActivityScenario<RendererTestActivity>,
+        backend: RendererBackend,
+    ) {
+        var active: String? = null
+        scenario.onActivity { activity -> active = activity.activeBackend.get() }
+        val expected =
+            when (backend) {
+                RendererBackend.GLES1 -> GLSkyRenderer.BACKEND_NAME
+                RendererBackend.GLES3 -> GLES3SkyRenderer.BACKEND_NAME
+            }
+        assertWithMessage(
+            "Asked for ${backend.name} but the renderer reported '$active'. Any timing from " +
+                "this run describes the wrong backend.",
+        ).that(active).isEqualTo(expected)
+    }
+
+    /**
+     * Skips a GLES3 variant, loudly, on a device that cannot provide a GL ES 3.0 context.
+     *
+     * Without this the backend factory silently falls back to GLES1 and the test would pass
+     * while measuring the wrong renderer — a green gate reporting a number it did not take.
+     */
+    private fun assumeBackendSupported(backend: RendererBackend) {
+        if (backend != RendererBackend.GLES3) return
+        val context = InstrumentationRegistry.getInstrumentation().targetContext
+        if (supportsGles3(context)) return
+        val banner =
+            "SKIPPED: GLES3 variant — this device reports no GL ES 3.0 support, so the " +
+                "backend would silently fall back to GLES1 and measure the wrong renderer."
+        Log.w(TAG, banner)
+        println(banner)
+        Assume.assumeTrue(banner, false)
     }
 
     /**
@@ -152,15 +278,18 @@ class RendererPerfTest {
      * surface, and asserts the smoke floor. Returns the frames drawn in the measurement window.
      */
     private fun runBenchmark(
+        backend: RendererBackend,
         translucent: Boolean,
         label: String,
     ): Long {
         assumeGlBenchmarksSupported(label)
+        assumeBackendSupported(backend)
 
         val context = InstrumentationRegistry.getInstrumentation().targetContext
         val intent =
             Intent(context, RendererTestActivity::class.java).apply {
                 putExtra(RendererTestActivity.EXTRA_BENCHMARK, true)
+                putExtra(RendererTestActivity.EXTRA_BACKEND, backend.name)
                 if (translucent) putExtra(RendererTestActivity.EXTRA_TRANSLUCENT, true)
             }
 
@@ -169,20 +298,33 @@ class RendererPerfTest {
             // once a frame has been drawn.
             val firstFrame = scenario.awaitFrames(target = 1L, timeoutMs = FIRST_FRAME_TIMEOUT_MS)
             assertThat(firstFrame).isGreaterThan(0L)
+            assertMeasuringRequestedBackend(scenario, backend)
             Thread.sleep(WARMUP_MS)
 
-            scenario.onActivity { activity -> activity.frameCount.set(0L) }
+            scenario.onActivity { activity ->
+                activity.frameCount.set(0L)
+                activity.drawTimeNanos.reset()
+            }
             val startMs = SystemClock.elapsedRealtime()
             Thread.sleep(MEASUREMENT_MS)
 
             var measuredFrames = 0L
-            scenario.onActivity { activity -> measuredFrames = activity.frameCount.get() }
+            var drawTime: DrawTimeStats.Snapshot? = null
+            scenario.onActivity { activity ->
+                measuredFrames = activity.frameCount.get()
+                drawTime = activity.drawTimeNanos.snapshot()
+            }
             val windowMs = SystemClock.elapsedRealtime() - startMs
 
             val fps = measuredFrames * 1_000.0 / windowMs
-            println(
+            report(
                 "$label: $measuredFrames frames in ${windowMs}ms → %.1f fps".format(fps),
             )
+            // The number that can actually compare backends. Frames per second saturates at the
+            // panel's refresh rate — on a 120Hz device both backends report exactly 120.0 — so
+            // it measures the display rather than the renderer. Draw time is the submission
+            // cost the port set out to reduce, and it stays meaningful under a frame-rate cap.
+            report("$label: draw ${drawTime}")
 
             // Smoke gate: the renderer must draw at least a handful of frames — not hang or
             // crash. A software renderer can be slower than the window without being stuck, so
@@ -191,7 +333,7 @@ class RendererPerfTest {
                 if (measuredFrames >= MIN_FRAMES_FOR_CI) {
                     measuredFrames
                 } else {
-                    println("$label: below the floor in the window; granting extra time")
+                    report("$label: below the floor in the window; granting extra time")
                     scenario.awaitFrames(
                         target = MIN_FRAMES_FOR_CI.toLong(),
                         timeoutMs = SLOW_RENDERER_GRACE_MS,

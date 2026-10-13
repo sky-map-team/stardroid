@@ -19,6 +19,7 @@ import com.google.android.stardroid.settings.AutoDimness
 import com.google.android.stardroid.settings.FontSize
 import com.google.android.stardroid.settings.OneEuroEaseOff
 import com.google.android.stardroid.settings.OneEuroSteadiness
+import com.google.android.stardroid.settings.RendererBackend
 import com.google.android.stardroid.settings.Settings
 import com.google.android.stardroid.startup.Experiment
 import com.google.android.stardroid.startup.ExperimentConfig
@@ -49,6 +50,7 @@ data class SettingsUiState(
     val passAlerts: Boolean = false,
     val tonightDigest: Boolean = false,
     val satelliteData: Boolean = false,
+    val rendererBackend: RendererBackend = RendererBackend.GLES1,
     val announcements: Boolean = true,
 )
 
@@ -91,6 +93,7 @@ private data class OtherPrefs(
     val enableAnalytics: Boolean,
     val notifications: NotificationPrefs,
     val satelliteDataEnabled: Boolean,
+    val rendererBackend: RendererBackend,
     val announcementsEnabled: Boolean,
 )
 
@@ -108,6 +111,7 @@ class SettingsViewModel(
     private val analytics: Analytics = NoOpAnalytics,
     experimentConfig: ExperimentConfig = ExperimentConfig.Static,
     private val fusedSensorAvailable: Boolean = true,
+    gles3Available: Boolean = false,
 ) : ViewModel() {
     /** Whether the notifications section shows at all (D77 experiment gate). */
     val notificationsAvailable: Boolean =
@@ -123,6 +127,16 @@ class SettingsViewModel(
      */
     val satelliteAlertsAvailable: Boolean =
         notificationsAvailable && experimentConfig.isEnabled(Experiment.SATELLITES)
+
+    /**
+     * Whether to offer a choice of rendering backend at all.
+     *
+     * The caller folds two conditions into [gles3Available]: the [Experiment.GLES3_RENDERER]
+     * flag, and whether the device can actually do GL ES 3.0. Either being false hides the row
+     * rather than showing a control that silently gives you the first option back — a setting
+     * that appears to do nothing is worse than an absent one.
+     */
+    val rendererChoiceAvailable: Boolean = gles3Available
 
     /**
      * Whether the classic accelerometer+magnetometer path is what's actually running, and so
@@ -168,6 +182,7 @@ class SettingsViewModel(
                     ::NotificationPrefs,
                 ),
                 settings.satelliteDataEnabled,
+                settings.rendererBackend,
                 settings.announcementsEnabled,
                 ::OtherPrefs,
             ),
@@ -192,6 +207,7 @@ class SettingsViewModel(
                 passAlerts = other.notifications.passAlertsEnabled,
                 tonightDigest = other.notifications.tonightDigestEnabled,
                 satelliteData = other.satelliteDataEnabled,
+                rendererBackend = other.rendererBackend,
                 announcements = other.announcementsEnabled,
             )
         }.stateIn(viewModelScope, SharingStarted.Eagerly, SettingsUiState())
@@ -220,6 +236,12 @@ class SettingsViewModel(
         trackChange("auto_dimness", dimness)
         viewModelScope.launch { settings.setAutoDimness(dimness) }
     }
+
+    fun setRendererBackend(backend: RendererBackend) {
+        trackChange("renderer_backend", backend)
+        viewModelScope.launch { settings.setRendererBackend(backend) }
+    }
+
 
     fun setDisableGyro(enabled: Boolean) {
         trackChange("disable_gyro", enabled)

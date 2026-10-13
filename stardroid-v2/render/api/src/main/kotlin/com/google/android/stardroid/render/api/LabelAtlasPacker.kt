@@ -7,16 +7,16 @@
  * (at your option) any later version.
  */
 
-package com.google.android.stardroid.render.gles1
+package com.google.android.stardroid.render.api
 
 /** One label's cell in the atlas: which [page] it landed on, and its pixel rect on that page. */
-internal data class AtlasCell(val page: Int, val u: Int, val v: Int, val w: Int, val h: Int)
+data class AtlasCell(val page: Int, val u: Int, val v: Int, val w: Int, val h: Int)
 
 /**
  * The result of [LabelAtlasPacker.pack]: one cell per input size (in input order) and each page's
  * final height in pixels, already rounded up to a power of two (a GLES1 texture requirement).
  */
-internal data class AtlasLayout(val cells: List<AtlasCell>, val pageHeightsPx: List<Int>)
+data class AtlasLayout(val cells: List<AtlasCell>, val pageHeightsPx: List<Int>)
 
 /**
  * Pure (no GL, no Android) strip packer for the label atlas.
@@ -28,7 +28,7 @@ internal data class AtlasLayout(val cells: List<AtlasCell>, val pageHeightsPx: L
  * texture upload. `paddingPx` separates neighboring cells so antialiased glyph edges cannot bleed
  * into an adjacent cell's quad.
  */
-internal object LabelAtlasPacker {
+object LabelAtlasPacker {
     /** A label's rasterized pixel size. */
     data class Size(val w: Int, val h: Int)
 

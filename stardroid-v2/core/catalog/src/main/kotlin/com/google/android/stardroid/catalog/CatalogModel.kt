@@ -65,6 +65,14 @@ data class CatalogObject(
     val nameIsPrimary: Boolean,
     /** Target FOV in degrees when this object is searched (v1's `search_level`). */
     val searchFovDeg: Double?,
+    /**
+     * Whether this object has an info card, and so whether tapping it does anything.
+     *
+     * Tap-to-identify only offers objects with a card, which makes this the difference between
+     * a label you can act on and one you cannot — currently invisible until the tap fails. A
+     * backend that can afford to say so marks these labels; see `LabelPrimitive.hasDetail`.
+     */
+    val hasInfoCard: Boolean = false,
 )
 
 /**

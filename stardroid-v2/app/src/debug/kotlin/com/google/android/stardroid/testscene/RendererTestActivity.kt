@@ -53,10 +53,20 @@ import com.google.android.stardroid.render.RenderConnector
 import com.google.android.stardroid.render.api.ImageRef
 import com.google.android.stardroid.render.api.RenderState
 import com.google.android.stardroid.render.api.SkyCamera
-import com.google.android.stardroid.render.gles1.GLSkyRenderer
+import com.google.android.stardroid.render.createRendererBackend
 import com.google.android.stardroid.sensors.GeomagneticDeclinationSource
 import com.google.android.stardroid.sensors.OrientationSource
 import com.google.android.stardroid.sensors.SensorOrientationSource
+import com.google.android.stardroid.settings.RendererBackend
+import java.util.Locale
+import java.util.concurrent.atomic.AtomicLong
+import javax.microedition.khronos.egl.EGLConfig
+import javax.microedition.khronos.opengles.GL10
+import kotlin.math.PI
+import kotlin.math.asin
+import kotlin.math.atan2
+import kotlin.math.cos
+import kotlin.math.sin
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -72,15 +82,6 @@ import kotlinx.coroutines.job
 import kotlinx.coroutines.launch
 import kotlinx.datetime.Clock
 import kotlinx.datetime.Instant
-import java.util.Locale
-import java.util.concurrent.atomic.AtomicLong
-import javax.microedition.khronos.egl.EGLConfig
-import javax.microedition.khronos.opengles.GL10
-import kotlin.math.PI
-import kotlin.math.asin
-import kotlin.math.atan2
-import kotlin.math.cos
-import kotlin.math.sin
 
 /**
  * Development-only activity: drives [GLSkyRenderer] with the real bundled catalog (slice 4d) —
@@ -121,6 +122,15 @@ class RendererTestActivity : Activity() {
          */
         const val EXTRA_TRANSLUCENT = "translucent"
 
+        /**
+         * Which backend to run, as a [RendererBackend] name; defaults to
+         * [RendererBackend.GLES1]. An intent extra rather than the user's preference, because
+         * the D19 perf gate and the golden scenes need to target a *named* backend — the point
+         * of running both is to compare them, which means neither may depend on a setting the
+         * device happens to be carrying.
+         */
+        const val EXTRA_BACKEND = "backend"
+
         private const val LOCATION_PERMISSION_REQUEST = 1
 
         /** How often the local frame is recomputed (the sky drifts ~0.25°/min). */
@@ -131,6 +141,32 @@ class RendererTestActivity : Activity() {
 
     /** Total frames drawn on the GL thread. Readable from any thread for the perf gate test. */
     val frameCount = AtomicLong(0L)
+
+    /**
+     * CPU time spent inside the backend's `onDrawFrame`, for the D19 gate to read.
+     *
+     * Frames per second cannot compare the two backends on modern hardware: both saturate the
+     * panel's refresh rate with headroom to spare, so the counter reads the display, not the
+     * renderer (measured on a Pixel 9 Pro: GLES1 and GLES3 both exactly 120.0 fps). What GLES3
+     * actually changes is submission cost — fewer draw calls, no per-frame CPU quad rebuilds —
+     * and that is invisible while there is budget left to sleep in `eglSwapBuffers`.
+     *
+     * This times the draw call itself instead. It is a better instrument than the frame counter
+     * but not a clean one: a throttled driver back-pressures inside the GL calls, so the vsync
+     * wait lands here too (see [DrawTimeStats]). Read the tail, not the mean.
+     */
+    val drawTimeNanos = DrawTimeStats()
+
+    /**
+     * The backend name the renderer actually reported, once it has created its surface, or null
+     * before that.
+     *
+     * Exists so the perf gate can assert it measured the backend it asked for. That gate already
+     * shipped once measuring GLES1 for every variant because `EXTRA_BACKEND` was never passed;
+     * capability fallback inside the factory could reintroduce the same silence, and a number
+     * from the wrong renderer is worse than no number.
+     */
+    val activeBackend = java.util.concurrent.atomic.AtomicReference<String?>(null)
 
     private lateinit var glSurfaceView: GLSurfaceView
     private lateinit var connector: RenderConnector
@@ -173,10 +209,24 @@ class RendererTestActivity : Activity() {
         sensorMode = savedInstanceState?.getBoolean(KEY_SENSOR_MODE) ?: false
 
         val assetImageLoader = AssetImageLoader(assets)
-        val glRenderer =
-            GLSkyRenderer(
-                density,
+        // The same backend the map would use, so the D19 perf gate and the golden scenes
+        // exercise whichever one is selected rather than always the GLES1 one.
+        var requestRender: () -> Unit = {}
+        val backend =
+            createRendererBackend(
+                context = this,
+                assets = assets,
+                backend = requestedBackend(),
+                // Deliberately not gated on Experiment.GLES3_RENDERER. This harness exists to
+                // exercise a *named* backend — the D19 perf gate runs each variant explicitly —
+                // so honouring the flag here would make the GLES3 tests silently measure GLES1,
+                // which is the exact failure RendererPerfTest.assumeBackendSupported guards
+                // against. The flag governs what users get, not what the gate can measure.
+                gles3Enabled = true,
+                density = density,
                 imageLoader = { ref -> resolveImage(ref) ?: assetImageLoader.load(ref) },
+                onRendererInfo = { info -> activeBackend.set(info.backend) },
+                requestRender = { requestRender() },
             )
         val glRenderMode =
             if (benchmark) {
@@ -186,17 +236,18 @@ class RendererTestActivity : Activity() {
             }
         glSurfaceView =
             GLSurfaceView(this).apply {
-                setEGLContextClientVersion(1)
+                setEGLContextClientVersion(backend.eglContextClientVersion)
                 setEGLConfigChooser(8, 8, 8, 8, 16, 0)
-                setRenderer(FrameCountingRenderer(glRenderer))
+                setRenderer(FrameCountingRenderer(backend.surfaceRenderer))
                 renderMode = glRenderMode
                 if (translucentBackground) {
                     holder.setFormat(PixelFormat.TRANSLUCENT)
                     setZOrderMediaOverlay(true)
                 }
             }
+        requestRender = glSurfaceView::requestRender
 
-        connector = RenderConnector(glRenderer, glSurfaceView)
+        connector = RenderConnector(backend.skyRenderer, glSurfaceView)
         if (translucentBackground) submitRenderState()
         orientationSource =
             SensorOrientationSource(getSystemService(SensorManager::class.java)) {
@@ -603,8 +654,15 @@ class RendererTestActivity : Activity() {
             body.name.lowercase().replaceFirstChar { it.uppercase() }
     }
 
+    /** The backend named by [EXTRA_BACKEND], or the shipping default. */
+    private fun requestedBackend(): RendererBackend {
+        val name = intent.getStringExtra(EXTRA_BACKEND) ?: return RendererBackend.GLES1
+        return RendererBackend.entries.firstOrNull { it.name.equals(name, ignoreCase = true) }
+            ?: RendererBackend.GLES1
+    }
+
     private inner class FrameCountingRenderer(
-        private val delegate: GLSkyRenderer,
+        private val delegate: GLSurfaceView.Renderer,
     ) : GLSurfaceView.Renderer {
         override fun onSurfaceCreated(
             gl: GL10,
@@ -618,7 +676,9 @@ class RendererTestActivity : Activity() {
         ) = delegate.onSurfaceChanged(gl, width, height)
 
         override fun onDrawFrame(gl: GL10) {
+            val startNanos = System.nanoTime()
             delegate.onDrawFrame(gl)
+            drawTimeNanos.record(System.nanoTime() - startNanos)
             onFrameDrawn()
         }
     }
