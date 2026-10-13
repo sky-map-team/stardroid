@@ -19,7 +19,7 @@ android {
     namespace = "com.google.android.stardroid"
     defaultConfig {
         applicationId = "com.google.android.stardroid"
-        versionCode = 1760
+        versionCode = 1761
         versionName = "2.2.0:Buran:Beta"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         // D105: CI passes -PskipGlBenchmarks=true, which the D19 perf gate reads to skip
